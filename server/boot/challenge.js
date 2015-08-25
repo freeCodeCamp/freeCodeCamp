@@ -1,6 +1,6 @@
 import _ from 'lodash';
 import moment from 'moment';
-import { Observable } from 'rx';
+import { Observable, Scheduler } from 'rx';
 import assign from 'object.assign';
 import debugFactory from 'debug';
 import utils from '../utils';
@@ -18,11 +18,16 @@ import {
 } from '../utils/middleware';
 
 const debug = debugFactory('freecc:challenges');
-const challengeMapWithNames = utils.getChallengeMapWithNames();
-const challengeMapWithIds = utils.getChallengeMapWithIds();
-const challengeMapWithDashedNames = utils.getChallengeMapWithDashedNames();
-const challangesRegex = /^(bonfire|waypoint|zipline|basejump)/i;
+const challengesRegex = /^(bonfire|waypoint|zipline|basejump)/i;
 const firstChallenge = 'waypoint-say-hello-to-html-elements';
+const challengeView = {
+  0: 'coursewares/showHTML',
+  1: 'coursewares/showJS',
+  2: 'coursewares/showVideo',
+  3: 'coursewares/showZiplineOrBasejump',
+  4: 'coursewares/showZiplineOrBasejump',
+  5: 'coursewares/showBonfire'
+};
 
 const dasherize = utils.dasherize;
 const unDasherize = utils.unDasherize;
@@ -63,7 +68,13 @@ module.exports = function(app) {
   const findChallenge$ = observeMethod(Challenge, 'find');
   // create a stream of all the challenges
   const challenge$ = findChallenge$(challengesQuery)
-    .flatMap(challenges => Observable.from(challenges))
+    .doOnNext(() => debug('query challenges'))
+    .flatMap(challenges => Observable.from(
+      challenges,
+      null,
+      null,
+      Scheduler.default
+    ))
     .shareReplay();
 
   // create a stream of challenge blocks
@@ -128,16 +139,12 @@ module.exports = function(app) {
   app.use(router);
 
   function returnNextChallenge(req, res, next) {
-
-    // find the user's current challenge and block
-    // look in that block and find the index of their current challenge
-    // if index + 1 < block.challenges.length
-    // serve index + 1 challenge
-    // otherwise increment block key and serve the first challenge in that block
-    // unless the next block is undefined, which means no next block
     let nextChallengeName = firstChallenge;
 
-    const challengeId = req.user.currentChallenge.challengeId;
+    const challengeId = req.user.currentChallenge ?
+      req.user.currentChallenge.challengeId :
+      'bd7123c8c441eddfaeb5bdef';
+
     // find challenge
     return challenge$
       .map(challenge => challenge.toJSON())
@@ -165,7 +172,12 @@ module.exports = function(app) {
               .elementAt(blockIndex)
               .flatMap(block => {
                 // find where our challenge lies in the block
-                const challengeIndex$ = Observable.from(block.challenges)
+                const challengeIndex$ = Observable.from(
+                  block.challenges,
+                  null,
+                  null,
+                  Scheduler.default
+                )
                   .findIndex(({ id }) => id === challengeId);
 
                 // grab next challenge in this block
@@ -204,44 +216,53 @@ module.exports = function(app) {
           res.redirect('/challenges/' + nextChallengeName);
         }
       );
-
   }
 
   function returnCurrentChallenge(req, res, next) {
-    if (!req.user.currentChallenge) {
-      req.user.currentChallenge = {};
-      req.user.currentChallenge.challengeId = challengeMapWithIds['0'][0];
-      req.user.currentChallenge.challengeName = challengeMapWithNames['0'][0];
-      req.user.currentChallenge.dashedName =
-        challengeMapWithDashedNames['0'][0];
-    }
-
-    var nameString = req.user.currentChallenge.dashedName;
-
-    saveUser(req.user)
+    Observable.just(req.user)
+      .flatMap(user => {
+        if (!req.user.currentChallenge) {
+          return challenge$
+            .first()
+            .flatMap(challenge => {
+              user.currentChallenge = {
+                challengeId: challenge.id,
+                challengeName: challenge.name,
+                dashedName: challenge.dashedName
+              };
+              return saveUser(user);
+            });
+        }
+        return Observable.just(user);
+      })
+      .map(user => user.currentChallenge.dashedName)
       .subscribe(
-        function() {},
+        function(challengeName) {
+          res.redirect('/challenges/' + challengeName);
+        },
         next,
         function() {
-          res.redirect('/challenges/' + nameString);
         }
       );
   }
 
   function returnIndividualChallenge(req, res, next) {
-    var origChallengeName = req.params.challengeName;
-    var unDashedName = unDasherize(origChallengeName);
+    const origChallengeName = req.params.challengeName;
+    const unDashedName = unDasherize(origChallengeName);
 
-    var challengeName = challangesRegex.test(unDashedName) ?
+    const challengeName = challengesRegex.test(unDashedName) ?
       // remove first word if matches
       unDashedName.split(' ').slice(1).join(' ') :
       unDashedName;
 
-    debug('looking for ', challengeName);
-    Challenge.findOne(
-      { where: { name: { like: challengeName, options: 'i' } } },
-      function(err, challenge) {
-        if (err) { return next(err); }
+    const testChallengeName = new RegExp(challengeName, 'i');
+    debug('looking for %s', testChallengeName);
+    challenge$
+      .filter((challenge) => {
+        return testChallengeName.test(challenge.name);
+      })
+      .lastOrDefault(null)
+      .flatMap(challenge => {
 
         // Handle not found
         if (!challenge) {
@@ -252,65 +273,60 @@ module.exports = function(app) {
               origChallengeName +
               '` Please double check the name.'
           });
-          return res.redirect('/challenges');
+          return Observable.just('/challenges');
         }
-        // Redirect to full name if the user only entered a partial
+
         if (dasherize(challenge.name) !== origChallengeName) {
-          debug('redirecting to fullname');
-          return res.redirect('/challenges/' + dasherize(challenge.name));
+          return Observable.just('/challenges/' + dasherize(challenge.name));
         }
 
-        if (req.user) {
-          req.user.currentChallenge = {
-            challengeId: challenge.id,
-            challengeName: challenge.name,
-            dashedName: challenge.dashedName
-          };
+        if (challenge) {
+          if (req.user) {
+            req.user.currentChallenge = {
+              challengeId: challenge.id,
+              challengeName: challenge.name,
+              dashedName: challenge.dashedName
+            };
+          }
+
+          // save user does nothing if user does not exist
+          return saveUser(req.user)
+            .map(() => ({
+              title: challenge.name,
+              dashedName: origChallengeName,
+              name: challenge.name,
+              details: challenge.description,
+              tests: challenge.tests,
+              challengeSeed: challenge.challengeSeed,
+              verb: utils.randomVerb(),
+              phrase: utils.randomPhrase(),
+              compliment: utils.randomCompliment(),
+              challengeId: challenge.id,
+              challengeType: challenge.challengeType,
+              // video challenges
+              video: challenge.challengeSeed[0],
+              // bonfires specific
+              difficulty: Math.floor(+challenge.difficulty),
+              bonfires: challenge,
+              MDNkeys: challenge.MDNlinks,
+              MDNlinks: getMDNLinks(challenge.MDNlinks),
+              // htmls specific
+              environment: utils.whichEnvironment()
+            }));
         }
-
-        var commonLocals = {
-          title: challenge.name,
-          dashedName: origChallengeName,
-          name: challenge.name,
-          details: challenge.description,
-          tests: challenge.tests,
-          challengeSeed: challenge.challengeSeed,
-          verb: utils.randomVerb(),
-          phrase: utils.randomPhrase(),
-          compliment: utils.randomCompliment(),
-          challengeId: challenge.id,
-          challengeType: challenge.challengeType,
-          // video challenges
-          video: challenge.challengeSeed[0],
-          // bonfires specific
-          difficulty: Math.floor(+challenge.difficulty),
-          bonfires: challenge,
-          MDNkeys: challenge.MDNlinks,
-          MDNlinks: getMDNLinks(challenge.MDNlinks),
-          // htmls specific
-          environment: utils.whichEnvironment()
-        };
-
-        // TODO Berkeley
-        var challengeView = {
-          0: 'coursewares/showHTML',
-          1: 'coursewares/showJS',
-          2: 'coursewares/showVideo',
-          3: 'coursewares/showZiplineOrBasejump',
-          4: 'coursewares/showZiplineOrBasejump',
-          5: 'coursewares/showBonfire'
-        };
-
-        saveUser(req.user)
-          .subscribe(
-            function() {},
-            next,
-            function() {
-              var view = challengeView[challenge.challengeType];
-              res.render(view, commonLocals);
-            }
-          );
-      });
+      })
+      .subscribe(
+        function(data) {
+          if (typeof data === 'string') {
+            debug('redirecting to %s', data);
+            return res.redirect(data);
+          }
+          var view = challengeView[data.challengeType];
+          res.render(view, data);
+        },
+        next,
+        function() {}
+      );
   }
 
   function completedBonfire(req, res, next) {
@@ -320,7 +336,7 @@ module.exports = function(app) {
 
     var challengeData = {
       id: challengeId,
-      name: req.body.challengeInfo.challengeName,
+      name: req.body.challengeInfo.challengeName || '',
       completedDate: Math.round(+new Date()),
       solution: req.body.challengeInfo.solution,
       challengeType: 5
@@ -362,7 +378,7 @@ module.exports = function(app) {
             challengeData
         );
       })
-      // not iterate users
+      // iterate users
       .flatMap(function(dats) {
         debug('flatmap');
         return Observable.from([dats.user, dats.pairedWith]);
@@ -399,7 +415,7 @@ module.exports = function(app) {
       {
         id: id || challengeId,
         completedDate: completedDate,
-        name: name || challengeName,
+        name: name || challengeName || '',
         solution: null,
         githubLink: null,
         verified: true
@@ -446,7 +462,7 @@ module.exports = function(app) {
 
     var challengeData = {
       id: challengeId,
-      name: req.body.challengeInfo.challengeName,
+      name: req.body.challengeInfo.challengeName || '',
       completedDate: completedDate,
       solution: solutionLink,
       githubLink: githubLink,

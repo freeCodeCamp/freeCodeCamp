@@ -1,5 +1,20 @@
 import assign from 'object.assign';
 
+const providerHash = {
+  facebook: ({ id }) => id,
+  twitter: ({ username }) => username,
+  linkedin({ _json }) {
+    return _json && _json.publicProfileUrl || null;
+  },
+  google: ({ id }) => id
+};
+
+export function getUsernameFromProvider(provider, profile) {
+  return typeof providerHash[provider] === 'function' ?
+    providerHash[provider](profile) :
+    null;
+}
+
 // using es6 argument destructing
 export function setProfileFromGithub(
   user,

@@ -24,15 +24,15 @@ block content
                             img.img-center.img-responsive.public-profile-img(src='https://s3.amazonaws.com/freecodecamp/camper-image-placeholder.png')
                         h1.text-center.negative-5.profile-social-icons
                             if (twitter)
-                                a.fa.fa-twitter-square.text-primary(title="@#{username}'s Twitter Profile", href=twitter, target='_blank')
+                                a.fa.fa-twitter-square.text-primary(title="@#{username}'s Twitter Profile", href='https://twitter.com/' + twitter, target='_blank')
                             if (github)
                                 a.fa.fa-github-square.text-primary(title="@#{username}'s GitHub Profile", href=github, target='_blank')
                             if (linkedin)
                                 a.fa.fa-linkedin-square.text-primary(title="@#{username}'s LinkedIn Profile", href=linkedin, target='_blank')
                             if (facebook)
-                                a.fa.fa-facebook-square.text-primary(title="@#{username}'s Facebook Profile", href=facebook, target='_blank')
+                                a.fa.fa-facebook-square.text-primary(title="@#{username}'s Facebook Profile", href='https://facebook.com/' + facebook, target='_blank')
                             if (google)
-                                a.fa.fa-google-square.text-primary(title="@#{username}'s Google Profile", href=google, target='_blank')
+                                a.fa.fa-google-plus-square.text-primary(title="@#{username}'s Google Profile", href='https://plus.google.com/' + google, target='_blank')
                     .visible-md.visible-lg
                         .col-xs-12.col-sm-12.col-md-4.text-justify
                             h1.flat-top.wrappable= name
@@ -94,3 +94,21 @@ block content
                                         td.col-xs-2= moment(challenge.completedDate, 'x').format("MMM DD, YYYY")
                                         td.col-xs-6
                                             a(href=challenge.solution, target='_blank') View my solution
+                    if (user && user.username === username)
+                        br
+                        if (bonfires.length > 0)
+                            .col-sm-12
+                                table.table.table-striped
+                                    thead
+                                        tr
+                                            th.col-xs-4 Bonfire
+                                            th.col-xs-2 Completed
+                                            th.col-xs-6 Solution
+                                    for bonfire in bonfires
+                                        tr
+                                            td.col-xs-4
+                                                a(href='/challenges/' + bonfire.name, target='_blank')= bonfire.name
+                                            td.col-xs-2= moment(bonfire.completedDate, 'x').format("MMM DD, YYYY")
+                                            td.col-xs-6
+                                                pre.wrappable= bonfire.solution
+                                    br

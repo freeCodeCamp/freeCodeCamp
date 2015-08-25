@@ -13,7 +13,8 @@
         "<code>// This is a comment.</code>",
         "The slash-star-star-slash comment will comment out everything between the <code>/*</code> and the <code>*/</code> characters:",
         "<code>/* This is also a comment */</code>",
-        "Try creating one of each."
+        "Try creating one of each.",
+        "And one more thing you need to notice. Starting at this waypoint in JavaScript related challenges (except AngularJS, all Ziplines, Git, Node.js and Express.js, MongoDB and Full Stack JavaScript Projects) you can see contents of <code>assert()</code> functions (in some challenges <code>except()</code>, <code>assert.equal()</code> and so on) which are used to test your code. It's part of these challenges that you are able to see the tests that are running against your code."
       ],
       "tests":[
         "assert(editor.getValue().match(/(\\/\\/)...../g), 'Create a <code>\\/\\/</code> style comment that contains at least five letters');",
@@ -113,7 +114,7 @@
       "description": [
         "<code>data structures</code> have <code>properties</code>. For example, <code>strings</code> have a property called <code>.length</code> that will tell you how many characters are in the string.",
         "For example, if we created a variable <code>var firstName = \"Charles\"</code>, we could find out how long the string \"Charles\" is by using the <code>firstName.length</code> property.",
-        "Use the <code>.length</code> property to count the number of characters in the <code>lastNameLength</code> variable."
+        "Use the <code>.length</code> property to count the number of characters in the <code>lastName</code> variable."
       ],
       "tests": [
         "assert((function(){if(typeof(lastNameLength) !== \"undefined\" && typeof(lastNameLength) === \"number\" && lastNameLength === 8){return(true);}else{return(false);}})(), 'lastNameLength should be equal to eight.');",
@@ -150,7 +151,7 @@
         "<code>Bracket notation</code> is a way to get a character at a specific <code>index</code> within a string.",
         "Computers don't start counting at 1 like humans do. They start at 0.",
         "For example, the character at index 0 in the word \"Charles\" is \"C\". So if <code>var firstName = \"Charles\"</code>, you can get the value of the first letter of the string by using <code>firstName[0]</code>.",
-        "Use <code>bracket notation</code> to find the first character in a the <code>firstLetterOfLastName</code> variable.",
+        "Use <code>bracket notation</code> to find the first character in the <code>firstLetterOfLastName</code> variable.",
         "Try looking at the <code>firstLetterOfFirstName</code> variable declaration if you get stuck."
       ],
       "tests": [
@@ -216,7 +217,7 @@
         "In order to get the last letter of a string, you can subtract one from the string's length.",
         "For example, if <code>var firstName = \"Charles\"</code>, you can get the value of the last letter of the string by using <code>firstName[firstName.length - 1]</code>.",
         "Use <code>bracket notation</code> to find the last character in the <code>lastName</code> variable.",
-        "Try looking at the <code>lastLetterOfLastName</code> variable declaration if you get stuck."
+        "Try looking at the <code>lastLetterOfFirstName</code> variable declaration if you get stuck."
       ],
       "tests": [
         "assert(lastLetterOfLastName === \"e\", 'lastLetterOfLastName should be \"e\"');",
@@ -432,9 +433,9 @@
       "challengeSeed": [
         "//var array = [\"John\", 23];",
         "",
-        "var myArray = [];",
         "// Only change code below this line.",
         "",
+        "var myArray = [];",
         "",
         "// Only change code above this line.",
         "// We use this function to show you the value of your variable in your output box.",
@@ -457,9 +458,9 @@
       ],
       "challengeSeed":[
         "var ourArray = [[\"the universe\", \"everything\", 42]];",
-        "var myArray = [];",
         "// Only change code below this line.",
         "",
+        "var myArray = [];",
         "",
         "// Only change code above this line.",
         "// We use this function to show you the value of your variable in your output box.",
@@ -496,7 +497,7 @@
         "// Only change code above this line.",
         "// We use this function to show you the value of your variable in your output box.",
         "// You'll learn about functions soon.",
-        "if(typeof(myArray) !== \"undefined\" && typeof(data) !== \"undefined\"){(function(y,z){return('myArray = ' + JSON.stringify(y) + ', data = ' + JSON.stringify(z));})(myArray, data);}"
+        "if(typeof(myArray) !== \"undefined\" && typeof(myData) !== \"undefined\"){(function(y,z){return('myArray = ' + JSON.stringify(y) + ', myData = ' + JSON.stringify(z));})(myArray, myData);}"
       ],
       "type": "waypoint",
       "challengeType": 1
@@ -606,7 +607,7 @@
         "Take the myArray array and <code>shift()</code> the first value off of it."
       ],
       "tests": [
-        "assert((function(d){if(d[0] == 23 && d[1][0] == 'dog' && d[1][1] == 3 && d[2] == undefined){return(true);}else{return(false);}})(myArray), 'myArray should only have the first two values left([\"John\", 23])');",
+        "assert((function(d){if(d[0] == 23 && d[1][0] == 'dog' && d[1][1] == 3 && d[2] == undefined){return(true);}else{return(false);}})(myArray), 'myArray should only have the last two values left([23, [\"dog\", 3]])');",
         "assert((function(d){if(d === 'John' && typeof(myRemoved) === 'string'){return(true);}else{return(false);}})(myRemoved), 'myRemoved should contain \"John\"');"
       ],
       "challengeSeed": [
@@ -634,7 +635,7 @@
       "difficulty": "9.9818",
       "description": [
         "Now that we've learned how to <code>shift</code>things from the start of the array, we need to learn how to <code>unshift</code>stuff back to the start",
-        "Let's take the code we had last time and <code>unshift</code>this value to the end: <code>\"Paul\" </code>"
+        "Let's take the code we had last time and <code>unshift</code>this value to the start: <code>\"Paul\" </code>"
       ],
       "tests": [
         "assert((function(d){if(d[0].toLowerCase() == 'paul' && d[1] == 23 && d[2][0] != undefined && d[2][0] == 'dog' && d[2][1] != undefined && d[2][1] == 3){return(true);}else{return(false);}})(myArray), 'myArray should now have [\"Paul\", 23, [\"dog\", 3]])');"
@@ -643,7 +644,7 @@
         "var ourArray = [\"Stimpson\", \"J\", [\"cat\"]];",
         "ourArray.shift();",
         "ourArray.unshift([\"happy\", \"joy\"]);",
-        "// ourArray now equals [[\"happy\", \"joy\"], \"Stimpson\", \"J\"]",
+        "// ourArray now equals [[\"happy\", \"joy\"], \"J\", [\"cat\"]]",
         "",
         "var myArray = [\"John\", 23, [\"dog\", 3]];",
         "myArray.shift();",
@@ -670,8 +671,8 @@
         "<code>function functionName (a, b) {</code>",
         "<code>&thinsp;&thinsp;return(a + b);</code>",
         "<code>}</code>",
-        "We can \"call\" our function like this: <code>functionName();</code>, and it will run and return it's <code>return</code> value to us.",
-        "Create and call a function called <code>myFunction</code>."
+        "We can \"call\" our function like this: <code>functionName();</code>, and it will run and return its <code>return</code> value to us.",
+        "Create and call a function called <code>myFunction</code> that returns the sum of a and b."
       ],
       "tests":[
         "assert((function(){if(typeof(f) !== \"undefined\" && typeof(f) === \"number\" && f === a + b  && editor.getValue().match(/return/gi).length >= 1 && editor.getValue().match(/a/gi).length >= 1 && editor.getValue().match(/b/gi).length >= 1 && editor.getValue().match(/\\+/gi).length >= 1){return(true);}else{return(false);}})(), 'Your function should return the value of a + b');"
@@ -684,9 +685,9 @@
         "  return a - b;",
         "};",
         "",
-        "//Don't modify above this line",
-        "//Create a function called myFunction that returns the value of a plus b.",
-        "  // Only change code below this line.",
+        "// Don't modify above this line",
+        "// Create a function called myFunction that returns the value of a plus b.",
+        "// Only change code below this line.",
         "",
         "",
         "",
@@ -755,11 +756,11 @@
       "title": "Manipulate JavaScript Objects",
       "difficulty":"9.9823",
       "description":[
-        "There are many ways to add and add and remove properties from objects.",
+        "There are many ways to add and remove properties from objects.",
         "For example, we can add properties to objects like this:",
         "<code>myObject.myProperty = \"myValue\";</code>",
         "We can also delete them like this:",
-        "<code>delete(myObject.myProperty);</code>",
+        "<code>delete myObject.myProperty;</code>",
         "Let's add the property \"bark\", and delete the property \"tails\"."
       ],
       "tests":[
@@ -774,8 +775,8 @@
         "//   \"friends\": [\"everything!\"]",
         "// };",
         "",
-        "// ourDog.bark(\"arf!\");",
-        "// delete(ourDog.tails);",
+        "// ourDog.bark = \"arf!\";",
+        "// delete ourDog.tails;",
         "",
         "var myDog = {",
         "   \"name\": \"Camper\",",
@@ -818,6 +819,10 @@
         "assert.deepEqual(myArray, [0,1,2,3,4], 'myArray should equal [0,1,2,3,4]');"
       ],
       "challengeSeed":[
+        "ourArray = [];",
+        "for(var i = 0; i < 5; i++){",
+        "  ourArray.push(i);",
+        "}",
         "var myArray = [];",
         "//Push the numbers zero through four to myArray using a \"for loop\" like above.",
         "",
@@ -832,14 +837,14 @@
       "difficulty":"9.9825",
       "description":[
         "You can run the same code multiple times by using a loop.",
-        "Another type of JavaScript loop is called a \"while loop\" because it runs \"while\" something is true, and stops once that something is no longer true.",
+        "Another type of JavaScript loop is called a \"while loop\", because it runs \"while\" something is true and stops once that something is no longer true.",
         "<code>var ourArray = [];</code>",
         "<code>var i = 0;</code>",
         "<code>while(i < 5) {</code>",
         "<code>&thinsp;&thinsp;ourArray.push(i);</code>",
         "<code>&thinsp;&thinsp;i++;</code>",
         "<code>}</code>",
-        "Let's try getting a for loop to work by pushing values to an array."
+        "Let's try getting a while loop to work by pushing values to an array."
       ],
       "tests":[
         "assert(editor.getValue().match(/while/g), 'You should be using a while loop for this.');",
@@ -859,7 +864,7 @@
       "title": "Generate Random Fractions with JavaScript",
       "difficulty":"9.9827",
       "description":[
-        "Random numbers are useful for creating random behaviours and games.",
+        "Random numbers are useful for creating random behavior.",
         "JavaScript has a <code>Math.random()</code> function that generates a random decimal number.",
         "Use <code>Math.random()</code> to get <code>myFunction</code> to return a random number."
       ],
@@ -889,17 +894,17 @@
       "title": "Generate Random Whole Numbers with JavaScript",
       "difficulty":"9.9828",
       "description":[
-        "It's great that we can create random decimal numbers, but it's even more useful if we lot more useful to generate a random whole number.",
-        "To achieve this we can multiply the random number by ten and use the <code>Math.floor()</code> to convert the decimal number to a whole number",
-        "This technique gives us a whole number between zero and nine",
+        "It's great that we can create random decimal numbers, but it's even more useful if we use it to generate a random whole number.",
+        "To achieve this we can multiply the random number by ten and use the <code>Math.floor()</code> to convert the decimal number to a whole number.",
+        "This technique gives us a whole number between zero and nine.",
         "Example:",
         "<code>Math.floor(Math.random()*10);</code>",
-        "Let's give this technique a go now"
+        "Let's give this technique a go now."
       ],
       "tests":[
         "assert(typeof(myFunction()) === \"number\", 'The result of myFunction should be a number');",
         "assert(editor.getValue().match(/Math.random/g), 'You should be using Math.random to create a random number');",
-        "assert(!(''+myFunction()).match(/\\./g), 'You should have multiplied the result of Math.random but 10 to make it a number that\\'s greater then zero');",
+        "assert(!(''+myFunction()).match(/\\./g), 'You should have multiplied the result of Math.random by 10 to make it a number that\\'s greater than zero');",
         "assert(editor.getValue().match(/Math.floor/g), 'You should use Math.floor to remove the decimal part of the number');"
       ],
       "challengeSeed":[
@@ -935,7 +940,7 @@
       ],
       "challengeSeed":[
         "var min = 0;",
-        "var max = 12;",
+        "var max = 9;",
         "function myFunction() {",
         "  // Make myFunction return a random number between zero and nine instead of a decimal",
         "  // Only change code below this line.",
@@ -956,16 +961,16 @@
       "difficulty":"9.983",
       "description":[
         "We can use if statements in JavaScript to only execute code if a certain condition is met.",
-        "if statements require some sort of boolean condition evaluate.",
+        "if statements require some sort of boolean condition to evaluate.",
         "Example:",
-        "<code> if (1 == 2) {</code>",
+        "<code> if (1 === 2) {</code>",
         "<code>&thinsp;&thinsp;return(true);</code>",
         "<code>}</code>",
         "<code>else {</code>",
         "<code>&thinsp;&thinsp;return(false);</code>",
         "<code>}</code>",
         "Let's use <code>if</code> and <code>else</code> statements to make a coin-flip game.",
-        "Create an <code>if-else statement</code> to return <code>heads</code> if the flip var is zero and to return <code>tails</code> if it's not."
+        "Create an <code>if-else statement</code> to return <code>heads</code> if the flip var is zero, or else return <code>tails</code> if it's not."
       ],
       "tests":[
         "assert((function(){if(myFunction() === \"heads\" || myFunction() === \"tails\"){return(true);}else{return(false);}})(), 'myFunction should either return heads or tails');",
@@ -975,7 +980,7 @@
       "challengeSeed":[
         "function myFunction(){",
         "  var flip = Math.floor(Math.random() * (1 - 0 + 1)) + 0;",
-        "  // Create and if else statement here to return \"heads\" if flip is 0. Otherwise return \"tails\".",
+        "  // Create an if-else statement here to return \"heads\" if flip is 0. Otherwise return \"tails\".",
         "",
         "  // Only change code below this line.",
         "",
@@ -1002,7 +1007,7 @@
         "<code>g</code> means that we want to search the entire string for this pattern.",
         "<code>i</code> means that we want to ignore the case (uppercase or lowercase) when searching for the pattern.",
         "<code>Regular expressions</code> are usually surrounded by <code>/</code> symbols.",
-        "Let's try selecting all the occurances of the word <code>and</code> in the string <code>George Boole and Alan Turing went to the shop and got some milk</code>. We can do this by replacing the <code>+</code> part of our regular expression with the word <code>and</code>."
+        "Let's try selecting all the occurrences of the word <code>and</code> in the string <code>George Boole and Alan Turing went to the shop and got some milk</code>. We can do this by replacing the <code>+</code> part of our regular expression with the word <code>and</code>."
       ],
       "tests":[
         "assert(test==2, 'Your <code>regular expression</code> should find two occurrences of the word <code>and</code>');",
@@ -1036,11 +1041,11 @@
       ],
       "tests":[
         "assert(test === 2, 'Your RegEx should have found two numbers in the testString');",
-        "assert(editor.getValue().match(/\\/\\\\d\\+\\//gi), 'You should be using the following expression /\\d+/gi to find the numbers in the testString');"
+        "assert(editor.getValue().match(/\\/\\\\d\\+\\//gi), 'You should be using the following expression /\\\\d+/gi to find the numbers in the testString');"
       ],
       "challengeSeed":[
         "var test = (function() {",
-        "  var testString = \"There's 3 cats but 4 dogs.\";",
+        "  var testString = \"There are 3 cats but 4 dogs.\";",
         "",
         "  // Only change code below this line.",
         "",
@@ -1066,7 +1071,7 @@
       ],
       "tests":[
         "assert(test === 7, 'Your RegEx should have found seven spaces in the <code>testString</code>.');",
-        "assert(editor.getValue().match(/\\/\\\\s\\+\\//gi), 'You should be using the following expression /\\s+/gi to find the spaces in the <code>testString</code>.');"
+        "assert(editor.getValue().match(/\\/\\\\s\\+\\//gi), 'You should be using the following expression /\\\\s+/gi to find the spaces in the <code>testString</code>.');"
       ],
       "challengeSeed":[
         "var test = (function(){",
@@ -1093,12 +1098,12 @@
         "You can invert any match by using the uppercase version of the selector <code>\\s</code> versus <code>\\S</code> for example."
       ],
       "tests":[
-        "assert(test === 36, 'Your RegEx should have found seven spaces in the <code>testString</code>.');",
-        "assert(editor.getValue().match(/\\/\\\\S\\/gi/gi), 'You should be using the following expression <code>/\\+S/gi</code> to find the spaces in the <code>testString</code>.');"
+        "assert(test === 49, 'Your RegEx should have found forty nine non-space characters in the <code>testString</code>.');",
+        "assert(editor.getValue().match(/\\/\\\\S\\/gi/gi), 'You should be using the following expression <code>/\\\\S/gi</code> to find non-space characters in the <code>testString</code>.');"
       ],
       "challengeSeed":[
         "var test = (function(){",
-        "  var testString = \"How many spaces are there in this sentence?\";",
+        "  var testString = \"How many non-space characters are there in this sentence?\";",
         "",
         "  // Only change code below this line.",
         "",
@@ -1274,7 +1279,7 @@
         "Now that our slots will each generate random numbers, we need to check whether they've all returned the same number.",
         "If they have, we should notify our user that they've won.",
         "Otherwise, we should return <code>null</code>, which is a JavaScript data structure that means nothing.",
-        "If all three numbers match, we should change the value of win to the number that we have three of or leave it as null.",
+        "If all three numbers match, we should return the number that we have in three of slots or leave it as <code>null</code>.",
         "Let's create an <code>if statement</code> with multiple conditions in order to check whether all numbers are equal.",
         "<code>if(slotOne !== slotTwo || slotTwo !== slotThree){</code>",
         "<code>&thinsp;&thinsp;return(null);</code>",
@@ -1604,7 +1609,7 @@
         "Set up all three slots like this, then click the \"Go\" button to play the slot machine."
       ],
       "tests":[
-        "assert(editor.match(/\\$\\(\\$\\(\\'\\.slot\\'\\)\\[\\d\\]\\)\\.html\\(\\'\\<img\\s?src\\s?=\\s?\"\\'\\s?\\+\\s?images\\[\\w+\\-1\\]\\s?\\+\\s?\\'\"\\>\\'\\);/gi) && editor.match(/\\$\\(\\$\\(\\'\\.slot\\'\\)\\[\\d\\]\\)\\.html\\(\\'\\<img\\s?src\\s?=\\s?\"\\'\\s?\\+\\s?images\\[\\w+\\-1\\]\\s?\\+\\s?\\'\"\\>\\'\\);/gi).length >= 3, 'Use the provided code three times. One for each slot')",
+        "assert((editor.match(/\\$\\(\\$\\(\\'\\.slot\\'\\)\\[\\d\\]\\)\\.html\\(\\'\\<img\\s?src\\s?=\\s?\"\\'\\s?\\+\\s?images\\[\\w+\\-1\\]\\s?\\+\\s?\\'\"\\>\\'\\);/gi) && editor.match(/\\$\\(\\$\\(\\'\\.slot\\'\\)\\[\\d\\]\\)\\.html\\(\\'\\<img\\s?src\\s?=\\s?\"\\'\\s?\\+\\s?images\\[\\w+\\-1\\]\\s?\\+\\s?\\'\"\\>\\'\\);/gi).length >= 3) || (editor.match(/\\$\\(\\$\\(\\\"\\.slot\\\"\\)\\[\\d\\]\\)\\.html\\(\\'\\<img\\s?src\\s?=\\s?\"\\'\\s?\\+\\s?images\\[\\w+\\-1\\]\\s?\\+\\s?\\'\"\\>\\'\\);/gi) && editor.match(/\\$\\(\\$\\(\\\"\\.slot\\\"\\)\\[\\d\\]\\)\\.html\\(\\'\\<img\\s?src\\s?=\\s?\"\\'\\s?\\+\\s?images\\[\\w+\\-1\\]\\s?\\+\\s?\\'\"\\>\\'\\);/gi).length >= 3), 'Use the provided code three times. One for each slot')",
         "assert(editor.match(/slotOne/gi) && editor.match(/slotOne/gi).length >= 7, 'You should have used the slotOne value at least once')",
         "assert(editor.match(/slotTwo/gi) && editor.match(/slotTwo/gi).length >= 8, 'You should have used the slotTwo value at least once')",
         "assert(editor.match(/slotThree/gi) && editor.match(/slotThree/gi).length >= 7, 'You should have used the slotThree value at least once')"

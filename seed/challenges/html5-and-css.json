@@ -428,8 +428,12 @@
       "description": [
         "Create a CSS class called <code>red-text</code> and apply it to your <code>h2</code> element.",
         "Classes are reusable styles that can be added to HTML elements.",
-        "Here's the anatomy of a CSS class:",
-        "<img class=\"img-responsive\" alt=\"a diagram of how style tags are composed, which is also described in detail on the following lines.\" src=\"https://www.evernote.com/l/AHSCzZV0l_dDLrqD8r9JsHaBWfEzdN0OpRwB/image.png\">",
+        "Here's an example CSS class declaration:",
+        "<code>&#60;style&#62;</code>",
+        "<code>&thinsp;&thinsp;.blue-text {</code>",
+        "<code>&thinsp;&thinsp;&thinsp;&thinsp;color: blue;</code>",
+        "<code>&thinsp;&thinsp;}</code>",
+        "<code>&#60;/style&#62;</code>",
         "You can see that we've created a CSS class called <code>blue-text</code> within the <code>&#60;style&#62;</code> tag.",
         "You can apply a class to an HTML element like this: <code>&#60;h2 class=\"blue-text\"&#62;CatPhotoApp&#60;/h2&#62;</code>.",
         "Note that in your CSS <code>style</code> element, classes should start with a period. In your HTML elements' class declarations, classes shouldn't start with a period.",
@@ -749,13 +753,13 @@
       "title": "Add Images to your Website",
       "difficulty": 1.17,
       "description": [
-        "You can add images to your website by using the <code>img</code> element, and point to an specific image's URL using the <code>src</code> attribute.",
-        "An example of this would be <code>&#60img src=\"www.your-image-source.com/your-image.jpg\"&#62</code>. Note that in most cases, <code>img</code> elements are self-closing.",
+        "You can add images to your website by using the <code>img</code> element, and point to a specific image's URL using the <code>src</code> attribute.",
+        "An example of this would be <code>&#60img src=\"http://www.your-image-source.com/your-image.jpg\"&#62</code>. Note that in most cases, <code>img</code> elements are self-closing.",
         "Try it with this image: <code>https://bit.ly/fcc-relaxing-cat</code>."
       ],
       "tests": [
         "assert($(\"img\").length > 0, 'Your page should have an image element.')",
-        "assert(new RegExp(\"\\/\\/bit.ly\\/fcc-relaxing-cat\", \"gi\").test($(\"img\").attr(\"src\")), 'Your image should have have a <code>src</code> attribute that points to the kitten image.')"
+        "assert(new RegExp(\"\\/\\/bit.ly\\/fcc-relaxing-cat\", \"gi\").test($(\"img\").attr(\"src\")), 'Your image should have a <code>src</code> attribute that points to the kitten image.')"
       ],
       "challengeSeed": [
         "<link href=\"http://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
@@ -1056,13 +1060,13 @@
       "description": [
         "<code>a</code> elements, also known as <code>anchor</code> elements, are used to link to content outside of the current page.",
         "Here's a diagram of an <code>a</code> element. In this case, the <code>a</code> element is used in the middle of a paragraph element, which means the link will appear in the middle of a sentence.",
-        "<img class=\"img-responsive\" alt=\"a diagram of how anchor tags are composed with the same text as on the following line\" src=\"https://www.evernote.com/l/AHSaNaepx_lG9LhhPkVYmagcedpmAeITDsQB/image.png\">",
+        "<img class=\"img-responsive\" alt=\"a diagram of how anchor tags are composed with the same text as on the following line\" src=\"http://i.imgur.com/hviuZwe.png\">",
         "Here's an example: <code>&#60;p&#62;Here's a &#60;a href=\"http://freecodecamp.com\"&#62; link to Free Code Camp&#60;/a&#62; for you to follow.&#60;/p&#62;</code>.",
         "Create an <code>a</code> element that links to <code>http://catphotoapp.com</code> and has \"cat photos\" as its <code>anchor text</code>."
       ],
       "tests": [
         "assert((/cat photos/gi).test($(\"a\").text()), 'Your <code>a</code> element should have the <code>anchor text</code> of \"cat photos\"')",
-        "assert(/http:\\/\\/catphotoapp\\.com/gi.test($(\"a\").attr(\"href\")), 'You need an <code>a</code> element that links to <code>http&#58;//catphotoapp.com<code>.')",
+        "assert(/http:\\/\\/catphotoapp\\.com/gi.test($(\"a\").attr(\"href\")), 'You need an <code>a</code> element that links to <code>http&#58;//catphotoapp.com</code>.')",
         "assert(editor.match(/<\\/a>/g) && editor.match(/<\\/a>/g).length === editor.match(/<a/g).length, 'Make sure your <code>a</code> element has a closing tag.')"
       ],
       "challengeSeed": [
@@ -1126,7 +1130,7 @@
       "difficulty": 1.23,
       "description": [
         "Again, here's a diagram of an <code>a</code> element for your reference:",
-        "<img class=\"img-responsive\" alt=\"a diagram of how anchor tags are composed with the same text as on the following line\" src=\"https://www.evernote.com/l/AHSaNaepx_lG9LhhPkVYmagcedpmAeITDsQB/image.png\">",
+        "<img class=\"img-responsive\" alt=\"a diagram of how anchor tags are composed with the same text as on the following line\" src=\"http://i.imgur.com/hviuZwe.png\">",
         "Here's an example: <code>&#60;p&#62;Here's a &#60;a href=\"http://freecodecamp.com\"&#62; link to Free Code Camp&#60;/a&#62; for you to follow.&#60;/p&#62;</code>.",
         "<code>Nesting</code> just means putting one element inside of another element.",
         "Now nest your <code>a</code> element within a new <code>p</code> element so that the surrounding paragraph says \"click here for cat photos\", but where only \"cat photos\" is a link, and the rest of the text is rest is plain text."
@@ -3117,7 +3121,7 @@
       "difficulty": 1.46,
       "description": [
         "Now let's start fresh and talk about CSS inheritance.",
-        "Every HTML page has <code>body</code> element.",
+        "Every HTML page has a <code>body</code> element.",
         "We can prove that the <code>body</code> element exists here by giving it a <code>background-color</code> of black.",
         "We can do this by adding <code>body { background-color: black; }</code> to our <code>style</code> element."
       ],
@@ -3235,7 +3239,8 @@
         "Our \"pink-text\" class overrode our <code>body</code> element's CSS declaration!",
         "We just proved that our classes will override the <code>body</code> element's CSS. So the next logical question is, what can we do to override our <code>pink-text</code> class?",
         "Create an additional CSS class called <code>blue-text</code> that gives an element the color blue. Make sure it's below your <code>pink-text</code> class declaration.",
-        "Apply the <code>blue-text</code> class to your <code>h1</code> element in addition to your <code>pink-text</code> class, and let's see which one wins."
+        "Apply the <code>blue-text</code> class to your <code>h1</code> element in addition to your <code>pink-text</code> class, and let's see which one wins.",
+        "Applying multiple class attributes to a HTML element is done with a space between them like this: <code>class=\"class1 class2\"</code>"
       ],
       "tests": [
         "assert($(\"h1\").hasClass(\"pink-text\"), 'Your <code>h1</code> element should have the class <code>pink-text</code>.')",
@@ -3280,12 +3285,14 @@
         "Let's override your <code>pink-text</code> and <code>blue-text</code> classes, and make your <code>h1</code> element orange, by giving the <code>h1</code> element an id and then styling that id.",
         "Give your <code>h1</code> element the <code>id</code> attribute of <code>orange-text</code>. Remember, id styles look like this: <code>&#60;h1 id=\"orange-text\"&#62;</code>",
         "Leave the <code>blue-text</code> and <code>pink-text</code> classes on your <code>h1</code> element.",
-        "Create a CSS declaration for your <code>orange-text</code> id in your <code>style</code> element. Here's and example of what this looks like: <code>#brown-text { color: brown; }</code>"
+        "Create a CSS declaration for your <code>orange-text</code> id in your <code>style</code> element. Here's an example of what this looks like: <code>#brown-text { color: brown; }</code>"
       ],
       "tests": [
         "assert($(\"h1\").hasClass(\"pink-text\"), 'Your <code>h1</code> element should have the class <code>pink-text</code>.')",
         "assert($(\"h1\").hasClass(\"blue-text\"), 'Your <code>h1</code> element should have the class <code>blue-text</code>.')",
         "assert($(\"h1\").attr(\"id\") === \"orange-text\", 'Give your <code>h1</code> element the id of <code>orange-text</code>.')",
+        "assert(editor.match(/#orange-text\\s*{/gi), 'Create a CSS declaration for your <code>orange-text</code> id')",
+        "assert(!editor.match(/<h1.*style.*>/gi), 'Do not give your <code>h1</code> any <code>style</code> attributes.')",
         "assert($(\"h1\").css(\"color\") === \"rgb(255, 165, 0)\", 'Your <code>h1</code> element should be orange.')"
       ],
       "challengeSeed": [
@@ -3387,7 +3394,7 @@
         "assert($(\"h1\").hasClass(\"blue-text\"), 'Your <code>h1</code> element should have the class <code>blue-text</code>.')",
         "assert($(\"h1\").attr(\"id\") === \"orange-text\", 'Your <code>h1</code> element should have the id of <code>orange-text</code>.')",
         "assert(editor.match(/<h1.*style/gi) && editor.match(/<h1.*style.*color:/gi).length > 0, 'Your <code>h1</code> element should have the inline style of <code>color&#58; white</code>.')",
-        "assert(editor.match(/pink.*\\!important/gi) && editor.match(/pink.*\\!important;/gi).length > 0, 'Your <code>pink-text</code> class should have the <code>!important</code> keyword to override all other declarations.')",
+        "assert(editor.match(/pink.*\\!important;/gi), 'Your <code>pink-text</code> class should have the <code>!important</code> keyword to override all other declarations.')",
         "assert($(\"h1\").css(\"color\") === \"rgb(255, 192, 203)\", 'Your <code>h1</code> element should be pink.')"
       ],
       "challengeSeed": [
@@ -3431,7 +3438,7 @@
       "description": [
         "Did you know there are other ways to represent colors in CSS? One of these ways is called hexadecimal code, or <code>hex code</code> for short.",
         "<code>Decimal</code> means the numbers zero through nine - the numbers that people use in everyday life. <code>Hexadecimal</code> includes these 10 numbers, plus the letters A, B, C, D, E and F. This means that Hexidecimal has a total of 16 possible values, instead of the 10 possible values that our normal base-10 number system gives us.",
-        "With CSS, we use 6 hexidecimal number to represent colors. For example, <code>#000000</code> is the lowest possible value, and it represents the color black.",
+        "With CSS, we use 6 hexadecimal numbers to represent colors. For example, <code>#000000</code> is the lowest possible value, and it represents the color black.",
         "Replace the word <code>black</code> in our <code>body</code> element's background-color with its <code>hex code</code> representation, <code>#000000</code>. "
       ],
       "tests": [
@@ -3749,7 +3756,7 @@
       "description": [
         "Another way you can represent colors in CSS is by using <code>rgb</code> values.",
         "RGB values look like this: <code>rgb(0, 0, 0)</code> for black and <code>rgb(255, 255, 255)</code> for white.",
-        "Instead of using six hexadecimal digits like you do with hex code, with <code>rbg</code> you specify the brightness of each color with a number between 0 and 255.",
+        "Instead of using six hexadecimal digits like you do with hex code, with <code>rgb</code> you specify the brightness of each color with a number between 0 and 255.",
         "If you do the math, 16 times 16 is 256 total values. So <code>rgb</code>, which starts counting from zero, has the exact same number of possible values as hex code.",
         "Let's replace the hex code in our <code>body</code> element's background color with the RGB value for black: <code>rgb(0, 0, 0)</code>"
       ],

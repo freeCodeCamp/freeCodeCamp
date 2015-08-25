@@ -17,7 +17,7 @@
         "assert(editor.match(/<script>/g), 'Create a <code>script</code> element.')",
         "assert(editor.match(/<\\/script>/g) && editor.match(/<script/g) && editor.match(/<\\/script>/g).length === editor.match(/<script/g).length, 'Make sure your <code>script</code> element has a closing tag.')",
         "assert(editor.match(/\\$\\(document\\)\\.ready\\(function\\(\\)\\s?\\{/g), 'Add <code>$(document).ready(function() {</code> to the beginning of your <code>script</code> element.')",
-        "assert(editor.match(/\\n\\s+?\\}\\);/g), 'Close your <code>$(document).ready(function() {</code> function with <code>});</code>.')"
+        "assert(editor.match(/\\n?\\s+?\\}\\);/g), 'Close your <code>$(document).ready(function() {</code> function with <code>});</code>.')"
       ],
       "challengeSeed": [
         "",
@@ -154,7 +154,7 @@
       "difficulty": 3.04,
       "description": [
         "You can also target elements by their id attributes.",
-        "First target your <code>div</code> element with the id <code>target3</code> by using the <code>$(\"#target3\")</code> selector.",
+        "First target your <code>button</code> element with the id <code>target3</code> by using the <code>$(\"#target3\")</code> selector.",
         "Note that, just like with CSS declarations, you type a <code>#</code> before the id's name.",
         "Then use jQuery's <code>.addClass()</code> function to add the classes <code>animated</code> and <code>fadeOut</code>.",
         "Here's how you'd make the <code>button</code> element with the id <code>target6</code> fade out: <code>$(\"#target6\").addClass(\"animated fadeOut\")</code>."
@@ -263,7 +263,7 @@
       ],
       "tests": [
         "assert(editor.match(/\\$\\(.*button/g), 'Use the <code>$&#40\"button\"&#41</code> selector.')",
-        "assert(editor.match(/\\$\\(.*.btn/g), 'Use the <code>$&#40\".btn\"&#41</code> selector.')",
+        "assert(editor.match(/\\$\\(.*\\.btn/g), 'Use the <code>$&#40\".btn\"&#41</code> selector.')",
         "assert(editor.match(/\\$\\(.*#target1/g), 'Use the <code>$&#40\"#target1\"&#41</code> selector.')",
         "assert(editor.match(/addClass/g) && editor.match(/addClass/g).length > 2, 'Only add one class with each of your three selectors.')",
         "assert($(\"#target1\").hasClass(\"animated\") && $(\"#target1\").hasClass(\"shake\") && $(\"#target1\").hasClass(\"btn-primary\"), 'Your <code>#target1</code> element should have the classes <code>animated</code>&#130; <code>shake</code> and <code>btn-primary</code>.')",
@@ -314,7 +314,7 @@
       ],
       "tests": [
         "assert($(\".btn-default\").length === 0, 'Remove the <code>btn-default</code> class from all of your <code>button</code> elements.')",
-        "assert(editor.match(/btn btn-default/g), 'Only use jQuery to add these classes to the element.')"
+        "assert(editor.match(/btn btn-default/g), 'Only use jQuery to remove this class from the element.')"
       ],
       "challengeSeed": [
         "fccss",
@@ -415,7 +415,7 @@
         "You can also change the non-CSS properties of HTML elements with jQuery. For example, you can disable buttons.",
         "When you disable a button, it will become grayed-out and can no longer be clicked.",
         "jQuery has a function called <code>.prop()</code> that allows you to adjust the properties of elements.",
-        "Here's how you would disable all buttons: <code>$('#button').prop('disabled', true);</code>",
+        "Here's how you would disable all buttons: <code>$(\"button\").prop(\"disabled\", true);</code>",
         "Disable only the <code>target1</code> button."
       ],
       "tests": [
@@ -617,7 +617,7 @@
       "title": "Target the Parent of an Element Using jQuery",
       "difficulty": 3.13,
       "description": [
-        "Every HTML elements has a <code>parent</code> element from which it <code>inherits</code> properties.",
+        "Every HTML element has a <code>parent</code> element from which it <code>inherits</code> properties.",
         "For example, your <code>jQuery Playground</code> <code>h3</code> element has the parent element of <code>&#60;div class=\"container-fluid\"&#62</code>, which itself has the parent <code>body</code>.",
         "jQuery has a function called <code>parent()</code> that allows you to access the parent of whichever element you've selected.",
         "Give the parent of the <code>#target1</code> element background-color of red.",
@@ -671,8 +671,8 @@
       "id": "bad87fee1348bd9aed208826",
       "title": "Target the Children of an Element Using jQuery",
       "difficulty": 3.14,
-      "description": [
-        "Many HTML elements have <code>children</code> elements from which they <code>inherit</code> properties.",
+      "description": [ 
+        "Many HTML elements have <code>children</code> elements from which <code>inherit</code> their properties.",
         "For example, every HTML element is a child of your <code>body</code> element, and your \"jQuery Playground\" <code>h3</code> element is a child of your <code>&#60;div class=\"container-fluid\"&#62</code> element.",
         "jQuery has a function called <code>children()</code> that allows you to access the children of whichever element you've selected.",
         "Give all the children of your <code>#right-well</code> element a color of green.",
@@ -786,7 +786,7 @@
       "difficulty": 3.16,
       "description": [
         "You can also target all the even-numbered elements.",
-        "Here's how you would target all the odd-numbered elements with class <code>target</code> and give them classes: <code>$('.target:odd').addClass('animated shake');</code>",
+        "Here's how you would target all the odd-numbered elements with class <code>target</code> and give them classes: <code>$(\".target:odd\").addClass(\"animated shake\");</code>",
         "Try selecting all the even-numbered elements - that is, what your browser will consider even-numbered elements - and giving them the classes of <code>animated</code> and <code>shake</code>."
       ],
       "tests": [

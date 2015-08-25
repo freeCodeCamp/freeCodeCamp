@@ -1,25 +1,52 @@
-var _ = require('lodash'),
-    async = require('async'),
-    moment = require('moment'),
-    debug = require('debug')('freecc:cntr:userController');
+import _ from 'lodash';
+import async from 'async';
+import moment from 'moment';
+import debugFactory from 'debug';
 
+import { ifNoUser401 } from '../utils/middleware';
+
+const debug = debugFactory('freecc:boot:user');
+const daysBetween = 1.5;
 
 function calcCurrentStreak(cals) {
-  const revCals = cals.slice().reverse();
+  const revCals = cals.concat([Date.now()]).slice().reverse();
   let streakBroken = false;
-  return revCals
+  const lastDayInStreak = revCals
     .reduce((current, cal, index) => {
-      // if streak not borken and diff between this cal and the call after it
-      // is equal to zero
-      // moment.diff will return the days between rounded down
+      const before = revCals[index === 0 ? 0 : index - 1];
       if (
         !streakBroken &&
-        moment(revCals[index === 0 ? 0 : index - 1]).diff(cal, 'days') === 0
+        moment(before).diff(cal, 'days', true) < daysBetween
       ) {
-        return current + 1;
+        return index;
       }
-      return 1;
-    }, 1);
+      streakBroken = true;
+      return current;
+    }, 0);
+
+  const lastTimestamp = revCals[lastDayInStreak];
+  return Math.ceil(moment().diff(lastTimestamp, 'days', true));
+}
+
+function calcLongestStreak(cals) {
+  let tail = cals[0];
+  const longest = cals.reduce((longest, head, index) => {
+    const last = cals[index === 0 ? 0 : index - 1];
+    // is streak broken
+    if (moment(head).diff(last, 'days', true) > daysBetween) {
+      tail = head;
+    }
+    if (dayDiff(longest) < dayDiff([head, tail])) {
+      return [head, tail];
+    }
+    return longest;
+  }, [cals[0], cals[0]]);
+
+  return Math.ceil(dayDiff(longest));
+}
+
+function dayDiff([head, tail]) {
+  return moment(head).diff(tail, 'days', true);
 }
 
 module.exports = function(app) {
@@ -42,8 +69,11 @@ module.exports = function(app) {
   router.get('/email-signup', getEmailSignup);
   router.get('/email-signin', getEmailSignin);
   router.get('/account/api', getAccountAngular);
-  router.post('/account/password', postUpdatePassword);
-  router.post('/account/delete', postDeleteAccount);
+  router.post(
+    '/account/delete',
+    ifNoUser401,
+    postDeleteAccount
+  );
   router.get('/account/unlink/:provider', getOauthUnlink);
   router.get('/account', getAccount);
   // Ensure this is the last route!
@@ -129,15 +159,10 @@ module.exports = function(app) {
               objOrNum :
               objOrNum.timestamp;
           })
-          .map(time => {
-            return moment(time).format('YYYY-MM-DD');
-          });
+          .sort();
 
         user.currentStreak = calcCurrentStreak(cals);
-
-        if (user.currentStreak > user.longestStreak) {
-          user.longestStreak = user.currentStreak;
-        }
+        user.longestStreak = calcLongestStreak(cals);
 
         const data = user
           .progressTimestamps
@@ -145,6 +170,9 @@ module.exports = function(app) {
             return typeof objOrNum === 'number' ?
               objOrNum :
               objOrNum.timestamp;
+          })
+          .filter((timestamp) => {
+            return !!timestamp;
           })
           .reduce((data, timeStamp) => {
             data[(timeStamp / 1000)] = 1;
@@ -155,6 +183,10 @@ module.exports = function(app) {
           return obj.challengeType === 3 || obj.challengeType === 4;
         });
 
+        const bonfires = user.completedChallenges.filter(function(obj) {
+          return obj.challengeType === 5 && (obj.name || '').match(/Bonfire/g);
+        });
+
         res.render('account/show', {
           title: 'Camper ' + user.username + '\'s portfolio',
           username: user.username,
@@ -162,49 +194,22 @@ module.exports = function(app) {
           isMigrationGrandfathered: user.isMigrationGrandfathered,
           isGithubCool: user.isGithubCool,
           location: user.location,
-          githubProfile: user.github,
-          linkedinProfile: user.linkedin,
-          googleProfile: user.google,
-          facebookProfile: user.facebook,
-          twitterHandle: user.twitter,
+          github: user.githubURL,
+          linkedin: user.linkedin,
+          google: user.google,
+          facebook: user.facebook,
+          twitter: user.twitter,
           picture: user.picture,
           progressTimestamps: user.progressTimestamps,
           calender: data,
           challenges: challenges,
+          bonfires: bonfires,
           moment: moment,
           longestStreak: user.longestStreak,
           currentStreak: user.currentStreak
         });
       }
     );
-  }
-
-  function postUpdatePassword(req, res, next) {
-    req.assert('password', 'Password must be at least 4 characters long')
-      .len(4);
-
-    req.assert('confirmPassword', 'Passwords do not match')
-      .equals(req.body.password);
-
-    var errors = req.validationErrors();
-
-    if (errors) {
-      req.flash('errors', errors);
-      return res.redirect('/account');
-    }
-
-    User.findById(req.user.id, function(err, user) {
-      if (err) { return next(err); }
-
-      user.password = req.body.password;
-
-      user.save(function(err) {
-        if (err) { return next(err); }
-
-        req.flash('success', { msg: 'Password has been changed.' });
-        res.redirect('/account');
-      });
-    });
   }
 
   function postDeleteAccount(req, res, next) {

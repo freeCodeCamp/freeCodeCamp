@@ -198,7 +198,7 @@ codeStorage.isAlive = function() {
   return val !== 'null' &&
     val !== 'undefined' &&
     (val && val.length > 0);
-}
+};
 codeStorage.updateStorage = function(){
   if(typeof(Storage) !== undefined) {
     var value = editor.getValue();
@@ -252,14 +252,18 @@ var allSeeds = '';
 
 editorValue = (codeStorage.isAlive())? codeStorage.getEditorValue() : allSeeds;
 
-editor.setValue(editorValue);
+editor.setValue(editorValue.replace((/fccss/gi), '<script>').replace((/fcces/gi), '</script>'));
+editor.refresh();
 
 var resetEditor = function resetEditor() {
-  editor.setValue(allSeeds);
+  editor.setValue(allSeeds.replace((/fccss/gi), '<script>').replace((/fcces/gi), '</script>'));
   updatePreview();
   codeStorage.updateStorage();
 };
 
+
+
+/*
 var challengeSeed = challengeSeed || null;
 var allSeeds = '';
 (function() {
@@ -273,3 +277,4 @@ var allSeeds = '';
     }, 200);
   })();
 })();
+*/

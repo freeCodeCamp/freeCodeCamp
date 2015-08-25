@@ -4,12 +4,13 @@ import debugFactory from 'debug';
 import {
   setProfileFromGithub,
   getFirstImageFromProfile,
+  getUsernameFromProvider,
   getSocialProvider
 } from '../../server/utils/auth';
 
-const debug = debugFactory('freecc:models:userIdent');
-
 const { defaultProfileImage } = require('../utils/constantStrings.json');
+const githubRegex = (/github/i);
+const debug = debugFactory('freecc:models:userIdent');
 
 function createAccessToken(user, ttl, cb) {
   if (arguments.length === 2 && typeof ttl === 'function') {
@@ -158,14 +159,13 @@ export default function(UserIdent) {
         userChanged = true;
       }
 
-      if (!(/github/).test(provider) && profile) {
-        debug('setting social', provider, (/github/g).test(provider));
-        debug('profile username', profile.username);
-        user[provider] = profile.username;
+      if (!githubRegex.test(provider) && profile) {
+        user[provider] = getUsernameFromProvider(provider, profile);
+        userChanged = true;
       }
 
       // if user signed in with github refresh their info
-      if (/github/.test(provider) && profile && profile._json) {
+      if (githubRegex.test(provider) && profile && profile._json) {
         debug("user isn't github cool or username from github is different");
         setProfileFromGithub(user, profile, profile._json);
         userChanged = true;

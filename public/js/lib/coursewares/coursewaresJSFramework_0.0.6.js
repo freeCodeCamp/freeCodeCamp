@@ -388,3 +388,7 @@ var resetEditor = function resetEditor() {
   editor.setValue(allSeeds);
   codeStorage.updateStorage();
 };
+
+$(document).ready(function(){
+    bonfireExecute();
+});
