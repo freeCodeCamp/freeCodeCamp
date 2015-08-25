@@ -532,6 +532,6 @@ $('#submitButton').on('click', function() {
 
 $(document).ready(function(){
     editorValue = (codeStorage.isAlive())? codeStorage.getEditorValue() : allSeeds;
-    myCodeMirror.setValue(editorValue);
+    myCodeMirror.setValue(editorValue.replace(/fccsss/gi, '<script>').replace(/fcces/gi, "</script>"));
     bonfireExecute();
 });
