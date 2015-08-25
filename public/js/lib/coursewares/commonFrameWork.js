@@ -1,4 +1,6 @@
 var editor;
+var blockRender = true;
+var allowCompletetion = false;
 var widgets = [];
 editor = CodeMirror.fromTextArea(document.getElementById("codeEditor"), {
     lineNumbers: true,
@@ -139,7 +141,33 @@ editor.setOption("extraKeys", {
 
 editor.setSize("100%", "auto");
 
-var libraryIncludes = "<script src='//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>" +
+if(challengeType === "0") {
+    var libraryIncludes = "";
+
+    $.getScript('/js/lib/jquery-2.1.1.min.js', function (scriptOne) {
+        $.getScript('/js/lib/chai/chai.js', function (scriptTwo) {
+            $.getScript('/js/lib/chai/chai-jquery.js', function (scriptThree) {
+                $.getScript('//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js', function (scriptFour) {
+                    libraryIncludes = "<script>" + scriptOne + scriptTwo + scriptThree + scriptFour + "</script>" + "<link rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.min.css'/>" +
+                        "<link rel='stylesheet' href='//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css'/>" +
+                        "<link rel='stylesheet' href='//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css'/>" +
+                        "<style>body { padding: 0px 3px 0px 3px; }</style>" +
+                        "<script>var expect = chai.expect; var should = chai.should(); var assert = chai.assert;</script>";
+                    blockRender = false;
+                    editorValue = (codeStorage.isAlive()) ? codeStorage.getEditorValue() : allSeeds;
+                    myCodeMirror.setValue(editorValue);
+                    setTimeout(function () {
+                        $(document).ready(function () {
+                            bonfireExecute();
+                        });
+                    }, 100);
+                });
+            });
+        });
+    });
+}
+
+/*var libraryIncludes = "<script src='//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>" +
     "<script src='/js/lib/chai/chai.js'></script>" +
     "<script src='/js/lib/chai/chai-jquery.js'></script>" +
     "<script src='//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js'></script>" +
@@ -147,7 +175,7 @@ var libraryIncludes = "<script src='//ajax.googleapis.com/ajax/libs/jquery/2.1.3
     "<link rel='stylesheet' href='//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css'/>" +
     "<link rel='stylesheet' href='//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css'/>" +
     "<style>body { padding: 0px 3px 0px 3px; }</style>" +
-    "<script>var expect = chai.expect; var should = chai.should(); var assert = chai.assert;</script>";
+    "<script>var expect = chai.expect; var should = chai.should(); var assert = chai.assert;</script>";*/
 
 
 var editorValueForIFrame;
@@ -466,6 +494,9 @@ var runTests = function(err, data) {
 };
 
 function bonfireExecute() {
+    if(!blockRender){
+
+    }
     goodTests = 0;
     attempts++;
     ga('send', 'event', 'Challenge', 'ran-code', challenge_Name);
@@ -523,10 +554,5 @@ function bonfireExecute() {
 
 $('#submitButton').on('click', function() {
     bonfireExecute();
-});
-
-$(document).ready(function(){
-    editorValue = (codeStorage.isAlive())? codeStorage.getEditorValue() : allSeeds;
-    myCodeMirror.setValue(editorValue);
-    bonfireExecute();
+    allowCompletetion = true;
 });
