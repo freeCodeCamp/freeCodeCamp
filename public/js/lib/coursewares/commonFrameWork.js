@@ -466,6 +466,7 @@ var runTests = function(err, data) {
 };
 
 function bonfireExecute() {
+    goodTests = 0;
     attempts++;
     ga('send', 'event', 'Challenge', 'ran-code', challenge_Name);
     userTests = null;
