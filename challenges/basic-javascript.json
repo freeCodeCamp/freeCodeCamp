@@ -189,7 +189,7 @@
         "Try looking at the <code>secondLetterOfFirstName</code> variable declaration if you get stuck."
       ],
       "tests": [
-        "assert(thirdLetterOfLastName === 'v', 'The third last letter of lastName should be a \"v\"');"
+        "assert(thirdLetterOfLastName === 'v', 'The third letter of lastName should be a \"v\"');"
       ],
       "challengeSeed": [
         "var firstName = \"Ada\";",
