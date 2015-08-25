@@ -150,6 +150,7 @@ var libraryIncludes = "<script src='//ajax.googleapis.com/ajax/libs/jquery/2.1.3
     "<script>var expect = chai.expect; var should = chai.should(); var assert = chai.assert;</script>";
 
 
+
 var editorValueForIFrame;
 var iFrameScript = "<script src='/js/lib/coursewares/iFrameScripts_0.0.4.js'></script>";
 
@@ -160,25 +161,41 @@ editor.on("keyup", function () {
     delay = setTimeout(updatePreview, 300);
 });
 
+function workerError(error){
+    var display = $('.runTimeError');
+    var housing = $('#testSuite');
+    if(display.html() != error){
+        display.remove();
+        housing.prepend("<div class = \"runTimeError\" style= \"font-size: 18px;\"><code>" + error + "</code></div>");
+        display.hide().fadeIn(function(){
+            setTimeout(function(){
+                display.fadeOut(function(){
+                    display.remove();
+                });
+            }, 1000)
+        });
+    }
+}
+
+function scopejQuery(s){
+    return(s.replace(/\$/gi, "j$").replace(/document/gi, "jdocument").replace(/jQuery/gi, "jjQuery"));
+}
+
 function safeHTMLRun(test){
     var previewFrame = document.getElementById('preview');
     var preview = previewFrame.contentDocument || previewFrame.contentWindow.document;
     if(editor.getValue().match(/\<script\>/gi) !== null) {
         var s = editor.getValue().split(/\<\s?script\s?\>/gi)[1].split(/\<\s?\/\s?script\s?\>/gi)[0];
+        s = "var document = \"\"; var $ = function(){return(new function(){this.add=function(){return(null);};this.addBack=function(){return(null);};this.addClass=function(){return(null);};this.after=function(){return(null);};this.ajaxComplete=function(){return(null);};this.ajaxError=function(){return(null);};this.ajaxSend=function(){return(null);};this.ajaxStart=function(){return(null);};this.ajaxStop=function(){return(null);};this.ajaxSuccess=function(){return(null);};this.andSelf=function(){return(null);};this.animate=function(){return(null);};this.append=function(){return(null);};this.appendTo=function(){return(null);};this.attr=function(){return(null);};this.before=function(){return(null);};this.bind=function(){return(null);};this.blur=function(){return(null);};this.callbacksadd=function(){return(null);};this.callbacksdisable=function(){return(null);};this.callbacksdisabled=function(){return(null);};this.callbacksempty=function(){return(null);};this.callbacksfire=function(){return(null);};this.callbacksfired=function(){return(null);};this.callbacksfireWith=function(){return(null);};this.callbackshas=function(){return(null);};this.callbackslock=function(){return(null);};this.callbackslocked=function(){return(null);};this.callbacksremove=function(){return(null);};this.change=function(){return(null);};this.children=function(){return(null);};this.clearQueue=function(){return(null);};this.click=function(){return(null);};this.clone=function(){return(null);};this.closest=function(){return(null);};this.contents=function(){return(null);};this.context=function(){return(null);};this.css=function(){return(null);};this.data=function(){return(null);};this.dblclick=function(){return(null);};this.deferredalways=function(){return(null);};this.deferreddone=function(){return(null);};this.deferredfail=function(){return(null);};this.deferredisRejected=function(){return(null);};this.deferredisResolved=function(){return(null);};this.deferrednotify=function(){return(null);};this.deferrednotifyWith=function(){return(null);};this.deferredpipe=function(){return(null);};this.deferredprogress=function(){return(null);};this.deferredpromise=function(){return(null);};this.deferredreject=function(){return(null);};this.deferredrejectWith=function(){return(null);};this.deferredresolve=function(){return(null);};this.deferredresolveWith=function(){return(null);};this.deferredstate=function(){return(null);};this.deferredthen=function(){return(null);};this.delay=function(){return(null);};this.delegate=function(){return(null);};this.dequeue=function(){return(null);};this.detach=function(){return(null);};this.die=function(){return(null);};this.each=function(){return(null);};this.empty=function(){return(null);};this.end=function(){return(null);};this.eq=function(){return(null);};this.error=function(){return(null);};this.eventcurrentTarget=function(){return(null);};this.eventdata=function(){return(null);};this.eventdelegateTarget=function(){return(null);};this.eventisDefaultPrevented=function(){return(null);};this.eventisImmediatePropagationStopped=function(){return(null);};this.eventisPropagationStopped=function(){return(null);};this.eventmetaKey=function(){return(null);};this.eventnamespace=function(){return(null);};this.eventpageX=function(){return(null);};this.eventpageY=function(){return(null);};this.eventpreventDefault=function(){return(null);};this.eventrelatedTarget=function(){return(null);};this.eventresult=function(){return(null);};this.eventstopImmediatePropagation=function(){return(null);};this.eventstopPropagation=function(){return(null);};this.eventtarget=function(){return(null);};this.eventtimeStamp=function(){return(null);};this.eventtype=function(){return(null);};this.eventwhich=function(){return(null);};this.fadeIn=function(){return(null);};this.fadeOut=function(){return(null);};this.fadeTo=function(){return(null);};this.fadeToggle=function(){return(null);};this.filter=function(){return(null);};this.find=function(){return(null);};this.finish=function(){return(null);};this.first=function(){return(null);};this.focus=function(){return(null);};this.focusin=function(){return(null);};this.focusout=function(){return(null);};this.get=function(){return(null);};this.has=function(){return(null);};this.hasClass=function(){return(null);};this.height=function(){return(null);};this.hide=function(){return(null);};this.hover=function(){return(null);};this.html=function(){return(null);};this.index=function(){return(null);};this.innerHeight=function(){return(null);};this.innerWidth=function(){return(null);};this.insertAfter=function(){return(null);};this.insertBefore=function(){return(null);};this.is=function(){return(null);};this.jQuery=function(){return(null);};this.jquery=function(){return(null);};this.jQueryajax=function(){return(null);};this.jQueryajaxPrefilter=function(){return(null);};this.jQueryajaxSetup=function(){return(null);};this.jQueryajaxTransport=function(){return(null);};this.jQueryboxModel=function(){return(null);};this.jQuerybrowser=function(){return(null);};this.jQueryCallbacks=function(){return(null);};this.jQuerycontains=function(){return(null);};this.jQuerycssHooks=function(){return(null);};this.jQuerycssNumber=function(){return(null);};this.jQuerydata=function(){return(null);};this.jQueryDeferred=function(){return(null);};this.jQuerydequeue=function(){return(null);};this.jQueryeach=function(){return(null);};this.jQueryerror=function(){return(null);};this.jQueryextend=function(){return(null);};this.jQueryfnextend=function(){return(null);};this.jQueryfxinterval=function(){return(null);};this.jQueryfxoff=function(){return(null);};this.jQueryget=function(){return(null);};this.jQuerygetJSON=function(){return(null);};this.jQuerygetScript=function(){return(null);};this.jQueryglobalEval=function(){return(null);};this.jQuerygrep=function(){return(null);};this.jQueryhasData=function(){return(null);};this.jQueryholdReady=function(){return(null);};this.jQueryinArray=function(){return(null);};this.jQueryisArray=function(){return(null);};this.jQueryisEmptyObject=function(){return(null);};this.jQueryisFunction=function(){return(null);};this.jQueryisNumeric=function(){return(null);};this.jQueryisPlainObject=function(){return(null);};this.jQueryisWindow=function(){return(null);};this.jQueryisXMLDoc=function(){return(null);};this.jQuerymakeArray=function(){return(null);};this.jQuerymap=function(){return(null);};this.jQuerymerge=function(){return(null);};this.jQuerynoConflict=function(){return(null);};this.jQuerynoop=function(){return(null);};this.jQuerynow=function(){return(null);};this.jQueryparam=function(){return(null);};this.jQueryparseHTML=function(){return(null);};this.jQueryparseJSON=function(){return(null);};this.jQueryparseXML=function(){return(null);};this.jQuerypost=function(){return(null);};this.jQueryproxy=function(){return(null);};this.jQueryqueue=function(){return(null);};this.jQueryremoveData=function(){return(null);};this.jQuerysub=function(){return(null);};this.jQuerysupport=function(){return(null);};this.jQuerytrim=function(){return(null);};this.jQuerytype=function(){return(null);};this.jQueryunique=function(){return(null);};this.jQuerywhen=function(){return(null);};this.keydown=function(){return(null);};this.keypress=function(){return(null);};this.keyup=function(){return(null);};this.last=function(){return(null);};this.length=function(){return(null);};this.live=function(){return(null);};this.load=function(){return(null);};this.load=function(){return(null);};this.map=function(){return(null);};this.mousedown=function(){return(null);};this.mouseenter=function(){return(null);};this.mouseleave=function(){return(null);};this.mousemove=function(){return(null);};this.mouseout=function(){return(null);};this.mouseover=function(){return(null);};this.mouseup=function(){return(null);};this.next=function(){return(null);};this.nextAll=function(){return(null);};this.nextUntil=function(){return(null);};this.not=function(){return(null);};this.off=function(){return(null);};this.offset=function(){return(null);};this.offsetParent=function(){return(null);};this.on=function(){return(null);};this.one=function(){return(null);};this.outerHeight=function(){return(null);};this.outerWidth=function(){return(null);};this.parent=function(){return(null);};this.parents=function(){return(null);};this.parentsUntil=function(){return(null);};this.position=function(){return(null);};this.prepend=function(){return(null);};this.prependTo=function(){return(null);};this.prev=function(){return(null);};this.prevAll=function(){return(null);};this.prevUntil=function(){return(null);};this.promise=function(){return(null);};this.prop=function(){return(null);};this.pushStack=function(){return(null);};this.queue=function(){return(null);};this.ready=function(){return(null);};this.remove=function(){return(null);};this.removeAttr=function(){return(null);};this.removeClass=function(){return(null);};this.removeData=function(){return(null);};this.removeProp=function(){return(null);};this.replaceAll=function(){return(null);};this.replaceWith=function(){return(null);};this.resize=function(){return(null);};this.scroll=function(){return(null);};this.scrollLeft=function(){return(null);};this.scrollTop=function(){return(null);};this.select=function(){return(null);};this.selector=function(){return(null);};this.serialize=function(){return(null);};this.serializeArray=function(){return(null);};this.show=function(){return(null);};this.siblings=function(){return(null);};this.size=function(){return(null);};this.slice=function(){return(null);};this.slideDown=function(){return(null);};this.slideToggle=function(){return(null);};this.slideUp=function(){return(null);};this.stop=function(){return(null);};this.submit=function(){return(null);};this.text=function(){return(null);};this.toArray=function(){return(null);};this.toggle=function(){return(null);};this.toggle=function(){return(null);};this.toggleClass=function(){return(null);};this.trigger=function(){return(null);};this.triggerHandler=function(){return(null);};this.unbind=function(){return(null);};this.undelegate=function(){return(null);};this.unload=function(){return(null);};this.unwrap=function(){return(null);};this.val=function(){return(null);};this.width=function(){return(null);};this.wrap=function(){return(null);};this.wrapAll=function(){return(null);};this.wrapInner=function(){return(null);}});};"+s;
         submit(
-            s, function (cls, message) {
+            scopejQuery(s), function (cls, message) {
                 if (cls) {
                     console.log(message.error);
-                    $('#mainEditorPanel').html("<div class = \"runTimeError\">" + message.error + "</div>" + $('#mainEditorPanel').html());
-                    $('.runTimeError').hide().fadeIn(function(){
-                        setTimeout(function(){
-                            $(this).remove();
-                        }, 3000)
-                    });
+                    workerError(message.error);
                 } else {
                     if(test){
                         preview.open();
-                        preview.write(libraryIncludes + editor.getValue() +iFrameScript);
+                        preview.write(libraryIncludes + editor.getValue() + iFrameScript);
                         codeStorage.updateStorage();
                         preview.close();
                     }
@@ -191,6 +208,7 @@ function safeHTMLRun(test){
                 }
             }
         );
+
     }
     else {
         if(test){
@@ -225,7 +243,9 @@ if(typeof prodOrDev !== 'undefined') {
                 editor.setValue(editor.getValue() + "-->");
                 editorValueForIFrame = editorValueForIFrame + "-->";
             }
-            safeHTMLRun(false);
+            if(!editor.getValue().match(/\$\(\$\)/gi) ) {
+                safeHTMLRun(false);
+            }
         }
 
         setTimeout(updatePreview, 300);
@@ -447,28 +467,15 @@ var runTests = function(err, data) {
             allTestsPassed = false;
             showCompletion();
         }
-        else{
-            if(challengeType === "0"){
-                $('#testSuite').empty();
-
-                editorValueForIFrame = editor.getValue();
-                goodTests = 0;
-                var previewFrame = document.getElementById('preview');
-                var preview = previewFrame.contentDocument || previewFrame.contentWindow.document;
-                preview.open();
-                preview.write(libraryIncludes + editor.getValue() + "<script src = \"/js/lib/coursewares/iFrameScripts_0.0.4.js\"></script>");
-                codeStorage.updateStorage();
-                preview.close();
-            }
-        }
-
     }
 };
 
 function bonfireExecute() {
+    goodTests = 0;
     attempts++;
     ga('send', 'event', 'Challenge', 'ran-code', challenge_Name);
     userTests = null;
+    $('#testSuite').empty();
     if(challengeType !== "0"){
         var userJavaScript = myCodeMirror.getValue();
         var failedCommentTest = false;
@@ -482,23 +489,30 @@ function bonfireExecute() {
         userJavaScript = scrapeTests(userJavaScript);
         // simple fix in case the user forgets to invoke their function
 
-        submit(userJavaScript, function (cls, message) {
-            if (failedCommentTest) {
-                myCodeMirror.setValue(myCodeMirror.getValue() + "*/");
-                console.log('Caught Unfinished Comment');
-                codeOutput.setValue("Unfinished mulit-line comment");
-                failedCommentTest = false;
+        if(userJavaScript.match(/function/gi)){
+            if(userJavaScript.match(/function\s+?\(|function\s+\w+\s*?\(/gi)){
+                submit(userJavaScript, function (cls, message) {
+                    if (failedCommentTest) {
+                        myCodeMirror.setValue(myCodeMirror.getValue() + "*/");
+                        console.log('Caught Unfinished Comment');
+                        codeOutput.setValue("Unfinished mulit-line comment");
+                        failedCommentTest = false;
+                    }
+                    else if (cls) {
+                        codeOutput.setValue(message.error);
+                        runTests('Error', null);
+                    } else {
+                        codeOutput.setValue(message.output);
+                        codeOutput.setValue(codeOutput.getValue().replace(/\\\"/gi, ''));
+                        message.input = removeLogs(message.input);
+                        runTests(null, message);
+                    }
+                });
             }
-            else if (cls) {
-                codeOutput.setValue(message.error);
-                runTests('Error', null);
-            } else {
-                codeOutput.setValue(message.output);
-                codeOutput.setValue(codeOutput.getValue().replace(/\\\"/gi, ''));
-                message.input = removeLogs(message.input);
-                runTests(null, message);
+            else{
+                codeOutput.setValue("Unsafe or Unfinished function declaration");
             }
-        });
+        }
     }
     else {
         editorValueForIFrame = editor.getValue();
@@ -506,7 +520,9 @@ function bonfireExecute() {
             editor.setValue(editor.getValue() + "-->");
             editorValueForIFrame = editorValueForIFrame + "-->";
         }
-        safeHTMLRun(true);
+        if(!editor.getValue().match(/\$\(\$\)/gi) && challengeType === "0") {
+            safeHTMLRun(true);
+        }
     }
 }
 
