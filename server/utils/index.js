@@ -1,12 +1,5 @@
-var path = require('path'),
-    // debug = require('debug')('freecc:cntr:resources'),
-    cheerio = require('cheerio'),
+var cheerio = require('cheerio'),
     request = require('request'),
-    R = require('ramda'),
-    _ = require('lodash'),
-    fs = require('fs'),
-
-
     MDNlinks = require('../../seed/bonfireMDNlinks'),
     resources = require('./resources.json'),
     nonprofits = require('../../seed/nonprofits.json');
@@ -14,33 +7,7 @@ var path = require('path'),
 /**
  * Cached values
  */
-var allNonprofitNames,
-  challengeMap, challengeMapForDisplay, challengeMapWithIds,
-  challengeMapWithNames, allChallengeIds,
-  challengeMapWithDashedNames;
-
-(function() {
-  if (!challengeMap) {
-    var localChallengeMap = {};
-    var files = fs.readdirSync(
-      path.join(__dirname, '../../seed/challenges')
-    );
-    var keyCounter = 0;
-    files = files.map(function(file) {
-      return require(
-        path.join(__dirname, '../../seed/challenges/' + file)
-      );
-    });
-    files = files.sort(function(a, b) {
-      return a.order - b.order;
-    });
-    files.forEach(function(file) {
-      localChallengeMap[keyCounter++] = file;
-    });
-    challengeMap = _.cloneDeep(localChallengeMap);
-  }
-})();
-
+var allNonprofitNames;
 
 module.exports = {
   dasherize: function dasherize(name) {
@@ -58,75 +25,6 @@ module.exports = {
       .replace(/[^a-zA-Z\d\s]/g, '')
       .trim();
   },
-
-  getChallengeMapForDisplay: function() {
-    if (!challengeMapForDisplay) {
-      challengeMapForDisplay = {};
-      Object.keys(challengeMap).forEach(function(key) {
-        challengeMapForDisplay[key] = {
-          name: challengeMap[key].title,
-          dashedName: challengeMap[key].title.replace(/\s/g, '-'),
-          challenges: challengeMap[key].challenges,
-          completedCount: challengeMap[key].challenges
-        };
-      });
-    }
-    return challengeMapForDisplay;
-  },
-
-  getChallengeMapWithIds: function() {
-    if (!challengeMapWithIds) {
-      challengeMapWithIds = {};
-      Object.keys(challengeMap).forEach(function(key) {
-        var onlyIds = challengeMap[key].challenges.map(function(elem) {
-          return elem.id;
-        });
-        challengeMapWithIds[key] = onlyIds;
-      });
-    }
-    return challengeMapWithIds;
-  },
-
-  allChallengeIds: function() {
-
-    if (!allChallengeIds) {
-      allChallengeIds = [];
-      Object.keys(this.getChallengeMapWithIds()).forEach(function(key) {
-        allChallengeIds.push(challengeMapWithIds[key]);
-      });
-      allChallengeIds = R.flatten(allChallengeIds);
-    }
-    return allChallengeIds;
-  },
-
-  getChallengeMapWithNames: function() {
-    if (!challengeMapWithNames) {
-      challengeMapWithNames = {};
-      Object.keys(challengeMap).
-        forEach(function(key) {
-          var onlyNames = challengeMap[key].challenges.map(function(elem) {
-            return elem.name;
-          });
-          challengeMapWithNames[key] = onlyNames;
-        });
-    }
-    return challengeMapWithNames;
-  },
-
-  getChallengeMapWithDashedNames: function() {
-    if (!challengeMapWithDashedNames) {
-      challengeMapWithDashedNames = {};
-       Object.keys(challengeMap).
-        forEach(function(key) {
-          var onlyNames = challengeMap[key].challenges.map(function(elem) {
-            return elem.dashedName;
-          });
-          challengeMapWithDashedNames[key] = onlyNames;
-        });
-    }
-    return challengeMapWithDashedNames;
-  },
-
 
   randomPhrase: function() {
     return resources.phrases[
