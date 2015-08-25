@@ -564,5 +564,12 @@ $('#submitButton').on('click', function() {
 $(document).ready(function(){
     editorValue = (codeStorage.isAlive())? codeStorage.getEditorValue() : allSeeds;
     myCodeMirror.setValue(editorValue.replace(/fccss/gi, '<script>').replace(/fcces/gi, "</script>"));
-    bonfireExecute();
+    if(typeof $('#preview').html !== 'undefined'){
+        $('#preview').load(function(){
+            bonfireExecute();
+        });
+    }
+    else{
+        bonfireExecute();
+    }
 });
