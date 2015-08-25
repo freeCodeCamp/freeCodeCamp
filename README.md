@@ -2,6 +2,8 @@
 
 [![Throughput Graph](https://graphs.waffle.io/freecodecamp/freecodecamp/throughput.svg)](https://waffle.io/freecodecamp/freecodecamp/metrics)
 
+[![ProjectTalk](http://www.projecttalk.io/images/gh_badge-3e578a9f437f841de7446bab9a49d103.svg?vsn=d)]
+(http://www.projecttalk.io/boards/FreeCodeCamp%2FFreeCodeCamp?utm_campaign=gh-badge&utm_medium=badge&utm_source=github)
 [![Join the chat at https://gitter.im/freecodecamp/freecodecamp](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/freecodecamp/freecodecamp?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 Welcome to Free Code Camp's open source codebase!
@@ -15,7 +17,7 @@ Our campers (students) start by working through our free, self-paced, browser-ba
 
 80% of our campers are over 25, and nearly a fifth of our campers are women.
 
-This code is running live at [FreeCodeCamp.com](http://www.FreeCodeCamp.com). We also have [Gitter](https://gitter.im/FreeCodeCamp/FreeCodeCamp), a [blog](http://blog.freecodecamp.com), and even a [Twitch.tv channel](http://twitch.tv/freecodecamp).
+This code is running live at [FreeCodeCamp.com](http://www.FreeCodeCamp.com). We also have a [ProjectTalk messageboard](http://www.projecttalk.io/boards/FreeCodeCamp%2FFreeCodeCamp), [Gitter](https://gitter.im/FreeCodeCamp/FreeCodeCamp), a [blog](http://blog.freecodecamp.com), and even a [Twitch.tv channel](http://twitch.tv/freecodecamp).
 
 [Join our community here](http://www.freecodecamp.com/signin).
 
@@ -32,7 +34,7 @@ Contributing
 We welcome pull requests from Free Code Camp campers (our students) and seasoned JavaScript developers alike! Follow these steps to contribute:
 
 1.  Check our [public Waffle Board](https://waffle.io/freecodecamp/freecodecamp).
-2.  Pick an issue that nobody has claimed and start working on it. If your issue isn't on the board, open an issue. If you think you can fix it yourself, start working on it. Feel free to ask for help in our [Gitter](https://gitter.im/FreeCodeCamp/FreeCodeCamp).
+2.  Pick an issue that nobody has claimed and start working on it. If your issue isn't on the board, open an issue. If you think you can fix it yourself, start working on it. Feel free to ask for help in our [messageboard](http://www.projecttalk.io/boards/FreeCodeCamp%2FFreeCodeCamp) or [Gitter](https://gitter.im/FreeCodeCamp/FreeCodeCamp).
 3.  Fork the project ([Need help with forking a project?](https://help.github.com/articles/fork-a-repo/)). You'll do all of your work on your forked copy.
 4.  Create a branch specific to the issue or feature you are working on. Push your work to that branch. ([Need help with branching?](https://github.com/Kunena/Kunena-Forum/wiki/Create-a-new-branch-with-git-and-manage-branches))
 5.  Name the branch something like  `user-xxx` where user is your username and xxx is the issue number you are addressing.
