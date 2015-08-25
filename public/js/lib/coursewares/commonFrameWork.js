@@ -551,6 +551,10 @@ function bonfireExecute() {
             workerError("Unsafe $($)");
         }
     }
+    setTimeout(function() {
+      var $marginFix = $('.innerMarginFix');
+      $marginFix.css('min-height', $marginFix.height());
+    }, 500);
 }
 
 $('#submitButton').on('click', function() {
