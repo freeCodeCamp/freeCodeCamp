@@ -718,7 +718,7 @@
         "<code>};</code>",
         "</code>",
         "Objects are useful for storing data in a structured way, and can represents real world objects, like a cats.",
-        "Let's try to make an Object that represents a dog called myDog!"
+        "Let's try to make an Object that represents a dog called myDog which contains the properties 'name' (String), 'legs' (Number), 'tails' (Number) and 'friends' (Array)!"
       ],
       "tests":[
         "assert((function(z){if(z.hasOwnProperty(\"name\") && z.name !== undefined && typeof(z.name) === \"string\"){return(true);}else{return(false);}})(myDog), 'myDog should contain the property name and it should be a string');",
