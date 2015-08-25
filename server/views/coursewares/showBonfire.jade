@@ -123,7 +123,9 @@ block content
                     form.code
                         .form-group.codeMirrorView
                             textarea#codeEditor(autofocus=true, style='display: none;')
-                    script(src='/js/lib/coursewares/coursewaresJSFramework_0.0.6.js')
+                    script(src='/js/lib/coursewares/commonFrameWork.js')
+                    script.
+                        editor.setOption("mode", "javascript");
 
     #complete-courseware-dialog.modal(tabindex='-1')
         .modal-dialog.animated.zoomIn.fast-animation
