@@ -363,7 +363,7 @@
         "Select <code>target1</code> and change its color to red.",
         "jQuery has a function called <code>.css()</code> that allows you to change the CSS of an element.",
         "Here's how we would change its color to blue: <code>$(\"#target1\").css(\"color\", \"blue\");</code>",
-        "This is slightly different from a normal CSS declaration, because the CSS attribute and its value are in quotes, and separated with a comma instead of a colon."
+        "This is slightly different from a normal CSS declaration, because the CSS property and its value are in quotes, and separated with a comma instead of a colon."
       ],
       "tests": [
         "assert($(\"#target1\").css(\"color\") === 'rgb(255, 0, 0)', 'Your <code>target1</code> element should have red text.')",
