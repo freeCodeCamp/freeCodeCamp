@@ -554,7 +554,7 @@ function bonfireExecute() {
     setTimeout(function() {
       var $marginFix = $('.innerMarginFix');
       $marginFix.css('min-height', $marginFix.height());
-    }, 500);
+    }, 1000);
 }
 
 $('#submitButton').on('click', function() {
