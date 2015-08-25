@@ -246,6 +246,9 @@ if(typeof prodOrDev !== 'undefined') {
             if(!editor.getValue().match(/\$\s*?\(\s*?\$\s*?\)/gi)){
                 safeHTMLRun(false);
             }
+            else{
+                workerError("Unsafe $($)");
+            }
         }
 
         setTimeout(updatePreview, 300);
@@ -522,6 +525,9 @@ function bonfireExecute() {
         }
         if(!editor.getValue().match(/\$\s*?\(\s*?\$\s*?\)/gi) && challengeType === "0") {
             safeHTMLRun(true);
+        }
+        else{
+            workerError("Unsafe $($)");
         }
     }
 }
