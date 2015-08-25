@@ -17,7 +17,7 @@
         "assert(editor.match(/<script>/g), 'Create a <code>script</code> element.')",
         "assert(editor.match(/<\\/script>/g) && editor.match(/<script/g) && editor.match(/<\\/script>/g).length === editor.match(/<script/g).length, 'Make sure your <code>script</code> element has a closing tag.')",
         "assert(editor.match(/\\$\\(document\\)\\.ready\\(function\\(\\)\\s?\\{/g), 'Add <code>$(document).ready(function() {</code> to the beginning of your <code>script</code> element.')",
-        "assert(editor.match(/\\n\\s+?\\}\\);/g), 'Close your <code>$(document).ready(function() {</code> function with <code>});</code>.')"
+        "assert(editor.match(/\\n?\\s+?\\}\\);/g), 'Close your <code>$(document).ready(function() {</code> function with <code>});</code>.')"
       ],
       "challengeSeed": [
         "",
