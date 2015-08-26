@@ -249,7 +249,7 @@
         "In order to get the last letter of a string, you can subtract one from the string's length.",
         "For example, you can get the value of the third-to-last letter of the <code>var firstName = \"Charles\"</code> string by using <code>firstName[firstName.length - 3]</code>.",
         "Use <code>bracket notation</code> to find the second-to-last character in the <code>lastName</code> string.",
-        "Try looking at the <code>lastLetterOfLastName</code> variable declaration if you get stuck."
+        "Try looking at the <code>thirdToLastLetterOfFirstName</code> variable declaration if you get stuck."
       ],
       "tests": [
         "assert(secondToLastLetterOfLastName === 'c', 'secondToLastLetterOfLastName should be \"c\".');",
