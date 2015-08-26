@@ -1,3 +1,4 @@
+var isInitRun = false;
 var editor;
 var widgets = [];
 editor = CodeMirror.fromTextArea(document.getElementById("codeEditor"), {
@@ -284,6 +285,9 @@ var testSuccess = function() {
 };
 
 function showCompletion() {
+    if (isInitRun) {
+      return;
+    }
     var time = Math.floor(Date.now()) - started;
     ga('send', 'event', 'Challenge', 'solved', challenge_Name + ', Time: ' + time +
         ', Attempts: ' + attempts);
@@ -475,7 +479,7 @@ var runTests = function(err, data) {
     }
 };
 
-function bonfireExecute() {
+function bonfireExecute(isInitRun) {
     goodTests = 0;
     attempts++;
     ga('send', 'event', 'Challenge', 'ran-code', challenge_Name);
@@ -562,14 +566,18 @@ $('#submitButton').on('click', function() {
 });
 
 $(document).ready(function(){
+    isInitRun = true;
     editorValue = (codeStorage.isAlive())? codeStorage.getEditorValue() : allSeeds;
     myCodeMirror.setValue(editorValue.replace(/fccss/gi, '<script>').replace(/fcces/gi, "</script>"));
     if(typeof $('#preview').html !== 'undefined'){
         $('#preview').load(function(){
-            bonfireExecute();
+            bonfireExecute(false);
         });
     }
     else{
-        bonfireExecute();
+        bonfireExecute(false);
     }
+    setTimeout(function() {
+      isInitRun = false;
+    }, 1000);
 });
