@@ -133,7 +133,7 @@ editor.setOption("extraKeys", {
         }
     },
     "Ctrl-Enter": function() {
-        bonfireExecute();
+        bonfireExecute(true);
         return false;
     }
 });
@@ -480,7 +480,7 @@ var runTests = function(err, data) {
     }
 };
 
-function bonfireExecute() {
+function bonfireExecute(test) {
     goodTests = 0;
     attempts++;
     ga('send', 'event', 'Challenge', 'ran-code', challenge_Name);
@@ -501,6 +501,7 @@ function bonfireExecute() {
 
         if(userJavaScript.match(/function/gi)){
             if(userJavaScript.match(/function\s*?\(|function\s+\w+\s*?\(/gi)){
+
                 submit(userJavaScript, function (cls, message) {
                     if (failedCommentTest) {
                         myCodeMirror.setValue(myCodeMirror.getValue() + "*/");
@@ -510,12 +511,14 @@ function bonfireExecute() {
                     }
                     else if (cls) {
                         codeOutput.setValue(message.error);
-                        runTests('Error', null);
+                        if(test)
+                            runTests('Error', null);
                     } else {
                         codeOutput.setValue(message.output);
                         codeOutput.setValue(codeOutput.getValue().replace(/\\\"/gi, ''));
                         message.input = removeLogs(message.input);
-                        runTests(null, message);
+                        if(test)
+                            runTests(null, message);
                     }
                 });
             }
@@ -533,12 +536,14 @@ function bonfireExecute() {
                 }
                 else if (cls) {
                     codeOutput.setValue(message.error);
-                    runTests('Error', null);
+                    if(test)
+                        runTests('Error', null);
                 } else {
                     codeOutput.setValue(message.output);
                     codeOutput.setValue(codeOutput.getValue().replace(/\\\"/gi, ''));
                     message.input = removeLogs(message.input);
-                    runTests(null, message);
+                    if(test)
+                        runTests(null, message);
                 }
             });
         }
@@ -550,7 +555,7 @@ function bonfireExecute() {
             editorValueForIFrame = editorValueForIFrame + "-->";
         }
         if(!editor.getValue().match(/\$\s*?\(\s*?\$\s*?\)/gi) && challengeType === "0") {
-            safeHTMLRun(true);
+            safeHTMLRun(test);
         }
         else{
             workerError("Unsafe $($)");
@@ -563,7 +568,7 @@ function bonfireExecute() {
 }
 
 $('#submitButton').on('click', function() {
-    bonfireExecute();
+    bonfireExecute(true);
 });
 
 $(document).ready(function(){
@@ -573,9 +578,9 @@ $(document).ready(function(){
     myCodeMirror.setValue(editorValue.replace(/fccss/gi, '<script>').replace(/fcces/gi, "</script>"));
     if(typeof $preview.html() !== 'undefined') {
         $preview.load(function(){
-          bonfireExecute();
+          bonfireExecute(false);
         });
     } else{
-        bonfireExecute();
+        bonfireExecute(false);
     }
 });
