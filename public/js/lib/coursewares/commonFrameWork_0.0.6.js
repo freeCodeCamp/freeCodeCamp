@@ -1,4 +1,5 @@
 var isInitRun = false;
+var initPreview = true;
 var editor;
 var widgets = [];
 editor = CodeMirror.fromTextArea(document.getElementById("codeEditor"), {
@@ -10,8 +11,7 @@ editor = CodeMirror.fromTextArea(document.getElementById("codeEditor"), {
     autoCloseBrackets: true,
     scrollbarStyle: 'null',
     lineWrapping: true,
-    gutters: ["CodeMirror-lint-markers"],
-    onKeyEvent: doLinting
+    gutters: ["CodeMirror-lint-markers"]
 });
 
 var myCodeMirror = editor;
@@ -82,29 +82,6 @@ var allSeeds = '';
         allSeeds += elem + '\n';
     });
 })();
-
-function doLinting() {
-    editor.operation(function() {
-        for (var i = 0; i < widgets.length; ++i)
-            editor.removeLineWidget(widgets[i]);
-        widgets.length = 0;
-        JSHINT(editor.getValue());
-        for (var i = 0; i < JSHINT.errors.length; ++i) {
-            var err = JSHINT.errors[i];
-            if (!err) continue;
-            var msg = document.createElement("div");
-            var icon = msg.appendChild(document.createElement("span"));
-            icon.innerHTML = "!!";
-            icon.className = "lint-error-icon";
-            msg.appendChild(document.createTextNode(err.reason));
-            msg.className = "lint-error";
-            widgets.push(editor.addLineWidget(err.line - 1, msg, {
-                coverGutter: false,
-                noHScroll: true
-            }));
-        }
-    });
-}
 
 /*var defaultKeymap = {
  'Cmd-E': 'emmet.expand_abbreviation',
@@ -323,7 +300,8 @@ function showCompletion() {
 
 var resetEditor = function resetEditor() {
     editor.setValue(allSeeds.replace((/fccss/gi), '<script>').replace((/fcces/gi), '</script>'));
-    updatePreview();
+    $('#testSuite').empty();
+    bonfireExecute(true);
     codeStorage.updateStorage();
 };
 
@@ -485,6 +463,7 @@ var runTests = function(err, data) {
 };
 
 function bonfireExecute(test) {
+    initPreview = false;
     goodTests = 0;
     attempts++;
     ga('send', 'event', 'Challenge', 'ran-code', challenge_Name);
@@ -510,7 +489,7 @@ function bonfireExecute(test) {
                     if (failedCommentTest) {
                         myCodeMirror.setValue(myCodeMirror.getValue() + "*/");
                         console.log('Caught Unfinished Comment');
-                        codeOutput.setValue("Unfinished mulit-line comment");
+                        codeOutput.setValue("Unfinished multi-line comment");
                         failedCommentTest = false;
                     }
                     else if (cls) {
@@ -580,9 +559,11 @@ $(document).ready(function(){
     isInitRun = true;
     editorValue = (codeStorage.isAlive())? codeStorage.getEditorValue() : allSeeds;
     myCodeMirror.setValue(editorValue.replace(/fccss/gi, '<script>').replace(/fcces/gi, "</script>"));
-    if(typeof $preview.html() !== 'undefined' && isInitRun) {
+    if (typeof $preview.html() !== 'undefined') {
         $preview.load(function(){
-          bonfireExecute(true);
+          if (initPreview) {
+            bonfireExecute(true);
+          }
         });
     } else{
         bonfireExecute(true);
