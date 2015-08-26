@@ -276,7 +276,8 @@ function showCompletion() {
 
       $('#submit-challenge')
         .attr('disabled', 'true')
-        .addClass('disabled');
+        .removeClass('btn-primary')
+        .addClass('btn-warning disabled');
 
       e.preventDefault();
       $.post(
