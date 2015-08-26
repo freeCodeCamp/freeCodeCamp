@@ -294,27 +294,26 @@ function showCompletion() {
         ', Attempts: ' + attempts);
     var bonfireSolution = myCodeMirror.getValue();
     var didCompleteWith = $('#completed-with').val() || null;
-    $.post(
+    $('#complete-courseware-dialog').modal('show');
+    $('#submit-challenge').click(function(e) {
+      e.preventDefault();
+      $.post(
         '/completed-bonfire/', {
-            challengeInfo: {
-                challengeId: challenge_Id,
-                challengeName: challenge_Name,
-                completedWith: didCompleteWith,
-                challengeType: challengeType,
-                solution: bonfireSolution
-            }
+          challengeInfo: {
+            challengeId: challenge_Id,
+            challengeName: challenge_Name,
+            completedWith: didCompleteWith,
+            challengeType: challengeType,
+            solution: bonfireSolution
+          }
         },
         function(res) {
-            if (res) {
-                $('#complete-courseware-dialog').modal('show');
-                $('#complete-courseware-dialog').keydown(function(e) {
-                    if (e.ctrlKey && e.keyCode == 13) {
-                        $('#next-courseware-button').click();
-                    }
-                });
-            }
+          if (res) {
+            window.location = '/challenges/next-challenge';
+          }
         }
-    );
+      );
+    });
 }
 
 var resetEditor = function resetEditor() {

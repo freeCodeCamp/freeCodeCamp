@@ -72,7 +72,7 @@ block content
                     form.code
                         .codeMirrorView
                             textarea#codeEditor(autofocus=true, style='display: none;')
-                            script(src = '/js/lib/coursewares/commonFrameWork_0.0.5.js')
+                            script(src = '/js/lib/coursewares/commonFrameWork_0.0.6.js')
                             script.
                                 editor.setOption("mode", "javascript");
     #complete-courseware-dialog.modal(tabindex='-1')
@@ -85,7 +85,7 @@ block content
                         .animated.zoomInDown.delay-half
                             span.completion-icon.ion-checkmark-circled.text-primary
                     if (user)
-                        a.animated.fadeIn.btn.btn-lg.btn-primary.btn-block#next-courseware-button(name='_csrf', value=_csrf) Go to my next challenge (ctrl + enter)
+                        #submit-challenge.animated.fadeIn.btn.btn-lg.btn-primary.btn-block Submit
                         if (user.progressTimestamps.length > 2)
                             a.animated.fadeIn.btn.btn-lg.btn-block.btn-twitter(target="_blank", href="https://twitter.com/intent/tweet?text=I%20just%20#{verb}%20%40FreeCodeCamp%20#{name}&url=http%3A%2F%2Ffreecodecamp.com/challenges/#{dashedName}&hashtags=LearnToCode, JavaScript")
                                 i.fa.fa-twitter &thinsp;
