@@ -58,7 +58,8 @@
         "This is important because without your <code>document ready function</code>, your code may run before your HTML is rendered, which would cause bugs.",
         "Now let's write our first jQuery statement. All jQuery functions start with a <code>$</code>, usually referred to as a <code>dollar sign operator</code>, or simply as <code>bling</code>.",
         "jQuery often selects an HTML element with a <code>selector</code>, then does something to that element.",
-        "For example, let's make all of your <code>button</code> elements bounce. Just add this code inside your <code>document ready function</code>: <code>$(\"button\").addClass(\"animated bounce\")</code>."
+        "For example, let's make all of your <code>button</code> elements bounce. Just add this code inside your <code>document ready function</code>: <code>$(\"button\").addClass(\"animated bounce\")</code>.",
+        "Note that we've already included both the jQuery library and the Animate.css library in your code editor. So you are using jQuery to apply the Animate.css <code>bounce</code> class to your <code>button</code> elements."
       ],
       "tests": [
         "assert($(\"button\").hasClass(\"animated\") && $(\"button\").hasClass(\"bounce\"), 'Use the jQuery <code>addClass&#40&#41</code> function to give the classes <code>animated</code> and <code>bounce</code> to your <code>button</code> elements.')",
@@ -671,7 +672,7 @@
       "id": "bad87fee1348bd9aed208826",
       "title": "Target the Children of an Element Using jQuery",
       "difficulty": 3.14,
-      "description": [ 
+      "description": [
         "Many HTML elements have <code>children</code> elements from which <code>inherit</code> their properties.",
         "For example, every HTML element is a child of your <code>body</code> element, and your \"jQuery Playground\" <code>h3</code> element is a child of your <code>&#60;div class=\"container-fluid\"&#62</code> element.",
         "jQuery has a function called <code>children()</code> that allows you to access the children of whichever element you've selected.",
