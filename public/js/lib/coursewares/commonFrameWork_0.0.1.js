@@ -286,6 +286,7 @@ var testSuccess = function() {
 
 function showCompletion() {
     if (isInitRun) {
+      isInitRun = false;
       return;
     }
     var time = Math.floor(Date.now()) - started;
@@ -479,7 +480,7 @@ var runTests = function(err, data) {
     }
 };
 
-function bonfireExecute(isInitRun) {
+function bonfireExecute() {
     goodTests = 0;
     attempts++;
     ga('send', 'event', 'Challenge', 'ran-code', challenge_Name);
@@ -566,18 +567,15 @@ $('#submitButton').on('click', function() {
 });
 
 $(document).ready(function(){
+    var $preview = $('#preview');
     isInitRun = true;
     editorValue = (codeStorage.isAlive())? codeStorage.getEditorValue() : allSeeds;
     myCodeMirror.setValue(editorValue.replace(/fccss/gi, '<script>').replace(/fcces/gi, "</script>"));
-    if(typeof $('#preview').html !== 'undefined'){
-        $('#preview').load(function(){
-            bonfireExecute(false);
+    if(typeof $preview.html() !== 'undefined') {
+        $preview.load(function(){
+          bonfireExecute();
         });
+    } else{
+        bonfireExecute();
     }
-    else{
-        bonfireExecute(false);
-    }
-    setTimeout(function() {
-      isInitRun = false;
-    }, 1000);
 });
