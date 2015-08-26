@@ -576,11 +576,11 @@ $(document).ready(function(){
     isInitRun = true;
     editorValue = (codeStorage.isAlive())? codeStorage.getEditorValue() : allSeeds;
     myCodeMirror.setValue(editorValue.replace(/fccss/gi, '<script>').replace(/fcces/gi, "</script>"));
-    if(typeof $preview.html() !== 'undefined') {
+    if(typeof $preview.html() !== 'undefined' && isInitRun) {
         $preview.load(function(){
-          bonfireExecute(false);
+          bonfireExecute(true);
         });
     } else{
-        bonfireExecute(false);
+        bonfireExecute(true);
     }
 });
