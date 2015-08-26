@@ -1062,11 +1062,11 @@
         "Here's a diagram of an <code>a</code> element. In this case, the <code>a</code> element is used in the middle of a paragraph element, which means the link will appear in the middle of a sentence.",
         "<img class=\"img-responsive\" alt=\"a diagram of how anchor tags are composed with the same text as on the following line\" src=\"http://i.imgur.com/hviuZwe.png\">",
         "Here's an example: <code>&#60;p&#62;Here's a &#60;a href=\"http://freecodecamp.com\"&#62; link to Free Code Camp&#60;/a&#62; for you to follow.&#60;/p&#62;</code>.",
-        "Create an <code>a</code> element that links to <code>http://catphotoapp.com</code> and has \"cat photos\" as its <code>anchor text</code>."
+        "Create an <code>a</code> element that links to <code>http://freecatphotoapp.com</code> and has \"cat photos\" as its <code>anchor text</code>."
       ],
       "tests": [
         "assert((/cat photos/gi).test($(\"a\").text()), 'Your <code>a</code> element should have the <code>anchor text</code> of \"cat photos\"')",
-        "assert(/http:\\/\\/catphotoapp\\.com/gi.test($(\"a\").attr(\"href\")), 'You need an <code>a</code> element that links to <code>http&#58;//catphotoapp.com</code>.')",
+        "assert(/http:\\/\\/catphotoapp\\.com/gi.test($(\"a\").attr(\"href\")), 'You need an <code>a</code> element that links to <code>http&#58;//freecatphotoapp.com</code>.')",
         "assert(editor.match(/<\\/a>/g) && editor.match(/<\\/a>/g).length === editor.match(/<a/g).length, 'Make sure your <code>a</code> element has a closing tag.')"
       ],
       "challengeSeed": [
@@ -1118,7 +1118,7 @@
       "descriptionPt": [],
       "nameDe": "Waypoint: Verlinke externe Seiten mit Anker Elementen",
       "descriptionDe": [
-        "Erstelle ein <code>a</code> Element oder \"Anker Element\", das auf http://catphotoapp.com verlinkt und den Link-Text \"cat photos\" oder \"anchor text\" beinhaltet.",
+        "Erstelle ein <code>a</code> Element oder \"Anker Element\", das auf http://freecatphotoapp.com verlinkt und den Link-Text \"cat photos\" oder \"anchor text\" beinhaltet.",
         "So sieht ein <code>a</code> Element aus. In diesem Fall wird es innerhalb eines Paragraphen Elements verwendet. Das bedeutet dein Link wird innerhalb des Satzes erscheinen.",
         "<img class=\"img-responsive\" alt=\"Ein Beispiel wie Anker Tags geschrieben werden.\" src=\"https://www.evernote.com/l/AHSaNaepx_lG9LhhPkVYmagcedpmAeITDsQB/image.png\">",
         "Hier ist ein Beispiel: <code>&#60;p&#62;Hier ist ein &#60;a href=\"http://freecodecamp.com\"&#62; Link zum Free Code Camp&#60;/a&#62; für dich zum Folgen.&#60;/p&#62;</code>."
@@ -1136,10 +1136,10 @@
         "Now nest your <code>a</code> element within a new <code>p</code> element so that the surrounding paragraph says \"click here for cat photos\", but where only \"cat photos\" is a link, and the rest of the text is rest is plain text."
       ],
       "tests": [
-        "assert($(\"a\").attr(\"href\").match(/catphotoapp.com/gi).length > 0, 'You need an <code>a</code> element that links to \"catphotoapp.com\".')",
+        "assert($(\"a\").attr(\"href\").match(/freecatphotoapp.com/gi).length > 0, 'You need an <code>a</code> element that links to \"freecatphotoapp.com\".')",
         "assert($(\"a\").text().match(/cat\\sphotos/gi).length > 0, 'Your <code>a</code> element should have the anchor text of \"cat photos\"')",
         "assert($(\"p\") && $(\"p\").length > 2, 'Create a new <code>p</code> element around your <code>a</code> element.')",
-        "assert($(\"a[href=\\\"http://www.catphotoapp.com\\\"]\").parent().is(\"p\"), 'Your <code>a</code> element should be nested within your new <code>p</code> element.')",
+        "assert($(\"a[href=\\\"http://www.freecatphotoapp.com\\\"]\").parent().is(\"p\"), 'Your <code>a</code> element should be nested within your new <code>p</code> element.')",
         "assert($(\"p\").text().match(/click\\shere\\sfor/gi), 'Your <code>p</code> element should have the text \"click here for\".')",
         "assert(editor.match(/<\\/p>/g) && editor.match(/<p/g) && editor.match(/<\\/p>/g).length === editor.match(/<p/g).length, 'Make sure each of your <code>p</code> elements has a closing tag.')",
         "assert(editor.match(/<\\/a>/g) && editor.match(/<a/g) && editor.match(/<\\/a>/g).length === editor.match(/<a/g).length, 'Make sure each of your <code>a</code> elements has a closing tag.')"
@@ -1174,7 +1174,7 @@
         "",
         "<h2 class=\"red-text\">CatPhotoApp</h2>",
         "",
-        "<a href=\"http://www.catphotoapp.com\">cat photos</a>",
+        "<a href=\"http://www.freecatphotoapp.com\">cat photos</a>",
         "",
         "<img class=\"smaller-image thick-green-border\" src=\"https://bit.ly/fcc-relaxing-cat\">",
         "",
@@ -1242,7 +1242,7 @@
         "",
         "<h2 class=\"red-text\">CatPhotoApp</h2>",
         "",
-        "<p>Click here for <a href=\"http://www.catphotoapp.com\">cat photos</a>.</p>",
+        "<p>Click here for <a href=\"http://www.freecatphotoapp.com\">cat photos</a>.</p>",
         "",
         "<img class=\"smaller-image thick-green-border\" src=\"https://bit.ly/fcc-relaxing-cat\">",
         "",
