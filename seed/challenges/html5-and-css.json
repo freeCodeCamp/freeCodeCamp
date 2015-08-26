@@ -1998,8 +1998,8 @@
       ],
       "tests": [
         "assert($('input[type=\"radio\"]').length > 1, 'Your page should have two radio button elements.')",
-        "assert($('input[type=\"radio\"]:nth-child(1)').attr('name') === 'indoor-outdoor', 'Give your radio buttons the <code>name</code> attribute of <code>indoor-outdoor</code>.')",
-        "assert($(\"label\").length > 1, 'Each of your two radio button elements should be nested in a <code>label</code> element.')",
+        "assert($('label > input[type=\"radio\"]').filter(\"[name='indoor-outdoor']\").length > 1, 'Give your radio buttons the <code>name</code> attribute of <code>indoor-outdoor</code>.')",
+        "assert($('label > input[type=\"radio\"]:only-child').length > 1, 'Each of your two radio button elements should be nested in its own <code>label</code> element.')",
         "assert(editor.match(/<\\/label>/g) && editor.match(/<label/g) && editor.match(/<\\/label>/g).length === editor.match(/<label/g).length, 'Make sure each of your <code>label</code> elements has a closing tag.')",
         "assert($(\"label\").text().match(/indoor/gi), 'One of your radio buttons should have the label <code>indoor</code>.')",
         "assert($(\"label\").text().match(/outdoor/gi), 'One of your radio buttons should have the label <code>outdoor</code>.')"
@@ -2091,9 +2091,9 @@
       ],
       "tests": [
         "assert($('input[type=\"checkbox\"]').length > 2, 'Your page should have three checkbox elements.')",
-        "assert($('label:has(input[type=\"checkbox\"])').length > 2, 'Each of your three checkbox elements should be nested in its own <code>label</code> element.')",
+        "assert($('label > input[type=\"checkbox\"]:only-child').length > 2, 'Each of your three checkbox elements should be nested in its own <code>label</code> element.')",
         "assert(editor.match(/<\\/label>/g) && editor.match(/<label/g) && editor.match(/<\\/label>/g).length === editor.match(/<label/g).length, \"Make sure each of your <code>label</code> elements has a closing tag.\")",
-        "assert($('input[type=\"checkbox\"]:nth-child(1)').attr(\"name\") === \"personality\", 'Give your checkboxes buttons the <code>name</code> attribute of <code>personality</code>.')"
+        "assert($('label > input[type=\"checkbox\"]').filter(\"[name='personality']\").length > 2, 'Give your checkboxes buttons the <code>name</code> attribute of <code>personality</code>.')"
       ],
       "challengeSeed": [
         "<link href=\"http://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
