@@ -465,7 +465,8 @@
       "difficulty": 3.10,
       "description": [
         "Now let's remove an HTML element from your page using jQuery.",
-        "jQuery has a function called <code>.remove()</code> that will remove an HTML element entirely."
+        "jQuery has a function called <code>.remove()</code> that will remove an HTML element entirely",
+        "Remove element <code>target4</code> from the page by using the <code>.remove()</code> function."
       ],
       "tests": [
         "assert($(\"#target4\").length === 0, 'Use jQuery to remove your <code>target4</code> element from your page.')",
