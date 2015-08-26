@@ -296,7 +296,11 @@ function showCompletion() {
     var didCompleteWith = $('#completed-with').val() || null;
     $('#complete-courseware-dialog').modal('show');
     $('#submit-challenge').click(function(e) {
-      $('#submit-challenge').attr('disabled', 'true');
+
+      $('#submit-challenge')
+        .attr('disabled', 'true')
+        .addClass('disabled');
+
       e.preventDefault();
       $.post(
         '/completed-bonfire/', {
