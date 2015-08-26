@@ -208,10 +208,12 @@ module.exports = function(app) {
           debug('next challengeName', nextChallengeName);
           if (!nextChallengeName || nextChallengeName === firstChallenge) {
             req.flash('errors', {
-              msg: 'It looks like you have finished all of our challenges.' +
-              ' Great job! Now on to helping nonprofits!'
+              msg: 'Once you have completed all of our challenges, you should '+
+              'join our <a href=\"//gitter.im/freecodecamp/HalfWayClub\"'+
+              'target=\"_blank\">Half Way Club</a> and start getting '+
+              'ready for our nonprofit projects.'
             });
-            return res.redirect('/challenges/' + firstChallenge);
+            return res.redirect('/map');
           }
           res.redirect('/challenges/' + nextChallengeName);
         }
