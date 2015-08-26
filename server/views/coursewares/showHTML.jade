@@ -88,10 +88,13 @@ block content
                         a.close.closing-x(href='#', data-dismiss='modal', aria-hidden='true') ×
                     .modal-body
                         .text-center
-                            .animated.zoomInDown.delay-half
-                                span.completion-icon.ion-checkmark-circled.text-primary
-                            if(user)
-                                #submit-challenge.animated.fadeIn.btn.btn-lg.btn-primary.btn-block Submit
-                            else
-                                a.animated.fadeIn.btn.btn-lg.signup-btn.btn-block(href='/login') Sign in so you can save your progress
+                            #checkmark-container.row
+                                #challenge-checkmark.animated.zoomInDown.delay-half
+                                    span.completion-icon.ion-checkmark-circled.text-primary
+                            .spacer
+                            .row
+                                if(user)
+                                    #submit-challenge.animated.fadeIn.btn.btn-lg.btn-primary.btn-block Submit
+                                else
+                                    a.animated.fadeIn.btn.btn-lg.signup-btn.btn-block(href='/login') Sign in so you can save your progress
     include ../partials/challenge-modals
