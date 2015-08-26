@@ -464,7 +464,8 @@
       "difficulty": 3.10,
       "description": [
         "Now let's remove an HTML element from your page using jQuery.",
-        "jQuery has a function called <code>.remove()</code> that will remove an HTML element entirely."
+        "jQuery has a function called <code>.remove()</code> that will remove an HTML element entirely",
+        "Remove element <code>target4</code> from the page by using the <code>.remove()</code> function."
       ],
       "tests": [
         "assert($(\"#target4\").length === 0, 'Use jQuery to remove your <code>target4</code> element from your page.')",
@@ -671,7 +672,7 @@
       "id": "bad87fee1348bd9aed208826",
       "title": "Target the Children of an Element Using jQuery",
       "difficulty": 3.14,
-      "description": [ 
+      "description": [
         "Many HTML elements have <code>children</code> elements from which <code>inherit</code> their properties.",
         "For example, every HTML element is a child of your <code>body</code> element, and your \"jQuery Playground\" <code>h3</code> element is a child of your <code>&#60;div class=\"container-fluid\"&#62</code> element.",
         "jQuery has a function called <code>children()</code> that allows you to access the children of whichever element you've selected.",
