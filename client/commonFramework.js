@@ -1,4 +1,4 @@
-/* globals CodeMirror, challenge_Name */
+/* globals CodeMirror, challenge_Name, challengeType */
 // codeStorage
 var codeStorageFactory = (function($, localStorage) {
 
@@ -68,6 +68,12 @@ var codeStorageFactory = (function($, localStorage) {
   return codeStorageFactory;
 }($, localStorage));
 
+function replaceSafeTags(value) {
+  return value
+    .replace(/fccss/gi, '<script>')
+    .replace(/fcces/gi, '</script>');
+}
+
 var isInitRun = false;
 var initPreview = true;
 var editor;
@@ -106,30 +112,30 @@ var allSeeds = '';
     });
 })();
 
-editor.setOption("extraKeys", {
-    Tab: function(cm) {
-        if (cm.somethingSelected()){
-            cm.indentSelection("add");
-        } else {
-            var spaces = Array(cm.getOption("indentUnit") + 1).join(" ");
-            cm.replaceSelection(spaces);
-        }
-    },
-    "Shift-Tab": function(cm) {
-        if (cm.somethingSelected()){
-            cm.indentSelection("subtract");
-        } else {
-            var spaces = Array(cm.getOption("indentUnit") + 1).join(" ");
-            cm.replaceSelection(spaces);
-        }
-    },
-    "Ctrl-Enter": function() {
-        bonfireExecute(true);
-        return false;
+editor.setOption('extraKeys', {
+  Tab: function(cm) {
+    if (cm.somethingSelected()) {
+      cm.indentSelection('add');
+    } else {
+      var spaces = Array(cm.getOption('indentUnit') + 1).join(' ');
+      cm.replaceSelection(spaces);
     }
+  },
+  'Shift-Tab': function(cm) {
+    if (cm.somethingSelected()) {
+      cm.indentSelection('subtract');
+    } else {
+      var spaces = Array(cm.getOption('indentUnit') + 1).join(' ');
+      cm.replaceSelection(spaces);
+    }
+  },
+  'Ctrl-Enter': function() {
+    bonfireExecute(true);
+    return false;
+  }
 });
 
-editor.setSize("100%", "auto");
+editor.setSize('100%', 'auto');
 
 var libraryIncludes = "<script src='//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>" +
     "<script src='/js/lib/chai/chai.js'></script>" +
@@ -141,39 +147,44 @@ var libraryIncludes = "<script src='//ajax.googleapis.com/ajax/libs/jquery/2.1.3
     "<style>body { padding: 0px 3px 0px 3px; }</style>" +
     "<script>var expect = chai.expect; var should = chai.should(); var assert = chai.assert;</script>";
 
-
-
 var editorValueForIFrame;
 var iFrameScript = "<script src='/js/iFrameScripts.js'></script>";
-
 var delay;
+
 // Initialize CodeMirror editor with a nice html5 canvas demo.
-editor.on("keyup", function () {
-    clearTimeout(delay);
-    delay = setTimeout(updatePreview, 300);
+editor.on('keyup', function() {
+  clearTimeout(delay);
+  delay = setTimeout(updatePreview, 300);
 });
 
-function workerError(error){
-    var display = $('.runTimeError');
-    var housing = $('#testSuite');
-    if(display.html() != error){
-        display.remove();
-        housing.prepend("<div class = \"runTimeError\" style= \"font-size: 18px;\"><code>" + error.replace(/j\$/gi, "$").replace(/jdocument/gi, "document").replace(/jjQuery/gi, "jQuery") + "</code></div>");
-        display.hide().fadeIn(function(){
-            setTimeout(function(){
-                display.fadeOut(function(){
-                    display.remove();
-                });
-            }, 1000)
+function workerError(error) {
+  var display = $('.runTimeError');
+  var housing = $('#testSuite');
+  if (display.html() !== error) {
+    display.remove();
+    housing.prepend(
+      '<div class="runTimeError" style="font-size: 18px;"><code>' +
+      error.replace(/j\$/gi, '$').replace(/jdocument/gi, 'document').replace(/jjQuery/gi, 'jQuery') +
+      '</code></div>'
+    );
+    display.hide().fadeIn(function() {
+      setTimeout(function() {
+        display.fadeOut(function() {
+          display.remove();
         });
-    }
+      }, 1000);
+    });
+  }
 }
 
-function scopejQuery(s){
-    return(s.replace(/\$/gi, "j$").replace(/document/gi, "jdocument").replace(/jQuery/gi, "jjQuery"));
+function scopejQuery(str) {
+  return str
+    .replace(/\$/gi, 'j$')
+    .replace(/document/gi, 'jdocument')
+    .replace(/jQuery/gi, 'jjQuery');
 }
 
-function safeHTMLRun(test){
+function safeHTMLRun(test) {
     if(challengeType === "0"){
         var previewFrame = document.getElementById('preview');
         var preview = previewFrame.contentDocument || previewFrame.contentWindow.document;
@@ -328,32 +339,36 @@ function showCompletion() {
 }
 
 var resetEditor = function resetEditor() {
-    editor.setValue(allSeeds.replace((/fccss/gi), '<script>').replace((/fcces/gi), '</script>'));
-    $('#testSuite').empty();
-    bonfireExecute(true);
-    codeStorage.updateStorage();
+  editor.setValue(replaceSafeTags(allSeeds));
+  $('#testSuite').empty();
+  bonfireExecute(true);
+  codeStorage.updateStorage();
 };
 
 var attempts = 0;
 if (attempts) {
-    attempts = 0;
+  attempts = 0;
 }
 
-if(challengeType !== "0") {
-    var codeOutput = CodeMirror.fromTextArea(document.getElementById("codeOutput"), {
-        lineNumbers: false,
-        mode: "text",
-        theme: 'monokai',
-        readOnly: 'nocursor',
-        lineWrapping: true
-    });
+if (challengeType !== '0') {
+  var codeOutput = CodeMirror.fromTextArea(
+    document.getElementById('codeOutput'),
+    {
+      lineNumbers: false,
+      mode: 'text',
+      theme: 'monokai',
+      readOnly: 'nocursor',
+      lineWrapping: true
+    }
+  );
 
-    codeOutput.setValue('/**\n' +
-        ' * Your output will go here.\n' + ' * Console.log() -type statements\n' +
-        ' * will appear in your browser\'s\n' + ' * DevTools JavaScript console.\n' +
-        ' */');
-    codeOutput.setSize("100%", "100%");
+  codeOutput.setValue('/**\n' +
+  ' * Your output will go here.\n' + ' * Console.log() -type statements\n' +
+  ' * will appear in your browser\'s\n' + ' * DevTools JavaScript console.\n' +
+  ' */');
+  codeOutput.setSize("100%", "100%");
 }
+
 var info = editor.getScrollInfo();
 var after = editor.charCoords({
     line: editor.getCursor().line + 1,
@@ -584,21 +599,22 @@ $('#submitButton').on('click', function() {
 });
 
 $(document).ready(function() {
-    var $preview = $('#preview');
-    isInitRun = true;
+  var $preview = $('#preview');
+  isInitRun = true;
 
-    editorValue = codeStorage.isAlive() ?
-      codeStorage.getStoredValue() :
-      allSeeds;
+  editorValue = codeStorage.isAlive() ?
+    codeStorage.getStoredValue() :
+    allSeeds;
 
-    myCodeMirror.setValue(editorValue.replace(/fccss/gi, '<script>').replace(/fcces/gi, "</script>"));
-    if (typeof $preview.html() !== 'undefined') {
-        $preview.load(function(){
-          if (initPreview) {
-            bonfireExecute(true);
-          }
-        });
-    } else{
+  myCodeMirror.setValue(replaceSafeTags(editorValue));
+
+  if (typeof $preview.html() !== 'undefined') {
+    $preview.load(function() {
+      if (initPreview) {
         bonfireExecute(true);
-    }
+      }
+    });
+  } else {
+    bonfireExecute(true);
+  }
 });
