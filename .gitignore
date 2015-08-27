@@ -31,4 +31,15 @@ coverage
 
 server/*.bundle.js
 public/js/*.bundle.js
+
 *.map
+
+// revision manifest
+public/js/main*
+public/js/commonFramework*
+public/js/sandbox*
+public/js/iFrameScripts*
+public/js/plugin*
+public/css/main*
+
+server/rev-manifest.json

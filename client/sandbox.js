@@ -67,7 +67,7 @@ var requests;
 // (re)initializes the plugin
 var reset = function() {
     requests = 0;
-    plugin = new jailed.Plugin(path+'plugin_v0.1.5.js', api);
+    plugin = new jailed.Plugin(path + 'plugin.js', api);
     plugin.whenDisconnected( function() {
         // give some time to handle the last responce
         setTimeout( function() {

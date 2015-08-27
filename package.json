@@ -6,6 +6,7 @@
     "url": "https://github.com/freecodecamp/freecodecamp.git"
   },
   "scripts": {
+    "build": "gulp build",
     "build-production": "webpack",
     "start": "babel-node server/server.js",
     "prestart-production": "bower cache clean && bower install && gulp build && npm run build-production",
@@ -59,6 +60,8 @@
     "github-api": "~0.7.0",
     "gulp-less": "^3.0.3",
     "gulp-minify-css": "~0.5.1",
+    "gulp-rev": "^6.0.1",
+    "gulp-rev-replace": "^0.4.2",
     "gulp-webpack": "^1.5.0",
     "helmet": "~0.9.0",
     "helmet-csp": "^0.2.3",

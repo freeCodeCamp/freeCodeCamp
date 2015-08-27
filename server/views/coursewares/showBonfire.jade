@@ -14,7 +14,7 @@ block content
     link(rel="stylesheet", href="//fonts.googleapis.com/css?family=Ubuntu+Mono")
     script(type='text/javascript', src='/js/lib/codemirror/mode/javascript/javascript.js')
     script(type='text/javascript', src='/js/lib/jailed/jailed.js')
-    script(type='text/javascript', src='/js/lib/coursewares/sandbox.js')
+    script(type='text/javascript', src=rev('/js', 'sandbox.js'))
 
     .row(ng-controller="pairedWithController")
         .col-xs-12.col-sm-12.col-md-4.col-lg-3
@@ -124,7 +124,7 @@ block content
                     form.code
                         .form-group.codeMirrorView
                             textarea#codeEditor(autofocus=true, style='display: none;')
-                    script(src='/js/lib/coursewares/commonFrameWork_0.0.7.js')
+                    script(src=rev('/js', 'commonFramework.js'))
                     script.
                         editor.setOption("mode", "javascript");
 
