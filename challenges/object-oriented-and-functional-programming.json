@@ -42,7 +42,7 @@
         "  // Only change code above this line.",
         "};",
         "",
-        "(function() {return(JSON.stringify(motorBike));})();"
+        "(function() {return JSON.stringify(motorBike);})();"
       ],
       "challengeType":1,
           "type": "waypoint",
@@ -81,7 +81,7 @@
         "var myMotorBike = new MotorBike();",
         "// Only change code above this line.",
         "",
-        "(function() {return(JSON.stringify(myMotorBike));})();"
+        "(function() {return JSON.stringify(myMotorBike);})();"
       ],
       "challengeType":1,
       "type": "waypoint"
@@ -107,10 +107,10 @@
         "var Car = function() {",
         "  this.gear = 1;",
         "  function addStyle(styleMe){",
-        "    return('The Current Gear Is: ' + styleMe);",
+        "    return 'The Current Gear Is: ' + styleMe;",
         "  }",
         "  this.getGear = function() {",
-        "    return(addStyle(this.gear));",
+        "    return addStyle(this.gear);",
         "  };",
         "};",
         "",
@@ -118,11 +118,11 @@
         "  // Only change code below this line.",
         "  this.speed = 100;",
         "  function addUnit(value) {",
-        "    return(value + \"KM/H\");",
+        "    return value + \"KM/H\";",
         "  }",
         "  ",
         "  getSpeed = function () {",
-        "    return(addUnit(speed));",
+        "    return addUnit(speed);",
         "  };",
         "  ",
         "};",
@@ -131,7 +131,7 @@
         "var myCar = new Car();",
         "var myBike = new Bike();",
         "",
-        "if(myBike.hasOwnProperty('getSpeed')){(function() {return(JSON.stringify(myBike.getSpeed()));})();};"
+        "if(myBike.hasOwnProperty('getSpeed')){(function() {return JSON.stringify(myBike.getSpeed());})();};"
       ],
       "challengeType":1,
       "type": "waypoint"
@@ -166,7 +166,7 @@
         "",
         "",
         "// Only change code above this line.",
-        "(function() {return(JSON.stringify(myCar));})();"
+        "(function() {return JSON.stringify(myCar);})();"
       ],
       "challengeType":1,
       "type": "waypoint"
@@ -177,7 +177,7 @@
       "difficulty":0,
       "description":[
         "<code>array = array.map(function(val){</code>",
-        "<code>&thinsp;&thinsp;return(val+1);</code>",
+        "<code>&thinsp;&thinsp;return val+1;</code>",
         "<code>});</code>",
         "",
         "The map method is one of the easiest ways to iterate through an array or object there is. Let's use it now.",
@@ -196,7 +196,7 @@
         "",
         "",
         "// Only change code above this line.",
-        "(function() {return(array);})();"
+        "(function() {return array;})();"
       ],
       "challengeType":1,
       "type": "waypoint"
@@ -208,7 +208,7 @@
       "description":[
         "Reduce can be useful for condensing and array or numbers into one value.",
         "<code>var singleVal = array.reduce(function(previousVal, currentVal){</code>",
-        "<code>&thinsp;&thinsp;return(previousVal+currentVal);</code>",
+        "<code>&thinsp;&thinsp;return previousVal+currentVal;</code>",
         "<code>});</code>"
       ],
       "tests":[
@@ -223,7 +223,7 @@
         "",
         "",
         "// Only change code above this line.",
-        "(function() {return(singleVal);})();"
+        "(function() {return singleVal;})();"
       ],
       "challengeType":1,
       "type": "waypoint"
@@ -236,7 +236,7 @@
         "filter is a useful method that can filter out values that don't match a certain criteria",
         "Let's remove all the values greater than five",
         "<code>array = array.filter(function(val) {</code>",
-        "<code>&thinsp;&thinsp;return(val<4);</code>",
+        "<code>&thinsp;&thinsp;return val<4;</code>",
         "<code>});</code>"
       ],
       "tests":[
@@ -251,7 +251,7 @@
         "",
         "",
         "  // Only change code above this line.",
-        "(function() {return(array);})();"
+        "(function() {return array;})();"
       ],
       "challengeType":1,
       "type": "waypoint"
@@ -278,7 +278,7 @@
         "",
         "",
         "  // Only change code above this line.",
-        "(function() {return(array);})();"
+        "(function() {return array;})();"
       ],
       "challengeType":1,
       "type": "waypoint"
@@ -302,7 +302,7 @@
         "",
         "",
         "  // Only change code above this line.",
-        "(function() {return(array);})();"
+        "(function() {return array;})();"
       ],
       "challengeType": 1,
       "type": "waypoint"
@@ -329,7 +329,7 @@
         "",
         "",
         "// Only change code above this line.",
-        "(function() {return(array);})();"
+        "(function() {return array;})();"
       ],
       "challengeType": 1,
       "type": "waypoint"
@@ -354,7 +354,7 @@
         "var array = string;",
         "",
         "// Only change code above this line.",
-        "(function() {return(array);})();"
+        "(function() {return array;})();"
       ],
       "challengeType":1,
       "type": "waypoint"
@@ -378,7 +378,7 @@
         "joinMe = joinMe;",
         "",
         "// Only change code above this line.",
-        "(function() {return(joinMe);})();"
+        "(function() {return joinMe;})();"
       ],
       "challengeType":1,
       "type": "waypoint"
