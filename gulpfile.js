@@ -174,7 +174,7 @@ gulp.task('serve', function(cb) {
     });
 });
 
-gulp.task('sync', ['serve'], function() {
+gulp.task('sync', ['serve', 'js', 'less', 'dependents'], function() {
   sync.init(null, {
     proxy: 'http://localhost:3000',
     logLeval: 'debug',
@@ -199,7 +199,7 @@ gulp.task('lint-json', function() {
 
 gulp.task('test-challenges', ['lint-json']);
 
-gulp.task('less', function() {
+gulp.task('less', ['js'], function() {
   return gulp.src(paths.less)
     .pipe(plumber({ errorHandler: errorHandler }))
     // copile
