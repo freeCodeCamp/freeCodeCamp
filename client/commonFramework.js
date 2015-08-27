@@ -1,4 +1,4 @@
-/* globals CodeMirror, challenge_Id, challenge_Name, challengeType */
+/* globals jailed, CodeMirror, challenge_Id, challenge_Name, challengeType */
 // codeStorage
 var codeStorageFactory = (function($, localStorage) {
 
@@ -68,6 +68,103 @@ var codeStorageFactory = (function($, localStorage) {
   return codeStorageFactory;
 }($, localStorage));
 
+var sandBox = (function() {
+
+  var plugin = null;
+
+  var sandBox = {
+  };
+
+  var printCallback;
+
+  // sends the input to the plugin for evaluation
+  function submit(code, callback) {
+    printCallback = callback;
+
+    // postpone the evaluation until the plugin is initialized
+    plugin.whenConnected(function() {
+      if (requests === 0) {
+        startLoading();
+      }
+
+      requests++;
+      plugin.remote.run(code);
+    });
+  }
+
+  // puts the message on the terminal
+  var print = function(cls, msg) {
+    printCallback(cls, msg);
+  };
+
+
+  // will restart the plugin if it does not respond
+  var disconnectTimeout = null;
+  var startLoading = function() {
+    disconnectTimeout = setTimeout(disconnect, 3000);
+  };
+
+  var endLoading = function() {
+    clearTimeout(disconnectTimeout);
+  };
+
+  var disconnect = function() {
+    plugin.disconnect();
+  };
+
+
+  // interface provided to the plugin
+  var api = {
+    output: function(data) {
+      endLoading();
+      // print('input', data.input);
+
+      if (data.error) {
+        print('Error', data);
+        reset();
+      } else {
+        print(null, data);
+        reset();
+      }
+    }
+  };
+
+
+  // obtaining absolute path of this script
+  var scripts = document.getElementsByTagName('script');
+  var path = scripts[scripts.length - 1].src
+    .split('?')[0]
+    .split('/')
+    .slice(0, -1)
+    .join('/') + '/';
+
+  var requests;
+
+  // (re)initializes the plugin
+  var reset = function() {
+    requests = 0;
+    plugin = new jailed.Plugin(path + 'plugin.js', api);
+    plugin.whenDisconnected( function() {
+      // give some time to handle the last responce
+      setTimeout( function() {
+        endLoading();
+        console.log('resetting on fatal plugin error');
+
+        if (challengeType === 0) {
+          codeOutput.setValue(
+            'Sorry, your code is either too slow, has a fatal error, ' +
+            'or contains an infinite loop.'
+          );
+        }
+        reset();
+      }, 10);
+    });
+  };
+  reset();
+  sandBox.submit = submit;
+  return sandBox;
+}());
+
 function replaceSafeTags(value) {
   return value
     .replace(/fccss/gi, '<script>')
@@ -75,10 +172,10 @@ function replaceSafeTags(value) {
 }
 
 var BDDregex = new RegExp(
-  '(expect(\s+)?\(.*\;)|' +
-  '(assert(\s+)?\(.*\;)|' +
-  '(assert\.\w.*\;)|' +
-  '(.*\.should\..*\;)'
+  '(expect(\\s+)?\\(.*\\;)|' +
+  '(assert(\\s+)?\\(.*\\;)|' +
+  '(assert\\.\\w.*\\;)|' +
+  '(.*\\.should\\..*\\;)/'
 );
 
 var isInitRun = false;
@@ -198,7 +295,7 @@ function safeHTMLRun(test) {
         // add feuxQuery
       s = "var document = \"\"; var $ = function() {return(new function() {this.add=function() {return(this);};this.addBack=function() {return(this);};this.addClass=function() {return(this);};this.after=function() {return(this);};this.ajaxComplete=function() {return(this);};this.ajaxError=function() {return(this);};this.ajaxSend=function() {return(this);};this.ajaxStart=function() {return(this);};this.ajaxStop=function() {return(this);};this.ajaxSuccess=function() {return(this);};this.andSelf=function() {return(this);};this.animate=function() {return(this);};this.append=function() {return(this);};this.appendTo=function() {return(this);};this.attr=function() {return(this);};this.before=function() {return(this);};this.bind=function() {return(this);};this.blur=function() {return(this);};this.callbacksadd=function() {return(this);};this.callbacksdisable=function() {return(this);};this.callbacksdisabled=function() {return(this);};this.callbacksempty=function() {return(this);};this.callbacksfire=function() {return(this);};this.callbacksfired=function() {return(this);};this.callbacksfireWith=function() {return(this);};this.callbackshas=function() {return(this);};this.callbackslock=function() {return(this);};this.callbackslocked=function() {return(this);};this.callbacksremove=function() {return(this);};this.change=function() {return(this);};this.children=function() {return(this);};this.clearQueue=function() {return(this);};this.click=function() {return(this);};this.clone=function() {return(this);};this.closest=function() {return(this);};this.contents=function() {return(this);};this.context=function() {return(this);};this.css=function() {return(this);};this.data=function() {return(this);};this.dblclick=function() {return(this);};this.delay=function() {return(this);};this.delegate=function() {return(this);};this.dequeue=function() {return(this);};this.detach=function() {return(this);};this.die=function() {return(this);};this.each=function() {return(this);};this.empty=function() {return(this);};this.end=function() {return(this);};this.eq=function() {return(this);};this.error=function() {return(this);};this.fadeIn=function() {return(this);};this.fadeOut=function() {return(this);};this.fadeTo=function() {return(this);};this.fadeToggle=function() {return(this);};this.filter=function() {return(this);};this.find=function() {return(this);};this.finish=function() {return(this);};this.first=function() {return(this);};this.focus=function() {return(this);};this.focusin=function() {return(this);};this.focusout=function() {return(this);};this.get=function() {return(this);};this.has=function() {return(this);};this.hasClass=function() {return(this);};this.height=function() {return(this);};this.hide=function() {return(this);};this.hover=function() {return(this);};this.html=function() {return(this);};this.index=function() {return(this);};this.innerHeight=function() {return(this);};this.innerWidth=function() {return(this);};this.insertAfter=function() {return(this);};this.insertBefore=function() {return(this);};this.is=function() {return(this);};this.jQuery=function() {return(this);};this.jquery=function() {return(this);};this.keydown=function() {return(this);};this.keypress=function() {return(this);};this.keyup=function() {return(this);};this.last=function() {return(this);};this.length=function() {return(this);};this.live=function() {return(this);};this.load=function() {return(this);};this.load=function() {return(this);};this.map=function() {return(this);};this.mousedown=function() {return(this);};this.mouseenter=function() {return(this);};this.mouseleave=function() {return(this);};this.mousemove=function() {return(this);};this.mouseout=function() {return(this);};this.mouseover=function() {return(this);};this.mouseup=function() {return(this);};this.next=function() {return(this);};this.nextAll=function() {return(this);};this.nextUntil=function() {return(this);};this.not=function() {return(this);};this.off=function() {return(this);};this.offset=function() {return(this);};this.offsetParent=function() {return(this);};this.on=function() {return(this);};this.one=function() {return(this);};this.outerHeight=function() {return(this);};this.outerWidth=function() {return(this);};this.parent=function() {return(this);};this.parents=function() {return(this);};this.parentsUntil=function() {return(this);};this.position=function() {return(this);};this.prepend=function() {return(this);};this.prependTo=function() {return(this);};this.prev=function() {return(this);};this.prevAll=function() {return(this);};this.prevUntil=function() {return(this);};this.promise=function() {return(this);};this.prop=function() {return(this);};this.pushStack=function() {return(this);};this.queue=function() {return(this);};this.ready=function() {return(this);};this.remove=function() {return(this);};this.removeAttr=function() {return(this);};this.removeClass=function() {return(this);};this.removeData=function() {return(this);};this.removeProp=function() {return(this);};this.replaceAll=function() {return(this);};this.replaceWith=function() {return(this);};this.resize=function() {return(this);};this.scroll=function() {return(this);};this.scrollLeft=function() {return(this);};this.scrollTop=function() {return(this);};this.select=function() {return(this);};this.selector=function() {return(this);};this.serialize=function() {return(this);};this.serializeArray=function() {return(this);};this.show=function() {return(this);};this.siblings=function() {return(this);};this.size=function() {return(this);};this.slice=function() {return(this);};this.slideDown=function() {return(this);};this.slideToggle=function() {return(this);};this.slideUp=function() {return(this);};this.stop=function() {return(this);};this.submit=function() {return(this);};this.text=function() {return(this);};this.toArray=function() {return(this);};this.toggle=function() {return(this);};this.toggle=function() {return(this);};this.toggleClass=function() {return(this);};this.trigger=function() {return(this);};this.triggerHandler=function() {return(this);};this.unbind=function() {return(this);};this.undelegate=function() {return(this);};this.unload=function() {return(this);};this.unwrap=function() {return(this);};this.val=function() {return(this);};this.width=function() {return(this);};this.wrap=function() {return(this);};this.wrapAll=function() {return(this);};this.wrapInner=function() {return(this);}});};$.ajax=function() {return($);};$.ajaxPrefilter=function() {return($);};$.ajaxSetup=function() {return($);};$.ajaxTransport=function() {return($);};$.boxModel=function() {return($);};$.browser=function() {return($);};$.Callbacks=function() {return($);};$.contains=function() {return($);};$.cssHooks=function() {return($);};$.cssNumber=function() {return($);};$.data=function() {return($);};$.Deferred=function() {return($);};$.dequeue=function() {return($);};$.each=function() {return($);};$.error=function() {return($);};$.extend=function() {return($);};$.fnextend=function() {return($);};$.fxinterval=function() {return($);};$.fxoff=function() {return($);};$.get=function() {return($);};$.getJSON=function() {return($);};$.getScript=function() {return($);};$.globalEval=function() {return($);};$.grep=function() {return($);};$.hasData=function() {return($);};$.holdReady=function() {return($);};$.inArray=function() {return($);};$.isArray=function() {return($);};$.isEmptyObject=function() {return($);};$.isFunction=function() {return($);};$.isNumeric=function() {return($);};$.isPlainObject=function() {return($);};$.isWindow=function() {return($);};$.isXMLDoc=function() {return($);};$.makeArray=function() {return($);};$.map=function() {return($);};$.merge=function() {return($);};$.noConflict=function() {return($);};$.noop=function() {return($);};$.now=function() {return($);};$.param=function() {return($);};$.parseHTML=function() {return($);};$.parseJSON=function() {return($);};$.parseXML=function() {return($);};$.post=function() {return($);};$.proxy=function() {return($);};$.queue=function() {return($);};$.removeData=function() {return($);};$.sub=function() {return($);};$.support=function() {return($);};$.trim=function() {return($);};$.type=function() {return($);};$.unique=function() {return($);};$.when=function() {return($);};$.always=function() {return($);};$.done=function() {return($);};$.fail=function() {return($);};$.isRejected=function() {return($);};$.isResolved=function() {return($);};$.notify=function() {return($);};$.notifyWith=function() {return($);};$.pipe=function() {return($);};$.progress=function() {return($);};$.promise=function() {return($);};$.reject=function() {return($);};$.rejectWith=function() {return($);};$.resolve=function() {return($);};$.resolveWith=function() {return($);};$.state=function() {return($);};$.then=function() {return($);};$.currentTarget=function() {return($);};$.data=function() {return($);};$.delegateTarget=function() {return($);};$.isDefaultPrevented=function() {return($);};$.isImmediatePropagationStopped=function() {return($);};$.isPropagationStopped=function() {return($);};$.metaKey=function() {return($);};$.namespace=function() {return($);};$.pageX=function() {return($);};$.pageY=function() {return($);};$.preventDefault=function() {return($);};$.relatedTarget=function() {return($);};$.result=function() {return($);};$.stopImmediatePropagation=function() {return($);};$.stopPropagation=function() {return($);};$.target=function() {return($);};$.timeStamp=function() {return($);};$.type=function() {return($);};$.which=function() {return($);};" + s;
 
-      submit(scopejQuery(s), function(cls, message) {
+      sandBox.submit(scopejQuery(s), function(cls, message) {
         if (cls) {
           console.log(message.error);
           workerError(message.error);
@@ -575,7 +672,7 @@ function bonfireExecute(shouldTest) {
 
     if (userJavaScript.match(/function/gi)) {
       if (userJavaScript.match(/function\s*?\(|function\s+\w+\s*?\(/gi)) {
-        submit(userJavaScript, function(cls, message) {
+        sandBox.submit(userJavaScript, function(cls, message) {
           if (failedCommentTest) {
             myCodeMirror.setValue(myCodeMirror.getValue() + '*/');
             console.log('Caught Unfinished Comment');
@@ -583,7 +680,7 @@ function bonfireExecute(shouldTest) {
             failedCommentTest = false;
           } else if (cls) {
             codeOutput.setValue(message.error);
-            if (test) {
+            if (shouldTest) {
               runTests('Error', null);
             }
           } else {
@@ -599,7 +696,7 @@ function bonfireExecute(shouldTest) {
         codeOutput.setValue('Unsafe or unfinished function declaration');
       }
     } else {
-      submit(userJavaScript, function(cls, message) {
+      sandBox.submit(userJavaScript, function(cls, message) {
 
         if (failedCommentTest) {
           myCodeMirror.setValue(myCodeMirror.getValue() + '*/');
@@ -634,7 +731,7 @@ function bonfireExecute(shouldTest) {
       !editor.getValue().match(/\$\s*?\(\s*?\$\s*?\)/gi) &&
       challengeType === '0'
     ) {
-      safeHTMLRun(test);
+      safeHTMLRun(shouldTest);
     } else {
       workerError('Unsafe $($)');
     }
