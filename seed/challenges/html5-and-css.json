@@ -2478,7 +2478,7 @@
         "    width: 100px;",
         "  }",
         "  .gray-background {",
-        "    background-color: gray",
+        "    background-color: gray;",
         "  }",
         "</style>",
         "",
