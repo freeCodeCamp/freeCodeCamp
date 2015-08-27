@@ -58,9 +58,6 @@ function runHidden(code) {
   var dump = null;
   var onoffline = null;
   var ononline = null;
-
-  var expect = chai.expect;
-  var assert = chai.assert;
   /* eslint-enable */
 
   var error = null;
@@ -72,6 +69,12 @@ function runHidden(code) {
   error = importScript(
     'https://cdnjs.cloudflare.com/ajax/libs/chai/2.2.0/chai.min.js'
   );
+
+
+  /* eslint-disable*/
+  var expect = chai.expect;
+  var assert = chai.assert;
+  /* eslint-enable */
 
   if (error) {
     return error;
