@@ -252,6 +252,7 @@ gulp.task('watch', ['less', 'js', 'dependents', 'serve', 'sync'], function() {
   gulp.watch(paths.less, ['less']);
   gulp.watch(paths.js, ['js']);
   gulp.watch(paths.challenges, ['test-challenges']);
+  gulp.watch(paths.dependents.concat(paths.js), ['js', 'dependents']);
 });
 
 gulp.task('default', ['less', 'serve', 'sync', 'watch', 'pack-watch']);
