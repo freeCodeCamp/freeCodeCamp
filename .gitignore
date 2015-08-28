@@ -35,6 +35,10 @@ public/js/bundle*
 *.map
 
 // revision manifest
+server/rev-manifest.json
+server/manifests/*
+!server/manifests/README.md
+
 public/js/main*
 public/js/commonFramework*
 public/js/sandbox*
