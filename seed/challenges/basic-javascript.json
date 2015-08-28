@@ -515,7 +515,7 @@
       ],
       "tests":[
         "assert((function(){if(typeof(myArray) != 'undefined' && myArray[0] == 3 && myArray[1] == 2 && myArray[2] == 3){return true;}else{return false;}})(), 'myArray should now be [3,2,3]');",
-        "assert((function(){if(editor.getValue().match(/[0]/g).length >= 1 && editor.getValue().match(/=/g).length >= 2){return true;}else{return false;}})(), 'You should be using indexes to modify the values in myArray');"
+        "assert((function(){if(editor.getValue().match(/myArray\\[0\\]\\s?=\\s?/g)){return true;}else{return false;}})(), 'You should be using correct index to modify the value in myArray');"
       ],
       "challengeSeed":[
         "var ourArray = [1,2,3];",
