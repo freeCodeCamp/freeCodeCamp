@@ -183,7 +183,7 @@ gulp.task('pack-client', function() {
     .pipe(gulp.dest(webpackConfig.output.path))
     .pipe(rev())
     // copy files to public
-    .pipe(gulp.dest(paths.css))
+    .pipe(gulp.dest(webpackConfig.output.path))
     // create and merge manifest
     .pipe(rev.manifest('react-manifest.json'))
     .pipe(gulp.dest(paths.manifest));
