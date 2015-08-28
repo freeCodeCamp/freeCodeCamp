@@ -30,7 +30,7 @@ coverage
 .remote-sync.json
 
 server/*.bundle.js
-public/js/*.bundle.js
+public/js/bundle*
 
 *.map
 
