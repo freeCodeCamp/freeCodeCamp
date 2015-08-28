@@ -19,11 +19,11 @@
         "sumAll([1, 4]);"
       ],
       "tests": [
-        "expect(sumAll([1, 4])).to.be.a('Number');",
-        "expect(sumAll([1, 4])).to.equal(10);",
-        "expect(sumAll([4, 1])).to.equal(10);",
-        "expect(sumAll([5, 10])).to.equal(45);",
-        "expect(sumAll([10, 5])).to.equal(45);"
+        "assert(typeof(sumAll([1, 4])) === 'number', '.');",
+        "assert(sumAll([1, 4]) === 10, '<code>[1, 4]</code> should return <code>10</code>.');",
+        "assert(sumAll([4, 1]) === 10, '<code>[4, 1]</code> should return <code>10</code>.');",
+        "assert(sumAll([5, 10]) === 45, '<code>[5, 10]</code> should return <code>45</code>.');",
+        "assert(sumAll([10, 5]) === 45, '<code>[10, 5]</code> should return <code>45</code>';"
       ],
       "MDNlinks": [
         "Math.max()",
@@ -61,13 +61,13 @@
         "diff([1, 2, 3, 5], [1, 2, 3, 4, 5]);"
       ],
       "tests": [
-        "expect(diff([1, 2, 3, 5], [1, 2, 3, 4, 5])).to.be.a('array');",
-        "assert.deepEqual(diff(['diorite', 'andesite', 'grass', 'dirt', 'pink wool', 'dead shrub'], ['diorite', 'andesite', 'grass', 'dirt', 'dead shrub']), ['pink wool'], 'arrays with only one difference');",
-        "assert.includeMembers(diff(['andesite', 'grass', 'dirt', 'pink wool', 'dead shrub'], ['diorite', 'andesite', 'grass', 'dirt', 'dead shrub']), ['diorite', 'pink wool'], 'arrays with more than one difference');",
-        "assert.deepEqual(diff(['andesite', 'grass', 'dirt', 'dead shrub'], ['andesite', 'grass', 'dirt', 'dead shrub']), [], 'arrays with no difference');",
-        "assert.deepEqual(diff([1, 2, 3, 5], [1, 2, 3, 4, 5]), [4], 'arrays with numbers');",
-        "assert.includeMembers(diff([1, 'calf', 3, 'piglet'], [1, 'calf', 3, 4]), ['piglet', 4], 'arrays with numbers and strings');",
-        "assert.deepEqual(diff([], ['snuffleupagus', 'cookie monster', 'elmo']), ['snuffleupagus', 'cookie monster', 'elmo'], 'empty array');"
+        "assert(typeof(diff([1, 2, 3, 5], [1, 2, 3, 4, 5])) === 'array', '<code>diff&#40;&#41;</code> should return an array.');",
+        "assert(diff(['diorite', 'andesite', 'grass', 'dirt', 'pink wool', 'dead shrub'], ['diorite', 'andesite', 'grass', 'dirt', 'dead shrub']) === ['pink wool'], '<code>['diorite', 'andesite', 'grass', 'dirt', 'pink wool', 'dead shrub'], ['diorite', 'andesite', 'grass', 'dirt', 'dead shrub']<code> should return <code>['pink wool']</code>.');",
+        "assert(diff(['andesite', 'grass', 'dirt', 'dead shrub'], ['andesite', 'grass', 'dirt', 'dead shrub']), [], 'arrays with no difference', '.');",
+        "assert(diff([1, 2, 3, 5], [1, 2, 3, 4, 5]) === [4], 'arrays with numbers', '.');",
+        "assert(diff([], ['snuffleupagus', 'cookie monster', 'elmo']), ['snuffleupagus', 'cookie monster', 'elmo'], 'empty array');",
+        "assert.includeMembers(diff([1, 'calf', 3, 'piglet'], [1, 'calf', 3, 4]), ['piglet', 4], 'arrays with numbers and strings', '.');",
+        "assert.includeMembers(diff(['andesite', 'grass', 'dirt', 'pink wool', 'dead shrub'], ['diorite', 'andesite', 'grass', 'dirt', 'dead shrub']), ['diorite', 'pink wool'], 'arrays with more than one difference', '.');"
       ],
       "MDNlinks": [
         "Comparison Operators",
@@ -93,11 +93,11 @@
       "id": "a7f4d8f2483413a6ce226cac",
       "title": "Roman Numeral Converter",
       "tests": [
-        "expect(convert(12)).to.equal(\"XII\");",
-        "expect(convert(5)).to.equal(\"V\");",
-        "expect(convert(9)).to.equal(\"IX\");",
-        "expect(convert(29)).to.equal(\"XXIX\");",
-        "expect(convert(16)).to.equal(\"XVI\");"
+        "assert(convert(12) === \"XII\");",
+        "assert(convert(5) === \"V\");",
+        "assert(convert(9) === \"IX\");",
+        "assert(convert(29) === \"XXIX\");",
+        "assert(convert(16) === \"XVI\");"
       ],
       "difficulty": "2.02",
       "description": [
@@ -134,11 +134,11 @@
       "id": "a0b5010f579e69b815e7c5d6",
       "title": "Search and Replace",
       "tests": [
-        "expect(replace(\"Let us go to the store\", \"store\", \"mall\")).to.equal(\"Let us go to the mall\");",
-        "expect(replace(\"He is Sleeping on the couch\", \"Sleeping\", \"sitting\")).to.equal(\"He is Sitting on the couch\");",
-        "expect(replace(\"This has a spellngi error\", \"spellngi\", \"spelling\")).to.equal(\"This has a spelling error\");",
-        "expect(replace(\"His name is Tom\", \"Tom\", \"john\")).to.equal(\"His name is John\");",
-        "expect(replace(\"Let us get back to more Coding\", \"Coding\", \"bonfires\")).to.equal(\"Let us get back to more Bonfires\");"
+        "assert(replace(\"Let us go to the store\", \"store\", \"mall\") === \"Let us go to the mall\", '.');",
+        "assert(replace(\"He is Sleeping on the couch\", \"Sleeping\", \"sitting\") === \"He is Sitting on the couch\", '.');",
+        "assert(replace(\"This has a spellngi error\", \"spellngi\", \"spelling\") === \"This has a spelling error\", '.');",
+        "assert(replace(\"His name is Tom\", \"Tom\", \"john\") === \"His name is John\", '.');",
+        "assert(replace(\"Let us get back to more Coding\", \"Coding\", \"bonfires\") === \"Let us get back to more Bonfires\");"
       ],
       "difficulty": "2.03",
       "description": [
@@ -178,11 +178,11 @@
       "id": "aa7697ea2477d1316795783b",
       "title": "Pig Latin",
       "tests": [
-        "expect(translate(\"california\")).to.equal(\"aliforniacay\");",
-        "expect(translate(\"paragraphs\")).to.equal(\"aragraphspay\");",
-        "expect(translate(\"glove\")).to.equal(\"oveglay\");",
-        "expect(translate(\"algorithm\")).to.equal(\"algorithmway\");",
-        "expect(translate(\"eight\")).to.equal(\"eightway\");"
+        "assert(translate(\"california\") === \"aliforniacay\", '.');",
+        "assert(translate(\"paragraphs\") === \"aragraphspay\", '.');",
+        "assert(translate(\"glove\") === \"oveglay\", '.');",
+        "assert(translate(\"algorithm\") === \"algorithmway\", '.');",
+        "assert(translate(\"eight\") === \"eightway\");"
       ],
       "difficulty": "2.04",
       "description": [
@@ -222,8 +222,8 @@
       "id": "afd15382cdfb22c9efe8b7de",
       "title": "DNA Pairing",
       "tests": [
-        "assert.deepEqual(pair(\"ATCGA\"),[['A','T'],['T','A'],['C','G'],['G','C'],['A','T']], 'should return the dna pair');",
-        "assert.deepEqual(pair(\"TTGAG\"),[['T','A'],['T','A'],['G','C'],['A','T'],['G','C']], 'should return the dna pair');",
+        "assert.deepEqual(pair(\"ATCGA\"),[['A','T'],['T','A'],['C','G'],['G','C'],['A','T']], 'should return the dna pair', '.');",
+        "assert.deepEqual(pair(\"TTGAG\"),[['T','A'],['T','A'],['G','C'],['A','T'],['G','C']], 'should return the dna pair', '.');",
         "assert.deepEqual(pair(\"CTCTA\"),[['C','G'],['T','A'],['C','G'],['T','A'],['A','T']], 'should return the dna pair');"
       ],
       "difficulty": "2.05",
@@ -276,10 +276,10 @@
         "fearNotLetter('abce');"
       ],
       "tests": [
-        "expect(fearNotLetter('abce')).to.equal('d');",
-        "expect(fearNotLetter('bcd')).to.be.undefined;",
-        "expect(fearNotLetter('abcdefghjklmno')).to.equal('i');",
-        "expect(fearNotLetter('yz')).to.be.undefined;"
+        "assert(fearNotLetter('abce') === 'd', '.');",
+        "assert(fearNotLetter('bcd')).to.be.undefined;",
+        "assert(fearNotLetter('abcdefghjklmno') === 'i', '.');",
+        "assert(fearNotLetter('yz')).to.be.undefined;"
       ],
       "MDNlinks": [
         "String.charCodeAt()",
@@ -316,13 +316,13 @@
         "boo(null);"
       ],
       "tests": [
-        "assert.strictEqual(boo(true), true);",
-        "assert.strictEqual(boo(false), true);",
-        "assert.strictEqual(boo([1, 2, 3]), false);",
-        "assert.strictEqual(boo([].slice), false);",
-        "assert.strictEqual(boo({ 'a': 1 }), false);",
-        "assert.strictEqual(boo(1), false);",
-        "assert.strictEqual(boo(NaN), false);",
+        "assert.strictEqual(boo(true), true, '.');",
+        "assert.strictEqual(boo(false), true, '.');",
+        "assert.strictEqual(boo([1, 2, 3]), false, '.');",
+        "assert.strictEqual(boo([].slice), false, '.');",
+        "assert.strictEqual(boo({ 'a': 1 }), false, '.');",
+        "assert.strictEqual(boo(1), false, '.');",
+        "assert.strictEqual(boo(NaN), false, '.');",
         "assert.strictEqual(boo('a'), false);"
       ],
       "MDNlinks": [
@@ -360,9 +360,9 @@
         "unite([1, 3, 2], [5, 2, 1, 4], [2, 1]);"
       ],
       "tests": [
-        "assert.deepEqual(unite([1, 3, 2], [5, 2, 1, 4], [2, 1]), [1, 3, 2, 5, 4], 'should return the union of the given arrays');",
-        "assert.deepEqual(unite([1, 3, 2], [1, [5]], [2, [4]]), [1, 3, 2, [5], [4]], 'should not flatten nested arrays');",
-        "assert.deepEqual(unite([1, 2, 3], [5, 2, 1]), [1, 2, 3, 5], 'should correctly handle exactly two arguments');",
+        "assert.deepEqual(unite([1, 3, 2], [5, 2, 1, 4], [2, 1]), [1, 3, 2, 5, 4], 'should return the union of the given arrays', '.');",
+        "assert.deepEqual(unite([1, 3, 2], [1, [5]], [2, [4]]), [1, 3, 2, [5], [4]], 'should not flatten nested arrays', '.');",
+        "assert.deepEqual(unite([1, 2, 3], [5, 2, 1]), [1, 2, 3, 5], 'should correctly handle exactly two arguments', '.');",
         "assert.deepEqual(unite([1, 2, 3], [5, 2, 1, 4], [2, 1], [6, 7, 8]), [ 1, 2, 3, 5, 4, 6, 7, 8 ], 'should correctly handle higher numbers of arguments');"
       ],
       "MDNlinks": [
@@ -399,12 +399,12 @@
         "convert('Dolce & Gabbana');"
       ],
       "tests": [
-        "assert.match(convert('Dolce & Gabbana'), /Dolce &(amp|AMP|#x00026|#38); Gabbana/, 'should escape characters');",
-        "assert.match(convert('Hamburgers < Pizza < Tacos'), /Hamburgers &(lt|LT|#x0003C|#60); Pizza &(lt|LT|#x0003C|#60); Tacos/, 'should escape characters');",
-        "assert.match(convert('Sixty > twelve'), /Sixty &(gt|GT|#x0003E|#62); twelve/, 'should escape characters');",
-        "assert.match(convert('Stuff in \"quotation marks\"'), /Stuff in &(quot|QUOT|#x00022|#34);quotation marks&(quot|QUOT|#x00022|#34);/, 'should escape characters');",
-        "assert.match(convert(\"Shindler's List\"), /Shindler&(apos|#x00027|#39);s List/, 'should escape characters');",
-        "assert.match(convert('<>'), /&(lt|LT|#x0003C|#60);&(gt|GT|#x0003E|#62);/, 'should escape characters');",
+        "assert.match(convert('Dolce & Gabbana'), /Dolce &(amp|AMP|#x00026|#38); Gabbana/, 'should escape characters', '.');",
+        "assert.match(convert('Hamburgers < Pizza < Tacos'), /Hamburgers &(lt|LT|#x0003C|#60); Pizza &(lt|LT|#x0003C|#60); Tacos/, 'should escape characters', '.');",
+        "assert.match(convert('Sixty > twelve'), /Sixty &(gt|GT|#x0003E|#62); twelve/, 'should escape characters', '.');",
+        "assert.match(convert('Stuff in \"quotation marks\"'), /Stuff in &(quot|QUOT|#x00022|#34);quotation marks&(quot|QUOT|#x00022|#34);/, 'should escape characters', '.');",
+        "assert.match(convert(\"Shindler's List\"), /Shindler&(apos|#x00027|#39);s List/, 'should escape characters', '.');",
+        "assert.match(convert('<>'), /&(lt|LT|#x0003C|#60);&(gt|GT|#x0003E|#62);/, 'should escape characters', '.');",
         "assert.strictEqual(convert('abc'), 'abc', 'should handle strings with nothing to escape');"
       ],
       "MDNlinks": [
@@ -442,9 +442,9 @@
         "spinalCase('This Is Spinal Tap');"
       ],
       "tests": [
-        "assert.strictEqual(spinalCase('This Is Spinal Tap'), 'this-is-spinal-tap', 'should return spinal case from string with spaces');",
-        "assert.strictEqual(spinalCase('thisIsSpinalTap'), 'this-is-spinal-tap', 'should return spinal case from string with camel case');",
-        "assert.strictEqual(spinalCase('The_Andy_Griffith_Show'), 'the-andy-griffith-show', 'should return spinal case from string with snake case');",
+        "assert.strictEqual(spinalCase('This Is Spinal Tap'), 'this-is-spinal-tap', 'should return spinal case from string with spaces', '.');",
+        "assert.strictEqual(spinalCase('thisIsSpinalTap'), 'this-is-spinal-tap', 'should return spinal case from string with camel case', '.');",
+        "assert.strictEqual(spinalCase('The_Andy_Griffith_Show'), 'the-andy-griffith-show', 'should return spinal case from string with snake case', '.');",
         "assert.strictEqual(spinalCase('Teletubbies say Eh-oh'), 'teletubbies-say-eh-oh', 'should return spinal case from string with spaces and hyphens');"
       ],
       "MDNlinks": [
@@ -482,12 +482,12 @@
         "sumFibs(4);"
       ],
       "tests": [
-        "expect(sumFibs(1)).to.be.a('number');",
-        "expect(sumFibs(1000)).to.equal(1785);",
-        "expect(sumFibs(4000000)).to.equal(4613732);",
-        "expect(sumFibs(4)).to.equal(5);",
-        "expect(sumFibs(75024)).to.equal(60696);",
-        "expect(sumFibs(75025)).to.equal(135721);"
+        "assert(sumFibs(1)).to.be.a('number', '.');",
+        "assert(sumFibs(1000) === 1785, '.');",
+        "assert(sumFibs(4000000) === 4613732, '.');",
+        "assert(sumFibs(4) === 5, '.');",
+        "assert(sumFibs(75024) === 60696, '.');",
+        "assert(sumFibs(75025) === 135721);"
       ],
       "MDNlinks": [
         "Remainder"
@@ -523,9 +523,9 @@
         "sumPrimes(10);"
       ],
       "tests": [
-        "expect(sumPrimes(10)).to.be.a('number');",
-        "expect(sumPrimes(10)).to.equal(17);",
-        "expect(sumPrimes(977)).to.equal(73156);"
+        "assert(sumPrimes(10)).to.be.a('number', '.');",
+        "assert(sumPrimes(10) === 17, '.');",
+        "assert(sumPrimes(977) === 73156);"
       ],
       "MDNlinks": [
         "For Loops",
@@ -563,10 +563,10 @@
         "smallestCommons([1,5]);"
       ],
       "tests": [
-        "expect(smallestCommons([1,5])).to.be.a('number');",
-        "expect(smallestCommons([1,5])).to.equal(60);",
-        "expect(smallestCommons([5,1])).to.equal(60);",
-        "expect(smallestCommons([1,13])).to.equal(360360);"
+        "assert(smallestCommons([1,5])).to.be.a('number', '.');",
+        "assert(smallestCommons([1,5]) === 60, '.');",
+        "assert(smallestCommons([5,1]) === 60, '.');",
+        "assert(smallestCommons([1,13]) === 360360);"
       ],
       "MDNlinks": [
         "Smallest Common Multiple"
@@ -601,7 +601,7 @@
         "find([1, 2, 3, 4], function(num){ return num % 2 === 0; });"
       ],
       "tests": [
-        "assert.strictEqual(find([1, 3, 5, 8, 9, 10], function(num) { return num % 2 === 0; }), 8, 'should return first found value');",
+        "assert.strictEqual(find([1, 3, 5, 8, 9, 10], function(num) { return num % 2 === 0; }), 8, 'should return first found value', '.');",
         "assert.strictEqual(find([1, 3, 5, 9], function(num) { return num % 2 === 0; }), undefined, 'should return undefined if not found');"
       ],
       "MDNlinks": [
@@ -637,9 +637,9 @@
         "drop([1, 2, 3], function(n) {return n < 3; });"
       ],
       "tests": [
-        "expect(drop([1, 2, 3, 4], function(n) {return n >= 3; })).to.eqls([3, 4]);",
-        "expect(drop([1, 2, 3], function(n) {return n > 0; })).to.eqls([1, 2, 3]);",
-        "expect(drop([1, 2, 3, 4], function(n) {return n > 5; })).to.eqls([]);"
+        "assert(drop([1, 2, 3, 4], function(n) {return n >= 3; })).to.eqls([3, 4], '.');",
+        "assert(drop([1, 2, 3], function(n) {return n > 0; })).to.eqls([1, 2, 3], '.');",
+        "assert(drop([1, 2, 3, 4], function(n) {return n > 5; })).to.eqls([]);"
       ],
       "MDNlinks": [
         "Arguments object",
@@ -675,9 +675,9 @@
         "steamroller([1, [2], [3, [[4]]]]);"
       ],
       "tests": [
-        "assert.deepEqual(steamroller([[['a']], [['b']]]), ['a', 'b'], 'should flatten nested arrays');",
-        "assert.deepEqual(steamroller([1, [2], [3, [[4]]]]), [1, 2, 3, 4], 'should flatten nested arrays');",
-        "assert.deepEqual(steamroller([1, [], [3, [[4]]]]), [1, 3, 4], 'should work with empty arrays');",
+        "assert.deepEqual(steamroller([[['a']], [['b']]]), ['a', 'b'], 'should flatten nested arrays', '.');",
+        "assert.deepEqual(steamroller([1, [2], [3, [[4]]]]), [1, 2, 3, 4], 'should flatten nested arrays', '.');",
+        "assert.deepEqual(steamroller([1, [], [3, [[4]]]]), [1, 3, 4], 'should work with empty arrays', '.');",
         "assert.deepEqual(steamroller([1, {}, [3, [[4]]]]), [1, {}, 3, 4], 'should work with actual objects');"
       ],
       "MDNlinks": [
@@ -713,8 +713,8 @@
         "binaryAgent('01000001 01110010 01100101 01101110 00100111 01110100 00100000 01100010 01101111 01101110 01100110 01101001 01110010 01100101 01110011 00100000 01100110 01110101 01101110 00100001 00111111');"
       ],
       "tests": [
-        "expect(binaryAgent('01000001 01110010 01100101 01101110 00100111 01110100 00100000 01100010 01101111 01101110 01100110 01101001 01110010 01100101 01110011 00100000 01100110 01110101 01101110 00100001 00111111')).to.equal(\"Aren't bonfires fun!?\");",
-        "expect(binaryAgent('01001001 00100000 01101100 01101111 01110110 01100101 00100000 01000110 01110010 01100101 01100101 01000011 01101111 01100100 01100101 01000011 01100001 01101101 01110000 00100001')).to.equal(\"I love FreeCodeCamp!\");"
+        "assert(binaryAgent('01000001 01110010 01100101 01101110 00100111 01110100 00100000 01100010 01101111 01101110 01100110 01101001 01110010 01100101 01110011 00100000 01100110 01110101 01101110 00100001 00111111') === \"Aren't bonfires fun!?\", '.');",
+        "assert(binaryAgent('01001001 00100000 01101100 01101111 01110110 01100101 00100000 01000110 01110010 01100101 01100101 01000011 01101111 01100100 01100101 01000011 01100001 01101101 01110000 00100001') === \"I love FreeCodeCamp!\");"
       ],
       "MDNlinks": [
         "String.charCodeAt()",
@@ -752,8 +752,8 @@
         "every([{'user': 'Tinky-Winky', 'sex': 'male'}, {'user': 'Dipsy', 'sex': 'male'}, {'user': 'Laa-Laa', 'sex': 'female'}, {'user': 'Po', 'sex': 'female'}], 'sex');"
       ],
       "tests": [
-        "assert.strictEqual(every([{'user': 'Tinky-Winky', 'sex': 'male'}, {'user': 'Dipsy', 'sex': 'male'}, {'user': 'Laa-Laa', 'sex': 'female'}, {'user': 'Po', 'sex': 'female'}], 'sex'), true, 'should return true if predicate returns truthy for all elements in the collection');",
-        "assert.strictEqual(every([{'user': 'Tinky-Winky', 'sex': 'male'}, {'user': 'Dipsy', 'sex': 'male'}, {'user': 'Laa-Laa', 'sex': 'female'}, {'user': 'Po', 'sex': 'female'}], {'sex': 'female'}), false, 'should return false if predicate returns falsey for any element in the collection');",
+        "assert.strictEqual(every([{'user': 'Tinky-Winky', 'sex': 'male'}, {'user': 'Dipsy', 'sex': 'male'}, {'user': 'Laa-Laa', 'sex': 'female'}, {'user': 'Po', 'sex': 'female'}], 'sex'), true, 'should return true if predicate returns truthy for all elements in the collection', '.');",
+        "assert.strictEqual(every([{'user': 'Tinky-Winky', 'sex': 'male'}, {'user': 'Dipsy', 'sex': 'male'}, {'user': 'Laa-Laa', 'sex': 'female'}, {'user': 'Po', 'sex': 'female'}], {'sex': 'female'}), false, 'should return false if predicate returns falsey for any element in the collection', '.');",
         "assert.strictEqual(every([{'user': 'Tinky-Winky', 'sex': 'female'}, {'user': 'Dipsy', 'sex': 'male'}, {'user': 'Laa-Laa', 'sex': 'female'}, {'user': 'Po', 'sex': 'female'}], {'sex': 'female'}), false, 'should return false if predicate returns falsey for any element in the collection');"
       ],
       "MDNlinks": [
@@ -791,11 +791,11 @@
         "add(2,3);"
       ],
       "tests": [
-        "expect(add(2, 3)).to.equal(5);",
-        "expect(add(2)(3)).to.equal(5);",
-        "expect(add('http://bit.ly/IqT6zt')).to.be.undefined;",
-        "expect(add(2, '3')).to.be.undefined;",
-        "expect(add(2)([3])).to.be.undefined;"
+        "assert(add(2, 3) === 5, '.');",
+        "assert(add(2)(3) === 5, '.');",
+        "assert(add('http://bit.ly/IqT6zt')).to.be.undefined;",
+        "assert(add(2, '3')).to.be.undefined;",
+        "assert(add(2)([3])).to.be.undefined;"
       ],
       "MDNlinks": [
         "Global Function Object",
