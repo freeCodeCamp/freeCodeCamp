@@ -1,10 +1,11 @@
 doctype html
 html(ng-app='profileValidation', lang='en')
   head
-    include partials/universal-head
   body.top-and-bottom-margins
+    include partials/universal-head
     include partials/navbar
     .container
       include partials/flash
       block content
     include partials/footer
+    include partials/universal-tail

@@ -13,10 +13,9 @@ block content
     link(rel="stylesheet", href="//fonts.googleapis.com/css?family=Ubuntu+Mono")
     script(type='text/javascript', src='/js/lib/codemirror/mode/javascript/javascript.js')
     script(type='text/javascript', src='/js/lib/jailed/jailed.js')
-    script(type='text/javascript', src='/js/lib/coursewares/sandbox.js')
     .row(ng-controller="pairedWithController")
         .col-xs-12.col-sm-12.col-md-4.col-lg-3
-            .scroll-locker
+            .scroll-locker(id = "scroll-locker")
                 .innerMarginFix(style = "width: 99%;")
                     #testCreatePanel.well
                         h3.text-center.negative-10= name
@@ -38,7 +37,7 @@ block content
                                     // extra field to distract password tools like lastpass from injecting css into our username field
                     label.negative-10.btn.btn-primary.btn-block#submitButton
                         i.fa.fa-play
-                            | &nbsp; Run code (ctrl + enter)
+                            | &nbsp; Run tests (ctrl + enter)
                     .button-spacer
                     .btn-group.input-group.btn-group-justified
                         label.btn.btn-success#trigger-reset-modal
@@ -72,7 +71,9 @@ block content
                     form.code
                         .codeMirrorView
                             textarea#codeEditor(autofocus=true, style='display: none;')
-                    script(src='/js/lib/coursewares/coursewaresJSFramework_0.0.6.js')
+                            script(src=rev('/js', 'commonFramework.js'))
+                            script.
+                                editor.setOption("mode", "javascript");
     #complete-courseware-dialog.modal(tabindex='-1')
         .modal-dialog.animated.zoomIn.fast-animation
             .modal-content
@@ -80,16 +81,19 @@ block content
                     a.close.closing-x(href='#', data-dismiss='modal', aria-hidden='true') ×
                 .modal-body
                     .text-center
-                        .animated.zoomInDown.delay-half
-                            span.completion-icon.ion-checkmark-circled.text-primary
-                    if (user)
-                        a.animated.fadeIn.btn.btn-lg.btn-primary.btn-block#next-courseware-button(name='_csrf', value=_csrf) Go to my next challenge (ctrl + enter)
-                        if (user.progressTimestamps.length > 2)
-                            a.animated.fadeIn.btn.btn-lg.btn-block.btn-twitter(target="_blank", href="https://twitter.com/intent/tweet?text=I%20just%20#{verb}%20%40FreeCodeCamp%20#{name}&url=http%3A%2F%2Ffreecodecamp.com/challenges/#{dashedName}&hashtags=LearnToCode, JavaScript")
-                                i.fa.fa-twitter &thinsp;
-                                    = phrase
-                    else
-                        a.animated.fadeIn.btn.btn-lg.signup-btn.btn-block(href='/login') Sign in so you can save your progress
+                        #checkmark-container.row
+                            #challenge-checkmark.animated.zoomInDown.delay-half
+                                span.completion-icon.ion-checkmark-circled.text-primary
+                        .spacer
+                        .row
+                        if (user)
+                            #submit-challenge.animated.fadeIn.btn.btn-lg.btn-primary.btn-block Submit
+                            if (user.progressTimestamps.length > 2)
+                                a.animated.fadeIn.btn.btn-lg.btn-block.btn-twitter(target="_blank", href="https://twitter.com/intent/tweet?text=I%20just%20#{verb}%20%40FreeCodeCamp%20#{name}&url=http%3A%2F%2Ffreecodecamp.com/challenges/#{dashedName}&hashtags=LearnToCode, JavaScript")
+                                    i.fa.fa-twitter &thinsp;
+                                        = phrase
+                        else
+                            a.animated.fadeIn.btn.btn-lg.signup-btn.btn-block(href='/login') Sign in so you can save your progress
     include ../partials/challenge-modals
     script.
         var MDNlinks = !{JSON.stringify(MDNlinks)};

@@ -221,7 +221,28 @@
   "cities": [
     "portland"
   ]
-}, {
+},
+  {
+    "name": "Viking Code School",
+    "cost": "18000",
+    "housing": "0",
+    "finance": false,
+    "weeks": "16",
+    "cities": [
+      "online"
+    ]
+  },
+  {
+    "name": "App Academy",
+    "cost": "18000",
+    "housing": "500",
+    "finance": false,
+    "weeks": "12",
+    "cities": [
+      "san-francisco"
+    ]
+  },
+  {
   "name": "Turing School",
   "cost": "17500",
   "housing": "400",
@@ -229,14 +250,5 @@
   "weeks": "27",
   "cities": [
     "denver"
-  ]
-}, {
-  "name": "Free Code Camp",
-  "cost": "0",
-  "housing": "0",
-  "finance": false,
-  "weeks": "0",
-  "cities": [
-    "online"
   ]
 }]

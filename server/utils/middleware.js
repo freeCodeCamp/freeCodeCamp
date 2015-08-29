@@ -12,12 +12,12 @@ exports.userMigration = function userMigration(req, res, next) {
   if (!req.user || req.user.completedChallenges.length !== 0) {
     return next();
   }
-  req.user.completedChallenges = R.filter(function (elem) {
+  req.user.completedChallenges = R.filter(function(elem) {
     // getting rid of undefined
     return elem;
   }, R.concat(
       req.user.completedCoursewares,
-      req.user.completedBonfires.map(function (bonfire) {
+      req.user.completedBonfires.map(function(bonfire) {
         return ({
           completedDate: bonfire.completedDate,
           id: bonfire.id,
@@ -50,4 +50,11 @@ exports.ifNoUserSend = function ifNoUserSend(sendThis) {
     }
     return res.status(200).send(sendThis);
   };
+};
+
+exports.ifNoUser401 = function ifNoUser401(req, res, next) {
+  if (req.user) {
+    return next();
+  }
+  return res.status(401).end();
 };

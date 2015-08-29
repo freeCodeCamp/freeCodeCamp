@@ -9,7 +9,7 @@ MongoClient.connect(secrets.db, function(err, database) {
     throw err;
   }
 
-  database.collection('users').aggregate([
+  database.collection('user').aggregate([
     {$match: { 'email': { $exists: true } } },
     {$match: { 'email': { $ne: '' } } },
     {$match: { 'email': { $ne: null } } },

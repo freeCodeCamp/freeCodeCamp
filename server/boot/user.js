@@ -1,28 +1,52 @@
-var _ = require('lodash'),
-    async = require('async'),
-    crypto = require('crypto'),
-    nodemailer = require('nodemailer'),
-    moment = require('moment'),
-    // debug = require('debug')('freecc:cntr:userController'),
+import _ from 'lodash';
+import async from 'async';
+import moment from 'moment';
+import debugFactory from 'debug';
 
-    secrets = require('../../config/secrets');
+import { ifNoUser401 } from '../utils/middleware';
+
+const debug = debugFactory('freecc:boot:user');
+const daysBetween = 1.5;
 
 function calcCurrentStreak(cals) {
-  const revCals = cals.slice().reverse();
+  const revCals = cals.concat([Date.now()]).slice().reverse();
   let streakBroken = false;
-  return revCals
+  const lastDayInStreak = revCals
     .reduce((current, cal, index) => {
-      // if streak not borken and diff between this cal and the call after it
-      // is equal to zero
-      // moment.diff will return the days between rounded down
+      const before = revCals[index === 0 ? 0 : index - 1];
       if (
         !streakBroken &&
-        moment(revCals[index === 0 ? 0 : index - 1]).diff(cal, 'days') === 0
+        moment(before).diff(cal, 'days', true) < daysBetween
       ) {
-        return current + 1;
+        return index;
       }
-      return 1;
-    }, 1);
+      streakBroken = true;
+      return current;
+    }, 0);
+
+  const lastTimestamp = revCals[lastDayInStreak];
+  return Math.ceil(moment().diff(lastTimestamp, 'days', true));
+}
+
+function calcLongestStreak(cals) {
+  let tail = cals[0];
+  const longest = cals.reduce((longest, head, index) => {
+    const last = cals[index === 0 ? 0 : index - 1];
+    // is streak broken
+    if (moment(head).diff(last, 'days', true) > daysBetween) {
+      tail = head;
+    }
+    if (dayDiff(longest) < dayDiff([head, tail])) {
+      return [head, tail];
+    }
+    return longest;
+  }, [cals[0], cals[0]]);
+
+  return Math.ceil(dayDiff(longest));
+}
+
+function dayDiff([head, tail]) {
+  return moment(head).diff(tail, 'days', true);
 }
 
 module.exports = function(app) {
@@ -40,13 +64,16 @@ module.exports = function(app) {
   router.get('/signout', signout);
   router.get('/forgot', getForgot);
   router.post('/forgot', postForgot);
-  router.get('/reset/:token', getReset);
-  router.post('/reset/:token', postReset);
+  router.get('/reset-password', getReset);
+  router.post('/reset-password', postReset);
   router.get('/email-signup', getEmailSignup);
   router.get('/email-signin', getEmailSignin);
   router.get('/account/api', getAccountAngular);
-  router.post('/account/password', postUpdatePassword);
-  router.post('/account/delete', postDeleteAccount);
+  router.post(
+    '/account/delete',
+    ifNoUser401,
+    postDeleteAccount
+  );
   router.get('/account/unlink/:provider', getOauthUnlink);
   router.get('/account', getAccount);
   // Ensure this is the last route!
@@ -132,15 +159,10 @@ module.exports = function(app) {
               objOrNum :
               objOrNum.timestamp;
           })
-          .map(time => {
-            return moment(time).format('YYYY-MM-DD');
-          });
+          .sort();
 
         user.currentStreak = calcCurrentStreak(cals);
-
-        if (user.currentStreak > user.longestStreak) {
-          user.longestStreak = user.currentStreak;
-        }
+        user.longestStreak = calcLongestStreak(cals);
 
         const data = user
           .progressTimestamps
@@ -148,6 +170,9 @@ module.exports = function(app) {
             return typeof objOrNum === 'number' ?
               objOrNum :
               objOrNum.timestamp;
+          })
+          .filter((timestamp) => {
+            return !!timestamp;
           })
           .reduce((data, timeStamp) => {
             data[(timeStamp / 1000)] = 1;
@@ -158,6 +183,10 @@ module.exports = function(app) {
           return obj.challengeType === 3 || obj.challengeType === 4;
         });
 
+        const bonfires = user.completedChallenges.filter(function(obj) {
+          return obj.challengeType === 5 && (obj.name || '').match(/Bonfire/g);
+        });
+
         res.render('account/show', {
           title: 'Camper ' + user.username + '\'s portfolio',
           username: user.username,
@@ -165,16 +194,16 @@ module.exports = function(app) {
           isMigrationGrandfathered: user.isMigrationGrandfathered,
           isGithubCool: user.isGithubCool,
           location: user.location,
-          githubProfile: user.github,
-          linkedinProfile: user.linkedin,
-          googleProfile: user.google,
-          facebookProfile: user.facebook,
-          twitterHandle: user.twitter,
-          bio: user.bio,
+          github: user.githubURL,
+          linkedin: user.linkedin,
+          google: user.google,
+          facebook: user.facebook,
+          twitter: user.twitter,
           picture: user.picture,
           progressTimestamps: user.progressTimestamps,
           calender: data,
           challenges: challenges,
+          bonfires: bonfires,
           moment: moment,
           longestStreak: user.longestStreak,
           currentStreak: user.currentStreak
@@ -182,44 +211,6 @@ module.exports = function(app) {
       }
     );
   }
-
-  /**
-  * POST /account/password
-  * Update current password.
-  */
-
-  function postUpdatePassword(req, res, next) {
-    req.assert('password', 'Password must be at least 4 characters long')
-      .len(4);
-
-    req.assert('confirmPassword', 'Passwords do not match')
-      .equals(req.body.password);
-
-    var errors = req.validationErrors();
-
-    if (errors) {
-      req.flash('errors', errors);
-      return res.redirect('/account');
-    }
-
-    User.findById(req.user.id, function(err, user) {
-      if (err) { return next(err); }
-
-      user.password = req.body.password;
-
-      user.save(function(err) {
-        if (err) { return next(err); }
-
-        req.flash('success', { msg: 'Password has been changed.' });
-        res.redirect('/account');
-      });
-    });
-  }
-
-  /**
-  * POST /account/delete
-  * Delete user account.
-  */
 
   function postDeleteAccount(req, res, next) {
     User.destroyById(req.user.id, function(err) {
@@ -229,11 +220,6 @@ module.exports = function(app) {
       res.redirect('/');
     });
   }
-
-  /**
-  * GET /account/unlink/:provider
-  * Unlink OAuth provider.
-  */
 
   function getOauthUnlink(req, res, next) {
     var provider = req.params.provider;
@@ -254,119 +240,37 @@ module.exports = function(app) {
     });
   }
 
-  /**
-  * GET /reset/:token
-  * Reset Password page.
-  */
-
-  function getReset(req, res, next) {
-    if (req.isAuthenticated()) {
-      return res.redirect('/');
+  function getReset(req, res) {
+    if (!req.accessToken) {
+      req.flash('errors', { msg: 'access token invalid' });
+      return res.render('account/forgot');
     }
-    User.findOne(
-      {
-        where: {
-          resetPasswordToken: req.params.token,
-          resetPasswordExpires: { gte: Date.now() }
-        }
-      },
-      function(err, user) {
-        if (err) { return next(err); }
-        if (!user) {
-          req.flash('errors', {
-            msg: 'Password reset token is invalid or has expired.'
-          });
-          return res.redirect('/forgot');
-        }
-        res.render('account/reset', {
-          title: 'Password Reset',
-          token: req.params.token
-        });
-      });
+    res.render('account/reset', {
+      title: 'Password Reset',
+      accessToken: req.accessToken.id
+    });
   }
 
-  /**
-  * POST /reset/:token
-  * Process the reset password request.
-  */
-
   function postReset(req, res, next) {
-    var errors = req.validationErrors();
+    const errors = req.validationErrors();
+    const { password } = req.body;
 
     if (errors) {
       req.flash('errors', errors);
       return res.redirect('back');
     }
 
-    async.waterfall([
-      function(done) {
-        User.findOne(
-          {
-            where: {
-              resetPasswordToken: req.params.token,
-              resetPasswordExpires: { gte: Date.now() }
-            }
-          },
-          function(err, user) {
-            if (err) { return next(err); }
-            if (!user) {
-              req.flash('errors', {
-                msg: 'Password reset token is invalid or has expired.'
-              });
-              return res.redirect('back');
-            }
-
-            user.password = req.body.password;
-            user.resetPasswordToken = null;
-            user.resetPasswordExpires = null;
-
-            user.save(function(err) {
-              if (err) { return done(err); }
-              req.logIn(user, function(err) {
-                done(err, user);
-              });
-            });
-          });
-      },
-      function(user, done) {
-        var transporter = nodemailer.createTransport({
-          service: 'Mandrill',
-          auth: {
-            user: secrets.mandrill.user,
-            pass: secrets.mandrill.password
-          }
-        });
-        var mailOptions = {
-          to: user.email,
-          from: 'Team@freecodecamp.com',
-          subject: 'Your Free Code Camp password has been changed',
-          text: [
-            'Hello,\n\n',
-            'This email is confirming that you requested to',
-            'reset your password for your Free Code Camp account.',
-            'This is your email:',
-            user.email,
-            '\n'
-          ].join(' ')
-        };
-        transporter.sendMail(mailOptions, function(err) {
-          if (err) { return done(err); }
-          req.flash('success', {
-            msg: 'Success! Your password has been changed.'
-          });
-          done();
-        });
-      }
-    ], function(err) {
+    User.findById(req.accessToken.userId, function(err, user) {
       if (err) { return next(err); }
-      res.redirect('/');
+      user.updateAttribute('password', password, function(err) {
+      if (err) { return next(err); }
+
+        debug('password reset processed successfully');
+        req.flash('info', { msg: 'password reset processed successfully' });
+        res.redirect('/');
+      });
     });
   }
-
-  /**
-  * GET /forgot
-  * Forgot Password page.
-  */
 
   function getForgot(req, res) {
     if (req.isAuthenticated()) {
@@ -382,83 +286,29 @@ module.exports = function(app) {
   * Create a random token, then the send user an email with a reset link.
   */
 
-  function postForgot(req, res, next) {
-    var errors = req.validationErrors();
+  function postForgot(req, res) {
+    const errors = req.validationErrors();
+    const email = req.body.email.toLowerCase();
 
     if (errors) {
       req.flash('errors', errors);
       return res.redirect('/forgot');
     }
 
-    async.waterfall([
-      function(done) {
-        crypto.randomBytes(16, function(err, buf) {
-          if (err) { return done(err); }
-          var token = buf.toString('hex');
-          done(null, token);
-        });
-      },
-      function(token, done) {
-        User.findOne({
-          where: { email: req.body.email.toLowerCase() }
-        }, function(err, user) {
-          if (err) { return done(err); }
-          if (!user) {
-            req.flash('errors', {
-              msg: 'No account with that email address exists.'
-            });
-            return res.redirect('/forgot');
-          }
-
-          user.resetPasswordToken = token;
-          // 3600000 = 1 hour
-          user.resetPasswordExpires = Date.now() + 3600000;
-
-          user.save(function(err) {
-            if (err) { return done(err); }
-            done(null, token, user);
-          });
-        });
-      },
-      function(token, user, done) {
-        var transporter = nodemailer.createTransport({
-          service: 'Mandrill',
-          auth: {
-            user: secrets.mandrill.user,
-            pass: secrets.mandrill.password
-          }
-        });
-        var mailOptions = {
-          to: user.email,
-          from: 'Team@freecodecamp.com',
-          subject: 'Reset your Free Code Camp password',
-          text: [
-            'You are receiving this email because you (or someone else)\n',
-            'requested we reset your Free Code Camp account\'s password.\n\n',
-            'Please click on the following link, or paste this into your\n',
-            'browser to complete the process:\n\n',
-            'http://',
-            req.headers.host,
-            '/reset/',
-            token,
-            '\n\n',
-            'If you did not request this, please ignore this email and\n',
-            'your password will remain unchanged.\n'
-          ].join('')
-        };
-        transporter.sendMail(mailOptions, function(err) {
-          if (err) { return done(err); }
-          req.flash('info', {
-            msg: 'An e-mail has been sent to ' +
-            user.email +
-            ' with further instructions.'
-          });
-          done(null, 'done');
-        });
+    User.resetPassword({
+      email: email
+    }, function(err) {
+      if (err) {
+        req.flash('errors', err);
+        return res.redirect('/forgot');
       }
-    ], function(err) {
-      if (err) { return next(err); }
-      res.redirect('/forgot');
+
+      req.flash('info', {
+        msg: 'An e-mail has been sent to ' +
+        email +
+        ' with further instructions.'
+      });
+      res.render('account/forgot');
     });
   }
 

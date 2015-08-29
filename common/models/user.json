@@ -2,6 +2,7 @@
   "name": "user",
   "base": "User",
   "strict": true,
+  "emailVerificationRequired": false,
   "idInjection": true,
   "trackChanges": false,
   "properties": {
@@ -152,6 +153,10 @@
         }
       ],
       "default": []
+    },
+    "rand": {
+      "type": "number",
+      "index": true
     }
   },
   "validations": [],

@@ -6,6 +6,7 @@ const trusted = [
   '104.236.218.15',
   '*.freecodecamp.com',
   'http://www.freecodecamp.com',
+  'http://freecodecamp.com',
   'https://www.freecodecamp.com',
   'https://freecodecamp.com',
   'https://freecodecamp.org',
