@@ -72,7 +72,7 @@
     "less-middleware": "~2.0.1",
     "lodash": "^3.9.3",
     "loopback": "https://github.com/FreeCodeCamp/loopback.git#fix/no-password",
-    "loopback-boot": "^2.8.0",
+    "loopback-boot": "2.8.2",
     "loopback-component-passport": "https://github.com/FreeCodeCamp/loopback-component-passport.git#feature/flashfailure",
     "loopback-connector-mongodb": "^1.10.0",
     "lusca": "~1.0.2",
