@@ -43,6 +43,7 @@
     "csso": "~1.3.11",
     "dateformat": "~1.0.11",
     "debug": "~2.1.0",
+    "dedent": "^0.4.0",
     "dotenv": "~0.4.0",
     "errorhandler": "~1.3.0",
     "eslint": "^1.1.0",

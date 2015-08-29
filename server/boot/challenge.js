@@ -1,4 +1,5 @@
 import _ from 'lodash';
+import dedent from 'dedent';
 import moment from 'moment';
 import { Observable, Scheduler } from 'rx';
 import assign from 'object.assign';
@@ -208,10 +209,12 @@ module.exports = function(app) {
           debug('next challengeName', nextChallengeName);
           if (!nextChallengeName || nextChallengeName === firstChallenge) {
             req.flash('errors', {
-              msg: 'Once you have completed all of our challenges, you should '+
-              'join our <a href=\"//gitter.im/freecodecamp/HalfWayClub\"'+
-              'target=\"_blank\">Half Way Club</a> and start getting '+
-              'ready for our nonprofit projects.'
+              msg: dedent`
+                Once you have completed all of our challenges, you should
+                join our <a href=\"//gitter.im/freecodecamp/HalfWayClub\"
+                target=\"_blank\">Half Way Club</a> and start getting
+                ready for our nonprofit projects.
+              `.split('\n').join(' ')
             });
             return res.redirect('/map');
           }
