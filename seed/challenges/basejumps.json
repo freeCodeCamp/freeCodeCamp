@@ -21,6 +21,7 @@
         "Never run this command on your local machine. But in your Cloud 9 terminal window, run: <code>rm -rf * && echo \"export NODE_PATH=$NODE_PATH:/home/ubuntu/.nvm/v0.10.35/lib/node_modules\" >> ~/.bashrc && source ~/.bashrc && npm install -g yo grunt grunt-cli generator-angular-fullstack && yo angular-fullstack</code>",
         "Yeoman will prompt you to answer some questions. Answer them like this:",
         "What would you like to write scripts with? <span class='text-success'>JavaScript</span>",
+        "Would you like to use Javascript ES6 in your client by preprocessing it with Babel? <span class='text-success'>No</span>",
         "What would you like to write markup with? <span class='text-success'>HTML</span>",
         "What would you like to write stylesheets with? <span class='text-success'>CSS</span>",
         "What Angular router would you like to use? <span class='text-success'>ngRoute</span>",
