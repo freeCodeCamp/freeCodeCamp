@@ -16,7 +16,7 @@ const services = new Fetchr({
   xhrPath: '/services'
 });
 
-Rx.longStackSupport = !!debug.enabled;
+Rx.config.longStackSupport = !!debug.enabled;
 
 // returns an observable
 app$(history)

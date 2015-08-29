@@ -1,11 +1,10 @@
 {
   "name": "Node.js and Express.js",
-  "order" : 0.013,
+  "order" : 0.017,
   "challenges": [
     {
       "id": "bd7153d8c441eddfaeb5bd0f",
-      "name": "Waypoint: Manage Packages with NPM",
-      "dashedName": "waypoint-manage-packages-with-npm",
+      "title": "Manage Packages with NPM",
       "difficulty": 0.39,
       "challengeSeed": ["126433450"],
       "description": [
@@ -43,6 +42,7 @@
         "Complete \"Finale\"",
         "Once you've completed these steps, move on to our next challenge."
       ],
+      "type": "waypoint",
       "challengeType": 2,
       "tests": [],
       "nameCn": "",
@@ -58,8 +58,7 @@
     },
     {
       "id": "bd7153d8c441eddfaeb5bdff",
-      "name": "Waypoint: Start a Node.js Server",
-      "dashedName": "waypoint-start-a-nodejs-server",
+      "title": "Start a Node.js Server",
       "difficulty": 0.40,
       "challengeSeed": ["126411561"],
       "description": [
@@ -85,6 +84,7 @@
         "Complete \"HTTP Client\"",
         "Once you've completed these first 7 steps, move on to our next challenge."
       ],
+      "type": "waypoint",
       "challengeType": 2,
       "tests": [],
       "nameCn": "",
@@ -100,8 +100,7 @@
     },
     {
       "id": "bd7153d8c441eddfaeb5bdfe",
-      "name": "Waypoint: Continue working with Node.js Servers",
-      "dashedName": "waypoint-continue-working-with-nodejs-servers",
+      "title": "Continue working with Node.js Servers",
       "difficulty": 0.41,
       "challengeSeed": ["128836506"],
       "description": [
@@ -114,6 +113,7 @@
         "Complete \"Time Server\"",
         "Once you've completed these 3 steps, move on to our next challenge."
       ],
+      "type": "waypoint",
       "challengeType": 2,
       "tests": [],
       "nameCn": "",
@@ -129,8 +129,7 @@
     },
     {
       "id": "bd7153d8c441eddfaeb5bdfd",
-      "name": "Waypoint: Finish working with Node.js Servers",
-      "dashedName": "waypoint-finish-working-with-nodejs-servers",
+      "title": "Finish working with Node.js Servers",
       "difficulty": 0.42,
       "challengeSeed": ["128836507"],
       "description": [
@@ -143,6 +142,7 @@
         "Complete \"HTTP JSON API Server\"",
         "Once you've completed these final 3 steps, move on to our next challenge."
       ],
+      "type": "waypoint",
       "challengeType": 2,
       "tests": [],
       "nameCn": "",
@@ -158,8 +158,7 @@
     },
     {
       "id": "bd7153d8c441eddfaeb5bd1f",
-      "name": "Waypoint: Build Web Apps with Express.js",
-      "dashedName": "waypoint-build-web-apps-with-expressjs",
+      "title": "Build Web Apps with Express.js",
       "difficulty": 0.43,
       "challengeSeed": [
         "126411559"
@@ -186,6 +185,7 @@
         "Complete \"JSON Me\"",
         "Once you've completed these steps, move on to our next challenge."
       ],
+      "type": "waypoint",
       "challengeType": 2,
       "tests": [],
       "nameCn": "",

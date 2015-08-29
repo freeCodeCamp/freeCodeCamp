@@ -16,6 +16,7 @@
     "strict": false, // Require `use strict` pragma in every file.
     "trailing": true, // Prohibit trailing whitespaces.
     "smarttabs": false, // Suppresses warnings about mixed tabs and spaces
+    "esnext": true, // Allow ES6 maybe :p
     "globals": { // Globals variables.
         "jasmine": true,
         "angular": true,

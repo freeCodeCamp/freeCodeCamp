@@ -1,0 +1,2 @@
+public/js/lib/codemirror/* linguist-vendored
+*.jsx linguist-language=JavaScript

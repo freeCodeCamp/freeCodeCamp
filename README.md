@@ -66,6 +66,8 @@ bower install
 # Create a .env file and populate it with the necessary API keys and secrets:
 touch .env
 
+# Install Gulp globally
+npm install -g gulp
 ```
 
 Edit your .env file with the following API keys accordingly (if you only use email login, only the MONGOHQ_URL, SESSION_SECRET, MANDRILL_USER and MANDRILL_PASSWORD fields are necessary. Keep in mind if you want to use more services you'll have to get your own API keys for those services.
@@ -98,7 +100,6 @@ TWITTER_TOKEN=stuff
 TWITTER_TOKEN_SECRET=stuff
 
 BLOGGER_KEY=stuff
-SLACK_WEBHOOK=stuff
 
 SESSION_SECRET=secretstuff
 COOKIE_SECRET='this is a secret'
@@ -113,6 +114,11 @@ DEBUG=true
 # Start the mongo server
 mongod
 
+# Create your mongo database. 
+# Type "mongo" in your terminal to access the mongo shell 
+use freecodecamp
+# Exit the mongo shell with control + d
+
 # Seed your database with the challenges
 node seed/
 
@@ -120,78 +126,6 @@ node seed/
 gulp
 
 ```
-
-
-Project Structure
------------------
-
-| Name                               | Description                                                 |
-| ---------------------------------- |:-----------------------------------------------------------:|
-| **config**/passport.js             | Passport Local and OAuth strategies, plus login middleware. |
-| **config**/secrets.js              | Your API keys, tokens, passwords and database URL.          |
-| **controllers**/contact.js         | Controller for contact form.                                |
-| **controllers**/home.js            | Controller for home page (index).                           |
-| **controllers**/user.js            | Controller for user account management.                     |
-| **controllers**/challenges.js      | Controller for rendering the challenges.                    |
-| **models**/user.json                 | Mongoose schema and model for User.                         |
-| **models**/challenge.json            | Mongoose schema and model for Challenge.                    |
-| **public**/                        | Static assets (fonts, css, js, img).                        |
-| **public**/**js**/application.js   | Specify client-side JavaScript dependencies.                |
-| **public**/**js**/main_0.0.2.js          | Place your client-side JavaScript here.                     |
-| **public**/**css**/main.less       | Main stylesheet for the app.                                |
-| **views/account**/                 | Templates for *login, password reset, signup, profile*.     |
-| **views/partials**/flash.jade      | Error, info and success flash notifications.                |
-| **views/partials**/navigation.jade | Navbar partial template.                                    |
-| **views/partials**/footer.jade     | Footer partial template.                                    |
-| **views**/layout.jade              | Base template.                                              |
-| **views**/home.jade                | Home page template.                                         |
-| server.js                             | Main application file.                                      |
-
-
-List of Packages
-----------------
-
-| Package                         | Description                                                          |
-| ------------------------------- |:--------------------------------------------------------------------:|
-| async                           | Utility library that provides asynchronous control flow.             |
-| bcrypt-nodejs                   | Library for hashing and salting user passwords.                      |
-| cheerio                         | Scrape web pages using jQuery-style syntax.                          |
-| clockwork                       | Clockwork SMS API library.                                           |
-| connect-assets                  | Compiles LESS stylesheets, concatenates & minifies JavaScript.       |
-| connect-mongo                   | MongoDB session store for Express.                                   |
-| csso                            | Dependency for connect-assets library to minify CSS.                 |
-| express                         | Node.js web framework.                                               |
-| body-parser                     | Express 4.0 middleware.                                              |
-| cookie-parser                   | Express 4.0 middleware.                                              |
-| express-session                 | Express 4.0 middleware.                                              |
-| morgan                          | Express 4.0 middleware.                                              |
-| compression                     | Express 4.0 middleware.                                              |
-| errorhandler                    | Express 4.0 middleware.                                              |
-| method-override                 | Express 4.0 middleware.                                              |
-| express-flash                   | Provides flash messages for Express.                                 |
-| express-validator               | Easy form validation for Express.                                    |
-| fbgraph                         | Facebook Graph API library.                                          |
-| github-api                      | GitHub API library.                                                  |
-| jade                            | Template engine for Express.                                         |
-| less                            | LESS compiler. Used implicitly by connect-assets.                    |
-| helmet                          | Restricts Cross site requests. You can modify its settings in server.js |
-| mongoose                        | MongoDB ODM.                                                         |
-| nodemailer                      | Node.js library for sending emails.                                  |
-| passport                        | Simple and elegant authentication library for node.js                |
-| passport-facebook               | Sign-in with Facebook plugin.                                        |
-| passport-github                 | Sign-in with GitHub plugin.                                          |
-| passport-google-oauth           | Sign-in with Google plugin.                                          |
-| passport-twitter                | Sign-in with Twitter plugin.                                         |
-| passport-local                  | Sign-in with Username and Password plugin.                           |
-| passport-linkedin-oauth2        | Sign-in with LinkedIn plugin.                                        |
-| passport-oauth                  | Allows you to set up your own OAuth 1.0a and OAuth 2.0 strategies.   |
-| request                         | Simplified HTTP request library.                                     |
-| lodash                          | Handy JavaScript utilities library.                                   |
-| uglify-js                       | Dependency for connect-assets library to minify JS.                  |
-| mocha                           | Test framework.                                                      |
-| chai                            | BDD/TDD assertion library.                                           |
-| supertest                       | HTTP assertion library.                                              |
-| multiline                       | Multi-line strings for the generator.                                |
 
 License
 -------

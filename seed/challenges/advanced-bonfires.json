@@ -1,18 +1,17 @@
 {
   "name": "Advanced Algorithm Scripting",
-  "order": 0.011,
+  "order": 0.013,
   "challenges": [
     {
       "id": "aff0395860f5d3034dc0bfc9",
-      "name": "Bonfire: Validate US Telephone Numbers",
-      "dashedName": "bonfire-validate-us-telephone-numbers",
+      "title": "Validate US Telephone Numbers",
       "difficulty": "4.01",
       "description": [
         "Return true if the passed string is a valid US phone number",
         "The user may fill out the form field any way they choose as long as it is a valid US number. The following are all valid formats for US numbers:",
         "555-555-5555, (555)555-5555, (555) 555-5555, 555 555 5555, 5555555555, 1 555 555 5555",
         "For this challenge you will be presented with a string such as \"800-692-7753\" or \"8oo-six427676;laskdjf\". Your job is to validate or reject the US phone number based on any combination of the formats provided above. The area code is required. If the country code is provided, you must confirm that the country code is \"1\". Return true if the string is a valid US phone number; otherwise false.",
-        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
+        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "tests": [
         "expect(telephoneCheck(\"555-555-5555\")).to.be.a(\"boolean\");",
@@ -51,6 +50,7 @@
       "MDNlinks": [
         "RegExp"
       ],
+      "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
       "descriptionCn": [],
@@ -65,13 +65,12 @@
     },
     {
       "id": "a3f503de51cf954ede28891d",
-      "name": "Bonfire: Symmetric Difference",
-      "dashedName": "bonfire-symmetric-difference",
+      "title": "Symmetric Difference",
       "difficulty": "4.02",
       "description": [
         "Create a function that takes two or more arrays and returns an array of the symmetric difference of the provided arrays.",
         "The mathematical term symmetric difference refers to the elements in two sets that are in either the first or second set, but not in both.",
-        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
+        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "challengeSeed": [
         "function sym(args) {",
@@ -81,7 +80,7 @@
         "sym([1, 2, 3], [5, 2, 1, 4]);"
       ],
       "tests": [
-        "expect(sym([1, 2, 3], [5, 2, 1, 4])).to.equal([3, 5, 4]);",
+        "assert.deepEqual(sym([1, 2, 3], [5, 2, 1, 4]), [3, 5, 4], 'should return an array of unique values');",
         "assert.deepEqual(sym([1, 2, 5], [2, 3, 5], [3, 4, 5]), [1, 4, 5], 'should return the symmetric difference of the given arrays');",
         "assert.deepEqual(sym([1, 1, 2, 5], [2, 2, 3, 5], [3, 4, 5, 5]), [1, 4, 5], 'should return an array of unique values');",
         "assert.deepEqual(sym([1, 1]), [1], 'should return an array of unique values');"
@@ -90,6 +89,7 @@
         "Array.reduce()",
         "Symmetric Difference"
       ],
+      "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
       "descriptionCn": [],
@@ -104,15 +104,14 @@
     },
     {
       "id": "aa2e6f85cab2ab736c9a9b24",
-      "name": "Bonfire: Exact Change",
-      "dashedName": "bonfire-exact-change",
+      "title": "Exact Change",
       "difficulty": "4.03",
       "description": [
         "Design a cash register drawer function that accepts purchase price as the first argument, payment as the second argument, and cash-in-drawer (cid) as the third argument.",
         "cid is a 2d array listing available currency.",
         "Return the string \"Insufficient Funds\" if cash-in-drawer is less than the change due. Return the string \"Closed\" if cash-in-drawer is equal to the change due.",
         "Otherwise, return change in coin and bills, sorted in highest to lowest order.",
-        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
+        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "challengeSeed": [
         "function drawer(price, cash, cid) {",
@@ -146,6 +145,7 @@
       "MDNlinks": [
         "Global Object"
       ],
+      "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
       "descriptionCn": [],
@@ -160,12 +160,11 @@
     },
     {
       "id": "a56138aff60341a09ed6c480",
-      "name": "Bonfire: Inventory Update",
-      "dashedName": "bonfire-inventory-update",
+      "title": "Inventory Update",
       "difficulty": "4.04",
       "description": [
         "Compare and update inventory stored in a 2d array against a second 2d array of a fresh delivery. Update current inventory item quantity, and if an item cannot be found, add the new item and quantity into the inventory array in alphabetical order.",
-        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
+        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "challengeSeed": [
         "function inventory(arr1, arr2) {",
@@ -201,6 +200,7 @@
       "MDNlinks": [
         "Global Array Object"
       ],
+      "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
       "descriptionCn": [],
@@ -215,13 +215,12 @@
     },
     {
       "id": "a7bf700cd123b9a54eef01d5",
-      "name": "Bonfire: No repeats please",
-      "dashedName": "bonfire-no-repeats-please",
+      "title": "No repeats please",
       "difficulty": "4.05",
       "description": [
         "Return the number of total permutations of the provided string that don't have repeated consecutive letters.",
         "For example, 'aab' should return 2 because it has 6 total permutations, but only 2 of them don't have the same letter (in this case 'a') repeating.",
-        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
+        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "challengeSeed": [
         "function permAlone(str) {",
@@ -243,6 +242,7 @@
         "Permutations",
         "RegExp"
       ],
+      "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
       "descriptionCn": [],
@@ -257,7 +257,7 @@
     },
     {
       "id": "a19f0fbe1872186acd434d5a",
-      "name": "Bonfire: Friendly Date Ranges",
+      "title": "Friendly Date Ranges",
       "dashedName": "bonfire-friendly-date-ranges",
       "difficulty": "4.06",
       "description": [
@@ -266,7 +266,7 @@
         "For example, if the year and month are the same then only the day range should be displayed.",
         "Secondly, if the starting year is the current year, and the ending year can be inferred by the reader, the year should be omitted.",
         "Input date is formatted as YYYY-MM-DD",
-        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
+        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "challengeSeed": [
         "function friendly(str) {",
@@ -288,6 +288,7 @@
         "String.substr()",
         "parseInt()"
       ],
+      "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
       "descriptionCn": [],

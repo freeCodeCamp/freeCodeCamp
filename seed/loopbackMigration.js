@@ -6,6 +6,7 @@ var Rx = require('rx'),
   mongodb = require('mongodb'),
   secrets = require('../config/secrets');
 
+const batchSize = 20;
 var MongoClient = mongodb.MongoClient;
 Rx.config.longStackSupport = true;
 
@@ -27,10 +28,12 @@ function debug() {
 
 function createConnection(URI) {
   return Rx.Observable.create(function(observer) {
+    debug('connecting to db');
     MongoClient.connect(URI, function(err, database) {
       if (err) {
         return observer.onError(err);
       }
+      debug('db connected');
       observer.onNext(database);
       observer.onCompleted();
     });
@@ -38,13 +41,13 @@ function createConnection(URI) {
 }
 
 function createQuery(db, collection, options, batchSize) {
-  return Rx.Observable.create(function (observer) {
+  return Rx.Observable.create(function(observer) {
     var cursor = db.collection(collection).find({}, options);
     cursor.batchSize(batchSize || 20);
     // Cursor.each will yield all doc from a batch in the same tick,
     // or schedule getting next batch on nextTick
     debug('opening cursor for %s', collection);
-    cursor.each(function (err, doc) {
+    cursor.each(function(err, doc) {
       if (err) {
         return observer.onError(err);
       }
@@ -55,9 +58,26 @@ function createQuery(db, collection, options, batchSize) {
       observer.onNext(doc);
     });
 
-    return Rx.Disposable.create(function () {
+    return Rx.Disposable.create(function() {
       debug('closing cursor for %s', collection);
       cursor.close();
+    });
+  });
+}
+
+function getUserCount(db) {
+  return Rx.Observable.create(function(observer) {
+    var cursor = db.collection('users').count(function(err, count) {
+      if (err) {
+        return observer.onError(err);
+      }
+      observer.onNext(count);
+      observer.onCompleted();
+
+      return Rx.Disposable.create(function() {
+        debug('closing user count');
+        cursor.close();
+      });
     });
   });
 }
@@ -76,30 +96,43 @@ function insertMany(db, collection, users, options) {
 
 var count = 0;
 // will supply our db object
-var dbObservable = createConnection(secrets.db).shareReplay();
+var dbObservable = createConnection(secrets.db).replay();
+
+var totalUser = dbObservable
+  .flatMap(function(db) {
+    return getUserCount(db);
+  })
+  .shareReplay();
 
 var users = dbObservable
   .flatMap(function(db) {
     // returns user document, n users per loop where n is the batchsize.
-    return createQuery(db, 'users', {});
+    return createQuery(db, 'users', {}, batchSize);
   })
   .map(function(user) {
     // flatten user
     assign(user, user.portfolio, user.profile);
-    return user;
-  })
-  .map(function(user) {
-    if (user.username) {
-      return user;
+    if (!user.username) {
+      user.username = 'fcc' + uuid.v4().slice(0, 8);
     }
-    user.username = 'fcc' + uuid.v4().slice(0, 8);
+    if (user.github) {
+      user.isGithubCool = true;
+    } else {
+      user.isMigrationGrandfathered = true;
+    }
+    providers.forEach(function(provider) {
+      user[provider + 'id'] = user[provider];
+      user[provider] = null;
+    });
+    user.rand = Math.random();
+
     return user;
   })
   .shareReplay();
 
 // batch them into arrays of twenty documents
 var userSavesCount = users
-  .bufferWithCount(20)
+  .bufferWithCount(batchSize)
   // get bd object ready for insert
   .withLatestFrom(dbObservable, function(users, db) {
     return {
@@ -111,6 +144,13 @@ var userSavesCount = users
     // bulk insert into new collection for loopback
     return insertMany(dats.db, 'user', dats.users, { w: 1 });
   })
+  .flatMap(function() {
+    return totalUser;
+  })
+  .doOnNext(function(totalUsers) {
+    count = count + batchSize;
+    debug('user progress %s', count / totalUsers * 100);
+  })
   // count how many times insert completes
   .count();
 
@@ -121,8 +161,8 @@ var userIdentityCount = users
       .map(function(provider) {
         return {
           provider: provider,
-          externalId: user[provider],
-          userId: user.id
+          externalId: user[provider + 'id'],
+          userId: user._id || user.id
         };
       })
       .filter(function(ident) {
@@ -131,7 +171,7 @@ var userIdentityCount = users
 
     return Rx.Observable.from(ids);
   })
-  .bufferWithCount(20)
+  .bufferWithCount(batchSize)
   .withLatestFrom(dbObservable, function(identities, db) {
     return {
       identities: identities,
@@ -145,11 +185,12 @@ var userIdentityCount = users
   // count how many times insert completes
   .count();
 
+/*
 var storyCount = dbObservable
   .flatMap(function(db) {
-    return createQuery(db, 'stories', {});
+    return createQuery(db, 'stories', {}, batchSize);
   })
-  .bufferWithCount(20)
+  .bufferWithCount(batchSize)
   .withLatestFrom(dbObservable, function(stories, db) {
     return {
       stories: stories,
@@ -160,34 +201,17 @@ var storyCount = dbObservable
     return insertMany(dats.db, 'story', dats.stories, { w: 1 });
   })
   .count();
-
-var commentCount = dbObservable
-  .flatMap(function(db) {
-    return createQuery(db, 'comments', {});
-  })
-  .bufferWithCount(20)
-  .withLatestFrom(dbObservable, function(comments, db) {
-    return {
-      comments: comments,
-      db: db
-    };
-  })
-  .flatMap(function(dats) {
-    return insertMany(dats.db, 'comment', dats.comments, { w: 1 });
-  })
-  .count();
+  */
 
 Rx.Observable.combineLatest(
   userIdentityCount,
   userSavesCount,
-  storyCount,
-  commentCount,
-  function(userIdentCount, userCount, storyCount, commentCount) {
+  // storyCount,
+  function(userIdentCount, userCount) {
     return {
-      userIdentCount: userIdentCount * 20,
-      userCount: userCount * 20,
-      storyCount: storyCount * 20,
-      commentCount: commentCount * 20
+      userIdentCount: userIdentCount * batchSize,
+      userCount: userCount * batchSize
+      // storyCount: storyCount * batchSize
     };
   })
   .subscribe(
@@ -203,3 +227,5 @@ Rx.Observable.combineLatest(
       process.exit(0);
     }
   );
+
+dbObservable.connect();

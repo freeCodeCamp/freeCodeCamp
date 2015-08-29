@@ -19,9 +19,11 @@ const routes = [
 export default function reactSubRouter(app) {
   var router = app.loopback.Router();
 
-  routes.forEach(function(route) {
-    router.get(route, serveReactApp);
-  });
+  if (process.env.NODE_ENV === 'development') {
+    routes.forEach(function(route) {
+      router.get(route, serveReactApp);
+    });
+  }
 
   app.use(router);
 

@@ -1,4 +1,5 @@
 import { Observable } from 'rx';
+import uuid from 'node-uuid';
 import moment from 'moment';
 import debugFactory from 'debug';
 
@@ -6,7 +7,7 @@ import { saveUser, observeMethod } from '../../server/utils/rx';
 import { blacklistedUsernames } from '../../server/utils/constants';
 
 const debug = debugFactory('freecc:user:remote');
-const BROWNIEPOINTS_TIMEOUT = [30, 'seconds'];
+const BROWNIEPOINTS_TIMEOUT = [1, 'hour'];
 
 function getAboutProfile({
   username,
@@ -34,6 +35,11 @@ module.exports = function(User) {
   delete User.validations.email;
   // set salt factor for passwords
   User.settings.saltWorkFactor = 5;
+  // set user.rand to random number
+  User.definition.rawProperties.rand.default =
+    User.definition.properties.rand.default = function() {
+      return Math.random();
+    };
 
   // username should not be in blacklist
   User.validatesExclusionOf('username', {
@@ -43,6 +49,25 @@ module.exports = function(User) {
 
   // username should be unique
   User.validatesUniquenessOf('username');
+  User.settings.emailVerificationRequired = false;
+
+  User.observe('before save', function({ instance: user }, next) {
+    if (user) {
+      user.username = user.username.trim().toLowerCase();
+      user.email = typeof user.email === 'string' ?
+        user.email.trim().toLowerCase() :
+        user.email;
+
+      if (!user.progressTimestamps) {
+        user.progressTimestamps = [];
+      }
+
+      if (user.progressTimestamps.length === 0) {
+        user.progressTimestamps.push({ timestamp: Date.now() });
+      }
+    }
+    next();
+  });
 
   debug('setting up user hooks');
   User.afterRemote('confirm', function(ctx) {
@@ -54,25 +79,79 @@ module.exports = function(User) {
     ctx.res.redirect('/email-signin');
   });
 
-  User.afterRemote('login', function(ctx, user, next) {
+  User.beforeRemote('create', function({ req }, notUsed, next) {
+    req.body.username = 'fcc' + uuid.v4().slice(0, 8);
+    next();
+  });
+
+  User.on('resetPasswordRequest', function(info) {
+    let url;
+    const host = User.app.get('host');
+    const { id: token } = info.accessToken;
+    if (process.env.NODE_ENV === 'development') {
+      const port = User.app.get('port');
+      url = `http://${host}:${port}/reset-password?access_token=${token}`;
+    } else {
+      url =
+        `http://freecodecamp.com/reset-password?access_token=${token}`;
+    }
+
+    // the email of the requested user
+    debug(info.email);
+    // the temp access token to allow password reset
+    debug(info.accessToken.id);
+    // requires AccessToken.belongsTo(User)
+    var mailOptions = {
+      to: info.email,
+      from: 'Team@freecodecamp.com',
+      subject: 'Password Reset Request',
+      text: `
+        Hello,\n\n
+        This email is confirming that you requested to
+        reset your password for your Free Code Camp account.
+        This is your email: ${ info.email }.
+        Go to ${ url } to reset your password.
+        \n
+        Happy Coding!
+        \n
+      `
+    };
+
+    User.app.models.Email.send(mailOptions, function(err) {
+      if (err) { console.error(err); }
+      debug('email reset sent');
+    });
+  });
+
+  User.beforeRemote('login', function(ctx, notUsed, next) {
+    const { body } = ctx.req;
+    if (body && typeof body.email === 'string') {
+      body.email = body.email.toLowerCase();
+    }
+    next();
+  });
+
+  User.afterRemote('login', function(ctx, accessToken, next) {
     var res = ctx.res;
     var req = ctx.req;
     // var args = ctx.args;
 
-    var accessToken = {};
     var config = {
       signed: !!req.signedCookies,
       maxAge: accessToken.ttl
     };
+
     if (accessToken && accessToken.id) {
+      debug('setting cookies');
       res.cookie('access_token', accessToken.id, config);
       res.cookie('userId', accessToken.userId, config);
     }
-    debug('before pass login');
-    return req.logIn(user, function(err) {
+
+    return req.logIn({ id: accessToken.userId.toString() }, function(err) {
       if (err) {
         return next(err);
       }
+      debug('user logged in');
       req.flash('success', { msg: 'Success! You are logged in.' });
       return res.redirect('/');
     });
@@ -89,7 +168,7 @@ module.exports = function(User) {
   });
 
   User.afterRemote('logout', function(ctx, result, next) {
-    var res = ctx.result;
+    var res = ctx.res;
     res.clearCookie('access_token');
     res.clearCookie('userId');
     next();

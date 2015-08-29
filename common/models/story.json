@@ -4,30 +4,35 @@
   "idInjection": true,
   "trackChanges": false,
   "properties": {
+    "id": {
+      "type": "string",
+      "id": true
+    },
     "name": {
       "type": "string",
-      "unique": true
+      "index": {
+        "mongodb": {
+          "unique": true,
+          "background": true
+        }
+      }
     },
     "headline": {
-      "type": "string",
-      "unique": false
+      "type": "string"
     },
     "timePosted": {
       "type": "number",
       "default": 0
     },
     "link": {
-      "type": "string",
-      "unique": false
+      "type": "string"
     },
     "metaDescription": {
       "type": "string",
-      "default": "",
-      "unique": false
+      "default": ""
     },
     "description": {
-      "type": "string",
-      "unique": false
+      "type": "string"
     },
     "originalStoryAuthorEmail": {
       "type": "string",

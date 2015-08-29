@@ -1,78 +1,108 @@
-/**
- * Created by nathanleniz on 5/15/15.
- * Copyright (c) 2015, Free Code Camp
- All rights reserved.
+import _ from 'lodash';
+import dedent from 'dedent';
+import moment from 'moment';
+import { Observable, Scheduler } from 'rx';
+import assign from 'object.assign';
+import debugFactory from 'debug';
+import utils from '../utils';
 
- Redistribution and use in source and binary forms, with or without
- modification, are permitted provided that the following conditions are met:
+import {
+  saveUser,
+  observeMethod,
+  observableQueryFromModel
+} from '../utils/rx';
 
- 1. Redistributions of source code must retain the above copyright notice,
- this list of conditions and the following disclaimer.
+import {
+  userMigration,
+  ifNoUserRedirectTo,
+  ifNoUserSend
+} from '../utils/middleware';
 
- 2. Redistributions in binary form must reproduce the above copyright notice,
- this list of conditions and the following disclaimer in the documentation
- and/or other materials provided with the distribution.
+const debug = debugFactory('freecc:challenges');
+const challengesRegex = /^(bonfire|waypoint|zipline|basejump)/i;
+const firstChallenge = 'waypoint-say-hello-to-html-elements';
+const challengeView = {
+  0: 'coursewares/showHTML',
+  1: 'coursewares/showJS',
+  2: 'coursewares/showVideo',
+  3: 'coursewares/showZiplineOrBasejump',
+  4: 'coursewares/showZiplineOrBasejump',
+  5: 'coursewares/showBonfire'
+};
 
- 3. Neither the name of the copyright holder nor the names of its contributors
- may be used to endorse or promote products derived from this software
- without specific prior written permission.
+const dasherize = utils.dasherize;
+const unDasherize = utils.unDasherize;
+const getMDNLinks = utils.getMDNLinks;
 
- THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
- AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
- IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
- ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS
- BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
- CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
- SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR
- BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
- WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
- OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
- EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
- */
-
-var R = require('ramda'),
-  Rx = require('rx'),
-  assign = require('object.assign'),
-  debug = require('debug')('freecc:challenges'),
-  utils = require('../utils'),
-
-  // this would be so much cleaner with destructering...
-  saveUser = require('../utils/rx').saveUser,
-  observableQueryFromModel = require('../utils/rx').observableQueryFromModel,
-
-  userMigration = require('../utils/middleware').userMigration,
-  ifNoUserRedirectTo = require('../utils/middleware').ifNoUserRedirectTo,
-  ifNoUserSend = require('../utils/middleware').ifNoUserSend;
-
-var challengeMapWithNames = utils.getChallengeMapWithNames();
-var challengeMapWithIds = utils.getChallengeMapWithIds();
-var challengeMapWithDashedNames = utils.getChallengeMapWithDashedNames();
-var challangesRegex = /^(bonfire|waypoint|zipline|basejump)/i;
-
-var dasherize = utils.dasherize;
-var unDasherize = utils.unDasherize;
-
-var getMDNLinks = utils.getMDNLinks;
+function numberWithCommas(x) {
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+}
 
 function updateUserProgress(user, challengeId, completedChallenge) {
-  var alreadyCompleted = user.completedChallenges.some(({ id }) => {
+  const alreadyCompleted = user.completedChallenges.some(({ id }) => {
     return id === challengeId;
   });
 
-  if (alreadyCompleted) {
-    user.progressTimestamps.push(Date.now());
+  if (!alreadyCompleted) {
+    user.progressTimestamps.push({
+      timestamp: Date.now(),
+      completedChallenge
+    });
   }
   user.completedChallenges.push(completedChallenge);
   return user;
 }
 
 module.exports = function(app) {
-  var router = app.loopback.Router();
-  var Challenge = app.models.Challenge;
-  var User = app.models.User;
-  var redirectNonUser =
-    ifNoUserRedirectTo('/challenges/learn-how-free-code-camp-works');
-  var send200toNonUser = ifNoUserSend(true);
+  const router = app.loopback.Router();
+
+  const challengesQuery = {
+    order: [
+      'order ASC',
+      'suborder ASC'
+    ]
+  };
+
+  // challenge model
+  const Challenge = app.models.Challenge;
+  // challenge find query stream
+  const findChallenge$ = observeMethod(Challenge, 'find');
+  // create a stream of all the challenges
+  const challenge$ = findChallenge$(challengesQuery)
+    .doOnNext(() => debug('query challenges'))
+    .flatMap(challenges => Observable.from(
+      challenges,
+      null,
+      null,
+      Scheduler.default
+    ))
+    .shareReplay();
+
+  // create a stream of challenge blocks
+  const blocks$ = challenge$
+    .map(challenge => challenge.toJSON())
+    // group challenges by block | returns a stream of observables
+    .groupBy(challenge => challenge.block)
+    // turn block group stream into an array
+    .flatMap(block$ => block$.toArray())
+    // turn array into stream of object
+    .map(blockArray => ({
+      name: blockArray[0].block,
+      dashedName: dasherize(blockArray[0].block),
+      challenges: blockArray
+    }))
+    .filter(({ name })=> {
+      return name !== 'Hikes';
+    })
+    .shareReplay();
+
+  const User = app.models.User;
+  const userCount$ = observeMethod(User, 'count');
+
+  const send200toNonUser = ifNoUserSend(true);
+  const redirectNonUser = ifNoUserRedirectTo(
+    '/challenges/learn-how-free-code-camp-works'
+  );
 
   router.post(
     '/completed-challenge/',
@@ -110,81 +140,134 @@ module.exports = function(app) {
   app.use(router);
 
   function returnNextChallenge(req, res, next) {
+    let nextChallengeName = firstChallenge;
 
-    // find the user's current challenge and block
-    // look in that block and find the index of their current challenge
-    // if index + 1 < block.challenges.length
-    // serve index + 1 challenge
-    // otherwise increment block key and serve the first challenge in that block
-    // unless the next block is undefined, which means no next block
-    var nextChallengeName;
+    const challengeId = req.user.currentChallenge ?
+      req.user.currentChallenge.challengeId :
+      'bd7123c8c441eddfaeb5bdef';
 
-    var challengeId = String(req.user.currentChallenge.challengeId);
-    var challengeBlock = req.user.currentChallenge.challengeBlock;
-    // TODO(berks) fix index call here
-    var indexOfChallenge = challengeMapWithIds[challengeBlock]
-      .indexOf(challengeId);
+    // find challenge
+    return challenge$
+      .map(challenge => challenge.toJSON())
+      .filter(({ block }) => block !== 'Hikes')
+      .filter(({ id }) => id === challengeId)
+      // now lets find the block it belongs to
+      .flatMap(challenge => {
+        // find the index of the block this challenge resides in
+        const blockIndex$ = blocks$
+          .findIndex(({ name }) => name === challenge.block);
 
-    if (indexOfChallenge + 1
-      < challengeMapWithIds[challengeBlock].length) {
-      nextChallengeName =
-        challengeMapWithDashedNames[challengeBlock][++indexOfChallenge];
-    } else if (typeof challengeMapWithIds[++challengeBlock] !== 'undefined') {
-      nextChallengeName = R.head(challengeMapWithDashedNames[challengeBlock]);
-    } else {
-      req.flash('errors', {
-        msg: 'It looks like you have finished all of our challenges.' +
-        ' Great job! Now on to helping nonprofits!'
-      });
-      nextChallengeName = R.head(challengeMapWithDashedNames[0].challenges);
-    }
+        return blockIndex$
+          .flatMap(blockIndex => {
+            // could not find block?
+            if (blockIndex === -1) {
+              return Observable.throw(
+                'could not find challenge block for ' + challenge.block
+              );
+            }
+            const nextBlock$ = blocks$.elementAt(blockIndex + 1);
+            const firstChallengeOfNextBlock$ = nextBlock$
+              .map(block => block.challenges[0]);
 
-    saveUser(req.user)
+            return blocks$
+              .elementAt(blockIndex)
+              .flatMap(block => {
+                // find where our challenge lies in the block
+                const challengeIndex$ = Observable.from(
+                  block.challenges,
+                  null,
+                  null,
+                  Scheduler.default
+                )
+                  .findIndex(({ id }) => id === challengeId);
+
+                // grab next challenge in this block
+                return challengeIndex$
+                  .map(index => {
+                    return block.challenges[index + 1];
+                  })
+                  .flatMap(nextChallenge => {
+                    if (!nextChallenge) {
+                      return firstChallengeOfNextBlock$;
+                    }
+                    return Observable.just(nextChallenge);
+                  });
+              });
+          });
+      })
+      .map(nextChallenge => {
+        nextChallengeName = nextChallenge.dashedName;
+        return nextChallengeName;
+      })
+      .flatMap(() => {
+        return saveUser(req.user);
+      })
       .subscribe(
         function() {},
         next,
         function() {
+          debug('next challengeName', nextChallengeName);
+          if (!nextChallengeName || nextChallengeName === firstChallenge) {
+            req.flash('errors', {
+              msg: dedent`
+                Once you have completed all of our challenges, you should
+                join our <a href=\"//gitter.im/freecodecamp/HalfWayClub\"
+                target=\"_blank\">Half Way Club</a> and start getting
+                ready for our nonprofit projects.
+              `.split('\n').join(' ')
+            });
+            return res.redirect('/map');
+          }
           res.redirect('/challenges/' + nextChallengeName);
         }
       );
   }
 
   function returnCurrentChallenge(req, res, next) {
-    if (!req.user.currentChallenge) {
-      req.user.currentChallenge = {};
-      req.user.currentChallenge.challengeId = challengeMapWithIds['0'][0];
-      req.user.currentChallenge.challengeName = challengeMapWithNames['0'][0];
-      req.user.currentChallenge.challengeBlock = '0';
-      req.user.currentChallenge.dashedName =
-        challengeMapWithDashedNames['0'][0];
-    }
-
-    var nameString = req.user.currentChallenge.dashedName;
-
-    saveUser(req.user)
+    Observable.just(req.user)
+      .flatMap(user => {
+        if (!req.user.currentChallenge) {
+          return challenge$
+            .first()
+            .flatMap(challenge => {
+              user.currentChallenge = {
+                challengeId: challenge.id,
+                challengeName: challenge.name,
+                dashedName: challenge.dashedName
+              };
+              return saveUser(user);
+            });
+        }
+        return Observable.just(user);
+      })
+      .map(user => user.currentChallenge.dashedName)
       .subscribe(
-        function() {},
+        function(challengeName) {
+          res.redirect('/challenges/' + challengeName);
+        },
         next,
         function() {
-          res.redirect('/challenges/' + nameString);
         }
       );
   }
 
   function returnIndividualChallenge(req, res, next) {
-    var origChallengeName = req.params.challengeName;
-    var unDashedName = unDasherize(origChallengeName);
+    const origChallengeName = req.params.challengeName;
+    const unDashedName = unDasherize(origChallengeName);
 
-    var challengeName = challangesRegex.test(unDashedName) ?
+    const challengeName = challengesRegex.test(unDashedName) ?
       // remove first word if matches
       unDashedName.split(' ').slice(1).join(' ') :
       unDashedName;
 
-    debug('looking for ', challengeName);
-    Challenge.findOne(
-      { where: { name: { like: challengeName, options: 'i' } } },
-      function(err, challenge) {
-        if (err) { return next(err); }
+    const testChallengeName = new RegExp(challengeName, 'i');
+    debug('looking for %s', testChallengeName);
+    challenge$
+      .filter((challenge) => {
+        return testChallengeName.test(challenge.name);
+      })
+      .lastOrDefault(null)
+      .flatMap(challenge => {
 
         // Handle not found
         if (!challenge) {
@@ -195,76 +278,60 @@ module.exports = function(app) {
               origChallengeName +
               '` Please double check the name.'
           });
-          return res.redirect('/challenges');
+          return Observable.just('/challenges');
         }
-        // Redirect to full name if the user only entered a partial
+
         if (dasherize(challenge.name) !== origChallengeName) {
-          debug('redirecting to fullname');
-          return res.redirect('/challenges/' + dasherize(challenge.name));
+          return Observable.just('/challenges/' + dasherize(challenge.name));
         }
 
-        if (req.user) {
-          req.user.currentChallenge = {
-            challengeId: challenge.id,
-            challengeName: challenge.name,
-            dashedName: challenge.dashedName,
-            challengeBlock: R.head(R.flatten(Object.keys(challengeMapWithIds)
-                .map(function(key) {
-                  return challengeMapWithIds[key]
-                    .filter(function(elem) {
-                      return elem === ('' + challenge.id);
-                    })
-                    .map(function() {
-                      return key;
-                    });
-                })
-            ))
-          };
+        if (challenge) {
+          if (req.user) {
+            req.user.currentChallenge = {
+              challengeId: challenge.id,
+              challengeName: challenge.name,
+              dashedName: challenge.dashedName
+            };
+          }
+
+          // save user does nothing if user does not exist
+          return saveUser(req.user)
+            .map(() => ({
+              title: challenge.name,
+              dashedName: origChallengeName,
+              name: challenge.name,
+              details: challenge.description,
+              tests: challenge.tests,
+              challengeSeed: challenge.challengeSeed,
+              verb: utils.randomVerb(),
+              phrase: utils.randomPhrase(),
+              compliment: utils.randomCompliment(),
+              challengeId: challenge.id,
+              challengeType: challenge.challengeType,
+              // video challenges
+              video: challenge.challengeSeed[0],
+              // bonfires specific
+              difficulty: Math.floor(+challenge.difficulty),
+              bonfires: challenge,
+              MDNkeys: challenge.MDNlinks,
+              MDNlinks: getMDNLinks(challenge.MDNlinks),
+              // htmls specific
+              environment: utils.whichEnvironment()
+            }));
         }
-
-        var commonLocals = {
-          title: challenge.name,
-          dashedName: origChallengeName,
-          name: challenge.name,
-          details: challenge.description,
-          tests: challenge.tests,
-          challengeSeed: challenge.challengeSeed,
-          verb: utils.randomVerb(),
-          phrase: utils.randomPhrase(),
-          compliment: utils.randomCompliment(),
-          challengeId: challenge.id,
-          challengeType: challenge.challengeType,
-          // video challenges
-          video: challenge.challengeSeed[0],
-          // bonfires specific
-          difficulty: Math.floor(+challenge.difficulty),
-          bonfires: challenge,
-          MDNkeys: challenge.MDNlinks,
-          MDNlinks: getMDNLinks(challenge.MDNlinks),
-          // htmls specific
-          environment: utils.whichEnvironment()
-        };
-
-        // TODO Berkeley
-        var challengeView = {
-          0: 'coursewares/showHTML',
-          1: 'coursewares/showJS',
-          2: 'coursewares/showVideo',
-          3: 'coursewares/showZiplineOrBasejump',
-          4: 'coursewares/showZiplineOrBasejump',
-          5: 'coursewares/showBonfire'
-        };
-
-        saveUser(req.user)
-          .subscribe(
-            function() {},
-            next,
-            function() {
-              var view = challengeView[challenge.challengeType];
-              res.render(view, commonLocals);
-            }
-          );
-      });
+      })
+      .subscribe(
+        function(data) {
+          if (typeof data === 'string') {
+            debug('redirecting to %s', data);
+            return res.redirect(data);
+          }
+          var view = challengeView[data.challengeType];
+          res.render(view, data);
+        },
+        next,
+        function() {}
+      );
   }
 
   function completedBonfire(req, res, next) {
@@ -274,7 +341,7 @@ module.exports = function(app) {
 
     var challengeData = {
       id: challengeId,
-      name: req.body.challengeInfo.challengeName,
+      name: req.body.challengeInfo.challengeName || '',
       completedDate: Math.round(+new Date()),
       solution: req.body.challengeInfo.solution,
       challengeType: 5
@@ -296,7 +363,7 @@ module.exports = function(app) {
         }
       })
       .withLatestFrom(
-        Rx.Observable.just(req.user),
+        Observable.just(req.user),
         function(pairedWith, user) {
           return {
             user: user,
@@ -316,10 +383,10 @@ module.exports = function(app) {
             challengeData
         );
       })
-      // not iterate users
+      // iterate users
       .flatMap(function(dats) {
         debug('flatmap');
-        return Rx.Observable.from([dats.user, dats.pairedWith]);
+        return Observable.from([dats.user, dats.pairedWith]);
       })
       // save user
       .flatMap(function(user) {
@@ -353,7 +420,7 @@ module.exports = function(app) {
       {
         id: id || challengeId,
         completedDate: completedDate,
-        name: name || challengeName,
+        name: name || challengeName || '',
         solution: null,
         githubLink: null,
         verified: true
@@ -362,7 +429,12 @@ module.exports = function(app) {
 
     saveUser(req.user)
       .subscribe(
-        function(user) { debug('user save', user && user.progressTimestamps); },
+        function(user) {
+          debug(
+            'user save points %s',
+            user && user.progressTimestamps && user.progressTimestamps.length
+          );
+        },
         next,
         function() {
           res.sendStatus(200);
@@ -395,7 +467,7 @@ module.exports = function(app) {
 
     var challengeData = {
       id: challengeId,
-      name: req.body.challengeInfo.challengeName,
+      name: req.body.challengeInfo.challengeName || '',
       completedDate: completedDate,
       solution: solutionLink,
       githubLink: githubLink,
@@ -417,7 +489,7 @@ module.exports = function(app) {
           );
         }
       })
-      .withLatestFrom(Rx.Observable.just(req.user), function(user, pairedWith) {
+      .withLatestFrom(Observable.just(req.user), function(pairedWith, user) {
         return {
           user: user,
           pairedWith: pairedWith
@@ -433,7 +505,7 @@ module.exports = function(app) {
         );
       })
       .flatMap(function({ user, pairedWith }) {
-        return Rx.Observable.from([user, pairedWith]);
+        return Observable.from([user, pairedWith]);
       })
       // save users
       .flatMap(function(user) {
@@ -453,50 +525,66 @@ module.exports = function(app) {
       );
   }
 
-  function challengeMap(req, res, next) {
-    var completedList = [];
+  function challengeMap({ user = {} }, res, next) {
+    const daysRunning = moment().diff(new Date('10/15/2014'), 'days');
 
-    if (req.user) {
-      completedList = req.user.completedChallenges;
-    }
+    // if user
+    // get the id's of all the users completed challenges
+    const completedChallenges = !user.completedChallenges ?
+      [] :
+      _.uniq(user.completedChallenges).map(({ id, _id }) => id || _id);
 
-    var noDuplicatedChallenges = R.uniq(completedList);
+    const camperCount$ = userCount$()
+      .map(camperCount => numberWithCommas(camperCount));
 
-    var completedChallengeList = noDuplicatedChallenges
-      .map(function(challenge) {
-        // backwards compatibility
-        return (challenge.id || challenge._id);
-      });
-    var challengeList = utils.
-      getChallengeMapForDisplay(completedChallengeList);
+    // create a stream of an array of all the challenge blocks
+    const blocks$ = challenge$
+      // mark challenge completed
+      .map(challengeModel => {
+        const challenge = challengeModel.toJSON();
+        if (completedChallenges.indexOf(challenge.id) !== -1) {
+          challenge.completed = true;
+        }
+        return challenge;
+      })
+      // group challenges by block | returns a stream of observables
+      .groupBy(challenge => challenge.block)
+      // turn block group stream into an array
+      .flatMap(block$ => block$.toArray())
+      .map(blockArray => {
+        const completedCount = blockArray.reduce((sum, { completed }) => {
+          if (completed) {
+            return sum + 1;
+          }
+          return sum;
+        }, 0);
 
-    Object.keys(challengeList).forEach(function(key) {
-      challengeList[key].completed = challengeList[key]
-        .challenges.filter(function(elem) {
-        // backwards compatibility hack
-        return completedChallengeList.indexOf(elem.id || elem._id) > -1;
-      });
-    });
+        return {
+          name: blockArray[0].block,
+          dashedName: dasherize(blockArray[0].block),
+          challenges: blockArray,
+          completed: completedCount / blockArray.length * 100
+        };
+      })
+      .filter(({ name }) => name !== 'Hikes')
+      // turn stream of blocks into a stream of an array
+      .toArray();
 
-    function numberWithCommas(x) {
-      return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-    }
-
-    var date1 = new Date('10/15/2014');
-    var date2 = new Date();
-    var timeDiff = Math.abs(date2.getTime() - date1.getTime());
-    var daysRunning = Math.ceil(timeDiff / (1000 * 3600 * 24));
-
-    User.count(function(err, camperCount) {
-      if (err) { return next(err); }
-
-      res.render('challengeMap/show', {
-        daysRunning: daysRunning,
-        camperCount: numberWithCommas(camperCount),
-        title: "A map of all Free Code Camp's Challenges",
-        challengeList: challengeList,
-        completedChallengeList: completedChallengeList
-      });
-    });
+    Observable.combineLatest(
+      camperCount$,
+      blocks$,
+      (camperCount, blocks) => ({ camperCount, blocks })
+    )
+      .subscribe(
+        ({ camperCount, blocks }) => {
+          res.render('challengeMap/show', {
+            blocks,
+            daysRunning,
+            camperCount,
+            title: "A map of all Free Code Camp's Challenges"
+          });
+        },
+        next
+      );
   }
 };

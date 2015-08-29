@@ -2,6 +2,7 @@
   "name": "user",
   "base": "User",
   "strict": true,
+  "emailVerificationRequired": false,
   "idInjection": true,
   "trackChanges": false,
   "properties": {
@@ -10,42 +11,47 @@
       "index": {
         "mongodb": {
           "unique": true,
+          "background": true,
           "sparse": true
         }
-      },
-      "lowercase": true,
-      "trim": true
+      }
     },
     "password": {
       "type": "string"
-    },
-    "facebook": {
-      "type": "string"
-    },
-    "twitter": {
-      "type": "string"
-    },
-    "google": {
-      "type": "string"
-    },
-    "github": {
-      "type": "string"
-    },
-    "linkedin": {
-      "type": "string"
-    },
-    "tokens": {
-      "type": "array"
     },
     "progressTimestamps": {
       "type": "array",
       "default": []
     },
+    "isGithubCool": {
+      "type": "boolean",
+      "default": false
+    },
+    "githubId": {
+      "type": "string"
+    },
+    "githubURL": {
+      "type": "string"
+    },
+    "githubEmail": {
+      "type": "string"
+    },
+    "joinedGithubOn": {
+      "type": "date"
+    },
+    "isMigrationGrandfathered": {
+      "type": "boolean",
+      "default": false
+    },
     "username": {
       "type": "string",
-      "lowercase": true,
-      "trim": true,
-      "require": true
+      "require": true,
+      "index": {
+        "mongodb": {
+          "unique": true,
+          "background": true
+        }
+      }
     },
     "bio": {
       "type": "string",
@@ -67,66 +73,19 @@
       "type": "string",
       "default": ""
     },
-    "linkedinProfile": {
-      "type": "string",
-      "default": ""
-    },
-    "githubProfile": {
-      "type": "string",
-      "default": ""
-    },
-    "codepenProfile": {
-      "type": "string",
-      "default": ""
-    },
-    "twitterHandle": {
-      "type": "string",
-      "default": ""
-    },
-    "facebookProfile": {
-      "type": "string",
-      "default": ""
-    },
-    "website1Link": {
-      "type": "string",
-      "default": ""
-    },
-    "website1Title": {
-      "type": "string",
-      "default": ""
-    },
-    "website1Image": {
-      "type": "string",
-      "default": ""
-    },
-    "website2Link": {
-      "type": "string",
-      "default": ""
-    },
-    "website2Title": {
-      "type": "string",
-      "default": ""
-    },
-    "website2Image": {
-      "type": "string",
-      "default": ""
-    },
-    "website3Link": {
-      "type": "string",
-      "default": ""
-    },
-    "website3Title": {
-      "type": "string",
-      "default": ""
-    },
-    "website3Image": {
-      "type": "string",
-      "default": ""
-    },
-    "resetPasswordToken": {
+    "linkedin": {
       "type": "string"
     },
-    "resetPasswordExpires": {
+    "codepen": {
+      "type": "string"
+    },
+    "twitter": {
+      "type": "string"
+    },
+    "facebook": {
+      "type": "string"
+    },
+    "google": {
       "type": "string"
     },
     "completedBonfires": {
@@ -170,20 +129,9 @@
       "type": "number",
       "default": 0
     },
-    "needsSomeDataModeled": {
-      "type": "boolean",
-      "default": false
-    },
-    "needsMigration": {
-      "type": "boolean",
-      "default": true
-    },
     "sendMonthlyEmail": {
       "type": "boolean",
       "default": true
-    },
-    "challengesHash": {
-      "type": {}
     },
     "currentChallenge": {
       "type": {}
@@ -206,9 +154,9 @@
       ],
       "default": []
     },
-    "uncompletedChallenges": {
-      "type": "array",
-      "default": []
+    "rand": {
+      "type": "number",
+      "index": true
     }
   },
   "validations": [],

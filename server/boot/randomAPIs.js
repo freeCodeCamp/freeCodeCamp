@@ -30,6 +30,8 @@ module.exports = function(app) {
   router.get('/jobs-form', jobsForm);
   router.get('/unsubscribe/:email', unsubscribe);
   router.get('/unsubscribed', unsubscribed);
+  router.get('/get-started', getStarted);
+  router.get('/submit-cat-photo', submitCatPhoto);
 
   app.use(router);
 
@@ -178,6 +180,10 @@ module.exports = function(app) {
     res.redirect('https://gitter.im/FreeCodeCamp/FreeCodeCamp');
   }
 
+  function submitCatPhoto(req, res) {
+    res.send('Submitted!');
+  }
+
   function bootcampCalculator(req, res) {
     res.render('resources/calculator', {
       title: 'Coding Bootcamp Cost Calculator'
@@ -230,7 +236,7 @@ module.exports = function(app) {
 
   function twitch(req, res) {
     res.render('resources/twitch', {
-      title: 'Enter Free Code Camp\'s Chat Rooms'
+      title: 'Watch us code on Twitch.tv and LiveCoding.tv'
     });
   }
 
@@ -256,6 +262,12 @@ module.exports = function(app) {
   function unsubscribed(req, res) {
     res.render('resources/unsubscribed', {
       title: 'You have been unsubscribed'
+    });
+  }
+
+  function getStarted(req, res) {
+    res.render('resources/get-started', {
+      title: 'How to get started with Free Code Camp'
     });
   }
 

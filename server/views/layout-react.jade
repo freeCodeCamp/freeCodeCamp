@@ -11,4 +11,4 @@ html(ng-app='profileValidation', lang='en')
       include partials/flash
       #fcc!= markup
     script!= state
-    script(src='/js/bundle.js')
+    script(src=rev('/js', 'bundle.js'))

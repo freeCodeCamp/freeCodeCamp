@@ -8,20 +8,6 @@ var bonfires = require('./bonfires.json'),
   oldUri='mongodb://localhost:27017/app30893198',
   coursewares = require('./coursewares.json');
 
-var counter = 0;
-var offerings = 2;
-
-var CompletionMonitor = function() {
-  counter++;
-  console.log('call ' + counter);
-
-  if (counter < offerings) {
-    return;
-  } else {
-    process.exit(0);
-  }
-};
-
 MongoClient.connect(oldUri, function(err, database) {
 
   database.collection('users').find({}).batchSize(20).toArray(function(err, users) {
