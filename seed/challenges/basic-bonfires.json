@@ -570,7 +570,7 @@
       "difficulty": "1.55",
       "description": [
         "Make a function that looks through an array (first argument) and returns an array of all objects that have equivalent property values (second argument).",
-        "For example, if the first argument is <code>[{ first: 'Romeo', last: 'Montague' }, { first: 'Mercutio', last: null }, { first: 'Tybalt', last: 'Capulet' }]</code>, and the second argument is <code>{ last: 'Capulet' }</code>, then you must return the first and the third objects from the array (the first argument), because they contain the property that was passed on as the second argument.",
+        "For example, if the first argument is <code>[{ first: 'Romeo', last: 'Montague' }, { first: 'Mercutio', last: null }, { first: 'Tybalt', last: 'Capulet' }]</code>, and the second argument is <code>{ last: 'Capulet' }</code>, then you must return the the third object from the array (the first argument), because it contains the property and it's value, that was passed on as the second argument.",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Write your own code."
       ],
       "challengeSeed": [
