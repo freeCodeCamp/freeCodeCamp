@@ -1,14 +1,19 @@
 import Jobs from './components/Jobs.jsx';
+import Show from './components/Show.jsx';
 
 /*
- *  show: /jobs
- *  showOne: /jobs/:id
- *  edit /jobs/:id
- *  delete /jobs/:id
- *  createOne /jobs/new
+ *  index: /jobs list jobs
+ *  show: /jobs/:id show one job
+ *  create /jobs/new create a new job
  */
 
 export default {
   path: 'jobs',
-  component: Jobs
+  childRoutes: [{
+    path: 'jobs',
+    component: Jobs
+  }, {
+    path: 'jobs/:id',
+    component: Show
+  }]
 };

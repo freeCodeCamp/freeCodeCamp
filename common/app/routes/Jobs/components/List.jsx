@@ -52,7 +52,8 @@ export default contain(
             key={ id }>
             <Well>
               <Thumbnail
-                alt='200x200' src={ logo }
+                alt={ company + 'company logo' }
+                src={ logo }
                 style={ thumbnailStyle } />
               <Panel>
                 Position: { position }

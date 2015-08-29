@@ -5,9 +5,7 @@ const debug = debugFactory('freecc:jobs:actions');
 
 export default Actions({
   setJobs: null,
-  getJob(id) {
-    return { id };
-  },
+  getJob: null,
   getJobs(params) {
     return { params };
   }
