@@ -13,7 +13,7 @@
       ],
       "challengeSeed": [
         "function sumAll(arr) {",
-        "  return(1);",
+        "  return 1;",
         "}",
         "",
         "sumAll([1, 4]);"
@@ -71,10 +71,10 @@
       ],
       "MDNlinks": [
         "Comparison Operators",
-        "String.slice()",
+        "Array.slice()",
         "Array.filter()",
         "Array.indexOf()",
-        "String.concat()"
+        "Array.concat()"
       ],
       "type": "bonfire",
       "challengeType": 5,
@@ -228,9 +228,11 @@
       ],
       "difficulty": "2.05",
       "description": [
-        "The DNA strand is missing the pairing element. Match each character with the missing element and return the results as a 2d array.",
+        "The DNA strand is missing the pairing element. Take each character, get its pair, and return the results as a 2d array.",
         "<a href=\"http://en.wikipedia.org/wiki/Base_pair\" target=\"_blank\">Base pairs</a> are a pair of AT and CG. Match the missing element to the provided character.",
         "Return the provided character as the first element in each array.",
+        "For example, for the input GCG, return [['G', 'C'], ['C','G'],['G', 'C']]",
+        "The charater and its pair are paired up in an array, and all the arrays are grouped into one encapsulating array.",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "challengeSeed": [

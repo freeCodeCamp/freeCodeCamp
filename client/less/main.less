@@ -262,6 +262,10 @@ ul {
   font-size: 24px;
 }
 
+.capitalize {
+  text-transform: capitalize;
+}
+
 .text-success {
   color: @brand-success;
 }
@@ -679,9 +683,9 @@ thead {
     margin-right: 0px;
     padding-left: 10px;
     padding-right: 10px;
+    padding-top: 14px;
+    padding-bottom: 12px;
     &:hover {
-      padding-top: 14px;
-      padding-bottom: 14px;
       color: #4a2b0f;
       background-color: #eee;
       text-decoration: none;
@@ -1163,9 +1167,114 @@ hr {
   font: normal normal normal 14px/1 FontAwesome !important;
 }
 
+#testSuite > div >.row {
+  margin: 0!important;
+}
+
 //uncomment this to see the dimensions of all elements outlined in red
 //* {
 //  border-color: red;
 //  border-width: 1px;
 //  border-style: solid;
 //}
+
+// source: https://github.com/jlong/css-spinners/blob/master/css/spinner/inner-circles.css
+// license MIT
+/* :not(:required) hides this rule from IE9 and below */
+.inner-circles-loader:not(:required) {
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  position: relative;
+  display: inline-block;
+  width: 125px;
+  height: 125px;
+  background: rgba(25, 165, 152, 0.5);
+  border-radius: 50%;
+  overflow: hidden;
+  text-indent: -9999px;
+  margin-top: 10%;
+  /* Hides inner circles outside base circle at safari */
+  -webkit-mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA5JREFUeNpiYGBgAAgwAAAEAAGbA+oJAAAAAElFTkSuQmCC);
+}
+.inner-circles-loader:not(:required):before, .inner-circles-loader:not(:required):after {
+  content: '';
+  position: absolute;
+  top: 0;
+  display: inline-block;
+  width: 125px;
+  height: 125px;
+  border-radius: 50%;
+}
+.inner-circles-loader:not(:required):before {
+  -moz-animation: inner-circles-loader 3s infinite;
+  -webkit-animation: inner-circles-loader 3s infinite;
+  animation: inner-circles-loader 3s infinite;
+  -moz-transform-origin: 0 50%;
+  -ms-transform-origin: 0 50%;
+  -webkit-transform-origin: 0 50%;
+  transform-origin: 0 50%;
+  left: 0;
+  background: #c7efcf;
+}
+.inner-circles-loader:not(:required):after {
+  -moz-animation: inner-circles-loader 3s 0.2s reverse infinite;
+  -webkit-animation: inner-circles-loader 3s 0.2s reverse infinite;
+  animation: inner-circles-loader 3s 0.2s reverse infinite;
+  -moz-transform-origin: 100% 50%;
+  -ms-transform-origin: 100% 50%;
+  -webkit-transform-origin: 100% 50%;
+  transform-origin: 100% 50%;
+  right: 0;
+  background: #eef5db;
+}
+
+@-moz-keyframes inner-circles-loader {
+  0% {
+    -moz-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  50% {
+    -moz-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+  100% {
+    -moz-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+}
+@-webkit-keyframes inner-circles-loader {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  50% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+}
+@keyframes inner-circles-loader {
+  0% {
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  50% {
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+  100% {
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+}

@@ -2,6 +2,14 @@
   "initial:before": {
     "loopback#favicon": {
       "params": "$!../public/favicon.ico"
+    },
+    "loopback#static": {
+      "params": [
+        "$!../public",
+        {
+          "maxAge": "86400000"
+        }
+      ]
     }
   },
   "initial": {
@@ -37,19 +45,12 @@
     "./middlewares/constant-headers": {},
     "./middlewares/csp": {},
     "./middlewares/express-rx": {},
-    "./middlewares/global-locals": {}
+    "./middlewares/global-locals": {},
+    "./middlewares/revision-helpers": {}
   },
   "routes": {
   },
   "files": {
-    "loopback#static": {
-      "params": [
-        "$!../public",
-        {
-          "maxAge": "86400000"
-        }
-      ]
-    }
   },
   "final": {
   },

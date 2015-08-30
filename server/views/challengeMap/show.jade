@@ -1,8 +1,5 @@
 extends ../layout
 block content
-    .bg-info.default-border-radius
-        p &nbsp;&nbsp;&nbsp;&nbsp;
-            a(href='https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/August-2015-Improvements' target='_blank') Click here to read about the improvements we just made to Free Code Camp and the bugs we're still fixing.
     .panel.panel-info
         .panel-heading.text-center
             h1 Challenge Map
@@ -88,7 +85,11 @@ block content
                                             .hidden-xs.col-sm-3.col-md-2.text-primary.ion-checkmark-circled.padded-ionic-icon.text-center.large-p.negative-10
                                             .col-xs-12.col-sm-9.col-md-10
                                                 li.faded.large-p.negative-10
-                                                    a(href="/challenges/#{challenge.dashedName}")= challenge.title
+                                                    a(href="/challenges/#{challenge.dashedName}")
+                                                        span.capitalize= challenge.type + ': '
+                                                        span= challenge.title
+                                                            span.sr-only= "Complete"
+
 
                                     else
                                         .row
@@ -96,7 +97,10 @@ block content
                                                 span.negative-10
                                             .col-xs-12.col-sm-9.col-md-10
                                                 li.large-p.negative-10
-                                                    a(href="/challenges/#{challenge.dashedName}")= challenge.title
+                                                    a(href="/challenges/#{challenge.dashedName}")
+                                                        span.capitalize= challenge.type + ': '
+                                                        span= challenge.title
+                                                            span.sr-only= "InComplete"
 
     //#announcementModal.modal(tabindex='-1')
     //    .modal-dialog.animated.fadeInUp.fast-animation

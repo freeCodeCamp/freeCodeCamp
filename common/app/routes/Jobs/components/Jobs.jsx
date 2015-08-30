@@ -1,7 +1,7 @@
 import React, { cloneElement, PropTypes } from 'react';
 import { contain } from 'thundercats-react';
 import { Button, Jumbotron, Row } from 'react-bootstrap';
-import ShowJobs from './Show.jsx';
+import ListJobs from './List.jsx';
 
 export default contain(
   {
@@ -15,9 +15,9 @@ export default contain(
       jobs: PropTypes.array
     },
 
-    renderShow(jobs) {
+    renderList(jobs) {
       return (
-        <ShowJobs jobs={ jobs }/>
+        <ListJobs jobs={ jobs }/>
       );
     },
 
@@ -53,7 +53,7 @@ export default contain(
           </Row>
           <Row>
             { this.renderChild(children, jobs) ||
-              this.renderShow(jobs) }
+              this.renderList(jobs) }
             </Row>
         </div>
       );

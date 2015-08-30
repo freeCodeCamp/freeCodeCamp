@@ -1,8 +1,5 @@
 extends ../layout
 block content
-    .bg-info.default-border-radius
-        p &nbsp;&nbsp;&nbsp;&nbsp;
-            a(href='https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/August-2015-Improvements' target='_blank') Click here to read about the improvements we just made to Free Code Camp and the bugs we're still fixing.
     .jumbotron.text-center
         h2 Sign in with one of these options:
         a.btn.btn-lg.btn-block.btn-github.btn-social(href='/auth/github')
@@ -21,8 +18,7 @@ block content
             i.fa.fa-linkedin
             | Sign in with LinkedIn
         br
-        p Email sign in is temporarily disabled - we are working to fix this ASAP. Try logging in with an above service that uses the same email address as you normally use to sign in with (other than Twitter).
-        //p
-        //    a(href="/email-signup") Or sign up using your email address here.
-        //p
-        //    a(href="/email-signin") Sign in to your existing account with your email address here.
+        p
+            a(href="/email-signup") Or sign up using your email address here.
+        p
+            a(href="/email-signin") Sign in to your existing account with your email address here.

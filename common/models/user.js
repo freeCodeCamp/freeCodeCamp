@@ -49,6 +49,7 @@ module.exports = function(User) {
 
   // username should be unique
   User.validatesUniquenessOf('username');
+  User.settings.emailVerificationRequired = false;
 
   User.observe('before save', function({ instance: user }, next) {
     if (user) {
@@ -84,10 +85,16 @@ module.exports = function(User) {
   });
 
   User.on('resetPasswordRequest', function(info) {
+    let url;
     const host = User.app.get('host');
-    // TODO(berks) get protocol as well
-    const url = `http://${host}/reset-password?access_token=` +
-      info.accessToken.id;
+    const { id: token } = info.accessToken;
+    if (process.env.NODE_ENV === 'development') {
+      const port = User.app.get('port');
+      url = `http://${host}:${port}/reset-password?access_token=${token}`;
+    } else {
+      url =
+        `http://freecodecamp.com/reset-password?access_token=${token}`;
+    }
 
     // the email of the requested user
     debug(info.email);
@@ -116,25 +123,35 @@ module.exports = function(User) {
     });
   });
 
-  User.afterRemote('login', function(ctx, user, next) {
+  User.beforeRemote('login', function(ctx, notUsed, next) {
+    const { body } = ctx.req;
+    if (body && typeof body.email === 'string') {
+      body.email = body.email.toLowerCase();
+    }
+    next();
+  });
+
+  User.afterRemote('login', function(ctx, accessToken, next) {
     var res = ctx.res;
     var req = ctx.req;
     // var args = ctx.args;
 
-    var accessToken = {};
     var config = {
       signed: !!req.signedCookies,
       maxAge: accessToken.ttl
     };
+
     if (accessToken && accessToken.id) {
+      debug('setting cookies');
       res.cookie('access_token', accessToken.id, config);
       res.cookie('userId', accessToken.userId, config);
     }
-    debug('before pass login');
-    return req.logIn(user, function(err) {
+
+    return req.logIn({ id: accessToken.userId.toString() }, function(err) {
       if (err) {
         return next(err);
       }
+      debug('user logged in');
       req.flash('success', { msg: 'Success! You are logged in.' });
       return res.redirect('/');
     });
@@ -151,7 +168,7 @@ module.exports = function(User) {
   });
 
   User.afterRemote('logout', function(ctx, result, next) {
-    var res = ctx.result;
+    var res = ctx.res;
     res.clearCookie('access_token');
     res.clearCookie('userId');
     next();

@@ -9,7 +9,7 @@
                     a(href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-install-Screenhero' target='_blank') Screenhero
                     | .
                 h3 Other campers may then message you about pair programming.
-                a.btn.btn-lg.btn-primary.btn-block(href='https://gitter.im/FreeCodeCamp/LetsPair', data-dismiss='modal', aria-hidden='true' target='_blank') Take me to the pair programming room
+                a.btn.btn-lg.btn-primary.btn-block.close-modal(href='https://gitter.im/FreeCodeCamp/LetsPair', target='_blank') Take me to the pair programming room
                 a.btn.btn-lg.btn-info.btn-block(href='#', data-dismiss='modal', aria-hidden='true') Cancel
 
 #issue-modal.modal(tabindex='-1')
@@ -30,11 +30,11 @@
                 a.close.closing-x(href='#', data-dismiss='modal', aria-hidden='true') ×
             .modal-body.text-center
                 h3 Remember to use &thinsp;
-                    a(href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank') Read-Search-Ask
+                    a(href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck', target='_blank') Read-Search-Ask
                     | .
                 h3 If you've already read the errors and searched Google, you should ask for help.
                 h3 This will take you to our help room.
-                a.btn.btn-lg.btn-primary.btn-block(href='https://gitter.im/FreeCodeCamp/LetsPair', data-dismiss='modal', aria-hidden='true' target='_blank') Take me to the help room
+                a.btn.btn-lg.btn-primary.btn-block.close-modal(href='https://gitter.im/FreeCodeCamp/help', target='_blank') Take me to the help room
                 a.btn.btn-lg.btn-info.btn-block(href='#', data-dismiss='modal', aria-hidden='true') Cancel
 
 #reset-modal.modal(tabindex='-1')

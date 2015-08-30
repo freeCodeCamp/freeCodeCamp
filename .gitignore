@@ -30,5 +30,20 @@ coverage
 .remote-sync.json
 
 server/*.bundle.js
-public/js/*.bundle.js
+public/js/bundle*
+
 *.map
+
+// revision manifest
+server/rev-manifest.json
+server/manifests/*
+!server/manifests/README.md
+
+public/js/main*
+public/js/commonFramework*
+public/js/sandbox*
+public/js/iFrameScripts*
+public/js/plugin*
+public/css/main*
+
+server/rev-manifest.json
