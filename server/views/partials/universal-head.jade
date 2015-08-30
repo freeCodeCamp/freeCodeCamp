@@ -4,7 +4,7 @@ link(rel="stylesheet" type="text/css" href="/bower_components/cal-heatmap/cal-he
 
 link(rel='stylesheet', href='/bower_components/font-awesome/css/font-awesome.min.css')
 
-link(rel='stylesheet', href='/css/main.css')
+link(rel='stylesheet', href=rev('/css', 'main.css'))
 // End **REQUIRED** includes
 
 include meta
@@ -40,7 +40,7 @@ script(src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.2/moment.min.js")
 script.
     window.moment || document.write('<script src="/bower_components/moment/min/moment.min.js"><\/script>');
 // Leave the below lines alone!
-script(src="/js/main_0.0.3.js")
+script(src=rev('/js', 'main.js'))
 script(src="/bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js")
 script(src="/bower_components/ramda/dist/ramda.min.js")
 script.

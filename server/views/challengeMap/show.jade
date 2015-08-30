@@ -88,6 +88,8 @@ block content
                                                     a(href="/challenges/#{challenge.dashedName}")
                                                         span.capitalize= challenge.type + ': '
                                                         span= challenge.title
+                                                            span.sr-only= "Complete"
+
 
                                     else
                                         .row
@@ -98,6 +100,7 @@ block content
                                                     a(href="/challenges/#{challenge.dashedName}")
                                                         span.capitalize= challenge.type + ': '
                                                         span= challenge.title
+                                                            span.sr-only= "InComplete"
 
     //#announcementModal.modal(tabindex='-1')
     //    .modal-dialog.animated.fadeInUp.fast-animation

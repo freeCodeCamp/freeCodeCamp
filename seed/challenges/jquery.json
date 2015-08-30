@@ -16,8 +16,8 @@
       "tests": [
         "assert(editor.match(/<script>/g), 'Create a <code>script</code> element.')",
         "assert(editor.match(/<\\/script>/g) && editor.match(/<script/g) && editor.match(/<\\/script>/g).length === editor.match(/<script/g).length, 'Make sure your <code>script</code> element has a closing tag.')",
-        "assert(editor.match(/\\$\\(document\\)\\.ready\\(function\\(\\)\\s?\\{/g), 'Add <code>$(document).ready(function() {</code> to the beginning of your <code>script</code> element.')",
-        "assert(editor.match(/\\n\\s+?\\}\\);/g), 'Close your <code>$(document).ready(function() {</code> function with <code>});</code>.')"
+        "assert(editor.match(/\\$\\s*?\\(\\s*?document\\)\\.ready\\s*?\\(\\s*?function\\s*?\\(\\s*?\\)\\s*?\\{/g), 'Add <code>$(document).ready(function() {</code> to the beginning of your <code>script</code> element.')",
+        "assert(editor.match(/\\n*?\\s*?\\}\\s*?\\);/g), 'Close your <code>$(document).ready(function() {</code> function with <code>});</code>.')"
       ],
       "challengeSeed": [
         "",
@@ -58,7 +58,8 @@
         "This is important because without your <code>document ready function</code>, your code may run before your HTML is rendered, which would cause bugs.",
         "Now let's write our first jQuery statement. All jQuery functions start with a <code>$</code>, usually referred to as a <code>dollar sign operator</code>, or simply as <code>bling</code>.",
         "jQuery often selects an HTML element with a <code>selector</code>, then does something to that element.",
-        "For example, let's make all of your <code>button</code> elements bounce. Just add this code inside your <code>document ready function</code>: <code>$(\"button\").addClass(\"animated bounce\")</code>."
+        "For example, let's make all of your <code>button</code> elements bounce. Just add this code inside your <code>document ready function</code>: <code>$(\"button\").addClass(\"animated bounce\")</code>.",
+        "Note that we've already included both the jQuery library and the Animate.css library in your code editor. So you are using jQuery to apply the Animate.css <code>bounce</code> class to your <code>button</code> elements."
       ],
       "tests": [
         "assert($(\"button\").hasClass(\"animated\") && $(\"button\").hasClass(\"bounce\"), 'Use the jQuery <code>addClass&#40&#41</code> function to give the classes <code>animated</code> and <code>bounce</code> to your <code>button</code> elements.')",
@@ -212,7 +213,7 @@
         "assert(!editor.match(/e\"\\);/g) && !editor.match(/t\"\\);/g), 'Delete all three of your jQuery functions from your <code>document ready function</code>.')",
         "assert(editor.match(/<script>/g), 'Leave your <code>script</code> element intact.')",
         "assert(editor.match(/\\$\\(document\\)\\.ready\\(function\\(\\)\\s?\\{/g), 'Leave your <code>$&#40document&#41.ready&#40function&#40&#41 {</code> to the beginning of your <code>script</code> element.')",
-        "assert(editor.match(/\\n\\s+?\\}\\);/g), 'Leave your your \"document ready function\" closing <code>\\}&#41;</code> intact.')",
+        "assert(editor.match(/\\n\\s+?\\}\\);/g), 'Leave your \"document ready function\" closing <code>\\}&#41;</code> intact.')",
         "assert(editor.match(/<\\/script>/g) && editor.match(/<script/g) && editor.match(/<\\/script>/g).length === editor.match(/<script/g).length, 'Leave your <code>script</code> element closing tag intact.')"
       ],
       "challengeSeed": [
@@ -363,7 +364,7 @@
         "Select <code>target1</code> and change its color to red.",
         "jQuery has a function called <code>.css()</code> that allows you to change the CSS of an element.",
         "Here's how we would change its color to blue: <code>$(\"#target1\").css(\"color\", \"blue\");</code>",
-        "This is slightly different from a normal CSS declaration, because the CSS attribute and its value are in quotes, and separated with a comma instead of a colon."
+        "This is slightly different from a normal CSS declaration, because the CSS property and its value are in quotes, and separated with a comma instead of a colon."
       ],
       "tests": [
         "assert($(\"#target1\").css(\"color\") === 'rgb(255, 0, 0)', 'Your <code>target1</code> element should have red text.')",
@@ -415,7 +416,7 @@
         "You can also change the non-CSS properties of HTML elements with jQuery. For example, you can disable buttons.",
         "When you disable a button, it will become grayed-out and can no longer be clicked.",
         "jQuery has a function called <code>.prop()</code> that allows you to adjust the properties of elements.",
-        "Here's how you would disable all buttons: <code>$('#button').prop('disabled', true);</code>",
+        "Here's how you would disable all buttons: <code>$(\"button\").prop(\"disabled\", true);</code>",
         "Disable only the <code>target1</code> button."
       ],
       "tests": [
@@ -464,7 +465,8 @@
       "difficulty": 3.10,
       "description": [
         "Now let's remove an HTML element from your page using jQuery.",
-        "jQuery has a function called <code>.remove()</code> that will remove an HTML element entirely."
+        "jQuery has a function called <code>.remove()</code> that will remove an HTML element entirely",
+        "Remove element <code>target4</code> from the page by using the <code>.remove()</code> function."
       ],
       "tests": [
         "assert($(\"#target4\").length === 0, 'Use jQuery to remove your <code>target4</code> element from your page.')",
@@ -617,7 +619,7 @@
       "title": "Target the Parent of an Element Using jQuery",
       "difficulty": 3.13,
       "description": [
-        "Every HTML elements has a <code>parent</code> element from which it <code>inherits</code> properties.",
+        "Every HTML element has a <code>parent</code> element from which it <code>inherits</code> properties.",
         "For example, your <code>jQuery Playground</code> <code>h3</code> element has the parent element of <code>&#60;div class=\"container-fluid\"&#62</code>, which itself has the parent <code>body</code>.",
         "jQuery has a function called <code>parent()</code> that allows you to access the parent of whichever element you've selected.",
         "Give the parent of the <code>#target1</code> element background-color of red.",
@@ -671,7 +673,7 @@
       "id": "bad87fee1348bd9aed208826",
       "title": "Target the Children of an Element Using jQuery",
       "difficulty": 3.14,
-      "description": [ 
+      "description": [
         "Many HTML elements have <code>children</code> elements from which <code>inherit</code> their properties.",
         "For example, every HTML element is a child of your <code>body</code> element, and your \"jQuery Playground\" <code>h3</code> element is a child of your <code>&#60;div class=\"container-fluid\"&#62</code> element.",
         "jQuery has a function called <code>children()</code> that allows you to access the children of whichever element you've selected.",
@@ -786,7 +788,7 @@
       "difficulty": 3.16,
       "description": [
         "You can also target all the even-numbered elements.",
-        "Here's how you would target all the odd-numbered elements with class <code>target</code> and give them classes: <code>$('.target:odd').addClass('animated shake');</code>",
+        "Here's how you would target all the odd-numbered elements with class <code>target</code> and give them classes: <code>$(\".target:odd\").addClass(\"animated shake\");</code>",
         "Try selecting all the even-numbered elements - that is, what your browser will consider even-numbered elements - and giving them the classes of <code>animated</code> and <code>shake</code>."
       ],
       "tests": [
