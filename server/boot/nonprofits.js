@@ -64,21 +64,22 @@ module.exports = function(app) {
           return res.redirect('../nonprofit/' + dashedNameFull);
         }
 
-        //We need to create logic that verifies completion. Defaulting to false for now.
-        //var buttonActive = false;
-        //if (
-        //  req.user &&
-        //  req.user.completedCoursewares.length > 63
-        //) {
-        //  var hasShownInterest =
-        //    nonprofit.interestedCampers.filter(function(user) {
-        //      return user.username === req.user.username;
-        //    });
+        //  We need to create logic that verifies completion.
+        //  Defaulting to false for now.
+        //  var buttonActive = false;
+        //  if (
+        //    req.user &&
+        //    req.user.completedCoursewares.length > 63
+        //  ) {
+        //    var hasShownInterest =
+        //      nonprofit.interestedCampers.filter(function(user) {
+        //        return user.username === req.user.username;
+        //      });
         //
-        //  if (hasShownInterest.length === 0) {
-        //    buttonActive = true;
+        //    if (hasShownInterest.length === 0) {
+        //      buttonActive = true;
+        //    }
         //  }
-        //}
 
         res.render('nonprofits/show', {
           dashedName: dashedNameFull,
