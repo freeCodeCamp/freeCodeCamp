@@ -13,8 +13,8 @@
         "Make this function return true no matter what."
       ],
       "tests": [
-        "expect(meetBonfire()).to.be.a(\"boolean\");",
-        "expect(meetBonfire()).to.be.true;"
+        "assert.typeOf(meetBonfire(), 'boolean', 'meetBonfire should return a boolean');",
+        "assert.isTrue(meetBonfire(), 'meetBonfire()');"
       ],
       "challengeSeed": [
         "function meetBonfire(argument) {",
@@ -46,10 +46,10 @@
       "title": "Reverse a String",
       "difficulty": "1.01",
       "tests": [
-        "expect(reverseString('hello')).to.be.a('String');",
-        "expect(reverseString('hello')).to.equal('olleh');",
-        "expect(reverseString('Howdy')).to.equal('ydwoH');",
-        "expect(reverseString('Greetings from Earth')).to.equal('htraE morf sgniteerG');"
+        "assert.typeOf(reverseString(\"hello\"), 'string', 'reverseString should return a string');",
+        "assert.strictEqual(reverseString(\"hello\"), 'olleh', 'reverseString(\"hello\")');",
+        "assert.strictEqual(reverseString(\"Howdy\"), 'ydwoH', 'reverseString(\"Howdy\")');",
+        "assert.strictEqual(reverseString(\"Greetings from Earth\"), 'htraE morf sgniteerG', 'reverseString(\"Greetings from Earth\")');"
       ],
       "description": [
         "Reverse the provided string.",
@@ -87,10 +87,10 @@
       "id": "a302f7aae1aa3152a5b413bc",
       "title": "Factorialize a Number",
       "tests": [
-        "expect(factorialize(5)).to.be.a(\"Number\");",
-        "expect(factorialize(5)).to.equal(120);",
-        "expect(factorialize(10)).to.equal(3628800);",
-        "expect(factorialize(20)).to.equal(2432902008176640000);"
+        "assert.typeOf(factorialize(5), 'number', 'factorialize should return a number');",
+        "assert.strictEqual(factorialize(5), 120, 'factorialize(5)');",
+        "assert.strictEqual(factorialize(10), 3628800, 'factorialize(10)');",
+        "assert.strictEqual(factorialize(20), 2432902008176640000, 'factorialize(20)');"
       ],
       "difficulty": "1.02",
       "description": [
@@ -135,14 +135,14 @@
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Write your own code."
       ],
       "tests": [
-        "expect(palindrome(\"eye\")).to.be.a(\"boolean\");",
-        "assert.deepEqual(palindrome(\"eye\"), true);",
-        "assert.deepEqual(palindrome(\"race car\"), true);",
-        "assert.deepEqual(palindrome(\"not a palindrome\"), false);",
-        "assert.deepEqual(palindrome(\"A man, a plan, a canal. Panama\"), true);",
-        "assert.deepEqual(palindrome(\"never odd or even\"), true);",
-        "assert.deepEqual(palindrome(\"nope\"), false);",
-        "assert.deepEqual(palindrome(\"almostomla\"), false);"
+        "assert.typeOf(palindrome(\"eye\"), 'boolean', 'palindrome should return a boolean');",
+        "assert.isTrue(palindrome(\"eye\"), 'palindrome(\"eye\")');",
+        "assert.isTrue(palindrome(\"race car\"), 'palindrome(\"race car\")');",
+        "assert.isFalse(palindrome(\"not a palindrome\"), 'palindrome(\"not a palindrome\")');",
+        "assert.isTrue(palindrome(\"A man, a plan, a canal. Panama\"), 'palindrome(\"A man, a plan, a canal. Panama\")');",
+        "assert.isTrue(palindrome(\"never odd or even\"), 'palindrome(\"never odd or even\")');",
+        "assert.isFalse(palindrome(\"nope\"), 'palindrome(\"nope\")');",
+        "assert.isFalse(palindrome(\"almostomla\"), 'palindrome(\"almostomla\")');"
       ],
       "challengeSeed": [
         "function palindrome(str) {",
@@ -188,12 +188,12 @@
         "findLongestWord('The quick brown fox jumped over the lazy dog');"
       ],
       "tests": [
-        "expect(findLongestWord('The quick brown fox jumped over the lazy dog')).to.be.a('Number');",
-        "expect(findLongestWord('The quick brown fox jumped over the lazy dog')).to.equal(6);",
-        "expect(findLongestWord('May the force be with you')).to.equal(5);",
-        "expect(findLongestWord('Google do a barrel roll')).to.equal(6);",
-        "expect(findLongestWord('What is the average airspeed velocity of an unladen swallow')).to.equal(8);",
-        "expect(findLongestWord('What if we try a super-long word such as otorhinolaryngology')).to.equal(19);"
+        "assert.typeOf(findLongestWord(\"The quick brown fox jumped over the lazy dog\"), 'number', 'findLongestWord should return a number');",
+        "assert.strictEqual(findLongestWord(\"The quick brown fox jumped over the lazy dog\"), 6, 'findLongestWord(\"The quick brown fox jumped over the lazy dog\")');",
+        "assert.strictEqual(findLongestWord(\"May the force be with you\"), 5, 'findLongestWord(\"May the force be with you\")');",
+        "assert.strictEqual(findLongestWord(\"Google do a barrel roll\"), 6, 'findLongestWord(\"Google do a barrel roll\")');",
+        "assert.strictEqual(findLongestWord(\"What is the average airspeed velocity of an unladen swallow\"), 8, 'findLongestWord(\"What is the average airspeed velocity of an unladen swallow\")');",
+        "assert.strictEqual(findLongestWord(\"What if we try a super-long word such as otorhinolaryngology\"), 19, 'findLongestWord(\"What if we try a super-long word such as otorhinolaryngology\")');"
       ],
       "MDNlinks": [
         "String.split()",
@@ -229,10 +229,10 @@
         "titleCase(\"I'm a little tea pot\");"
       ],
       "tests": [
-        "expect(titleCase(\"I'm a little tea pot\")).to.be.a('String');",
-        "expect(titleCase(\"I'm a little tea pot\")).to.equal(\"I'm A Little Tea Pot\");",
-        "expect(titleCase(\"sHoRt AnD sToUt\")).to.equal(\"Short And Stout\");",
-        "expect(titleCase(\"HERE IS MY HANDLE HERE IS MY SPOUT\")).to.equal(\"Here Is My Handle Here Is My Spout\");"
+        "assert.typeOf(titleCase(\"I'm a little tea pot\"), 'string', 'titleCase should return a string');",
+        "assert.strictEqual(titleCase(\"I'm a little tea pot\"), \"I'm A Little Tea Pot\", 'titleCase(\"I&apos;m a little tea pot\")');",
+        "assert.strictEqual(titleCase(\"sHoRt AnD sToUt\"), 'Short And Stout', 'titleCase(\"sHoRt AnD sToUt\")');",
+        "assert.strictEqual(titleCase(\"HERE IS MY HANDLE HERE IS MY SPOUT\"), 'Here Is My Handle Here Is My Spout', 'titleCase(\"HERE IS MY HANDLE HERE IS MY SPOUT\")');"
       ],
       "MDNlinks": [
         "String.charAt()"
@@ -269,9 +269,9 @@
         "largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]);"
       ],
       "tests": [
-        "expect(largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]])).to.be.a('array');",
-        "(largestOfFour([[13, 27, 18, 26], [4, 5, 1, 3], [32, 35, 37, 39], [1000, 1001, 857, 1]])).should.eql([27,5,39,1001]);",
-        "assert(largestOfFour([[4, 9, 1, 3], [13, 35, 18, 26], [32, 35, 97, 39], [1000000, 1001, 857, 1]]).should.eql([9,35,97,1000000]));"
+        "assert.typeOf(largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]), 'array', 'largestOfFour should return an array');",
+        "assert.deepEqual(largestOfFour([[13, 27, 18, 26], [4, 5, 1, 3], [32, 35, 37, 39], [1000, 1001, 857, 1]]), [27,5,39,1001], 'largestOfFour([[13, 27, 18, 26], [4, 5, 1, 3], [32, 35, 37, 39], [1000, 1001, 857, 1]])');",
+        "assert.deepEqual(largestOfFour([[4, 9, 1, 3], [13, 35, 18, 26], [32, 35, 97, 39], [1000000, 1001, 857, 1]]), [9,35,97,1000000], 'largestOfFour([[4, 9, 1, 3], [13, 35, 18, 26], [32, 35, 97, 39], [1000000, 1001, 857, 1]])');"
       ],
       "MDNlinks": [
         "Comparison Operators"
@@ -307,11 +307,11 @@
         "end('Bastian', 'n');"
       ],
       "tests": [
-        "assert.strictEqual(end('Bastian', 'n'), true, 'should equal true if target equals end of string');",
-        "assert.strictEqual(end('Connor', 'n'), false, 'should equal false if target does not equal end of string');",
-        "assert.strictEqual(end('Walking on water and developing software from a specification are easy if both are frozen.', 'specification'), false, 'should equal false if target does not equal end of string');",
-        "assert.strictEqual(end('He has to give me a new name', 'name'), true, 'should equal true if target equals end of string');",
-        "assert.strictEqual(end('If you want to save our world, you must hurry. We dont know how much longer we can withstand the nothing', 'mountain'), false, 'should equal false if target does not equal end of string');"
+        "assert.isTrue(end('Bastian', 'n'), 'should equal true if target equals end of string');",
+        "assert.isFalse(end('Connor', 'n'), 'should equal false if target does not equal end of string');",
+        "assert.isFalse(end('Walking on water and developing software from a specification are easy if both are frozen.', 'specification'), 'should equal false if target does not equal end of string');",
+        "assert.isTrue(end('He has to give me a new name', 'name'), 'should equal true if target equals end of string');",
+        "assert.isFalse(end('If you want to save our world, you must hurry. We dont know how much longer we can withstand the nothing', 'mountain'), 'should equal false if target does not equal end of string');"
       ],
       "MDNlinks": [
         "String.substr()"
@@ -384,9 +384,9 @@
         "truncate('A-tisket a-tasket A green and yellow basket', 11);"
       ],
       "tests": [
-        "expect(truncate('A-tisket a-tasket A green and yellow basket', 11)).to.eqls('A-tisket...');",
-        "expect(truncate('Peter Piper picked a peck of pickled peppers', 14)).to.eqls('Peter Piper...');",
-        "assert(truncate('A-tisket a-tasket A green and yellow basket', 'A-tisket a-tasket A green and yellow basket'.length) === 'A-tisket a-tasket A green and yellow basket', 'should not truncate if string is = length');",
+        "assert.strictEqual(truncate('A-tisket a-tasket A green and yellow basket', 11), 'A-tisket...');",
+        "assert.strictEqual(truncate('Peter Piper picked a peck of pickled peppers', 14), 'Peter Piper...');",
+        "assert.strictEqual(truncate('A-tisket a-tasket A green and yellow basket', 'A-tisket a-tasket A green and yellow basket'.length), 'A-tisket a-tasket A green and yellow basket', 'should not truncate if string is = length');",
         "assert.strictEqual(truncate('A-tisket a-tasket A green and yellow basket', 'A-tisket a-tasket A green and yellow basket'.length + 2), 'A-tisket a-tasket A green and yellow basket', 'should not truncate if string is < length');"
       ],
       "MDNlinks": [
@@ -500,14 +500,14 @@
         "mutation(['hello', 'hey']);"
       ],
       "tests": [
-        "expect(mutation(['hello', 'hey'])).to.be.false;",
-        "expect(mutation(['hello', 'Hello'])).to.be.true;",
-        "expect(mutation(['zyxwvutsrqponmlkjihgfedcba', 'qrstu'])).to.be.true;",
-        "expect(mutation(['Mary', 'Army'])).to.be.true;",
-        "expect(mutation(['Mary', 'Aarmy'])).to.be.true;",
-        "expect(mutation(['Alien', 'line'])).to.be.true;",
-        "expect(mutation(['floor', 'for'])).to.be.true;",
-        "expect(mutation(['hello', 'neo'])).to.be.false;"
+        "assert.isFalse(mutation(['hello', 'hey']), 'should equal false (missing the letter \"y\")');",
+        "assert.isTrue(mutation(['hello', 'Hello']));",
+        "assert.isTrue(mutation(['zyxwvutsrqponmlkjihgfedcba', 'qrstu']));",
+        "assert.isTrue(mutation(['Mary', 'Army']));",
+        "assert.isTrue(mutation(['Mary', 'Aarmy']));",
+        "assert.isTrue(mutation(['Alien', 'line']));",
+        "assert.isTrue(mutation(['floor', 'for']));",
+        "assert.isFalse(mutation(['hello', 'neo']), 'should equal false (missing the letter \"n\")');"
       ],
       "MDNlinks": [
         "Array.indexOf()"
