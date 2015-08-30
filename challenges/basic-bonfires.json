@@ -461,8 +461,8 @@
       ],
       "tests": [
         "assert.deepEqual(slasher([1, 2, 3], 2), [3], 'should drop the first two elements');",
-        "assert.deepEqual(slasher([1, 2, 3], 0), [1, 2, 3], 'should return all elements when n < 1');",
-        "assert.deepEqual(slasher([1, 2, 3], 9), [], 'should return an empty array when n >= array.length');"
+        "assert.deepEqual(slasher([1, 2, 3], 0), [1, 2, 3], 'should return all elements');",
+        "assert.deepEqual(slasher([1, 2, 3], 9), [], 'should return an empty array');"
       ],
       "MDNlinks": [
         "Array.slice()",
@@ -506,7 +506,8 @@
         "expect(mutation(['Mary', 'Army'])).to.be.true;",
         "expect(mutation(['Mary', 'Aarmy'])).to.be.true;",
         "expect(mutation(['Alien', 'line'])).to.be.true;",
-        "expect(mutation(['floor', 'for'])).to.be.true;"
+        "expect(mutation(['floor', 'for'])).to.be.true;",
+        "expect(mutation(['hello', 'neo'])).to.be.false;"
       ],
       "MDNlinks": [
         "Array.indexOf()"
@@ -568,7 +569,8 @@
       "title": "Where art thou",
       "difficulty": "1.55",
       "description": [
-        "Make a function that looks through an array (first argument) and returns an array of all objects that have equivalent property values (second argument).",
+        "Make a function that looks through an array (first argument) and returns an array of all objects that have equivalent property and value pair (second argument).",
+        "For example, if the first argument is <code>[{ first: 'Romeo', last: 'Montague' }, { first: 'Mercutio', last: null }, { first: 'Tybalt', last: 'Capulet' }]</code>, and the second argument is <code>{ last: 'Capulet' }</code>, then you must return the the third object from the array (the first argument), because it contains the property and it's value, that was passed on as the second argument.",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Write your own code."
       ],
       "challengeSeed": [
@@ -582,7 +584,9 @@
       ],
       "tests": [
         "assert.deepEqual(where([{ first: 'Romeo', last: 'Montague' }, { first: 'Mercutio', last: null }, { first: 'Tybalt', last: 'Capulet' }], { last: 'Capulet' }), [{ first: 'Tybalt', last: 'Capulet' }], 'should return an array of objects');",
-        "assert.deepEqual(where([{ 'a': 1 }, { 'a': 1 }, { 'a': 1, 'b': 2 }], { 'a': 1 }), [{ 'a': 1 }, { 'a': 1 }, { 'a': 1, 'b': 2 }], 'should return with multiples');"
+        "assert.deepEqual(where([{ 'a': 1 }, { 'a': 1 }, { 'a': 1, 'b': 2 }], { 'a': 1 }), [{ 'a': 1 }, { 'a': 1 }, { 'a': 1, 'b': 2 }], 'should return with multiples');",
+        "assert.deepEqual(where([{ 'a': 1, 'b': 2 }, { 'a': 1 }, { 'a': 1, 'b': 2, 'c': 2 }], { 'a': 1, 'b': 2 }), [{ 'a': 1, 'b': 2 }, { 'a': 1, 'b': 2, 'c': 2 }], 'should return two objects in array');",
+        "assert.deepEqual(where([{ 'a': 5 }, { 'a': 5 }, { 'a': 5, 'b': 10 }], { 'a': 5, 'b': 10 }), [{ 'a': 5, 'b': 10 }], 'should return a single object in array');"
       ],
       "MDNlinks": [
         "Global Object",
