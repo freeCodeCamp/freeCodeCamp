@@ -718,7 +718,7 @@
         "<code>  \"enemies\": [\"Water\", \"Dogs\"]</code>",
         "<code>};</code>",
         "</code>",
-        "Objects are useful for storing data in a structured way, and can represents real world objects, like a cat.",
+        "Objects are useful for storing data in a structured way, and can represent real world objects, like a cat.",
         "Let's try to make an Object that represents a dog called myDog which contains the properties 'name' (String), 'legs' (Number), 'tails' (Number) and 'friends' (Array)!"
       ],
       "tests":[
