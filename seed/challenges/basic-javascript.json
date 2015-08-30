@@ -1018,7 +1018,7 @@
         "  var expressionToGetMilk = /milk/gi;",
         "  // Only change code below this line.",
         "",
-        "  var expression = /.../gi;",
+        "  var expression = /./gi;",
         "",
         "  // Only change code above this line.",
         "  // We use this function to show you the value of your variable in your output box.",
