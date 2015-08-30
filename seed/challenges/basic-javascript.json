@@ -189,7 +189,7 @@
         "Try looking at the <code>secondLetterOfFirstName</code> variable declaration if you get stuck."
       ],
       "tests": [
-        "assert(thirdLetterOfLastName === 'v', 'The third last letter of lastName should be a \"v\"');"
+        "assert(thirdLetterOfLastName === 'v', 'The third letter of lastName should be a \"v\"');"
       ],
       "challengeSeed": [
         "var firstName = \"Ada\";",
@@ -515,7 +515,7 @@
       ],
       "tests":[
         "assert((function(){if(typeof(myArray) != 'undefined' && myArray[0] == 3 && myArray[1] == 2 && myArray[2] == 3){return true;}else{return false;}})(), 'myArray should now be [3,2,3]');",
-        "assert((function(){if(editor.getValue().match(/[0]/g).length >= 1 && editor.getValue().match(/=/g).length >= 2){return true;}else{return false;}})(), 'You should be using indexes to modify the values in myArray');"
+        "assert((function(){if(editor.getValue().match(/myArray\\[0\\]\\s?=\\s?/g)){return true;}else{return false;}})(), 'You should be using correct index to modify the value in myArray');"
       ],
       "challengeSeed":[
         "var ourArray = [1,2,3];",
@@ -718,7 +718,7 @@
         "<code>  \"enemies\": [\"Water\", \"Dogs\"]</code>",
         "<code>};</code>",
         "</code>",
-        "Objects are useful for storing data in a structured way, and can represents real world objects, like a cats.",
+        "Objects are useful for storing data in a structured way, and can represent real world objects, like a cat.",
         "Let's try to make an Object that represents a dog called myDog which contains the properties 'name' (String), 'legs' (Number), 'tails' (Number) and 'friends' (Array)!"
       ],
       "tests":[
