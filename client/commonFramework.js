@@ -739,7 +739,6 @@ function bonfireExecute(shouldTest) {
   setTimeout(function() {
     var $marginFix = $('.innerMarginFix');
     $marginFix.css('min-height', $marginFix.height());
-    $('#submitButton').click();
   }, 1000);
 }
 
