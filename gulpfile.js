@@ -234,7 +234,7 @@ gulp.task('pack-watch', function(cb) {
     .pipe(gulp.dest(webpackConfig.output.path));
 });
 
-gulp.task('pack-watch-manifest', ['pack-watch'], function() {
+gulp.task('pack-watch-manifest', function() {
   return gulp.src(webpackConfig.output.path + '/bundle.js')
     .pipe(rev())
     // copy files to public
