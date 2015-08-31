@@ -1,3 +1,6 @@
+// enable debug for gulp
+process.env.DEBUG = process.env.DEBUG || 'freecc:*';
+
 require('babel-core/register');
 var Rx = require('rx'),
   gulp = require('gulp'),
@@ -6,6 +9,7 @@ var Rx = require('rx'),
   // utils
   plumber = require('gulp-plumber'),
   notify = require('gulp-notify'),
+  gutil = require('gulp-util'),
   reduce = require('gulp-reduce-file'),
   sortKeys = require('sort-keys'),
   debug = require('debug')('freecc:gulp'),
@@ -43,6 +47,7 @@ var paths = {
     '!public/js/bundle*',
     'node_modules/',
     'client/',
+    'server/manifests/*.json',
     'server/rev-manifest.json'
   ],
 
@@ -143,7 +148,7 @@ var syncDepenedents = [
   'js',
   'less',
   'dependents',
-  'pack-client',
+  'pack-watch',
   'build-manifest'
 ];
 
@@ -189,16 +194,48 @@ gulp.task('pack-client', function() {
     .pipe(gulp.dest(paths.manifest));
 });
 
-gulp.task('pack-watch', function() {
-  return gulp.src(webpackConfig.entry)
+var defaultStatsOptions = {
+  colors: gutil.colors.supportsColor,
+  hash: false,
+  timings: false,
+  chunks: false,
+  chunkModules: false,
+  modules: false,
+  children: true,
+  version: true,
+  cached: false,
+  cachedAssets: false,
+  reasons: false,
+  source: false,
+  errorDetails: false
+};
+
+gulp.task('pack-watch', function(cb) {
+  var called = false;
+  gulp.src(webpackConfig.entry)
     .pipe(plumber({ errorHandler: errorHandler }))
     .pipe(webpack(Object.assign(
       {},
       webpackConfig,
       webpackOptions,
       { watch: true }
-    )))
-    .pipe(gulp.dest(webpackConfig.output.path))
+    ), null, function(notUsed, stats) {
+      if (stats) {
+        gutil.log(stats.toString(defaultStatsOptions));
+      }
+
+      if (!called) {
+        debug('webpack watch completed');
+        called = true;
+        cb();
+      }
+
+    }))
+    .pipe(gulp.dest(webpackConfig.output.path));
+});
+
+gulp.task('pack-watch-manifest', ['pack-watch'], function() {
+  return gulp.src(webpackConfig.output.path + '/bundle.js')
     .pipe(rev())
     // copy files to public
     .pipe(gulp.dest(webpackConfig.output.path))
@@ -301,7 +338,9 @@ var watchDependents = [
   'dependents',
   'serve',
   'sync',
-  'build-manifest'
+  'build-manifest',
+  'pack-watch',
+  'pack-watch-manifest'
 ];
 
 gulp.task('watch', watchDependents, function() {
@@ -311,7 +350,15 @@ gulp.task('watch', watchDependents, function() {
   gulp.watch(paths.js, ['js', 'dependents']);
   gulp.watch(paths.dependents, ['dependents']);
   gulp.watch(paths.manifest + '/*.json', ['build-manifest-watch']);
+  gulp.watch(webpackConfig.output.path + '/bundle.js', ['pack-watch-manifest']);
 });
 
-gulp.task('default', ['less', 'serve', 'sync', 'watch', 'pack-watch']);
+gulp.task('default', [
+  'less',
+  'serve',
+  'pack-watch',
+  'pack-watch-manifest',
+  'watch',
+  'sync'
+]);
 
