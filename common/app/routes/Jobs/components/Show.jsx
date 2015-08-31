@@ -13,8 +13,16 @@ export default contain(
   {
     store: 'jobsStore',
     fetchAction: 'jobActions.getJob',
+    map({ currentJob }) {
+      return {
+        job: currentJob
+      };
+    },
     getPayload({ params }) {
       return { id: params.id };
+    },
+    shouldContainerFetch({ currentJob = {} }, { currentJob: nextJob = {}}) {
+      return currentJob.id !== nextJob.id;
     }
   },
   React.createClass({
