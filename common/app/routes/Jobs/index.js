@@ -8,9 +8,8 @@ import Show from './components/Show.jsx';
  */
 
 export default {
-  path: 'jobs',
   childRoutes: [{
-    path: 'jobs',
+    path: '/jobs',
     component: Jobs
   }, {
     path: 'jobs/:id',
