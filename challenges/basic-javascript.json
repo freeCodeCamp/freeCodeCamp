@@ -17,9 +17,9 @@
         "And one more thing you need to notice. Starting at this waypoint in JavaScript related challenges (except AngularJS, all Ziplines, Git, Node.js and Express.js, MongoDB and Full Stack JavaScript Projects) you can see contents of <code>assert()</code> functions (in some challenges <code>except()</code>, <code>assert.equal()</code> and so on) which are used to test your code. It's part of these challenges that you are able to see the tests that are running against your code."
       ],
       "tests":[
-        "assert(editor.getValue().match(/(\\/\\/)...../g), 'Create a <code>\\/\\/</code> style comment that contains at least five letters');",
-        "assert(editor.getValue().match(/(\\/\\*)...../g), 'Create a <code>\/\\* \\*\/</code> style comment that contains at least five letters.');",
-        "assert(editor.getValue().match(/(\\*\\/)/g), 'Make sure that you close the comment with a <code>\\*\/</code>');"
+        "assert(editor.getValue().match(/(\\/\\/)...../g), 'Create a <code>//</code> style comment that contains at least five letters');",
+        "assert(editor.getValue().match(/(\\/\\*)...../g), 'Create a <code>/* */</code> style comment that contains at least five letters.');",
+        "assert(editor.getValue().match(/(\\*\\/)/g), 'Make sure that you close the comment with a <code>*/</code>');"
       ],
       "challengeSeed":[
       ],
