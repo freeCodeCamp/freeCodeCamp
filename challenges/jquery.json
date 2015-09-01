@@ -735,11 +735,11 @@
         "You've seen why id attributes are so convenient for targeting with jQuery selectors. But you won't always have such neat ids to work with.",
         "Fortunately, jQuery has some other tricks for targeting the right elements.",
         "jQuery uses CSS Selectors to target elements. <code>target:nth-child(n)</code> css selector allows you to select all the nth element with the target class or element type.",
-        "Here's how you would give the third element in each well bounce: <code>$(\".target:nth-child(3)\").addClass(\"animated bounce\");</code>",
-        "Make the second child in each of your well elements bounce."
+        "Make the second child in each of your well elements bounce. You must target the children of element with the <code>target</code> class.",
+        "Here's how you would give the third element in each well bounce: <code>$(\".target:nth-child(3)\").addClass(\"animated bounce\");</code>"
       ],
       "tests": [
-        "assert($(\".target:nth-child(2)\").hasClass(\"animated\") && $(\".target:nth-child(2)\").hasClass(\"bounce\"), 'The second element in each of your <code>well</code> elements should bounce.')",
+        "assert($(\".target:nth-child(2)\").hasClass(\"animated\") && $(\".target:nth-child(2)\").hasClass(\"bounce\"), 'The second element in your <code>target</code> elements should bounce.')",
         "assert(editor.match(/\\:nth-child\\(/g), 'You should use the <code>&#58;nth-child&#40&#41</code> function to modify these elements.')",
         "assert(editor.match(/<button class=\"btn btn-default target\" id=\"target2\">/g), 'Only use jQuery to add these classes to the element.')"
       ],
