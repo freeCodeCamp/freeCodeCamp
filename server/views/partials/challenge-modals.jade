@@ -20,6 +20,17 @@
             .modal-body.text-center
                 h3 This will open our GitHub Issues page.
                 h3 Please tell us how to reproduce the bug and link us to screenshots if possible.
+                h4.row
+                    .col-xs-1.col-sm-1.col-md-1
+                        input#user-agent-checkbox(type='checkbox') 
+                    .col-xs-11.col-sm-11.col-md-11
+                        label.text-warning.bg-info(for='user-agent-checkbox' style='cursor:pointer;') Include your OS and Browser version in the text of issue to provide more detailed information
+                h3 It's recommended first to search issues in GitHub. It could be a similar issue opened or already solved!
+                h3 
+                    | Also take a look at this helpful Wiki article: 
+                    br
+                    a(href='https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/Help-I%27ve-Found-a-Bug', target='_blank') Help I've Found a Bug
+                a.btn.btn-lg.btn-success.btn-block#search-issue(name='_csrf', value=_csrf) Search issues on this challenge in GitHub
                 a.btn.btn-lg.btn-primary.btn-block#report-issue(name='_csrf', value=_csrf) Create my GitHub issue
                 a.btn.btn-lg.btn-info.btn-block(href='#', data-dismiss='modal', aria-hidden='true') Cancel
 
