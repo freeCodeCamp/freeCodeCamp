@@ -206,7 +206,7 @@
       "title":"Condense arrays with .reduce",
       "difficulty":0,
       "description":[
-        "Reduce can be useful for condensing and array or numbers into one value.",
+        "Reduce can be useful for condensing an array or numbers into one value.",
         "<code>var singleVal = array.reduce(function(previousVal, currentVal){</code>",
         "<code>&thinsp;&thinsp;return previousVal+currentVal;</code>",
         "<code>});</code>"
