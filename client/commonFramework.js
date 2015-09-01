@@ -200,7 +200,7 @@ var myCodeMirror = editor;
 editor.on('keyup', function() {
   clearTimeout(codeStorage.updateTimeoutId);
   codeStorage.updateTimeoutId = setTimeout(
-    codeStorage.updateStorage,
+    codeStorage.updateStorage.bind(codeStorage),
     codeStorage.updateWait
   );
 });
