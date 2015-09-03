@@ -213,7 +213,7 @@
         "assert(!editor.match(/e\"\\);/g) && !editor.match(/t\"\\);/g), 'Delete all three of your jQuery functions from your <code>document ready function</code>.')",
         "assert(editor.match(/<script>/g), 'Leave your <code>script</code> element intact.')",
         "assert(editor.match(/\\$\\(document\\)\\.ready\\(function\\(\\)\\s?\\{/g), 'Leave your <code>$&#40document&#41.ready&#40function&#40&#41 {</code> to the beginning of your <code>script</code> element.')",
-        "assert(editor.match(/\\n\\s+?\\}\\);/g), 'Leave your \"document ready function\" closing <code>\\}&#41;</code> intact.')",
+        "assert(editor.match(/\\n\\s+?\\}\\);/g), 'Leave your \"document ready function\" closing <code>&#125;&#41;</code> intact.')",
         "assert(editor.match(/<\\/script>/g) && editor.match(/<script/g) && editor.match(/<\\/script>/g).length === editor.match(/<script/g).length, 'Leave your <code>script</code> element closing tag intact.')"
       ],
       "challengeSeed": [
