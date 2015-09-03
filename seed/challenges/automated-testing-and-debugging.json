@@ -28,19 +28,19 @@
       "title":"Using typeof",
       "difficulty":0,
       "description":[
-        "<code>typeof</code> is a useful method that we can use to check the type of a variable.",
+        "<code>typeof</code> is a useful operator that we can use to check the type of a variable.",
         "One thing to be careful of is that an array has the type objects.",
         "Try using each of these to see the types they have.",
-        "<code>console.log(typeof(\"\"));</code>",
-        "<code>console.log(typeof(0));</code>",
-        "<code>console.log(typeof([]));</code>",
-        "<code>console.log(typeof({}));</code>"
+        "<code>console.log(typeof \"\");</code>",
+        "<code>console.log(typeof 0);</code>",
+        "<code>console.log(typeof []);</code>",
+        "<code>console.log(typeof {});</code>"
       ],
       "tests":[
-        "assert(editor.getValue().match(/console\\.log\\(typeof\\(\"\"\\)\\);/gi), 'You should <code>console.log</code> the <code>typeof</code> a string.');",
-        "assert(editor.getValue().match(/console\\.log\\(typeof\\(0\\)\\);/gi), 'You should <code>console.log</code> the <code>typeof</code> a number.');",
-        "assert(editor.getValue().match(/console\\.log\\(typeof\\(\\[\\]\\)\\);/gi), 'You should <code>console.log</code> the <code>typeof</code> an array.');",
-        "assert(editor.getValue().match(/console\\.log\\(typeof\\(\\{\\}\\)\\);/gi), 'You should <code>console.log</code> the <code>typeof</code> a object.');"
+        "assert(editor.getValue().match(/console\\.log\\(typeof \"\"\\);/gi), 'You should <code>console.log</code> the <code>typeof</code> a string.');",
+        "assert(editor.getValue().match(/console\\.log\\(typeof 0\\);/gi), 'You should <code>console.log</code> the <code>typeof</code> a number.');",
+        "assert(editor.getValue().match(/console\\.log\\(typeof \\[\\]\\);/gi), 'You should <code>console.log</code> the <code>typeof</code> an array.');",
+        "assert(editor.getValue().match(/console\\.log\\(typeof \\{\\}\\);/gi), 'You should <code>console.log</code> the <code>typeof</code> a object.');"
       ],
       "challengeSeed":[
         "",
