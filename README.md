@@ -7,7 +7,7 @@
 Welcome to Free Code Camp's open source codebase!
 =======================
 
-Free Code Camp is an open-source community of busy people who learn to code, then build projects for nonprofits.
+Free Code Camp is an open-source community of busy people who learn to code and build projects for nonprofits.
 
 Our campers (students) start by working through our free, self-paced, browser-based curriculum. Next, they build several practice projects. Finally, we pair two campers together with a stakeholder from a nonprofit organization, and help them build the solution the nonprofit has requested.
 
