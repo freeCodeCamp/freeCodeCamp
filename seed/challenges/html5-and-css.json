@@ -1349,7 +1349,7 @@
       "description": [
         "<code>alt</code> attributes, also known as <code>alt text</code>, are what browsers will display if they fail to load the image. <code>alt</code> attributes are also important for blind or visually impaired users to understand what an image portrays. And search engines also look at <code>alt</code> attributes.",
         "In short, every image should have an <code>alt</code> attribute!",
-        "You can add an <code>alt</code> attribute right in the img element like this: <code>&#60img src=\"www.your-image-source.com/your-image.jpg\" alt=\"your alt text\"/&#62</code>.",
+        "You can add an <code>alt</code> attribute right in the img element like this: <code>&#60img src=\"www.your-image-source.com/your-image.jpg\" alt=\"your alt text\"&#62</code>.",
         "Add an <code>alt</code> attribute with the text <code>A cute orange cat lying on its back</code> to our cat photo."
       ],
       "tests": [
