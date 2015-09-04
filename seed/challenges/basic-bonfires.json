@@ -142,7 +142,10 @@
         "assert.deepEqual(palindrome(\"A man, a plan, a canal. Panama\"), true);",
         "assert.deepEqual(palindrome(\"never odd or even\"), true);",
         "assert.deepEqual(palindrome(\"nope\"), false);",
-        "assert.deepEqual(palindrome(\"almostomla\"), false);"
+        "assert.deepEqual(palindrome(\"almostomla\"), false);",
+        "assert.deepEqual(palindrome(\"My age is 0, 0 si ega ym.\"), true);",
+        "assert.deepEqual(palindrome(\"I'm 23 non 32 m'I?\"), true);",
+        "assert.deepEqual(palindrome(\"1 eye for of 1 eye.\"), false);"
       ],
       "challengeSeed": [
         "function palindrome(str) {",
