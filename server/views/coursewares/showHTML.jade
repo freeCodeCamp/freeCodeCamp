@@ -33,7 +33,6 @@ block content
                     label.negative-10.btn.btn-primary.btn-block#submitButton
                         i.fa.fa-play
                             | &nbsp; Run tests (ctrl + enter)
-                    br
                     if (user)
                         .button-spacer
                         .btn-group.input-group.btn-group-justified
@@ -91,9 +90,8 @@ block content
                                 #challenge-checkmark.animated.zoomInDown.delay-half
                                     span.completion-icon.ion-checkmark-circled.text-primary
                             .spacer
-                            .row
-                                if(user)
-                                    #submit-challenge.animated.fadeIn.btn.btn-lg.btn-primary.btn-block Submit and go to next challenge
-                                else
-                                    a.animated.fadeIn.btn.btn-lg.signup-btn.btn-block(href='/login') Sign in so you can save your progress
+                            if(user)
+                                #submit-challenge.animated.fadeIn.btn.btn-lg.btn-primary.btn-block Submit and go to next challenge
+                            else
+                                a.animated.fadeIn.btn.btn-lg.signup-btn.btn-block(href='/login') Sign in so you can save your progress
     include ../partials/challenge-modals
