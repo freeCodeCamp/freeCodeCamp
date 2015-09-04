@@ -421,7 +421,7 @@ function showCompletion() {
   );
   var bonfireSolution = myCodeMirror.getValue();
   var didCompleteWith = $('#completed-with').val() || null;
-  $('#complete-courseware-dialog').modal('show');
+  $('#complete-courseware-dialog').modal('show').focus();
   $('#submit-challenge').click(function(e) {
     e.preventDefault();
 
@@ -639,6 +639,9 @@ var runTests = function(err, data) {
       allTestsPassed = false;
       showCompletion();
     }
+    else{
+      isInitRun = false;
+    }
   }
 };
 
@@ -755,7 +758,6 @@ $(document).ready(function() {
     allSeeds;
 
   myCodeMirror.setValue(replaceSafeTags(editorValue));
-
   if (typeof $preview.html() !== 'undefined') {
     $preview.load(function() {
       if (initPreview) {
