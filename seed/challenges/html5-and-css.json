@@ -3053,7 +3053,7 @@
         "Let's try this again, but with <code>margin</code> this time.",
         "Instead of specifying an element's <code>margin-top</code>, <code>margin-right</code>, <code>margin-bottom</code>, and <code>margin-left</code> properties, you can specify them all in one line, like this: <code>margin: 10px 20px 10px 20px;</code>.",
         "These four values work like a clock: top, right, bottom, left, and will produce the exact same result as using the side-specific margin instructions.",
-        "Use <code>Clockwise Notation</code> to give an element a margin of <code>40px</code> on its top and left side, but only <code>20px</code> on its bottom and right side."
+        "Use <code>Clockwise Notation</code> to give the element with the <code>green-box</code> class a margin of <code>40px</code> on its top and left side, but only <code>20px</code> on its bottom and right side."
       ],
       "tests": [
         "assert($(\".green-box\").css(\"margin-top\") === \"40px\", 'Your <code>green-box</code> class should give the top of elements <code>40px</code> of <code>margin</code>.')",
