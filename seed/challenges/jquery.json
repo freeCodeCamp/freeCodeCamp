@@ -623,7 +623,8 @@
         "For example, your <code>jQuery Playground</code> <code>h3</code> element has the parent element of <code>&#60;div class=\"container-fluid\"&#62</code>, which itself has the parent <code>body</code>.",
         "jQuery has a function called <code>parent()</code> that allows you to access the parent of whichever element you've selected.",
         "Give the parent of the <code>#target1</code> element background-color of red.",
-        "Here's an example of how you would use the <code>parent()</code> function: <code>$(\"#left-well\").parent().css(\"background-color\", \"blue\")</code>"
+        "Here's an example of how you would use the <code>parent()</code> function: <code>$(\"#left-well\").parent().css(\"background-color\", \"blue\")</code>",
+        "Note: Please do not use this example in the challenge; it will target the incorrect element."
       ],
       "tests": [
         "assert($(\"#left-well\").css(\"background-color\") === 'red' || $(\"#left-well\").css(\"background-color\") === 'rgb(255, 0, 0)' || $(\"#left-well\").css(\"background-color\").toLowerCase() === '#ff0000' || $(\"#left-well\").css(\"background-color\").toLowerCase() === '#f00', 'Your <code>left-well</code> element should have a red background.')",
