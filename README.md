@@ -24,7 +24,7 @@ This code is running live at [FreeCodeCamp.com](http://www.FreeCodeCamp.com). We
 Wiki
 ------------
 
-We would love your help expanding our [wiki](https://github.com/freecodecamp/freecodecamp/wiki) with more information about learning to code and getting a coding job.
+We would love your help expanding our [wiki](https://github.com/freecodecamp/freecodecamp/wiki). Our goal is to become a great resource for people learning to code, building local coding communities, and applying for coding jobs.
 
 Contributing
 ------------
