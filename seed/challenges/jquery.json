@@ -310,8 +310,8 @@
       "difficulty": 3.07,
       "description": [
         "In the same way you can add classes to an element with jQuery's <code>addClass()</code> function, you can remove them with jQuery's <code>removeClass()</code> function.",
-        "Let's remove the <code>btn-default</code> class from all of our <code>button</code> elements.",
-        "Here's how you would do this for a specific button, add <code>$(\"#target2\").removeClass(\"btn-default\");</code>"
+        "Here's how you would do this for a specific button, add <code>$(\"#target2\").removeClass(\"btn-default\");</code>",
+        "Let's remove the <code>btn-default</code> class from all of our <code>button</code> elements."
       ],
       "tests": [
         "assert($(\".btn-default\").length === 0, 'Remove the <code>btn-default</code> class from all of your <code>button</code> elements.')",
@@ -360,11 +360,11 @@
       "difficulty": 3.08,
       "description": [
         "We can also change the CSS of an HTML element directly with jQuery.",
-        "Delete your jQuery selectors, leaving an empty <code>document ready function</code>.",
-        "Select <code>target1</code> and change its color to red.",
         "jQuery has a function called <code>.css()</code> that allows you to change the CSS of an element.",
         "Here's how we would change its color to blue: <code>$(\"#target1\").css(\"color\", \"blue\");</code>",
-        "This is slightly different from a normal CSS declaration, because the CSS property and its value are in quotes, and separated with a comma instead of a colon."
+        "This is slightly different from a normal CSS declaration, because the CSS property and its value are in quotes, and separated with a comma instead of a colon.",
+        "Delete your jQuery selectors, leaving an empty <code>document ready function</code>.",
+        "Select <code>target1</code> and change its color to red."
       ],
       "tests": [
         "assert($(\"#target1\").css(\"color\") === 'rgb(255, 0, 0)', 'Your <code>target1</code> element should have red text.')",
@@ -622,8 +622,8 @@
         "Every HTML element has a <code>parent</code> element from which it <code>inherits</code> properties.",
         "For example, your <code>jQuery Playground</code> <code>h3</code> element has the parent element of <code>&#60;div class=\"container-fluid\"&#62</code>, which itself has the parent <code>body</code>.",
         "jQuery has a function called <code>parent()</code> that allows you to access the parent of whichever element you've selected.",
-        "Give the parent of the <code>#target1</code> element background-color of red.",
-        "Here's an example of how you would use the <code>parent()</code> function: <code>$(\"#left-well\").parent().css(\"background-color\", \"blue\")</code>"
+        "Here's an example of how you would use the <code>parent()</code> function if you wanted to give the parent element of the <code>left-well</code> element a background color of blue: <code>$(\"#left-well\").parent().css(\"background-color\", \"blue\")</code>",
+        "Give the parent of the <code>#target1</code> element a background-color of red."
       ],
       "tests": [
         "assert($(\"#left-well\").css(\"background-color\") === 'red' || $(\"#left-well\").css(\"background-color\") === 'rgb(255, 0, 0)' || $(\"#left-well\").css(\"background-color\").toLowerCase() === '#ff0000' || $(\"#left-well\").css(\"background-color\").toLowerCase() === '#f00', 'Your <code>left-well</code> element should have a red background.')",
@@ -677,8 +677,8 @@
         "Many HTML elements have <code>children</code> elements from which they <code>inherit</code> their properties.",
         "For example, every HTML element is a child of your <code>body</code> element, and your \"jQuery Playground\" <code>h3</code> element is a child of your <code>&#60;div class=\"container-fluid\"&#62</code> element.",
         "jQuery has a function called <code>children()</code> that allows you to access the children of whichever element you've selected.",
-        "Give all the children of your <code>#right-well</code> element a color of green.",
-        "Here's an example of how you would use the <code>children()</code> function: <code>$(\"#left-well\").children().css(\"color\", \"blue\")</code>"
+        "Here's an example of how you would use the <code>children()</code> function to give the children of your <code>left-well</code> element the background color of blue: <code>$(\"#left-well\").children().css(\"color\", \"blue\")</code>",
+        "Give all the children of your <code>#right-well</code> element a color of green."
       ],
       "tests": [
         "assert($(\"#target6\").css(\"color\") === 'rgb(0, 128, 0)', 'Your <code>target6</code> element should have green text.')",
@@ -733,8 +733,8 @@
         "You've seen why id attributes are so convenient for targeting with jQuery selectors. But you won't always have such neat ids to work with.",
         "Fortunately, jQuery has some other tricks for targeting the right elements.",
         "jQuery uses CSS Selectors to target elements. <code>target:nth-child(n)</code> css selector allows you to select all the nth element with the target class or element type.",
-        "Make the second child in each of your well elements bounce.",
-        "Here's how you would give the third element in each well bounce: <code>$(\".target:nth-child(3)\").addClass(\"animated bounce\");</code>"
+        "Here's how you would give the third element in each well bounce: <code>$(\".target:nth-child(3)\").addClass(\"animated bounce\");</code>",
+        "Make the second child in each of your well elements bounce."
       ],
       "tests": [
         "assert($(\".target:nth-child(2)\").hasClass(\"animated\") && $(\".target:nth-child(2)\").hasClass(\"bounce\"), 'The second element in each of your <code>well</code> elements should bounce.')",
