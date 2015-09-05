@@ -145,7 +145,8 @@
         "assert.strictEqual(palindrome(\"almostomla\"), false, \"\\\"almostomla\\\" is not a palindrome\");",
         "assert.strictEqual(palindrome(\"My age is 0, 0 si ega ym.\"), true, \"\\\"My age is 0, 0 si ega ym.\\\" is a palindrome\");",
         "assert.strictEqual(palindrome(\"I'm 23 non 32 m'I?\"), true, \"\\\"I'm 23 non 32 m'I?\\\" is a palindrome\");",
-        "assert.strictEqual(palindrome(\"1 eye for of 1 eye.\"), false, \"\\\"1 eye for of 1 eye.\\\" is not a palindrome\");"
+        "assert.strictEqual(palindrome(\"1 eye for of 1 eye.\"), false, \"\\\"1 eye for of 1 eye.\\\" is not a palindrome\");",
+        "assert.strictEqual(palindrome(\"0_0 (: /-\\ :) 0-0\"), true, \"\\\"0_0 (: /-\\\\ :) 0-0\\\" is a palindrome\");"
       ],
       "challengeSeed": [
         "function palindrome(str) {",
