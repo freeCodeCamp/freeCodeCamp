@@ -1,5 +1,38 @@
 extends ../layout
 block content
+    .jumbotron
+        h1.text-center Help us spread the word
+        .spacer
+        .col-xs-12.col-sm-10.col-sm-offset-1.col-md-8.col-md-offset-2
+            .code-editor-announcement
+                textarea#codeEditor
+                script(type='text/javascript', src='/js/lib/codemirror/lib/codemirror.js')
+                link(rel='stylesheet', href='/js/lib/codemirror/lib/codemirror.css')
+                link(rel="stylesheet", href="//fonts.googleapis.com/css?family=Ubuntu+Mono")
+                link(rel='stylesheet', href='/js/lib/codemirror/theme/monokai.css')
+                script(type='text/javascript', src='/js/lib/codemirror/addon/edit/closebrackets.js')
+                script(type='text/javascript', src='/js/lib/codemirror/addon/edit/matchbrackets.js')
+                script(type='text/javascript', src='/js/lib/codemirror/addon/lint/lint.js')
+                script(type='text/javascript', src='/js/lib/codemirror/addon/lint/javascript-lint.js')
+                script(type='text/javascript', src='/js/lib/codemirror/mode/javascript/javascript.js')
+                script.
+                    var editor = CodeMirror.fromTextArea(document.getElementById('codeEditor'), {
+                        lineNumbers: false,
+                        theme: 'monokai',
+                        runnable: true,
+                        matchBrackets: true,
+                        autoCloseBrackets: true,
+                        scrollbarStyle: 'null',
+                        lineWrapping: true,
+                        gutters: ['CodeMirror-lint-markers'],
+                        mode: "javascript"
+                        });
+                    editor.setValue("addCampers = function() {\n\teventsInYourCity++;\n\thelpfulCampersInChat++;\n\topenSourceContributors++;\n}");
+                    var resetEditor = function resetEditor() {};
+            .spacer
+        .row
+            .col-xs-12
+                a.btn.btn-cta.signup-btn.btn-block(href="https://www.facebook.com/sharer/sharer.php?u=http://freecodecamp.com" target='_blank') Share us on Facebook (only takes 2 clicks)
     .panel.panel-info
         .panel-heading.text-center
             h1 Challenge Map
