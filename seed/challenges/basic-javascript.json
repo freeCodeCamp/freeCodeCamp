@@ -283,7 +283,7 @@
         "Replace the <code>0</code> with the correct number so you can get the result mentioned in the comment."
       ],
       "tests": [
-        "assert((function(){if(sum === 20 && editor.getValue().match(/\\+/g)){return true;}else{return false;}})(), 'Make the variable <code>sum</code> equal 20');"
+        "assert((function(){if(sum === 20 && editor.getValue().match(/\\+/g).length >= 2){return true;}else{return false;}})(), 'Make the variable <code>sum</code> equal 20.');"
       ],
       "challengeSeed": [
         "var sum = 10 + 0; //make this equal to 20 by changing the 0 into the appropriate number.",
