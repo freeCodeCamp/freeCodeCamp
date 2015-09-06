@@ -1445,7 +1445,7 @@
       ],
       "tests":[
         "assert((function(){runSlots();if($($(\".slot\")[0]).html().replace(/\\s/gi, \"\") !== \"\" && $($(\".slot\")[1]).html().replace(/\\s/gi, \"\") !== \"\" && $($(\".slot\")[2]).html().replace(/\\s/gi, \"\") !== \"\"){return true;}else{return false;}})(), 'You should be displaying the result of the slot numbers in the corresponding slots')",
-        "assert((function(){if(editor.match( /\\$\\(\\$\\(\\\"\\.slot\\\"\\)\\[\\d\\]\\)/gi )){if(editor.match( /\\$\\(\\$\\(\\\"\\.slot\\\"\\)\\[\\d\\]\\)/gi ).length >= 3 && editor.match( /\\.html\\(slotOne\\)/gi ) && editor.match( /\\.html\\(slotTwo\\)/gi ) && editor.match( /\\.html\\(slotThree\\)/gi )){return true;}else{return false;}}else{return false;}})(), 'You should have used the the selector given in the description to select each slot and assign it the value of slotOne&#44; slotTwo and slotThree respectively')"
+        "assert((editor.match( /\\$\\s*?\\(\\s*?\\$\\s*?\\(\\s*?(?:'|\")\\s*?\\.slot\\s*?(?:'|\")\\s*?\\)\\[\\d\\]\\s*?\\)/gi) && editor.match( /\\$\\s*?\\(\\s*?\\$\\s*?\\(\\s*?(?:'|\")\\s*?\\.slot\\s*?(?:'|\")\\s*?\\)\\[\\d\\]\\s*?\\)/gi ).length >= 3 && editor.match( /\\.html\\(slotOne\\)/gi ) && editor.match( /\\.html\\(slotTwo\\)/gi ) && editor.match( /\\.html\\(slotThree\\)/gi )), 'You should have used the the selector given in the description to select each slot and assign it the value of <code>slotOne</code>&#44; <code>slotTwo</code> and <code>slotThree</code> respectively')"
       ],
       "challengeSeed":[
         "fccss",
@@ -1609,10 +1609,10 @@
         "Set up all three slots like this, then click the \"Go\" button to play the slot machine."
       ],
       "tests":[
-        "assert((editor.match(/\\$\\(\\$\\(\\'\\.slot\\'\\)\\[\\d\\]\\)\\.html\\(\\'\\<img\\s?src\\s?=\\s?\"\\'\\s?\\+\\s?images\\[\\w+\\-1\\]\\s?\\+\\s?\\'\"\\>\\'\\);/gi) && editor.match(/\\$\\(\\$\\(\\'\\.slot\\'\\)\\[\\d\\]\\)\\.html\\(\\'\\<img\\s?src\\s?=\\s?\"\\'\\s?\\+\\s?images\\[\\w+\\-1\\]\\s?\\+\\s?\\'\"\\>\\'\\);/gi).length >= 3) || (editor.match(/\\$\\(\\$\\(\\\"\\.slot\\\"\\)\\[\\d\\]\\)\\.html\\(\\'\\<img\\s?src\\s?=\\s?\"\\'\\s?\\+\\s?images\\[\\w+\\-1\\]\\s?\\+\\s?\\'\"\\>\\'\\);/gi) && editor.match(/\\$\\(\\$\\(\\\"\\.slot\\\"\\)\\[\\d\\]\\)\\.html\\(\\'\\<img\\s?src\\s?=\\s?\"\\'\\s?\\+\\s?images\\[\\w+\\-1\\]\\s?\\+\\s?\\'\"\\>\\'\\);/gi).length >= 3), 'Use the provided code three times. One for each slot')",
-        "assert(editor.match(/\\$\\(\\$\\(\\'\\.slot\\'\\)\\[0\\]\\)/gi), 'You should have used <code>$&#40;&#39;.slot&#39;&#41;[0]</code> at least once')",
-        "assert(editor.match(/\\$\\(\\$\\(\\'\\.slot\\'\\)\\[1\\]\\)/gi), 'You should have used <code>$&#40;&#39;.slot&#39;&#41;[1]</code> at least once')",
-        "assert(editor.match(/\\$\\(\\$\\(\\'\\.slot\\'\\)\\[2\\]\\)/gi), 'You should have used <code>$&#40;&#39;.slot&#39;&#41;[2]</code> at least once')",
+        "assert((editor.match(/\\$\\s*?\\(\\s*?\\$\\s*?\\(\\s*?(?:'|\")\\s*?\\.slot\\s*?(?:'|\")\\s*?\\)\\[\\d\\]\\s*?\\)\\.html\\(\\s*?\\'\\<img\\s?src\\s?=\\s?\"\\'\\s?\\+\\s?images\\[\\w+\\-1\\]\\s?\\+\\s?\\'\"\\>\\'\\s*?\\);/gi) && editor.match(/\\$\\s*?\\(\\s*?\\$\\s*?\\(\\s*?(?:'|\")\\s*?\\.slot\\s*?(?:'|\")\\s*?\\)\\[\\d\\]\\s*?\\)\\.html\\(\\s*?\\'\\<img\\s?src\\s?=\\s?\"\\'\\s?\\+\\s?images\\[\\w+\\-1\\]\\s?\\+\\s?\\'\"\\>\\'\\s*?\\);/gi).length >= 3), 'Use the provided code three times. One for each slot')",
+        "assert(editor.match(/\\$\\s*?\\(\\s*?\\$\\s*?\\(\\s*?(?:'|\")\\s*?\\.slot\\s*?(?:'|\")\\s*?\\)\\[0\\]\\s*?\\)/gi), 'You should have used <code>$&#40;&#39;.slot&#39;&#41;[0]</code> at least once')",
+        "assert(editor.match(/\\$\\s*?\\(\\s*?\\$\\s*?\\(\\s*?(?:'|\")\\s*?\\.slot\\s*?(?:'|\")\\s*?\\)\\[1\\]\\s*?\\)/gi), 'You should have used <code>$&#40;&#39;.slot&#39;&#41;[1]</code> at least once')",
+        "assert(editor.match(/\\$\\s*?\\(\\s*?\\$\\s*?\\(\\s*?(?:'|\")\\s*?\\.slot\\s*?(?:'|\")\\s*?\\)\\[2\\]\\s*?\\)/gi), 'You should have used <code>$&#40;&#39;.slot&#39;&#41;[2]</code> at least once')",
         "assert(editor.match(/slotOne/gi) && editor.match(/slotOne/gi).length >= 7, 'You should have used the slotOne value at least once')",
         "assert(editor.match(/slotTwo/gi) && editor.match(/slotTwo/gi).length >= 8, 'You should have used the slotTwo value at least once')",
         "assert(editor.match(/slotThree/gi) && editor.match(/slotThree/gi).length >= 7, 'You should have used the slotThree value at least once')"
