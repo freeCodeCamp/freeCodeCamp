@@ -135,17 +135,17 @@
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Write your own code."
       ],
       "tests": [
-        "expect(palindrome(\"eye\")).to.be.a(\"boolean\");",
-        "assert.deepEqual(palindrome(\"eye\"), true);",
-        "assert.deepEqual(palindrome(\"race car\"), true);",
-        "assert.deepEqual(palindrome(\"not a palindrome\"), false);",
-        "assert.deepEqual(palindrome(\"A man, a plan, a canal. Panama\"), true);",
-        "assert.deepEqual(palindrome(\"never odd or even\"), true);",
-        "assert.deepEqual(palindrome(\"nope\"), false);",
-        "assert.deepEqual(palindrome(\"almostomla\"), false);",
-        "assert.deepEqual(palindrome(\"My age is 0, 0 si ega ym.\"), true);",
-        "assert.deepEqual(palindrome(\"I'm 23 non 32 m'I?\"), true);",
-        "assert.deepEqual(palindrome(\"1 eye for of 1 eye.\"), false);"
+        "assert.isBoolean(palindrome(\"\"), \"palindrome() function returns a Boolean value\");",
+        "assert.strictEqual(palindrome(\"eye\"), true, \"\\\"eye\\\" is a palindrome\");",
+        "assert.strictEqual(palindrome(\"Race Car\"), true, \"\\\"Race Car\\\" is a palindrome\");",
+        "assert.strictEqual(palindrome(\"not a palindrome\"), false, \"\\\"not a palindrome\\\" is not a palindrome\");",
+        "assert.strictEqual(palindrome(\"A man, a plan, a canal. Panama\"), true, \"\\\"A man, a plan, a canal. Panama\\\" is a palindrome\");",
+        "assert.strictEqual(palindrome(\"Never odd OR even\"), true, \"\\\"Never odd OR even\\\" is a palindrome\");",
+        "assert.strictEqual(palindrome(\"Nope\"), false, \"\\\"Nope\\\" is not a palindrome\");",
+        "assert.strictEqual(palindrome(\"almostomla\"), false, \"\\\"almostomla\\\" is not a palindrome\");",
+        "assert.strictEqual(palindrome(\"My age is 0, 0 si ega ym.\"), true, \"\\\"My age is 0, 0 si ega ym.\\\" is a palindrome\");",
+        "assert.strictEqual(palindrome(\"I'm 23 non 32 m'I?\"), true, \"\\\"I'm 23 non 32 m'I?\\\" is a palindrome\");",
+        "assert.strictEqual(palindrome(\"1 eye for of 1 eye.\"), false, \"\\\"1 eye for of 1 eye.\\\" is not a palindrome\");"
       ],
       "challengeSeed": [
         "function palindrome(str) {",
