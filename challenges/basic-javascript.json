@@ -253,7 +253,7 @@
       ],
       "tests": [
         "assert(secondToLastLetterOfLastName === 'c', 'secondToLastLetterOfLastName should be \"c\".');",
-        "assert(editor.getValue().match(/\\.length/g).length == 2, 'You have to use .length to get the third last letter.');"
+        "assert(editor.getValue().match(/\\.length/g).length === 2, 'You have to use .length to get the third last letter.');"
       ],
       "challengeSeed": [
         "var firstName = \"Ada\";",
