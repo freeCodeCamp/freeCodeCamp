@@ -549,9 +549,9 @@
       "title": "Smallest Common Multiple",
       "difficulty": "2.11",
       "description": [
-        "Find the smallest number that is evenly divisible by all numbers in the provided range.",
-        "In other words, given the range [3,7], you will need to find the least common multiple of 3, 4, 5, 6, and 7.",
+        "Find the smallest common multiple of the provided parameters that can be evenly divided by both, as well as by all sequential numbers in the range between these parameters.",
         "The range will be an array of two numbers that will not necessarily be in numerical order.",
+          "e.g. for 1 and 3 - find the smallest common multiple of both 1 and 3 that is evenly divisible by all numbers <em>between</em> 1 and 3.",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "challengeSeed": [
