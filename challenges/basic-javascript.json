@@ -422,7 +422,7 @@
       "description": [
         "With JavaScript <code>array</code> variables, we can store several pieces of data in one place.",
         "You start an array declaration with an opening bracket, end it with a closing bracket, and put a comma between each entry, like this: <code>var sandwich = [\"peanut butter\", \"jelly\", \"bread\"]</code>.",
-        "Now let's create a new array called <code>myArray</code> that contains both a <code>string</code> and a <code>number</code>.",
+        "Now let's create a new array called <code>myArray</code> that contains both a <code>string</code> and a <code>number</code> (in that order).",
         "Refer to the comments if you get stuck."
       ],
       "tests": [
