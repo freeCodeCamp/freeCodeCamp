@@ -76,10 +76,8 @@ $(document).ready(function() {
       $('#report-issue').unbind('click');
       $('#report-issue').on('click', function() {
           var textMessage = 'https://github.com/freecodecamp/freecodecamp/issues/new?&body=Challenge ' + window.location.href + ' has an issue. Please describe how to reproduce it, and include links to screenshots if possible.';
-          if($('#user-agent-checkbox').is(':checked')) {
-            textMessage += ' My User Agent is: <code>' + navigator.userAgent + '</code>';
-            textMessage = textMessage.replace(';', ','); //GitHub cuts User Agent text because of ';' symbol so I just replace it with ','
-          }
+          textMessage += ' My User Agent is: <code>' + navigator.userAgent + '</code>.';
+          textMessage = textMessage.replace(';', ','); //GitHub cuts User Agent text because of ';' symbol so I just replace it with ','
           $('#issue-modal').modal('hide');
           window.open(textMessage, '_blank');
       });
