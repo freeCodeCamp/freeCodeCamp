@@ -72,6 +72,12 @@ $(document).ready(function() {
           window.open('https://github.com/FreeCodeCamp/FreeCodeCamp/issues?q=is:issue is:all '+ queryIssue.substr(queryIssue.lastIndexOf('challenges/') + 11).replace('/', ''), '_blank');
       });
 
+      $('#help-ive-found-a-bug-wiki-article').unbind('click');
+      $('#help-ive-found-a-bug-wiki-article').on('click', function() {
+        var queryIssue = window.location.href.toString();
+        window.open("https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/Help-I've-Found-a-Bug", '_blank');
+      });
+
       $('#report-issue').unbind('click');
       $('#report-issue').on('click', function() {
           var textMessage = 'https://github.com/freecodecamp/freecodecamp/issues/new?&body=Challenge ' + window.location.href + ' has an issue.';
