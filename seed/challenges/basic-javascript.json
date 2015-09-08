@@ -987,13 +987,14 @@
         "Create an <code>if-else statement</code> to return <code>heads</code> if the flip var is zero, or else return <code>tails</code> if it's not."
       ],
       "tests":[
-        "assert((function(){if(myFunction() === \"heads\" || myFunction() === \"tails\"){return true;}else{return false;}})(), 'myFunction should either return heads or tails');",
-        "assert(editor.getValue().match(/if/g).length >= 3, 'You should have created a new if statement');",
-        "assert(editor.getValue().match(/else/g).length >= 2, 'You should have created a new else statement');"
+        "assert((function(){var result = myFunction();if(result === 'heads' || result === 'tails'){return true;} else {return false;}})(), '<code>myFunction</code> should either return <code>heads</code> or <code>tails</code>.');",
+        "assert((function(){var result = myFunction();if(result === 'heads' && flip === 0 || result === 'tails' && flip !== 0){return true;} else {return false;}})(), '<code>myFunction</code> should return <code>heads</code> when flip equals 0 and <code>tails</code> when flip equals 1.');",
+        "assert(editor.getValue().match(/if/g).length >= 4, 'You should have created a new if statement.');",
+        "assert(editor.getValue().match(/else/g).length >= 2, 'You should have created a new else statement.');"
       ],
       "challengeSeed":[
+        "var flip = Math.floor(Math.random() * (1 - 0 + 1)) + 0;",
         "function myFunction(){",
-        "  var flip = Math.floor(Math.random() * (1 - 0 + 1)) + 0;",
         "  // Create an if-else statement here to return \"heads\" if flip is 0. Otherwise return \"tails\".",
         "",
         "  // Only change code below this line.",
@@ -1003,7 +1004,7 @@
         "",
         "// Only change code above this line.",
         "// We use this function to show you the value of your variable in your output box.",
-        "(function(){return myFunction();})();"
+        "var result = myFunction();if(typeof(flip) !== \"undefined\" && typeof(flip) === \"number\" && typeof(result) !== \"undefined\" && typeof(result) === \"string\"){(function(y,z){return 'flip = ' + y.toString() + ', text = ' + z;})(flip, result);}"
       ],
       "type": "waypoint",
       "challengeType": 1
