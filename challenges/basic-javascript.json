@@ -1000,9 +1000,10 @@
         "  // Only change code below this line.",
         "",
         "",
+        "",
+        "  // Only change code above this line.",
         "}",
         "",
-        "// Only change code above this line.",
         "// We use this function to show you the value of your variable in your output box.",
         "var result = myFunction();if(typeof(flip) !== \"undefined\" && typeof(flip) === \"number\" && typeof(result) !== \"undefined\" && typeof(result) === \"string\"){(function(y,z){return 'flip = ' + y.toString() + ', text = ' + z;})(flip, result);}"
       ],
