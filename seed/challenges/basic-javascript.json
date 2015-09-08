@@ -352,7 +352,7 @@
         "Replace the <code>0</code> with the correct number so you can get the result mentioned in the comment."
       ],
       "tests": [
-        "assert((function(){if(quotient === 2 && editor.getValue().match(/\\//g)){return true;}else{return false;}})(), 'Make the variable <code>quotient</code> equal 2.');"
+        "assert((function(){if(quotient === 2 && editor.getValue().match(/var\\s*?quotient\\s*?\\=\\s*?\\d+\\s*?\\/\\s*?\\d+\\s*?;/g)){return true;}else{return false;}})(), 'Make the variable <code>quotient</code> equal 2.');"
       ],
       "challengeSeed": [
         "var quotient = 66 / 0; //make this equal to 2 by changing the 0 into the appropriate number.",
