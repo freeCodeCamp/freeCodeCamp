@@ -909,17 +909,9 @@
       "challengeSeed": [
         "<link href=\"http://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
         "<style>",
-        "  .red-text {",
-        "    color: red;",
-        "  }",
         "",
         "  h2 {",
         "    font-family: Lobster, Monospace;",
-        "  }",
-        "",
-        "  p {",
-        "    font-size: 16px;",
-        "    font-family: Monospace;",
         "  }",
         "",
         "  .thick-green-border {",
@@ -929,17 +921,12 @@
         "    border-radius: 50%;",
         "  }",
         "",
-        "  .smaller-image {",
-        "    width: 100px;",
-        "  }",
         "</style>",
         "",
         "<div class=\"container-fluid\">",
-        "  <h2 class=\"red-text text-center\">CatPhotoApp</h2>",
+        "  <h2 class=\"text-primary text-center\">CatPhotoApp</h2>",
         "",
-        "  <p>Click here for <a href=\"#\">cat photos</a>.</p>",
-        "",
-        "  <a href=\"#\"><img class=\"smaller-image thick-green-border\" src=\"https://bit.ly/fcc-relaxing-cat\"></a>",
+        "  <a href=\"#\"><img class=\"img-responsive thick-green-border\" src=\"https://bit.ly/fcc-relaxing-cat\"></a>",
         "",
         "  <img src=\"http://bit.ly/fcc-running-cats\" class=\"img-responsive\">",
         "  <div class=\"row\">",
@@ -1949,8 +1936,8 @@
         "Give the well on the left the id of <code>left-well</code>. Give the well on the right the <code>id</code> of <code>right-well</code>."
       ],
       "tests": [
-        "assert($(\"#left-well\") && $(\"#left-well\").length > 0, 'Give your left <code>well</code> the id of <code>left-well</code>.')",
-        "assert($(\"#right-well\") && $(\"#right-well\").length > 0, 'Give your right <code>well</code> the id of <code>right-well</code>.')"
+        "assert($(\".col-xs-6\").children(\"#left-well\") && $(\".col-xs-6\").children(\"#left-well\").length > 0, 'Give your left <code>well</code> the id of <code>left-well</code>.')",
+        "assert($(\".col-xs-6\").children(\"#right-well\") && $(\".col-xs-6\").children(\"#right-well\").length > 0, 'Give your right <code>well</code> the id of <code>right-well</code>.')"
       ],
       "challengeSeed": [
         "<div class=\"container-fluid\">",
@@ -2046,12 +2033,12 @@
         "Give each of your buttons a unique id like, starting with <code>target1</code> and ending with <code>target6</code>."
       ],
       "tests": [
-        "assert($(\"#target1\") && $(\"#target1\").length > 0, 'One <code>button</code> element should have the id <code>target1</code>.')",
-        "assert($(\"#target2\") && $(\"#target2\").length > 0, 'One <code>button</code> element should have the id <code>target2</code>.')",
-        "assert($(\"#target3\") && $(\"#target3\").length > 0, 'One <code>button</code> element should have the id <code>target3</code>.')",
-        "assert($(\"#target4\") && $(\"#target4\").length > 0, 'One <code>button</code> element should have the id <code>target4</code>.')",
-        "assert($(\"#target5\") && $(\"#target5\").length > 0, 'One <code>button</code> element should have the id <code>target5</code>.')",
-        "assert($(\"#target6\") && $(\"#target6\").length > 0, 'One <code>button</code> element should have the id <code>target6</code>.')"
+        "assert($(\"#left-well\").children(\"#target1\") && $(\"#left-well\").children(\"#target1\").length > 0, 'One <code>button</code> element should have the id <code>target1</code>.')",
+        "assert($(\"#left-well\").children(\"#target2\") && $(\"#left-well\").children(\"#target2\").length > 0, 'One <code>button</code> element should have the id <code>target2</code>.')",
+        "assert($(\"#left-well\").children(\"#target3\") && $(\"#left-well\").children(\"#target3\").length > 0, 'One <code>button</code> element should have the id <code>target3</code>.')",
+        "assert($(\"#right-well\").children(\"#target4\") && $(\"#right-well\").children(\"#target4\").length > 0, 'One <code>button</code> element should have the id <code>target4</code>.')",
+        "assert($(\"#right-well\").children(\"#target5\") && $(\"#right-well\").children(\"#target5\").length > 0, 'One <code>button</code> element should have the id <code>target5</code>.')",
+        "assert($(\"#right-well\").children(\"#target6\") && $(\"#right-well\").children(\"#target6\").length > 0, 'One <code>button</code> element should have the id <code>target6</code>.')"
       ],
       "challengeSeed": [
         "<div class=\"container-fluid\">",

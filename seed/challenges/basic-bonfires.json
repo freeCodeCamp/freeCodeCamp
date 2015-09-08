@@ -90,7 +90,8 @@
         "expect(factorialize(5)).to.be.a(\"Number\");",
         "expect(factorialize(5)).to.equal(120);",
         "expect(factorialize(10)).to.equal(3628800);",
-        "expect(factorialize(20)).to.equal(2432902008176640000);"
+        "expect(factorialize(20)).to.equal(2432902008176640000);",
+        "expect(factorialize(0)).to.equal(1);"
       ],
       "difficulty": "1.02",
       "description": [
@@ -530,11 +531,11 @@
     },
     {
       "id": "adf08ec01beb4f99fc7a68f2",
-      "title": "Falsey Bouncer",
+      "title": "Falsy Bouncer",
       "difficulty": "1.50",
       "description": [
-        "Remove all falsey values from an array.",
-        "Falsey values in javascript are false, null, 0, \"\", undefined, and NaN.",
+        "Remove all falsy values from an array.",
+        "Falsy values in javascript are false, null, 0, \"\", undefined, and NaN.",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Write your own code."
       ],
       "challengeSeed": [
@@ -546,9 +547,9 @@
         "bouncer([7, 'ate', '', false, 9]);"
       ],
       "tests": [
-        "assert.deepEqual(bouncer([7, 'ate', '', false, 9]), [7, 'ate', 9], 'should remove falsey values');",
-        "assert.deepEqual(bouncer(['a', 'b', 'c']), ['a', 'b', 'c'], 'should return full array if no falsey elements');",
-        "assert.deepEqual(bouncer([false, null, 0]), [], 'should return empty array if all elements are falsey');"
+        "assert.deepEqual(bouncer([7, 'ate', '', false, 9]), [7, 'ate', 9], 'should remove falsy values');",
+        "assert.deepEqual(bouncer(['a', 'b', 'c']), ['a', 'b', 'c'], 'should return full array if no falsy elements');",
+        "assert.deepEqual(bouncer([false, null, 0, NaN, undefined, '']), [], 'should return empty array if all elements are falsy');"
       ],
       "MDNlinks": [
         "Boolean Objects",
@@ -572,8 +573,8 @@
       "title": "Where art thou",
       "difficulty": "1.55",
       "description": [
-        "Make a function that looks through an array (first argument) and returns an array of all objects that have equivalent property and value pair (second argument).",
-        "For example, if the first argument is <code>[{ first: 'Romeo', last: 'Montague' }, { first: 'Mercutio', last: null }, { first: 'Tybalt', last: 'Capulet' }]</code>, and the second argument is <code>{ last: 'Capulet' }</code>, then you must return the the third object from the array (the first argument), because it contains the property and it's value, that was passed on as the second argument.",
+        "Make a function that looks through an array of objects (first argument) and returns an array of all objects that have matching property and value pairs (second argument). Each property and value pair of the source object has to be present in the object from the collection if it is to be included in the returned array.",
+        "For example, if the first argument is <code>[{ first: 'Romeo', last: 'Montague' }, { first: 'Mercutio', last: null }, { first: 'Tybalt', last: 'Capulet' }]</code>, and the second argument is <code>{ last: 'Capulet' }</code>, then you must return the third object from the array (the first argument), because it contains the property and it's value, that was passed on as the second argument.",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Write your own code."
       ],
       "challengeSeed": [
