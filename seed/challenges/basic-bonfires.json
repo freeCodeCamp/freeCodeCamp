@@ -549,7 +549,7 @@
       "tests": [
         "assert.deepEqual(bouncer([7, 'ate', '', false, 9]), [7, 'ate', 9], 'should remove falsy values');",
         "assert.deepEqual(bouncer(['a', 'b', 'c']), ['a', 'b', 'c'], 'should return full array if no falsy elements');",
-        "assert.deepEqual(bouncer([false, null, 0]), [], 'should return empty array if all elements are falsy');"
+        "assert.deepEqual(bouncer([false, null, 0, NaN, undefined, '']), [], 'should return empty array if all elements are falsy');"
       ],
       "MDNlinks": [
         "Boolean Objects",
