@@ -116,7 +116,7 @@ gulp.task('serve', function(cb) {
   var called = false;
   nodemon({
     script: paths.server,
-    ext: '.js .json',
+    ext: '.jsx .js .json',
     ignore: paths.serverIgnore,
     exec: path.join(__dirname, 'node_modules/.bin/babel-node'),
     env: {
