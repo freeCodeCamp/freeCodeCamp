@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import { Link } from 'react-router';
 import { PanelGroup, Thumbnail, Panel, Well } from 'react-bootstrap';
 import moment from 'moment';
 
@@ -46,21 +47,23 @@ export default React.createClass({
           eventKey={ index }
           header={ header }
           key={ id }>
-          <Well>
-            <Thumbnail
-              alt={ company + 'company logo' }
-              src={ logo }
-              style={ thumbnailStyle } />
-            <Panel>
-              Position: { position }
-              Location: { city }, { state }
-              <br />
-              Contact: { email || phone || 'N/A' }
-              <br />
-              Posted On: { moment(postedOn).format('MMMM Do, YYYY') }
-            </Panel>
-            <p>{ description }</p>
-          </Well>
+          <Link to={ `/jobs/${id}` }>
+            <Well>
+              <Thumbnail
+                alt={ company + 'company logo' }
+                src={ logo }
+                style={ thumbnailStyle } />
+              <Panel>
+                Position: { position }
+                Location: { city }, { state }
+                <br />
+                Contact: { email || phone || 'N/A' }
+                <br />
+                Posted On: { moment(postedOn).format('MMMM Do, YYYY') }
+              </Panel>
+                <p>{ description }</p>
+            </Well>
+          </Link>
         </Panel>
       );
     });
