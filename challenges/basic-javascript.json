@@ -604,7 +604,7 @@
       "difficulty": "9.9817",
       "description": [
         "<code>pop()</code> always removes the last element of an array. What if you want to remove the first? That's where <code>.shift()</code> comes in.",
-        "Take the myArray array and <code>shift()</code> the first value off of it."
+        "Take the myArray array and <code>shift()</code> the first value off of it.  Set <code>myRemoved</code> to the first value of <code>myArray</code> using <code>shift()</code>."
       ],
       "tests": [
         "assert((function(d){if(d[0] == 23 && d[1][0] == 'dog' && d[1][1] == 3 && d[2] == undefined){return true;}else{return false;}})(myArray), 'myArray should only have the last two values left([23, [\"dog\", 3]])');",
