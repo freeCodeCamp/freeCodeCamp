@@ -457,7 +457,7 @@ function showCompletion() {
       },
       function(res) {
         if (res) {
-          window.location = '/challenges/next-challenge';
+          window.location = '/challenges/next-challenge?id=' + challenge_Id;
         }
       }
     );

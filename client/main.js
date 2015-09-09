@@ -141,7 +141,7 @@ $(document).ready(function() {
                           }).success(
                           function(res) {
                               if (res) {
-                                  window.location.href = '/challenges/next-challenge';
+                                  window.location.href = '/challenges/next-challenge?id=' + challenge_Id;
                               }
                           }).fail(
                           function() {
@@ -164,7 +164,7 @@ $(document).ready(function() {
                               }
                           }).success(
                           function() {
-                              window.location.href = '/challenges/next-challenge';
+                              window.location.href = '/challenges/next-challenge?id=' + challenge_Id;
                           }).fail(
                           function() {
                               window.location.href = '/challenges';
@@ -187,13 +187,13 @@ $(document).ready(function() {
                                   verified: false
                               }
                           }).success(function() {
-                              window.location.href = '/challenges/next-challenge';
+                              window.location.href = '/challenges/next-challenge?id=' + challenge_Id;
                           }).fail(function() {
                               window.location.replace(window.location.href);
                           });
                       break;
                   case challengeTypes.BONFIRE:
-                      window.location.href = '/challenges/next-challenge';
+                      window.location.href = '/challenges/next-challenge?id=' + challenge_Id;
                   default:
                       break;
               }

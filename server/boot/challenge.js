@@ -142,9 +142,7 @@ module.exports = function(app) {
   function returnNextChallenge(req, res, next) {
     let nextChallengeName = firstChallenge;
 
-    const challengeId = req.user.currentChallenge ?
-      req.user.currentChallenge.challengeId :
-      'bd7123c8c441eddfaeb5bdef';
+    const challengeId = req.query.id;
 
     // find challenge
     return challenge$
@@ -198,9 +196,6 @@ module.exports = function(app) {
       .map(nextChallenge => {
         nextChallengeName = nextChallenge.dashedName;
         return nextChallengeName;
-      })
-      .flatMap(() => {
-        return saveUser(req.user);
       })
       .subscribe(
         function() {},
