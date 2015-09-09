@@ -101,7 +101,7 @@ module.exports = function(app) {
 
   const send200toNonUser = ifNoUserSend(true);
   const redirectNonUser = ifNoUserRedirectTo(
-    '/challenges/learn-how-free-code-camp-works'
+    '/map'
   );
 
   router.post(
