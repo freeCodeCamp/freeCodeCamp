@@ -131,12 +131,6 @@ module.exports = function(app) {
 
   router.get('/challenges/:challengeName', returnIndividualChallenge);
 
-  router.get(
-    '/challenges/',
-    redirectNonUser,
-    returnCurrentChallenge
-  );
-
   app.use(router);
 
   function returnNextChallenge(req, res, next) {
@@ -214,34 +208,6 @@ module.exports = function(app) {
             return res.redirect('/map');
           }
           res.redirect('/challenges/' + nextChallengeName);
-        }
-      );
-  }
-
-  function returnCurrentChallenge(req, res, next) {
-    Observable.just(req.user)
-      .flatMap(user => {
-        if (!req.user.currentChallenge) {
-          return challenge$
-            .first()
-            .flatMap(challenge => {
-              user.currentChallenge = {
-                challengeId: challenge.id,
-                challengeName: challenge.name,
-                dashedName: challenge.dashedName
-              };
-              return saveUser(user);
-            });
-        }
-        return Observable.just(user);
-      })
-      .map(user => user.currentChallenge.dashedName)
-      .subscribe(
-        function(challengeName) {
-          res.redirect('/challenges/' + challengeName);
-        },
-        next,
-        function() {
         }
       );
   }
