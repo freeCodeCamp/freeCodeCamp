@@ -68,7 +68,6 @@ module.exports = function(app) {
   router.post('/reset-password', postReset);
   router.get('/email-signup', getEmailSignup);
   router.get('/email-signin', getEmailSignin);
-  router.get('/account/api', getAccountAngular);
   router.post(
     '/account/delete',
     ifNoUser401,
@@ -114,18 +113,7 @@ module.exports = function(app) {
   }
 
   function getAccount(req, res) {
-    if (!req.user) {
-      return res.redirect('/');
-    }
-    res.render('account/account', {
-      title: 'Manage your Free Code Camp Account'
-    });
-  }
-
-  function getAccountAngular(req, res) {
-    res.json({
-      user: req.user || {}
-    });
+    return res.redirect('/' + user.username);
   }
 
   function returnUser(req, res, next) {
@@ -140,14 +128,6 @@ module.exports = function(app) {
         if (!user) {
           req.flash('errors', {
             msg: `404: We couldn't find path ${ path }`
-          });
-          return res.redirect('/');
-        }
-        if (!user.isGithubCool && !user.isMigrationGrandfathered) {
-          req.flash('errors', {
-            msg: `
-              user ${ username } has not completed account signup
-            `
           });
           return res.redirect('/');
         }

@@ -3,11 +3,83 @@ block content
     script(src="/bower_components/cal-heatmap/cal-heatmap.min.js")
     script.
         var challengeName = 'Profile View';
+    if (user && user.username === username)
+        .panel.panel-info
+            .panel-heading.text-center Manage your account
+            .panel-body
+                .row
+                    .col-xs-12
+                        if (!user.isGithubCool)
+                            a.btn.btn-lg.btn-block.btn-github.btn-link-social(href='/link/github')
+                                i.fa.fa-github
+                                | Link my GitHub to unlock this profile
+                        else
+                            a.btn.btn-lg.btn-block.btn-github.btn-link-social(href='/link/github')
+                                i.fa.fa-github
+                                | Update my profile from GitHub
+                            if (!user.twitter)
+                                .col-xs-12
+                                    a.btn.btn-lg.btn-block.btn-twitter.btn-link-social(href='/link/twitter')
+                                        i.fa.fa-twitter
+                                        | Add my Twitter to my profile
+                            if (!user.facebook)
+                                .col-xs-12
+                                    a.btn.btn-lg.btn-block.btn-facebook.btn-link-social(href='/link/facebook')
+                                        i.fa.fa-facebook
+                                        | Add my Facebook to my profile
+                            if (!user.linkedin)
+                                .col-xs-12
+                                    a.btn.btn-lg.btn-block.btn-linkedin.btn-link-social(href='/link/linkedin')
+                                        i.fa.fa-linkedin
+                                        | Add my LinkedIn to my profile
+                            if (!user.google)
+                                .col-xs-12
+                                    a.btn.btn-lg.btn-block.btn-google-plus.btn-link-social(href='/link/google')
+                                        i.fa.fa-google-plus
+                                        | Add my Google+ to my profile
+                .big-spacer
+                .col-xs-12
+                    a.btn.btn-lg.btn-block.btn-warning.btn-link-social(href='/logout')
+                        span.ion-android-exit
+                        | Sign me out of Free Code Camp
+                .col-xs-12
+                    a.btn.btn-lg.btn-block.btn-primary.btn-link-social(href='mailto:team@freecodecamp.com')
+                        span.ion-email
+                        | Email us at team@freecodecamp.com
+                .col-xs-12
+                    a.btn.btn-lg.btn-block.btn-danger.btn-link-social.confirm-deletion
+                        span.ion-trash-b
+                        | Delete my Free Code Camp account
+                    script.
+                        $('.confirm-deletion').on("click", function () {
+                            $('#modal-dialog').modal('show');
+                        });
+                #modal-dialog.modal.animated.wobble
+                    .modal-dialog
+                        .modal-content
+                            .modal-header
+                                a.close(href='#', data-dismiss='modal', aria-hidden='true') ×
+                                h3 You don't really want to delete your account, do you?
+                            .modal-body
+                                p This will really delete all your data, including all your progress, news stories and brownie points.
+                                p We won't be able to recover any of it for you later, even if you change your mind.
+                                p If there's something we could do better, send us an email instead and we'll do our best: &thinsp;
+                                    a(href="mailto:team@freecodecamp.com") team@freecodecamp.com
+                                    | .
+                            .modal-footer
+                                a.btn.btn-success.btn-block(href='#', data-dismiss='modal', aria-hidden='true')
+                                    span.ion-happy
+                                    | Nevermind, I don't want to delete all my progress
+                                .btn-spacer
+                                form(action='/account/delete', method='POST')
+                                    input(type='hidden', name='_csrf', value=_csrf)
+                                    button.btn.btn-danger.btn-block(type='submit')
+                                        span.ion-trash-b
+                                        | I am 100% sure I want to delete all my progress
     .panel.panel-info
         .panel-heading.text-center
             h1 #{username}'s portfolio
         .panel-body
-            if (user && user.username === username)
                 .row.text-center
                     .col-xs-12.col-sm-10.col-sm-offset-1
                         a.btn.btn-big.btn-primary.btn-block(href="/account") Manage my account
