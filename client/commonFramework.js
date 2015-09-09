@@ -216,13 +216,15 @@ var allSeeds = '';
     });
 })();
 
-var defaultKeymap = {
-  'Cmd-E': 'emmet.expand_abbreviation',
-  'Tab': 'emmet.expand_abbreviation_with_tab',
-  'Enter': 'emmet.insert_formatted_line_break_only'
-};
+if (typeof emmetCodeMirror !== 'undefined') {
+  var defaultKeymap = {
+    'Cmd-E': 'emmet.expand_abbreviation',
+    'Tab': 'emmet.expand_abbreviation_with_tab',
+    'Enter': 'emmet.insert_formatted_line_break_only'
+  };
 
-emmetCodeMirror(editor, defaultKeymap);
+  emmetCodeMirror(editor, defaultKeymap);
+}
 
 editor.setOption('extraKeys', {
   Tab: function(cm) {
