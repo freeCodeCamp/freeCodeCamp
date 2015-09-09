@@ -3507,7 +3507,7 @@
       "difficulty": 1.56,
       "description": [
         "You may be wondering why we use 6 digits to represent a color instead of just one or two. The answer is that using 6 digits gives us a huge variety.",
-        "How many colors are possible? 16 colors and 6 positions means we have 16 to the 6th power, or more than 16 million possible colors.",
+        "How many colors are possible? 16 values and 6 positions means we have 16 to the 6th power, or more than 16 million possible colors.",
         "Hex code follows the red-green-blue, or <code>rgb</code> format. The first two digits of hex code represent the amount of red in the color. The third and fourth digit represent the amount of green. The fifth and sixth represent the amount of blue.",
         "So to get the absolute brightest red, you would just use <code>F</code> for the first and second digits (the highest possible value) and <code>0</code> for the third, fourth, fifth and sixth digits (the lowest possible value).",
         "Make the <code>body</code> element's background color red by giving it the hex code value of <code>#FF0000</code>."
