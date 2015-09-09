@@ -1022,7 +1022,7 @@
         "<code>g</code> means that we want to search the entire string for this pattern instead of just the first match.",
         "<code>i</code> means that we want to ignore the case (uppercase or lowercase) when searching for the pattern.",
         "<code>Regular expressions</code> are written by surrounding the pattern with a <code>/</code> symbol.",
-        "Let's try selecting all the occurrences of the word <code>and</code> in the string <code>George Boole and Alan Turing went to the shop and got some milk</code>. We can do this by replacing the <code>...</code> part of our regular expression with the current <code>regular expression</code> with the word <code>and</code>."
+        "Let's try selecting all the occurrences of the word <code>and</code> in the string <code>George Boole and Alan Turing went to the shop and got some milk</code>. We can do this by replacing the <code>.</code> part of our regular expression with the current <code>regular expression</code> with the word <code>and</code>."
       ],
       "tests":[
         "assert(test==2, 'Your <code>regular expression</code> should find two occurrences of the word <code>and</code>');",
