@@ -8,7 +8,7 @@ nav.navbar.navbar-default.navbar-fixed-top.nav-height
     .collapse.navbar-collapse
         ul.nav.navbar-nav.navbar-right.hamburger-dropdown
             li
-                a(href='/challenges') Learn
+                a.learn-btn(href='#') Learn
             li
                 a(href='/map') Map
             li
@@ -34,3 +34,16 @@ nav.navbar.navbar-default.navbar-fixed-top.nav-height
                 .hidden-xs.hidden-sm
                     a(href='/account')
                         img.profile-picture.float-right(src='#{user.picture}')
+script.
+  $(document).ready(function() {
+    $('.learn-btn').click(function(e) {
+      var challengeId = null;
+      e.preventDefault();
+      if (typeof localStorage !== 'undefined') {
+        challengeId = localStorage.getItem('currentChallenge');
+      }
+      window.location = challengeId ?
+        '/challenges/next-challenge?id=' + challengeId :
+        '/map';
+    });
+  });
