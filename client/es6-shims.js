@@ -1,0 +1,1 @@
+require('object.assign').shim();
