@@ -1109,7 +1109,7 @@
       "title": "Invert Regular Expression Matches with JavaScript",
       "difficulty":"9.987",
       "description":[
-        "Use <code>/\\S/gi;</code> to match everything that isn't a space in the string.",
+        "Use <code>/\\S/gi</code> to match everything that isn't a space in the string.",
         "You can invert any match by using the uppercase version of the selector <code>\\s</code> versus <code>\\S</code> for example."
       ],
       "tests":[
