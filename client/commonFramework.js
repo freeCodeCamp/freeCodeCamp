@@ -401,9 +401,13 @@ var postError = function(data) {
 var goodTests = 0;
 var testSuccess = function() {
   goodTests++;
+  // test successful run show completion
   if (goodTests === tests.length) {
-    showCompletion();
+    return showCompletion();
   }
+
+  // test unsuccessful, make sure initRun is set to false
+  isInitRun = false;
 };
 
 function showCompletion() {
@@ -624,7 +628,9 @@ var runTests = function(err, data) {
     ) {
       try {
         if (chaiTestFromJSON) {
+          /* eslint-disable no-eval */
           var output = eval(reassembleTest(chaiTestFromJSON, data));
+          /* eslint-enable no-eval */
         }
       } catch (error) {
         allTestsPassed = false;
@@ -639,8 +645,7 @@ var runTests = function(err, data) {
     if (allTestsPassed) {
       allTestsPassed = false;
       showCompletion();
-    }
-    else{
+    } else {
       isInitRun = false;
     }
   }
