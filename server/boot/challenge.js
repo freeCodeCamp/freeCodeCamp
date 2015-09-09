@@ -14,7 +14,6 @@ import {
 
 import {
   userMigration,
-  ifNoUserRedirectTo,
   ifNoUserSend
 } from '../utils/middleware';
 
@@ -100,9 +99,6 @@ module.exports = function(app) {
   const userCount$ = observeMethod(User, 'count');
 
   const send200toNonUser = ifNoUserSend(true);
-  const redirectNonUser = ifNoUserRedirectTo(
-    '/map'
-  );
 
   router.post(
     '/completed-challenge/',
@@ -125,7 +121,6 @@ module.exports = function(app) {
   router.get('/map', challengeMap);
   router.get(
     '/challenges/next-challenge',
-    redirectNonUser,
     returnNextChallenge
   );
 
@@ -197,7 +192,7 @@ module.exports = function(app) {
         function() {
           debug('next challengeName', nextChallengeName);
           if (!nextChallengeName || nextChallengeName === firstChallenge) {
-            req.flash('errors', {
+            req.flash('info', {
               msg: dedent`
                 Once you have completed all of our challenges, you should
                 join our <a href=\"//gitter.im/freecodecamp/HalfWayClub\"

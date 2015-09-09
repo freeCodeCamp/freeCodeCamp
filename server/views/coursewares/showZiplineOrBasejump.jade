@@ -17,7 +17,7 @@ block content
                 iframe.embed-responsive-item(src='//player.vimeo.com/video/#{video}')
             br
             if (user)
-                a.btn.btn-primary.btn-big.btn-block#completed-zipline-or-basejump I've completed this challenge  (ctrl + enter)
+                a.btn.btn-primary.btn-big.btn-block#completed-zipline-or-basejump I've completed this challenge (ctrl + enter)
                 .button-spacer
                 .btn-group.input-group.btn-group-justified
                     .btn.btn-success.btn-big#trigger-help-modal
@@ -33,7 +33,8 @@ block content
                 script.
                     var userLoggedIn = true;
             else
-                a.btn.btn-lg.signup-btn.btn-block(href='/login') Sign in so you can save your progress
+                a.animated.fadeIn.btn.btn-big.btn-primary.btn-block(href='/challenges/next-challenge?id=' + challengeId) Go to my next challenge (ctrl + enter)
+                a.btn.btn-big.signup-btn.btn-block(href='/login') Sign in so you can save your progress
                     script.
                         var userLoggedIn = false;
                 br
@@ -41,6 +42,7 @@ block content
                 var challenge_Id = !{JSON.stringify(challengeId)};
                 var challenge_Name = !{JSON.stringify(name)};
                 var started = Math.floor(Date.now());
+                var dashedName = !{JSON.stringify(dashedName)};
                 var challengeType = !{JSON.stringify(challengeType)};
                 var controlEnterHandler = function (e) {
                   $('body').unbind('keypress');
@@ -87,11 +89,12 @@ block content
                                         | Username not found
 
                     if (user)
-                        a.animated.fadeIn.btn.btn-lg.btn-primary.btn-block#next-courseware-button(name='_csrf', value=_csrf, ng-disabled='completedWithForm.$invalid') Go to my next challenge (ctrl + enter)
+                        a.animated.fadeIn.btn.btn-lg.btn-primary.btn-block#next-courseware-button(name='_csrf', value=_csrf, ng-disabled='completedWithForm.$invalid') Go to my next challenge
+                        .button-spacer
                         script.
                           $('#complete-zipline-or-basejump-dialog').on('keypress', modalControlEnterHandler);
                     else
-                        a.animated.fadeIn.btn.btn-lg.signup-btn.btn-block(href='/login') Sign in so you can save your progress
+                        a.animated.fadeIn.btn.btn-lg.btn-primary.btn-block(href='/challenges/next-challenge?id=' + challengeId) Go to my next challenge
         script.
             $('body').on('keypress', controlEnterHandler);
     include ../partials/challenge-modals

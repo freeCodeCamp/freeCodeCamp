@@ -62,6 +62,7 @@ block content
                         var challenge_Id = !{JSON.stringify(challengeId)};
                         var challenge_Name = !{JSON.stringify(name)};
                         var prodOrDev = !{JSON.stringify(environment)};
+                        var dashedName = !{JSON.stringify(dashedName)};
                         var challengeType = !{JSON.stringify(challengeType)};
                         var started = Math.floor(Date.now());
         .col-xs-12.col-sm-12.col-md-5.col-lg-6
@@ -91,7 +92,7 @@ block content
                                     span.completion-icon.ion-checkmark-circled.text-primary
                             .spacer
                             if(user)
-                                #submit-challenge.animated.fadeIn.btn.btn-lg.btn-primary.btn-block Submit and go to next challenge
+                                #submit-challenge.animated.fadeIn.btn.btn-lg.btn-primary.btn-block Submit and go to my next challenge
                             else
-                                a.animated.fadeIn.btn.btn-lg.signup-btn.btn-block(href='/login') Sign in so you can save your progress
+                                a.animated.fadeIn.btn.btn-lg.btn-primary.btn-block(href='/challenges/next-challenge?id=' + challengeId) Go to my next challenge
     include ../partials/challenge-modals

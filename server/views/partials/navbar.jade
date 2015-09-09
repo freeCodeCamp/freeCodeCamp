@@ -37,13 +37,16 @@ nav.navbar.navbar-default.navbar-fixed-top.nav-height
 script.
   $(document).ready(function() {
     $('.learn-btn').click(function(e) {
-      var challengeId = null;
+      var challengeDashedName = null;
       e.preventDefault();
-      if (typeof localStorage !== 'undefined') {
-        challengeId = localStorage.getItem('currentChallenge');
+      if (typeof dashedName === "string") {
+          return location.reload();
       }
-      window.location = challengeId ?
-        '/challenges/next-challenge?id=' + challengeId :
+      if (typeof localStorage !== 'undefined') {
+        challengeDashedName = localStorage.getItem('currentDashedName');
+      }
+      window.location = challengeDashedName ?
+        '/challenges/' + challengeDashedName :
         '/map';
     });
   });
