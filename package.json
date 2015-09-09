@@ -14,16 +14,6 @@
     "test": "mocha --compilers js:babel/register"
   },
   "license": "(BSD-3-Clause AND CC-BY-SA-4.0)",
-  "contributors": [
-    {
-      "name": "Quincy Larson",
-      "url": "https://github.com/QuincyLarson"
-    },
-    {
-      "name": "Nathan Leniz",
-      "url": "https://github.com/terakilobyte"
-    }
-  ],
   "dependencies": {
     "accepts": "~1.2.5",
     "async": "~0.9.0",

@@ -221,7 +221,7 @@
       ],
       "tests": [
         "assert(lastLetterOfLastName === \"e\", 'lastLetterOfLastName should be \"e\"');",
-        "assert(editor.getValue().match(/\\.length/g), 'You have to use <code>.length</code> to get the last letter');"
+        "assert(editor.getValue().match(/\\.length/g).length === 2, 'You have to use <code>.length</code> to get the last letter');"
       ],
       "challengeSeed": [
         "var firstName = \"Ada\";",
@@ -249,11 +249,11 @@
         "In order to get the last letter of a string, you can subtract one from the string's length.",
         "For example, you can get the value of the third-to-last letter of the <code>var firstName = \"Charles\"</code> string by using <code>firstName[firstName.length - 3]</code>.",
         "Use <code>bracket notation</code> to find the second-to-last character in the <code>lastName</code> string.",
-        "Try looking at the <code>lastLetterOfLastName</code> variable declaration if you get stuck."
+        "Try looking at the <code>thirdToLastLetterOfFirstName</code> variable declaration if you get stuck."
       ],
       "tests": [
         "assert(secondToLastLetterOfLastName === 'c', 'secondToLastLetterOfLastName should be \"c\".');",
-        "assert(editor.getValue().match(/\\.length/g), 'You have to use .length to get the third last letter.');"
+        "assert(editor.getValue().match(/\\.length/g).length === 2, 'You have to use .length to get the second last letter.');"
       ],
       "challengeSeed": [
         "var firstName = \"Ada\";",
@@ -283,7 +283,7 @@
         "Replace the <code>0</code> with the correct number so you can get the result mentioned in the comment."
       ],
       "tests": [
-        "assert((function(){if(sum === 20 && editor.getValue().match(/\\+/g)){return true;}else{return false;}})(), 'Make the variable <code>sum</code> equal 20');"
+        "assert((function(){if(sum === 20 && editor.getValue().match(/\\+/g).length >= 2){return true;}else{return false;}})(), 'Make the variable <code>sum</code> equal 20.');"
       ],
       "challengeSeed": [
         "var sum = 10 + 0; //make this equal to 20 by changing the 0 into the appropriate number.",
@@ -352,7 +352,7 @@
         "Replace the <code>0</code> with the correct number so you can get the result mentioned in the comment."
       ],
       "tests": [
-        "assert((function(){if(quotient === 2 && editor.getValue().match(/\\//g)){return true;}else{return false;}})(), 'Make the variable <code>quotient</code> equal 2.');"
+        "assert((function(){if(quotient === 2 && editor.getValue().match(/var\\s*?quotient\\s*?\\=\\s*?\\d+\\s*?\\/\\s*?\\d+\\s*?;/g)){return true;}else{return false;}})(), 'Make the variable <code>quotient</code> equal 2.');"
       ],
       "challengeSeed": [
         "var quotient = 66 / 0; //make this equal to 2 by changing the 0 into the appropriate number.",
@@ -422,7 +422,7 @@
       "description": [
         "With JavaScript <code>array</code> variables, we can store several pieces of data in one place.",
         "You start an array declaration with an opening bracket, end it with a closing bracket, and put a comma between each entry, like this: <code>var sandwich = [\"peanut butter\", \"jelly\", \"bread\"]</code>.",
-        "Now let's create a new array called <code>myArray</code> that contains both a <code>string</code> and a <code>number</code>.",
+        "Now let's create a new array called <code>myArray</code> that contains both a <code>string</code> and a <code>number</code> (in that order).",
         "Refer to the comments if you get stuck."
       ],
       "tests": [
@@ -604,7 +604,7 @@
       "difficulty": "9.9817",
       "description": [
         "<code>pop()</code> always removes the last element of an array. What if you want to remove the first? That's where <code>.shift()</code> comes in.",
-        "Take the myArray array and <code>shift()</code> the first value off of it."
+        "Take the myArray array and <code>shift()</code> the first value off of it.  Set <code>myRemoved</code> to the first value of <code>myArray</code> using <code>shift()</code>."
       ],
       "tests": [
         "assert((function(d){if(d[0] == 23 && d[1][0] == 'dog' && d[1][1] == 3 && d[2] == undefined){return true;}else{return false;}})(myArray), 'myArray should only have the last two values left([23, [\"dog\", 3]])');",
@@ -638,7 +638,7 @@
         "Let's take the code we had last time and <code>unshift</code>this value to the start: <code>\"Paul\" </code>"
       ],
       "tests": [
-        "assert((function(d){if(d[0].toLowerCase() == 'paul' && d[1] == 23 && d[2][0] != undefined && d[2][0] == 'dog' && d[2][1] != undefined && d[2][1] == 3){return true;}else{return false;}})(myArray), 'myArray should now have [\"Paul\", 23, [\"dog\", 3]])');"
+        "assert((function(d){if(typeof(d[0]) === \"string\" && d[0].toLowerCase() == 'paul' && d[1] == 23 && d[2][0] != undefined && d[2][0] == 'dog' && d[2][1] != undefined && d[2][1] == 3){return true;}else{return false;}})(myArray), '<code>myArray</code> should now have [\"Paul\", 23, [\"dog\", 3]]).');"
       ],
       "challengeSeed": [
         "var ourArray = [\"Stimpson\", \"J\", [\"cat\"]];",
@@ -824,8 +824,15 @@
         "  ourArray.push(i);",
         "}",
         "var myArray = [];",
-        "//Push the numbers zero through four to myArray using a \"for loop\" like above.",
         "",
+        "// Only change code below this line.",
+        "",
+        "// Push the numbers zero through four to myArray using a \"for loop\" like above.",
+        "",
+        "// Only change code above this line.",
+        "// We use this function to show you the value of your variable in your output box.",
+        "// You'll learn about functions soon.",
+        "if(typeof(myArray) !== \"undefined\"){(function(){return myArray;})();}",
         ""
       ],
       "type": "waypoint",
@@ -852,8 +859,14 @@
       ],
       "challengeSeed":[
         "var myArray = [];",
-        "//Push the numbers zero through four to myArray",
+        "// Only change code below this line.",
         "",
+        "// Push the numbers zero through four to myArray using a \"while loop\".",
+        "",
+        "// Only change code above this line.",
+        "// We use this function to show you the value of your variable in your output box.",
+        "// You'll learn about functions soon.",
+        "if(typeof(myArray) !== \"undefined\"){(function(){return myArray;})();}",
         ""
       ],
       "type": "waypoint",
@@ -936,6 +949,7 @@
       "tests":[
         "assert(myFunction() >= min, 'The random number that\\'s generated by myFunction should be greater than or equal to the minimum number');",
         "assert(myFunction() <= max, 'The random number that\\'s generated by myFunction should be less than or equal to the maximum number');",
+        "assert(myFunction() % 1 === 0 , 'The random number that\\'s generated by myFunction should be an integer');",
         "assert((function(){if(editor.getValue().match(/max/g).length >= 2 && editor.getValue().match(/min/g).length >= 2 && editor.getValue().match(/Math.floor/g) && editor.getValue().match(/Math.random/g)){return true;}else{return false;}})(), 'You should be using the function given in the description to calculate the random in number in a range');"
       ],
       "challengeSeed":[
@@ -973,23 +987,25 @@
         "Create an <code>if-else statement</code> to return <code>heads</code> if the flip var is zero, or else return <code>tails</code> if it's not."
       ],
       "tests":[
-        "assert((function(){if(myFunction() === \"heads\" || myFunction() === \"tails\"){return true;}else{return false;}})(), 'myFunction should either return heads or tails');",
-        "assert(editor.getValue().match(/if/g).length >= 3, 'You should have created a new if statement');",
-        "assert(editor.getValue().match(/else/g).length >= 2, 'You should have created a new else statement');"
+        "assert((function(){var result = myFunction();if(result === 'heads' || result === 'tails'){return true;} else {return false;}})(), '<code>myFunction</code> should either return <code>heads</code> or <code>tails</code>.');",
+        "assert((function(){var result = myFunction();if(result === 'heads' && flip === 0 || result === 'tails' && flip !== 0){return true;} else {return false;}})(), '<code>myFunction</code> should return <code>heads</code> when flip equals 0 and <code>tails</code> when flip equals 1.');",
+        "assert(editor.getValue().match(/if/g).length >= 4, 'You should have created a new if statement.');",
+        "assert(editor.getValue().match(/else/g).length >= 2, 'You should have created a new else statement.');"
       ],
       "challengeSeed":[
+        "var flip = Math.floor(Math.random() * (1 - 0 + 1)) + 0;",
         "function myFunction(){",
-        "  var flip = Math.floor(Math.random() * (1 - 0 + 1)) + 0;",
         "  // Create an if-else statement here to return \"heads\" if flip is 0. Otherwise return \"tails\".",
         "",
         "  // Only change code below this line.",
         "",
         "",
+        "",
+        "  // Only change code above this line.",
         "}",
         "",
-        "// Only change code above this line.",
         "// We use this function to show you the value of your variable in your output box.",
-        "(function(){return myFunction();})();"
+        "var result = myFunction();if(typeof(flip) !== \"undefined\" && typeof(flip) === \"number\" && typeof(result) !== \"undefined\" && typeof(result) === \"string\"){(function(y,z){return 'flip = ' + y.toString() + ', text = ' + z;})(flip, result);}"
       ],
       "type": "waypoint",
       "challengeType": 1
@@ -1006,7 +1022,7 @@
         "<code>g</code> means that we want to search the entire string for this pattern instead of just the first match.",
         "<code>i</code> means that we want to ignore the case (uppercase or lowercase) when searching for the pattern.",
         "<code>Regular expressions</code> are written by surrounding the pattern with a <code>/</code> symbol.",
-        "Let's try selecting all the occurrences of the word <code>and</code> in the string <code>George Boole and Alan Turing went to the shop and got some milk</code>. We can do this by replacing the <code>...</code> part of our regular expression with the current <code>regular expression</code> with the word <code>and</code>."
+        "Let's try selecting all the occurrences of the word <code>and</code> in the string <code>George Boole and Alan Turing went to the shop and got some milk</code>. We can do this by replacing the <code>.</code> part of our regular expression with the current <code>regular expression</code> with the word <code>and</code>."
       ],
       "tests":[
         "assert(test==2, 'Your <code>regular expression</code> should find two occurrences of the word <code>and</code>');",
@@ -1093,7 +1109,7 @@
       "title": "Invert Regular Expression Matches with JavaScript",
       "difficulty":"9.987",
       "description":[
-        "Use <code>/\\S/gi;</code> to match everything that isn't a space in the string.",
+        "Use <code>/\\S/gi</code> to match everything that isn't a space in the string.",
         "You can invert any match by using the uppercase version of the selector <code>\\s</code> versus <code>\\S</code> for example."
       ],
       "tests":[

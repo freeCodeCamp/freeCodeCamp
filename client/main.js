@@ -66,10 +66,26 @@ $(document).ready(function() {
         }, 200);
       });
 
+      $('#search-issue').unbind('click');
+      $('#search-issue').on('click', function() {
+          var queryIssue = window.location.href.toString();
+          window.open('https://github.com/FreeCodeCamp/FreeCodeCamp/issues?q=is:issue is:all '+ queryIssue.substr(queryIssue.lastIndexOf('challenges/') + 11).replace('/', ''), '_blank');
+      });
+
+      $('#help-ive-found-a-bug-wiki-article').unbind('click');
+      $('#help-ive-found-a-bug-wiki-article').on('click', function() {
+        var queryIssue = window.location.href.toString();
+        window.open("https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/Help-I've-Found-a-Bug", '_blank');
+      });
+
       $('#report-issue').unbind('click');
       $('#report-issue').on('click', function() {
+          var textMessage = 'https://github.com/freecodecamp/freecodecamp/issues/new?&body=Challenge ' + window.location.href + ' has an issue.';
+          textMessage += ' User Agent is: <code>' + navigator.userAgent + '</code>.';
+          textMessage += ' Please describe how to reproduce this issue, and include links to screenshots if possible.%0A%0A';
+          textMessage = textMessage.replace(';', ','); //GitHub cuts User Agent text because of ';' symbol so I just replace it with ','
           $('#issue-modal').modal('hide');
-          window.open('https://github.com/freecodecamp/freecodecamp/issues/new?&body=Challenge '+ window.location.href +' has an issue. Please describe how to reproduce it, and include links to screenshots if possible.', '_blank')
+          window.open(textMessage, '_blank');
       });
 
       $('#completed-courseware').unbind('click');

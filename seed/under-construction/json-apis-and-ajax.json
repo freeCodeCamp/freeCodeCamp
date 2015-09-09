@@ -7,6 +7,10 @@
       "title":  "Trigger on click Events with jQuery",
       "difficulty": 3.19,
       "description": [
+        "With jQuery we are able to get data from APIs via Ajax",
+        "This data normally comes in the form of JSON",
+        "Let's get the <code>Get Message</code> button to set the text of a div",
+        "We will later use this to display the result of out API request",
         "<code>$(\"#getMessage\").on(\"click\", function(){</code>",
         "<code>&thinsp;&thinsp;$(\".message\").html(\"Here is the message\");</code>",
         "<code>});</code>"
@@ -48,10 +52,60 @@
       "challengeType": 0,
       "type": "waypoint"
     },
-
+    {
+      "id": "bad87fee1348bd9aebc08726",
+      "title": "Learn JSON Syntax",
+      "description": [
+        "JSON stands for \"JavaScript Object Notation\". It\"s how you create objects in JavaScript.",
+        "JSON is a series of \"key-value pairs\". Everything on the left of the colon (<code>:</code>) is the \"key\" you use to unlock the \"value\" on the right of the colon."
+      ],
+      "tests": [
+        "assert(typeof data != \"undefined\", \"Whoops! It looks like you deleted the <code>data</code> variable!\");",
+        "assert(typeof getAnId != \"undefined\", \"Whoops! It looks like you deleted the <code>getAnId</code> function!\");",
+        "assert(data[0]['id'] === getAnId(), \"The duntion getFirstId should return the id of the first element in the array\");"
+      ],
+      "challengeSeed": [
+        "fccss",
+        "var data = [",
+        "  {",
+        "    \"id\": 0,",
+        "    \"imageLink\": \"http://rs611.pbsrc.com/albums/tt194/allypopper423/Funny-Cat-Green-Avacado.jpg~c200\",",
+        "    \"codeNames\": [",
+        "      \"Juggernaut\",",
+        "      \"Mrs. Wallace\",",
+        "      \"Buttercup\"",
+        "    ]",
+        "  },",
+        "  {",
+        "    \"id\": 1,",
+        "    \"imageLink\": \"http://cdn.grumpycats.com/wp-content/uploads/2012/09/GC-Gravatar-copy.png\",",
+        "    \"codeNames\": [",
+        "      \"Oscar\",",
+        "      \"Scrooge\",",
+        "      \"Tyrion\"",
+        "    ]",
+        "  },",
+        "  {",
+        "    \"id\": 2,",
+        "    \"imageLink\": \"http://www.kittenspet.com/wp-content/uploads/2012/08/cat_with_funny_face_3-200x200.jpg\",",
+        "    \"codeNames\": [",
+        "      \"The Doctor\",",
+        "      \"Loki\",",
+        "      \"Joker\"",
+        "    ]",
+        "  }",
+        "]",
+        "function getAnId(){",
+        "  return();",
+        "}",
+        "fcces"
+      ],
+      "challengeType": 0,
+      "type": "waypoint"
+    },
     {
       "id": "bad87fee1348bd9aeca08826",
-      "title":  "Learn how JSON works",
+      "title":  "Displaying JSON data in HTML",
       "difficulty": 3.19,
       "description": [
         "JSON stands for \"JavaScript Object Notation\". It\"s how you create objects in JavaScript.",
@@ -267,52 +321,6 @@
       ],
       "challengeSeed": [
 
-      ],
-      "challengeType": 0,
-      "type": "waypoint"
-    },
-
-
-    {
-      "id": "bad87fee1348bd9aebc08726",
-      "title": "Learn how JSON Works",
-      "description": [
-        "JSON stands for \"JavaScript Object Notation\". It\"s how you create objects in JavaScript.",
-        "JSON is a series of \"key-value pairs\". Everything on the left of the colon (<code>:</code>) is the \"key\" you use to unlock the \"value\" on the right of the colon."
-      ],
-      "tests": [
-
-      ],
-      "challengeSeed": [
-        "[",
-        "  {",
-        "    \"id\": 0,",
-        "    \"imageLink\": \"http://rs611.pbsrc.com/albums/tt194/allypopper423/Funny-Cat-Green-Avacado.jpg~c200\",",
-        "    \"codeNames\": [",
-        "      \"Juggernaut\",",
-        "      \"Mrs. Wallace\",",
-        "      \"Buttercup\"",
-        "    ]",
-        "  },",
-        "  {",
-        "    \"id\": 1,",
-        "    \"imageLink\": \"http://cdn.grumpycats.com/wp-content/uploads/2012/09/GC-Gravatar-copy.png\",",
-        "    \"codeNames\": [",
-        "      \"Oscar\",",
-        "      \"Scrooge\",",
-        "      \"Tyrion\"",
-        "    ]",
-        "  },",
-        "  {",
-        "    \"id\": 2,",
-        "    \"imageLink\": \"http://www.kittenspet.com/wp-content/uploads/2012/08/cat_with_funny_face_3-200x200.jpg\",",
-        "    \"codeNames\": [",
-        "      \"The Doctor\",",
-        "      \"Loki\",",
-        "      \"Joker\"",
-        "    ]",
-        "  }",
-        "]"
       ],
       "challengeType": 0,
       "type": "waypoint"

@@ -200,7 +200,7 @@ var myCodeMirror = editor;
 editor.on('keyup', function() {
   clearTimeout(codeStorage.updateTimeoutId);
   codeStorage.updateTimeoutId = setTimeout(
-    codeStorage.updateStorage,
+    codeStorage.updateStorage.bind(codeStorage),
     codeStorage.updateWait
   );
 });
@@ -421,7 +421,8 @@ function showCompletion() {
   );
   var bonfireSolution = myCodeMirror.getValue();
   var didCompleteWith = $('#completed-with').val() || null;
-  $('#complete-courseware-dialog').modal('show').focus();
+  $('#complete-courseware-dialog').modal('show');
+  $('#complete-courseware-dialog .modal-header').click();
   $('#submit-challenge').click(function(e) {
     e.preventDefault();
 
