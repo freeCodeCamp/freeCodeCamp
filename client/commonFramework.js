@@ -423,6 +423,14 @@ function showCompletion() {
   var didCompleteWith = $('#completed-with').val() || null;
   $('#complete-courseware-dialog').modal('show');
   $('#complete-courseware-dialog .modal-header').click();
+
+  $('#complete-courseware-dialog').keyup(function(e) {
+    // ctrl + enter
+    if (e.ctrlKey && e.keyCode === 13) {
+      $('#submit-challenge').click();
+    }
+  });
+
   $('#submit-challenge').click(function(e) {
     e.preventDefault();
 
