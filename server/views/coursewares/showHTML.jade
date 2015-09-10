@@ -91,7 +91,7 @@ block content
                                     span.completion-icon.ion-checkmark-circled.text-primary
                             .spacer
                             if(user)
-                                #submit-challenge.btn.btn-lg.btn-primary.btn-block Submit and go to my next challenge
+                                #submit-challenge.animated.fadeIn.btn.btn-lg.btn-primary.btn-block Submit and go to my next challenge (ctrl + enter)
                             else
                                 a.btn.btn-lg.btn-primary.btn-block(href='/challenges/next-challenge?id=' + challengeId) Go to my next challenge
     include ../partials/challenge-modals
