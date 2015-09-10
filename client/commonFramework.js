@@ -421,6 +421,7 @@ var testSuccess = function() {
 function ctrlEnterClickHandler(e) {
   // ctrl + enter
   if (e.ctrlKey && e.keyCode === 13) {
+    $('#complete-courseware-dialog').off('keydown', ctrlEnterClickHandler);
     $('#submit-challenge').click();
   }
 }
@@ -441,16 +442,8 @@ function showCompletion() {
   var bonfireSolution = myCodeMirror.getValue();
   var didCompleteWith = $('#completed-with').val() || null;
 
-
   $('#complete-courseware-dialog').modal('show');
   $('#complete-courseware-dialog .modal-header').click();
-
-  $('#complete-courseware-dialog').keyup(function(e) {
-    // ctrl + enter
-    if (e.ctrlKey && e.keyCode === 13) {
-      $('#submit-challenge').click();
-    }
-  });
 
   $('#submit-challenge').click(function(e) {
     e.preventDefault();
@@ -785,12 +778,12 @@ $(document).ready(function() {
 
   // init modal keybindings on open
   $('#complete-courseware-dialog').on('shown.bs.modal', function() {
-    $('#complete-courseware-dialog').keyup(ctrlEnterClickHandler);
+    $('#complete-courseware-dialog').keydown(ctrlEnterClickHandler);
   });
 
   // remove modal keybinds on close
   $('#complete-courseware-dialog').on('hidden.bs.modal', function() {
-    $('#complete-courseware-dialog').unbind('keyup', ctrlEnterClickHandler);
+    $('#complete-courseware-dialog').off('keydown', ctrlEnterClickHandler);
   });
 
   var $preview = $('#preview');
