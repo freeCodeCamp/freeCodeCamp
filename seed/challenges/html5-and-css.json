@@ -1584,7 +1584,7 @@
       "description": [
         "Now let's create a web <code>form</code>.",
         "Text inputs are a convenient way to get input from your user.",
-        "You can create one like this: <code>&#60;input type=\"text\"&#62;</code>. Note that <code>input</code> elements are self-closing.",
+        "You can create one like this: <code>&#60;input type=\"text\" /&#62;</code>. Note that <code>input</code> elements are self-closing.",
         "Create an <code>input</code> element of type <code>text</code> below your lists."
       ],
       "tests": [
