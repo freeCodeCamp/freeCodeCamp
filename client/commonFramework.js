@@ -216,6 +216,16 @@ var allSeeds = '';
     });
 })();
 
+if (typeof emmetCodeMirror !== 'undefined') {
+  var defaultKeymap = {
+    'Cmd-E': 'emmet.expand_abbreviation',
+    'Tab': 'emmet.expand_abbreviation_with_tab',
+    'Enter': 'emmet.insert_formatted_line_break_only'
+  };
+
+  emmetCodeMirror(editor, defaultKeymap);
+}
+
 editor.setOption('extraKeys', {
   Tab: function(cm) {
     if (cm.somethingSelected()) {
@@ -401,9 +411,13 @@ var postError = function(data) {
 var goodTests = 0;
 var testSuccess = function() {
   goodTests++;
+  // test successful run show completion
   if (goodTests === tests.length) {
-    showCompletion();
+    return showCompletion();
   }
+
+  // test unsuccessful, make sure initRun is set to false
+  isInitRun = false;
 };
 
 function showCompletion() {
@@ -465,7 +479,7 @@ function showCompletion() {
       },
       function(res) {
         if (res) {
-          window.location = '/challenges/next-challenge';
+          window.location = '/challenges/next-challenge?id=' + challenge_Id;
         }
       }
     );
@@ -632,7 +646,9 @@ var runTests = function(err, data) {
     ) {
       try {
         if (chaiTestFromJSON) {
+          /* eslint-disable no-eval */
           var output = eval(reassembleTest(chaiTestFromJSON, data));
+          /* eslint-enable no-eval */
         }
       } catch (error) {
         allTestsPassed = false;
@@ -647,8 +663,7 @@ var runTests = function(err, data) {
     if (allTestsPassed) {
       allTestsPassed = false;
       showCompletion();
-    }
-    else{
+    } else {
       isInitRun = false;
     }
   }

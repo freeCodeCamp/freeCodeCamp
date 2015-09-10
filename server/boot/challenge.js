@@ -14,7 +14,6 @@ import {
 
 import {
   userMigration,
-  ifNoUserRedirectTo,
   ifNoUserSend
 } from '../utils/middleware';
 
@@ -100,9 +99,6 @@ module.exports = function(app) {
   const userCount$ = observeMethod(User, 'count');
 
   const send200toNonUser = ifNoUserSend(true);
-  const redirectNonUser = ifNoUserRedirectTo(
-    '/challenges/learn-how-free-code-camp-works'
-  );
 
   router.post(
     '/completed-challenge/',
@@ -125,26 +121,17 @@ module.exports = function(app) {
   router.get('/map', challengeMap);
   router.get(
     '/challenges/next-challenge',
-    redirectNonUser,
     returnNextChallenge
   );
 
   router.get('/challenges/:challengeName', returnIndividualChallenge);
-
-  router.get(
-    '/challenges/',
-    redirectNonUser,
-    returnCurrentChallenge
-  );
 
   app.use(router);
 
   function returnNextChallenge(req, res, next) {
     let nextChallengeName = firstChallenge;
 
-    const challengeId = req.user.currentChallenge ?
-      req.user.currentChallenge.challengeId :
-      'bd7123c8c441eddfaeb5bdef';
+    const challengeId = req.query.id;
 
     // find challenge
     return challenge$
@@ -199,16 +186,13 @@ module.exports = function(app) {
         nextChallengeName = nextChallenge.dashedName;
         return nextChallengeName;
       })
-      .flatMap(() => {
-        return saveUser(req.user);
-      })
       .subscribe(
         function() {},
         next,
         function() {
           debug('next challengeName', nextChallengeName);
           if (!nextChallengeName || nextChallengeName === firstChallenge) {
-            req.flash('errors', {
+            req.flash('info', {
               msg: dedent`
                 Once you have completed all of our challenges, you should
                 join our <a href=\"//gitter.im/freecodecamp/HalfWayClub\"
@@ -219,34 +203,6 @@ module.exports = function(app) {
             return res.redirect('/map');
           }
           res.redirect('/challenges/' + nextChallengeName);
-        }
-      );
-  }
-
-  function returnCurrentChallenge(req, res, next) {
-    Observable.just(req.user)
-      .flatMap(user => {
-        if (!req.user.currentChallenge) {
-          return challenge$
-            .first()
-            .flatMap(challenge => {
-              user.currentChallenge = {
-                challengeId: challenge.id,
-                challengeName: challenge.name,
-                dashedName: challenge.dashedName
-              };
-              return saveUser(user);
-            });
-        }
-        return Observable.just(user);
-      })
-      .map(user => user.currentChallenge.dashedName)
-      .subscribe(
-        function(challengeName) {
-          res.redirect('/challenges/' + challengeName);
-        },
-        next,
-        function() {
         }
       );
   }
@@ -285,40 +241,29 @@ module.exports = function(app) {
           return Observable.just('/challenges/' + dasherize(challenge.name));
         }
 
-        if (challenge) {
-          if (req.user) {
-            req.user.currentChallenge = {
-              challengeId: challenge.id,
-              challengeName: challenge.name,
-              dashedName: challenge.dashedName
-            };
-          }
-
-          // save user does nothing if user does not exist
-          return saveUser(req.user)
-            .map(() => ({
-              title: challenge.name,
-              dashedName: origChallengeName,
-              name: challenge.name,
-              details: challenge.description,
-              tests: challenge.tests,
-              challengeSeed: challenge.challengeSeed,
-              verb: utils.randomVerb(),
-              phrase: utils.randomPhrase(),
-              compliment: utils.randomCompliment(),
-              challengeId: challenge.id,
-              challengeType: challenge.challengeType,
-              // video challenges
-              video: challenge.challengeSeed[0],
-              // bonfires specific
-              difficulty: Math.floor(+challenge.difficulty),
-              bonfires: challenge,
-              MDNkeys: challenge.MDNlinks,
-              MDNlinks: getMDNLinks(challenge.MDNlinks),
-              // htmls specific
-              environment: utils.whichEnvironment()
-            }));
-        }
+        // save user does nothing if user does not exist
+        return Observable.just({
+          title: challenge.name,
+          dashedName: origChallengeName,
+          name: challenge.name,
+          details: challenge.description,
+          tests: challenge.tests,
+          challengeSeed: challenge.challengeSeed,
+          verb: utils.randomVerb(),
+          phrase: utils.randomPhrase(),
+          compliment: utils.randomCompliment(),
+          challengeId: challenge.id,
+          challengeType: challenge.challengeType,
+          // video challenges
+          video: challenge.challengeSeed[0],
+          // bonfires specific
+          difficulty: Math.floor(+challenge.difficulty),
+          bonfires: challenge,
+          MDNkeys: challenge.MDNlinks,
+          MDNlinks: getMDNLinks(challenge.MDNlinks),
+          // htmls specific
+          environment: utils.whichEnvironment()
+        });
       })
       .subscribe(
         function(data) {
