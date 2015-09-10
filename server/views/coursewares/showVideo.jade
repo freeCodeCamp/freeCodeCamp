@@ -57,7 +57,7 @@ block content
                 };
 
     #complete-courseware-editorless-dialog.modal(tabindex='-1')
-        .modal-dialog.animated.zoomIn.fast-animation
+        .modal-dialog.animated.fadeIn.fast-animation
             .modal-content
                 .modal-header.challenge-list-header= compliment
                     a.close.closing-x(href='#', data-dismiss='modal', aria-hidden='true') ×
@@ -66,13 +66,13 @@ block content
                         .animated.zoomInDown.delay-half
                             span.completion-icon.ion-checkmark-circled.text-primary
                         if (user)
-                            a.animated.fadeIn.btn.btn-lg.btn-primary.btn-block#next-courseware-button(name='_csrf', value=_csrf) Go to my next challenge
+                            a.btn.btn-lg.btn-primary.btn-block#next-courseware-button(name='_csrf', value=_csrf) Go to my next challenge
                             script.
                               $('#complete-courseware-editorless-dialog').bind('keypress', modalControlEnterHandler);
 
                             if (user.progressTimestamps.length > 2)
                                 .button-spacer
-                                a.animated.fadeIn.btn.btn-lg.btn-block.btn-twitter(href="https://twitter.com/intent/tweet?text=I%20just%20#{verb}%20%40FreeCodeCamp%20#{name}&url=http%3A%2F%2Ffreecodecamp.com/challenges/#{dashedName}&hashtags=LearnToCode, JavaScript" target="_blank")
+                                a.btn.btn-lg.btn-block.btn-twitter(href="https://twitter.com/intent/tweet?text=I%20just%20#{verb}%20%40FreeCodeCamp%20#{name}&url=http%3A%2F%2Ffreecodecamp.com/challenges/#{dashedName}&hashtags=LearnToCode, JavaScript" target="_blank")
                                     i.fa.fa-twitter &thinsp;
                                     = phrase
                         else
