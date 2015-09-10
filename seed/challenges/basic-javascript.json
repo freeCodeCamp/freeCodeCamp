@@ -943,7 +943,7 @@
       "difficulty":"9.9829",
       "description":[
         "We can use a certain mathematical expression to get a random number between two numbers.",
-        "<code>Math.floor(Math.random() * (max - min + 1)) + min</code>",
+        "<code>Math.floor(Math.random() * (max - min + 1)) + min</code>. More info about how it works <a href=\"https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/Waypoint-Generate-Random-Whole-Numbers-within-a-Range#explanation\">here</a>.",
         "By using this we can control the output of a random number."
       ],
       "tests":[
@@ -1140,7 +1140,7 @@
         "We are now going to try and combine some of the stuff we've just learned and create the logic for a slot machine game.",
         "For this we will need to generate three random numbers between <code>1</code> and <code>3</code> to represent the possible values of each individual slot.",
         "Store the three random numbers in <code>slotOne</code>, <code>slotTwo</code> and <code>slotThree</code>.",
-        "Generate the random numbers by using the system we used earlier:",
+        "Generate the random numbers by using the system we used earlier (an explanation of the formula can be found <a href=\"https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/Waypoint-Generate-Random-Whole-Numbers-within-a-Range#explanation\">here</a>):",
         "<code>Math.floor(Math.random() * (3 - 1 + 1)) + 1;</code>"
       ],
       "tests":[
