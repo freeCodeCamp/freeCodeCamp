@@ -30,24 +30,23 @@ block content
                                     for sentence in details
                                         p.wrappable.negative-10!= sentence
                                     .negative-bottom-margin-30
-                    label.negative-10.btn.btn-primary.btn-block#submitButton
+                    label.negative-10.btn.btn-primary.btn-lg.btn-block#submitButton
                         i.fa.fa-play
                             | &nbsp; Run tests (ctrl + enter)
-                    if (user)
-                        .button-spacer
-                        .btn-group.input-group.btn-group-justified
-                            label.btn.btn-success#trigger-reset-modal
-                                i.fa.fa-refresh
-                                    | &nbsp; Reset
-                            label.btn.btn-success#trigger-help-modal
-                                i.fa.fa-medkit
-                                    | &nbsp; Help
-                            label.btn.btn-success#trigger-issue-modal
-                                i.fa.fa-bug
-                                    | &nbsp; Bug
-                        script.
-                            var userLoggedIn = true;
-                    else
+                    .button-spacer
+                    .btn-group.input-group.btn-group-justified
+                        label.btn.btn-success#trigger-reset-modal
+                            i.fa.fa-refresh
+                                | &nbsp; Reset
+                        label.btn.btn-success#trigger-help-modal
+                            i.fa.fa-medkit
+                                | &nbsp; Help
+                        label.btn.btn-success#trigger-issue-modal
+                            i.fa.fa-bug
+                                | &nbsp; Bug
+                    script.
+                        var userLoggedIn = true;
+                    if (!user)
                         .button-spacer
                         a.btn.signup-btn.btn-block.btn-block(href='/login') Sign in so you can save your progress
                             script.
@@ -80,7 +79,7 @@ block content
             iframe.iphone.iframe-scroll#preview
             .spacer
         #complete-courseware-dialog.modal(tabindex='-1')
-            .modal-dialog.animated.zoomIn.fast-animation
+            .modal-dialog.animated.fadeIn.fast-animation
                 .modal-content
                     .modal-header.challenge-list-header
                         = compliment
@@ -92,7 +91,7 @@ block content
                                     span.completion-icon.ion-checkmark-circled.text-primary
                             .spacer
                             if(user)
-                                #submit-challenge.animated.fadeIn.btn.btn-lg.btn-primary.btn-block Submit and go to my next challenge
+                                #submit-challenge.btn.btn-lg.btn-primary.btn-block Submit and go to my next challenge
                             else
-                                a.animated.fadeIn.btn.btn-lg.btn-primary.btn-block(href='/challenges/next-challenge?id=' + challengeId) Go to my next challenge
+                                a.btn.btn-lg.btn-primary.btn-block(href='/challenges/next-challenge?id=' + challengeId) Go to my next challenge
     include ../partials/challenge-modals
