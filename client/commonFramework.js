@@ -435,7 +435,7 @@ function showCompletion() {
   );
   var bonfireSolution = myCodeMirror.getValue();
   var didCompleteWith = $('#completed-with').val() || null;
-  $('#complete-courseware-dialog').modal('show');
+  $('#complete-courseware-dialog').modal({ backdrop: 'static' });
   $('#complete-courseware-dialog .modal-header').click();
   $('#submit-challenge').click(function(e) {
     e.preventDefault();
