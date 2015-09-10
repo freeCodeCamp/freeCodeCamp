@@ -244,6 +244,7 @@ editor.setOption('extraKeys', {
     }
   },
   'Ctrl-Enter': function() {
+    isInitRun = false;
     bonfireExecute(true);
     return false;
   }
@@ -415,9 +416,6 @@ var testSuccess = function() {
   if (goodTests === tests.length) {
     return showCompletion();
   }
-
-  // test unsuccessful, make sure initRun is set to false
-  isInitRun = false;
 };
 
 function ctrlEnterClickHandler(e) {
@@ -779,6 +777,7 @@ function bonfireExecute(shouldTest) {
 }
 
 $('#submitButton').on('click', function() {
+  isInitRun = false;
   bonfireExecute(true);
 });
 

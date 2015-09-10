@@ -82,7 +82,7 @@ block content
                                 alert(type='danger')
                                     span.ion-close-circled
                                     | Username not found
-                label.negative-10.btn.btn-primary.btn-block#submitButton
+                label.negative-10.btn.btn-primary.btn-block.btn-lg#submitButton
                     i.fa.fa-play
                         | &nbsp; Run tests (ctrl + enter)
                 .button-spacer
@@ -99,8 +99,12 @@ block content
                     label.btn.btn-success#trigger-issue-modal
                         i.fa.fa-bug
                             | &nbsp; Bug
+                if (!user)
+                    .button-spacer
+                    a.btn.signup-btn.btn-block.btn-block(href='/login') Sign in so you can save your progress
+                        script.
+                            var userLoggedIn = false;
                 .button-spacer
-
                 form.code
                     .form-group.codeMirrorView
                         textarea#codeOutput(style='display: none;')
