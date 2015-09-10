@@ -129,7 +129,7 @@ block content
                         editor.setOption("mode", "javascript");
 
     #complete-courseware-dialog.modal(tabindex='-1')
-        .modal-dialog.animated.zoomIn.fast-animation
+        .modal-dialog.animated.fadeIn.fast-animation
             .modal-content
                 .modal-header.challenge-list-header= compliment
                     a.close.closing-x(href='#', data-dismiss='modal', aria-hidden='true') ×
@@ -142,13 +142,12 @@ block content
                       .row
                       if (user)
                           #submit-challenge.animated.fadeIn.btn.btn-lg.btn-primary.btn-block Submit and go to my next challenge (ctrl + enter)
-
                           if (user.progressTimestamps.length > 2)
-                              a.animated.fadeIn.btn.btn-lg.btn-block.btn-twitter(target="_blank", href="https://twitter.com/intent/tweet?text=I%20just%20#{verb}%20%40FreeCodeCamp%20#{name}&url=http%3A%2F%2Ffreecodecamp.com/challenges/#{dashedName}&hashtags=LearnToCode, JavaScript")
+                              a.btn.btn-lg.btn-block.btn-twitter(target="_blank", href="https://twitter.com/intent/tweet?text=I%20just%20#{verb}%20%40FreeCodeCamp%20#{name}&url=http%3A%2F%2Ffreecodecamp.com/challenges/#{dashedName}&hashtags=LearnToCode, JavaScript")
                                   i.fa.fa-twitter &thinsp;
                                       = phrase
                       else
-                          a.animated.fadeIn.btn.btn-lg.btn-primary.btn-block(href='/challenges/next-challenge?id=' + challengeId) Go to my next challenge
+                          a.btn.btn-lg.btn-primary.btn-block(href='/challenges/next-challenge?id=' + challengeId) Go to my next challenge
     #reset-modal.modal(tabindex='-1')
         .modal-dialog.animated.fadeInUp.fast-animation
             .modal-content
