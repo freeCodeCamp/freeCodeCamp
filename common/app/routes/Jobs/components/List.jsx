@@ -1,5 +1,4 @@
 import React, { PropTypes } from 'react';
-import { Link } from 'react-router';
 import { PanelGroup, Thumbnail, Panel, Well } from 'react-bootstrap';
 import moment from 'moment';
 
@@ -7,15 +6,17 @@ export default React.createClass({
   displayName: 'ListJobs',
 
   propTypes: {
+    handleClick: PropTypes.func,
     jobs: PropTypes.array
   },
 
-  renderJobs(jobs =[]) {
+  renderJobs(handleClick, jobs =[]) {
     const thumbnailStyle = {
       backgroundColor: 'white',
       maxHeight: '100px',
       maxWidth: '100px'
     };
+
     return jobs.map((
       {
         id,
@@ -47,33 +48,35 @@ export default React.createClass({
           eventKey={ index }
           header={ header }
           key={ id }>
-          <Link to={ `/jobs/${id}` }>
-            <Well>
-              <Thumbnail
-                alt={ company + 'company logo' }
-                src={ logo }
-                style={ thumbnailStyle } />
-              <Panel>
-                Position: { position }
-                Location: { city }, { state }
-                <br />
-                Contact: { email || phone || 'N/A' }
-                <br />
-                Posted On: { moment(postedOn).format('MMMM Do, YYYY') }
-              </Panel>
-                <p>{ description }</p>
-            </Well>
-          </Link>
+          <Well>
+            <Thumbnail
+              alt={ company + 'company logo' }
+              src={ logo }
+              style={ thumbnailStyle } />
+            <Panel>
+              Position: { position }
+              Location: { city }, { state }
+              <br />
+              Contact: { email || phone || 'N/A' }
+              <br />
+              Posted On: { moment(postedOn).format('MMMM Do, YYYY') }
+            </Panel>
+            <p onClick={ () => handleClick(id) }>{ description }</p>
+          </Well>
         </Panel>
       );
     });
   },
 
   render() {
-    const { jobs } = this.props;
+    const {
+      handleClick,
+      jobs
+    } = this.props;
+
     return (
       <PanelGroup>
-        { this.renderJobs(jobs) }
+        { this.renderJobs(handleClick, jobs) }
       </PanelGroup>
     );
   }

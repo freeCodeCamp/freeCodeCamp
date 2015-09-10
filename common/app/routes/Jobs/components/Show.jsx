@@ -14,15 +14,18 @@ export default contain(
     store: 'jobsStore',
     fetchAction: 'jobActions.getJob',
     map({ currentJob }) {
+      return { job: currentJob };
+    },
+    getPayload({ params: { id }, job = {} }) {
       return {
-        job: currentJob
+        id,
+        isPrimed: job.id === id
       };
     },
-    getPayload({ params }) {
-      return { id: params.id };
-    },
-    shouldContainerFetch({ currentJob = {} }, { currentJob: nextJob = {}}) {
-      return currentJob.id !== nextJob.id;
+    // using es6 destructuring
+    shouldContainerFetch({ job = {} }, { params: { id } }
+    ) {
+      return job.id !== id;
     }
   },
   React.createClass({
@@ -46,7 +49,7 @@ export default contain(
     },
 
     render() {
-      const { job } = this.props;
+      const { job = {} } = this.props;
       const {
         logo,
         position,
