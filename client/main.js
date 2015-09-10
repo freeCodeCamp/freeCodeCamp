@@ -83,7 +83,7 @@ $(document).ready(function() {
           var textMessage = 'https://github.com/freecodecamp/freecodecamp/issues/new?&body=Challenge ' + window.location.href + ' has an issue.';
           textMessage += ' User Agent is: <code>' + navigator.userAgent + '</code>.';
           textMessage += ' Please describe how to reproduce this issue, and include links to screenshots if possible.%0A%0A';
-          textMessage = textMessage.replace(';', ','); //GitHub cuts User Agent text because of ';' symbol so I just replace it with ','
+          textMessage = textMessage.replace(/;/g, ',');
           $('#issue-modal').modal('hide');
           window.open(textMessage, '_blank');
       });
