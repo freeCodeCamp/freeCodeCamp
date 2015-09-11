@@ -1,23 +1,39 @@
 import React, { cloneElement, PropTypes } from 'react';
 import { contain } from 'thundercats-react';
+import { Navigation } from 'react-router';
 import { Button, Jumbotron, Row } from 'react-bootstrap';
 import ListJobs from './List.jsx';
 
 export default contain(
   {
     store: 'jobsStore',
-    fetchAction: 'jobActions.getJobs'
+    fetchAction: 'jobActions.getJobs',
+    actions: 'jobActions'
   },
   React.createClass({
     displayName: 'Jobs',
+
     propTypes: {
       children: PropTypes.element,
+      jobActions: PropTypes.object,
       jobs: PropTypes.array
     },
+    mixins: [Navigation],
 
-    renderList(jobs) {
+    handleJobClick(id) {
+      const { jobActions } = this.props;
+      if (!id) {
+        return null;
+      }
+      jobActions.findJob(id);
+      this.transitionTo(`/jobs/${id}`);
+    },
+
+    renderList(handleJobClick, jobs) {
       return (
-        <ListJobs jobs={ jobs }/>
+        <ListJobs
+          handleClick={ handleJobClick }
+          jobs={ jobs }/>
       );
     },
 
@@ -53,7 +69,7 @@ export default contain(
           </Row>
           <Row>
             { this.renderChild(children, jobs) ||
-              this.renderList(jobs) }
+              this.renderList(this.handleJobClick, jobs) }
             </Row>
         </div>
       );
