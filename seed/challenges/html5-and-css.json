@@ -1137,7 +1137,7 @@
       ],
       "tests": [
         "assert($(\"a\").attr(\"href\").match(/freecatphotoapp.com/gi).length > 0, 'You need an <code>a</code> element that links to \"freecatphotoapp.com\".')",
-        "assert($(\"a\").text().match(/cat\\sphotos/gi).length > 0, 'Your <code>a</code> element should have the anchor text of \"cat photos\"')",
+        "assert($(\"a\").text().match(/cat\\sphotos/gi), 'Your <code>a</code> element should have the anchor text of \"cat photos\"')",
         "assert($(\"p\") && $(\"p\").length > 2, 'Create a new <code>p</code> element around your <code>a</code> element.')",
         "assert($(\"a[href=\\\"http://www.freecatphotoapp.com\\\"]\").parent().is(\"p\"), 'Your <code>a</code> element should be nested within your new <code>p</code> element.')",
         "assert($(\"p\").text().match(/click\\shere\\sfor/gi), 'Your <code>p</code> element should have the text \"click here for\".')",
