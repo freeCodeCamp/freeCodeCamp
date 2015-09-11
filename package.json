@@ -92,6 +92,7 @@
     "react-router": "https://github.com/BerkeleyTrue/react-router#freecodecamp",
     "react-vimeo": "^0.0.3",
     "request": "~2.53.0",
+    "rev-del": "^1.0.5",
     "rx": "^2.5.3",
     "sanitize-html": "~1.6.1",
     "sort-keys": "^1.1.1",

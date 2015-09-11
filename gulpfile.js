@@ -29,6 +29,7 @@ var Rx = require('rx'),
   // rev
   rev = require('gulp-rev'),
   revReplace = require('gulp-rev-replace'),
+  revDel = require('rev-del'),
 
   // lint
   jsonlint = require('gulp-jsonlint'),
@@ -72,8 +73,7 @@ var paths = {
   ],
 
   dependents: [
-    'client/commonFramework.js',
-    'client/sandbox.js'
+    'client/commonFramework.js'
   ],
 
   less: './client/less/main.less',
@@ -191,6 +191,10 @@ gulp.task('pack-client', function() {
     .pipe(gulp.dest(webpackConfig.output.path))
     // create and merge manifest
     .pipe(rev.manifest('react-manifest.json'))
+    .pipe(revDel({
+      oldManifest: path.join(paths.manifest, 'react-manifest.json'),
+      dest: webpackConfig.output.path
+    }))
     .pipe(gulp.dest(paths.manifest));
 });
 
@@ -241,6 +245,10 @@ gulp.task('pack-watch-manifest', function() {
     .pipe(gulp.dest(webpackConfig.output.path))
     // create manifest
     .pipe(rev.manifest('react-manifest.json'))
+    .pipe(revDel({
+      oldManifest: path.join(paths.manifest, 'react-manifest.json'),
+      dest: webpackConfig.output.path
+    }))
     .pipe(gulp.dest(paths.manifest));
 });
 
@@ -267,6 +275,10 @@ gulp.task('less', function() {
     .pipe(gulp.dest(paths.css))
     // create and merge manifest
     .pipe(rev.manifest('css-manifest.json'))
+    .pipe(revDel({
+      oldManifest: path.join(paths.manifest, 'css-manifest.json'),
+      dest: paths.css
+    }))
     .pipe(gulp.dest(paths.manifest));
 });
 
@@ -280,6 +292,10 @@ gulp.task('js', function() {
     .pipe(gulp.dest(paths.publicJs))
     // create manifest file
     .pipe(rev.manifest('js-manifest.json'))
+    .pipe(revDel({
+      oldManifest: path.join(paths.manifest, 'js-manifest.json'),
+      dest: paths.publicJs
+    }))
     // copy manifest file to dest
     .pipe(gulp.dest(paths.manifest));
 });
@@ -294,9 +310,14 @@ gulp.task('dependents', ['js'], function() {
   return gulp.src(paths.dependents)
     .pipe(plumber({ errorHandler: errorHandler }))
     .pipe(revReplace({ manifest: manifest }))
+    .pipe(gulp.dest(paths.publicJs))
     .pipe(rev())
     .pipe(gulp.dest(paths.publicJs))
     .pipe(rev.manifest('dependents-manifest.json'))
+    .pipe(revDel({
+      oldManifest: path.join(paths.manifest, 'dependents-manifest.json'),
+      dest: paths.publicJs
+    }))
     .pipe(gulp.dest(paths.manifest));
 });
 
