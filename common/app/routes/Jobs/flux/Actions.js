@@ -56,7 +56,10 @@ export default Actions({
           debug('job services experienced an issue', err);
           return jobActions.setError({ err });
         }
-        jobActions.setJobs({ currentJob: job });
+        if (job) {
+          jobActions.setJobs({ currentJob: job });
+        }
+        jobActions.setJobs({});
       });
     });
     return jobActions;
