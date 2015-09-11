@@ -38,6 +38,7 @@ var Rx = require('rx'),
 
 Rx.config.longStackSupport = true;
 
+var __DEV__ = process.env.NODE_ENV !== 'production';
 var reloadDelay = 1000;
 var reload = sync.reload;
 var paths = {
@@ -112,6 +113,17 @@ function errorHandler() {
   this.emit('end');
 }
 
+function delRev(dest, manifestName) {
+  // in production do not delete old revisions
+  if (!__DEV__) {
+    return gutil.noop();
+  }
+  return revDel({
+    oldManifest: path.join(paths.manifest, manifestName),
+    dest: dest
+  });
+}
+
 gulp.task('serve', function(cb) {
   var called = false;
   nodemon({
@@ -178,6 +190,9 @@ gulp.task('lint-json', function() {
 gulp.task('test-challenges', ['lint-json']);
 
 gulp.task('pack-client', function() {
+  var manifestName = 'react-manifest.json';
+  var dest = webpackConfig.output.path;
+
   return gulp.src(webpackConfig.entry)
     .pipe(plumber({ errorHandler: errorHandler }))
     .pipe(webpack(Object.assign(
@@ -185,16 +200,17 @@ gulp.task('pack-client', function() {
       webpackConfig,
       webpackOptions
     )))
-    .pipe(gulp.dest(webpackConfig.output.path))
+    .pipe(gulp.dest(dest))
     .pipe(rev())
     // copy files to public
-    .pipe(gulp.dest(webpackConfig.output.path))
-    // create and merge manifest
-    .pipe(rev.manifest('react-manifest.json'))
-    .pipe(revDel({
-      oldManifest: path.join(paths.manifest, 'react-manifest.json'),
-      dest: webpackConfig.output.path
-    }))
+    .pipe(gulp.dest(dest))
+    // create manifest
+    .pipe(rev.manifest(manifestName))
+    // delete old rev
+    .pipe(delRev(
+      dest,
+      manifestName
+    ))
     .pipe(gulp.dest(paths.manifest));
 });
 
@@ -239,16 +255,18 @@ gulp.task('pack-watch', function(cb) {
 });
 
 gulp.task('pack-watch-manifest', function() {
-  return gulp.src(webpackConfig.output.path + '/bundle.js')
+  var manifestName = 'react-manifest.json';
+  var dest = webpackConfig.output.path;
+  return gulp.src(dest + '/bundle.js')
     .pipe(rev())
     // copy files to public
-    .pipe(gulp.dest(webpackConfig.output.path))
+    .pipe(gulp.dest(dest))
     // create manifest
-    .pipe(rev.manifest('react-manifest.json'))
-    .pipe(revDel({
-      oldManifest: path.join(paths.manifest, 'react-manifest.json'),
-      dest: webpackConfig.output.path
-    }))
+    .pipe(rev.manifest(manifestName))
+    .pipe(delRev(
+      dest,
+      manifestName
+    ))
     .pipe(gulp.dest(paths.manifest));
 });
 
@@ -262,40 +280,45 @@ gulp.task('pack-node', function() {
 gulp.task('pack', ['pack-client', 'pack-node']);
 
 gulp.task('less', function() {
+  var manifestName = 'css-manifest.json';
+  var dest = paths.css;
   return gulp.src(paths.less)
     .pipe(plumber({ errorHandler: errorHandler }))
     // copile
     .pipe(less({
       paths: [ path.join(__dirname, 'less', 'includes') ]
     }))
-    .pipe(gulp.dest(paths.css))
+    .pipe(gulp.dest(dest))
     // add revision
     .pipe(rev())
     // copy files to public
-    .pipe(gulp.dest(paths.css))
+    .pipe(gulp.dest(dest))
     // create and merge manifest
-    .pipe(rev.manifest('css-manifest.json'))
-    .pipe(revDel({
-      oldManifest: path.join(paths.manifest, 'css-manifest.json'),
-      dest: paths.css
-    }))
+    .pipe(rev.manifest(manifestName))
+    .pipe(delRev(
+      dest,
+      manifestName
+    ))
     .pipe(gulp.dest(paths.manifest));
 });
 
 gulp.task('js', function() {
+  var manifestName = 'js-manifest.json';
+  var dest = paths.publicJs;
+
   return gulp.src(paths.js)
     .pipe(plumber({ errorHandler: errorHandler }))
-    .pipe(gulp.dest(paths.publicJs))
+    .pipe(gulp.dest(dest))
     // create registry file
     .pipe(rev())
     // copy revisioned assets to dest
-    .pipe(gulp.dest(paths.publicJs))
+    .pipe(gulp.dest(dest))
     // create manifest file
-    .pipe(rev.manifest('js-manifest.json'))
-    .pipe(revDel({
-      oldManifest: path.join(paths.manifest, 'js-manifest.json'),
-      dest: paths.publicJs
-    }))
+    .pipe(rev.manifest(manifestName))
+    .pipe(delRev(
+      dest,
+      manifestName
+    ))
     // copy manifest file to dest
     .pipe(gulp.dest(paths.manifest));
 });
@@ -303,6 +326,9 @@ gulp.task('js', function() {
 // commonFramework depend on iFrameScripts
 // sandbox depends on plugin
 gulp.task('dependents', ['js'], function() {
+  var manifestName = 'dependents-manifest.json';
+  var dest = paths.publicJs;
+
   var manifest = gulp.src(
     path.join(__dirname, paths.manifest, 'js-manifest.json')
   );
@@ -310,14 +336,14 @@ gulp.task('dependents', ['js'], function() {
   return gulp.src(paths.dependents)
     .pipe(plumber({ errorHandler: errorHandler }))
     .pipe(revReplace({ manifest: manifest }))
-    .pipe(gulp.dest(paths.publicJs))
+    .pipe(gulp.dest(dest))
     .pipe(rev())
-    .pipe(gulp.dest(paths.publicJs))
-    .pipe(rev.manifest('dependents-manifest.json'))
-    .pipe(revDel({
-      oldManifest: path.join(paths.manifest, 'dependents-manifest.json'),
-      dest: paths.publicJs
-    }))
+    .pipe(gulp.dest(dest))
+    .pipe(rev.manifest(manifestName))
+    .pipe(delRev(
+      dest,
+      manifestName
+    ))
     .pipe(gulp.dest(paths.manifest));
 });
 
