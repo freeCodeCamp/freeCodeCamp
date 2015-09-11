@@ -3163,7 +3163,7 @@
         "assert(($(\"h1\").length > 0 && $(\"h1\").text().match(/hello world/i)), 'Your <code>h1</code> element should have the text <code>Hello World</code>.')",
         "assert(editor.match(/<\\/h1>/g) && editor.match(/<h1/g) && editor.match(/<\\/h1>/g).length === editor.match(/<h1/g).length, 'Make sure your <code>h1</code> element has a closing tag.')",
         "assert(($(\"body\").css(\"color\") === \"rgb(0, 128, 0)\"), 'Give your <code>body</code> element the <code>color</code> property of <code>green</code>.')",
-        "assert(($(\"body\").css(\"font-family\").match(/Monospace/i)), 'Give your <code>body</code> element the <code>font-family</code> property of <code>Monospace</code>.')",
+        "assert(!!($(\"body\").css(\"font-family\").match(/Monospace/i)), 'Give your <code>body</code> element the <code>font-family</code> property of <code>Monospace</code>.')",
         "assert(($(\"h1\").length > 0 && $(\"h1\").css(\"font-family\").match(/monospace/i)), 'Your <code>h1</code> element should inherit the font <code>Monospace</code> from your <code>body</code> element.')",
         "assert(($(\"h1\").length > 0 && $(\"h1\").css(\"color\") === \"rgb(0, 128, 0)\"), 'Your <code>h1</code> element should inherit the color green from your <code>body</code> element.')"
       ],
