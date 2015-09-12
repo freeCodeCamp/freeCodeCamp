@@ -1051,8 +1051,9 @@
       "description":[
         "We can use special selectors in <code>Regular Expressions</code> to select a particular type of value.",
         "One such selector is the digit selector <code>\\d</code> which is used to grab the numbers in a string.",
-        "It is used like this: <code>/\\d+/g</code>.",
-        "Use the <code>\\d</code> selector to select the number of numbers in the string."
+        "It is used like this: <code>/\\d/g</code>.",
+        "For numbers this is often written as <code>/\\d+/g</code>, where the <code>+</code> following the digit selector allows this regular expression to match multi-digit numbers.",
+        "Use the <code>\\d</code> selector to select the number of numbers in the string, allowing for the possibility of multi-digit numbers."
       ],
       "tests":[
         "assert(test === 2, 'Your RegEx should have found two numbers in the testString');",
