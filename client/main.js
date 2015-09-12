@@ -80,12 +80,48 @@ $(document).ready(function() {
 
       $('#report-issue').unbind('click');
       $('#report-issue').on('click', function() {
-          var textMessage = 'https://github.com/freecodecamp/freecodecamp/issues/new?&body=Challenge ' + window.location.href + ' has an issue.';
-          textMessage += ' User Agent is: <code>' + navigator.userAgent + '</code>.';
-          textMessage += ' Please describe how to reproduce this issue, and include links to screenshots if possible.%0A%0A';
-          textMessage = textMessage.replace(/;/g, ',');
+          var textMessage = [
+            'Challenge [',
+            (challenge_Name || challengeName || window.location.href),
+            '](',
+            window.location.href,
+            ') has an issue.\n',
+            'User Agent is: <code>',
+            navigator.userAgent,
+            '</code>.\n',
+            'Please describe how to reproduce this issue, and include ',
+            'links to screenshots if possible.\n\n'
+          ].join('');
+
+          if ($('#include-code').prop('checked')) {
+            var type;
+            switch (challengeType) {
+              case challengeTypes.HTML_CSS_JQ:
+                type = 'html';
+                break;
+              case challengeTypes.JAVASCRIPT:
+                type = 'javascript';
+                break;
+              default:
+                type = '';
+            }
+
+            textMessage += [
+              'Camper\'s code:\n```',
+              type,
+              '\n',
+              editor.getValue(),
+              '\n```'
+            ].join('');
+          }
+
+          textMessage = encodeURIComponent(textMessage);
+
           $('#issue-modal').modal('hide');
-          window.open(textMessage, '_blank');
+          window.open(
+            'https://github.com/freecodecamp/freecodecamp/issues/new?&body=' +
+            textMessage, '_blank'
+          );
       });
 
       $('#completed-courseware').unbind('click');
