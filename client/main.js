@@ -107,7 +107,7 @@ $(document).ready(function() {
             }
 
             textMessage += [
-              'Camper\'s code:\n```',
+              'My code:\n```',
               type,
               '\n',
               editor.getValue(),
