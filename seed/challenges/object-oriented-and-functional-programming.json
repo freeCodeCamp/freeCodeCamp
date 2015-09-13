@@ -198,6 +198,9 @@
         "// Only change code above this line.",
         "(function() {return array;})();"
       ],
+      "MDNlinks": [
+        "Array.map()"
+      ],
       "challengeType":1,
       "type": "waypoint"
     },
