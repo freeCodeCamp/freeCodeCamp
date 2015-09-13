@@ -675,7 +675,7 @@
         "Create and call a function called <code>myFunction</code> that returns the sum of a and b."
       ],
       "tests":[
-        "assert((function(){if(typeof(f) !== \"undefined\" && typeof(f) === \"number\" && f === a + b  && editor.getValue().match(/return/gi).length >= 1 && editor.getValue().match(/a/gi).length >= 1 && editor.getValue().match(/b/gi).length >= 1 && editor.getValue().match(/\\+/gi).length >= 1){return true;}else{return false;}})(), 'Your function should return the value of a + b');"
+        "assert((function(){if(typeof(f) !== \"undefined\" && f === a + b){return true;}else{return false;}})(), 'Your function should return the value of a + b');"
       ],
       "challengeSeed":[
         "var a = 4;",
