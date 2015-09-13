@@ -908,21 +908,21 @@
       "difficulty":"9.9828",
       "description":[
         "It's great that we can create random decimal numbers, but it's even more useful if we use it to generate a random whole number.",
-        "To achieve this we can multiply the random number by ten and use the <code>Math.floor()</code> to convert the decimal number to a whole number.",
+        "To achieve this we can multiply the random number by ten and use the <code>Math.floor()</code> to convert the decimal number to the nearest less than or equal whole number.",
         "This technique gives us a whole number between zero and nine.",
         "Example:",
         "<code>Math.floor(Math.random()*10);</code>",
         "Let's give this technique a go now."
       ],
       "tests":[
-        "assert(typeof(myFunction()) === \"number\", 'The result of myFunction should be a number');",
-        "assert(editor.getValue().match(/Math.random/g), 'You should be using Math.random to create a random number');",
-        "assert(!(''+myFunction()).match(/\\./g), 'You should have multiplied the result of Math.random by 10 to make it a number that\\'s greater than zero');",
-        "assert(editor.getValue().match(/Math.floor/g), 'You should use Math.floor to remove the decimal part of the number');"
+        "assert(typeof(myFunction()) === \"number\", 'The result of <code>myFunction</code> should be a number.');",
+        "assert(editor.getValue().match(/Math.random/g), 'You should be using Math.random to create a random number.');",
+        "assert(editor.getValue().match(/\\(\\s*?Math.random\\s*?\\(\\s*?\\)\\s*?\\*\\s*?10\\s*?\\)/g) || editor.getValue().match(/\\(\\s*?10\\s*?\\*\\s*?Math.random\\s*?\\(\\s*?\\)\\s*?\\)/g), 'You should have multiplied the result of <code>Math.random</code> by 10 to make it a number that\\'s between zero and nine.');",
+        "assert(editor.getValue().match(/Math.floor/g), 'You should use <code>Math.floor</code> to remove the decimal part of the number.');"
       ],
       "challengeSeed":[
         "function myFunction(){",
-        "  // Make myFunction return a random number betweenzero and nine> instead of a decimal",
+        "  // Make myFunction return a random number between zero and nine instead of a decimal.",
         "",
         "  // Only change code below this line.",
         "",
