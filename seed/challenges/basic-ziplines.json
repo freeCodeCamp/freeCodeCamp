@@ -16,7 +16,8 @@
         "Drag the windows around and press the buttons in the lower-right hand corner to change the orientation to suit your preference.",
         "Click the gear next to CSS. Then under the \"Add External CSS\" section, use the \"Quick-add\" select box to select Bootstrap. Then click \"Save & Close\".",
         "Verify that bootstrap is active by adding the following code to your HTML: <code>&lt;h1 class='text-primary'&gt;Hello CodePen!&lt;/h1&gt;</code>. The text's color should be Bootstrap blue.",
-        "Click the gear next to JavaScript. Click the \"Quick-add\" select box and choose jQuery (not jQuery UI). Then click \"Save & Close\".",
+        "Click the gear next to JavaScript. Click the \"Quick-add\" select box and choose jQuery (not jQuery UI).",
+        "Click the \"Quick-add\" select box again and choose Bootstrap. Then click \"Save & Close\".",
         "Now add the following code to your JavaScript: <code>$(document).ready(function() { $('.text-primary').text('Hi CodePen!') });</code>. Click the \"Save\" button at the top. Your \"Hello CodePen!\" should change to \"Hi CodePen!\". This means that jQuery is working.",
         "You can use this CodePen that you've just created as a starting point for your Ziplines. Just click the \"fork\" button at the top of your CodePen and it will create a duplicate CodePen.",
         "Now you're ready for your first Zipline. Click the \"I've completed this challenge\" button."
