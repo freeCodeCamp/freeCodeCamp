@@ -681,7 +681,7 @@
         "var a = 4;",
         "var b = 5;",
         "",
-        "ourFunction = function() {",
+        "function ourFunction(a, b) {",
         "  return a - b;",
         "};",
         "",
