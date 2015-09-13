@@ -666,13 +666,15 @@
       "title": "Write Reusable JavaScript with Functions",
       "difficulty":"9.9819",
       "description":[
-        "In JavaScript, we can divide up our code into reusable parts called <code>functions</code>.",
+        "In JavaScript, we can divide up our code into reusable parts called functions.",
         "Here's an example of a function:",
-        "<code>function functionName (a, b) {</code>",
+        "<code>function functionName(a, b) {</code>",
         "<code>&thinsp;&thinsp;return a + b;</code>",
         "<code>}</code>",
-        "We can \"call\" our function like this: <code>functionName();</code>, and it will run and return its <code>return</code> value to us.",
-        "Create and call a function called <code>myFunction</code> that returns the sum of a and b."
+        "After writing the above lines in our code, we can then pass values to our function and the result following the <code>return</code> statement will be returned.",
+        "For example, we can pass numbers <code>4</code> and <code>2</code> by “calling” the function later in our code like this: <code>functionName(4, 2)</code>.",
+        "In this example, the function will return the number <code>6</code> as this is the result of <code>4 + 2</code>.",
+        "Create and call a function called <code>myFunction</code> that returns the sum of <code>a</code> and <code>b</code>."
       ],
       "tests":[
         "assert((function(){if(typeof(f) !== \"undefined\" && f === a + b){return true;}else{return false;}})(), 'Your function should return the value of a + b');"
