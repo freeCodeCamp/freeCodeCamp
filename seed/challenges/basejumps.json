@@ -79,7 +79,7 @@
         "<span class='text-info'>User Story:</span> As an authenticated user, I can see the aggregate results of my polls.",
         "<span class='text-info'>User Story:</span> As an authenticated user, I can delete polls that I decide I don't want anymore.",
         "<span class='text-info'>User Story:</span> As an authenticated user, I can create a poll with any number of possible items.",
-        "<span class='text-info'>Bonus User Story:</span> As an unauthenticated user, I can see everyone's polls, but I can't vote on anything.",
+        "<span class='text-info'>Bonus User Story:</span> As an unauthenticated or authenticated user, I can see and vote on everyone's polls.",
         "<span class='text-info'>Bonus User Story:</span> As an unauthenticated or authenticated user, I can see the results of polls in chart form. (This could be implemented using Chart.js or Google Charts.)",
         "<span class='text-info'>Bonus User Story:</span> As an authenticated user, if I don't like the options on a poll, I can create a new option.",
         "If you need further guidance on using Yeoman Angular-Fullstack Generator, check out: <a href='https://github.com/clnhll/guidetobasejumps' target='_blank'>https://github.com/clnhll/guidetobasejumps</a>.",
