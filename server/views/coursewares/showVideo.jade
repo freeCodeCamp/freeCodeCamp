@@ -63,7 +63,7 @@ block content
                     a.close.closing-x(href='#', data-dismiss='modal', aria-hidden='true') ×
                 .modal-body(ng-controller="pairedWithController")
                     .text-center
-                        .animated.zoomInDown.delay-half
+                        .animated.zoomInDown
                             span.completion-icon.ion-checkmark-circled.text-primary
                         if (user)
                             a.btn.btn-lg.btn-primary.btn-block#next-courseware-button(name='_csrf', value=_csrf) I've completed this challenge (ctrl + enter)
