@@ -1,6 +1,6 @@
 import React, { cloneElement, PropTypes } from 'react';
 import { contain } from 'thundercats-react';
-import { Navigation } from 'react-router';
+import { History } from 'react-router';
 import { Button, Jumbotron, Row } from 'react-bootstrap';
 import ListJobs from './List.jsx';
 
@@ -18,7 +18,7 @@ export default contain(
       jobActions: PropTypes.object,
       jobs: PropTypes.array
     },
-    mixins: [Navigation],
+    mixins: [History],
 
     handleJobClick(id) {
       const { jobActions } = this.props;
@@ -26,7 +26,7 @@ export default contain(
         return null;
       }
       jobActions.findJob(id);
-      this.transitionTo(`/jobs/${id}`);
+      this.history.pushState(null, `/jobs/${id}`);
     },
 
     renderList(handleJobClick, jobs) {
