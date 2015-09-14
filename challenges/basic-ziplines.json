@@ -16,7 +16,8 @@
         "Drag the windows around and press the buttons in the lower-right hand corner to change the orientation to suit your preference.",
         "Click the gear next to CSS. Then under the \"Add External CSS\" section, use the \"Quick-add\" select box to select Bootstrap. Then click \"Save & Close\".",
         "Verify that bootstrap is active by adding the following code to your HTML: <code>&lt;h1 class='text-primary'&gt;Hello CodePen!&lt;/h1&gt;</code>. The text's color should be Bootstrap blue.",
-        "Click the gear next to JavaScript. Click the \"Quick-add\" select box and choose jQuery (not jQuery UI). Then click \"Save & Close\".",
+        "Click the gear next to JavaScript. Click the \"Quick-add\" select box and choose jQuery (not jQuery UI).",
+        "Click the \"Quick-add\" select box again and choose Bootstrap. Then click \"Save & Close\".",
         "Now add the following code to your JavaScript: <code>$(document).ready(function() { $('.text-primary').text('Hi CodePen!') });</code>. Click the \"Save\" button at the top. Your \"Hello CodePen!\" should change to \"Hi CodePen!\". This means that jQuery is working.",
         "You can use this CodePen that you've just created as a starting point for your Ziplines. Just click the \"fork\" button at the top of your CodePen and it will create a duplicate CodePen.",
         "Now you're ready for your first Zipline. Click the \"I've completed this challenge\" button."
@@ -45,6 +46,7 @@
         "<span class='text-info'>Rule #1:</span> Don't look at the example project's code on CodePen. Figure it out for yourself.",
         "<span class='text-info'>Rule #2:</span> You may use whichever libraries or APIs you need.",
         "<span class='text-info'>Rule #3:</span> Reverse engineer the example project's functionality, and also feel free to personalize it.",
+        "<span class='text-info'>Hint:</span> If you don't want to start from scratch, you can fork this simple Bootstrap portfolio template on CodePen: <a href='http://codepen.io/FreeCodeCamp/pen/mJNqQj/' target='_blank'>http://codepen.io/FreeCodeCamp/pen/mJNqQj</a>.",
         "Here are the <a href='http://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a> you must enable, and optional bonus user stories:",
         "<span class='text-info'>User Story:</span> As a user, I can access all of the portfolio webpage's content just by scrolling.",
         "<span class='text-info'>User Story:</span> As a user, I can click different buttons that will take me to the portfolio creator's different social media pages.",
@@ -55,7 +57,7 @@
         "Note that CodePen.io overrides the Window.open() function, so if you want to open windows using jquery, you will need to target invisible anchor elements like this one: <code>&lt;a target='_blank'&gt;</a></code>.",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck.",
         "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen. If you pair programmed, you should also include the Free Code Camp username of your pair.",
-        "If you'd like immediate feedback on your project, click this button and paste in a link to your CodePen project. Otherwise, we'll review it before you start your nonprofit projects.<br><br><a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Click here then add your link to your tweet's text</a>"
+        "If you'd like immediate feedback on your project from fellow campers, click this button and paste in a link to your CodePen project. <br><br><a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20PASTE_YOUR_CODEPEN_URL_HERE%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Click here then add your link to your tweet's text</a>"
       ],
       "type": "zipline",
       "challengeType": 3,
@@ -87,7 +89,7 @@
         "Note that you can either put your quotes into an array and show them at random, or use an API to get quotes, such as <a href='http://forismatic.com/en/api/'>http://forismatic.com/en/api/</a>.",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck.",
         "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen. If you pair programmed, you should also include the Free Code Camp username of your pair.",
-        "If you'd like immediate feedback on your project, click this button and paste in a link to your CodePen project. Otherwise, we'll review it before you start your nonprofit projects.<br><br><a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Click here then add your link to your tweet's text</a>"
+        "If you'd like immediate feedback on your project from fellow campers, click this button and paste in a link to your CodePen project. <br><br><a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20PASTE_YOUR_CODEPEN_URL_HERE%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Click here then add your link to your tweet's text</a>"
       ],
       "type": "zipline",
       "challengeType": 3,
@@ -115,12 +117,12 @@
         "<span class='text-info'>Rule #3:</span> Reverse engineer the example project's functionality, and also feel free to personalize it.",
         "Here are the <a href='http://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a> you must enable, and optional bonus user stories:",
         "<span class='text-info'>User Story:</span> As a user, I can see the weather in my current location.",
-        "<span class='text-info'>Bonus User Story:</span> As a user, I can see an icon depending on the temperature..",
-        "<span class='text-info'>Bonus User Story:</span> As a user, I see a different background image depending on the temperature (e.g. snowy mountain, hot desert).",
+        "<span class='text-info'>Bonus User Story:</span> As a user, I can see an icon depending on the weather.",
+        "<span class='text-info'>Bonus User Story:</span> As a user, I see a different background image (e.g. snowy mountain, hot desert) depending on the weather.",
         "<span class='text-info'>Bonus User Story:</span> As a user, I can push a button to toggle between Fahrenheit and Celsius.",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck.",
         "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen. If you pair programmed, you should also include the Free Code Camp username of your pair.",
-        "If you'd like immediate feedback on your project, click this button and paste in a link to your CodePen project. Otherwise, we'll review it before you start your nonprofit projects.<br><br><a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Click here then add your link to your tweet's text</a>"
+        "If you'd like immediate feedback on your project from fellow campers, click this button and paste in a link to your CodePen project. <br><br><a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20PASTE_YOUR_CODEPEN_URL_HERE%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Click here then add your link to your tweet's text</a>"
       ],
       "type": "zipline",
       "challengeType": 3,
@@ -152,7 +154,7 @@
         "<span class='text-info'>Bonus User Story:</span> As a user, I can customize the length of each pomodoro.",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck.",
         "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen. If you pair programmed, you should also include the Free Code Camp username of your pair.",
-        "If you'd like immediate feedback on your project, click this button and paste in a link to your CodePen project. Otherwise, we'll review it before you start your nonprofit projects.<br><br><a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Click here then add your link to your tweet's text</a>"
+        "If you'd like immediate feedback on your project from fellow campers, click this button and paste in a link to your CodePen project. <br><br><a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20PASTE_YOUR_CODEPEN_URL_HERE%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Click here then add your link to your tweet's text</a>"
       ],
       "type": "zipline",
       "challengeType": 3,
@@ -189,7 +191,7 @@
         "<span class='text-info'>Hint:</span> Here's an array of the Twitch.tv usernames of people who regularly stream coding: <code>[\"freecodecamp\", \"storbeck\", \"terakilobyte\", \"habathcx\",\"RobotCaleb\",\"thomasballinger\",\"noobs2ninjas\",\"beohoff\"]</code>",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck.",
         "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen. If you pair programmed, you should also include the Free Code Camp username of your pair.",
-        "If you'd like immediate feedback on your project, click this button and paste in a link to your CodePen project. Otherwise, we'll review it before you start your nonprofit projects.<br><br><a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Click here then add your link to your tweet's text</a>"
+        "If you'd like immediate feedback on your project from fellow campers, click this button and paste in a link to your CodePen project. <br><br><a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20PASTE_YOUR_CODEPEN_URL_HERE%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Click here then add your link to your tweet's text</a>"
       ],
       "type": "zipline",
       "challengeType": 3,

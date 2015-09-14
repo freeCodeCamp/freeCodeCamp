@@ -1,6 +1,6 @@
 {
   "name": "Basic Algorithm Scripting",
-  "order": 0.006,
+  "order": 0.007,
   "challenges": [
     {
       "id": "ad7123c8c441eddfaeb5bdef",
@@ -8,7 +8,7 @@
       "difficulty": "0",
       "description": [
         "Your goal is to fix the failing test.",
-        "First, run all the tests by clicking \"Run code\" or by pressing Control + Enter.",
+        "First, run all the tests by clicking \"Run tests\" or by pressing Control + Enter.",
         "The failing test is in red. Fix the code so that all tests pass. Then you can move on to the next Bonfire.",
         "Make this function return true no matter what."
       ],
@@ -90,7 +90,8 @@
         "assert(typeof(factorialize(5)) === \"number\", '<code>factorialize&#40;&#41;</code> should return a number.');",
         "assert(factorialize(5) === 120, '<code>5</code> should return <code>120</code>.');",
         "assert(factorialize(10) === 3628800, '<code>10</code> should return <code>3&#44;628&#44;800</code>.');",
-        "assert(factorialize(20) === 2432902008176640000, '<code>20</code> should return <code>2&#44;432&#44;902&#44;008&#44;176&#44;640&#44;000</code>.');"
+        "assert(factorialize(20) === 2432902008176640000, '<code>20</code> should return <code>2&#44;432&#44;902&#44;008&#44;176&#44;640&#44;000</code>.');",
+        "assert(factorialize(0) === 1, '<code>0</code> should return 1.');"
       ],
       "difficulty": "1.02",
       "description": [
@@ -142,7 +143,11 @@
         "assert(palindrome(\"A man, a plan, a canal. Panama\") === true, '<code>\"A man, a plan, a canal. Panama\"</code> should return true.');",
         "assert(palindrome(\"never odd or even\") === true, '<code>\"never odd or even\"</code> should return true.');",
         "assert(palindrome(\"nope\") === false, '<code>\"nope\"</code> should return false.');",
-        "assert(palindrome(\"almostomla\") === false, '<code>\"almostomla\"</code> should return false.');"
+        "assert(palindrome(\"almostomla\") === false, '<code>\"almostomla\"</code> should return false.');",
+        "assert(palindrome(\"My age is 0, 0 si ega ym.\") === true, '<code>\"My age is 0, 0 si ega ym.\"</code> should return true.');",
+        "assert(palindrome(\"I'm 23 non 32 m'I?\") === true, '<code>\"I'm 23 non 32 m'I?\"</code> should return true.');",
+        "assert(palindrome(\"1 eye for of 1 eye.\") === false, '<code>\"1 eye for of 1 eye.\"</code> should return false.');",
+        "assert(palindrome(\"0_0 (: /-\\ :) 0-0\") === true, '<code>\"0_0 (: /-\\\\ :) 0-0\"</code> should return true.');"
       ],
       "challengeSeed": [
         "function palindrome(str) {",
@@ -527,11 +532,11 @@
     },
     {
       "id": "adf08ec01beb4f99fc7a68f2",
-      "title": "Falsey Bouncer",
+      "title": "Falsy Bouncer",
       "difficulty": "1.50",
       "description": [
-        "Remove all falsey values from an array.",
-        "Falsey values in javascript are false, null, 0, \"\", undefined, and NaN.",
+        "Remove all falsy values from an array.",
+        "Falsy values in javascript are false, null, 0, \"\", undefined, and NaN.",
         "Remember to use <a href=\"//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck\" target=\"_blank\">Read-Search-Ask</a> if you get stuck. Write your own code."
       ],
       "challengeSeed": [
@@ -550,45 +555,6 @@
       "MDNlinks": [
         "Boolean Objects",
         "Array.filter()"
-      ],
-      "type": "bonfire",
-      "challengeType": 5,
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
-      "nameRu": "",
-      "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
-      "namePt": "",
-      "descriptionPt": []
-    },
-    {
-      "id": "a8e512fbe388ac2f9198f0fa",
-      "title": "Where art thou",
-      "difficulty": "1.55",
-      "description": [
-        "Make a function that looks through an array (first argument) and returns an array of all objects that have equivalent property values (second argument).",
-        "Remember to use <a href=\"//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck\" target=\"_blank\">Read-Search-Ask</a> if you get stuck. Write your own code."
-      ],
-      "challengeSeed": [
-        "function where(collection, source) {",
-        "  var arr = [];",
-        "  // What's in a name?",
-        "  return arr;",
-        "}",
-        "",
-        "where([{ first: \"Romeo\", last: \"Montague\" }, { first: \"Mercutio\", last: null }, { first: \"Tybalt\", last: \"Capulet\" }], { last: \"Capulet\" }, \"\");"
-      ],
-      "tests": [
-        "assert(where([{ first: \"Romeo\", last: \"Montague\" }, { first: \"Mercutio\", last: null }, { first: \"Tybalt\", last: \"Capulet\" }], { last: \"Capulet\" }) === [{ first: \"Tybalt\", last: \"Capulet\" }], '<code>[{ first: \"Romeo\"&344; last: \"Montague\" }&344; { first: \"Mercutio\"&344; last: null }&344; { first: \"Tybalt\"&344; last: \"Capulet\" }]&344; { last: \"Capulet\" }</code> should return <code>[{ first: \"Tybalt\"&344; last: \"Capulet\" }]</code>.');",
-        "assert(where([{ \"a\": 1 }, { \"a\": 1 }, { \"a\": 1, \"b\": 2 }], { \"a\": 1 }) === [{ \"a\": 1 }, { \"a\": 1 }, { \"a\": 1, \"b\": 2 }], '<code>[{ \"a\": 1 }&344; { \"a\": 1 }&344; { \"a\": 1&344; \"b\": 2 }]&344; { \"a\": 1 }</code> should return <code>[{ \"a\": 1 }&344; { \"a\": 1 }&344; { \"a\": 1&344; \"b\": 2 }]</code>.');"
-      ],
-      "MDNlinks": [
-        "Global Object",
-        "Object.hasOwnProperty()",
-        "Object.keys()"
       ],
       "type": "bonfire",
       "challengeType": 5,
@@ -665,7 +631,11 @@
       ],
       "tests": [
         "assert(where([10, 20, 30, 40, 50], 35) === 3, '<code>[10&#44; 20&#44; 30&#44; 40&#44; 50]&#44; 35</code> should return <code>3</code>.');",
-        "assert(where([10, 20, 30, 40, 50], 30) === 2, '<code>[10&#44; 20&#44; 30&#44; 40&#44; 50]&#44; 30)</code> should return <code>2</code>.');"
+        "assert(where([10, 20, 30, 40, 50], 30) === 2, '<code>[10&#44; 20&#44; 30&#44; 40&#44; 50]&#44; 30)</code> should return <code>2</code>.');",
+        "assert(where([40, 60], 50) === 1, '<code>[40&#44; 60&#44;]&#44; 50</code> should return <code>1</code>');",
+        "assert(where([5, 3, 20, 3], 3) === 0, '<code>[5&#44; 3&#44; 20&#44; 3]&#44; 3</code> should return <code>0</code>/');",
+        "assert(where([2, 20, 10], 1) === 0, '<code>[2&#44; 20&#44; 10]&#44; 1</code> should return <code>0</code>.');",
+        "assert(where([2, 5, 10], 15) === 3, '<code>[2&#44; 5&#44; 10]&#44; 15</code> should return <code>3</code>.');"
       ],
       "type": "bonfire",
       "challengeType": 5,
