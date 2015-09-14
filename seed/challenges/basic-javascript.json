@@ -423,7 +423,7 @@
         "With JavaScript <code>array</code> variables, we can store several pieces of data in one place.",
         "You start an array declaration with an opening square bracket, end it with a closing square bracket, and put a comma between each entry, like this: <code>var sandwich = [\"peanut butter\", \"jelly\", \"bread\"]</code>.",
         "Now let's create a new array called <code>myArray</code> that contains both a <code>string</code> and a <code>number</code> (in that order).",
-        "Refer to the comments if you get stuck."
+        "Refer to the commented code in the text editor if you get stuck."
       ],
       "tests": [
         "assert(typeof(myArray) == 'object', '<code>myArray</code> should be an <code>array</code>.');",
@@ -450,7 +450,7 @@
       "title": "Nest one Array within Another Array",
       "difficulty":"9.98161",
       "description":[
-        "You can also nest arrays within other arrays, like this: <code>[[\"Bulls\", 43]]</code>.",
+        "You can also nest arrays within other arrays, like this: <code>[[\"Bulls\", 23]]</code>.",
         "Let's now go create a nested array called <code>myArray</code>."
       ],
       "tests":[
@@ -720,23 +720,23 @@
         "<code>};</code>",
         "</code>",
         "Objects are useful for storing data in a structured way, and can represent real world objects, like a cat.",
-        "Let's try to make an Object that represents a dog called myDog which contains the properties 'name' (String), 'legs' (Number), 'tails' (Number) and 'friends' (Array)!"
+        "Let's try to make an object that represents a dog called <code>myDog</code> which contains the properties <code>'name'</code> (String), <code>'legs'</code> (Number), <code>'tails'</code> (Number) and <code>'friends'</code> (Array)!"
       ],
       "tests":[
-        "assert((function(z){if(z.hasOwnProperty(\"name\") && z.name !== undefined && typeof(z.name) === \"string\"){return true;}else{return false;}})(myDog), 'myDog should contain the property name and it should be a string');",
-        "assert((function(z){if(z.hasOwnProperty(\"legs\") && z.legs !== undefined && typeof(z.legs) === \"number\"){return true;}else{return false;}})(myDog), 'myDog should contain the property legs and it should be a number');",
-        "assert((function(z){if(z.hasOwnProperty(\"tails\") && z.tails !== undefined && typeof(z.tails) === \"number\"){return true;}else{return false;}})(myDog), 'myDog should contain the property tails and it should be a number');",
-        "assert((function(z){if(z.hasOwnProperty(\"friends\") && z.friends !== undefined && Array.isArray(z.friends)){return true;}else{return false;}})(myDog), 'myDog should contain the property friends and it should be an array');"
+        "assert((function(z){if(z.hasOwnProperty(\"name\") && z.name !== undefined && typeof(z.name) === \"string\"){return true;}else{return false;}})(myDog), '<code>myDog</code> should contain the property <code>name</code> and it should be a <code>string</code>.');",
+        "assert((function(z){if(z.hasOwnProperty(\"legs\") && z.legs !== undefined && typeof(z.legs) === \"number\"){return true;}else{return false;}})(myDog), '<code>myDog</code> should contain the property <code>legs</code> and it should be a <code>number</code>.');",
+        "assert((function(z){if(z.hasOwnProperty(\"tails\") && z.tails !== undefined && typeof(z.tails) === \"number\"){return true;}else{return false;}})(myDog), '<code>myDog</code> should contain the property <code>tails</code> and it should be a <code>number</code>.');",
+        "assert((function(z){if(z.hasOwnProperty(\"friends\") && z.friends !== undefined && Array.isArray(z.friends)){return true;}else{return false;}})(myDog), '<code>myDog</code> should contain the property <code>friends</code> and it should be an <code>array</code>.');"
       ],
       "challengeSeed":[
-        "//var ourDog = {",
+        "// var ourDog = {",
         "//   \"name\": \"Camper\",",
         "//   \"legs\": 4,",
         "//   \"tails\": 1,",
         "//   \"friends\": [\"everything!\"]",
-        "//};",
+        "// };",
         "",
-        "// add the name(string), legs(number), tails(number) and friends(array) properties to myDog.",
+        "// Add the name (string), legs (number), tails (number) and friends (array) properties to myDog.",
         "// You can set them to whatever you want.",
         "",
         "// Only change code below this line.",
@@ -762,11 +762,11 @@
         "<code>myObject.myProperty = \"myValue\";</code>",
         "We can also delete them like this:",
         "<code>delete myObject.myProperty;</code>",
-        "Let's add the property \"bark\", and delete the property \"tails\"."
+        "Let's add the property <code>\"bark\"</code>, and delete the property <code>\"tails\"</code>."
       ],
       "tests":[
-        "assert(myDog.bark !== undefined, 'Add the property \"bark\" to myDog.');",
-        "assert(myDog.tails === undefined, 'Delete the property \"tails\" from myDog.');"
+        "assert(myDog.bark !== undefined, 'Add the property <code>\"bark\"</code> to <code>myDog</code>.');",
+        "assert(myDog.tails === undefined, 'Delete the property <code>\"tails\"</code> from <code>myDog</code>.');"
       ],
       "challengeSeed":[
         "// var ourDog = {",
@@ -816,8 +816,8 @@
         "Let's try getting a for loop to work by pushing values to an array."
       ],
       "tests":[
-        "assert(editor.getValue().match(/for/g), 'You should be using a for loop for this.');",
-        "assert.deepEqual(myArray, [0,1,2,3,4], 'myArray should equal [0,1,2,3,4]');"
+        "assert(editor.getValue().match(/for/g), 'You should be using a <code>for</code> loop for this.');",
+        "assert.deepEqual(myArray, [0,1,2,3,4], '<code>myArray</code> should equal [0,1,2,3,4].');"
       ],
       "challengeSeed":[
         "ourArray = [];",
@@ -855,8 +855,8 @@
         "Let's try getting a while loop to work by pushing values to an array."
       ],
       "tests":[
-        "assert(editor.getValue().match(/while/g), 'You should be using a while loop for this.');",
-        "assert.deepEqual(myArray, [0,1,2,3,4], 'myArray should equal [0,1,2,3,4]');"
+        "assert(editor.getValue().match(/while/g), 'You should be using a <code>while</code> loop for this.');",
+        "assert.deepEqual(myArray, [0,1,2,3,4], '<code>myArray</code> should equal [0,1,2,3,4].');"
       ],
       "challengeSeed":[
         "var myArray = [];",
@@ -883,18 +883,18 @@
         "Use <code>Math.random()</code> to get <code>myFunction</code> to return a random number."
       ],
       "tests":[
-        "assert(typeof(myFunction()) === \"number\", 'myFunction should return a random number');",
-        "assert((myFunction()+''). match(/\\./g), 'The number returned by myFunction should be a decimal');",
-        "assert(editor.getValue().match(/Math\\.random/g).length >= 2, 'You should be using Math.random to generate the random decimal number');"
+        "assert(typeof(myFunction()) === \"number\", '<code>myFunction</code> should return a random number.');",
+        "assert((myFunction()+''). match(/\\./g), 'The number returned by <code>myFunction</code> should be a decimal.');",
+        "assert(editor.getValue().match(/Math\\.random/g).length >= 2, 'You should be using <code>Math.random</code> to generate the random decimal number.');"
       ],
       "challengeSeed":[
         "function myFunction() {",
-        "  //Change the 0 to Math.random()",
+        "  // Change the 0 to Math.random().",
         "  // Only change code below this line.",
         "",
         "  return 0;",
         "",
-        "// Only change code above this line.",
+        "  // Only change code above this line.",
         "}",
         "",
         "// We use this function to show you the value of your variable in your output box.",
@@ -944,8 +944,8 @@
       "difficulty":"9.9829",
       "description":[
         "We can use a certain mathematical expression to get a random number between two numbers.",
-        "<code>Math.floor(Math.random() * (max - min + 1)) + min</code>. More info about how it works <a href=\"https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/Waypoint-Generate-Random-Whole-Numbers-within-a-Range#explanation\">here</a>.",
-        "By using this we can control the output of a random number."
+        "<code>Math.floor(Math.random() * (max - min + 1)) + min</code>",
+        "By using this, we can control the output of a random number."
       ],
       "tests":[
         "assert(myFunction() >= min, 'The random number that\\'s generated by myFunction should be greater than or equal to the minimum number');",
@@ -972,20 +972,19 @@
     },
     {
       "id":"cf1111c1c12feddfaeb3bdef",
-      "title": "Use Conditional Logic with If-Else Statements",
+      "title": "Use Conditional Logic with If and Else Statements",
       "difficulty":"9.983",
       "description":[
-        "We can use if statements in JavaScript to only execute code if a certain condition is met.",
-        "if statements require some sort of boolean condition to evaluate.",
-        "Example:",
+        "We can use <code>if</code> statements in JavaScript to only execute code if a certain condition is met.",
+        "<code>if</code> statements require some sort of boolean condition to evaluate.",
+        "For example:",
         "<code> if (1 === 2) {</code>",
         "<code>&thinsp;&thinsp;return true;</code>",
-        "<code>}</code>",
-        "<code>else {</code>",
+        "<code>} else {</code>",
         "<code>&thinsp;&thinsp;return false;</code>",
         "<code>}</code>",
         "Let's use <code>if</code> and <code>else</code> statements to make a coin-flip game.",
-        "Create an <code>if-else statement</code> to return <code>heads</code> if the flip var is zero, or else return <code>tails</code> if it's not."
+        "Create <code>if</code> and <code>else</code> statements to return the string <code>\"heads\"</code> if the flip variable is zero, or else return the string <code>\"tails\"</code> if the flip variable is not zero."
       ],
       "tests":[
         "assert((function(){var result = myFunction();if(result === 'heads' || result === 'tails'){return true;} else {return false;}})(), '<code>myFunction</code> should either return <code>heads</code> or <code>tails</code>.');",
@@ -1022,17 +1021,17 @@
         "<code>the</code> is the pattern we want to match.",
         "<code>g</code> means that we want to search the entire string for this pattern instead of just the first match.",
         "<code>i</code> means that we want to ignore the case (uppercase or lowercase) when searching for the pattern.",
-        "<code>Regular expressions</code> are written by surrounding the pattern with a <code>/</code> symbol.",
-        "Let's try selecting all the occurrences of the word <code>and</code> in the string <code>George Boole and Alan Turing went to the shop and got some milk</code>. We can do this by replacing the <code>.</code> part of our regular expression with the current <code>regular expression</code> with the word <code>and</code>."
+        "<code>Regular expressions</code> are written by surrounding the pattern with <code>/</code> symbols.",
+        "Let's try selecting all the occurrences of the word <code>and</code> in the string <code>Ada Lovelace and Charles Babbage designed the first computer and the software that would have run on it</code>. We can do this by replacing the <code>.</code> part of our regular expression with the current <code>regular expression</code> with the word <code>and</code>."
       ],
       "tests":[
-        "assert(test==2, 'Your <code>regular expression</code> should find two occurrences of the word <code>and</code>');",
-        "assert(editor.getValue().match(/\\/and\\/gi/), 'You should have used <code>regular expressions</code> to find the word <code>and</code>');"
+        "assert(test==2, 'Your <code>regular expression</code> should find two occurrences of the word <code>and</code>.');",
+        "assert(editor.getValue().match(/\\/and\\/gi/), 'You should have used <code>regular expressions</code> to find the word <code>and</code>.');"
       ],
       "challengeSeed":[
         "var test = (function() {",
-        "  var testString = \"George Boole and Alan Turing went to the shop and got some milk\";",
-        "  var expressionToGetMilk = /milk/gi;",
+        "  var testString = \"Ada Lovelace and Charles Babbage designed the first computer and the software that would have run on it.\";",
+        "  var expressionToGetSoftware = /software/gi;",
         "  // Only change code below this line.",
         "",
         "  var expression = /./gi;",
@@ -1057,8 +1056,8 @@
         "Use the <code>\\d</code> selector to select the number of numbers in the string, allowing for the possibility of multi-digit numbers."
       ],
       "tests":[
-        "assert(test === 2, 'Your RegEx should have found two numbers in the testString');",
-        "assert(editor.getValue().match(/\\/\\\\d\\+\\//gi), 'You should be using the following expression /\\\\d+/gi to find the numbers in the testString');"
+        "assert(test === 2, 'Your RegEx should have found two numbers in the <code>testString</code>.');",
+        "assert(editor.getValue().match(/\\/\\\\d\\+\\//gi), 'You should be using the following expression <code>/\\\\d+/gi</code> to find the numbers in the <code>testString</code>.');"
       ],
       "challengeSeed":[
         "var test = (function() {",
@@ -1088,7 +1087,7 @@
       ],
       "tests":[
         "assert(test === 7, 'Your RegEx should have found seven spaces in the <code>testString</code>.');",
-        "assert(editor.getValue().match(/\\/\\\\s\\+\\//gi), 'You should be using the following expression /\\\\s+/gi to find the spaces in the <code>testString</code>.');"
+        "assert(editor.getValue().match(/\\/\\\\s\\+\\//gi), 'You should be using the following expression <code>/\\\\s+/gi</code> to find the spaces in the <code>testString</code>.');"
       ],
       "challengeSeed":[
         "var test = (function(){",
@@ -1303,7 +1302,7 @@
         "<code>}</code>"
       ],
       "tests":[
-        "assert((function(){var data = runSlots();if(data === null){return true}else{if(data[0] === data[1] && data[1] === data[2]){return true;}else{return false;}}})(), 'If all three of our random numbers are the same we should return that number. Otherwise we should return null.')"
+        "assert((function(){var data = runSlots();if(data === null){return true}else{if(data[0] === data[1] && data[1] === data[2]){return true;}else{return false;}}})(), 'If all three of our random numbers are the same we should return that number. Otherwise we should return <code>null</code>.')"
       ],
       "challengeSeed":[
         "fccss",
@@ -1461,8 +1460,8 @@
         "Use the above selector to display each number in its corresponding slot."
       ],
       "tests":[
-        "assert((function(){runSlots();if($($(\".slot\")[0]).html().replace(/\\s/gi, \"\") !== \"\" && $($(\".slot\")[1]).html().replace(/\\s/gi, \"\") !== \"\" && $($(\".slot\")[2]).html().replace(/\\s/gi, \"\") !== \"\"){return true;}else{return false;}})(), 'You should be displaying the result of the slot numbers in the corresponding slots')",
-        "assert((editor.match( /\\$\\s*?\\(\\s*?\\$\\s*?\\(\\s*?(?:'|\")\\s*?\\.slot\\s*?(?:'|\")\\s*?\\)\\[\\d\\]\\s*?\\)/gi) && editor.match( /\\$\\s*?\\(\\s*?\\$\\s*?\\(\\s*?(?:'|\")\\s*?\\.slot\\s*?(?:'|\")\\s*?\\)\\[\\d\\]\\s*?\\)/gi ).length >= 3 && editor.match( /\\.html\\(slotOne\\)/gi ) && editor.match( /\\.html\\(slotTwo\\)/gi ) && editor.match( /\\.html\\(slotThree\\)/gi )), 'You should have used the the selector given in the description to select each slot and assign it the value of <code>slotOne</code>&#44; <code>slotTwo</code> and <code>slotThree</code> respectively')"
+        "assert((function(){runSlots();if($($(\".slot\")[0]).html().replace(/\\s/gi, \"\") !== \"\" && $($(\".slot\")[1]).html().replace(/\\s/gi, \"\") !== \"\" && $($(\".slot\")[2]).html().replace(/\\s/gi, \"\") !== \"\"){return true;}else{return false;}})(), 'You should be displaying the result of the slot numbers in the corresponding slots.')",
+        "assert((editor.match( /\\$\\s*?\\(\\s*?\\$\\s*?\\(\\s*?(?:'|\")\\s*?\\.slot\\s*?(?:'|\")\\s*?\\)\\[\\d\\]\\s*?\\)/gi) && editor.match( /\\$\\s*?\\(\\s*?\\$\\s*?\\(\\s*?(?:'|\")\\s*?\\.slot\\s*?(?:'|\")\\s*?\\)\\[\\d\\]\\s*?\\)/gi ).length >= 3 && editor.match( /\\.html\\(slotOne\\)/gi ) && editor.match( /\\.html\\(slotTwo\\)/gi ) && editor.match( /\\.html\\(slotThree\\)/gi )), 'You should have used the the selector given in the description to select each slot and assign it the value of <code>slotOne</code>&#44; <code>slotTwo</code> and <code>slotThree</code> respectively.')"
       ],
       "challengeSeed":[
         "fccss",
@@ -1626,13 +1625,13 @@
         "Set up all three slots like this, then click the \"Go\" button to play the slot machine."
       ],
       "tests":[
-        "assert((editor.match(/\\$\\s*?\\(\\s*?\\$\\s*?\\(\\s*?(?:'|\")\\s*?\\.slot\\s*?(?:'|\")\\s*?\\)\\[\\d\\]\\s*?\\)\\.html\\(\\s*?\\'\\<img\\s?src\\s?=\\s?\"\\'\\s?\\+\\s?images\\[\\w+\\-1\\]\\s?\\+\\s?\\'\"\\>\\'\\s*?\\);/gi) && editor.match(/\\$\\s*?\\(\\s*?\\$\\s*?\\(\\s*?(?:'|\")\\s*?\\.slot\\s*?(?:'|\")\\s*?\\)\\[\\d\\]\\s*?\\)\\.html\\(\\s*?\\'\\<img\\s?src\\s?=\\s?\"\\'\\s?\\+\\s?images\\[\\w+\\-1\\]\\s?\\+\\s?\\'\"\\>\\'\\s*?\\);/gi).length >= 3), 'Use the provided code three times. One for each slot')",
-        "assert(editor.match(/\\$\\s*?\\(\\s*?\\$\\s*?\\(\\s*?(?:'|\")\\s*?\\.slot\\s*?(?:'|\")\\s*?\\)\\[0\\]\\s*?\\)/gi), 'You should have used <code>$&#40;&#39;.slot&#39;&#41;[0]</code> at least once')",
-        "assert(editor.match(/\\$\\s*?\\(\\s*?\\$\\s*?\\(\\s*?(?:'|\")\\s*?\\.slot\\s*?(?:'|\")\\s*?\\)\\[1\\]\\s*?\\)/gi), 'You should have used <code>$&#40;&#39;.slot&#39;&#41;[1]</code> at least once')",
-        "assert(editor.match(/\\$\\s*?\\(\\s*?\\$\\s*?\\(\\s*?(?:'|\")\\s*?\\.slot\\s*?(?:'|\")\\s*?\\)\\[2\\]\\s*?\\)/gi), 'You should have used <code>$&#40;&#39;.slot&#39;&#41;[2]</code> at least once')",
-        "assert(editor.match(/slotOne/gi) && editor.match(/slotOne/gi).length >= 7, 'You should have used the slotOne value at least once')",
-        "assert(editor.match(/slotTwo/gi) && editor.match(/slotTwo/gi).length >= 8, 'You should have used the slotTwo value at least once')",
-        "assert(editor.match(/slotThree/gi) && editor.match(/slotThree/gi).length >= 7, 'You should have used the slotThree value at least once')"
+        "assert((editor.match(/\\$\\s*?\\(\\s*?\\$\\s*?\\(\\s*?(?:'|\")\\s*?\\.slot\\s*?(?:'|\")\\s*?\\)\\[\\d\\]\\s*?\\)\\.html\\(\\s*?\\'\\<img\\s?src\\s?=\\s?\"\\'\\s?\\+\\s?images\\[\\w+\\-1\\]\\s?\\+\\s?\\'\"\\>\\'\\s*?\\);/gi) && editor.match(/\\$\\s*?\\(\\s*?\\$\\s*?\\(\\s*?(?:'|\")\\s*?\\.slot\\s*?(?:'|\")\\s*?\\)\\[\\d\\]\\s*?\\)\\.html\\(\\s*?\\'\\<img\\s?src\\s?=\\s?\"\\'\\s?\\+\\s?images\\[\\w+\\-1\\]\\s?\\+\\s?\\'\"\\>\\'\\s*?\\);/gi).length >= 3), 'Use the provided code three times. One for each slot.')",
+        "assert(editor.match(/\\$\\s*?\\(\\s*?\\$\\s*?\\(\\s*?(?:'|\")\\s*?\\.slot\\s*?(?:'|\")\\s*?\\)\\[0\\]\\s*?\\)/gi), 'You should have used <code>$&#40;&#39;.slot&#39;&#41;[0]</code> at least once.')",
+        "assert(editor.match(/\\$\\s*?\\(\\s*?\\$\\s*?\\(\\s*?(?:'|\")\\s*?\\.slot\\s*?(?:'|\")\\s*?\\)\\[1\\]\\s*?\\)/gi), 'You should have used <code>$&#40;&#39;.slot&#39;&#41;[1]</code> at least once.')",
+        "assert(editor.match(/\\$\\s*?\\(\\s*?\\$\\s*?\\(\\s*?(?:'|\")\\s*?\\.slot\\s*?(?:'|\")\\s*?\\)\\[2\\]\\s*?\\)/gi), 'You should have used <code>$&#40;&#39;.slot&#39;&#41;[2]</code> at least once.')",
+        "assert(editor.match(/slotOne/gi) && editor.match(/slotOne/gi).length >= 7, 'You should have used the <code>slotOne</code> value at least once.')",
+        "assert(editor.match(/slotTwo/gi) && editor.match(/slotTwo/gi).length >= 8, 'You should have used the <code>slotTwo</code> value at least once.')",
+        "assert(editor.match(/slotThree/gi) && editor.match(/slotThree/gi).length >= 7, 'You should have used the <code>slotThree</code> value at least once.')"
       ],
       "challengeSeed":[
         "fccss",
