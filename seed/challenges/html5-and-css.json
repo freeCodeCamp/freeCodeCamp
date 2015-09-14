@@ -866,7 +866,8 @@
       "description": [
         "CSS borders have properties like <code>style</code>, <code>color</code> and <code>width</code>.",
         "For example, if we wanted to create a red, 5 pixel border around an HTML element, we could use this class: <code>&#60;style&#62; .thin-red-border { border-color: red; border-width: 5px; border-style: solid; } &#60;/style&#62;</code>.",
-        "Create a class called <code>thick-green-border</code> that puts a 10-pixel-wide green border with a style of <code>solid</code> around an HTML element, and apply that class to your cat photo. You can apply multiple classes to elements by separating them with a space within the <code>class</code> attribute. For example, <code>&lt;element class=\"class1 class2\"&gt;&lt;/element&gt;</code>"
+        "Create a class called <code>thick-green-border</code> that puts a 10-pixel-wide green border with a style of <code>solid</code> around an HTML element, and apply that class to your cat photo.",
+        "Remember that you can apply multiple classes to an element by separating each class with a space within its <code>class</code> attribute. For example: <code>&lt;img class=\"class1 class2\"&gt;</code>"
       ],
       "tests": [
         "assert($(\"img\").hasClass(\"smaller-image\"), 'Your <code>img</code> element should have the class <code>smaller-image</code>.')",
@@ -1060,7 +1061,7 @@
       "description": [
         "<code>a</code> elements, also known as <code>anchor</code> elements, are used to link to content outside of the current page.",
         "Here's a diagram of an <code>a</code> element. In this case, the <code>a</code> element is used in the middle of a paragraph element, which means the link will appear in the middle of a sentence.",
-        "<img class=\"img-responsive\" alt=\"a diagram of how anchor tags are composed with the same text as on the following line\" src=\"http://i.imgur.com/hviuZwe.png\">",
+        "<a href=\"http://i.imgur.com/hviuZwe.png\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" title=\"Click to enlarge\" alt=\"a diagram of how anchor tags are composed with the same text as on the following line\" src=\"http://i.imgur.com/hviuZwe.png\"></a>",
         "Here's an example: <code>&#60;p&#62;Here's a &#60;a href=\"http://freecodecamp.com\"&#62; link to Free Code Camp&#60;/a&#62; for you to follow.&#60;/p&#62;</code>.",
         "Create an <code>a</code> element that links to <code>http://freecatphotoapp.com</code> and has \"cat photos\" as its <code>anchor text</code>."
       ],
@@ -1130,7 +1131,7 @@
       "difficulty": 1.23,
       "description": [
         "Again, here's a diagram of an <code>a</code> element for your reference:",
-        "<img class=\"img-responsive\" alt=\"a diagram of how anchor tags are composed with the same text as on the following line\" src=\"http://i.imgur.com/hviuZwe.png\">",
+        "<a href=\"http://i.imgur.com/hviuZwe.png\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" title=\"Click to enlarge\" alt=\"a diagram of how anchor tags are composed with the same text as on the following line\" src=\"http://i.imgur.com/hviuZwe.png\"></a>",
         "Here's an example: <code>&#60;p&#62;Here's a &#60;a href=\"http://freecodecamp.com\"&#62; link to Free Code Camp&#60;/a&#62; for you to follow.&#60;/p&#62;</code>.",
         "<code>Nesting</code> just means putting one element inside of another element.",
         "Now nest your existing <code>a</code> element within a new <code>p</code> element so that the surrounding paragraph says \"click here for cat photos\", but where only \"cat photos\" is a link, and the rest of the text is rest is plain text."
