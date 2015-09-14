@@ -18,8 +18,6 @@ block content
     script(src='/js/lib/codemirror/mode/css/css.js')
     script(src='/js/lib/codemirror/mode/htmlmixed/htmlmixed.js')
     script(src='/js/lib/codemirror/addon/emmet/emmet.js')
-    script(src='/js/lib/lightbox2/dist/js/lightbox.min.js')
-    link(rel='stylesheet', href='/js/lib/lightbox2/dist/css/lightbox.css')
     .row.courseware-height
         .col-xs-12.col-sm-12.col-md-3.col-lg-3
             .scroll-locker(id = "scroll-locker")
@@ -88,7 +86,6 @@ block content
                         a.close.closing-x(href='#', data-dismiss='modal', aria-hidden='true') ×
                     .modal-body
                         .text-center
-<<<<<<< HEAD
                             #checkmark-container.row
                                 #challenge-checkmark.animated.zoomInDown.delay-half
                                     span.completion-icon.ion-checkmark-circled.text-primary
@@ -97,9 +94,4 @@ block content
                                 #submit-challenge.animated.fadeIn.btn.btn-lg.btn-primary.btn-block Submit and go to my next challenge (ctrl + enter)
                             else
                                 a.btn.btn-lg.btn-primary.btn-block(href='/challenges/next-challenge?id=' + challengeId) Go to my next challenge
-=======
-                            .animated.zoomInDown
-                                span.completion-icon.ion-checkmark-circled.text-primary
-                            a.animated.fadeIn.btn.btn-lg.signup-btn.btn-block(href='/login') Sign in so you can save your progress
->>>>>>> 45e8cef504bada71c3fa805b8e0422208299eada
     include ../partials/challenge-modals
