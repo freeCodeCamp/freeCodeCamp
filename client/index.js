@@ -37,6 +37,7 @@ app$({ history, location: appLocation })
     ({ nextLocation, props }, appCat) => ({ nextLocation, props, appCat })
   )
   .flatMap(({ props, appCat }) => {
+    props.history = history;
     return Render(
       appCat,
       React.createElement(Router, props),
