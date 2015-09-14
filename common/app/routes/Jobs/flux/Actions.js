@@ -31,6 +31,12 @@ export default Actions({
   getJob: null,
   getJobs(params) {
     return { params };
+  },
+  openModal() {
+    return { showModal: true };
+  },
+  closeModal() {
+    return { showModal: false };
   }
 })
   .refs({ displayName: 'JobActions' })

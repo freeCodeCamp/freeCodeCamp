@@ -2,6 +2,8 @@ import React, { cloneElement, PropTypes } from 'react';
 import { contain } from 'thundercats-react';
 import { History } from 'react-router';
 import { Button, Jumbotron, Row } from 'react-bootstrap';
+
+import CreateJobModal from './CreateJobModal.jsx';
 import ListJobs from './List.jsx';
 
 export default contain(
@@ -13,12 +15,14 @@ export default contain(
   React.createClass({
     displayName: 'Jobs',
 
+    mixins: [History],
+
     propTypes: {
       children: PropTypes.element,
       jobActions: PropTypes.object,
-      jobs: PropTypes.array
+      jobs: PropTypes.array,
+      showModal: PropTypes.bool
     },
-    mixins: [History],
 
     handleJobClick(id) {
       const { jobActions } = this.props;
@@ -48,7 +52,12 @@ export default contain(
     },
 
     render() {
-      const { children, jobs } = this.props;
+      const {
+        children,
+        jobs,
+        showModal,
+        jobActions
+      } = this.props;
 
       return (
         <div>
@@ -62,7 +71,8 @@ export default contain(
               </p>
               <Button
                 bsSize='large'
-                className='signup-btn'>
+                className='signup-btn'
+                onClick={ jobActions.openModal }>
                 Try the first month 20% off!
               </Button>
             </Jumbotron>
@@ -70,7 +80,10 @@ export default contain(
           <Row>
             { this.renderChild(children, jobs) ||
               this.renderList(this.handleJobClick, jobs) }
-            </Row>
+          </Row>
+          <CreateJobModal
+            onHide={ jobActions.closeModal }
+            showModal={ showModal } />
         </div>
       );
     }
