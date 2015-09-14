@@ -13,7 +13,7 @@
       ],
       "challengeSeed": [
         "function sumAll(arr) {",
-        "  return(1);",
+        "  return 1;",
         "}",
         "",
         "sumAll([1, 4]);"
@@ -113,9 +113,52 @@
         "convert(36);"
       ],
       "MDNlinks": [
+        "Roman Numerals",
         "Array.splice()",
         "Array.indexOf()",
         "Array.join()"
+      ],
+      "type": "bonfire",
+      "challengeType": 5,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
+    },
+    {
+      "id": "a8e512fbe388ac2f9198f0fa",
+      "title": "Where art thou",
+      "difficulty": "2.03",
+      "description": [
+        "Make a function that looks through an array of objects (first argument) and returns an array of all objects that have matching property and value pairs (second argument). Each property and value pair of the source object has to be present in the object from the collection if it is to be included in the returned array.",
+        "For example, if the first argument is <code>[{ first: 'Romeo', last: 'Montague' }, { first: 'Mercutio', last: null }, { first: 'Tybalt', last: 'Capulet' }]</code>, and the second argument is <code>{ last: 'Capulet' }</code>, then you must return the third object from the array (the first argument), because it contains the property and it's value, that was passed on as the second argument.",
+        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Write your own code."
+      ],
+      "challengeSeed": [
+        "function where(collection, source) {",
+        "  var arr = [];",
+        "  // What's in a name?",
+        "  return arr;",
+        "}",
+        "",
+        "where([{ first: 'Romeo', last: 'Montague' }, { first: 'Mercutio', last: null }, { first: 'Tybalt', last: 'Capulet' }], { last: 'Capulet' });"
+      ],
+      "tests": [
+        "assert.deepEqual(where([{ first: 'Romeo', last: 'Montague' }, { first: 'Mercutio', last: null }, { first: 'Tybalt', last: 'Capulet' }], { last: 'Capulet' }), [{ first: 'Tybalt', last: 'Capulet' }], 'should return an array of objects');",
+        "assert.deepEqual(where([{ 'a': 1 }, { 'a': 1 }, { 'a': 1, 'b': 2 }], { 'a': 1 }), [{ 'a': 1 }, { 'a': 1 }, { 'a': 1, 'b': 2 }], 'should return with multiples');",
+        "assert.deepEqual(where([{ 'a': 1, 'b': 2 }, { 'a': 1 }, { 'a': 1, 'b': 2, 'c': 2 }], { 'a': 1, 'b': 2 }), [{ 'a': 1, 'b': 2 }, { 'a': 1, 'b': 2, 'c': 2 }], 'should return two objects in array');",
+        "assert.deepEqual(where([{ 'a': 5 }, { 'a': 5 }, { 'a': 5, 'b': 10 }], { 'a': 5, 'b': 10 }), [{ 'a': 5, 'b': 10 }], 'should return a single object in array');"
+      ],
+      "MDNlinks": [
+        "Global Object",
+        "Object.hasOwnProperty()",
+        "Object.keys()"
       ],
       "type": "bonfire",
       "challengeType": 5,
@@ -140,7 +183,7 @@
         "assert(replace(\"His name is Tom\", \"Tom\", \"john\") === \"His name is John\", '<code>\"His name is Tom\", \"Tom\", \"john\"</code> should return <code>\"His name is John\"</code>.');",
         "assert(replace(\"Let us get back to more Coding\", \"Coding\", \"bonfires\") === \"Let us get back to more Bonfires\"), '<code>\"Let us get back to more Coding\", \"Coding\", \"bonfires\"</code> should return <code>\"Let us get back to more Bonfires\"</code>');"
       ],
-      "difficulty": "2.03",
+      "difficulty": "2.035",
       "description": [
         "Perform a search and replace on the sentence using the arguments provided and return the new sentence.",
         "First argument is the sentence to perform the search and replace on.",
@@ -232,7 +275,7 @@
         "<a href=\"http://en.wikipedia.org/wiki/Base_pair\" target=\"_blank\">Base pairs</a> are a pair of AT and CG. Match the missing element to the provided character.",
         "Return the provided character as the first element in each array.",
         "For example, for the input GCG, return [['G', 'C'], ['C','G'],['G', 'C']]",
-        "The charater and its pair are paired up in an array, and all the arrays are grouped into one encapsulating array.",
+        "The character and its pair are paired up in an array, and all the arrays are grouped into one encapsulating array.",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "challengeSeed": [
@@ -549,9 +592,9 @@
       "title": "Smallest Common Multiple",
       "difficulty": "2.11",
       "description": [
-        "Find the smallest number that is evenly divisible by all numbers in the provided range.",
-        "In other words, given the range [3,7], you will need to find the least common multiple of 3, 4, 5, 6, and 7.",
+        "Find the smallest common multiple of the provided parameters that can be evenly divided by both, as well as by all sequential numbers in the range between these parameters.",
         "The range will be an array of two numbers that will not necessarily be in numerical order.",
+          "e.g. for 1 and 3 - find the smallest common multiple of both 1 and 3 that is evenly divisible by all numbers <em>between</em> 1 and 3.",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "challengeSeed": [
@@ -637,9 +680,10 @@
         "drop([1, 2, 3], function(n) {return n < 3; });"
       ],
       "tests": [
-        "assert(drop([1, 2, 3, 4], function(n) {return n >= 3; })).to.eqls([3, 4], '.');",
-        "assert(drop([1, 2, 3], function(n) {return n > 0; })).to.eqls([1, 2, 3], '.');",
-        "assert(drop([1, 2, 3, 4], function(n) {return n > 5; })).to.eqls([]);"
+        "expect(drop([1, 2, 3, 4], function(n) {return n >= 3; })).to.eqls([3, 4]);",
+        "expect(drop([1, 2, 3], function(n) {return n > 0; })).to.eqls([1, 2, 3]);",
+        "expect(drop([1, 2, 3, 4], function(n) {return n > 5; })).to.eqls([]);",
+        "expect(drop([1, 2, 3, 7, 4], function(n) { return n > 5; })).to.eqls([7, 4]);"
       ],
       "MDNlinks": [
         "Arguments object",

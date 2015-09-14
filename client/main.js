@@ -66,10 +66,64 @@ $(document).ready(function() {
         }, 200);
       });
 
+      $('#search-issue').unbind('click');
+      $('#search-issue').on('click', function() {
+          var queryIssue = window.location.href.toString();
+          window.open('https://github.com/FreeCodeCamp/FreeCodeCamp/issues?q=' +
+            'is:issue is:all ' + (challenge_Name || challengeName) + ' OR ' +
+            queryIssue.substr(queryIssue.lastIndexOf('challenges/') + 11)
+            .replace('/', ''), '_blank');
+      });
+
+      $('#help-ive-found-a-bug-wiki-article').unbind('click');
+      $('#help-ive-found-a-bug-wiki-article').on('click', function() {
+        window.open("https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/Help-I've-Found-a-Bug", '_blank');
+      });
+
       $('#report-issue').unbind('click');
       $('#report-issue').on('click', function() {
+          var textMessage = [
+            'Challenge [',
+            (challenge_Name || challengeName || window.location.href),
+            '](',
+            window.location.href,
+            ') has an issue.\n',
+            'User Agent is: <code>',
+            navigator.userAgent,
+            '</code>.\n',
+            'Please describe how to reproduce this issue, and include ',
+            'links to screenshots if possible.\n\n'
+          ].join('');
+
+          if ($('#include-code').prop('checked')) {
+            var type;
+            switch (challengeType) {
+              case challengeTypes.HTML_CSS_JQ:
+                type = 'html';
+                break;
+              case challengeTypes.JAVASCRIPT:
+                type = 'javascript';
+                break;
+              default:
+                type = '';
+            }
+
+            textMessage += [
+              'My code:\n```',
+              type,
+              '\n',
+              editor.getValue(),
+              '\n```'
+            ].join('');
+          }
+
+          textMessage = encodeURIComponent(textMessage);
+
           $('#issue-modal').modal('hide');
-          window.open('https://github.com/freecodecamp/freecodecamp/issues/new?&body=Challenge '+ window.location.href +' has an issue. Please describe how to reproduce it, and include links to screenshots if possible.', '_blank')
+          window.open(
+            'https://github.com/freecodecamp/freecodecamp/issues/new?&body=' +
+            textMessage, '_blank'
+          );
       });
 
       $('#completed-courseware').unbind('click');
@@ -125,7 +179,7 @@ $(document).ready(function() {
                           }).success(
                           function(res) {
                               if (res) {
-                                  window.location.href = '/challenges/next-challenge';
+                                  window.location.href = '/challenges/next-challenge?id=' + challenge_Id;
                               }
                           }).fail(
                           function() {
@@ -148,7 +202,7 @@ $(document).ready(function() {
                               }
                           }).success(
                           function() {
-                              window.location.href = '/challenges/next-challenge';
+                              window.location.href = '/challenges/next-challenge?id=' + challenge_Id;
                           }).fail(
                           function() {
                               window.location.href = '/challenges';
@@ -171,23 +225,17 @@ $(document).ready(function() {
                                   verified: false
                               }
                           }).success(function() {
-                              window.location.href = '/challenges/next-challenge';
+                              window.location.href = '/challenges/next-challenge?id=' + challenge_Id;
                           }).fail(function() {
                               window.location.replace(window.location.href);
                           });
                       break;
                   case challengeTypes.BONFIRE:
-                      window.location.href = '/challenges/next-challenge';
+                      window.location.href = '/challenges/next-challenge?id=' + challenge_Id;
                   default:
                       break;
               }
           }
-      });
-
-      $('.next-challenge-button').unbind('click');
-      $('.next-challenge-button').on('click', function() {
-          l = location.pathname.split('/');
-          window.location = '/challenges/' + (parseInt(l[l.length - 1]) + 1);
       });
 
       $('#complete-courseware-dialog').on('hidden.bs.modal', function() {

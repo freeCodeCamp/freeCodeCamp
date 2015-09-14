@@ -372,7 +372,7 @@
       "difficulty": 1.09,
       "description": [
         "Delete your <code>h2</code> element's style attribute and instead create a CSS <code>style</code> element. Add the necessary CSS to turn all <code>h2</code> elements blue.",
-        "With CSS, there are hundreds of CSS <code>attributes</code> that you can use to change the way an element looks on your page.",
+        "With CSS, there are hundreds of CSS <code>properties</code> that you can use to change the way an element looks on your page.",
         "When you entered <code>&#60;h2 style=\"color: red\"&#62;CatPhotoApp&#60;/h2&#62;</code>, you were giving that individual <code>h2</code> element an <code>inline style</code>.",
         "That's one way to add style to an element, but a better way is by using <code>CSS</code>, which stands for <code>Cascading Style Sheets</code>.",
         "At the top of your code, create a <code>style</code> element like this: <code>&#60;style&#62;&#60;/style&#62;</code>.",
@@ -383,7 +383,7 @@
         "assert(!$(\"h2\").attr(\"style\"), 'Remove the style attribute from your <code>h2</code> element.')",
         "assert($(\"style\") && $(\"style\").length > 1, 'Create a <code>style</code> element.')",
         "assert($(\"h2\").css(\"color\") === \"rgb(0, 0, 255)\", 'Your <code>h2</code> element should be blue.')",
-        "assert(editor.match(/<\\/style>/g) && editor.match(/<\\/style>/g).length === editor.match(/<style>/g).length, 'Make sure each of your <code>style</code> elements has a closing tag.')"
+        "assert(editor.match(/<\\/style>/g) && editor.match(/<\\/style>/g).length === (editor.match(/<style((\\s)*((type|media|scoped|title|disabled)=\"[^\"]*\")?(\\s)*)*>/g) || []).length, 'Make sure all your <code>style</code> elements are valid and have a closing tag.')"
       ],
       "challengeSeed": [
         "<h2 style=\"color: red\">CatPhotoApp</h2>",
@@ -544,7 +544,7 @@
       "description": [
         "Create a second <code>p</code> element with the following <code>kitty ipsum text</code>: <code>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</code>",
         "Then, inside your <code>&#60;style&#62;</code> element, set the <code>font-size</code> of all <code>p</code> elements to 16 pixels.",
-        "Font size is controlled by the <code>font-size</code> CSS attribute, like this: <code>h1 { font-size: 30px; }</code>.",
+        "Font size is controlled by the <code>font-size</code> CSS property, like this: <code>h1 { font-size: 30px; }</code>.",
         "See if you can figure out how to give both of your <code>p</code> elements the font-size of 16 pixels (<code>16px</code>). You can do this inside the same <code>&#60;style&#62;</code> tag that we created for your <code>red-text</code> class."
       ],
       "tests": [
@@ -595,7 +595,7 @@
       "difficulty": 1.14,
       "description": [
         "Make all of your <code>p</code> elements use the <code>Monospace</code> font.",
-        "You can set an element's font by using the <code>font-family</code> attribute.",
+        "You can set an element's font by using the <code>font-family</code> property.",
         "For example, if you wanted to set your <code>h2</code> element's font to <code>Sans-serif</code>, you would use the following CSS: <code>h2 { font-family: Sans-serif; }</code>."
       ],
       "tests": [
@@ -645,7 +645,7 @@
         "First, you'll need to make a <code>call</code> to Google to grab the <code>Lobster</code> font and load it into your HTML.",
         "Copy the following code snippet and paste it into your code editor:",
         "<code>&#60;link href=\"http://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\"&#62;</code>.",
-        "Now you can set <code>Lobster</code> as a font-family attribute on your <code>h2</code> element."
+        "Now you can set <code>Lobster</code> as a font-family value on your <code>h2</code> element."
       ],
       "tests": [
         "assert(new RegExp(\"googleapis\", \"gi\").test(editor), 'Import the <code>Lobster</code> font.')",
@@ -754,7 +754,7 @@
       "difficulty": 1.17,
       "description": [
         "You can add images to your website by using the <code>img</code> element, and point to a specific image's URL using the <code>src</code> attribute.",
-        "An example of this would be <code>&#60img src=\"www.your-image-source.com/your-image.jpg\"&#62</code>. Note that in most cases, <code>img</code> elements are self-closing.",
+        "An example of this would be <code>&#60img src=\"http://www.your-image-source.com/your-image.jpg\"&#62</code>. Note that in most cases, <code>img</code> elements are self-closing.",
         "Try it with this image: <code>https://bit.ly/fcc-relaxing-cat</code>."
       ],
       "tests": [
@@ -808,7 +808,7 @@
       "title": "Size your Images",
       "difficulty": 1.18,
       "description": [
-        "CSS has an attribute called <code>width</code> that controls an element's width. Just like with fonts, we'll use <code>px</code> (pixels) to specify the image's width.",
+        "CSS has a property called <code>width</code> that controls an element's width. Just like with fonts, we'll use <code>px</code> (pixels) to specify the image's width.",
         "For example, if we wanted to create a CSS class called <code>larger-image</code> that gave HTML elements a width of 500 pixels, we'd use: <code>&#60;style&#62; .larger-image { width: 500px; } &#60;/style&#62;</code>.",
         "Create a class called <code>smaller-image</code> and use it to resize the image so that it's only 100 pixels wide."
       ],
@@ -864,15 +864,15 @@
       "title": "Add Borders Around your Elements",
       "difficulty": 1.19,
       "description": [
-        "CSS borders have attributes like <code>style</code>, <code>color</code> and <code>width</code>.",
+        "CSS borders have properties like <code>style</code>, <code>color</code> and <code>width</code>.",
         "For example, if we wanted to create a red, 5 pixel border around an HTML element, we could use this class: <code>&#60;style&#62; .thin-red-border { border-color: red; border-width: 5px; border-style: solid; } &#60;/style&#62;</code>.",
-        "Create a class called <code>thick-green-border</code> that puts a 10-pixel-wide green border with a style of <code>solid</code> around an HTML element, and apply that class to your cat photo."
+        "Create a class called <code>thick-green-border</code> that puts a 10-pixel-wide green border with a style of <code>solid</code> around an HTML element, and apply that class to your cat photo. You can apply multiple classes to elements by separating them with a space within the <code>class</code> attribute. For example, <code>&lt;element class=\"class1 class2\"&gt;&lt;/element&gt;</code>"
       ],
       "tests": [
         "assert($(\"img\").hasClass(\"smaller-image\"), 'Your <code>img</code> element should have the class <code>smaller-image</code>.')",
         "assert($(\"img\").hasClass(\"thick-green-border\"), 'Your <code>img</code> element should have the class <code>thick-green-border</code>.')",
-        "assert($(\"img\").hasClass(\"thick-green-border\") && parseInt($(\"img\").css(\"border-top-width\")), 'Give your image a border width of <code>10px</code>.')",
-        "assert(new RegExp(\"solid\", \"gi\").test(editor), 'Give your image a border style of <code>solid</code>.')",
+        "assert($(\"img\").hasClass(\"thick-green-border\") && parseInt($(\"img\").css(\"border-top-width\"), 10) === 10, 'Give your image a border width of <code>10px</code>.')",
+        "assert($(\"img\").css(\"border-right-style\") === \"solid\", 'Give your image a border style of <code>solid</code>.')",
         "assert($(\"img\").css(\"border-left-color\") === \"rgb(0, 128, 0)\", 'The border around your <code>img</code> element should be green.')"
       ],
       "challengeSeed": [
@@ -927,8 +927,8 @@
       "title": "Add Rounded Corners with a Border Radius",
       "difficulty": 1.20,
       "description": [
-        "Your cat photo currently has sharp corners. We can round out those corners with a CSS attribute called <code>border-radius</code>.",
-        "You can specify a <code>border-radius</code> with pixels. This will affect how rounded the corners are. Add this attribute to your <code>thick-green-border</code> class and set it to <code>10px</code>.",
+        "Your cat photo currently has sharp corners. We can round out those corners with a CSS property called <code>border-radius</code>.",
+        "You can specify a <code>border-radius</code> with pixels. This will affect how rounded the corners are. Add this property to your <code>thick-green-border</code> class and set it to <code>10px</code>.",
         "Give your cat photo a <code>border-radius</code> of <code>10px</code>."
       ],
       "tests": [
@@ -1062,11 +1062,11 @@
         "Here's a diagram of an <code>a</code> element. In this case, the <code>a</code> element is used in the middle of a paragraph element, which means the link will appear in the middle of a sentence.",
         "<img class=\"img-responsive\" alt=\"a diagram of how anchor tags are composed with the same text as on the following line\" src=\"http://i.imgur.com/hviuZwe.png\">",
         "Here's an example: <code>&#60;p&#62;Here's a &#60;a href=\"http://freecodecamp.com\"&#62; link to Free Code Camp&#60;/a&#62; for you to follow.&#60;/p&#62;</code>.",
-        "Create an <code>a</code> element that links to <code>http://catphotoapp.com</code> and has \"cat photos\" as its <code>anchor text</code>."
+        "Create an <code>a</code> element that links to <code>http://freecatphotoapp.com</code> and has \"cat photos\" as its <code>anchor text</code>."
       ],
       "tests": [
         "assert((/cat photos/gi).test($(\"a\").text()), 'Your <code>a</code> element should have the <code>anchor text</code> of \"cat photos\"')",
-        "assert(/http:\\/\\/catphotoapp\\.com/gi.test($(\"a\").attr(\"href\")), 'You need an <code>a</code> element that links to <code>http&#58;//catphotoapp.com</code>.')",
+        "assert(/http:\\/\\/freecatphotoapp\\.com/gi.test($(\"a\").attr(\"href\")), 'You need an <code>a</code> element that links to <code>http&#58;//freecatphotoapp.com</code>.')",
         "assert(editor.match(/<\\/a>/g) && editor.match(/<\\/a>/g).length === editor.match(/<a/g).length, 'Make sure your <code>a</code> element has a closing tag.')"
       ],
       "challengeSeed": [
@@ -1118,7 +1118,7 @@
       "descriptionPt": [],
       "nameDe": "Waypoint: Verlinke externe Seiten mit Anker Elementen",
       "descriptionDe": [
-        "Erstelle ein <code>a</code> Element oder \"Anker Element\", das auf http://catphotoapp.com verlinkt und den Link-Text \"cat photos\" oder \"anchor text\" beinhaltet.",
+        "Erstelle ein <code>a</code> Element oder \"Anker Element\", das auf http://freecatphotoapp.com verlinkt und den Link-Text \"cat photos\" oder \"anchor text\" beinhaltet.",
         "So sieht ein <code>a</code> Element aus. In diesem Fall wird es innerhalb eines Paragraphen Elements verwendet. Das bedeutet dein Link wird innerhalb des Satzes erscheinen.",
         "<img class=\"img-responsive\" alt=\"Ein Beispiel wie Anker Tags geschrieben werden.\" src=\"https://www.evernote.com/l/AHSaNaepx_lG9LhhPkVYmagcedpmAeITDsQB/image.png\">",
         "Hier ist ein Beispiel: <code>&#60;p&#62;Hier ist ein &#60;a href=\"http://freecodecamp.com\"&#62; Link zum Free Code Camp&#60;/a&#62; für dich zum Folgen.&#60;/p&#62;</code>."
@@ -1133,13 +1133,13 @@
         "<img class=\"img-responsive\" alt=\"a diagram of how anchor tags are composed with the same text as on the following line\" src=\"http://i.imgur.com/hviuZwe.png\">",
         "Here's an example: <code>&#60;p&#62;Here's a &#60;a href=\"http://freecodecamp.com\"&#62; link to Free Code Camp&#60;/a&#62; for you to follow.&#60;/p&#62;</code>.",
         "<code>Nesting</code> just means putting one element inside of another element.",
-        "Now nest your <code>a</code> element within a new <code>p</code> element so that the surrounding paragraph says \"click here for cat photos\", but where only \"cat photos\" is a link, and the rest of the text is rest is plain text."
+        "Now nest your existing <code>a</code> element within a new <code>p</code> element so that the surrounding paragraph says \"click here for cat photos\", but where only \"cat photos\" is a link, and the rest of the text is rest is plain text."
       ],
       "tests": [
-        "assert($(\"a\").attr(\"href\").match(/catphotoapp.com/gi).length > 0, 'You need an <code>a</code> element that links to \"catphotoapp.com\".')",
-        "assert($(\"a\").text().match(/cat\\sphotos/gi).length > 0, 'Your <code>a</code> element should have the anchor text of \"cat photos\"')",
+        "assert($(\"a\").attr(\"href\").match(/freecatphotoapp.com/gi).length > 0, 'You need an <code>a</code> element that links to \"freecatphotoapp.com\".')",
+        "assert($(\"a\").text().match(/cat\\sphotos/gi), 'Your <code>a</code> element should have the anchor text of \"cat photos\"')",
         "assert($(\"p\") && $(\"p\").length > 2, 'Create a new <code>p</code> element around your <code>a</code> element.')",
-        "assert($(\"a[href=\\\"http://www.catphotoapp.com\\\"]\").parent().is(\"p\"), 'Your <code>a</code> element should be nested within your new <code>p</code> element.')",
+        "assert($(\"a[href=\\\"http://www.freecatphotoapp.com\\\"]\").parent().is(\"p\"), 'Your <code>a</code> element should be nested within your new <code>p</code> element.')",
         "assert($(\"p\").text().match(/click\\shere\\sfor/gi), 'Your <code>p</code> element should have the text \"click here for\".')",
         "assert(editor.match(/<\\/p>/g) && editor.match(/<p/g) && editor.match(/<\\/p>/g).length === editor.match(/<p/g).length, 'Make sure each of your <code>p</code> elements has a closing tag.')",
         "assert(editor.match(/<\\/a>/g) && editor.match(/<a/g) && editor.match(/<\\/a>/g).length === editor.match(/<a/g).length, 'Make sure each of your <code>a</code> elements has a closing tag.')"
@@ -1174,7 +1174,7 @@
         "",
         "<h2 class=\"red-text\">CatPhotoApp</h2>",
         "",
-        "<a href=\"http://www.catphotoapp.com\">cat photos</a>",
+        "<a href=\"http://www.freecatphotoapp.com\">cat photos</a>",
         "",
         "<img class=\"smaller-image thick-green-border\" src=\"https://bit.ly/fcc-relaxing-cat\">",
         "",
@@ -1242,7 +1242,7 @@
         "",
         "<h2 class=\"red-text\">CatPhotoApp</h2>",
         "",
-        "<p>Click here for <a href=\"http://www.catphotoapp.com\">cat photos</a>.</p>",
+        "<p>Click here for <a href=\"http://www.freecatphotoapp.com\">cat photos</a>.</p>",
         "",
         "<img class=\"smaller-image thick-green-border\" src=\"https://bit.ly/fcc-relaxing-cat\">",
         "",
@@ -1349,7 +1349,7 @@
       "description": [
         "<code>alt</code> attributes, also known as <code>alt text</code>, are what browsers will display if they fail to load the image. <code>alt</code> attributes are also important for blind or visually impaired users to understand what an image portrays. And search engines also look at <code>alt</code> attributes.",
         "In short, every image should have an <code>alt</code> attribute!",
-        "You can add an <code>alt</code> attribute right in the img element like this: <code>&#60img src=\"www.your-image-source.com/your-image.jpg\" alt=\"your alt text\"/&#62</code>.",
+        "You can add an <code>alt</code> attribute right in the img element like this: <code>&#60img src=\"www.your-image-source.com/your-image.jpg\" alt=\"your alt text\"&#62</code>.",
         "Add an <code>alt</code> attribute with the text <code>A cute orange cat lying on its back</code> to our cat photo."
       ],
       "tests": [
@@ -1747,9 +1747,8 @@
       ],
       "tests": [
         "assert($(\"form\") && $(\"form\").children(\"input\") && $(\"form\").children(\"input\").length > 0, 'Nest your text input element within a <code>form</code> element.')",
-        "assert($(\"form\").attr(\"action\"), 'Your <code>form</code> element should have an <code>action</code> attribute.')",
-        "assert(editor.match(/<\\/form>/g) && editor.match(/<form/g) && editor.match(/<\\/form>/g).length === editor.match(/<form/g).length, 'Make sure your <code>form</code> element has a closing tag.')",
-        "assert(editor.match(/\\/submit-cat-photo/ig), 'Make sure your <code>form</code> action is set to <code>/submit-cat-photo</code>.')"
+        "assert($(\"form\").attr(\"action\") === \"/submit-cat-photo\", 'Make sure your <code>form</code> has an <code>action</code> attribute which is set to <code>/submit-cat-photo</code>.')",
+        "assert(editor.match(/<\\/form>/g) && editor.match(/<form/g) && editor.match(/<\\/form>/g).length === editor.match(/<form/g).length, 'Make sure your <code>form</code> element has a closing tag.')"
       ],
       "challengeSeed": [
         "<link href=\"http://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
@@ -1998,8 +1997,8 @@
       ],
       "tests": [
         "assert($('input[type=\"radio\"]').length > 1, 'Your page should have two radio button elements.')",
-        "assert($('input[type=\"radio\"]:nth-child(1)').attr('name') === 'indoor-outdoor', 'Give your radio buttons the <code>name</code> attribute of <code>indoor-outdoor</code>.')",
-        "assert($(\"label\").length > 1, 'Each of your two radio button elements should be nested in a <code>label</code> element.')",
+        "assert($('label > input[type=\"radio\"]').filter(\"[name='indoor-outdoor']\").length > 1, 'Give your radio buttons the <code>name</code> attribute of <code>indoor-outdoor</code>.')",
+        "assert($('label > input[type=\"radio\"]:only-child').length > 1, 'Each of your two radio button elements should be nested in its own <code>label</code> element.')",
         "assert(editor.match(/<\\/label>/g) && editor.match(/<label/g) && editor.match(/<\\/label>/g).length === editor.match(/<label/g).length, 'Make sure each of your <code>label</code> elements has a closing tag.')",
         "assert($(\"label\").text().match(/indoor/gi), 'One of your radio buttons should have the label <code>indoor</code>.')",
         "assert($(\"label\").text().match(/outdoor/gi), 'One of your radio buttons should have the label <code>outdoor</code>.')"
@@ -2091,9 +2090,9 @@
       ],
       "tests": [
         "assert($('input[type=\"checkbox\"]').length > 2, 'Your page should have three checkbox elements.')",
-        "assert($('label:has(input[type=\"checkbox\"])').length > 2, 'Each of your three checkbox elements should be nested in its own <code>label</code> element.')",
+        "assert($('label > input[type=\"checkbox\"]:only-child').length > 2, 'Each of your three checkbox elements should be nested in its own <code>label</code> element.')",
         "assert(editor.match(/<\\/label>/g) && editor.match(/<label/g) && editor.match(/<\\/label>/g).length === editor.match(/<label/g).length, \"Make sure each of your <code>label</code> elements has a closing tag.\")",
-        "assert($('input[type=\"checkbox\"]:nth-child(1)').attr(\"name\") === \"personality\", 'Give your checkboxes buttons the <code>name</code> attribute of <code>personality</code>.')"
+        "assert($('label > input[type=\"checkbox\"]').filter(\"[name='personality']\").length > 2, 'Give your checkboxes the <code>name</code> attribute of <code>personality</code>.')"
       ],
       "challengeSeed": [
         "<link href=\"http://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
@@ -2355,7 +2354,7 @@
       "title": "Give a Background Color to a Div Element",
       "difficulty": 1.39,
       "description": [
-        "You can set an element's background color with the <code>background-color</code> attribute.",
+        "You can set an element's background color with the <code>background-color</code> property.",
         "For example, if you wanted an element's background color to be <code>green</code>, you'd use <code>.green-background { background-color: green; }</code> within your <code>style</code> element.",
         "Create a class called <code>gray-background</code> with the <code>background-color</code> of gray. Assign this class to your <code>div</code> element."
       ],
@@ -2478,7 +2477,7 @@
         "    width: 100px;",
         "  }",
         "  .gray-background {",
-        "    background-color: gray",
+        "    background-color: gray;",
         "  }",
         "</style>",
         "",
@@ -2627,7 +2626,7 @@
       "difficulty": 1.40,
       "description": [
         "You may have already noticed this, but all HTML elements are essentially little rectangles.",
-        "Three important attributes control the space that surrounds each HTML element: <code>padding</code>, <code>margin</code>, and <code>border</code>.",
+        "Three important properties control the space that surrounds each HTML element: <code>padding</code>, <code>margin</code>, and <code>border</code>.",
         "An element's <code>padding</code> controls the amount of space between the element and its <code>border</code>.",
         "Here, we can see that the green box and the red box are nested within the yellow box. Note that the red box has more <code>padding</code> than the green box.",
         "When you increase the green box's <code>padding</code>, it will increase the distance between the text <code>padding</code> and the border around it.",
@@ -2839,14 +2838,14 @@
       "difficulty": 1.43,
       "description": [
         "Sometimes you will want to customize an element so that it has different <code>padding</code> on each of its sides.",
-        "CSS allows you to control the <code>padding</code> of an element on all four sides with <code>padding-top</code>, <code>padding-right</code>, <code>padding-bottom</code>, and <code>padding-left</code> attributes.",
+        "CSS allows you to control the <code>padding</code> of an element on all four sides with <code>padding-top</code>, <code>padding-right</code>, <code>padding-bottom</code>, and <code>padding-left</code> properties.",
         "Give the green box a <code>padding</code> of <code>40px</code> on its top and left side, but only <code>20px</code> on its bottom and right side."
       ],
       "tests": [
-        "assert($(\".green-box\").css(\"padding-top\") === \"40px\", 'Your <code>green-box</code> class should give the top of elements <code>40px</code> of <code>padding</code>.')",
-        "assert($(\".green-box\").css(\"padding-left\") === \"40px\", 'Your <code>green-box</code> class should give the left of elements <code>40px</code> of <code>padding</code>.')",
-        "assert($(\".green-box\").css(\"padding-right\") === \"20px\", 'Your <code>green-box</code> class should give the right of elements <code>20px</code> of <code>padding</code>.')",
-        "assert($(\".green-box\").css(\"padding-bottom\") === \"20px\", 'Your <code>green-box</code> class should give the bottom of elements <code>20px</code> of <code>padding</code>.')"
+        "assert($(\".green-box\").css(\"padding-top\") === \"40px\", 'Your <code>green-box</code> class should give the top of the elements <code>40px</code> of <code>padding</code>.')",
+        "assert($(\".green-box\").css(\"padding-left\") === \"40px\", 'Your <code>green-box</code> class should give the left of the elements <code>40px</code> of <code>padding</code>.')",
+        "assert($(\".green-box\").css(\"padding-right\") === \"20px\", 'Your <code>green-box</code> class should give the right of the elements <code>20px</code> of <code>padding</code>.')",
+        "assert($(\".green-box\").css(\"padding-bottom\") === \"20px\", 'Your <code>green-box</code> class should give the bottom of the elements <code>20px</code> of <code>padding</code>.')"
       ],
       "challengeSeed": [
         "<style>",
@@ -2912,7 +2911,7 @@
       "description": [
         "Give the green box a <code>margin</code> of <code>40px</code> on its top and left side, but only <code>20px</code> on its bottom and right side.",
         "Sometimes you will want to customize an element so that it has a different <code>margin</code> on each of its sides.",
-        "CSS allows you to control the <code>margin</code> of an element on all four sides with <code>margin-top</code>, <code>margin-right</code>, <code>margin-bottom</code>, and <code>margin-left</code> attributes."
+        "CSS allows you to control the <code>margin</code> of an element on all four sides with <code>margin-top</code>, <code>margin-right</code>, <code>margin-bottom</code>, and <code>margin-left</code> properties."
       ],
       "tests": [
         "assert($(\".green-box\").css(\"margin-top\") === \"40px\", 'Your <code>green-box</code> class should give the top of elements <code>40px</code> of <code>margin</code>.')",
@@ -2981,7 +2980,7 @@
       "title": "Use Clockwise Notation to Specify the Padding of an Element",
       "difficulty": 1.44,
       "description": [
-        "Instead of specifying an element's <code>padding-top</code>, <code>padding-right</code>, <code>padding-bottom</code>, and <code>padding-left</code> attributes, you can specify them all in one line, like this: <code>padding: 10px 20px 10px 20px;</code>.",
+        "Instead of specifying an element's <code>padding-top</code>, <code>padding-right</code>, <code>padding-bottom</code>, and <code>padding-left</code> properties, you can specify them all in one line, like this: <code>padding: 10px 20px 10px 20px;</code>.",
         "These four values work like a clock: top, right, bottom, left, and will produce the exact same result as using the side-specific padding instructions.",
         "Use Clockwise Notation to give the \".green-box\" class a <code>padding</code> of <code>40px</code> on its top and left side, but only <code>20px</code> on its bottom and right side."
       ],
@@ -3051,9 +3050,9 @@
       "difficulty": 1.45,
       "description": [
         "Let's try this again, but with <code>margin</code> this time.",
-        "Instead of specifying an element's <code>margin-top</code>, <code>margin-right</code>, <code>margin-bottom</code>, and <code>margin-left</code> attributes, you can specify them all in one line, like this: <code>margin: 10px 20px 10px 20px;</code>.",
+        "Instead of specifying an element's <code>margin-top</code>, <code>margin-right</code>, <code>margin-bottom</code>, and <code>margin-left</code> properties, you can specify them all in one line, like this: <code>margin: 10px 20px 10px 20px;</code>.",
         "These four values work like a clock: top, right, bottom, left, and will produce the exact same result as using the side-specific margin instructions.",
-        "Use <code>Clockwise Notation</code> to give an element a margin of <code>40px</code> on its top and left side, but only <code>20px</code> on its bottom and right side."
+        "Use <code>Clockwise Notation</code> to give the element with the <code>green-box</code> class a margin of <code>40px</code> on its top and left side, but only <code>20px</code> on its bottom and right side."
       ],
       "tests": [
         "assert($(\".green-box\").css(\"margin-top\") === \"40px\", 'Your <code>green-box</code> class should give the top of elements <code>40px</code> of <code>margin</code>.')",
@@ -3163,8 +3162,8 @@
         "assert(($(\"h1\").length > 0), 'Create an <code>h1</code> element.')",
         "assert(($(\"h1\").length > 0 && $(\"h1\").text().match(/hello world/i)), 'Your <code>h1</code> element should have the text <code>Hello World</code>.')",
         "assert(editor.match(/<\\/h1>/g) && editor.match(/<h1/g) && editor.match(/<\\/h1>/g).length === editor.match(/<h1/g).length, 'Make sure your <code>h1</code> element has a closing tag.')",
-        "assert(($(\"body\").css(\"color\") === \"rgb(0, 128, 0)\"), 'Give your <code>body</code> element the <code>color</code> attribute of <code>green</code>.')",
-        "assert(($(\"body\").css(\"font-family\").match(/Monospace/i)), 'Give your <code>body</code> element the <code>font-family</code> attribute of <code>Monospace</code>.')",
+        "assert(($(\"body\").css(\"color\") === \"rgb(0, 128, 0)\"), 'Give your <code>body</code> element the <code>color</code> property of <code>green</code>.')",
+        "assert(($(\"body\").css(\"font-family\").match(/Monospace/i)), 'Give your <code>body</code> element the <code>font-family</code> property of <code>Monospace</code>.')",
         "assert(($(\"h1\").length > 0 && $(\"h1\").css(\"font-family\").match(/monospace/i)), 'Your <code>h1</code> element should inherit the font <code>Monospace</code> from your <code>body</code> element.')",
         "assert(($(\"h1\").length > 0 && $(\"h1\").css(\"color\") === \"rgb(0, 128, 0)\"), 'Your <code>h1</code> element should inherit the color green from your <code>body</code> element.')"
       ],
@@ -3198,7 +3197,7 @@
       "description": [
         "Sometimes your HTML elements will receive multiple styles that conflict with one another.",
         "For example, your <code>h1</code> element can't be both green and pink at the same time.",
-        "Let's see what happens when we create a class that makes text pink, then apply it to an element. Will our class <code>override</code> the <code>body</code> element's <code>color: green;</code> CSS attribute?",
+        "Let's see what happens when we create a class that makes text pink, then apply it to an element. Will our class <code>override</code> the <code>body</code> element's <code>color: green;</code> CSS property?",
         "Create a CSS class called <code>pink-text</code> that gives an element the color pink.",
         "Give your <code>h1</code> element the class of <code>pink-text</code>."
       ],
@@ -3285,12 +3284,14 @@
         "Let's override your <code>pink-text</code> and <code>blue-text</code> classes, and make your <code>h1</code> element orange, by giving the <code>h1</code> element an id and then styling that id.",
         "Give your <code>h1</code> element the <code>id</code> attribute of <code>orange-text</code>. Remember, id styles look like this: <code>&#60;h1 id=\"orange-text\"&#62;</code>",
         "Leave the <code>blue-text</code> and <code>pink-text</code> classes on your <code>h1</code> element.",
-        "Create a CSS declaration for your <code>orange-text</code> id in your <code>style</code> element. Here's and example of what this looks like: <code>#brown-text { color: brown; }</code>"
+        "Create a CSS declaration for your <code>orange-text</code> id in your <code>style</code> element. Here's an example of what this looks like: <code>#brown-text { color: brown; }</code>"
       ],
       "tests": [
         "assert($(\"h1\").hasClass(\"pink-text\"), 'Your <code>h1</code> element should have the class <code>pink-text</code>.')",
         "assert($(\"h1\").hasClass(\"blue-text\"), 'Your <code>h1</code> element should have the class <code>blue-text</code>.')",
         "assert($(\"h1\").attr(\"id\") === \"orange-text\", 'Give your <code>h1</code> element the id of <code>orange-text</code>.')",
+        "assert(editor.match(/#orange-text\\s*{/gi), 'Create a CSS declaration for your <code>orange-text</code> id')",
+        "assert(!editor.match(/<h1.*style.*>/gi), 'Do not give your <code>h1</code> any <code>style</code> attributes.')",
         "assert($(\"h1\").css(\"color\") === \"rgb(255, 165, 0)\", 'Your <code>h1</code> element should be orange.')"
       ],
       "challengeSeed": [
@@ -3506,7 +3507,7 @@
       "difficulty": 1.56,
       "description": [
         "You may be wondering why we use 6 digits to represent a color instead of just one or two. The answer is that using 6 digits gives us a huge variety.",
-        "How many colors are possible? 16 colors and 6 positions means we have 16 to the 6th power, or more than 16 million possible colors.",
+        "How many colors are possible? 16 values and 6 positions means we have 16 to the 6th power, or more than 16 million possible colors.",
         "Hex code follows the red-green-blue, or <code>rgb</code> format. The first two digits of hex code represent the amount of red in the color. The third and fourth digit represent the amount of green. The fifth and sixth represent the amount of blue.",
         "So to get the absolute brightest red, you would just use <code>F</code> for the first and second digits (the highest possible value) and <code>0</code> for the third, fourth, fifth and sixth digits (the lowest possible value).",
         "Make the <code>body</code> element's background color red by giving it the hex code value of <code>#FF0000</code>."

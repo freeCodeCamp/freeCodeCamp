@@ -28,7 +28,7 @@ $(document).ready(function () {
     $('#chosen').text('Coming from ' + city.replace(/-/g, ' ').replace(/\w\S*/g, function (txt) {
         return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
       }) + ', and making $' + lastYearsIncome.toString().replace(/0000$/, '0,000') + ', your true costs will be:');
-    var categoryNames = ['Lost Wages', 'Financing Cost', 'Housing Cost', 'Tuition / Wage Garnishing'];
+    var categoryNames = ['Lost Wages', 'Financing Cost', 'Housing Cost', 'Tuition / Est. Wage Garnishing'];
     bootcamps.forEach(function (camp) {
       var x0 = 0;
       if (camp.cities.indexOf(city) > -1) {
@@ -38,7 +38,7 @@ $(document).ready(function () {
       }
       camp.mapping = [{
         name: camp.name,
-        label: 'Tuition / Wage Garnishing',
+        label: 'Tuition / Est. Wage Garnishing',
         value: +camp.cost,
         x0: x0,
         x1: x0 += +camp.cost

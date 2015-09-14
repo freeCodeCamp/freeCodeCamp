@@ -123,6 +123,14 @@ module.exports = function(User) {
     });
   });
 
+  User.beforeRemote('login', function(ctx, notUsed, next) {
+    const { body } = ctx.req;
+    if (body && typeof body.email === 'string') {
+      body.email = body.email.toLowerCase();
+    }
+    next();
+  });
+
   User.afterRemote('login', function(ctx, accessToken, next) {
     var res = ctx.res;
     var req = ctx.req;

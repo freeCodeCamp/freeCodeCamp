@@ -1,6 +1,6 @@
 {
   "name": "Object Oriented and Functional Programming",
-  "order": 0.010,
+  "order": 0.006,
   "note": [
     "Methods",
     "Closures",
@@ -20,9 +20,9 @@
         "Give your <code>motorBike</code> object a <code>wheels</code>, <code>engines</code> and <code>seats</code> attribute and set them to numbers."
       ],
       "tests":[
-        "assert(typeof(motorBike.engines) === 'number', '<code>engines</code> should be have a <code>engines</code> attribute set to a number.');",
-        "assert(typeof(motorBike.wheels) === 'number', '<code>wheels</code> should be have a <code>engines</code> attribute set to a number.');",
-        "assert(typeof(motorBike.seats) === 'number', '<code>seats</code> should be have a <code>engines</code> attribute set to a number.');"
+        "assert(typeof(motorBike.engines) === 'number', '<code>motorBike</code> should have a <code>engines</code> attribute set to a number.');",
+        "assert(typeof(motorBike.wheels) === 'number', '<code>motorBike</code> should have a <code>wheels</code> attribute set to a number.');",
+        "assert(typeof(motorBike.seats) === 'number', '<code>motorBike</code> should have a <code>seats</code> attribute set to a number.');"
       ],
       "challengeSeed":[
         "//Here is a sample Object",
@@ -42,7 +42,7 @@
         "  // Only change code above this line.",
         "};",
         "",
-        "(function() {return(JSON.stringify(motorBike));})();"
+        "(function() {return JSON.stringify(motorBike);})();"
       ],
       "challengeType":1,
           "type": "waypoint",
@@ -54,12 +54,12 @@
       "difficulty":0,
       "description":[
         "We are also able to create objects using <code>constructor</code> functions.",
-        "Give your <code>motorBike</code> object a <code>wheels</code>, <code>engines</code> and <code>seats</code> attribute and set them to numbers."
+        "Give your <code>myMotorBike</code> object a <code>wheels</code>, <code>engines</code> and <code>seats</code> attribute and set them to numbers."
       ],
       "tests":[
-        "assert(typeof((new MotorBike()).engines) === 'number', '<code>engines</code> should be have a <code>engines</code> attribute set to a number.');",
-        "assert(typeof((new MotorBike()).wheels) === 'number', '<code>wheels</code> should be have a <code>engines</code> attribute set to a number.');",
-        "assert(typeof((new MotorBike()).seats) === 'number', '<code>seats</code> should be have a <code>engines</code> attribute set to a number.');"
+        "assert(typeof((new MotorBike()).engines) === 'number', '<code>myMotorBike</code> should have a <code>engines</code> attribute set to a number.');",
+        "assert(typeof((new MotorBike()).wheels) === 'number', '<code>myMotorBike</code> should have a <code>wheels</code> attribute set to a number.');",
+        "assert(typeof((new MotorBike()).seats) === 'number', '<code>myMotorBike</code> should have a <code>seats</code> attribute set to a number.');"
       ],
       "challengeSeed":[
         "// Let's add the properties engines and seats to the car in the same way that the property wheels has been added below. They should both be numbers.",
@@ -81,7 +81,7 @@
         "var myMotorBike = new MotorBike();",
         "// Only change code above this line.",
         "",
-        "(function() {return(JSON.stringify(myMotorBike));})();"
+        "(function() {return JSON.stringify(myMotorBike);})();"
       ],
       "challengeType":1,
       "type": "waypoint"
@@ -107,10 +107,10 @@
         "var Car = function() {",
         "  this.gear = 1;",
         "  function addStyle(styleMe){",
-        "    return('The Current Gear Is: ' + styleMe);",
+        "    return 'The Current Gear Is: ' + styleMe;",
         "  }",
         "  this.getGear = function() {",
-        "    return(addStyle(this.gear));",
+        "    return addStyle(this.gear);",
         "  };",
         "};",
         "",
@@ -118,11 +118,11 @@
         "  // Only change code below this line.",
         "  this.speed = 100;",
         "  function addUnit(value) {",
-        "    return(value + \"KM/H\");",
+        "    return value + \"KM/H\";",
         "  }",
         "  ",
         "  getSpeed = function () {",
-        "    return(addUnit(speed));",
+        "    return addUnit(speed);",
         "  };",
         "  ",
         "};",
@@ -131,7 +131,7 @@
         "var myCar = new Car();",
         "var myBike = new Bike();",
         "",
-        "if(myBike.hasOwnProperty('getSpeed')){(function() {return(JSON.stringify(myBike.getSpeed()));})();};"
+        "if(myBike.hasOwnProperty('getSpeed')){(function() {return JSON.stringify(myBike.getSpeed());})();};"
       ],
       "challengeType":1,
       "type": "waypoint"
@@ -166,7 +166,7 @@
         "",
         "",
         "// Only change code above this line.",
-        "(function() {return(JSON.stringify(myCar));})();"
+        "(function() {return JSON.stringify(myCar);})();"
       ],
       "challengeType":1,
       "type": "waypoint"
@@ -177,10 +177,11 @@
       "difficulty":0,
       "description":[
         "<code>array = array.map(function(val){</code>",
-        "<code>&thinsp;&thinsp;return(val+1);</code>",
+        "<code>&thinsp;&thinsp;return val+1;</code>",
         "<code>});</code>",
         "",
-        "The map method is one of the easiest ways to iterate through an array or object there is. Let's use it now."
+        "The map method is one of the easiest ways to iterate through an array or object there is. Let's use it now.",
+        "Use the map function to add 3 to every value in the variable <code>array</code>"
       ],
       "tests":[
         "assert.deepEqual(array, [4,5,6,7,8], 'You should have added three to each value in the array');",
@@ -195,7 +196,7 @@
         "",
         "",
         "// Only change code above this line.",
-        "(function() {return(array);})();"
+        "(function() {return array;})();"
       ],
       "challengeType":1,
       "type": "waypoint"
@@ -205,9 +206,9 @@
       "title":"Condense arrays with .reduce",
       "difficulty":0,
       "description":[
-        "Reduce can be useful for condensing and array or numbers into one value.",
+        "Reduce can be useful for condensing an array or numbers into one value.",
         "<code>var singleVal = array.reduce(function(previousVal, currentVal){</code>",
-        "<code>&thinsp;&thinsp;return(previousVal+currentVal);</code>",
+        "<code>&thinsp;&thinsp;return previousVal+currentVal;</code>",
         "<code>});</code>"
       ],
       "tests":[
@@ -222,7 +223,7 @@
         "",
         "",
         "// Only change code above this line.",
-        "(function() {return(singleVal);})();"
+        "(function() {return singleVal;})();"
       ],
       "challengeType":1,
       "type": "waypoint"
@@ -235,7 +236,7 @@
         "filter is a useful method that can filter out values that don't match a certain criteria",
         "Let's remove all the values greater than five",
         "<code>array = array.filter(function(val) {</code>",
-        "<code>&thinsp;&thinsp;return(val<4);</code>",
+        "<code>&thinsp;&thinsp;return val <= 5;</code>",
         "<code>});</code>"
       ],
       "tests":[
@@ -250,7 +251,7 @@
         "",
         "",
         "  // Only change code above this line.",
-        "(function() {return(array);})();"
+        "(function() {return array;})();"
       ],
       "challengeType":1,
       "type": "waypoint"
@@ -277,7 +278,7 @@
         "",
         "",
         "  // Only change code above this line.",
-        "(function() {return(array);})();"
+        "(function() {return array;})();"
       ],
       "challengeType":1,
       "type": "waypoint"
@@ -301,7 +302,7 @@
         "",
         "",
         "  // Only change code above this line.",
-        "(function() {return(array);})();"
+        "(function() {return array;})();"
       ],
       "challengeType": 1,
       "type": "waypoint"
@@ -328,7 +329,7 @@
         "",
         "",
         "// Only change code above this line.",
-        "(function() {return(array);})();"
+        "(function() {return array;})();"
       ],
       "challengeType": 1,
       "type": "waypoint"
@@ -353,7 +354,7 @@
         "var array = string;",
         "",
         "// Only change code above this line.",
-        "(function() {return(array);})();"
+        "(function() {return array;})();"
       ],
       "challengeType":1,
       "type": "waypoint"
@@ -377,7 +378,7 @@
         "joinMe = joinMe;",
         "",
         "// Only change code above this line.",
-        "(function() {return(joinMe);})();"
+        "(function() {return joinMe;})();"
       ],
       "challengeType":1,
       "type": "waypoint"

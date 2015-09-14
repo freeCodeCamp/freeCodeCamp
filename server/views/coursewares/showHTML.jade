@@ -14,27 +14,25 @@ block content
     link(rel="stylesheet", href="http://fonts.googleapis.com/css?family=Ubuntu+Mono")
     script(src='/js/lib/codemirror/mode/javascript/javascript.js')
     script(src='/js/lib/jailed/jailed.js')
-    script(src='/js/lib/coursewares/sandbox.js')
     script(src='/js/lib/codemirror/mode/xml/xml.js')
     script(src='/js/lib/codemirror/mode/css/css.js')
     script(src='/js/lib/codemirror/mode/htmlmixed/htmlmixed.js')
     script(src='/js/lib/codemirror/addon/emmet/emmet.js')
     .row.courseware-height
         .col-xs-12.col-sm-12.col-md-3.col-lg-3
-            //.scroll-locker(id = "scroll-locker")
-            .innerMarginFix(style = "width: 99%;")
-                .well
-                    .row
-                        .col-xs-12
-                            h3.text-center.negative-10= name
-                            .bonfire-instructions
-                                for sentence in details
-                                    p.wrappable.negative-10!= sentence
-                                .negative-bottom-margin-30
-                if (user)
-                    label.btn.btn-primary.btn-block.negative-10#next-courseware-button
-                        .ion-checkmark-circled
-                            | &nbsp; Go to my next challenge (ctrl + enter)
+            .scroll-locker(id = "scroll-locker")
+                .innerMarginFix(style = "width: 99%;")
+                    .well
+                        .row
+                            .col-xs-12
+                                h3.text-center.negative-10= name
+                                .bonfire-instructions
+                                    for sentence in details
+                                        p.wrappable.negative-10!= sentence
+                                    .negative-bottom-margin-30
+                    label.negative-10.btn.btn-primary.btn-lg.btn-block#submitButton
+                        i.fa.fa-play
+                            | &nbsp; Run tests (ctrl + enter)
                     .button-spacer
                     .btn-group.input-group.btn-group-justified
                         label.btn.btn-success#trigger-reset-modal
@@ -48,44 +46,58 @@ block content
                                 | &nbsp; Bug
                     script.
                         var userLoggedIn = true;
-                else
+                    if (!user)
+                        .button-spacer
+                        a.btn.signup-btn.btn-block.btn-block(href='/login') Sign in so you can save your progress
+                            script.
+                                var userLoggedIn = false;
                     .button-spacer
-                    a.btn.signup-btn.btn-block.btn-block.negative-15(href='/login') Sign in so you can save your progress
-                        script.
-                            var userLoggedIn = false;
-                .button-spacer
-                ul#testSuite.list-group
-                br
-                script(type="text/javascript").
-                    $('#next-courseware-button').attr('disabled', 'disabled');
-                    var tests = !{JSON.stringify(tests)};
-                    var challengeSeed = !{JSON.stringify(challengeSeed)};
-                    var challenge_Id = !{JSON.stringify(challengeId)};
-                    var challenge_Name = !{JSON.stringify(name)};
-                    var prodOrDev = !{JSON.stringify(environment)};
-                    var challengeType = !{JSON.stringify(challengeType)};
-                    var started = Math.floor(Date.now());
+                    ul#testSuite.list-group
+                    br
+                    script(type="text/javascript").
+                        $('#next-courseware-button').attr('disabled', 'disabled');
+                        var tests = !{JSON.stringify(tests)};
+                        var challengeSeed = !{JSON.stringify(challengeSeed)};
+                        var challenge_Id = !{JSON.stringify(challengeId)};
+                        var challenge_Name = !{JSON.stringify(name)};
+                        var prodOrDev = !{JSON.stringify(environment)};
+                        var dashedName = !{JSON.stringify(dashedName)};
+                        var challengeType = !{JSON.stringify(challengeType)};
+                        var started = Math.floor(Date.now());
         .col-xs-12.col-sm-12.col-md-5.col-lg-6
             .editorScrollDiv(style = "overflow-y: auto; overflow-x: hidden;")
                     #mainEditorPanel
                         form.code
                             .codeMirrorView
                                 textarea#codeEditor(autofocus=true, style='display: none;')
+                                script(src=rev('/js', 'commonFramework.js'))
+                                script.
+                                    editor.setOption("mode", "text/html");
         .col-md-4.col-lg-3
             .hidden-xs.hidden-sm
                 img.iphone-position.iframe-scroll(src="https://s3.amazonaws.com/freecodecamp/iphone6-frame.png", style = "z-index: -2;")
             iframe.iphone.iframe-scroll#preview
             .spacer
         #complete-courseware-dialog.modal(tabindex='-1')
-            .modal-dialog.animated.zoomIn.fast-animation
+            .modal-dialog.animated.fadeIn.fast-animation
                 .modal-content
                     .modal-header.challenge-list-header
                         = compliment
                         a.close.closing-x(href='#', data-dismiss='modal', aria-hidden='true') ×
                     .modal-body
                         .text-center
-                            .animated.zoomInDown.delay-half
+<<<<<<< HEAD
+                            #checkmark-container.row
+                                #challenge-checkmark.animated.zoomInDown.delay-half
+                                    span.completion-icon.ion-checkmark-circled.text-primary
+                            .spacer
+                            if(user)
+                                #submit-challenge.animated.fadeIn.btn.btn-lg.btn-primary.btn-block Submit and go to my next challenge (ctrl + enter)
+                            else
+                                a.btn.btn-lg.btn-primary.btn-block(href='/challenges/next-challenge?id=' + challengeId) Go to my next challenge
+=======
+                            .animated.zoomInDown
                                 span.completion-icon.ion-checkmark-circled.text-primary
                             a.animated.fadeIn.btn.btn-lg.signup-btn.btn-block(href='/login') Sign in so you can save your progress
+>>>>>>> 45e8cef504bada71c3fa805b8e0422208299eada
     include ../partials/challenge-modals
-    script(src="/js/lib/coursewares/coursewaresHCJQFramework_0.1.9.js")

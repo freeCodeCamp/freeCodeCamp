@@ -1,5 +1,11 @@
 extends ../layout
 block content
+    .panel
+        h3.text-center Your friends won't hear about our open source community unless you tell them.
+        .row
+            .col-xs-12.col-sm-10.col-sm-offset-1.col-md-8.col-md-offset-2
+                a.btn.btn-lg.btn-primary.btn-block(href="https://www.facebook.com/sharer/sharer.php?u=http://freecodecamp.com" target='_blank') Share our open source community on Facebook
+        .spacer
     .panel.panel-info
         .panel-heading.text-center
             h1 Challenge Map
@@ -88,6 +94,8 @@ block content
                                                     a(href="/challenges/#{challenge.dashedName}")
                                                         span.capitalize= challenge.type + ': '
                                                         span= challenge.title
+                                                            span.sr-only= " Complete"
+
 
                                     else
                                         .row
@@ -98,6 +106,7 @@ block content
                                                     a(href="/challenges/#{challenge.dashedName}")
                                                         span.capitalize= challenge.type + ': '
                                                         span= challenge.title
+                                                            span.sr-only= " Incomplete"
 
     //#announcementModal.modal(tabindex='-1')
     //    .modal-dialog.animated.fadeInUp.fast-animation

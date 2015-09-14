@@ -1,3 +1,4 @@
+import unused from './es6-shims'; // eslint-disable-line
 import Rx from 'rx';
 import React from 'react';
 import Fetchr from 'fetchr';

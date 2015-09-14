@@ -28,9 +28,9 @@
       "title":"Using typeof",
       "difficulty":0,
       "description":[
-        "<code>typeof</code> is a useful method that we can use to check the type of a variable.",
-        "One thing to be careful of is that an array has the type objects.",
-        "Try using each of these to see the types they have.",
+        "You can use <code>typeof</code> to check the <code>data structure</code>, or type, of a variable.",
+        "Note that in JavaScript, arrays are technically a type of object.",
+        "Try using <code>typeof</code> on each of the following to see which types they have.",
         "<code>console.log(typeof(\"\"));</code>",
         "<code>console.log(typeof(0));</code>",
         "<code>console.log(typeof([]));</code>",
