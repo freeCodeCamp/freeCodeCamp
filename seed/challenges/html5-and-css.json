@@ -866,7 +866,8 @@
       "description": [
         "CSS borders have properties like <code>style</code>, <code>color</code> and <code>width</code>.",
         "For example, if we wanted to create a red, 5 pixel border around an HTML element, we could use this class: <code>&#60;style&#62; .thin-red-border { border-color: red; border-width: 5px; border-style: solid; } &#60;/style&#62;</code>.",
-        "Create a class called <code>thick-green-border</code> that puts a 10-pixel-wide green border with a style of <code>solid</code> around an HTML element, and apply that class to your cat photo. You can apply multiple classes to elements by separating them with a space within the <code>class</code> attribute. For example, <code>&lt;element class=\"class1 class2\"&gt;&lt;/element&gt;</code>"
+        "Create a class called <code>thick-green-border</code> that puts a 10-pixel-wide green border with a style of <code>solid</code> around an HTML element, and apply that class to your cat photo.",
+        "Remember that you can apply multiple classes to an element by separating each class with a space within its <code>class</code> attribute. For example: <code>&lt;img class=\"class1 class2\"&gt;</code>"
       ],
       "tests": [
         "assert($(\"img\").hasClass(\"smaller-image\"), 'Your <code>img</code> element should have the class <code>smaller-image</code>.')",
