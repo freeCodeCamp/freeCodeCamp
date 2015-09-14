@@ -222,7 +222,7 @@
       "title": "Title Case a Sentence",
       "difficulty": "1.05",
       "description": [
-        "Return the provided string with the first letter of each word capitalized.",
+        "Return the provided string with the first letter of each word capitalized. Make sure the rest of the word is in lower case.",
         "For the purpose of this exercise, you should also capitalize connecting words like 'the' and 'of'.",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Write your own code."
       ],
