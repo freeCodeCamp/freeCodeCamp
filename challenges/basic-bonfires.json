@@ -274,8 +274,8 @@
       ],
       "tests": [
         "assert(largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]).constructor === Array, '<code>largestOfFour&#40;&#41;</code> should return an array.');",
-        "assert(largestOfFour([[13, 27, 18, 26], [4, 5, 1, 3], [32, 35, 37, 39], [1000, 1001, 857, 1]]) === [27,5,39,1001], '<code>[[13&#44; 27&#44; 18&#44; 26]&#44; [4&#44; 5&#44; 1&#44; 3]&#44; [32&#44; 35&#44; 37&#44; 39]&#44; [1000&#44; 1001&#44; 857&#44; 1]]</code> should return <code>[27&#44;5&#44;39&#44;1001]</code>.');",
-        "assert(largestOfFour([[4, 9, 1, 3], [13, 35, 18, 26], [32, 35, 97, 39], [1000000, 1001, 857, 1]]) === [9,35,97,1000000], '<code>[[4&#44; 9&#44; 1&#44; 3]&#44; [13&#44; 35&#44; 18&#44; 26]&#44; [32&#44; 35&#44; 97&#44; 39]&#44; [1000000&#44; 1001&#44; 857&#44; 1]]</code> should return <code>[9&#44; 35&#44; 97&#44; 1000000]</code>.');"
+        "assert.deepEqual(largestOfFour([[13, 27, 18, 26], [4, 5, 1, 3], [32, 35, 37, 39], [1000, 1001, 857, 1]]), [27,5,39,1001], '<code>[[13&#44; 27&#44; 18&#44; 26]&#44; [4&#44; 5&#44; 1&#44; 3]&#44; [32&#44; 35&#44; 37&#44; 39]&#44; [1000&#44; 1001&#44; 857&#44; 1]]</code> should return <code>[27&#44;5&#44;39&#44;1001]</code>.');",
+        "assert.deepEqual(largestOfFour([[4, 9, 1, 3], [13, 35, 18, 26], [32, 35, 97, 39], [1000000, 1001, 857, 1]]), [9,35,97,1000000], '<code>[[4&#44; 9&#44; 1&#44; 3]&#44; [13&#44; 35&#44; 18&#44; 26]&#44; [32&#44; 35&#44; 97&#44; 39]&#44; [1000000&#44; 1001&#44; 857&#44; 1]]</code> should return <code>[9&#44; 35&#44; 97&#44; 1000000]</code>.');"
       ],
       "MDNlinks": [
         "Comparison Operators"
@@ -426,10 +426,10 @@
         "chunk([\"a\", \"b\", \"c\", \"d\"], 2, \"\");"
       ],
       "tests": [
-        "assert(chunk([\"a\", \"b\", \"c\", \"d\"], 2) === [[\"a\", \"b\"], [\"c\", \"d\"]], '<code>[\"a\"&#44; \"b\"&#44; \"c\"&#44; \"d\"], 2</code> should return <code>[[\"a\"&#44; \"b\"]&#44; [\"c\"&#44; \"d\"]]</code>.');",
-        "assert(chunk([0, 1, 2, 3, 4, 5], 3) === [[0, 1, 2], [3, 4, 5]], '<code>[0&#44; 1&#44; 2&#44; 3&#44; 4&#44; 5]</code> should return <code>[[0&#44; 1&#44; 2]&#44; [3&#44; 4&#44; 5]]</code>.');",
-        "assert(chunk([0, 1, 2, 3, 4, 5], 2) === [[0, 1], [2, 3], [4, 5]], '<code>[0&#44; 1&#44; 2&#44; 3&#44; 4&#44; 5]&#44; 2</code> should return <code>[[0&#44; 1]&#44; [2&#44; 3]&#44; [4&#44; 5]]</code>.');",
-        "assert(chunk([0, 1, 2, 3, 4, 5], 4) === [[0, 1, 2, 3], [4, 5]], '<code>[0&#44; 1&#44; 2&#44; 3&#44; 4&#44; 5]&#44; 4</code> should return <code>[[0&#44; 1&#44; 2&#44; 3]&#44; [4&#44; 5]]</code>.');"
+        "assert.deepEqual(chunk([\"a\", \"b\", \"c\", \"d\"], 2), [[\"a\", \"b\"], [\"c\", \"d\"]], '<code>[\"a\"&#44; \"b\"&#44; \"c\"&#44; \"d\"], 2</code> should return <code>[[\"a\"&#44; \"b\"]&#44; [\"c\"&#44; \"d\"]]</code>.');",
+        "assert.deepEqual(chunk([0, 1, 2, 3, 4, 5], 3), [[0, 1, 2], [3, 4, 5]], '<code>[0&#44; 1&#44; 2&#44; 3&#44; 4&#44; 5]</code> should return <code>[[0&#44; 1&#44; 2]&#44; [3&#44; 4&#44; 5]]</code>.');",
+        "assert.deepEqual(chunk([0, 1, 2, 3, 4, 5], 2), [[0, 1], [2, 3], [4, 5]], '<code>[0&#44; 1&#44; 2&#44; 3&#44; 4&#44; 5]&#44; 2</code> should return <code>[[0&#44; 1]&#44; [2&#44; 3]&#44; [4&#44; 5]]</code>.');",
+        "assert.deepEqual(chunk([0, 1, 2, 3, 4, 5], 4), [[0, 1, 2, 3], [4, 5]], '<code>[0&#44; 1&#44; 2&#44; 3&#44; 4&#44; 5]&#44; 4</code> should return <code>[[0&#44; 1&#44; 2&#44; 3]&#44; [4&#44; 5]]</code>.');"
       ],
       "MDNlinks": [
         "Array.push()"
@@ -464,9 +464,9 @@
         "slasher([1, 2, 3], 2, \"\");"
       ],
       "tests": [
-        "assert(slasher([1, 2, 3], 2) === [3], '<code>[1&#44; 2&#44; 3]&#44; 2</code>&#44; [3] should return <code>[3]</code>.');",
-        "assert(slasher([1, 2, 3], 0) === [1, 2, 3], '<code>[1&#44; 2&#44; 3]&#44; 0</code> should return <code>[1&#44; 2&#44; 3]</code>.');",
-        "assert(slasher([1, 2, 3], 9) === [], '<code>[1&#44; 2&#44; 3]&#44; 9</code> should return <code>[]</code>.');"
+        "assert.deepEqual(slasher([1, 2, 3], 2), [3], '<code>[1&#44; 2&#44; 3]&#44; 2&#44; [3]</code> should return <code>[3]</code>.');",
+        "assert.deepEqual(slasher([1, 2, 3], 0), [1, 2, 3], '<code>[1&#44; 2&#44; 3]&#44; 0</code> should return <code>[1&#44; 2&#44; 3]</code>.');",
+        "assert.deepEqual(slasher([1, 2, 3], 9), [], '<code>[1&#44; 2&#44; 3]&#44; 9</code> should return <code>[]</code>.');"
       ],
       "MDNlinks": [
         "Array.slice()",
@@ -547,9 +547,9 @@
         "bouncer([7, \"ate\", \"\", false, 9], \"\");"
       ],
       "tests": [
-        "assert(bouncer([7, \"ate\", \"\", false, 9]) === [7, \"ate\", 9], '<code>[7&#44; \"ate\"&#44; \"\"&#44; false&#44; 9]</code> should return <code>[7&#44; \"ate\"&#44; 9]</code>.');",
-        "assert(bouncer([\"a\", \"b\", \"c\"]) === [\"a\", \"b\", \"c\"], '<code>[\"a\"&#44; \"b\"&#44; \"c\"]</code> should return <code>[\"a\"&#44; \"b\"&#44; \"c\"]</code>.');",
-        "assert(bouncer([false, null, 0]) === [], '<code>[false&#44; null&#44; 0]</code> should return <code>[]</code>.');"
+        "assert.deepEqual(bouncer([7, \"ate\", \"\", false, 9]), [7, \"ate\", 9], '<code>[7&#44; \"ate\"&#44; \"\"&#44; false&#44; 9]</code> should return <code>[7&#44; \"ate\"&#44; 9]</code>.');",
+        "assert.deepEqual(bouncer([\"a\", \"b\", \"c\"]), [\"a\", \"b\", \"c\"], '<code>[\"a\"&#44; \"b\"&#44; \"c\"]</code> should return <code>[\"a\"&#44; \"b\"&#44; \"c\"]</code>.');",
+        "assert.deepEqual(bouncer([false, null, 0]), [], '<code>[false&#44; null&#44; 0]</code> should return <code>[]</code>.');"
       ],
       "MDNlinks": [
         "Boolean Objects",
@@ -585,11 +585,11 @@
         "destroyer([1, 2, 3, 1, 2, 3], 2, 3, \"\");"
       ],
       "tests": [
-        "assert(destroyer([1, 2, 3, 1, 2, 3], 2, 3) === [1, 1], '<code>[1&#44; 2&#44; 3&#44; 1&#44; 2&#44; 3]&#44; 2&#44; 3</code> should return <code>[1&#44; 1]</code>.');",
-        "assert(destroyer([1, 2, 3, 5, 1, 2, 3], 2, 3) === [1, 5, 1], '<code>[1&#44; 2&#44; 3&#44; 5&#44; 1&#44; 2&#44; 3]&#44; 2&#44; 3</code> should return <code>[1&#44; 5&#44; 1]</code>.');",
-        "assert(destroyer([3, 5, 1, 2, 2], 2, 3, 5) === [1], '<code>[3&#44; 5&#44; 1&#44; 2&#44; 2]&#44; 2&#44; 3&#44; 5</code> should return <code>[1]</code>.');",
-        "assert(destroyer([2, 3, 2, 3], 2, 3) === [], '<code>[2&#44; 3&#44; 2&#44; 3]&#44; 2&#44; 3</code> should return <code>[]</code>.');",
-        "assert(destroyer([\"tree\", \"hamburger\", 53], \"tree\", 53) === [\"hamburger\"], '<code>[\"tree\"&#44; \"hamburger\"&#44; 53]&#44; \"tree\"&#44; 53)</code> should return <code>[\"hamburger\"]</code>.');"
+        "assert.deepEqual(destroyer([1, 2, 3, 1, 2, 3], 2, 3), [1, 1], '<code>[1&#44; 2&#44; 3&#44; 1&#44; 2&#44; 3]&#44; 2&#44; 3</code> should return <code>[1&#44; 1]</code>.');",
+        "assert.deepEqual(destroyer([1, 2, 3, 5, 1, 2, 3], 2, 3), [1, 5, 1], '<code>[1&#44; 2&#44; 3&#44; 5&#44; 1&#44; 2&#44; 3]&#44; 2&#44; 3</code> should return <code>[1&#44; 5&#44; 1]</code>.');",
+        "assert.deepEqual(destroyer([3, 5, 1, 2, 2], 2, 3, 5), [1], '<code>[3&#44; 5&#44; 1&#44; 2&#44; 2]&#44; 2&#44; 3&#44; 5</code> should return <code>[1]</code>.');",
+        "assert.deepEqual(destroyer([2, 3, 2, 3], 2, 3), [], '<code>[2&#44; 3&#44; 2&#44; 3]&#44; 2&#44; 3</code> should return <code>[]</code>.');",
+        "assert.deepEqual(destroyer([\"tree\", \"hamburger\", 53], \"tree\", 53), [\"hamburger\"], '<code>[\"tree\"&#44; \"hamburger\"&#44; 53]&#44; \"tree\"&#44; 53)</code> should return <code>[\"hamburger\"]</code>.');"
       ],
       "MDNlinks": [
         "Arguments object",
