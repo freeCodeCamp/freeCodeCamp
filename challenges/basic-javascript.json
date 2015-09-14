@@ -643,8 +643,8 @@
       "challengeSeed": [
         "var ourArray = [\"Stimpson\", \"J\", [\"cat\"]];",
         "ourArray.shift();",
-        "ourArray.unshift([\"happy\", \"joy\"]);",
-        "// ourArray now equals [[\"happy\", \"joy\"], \"J\", [\"cat\"]]",
+        "ourArray.unshift(\"happy\");",
+        "// ourArray now equals [\"happy\", \"J\", [\"cat\"]]",
         "",
         "var myArray = [\"John\", 23, [\"dog\", 3]];",
         "myArray.shift();",
