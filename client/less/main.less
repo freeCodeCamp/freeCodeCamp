@@ -3,6 +3,7 @@
 @import "lib/ionicons/ionicons";
 @import "lib/animate.min.less";
 @import "lib/bootstrap/variables";
+@import "lib/purecssapple-iphone.less";
 
 html,body,div,span,a,li,td,th {
   font-family: 'Lato', sans-serif;
@@ -797,11 +798,11 @@ div.CodeMirror-scroll {
 iframe.iphone {
   border: none;
   @media(min-width: 992px) {
-    width: 280px;
-    height: 500px;
+    width: 256px;
+    height: 421px;
     position: absolute;
-    top: 70px;
-    right: 25px;
+    bottom: 107px;
+    left: 27px;
     overflow-y: scroll;
   }
   @media(max-width: 991px) {
@@ -815,14 +816,6 @@ iframe.iphone {
 .nonprofit-help-select-text-height {
   font-size: 40px;
   padding-top: 20px;
-}
-
-// To adjust right margin, negative values bring the image closer to the edge of the screen
-.iphone-position {
-  position: absolute;
-  top: -50px;
-  right: -205px;
-  z-index: -1;
 }
 
 .courseware-height {
