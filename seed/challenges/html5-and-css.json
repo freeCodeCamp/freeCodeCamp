@@ -1060,7 +1060,7 @@
       "description": [
         "<code>a</code> elements, also known as <code>anchor</code> elements, are used to link to content outside of the current page.",
         "Here's a diagram of an <code>a</code> element. In this case, the <code>a</code> element is used in the middle of a paragraph element, which means the link will appear in the middle of a sentence.",
-        "<img class=\"img-responsive\" alt=\"a diagram of how anchor tags are composed with the same text as on the following line\" src=\"http://i.imgur.com/hviuZwe.png\">",
+        "<a href=\"http://i.imgur.com/hviuZwe.png\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" title=\"Click to enlarge\" alt=\"a diagram of how anchor tags are composed with the same text as on the following line\" src=\"http://i.imgur.com/hviuZwe.png\"></a>",
         "Here's an example: <code>&#60;p&#62;Here's a &#60;a href=\"http://freecodecamp.com\"&#62; link to Free Code Camp&#60;/a&#62; for you to follow.&#60;/p&#62;</code>.",
         "Create an <code>a</code> element that links to <code>http://freecatphotoapp.com</code> and has \"cat photos\" as its <code>anchor text</code>."
       ],
@@ -1130,7 +1130,7 @@
       "difficulty": 1.23,
       "description": [
         "Again, here's a diagram of an <code>a</code> element for your reference:",
-        "<img class=\"img-responsive\" alt=\"a diagram of how anchor tags are composed with the same text as on the following line\" src=\"http://i.imgur.com/hviuZwe.png\">",
+        "<a href=\"http://i.imgur.com/hviuZwe.png\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" title=\"Click to enlarge\" alt=\"a diagram of how anchor tags are composed with the same text as on the following line\" src=\"http://i.imgur.com/hviuZwe.png\"></a>",
         "Here's an example: <code>&#60;p&#62;Here's a &#60;a href=\"http://freecodecamp.com\"&#62; link to Free Code Camp&#60;/a&#62; for you to follow.&#60;/p&#62;</code>.",
         "<code>Nesting</code> just means putting one element inside of another element.",
         "Now nest your existing <code>a</code> element within a new <code>p</code> element so that the surrounding paragraph says \"click here for cat photos\", but where only \"cat photos\" is a link, and the rest of the text is rest is plain text."
