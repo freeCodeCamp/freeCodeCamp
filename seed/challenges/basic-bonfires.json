@@ -549,7 +549,7 @@
       "tests": [
         "assert.deepEqual(bouncer([7, \"ate\", \"\", false, 9]), [7, \"ate\", 9], '<code>[7&#44; \"ate\"&#44; \"\"&#44; false&#44; 9]</code> should return <code>[7&#44; \"ate\"&#44; 9]</code>.');",
         "assert.deepEqual(bouncer([\"a\", \"b\", \"c\"]), [\"a\", \"b\", \"c\"], '<code>[\"a\"&#44; \"b\"&#44; \"c\"]</code> should return <code>[\"a\"&#44; \"b\"&#44; \"c\"]</code>.');",
-        "assert.deepEqual(bouncer([false, null, 0]), [], '<code>[false&#44; null&#44; 0]</code> should return <code>[]</code>.');"
+        "assert.deepEqual(bouncer([false, null, 0, NaN, undefined, '']), [], '<code>[false&#44; null&#44; 0]</code> should return <code>[]</code>.');"
       ],
       "MDNlinks": [
         "Boolean Objects",
