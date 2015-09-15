@@ -19,11 +19,11 @@
         "sumAll([1, 4]);"
       ],
       "tests": [
-        "expect(sumAll([1, 4])).to.be.a('Number');",
-        "expect(sumAll([1, 4])).to.equal(10);",
-        "expect(sumAll([4, 1])).to.equal(10);",
-        "expect(sumAll([5, 10])).to.equal(45);",
-        "expect(sumAll([10, 5])).to.equal(45);"
+        "assert.isNumber(sumAll([1, 4]), 'Should return a \"number\".');",
+        "assert.deepEqual(sumAll([1, 4]), 10, 'Should return 10.');",
+        "assert.deepEqual(sumAll([4, 1]), 10, 'Should return 10.');",
+        "assert.deepEqual(sumAll([5, 10]), 45, 'Should return 45.');",
+        "assert.deepEqual(sumAll([10, 5]), 45, 'Should return 45.');"
       ],
       "MDNlinks": [
         "Math.max()",
@@ -61,7 +61,7 @@
         "diff([1, 2, 3, 5], [1, 2, 3, 4, 5]);"
       ],
       "tests": [
-        "expect(diff([1, 2, 3, 5], [1, 2, 3, 4, 5])).to.be.a('array');",
+        "assert.isArray(diff([1, 2, 3, 5], [1, 2, 3, 4, 5]), 'You should be returning an array.');",
         "assert.deepEqual(diff(['diorite', 'andesite', 'grass', 'dirt', 'pink wool', 'dead shrub'], ['diorite', 'andesite', 'grass', 'dirt', 'dead shrub']), ['pink wool'], 'arrays with only one difference');",
         "assert.includeMembers(diff(['andesite', 'grass', 'dirt', 'pink wool', 'dead shrub'], ['diorite', 'andesite', 'grass', 'dirt', 'dead shrub']), ['diorite', 'pink wool'], 'arrays with more than one difference');",
         "assert.deepEqual(diff(['andesite', 'grass', 'dirt', 'dead shrub'], ['andesite', 'grass', 'dirt', 'dead shrub']), [], 'arrays with no difference');",
@@ -93,11 +93,11 @@
       "id": "a7f4d8f2483413a6ce226cac",
       "title": "Roman Numeral Converter",
       "tests": [
-        "expect(convert(12)).to.equal(\"XII\");",
-        "expect(convert(5)).to.equal(\"V\");",
-        "expect(convert(9)).to.equal(\"IX\");",
-        "expect(convert(29)).to.equal(\"XXIX\");",
-        "expect(convert(16)).to.equal(\"XVI\");"
+        "assert(convert(12) === \"XII\", 'You should return \"XII\".');",
+        "assert(convert(5) === \"V\", 'You should return \"V\".');",
+        "assert(convert(9) === \"IX\", 'You should return \"IX\".');",
+        "assert(convert(29) === \"XXIX\", 'You should return \"XXIX\".');",
+        "assert(convert(16) === \"XVI\", 'You should return \"XVI\".');"
       ],
       "difficulty": "2.02",
       "description": [
