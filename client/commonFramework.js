@@ -794,6 +794,8 @@ $(document).ready(function() {
     allSeeds;
 
   myCodeMirror.setValue(replaceSafeTags(editorValue));
+  myCodeMirror.refresh();
+
   if (typeof $preview.html() !== 'undefined') {
     $preview.load(function() {
       if (initPreview) {
