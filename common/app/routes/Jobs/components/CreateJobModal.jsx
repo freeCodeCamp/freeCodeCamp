@@ -1,11 +1,19 @@
 import React, { PropTypes } from 'react';
+import { History } from 'react-router';
 import { Button, Modal } from 'react-bootstrap';
 
 export default React.createClass({
   displayName: 'CreateJobsModal',
+
   propTypes: {
     onHide: PropTypes.func,
     showModal: PropTypes.bool
+  },
+
+  mixins: [History],
+
+  goToNewJob() {
+    this.history.pushState(null, '/jobs/new');
   },
 
   render() {
@@ -23,7 +31,8 @@ export default React.createClass({
           <p>We post jobs specifically target to our junior developers.</p>
           <Button
             block={ true }
-            className='signup-btn'>
+            className='signup-btn'
+            onClick={ this.goToNewJob }>
             Post a Job
           </Button>
         </Modal.Body>
