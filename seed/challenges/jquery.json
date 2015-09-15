@@ -679,7 +679,7 @@
         "Many HTML elements have <code>children</code> which <code>inherit</code> their properties from their parent HTML elements.",
         "For example, every HTML element is a child of your <code>body</code> element, and your \"jQuery Playground\" <code>h3</code> element is a child of your <code>&#60;div class=\"container-fluid\"&#62</code> element.",
         "jQuery has a function called <code>children()</code> that allows you to access the children of whichever element you've selected.",
-        "Here's an example of how you would use the <code>children()</code> function to give the children of your <code>left-well</code> element the background color of blue: <code>$(\"#left-well\").children().css(\"color\", \"blue\")</code>",
+        "Here's an example of how you would use the <code>children()</code> function to give the children of your <code>left-well</code> element the color of blue: <code>$(\"#left-well\").children().css(\"color\", \"blue\")</code>",
         "Give all the children of your <code>#right-well</code> element a color of green."
       ],
       "tests": [
