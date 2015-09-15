@@ -95,7 +95,7 @@ $(document).ready(function() {
             'links to screenshots if possible.\n\n'
           ].join('');
 
-          if ($('#include-code').prop('checked')) {
+          if (editor.getValue().trim()) {
             var type;
             switch (challengeType) {
               case challengeTypes.HTML_CSS_JQ:
@@ -113,7 +113,7 @@ $(document).ready(function() {
               type,
               '\n',
               editor.getValue(),
-              '\n```'
+              '\n```\n\n'
             ].join('');
           }
 
