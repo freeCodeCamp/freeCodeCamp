@@ -97,6 +97,7 @@
       ],
       "tests": [
         "assert($(\"img\").length > 1, 'You should have a total of two images.')",
+        "assert(editor.match(/<img/g) && editor.match(/<img.*>/g).length === 2 && editor.match(/<img/g).length === 2, 'Make sure your new <code>img</code> element has a closing angle bracket.')",
         "assert($(\"img\").hasClass(\"img-responsive\"), 'Your new image should have the class <code>img-responsive</code>.')",
         "assert(new RegExp(\"http://bit.ly/fcc-running-cats\", \"gi\").test($(\"img.img-responsive\").attr(\"src\")), 'Add a second image with the <code>src</code> of <code>http&#58;//bit.ly/fcc-running-cats</code>.')"
       ],
