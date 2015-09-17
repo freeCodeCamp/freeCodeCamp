@@ -19,7 +19,7 @@ block content
     script(src='/js/lib/codemirror/mode/htmlmixed/htmlmixed.js')
     script(src='/js/lib/codemirror/addon/emmet/emmet.js')
     .row.courseware-height
-        .col-xs-12.col-sm-12.col-md-3.col-lg-3
+        .col-md-3.col-lg-3
             .scroll-locker(id = "scroll-locker")
                 .innerMarginFix(style = "width: 99%;")
                     .well
@@ -64,7 +64,7 @@ block content
                         var dashedName = !{JSON.stringify(dashedName)};
                         var challengeType = !{JSON.stringify(challengeType)};
                         var started = Math.floor(Date.now());
-        .col-xs-12.col-sm-12.col-md-5.col-lg-6
+        .col-md-5.col-lg-6
             .editorScrollDiv(style = "overflow-y: auto; overflow-x: hidden;")
                     #mainEditorPanel
                         form.code
