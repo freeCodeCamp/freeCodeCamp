@@ -197,7 +197,7 @@
         "assert(findLongestWord(\"May the force be with you\") === 5, '<code>\"May the force be with you\"</code> should return <code>5</code>.');",
         "assert(findLongestWord(\"Google do a barrel roll\") === 6, '<code>\"Google do a barrel roll\"</code> should return <code>6</code>.');",
         "assert(findLongestWord(\"What is the average airspeed velocity of an unladen swallow\") === 8, '<code>\"What is the average airspeed velocity of an unladen swallow\"</code> should return <code>8</code>.');",
-        "assert(findLongestWord(\"What if we try a super-long word such as otorhinolaryngology\") === 19, '<code>\"What if we try a super-long word such as otorhinolaryngology\"</code> should return <code>18</code>.');"
+        "assert(findLongestWord(\"What if we try a super-long word such as otorhinolaryngology\") === 19, '<code>\"What if we try a super-long word such as otorhinolaryngology\"</code> should return <code>19</code>.');"
       ],
       "MDNlinks": [
         "String.split()",
