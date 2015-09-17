@@ -96,7 +96,7 @@
         "Fortunately, with Bootstrap, all we need to do is add the <code>img-responsive</code> class to your image. Do this, and the image should perfectly fit the width of your page."
       ],
       "tests": [
-        "assert($(\"img\").length > 1, 'You should have a total of two images.')",
+        "assert($(\"img\").length === 2, 'You should have a total of two images.')",
         "assert(editor.match(/<img/g) && editor.match(/<img.*>/g).length === 2 && editor.match(/<img/g).length === 2, 'Make sure your new <code>img</code> element has a closing angle bracket.')",
         "assert($(\"img\").hasClass(\"img-responsive\"), 'Your new image should have the class <code>img-responsive</code>.')",
         "assert(new RegExp(\"http://bit.ly/fcc-running-cats\", \"gi\").test($(\"img.img-responsive\").attr(\"src\")), 'Add a second image with the <code>src</code> of <code>http&#58;//bit.ly/fcc-running-cats</code>.')"
