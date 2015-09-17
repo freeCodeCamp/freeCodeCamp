@@ -4,11 +4,9 @@ $(document).ready(function() {
     ga('send', 'event',  'Challenge', 'load', challengeName);
   }
 
-  $(document).ready(function() {
-    if (typeof editor !== 'undefined') {
-      $('#reset-button').on('click', resetEditor);
-    }
-  });
+  if (typeof editor !== 'undefined') {
+    $('#reset-button').on('click', resetEditor);
+  }
 
   var CSRF_HEADER = 'X-CSRF-Token';
 
