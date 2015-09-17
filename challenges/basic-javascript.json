@@ -302,7 +302,7 @@
       "difficulty": "9.98142",
       "description": [
         "We can also subtract one number from another.",
-        "JavaScript uses use the <code>-</code> symbol for subtraction.",
+        "JavaScript uses the <code>-</code> symbol for subtraction.",
         "Replace the <code>0</code> with the correct number so you can get the result mentioned in the comment."
       ],
       "tests": [
@@ -325,7 +325,7 @@
       "difficulty": "9.98143",
       "description": [
         "We can also multiply one number by another.",
-        "JavaScript uses use the <code>*</code> symbol for multiplication.",
+        "JavaScript uses the <code>*</code> symbol for multiplication.",
         "Replace the <code>0</code> with the correct number so you can get the result mentioned in the comment."
       ],
       "tests": [
@@ -348,7 +348,7 @@
       "difficulty": "9.9814",
       "description": [
         "We can also divide one number by another.",
-        "JavaScript uses use the <code>/</code> symbol for division.",
+        "JavaScript uses the <code>/</code> symbol for division.",
         "Replace the <code>0</code> with the correct number so you can get the result mentioned in the comment."
       ],
       "tests": [
