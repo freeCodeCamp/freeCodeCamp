@@ -1,14 +1,4 @@
 @font-face {
-  font-family: "Lato";
-  src: url(/fonts/Lato-Regular.ttf) format("truetype");
-}
-
-@font-face {
-  font-family: "Lato Light";
-  src: url(/fonts/Lato-Light.ttf) format("truetype");
-}
-
-@font-face {
   font-family: "Ubuntu";
   src: url(/fonts/Ubuntu-Regular.ttf) format("truetype");
 }
