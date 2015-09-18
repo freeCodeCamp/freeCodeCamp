@@ -177,11 +177,11 @@
       "id": "a0b5010f579e69b815e7c5d6",
       "title": "Search and Replace",
       "tests": [
-        "expect(replace(\"Let us go to the store\", \"store\", \"mall\")).to.equal(\"Let us go to the mall\");",
-        "expect(replace(\"He is Sleeping on the couch\", \"Sleeping\", \"sitting\")).to.equal(\"He is Sitting on the couch\");",
-        "expect(replace(\"This has a spellngi error\", \"spellngi\", \"spelling\")).to.equal(\"This has a spelling error\");",
-        "expect(replace(\"His name is Tom\", \"Tom\", \"john\")).to.equal(\"His name is John\");",
-        "expect(replace(\"Let us get back to more Coding\", \"Coding\", \"bonfires\")).to.equal(\"Let us get back to more Bonfires\");"
+        "expect(myReplace(\"Let us go to the store\", \"store\", \"mall\")).to.equal(\"Let us go to the mall\");",
+        "expect(myReplace(\"He is Sleeping on the couch\", \"Sleeping\", \"sitting\")).to.equal(\"He is Sitting on the couch\");",
+        "expect(myReplace(\"This has a spellngi error\", \"spellngi\", \"spelling\")).to.equal(\"This has a spelling error\");",
+        "expect(myReplace(\"His name is Tom\", \"Tom\", \"john\")).to.equal(\"His name is John\");",
+        "expect(myReplace(\"Let us get back to more Coding\", \"Coding\", \"bonfires\")).to.equal(\"Let us get back to more Bonfires\");"
       ],
       "difficulty": "2.035",
       "description": [
@@ -193,11 +193,11 @@
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "challengeSeed": [
-        "function replace(str, before, after) {",
+        "function myReplace(str, before, after) {",
         " return str;",
         "}",
         "",
-        "replace(\"A quick brown fox jumped over the lazy dog\", \"jumped\", \"leaped\");"
+        "myReplace(\"A quick brown fox jumped over the lazy dog\", \"jumped\", \"leaped\");"
       ],
       "MDNlinks": [
         "Array.splice()",
