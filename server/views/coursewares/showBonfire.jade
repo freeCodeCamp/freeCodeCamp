@@ -16,7 +16,7 @@ block content
     script(type='text/javascript', src='/js/lib/jailed/jailed.js')
 
     .row(ng-controller="pairedWithController")
-        .col-xs-12.col-sm-12.col-md-4.col-lg-3
+        .col-md-4.col-lg-3
             .scroll-locker(id = "scroll-locker")
               .innerMarginFix(style=' width: 99%')
                 #testCreatePanel.well
@@ -122,7 +122,7 @@ block content
                     var _ = R;
                     var dashed = !{JSON.stringify(dashedName)};
 
-        .col-xs-12.col-sm-12.col-md-8
+        .col-md-8.col-lg-9
             .editorScrollDiv(style = "overflow-y: auto; overflow-x: hidden;")
                 #mainEditorPanel
                     form.code

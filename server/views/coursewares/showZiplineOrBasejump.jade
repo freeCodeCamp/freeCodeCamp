@@ -1,7 +1,7 @@
 extends ../layout-wide
 block content
     .row
-        .col-xs-12.col-sm-12.col-md-4.bonfire-top
+        .col-md-4.bonfire-top
             h1.text-center= name
             .well
                 h4
@@ -12,7 +12,7 @@ block content
                                     input(type='checkbox' class='challenge-list-checkbox')
                                 .col-xs-9.col-sm-11.col-md-10
                                     li.step-text.wrappable!= step
-        .col-xs-12.col-sm-12.col-md-8
+        .col-md-8
             .embed-responsive.embed-responsive-16by9
                 iframe.embed-responsive-item(src='//player.vimeo.com/video/#{video}')
             br
