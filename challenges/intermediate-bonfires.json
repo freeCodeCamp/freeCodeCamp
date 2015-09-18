@@ -19,11 +19,11 @@
         "sumAll([1, 4]);"
       ],
       "tests": [
-        "expect(sumAll([1, 4])).to.be.a('Number');",
-        "expect(sumAll([1, 4])).to.equal(10);",
-        "expect(sumAll([4, 1])).to.equal(10);",
-        "expect(sumAll([5, 10])).to.equal(45);",
-        "expect(sumAll([10, 5])).to.equal(45);"
+        "assert(typeof(sumAll([1, 4])) === \"number\", 'The result should be a number');",
+        "assert.deepEqual(sumAll([1, 4]), 10, '<code>sumAll([1, 4])</code> should return 10');",
+        "assert.deepEqual(sumAll([4, 1]), 10, '<code>sumAll([4, 1])</code> should return 10');",
+        "assert.deepEqual(sumAll([5, 10]), 45, '<code>sumAll([5, 10])</code> should return 45');",
+        "assert.deepEqual(sumAll([10, 5]), 45, '<code>sumAll([10, 5])</code> should return 45');"
       ],
       "MDNlinks": [
         "Math.max()",
@@ -61,7 +61,7 @@
         "diff([1, 2, 3, 5], [1, 2, 3, 4, 5]);"
       ],
       "tests": [
-        "expect(diff([1, 2, 3, 5], [1, 2, 3, 4, 5])).to.be.a('array');",
+        "assert(typeof(diff([1, 2, 3, 5], [1, 2, 3, 4, 5])) === \"object\", 'The result should be an array.');",
         "assert.deepEqual(diff(['diorite', 'andesite', 'grass', 'dirt', 'pink wool', 'dead shrub'], ['diorite', 'andesite', 'grass', 'dirt', 'dead shrub']), ['pink wool'], 'arrays with only one difference');",
         "assert.includeMembers(diff(['andesite', 'grass', 'dirt', 'pink wool', 'dead shrub'], ['diorite', 'andesite', 'grass', 'dirt', 'dead shrub']), ['diorite', 'pink wool'], 'arrays with more than one difference');",
         "assert.deepEqual(diff(['andesite', 'grass', 'dirt', 'dead shrub'], ['andesite', 'grass', 'dirt', 'dead shrub']), [], 'arrays with no difference');",
@@ -93,11 +93,11 @@
       "id": "a7f4d8f2483413a6ce226cac",
       "title": "Roman Numeral Converter",
       "tests": [
-        "expect(convert(12)).to.equal(\"XII\");",
-        "expect(convert(5)).to.equal(\"V\");",
-        "expect(convert(9)).to.equal(\"IX\");",
-        "expect(convert(29)).to.equal(\"XXIX\");",
-        "expect(convert(16)).to.equal(\"XVI\");"
+        "assert.deepEqual(convert(12), \"XII\", '<code>convert(12)</code> should return \"XII\"');",
+        "assert.deepEqual(convert(5), \"V\", '<code>convert(5)</code> should return \"V\"');",
+        "assert.deepEqual(convert(9), \"IX\", '<code>convert(9)</code> should return \"IX\"');",
+        "assert.deepEqual(convert(29), \"XXIX\", '<code>convert(29)</code> should return \"XXIX\"');",
+        "assert.deepEqual(convert(16), \"XVI\", '<code>convert(16)</code> should return \"XVI\"');"
       ],
       "difficulty": "2.02",
       "description": [
@@ -177,11 +177,11 @@
       "id": "a0b5010f579e69b815e7c5d6",
       "title": "Search and Replace",
       "tests": [
-        "expect(replace(\"Let us go to the store\", \"store\", \"mall\")).to.equal(\"Let us go to the mall\");",
-        "expect(replace(\"He is Sleeping on the couch\", \"Sleeping\", \"sitting\")).to.equal(\"He is Sitting on the couch\");",
-        "expect(replace(\"This has a spellngi error\", \"spellngi\", \"spelling\")).to.equal(\"This has a spelling error\");",
-        "expect(replace(\"His name is Tom\", \"Tom\", \"john\")).to.equal(\"His name is John\");",
-        "expect(replace(\"Let us get back to more Coding\", \"Coding\", \"bonfires\")).to.equal(\"Let us get back to more Bonfires\");"
+        "assert.deepEqual(replace(\"Let us go to the store\", \"store\", \"mall\"), \"Let us go to the mall\", '<code>replace(\"Let us go to the store\", \"store\", \"mall\")</code> should return \"Let us go to the mall\"');",
+        "assert.deepEqual(replace(\"He is Sleeping on the couch\", \"Sleeping\", \"sitting\"), \"He is Sitting on the couch\", '<code>replace(\"He is Sleeping on the couch\", \"Sleeping\", \"sitting\")</code> should return \"He is Sitting on the couch\"');",
+        "assert.deepEqual(replace(\"This has a spellngi error\", \"spellngi\", \"spelling\"), \"This has a spelling error\", '<code>replace(\"This has a spellngi error\", \"spellingi\", \"spelling\")</code> should return \"This has a spelling error\"');",
+        "assert.deepEqual(replace(\"His name is Tom\", \"Tom\", \"john\"), \"His name is John\", '<code>replace(\"His name is Tom\", \"Tom\", \"john\")</code> should return \"His name is John\"');",
+        "assert.deepEqual(replace(\"Let us get back to more Coding\", \"Coding\", \"bonfires\"), \"Let us get back to more Bonfires\", '<code>replace(\"Let us get back to more Coding\", \"Coding\", \"bonfires\")</code> should return \"Let us get back to more Bonfires\"');"
       ],
       "difficulty": "2.035",
       "description": [
@@ -221,11 +221,11 @@
       "id": "aa7697ea2477d1316795783b",
       "title": "Pig Latin",
       "tests": [
-        "expect(translate(\"california\")).to.equal(\"aliforniacay\");",
-        "expect(translate(\"paragraphs\")).to.equal(\"aragraphspay\");",
-        "expect(translate(\"glove\")).to.equal(\"oveglay\");",
-        "expect(translate(\"algorithm\")).to.equal(\"algorithmway\");",
-        "expect(translate(\"eight\")).to.equal(\"eightway\");"
+        "assert.deepEqual(translate(\"california\"), \"aliforniacay\", '<code>translate(\"california\")</code> should return \"aliforniacay\"');",
+        "assert.deepEqual(translate(\"paragraphs\"), \"aragraphspay\", '<code>translate(\"paragraphs\")</code> should return \"aragraphspay\"');",
+        "assert.deepEqual(translate(\"glove\"), \"oveglay\", '<code>translate(\"glove\")</code> should return \"oveglay\"');",
+        "assert.deepEqual(translate(\"algorithm\"), \"algorithmway\", '<code>translate(\"algorithm\")</code> should return \"algorithmway\"');",
+        "assert.deepEqual(translate(\"eight\"), \"eightway\", '<code>translate(\"eight\")</code> should return \"eightway\"');"
       ],
       "difficulty": "2.04",
       "description": [
@@ -319,10 +319,10 @@
         "fearNotLetter('abce');"
       ],
       "tests": [
-        "expect(fearNotLetter('abce')).to.equal('d');",
-        "expect(fearNotLetter('bcd')).to.be.undefined;",
-        "expect(fearNotLetter('abcdefghjklmno')).to.equal('i');",
-        "expect(fearNotLetter('yz')).to.be.undefined;"
+        "assert.deepEqual(fearNotLetter(\"abce\"), \"d\", '<code>fearNotLetter(\"abce\")</code> should return d');",
+        "assert.deepEqual(fearNotLetter(\"abcdefghjklmno\"), \"i\", '<code>fearNotLetter(\"abcdefghjklmno\")</code> should return i');",
+        "assert.isUndefined(fearNotLetter(\"bcd\"), '<code>fearNotLetter(\"bcd\")</code> should return undefined');",
+        "assert.isUndefined(fearNotLetter(\"yz\"), '<code>fearNotLetter(\"yz\")</code> should return undefined');"
       ],
       "MDNlinks": [
         "String.charCodeAt()",
@@ -525,12 +525,12 @@
         "sumFibs(4);"
       ],
       "tests": [
-        "expect(sumFibs(1)).to.be.a('number');",
-        "expect(sumFibs(1000)).to.equal(1785);",
-        "expect(sumFibs(4000000)).to.equal(4613732);",
-        "expect(sumFibs(4)).to.equal(5);",
-        "expect(sumFibs(75024)).to.equal(60696);",
-        "expect(sumFibs(75025)).to.equal(135721);"
+        "assert.deepEqual(typeof(sumFibs(1)), \"number\", \"The result should be a number\");",
+        "assert.deepEqual(sumFibs(1000), 1785, '<code>sumFibs(1000)</code> should return 1785');",
+        "assert.deepEqual(sumFibs(4000000), 4613732, '<code>sumFibs(4000000)</code> should return 4613732');",
+        "assert.deepEqual(sumFibs(4), 5, '<code>sumFibs(4)</code> should return 5');",
+        "assert.deepEqual(sumFibs(75024), 60696, '<code>sumFibs(75024)</code> should return 60696');",
+        "assert.deepEqual(sumFibs(75025), 135721, '<code>sumFibs(75025)</code> should return 135721');"
       ],
       "MDNlinks": [
         "Remainder"
@@ -566,9 +566,9 @@
         "sumPrimes(10);"
       ],
       "tests": [
-        "expect(sumPrimes(10)).to.be.a('number');",
-        "expect(sumPrimes(10)).to.equal(17);",
-        "expect(sumPrimes(977)).to.equal(73156);"
+        "assert.deepEqual(typeof(sumPrimes(10)), \"number\", \"The result should be a number\");",
+        "assert.deepEqual(sumPrimes(10), 17, '<code>sumPrimes(10)</code> should return 17');",
+        "assert.deepEqual(sumPrimes(977), 73156, '<code>sumPrimes(977)</code> should return 73156');"
       ],
       "MDNlinks": [
         "For Loops",
@@ -606,10 +606,10 @@
         "smallestCommons([1,5]);"
       ],
       "tests": [
-        "expect(smallestCommons([1,5])).to.be.a('number');",
-        "expect(smallestCommons([1,5])).to.equal(60);",
-        "expect(smallestCommons([5,1])).to.equal(60);",
-        "expect(smallestCommons([1,13])).to.equal(360360);"
+        "assert.deepEqual(typeof(smallestCommons([1, 5])), \"number\", \"The result should be a number\");",
+        "assert.deepEqual(smallestCommons([1, 5]), 60, '<code>smallestCommons([1, 5])</code> should return 60');",
+        "assert.deepEqual(smallestCommons([5, 1]), 60, '<code>smallestCommons([5, 1])</code> should return 60');",
+        "assert.deepEqual(smallestCommons([1, 13]), 360360, '<code>smallestCommons([1, 13])</code> should return 360360');"
       ],
       "MDNlinks": [
         "Smallest Common Multiple"
@@ -680,10 +680,10 @@
         "drop([1, 2, 3], function(n) {return n < 3; });"
       ],
       "tests": [
-        "expect(drop([1, 2, 3, 4], function(n) {return n >= 3; })).to.eqls([3, 4]);",
-        "expect(drop([1, 2, 3], function(n) {return n > 0; })).to.eqls([1, 2, 3]);",
-        "expect(drop([1, 2, 3, 4], function(n) {return n > 5; })).to.eqls([]);",
-        "expect(drop([1, 2, 3, 7, 4], function(n) { return n > 5; })).to.eqls([7, 4]);"
+        "assert.deepEqual(drop([1, 2, 3, 4], function(n) {return n>= 3;}), [3, 4], '<code>drop([1, 2, 3, 4], function(n) {return n>= 3;})</code> should return [3, 4]');",
+        "assert.deepEqual(drop([1, 2, 3], function(n) {return n > 0; }), [1, 2, 3], '<code>drop([1, 2, 3], function(n) {return n > 0; })</code> should return [1, 2, 3]');",
+        "assert.deepEqual(drop([1, 2, 3, 4], function(n) {return n > 5;}), [], '<code>drop([1, 2, 3, 4], function(n) {return n > 5;})</code> should return []');",
+        "assert.deepEqual(drop([1, 2, 3, 7, 4], function(n) {return n > 3}), [7, 4], '<code>drop([1, 2, 3, 7, 4], function(n) {return n>= 3})</code> should return [7, 4]');"
       ],
       "MDNlinks": [
         "Arguments object",
@@ -757,8 +757,8 @@
         "binaryAgent('01000001 01110010 01100101 01101110 00100111 01110100 00100000 01100010 01101111 01101110 01100110 01101001 01110010 01100101 01110011 00100000 01100110 01110101 01101110 00100001 00111111');"
       ],
       "tests": [
-        "expect(binaryAgent('01000001 01110010 01100101 01101110 00100111 01110100 00100000 01100010 01101111 01101110 01100110 01101001 01110010 01100101 01110011 00100000 01100110 01110101 01101110 00100001 00111111')).to.equal(\"Aren't bonfires fun!?\");",
-        "expect(binaryAgent('01001001 00100000 01101100 01101111 01110110 01100101 00100000 01000110 01110010 01100101 01100101 01000011 01101111 01100100 01100101 01000011 01100001 01101101 01110000 00100001')).to.equal(\"I love FreeCodeCamp!\");"
+        "assert.deepEqual(binaryAgent('01000001 01110010 01100101 01101110 00100111 01110100 00100000 01100010 01101111 01101110 01100110 01101001 01110010 01100101 01110011 00100000 01100110 01110101 01101110 00100001 00111111'), \"Aren't bonfires fun!?\", \"<code>binaryAgent()</code> should return Aren't bonfires fun!?\");",
+        "assert.deepEqual(binaryAgent('01001001 00100000 01101100 01101111 01110110 01100101 00100000 01000110 01110010 01100101 01100101 01000011 01101111 01100100 01100101 01000011 01100001 01101101 01110000 00100001'), \"I love FreeCodeCamp!\", '<code>binaryAgent()</code> should return \"I love FreeCodeCamp!\"');"
       ],
       "MDNlinks": [
         "String.charCodeAt()",
@@ -838,11 +838,11 @@
         "add(2,3);"
       ],
       "tests": [
-        "expect(add(2, 3)).to.equal(5);",
-        "expect(add(2)(3)).to.equal(5);",
-        "expect(add('http://bit.ly/IqT6zt')).to.be.undefined;",
-        "expect(add(2, '3')).to.be.undefined;",
-        "expect(add(2)([3])).to.be.undefined;"
+        "assert.deepEqual(add(2, 3), 5, '<code>add(2, 3)</code> should return 5');",
+        "assert.deepEqual(add(2)(3), 5, '<code>add(2)(3)</code> should return 5');",
+        "assert.isUndefined(add(\"http://bit.ly/IqT6zt\"), '<code>add(\"http://bit.ly/IqT6zt\")</code> should return undefined');",
+        "assert.isUndefined(add(2, \"3\"), '<code>add(2, \"3\")</code> should return undefined');",
+        "assert.isUndefined(add(2)([3]), '<code>add(2)([3])</code> should return undefined');"
       ],
       "MDNlinks": [
         "Global Function Object",
