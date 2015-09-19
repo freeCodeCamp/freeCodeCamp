@@ -14,8 +14,9 @@
         "To get started, we should nest all of our HTML in a <code>div</code> element with the class <code>container-fluid</code>."
       ],
       "tests": [
-        "assert($(\"div\").hasClass(\"container-fluid\"), 'Your <code>div</code> element should have the class <code>container-fluid</code>')",
-        "assert(editor.match(/<\\/div>/g) && editor.match(/<div/g) && editor.match(/<\\/div>/g).length === editor.match(/<div/g).length, 'Make sure each of your <code>div</code> elements has a closing tag.')"
+        "assert($(\"div\").hasClass(\"container-fluid\"), 'Your <code>div</code> element should have the class <code>container-fluid</code>.')",
+        "assert(editor.match(/<\\/div>/g) && editor.match(/<div/g) && editor.match(/<\\/div>/g).length === editor.match(/<div/g).length, 'Make sure each of your <code>div</code> elements has a closing tag.')",
+        "assert($(\".container-fluid\").children().length >= 8, 'Make sure you have nested all HTML elements in <code>.container-fluid</code>.')"
       ],
       "challengeSeed": [
         "<link href=\"http://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
