@@ -68,7 +68,7 @@
       "title": "Symmetric Difference",
       "difficulty": "4.02",
       "description": [
-        "Create a function that takes two or more arrays and returns an array of the symmetric difference of the provided arrays.",
+        "Create a function that takes two or three arrays and returns an array of the symmetric difference of the provided arrays.",
         "The mathematical term symmetric difference refers to the elements in two sets that are in either the first or second set, but not in both.",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
       ],
@@ -82,8 +82,7 @@
       "tests": [
         "assert.sameMembers(sym([1, 2, 3], [5, 2, 1, 4]), [3, 5, 4], 'should return an array of unique values');",
         "assert.sameMembers(sym([1, 2, 5], [2, 3, 5], [3, 4, 5]), [1, 4, 5], 'should return the symmetric difference of the given arrays');",
-        "assert.sameMembers(sym([1, 1, 2, 5], [2, 2, 3, 5], [3, 4, 5, 5]), [1, 4, 5], 'should return an array of unique values');",
-        "assert.sameMembers(sym([1, 1]), [1], 'should return an array of unique values');"
+        "assert.sameMembers(sym([1, 1, 2, 5], [2, 2, 3, 5], [3, 4, 5, 5]), [1, 4, 5], 'should return an array of unique values');"
       ],
       "MDNlinks": [
         "Array.reduce()",
