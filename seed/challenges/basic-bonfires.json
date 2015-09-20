@@ -453,6 +453,7 @@
       "difficulty": "1.11",
       "description": [
         "Return the remaining elements of an array after chopping off n elements from the head.",
+        "The head meaning the beginning of the array, or the zeroth index",
         "Remember to use <a href=\"//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck\" target=\"_blank\">Read-Search-Ask</a> if you get stuck. Write your own code."
       ],
       "challengeSeed": [
