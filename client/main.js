@@ -4,32 +4,6 @@ $(document).ready(function() {
     challengeName :
     'Untitled';
 
-  // pre-cache fonts
-  var lightDef = $.ajax({
-    url: '/fonts/Lato-Light.ttf',
-    beforeSend: function(xhr) {
-      xhr.overrideMimeType('application/octet-stream');
-    }
-  });
-
-  var regularDef = $.ajax({
-    url: '/fonts/Lato-Regular.ttf',
-    beforeSend: function(xhr) {
-      xhr.overrideMimeType('application/octet-stream');
-    }
-  });
-
-  // now add link to css
-  $.when(lightDef, regularDef).then(function() {
-    $('<link />')
-      .attr({
-        type: 'text/css',
-        rel: 'stylesheet',
-        href: '/css/lato.css'
-      })
-      .appendTo('head');
-  });
-
   if (challengeName) {
     ga('send', 'event',  'Challenge', 'load', challengeName);
   }
