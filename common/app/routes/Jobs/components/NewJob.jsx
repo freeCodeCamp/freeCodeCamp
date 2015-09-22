@@ -6,6 +6,10 @@ import {
   Row,
   Well
 } from 'react-bootstrap';
+import {
+  isAscii,
+  isEmail
+} from 'validator';
 
 const defaults = {
   'string': {
@@ -19,13 +23,6 @@ function defaultValue(type) {
   return defaults[type];
 }
 
-function validateString(value) {
-  if (!value && typeof value !== 'string') {
-    return false;
-  }
-  return true;
-}
-
 export default contain({
     actions: 'jobActions',
     store: 'jobsStore',
@@ -33,12 +30,14 @@ export default contain({
       const {
         position = defaultValue('string'),
         locale = defaultValue('string'),
-        description = defaultValue('string')
+        description = defaultValue('string'),
+        email = defaultValue('string')
       } = form;
       return {
         position,
         locale,
-        description
+        description,
+        email
       };
     }
   },
@@ -49,7 +48,8 @@ export default contain({
       jobActions: PropTypes.object,
       position: PropTypes.object,
       locale: PropTypes.object,
-      description: PropTypes.object
+      description: PropTypes.object,
+      email: PropTypes.object
     },
 
     render() {
@@ -57,7 +57,8 @@ export default contain({
         jobActions,
         position,
         locale,
-        description
+        description,
+        email
       } = this.props;
 
       return (
@@ -65,21 +66,17 @@ export default contain({
           <Row>
             <Col>
               <Well className='text-center'>
-                <h1>Create You Job Post</h1>
+                <h1>Create Your Job Post</h1>
                 <form className='form-horizontal'>
                   <Input
-                    bsStyle={
-                      !position.valid && !position.pristine ?
-                        'error' :
-                        null
-                    }
+                    bsStyle={ position.bsStyle }
                     label='Position'
                     labelClassName='col-xs-2'
                     onChange={ ({ target: { value } }) => {
                       jobActions.handleForm({
                         name: 'position',
                         value,
-                        validator: validateString
+                        validator: isAscii
                       });
                     }}
                     placeholder='Position'
@@ -87,18 +84,14 @@ export default contain({
                     value={ position.value }
                     wrapperClassName='col-xs-10' />
                   <Input
-                    bsStyle={
-                      !locale.valid && !locale.pristine ?
-                        'error' :
-                        null
-                    }
+                    bsStyle={ locale.bsStyle }
                     label='Location'
                     labelClassName='col-xs-2'
                     onChange={ ({ target: { value } }) => {
                       jobActions.handleForm({
                         name: 'locale',
                         value,
-                        validator: validateString
+                        validator: isAscii
                       });
                     }}
                     placeholder='Location'
@@ -106,24 +99,35 @@ export default contain({
                     value={ locale.value }
                     wrapperClassName='col-xs-10' />
                   <Input
-                    bsStyle={
-                      !description.valid && !description.pristine ?
-                        'error' :
-                        null
-                    }
+                    bsStyle={ description.bsStyle }
                     label='Description'
                     labelClassName='col-xs-2'
                     onChange={ ({ target: { value } }) => {
                       jobActions.handleForm({
                         name: 'description',
                         value,
-                        validator: validateString
+                        validator: isAscii
                       });
                     }}
                     placeholder='Description'
                     rows='10'
                     type='textarea'
                     value={ description.value }
+                    wrapperClassName='col-xs-10' />
+                  <Input
+                    bsStyle={ email.bsStyle }
+                    label='Email'
+                    labelClassName='col-xs-2'
+                    onChange={ ({ target: { value } }) => {
+                      jobActions.handleForm({
+                        name: 'email',
+                        value,
+                        validator: isEmail
+                      });
+                    }}
+                    placeholder='Email'
+                    type='email'
+                    value={ email.value }
                     wrapperClassName='col-xs-10' />
                 </form>
               </Well>

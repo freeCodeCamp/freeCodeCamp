@@ -52,7 +52,12 @@ export default Actions({
           newState.form = assign(
             {},
             form,
-            { [name]: { value, valid: false, pristine: false }}
+            { [name]: {
+              value,
+              valid: false,
+              pristine: false,
+              bsStyle: value ? 'error' : null
+            }}
           );
           return newState;
         }
@@ -65,7 +70,12 @@ export default Actions({
         newState.form = assign(
           {},
           form,
-          { [name]: { value, valid: true, pristine: false }}
+          { [name]: {
+            value,
+            valid: true,
+            pristine: false,
+            bsStyle: value ? 'success' : null
+          }}
         );
         return newState;
       }
