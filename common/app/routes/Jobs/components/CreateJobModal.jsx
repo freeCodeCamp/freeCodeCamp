@@ -12,7 +12,8 @@ export default React.createClass({
 
   mixins: [History],
 
-  goToNewJob() {
+  goToNewJob(onHide) {
+    onHide();
     this.history.pushState(null, '/jobs/new');
   },
 
@@ -32,7 +33,7 @@ export default React.createClass({
           <Button
             block={ true }
             className='signup-btn'
-            onClick={ this.goToNewJob }>
+            onClick={ () => this.goToNewJob(onHide) }>
             Post a Job
           </Button>
         </Modal.Body>
