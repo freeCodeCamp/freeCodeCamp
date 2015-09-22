@@ -2,6 +2,7 @@ import { Actions } from 'thundercats';
 import debugFactory from 'debug';
 
 const debug = debugFactory('freecc:jobs:actions');
+const assign = Object.assign;
 
 export default Actions({
   setJobs: null,
@@ -23,7 +24,7 @@ export default Actions({
 
       // if no job found this will be null which is a op noop
       return foundJob ?
-        Object.assign({}, oldState, { currentJob: foundJob }) :
+        assign({}, oldState, { currentJob: foundJob }) :
         null;
     };
   },
@@ -37,6 +38,38 @@ export default Actions({
   },
   closeModal() {
     return { showModal: false };
+  },
+  handleForm({ name, value, validator = () => {} }) {
+    if (!name) {
+      // operation noop
+      return { replace: null };
+    }
+    if (!validator(value)) {
+      return {
+        transform(oldState) {
+          const { oldForm } = oldState;
+          const newState = assign({}, oldState);
+          newState.form = assign(
+            {},
+            oldForm,
+            { [name]: { value, valid: false, pristine: false }}
+          );
+          return newState;
+        }
+      };
+    }
+    return {
+      transform(oldState) {
+        const { oldForm } = oldState;
+        const newState = assign({}, oldState);
+        newState.form = assign(
+          {},
+          oldForm,
+          { [name]: { value, valid: true, pristine: false }}
+        );
+        return newState;
+      }
+    };
   }
 })
   .refs({ displayName: 'JobActions' })
