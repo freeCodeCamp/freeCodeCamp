@@ -19,7 +19,7 @@ function defaultValue(type) {
   return defaults[type];
 }
 
-function validatePosition(value) {
+function validateString(value) {
   if (!value && typeof value !== 'string') {
     return false;
   }
@@ -32,12 +32,12 @@ export default contain({
     map({ form = {} }) {
       const {
         position = defaultValue('string'),
-        location = defaultValue('string'),
+        locale = defaultValue('string'),
         description = defaultValue('string')
       } = form;
       return {
         position,
-        location,
+        locale,
         description
       };
     }
@@ -48,14 +48,16 @@ export default contain({
     propTypes: {
       jobActions: PropTypes.object,
       position: PropTypes.object,
-      location: PropTypes.object,
+      locale: PropTypes.object,
       description: PropTypes.object
     },
 
     render() {
       const {
         jobActions,
-        position
+        position,
+        locale,
+        description
       } = this.props;
 
       return (
@@ -77,7 +79,7 @@ export default contain({
                       jobActions.handleForm({
                         name: 'position',
                         value,
-                        validator: validatePosition
+                        validator: validateString
                       });
                     }}
                     placeholder='Position'
@@ -85,16 +87,43 @@ export default contain({
                     value={ position.value }
                     wrapperClassName='col-xs-10' />
                   <Input
+                    bsStyle={
+                      !locale.valid && !locale.pristine ?
+                        'error' :
+                        null
+                    }
                     label='Location'
                     labelClassName='col-xs-2'
+                    onChange={ ({ target: { value } }) => {
+                      jobActions.handleForm({
+                        name: 'locale',
+                        value,
+                        validator: validateString
+                      });
+                    }}
                     placeholder='Location'
                     type='text'
+                    value={ locale.value }
                     wrapperClassName='col-xs-10' />
                   <Input
+                    bsStyle={
+                      !description.valid && !description.pristine ?
+                        'error' :
+                        null
+                    }
                     label='Description'
                     labelClassName='col-xs-2'
+                    onChange={ ({ target: { value } }) => {
+                      jobActions.handleForm({
+                        name: 'description',
+                        value,
+                        validator: validateString
+                      });
+                    }}
                     placeholder='Description'
+                    rows='10'
                     type='textarea'
+                    value={ description.value }
                     wrapperClassName='col-xs-10' />
                 </form>
               </Well>

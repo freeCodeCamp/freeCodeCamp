@@ -47,11 +47,11 @@ export default Actions({
     if (!validator(value)) {
       return {
         transform(oldState) {
-          const { oldForm } = oldState;
+          const { form } = oldState;
           const newState = assign({}, oldState);
           newState.form = assign(
             {},
-            oldForm,
+            form,
             { [name]: { value, valid: false, pristine: false }}
           );
           return newState;
@@ -60,11 +60,11 @@ export default Actions({
     }
     return {
       transform(oldState) {
-        const { oldForm } = oldState;
+        const { form } = oldState;
         const newState = assign({}, oldState);
         newState.form = assign(
           {},
-          oldForm,
+          form,
           { [name]: { value, valid: true, pristine: false }}
         );
         return newState;
