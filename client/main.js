@@ -1,3 +1,29 @@
+var mapShareKey = 'map-shares';
+
+function getMapShares() {
+  var alreadyShared = JSON.parse(localStorage.getItem(mapShareKey) || '[]');
+  if (!alreadyShared || !Array.isArray(alreadyShared)) {
+    localStorage.setItem(mapShareKey, JSON.stringify([]));
+    alreadyShared = [];
+  }
+  return alreadyShared;
+}
+
+function setMapShare(id) {
+  var alreadyShared = getMapShares();
+  var found = false;
+  alreadyShared.forEach(function(_id) {
+    if (_id === id) {
+      found = true;
+    }
+  });
+  if (!found) {
+    alreadyShared.push(id);
+  }
+  localStorage.setItem(mapShareKey, JSON.stringify(alreadyShared));
+  return alreadyShared;
+}
+
 $(document).ready(function() {
 
   var challengeName = typeof challengeName !== 'undefined' ?
@@ -383,6 +409,33 @@ $(document).ready(function() {
            }
        }, false);
     }
+
+
+  // map sharing
+  var alreadyShared = getMapShares();
+  alreadyShared.map(function(id) {
+    // find share button div and hide as camper has already shared
+    $('div[id="' + id + '"]').parent().parent().hide();
+  });
+
+  // on map view
+  $('.map-challenge-block-share').on('click', function(e) {
+    e.preventDefault();
+    var challengeBlockName = $(this).children().attr('id');
+    var challengeBlockEscapedName = challengeBlockName.replace(/\s/, '%20');
+
+    var link = 'https://www.facebook.com/dialog/feed?' +
+      'app_id=1644598365767721' +
+      '&display=page&' +
+      'caption=I%20just%20completed%20' +
+      challengeBlockEscapedName +
+      '%20on%20Free%20Code%20Camp' +
+      '&link=http%3A%2F%2Ffreecodecamp.com' +
+      '&redirect_uri=http://freecodecamp.com/map';
+
+    setMapShare(challengeBlockName);
+    window.location.href = link;
+  });
 });
 
 function defCheck(a){
