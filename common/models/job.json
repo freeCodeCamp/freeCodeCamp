@@ -1,6 +1,7 @@
 {
   "name": "job",
   "base": "PersistedModel",
+  "strict": true,
   "idInjection": true,
   "trackChanges": false,
   "properties": {
