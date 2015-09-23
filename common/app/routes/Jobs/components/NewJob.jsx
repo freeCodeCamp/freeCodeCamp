@@ -9,7 +9,8 @@ import {
 import {
   isAscii,
   isEmail,
-  isMobilePhone
+  isMobilePhone,
+  isURL
 } from 'validator';
 
 const defaults = {
@@ -33,14 +34,16 @@ export default contain({
         locale = defaultValue('string'),
         description = defaultValue('string'),
         email = defaultValue('string'),
-        phone = defaultValue('string')
+        phone = defaultValue('string'),
+        url = defaultValue('string')
       } = form;
       return {
         position,
         locale,
         description,
         email,
-        phone
+        phone,
+        url
       };
     }
   },
@@ -53,7 +56,8 @@ export default contain({
       locale: PropTypes.object,
       description: PropTypes.object,
       email: PropTypes.object,
-      phone: PropTypes.object
+      phone: PropTypes.object,
+      url: PropTypes.object
     },
 
     handleChange(name, validator, { target: { value } }) {
@@ -67,7 +71,8 @@ export default contain({
         locale,
         description,
         email,
-        phone
+        phone,
+        url
       } = this.props;
       const labelClass = 'col-sm-offset-1 col-sm-2';
       const inputClass = 'col-sm-6';
@@ -161,6 +166,21 @@ export default contain({
                       placeholder='555-123-1234'
                       type='tel'
                       value={ phone.value }
+                      wrapperClassName={ inputClass } />
+                    <Input
+                      bsStyle={ url.bsStyle }
+                      label='Phone'
+                      labelClassName={ labelClass }
+                      onChange={ (e) => {
+                        this.handleChange(
+                          'url',
+                          (data) => isURL(data, { 'require_protocol': true }),
+                          e
+                        );
+                      }}
+                      placeholder='http://freecatphotoapp.com'
+                      type='url'
+                      value={ url.value }
                       wrapperClassName={ inputClass } />
                   </Row>
                 </form>
