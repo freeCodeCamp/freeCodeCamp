@@ -18,24 +18,26 @@ const defaults = {
     value: '',
     valid: false,
     pristine: true
+  },
+  bool: {
+    value: false
   }
 };
-
-function defaultValue(type) {
-  return defaults[type];
-}
 
 export default contain({
     actions: 'jobActions',
     store: 'jobsStore',
     map({ form = {} }) {
       const {
-        position = defaultValue('string'),
-        locale = defaultValue('string'),
-        description = defaultValue('string'),
-        email = defaultValue('string'),
-        phone = defaultValue('string'),
-        url = defaultValue('string')
+        position = defaults['string'],
+        locale = defaults['string'],
+        description = defaults['string'],
+        email = defaults['string'],
+        phone = defaults['string'],
+        url = defaults['string'],
+        logo = defaults['string'],
+        name = defaults['string'],
+        highlight = defaults['bool']
       } = form;
       return {
         position,
@@ -43,7 +45,10 @@ export default contain({
         description,
         email,
         phone,
-        url
+        url,
+        logo,
+        name,
+        highlight
       };
     }
   },
@@ -57,7 +62,10 @@ export default contain({
       description: PropTypes.object,
       email: PropTypes.object,
       phone: PropTypes.object,
-      url: PropTypes.object
+      url: PropTypes.object,
+      logo: PropTypes.object,
+      name: PropTypes.object,
+      highlight: PropTypes.object
     },
 
     handleChange(name, validator, { target: { value } }) {
@@ -72,7 +80,10 @@ export default contain({
         description,
         email,
         phone,
-        url
+        url,
+        logo,
+        name,
+        highlight
       } = this.props;
       const labelClass = 'col-sm-offset-1 col-sm-2';
       const inputClass = 'col-sm-6';
@@ -134,9 +145,25 @@ export default contain({
                       type='textarea'
                       value={ description.value }
                       wrapperClassName={ inputClass } />
+
                     <div className='divider'>
                       <h2>Company Information</h2>
                     </div>
+                    <Input
+                      bsStyle={ locale.bsStyle }
+                      label='Company Name'
+                      labelClassName={ labelClass }
+                      onChange={ (e) => {
+                        this.handleChange(
+                          'name',
+                          isAscii,
+                          e,
+                        );
+                      }}
+                      placeholder='Foo, INC'
+                      type='text'
+                      value={ name.value }
+                      wrapperClassName={ inputClass } />
                     <Input
                       bsStyle={ email.bsStyle }
                       label='Email'
@@ -169,7 +196,7 @@ export default contain({
                       wrapperClassName={ inputClass } />
                     <Input
                       bsStyle={ url.bsStyle }
-                      label='Phone'
+                      label='URL'
                       labelClassName={ labelClass }
                       onChange={ (e) => {
                         this.handleChange(
@@ -182,6 +209,37 @@ export default contain({
                       type='url'
                       value={ url.value }
                       wrapperClassName={ inputClass } />
+                    <Input
+                      bsStyle={ logo.bsStyle }
+                      label='Logo'
+                      labelClassName={ labelClass }
+                      onChange={ (e) => {
+                        this.handleChange(
+                          'logo',
+                          (data) => isURL(data, { 'require_protocol': true }),
+                          e
+                        );
+                      }}
+                      placeholder='http://freecatphotoapp.com/logo.png'
+                      type='url'
+                      value={ logo.value }
+                      wrapperClassName={ inputClass } />
+
+                    <div className='divider'>
+                      <h2>Make it stand out</h2>
+                    </div>
+                    <Input
+                      label='Highlight your ad'
+                      labelClassName={ 'col-sm-offset-1 col-sm-6'}
+                      onChange={ (e) => {
+                        this.handleChange(
+                          'highlight',
+                          () => { return true; },
+                          e
+                        );
+                      }}
+                      type='checkbox'
+                      value={ highlight.value } />
                   </Row>
                 </form>
               </Well>
