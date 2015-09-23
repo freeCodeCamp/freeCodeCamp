@@ -1,58 +1,74 @@
 import React, { PropTypes } from 'react';
 import { contain } from 'thundercats-react';
-import { PanelGroup, Thumbnail, Panel, Well } from 'react-bootstrap';
+import { Row, Thumbnail, Panel, Well } from 'react-bootstrap';
 import moment from 'moment';
+
+const thumbnailStyle = {
+  backgroundColor: 'white',
+  maxHeight: '100px',
+  maxWidth: '100px'
+};
 
 export default contain(
   {
+    store: 'jobsStore',
+    fetchAction: 'jobActions.getJob',
+    map({ currentJob }) {
+      return { job: currentJob };
+    },
+    getPayload({ params: { id }, job = {} }) {
+      return {
+        id,
+        isPrimed: job.id === id
+      };
+    },
+    // using es6 destructuring
+    shouldContainerFetch({ job = {} }, { params: { id } }
+    ) {
+      return job.id !== id;
+    }
   },
   React.createClass({
-    displayName: 'ShowJobs',
-
+    displayName: 'ShowJob',
     propTypes: {
-      jobs: PropTypes.array
+      job: PropTypes.object,
+      params: PropTypes.object
     },
 
-    renderJobs(jobs =[]) {
-      const thumbnailStyle = {
-        backgroundColor: 'white',
-        maxHeight: '200px',
-        maxWidth: '200px'
-      };
-      return jobs.map((
-        {
-          id,
-          company,
-          position,
-          description,
-          logo,
-          city,
-          state,
-          email,
-          phone,
-          postedOn
-        },
-        index
-      ) => {
-        const header = (
-          <div>
-            <h4 style={{ display: 'inline-block' }}>{ company }</h4>
-            <h5
-              className='pull-right hidden-xs hidden-md'
-              style={{ display: 'inline-block' }}>
-              { position }
-            </h5>
-          </div>
-        );
-        return (
-          <Panel
-            collapsible={ true }
-            eventKey={ index }
-            header={ header }
-            key={ id }>
+    renderHeader({ company, position }) {
+      return (
+        <div>
+          <h4 style={{ display: 'inline-block' }}>{ company }</h4>
+          <h5
+            className='pull-right hidden-xs hidden-md'
+            style={{ display: 'inline-block' }}>
+            { position }
+          </h5>
+        </div>
+      );
+    },
+
+    render() {
+      const { job = {} } = this.props;
+      const {
+        logo,
+        position,
+        city,
+        company,
+        state,
+        email,
+        phone,
+        postedOn,
+        description
+      } = job;
+
+      return (
+        <div>
+          <Row>
             <Well>
               <Thumbnail
-                alt='200x200' src={ logo }
+                alt={ company + 'company logo' }
+                src={ logo }
                 style={ thumbnailStyle } />
               <Panel>
                 Position: { position }
@@ -64,17 +80,8 @@ export default contain(
               </Panel>
               <p>{ description }</p>
             </Well>
-          </Panel>
-        );
-      });
-    },
-
-    render() {
-      const { jobs } = this.props;
-      return (
-        <PanelGroup>
-          { this.renderJobs(jobs) }
-        </PanelGroup>
+          </Row>
+        </div>
       );
     }
   })

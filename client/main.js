@@ -1,14 +1,16 @@
 $(document).ready(function() {
-  var challengeName = typeof challengeName !== undefined ? challengeName : 'Untitled';
+
+  var challengeName = typeof challengeName !== 'undefined' ?
+    challengeName :
+    'Untitled';
+
   if (challengeName) {
     ga('send', 'event',  'Challenge', 'load', challengeName);
   }
 
-  $(document).ready(function() {
-    if (typeof editor !== 'undefined') {
-      $('#reset-button').on('click', resetEditor);
-    }
-  });
+  if (typeof editor !== 'undefined') {
+    $('#reset-button').on('click', resetEditor);
+  }
 
   var CSRF_HEADER = 'X-CSRF-Token';
 
@@ -59,68 +61,70 @@ $(document).ready(function() {
 
   function reBindModals(){
 
-      $('#i-want-help').unbind('click');
-      $('#i-want-help').on('click', function() {
-          $('#help-modal').modal('hide');
-          var editorValue = editor.getValue();
-          var currentLocation = window.location.href;
-          $.post(
-              '/get-help',
-              {
-                  payload: {
-                      code: editorValue,
-                      challenge: currentLocation
-                  }
-              },
-              function(res) {
-                  if (res) {
-                      window.open('https://gitter.im/FreeCodeCamp/Help', '_blank')
-                  }
-              }
-          );
+      $('.close-modal').unbind('click');
+      $('.close-modal').on('click', function(){
+        setTimeout(function() {
+            $('.close-modal').parent().parent().parent().parent().modal('hide');
+        }, 200);
       });
 
-      $('#i-want-help-editorless').unbind('click');
-      $('#i-want-help-editorless').on('click', function() {
-          $('#help-editorless-modal').modal('hide');
-          var currentLocation = window.location.href;
-          $.post(
-              '/get-help',
-              {
-                  payload: {
-                      challenge: currentLocation
-                  }
-              },
-              function(res) {
-                  if (res) {
-                      window.open('https://gitter.im/FreeCodeCamp/Help', '_blank')
-                  }
-              }
-          );
+      $('#search-issue').unbind('click');
+      $('#search-issue').on('click', function() {
+          var queryIssue = window.location.href.toString();
+          window.open('https://github.com/FreeCodeCamp/FreeCodeCamp/issues?q=' +
+            'is:issue is:all ' + (challenge_Name || challengeName) + ' OR ' +
+            queryIssue.substr(queryIssue.lastIndexOf('challenges/') + 11)
+            .replace('/', ''), '_blank');
+      });
+
+      $('#help-ive-found-a-bug-wiki-article').unbind('click');
+      $('#help-ive-found-a-bug-wiki-article').on('click', function() {
+        window.open("https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/Help-I've-Found-a-Bug", '_blank');
       });
 
       $('#report-issue').unbind('click');
       $('#report-issue').on('click', function() {
-          $('#issue-modal').modal('hide');
-          window.open('https://github.com/freecodecamp/freecodecamp/issues/new?&body=Challenge '+ window.location.href +' has an issue. Please describe how to reproduce it, and include links to screenshots if possible.', '_blank')
-      });
+          var textMessage = [
+            'Challenge [',
+            (challenge_Name || challengeName || window.location.href),
+            '](',
+            window.location.href,
+            ') has an issue.\n',
+            'User Agent is: <code>',
+            navigator.userAgent,
+            '</code>.\n',
+            'Please describe how to reproduce this issue, and include ',
+            'links to screenshots if possible.\n\n'
+          ].join('');
 
-      $('#i-want-help').unbind('click');
-      $('#i-want-to-pair').on('click', function() {
-          $('#pair-modal').modal('hide');
-          var currentLocation = window.location.href;
-          $.post(
-              '/get-pair',
-              {
-                  payload: {
-                      challenge: currentLocation
-                  }
-              },
-              function(res) {
-                  if (res) {
-                      window.open('https://gitter.im/FreeCodeCamp/LetsPair', '_blank')
-                  }
-              }
+          if (editor.getValue().trim()) {
+            var type;
+            switch (challengeType) {
+              case challengeTypes.HTML_CSS_JQ:
+                type = 'html';
+                break;
+              case challengeTypes.JAVASCRIPT:
+                type = 'javascript';
+                break;
+              default:
+                type = '';
+            }
+
+            textMessage += [
+              'My code:\n```',
+              type,
+              '\n',
+              editor.getValue(),
+              '\n```\n\n'
+            ].join('');
+          }
+
+          textMessage = encodeURIComponent(textMessage);
+
+          $('#issue-modal').modal('hide');
+          window.open(
+            'https://github.com/freecodecamp/freecodecamp/issues/new?&body=' +
+            textMessage, '_blank'
           );
       });
 
@@ -177,7 +181,7 @@ $(document).ready(function() {
                           }).success(
                           function(res) {
                               if (res) {
-                                  window.location.href = '/challenges/next-challenge';
+                                  window.location.href = '/challenges/next-challenge?id=' + challenge_Id;
                               }
                           }).fail(
                           function() {
@@ -200,7 +204,7 @@ $(document).ready(function() {
                               }
                           }).success(
                           function() {
-                              window.location.href = '/challenges/next-challenge';
+                              window.location.href = '/challenges/next-challenge?id=' + challenge_Id;
                           }).fail(
                           function() {
                               window.location.href = '/challenges';
@@ -223,37 +227,17 @@ $(document).ready(function() {
                                   verified: false
                               }
                           }).success(function() {
-                              window.location.href = '/challenges/next-challenge';
+                              window.location.href = '/challenges/next-challenge?id=' + challenge_Id;
                           }).fail(function() {
                               window.location.replace(window.location.href);
                           });
                       break;
                   case challengeTypes.BONFIRE:
-                      window.location.href = '/challenges/next-challenge';
+                      window.location.href = '/challenges/next-challenge?id=' + challenge_Id;
                   default:
                       break;
               }
           }
-      });
-
-      $('.next-challenge-button').unbind('click');
-      $('.next-challenge-button').on('click', function() {
-          l = location.pathname.split('/');
-          window.location = '/challenges/' + (parseInt(l[l.length - 1]) + 1);
-      });
-
-      // Bonfire instructions functions
-      $('#more-info').unbind('click');
-      $('#more-info').on('click', function() {
-          ga('send', 'event',  'Challenge', 'more-info', challengeName);
-          $('#brief-instructions').hide();
-          $('#long-instructions').show().removeClass('hide');
-
-      });
-      $('#less-info').unbind('click');
-      $('#less-info').on('click', function() {
-          $('#brief-instructions').show();
-          $('#long-instructions').hide();
       });
 
       $('#complete-courseware-dialog').on('hidden.bs.modal', function() {
@@ -381,6 +365,21 @@ $(document).ready(function() {
               lockTop();
             });
         }
+       var execInProgress = false;
+       document.getElementById('scroll-locker').addEventListener('previewUpdateSpy', function(e){
+           if (!execInProgress){
+               execInProgress = true;
+               setTimeout(function(){
+                   if($($('.scroll-locker').children()[0]).height()-800 > e.detail){
+                       $('.scroll-locker').scrollTop(e.detail);
+                   }
+                   else {
+                       $('.scroll-locker').animate({"scrollTop":$($('.scroll-locker').children()[0]).height()}, 175);
+                   }
+                   execInProgress = false;
+               }, 750);
+           }
+       }, false);
     }
 });
 

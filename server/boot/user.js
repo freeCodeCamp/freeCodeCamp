@@ -1,18 +1,18 @@
-var _ = require('lodash'),
-    async = require('async'),
-    moment = require('moment'),
-    debug = require('debug')('freecc:cntr:userController');
+import _ from 'lodash';
+import async from 'async';
+import moment from 'moment';
+import debugFactory from 'debug';
 
+import { ifNoUser401 } from '../utils/middleware';
 
+const debug = debugFactory('freecc:boot:user');
 const daysBetween = 1.5;
 
 function calcCurrentStreak(cals) {
-  const revCals = cals.slice().reverse();
+  const revCals = cals.concat([Date.now()]).slice().reverse();
   let streakBroken = false;
   const lastDayInStreak = revCals
     .reduce((current, cal, index) => {
-      debug('cal', cal);
-      debug('broken', streakBroken);
       const before = revCals[index === 0 ? 0 : index - 1];
       if (
         !streakBroken &&
@@ -28,11 +28,26 @@ function calcCurrentStreak(cals) {
   return Math.ceil(moment().diff(lastTimestamp, 'days', true));
 }
 
-// TODO(berks): calc longest streak
-/*
-function longestStreak(cals) {
+function calcLongestStreak(cals) {
+  let tail = cals[0];
+  const longest = cals.reduce((longest, head, index) => {
+    const last = cals[index === 0 ? 0 : index - 1];
+    // is streak broken
+    if (moment(head).diff(last, 'days', true) > daysBetween) {
+      tail = head;
+    }
+    if (dayDiff(longest) < dayDiff([head, tail])) {
+      return [head, tail];
+    }
+    return longest;
+  }, [cals[0], cals[0]]);
+
+  return Math.ceil(dayDiff(longest));
 }
-*/
+
+function dayDiff([head, tail]) {
+  return moment(head).diff(tail, 'days', true);
+}
 
 module.exports = function(app) {
   var router = app.loopback.Router();
@@ -54,8 +69,11 @@ module.exports = function(app) {
   router.get('/email-signup', getEmailSignup);
   router.get('/email-signin', getEmailSignin);
   router.get('/account/api', getAccountAngular);
-  router.post('/account/password', postUpdatePassword);
-  router.post('/account/delete', postDeleteAccount);
+  router.post(
+    '/account/delete',
+    ifNoUser401,
+    postDeleteAccount
+  );
   router.get('/account/unlink/:provider', getOauthUnlink);
   router.get('/account', getAccount);
   // Ensure this is the last route!
@@ -144,10 +162,7 @@ module.exports = function(app) {
           .sort();
 
         user.currentStreak = calcCurrentStreak(cals);
-
-        if (user.currentStreak > user.longestStreak) {
-          user.longestStreak = user.currentStreak;
-        }
+        user.longestStreak = calcLongestStreak(cals);
 
         const data = user
           .progressTimestamps
@@ -179,11 +194,11 @@ module.exports = function(app) {
           isMigrationGrandfathered: user.isMigrationGrandfathered,
           isGithubCool: user.isGithubCool,
           location: user.location,
-          githubProfile: user.github,
-          linkedinProfile: user.linkedin,
-          googleProfile: user.google,
-          facebookProfile: user.facebook,
-          twitterHandle: user.twitter,
+          github: user.githubURL,
+          linkedin: user.linkedin,
+          google: user.google,
+          facebook: user.facebook,
+          twitter: user.twitter,
           picture: user.picture,
           progressTimestamps: user.progressTimestamps,
           calender: data,

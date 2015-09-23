@@ -8,6 +8,8 @@ nav.navbar.navbar-default.navbar-fixed-top.nav-height
     .collapse.navbar-collapse
         ul.nav.navbar-nav.navbar-right.hamburger-dropdown
             li
+                a.learn-btn(href='#') Learn
+            li
                 a(href='/map') Map
             li
                 a(href='//gitter.im/FreeCodeCamp/FreeCodeCamp', target='_blank') Chat
@@ -32,3 +34,19 @@ nav.navbar.navbar-default.navbar-fixed-top.nav-height
                 .hidden-xs.hidden-sm
                     a(href='/account')
                         img.profile-picture.float-right(src='#{user.picture}')
+script.
+  $(document).ready(function() {
+    $('.learn-btn').click(function(e) {
+      var challengeDashedName = null;
+      e.preventDefault();
+      if (typeof dashedName === "string") {
+          return location.reload();
+      }
+      if (typeof localStorage !== 'undefined') {
+        challengeDashedName = localStorage.getItem('currentDashedName');
+      }
+      window.location = challengeDashedName ?
+        '/challenges/' + challengeDashedName :
+        '/map';
+    });
+  });

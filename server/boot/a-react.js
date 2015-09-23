@@ -13,7 +13,8 @@ const debug = debugFactory('freecc:react-server');
 const routes = [
   '/hikes',
   '/hikes/*',
-  '/jobs'
+  '/jobs',
+  '/jobs/*'
 ];
 
 export default function reactSubRouter(app) {
