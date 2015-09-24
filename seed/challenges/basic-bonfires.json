@@ -234,7 +234,7 @@
       ],
       "tests": [
         "assert(typeof(titleCase(\"I&#39;m a little tea pot\")) === \"string\", '<code>titleCase&#40;&#41;</code> should return a string.');",
-        "assert(titleCase(\"I&#39;m a little tea pot\") === \"I&#39;m A Little Tea Pot\", '<code>\"I&#39;m a little tea pot\"</code> should return <code>\"I&#39;m A Little Tea Pot\"</code>.');",
+        "assert(titleCase(\"I'm a little tea pot\") === \"I'm A Little Tea Pot\", '<code>\"I&#39;m a little tea pot\"</code> should return <code>\"I&#39;m A Little Tea Pot\"</code>.');",
         "assert(titleCase(\"sHoRt AnD sToUt\") === \"Short And Stout\", '<code>\"sHoRt AnD sToUt\"</code> should return <code>\"Short And Stout\"</code>.');",
         "assert(titleCase(\"HERE IS MY HANDLE HERE IS MY SPOUT\") === \"Here Is My Handle Here Is My Spout\", '<code>\"HERE IS MY HANDLE HERE IS MY SPOUT\"</code> should return <code>\"Here Is My Handle Here Is My Spout\"</code>');"
       ],
