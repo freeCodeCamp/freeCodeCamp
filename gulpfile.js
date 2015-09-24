@@ -15,7 +15,7 @@ var Rx = require('rx'),
   debug = require('debug')('freecc:gulp'),
 
   // react app
-  webpack = require('gulp-webpack'),
+  webpack = require('webpack-stream'),
   webpackConfig = require('./webpack.config.js'),
   webpackConfigNode = require('./webpack.config.node.js'),
 
@@ -408,4 +408,3 @@ gulp.task('default', [
   'watch',
   'sync'
 ]);
-
