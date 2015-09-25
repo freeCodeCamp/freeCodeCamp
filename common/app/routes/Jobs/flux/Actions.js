@@ -137,7 +137,9 @@ export default Actions({
 
     jobActions.getSavedForm.subscribe(() => {
       const job = store.get('newJob');
-      jobActions.setForm(job);
+      if (job && !Array.isArray(job) && typeof job === 'object') {
+        jobActions.setForm(job);
+      }
     });
     return jobActions;
   });
