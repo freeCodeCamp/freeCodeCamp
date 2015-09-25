@@ -37,22 +37,31 @@ const checkValidity = [
   'highlight'
 ];
 
+function formatValue(value, validator, type = 'string') {
+  const formated = getDefaults(type);
+  if (validator && type === 'string') {
+    formated.valid = validator(value);
+  }
+  if (value) {
+    formated.value = value;
+    formated.bsStyle = formated.valid ? 'success' : 'error';
+  }
+  return formated;
+}
+
+function isValidURL(data) {
+  return isURL(data, { 'require_protocol': true });
+}
+
+function isValidPhone(data) {
+  return isMobilePhone(data, 'en-US');
+}
+
 export default contain({
     actions: 'jobActions',
     store: 'jobsStore',
     map({ form = {} }) {
       const {
-        position = getDefaults('string'),
-        locale = getDefaults('string'),
-        description = getDefaults('string'),
-        email = getDefaults('string'),
-        phone = getDefaults('string'),
-        url = getDefaults('string'),
-        logo = getDefaults('string'),
-        name = getDefaults('string'),
-        highlight = getDefaults('bool')
-      } = form;
-      return {
         position,
         locale,
         description,
@@ -62,6 +71,17 @@ export default contain({
         logo,
         name,
         highlight
+      } = form;
+      return {
+        position: formatValue(position, isAscii),
+        locale: formatValue(locale, isAscii),
+        description: formatValue(description, isAscii),
+        email: formatValue(email, isEmail),
+        phone: formatValue(phone, isValidPhone),
+        url: formatValue(url, isValidURL),
+        logo: formatValue(logo, isValidURL),
+        name: formatValue(name, isAscii),
+        highlight: formatValue(highlight, null, 'bool')
       };
     },
     subscribeOnWillMount() {
@@ -86,11 +106,12 @@ export default contain({
 
     handleSubmit(e) {
       e.preventDefault();
+      const props = this.props;
       let valid = true;
       checkValidity.forEach((prop) => {
         // if value exist, check if it is valid
-        if (this.props[prop].value) {
-          valid = valid && !!this.props[prop].valid;
+        if (props[prop].value && props[prop].type !== 'boolean') {
+          valid = valid && !!props[prop].valid;
         }
       });
 
@@ -141,9 +162,9 @@ export default contain({
       jobActions.getSavedForm();
     },
 
-    handleChange(name, validator, { target: { value } }) {
+    handleChange(name, { target: { value } }) {
       const { jobActions: { handleForm } } = this.props;
-      handleForm({ name, value, validator });
+      handleForm({ [name]: value });
     },
 
     render() {
@@ -156,8 +177,10 @@ export default contain({
         url,
         logo,
         name,
-        highlight
+        highlight,
+        jobActions: { handleForm }
       } = this.props;
+      const { handleChange } = this;
       const labelClass = 'col-sm-offset-1 col-sm-2';
       const inputClass = 'col-sm-6';
 
@@ -178,13 +201,7 @@ export default contain({
                     bsStyle={ position.bsStyle }
                     label='Position'
                     labelClassName={ labelClass }
-                    onChange={ (e) => {
-                      this.handleChange(
-                        'position',
-                        isAscii,
-                        e
-                      );
-                    }}
+                    onChange={ (e) => handleChange('position', e) }
                     placeholder='Position'
                     type='text'
                     value={ position.value }
@@ -193,13 +210,7 @@ export default contain({
                     bsStyle={ locale.bsStyle }
                     label='Location'
                     labelClassName={ labelClass }
-                    onChange={ (e) => {
-                      this.handleChange(
-                        'locale',
-                        isAscii,
-                        e,
-                      );
-                    }}
+                    onChange={ (e) => handleChange('locale', e) }
                     placeholder='Location'
                     type='text'
                     value={ locale.value }
@@ -208,13 +219,7 @@ export default contain({
                     bsStyle={ description.bsStyle }
                     label='Description'
                     labelClassName={ labelClass }
-                    onChange={ (e) => {
-                      this.handleChange(
-                        'description',
-                        isAscii,
-                        e
-                      );
-                    }}
+                    onChange={ (e) => handleChange('description', e) }
                     placeholder='Description'
                     rows='10'
                     type='textarea'
@@ -228,13 +233,7 @@ export default contain({
                     bsStyle={ name.bsStyle }
                     label='Company Name'
                     labelClassName={ labelClass }
-                    onChange={ (e) => {
-                      this.handleChange(
-                        'name',
-                        isAscii,
-                        e,
-                      );
-                    }}
+                    onChange={ (e) => handleChange('name', e) }
                     placeholder='Foo, INC'
                     type='text'
                     value={ name.value }
@@ -243,13 +242,7 @@ export default contain({
                     bsStyle={ email.bsStyle }
                     label='Email'
                     labelClassName={ labelClass }
-                    onChange={ (e) => {
-                      this.handleChange(
-                        'email',
-                        isEmail,
-                        e
-                      );
-                    }}
+                    onChange={ (e) => handleChange('email', e) }
                     placeholder='Email'
                     type='email'
                     value={ email.value }
@@ -258,13 +251,7 @@ export default contain({
                     bsStyle={ phone.bsStyle }
                     label='Phone'
                     labelClassName={ labelClass }
-                    onChange={ (e) => {
-                      this.handleChange(
-                        'phone',
-                        (data) => isMobilePhone(data, 'en-US'),
-                        e
-                      );
-                    }}
+                    onChange={ (e) => handleChange('phone', e) }
                     placeholder='555-123-1234'
                     type='tel'
                     value={ phone.value }
@@ -273,13 +260,7 @@ export default contain({
                     bsStyle={ url.bsStyle }
                     label='URL'
                     labelClassName={ labelClass }
-                    onChange={ (e) => {
-                      this.handleChange(
-                        'url',
-                        (data) => isURL(data, { 'require_protocol': true }),
-                        e
-                      );
-                    }}
+                    onChange={ (e) => handleChange('url', e) }
                     placeholder='http://freecatphotoapp.com'
                     type='url'
                     value={ url.value }
@@ -288,13 +269,7 @@ export default contain({
                     bsStyle={ logo.bsStyle }
                     label='Logo'
                     labelClassName={ labelClass }
-                    onChange={ (e) => {
-                      this.handleChange(
-                        'logo',
-                        (data) => isURL(data, { 'require_protocol': true }),
-                        e
-                      );
-                    }}
+                    onChange={ (e) => handleChange('logo', e) }
                     placeholder='http://freecatphotoapp.com/logo.png'
                     type='url'
                     value={ logo.value }
@@ -304,17 +279,15 @@ export default contain({
                     <h2>Make it stand out</h2>
                   </div>
                   <Input
+                    checked={ highlight.value }
                     label='Highlight your ad'
                     labelClassName={ 'col-sm-offset-1 col-sm-6'}
-                    onChange={ (e) => {
-                      this.handleChange(
-                        'highlight',
-                        () => { return true; },
-                        e
-                      );
-                    }}
-                    type='checkbox'
-                    value={ highlight.value } />
+                    onChange={
+                      ({ target: { checked } }) => handleForm({
+                        highlight: !!checked
+                      })
+                    }
+                    type='checkbox' />
                   <div className='spacer' />
                   <Row>
                     <Col

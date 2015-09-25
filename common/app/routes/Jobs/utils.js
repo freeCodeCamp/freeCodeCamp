@@ -18,5 +18,5 @@ export function getDefaults(type, value) {
   if (value) {
     return Object.assign({}, defaults[type], { value });
   }
-  return defaults[type];
+  return Object.assign({}, defaults[type]);
 }

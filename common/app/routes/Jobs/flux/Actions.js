@@ -1,6 +1,5 @@
 import { Actions } from 'thundercats';
 import store from 'store';
-import { getDefaults } from '../utils';
 import debugFactory from 'debug';
 
 const debug = debugFactory('freecc:jobs:actions');
@@ -41,32 +40,7 @@ export default Actions({
   closeModal() {
     return { showModal: false };
   },
-  handleForm({ name, value, validator = () => {} }) {
-    if (!name) {
-      // operation noop
-      return { replace: null };
-    }
-    if (!validator(value)) {
-      return {
-        transform(oldState) {
-          const { form } = oldState;
-          const newState = assign({}, oldState);
-          newState.form = assign(
-            {},
-            form,
-            {
-              [name]: {
-                value,
-                valid: false,
-                pristine: false,
-                bsStyle: value ? 'error' : null
-              }
-            }
-          );
-          return newState;
-        }
-      };
-    }
+  handleForm(value) {
     return {
       transform(oldState) {
         const { form } = oldState;
@@ -74,14 +48,7 @@ export default Actions({
         newState.form = assign(
           {},
           form,
-          {
-            [name]: {
-              value,
-              valid: true,
-              pristine: false,
-              bsStyle: value ? 'success' : null
-            }
-          }
+          value
         );
         return newState;
       }
@@ -89,15 +56,7 @@ export default Actions({
   },
   saveForm: null,
   getSavedForm: null,
-  setForm(job) {
-    const form = Object.keys(job).reduce((accu, prop) => {
-      console.log('form', accu);
-      return Object.assign(
-        accu,
-        { [prop]: getDefaults(typeof prop, job[prop]) }
-      );
-    }, {});
-
+  setForm(form) {
     return { form };
   }
 })
