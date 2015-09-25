@@ -1,5 +1,13 @@
 import React, { PropTypes } from 'react';
 import { contain } from 'thundercats-react';
+import debugFactory from 'debug';
+import { getDefaults } from '../utils';
+
+import {
+  inHTMLData,
+  uriInSingleQuotedAttr
+} from 'xss-filters';
+
 import {
   Button,
   Col,
@@ -7,6 +15,7 @@ import {
   Row,
   Well
 } from 'react-bootstrap';
+
 import {
   isAscii,
   isEmail,
@@ -14,31 +23,34 @@ import {
   isURL
 } from 'validator';
 
-const defaults = {
-  'string': {
-    value: '',
-    valid: false,
-    pristine: true
-  },
-  bool: {
-    value: false
-  }
-};
+const debug = debugFactory('freecc:jobs:newForm');
+
+const checkValidity = [
+  'position',
+  'locale',
+  'description',
+  'email',
+  'phone',
+  'url',
+  'logo',
+  'name',
+  'highlight'
+];
 
 export default contain({
     actions: 'jobActions',
     store: 'jobsStore',
     map({ form = {} }) {
       const {
-        position = defaults['string'],
-        locale = defaults['string'],
-        description = defaults['string'],
-        email = defaults['string'],
-        phone = defaults['string'],
-        url = defaults['string'],
-        logo = defaults['string'],
-        name = defaults['string'],
-        highlight = defaults['bool']
+        position = getDefaults('string'),
+        locale = getDefaults('string'),
+        description = getDefaults('string'),
+        email = getDefaults('string'),
+        phone = getDefaults('string'),
+        url = getDefaults('string'),
+        logo = getDefaults('string'),
+        name = getDefaults('string'),
+        highlight = getDefaults('bool')
       } = form;
       return {
         position,
@@ -51,6 +63,9 @@ export default contain({
         name,
         highlight
       };
+    },
+    subscribeOnWillMount() {
+      return typeof window !== 'undefined';
     }
   },
   React.createClass({
@@ -67,6 +82,63 @@ export default contain({
       logo: PropTypes.object,
       name: PropTypes.object,
       highlight: PropTypes.object
+    },
+
+    handleSubmit(e) {
+      e.preventDefault();
+      let valid = true;
+      checkValidity.forEach((prop) => {
+        // if value exist, check if it is valid
+        if (this.props[prop].value) {
+          valid = valid && !!this.props[prop].valid;
+        }
+      });
+
+      if (!valid) {
+        debug('form not valid');
+        return;
+      }
+
+      const {
+        position,
+        locale,
+        description,
+        email,
+        phone,
+        url,
+        logo,
+        name,
+        highlight,
+        jobActions
+      } = this.props;
+
+      // sanitize user output
+      const jobValues = {
+        position: inHTMLData(position.value),
+        location: inHTMLData(locale.value),
+        description: inHTMLData(description.value),
+        email: inHTMLData(email.value),
+        phone: inHTMLData(phone.value),
+        url: uriInSingleQuotedAttr(url.value),
+        logo: uriInSingleQuotedAttr(logo.value),
+        name: inHTMLData(name.value),
+        highlight: !!highlight.value
+      };
+
+      const job = Object.keys(jobValues).reduce((accu, prop) => {
+        if (jobValues[prop]) {
+          accu[prop] = jobValues[prop];
+        }
+        return accu;
+      }, {});
+
+      debug('job sanitized', job);
+      jobActions.saveForm(job);
+    },
+
+    componentDidMount() {
+      const { jobActions } = this.props;
+      jobActions.getSavedForm();
     },
 
     handleChange(name, validator, { target: { value } }) {
@@ -95,7 +167,9 @@ export default contain({
             <Col>
               <Well className='text-center'>
                 <h1>Create Your Job Post</h1>
-                <form className='form-horizontal'>
+                <form
+                  className='form-horizontal'
+                  onSubmit={ this.handleSubmit }>
 
                   <div className='spacer'>
                     <h2>Job Information</h2>
@@ -151,7 +225,7 @@ export default contain({
                     <h2>Company Information</h2>
                   </div>
                   <Input
-                    bsStyle={ locale.bsStyle }
+                    bsStyle={ name.bsStyle }
                     label='Company Name'
                     labelClassName={ labelClass }
                     onChange={ (e) => {
@@ -248,8 +322,9 @@ export default contain({
                       lgOffset={ 3 }>
                       <Button
                         block={ true }
-                        bsSize='lg'
-                        bsStyle='primary'>
+                        bsSize='large'
+                        bsStyle='primary'
+                        type='submit'>
                         Preview My Ad
                       </Button>
                     </Col>

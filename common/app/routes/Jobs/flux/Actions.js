@@ -1,4 +1,6 @@
 import { Actions } from 'thundercats';
+import store from 'store';
+import { getDefaults } from '../utils';
 import debugFactory from 'debug';
 
 const debug = debugFactory('freecc:jobs:actions');
@@ -52,12 +54,14 @@ export default Actions({
           newState.form = assign(
             {},
             form,
-            { [name]: {
-              value,
-              valid: false,
-              pristine: false,
-              bsStyle: value ? 'error' : null
-            }}
+            {
+              [name]: {
+                value,
+                valid: false,
+                pristine: false,
+                bsStyle: value ? 'error' : null
+              }
+            }
           );
           return newState;
         }
@@ -70,16 +74,31 @@ export default Actions({
         newState.form = assign(
           {},
           form,
-          { [name]: {
-            value,
-            valid: true,
-            pristine: false,
-            bsStyle: value ? 'success' : null
-          }}
+          {
+            [name]: {
+              value,
+              valid: true,
+              pristine: false,
+              bsStyle: value ? 'success' : null
+            }
+          }
         );
         return newState;
       }
     };
+  },
+  saveForm: null,
+  getSavedForm: null,
+  setForm(job) {
+    const form = Object.keys(job).reduce((accu, prop) => {
+      console.log('form', accu);
+      return Object.assign(
+        accu,
+        { [prop]: getDefaults(typeof prop, job[prop]) }
+      );
+    }, {});
+
+    return { form };
   }
 })
   .refs({ displayName: 'JobActions' })
@@ -110,6 +129,15 @@ export default Actions({
         }
         jobActions.setJobs({});
       });
+    });
+
+    jobActions.saveForm.subscribe((form) => {
+      store.set('newJob', form);
+    });
+
+    jobActions.getSavedForm.subscribe(() => {
+      const job = store.get('newJob');
+      jobActions.setForm(job);
     });
     return jobActions;
   });

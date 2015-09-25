@@ -30,6 +30,9 @@
     "state": {
       "type": "string"
     },
+    "url": {
+      "type": "string"
+    },
     "country": {
       "type": "string"
     },
@@ -39,7 +42,7 @@
     "description": {
       "type": "string"
     },
-    "isApproverd": {
+    "isApproved": {
       "type": "boolean"
     },
     "isHighlighted": {
