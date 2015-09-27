@@ -77,7 +77,7 @@ module.exports = function(app) {
   router.get('/account/unlink/:provider', getOauthUnlink);
   router.get('/account', getAccount);
   router.get('/vote1', vote1);
-  router.get('/vote2', vote1);
+  router.get('/vote2', vote2);
   // Ensure this is the last route!
   router.get('/:username', returnUser);
 
