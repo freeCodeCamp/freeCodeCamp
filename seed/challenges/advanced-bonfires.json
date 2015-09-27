@@ -9,20 +9,25 @@
       "description": [
         "Return true if the passed string is a valid US phone number",
         "The user may fill out the form field any way they choose as long as it is a valid US number. The following are all valid formats for US numbers:",
-        "555-555-5555, (555)555-5555, (555) 555-5555, 555 555 5555, 5555555555, 1 555 555 5555",
-        "For this challenge you will be presented with a string such as \"800-692-7753\" or \"8oo-six427676;laskdjf\". Your job is to validate or reject the US phone number based on any combination of the formats provided above. The area code is required. If the country code is provided, you must confirm that the country code is \"1\". Return true if the string is a valid US phone number; otherwise false.",
+        "<code>555-555-5555</code>",
+        "<code>(555)555-5555</code>",
+        "<code>(555) 555-5555</code>",
+        "<code>555 555 5555</code>",
+        "<code>5555555555</code>",
+        "<code>1 555 555 5555</code>",
+        "For this challenge you will be presented with a string such as <code>800-692-7753</code> or <code>8oo-six427676;laskdjf</code>. Your job is to validate or reject the US phone number based on any combination of the formats provided above. The area code is required. If the country code is provided, you must confirm that the country code is <code>1</code>. Return true if the string is a valid US phone number; otherwise false.",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "tests": [
         "assert.isBoolean(telephoneCheck(\"555-555-5555\") === 'should return a boolean.');",
         "assert(telephoneCheck(\"1 555-555-5555\") === true, '<code>1 555-555-5555</code> should return true.');",
-        "assert(telephoneCheck(\"1 (555) 555-5555\") === true), '<code>1 &#40;555&#41; 555-5555</code> should return true.';",
+        "assert(telephoneCheck(\"1 (555) 555-5555\") === true, '<code>1 &#40;555&#41; 555-5555</code> should return true.');",
         "assert(telephoneCheck(\"5555555555\") === true, '<code>5555555555</code> should return true.');",
         "assert(telephoneCheck(\"555-555-5555\") === true, '<code>555-555-5555</code> should return true.');",
         "assert(telephoneCheck(\"(555)555-5555\") === true, '<code>&#40;555&#41;555-5555</code> should return true.');",
         "assert(telephoneCheck(\"1(555)555-5555\") === true, '<code>1&#40;555&#41;555-5555</code> should return true.');",
         "assert(telephoneCheck(\"1 555 555 5555\") === true, '<code>1 555 555 5555</code> should return true.');",
-        "assert(telephoneCheck(\"555-555-5555\") === true), '<code>555-555-5555</code> should return true.';",
+        "assert(telephoneCheck(\"555-555-5555\") === true, '<code>555-555-5555</code> should return true.');",
         "assert(telephoneCheck(\"1 456 789 4444\") === true, '<code>1 456 789 4444</code> should return true.');",
         "assert(telephoneCheck(\"123**&!!asdf#\") === false, '<code>123**&!!asdf#</code> should return false.');",
         "assert(telephoneCheck(\"55555555\") === false, '<code>55555555</code> should return false.');",
@@ -74,16 +79,16 @@
       ],
       "challengeSeed": [
         "function sym(args) {",
-        "  return arguments;",
+        "  return args;",
         "}",
         "",
         "sym([1, 2, 3], [5, 2, 1, 4]);"
       ],
       "tests": [
-        "assert.sameMembers(sym([1, 2, 3], [5, 2, 1, 4]), [3, 5, 4], 'should return an array of unique values');",
-        "assert.sameMembers(sym([1, 2, 5], [2, 3, 5], [3, 4, 5]), [1, 4, 5], 'should return the symmetric difference of the given arrays');",
-        "assert.sameMembers(sym([1, 1, 2, 5], [2, 2, 3, 5], [3, 4, 5, 5]), [1, 4, 5], 'should return an array of unique values');",
-        "assert.sameMembers(sym([1, 1]), [1], 'should return an array of unique values');"
+        "assert.sameMembers(sym([1, 2, 3], [5, 2, 1, 4]), [3, 5, 4], '<code>[1, 2, 3], [5, 2, 1, 4]</code> should return <code>[3, 5, 4]</code>.');",
+        "assert.sameMembers(sym([1, 2, 5], [2, 3, 5], [3, 4, 5]), [1, 4, 5], '<code>[1, 2, 5], [2, 3, 5], [3, 4, 5]</code> should return <code>[1, 4, 5]</code>');",
+        "assert.sameMembers(sym([1, 1, 2, 5], [2, 2, 3, 5], [3, 4, 5, 5]), [1, 4, 5], '<code>[1, 1, 2, 5], [2, 2, 3, 5], [3, 4, 5, 5]</code> should return <code>[1, 4, 5]</code>.');",
+        "assert.sameMembers(sym([1, 1]), [1], '<code>[1, 1]</code> should return <code>[1]</code>.');"
       ],
       "MDNlinks": [
         "Array.reduce()",
