@@ -235,13 +235,13 @@
         "permAlone('aab');"
       ],
       "tests": [
-        "assert.isNumber(permAlone('aab'), 'should return a \"number\".');",
-        "assert.strictEqual(permAlone('aab'), 2, 'should return 2.');",
-        "assert.strictEqual(permAlone('aaa'), 0, 'should return 0.');",
-        "assert.strictEqual(permAlone('aabb'), 8, 'should return 8.');",
-        "assert.strictEqual(permAlone('abcdefa'), 3600, 'should return 3600.');",
-        "assert.strictEqual(permAlone('abfdefa'), 2640, 'should return 2640.');",
-        "assert.strictEqual(permAlone('zzzzzzzz'), 0, 'should return 0.');"
+        "assert.isNumber(permAlone('aab'), '<code>aab</code> should return a number.');",
+        "assert.strictEqual(permAlone('aab'), 2, '<code>aab</code> should return <code>2</code>.');",
+        "assert.strictEqual(permAlone('aaa'), 0, '<code>aaa</code> should return <code>0</code>.');",
+        "assert.strictEqual(permAlone('aabb'), 8, '<code>aabb</code> should return <code>8</code>.');",
+        "assert.strictEqual(permAlone('abcdefa'), 3600, '<code>abcdefa</code> should return <code>3600</code>.');",
+        "assert.strictEqual(permAlone('abfdefa'), 2640, '<code>abfdefa</code> should return <code>2640</code>.');",
+        "assert.strictEqual(permAlone('zzzzzzzz'), 0, '<code>zzzzzzzz</code> should return <code>0</code>.');"
       ],
       "MDNlinks": [
         "Permutations",
@@ -281,12 +281,12 @@
         "friendly(['2015-07-01', '2015-07-04']);"
       ],
       "tests": [
-        "assert.deepEqual(friendly(['2015-07-01', '2015-07-04']), ['July 1st','4th'], 'ending month should be omitted since it is already mentioned');",
-        "assert.deepEqual(friendly(['2015-12-01', '2016-02-03']), ['December 1st','February 3rd'], 'two months apart can be inferred if it is the next year');",
-        "assert.deepEqual(friendly(['2015-12-01', '2017-02-03']), ['December 1st, 2015','February 3rd, 2017']);",
-        "assert.deepEqual(friendly(['2016-03-01', '2016-05-05']), ['March 1st','May 5th'], 'one month apart can be inferred it is the same year');",
-        "assert.deepEqual(friendly(['2017-01-01', '2017-01-01']), ['January 1st, 2017'], 'since we do not duplicate only return once');",
-        "assert.deepEqual(friendly(['2022-09-05', '2023-09-04']), ['September 5th, 2022','September 4th, 2023']);"
+        "assert.deepEqual(friendly(['2015-07-01', '2015-07-04']), ['July 1st','4th'], '<code>[\"2015-07-01\", \"2015-07-04\"]</code> should return <code>[\"July 1st\",\"4th\"]</code>.');",
+        "assert.deepEqual(friendly(['2015-12-01', '2016-02-03']), ['December 1st','February 3rd'], '<code>[\"2015-12-01\", \"2016-02-03\"]</code> should return <code>[\"December 1st\",\"February 3rd\"]</code>.');",
+        "assert.deepEqual(friendly(['2015-12-01', '2017-02-03']), ['December 1st, 2015','February 3rd, 2017'], '<code>[\"2015-12-01\", \"2017-02-03\"]</code> should return <code>[\"December 1st, 2015\",\"February 3rd, 2017\"]</code>.');",
+        "assert.deepEqual(friendly(['2016-03-01', '2016-05-05']), ['March 1st','May 5th'], '<code>[\"2016-03-01\", \"2016-05-05\"]</code> should return <code>[\"March 1st\",\"May 5th\"]</code>');",
+        "assert.deepEqual(friendly(['2017-01-01', '2017-01-01']), ['January 1st, 2017'], '<code>[\"2017-01-01\", \"2017-01-01\"]</code> should return <code>[\"January 1st, 2017\"]</code>.');",
+        "assert.deepEqual(friendly(['2022-09-05', '2023-09-04']), ['September 5th, 2022','September 4th, 2023'], '<code>[\"2022-09-05\", \"2023-09-04\"]</code> should return <code>[\"September 5th, 2022\",\"September 4th, 2023\"]</code>.');"
       ],
       "MDNlinks": [
         "String.split()",
