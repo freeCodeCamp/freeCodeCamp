@@ -1,6 +1,7 @@
 import Jobs from './components/Jobs.jsx';
 import NewJob from './components/NewJob.jsx';
 import Show from './components/Show.jsx';
+import Preview from './components/Preview.jsx';
 
 /*
  *  index: /jobs list jobs
@@ -15,6 +16,9 @@ export default {
   }, {
     path: 'jobs/new',
     component: NewJob
+  }, {
+    path: 'jobs/new/preview',
+    component: Preview
   }, {
     path: 'jobs/:id',
     component: Show

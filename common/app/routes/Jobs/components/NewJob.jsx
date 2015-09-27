@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import { History } from 'react-router';
 import { contain } from 'thundercats-react';
 import debugFactory from 'debug';
 import { getDefaults } from '../utils';
@@ -104,6 +105,8 @@ export default contain({
       highlight: PropTypes.object
     },
 
+    mixins: [History],
+
     handleSubmit(e) {
       e.preventDefault();
       const props = this.props;
@@ -153,8 +156,11 @@ export default contain({
         return accu;
       }, {});
 
+      job.postedOn = new Date();
       debug('job sanitized', job);
       jobActions.saveForm(job);
+
+      this.history.pushState(null, '/jobs/new/preview');
     },
 
     componentDidMount() {
