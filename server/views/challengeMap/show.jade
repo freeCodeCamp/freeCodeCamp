@@ -20,7 +20,9 @@ block content
                 .spacer
                 if (user && !user.tshirtVote && user.progressTimestamps.length > 5)
                     h3.text-center Vote for the T-shirt design you like the most.
-                    h4.text-center We'll announce the winning design on Saturday's Summit on Twitch.tv, and it will become our community's first official t-shirt.
+                    h4.text-center We'll announce the winning design during our Summit on Saturday at Noon EST on&thinsp;
+                        a(href='https://twitch.tv/freecodecamp' target='_blank') Twitch.tv
+                        | &thinsp;and it will become our community's first official t-shirt (in women's and men's sizes).
                     .row
                         .col-xs-6
                             a(href="http://i.imgur.com/LlXGa5y.png" data-lightbox="img-enlarge")
@@ -39,9 +41,11 @@ block content
                     .button-spacer
                     .row
                         .col-xs-6
-                            a.button.btn.btn-block.btn-primary(href='/vote1') Vote for Design 1
+                            h3.text-center "Minified JavaScript Logo"
+                            a.button.btn.btn-block.btn-primary(href='/vote1') Vote for this Design
                         .col-xs-6
-                            a.button.btn.btn-block.btn-primary(href='/vote2') Vote for Design 2
+                            h3.text-center "Function Call Logo"
+                            a.button.btn.btn-block.btn-primary(href='/vote2') Vote for this design
                     .spacer
                 .row
                     .col-xs-12.col-sm-8.col-sm-offset-2
