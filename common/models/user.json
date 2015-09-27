@@ -157,6 +157,9 @@
     "rand": {
       "type": "number",
       "index": true
+    },
+    "tshirtVote": {
+      "type": "number"
     }
   },
   "validations": [],

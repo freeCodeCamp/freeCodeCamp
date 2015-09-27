@@ -18,36 +18,31 @@ block content
                     span.text-primary #{daysRunning} &thinsp;
                     | days ago.
                 .spacer
-                h3.text-center Vote for the T-shirt design you like the most.
-                h4.text-center We'll announce the winning design on Saturday's Summit on Twitch.tv, and it will become our community's first official t-shirt.
-                .row
-                    .col-xs-6.thumbnail
-                        a(href="http://i.imgur.com/LlXGa5y.png" data-lightbox="img-enlarge")
-                            img.img-responsive(src='http://i.imgur.com/LlXGa5y.png' alt="t-shirt option 1 women's")
-                        .caption
-                            p.text-center Design 1 Women's
-                    .col-xs-6.thumbnail
-                        a(href="http://i.imgur.com/aefwnnv.png" data-lightbox="img-enlarge")
-                            img.img-responsive(src='http://i.imgur.com/aefwnnv.png' alt="t-shirt option 2 women's")
-                        .caption
-                            p.text-center Design 2 Women's
-                .row
-                    .col-xs-6.thumbnail
-                        a(href="http://i.imgur.com/aYH0aqf.png" data-lightbox="img-enlarge")
-                            img.img-responsive(src='http://i.imgur.com/aYH0aqf.png' alt="t-shirt option 1 men's")
-                        .caption
-                            p.text-center Design 1 Men's
-                    .col-xs-6.thumbnail
-                        a(href="http://i.imgur.com/v9KlV4g.png" data-lightbox="img-enlarge")
-                            img.img-responsive(src='http://i.imgur.com/v9KlV4g.png' alt="t-shirt option 2 men's")
-                        .caption
-                            p.text-center Design 2 Men's
-                .row
-                    .col-xs-6
-                        .button.btn.btn-block.btn-primary Vote for Design 1
-                    .col-xs-6
-                        .button.btn.btn-block.btn-primary Vote for Design 2
-                .spacer
+                if (user && !user.tshirtVote)
+                    h3.text-center Vote for the T-shirt design you like the most.
+                    h4.text-center We'll announce the winning design on Saturday's Summit on Twitch.tv, and it will become our community's first official t-shirt.
+                    .row
+                        .col-xs-6
+                            a(href="http://i.imgur.com/LlXGa5y.png" data-lightbox="img-enlarge")
+                                img.img-responsive(src='http://i.imgur.com/LlXGa5y.png' alt="t-shirt option 1 women's")
+                        .col-xs-6
+                            a(href="http://i.imgur.com/aefwnnv.png" data-lightbox="img-enlarge")
+                                img.img-responsive(src='http://i.imgur.com/aefwnnv.png' alt="t-shirt option 2 women's")
+                    .button-spacer
+                    .row
+                        .col-xs-6
+                            a(href="http://i.imgur.com/aYH0aqf.png" data-lightbox="img-enlarge")
+                                img.img-responsive(src='http://i.imgur.com/aYH0aqf.png' alt="t-shirt option 1 men's")
+                        .col-xs-6
+                            a(href="http://i.imgur.com/v9KlV4g.png" data-lightbox="img-enlarge")
+                                img.img-responsive(src='http://i.imgur.com/v9KlV4g.png' alt="t-shirt option 2 men's")
+                    .button-spacer
+                    .row
+                        .col-xs-6
+                            a.button.btn.btn-block.btn-primary(href='/vote1') Vote for Design 1
+                        .col-xs-6
+                            a.button.btn.btn-block.btn-primary(href='/vote2') Vote for Design 2
+                    .spacer
                 .row
                     .col-xs-12.col-sm-8.col-sm-offset-2
                         h3 800 Hours of Practice:
