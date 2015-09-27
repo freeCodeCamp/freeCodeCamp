@@ -26,7 +26,8 @@ const challengeView = {
   2: 'coursewares/showVideo',
   3: 'coursewares/showZiplineOrBasejump',
   4: 'coursewares/showZiplineOrBasejump',
-  5: 'coursewares/showBonfire'
+  5: 'coursewares/showBonfire',
+  7: 'coursewares/showStep'
 };
 
 const dasherize = utils.dasherize;
@@ -247,6 +248,7 @@ module.exports = function(app) {
           dashedName: origChallengeName,
           name: challenge.name,
           details: challenge.description,
+          description: challenge.description,
           tests: challenge.tests,
           challengeSeed: challenge.challengeSeed,
           verb: utils.randomVerb(),
