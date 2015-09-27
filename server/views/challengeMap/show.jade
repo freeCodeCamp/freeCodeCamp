@@ -18,7 +18,7 @@ block content
                     span.text-primary #{daysRunning} &thinsp;
                     | days ago.
                 .spacer
-                if (user && !user.tshirtVote)
+                if (user && !user.tshirtVote && user.progressTimestamps.length > 5)
                     h3.text-center Vote for the T-shirt design you like the most.
                     h4.text-center We'll announce the winning design on Saturday's Summit on Twitch.tv, and it will become our community's first official t-shirt.
                     .row
