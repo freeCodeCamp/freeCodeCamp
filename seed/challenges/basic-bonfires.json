@@ -464,9 +464,9 @@
         "slasher([1, 2, 3], 2, \"\");"
       ],
       "tests": [
-        "assert.deepEqual(slasher([1, 2, 3], 2), [3], '<code>[1&#44; 2&#44; 3]&#44; 2&#44; [3]</code> should return <code>[3]</code>.');",
-        "assert.deepEqual(slasher([1, 2, 3], 0), [1, 2, 3], '<code>[1&#44; 2&#44; 3]&#44; 0</code> should return <code>[1&#44; 2&#44; 3]</code>.');",
-        "assert.deepEqual(slasher([1, 2, 3], 9), [], '<code>[1&#44; 2&#44; 3]&#44; 9</code> should return <code>[]</code>.');"
+        "assert.deepEqual(slasher([1, 2, 3], 2), [3], '<code>slasher&#40;[1&#44; 2&#44; 3]&#44; 2&#41;</code> should return <code>[3]</code>.');",
+        "assert.deepEqual(slasher([1, 2, 3], 0), [1, 2, 3], '<code>slasher&#40;[1&#44; 2&#44; 3]&#44; 0&#41;</code> should return <code>[1&#44; 2&#44; 3]</code>.');",
+        "assert.deepEqual(slasher([1, 2, 3], 9), [], '<code>slasher&#40;[1&#44; 2&#44; 3]&#44; 9&#41;</code> should return <code>[]</code>.');"
       ],
       "MDNlinks": [
         "Array.slice()",
