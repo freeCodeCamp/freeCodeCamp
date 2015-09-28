@@ -89,8 +89,8 @@
       "tests": [
         "assert(typeof(factorialize(5)) === \"number\", '<code>factorialize&#40;&#41;</code> should return a number.');",
         "assert(factorialize(5) === 120, '<code>5</code> should return <code>120</code>.');",
-        "assert(factorialize(10) === 3628800, '<code>10</code> should return <code>3&#44;628&#44;800</code>.');",
-        "assert(factorialize(20) === 2432902008176640000, '<code>20</code> should return <code>2&#44;432&#44;902&#44;008&#44;176&#44;640&#44;000</code>.');",
+        "assert(factorialize(10) === 3628800, '<code>10</code> should return <code>3,628,800</code>.');",
+        "assert(factorialize(20) === 2432902008176640000, '<code>20</code> should return <code>2,432,902,008,176,640,000</code>.');",
         "assert(factorialize(0) === 1, '<code>0</code> should return 1.');"
       ],
       "difficulty": "1.02",
@@ -273,9 +273,9 @@
         "largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]);"
       ],
       "tests": [
-        "assert(largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]).constructor === Array, '<code>largestOfFour&#40;&#41;</code> should return an array.');",
-        "assert.deepEqual(largestOfFour([[13, 27, 18, 26], [4, 5, 1, 3], [32, 35, 37, 39], [1000, 1001, 857, 1]]), [27,5,39,1001], '<code>[[13&#44; 27&#44; 18&#44; 26]&#44; [4&#44; 5&#44; 1&#44; 3]&#44; [32&#44; 35&#44; 37&#44; 39]&#44; [1000&#44; 1001&#44; 857&#44; 1]]</code> should return <code>[27&#44;5&#44;39&#44;1001]</code>.');",
-        "assert.deepEqual(largestOfFour([[4, 9, 1, 3], [13, 35, 18, 26], [32, 35, 97, 39], [1000000, 1001, 857, 1]]), [9,35,97,1000000], '<code>[[4&#44; 9&#44; 1&#44; 3]&#44; [13&#44; 35&#44; 18&#44; 26]&#44; [32&#44; 35&#44; 97&#44; 39]&#44; [1000000&#44; 1001&#44; 857&#44; 1]]</code> should return <code>[9&#44; 35&#44; 97&#44; 1000000]</code>.');"
+        "assert(largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]).constructor === Array, 'message: <code>largestOfFour&#40;&#41;</code> should return an array.');",
+        "assert.deepEqual(largestOfFour([[13, 27, 18, 26], [4, 5, 1, 3], [32, 35, 37, 39], [1000, 1001, 857, 1]]), [27,5,39,1001], 'message: <code>[[13, 27, 18, 26], [4, 5, 1, 3], [32, 35, 37, 39], [1000, 1001, 857, 1]]</code> should return <code>[27,5,39,1001]</code>.');",
+        "assert.deepEqual(largestOfFour([[4, 9, 1, 3], [13, 35, 18, 26], [32, 35, 97, 39], [1000000, 1001, 857, 1]]), [9,35,97,1000000], 'message: <code>[[4, 9, 1, 3], [13, 35, 18, 26], [32, 35, 97, 39], [1000000, 1001, 857, 1]]</code> should return <code>[9, 35, 97, 1000000]</code>.');"
       ],
       "MDNlinks": [
         "Comparison Operators"
@@ -311,11 +311,11 @@
         "end(\"Bastian\", \"n\", \"\");"
       ],
       "tests": [
-        "assert(end(\"Bastian\", \"n\") === true, '<code>\"Bastian\"&#44; \"n\"</code> should return true.');",
-        "assert(end(\"Connor\", \"n\") === false, '<code>\"Connor\"&#44; \"n\"</code> should return false.');",
-        "assert(end(\"Walking on water and developing software from a specification are easy if both are frozen.\", \"specification\") === false, '<code>\"Walking on water and developing software from a specification are easy if both are frozen.\"&#44; \"specification\"&#41;</code> should return false.');",
-        "assert(end(\"He has to give me a new name\", \"name\") === true, '<code>\"He has to give me a new name\"&#44; \"name\"</code> should return true.');",
-        "assert(end(\"If you want to save our world, you must hurry. We dont know how much longer we can withstand the nothing\", \"mountain\") === false, '<code>\"If you want to save our world&#44; you must hurry. We dont know how much longer we can withstand the nothing\", \"mountain\"</code> should return false.');"
+        "assert(end(\"Bastian\", \"n\") === true, '<code>\"Bastian\", \"n\"</code> should return true.');",
+        "assert(end(\"Connor\", \"n\") === false, '<code>\"Connor\", \"n\"</code> should return false.');",
+        "assert(end(\"Walking on water and developing software from a specification are easy if both are frozen.\", \"specification\") === false, '<code>\"Walking on water and developing software from a specification are easy if both are frozen.\", \"specification\"&#41;</code> should return false.');",
+        "assert(end(\"He has to give me a new name\", \"name\") === true, '<code>\"He has to give me a new name\", \"name\"</code> should return true.');",
+        "assert(end(\"If you want to save our world, you must hurry. We dont know how much longer we can withstand the nothing\", \"mountain\") === false, '<code>\"If you want to save our world, you must hurry. We dont know how much longer we can withstand the nothing\", \"mountain\"</code> should return false.');"
       ],
       "MDNlinks": [
         "String.substr()"
@@ -350,9 +350,9 @@
         "repeat(\"abc\", 3, \"\");"
       ],
       "tests": [
-        "assert(repeat(\"*\", 3) === \"***\", '<code>\"*\"&#44; 3</code> should return <code>\"***\"</code>.');",
-        "assert(repeat(\"abc\", 3) === \"abcabcabc\", '<code>\"abc\"&#44; 3</code> should return <code>\"abcabcabc\"</code>.');",
-        "assert(repeat(\"abc\", -2) === \"\", '<code>\"abc\"&#44; -2</code> should return <code>\"\"</code>.');"
+        "assert(repeat(\"*\", 3) === \"***\", '<code>\"*\", 3</code> should return <code>\"***\"</code>.');",
+        "assert(repeat(\"abc\", 3) === \"abcabcabc\", '<code>\"abc\", 3</code> should return <code>\"abcabcabc\"</code>.');",
+        "assert(repeat(\"abc\", -2) === \"\", '<code>\"abc\", -2</code> should return <code>\"\"</code>.');"
       ],
       "MDNlinks": [
         "Global String Object"
@@ -388,10 +388,10 @@
         "truncate(\"A-tisket a-tasket A green and yellow basket\", 11, \"\");"
       ],
       "tests": [
-        "assert(truncate(\"A-tisket a-tasket A green and yellow basket\", 11) === \"A-tisket...\", '<code>\"A-tisket a-tasket A green and yellow basket\"&#44; 1</code> should return <code>\"A-tisket...\"</code>.');",
-        "assert(truncate(\"Peter Piper picked a peck of pickled peppers\", 14) === \"Peter Piper...\", '<code>\"Peter Piper picked a peck of pickled peppers\"&#44; 14</code> should return <code>\"Peter Piper...\"</code>.');",
-        "assert(truncate(\"A-tisket a-tasket A green and yellow basket\", \"A-tisket a-tasket A green and yellow basket\".length) === \"A-tisket a-tasket A green and yellow basket\", '<code>\"A-tisket a-tasket A green and yellow basket\"&#44; \"A-tisket a-tasket A green and yellow basket\".length&#41;</code> should return <code>\"A-tisket a-tasket A green and yellow basket\"</code>.');",
-        "assert(truncate('A-tisket a-tasket A green and yellow basket', 'A-tisket a-tasket A green and yellow basket'.length + 2) === 'A-tisket a-tasket A green and yellow basket', '<code>\"A-tisket a-tasket A green and yellow basket\"&#44; \"A-tisket a-tasket A green and yellow basket\".length + 2</code> should return <code>\"A-tisket a-tasket A green and yellow basket\"</code>.');"
+        "assert(truncate(\"A-tisket a-tasket A green and yellow basket\", 11) === \"A-tisket...\", '<code>\"A-tisket a-tasket A green and yellow basket\", 1</code> should return <code>\"A-tisket...\"</code>.');",
+        "assert(truncate(\"Peter Piper picked a peck of pickled peppers\", 14) === \"Peter Piper...\", '<code>\"Peter Piper picked a peck of pickled peppers\", 14</code> should return <code>\"Peter Piper...\"</code>.');",
+        "assert(truncate(\"A-tisket a-tasket A green and yellow basket\", \"A-tisket a-tasket A green and yellow basket\".length) === \"A-tisket a-tasket A green and yellow basket\", '<code>\"A-tisket a-tasket A green and yellow basket\", \"A-tisket a-tasket A green and yellow basket\".length&#41;</code> should return <code>\"A-tisket a-tasket A green and yellow basket\"</code>.');",
+        "assert(truncate('A-tisket a-tasket A green and yellow basket', 'A-tisket a-tasket A green and yellow basket'.length + 2) === 'A-tisket a-tasket A green and yellow basket', '<code>\"A-tisket a-tasket A green and yellow basket\", \"A-tisket a-tasket A green and yellow basket\".length + 2</code> should return <code>\"A-tisket a-tasket A green and yellow basket\"</code>.');"
       ],
       "MDNlinks": [
         "String.slice()"
@@ -426,10 +426,10 @@
         "chunk([\"a\", \"b\", \"c\", \"d\"], 2, \"\");"
       ],
       "tests": [
-        "assert.deepEqual(chunk([\"a\", \"b\", \"c\", \"d\"], 2), [[\"a\", \"b\"], [\"c\", \"d\"]], '<code>[\"a\"&#44; \"b\"&#44; \"c\"&#44; \"d\"], 2</code> should return <code>[[\"a\"&#44; \"b\"]&#44; [\"c\"&#44; \"d\"]]</code>.');",
-        "assert.deepEqual(chunk([0, 1, 2, 3, 4, 5], 3), [[0, 1, 2], [3, 4, 5]], '<code>[0&#44; 1&#44; 2&#44; 3&#44; 4&#44; 5]</code> should return <code>[[0&#44; 1&#44; 2]&#44; [3&#44; 4&#44; 5]]</code>.');",
-        "assert.deepEqual(chunk([0, 1, 2, 3, 4, 5], 2), [[0, 1], [2, 3], [4, 5]], '<code>[0&#44; 1&#44; 2&#44; 3&#44; 4&#44; 5]&#44; 2</code> should return <code>[[0&#44; 1]&#44; [2&#44; 3]&#44; [4&#44; 5]]</code>.');",
-        "assert.deepEqual(chunk([0, 1, 2, 3, 4, 5], 4), [[0, 1, 2, 3], [4, 5]], '<code>[0&#44; 1&#44; 2&#44; 3&#44; 4&#44; 5]&#44; 4</code> should return <code>[[0&#44; 1&#44; 2&#44; 3]&#44; [4&#44; 5]]</code>.');"
+        "assert.deepEqual(chunk([\"a\", \"b\", \"c\", \"d\"], 2), [[\"a\", \"b\"], [\"c\", \"d\"]], '<code>[\"a\", \"b\", \"c\", \"d\"], 2</code> should return <code>[[\"a\", \"b\"], [\"c\", \"d\"]]</code>.');",
+        "assert.deepEqual(chunk([0, 1, 2, 3, 4, 5], 3), [[0, 1, 2], [3, 4, 5]], '<code>[0, 1, 2, 3, 4, 5]</code> should return <code>[[0, 1, 2], [3, 4, 5]]</code>.');",
+        "assert.deepEqual(chunk([0, 1, 2, 3, 4, 5], 2), [[0, 1], [2, 3], [4, 5]], '<code>[0, 1, 2, 3, 4, 5], 2</code> should return <code>[[0, 1], [2, 3], [4, 5]]</code>.');",
+        "assert.deepEqual(chunk([0, 1, 2, 3, 4, 5], 4), [[0, 1, 2, 3], [4, 5]], '<code>[0, 1, 2, 3, 4, 5], 4</code> should return <code>[[0, 1, 2, 3], [4, 5]]</code>.');"
       ],
       "MDNlinks": [
         "Array.push()"
@@ -464,9 +464,9 @@
         "slasher([1, 2, 3], 2, \"\");"
       ],
       "tests": [
-        "assert.deepEqual(slasher([1, 2, 3], 2), [3], '<code>[1&#44; 2&#44; 3]&#44; 2&#44; [3]</code> should return <code>[3]</code>.');",
-        "assert.deepEqual(slasher([1, 2, 3], 0), [1, 2, 3], '<code>[1&#44; 2&#44; 3]&#44; 0</code> should return <code>[1&#44; 2&#44; 3]</code>.');",
-        "assert.deepEqual(slasher([1, 2, 3], 9), [], '<code>[1&#44; 2&#44; 3]&#44; 9</code> should return <code>[]</code>.');"
+        "assert.deepEqual(slasher([1, 2, 3], 2), [3], '<code>[1, 2, 3], 2, [3]</code> should return <code>[3]</code>.');",
+        "assert.deepEqual(slasher([1, 2, 3], 0), [1, 2, 3], '<code>[1, 2, 3], 0</code> should return <code>[1, 2, 3]</code>.');",
+        "assert.deepEqual(slasher([1, 2, 3], 9), [], '<code>[1, 2, 3], 9</code> should return <code>[]</code>.');"
       ],
       "MDNlinks": [
         "Array.slice()",
@@ -504,14 +504,14 @@
         "mutation([\"hello\", \"hey\"], \"\");"
       ],
       "tests": [
-        "assert(mutation([\"hello\", \"hey\"]) === false, '<code>[\"hello\"&#44; \"hey\"]</code> should return false.');",
-        "assert(mutation([\"hello\", \"Hello\"]) === true, '<code>[\"hello\"&#44; \"Hello\"]</code> should return true.');",
-        "assert(mutation([\"zyxwvutsrqponmlkjihgfedcba\", \"qrstu\"]) === true, '<code>[\"zyxwvutsrqponmlkjihgfedcba\"&#44; \"qrstu\"]</code> should return true.');",
-        "assert(mutation([\"Mary\", \"Army\"]) === true, '<code>[\"Mary\"&#44; \"Army\"]</code> should return true.');",
-        "assert(mutation([\"Mary\", \"Aarmy\"]) === true, '<code>[\"Mary\"&#44; \"Aarmy\"]</code> should return true.');",
-        "assert(mutation([\"Alien\", \"line\"]) === true, '<code>[\"Alien\"&#44; \"line\"]</code> should return true.');",
-        "assert(mutation([\"floor\", \"for\"]) === true, '<code>[\"floor\"&#44; \"for\"]</code> should return true.');",
-        "assert(mutation([\"hello\", \"neo\"]) === false, '<code>[\"hello\"&#44; \"neo\"]</code> should return false.');"
+        "assert(mutation([\"hello\", \"hey\"]) === false, '<code>[\"hello\", \"hey\"]</code> should return false.');",
+        "assert(mutation([\"hello\", \"Hello\"]) === true, '<code>[\"hello\", \"Hello\"]</code> should return true.');",
+        "assert(mutation([\"zyxwvutsrqponmlkjihgfedcba\", \"qrstu\"]) === true, '<code>[\"zyxwvutsrqponmlkjihgfedcba\", \"qrstu\"]</code> should return true.');",
+        "assert(mutation([\"Mary\", \"Army\"]) === true, '<code>[\"Mary\", \"Army\"]</code> should return true.');",
+        "assert(mutation([\"Mary\", \"Aarmy\"]) === true, '<code>[\"Mary\", \"Aarmy\"]</code> should return true.');",
+        "assert(mutation([\"Alien\", \"line\"]) === true, '<code>[\"Alien\", \"line\"]</code> should return true.');",
+        "assert(mutation([\"floor\", \"for\"]) === true, '<code>[\"floor\", \"for\"]</code> should return true.');",
+        "assert(mutation([\"hello\", \"neo\"]) === false, '<code>[\"hello\", \"neo\"]</code> should return false.');"
       ],
       "MDNlinks": [
         "Array.indexOf()"
@@ -547,9 +547,9 @@
         "bouncer([7, \"ate\", \"\", false, 9], \"\");"
       ],
       "tests": [
-        "assert.deepEqual(bouncer([7, \"ate\", \"\", false, 9]), [7, \"ate\", 9], '<code>[7&#44; \"ate\"&#44; \"\"&#44; false&#44; 9]</code> should return <code>[7&#44; \"ate\"&#44; 9]</code>.');",
-        "assert.deepEqual(bouncer([\"a\", \"b\", \"c\"]), [\"a\", \"b\", \"c\"], '<code>[\"a\"&#44; \"b\"&#44; \"c\"]</code> should return <code>[\"a\"&#44; \"b\"&#44; \"c\"]</code>.');",
-        "assert.deepEqual(bouncer([false, null, 0, NaN, undefined, '']), [], '<code>[false&#44; null&#44; 0]</code> should return <code>[]</code>.');"
+        "assert.deepEqual(bouncer([7, \"ate\", \"\", false, 9]), [7, \"ate\", 9], '<code>[7, \"ate\", \"\", false, 9]</code> should return <code>[7, \"ate\", 9]</code>.');",
+        "assert.deepEqual(bouncer([\"a\", \"b\", \"c\"]), [\"a\", \"b\", \"c\"], '<code>[\"a\", \"b\", \"c\"]</code> should return <code>[\"a\", \"b\", \"c\"]</code>.');",
+        "assert.deepEqual(bouncer([false, null, 0, NaN, undefined, '']), [], '<code>[false, null, 0]</code> should return <code>[]</code>.');"
       ],
       "MDNlinks": [
         "Boolean Objects",
@@ -585,11 +585,11 @@
         "destroyer([1, 2, 3, 1, 2, 3], 2, 3, \"\");"
       ],
       "tests": [
-        "assert.deepEqual(destroyer([1, 2, 3, 1, 2, 3], 2, 3), [1, 1], '<code>[1&#44; 2&#44; 3&#44; 1&#44; 2&#44; 3]&#44; 2&#44; 3</code> should return <code>[1&#44; 1]</code>.');",
-        "assert.deepEqual(destroyer([1, 2, 3, 5, 1, 2, 3], 2, 3), [1, 5, 1], '<code>[1&#44; 2&#44; 3&#44; 5&#44; 1&#44; 2&#44; 3]&#44; 2&#44; 3</code> should return <code>[1&#44; 5&#44; 1]</code>.');",
-        "assert.deepEqual(destroyer([3, 5, 1, 2, 2], 2, 3, 5), [1], '<code>[3&#44; 5&#44; 1&#44; 2&#44; 2]&#44; 2&#44; 3&#44; 5</code> should return <code>[1]</code>.');",
-        "assert.deepEqual(destroyer([2, 3, 2, 3], 2, 3), [], '<code>[2&#44; 3&#44; 2&#44; 3]&#44; 2&#44; 3</code> should return <code>[]</code>.');",
-        "assert.deepEqual(destroyer([\"tree\", \"hamburger\", 53], \"tree\", 53), [\"hamburger\"], '<code>[\"tree\"&#44; \"hamburger\"&#44; 53]&#44; \"tree\"&#44; 53)</code> should return <code>[\"hamburger\"]</code>.');"
+        "assert.deepEqual(destroyer([1, 2, 3, 1, 2, 3], 2, 3), [1, 1], '<code>[1, 2, 3, 1, 2, 3], 2, 3</code> should return <code>[1, 1]</code>.');",
+        "assert.deepEqual(destroyer([1, 2, 3, 5, 1, 2, 3], 2, 3), [1, 5, 1], '<code>[1, 2, 3, 5, 1, 2, 3], 2, 3</code> should return <code>[1, 5, 1]</code>.');",
+        "assert.deepEqual(destroyer([3, 5, 1, 2, 2], 2, 3, 5), [1], '<code>[3, 5, 1, 2, 2], 2, 3, 5</code> should return <code>[1]</code>.');",
+        "assert.deepEqual(destroyer([2, 3, 2, 3], 2, 3), [], '<code>[2, 3, 2, 3], 2, 3</code> should return <code>[]</code>.');",
+        "assert.deepEqual(destroyer([\"tree\", \"hamburger\", 53], \"tree\", 53), [\"hamburger\"], '<code>[\"tree\", \"hamburger\", 53], \"tree\", 53)</code> should return <code>[\"hamburger\"]</code>.');"
       ],
       "MDNlinks": [
         "Arguments object",
@@ -629,12 +629,12 @@
         "Array.sort()"
       ],
       "tests": [
-        "assert(where([10, 20, 30, 40, 50], 35) === 3, '<code>[10&#44; 20&#44; 30&#44; 40&#44; 50]&#44; 35</code> should return <code>3</code>.');",
-        "assert(where([10, 20, 30, 40, 50], 30) === 2, '<code>[10&#44; 20&#44; 30&#44; 40&#44; 50]&#44; 30)</code> should return <code>2</code>.');",
-        "assert(where([40, 60], 50) === 1, '<code>[40&#44; 60&#44;]&#44; 50</code> should return <code>1</code>.');",
-        "assert(where([5, 3, 20, 3], 3) === 0, '<code>[5&#44; 3&#44; 20&#44; 3]&#44; 3</code> should return <code>0</code>.');",
-        "assert(where([2, 20, 10], 1) === 0, '<code>[2&#44; 20&#44; 10]&#44; 1</code> should return <code>0</code>.');",
-        "assert(where([2, 5, 10], 15) === 3, '<code>[2&#44; 5&#44; 10]&#44; 15</code> should return <code>3</code>.');"
+        "assert(where([10, 20, 30, 40, 50], 35) === 3, '<code>[10, 20, 30, 40, 50], 35</code> should return <code>3</code>.');",
+        "assert(where([10, 20, 30, 40, 50], 30) === 2, '<code>[10, 20, 30, 40, 50], 30)</code> should return <code>2</code>.');",
+        "assert(where([40, 60], 50) === 1, '<code>[40, 60,], 50</code> should return <code>1</code>.');",
+        "assert(where([5, 3, 20, 3], 3) === 0, '<code>[5, 3, 20, 3], 3</code> should return <code>0</code>.');",
+        "assert(where([2, 20, 10], 1) === 0, '<code>[2, 20, 10], 1</code> should return <code>0</code>.');",
+        "assert(where([2, 5, 10], 15) === 3, '<code>[2, 5, 10], 15</code> should return <code>3</code>.');"
       ],
       "type": "bonfire",
       "challengeType": 5,
