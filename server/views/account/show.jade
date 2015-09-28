@@ -5,7 +5,7 @@ block content
         var challengeName = 'Profile View';
     if (user && user.username === username)
         .panel.panel-info
-            .panel-heading.text-center Manage your account
+            .panel-heading.text-center Update Your Portfolio
             .panel-body
                 .row
                     .col-xs-12
@@ -37,56 +37,18 @@ block content
                                     a.btn.btn-lg.btn-block.btn-google-plus.btn-link-social(href='/link/google')
                                         i.fa.fa-google-plus
                                         | Add my Google+ to my profile
-                .big-spacer
-                .col-xs-12
-                    a.btn.btn-lg.btn-block.btn-warning.btn-link-social(href='/logout')
-                        span.ion-android-exit
-                        | Sign me out of Free Code Camp
-                .col-xs-12
-                    a.btn.btn-lg.btn-block.btn-primary.btn-link-social(href='mailto:team@freecodecamp.com')
-                        span.ion-email
-                        | Email us at team@freecodecamp.com
-                .col-xs-12
-                    a.btn.btn-lg.btn-block.btn-danger.btn-link-social.confirm-deletion
-                        span.ion-trash-b
-                        | Delete my Free Code Camp account
-                    script.
-                        $('.confirm-deletion').on("click", function () {
-                            $('#modal-dialog').modal('show');
-                        });
-                #modal-dialog.modal.animated.wobble
-                    .modal-dialog
-                        .modal-content
-                            .modal-header
-                                a.close(href='#', data-dismiss='modal', aria-hidden='true') ×
-                                h3 You don't really want to delete your account, do you?
-                            .modal-body
-                                p This will really delete all your data, including all your progress, news stories and brownie points.
-                                p We won't be able to recover any of it for you later, even if you change your mind.
-                                p If there's something we could do better, send us an email instead and we'll do our best: &thinsp;
-                                    a(href="mailto:team@freecodecamp.com") team@freecodecamp.com
-                                    | .
-                            .modal-footer
-                                a.btn.btn-success.btn-block(href='#', data-dismiss='modal', aria-hidden='true')
-                                    span.ion-happy
-                                    | Nevermind, I don't want to delete all my progress
-                                .btn-spacer
-                                form(action='/account/delete', method='POST')
-                                    input(type='hidden', name='_csrf', value=_csrf)
-                                    button.btn.btn-danger.btn-block(type='submit')
-                                        span.ion-trash-b
-                                        | I am 100% sure I want to delete all my progress
+
     .panel.panel-info
         .panel-heading.text-center
             h1 #{username}'s portfolio
         .panel-body
-                .row.text-center
-                    .col-xs-12.col-sm-10.col-sm-offset-1
-                        a.btn.btn-big.btn-primary.btn-block(href="/account") Manage my account
-                        .button-spacer
-                    .col-xs-12.col-sm-10.col-sm-offset-1
-                        a.btn.btn-big.btn-success.btn-block(href="/signout") Sign out of Free Code Camp
-                        .spacer
+            .row.text-center
+                .col-xs-12.col-sm-10.col-sm-offset-1
+                    a.btn.btn-big.btn-primary.btn-block(href="/account") Manage my account
+                    .button-spacer
+                .col-xs-12.col-sm-10.col-sm-offset-1
+                    a.btn.btn-big.btn-success.btn-block(href="/signout") Sign out of Free Code Camp
+                    .spacer
             .row
                 .col-xs-12
                     .col-xs-12.col-sm-12.col-md-5
@@ -166,21 +128,71 @@ block content
                                         td.col-xs-2= moment(challenge.completedDate, 'x').format("MMM DD, YYYY")
                                         td.col-xs-6
                                             a(href=challenge.solution, target='_blank') View my solution
-                    if (user && user.username === username)
-                        br
-                        if (bonfires.length > 0)
-                            .col-sm-12
-                                table.table.table-striped
-                                    thead
-                                        tr
-                                            th.col-xs-4 Bonfire
-                                            th.col-xs-2 Completed
-                                            th.col-xs-6 Solution
-                                    for bonfire in bonfires
-                                        tr
-                                            td.col-xs-4
-                                                a(href='/challenges/' + bonfire.name, target='_blank')= bonfire.name
-                                            td.col-xs-2= moment(bonfire.completedDate, 'x').format("MMM DD, YYYY")
-                                            td.col-xs-6
-                                                pre.wrappable= bonfire.solution
-                                    br
+                    if (bonfires.length > 0)
+                        .col-sm-12
+                            table.table.table-striped
+                                thead
+                                    tr
+                                        th.col-xs-4 Bonfire
+                                        th.col-xs-2 Completed
+                                        th.col-xs-6 Solution
+                                for bonfire in bonfires
+                                    tr
+                                        td.col-xs-4
+                                            a(href='/challenges/' + bonfire.name, target='_blank')= bonfire.name
+                                        td.col-xs-2= moment(bonfire.completedDate, 'x').format("MMM DD, YYYY")
+                                        td.col-xs-6
+                                            pre.wrappable= bonfire.solution
+
+    if (user && user.username === username)
+        .panel.panel-info
+            .panel-heading.text-center Manage Your Account
+            .panel-body
+                .col-xs-12
+                    a.btn.btn-lg.btn-block.btn-primary.btn-link-social(href='mailto:team@freecodecamp.com')
+                        span.ion-email
+                        | Email us at team@freecodecamp.com
+                if (!user.lockdownMode)
+                    .col-xs-12
+                        a.btn.btn-lg.btn-block.btn-info.btn-link-social(href='/toggle-lockdown-mode')
+                            span.ion-locked
+                            | Hide all my solutions from other people
+                else
+                    .col-xs-12
+                        a.btn.btn-lg.btn-block.btn-info.btn-link-social(href='/toggle-lockdown-mode')
+                            span.ion-unlocked
+                            | Let other people see all my solutions
+                .col-xs-12
+                    a.btn.btn-lg.btn-block.btn-warning.btn-link-social(href='/logout')
+                        span.ion-android-exit
+                        | Sign me out of Free Code Camp
+                .col-xs-12
+                    a.btn.btn-lg.btn-block.btn-danger.btn-link-social.confirm-deletion
+                        span.ion-trash-b
+                        | Delete my Free Code Camp account
+                    script.
+                        $('.confirm-deletion').on("click", function () {
+                            $('#modal-dialog').modal('show');
+                        });
+                #modal-dialog.modal.animated.wobble
+                    .modal-dialog
+                        .modal-content
+                            .modal-header
+                                a.close(href='#', data-dismiss='modal', aria-hidden='true') ×
+                                h3 You don't really want to delete your account, do you?
+                            .modal-body
+                                p This will really delete all your data, including all your progress, news stories and brownie points.
+                                p We won't be able to recover any of it for you later, even if you change your mind.
+                                p If there's something we could do better, send us an email instead and we'll do our best: &thinsp;
+                                    a(href="mailto:team@freecodecamp.com") team@freecodecamp.com
+                                    | .
+                            .modal-footer
+                                a.btn.btn-success.btn-block(href='#', data-dismiss='modal', aria-hidden='true')
+                                    span.ion-happy
+                                    | Nevermind, I don't want to delete all my progress
+                                .btn-spacer
+                                form(action='/account/delete', method='POST')
+                                    input(type='hidden', name='_csrf', value=_csrf)
+                                    button.btn.btn-danger.btn-block(type='submit')
+                                        span.ion-trash-b
+                                        | I am 100% sure I want to delete all my progress

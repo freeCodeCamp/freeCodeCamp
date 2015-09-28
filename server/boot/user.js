@@ -68,6 +68,7 @@ module.exports = function(app) {
   router.post('/reset-password', postReset);
   router.get('/email-signup', getEmailSignup);
   router.get('/email-signin', getEmailSignin);
+  router.get('/toggle-lockdown-mode', toggleLockdownMode);
   router.post(
     '/account/delete',
     ifNoUser401,
@@ -190,6 +191,35 @@ module.exports = function(app) {
         });
       }
     );
+  }
+
+
+
+  function toggleLockdownMode(req, res) {
+    if (req.user) {
+      if (req.user.lockdownMode === true) {
+        req.user.lockdownMode = false;
+        req.user.save(function (err) {
+          if (err) {
+            return next(err);
+          }
+          req.flash('success', {msg: 'Other people can now view all your challenge solutions. You can change this back at any time in the "Manage My Account" section at the bottom of this page.'});
+          res.redirect(req.user.username);
+        });
+      } else {
+        req.user.lockdownMode = true;
+        req.user.save(function (err) {
+          if (err) {
+            return next(err);
+          }
+          req.flash('success', {msg: 'All your challenge solutions are now hidden from other people. You can change this back at any time in the "Manage My Account" section at the bottom of this page.'});
+          res.redirect(req.user.username);
+        });
+      }
+    } else {
+      req.flash('error', {msg: 'You must be signed in to change your account settings.'});
+      res.redirect('/');
+    }
   }
 
   function postDeleteAccount(req, res, next) {

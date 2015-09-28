@@ -133,6 +133,10 @@
       "type": "boolean",
       "default": true
     },
+    "lockdownMode": {
+      "type": "boolean",
+      "default": false
+    },
     "currentChallenge": {
       "type": {}
     },
