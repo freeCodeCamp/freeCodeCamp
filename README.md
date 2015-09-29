@@ -69,7 +69,7 @@ touch .env
 npm install -g gulp
 ```
 
-Edit your `.env` file with the following API keys accordingly (if you only use email login, only the `MONGOHQ_URL`, `SESSION_SECRET`, `MANDRILL_USER` and `MANDRILL_PASSWORD` fields are necessary. Keep in mind if you want to use more services you'll have to get your own API keys for those services.
+Edit your `.env` file with the following API keys accordingly. If you only use email login, only the `MONGOHQ_URL`, `SESSION_SECRET`, `MANDRILL_USER` and `MANDRILL_PASSWORD` fields are necessary. Keep in mind if you want to use more services you'll have to get your own API keys for those services. If you only use a subset or no OAuth2 authentication methods, you have to remove them from ```server/passport-providers.js``` otherwise the server will complain of missing clientID at launch.
 
 ```
 MONGOHQ_URL='mongodb://localhost:27017/freecodecamp'
@@ -121,6 +121,8 @@ node seed/
 # start the application
 gulp
 ```
+
+Note that you may need to run gulp before ```node seed/``` one time to create ```server/rev-manifest.json``` (on which the seeding scripts also depend).
 
 License
 -------
