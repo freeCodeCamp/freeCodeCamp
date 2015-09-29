@@ -13,8 +13,8 @@
         "Make this function return true no matter what."
       ],
       "tests": [
-        "assert(typeof(meetBonfire()) === \"boolean\", 'message: The result should be a Boolean value of true or false.');",
-        "assert(meetBonfire() === true, 'message: Your <code>meetBonfire()</code> function should return <code>true</code>.');"
+        "assert(typeof(meetBonfire()) === \"boolean\", 'message: <code>meetBonfire()</code> should return a boolean value.');",
+        "assert(meetBonfire() === true, 'message: <code>meetBonfire()</code> should return true.');"
       ],
       "challengeSeed": [
         "function meetBonfire(argument) {",
@@ -46,10 +46,10 @@
       "title": "Reverse a String",
       "difficulty": "1.01",
       "tests": [
-        "assert(typeof(reverseString(\"hello\")) === \"string\", 'message: <code>reverseString&#40;&#41;</code> should return a string.');",
-        "assert(reverseString(\"hello\") === \"olleh\", 'message: <code>\"hello\"</code> should become <code>\"olleh\"</code>.');",
-        "assert(reverseString(\"Howdy\") === \"ydwoH\", 'message: <code>\"Howdy\"</code> should become <code>\"ydwoH\"</code>.');",
-        "assert(reverseString(\"Greetings from Earth\") === \"htraE morf sgniteerG\", 'message: <code>\"Greetings from Earth\"</code> should return <code>\"htraE morf sgniteerG\"</code>.');"
+        "assert(typeof(reverseString(\"hello\")) === \"string\", 'message: <code>reverseString()</code> should return a string.');",
+        "assert(reverseString(\"hello\") === \"olleh\", 'message: <code>reverseString(\"hello\")</code> should become <code>\"olleh\"</code>.');",
+        "assert(reverseString(\"Howdy\") === \"ydwoH\", 'message: <code>reverseString(\"Howdy\")</code> should become <code>\"ydwoH\"</code>.');",
+        "assert(reverseString(\"Greetings from Earth\") === \"htraE morf sgniteerG\", 'message: <code>reverseString(\"Greetings from Earth\")</code> should return <code>\"htraE morf sgniteerG\"</code>.');"
       ],
       "description": [
         "Reverse the provided string.",
@@ -87,11 +87,11 @@
       "id": "a302f7aae1aa3152a5b413bc",
       "title": "Factorialize a Number",
       "tests": [
-        "assert(typeof(factorialize(5)) === \"number\", 'message: <code>factorialize&#40;&#41;</code> should return a number.');",
-        "assert(factorialize(5) === 120, 'message: <code>5</code> should return <code>120</code>.');",
-        "assert(factorialize(10) === 3628800, 'message: <code>10</code> should return <code>3,628,800</code>.');",
-        "assert(factorialize(20) === 2432902008176640000, 'message: <code>20</code> should return <code>2,432,902,008,176,640,000</code>.');",
-        "assert(factorialize(0) === 1, 'message: <code>0</code> should return 1.');"
+        "assert(typeof(factorialize(5)) === \"number\", 'message: <code>factorialize()</code> should return a number.');",
+        "assert(factorialize(5) === 120, 'message: <code>factorialize(5)</code> should return 120.');",
+        "assert(factorialize(10) === 3628800, 'message: <code>factorialize(10)</code> should return 3,628,800.');",
+        "assert(factorialize(20) === 2432902008176640000, 'message: <code>factorialize(20)</code> should return 2,432,902,008,176,640,000.');",
+        "assert(factorialize(0) === 1, 'message: <code>factorialize(0)</code> should return 1.');"
       ],
       "difficulty": "1.02",
       "description": [
@@ -136,17 +136,17 @@
         "Remember to use <a href=\"//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck\" target=\"_blank\">Read-Search-Ask</a> if you get stuck. Write your own code."
       ],
       "tests": [
-        "assert(typeof(palindrome(\"eye\")) === \"boolean\", 'message: <code>palindrome&#40;&#41;<code> should return a boolean.');",
-        "assert(palindrome(\"eye\") === true, 'message: <code>\"eye\"</code> should return true.');",
-        "assert(palindrome(\"race car\") === true, 'message: <code>\"race car\"</code> should return true.');",
-        "assert(palindrome(\"not a palindrome\") === false, 'message: <code>\"not a palindrome\"</code> should return false.');",
-        "assert(palindrome(\"A man, a plan, a canal. Panama\") === true, 'message: <code>\"A man, a plan, a canal. Panama\"</code> should return true.');",
-        "assert(palindrome(\"never odd or even\") === true, 'message: <code>\"never odd or even\"</code> should return true.');",
-        "assert(palindrome(\"nope\") === false, 'message: <code>\"nope\"</code> should return false.');",
-        "assert(palindrome(\"almostomla\") === false, 'message: <code>\"almostomla\"</code> should return false.');",
-        "assert(palindrome(\"My age is 0, 0 si ega ym.\") === true, 'message: <code>\"My age is 0, 0 si ega ym.\"</code> should return true.');",
-        "assert(palindrome(\"1 eye for of 1 eye.\") === false, 'message: <code>\"1 eye for of 1 eye.\"</code> should return false.');",
-        "assert(palindrome(\"0_0 (: /-\\ :) 0-0\") === true, 'message: <code>\"0_0 (: /-\\\\ :) 0-0\"</code> should return true.');"
+        "assert(typeof(palindrome(\"eye\")) === \"boolean\", 'message: <code>palindrome()<code> should return a boolean.');",
+        "assert(palindrome(\"eye\") === true, 'message: <code>palindrome(\"eye\")</code> should return true.');",
+        "assert(palindrome(\"race car\") === true, 'message: <code>palindrome(\"race car\")</code> should return true.');",
+        "assert(palindrome(\"not a palindrome\") === false, 'message: <code>palindrome(\"not a palindrome\")</code> should return false.');",
+        "assert(palindrome(\"A man, a plan, a canal. Panama\") === true, 'message: <code>palindrome(\"A man, a plan, a canal. Panama\")</code> should return true.');",
+        "assert(palindrome(\"never odd or even\") === true, 'message: <code>palindrome(\"never odd or even\")</code> should return true.');",
+        "assert(palindrome(\"nope\") === false, 'message: <code>palindrome(\"nope\")</code> should return false.');",
+        "assert(palindrome(\"almostomla\") === false, 'message: <code>palindrome(\"almostomla\")</code> should return false.');",
+        "assert(palindrome(\"My age is 0, 0 si ega ym.\") === true, 'message: <code>palindrome(\"My age is 0, 0 si ega ym.\")</code> should return true.');",
+        "assert(palindrome(\"1 eye for of 1 eye.\") === false, 'message: <code>palindrome(\"1 eye for of 1 eye.\")</code> should return false.');",
+        "assert(palindrome(\"0_0 (: /-\\ :) 0-0\") === true, 'message: <code>palindrome(\"0_0 (: /-\\\\ :) 0-0\")</code> should return true.');"
       ],
       "challengeSeed": [
         "function palindrome(str) {",
@@ -192,12 +192,12 @@
         "findLongestWord(\"The quick brown fox jumped over the lazy dog\");"
       ],
       "tests": [
-        "assert(typeof(findLongestWord(\"The quick brown fox jumped over the lazy dog\")) === \"number\", 'message: <code>findLongestWord&#40;&#41;</code> should return a number.');",
-        "assert(findLongestWord(\"The quick brown fox jumped over the lazy dog\") === 6, 'message: <code>\"The quick brown fox jumped over the lazy dog\"</code> should return <code>6</code>.');",
-        "assert(findLongestWord(\"May the force be with you\") === 5, 'message: <code>\"May the force be with you\"</code> should return <code>5</code>.');",
-        "assert(findLongestWord(\"Google do a barrel roll\") === 6, 'message: <code>\"Google do a barrel roll\"</code> should return <code>6</code>.');",
-        "assert(findLongestWord(\"What is the average airspeed velocity of an unladen swallow\") === 8, 'message: <code>\"What is the average airspeed velocity of an unladen swallow\"</code> should return <code>8</code>.');",
-        "assert(findLongestWord(\"What if we try a super-long word such as otorhinolaryngology\") === 19, 'message: <code>\"What if we try a super-long word such as otorhinolaryngology\"</code> should return <code>19</code>.');"
+        "assert(typeof(findLongestWord(\"The quick brown fox jumped over the lazy dog\")) === \"number\", 'message: <code>findLongestWord()</code> should return a number.');",
+        "assert(findLongestWord(\"The quick brown fox jumped over the lazy dog\") === 6, 'message: <code>findLongestWord(\"The quick brown fox jumped over the lazy dog\")</code> should return 6.');",
+        "assert(findLongestWord(\"May the force be with you\") === 5, 'message: <code>findLongestWord(\"May the force be with you\")</code> should return 5.');",
+        "assert(findLongestWord(\"Google do a barrel roll\") === 6, 'message: <code>findLongestWord(\"Google do a barrel roll\")</code> should return 6.');",
+        "assert(findLongestWord(\"What is the average airspeed velocity of an unladen swallow\") === 8, 'message: <code>findLongestWord(\"What is the average airspeed velocity of an unladen swallow\")</code> should return 8.');",
+        "assert(findLongestWord(\"What if we try a super-long word such as otorhinolaryngology\") === 19, 'message: <code>findLongestWord(\"What if we try a super-long word such as otorhinolaryngology\")</code> should return 19.');"
       ],
       "MDNlinks": [
         "String.split()",
@@ -233,10 +233,10 @@
         "titleCase(\"I'm a little tea pot\", \"\");"
       ],
       "tests": [
-        "assert(typeof(titleCase(\"I&#39;m a little tea pot\")) === \"string\", 'message: <code>titleCase&#40;&#41;</code> should return a string.');",
-        "assert(titleCase(\"I&#39;m a little tea pot\") === \"I&#39;m A Little Tea Pot\", 'message: <code>\"I&#39;m a little tea pot\"</code> should return <code>\"I&#39;m A Little Tea Pot\"</code>.');",
-        "assert(titleCase(\"sHoRt AnD sToUt\") === \"Short And Stout\", 'message: <code>\"sHoRt AnD sToUt\"</code> should return <code>\"Short And Stout\"</code>.');",
-        "assert(titleCase(\"HERE IS MY HANDLE HERE IS MY SPOUT\") === \"Here Is My Handle Here Is My Spout\", 'message: <code>\"HERE IS MY HANDLE HERE IS MY SPOUT\"</code> should return <code>\"Here Is My Handle Here Is My Spout\"</code>');"
+        "assert(typeof(titleCase(\"I&#39;m a little tea pot\")) === \"string\", 'message: <code>titleCase()</code> should return a string.');",
+        "assert(titleCase(\"I&#39;m a little tea pot\") === \"I&#39;m A Little Tea Pot\", 'message: <code>titleCase(\"I&#39;m a little tea pot\")</code> should return \"I&#39;m A Little Tea Pot\".');",
+        "assert(titleCase(\"sHoRt AnD sToUt\") === \"Short And Stout\", 'message: <code>titleCase(\"sHoRt AnD sToUt\")</code> should return \"Short And Stout\".');",
+        "assert(titleCase(\"HERE IS MY HANDLE HERE IS MY SPOUT\") === \"Here Is My Handle Here Is My Spout\", 'message: <code>titleCase(\"HERE IS MY HANDLE HERE IS MY SPOUT\")</code> should return \"Here Is My Handle Here Is My Spout\".');"
       ],
       "MDNlinks": [
         "String.charAt()"
@@ -273,9 +273,9 @@
         "largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]);"
       ],
       "tests": [
-        "assert(largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]).constructor === Array, 'message: <code>largestOfFour&#40;&#41;</code> should return an array.');",
-        "assert.deepEqual(largestOfFour([[13, 27, 18, 26], [4, 5, 1, 3], [32, 35, 37, 39], [1000, 1001, 857, 1]]), [27,5,39,1001], 'message: <code>[[13, 27, 18, 26], [4, 5, 1, 3], [32, 35, 37, 39], [1000, 1001, 857, 1]]</code> should return <code>[27,5,39,1001]</code>.');",
-        "assert.deepEqual(largestOfFour([[4, 9, 1, 3], [13, 35, 18, 26], [32, 35, 97, 39], [1000000, 1001, 857, 1]]), [9,35,97,1000000], 'message: <code>[[4, 9, 1, 3], [13, 35, 18, 26], [32, 35, 97, 39], [1000000, 1001, 857, 1]]</code> should return <code>[9, 35, 97, 1000000]</code>.');"
+        "assert(largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]).constructor === Array, 'message: <code>largestOfFour()</code> should return an array.');",
+        "assert.deepEqual(largestOfFour([[13, 27, 18, 26], [4, 5, 1, 3], [32, 35, 37, 39], [1000, 1001, 857, 1]]), [27,5,39,1001], 'message: <code>largestOfFour([[13, 27, 18, 26], [4, 5, 1, 3], [32, 35, 37, 39], [1000, 1001, 857, 1]])</code> should return <code>[27,5,39,1001]</code>.');",
+        "assert.deepEqual(largestOfFour([[4, 9, 1, 3], [13, 35, 18, 26], [32, 35, 97, 39], [1000000, 1001, 857, 1]]), [9,35,97,1000000], 'message: <code>largestOfFour([[4, 9, 1, 3], [13, 35, 18, 26], [32, 35, 97, 39], [1000000, 1001, 857, 1]])</code> should return <code>[9, 35, 97, 1000000]</code>.');"
       ],
       "MDNlinks": [
         "Comparison Operators"
@@ -311,11 +311,11 @@
         "end(\"Bastian\", \"n\", \"\");"
       ],
       "tests": [
-        "assert(end(\"Bastian\", \"n\") === true, 'message: <code>\"Bastian\", \"n\"</code> should return true.');",
-        "assert(end(\"Connor\", \"n\") === false, 'message: <code>\"Connor\", \"n\"</code> should return false.');",
-        "assert(end(\"Walking on water and developing software from a specification are easy if both are frozen.\", \"specification\") === false, 'message: <code>\"Walking on water and developing software from a specification are easy if both are frozen.\", \"specification\"&#41;</code> should return false.');",
-        "assert(end(\"He has to give me a new name\", \"name\") === true, 'message: <code>\"He has to give me a new name\", \"name\"</code> should return true.');",
-        "assert(end(\"If you want to save our world, you must hurry. We dont know how much longer we can withstand the nothing\", \"mountain\") === false, 'message: <code>\"If you want to save our world, you must hurry. We dont know how much longer we can withstand the nothing\", \"mountain\"</code> should return false.');"
+        "assert(end(\"Bastian\", \"n\") === true, 'message: <code>end(\"Bastian\", \"n\")</code> should return true.');",
+        "assert(end(\"Connor\", \"n\") === false, 'message: <code>end(\"Connor\", \"n\")</code> should return false.');",
+        "assert(end(\"Walking on water and developing software from a specification are easy if both are frozen.\", \"specification\") === false, 'message: <code>end(\"Walking on water and developing software from a specification are easy if both are frozen.\", \"specification\")</code> should return false.');",
+        "assert(end(\"He has to give me a new name\", \"name\") === true, 'message: <code>end(\"He has to give me a new name\", \"name\")</code> should return true.');",
+        "assert(end(\"If you want to save our world, you must hurry. We dont know how much longer we can withstand the nothing\", \"mountain\") === false, 'message: <code>end(\"If you want to save our world, you must hurry. We dont know how much longer we can withstand the nothing\", \"mountain\")</code> should return false.');"
       ],
       "MDNlinks": [
         "String.substr()"
@@ -350,9 +350,9 @@
         "repeat(\"abc\", 3, \"\");"
       ],
       "tests": [
-        "assert(repeat(\"*\", 3) === \"***\", 'message: <code>\"*\", 3</code> should return <code>\"***\"</code>.');",
-        "assert(repeat(\"abc\", 3) === \"abcabcabc\", 'message: <code>\"abc\", 3</code> should return <code>\"abcabcabc\"</code>.');",
-        "assert(repeat(\"abc\", -2) === \"\", 'message: <code>\"abc\", -2</code> should return <code>\"\"</code>.');"
+        "assert(repeat(\"*\", 3) === \"***\", 'message: <code>repeat(\"*\", 3)</code> should return <code>\"***\"</code>.');",
+        "assert(repeat(\"abc\", 3) === \"abcabcabc\", 'message: <code>repeat(\"abc\", 3)</code> should return <code>\"abcabcabc\"</code>.');",
+        "assert(repeat(\"abc\", -2) === \"\", 'message: <code>repeat(\"abc\", -2)</code> should return <code>\"\"</code>.');"
       ],
       "MDNlinks": [
         "Global String Object"
@@ -388,10 +388,10 @@
         "truncate(\"A-tisket a-tasket A green and yellow basket\", 11, \"\");"
       ],
       "tests": [
-        "assert(truncate(\"A-tisket a-tasket A green and yellow basket\", 11) === \"A-tisket...\", 'message: <code>\"A-tisket a-tasket A green and yellow basket\", 1</code> should return <code>\"A-tisket...\"</code>.');",
-        "assert(truncate(\"Peter Piper picked a peck of pickled peppers\", 14) === \"Peter Piper...\", 'message: <code>\"Peter Piper picked a peck of pickled peppers\", 14</code> should return <code>\"Peter Piper...\"</code>.');",
-        "assert(truncate(\"A-tisket a-tasket A green and yellow basket\", \"A-tisket a-tasket A green and yellow basket\".length) === \"A-tisket a-tasket A green and yellow basket\", 'message: <code>\"A-tisket a-tasket A green and yellow basket\", \"A-tisket a-tasket A green and yellow basket\".length&#41;</code> should return <code>\"A-tisket a-tasket A green and yellow basket\"</code>.');",
-        "assert(truncate('A-tisket a-tasket A green and yellow basket', 'A-tisket a-tasket A green and yellow basket'.length + 2) === 'A-tisket a-tasket A green and yellow basket', 'message: <code>\"A-tisket a-tasket A green and yellow basket\", \"A-tisket a-tasket A green and yellow basket\".length + 2</code> should return <code>\"A-tisket a-tasket A green and yellow basket\"</code>.');"
+        "assert(truncate(\"A-tisket a-tasket A green and yellow basket\", 11) === \"A-tisket...\", 'message: <code>truncate(\"A-tisket a-tasket A green and yellow basket\", 1)</code> should return \"A-tisket...\".');",
+        "assert(truncate(\"Peter Piper picked a peck of pickled peppers\", 14) === \"Peter Piper...\", 'message: <code>truncate(\"Peter Piper picked a peck of pickled peppers\", 14)</code> should return \"Peter Piper...\".');",
+        "assert(truncate(\"A-tisket a-tasket A green and yellow basket\", \"A-tisket a-tasket A green and yellow basket\".length) === \"A-tisket a-tasket A green and yellow basket\", 'message: <code>truncate(\"A-tisket a-tasket A green and yellow basket\", \"A-tisket a-tasket A green and yellow basket\".length)</code> should return \"A-tisket a-tasket A green and yellow basket\".');",
+        "assert(truncate('A-tisket a-tasket A green and yellow basket', 'A-tisket a-tasket A green and yellow basket'.length + 2) === 'A-tisket a-tasket A green and yellow basket', 'message: <code>truncate(\"A-tisket a-tasket A green and yellow basket\", \"A-tisket a-tasket A green and yellow basket\".length + 2)</code> should return \"A-tisket a-tasket A green and yellow basket\".');"
       ],
       "MDNlinks": [
         "String.slice()"
@@ -426,10 +426,10 @@
         "chunk([\"a\", \"b\", \"c\", \"d\"], 2, \"\");"
       ],
       "tests": [
-        "assert.deepEqual(chunk([\"a\", \"b\", \"c\", \"d\"], 2), [[\"a\", \"b\"], [\"c\", \"d\"]], 'message: <code>[\"a\", \"b\", \"c\", \"d\"], 2</code> should return <code>[[\"a\", \"b\"], [\"c\", \"d\"]]</code>.');",
-        "assert.deepEqual(chunk([0, 1, 2, 3, 4, 5], 3), [[0, 1, 2], [3, 4, 5]], 'message: <code>[0, 1, 2, 3, 4, 5]</code> should return <code>[[0, 1, 2], [3, 4, 5]]</code>.');",
-        "assert.deepEqual(chunk([0, 1, 2, 3, 4, 5], 2), [[0, 1], [2, 3], [4, 5]], 'message: <code>[0, 1, 2, 3, 4, 5], 2</code> should return <code>[[0, 1], [2, 3], [4, 5]]</code>.');",
-        "assert.deepEqual(chunk([0, 1, 2, 3, 4, 5], 4), [[0, 1, 2, 3], [4, 5]], 'message: <code>[0, 1, 2, 3, 4, 5], 4</code> should return <code>[[0, 1, 2, 3], [4, 5]]</code>.');"
+        "assert.deepEqual(chunk([\"a\", \"b\", \"c\", \"d\"], 2), [[\"a\", \"b\"], [\"c\", \"d\"]], 'message: <code>chunk([\"a\", \"b\", \"c\", \"d\"], 2)</code> should return <code>[[\"a\", \"b\"], [\"c\", \"d\"]]</code>.');",
+        "assert.deepEqual(chunk([0, 1, 2, 3, 4, 5], 3), [[0, 1, 2], [3, 4, 5]], 'message: <code>chunk([0, 1, 2, 3, 4, 5], 3)</code> should return <code>[[0, 1, 2], [3, 4, 5]]</code>.');",
+        "assert.deepEqual(chunk([0, 1, 2, 3, 4, 5], 2), [[0, 1], [2, 3], [4, 5]], 'message: <code>chunk([0, 1, 2, 3, 4, 5], 2)</code> should return <code>[[0, 1], [2, 3], [4, 5]]</code>.');",
+        "assert.deepEqual(chunk([0, 1, 2, 3, 4, 5], 4), [[0, 1, 2, 3], [4, 5]], 'message: <code>chunk([0, 1, 2, 3, 4, 5], 4)</code> should return <code>[[0, 1, 2, 3], [4, 5]]</code>.');"
       ],
       "MDNlinks": [
         "Array.push()"
@@ -464,9 +464,9 @@
         "slasher([1, 2, 3], 2, \"\");"
       ],
       "tests": [
-        "assert.deepEqual(slasher([1, 2, 3], 2), [3], 'message: <code>[1, 2, 3], 2, [3]</code> should return <code>[3]</code>.');",
-        "assert.deepEqual(slasher([1, 2, 3], 0), [1, 2, 3], 'message: <code>[1, 2, 3], 0</code> should return <code>[1, 2, 3]</code>.');",
-        "assert.deepEqual(slasher([1, 2, 3], 9), [], 'message: <code>[1, 2, 3], 9</code> should return <code>[]</code>.');"
+        "assert.deepEqual(slasher([1, 2, 3], 2), [3], 'message: <code>slasher([1, 2, 3], 2, [3])</code> should return <code>[3]</code>.');",
+        "assert.deepEqual(slasher([1, 2, 3], 0), [1, 2, 3], 'message: <code>slasher([1, 2, 3], 0)</code> should return <code>[1, 2, 3]</code>.');",
+        "assert.deepEqual(slasher([1, 2, 3], 9), [], 'message: <code>slasher([1, 2, 3], 9)</code> should return <code>[]</code>.');"
       ],
       "MDNlinks": [
         "Array.slice()",
@@ -504,14 +504,14 @@
         "mutation([\"hello\", \"hey\"], \"\");"
       ],
       "tests": [
-        "assert(mutation([\"hello\", \"hey\"]) === false, 'message: <code>[\"hello\", \"hey\"]</code> should return false.');",
-        "assert(mutation([\"hello\", \"Hello\"]) === true, 'message: <code>[\"hello\", \"Hello\"]</code> should return true.');",
-        "assert(mutation([\"zyxwvutsrqponmlkjihgfedcba\", \"qrstu\"]) === true, 'message: <code>[\"zyxwvutsrqponmlkjihgfedcba\", \"qrstu\"]</code> should return true.');",
-        "assert(mutation([\"Mary\", \"Army\"]) === true, 'message: <code>[\"Mary\", \"Army\"]</code> should return true.');",
-        "assert(mutation([\"Mary\", \"Aarmy\"]) === true, 'message: <code>[\"Mary\", \"Aarmy\"]</code> should return true.');",
-        "assert(mutation([\"Alien\", \"line\"]) === true, 'message: <code>[\"Alien\", \"line\"]</code> should return true.');",
-        "assert(mutation([\"floor\", \"for\"]) === true, 'message: <code>[\"floor\", \"for\"]</code> should return true.');",
-        "assert(mutation([\"hello\", \"neo\"]) === false, 'message: <code>[\"hello\", \"neo\"]</code> should return false.');"
+        "assert(mutation([\"hello\", \"hey\"]) === false, 'message: <code>mutation([\"hello\", \"hey\"])</code> should return false.');",
+        "assert(mutation([\"hello\", \"Hello\"]) === true, 'message: <code>mutation([\"hello\", \"Hello\"])</code> should return true.');",
+        "assert(mutation([\"zyxwvutsrqponmlkjihgfedcba\", \"qrstu\"]) === true, 'message: <code>mutation([\"zyxwvutsrqponmlkjihgfedcba\", \"qrstu\"])</code> should return true.');",
+        "assert(mutation([\"Mary\", \"Army\"]) === true, 'message: <code>mutation([\"Mary\", \"Army\"])</code> should return true.');",
+        "assert(mutation([\"Mary\", \"Aarmy\"]) === true, 'message: <code>mutation([\"Mary\", \"Aarmy\"])</code> should return true.');",
+        "assert(mutation([\"Alien\", \"line\"]) === true, 'message: <code>mutation([\"Alien\", \"line\"])</code> should return true.');",
+        "assert(mutation([\"floor\", \"for\"]) === true, 'message: <code>mutation([\"floor\", \"for\"])</code> should return true.');",
+        "assert(mutation([\"hello\", \"neo\"]) === false, 'message: <code>mutation([\"hello\", \"neo\"])</code> should return false.');"
       ],
       "MDNlinks": [
         "Array.indexOf()"
@@ -547,9 +547,9 @@
         "bouncer([7, \"ate\", \"\", false, 9], \"\");"
       ],
       "tests": [
-        "assert.deepEqual(bouncer([7, \"ate\", \"\", false, 9]), [7, \"ate\", 9], 'message: <code>[7, \"ate\", \"\", false, 9]</code> should return <code>[7, \"ate\", 9]</code>.');",
-        "assert.deepEqual(bouncer([\"a\", \"b\", \"c\"]), [\"a\", \"b\", \"c\"], 'message: <code>[\"a\", \"b\", \"c\"]</code> should return <code>[\"a\", \"b\", \"c\"]</code>.');",
-        "assert.deepEqual(bouncer([false, null, 0, NaN, undefined, '']), [], 'message: <code>[false, null, 0]</code> should return <code>[]</code>.');"
+        "assert.deepEqual(bouncer([7, \"ate\", \"\", false, 9]), [7, \"ate\", 9], 'message: <code>bouncer([7, \"ate\", \"\", false, 9])</code> should return <code>[7, \"ate\", 9]</code>.');",
+        "assert.deepEqual(bouncer([\"a\", \"b\", \"c\"]), [\"a\", \"b\", \"c\"], 'message: <code>bouncer([\"a\", \"b\", \"c\"])</code> should return <code>[\"a\", \"b\", \"c\"]</code>.');",
+        "assert.deepEqual(bouncer([false, null, 0, NaN, undefined, '']), [], 'message: <code>bouncer([false, null, 0])</code> should return <code>[]</code>.');"
       ],
       "MDNlinks": [
         "Boolean Objects",
@@ -585,11 +585,11 @@
         "destroyer([1, 2, 3, 1, 2, 3], 2, 3, \"\");"
       ],
       "tests": [
-        "assert.deepEqual(destroyer([1, 2, 3, 1, 2, 3], 2, 3), [1, 1], 'message: <code>[1, 2, 3, 1, 2, 3], 2, 3</code> should return <code>[1, 1]</code>.');",
-        "assert.deepEqual(destroyer([1, 2, 3, 5, 1, 2, 3], 2, 3), [1, 5, 1], 'message: <code>[1, 2, 3, 5, 1, 2, 3], 2, 3</code> should return <code>[1, 5, 1]</code>.');",
-        "assert.deepEqual(destroyer([3, 5, 1, 2, 2], 2, 3, 5), [1], 'message: <code>[3, 5, 1, 2, 2], 2, 3, 5</code> should return <code>[1]</code>.');",
-        "assert.deepEqual(destroyer([2, 3, 2, 3], 2, 3), [], 'message: <code>[2, 3, 2, 3], 2, 3</code> should return <code>[]</code>.');",
-        "assert.deepEqual(destroyer([\"tree\", \"hamburger\", 53], \"tree\", 53), [\"hamburger\"], 'message: <code>[\"tree\", \"hamburger\", 53], \"tree\", 53)</code> should return <code>[\"hamburger\"]</code>.');"
+        "assert.deepEqual(destroyer([1, 2, 3, 1, 2, 3], 2, 3), [1, 1], 'message: <code>destroyer([1, 2, 3, 1, 2, 3], 2, 3)</code> should return <code>[1, 1]</code>.');",
+        "assert.deepEqual(destroyer([1, 2, 3, 5, 1, 2, 3], 2, 3), [1, 5, 1], 'message: <code>destroyer([1, 2, 3, 5, 1, 2, 3], 2, 3)</code> should return <code>[1, 5, 1]</code>.');",
+        "assert.deepEqual(destroyer([3, 5, 1, 2, 2], 2, 3, 5), [1], 'message: <code>destroyer([3, 5, 1, 2, 2], 2, 3, 5)</code> should return <code>[1]</code>.');",
+        "assert.deepEqual(destroyer([2, 3, 2, 3], 2, 3), [], 'message: <code>destroyer([2, 3, 2, 3], 2, 3)</code> should return <code>[]</code>.');",
+        "assert.deepEqual(destroyer([\"tree\", \"hamburger\", 53], \"tree\", 53), [\"hamburger\"], 'message: <code>destroyer([\"tree\", \"hamburger\", 53], \"tree\", 53)</code> should return <code>[\"hamburger\"]</code>.');"
       ],
       "MDNlinks": [
         "Arguments object",
@@ -629,12 +629,12 @@
         "Array.sort()"
       ],
       "tests": [
-        "assert(where([10, 20, 30, 40, 50], 35) === 3, 'message: <code>[10, 20, 30, 40, 50], 35</code> should return <code>3</code>.');",
-        "assert(where([10, 20, 30, 40, 50], 30) === 2, 'message: <code>[10, 20, 30, 40, 50], 30)</code> should return <code>2</code>.');",
-        "assert(where([40, 60], 50) === 1, 'message: <code>[40, 60,], 50</code> should return <code>1</code>.');",
-        "assert(where([5, 3, 20, 3], 3) === 0, 'message: <code>[5, 3, 20, 3], 3</code> should return <code>0</code>.');",
-        "assert(where([2, 20, 10], 1) === 0, 'message: <code>[2, 20, 10], 1</code> should return <code>0</code>.');",
-        "assert(where([2, 5, 10], 15) === 3, 'message: <code>[2, 5, 10], 15</code> should return <code>3</code>.');"
+        "assert(where([10, 20, 30, 40, 50], 35) === 3, 'message: <code>where([10, 20, 30, 40, 50], 35)</code> should return <code>3</code>.');",
+        "assert(where([10, 20, 30, 40, 50], 30) === 2, 'message: <code>where([10, 20, 30, 40, 50], 30)</code> should return <code>2</code>.');",
+        "assert(where([40, 60], 50) === 1, 'message: <code>where([40, 60,], 50)</code> should return <code>1</code>.');",
+        "assert(where([5, 3, 20, 3], 3) === 0, 'message: <code>where([5, 3, 20, 3], 3)</code> should return <code>0</code>.');",
+        "assert(where([2, 20, 10], 1) === 0, 'message: <code>where([2, 20, 10], 1)</code> should return <code>0</code>.');",
+        "assert(where([2, 5, 10], 15) === 3, 'message: <code>where([2, 5, 10], 15)</code> should return <code>3</code>.');"
       ],
       "type": "bonfire",
       "challengeType": 5,
