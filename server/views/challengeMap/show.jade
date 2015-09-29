@@ -131,7 +131,16 @@ block content
                                                         span= challenge.title
                                                             span.sr-only= " Incomplete"
 
-    //#announcementModal.modal(tabindex='-1')
+                                if (challengeBlock.completed === 100)
+                                    .button-spacer
+                                    .row
+                                        .col-xs-12.col-sm-8.col-md-6.col-sm-offset-3.col-md-offset-2.hidden
+                                            a.btn.btn-lg.btn-block.signup-btn.map-challenge-block-share Section complete. Share your Portfolio with your friends.
+                                                .hidden(id="#{challengeBlock.name}")
+    script.
+        var username = !{JSON.stringify(user && user.username || '')};
+        var lastCompleted = !{JSON.stringify(lastCompleted || false)}
+    // #announcementModal.modal(tabindex='-1')
     //    .modal-dialog.animated.fadeInUp.fast-animation
     //        .modal-content
     //            .modal-header.challenge-list-header Add us to your LinkedIn profile
