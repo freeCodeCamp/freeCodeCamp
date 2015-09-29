@@ -48,7 +48,7 @@
       "title": "Diff Two Arrays",
       "difficulty": "2.01",
       "description": [
-        "Compare two arrays and return a new array with any items not found in both of the original arrays.",
+        "Compare two arrays and return a new array with the elements that appear in only one of the two arrays. In other words, the elements in the new array should contain the union of <code>arr1</code> and <code>arr2</code> minus the intersection of <code>arr1</code> and <code>arr2</code>",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "challengeSeed": [
