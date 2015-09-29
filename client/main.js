@@ -1,4 +1,7 @@
 var mapShareKey = 'map-shares';
+var lastCompleted = typeof lastCompleted !== 'undefined' ?
+  lastCompleted :
+  '';
 
 function getMapShares() {
   var alreadyShared = JSON.parse(localStorage.getItem(mapShareKey) || '[]');
@@ -413,27 +416,34 @@ $(document).ready(function() {
 
   // map sharing
   var alreadyShared = getMapShares();
-  alreadyShared.map(function(id) {
-    // find share button div and hide as camper has already shared
-    $('div[id="' + id + '"]').parent().parent().hide();
-  });
+
+  if (lastCompleted && alreadyShared.indexOf(lastCompleted) === -1) {
+    $('div[id="' + lastCompleted + '"]')
+      .parent()
+      .parent()
+      .removeClass('hidden');
+  }
 
   // on map view
   $('.map-challenge-block-share').on('click', function(e) {
     e.preventDefault();
     var challengeBlockName = $(this).children().attr('id');
     var challengeBlockEscapedName = challengeBlockName.replace(/\s/, '%20');
-    var username = typeof window.username !== "undefined" ? window.username : "";
+    var username = typeof window.username !== 'undefined' ?
+      window.username :
+      '';
 
     var link = 'https://www.facebook.com/dialog/feed?' +
       'app_id=1644598365767721' +
       '&display=page&' +
       'caption=I%20just%20completed%20the%20' +
       challengeBlockEscapedName +
-      '%20section%20on%20Free%20Code%20Camp%2E%20Check%20out%20my%20portfolio%20so%20far%2E' +
+      '%20section%20on%20Free%20Code%20Camp%2E%20Check%20out' +
+      '%20my%20portfolio%20so%20far%2E' +
       '&link=http%3A%2F%2Ffreecodecamp%2Ecom%2F' +
       username +
       '&redirect_uri=http%3A%2F%2Ffreecodecamp%2Ecom%2Fmap';
+
     setMapShare(challengeBlockName);
     window.location.href = link;
   });
