@@ -471,6 +471,7 @@ module.exports = function(app) {
   }
 
   function challengeMap({ user = {} }, res, next) {
+    let lastCompleted;
     const daysRunning = moment().diff(new Date('10/15/2014'), 'days');
 
     // if user
@@ -513,7 +514,13 @@ module.exports = function(app) {
       })
       .filter(({ name }) => name !== 'Hikes')
       // turn stream of blocks into a stream of an array
-      .toArray();
+      .toArray()
+      .doOnNext((blocks) => {
+        const lastCompletedBlock = _.findLast(blocks, (block) => {
+          return block.completed === 100;
+        });
+        lastCompleted = lastCompletedBlock.name;
+      });
 
     Observable.combineLatest(
       camperCount$,
@@ -526,6 +533,7 @@ module.exports = function(app) {
             blocks,
             daysRunning,
             camperCount,
+            lastCompleted,
             title: "A map of all Free Code Camp's Challenges"
           });
         },

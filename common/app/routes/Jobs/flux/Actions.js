@@ -1,7 +1,9 @@
 import { Actions } from 'thundercats';
+import store from 'store';
 import debugFactory from 'debug';
 
 const debug = debugFactory('freecc:jobs:actions');
+const assign = Object.assign;
 
 export default Actions({
   setJobs: null,
@@ -23,7 +25,7 @@ export default Actions({
 
       // if no job found this will be null which is a op noop
       return foundJob ?
-        Object.assign({}, oldState, { currentJob: foundJob }) :
+        assign({}, oldState, { currentJob: foundJob }) :
         null;
     };
   },
@@ -31,6 +33,31 @@ export default Actions({
   getJob: null,
   getJobs(params) {
     return { params };
+  },
+  openModal() {
+    return { showModal: true };
+  },
+  closeModal() {
+    return { showModal: false };
+  },
+  handleForm(value) {
+    return {
+      transform(oldState) {
+        const { form } = oldState;
+        const newState = assign({}, oldState);
+        newState.form = assign(
+          {},
+          form,
+          value
+        );
+        return newState;
+      }
+    };
+  },
+  saveForm: null,
+  getSavedForm: null,
+  setForm(form) {
+    return { form };
   }
 })
   .refs({ displayName: 'JobActions' })
@@ -56,8 +83,22 @@ export default Actions({
           debug('job services experienced an issue', err);
           return jobActions.setError({ err });
         }
-        jobActions.setJobs({ currentJob: job });
+        if (job) {
+          jobActions.setJobs({ currentJob: job });
+        }
+        jobActions.setJobs({});
       });
+    });
+
+    jobActions.saveForm.subscribe((form) => {
+      store.set('newJob', form);
+    });
+
+    jobActions.getSavedForm.subscribe(() => {
+      const job = store.get('newJob');
+      if (job && !Array.isArray(job) && typeof job === 'object') {
+        jobActions.setForm(job);
+      }
     });
     return jobActions;
   });

@@ -49,6 +49,7 @@ var paths = {
     '!public/js/bundle*',
     'node_modules/',
     'client/',
+    'seed',
     'server/manifests/*.json',
     'server/rev-manifest.json'
   ],

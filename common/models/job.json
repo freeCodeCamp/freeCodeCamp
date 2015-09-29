@@ -1,6 +1,7 @@
 {
   "name": "job",
   "base": "PersistedModel",
+  "strict": true,
   "idInjection": true,
   "trackChanges": false,
   "properties": {
@@ -29,6 +30,9 @@
     "state": {
       "type": "string"
     },
+    "url": {
+      "type": "string"
+    },
     "country": {
       "type": "string"
     },
@@ -38,7 +42,7 @@
     "description": {
       "type": "string"
     },
-    "isApproverd": {
+    "isApproved": {
       "type": "boolean"
     },
     "isHighlighted": {
