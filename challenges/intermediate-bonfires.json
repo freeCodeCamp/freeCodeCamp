@@ -151,9 +151,9 @@
       ],
       "tests": [
         "assert.deepEqual(where([{ first: 'Romeo', last: 'Montague' }, { first: 'Mercutio', last: null }, { first: 'Tybalt', last: 'Capulet' }], { last: 'Capulet' }), [{ first: 'Tybalt', last: 'Capulet' }], 'message: <code>where()</code> should return an array of objects.');",
-        "assert.deepEqual(where([{ 'a': 1 }, { 'a': 1 }, { 'a': 1, 'b': 2 }], { 'a': 1 }), [{ 'a': 1 }, { 'a': 1 }, { 'a': 1, 'b': 2 }], 'message: <code></code> should return <code></code>.');",
-        "assert.deepEqual(where([{ 'a': 1, 'b': 2 }, { 'a': 1 }, { 'a': 1, 'b': 2, 'c': 2 }], { 'a': 1, 'b': 2 }), [{ 'a': 1, 'b': 2 }, { 'a': 1, 'b': 2, 'c': 2 }], 'message: <code></code> should return <code></code>.');",
-        "assert.deepEqual(where([{ 'a': 5 }, { 'b': 10 }, { 'a': 5, 'b': 10 }], { 'a': 5, 'b': 10 }), [{ 'a': 5, 'b': 10 }], 'message: <code></code> should return <code></code>.');"
+        "assert.deepEqual(where([{ 'a': 1 }, { 'a': 1 }, { 'a': 1, 'b': 2 }], { 'a': 1 }), [{ 'a': 1 }, { 'a': 1 }, { 'a': 1, 'b': 2 }], 'message: <code>where([{ 'a': 1 }, { 'a': 1 }, { 'a': 1, 'b': 2 }], { 'a': 1 })</code> should return <code>[{ 'a': 1 }, { 'a': 1 }, { 'a': 1, 'b': 2 }]</code>.');",
+        "assert.deepEqual(where([{ 'a': 1, 'b': 2 }, { 'a': 1 }, { 'a': 1, 'b': 2, 'c': 2 }], { 'a': 1, 'b': 2 }), [{ 'a': 1, 'b': 2 }, { 'a': 1, 'b': 2, 'c': 2 }], 'message: <code>where([{ 'a': 1, 'b': 2 }, { 'a': 1 }, { 'a': 1, 'b': 2, 'c': 2 }], { 'a': 1, 'b': 2 })</code> should return <code>[{ 'a': 1, 'b': 2 }, { 'a': 1, 'b': 2, 'c': 2 }]</code>.');",
+        "assert.deepEqual(where([{ 'a': 5 }, { 'b': 10 }, { 'a': 5, 'b': 10 }], { 'a': 5, 'b': 10 }), [{ 'a': 5, 'b': 10 }], 'message: <code>where([{ 'a': 5 }, { 'b': 10 }, { 'a': 5, 'b': 10 }], { 'a': 5, 'b': 10 })</code> should return <code>[{ 'a': 5, 'b': 10 }]</code>.');"
       ],
       "MDNlinks": [
         "Global Object",
@@ -265,9 +265,9 @@
       "id": "afd15382cdfb22c9efe8b7de",
       "title": "DNA Pairing",
       "tests": [
-        "assert.deepEqual(pair(\"ATCGA\"),[['A','T'],['T','A'],['C','G'],['G','C'],['A','T']], 'message: <code></code> should return <code></code>.');",
-        "assert.deepEqual(pair(\"TTGAG\"),[['T','A'],['T','A'],['G','C'],['A','T'],['G','C']], 'message: <code></code> should return <code></code>.');",
-        "assert.deepEqual(pair(\"CTCTA\"),[['C','G'],['T','A'],['C','G'],['T','A'],['A','T']], 'message: <code></code> should return <code></code>.');"
+        "assert.deepEqual(pair(\"ATCGA\"),[['A','T'],['T','A'],['C','G'],['G','C'],['A','T']], 'message: <code>pair(\"ATCGA\")</code> should return <code>[['A','T'],['T','A'],['C','G'],['G','C'],['A','T']]</code>.');",
+        "assert.deepEqual(pair(\"TTGAG\"),[['T','A'],['T','A'],['G','C'],['A','T'],['G','C']], 'message: <code>pair(\"TTGAG\")</code> should return <code>[['T','A'],['T','A'],['G','C'],['A','T'],['G','C']]</code>.');",
+        "assert.deepEqual(pair(\"CTCTA\"),[['C','G'],['T','A'],['C','G'],['T','A'],['A','T']], 'message: <code>pair(\"CTCTA\")</code> should return <code>[['C','G'],['T','A'],['C','G'],['T','A'],['A','T']]</code>.');"
       ],
       "difficulty": "2.05",
       "description": [
@@ -319,10 +319,10 @@
         "fearNotLetter('abce');"
       ],
       "tests": [
-        "assert.deepEqual(fearNotLetter(\"abce\"), \"d\", 'message: <code>fearNotLetter(\"abce\")</code> should return d');",
-        "assert.deepEqual(fearNotLetter(\"abcdefghjklmno\"), \"i\", 'message: <code>fearNotLetter(\"abcdefghjklmno\")</code> should return i');",
-        "assert.isUndefined(fearNotLetter(\"bcd\"), 'message: <code>fearNotLetter(\"bcd\")</code> should return undefined');",
-        "assert.isUndefined(fearNotLetter(\"yz\"), 'message: <code>fearNotLetter(\"yz\")</code> should return undefined');"
+        "assert.deepEqual(fearNotLetter(\"abce\"), \"d\", 'message: <code>fearNotLetter(\"abce\")</code> should return \"d\".');",
+        "assert.deepEqual(fearNotLetter(\"abcdefghjklmno\"), \"i\", 'message: <code>fearNotLetter(\"abcdefghjklmno\")</code> should return \"i\".');",
+        "assert.isUndefined(fearNotLetter(\"bcd\"), 'message: <code>fearNotLetter(\"bcd\")</code> should return undefined.');",
+        "assert.isUndefined(fearNotLetter(\"yz\"), 'message: <code>fearNotLetter(\"yz\")</code> should return undefined.');"
       ],
       "MDNlinks": [
         "String.charCodeAt()",
@@ -359,14 +359,14 @@
         "boo(null);"
       ],
       "tests": [
-        "assert.strictEqual(boo(true), true, 'message: <code></code> should return true.');",
-        "assert.strictEqual(boo(false), true, 'message: <code></code> should return true.');",
-        "assert.strictEqual(boo([1, 2, 3]), false, 'message: <code></code> should return false.');",
-        "assert.strictEqual(boo([].slice), false, 'message: <code></code> should return false.');",
-        "assert.strictEqual(boo({ 'a': 1 }), false, 'message: <code></code> should return false.');",
-        "assert.strictEqual(boo(1), false, 'message: <code></code> should return false.');",
-        "assert.strictEqual(boo(NaN), false, 'message: <code></code> should return true.');",
-        "assert.strictEqual(boo('a'), false, 'message: <code></code> should return false.');"
+        "assert.strictEqual(boo(true), true, 'message: <code>boo(true)</code> should return true.');",
+        "assert.strictEqual(boo(false), true, 'message: <code>boo(false)</code> should return true.');",
+        "assert.strictEqual(boo([1, 2, 3]), false, 'message: <code>boo([1, 2, 3])</code> should return false.');",
+        "assert.strictEqual(boo([].slice), false, 'message: <code>boo([].slice)</code> should return false.');",
+        "assert.strictEqual(boo({ 'a': 1 }), false, 'message: <code>boo({ 'a': 1 })</code> should return false.');",
+        "assert.strictEqual(boo(1), false, 'message: <code>boo(1)</code> should return false.');",
+        "assert.strictEqual(boo(NaN), false, 'message: <code>boo(NaN)</code> should return true.');",
+        "assert.strictEqual(boo('a'), false, 'message: <code>boo('a')</code> should return false.');"
       ],
       "MDNlinks": [
         "Boolean Objects"
@@ -403,10 +403,10 @@
         "unite([1, 3, 2], [5, 2, 1, 4], [2, 1]);"
       ],
       "tests": [
-        "assert.deepEqual(unite([1, 3, 2], [5, 2, 1, 4], [2, 1]), [1, 3, 2, 5, 4], 'should return the union of the given arrays');",
-        "assert.deepEqual(unite([1, 3, 2], [1, [5]], [2, [4]]), [1, 3, 2, [5], [4]], 'should not flatten nested arrays');",
-        "assert.deepEqual(unite([1, 2, 3], [5, 2, 1]), [1, 2, 3, 5], 'should correctly handle exactly two arguments');",
-        "assert.deepEqual(unite([1, 2, 3], [5, 2, 1, 4], [2, 1], [6, 7, 8]), [ 1, 2, 3, 5, 4, 6, 7, 8 ], 'should correctly handle higher numbers of arguments');"
+        "assert.deepEqual(unite([1, 3, 2], [5, 2, 1, 4], [2, 1]), [1, 3, 2, 5, 4], 'message: <code></code> should return <code></code>.');",
+        "assert.deepEqual(unite([1, 3, 2], [1, [5]], [2, [4]]), [1, 3, 2, [5], [4]], 'message: <code></code> should return <code></code>.');",
+        "assert.deepEqual(unite([1, 2, 3], [5, 2, 1]), [1, 2, 3, 5], 'message: <code></code> should return <code></code>.');",
+        "assert.deepEqual(unite([1, 2, 3], [5, 2, 1, 4], [2, 1], [6, 7, 8]), [ 1, 2, 3, 5, 4, 6, 7, 8 ], 'message: <code></code> should return <code></code>.');"
       ],
       "MDNlinks": [
         "Arguments object",
@@ -442,13 +442,13 @@
         "convert('Dolce & Gabbana');"
       ],
       "tests": [
-        "assert.match(convert('Dolce & Gabbana'), /Dolce &(amp|AMP|#x00026|#38); Gabbana/, 'should escape characters');",
-        "assert.match(convert('Hamburgers < Pizza < Tacos'), /Hamburgers &(lt|LT|#x0003C|#60); Pizza &(lt|LT|#x0003C|#60); Tacos/, 'should escape characters');",
-        "assert.match(convert('Sixty > twelve'), /Sixty &(gt|GT|#x0003E|#62); twelve/, 'should escape characters');",
-        "assert.match(convert('Stuff in \"quotation marks\"'), /Stuff in &(quot|QUOT|#x00022|#34);quotation marks&(quot|QUOT|#x00022|#34);/, 'should escape characters');",
-        "assert.match(convert(\"Shindler's List\"), /Shindler&(apos|#x00027|#39);s List/, 'should escape characters');",
-        "assert.match(convert('<>'), /&(lt|LT|#x0003C|#60);&(gt|GT|#x0003E|#62);/, 'should escape characters');",
-        "assert.strictEqual(convert('abc'), 'abc', 'should handle strings with nothing to escape');"
+        "assert.match(convert('Dolce & Gabbana'), /Dolce &(amp|AMP|#x00026|#38); Gabbana/, 'message: <code>convert('Dolce & Gabbana')</code> should return <code>/Dolce &(amp|AMP|#x00026|#38); Gabbana/</code>.');",
+        "assert.match(convert('Hamburgers < Pizza < Tacos'), /Hamburgers &(lt|LT|#x0003C|#60); Pizza &(lt|LT|#x0003C|#60); Tacos/, 'message: <code>convert('Hamburgers < Pizza < Tacos')</code> should return <code>/Hamburgers &(lt|LT|#x0003C|#60); Pizza &(lt|LT|#x0003C|#60); Tacos/</code>.');",
+        "assert.match(convert('Sixty > twelve'), /Sixty &(gt|GT|#x0003E|#62); twelve/, 'message: <code>convert('Sixty > twelve')</code> should return <code>/Sixty &(gt|GT|#x0003E|#62); twelve/</code>.');",
+        "assert.match(convert('Stuff in \"quotation marks\"'), /Stuff in &(quot|QUOT|#x00022|#34);quotation marks&(quot|QUOT|#x00022|#34);/, 'message: <code>convert('Stuff in \"quotation marks\"')</code> should return <code>/Stuff in &(quot|QUOT|#x00022|#34);quotation marks&(quot|QUOT|#x00022|#34);/</code>.');",
+        "assert.match(convert(\"Shindler's List\"), /Shindler&(apos|#x00027|#39);s List/, 'message: <code>convert(\"Shindler's List\")</code> should return <code>/Shindler&(apos|#x00027|#39);s List/</code>.');",
+        "assert.match(convert('<>'), /&(lt|LT|#x0003C|#60);&(gt|GT|#x0003E|#62);/, 'message: <code>convert('<>')</code> should return <code>/&(lt|LT|#x0003C|#60);&(gt|GT|#x0003E|#62);/</code>.');",
+        "assert.strictEqual(convert('abc'), 'abc', 'message: <code>convert(\"abc\")</code> should return <code>\"abc\"</code>.');"
       ],
       "MDNlinks": [
         "RegExp",
@@ -485,10 +485,10 @@
         "spinalCase('This Is Spinal Tap');"
       ],
       "tests": [
-        "assert.strictEqual(spinalCase('This Is Spinal Tap'), 'this-is-spinal-tap', 'should return spinal case from string with spaces');",
-        "assert.strictEqual(spinalCase('thisIsSpinalTap'), 'this-is-spinal-tap', 'should return spinal case from string with camel case');",
-        "assert.strictEqual(spinalCase('The_Andy_Griffith_Show'), 'the-andy-griffith-show', 'should return spinal case from string with snake case');",
-        "assert.strictEqual(spinalCase('Teletubbies say Eh-oh'), 'teletubbies-say-eh-oh', 'should return spinal case from string with spaces and hyphens');"
+        "assert.strictEqual(spinalCase('This Is Spinal Tap'), 'this-is-spinal-tap', 'message: <code>spinalCase('This Is Spinal Tap')</code> should return <code>'this-is-spinal-tap'</code>.');",
+        "assert.strictEqual(spinalCase('thisIsSpinalTap'), 'this-is-spinal-tap', 'message: <code>spinalCase('thisIsSpinalTap')</code> should return <code>'this-is-spinal-tap'</code>.');",
+        "assert.strictEqual(spinalCase('The_Andy_Griffith_Show'), 'the-andy-griffith-show', 'message: <code>spinalCase('The_Andy_Griffith_Show')</code> should return <code>'the-andy-griffith-show'</code>.');",
+        "assert.strictEqual(spinalCase('Teletubbies say Eh-oh'), 'teletubbies-say-eh-oh', 'message: <code>spinalCase('Teletubbies say Eh-oh')</code> should return <code>'teletubbies-say-eh-oh'</code>.');"
       ],
       "MDNlinks": [
         "RegExp",
@@ -525,7 +525,7 @@
         "sumFibs(4);"
       ],
       "tests": [
-        "assert.deepEqual(typeof(sumFibs(1)), \"number\", \"The result should be a number\");",
+        "assert.deepEqual(typeof(sumFibs(1)), \"number\", message: <code>sumFibs()</code> should return a number.);",
         "assert.deepEqual(sumFibs(1000), 1785, 'message: <code>sumFibs(1000)</code> should return 1785');",
         "assert.deepEqual(sumFibs(4000000), 4613732, 'message: <code>sumFibs(4000000)</code> should return 4613732');",
         "assert.deepEqual(sumFibs(4), 5, 'message: <code>sumFibs(4)</code> should return 5');",
@@ -566,9 +566,9 @@
         "sumPrimes(10);"
       ],
       "tests": [
-        "assert.deepEqual(typeof(sumPrimes(10)), \"number\", \"The result should be a number\");",
-        "assert.deepEqual(sumPrimes(10), 17, 'message: <code>sumPrimes(10)</code> should return 17');",
-        "assert.deepEqual(sumPrimes(977), 73156, 'message: <code>sumPrimes(977)</code> should return 73156');"
+        "assert.deepEqual(typeof(sumPrimes(10)), \"number\", 'message: <code>sumPrimes()</code> should return a number.');",
+        "assert.deepEqual(sumPrimes(10), 17, 'message: <code>sumPrimes(10)</code> should return 17.');",
+        "assert.deepEqual(sumPrimes(977), 73156, 'message: <code>sumPrimes(977)</code> should return 73156.');"
       ],
       "MDNlinks": [
         "For Loops",
@@ -606,7 +606,7 @@
         "smallestCommons([1,5]);"
       ],
       "tests": [
-        "assert.deepEqual(typeof(smallestCommons([1, 5])), \"number\", \"The result should be a number\");",
+        "assert.deepEqual(typeof(smallestCommons([1, 5])), \"number\", 'message: <code>smallestCommons()</code> should return a number.');",
         "assert.deepEqual(smallestCommons([1, 5]), 60, 'message: <code>smallestCommons([1, 5])</code> should return 60');",
         "assert.deepEqual(smallestCommons([5, 1]), 60, 'message: <code>smallestCommons([5, 1])</code> should return 60');",
         "assert.deepEqual(smallestCommons([1, 13]), 360360, 'message: <code>smallestCommons([1, 13])</code> should return 360360');"
@@ -644,8 +644,8 @@
         "find([1, 2, 3, 4], function(num){ return num % 2 === 0; });"
       ],
       "tests": [
-        "assert.strictEqual(find([1, 3, 5, 8, 9, 10], function(num) { return num % 2 === 0; }), 8, 'should return first found value');",
-        "assert.strictEqual(find([1, 3, 5, 9], function(num) { return num % 2 === 0; }), undefined, 'should return undefined if not found');"
+        "assert.strictEqual(find([1, 3, 5, 8, 9, 10], function(num) { return num % 2 === 0; }), 8, 'message: <code>find([1, 3, 5, 8, 9, 10], function(num) { return num % 2 === 0; })</code> should return 8.');",
+        "assert.strictEqual(find([1, 3, 5, 9], function(num) { return num % 2 === 0; }), undefined, 'message: <code>find([1, 3, 5, 9], function(num) { return num % 2 === 0; })</code> should return undefined.');"
       ],
       "MDNlinks": [
         "Array.some()"
@@ -680,10 +680,10 @@
         "drop([1, 2, 3], function(n) {return n < 3; });"
       ],
       "tests": [
-        "assert.deepEqual(drop([1, 2, 3, 4], function(n) {return n>= 3;}), [3, 4], 'message: <code>drop([1, 2, 3, 4], function(n) {return n>= 3;})</code> should return [3, 4]');",
-        "assert.deepEqual(drop([1, 2, 3], function(n) {return n > 0; }), [1, 2, 3], 'message: <code>drop([1, 2, 3], function(n) {return n > 0; })</code> should return [1, 2, 3]');",
-        "assert.deepEqual(drop([1, 2, 3, 4], function(n) {return n > 5;}), [], 'message: <code>drop([1, 2, 3, 4], function(n) {return n > 5;})</code> should return []');",
-        "assert.deepEqual(drop([1, 2, 3, 7, 4], function(n) {return n > 3}), [7, 4], 'message: <code>drop([1, 2, 3, 7, 4], function(n) {return n>= 3})</code> should return [7, 4]');"
+        "assert.deepEqual(drop([1, 2, 3, 4], function(n) {return n>= 3;}), [3, 4], 'message: <code>drop([1, 2, 3, 4], function(n) {return n>= 3;})</code> should return <code>[3, 4]</code>.');",
+        "assert.deepEqual(drop([1, 2, 3], function(n) {return n > 0; }), [1, 2, 3], 'message: <code>drop([1, 2, 3], function(n) {return n > 0; })</code> should return <code>[1, 2, 3]</code>.');",
+        "assert.deepEqual(drop([1, 2, 3, 4], function(n) {return n > 5;}), [], 'message: <code>drop([1, 2, 3, 4], function(n) {return n > 5;})</code> should return <code>[]</code>.');",
+        "assert.deepEqual(drop([1, 2, 3, 7, 4], function(n) {return n > 3}), [7, 4], 'message: <code>drop([1, 2, 3, 7, 4], function(n) {return n>= 3})</code> should return <code>[7, 4]</code>.');"
       ],
       "MDNlinks": [
         "Arguments object",
@@ -719,10 +719,10 @@
         "steamroller([1, [2], [3, [[4]]]]);"
       ],
       "tests": [
-        "assert.deepEqual(steamroller([[['a']], [['b']]]), ['a', 'b'], 'should flatten nested arrays');",
-        "assert.deepEqual(steamroller([1, [2], [3, [[4]]]]), [1, 2, 3, 4], 'should flatten nested arrays');",
-        "assert.deepEqual(steamroller([1, [], [3, [[4]]]]), [1, 3, 4], 'should work with empty arrays');",
-        "assert.deepEqual(steamroller([1, {}, [3, [[4]]]]), [1, {}, 3, 4], 'should work with actual objects');"
+        "assert.deepEqual(steamroller([[['a']], [['b']]]), ['a', 'b'], 'message: <code>steamroller([[['a']], [['b']]])</code> should return <code>['a', 'b']</code>.');",
+        "assert.deepEqual(steamroller([1, [2], [3, [[4]]]]), [1, 2, 3, 4], 'message: <code>steamroller([1, [2], [3, [[4]]]])</code> should return <code>[1, 2, 3, 4]</code>.');",
+        "assert.deepEqual(steamroller([1, [], [3, [[4]]]]), [1, 3, 4], 'message: <code>steamroller([1, [], [3, [[4]]]])</code> should return <code>[1, 3, 4]</code>.');",
+        "assert.deepEqual(steamroller([1, {}, [3, [[4]]]]), [1, {}, 3, 4], 'message: <code>steamroller([1, {}, [3, [[4]]]])</code> should return <code>[1, {}, 3, 4]</code>.');"
       ],
       "MDNlinks": [
         "Array.isArray()"
@@ -757,8 +757,8 @@
         "binaryAgent('01000001 01110010 01100101 01101110 00100111 01110100 00100000 01100010 01101111 01101110 01100110 01101001 01110010 01100101 01110011 00100000 01100110 01110101 01101110 00100001 00111111');"
       ],
       "tests": [
-        "assert.deepEqual(binaryAgent('01000001 01110010 01100101 01101110 00100111 01110100 00100000 01100010 01101111 01101110 01100110 01101001 01110010 01100101 01110011 00100000 01100110 01110101 01101110 00100001 00111111'), \"Aren't bonfires fun!?\", \"<code>binaryAgent()</code> should return Aren't bonfires fun!?\");",
-        "assert.deepEqual(binaryAgent('01001001 00100000 01101100 01101111 01110110 01100101 00100000 01000110 01110010 01100101 01100101 01000011 01101111 01100100 01100101 01000011 01100001 01101101 01110000 00100001'), \"I love FreeCodeCamp!\", 'message: <code>binaryAgent()</code> should return \"I love FreeCodeCamp!\"');"
+        "assert.deepEqual(binaryAgent('01000001 01110010 01100101 01101110 00100111 01110100 00100000 01100010 01101111 01101110 01100110 01101001 01110010 01100101 01110011 00100000 01100110 01110101 01101110 00100001 00111111'), \"Aren't bonfires fun!?\", '<code>binaryAgent(\"01000001 01110010 01100101 01101110 00100111 01110100 00100000 01100010 01101111 01101110 01100110 01101001 01110010 01100101 01110011 00100000 01100110 01110101 01101110 00100001 00111111\")</code> should return \"Aren't bonfires fun!?\"');",
+        "assert.deepEqual(binaryAgent('01001001 00100000 01101100 01101111 01110110 01100101 00100000 01000110 01110010 01100101 01100101 01000011 01101111 01100100 01100101 01000011 01100001 01101101 01110000 00100001'), \"I love FreeCodeCamp!\", 'message: <code>binaryAgent(\"01001001 00100000 01101100 01101111 01110110 01100101 00100000 01000110 01110010 01100101 01100101 01000011 01101111 01100100 01100101 01000011 01100001 01101101 01110000 00100001\"</code> should return \"I love FreeCodeCamp!\"');"
       ],
       "MDNlinks": [
         "String.charCodeAt()",
@@ -796,9 +796,9 @@
         "every([{'user': 'Tinky-Winky', 'sex': 'male'}, {'user': 'Dipsy', 'sex': 'male'}, {'user': 'Laa-Laa', 'sex': 'female'}, {'user': 'Po', 'sex': 'female'}], 'sex');"
       ],
       "tests": [
-        "assert.strictEqual(every([{'user': 'Tinky-Winky', 'sex': 'male'}, {'user': 'Dipsy', 'sex': 'male'}, {'user': 'Laa-Laa', 'sex': 'female'}, {'user': 'Po', 'sex': 'female'}], 'sex'), true, 'should return true if predicate returns truthy for all elements in the collection');",
-        "assert.strictEqual(every([{'user': 'Tinky-Winky', 'sex': 'male'}, {'user': 'Dipsy', 'sex': 'male'}, {'user': 'Laa-Laa', 'sex': 'female'}, {'user': 'Po', 'sex': 'female'}], {'sex': 'female'}), false, 'should return false if predicate returns falsey for any element in the collection');",
-        "assert.strictEqual(every([{'user': 'Tinky-Winky', 'sex': 'female'}, {'user': 'Dipsy', 'sex': 'male'}, {'user': 'Laa-Laa', 'sex': 'female'}, {'user': 'Po', 'sex': 'female'}], {'sex': 'female'}), false, 'should return false if predicate returns falsey for any element in the collection');"
+        "assert.strictEqual(every([{'user': 'Tinky-Winky', 'sex': 'male'}, {'user': 'Dipsy', 'sex': 'male'}, {'user': 'Laa-Laa', 'sex': 'female'}, {'user': 'Po', 'sex': 'female'}], 'sex'), true, 'message: <code>every([{'user': 'Tinky-Winky', 'sex': 'male'}, {'user': 'Dipsy', 'sex': 'male'}, {'user': 'Laa-Laa', 'sex': 'female'}, {'user': 'Po', 'sex': 'female'}], 'sex')</code> should return true.');",
+        "assert.strictEqual(every([{'user': 'Tinky-Winky', 'sex': 'male'}, {'user': 'Dipsy', 'sex': 'male'}, {'user': 'Laa-Laa', 'sex': 'female'}, {'user': 'Po', 'sex': 'female'}], {'sex': 'female'}), false, 'message: <code>every([{'user': 'Tinky-Winky', 'sex': 'male'}, {'user': 'Dipsy', 'sex': 'male'}, {'user': 'Laa-Laa', 'sex': 'female'}, {'user': 'Po', 'sex': 'female'}], {'sex': 'female'})</code> should return false.');",
+        "assert.strictEqual(every([{'user': 'Tinky-Winky', 'sex': 'female'}, {'user': 'Dipsy', 'sex': 'male'}, {'user': 'Laa-Laa', 'sex': 'female'}, {'user': 'Po', 'sex': 'female'}], {'sex': 'female'}), false, 'message: <code>every([{'user': 'Tinky-Winky', 'sex': 'female'}, {'user': 'Dipsy', 'sex': 'male'}, {'user': 'Laa-Laa', 'sex': 'female'}, {'user': 'Po', 'sex': 'female'}], {'sex': 'female'})</code> should return false.');"
       ],
       "MDNlinks": [
         "Object.hasOwnProperty()",
@@ -838,11 +838,11 @@
         "add(2,3);"
       ],
       "tests": [
-        "assert.deepEqual(add(2, 3), 5, 'message: <code>add(2, 3)</code> should return 5');",
-        "assert.deepEqual(add(2)(3), 5, 'message: <code>add(2)(3)</code> should return 5');",
-        "assert.isUndefined(add(\"http://bit.ly/IqT6zt\"), 'message: <code>add(\"http://bit.ly/IqT6zt\")</code> should return undefined');",
-        "assert.isUndefined(add(2, \"3\"), 'message: <code>add(2, \"3\")</code> should return undefined');",
-        "assert.isUndefined(add(2)([3]), 'message: <code>add(2)([3])</code> should return undefined');"
+        "assert.deepEqual(add(2, 3), 5, 'message: <code>add(2, 3)</code> should return 5.');",
+        "assert.deepEqual(add(2)(3), 5, 'message: <code>add(2)(3)</code> should return 5.');",
+        "assert.isUndefined(add(\"http://bit.ly/IqT6zt\"), 'message: <code>add(\"http://bit.ly/IqT6zt\")</code> should return undefined.');",
+        "assert.isUndefined(add(2, \"3\"), 'message: <code>add(2, \"3\")</code> should return undefined.');",
+        "assert.isUndefined(add(2)([3]), 'message: <code>add(2)([3])</code> should return undefined.');"
       ],
       "MDNlinks": [
         "Global Function Object",
