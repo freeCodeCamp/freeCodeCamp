@@ -138,7 +138,8 @@ block content
                                             a.btn.btn-lg.btn-block.signup-btn.map-challenge-block-share Section complete. Share your Portfolio with your friends.
                                                 .hidden(id="#{challengeBlock.name}")
     script.
-        var username = !{JSON.stringify(user && user.username || "")};
+        var username = !{JSON.stringify(user && user.username || '')};
+        var lastCompleted = !{JSON.stringify(lastCompleted || false)}
     // #announcementModal.modal(tabindex='-1')
     //    .modal-dialog.animated.fadeInUp.fast-animation
     //        .modal-content
