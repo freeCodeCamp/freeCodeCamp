@@ -135,9 +135,10 @@ block content
                                     .button-spacer
                                     .row
                                         .col-xs-12.col-sm-8.col-md-6.col-sm-offset-3.col-md-offset-2
-                                            a.btn.btn-lg.btn-block.signup-btn.map-challenge-block-share Section complete! Tell your friends.
+                                            a.btn.btn-lg.btn-block.signup-btn.map-challenge-block-share Section complete. Share your Portfolio with your friends.
                                                 .hidden(id="#{challengeBlock.name}")
-
+    script.
+        var username = !{JSON.stringify(user && user.username || "")};
     // #announcementModal.modal(tabindex='-1')
     //    .modal-dialog.animated.fadeInUp.fast-animation
     //        .modal-content

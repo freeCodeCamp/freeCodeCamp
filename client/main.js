@@ -423,16 +423,17 @@ $(document).ready(function() {
     e.preventDefault();
     var challengeBlockName = $(this).children().attr('id');
     var challengeBlockEscapedName = challengeBlockName.replace(/\s/, '%20');
+    var username = typeof window.username !== "undefined" ? window.username : "";
 
     var link = 'https://www.facebook.com/dialog/feed?' +
       'app_id=1644598365767721' +
       '&display=page&' +
-      'caption=I%20just%20completed%20' +
+      'caption=I%20just%20completed%20the%20' +
       challengeBlockEscapedName +
-      '%20on%20Free%20Code%20Camp' +
-      '&link=http%3A%2F%2Ffreecodecamp.com' +
-      '&redirect_uri=http://freecodecamp.com/map';
-
+      '%20section%20on%20Free%20Code%20Camp%2E%20Check%20out%20my%20portfolio%20so%20far%2E' +
+      '&link=http%3A%2F%2Ffreecodecamp%2Ecom%2F' +
+      username +
+      '&redirect_uri=http%3A%2F%2Ffreecodecamp%2Ecom%2Fmap';
     setMapShare(challengeBlockName);
     window.location.href = link;
   });
