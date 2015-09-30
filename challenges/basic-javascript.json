@@ -686,7 +686,7 @@
         "",
         "function ourFunction(a, b) {",
         "  return a - b;",
-        "};",
+        "}",
         "",
         "// Create a function called myFunction that returns the value of a plus b.",
         "// Only change code below this line.",
