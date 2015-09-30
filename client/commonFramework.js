@@ -581,7 +581,7 @@ var createTestDisplay = function() {
   }
   for (var i = 0; i < userTests.length; i++) {
     var didTestPass = !userTests[i].err;
-    var testText = userTests[i].text.split('message: ').pop().replace(/\)|;|'/g, '');
+    var testText = userTests[i].text.split('message: ').pop().replace(/\'\);/g, '');
     var testDoc = document.createElement('div');
 
     var iconClass = didTestPass ?
