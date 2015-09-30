@@ -89,8 +89,8 @@
       "tests": [
         "assert(typeof(factorialize(5)) === \"number\", 'message: <code>factorialize()</code> should return a number.');",
         "assert(factorialize(5) === 120, 'message: <code>factorialize(5)</code> should return 120.');",
-        "assert(factorialize(10) === 3628800, 'message: <code>factorialize(10)</code> should return 3,628,800.');",
-        "assert(factorialize(20) === 2432902008176640000, 'message: <code>factorialize(20)</code> should return 2,432,902,008,176,640,000.');",
+        "assert(factorialize(10) === 3628800, 'message: <code>factorialize(10)</code> should return 3628800.');",
+        "assert(factorialize(20) === 2432902008176640000, 'message: <code>factorialize(20)</code> should return 2432902008176640000.');",
         "assert(factorialize(0) === 1, 'message: <code>factorialize(0)</code> should return 1.');"
       ],
       "difficulty": "1.02",
@@ -136,7 +136,7 @@
         "Remember to use <a href=\"//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck\" target=\"_blank\">Read-Search-Ask</a> if you get stuck. Write your own code."
       ],
       "tests": [
-        "assert(typeof(palindrome(\"eye\")) === \"boolean\", 'message: <code>palindrome()<code> should return a boolean.');",
+        "assert(typeof(palindrome(\"eye\")) === \"boolean\", 'message: <code>palindrome()</code> should return a boolean.');",
         "assert(palindrome(\"eye\") === true, 'message: <code>palindrome(\"eye\")</code> should return true.');",
         "assert(palindrome(\"race car\") === true, 'message: <code>palindrome(\"race car\")</code> should return true.');",
         "assert(palindrome(\"not a palindrome\") === false, 'message: <code>palindrome(\"not a palindrome\")</code> should return false.');",
@@ -535,7 +535,7 @@
       "difficulty": "1.50",
       "description": [
         "Remove all falsy values from an array.",
-        "Falsy values in javascript are false, null, 0, \"\", undefined, and NaN.",
+        "Falsy values in javascript are <code>false</code>, <code>null</code>, <code>0</code>, <code>\"\"</code>, <code>undefined</code>, and <code>NaN</code>.",
         "Remember to use <a href=\"//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck\" target=\"_blank\">Read-Search-Ask</a> if you get stuck. Write your own code."
       ],
       "challengeSeed": [
@@ -549,7 +549,7 @@
       "tests": [
         "assert.deepEqual(bouncer([7, \"ate\", \"\", false, 9]), [7, \"ate\", 9], 'message: <code>bouncer([7, \"ate\", \"\", false, 9])</code> should return <code>[7, \"ate\", 9]</code>.');",
         "assert.deepEqual(bouncer([\"a\", \"b\", \"c\"]), [\"a\", \"b\", \"c\"], 'message: <code>bouncer([\"a\", \"b\", \"c\"])</code> should return <code>[\"a\", \"b\", \"c\"]</code>.');",
-        "assert.deepEqual(bouncer([false, null, 0, NaN, undefined, '']), [], 'message: <code>bouncer([false, null, 0])</code> should return <code>[]</code>.');"
+        "assert.deepEqual(bouncer([false, null, 0, NaN, undefined, \"\"]), [], 'message: <code>bouncer([false, null, 0, NaN, undefined, \"\"])</code> should return <code>[]</code>.');"
       ],
       "MDNlinks": [
         "Boolean Objects",
