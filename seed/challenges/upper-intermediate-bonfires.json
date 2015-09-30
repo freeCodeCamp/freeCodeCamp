@@ -25,9 +25,9 @@
         "assert.deepEqual(Object.keys(bob).length, 6, 'message: <code>Object.keys(bob).length</code> should return 6.');",
         "assert.deepEqual(bob instanceof Person, true, 'message: <code>bob instanceof Person</code> should return true.');",
         "assert.deepEqual(bob.firstName, undefined, 'message: <code>bob.firstName</code> should return undefined.');",
-        "assert.deepEqual(bob.lastName, undefined, 'message: <code>bob.lastName</code> should return undefined.';",
+        "assert.deepEqual(bob.lastName, undefined, 'message: <code>bob.lastName</code> should return undefined.');",
         "assert.deepEqual(bob.getFirstName(), 'Bob', 'message: <code>bob.getFirstName()</code> should return \"Bob\".');",
-        "assert.deepEqual(bob.getLastName(), 'Ross', 'message: <code>bob.getLastName()</code> should return \"Ross\".';",
+        "assert.deepEqual(bob.getLastName(), 'Ross', 'message: <code>bob.getLastName()</code> should return \"Ross\".');",
         "assert.deepEqual(bob.getFullName(), 'Bob Ross', 'message: <code>bob.getFullName()</code> should return \"Bob Ross\".');"
       ],
       "MDNlinks": [
