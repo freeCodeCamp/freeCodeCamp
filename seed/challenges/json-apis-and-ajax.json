@@ -113,7 +113,7 @@
     },
     {
       "id": "bb000000000000000000002",
-      "title":  "Convert json data to html",
+      "title":  "Convert JSON data to HTML",
       "difficulty": 3.21,
       "description": [
         "",
@@ -181,6 +181,25 @@
         "   </div>",
         " </div>",
         "</div>"
+      ],
+      "challengeType": 0,
+      "type": "waypoint"
+    },
+    {
+      "id": "bb000000000000000000003",
+      "title":  "Pre-filtering the JSON",
+      "difficulty": 3.22,
+      "description": [
+        "",
+        "If we want to filter the data we have so that we are searching through results based on users inout. It is far more efficient to filter and display a copy of the data we have instead of requesting a new copy each time.",
+        "This means we should never hit API limits and it will make the process more efficient.",
+        ""
+      ],
+      "tests": [
+        "/*be assertive!*/"
+      ],
+      "challengeSeed": [
+        "TODO: get the result of the previous challenge"
       ],
       "challengeType": 0,
       "type": "waypoint"
