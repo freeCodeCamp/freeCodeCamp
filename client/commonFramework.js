@@ -637,28 +637,22 @@ var createTestDisplay = function() {
     userTests.pop();
   }
   for (var i = 0; i < userTests.length; i++) {
-    var test = userTests[i];
+    var didTestPass = !userTests[i].err;
+    var testText = userTests[i].text.split('message: ').pop().replace(/\'\);/g, '');
     var testDoc = document.createElement('div');
 
-    if (test.err) {
-      console.log('Should be displaying bad tests');
+    var iconClass = didTestPass ?
+      '"ion-checkmark-circled big-success-icon"' :
+      '"ion-close-circled big-error-icon"';
 
-      $(testDoc).html(
-        "<div class='row'><div class='col-xs-2 text-center'><i class='ion-close-circled big-error-icon'></i></div><div class='col-xs-10 test-output wrappable test-vertical-center grayed-out-test-output'>" +
-        test.text + "</div><div class='col-xs-10 test-output wrappable'>" +
-        test.err + "</div></div><div class='ten-pixel-break'/>"
-      )
-        .appendTo($('#testSuite'));
-
-    } else {
-
-      $(testDoc).html(
-        "<div class='row'><div class='col-xs-2 text-center'><i class='ion-checkmark-circled big-success-icon'></i></div><div class='col-xs-10 test-output test-vertical-center wrappable grayed-out-test-output'>" +
-        test.text +
-        "</div></div><div class='ten-pixel-break'/>"
-      )
-        .appendTo($('#testSuite'));
-    }
+    $(testDoc).html(
+      "<div class='row'><div class='col-xs-2 text-center'><i class=" +
+      iconClass +
+      "></i></div><div class='col-xs-10 test-output wrappable'>" +
+      testText +
+      "</div><div class='ten-pixel-break'/>"
+    )
+      .appendTo($('#testSuite'));
   }
 };
 
