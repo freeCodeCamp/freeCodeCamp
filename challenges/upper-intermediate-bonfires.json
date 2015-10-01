@@ -22,20 +22,13 @@
         "bob.getFullName();"
       ],
       "tests": [
-        "expect(Object.keys(bob).length).to.eql(6);",
-        "expect(bob instanceof Person).to.be.true;",
-        "expect(bob.firstName).to.be.undefined();",
-        "expect(bob.lastName).to.be.undefined();",
-        "expect(bob.getFirstName()).to.eql('Bob');",
-        "expect(bob.getLastName()).to.eql('Ross');",
-        "expect(bob.getFullName()).to.eql('Bob Ross');",
-        "bob.setFirstName('Happy');",
-        "expect(bob.getFirstName()).to.eql('Happy');",
-        "bob.setLastName('Trees');",
-        "expect(bob.getLastName()).to.eql('Trees');",
-        "bob.setFullName('George Carlin');",
-        "expect(bob.getFullName()).to.eql('George Carlin');",
-        "bob.setFullName('Bob Ross');"
+        "assert.deepEqual(Object.keys(bob).length, 6, 'message: <code>Object.keys(bob).length</code> should return 6.');",
+        "assert.deepEqual(bob instanceof Person, true, 'message: <code>bob instanceof Person</code> should return true.');",
+        "assert.deepEqual(bob.firstName, undefined, 'message: <code>bob.firstName</code> should return undefined.');",
+        "assert.deepEqual(bob.lastName, undefined, 'message: <code>bob.lastName</code> should return undefined.');",
+        "assert.deepEqual(bob.getFirstName(), 'Bob', 'message: <code>bob.getFirstName()</code> should return \"Bob\".');",
+        "assert.deepEqual(bob.getLastName(), 'Ross', 'message: <code>bob.getLastName()</code> should return \"Ross\".');",
+        "assert.deepEqual(bob.getFullName(), 'Bob Ross', 'message: <code>bob.getFullName()</code> should return \"Bob Ross\".');"
       ],
       "MDNlinks": [
         "Closures",
@@ -77,8 +70,8 @@
         "orbitalPeriod([{name : \"sputnik\", avgAlt : 35873.5553}]);"
       ],
       "tests": [
-        "expect(orbitalPeriod([{name : \"sputnik\", avgAlt : 35873.5553}])).to.eqls([{name: \"sputnik\", orbitalPeriod: 86400}]);",
-        "expect(orbitalPeriod([{name: \"iss\", avgAlt: 413.6}, {name: \"hubble\", avgAlt: 556.7}, {name: \"moon\", avgAlt: 378632.553}])).to.eqls([{name : \"iss\", orbitalPeriod: 5557}, {name: \"hubble\", orbitalPeriod: 5734}, {name: \"moon\", orbitalPeriod: 2377399}]);"
+        "assert.deepEqual(orbitalPeriod([{name : \"sputnik\", avgAlt : 35873.5553}]), [{name: \"sputnik\", orbitalPeriod: 86400}], 'message: <code>orbitalPeriod([{name : \"sputnik\", avgAlt : 35873.5553}])</code> should return <code>[{name: \"sputnik\", orbitalPeriod: 86400}]</code>.');",
+        "assert.deepEqual(orbitalPeriod([{name: \"iss\", avgAlt: 413.6}, {name: \"hubble\", avgAlt: 556.7}, {name: \"moon\", avgAlt: 378632.553}]), [{name : \"iss\", orbitalPeriod: 5557}, {name: \"hubble\", orbitalPeriod: 5734}, {name: \"moon\", orbitalPeriod: 2377399}], 'message: <code>orbitalPeriod([{name: \"iss\", avgAlt: 413.6}, {name: \"hubble\", avgAlt: 556.7}, {name: \"moon\", avgAlt: 378632.553}])</code> should return <code>[{name : \"iss\", orbitalPeriod: 5557}, {name: \"hubble\", orbitalPeriod: 5734}, {name: \"moon\", orbitalPeriod: 2377399}]</code>.');"
       ],
       "MDNlinks": [
         "Math.pow()"
@@ -114,11 +107,11 @@
         "pairwise([1,4,2,3,0,5], 7);"
       ],
       "tests": [
-        "expect(pairwise([1, 4, 2, 3, 0, 5], 7)).to.equal(11);",
-        "expect(pairwise([1, 3, 2, 4], 4)).to.equal(1);",
-        "expect(pairwise([1,1,1], 2)).to.equal(1);",
-        "expect(pairwise([0, 0, 0, 0, 1, 1], 1)).to.equal(10);",
-        "expect(pairwise([], 100)).to.equal(0);"
+        "assert.deepEqual(pairwise([1, 4, 2, 3, 0, 5], 7), 11, 'message: <code>pairwise([1, 4, 2, 3, 0, 5], 7)</code> should return 11.');",
+        "expect(pairwise([1, 3, 2, 4], 4), 1, 'message: <code>pairwise([1, 3, 2, 4], 4), 1</code> should return 1.');",
+        "expect(pairwise([1,1,1], 2), 1, 'message: <code>pairwise([1,1,1], 2)</code> should return 1.');",
+        "expect(pairwise([0, 0, 0, 0, 1, 1], 1), 10, 'message: <code>pairwise([0, 0, 0, 0, 1, 1], 1)</code> should return 10.');",
+        "expect(pairwise([], 100), 0, 'message: <code>pairwise([], 100)</code> should return 0.');"
       ],
       "MDNlinks": [
         "Array.reduce()"
