@@ -76,6 +76,8 @@ module.exports = function(app) {
   );
   router.get('/account/unlink/:provider', getOauthUnlink);
   router.get('/account', getAccount);
+  router.get('/vote1', vote1);
+  router.get('/vote2', vote2);
   // Ensure this is the last route!
   router.get('/:username', returnUser);
 
@@ -331,5 +333,37 @@ module.exports = function(app) {
         cb();
       });
     });
+  }
+
+  function vote1(req, res) {
+    if (req.user) {
+      req.user.tshirtVote = 1;
+      req.user.save(function (err) {
+        if (err) {
+          return next(err);
+        }
+        req.flash('success', {msg: 'Thanks for voting!'});
+        res.redirect('/map');
+      });
+    } else {
+      req.flash('error', {msg: 'You must be signed in to vote.'});
+      res.redirect('/map');
+    }
+  }
+
+  function vote2(req, res) {
+    if (req.user) {
+      req.user.tshirtVote = 2;
+      req.user.save(function (err) {
+        if (err) {
+          return next(err);
+        }
+        req.flash('success', {msg: 'Thanks for voting!'});
+        res.redirect('/map');
+      });
+    } else {
+      req.flash('error', {msg: 'You must be signed in to vote.'});
+      res.redirect('/map');
+    }
   }
 };

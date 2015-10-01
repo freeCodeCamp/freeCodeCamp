@@ -26,13 +26,12 @@ export default function addReturnToUrl() {
   return function(req, res, next) {
     // Remember original destination before login.
     var path = req.path.split('/')[1];
-    var subPath = req.path.split('/')[2];
 
     if (
       req.method !== 'GET' ||
       pathsOfNoReturnRegex.test(path) ||
       !whiteListRegex.test(path) ||
-      (/news/i).test(path) && (/hot/i).test(subPath)
+      (/news/i).test(path) && (/hot/i).test(req.path)
     ) {
       return next();
     }

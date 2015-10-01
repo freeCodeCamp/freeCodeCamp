@@ -17,7 +17,36 @@ block content
                     | since we launched &thinsp;
                     span.text-primary #{daysRunning} &thinsp;
                     | days ago.
-                a.btn.btn-lg.signup-btn.btn-block(href="https://www.facebook.com/sharer/sharer.php?u=http://freecodecamp.com" target='_blank') Share our open source community on Facebook and help us grow.
+                .spacer
+                if (user && !user.tshirtVote && user.progressTimestamps.length > 5)
+                    h3.text-center Vote for the T-shirt design you like the most.
+                    h4.text-center We'll announce the winning design during our Summit on Saturday at Noon EST on&thinsp;
+                        a(href='https://twitch.tv/freecodecamp' target='_blank') Twitch.tv
+                        | &thinsp;and it will become our community's first official t-shirt (in women's and men's sizes).
+                    .row
+                        .col-xs-6
+                            a(href="http://i.imgur.com/LlXGa5y.png" data-lightbox="img-enlarge")
+                                img.img-responsive(src='http://i.imgur.com/LlXGa5y.png' alt="t-shirt option 1 women's")
+                        .col-xs-6
+                            a(href="http://i.imgur.com/aefwnnv.png" data-lightbox="img-enlarge")
+                                img.img-responsive(src='http://i.imgur.com/aefwnnv.png' alt="t-shirt option 2 women's")
+                    .button-spacer
+                    .row
+                        .col-xs-6
+                            a(href="http://i.imgur.com/aYH0aqf.png" data-lightbox="img-enlarge")
+                                img.img-responsive(src='http://i.imgur.com/aYH0aqf.png' alt="t-shirt option 1 men's")
+                        .col-xs-6
+                            a(href="http://i.imgur.com/v9KlV4g.png" data-lightbox="img-enlarge")
+                                img.img-responsive(src='http://i.imgur.com/v9KlV4g.png' alt="t-shirt option 2 men's")
+                    .button-spacer
+                    .row
+                        .col-xs-6
+                            h3.text-center "Minified JavaScript Logo"
+                            a.button.btn.btn-block.btn-primary(href='/vote1') Vote for this Design
+                        .col-xs-6
+                            h3.text-center "Function Call Logo"
+                            a.button.btn.btn-block.btn-primary(href='/vote2') Vote for this design
+                    .spacer
                 .row
                     .col-xs-12.col-sm-8.col-sm-offset-2
                         h3 800 Hours of Practice:
@@ -102,7 +131,16 @@ block content
                                                         span= challenge.title
                                                             span.sr-only= " Incomplete"
 
-    //#announcementModal.modal(tabindex='-1')
+                                if (challengeBlock.completed === 100)
+                                    .button-spacer
+                                    .row
+                                        .col-xs-12.col-sm-8.col-md-6.col-sm-offset-3.col-md-offset-2.hidden
+                                            a.btn.btn-lg.btn-block.signup-btn.map-challenge-block-share Section complete. Share your Portfolio with your friends.
+                                                .hidden(id="#{challengeBlock.name}")
+    script.
+        var username = !{JSON.stringify(user && user.username || '')};
+        var lastCompleted = !{JSON.stringify(lastCompleted || false)}
+    // #announcementModal.modal(tabindex='-1')
     //    .modal-dialog.animated.fadeInUp.fast-animation
     //        .modal-content
     //            .modal-header.challenge-list-header Add us to your LinkedIn profile
