@@ -26,6 +26,7 @@
     "moment": "~2.10.2",
     "angular-bootstrap": "~0.13.0",
     "ramda": "~0.13.0",
-    "jshint": "~2.7.0"
+    "jshint": "~2.7.0",
+    "lightbox2": "~2.8.1"
   }
 }

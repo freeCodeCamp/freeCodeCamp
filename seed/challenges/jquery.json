@@ -16,8 +16,8 @@
       "tests": [
         "assert(editor.match(/<script>/g), 'Create a <code>script</code> element.')",
         "assert(editor.match(/<\\/script>/g) && editor.match(/<script/g) && editor.match(/<\\/script>/g).length === editor.match(/<script/g).length, 'Make sure your <code>script</code> element has a closing tag.')",
-        "assert(editor.match(/\\$\\s*?\\(\\s*?document\\)\\.ready\\s*?\\(\\s*?function\\s*?\\(\\s*?\\)\\s*?\\{/g), 'Add <code>$(document).ready(function() {</code> to the beginning of your <code>script</code> element.')",
-        "assert(editor.match(/\\n*?\\s*?\\}\\s*?\\);/g), 'Close your <code>$(document).ready(function() {</code> function with <code>});</code>.')"
+        "assert(editor.match(/\\$\\s*?\\(\\s*?document\\)\\.ready\\s*?\\(\\s*?function\\s*?\\(\\s*?\\)\\s*?\\{/g), 'You should add <code>$&#40;document&#41;.ready&#40;function&#40;&#41; {</code> to the beginning of your <code>script</code> element.')",
+        "assert(editor.match(/\\n*?\\s*?\\}\\s*?\\);/g), 'Close your <code>$&#40;document&#41;.ready&#40;function&#40;&#41; {</code> function with <code>}&#41;;</code>.')"
       ],
       "challengeSeed": [
         "",
@@ -58,7 +58,7 @@
         "This is important because without your <code>document ready function</code>, your code may run before your HTML is rendered, which would cause bugs.",
         "Now let's write our first jQuery statement. All jQuery functions start with a <code>$</code>, usually referred to as a <code>dollar sign operator</code>, or simply as <code>bling</code>.",
         "jQuery often selects an HTML element with a <code>selector</code>, then does something to that element.",
-        "For example, let's make all of your <code>button</code> elements bounce. Just add this code inside your <code>document ready function</code>: <code>$(\"button\").addClass(\"animated bounce\")</code>.",
+        "For example, let's make all of your <code>button</code> elements bounce. Just add this code inside your document ready function: <code>$(\"button\").addClass(\"animated bounce\")</code>.",
         "Note that we've already included both the jQuery library and the Animate.css library in your code editor. So you are using jQuery to apply the Animate.css <code>bounce</code> class to your <code>button</code> elements."
       ],
       "tests": [
@@ -263,9 +263,9 @@
         "Use the <code>addClass()</code> jQuery function to give the element one new class for each selector: <code>animated</code>, <code>shake</code>, and <code>btn-primary</code>."
       ],
       "tests": [
-        "assert((editor.match(/\\$\\(\\'button\\'/g) || editor.match(/\\$\\(\"button\"/g)), 'Use the <code>$&#40\"button\"&#41</code> selector.')",
-        "assert((editor.match(/\\$\\(\\'\\.btn\\'/g) || editor.match(/\\$\\(\"\\.btn\"/g)), 'Use the <code>$&#40\".btn\"&#41</code> selector.')",
-        "assert((editor.match(/\\$\\(\\'#target1\\'/g) || editor.match(/\\$\\(\"#target1\"/g)), 'Use the <code>$&#40\"#target1\"&#41</code> selector.')",
+        "assert(editor.match(/\\$\\s*?\\(\\s*?(?:'|\")\\s*?button\\s*?(?:'|\")/gi), 'Use the <code>$&#40\"button\"&#41</code> selector.')",
+        "assert(editor.match(/\\$\\s*?\\(\\s*?(?:'|\")\\s*?\\.btn\\s*?(?:'|\")/gi), 'Use the <code>$&#40\".btn\"&#41</code> selector.')",
+        "assert(editor.match(/\\$\\s*?\\(\\s*?(?:'|\")\\s*?#target1\\s*?(?:'|\")/gi), 'Use the <code>$&#40\"#target1\"&#41</code> selector.')",
         "assert(editor.match(/addClass/g) && editor.match(/addClass/g).length > 2, 'Only add one class with each of your three selectors.')",
         "assert($(\"#target1\").hasClass(\"animated\") && $(\"#target1\").hasClass(\"shake\") && $(\"#target1\").hasClass(\"btn-primary\"), 'Your <code>#target1</code> element should have the classes <code>animated</code>&#130; <code>shake</code> and <code>btn-primary</code>.')",
         "assert(!editor.match(/class.*animated/g), 'Only use jQuery to add these classes to the element.')"
@@ -629,7 +629,7 @@
       "tests": [
         "assert($(\"#left-well\").css(\"background-color\") === 'red' || $(\"#left-well\").css(\"background-color\") === 'rgb(255, 0, 0)' || $(\"#left-well\").css(\"background-color\").toLowerCase() === '#ff0000' || $(\"#left-well\").css(\"background-color\").toLowerCase() === '#f00', 'Your <code>left-well</code> element should have a red background.')",
         "assert(editor.match(/\\.parent\\(\\)\\.css/g), 'You should use the <code>&#46;parent&#40;&#41;</code> function to modify this element.')",
-        "assert((editor.match(/\\$\\(\\'#target1\\'\\)\\.parent/g) || editor.match(/\\$\\(\"#target1\"\\)\\.parent/g)), 'The <code>&#46;parent&#40;&#41;</code> method should be called on the <code>&#35;target1</code> element.')",
+        "assert(editor.match(/\\$\\s*?\\(\\s*?(?:'|\")\\s*?#target1\\s*?(?:'|\")\\s*?\\)\\.parent/gi), 'The <code>&#46;parent&#40;&#41;</code> method should be called on the <code>&#35;target1</code> element.')",
         "assert(editor.match(/<div class=\"well\" id=\"left-well\">/g), 'Only use jQuery to add these classes to the element.')"
       ],
       "challengeSeed": [
@@ -676,10 +676,10 @@
       "title": "Target the Children of an Element Using jQuery",
       "difficulty": 3.14,
       "description": [
-        "Many HTML elements have <code>children</code> elements from which they <code>inherit</code> their properties.",
+        "Many HTML elements have <code>children</code> which <code>inherit</code> their properties from their parent HTML elements.",
         "For example, every HTML element is a child of your <code>body</code> element, and your \"jQuery Playground\" <code>h3</code> element is a child of your <code>&#60;div class=\"container-fluid\"&#62</code> element.",
         "jQuery has a function called <code>children()</code> that allows you to access the children of whichever element you've selected.",
-        "Here's an example of how you would use the <code>children()</code> function to give the children of your <code>left-well</code> element the background color of blue: <code>$(\"#left-well\").children().css(\"color\", \"blue\")</code>",
+        "Here's an example of how you would use the <code>children()</code> function to give the children of your <code>left-well</code> element the color of blue: <code>$(\"#left-well\").children().css(\"color\", \"blue\")</code>",
         "Give all the children of your <code>#right-well</code> element a color of green."
       ],
       "tests": [
@@ -735,11 +735,11 @@
         "You've seen why id attributes are so convenient for targeting with jQuery selectors. But you won't always have such neat ids to work with.",
         "Fortunately, jQuery has some other tricks for targeting the right elements.",
         "jQuery uses CSS Selectors to target elements. <code>target:nth-child(n)</code> css selector allows you to select all the nth element with the target class or element type.",
-        "Here's how you would give the third element in each well bounce: <code>$(\".target:nth-child(3)\").addClass(\"animated bounce\");</code>",
-        "Make the second child in each of your well elements bounce."
+        "Make the second child in each of your well elements bounce. You must target the children of element with the <code>target</code> class.",
+        "Here's how you would give the third element in each well bounce: <code>$(\".target:nth-child(3)\").addClass(\"animated bounce\");</code>"
       ],
       "tests": [
-        "assert($(\".target:nth-child(2)\").hasClass(\"animated\") && $(\".target:nth-child(2)\").hasClass(\"bounce\"), 'The second element in each of your <code>well</code> elements should bounce.')",
+        "assert($(\".target:nth-child(2)\").hasClass(\"animated\") && $(\".target:nth-child(2)\").hasClass(\"bounce\"), 'The second element in your <code>target</code> elements should bounce.')",
         "assert(editor.match(/\\:nth-child\\(/g), 'You should use the <code>&#58;nth-child&#40&#41</code> function to modify these elements.')",
         "assert(editor.match(/<button class=\"btn btn-default target\" id=\"target2\">/g), 'Only use jQuery to add these classes to the element.')"
       ],
@@ -791,6 +791,7 @@
       "description": [
         "You can also target all the even-numbered elements.",
         "Here's how you would target all the odd-numbered elements with class <code>target</code> and give them classes: <code>$(\".target:odd\").addClass(\"animated shake\");</code>",
+        "Note that jQuery is zero-indexed, meaning that, counter-intuitively, <code>:odd</code> selects the second element, fourth element, and so on.",
         "Try selecting all the even-numbered elements - that is, what your browser will consider even-numbered elements - and giving them the classes of <code>animated</code> and <code>shake</code>."
       ],
       "tests": [

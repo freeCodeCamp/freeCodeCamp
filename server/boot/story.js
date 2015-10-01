@@ -170,7 +170,6 @@ module.exports = function(app) {
           title: story.headline,
           link: story.link,
           originalStoryLink: dashedName,
-          originalStoryAuthorEmail: story.author.email || '',
           author: story.author,
           rank: story.upVotes.length,
           upVotes: story.upVotes,
@@ -373,13 +372,11 @@ module.exports = function(app) {
           author: {
             picture: req.user.picture,
             userId: req.user.id,
-            username: req.user.username,
-            email: req.user.email
+            username: req.user.username
           },
           image: data.image,
           storyLink: storyLink,
-          metaDescription: data.storyMetaDescription,
-          originalStoryAuthorEmail: req.user.email
+          metaDescription: data.storyMetaDescription
         });
         return saveInstance(newStory);
       });

@@ -1,19 +1,5 @@
-#pair-modal.modal(tabindex='-1')
-    .modal-dialog.animated.zoomIn.fast-animation
-        .modal-content
-            .modal-header.challenge-list-header Ready to pair program?
-                a.close.closing-x(href='#', data-dismiss='modal', aria-hidden='true') ×
-            .modal-body.text-center
-                h3 This will take you to our pair programming room where you can request a pair.
-                h3 You'll need &thinsp;
-                    a(href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-install-Screenhero' target='_blank') Screenhero
-                    | .
-                h3 Other campers may then message you about pair programming.
-                a.btn.btn-lg.btn-primary.btn-block.close-modal(href='https://gitter.im/FreeCodeCamp/LetsPair', target='_blank') Take me to the pair programming room
-                a.btn.btn-lg.btn-info.btn-block(href='#', data-dismiss='modal', aria-hidden='true') Cancel
-
 #issue-modal.modal(tabindex='-1')
-    .modal-dialog.animated.zoomIn.fast-animation
+    .modal-dialog.animated.fadeIn.fast-animation
         .modal-content
             .modal-header.challenge-list-header Did you find a bug?
                 a.close.closing-x(href='#', data-dismiss='modal', aria-hidden='true') ×
@@ -25,7 +11,7 @@
                 a.btn.btn-lg.btn-info.btn-block(href='#', data-dismiss='modal', aria-hidden='true') Cancel
 
 #help-modal.modal(tabindex='-1')
-    .modal-dialog.animated.zoomIn.fast-animation
+    .modal-dialog.animated.fadeIn.fast-animation
         .modal-content
             .modal-header.challenge-list-header Need some help?
                 a.close.closing-x(href='#', data-dismiss='modal', aria-hidden='true') ×
@@ -47,3 +33,7 @@
                 h3 This will restore your code editor to its original state.
                 a.btn.btn-lg.btn-info.btn-block#reset-button(href='#', data-dismiss='modal', aria-hidden='true') Clear my code
                 a.btn.btn-lg.btn-primary.btn-block(href='#', data-dismiss='modal', aria-hidden='true') Cancel
+script.
+  if (typeof localStorage !== 'undefined') {
+    localStorage.setItem('currentDashedName', common.dashedName || dashedName || '');
+  }

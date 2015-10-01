@@ -1,6 +1,23 @@
-/* globals jailed, CodeMirror, challenge_Id, challenge_Name, challengeType */
+// common namespace
+// all classes should be stored here
+var common = common || {
+  // init is an array of functions that are
+  // called at the beginning of dom ready
+  init: []
+};
+
+common.challengeName = common.challengeName || window.challenge_Name ?
+  window.challenge_Name :
+  '';
+
+common.challengeType = common.challengeType || window.challengeType ?
+  window.challengeType :
+  0;
+
+common.challengeId = common.challengeId || window.challenge_Id;
+
 // codeStorage
-var codeStorageFactory = (function($, localStorage) {
+common.codeStorageFactory = (function($, localStorage) {
 
   var CodeStorageProps = {
     version: 0.01,
@@ -68,8 +85,45 @@ var codeStorageFactory = (function($, localStorage) {
   return codeStorageFactory;
 }($, localStorage));
 
-var sandBox = (function() {
+common.codeOutput = (function(CodeMirror, document, challengeType) {
+  if (!CodeMirror) {
+    return {};
+  }
+  if (
+    challengeType === '0' ||
+    challengeType === '7'
+  ) {
+    return {};
+  }
+  var codeOutput = CodeMirror.fromTextArea(
+    document.getElementById('codeOutput'),
+    {
+      lineNumbers: false,
+      mode: 'text',
+      theme: 'monokai',
+      readOnly: 'nocursor',
+      lineWrapping: true
+    }
+  );
 
+  codeOutput.setValue(
+    '/**\n' +
+    ' * Your output will go here.\n' +
+    ' * Console.log() -type statements\n' +
+    ' * will appear in your browser\'s\n' +
+    ' * DevTools JavaScript console.\n' +
+    ' */'
+  );
+
+  codeOutput.setSize('100%', '100%');
+
+  return codeOutput;
+}(window.CodeMirror, window.document, common.challengeType || 0));
+
+var sandBox = (function(jailed, codeOutput) {
+  if (!jailed) {
+    return {};
+  }
   var plugin = null;
 
   var sandBox = {
@@ -150,7 +204,7 @@ var sandBox = (function() {
         endLoading();
         console.log('resetting on fatal plugin error');
 
-        if (challengeType === 0) {
+        if (common.challengeType === 0) {
           codeOutput.setValue(
             'Sorry, your code is either too slow, has a fatal error, ' +
             'or contains an infinite loop.'
@@ -163,7 +217,7 @@ var sandBox = (function() {
   reset();
   sandBox.submit = submit;
   return sandBox;
-}());
+}(window.jailed, common.codeOutput));
 
 function replaceSafeTags(value) {
   return value
@@ -180,33 +234,105 @@ var BDDregex = new RegExp(
 
 var isInitRun = false;
 var initPreview = true;
-var editor;
 
-editor = CodeMirror.fromTextArea(document.getElementById('codeEditor'), {
-  lineNumbers: true,
-  mode: 'text',
-  theme: 'monokai',
-  runnable: true,
-  matchBrackets: true,
-  autoCloseBrackets: true,
-  scrollbarStyle: 'null',
-  lineWrapping: true,
-  gutters: ['CodeMirror-lint-markers']
-});
+var editor = (function(CodeMirror, emmetCodeMirror, common) {
+  var codeStorageFactory = common.codeStorageFactory;
+  if (!CodeMirror) {
+    return {};
+  }
 
-var codeStorage = codeStorageFactory(editor, challenge_Name);
-var myCodeMirror = editor;
+  var editor = CodeMirror.fromTextArea(document.getElementById('codeEditor'), {
+    lineNumbers: true,
+    mode: 'text',
+    theme: 'monokai',
+    runnable: true,
+    matchBrackets: true,
+    autoCloseBrackets: true,
+    scrollbarStyle: 'null',
+    lineWrapping: true,
+    gutters: ['CodeMirror-lint-markers']
+  });
 
-editor.on('keyup', function() {
-  clearTimeout(codeStorage.updateTimeoutId);
-  codeStorage.updateTimeoutId = setTimeout(
-    codeStorage.updateStorage.bind(codeStorage),
-    codeStorage.updateWait
-  );
-});
+  editor.setSize('100%', 'auto');
+
+  var codeStorage = common.codeStorage =
+    codeStorageFactory(editor, common.challengeName);
+
+  editor.on('keyup', function() {
+    clearTimeout(codeStorage.updateTimeoutId);
+    codeStorage.updateTimeoutId = setTimeout(
+      codeStorage.updateStorage.bind(codeStorage),
+      codeStorage.updateWait
+    );
+  });
+
+  // Initialize CodeMirror editor with a nice html5 canvas demo.
+  editor.on('keyup', function() {
+    clearTimeout(delay);
+    delay = setTimeout(updatePreview, 300);
+  });
+
+  editor.setOption('extraKeys', {
+    Tab: function(cm) {
+      if (cm.somethingSelected()) {
+        cm.indentSelection('add');
+      } else {
+        var spaces = Array(cm.getOption('indentUnit') + 1).join(' ');
+        cm.replaceSelection(spaces);
+      }
+    },
+    'Shift-Tab': function(cm) {
+      if (cm.somethingSelected()) {
+        cm.indentSelection('subtract');
+      } else {
+        var spaces = Array(cm.getOption('indentUnit') + 1).join(' ');
+        cm.replaceSelection(spaces);
+      }
+    },
+    'Ctrl-Enter': function() {
+      isInitRun = false;
+      bonfireExecute(true);
+      return false;
+    }
+  });
+
+
+  var info = editor.getScrollInfo();
+
+  var after = editor.charCoords({
+    line: editor.getCursor().line + 1,
+    ch: 0
+  }, 'local').top;
+
+  if (info.top + info.clientHeight < after) {
+    editor.scrollTo(null, after - info.clientHeight + 3);
+  }
+
+  if (emmetCodeMirror) {
+    emmetCodeMirror(
+      editor,
+      {
+        'Cmd-E': 'emmet.expand_abbreviation',
+        Tab: 'emmet.expand_abbreviation_with_tab',
+        Enter: 'emmet.insert_formatted_line_break_only'
+      }
+    );
+  }
+  common.init.push(function() {
+    editorValue = codeStorage.isAlive() ?
+      codeStorage.getStoredValue() :
+      allSeeds;
+
+    editor.setValue(replaceSafeTags(editorValue));
+    editor.refresh();
+  });
+
+  return editor;
+}(window.CodeMirror, window.emmetCodeMirror, common));
+
 
 var editorValue;
-var challengeSeed = challengeSeed || null;
+var challengeSeed = challengeSeed || [];
 var tests = tests || [];
 var allSeeds = '';
 
@@ -215,31 +341,6 @@ var allSeeds = '';
         allSeeds += elem + '\n';
     });
 })();
-
-editor.setOption('extraKeys', {
-  Tab: function(cm) {
-    if (cm.somethingSelected()) {
-      cm.indentSelection('add');
-    } else {
-      var spaces = Array(cm.getOption('indentUnit') + 1).join(' ');
-      cm.replaceSelection(spaces);
-    }
-  },
-  'Shift-Tab': function(cm) {
-    if (cm.somethingSelected()) {
-      cm.indentSelection('subtract');
-    } else {
-      var spaces = Array(cm.getOption('indentUnit') + 1).join(' ');
-      cm.replaceSelection(spaces);
-    }
-  },
-  'Ctrl-Enter': function() {
-    bonfireExecute(true);
-    return false;
-  }
-});
-
-editor.setSize('100%', 'auto');
 
 var libraryIncludes = "<script src='//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>" +
     "<script src='/js/lib/chai/chai.js'></script>" +
@@ -283,7 +384,8 @@ function scopejQuery(str) {
 }
 
 function safeHTMLRun(test) {
-  if (challengeType === '0') {
+  var codeStorage = common.codeStorage;
+  if (common.challengeType === '0') {
     var previewFrame = document.getElementById('preview');
     var preview = previewFrame.contentDocument || previewFrame.contentWindow.document;
     if (editor.getValue().match(/\<script\>/gi) !== null) {
@@ -293,7 +395,7 @@ function safeHTMLRun(test) {
         .split(/\<\s?\/\s?script\s?\>/gi)[0];
 
         // add feuxQuery
-      s = "var document = \"\"; var $ = function() {return(new function() {this.add=function() {return(this);};this.addBack=function() {return(this);};this.addClass=function() {return(this);};this.after=function() {return(this);};this.ajaxComplete=function() {return(this);};this.ajaxError=function() {return(this);};this.ajaxSend=function() {return(this);};this.ajaxStart=function() {return(this);};this.ajaxStop=function() {return(this);};this.ajaxSuccess=function() {return(this);};this.andSelf=function() {return(this);};this.animate=function() {return(this);};this.append=function() {return(this);};this.appendTo=function() {return(this);};this.attr=function() {return(this);};this.before=function() {return(this);};this.bind=function() {return(this);};this.blur=function() {return(this);};this.callbacksadd=function() {return(this);};this.callbacksdisable=function() {return(this);};this.callbacksdisabled=function() {return(this);};this.callbacksempty=function() {return(this);};this.callbacksfire=function() {return(this);};this.callbacksfired=function() {return(this);};this.callbacksfireWith=function() {return(this);};this.callbackshas=function() {return(this);};this.callbackslock=function() {return(this);};this.callbackslocked=function() {return(this);};this.callbacksremove=function() {return(this);};this.change=function() {return(this);};this.children=function() {return(this);};this.clearQueue=function() {return(this);};this.click=function() {return(this);};this.clone=function() {return(this);};this.closest=function() {return(this);};this.contents=function() {return(this);};this.context=function() {return(this);};this.css=function() {return(this);};this.data=function() {return(this);};this.dblclick=function() {return(this);};this.delay=function() {return(this);};this.delegate=function() {return(this);};this.dequeue=function() {return(this);};this.detach=function() {return(this);};this.die=function() {return(this);};this.each=function() {return(this);};this.empty=function() {return(this);};this.end=function() {return(this);};this.eq=function() {return(this);};this.error=function() {return(this);};this.fadeIn=function() {return(this);};this.fadeOut=function() {return(this);};this.fadeTo=function() {return(this);};this.fadeToggle=function() {return(this);};this.filter=function() {return(this);};this.find=function() {return(this);};this.finish=function() {return(this);};this.first=function() {return(this);};this.focus=function() {return(this);};this.focusin=function() {return(this);};this.focusout=function() {return(this);};this.get=function() {return(this);};this.has=function() {return(this);};this.hasClass=function() {return(this);};this.height=function() {return(this);};this.hide=function() {return(this);};this.hover=function() {return(this);};this.html=function() {return(this);};this.index=function() {return(this);};this.innerHeight=function() {return(this);};this.innerWidth=function() {return(this);};this.insertAfter=function() {return(this);};this.insertBefore=function() {return(this);};this.is=function() {return(this);};this.jQuery=function() {return(this);};this.jquery=function() {return(this);};this.keydown=function() {return(this);};this.keypress=function() {return(this);};this.keyup=function() {return(this);};this.last=function() {return(this);};this.length=function() {return(this);};this.live=function() {return(this);};this.load=function() {return(this);};this.load=function() {return(this);};this.map=function() {return(this);};this.mousedown=function() {return(this);};this.mouseenter=function() {return(this);};this.mouseleave=function() {return(this);};this.mousemove=function() {return(this);};this.mouseout=function() {return(this);};this.mouseover=function() {return(this);};this.mouseup=function() {return(this);};this.next=function() {return(this);};this.nextAll=function() {return(this);};this.nextUntil=function() {return(this);};this.not=function() {return(this);};this.off=function() {return(this);};this.offset=function() {return(this);};this.offsetParent=function() {return(this);};this.on=function() {return(this);};this.one=function() {return(this);};this.outerHeight=function() {return(this);};this.outerWidth=function() {return(this);};this.parent=function() {return(this);};this.parents=function() {return(this);};this.parentsUntil=function() {return(this);};this.position=function() {return(this);};this.prepend=function() {return(this);};this.prependTo=function() {return(this);};this.prev=function() {return(this);};this.prevAll=function() {return(this);};this.prevUntil=function() {return(this);};this.promise=function() {return(this);};this.prop=function() {return(this);};this.pushStack=function() {return(this);};this.queue=function() {return(this);};this.ready=function() {return(this);};this.remove=function() {return(this);};this.removeAttr=function() {return(this);};this.removeClass=function() {return(this);};this.removeData=function() {return(this);};this.removeProp=function() {return(this);};this.replaceAll=function() {return(this);};this.replaceWith=function() {return(this);};this.resize=function() {return(this);};this.scroll=function() {return(this);};this.scrollLeft=function() {return(this);};this.scrollTop=function() {return(this);};this.select=function() {return(this);};this.selector=function() {return(this);};this.serialize=function() {return(this);};this.serializeArray=function() {return(this);};this.show=function() {return(this);};this.siblings=function() {return(this);};this.size=function() {return(this);};this.slice=function() {return(this);};this.slideDown=function() {return(this);};this.slideToggle=function() {return(this);};this.slideUp=function() {return(this);};this.stop=function() {return(this);};this.submit=function() {return(this);};this.text=function() {return(this);};this.toArray=function() {return(this);};this.toggle=function() {return(this);};this.toggle=function() {return(this);};this.toggleClass=function() {return(this);};this.trigger=function() {return(this);};this.triggerHandler=function() {return(this);};this.unbind=function() {return(this);};this.undelegate=function() {return(this);};this.unload=function() {return(this);};this.unwrap=function() {return(this);};this.val=function() {return(this);};this.width=function() {return(this);};this.wrap=function() {return(this);};this.wrapAll=function() {return(this);};this.wrapInner=function() {return(this);}});};$.ajax=function() {return($);};$.ajaxPrefilter=function() {return($);};$.ajaxSetup=function() {return($);};$.ajaxTransport=function() {return($);};$.boxModel=function() {return($);};$.browser=function() {return($);};$.Callbacks=function() {return($);};$.contains=function() {return($);};$.cssHooks=function() {return($);};$.cssNumber=function() {return($);};$.data=function() {return($);};$.Deferred=function() {return($);};$.dequeue=function() {return($);};$.each=function() {return($);};$.error=function() {return($);};$.extend=function() {return($);};$.fnextend=function() {return($);};$.fxinterval=function() {return($);};$.fxoff=function() {return($);};$.get=function() {return($);};$.getJSON=function() {return($);};$.getScript=function() {return($);};$.globalEval=function() {return($);};$.grep=function() {return($);};$.hasData=function() {return($);};$.holdReady=function() {return($);};$.inArray=function() {return($);};$.isArray=function() {return($);};$.isEmptyObject=function() {return($);};$.isFunction=function() {return($);};$.isNumeric=function() {return($);};$.isPlainObject=function() {return($);};$.isWindow=function() {return($);};$.isXMLDoc=function() {return($);};$.makeArray=function() {return($);};$.map=function() {return($);};$.merge=function() {return($);};$.noConflict=function() {return($);};$.noop=function() {return($);};$.now=function() {return($);};$.param=function() {return($);};$.parseHTML=function() {return($);};$.parseJSON=function() {return($);};$.parseXML=function() {return($);};$.post=function() {return($);};$.proxy=function() {return($);};$.queue=function() {return($);};$.removeData=function() {return($);};$.sub=function() {return($);};$.support=function() {return($);};$.trim=function() {return($);};$.type=function() {return($);};$.unique=function() {return($);};$.when=function() {return($);};$.always=function() {return($);};$.done=function() {return($);};$.fail=function() {return($);};$.isRejected=function() {return($);};$.isResolved=function() {return($);};$.notify=function() {return($);};$.notifyWith=function() {return($);};$.pipe=function() {return($);};$.progress=function() {return($);};$.promise=function() {return($);};$.reject=function() {return($);};$.rejectWith=function() {return($);};$.resolve=function() {return($);};$.resolveWith=function() {return($);};$.state=function() {return($);};$.then=function() {return($);};$.currentTarget=function() {return($);};$.data=function() {return($);};$.delegateTarget=function() {return($);};$.isDefaultPrevented=function() {return($);};$.isImmediatePropagationStopped=function() {return($);};$.isPropagationStopped=function() {return($);};$.metaKey=function() {return($);};$.namespace=function() {return($);};$.pageX=function() {return($);};$.pageY=function() {return($);};$.preventDefault=function() {return($);};$.relatedTarget=function() {return($);};$.result=function() {return($);};$.stopImmediatePropagation=function() {return($);};$.stopPropagation=function() {return($);};$.target=function() {return($);};$.timeStamp=function() {return($);};$.type=function() {return($);};$.which=function() {return($);};" + s;
+      s = 'var document = \"\"; var $ = function() {return(new function() {this.add=function() {return(this);};this.addBack=function() {return(this);};this.addClass=function() {return(this);};this.after=function() {return(this);};this.ajaxComplete=function() {return(this);};this.ajaxError=function() {return(this);};this.ajaxSend=function() {return(this);};this.ajaxStart=function() {return(this);};this.ajaxStop=function() {return(this);};this.ajaxSuccess=function() {return(this);};this.andSelf=function() {return(this);};this.animate=function() {return(this);};this.append=function() {return(this);};this.appendTo=function() {return(this);};this.attr=function() {return(this);};this.before=function() {return(this);};this.bind=function() {return(this);};this.blur=function() {return(this);};this.callbacksadd=function() {return(this);};this.callbacksdisable=function() {return(this);};this.callbacksdisabled=function() {return(this);};this.callbacksempty=function() {return(this);};this.callbacksfire=function() {return(this);};this.callbacksfired=function() {return(this);};this.callbacksfireWith=function() {return(this);};this.callbackshas=function() {return(this);};this.callbackslock=function() {return(this);};this.callbackslocked=function() {return(this);};this.callbacksremove=function() {return(this);};this.change=function() {return(this);};this.children=function() {return(this);};this.clearQueue=function() {return(this);};this.click=function() {return(this);};this.clone=function() {return(this);};this.closest=function() {return(this);};this.contents=function() {return(this);};this.context=function() {return(this);};this.css=function() {return(this);};this.data=function() {return(this);};this.dblclick=function() {return(this);};this.delay=function() {return(this);};this.delegate=function() {return(this);};this.dequeue=function() {return(this);};this.detach=function() {return(this);};this.die=function() {return(this);};this.each=function() {return(this);};this.empty=function() {return(this);};this.end=function() {return(this);};this.eq=function() {return(this);};this.error=function() {return(this);};this.fadeIn=function() {return(this);};this.fadeOut=function() {return(this);};this.fadeTo=function() {return(this);};this.fadeToggle=function() {return(this);};this.filter=function() {return(this);};this.find=function() {return(this);};this.finish=function() {return(this);};this.first=function() {return(this);};this.focus=function() {return(this);};this.focusin=function() {return(this);};this.focusout=function() {return(this);};this.get=function() {return(this);};this.has=function() {return(this);};this.hasClass=function() {return(this);};this.height=function() {return(this);};this.hide=function() {return(this);};this.hover=function() {return(this);};this.html=function() {return(this);};this.index=function() {return(this);};this.innerHeight=function() {return(this);};this.innerWidth=function() {return(this);};this.insertAfter=function() {return(this);};this.insertBefore=function() {return(this);};this.is=function() {return(this);};this.jQuery=function() {return(this);};this.jquery=function() {return(this);};this.keydown=function() {return(this);};this.keypress=function() {return(this);};this.keyup=function() {return(this);};this.last=function() {return(this);};this.length=function() {return(this);};this.live=function() {return(this);};this.load=function() {return(this);};this.load=function() {return(this);};this.map=function() {return(this);};this.mousedown=function() {return(this);};this.mouseenter=function() {return(this);};this.mouseleave=function() {return(this);};this.mousemove=function() {return(this);};this.mouseout=function() {return(this);};this.mouseover=function() {return(this);};this.mouseup=function() {return(this);};this.next=function() {return(this);};this.nextAll=function() {return(this);};this.nextUntil=function() {return(this);};this.not=function() {return(this);};this.off=function() {return(this);};this.offset=function() {return(this);};this.offsetParent=function() {return(this);};this.on=function() {return(this);};this.one=function() {return(this);};this.outerHeight=function() {return(this);};this.outerWidth=function() {return(this);};this.parent=function() {return(this);};this.parents=function() {return(this);};this.parentsUntil=function() {return(this);};this.position=function() {return(this);};this.prepend=function() {return(this);};this.prependTo=function() {return(this);};this.prev=function() {return(this);};this.prevAll=function() {return(this);};this.prevUntil=function() {return(this);};this.promise=function() {return(this);};this.prop=function() {return(this);};this.pushStack=function() {return(this);};this.queue=function() {return(this);};this.ready=function() {return(this);};this.remove=function() {return(this);};this.removeAttr=function() {return(this);};this.removeClass=function() {return(this);};this.removeData=function() {return(this);};this.removeProp=function() {return(this);};this.replaceAll=function() {return(this);};this.replaceWith=function() {return(this);};this.resize=function() {return(this);};this.scroll=function() {return(this);};this.scrollLeft=function() {return(this);};this.scrollTop=function() {return(this);};this.select=function() {return(this);};this.selector=function() {return(this);};this.serialize=function() {return(this);};this.serializeArray=function() {return(this);};this.show=function() {return(this);};this.siblings=function() {return(this);};this.size=function() {return(this);};this.slice=function() {return(this);};this.slideDown=function() {return(this);};this.slideToggle=function() {return(this);};this.slideUp=function() {return(this);};this.stop=function() {return(this);};this.submit=function() {return(this);};this.text=function() {return(this);};this.toArray=function() {return(this);};this.toggle=function() {return(this);};this.toggle=function() {return(this);};this.toggleClass=function() {return(this);};this.trigger=function() {return(this);};this.triggerHandler=function() {return(this);};this.unbind=function() {return(this);};this.undelegate=function() {return(this);};this.unload=function() {return(this);};this.unwrap=function() {return(this);};this.val=function() {return(this);};this.width=function() {return(this);};this.wrap=function() {return(this);};this.wrapAll=function() {return(this);};this.wrapInner=function() {return(this);}});};$.ajax=function() {return($);};$.ajaxPrefilter=function() {return($);};$.ajaxSetup=function() {return($);};$.ajaxTransport=function() {return($);};$.boxModel=function() {return($);};$.browser=function() {return($);};$.Callbacks=function() {return($);};$.contains=function() {return($);};$.cssHooks=function() {return($);};$.cssNumber=function() {return($);};$.data=function() {return($);};$.Deferred=function() {return($);};$.dequeue=function() {return($);};$.each=function() {return($);};$.error=function() {return($);};$.extend=function() {return($);};$.fnextend=function() {return($);};$.fxinterval=function() {return($);};$.fxoff=function() {return($);};$.get=function() {return($);};$.getJSON=function() {return($);};$.getScript=function() {return($);};$.globalEval=function() {return($);};$.grep=function() {return($);};$.hasData=function() {return($);};$.holdReady=function() {return($);};$.inArray=function() {return($);};$.isArray=function() {return($);};$.isEmptyObject=function() {return($);};$.isFunction=function() {return($);};$.isNumeric=function() {return($);};$.isPlainObject=function() {return($);};$.isWindow=function() {return($);};$.isXMLDoc=function() {return($);};$.makeArray=function() {return($);};$.map=function() {return($);};$.merge=function() {return($);};$.noConflict=function() {return($);};$.noop=function() {return($);};$.now=function() {return($);};$.param=function() {return($);};$.parseHTML=function() {return($);};$.parseJSON=function() {return($);};$.parseXML=function() {return($);};$.post=function() {return($);};$.proxy=function() {return($);};$.queue=function() {return($);};$.removeData=function() {return($);};$.sub=function() {return($);};$.support=function() {return($);};$.trim=function() {return($);};$.type=function() {return($);};$.unique=function() {return($);};$.when=function() {return($);};$.always=function() {return($);};$.done=function() {return($);};$.fail=function() {return($);};$.isRejected=function() {return($);};$.isResolved=function() {return($);};$.notify=function() {return($);};$.notifyWith=function() {return($);};$.pipe=function() {return($);};$.progress=function() {return($);};$.promise=function() {return($);};$.reject=function() {return($);};$.rejectWith=function() {return($);};$.resolve=function() {return($);};$.resolveWith=function() {return($);};$.state=function() {return($);};$.then=function() {return($);};$.currentTarget=function() {return($);};$.data=function() {return($);};$.delegateTarget=function() {return($);};$.isDefaultPrevented=function() {return($);};$.isImmediatePropagationStopped=function() {return($);};$.isPropagationStopped=function() {return($);};$.metaKey=function() {return($);};$.namespace=function() {return($);};$.pageX=function() {return($);};$.pageY=function() {return($);};$.preventDefault=function() {return($);};$.relatedTarget=function() {return($);};$.result=function() {return($);};$.stopImmediatePropagation=function() {return($);};$.stopPropagation=function() {return($);};$.target=function() {return($);};$.timeStamp=function() {return($);};$.type=function() {return($);};$.which=function() {return($);};' + s;
 
       sandBox.submit(scopejQuery(s), function(cls, message) {
         if (cls) {
@@ -358,16 +460,10 @@ if (typeof prodOrDev !== 'undefined') {
     'http://www.freecodecamp.com' :
     'http://localhost:3001';
 
-  if (challengeType === '0') {
+  if (common.challengeType === '0') {
     setTimeout(updatePreview, 300);
   }
 }
-
-// Initialize CodeMirror editor with a nice html5 canvas demo.
-editor.on('keyup', function() {
-  clearTimeout(delay);
-  delay = setTimeout(updatePreview, 300);
-});
 
 /**
  * "post" methods
@@ -401,10 +497,19 @@ var postError = function(data) {
 var goodTests = 0;
 var testSuccess = function() {
   goodTests++;
+  // test successful run show completion
   if (goodTests === tests.length) {
-    showCompletion();
+    return showCompletion();
   }
 };
+
+function ctrlEnterClickHandler(e) {
+  // ctrl + enter
+  if (e.ctrlKey && e.keyCode === 13) {
+    $('#complete-courseware-dialog').off('keydown', ctrlEnterClickHandler);
+    $('#submit-challenge').click();
+  }
+}
 
 function showCompletion() {
   if (isInitRun) {
@@ -417,12 +522,14 @@ function showCompletion() {
     'event',
     'Challenge',
     'solved',
-    challenge_Name + ', Time: ' + time + ', Attempts: ' + attempts
+    common.challengeName + ', Time: ' + time + ', Attempts: ' + attempts
   );
-  var bonfireSolution = myCodeMirror.getValue();
+  var bonfireSolution = editor.getValue();
   var didCompleteWith = $('#completed-with').val() || null;
+
   $('#complete-courseware-dialog').modal('show');
   $('#complete-courseware-dialog .modal-header').click();
+
   $('#submit-challenge').click(function(e) {
     e.preventDefault();
 
@@ -448,16 +555,17 @@ function showCompletion() {
     $.post(
       '/completed-bonfire/', {
         challengeInfo: {
-          challengeId: challenge_Id,
-          challengeName: challenge_Name,
+          challengeId: common.challengeId,
+          challengeName: common.challengeName,
           completedWith: didCompleteWith,
-          challengeType: challengeType,
+          challengeType: common.challengeType,
           solution: bonfireSolution
         }
       },
       function(res) {
         if (res) {
-          window.location = '/challenges/next-challenge';
+          window.location =
+            '/challenges/next-challenge?id=' + common.challengeId;
         }
       }
     );
@@ -468,7 +576,7 @@ var resetEditor = function resetEditor() {
   editor.setValue(replaceSafeTags(allSeeds));
   $('#testSuite').empty();
   bonfireExecute(true);
-  codeStorage.updateStorage();
+  common.codeStorage.updateStorage();
 };
 
 var attempts = 0;
@@ -476,35 +584,6 @@ if (attempts) {
   attempts = 0;
 }
 
-if (challengeType !== '0') {
-  var codeOutput = CodeMirror.fromTextArea(
-    document.getElementById('codeOutput'),
-    {
-      lineNumbers: false,
-      mode: 'text',
-      theme: 'monokai',
-      readOnly: 'nocursor',
-      lineWrapping: true
-    }
-  );
-
-  codeOutput.setValue('/**\n' +
-  ' * Your output will go here.\n' + ' * Console.log() -type statements\n' +
-  ' * will appear in your browser\'s\n' + ' * DevTools JavaScript console.\n' +
-  ' */');
-  codeOutput.setSize('100%', '100%');
-}
-
-var info = editor.getScrollInfo();
-
-var after = editor.charCoords({
-  line: editor.getCursor().line + 1,
-  ch: 0
-}, 'local').top;
-
-if (info.top + info.clientHeight < after) {
-  editor.scrollTo(null, after - info.clientHeight + 3);
-}
 
 var userTests;
 var testSalt = Math.random();
@@ -583,9 +662,15 @@ var createTestDisplay = function() {
   }
 };
 
-var expect = chai.expect;
-var assert = chai.assert;
-var should = chai.should();
+(function(win, chai) {
+  if (!chai) {
+    return;
+  }
+  win.expect = chai.expect;
+  win.assert = chai.assert;
+  win.should = chai.should();
+
+}(window, window.chai));
 
 
 var reassembleTest = function(test, data) {
@@ -624,7 +709,9 @@ var runTests = function(err, data) {
     ) {
       try {
         if (chaiTestFromJSON) {
+          /* eslint-disable no-eval, no-unused-vars */
           var output = eval(reassembleTest(chaiTestFromJSON, data));
+          /* eslint-enable no-eval, no-unused-vars */
         }
       } catch (error) {
         allTestsPassed = false;
@@ -639,26 +726,139 @@ var runTests = function(err, data) {
     if (allTestsPassed) {
       allTestsPassed = false;
       showCompletion();
-    }
-    else{
+    } else {
       isInitRun = false;
     }
   }
 };
 
+// step challenge
+common.init.push((function() {
+  var stepClass = '.challenge-step';
+  var nextBtnClass = '.challenge-step-btn-next';
+  var actionBtnClass = '.challenge-step-btn-action';
+  var finishBtnClass = '.challenge-step-btn-finish';
+  var submitBtnId = '#challenge-step-btn-submit';
+  var submitModalId = '#challenge-step-modal';
+
+  function getNextStep($challengeSteps) {
+    var length = $challengeSteps.length;
+    var $nextStep = false;
+    var nextStepIndex = 0;
+    $challengeSteps.each(function(index) {
+      var $step = $(this);
+      if (
+        !$step.hasClass('hidden') &&
+        index + 1 !== length
+      ) {
+        nextStepIndex = index + 1;
+      }
+    });
+
+    $nextStep = $challengeSteps[nextStepIndex];
+
+    return $nextStep;
+  }
+
+  function handleNextStepClick(e) {
+    e.preventDefault();
+    var nextStep = getNextStep($(stepClass));
+    $(this)
+      .parent()
+      .addClass('animated fadeOutLeft')
+      .delay(700)
+      .queue(function(next) {
+        $(this).addClass('hidden');
+        if (nextStep) {
+          $(nextStep)
+            .removeClass('hidden')
+            .addClass('animated slideInRight')
+            .delay(1000)
+            .queue(function(next) {
+              $(this).removeClass('slideInRight');
+              next();
+            });
+        }
+        next();
+      });
+
+  }
+
+  function handleActionClick() {
+    $(this)
+      .parent()
+      .find('.disabled')
+      .removeClass('disabled');
+  }
+
+  function handleFinishClick(e) {
+    e.preventDefault();
+    $(submitModalId).modal('show');
+    $(submitModalId + '.modal-header').click();
+    $(submitBtnId).click(handleSubmitClick);
+  }
+
+  function handleSubmitClick(e) {
+    e.preventDefault();
+
+    $('#submit-challenge')
+      .attr('disabled', 'true')
+      .removeClass('btn-primary')
+      .addClass('btn-warning disabled');
+
+    var $checkmarkContainer = $('#checkmark-container');
+    $checkmarkContainer.css({ height: $checkmarkContainer.innerHeight() });
+
+    $('#challenge-checkmark')
+      .addClass('zoomOutUp')
+      .delay(1000)
+      .queue(function(next) {
+        $(this).replaceWith(
+          '<div id="challenge-spinner" ' +
+          'class="animated zoomInUp inner-circles-loader">' +
+          'submitting...</div>'
+        );
+        next();
+      });
+
+    $.post(
+      '/completed-bonfire/', {
+        challengeInfo: {
+          challengeId: common.challengeId,
+          challengeName: common.challengeName,
+          challengeType: common.challengeType
+        }
+      },
+      function(res) {
+        if (res) {
+          window.location =
+            '/challenges/next-challenge?id=' + common.challengeId;
+        }
+      }
+    );
+  }
+
+  return function($) {
+    $(nextBtnClass).click(handleNextStepClick);
+    $(actionBtnClass).click(handleActionClick);
+    $(finishBtnClass).click(handleFinishClick);
+  };
+}(window.$)));
+
 function bonfireExecute(shouldTest) {
+  var codeOutput = common.codeOutput;
   initPreview = false;
   goodTests = 0;
   attempts++;
-  ga('send', 'event', 'Challenge', 'ran-code', challenge_Name);
+  ga('send', 'event', 'Challenge', 'ran-code', common.challengeName);
   userTests = null;
   $('#testSuite').empty();
 
   if (
-    challengeType !== '0' &&
+    common.challengeType !== '0' &&
     !editor.getValue().match(/\$\s*?\(\s*?\$\s*?\)/gi)
   ) {
-    var userJavaScript = myCodeMirror.getValue();
+    var userJavaScript = editor.getValue();
     var failedCommentTest = false;
 
     // checks if the number of opening comments(/*) matches the number of
@@ -678,7 +878,7 @@ function bonfireExecute(shouldTest) {
       if (userJavaScript.match(/function\s*?\(|function\s+\w+\s*?\(/gi)) {
         sandBox.submit(userJavaScript, function(cls, message) {
           if (failedCommentTest) {
-            myCodeMirror.setValue(myCodeMirror.getValue() + '*/');
+            editor.setValue(editor.getValue() + '*/');
             console.log('Caught Unfinished Comment');
             codeOutput.setValue('Unfinished multi-line comment');
             failedCommentTest = false;
@@ -703,7 +903,7 @@ function bonfireExecute(shouldTest) {
       sandBox.submit(userJavaScript, function(cls, message) {
 
         if (failedCommentTest) {
-          myCodeMirror.setValue(myCodeMirror.getValue() + '*/');
+          editor.setValue(editor.getValue() + '*/');
           console.log('Caught Unfinished Comment');
           codeOutput.setValue('Unfinished mulit-line comment');
           failedCommentTest = false;
@@ -733,7 +933,7 @@ function bonfireExecute(shouldTest) {
     }
     if (
       !editor.getValue().match(/\$\s*?\(\s*?\$\s*?\)/gi) &&
-      challengeType === '0'
+      common.challengeType === '0'
     ) {
       safeHTMLRun(shouldTest);
     } else {
@@ -747,25 +947,37 @@ function bonfireExecute(shouldTest) {
 }
 
 $('#submitButton').on('click', function() {
+  isInitRun = false;
   bonfireExecute(true);
 });
 
 $(document).ready(function() {
+
+  common.init.forEach(function(init) {
+    init($);
+  });
+
+  // init modal keybindings on open
+  $('#complete-courseware-dialog').on('shown.bs.modal', function() {
+    $('#complete-courseware-dialog').keydown(ctrlEnterClickHandler);
+  });
+
+  // remove modal keybinds on close
+  $('#complete-courseware-dialog').on('hidden.bs.modal', function() {
+    $('#complete-courseware-dialog').off('keydown', ctrlEnterClickHandler);
+  });
+
   var $preview = $('#preview');
   isInitRun = true;
 
-  editorValue = codeStorage.isAlive() ?
-    codeStorage.getStoredValue() :
-    allSeeds;
-
-  myCodeMirror.setValue(replaceSafeTags(editorValue));
   if (typeof $preview.html() !== 'undefined') {
     $preview.load(function() {
       if (initPreview) {
         bonfireExecute(true);
       }
     });
-  } else {
+  } else if (common.challengeType !== 7) {
     bonfireExecute(true);
   }
+
 });

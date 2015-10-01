@@ -1,0 +1,9 @@
+@font-face {
+  font-family: "Ubuntu";
+  src: url(/fonts/Ubuntu-Regular.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Ubuntu Mono";
+  src: url(/fonts/UbuntuMono-Regular.ttf) format("truetype");
+}
