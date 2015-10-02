@@ -34,22 +34,52 @@ const dasherize = utils.dasherize;
 const unDasherize = utils.unDasherize;
 const getMDNLinks = utils.getMDNLinks;
 
+function makeChallengesUnique(challengeArr) {
+  // clone and reverse challenges
+  // then filter by unique id's
+  // then reverse again
+  return _.uniq(challengeArr.slice().reverse(), 'id').reverse();
+}
 function numberWithCommas(x) {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 }
 
 function updateUserProgress(user, challengeId, completedChallenge) {
-  const alreadyCompleted = user.completedChallenges.some(({ id }) => {
-    return id === challengeId;
+  let { completedChallenges } = user;
+
+  // migrate user challenges object to remove
+  if (!user.isUniqMigrated) {
+    user.isUniqMigrated = true;
+
+    completedChallenges = user.completedChallenges =
+      makeChallengesUnique(completedChallenges);
+  }
+
+  const indexOfChallenge = _.findIndex(completedChallenges, {
+    id: challengeId
   });
+
+  const alreadyCompleted = indexOfChallenge !== -1;
 
   if (!alreadyCompleted) {
     user.progressTimestamps.push({
       timestamp: Date.now(),
-      completedChallenge
+      completedChallenge: challengeId
     });
+    user.completedChallenges.push(completedChallenge);
+    return user;
   }
-  user.completedChallenges.push(completedChallenge);
+
+  const oldCompletedChallenge = completedChallenges[indexOfChallenge];
+  user.completedChallenges[indexOfChallenge] =
+    Object.assign(
+      {},
+      completedChallenge,
+      {
+        completedDate: oldCompletedChallenge.completedDate,
+        lastUpdated: completedChallenge.completedDate
+      }
+    );
   return user;
 }
 

@@ -88,39 +88,6 @@
     "google": {
       "type": "string"
     },
-    "completedBonfires": {
-      "type": [
-        {
-          "id": "string",
-          "name": "string",
-          "completedWith": "string",
-          "completedDate": "string",
-          "solution": "string"
-        }
-      ],
-      "default": []
-    },
-    "uncompletedCoursewares": {
-      "type": "array",
-      "default": []
-    },
-    "completedCoursewares": {
-      "type": [
-        {
-          "completedDate": {
-            "type": "string",
-            "defaultFn": "now"
-          },
-          "id": "string",
-          "name": "string",
-          "completedWith": "string",
-          "solution": "string",
-          "githubLink": "string",
-          "verified": "boolean"
-        }
-      ],
-      "default": []
-    },
     "currentStreak": {
       "type": "number",
       "default": 0
@@ -140,10 +107,15 @@
     "currentChallenge": {
       "type": {}
     },
+    "isUniqMigrated": {
+      "type": "boolean",
+      "default": false
+    },
     "completedChallenges": {
       "type": [
         {
           "completedDate": "number",
+          "lastUpdated": "number",
           "id": "string",
           "name": "string",
           "completedWith": "string",
