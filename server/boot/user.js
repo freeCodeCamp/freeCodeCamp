@@ -1,12 +1,12 @@
-import _ from 'lodash';
-import async from 'async';
+import dedent from 'dedent';
 import moment from 'moment';
 import debugFactory from 'debug';
 
-import { ifNoUser401 } from '../utils/middleware';
+import { ifNoUser401, ifNoUserRedirectTo } from '../utils/middleware';
 
 const debug = debugFactory('freecc:boot:user');
 const daysBetween = 1.5;
+const sendNonUserToMap = ifNoUserRedirectTo('/map');
 
 function calcCurrentStreak(cals) {
   const revCals = cals.concat([Date.now()]).slice().reverse();
@@ -52,7 +52,7 @@ function dayDiff([head, tail]) {
 module.exports = function(app) {
   var router = app.loopback.Router();
   var User = app.models.User;
-  var Story = app.models.Story;
+  // var Story = app.models.Story;
 
   router.get('/login', function(req, res) {
     res.redirect(301, '/signin');
@@ -68,14 +68,21 @@ module.exports = function(app) {
   router.post('/reset-password', postReset);
   router.get('/email-signup', getEmailSignup);
   router.get('/email-signin', getEmailSignin);
-  router.get('/toggle-lockdown-mode', toggleLockdownMode);
+  router.get(
+    '/toggle-lockdown-mode',
+    sendNonUserToMap,
+    toggleLockdownMode
+  );
   router.post(
     '/account/delete',
     ifNoUser401,
     postDeleteAccount
   );
-  router.get('/account/unlink/:provider', getOauthUnlink);
-  router.get('/account', getAccount);
+  router.get(
+    '/account',
+    sendNonUserToMap,
+    getAccount
+  );
   router.get('/vote1', vote1);
   router.get('/vote2', vote2);
   // Ensure this is the last route!
@@ -116,7 +123,8 @@ module.exports = function(app) {
   }
 
   function getAccount(req, res) {
-    return res.redirect('/' + user.username);
+    const { username } = req.user;
+    return res.redirect('/' + username);
   }
 
   function returnUser(req, res, next) {
@@ -196,33 +204,35 @@ module.exports = function(app) {
     );
   }
 
+  function toggleLockdownMode(req, res, next) {
+    if (req.user.lockdownMode === true) {
+      req.user.lockdownMode = false;
+      return req.user.save(function(err) {
+        if (err) { return next(err); }
 
-
-  function toggleLockdownMode(req, res) {
-    if (req.user) {
-      if (req.user.lockdownMode === true) {
-        req.user.lockdownMode = false;
-        req.user.save(function (err) {
-          if (err) {
-            return next(err);
-          }
-          req.flash('success', {msg: 'Other people can now view all your challenge solutions. You can change this back at any time in the "Manage My Account" section at the bottom of this page.'});
-          res.redirect(req.user.username);
+        req.flash('success', {
+          msg: dedent`
+            Other people can now view all your challenge solutions.
+            You can change this back at any time in the "Manage My Account"
+            section at the bottom of this page.
+          `
         });
-      } else {
-        req.user.lockdownMode = true;
-        req.user.save(function (err) {
-          if (err) {
-            return next(err);
-          }
-          req.flash('success', {msg: 'All your challenge solutions are now hidden from other people. You can change this back at any time in the "Manage My Account" section at the bottom of this page.'});
-          res.redirect(req.user.username);
-        });
-      }
-    } else {
-      req.flash('error', {msg: 'You must be signed in to change your account settings.'});
-      res.redirect('/');
+        res.redirect('/' + req.user.username);
+      });
     }
+    req.user.lockdownMode = true;
+    return req.user.save(function(err) {
+      if (err) { return next(err); }
+
+      req.flash('success', {
+        msg: dedent`
+          All your challenge solutions are now hidden from other people.
+          You can change this back at any time in the "Manage My Account"
+          section at the bottom of this page.
+        `
+      });
+      res.redirect('/' + req.user.username);
+    });
   }
 
   function postDeleteAccount(req, res, next) {
@@ -231,25 +241,6 @@ module.exports = function(app) {
       req.logout();
       req.flash('info', { msg: 'Your account has been deleted.' });
       res.redirect('/');
-    });
-  }
-
-  function getOauthUnlink(req, res, next) {
-    var provider = req.params.provider;
-    User.findById(req.user.id, function(err, user) {
-      if (err) { return next(err); }
-
-      user[provider] = null;
-      user.tokens =
-        _.reject(user.tokens, function(token) {
-          return token.kind === provider;
-        });
-
-      user.save(function(err) {
-        if (err) { return next(err); }
-        req.flash('info', { msg: provider + ' account has been unlinked.' });
-        res.redirect('/account');
-      });
     });
   }
 
@@ -325,6 +316,7 @@ module.exports = function(app) {
     });
   }
 
+  /*
   function updateUserStoryPictures(userId, picture, username, cb) {
     Story.find({ 'author.userId': userId }, function(err, stories) {
       if (err) { return cb(err); }
@@ -345,31 +337,30 @@ module.exports = function(app) {
       });
     });
   }
+  */
 
-  function vote1(req, res) {
+  function vote1(req, res, next) {
     if (req.user) {
       req.user.tshirtVote = 1;
-      req.user.save(function (err) {
-        if (err) {
-          return next(err);
-        }
-        req.flash('success', {msg: 'Thanks for voting!'});
+      req.user.save(function(err) {
+        if (err) { return next(err); }
+
+        req.flash('success', { msg: 'Thanks for voting!' });
         res.redirect('/map');
       });
     } else {
-      req.flash('error', {msg: 'You must be signed in to vote.'});
+      req.flash('error', { msg: 'You must be signed in to vote.' });
       res.redirect('/map');
     }
   }
 
-  function vote2(req, res) {
+  function vote2(req, res, next) {
     if (req.user) {
       req.user.tshirtVote = 2;
-      req.user.save(function (err) {
-        if (err) {
-          return next(err);
-        }
-        req.flash('success', {msg: 'Thanks for voting!'});
+      req.user.save(function(err) {
+        if (err) { return next(err); }
+
+        req.flash('success', { msg: 'Thanks for voting!' });
         res.redirect('/map');
       });
     } else {
