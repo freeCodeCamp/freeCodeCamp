@@ -100,7 +100,7 @@
       "type": "boolean",
       "default": true
     },
-    "lockdownMode": {
+    "isLocked": {
       "type": "boolean",
       "default": false
     },

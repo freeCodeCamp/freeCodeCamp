@@ -132,18 +132,18 @@ module.exports = function(app) {
     const { path } = req;
     User.findOne(
       { where: { username } },
-      function(err, user) {
+      function(err, profileUser) {
         if (err) {
           return next(err);
         }
-        if (!user) {
+        if (!profileUser) {
           req.flash('errors', {
             msg: `404: We couldn't find path ${ path }`
           });
           return res.redirect('/');
         }
 
-        var cals = user
+        var cals = profileUser
           .progressTimestamps
           .map(objOrNum => {
             return typeof objOrNum === 'number' ?
@@ -152,10 +152,10 @@ module.exports = function(app) {
           })
           .sort();
 
-        user.currentStreak = calcCurrentStreak(cals);
-        user.longestStreak = calcLongestStreak(cals);
+        profileUser.currentStreak = calcCurrentStreak(cals);
+        profileUser.longestStreak = calcLongestStreak(cals);
 
-        const data = user
+        const data = profileUser
           .progressTimestamps
           .map((objOrNum) => {
             return typeof objOrNum === 'number' ?
@@ -170,42 +170,55 @@ module.exports = function(app) {
             return data;
           }, {});
 
-        const challenges = user.completedChallenges.filter(function(obj) {
+        const baseAndZip = profileUser.completedChallenges.filter(
+          function(obj) {
           return obj.challengeType === 3 || obj.challengeType === 4;
-        });
+          }
+        );
 
-        const bonfires = user.completedChallenges.filter(function(obj) {
+        const bonfires = profileUser.completedChallenges.filter(function(obj) {
           return obj.challengeType === 5 && (obj.name || '').match(/Bonfire/g);
         });
 
+        const waypoints = profileUser.completedChallenges.filter(function(obj) {
+          return (obj.name || '').match(/^Waypoint/i);
+        });
+
         res.render('account/show', {
-          title: 'Camper ' + user.username + '\'s portfolio',
-          username: user.username,
-          name: user.name,
-          isMigrationGrandfathered: user.isMigrationGrandfathered,
-          isGithubCool: user.isGithubCool,
-          location: user.location,
-          github: user.githubURL,
-          linkedin: user.linkedin,
-          google: user.google,
-          facebook: user.facebook,
-          twitter: user.twitter,
-          picture: user.picture,
-          progressTimestamps: user.progressTimestamps,
+          title: 'Camper ' + profileUser.username + '\'s portfolio',
+          username: profileUser.username,
+          name: profileUser.name,
+          isMigrationGrandfathered: profileUser.isMigrationGrandfathered,
+          isGithubCool: profileUser.isGithubCool,
+          isLocked: !!profileUser.isLocked,
+
+          location: profileUser.location,
           calender: data,
-          challenges: challenges,
-          bonfires: bonfires,
-          moment: moment,
-          longestStreak: user.longestStreak,
-          currentStreak: user.currentStreak
+
+          github: profileUser.githubURL,
+          linkedin: profileUser.linkedin,
+          google: profileUser.google,
+          facebook: profileUser.facebook,
+          twitter: profileUser.twitter,
+          picture: profileUser.picture,
+
+          progressTimestamps: profileUser.progressTimestamps,
+
+          baseAndZip,
+          bonfires,
+          waypoints,
+          moment,
+
+          longestStreak: profileUser.longestStreak,
+          currentStreak: profileUser.currentStreak
         });
       }
     );
   }
 
   function toggleLockdownMode(req, res, next) {
-    if (req.user.lockdownMode === true) {
-      req.user.lockdownMode = false;
+    if (req.user.isLocked === true) {
+      req.user.isLocked = false;
       return req.user.save(function(err) {
         if (err) { return next(err); }
 
@@ -219,7 +232,7 @@ module.exports = function(app) {
         res.redirect('/' + req.user.username);
       });
     }
-    req.user.lockdownMode = true;
+    req.user.isLocked = true;
     return req.user.save(function(err) {
       if (err) { return next(err); }
 

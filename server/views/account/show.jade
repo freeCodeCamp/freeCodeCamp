@@ -97,8 +97,8 @@ block content
                                 h4.col-sm-6.text-left Current Streak: #{currentStreak} #{currentStreak + currentStreak === 1 ? ' day' : ' days'}
 
 
-                    if (user.username == username || !user.lockdownMode)
-                        if (challenges.length > 0)
+                    if (user && user.username == username || !isLocked)
+                        if (baseAndZip.length > 0)
                             .col-sm-12
                                 table.table.table-striped
                                     thead
@@ -106,7 +106,7 @@ block content
                                             th.col-xs-4 Project
                                             th.col-xs-2 Completed
                                             th.col-xs-6 Link
-                                    for challenge in challenges
+                                    for challenge in baseAndZip
                                         tr
                                             td.col-xs-4
                                                 a(href='/challenges/' + challenge.name, target='_blank')= challenge.name
@@ -127,6 +127,23 @@ block content
                                             td.col-xs-2= moment(bonfire.completedDate, 'x').format("MMM DD, YYYY")
                                             td.col-xs-6
                                                 a(href='/challenges/' + bonfire.name + '?solution=' + encodeURIComponent(bonfire.solution), target='_blank') View my solution
+                        if (waypoints.length > 0)
+                            .col-sm-12
+                                table.table.table-striped
+                                    thead
+                                        tr
+                                            th.col-xs-4 Waypoints
+                                            th.col-xs-2 Completed
+                                            th.col-xs-6 Solution
+                                    for challenge in waypoints
+                                        tr
+                                            td.col-xs-4= challenge.name
+                                            td.col-xs-2= moment(challenge.completedDate, 'x').format("MMM DD, YYYY")
+                                            td.col-xs-6
+                                              if (challenge.solution)
+                                                  a(href='/challenges/' + challenge.name + '?solution=' + encodeURIComponent(challenge.solution), target='_blank') View my solution
+                                              else
+                                                  a(href='/challenges/' + challenge.name) View this challenge
 
     if (user && user.username === username)
         .panel.panel-info
@@ -136,7 +153,7 @@ block content
                     a.btn.btn-lg.btn-block.btn-primary.btn-link-social(href='mailto:team@freecodecamp.com')
                         span.ion-email
                         | Email us at team@freecodecamp.com
-                if (!user.lockdownMode)
+                if (!user.isLocked)
                     .col-xs-12
                         a.btn.btn-lg.btn-block.btn-info.btn-link-social(href='/toggle-lockdown-mode')
                             span.ion-locked
