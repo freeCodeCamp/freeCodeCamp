@@ -16,8 +16,92 @@ common.challengeType = common.challengeType || window.challengeType ?
 
 common.challengeId = common.challengeId || window.challenge_Id;
 
+common.challengeSeed = common.challengeSeed || window.challengeSeed ?
+  window.challengeSeed :
+  [];
+
+common.seed = common.challengeSeed.reduce(function(seed, line) {
+  return seed + line + '\n';
+}, '');
+
+// store code in the URL
+common.codeUri = (function(common, encode, decode, location, history) {
+  var codeUri = {
+    encode: function(code) {
+      return encode(code);
+    },
+    decode: function(code) {
+      try {
+        return decode(code);
+      } catch (ignore) {
+        return null;
+      }
+    },
+    isInQuery: function(query) {
+      var decoded = codeUri.decode(query);
+      if (!decoded || typeof decoded.split !== 'function') {
+        return false;
+      }
+      return decoded
+        .split('?')
+        .splice(1)
+        .reduce(function(found, param) {
+          var key = param.split('=')[0];
+          if (key === 'solution') {
+            return true;
+          }
+          return found;
+        }, false);
+    },
+    isAlive: function() {
+      return codeUri.isInQuery(location.search) ||
+        codeUri.isInQuery(location.hash);
+    },
+    parse: function() {
+      var query;
+      if (location.search && codeUri.isInQuery(location.search)) {
+        query = location.search.replace(/^\?/, '');
+        if (history && typeof history.replaceState === 'function') {
+          history.replaceState(
+            history.state,
+            null,
+            location.href.split('?')[0]
+          );
+          location.hash = '#?' + query;
+        }
+      } else {
+        query = location.hash.replace(/^\#\?/, '');
+      }
+      if (!query) {
+        return null;
+      }
+
+      return query
+        .split('&')
+        .reduce(function(solution, param) {
+          var key = param.split('=')[0];
+          var value = param.split('=')[1];
+          if (key === 'solution') {
+            return codeUri.decode(value);
+          }
+          return solution;
+        }, null);
+    },
+    querify: function(solution) {
+      location.hash = '?solution=' + codeUri.encode(solution);
+      return solution;
+    }
+  };
+
+  common.init.push(function() {
+    codeUri.parse();
+  });
+
+  return codeUri;
+}(common, encodeURIComponent, decodeURIComponent, location, history));
+
 // codeStorage
-common.codeStorageFactory = (function($, localStorage) {
+common.codeStorageFactory = (function($, localStorage, codeUri) {
 
   var CodeStorageProps = {
     version: 0.01,
@@ -58,7 +142,10 @@ common.codeStorageFactory = (function($, localStorage) {
     updateStorage: function() {
       if (typeof localStorage !== 'undefined') {
         var value = this.editor.getValue();
+        // store in localStorage
         localStorage.setItem(this.keyValue, value);
+        // also store code in URL
+        codeUri.querify(value);
       } else {
         console.log('no web storage');
       }
@@ -83,7 +170,7 @@ common.codeStorageFactory = (function($, localStorage) {
   }
 
   return codeStorageFactory;
-}($, localStorage));
+}($, localStorage, common.codeUri));
 
 common.codeOutput = (function(CodeMirror, document, challengeType) {
   if (!CodeMirror) {
@@ -319,9 +406,15 @@ var editor = (function(CodeMirror, emmetCodeMirror, common) {
     );
   }
   common.init.push(function() {
-    editorValue = codeStorage.isAlive() ?
-      codeStorage.getStoredValue() :
-      allSeeds;
+    var editorValue;
+    if (common.codeUri.isAlive()) {
+      console.log('in query');
+      editorValue = common.codeUri.parse();
+    } else {
+      editorValue = codeStorage.isAlive() ?
+        codeStorage.getStoredValue() :
+        common.seed;
+    }
 
     editor.setValue(replaceSafeTags(editorValue));
     editor.refresh();
@@ -331,16 +424,7 @@ var editor = (function(CodeMirror, emmetCodeMirror, common) {
 }(window.CodeMirror, window.emmetCodeMirror, common));
 
 
-var editorValue;
-var challengeSeed = challengeSeed || [];
 var tests = tests || [];
-var allSeeds = '';
-
-(function() {
-    challengeSeed.forEach(function(elem) {
-        allSeeds += elem + '\n';
-    });
-})();
 
 var libraryIncludes = "<script src='//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>" +
     "<script src='/js/lib/chai/chai.js'></script>" +
@@ -547,7 +631,9 @@ function showCompletion() {
       .delay(1000)
       .queue(function(next) {
         $(this).replaceWith(
-          '<div id="challenge-spinner" class="animated zoomInUp inner-circles-loader">submitting...</div>'
+          '<div id="challenge-spinner" ' +
+          'class="animated zoomInUp inner-circles-loader">' +
+          'submitting...</div>'
         );
         next();
       });
@@ -573,7 +659,7 @@ function showCompletion() {
 }
 
 var resetEditor = function resetEditor() {
-  editor.setValue(replaceSafeTags(allSeeds));
+  editor.setValue(replaceSafeTags(common.seed));
   $('#testSuite').empty();
   bonfireExecute(true);
   common.codeStorage.updateStorage();
@@ -587,7 +673,6 @@ if (attempts) {
 
 var userTests;
 var testSalt = Math.random();
-
 
 var scrapeTests = function(userJavaScript) {
 
@@ -637,28 +722,26 @@ var createTestDisplay = function() {
     userTests.pop();
   }
   for (var i = 0; i < userTests.length; i++) {
-    var test = userTests[i];
+    var didTestPass = !userTests[i].err;
+    var testText = userTests[i].text
+      .split('message: ')
+      .pop()
+      .replace(/\'\);/g, '');
+
     var testDoc = document.createElement('div');
 
-    if (test.err) {
-      console.log('Should be displaying bad tests');
+    var iconClass = didTestPass ?
+      '"ion-checkmark-circled big-success-icon"' :
+      '"ion-close-circled big-error-icon"';
 
-      $(testDoc).html(
-        "<div class='row'><div class='col-xs-2 text-center'><i class='ion-close-circled big-error-icon'></i></div><div class='col-xs-10 test-output wrappable test-vertical-center grayed-out-test-output'>" +
-        test.text + "</div><div class='col-xs-10 test-output wrappable'>" +
-        test.err + "</div></div><div class='ten-pixel-break'/>"
-      )
-        .appendTo($('#testSuite'));
-
-    } else {
-
-      $(testDoc).html(
-        "<div class='row'><div class='col-xs-2 text-center'><i class='ion-checkmark-circled big-success-icon'></i></div><div class='col-xs-10 test-output test-vertical-center wrappable grayed-out-test-output'>" +
-        test.text +
-        "</div></div><div class='ten-pixel-break'/>"
-      )
-        .appendTo($('#testSuite'));
-    }
+    $(testDoc).html(
+      "<div class='row'><div class='col-xs-2 text-center'><i class=" +
+      iconClass +
+      "></i></div><div class='col-xs-10 test-output wrappable'>" +
+      testText +
+      "</div><div class='ten-pixel-break'/>"
+    )
+      .appendTo($('#testSuite'));
   }
 };
 
@@ -680,6 +763,7 @@ var reassembleTest = function(test, data) {
 };
 
 var runTests = function(err, data) {
+  var editorValue = editor.getValue();
   // userTests = userTests ? null : [];
   var allTestsPassed = true;
   pushed = false;
