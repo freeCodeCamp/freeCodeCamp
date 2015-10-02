@@ -1,12 +1,12 @@
-import _ from 'lodash';
-import async from 'async';
+import dedent from 'dedent';
 import moment from 'moment';
 import debugFactory from 'debug';
 
-import { ifNoUser401 } from '../utils/middleware';
+import { ifNoUser401, ifNoUserRedirectTo } from '../utils/middleware';
 
 const debug = debugFactory('freecc:boot:user');
 const daysBetween = 1.5;
+const sendNonUserToMap = ifNoUserRedirectTo('/map');
 
 function calcCurrentStreak(cals) {
   const revCals = cals.concat([Date.now()]).slice().reverse();
@@ -52,7 +52,7 @@ function dayDiff([head, tail]) {
 module.exports = function(app) {
   var router = app.loopback.Router();
   var User = app.models.User;
-  var Story = app.models.Story;
+  // var Story = app.models.Story;
 
   router.get('/login', function(req, res) {
     res.redirect(301, '/signin');
@@ -68,14 +68,21 @@ module.exports = function(app) {
   router.post('/reset-password', postReset);
   router.get('/email-signup', getEmailSignup);
   router.get('/email-signin', getEmailSignin);
-  router.get('/account/api', getAccountAngular);
+  router.get(
+    '/toggle-lockdown-mode',
+    sendNonUserToMap,
+    toggleLockdownMode
+  );
   router.post(
     '/account/delete',
     ifNoUser401,
     postDeleteAccount
   );
-  router.get('/account/unlink/:provider', getOauthUnlink);
-  router.get('/account', getAccount);
+  router.get(
+    '/account',
+    sendNonUserToMap,
+    getAccount
+  );
   router.get('/vote1', vote1);
   router.get('/vote2', vote2);
   // Ensure this is the last route!
@@ -116,18 +123,8 @@ module.exports = function(app) {
   }
 
   function getAccount(req, res) {
-    if (!req.user) {
-      return res.redirect('/');
-    }
-    res.render('account/account', {
-      title: 'Manage your Free Code Camp Account'
-    });
-  }
-
-  function getAccountAngular(req, res) {
-    res.json({
-      user: req.user || {}
-    });
+    const { username } = req.user;
+    return res.redirect('/' + username);
   }
 
   function returnUser(req, res, next) {
@@ -142,14 +139,6 @@ module.exports = function(app) {
         if (!user) {
           req.flash('errors', {
             msg: `404: We couldn't find path ${ path }`
-          });
-          return res.redirect('/');
-        }
-        if (!user.isGithubCool && !user.isMigrationGrandfathered) {
-          req.flash('errors', {
-            msg: `
-              user ${ username } has not completed account signup
-            `
           });
           return res.redirect('/');
         }
@@ -214,31 +203,43 @@ module.exports = function(app) {
     );
   }
 
+  function toggleLockdownMode(req, res, next) {
+    if (req.user.lockdownMode === true) {
+      req.user.lockdownMode = false;
+      return req.user.save(function(err) {
+        if (err) { return next(err); }
+
+        req.flash('success', {
+          msg: dedent`
+            Other people can now view all your challenge solutions.
+            You can change this back at any time in the "Manage My Account"
+            section at the bottom of this page.
+          `
+        });
+        res.redirect('/' + req.user.username);
+      });
+    }
+    req.user.lockdownMode = true;
+    return req.user.save(function(err) {
+      if (err) { return next(err); }
+
+      req.flash('success', {
+        msg: dedent`
+          All your challenge solutions are now hidden from other people.
+          You can change this back at any time in the "Manage My Account"
+          section at the bottom of this page.
+        `
+      });
+      res.redirect('/' + req.user.username);
+    });
+  }
+
   function postDeleteAccount(req, res, next) {
     User.destroyById(req.user.id, function(err) {
       if (err) { return next(err); }
       req.logout();
       req.flash('info', { msg: 'Your account has been deleted.' });
       res.redirect('/');
-    });
-  }
-
-  function getOauthUnlink(req, res, next) {
-    var provider = req.params.provider;
-    User.findById(req.user.id, function(err, user) {
-      if (err) { return next(err); }
-
-      user[provider] = null;
-      user.tokens =
-        _.reject(user.tokens, function(token) {
-          return token.kind === provider;
-        });
-
-      user.save(function(err) {
-        if (err) { return next(err); }
-        req.flash('info', { msg: provider + ' account has been unlinked.' });
-        res.redirect('/account');
-      });
     });
   }
 
@@ -314,6 +315,7 @@ module.exports = function(app) {
     });
   }
 
+  /*
   function updateUserStoryPictures(userId, picture, username, cb) {
     Story.find({ 'author.userId': userId }, function(err, stories) {
       if (err) { return cb(err); }
@@ -334,31 +336,30 @@ module.exports = function(app) {
       });
     });
   }
+  */
 
-  function vote1(req, res) {
+  function vote1(req, res, next) {
     if (req.user) {
       req.user.tshirtVote = 1;
-      req.user.save(function (err) {
-        if (err) {
-          return next(err);
-        }
-        req.flash('success', {msg: 'Thanks for voting!'});
+      req.user.save(function(err) {
+        if (err) { return next(err); }
+
+        req.flash('success', { msg: 'Thanks for voting!' });
         res.redirect('/map');
       });
     } else {
-      req.flash('error', {msg: 'You must be signed in to vote.'});
+      req.flash('error', { msg: 'You must be signed in to vote.' });
       res.redirect('/map');
     }
   }
 
-  function vote2(req, res) {
+  function vote2(req, res, next) {
     if (req.user) {
       req.user.tshirtVote = 2;
-      req.user.save(function (err) {
-        if (err) {
-          return next(err);
-        }
-        req.flash('success', {msg: 'Thanks for voting!'});
+      req.user.save(function(err) {
+        if (err) { return next(err); }
+
+        req.flash('success', { msg: 'Thanks for voting!' });
         res.redirect('/map');
       });
     } else {

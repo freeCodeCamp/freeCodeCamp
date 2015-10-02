@@ -210,6 +210,7 @@ module.exports = function(app) {
 
   function returnIndividualChallenge(req, res, next) {
     const origChallengeName = req.params.challengeName;
+    const solutionCode = req.query.solution;
     const unDashedName = unDasherize(origChallengeName);
 
     const challengeName = challengesRegex.test(unDashedName) ?
@@ -239,7 +240,12 @@ module.exports = function(app) {
         }
 
         if (dasherize(challenge.name) !== origChallengeName) {
-          return Observable.just('/challenges/' + dasherize(challenge.name));
+          return Observable.just(
+            '/challenges/' +
+            dasherize(challenge.name) +
+            '?solution=' +
+            encodeURIComponent(solutionCode)
+          );
         }
 
         // save user does nothing if user does not exist
