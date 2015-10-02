@@ -286,7 +286,6 @@
     {
       "id": "cf1111c1c16feddfaeb2bdef",
       "title": "Reverse Arrays with .reverse",
-      "difficulty": 0,
       "description": [
         "You can use the <code>.reverse()</code> function to reverse the contents of an array."
       ],
@@ -310,7 +309,6 @@
     {
       "id": "cf1111c1c16feddfaeb3bdef",
       "title": "Concatenate Strings with .concat",
-      "difficulty": 0,
       "description": [
         "<code>.concat()</code> can be used to merge the contents of two arrays into one.",
         "<code>array = array.concat(otherArray);</code>"

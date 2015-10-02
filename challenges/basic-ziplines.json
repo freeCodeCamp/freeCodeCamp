@@ -151,7 +151,6 @@
     {
       "id": "bd7158d8c442eddfaeb5bd0f",
       "title": "Build a Pomodoro Clock",
-      "difficulty": 1.03,
       "challengeSeed": ["126411567"],
       "description": [
         "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that successfully reverse-engineers this: <a href='http://codepen.io/GeoffStorbeck/full/RPbGxZ/' target='_blank'>http://codepen.io/GeoffStorbeck/full/RPbGxZ/</a>.",
@@ -195,7 +194,6 @@
     {
       "id": "bd7158d8c442eddfaeb5bd17",
       "title": "Build a JavaScript Calculator",
-      "difficulty": 1.04,
       "challengeSeed": ["126411565"],
       "description": [
         "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that successfully reverse-engineers this: <a href='http://codepen.io/GeoffStorbeck/full/zxgaqw' target='_blank'>http://codepen.io/GeoffStorbeck/full/zxgaqw</a>.",
