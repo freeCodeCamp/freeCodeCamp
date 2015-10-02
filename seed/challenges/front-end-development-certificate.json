@@ -1,0 +1,33 @@
+{
+  "name": "Claim Your Front End Development Certificate",
+  "order": 12,
+  "challenges": [
+    {
+      "id": "561add10cb82ac38a17513be",
+      "title": "Claim Your Front End Development Certificate",
+      "difficulty": 0.00,
+      "challengeSeed": [],
+      "description": [
+        [
+          "http://i.imgur.com/RlEk2IF.jpg",
+          "a picture of Free Code Camp's 4 benefits: Get connected, Learn JavaScript, Build your Portfolio, Help nonprofits",
+          "Welcome to Free Code Camp. We're an open source community of busy people who learn to code and help nonprofits.",
+          ""
+        ]
+      ],
+      "type": "Waypoint",
+      "challengeType": 7,
+      "tests": [],
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
+    }
+  ]
+}
