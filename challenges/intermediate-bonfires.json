@@ -5,7 +5,6 @@
     {
       "id": "a3566b1109230028080c9345",
       "title": "Sum All Numbers in a Range",
-      "difficulty": "2.00",
       "description": [
         "We'll pass you an array of two numbers. Return the sum of those two numbers and all numbers between them.",
         "The lowest number will not always come first.",
@@ -46,7 +45,6 @@
     {
       "id": "a5de63ebea8dbee56860f4f2",
       "title": "Diff Two Arrays",
-      "difficulty": "2.01",
       "description": [
         "Compare two arrays and return a new array with any items not found in both of the original arrays.",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
@@ -99,7 +97,6 @@
         "assert.deepEqual(convert(29), \"XXIX\", 'message: <code>convert(29)</code> should return \"XXIX\".');",
         "assert.deepEqual(convert(16), \"XVI\", 'message: <code>convert(16)</code> should return \"XVI\".');"
       ],
-      "difficulty": "2.02",
       "description": [
         "Convert the given number into a roman numeral.",
         "All <a href=\"http://www.mathsisfun.com/roman-numerals.html\" target=\"_blank\">roman numerals</a> answers should be provided in upper-case.",
@@ -134,7 +131,6 @@
     {
       "id": "a8e512fbe388ac2f9198f0fa",
       "title": "Where art thou",
-      "difficulty": "2.03",
       "description": [
         "Make a function that looks through an array of objects (first argument) and returns an array of all objects that have matching property and value pairs (second argument). Each property and value pair of the source object has to be present in the object from the collection if it is to be included in the returned array.",
         "For example, if the first argument is <code>[{ first: \"Romeo\", last: \"Montague\" }, { first: \"Mercutio\", last: null }, { first: \"Tybalt\", last: \"Capulet\" }]</code>, and the second argument is <code>{ last: \"Capulet\" }</code>, then you must return the third object from the array (the first argument), because it contains the property and it's value, that was passed on as the second argument.",
@@ -182,7 +178,6 @@
         "assert.deepEqual(myReplace(\"His name is Tom\", \"Tom\", \"john\"), \"His name is John\", 'message: <code>myReplace(\"His name is Tom\", \"Tom\", \"john\")</code> should return \"His name is John\".');",
         "assert.deepEqual(myReplace(\"Let us get back to more Coding\", \"Coding\", \"bonfires\"), \"Let us get back to more Bonfires\", 'message: <code>myReplace(\"Let us get back to more Coding\", \"Coding\", \"bonfires\")</code> should return \"Let us get back to more Bonfires\".');"
       ],
-      "difficulty": "2.035",
       "description": [
         "Perform a search and replace on the sentence using the arguments provided and return the new sentence.",
         "First argument is the sentence to perform the search and replace on.",
@@ -226,7 +221,6 @@
         "assert.deepEqual(translate(\"algorithm\"), \"algorithmway\", 'message: <code>translate(\"algorithm\")</code> should return \"algorithmway\".');",
         "assert.deepEqual(translate(\"eight\"), \"eightway\", 'message: <code>translate(\"eight\")</code> should return \"eightway\".');"
       ],
-      "difficulty": "2.04",
       "description": [
         "Translate the provided string to pig latin.",
         "<a href=\"http://en.wikipedia.org/wiki/Pig_Latin\" target=\"_blank\">Pig Latin</a> takes the first consonant (or consonant cluster) of an English word, moves it to the end of the word and suffixes an \"ay\".",
@@ -268,7 +262,6 @@
         "assert.deepEqual(pair(\"TTGAG\"),[[\"T\",\"A\"],[\"T\",\"A\"],[\"G\",\"C\"],[\"A\",\"T\"],[\"G\",\"C\"]], 'message: <code>pair(\"TTGAG\")</code> should return <code>[[\"T\",\"A\"],[\"T\",\"A\"],[\"G\",\"C\"],[\"A\",\"T\"],[\"G\",\"C\"]]</code>.');",
         "assert.deepEqual(pair(\"CTCTA\"),[[\"C\",\"G\"],[\"T\",\"A\"],[\"C\",\"G\"],[\"T\",\"A\"],[\"A\",\"T\"]], 'message: <code>pair(\"CTCTA\")</code> should return <code>[[\"C\",\"G\"],[\"T\",\"A\"],[\"C\",\"G\"],[\"T\",\"A\"],[\"A\",\"T\"]]</code>.');"
       ],
-      "difficulty": "2.05",
       "description": [
         "The DNA strand is missing the pairing element. Take each character, get its pair, and return the results as a 2d array.",
         "<a href=\"http://en.wikipedia.org/wiki/Base_pair\" target=\"_blank\">Base pairs</a> are a pair of AT and CG. Match the missing element to the provided character.",
@@ -304,7 +297,6 @@
     {
       "id": "af7588ade1100bde429baf20",
       "title": "Missing letters",
-      "difficulty": "2.05",
       "description": [
         "Find the missing letter in the passed letter range and return it.",
         "If all letters are present in the range, return undefined.",
@@ -343,7 +335,6 @@
     {
       "id": "a77dbc43c33f39daa4429b4f",
       "title": "Boo who",
-      "difficulty": "2.06",
       "description": [
         "Check if a value is classified as a boolean primitive. Return true or false.",
         "Boolean primitives are true and false.",
@@ -386,7 +377,6 @@
     {
       "id": "a105e963526e7de52b219be9",
       "title": "Sorted Union",
-      "difficulty": "2.07",
       "description": [
         "Write a function that takes two or more arrays and returns a new array of unique values in the order of the original provided arrays.",
         "In other words, all values present from all arrays should be included in their original order, but with no duplicates in the final array.",
@@ -427,7 +417,6 @@
     {
       "id": "a6b0bb188d873cb2c8729495",
       "title": "Convert HTML Entities",
-      "difficulty": "2.07",
       "description": [
         "Convert the characters \"&\", \"<\", \">\", '\"' (double quote), and \"'\" (apostrophe), in a string to their corresponding HTML entities.",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
@@ -469,7 +458,6 @@
     {
       "id": "a103376db3ba46b2d50db289",
       "title": "Spinal Tap Case",
-      "difficulty": "2.08",
       "description": [
         "Convert a string to spinal case. Spinal case is all-lowercase-words-joined-by-dashes.",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
@@ -509,7 +497,6 @@
     {
       "id": "a5229172f011153519423690",
       "title": "Sum All Odd Fibonacci Numbers",
-      "difficulty": "2.09",
       "description": [
         "Return the sum of all odd Fibonacci numbers up to and including the passed number if it is a Fibonacci number.",
         "The first few numbers of the Fibonacci sequence are 1, 1, 2, 3, 5 and 8, and each subsequent number is the sum of the previous two numbers.",
@@ -550,7 +537,6 @@
     {
       "id": "a3bfc1673c0526e06d3ac698",
       "title": "Sum All Primes",
-      "difficulty": "2.10",
       "description": [
         "Sum all the prime numbers up to and including the provided number.",
         "A prime number is defined as having only two divisors, 1 and itself. For example, 2 is a prime number because it's only divisible by 1 and 2. 1 isn't a prime number, because it's only divisible by itself.",
@@ -589,7 +575,6 @@
     {
       "id": "ae9defd7acaf69703ab432ea",
       "title": "Smallest Common Multiple",
-      "difficulty": "2.11",
       "description": [
         "Find the smallest common multiple of the provided parameters that can be evenly divided by both, as well as by all sequential numbers in the range between these parameters.",
         "The range will be an array of two numbers that will not necessarily be in numerical order.",
@@ -629,7 +614,6 @@
     {
       "id": "a6e40f1041b06c996f7b2406",
       "title": "Finders Keepers",
-      "difficulty": "2.12",
       "description": [
         "Create a function that looks through an array (first argument) and returns the first element in the array that passes a truth test (second argument).",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
@@ -665,7 +649,6 @@
     {
       "id": "a5deed1811a43193f9f1c841",
       "title": "Drop it",
-      "difficulty": "2.13",
       "description": [
         "Drop the elements of an array (first argument), starting from the front, until the predicate (second argument) returns true.",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
@@ -704,7 +687,6 @@
     {
       "id": "ab306dbdcc907c7ddfc30830",
       "title": "Steamroller",
-      "difficulty": "2.14",
       "description": [
         "Flatten a nested array. You must account for varying levels of nesting.",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
@@ -742,7 +724,6 @@
     {
       "id": "a8d97bd4c764e91f9d2bda01",
       "title": "Binary Agents",
-      "difficulty": "2.15",
       "description": [
         "Return an English translated sentence of the passed binary string.",
         "The binary string will be space separated.",
@@ -779,7 +760,6 @@
     {
       "id": "a10d2431ad0c6a099a4b8b52",
       "title": "Everything Be True",
-      "difficulty": "2.21",
       "description": [
         "Check if the predicate (second argument) returns truthy (defined) for all elements of a collection (first argument).",
         "For this, check to see if the property defined in the second argument is present on every element of the collection.",
@@ -819,7 +799,6 @@
     {
       "id": "a97fd23d9b809dac9921074f",
       "title": "Arguments Optional",
-      "difficulty": "2.22",
       "description": [
         "Create a function that sums two arguments together. If only one argument is provided, then return a function that expects one argument and returns the sum.",
         "For example, <code>add(2, 3)</code> should return <code>5</code>, and <code>add(2)</code> should return a function.",

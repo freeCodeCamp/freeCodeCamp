@@ -5,7 +5,6 @@
     {
       "id": "bd7353d8c341eddeaeb5bd0f",
       "title": "Save your Code Revisions Forever with Git",
-      "difficulty": 0.01,
       "challengeSeed": ["133316034"],
       "description": [
         "We'll build this Waypoint on Cloud 9, a powerful online code editor with a full Ubuntu Linux workspace, all running in the cloud.",

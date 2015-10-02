@@ -5,7 +5,6 @@
     {
       "id": "bd7158d8c443eddfaeb5bcef",
       "title": "Get Set for Basejumps",
-      "difficulty": 2.00,
       "challengeSeed": ["128451852"],
       "description": [
         "<span class='text-info'>Objective:</span> Get the MEAN stack running on Cloud 9, push your code to GitHub, and deploy it to Heroku.",
@@ -66,7 +65,6 @@
     {
       "id": "bd7158d8c443eddfaeb5bdef",
       "title": "Build a Voting App",
-      "difficulty": 2.01,
       "challengeSeed": ["133315786"],
       "description": [
         "<span class='text-info'>Objective:</span> Build a full stack JavaScript app that successfully reverse-engineers this: <a href='http://votingapp.herokuapp.com/' target='_blank'>http://votingapp.herokuapp.com/</a> and deploy it to Heroku.",
@@ -103,7 +101,6 @@
     {
       "id": "bd7158d8c443eddfaeb5bdff",
       "title": "Build a Nightlife Coordination App",
-      "difficulty": 2.02,
       "challengeSeed": ["133315781"],
       "description": [
         "<span class='text-info'>Objective:</span> Build a full stack JavaScript app that successfully reverse-engineers this: <a href='http://whatsgoinontonight.herokuapp.com/' target='_blank'>http://whatsgoinontonight.herokuapp.com/</a> and deploy it to Heroku.",
@@ -137,7 +134,6 @@
     {
       "id": "bd7158d8c443eddfaeb5bd0e",
       "title": "Chart the Stock Market",
-      "difficulty": 2.03,
       "challengeSeed": ["133315787"],
       "description": [
         "<span class='text-info'>Objective:</span> Build a full stack JavaScript app that successfully reverse-engineers this: <a href='http://stockstream.herokuapp.com/' target='_blank'>http://stockstream.herokuapp.com/</a> and deploy it to Heroku.",
@@ -170,7 +166,6 @@
     {
       "id": "bd7158d8c443eddfaeb5bd0f",
       "title": "Manage a Book Trading Club",
-      "difficulty": 2.04,
       "challengeSeed": ["133316032"],
       "description": [
         "<span class='text-info'>Objective:</span> Build a full stack JavaScript app that successfully reverse-engineers this: <a href='http://bookjump.herokuapp.com/' target='_blank'>http://bookjump.herokuapp.com/</a> and deploy it to Heroku.",
@@ -203,7 +198,6 @@
     {
       "id": "bd7158d8c443eddfaeb5bdee",
       "title": "Build a Pinterest Clone",
-      "difficulty": 2.05,
       "challengeSeed": ["133315784"],
       "description": [
         "<span class='text-info'>Objective:</span> Build a full stack JavaScript app that successfully reverse-engineers this: <a href='http://stark-lowlands-3680.herokuapp.com/' target='_blank'>http://stark-lowlands-3680.herokuapp.com/</a> and deploy it to Heroku.",
