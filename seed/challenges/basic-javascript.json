@@ -1,6 +1,6 @@
 {
   "name": "Basic JavaScript",
-  "order": 0.005,
+  "order": 5,
   "challenges": [
     {
       "id":"bd7123c9c441eddfaeb4bdef",
