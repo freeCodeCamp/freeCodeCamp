@@ -5,7 +5,6 @@
     {
       "id": "bd7243d8c341eddeaeb5bd0f",
       "title": "Store Data in MongoDB",
-      "difficulty": 0.01,
       "challengeSeed": ["133316035"],
       "description": [
         "We'll build this Waypoint on Cloud 9, a powerful online code editor with a full Ubuntu Linux workspace, all running in the cloud.",

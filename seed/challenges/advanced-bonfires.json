@@ -5,7 +5,6 @@
     {
       "id": "aff0395860f5d3034dc0bfc9",
       "title": "Validate US Telephone Numbers",
-      "difficulty": "4.01",
       "description": [
         "Return true if the passed string is a valid US phone number",
         "The user may fill out the form field any way they choose as long as it is a valid US number. The following are all valid formats for US numbers:",
@@ -71,7 +70,6 @@
     {
       "id": "a3f503de51cf954ede28891d",
       "title": "Symmetric Difference",
-      "difficulty": "4.02",
       "description": [
         "Create a function that takes two or more arrays and returns an array of the symmetric difference of the provided arrays.",
         "The mathematical term symmetric difference refers to the elements in two sets that are in either the first or second set, but not in both.",
@@ -110,7 +108,6 @@
     {
       "id": "aa2e6f85cab2ab736c9a9b24",
       "title": "Exact Change",
-      "difficulty": "4.03",
       "description": [
         "Design a cash register drawer function that accepts purchase price as the first argument, payment as the second argument, and cash-in-drawer (cid) as the third argument.",
         "cid is a 2d array listing available currency.",
@@ -166,7 +163,6 @@
     {
       "id": "a56138aff60341a09ed6c480",
       "title": "Inventory Update",
-      "difficulty": "4.04",
       "description": [
         "Compare and update inventory stored in a 2d array against a second 2d array of a fresh delivery. Update current inventory item quantity, and if an item cannot be found, add the new item and quantity into the inventory array in alphabetical order.",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
@@ -221,7 +217,6 @@
     {
       "id": "a7bf700cd123b9a54eef01d5",
       "title": "No repeats please",
-      "difficulty": "4.05",
       "description": [
         "Return the number of total permutations of the provided string that don't have repeated consecutive letters.",
         "For example, 'aab' should return 2 because it has 6 total permutations, but only 2 of them don't have the same letter (in this case 'a') repeating.",
@@ -264,7 +259,6 @@
       "id": "a19f0fbe1872186acd434d5a",
       "title": "Friendly Date Ranges",
       "dashedName": "bonfire-friendly-date-ranges",
-      "difficulty": "4.06",
       "description": [
         "Implement a way of converting two dates into a more friendly date range that could be presented to a user.",
         "It must not show any redundant information in the date range.",
