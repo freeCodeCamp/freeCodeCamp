@@ -197,8 +197,7 @@ module.exports = function(app) {
           bonfires: bonfires,
           moment: moment,
           longestStreak: user.longestStreak,
-          currentStreak: user.currentStreak,
-          encodeURI: encodeURI
+          currentStreak: user.currentStreak
         });
       }
     );

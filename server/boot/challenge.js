@@ -240,7 +240,12 @@ module.exports = function(app) {
         }
 
         if (dasherize(challenge.name) !== origChallengeName) {
-          return Observable.just('/challenges/' + dasherize(challenge.name) + '?solution=' + solutionCode);
+          return Observable.just(
+            '/challenges/' +
+            dasherize(challenge.name) +
+            '?solution=' +
+            encodeURIComponent(solutionCode)
+          );
         }
 
         // save user does nothing if user does not exist
