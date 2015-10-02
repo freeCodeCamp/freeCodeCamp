@@ -5,7 +5,6 @@
     {
       "id": "ad7123c8c441eddfaeb5bdef",
       "title": "Meet Bonfire",
-      "difficulty": "0",
       "description": [
         "Your goal is to fix the failing test.",
         "First, run all the tests by clicking \"Run tests\" or by pressing Control + Enter.",
@@ -44,7 +43,6 @@
     {
       "id": "a202eed8fc186c8434cb6d61",
       "title": "Reverse a String",
-      "difficulty": "1.01",
       "tests": [
         "assert(typeof(reverseString(\"hello\")) === \"string\", 'message: <code>reverseString()</code> should return a string.');",
         "assert(reverseString(\"hello\") === \"olleh\", 'message: <code>reverseString(\"hello\")</code> should become <code>\"olleh\"</code>.');",
@@ -93,7 +91,6 @@
         "assert(factorialize(20) === 2432902008176640000, 'message: <code>factorialize(20)</code> should return 2432902008176640000.');",
         "assert(factorialize(0) === 1, 'message: <code>factorialize(0)</code> should return 1.');"
       ],
-      "difficulty": "1.02",
       "description": [
         "Return the factorial of the provided integer.",
         "If the integer is represented with the letter n, a factorial is the product of all positive integers less than or equal to n.",
@@ -127,7 +124,6 @@
     {
       "id": "aaa48de84e1ecc7c742e1124",
       "title": "Check for Palindromes",
-      "difficulty": "1.03",
       "description": [
         "Return true if the given string is a palindrome. Otherwise, return false.",
         "A palindrome is a word or sentence that's spelled the same way both forward and backward, ignoring punctuation, case, and spacing.",
@@ -178,7 +174,6 @@
     {
       "id": "a26cbbe9ad8655a977e1ceb5",
       "title": "Find the Longest Word in a String",
-      "difficulty": "1.04",
       "description": [
         "Return the length of the longest word in the provided sentence.",
         "Your response should be a number.",
@@ -219,7 +214,6 @@
     {
       "id": "ab6137d4e35944e21037b769",
       "title": "Title Case a Sentence",
-      "difficulty": "1.05",
       "description": [
         "Return the provided string with the first letter of each word capitalized. Make sure the rest of the word is in lower case.",
         "For the purpose of this exercise, you should also capitalize connecting words like \"the\" and \"of\".",
@@ -257,7 +251,6 @@
     {
       "id": "a789b3483989747d63b0e427",
       "title": "Return Largest Numbers in Arrays",
-      "difficulty": "1.06",
       "description": [
         "Return an array consisting of the largest number from each provided sub-array. For simplicity, the provided array will contain exactly 4 sub-arrays.",
         "Remember, you can iterate through an array with a simple for loop, and access each member with array syntax arr[i] .",
@@ -296,7 +289,6 @@
     {
       "id": "acda2fb1324d9b0fa741e6b5",
       "title": "Confirm the Ending",
-      "difficulty": "1.07",
       "description": [
         "Check if a string (first argument) ends with the given target string (second argument).",
         "Remember to use <a href=\"//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck\" target=\"_blank\">Read-Search-Ask</a> if you get stuck. Write your own code."
@@ -336,7 +328,6 @@
     {
       "id": "afcc8d540bea9ea2669306b6",
       "title": "Repeat a string repeat a string",
-      "difficulty": "1.08",
       "description": [
         "Repeat a given string (first argument) n times (second argument). Return an empty string if n is a negative number.",
         "Remember to use <a href=\"//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck\" target=\"_blank\">Read-Search-Ask</a> if you get stuck. Write your own code."
@@ -373,7 +364,6 @@
     {
       "id": "ac6993d51946422351508a41",
       "title": "Truncate a string",
-      "difficulty": "1.09",
       "description": [
         "Truncate a string (first argument) if it is longer than the given maximum string length (second argument). Return the truncated string with a \"...\" ending.",
         "Note that the three dots at the end add to the string length.",
@@ -412,7 +402,6 @@
     {
       "id": "a9bd25c716030ec90084d8a1",
       "title": "Chunky Monkey",
-      "difficulty": "1.10",
       "description": [
         "Write a function that splits an array (first argument) into groups the length of size (second argument) and returns them as a multidimensional array.",
         "Remember to use <a href=\"//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck\" target=\"_blank\">Read-Search-Ask</a> if you get stuck. Write your own code."
@@ -450,7 +439,6 @@
     {
       "id": "ab31c21b530c0dafa9e241ee",
       "title": "Slasher Flick",
-      "difficulty": "1.11",
       "description": [
         "Return the remaining elements of an array after chopping off n elements from the head.",
         "The head meaning the beginning of the array, or the zeroth index",
@@ -489,7 +477,6 @@
     {
       "id": "af2170cad53daa0770fabdea",
       "title": "Mutations",
-      "difficulty": "1.12",
       "description": [
         "Return true if the string in the first element of the array contains all of the letters of the string in the second element of the array.",
         "For example, <code>[\"hello\", \"Hello\"]</code>, should return true because all of the letters in the second string are present in the first, ignoring case.",
@@ -533,7 +520,6 @@
     {
       "id": "adf08ec01beb4f99fc7a68f2",
       "title": "Falsy Bouncer",
-      "difficulty": "1.50",
       "description": [
         "Remove all falsy values from an array.",
         "Falsy values in javascript are <code>false</code>, <code>null</code>, <code>0</code>, <code>\"\"</code>, <code>undefined</code>, and <code>NaN</code>.",
@@ -572,7 +558,6 @@
     {
       "id": "a39963a4c10bc8b4d4f06d7e",
       "title": "Seek and Destroy",
-      "difficulty": "1.60",
       "description": [
         "You will be provided with an initial array (the first argument in the destroyer function), followed by one or more arguments. Remove all elements from the initial array that are of the same value as these arguments.",
         "Remember to use <a href=\"//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck\" target=\"_blank\">Read-Search-Ask</a> if you get stuck. Write your own code."
@@ -612,7 +597,6 @@
     {
       "id": "a24c1a4622e3c05097f71d67",
       "title": "Where do I belong",
-      "difficulty": "1.61",
       "description": [
         "Return the lowest index at which a value (second argument) should be inserted into a sorted array (first argument).",
         "For example, where([1,2,3,4], 1.5) should return 1 because it is greater than 1 (0th index), but less than 2 (1st index).",

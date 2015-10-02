@@ -5,7 +5,6 @@
     {
       "id": "bd7153d8c441eddfaeb5bd0f",
       "title": "Manage Packages with NPM",
-      "difficulty": 0.39,
       "challengeSeed": ["126433450"],
       "description": [
         "We'll build this Waypoint on Cloud 9, a powerful online code editor with a full Ubuntu Linux workspace, all running in the cloud.",
@@ -59,7 +58,6 @@
     {
       "id": "bd7153d8c441eddfaeb5bdff",
       "title": "Start a Node.js Server",
-      "difficulty": 0.40,
       "challengeSeed": ["126411561"],
       "description": [
         "We'll build this Waypoint on Cloud 9, a powerful online code editor with a full Ubuntu Linux workspace, all running in the cloud. We'll do the first 7 steps of Node School's LearnYouNode challenges.",
@@ -101,7 +99,6 @@
     {
       "id": "bd7153d8c441eddfaeb5bdfe",
       "title": "Continue working with Node.js Servers",
-      "difficulty": 0.41,
       "challengeSeed": ["128836506"],
       "description": [
         "Let's continue the LearnYouNode Node School challenge. For this Waypoint, we'll do challenges 8 through 10.",
@@ -130,7 +127,6 @@
     {
       "id": "bd7153d8c441eddfaeb5bdfd",
       "title": "Finish working with Node.js Servers",
-      "difficulty": 0.42,
       "challengeSeed": ["128836507"],
       "description": [
         "Let's continue the LearnYouNode Node School challenge. For this Waypoint, we'll do challenges 11 through 13.",
@@ -159,7 +155,6 @@
     {
       "id": "bd7153d8c441eddfaeb5bd1f",
       "title": "Build Web Apps with Express.js",
-      "difficulty": 0.43,
       "challengeSeed": [
         "126411559"
       ],

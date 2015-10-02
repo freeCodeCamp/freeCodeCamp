@@ -5,7 +5,6 @@
     {
       "id": "bad87fed1348bd9aeca08826",
       "title":  "Trigger on click Events with jQuery",
-      "difficulty": 3.19,
       "description": [
         "With jQuery we are able to get data from APIs via Ajax",
         "This data normally comes in the form of JSON",
@@ -106,7 +105,6 @@
     {
       "id": "bad87fee1348bd9aeca08826",
       "title":  "Displaying JSON data in HTML",
-      "difficulty": 3.19,
       "description": [
         "JSON stands for \"JavaScript Object Notation\". It\"s how you create objects in JavaScript.",
         "JSON is a series of \"key-value pairs\". Everything on the left of the colon (<code>:</code>) is the \"key\" you use to unlock the \"value\" on the right of the colon."
@@ -153,7 +151,6 @@
       "id": "bad84fee1348bd9aecc48826",
       "title": "Read Data from an Element Using jQuery",
       "dashedName":  "waypoint-read-data-from-an-element-using-jquery",
-      "difficulty": 3.17,
       "description": [
         "Let's make everything roll with <code>rollOut</code>."
       ],
@@ -192,7 +189,6 @@
       "id": "bad84fee1348bd9aecc38826",
       "title": "Read Data from an Element Using jQuery",
       "dashedName":  "waypoint-read-data-from-an-element-using-jquery",
-      "difficulty": 3.17,
       "description": [
         "Let's make everything roll with <code>rollOut</code>."
       ],
@@ -232,7 +228,6 @@
       "id": "bad84fee1348bd9aecc28826",
       "title": "Read Data from an Element Using jQuery",
       "dashedName":  "waypoint-read-data-from-an-element-using-jquery",
-      "difficulty": 3.17,
       "description": [
         "Let's make everything roll with <code>rollOut</code>."
       ],
@@ -272,7 +267,6 @@
       "id": "bad84fee1348bd9aecc18826",
       "title": "Read Data from an Element Using jQuery",
       "dashedName":  "waypoint-read-data-from-an-element-using-jquery",
-      "difficulty": 3.17,
       "description": [
 
       ],
@@ -312,7 +306,6 @@
       "id": "bad87fee1348bd9aecc08826",
       "title": "Trigger onHover Events with jQuery",
       "dashedName":  "waypoint-trigger-onhover-events-with-jquery",
-      "difficulty": 3.18,
       "description": [
 
       ],
@@ -330,7 +323,6 @@
       "id": "bad87fee1348bd9aebc08826",
       "title": "Get Data from an URL Using jQuery",
       "dashedName":  "waypoint-get-data-from-a-url-using-jquery",
-      "difficulty": 3.21,
       "description": [
 
       ],
@@ -364,7 +356,6 @@
       "id": "bad87fee1348bd9ae9c08826",
       "title": "Loop through JSON Data Using jQuery",
       "dashedName":  "waypoint-loop-through-json-data-using-jquery",
-      "difficulty": 3.22,
       "description": [
 
       ],
@@ -398,7 +389,6 @@
       "id": "bad88fee1348bd9ae8c08726",
       "title": "Wire AJAX Call into a jQuery Click Event",
       "dashedName":  "waypoint-wire-ajax-call-into-a-jquery-click-event",
-      "difficulty": 3.24,
       "description": [
         "<img src=\"https://www.evernote.com/l/AjmAQ5BxGrFGRrWl_j2eSpGZMfrunfse89gB/image.png\">"
       ],
@@ -432,7 +422,6 @@
       "id": "bad88fee1348bd9ae8c08626",
       "title": "Wire AJAX Call into a jQuery Click Event",
       "dashedName":  "waypoint-wire-ajax-call-into-a-jquery-click-event",
-      "difficulty": 3.24,
       "description": [
         "<img src=\"https://www.evernote.com/l/AjmAQ5BxGrFGRrWl_j2eSpGZMfrunfse89gB/image.png\">"
       ],
@@ -466,7 +455,6 @@
       "id": "bad88fee1348bd9ae8c08526",
       "title": "Wire AJAX Call into a jQuery Click Event",
       "dashedName":  "waypoint-wire-ajax-call-into-a-jquery-click-event",
-      "difficulty": 3.24,
       "description": [
         "<img src=\"https://www.evernote.com/l/AjmAQ5BxGrFGRrWl_j2eSpGZMfrunfse89gB/image.png\">"
       ],
@@ -500,7 +488,6 @@
       "id": "bad88fee1348bd9ae8c08426",
       "title": "Wire AJAX Call into a jQuery Click Event",
       "dashedName":  "waypoint-wire-ajax-call-into-a-jquery-click-event",
-      "difficulty": 3.24,
       "description": [
         "<img src=\"https://www.evernote.com/l/AjmAQ5BxGrFGRrWl_j2eSpGZMfrunfse89gB/image.png\">"
       ],

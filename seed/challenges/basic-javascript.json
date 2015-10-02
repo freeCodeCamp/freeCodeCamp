@@ -29,7 +29,6 @@
     {
       "id": "bd7123c9c441eddfaeb5bdef",
       "title": "Understand Boolean Values",
-      "difficulty": "9.98001",
       "description": [
         "In computer science, <code>data structures</code> are things that hold data. JavaScript has seven of these. For example, the <code>Number</code> data structure holds numbers.",
         "Let's learn about the most basic data structure of all: the <code>Boolean</code>. Booleans can only hold the value of either true or false. They are basically little on-off switches.",
@@ -57,7 +56,6 @@
     {
       "id": "bd7123c9c443eddfaeb5bdef",
       "title": "Declare JavaScript Variables",
-      "difficulty": "9.9801",
       "description": [
         "When we store data in a <code>data structure</code>, we call it a <code>variable</code>. These variables are no different from the x and y variables you use in math.",
         "Let's create our first variable and call it \"myName\".",
@@ -84,7 +82,6 @@
     {
       "id": "bd7123c9c444eddfaeb5bdef",
       "title": "Declare String Variables",
-      "difficulty": "9.9802",
       "description": [
         "In the previous challenge, we used the code <code>var myName = \"your name\"</code>. This is what we call a <code>String</code> variable. It is nothing more than a \"string\" of characters. JavaScript strings are always wrapped in quotes.",
         "Now let's create two new string variables: <code>myFirstName</code>and <code>myLastName</code> and assign them the values of your first and last name, respectively."
@@ -110,7 +107,6 @@
     {
       "id": "bd7123c9c448eddfaeb5bdef",
       "title": "Check the Length Property of a String Variable",
-      "difficulty": "9.9809",
       "description": [
         "<code>Data structures</code> have <code>properties</code>. For example, <code>strings</code> have a property called <code>.length</code> that will tell you how many characters are in the string.",
         "For example, if we created a variable <code>var firstName = \"Charles\"</code>, we could find out how long the string \"Charles\" is by using the <code>firstName.length</code> property.",
@@ -146,7 +142,6 @@
     {
       "id": "bd7123c9c549eddfaeb5bdef",
       "title": "Use Bracket Notation to Find the First Character in a String",
-      "difficulty": "9.9810",
       "description": [
         "<code>Bracket notation</code> is a way to get a character at a specific <code>index</code> within a string.",
         "Computers don't start counting at 1 like humans do. They start at 0.",
@@ -181,7 +176,6 @@
     {
       "id": "bd7123c9c450eddfaeb5bdef",
       "title": "Use Bracket Notation to Find the Nth Character in a String",
-      "difficulty": "9.9811",
       "description": [
         "You can also use <code>bracket Notation</code>to get the character at other positions within a string.",
         "Remember that computers start counting at 0, so the first character is actually the zeroth character.",
@@ -212,7 +206,6 @@
     {
       "id": "bd7123c9c451eddfaeb5bdef",
       "title": "Use Bracket Notation to Find the Last Character in a String",
-      "difficulty": "9.9812",
       "description": [
         "In order to get the last letter of a string, you can subtract one from the string's length.",
         "For example, if <code>var firstName = \"Charles\"</code>, you can get the value of the last letter of the string by using <code>firstName[firstName.length - 1]</code>.",
@@ -244,7 +237,6 @@
     {
       "id": "bd7123c9c452eddfaeb5bdef",
       "title": "Use Bracket Notation to Find the Nth-to-Last Character in a String",
-      "difficulty": "9.9813",
       "description": [
         "In order to get the last letter of a string, you can subtract one from the string's length.",
         "For example, you can get the value of the third-to-last letter of the <code>var firstName = \"Charles\"</code> string by using <code>firstName[firstName.length - 3]</code>.",
@@ -276,7 +268,6 @@
     {
       "id": "cf1111c1c11feddfaeb3bdef",
       "title": "Add Two Numbers with JavaScript",
-      "difficulty": "9.98141",
       "description": [
         "Let's try to add two numbers using JavaScript.",
         "JavaScript uses the <code>+</code> symbol for addition.",
@@ -299,7 +290,6 @@
     {
       "id": "cf1111c1c11feddfaeb4bdef",
       "title": "Subtract One Number from Another with JavaScript",
-      "difficulty": "9.98142",
       "description": [
         "We can also subtract one number from another.",
         "JavaScript uses the <code>-</code> symbol for subtraction.",
@@ -322,7 +312,6 @@
     {
       "id": "cf1231c1c11feddfaeb5bdef",
       "title": "Multiply Two Numbers with JavaScript",
-      "difficulty": "9.98143",
       "description": [
         "We can also multiply one number by another.",
         "JavaScript uses the <code>*</code> symbol for multiplication.",
@@ -345,7 +334,6 @@
     {
       "id": "cf1111c1c11feddfaeb6bdef",
       "title": "Divide One Number by Another with JavaScript",
-      "difficulty": "9.9814",
       "description": [
         "We can also divide one number by another.",
         "JavaScript uses the <code>/</code> symbol for division.",
@@ -368,7 +356,6 @@
     {
       "id": "cf1391c1c11feddfaeb4bdef",
       "title": "Create Decimal Numbers with JavaScript",
-      "difficulty": "9.9815",
       "description": [
         "JavaScript number variables can also have decimals.",
         "Let's create a variable <code>myDecimal</code> and give it a decimal value."
@@ -393,7 +380,6 @@
     {
       "id": "bd7993c9c69feddfaeb7bdef",
       "title": "Perform Arithmetic Operations on Decimals with JavaScript",
-      "difficulty": "9.98151",
       "description": [
         "In JavaScript, you can also perform calculations with decimal numbers, just like whole numbers.",
         "Replace the <code>0.0</code> with the correct number so that you get the result mentioned in the comments."
@@ -418,7 +404,6 @@
     {
       "id": "bd7993c9c69feddfaeb8bdef",
       "title": "Store Multiple Values in one Variable using JavaScript Arrays",
-      "difficulty": "9.9816",
       "description": [
         "With JavaScript <code>array</code> variables, we can store several pieces of data in one place.",
         "You start an array declaration with an opening square bracket, end it with a closing square bracket, and put a comma between each entry, like this: <code>var sandwich = [\"peanut butter\", \"jelly\", \"bread\"]</code>.",
@@ -536,7 +521,6 @@
     {
       "id": "bg9994c9c69feddfaeb9bdef",
       "title": "Manipulate Arrays With pop()",
-      "difficulty": "9.9818",
       "description": [
         "Another way to change the data in an array is with the <code>.pop()</code> function.",
         "<code>.pop()</code>is used to \"pop\" a value off of the end of an array. We can retrieve this value by performing <code>pop()</code> in a variable declaration.",
@@ -570,7 +554,6 @@
     {
       "id": "bg9995c9c69feddfaeb9bdef",
       "title": "Manipulate Arrays With push()",
-      "difficulty": "9.9818",
       "description": [
         "Not only can you <code>pop()</code> data off of the end of an array, you can also <code>push()</code> data onto the end of an array.",
         "Take the <code>myArray</code> array and <code>push()</code> this value to the end of it: <code>[\"dog\", 3]</code>."
@@ -601,7 +584,6 @@
     {
       "id": "bg9996c9c69feddfaeb9bdef",
       "title": "Manipulate Arrays With shift()",
-      "difficulty": "9.9817",
       "description": [
         "<code>pop()</code> always removes the last element of an array. What if you want to remove the first? That's where <code>.shift()</code> comes in.",
         "Take the <code>myArray</code> array and <code>shift()</code> the first value off of it. Set <code>myRemoved</code> to the first value of <code>myArray</code> using <code>shift()</code>."
@@ -632,7 +614,6 @@
     {
       "id": "bg9997c9c69feddfaeb9bdef",
       "title": "Manipulate Arrays With unshift()",
-      "difficulty": "9.9818",
       "description": [
         "Now that we've learned how to <code>shift</code>things from the start of the array, we need to learn how to <code>unshift</code>stuff back to the start.",
         "Let's take the code we had last time and <code>unshift</code>this value to the start: <code>\"Paul\"</code>."
