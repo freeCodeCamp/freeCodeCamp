@@ -557,7 +557,7 @@ module.exports = function(app) {
         const lastCompletedBlock = _.findLast(blocks, (block) => {
           return block.completed === 100;
         });
-        lastCompleted = lastCompleted && lastCompletedBlock.name || null;
+        lastCompleted = lastCompletedBlock && lastCompletedBlock.name || null;
       });
 
     Observable.combineLatest(
