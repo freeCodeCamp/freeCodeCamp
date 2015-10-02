@@ -9,11 +9,10 @@ import utils from '../utils';
 import {
   saveUser,
   observeMethod,
-  observableQueryFromModel
+  observeQuery
 } from '../utils/rx';
 
 import {
-  userMigration,
   ifNoUserSend
 } from '../utils/middleware';
 
@@ -147,8 +146,6 @@ module.exports = function(app) {
     completedBonfire
   );
 
-  // the follow routes are covered by userMigration
-  router.use(userMigration);
   router.get('/map', challengeMap);
   router.get(
     '/challenges/next-challenge',
@@ -330,7 +327,7 @@ module.exports = function(app) {
       challengeType: 5
     };
 
-    observableQueryFromModel(
+    observeQuery(
         User,
         'findOne',
         { where: { username: ('' + completedWith).toLowerCase() } }
@@ -458,7 +455,7 @@ module.exports = function(app) {
       verified: false
     };
 
-    observableQueryFromModel(
+    observeQuery(
         User,
         'findOne',
         { where: { username: completedWith.toLowerCase() } }
