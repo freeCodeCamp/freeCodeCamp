@@ -1,0 +1,49 @@
+extends ../layout
+block content
+    .panel.panel-info
+        .panel-body
+            h3.text-center Commit to your goal. Commit to a nonprofit.
+            .col-xs-12.col-sm-6.col-sm-offset-3
+                h4 Step 1: Choose your goal
+                .radio
+                    label
+                        input(type='radio' id='front-end-development-certificate' name='goal')
+                        | Front End Development Certificate (takes about 400 hours)
+                .radio
+                    label
+                        input(type='radio' id='full-stack-development-certificate' name='goal')
+                        | Full Stack Development Certificate (takes about 800 hours)
+                .spacer
+                h4 Step 2: Choose your nonprofit
+                .row
+                    .col-xs-12.col-sm-6
+                        a(href="http://i.imgur.com/U1CyEuA.jpg" data-lightbox="img-enlarge")
+                            img.img-responsive(src='http://i.imgur.com/U1CyEuA.jpg' alt="Girl Develop It participants coding at tables.")
+                        .radio
+                            label
+                                input(type='radio' id='girl-develop-it' name='nonprofit')
+                                | Girl Develop It is a nonprofit that provides in-person classes for women to learn to code.
+                    .col-xs-12.col-sm-6
+                        a(href="http://i.imgur.com/NERytFF.jpg" data-lightbox="img-enlarge")
+                            img.img-responsive(src='http://i.imgur.com/NERytFF.jpg' alt="Vets in Tech participants standing together at a conference.")
+                        .radio
+                            label
+                                input(type='radio' id='vets-in-tech' name='nonprofit')
+                                | Vets in Tech is a nonprofit that helps veterans prepare for tech jobs.
+
+                .spacer
+                h4 Step 3: Choose your monthly pledge
+                .radio
+                    label
+                        input(type='radio' id='10-dollar-pledge' name='pledge-amount')
+                        | $10 per month
+                .radio
+                    label
+                        input(type='radio' id='50-dollar-pledge' name='pledge-amount')
+                        | $50 per month
+
+                .spacer
+                a.button.btn.btn-block.btn-primary(href='https://www.paypal.com/us/cgi-bin/webscr?cmd=_flow&SESSION=T3x0DY-bLMFXuhmjYZXs-BhmDoiXfuNh5BWad5VBcMomkkDSZY0b_-_W3HS&dispatch=5885d80a13c0db1f8e263663d3faee8d0b9dcb01a9b6dc564e45f62871326a5e') Commit
+                .button-spacer
+                a.button.btn.btn-block.btn-warning(href='/') Maybe later
+                .spacer
