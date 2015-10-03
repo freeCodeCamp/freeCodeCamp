@@ -2,7 +2,9 @@ extends ../layout
 block content
     .panel.panel-info
         .panel-body
-            h3.text-center Commit to your goal. Commit to a nonprofit.
+            h3.text-center Commit to yourself. Commit to a nonprofit.
+            .col-xs-12.col-sm-6.col-sm-offset-3
+                p Are you looking for a burst of motivation? Do you want to help nonprofits before you’re ready to code for them? You can do both by pledging a monthly donation to a nonprofit until you've earned either your Front End or Full Stack Development certificate. Join Commit below or click "maybe later".
             .col-xs-12.col-sm-6.col-sm-offset-3
                 h4 Step 1: Choose your goal
                 .radio
@@ -14,7 +16,7 @@ block content
                         input(type='radio' id='full-stack-development-certificate' name='goal')
                         | Full Stack Development Certificate (takes about 800 hours)
                 .spacer
-                h4 Step 2: Choose your nonprofit
+                h4 Step 2: Choose one of our nonprofits
                 .row
                     .col-xs-12.col-sm-6
                         a(href="http://i.imgur.com/U1CyEuA.jpg" data-lightbox="img-enlarge")
@@ -30,7 +32,6 @@ block content
                             label
                                 input(type='radio' id='vets-in-tech' name='nonprofit')
                                 | Vets in Tech is a nonprofit that helps veterans prepare for tech jobs.
-
                 .spacer
                 h4 Step 3: Choose your monthly pledge
                 .radio
