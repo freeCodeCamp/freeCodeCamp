@@ -81,6 +81,10 @@ module.exports = function(app) {
   router.get('/email-signup', getEmailSignup);
   router.get('/email-signin', getEmailSignin);
   router.get(
+    '/commit',
+    commitToNonprofit
+  );
+  router.get(
     '/toggle-lockdown-mode',
     sendNonUserToMap,
     toggleLockdownMode
@@ -119,6 +123,12 @@ module.exports = function(app) {
     }
     res.render('account/signin', {
       title: 'Free Code Camp Login'
+    });
+  }
+
+  function commitToNonprofit(req, res) {
+    res.render('account/commit', {
+      title: 'Commit to a nonprofit. Commit to your goal.'
     });
   }
 
