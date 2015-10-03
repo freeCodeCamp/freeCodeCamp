@@ -4,6 +4,29 @@
   "challenges": [
     {
       "id": "bb000000000000000000000",
+      "title":  "Understanding JSON",
+      "difficulty": 3.19,
+      "description": [
+        "",
+        "JSON is a way of creating a file or a db record from a javascript object.",
+        "JSON works in the exact same way as javascript objects that you should be familiar with.",
+        ""
+      ],
+      "tests": [
+        "assert(typeof json !== 'undefined')"
+      ],
+      "challengeSeed": [
+        "var json = {",
+        "  name: \"Happy Camper\"",
+        "  age: 35",
+        "  height: \"5ft 8\"",
+        "}"
+      ],
+      "challengeType": 0,
+      "type": "waypoint"
+    },
+    {
+      "id": "bb000000000000000000001",
       "title":  "Trigger on click Events with jQuery",
       "difficulty": 3.19,
       "description": [
@@ -53,7 +76,7 @@
       "type": "waypoint"
     },
     {
-      "id": "bb000000000000000000001",
+      "id": "bb000000000000000000002",
       "title": "Creating HTML from Data from an AJAX request Using jQuery",
       "difficulty": 3.20,
       "description": [
@@ -112,7 +135,7 @@
       "type": "waypoint"
     },
     {
-      "id": "bb000000000000000000002",
+      "id": "bb000000000000000000003",
       "title":  "Convert JSON data to HTML",
       "difficulty": 3.21,
       "description": [
@@ -135,8 +158,7 @@
         ""
       ],
       "tests": [
-        "assert($(\".message\").html() !== '', 'The message box should have something in it')",
-        "assert($(\".message div\").html() !== undefined, 'you should have made created some sort of view from the json data')"
+        "assert($(\".message\").html() !== '', 'The message box should have something in it')"
       ],
       "challengeSeed": [
         "fccss",
@@ -149,9 +171,11 @@
         "       ",
         "       //Add you code to modify the data here. It should add it to the html sting for use in the view",
         "       ",
-        "       ",
-        "       ",
         "       //Don't modify above here",
+        "       ",
+        "       ",
+        "       ",
+        "       //Don't modify below here",
         "       ",
         "          $(\".message\").html(html);",
         "       ",
@@ -186,20 +210,199 @@
       "type": "waypoint"
     },
     {
-      "id": "bb000000000000000000003",
+      "id": "bb000000000000000000004",
+      "title":  "render those images!",
+      "difficulty": 3.22,
+      "description": [
+        "",
+        "instead of just placing everything in a div we should check if the value is an image.",
+        "If it is an image we should use it as an ima tag instead so that the image is rendered",
+        "<code>",
+        "if(key === \"imageLink\"){",
+        "html = html + '&lt;img class = \"' + key + '\"src = \"' + val[key] + '\"&gt;';",
+        "}",
+        "else{",
+        "  html = html + '&lt;div class = \"' + key + '\"&gt;' + val[key] + '&lt;/div&gt;';",
+        "}",
+        "</code>",
+        ""
+      ],
+      "tests": [
+        "assert(editor.match(/imageLink/gi), 'You should have accessed the imageLink of each cat object')"
+      ],
+      "challengeSeed": [
+        "fccss",
+        "$(document).ready(function() {",
+        "   ",
+        "   $(\"#getMessage\").on(\"click\", function() {",
+        "       $.getJSON(\"/json/cats.json?callback=\", function( json ) {",
+        "       ",
+        "       var html = \"\";",
+        "       ",
+        "       //Add you code to modify the data here. It should add it to the html sting for use in the view",
+        "       ",
+        "        json.map(function(val){",
+        "",
+        "          html = html + \"<div class = 'cat'>\"",
+        "",
+        "",
+        "",
+        "          for(var key in val){",
+        "",
+        "          //Don't modify above here",
+        "         ",
+        "         ",
+        "         ",
+        "          //Don't modify below here",
+        "",
+        "          }",
+        "         ",
+        "          html = html + \"</div><br/>\"",
+        "",
+        "        });",
+        "       ",
+        "       //Don't modify above here",
+        "       ",
+        "          $(\".message\").html(html);",
+        "       ",
+        "       });",
+        "   });",
+        "   ",
+        " });",
+        "fcces",
+        "",
+        "<!-- You shouldn't need to modify code below this line -->",
+        "",
+        "<div class=\"container-fluid\">",
+        " <div class = \"row text-center\">",
+        "   <h2>Cat Photo Finder</h2>",
+        " </div>",
+        " <br/>",
+        " <div class = \"row text-center\">",
+        "   <div class = \"col-xs-12 well Message\">",
+        "     The message will go here",
+        "   </div>",
+        " </div>",
+        " <br/>",
+        " <div class = \"row text-center\">",
+        "   <div class = \"col-xs-12\">",
+        "     <button id = \"getMessage\" class = \"btn btn-primary\">",
+        "       Get Message",
+        "     </button>",
+        "   </div>",
+        " </div>",
+        "</div>",
+        ""
+      ],
+      "challengeType": 0,
+      "type": "waypoint"
+    },
+    {
+      "id": "bb000000000000000000005",
       "title":  "Pre-filtering the JSON",
       "difficulty": 3.22,
       "description": [
         "",
-        "If we want to filter the data we have so that we are searching through results based on users inout. It is far more efficient to filter and display a copy of the data we have instead of requesting a new copy each time.",
         "This means we should never hit API limits and it will make the process more efficient.",
+        "Let's try pre-filtering the json before we map it",
+        "We can use the pre-made filter method like this to remove the cat with the id of 1",
+        "<code>",
+        "json = json.filter(function(val){",
+        "  return(val.id !== 1);",
+        "});",
+        "</code>",
         ""
       ],
       "tests": [
-        "/*be assertive!*/"
+        "assert(editor.match(/filter/gi), 'You should be making use of the .filter method')"
       ],
       "challengeSeed": [
-        "TODO: get the result of the previous challenge"
+        "fccss",
+        "$(document).ready(function() {",
+        "   ",
+        "   $(\"#getMessage\").on(\"click\", function() {",
+        "       $.getJSON(\"/json/cats.json?callback=\", function( json ) {",
+        "       ",
+        "       var html = \"\";",
+        "       ",
+        "       //Add you code to modify the data here. It should add it to the html sting for use in the view",
+        "       ",
+        "        json.map(function(val){",
+        "",
+        "            val = \"<img src = '\" + val.imageLink + \"'/>\" ",
+        "",
+        "          html = html + \"<div class = 'cat'>\"",
+        "",
+        "         //Don't modify above here",
+        "         ",
+        "         ",
+        "         ",
+        "         //Don't modify below here",
+        "",
+        "          for(var key in val){",
+        "",
+        "            html = html + '<div class = \"' + key + '\">' + val[key] + '</div>';",
+        "",
+        "          }",
+        "",
+        "         ",
+        "          html = html + \"</div><br/>\"",
+        "",
+        "        });",
+        "       ",
+        "       //Don't modify above here",
+        "       ",
+        "          $(\".message\").html(html);",
+        "       ",
+        "       });",
+        "   });",
+        "   ",
+        " });",
+        "fcces",
+        "",
+        "<!-- You shouldn't need to modify code below this line -->",
+        "",
+        "<div class=\"container-fluid\">",
+        " <div class = \"row text-center\">",
+        "   <h2>Cat Photo Finder</h2>",
+        " </div>",
+        " <br/>",
+        " <div class = \"row text-center\">",
+        "   <div class = \"col-xs-12 well Message\">",
+        "     The message will go here",
+        "   </div>",
+        " </div>",
+        " <br/>",
+        " <div class = \"row text-center\">",
+        "   <div class = \"col-xs-12\">",
+        "     <button id = \"getMessage\" class = \"btn btn-primary\">",
+        "       Get Message",
+        "     </button>",
+        "   </div>",
+        " </div>",
+        "</div>",
+        ""
+      ],
+      "challengeType": 0,
+      "type": "waypoint"
+    },
+    {
+      "id": "bb000000000000000000006",
+      "title":  "Getting Geo-location data for use in APIs",
+      "difficulty": 3.19,
+      "description": [
+        "",
+        "Be descriptive!"
+      ],
+      "tests": [
+        "/*Be Assertive*/')"
+      ],
+      "challengeSeed": [
+        "var json = {",
+        "  name: \"Happy Camper\"",
+        "  age: 35",
+        "  height: \"5ft 8\"",
+        "}"
       ],
       "challengeType": 0,
       "type": "waypoint"
