@@ -392,10 +392,22 @@
       "difficulty": 3.19,
       "description": [
         "",
-        "Be descriptive!"
+        "We can access the users current location by using the built in navigator in the browser.",
+        "The navigator will get the users current longitude and latitude with a decent level of accuracy.",
+        "<code>",
+        "if (navigator.geolocation) {",
+        "  navigator.geolocation.getCurrentPosition(function(position){",
+        "    // Do something in here with the coordinates!",
+        "    ",
+        "    console.log(\"latitiude\", position.coords.latitude);",
+        "    console.log(\"longitude\", position.coords.longitude);",
+        "    ",
+        "  });",
+        "}",
+        "</code>"
       ],
       "tests": [
-        "/*Be Assertive*/')"
+        "assert(editor.match(/navigator\\.geolocation\\.getCurrentPosition/gi), 'you should make use of the <code>navigator.geolocation</code> to access the users current location')"
       ],
       "challengeSeed": [
         "var json = {",
