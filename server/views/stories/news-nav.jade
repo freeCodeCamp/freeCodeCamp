@@ -1,4 +1,10 @@
 .row
+    .col-xs-12.col-sm-9
+        .input-group
+            input#searchArea.big-text-field.field-responsive.form-control(type='text', placeholder='Search our links')
+            span.input-group-btn
+                button#searchbutton.btn.btn-big.btn-primary.btn-responsive(type='button') Search
+        .spacer
     .col-xs-12.col-sm-3
         span
             a.btn.btn-primary.btn-big.btn-block.btn-responsive(href='/stories/submit' class="#{ page === 'hot' ? '' : 'hidden' }") Submit
@@ -6,21 +12,6 @@
             a.btn.btn-success.btn-big.btn-block.btn-responsive(href='/news/' class="#{ (page !== 'hot') ? '' : 'hidden' }") All
         .visible-xs
             .button-spacer
-    .col-xs-12.col-sm-9
-        .input-group
-            input#searchArea.big-text-field.field-responsive.form-control(type='text', placeholder='Search our links')
-            span.input-group-btn
-                button#searchbutton.btn.btn-big.btn-primary.btn-responsive(type='button') Search
-        .spacer
-
-//.spacer
-//.row
-//    .col-xs-12.col-sm-8.col-sm-offset-2.well
-//        h4.text-center Which other free resources do you use?
-//        img.img-responsive(src='https://www.evernote.com/l/AHRNhlwViM1Kh5qCm6iy7MSWrbdyxYbRkWkB/image.png')
-//        p Link us to your favorite free coding resources.
-//        p Use the headline: "Awesome Free Resource: (the name of the book, podcast, or video series)". We'll publish a list of the 25 most-upvoted resources (and the campers who submitted them) in Wednesday's blog post, and in an upcoming Field Guide article. Also - as always - you'll get 1 point every time someone upvotes your post.
-//.spacer
 
 #search-results
 
@@ -53,11 +44,14 @@ script.
                 .fail(function (xhr, textStatus, errorThrown) {
                     $('#search-results').empty();
                     var div = document.createElement("div");
-                    $(div).html("<h3 class='negative-35 text-center text-warning dotted-underline'><em>No Results Found</em></h3>");
+                    $(div).html("<h3 class='text-center text-warning dotted-underline'><em>No Results Found</em></h3>");
                     $(div).appendTo($('#search-results'));
                 })
                 .done(function (data, textStatus, xhr) {
                     $('#search-results').empty();
+                    var spacer = document.createElement('div');
+                    $(spacer).html("<div class='spacer'></div>");
+                    $(spacer).appendTo($('#search-results'));
                     for (var i = 0; i < data.length; i++) {
                         var div = document.createElement('div');
                         var linkedName = getLinkedName(data[i].storyLink);
@@ -84,7 +78,7 @@ script.
                                     "</div>" +
                                     "<div class='col-xs-12'>" +
                                         "<br>" +
-                                        "<a class='btn btn-no-shadow btn-primary btn-block btn-primary-ghost' href='/news/" + linkedName + "'>more info...</a>" +
+                                        "<a class='btn btn-no-shadow btn-primary btn-block btn-primary-ghost' href='/news/" + linkedName + "'>more info</a>" +
                                     "</div>" +
                                 "</div>" +
                             "</div>" +
@@ -103,7 +97,7 @@ script.
                                                 "</a>" +
                                             "</div>" +
                                             "<div class='story-byline col-xs-12 wrappable'>" +
-                                                "<a class='btn btn-no-shadow btn-primary btn-xs btn-primary-ghost' href='/news/" + linkedName + "'>more info...</a> · " +
+                                                "<a class='btn btn-no-shadow btn-primary btn-xs btn-primary-ghost' href='/news/" + linkedName + "'>more info</a> · " +
                                                     rank + (rank > 1 ? " points" : " point") + " · posted " +
                                                     moment(data[i].timePosted).fromNow() +
                                                     " by <a href='/" + data[i].author.username + "'>@" + data[i].author.username +
@@ -117,7 +111,7 @@ script.
                         $(div).appendTo($('#search-results'));
                     }
                     var hr = document.createElement("div");
-                    $(hr).html("<h3 class='negative-35 text-center text-success dotted-underline'><em>End search results</em></h3>")
+                    $(hr).html("<h3 class='text-center text-success dotted-underline'><em>End search results</em></h3>")
                     $(hr).appendTo($('#search-results'));
                 });
     }

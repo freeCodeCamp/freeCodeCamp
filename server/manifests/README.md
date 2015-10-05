@@ -4,5 +4,5 @@ files are generated at runtime and their content is determined by
 the content of the files they are derived from.
 
 Since the build process is not exactly the same on every machine,
-this files are not tracked in github otherwise conflicts arise when
+these files are not tracked in github otherwise conflicts arise when
 building on our servers.

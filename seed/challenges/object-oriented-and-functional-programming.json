@@ -1,6 +1,6 @@
 {
   "name": "Object Oriented and Functional Programming",
-  "order": 0.010,
+  "order": 6,
   "note": [
     "Methods",
     "Closures",
@@ -20,9 +20,9 @@
         "Give your <code>motorBike</code> object a <code>wheels</code>, <code>engines</code> and <code>seats</code> attribute and set them to numbers."
       ],
       "tests":[
-        "assert(typeof(motorBike.engines) === 'number', '<code>engines</code> should be have a <code>engines</code> attribute set to a number.');",
-        "assert(typeof(motorBike.wheels) === 'number', '<code>wheels</code> should be have a <code>engines</code> attribute set to a number.');",
-        "assert(typeof(motorBike.seats) === 'number', '<code>seats</code> should be have a <code>engines</code> attribute set to a number.');"
+        "assert(typeof(motorBike.engines) === 'number', 'message: <code>motorBike</code> should have a <code>engines</code> attribute set to a number.');",
+        "assert(typeof(motorBike.wheels) === 'number', 'message: <code>motorBike</code> should have a <code>wheels</code> attribute set to a number.');",
+        "assert(typeof(motorBike.seats) === 'number', 'message: <code>motorBike</code> should have a <code>seats</code> attribute set to a number.');"
       ],
       "challengeSeed":[
         "//Here is a sample Object",
@@ -54,12 +54,12 @@
       "difficulty":0,
       "description":[
         "We are also able to create objects using <code>constructor</code> functions.",
-        "Give your <code>motorBike</code> object a <code>wheels</code>, <code>engines</code> and <code>seats</code> attribute and set them to numbers."
+        "Give your <code>myMotorBike</code> object a <code>wheels</code>, <code>engines</code> and <code>seats</code> attribute and set them to numbers."
       ],
       "tests":[
-        "assert(typeof((new MotorBike()).engines) === 'number', '<code>engines</code> should be have a <code>engines</code> attribute set to a number.');",
-        "assert(typeof((new MotorBike()).wheels) === 'number', '<code>wheels</code> should be have a <code>engines</code> attribute set to a number.');",
-        "assert(typeof((new MotorBike()).seats) === 'number', '<code>seats</code> should be have a <code>engines</code> attribute set to a number.');"
+        "assert(typeof((new MotorBike()).engines) === 'number', 'message: <code>myMotorBike</code> should have a <code>engines</code> attribute set to a number.');",
+        "assert(typeof((new MotorBike()).wheels) === 'number', 'message: <code>myMotorBike</code> should have a <code>wheels</code> attribute set to a number.');",
+        "assert(typeof((new MotorBike()).seats) === 'number', 'message: <code>myMotorBike</code> should have a <code>seats</code> attribute set to a number.');"
       ],
       "challengeSeed":[
         "// Let's add the properties engines and seats to the car in the same way that the property wheels has been added below. They should both be numbers.",
@@ -98,12 +98,12 @@
         "See if you can keep <code>myBike.speed</code> and <code>myBike.addUnit</code> private, while making <code>myBike.getSpeed</code> publicly accessible."
       ],
       "tests":[
-        "assert(typeof(myBike.getSpeed)!=='undefined' && typeof(myBike.getSpeed) === 'function', 'The method getSpeed of myBike should be accessible outside the object');",
-        "assert(typeof(myBike.speed) === 'undefined', '<code>myBike.speed</code> should remain undefined.');",
-        "assert(typeof(myBike.addUnit) === 'undefined', '<code>myBike.addUnit</code> should remain undefined.');"
+        "assert(typeof(myBike.getSpeed)!=='undefined' && typeof(myBike.getSpeed) === 'function', 'message: The method getSpeed of myBike should be accessible outside the object.');",
+        "assert(typeof(myBike.speed) === 'undefined', 'message: <code>myBike.speed</code> should remain undefined.');",
+        "assert(typeof(myBike.addUnit) === 'undefined', 'message: <code>myBike.addUnit</code> should remain undefined.');"
       ],
       "challengeSeed":[
-        "//Let's create an object with a two functions. One attached as a property and one not.",
+        "//Let's create an object with two functions. One attached as a property and one not.",
         "var Car = function() {",
         "  this.gear = 1;",
         "  function addStyle(styleMe){",
@@ -149,10 +149,10 @@
         "Then you can give the instance new properties."
       ],
       "tests":[
-        "assert((new Car()).wheels === 4, 'The property <code>wheels</code> should still be 4 like in the object constructor');",
-        "assert(typeof((new Car()).engines) === 'undefined', 'There should not be a property engine in the object constructor');",
-        "assert(myCar.wheels === 4, 'The property wheels of myCar should be four');",
-        "assert(typeof(myCar.engines) === 'number', 'The property engine of myCar should be a number');"
+        "assert((new Car()).wheels === 4, 'message: The property <code>wheels</code> should still be 4 like in the object constructor.');",
+        "assert(typeof((new Car()).engines) === 'undefined', 'message: There should not be a property <code>engines</code> in the object constructor.');",
+        "assert(myCar.wheels === 4, 'message: The property <code>wheels</code> of myCar should equal 4.');",
+        "assert(typeof(myCar.engines) === 'number', 'message: The property <code>engines</code> of myCar should be a number.');"
       ],
       "challengeSeed":[
         "var Car = function() {",
@@ -184,9 +184,9 @@
         "Use the map function to add 3 to every value in the variable <code>array</code>"
       ],
       "tests":[
-        "assert.deepEqual(array, [4,5,6,7,8], 'You should have added three to each value in the array');",
-        "assert(editor.getValue().match(/\\.map\\(/gi), 'You should be making use of the map method');",
-        "assert(editor.getValue().match(/\\[1\\,2\\,3\\,4\\,5\\]/gi), 'You should only modify the array with .map');"
+        "assert.deepEqual(array, [4,5,6,7,8], 'message: You should add three to each value in the array.');",
+        "assert(editor.getValue().match(/\\.map\\(/gi), 'message: You should be making use of the map method.');",
+        "assert(editor.getValue().match(/\\[1\\,2\\,3\\,4\\,5\\]/gi), 'message: You should only modify the array with <code>.map</code>.');"
       ],
       "challengeSeed":[
         "//Use map to add three to each value in the array",
@@ -212,8 +212,8 @@
         "<code>});</code>"
       ],
       "tests":[
-        "assert(singleVal == 30, 'singleVal should have been set to the result of you reduce operation');",
-        "assert(editor.getValue().match(/\\.reduce\\(/gi), 'You should have made use of the reduce method');"
+        "assert(singleVal == 30, 'message: <code>singleVal</code> should have been set to the result of you reduce operation.');",
+        "assert(editor.getValue().match(/\\.reduce\\(/gi), 'message: You should have made use of the reduce method.');"
       ],
       "challengeSeed":[
         "var array = [4,5,6,7,8];",
@@ -236,13 +236,13 @@
         "filter is a useful method that can filter out values that don't match a certain criteria",
         "Let's remove all the values greater than five",
         "<code>array = array.filter(function(val) {</code>",
-        "<code>&thinsp;&thinsp;return val<4;</code>",
+        "<code>&thinsp;&thinsp;return val <= 5;</code>",
         "<code>});</code>"
       ],
       "tests":[
-        "assert.deepEqual(array, [1,2,3,4,5], 'You should have removed all the values from the array that are greater than five');",
-        "assert(editor.getValue().match(/array\\.filter\\(/gi), 'You should be using the filter method to remove the values from the array');",
-        "assert(editor.getValue().match(/\\[1\\,2\\,3\\,4\\,5\\,6\\,7\\,8\\,9\\,10\\]/gi), 'You should only be using .filter to modify the contents of the array');"
+        "assert.deepEqual(array, [1,2,3,4], 'message: You should have removed all the values from the array that are greater than 4.');",
+        "assert(editor.getValue().match(/array\\.filter\\(/gi), 'message: You should be using the filter method to remove the values from the array.');",
+        "assert(editor.getValue().match(/\\[1\\,2\\,3\\,4\\,5\\,6\\,7\\,8\\,9\\,10\\]/gi), 'message: You should only be using <code>.filter</code> to modify the contents of the array.');"
       ],
       "challengeSeed":[
         "var array = [1,2,3,4,5,6,7,8,9,10];",
@@ -267,9 +267,9 @@
         "This will return <code>[1, 2, 3]</code>"
       ],
       "tests":[
-        "assert.deepEqual(array, ['alpha', 'beta', 'charlie'], 'You should have sorted the array alphabetically');",
-        "assert(editor.getValue().match(/\\[\\'beta\\'\\,\\s\\'alpha\\'\\,\\s'charlie\\'\\];/gi), 'You should be sorting the array using sort');",
-        "assert(editor.getValue().match(/\\.sort\\(\\)/gi), 'You should have made use of the sort method');"
+        "assert.deepEqual(array, ['alpha', 'beta', 'charlie'], 'message: You should have sorted the array alphabetically.');",
+        "assert(editor.getValue().match(/\\[\\'beta\\'\\,\\s\\'alpha\\'\\,\\s'charlie\\'\\];/gi), 'message: You should be sorting the array using sort.');",
+        "assert(editor.getValue().match(/\\.sort\\(\\)/gi), 'message: You should have made use of the sort method.');"
       ],
       "challengeSeed":[
         "var array = ['beta', 'alpha', 'charlie'];",
@@ -286,14 +286,13 @@
     {
       "id": "cf1111c1c16feddfaeb2bdef",
       "title": "Reverse Arrays with .reverse",
-      "difficulty": 0,
       "description": [
         "You can use the <code>.reverse()</code> function to reverse the contents of an array."
       ],
       "tests": [
-        "assert.deepEqual(array, [7,6,5,4,3,2,1], 'You should reverse the array');",
-        "assert(editor.getValue().match(/\\.reverse\\(\\)/gi), '');",
-        "assert(editor.getValue().match(/\\[1\\,2\\,3\\,4\\,5\\,6\\,7/gi), '');"
+        "assert.deepEqual(array, [7,6,5,4,3,2,1], 'message: You should reverse the array.');",
+        "assert(editor.getValue().match(/\\.reverse\\(\\)/gi), 'message: You should use the reverse method.');",
+        "assert(editor.getValue().match(/\\[1\\,2\\,3\\,4\\,5\\,6\\,7/gi), 'message: You should return <code>[7,6,5,4,3,2,1]</code>.');"
       ],
       "challengeSeed": [
         "var array = [1,2,3,4,5,6,7];",
@@ -310,15 +309,14 @@
     {
       "id": "cf1111c1c16feddfaeb3bdef",
       "title": "Concatenate Strings with .concat",
-      "difficulty": 0,
       "description": [
         "<code>.concat()</code> can be used to merge the contents of two arrays into one.",
         "<code>array = array.concat(otherArray);</code>"
       ],
       "tests": [
-        "assert.deepEqual(array, [1,2,3,4,5,6], 'You should concat the two arrays together');",
-        "assert(editor.getValue().match(/\\.concat\\(/gi), 'You should be using the concat method to merge the two arrays');",
-        "assert(editor.getValue().match(/\\[1\\,2\\,3\\]/gi) && editor.getValue().match(/\\[4\\,5\\,6\\]/gi), 'You should only modify the two arrays without changing the origional ones');"
+        "assert.deepEqual(array, [1,2,3,4,5,6], 'You should concat the two arrays together.');",
+        "assert(editor.getValue().match(/\\.concat\\(/gi), 'message: You should be use the concat method to merge the two arrays.');",
+        "assert(editor.getValue().match(/\\[1\\,2\\,3\\]/gi) && editor.getValue().match(/\\[4\\,5\\,6\\]/gi), 'message: You should only modify the two arrays without changing the origional ones.');"
       ],
       "challengeSeed": [
         "var array = [1,2,3];",
@@ -344,8 +342,8 @@
         "<code>array = string.split(' ');</code>"
       ],
       "tests":[
-        "assert(typeof(array) === 'object' && array.length === 5, 'You should have split the string by it\\'s spaces');",
-        "assert(/\\.split\\(/gi, 'You should have made use of the split method on the string');"
+        "assert(typeof(array) === 'object' && array.length === 5, 'message: You should split the string by its spaces.');",
+        "assert(/\\.split\\(/gi, 'message: You should use the split method on the string.');"
       ],
       "challengeSeed":[
         "var string = \"Split me into an array\";",
@@ -368,8 +366,8 @@
         "<code>var joinMe = joinMe.join(\" \");</code>"
       ],
       "tests":[
-        "assert(typeof(joinMe) === 'string' && joinMe === \"Split me into an array\", 'You should have joined the arrays by it\\'s spaces');",
-        "assert(/\\.join\\(/gi, 'You should have made use of the join method on the array');"
+        "assert(typeof(joinMe) === 'string' && joinMe === \"Split me into an array\", 'message: You should join the arrays by their spaces.');",
+        "assert(/\\.join\\(/gi, 'message: You should use of the join method on the array.');"
       ],
       "challengeSeed":[
         "var joinMe = [\"Split\",\"me\",\"into\",\"an\",\"array\"];",

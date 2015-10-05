@@ -1,4 +1,4 @@
-<img src="https://s3.amazonaws.com/freecodecamp/wide-social-banner.png">
+![](https://s3.amazonaws.com/freecodecamp/wide-social-banner.png)
 
 [![Throughput Graph](https://graphs.waffle.io/freecodecamp/freecodecamp/throughput.svg)](https://waffle.io/freecodecamp/freecodecamp/metrics)
 
@@ -7,7 +7,7 @@
 Welcome to Free Code Camp's open source codebase!
 =======================
 
-Free Code Camp is an open-source community of busy people who learn to code, then build projects for nonprofits.
+Free Code Camp is an open-source community of busy people who learn to code and build projects for nonprofits.
 
 Our campers (students) start by working through our free, self-paced, browser-based curriculum. Next, they build several practice projects. Finally, we pair two campers together with a stakeholder from a nonprofit organization, and help them build the solution the nonprofit has requested.
 
@@ -24,7 +24,7 @@ This code is running live at [FreeCodeCamp.com](http://www.FreeCodeCamp.com). We
 Wiki
 ------------
 
-We would love your help expanding our [wiki](https://github.com/freecodecamp/freecodecamp/wiki) with more information about learning to code and getting a coding job.
+We would love your help expanding our [wiki](https://github.com/freecodecamp/freecodecamp/wiki). Our goal is to become a great resource for people learning to code, building local coding communities, and applying for coding jobs.
 
 Contributing
 ------------
@@ -35,10 +35,9 @@ We welcome pull requests from Free Code Camp campers (our students) and seasoned
 2.  Pick an issue that nobody has claimed and start working on it. If your issue isn't on the board, open an issue. If you think you can fix it yourself, start working on it. Feel free to ask for help in our [Gitter](https://gitter.im/FreeCodeCamp/FreeCodeCamp).
 3.  Fork the project ([Need help with forking a project?](https://help.github.com/articles/fork-a-repo/)). You'll do all of your work on your forked copy.
 4.  Create a branch specific to the issue or feature you are working on. Push your work to that branch. ([Need help with branching?](https://github.com/Kunena/Kunena-Forum/wiki/Create-a-new-branch-with-git-and-manage-branches))
-5.  Name the branch something like  `user-xxx` where user is your username and xxx is the issue number you are addressing.
-6.  You should have [ESLint running in your editor](http://eslint.org/docs/user-guide/integrations.html), and it will highlight anything doesn't conform to [AirBnB's JavaScript Style Guide](https://github.com/airbnb/javascript).  Please do not ignore any linting errors, as they are meant to **help** you. Make sure none of your JavaScript is longer than 80 characters per line.
-7.  Once your code is ready, submit a pull request from your branch to Free Code Camp's `staging` branch. We'll do a quick code review and give you feedback, then iterate from there.
-8.  Once we accept one of your pull requests, one of the project owners (currently @quincylarson, @terakilobyte, and @berkeleytrue) will add you to our camper contributor group.
+5.  Name the branch something like `fix/xxx` or `feature/xxx` where `xxx` is a short description of the changes or feature you are attempting to add. For example `fix/email-login` would be a branch where I fix something specific to email login.
+6.  You should have [ESLint running in your editor](http://eslint.org/docs/user-guide/integrations.html), and it will highlight anything doesn't conform to [Free Code Camp's JavaScript Style Guide](https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/Free-Code-Camp-JavaScript-Style-Guide) (you can find a summary of those rules [here](https://github.com/FreeCodeCamp/FreeCodeCamp/blob/staging/.eslintrc). Please do not ignore any linting errors, as they are meant to **help** you and to ensure a clean and simple code base. Make sure none of your JavaScript is longer than 80 characters per line.
+7.  Once your code is ready, submit a [pull request](https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/Pull-Request-Contribute) from your branch to Free Code Camp's `staging` branch. We'll do a quick code review and give you feedback, then iterate from there. It may also be helpful to read about git [rebasing](https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/git-rebase).
 
 Prerequisites
 -------------
@@ -70,10 +69,9 @@ touch .env
 npm install -g gulp
 ```
 
-Edit your .env file with the following API keys accordingly (if you only use email login, only the MONGOHQ_URL, SESSION_SECRET, MANDRILL_USER and MANDRILL_PASSWORD fields are necessary. Keep in mind if you want to use more services you'll have to get your own API keys for those services.
+Edit your `.env` file with the following API keys accordingly (if you only use email login, only the `MONGOHQ_URL`, `SESSION_SECRET`, `MANDRILL_USER` and `MANDRILL_PASSWORD` fields are necessary. Keep in mind if you want to use more services you'll have to get your own API keys for those services.
 
 ```
-
 MONGOHQ_URL='mongodb://localhost:27017/freecodecamp'
 
 FACEBOOK_ID=stuff
@@ -106,16 +104,14 @@ COOKIE_SECRET='this is a secret'
 
 PEER=stuff
 DEBUG=true
-
 ```
 
 ```bash
-
 # Start the mongo server
 mongod
 
-# Create your mongo database. 
-# Type "mongo" in your terminal to access the mongo shell 
+# Create your mongo database.
+# Type "mongo" in your terminal to access the mongo shell
 use freecodecamp
 # Exit the mongo shell with control + d
 
@@ -124,7 +120,6 @@ node seed/
 
 # start the application
 gulp
-
 ```
 
 License
