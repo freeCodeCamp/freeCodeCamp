@@ -103,7 +103,7 @@
         "assert(typeof(myBike.addUnit) === 'undefined', 'message: <code>myBike.addUnit</code> should remain undefined.');"
       ],
       "challengeSeed":[
-        "//Let's create an object with a two functions. One attached as a property and one not.",
+        "//Let's create an object with two functions. One attached as a property and one not.",
         "var Car = function() {",
         "  this.gear = 1;",
         "  function addStyle(styleMe){",
