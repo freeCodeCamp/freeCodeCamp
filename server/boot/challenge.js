@@ -183,9 +183,9 @@ module.exports = function(app) {
                 'could not find challenge block for ' + challenge.block
               );
             }
-            const nextBlock$ = blocks$.elementAt(blockIndex + 1);
-            const firstChallengeOfNextBlock$ = nextBlock$
-              .map(block => block.challenges[0]);
+            const firstChallengeOfNextBlock$ = blocks$
+              .elementAtOrDefault(blockIndex + 1, {})
+              .map(({ challenges = [] }) => challenges[0]);
 
             return blocks$
               .elementAt(blockIndex)
@@ -214,6 +214,9 @@ module.exports = function(app) {
           });
       })
       .map(nextChallenge => {
+        if (!nextChallenge) {
+          return null;
+        }
         nextChallengeName = nextChallenge.dashedName;
         return nextChallengeName;
       })
