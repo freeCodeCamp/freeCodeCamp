@@ -1,7 +1,7 @@
 language: node_js
 
-services:
-  - mongodb
-
 node_js:
-  - '0.10'
+  - 'node'
+  - '1.6.4'
+
+sudo: false
