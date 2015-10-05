@@ -396,13 +396,12 @@
         "The navigator will get the users current longitude and latitude with a decent level of accuracy.",
         "<code>",
         "if (navigator.geolocation) {",
-        "  navigator.geolocation.getCurrentPosition(function(position){",
-        "    // Do something in here with the coordinates!",
-        "    ",
-        "    console.log(\"latitiude\", position.coords.latitude);",
-        "    console.log(\"longitude\", position.coords.longitude);",
-        "    ",
-        "  });",
+        "&thinsp;&thinsp;navigator.geolocation.getCurrentPosition(function(position){",
+        "&thinsp;&thinsp;&thinsp;&thinsp;// Do something in here with the coordinates!",
+        "&thinsp;&thinsp;&thinsp;&thinsp;",
+        "&thinsp;&thinsp;&thinsp;&thinsp;$(\"#data\").html(\"latitiude\" + position.coords.latitude + \"longitude\" + position.coords.longitude);",
+        "&thinsp;&thinsp;&thinsp;&thinsp;",
+        "&thinsp;&thinsp;});",
         "}",
         "</code>"
       ],
@@ -410,11 +409,13 @@
         "assert(editor.match(/navigator\\.geolocation\\.getCurrentPosition/gi), 'you should make use of the <code>navigator.geolocation</code> to access the users current location')"
       ],
       "challengeSeed": [
-        "var json = {",
-        "  name: \"Happy Camper\"",
-        "  age: 35",
-        "  height: \"5ft 8\"",
-        "}"
+        "fccss",
+        "",
+        "fcces",
+        "<div id = \"data\">",
+        "  <h4>You are here!</h4>",
+        "  ",
+        "</div>"
       ],
       "challengeType": 0,
       "type": "waypoint"
