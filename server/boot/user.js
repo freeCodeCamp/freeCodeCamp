@@ -249,42 +249,6 @@ module.exports = function(app) {
     );
   }
 
-  function postUpdatePassword(req, res, next) {
-    req.assert('password', 'Password must be at least 4 characters long')
-      .len(4);
-
-    var errors = req.validationErrors();
-
-    if (errors) {
-      req.flash('errors', errors);
-      return res.redirect('/account');
-    }
-
-    User.findById(req.user.id, function(err, user) {
-      if (err) { return next(err); }
-
-      user.password = req.body.password;
-
-      user.save(function(err) {
-        if (err) { return next(err); }
-
-        req.flash('success', { msg: 'Password has been changed.' });
-        res.redirect('/account');
-      });
-    });
-  }
-
-  function postDeleteAccount(req, res, next) {
-    User.destroyById(req.user.id, function (err) {
-      if (err) {
-        return next(err);
-      }
-      req.logout();
-      req.flash('info', {msg: 'Your account has been deleted.'});
-      res.redirect('/');
-    });
-  }
-
   function showCert(req, res, next) {
     const username = req.params.username.toLowerCase();
     const { user } = req;
