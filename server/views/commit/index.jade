@@ -13,16 +13,18 @@ block content
                         img.img-responsive(src='http://i.imgur.com/U1CyEuA.jpg' alt="Girl Develop It participants coding at tables.")
                         p Girl Develop It is a nonprofit that provides in-person classes for women to learn to code.
                 .spacer
-            form.form
+            form.form(name='commit')
+                .hidden
+                    input(type='text' value='girl develop it' name='nonprofit')
                 .row
                     .col-xs-12.col-sm-6.col-sm-offset-3
                         h4 Step 1: Choose your goal
                         .btn-group.btn-group-justified(data-toggle='buttons' role='group')
                             label.btn.btn-info.active
-                                input(type='radio' id='front-end-development-certificate' name='goal')
+                                input(type='radio' id='front-end-development-certificate' value='front end certification' name='goal' checked="checked")
                                 | Front End Development Certificate (takes about 400 hours)
                             label.btn.btn-info
-                                input(type='radio' id='full-stack-development-certificate' name='goal')
+                                input(type='radio' id='full-stack-development-certificate' value='full stack certification' name='goal')
                                 | Full Stack Development Certificate (takes about 800 hours)
                     .spacer
                 .row
@@ -30,19 +32,25 @@ block content
                         h4 Step 2: Choose how much you want to donate each month
                         .btn-group.btn-group-justified(data-toggle='buttons' role='group')
                             label.btn.btn-primary
-                                input(type='radio' id='5-dollar-pledge' name='pledge-amount')
+                                input(type='radio' id='5-dollar-pledge' value='5' name='amount')
                                 | $5 per month
                             label.btn.btn-primary.active
-                                input(type='radio' id='10-dollar-pledge' name='pledge-amount')
+                                input(type='radio' id='10-dollar-pledge' value='10' name='amount' checked="checked")
                                 | $10 per month
                             label.btn.btn-primary
-                                input(type='radio' id='50-dollar-pledge' name='pledge-amount')
+                                input(type='radio' id='50-dollar-pledge' value='50' name='amount')
                                 | $50 per month
                     .spacer
                 .row
                     .col-xs-12.col-sm-6.col-sm-offset-3
                         h4 Step 3: Commit
-                        a.btn.btn-block.btn-primary(href='https://www.girldevelopit.com/donate') Commit
+                        a#commit-btn-submit.btn.btn-block.btn-primary(href='https://www.girldevelopit.com/donate' target='_blank') Commit
                         .button-spacer
                         a.btn.btn-block.btn-warning(href='/') Maybe later
                         .spacer
+    script.
+      $(function() {
+        $('#commit-btn-submit').click(function() {
+          window.location.href = '/commit/pledge?' + $('form').serialize();
+        });
+      });
