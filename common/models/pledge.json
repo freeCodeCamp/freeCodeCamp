@@ -1,0 +1,54 @@
+{
+  "name": "pledge",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "trackChanges": false,
+  "properties": {
+    "nonprofit": {
+      "type": "string"
+    },
+    "amount": {
+      "type": "number"
+    },
+    "dateStarted": {
+      "type": "date",
+      "defaultFn": "now"
+    },
+    "dateEnded": {
+      "type": "date"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "camper": {
+      "type": "hasMany",
+      "model": "user"
+    }
+  },
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    },
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": [],
+  "indexes": {
+    "nonprofit_amount":{
+      "keys": {
+        "nonprofit": 1,
+        "amount": 1
+      },
+      "options": {
+        "unique": true
+      }
+    }
+  }
+}
