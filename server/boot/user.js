@@ -4,6 +4,10 @@ import moment from 'moment';
 import { Observable } from 'rx';
 import debugFactory from 'debug';
 
+import {
+  frontEndChallangeId,
+  fullStackChallangeId
+} from '../utils/constantStrings.json';
 import { ifNoUser401, ifNoUserRedirectTo } from '../utils/middleware';
 import { observeQuery } from '../utils/rx';
 
@@ -270,14 +274,42 @@ module.exports = function(app) {
             });
             return res.redirect('/');
           }
+          if (!user.isGithubCool) {
+            req.flash('errors', {
+              msg: dedent`
+                This user needs to link GitHub with their account
+                in order to display this certificate to the public.
+              `
+            });
+            return res.redirect('back');
+          }
+          if (user.isLocked) {
+            req.flash('errors', {
+              msg: dedent`
+                ${username} has chosen to hide their work from the public.
+                They need to unhide their work in order for this certificate to
+                be verifiable.
+              `
+            });
+            return res.redirect('back');
+          }
+          if (!user.isHonest) {
+            req.flash('errors', {
+              msg: dedent`
+                ${username} has not agreed to our Academic Honesty Pledge yet.
+              `
+            });
+            return res.redirect('back');
+          }
+
           if (
             showFront && user.isFrontEndCert ||
             !showFront && user.isFullStackCert
           ) {
             var { completedDate } = _.find(user.completedChallenges, {
               id: showFront ?
-                '561add10cb82ac38a17513be' :
-                '660add10cb82ac38a17513be'
+                frontEndChallangeId :
+                fullStackChallangeId
             });
 
             return res.render(
