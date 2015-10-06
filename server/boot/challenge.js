@@ -267,12 +267,13 @@ module.exports = function(app) {
         }
 
         if (dasherize(challenge.name) !== origChallengeName) {
-          return Observable.just(
-            '/challenges/' +
-            dasherize(challenge.name) +
-            '?solution=' +
-            encodeURIComponent(solutionCode)
-          );
+          let redirectUrl = `/challenges/${dasherize(challenge.name)}`;
+
+          if (solutionCode) {
+            redirectUrl += `?solution=${encodeURIComponent(solutionCode)}`;
+          }
+
+          return Observable.just(redirectUrl);
         }
 
         // save user does nothing if user does not exist
