@@ -212,7 +212,7 @@
         "<code>});</code>"
       ],
       "tests":[
-        "assert(singleVal == 30, 'message: <code>singleVal</code> should have been set to the result of you reduce operation.');",
+        "assert(singleVal == 30, 'message: <code>singleVal</code> should have been set to the result of your reduce operation.');",
         "assert(editor.getValue().match(/\\.reduce\\(/gi), 'message: You should have made use of the reduce method.');"
       ],
       "challengeSeed":[
