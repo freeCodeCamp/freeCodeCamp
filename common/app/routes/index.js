@@ -3,12 +3,8 @@ import Hikes from './Hikes';
 
 export default {
   path: '/',
-  getChildRoutes(locationState, cb) {
-    setTimeout(() => {
-      cb(null, [
-        Jobs,
-        Hikes
-      ]);
-    }, 0);
-  }
+  childRoutes: [
+    Jobs,
+    Hikes
+  ]
 };

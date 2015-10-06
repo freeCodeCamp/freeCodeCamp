@@ -1,11 +1,10 @@
 {
   "name": "HTML5 and CSS",
-  "order": 0.002,
+  "order": 2,
   "challenges": [
     {
       "id": "bd7123c8c441eddfaeb5bdef",
       "title": "Say Hello to HTML Elements",
-      "difficulty": 1.01,
       "description": [
         "Welcome to Free Code Camp's first coding challenge!",
         "You can edit <code>code</code> in your <code>text editor</code>, which we've embedded into this web page.",
@@ -54,8 +53,9 @@
     {
       "id": "bad87fee1348bd9aedf0887a",
       "title": "Headline with the h2 Element",
-      "difficulty": 1.02,
       "description": [
+        "Over the next few challenges, we'll build an HTML5 app that will look something like this:",
+        "<a href=\"http://i.imgur.com/jOc1JF1.png\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" src=\"http://i.imgur.com/jOc1JF1.png\" title=\"Click to enlarge\" alt=\"A screen shot of our finished Cat Photo App\"></a>",
         "Add an <code>h2</code> tag that says \"CatPhotoApp\" to create a second HTML <code>element</code> below your \"Hello World\" <code>h1</code> element.",
         "The <code>h2</code> element you enter will create an <code>h2</code> element on the website.",
         "This element tells the browser how to render the text that it contains.",
@@ -98,7 +98,6 @@
     {
       "id": "bad87fee1348bd9aedf08801",
       "title": "Inform with the Paragraph Element",
-      "difficulty": 1.03,
       "description": [
         "Create a <code>p</code> element below your <code>h2</code> element, and give it the text \"Hello Paragraph\".",
         "<code>p</code> elements are the preferred element for normal-sized paragraph text on websites. P is short for \"paragraph\".",
@@ -139,7 +138,6 @@
     {
       "id": "bad87fee1348bd9aedf08802",
       "title": "Uncomment HTML",
-      "difficulty": 1.04,
       "description": [
         "Uncomment your <code>h1</code>, <code>h2</code> and <code>p</code> elements.",
         "Commenting is a way that you can leave comments within your code without affecting the code itself.",
@@ -189,7 +187,6 @@
     {
       "id": "bad87fee1348bd9aedf08804",
       "title": "Comment out HTML",
-      "difficulty": 1.05,
       "description": [
         "Comment out your <code>h1</code> element and your <code>p</code> element, but leave your <code>h2</code> element uncommented.",
         "Remember that in order to start a comment, you need to use <code>&#60;!--</code> and to end a comment, you need to use <code>--&#62;</code>.",
@@ -236,7 +233,6 @@
     {
       "id": "bad87fee1348bd9aedf08833",
       "title": "Fill in the Blank with Placeholder Text",
-      "difficulty": 1.06,
       "description": [
         "Web developers traditionally use <code>lorem ipsum text</code> as placeholder text. It's called <code>lorem ipsum text</code> because those are the first two words of a famous passage by Cicero of Ancient Rome.",
         "<code>lorem ipsum text</code> has been used as placeholder text by typesetters since the 16th century, and this tradition continues on the web.",
@@ -283,7 +279,6 @@
     {
       "id": "bad87fed1348bd9aedf08833",
       "title": "Delete HTML Elements",
-      "difficulty": 1.07,
       "description": [
         "Delete your <code>h1</code> element so we can simplify our view.",
         "Our phone doesn't have much vertical space.",
@@ -327,7 +322,6 @@
     {
       "id": "bad87fee1348bd9aedf08803",
       "title": "Change the Color of Text",
-      "difficulty": 1.08,
       "description": [
         "Change your <code>h2</code> element's style so that its text color is red.",
         "We can do this by changing the \"style\" of your <code>h2</code> element.",
@@ -369,7 +363,6 @@
     {
       "id": "bad87fee1348bd9aedf08805",
       "title": "Use CSS Selectors to Style Elements",
-      "difficulty": 1.09,
       "description": [
         "Delete your <code>h2</code> element's style attribute and instead create a CSS <code>style</code> element. Add the necessary CSS to turn all <code>h2</code> elements blue.",
         "With CSS, there are hundreds of CSS <code>properties</code> that you can use to change the way an element looks on your page.",
@@ -424,7 +417,6 @@
     {
       "id": "bad87fee1348bd9aecf08806",
       "title": "Use a CSS Class to Style an Element",
-      "difficulty": 1.11,
       "description": [
         "Create a CSS class called <code>red-text</code> and apply it to your <code>h2</code> element.",
         "Classes are reusable styles that can be added to HTML elements.",
@@ -491,7 +483,6 @@
     {
       "id": "bad87fee1348bd9aefe08806",
       "title": "Style Multiple Elements with a CSS Class",
-      "difficulty": 1.12,
       "description": [
         "Apply the <code>red-text</code> class to your <code>h2</code> and <code>p</code> elements.",
         "Remember that you can attach classes to HTML elements by using <code>class=\"your-class-here\"</code> within the relevant element's opening tag.",
@@ -540,7 +531,6 @@
     {
       "id": "bad87fee1348bd9aedf08806",
       "title": "Change the Font Size of an Element",
-      "difficulty": 1.13,
       "description": [
         "Create a second <code>p</code> element with the following <code>kitty ipsum text</code>: <code>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</code>",
         "Then, inside your <code>&#60;style&#62;</code> element, set the <code>font-size</code> of all <code>p</code> elements to 16 pixels.",
@@ -593,7 +583,6 @@
     {
       "id": "bad87fee1348bd9aede08807",
       "title": "Set the Font Family of an Element",
-      "difficulty": 1.14,
       "description": [
         "Make all of your <code>p</code> elements use the <code>Monospace</code> font.",
         "You can set an element's font by using the <code>font-family</code> property.",
@@ -640,7 +629,6 @@
     {
       "id": "bad87fee1348bd9aedf08807",
       "title": "Import a Google Font",
-      "difficulty": 1.15,
       "description": [
         "Apply the <code>font-family</code> of <code>Lobster</code> to your <code>h2</code> element.",
         "First, you'll need to make a <code>call</code> to Google to grab the <code>Lobster</code> font and load it into your HTML.",
@@ -694,7 +682,6 @@
     {
       "id": "bad87fee1348bd9aedf08808",
       "title": "Specify How Fonts Should Degrade",
-      "difficulty": 1.16,
       "description": [
         "There are several default fonts that are available in all browsers. These include <code>Monospace</code>, <code>Serif</code> and <code>Sans-Serif</code>. Leave <code>Lobster</code> as the font-family for your <code>h2</code> elements. Make them \"degrade\" to <code>Monospace</code> when <code>Lobster</code> isn't available.",
         "For example, if you wanted an element to use the <code>Helvetica</code> font, but also degrade to the <code>Sans-Serif</code> font when <code>Helvetica</code> wasn't available, you could use this CSS style: <code>p { font-family: Helvetica, Sans-Serif; }</code>.",
@@ -752,7 +739,6 @@
     {
       "id": "bad87fee1348bd9aedf08812",
       "title": "Add Images to your Website",
-      "difficulty": 1.17,
       "description": [
         "You can add images to your website by using the <code>img</code> element, and point to a specific image's URL using the <code>src</code> attribute.",
         "An example of this would be <code>&#60img src=\"http://www.your-image-source.com/your-image.jpg\"&#62</code>. Note that in most cases, <code>img</code> elements are self-closing.",
@@ -807,7 +793,6 @@
     {
       "id": "bad87fee1348bd9acdf08812",
       "title": "Size your Images",
-      "difficulty": 1.18,
       "description": [
         "CSS has a property called <code>width</code> that controls an element's width. Just like with fonts, we'll use <code>px</code> (pixels) to specify the image's width.",
         "For example, if we wanted to create a CSS class called <code>larger-image</code> that gave HTML elements a width of 500 pixels, we'd use: <code>&#60;style&#62; .larger-image { width: 500px; } &#60;/style&#62;</code>.",
@@ -863,7 +848,6 @@
     {
       "id": "bad87fee1348bd9bedf08813",
       "title": "Add Borders Around your Elements",
-      "difficulty": 1.19,
       "description": [
         "CSS borders have properties like <code>style</code>, <code>color</code> and <code>width</code>.",
         "For example, if we wanted to create a red, 5 pixel border around an HTML element, we could use this class: <code>&#60;style&#62; .thin-red-border { border-color: red; border-width: 5px; border-style: solid; } &#60;/style&#62;</code>.",
@@ -927,7 +911,6 @@
     {
       "id": "bad87fee1348bd9aedf08814",
       "title": "Add Rounded Corners with a Border Radius",
-      "difficulty": 1.20,
       "description": [
         "Your cat photo currently has sharp corners. We can round out those corners with a CSS property called <code>border-radius</code>.",
         "You can specify a <code>border-radius</code> with pixels. This will affect how rounded the corners are. Add this property to your <code>thick-green-border</code> class and set it to <code>10px</code>.",
@@ -993,7 +976,6 @@
     {
       "id": "bad87fee1348bd9aedf08815",
       "title": "Make Circular Images with a Border Radius",
-      "difficulty": 1.21,
       "description": [
         "In addition to pixels, you can also specify a <code>border-radius</code> using a percentage.",
         "Give your cat photo a <code>border-radius</code> of <code>50%</code>."
@@ -1058,7 +1040,6 @@
     {
       "id": "bad87fee1348bd9aedf08816",
       "title": "Link to External Pages with Anchor Elements",
-      "difficulty": 1.22,
       "description": [
         "<code>a</code> elements, also known as <code>anchor</code> elements, are used to link to content outside of the current page.",
         "Here's a diagram of an <code>a</code> element. In this case, the <code>a</code> element is used in the middle of a paragraph element, which means the link will appear in the middle of a sentence.",
@@ -1129,7 +1110,6 @@
     {
       "id": "bad87fee1348bd9aede08817",
       "title": "Nest an Anchor Element within a Paragraph",
-      "difficulty": 1.23,
       "description": [
         "Again, here's a diagram of an <code>a</code> element for your reference:",
         "<a href=\"http://i.imgur.com/hviuZwe.png\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" title=\"Click to enlarge\" alt=\"a diagram of how anchor tags are composed with the same text as on the following line\" src=\"http://i.imgur.com/hviuZwe.png\"></a>",
@@ -1142,7 +1122,8 @@
         "assert($(\"a\").text().match(/cat\\sphotos/gi), 'Your <code>a</code> element should have the anchor text of \"cat photos\"')",
         "assert($(\"p\") && $(\"p\").length > 2, 'Create a new <code>p</code> element around your <code>a</code> element.')",
         "assert($(\"a[href=\\\"http://www.freecatphotoapp.com\\\"]\").parent().is(\"p\"), 'Your <code>a</code> element should be nested within your new <code>p</code> element.')",
-        "assert($(\"p\").text().match(/View\\smore/gi), 'Your <code>p</code> element should have the text \"View more\".')",
+        "assert($(\"p\").text().match(/^View\\smore\\s/gi), 'Your <code>p</code> element should have the text \"View more \" (with a space after it).')",
+        "assert(!$(\"a\").text().match(/View\\smore/gi), 'Your <code>a</code> element should <em>not</em> have the text \"View more\".')",
         "assert(editor.match(/<\\/p>/g) && editor.match(/<p/g) && editor.match(/<\\/p>/g).length === editor.match(/<p/g).length, 'Make sure each of your <code>p</code> elements has a closing tag.')",
         "assert(editor.match(/<\\/a>/g) && editor.match(/<a/g) && editor.match(/<\\/a>/g).length === editor.match(/<a/g).length, 'Make sure each of your <code>a</code> elements has a closing tag.')"
       ],
@@ -1205,7 +1186,6 @@
     {
       "id": "bad87fee1348bd9aedf08817",
       "title": "Make Dead Links using the Hash Symbol",
-      "difficulty": 1.24,
       "description": [
         "Sometimes you want to add <code>a</code> elements to your website before you know where they will link.",
         "This is also handy when you're changing the behavior of a link using <code>jQuery</code>, which we'll learn about later.",
@@ -1274,7 +1254,6 @@
     {
       "id": "bad87fee1348bd9aedf08820",
       "title": "Turn an Image into a Link",
-      "difficulty": 1.25,
       "description": [
         "You can make elements into links by nesting them within an <code>a</code> element.",
         "Nest your image within an <code>a</code> element. Here's an example: <code>&#60;a href=\"#\"&#62;&#60;img src=\"http://bit.ly/fcc-running-cats\"/&#62;&#60;/a&#62;</code>.",
@@ -1347,7 +1326,6 @@
     {
       "id": "bad87fee1348bd9aedf08818",
       "title": "Add Alt Text to an Image for Accessibility",
-      "difficulty": 1.26,
       "description": [
         "<code>alt</code> attributes, also known as <code>alt text</code>, are what browsers will display if they fail to load the image. <code>alt</code> attributes are also important for blind or visually impaired users to understand what an image portrays. And search engines also look at <code>alt</code> attributes.",
         "In short, every image should have an <code>alt</code> attribute!",
@@ -1418,7 +1396,6 @@
     {
       "id": "bad87fee1348bd9aedf08827",
       "title": "Create a Bulleted Unordered List",
-      "difficulty": 1.27,
       "description": [
         "HTML has a special element for creating <code>unordered lists</code>, or bullet point-style lists.",
         "Unordered lists start with a <code>&#60;ul&#62;</code> element. Then they contain some number of <code>&#60;li&#62;</code> elements.",
@@ -1496,7 +1473,6 @@
     {
       "id": "bad87fee1348bd9aedf08828",
       "title": "Create an Ordered List",
-      "difficulty": 1.28,
       "description": [
         "HTML has a special element for creating <code>ordered lists</code>, or numbered-style lists.",
         "Ordered lists start with a <code>&#60;ol&#62;</code> element. Then they contain some number of <code>&#60;li&#62;</code> elements.",
@@ -1582,7 +1558,6 @@
     {
       "id": "bad87fee1348bd9aedf08829",
       "title": "Create a Text Field",
-      "difficulty": 1.29,
       "description": [
         "Now let's create a web <code>form</code>.",
         "Text inputs are a convenient way to get input from your user.",
@@ -1661,7 +1636,6 @@
     {
       "id": "bad87fee1348bd9aedf08830",
       "title": "Add Placeholder Text to a Text Field",
-      "difficulty": 1.30,
       "description": [
         "Your placeholder text is what appears in your text <code>input</code> before your user has inputed anything.",
         "You can create placeholder text like so: <code>&#60;input type=\"text\" placeholder=\"this is placeholder text\"&#62;</code>.",
@@ -1741,7 +1715,6 @@
     {
       "id": "bad87fee1348bd9aede08830",
       "title": "Create a Form Element",
-      "difficulty": 1.31,
       "description": [
         "You can build web forms that actually submit data to a server using nothing more than pure HTML. You can do this by specifying an action on your <code>form</code> element.",
         "For example: <code>&#60;form action=\"/url-where-you-want-to-submit-form-data\"&#62;&#60;/form&#62;</code>.",
@@ -1822,7 +1795,6 @@
     {
       "id": "bad87fee1348bd9aedd08830",
       "title": "Add a Submit Button to a Form",
-      "difficulty": 1.32,
       "description": [
         "Let's add a <code>submit</code> button to your form. Clicking this button will send the data from your form to the URL you specified with your form's <code>action</code> attribute.",
         "Here's an example submit button: <code>&#60;button type=\"submit\"&#62;this button submits the form&#60;/button&#62;</code>.",
@@ -1906,7 +1878,6 @@
     {
       "id": "bad87fee1348bd9aedc08830",
       "title": "Use HTML5 to Require a Field",
-      "difficulty": 1.33,
       "description": [
         "You can require specific form fields so that your user will not be able to submit your form until he or she has filled them out.",
         "For example, if you wanted to make a text input field required, you can just add the word <code>required</code> within your <code>input</code> element, you would use: <code>&#60;input type=\"text\" required&#62;</code>.",
@@ -1988,7 +1959,6 @@
     {
       "id": "bad87fee1348bd9aedf08834",
       "title": "Create a Set of Radio Buttons",
-      "difficulty": 1.34,
       "description": [
         "You can use <code>radio buttons</code> for questions where you want the user to only give you one answer.",
         "Radio buttons are a type of <code>input</code>.",
@@ -2081,7 +2051,6 @@
     {
       "id": "bad87fee1348bd9aedf08835",
       "title": "Create a Set of Checkboxes",
-      "difficulty": 1.35,
       "description": [
         "Forms commonly use <code>checkboxes</code> for questions that may have more than one answer.",
         "Checkboxes are a type of <code>input</code>.",
@@ -2171,7 +2140,6 @@
     {
       "id": "bad87fee1348bd9aedd08835",
       "title": "Check Radio Buttons and Checkboxes by Default",
-      "difficulty": 1.37,
       "description": [
         "You can set a checkbox or radio button to be checked by default using the <code>checked</code> attribute.",
         "To do this, just add the word \"checked\" to the inside of an input element. For example, <code>&#60;input type=\"radio\" name=\"test-name\" checked&#62;</code>.",
@@ -2259,7 +2227,6 @@
     {
       "id": "bad87fee1348bd9aede08835",
       "title": "Nest Many Elements within a Single Div Element",
-      "difficulty": 1.38,
       "description": [
         "The <code>div</code> element, also known as a division element, is a general purpose container for other elements.",
         "The <code>div</code> element is probably the most commonly used HTML element of all. It's useful for passing the CSS of its own class declarations down to all the elements that it contains.",
@@ -2354,7 +2321,6 @@
     {
       "id": "bad87fed1348bd9aede07836",
       "title": "Give a Background Color to a Div Element",
-      "difficulty": 1.39,
       "description": [
         "You can set an element's background color with the <code>background-color</code> property.",
         "For example, if you wanted an element's background color to be <code>green</code>, you'd use <code>.green-background { background-color: green; }</code> within your <code>style</code> element.",
@@ -2441,7 +2407,6 @@
     {
       "id": "bad87eee1348bd9aede07836",
       "title": "Set the ID of an Element",
-      "difficulty": 1.391,
       "description": [
         "In addition to classes, each HTML element can also have an <code>id</code> attribute.",
         "There are several benefits to using <code>id</code> attributes, and you'll learn more about them once you start using jQuery.",
@@ -2532,7 +2497,6 @@
     {
       "id": "bad87dee1348bd9aede07836",
       "title": "Use an ID Attribute to Style an Element",
-      "difficulty": 1.392,
       "description": [
         "One cool thing about <code>id</code> attributes is that, like classes, you can style them using CSS.",
         "Here's an example of how you can take your element with the <code>id</code> attribute of <code>cat-photo-element</code> and give it the background color of green. In your <code>style</code> element: <code>#cat-photo-element { background-color: green; }</code>",
@@ -2625,7 +2589,6 @@
     {
       "id": "bad88fee1348bd9aedf08825",
       "title": "Adjusting the Padding of an Element",
-      "difficulty": 1.40,
       "description": [
         "You may have already noticed this, but all HTML elements are essentially little rectangles.",
         "Three important properties control the space that surrounds each HTML element: <code>padding</code>, <code>margin</code>, and <code>border</code>.",
@@ -2696,7 +2659,6 @@
     {
       "id": "bad87fee1348bd9aedf08822",
       "title": "Adjust the Margin of an Element",
-      "difficulty": 1.41,
       "description": [
         "An element's <code>margin</code> controls the amount of space between an element's <code>border</code> and surrounding elements.",
         "Here, we can see that the green box and the red box are nested within the yellow box. Note that the red box has more <code>margin</code> than the green box, making it appear smaller.",
@@ -2767,7 +2729,6 @@
     {
       "id": "bad87fee1348bd9aedf08823",
       "title": "Add a Negative Margin to an Element",
-      "difficulty": 1.42,
       "description": [
         "An element's <code>margin</code> controls the amount of space between an element's <code>border</code> and surrounding elements.",
         "If you set an element's <code>margin</code> to a negative value, the element will grow larger.",
@@ -2837,7 +2798,6 @@
     {
       "id": "bad87fee1348bd9aedf08824",
       "title": "Add Different Padding to Each Side of an Element",
-      "difficulty": 1.43,
       "description": [
         "Sometimes you will want to customize an element so that it has different <code>padding</code> on each of its sides.",
         "CSS allows you to control the <code>padding</code> of an element on all four sides with <code>padding-top</code>, <code>padding-right</code>, <code>padding-bottom</code>, and <code>padding-left</code> properties.",
@@ -2909,7 +2869,6 @@
     {
       "id": "bad87fee1248bd9aedf08824",
       "title": "Add Different Margins to Each Side of an Element",
-      "difficulty": 1.44,
       "description": [
         "Give the green box a <code>margin</code> of <code>40px</code> on its top and left side, but only <code>20px</code> on its bottom and right side.",
         "Sometimes you will want to customize an element so that it has a different <code>margin</code> on each of its sides.",
@@ -2980,7 +2939,6 @@
     {
       "id": "bad87fee1348bd9aedf08826",
       "title": "Use Clockwise Notation to Specify the Padding of an Element",
-      "difficulty": 1.44,
       "description": [
         "Instead of specifying an element's <code>padding-top</code>, <code>padding-right</code>, <code>padding-bottom</code>, and <code>padding-left</code> properties, you can specify them all in one line, like this: <code>padding: 10px 20px 10px 20px;</code>.",
         "These four values work like a clock: top, right, bottom, left, and will produce the exact same result as using the side-specific padding instructions.",
@@ -3049,7 +3007,6 @@
     {
       "id": "bad87fee1348bd9afdf08726",
       "title": "Use Clockwise Notation to Specify the Margin of an Element",
-      "difficulty": 1.45,
       "description": [
         "Let's try this again, but with <code>margin</code> this time.",
         "Instead of specifying an element's <code>margin-top</code>, <code>margin-right</code>, <code>margin-bottom</code>, and <code>margin-left</code> properties, you can specify them all in one line, like this: <code>margin: 10px 20px 10px 20px;</code>.",
@@ -3119,7 +3076,6 @@
     {
       "id": "bad87fee1348bd9aedf08736",
       "title": "Style the HTML Body Element",
-      "difficulty": 1.46,
       "description": [
         "Now let's start fresh and talk about CSS inheritance.",
         "Every HTML page has a <code>body</code> element.",
@@ -3152,7 +3108,6 @@
     {
       "id": "bad87fee1348bd9aedf08746",
       "title": "Inherit Styles from the Body Element",
-      "difficulty": 1.47,
       "description": [
         "Now we've proven that every HTML page has a <code>body</code> element, and that its <code>body</code> element can also be styled with CSS.",
         "Remember, you can style your <code>body</code> element just like any other HTML element, and all your other elements will inherit your <code>body</code> element's styles.",
@@ -3195,7 +3150,6 @@
     {
       "id": "bad87fee1348bd9aedf08756",
       "title": "Prioritize One Style Over Another",
-      "difficulty": 1.48,
       "description": [
         "Sometimes your HTML elements will receive multiple styles that conflict with one another.",
         "For example, your <code>h1</code> element can't be both green and pink at the same time.",
@@ -3235,7 +3189,6 @@
     {
       "id": "bad87fee1348bd9aedf04756",
       "title": "Override Styles in Subsequent CSS",
-      "difficulty": 1.49,
       "description": [
         "Our \"pink-text\" class overrode our <code>body</code> element's CSS declaration!",
         "We just proved that our classes will override the <code>body</code> element's CSS. So the next logical question is, what can we do to override our <code>pink-text</code> class?",
@@ -3279,7 +3232,6 @@
     {
       "id": "bad87fee1348bd8aedf06756",
       "title": "Override Class Declarations by Styling ID Attributes",
-      "difficulty": 1.52,
       "description": [
         "We just proved that browsers read CSS from top to bottom. That means that, in the event of a conflict, the browser will use whichever CSS declaration came last.",
         "But we're not done yet. There are other ways that you can override CSS. Do you remember id attributes?",
@@ -3330,7 +3282,6 @@
     {
       "id": "bad87fee1348bd9aedf06756",
       "title": "Override Class Declarations with Inline Styles",
-      "difficulty": 1.52,
       "description": [
         "So we've proven that id declarations override class declarations, regardless of where they are declared in your <code>style</code> element CSS.",
         "There are other ways that you can override CSS. Do you remember inline styles?",
@@ -3381,7 +3332,6 @@
     {
       "id": "bad87fee1348bd9aedf07756",
       "title": "Override All Other Styles by using Important",
-      "difficulty": 1.53,
       "description": [
         "Yay! We just proved that in-line styles will override all the CSS declarations in your <code>style</code> element.",
         "But wait. There's one last way to override CSS. This is the most powerful method of all. But before we do it, let's talk about why you would ever want to override CSS.",
@@ -3435,7 +3385,6 @@
     {
       "id": "bad87fee1348bd9aedf08726",
       "title": "Use Hex Code for Specific Colors",
-      "difficulty": 1.54,
       "description": [
         "Did you know there are other ways to represent colors in CSS? One of these ways is called hexadecimal code, or <code>hex code</code> for short.",
         "<code>Decimal</code> means the numbers zero through nine - the numbers that people use in everyday life. <code>Hexadecimal</code> includes these 10 numbers, plus the letters A, B, C, D, E and F. This means that Hexidecimal has a total of 16 possible values, instead of the 10 possible values that our normal base-10 number system gives us.",
@@ -3471,7 +3420,6 @@
     {
       "id": "bad87fee1348bd9aedf08725",
       "title": "Use Hex Code to Color Elements White",
-      "difficulty": 1.55,
       "description": [
         "<code>0</code> is the lowest number in hex code, and represents a complete absence of color.",
         "<code>F</code> is the highest number in hex code, and it represents the maximum possible brightness.",
@@ -3506,7 +3454,6 @@
     {
       "id": "bad87fee1348bd9aedf08724",
       "title": "Use Hex Code to Color Elements Red",
-      "difficulty": 1.56,
       "description": [
         "You may be wondering why we use 6 digits to represent a color instead of just one or two. The answer is that using 6 digits gives us a huge variety.",
         "How many colors are possible? 16 values and 6 positions means we have 16 to the 6th power, or more than 16 million possible colors.",
@@ -3543,7 +3490,6 @@
     {
       "id": "bad87fee1348bd9aedf08723",
       "title": "Use Hex Code to Color Elements Green",
-      "difficulty": 1.57,
       "description": [
         "Remember that <code>hex code</code> follows the red-green-blue, or <code>rgb</code> format. The first two digits of hex code represent the amount of red in the color. The third and fourth digit represent the amount of green. The fifth and sixth represent the amount of blue.",
         "So to get the absolute brightest green, you would just use <code>F</code> for the third and fourth digits (the highest possible value) and <code>0</code> for all the other digits (the lowest possible value).",
@@ -3578,7 +3524,6 @@
     {
       "id": "bad87fee1348bd9aedf08722",
       "title": "Use Hex Code to Color Elements Blue",
-      "difficulty": 1.58,
       "description": [
         "Hex code follows the red-green-blue, or <code>rgb</code> format. The first two digits of hex code represent the amount of red in the color. The third and fourth digit represent the amount of green. The fifth and sixth represent the amount of blue.",
         "So to get the absolute brightest blue, we use <code>F</code> for the fifth and sixth digits (the highest possible value) and <code>0</code> for all the other digits (the lowest possible value).",
@@ -3613,7 +3558,6 @@
     {
       "id": "bad87fee1348bd9aedf08721",
       "title": "Use Hex Code to Mix Colors",
-      "difficulty": 1.59,
       "description": [
         "From these three pure colors (red, green and blue), we can create 16 million other colors.",
         "For example, orange is pure red, mixed with some green, and no blue.",
@@ -3648,7 +3592,6 @@
     {
       "id": "bad87fee1348bd9aede08720",
       "title": "Use Hex Code to Color Elements Gray",
-      "difficulty": 1.60,
       "description": [
         "From these three pure colors (red, green and blue), we can create 16 million other colors.",
         "We can also create different shades of gray by evenly mixing all three colors.",
@@ -3683,7 +3626,6 @@
     {
       "id": "bad87fee1348bd9aedf08720",
       "title": "Use Hex Code for Specific Shades of Gray",
-      "difficulty": 1.61,
       "description": [
         "We can also create other shades of gray by evenly mixing all three colors. We can go very close to true black.",
         "Make the <code>body</code> element's background color a dark gray by giving it the hex code value of <code>#111111</code>."
@@ -3717,7 +3659,6 @@
     {
       "id": "bad87fee1348bd9aedf08719",
       "title": "Use Abbreviated Hex Code",
-      "difficulty": 1.62,
       "description": [
         "Many people feel overwhelmed by the possibilities of more than 16 million colors. And it's difficult to remember hex code. Fortunately, you can shorten it.",
         "For example, red, which is <code>#FF0000</code> in hex code, can be shortened to <code>#F00</code>. That is, one digit for red, one digit for green, one digit for blue.",
@@ -3753,7 +3694,6 @@
     {
       "id": "bad87fee1348bd9aede08718",
       "title": "Use RGB values to Color Elements",
-      "difficulty": 1.63,
       "description": [
         "Another way you can represent colors in CSS is by using <code>rgb</code> values.",
         "RGB values look like this: <code>rgb(0, 0, 0)</code> for black and <code>rgb(255, 255, 255)</code> for white.",
@@ -3790,7 +3730,6 @@
     {
       "id": "bad88fee1348bd9aedf08726",
       "title": "Use RGB to Color Elements White",
-      "difficulty": 1.64,
       "description": [
         "RGB values look like this: <code>rgb(0, 0, 0)</code> for black and <code>rgb(255, 255, 255)</code> for white.",
         "Instead of using six hexadecimal digits like you do with hex code, with <code>rgb</code> you specify the brightness of each color with a number between 0 and 255.",
@@ -3825,7 +3764,6 @@
     {
       "id": "bad89fee1348bd9aedf08724",
       "title": "Use RGB to Color Elements Red",
-      "difficulty": 1.65,
       "description": [
         "Just like with hex code, you can represent different colors in RGB by using combinations of different values.",
         "These values follow the pattern of RGB: the first number represents red, the second number represents green, and the third number represents blue.",
@@ -3860,7 +3798,6 @@
     {
       "id": "bad80fee1348bd9aedf08723",
       "title": "Use RGB to Color Elements Green",
-      "difficulty": 1.66,
       "description": [
         "Now change the <code>body</code> element's background color to the <code>rgb</code> value green: <code>rgb(0, 255, 0)</code>"
       ],
@@ -3893,7 +3830,6 @@
     {
       "id": "bad81fee1348bd9aedf08722",
       "title": "Use RGB to Color Elements Blue",
-      "difficulty": 1.67,
       "description": [
         "Change the <code>body</code> element's background color to the RGB value blue: <code>rgb(0, 0, 255)</code>"
       ],
@@ -3926,7 +3862,6 @@
     {
       "id": "bad82fee1348bd9aedf08721",
       "title": "Use RGB to Mix Colors",
-      "difficulty": 1.68,
       "description": [
         "Just like with hex code, you can mix colors in RGB by using combinations of different values.",
         "Change the <code>body</code> element's background color to the RGB value orange: <code>rgb(255, 165, 0)</code>"
@@ -3960,7 +3895,6 @@
     {
       "id": "bad83fee1348bd9aede08720",
       "title": "Use RGB to Color Elements Gray",
-      "difficulty": 1.69,
       "description": [
         "With RGB values, we can make an element gray by using combinations of the same value for all three colors.",
         "Change the <code>body</code> element's background color to the RGB value for gray: <code>rgb(128, 128, 128)</code>"

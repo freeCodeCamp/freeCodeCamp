@@ -11,7 +11,7 @@
     "prestart-production": "bower cache clean && bower install && gulp build",
     "start-production": "node pm2Start",
     "lint": "eslint --ext=.js,.jsx .",
-    "test": "mocha --compilers js:babel/register"
+    "test": "gulp test-challenges"
   },
   "license": "(BSD-3-Clause AND CC-BY-SA-4.0)",
   "dependencies": {
@@ -58,10 +58,10 @@
     "gulp-webpack": "^1.5.0",
     "helmet": "~0.9.0",
     "helmet-csp": "^0.2.3",
+    "history": "^1.9.0",
     "jade": "~1.8.0",
     "json-loader": "^0.5.2",
-    "less": "~1.7.5",
-    "less-middleware": "~2.0.1",
+    "less": "~2.5.1",
     "lodash": "^3.9.3",
     "loopback": "https://github.com/FreeCodeCamp/loopback.git#fix/no-password",
     "loopback-boot": "2.8.2",
@@ -89,7 +89,7 @@
     "react": "^0.13.3",
     "react-bootstrap": "~0.23.7",
     "react-motion": "~0.1.0",
-    "react-router": "https://github.com/BerkeleyTrue/react-router#freecodecamp",
+    "react-router": "^1.0.0-rc1",
     "react-vimeo": "^0.0.3",
     "request": "~2.53.0",
     "rev-del": "^1.0.5",
@@ -97,12 +97,14 @@
     "sanitize-html": "~1.6.1",
     "sort-keys": "^1.1.1",
     "source-map-support": "^0.3.2",
+    "store": "https://github.com/berkeleytrue/store.js.git#feature/noop-server",
     "thundercats": "^2.1.0",
     "thundercats-react": "^0.1.0",
     "twit": "~1.1.20",
     "uglify-js": "~2.4.15",
-    "validator": "~3.22.1",
+    "validator": "^3.22.1",
     "webpack": "^1.9.12",
+    "xss-filters": "^1.2.6",
     "yui": "~3.18.1"
   },
   "devDependencies": {

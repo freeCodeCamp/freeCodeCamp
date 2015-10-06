@@ -22,6 +22,7 @@ export default React.createClass({
         id,
         company,
         position,
+        isHighlighted,
         description,
         logo,
         city,
@@ -44,6 +45,7 @@ export default React.createClass({
       );
       return (
         <Panel
+          bsStyle={ isHighlighted ? 'warning' : 'default' }
           collapsible={ true }
           eventKey={ index }
           header={ header }

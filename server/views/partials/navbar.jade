@@ -22,31 +22,8 @@ nav.navbar.navbar-default.navbar-fixed-top.nav-height
                 li
                     a.btn.signup-btn.signup-btn-nav(href='/login') Sign in
             else
-              if user.isGithubCool
                 li
                   a(href='/' + user.username) [&thinsp;#{user.progressTimestamps.length}&thinsp;]
                 .hidden-xs.hidden-sm
                     a(href='/' + user.username)
                         img.profile-picture.float-right(src='#{user.picture}')
-              else
-                li
-                    a(href='/account') [&thinsp;#{user.progressTimestamps.length}&thinsp;]
-                .hidden-xs.hidden-sm
-                    a(href='/account')
-                        img.profile-picture.float-right(src='#{user.picture}')
-script.
-  $(document).ready(function() {
-    $('.learn-btn').click(function(e) {
-      var challengeDashedName = null;
-      e.preventDefault();
-      if (typeof dashedName === "string") {
-          return location.reload();
-      }
-      if (typeof localStorage !== 'undefined') {
-        challengeDashedName = localStorage.getItem('currentDashedName');
-      }
-      window.location = challengeDashedName ?
-        '/challenges/' + challengeDashedName :
-        '/map';
-    });
-  });

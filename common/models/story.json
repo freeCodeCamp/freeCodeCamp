@@ -34,10 +34,6 @@
     "description": {
       "type": "string"
     },
-    "originalStoryAuthorEmail": {
-      "type": "string",
-      "default": ""
-    },
     "rank": {
       "type": "number",
       "default": 0
