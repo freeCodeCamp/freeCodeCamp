@@ -10,19 +10,18 @@
         "",
         "JSON is a way of creating a file or a db record from a javascript object.",
         "JSON works in the exact same way as javascript objects that you should be familiar with.",
-        ""
+        "Lets add a string property to out object."
       ],
       "tests": [
-        "assert(typeof json !== 'undefined')"
+        "assert(typeof json !== 'undefined' && Object.keys(json).length === 3 && typeof(json[Object.keys(json)[Object.keys(json).length-1]]) === 'string', 'message: You should have added a string value to your object.')"
       ],
       "challengeSeed": [
         "var json = {",
-        "  name: \"Happy Camper\"",
-        "  age: 35",
-        "  height: \"5ft 8\"",
+        "  \"name\": \"Happy Camper\"",
+        "  \"height\": \"160cm\"",
         "}"
       ],
-      "challengeType": 0,
+      "challengeType": 1,
       "type": "waypoint"
     },
     {
@@ -158,8 +157,8 @@
         ""
       ],
       "tests": [
-        "assert($(\".message\").html() !== '', 'The message box should have something in it')"
-      ],
+        "assert(/json\\.map/gi, 'The message box should have something in it')"
+    ],
       "challengeSeed": [
         "fccss",
         " $(document).ready(function() {",
