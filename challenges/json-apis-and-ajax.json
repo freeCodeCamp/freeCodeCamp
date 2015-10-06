@@ -3,44 +3,22 @@
   "order": 0.0065,
   "challenges": [
     {
-      "id": "bb000000000000000000000",
-      "title":  "Understanding JSON",
-      "difficulty": 3.19,
-      "description": [
-        "",
-        "JSON is a way of creating a file or a db record from a javascript object.",
-        "JSON works in the exact same way as javascript objects that you should be familiar with.",
-        "Lets add a string property to out object."
-      ],
-      "tests": [
-        "assert(typeof json !== 'undefined' && Object.keys(json).length === 3 && typeof(json[Object.keys(json)[Object.keys(json).length-1]]) === 'string', 'message: You should have added a string value to your object.')"
-      ],
-      "challengeSeed": [
-        "var json = {",
-        "  \"name\": \"Happy Camper\"",
-        "  \"height\": \"160cm\"",
-        "}"
-      ],
-      "challengeType": 1,
-      "type": "waypoint"
-    },
-    {
       "id": "bb000000000000000000001",
       "title":  "Trigger on click Events with jQuery",
       "difficulty": 3.19,
       "description": [
-        "With jQuery we are able to get data from APIs via Ajax",
-        "This data normally comes in the form of JSON",
-        "Let's get the <code>Get Message</code> button to set the text of a div",
-        "We will later use this to display the result of out API request",
+        "With jQuery we are able to get data from APIs via Ajax.",
+        "This data normally comes in the form of JSON.",
+        "Let's get the <code>Get Message</code> button to set the text of a div.",
+        "We will later use this to display the result of out API request.",
         "<code>$(\"#getMessage\").on(\"click\", function(){</code>",
         "<code>&thinsp;&thinsp;$(\".message\").html(\"Here is the message\");</code>",
         "<code>});</code>"
       ],
       "tests": [
-        "assert(editor.match(/\\$\\s*?\\(\\s*?(?:'|\")\\#getMessage(?:'|\")\\s*?\\)\\s*?\\.on\\s*?\\(\\s*?(?:'|\")click(?:'|\")\\s*?\\,\\s*?function\\s*?\\(\\s*?\\)\\s*?\\{/gi), 'You should have bound the click event to the getMessage button')",
-        "assert(editor.match(/\\$\\s*?\\(\\s*?(?:'|\")\\.message(?:'|\")\\s*?\\)\\s*?\\.html\\s*?\\(\\s*?(?:'|\")Here\\sis\\sthe\\smessage(?:'|\")\\s*?\\);/gi), 'You should set te value of the #message box to be the message given in the description')",
-        "assert(editor.match(/\\n*?\\s*?\\}\\n*?\\s*?\\);/gi) && editor.match(/\\n*?\\s*?\\}\\);/gi).length >= 2, 'Make sure that you close off all of your functions')"
+        "assert(editor.match(/\\$\\s*?\\(\\s*?(?:'|\")\\#getMessage(?:'|\")\\s*?\\)\\s*?\\.on\\s*?\\(\\s*?(?:'|\")click(?:'|\")\\s*?\\,\\s*?function\\s*?\\(\\s*?\\)\\s*?\\{/gi), 'You should have bound the click event to the getMessage button.')",
+        "assert(editor.match(/\\$\\s*?\\(\\s*?(?:'|\")\\.message(?:'|\")\\s*?\\)\\s*?\\.html\\s*?\\(\\s*?(?:'|\")Here\\sis\\sthe\\smessage(?:'|\")\\s*?\\);/gi), 'You should set te value of the #message box to be the message given in the description.')",
+        "assert(editor.match(/\\n*?\\s*?\\}\\n*?\\s*?\\);/gi) && editor.match(/\\n*?\\s*?\\}\\);/gi).length >= 2, 'Make sure that you close off all of your functions.')"
       ],
       "challengeSeed": [
         "fccss",
@@ -87,15 +65,15 @@
         "&thinsp;&thinsp;&thinsp;&thinsp;$(\".message\").html(JSON.stringify(json))",
         "&thinsp;&thinsp;});",
         "});</code>",
-        "Let's make it so that the data sent from the request is appended to the .message div",
+        "Let's make it so that the data sent from the request is appended to the .message div.",
         ""
       ],
       "tests": [
-        "assert(editor.match(/\\$\\s*?\\(\\s*?(\\\"|\\')\\#getMessage(\\\"|\\')\\s*?\\)\\s*?\\.\\s*?on\\s*?\\(\\s*?(\\\"|\\')click(\\\"|\\')\\s*?\\,\\s*?function\\s*?\\(\\s*?\\)\\s*?\\{/gi), 'You should have a click handler on the getMessage button to trigger the AJAX request')",
-        "assert(editor.match(/\\s*?\\}\\s*?\\)\\s*?\\;/gi), 'You should have at least on closing set of brackets and parenthesis')",
-        "assert(editor.match(/\\s*?\\}\\s*?\\)\\s*?\\;/gi) && editor.match(/\\,\\s*?function\\s*?\\(\\s*?\\w*?\\s*?\\)\\s*?\\{/gi) && editor.match(/\\s*?\\}\\s*?\\)\\s*?\\;/gi).length === editor.match(/\\s*?function\\s*?\\(\\s*?\\w*?\\s*?\\)\\s*?\\{/gi).length, 'Each callback function should have a closing set of brackets and parenthesis')",
-        "assert(editor.match(/\\$\\s*?\\.\\s*?getJSON\\s*?\\(\\s*?\"\\\/json\\\/cats\\.json\\?callback\\=\"\\s*?\\,\\s*?function\\s*?\\(\\s*?json\\s*?\\)\\s*?\\{/gi), 'You should be making use of the getJSON method given in the description to load data from the json file')",
-        "assert(editor.match(/\\$\\s*?\\(\\s*?\\\"\\.message\\\"\\s*?\\)\\s*?\\.\\s*?html\\s*?\\(\\s*?JSON\\s*?\\.\\s*?stringify\\s*?\\(\\s*?json\\s*?\\)\\s*?\\)/gi), 'Don\\'t forget to make the <code>.html</code> change the contents of the message box so that it contains the result of the getJSON')"
+        "assert(editor.match(/\\$\\s*?\\(\\s*?(\\\"|\\')\\#getMessage(\\\"|\\')\\s*?\\)\\s*?\\.\\s*?on\\s*?\\(\\s*?(\\\"|\\')click(\\\"|\\')\\s*?\\,\\s*?function\\s*?\\(\\s*?\\)\\s*?\\{/gi), 'You should have a click handler on the getMessage button to trigger the AJAX request.')",
+        "assert(editor.match(/\\s*?\\}\\s*?\\)\\s*?\\;/gi), 'You should have at least on closing set of brackets and parenthesis.')",
+        "assert(editor.match(/\\s*?\\}\\s*?\\)\\s*?\\;/gi) && editor.match(/\\,\\s*?function\\s*?\\(\\s*?\\w*?\\s*?\\)\\s*?\\{/gi) && editor.match(/\\s*?\\}\\s*?\\)\\s*?\\;/gi).length === editor.match(/\\s*?function\\s*?\\(\\s*?\\w*?\\s*?\\)\\s*?\\{/gi).length, 'Each callback function should have a closing set of brackets and parenthesis.')",
+        "assert(editor.match(/\\$\\s*?\\.\\s*?getJSON\\s*?\\(\\s*?\"\\\/json\\\/cats\\.json\\?callback\\=\"\\s*?\\,\\s*?function\\s*?\\(\\s*?json\\s*?\\)\\s*?\\{/gi), 'You should be making use of the getJSON method given in the description to load data from the json file.')",
+        "assert(editor.match(/\\$\\s*?\\(\\s*?\\\"\\.message\\\"\\s*?\\)\\s*?\\.\\s*?html\\s*?\\(\\s*?JSON\\s*?\\.\\s*?stringify\\s*?\\(\\s*?json\\s*?\\)\\s*?\\)/gi), 'Don\\'t forget to make the <code>.html</code> change the contents of the message box so that it contains the result of the getJSON.')"
       ],
       "challengeSeed": [
         "fccss",
@@ -139,7 +117,7 @@
       "difficulty": 3.21,
       "description": [
         "",
-        "Now that we have the data let's re-arrange it so that ",
+        "Now that we have the data let's re-arrange it so that it can be displayed in a user friendly way.",
         "",
         "<code>",
         "&thinsp;&thinsp;json.map(function(val){",
@@ -157,7 +135,7 @@
         ""
       ],
       "tests": [
-        "assert(/json\\.map/gi, 'The message box should have something in it')"
+        "assert(/json\\.map/gi, 'The message box should have something in it.')"
     ],
       "challengeSeed": [
         "fccss",
@@ -215,7 +193,7 @@
       "description": [
         "",
         "instead of just placing everything in a div we should check if the value is an image.",
-        "If it is an image we should use it as an ima tag instead so that the image is rendered",
+        "If it is an image we should use it as an ima tag instead so that the image is rendered.",
         "<code>",
         "if(key === \"imageLink\"){",
         "html = html + '&lt;img class = \"' + key + '\"src = \"' + val[key] + '\"&gt;';",
@@ -227,7 +205,7 @@
         ""
       ],
       "tests": [
-        "assert(editor.match(/imageLink/gi), 'You should have accessed the imageLink of each cat object')"
+        "assert(editor.match(/imageLink/gi), 'You should have accessed the imageLink of each cat object.')"
       ],
       "challengeSeed": [
         "fccss",
@@ -303,8 +281,8 @@
       "description": [
         "",
         "This means we should never hit API limits and it will make the process more efficient.",
-        "Let's try pre-filtering the json before we map it",
-        "We can use the pre-made filter method like this to remove the cat with the id of 1",
+        "Let's try pre-filtering the json before we map it.",
+        "We can use the pre-made filter method like this to remove the cat with the id of 1.",
         "<code>",
         "json = json.filter(function(val){",
         "  return(val.id !== 1);",
@@ -313,7 +291,7 @@
         ""
       ],
       "tests": [
-        "assert(editor.match(/filter/gi), 'You should be making use of the .filter method')"
+        "assert(editor.match(/filter/gi), 'You should be making use of the .filter method.')"
       ],
       "challengeSeed": [
         "fccss",
@@ -405,7 +383,7 @@
         "</code>"
       ],
       "tests": [
-        "assert(editor.match(/navigator\\.geolocation\\.getCurrentPosition/gi), 'you should make use of the <code>navigator.geolocation</code> to access the users current location')"
+        "assert(editor.match(/navigator\\.geolocation\\.getCurrentPosition/gi), 'you should make use of the <code>navigator.geolocation</code> to access the users current location.')"
       ],
       "challengeSeed": [
         "fccss",
