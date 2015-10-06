@@ -13,8 +13,11 @@ import {
   observeQuery
 } from '../utils/rx';
 
-const frontEndChallangeId = '561add10cb82ac38a17513be';
-const fullStackChallangeId = '660add10cb82ac38a17513be';
+import {
+  frontEndChallangeId,
+  fullStackChallangeId
+} from '../utils/constantStrings.json';
+
 const debug = debugFactory('freecc:certification');
 const sendMessageToNonUser = ifNoUserSend(
   'must be logged in to complete.'
@@ -36,10 +39,12 @@ export default function certificate(app) {
     'findById',
     frontEndChallangeId,
     {
-      tests: true
+      id: true,
+      tests: true,
+      name: true,
+      challengeType: true
     }
   )
-    .map(({ tests = [] }) => tests)
     .shareReplay();
 
   const fullStackChallangeIds$ = observeQuery(
@@ -47,10 +52,12 @@ export default function certificate(app) {
     'findById',
     fullStackChallangeId,
     {
-      tests: true
+      id: true,
+      tests: true,
+      name: true,
+      challengeType: true
     }
   )
-    .map(({ tests = [] }) => tests)
     .shareReplay();
 
   router.post(
@@ -82,8 +89,14 @@ export default function certificate(app) {
         }
         return fullStackChallangeIds$;
       })
-      .flatMap((tests) => {
+      .flatMap(challenge => {
         const { user } = req;
+        const {
+          id,
+          tests,
+          name,
+          challengeType
+        } = challenge;
         if (
           isFront && !user.isFrontEndCert && isCertified(tests, user) ||
           !isFront && !user.isFullStackCert && isCertified(tests, user)
@@ -91,17 +104,16 @@ export default function certificate(app) {
           debug('certified');
           if (isFront) {
             user.isFrontEndCert = true;
-            user.completedChallenges.push({
-              completedDate: new Date(),
-              id: frontEndChallangeId
-            })
           } else {
             user.isFullStackCert = true;
-            user.completedChallenges.push({
-              completedDate: new Date(),
-              id: fullStackChallangeId
-            })
           }
+
+          user.completedChallenges.push({
+            id,
+            name,
+            completedDate: new Date(),
+            challengeType
+          });
           return saveUser(user);
         }
         return Observable.just(user);
