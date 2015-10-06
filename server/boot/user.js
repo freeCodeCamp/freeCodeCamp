@@ -274,23 +274,32 @@ module.exports = function(app) {
             });
             return res.redirect('/');
           }
+          if (!user.isGithubCool) {
+            req.flash('errors', {
+              msg: dedent`
+                This user needs to link GitHub with their account
+                in order to display this certificate to the public.
+              `
+            });
+            return res.redirect('back');
+          }
           if (user.isLocked) {
             req.flash('errors', {
               msg: dedent`
-                Looks like user '${username}'s account is locked
-                down to the public.
+                ${username} has chosen to hide their work from the public.
+                They need to unhide their work in order for this certificate to
+                be verifiable.
               `
             });
-            return res.redirect('/');
+            return res.redirect('back');
           }
           if (!user.isHonest) {
             req.flash('errors', {
               msg: dedent`
-                Looks like the user '${username}'s has not signed
-                the academic honesty pledge.
+                ${username} has not agreed to our Academic Honesty Pledge yet.
               `
             });
-            return res.redirect('/');
+            return res.redirect('back');
           }
 
           if (
