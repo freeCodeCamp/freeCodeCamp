@@ -91,8 +91,16 @@ export default function certificate(app) {
           debug('certified');
           if (isFront) {
             user.isFrontEndCert = true;
+            user.completedChallenges.push({
+              completedDate: new Date(),
+              id: frontEndChallangeId
+            })
           } else {
             user.isFullStackCert = true;
+            user.completedChallenges.push({
+              completedDate: new Date(),
+              id: fullStackChallangeId
+            })
           }
           return saveUser(user);
         }

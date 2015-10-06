@@ -275,7 +275,9 @@ module.exports = function(app) {
             !showFront && user.isFullStackCert
           ) {
             var { completedDate } = _.find(user.completedChallenges, {
-              id: '561add10cb82ac38a17513be'
+              id: showFront ?
+                '561add10cb82ac38a17513be' :
+                '660add10cb82ac38a17513be'
             });
 
             return res.render(
