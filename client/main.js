@@ -221,6 +221,7 @@ $(document).ready(function() {
                   case challengeTypes.ZIPLINE:
                       var didCompleteWith = $('#completed-with').val() || null;
                       var publicURL = $('#public-url').val() || null;
+                      console.log("debug", didCompleteWith, publicURL);
                       $.post(
                           '/completed-zipline-or-basejump/',
                           {

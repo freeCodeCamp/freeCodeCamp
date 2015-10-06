@@ -266,7 +266,7 @@ module.exports = function(app) {
               origChallengeName +
               '` Please double check the name.'
           });
-          return Observable.just('/challenges');
+          return Observable.just('/map');
         }
 
         if (dasherize(challenge.name) !== origChallengeName) {
