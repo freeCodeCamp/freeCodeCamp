@@ -15,6 +15,12 @@ const debug = debugFactory('freecc:boot:user');
 const daysBetween = 1.5;
 const sendNonUserToMap = ifNoUserRedirectTo('/map');
 
+function replaceScriptTags(value) {
+  return value
+    .replace(/<script>/gi, 'fccss')
+    .replace(/<\/script>/gi, 'fcces');
+}
+
 function calcCurrentStreak(cals) {
   const revCals = cals.concat([Date.now()]).slice().reverse();
   let streakBroken = false;
@@ -243,7 +249,9 @@ module.exports = function(app) {
           moment,
 
           longestStreak: profileUser.longestStreak,
-          currentStreak: profileUser.currentStreak
+          currentStreak: profileUser.currentStreak,
+
+          replaceScriptTags
         });
       }
     );
