@@ -103,7 +103,7 @@
     "isLocked": {
       "type": "boolean",
       "default": false,
-      "description": "Campers profile does not show challenges to the public"
+      "description": "Campers profile does not show challenges/certificates to the public"
     },
     "currentChallenge": {
       "type": {}

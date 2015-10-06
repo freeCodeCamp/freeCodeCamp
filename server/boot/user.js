@@ -4,6 +4,10 @@ import moment from 'moment';
 import { Observable } from 'rx';
 import debugFactory from 'debug';
 
+import {
+  frontEndChallangeId,
+  fullStackChallangeId
+} from '../utils/constantStrings.json';
 import { ifNoUser401, ifNoUserRedirectTo } from '../utils/middleware';
 import { observeQuery } from '../utils/rx';
 
@@ -270,14 +274,33 @@ module.exports = function(app) {
             });
             return res.redirect('/');
           }
+          if (user.isLocked) {
+            req.flash('errors', {
+              msg: dedent`
+                Looks like user '${username}'s account is locked
+                down to the public.
+              `
+            });
+            return res.redirect('/');
+          }
+          if (!user.isHonest) {
+            req.flash('errors', {
+              msg: dedent`
+                Looks like the user '${username}'s has not signed
+                the academic honesty pledge.
+              `
+            });
+            return res.redirect('/');
+          }
+
           if (
             showFront && user.isFrontEndCert ||
             !showFront && user.isFullStackCert
           ) {
             var { completedDate } = _.find(user.completedChallenges, {
               id: showFront ?
-                '561add10cb82ac38a17513be' :
-                '660add10cb82ac38a17513be'
+                frontEndChallangeId :
+                fullStackChallangeId
             });
 
             return res.render(
