@@ -3,6 +3,136 @@
   "order": 20,
   "challenges": [
     {
+      "id": "560add65cb82ac38a17513c1",
+      "title": "",
+      "challengeSeed": [],
+      "description": [
+        [
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "",
+          "",
+          "Create an app from this github url: <code>https://github.com/johnstonbl01/clementinejs-fcc.git</code>",
+          ""
+        ],
+        [
+          "",
+          "",
+          "Create a new GitHub app.",
+          "https://github.com/settings/applications/new"
+        ],
+        [
+          "",
+          "",
+          "Return to c9.io, click the gear and click \"Show Hidden Files\"",
+          ""
+        ],
+        [
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "",
+          "",
+          "",
+          ""
+        ]
+      ],
+      "type": "Waypoint",
+      "challengeType": 7,
+      "tests": [],
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
+    },
+
+
+    {
       "id": "bd7158d8c443eddfaeb5bcef",
       "title": "Get Set for Basejumps",
       "challengeSeed": ["128451852"],

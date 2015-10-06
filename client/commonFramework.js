@@ -849,15 +849,15 @@ common.init.push((function() {
     var nextStep = getNextStep($(stepClass));
     $(this)
       .parent()
-      .addClass('animated fadeOutLeft')
-      .delay(700)
+      .addClass('animated fadeOutLeft fast-animation')
+      .delay(250)
       .queue(function(next) {
         $(this).addClass('hidden');
         if (nextStep) {
           $(nextStep)
             .removeClass('hidden')
-            .addClass('animated slideInRight')
-            .delay(1000)
+            .addClass('animated slideInRight fast-animation')
+            .delay(500)
             .queue(function(next) {
               $(this).removeClass('slideInRight');
               next();
