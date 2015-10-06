@@ -58,6 +58,12 @@ block content
                     h1.flat-top.wrappable= name
                     h1.flat-top.wrappable= location
                     h1.flat-top.text-primary= "[ " + (progressTimestamps.length) + " ]"
+                    if pledge
+                        .spacer
+                        h4 I am commited to giving $#{pledge.amount} to
+                          a(href='#{pledge.donate}')  #{pledge.displayName}
+                          |  each month until I have complete the #{pledge.goal}
+                        .spacer
                     if isFrontEndCert
                         a.btn.btn-primary(href='/' + username + '/front-end-certification') View My Front End Development Certification
                     if isFullStackCert

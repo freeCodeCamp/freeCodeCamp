@@ -19,6 +19,18 @@ import {
 const sendNonUserToFront = ifNoUserRedirectTo('/');
 const debug = debugFactory('freecc:commit');
 
+function findNonprofit(name) {
+  let nonprofit;
+  if (name) {
+    nonprofit = _.find(nonprofits, (nonprofit) => {
+      return name === nonprofit.name;
+    });
+  }
+
+  nonprofit = nonprofit || nonprofits[0];
+  return nonprofit;
+}
+
 export default function commit(app) {
   const router = app.loopback.Router();
   const { Pledge } = app.models;
@@ -38,16 +50,9 @@ export default function commit(app) {
 
   function commitToNonprofit(req, res) {
     let nonprofitName = unDasherize(req.query.nonprofit);
-    let nonprofit;
+    const nonprofit = findNonprofit(nonprofitName);
 
     debug('looking for nonprofit', nonprofitName);
-    if (nonprofitName) {
-      nonprofit = _.find(nonprofits, (nonprofit) => {
-        return nonprofitName === nonprofit.name;
-      });
-    }
-
-    nonprofit = nonprofit || nonprofits[0];
 
     res.render(
       'commit/',
@@ -61,20 +66,26 @@ export default function commit(app) {
   function pledge(req, res, next) {
     const { user } = req;
     const {
-      nonprofit = 'girl develop it',
+      nonprofit: nonprofitName = 'girl develop it',
       amount = '5',
       goal = 'Front End Development Certification'
     } = req.query;
 
+    const nonprofit = findNonprofit(nonprofitName);
+
     observeQuery(user, 'pledge')
       .flatMap(oldPledge => {
         // create new pledge for user
-        const pledge = Pledge({
-          nonprofit,
-          amount,
-          goal,
-          userId: user.id
-        });
+        const pledge = Pledge(
+          Object.assign(
+            {
+              amount,
+              goal,
+              userId: user.id
+            },
+            nonprofit
+          )
+        );
 
         if (oldPledge) {
           debug('user already has pledge, creating a new one');
