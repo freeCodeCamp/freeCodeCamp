@@ -58,8 +58,13 @@ block content
                     h1.flat-top.wrappable= name
                     h1.flat-top.wrappable= location
                     h1.flat-top.text-primary= "[ " + (progressTimestamps.length) + " ]"
+                    if isFrontEndCert
+                        a.btn.btn-primary(href='/' + username + '/front-end-certification') View My Front End Development Certification
+                    if isFullStackCert
+                        .button-spacer
+                        a.btn.btn-success(href='/' + username + '/full-stack-certification') View My Full Stack Development Certification
                     if (user && user.username !== username)
-                        a.btn.btn-lg.btn-block.btn-twitter.btn-link-social(href='/link/twitter')
+                        a.btn.btn-lg.btn-block.btn-twitter.btn-link-social(href='/leaderboard/add?username=#{username}')
                             i.fa.fa-plus-square
                             | Add them to my personal leaderboard
 

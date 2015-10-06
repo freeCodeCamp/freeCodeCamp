@@ -879,14 +879,53 @@ common.init.push((function() {
         }
         next();
       });
-
   }
 
-  function handleActionClick() {
-    $(this)
-      .parent()
-      .find('.disabled')
-      .removeClass('disabled');
+  function handleActionClick(e) {
+    var props = common.challengeSeed[0] ||
+      { stepIndex: [] };
+
+    var $el = $(this);
+    var index = +$el.attr('id');
+    var propIndex = props.stepIndex.indexOf(index);
+
+    if (propIndex === -1) {
+      return $el
+        .parent()
+        .find('.disabled')
+        .removeClass('disabled');
+    }
+
+    // an API action
+    // prevent link from opening
+    e.preventDefault();
+    var prop = props.properties[propIndex];
+    var api = props.apis[propIndex];
+    if (common[prop]) {
+      return $el
+        .parent()
+        .find('.disabled')
+        .removeClass('disabled');
+    }
+    $
+      .post(api)
+      .done(function(data) {
+        // assume a boolean indicates passing
+        if (typeof data === 'boolean') {
+          return $el
+            .parent()
+            .find('.disabled')
+            .removeClass('disabled');
+        }
+        // assume api returns string when fails
+        $el
+          .parent()
+          .find('.disabled')
+          .replaceWith('<p>' + data + '</p>');
+      })
+      .fail(function() {
+        console.log('failed');
+      });
   }
 
   function handleFinishClick(e) {

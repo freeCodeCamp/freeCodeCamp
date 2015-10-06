@@ -1,8 +1,15 @@
+import _ from 'lodash';
 import dedent from 'dedent';
 import moment from 'moment';
+import { Observable } from 'rx';
 import debugFactory from 'debug';
 
+import {
+  frontEndChallangeId,
+  fullStackChallangeId
+} from '../utils/constantStrings.json';
 import { ifNoUser401, ifNoUserRedirectTo } from '../utils/middleware';
+import { observeQuery } from '../utils/rx';
 
 const debug = debugFactory('freecc:boot:user');
 const daysBetween = 1.5;
@@ -52,7 +59,16 @@ function dayDiff([head, tail]) {
 module.exports = function(app) {
   var router = app.loopback.Router();
   var User = app.models.User;
-  // var Story = app.models.Story;
+  function findUserByUsername$(username, fields) {
+    return observeQuery(
+      User,
+      'findOne',
+      {
+        where: { username },
+        fields
+      }
+    );
+  }
 
   router.get('/login', function(req, res) {
     res.redirect(301, '/signin');
@@ -85,7 +101,18 @@ module.exports = function(app) {
   );
   router.get('/vote1', vote1);
   router.get('/vote2', vote2);
-  // Ensure this is the last route!
+
+  // Ensure these are the last routes!
+  router.get(
+    '/:username/front-end-certification',
+    showCert
+  );
+
+  router.get(
+    '/:username/full-stack-certification',
+    showCert
+  );
+
   router.get('/:username', returnUser);
 
   app.use(router);
@@ -184,13 +211,19 @@ module.exports = function(app) {
           return (obj.name || '').match(/^Waypoint/i);
         });
 
+        debug('user is fec', profileUser.isFrontEndCert);
         res.render('account/show', {
           title: 'Camper ' + profileUser.username + '\'s portfolio',
           username: profileUser.username,
           name: profileUser.name,
+
           isMigrationGrandfathered: profileUser.isMigrationGrandfathered,
           isGithubCool: profileUser.isGithubCool,
           isLocked: !!profileUser.isLocked,
+
+          isFrontEndCert: profileUser.isFrontEndCert,
+          isFullStackCert: profileUser.isFullStackCert,
+          isHonest: profileUser.isHonest,
 
           location: profileUser.location,
           calender: data,
@@ -214,6 +247,92 @@ module.exports = function(app) {
         });
       }
     );
+  }
+
+  function showCert(req, res, next) {
+    const username = req.params.username.toLowerCase();
+    const { user } = req;
+    const showFront = req.path.split('/').pop() === 'front-end-certification';
+    Observable.just(user)
+      .flatMap(user => {
+        if (user && user.username === username) {
+          return Observable.just(user);
+        }
+        return findUserByUsername$(username, {
+          isFrontEndCert: true,
+          isFullStackCert: true,
+          completedChallenges: true,
+          username: true,
+          name: true
+        });
+      })
+      .subscribe(
+        (user) => {
+          if (!user) {
+            req.flash('errors', {
+              msg: `404: We couldn't find the user ${username}`
+            });
+            return res.redirect('/');
+          }
+          if (!user.isGithubCool) {
+            req.flash('errors', {
+              msg: dedent`
+                This user needs to link GitHub with their account
+                in order to display this certificate to the public.
+              `
+            });
+            return res.redirect('back');
+          }
+          if (user.isLocked) {
+            req.flash('errors', {
+              msg: dedent`
+                ${username} has chosen to hide their work from the public.
+                They need to unhide their work in order for this certificate to
+                be verifiable.
+              `
+            });
+            return res.redirect('back');
+          }
+          if (!user.isHonest) {
+            req.flash('errors', {
+              msg: dedent`
+                ${username} has not agreed to our Academic Honesty Pledge yet.
+              `
+            });
+            return res.redirect('back');
+          }
+
+          if (
+            showFront && user.isFrontEndCert ||
+            !showFront && user.isFullStackCert
+          ) {
+            var { completedDate } = _.find(user.completedChallenges, {
+              id: showFront ?
+                frontEndChallangeId :
+                fullStackChallangeId
+            });
+
+            return res.render(
+              showFront ?
+                'certificate/front-end.jade' :
+                'certificate/full-stack.jade',
+              {
+                username: user.username,
+                date: moment(new Date(completedDate))
+                  .format('MMMM, Do YYYY'),
+                name: user.name
+              }
+            );
+          }
+          req.flash('errors', {
+            msg: showFront ?
+              `Looks like user ${username} is not Front End certified` :
+              `Looks like user ${username} is not Full Stack certified`
+          });
+          res.redirect('/map');
+        },
+        next
+      );
   }
 
   function toggleLockdownMode(req, res, next) {
@@ -296,11 +415,6 @@ module.exports = function(app) {
       title: 'Forgot Password'
     });
   }
-
-  /**
-  * POST /forgot
-  * Create a random token, then the send user an email with a reset link.
-  */
 
   function postForgot(req, res) {
     const errors = req.validationErrors();
