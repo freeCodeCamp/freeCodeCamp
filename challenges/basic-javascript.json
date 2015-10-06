@@ -1039,7 +1039,7 @@
       ],
       "tests":[
         "assert(test === 2, 'message: Your RegEx should have found two numbers in the <code>testString</code>.');",
-        "assert(editor.getValue().match(/\\/\\\\d\\+\\//gi), 'message: You should be using the following expression <code>/\\\\d+/gi</code> to find the numbers in the <code>testString</code>.');"
+        "assert(editor.getValue().match(/\\/\\\\d\\+\\//g), 'message: You should be using the following expression <code>/\\d+/g</code> to find the numbers in the <code>testString</code>.');"
       ],
       "challengeSeed":[
         "var test = (function() {",
@@ -1047,7 +1047,7 @@
         "",
         "  // Only change code below this line.",
         "",
-        "  var expression = /.+/gi;",
+        "  var expression = /.+/g;",
         "",
         "  // Only change code above this line.",
         "  // We use this function to show you the value of your variable in your output box.",
@@ -1069,7 +1069,7 @@
       ],
       "tests":[
         "assert(test === 7, 'message: Your RegEx should have found seven spaces in the <code>testString</code>.');",
-        "assert(editor.getValue().match(/\\/\\\\s\\+\\//gi), 'message: You should be using the following expression <code>/\\\\s+/gi</code> to find the spaces in the <code>testString</code>.');"
+        "assert(editor.getValue().match(/\\/\\\\s\\+\\//g), 'message: You should be using the following expression <code>/\\s+/g</code> to find the spaces in the <code>testString</code>.');"
       ],
       "challengeSeed":[
         "var test = (function(){",
@@ -1077,7 +1077,7 @@
         "",
         "  // Only change code below this line.",
         "",
-        "  var expression = /.+/gi;",
+        "  var expression = /.+/g;",
         "",
         "  // Only change code above this line.",
         "  // We use this function to show you the value of your variable in your output box.",
@@ -1092,12 +1092,12 @@
       "title": "Invert Regular Expression Matches with JavaScript",
       "difficulty":"9.987",
       "description":[
-        "Use <code>/\\S/gi</code> to match everything that isn't a space in the string.",
+        "Use <code>/\\S/g</code> to match everything that isn't a space in the string.",
         "You can invert any match by using the uppercase version of the selector <code>\\s</code> versus <code>\\S</code> for example."
       ],
       "tests":[
         "assert(test === 49, 'message: Your RegEx should have found forty nine non-space characters in the <code>testString</code>.');",
-        "assert(editor.getValue().match(/\\/\\\\S\\/gi/gi), 'message: You should be using the following expression <code>/\\\\S/gi</code> to find non-space characters in the <code>testString</code>.');"
+        "assert(editor.getValue().match(/\\/\\\\S\\/g/g), 'message: You should be using the following expression <code>/\\S/g</code> to find non-space characters in the <code>testString</code>.');"
       ],
       "challengeSeed":[
         "var test = (function(){",
@@ -1105,7 +1105,7 @@
         "",
         "  // Only change code below this line.",
         "",
-        "  var expression = /./gi;",
+        "  var expression = /./g;",
         "",
         "  // Only change code above this line.",
         "  // We use this function to show you the value of your variable in your output box.",
