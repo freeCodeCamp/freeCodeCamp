@@ -5,7 +5,8 @@
   "trackChanges": false,
   "properties": {
     "nonprofit": {
-      "type": "string"
+      "type": "string",
+      "index": true
     },
     "amount": {
       "type": "number"
@@ -16,13 +17,24 @@
     },
     "dateEnded": {
       "type": "date"
+    },
+    "formerUserId": {
+      "type": "string"
+    },
+    "isOrphaned": {
+      "type": "boolean"
+    },
+    "isCompleted": {
+      "type": "boolean",
+      "default": "false"
     }
   },
   "validations": [],
   "relations": {
-    "camper": {
+    "user": {
       "type": "hasMany",
-      "model": "user"
+      "model": "user",
+      "foreignKey": "userId"
     }
   },
   "acls": [
@@ -39,16 +51,5 @@
       "permission": "ALLOW"
     }
   ],
-  "methods": [],
-  "indexes": {
-    "nonprofit_amount":{
-      "keys": {
-        "nonprofit": 1,
-        "amount": 1
-      },
-      "options": {
-        "unique": true
-      }
-    }
-  }
+  "methods": []
 }
