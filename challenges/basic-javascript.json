@@ -1078,14 +1078,14 @@
     },
     {
       "id":"cf1111c1c12feddfaeb8bdef",
-      "title": "Find White Space with Regular Expressions",
+      "title": "Find Whitespace with Regular Expressions",
       "difficulty":"9.986",
       "description":[
-        "We can also use selectors like <code>\\s</code> to find white space in a string.",
-        "The white space characters are <code>\" \"</code> (space), <code>\\r</code> (carriage return), <code>\\n</code> (newline), <code>\\t</code> (tab), <code>\\f</code> (form feed).",
+        "We can also use selectors like <code>\\s</code> to find whitespace in a string.",
+        "The whitespace characters are <code>\" \"</code> (space), <code>\\r</code> (carriage return), <code>\\n</code> (newline), <code>\\t</code> (tab), and <code>\\f</code> (form feed).",
         "It is used like this:",
         "<code>/\\s+/g</code>",
-        "Select all the white space characters in the sentence string."
+        "Select all the whitespace characters in the sentence string."
       ],
       "tests":[
         "assert(test === 7, 'Your RegEx should have found seven spaces in the <code>testString</code>.');",
