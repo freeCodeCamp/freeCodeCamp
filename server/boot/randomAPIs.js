@@ -5,8 +5,8 @@ var Rx = require('rx'),
     request = require('request'),
     debug = require('debug')('freecc:cntr:resources'),
     constantStrings = require('../utils/constantStrings.json'),
-    labs = require('../../seed/labs.json'),
-    stories = require('../../seed/stories.json'),
+    labs = require('../resources/labs.json'),
+    testimonials = require('../resources/testimonials.json'),
     secrets = require('../../config/secrets');
 
 module.exports = function(app) {
@@ -35,7 +35,7 @@ module.exports = function(app) {
   router.get('/get-started', getStarted);
   router.get('/submit-cat-photo', submitCatPhoto);
   router.get('/labs', showLabs);
-  router.get('/stories', showStories);
+  router.get('/stories', showTestimonials);
 
   app.use(router);
 
@@ -191,10 +191,10 @@ module.exports = function(app) {
     });
   }
 
-  function showStories(req, res) {
+  function showTestimonials(req, res) {
     res.render('resources/stories', {
       title: 'Stories from Happy Free Code Camp Campers',
-      stories: stories
+      stories: testimonials
     });
   }
 
