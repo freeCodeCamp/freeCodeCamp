@@ -180,9 +180,9 @@ module.exports = function(app) {
                 'could not find challenge block for ' + challenge.block
               );
             }
-            const nextBlock$ = blocks$.elementAt(blockIndex + 1);
-            const firstChallengeOfNextBlock$ = nextBlock$
-              .map(block => block.challenges[0]);
+            const firstChallengeOfNextBlock$ = blocks$
+              .elementAtOrDefault(blockIndex + 1, {})
+              .map(({ challenges = [] }) => challenges[0]);
 
             return blocks$
               .elementAt(blockIndex)
@@ -211,6 +211,9 @@ module.exports = function(app) {
           });
       })
       .map(nextChallenge => {
+        if (!nextChallenge) {
+          return null;
+        }
         nextChallengeName = nextChallenge.dashedName;
         return nextChallengeName;
       })
@@ -267,12 +270,13 @@ module.exports = function(app) {
         }
 
         if (dasherize(challenge.name) !== origChallengeName) {
-          return Observable.just(
-            '/challenges/' +
-            dasherize(challenge.name) +
-            '?solution=' +
-            encodeURIComponent(solutionCode)
-          );
+          let redirectUrl = `/challenges/${dasherize(challenge.name)}`;
+
+          if (solutionCode) {
+            redirectUrl += `?solution=${encodeURIComponent(solutionCode)}`;
+          }
+
+          return Observable.just(redirectUrl);
         }
 
         // save user does nothing if user does not exist
