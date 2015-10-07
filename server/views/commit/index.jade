@@ -2,36 +2,38 @@ extends ../layout
 block content
     .panel.panel-info
         .panel-body
-            h3.text-center Commit to yourself. Commit to a nonprofit.
+            h2.text-center Commit to yourself. Commit to a nonprofit.
             .row
                 .col-xs-12.col-sm-6.col-sm-offset-3
                   p Give yourself external motivation and help nonprofits right away. Pledge a monthly donation to a nonprofit until you’ve earned either your Front End or Full Stack Development Certification.
+
             .row
                 .col-xs-12.col-sm-6.col-sm-offset-3.text-center
-                  h4 Pledge to #{displayName}
-                  .spacer
+                  h3 Pledge to #{displayName}&thinsp;
+                  .button-spacer
                       a(href='#{imgUrl}' data-lightbox='img-enlarge' alt='#{imgAlt}')
                           img.img-responsive(src='#{imgUrl}' alt='#{imgAlt}')
-                      p= description
-                  a(href='/commit/directory') or browse our directory
+                      p.large-p
+                        = description
+                    a(href='/commit/directory') ...or see other nonprofits
             .spacer
             form.form(name='commit')
                 .hidden
                     input(type='text' value='#{name}' name='nonprofit')
                 .row
                     .col-xs-12.col-sm-6.col-sm-offset-3
-                        h4 Choose your goal:
+                        h3 Choose your goal:
                         .btn-group.btn-group-justified(data-toggle='buttons' role='group')
                             label.btn.btn-primary.btn-lg.active
                                 input(type='radio' id=frontEndCert value=frontEndCert name='goal' checked="checked")
-                                | Front End Development Certificate (takes about 400 hours)
+                                | Front End Development Certification (takes about 400 hours)
                             label.btn.btn-primary.btn-lg
                                 input(type='radio' id=fullStackCert value=fullStackCert name='goal')
-                                | Full Stack Development Certificate (takes about 800 hours)
+                                | Full Stack Development Certification (takes about 800 hours)
                 .spacer
                 .row
                     .col-xs-12.col-sm-6.col-sm-offset-3
-                        h4 Choose how much you want to pledge each month:
+                        h3 Choose your monthly pledge:
                         .btn-group.btn-group-justified(data-toggle='buttons' role='group')
                             label.btn.btn-success
                                 input(type='radio' id='5-dollar-pledge' value='5' name='amount')
@@ -39,6 +41,9 @@ block content
                             label.btn.btn-success.active
                                 input(type='radio' id='10-dollar-pledge' value='10' name='amount' checked="checked")
                                 | $10 per month
+                            label.btn.btn-success.active
+                                input(type='radio' id='25-dollar-pledge' value='25' name='amount' checked="checked")
+                                | $25 per month
                             label.btn.btn-success
                                 input(type='radio' id='50-dollar-pledge' value='50' name='amount')
                                 | $50 per month
@@ -46,7 +51,7 @@ block content
                 .row
                     .col-xs-12.col-sm-6.col-sm-offset-3.text-center
                         a#commit-btn-submit.btn.btn-block.btn-lg.signup-btn(href=donateUrl target='_blank') Commit (and open donate page)
-                        .button-spacer
+
             if pledge
                 form.row(name='stop-pledge' action='/commit/stop-commitment' method='post')
                     .col-xs-12.col-sm-6.col-sm-offset-3.text-center
