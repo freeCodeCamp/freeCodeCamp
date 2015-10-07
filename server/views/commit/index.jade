@@ -47,15 +47,13 @@ block content
                     .col-xs-12.col-sm-6.col-sm-offset-3.text-center
                         a#commit-btn-submit.btn.btn-block.btn-lg.signup-btn(href=donateUrl target='_blank') Commit (and open donate page)
                         .button-spacer
-                .spacer
             if pledge
                 form.row(name='stop-pledge' action='/commit/stop-commitment' method='post')
                     .col-xs-12.col-sm-6.col-sm-offset-3.text-center
                         button.btn.btn-sm.btn-danger(name='submit' type='submit') Stop my pledge
-                .spacer
             else
                 .row
-                    .col-xs-12.col-sm-6.col-sm-offset-3.text-center
+                    h4.col-xs-12.col-sm-6.col-sm-offset-3.text-center
                         a(href='/') Maybe later
                 .spacer
     script.

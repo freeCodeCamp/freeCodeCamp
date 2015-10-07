@@ -204,7 +204,7 @@ export default function commit(app) {
             msg = `No pledge found for user ${user.username}.`;
           }
           req.flash('errors', { msg });
-          return res.redirect('/commit');
+          return res.redirect(`/${user.username}`);
         },
         next
       );
