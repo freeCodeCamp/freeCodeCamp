@@ -18,6 +18,10 @@ import {
 } from '../utils/middleware';
 
 const sendNonUserToFront = ifNoUserRedirectTo('/');
+const sendNonUserToCommit = ifNoUserRedirectTo(
+  '/commit',
+  'Must be signed in to update commit'
+);
 const debug = debugFactory('freecc:commit');
 
 function findNonprofit(name) {
@@ -45,6 +49,12 @@ export default function commit(app) {
     '/commit/pledge',
     sendNonUserToFront,
     pledge
+  );
+
+  router.post(
+    '/commit/stop-commitment',
+    sendNonUserToCommit,
+    stopCommit
   );
 
   app.use(router);
@@ -139,6 +149,34 @@ export default function commit(app) {
             `
           });
           res.redirect('/' + user.username);
+        },
+        next
+      );
+  }
+
+  function stopCommit(req, res, next) {
+    const { user } = req;
+
+    observeQuery(user, 'pledge')
+      .flatMap(pledge => {
+        if (!pledge) {
+          return Observable.just();
+        }
+
+        pledge.formerUserId = pledge.userId;
+        pledge.userId = null;
+        pledge.isOrphaned = true;
+        pledge.dateEnded = new Date();
+        return saveInstance(pledge);
+      })
+      .subscribe(
+        pledge => {
+          let msg = `You have successfully stopped your pledge.`;
+          if (!pledge) {
+            msg = `No pledge found for user ${user.username}.`;
+          }
+          req.flash('errors', { msg });
+          return res.redirect('/commit');
         },
         next
       );
