@@ -134,51 +134,19 @@
     },
     {
       "id": "560add56cb82ac38a17513c0",
-      "title": "Configure your Public Profile",
+      "title": "Configure your Code Portfolio",
       "challengeSeed": [],
       "description": [
         [
           "http://i.imgur.com/FkEzbto.gif",
-          "A gif showing how you can click your profile image in your upper right hand corner to access the account page and connect GitHub.",
-          "Check out your portfolio page. Click your picture your upper right hand corner. To activate your portfolio page, you'll need to link your GitHub account with Free Code Camp.",
+          "A gif showing how you can click your profile image in your upper right hand corner to your code portfolio and connect GitHub.",
+          "Check out your code portfolio. Click your picture your upper right hand corner. To activate your code portfolio, you'll need to link your GitHub account with Free Code Camp.",
           ""
         ],
         [
           "http://i.imgur.com/WKzEr1q.gif",
-          "A gif showing how you can access your profile page and hover over different days to see how many brownie points you got on those days.",
-          "Your portfolio page shows your progress and how many Brownie Points you have. You can get Brownie Points by completing challenges and by helping other campers in our chat rooms. If you get Brownie Points on several days in a row, you'll get a streak.",
-          ""
-        ]
-      ],
-      "type": "Waypoint",
-      "challengeType": 7,
-      "tests": [],
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
-      "nameRu": "",
-      "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
-      "namePt": "",
-      "descriptionPt": []
-    },
-    {
-      "id": "560add65cb82ac38a17513c1",
-      "title": "Try our Wiki and Camper News",
-      "challengeSeed": [],
-      "description": [
-        [
-          "http://i.imgur.com/DoOqkNW.gif",
-          "A gif showing how you can click the \"Wiki\" button in your upper-right corner to access the wiki.",
-          "Try this: Click the \"Wiki\" button in your upper right hand corner. Our community has contributed lots of useful information to this searchable wiki.",
-          ""
-        ],
-        [
-          "http://i.imgur.com/nmSiMy1.gif",
-          "A gif showing how you can access our Camper News page and click the \"upvote\" button to upvote a story.",
-          "Click the \"News\" button in your upper right hand corner. You can browse links on Camper News and upvote ones that you enjoy.",
+          "A gif showing how you can access your code portfolio and hover over different days to see how many brownie points you got on those days.",
+          "Your code portfolio shows your progress and how many Brownie Points you have. You can get Brownie Points by completing challenges and by helping other campers in our chat rooms. If you get Brownie Points on several days in a row, you'll get a streak.",
           ""
         ]
       ],
@@ -212,38 +180,6 @@
           "A gif showing how you can click the link below, find your city on the list of Campsites, then click on the Facebook link for your city and join your city's Facebook group.",
           "Find your city on this list, click the \"Facebook\" link, then click the \"Join group\" button to apply to join your city's Facebook group (someone from the campsite should approve you shortly). If your city isn't on this list, scroll to the bottom of the wiki article for instructions for how you can create your city's Campsite.",
           "https://github.com/FreeCodeCamp/freecodecamp/wiki/List-of-Free-Code-Camp-city-based-Campsites"
-        ]
-      ],
-      "type": "Waypoint",
-      "challengeType": 7,
-      "tests": [],
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
-      "nameRu": "",
-      "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
-      "namePt": "",
-      "descriptionPt": []
-    },
-    {
-      "id": "560add8ccb82ac38a17513c3",
-      "title": "Join our Alumni Network and Commit to Your Goal",
-      "challengeSeed": [],
-      "description": [
-        [
-          "http://i.imgur.com/P7qfJXt.gif",
-          "A gif showing how you can click the link below and fill in the necessary fields to add your Free Code Camp studies to your LinkedIn profile.",
-          "You can add Free Code Camp to your LinkedIn education background. Set your graduation date as next year. For \"Degree\", type \"Full Stack Web Development\". For \"Field of study\", type \"Computer Software Engineering\". Then click \"Save Changes\".",
-          "https://www.linkedin.com/profile/edit-education?school=Free+Code+Camp"
-        ],
-        [
-          "",
-          "",
-          "Free Code Camp will always be free. If you want to feel more motivated to earn our certificates faster, we encourage you to instead pledge to donate to a nonprofit each day.",
-          ""
         ]
       ],
       "type": "Waypoint",
