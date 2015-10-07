@@ -145,8 +145,8 @@ export default function certificate(app) {
           }
           return res.status(200).send(
             dedent`
-              Looks like you have not completed the neccessary steps,
-              Please return the map
+              Looks like you have not completed the neccessary steps.
+              Please return to the challenge map.
             `
           );
         },
