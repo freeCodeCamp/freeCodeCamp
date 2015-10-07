@@ -761,14 +761,13 @@
       "id": "a10d2431ad0c6a099a4b8b52",
       "title": "Everything Be True",
       "description": [
-        "Check if the predicate (second argument) returns truthy (defined) for all elements of a collection (first argument).",
-        "For this, check to see if the property defined in the second argument is present on every element of the collection.",
+        "Check if the predicate (second argument) is truthy on all elements of a collection (first argument).",
         "Remember, you can access object properties through either dot notation or [] notation.",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "challengeSeed": [
         "function every(collection, pre) {",
-        "  // Does everyone have one of these?",
+        "  // Is everyone being true?",
         "  return pre;",
         "}",
         "",
@@ -776,12 +775,14 @@
       ],
       "tests": [
         "assert.strictEqual(every([{\"user\": \"Tinky-Winky\", \"sex\": \"male\"}, {\"user\": \"Dipsy\", \"sex\": \"male\"}, {\"user\": \"Laa-Laa\", \"sex\": \"female\"}, {\"user\": \"Po\", \"sex\": \"female\"}], \"sex\"), true, 'message: <code>every([{\"user\": \"Tinky-Winky\", \"sex\": \"male\"}, {\"user\": \"Dipsy\", \"sex\": \"male\"}, {\"user\": \"Laa-Laa\", \"sex\": \"female\"}, {\"user\": \"Po\", \"sex\": \"female\"}], \"sex\")</code> should return true.');",
-        "assert.strictEqual(every([{\"user\": \"Tinky-Winky\", \"sex\": \"male\"}, {\"user\": \"Dipsy\", \"sex\": \"male\"}, {\"user\": \"Laa-Laa\", \"sex\": \"female\"}, {\"user\": \"Po\", \"sex\": \"female\"}], {\"sex\": \"female\"}), false, 'message: <code>every([{\"user\": \"Tinky-Winky\", \"sex\": \"male\"}, {\"user\": \"Dipsy\", \"sex\": \"male\"}, {\"user\": \"Laa-Laa\", \"sex\": \"female\"}, {\"user\": \"Po\", \"sex\": \"female\"}], {\"sex\": \"female\"})</code> should return false.');",
-        "assert.strictEqual(every([{\"user\": \"Tinky-Winky\", \"sex\": \"female\"}, {\"user\": \"Dipsy\", \"sex\": \"male\"}, {\"user\": \"Laa-Laa\", \"sex\": \"female\"}, {\"user\": \"Po\", \"sex\": \"female\"}], {\"sex\": \"female\"}), false, 'message: <code>every([{\"user\": \"Tinky-Winky\", \"sex\": \"female\"}, {\"user\": \"Dipsy\", \"sex\": \"male\"}, {\"user\": \"Laa-Laa\", \"sex\": \"female\"}, {\"user\": \"Po\", \"sex\": \"female\"}], {\"sex\": \"female\"})</code> should return false.');"
-      ],
-      "MDNlinks": [
-        "Object.hasOwnProperty()",
-        "Object.getOwnPropertyNames()"
+        "assert.strictEqual(every([{\"user\": \"Tinky-Winky\", \"sex\": \"male\"}, {\"user\": \"Dipsy\"}, {\"user\": \"Laa-Laa\", \"sex\": \"female\"}, {\"user\": \"Po\", \"sex\": \"female\"}], \"sex\"), false, 'message: <code>every([{\"user\": \"Tinky-Winky\", \"sex\": \"male\"}, {\"user\": \"Dipsy\"}, {\"user\": \"Laa-Laa\", \"sex\": \"female\"}, {\"user\": \"Po\", \"sex\": \"female\"}], \"sex\")</code> should return false.');",
+        "assert.strictEqual(every([{\"user\": \"Tinky-Winky\", \"sex\": \"male\", \"age\": 2}, {\"user\": \"Dipsy\", \"sex\": \"male\", \"age\": 0}, {\"user\": \"Laa-Laa\", \"sex\": \"female\", \"age\": 5}, {\"user\": \"Po\", \"sex\": \"female\", \"age\": 4}], \"age\"), false, 'message: <code>every([{\"user\": \"Tinky-Winky\", \"sex\": \"male\", \"age\": 0}, {\"user\": \"Dipsy\", \"sex\": \"male\", \"age\": 3}, {\"user\": \"Laa-Laa\", \"sex\": \"female\", \"age\": 5}, {\"user\": \"Po\", \"sex\": \"female\", \"age\": 4}], \"age\")</code> should return false.');",
+        "assert.strictEqual(every([{\"name\": \"Pete\", \"onBoat\": true}, {\"name\": \"Repeat\", \"onBoat\": true}, {\"name\": \"FastFoward\", \"onBoat\": null}], \"onBoat\"), false, 'message: <code>every([{\"name\": \"Pete\", \"onBoat\": true}, {\"name\": \"Repeat\", \"onBoat\": true}, {\"name\": \"FastFoward\", \"onBoat\": null}], \"onBoat\")</code> should return false');",
+        "assert.strictEqual(every([{\"name\": \"Pete\", \"onBoat\": true}, {\"name\": \"Repeat\", \"onBoat\": true, \"alias\": \"Repete\"}, {\"name\": \"FastFoward\", \"onBoat\": true}], \"onBoat\"), true, 'message: <code>every([{\"name\": \"Pete\", \"onBoat\": true}, {\"name\": \"Repeat\", \"onBoat\": true, \"alias\": \"Repete\"}, {\"name\": \"FastFoward\", \"onBoat\": true}], \"onBoat\")</code> should return true');",
+        "assert.strictEqual(every([{\"single\": \"yes\"}], \"single\"), true, 'message: <code>every([{\"single\": \"yes\"}], \"single\")</code> should return true');",
+        "assert.strictEqual(every([{\"single\": \"\"}, {\"single\": \"double\"}], \"single\"), false, 'message: <code>every([{\"single\": \"\"}, {\"single\": \"double\"}], \"single\")</code> should return false');",
+        "assert.strictEqual(every([{\"single\": \"double\"}, {\"single\": undefined}], \"single\"), false, 'message: <code>every([{\"single\": \"double\"}, {\"single\": undefined}], \"single\")</code> should return false');",
+        "assert.strictEqual(every([{\"single\": \"double\"}, {\"single\": NaN}], \"single\"), false, 'message: <code>every([{\"single\": \"double\"}, {\"single\": NaN}], \"single\")</code> should return false');"
       ],
       "type": "bonfire",
       "challengeType": 5,
