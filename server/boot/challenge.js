@@ -20,7 +20,7 @@ const isDev = process.env.NODE_ENV !== 'production';
 const isBeta = !!process.env.BETA;
 const debug = debugFactory('freecc:challenges');
 const challengesRegex = /^(bonfire|waypoint|zipline|basejump)/i;
-const firstChallenge = 'waypoint-say-hello-to-html-elements';
+const firstChallenge = 'waypoint-learn-how-free-code-camp-works';
 const challengeView = {
   0: 'coursewares/showHTML',
   1: 'coursewares/showJS',
