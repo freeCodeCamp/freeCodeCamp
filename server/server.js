@@ -16,6 +16,7 @@ var getUsernameFromProvider = require('./utils/auth').getUsernameFromProvider;
 var generateKey =
   require('loopback-component-passport/lib/models/utils').generateKey;
 
+var isBeta = !!process.env.BETA;
 var app = loopback();
 
 expressState.extend(app);
@@ -96,10 +97,13 @@ app.start = function() {
   app.listen(app.get('port'), function() {
     app.emit('started');
     console.log(
-      'FreeCodeCamp server listening on port %d in %s mode',
+      'FreeCodeCamp server listening on port %d in %s',
       app.get('port'),
       app.get('env')
     );
+    if (isBeta) {
+      console.log('Free Code Camp is in beta mode');
+    }
   });
 };
 

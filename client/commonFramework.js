@@ -1,31 +1,49 @@
-// common namespace
-// all classes should be stored here
-var common = common || {
-  // init is an array of functions that are
-  // called at the beginning of dom ready
-  init: []
-};
+var common = (function() {
+  // common namespace
+  // all classes should be stored here
+  var common = window.common || {
+    // init is an array of functions that are
+    // called at the beginning of dom ready
+    init: []
+  };
 
-common.challengeName = common.challengeName || window.challenge_Name ?
-  window.challenge_Name :
-  '';
+  common.challengeName = common.challengeName || window.challenge_Name ?
+    window.challenge_Name :
+    '';
 
-common.challengeType = common.challengeType || window.challengeType ?
-  window.challengeType :
-  0;
+  common.challengeType = common.challengeType || window.challengeType ?
+    window.challengeType :
+    0;
 
-common.challengeId = common.challengeId || window.challenge_Id;
+  common.challengeId = common.challengeId || window.challenge_Id;
 
-common.challengeSeed = common.challengeSeed || window.challengeSeed ?
-  window.challengeSeed :
-  [];
+  common.challengeSeed = common.challengeSeed || window.challengeSeed ?
+    window.challengeSeed :
+    [];
 
-common.seed = common.challengeSeed.reduce(function(seed, line) {
-  return seed + line + '\n';
-}, '');
+  common.seed = common.challengeSeed.reduce(function(seed, line) {
+    return seed + line + '\n';
+  }, '');
+
+  common.replaceScriptTags = function replaceScriptTags(value) {
+    return value
+      .replace(/<script>/gi, 'fccss')
+      .replace(/<\/script>/gi, 'fcces');
+  };
+
+  common.replaceSafeTags = function replaceSafeTags(value) {
+    return value
+      .replace(/fccss/gi, '<script>')
+      .replace(/fcces/gi, '</script>');
+  };
+
+  return common;
+})();
 
 // store code in the URL
 common.codeUri = (function(common, encode, decode, location, history) {
+  var replaceScriptTags = common.replaceScriptTags;
+  var replaceSafeTags = common.replaceSafeTags;
   var codeUri = {
     encode: function(code) {
       return encode(code);
@@ -67,7 +85,7 @@ common.codeUri = (function(common, encode, decode, location, history) {
             null,
             location.href.split('?')[0]
           );
-          location.hash = '#?' + query;
+          location.hash = '#?' + replaceScriptTags(query);
         }
       } else {
         query = location.hash.replace(/^\#\?/, '');
@@ -82,13 +100,15 @@ common.codeUri = (function(common, encode, decode, location, history) {
           var key = param.split('=')[0];
           var value = param.split('=')[1];
           if (key === 'solution') {
-            return codeUri.decode(value);
+            return replaceSafeTags(codeUri.decode(value || ''));
           }
           return solution;
         }, null);
     },
     querify: function(solution) {
-      location.hash = '?solution=' + codeUri.encode(solution);
+      location.hash = '?solution=' +
+        codeUri.encode(replaceScriptTags(solution));
+
       return solution;
     }
   };
@@ -306,12 +326,6 @@ var sandBox = (function(jailed, codeOutput) {
   return sandBox;
 }(window.jailed, common.codeOutput));
 
-function replaceSafeTags(value) {
-  return value
-    .replace(/fccss/gi, '<script>')
-    .replace(/fcces/gi, '</script>');
-}
-
 var BDDregex = new RegExp(
   '(expect(\\s+)?\\(.*\\;)|' +
   '(assert(\\s+)?\\(.*\\;)|' +
@@ -416,7 +430,7 @@ var editor = (function(CodeMirror, emmetCodeMirror, common) {
         common.seed;
     }
 
-    editor.setValue(replaceSafeTags(editorValue));
+    editor.setValue(common.replaceSafeTags(editorValue));
     editor.refresh();
   });
 
@@ -659,7 +673,7 @@ function showCompletion() {
 }
 
 var resetEditor = function resetEditor() {
-  editor.setValue(replaceSafeTags(common.seed));
+  editor.setValue(common.replaceSafeTags(common.seed));
   $('#testSuite').empty();
   bonfireExecute(true);
   common.codeStorage.updateStorage();

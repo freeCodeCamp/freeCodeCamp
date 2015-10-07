@@ -1,12 +1,19 @@
-var mapShareKey = 'map-shares';
+var main = window.main || {};
+
+main.mapShareKey = 'map-shares';
+
 var lastCompleted = typeof lastCompleted !== 'undefined' ?
   lastCompleted :
   '';
 
 function getMapShares() {
-  var alreadyShared = JSON.parse(localStorage.getItem(mapShareKey) || '[]');
+  var alreadyShared = JSON.parse(
+    localStorage.getItem(main.mapShareKey) ||
+    '[]'
+  );
+
   if (!alreadyShared || !Array.isArray(alreadyShared)) {
-    localStorage.setItem(mapShareKey, JSON.stringify([]));
+    localStorage.setItem(main.mapShareKey, JSON.stringify([]));
     alreadyShared = [];
   }
   return alreadyShared;
@@ -23,7 +30,7 @@ function setMapShare(id) {
   if (!found) {
     alreadyShared.push(id);
   }
-  localStorage.setItem(mapShareKey, JSON.stringify(alreadyShared));
+  localStorage.setItem(main.mapShareKey, JSON.stringify(alreadyShared));
   return alreadyShared;
 }
 

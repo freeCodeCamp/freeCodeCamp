@@ -166,6 +166,11 @@
       "type": "hasMany",
       "model": "userIdentity",
       "foreignKey": ""
+    },
+    "pledge": {
+      "type": "hasOne",
+      "model": "pledge",
+      "foreignKey": ""
     }
   },
   "acls": [
