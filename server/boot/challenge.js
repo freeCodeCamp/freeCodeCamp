@@ -49,12 +49,12 @@ function updateUserProgress(user, challengeId, completedChallenge) {
   let { completedChallenges } = user;
 
   // migrate user challenges object to remove
-  if (!user.isUniqMigrated) {
+  /* if (!user.isUniqMigrated) {
     user.isUniqMigrated = true;
 
     completedChallenges = user.completedChallenges =
       makeChallengesUnique(completedChallenges);
-  }
+  }*/
 
   const indexOfChallenge = _.findIndex(completedChallenges, {
     id: challengeId
