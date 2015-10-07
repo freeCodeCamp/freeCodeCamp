@@ -1,0 +1,22 @@
+extends ../layout
+block content
+    .panel.panel-info
+        .panel-heading.text-center Projects Created by Free Code Camp Campers
+        .panel-body.text-left
+            .row
+                .col-xs-12.col-sm-10.col-sm-offset-1
+                    for project in projects
+                        .spacer
+                        .row
+                            .col-xs-12.col-sm-3
+                                img.img-responsive(src=project.image)
+                            .col-xs-12.col-sm-9.negative-15
+                                h3
+                                    a(href=project.url) #{project.name}
+                                h4 by&thinsp;
+                                    a(href='/' + project.camper) #{project.camper}
+                                p= project.description
+
+            if !user
+                a.btn.btn-cta.signup-btn.btn-primary(href="/login") Start learning to code (it's free)
+            .spacer

@@ -5,6 +5,8 @@ var Rx = require('rx'),
     request = require('request'),
     debug = require('debug')('freecc:cntr:resources'),
     constantStrings = require('../utils/constantStrings.json'),
+    labs = require('../../seed/labs.json'),
+    testimonials = require('../../seed/testimonials.json'),
     secrets = require('../../config/secrets');
 
 module.exports = function(app) {
@@ -32,6 +34,8 @@ module.exports = function(app) {
   router.get('/unsubscribed', unsubscribed);
   router.get('/get-started', getStarted);
   router.get('/submit-cat-photo', submitCatPhoto);
+  router.get('/labs', showLabs);
+  router.get('/success-stories', showSuccessStories);
 
   app.use(router);
 
@@ -178,6 +182,20 @@ module.exports = function(app) {
 
   function chat(req, res) {
     res.redirect('https://gitter.im/FreeCodeCamp/FreeCodeCamp');
+  }
+
+  function showLabs(req, res) {
+    res.render('resources/labs', {
+      title: 'Projects Built by Free Code Camp Students',
+      projects: labs
+    });
+  }
+
+  function showSuccessStories(req, res) {
+    res.render('resources/labs', {
+      title: 'Projects Built by Free Code Camp Students',
+      labs: testimonials
+    });
   }
 
   function submitCatPhoto(req, res) {
