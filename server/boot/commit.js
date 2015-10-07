@@ -1,4 +1,5 @@
 import _ from 'lodash';
+import { Observable } from 'rx';
 import debugFactory from 'debug';
 import dedent from 'dedent';
 import nonprofits from '../utils/commit.json';
@@ -48,19 +49,46 @@ export default function commit(app) {
 
   app.use(router);
 
-  function commitToNonprofit(req, res) {
+  function commitToNonprofit(req, res, next) {
+    const { user } = req;
     let nonprofitName = unDasherize(req.query.nonprofit);
-    const nonprofit = findNonprofit(nonprofitName);
 
     debug('looking for nonprofit', nonprofitName);
+    const nonprofit = findNonprofit(nonprofitName);
 
-    res.render(
-      'commit/',
-      Object.assign(
-        { title: 'Commit to a nonprofit. Commit to your goal.' },
-        nonprofit
-      )
-    );
+    Observable.just(user)
+      .flatMap(user => {
+        if (user) {
+          debug('getting user pledge');
+          return observeQuery(user, 'pledge');
+        }
+        return Observable.just();
+      })
+      .subscribe(
+        pledge => {
+          if (pledge) {
+            debug('found previous pledge');
+            req.flash('info', {
+              msg: dedent`
+                Looks like you already have a pledge to ${pledge.displayName}.
+                Hitting commit here will replace your old commitment.
+              `
+            });
+          }
+          res.render(
+            'commit/',
+            Object.assign(
+              {
+                title: 'Commit to a nonprofit. Commit to your goal.',
+                pledge
+              },
+              nonprofit
+            )
+          );
+        },
+        next
+      );
+
   }
 
   function pledge(req, res, next) {
@@ -114,6 +142,5 @@ export default function commit(app) {
         },
         next
       );
-
   }
 }
