@@ -16,6 +16,8 @@ import {
   ifNoUserSend
 } from '../utils/middleware';
 
+const isDev = process.env.NODE_ENV !== 'production';
+const isBeta = !!process.env.BETA;
 const debug = debugFactory('freecc:challenges');
 const challengesRegex = /^(bonfire|waypoint|zipline|basejump)/i;
 const firstChallenge = 'waypoint-say-hello-to-html-elements';
@@ -105,6 +107,9 @@ module.exports = function(app) {
       null,
       Scheduler.default
     ))
+    // filter out all challenges that have isBeta flag set
+    // except in development or beta site
+    .filter(challenge => isDev || isBeta || !challenge.isBeta)
     .shareReplay();
 
   // create a stream of challenge blocks
@@ -543,8 +548,10 @@ module.exports = function(app) {
           }
           return sum;
         }, 0);
+        const isBeta = _.every(blockArray, 'isBeta');
 
         return {
+          isBeta,
           name: blockArray[0].block,
           dashedName: dasherize(blockArray[0].block),
           challenges: blockArray,
