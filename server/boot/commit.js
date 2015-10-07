@@ -2,7 +2,9 @@ import _ from 'lodash';
 import { Observable } from 'rx';
 import debugFactory from 'debug';
 import dedent from 'dedent';
+
 import nonprofits from '../utils/commit.json';
+import commitGoals from '../utils/commit-goals.json';
 
 import {
   unDasherize
@@ -57,6 +59,12 @@ export default function commit(app) {
     stopCommit
   );
 
+  router.post(
+    '/commit/complete-goal',
+    sendNonUserToCommit,
+    completeCommitment
+  );
+
   app.use(router);
 
   function commitToNonprofit(req, res, next) {
@@ -90,7 +98,9 @@ export default function commit(app) {
             Object.assign(
               {
                 title: 'Commit to a nonprofit. Commit to your goal.',
-                pledge
+                pledge,
+                frontEndCert: commitGoals.frontEndCert,
+                fullStackCert: commitGoals.fullStackCert
               },
               nonprofit
             )
@@ -149,6 +159,40 @@ export default function commit(app) {
             `
           });
           res.redirect('/' + user.username);
+        },
+        next
+      );
+  }
+
+  function completeCommitment(req, res, next) {
+    const { user } = req;
+    const { isFrontEndCert, isFullStackCert } = user;
+
+    observeQuery(user, 'pledge')
+      .flatMap(pledge => {
+        const { goal } = pledge;
+        if (!pledge) {
+          return Observable.just('No pledge found');
+        }
+        if (
+          isFrontEndCert && goal === commitGoals.frontEndCert ||
+          isFullStackCert && goal === commitGoals.fullStackCert
+        ) {
+          pledge.isCompleted = true;
+          pledge.dateEnded = new Date();
+          return saveInstance(pledge);
+        }
+        return Observable.just(dedent`
+          You have not yet reached your goal of completing the ${goal}
+          Please retry when you have met the requirements.
+        `);
+      })
+      .subscribe(
+        msgOrPledge => {
+          if (typeof msgOrPledge === 'string') {
+            return res.send(msgOrPledge);
+          }
+          return res.send(true);
         },
         next
       );
