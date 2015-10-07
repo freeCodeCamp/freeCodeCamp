@@ -1,0 +1,21 @@
+extends ../layout
+block content
+    .panel.panel-info
+        .panel-heading.text-center Commit to one of these nonprofits
+        .panel-body
+            .row
+                .col-xs-12.col-sm-6.col-sm-offset-3
+                    for nonprofit in nonprofits
+                        .spacer
+                        .row
+                            .text-center
+                                h2= nonprofit.displayName
+                        .row
+                            .col-xs-12.col-sm-8.col-sm-offset-2
+                                img.img-responsive.img-center(src=nonprofit.imgUrl)
+                                p= nonprofit.description
+                        .row
+                            .col-xs-12.col-sm-8.col-sm-offset-2
+                                a.text-center.btn.btn-primary.btn-lg.btn-block(href='/commit?nonprofit=#{nonprofit.name}') Go to #{nonprofit.displayName}
+                        .spacer
+

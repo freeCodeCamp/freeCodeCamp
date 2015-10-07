@@ -56,6 +56,11 @@ export default function commit(app) {
     pledge
   );
 
+  router.get(
+    '/commit/directory',
+    renderDirectory
+  );
+
   router.post(
     '/commit/stop-commitment',
     sendNonUserToCommit,
@@ -167,6 +172,13 @@ export default function commit(app) {
       );
   }
 
+  function renderDirectory(req, res) {
+    res.render('commit/directory', {
+      title: 'Commit Directory',
+      nonprofits
+    });
+  }
+
   function completeCommitment(req, res, next) {
     const { user } = req;
 
@@ -204,7 +216,7 @@ export default function commit(app) {
             msg = `No pledge found for user ${user.username}.`;
           }
           req.flash('errors', { msg });
-          return res.redirect('/commit');
+          return res.redirect(`/${user.username}`);
         },
         next
       );
