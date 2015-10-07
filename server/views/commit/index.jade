@@ -41,7 +41,7 @@ block content
                             label.btn.btn-success.active
                                 input(type='radio' id='10-dollar-pledge' value='10' name='amount' checked="checked")
                                 | $10 per month
-                            label.btn.btn-success.active
+                            label.btn.btn-success
                                 input(type='radio' id='25-dollar-pledge' value='25' name='amount' checked="checked")
                                 | $25 per month
                             label.btn.btn-success
@@ -55,12 +55,14 @@ block content
             if pledge
                 form.row(name='stop-pledge' action='/commit/stop-commitment' method='post')
                     .col-xs-12.col-sm-6.col-sm-offset-3.text-center
-                        button.btn.btn-sm.btn-danger(name='submit' type='submit') Stop my pledge
+                        .button-spacer
+                        button.btn.btn-block.btn-danger(name='submit' type='submit') Stop my current pledge
             else
                 .row
-                    h4.col-xs-12.col-sm-6.col-sm-offset-3.text-center
-                        a(href='/') Maybe later
-                .spacer
+                    .col-xs-12.col-sm-6.col-sm-offset-3.text-center
+                        .button-spacer
+                        a.btn.btn-block.btn-default(href='/') Maybe later
+            .spacer
     script.
       $(function() {
         $('#commit-btn-submit').click(function() {
