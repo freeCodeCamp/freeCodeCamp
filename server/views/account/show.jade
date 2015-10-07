@@ -58,6 +58,13 @@ block content
                     h1.flat-top.wrappable= name
                     h1.flat-top.wrappable= location
                     h1.flat-top.text-primary= "[ " + (progressTimestamps.length) + " ]"
+                    if pledge
+                        .spacer
+                          h4
+                            | This camper has committed to giving $#{pledge.amount} to
+                            a(href='#{pledge.donateUrl}?ref=freecodecamp.com' target='_blank')  #{pledge.displayName}
+                            |  each month until they have completed their #{pledge.goal}.
+                        .spacer
                     if isFrontEndCert
                         a.btn.btn-primary(href='/' + username + '/front-end-certification') View My Front End Development Certification
                     if isFullStackCert
@@ -155,6 +162,10 @@ block content
             .panel-heading.text-center Manage your account
             .panel-body
                 .col-xs-12
+                    a.btn.btn-lg.btn-block.btn-warning.btn-link-social(href='/logout')
+                        span.ion-android-exit
+                        | Sign me out of Free Code Camp
+                .col-xs-12
                     a.btn.btn-lg.btn-block.btn-primary.btn-link-social(href='mailto:team@freecodecamp.com')
                         span.ion-email
                         | Email us at team@freecodecamp.com
@@ -169,9 +180,9 @@ block content
                             span.ion-unlocked
                             | Let other people see all my solutions
                 .col-xs-12
-                    a.btn.btn-lg.btn-block.btn-warning.btn-link-social(href='/logout')
-                        span.ion-android-exit
-                        | Sign me out of Free Code Camp
+                    a.btn.btn-lg.btn-block.btn-success.btn-link-social(href='/commit')
+                        span.ion-edit
+                        | Edit my pledge
                 .col-xs-12
                     a.btn.btn-lg.btn-block.btn-danger.btn-link-social.confirm-deletion
                         span.ion-trash-b
