@@ -158,11 +158,11 @@ export default function commit(app) {
         return saveInstance(pledge);
       })
       .subscribe(
-        ({ nonprofit, goal, amount }) => {
+        ({ displayName, goal, amount }) => {
           req.flash('success', {
             msg: dedent`
               Congratulations, you have committed to giving
-              ${nonprofit} $${amount} each month until you have completed
+              ${displayName} $${amount} each month until you have completed
               your ${goal}.
             `
           });
