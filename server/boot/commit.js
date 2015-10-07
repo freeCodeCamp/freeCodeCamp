@@ -56,6 +56,11 @@ export default function commit(app) {
     pledge
   );
 
+  router.get(
+    '/commit/directory',
+    renderDirectory
+  );
+
   router.post(
     '/commit/stop-commitment',
     sendNonUserToCommit,
@@ -165,6 +170,13 @@ export default function commit(app) {
         },
         next
       );
+  }
+
+  function renderDirectory(req, res) {
+    res.render('commit/directory', {
+      title: 'Commit Directory',
+      nonprofits
+    });
   }
 
   function completeCommitment(req, res, next) {
