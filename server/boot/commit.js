@@ -4,7 +4,10 @@ import debugFactory from 'debug';
 import dedent from 'dedent';
 
 import nonprofits from '../utils/commit.json';
-import commitGoals from '../utils/commit-goals.json';
+import {
+  commitGoals,
+  completeCommitment$
+} from '../utils/commit';
 
 import {
   unDasherize
@@ -116,7 +119,7 @@ export default function commit(app) {
     const {
       nonprofit: nonprofitName = 'girl develop it',
       amount = '5',
-      goal = 'Front End Development Certification'
+      goal = commitGoals.frontEndCert
     } = req.query;
 
     const nonprofit = findNonprofit(nonprofitName);
@@ -166,27 +169,8 @@ export default function commit(app) {
 
   function completeCommitment(req, res, next) {
     const { user } = req;
-    const { isFrontEndCert, isFullStackCert } = user;
 
-    observeQuery(user, 'pledge')
-      .flatMap(pledge => {
-        const { goal } = pledge;
-        if (!pledge) {
-          return Observable.just('No pledge found');
-        }
-        if (
-          isFrontEndCert && goal === commitGoals.frontEndCert ||
-          isFullStackCert && goal === commitGoals.fullStackCert
-        ) {
-          pledge.isCompleted = true;
-          pledge.dateEnded = new Date();
-          return saveInstance(pledge);
-        }
-        return Observable.just(dedent`
-          You have not yet reached your goal of completing the ${goal}
-          Please retry when you have met the requirements.
-        `);
-      })
+    return completeCommitment$(user)
       .subscribe(
         msgOrPledge => {
           if (typeof msgOrPledge === 'string') {
