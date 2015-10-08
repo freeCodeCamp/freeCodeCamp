@@ -49,6 +49,14 @@ var common = (function() {
     });
   };
 
+  // this will overwrite if gitter object is already present
+  common.createGitterOptions = function createGitterOptions(room) {
+    ((window.gitter = {}).chat = {}).options = {
+      room: room,
+      activationElement: document.createElement('div')
+    };
+  };
+
   return common;
 })();
 

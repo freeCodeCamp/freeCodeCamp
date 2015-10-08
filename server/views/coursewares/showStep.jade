@@ -32,6 +32,7 @@ block content
     script(src=rev('/js', 'commonFramework.js'))
     script.
       var common = window.common || { init: [] };
+      common.createGitterOptions('freecodecamp/help');
       common.challengeId = !{JSON.stringify(challengeId)};
       common.challengeName = !{JSON.stringify(name)};
       common.challengeType = 7;
@@ -40,3 +41,4 @@ block content
       common.isFrontEndCert = !{JSON.stringify(isFrontEndCert || false)};
       common.isFullStackCert = !{JSON.stringify(isFullStackCert || false)};
       common.challengeSeed = !{JSON.stringify(challengeSeed || [])};
+    script(src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer)
