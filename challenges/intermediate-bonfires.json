@@ -823,7 +823,7 @@
         "assert.isUndefined(add(2)([3]), 'message: <code>add(2)([3])</code> should return undefined.');"
       ],
       "MDNlinks": [
-        "Global Function Object",
+        "Closures",
         "Arguments object"
       ],
       "type": "bonfire",
