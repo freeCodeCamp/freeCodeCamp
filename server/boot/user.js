@@ -272,8 +272,10 @@ module.exports = function(app) {
           return Observable.just(user);
         }
         return findUserByUsername$(username, {
+          isGithubCool: true,
           isFrontEndCert: true,
           isFullStackCert: true,
+          isHonest: true,
           completedChallenges: true,
           username: true,
           name: true
