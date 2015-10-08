@@ -321,11 +321,12 @@ module.exports = function(app) {
             showFront && user.isFrontEndCert ||
             !showFront && user.isFullStackCert
           ) {
-            var { completedDate } = _.find(user.completedChallenges, {
-              id: showFront ?
-                frontEndChallangeId :
-                fullStackChallangeId
-            });
+            var { completedDate = new Date() } =
+              _.find(user.completedChallenges, {
+                id: showFront ?
+                  frontEndChallangeId :
+                  fullStackChallangeId
+              }) || {};
 
             return res.render(
               showFront ?
@@ -344,7 +345,7 @@ module.exports = function(app) {
               `Looks like user ${username} is not Front End certified` :
               `Looks like user ${username} is not Full Stack certified`
           });
-          res.redirect('/map');
+          res.redirect('back');
         },
         next
       );
