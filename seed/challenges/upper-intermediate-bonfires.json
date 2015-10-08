@@ -27,7 +27,13 @@
         "assert.deepEqual(bob.lastName, undefined, 'message: <code>bob.lastName</code> should return undefined.');",
         "assert.deepEqual(bob.getFirstName(), 'Bob', 'message: <code>bob.getFirstName()</code> should return \"Bob\".');",
         "assert.deepEqual(bob.getLastName(), 'Ross', 'message: <code>bob.getLastName()</code> should return \"Ross\".');",
-        "assert.deepEqual(bob.getFullName(), 'Bob Ross', 'message: <code>bob.getFullName()</code> should return \"Bob Ross\".');"
+        "assert.deepEqual(bob.getFullName(), 'Bob Ross', 'message: <code>bob.getFullName()</code> should return \"Bob Ross\".');",
+        "bob.setFirstName('Happy');",
+        "assert.deepEqual(bob.getFirstName(), 'Happy', 'message: after <code>bob.setFirstName(\"Happy\")</code>, <code>bob.getFirstName()</code> should return \"Happy\".');",
+        "assert.deepEqual(bob.getFullName(), 'Happy Ross', 'message: after <code>bob.setFirstName(\"Happy\")</code>, <code>bob.getFullName()</code> should return \"Happy Ross\".');",
+        "bob.setFullName('George Carlin');",
+        "assert.deepEqual(bob.getLastName(), 'Carlin', 'message: after <code>bob.setFullName(\"George Carlin\")</code>, <code>bob.getLastName()</code> should return \"Carlin\".');",
+        "assert.deepEqual(bob.getFullName(), 'George Carlin', 'message: after <code>bob.setFullName(\"George Carlin\")</code>, <code>bob.getFullName()</code> should return \"George Carlin\".');"
       ],
       "MDNlinks": [
         "Closures",
