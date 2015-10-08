@@ -37,6 +37,18 @@ var common = (function() {
       .replace(/fcces/gi, '</script>');
   };
 
+  common.replaceFormActionAttr = function replaceFormAction(value) {
+    return value.replace(/<form.*?>/, function(val) {
+      return val.replace('action=', 'fccfaa=');
+    });
+  };
+
+  common.replaceFccfaaAttr = function replaceFccfaaAttr(value) {
+    return value.replace(/<form.*?>/, function(val) {
+      return val.replace('fccfaa=', 'action=');
+    });
+  };
+
   return common;
 })();
 
@@ -44,6 +56,17 @@ var common = (function() {
 common.codeUri = (function(common, encode, decode, location, history) {
   var replaceScriptTags = common.replaceScriptTags;
   var replaceSafeTags = common.replaceSafeTags;
+  var replaceFormActionAttr = common.replaceFormActionAttr;
+  var replaceFccfaaAttr = common.replaceFccfaaAttr;
+
+  function encodeFcc(val) {
+    return replaceScriptTags(replaceFormActionAttr(val));
+  }
+
+  function decodeFcc(val) {
+    return replaceSafeTags(replaceFccfaaAttr(val));
+  }
+
   var codeUri = {
     encode: function(code) {
       return encode(code);
@@ -72,10 +95,14 @@ common.codeUri = (function(common, encode, decode, location, history) {
         }, false);
     },
     isAlive: function() {
-      return codeUri.isInQuery(location.search) ||
+      return codeUri.enabled &&
+        codeUri.isInQuery(location.search) ||
         codeUri.isInQuery(location.hash);
     },
     parse: function() {
+      if (!codeUri.enabled) {
+        return null;
+      }
       var query;
       if (location.search && codeUri.isInQuery(location.search)) {
         query = location.search.replace(/^\?/, '');
@@ -85,7 +112,7 @@ common.codeUri = (function(common, encode, decode, location, history) {
             null,
             location.href.split('?')[0]
           );
-          location.hash = '#?' + replaceScriptTags(query);
+          location.hash = '#?' + encodeFcc(query);
         }
       } else {
         query = location.hash.replace(/^\#\?/, '');
@@ -100,17 +127,21 @@ common.codeUri = (function(common, encode, decode, location, history) {
           var key = param.split('=')[0];
           var value = param.split('=')[1];
           if (key === 'solution') {
-            return replaceSafeTags(codeUri.decode(value || ''));
+            return decodeFcc(codeUri.decode(value || ''));
           }
           return solution;
         }, null);
     },
     querify: function(solution) {
+      if (!codeUri.enabled) {
+        return null;
+      }
       location.hash = '?solution=' +
-        codeUri.encode(replaceScriptTags(solution));
+        codeUri.encode(encodeFcc(solution));
 
       return solution;
-    }
+    },
+    enabled: true
   };
 
   common.init.push(function() {
@@ -459,6 +490,7 @@ function workerError(error) {
   var housing = $('#testSuite');
   if (display.html() !== error) {
     display.remove();
+
     housing.prepend(
       '<div class="runTimeError" style="font-size: 18px;"><code>' +
       error.replace(/j\$/gi, '$').replace(/jdocument/gi, 'document').replace(/jjQuery/gi, 'jQuery') +
@@ -485,7 +517,10 @@ function safeHTMLRun(test) {
   var codeStorage = common.codeStorage;
   if (common.challengeType === '0') {
     var previewFrame = document.getElementById('preview');
-    var preview = previewFrame.contentDocument || previewFrame.contentWindow.document;
+
+    var preview = previewFrame.contentDocument ||
+      previewFrame.contentWindow.document;
+
     if (editor.getValue().match(/\<script\>/gi) !== null) {
       var s = editor
         .getValue()
@@ -554,9 +589,11 @@ function updatePreview() {
 
 if (typeof prodOrDev !== 'undefined') {
 
-  var nodeEnv = prodOrDev === 'production' ?
+  /* eslint-disable no-unused-vars */
+  var nodeEnv = window.prodOrDev === 'production' ?
     'http://www.freecodecamp.com' :
     'http://localhost:3001';
+  /* eslint-enable no-unused-vars */
 
   if (common.challengeType === '0') {
     setTimeout(updatePreview, 300);
@@ -567,8 +604,11 @@ if (typeof prodOrDev !== 'undefined') {
  * "post" methods
  */
 
+/* eslint-disable no-unused-vars */
 var testResults = [];
 var postSuccess = function(data) {
+/* eslint-enable no-unused-vars */
+
   var testDoc = document.createElement('div');
   $(testDoc).html(
     "<div class='row'><div class='col-xs-2 text-center'><i class='ion-checkmark-circled big-success-icon'></i></div><div class='col-xs-10 test-output test-vertical-center wrappable'>" +
@@ -614,7 +654,9 @@ function showCompletion() {
     isInitRun = false;
     return;
   }
-  var time = Math.floor(Date.now()) - started;
+
+  var time = Math.floor(Date.now()) - window.started;
+
   ga(
     'send',
     'event',
@@ -672,7 +714,10 @@ function showCompletion() {
   });
 }
 
+/* eslint-disable no-unused-vars */
 var resetEditor = function resetEditor() {
+/* eslint-enable no-unused-vars */
+
   editor.setValue(common.replaceSafeTags(common.seed));
   $('#testSuite').empty();
   bonfireExecute(true);
