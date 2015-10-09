@@ -240,7 +240,7 @@
         "<code>});</code>"
       ],
       "tests":[
-        "assert.deepEqual(array, [1,2,3,4], 'message: You should have removed all the values from the array that are greater than 4.');",
+        "assert.deepEqual(array, [1,2,3,4,5], 'message: You should have removed all the values from the array that are greater than 5.');",
         "assert(editor.getValue().match(/array\\.filter\\s*\\(/gi), 'message: You should be using the filter method to remove the values from the array.');",
         "assert(editor.getValue().match(/\\[1\\,2\\,3\\,4\\,5\\,6\\,7\\,8\\,9\\,10\\]/gi), 'message: You should only be using <code>.filter</code> to modify the contents of the array.');"
       ],
