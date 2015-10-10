@@ -1,5 +1,5 @@
 
-;(function(){
+(function(){
 
     /**
      * Require the module at `name`.
@@ -4797,4 +4797,4 @@
     } else {
         (this || window)["chai"] = require("chai");
     }
-})()
+})();

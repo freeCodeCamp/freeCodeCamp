@@ -1,14 +1,52 @@
+var main = window.main || {};
+
+main.mapShareKey = 'map-shares';
+
+var lastCompleted = typeof lastCompleted !== 'undefined' ?
+  lastCompleted :
+  '';
+
+function getMapShares() {
+  var alreadyShared = JSON.parse(
+    localStorage.getItem(main.mapShareKey) ||
+    '[]'
+  );
+
+  if (!alreadyShared || !Array.isArray(alreadyShared)) {
+    localStorage.setItem(main.mapShareKey, JSON.stringify([]));
+    alreadyShared = [];
+  }
+  return alreadyShared;
+}
+
+function setMapShare(id) {
+  var alreadyShared = getMapShares();
+  var found = false;
+  alreadyShared.forEach(function(_id) {
+    if (_id === id) {
+      found = true;
+    }
+  });
+  if (!found) {
+    alreadyShared.push(id);
+  }
+  localStorage.setItem(main.mapShareKey, JSON.stringify(alreadyShared));
+  return alreadyShared;
+}
+
 $(document).ready(function() {
-  var challengeName = typeof challengeName !== undefined ? challengeName : 'Untitled';
+
+  var challengeName = typeof challengeName !== 'undefined' ?
+    challengeName :
+    'Untitled';
+
   if (challengeName) {
     ga('send', 'event',  'Challenge', 'load', challengeName);
   }
 
-  $(document).ready(function() {
-    if (typeof editor !== 'undefined') {
-      $('#reset-button').on('click', resetEditor);
-    }
-  });
+  if (typeof editor !== 'undefined') {
+    $('#reset-button').on('click', resetEditor);
+  }
 
   var CSRF_HEADER = 'X-CSRF-Token';
 
@@ -59,68 +97,70 @@ $(document).ready(function() {
 
   function reBindModals(){
 
-      $('#i-want-help').unbind('click');
-      $('#i-want-help').on('click', function() {
-          $('#help-modal').modal('hide');
-          var editorValue = editor.getValue();
-          var currentLocation = window.location.href;
-          $.post(
-              '/get-help',
-              {
-                  payload: {
-                      code: editorValue,
-                      challenge: currentLocation
-                  }
-              },
-              function(res) {
-                  if (res) {
-                      window.open('https://gitter.im/FreeCodeCamp/Help', '_blank')
-                  }
-              }
-          );
+      $('.close-modal').unbind('click');
+      $('.close-modal').on('click', function(){
+        setTimeout(function() {
+            $('.close-modal').parent().parent().parent().parent().modal('hide');
+        }, 200);
       });
 
-      $('#i-want-help-editorless').unbind('click');
-      $('#i-want-help-editorless').on('click', function() {
-          $('#help-editorless-modal').modal('hide');
-          var currentLocation = window.location.href;
-          $.post(
-              '/get-help',
-              {
-                  payload: {
-                      challenge: currentLocation
-                  }
-              },
-              function(res) {
-                  if (res) {
-                      window.open('https://gitter.im/FreeCodeCamp/Help', '_blank')
-                  }
-              }
-          );
+      $('#search-issue').unbind('click');
+      $('#search-issue').on('click', function() {
+          var queryIssue = window.location.href.toString();
+          window.open('https://github.com/FreeCodeCamp/FreeCodeCamp/issues?q=' +
+            'is:issue is:all ' + (challenge_Name || challengeName) + ' OR ' +
+            queryIssue.substr(queryIssue.lastIndexOf('challenges/') + 11)
+            .replace('/', ''), '_blank');
+      });
+
+      $('#help-ive-found-a-bug-wiki-article').unbind('click');
+      $('#help-ive-found-a-bug-wiki-article').on('click', function() {
+        window.open("https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/Help-I've-Found-a-Bug", '_blank');
       });
 
       $('#report-issue').unbind('click');
       $('#report-issue').on('click', function() {
-          $('#issue-modal').modal('hide');
-          window.open('https://github.com/freecodecamp/freecodecamp/issues/new?&body=Challenge '+ window.location.href +' has an issue. Please describe how to reproduce it, and include links to screenshots if possible.', '_blank')
-      });
+          var textMessage = [
+            'Challenge [',
+            (challenge_Name || challengeName || window.location.href),
+            '](',
+            window.location.href,
+            ') has an issue.\n',
+            'User Agent is: <code>',
+            navigator.userAgent,
+            '</code>.\n',
+            'Please describe how to reproduce this issue, and include ',
+            'links to screenshots if possible.\n\n'
+          ].join('');
 
-      $('#i-want-help').unbind('click');
-      $('#i-want-to-pair').on('click', function() {
-          $('#pair-modal').modal('hide');
-          var currentLocation = window.location.href;
-          $.post(
-              '/get-pair',
-              {
-                  payload: {
-                      challenge: currentLocation
-                  }
-              },
-              function(res) {
-                  if (res) {
-                      window.open('https://gitter.im/FreeCodeCamp/LetsPair', '_blank')
-                  }
-              }
+          if (editor.getValue().trim()) {
+            var type;
+            switch (challengeType) {
+              case challengeTypes.HTML_CSS_JQ:
+                type = 'html';
+                break;
+              case challengeTypes.JAVASCRIPT:
+                type = 'javascript';
+                break;
+              default:
+                type = '';
+            }
+
+            textMessage += [
+              'My code:\n```',
+              type,
+              '\n',
+              editor.getValue(),
+              '\n```\n\n'
+            ].join('');
+          }
+
+          textMessage = encodeURIComponent(textMessage);
+
+          $('#issue-modal').modal('hide');
+          window.open(
+            'https://github.com/freecodecamp/freecodecamp/issues/new?&body=' +
+            textMessage, '_blank'
           );
       });
 
@@ -177,7 +217,7 @@ $(document).ready(function() {
                           }).success(
                           function(res) {
                               if (res) {
-                                  window.location.href = '/challenges/next-challenge';
+                                  window.location.href = '/challenges/next-challenge?id=' + challenge_Id;
                               }
                           }).fail(
                           function() {
@@ -200,7 +240,7 @@ $(document).ready(function() {
                               }
                           }).success(
                           function() {
-                              window.location.href = '/challenges/next-challenge';
+                              window.location.href = '/challenges/next-challenge?id=' + challenge_Id;
                           }).fail(
                           function() {
                               window.location.href = '/challenges';
@@ -223,37 +263,17 @@ $(document).ready(function() {
                                   verified: false
                               }
                           }).success(function() {
-                              window.location.href = '/challenges/next-challenge';
+                              window.location.href = '/challenges/next-challenge?id=' + challenge_Id;
                           }).fail(function() {
                               window.location.replace(window.location.href);
                           });
                       break;
                   case challengeTypes.BONFIRE:
-                      window.location.href = '/challenges/next-challenge';
+                      window.location.href = '/challenges/next-challenge?id=' + challenge_Id;
                   default:
                       break;
               }
           }
-      });
-
-      $('.next-challenge-button').unbind('click');
-      $('.next-challenge-button').on('click', function() {
-          l = location.pathname.split('/');
-          window.location = '/challenges/' + (parseInt(l[l.length - 1]) + 1);
-      });
-
-      // Bonfire instructions functions
-      $('#more-info').unbind('click');
-      $('#more-info').on('click', function() {
-          ga('send', 'event',  'Challenge', 'more-info', challengeName);
-          $('#brief-instructions').hide();
-          $('#long-instructions').show().removeClass('hide');
-
-      });
-      $('#less-info').unbind('click');
-      $('#less-info').on('click', function() {
-          $('#brief-instructions').show();
-          $('#long-instructions').hide();
       });
 
       $('#complete-courseware-dialog').on('hidden.bs.modal', function() {
@@ -399,6 +419,40 @@ $(document).ready(function() {
            }
        }, false);
     }
+
+
+  // map sharing
+  var alreadyShared = getMapShares();
+
+  if (lastCompleted && alreadyShared.indexOf(lastCompleted) === -1) {
+    $('div[id="' + lastCompleted + '"]')
+      .parent()
+      .parent()
+      .removeClass('hidden');
+  }
+
+  // on map view
+  $('.map-challenge-block-share').on('click', function(e) {
+    e.preventDefault();
+    var challengeBlockName = $(this).children().attr('id');
+    var challengeBlockEscapedName = challengeBlockName.replace(/\s/, '%20');
+    var username = typeof window.username !== 'undefined' ?
+      window.username :
+      '';
+
+    var link = 'https://www.facebook.com/dialog/feed?' +
+      'app_id=1644598365767721' +
+      '&display=page&' +
+      'caption=I%20just%20completed%20the%20' +
+      challengeBlockEscapedName +
+      '%20section%20on%20Free%20Code%20Camp%2E' +
+      '&link=http%3A%2F%2Ffreecodecamp%2Ecom%2F' +
+      username +
+      '&redirect_uri=http%3A%2F%2Ffreecodecamp%2Ecom%2Fmap';
+
+    setMapShare(challengeBlockName);
+    window.location.href = link;
+  });
 });
 
 function defCheck(a){

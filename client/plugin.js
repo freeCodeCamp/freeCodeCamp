@@ -1,6 +1,17 @@
-
+/* eslint-disable no-eval */
+/* global importScripts, application */
 // executes the given code and handles the result
-var run = function(code) {
+
+function importScript(url, error) {
+  try {
+    importScripts(url);
+  } catch (e) {
+    error = e;
+  }
+  return error;
+}
+
+function run(code) {
   var result = {
     input: code,
     output: null,
@@ -18,21 +29,13 @@ var run = function(code) {
 
   application.remote.output(result);
   self.close();
-};
+}
 
 
 // protects even the worker scope from being accessed
-var runHidden = function(code) {
+function runHidden(code) {
 
-  var importScript = function(url) {
-    var error = null;
-    try {
-      importScripts(url);
-    } catch (e) {
-      error = e;
-      console.log('Unable to load %s!', url);
-    }
-  };
+  /* eslint-disable */
   var indexedDB = null;
   var location = null;
   var navigator = null;
@@ -55,25 +58,37 @@ var runHidden = function(code) {
   var dump = null;
   var onoffline = null;
   var ononline = null;
-  importScripts(
-    "https://cdnjs.cloudflare.com/ajax/libs/ramda/0.13.0/ramda.min.js");
-  importScripts(
-    "https://cdnjs.cloudflare.com/ajax/libs/chai/2.2.0/chai.min.js"
-  )
+  /* eslint-enable */
 
+  var error = null;
+  error = importScript(
+    error,
+    'https://cdnjs.cloudflare.com/ajax/libs/ramda/0.13.0/ramda.min.js'
+  );
+
+  error = importScript(
+    'https://cdnjs.cloudflare.com/ajax/libs/chai/2.2.0/chai.min.js'
+  );
+
+
+  /* eslint-disable*/
   var expect = chai.expect;
   var assert = chai.assert;
+  /* eslint-enable */
 
+  if (error) {
+    return error;
+  }
 
   return eval(code);
 }
 
 
 // converts the output into a string
-var stringify = function(output) {
+function stringify(output) {
   var result;
 
-  if (typeof output == 'undefined') {
+  if (typeof output === 'undefined') {
     result = 'undefined';
   } else if (output === null) {
     result = 'null';
@@ -84,5 +99,4 @@ var stringify = function(output) {
   return result;
 }
 
-
-application.setInterface({run:run});
+application.setInterface({ run: run });

@@ -88,39 +88,6 @@
     "google": {
       "type": "string"
     },
-    "completedBonfires": {
-      "type": [
-        {
-          "id": "string",
-          "name": "string",
-          "completedWith": "string",
-          "completedDate": "string",
-          "solution": "string"
-        }
-      ],
-      "default": []
-    },
-    "uncompletedCoursewares": {
-      "type": "array",
-      "default": []
-    },
-    "completedCoursewares": {
-      "type": [
-        {
-          "completedDate": {
-            "type": "string",
-            "defaultFn": "now"
-          },
-          "id": "string",
-          "name": "string",
-          "completedWith": "string",
-          "solution": "string",
-          "githubLink": "string",
-          "verified": "boolean"
-        }
-      ],
-      "default": []
-    },
     "currentStreak": {
       "type": "number",
       "default": 0
@@ -133,13 +100,39 @@
       "type": "boolean",
       "default": true
     },
+    "isLocked": {
+      "type": "boolean",
+      "default": false,
+      "description": "Campers profile does not show challenges/certificates to the public"
+    },
     "currentChallenge": {
       "type": {}
+    },
+    "isUniqMigrated": {
+      "type": "boolean",
+      "default": false,
+      "description": "Campers completedChallenges array is free of duplicates"
+    },
+    "isHonest": {
+      "type": "boolean",
+      "default": false,
+      "description": "Camper has signed academic honesty policy"
+    },
+    "isFrontEndCert": {
+      "type": "boolean",
+      "defaut": false,
+      "description": "Camper is front end certified"
+    },
+    "isFullStackCert": {
+      "type": "boolean",
+      "default": false,
+      "description": "Campers is full stack certified"
     },
     "completedChallenges": {
       "type": [
         {
           "completedDate": "number",
+          "lastUpdated": "number",
           "id": "string",
           "name": "string",
           "completedWith": "string",
@@ -157,6 +150,9 @@
     "rand": {
       "type": "number",
       "index": true
+    },
+    "tshirtVote": {
+      "type": "number"
     }
   },
   "validations": [],
@@ -169,6 +165,11 @@
     "identities": {
       "type": "hasMany",
       "model": "userIdentity",
+      "foreignKey": ""
+    },
+    "pledge": {
+      "type": "hasOne",
+      "model": "pledge",
       "foreignKey": ""
     }
   },

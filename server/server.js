@@ -12,9 +12,11 @@ var uuid = require('node-uuid'),
 
 var setProfileFromGithub = require('./utils/auth').setProfileFromGithub;
 var getSocialProvider = require('./utils/auth').getSocialProvider;
+var getUsernameFromProvider = require('./utils/auth').getUsernameFromProvider;
 var generateKey =
   require('loopback-component-passport/lib/models/utils').generateKey;
 
+var isBeta = !!process.env.BETA;
 var app = loopback();
 
 expressState.extend(app);
@@ -69,7 +71,10 @@ var passportOptions = {
     }
 
     if (!(/github/).test(provider)) {
-      userObj[getSocialProvider(provider)] = profile.username;
+      userObj[getSocialProvider(provider)] = getUsernameFromProvider(
+        getSocialProvider(provider),
+        profile
+      );
     }
 
     if (/github/.test(provider)) {
@@ -92,10 +97,13 @@ app.start = function() {
   app.listen(app.get('port'), function() {
     app.emit('started');
     console.log(
-      'FreeCodeCamp server listening on port %d in %s mode',
+      'FreeCodeCamp server listening on port %d in %s',
       app.get('port'),
       app.get('env')
     );
+    if (isBeta) {
+      console.log('Free Code Camp is in beta mode');
+    }
   });
 };
 
