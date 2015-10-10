@@ -802,7 +802,7 @@
         "assert.deepEqual(myArray, [0,1,2,3,4], 'message: <code>myArray</code> should equal [0,1,2,3,4].');"
       ],
       "challengeSeed":[
-        "ourArray = [];",
+        "var ourArray = [];",
         "for(var i = 0; i < 5; i++){",
         "  ourArray.push(i);",
         "}",
