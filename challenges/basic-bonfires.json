@@ -568,7 +568,7 @@
         "  return arr;",
         "}",
         "",
-        "destroyer([1, 2, 3, 1, 2, 3], 2, 3, \"\");"
+        "destroyer([1, 2, 3, 1, 2, 3], 2, 3);"
       ],
       "tests": [
         "assert.deepEqual(destroyer([1, 2, 3, 1, 2, 3], 2, 3), [1, 1], 'message: <code>destroyer([1, 2, 3, 1, 2, 3], 2, 3)</code> should return <code>[1, 1]</code>.');",
