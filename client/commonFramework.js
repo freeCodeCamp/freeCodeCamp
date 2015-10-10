@@ -38,14 +38,14 @@ var common = (function() {
   };
 
   common.replaceFormActionAttr = function replaceFormAction(value) {
-    return value.replace(/<form.*?>/, function(val) {
-      return val.replace('action=', 'fccfaa=');
+    return value.replace(/<form[^>]*>/, function(val) {
+      return val.replace(/action(\s*?)=/, 'fccfaa$1=');
     });
   };
 
   common.replaceFccfaaAttr = function replaceFccfaaAttr(value) {
-    return value.replace(/<form.*?>/, function(val) {
-      return val.replace('fccfaa=', 'action=');
+    return value.replace(/<form[^>]*>/, function(val) {
+      return val.replace(/fccfaa(\s*?)=/, 'action$1=');
     });
   };
 
