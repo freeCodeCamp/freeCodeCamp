@@ -55,6 +55,7 @@
       "description": [
         "",
         "We are now going to request data from an external source. (a file on FCC for the purposes of this exercise) The request will load in the data an run the code in the function we provide the data to which is known as the callback.",
+        "Once we have the JSON we can modify or display it however we like so that it can be used elsewhere in the program and shown to the end user.",
         "<code>$(\"#getMessage\").on(\"click\", function() {",
         "<code>&thinsp;&thinsp;$.getJSON(\"/json/cats.json?callback=\", function( json ) {</code>",
         "<code>&thinsp;&thinsp;&thinsp;&thinsp;//Code to run when request is complete</code>",
@@ -107,6 +108,8 @@
       "title":  "Convert JSON Data to HTML",
       "description": [
         "Now that we have the data let's re-arrange it so that it can be displayed in a user friendly way.",
+        "We can use the <code>.map</code> method to iterate through the data and transform it in some way.",
+        "This will allow us to perform math operations on certain parts of the data or rearrange it to make it nice to display.",
         "<code>json.map(function(val) {</code>",
         "<code>&thinsp;&thinsp;html = html + \"&lt;div class = 'cat'&gt;\"</code>",
         "<code>&thinsp;&thinsp;for(var key in val) {</code>",
