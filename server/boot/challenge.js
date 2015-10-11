@@ -186,7 +186,7 @@ module.exports = function(app) {
               );
             }
             const firstChallengeOfNextBlock$ = blocks$
-              .elementAtOrDefault(blockIndex + 1, {})
+              .elementAt(blockIndex + 1, {})
               .map(({ challenges = [] }) => challenges[0]);
 
             return blocks$
@@ -259,7 +259,7 @@ module.exports = function(app) {
       .filter((challenge) => {
         return testChallengeName.test(challenge.name);
       })
-      .lastOrDefault(null)
+      .last({ defaultValue: null })
       .flatMap(challenge => {
 
         // Handle not found
