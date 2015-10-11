@@ -356,7 +356,7 @@
         "assert.strictEqual(boo([].slice), false, 'message: <code>boo([].slice)</code> should return false.');",
         "assert.strictEqual(boo({ \"a\": 1 }), false, 'message: <code>boo({ \"a\": 1 })</code> should return false.');",
         "assert.strictEqual(boo(1), false, 'message: <code>boo(1)</code> should return false.');",
-        "assert.strictEqual(boo(NaN), false, 'message: <code>boo(NaN)</code> should return true.');",
+        "assert.strictEqual(boo(NaN), false, 'message: <code>boo(NaN)</code> should return false.');",
         "assert.strictEqual(boo(\"a\"), false, 'message: <code>boo(\"a\")</code> should return false.');"
       ],
       "MDNlinks": [
