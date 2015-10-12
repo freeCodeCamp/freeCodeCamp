@@ -8,10 +8,108 @@
   },
   {
     "camper": "Branden Byers",
-    "quote": "Could I have gotten a job without Free Code Camp? Eventually, sure. But Free Code Camp provided a far denser experience than in my roughly 24 previous years of dabbling in tech.",
+    "quote": "My goal was to become employed by the end of 2015. Instead, I ended up with a job at the beginning of 2015. This was directly related to my work at Free Code Camp.",
     "github": "brandenbyers",
     "linkedin": "https://www.linkedin.com/in/brandenbyers",
     "image": "https://pbs.twimg.com/profile_images/539515557184167936/JqJXzV9x.jpeg"
+  },
+  {
+    "camper": "Viktor Bakurin",
+    "quote": "During my work on Free Code Camp's nonprofit projects, I found a MEAN stack position outside of my home country. Now I work in Budapest.",
+    "github": "letalumil",
+    "linkedin": "https://www.linkedin.com/profile/view?id=AAkAAAq6G3QBA1DIwFZGrS4DGqDzBDTzFjrbNQo&authType=NAME_SEARCH&authToken=QoJ0&locale=en_US&trk=tyah&trkInfo=clickedVertical%3Amynetwork%2CclickedEntityId%3A179968884%2CauthType%3ANAME_SEARCH%2Cidx%3A1-1-1%2CtarId%3A1444635040141%2Ctas%3AViktor%20Bakurin",
+    "image": "https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAM3AAAAJDVkZThkNjk3LWY4MTgtNGNmMS05MTZkLTkxZDljOGEzMGM5Nw.jpg"
+  },
+  {
+    "camper": "Maxim Orlov",
+    "quote": "Before joining the community I had zero knowledge of web development and 6 months and 3 days later I had landed my first job as a backend engineer for a tech start-up. My career has just started and thanks to Free Code Camp the dream of becoming a prominent figure in the software industry is within reach.",
+    "github": "Maximization",
+    "linkedin": "https://www.linkedin.com/profile/view?id=AAkAAAo83nwBF57LpD9mZlm5dH6OcovOpYKPs3k&authType=NAME_SEARCH&authToken=yG4h&locale=en_US&trk=tyah&trkInfo=clickedVertical%3Amynetwork%2CclickedEntityId%3A171761276%2CauthType%3ANAME_SEARCH%2Cidx%3A1-1-1%2CtarId%3A1444635014777%2Ctas%3AMaxim%20Orlov",
+    "image": "https://media.licdn.com/media/AAEAAQAAAAAAAALJAAAAJGI5ZGFhODA0LWI4MzAtNDU5Ny04NjU3LTIwMjdhMmIxYjFjNg.jpg"
+  },
+  {
+    "camper": "Alexander Black, Jr.",
+    "quote": "Work with the Kopernik nonprofit gave us the opportunity to learn how to build Chrome extensions and showcase our skills a full-stack developers.",
+    "github": "alexblackjr",
+    "linkedin": "https://www.linkedin.com/profile/view?id=AAkAAA553L4BgfgBR-M9RQc7x5matd6FUx3a6-I&authType=NAME_SEARCH&authToken=TW_a&locale=en_US&trk=tyah&trkInfo=clickedVertical%3Amynetwork%2CclickedEntityId%3A242867390%2CauthType%3ANAME_SEARCH%2Cidx%3A1-1-1%2CtarId%3A1444634592237%2Ctas%3Aalexander%20black%20jr",
+    "image": "https://media.licdn.com/media/AAEAAQAAAAAAAANmAAAAJDQ1ZWIxMmVjLTAwNjUtNDFlNS04OWVhLTk4ZGZkNmViODkxNw.jpg"
+  },
+  {
+    "camper": "Travis Wouters",
+    "quote": "Free Code Camp helped me add skillsets to my resume that show experience instead of knowledge without practical application.",
+    "github": "",
+    "linkedin": "https://www.linkedin.com/profile/view?id=AAkAAABHP0YBddxsmaf2OghV2jAy17RVMhig4RM&authType=NAME_SEARCH&authToken=a7pC&locale=en_US&trk=tyah&trkInfo=clickedVertical%3Amynetwork%2CclickedEntityId%3A4669254%2CauthType%3ANAME_SEARCH%2Cidx%3A1-1-1%2CtarId%3A1444634846844%2Ctas%3ATravis%20Wouters",
+    "image": "https://media.licdn.com/media/p/8/005/07d/2f1/1792a44.jpg"
+  },
+  {
+    "camper": "Meta Hirschl",
+    "quote": "By building a robust and highly functional web app I was able to not only increase my confidence but was able to show potential employers what I was able to create. Both were huge for me and led me to getting a fantastic job.",
+    "github": "MetaCoderHirschl",
+    "linkedin": "https://www.linkedin.com/profile/view?id=ADEAAAKX2fEBfeZ1GVdOh-c0zzkYZKw38o8qzow&authType=NAME_SEARCH&authToken=hfRS&locale=en_US&srchid=147930701444634954491&srchindex=1&srchtotal=1&trk=vsrp_people_res_photo&trkInfo=VSRPsearchId%3A147930701444634954491%2CVSRPtargetId%3A43506161%2CVSRPcmpt%3Aprimary%2CVSRPnm%3Atrue%2CauthType%3ANAME_SEARCH",
+    "image": "https://media.licdn.com/media/p/6/005/0ac/31c/05f0e58.jpg"
+  },
+  {
+    "camper": "Geoff Storbeck",
+    "quote": "I've been able to build tools that has helped moved my current career further and has opened up many more doors in the field.",
+    "github": "storbeck",
+    "linkedin": "https://www.linkedin.com/profile/view?id=AAkAAAdVQZYBHPYLt5efKwqZmiDM5SqIdH0_AR4&authType=NAME_SEARCH&authToken=EDd-&locale=en_US&trk=tyah&trkInfo=clickedVertical%3Amynetwork%2CclickedEntityId%3A123027862%2CauthType%3ANAME_SEARCH%2Cidx%3A1-1-1%2CtarId%3A1444635255807%2Ctas%3AGeoff%20Storbeck%09",
+    "image": "https://media.licdn.com/media/p/1/000/124/306/339eee6.jpg"
+  },
+  {
+    "camper": "Jonathan Lucas",
+    "quote": "Free Code Camp has been nothing but supportive and helpful, taking me from a rather basic knowledge of front end technologies to a better, more complete understanding from a full stack perspective.",
+    "github": "jonslucas",
+    "linkedin": "https://www.linkedin.com/profile/view?id=AAkAAATn9H4BI7BP7MBpZ0NR1EvldkWTvAdGy2w&authType=NAME_SEARCH&authToken=hLmG&locale=en_US&trk=tyah&trkInfo=clickedVertical%3Amynetwork%2CclickedEntityId%3A82310270%2CauthType%3ANAME_SEARCH%2Cidx%3A1-1-1%2CtarId%3A1444635490853%2Ctas%3AJon%20Lucas",
+    "image": "https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAIcAAAAJGMxMjY3MmEwLTM0ODgtNGU3OS1hZjFiLTJjZjNhMDM3YTUyZQ.jpg"
+  },
+  {
+    "camper": "Ashley Drake",
+    "quote": "I just accepted a job offer as an engineer. I started Free Code Camp to switch careers and it has enabled me to do just that. The projects and community are amazing and made all of this work easier and more fun.",
+    "github": "aldraco",
+    "linkedin": "https://www.linkedin.com/profile/view?id=AAkAABcdBycB1iVHvcW7N3yVK-18ES7Nrxx2jbE&authType=NAME_SEARCH&authToken=gKNN&locale=en_US&trk=tyah&trkInfo=clickedVertical%3Amynetwork%2CclickedEntityId%3A387778343%2CauthType%3ANAME_SEARCH%2Cidx%3A1-1-1%2CtarId%3A1444635725853%2Ctas%3Aashley%20",
+    "image": "https://media.licdn.com/media/AAEAAQAAAAAAAAKBAAAAJDEwYmY4ZDMwLTc3YzAtNDc2Yi04M2EzLTBlOWY0MzA4NTM5Yg.jpg"
+  },
+  {
+    "camper": "Brian Grant",
+    "quote": "I've received new employment opportunities and I have not even finished Free Code Camp's first 800 hours of training yet.",
+    "github": "codeseekingman",
+    "linkedin": "https://www.linkedin.com/profile/view?id=AAkAAAEUqXoBFOq1SWQrBsTMHG4ij9Ss4Qqnrtg&authType=NAME_SEARCH&authToken=a85-&locale=en_US&trk=tyah&trkInfo=clickedVertical%3Amynetwork%2CclickedEntityId%3A18131322%2CauthType%3ANAME_SEARCH%2Cidx%3A1-1-1%2CtarId%3A1444635878707%2Ctas%3Abrian%20grant",
+    "image": "https://media.licdn.com/media/AAEAAQAAAAAAAANEAAAAJGY5ZjZkMDVjLTJhY2EtNDZjYS1iMDk5LTY0ZDliN2EyODUxMQ.jpg"
+  },
+  {
+    "camper": "Thomas Joseph Izen",
+    "quote": "After spending lots of time trying different sites that aim to teach people how to code, FreeCodeCamp has been different from the beginning. They provide the best and most organized track for anyone at any level to learn how to code and build an amazing, marketable portfolio.",
+    "github": "TommyIzen",
+    "linkedin": "https://www.linkedin.com/profile/view?id=AAkAAA79qIYB_RHmvOP59S6VPK3Lm06oG8fM6dw&authType=NAME_SEARCH&authToken=PfeR&locale=en_US&trk=tyah&trkInfo=clickedVertical%3Amynetwork%2CclickedEntityId%3A251504774%2CauthType%3ANAME_SEARCH%2Cidx%3A1-1-1%2CtarId%3A1444636112016%2Ctas%3AThomas%20%20Izen",
+    "image": "https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAMaAAAAJGRjZTQ4MTdmLTZmZGItNGFhNS1hNTE0LWJmYjFhZDY3YmM3MQ.jpg"
+  },
+  {
+    "camper": "Robert Trammel",
+    "quote": "I'm working a job integrating JavaScript into FileMaker and doing some custom web publishing for a school district. I've also have job offers from Apple and a few technology firms around the country. If it wasn't for Free Code Camp, I'd still be in the dark with some really awesome but irrelevant skills.",
+    "github": "comajama",
+    "linkedin": "https://www.linkedin.com/profile/view?id=AAIAABQsM30BEAI6xyAhk-OqbBNUJL0WD2uA3GE&authType=NAME_SEARCH&authToken=4xB-&trk=Skyline_click_NPS&sl=NPS%3B147930701444636308659%3B1%3B147930701444636308659%3B",
+    "image": "https://media.licdn.com/media/AAEAAQAAAAAAAAIBAAAAJDI5YjRmMTRmLTFjNWItNGQ5ZC05MTNjLTA0MWQ0YjRhOTdhNQ.jpg"
+  },
+  {
+    "camper": "Brian Atkins",
+    "quote": "I'm spending less time then I am used to on Free Code Camp because people have begun to hire me to work on their projects. Free Code Camp has provided me the foundation I have needed to get these jobs.",
+    "github": "BrianAtk",
+    "linkedin": "https://www.linkedin.com/profile/view?id=AAkAAABtTx0BmDzmB7eDGOkAJbRw8RZdvysreso&authType=NAME_SEARCH&authToken=CecH&locale=en_US&trk=tyah&trkInfo=clickedVertical%3Amynetwork%2CclickedEntityId%3A7163677%2CauthType%3ANAME_SEARCH%2Cidx%3A1-1-1%2CtarId%3A1444636556530%2Ctas%3ABrian%20Atkins",
+    "image": "https://media.licdn.com/media/p/8/000/2aa/36c/2d218a8.jpg"
+  },
+  {
+    "camper": "Normandy Real",
+    "quote": "I'm doing Free Code Camp to transition from mainframe programming to front end development.",
+    "github": "mandyreal",
+    "linkedin": "https://www.linkedin.com/profile/view?id=AAkAAAdebIIBHfcSRnxGI-j6g5y6crfOXSg55Dc&authType=NAME_SEARCH&authToken=xLNy&locale=en_US&trk=tyah&trkInfo=clickedVertical%3Amynetwork%2CclickedEntityId%3A123628674%2CauthType%3ANAME_SEARCH%2Cidx%3A1-1-1%2CtarId%3A1444636619442%2Ctas%3ANormandy%20Real",
+    "image": "https://media.licdn.com/media/AAEAAQAAAAAAAAMrAAAAJDAxMmE0ZWI1LWU0MjctNDRjYS1hNjdkLTYwZTI5NjUxMDhjYw.jpg"
+  },
+  {
+    "camper": "David McGill",
+    "quote": "Even if you have a CS degree like I do, you still need projects to prove to employers that you care about coding. Free Code Camp provided me with a platform for doing this. It's all laid out for you - you just have step up and step into the map!",
+    "github": "dmcgill50",
+    "linkedin": "https://www.linkedin.com/profile/view?id=AAkAAAEBy74BHsJCpgrbohr2dJxbdXuvMuJDx6k&authType=NAME_SEARCH&authToken=9k8t&locale=en_US&trk=tyah&trkInfo=clickedVertical%3Amynetwork%2CclickedEntityId%3A16894910%2CauthType%3ANAME_SEARCH%2Cidx%3A1-1-1%2CtarId%3A1444637012056%2Ctas%3ADavid%20McGill",
+    "image": "https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAANdAAAAJGE4YWI5NjFiLTQ5MzUtNGQwNC04YThiLWYxMTI4NWM3YmFlMQ.jpg"
   },
   {
     "camper": "Qing Huang",
@@ -33,6 +131,13 @@
     "github": "LCBecker",
     "linkedin": "https://www.linkedin.com/profile/view?id=AAkAAADrtuwBOA_0ihkKIbUFXoXskXikQT9uVeo&authType=NAME_SEARCH&authToken=sctO&locale=en_US&trk=tyah&trkInfo=clickedVertical%3Amynetwork%2CclickedEntityId%3A15447788%2CauthType%3ANAME_SEARCH%2Cidx%3A1-2-2%2CtarId%3A1441907195702%2Ctas%3Alori",
     "image": "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/1/005/080/392/295a574.jpg"
+  },
+  {
+    "camper": "Alex Dixon",
+    "quote": "I was hired by the owner of the company, a programmer with 25 years of experience in web development. I graduated from university with a degree in English and had no programming experience prior to attending FreeCodeCamp.",
+    "github": "alex-dixon",
+    "linkedin": "https://www.linkedin.com/profile/view?id=AAkAABhCmLMBLAR1AXskaJXDMT-uLPZ8M7TynPQ&authType=NAME_SEARCH&authToken=k8uX&locale=en_US&trk=tyah&trkInfo=clickedVertical%3Amynetwork%2CclickedEntityId%3A407017651%2CauthType%3ANAME_SEARCH%2Cidx%3A1-1-1%2CtarId%3A1444633871133%2Ctas%3Aalex%20dixon",
+    "image": "https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAMcAAAAJGZhM2Y2ZTU5LWNjODAtNDM5My1hYjAzLTYyYjFlOTcwZjVmZg.jpg"
   },
   {
     "camper": "Ryan Lindeman",
@@ -244,7 +349,6 @@
     "linkedin": "https://www.linkedin.com/profile/view?id=AAkAAACYvVUBTuu8dNRHthN1TFiyk137PLDqnv4&authType=NAME_SEARCH&authToken=V_iG&locale=en_US&trk=tyah&trkInfo=clickedVertical%3Amynetwork%2CclickedEntityId%3A10009941%2CauthType%3ANAME_SEARCH%2Cidx%3A1-1-1%2CtarId%3A1441907639677%2Ctas%3Amarquin",
     "image": "https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAZLAAAAJDQ5Nzg4MjJmLWUyMjQtNDI5Ny05NmY5LTE5Yjc1Y2Q1YWFhOA.jpg"
   },
-
   {
     "camper": "Devarsh Ruparelia",
     "quote": "Even though I am still just a high school student. The startup I intern for said that if I finish the full track of Free Code Camp, they will strongly consider me for their programming jobs. Thanks Free Code Camp!",
@@ -328,13 +432,6 @@
     "github": "wildlifehexagon",
     "linkedin": "https://www.linkedin.com/profile/view?id=AAkAAAFitUwByB_tgxdExntMnakgQnTK1H3eEd8&authType=NAME_SEARCH&authToken=230A&locale=en_US&trk=tyah&trkInfo=clickedVertical%3Amynetwork%2CclickedEntityId%3A23246156%2CauthType%3ANAME_SEARCH%2Cidx%3A1-1-1%2CtarId%3A1441907829391%2Ctas%3Aeric%20har",
     "image": "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/2/000/1e1/095/12800b6.jpg"
-  },
-  {
-    "camper": "Brian Grant ",
-    "quote": "It has given me a place where like minded people are learning to code together. It has also inspired me to start a code camp here in the midwest.",
-    "github": "codeseekingman",
-    "linkedin": "https://www.linkedin.com/profile/view?id=AAkAAAEUqXoBFOq1SWQrBsTMHG4ij9Ss4Qqnrtg&authType=NAME_SEARCH&authToken=a85-&locale=en_US&trk=tyah&trkInfo=clickedVertical%3Amynetwork%2CclickedEntityId%3A18131322%2CauthType%3ANAME_SEARCH%2Cidx%3A1-1-1%2CtarId%3A1441907840255%2Ctas%3Abrian%20g",
-    "image": "https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAANEAAAAJGY5ZjZkMDVjLTJhY2EtNDZjYS1iMDk5LTY0ZDliN2EyODUxMQ.jpg"
   },
   {
     "camper": "Danielle J Moss",
