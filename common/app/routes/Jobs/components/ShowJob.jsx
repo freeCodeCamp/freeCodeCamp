@@ -40,6 +40,7 @@ export default React.createClass({
       city,
       company,
       state,
+      locale,
       email,
       phone,
       postedOn,
@@ -57,7 +58,7 @@ export default React.createClass({
             <Panel>
               Position: { position || 'N/A' }
               <br />
-              Location: { city || '' }, { state || 'N/A' }
+              Location: { locale ? locale : `${city}, ${state}` }
               <br />
               Contact: { email || phone || 'N/A' }
               <br />

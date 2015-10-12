@@ -58,6 +58,10 @@ function isValidPhone(data) {
   return isMobilePhone(data, 'en-US');
 }
 
+function makeRequired(validator) {
+  return (val) => !!val && validator(val);
+}
+
 export default contain({
     actions: 'jobActions',
     store: 'jobsStore',
@@ -74,14 +78,14 @@ export default contain({
         highlight
       } = form;
       return {
-        position: formatValue(position, isAscii),
-        locale: formatValue(locale, isAscii),
-        description: formatValue(description, isAscii),
-        email: formatValue(email, isEmail),
+        position: formatValue(position, makeRequired(isAscii)),
+        locale: formatValue(locale, makeRequired(isAscii)),
+        description: formatValue(description, makeRequired(isAscii)),
+        email: formatValue(email, makeRequired(isEmail)),
         phone: formatValue(phone, isValidPhone),
         url: formatValue(url, isValidURL),
         logo: formatValue(logo, isValidURL),
-        name: formatValue(name, isAscii),
+        name: formatValue(name, makeRequired(isAscii)),
         highlight: formatValue(highlight, null, 'bool')
       };
     },
@@ -209,6 +213,7 @@ export default contain({
                     labelClassName={ labelClass }
                     onChange={ (e) => handleChange('position', e) }
                     placeholder='Position'
+                    required={ true }
                     type='text'
                     value={ position.value }
                     wrapperClassName={ inputClass } />
@@ -218,6 +223,7 @@ export default contain({
                     labelClassName={ labelClass }
                     onChange={ (e) => handleChange('locale', e) }
                     placeholder='Location'
+                    required={ true }
                     type='text'
                     value={ locale.value }
                     wrapperClassName={ inputClass } />
@@ -227,6 +233,7 @@ export default contain({
                     labelClassName={ labelClass }
                     onChange={ (e) => handleChange('description', e) }
                     placeholder='Description'
+                    required={ true }
                     rows='10'
                     type='textarea'
                     value={ description.value }
@@ -250,6 +257,7 @@ export default contain({
                     labelClassName={ labelClass }
                     onChange={ (e) => handleChange('email', e) }
                     placeholder='Email'
+                    required={ true }
                     type='email'
                     value={ email.value }
                     wrapperClassName={ inputClass } />
