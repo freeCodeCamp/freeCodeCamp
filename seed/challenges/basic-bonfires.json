@@ -310,7 +310,7 @@
         "assert(end(\"If you want to save our world, you must hurry. We dont know how much longer we can withstand the nothing\", \"mountain\") === false, 'message: <code>end(\"If you want to save our world, you must hurry. We dont know how much longer we can withstand the nothing\", \"mountain\")</code> should return false.');"
       ],
       "MDNlinks": [
-        "String.substr()"
+        "String.endsWith()"
       ],
       "type": "bonfire",
       "challengeType": 5,
