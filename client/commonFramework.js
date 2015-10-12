@@ -38,14 +38,14 @@ var common = (function() {
   };
 
   common.replaceFormActionAttr = function replaceFormAction(value) {
-    return value.replace(/<form.*?>/, function(val) {
-      return val.replace('action=', 'fccfaa=');
+    return value.replace(/<form[^>]*>/, function(val) {
+      return val.replace(/action(\s*?)=/, 'fccfaa$1=');
     });
   };
 
   common.replaceFccfaaAttr = function replaceFccfaaAttr(value) {
-    return value.replace(/<form.*?>/, function(val) {
-      return val.replace('fccfaa=', 'action=');
+    return value.replace(/<form[^>]*>/, function(val) {
+      return val.replace(/fccfaa(\s*?)=/, 'action$1=');
     });
   };
 
@@ -453,7 +453,6 @@ var editor = (function(CodeMirror, emmetCodeMirror, common) {
   common.init.push(function() {
     var editorValue;
     if (common.codeUri.isAlive()) {
-      console.log('in query');
       editorValue = common.codeUri.parse();
     } else {
       editorValue = codeStorage.isAlive() ?
