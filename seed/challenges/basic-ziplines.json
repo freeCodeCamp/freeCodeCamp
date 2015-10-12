@@ -202,7 +202,7 @@
         "Here are the <a href='http://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a> you must enable, and optional bonus user stories:",
         "<span class='text-info'>User Story:</span> As a user, I can add, subtract, multiply and divide two numbers.",
         "<span class='text-info'>Bonus User Story:</span> I can clear the input field with a clear button.",
-        "<span class='text-info'>Bonus User Story:</span> I can keep chaining mathematical operations together until I hit the clear button, and the calculator will tell me the correct output.",
+        "<span class='text-info'>Bonus User Story:</span> I can keep chaining mathematical operations together until I hit the equal button, and the calculator will tell me the correct output.",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck.",
         "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen. If you pair programmed, you should also include the Free Code Camp username of your pair.",
         "If you'd like immediate feedback on your project from fellow campers, click this button and paste in a link to your CodePen project. <br><br><a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20PASTE_YOUR_CODEPEN_URL_HERE%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Click here then add your link to your tweet's text</a>"
