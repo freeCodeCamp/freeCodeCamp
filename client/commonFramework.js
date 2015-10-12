@@ -453,7 +453,6 @@ var editor = (function(CodeMirror, emmetCodeMirror, common) {
   common.init.push(function() {
     var editorValue;
     if (common.codeUri.isAlive()) {
-      console.log('in query');
       editorValue = common.codeUri.parse();
     } else {
       editorValue = codeStorage.isAlive() ?
