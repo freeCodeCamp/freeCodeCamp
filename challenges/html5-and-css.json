@@ -3702,7 +3702,7 @@
         "Let's replace the hex code in our <code>body</code> element's background color with the RGB value for black: <code>rgb(0, 0, 0)</code>"
       ],
       "tests": [
-        "assert($(\"body\").css(\"background-color\") === \"rgb(0, 0, 0)\", 'Give your <code>body</code> element the <code>background-color</code> of black.')",
+        "assert($(\"body\").css(\"background-color\") === \"rgb(0, 0, 0)\", 'Your <code>body</code> element should have a black background.')",
         "assert(editor.match(/rgb\\s*\\(\\s*0\\s*,\\s*0\\s*,\\s*0\\s*\\)/ig), 'Use <code>rgb</code> to give your <code>body</code> element the <code>background-color</code> of black. For example <code>body { color&#58; rgb&#40;0&#44; 0&#44; 0&#41;; }</code>.')"
       ],
       "challengeSeed": [
@@ -3736,7 +3736,7 @@
         "Change the <code>body</code> element's background color from the RGB value for black to the <code>rgb</code> value for white: <code>rgb(255, 255, 255)</code>"
       ],
       "tests": [
-        "assert($(\"body\").css(\"background-color\") === \"rgb(255, 255, 255)\", 'Give your <code>body</code> element the <code>background-color</code> of white.')",
+        "assert($(\"body\").css(\"background-color\") === \"rgb(255, 255, 255)\", 'Your <code>body</code> should have a white background.')",
         "assert(editor.match(/rgb\\s*\\(\\s*255\\s*,\\s*255\\s*,\\s*255\\s*\\)/ig), 'Use <code>rgb</code> to give your <code>body</code> element the <code>background-color</code> of white. For example <code>body { background-color&#58; rgb&#40;255&#44; 255 &#44; 255&#41;; }</code>.')"
       ],
       "challengeSeed": [
@@ -3770,7 +3770,7 @@
         "Change the <code>body</code> element's background color to the RGB value red: <code>rgb(255, 0, 0)</code>"
       ],
       "tests": [
-        "assert($(\"body\").css(\"background-color\") === \"rgb(255, 0, 0)\", 'Give your <code>body</code> element the <code>background-color</code> of red.')",
+        "assert($(\"body\").css(\"background-color\") === \"rgb(255, 0, 0)\", 'Your <code>body</code> should have a red background.')",
         "assert(editor.match(/rgb\\s*\\(\\s*255\\s*,\\s*0\\s*,\\s*0\\s*\\)/ig), 'Use <code>rgb</code> to give your <code>body</code> element the <code>background-color</code> of red. For example <code>body { background-color&#58; rgb&#40;255&#44; 0&#44; 0&#41;; }</code>.')"
       ],
       "challengeSeed": [
@@ -3802,7 +3802,7 @@
         "Now change the <code>body</code> element's background color to the <code>rgb</code> value green: <code>rgb(0, 255, 0)</code>"
       ],
       "tests": [
-        "assert($(\"body\").css(\"background-color\") === \"rgb(0, 255, 0)\", 'Give your <code>body</code> element the <code>background-color</code> of green.')",
+        "assert($(\"body\").css(\"background-color\") === \"rgb(0, 255, 0)\", 'Your <code>body</code> element should have a green background.')",
         "assert(editor.match(/rgb\\s*\\(\\s*0\\s*,\\s*255\\s*,\\s*0\\s*\\)/ig), 'Use <code>rgb</code> to give your <code>body</code> element the <code>background-color</code> of green. For example <code>body { background-color&#58; rgb&#40;0&#44; 255&#44; 0&#41;; }</code>.')"
       ],
       "challengeSeed": [
@@ -3834,7 +3834,7 @@
         "Change the <code>body</code> element's background color to the RGB value blue: <code>rgb(0, 0, 255)</code>"
       ],
       "tests": [
-        "assert($(\"body\").css(\"background-color\") === \"rgb(0, 0, 255)\", 'Give your <code>body</code> element the background-color of blue.')",
+        "assert($(\"body\").css(\"background-color\") === \"rgb(0, 0, 255)\", 'Your <code>body</code> element should have a blue background.')",
         "assert(editor.match(/rgb\\s*\\(\\s*0\\s*,\\s*0\\s*,\\s*255\\s*\\)/ig), 'Use <code>rgb</code> to give your <code>body</code> element the <code>background-color</code> of blue. For example <code>body { background-color&#58; rgb&#40;0&#44; 0&#44; 255&#41;; }</code>.')"
       ],
       "challengeSeed": [
@@ -3867,7 +3867,7 @@
         "Change the <code>body</code> element's background color to the RGB value orange: <code>rgb(255, 165, 0)</code>"
       ],
       "tests": [
-        "assert($(\"body\").css(\"background-color\") === \"rgb(255, 165, 0)\", 'Give your <code>body</code> element the background-color of orange.')",
+        "assert($(\"body\").css(\"background-color\") === \"rgb(255, 165, 0)\", 'Your <code>body</code> element should have an orange background.')",
         "assert(editor.match(/rgb\\s*\\(\\s*255\\s*,\\s*165\\s*,\\s*0\\s*\\)/ig), 'Use <code>rgb</code> to give your <code>body</code> element the <code>background-color</code> of orange. For example <code>body { background-color&#58; rgb&#40;255&#44; 165&#44; 0&#41;; }</code>.')"
       ],
       "challengeSeed": [
@@ -3900,7 +3900,7 @@
         "Change the <code>body</code> element's background color to the RGB value for gray: <code>rgb(128, 128, 128)</code>"
       ],
       "tests": [
-        "assert($(\"body\").css(\"background-color\") === \"rgb(128, 128, 128)\", 'Give your <code>body</code> element the background-color of gray.')",
+        "assert($(\"body\").css(\"background-color\") === \"rgb(128, 128, 128)\", 'Your <code>body</code> element should have a gray background.')",
         "assert(editor.match(/rgb\\s*\\(\\s*128\\s*,\\s*128\\s*,\\s*128\\s*\\)/ig), 'Use <code>rgb</code> to give your <code>body</code> element the <code>background-color</code> of gray. For example <code>body { background-color&#58; rgb&#40;128&#44; 128&#44; 128&#41;; }</code>.')"
       ],
       "challengeSeed": [
