@@ -2,6 +2,10 @@ import React, { PropTypes } from 'react';
 import { Row, Thumbnail, Panel, Well } from 'react-bootstrap';
 import moment from 'moment';
 
+const defaultImage =
+  'https://pbs.twimg.com/' +
+  'profile_images/562385977390272512/AK29YaTf_400x400.png';
+
 const thumbnailStyle = {
   backgroundColor: 'white',
   maxHeight: '100px',
@@ -47,12 +51,13 @@ export default React.createClass({
         <Row>
           <Well>
             <Thumbnail
-              alt={ company + 'company logo' }
-              src={ logo }
+              alt={ logo ? company + 'company logo' : 'stock image' }
+              src={ logo || defaultImage }
               style={ thumbnailStyle } />
             <Panel>
-              Position: { position }
-              Location: { city }, { state }
+              Position: { position || 'N/A' }
+              <br />
+              Location: { city || '' }, { state || 'N/A' }
               <br />
               Contact: { email || phone || 'N/A' }
               <br />
