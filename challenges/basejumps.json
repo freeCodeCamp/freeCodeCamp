@@ -5,7 +5,7 @@
     {
       "id": "bd7158d8c443eddfaeb5bcef",
       "title": "Get Set for Basejumps",
-      "challengeSeed": ["128451852"],
+      "challengeSeed": [],
       "description": [
         [
           "http://i.imgur.com/4IZjWZ3.gif",
@@ -16,7 +16,7 @@
         [
           "http://i.imgur.com/F7i5Hhi.gif",
           "A gif showing how to fill out the new workspace form",
-          "On c9.io, give your workspace a name, then leave \"Template\" as custom and create your workspace from this GitHub url: <code>https://github.com/johnstonbl01/clementinejs-fcc.git</code>",
+          "Instead of starting from scratch, we recommend using Clementine.js, a full stack JavaScript \"boilerplate\" that already has some basic code written for you. On c9.io, give your workspace a name, then leave \"Template\" as custom and create your workspace from this GitHub url: <code>https://github.com/johnstonbl01/clementinejs-fcc.git</code>",
           ""
         ],
         [
