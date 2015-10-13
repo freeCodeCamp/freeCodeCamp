@@ -36,8 +36,13 @@
     "country": {
       "type": "string"
     },
+    "locale": {
+      "type": "string",
+      "description": "format: city, state"
+    },
     "location": {
-      "type": "geopoint"
+      "type": "geopoint",
+      "description": "location in lat, long"
     },
     "description": {
       "type": "string"
