@@ -57,7 +57,6 @@ export default Actions({
   saveForm: null,
   getSavedForm: null,
   setForm(form) {
-    form.locale = form.location;
     return { form };
   }
 })

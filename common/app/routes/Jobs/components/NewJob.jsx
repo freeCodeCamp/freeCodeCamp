@@ -143,7 +143,7 @@ export default contain({
       // sanitize user output
       const jobValues = {
         position: inHTMLData(position.value),
-        location: inHTMLData(locale.value),
+        locale: inHTMLData(locale.value),
         description: inHTMLData(description.value),
         email: inHTMLData(email.value),
         phone: inHTMLData(phone.value),
