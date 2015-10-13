@@ -55,7 +55,6 @@
     {
       "id": "bd7158d8c242eddfaeb5bd13",
       "title": "Build a Personal Portfolio Webpage",
-      "difficulty": 1.01,
       "challengeSeed": ["133315782"],
       "description": [
         "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that successfully reverse-engineers this: <a href='http://codepen.io/ThiagoFerreir4/full/eNMxEp' target='_blank'>http://codepen.io/ThiagoFerreir4/full/eNMxEp</a>.",
@@ -109,7 +108,6 @@
     {
       "id": "bd7158d8c442eddfaeb5bd13",
       "title": "Build a Random Quote Machine",
-      "difficulty": 1.02,
       "challengeSeed": ["126415122"],
       "description": [
         "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that successfully reverse-engineers this: <a href='http://codepen.io/AdventureBear/full/vEoVMw' target='_blank'>http://codepen.io/AdventureBear/full/vEoVMw</a>.",
