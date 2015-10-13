@@ -555,7 +555,8 @@ module.exports = function(app) {
           name: blockArray[0].block,
           dashedName: dasherize(blockArray[0].block),
           challenges: blockArray,
-          completed: completedCount / blockArray.length * 100
+          completed: completedCount / blockArray.length * 100,
+          time: blockArray[0] && blockArray[0].time || "???"
         };
       })
       .filter(({ name }) => name !== 'Hikes')
