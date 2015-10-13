@@ -10,7 +10,7 @@
         [
           "http://i.imgur.com/6WLULsC.gif",
           "A gif showing how to create a Codepen account.",
-          "For our front end Zipline challenges, we'll use a popular browser-based code editor CodePen. Open CodePen and click \"Sign up\" in the upper right hand corner, then scroll down to the free plan and click \"Sign up\" again. Click the \"Use info from GitHub button\", then add your email address and create a password. Click the \"Sign up\" button. Then in the upper right hand corner, click \"New pen\".",
+          "For our front end Zipline challenges, we'll use a popular browser-based code editor called CodePen. Open CodePen and click \"Sign up\" in the upper right hand corner, then scroll down to the free plan and click \"Sign up\" again. Click the \"Use info from GitHub button\", then add your email address and create a password. Click the \"Sign up\" button. Then in the upper right hand corner, click \"New pen\".",
           "http://codepen.io"
         ],
         [
@@ -28,7 +28,7 @@
         [
           "http://i.imgur.com/Gi3aig0.gif",
           "A gif showing the process of adding Animate.css and jQuery to pen.",
-          "Click the gear in the upper left hand corner of the CSS box, then scroll down to \"Quick add\" and choose Animate.css. Click the gear in the upper left hand corner of the JS box, then scroll down to \"Quick add\" and choose jQuery. Prove that Animate.css and jQuery are loaded properly. In the JS box, add the following code to make your h1 element bounce: <code>$(document).ready(function(){ $(\"h1\").addClass(\"animated bounce\"); });</code>.",
+          "Click the gear in the upper left hand corner of the CSS box, then scroll down to \"Quick add\" and choose Animate.css. Click the gear in the upper left hand corner of the JS box, then scroll down to \"Quick add\" and choose jQuery. Let's prove that Animate.css and jQuery are loaded properly. In the JS box, add the following code to make your h1 element bounce: <code>$(document).ready(function(){ $(\"h1\").addClass(\"animated bounce\"); });</code>.",
           ""
         ],
         [
