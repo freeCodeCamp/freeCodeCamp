@@ -1,6 +1,7 @@
 {
   "name": "Hikes",
   "order": 0.050,
+  "time": "3h",
   "challenges": [
     {
       "id": "bd7128d8c441eddfbeb5bddf",

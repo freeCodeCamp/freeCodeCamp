@@ -1,6 +1,7 @@
 {
   "name": "Node.js and Express.js",
   "order" : 18,
+  "time": "20h",
   "challenges": [
     {
       "id": "bd7153d8c441eddfaeb5bd0f",
