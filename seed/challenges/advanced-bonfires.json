@@ -1,6 +1,7 @@
 {
   "name": "Advanced Algorithm Scripting",
   "order": 15,
+  "time": "50h",
   "challenges": [
     {
       "id": "aff0395860f5d3034dc0bfc9",

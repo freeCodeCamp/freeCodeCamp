@@ -68,6 +68,7 @@ Challenge.destroyAll(function(err, info) {
         challenge.suborder = index + 1;
         challenge.block = block;
         challenge.isBeta = challenge.isBeta || isBeta;
+        challenge.time = challengeSpec.time;
 
         return challenge;
       });

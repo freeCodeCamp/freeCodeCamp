@@ -1,6 +1,7 @@
 {
   "name": "Basic JavaScript",
   "order": 6,
+  "time": "3h",
   "challenges": [
     {
       "id":"bd7123c9c441eddfaeb4bdef",
