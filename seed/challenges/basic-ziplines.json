@@ -5,46 +5,48 @@
     {
       "id": "bd7158d8c442eddfbeb5bd1f",
       "title": "Get Set for Ziplines",
-      "difficulty": 1.00,
-      "challengeSeed": ["125658022"],
+      "challengeSeed": [],
       "description": [
-        "Now you're ready to start our Zipline challenges. These front-end development challenges will give you many opportunities to apply the HTML, CSS, jQuery and JavaScript you've learned to build static (database-less) applications.",
-        "Whatever you do, don't get discouraged! Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck.",
-        "We'll build these challenges using CodePen, a popular tool for creating, sharing, and discovering static web applications.",
-        "Go to <a href='http://codepen.io' target='_blank'>http://codepen.io</a> and create an account.",
-        "Click your user image in the top right corner, then click the \"New pen\" button that drops down.",
-        "Drag the windows around and press the buttons in the lower-right hand corner to change the orientation to suit your preference.",
-        "Click the gear next to CSS. Then under the \"Add External CSS\" section, use the \"Quick-add\" select box to select Bootstrap. Then click \"Save & Close\".",
-        "Verify that bootstrap is active by adding the following code to your HTML: <code>&lt;h1 class='text-primary'&gt;Hello CodePen!&lt;/h1&gt;</code>. The text's color should be Bootstrap blue.",
-        "Click the gear next to JavaScript. Click the \"Quick-add\" select box and choose jQuery (not jQuery UI).",
-        "Click the \"Quick-add\" select box again and choose Bootstrap. Then click \"Save & Close\".",
-        "Now add the following code to your JavaScript: <code>$(document).ready(function() { $('.text-primary').text('Hi CodePen!') });</code>. Click the \"Save\" button at the top. Your \"Hello CodePen!\" should change to \"Hi CodePen!\". This means that jQuery is working.",
-        "You can use this CodePen that you've just created as a starting point for your Ziplines. Just click the \"fork\" button at the top of your CodePen and it will create a duplicate CodePen.",
-        "Now you're ready for your first Zipline. Click the \"I've completed this challenge\" button."
+        [
+          "http://i.imgur.com/6WLULsC.gif",
+          "A gif showing how to create a Codepen account.",
+          "For our front end Zipline challenges, we'll use a popular browser-based code editor called CodePen. Open CodePen and click \"Sign up\" in the upper right hand corner, then scroll down to the free plan and click \"Sign up\" again. Click the \"Use info from GitHub button\", then add your email address and create a password. Click the \"Sign up\" button. Then in the upper right hand corner, click \"New pen\".",
+          "http://codepen.io"
+        ],
+        [
+          "http://i.imgur.com/U4y9RJ1.gif",
+          "A gif showing that you can type \"hello world\" will output \"hello world\" in the preview window. You can also drag windows to resize them, and change their orientation.",
+          "In the HTML box, create an h1 element with the text \"Hello World\". You can drag the frames around to resize them. You can also click the \"Change View\" button and change the orientation of the frames.",
+          ""
+        ],
+        [
+          "http://i.imgur.com/G9KFQDL.gif",
+          "A gif showing the process of adding Bootstrap to your pen.",
+          "Click the gear in the upper left hand corner of the CSS box, then scroll down to \"Quick add\" and choose Bootstrap. Now give your h1 element the class of \"text-primary\" to change its color and prove that Bootstrap is now available.",
+          ""
+        ],
+        [
+          "http://i.imgur.com/Gi3aig0.gif",
+          "A gif showing the process of adding Animate.css and jQuery to pen.",
+          "Click the gear in the upper left hand corner of the CSS box, then scroll down to \"Quick add\" and choose Animate.css. Click the gear in the upper left hand corner of the JS box, then scroll down to \"Quick add\" and choose jQuery. Let's prove that Animate.css and jQuery are loaded properly. In the JS box, add the following code to make your h1 element bounce: <code>$(document).ready(function(){ $(\"h1\").addClass(\"animated bounce\"); });</code>.",
+          ""
+        ],
+        [
+          "http://i.imgur.com/Wzt6Y9Y.gif",
+          "A gif showing the process of saving and forking a pen.",
+          "Save your pen with the \"Save\" button. Then click the \"Fork\" button. This will create a fork (copy) of your pen that you can experimient with.",
+          ""
+        ]
       ],
-      "type": "waypoint",
-      "challengeType": 2,
+      "type": "Waypoint",
+      "challengeType": 7,
       "tests": [],
       "nameCn": "",
       "descriptionCn": [],
       "nameFr": "",
       "descriptionFr": [],
-      "nameRu": "Приготовьтесь к Zipline'ам",
-      "descriptionRu": [
-        "Теперь вы готовы приступить к Zipline'ам. Это задания по фронт-энд разработке, в них вы примените ранее изученные HTML, CSS, jQuery и JavaScript и создадите статические (не использующие базу данных) приложения.",
-        "Ни в коем случае не унывайте! Воспользуйтесь <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a>, если что-то не получается.",
-        "Задания мы будем выполнять используя CodePen - популярный инструмент для создания и обмена статическими веб приложениями.",
-        "Перейдите по ссылке <a href='http://codepen.io' target='_blank'>http://codepen.io</a> и создайте аккаунт.",
-        "Нажмите на ваш аватар в правом верхнем углу, а затем в открывшемся меню на кнопку \"New pen\".",
-        "Выберите удобное расположение окон с помощью кнопок в правом нижнем углу, отрегулируйте их ширину.",
-        "Нажмите на звездочку рядом с CSS. Затем в секции \"Add External CSS\" выберите \"Quick-add\" и добавьте Bootstrap. Нажмите \"Save & Close\".",
-        "Проверьте, что Bootstrap подключен добавив следующий HTML код: <code>&lt;h1 class='text-primary'&gt;Hello CodePen!&lt;/h1&gt;</code>. Цвет текста должен быть синим.",
-        "Нажмите на звездочку рядом с JavaScript. Нажмите \"Quick-add\" и выберите jQuery (не jQuery UI). Нажмите \"Save & Close\".",
-        "Снова нажмите на поле \"Quick-add\", выберите Bootstrap и затем нажмите \"Save & Close\".",
-        "Теперь добавьте следующий код в окошко JavaScript: <code>$(document).ready(function() { $('.text-primary').text('Hi CodePen!') });</code>. Нажмите на кнопку \"Save\" расположенную наверху. Текст \"Hello CodePen!\" должен измениться на \"Hi CodePen!\". Это значит что jQuery работает.",
-        "CodePen, который мы создали, можно использовать в качестве отправной точки для ваших Zipline'ов. Кликните кнопку \"fork\", чтобы создать копию текущего CodePen'a.",
-        "Все готово для первого Zipline'а. Жмите кнопку \"I've completed this challenge\"."
-      ],
+      "nameRu": "",
+      "descriptionRu": [],
       "nameEs": "",
       "descriptionEs": [],
       "namePt": "",
@@ -53,7 +55,6 @@
     {
       "id": "bd7158d8c242eddfaeb5bd13",
       "title": "Build a Personal Portfolio Webpage",
-      "difficulty": 1.01,
       "challengeSeed": ["133315782"],
       "description": [
         "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that successfully reverse-engineers this: <a href='http://codepen.io/ThiagoFerreir4/full/eNMxEp' target='_blank'>http://codepen.io/ThiagoFerreir4/full/eNMxEp</a>.",
@@ -107,7 +108,6 @@
     {
       "id": "bd7158d8c442eddfaeb5bd13",
       "title": "Build a Random Quote Machine",
-      "difficulty": 1.02,
       "challengeSeed": ["126415122"],
       "description": [
         "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that successfully reverse-engineers this: <a href='http://codepen.io/AdventureBear/full/vEoVMw' target='_blank'>http://codepen.io/AdventureBear/full/vEoVMw</a>.",
