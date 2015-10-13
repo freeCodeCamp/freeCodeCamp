@@ -16,7 +16,7 @@
         [
           "http://i.imgur.com/F7i5Hhi.gif",
           "A gif showing how to fill out the new workspace form",
-          "Instead of starting from scratch, we recommend using Clementine.js, a full stack JavaScript \"boilerplate\" that already has some basic code written for you. On c9.io, give your workspace a name, then leave \"Template\" as custom and create your workspace from this GitHub url: <code>https://github.com/johnstonbl01/clementinejs-fcc.git</code>",
+          "Instead of starting from scratch, we recommend using Clementine.js, a full stack JavaScript \"boilerplate\" that already has some basic code written for you. Clementine.js has a detailed tutorial you can go through to build it yourself, but for now let's just clone its code. On c9.io, give your workspace a name, then leave \"Template\" as custom and create your workspace from this GitHub url: <code>https://github.com/johnstonbl01/clementinejs-fcc.git</code>",
           ""
         ],
         [
@@ -34,10 +34,7 @@
         [
           "http://i.imgur.com/sULwMlo.gif",
           "A gif showing you how to prep your environmental variables in your .env file.",
-          "Open your .env file and past this into it, then save it:",
-          "<code>GITHUB_KEY=</code>",
-          "<code>GITHUB_SECRET=</code>",
-          "<code>APP_URL=</code>",
+          "Open your .env file and paste this into it, then save it: <br><code>GITHUB_KEY=<br>GITHUB_SECRET=<br>APP_URL=</code>",
           ""
         ],
         [
@@ -61,7 +58,7 @@
         [
           "http://i.imgur.com/VqCmJOh.gif",
           "A gif showing you how to update the ajax-functions.js file with your c9.io preview URL.",
-          "Open app/common/ajax-functions.js and replace \"http://localhost:8080/\" with the URL from your clipboard (the URL from your preview tab).",
+          "Open <code>app/common/ajax-functions.js</code> and replace <code>http://localhost:8080/</code> with the URL from your clipboard (the URL from your preview tab).",
           ""
         ],
         [
@@ -117,7 +114,6 @@
         "<span class='text-info'>Objective:</span> Build a full stack JavaScript app that successfully reverse-engineers this: <a href='http://votingapp.herokuapp.com/' target='_blank'>http://votingapp.herokuapp.com/</a> and deploy it to Heroku.",
         "Note that for each Basejump, you should create a new GitHub repository and a new Heroku project. If you can't remember how to do this, revisit <a href='/challenges/get-set-for-basejumps'>http://freecodecamp.com/challenges/get-set-for-basejumps</a>.",
         "As you build your app, you should frequently commit changes to your codebase. You can do this by running <code>git commit -am \"your commit message\"</code>. Note that you should replace \"your commit message\" with a brief summary of the changes you made to your code.",
-        "You can push these new commits to GitHub by running <code>git push origin master</code>, and to Heroku by running <code>grunt --force && grunt buildcontrol:heroku</code>.",
         "Here are the specific User Stories you should implement for this Basejump:",
         "<span class='text-info'>User Story:</span> As an authenticated user, I can keep my polls and come back later to access them.",
         "<span class='text-info'>User Story:</span> As an authenticated user, I can share my polls with my friends.",
