@@ -31,6 +31,7 @@ export default Actions({
   },
   setError: null,
   getJob: null,
+  saveJobToDb: null,
   getJobs(params) {
     return { params };
   },
@@ -61,7 +62,7 @@ export default Actions({
   }
 })
   .refs({ displayName: 'JobActions' })
-  .init(({ instance: jobActions, args: [services] }) => {
+  .init(({ instance: jobActions, args: [cat, services] }) => {
     jobActions.getJobs.subscribe(() => {
       services.read('jobs', null, null, (err, jobs) => {
         if (err) {
@@ -99,6 +100,18 @@ export default Actions({
       if (job && !Array.isArray(job) && typeof job === 'object') {
         jobActions.setForm(job);
       }
+    });
+
+    jobActions.saveJobToDb.subscribe(({ goTo, job }) => {
+      const appActions = cat.getActions('appActions');
+      services.create('jobs', { job }, null, (err, job) => {
+        if (err) {
+          debug('job services experienced an issue', err);
+          return jobActions.setError(err);
+        }
+        jobActions.setJobs({ job });
+        appActions.goTo(goTo);
+      });
     });
     return jobActions;
   });

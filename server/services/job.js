@@ -3,7 +3,15 @@ export default function getJobServices(app) {
 
   return {
     name: 'jobs',
-    read: (req, resource, params, config, cb) => {
+    create(req, resource, { job } = {}, body, config, cb) {
+      if (!job) {
+        return cb(new Error('job creation should get a job object'));
+      }
+      Job.create(job, (err, savedJob) => {
+        cb(err, savedJob);
+      });
+    },
+    read(req, resource, params, config, cb) {
       const id = params ? params.id : null;
       if (id) {
         return Job.findById(id, cb);
