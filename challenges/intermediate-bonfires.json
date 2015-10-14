@@ -68,7 +68,7 @@
         "assert.includeMembers(diff([1, \"calf\", 3, \"piglet\"], [1, \"calf\", 3, 4]), [\"piglet\", 4], 'message: <code>[1, \"calf\", 3, \"piglet\"], [1, \"calf\", 3, 4]</code> should return <code>[\"piglet\", 4]</code>.');",
         "assert.deepEqual(diff([], [\"snuffleupagus\", \"cookie monster\", \"elmo\"]), [\"snuffleupagus\", \"cookie monster\", \"elmo\"], 'message: <code>[], [\"snuffleupagus\", \"cookie monster\", \"elmo\"]</code> should return <code>[\"snuffleupagus\", \"cookie monster\", \"elmo\"]</code>.');",
         "assert.includeMembers(diff([1, \"calf\", 3, \"piglet\"], [7, \"filly\"]), [1, \"calf\", 3, \"piglet\", 7, \"filly\"], 'message: <code>[1, \"calf\", 3, \"piglet\"], [7, \"filly\"]</code> should return <code>[1, \"calf\", 3, \"piglet\", 7, \"filly\"]</code>.');",
-        "assert.deepEqual(diff([1, 2, 3, 3], [1]), [2, 3, 3], 'message: <code>[1, 2, 3, 3], [1]</code> should return <code>[2, 3, 3]</code>.');"
+        "assert.deepEqual(diff([1, 2, 3, 3], [1]), [2, 3], 'message: <code>[1, 2, 3, 3], [1]</code> should return <code>[2, 3]</code>.');"
       ],
       "MDNlinks": [
         "Comparison Operators",
