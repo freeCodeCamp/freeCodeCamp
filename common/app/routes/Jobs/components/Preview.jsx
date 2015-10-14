@@ -1,5 +1,4 @@
 import React, { PropTypes } from 'react';
-import { History } from 'react-router';
 import { Well, Button, Row } from 'react-bootstrap';
 import { contain } from 'thundercats-react';
 import ShowJob from './ShowJob.jsx';
@@ -7,7 +6,10 @@ import ShowJob from './ShowJob.jsx';
 export default contain(
   {
     store: 'JobsStore',
-    actions: 'JobActions',
+    actions: [
+      'appActions',
+      'jobActions'
+    ],
     map({ form: job = {} }) {
       return { job };
     }
@@ -15,15 +17,14 @@ export default contain(
   React.createClass({
     displayName: 'Preview',
 
-    mixins: [History],
-
     propTypes: {
-      job: PropTypes.object
+      appActions: PropTypes.object,
+      job: PropTypes.object,
+      jobActions: PropTypes.object
     },
 
     render() {
-      const { job } = this.props;
-      const { history } = this;
+      const { appActions, job, jobActions } = this.props;
       return (
         <div>
           <ShowJob job={ job } />
@@ -31,12 +32,18 @@ export default contain(
             <Well>
               <Button
                 block={ true }
-                className='signup-btn' >
+                className='signup-btn'
+                onClick={ () => {
+                  jobActions.saveJobToDb({
+                    goTo: '/jobs/new/check-out',
+                    job
+                  });
+                }}>
                 Looks great! Let's Check Out
               </Button>
               <Button
                 block={ true }
-                onClick={ () => history.goBack() } >
+                onClick={ () => appActions.goBack() } >
                 Head back and make edits
               </Button>
             </Well>

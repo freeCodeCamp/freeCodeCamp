@@ -16,10 +16,20 @@ export default Actions({
     };
   },
 
-  getUser: null
+  getUser: null,
+  goTo: null,
+  goBack: null
 })
   .refs({ displayName: 'AppActions' })
-  .init(({ instance: appActions, args: [services] }) => {
+  .init(({ instance: appActions, args: [services, history] }) => {
+    appActions.goTo.subscribe((url) => {
+      history.pushState(null, url);
+    });
+
+    appActions.goBack.subscribe(() => {
+      history.goBack();
+    });
+
     appActions.getUser.subscribe(({ isPrimed }) => {
       if (isPrimed) {
         debug('isPrimed');
