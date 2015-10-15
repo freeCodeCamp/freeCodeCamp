@@ -85,40 +85,44 @@ block content
                         .spacer.negative-55
 
                     .row
-                        .col-xs-12.col-sm-8.col-sm-offset-2
-                            h3 #{challengeBlock.name}
+                        .hidden-xs.col-sm-3.col-md-2
+                            h3.text-primary.text-right.nowrap
+                                i.fa.fa-clock-o &thinsp;#{challengeBlock.time}
+                        .col-xs-12.col-sm-9.col-md-10
+                            h3 #{challengeBlock.name} &thinsp;
+
+
                     .row
-                        .col-xs-12
-                            ol
-                                for challenge in challengeBlock.challenges
-                                    if challenge.completed
-                                        .row
-                                            .hidden-xs.col-sm-3.col-md-2.text-primary.ion-checkmark-circled.padded-ionic-icon.text-center.map-p.negative-10
-                                            .col-xs-12.col-sm-9.col-md-10
-                                                li.faded.map-p.negative-10
-                                                    a(href="/challenges/#{challenge.dashedName}")
-                                                        span.capitalize= challenge.type + ': '
-                                                        span= challenge.title
-                                                            span.sr-only= " Complete"
-
-
-                                    else
-                                        .row
-                                            .hidden-xs.col-sm-3.col-md-2
-                                                span.negative-10
-                                            .col-xs-12.col-sm-9.col-md-10
-                                                li.map-p.negative-10
-                                                    a(href="/challenges/#{challenge.dashedName}")
-                                                        span.capitalize= challenge.type + ': '
-                                                        span= challenge.title
-                                                            span.sr-only= " Incomplete"
-
-                                if (challengeBlock.completed === 100)
-                                    .button-spacer
+                        ol
+                            for challenge in challengeBlock.challenges
+                                if challenge.completed
                                     .row
-                                        .col-xs-12.col-sm-8.col-md-6.col-sm-offset-3.col-md-offset-2.hidden
-                                            a.btn.btn-lg.btn-block.signup-btn.map-challenge-block-share Section complete. Share your Portfolio with your friends.
-                                                .hidden(id="#{challengeBlock.name}")
+                                        .hidden-xs.col-sm-3.col-md-2.text-primary.ion-checkmark-circled.padded-ionic-icon.text-center.map-p.negative-10
+                                        .col-xs-12.col-sm-9.col-md-10
+                                            li.faded.map-p.negative-10
+                                                a(href="/challenges/#{challenge.dashedName}")
+                                                    span.capitalize= challenge.type + ': '
+                                                    span= challenge.title
+                                                        span.sr-only= " Complete"
+
+
+                                else
+                                    .row
+                                        .hidden-xs.col-sm-3.col-md-2
+                                            span.negative-10
+                                        .col-xs-12.col-sm-9.col-md-10
+                                            li.map-p.negative-10
+                                                a(href="/challenges/#{challenge.dashedName}")
+                                                    span.capitalize= challenge.type + ': '
+                                                    span= challenge.title
+                                                        span.sr-only= " Incomplete"
+
+                            if (challengeBlock.completed === 100)
+                                .button-spacer
+                                .row
+                                    .col-xs-12.col-sm-8.col-md-6.col-sm-offset-3.col-md-offset-2.hidden
+                                        a.btn.btn-lg.btn-block.signup-btn.map-challenge-block-share Section complete. Share your Portfolio with your friends.
+                                            .hidden(id="#{challengeBlock.name}")
     script.
         var username = !{JSON.stringify(user && user.username || '')};
         var lastCompleted = !{JSON.stringify(lastCompleted || false)}

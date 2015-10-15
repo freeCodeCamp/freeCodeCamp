@@ -1,6 +1,7 @@
 {
   "name": "Intermediate Algorithm Scripting",
   "order": 10,
+  "time": "50h",
   "challenges": [
     {
       "id": "a3566b1109230028080c9345",
@@ -66,7 +67,8 @@
         "assert.deepEqual(diff([1, 2, 3, 5], [1, 2, 3, 4, 5]), [4], 'message: <code>[1, 2, 3, 5], [1, 2, 3, 4, 5]</code> should return <code>[4]</code>.');",
         "assert.includeMembers(diff([1, \"calf\", 3, \"piglet\"], [1, \"calf\", 3, 4]), [\"piglet\", 4], 'message: <code>[1, \"calf\", 3, \"piglet\"], [1, \"calf\", 3, 4]</code> should return <code>[\"piglet\", 4]</code>.');",
         "assert.deepEqual(diff([], [\"snuffleupagus\", \"cookie monster\", \"elmo\"]), [\"snuffleupagus\", \"cookie monster\", \"elmo\"], 'message: <code>[], [\"snuffleupagus\", \"cookie monster\", \"elmo\"]</code> should return <code>[\"snuffleupagus\", \"cookie monster\", \"elmo\"]</code>.');",
-        "assert.includeMembers(diff([1, \"calf\", 3, \"piglet\"], [7, \"filly\"]), [1, \"calf\", 3, \"piglet\", 7, \"filly\"], 'message: <code>[1, \"calf\", 3, \"piglet\"], [7, \"filly\"]</code> should return <code>[1, \"calf\", 3, \"piglet\", 7, \"filly\"]</code>.');"
+        "assert.includeMembers(diff([1, \"calf\", 3, \"piglet\"], [7, \"filly\"]), [1, \"calf\", 3, \"piglet\", 7, \"filly\"], 'message: <code>[1, \"calf\", 3, \"piglet\"], [7, \"filly\"]</code> should return <code>[1, \"calf\", 3, \"piglet\", 7, \"filly\"]</code>.');",
+        "assert.deepEqual(diff([1, 2, 3, 3], [1]), [2, 3], 'message: <code>[1, 2, 3, 3], [1]</code> should return <code>[2, 3]</code>.');"
       ],
       "MDNlinks": [
         "Comparison Operators",
@@ -356,7 +358,7 @@
         "assert.strictEqual(boo([].slice), false, 'message: <code>boo([].slice)</code> should return false.');",
         "assert.strictEqual(boo({ \"a\": 1 }), false, 'message: <code>boo({ \"a\": 1 })</code> should return false.');",
         "assert.strictEqual(boo(1), false, 'message: <code>boo(1)</code> should return false.');",
-        "assert.strictEqual(boo(NaN), false, 'message: <code>boo(NaN)</code> should return true.');",
+        "assert.strictEqual(boo(NaN), false, 'message: <code>boo(NaN)</code> should return false.');",
         "assert.strictEqual(boo(\"a\"), false, 'message: <code>boo(\"a\")</code> should return false.');"
       ],
       "MDNlinks": [

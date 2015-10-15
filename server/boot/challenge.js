@@ -186,7 +186,7 @@ module.exports = function(app) {
               );
             }
             const firstChallengeOfNextBlock$ = blocks$
-              .elementAtOrDefault(blockIndex + 1, {})
+              .elementAt(blockIndex + 1, {})
               .map(({ challenges = [] }) => challenges[0]);
 
             return blocks$
@@ -259,7 +259,7 @@ module.exports = function(app) {
       .filter((challenge) => {
         return testChallengeName.test(challenge.name);
       })
-      .lastOrDefault(null)
+      .last({ defaultValue: null })
       .flatMap(challenge => {
 
         // Handle not found
@@ -555,7 +555,8 @@ module.exports = function(app) {
           name: blockArray[0].block,
           dashedName: dasherize(blockArray[0].block),
           challenges: blockArray,
-          completed: completedCount / blockArray.length * 100
+          completed: completedCount / blockArray.length * 100,
+          time: blockArray[0] && blockArray[0].time || "???"
         };
       })
       .filter(({ name }) => name !== 'Hikes')

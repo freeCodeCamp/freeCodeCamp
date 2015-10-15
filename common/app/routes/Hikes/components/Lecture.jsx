@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 import { Button, Col, Row, Panel } from 'react-bootstrap';
-import { Navigation } from 'react-router';
+import { History } from 'react-router';
 import Vimeo from 'react-vimeo';
 import debugFactory from 'debug';
 
@@ -8,7 +8,7 @@ const debug = debugFactory('freecc:hikes');
 
 export default React.createClass({
   displayName: 'Lecture',
-  mixins: [Navigation],
+  mixins: [History],
 
   propTypes: {
     currentHike: PropTypes.object,
@@ -20,7 +20,7 @@ export default React.createClass({
   handleFinish() {
     debug('loading questions');
     const { dashedName } = this.props.params;
-    this.transitionTo(`/hikes/${dashedName}/questions/1`);
+    this.history.pushState(null, `/hikes/${dashedName}/questions/1`);
   },
 
   renderTranscript(transcript, dashedName) {

@@ -1,6 +1,7 @@
 {
   "name": "Basic Algorithm Scripting",
   "order": 8,
+  "time": "50h",
   "challenges": [
     {
       "id": "ad7123c8c441eddfaeb5bdef",
@@ -60,7 +61,7 @@
         "  return str;",
         "}",
         "",
-        "reverseString(\"hello\", \"\");"
+        "reverseString(\"hello\");"
       ],
       "MDNlinks": [
         "Global String Object",
@@ -103,7 +104,7 @@
         "  return num;",
         "}",
         "",
-        "factorialize(5, '');"
+        "factorialize(5);"
       ],
       "MDNlinks": [
         "Arithmetic Operators"
@@ -224,7 +225,7 @@
         "  return str;",
         "}",
         "",
-        "titleCase(\"I'm a little tea pot\", \"\");"
+        "titleCase(\"I'm a little tea pot\");"
       ],
       "tests": [
         "assert(typeof(titleCase(\"I&#39;m a little tea pot\")) === \"string\", 'message: <code>titleCase()</code> should return a string.');",
@@ -300,13 +301,14 @@
         "  return str;",
         "}",
         "",
-        "end(\"Bastian\", \"n\", \"\");"
+        "end(\"Bastian\", \"n\");"
       ],
       "tests": [
         "assert(end(\"Bastian\", \"n\") === true, 'message: <code>end(\"Bastian\", \"n\")</code> should return true.');",
         "assert(end(\"Connor\", \"n\") === false, 'message: <code>end(\"Connor\", \"n\")</code> should return false.');",
         "assert(end(\"Walking on water and developing software from a specification are easy if both are frozen.\", \"specification\") === false, 'message: <code>end(\"Walking on water and developing software from a specification are easy if both are frozen.\", \"specification\")</code> should return false.');",
         "assert(end(\"He has to give me a new name\", \"name\") === true, 'message: <code>end(\"He has to give me a new name\", \"name\")</code> should return true.');",
+        "assert(end(\"He has to give me a new name\", \"me\") === true, 'message: <code>end(\"He has to give me a new name\", \"me\")</code> should return true.');",
         "assert(end(\"If you want to save our world, you must hurry. We dont know how much longer we can withstand the nothing\", \"mountain\") === false, 'message: <code>end(\"If you want to save our world, you must hurry. We dont know how much longer we can withstand the nothing\", \"mountain\")</code> should return false.');"
       ],
       "MDNlinks": [
@@ -338,7 +340,7 @@
         "  return str;",
         "}",
         "",
-        "repeat(\"abc\", 3, \"\");"
+        "repeat(\"abc\", 3);"
       ],
       "tests": [
         "assert(repeat(\"*\", 3) === \"***\", 'message: <code>repeat(\"*\", 3)</code> should return <code>\"***\"</code>.');",
@@ -375,7 +377,7 @@
         "  return str;",
         "}",
         "",
-        "truncate(\"A-tisket a-tasket A green and yellow basket\", 11, \"\");"
+        "truncate(\"A-tisket a-tasket A green and yellow basket\", 11);"
       ],
       "tests": [
         "assert(truncate(\"A-tisket a-tasket A green and yellow basket\", 11) === \"A-tisket...\", 'message: <code>truncate(\"A-tisket a-tasket A green and yellow basket\", 11)</code> should return \"A-tisket...\".');",
@@ -412,7 +414,7 @@
         "  return arr;",
         "}",
         "",
-        "chunk([\"a\", \"b\", \"c\", \"d\"], 2, \"\");"
+        "chunk([\"a\", \"b\", \"c\", \"d\"], 2);"
       ],
       "tests": [
         "assert.deepEqual(chunk([\"a\", \"b\", \"c\", \"d\"], 2), [[\"a\", \"b\"], [\"c\", \"d\"]], 'message: <code>chunk([\"a\", \"b\", \"c\", \"d\"], 2)</code> should return <code>[[\"a\", \"b\"], [\"c\", \"d\"]]</code>.');",
@@ -450,12 +452,13 @@
         "  return arr;",
         "}",
         "",
-        "slasher([1, 2, 3], 2, \"\");"
+        "slasher([1, 2, 3], 2);"
       ],
       "tests": [
-        "assert.deepEqual(slasher([1, 2, 3], 2), [3], 'message: <code>slasher([1, 2, 3], 2, [3])</code> should return <code>[3]</code>.');",
+        "assert.deepEqual(slasher([1, 2, 3], 2), [3], 'message: <code>slasher([1, 2, 3], 2)</code> should return <code>[3]</code>.');",
         "assert.deepEqual(slasher([1, 2, 3], 0), [1, 2, 3], 'message: <code>slasher([1, 2, 3], 0)</code> should return <code>[1, 2, 3]</code>.');",
-        "assert.deepEqual(slasher([1, 2, 3], 9), [], 'message: <code>slasher([1, 2, 3], 9)</code> should return <code>[]</code>.');"
+        "assert.deepEqual(slasher([1, 2, 3], 9), [], 'message: <code>slasher([1, 2, 3], 9)</code> should return <code>[]</code>.');",
+        "assert.deepEqual(slasher([1, 2, 3], 4), [], 'message: <code>slasher([1, 2, 3], 4)</code> should return <code>[]</code>.');"
       ],
       "MDNlinks": [
         "Array.slice()",
@@ -489,7 +492,7 @@
         "  return arr;",
         "}",
         "",
-        "mutation([\"hello\", \"hey\"], \"\");"
+        "mutation([\"hello\", \"hey\"]);"
       ],
       "tests": [
         "assert(mutation([\"hello\", \"hey\"]) === false, 'message: <code>mutation([\"hello\", \"hey\"])</code> should return false.');",
@@ -531,7 +534,7 @@
         "  return arr;",
         "}",
         "",
-        "bouncer([7, \"ate\", \"\", false, 9], \"\");"
+        "bouncer([7, \"ate\", \"\", false, 9]);"
       ],
       "tests": [
         "assert.deepEqual(bouncer([7, \"ate\", \"\", false, 9]), [7, \"ate\", 9], 'message: <code>bouncer([7, \"ate\", \"\", false, 9])</code> should return <code>[7, \"ate\", 9]</code>.');",
@@ -608,7 +611,7 @@
         "  return num;",
         "}",
         "",
-        "where([40, 60], 50, \"\");"
+        "where([40, 60], 50);"
       ],
       "MDNlinks": [
         "Array.sort()"
