@@ -2,6 +2,8 @@ var main = window.main || {};
 
 main.mapShareKey = 'map-shares';
 
+main.ga = window.ga || function() {};
+
 var lastCompleted = typeof lastCompleted !== 'undefined' ?
   lastCompleted :
   '';
@@ -451,6 +453,7 @@ $(document).ready(function() {
       '&redirect_uri=http%3A%2F%2Ffreecodecamp%2Ecom%2Fmap';
 
     setMapShare(challengeBlockName);
+    main.ga('send', 'event', 'FB_LINK', 'SHARE', 'Facebook map share');
     window.location.href = link;
   });
 });
