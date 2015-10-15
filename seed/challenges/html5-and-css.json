@@ -542,7 +542,6 @@
         "assert($(\"p\").length > 1, 'You need 2 <code>p</code> elements with Kitty Ipsum text.')",
         "assert(editor.match(/<\\/p>/g) && editor.match(/<\\/p>/g).length === editor.match(/<p/g).length, 'Make sure each of your <code>p</code> elements has a closing tag.')",
         "assert.isTrue((/Purr\\s+jump\\s+eat/gi).test($(\"p\").text()), 'Your <code>p</code> element should contain the first few words of the provided additional <code>kitty ipsum text</code>.')",
-        "assert($(\"p.red-text\").length === 2, 'Give each of your <code>p</code> elements the <code>red-text</code> class.')",
         "assert($(\"p\").css(\"font-size\") === \"16px\", 'Give elements with the <code>red-text</code> class a <code>font-size</code> of 16px.')"
       ],
       "challengeSeed": [
