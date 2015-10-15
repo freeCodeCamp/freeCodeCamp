@@ -530,7 +530,7 @@
       ],
       "tests": [
         "assert((function(d){if(d[0] == 'John' && d[1] == 23 && d[2] == undefined){return true;}else{return false;}})(myArray), 'message: <code>myArray</code> should only contain <code>[\"John\", 23]</code>.');",
-        "assert((function(d){if(d[0] == 'cat' && d[1] == 2 && d[2] == undefined){return true;}else{return false;}})(removed), 'message: <code>removed</code> should only contain <code>[\"cat\"], 2</code>.');"
+        "assert((function(d){if(d[0] == 'cat' && d[1] == 2 && d[2] == undefined){return true;}else{return false;}})(removed), 'message: <code>removed</code> should only contain <code>[\"cat\", 2]</code>.');"
       ],
       "challengeSeed": [
         "// var numbers = [1,2,3];",
