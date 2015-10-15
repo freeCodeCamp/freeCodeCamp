@@ -308,6 +308,7 @@
         "assert(end(\"Connor\", \"n\") === false, 'message: <code>end(\"Connor\", \"n\")</code> should return false.');",
         "assert(end(\"Walking on water and developing software from a specification are easy if both are frozen.\", \"specification\") === false, 'message: <code>end(\"Walking on water and developing software from a specification are easy if both are frozen.\", \"specification\")</code> should return false.');",
         "assert(end(\"He has to give me a new name\", \"name\") === true, 'message: <code>end(\"He has to give me a new name\", \"name\")</code> should return true.');",
+        "assert(end(\"He has to give me a new name\", \"me\") === true, 'message: <code>end(\"He has to give me a new name\", \"me\")</code> should return true.');",
         "assert(end(\"If you want to save our world, you must hurry. We dont know how much longer we can withstand the nothing\", \"mountain\") === false, 'message: <code>end(\"If you want to save our world, you must hurry. We dont know how much longer we can withstand the nothing\", \"mountain\")</code> should return false.');"
       ],
       "MDNlinks": [
