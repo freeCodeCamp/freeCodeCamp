@@ -142,6 +142,7 @@ $(document).ready(function() {
                 type = 'html';
                 break;
               case challengeTypes.JAVASCRIPT:
+              case challengeTypes.BONFIRE:
                 type = 'javascript';
                 break;
               default:
