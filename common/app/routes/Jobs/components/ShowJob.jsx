@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import { Row, Thumbnail, Panel, Well } from 'react-bootstrap';
+import { Row, Col, Thumbnail, Panel } from 'react-bootstrap';
 import moment from 'moment';
 
 const defaultImage =
@@ -50,22 +50,49 @@ export default React.createClass({
     return (
       <div>
         <Row>
-          <Well>
-            <Thumbnail
-              alt={ logo ? company + 'company logo' : 'stock image' }
-              src={ logo || defaultImage }
-              style={ thumbnailStyle } />
+          <Col
+            md={ 10 }
+            mdOffset={ 1 }
+            xs={ 12 }>
             <Panel>
-              Position: { position || 'N/A' }
-              <br />
-              Location: { locale ? locale : `${city}, ${state}` }
-              <br />
-              Contact: { email || phone || 'N/A' }
-              <br />
-              Posted On: { moment(postedOn).format('MMMM Do, YYYY') }
+              <Row>
+                <h2 className='text-center'>
+                  { company }
+                </h2>
+              </Row>
+              <div className='spacer' />
+              <Row>
+                <Col
+                  md={ 3 }
+                  mdPush={ 7 }>
+                  <Thumbnail
+                    alt={ logo ? company + 'company logo' : 'stock image' }
+                    src={ logo || defaultImage }
+                    style={ thumbnailStyle } />
+                </Col>
+                <Col
+                  md={ 4 }>
+
+                  Position: { position || 'N/A' }
+                  <br />
+                  Location: { locale ? locale : `${city}, ${state}` }
+                  <br />
+                  Contact: { email || phone || 'N/A' }
+                  <br />
+                  Posted On: { moment(postedOn).format('MMMM Do, YYYY') }
+                </Col>
+              </Row>
+              <div className='spacer' />
+              <Row>
+                <Col
+                  md={ 6 }
+                  mdOffset={ 3 }
+                  xs={ 12 }>
+                  <p>{ description }</p>
+                </Col>
+              </Row>
             </Panel>
-            <p>{ description }</p>
-          </Well>
+          </Col>
         </Row>
       </div>
     );
