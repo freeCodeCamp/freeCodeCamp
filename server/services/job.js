@@ -1,3 +1,11 @@
+const whereFilt = {
+  where: {
+    isFilled: false,
+    isPaid: true,
+    isApproved: true
+  }
+};
+
 export default function getJobServices(app) {
   const { Job } = app.models;
 
@@ -16,7 +24,7 @@ export default function getJobServices(app) {
       if (id) {
         return Job.findById(id, cb);
       }
-      Job.find({}, (err, jobs) => {
+      Job.find(whereFilt, (err, jobs) => {
         cb(err, jobs);
       });
     }
