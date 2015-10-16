@@ -32,6 +32,7 @@ export default React.createClass({
         return (
           <ListGroupItem
             className={ className }
+            key={ id }
             onClick={ () => handleClick(id) }>
             <div>
               <h4 style={{ display: 'inline-block' }}>
