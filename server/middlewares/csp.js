@@ -55,6 +55,7 @@ export default function csp() {
   return helmet.csp({
     defaultSrc: trusted,
     scriptSrc: [
+      'https://*.gitter.im',
       '*.optimizely.com',
       '*.aspnetcdn.com',
       '*.d3js.org',

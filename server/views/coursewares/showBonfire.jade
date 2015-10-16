@@ -52,7 +52,7 @@ block content
                     label.btn.btn-success#trigger-reset-modal
                         i.fa.fa-refresh
                             | &nbsp; Reset
-                    label.btn.btn-success#trigger-help-modal
+                    label.btn.btn-success#challenge-help-btn
                         i.fa.fa-medkit
                             | &nbsp; Help
                     label.btn.btn-success#trigger-issue-modal
@@ -122,7 +122,14 @@ block content
                     a.btn.btn-lg.btn-primary.btn-block(href='#', data-dismiss='modal', aria-hidden='true') Cancel
     include ../partials/challenge-modals
     script.
-        var MDNlinks = !{JSON.stringify(MDNlinks)};
-        if (!MDNlinks.length) {
-            $('#MDN-links').addClass('collapse');
+
+      document.addEventListener('gitter-sidecar-ready', function(e) {
+        if (window.main) {
+          window.main.chat.createHelpChat('freecodecamp/helpbonfires', '#challenge-help-btn', 'Bonfires Help');
         }
+      });
+
+      var MDNlinks = !{JSON.stringify(MDNlinks)};
+      if (!MDNlinks.length) {
+          $('#MDN-links').addClass('collapse');
+      }

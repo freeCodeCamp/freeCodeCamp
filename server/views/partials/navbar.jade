@@ -11,8 +11,10 @@ nav.navbar.navbar-default.navbar-fixed-top.nav-height
                 a.learn-btn(href='#') Learn
             li
                 a(href='/map') Map
-            li
-                a(href='//gitter.im/FreeCodeCamp/FreeCodeCamp', target='_blank') Chat
+            li.hidden-xs
+                a#nav-chat-btn(href='#' onclick="return false") Chat
+            li.visible-xs
+                a(href="//gitter.im/freecodecamp/freecodecamp" target="_blank") Chat
             li
                 a(href='/news', target='_blank') News
             li
