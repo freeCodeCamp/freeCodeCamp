@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import classnames from 'classnames';
 import { ListGroup, ListGroupItem } from 'react-bootstrap';
 import moment from 'moment';
 
@@ -22,9 +23,15 @@ export default React.createClass({
         isHighlighted,
         postedOn
       }) => {
+
+        const className = classnames({
+          'jobs-list': true,
+          'jobs-list-highlight': isHighlighted
+        });
+
         return (
           <ListGroupItem
-            className={ isHighlighted ? 'jobs-list-highlight' : '' }
+            className={ className }
             onClick={ () => handleClick(id) }>
             <div>
               <h4 style={{ display: 'inline-block' }}>

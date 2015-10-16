@@ -14,7 +14,7 @@ import {
   Col,
   Input,
   Row,
-  Well
+  Panel
 } from 'react-bootstrap';
 
 import {
@@ -197,8 +197,10 @@ export default contain({
       return (
         <div>
           <Row>
-            <Col>
-              <Well className='text-center'>
+            <Col
+              md={ 10 }
+              mdOffset={ 1 }>
+              <Panel className='text-center'>
                 <h1>Create Your Job Post</h1>
                 <form
                   className='form-horizontal'
@@ -317,7 +319,7 @@ export default contain({
                     </Col>
                   </Row>
                 </form>
-              </Well>
+              </Panel>
             </Col>
           </Row>
         </div>
