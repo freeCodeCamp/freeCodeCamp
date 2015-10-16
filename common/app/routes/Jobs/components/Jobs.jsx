@@ -1,7 +1,7 @@
 import React, { cloneElement, PropTypes } from 'react';
 import { contain } from 'thundercats-react';
 import { History } from 'react-router';
-import { Button, Jumbotron, Row } from 'react-bootstrap';
+import { Button, Panel, Row } from 'react-bootstrap';
 
 import CreateJobModal from './CreateJobModal.jsx';
 import ListJobs from './List.jsx';
@@ -60,31 +60,29 @@ export default contain(
       } = this.props;
 
       return (
-        <div>
+        <Panel>
+          <h1>Free Code Camps' Job Board</h1>
           <Row>
-            <Jumbotron>
-              <h1>Free Code Camps' Job Board</h1>
-              <p>
-                Need to find the best junior developers?
-                Want to find dedicated developers eager to join your company?
-                Sign up now to post your job!
-              </p>
-              <Button
-                bsSize='large'
-                className='signup-btn'
-                onClick={ jobActions.openModal }>
-                Try the first month 20% off!
-              </Button>
-            </Jumbotron>
+            <p>
+              Need to find the best junior developers?
+              Want to find dedicated developers eager to join your company?
+              Sign up now to post your job!
+            </p>
+            <Button
+              bsSize='large'
+              className='signup-btn'
+              onClick={ jobActions.openModal }>
+              Post a job: $200 for 60 days.
+            </Button>
           </Row>
           <Row>
-            { this.renderChild(children, jobs) ||
-              this.renderList(this.handleJobClick, jobs) }
+          { this.renderChild(children, jobs) ||
+            this.renderList(this.handleJobClick, jobs) }
           </Row>
           <CreateJobModal
             onHide={ jobActions.closeModal }
             showModal={ showModal } />
-        </div>
+        </Panel>
       );
     }
   })

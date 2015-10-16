@@ -48,13 +48,20 @@
       "type": "string"
     },
     "isApproved": {
-      "type": "boolean"
+      "type": "boolean",
+      "default": false
     },
     "isHighlighted": {
-      "type": "boolean"
+      "type": "boolean",
+      "default": false
     },
     "isPaid": {
-      "type": "boolean"
+      "type": "boolean",
+      "default": false
+    },
+    "isFilled": {
+      "type": "boolean",
+      "default": false
     },
     "postedOn": {
       "type": "date",
