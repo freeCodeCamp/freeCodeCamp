@@ -66,22 +66,28 @@ export default contain(
               md={ 10 }
               mdOffset= { 1 }
               xs={ 12 }>
-              <h1 className='text-center'>Free Code Camps' Job Board</h1>
-              <Row>
+              <h1 className='text-center'>Job Opportunities</h1>
+              <Row className='text-center'>
                 <Col
-                  xs={ 10 }
-                  xsOffset={ 1 }>
-                  <p>
-                    Need to find the best junior developers?
-                    Post your job today!
+                  xs={ 12 }
+                  xsOffset={ 0 }>
+                  <p className='text-center large-p'>
+                    Talented web developers with strong portfolios are eager
+                    to work for your company.
                   </p>
+                </Col>
+                <Col
+                  xs={ 12 }
+                  sm={ 8 }
+                  smOffset={ 2 }>
                   <Button
-                    block={ true }
                     bsSize='large'
-                    className='signup-btn'
-                    onClick={ jobActions.openModal }>
-                    Post a job: $200 for 60 days.
+                    className='signup-btn btn-block'
+                    onClick={ ()=> {this.history.pushState(null, "/jobs/new")} }>
+                    Post a job: $200 for 30 days + weekly tweets
                   </Button>
+                  <div className='button-spacer' />
+                  <a href="https://twitter.com/CamperJobs" className="twitter-follow-button" data-show-count="false" data-size="large">Follow @CamperJobs</a>
                   <div className='spacer' />
                 </Col>
               </Row>
@@ -89,9 +95,6 @@ export default contain(
               { this.renderChild(children, jobs) ||
                 this.renderList(this.handleJobClick, jobs) }
               </Row>
-              <CreateJobModal
-                onHide={ jobActions.closeModal }
-                showModal={ showModal } />
             </Col>
           </Row>
         </Panel>

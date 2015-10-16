@@ -207,14 +207,14 @@ export default contain({
                   onSubmit={ this.handleSubmit }>
 
                   <div className='spacer'>
-                    <h2>Job Information</h2>
+                    <h2>First, tell us about the position</h2>
                   </div>
                   <Input
                     bsStyle={ position.bsStyle }
-                    label='Position'
+                    label='Job Title'
                     labelClassName={ labelClass }
                     onChange={ (e) => handleChange('position', e) }
-                    placeholder='Position'
+                    placeholder='e.g. Full Stack Developer, Front End Developer, etc.'
                     required={ true }
                     type='text'
                     value={ position.value }
@@ -224,7 +224,7 @@ export default contain({
                     label='Location'
                     labelClassName={ labelClass }
                     onChange={ (e) => handleChange('locale', e) }
-                    placeholder='Location'
+                    placeholder='e.g. San Francisco, Remote, etc.'
                     required={ true }
                     type='text'
                     value={ locale.value }
@@ -234,7 +234,6 @@ export default contain({
                     label='Description'
                     labelClassName={ labelClass }
                     onChange={ (e) => handleChange('description', e) }
-                    placeholder='Description'
                     required={ true }
                     rows='10'
                     type='textarea'
@@ -242,14 +241,13 @@ export default contain({
                     wrapperClassName={ inputClass } />
 
                   <div className='divider'>
-                    <h2>Company Information</h2>
+                    <h2>Tell us about your organization</h2>
                   </div>
                   <Input
                     bsStyle={ company.bsStyle }
                     label='Company Name'
                     labelClassName={ labelClass }
                     onChange={ (e) => handleChange('company', e) }
-                    placeholder='Foo, INC'
                     type='text'
                     value={ company.value }
                     wrapperClassName={ inputClass } />
@@ -258,7 +256,7 @@ export default contain({
                     label='Email'
                     labelClassName={ labelClass }
                     onChange={ (e) => handleChange('email', e) }
-                    placeholder='Email'
+                    placeholder='you@yourcompany.com'
                     required={ true }
                     type='email'
                     value={ email.value }
@@ -268,7 +266,7 @@ export default contain({
                     label='Phone'
                     labelClassName={ labelClass }
                     onChange={ (e) => handleChange('phone', e) }
-                    placeholder='555-123-1234'
+                    placeholder='555-867-5309'
                     type='tel'
                     value={ phone.value }
                     wrapperClassName={ inputClass } />
@@ -277,7 +275,7 @@ export default contain({
                     label='URL'
                     labelClassName={ labelClass }
                     onChange={ (e) => handleChange('url', e) }
-                    placeholder='http://freecatphotoapp.com'
+                    placeholder='http://freecodecamp.com'
                     type='url'
                     value={ url.value }
                     wrapperClassName={ inputClass } />
@@ -292,11 +290,11 @@ export default contain({
                     wrapperClassName={ inputClass } />
 
                   <div className='divider'>
-                    <h2>Make it stand out</h2>
+                    <h2>Highlight your listing to make it stand out</h2>
                   </div>
                   <Input
                     checked={ highlight.value }
-                    label='Highlight your ad'
+                    label="&thinsp;&thinsp;&thinsp;Sure - I'll pay $50 more for that."
                     labelClassName={ 'col-sm-offset-1 col-sm-6'}
                     onChange={
                       ({ target: { checked } }) => handleForm({
