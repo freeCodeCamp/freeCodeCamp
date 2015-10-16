@@ -200,6 +200,9 @@
         "// Only change code above this line.",
         "(function() {return array;})();"
       ],
+      "MDNlinks":[
+        "Array.map()"
+      ],
       "challengeType":1,
       "type": "waypoint"
     },
@@ -227,6 +230,9 @@
         "",
         "// Only change code above this line.",
         "(function() {return singleVal;})();"
+      ],
+      "MDNlinks":[
+        "Array.reduce()"
       ],
       "challengeType":1,
       "type": "waypoint"
@@ -256,6 +262,9 @@
         "  // Only change code above this line.",
         "(function() {return array;})();"
       ],
+      "MDNlinks":[
+        "Array.filter()"
+      ],
       "challengeType":1,
       "type": "waypoint"
     },
@@ -284,6 +293,9 @@
         "  // Only change code above this line.",
         "(function() {return array;})();"
       ],
+      "MDNlinks":[
+        "Array.sort()"
+      ],
       "challengeType":1,
       "type": "waypoint"
     },
@@ -307,6 +319,9 @@
         "",
         "  // Only change code above this line.",
         "(function() {return array;})();"
+      ],
+      "MDNlinks":[
+        "Array.reverse()"
       ],
       "challengeType": 1,
       "type": "waypoint"
@@ -335,6 +350,9 @@
         "// Only change code above this line.",
         "(function() {return array;})();"
       ],
+      "MDNlinks":[
+        "Array.concat()"
+      ],
       "challengeType": 1,
       "type": "waypoint"
     },
@@ -361,6 +379,9 @@
         "// Only change code above this line.",
         "(function() {return array;})();"
       ],
+      "MDNlinks":[
+        "String.split()"
+      ],
       "challengeType":1,
       "type": "waypoint"
     },
@@ -385,6 +406,9 @@
         "",
         "// Only change code above this line.",
         "(function() {return joinMe;})();"
+      ],
+      "MDNlinks":[
+        "Array.join()"  
       ],
       "challengeType":1,
       "type": "waypoint"
