@@ -98,15 +98,21 @@ block content
     include ../partials/challenge-modals
     script.
       document.addEventListener('gitter-sidecar-ready', function(e) {
+        var challengeType = !{JSON.stringify(challengeType)};
+        var room = 'freecodecamp/help';
+        var title;
+
+        if (challengeType === '4') {
+          room = 'freecodecamp/helpBasejumps';
+          title = 'Basejump Help';
+        }
+
+        if (challengeType === '3') {
+          room = 'freecodecamp/helpZiplines';
+          title = 'Zipline Help';
+        }
+
         if (window.main) {
-          window.main.chat.createHelpChat(
-            !{JSON.stringify(challengeType)} !== 3 ?
-              'freecodecamp/helpZiplines' :
-              'freecodecamp/helpBasejumps',
-            '#challenge-help-btn',
-            !{JSON.stringify(challengeType)} !== 3 ?
-              'Zipline Help' :
-              'Basejump Help'
-          );
+          window.main.chat.createHelpChat(room, '#challenge-help-btn', title);
         }
       });
