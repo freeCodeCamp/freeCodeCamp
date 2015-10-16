@@ -21,7 +21,8 @@ export default React.createClass({
         company,
         position,
         isHighlighted,
-        postedOn
+        postedOn,
+        locale
       }) => {
 
         const className = classnames({
@@ -36,12 +37,15 @@ export default React.createClass({
             onClick={ () => handleClick(id) }>
             <div>
               <h4 style={{ display: 'inline-block' }}>
-                <span>{ company }</span>
+                <span className='text-primary'>{ company }</span>
                 {' '}
                 <span className='hidden-xs hidden-sm'>
                   - { position }
                 </span>
                 {' '}
+                <span className='hidden-xs hidden-sm'>
+                  ({ locale })
+                </span>
               </h4>
               <h4
                 className='pull-right'
