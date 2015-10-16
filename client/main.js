@@ -33,7 +33,22 @@ main = (function(main) {
       });
 
       $(helpChatBtnClass).on('click', function() {
-        main.chat.helpChat.toggleChat(true);
+        // is button already pressed?
+        // no? open chat
+        // yes? close chat
+        var shouldChatBeOpen = !$(this).hasClass('active');
+        main.chat.helpChat.toggleChat(shouldChatBeOpen);
+        if (shouldChatBeOpen) {
+          $(helpChatBtnClass).addClass('active');
+        }
+      });
+
+      $('#chat-embed-help').on('gitter-chat-toggle', function(e) {
+        var shouldButtonBePressed = !!e.originalEvent.detail.state;
+        if (shouldButtonBePressed) {
+          return $(helpChatBtnClass).addClass('active');
+        }
+        return $(helpChatBtnClass).removeClass('active');
       });
     };
 
