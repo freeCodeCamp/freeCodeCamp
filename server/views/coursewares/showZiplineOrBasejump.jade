@@ -102,8 +102,11 @@ block content
           window.main.chat.createHelpChat(
             !{JSON.stringify(challengeType)} === 3 ?
               'freecodecamp/helpZiplines' :
-              'freecodecamp/helpBonfires',
-            '#challenge-help-btn'
+              'freecodecamp/helpBasejumps',
+            '#challenge-help-btn',
+            !{JSON.stringify(challengeType)} === 3 ?
+              'Zipline Help' :
+              'Basejump Help'
           );
         }
       });

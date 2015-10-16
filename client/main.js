@@ -6,6 +6,7 @@ main.ga = window.ga || function() {};
 
 main = (function(main) {
 
+  // should be set before gitter script loads
   ((window.gitter = {}).chat = {}).options = {
     disableDefaultChat: true
   };
@@ -20,7 +21,8 @@ main = (function(main) {
   document.addEventListener('gitter-sidecar-ready', function(e) {
     main.chat.GitterChat = e.detail.Chat;
 
-    main.chat.createHelpChat = function(room, helpChatBtnClass) {
+    main.chat.createHelpChat = function(room, helpChatBtnClass, roomTitle) {
+      roomTitle = roomTitle || 'Waypoint Help';
 
       $('body').append(
         '<aside id="chat-embed-help" class="gitter-chat-embed is-collapsed" />'
@@ -43,8 +45,21 @@ main = (function(main) {
         }
       });
 
+      var helpTitleAdd = false;
       $('#chat-embed-help').on('gitter-chat-toggle', function(e) {
         var shouldButtonBePressed = !!e.originalEvent.detail.state;
+
+        if (!helpTitleAdd) {
+          helpTitleAdd = true;
+          $('#chat-embed-help > .gitter-chat-embed-action-bar').prepend(
+            '<div class="chat-embed-main-title">' +
+              '<span>' +
+                roomTitle +
+              '</span>' +
+            '</div>'
+          );
+        }
+
         if (shouldButtonBePressed) {
           return $(helpChatBtnClass).addClass('active');
         }
@@ -61,6 +76,21 @@ main = (function(main) {
       activationElement: false,
       targetElement: $('#chat-embed-main')
     });
+
+    var mainChatTitleAdded = false;
+    $('#chat-embed-main').on('gitter-chat-toggle', function() {
+      if (mainChatTitleAdded) {
+        return null;
+      }
+      mainChatTitleAdded = true;
+
+      $('#chat-embed-main > .gitter-chat-embed-action-bar').prepend(
+        '<div class="chat-embed-main-title">' +
+          '<span>Free Code Camp\'s Main Chat</span>' +
+        '</div>'
+      );
+    });
+
 
     $('#nav-chat-btn').on('click', function() {
       if (!main.chat.isOpen) {
