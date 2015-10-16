@@ -99,6 +99,7 @@
     "react-bootstrap": "~0.23.7",
     "react-motion": "~0.1.0",
     "react-router": "https://github.com/BerkeleyTrue/react-router.git#freecodecamp",
+    "react-router-bootstrap": "^0.19.2",
     "react-vimeo": "^0.0.3",
     "request": "~2.53.0",
     "rev-del": "^1.0.5",
