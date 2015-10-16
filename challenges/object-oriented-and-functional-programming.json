@@ -100,7 +100,7 @@
       ],
       "tests":[
         "assert(typeof(myBike.getSpeed)!=='undefined' && typeof(myBike.getSpeed) === 'function', 'message: The method getSpeed of myBike should be accessible outside the object.');",
-        "assert(typeof(myBike.speed) === 'undefined', 'message: <code>myBike.speed</code> should remain undefined.');",
+        "assert(typeof(myBike.speed) === 'undefined', 'message: <code>myBike.speed</code> should be undefined.');",
         "assert(typeof(myBike.addUnit) === 'undefined', 'message: <code>myBike.addUnit</code> should remain undefined.');"
       ],
       "challengeSeed":[
@@ -147,10 +147,11 @@
         "A function that creates objects is called a <code>constructor</code>.",
         "You can create <code>instances</code> of an object using a <code>constructor</code>.",
         "Each new <code>instance</code> of this object <code>inherits</code> all the <code>properties</code> and <code>methods</code> of your original object.",
-        "Then you can give the instance new properties."
+        "Once an <code>instance</code> has been created you can add <code>properties</code> to that <code>instance</code> individually.",
+        "Add an <code>engines</code> property with a number value to the <code>myCar</code> instance."
       ],
       "tests":[
-        "assert((new Car()).wheels === 4, 'message: The property <code>wheels</code> should still be 4 like in the object constructor.');",
+        "assert((new Car()).wheels === 4, 'message: The property <code>wheels</code> should still be 4 in the object constructor.');",
         "assert(typeof((new Car()).engines) === 'undefined', 'message: There should not be a property <code>engines</code> in the object constructor.');",
         "assert(myCar.wheels === 4, 'message: The property <code>wheels</code> of myCar should equal 4.');",
         "assert(typeof(myCar.engines) === 'number', 'message: The property <code>engines</code> of myCar should be a number.');"
@@ -177,12 +178,12 @@
       "title":"Iterate over Arrays with .map",
       "difficulty":0,
       "description":[
+        "The map method is one of the easiest ways to iterate through an array or object there is. Let's use it now.",
         "<code>array = array.map(function(val){</code>",
         "<code>&thinsp;&thinsp;return val+1;</code>",
         "<code>});</code>",
         "",
-        "The map method is one of the easiest ways to iterate through an array or object there is. Let's use it now.",
-        "Use the map function to add 3 to every value in the variable <code>array</code>"
+        "Use the map function to add 3 to every value in the variable <code>array</code>."
       ],
       "tests":[
         "assert.deepEqual(array, [4,5,6,7,8], 'message: You should add three to each value in the array.');",
@@ -199,6 +200,9 @@
         "// Only change code above this line.",
         "(function() {return array;})();"
       ],
+      "MDNlinks":[
+        "Array.map()"
+      ],
       "challengeType":1,
       "type": "waypoint"
     },
@@ -210,10 +214,11 @@
         "Reduce can be useful for condensing an array of numbers into one value.",
         "<code>var singleVal = array.reduce(function(previousVal, currentVal){</code>",
         "<code>&thinsp;&thinsp;return previousVal+currentVal;</code>",
-        "<code>});</code>"
+        "<code>});</code>",
+        "Use the <code>reduce</code> function to sum all the values in <code>array</code> and assign it to <code>singleVal</code>."
       ],
       "tests":[
-        "assert(singleVal == 30, 'message: <code>singleVal</code> should have been set to the result of your reduce operation.');",
+        "assert(singleVal == 30, 'message: <code>singleVal</code> should be equal to the sum of all items in the <code>array</code> variable.');",
         "assert(editor.getValue().match(/\\.reduce\\s*\\(/gi), 'message: You should have made use of the reduce method.');"
       ],
       "challengeSeed":[
@@ -226,6 +231,9 @@
         "// Only change code above this line.",
         "(function() {return singleVal;})();"
       ],
+      "MDNlinks":[
+        "Array.reduce()"
+      ],
       "challengeType":1,
       "type": "waypoint"
     },
@@ -234,7 +242,7 @@
       "title":"Filter Arrays with .filter",
       "difficulty":0,
       "description":[
-        "filter is a useful method that can filter out values that don't match a certain criteria",
+        "Filter is a useful method that can filter out values that don't match a certain criteria",
         "Let's remove all the values greater than five",
         "<code>array = array.filter(function(val) {</code>",
         "<code>&thinsp;&thinsp;return val <= 5;</code>",
@@ -254,6 +262,9 @@
         "  // Only change code above this line.",
         "(function() {return array;})();"
       ],
+      "MDNlinks":[
+        "Array.filter()"
+      ],
       "challengeType":1,
       "type": "waypoint"
     },
@@ -262,14 +273,15 @@
       "title": "Sort Arrays with .sort",
       "difficulty":0,
       "description":[
-        "You can use the method sort to easily sort the values in the array alphabetically or numerically",
-        "<code>var array = [1,3,2];</code>",
+        "You can use the method <code>sort</code> to easily sort the values in the array alphabetically or numerically.",
+        "<code>var array = [1, 3, 2];</code>",
         "<code>array = array.sort();</code>",
-        "This will return <code>[1, 2, 3]</code>"
+        "<code>array</code> is now <code>[1, 2, 3]</code>.",
+        "Use <code>sort</code> to sort <code>array</code> alphabetically."
       ],
       "tests":[
         "assert.deepEqual(array, ['alpha', 'beta', 'charlie'], 'message: You should have sorted the array alphabetically.');",
-        "assert(editor.getValue().match(/\\[\\'beta\\'\\,\\s\\'alpha\\'\\,\\s'charlie\\'\\];/gi), 'message: You should be sorting the array using sort.');",
+        "assert(editor.getValue().match(/\\[\\'beta\\'\\,\\s\\'alpha\\'\\,\\s'charlie\\'\\];/gi), 'message: You should only be using <code>.sort</code> to modify the array.');",
         "assert(editor.getValue().match(/\\.sort\\s*\\(\\)/gi), 'message: You should have made use of the sort method.');"
       ],
       "challengeSeed":[
@@ -281,6 +293,9 @@
         "  // Only change code above this line.",
         "(function() {return array;})();"
       ],
+      "MDNlinks":[
+        "Array.sort()"
+      ],
       "challengeType":1,
       "type": "waypoint"
     },
@@ -288,12 +303,13 @@
       "id": "cf1111c1c16feddfaeb2bdef",
       "title": "Reverse Arrays with .reverse",
       "description": [
-        "You can use the <code>.reverse()</code> function to reverse the contents of an array."
+        "You can use the <code>reverse</code> function to reverse the contents of an array.",
+        "Add a line of code that uses <code>reverse</code> to reverse the <code>array</code> variable."
       ],
       "tests": [
         "assert.deepEqual(array, [7,6,5,4,3,2,1], 'message: You should reverse the array.');",
-        "assert(editor.getValue().match(/\\.reverse\\s*\\(\\)/gi), 'message: You should use the reverse method.');",
-        "assert(editor.getValue().match(/\\[1\\,2\\,3\\,4\\,5\\,6\\,7/gi), 'message: You should return <code>[7,6,5,4,3,2,1]</code>.');"
+        "assert(editor.getValue().match(/\\.reverse\\s*\\(\\)/gi), 'message: You should use the <code>reverse</code> method.');",
+        "assert(editor.getValue().match(/\\[1\\,2\\,3\\,4\\,5\\,6\\,7/gi), 'message: You should only be using <code>revserse</code> to modify <code>array</code>.');"
       ],
       "challengeSeed": [
         "var array = [1,2,3,4,5,6,7];",
@@ -304,6 +320,9 @@
         "  // Only change code above this line.",
         "(function() {return array;})();"
       ],
+      "MDNlinks":[
+        "Array.reverse()"
+      ],
       "challengeType": 1,
       "type": "waypoint"
     },
@@ -312,12 +331,13 @@
       "title": "Concatenate Strings with .concat",
       "description": [
         "<code>.concat()</code> can be used to merge the contents of two arrays into one.",
-        "<code>array = array.concat(otherArray);</code>"
+        "<code>array = array.concat(otherArray);</code>",
+        "Use <code>.concat()</code> to concatenate <code>concatMe</code> onto the end of <code>array</code> and assign it back to array."
       ],
       "tests": [
-        "assert.deepEqual(array, [1,2,3,4,5,6], 'You should concat the two arrays together.');",
-        "assert(editor.getValue().match(/\\.concat\\s*\\(/gi), 'message: You should be use the concat method to merge the two arrays.');",
-        "assert(editor.getValue().match(/\\[1\\,2\\,3\\]/gi) && editor.getValue().match(/\\[4\\,5\\,6\\]/gi), 'message: You should only modify the two arrays without changing the origional ones.');"
+        "assert.deepEqual(array, [1,2,3,4,5,6], 'message: You should concat the two arrays together.');",
+        "assert(editor.getValue().match(/\\.concat\\s*\\(/gi), 'message: You should be using the <code>concat</code> method to merge the two arrays.');",
+        "assert(editor.getValue().match(/\\[1\\,2\\,3\\]/gi) && editor.getValue().match(/\\[4\\,5\\,6\\]/gi), 'message: You should only be using <code>concat</code> to modify the arrays.');"
       ],
       "challengeSeed": [
         "var array = [1,2,3];",
@@ -330,6 +350,9 @@
         "// Only change code above this line.",
         "(function() {return array;})();"
       ],
+      "MDNlinks":[
+        "Array.concat()"
+      ],
       "challengeType": 1,
       "type": "waypoint"
     },
@@ -339,8 +362,9 @@
       "difficulty":0,
       "description":[
         "You can use the <code>.split()</code> method to split a string into an array.",
-        "split uses the argument you give to to split the string.",
-        "<code>array = string.split(' ');</code>"
+        "<code>.split()</code> uses the argument you pass in as a delimiter to determine which points the string should be split at.",
+        "<code>var array = string.split(' ');</code>",
+        "Use <code>.split()</code> to create an array of words from <code>string</code> and assign it to <code>array</code>."
       ],
       "tests":[
         "assert(typeof(array) === 'object' && array.length === 5, 'message: You should split the string by its spaces.');",
@@ -355,6 +379,9 @@
         "// Only change code above this line.",
         "(function() {return array;})();"
       ],
+      "MDNlinks":[
+        "String.split()"
+      ],
       "challengeType":1,
       "type": "waypoint"
     },
@@ -364,10 +391,11 @@
       "difficulty":0,
       "description":[
         "We can use the <code>.join()</code> method to join each element in an array into a string separated by whatever delimiter you provide as an argument to the join operation.",
-        "<code>var joinMe = joinMe.join(\" \");</code>"
+        "<code>var joinMe = joinMe.join(\" \");</code>",
+        "Use the <code>.join()</code> method to create a string from <code>joinMe</code> with spaces in between each element and assign it back to <code>joinMe</code>."
       ],
       "tests":[
-        "assert(typeof(joinMe) === 'string' && joinMe === \"Split me into an array\", 'message: You should join the arrays by their spaces.');",
+        "assert(typeof(joinMe) === 'string' && joinMe === \"Split me into an array\", 'message: You should join the elements of the array with spaces.');",
         "assert(/\\.join\\(/gi, 'message: You should use of the join method on the array.');"
       ],
       "challengeSeed":[
@@ -378,6 +406,9 @@
         "",
         "// Only change code above this line.",
         "(function() {return joinMe;})();"
+      ],
+      "MDNlinks":[
+        "Array.join()"  
       ],
       "challengeType":1,
       "type": "waypoint"
