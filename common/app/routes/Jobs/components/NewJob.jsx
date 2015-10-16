@@ -34,7 +34,7 @@ const checkValidity = [
   'phone',
   'url',
   'logo',
-  'name',
+  'company',
   'highlight'
 ];
 
@@ -74,7 +74,7 @@ export default contain({
         phone,
         url,
         logo,
-        name,
+        company,
         highlight
       } = form;
       return {
@@ -85,7 +85,7 @@ export default contain({
         phone: formatValue(phone, isValidPhone),
         url: formatValue(url, isValidURL),
         logo: formatValue(logo, isValidURL),
-        name: formatValue(name, makeRequired(isAscii)),
+        company: formatValue(company, makeRequired(isAscii)),
         highlight: formatValue(highlight, null, 'bool')
       };
     },
@@ -105,7 +105,7 @@ export default contain({
       phone: PropTypes.object,
       url: PropTypes.object,
       logo: PropTypes.object,
-      name: PropTypes.object,
+      company: PropTypes.object,
       highlight: PropTypes.object
     },
 
@@ -135,7 +135,7 @@ export default contain({
         phone,
         url,
         logo,
-        name,
+        company,
         highlight,
         jobActions
       } = this.props;
@@ -149,7 +149,7 @@ export default contain({
         phone: inHTMLData(phone.value),
         url: uriInSingleQuotedAttr(url.value),
         logo: uriInSingleQuotedAttr(logo.value),
-        name: inHTMLData(name.value),
+        company: inHTMLData(company.value),
         highlight: !!highlight.value
       };
 
@@ -186,7 +186,7 @@ export default contain({
         phone,
         url,
         logo,
-        name,
+        company,
         highlight,
         jobActions: { handleForm }
       } = this.props;
@@ -245,13 +245,13 @@ export default contain({
                     <h2>Company Information</h2>
                   </div>
                   <Input
-                    bsStyle={ name.bsStyle }
+                    bsStyle={ company.bsStyle }
                     label='Company Name'
                     labelClassName={ labelClass }
-                    onChange={ (e) => handleChange('name', e) }
+                    onChange={ (e) => handleChange('company', e) }
                     placeholder='Foo, INC'
                     type='text'
-                    value={ name.value }
+                    value={ company.value }
                     wrapperClassName={ inputClass } />
                   <Input
                     bsStyle={ email.bsStyle }
