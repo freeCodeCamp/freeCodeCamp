@@ -102,14 +102,31 @@
     },
     "isLocked": {
       "type": "boolean",
-      "default": false
+      "default": false,
+      "description": "Campers profile does not show challenges/certificates to the public"
     },
     "currentChallenge": {
       "type": {}
     },
     "isUniqMigrated": {
       "type": "boolean",
-      "default": false
+      "default": false,
+      "description": "Campers completedChallenges array is free of duplicates"
+    },
+    "isHonest": {
+      "type": "boolean",
+      "default": false,
+      "description": "Camper has signed academic honesty policy"
+    },
+    "isFrontEndCert": {
+      "type": "boolean",
+      "defaut": false,
+      "description": "Camper is front end certified"
+    },
+    "isFullStackCert": {
+      "type": "boolean",
+      "default": false,
+      "description": "Campers is full stack certified"
     },
     "completedChallenges": {
       "type": [
@@ -148,6 +165,11 @@
     "identities": {
       "type": "hasMany",
       "model": "userIdentity",
+      "foreignKey": ""
+    },
+    "pledge": {
+      "type": "hasOne",
+      "model": "pledge",
       "foreignKey": ""
     }
   },

@@ -1,6 +1,7 @@
 {
   "name": "HTML5 and CSS",
   "order": 2,
+  "time": "3h",
   "challenges": [
     {
       "id": "bd7123c8c441eddfaeb5bdef",
@@ -541,7 +542,6 @@
         "assert($(\"p\").length > 1, 'You need 2 <code>p</code> elements with Kitty Ipsum text.')",
         "assert(editor.match(/<\\/p>/g) && editor.match(/<\\/p>/g).length === editor.match(/<p/g).length, 'Make sure each of your <code>p</code> elements has a closing tag.')",
         "assert.isTrue((/Purr\\s+jump\\s+eat/gi).test($(\"p\").text()), 'Your <code>p</code> element should contain the first few words of the provided additional <code>kitty ipsum text</code>.')",
-        "assert($(\"p.red-text\").length === 2, 'Give each of your <code>p</code> elements the <code>red-text</code> class.')",
         "assert($(\"p\").css(\"font-size\") === \"16px\", 'Give elements with the <code>red-text</code> class a <code>font-size</code> of 16px.')"
       ],
       "challengeSeed": [
@@ -1122,7 +1122,7 @@
         "assert($(\"a\").text().match(/cat\\sphotos/gi), 'Your <code>a</code> element should have the anchor text of \"cat photos\"')",
         "assert($(\"p\") && $(\"p\").length > 2, 'Create a new <code>p</code> element around your <code>a</code> element.')",
         "assert($(\"a[href=\\\"http://www.freecatphotoapp.com\\\"]\").parent().is(\"p\"), 'Your <code>a</code> element should be nested within your new <code>p</code> element.')",
-        "assert($(\"p\").text().match(/^View\\smore\\s/gi), 'Your <code>p</code> element should have the text \"View more \" (with a space after it).')",
+        "assert($(\"p\").text().match(/^\\s*View\\smore\\s/gi), 'Your <code>p</code> element should have the text \"View more \" (with a space after it).')",
         "assert(!$(\"a\").text().match(/View\\smore/gi), 'Your <code>a</code> element should <em>not</em> have the text \"View more\".')",
         "assert(editor.match(/<\\/p>/g) && editor.match(/<p/g) && editor.match(/<\\/p>/g).length === editor.match(/<p/g).length, 'Make sure each of your <code>p</code> elements has a closing tag.')",
         "assert(editor.match(/<\\/a>/g) && editor.match(/<a/g) && editor.match(/<\\/a>/g).length === editor.match(/<a/g).length, 'Make sure each of your <code>a</code> elements has a closing tag.')"
@@ -1411,7 +1411,7 @@
         "assert($(\"ul\").length > 0, 'Create a <code>ul</code> element.')",
         "assert($(\"ul li\").length > 2, 'You should have three <code>li</code> elements within your <code>ul</code> element.')",
         "assert(editor.match(/<\\/ul>/g) && editor.match(/<ul/g) && editor.match(/<\\/ul>/g).length === editor.match(/<ul/g).length, 'Make sure your <code>ul</code> element has a closing tag.')",
-        "assert(editor.match(/<\\/li>/g) && editor.match(/<li>/g) && editor.match(/<\\/li>/g).length === editor.match(/<li>/g).length, 'Make sure your <code>li</code> element has a closing tag.')"
+        "assert(editor.match(/<\\/li>/g) && editor.match(/<li[\\s>]/g) && editor.match(/<\\/li>/g).length === editor.match(/<li[\\s>]/g).length, 'Make sure your <code>li</code> elements have closing tags.')"
       ],
       "challengeSeed": [
         "<link href=\"http://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
@@ -3702,7 +3702,7 @@
         "Let's replace the hex code in our <code>body</code> element's background color with the RGB value for black: <code>rgb(0, 0, 0)</code>"
       ],
       "tests": [
-        "assert($(\"body\").css(\"background-color\") === \"rgb(0, 0, 0)\", 'Give your <code>body</code> element the <code>background-color</code> of black.')",
+        "assert($(\"body\").css(\"background-color\") === \"rgb(0, 0, 0)\", 'Your <code>body</code> element should have a black background.')",
         "assert(editor.match(/rgb\\s*\\(\\s*0\\s*,\\s*0\\s*,\\s*0\\s*\\)/ig), 'Use <code>rgb</code> to give your <code>body</code> element the <code>background-color</code> of black. For example <code>body { color&#58; rgb&#40;0&#44; 0&#44; 0&#41;; }</code>.')"
       ],
       "challengeSeed": [
@@ -3736,7 +3736,7 @@
         "Change the <code>body</code> element's background color from the RGB value for black to the <code>rgb</code> value for white: <code>rgb(255, 255, 255)</code>"
       ],
       "tests": [
-        "assert($(\"body\").css(\"background-color\") === \"rgb(255, 255, 255)\", 'Give your <code>body</code> element the <code>background-color</code> of white.')",
+        "assert($(\"body\").css(\"background-color\") === \"rgb(255, 255, 255)\", 'Your <code>body</code> should have a white background.')",
         "assert(editor.match(/rgb\\s*\\(\\s*255\\s*,\\s*255\\s*,\\s*255\\s*\\)/ig), 'Use <code>rgb</code> to give your <code>body</code> element the <code>background-color</code> of white. For example <code>body { background-color&#58; rgb&#40;255&#44; 255 &#44; 255&#41;; }</code>.')"
       ],
       "challengeSeed": [
@@ -3770,7 +3770,7 @@
         "Change the <code>body</code> element's background color to the RGB value red: <code>rgb(255, 0, 0)</code>"
       ],
       "tests": [
-        "assert($(\"body\").css(\"background-color\") === \"rgb(255, 0, 0)\", 'Give your <code>body</code> element the <code>background-color</code> of red.')",
+        "assert($(\"body\").css(\"background-color\") === \"rgb(255, 0, 0)\", 'Your <code>body</code> should have a red background.')",
         "assert(editor.match(/rgb\\s*\\(\\s*255\\s*,\\s*0\\s*,\\s*0\\s*\\)/ig), 'Use <code>rgb</code> to give your <code>body</code> element the <code>background-color</code> of red. For example <code>body { background-color&#58; rgb&#40;255&#44; 0&#44; 0&#41;; }</code>.')"
       ],
       "challengeSeed": [
@@ -3802,7 +3802,7 @@
         "Now change the <code>body</code> element's background color to the <code>rgb</code> value green: <code>rgb(0, 255, 0)</code>"
       ],
       "tests": [
-        "assert($(\"body\").css(\"background-color\") === \"rgb(0, 255, 0)\", 'Give your <code>body</code> element the <code>background-color</code> of green.')",
+        "assert($(\"body\").css(\"background-color\") === \"rgb(0, 255, 0)\", 'Your <code>body</code> element should have a green background.')",
         "assert(editor.match(/rgb\\s*\\(\\s*0\\s*,\\s*255\\s*,\\s*0\\s*\\)/ig), 'Use <code>rgb</code> to give your <code>body</code> element the <code>background-color</code> of green. For example <code>body { background-color&#58; rgb&#40;0&#44; 255&#44; 0&#41;; }</code>.')"
       ],
       "challengeSeed": [
@@ -3834,7 +3834,7 @@
         "Change the <code>body</code> element's background color to the RGB value blue: <code>rgb(0, 0, 255)</code>"
       ],
       "tests": [
-        "assert($(\"body\").css(\"background-color\") === \"rgb(0, 0, 255)\", 'Give your <code>body</code> element the background-color of blue.')",
+        "assert($(\"body\").css(\"background-color\") === \"rgb(0, 0, 255)\", 'Your <code>body</code> element should have a blue background.')",
         "assert(editor.match(/rgb\\s*\\(\\s*0\\s*,\\s*0\\s*,\\s*255\\s*\\)/ig), 'Use <code>rgb</code> to give your <code>body</code> element the <code>background-color</code> of blue. For example <code>body { background-color&#58; rgb&#40;0&#44; 0&#44; 255&#41;; }</code>.')"
       ],
       "challengeSeed": [
@@ -3867,7 +3867,7 @@
         "Change the <code>body</code> element's background color to the RGB value orange: <code>rgb(255, 165, 0)</code>"
       ],
       "tests": [
-        "assert($(\"body\").css(\"background-color\") === \"rgb(255, 165, 0)\", 'Give your <code>body</code> element the background-color of orange.')",
+        "assert($(\"body\").css(\"background-color\") === \"rgb(255, 165, 0)\", 'Your <code>body</code> element should have an orange background.')",
         "assert(editor.match(/rgb\\s*\\(\\s*255\\s*,\\s*165\\s*,\\s*0\\s*\\)/ig), 'Use <code>rgb</code> to give your <code>body</code> element the <code>background-color</code> of orange. For example <code>body { background-color&#58; rgb&#40;255&#44; 165&#44; 0&#41;; }</code>.')"
       ],
       "challengeSeed": [
@@ -3900,7 +3900,7 @@
         "Change the <code>body</code> element's background color to the RGB value for gray: <code>rgb(128, 128, 128)</code>"
       ],
       "tests": [
-        "assert($(\"body\").css(\"background-color\") === \"rgb(128, 128, 128)\", 'Give your <code>body</code> element the background-color of gray.')",
+        "assert($(\"body\").css(\"background-color\") === \"rgb(128, 128, 128)\", 'Your <code>body</code> element should have a gray background.')",
         "assert(editor.match(/rgb\\s*\\(\\s*128\\s*,\\s*128\\s*,\\s*128\\s*\\)/ig), 'Use <code>rgb</code> to give your <code>body</code> element the <code>background-color</code> of gray. For example <code>body { background-color&#58; rgb&#40;128&#44; 128&#44; 128&#41;; }</code>.')"
       ],
       "challengeSeed": [

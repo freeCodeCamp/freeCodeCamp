@@ -1,17 +1,41 @@
 {
   "name": "Claim Your Front End Development Certificate",
   "order": 12,
+  "time": "5m",
   "challenges": [
     {
       "id": "561add10cb82ac38a17513be",
       "title": "Claim Your Front End Development Certificate",
-      "difficulty": 0.00,
-      "challengeSeed": [],
+      "challengeSeed": [
+        {
+          "properties": ["isHonest", "isFrontEndCert"],
+          "apis": ["/certificate/honest", "/certificate/verify/front-end"],
+          "stepIndex": [1, 2]
+        }
+      ],
       "description": [
         [
-          "http://i.imgur.com/RlEk2IF.jpg",
-          "a picture of Free Code Camp's 4 benefits: Get connected, Learn JavaScript, Build your Portfolio, Help nonprofits",
-          "Welcome to Free Code Camp. We're an open source community of busy people who learn to code and help nonprofits.",
+          "http://i.imgur.com/syJxavV.jpg",
+          "An image of our Front End Development Certificate",
+          "This challenge will give you your verified Front End Development Certificate. Before we issue your certificate, we must verify that you have completed all of our basic and intermediate Bonfires, and all our basic and intermediate Ziplines. You must also accept our Academic Honesty Pledge. Click the button below to start this process.",
+          ""
+        ],
+        [
+          "http://i.imgur.com/HArFfMN.jpg",
+          "The definition of plagiarism: Plagiarism (noun) - copying someone else’s work and presenting it as your own without crediting them",
+          "By clicking below, you pledge that all of your submitted code A) is code you or your pair personally wrote, or B) comes from open source libraries like jQuery, or C) has been clearly attributed to its original authors. You also give us permission to audit your challenge solutions and revoke your certificate if we discover evidence of plagiarism.",
+          "#"
+        ],
+        [
+          "http://i.imgur.com/14F2Van.jpg",
+          "An image of the text \"Front End Development Certificate requirements\"",
+          "Let's confirm that you have completed all of our basic and intermediate Bonfires, and all our basic and intermediate Ziplines. Click the button below to verify this.",
+          "#"
+        ],
+        [
+          "http://i.imgur.com/16SIhHO.jpg",
+          "An image of the word \"Congratulations\"",
+          "Congratulations! We've added your Front End Development Certificate to your certificate to your portfolio page. Unless you choose to hide your solutions, this certificate will remain publicly visible and verifiable.",
           ""
         ]
       ],

@@ -1,6 +1,7 @@
 {
   "name": "Responsive Design with Bootstrap",
   "order": 3,
+  "time": "2h",
   "challenges": [
     {
       "id": "bad87fee1348bd9acde08712",
@@ -9,7 +10,7 @@
         "Now let's go back to our Cat Photo App. This time, we'll style it using the popular Bootstrap responsive CSS framework.",
         "Bootstrap will figure out how wide your screen is and respond by resizing your HTML elements - hence the name <code>Responsive Design</code>.",
         "With responsive design, there is no need to design a mobile version of your website. It will look good on devices with screens of any width.",
-        "You can add Bootstrap to any app just by including it with <code>&#60;link rel=\"stylesheet\" href=\"//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css\"/&#62;</code> at the top of your HTML. But we've gone ahead and automatically added it to your Cat Photo App for you.",
+        "You can add Bootstrap to any app just by including it with <code>&#60;link rel=\"stylesheet\" href=\"//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css\"/&#62;</code> at the top of your HTML. But we've added it for you to this page behind the scenes.",
         "To get started, we should nest all of our HTML in a <code>div</code> element with the class <code>container-fluid</code>."
       ],
       "tests": [
@@ -2110,7 +2111,7 @@
       "tests": [
         "assert(editor.match(/<!--/g) && editor.match(/<!--/g).length > 0, 'Start a comment with <code>&#60;!--</code>.')",
         "assert(editor.match(/this line/g) && editor.match(/this line/g).length > 0, 'Your comment should have the text <code>You shouldn&#39;t need to modify code below this line</code>.')",
-        "assert(editor.match(/-->/g) && editor.match(/-->/g).length > 0, 'Be sure to close your comment with <code>--&#62;</code>.')"
+        "assert(editor.match(/-->.*\\n+.+/g), 'Be sure to close your comment with <code>--&#62;</code>.')"
       ],
       "challengeSeed": [
         "<div class=\"container-fluid\">",

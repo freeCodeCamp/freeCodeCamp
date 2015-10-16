@@ -8,13 +8,17 @@ const initValue = {
   points: 0
 };
 
-export default Store(initValue)
-  .refs({ displayName: 'AppStore' })
-  .init(({ instance: appStore, args: [cat] }) => {
+export default Store({
+  refs: {
+    displayName: 'AppStore',
+    value: initValue
+  },
+  init({ instance: appStore, args: [cat] }) {
     const { setUser, setTitle } = cat.getActions('appActions');
     const register = createRegistrar(appStore);
 
     register(setter(fromMany(setUser, setTitle)));
 
     return appStore;
-  });
+  }
+});

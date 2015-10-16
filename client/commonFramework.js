@@ -1,31 +1,72 @@
-// common namespace
-// all classes should be stored here
-var common = common || {
-  // init is an array of functions that are
-  // called at the beginning of dom ready
-  init: []
-};
+var common = (function() {
+  // common namespace
+  // all classes should be stored here
+  var common = window.common || {
+    // init is an array of functions that are
+    // called at the beginning of dom ready
+    init: []
+  };
 
-common.challengeName = common.challengeName || window.challenge_Name ?
-  window.challenge_Name :
-  '';
+  common.challengeName = common.challengeName || window.challenge_Name ?
+    window.challenge_Name :
+    '';
 
-common.challengeType = common.challengeType || window.challengeType ?
-  window.challengeType :
-  0;
+  common.challengeType = common.challengeType || window.challengeType ?
+    window.challengeType :
+    0;
 
-common.challengeId = common.challengeId || window.challenge_Id;
+  common.challengeId = common.challengeId || window.challenge_Id;
 
-common.challengeSeed = common.challengeSeed || window.challengeSeed ?
-  window.challengeSeed :
-  [];
+  common.challengeSeed = common.challengeSeed || window.challengeSeed ?
+    window.challengeSeed :
+    [];
 
-common.seed = common.challengeSeed.reduce(function(seed, line) {
-  return seed + line + '\n';
-}, '');
+  common.seed = common.challengeSeed.reduce(function(seed, line) {
+    return seed + line + '\n';
+  }, '');
+
+  common.replaceScriptTags = function replaceScriptTags(value) {
+    return value
+      .replace(/<script>/gi, 'fccss')
+      .replace(/<\/script>/gi, 'fcces');
+  };
+
+  common.replaceSafeTags = function replaceSafeTags(value) {
+    return value
+      .replace(/fccss/gi, '<script>')
+      .replace(/fcces/gi, '</script>');
+  };
+
+  common.replaceFormActionAttr = function replaceFormAction(value) {
+    return value.replace(/<form[^>]*>/, function(val) {
+      return val.replace(/action(\s*?)=/, 'fccfaa$1=');
+    });
+  };
+
+  common.replaceFccfaaAttr = function replaceFccfaaAttr(value) {
+    return value.replace(/<form[^>]*>/, function(val) {
+      return val.replace(/fccfaa(\s*?)=/, 'action$1=');
+    });
+  };
+
+  return common;
+})();
 
 // store code in the URL
 common.codeUri = (function(common, encode, decode, location, history) {
+  var replaceScriptTags = common.replaceScriptTags;
+  var replaceSafeTags = common.replaceSafeTags;
+  var replaceFormActionAttr = common.replaceFormActionAttr;
+  var replaceFccfaaAttr = common.replaceFccfaaAttr;
+
+  function encodeFcc(val) {
+    return replaceScriptTags(replaceFormActionAttr(val));
+  }
+
+  function decodeFcc(val) {
+    return replaceSafeTags(replaceFccfaaAttr(val));
+  }
+
   var codeUri = {
     encode: function(code) {
       return encode(code);
@@ -54,10 +95,14 @@ common.codeUri = (function(common, encode, decode, location, history) {
         }, false);
     },
     isAlive: function() {
-      return codeUri.isInQuery(location.search) ||
+      return codeUri.enabled &&
+        codeUri.isInQuery(location.search) ||
         codeUri.isInQuery(location.hash);
     },
     parse: function() {
+      if (!codeUri.enabled) {
+        return null;
+      }
       var query;
       if (location.search && codeUri.isInQuery(location.search)) {
         query = location.search.replace(/^\?/, '');
@@ -67,7 +112,7 @@ common.codeUri = (function(common, encode, decode, location, history) {
             null,
             location.href.split('?')[0]
           );
-          location.hash = '#?' + query;
+          location.hash = '#?' + encodeFcc(query);
         }
       } else {
         query = location.hash.replace(/^\#\?/, '');
@@ -82,15 +127,21 @@ common.codeUri = (function(common, encode, decode, location, history) {
           var key = param.split('=')[0];
           var value = param.split('=')[1];
           if (key === 'solution') {
-            return codeUri.decode(value);
+            return decodeFcc(codeUri.decode(value || ''));
           }
           return solution;
         }, null);
     },
     querify: function(solution) {
-      location.hash = '?solution=' + codeUri.encode(solution);
+      if (!codeUri.enabled) {
+        return null;
+      }
+      location.hash = '?solution=' +
+        codeUri.encode(encodeFcc(solution));
+
       return solution;
-    }
+    },
+    enabled: true
   };
 
   common.init.push(function() {
@@ -306,12 +357,6 @@ var sandBox = (function(jailed, codeOutput) {
   return sandBox;
 }(window.jailed, common.codeOutput));
 
-function replaceSafeTags(value) {
-  return value
-    .replace(/fccss/gi, '<script>')
-    .replace(/fcces/gi, '</script>');
-}
-
 var BDDregex = new RegExp(
   '(expect(\\s+)?\\(.*\\;)|' +
   '(assert(\\s+)?\\(.*\\;)|' +
@@ -408,7 +453,6 @@ var editor = (function(CodeMirror, emmetCodeMirror, common) {
   common.init.push(function() {
     var editorValue;
     if (common.codeUri.isAlive()) {
-      console.log('in query');
       editorValue = common.codeUri.parse();
     } else {
       editorValue = codeStorage.isAlive() ?
@@ -416,7 +460,7 @@ var editor = (function(CodeMirror, emmetCodeMirror, common) {
         common.seed;
     }
 
-    editor.setValue(replaceSafeTags(editorValue));
+    editor.setValue(common.replaceSafeTags(editorValue));
     editor.refresh();
   });
 
@@ -445,6 +489,7 @@ function workerError(error) {
   var housing = $('#testSuite');
   if (display.html() !== error) {
     display.remove();
+
     housing.prepend(
       '<div class="runTimeError" style="font-size: 18px;"><code>' +
       error.replace(/j\$/gi, '$').replace(/jdocument/gi, 'document').replace(/jjQuery/gi, 'jQuery') +
@@ -471,7 +516,10 @@ function safeHTMLRun(test) {
   var codeStorage = common.codeStorage;
   if (common.challengeType === '0') {
     var previewFrame = document.getElementById('preview');
-    var preview = previewFrame.contentDocument || previewFrame.contentWindow.document;
+
+    var preview = previewFrame.contentDocument ||
+      previewFrame.contentWindow.document;
+
     if (editor.getValue().match(/\<script\>/gi) !== null) {
       var s = editor
         .getValue()
@@ -540,9 +588,11 @@ function updatePreview() {
 
 if (typeof prodOrDev !== 'undefined') {
 
-  var nodeEnv = prodOrDev === 'production' ?
+  /* eslint-disable no-unused-vars */
+  var nodeEnv = window.prodOrDev === 'production' ?
     'http://www.freecodecamp.com' :
     'http://localhost:3001';
+  /* eslint-enable no-unused-vars */
 
   if (common.challengeType === '0') {
     setTimeout(updatePreview, 300);
@@ -553,8 +603,11 @@ if (typeof prodOrDev !== 'undefined') {
  * "post" methods
  */
 
+/* eslint-disable no-unused-vars */
 var testResults = [];
 var postSuccess = function(data) {
+/* eslint-enable no-unused-vars */
+
   var testDoc = document.createElement('div');
   $(testDoc).html(
     "<div class='row'><div class='col-xs-2 text-center'><i class='ion-checkmark-circled big-success-icon'></i></div><div class='col-xs-10 test-output test-vertical-center wrappable'>" +
@@ -600,7 +653,9 @@ function showCompletion() {
     isInitRun = false;
     return;
   }
-  var time = Math.floor(Date.now()) - started;
+
+  var time = Math.floor(Date.now()) - window.started;
+
   ga(
     'send',
     'event',
@@ -658,8 +713,11 @@ function showCompletion() {
   });
 }
 
+/* eslint-disable no-unused-vars */
 var resetEditor = function resetEditor() {
-  editor.setValue(replaceSafeTags(common.seed));
+/* eslint-enable no-unused-vars */
+
+  editor.setValue(common.replaceSafeTags(common.seed));
   $('#testSuite').empty();
   bonfireExecute(true);
   common.codeStorage.updateStorage();
@@ -849,15 +907,15 @@ common.init.push((function() {
     var nextStep = getNextStep($(stepClass));
     $(this)
       .parent()
-      .addClass('animated fadeOutLeft')
-      .delay(700)
+      .addClass('animated fadeOutLeft fast-animation')
+      .delay(250)
       .queue(function(next) {
         $(this).addClass('hidden');
         if (nextStep) {
           $(nextStep)
             .removeClass('hidden')
-            .addClass('animated slideInRight')
-            .delay(1000)
+            .addClass('animated slideInRight fast-animation')
+            .delay(500)
             .queue(function(next) {
               $(this).removeClass('slideInRight');
               next();
@@ -865,14 +923,53 @@ common.init.push((function() {
         }
         next();
       });
-
   }
 
-  function handleActionClick() {
-    $(this)
-      .parent()
-      .find('.disabled')
-      .removeClass('disabled');
+  function handleActionClick(e) {
+    var props = common.challengeSeed[0] ||
+      { stepIndex: [] };
+
+    var $el = $(this);
+    var index = +$el.attr('id');
+    var propIndex = props.stepIndex.indexOf(index);
+
+    if (propIndex === -1) {
+      return $el
+        .parent()
+        .find('.disabled')
+        .removeClass('disabled');
+    }
+
+    // an API action
+    // prevent link from opening
+    e.preventDefault();
+    var prop = props.properties[propIndex];
+    var api = props.apis[propIndex];
+    if (common[prop]) {
+      return $el
+        .parent()
+        .find('.disabled')
+        .removeClass('disabled');
+    }
+    $
+      .post(api)
+      .done(function(data) {
+        // assume a boolean indicates passing
+        if (typeof data === 'boolean') {
+          return $el
+            .parent()
+            .find('.disabled')
+            .removeClass('disabled');
+        }
+        // assume api returns string when fails
+        $el
+          .parent()
+          .find('.disabled')
+          .replaceWith('<p>' + data + '</p>');
+      })
+      .fail(function() {
+        console.log('failed');
+      });
   }
 
   function handleFinishClick(e) {

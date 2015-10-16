@@ -1,6 +1,7 @@
 {
   "name": "Node.js and Express.js",
   "order" : 18,
+  "time": "20h",
   "challenges": [
     {
       "id": "bd7153d8c441eddfaeb5bd0f",
@@ -33,13 +34,7 @@
         "Complete \"Publish\"",
         "Complete \"Version\"",
         "Complete \"Publish Again\"",
-        "Complete \"Dist Tag\"",
-        "Complete \"Dist Tag Removal\"",
-        "Complete \"Outdated\"",
-        "Complete \"Update\"",
-        "Complete \"RM\"",
-        "Complete \"Finale\"",
-        "Once you've completed these steps, move on to our next challenge."
+        "Note Once you've completed these steps, you can skip the rest (which are currently buggy) and move on to our next challenge."
       ],
       "type": "waypoint",
       "challengeType": 2,

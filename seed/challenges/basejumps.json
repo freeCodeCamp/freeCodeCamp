@@ -1,6 +1,7 @@
 {
   "name": "Full Stack JavaScript Projects",
   "order": 20,
+  "time": "300h",
   "challenges": [
     {
       "id": "bd7158d8c443eddfaeb5bcef",
@@ -52,7 +53,7 @@
         "Before you publish to Heroku, you should free up as much memory as possible on Cloud9. In each of the Cloud9 terminal prompt tabs where MongoDB and Grunt are running, press the <code>control + c</code> hotkey to shut down these processes.",
         "Run the following command in a Cloud9 terminal prompt tab: <code>npm install grunt-contrib-imagemin --save-dev && npm install --save-dev && heroku login</code>. At this point, the terminal will prompt you to log in to Heroku from the command line.",
         "Now run <code>yo angular-fullstack:heroku</code>. You can choose a name for your Heroku project, or Heroku will create a random one for you. You can choose whether you want to deploy to servers the US or the EU.",
-        "Set the config flag for your Heroku environment and add MongoLab for your MongoDB instance by running the following command: <code>cd ~/workspace/dist && heroku config:set NODE_ENV=production && heroku addons:create mongolab</code>.",
+        "Set the config flag for your Heroku environment and add MongoLab for your MongoDB instance by running the following command: <code>cd ~/workspace/dist && heroku config:set NODE_ENV=production && heroku addons:add mongolab</code>.",
         "As you build your app, you should frequently commit changes to your codebase. Make sure you're in the <code>~/workspace</code> directory by running <code>cd ~/workspace</code>. Then you can use this code to stage the changes to your changes and commit them: <code>git commit -am \"your commit message\"</code>. Note that you should replace \"your commit message\" with a short summary of the changes you made to your code, such as \"added a records controller and corresponding routes\".",
         "You can push these new commits to GitHub by running <code>git push origin master</code>, and to Heroku by running <code>grunt --force && grunt buildcontrol:heroku</code>.",
         "If you need further guidance on using Yeoman Angular-Fullstack Generator, check out: <a href='https://github.com/clnhll/guidetobasejumps' target='_blank'>https://github.com/clnhll/guidetobasejumps</a>.",

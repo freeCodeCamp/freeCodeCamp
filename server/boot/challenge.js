@@ -9,17 +9,18 @@ import utils from '../utils';
 import {
   saveUser,
   observeMethod,
-  observableQueryFromModel
+  observeQuery
 } from '../utils/rx';
 
 import {
-  userMigration,
   ifNoUserSend
 } from '../utils/middleware';
 
+const isDev = process.env.NODE_ENV !== 'production';
+const isBeta = !!process.env.BETA;
 const debug = debugFactory('freecc:challenges');
 const challengesRegex = /^(bonfire|waypoint|zipline|basejump)/i;
-const firstChallenge = 'waypoint-say-hello-to-html-elements';
+const firstChallenge = 'waypoint-learn-how-free-code-camp-works';
 const challengeView = {
   0: 'coursewares/showHTML',
   1: 'coursewares/showJS',
@@ -48,12 +49,12 @@ function updateUserProgress(user, challengeId, completedChallenge) {
   let { completedChallenges } = user;
 
   // migrate user challenges object to remove
-  if (!user.isUniqMigrated) {
+  /* if (!user.isUniqMigrated) {
     user.isUniqMigrated = true;
 
     completedChallenges = user.completedChallenges =
       makeChallengesUnique(completedChallenges);
-  }
+  }*/
 
   const indexOfChallenge = _.findIndex(completedChallenges, {
     id: challengeId
@@ -106,6 +107,9 @@ module.exports = function(app) {
       null,
       Scheduler.default
     ))
+    // filter out all challenges that have isBeta flag set
+    // except in development or beta site
+    .filter(challenge => isDev || isBeta || !challenge.isBeta)
     .shareReplay();
 
   // create a stream of challenge blocks
@@ -147,8 +151,6 @@ module.exports = function(app) {
     completedBonfire
   );
 
-  // the follow routes are covered by userMigration
-  router.use(userMigration);
   router.get('/map', challengeMap);
   router.get(
     '/challenges/next-challenge',
@@ -183,9 +185,9 @@ module.exports = function(app) {
                 'could not find challenge block for ' + challenge.block
               );
             }
-            const nextBlock$ = blocks$.elementAt(blockIndex + 1);
-            const firstChallengeOfNextBlock$ = nextBlock$
-              .map(block => block.challenges[0]);
+            const firstChallengeOfNextBlock$ = blocks$
+              .elementAt(blockIndex + 1, {})
+              .map(({ challenges = [] }) => challenges[0]);
 
             return blocks$
               .elementAt(blockIndex)
@@ -214,6 +216,9 @@ module.exports = function(app) {
           });
       })
       .map(nextChallenge => {
+        if (!nextChallenge) {
+          return null;
+        }
         nextChallengeName = nextChallenge.dashedName;
         return nextChallengeName;
       })
@@ -254,7 +259,7 @@ module.exports = function(app) {
       .filter((challenge) => {
         return testChallengeName.test(challenge.name);
       })
-      .lastOrDefault(null)
+      .last({ defaultValue: null })
       .flatMap(challenge => {
 
         // Handle not found
@@ -270,12 +275,13 @@ module.exports = function(app) {
         }
 
         if (dasherize(challenge.name) !== origChallengeName) {
-          return Observable.just(
-            '/challenges/' +
-            dasherize(challenge.name) +
-            '?solution=' +
-            encodeURIComponent(solutionCode)
-          );
+          let redirectUrl = `/challenges/${dasherize(challenge.name)}`;
+
+          if (solutionCode) {
+            redirectUrl += `?solution=${encodeURIComponent(solutionCode)}`;
+          }
+
+          return Observable.just(redirectUrl);
         }
 
         // save user does nothing if user does not exist
@@ -330,7 +336,7 @@ module.exports = function(app) {
       challengeType: 5
     };
 
-    observableQueryFromModel(
+    observeQuery(
         User,
         'findOne',
         { where: { username: ('' + completedWith).toLowerCase() } }
@@ -458,7 +464,7 @@ module.exports = function(app) {
       verified: false
     };
 
-    observableQueryFromModel(
+    observeQuery(
         User,
         'findOne',
         { where: { username: completedWith.toLowerCase() } }
@@ -542,12 +548,15 @@ module.exports = function(app) {
           }
           return sum;
         }, 0);
+        const isBeta = _.every(blockArray, 'isBeta');
 
         return {
+          isBeta,
           name: blockArray[0].block,
           dashedName: dasherize(blockArray[0].block),
           challenges: blockArray,
-          completed: completedCount / blockArray.length * 100
+          completed: completedCount / blockArray.length * 100,
+          time: blockArray[0] && blockArray[0].time || "???"
         };
       })
       .filter(({ name }) => name !== 'Hikes')

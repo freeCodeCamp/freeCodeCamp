@@ -1,12 +1,21 @@
-var mapShareKey = 'map-shares';
+var main = window.main || {};
+
+main.mapShareKey = 'map-shares';
+
+main.ga = window.ga || function() {};
+
 var lastCompleted = typeof lastCompleted !== 'undefined' ?
   lastCompleted :
   '';
 
 function getMapShares() {
-  var alreadyShared = JSON.parse(localStorage.getItem(mapShareKey) || '[]');
+  var alreadyShared = JSON.parse(
+    localStorage.getItem(main.mapShareKey) ||
+    '[]'
+  );
+
   if (!alreadyShared || !Array.isArray(alreadyShared)) {
-    localStorage.setItem(mapShareKey, JSON.stringify([]));
+    localStorage.setItem(main.mapShareKey, JSON.stringify([]));
     alreadyShared = [];
   }
   return alreadyShared;
@@ -23,7 +32,7 @@ function setMapShare(id) {
   if (!found) {
     alreadyShared.push(id);
   }
-  localStorage.setItem(mapShareKey, JSON.stringify(alreadyShared));
+  localStorage.setItem(main.mapShareKey, JSON.stringify(alreadyShared));
   return alreadyShared;
 }
 
@@ -133,6 +142,7 @@ $(document).ready(function() {
                 type = 'html';
                 break;
               case challengeTypes.JAVASCRIPT:
+              case challengeTypes.BONFIRE:
                 type = 'javascript';
                 break;
               default:
@@ -444,6 +454,7 @@ $(document).ready(function() {
       '&redirect_uri=http%3A%2F%2Ffreecodecamp%2Ecom%2Fmap';
 
     setMapShare(challengeBlockName);
+    main.ga('send', 'event', 'FB_LINK', 'SHARE', 'Facebook map share');
     window.location.href = link;
   });
 });

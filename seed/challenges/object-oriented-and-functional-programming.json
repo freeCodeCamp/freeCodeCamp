@@ -1,6 +1,7 @@
 {
   "name": "Object Oriented and Functional Programming",
-  "order": 6,
+  "order": 7,
+  "time": "1h",
   "note": [
     "Methods",
     "Closures",
@@ -185,7 +186,7 @@
       ],
       "tests":[
         "assert.deepEqual(array, [4,5,6,7,8], 'message: You should add three to each value in the array.');",
-        "assert(editor.getValue().match(/\\.map\\(/gi), 'message: You should be making use of the map method.');",
+        "assert(editor.getValue().match(/\\.map\\s*\\(/gi), 'message: You should be making use of the map method.');",
         "assert(editor.getValue().match(/\\[1\\,2\\,3\\,4\\,5\\]/gi), 'message: You should only modify the array with <code>.map</code>.');"
       ],
       "challengeSeed":[
@@ -206,14 +207,14 @@
       "title":"Condense arrays with .reduce",
       "difficulty":0,
       "description":[
-        "Reduce can be useful for condensing an array or numbers into one value.",
+        "Reduce can be useful for condensing an array of numbers into one value.",
         "<code>var singleVal = array.reduce(function(previousVal, currentVal){</code>",
         "<code>&thinsp;&thinsp;return previousVal+currentVal;</code>",
         "<code>});</code>"
       ],
       "tests":[
-        "assert(singleVal == 30, 'message: <code>singleVal</code> should have been set to the result of you reduce operation.');",
-        "assert(editor.getValue().match(/\\.reduce\\(/gi), 'message: You should have made use of the reduce method.');"
+        "assert(singleVal == 30, 'message: <code>singleVal</code> should have been set to the result of your reduce operation.');",
+        "assert(editor.getValue().match(/\\.reduce\\s*\\(/gi), 'message: You should have made use of the reduce method.');"
       ],
       "challengeSeed":[
         "var array = [4,5,6,7,8];",
@@ -240,8 +241,8 @@
         "<code>});</code>"
       ],
       "tests":[
-        "assert.deepEqual(array, [1,2,3,4], 'message: You should have removed all the values from the array that are greater than 4.');",
-        "assert(editor.getValue().match(/array\\.filter\\(/gi), 'message: You should be using the filter method to remove the values from the array.');",
+        "assert.deepEqual(array, [1,2,3,4,5], 'message: You should have removed all the values from the array that are greater than 5.');",
+        "assert(editor.getValue().match(/array\\.filter\\s*\\(/gi), 'message: You should be using the filter method to remove the values from the array.');",
         "assert(editor.getValue().match(/\\[1\\,2\\,3\\,4\\,5\\,6\\,7\\,8\\,9\\,10\\]/gi), 'message: You should only be using <code>.filter</code> to modify the contents of the array.');"
       ],
       "challengeSeed":[
@@ -269,7 +270,7 @@
       "tests":[
         "assert.deepEqual(array, ['alpha', 'beta', 'charlie'], 'message: You should have sorted the array alphabetically.');",
         "assert(editor.getValue().match(/\\[\\'beta\\'\\,\\s\\'alpha\\'\\,\\s'charlie\\'\\];/gi), 'message: You should be sorting the array using sort.');",
-        "assert(editor.getValue().match(/\\.sort\\(\\)/gi), 'message: You should have made use of the sort method.');"
+        "assert(editor.getValue().match(/\\.sort\\s*\\(\\)/gi), 'message: You should have made use of the sort method.');"
       ],
       "challengeSeed":[
         "var array = ['beta', 'alpha', 'charlie'];",
@@ -291,7 +292,7 @@
       ],
       "tests": [
         "assert.deepEqual(array, [7,6,5,4,3,2,1], 'message: You should reverse the array.');",
-        "assert(editor.getValue().match(/\\.reverse\\(\\)/gi), 'message: You should use the reverse method.');",
+        "assert(editor.getValue().match(/\\.reverse\\s*\\(\\)/gi), 'message: You should use the reverse method.');",
         "assert(editor.getValue().match(/\\[1\\,2\\,3\\,4\\,5\\,6\\,7/gi), 'message: You should return <code>[7,6,5,4,3,2,1]</code>.');"
       ],
       "challengeSeed": [
@@ -315,7 +316,7 @@
       ],
       "tests": [
         "assert.deepEqual(array, [1,2,3,4,5,6], 'You should concat the two arrays together.');",
-        "assert(editor.getValue().match(/\\.concat\\(/gi), 'message: You should be use the concat method to merge the two arrays.');",
+        "assert(editor.getValue().match(/\\.concat\\s*\\(/gi), 'message: You should be use the concat method to merge the two arrays.');",
         "assert(editor.getValue().match(/\\[1\\,2\\,3\\]/gi) && editor.getValue().match(/\\[4\\,5\\,6\\]/gi), 'message: You should only modify the two arrays without changing the origional ones.');"
       ],
       "challengeSeed": [

@@ -1,6 +1,7 @@
 {
   "name": "Basic JavaScript",
-  "order": 5,
+  "order": 6,
+  "time": "3h",
   "challenges": [
     {
       "id":"bd7123c9c441eddfaeb4bdef",
@@ -529,7 +530,7 @@
       ],
       "tests": [
         "assert((function(d){if(d[0] == 'John' && d[1] == 23 && d[2] == undefined){return true;}else{return false;}})(myArray), 'message: <code>myArray</code> should only contain <code>[\"John\", 23]</code>.');",
-        "assert((function(d){if(d[0] == 'cat' && d[1] == 2 && d[2] == undefined){return true;}else{return false;}})(removed), 'message: <code>removed</code> should only contain <code>[\"cat\"], 2</code>.');"
+        "assert((function(d){if(d[0] == 'cat' && d[1] == 2 && d[2] == undefined){return true;}else{return false;}})(removed), 'message: <code>removed</code> should only contain <code>[\"cat\", 2]</code>.');"
       ],
       "challengeSeed": [
         "// var numbers = [1,2,3];",
@@ -802,7 +803,7 @@
         "assert.deepEqual(myArray, [0,1,2,3,4], 'message: <code>myArray</code> should equal [0,1,2,3,4].');"
       ],
       "challengeSeed":[
-        "ourArray = [];",
+        "var ourArray = [];",
         "for(var i = 0; i < 5; i++){",
         "  ourArray.push(i);",
         "}",
@@ -939,7 +940,7 @@
         "var min = 0;",
         "var max = 9;",
         "function myFunction() {",
-        "  // Make myFunction return a random number between zero and nine instead of a decimal",
+        "  // Make myFunction return a random number between min and max values instead of a decimal",
         "  // Only change code below this line.",
         "",
         "  return Math.random();",
@@ -1039,7 +1040,7 @@
       ],
       "tests":[
         "assert(test === 2, 'message: Your RegEx should have found two numbers in the <code>testString</code>.');",
-        "assert(editor.getValue().match(/\\/\\\\d\\+\\//gi), 'message: You should be using the following expression <code>/\\\\d+/gi</code> to find the numbers in the <code>testString</code>.');"
+        "assert(editor.getValue().match(/\\/\\\\d\\+\\//g), 'message: You should be using the following expression <code>/\\d+/g</code> to find the numbers in the <code>testString</code>.');"
       ],
       "challengeSeed":[
         "var test = (function() {",
@@ -1047,7 +1048,7 @@
         "",
         "  // Only change code below this line.",
         "",
-        "  var expression = /.+/gi;",
+        "  var expression = /.+/g;",
         "",
         "  // Only change code above this line.",
         "  // We use this function to show you the value of your variable in your output box.",
@@ -1059,17 +1060,18 @@
     },
     {
       "id":"cf1111c1c12feddfaeb8bdef",
-      "title": "Find White Space with Regular Expressions",
+      "title": "Find Whitespace with Regular Expressions",
       "difficulty":"9.986",
       "description":[
-        "We can also use selectors like <code>\\s</code> to find spaces in a string.",
+        "We can also use selectors like <code>\\s</code> to find whitespace in a string.",
+        "The whitespace characters are <code>\" \"</code> (space), <code>\\r</code> (carriage return), <code>\\n</code> (newline), <code>\\t</code> (tab), and <code>\\f</code> (form feed).",
         "It is used like this:",
         "<code>/\\s+/g</code>",
-        "Select all the spaces in the sentence string."
+        "Select all the whitespace characters in the sentence string."
       ],
       "tests":[
         "assert(test === 7, 'message: Your RegEx should have found seven spaces in the <code>testString</code>.');",
-        "assert(editor.getValue().match(/\\/\\\\s\\+\\//gi), 'message: You should be using the following expression <code>/\\\\s+/gi</code> to find the spaces in the <code>testString</code>.');"
+        "assert(editor.getValue().match(/\\/\\\\s\\+\\//g), 'message: You should be using the following expression <code>/\\s+/g</code> to find the spaces in the <code>testString</code>.');"
       ],
       "challengeSeed":[
         "var test = (function(){",
@@ -1077,7 +1079,7 @@
         "",
         "  // Only change code below this line.",
         "",
-        "  var expression = /.+/gi;",
+        "  var expression = /.+/g;",
         "",
         "  // Only change code above this line.",
         "  // We use this function to show you the value of your variable in your output box.",
@@ -1092,12 +1094,12 @@
       "title": "Invert Regular Expression Matches with JavaScript",
       "difficulty":"9.987",
       "description":[
-        "Use <code>/\\S/gi</code> to match everything that isn't a space in the string.",
+        "Use <code>/\\S/g</code> to match everything that isn't a space in the string.",
         "You can invert any match by using the uppercase version of the selector <code>\\s</code> versus <code>\\S</code> for example."
       ],
       "tests":[
         "assert(test === 49, 'message: Your RegEx should have found forty nine non-space characters in the <code>testString</code>.');",
-        "assert(editor.getValue().match(/\\/\\\\S\\/gi/gi), 'message: You should be using the following expression <code>/\\\\S/gi</code> to find non-space characters in the <code>testString</code>.');"
+        "assert(editor.getValue().match(/\\/\\\\S\\/g/g), 'message: You should be using the following expression <code>/\\S/g</code> to find non-space characters in the <code>testString</code>.');"
       ],
       "challengeSeed":[
         "var test = (function(){",
@@ -1105,7 +1107,7 @@
         "",
         "  // Only change code below this line.",
         "",
-        "  var expression = /./gi;",
+        "  var expression = /./g;",
         "",
         "  // Only change code above this line.",
         "  // We use this function to show you the value of your variable in your output box.",
@@ -1127,10 +1129,10 @@
         "<code>Math.floor(Math.random() * (3 - 1 + 1)) + 1;</code>"
       ],
       "tests":[
-        "assert(typeof(runSlots($(\".slot\"))[0]) === \"number\", 'message: <code>slotOne</code> should be a random number.')",
-        "assert(typeof(runSlots($(\".slot\"))[1]) === \"number\", 'message: <code>slotTwo</code> should be a random number.')",
-        "assert(typeof(runSlots($(\".slot\"))[2]) === \"number\", 'message: <code>slotThree</code> should be a random number.')",
-        "assert((function(){if(editor.match(/Math\\.floor\\(\\s?Math\\.random\\(\\)\\s?\\*\\s?\\(\\s?3\\s?\\-\\s?1\\s?\\+\\s?1\\s?\\)\\s?\\)\\s?\\+\\s?1;/gi) !== null){return editor.match(/Math\\.floor\\(\\s?Math\\.random\\(\\)\\s?\\*\\s?\\(\\s?3\\s?\\-\\s?1\\s?\\+\\s?1\\s?\\)\\s?\\)\\s?\\+\\s?1;/gi).length >= 3;}else{return false;}})(), 'message: You should have used <code>Math.floor(Math.random() * (3 - 1 + 1)) + 1;</code> three times to generate your random numbers.')"
+        "assert(typeof(runSlots($(\".slot\"))[0]) === \"number\", '<code>slotOne</code> should be a random number.')",
+        "assert(typeof(runSlots($(\".slot\"))[1]) === \"number\", '<code>slotTwo</code> should be a random number.')",
+        "assert(typeof(runSlots($(\".slot\"))[2]) === \"number\", '<code>slotThree</code> should be a random number.')",
+        "assert((function(){if(editor.match(/Math\\.floor\\(\\s?Math\\.random\\(\\)\\s?\\*\\s?\\(\\s?3\\s?\\-\\s?1\\s?\\+\\s?1\\s?\\)\\s?\\)\\s?\\+\\s?1;/gi) !== null){return editor.match(/Math\\.floor\\(\\s?Math\\.random\\(\\)\\s?\\*\\s?\\(\\s?3\\s?\\-\\s?1\\s?\\+\\s?1\\s?\\)\\s?\\)\\s?\\+\\s?1;/gi).length >= 3;}else{return false;}})(), 'You should have used <code>Math.floor(Math.random() * (3 - 1 + 1)) + 1;</code> three times to generate your random numbers.')"
       ],
       "challengeSeed":[
         "fccss",

@@ -1,6 +1,7 @@
 {
   "name": "Upper Intermediate Algorithm Scripting",
   "order": 13,
+  "time": "50h",
   "challenges": [
     {
       "id": "a2f1d72d9b908d0bd72bb9f6",
@@ -27,7 +28,12 @@
         "assert.deepEqual(bob.lastName, undefined, 'message: <code>bob.lastName</code> should return undefined.');",
         "assert.deepEqual(bob.getFirstName(), 'Bob', 'message: <code>bob.getFirstName()</code> should return \"Bob\".');",
         "assert.deepEqual(bob.getLastName(), 'Ross', 'message: <code>bob.getLastName()</code> should return \"Ross\".');",
-        "assert.deepEqual(bob.getFullName(), 'Bob Ross', 'message: <code>bob.getFullName()</code> should return \"Bob Ross\".');"
+        "assert.deepEqual(bob.getFullName(), 'Bob Ross', 'message: <code>bob.getFullName()</code> should return \"Bob Ross\".');",
+        "assert.strictEqual((function () { bob.setFirstName(\"Haskell\"); return bob.getFullName(); })(), 'Haskell Ross', 'message: <code>bob.getFullName()</code> should return \"Haskell Ross\" after <code>bob.setFirstName(\"Haskell\")</code>.');",
+        "assert.strictEqual((function () { bob.setLastName(\"Curry\"); return bob.getFullName(); })(), 'Bob Curry', 'message: <code>bob.getFullName()</code> should return \"Bob Curry\" after <code>bob.setLastName(\"Curry\")</code>.');",
+        "assert.strictEqual((function () { bob.setFullName(\"Haskell Curry\"); return bob.getFullName(); })(), 'Haskell Curry', 'message: <code>bob.getFullName()</code> should return \"Haskell Curry\" after <code>bob.setFullName(\"Haskell Curry\")</code>.');",
+        "assert.strictEqual((function () { bob.setFullName(\"Haskell Curry\"); return bob.getFirstName(); })(), 'Haskell', 'message: <code>bob.getFirstName()</code> should return \"Haskell\" after <code>bob.setFullName(\"Haskell Curry\")</code>.');",
+        "assert.strictEqual((function () { bob.setFullName(\"Haskell Curry\"); return bob.getLastName(); })(), 'Curry', 'message: <code>bob.getLastName()</code> should return \"Curry\" after <code>bob.setFullName(\"Haskell Curry\")</code>.');"
       ],
       "MDNlinks": [
         "Closures",
@@ -105,10 +111,10 @@
       ],
       "tests": [
         "assert.deepEqual(pairwise([1, 4, 2, 3, 0, 5], 7), 11, 'message: <code>pairwise([1, 4, 2, 3, 0, 5], 7)</code> should return 11.');",
-        "expect(pairwise([1, 3, 2, 4], 4), 1, 'message: <code>pairwise([1, 3, 2, 4], 4), 1</code> should return 1.');",
-        "expect(pairwise([1,1,1], 2), 1, 'message: <code>pairwise([1,1,1], 2)</code> should return 1.');",
-        "expect(pairwise([0, 0, 0, 0, 1, 1], 1), 10, 'message: <code>pairwise([0, 0, 0, 0, 1, 1], 1)</code> should return 10.');",
-        "expect(pairwise([], 100), 0, 'message: <code>pairwise([], 100)</code> should return 0.');"
+        "assert.deepEqual(pairwise([1, 3, 2, 4], 4), 1, 'message: <code>pairwise([1, 3, 2, 4], 4), 1</code> should return 1.');",
+        "assert.deepEqual(pairwise([1,1,1], 2), 1, 'message: <code>pairwise([1,1,1], 2)</code> should return 1.');",
+        "assert.deepEqual(pairwise([0, 0, 0, 0, 1, 1], 1), 10, 'message: <code>pairwise([0, 0, 0, 0, 1, 1], 1)</code> should return 10.');",
+        "assert.deepEqual(pairwise([], 100), 0, 'message: <code>pairwise([], 100)</code> should return 0.');"
       ],
       "MDNlinks": [
         "Array.reduce()"

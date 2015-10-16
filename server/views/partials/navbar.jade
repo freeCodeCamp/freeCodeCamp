@@ -14,7 +14,7 @@ nav.navbar.navbar-default.navbar-fixed-top.nav-height
             li
                 a(href='//gitter.im/FreeCodeCamp/FreeCodeCamp', target='_blank') Chat
             li
-                a(href='/news') News
+                a(href='/news', target='_blank') News
             li
                 a(href='//github.com/FreeCodeCamp/freecodecamp/wiki/Home', target='_blank') Wiki
             if !user
@@ -27,3 +27,19 @@ nav.navbar.navbar-default.navbar-fixed-top.nav-height
                 .hidden-xs.hidden-sm
                     a(href='/' + user.username)
                         img.profile-picture.float-right(src='#{user.picture}')
+script.
+    $(document).ready(function() {
+        $('.learn-btn').click(function(e) {
+            var challengeDashedName = null;
+            e.preventDefault();
+            if (typeof dashedName === "string") {
+                return location.reload();
+            }
+            if (typeof localStorage !== 'undefined') {
+                challengeDashedName = localStorage.getItem('currentDashedName');
+            }
+            window.location = challengeDashedName ?
+            '/challenges/' + challengeDashedName :
+                    '/map';
+        });
+    });

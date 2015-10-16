@@ -322,7 +322,7 @@ module.exports = function(User) {
         })
         // no results means this is the first brownie point given by giver
         // so return -1 to indicate receiver should receive point
-        .firstOrDefault(null, -1)
+        .first({ defaultValue: -1 })
         .flatMap((browniePointsFromGiver) => {
           if (browniePointsFromGiver === -1) {
 
