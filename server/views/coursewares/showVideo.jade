@@ -24,7 +24,7 @@ block content
                     var userLoggedIn = true;
             .button-spacer
             .btn-group.input-group.btn-group-justified
-                .btn.btn-success.btn-big.js-gitter-toggle-chat-button
+                .btn.btn-success.btn-big#challenge-help-btn
                     i.fa.fa-medkit
                         | &nbsp; Get help
                 .btn.btn-success.btn-big#trigger-issue-modal
@@ -78,8 +78,10 @@ block content
       var challenge_Name = !{JSON.stringify(name)};
       var challengeType = !{JSON.stringify(challengeType)};
       var dashedName = !{JSON.stringify(dashedName)};
-      if (window.common) {
-        window.common.createGitterOptions('freecodecamp/help');
-      }
+      document.addEventListener('gitter-sidecar-ready', function(e) {
+        if (window.main) {
+          window.main.chat.createHelpChat('freecodecamp/help', '#challenge-help-btn');
+        }
+      });
     include ../partials/challenge-modals
-    script(src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer)
+

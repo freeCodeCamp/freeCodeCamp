@@ -4,6 +4,50 @@ main.mapShareKey = 'map-shares';
 
 main.ga = window.ga || function() {};
 
+main = (function(main) {
+
+  ((window.gitter = {}).chat = {}).options = {
+    disableDefaultChat: true
+  };
+  // wait for sidecar to load
+
+  main.chat = {};
+  main.chat.isOpen = false;
+  main.chat.createHelpChat = function createHelpChat() {
+    throw new Error('Sidecar chat has not initialized');
+  };
+
+  document.addEventListener('gitter-sidecar-ready', function(e) {
+    main.chat.GitterChat = e.detail.Chat;
+
+    main.chat.createHelpChat = function(room, helpChatBtnClass) {
+      main.chat.helpChat = new main.chat.GitterChat({
+        room: room,
+        activationElement: document.createElement('div')
+      });
+
+      $(helpChatBtnClass).on('click', function() {
+        main.chat.helpChat.toggleChat(true);
+      });
+    };
+
+    main.chat.mainChat = new main.chat.GitterChat({
+      room: 'freecodecamp/freecodecamp',
+      activationElement: document.createElement('div')
+    });
+
+      $('#nav-chat-btn').on('click', function() {
+        console.log('Create');
+        if (!main.chat.isOpen) {
+
+          main.chat.mainChat.toggleChat(true);
+        }
+      });
+  });
+
+  return main;
+}(main));
+
 var lastCompleted = typeof lastCompleted !== 'undefined' ?
   lastCompleted :
   '';
@@ -38,9 +82,10 @@ function setMapShare(id) {
 
 $(document).ready(function() {
 
+
   var challengeName = typeof challengeName !== 'undefined' ?
     challengeName :
-    'Untitled';
+    '';
 
   if (challengeName) {
     ga('send', 'event',  'Challenge', 'load', challengeName);

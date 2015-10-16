@@ -24,7 +24,7 @@ block content
                 a.btn.btn-big.btn-primary.btn-block(href='/challenges/next-challenge?id=' + challengeId) Go to my next challenge (ctrl + enter)
             .button-spacer
             .btn-group.input-group.btn-group-justified
-                .btn.btn-success.btn-big.js-gitter-toggle-chat-button
+                .btn.btn-success.btn-big#challenge-help-btn
                     i.fa.fa-medkit
                         | &nbsp; Help
                 .btn.btn-success.btn-big#trigger-issue-modal
@@ -97,11 +97,13 @@ block content
             $('body').on('keypress', controlEnterHandler);
     include ../partials/challenge-modals
     script.
-      if (window.common) {
-        window.common.createGitterOptions(
-          !{JSON.stringify(challengeType)} === 3 ?
-            'freecodecamp/helpZiplines' :
-            'freecodecamp/helpBonfires'
-        );
-      }
-    script(src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer)
+      document.addEventListener('gitter-sidecar-ready', function(e) {
+        if (window.main) {
+          window.main.chat.createHelpChat(
+            !{JSON.stringify(challengeType)} === 3 ?
+              'freecodecamp/helpZiplines' :
+              'freecodecamp/helpBonfires',
+            '#challenge-help-btn'
+          );
+        }
+      });

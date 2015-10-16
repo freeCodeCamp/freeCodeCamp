@@ -52,7 +52,7 @@ block content
                     label.btn.btn-success#trigger-reset-modal
                         i.fa.fa-refresh
                             | &nbsp; Reset
-                    label.btn.btn-success.js-gitter-toggle-chat-button
+                    label.btn.btn-success#challenge-help-btn
                         i.fa.fa-medkit
                             | &nbsp; Help
                     label.btn.btn-success#trigger-issue-modal
@@ -122,13 +122,14 @@ block content
                     a.btn.btn-lg.btn-primary.btn-block(href='#', data-dismiss='modal', aria-hidden='true') Cancel
     include ../partials/challenge-modals
     script.
-      // requires common framework
-      if (window.common) {
-        window.common.createGitterOptions('freecodecamp/helpbonfires', 'challenge-help-chat-btn');
-      }
+
+      document.addEventListener('gitter-sidecar-ready', function(e) {
+        if (window.main) {
+          window.main.chat.createHelpChat('freecodecamp/helpbonfires', '#challenge-help-btn');
+        }
+      });
 
       var MDNlinks = !{JSON.stringify(MDNlinks)};
       if (!MDNlinks.length) {
           $('#MDN-links').addClass('collapse');
       }
-    script(src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer)
