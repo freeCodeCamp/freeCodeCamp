@@ -11,7 +11,9 @@
         "Before we can start using jQuery, we need to add some things to our HTML.",
         "First, add a <code>script</code> element at the top of your page. Be sure to close it on the following line.",
         "Your browser will run any JavaScript inside a <code>script</code> element, including jQuery.",
-        "Inside your <code>script</code> element, add this code: <code>$(document).ready(function() {</code> to your <code>script</code>. Then close it on the following line (still inside your <code>script</code> element) with: <code>});</code>"
+        "Inside your <code>script</code> element, add this code: <code>$(document).ready(function() {</code> to your <code>script</code>. Then close it on the following line (still inside your <code>script</code> element) with: <code>});</code>",
+        "We'll learn more about <code>functions</code> later. The important thing to know is that code you put inside this <code>function</code> will run as soon as your browser has loaded your page.",
+        "This is important because without your <code>document ready function</code>, your code may run before your HTML is rendered, which would cause bugs."
       ],
       "tests": [
         "assert(editor.match(/<script>/g), 'Create a <code>script</code> element.')",
@@ -53,8 +55,7 @@
       "id": "bad87fee1348bd9bedc08826",
       "title": "Target HTML Elements with Selectors Using jQuery",
       "description": [
-        "Now we have a <code>document ready function</code>. We'll learn more about <code>functions</code> later. The important thing to know is that code you put inside this <code>function</code> will run as soon as your browser has loaded your page.",
-        "This is important because without your <code>document ready function</code>, your code may run before your HTML is rendered, which would cause bugs.",
+        "Now we have a <code>document ready function</code>.",
         "Now let's write our first jQuery statement. All jQuery functions start with a <code>$</code>, usually referred to as a <code>dollar sign operator</code>, or simply as <code>bling</code>.",
         "jQuery often selects an HTML element with a <code>selector</code>, then does something to that element.",
         "For example, let's make all of your <code>button</code> elements bounce. Just add this code inside your document ready function: <code>$(\"button\").addClass(\"animated bounce\")</code>.",
