@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import { Col, Well, Row } from 'react-bootstrap';
+import { Col, Panel, Row } from 'react-bootstrap';
 import { contain } from 'thundercats-react';
 
 export default contain(
@@ -23,12 +23,12 @@ export default contain(
         <div>
           <Row>
             <Col
-              xs={ 12 }
+              md={ 6 }
+              mdOffset={ 3 }
               sm={ 8 }
               smOffset={ 2 }
-              md={ 6 }
-              mdOffset={ 3 }>
-              <Well>
+              xs={ 12 }>
+              <Panel>
                 <form
                   action='https://www.sandbox.paypal.com/cgi-bin/webscr'
                   method='post'
@@ -61,7 +61,7 @@ export default contain(
                     src='https://www.sandbox.paypal.com/en_US/i/scr/pixel.gif'
                     width='1' />
                 </form>
-              </Well>
+              </Panel>
             </Col>
           </Row>
         </div>
