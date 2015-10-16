@@ -21,9 +21,15 @@ main = (function(main) {
     main.chat.GitterChat = e.detail.Chat;
 
     main.chat.createHelpChat = function(room, helpChatBtnClass) {
+
+      $('body').append(
+        '<aside id="chat-embed-help" class="gitter-chat-embed is-collapsed" />'
+      );
+
       main.chat.helpChat = new main.chat.GitterChat({
         room: room,
-        activationElement: document.createElement('div')
+        activationElement: false,
+        targetElement: $('#chat-embed-help')
       });
 
       $(helpChatBtnClass).on('click', function() {
@@ -31,18 +37,22 @@ main = (function(main) {
       });
     };
 
+    $('body').append(
+      '<aside id="chat-embed-main" class="gitter-chat-embed is-collapsed" />'
+    );
+
     main.chat.mainChat = new main.chat.GitterChat({
       room: 'freecodecamp/freecodecamp',
-      activationElement: document.createElement('div')
+      activationElement: false,
+      targetElement: $('#chat-embed-main')
     });
 
-      $('#nav-chat-btn').on('click', function() {
-        console.log('Create');
-        if (!main.chat.isOpen) {
+    $('#nav-chat-btn').on('click', function() {
+      if (!main.chat.isOpen) {
 
-          main.chat.mainChat.toggleChat(true);
-        }
-      });
+        main.chat.mainChat.toggleChat(true);
+      }
+    });
   });
 
   return main;

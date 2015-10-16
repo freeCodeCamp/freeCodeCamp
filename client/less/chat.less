@@ -1,0 +1,17 @@
+.gitter-chat-embed {
+  z-index: 100;
+  position: fixed;
+
+  top: 0;
+  left: 60%;
+  bottom: 0;
+  right: 0;
+
+  display: flex;
+  flex-direction: row;
+  transition: transform 0.3s cubic-bezier(0.16, 0.22, 0.22, 1.7);
+}
+
+.gitter-chat-embed.is-collapsed:not(.is-loading) {
+  transform: translateX(110%);
+}
