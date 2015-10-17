@@ -37,6 +37,9 @@ const checkValidity = [
   'company',
   'highlight'
 ];
+const hightlightCopy = `
+Highlight my post to make it stand out. (+$50)
+`;
 
 function formatValue(value, validator, type = 'string') {
   const formated = getDefaults(type);
@@ -214,7 +217,9 @@ export default contain({
                     label='Job Title'
                     labelClassName={ labelClass }
                     onChange={ (e) => handleChange('position', e) }
-                    placeholder='e.g. Full Stack Developer, Front End Developer, etc.'
+                    placeholder={
+                      'e.g. Full Stack Developer, Front End Developer, etc.'
+                    }
                     required={ true }
                     type='text'
                     value={ position.value }
@@ -289,19 +294,18 @@ export default contain({
                     value={ logo.value }
                     wrapperClassName={ inputClass } />
 
-                  <div className='divider'>
-                    <h2>Highlight your listing to make it stand out</h2>
-                  </div>
+                  <div className='divider' />
                   <Input
                     checked={ highlight.value }
-                    label="&thinsp;&thinsp;&thinsp;Sure - I'll pay $50 more for that."
-                    labelClassName={ 'col-sm-offset-1 col-sm-6'}
+                    label={ hightlightCopy }
+                    labelClassName={ 'col-sm-offset-1 col-sm-6' }
                     onChange={
                       ({ target: { checked } }) => handleForm({
                         highlight: !!checked
                       })
                     }
-                    type='checkbox' />
+                    type='checkbox'
+                    wrapperClassName='jobs-checkbox-spacer' />
                   <div className='spacer' />
                   <Row>
                     <Col

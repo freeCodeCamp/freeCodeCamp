@@ -11,6 +11,17 @@ export default React.createClass({
     jobs: PropTypes.array
   },
 
+  addLocation(locale) {
+    if (!locale) {
+      return null;
+    }
+    return (
+      <span className='hidden-xs hidden-sm'>
+        { locale } - {' '}
+      </span>
+    );
+  },
+
   renderJobs(handleClick, jobs = []) {
     return jobs
       .filter(({ isPaid, isApproved, isFilled }) => {
@@ -42,14 +53,11 @@ export default React.createClass({
                 <span className='hidden-xs hidden-sm'>
                   - { position }
                 </span>
-                {' '}
-                <span className='hidden-xs hidden-sm'>
-                  ({ locale })
-                </span>
               </h4>
               <h4
                 className='pull-right'
                 style={{ display: 'inline-block' }}>
+                { this.addLocation(locale) }
                 { moment(new Date(postedOn)).format('MMM Do') }
               </h4>
             </div>

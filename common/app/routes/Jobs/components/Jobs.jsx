@@ -1,36 +1,36 @@
 import React, { cloneElement, PropTypes } from 'react';
 import { contain } from 'thundercats-react';
-import { History } from 'react-router';
 import { Button, Panel, Row, Col } from 'react-bootstrap';
 
-import CreateJobModal from './CreateJobModal.jsx';
 import ListJobs from './List.jsx';
 
 export default contain(
   {
     store: 'jobsStore',
     fetchAction: 'jobActions.getJobs',
-    actions: 'jobActions'
+    actions: [
+      'appActions',
+      'jobActions'
+    ]
   },
   React.createClass({
     displayName: 'Jobs',
 
-    mixins: [History],
-
     propTypes: {
       children: PropTypes.element,
+      appActions: PropTypes.object,
       jobActions: PropTypes.object,
       jobs: PropTypes.array,
       showModal: PropTypes.bool
     },
 
     handleJobClick(id) {
-      const { jobActions } = this.props;
+      const { appActions, jobActions } = this.props;
       if (!id) {
         return null;
       }
       jobActions.findJob(id);
-      this.history.pushState(null, `/jobs/${id}`);
+      appActions.goTo(`/jobs/${id}`);
     },
 
     renderList(handleJobClick, jobs) {
@@ -55,8 +55,7 @@ export default contain(
       const {
         children,
         jobs,
-        showModal,
-        jobActions
+        appActions
       } = this.props;
 
       return (
@@ -77,17 +76,25 @@ export default contain(
                   </p>
                 </Col>
                 <Col
-                  xs={ 12 }
                   sm={ 8 }
-                  smOffset={ 2 }>
+                  smOffset={ 2 }
+                  xs={ 12 }>
                   <Button
                     bsSize='large'
                     className='signup-btn btn-block'
-                    onClick={ ()=> {this.history.pushState(null, "/jobs/new")} }>
+                    onClick={ ()=> {
+                      appActions.goTo('/jobs/new');
+                    }}>
                     Post a job: $200 for 30 days + weekly tweets
                   </Button>
                   <div className='button-spacer' />
-                  <a href="https://twitter.com/CamperJobs" className="twitter-follow-button" data-show-count="false" data-size="large">Follow @CamperJobs</a>
+                  <a
+                    className='twitter-follow-button'
+                    data-show-count='false'
+                    data-size='large'
+                    href='https://twitter.com/CamperJobs'>
+                    Follow @CamperJobs
+                  </a>
                   <div className='spacer' />
                 </Col>
               </Row>
