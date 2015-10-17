@@ -73,7 +73,8 @@ export default function csp() {
     imgSrc: [
       // allow all input since we have user submitted images for
       // public profile
-      '*'
+      '*',
+      'data:'
     ].concat(trusted),
     fontSrc: [
       '*.googleapis.com',
