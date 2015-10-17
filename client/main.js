@@ -235,7 +235,7 @@ $(document).ready(function() {
             'links to screenshots if possible.\n\n'
           ].join('');
 
-          if (editor.getValue().trim()) {
+          if (typeof editor !== 'undefined' && editor.getValue().trim()) {
             var type;
             switch (challengeType) {
               case challengeTypes.HTML_CSS_JQ:
