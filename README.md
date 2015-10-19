@@ -115,10 +115,14 @@ mongod
 use freecodecamp
 # Exit the mongo shell with control + d
 
+# -Only on your first run-, start the application, you should notice a rev-manifest error
+gulp
+# Once it is complete, Ctrl + C to stop the application
+
 # Seed your database with the challenges
 node seed/
 
-# start the application
+# Start the application
 gulp
 ```
 
