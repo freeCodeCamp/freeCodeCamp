@@ -58,6 +58,7 @@ export default Actions({
   },
   saveForm: null,
   getSavedForm: null,
+  clearSavedForm: null,
   setForm(form) {
     return { form };
   },
@@ -107,6 +108,10 @@ export default Actions({
       }
     });
 
+    jobActions.clearSavedForm.subscribe(() => {
+      store.remove('newJob');
+    });
+
     jobActions.saveJobToDb.subscribe(({ goTo, job }) => {
       const appActions = cat.getActions('appActions');
       services.create('jobs', { job }, null, (err, job) => {
@@ -133,5 +138,6 @@ export default Actions({
           err => jobActions.setError(err)
         );
     });
+
     return jobActions;
   });
