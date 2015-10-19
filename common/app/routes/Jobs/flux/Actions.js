@@ -1,6 +1,7 @@
 import { Actions } from 'thundercats';
 import store from 'store';
 import debugFactory from 'debug';
+import { jsonp$ } from '../../../../utils/jsonp$';
 
 const debug = debugFactory('freecc:jobs:actions');
 const assign = Object.assign;
@@ -59,6 +60,10 @@ export default Actions({
   getSavedForm: null,
   setForm(form) {
     return { form };
+  },
+  getFollowers: null,
+  setFollowersCount(numOfFollowers) {
+    return { numOfFollowers };
   }
 })
   .refs({ displayName: 'JobActions' })
@@ -112,6 +117,21 @@ export default Actions({
         jobActions.setJobs({ job });
         appActions.goTo(goTo);
       });
+    });
+
+    jobActions.getFollowers.subscribe(() => {
+      const url = 'https://cdn.syndication.twimg.com/widgets/followbutton/' +
+        'info.json?lang=en&screen_names=CamperJobs' +
+        '&callback=JSONPCallback';
+
+      jsonp$(url)
+        .map(({ response }) => {
+          return response[0]['followers_count'];
+        })
+        .subscribe(
+          count => jobActions.setFollowersCount(count),
+          err => jobActions.setError(err)
+        );
     });
     return jobActions;
   });

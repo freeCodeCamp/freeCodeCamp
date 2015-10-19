@@ -3,6 +3,7 @@ import { contain } from 'thundercats-react';
 import { Button, Panel, Row, Col } from 'react-bootstrap';
 
 import ListJobs from './List.jsx';
+import TwitterBtn from './TwitterBtn.jsx';
 
 export default contain(
   {
@@ -18,10 +19,16 @@ export default contain(
 
     propTypes: {
       children: PropTypes.element,
+      numOfFollowers: PropTypes.number,
       appActions: PropTypes.object,
       jobActions: PropTypes.object,
       jobs: PropTypes.array,
       showModal: PropTypes.bool
+    },
+
+    componentDidMount() {
+      const { jobActions } = this.props;
+      jobActions.getFollowers();
     },
 
     handleJobClick(id) {
@@ -54,6 +61,7 @@ export default contain(
     render() {
       const {
         children,
+        numOfFollowers,
         jobs,
         appActions
       } = this.props;
@@ -88,13 +96,7 @@ export default contain(
                     Post a job: $200 for 30 days + weekly tweets
                   </Button>
                   <div className='button-spacer' />
-                  <a
-                    className='twitter-follow-button'
-                    data-show-count='false'
-                    data-size='large'
-                    href='https://twitter.com/CamperJobs'>
-                    Follow @CamperJobs
-                  </a>
+                  <TwitterBtn count={ numOfFollowers || 0 } />
                   <div className='spacer' />
                 </Col>
               </Row>
