@@ -1,6 +1,5 @@
 import React, { PropTypes } from 'react';
 import { Row, Col, Thumbnail, Panel } from 'react-bootstrap';
-import moment from 'moment';
 
 const defaultImage =
   'https://pbs.twimg.com/' +
@@ -43,7 +42,6 @@ export default React.createClass({
       locale,
       email,
       phone,
-      postedOn,
       description
     } = job;
 
@@ -63,8 +61,8 @@ export default React.createClass({
               <div className='spacer' />
               <Row>
                 <Col
-                  md={ 3 }
-                  mdPush={ 7 }>
+                  md={ 2 }
+                  mdOffset={ 3 }>
                   <Thumbnail
                     alt={ logo ? company + 'company logo' : 'stock image' }
                     src={ logo || defaultImage }
@@ -73,13 +71,10 @@ export default React.createClass({
                 <Col
                   md={ 4 }>
 
-                  Position: { position || 'N/A' }
+                  <bold>Position: </bold> { position || 'N/A' }
                   <br />
-                  Location: { locale ? locale : `${city}, ${state}` }
-                  <br />
-                  Contact: { email || phone || 'N/A' }
-                  <br />
-                  Posted On: { moment(postedOn).format('MMMM Do, YYYY') }
+                  <bold>Location: </bold>
+                  { locale ? locale : `${city}, ${state}` }
                 </Col>
               </Row>
               <div className='spacer' />
@@ -89,6 +84,13 @@ export default React.createClass({
                   mdOffset={ 3 }
                   xs={ 12 }>
                   <p>{ description }</p>
+                </Col>
+              </Row>
+              <Row>
+                <Col
+                  md={ 6 }
+                  mdOffset={ 3 }>
+                  <bold>Contact:</bold> { email || phone }
                 </Col>
               </Row>
             </Panel>

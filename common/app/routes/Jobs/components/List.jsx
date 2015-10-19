@@ -48,7 +48,7 @@ export default React.createClass({
             onClick={ () => handleClick(id) }>
             <div>
               <h4 style={{ display: 'inline-block' }}>
-                <span className='text-primary'>{ company }</span>
+                <bold>{ company }</bold>
                 {' '}
                 <span className='hidden-xs hidden-sm'>
                   - { position }
