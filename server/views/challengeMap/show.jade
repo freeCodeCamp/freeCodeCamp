@@ -20,14 +20,17 @@ block content
                 .spacer
                 if (user && user.progressTimestamps.length > 5)
                     #tshirt-notice.col-xs-12.col-md-8.col-md-offset-2.hidden
-                        h2.text-center Get our first-edition t-shirt
+                        h2.text-center Get our first-edition t-shirt.
+                            br
+                            span.text-success Only available until Oct 29!
                         img.thumbnail.img-center.img-responsive(src="http://i.imgur.com/o07uuOL.png")
                         p.text-justify Our community has voted. Get our winning design emblazoned on a durable, American-made American Apparel shirt (available in women's and men's sizes).&thinsp;
                             a(href="https://teespring.com/free-code-camp-shirt-eu" target="_blank") Also ships from Europe
                             | .
                         a.button.btn.btn-block.signup-btn(href="https://teespring.com/get-free-code-camp-t-shirt" target="_blank") Get yours
                         .button-spacer
-                        #hideTshirtNoticeButton.button.btn.btn-block.btn-info Hide this forever
+                        .text-center
+                            a#hideTshirtNoticeButton(href='#') Hide this forever
                         .spacer
                 .row
                     .col-xs-12.col-sm-8.col-sm-offset-2
