@@ -2,6 +2,8 @@ import React, { PropTypes } from 'react';
 import { History } from 'react-router';
 import { contain } from 'thundercats-react';
 import debugFactory from 'debug';
+import dedent from 'dedent';
+
 import { getDefaults } from '../utils';
 
 import {
@@ -41,6 +43,25 @@ const hightlightCopy = `
 Highlight my post to make it stand out. (+$50)
 `;
 
+const isFullStackCopy = `
+Only allow full stack certified students to apply.
+`;
+
+const isFrontEndCopy = `
+Only allow front end certified students to apply.
+`;
+
+const isRemoteCopy = `
+This job can be done remotely.
+`;
+
+const checkboxClass = dedent`
+  jobs-checkbox
+  jobs-checkbox-spacer
+  col-sm-offset-2
+  col-sm-6 col-md-offset-3
+`;
+
 function formatValue(value, validator, type = 'string') {
   const formated = getDefaults(type);
   if (validator && type === 'string') {
@@ -78,7 +99,10 @@ export default contain({
         url,
         logo,
         company,
-        highlight
+        highlight,
+        isFullStackCert,
+        isFrontEndCert,
+        isRemoteOk
       } = form;
       return {
         position: formatValue(position, makeRequired(isAscii)),
@@ -89,7 +113,10 @@ export default contain({
         url: formatValue(url, isValidURL),
         logo: formatValue(logo, isValidURL),
         company: formatValue(company, makeRequired(isAscii)),
-        highlight: formatValue(highlight, null, 'bool')
+        highlight: formatValue(highlight, null, 'bool'),
+        isFullStackCert: formatValue(isFullStackCert, null, 'bool'),
+        isFrontEndCert: formatValue(isFrontEndCert, null, 'bool'),
+        isRemoteOk: formatValue(isRemoteOk, null, 'bool')
       };
     },
     subscribeOnWillMount() {
@@ -109,7 +136,10 @@ export default contain({
       url: PropTypes.object,
       logo: PropTypes.object,
       company: PropTypes.object,
-      highlight: PropTypes.object
+      highlight: PropTypes.object,
+      isFullStackCert: PropTypes.object,
+      isFrontEndCert: PropTypes.object,
+      isRemoteOk: PropTypes.object
     },
 
     mixins: [History],
@@ -131,6 +161,9 @@ export default contain({
       }
 
       const {
+        jobActions,
+
+        // form values
         position,
         locale,
         description,
@@ -140,7 +173,9 @@ export default contain({
         logo,
         company,
         highlight,
-        jobActions
+        isFullStackCert,
+        isFrontEndCert,
+        isRemoteOk
       } = this.props;
 
       // sanitize user output
@@ -153,7 +188,10 @@ export default contain({
         url: uriInSingleQuotedAttr(url.value),
         logo: uriInSingleQuotedAttr(logo.value),
         company: inHTMLData(company.value),
-        highlight: !!highlight.value
+        highlight: !!highlight.value,
+        isFrontEndCert: !!isFrontEndCert.value,
+        isFullStackCert: !!isFullStackCert.value,
+        isRemoteOk: !!isRemoteOk.value
       };
 
       const job = Object.keys(jobValues).reduce((accu, prop) => {
@@ -191,6 +229,9 @@ export default contain({
         logo,
         company,
         highlight,
+        isFrontEndCert,
+        isFullStackCert,
+        isRemoteOk,
         jobActions: { handleForm }
       } = this.props;
       const { handleChange } = this;
@@ -298,14 +339,43 @@ export default contain({
                   <Input
                     checked={ highlight.value }
                     label={ hightlightCopy }
-                    labelClassName={ 'col-sm-offset-1 col-sm-6' }
                     onChange={
                       ({ target: { checked } }) => handleForm({
                         highlight: !!checked
                       })
                     }
                     type='checkbox'
-                    wrapperClassName='jobs-checkbox-spacer' />
+                    wrapperClassName={ checkboxClass } />
+                  <Input
+                    checked={ isFrontEndCert.value }
+                    label={ isFrontEndCopy }
+                    onChange={
+                      ({ target: { checked } }) => handleForm({
+                        isFrontEndCert: !!checked
+                      })
+                    }
+                    type='checkbox'
+                    wrapperClassName={ checkboxClass } />
+                  <Input
+                    checked={ isFullStackCert.value }
+                    label={ isFullStackCopy }
+                    onChange={
+                      ({ target: { checked } }) => handleForm({
+                        isFullStackCert: !!checked
+                      })
+                    }
+                    type='checkbox'
+                    wrapperClassName={ checkboxClass } />
+                  <Input
+                    checked={ isRemoteOk.value }
+                    label={ isRemoteCopy }
+                    onChange={
+                      ({ target: { checked } }) => handleForm({
+                        isRemoteOk: !!checked
+                      })
+                    }
+                    type='checkbox'
+                    wrapperClassName={ checkboxClass } />
                   <div className='spacer' />
                   <Row>
                     <Col
