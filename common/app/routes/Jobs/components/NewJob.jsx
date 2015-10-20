@@ -16,7 +16,8 @@ import {
   Col,
   Input,
   Row,
-  Panel
+  Panel,
+  Well
 } from 'react-bootstrap';
 
 import {
@@ -58,7 +59,7 @@ This job can be performed remotely.
 `;
 
 const checkboxClass = dedent`
-  jobs-checkbox
+  text-left
   jobs-checkbox-spacer
   col-sm-offset-2
   col-sm-6 col-md-offset-3
@@ -353,19 +354,42 @@ export default contain({
                     wrapperClassName={ inputClass } />
 
                   <div className='spacer' />
-                  <Input
-                    checked={ isHighlighted.value }
-                    label={ hightlightCopy }
-                    onChange={
-                      ({ target: { checked } }) => handleForm({
-                        isHighlighted: !!checked
-                      })
-                    }
-                    type='checkbox'
-                    wrapperClassName={ checkboxClass } />
+                  <Well>
+                    <div>
+                      <h2>Make it stand out</h2>
+                    </div>
+                    <div className='spacer' />
+                    <Row>
+                      <Col
+                        md={ 6 }
+                        mdOffset={ 3 }>
+                      Highlight this ad to give it extra attention.
+                      <br />
+                    Featured listings receive more clicks and more applications.
+                      </Col>
+                    </Row>
+                    <div className='spacer' />
+                    <Row>
+                      <Input
+                        bsSize='large'
+                        bsStyle='success'
+                        checked={ isHighlighted.value }
+                        label={ hightlightCopy }
+                        onChange={
+                          ({ target: { checked } }) => handleForm({
+                            isHighlighted: !!checked
+                          })
+                        }
+                        type='checkbox'
+                        wrapperClassName={
+                          checkboxClass.replace('text-left', '')
+                        } />
+                    </Row>
+                  </Well>
                   <div className='spacer' />
                   <Row>
                     <Col
+                      className='text-left'
                       lg={ 6 }
                       lgOffset={ 3 }>
                       <Button
