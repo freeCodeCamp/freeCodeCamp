@@ -35,7 +35,8 @@ export default function reactSubRouter(app) {
     // returns a router wrapped app
     app$({ location })
       // if react-router does not find a route send down the chain
-      .filter(function({ props}) {
+      .filter(function({ props, nextLocation }) {
+        console.log('foo', nextLocation);
         if (!props) {
           debug('react tried to find %s but got 404', location.pathname);
           return next();

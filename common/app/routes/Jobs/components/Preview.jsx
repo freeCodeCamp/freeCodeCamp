@@ -1,7 +1,9 @@
 import React, { PropTypes } from 'react';
 import { Panel, Button, Row, Col } from 'react-bootstrap';
 import { contain } from 'thundercats-react';
+
 import ShowJob from './ShowJob.jsx';
+import JobNotFound from './JobNotFound.jsx';
 
 export default contain(
   {
@@ -23,8 +25,21 @@ export default contain(
       jobActions: PropTypes.object
     },
 
+    componentDidMount() {
+      const { appActions, job } = this.props;
+      // redirect user in client
+      if (!job || !job.position || !job.description) {
+        appActions.goTo('/jobs/new');
+      }
+    },
+
     render() {
       const { appActions, job, jobActions } = this.props;
+
+      if (!job || !job.position || job.description) {
+        return <JobNotFound />;
+      }
+
       return (
         <div>
           <ShowJob job={ job } />
