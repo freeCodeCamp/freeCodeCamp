@@ -19,7 +19,7 @@ export default contain(
     },
 
     render() {
-      const { id } = this.props;
+      const { id, isHighlighted } = this.props;
       return (
         <div>
           <Row>
@@ -58,7 +58,10 @@ export default contain(
                       <input
                           name='hosted_button_id'
                           type='hidden'
-                          value='ZVU498PLMPHKU' />
+                          value={ isHighlighted ?
+                            '' :
+                            'ZVU498PLMPHKU'
+                          } />
                       <input
                         name='custom'
                         type='hidden'

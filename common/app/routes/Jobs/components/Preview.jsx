@@ -36,7 +36,7 @@ export default contain(
     render() {
       const { appActions, job, jobActions } = this.props;
 
-      if (!job || !job.position || job.description) {
+      if (!job || !job.position || !job.description) {
         return <JobNotFound />;
       }
 

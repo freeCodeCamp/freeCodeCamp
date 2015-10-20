@@ -22,7 +22,6 @@ import {
 import {
   isAscii,
   isEmail,
-  isMobilePhone,
   isURL
 } from 'validator';
 
@@ -33,7 +32,6 @@ const checkValidity = [
   'locale',
   'description',
   'email',
-  'phone',
   'url',
   'logo',
   'company',
@@ -43,16 +41,20 @@ const hightlightCopy = `
 Highlight my post to make it stand out. (+$50)
 `;
 
+const foo = `
+  This will narrow the field substantially with higher quality applicants
+`;
+
 const isFullStackCopy = `
-Only allow full stack certified students to apply.
+Applicants must have Free Code Camp’s Full Stack Certification to apply.*
 `;
 
 const isFrontEndCopy = `
-Only allow front end certified students to apply.
+Applicants must have Free Code Camp’s Front End Certification to apply.*
 `;
 
 const isRemoteCopy = `
-This job can be done remotely.
+This job can be performed remotely.
 `;
 
 const checkboxClass = dedent`
@@ -78,10 +80,6 @@ function isValidURL(data) {
   return isURL(data, { 'require_protocol': true });
 }
 
-function isValidPhone(data) {
-  return isMobilePhone(data, 'en-US');
-}
-
 function makeRequired(validator) {
   return (val) => !!val && validator(val);
 }
@@ -95,7 +93,6 @@ export default contain({
         locale,
         description,
         email,
-        phone,
         url,
         logo,
         company,
@@ -109,7 +106,6 @@ export default contain({
         locale: formatValue(locale, makeRequired(isAscii)),
         description: formatValue(description, makeRequired(isAscii)),
         email: formatValue(email, makeRequired(isEmail)),
-        phone: formatValue(phone, isValidPhone),
         url: formatValue(url, isValidURL),
         logo: formatValue(logo, isValidURL),
         company: formatValue(company, makeRequired(isAscii)),
@@ -132,7 +128,6 @@ export default contain({
       locale: PropTypes.object,
       description: PropTypes.object,
       email: PropTypes.object,
-      phone: PropTypes.object,
       url: PropTypes.object,
       logo: PropTypes.object,
       company: PropTypes.object,
@@ -168,7 +163,6 @@ export default contain({
         locale,
         description,
         email,
-        phone,
         url,
         logo,
         company,
@@ -184,7 +178,6 @@ export default contain({
         locale: inHTMLData(locale.value),
         description: inHTMLData(description.value),
         email: inHTMLData(email.value),
-        phone: inHTMLData(phone.value),
         url: uriInSingleQuotedAttr(url.value),
         logo: uriInSingleQuotedAttr(logo.value),
         company: inHTMLData(company.value),
@@ -224,7 +217,6 @@ export default contain({
         locale,
         description,
         email,
-        phone,
         url,
         logo,
         company,
@@ -285,67 +277,6 @@ export default contain({
                     type='textarea'
                     value={ description.value }
                     wrapperClassName={ inputClass } />
-
-                  <div className='divider'>
-                    <h2>Tell us about your organization</h2>
-                  </div>
-                  <Input
-                    bsStyle={ company.bsStyle }
-                    label='Company Name'
-                    labelClassName={ labelClass }
-                    onChange={ (e) => handleChange('company', e) }
-                    type='text'
-                    value={ company.value }
-                    wrapperClassName={ inputClass } />
-                  <Input
-                    bsStyle={ email.bsStyle }
-                    label='Email'
-                    labelClassName={ labelClass }
-                    onChange={ (e) => handleChange('email', e) }
-                    placeholder='you@yourcompany.com'
-                    required={ true }
-                    type='email'
-                    value={ email.value }
-                    wrapperClassName={ inputClass } />
-                  <Input
-                    bsStyle={ phone.bsStyle }
-                    label='Phone'
-                    labelClassName={ labelClass }
-                    onChange={ (e) => handleChange('phone', e) }
-                    placeholder='555-867-5309'
-                    type='tel'
-                    value={ phone.value }
-                    wrapperClassName={ inputClass } />
-                  <Input
-                    bsStyle={ url.bsStyle }
-                    label='URL'
-                    labelClassName={ labelClass }
-                    onChange={ (e) => handleChange('url', e) }
-                    placeholder='http://freecodecamp.com'
-                    type='url'
-                    value={ url.value }
-                    wrapperClassName={ inputClass } />
-                  <Input
-                    bsStyle={ logo.bsStyle }
-                    label='Logo'
-                    labelClassName={ labelClass }
-                    onChange={ (e) => handleChange('logo', e) }
-                    placeholder='http://freecatphotoapp.com/logo.png'
-                    type='url'
-                    value={ logo.value }
-                    wrapperClassName={ inputClass } />
-
-                  <div className='divider' />
-                  <Input
-                    checked={ isHighlighted.value }
-                    label={ hightlightCopy }
-                    onChange={
-                      ({ target: { checked } }) => handleForm({
-                        isHighlighted: !!checked
-                      })
-                    }
-                    type='checkbox'
-                    wrapperClassName={ checkboxClass } />
                   <Input
                     checked={ isFrontEndCert.value }
                     label={ isFrontEndCopy }
@@ -372,6 +303,62 @@ export default contain({
                     onChange={
                       ({ target: { checked } }) => handleForm({
                         isRemoteOk: !!checked
+                      })
+                    }
+                    type='checkbox'
+                    wrapperClassName={ checkboxClass } />
+                  <Row>
+                    <small>* { foo }</small>
+                  </Row>
+                  <div className='spacer' />
+
+                  <div className='divider'>
+                    <h2>Tell us about your organization</h2>
+                  </div>
+                  <Input
+                    bsStyle={ company.bsStyle }
+                    label='Company Name'
+                    labelClassName={ labelClass }
+                    onChange={ (e) => handleChange('company', e) }
+                    type='text'
+                    value={ company.value }
+                    wrapperClassName={ inputClass } />
+                  <Input
+                    bsStyle={ email.bsStyle }
+                    label='Email'
+                    labelClassName={ labelClass }
+                    onChange={ (e) => handleChange('email', e) }
+                    placeholder='This is how we will contact you'
+                    required={ true }
+                    type='email'
+                    value={ email.value }
+                    wrapperClassName={ inputClass } />
+                  <Input
+                    bsStyle={ url.bsStyle }
+                    label='URL'
+                    labelClassName={ labelClass }
+                    onChange={ (e) => handleChange('url', e) }
+                    placeholder='http://yourcompany.com'
+                    type='url'
+                    value={ url.value }
+                    wrapperClassName={ inputClass } />
+                  <Input
+                    bsStyle={ logo.bsStyle }
+                    label='Logo'
+                    labelClassName={ labelClass }
+                    onChange={ (e) => handleChange('logo', e) }
+                    placeholder='http://yourcompany.com/logo.png'
+                    type='url'
+                    value={ logo.value }
+                    wrapperClassName={ inputClass } />
+
+                  <div className='spacer' />
+                  <Input
+                    checked={ isHighlighted.value }
+                    label={ hightlightCopy }
+                    onChange={
+                      ({ target: { checked } }) => handleForm({
+                        isHighlighted: !!checked
                       })
                     }
                     type='checkbox'

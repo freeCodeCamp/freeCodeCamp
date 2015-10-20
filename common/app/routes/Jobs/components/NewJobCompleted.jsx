@@ -5,25 +5,22 @@ import { Button, Panel, Col, Row } from 'react-bootstrap';
 export default React.createClass({
   displayName: 'NewJobCompleted',
 
-  propTypes: {
-  },
-
   render() {
     return (
-      <div>
+      <div className='text-center'>
         <Panel>
           <Row>
-            <h1 className='text-center'>
-              Job under review
+            <h1>
+              Your Position has Been Submitted
             </h1>
           </Row>
           <Row>
             <Col
               md={ 6 }
               mdOffset={ 3 }>
-            Congrats! Your job has been posted and is under review.
-            Once we review you job post we will publish it and you will receive
-            an email from us with a link to the listing.
+              We’ll review your listing and email you when it’s live.
+              <br />
+              Thank you for listing this job with Free Code Camp.
             </Col>
           </Row>
           <div className='spacer' />
