@@ -36,7 +36,8 @@ const checkValidity = [
   'url',
   'logo',
   'company',
-  'isHighlighted'
+  'isHighlighted',
+  'howToApply'
 ];
 const hightlightCopy = `
 Highlight my post to make it stand out. (+$50)
@@ -47,15 +48,20 @@ const foo = `
 `;
 
 const isFullStackCopy = `
-Applicants must have Free Code Camp’s Full Stack Certification to apply.*
+Applicants must have earned Free Code Camp’s Full Stack Certification to apply.*
 `;
 
 const isFrontEndCopy = `
-Applicants must have Free Code Camp’s Front End Certification to apply.*
+Applicants must have earned Free Code Camp’s Front End Certification to apply.*
 `;
 
 const isRemoteCopy = `
 This job can be performed remotely.
+`;
+
+const howToApplyCopy = dedent`
+  Examples: click here to apply yourcompany.com/jobs/33
+  Or email jobs@yourcompany.com
 `;
 
 const checkboxClass = dedent`
@@ -100,7 +106,8 @@ export default contain({
         isHighlighted,
         isFullStackCert,
         isFrontEndCert,
-        isRemoteOk
+        isRemoteOk,
+        howToApply
       } = form;
       return {
         position: formatValue(position, makeRequired(isAscii)),
@@ -113,7 +120,8 @@ export default contain({
         isHighlighted: formatValue(isHighlighted, null, 'bool'),
         isFullStackCert: formatValue(isFullStackCert, null, 'bool'),
         isFrontEndCert: formatValue(isFrontEndCert, null, 'bool'),
-        isRemoteOk: formatValue(isRemoteOk, null, 'bool')
+        isRemoteOk: formatValue(isRemoteOk, null, 'bool'),
+        howToApply: formatValue(howToApply, makeRequired(isAscii))
       };
     },
     subscribeOnWillMount() {
@@ -135,7 +143,8 @@ export default contain({
       isHighlighted: PropTypes.object,
       isFullStackCert: PropTypes.object,
       isFrontEndCert: PropTypes.object,
-      isRemoteOk: PropTypes.object
+      isRemoteOk: PropTypes.object,
+      howToApply: PropTypes.object
     },
 
     mixins: [History],
@@ -170,7 +179,8 @@ export default contain({
         isHighlighted,
         isFullStackCert,
         isFrontEndCert,
-        isRemoteOk
+        isRemoteOk,
+        howToApply
       } = this.props;
 
       // sanitize user output
@@ -185,7 +195,8 @@ export default contain({
         isHighlighted: !!isHighlighted.value,
         isFrontEndCert: !!isFrontEndCert.value,
         isFullStackCert: !!isFullStackCert.value,
-        isRemoteOk: !!isRemoteOk.value
+        isRemoteOk: !!isRemoteOk.value,
+        howToApply: inHTMLData(howToApply.value)
       };
 
       const job = Object.keys(jobValues).reduce((accu, prop) => {
@@ -225,6 +236,7 @@ export default contain({
         isFrontEndCert,
         isFullStackCert,
         isRemoteOk,
+        howToApply,
         jobActions: { handleForm }
       } = this.props;
       const { handleChange } = this;
@@ -238,7 +250,6 @@ export default contain({
               md={ 10 }
               mdOffset={ 1 }>
               <Panel className='text-center'>
-                <h1>Create Your Job Post</h1>
                 <form
                   className='form-horizontal'
                   onSubmit={ this.handleSubmit }>
@@ -312,8 +323,25 @@ export default contain({
                     <small>* { foo }</small>
                   </Row>
                   <div className='spacer' />
+                  <Row>
+                    <div>
+                      <h2>How should they apply?</h2>
+                    </div>
+                    <Input
+                      bsStyle={ howToApply.bsStyle }
+                      label='   '
+                      labelClassName={ labelClass }
+                      onChange={ (e) => handleChange('howToApply', e) }
+                      placeholder={ howToApplyCopy }
+                      required={ true }
+                      rows='2'
+                      type='textarea'
+                      value={ howToApply.value }
+                      wrapperClassName={ inputClass } />
+                  </Row>
 
-                  <div className='divider'>
+                  <div className='spacer' />
+                  <div>
                     <h2>Tell us about your organization</h2>
                   </div>
                   <Input
@@ -386,7 +414,7 @@ export default contain({
                         } />
                     </Row>
                   </Well>
-                  <div className='spacer' />
+
                   <Row>
                     <Col
                       className='text-left'
