@@ -66,6 +66,21 @@
     "postedOn": {
       "type": "date",
       "defaultFn": "now"
+    },
+    "isFrontEndCert": {
+      "type": "boolean",
+      "defaut": false,
+      "description": "Camper must be front end certified to apply"
+    },
+    "isFullStackCert": {
+      "type": "boolean",
+      "default": false,
+      "description": "Camper must be full stack certified to apply"
+    },
+    "isRemoteOk": {
+      "type": "boolean",
+      "default": false,
+      "description": "Camper may work remotely"
     }
   },
   "validations": [],
