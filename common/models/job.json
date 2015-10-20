@@ -22,7 +22,8 @@
       "type": "string"
     },
     "email": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "phone": {
       "type": "string"
@@ -38,6 +39,7 @@
     },
     "locale": {
       "type": "string",
+      "required": true,
       "description": "format: city, state"
     },
     "location": {
@@ -81,6 +83,11 @@
       "type": "boolean",
       "default": false,
       "description": "Camper may work remotely"
+    },
+    "howToApply": {
+      "type": "string",
+      "required": true,
+      "description": "How do campers apply to job"
     }
   },
   "validations": [],
