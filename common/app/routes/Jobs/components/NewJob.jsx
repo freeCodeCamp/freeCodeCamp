@@ -37,7 +37,7 @@ const checkValidity = [
   'url',
   'logo',
   'company',
-  'highlight'
+  'isHighlighted'
 ];
 const hightlightCopy = `
 Highlight my post to make it stand out. (+$50)
@@ -99,7 +99,7 @@ export default contain({
         url,
         logo,
         company,
-        highlight,
+        isHighlighted,
         isFullStackCert,
         isFrontEndCert,
         isRemoteOk
@@ -113,7 +113,7 @@ export default contain({
         url: formatValue(url, isValidURL),
         logo: formatValue(logo, isValidURL),
         company: formatValue(company, makeRequired(isAscii)),
-        highlight: formatValue(highlight, null, 'bool'),
+        isHighlighted: formatValue(isHighlighted, null, 'bool'),
         isFullStackCert: formatValue(isFullStackCert, null, 'bool'),
         isFrontEndCert: formatValue(isFrontEndCert, null, 'bool'),
         isRemoteOk: formatValue(isRemoteOk, null, 'bool')
@@ -136,7 +136,7 @@ export default contain({
       url: PropTypes.object,
       logo: PropTypes.object,
       company: PropTypes.object,
-      highlight: PropTypes.object,
+      isHighlighted: PropTypes.object,
       isFullStackCert: PropTypes.object,
       isFrontEndCert: PropTypes.object,
       isRemoteOk: PropTypes.object
@@ -172,7 +172,7 @@ export default contain({
         url,
         logo,
         company,
-        highlight,
+        isHighlighted,
         isFullStackCert,
         isFrontEndCert,
         isRemoteOk
@@ -188,7 +188,7 @@ export default contain({
         url: uriInSingleQuotedAttr(url.value),
         logo: uriInSingleQuotedAttr(logo.value),
         company: inHTMLData(company.value),
-        highlight: !!highlight.value,
+        isHighlighted: !!isHighlighted.value,
         isFrontEndCert: !!isFrontEndCert.value,
         isFullStackCert: !!isFullStackCert.value,
         isRemoteOk: !!isRemoteOk.value
@@ -228,7 +228,7 @@ export default contain({
         url,
         logo,
         company,
-        highlight,
+        isHighlighted,
         isFrontEndCert,
         isFullStackCert,
         isRemoteOk,
@@ -337,11 +337,11 @@ export default contain({
 
                   <div className='divider' />
                   <Input
-                    checked={ highlight.value }
+                    checked={ isHighlighted.value }
                     label={ hightlightCopy }
                     onChange={
                       ({ target: { checked } }) => handleForm({
-                        highlight: !!checked
+                        isHighlighted: !!checked
                       })
                     }
                     type='checkbox'
