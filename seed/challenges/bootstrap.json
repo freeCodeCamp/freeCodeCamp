@@ -91,7 +91,7 @@
       "id": "bad87fee1348bd9acde08812",
       "title": "Make Images Mobile Responsive",
       "description": [
-        "First, add a new image below the existing one. Set it's <code>src</code> attribute to <code>http://bit.ly/fcc-running-cats</code>.",
+        "First, add a new image below the existing one. Set its <code>src</code> attribute to <code>http://bit.ly/fcc-running-cats</code>.",
         "It would be great if this image could be exactly the width of our phone's screen.",
         "Fortunately, with Bootstrap, all we need to do is add the <code>img-responsive</code> class to your image. Do this, and the image should perfectly fit the width of your page."
       ],
