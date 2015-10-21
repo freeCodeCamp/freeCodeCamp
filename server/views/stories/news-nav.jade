@@ -60,7 +60,7 @@ script.
                             "<div class='visible-xs row'>" +
                                 "<div class='visible-xs col-sm-1 col-md-1'>" +
                                     "<a href='" + data[i].link + "'>" +
-                                        "<img class='mobile-story-image img-responsive' src='" + (!!data[i].image ? data[i].image : data[i].author.picture) + "'/>" +
+                                        "<img class='mobile-story-image img-responsive' src='" + data[i].author.picture + "'/>" +
                                     "</a>" +
                                 "</div>" +
                                 "<div class='col-xs-12 mobile-story-headline text-center'>" +
@@ -75,10 +75,6 @@ script.
                                         " by " +
                                         "<a href='/" + data[i].author.username + "'>@" + data[i].author.username +
                                         "</a> " +
-                                    "</div>" +
-                                    "<div class='col-xs-12'>" +
-                                        "<br>" +
-                                        "<a class='btn btn-no-shadow btn-primary btn-block btn-primary-ghost' href='/news/" + linkedName + "'>more info</a>" +
                                     "</div>" +
                                 "</div>" +
                             "</div>" +
@@ -97,10 +93,9 @@ script.
                                                 "</a>" +
                                             "</div>" +
                                             "<div class='story-byline col-xs-12 wrappable'>" +
-                                                "<a class='btn btn-no-shadow btn-primary btn-xs btn-primary-ghost' href='/news/" + linkedName + "'>more info</a> · " +
-                                                    rank + (rank > 1 ? " points" : " point") + " · posted " +
-                                                    moment(data[i].timePosted).fromNow() +
-                                                    " by <a href='/" + data[i].author.username + "'>@" + data[i].author.username +
+                                                rank + (rank > 1 ? " points" : " point") + " · posted " +
+                                                moment(data[i].timePosted).fromNow() +
+                                                " by <a href='/" + data[i].author.username + "'>@" + data[i].author.username +
                                                 "</a> " +
                                             "</div>" +
                                         "</div>" +
