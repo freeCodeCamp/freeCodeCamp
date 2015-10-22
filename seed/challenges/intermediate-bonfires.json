@@ -633,7 +633,7 @@
         "assert.strictEqual(find([1, 3, 5, 9], function(num) { return num % 2 === 0; }), undefined, 'message: <code>find([1, 3, 5, 9], function(num) { return num % 2 === 0; })</code> should return undefined.');"
       ],
       "MDNlinks": [
-        "Array.some()"
+        "Array.filter()"
       ],
       "type": "bonfire",
       "challengeType": 5,
