@@ -69,6 +69,9 @@
         "Array.reverse()",
         "Array.join()"
       ],
+      "solutions": [
+        "function reverseString(str) {\n  return str.split('').reverse().join(\"\");\n}\n\nreverseString('hello');\n"
+      ],
       "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
@@ -108,6 +111,9 @@
       ],
       "MDNlinks": [
         "Arithmetic Operators"
+      ],
+      "solutions": [
+        "function factorialize(num) {\n  return num === 1 ? 1 : num * factorialize(num-1);\n}\n\nfactorialize(5);\n"
       ],
       "type": "bonfire",
       "challengeType": 5,
@@ -159,6 +165,9 @@
         "String.replace()",
         "String.toLowerCase()"
       ],
+      "solutions": [
+        "function palindrome(str) {\n  var a = str.toLowerCase().replace(/[^a-z]/g, '');\n  console.log(a.split('').reverse().join(''));\n  return a == a.split('').reverse().join('');\n}\n\n\n\npalindrome(\"eye\");\npalindrome(\"A man, a plan, a canal. Panama\");\n"
+      ],
       "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
@@ -199,6 +208,9 @@
         "String.split()",
         "String.length"
       ],
+      "solutions": [
+        "function findLongestWord(str) {\n  return str.split(' ').sort(function(a, b) { return b.length - a.length;})[0].length;\n}\n\nfindLongestWord('The quick brown fox jumped over the lazy dog');\n"
+      ],
       "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
@@ -235,6 +247,9 @@
       ],
       "MDNlinks": [
         "String.charAt()"
+      ],
+      "solutions": [
+        "function titleCase(str) {\n  return str.split(' ').map(function(word) {\n    return word.charAt(0).toUpperCase() + word.substring(1).toLowerCase();\n  }).join(' ');\n}\n\ntitleCase(\"I'm a little tea pot\");\n"
       ],
       "type": "bonfire",
       "challengeType": 5,
