@@ -8,7 +8,7 @@
       "title": "Show the Local Weather",
       "challengeSeed": ["126415127"],
       "description": [
-        "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that successfully reverse-engineers this: <a href='http://codepen.io/AdventureBear/full/yNBJRj' target='_blank'>http://codepen.io/AdventureBear/full/yNBJRj</a>.",
+        "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that successfully reverse-engineers this: <a href='http://codepen.io/FreeCodeCamp/pen/avqvgJ' target='_blank'>http://codepen.io/FreeCodeCamp/pen/avqvgJ</a>.",
         "<span class='text-info'>Rule #1:</span> Don't look at the example project's code on CodePen. Figure it out for yourself.",
         "<span class='text-info'>Rule #2:</span> You may use whichever libraries or APIs you need.",
         "<span class='text-info'>Rule #3:</span> Reverse engineer the example project's functionality, and also feel free to personalize it.",
@@ -17,6 +17,7 @@
         "<span class='text-info'>Bonus User Story:</span> As a user, I can see an icon depending on the weather.",
         "<span class='text-info'>Bonus User Story:</span> As a user, I see a different background image (e.g. snowy mountain, hot desert) depending on the weather.",
         "<span class='text-info'>Bonus User Story:</span> As a user, I can push a button to toggle between Fahrenheit and Celsius.",
+        "We recommend using the <a href='http://openweathermap.org/current#geo' target='_blank'>Open Weather API</a>. This will require creating a free API key. Normally you want to avoid exposing API keys on CodePen, but we haven't been able to find a keyless API for weather.",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck.",
         "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen. If you pair programmed, you should also include the Free Code Camp username of your pair.",
         "If you'd like immediate feedback on your project from fellow campers, click this button and paste in a link to your CodePen project. <br><br><a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20PASTE_YOUR_CODEPEN_URL_HERE%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Click here then add your link to your tweet's text</a>"
