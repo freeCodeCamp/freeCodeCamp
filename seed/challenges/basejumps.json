@@ -5,62 +5,106 @@
     {
       "id": "bd7158d8c443eddfaeb5bcef",
       "title": "Get Set for Basejumps",
-      "challengeSeed": ["128451852"],
+      "challengeSeed": [],
       "description": [
-        "<span class='text-info'>Objective:</span> Get the MEAN stack running on Cloud 9, push your code to GitHub, and deploy it to Heroku.",
-        "We'll build our Basejumps on Cloud 9, a powerful online code editor with a full Ubuntu Linux workspace, all running in the cloud.",
-        "If you don't already have Cloud 9 account, create one now at <a href='http://c9.io' target='_blank'>http://c9.io</a>.",
-        "Now let's get your development environment ready for a new Angular-Fullstack application provided by Yeoman.",
-        "Open up <a href='http://c9.io' target='_blank'>http://c9.io</a> and sign in to your account.",
-        "Click on the \"+\" icon at the top right of the c9.io page to create a new workspace.",
-        "Give your workspace a name and an optional description.",
-        "Choose Node.js in the selection area below the name field.",
-        "Click the \"Create workspace\" button.",
-        "Once C9 builds and loads your workspace, you should see a terminal window in the lower right hand corner. In this window use the following commands. You don't need to know what these mean at this point.",
-        "Never run this command on your local machine. But in your Cloud 9 terminal window, run: <code>rm -rf * && echo \"export NODE_PATH=$NODE_PATH:/home/ubuntu/.nvm/v0.10.35/lib/node_modules\" >> ~/.bashrc && source ~/.bashrc && npm install -g yo grunt grunt-cli generator-angular-fullstack && yo angular-fullstack</code>",
-        "Yeoman will prompt you to answer some questions. Answer them like this:",
-        "What would you like to write scripts with? <span class='text-success'>JavaScript</span>",
-        "What would you like to write markup with? <span class='text-success'>HTML</span>",
-        "What would you like to write stylesheets with? <span class='text-success'>CSS</span>",
-        "What Angular router would you like to use? <span class='text-success'>ngRoute</span>",
-        "Would you like to include Bootstrap? <span class='text-success'>Yes</span>",
-        "Would you like to include UI Bootstrap? <span class='text-success'>Yes</span>",
-        "Would you like to use MongoDB with Mongoose for data modeling? <span class='text-success'>Yes</span>",
-        "Would you scaffold out an authentication boilerplate? <span class='text-success'>Yes</span>",
-        "Would you like to include additional oAuth strategies? <span class='text-success'>Twitter</span>",
-        "Would you like to use socket.io? <span class='text-success'>No</span>",
-        "May bower anonymously report usage statistics to improve the tool over time? (Y/n) <span class='text-success'>Y</span>",
-        "You may get an error similar to <code> ERR! EEXIST, open ‘/home/ubuntu/.npm</code>. This is caused when Cloud9 runs out of memory and kills an install. If you get this, simply re-run this process with the command <code>yo angular-fullstack</code>. You will then be asked a few questions regarding the re-install. Answer them as follows:",
-        "Existing .yo-rc configuration found, would you like to use it? (Y/n) <span class='text-success'>Y</span>",
-        "Overwrite client/favicon.ico? (Ynaxdh) <span class='text-success'>Y</span>",
-        "To finish the installation run the commands: <code>bower install && npm install</code>",
-        "To start MongoDB, run the following commands in your terminal: <code>mkdir data && echo 'mongod --bind_ip=$IP --dbpath=data --nojournal --rest \"$@\"' > mongod && chmod a+x mongod && ./mongod</code>",
-        "You will want to open up a new terminal to work from by clicking on the + icon and select New Terminal",
-        "Start the application by running the following command in your new terminal window: <code>grunt serve</code>",
-        "Wait for the following message to appear: <code>xdg-open: no method available for opening 'http://localhost:8080' </code>. Now you can open the internal Cloud9 browser. To launch the browser select Preview in the toolbar then select the dropdown option Preview Running Application.",
-        "Turn the folder in which your application is running into a Git repository by running the following commands: <code>git init && git add . && git commit -am 'initial commit'</code>.",
-        "Now we need to add your GitHub SSH key to c9.io. Click the \"Add-on Services\" button in the lower left of your C9 dashboard. Click \"activate\" next to the GitHub icon.",
-        "A pop up will appear. Allow access to your account.",
-        "While still on the dashboard, under “Account Settings”, click the link for \"Show your SSH key\". Copy the key to you clipboard.",
-        "Sign in to <a href='http://github.com' target='_blank'>http://github.com</a> and navigate to the GitHub SSH settings page. Click the \"Add SSH Key\". Give your key the title \"cloud 9\". Paste your SSH Key into the \"Key\" box, then click \"Add Key\".",
-        "Create a new GitHub repository by  and clicking on the + button next to your username in the upper-right hand side of your screen, then selecting \"New Repository\".",
-        "Enter a project name, then click the \"Create Repository\" button.",
-        "Find the \"...or push an existing repository from the command line\" section and click the Copy to Clipboard button beside it.",
-        "Paste the commands from your clipboard into the Cloud9 terminal prompt. This will push your changes to your repository on Cloud 9 up to GitHub.",
-        "Check back on your GitHub profile to verify the changes were successfully pushed up to GitHub.",
-        "Now let's push your code to Heroku. If you don't already have a Heroku account, create one at <a href='http://heroku.com' target='_blank'>http://heroku.com</a>. You shouldn't be charged for anything, but you will need to add your credit card information to your Heroku before you will be able to use Heroku's free MongoLab add on.",
-        "Before you publish to Heroku, you should free up as much memory as possible on Cloud9. In each of the Cloud9 terminal prompt tabs where MongoDB and Grunt are running, press the <code>control + c</code> hotkey to shut down these processes.",
-        "Run the following command in a Cloud9 terminal prompt tab: <code>npm install grunt-contrib-imagemin --save-dev && npm install --save-dev && heroku login</code>. At this point, the terminal will prompt you to log in to Heroku from the command line.",
-        "Now run <code>yo angular-fullstack:heroku</code>. You can choose a name for your Heroku project, or Heroku will create a random one for you. You can choose whether you want to deploy to servers the US or the EU.",
-        "Set the config flag for your Heroku environment and add MongoLab for your MongoDB instance by running the following command: <code>cd ~/workspace/dist && heroku config:set NODE_ENV=production && heroku addons:create mongolab</code>.",
-        "As you build your app, you should frequently commit changes to your codebase. Make sure you're in the <code>~/workspace</code> directory by running <code>cd ~/workspace</code>. Then you can use this code to stage the changes to your changes and commit them: <code>git commit -am \"your commit message\"</code>. Note that you should replace \"your commit message\" with a short summary of the changes you made to your code, such as \"added a records controller and corresponding routes\".",
-        "You can push these new commits to GitHub by running <code>git push origin master</code>, and to Heroku by running <code>grunt --force && grunt buildcontrol:heroku</code>.",
-        "If you need further guidance on using Yeoman Angular-Fullstack Generator, check out: <a href='https://github.com/clnhll/guidetobasejumps' target='_blank'>https://github.com/clnhll/guidetobasejumps</a>.",
-        "Now you're ready to move on to your first Basejump. Click the \"I've completed this challenge\" and move on."
+        [
+          "http://i.imgur.com/4IZjWZ3.gif",
+          "A gif showing how to create a c9.io account.",
+          "We recommend building our full stack Basejump challenges on c9.io, a powerful browser-based development environment. This save you hours of time that you would spend configuring your local computer to run Node.js and MongoDB - time you could instead spend coding. Create a c9.io account bu clicking the GitHub symbol in the upper right hand corner of the c9.io page. Click the big plus symbol to create a new workspace. Enter your email address when prompted.",
+          "http://c9.io"
+        ],
+        [
+          "http://i.imgur.com/F7i5Hhi.gif",
+          "A gif showing how to fill out the new workspace form",
+          "Instead of starting from scratch, we recommend using Clementine.js, a full stack JavaScript \"boilerplate\" that already has some basic code written for you. Clementine.js has a detailed tutorial you can go through to build it yourself, but for now let's just clone its code. On c9.io, give your workspace a name, then leave \"Template\" as custom and create your workspace from this GitHub url: <code>https://github.com/johnstonbl01/clementinejs-fcc.git</code>",
+          ""
+        ],
+        [
+          "http://i.imgur.com/42m1vyr.gif",
+          "A gif showing you how to show hidden files.",
+          "Click the gear in the upper right corner of c9.io's file structure. Select \"show hidden files\".",
+          ""
+        ],
+        [
+          "http://i.imgur.com/qrE8xaK.gif",
+          "A gif showing you how to create a new file.",
+          "Right click and create a new file called <code>.env</code>.",
+          ""
+        ],
+        [
+          "",
+          "A gif showing you how to prep your environmental variables in your .env file.",
+          "Open your .env file and paste this into it, then save it: <br><code>GITHUB_KEY=<br>GITHUB_SECRET=<br>MONGO_URI=mongodb://localhost:27017/clementinejs<br>PORT=8080<br>APP_URL=http://localhost:8080/</code>",
+          ""
+        ],
+        [
+          "http://i.imgur.com/BH2qLhB.gif",
+          "A gif showing you how to open c9.io's preview window.",
+          "Open up your application in a preview tab by clicking window > share > application > open.",
+          ""
+        ],
+        [
+          "http://i.imgur.com/EIiaiPg.gif",
+          "A gif showing you how to creat ea GitHub app using c9.io's preview URL.",
+          "Create a GitHub app for authentication and choose an \"Application name\". For the homepage URL, paste the URL from your preview tab. You'll also paste the URL from your preview tab into \"Authorization callback URL\", then add to it: <code>auth/github/callback</code>",
+          "https://github.com/settings/applications/new"
+        ],
+        [
+          "http://i.imgur.com/drPlNaE.gif",
+          "A gif showing you how to transfer GitHub's key and secret over to your .env file, as well as your c9.io URL.",
+          "GitHub will create an app and present you with a Client ID and a Client Secret. Set your .env file's GITHUB_KEY equal to the Client ID, and set your .env file's GITHUB_SECRET equal to the Client Secret. Copy the URL from the your preview tab and paste it into your .env file as your APP_URL.",
+          ""
+        ],
+        [
+          "http://i.imgur.com/VqCmJOh.gif",
+          "A gif showing you how to update the ajax-functions.js file with your c9.io preview URL.",
+          "Open <code>app/common/ajax-functions.js</code> and replace <code>http://localhost:8080/</code> with the URL from your clipboard (the URL from your preview tab).",
+          ""
+        ],
+        [
+          "http://i.imgur.com/bLXrt6P.gif",
+          "A gif showing you how to start mongoDB in c9.io's terminal.",
+          "In your terminal, start MongoDB by entering <code>mongod --smallfiles</code>",
+          ""
+        ],
+        [
+          "http://i.imgur.com/TNygDfF.gif",
+          "A gif showing you how to open a new tab in c9.io's terminal.",
+          "Open a new terminal tab with the + button above your terminal, then run <code>npm install</code>",
+          ""
+        ],
+        [
+          "http://i.imgur.com/NYk4VeS.gif",
+          "A gif showing you how to navigate to your preview tab and sign in to your new Clementine.js app.",
+          "run <code>node server.js</code> to start the server. Refresh your preview tab. You should see the Clementine.js logo. Click \"sign in\" and accept GitHub's prompt to authorize the application.",
+          ""
+        ],
+        [
+          "http://i.imgur.com/hA2MCee.gif",
+          "A gif showing you how to use Clementine.js's simple demo app.",
+          "Click the \"click me\" button and you'll see that it increments the number clicks. Click the profile button and you'll see that it has your GitHub information.",
+          ""
+        ],
+        [
+          "http://i.imgur.com/Q8IfdQj.gif",
+          "A gif showing you how to create a commit on c9.io, then create a GitHub repository and push your code up to it.",
+          "Create a commit by typing <code>git add . && git commit -m\"first commit\"</code>. Then open GitHub in a new tab and click \"New repository\". Name your repository, then click \"Create repository\". Then copy its .git URL. Return to c9.io's terminal and set your GitHub remote URL: <code>git remote set-url origin</code> followed by the URL you copied from GitHub. Run <code>git push origin master</code>. Now tab back to GitHub and refresh, and you'll see that your code is now on GitHub.",
+          ""
+        ]
       ],
-      "type": "waypoint",
-      "challengeType": 2,
-      "tests": []
+      "type": "Waypoint",
+      "challengeType": 7,
+      "tests": [],
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "id": "bd7158d8c443eddfaeb5bdef",
