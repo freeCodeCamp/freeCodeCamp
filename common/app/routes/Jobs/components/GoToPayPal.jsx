@@ -2,6 +2,27 @@ import React, { PropTypes } from 'react';
 import { Button, Col, Panel, Row } from 'react-bootstrap';
 import { contain } from 'thundercats-react';
 
+const paypalIds = {
+  regular: 'ZVU498PLMPHKU',
+  regularDiscount: '58U7P36W3L2GQ',
+  highlighted: '3YYSTBAMJYTUW',
+  highlightedDiscount: 'QGWTUZ9XEE6EL'
+};
+
+function getPaypalButton(isHighlighted, isNonprofit) {
+  if (isHighlighted) {
+    return isNonprofit ? paypalIds.highlightedDiscount : paypalIds.highlighted;
+  }
+  return isNonprofit ? paypalIds.regularDiscount : paypalIds.regular;
+}
+
+function getPrice(isHighlighted, isNonprofit) {
+  if (isHighlighted) {
+    return isNonprofit ? 150 : 250;
+  }
+  return isNonprofit ? 100 : 200;
+}
+
 export default contain(
   {
     store: 'JobsStore',
@@ -42,6 +63,13 @@ export default contain(
                     Clicking on the link below will redirect to paypal.
                   </Col>
                 </Row>
+                <Row>
+                  <Col
+                    md={ 6 }
+                    mdOffset={ 3 }>
+                    { getPrice(isHighlighted, true) }
+                  </Col>
+                </Row>
                 <div className='spacer' />
                 <Row>
                   <Col
@@ -58,10 +86,7 @@ export default contain(
                       <input
                           name='hosted_button_id'
                           type='hidden'
-                          value={ isHighlighted ?
-                            '' :
-                            'ZVU498PLMPHKU'
-                          } />
+                          value={ getPaypalButton(isHighlighted, true) } />
                       <input
                         name='custom'
                         type='hidden'
