@@ -5,7 +5,7 @@ require('dotenv').load();
 var Rx = require('rx');
 var app = require('../server/server');
 
-var Nonprofits = app.models.Challenge;
+var Nonprofits = app.models.Nonprofit;
 var nonprofits = require('./nonprofits.json');
 var destroy = Rx.Observable.fromNodeCallback(Nonprofits.destroyAll, Nonprofits);
 var create = Rx.Observable.fromNodeCallback(Nonprofits.create, Nonprofits);
