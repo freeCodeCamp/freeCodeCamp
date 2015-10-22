@@ -117,7 +117,7 @@ mongod
 # Initialize Free Code Camp
 # This will seed the database for the first time.
 # This command should only be run once.
-npm run init
+npm run first-time
 
 # start the application
 gulp
