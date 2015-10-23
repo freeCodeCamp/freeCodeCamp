@@ -1,12 +1,12 @@
 extends ../layout-wide
 block content
 
+    script(type='text/javascript', src='/bower_components/jshint/dist/jshint.js')
     script(type='text/javascript', src='/js/lib/codemirror/lib/codemirror.js')
     script(type='text/javascript', src='/js/lib/codemirror/addon/edit/closebrackets.js')
     script(type='text/javascript', src='/js/lib/codemirror/addon/edit/matchbrackets.js')
     script(type='text/javascript', src='/js/lib/codemirror/addon/lint/lint.js')
     script(type='text/javascript', src='/js/lib/codemirror/addon/lint/javascript-lint.js')
-    script(type='text/javascript', src='/bower_components/jshint/dist/jshint.js')
     script(type='text/javascript', src='/js/lib/chai/chai.js')
     link(rel='stylesheet', href='/js/lib/codemirror/lib/codemirror.css')
     link(rel='stylesheet', href='/js/lib/codemirror/addon/lint/lint.css')
@@ -88,8 +88,6 @@ block content
                         .form-group.codeMirrorView
                             textarea#codeEditor(autofocus=true, style='display: none;')
                     script(src=rev('/js', 'commonFramework.js'))
-                    script.
-                        editor.setOption("mode", "javascript");
 
     #complete-courseware-dialog.modal(tabindex='-1')
         .modal-dialog.animated.fadeIn.fast-animation
