@@ -43,7 +43,7 @@ block content
                         label.btn.btn-success#trigger-reset-modal
                             i.fa.fa-refresh
                                 | &nbsp; Reset
-                        label.btn.btn-success#trigger-help-modal
+                        label.btn.btn-success#challenge-help-btn
                             i.fa.fa-medkit
                                 | &nbsp; Help
                         label.btn.btn-success#trigger-issue-modal
@@ -98,7 +98,12 @@ block content
                             a.animated.fadeIn.btn.btn-lg.btn-primary.btn-block(href='/challenges/next-challenge?id=' + challengeId) Go to my next challenge
     include ../partials/challenge-modals
     script.
-        var MDNlinks = !{JSON.stringify(MDNlinks)};
-        if (!MDNlinks.length) {
-            $('#MDN-links').addClass('collapse');
+      var MDNlinks = !{JSON.stringify(MDNlinks)};
+      if (!MDNlinks.length) {
+          $('#MDN-links').addClass('collapse');
+      }
+      document.addEventListener('gitter-sidecar-ready', function(e) {
+        if (window.main) {
+          window.main.chat.createHelpChat('freecodecamp/help', '#challenge-help-btn');
         }
+      });

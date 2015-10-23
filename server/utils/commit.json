@@ -1,0 +1,18 @@
+[
+  {
+    "name": "girl develop it",
+    "displayName": "Girl Develop It",
+    "donateUrl": "https://www.girldevelopit.com/donate",
+    "description": "Girl Develop It provides in-person classes for women to learn to code.",
+    "imgAlt": "Girl Develop It participants coding at tables.",
+    "imgUrl": "http://i.imgur.com/U1CyEuA.jpg"
+  },
+  {
+    "name": "black girls code",
+    "displayName": "Black Girls CODE",
+    "donateUrl": "http://www.blackgirlscode.com/",
+    "description": "Black Girls CODE is devoted to showing the world that black girls can code, and do so much more.",
+    "imgAlt": "Girls developing code with instructor",
+    "imgUrl": "http://i.imgur.com/HBVrdaj.jpg"
+  }
+]

@@ -2,14 +2,13 @@ extends ../layout-wide
 block content
     .row
         .col-md-8.col-md-offset-2
-            .jumbotron
                 for step, index in description
                     .thumbnail.challenge-step(class=index !== 0 ? 'hidden': '')
                         img.gif-block.img-center.img-responsive.thumbnail(src='#{step[0]}' alt='#{step[1]}')
                         .caption
-                            p.large-p= step[2]
+                            p.large-p!= step[2]
                         if step[3]
-                            a.btn.btn-block.btn-primary.challenge-step-btn-action(id='#{index}' href='#{step[3]}' target='_blank') Go To Link
+                            a.btn.btn-block.btn-primary.challenge-step-btn-action(id='#{index}' href='#{step[3]}' target='_blank') Open link in new tab
                         if index + 1 === description.length
                             .btn.btn-block.btn-primary.challenge-step-btn-finish(id='last' class=step[3] ? 'disabled' : '') Finish challenge
                         else
@@ -27,7 +26,7 @@ block content
                       .spacer
                       .row
                       if (user)
-                          #challenge-step-btn-submit.animated.fadeIn.btn.btn-lg.btn-primary.btn-block Submit and go to my next challenge (ctrl + enter)
+                          #challenge-step-btn-submit.animated.fadeIn.btn.btn-lg.btn-primary.btn-block Submit and go to my next challenge
                       else
                           a.btn.btn-lg.btn-primary.btn-block(href='/challenges/next-challenge?id=' + challengeId) Go to my next challenge
     script(src=rev('/js', 'commonFramework.js'))

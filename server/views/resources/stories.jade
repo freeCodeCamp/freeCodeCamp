@@ -1,0 +1,23 @@
+extends ../layout
+block content
+    .panel.panel-info
+        .panel-heading.text-center Stories from happy campers
+        .panel-body.text-left
+            .row
+                .col-xs-12.col-sm-10.col-sm-offset-1
+                    .row
+                        for story in stories
+                            .col-xs-12.col-sm-6.col-md-4
+                                .story-section
+                                    a(href=story.linkedin target='_blank')
+                                        img.testimonial-image.img-responsive.img-center(src=story.image)
+                                    h3.text-center= story.camper
+                                        | &nbsp;
+                                        a.fa.fa-linkedin-square.text-primary(alt="#{story.camper}'s LinkedIn Profile", href=story.linkedin, target='_blank')
+                                    p.text-justify= story.quote
+
+
+            if !user
+                .text-center
+                    a.btn.btn-cta.signup-btn(href="/login") Start learning to code (it's free)
+            .spacer

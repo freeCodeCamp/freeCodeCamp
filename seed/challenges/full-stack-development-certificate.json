@@ -1,6 +1,7 @@
 {
   "name": "Claim Your Full Stack Development Certificate",
   "order": 21,
+  "time": "5m",
   "challenges": [
     {
       "id": "660add10cb82ac38a17513be",
@@ -15,7 +16,7 @@
       ],
       "description": [
         [
-          "http://i.imgur.com/qXublEe.jpg",
+          "http://i.imgur.com/sKYQhdG.jpg",
           "An image of our Full Stack Development Certificate",
           "This challenge will give you your verified Full Stack Development Certificate. Before we issue your certificate, we must verify that you have completed all of Bonfires, Ziplines and Basejumps. You must also accept our Academic Honesty Pledge. Click the button below to start this process.",
           ""

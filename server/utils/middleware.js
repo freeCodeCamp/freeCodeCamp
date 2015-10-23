@@ -1,8 +1,14 @@
-export function ifNoUserRedirectTo(url) {
+export function ifNoUserRedirectTo(url, message) {
   return function(req, res, next) {
+    const { path } = req;
     if (req.user) {
       return next();
     }
+
+    req.flash('errors', {
+      msg: message || `You must be signed to go to ${path}`
+    });
+
     return res.redirect(url);
   };
 }

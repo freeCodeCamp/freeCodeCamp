@@ -3,7 +3,7 @@ import debugFactory from 'debug';
 
 const debug = debugFactory('freecc:hikes:actions');
 
-function getCurrentHike(hikes =[{}], dashedName, currentHike) {
+function getCurrentHike(hikes = [{}], dashedName, currentHike) {
   if (!dashedName) {
     debug('no dashedName');
     return hikes[0];

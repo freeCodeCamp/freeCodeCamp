@@ -24,7 +24,7 @@ block content
                     var userLoggedIn = true;
             .button-spacer
             .btn-group.input-group.btn-group-justified
-                .btn.btn-success.btn-big#trigger-help-modal
+                .btn.btn-success.btn-big#challenge-help-btn
                     i.fa.fa-medkit
                         | &nbsp; Get help
                 .btn.btn-success.btn-big#trigger-issue-modal
@@ -74,8 +74,14 @@ block content
         script.
             $('body').bind('keypress', controlEnterHandler);
     script.
-        var challenge_Id = !{JSON.stringify(challengeId)};
-        var challenge_Name = !{JSON.stringify(name)};
-        var challengeType = !{JSON.stringify(challengeType)};
-        var dashedName = !{JSON.stringify(dashedName)};
+      var challenge_Id = !{JSON.stringify(challengeId)};
+      var challenge_Name = !{JSON.stringify(name)};
+      var challengeType = !{JSON.stringify(challengeType)};
+      var dashedName = !{JSON.stringify(dashedName)};
+      document.addEventListener('gitter-sidecar-ready', function(e) {
+        if (window.main) {
+          window.main.chat.createHelpChat('freecodecamp/help', '#challenge-help-btn');
+        }
+      });
     include ../partials/challenge-modals
+

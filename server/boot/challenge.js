@@ -16,9 +16,11 @@ import {
   ifNoUserSend
 } from '../utils/middleware';
 
+const isDev = process.env.NODE_ENV !== 'production';
+const isBeta = !!process.env.BETA;
 const debug = debugFactory('freecc:challenges');
 const challengesRegex = /^(bonfire|waypoint|zipline|basejump)/i;
-const firstChallenge = 'waypoint-say-hello-to-html-elements';
+const firstChallenge = 'waypoint-learn-how-free-code-camp-works';
 const challengeView = {
   0: 'coursewares/showHTML',
   1: 'coursewares/showJS',
@@ -47,12 +49,12 @@ function updateUserProgress(user, challengeId, completedChallenge) {
   let { completedChallenges } = user;
 
   // migrate user challenges object to remove
-  if (!user.isUniqMigrated) {
+  /* if (!user.isUniqMigrated) {
     user.isUniqMigrated = true;
 
     completedChallenges = user.completedChallenges =
       makeChallengesUnique(completedChallenges);
-  }
+  }*/
 
   const indexOfChallenge = _.findIndex(completedChallenges, {
     id: challengeId
@@ -105,6 +107,9 @@ module.exports = function(app) {
       null,
       Scheduler.default
     ))
+    // filter out all challenges that have isBeta flag set
+    // except in development or beta site
+    .filter(challenge => isDev || isBeta || !challenge.isBeta)
     .shareReplay();
 
   // create a stream of challenge blocks
@@ -181,7 +186,7 @@ module.exports = function(app) {
               );
             }
             const firstChallengeOfNextBlock$ = blocks$
-              .elementAtOrDefault(blockIndex + 1, {})
+              .elementAt(blockIndex + 1, {})
               .map(({ challenges = [] }) => challenges[0]);
 
             return blocks$
@@ -254,7 +259,7 @@ module.exports = function(app) {
       .filter((challenge) => {
         return testChallengeName.test(challenge.name);
       })
-      .lastOrDefault(null)
+      .last({ defaultValue: null })
       .flatMap(challenge => {
 
         // Handle not found
@@ -543,12 +548,15 @@ module.exports = function(app) {
           }
           return sum;
         }, 0);
+        const isBeta = _.every(blockArray, 'isBeta');
 
         return {
+          isBeta,
           name: blockArray[0].block,
           dashedName: dasherize(blockArray[0].block),
           challenges: blockArray,
-          completed: completedCount / blockArray.length * 100
+          completed: completedCount / blockArray.length * 100,
+          time: blockArray[0] && blockArray[0].time || "???"
         };
       })
       .filter(({ name }) => name !== 'Hikes')

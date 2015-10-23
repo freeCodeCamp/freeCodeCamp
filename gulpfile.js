@@ -79,6 +79,7 @@ var paths = {
   ],
 
   less: './client/less/main.less',
+  lessFiles: './client/less/*.less',
 
   manifest: 'server/manifests/',
 
@@ -392,7 +393,7 @@ var watchDependents = [
 ];
 
 gulp.task('watch', watchDependents, function() {
-  gulp.watch(paths.less, ['less']);
+  gulp.watch(paths.lessFiles, ['less']);
   gulp.watch(paths.js, ['js']);
   gulp.watch(paths.challenges, ['test-challenges']);
   gulp.watch(paths.js, ['js', 'dependents']);

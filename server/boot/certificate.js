@@ -18,6 +18,10 @@ import {
   fullStackChallangeId
 } from '../utils/constantStrings.json';
 
+import {
+  completeCommitment$
+} from '../utils/commit';
+
 const debug = debugFactory('freecc:certification');
 const sendMessageToNonUser = ifNoUserSend(
   'must be logged in to complete.'
@@ -27,7 +31,11 @@ function isCertified(frontEndIds, { completedChallenges, isFrontEndCert }) {
   if (isFrontEndCert) {
     return true;
   }
-  return _.every(frontEndIds, ({ id }) => _.some(completedChallenges, { id }));
+  return _.every(frontEndIds, ({ id }) => {
+    return _.some(completedChallenges, (challenge) => {
+      return challenge.id === id || challenge._id === id;
+    });
+  });
 }
 
 export default function certificate(app) {
@@ -114,7 +122,20 @@ export default function certificate(app) {
             completedDate: new Date(),
             challengeType
           });
-          return saveUser(user);
+          return saveUser(user)
+            // If user has commited to nonprofit,
+            // this will complete his pledge
+            .flatMap(
+              user => completeCommitment$(user),
+              (user, pledgeOrMessage) => {
+                if (typeof pledgeOrMessage === 'string') {
+                  debug(pledgeOrMessage);
+                }
+                // we are only interested in the user object
+                // so we ignore return from completeCommitment$
+                return user;
+              }
+            );
         }
         return Observable.just(user);
       })
@@ -128,8 +149,8 @@ export default function certificate(app) {
           }
           return res.status(200).send(
             dedent`
-              Looks like you have not completed the neccessary steps,
-              Please return the map
+              Looks like you have not completed the neccessary steps.
+              Please return to the challenge map.
             `
           );
         },
