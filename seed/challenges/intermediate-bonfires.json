@@ -148,7 +148,7 @@
         "where([{ first: \"Romeo\", last: \"Montague\" }, { first: \"Mercutio\", last: null }, { first: \"Tybalt\", last: \"Capulet\" }], { last: \"Capulet\" });"
       ],
       "tests": [
-        "assert.deepEqual(where([{ first: \"Romeo\", last: \"Montague\" }, { first: \"Mercutio\", last: null }, { first: \"Tybalt\", last: \"Capulet\" }], { last: \"Capulet\" }), [{ first: \"Tybalt\", last: \"Capulet\" }], 'message: <code>where()</code> should return an array of objects.');",
+        "assert.deepEqual(where([{ first: \"Romeo\", last: \"Montague\" }, { first: \"Mercutio\", last: null }, { first: \"Tybalt\", last: \"Capulet\" }], { last: \"Capulet\" }), [{ first: \"Tybalt\", last: \"Capulet\" }], 'message: <code>where([{ first: \"Romeo\", last: \"Montague\" }, { first: \"Mercutio\", last: null }, { first: \"Tybalt\", last: \"Capulet\" }], { last: \"Capulet\" })</code> should return an array of objects.');",
         "assert.deepEqual(where([{ \"a\": 1 }, { \"a\": 1 }, { \"a\": 1, \"b\": 2 }], { \"a\": 1 }), [{ \"a\": 1 }, { \"a\": 1 }, { \"a\": 1, \"b\": 2 }], 'message: <code>where([{ \"a\": 1 }, { \"a\": 1 }, { \"a\": 1, \"b\": 2 }], { \"a\": 1 })</code> should return <code>[{ \"a\": 1 }, { \"a\": 1 }, { \"a\": 1, \"b\": 2 }]</code>.');",
         "assert.deepEqual(where([{ \"a\": 1, \"b\": 2 }, { \"a\": 1 }, { \"a\": 1, \"b\": 2, \"c\": 2 }], { \"a\": 1, \"b\": 2 }), [{ \"a\": 1, \"b\": 2 }, { \"a\": 1, \"b\": 2, \"c\": 2 }], 'message: <code>where([{ \"a\": 1, \"b\": 2 }, { \"a\": 1 }, { \"a\": 1, \"b\": 2, \"c\": 2 }], { \"a\": 1, \"b\": 2 })</code> should return <code>[{ \"a\": 1, \"b\": 2 }, { \"a\": 1, \"b\": 2, \"c\": 2 }]</code>.');"
       ],
