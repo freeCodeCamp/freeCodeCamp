@@ -54,19 +54,23 @@ The easiest way to get started is to clone the repository:
 # Get the latest snapshot
 git clone --depth=1 https://github.com/freecodecamp/freecodecamp.git freecodecamp
 
+# Change directory
 cd freecodecamp
 
 # Install NPM dependencies
 npm install
+
+# Install Gulp globally
+npm install -g gulp
+
+# Install Bower globally
+npm install -g bower
 
 # Install Bower dependencies
 bower install
 
 # Create a .env file and populate it with the necessary API keys and secrets:
 touch .env
-
-# Install Gulp globally
-npm install -g gulp
 ```
 
 Edit your `.env` file with the following API keys accordingly (if you only use email login, only the `MONGOHQ_URL`, `SESSION_SECRET`, `MANDRILL_USER` and `MANDRILL_PASSWORD` fields are necessary. Keep in mind if you want to use more services you'll have to get your own API keys for those services.
@@ -107,20 +111,19 @@ DEBUG=true
 ```
 
 ```bash
-# Start the mongo server
+# Start the mongo server in a seperate terminal
 mongod
 
-# Create your mongo database.
-# Type "mongo" in your terminal to access the mongo shell
-use freecodecamp
-# Exit the mongo shell with control + d
-
-# Seed your database with the challenges
-node seed/
+# Initialize Free Code Camp
+# This will seed the database for the first time.
+# This command should only be run once.
+npm run first-time
 
 # start the application
 gulp
 ```
+Now navigate to your browser and open http://localhost:3001
+Congradulations! You did it!
 
 License
 -------
