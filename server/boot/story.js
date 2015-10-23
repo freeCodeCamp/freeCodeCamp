@@ -117,7 +117,8 @@ module.exports = function(app) {
   function submitNew(req, res) {
     if (!req.user.isGithubCool) {
       req.flash('errors', {
-        msg: 'You must authenticate with Github to post to Camper News'
+        msg: 'You must link GitHub with your account before you can post' +
+          ' on Camper News.'
       });
       return res.redirect('/news');
     }
