@@ -7,19 +7,18 @@
       "id": "bb000000000000000000001",
       "title":  "Trigger Click Events with jQuery",
       "description": [
-        "With jQuery we are able to get data from APIs via Ajax.",
-        "This data normally comes in the form of <code>JSON</code>.",
-        "Recall the <code>$(document).ready()</code> function. Remember that all code inside of it will run once the page loads.",
-        "Let's make our \"Get Message\" button change the text of a <code>div</code> element.",
-        "We will later use this to display the result of out API request.",
-        "First, implement the Click event inside of our <code>$(document).ready()</code> function by adding this code:",
+        "In this section, we'll learn how to get data from APIs. APIs are tools that computers use to communicate with one another.",
+        "We'll also learn how to update HTML with the data we get from these APIs using a technology called Ajax.",
+        "First, let's review what the <code>$(document).ready()</code> function does. This function makes it so all code inside of it only runs  once our page loads.",
+        "Let's make our \"Get Message\" button change the text of the element with the class <code>message</code>.",
+        "Before we can do this, we need to implement a Click event inside of our <code>$(document).ready()</code> function by adding this code:",
         "<code>$(\"#getMessage\").on(\"click\", function(){</code>",
         "",
         "<code>});</code>"
       ],
       "tests": [
-        "assert(editor.match(/\\$\\s*?\\(\\s*?(?:'|\")\\#getMessage(?:'|\")\\s*?\\)\\s*?\\.on\\s*?\\(\\s*?(?:'|\")click(?:'|\")\\s*?\\,\\s*?function\\s*?\\(\\s*?\\)\\s*?\\{/gi), 'Bind the click event to the button with the ID of <code>getMessage</code>.')",
-        "assert(editor.match(/\\n*?\\s*?\\}\\n*?\\s*?\\);/gi) && editor.match(/\\n*?\\s*?\\}\\);/gi).length >= 2, 'Be sure to close your functions with <code>});</code>.')"
+        "assert(editor.match(/\\$\\s*?\\(\\s*?(?:'|\")\\#getMessage(?:'|\")\\s*?\\)\\s*?\\.on\\s*?\\(\\s*?(?:'|\")click(?:'|\")\\s*?\\,\\s*?function\\s*?\\(\\s*?\\)\\s*?\\{/gi), 'Bind the click event to the button with the ID of <code>getMessage</code>')",
+        "assert(editor.match(/\\n*?\\s*?\\}\\n*?\\s*?\\);/gi) && editor.match(/\\n*?\\s*?\\}\\);/gi).length >= 2, 'Be sure to close your functions with <code>}&#41;;</code>')"
       ],
       "challengeSeed": [
         "fccss",
@@ -36,7 +35,7 @@
         "   <h2>Cat Photo Finder</h2>",
         " </div>",
         " <div class = \"row text-center\">",
-        "   <div class = \"col-xs-12 well Message\">",
+        "   <div class = \"col-xs-12 well message\">",
         "     The message will go here",
         "   </div>",
         " </div>",
@@ -53,16 +52,16 @@
       "type": "waypoint"
     },
     {
-      "id": "bb000000000000000000001",
+      "id": "bc000000000000000000001",
       "title":  "Change Text with Click Events",
       "description": [
         "When our Click Event happens, we can use Ajax to update an HTML element.",
-        "Let's make it so that when a user clicks our \"Get Message\" button, we change the text of our <code>div</code> with the class <code>message</code> to say \"Here is the message\".",
+        "Let's make it so that when a user clicks the \"Get Message\" button, we change the text of the element with the class <code>message</code> to say \"Here is the message\".",
         "We can do this by adding the following code within our Click event:",
         "<code>&thinsp;&thinsp;$(\".message\").html(\"Here is the message\");</code>"
       ],
       "tests": [
-        "assert(editor.match(/\\$\\s*?\\(\\s*?(?:'|\")\\.message(?:'|\")\\s*?\\)\\s*?\\.html\\s*?\\(\\s*?(?:'|\")Here\\sis\\sthe\\smessage(?:'|\")\\s*?\\);/gi), 'You should set te value of the #message box to be the message given in the description.')"
+        "assert(editor.match(/\\$\\s*?\\(\\s*?(?:'|\")\\.message(?:'|\")\\s*?\\)\\s*?\\.html\\s*?\\(\\s*?(?:'|\")Here\\sis\\sthe\\smessage(?:'|\")\\s*?\\);/gi), 'Clicking the \"Get Message\" button should give the element with the class <code>message</code> the text \"Here is the message\".')"
       ],
       "challengeSeed": [
         "fccss",
@@ -103,12 +102,13 @@
       "description": [
         "You can also request data from an external source. This is where APIs - Application Interfaces - come into play.",
         "Most modern APIs transfer data in a format called JSON. JSON stands for JavaScript Object Notation.",
-        "You've already been JSON whenever you've created JavaScript objects. JSON is just a bunch of object properties and their current values, sandwiched between a <code>{</code> and a <code>}</code>. You may hear these referred to as \"key-value pairs\".",
-        "Let's get the JSON from Free Code Camp's Cat API. Here's the code you can put in your Click event to do this:",
+        "You've already been using JSON whenever you create a JavaScript objects. JSON is just a bunch of object properties and their current values, sandwiched between a <code>{</code> and a <code>}</code>.",
+        "These properties and their values are often referred to as \"key-value pairs\".",
+        "Let's get the JSON from Free Code Camp's Cat Photo API.",
+        "Here's the code you can put in your Click event to do this:",
         "<code>&thinsp;&thinsp;$.getJSON(\"/json/cats.json?callback=\", function( json ) {</code>",
         "<code>&thinsp;&thinsp;&thinsp;&thinsp;$(\".message\").html(JSON.stringify(json))</code>",
-        "<code>&thinsp;&thinsp;});</code>",
-        "<code>});</code>"
+        "<code>&thinsp;&thinsp;});</code>"
       ],
       "tests": [
         "assert(editor.match(/\\$\\s*?\\(\\s*?(\\\"|\\')\\#getMessage(\\\"|\\')\\s*?\\)\\s*?\\.\\s*?on\\s*?\\(\\s*?(\\\"|\\')click(\\\"|\\')\\s*?\\,\\s*?function\\s*?\\(\\s*?\\)\\s*?\\{/gi), 'You should have a click handler on the getMessage button to trigger the AJAX request.')",
@@ -137,7 +137,7 @@
         "   <h2>Cat Photo Finder</h2>",
         " </div>",
         " <div class = \"row text-center\">",
-        "   <div class = \"col-xs-12 well Message\">",
+        "   <div class = \"col-xs-12 well message\">",
         "     The message will go here",
         "   </div>",
         " </div>",
@@ -201,7 +201,7 @@
         "   <h2>Cat Photo Finder</h2>",
         " </div>",
         " <div class = \"row text-center\">",
-        "   <div class = \"col-xs-12 well Message\">",
+        "   <div class = \"col-xs-12 well message\">",
         "     The message will go here","   </div>",
         " </div>",
         " <div class = \"row text-center\">",
@@ -274,7 +274,7 @@
         "   <h2>Cat Photo Finder</h2>",
         " </div>",
         " <div class = \"row text-center\">",
-        "   <div class = \"col-xs-12 well Message\">",
+        "   <div class = \"col-xs-12 well message\">",
         "     The message will go here",
         "   </div>",
         " </div>",
@@ -353,7 +353,7 @@
         "   <h2>Cat Photo Finder</h2>",
         " </div>",
         " <div class = \"row text-center\">",
-        "   <div class = \"col-xs-12 well Message\">",
+        "   <div class = \"col-xs-12 well message\">",
         "     The message will go here",
         "   </div>",
         " </div>",
