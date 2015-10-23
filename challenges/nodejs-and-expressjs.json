@@ -1,6 +1,7 @@
 {
   "name": "Node.js and Express.js",
   "order" : 18,
+  "time": "20h",
   "challenges": [
     {
       "id": "bd7153d8c441eddfaeb5bd0f",
@@ -33,13 +34,7 @@
         "Complete \"Publish\"",
         "Complete \"Version\"",
         "Complete \"Publish Again\"",
-        "Complete \"Dist Tag\"",
-        "Complete \"Dist Tag Removal\"",
-        "Complete \"Outdated\"",
-        "Complete \"Update\"",
-        "Complete \"RM\"",
-        "Complete \"Finale\"",
-        "Once you've completed these steps, move on to our next challenge."
+        "Note Once you've completed these steps, you can skip the rest (which are currently buggy) and move on to our next challenge."
       ],
       "type": "waypoint",
       "challengeType": 2,
@@ -103,7 +98,7 @@
       "description": [
         "Let's continue the LearnYouNode Node School challenge. For this Waypoint, we'll do challenges 8 through 10.",
         "Make sure that you are always in your project's \"workspace\" directory. You can always navigate back to this directory by running this command: <code>cd ~/workspace</code>.",
-        "Return to the c9.io workspace you created Now start this tutorial by running <code>learnyounode</code>",
+        "Return to the c9.io workspace you created. Now start this tutorial by running <code>learnyounode</code>",
         "You can view this Node School module's source code on GitHub at <a href='https://github.com/workshopper/learnyounode'>https://github.com/workshopper/learnyounode</a>.",
         "Complete \"HTTP Collect\"",
         "Complete \"Juggling Async\"",

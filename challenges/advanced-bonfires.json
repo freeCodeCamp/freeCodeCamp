@@ -1,6 +1,7 @@
 {
   "name": "Advanced Algorithm Scripting",
   "order": 15,
+  "time": "50h",
   "challenges": [
     {
       "id": "aff0395860f5d3034dc0bfc9",
@@ -39,7 +40,9 @@
         "assert(telephoneCheck(\"27576227382\") === false, 'message: <code>telephoneCheck(\"27576227382\")</code> should return false.');",
         "assert(telephoneCheck(\"(275)76227382\") === false, 'message: <code>telephoneCheck(\"(275)76227382\")</code> should return false.');",
         "assert(telephoneCheck(\"2(757)6227382\") === false, 'message: <code>telephoneCheck(\"2(757)6227382\")</code> should return false.');",
-        "assert(telephoneCheck(\"2(757)622-7382\") === false, 'message: <code>telephoneCheck(\"2(757)622-7382\")</code> should return false.');"
+        "assert(telephoneCheck(\"2(757)622-7382\") === false, 'message: <code>telephoneCheck(\"2(757)622-7382\")</code> should return false.');",
+        "assert(telephoneCheck(\"555)-555-5555\") === false, 'message: <code>telephoneCheck(\"555)555-5555\")</code> should return false.');",
+        "assert(telephoneCheck(\"(555-555-5555\") === false, 'message: <code>telephoneCheck(\"(555-555-5555\")</code> should return false.');"
       ],
       "challengeSeed": [
         "function telephoneCheck(str) {",
@@ -142,6 +145,7 @@
         "assert.deepEqual(drawer(19.50, 20.00, [[\"PENNY\", 1.01], [\"NICKEL\", 2.05], [\"DIME\", 3.10], [\"QUARTER\", 4.25], [\"ONE\", 90.00], [\"FIVE\", 55.00], [\"TEN\", 20.00], [\"TWENTY\", 60.00], [\"ONE HUNDRED\", 100.00]]), [[\"QUARTER\", 0.50]], 'message: <code>drawer(19.50, 20.00, [[\"PENNY\", 1.01], [\"NICKEL\", 2.05], [\"DIME\", 3.10], [\"QUARTER\", 4.25], [\"ONE\", 90.00], [\"FIVE\", 55.00], [\"TEN\", 20.00], [\"TWENTY\", 60.00], [\"ONE HUNDRED\", 100.00]])</code> should return <code>[[\"QUARTER\", 0.50]]</code>.');",
         "assert.deepEqual(drawer(3.26, 100.00, [[\"PENNY\", 1.01], [\"NICKEL\", 2.05], [\"DIME\", 3.10], [\"QUARTER\", 4.25], [\"ONE\", 90.00], [\"FIVE\", 55.00], [\"TEN\", 20.00], [\"TWENTY\", 60.00], [\"ONE HUNDRED\", 100.00]]), [[\"TWENTY\", 60.00], [\"TEN\", 20.00], [\"FIVE\", 15], [\"ONE\", 1], [\"QUARTER\", 0.50], [\"DIME\", 0.20], [\"PENNY\", 0.04]], 'message: <code>drawer(3.26, 100.00, [[\"PENNY\", 1.01], [\"NICKEL\", 2.05], [\"DIME\", 3.10], [\"QUARTER\", 4.25], [\"ONE\", 90.00], [\"FIVE\", 55.00], [\"TEN\", 20.00], [\"TWENTY\", 60.00], [\"ONE HUNDRED\", 100.00]])</code> should return <code>[[\"TWENTY\", 60.00], [\"TEN\", 20.00], [\"FIVE\", 15], [\"ONE\", 1], [\"QUARTER\", 0.50], [\"DIME\", 0.20], [\"PENNY\", 0.04]]</code>.');",
         "assert.deepEqual(drawer(19.50, 20.00, [[\"PENNY\", 0.01], [\"NICKEL\", 0], [\"DIME\", 0], [\"QUARTER\", 0], [\"ONE\", 0], [\"FIVE\", 0], [\"TEN\", 0], [\"TWENTY\", 0], [\"ONE HUNDRED\", 0]]), \"Insufficient Funds\", 'message: <code>drawer(19.50, 20.00, [[\"PENNY\", 0.01], [\"NICKEL\", 0], [\"DIME\", 0], [\"QUARTER\", 0], [\"ONE\", 0], [\"FIVE\", 0], [\"TEN\", 0], [\"TWENTY\", 0], [\"ONE HUNDRED\", 0]])</code> should return \"Insufficient Funds\".');",
+        "assert.deepEqual(drawer(19.50, 20.00, [[\"PENNY\", 0.01], [\"NICKEL\", 0], [\"DIME\", 0], [\"QUARTER\", 0], [\"ONE\", 1.00], [\"FIVE\", 0], [\"TEN\", 0], [\"TWENTY\", 0], [\"ONE HUNDRED\", 0]]), \"Insufficient Funds\", 'message: <code>drawer(19.50, 20.00, [[\"PENNY\", 0.01], [\"NICKEL\", 0], [\"DIME\", 0], [\"QUARTER\", 0], [\"ONE\", 1.00], [\"FIVE\", 0], [\"TEN\", 0], [\"TWENTY\", 0], [\"ONE HUNDRED\", 0]])</code> should return \"Insufficient Funds\".');",
         "assert.deepEqual(drawer(19.50, 20.00, [[\"PENNY\", 0.50], [\"NICKEL\", 0], [\"DIME\", 0], [\"QUARTER\", 0], [\"ONE\", 0], [\"FIVE\", 0], [\"TEN\", 0], [\"TWENTY\", 0], [\"ONE HUNDRED\", 0]]), \"Closed\", 'message: <code>drawer(19.50, 20.00, [[\"PENNY\", 0.50], [\"NICKEL\", 0], [\"DIME\", 0], [\"QUARTER\", 0], [\"ONE\", 0], [\"FIVE\", 0], [\"TEN\", 0], [\"TWENTY\", 0], [\"ONE HUNDRED\", 0]])</code> should return \"Closed\".');"
       ],
       "MDNlinks": [

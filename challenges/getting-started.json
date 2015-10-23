@@ -1,6 +1,7 @@
 {
   "name": "Get Started with Free Code Camp",
   "order": 1,
+  "time": "10m",
   "challenges": [
     {
       "id": "560add10cb82ac38a17513be",
@@ -9,13 +10,13 @@
       "description": [
         [
           "http://i.imgur.com/RlEk2IF.jpg",
-          "a picture of Free Code Camp's 4 benefits: Get connected, Learn JavaScript, Build your Portfolio, Help nonprofits",
+          "A picture of Free Code Camp's 4 benefits: Get connected, Learn JavaScript, Build your Portfolio, Help nonprofits",
           "Welcome to Free Code Camp. We're an open source community of busy people who learn to code and help nonprofits.",
           ""
         ],
         [
           "http://i.imgur.com/pYsTbjI.jpg",
-          "a screenshot of our curriculum alongside a screenshot of our chat room.",
+          "A screenshot of our curriculum alongside a screenshot of our chat room.",
           "Learning to code is hard. To succeed, you'll need lots of practice and support. That's why we've created a rigorous curriculum and supportive community.",
           ""
         ],
@@ -32,14 +33,14 @@
           ""
         ],
         [
-          "http://i.imgur.com/q4IjuCL.jpg",
-          "a screenshot of our Front End Development Certificate",
+          "http://i.imgur.com/sKYQhdG.jpg",
+          "A screenshot of our Front End Development Certificate",
           "About half way through our curriculum, you'll earn a verified Front End Development Certificate. If you can finish our entire curriculum, you'll earn a verified Full Stack Development Certificate.",
           ""
         ],
         [
           "http://i.imgur.com/yXyxbDd.jpg",
-          "a screen shot of our nonprofit project directory.",
+          "A screen shot of our nonprofit project directory.",
           "Then you'll build several real-life projects for nonprofits. By the time you finish, you'll have a portfolio of real apps that people use every day.",
           ""
         ]
@@ -65,7 +66,7 @@
       "description": [
         [
           "http://i.imgur.com/EAR7Lvh.jpg",
-          "a screenshot of our one of our Gitter chat rooms.",
+          "A screenshot of our one of our Gitter chat rooms.",
           "Now let's join Free Code Camp's chat rooms. You can come here any time of day to hang out, ask questions, or find another camper to pair program with. First you'll need a GitHub account.",
           ""
         ],
@@ -82,15 +83,15 @@
           "https://github.com/settings/profile"
         ],
         [
-          "http://i.imgur.com/OXL3G3n.gif",
-          "Click the link below to navigate to Free Code Camp's open-source repository. In the upper right hand corner, you can click the \"star\" button to star this repository.",
+          "http://i.imgur.com/pYk0wOk.gif",
+          "A gif showing how you can star a GitHub repo.",
           "Go to Free Code Camp's open-source repository and \"star\" it. \"Starring\" is the GitHub equivalent of \"liking\" something.",
           "https://github.com/freecodecamp/freecodecamp"
         ],
         [
-          "http://i.imgur.com/EZHzKCV.gif",
+          "http://i.imgur.com/zwYPeQT.gif",
           "A gif showing you how to click the link below to go to our chat room and click the \"sign in with GitHub\" button. Then you can click into the text input field and type a message to your fellow campers.",
-          " Now that you have a GitHub account, you can join our main chat room by logging in with GitHub. Introduce yourself by saying \"Hello world!\". Tell your fellow campers how you found Free Code Camp. Also tell us why you want to learn to code.",
+          "Now that you have a GitHub account, you can join our main chat room by logging in with GitHub. Introduce yourself by saying \"Hello world!\". Tell your fellow campers how you found Free Code Camp. Also tell us why you want to learn to code.",
           "https://gitter.im/FreeCodeCamp/FreeCodeCamp"
         ],
         [
@@ -112,7 +113,7 @@
           ""
         ],
         [
-          "http://i.imgur.com/SLQ27Gr.gif",
+          "http://i.imgur.com/WvQvNGN.gif",
           "A gif showing how you can click the link below to download a native chat room app for your computer.",
           "You can also download the chat room app to your computer or phone.",
           "https://gitter.im/apps"
@@ -134,51 +135,13 @@
     },
     {
       "id": "560add56cb82ac38a17513c0",
-      "title": "Configure your Public Profile",
+      "title": "Configure your Code Portfolio",
       "challengeSeed": [],
       "description": [
         [
-          "http://i.imgur.com/FkEzbto.gif",
-          "A gif showing how you can click your profile image in your upper right hand corner to access the account page and connect GitHub.",
-          "Check out your portfolio page. Click your picture your upper right hand corner. To activate your portfolio page, you'll need to link your GitHub account with Free Code Camp.",
-          ""
-        ],
-        [
-          "http://i.imgur.com/WKzEr1q.gif",
-          "A gif showing how you can access your profile page and hover over different days to see how many brownie points you got on those days.",
-          "Your portfolio page shows your progress and how many Brownie Points you have. You can get Brownie Points by completing challenges and by helping other campers in our chat rooms. If you get Brownie Points on several days in a row, you'll get a streak.",
-          ""
-        ]
-      ],
-      "type": "Waypoint",
-      "challengeType": 7,
-      "tests": [],
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
-      "nameRu": "",
-      "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
-      "namePt": "",
-      "descriptionPt": []
-    },
-    {
-      "id": "560add65cb82ac38a17513c1",
-      "title": "Try our Wiki and Camper News",
-      "challengeSeed": [],
-      "description": [
-        [
-          "http://i.imgur.com/DoOqkNW.gif",
-          "A gif showing how you can click the \"Wiki\" button in your upper-right corner to access the wiki.",
-          "Try this: Click the \"Wiki\" button in your upper right hand corner. Our community has contributed lots of useful information to this searchable wiki.",
-          ""
-        ],
-        [
-          "http://i.imgur.com/nmSiMy1.gif",
-          "A gif showing how you can access our Camper News page and click the \"upvote\" button to upvote a story.",
-          "Click the \"News\" button in your upper right hand corner. You can browse links on Camper News and upvote ones that you enjoy.",
+          "http://i.imgur.com/tP2ccTE.gif",
+          "A gif showing how you can click your profile image in your upper right hand corner to your code portfolio and connect GitHub.",
+          "Check out your code portfolio. Click your picture in your upper right hand corner. To activate your code portfolio, you'll need to link your GitHub account with Free Code Camp. Your code portfolio shows your progress and how many Brownie Points you have. You can get Brownie Points by completing challenges and by helping other campers in our chat rooms. If you get Brownie Points on several days in a row, you'll get a streak.",
           ""
         ]
       ],
@@ -208,42 +171,10 @@
           ""
         ],
         [
-          "http://i.imgur.com/EZHzKCV.gif",
+          "http://i.imgur.com/fTFMjwf.gif",
           "A gif showing how you can click the link below, find your city on the list of Campsites, then click on the Facebook link for your city and join your city's Facebook group.",
-          "Find your city on this list, click the \"Facebook\" link, then click the \"Join group\" button to apply to join your city's Facebook group (someone from the campsite should approve you shortly). If your city isn't on this list, scroll to the bottom of the wiki article for instructions for how you can create your city's Campsite.",
+          "Find your city on this list and click it. This will take you to your city's Campsite's Facebook group. Click the \"Join group\" button to apply to join your city's Facebook group. Someone from the campsite should approve you shortly. If your city isn't on this list, scroll to the bottom of the wiki article for instructions for how you can create your city's Campsite.",
           "https://github.com/FreeCodeCamp/freecodecamp/wiki/List-of-Free-Code-Camp-city-based-Campsites"
-        ]
-      ],
-      "type": "Waypoint",
-      "challengeType": 7,
-      "tests": [],
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
-      "nameRu": "",
-      "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
-      "namePt": "",
-      "descriptionPt": []
-    },
-    {
-      "id": "560add8ccb82ac38a17513c3",
-      "title": "Join our Alumni Network and Commit to Your Goal",
-      "challengeSeed": [],
-      "description": [
-        [
-          "http://i.imgur.com/P7qfJXt.gif",
-          "A gif showing how you can click the link below and fill in the necessary fields to add your Free Code Camp studies to your LinkedIn profile.",
-          "You can add Free Code Camp to your LinkedIn education background. Set your graduation date as next year. For \"Degree\", type \"Full Stack Web Development\". For \"Field of study\", type \"Computer Software Engineering\". Then click \"Save Changes\".",
-          "https://www.linkedin.com/profile/edit-education?school=Free+Code+Camp"
-        ],
-        [
-          "",
-          "",
-          "Free Code Camp will always be free. If you want to feel more motivated to earn our certificates faster, we encourage you to instead pledge to donate to a nonprofit each day.",
-          ""
         ]
       ],
       "type": "Waypoint",
@@ -290,8 +221,8 @@
           "https://gitter.im/FreeCodeCamp/Help"
         ],
         [
-          "http://i.imgur.com/WsfzvVo.gif",
-          "A gif showing us clicking the \"map\" button in our upper right hand corner and browsing our challenge map.",
+          "http://i.imgur.com/ZRgXraT.gif",
+          "A gif showing us scrolling through our challenge map.",
           "Now you're ready to start coding! The \"Map\" button in your upper right hand corner will show you our challenge map. This map shows all our coding challenges. We recommend that you complete these from top to bottom, at a sustainable pace. You can also return to your next challenge by clicking the \"Learn\" button.",
           ""
         ]

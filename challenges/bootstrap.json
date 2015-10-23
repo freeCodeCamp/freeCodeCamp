@@ -1,6 +1,7 @@
 {
   "name": "Responsive Design with Bootstrap",
   "order": 3,
+  "time": "2h",
   "challenges": [
     {
       "id": "bad87fee1348bd9acde08712",
@@ -13,8 +14,9 @@
         "To get started, we should nest all of our HTML in a <code>div</code> element with the class <code>container-fluid</code>."
       ],
       "tests": [
-        "assert($(\"div\").hasClass(\"container-fluid\"), 'Your <code>div</code> element should have the class <code>container-fluid</code>')",
-        "assert(editor.match(/<\\/div>/g) && editor.match(/<div/g) && editor.match(/<\\/div>/g).length === editor.match(/<div/g).length, 'Make sure each of your <code>div</code> elements has a closing tag.')"
+        "assert($(\"div\").hasClass(\"container-fluid\"), 'Your <code>div</code> element should have the class <code>container-fluid</code>.')",
+        "assert(editor.match(/<\\/div>/g) && editor.match(/<div/g) && editor.match(/<\\/div>/g).length === editor.match(/<div/g).length, 'Make sure each of your <code>div</code> elements has a closing tag.')",
+        "assert($(\".container-fluid\").children().length >= 8, 'Make sure you have nested all HTML elements in <code>.container-fluid</code>.')"
       ],
       "challengeSeed": [
         "<link href=\"http://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
@@ -89,7 +91,7 @@
       "id": "bad87fee1348bd9acde08812",
       "title": "Make Images Mobile Responsive",
       "description": [
-        "First, add a new image below the existing one. Set it's <code>src</code> attribute to <code>http://bit.ly/fcc-running-cats</code>.",
+        "First, add a new image below the existing one. Set its <code>src</code> attribute to <code>http://bit.ly/fcc-running-cats</code>.",
         "It would be great if this image could be exactly the width of our phone's screen.",
         "Fortunately, with Bootstrap, all we need to do is add the <code>img-responsive</code> class to your image. Do this, and the image should perfectly fit the width of your page."
       ],
@@ -2110,7 +2112,7 @@
       "tests": [
         "assert(editor.match(/<!--/g) && editor.match(/<!--/g).length > 0, 'Start a comment with <code>&#60;!--</code>.')",
         "assert(editor.match(/this line/g) && editor.match(/this line/g).length > 0, 'Your comment should have the text <code>You shouldn&#39;t need to modify code below this line</code>.')",
-        "assert(editor.match(/-->/g) && editor.match(/-->/g).length > 0, 'Be sure to close your comment with <code>--&#62;</code>.')"
+        "assert(editor.match(/-->.*\\n+.+/g), 'Be sure to close your comment with <code>--&#62;</code>.')"
       ],
       "challengeSeed": [
         "<div class=\"container-fluid\">",

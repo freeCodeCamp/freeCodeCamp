@@ -43,6 +43,7 @@ Challenge.destroyAll(function(err, info) {
     var challengeSpec = require('./challenges/' + file);
     var order = challengeSpec.order;
     var block = challengeSpec.name;
+    var isBeta = !!challengeSpec.isBeta;
 
     // challenge file has no challenges...
     if (challengeSpec.challenges.length === 0) {
@@ -66,6 +67,8 @@ Challenge.destroyAll(function(err, info) {
         challenge.order = order;
         challenge.suborder = index + 1;
         challenge.block = block;
+        challenge.isBeta = challenge.isBeta || isBeta;
+        challenge.time = challengeSpec.time;
 
         return challenge;
       });

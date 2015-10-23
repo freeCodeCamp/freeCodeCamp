@@ -1,6 +1,7 @@
 {
   "name": "Claim Your Front End Development Certificate",
   "order": 12,
+  "time": "5m",
   "challenges": [
     {
       "id": "561add10cb82ac38a17513be",
@@ -14,7 +15,7 @@
       ],
       "description": [
         [
-          "http://i.imgur.com/luMkKst.jpg",
+          "http://i.imgur.com/syJxavV.jpg",
           "An image of our Front End Development Certificate",
           "This challenge will give you your verified Front End Development Certificate. Before we issue your certificate, we must verify that you have completed all of our basic and intermediate Bonfires, and all our basic and intermediate Ziplines. You must also accept our Academic Honesty Pledge. Click the button below to start this process.",
           ""

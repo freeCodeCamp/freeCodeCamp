@@ -1,6 +1,7 @@
 {
   "name": "Automated Testing and Debugging",
   "order": 14,
+  "time": "15m",
   "challenges": [
     {
       "id":"cf1111c1c16feddfaeb6bdef",
