@@ -1373,7 +1373,7 @@
         "<code>}</code>"
       ],
       "tests": [
-        "assert((function(){var data = runSlots();if(data === null){return true}else{if(data[0] === data[1] && data[1] === data[2]){return true;}else{return false;}}})(), 'If all three of our random numbers are the same we should return that number. Otherwise we should return <code>null</code>.')"
+        "assert((function(){var data = runSlots();return data === null || data.toString().length === 1;})(), 'If all three of our random numbers are the same we should return that number. Otherwise we should return <code>null</code>.')"
       ],
       "challengeSeed": [
         "fccss",
@@ -1556,9 +1556,10 @@
         "    ",
         "    // Only change code above this line.",
         "    ",
-        "    if(slotOne !== slotTwo || slotTwo !== slotThree){",
-        "      return null;",
+        "    if(slotOne === slotTwo && slotTwo === slotThree){",
+        "      return slotOne;",
         "    }",
+        "    return null;",
         "    ",
         "    if(slotOne !== undefined && slotTwo !== undefined && slotThree !== undefined){",
         "      $(\".logger\").text(slotOne);",
@@ -1726,9 +1727,10 @@
         "    ",
         "    // Only change code above this line.",
         "    ",
-        "    if(slotOne !== slotTwo || slotTwo !== slotThree){",
-        "      return null;",
+        "    if(slotOne === slotTwo && slotTwo === slotThree){",
+        "      return slotOne;",
         "    }",
+        "    return null;",
         "    ",
         "    if(slotOne !== undefined && slotTwo !== undefined && slotThree !== undefined){",
         "      $('.logger').html(slotOne);",
