@@ -1311,7 +1311,7 @@
         "    // Only change code above this line.",
         "    ",
         "    if(slotOne !== undefined && slotTwo !== undefined && slotThree !== undefined){",
-        "      $(\".logger\").html(slotOne);",
+        "      $(\".logger\").text(slotOne);",
         "      $(\".logger\").append(\" \" + slotTwo);",
         "      $(\".logger\").append(\" \" + slotThree);",
         "    }",
