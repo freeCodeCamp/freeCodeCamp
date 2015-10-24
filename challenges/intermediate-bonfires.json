@@ -30,6 +30,9 @@
         "Math.min()",
         "Array.reduce()"
       ],
+      "solutions": [
+        "function sumAll(arr) {\n  var sum = 0;\n  arr.sort(function(a,b) {return a-b;});\n  for (var i = arr[0]; i <= arr[1]; i++) {\n    sum += i; \n  }\n  return sum;\n}\n\nsumAll([1, 4]);\n"
+      ],
       "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
@@ -76,6 +79,9 @@
         "Array.indexOf()",
         "Array.concat()"
       ],
+      "solutions": [
+        "function diff(arr1, arr2) {\n  var newArr = [];\n  var h1 = Object.create(null);\n  arr1.forEach(function(e) {\n    h1[e] = e;\n  });\n  \n  var h2 = Object.create(null);\n  arr2.forEach(function(e) {\n    h2[e] = e;\n  });\n  \n  Object.keys(h1).forEach(function(e) {\n     if (!(e in h2)) newArr.push(h1[e]);\n  });\n  Object.keys(h2).forEach(function(e) {\n     if (!(e in h1)) newArr.push(h2[e]);\n  });\n  // Same, same; but different.\n  return newArr;\n}\n\ndiff([1, 2, 3, 5], [1, 2, 3, 4, 5]);\n"
+      ],
       "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
@@ -117,6 +123,9 @@
         "Array.indexOf()",
         "Array.join()"
       ],
+      "solutions": [
+        "function convert(num) {\n  var ref = [['M', 1000], ['CM', 900], ['D', 500], ['CD', 400], ['C', 100], ['XC', 90], ['L', 50], ['XL', 40], ['X', 10], ['IX', 9], ['V', 5], ['IV', 4], ['I', 1]];\n  var res = [];\n  ref.forEach(function(p) {\n    while (num >= p[1]) {\n      res.push(p[0]);\n      num -= p[1];\n    }\n  });\n  return res.join('');\n}\n\nconvert(36);\n"
+      ],
       "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
@@ -156,6 +165,9 @@
         "Global Object",
         "Object.hasOwnProperty()",
         "Object.keys()"
+      ],
+      "solutions": [
+        "function where(collection, source) {\n  var arr = [];\n  var keys = Object.keys(source);\n  collection.forEach(function(e) {\n    if(keys.every(function(key) {return e[key] === source[key];})) {\n      arr.push(e);  \n    }\n  });\n  return arr;\n}\n\nwhere([{ first: 'Romeo', last: 'Montague' }, { first: 'Mercutio', last: null }, { first: 'Tybalt', last: 'Capulet' }], { last: 'Capulet' });\n"
       ],
       "type": "bonfire",
       "challengeType": 5,
@@ -200,6 +212,9 @@
         "String.replace()",
         "Array.join()"
       ],
+      "solutions": [
+        "function replace(str, before, after) {\n  if (before.charAt(0) === before.charAt(0).toUpperCase()) {\n    after = after.charAt(0).toUpperCase() + after.substring(1);\n  } else {\n    after = after.charAt(0).toLowerCase() + after.substring(1);\n  }\n  return str.replace(before, after);\n}\n\nreplace(\"A quick brown fox jumped over the lazy dog\", \"jumped\", \"leaped\");\n"
+      ],
       "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
@@ -243,6 +258,9 @@
         "String.substr()",
         "String.split()"
       ],
+      "solutions": [
+        "function translate(str) {\n  if (isVowel(str.charAt(0))) return str + \"way\";\n  var front = [];\n  str = str.split('');\n  while (str.length && !isVowel(str[0])) {\n    front.push(str.shift());\n  }\n  return [].concat(str, front).join('') + 'ay';\n}\n\nfunction isVowel(c) {\n  return ['a', 'e', 'i', 'o', 'u'].indexOf(c.toLowerCase()) !== -1;\n}\n\ntranslate(\"consonant\");\n"
+      ],
       "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
@@ -283,6 +301,9 @@
         "Array.push()",
         "String.split()"
       ],
+      "solutions": [
+        "var lookup = Object.create(null);\nlookup.A = 'T';\nlookup.T = 'A';\nlookup.C = 'G';\nlookup.G = 'C';\n\nfunction pair(str) {\n return str.split('').map(function(p) {return [p, lookup[p]];});\n}\n\npair(\"GCG\");\n"
+      ],
       "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
@@ -320,6 +341,9 @@
       "MDNlinks": [
         "String.charCodeAt()",
         "String.fromCharCode()"
+      ],
+      "solutions": [
+        "function fearNotLetter(str) {\n  var s = str.split('').map(function(c) {return c.charCodeAt(0);});\n  for (var i = 1; i < s.length; i++) {\n    if (s[i]-1 != s[i-1]) {\n      return String.fromCharCode(s[i]-1);\n    }\n  }\n}\n\nfearNotLetter('abce');\n"
       ],
       "type": "bonfire",
       "challengeType": 5,
@@ -363,6 +387,9 @@
       "MDNlinks": [
         "Boolean Objects"
       ],
+      "solutions": [
+        "function boo(bool) {\n  // What is the new fad diet for ghost developers? The Boolean.\n  return typeof(bool) === \"boolean\";\n}\n\nboo(null);\n"
+      ],
       "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
@@ -402,6 +429,9 @@
       "MDNlinks": [
         "Arguments object",
         "Array.reduce()"
+      ],
+      "solutions": [
+        "function unite(arr1, arr2, arr3) {\n  return [].slice.call(arguments).reduce(function(a, b) {\n    return [].concat(a, b.filter(function(e) {return a.indexOf(e) === -1;}));\n  }, []);\n}\n\nunite([1, 2, 3], [5, 2, 1, 4], [2, 1]);\n"
       ],
       "type": "bonfire",
       "challengeType": 5,
@@ -444,6 +474,9 @@
         "RegExp",
         "HTML Entities"
       ],
+      "solutions": [
+        "var MAP = { '&': '&amp;',\n            '<': '&lt;',\n            '>': '&gt;',\n            '\"': '&quot;',\n            \"'\": '&apos;'};\n\nfunction convert(str) {\n  return str.replace(/[&<>\"']/g, function(c) {\n    return MAP[c];\n  });\n}\n\nconvert('Dolce & Gabbana');\n"
+      ],
       "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
@@ -482,6 +515,9 @@
       "MDNlinks": [
         "RegExp",
         "String.replace()"
+      ],
+      "solutions": [
+        "function spinalCase(str) {\n  // \"It's such a fine line between stupid, and clever.\"\n  // --David St. Hubbins\n  str = str.replace(/([a-z](?=[A-Z]))/g, '$1 ');\n  return str.toLowerCase().replace(/\\ |\\_/g, '-');\n}\n\nspinalCase('This Is Spinal Tap');\n"
       ],
       "type": "bonfire",
       "challengeType": 5,
@@ -523,6 +559,9 @@
       "MDNlinks": [
         "Remainder"
       ],
+      "solutions": [
+        "function sumFibs(num) {\n  var a = 1; \n  var b = 1;\n  var s = 0;\n  while (a <= num) {\n    if (a % 2 !== 0) {   \n      s += a; \n    }\n    a = [b, b=b+a][0];\n  }\n  return s;\n}\n\nsumFibs(4);\n"
+      ],
       "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
@@ -560,6 +599,9 @@
       "MDNlinks": [
         "For Loops",
         "Array.push()"
+      ],
+      "solutions": [
+        "function eratosthenesArray(n) {\n    var primes = [];\n    if (n > 2) {\n        var half = n>>1;\n        var sieve = Array(half);\n        for (var i = 1, limit = Math.sqrt(n)>>1; i <= limit; i++) {\n            if (!sieve[i]) {\n                for (var step = 2*i+1, j = (step*step)>>1; j < half; j+=step) {\n                    sieve[j] = true;\n                }\n            }\n        }\n        primes.push(2);\n        for (var p = 1; p < half; p++) {\n            if (!sieve[p]) primes.push(2*p+1);\n        }\n    }\n    return primes;\n}\n\nfunction sumPrimes(num) {\n  return eratosthenesArray(num+1).reduce(function(a,b) {return a+b;}, 0);\n}\n\nsumPrimes(10);\n"
       ],
       "type": "bonfire",
       "challengeType": 5,
@@ -600,6 +642,9 @@
       "MDNlinks": [
         "Smallest Common Multiple"
       ],
+      "solutions": [
+        "function gcd(a, b) {\n    while (b !== 0) {\n        a = [b, b = a % b][0];\n    }\n    return a;\n}\n\nfunction lcm(a, b) {\n    return (a * b) / gcd(a, b);\n}\n\nfunction smallestCommons(arr) {\n  arr.sort(function(a,b) {return a-b;});\n  var rng = [];\n  for (var i = arr[0]; i <= arr[1]; i++) {\n    rng.push(i);\n  }\n  return rng.reduce(lcm);\n}\n\n\nsmallestCommons([1,5]);\n"
+      ],
       "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
@@ -634,6 +679,9 @@
       ],
       "MDNlinks": [
         "Array.filter()"
+      ],
+      "solutions": [
+        "function find(arr, func) {\n  var num;\n  arr.some(function(e) {\n    if (func(e)) {\n      num = e;\n      return true;\n    }\n  });\n  return num;\n}\n\nfind([1, 2, 3, 4], function(num){ return num % 2 === 0; });\n"
       ],
       "type": "bonfire",
       "challengeType": 5,
@@ -673,6 +721,9 @@
         "Arguments object",
         "Array.shift()"
       ],
+      "solutions": [
+        "(function drop(arr, func) {\n  // Drop them elements.\n  while (arr.length && !func(arr[0])) {\n    arr.shift();\n  }\n  return arr;\n}\n\ndrop([1, 2, 3], function(n) {return n < 3; });\n)"
+      ],
       "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
@@ -710,6 +761,9 @@
       "MDNlinks": [
         "Array.isArray()"
       ],
+      "solutions": [
+        "function steamroller(arr) {\n  if (!Array.isArray(arr)) {\n    return [arr];\n  }\n  var out = [];\n  arr.forEach(function(e) {\n    steamroller(e).forEach(function(v) {\n      out.push(v);\n    });\n  });\n  return out;\n}\n\nsteamroller([1, [2], [3, [[4]]]]);\n"
+      ],
       "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
@@ -745,6 +799,9 @@
       "MDNlinks": [
         "String.charCodeAt()",
         "String.fromCharCode()"
+      ],
+      "solutions": [
+        "function binaryAgent(str) {\n  return str.split(' ').map(function(s) { return parseInt(s, 2); }).map(function(b) { return String.fromCharCode(b);}).join('');\n}\n\nbinaryAgent('01000001 01110010 01100101 01101110 00100111 01110100 00100000 01100010 01101111 01101110 01100110 01101001 01110010 01100101 01110011 00100000 01100110 01110101 01101110 00100001 00111111');\n"
       ],
       "type": "bonfire",
       "challengeType": 5,
@@ -784,6 +841,9 @@
       "MDNlinks": [
         "Object.hasOwnProperty()",
         "Object.getOwnPropertyNames()"
+      ],
+      "solutions": [
+        "function every(collection, pre) {\n  // Does everyone have one of these?\n  return collection.every(function(e) { return e[pre]; });\n}\n\nevery([{'user': 'Tinky-Winky', 'sex': 'male'}, {'user': 'Dipsy', 'sex': 'male'}, {'user': 'Laa-Laa', 'sex': 'female'}, {'user': 'Po', 'sex': 'female'}], 'sex');\n"
       ],
       "type": "bonfire",
       "challengeType": 5,
@@ -827,6 +887,10 @@
       "MDNlinks": [
         "Closures",
         "Arguments object"
+      ],
+      "solutions": [
+        "function add() {\n  if (arguments.length == 1) {\n    var a = arguments[0];\n    if (!isNumber(a)) return;\n    return function(b) {\n      if (!isNumber(b)) return;\n      return a+b;\n    };\n  }\n  if (![].slice.call(arguments).every(isNumber)) return;\n  return arguments[0] + arguments[1];\n}\n  \nfunction isNumber(obj) {\n    return toString.call(obj) == '[object Number]';\n}\n\nadd(2,3);\n",
+        "function add() {\n  var a = arguments[0];\n  if (toString.call(a) !== '[object Number]') return;  \n  if (arguments.length === 1) {\n    return function(b) {\n      if (toString.call(b) !== '[object Number]') return;\n      return a + b;\n    };\n  }\n  var b = arguments[1];\n  if (toString.call(b) !== '[object Number]') return;  \n  return a + arguments[1];\n}\n\nadd(2,3);\n"
       ],
       "type": "bonfire",
       "challengeType": 5,
