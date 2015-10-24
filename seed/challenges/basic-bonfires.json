@@ -618,8 +618,9 @@
       "id": "a24c1a4622e3c05097f71d67",
       "title": "Where do I belong",
       "description": [
-        "Return the lowest index at which a value (second argument) should be inserted into a sorted array (first argument).",
-        "For example, where([1,2,3,4], 1.5) should return 1 because it is greater than 1 (0th index), but less than 2 (1st index).",
+        "Return the lowest index at which a value (second argument) should be inserted into an array (first argument) once it has been sorted.",
+        "For example, where([1,2,3,4], 1.5) should return 1 because it is greater than 1 (index 0), but less than 2 (index 1).",
+        "Likewise, where([20,3,5], 19) should return 2 because it is less than 20 (index 2) and greater than 5 (index 1).",
         "Remember to use <a href=\"//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck\" target=\"_blank\">Read-Search-Ask</a> if you get stuck. Write your own code."
       ],
       "challengeSeed": [
@@ -637,8 +638,8 @@
         "assert(where([10, 20, 30, 40, 50], 35) === 3, 'message: <code>where([10, 20, 30, 40, 50], 35)</code> should return <code>3</code>.');",
         "assert(where([10, 20, 30, 40, 50], 30) === 2, 'message: <code>where([10, 20, 30, 40, 50], 30)</code> should return <code>2</code>.');",
         "assert(where([40, 60], 50) === 1, 'message: <code>where([40, 60,], 50)</code> should return <code>1</code>.');",
-        "assert(where([5, 3, 20, 3], 3) === 0, 'message: <code>where([5, 3, 20, 3], 3)</code> should return <code>0</code>.');",
-        "assert(where([2, 20, 10], 1) === 0, 'message: <code>where([2, 20, 10], 1)</code> should return <code>0</code>.');",
+        "assert(where([5, 3, 20, 3], 5) === 2, 'message: <code>where([5, 3, 20, 3], 5)</code> should return <code>2</code>.');",
+        "assert(where([2, 20, 10], 19) === 2, 'message: <code>where([2, 20, 10], 19)</code> should return <code>2</code>.');",
         "assert(where([2, 5, 10], 15) === 3, 'message: <code>where([2, 5, 10], 15)</code> should return <code>3</code>.');"
       ],
       "type": "bonfire",
