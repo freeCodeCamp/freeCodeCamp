@@ -16,8 +16,7 @@
         "This is important because without your <code>document ready function</code>, your code may run before your HTML is rendered, which would cause bugs."
       ],
       "tests": [
-        "assert(editor.match(/<script>/g), 'Create a <code>script</code> element.')",
-        "assert(editor.match(/<\\/script>/g) && editor.match(/<script/g) && editor.match(/<\\/script>/g).length === editor.match(/<script/g).length, 'Make sure your <code>script</code> element has a closing tag.')",
+        "assert(editor.match(/<\\/script\\s*>/g) && editor.match(/<script(\\sasync|\\sdefer)*(\\s(charset|src|type)\\s*=\\s*[\"\\']+[^\"\\']*[\"\\']+)*(\\sasync|\\sdefer)*\\s*>/g) && editor.match(/<\\/script\\s*>/g).length === editor.match(/<script(\\sasync|\\sdefer)*(\\s(charset|src|type)\\s*=\\s*[\"\\']+[^\"\\']*[\"\\']+)*(\\sasync|\\sdefer)*\\s*>/g).length, 'Create a <code>script</code> element making sure it is valid and has a closing tag.')",
         "assert(editor.match(/\\$\\s*?\\(\\s*?document\\)\\.ready\\s*?\\(\\s*?function\\s*?\\(\\s*?\\)\\s*?\\{/g), 'You should add <code>$&#40;document&#41;.ready&#40;function&#40;&#41; {</code> to the beginning of your <code>script</code> element.')",
         "assert(editor.match(/\\n*?\\s*?\\}\\s*?\\);/g), 'Close your <code>$&#40;document&#41;.ready&#40;function&#40;&#41; {</code> function with <code>}&#41;;</code>.')"
       ],
