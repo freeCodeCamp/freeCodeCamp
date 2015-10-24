@@ -791,6 +791,14 @@
       "description":[
         "You can run the same code multiple times by using a loop.",
         "The most common type of JavaScript loop is called a \"for loop\" because it runs \"for\" a specific number of times.",
+        "",
+        "For loops are declared with three optional expressions seperated by semicolons:",
+        "<code>for([initialization]; [condition]; [final-expression])</code>",
+        "The <code>initialization</code> statement is executed one time only before the loop starts. It is typically used to define and setup your loop varaible.",
+        "The <code>condition</code> statement is evaluated at the beginning of every loop and will continue as long as it evalutes <code>true</code>. When <code>condition</code> is <code>false</code> at the start of the loop, the loop will stop executing.  This means if <code>condition</code> starts as <code>false</code>, your loop will never execute.",
+        "The <code>final-expression</code> is executed at the end of each loop iteration, prior to the next <code>condition</code> check and is usually used to increment or decrement your loop counter.",
+        "",
+        "We'll initialize with <code>i = 0</code> and loop while our condition <code>i < 5</code> is true.  We'll increment <code>i</code> by 1 each loop with <code>i++</code> as our <code>final-expression</code>.",
         "<code>var ourArray = [];</code>",
         "<code>for(var i = 0; i < 5; i++) {</code>",
         "<code>&thinsp;&thinsp;ourArray.push(i);</code>",
@@ -799,7 +807,7 @@
         "Let's try getting a for loop to work by pushing values to an array."
       ],
       "tests":[
-        "assert(editor.getValue().match(/for/g), 'message: You should be using a <code>for</code> loop for this.');",
+        "assert(editor.getValue().match(/for\\s*\\(/g).length > 1, 'message: You should be using a <code>for</code> loop for this.');",
         "assert.deepEqual(myArray, [0,1,2,3,4], 'message: <code>myArray</code> should equal [0,1,2,3,4].');"
       ],
       "challengeSeed":[
@@ -812,6 +820,84 @@
         "// Only change code below this line.",
         "",
         "// Push the numbers zero through four to myArray using a \"for loop\" like above.",
+        "",
+        "// Only change code above this line.",
+        "// We use this function to show you the value of your variable in your output box.",
+        "// You'll learn about functions soon.",
+        "if(typeof(myArray) !== \"undefined\"){(function(){return myArray;})();}",
+        ""
+      ],
+      "type": "waypoint",
+      "challengeType": 1
+    },
+    {
+      "id":"56104e9e514f539506016a5c",
+      "title": "Iterate Odd Numbers With a For Loop",
+      "difficulty":"9.9824",
+      "description":[
+        "For loops don't have to iterate one at a time. By changing our <code>final-expression</code>, we can count by even numbers.",
+        "We'll start at <code>i = 0</code> and loop while <code>i < 10</code>.  We'll increment <code>i</code> by 2 each loop with <code>i += 2</code>.",
+        "<code>var ourArray = [];</code>",
+        "<code>for(var i = 0; i < 10; i += 2) {</code>",
+        "<code>&thinsp;&thinsp;ourArray.push(i);</code>",
+        "<code>}</code>",
+        "<code>ourArray</code> will now contain [0,2,4,6,8] ",
+        "Let's change our <code>initialization</code> and <code>final-expression</code> so we can count by odd numbers."
+      ],
+      "tests":[
+        "assert(editor.getValue().match(/for\\s*\\(/g).length > 1, 'message: You should be using a <code>for</code> loop for this.');",
+        "assert.deepEqual(myArray, [1,3,5,7,9], 'message: <code>myArray</code> should equal [1,3,5,7,9].');"
+      ],
+      "challengeSeed":[
+        "ourArray = [];",
+        "for(var i = 1; i < 10; i += 2){",
+        "  ourArray.push(i);",
+        "}",
+        "var myArray = [];",
+        "",
+        "// Only change code below this line.",
+        "",
+        "// Push the odd numbers from one through nine to myArray using a \"for loop\" like above.",
+        "",
+        "// Only change code above this line.",
+        "// We use this function to show you the value of your variable in your output box.",
+        "// You'll learn about functions soon.",
+        "if(typeof(myArray) !== \"undefined\"){(function(){return myArray;})();}",
+        ""
+      ],
+      "type": "waypoint",
+      "challengeType": 1
+    },
+    {
+      "id":"56105e7b514f539506016a5e",
+      "title": "Count Backwards With a For Loop",
+      "difficulty":"9.9824",
+      "description":[
+        "A for loop can also count backwards, so long as we can define the right conditions.",
+        "",
+        "In order to count backwards by twos, we'll need to change our <code>initialization</code>, <code>condition</code>, and <code>final-expression</code>.",
+        "We'll start at <code>i = 10</code> and loop while <code>i > 0</code>.  We'll decrement <code>i</code> by 2 each loop with <code>i -= 2</code>.",
+        "<code>var ourArray = [];</code>",
+        "<code>for(var i = 10; i > 0; i -= 2) {</code>",
+        "<code>&thinsp;&thinsp;ourArray.push(i);</code>",
+        "<code>}</code>",
+        "<code>ourArray</code> will now contain [10,8,6,4,2] ",
+        "Let's change our <code>initialization</code> and <code>final-expression</code> so we can count backward by twos for numbers."
+      ],
+      "tests":[
+        "assert(editor.getValue().match(/for\\s*\\(/g).length > 1, 'message: You should be using a <code>for</code> loop for this.');",
+        "assert.deepEqual(myArray, [9,7,5,3,1], 'message: <code>myArray</code> should equal [9,7,5,3,1].');"
+      ],
+      "challengeSeed":[
+        "ourArray = [];",
+        "for(var i = 9; i > 0; i -= 2){",
+        "  ourArray.push(i);",
+        "}",
+        "var myArray = [];",
+        "",
+        "// Only change code below this line.",
+        "",
+        "// Push the odd numbers from nine through one to myArray using a \"for loop\" like above.",
         "",
         "// Only change code above this line.",
         "// We use this function to show you the value of your variable in your output box.",
