@@ -91,9 +91,8 @@
       "tests": [
         "assert.sameMembers(sym([1, 2, 3], [5, 2, 1, 4]), [3, 5, 4], 'message: <code>sym([1, 2, 3], [5, 2, 1, 4])</code> should return <code>[3, 5, 4]</code>.');",
         "assert.sameMembers(sym([1, 2, 5], [2, 3, 5], [3, 4, 5]), [1, 4, 5], 'message: <code>sym([1, 2, 5], [2, 3, 5], [3, 4, 5])</code> should return <code>[1, 4, 5]</code>');",
-        "assert.sameMembers(sym([1, 1, 2, 5], [2, 2, 3, 5], [3, 4, 5, 5]), [1, 4, 5], 'message: <code>sym([1, 1, 2, 5], [2, 2, 3, 5], [3, 4, 5, 5])</code> should return <code>[1, 4, 5]</code>.');",
-        "assert.sameMembers(sym([1, 1]), [1], 'message: <code>sym([1, 1])</code> should return <code>[1]</code>.');"
-      ],
+        "assert.sameMembers(sym([1, 1, 2, 5], [2, 2, 3, 5], [3, 4, 5, 5]), [1, 4, 5], 'message: <code>sym([1, 1, 2, 5], [2, 2, 3, 5], [3, 4, 5, 5])</code> should return <code>[1, 4, 5]</code>.');"
+       ],
       "MDNlinks": [
         "Array.reduce()",
         "Symmetric Difference"

@@ -97,8 +97,8 @@
       ],
       "tests": [
         "assert($(\"img\").length > 1, 'You should have a total of two images.')",
-        "assert($(\"img\").hasClass(\"img-responsive\"), 'Your new image should have the class <code>img-responsive</code>.')",
-        "assert(new RegExp(\"http://bit.ly/fcc-running-cats\", \"gi\").test($(\"img.img-responsive\").attr(\"src\")), 'Add a second image with the <code>src</code> of <code>http&#58;//bit.ly/fcc-running-cats</code>.')"
+        "assert($(\"img:eq(1)\").attr(\"src\") === \"http://bit.ly/fcc-running-cats\", 'Your new image should have an <code>src</code> of <code>http&#58;//bit.ly/fcc-running-cats</code>.')",
+        "assert($(\"img:eq(1)\").hasClass(\"img-responsive\"), 'Your new image should have the class <code>img-responsive</code>.')"
       ],
       "challengeSeed": [
         "<link href=\"http://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
