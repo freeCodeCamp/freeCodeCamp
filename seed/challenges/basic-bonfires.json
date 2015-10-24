@@ -618,8 +618,10 @@
       "id": "a24c1a4622e3c05097f71d67",
       "title": "Where do I belong",
       "description": [
-        "Return the lowest index at which a value (second argument) should be inserted into a sorted array (first argument).",
+        "Return the lowest index at which a value (second argument) should be inserted into an array (first argument).",
+        "The input array might be unsorted. Hence, sort it before finding the index.",
         "For example, where([1,2,3,4], 1.5) should return 1 because it is greater than 1 (0th index), but less than 2 (1st index).",
+        "And for where([2, 1, 7, 5], 5), it should return 2 because after sorting, the array becomes [1, 2, 5, 7] and 5 is greater than 2 (1st index) but less than or equal to 5 (2nd index).",
         "Remember to use <a href=\"//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck\" target=\"_blank\">Read-Search-Ask</a> if you get stuck. Write your own code."
       ],
       "challengeSeed": [
