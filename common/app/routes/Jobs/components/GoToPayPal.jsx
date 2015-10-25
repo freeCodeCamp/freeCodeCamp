@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import { Button, Col, Panel, Row } from 'react-bootstrap';
+import { Button, Col, Panel, Row, Well } from 'react-bootstrap';
 import { contain } from 'thundercats-react';
 
 const paypalIds = {
@@ -9,26 +9,17 @@ const paypalIds = {
   highlightedDiscount: 'QGWTUZ9XEE6EL'
 };
 
-function getPaypalButton(isHighlighted, isNonprofit) {
-  if (isHighlighted) {
-    return isNonprofit ? paypalIds.highlightedDiscount : paypalIds.highlighted;
-  }
-  return isNonprofit ? paypalIds.regularDiscount : paypalIds.regular;
-}
-
-function getPrice(isHighlighted, isNonprofit) {
-  if (isHighlighted) {
-    return isNonprofit ? 150 : 250;
-  }
-  return isNonprofit ? 100 : 200;
-}
-
 export default contain(
   {
     store: 'JobsStore',
     actions: 'JobActions',
-    map({ job: { id, isHighlighted } = {} }) {
-      return { id, isHighlighted };
+    map({
+      job: { id, isHighlighted } = {},
+      buttonId = paypalIds.regular,
+      price = 200,
+      discountAmount = 0
+    }) {
+      return { id, isHighlighted, buttonId, price, discountAmount };
     }
   },
   React.createClass({
@@ -36,11 +27,12 @@ export default contain(
 
     propTypes: {
       id: PropTypes.string,
-      isHighlighted: PropTypes.bool
+      isHighlighted: PropTypes.bool,
+      buttonId: PropTypes.string
     },
 
     render() {
-      const { id, isHighlighted } = this.props;
+      const { id, isHighlighted, buttonId, price, discountAmount } = this.props;
       return (
         <div>
           <Row>
@@ -63,13 +55,42 @@ export default contain(
                     Clicking on the link below will redirect to paypal.
                   </Col>
                 </Row>
-                <Row>
-                  <Col
-                    md={ 6 }
-                    mdOffset={ 3 }>
-                    { getPrice(isHighlighted, true) }
-                  </Col>
-                </Row>
+                <div className='spacer' />
+                <Well>
+                  <Row>
+                    <Col
+                      md={ 3 }
+                      mdOffset={ 3 }>
+                      <h4>Job Posting</h4>
+                    </Col>
+                    <Col
+                      md={ 6 }>
+                        <h4>+{ price }</h4>
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col
+                      md={ 3 }
+                      mdOffset={ 3 }>
+                      <h4>Discount</h4>
+                    </Col>
+                    <Col
+                      md={ 6 }>
+                        <h4>-{ discountAmount }</h4>
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col
+                      md={ 3 }
+                      mdOffset={ 3 }>
+                      <h4>Total</h4>
+                    </Col>
+                    <Col
+                      md={ 6 }>
+                        <h4>${ price - discountAmount }</h4>
+                    </Col>
+                  </Row>
+                </Well>
                 <div className='spacer' />
                 <Row>
                   <Col
@@ -86,7 +107,7 @@ export default contain(
                       <input
                           name='hosted_button_id'
                           type='hidden'
-                          value={ getPaypalButton(isHighlighted, true) } />
+                          value={ buttonId } />
                       <input
                         name='custom'
                         type='hidden'
