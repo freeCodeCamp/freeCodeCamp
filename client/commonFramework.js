@@ -374,8 +374,9 @@ var editor = (function(CodeMirror, emmetCodeMirror, common) {
   }
 
   var editor = CodeMirror.fromTextArea(document.getElementById('codeEditor'), {
+    lint: true,
     lineNumbers: true,
-    mode: 'text',
+    mode: 'javascript',
     theme: 'monokai',
     runnable: true,
     matchBrackets: true,

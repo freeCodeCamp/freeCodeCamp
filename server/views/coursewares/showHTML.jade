@@ -76,6 +76,7 @@ block content
                                 textarea#codeEditor(autofocus=true, style='display: none;')
                                 script(src=rev('/js', 'commonFramework.js'))
                                 script.
+                                    editor.setOption('lint', false);
                                     editor.setOption("mode", "text/html");
         .col-md-4.col-lg-3
             .hidden-xs.hidden-sm
