@@ -208,11 +208,64 @@ $(document).ready(function() {
 
       $('#search-issue').unbind('click');
       $('#search-issue').on('click', function() {
-          var queryIssue = window.location.href.toString();
+          var queryIssue = window.location.href.toString().split('#?')[0];
           window.open('https://github.com/FreeCodeCamp/FreeCodeCamp/issues?q=' +
             'is:issue is:all ' + (challenge_Name || challengeName) + ' OR ' +
             queryIssue.substr(queryIssue.lastIndexOf('challenges/') + 11)
             .replace('/', ''), '_blank');
+      });
+
+      $('#gist-share').unbind('click');
+      $('#gist-share').on('click', function() {
+        var gistWindow = window.open('', '_blank');
+
+        $('#gist-share')
+          .attr('disabled', 'true')
+          .removeClass('btn-danger')
+          .addClass('btn-warning disabled');
+
+        function createCORSRequest(method, url) {
+          var xhr = new XMLHttpRequest();
+          if ('withCredentials' in xhr) {
+            xhr.open(method, url, true);
+          } else if (typeof XDomainRequest !== 'undefined') {
+            xhr = new XDomainRequest();
+            xhr.open(method, url);
+          } else {
+            xhr = null;
+          }
+          xhr.setRequestHeader('Content-type', 'application/json; charset=utf-8');
+          return xhr;
+        }
+
+        var request = createCORSRequest('post', 'https://api.github.com/gists');
+        if (request) {
+          request.onload = function() {
+            if (request.readyState === 4 &&
+                request.status === 201 &&
+                request.statusText === 'Created') {
+              gistWindow.location.href = JSON.parse(request.responseText)['html_url'];
+            }
+          };
+          var data = {
+            description: (challenge_Name || challengeName),
+            public: true,
+            files: {}
+          },
+          queryIssue = window.location.href.toString().split('#?')[0],
+          filename = queryIssue
+          .substr(queryIssue.lastIndexOf('challenges/') + 11)
+          .replace('/', '') + '.js';
+          data['files'][filename] = {
+            content: '// ' + data.description + '\n' +
+            (username ? '// Author: @' + username + '\n' : '') +
+            '// Challenge: ' + queryIssue + '\n' +
+            '// Learn to Code at Free Code Camp (www.freecodecamp.com)' +
+            '\n\n' + editor.getValue().trim()
+          };
+
+          request.send(JSON.stringify(data));
+        }
       });
 
       $('#help-ive-found-a-bug-wiki-article').unbind('click');

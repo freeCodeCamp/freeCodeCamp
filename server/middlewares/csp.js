@@ -48,7 +48,8 @@ const trusted = [
   'http://hn.inspectlet.com/',
   '*.googleapis.com',
   '*.gstatic.com',
-  'https://hn.inspectlet.com/'
+  'https://hn.inspectlet.com/',
+  'https://*.github.com'
 ];
 
 export default function csp() {
