@@ -15,27 +15,39 @@
           ""
         ],
         [
-          "http://i.imgur.com/pYsTbjI.jpg",
-          "A screenshot of our curriculum alongside a screenshot of our chat room.",
-          "Learning to code is hard. To succeed, you'll need lots of practice and support. That's why we've created a rigorous curriculum and supportive community.",
+          "http://i.imgur.com/Elb3dfj.jpg",
+          "A screenshot of some of our campers coding together in Toronto.",
+          "<bold>Learning to code is hard.</bold> To succeed, you'll need lots of practice and support. That's why we've created a rigorous curriculum and supportive community.",
           ""
         ],
         [
           "http://i.imgur.com/D7Y5luw.jpg",
           "A graph of the rate of job growth against growth in computer science degree graduates. There are 1.4 million jobs and only 400 million people to fill them.",
-          "There are thousands of coding jobs currently going unfilled, and the demand for coders grows every year. If you want a coding job, we can help prepare you to get one.",
+          "There are thousands of coding jobs currently going unfilled, and the demand for coders grows every year.",
+          ""
+        ],
+        [
+          "http://i.imgur.com/WD3STY6.jpg",
+          "Photos of three campers who've gotten jobs after learning to code at Free Code Camp.",
+          "Free Code Camp is a proven path to your first coding job. In fact, no one has actually completed our entire program, because campers get jobs before they're able to.",
           ""
         ],
         [
           "http://i.imgur.com/dLx8nrg.jpg",
           "An illustration showing that you will learn HTML5, CSS3, JavaScript, Databases, Git, Node.js, Angular.js and Agile.",
-          "First you'll work through our rigorous 800-hour curriculum learn technologies like HTML5, Node.js and databases. It's self-paced and 100% free.",
+          "During the first half of Free Code Camp, you'll learn technologies like HTML5, Node.js and databases.",
+          ""
+        ],
+        [
+          "http://i.imgur.com/syJxavV.jpg",
+          "A screenshot of our Front End Development Certificate",
+          "About 400 hours into Free Code Camp, you'll earn your verified Front End Development Certification.",
           ""
         ],
         [
           "http://i.imgur.com/sKYQhdG.jpg",
-          "A screenshot of our Front End Development Certificate",
-          "About half way through our curriculum, you'll earn a verified Front End Development Certificate. If you can finish our entire curriculum, you'll earn a verified Full Stack Development Certificate.",
+          "A screenshot of our Full Stack Development Certificate",
+          "About 800 hours into Free Code Camp, you'll earn your verified Full Stack Development Certification.",
           ""
         ],
         [
@@ -79,7 +91,7 @@
         [
           "http://i.imgur.com/ALN6zPK.gif",
           "A gif showing you how to click the profile image in the upper right hand corner of GitHub. Upload a photo of yourself or you will continue to use the automatically generated pixel art. Then fill in the remaining form fields and click submit.",
-          "Click the pixel art in the upper right hand corner of GitHub, then choose settings. Upload a picture of yourself. A picture of your face works best. This is how your fellow campers will see you in our chat rooms, so put your best foot forward. You can add your city and your name if you want.",
+          "Click the pixel art in the upper right hand corner of GitHub, then choose settings. <br>Upload a picture of yourself. A picture of your face works best. This is how your fellow campers will see you in our chat rooms, so put your best foot forward. <br>You can add your city and your name if you want.",
           "https://github.com/settings/profile"
         ],
         [
@@ -91,7 +103,7 @@
         [
           "http://i.imgur.com/zwYPeQT.gif",
           "A gif showing you how to click the link below to go to our chat room and click the \"sign in with GitHub\" button. Then you can click into the text input field and type a message to your fellow campers.",
-          "Now that you have a GitHub account, you can join our main chat room by logging in with GitHub. Introduce yourself by saying \"Hello world!\". Tell your fellow campers how you found Free Code Camp. Also tell us why you want to learn to code.",
+          "Now that you have a GitHub account, you can join our main chat room by logging in with GitHub. Introduce yourself by saying \"Hello world!\". <br>Tell your fellow campers how you found Free Code Camp. Also tell us why you want to learn to code.",
           "https://gitter.im/FreeCodeCamp/FreeCodeCamp"
         ],
         [
@@ -141,7 +153,7 @@
         [
           "http://i.imgur.com/tP2ccTE.gif",
           "A gif showing how you can click your profile image in your upper right hand corner to your code portfolio and connect GitHub.",
-          "Check out your code portfolio. Click your picture in your upper right hand corner. To activate your code portfolio, you'll need to link your GitHub account with Free Code Camp. Your code portfolio shows your progress and how many Brownie Points you have. You can get Brownie Points by completing challenges and by helping other campers in our chat rooms. If you get Brownie Points on several days in a row, you'll get a streak.",
+          "Check out your code portfolio. Click your picture in your upper right hand corner. To activate your code portfolio, you'll need to link your GitHub account with Free Code Camp. <br>Your code portfolio shows your progress and how many Brownie Points you have. You can get Brownie Points by completing challenges and by helping other campers in our chat rooms. If you get Brownie Points on several days in a row, you'll get a streak.",
           ""
         ]
       ],
@@ -165,7 +177,7 @@
       "challengeSeed": [],
       "description": [
         [
-          "http://i.imgur.com/Elb3dfj.jpg",
+          "http://i.imgur.com/NAOFJWN.jpg",
           "A picture of some of our campers meeting in a local cafe. 3 men and 3 women are sitting around a table with laptops out, and are smiling and coding.",
           "Our Campsites help you code with campers in your city. You can coordinate study groups or attend local coding events together.",
           ""
@@ -173,7 +185,7 @@
         [
           "http://i.imgur.com/fTFMjwf.gif",
           "A gif showing how you can click the link below, find your city on the list of Campsites, then click on the Facebook link for your city and join your city's Facebook group.",
-          "Find your city on this list and click it. This will take you to your city's Campsite's Facebook group. Click the \"Join group\" button to apply to join your city's Facebook group. Someone from the campsite should approve you shortly. If your city isn't on this list, scroll to the bottom of the wiki article for instructions for how you can create your city's Campsite.",
+          "Find your city on this list and click it. This will take you to your city's Campsite's Facebook group. <br>Click the \"Join group\" button to apply to join your city's Facebook group. Someone from the campsite should approve you shortly. <br>If your city isn't on this list, scroll to the bottom of the wiki article for instructions for how you can create your city's Campsite.",
           "https://github.com/FreeCodeCamp/freecodecamp/wiki/List-of-Free-Code-Camp-city-based-Campsites"
         ]
       ],
@@ -197,9 +209,27 @@
       "challengeSeed": [],
       "description": [
         [
+          "http://i.imgur.com/lzKvwU2.jpg",
+          "The text \"Coding is hard.\"",
+          "Coding is hard. You will get stuck. Even experienced coders get stuck. The key is knowing how to get unstuck.",
+          ""
+        ],
+        [
+          "http://i.imgur.com/sfsidp6.jpg",
+          "The text \"It takes time to get good at coding.\"",
+          "It takes time to get good at coding. You wouldn't expect to beat a chess master after playing for 3 months. Don't expect to build the next Facebook after coding for 3 months.",
+          ""
+        ],
+        [
+          "http://i.imgur.com/EoTfOyC.jpg",
+          "An image of some of our campers coding together in Montreal.",
+          "Keep practicing coding every day and hanging out with other people who code, and you will becoming a job-ready coder.",
+          ""
+        ],
+        [
           "http://i.imgur.com/EWWZBag.jpg",
           "An image with the text \"1. Read the error 2. Search Google 3. Ask for help.",
-          "Let's cover one last thing before you start working through our challenges: how to get help. Any time you get stuck or don't know what to do next: Read-Search-Ask.",
+          "Any time you get stuck or don't know what to do next: Read-Search-Ask.",
           ""
         ],
         [
@@ -223,7 +253,7 @@
         [
           "http://i.imgur.com/ZRgXraT.gif",
           "A gif showing us scrolling through our challenge map.",
-          "Now you're ready to start coding! The \"Map\" button in your upper right hand corner will show you our challenge map. This map shows all our coding challenges. We recommend that you complete these from top to bottom, at a sustainable pace. You can also return to your next challenge by clicking the \"Learn\" button.",
+          "Now you're ready to start coding. <br>The \"Map\" button in your upper right hand corner will show you our challenge map. This map shows all our coding challenges. <br>We recommend that you complete these from top to bottom, at a sustainable pace. <br>Our curriculum is constantly being improved by our open source community, so don't be surprised if challenges move around or change. <br>You can always navigate back to your most recent challenge by clicking the \"Learn\" button.",
           ""
         ]
       ],
