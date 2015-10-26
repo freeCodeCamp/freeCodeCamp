@@ -7,13 +7,6 @@
     "image": "http://i.imgur.com/ib1wOho.png"
   },
   {
-    "camper": "akiralaine",
-    "name": "Camper News Bot",
-    "url": "https://twitter.com/campernewsbot",
-    "description": "This twitter bot tweets out Camper News stories once they hit 5 upvotes.",
-    "image": "https://pbs.twimg.com/media/CLXOFLPWIAEHYPJ.png"
-  },
-  {
     "camper": "adventurebear",
     "name": "Coding Bootcamp Cost Calculator",
     "url": "http://www.freecodecamp.com/coding-bootcamp-cost-calculator",
@@ -26,5 +19,19 @@
     "url": "https://github.com/open-source-society/computer-science",
     "description": "A path to a free education in Computer Science.",
     "image": "https://camo.githubusercontent.com/c42438055d3fee26b29e6d046fd8d06ebff3db20/687474703a2f2f692e696d6775722e636f6d2f6838786a72726a2e706e67"
-  }
+  },
+  {
+    "camper": "akiralaine",
+    "name": "Camper News Bot",
+    "url": "https://twitter.com/campernewsbot",
+    "description": "This twitter bot tweets out Camper News stories once they hit 5 upvotes.",
+    "image": "https://pbs.twimg.com/media/CLXOFLPWIAEHYPJ.png"
+  },
+  {
+    "camper": "roelver",
+    "name": "Free Code Camp Top 100 Campers",
+    "url": "http://fcctop100.herokuapp.com/",
+    "description": "This leaderboard tracks the campers who have been most active (completing challenges, helping other campers) in the past 30 days.",
+    "image": "http://i.imgur.com/4CrQfFi.png"
+  },
 ]
