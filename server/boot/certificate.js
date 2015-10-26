@@ -31,7 +31,11 @@ function isCertified(frontEndIds, { completedChallenges, isFrontEndCert }) {
   if (isFrontEndCert) {
     return true;
   }
-  return _.every(frontEndIds, ({ id }) => _.some(completedChallenges, { id }));
+  return _.every(frontEndIds, ({ id }) => {
+    return _.some(completedChallenges, (challenge) => {
+      return challenge.id === id || challenge._id === id;
+    });
+  });
 }
 
 export default function certificate(app) {
@@ -145,8 +149,8 @@ export default function certificate(app) {
           }
           return res.status(200).send(
             dedent`
-              Looks like you have not completed the neccessary steps,
-              Please return the map
+              Looks like you have not completed the neccessary steps.
+              Please return to the challenge map.
             `
           );
         },

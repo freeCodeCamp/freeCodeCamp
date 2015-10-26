@@ -11,11 +11,13 @@ block content
                                 .story-section
                                     a(href=story.linkedin target='_blank')
                                         img.testimonial-image.img-responsive.img-center(src=story.image)
-                                    h3.text-center
-                                        a(href=story.linkedin target='_blank')= story.camper
+                                    h3.text-center= story.camper
+                                        | &nbsp;
+                                        a.fa.fa-linkedin-square.text-primary(alt="#{story.camper}'s LinkedIn Profile", href=story.linkedin, target='_blank')
                                     p.text-justify= story.quote
 
 
             if !user
-                a.btn.btn-cta.signup-btn.btn-primary(href="/login") Start learning to code (it's free)
+                .text-center
+                    a.btn.btn-cta.signup-btn(href="/login") Start learning to code (it's free)
             .spacer

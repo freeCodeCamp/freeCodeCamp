@@ -29,7 +29,6 @@ module.exports = function(app) {
   router.get('/nonprofits', nonprofits);
   router.get('/nonprofits-form', nonprofitsForm);
   router.get('/our-sponsors', sponsors);
-  router.get('/jobs-form', jobsForm);
   router.get('/unsubscribe/:email', unsubscribe);
   router.get('/unsubscribed', unsubscribed);
   router.get('/get-started', getStarted);
@@ -205,13 +204,6 @@ module.exports = function(app) {
   function bootcampCalculator(req, res) {
     res.render('resources/calculator', {
       title: 'Coding Bootcamp Cost Calculator'
-    });
-  }
-
-  function jobsForm(req, res) {
-    res.render('resources/jobs-form', {
-      title: 'Employer Partnership Form for Job Postings,' +
-        ' Recruitment and Corporate Sponsorships'
     });
   }
 

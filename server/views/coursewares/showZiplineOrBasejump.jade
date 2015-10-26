@@ -24,7 +24,7 @@ block content
                 a.btn.btn-big.btn-primary.btn-block(href='/challenges/next-challenge?id=' + challengeId) Go to my next challenge (ctrl + enter)
             .button-spacer
             .btn-group.input-group.btn-group-justified
-                .btn.btn-success.btn-big#trigger-help-modal
+                .btn.btn-success.btn-big#challenge-help-btn
                     i.fa.fa-medkit
                         | &nbsp; Help
                 .btn.btn-success.btn-big#trigger-issue-modal
@@ -96,3 +96,23 @@ block content
         script.
             $('body').on('keypress', controlEnterHandler);
     include ../partials/challenge-modals
+    script.
+      document.addEventListener('gitter-sidecar-ready', function(e) {
+        var challengeType = !{JSON.stringify(challengeType)};
+        var room = 'freecodecamp/help';
+        var title;
+
+        if (challengeType === '4') {
+          room = 'freecodecamp/helpBasejumps';
+          title = 'Basejump Help';
+        }
+
+        if (challengeType === '3') {
+          room = 'freecodecamp/helpZiplines';
+          title = 'Zipline Help';
+        }
+
+        if (window.main) {
+          window.main.chat.createHelpChat(room, '#challenge-help-btn', title);
+        }
+      });

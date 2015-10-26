@@ -6,7 +6,7 @@ block content
                     .thumbnail.challenge-step(class=index !== 0 ? 'hidden': '')
                         img.gif-block.img-center.img-responsive.thumbnail(src='#{step[0]}' alt='#{step[1]}')
                         .caption
-                            p.large-p= step[2]
+                            p.large-p!= step[2]
                         if step[3]
                             a.btn.btn-block.btn-primary.challenge-step-btn-action(id='#{index}' href='#{step[3]}' target='_blank') Open link in new tab
                         if index + 1 === description.length

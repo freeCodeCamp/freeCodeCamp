@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 import { Spring } from 'react-motion';
-import { Navigation, TransitionHook } from 'react-router';
+import { History, Lifecycle } from 'react-router';
 import debugFactory from 'debug';
 import {
   Button,
@@ -19,8 +19,8 @@ export default React.createClass({
   displayName: 'Question',
 
   mixins: [
-    Navigation,
-    TransitionHook
+    History,
+    Lifecycle
   ],
 
   propTypes: {
@@ -150,7 +150,8 @@ export default React.createClass({
 
     postJSON$('/completed-challenge', { id, name }).subscribeOnCompleted(() => {
       if (tests[nextQuestionIndex]) {
-        return this.transitionTo(
+        return this.history.pushState(
+          null,
           `/hikes/${ dashedName }/questions/${ nextQuestionIndex + 1 }`
         );
       }
@@ -168,13 +169,13 @@ export default React.createClass({
         }, null);
 
       if (nextHike) {
-        return this.transitionTo(`/hikes/${ nextHike.dashedName }`);
+        return this.history.pushState(null, `/hikes/${ nextHike.dashedName }`);
       }
       debug(
         'next Hike was not found, currentHike %s',
         currentHike.dashedName
       );
-      this.transitionTo('/hikes');
+      this.history.pushState(null, '/hikes');
     });
   },
 
