@@ -32,7 +32,7 @@
       "description": [
         "In computer science, <code>data structures</code> are things that hold data. JavaScript has seven of these. For example, the <code>Number</code> data structure holds numbers.",
         "Let's learn about the most basic data structure of all: the <code>Boolean</code>. Booleans can only hold the value of either true or false. They are basically little on-off switches.",
-        "Let's modify our <code>welcomeToBooleans</code>function so that it will return <code>true</code>instead of <code>false</code>when the run button is clicked."
+        "Let's modify our <code>welcomeToBooleans</code> function so that it will return <code>true</code>instead of <code>false</code>when the run button is clicked."
       ],
       "tests": [
         "assert(typeof(welcomeToBooleans()) === 'boolean', 'message: The <code>welcomeToBooleans()</code> function should return a boolean &#40;true/false&#41; value.');",
@@ -615,8 +615,8 @@
       "id": "bg9997c9c69feddfaeb9bdef",
       "title": "Manipulate Arrays With unshift()",
       "description": [
-        "Now that we've learned how to <code>shift</code>things from the start of the array, we need to learn how to <code>unshift</code>stuff back to the start.",
-        "Let's take the code we had last time and <code>unshift</code>this value to the start: <code>\"Paul\"</code>."
+        "Now that we've learned how to <code>shift</code> things from the start of the array, we need to learn how to <code>unshift</code> stuff back to the start.",
+        "Let's take the code we had last time and <code>unshift</code> this value to the start: <code>\"Paul\"</code>."
       ],
       "tests": [
         "assert((function(d){if(typeof(d[0]) === \"string\" && d[0].toLowerCase() == 'paul' && d[1] == 23 && d[2][0] != undefined && d[2][0] == 'dog' && d[2][1] != undefined && d[2][1] == 3){return true;}else{return false;}})(myArray), 'message: <code>myArray</code> should now have [\"Paul\", 23, [\"dog\", 3]]).');"
