@@ -147,7 +147,7 @@ export default contain(
                         value={ '' + id } />
                       <Button
                         block={ true }
-                        bsSize='size'
+                        bsSize='large'
                         className='signup-btn'
                         type='submit'>
                         <i className='fa fa-paypal' />
