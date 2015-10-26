@@ -1,6 +1,7 @@
 {
   "name": "Responsive Design with Bootstrap",
   "order": 3,
+  "time": "2h",
   "challenges": [
     {
       "id": "bad87fee1348bd9acde08712",
@@ -13,8 +14,9 @@
         "To get started, we should nest all of our HTML in a <code>div</code> element with the class <code>container-fluid</code>."
       ],
       "tests": [
-        "assert($(\"div\").hasClass(\"container-fluid\"), 'Your <code>div</code> element should have the class <code>container-fluid</code>')",
-        "assert(editor.match(/<\\/div>/g) && editor.match(/<div/g) && editor.match(/<\\/div>/g).length === editor.match(/<div/g).length, 'Make sure each of your <code>div</code> elements has a closing tag.')"
+        "assert($(\"div\").hasClass(\"container-fluid\"), 'Your <code>div</code> element should have the class <code>container-fluid</code>.')",
+        "assert(editor.match(/<\\/div>/g) && editor.match(/<div/g) && editor.match(/<\\/div>/g).length === editor.match(/<div/g).length, 'Make sure each of your <code>div</code> elements has a closing tag.')",
+        "assert($(\".container-fluid\").children().length >= 8, 'Make sure you have nested all HTML elements in <code>.container-fluid</code>.')"
       ],
       "challengeSeed": [
         "<link href=\"http://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
@@ -89,14 +91,15 @@
       "id": "bad87fee1348bd9acde08812",
       "title": "Make Images Mobile Responsive",
       "description": [
-        "First, add a new image below the existing one. Set it's <code>src</code> attribute to <code>http://bit.ly/fcc-running-cats</code>.",
+        "First, add a new image below the existing one. Set its <code>src</code> attribute to <code>http://bit.ly/fcc-running-cats</code>.",
         "It would be great if this image could be exactly the width of our phone's screen.",
         "Fortunately, with Bootstrap, all we need to do is add the <code>img-responsive</code> class to your image. Do this, and the image should perfectly fit the width of your page."
       ],
       "tests": [
-        "assert($(\"img\").length > 1, 'You should have a total of two images.')",
-        "assert($(\"img\").hasClass(\"img-responsive\"), 'Your new image should have the class <code>img-responsive</code>.')",
-        "assert(new RegExp(\"http://bit.ly/fcc-running-cats\", \"gi\").test($(\"img.img-responsive\").attr(\"src\")), 'Add a second image with the <code>src</code> of <code>http&#58;//bit.ly/fcc-running-cats</code>.')"
+        "assert($(\"img\").length === 2, 'You should have a total of two images.')",
+        "assert($(\"img:eq(1)\").hasClass(\"img-responsive\"), 'Your new image should be below your old one and have the class <code>img-responsive</code>.')",
+        "assert($(\"img:eq(1)\").attr(\"src\") === \"http://bit.ly/fcc-running-cats\", 'Your new image should have a <code>src</code> of <code>http&#58;//bit.ly/fcc-running-cats</code>.')",
+        "assert(editor.match(/<img/g) && editor.match(/<img.*>/g).length === 2 && editor.match(/<img/g).length === 2, 'Make sure your new <code>img</code> element has a closing angle bracket.')"
       ],
       "challengeSeed": [
         "<link href=\"http://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
@@ -2110,7 +2113,7 @@
       "tests": [
         "assert(editor.match(/<!--/g) && editor.match(/<!--/g).length > 0, 'Start a comment with <code>&#60;!--</code>.')",
         "assert(editor.match(/this line/g) && editor.match(/this line/g).length > 0, 'Your comment should have the text <code>You shouldn&#39;t need to modify code below this line</code>.')",
-        "assert(editor.match(/-->/g) && editor.match(/-->/g).length > 0, 'Be sure to close your comment with <code>--&#62;</code>.')"
+        "assert(editor.match(/-->.*\\n+.+/g), 'Be sure to close your comment with <code>--&#62;</code>.')"
       ],
       "challengeSeed": [
         "<div class=\"container-fluid\">",

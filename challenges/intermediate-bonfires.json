@@ -1,6 +1,7 @@
 {
   "name": "Intermediate Algorithm Scripting",
-  "order": 9,
+  "order": 10,
+  "time": "50h",
   "challenges": [
     {
       "id": "a3566b1109230028080c9345",
@@ -28,6 +29,9 @@
         "Math.max()",
         "Math.min()",
         "Array.reduce()"
+      ],
+      "solutions": [
+        "function sumAll(arr) {\n  var sum = 0;\n  arr.sort(function(a,b) {return a-b;});\n  for (var i = arr[0]; i <= arr[1]; i++) {\n    sum += i; \n  }\n  return sum;\n}\n\nsumAll([1, 4]);\n"
       ],
       "type": "bonfire",
       "challengeType": 5,
@@ -65,7 +69,8 @@
         "assert.deepEqual(diff([\"andesite\", \"grass\", \"dirt\", \"dead shrub\"], [\"andesite\", \"grass\", \"dirt\", \"dead shrub\"]), [], 'message: <code>[\"andesite\", \"grass\", \"dirt\", \"dead shrub\"], [\"andesite\", \"grass\", \"dirt\", \"dead shrub\"]</code> should return <code>[]</code>.');",
         "assert.deepEqual(diff([1, 2, 3, 5], [1, 2, 3, 4, 5]), [4], 'message: <code>[1, 2, 3, 5], [1, 2, 3, 4, 5]</code> should return <code>[4]</code>.');",
         "assert.includeMembers(diff([1, \"calf\", 3, \"piglet\"], [1, \"calf\", 3, 4]), [\"piglet\", 4], 'message: <code>[1, \"calf\", 3, \"piglet\"], [1, \"calf\", 3, 4]</code> should return <code>[\"piglet\", 4]</code>.');",
-        "assert.deepEqual(diff([], [\"snuffleupagus\", \"cookie monster\", \"elmo\"]), [\"snuffleupagus\", \"cookie monster\", \"elmo\"], 'message: <code>[], [\"snuffleupagus\", \"cookie monster\", \"elmo\"]</code> should return <code>[\"snuffleupagus\", \"cookie monster\", \"elmo\"]</code>.');"
+        "assert.deepEqual(diff([], [\"snuffleupagus\", \"cookie monster\", \"elmo\"]), [\"snuffleupagus\", \"cookie monster\", \"elmo\"], 'message: <code>[], [\"snuffleupagus\", \"cookie monster\", \"elmo\"]</code> should return <code>[\"snuffleupagus\", \"cookie monster\", \"elmo\"]</code>.');",
+        "assert.includeMembers(diff([1, \"calf\", 3, \"piglet\"], [7, \"filly\"]), [1, \"calf\", 3, \"piglet\", 7, \"filly\"], 'message: <code>[1, \"calf\", 3, \"piglet\"], [7, \"filly\"]</code> should return <code>[1, \"calf\", 3, \"piglet\", 7, \"filly\"]</code>.');"
       ],
       "MDNlinks": [
         "Comparison Operators",
@@ -73,6 +78,9 @@
         "Array.filter()",
         "Array.indexOf()",
         "Array.concat()"
+      ],
+      "solutions": [
+        "function diff(arr1, arr2) {\n  var newArr = [];\n  var h1 = Object.create(null);\n  arr1.forEach(function(e) {\n    h1[e] = e;\n  });\n  \n  var h2 = Object.create(null);\n  arr2.forEach(function(e) {\n    h2[e] = e;\n  });\n  \n  Object.keys(h1).forEach(function(e) {\n     if (!(e in h2)) newArr.push(h1[e]);\n  });\n  Object.keys(h2).forEach(function(e) {\n     if (!(e in h1)) newArr.push(h2[e]);\n  });\n  // Same, same; but different.\n  return newArr;\n}\n\ndiff([1, 2, 3, 5], [1, 2, 3, 4, 5]);\n"
       ],
       "type": "bonfire",
       "challengeType": 5,
@@ -115,6 +123,9 @@
         "Array.indexOf()",
         "Array.join()"
       ],
+      "solutions": [
+        "function convert(num) {\n  var ref = [['M', 1000], ['CM', 900], ['D', 500], ['CD', 400], ['C', 100], ['XC', 90], ['L', 50], ['XL', 40], ['X', 10], ['IX', 9], ['V', 5], ['IV', 4], ['I', 1]];\n  var res = [];\n  ref.forEach(function(p) {\n    while (num >= p[1]) {\n      res.push(p[0]);\n      num -= p[1];\n    }\n  });\n  return res.join('');\n}\n\nconvert(36);\n"
+      ],
       "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
@@ -146,7 +157,7 @@
         "where([{ first: \"Romeo\", last: \"Montague\" }, { first: \"Mercutio\", last: null }, { first: \"Tybalt\", last: \"Capulet\" }], { last: \"Capulet\" });"
       ],
       "tests": [
-        "assert.deepEqual(where([{ first: \"Romeo\", last: \"Montague\" }, { first: \"Mercutio\", last: null }, { first: \"Tybalt\", last: \"Capulet\" }], { last: \"Capulet\" }), [{ first: \"Tybalt\", last: \"Capulet\" }], 'message: <code>where()</code> should return an array of objects.');",
+        "assert.deepEqual(where([{ first: \"Romeo\", last: \"Montague\" }, { first: \"Mercutio\", last: null }, { first: \"Tybalt\", last: \"Capulet\" }], { last: \"Capulet\" }), [{ first: \"Tybalt\", last: \"Capulet\" }], 'message: <code>where([{ first: \"Romeo\", last: \"Montague\" }, { first: \"Mercutio\", last: null }, { first: \"Tybalt\", last: \"Capulet\" }], { last: \"Capulet\" })</code> should return <code>[{ first: \"Tybalt\", last: \"Capulet\" }]</code>.');",
         "assert.deepEqual(where([{ \"a\": 1 }, { \"a\": 1 }, { \"a\": 1, \"b\": 2 }], { \"a\": 1 }), [{ \"a\": 1 }, { \"a\": 1 }, { \"a\": 1, \"b\": 2 }], 'message: <code>where([{ \"a\": 1 }, { \"a\": 1 }, { \"a\": 1, \"b\": 2 }], { \"a\": 1 })</code> should return <code>[{ \"a\": 1 }, { \"a\": 1 }, { \"a\": 1, \"b\": 2 }]</code>.');",
         "assert.deepEqual(where([{ \"a\": 1, \"b\": 2 }, { \"a\": 1 }, { \"a\": 1, \"b\": 2, \"c\": 2 }], { \"a\": 1, \"b\": 2 }), [{ \"a\": 1, \"b\": 2 }, { \"a\": 1, \"b\": 2, \"c\": 2 }], 'message: <code>where([{ \"a\": 1, \"b\": 2 }, { \"a\": 1 }, { \"a\": 1, \"b\": 2, \"c\": 2 }], { \"a\": 1, \"b\": 2 })</code> should return <code>[{ \"a\": 1, \"b\": 2 }, { \"a\": 1, \"b\": 2, \"c\": 2 }]</code>.');"
       ],
@@ -154,6 +165,9 @@
         "Global Object",
         "Object.hasOwnProperty()",
         "Object.keys()"
+      ],
+      "solutions": [
+        "function where(collection, source) {\n  var arr = [];\n  var keys = Object.keys(source);\n  collection.forEach(function(e) {\n    if(keys.every(function(key) {return e[key] === source[key];})) {\n      arr.push(e);  \n    }\n  });\n  return arr;\n}\n\nwhere([{ first: 'Romeo', last: 'Montague' }, { first: 'Mercutio', last: null }, { first: 'Tybalt', last: 'Capulet' }], { last: 'Capulet' });\n"
       ],
       "type": "bonfire",
       "challengeType": 5,
@@ -198,6 +212,9 @@
         "String.replace()",
         "Array.join()"
       ],
+      "solutions": [
+        "function replace(str, before, after) {\n  if (before.charAt(0) === before.charAt(0).toUpperCase()) {\n    after = after.charAt(0).toUpperCase() + after.substring(1);\n  } else {\n    after = after.charAt(0).toLowerCase() + after.substring(1);\n  }\n  return str.replace(before, after);\n}\n\nreplace(\"A quick brown fox jumped over the lazy dog\", \"jumped\", \"leaped\");\n"
+      ],
       "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
@@ -241,6 +258,9 @@
         "String.substr()",
         "String.split()"
       ],
+      "solutions": [
+        "function translate(str) {\n  if (isVowel(str.charAt(0))) return str + \"way\";\n  var front = [];\n  str = str.split('');\n  while (str.length && !isVowel(str[0])) {\n    front.push(str.shift());\n  }\n  return [].concat(str, front).join('') + 'ay';\n}\n\nfunction isVowel(c) {\n  return ['a', 'e', 'i', 'o', 'u'].indexOf(c.toLowerCase()) !== -1;\n}\n\ntranslate(\"consonant\");\n"
+      ],
       "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
@@ -281,6 +301,9 @@
         "Array.push()",
         "String.split()"
       ],
+      "solutions": [
+        "var lookup = Object.create(null);\nlookup.A = 'T';\nlookup.T = 'A';\nlookup.C = 'G';\nlookup.G = 'C';\n\nfunction pair(str) {\n return str.split('').map(function(p) {return [p, lookup[p]];});\n}\n\npair(\"GCG\");\n"
+      ],
       "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
@@ -319,6 +342,9 @@
         "String.charCodeAt()",
         "String.fromCharCode()"
       ],
+      "solutions": [
+        "function fearNotLetter(str) {\n  var s = str.split('').map(function(c) {return c.charCodeAt(0);});\n  for (var i = 1; i < s.length; i++) {\n    if (s[i]-1 != s[i-1]) {\n      return String.fromCharCode(s[i]-1);\n    }\n  }\n}\n\nfearNotLetter('abce');\n"
+      ],
       "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
@@ -355,11 +381,14 @@
         "assert.strictEqual(boo([].slice), false, 'message: <code>boo([].slice)</code> should return false.');",
         "assert.strictEqual(boo({ \"a\": 1 }), false, 'message: <code>boo({ \"a\": 1 })</code> should return false.');",
         "assert.strictEqual(boo(1), false, 'message: <code>boo(1)</code> should return false.');",
-        "assert.strictEqual(boo(NaN), false, 'message: <code>boo(NaN)</code> should return true.');",
+        "assert.strictEqual(boo(NaN), false, 'message: <code>boo(NaN)</code> should return false.');",
         "assert.strictEqual(boo(\"a\"), false, 'message: <code>boo(\"a\")</code> should return false.');"
       ],
       "MDNlinks": [
         "Boolean Objects"
+      ],
+      "solutions": [
+        "function boo(bool) {\n  // What is the new fad diet for ghost developers? The Boolean.\n  return typeof(bool) === \"boolean\";\n}\n\nboo(null);\n"
       ],
       "type": "bonfire",
       "challengeType": 5,
@@ -400,6 +429,9 @@
       "MDNlinks": [
         "Arguments object",
         "Array.reduce()"
+      ],
+      "solutions": [
+        "function unite(arr1, arr2, arr3) {\n  return [].slice.call(arguments).reduce(function(a, b) {\n    return [].concat(a, b.filter(function(e) {return a.indexOf(e) === -1;}));\n  }, []);\n}\n\nunite([1, 2, 3], [5, 2, 1, 4], [2, 1]);\n"
       ],
       "type": "bonfire",
       "challengeType": 5,
@@ -442,6 +474,9 @@
         "RegExp",
         "HTML Entities"
       ],
+      "solutions": [
+        "var MAP = { '&': '&amp;',\n            '<': '&lt;',\n            '>': '&gt;',\n            '\"': '&quot;',\n            \"'\": '&apos;'};\n\nfunction convert(str) {\n  return str.replace(/[&<>\"']/g, function(c) {\n    return MAP[c];\n  });\n}\n\nconvert('Dolce & Gabbana');\n"
+      ],
       "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
@@ -481,6 +516,9 @@
         "RegExp",
         "String.replace()"
       ],
+      "solutions": [
+        "function spinalCase(str) {\n  // \"It's such a fine line between stupid, and clever.\"\n  // --David St. Hubbins\n  str = str.replace(/([a-z](?=[A-Z]))/g, '$1 ');\n  return str.toLowerCase().replace(/\\ |\\_/g, '-');\n}\n\nspinalCase('This Is Spinal Tap');\n"
+      ],
       "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
@@ -511,7 +549,7 @@
         "sumFibs(4);"
       ],
       "tests": [
-        "assert(typeof(sumFibs(1)) === \"number\", 'message: <code>sumFibs()</code> should return a number.');",
+        "assert(typeof(sumFibs(1)) === \"number\", 'message: <code>sumFibs(1)</code> should return a number.');",
         "assert.deepEqual(sumFibs(1000), 1785, 'message: <code>sumFibs(1000)</code> should return 1785.');",
         "assert.deepEqual(sumFibs(4000000), 4613732, 'message: <code>sumFibs(4000000)</code> should return 4613732.');",
         "assert.deepEqual(sumFibs(4), 5, 'message: <code>sumFibs(4)</code> should return 5.');",
@@ -520,6 +558,9 @@
       ],
       "MDNlinks": [
         "Remainder"
+      ],
+      "solutions": [
+        "function sumFibs(num) {\n  var a = 1; \n  var b = 1;\n  var s = 0;\n  while (a <= num) {\n    if (a % 2 !== 0) {   \n      s += a; \n    }\n    a = [b, b=b+a][0];\n  }\n  return s;\n}\n\nsumFibs(4);\n"
       ],
       "type": "bonfire",
       "challengeType": 5,
@@ -558,6 +599,9 @@
       "MDNlinks": [
         "For Loops",
         "Array.push()"
+      ],
+      "solutions": [
+        "function eratosthenesArray(n) {\n    var primes = [];\n    if (n > 2) {\n        var half = n>>1;\n        var sieve = Array(half);\n        for (var i = 1, limit = Math.sqrt(n)>>1; i <= limit; i++) {\n            if (!sieve[i]) {\n                for (var step = 2*i+1, j = (step*step)>>1; j < half; j+=step) {\n                    sieve[j] = true;\n                }\n            }\n        }\n        primes.push(2);\n        for (var p = 1; p < half; p++) {\n            if (!sieve[p]) primes.push(2*p+1);\n        }\n    }\n    return primes;\n}\n\nfunction sumPrimes(num) {\n  return eratosthenesArray(num+1).reduce(function(a,b) {return a+b;}, 0);\n}\n\nsumPrimes(10);\n"
       ],
       "type": "bonfire",
       "challengeType": 5,
@@ -598,6 +642,9 @@
       "MDNlinks": [
         "Smallest Common Multiple"
       ],
+      "solutions": [
+        "function gcd(a, b) {\n    while (b !== 0) {\n        a = [b, b = a % b][0];\n    }\n    return a;\n}\n\nfunction lcm(a, b) {\n    return (a * b) / gcd(a, b);\n}\n\nfunction smallestCommons(arr) {\n  arr.sort(function(a,b) {return a-b;});\n  var rng = [];\n  for (var i = arr[0]; i <= arr[1]; i++) {\n    rng.push(i);\n  }\n  return rng.reduce(lcm);\n}\n\n\nsmallestCommons([1,5]);\n"
+      ],
       "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
@@ -631,7 +678,10 @@
         "assert.strictEqual(find([1, 3, 5, 9], function(num) { return num % 2 === 0; }), undefined, 'message: <code>find([1, 3, 5, 9], function(num) { return num % 2 === 0; })</code> should return undefined.');"
       ],
       "MDNlinks": [
-        "Array.some()"
+        "Array.filter()"
+      ],
+      "solutions": [
+        "function find(arr, func) {\n  var num;\n  arr.some(function(e) {\n    if (func(e)) {\n      num = e;\n      return true;\n    }\n  });\n  return num;\n}\n\nfind([1, 2, 3, 4], function(num){ return num % 2 === 0; });\n"
       ],
       "type": "bonfire",
       "challengeType": 5,
@@ -671,6 +721,9 @@
         "Arguments object",
         "Array.shift()"
       ],
+      "solutions": [
+        "(function drop(arr, func) {\n  // Drop them elements.\n  while (arr.length && !func(arr[0])) {\n    arr.shift();\n  }\n  return arr;\n}\n\ndrop([1, 2, 3], function(n) {return n < 3; });\n)"
+      ],
       "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
@@ -708,6 +761,9 @@
       "MDNlinks": [
         "Array.isArray()"
       ],
+      "solutions": [
+        "function steamroller(arr) {\n  if (!Array.isArray(arr)) {\n    return [arr];\n  }\n  var out = [];\n  arr.forEach(function(e) {\n    steamroller(e).forEach(function(v) {\n      out.push(v);\n    });\n  });\n  return out;\n}\n\nsteamroller([1, [2], [3, [[4]]]]);\n"
+      ],
       "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
@@ -744,6 +800,9 @@
         "String.charCodeAt()",
         "String.fromCharCode()"
       ],
+      "solutions": [
+        "function binaryAgent(str) {\n  return str.split(' ').map(function(s) { return parseInt(s, 2); }).map(function(b) { return String.fromCharCode(b);}).join('');\n}\n\nbinaryAgent('01000001 01110010 01100101 01101110 00100111 01110100 00100000 01100010 01101111 01101110 01100110 01101001 01110010 01100101 01110011 00100000 01100110 01110101 01101110 00100001 00111111');\n"
+      ],
       "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
@@ -761,14 +820,13 @@
       "id": "a10d2431ad0c6a099a4b8b52",
       "title": "Everything Be True",
       "description": [
-        "Check if the predicate (second argument) returns truthy (defined) for all elements of a collection (first argument).",
-        "For this, check to see if the property defined in the second argument is present on every element of the collection.",
+        "Check if the predicate (second argument) is truthy on all elements of a collection (first argument).",
         "Remember, you can access object properties through either dot notation or [] notation.",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "challengeSeed": [
         "function every(collection, pre) {",
-        "  // Does everyone have one of these?",
+        "  // Is everyone being true?",
         "  return pre;",
         "}",
         "",
@@ -776,12 +834,17 @@
       ],
       "tests": [
         "assert.strictEqual(every([{\"user\": \"Tinky-Winky\", \"sex\": \"male\"}, {\"user\": \"Dipsy\", \"sex\": \"male\"}, {\"user\": \"Laa-Laa\", \"sex\": \"female\"}, {\"user\": \"Po\", \"sex\": \"female\"}], \"sex\"), true, 'message: <code>every([{\"user\": \"Tinky-Winky\", \"sex\": \"male\"}, {\"user\": \"Dipsy\", \"sex\": \"male\"}, {\"user\": \"Laa-Laa\", \"sex\": \"female\"}, {\"user\": \"Po\", \"sex\": \"female\"}], \"sex\")</code> should return true.');",
-        "assert.strictEqual(every([{\"user\": \"Tinky-Winky\", \"sex\": \"male\"}, {\"user\": \"Dipsy\", \"sex\": \"male\"}, {\"user\": \"Laa-Laa\", \"sex\": \"female\"}, {\"user\": \"Po\", \"sex\": \"female\"}], {\"sex\": \"female\"}), false, 'message: <code>every([{\"user\": \"Tinky-Winky\", \"sex\": \"male\"}, {\"user\": \"Dipsy\", \"sex\": \"male\"}, {\"user\": \"Laa-Laa\", \"sex\": \"female\"}, {\"user\": \"Po\", \"sex\": \"female\"}], {\"sex\": \"female\"})</code> should return false.');",
-        "assert.strictEqual(every([{\"user\": \"Tinky-Winky\", \"sex\": \"female\"}, {\"user\": \"Dipsy\", \"sex\": \"male\"}, {\"user\": \"Laa-Laa\", \"sex\": \"female\"}, {\"user\": \"Po\", \"sex\": \"female\"}], {\"sex\": \"female\"}), false, 'message: <code>every([{\"user\": \"Tinky-Winky\", \"sex\": \"female\"}, {\"user\": \"Dipsy\", \"sex\": \"male\"}, {\"user\": \"Laa-Laa\", \"sex\": \"female\"}, {\"user\": \"Po\", \"sex\": \"female\"}], {\"sex\": \"female\"})</code> should return false.');"
+        "assert.strictEqual(every([{\"user\": \"Tinky-Winky\", \"sex\": \"male\"}, {\"user\": \"Dipsy\"}, {\"user\": \"Laa-Laa\", \"sex\": \"female\"}, {\"user\": \"Po\", \"sex\": \"female\"}], \"sex\"), false, 'message: <code>every([{\"user\": \"Tinky-Winky\", \"sex\": \"male\"}, {\"user\": \"Dipsy\"}, {\"user\": \"Laa-Laa\", \"sex\": \"female\"}, {\"user\": \"Po\", \"sex\": \"female\"}], \"sex\")</code> should return false.');",
+        "assert.strictEqual(every([{\"user\": \"Tinky-Winky\", \"sex\": \"male\", \"age\": 2}, {\"user\": \"Dipsy\", \"sex\": \"male\", \"age\": 0}, {\"user\": \"Laa-Laa\", \"sex\": \"female\", \"age\": 5}, {\"user\": \"Po\", \"sex\": \"female\", \"age\": 4}], \"age\"), false, 'message: <code>every([{\"user\": \"Tinky-Winky\", \"sex\": \"male\", \"age\": 0}, {\"user\": \"Dipsy\", \"sex\": \"male\", \"age\": 3}, {\"user\": \"Laa-Laa\", \"sex\": \"female\", \"age\": 5}, {\"user\": \"Po\", \"sex\": \"female\", \"age\": 4}], \"age\")</code> should return false.');",
+        "assert.strictEqual(every([{\"name\": \"Pete\", \"onBoat\": true}, {\"name\": \"Repeat\", \"onBoat\": true}, {\"name\": \"FastFoward\", \"onBoat\": null}], \"onBoat\"), false, 'message: <code>every([{\"name\": \"Pete\", \"onBoat\": true}, {\"name\": \"Repeat\", \"onBoat\": true}, {\"name\": \"FastFoward\", \"onBoat\": null}], \"onBoat\")</code> should return false');",
+        "assert.strictEqual(every([{\"name\": \"Pete\", \"onBoat\": true}, {\"name\": \"Repeat\", \"onBoat\": true, \"alias\": \"Repete\"}, {\"name\": \"FastFoward\", \"onBoat\": true}], \"onBoat\"), true, 'message: <code>every([{\"name\": \"Pete\", \"onBoat\": true}, {\"name\": \"Repeat\", \"onBoat\": true, \"alias\": \"Repete\"}, {\"name\": \"FastFoward\", \"onBoat\": true}], \"onBoat\")</code> should return true');",
+        "assert.strictEqual(every([{\"single\": \"yes\"}], \"single\"), true, 'message: <code>every([{\"single\": \"yes\"}], \"single\")</code> should return true');",
+        "assert.strictEqual(every([{\"single\": \"\"}, {\"single\": \"double\"}], \"single\"), false, 'message: <code>every([{\"single\": \"\"}, {\"single\": \"double\"}], \"single\")</code> should return false');",
+        "assert.strictEqual(every([{\"single\": \"double\"}, {\"single\": undefined}], \"single\"), false, 'message: <code>every([{\"single\": \"double\"}, {\"single\": undefined}], \"single\")</code> should return false');",
+        "assert.strictEqual(every([{\"single\": \"double\"}, {\"single\": NaN}], \"single\"), false, 'message: <code>every([{\"single\": \"double\"}, {\"single\": NaN}], \"single\")</code> should return false');"
       ],
-      "MDNlinks": [
-        "Object.hasOwnProperty()",
-        "Object.getOwnPropertyNames()"
+      "solutions": [
+        "function every(collection, pre) {\n  // Does everyone have one of these?\n  return collection.every(function(e) { return e[pre]; });\n}\n\nevery([{'user': 'Tinky-Winky', 'sex': 'male'}, {'user': 'Dipsy', 'sex': 'male'}, {'user': 'Laa-Laa', 'sex': 'female'}, {'user': 'Po', 'sex': 'female'}], 'sex');\n"
       ],
       "type": "bonfire",
       "challengeType": 5,
@@ -823,8 +886,12 @@
         "assert.isUndefined(add(2)([3]), 'message: <code>add(2)([3])</code> should return undefined.');"
       ],
       "MDNlinks": [
-        "Global Function Object",
+        "Closures",
         "Arguments object"
+      ],
+      "solutions": [
+        "function add() {\n  if (arguments.length == 1) {\n    var a = arguments[0];\n    if (!isNumber(a)) return;\n    return function(b) {\n      if (!isNumber(b)) return;\n      return a+b;\n    };\n  }\n  if (![].slice.call(arguments).every(isNumber)) return;\n  return arguments[0] + arguments[1];\n}\n  \nfunction isNumber(obj) {\n    return toString.call(obj) == '[object Number]';\n}\n\nadd(2,3);\n",
+        "function add() {\n  var a = arguments[0];\n  if (toString.call(a) !== '[object Number]') return;  \n  if (arguments.length === 1) {\n    return function(b) {\n      if (toString.call(b) !== '[object Number]') return;\n      return a + b;\n    };\n  }\n  var b = arguments[1];\n  if (toString.call(b) !== '[object Number]') return;  \n  return a + arguments[1];\n}\n\nadd(2,3);\n"
       ],
       "type": "bonfire",
       "challengeType": 5,
