@@ -7,12 +7,12 @@
       "id": "bd7123c8c441eddfaeb5bdef",
       "title": "Say Hello to HTML Elements",
       "description": [
-        "Welcome to Free Code Camp's first coding challenge!",
+        "Welcome to Free Code Camp's first coding challenge.",
         "You can edit <code>code</code> in your <code>text editor</code>, which we've embedded into this web page.",
-        "Do you see the code in your text editor that says <code>&#60;h1&#62;Hello&#60;/h1&#62;</code>? That's an HTML <code>element</code>",
+        "Do you see the code in your text editor that says <code>&#60;h1&#62;Hello&#60;/h1&#62;</code>? That's an HTML <code>element</code>.",
         "Most HTML elements have an <code>opening tag</code> and a <code>closing tag</code>. Opening tags look like this: <code>&#60;h1&#62;</code>. Closing tags look like this: <code>&#60;/h1&#62;</code>. Note that the only difference between opening tags and closing tags is that closing tags have a slash after their opening angle bracket.",
-        "Once you've completed each challenge, and all its tests are passing, the \"Go to my next challenge\" button will become enabled. Click it - or press control and enter at the same time - to advance to the next challenge.",
-        "To enable the \"Go to my next challenge\" button on this exercise, change your <code>h1</code> tag's text to say \"Hello World\" instead of \"Hello\"."
+        "Each challenge has tests that you can run at any time by clicking the \"Run tests\" button. Once you get all tests passing, you can advance to the next challenge.",
+        "To pass the test on this challenge, change your <code>h1</code> element's text to say \"Hello World\" instead of \"Hello\". Then click the \"Run tests\" button."
       ],
       "tests": [
         "assert.isTrue((/hello(\\s)+world/gi).test($('h1').text()), 'Your <code>h1</code> element should have the text \"Hello World\".')"
@@ -101,7 +101,8 @@
       "title": "Inform with the Paragraph Element",
       "description": [
         "<code>p</code> elements are the preferred element for normal-sized paragraph text on websites. P is short for \"paragraph\".",
-        "You can create a <code>p</code> element like so: <code>&#60;p&#62;I'm a p tag!&#60;/p&#62;</code>",
+        "You can create a <code>p</code> element like this:",
+        "<code>&#60;p&#62;I'm a p tag!&#60;/p&#62;</code>",
         "Create a <code>p</code> element below your <code>h2</code> element, and give it the text \"Hello Paragraph\"."
       ],
       "tests": [
@@ -235,9 +236,9 @@
       "id": "bad87fee1348bd9aedf08833",
       "title": "Fill in the Blank with Placeholder Text",
       "description": [
-        "Web developers traditionally use <code>lorem ipsum text</code> as placeholder text. It's called <code>lorem ipsum text</code> because those are the first two words of a famous passage by Cicero of Ancient Rome.",
-        "<code>lorem ipsum text</code> has been used as placeholder text by typesetters since the 16th century, and this tradition continues on the web.",
-        "Well, 5 centuries is long enough. Since we're building a CatPhotoApp, let's use something called <code>kitty ipsum text</code>",
+        "Web developers traditionally use <code>lorem ipsum text</code> as placeholder text. It's called lorem ipsum text because those are the first two words of a famous passage by Cicero of Ancient Rome.",
+        "Lorem ipsum text has been used as placeholder text by typesetters since the 16th century, and this tradition continues on the web.",
+        "Well, 5 centuries is long enough. Since we're building a CatPhotoApp, let's use something called <code>kitty ipsum text</code>.",
         "Replace the text inside your <code>p</code> element with the first few words of this kitty ipsum text: <code>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</code>"
       ],
       "tests": [
@@ -327,7 +328,8 @@
         "Now let's change the color of some of our text.",
         "We can do this by changing the <code>style</code> of your <code>h2</code> element.",
         "The style that is responsible for the color of an element's text is the \"color\" style.",
-        "Here's how you would set your <code>h2</code> element's text color to blue: <code>&#60;h2 style=\"color: blue\"&#62;CatPhotoApp&#60;/h2&#62;</code>",
+        "Here's how you would set your <code>h2</code> element's text color to blue:",
+        "<code>&#60;h2 style=\"color: blue\"&#62;CatPhotoApp&#60;/h2&#62;</code>",
         "Change your <code>h2</code> element's style so that its text color is red."
       ],
       "tests": [
@@ -369,7 +371,9 @@
         "With CSS, there are hundreds of CSS <code>properties</code> that you can use to change the way an element looks on your page.",
         "When you entered <code>&#60;h2 style=\"color: red\"&#62;CatPhotoApp&#60;/h2&#62;</code>, you were giving that individual <code>h2</code> element an <code>inline style</code>",
         "That's one way to add style to an element, but a better way is by using <code>CSS</code>, which stands for <code>Cascading Style Sheets</code>",
-        "At the top of your code, create a <code>style</code> element like this: <code>&#60;style&#62;&#60;/style&#62;</code>",
+        "At the top of your code, create a <code>style</code> element like this:",
+         "<code>&#60;style&#62;</code>",
+         "<code>&#60;/style&#62;</code>",
         "Inside that style element, you can create a <code>CSS selector</code> for all <code>h2</code> elements. For example, if you wanted all <code>h2</code> elements to be red, your style element would look like this:",
         "<code>&#60;style&#62;</code>",
         "&thinsp;&thinsp;<code>h2 {color: red;}</code>",
