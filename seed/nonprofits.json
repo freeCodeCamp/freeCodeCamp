@@ -256,7 +256,7 @@
     "projectDescription": "Campers will build a multiple language website (English, Spanish) that accepts donations.",
     "logoUrl": "http://i.imgur.com/jPuiPOy.jpg",
     "imageUrl": "http://i.imgur.com/zaaL2pj.jpg",
-    "estimatedHours": 100
+    "estimatedHours": 100,
     "currentStatus": "open",
     "moneySaved": 0
   },
@@ -296,7 +296,7 @@
     "projectDescription": "Campers will build a simple website to replace essentialskillsquebec.com. Site will host many documents related to the Nine Essential Skills.",
     "logoUrl": "http://i.imgur.com/jXQY01H.png",
     "imageUrl": "http://i.imgur.com/iUXBpeL.jpg",
-    "estimatedHours": 100
+    "estimatedHours": 100,
     "currentStatus": "started",
     "moneySaved": 0
   },
@@ -309,7 +309,7 @@
     "projectDescription": "Campers will build a system to store all of Options Inc.'s clients addresses, optimize routes for our 23 vehicles, and schedule their staff for these routes.",
     "logoUrl": "http://i.imgur.com/jGWRMuF.jpg",
     "imageUrl": "http://i.imgur.com/VUuJJlM.jpg",
-    "estimatedHours": 300
+    "estimatedHours": 300,
     "currentStatus": "open",
     "moneySaved": 0
   },
@@ -322,7 +322,7 @@
     "projectDescription": "Campers will build a modern, mobile-responsive website.",
     "logoUrl": "http://i.imgur.com/kYHgY0F.jpg",
     "imageUrl": "http://i.imgur.com/W6L1sGV.jpg",
-    "estimatedHours": 100
+    "estimatedHours": 100,
     "currentStatus": "open",
     "moneySaved": 0
   }
