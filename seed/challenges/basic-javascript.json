@@ -881,7 +881,7 @@
         "<code>&thinsp;&thinsp;ourArray.push(i);</code>",
         "<code>}</code>",
         "<code>ourArray</code> will now contain [10,8,6,4,2] ",
-        "Let's change our <code>initialization</code> and <code>final-expression</code> so we can count backward by twos for numbers."
+        "Let's change our <code>initialization</code> and <code>final-expression</code> so we can count backward by twos for odd numbers."
       ],
       "tests": [
         "assert(editor.getValue().match(/for\\s*\\(/g).length > 1, 'message: You should be using a <code>for</code> loop for this.');",
