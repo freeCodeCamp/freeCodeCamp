@@ -214,7 +214,7 @@
     "logoUrl": "http://www.thinkkids.org/wp-content/themes/think-kids/images/logo.png",
     "imageUrl": "http://i.imgur.com/hiGJms5.png",
     "estimatedHours": 300,
-    "currentStatus": "open",
+    "currentStatus": "started",
     "moneySaved": 0
   },
   {
@@ -244,21 +244,8 @@
     "logoUrl": "http://i.imgur.com/YlPsQmN.jpg",
     "imageUrl": "http://childfirstauthority.org/wp-content/uploads/2012/09/CFAHEADER7.gif",
     "estimatedHours": 200,
-    "currentStatus": "open",
+    "currentStatus": "started",
     "moneySaved": 0
-  },
-  {
-    "whatDoesNonprofitDo": "SOLACE Foundation provides drug overdose prevention and awareness training as well as grief support for bereaved families.",
-    "websiteLink": "https://www.facebook.com/www.solaceorangecounty.org",
-    "name": "The Solace Foundation of Orange County",
-    "endUser": "Donors",
-    "approvedDeliverables": [
-      "Website"
-    ],
-    "projectDescription": "Campers will build a basic website that accepts donations.",
-    "logoUrl": "http://i.imgur.com/79E3nP0.png",
-    "imageUrl": "http://i.imgur.com/kCWN1iT.jpg",
-    "estimatedHours": 100
   },
   {
     "whatDoesNonprofitDo": "We are an interdisciplinary team that works towards harmony among humans and nature through three distinct branches: sustainable agriculture, environmental education and applied and appropriate technology; focused in Líbano, Tolima, Colombia.",
@@ -270,6 +257,8 @@
     "logoUrl": "http://i.imgur.com/jPuiPOy.jpg",
     "imageUrl": "http://i.imgur.com/zaaL2pj.jpg",
     "estimatedHours": 100
+    "currentStatus": "open",
+    "moneySaved": 0
   },
   {
     "whatDoesNonprofitDo": "1to1 Movement provides free environmental education in schools",
@@ -280,7 +269,9 @@
     "projectDescription": "Campers will build a simple, social, data-driven application that allows people to see the impact of their actions. User can make a pledge and track the outcome. Will make use of the D3.js visualization library.",
     "logoUrl": "http://i.imgur.com/jaqxg0O.png",
     "imageUrl": "http://i.imgur.com/GXSWTZw.jpg",
-    "estimatedHours": 300
+    "estimatedHours": 300,
+    "currentStatus": "open",
+    "moneySaved": 0
   },
 
   {
@@ -292,7 +283,9 @@
     "projectDescription": "Campers will build a basic website for sharing information, feeds from different campaign’s websites.",
     "logoUrl": "http://i.imgur.com/uAyUiMN.png",
     "imageUrl": "http://i.imgur.com/2Og5tqy.jpg",
-    "estimatedHours": 100
+    "estimatedHours": 100,
+    "currentStatus": "open",
+    "moneySaved": 0
   },
   {
     "whatDoesNonprofitDo": "We empower the community through improved literacy.",
@@ -304,5 +297,33 @@
     "logoUrl": "http://i.imgur.com/jXQY01H.png",
     "imageUrl": "http://i.imgur.com/iUXBpeL.jpg",
     "estimatedHours": 100
+    "currentStatus": "started",
+    "moneySaved": 0
+  },
+  {
+    "whatDoesNonprofitDo": "Options Inc. is an organization that was founded in 1979 to assist adults with disabilities in living and working in the community. We provide transportation to approximately 230 individuals.",
+    "websiteLink": "www.options-inc.org",
+    "name": "Options Inc.",
+    "endUser": "Administrators and Persons with Disabilities",
+    "approvedDeliverables": ["Web App"],
+    "projectDescription": "Campers will build a system to store all of Options Inc.'s clients addresses, optimize routes for our 23 vehicles, and schedule their staff for these routes.",
+    "logoUrl": "http://i.imgur.com/jGWRMuF.jpg",
+    "imageUrl": "http://i.imgur.com/VUuJJlM.jpg",
+    "estimatedHours": 300
+    "currentStatus": "open",
+    "moneySaved": 0
+  },
+  {
+    "whatDoesNonprofitDo": "Our goal is to improve addiction treatment and recovery services through targeted outreach, policy development, and direct support services for addicts, their families and health professionals.",
+    "websiteLink": "http://www.taadas.org/",
+    "name": "Tennessee Association of Alcohol, Drug, and other Addiction Services",
+    "endUser": "Administrators and Persons with Disabilities",
+    "approvedDeliverables": ["Website"],
+    "projectDescription": "Campers will build a modern, mobile-responsive website.",
+    "logoUrl": "http://i.imgur.com/kYHgY0F.jpg",
+    "imageUrl": "http://i.imgur.com/W6L1sGV.jpg",
+    "estimatedHours": 100
+    "currentStatus": "open",
+    "moneySaved": 0
   }
 ]
