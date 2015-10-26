@@ -28,6 +28,9 @@
         "",
         "meetBonfire(\"You can do this!\");"
       ],
+      "solutions": [
+        "function meetBonfire(argument) {\n  // Good luck!\n  console.log(\"you can read this function's argument in the developer tools\", argument);\n\n  return true;\n}\n\n\n\nmeetBonfire(\"You can do this!\");\n"
+      ],
       "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
@@ -289,6 +292,9 @@
       "MDNlinks": [
         "Comparison Operators"
       ],
+      "solutions": [
+        "function largestOfFour(arr) {\n  return arr.map(function(subArr) {\n    return Math.max.apply(null, subArr);\n  });\n}\n\nlargestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]);\n"
+      ],
       "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
@@ -329,6 +335,9 @@
       "MDNlinks": [
         "String.substr()"
       ],
+      "solutions": [
+        "function end(str, target) {\n  // \"Never give up and good luck will find you.\"\n  // -- Falcor\n  return str.substring(str.length-target.length) === target;\n}\n\nend('Bastian', 'n');\n"
+      ],
       "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
@@ -364,6 +373,9 @@
       ],
       "MDNlinks": [
         "Global String Object"
+      ],
+      "solutions": [
+        "function repeat(str, num) {\n  if (num < 0) return '';\n  return num === 1 ? str : str + repeat(str, num-1);\n}\n\nrepeat('abc', 3);\n"
       ],
       "type": "bonfire",
       "challengeType": 5,
@@ -405,6 +417,9 @@
       "MDNlinks": [
         "String.slice()"
       ],
+      "solutions": [
+        "function truncate(str, num) {\n  if (str.length > num) {\n    return str.substring(0, num-3) + '...';\n  }\n  return str;\n}\n\ntruncate('A-tisket a-tasket A green and yellow basket', 11);\n"
+      ],
       "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
@@ -441,6 +456,9 @@
       ],
       "MDNlinks": [
         "Array.push()"
+      ],
+      "solutions": [
+        "function chunk(arr, size) {\n  var out = [];\n  for (var i = 0; i < arr.length; i+=size) {\n    out.push(arr.slice(i,i+size));\n  }\n  return out;\n}\n\nchunk(['a', 'b', 'c', 'd'], 2);\n"
       ],
       "type": "bonfire",
       "challengeType": 5,
@@ -480,6 +498,9 @@
       "MDNlinks": [
         "Array.slice()",
         "Array.splice()"
+      ],
+      "solutions": [
+        "function slasher(arr, howMany) {\n  // it doesn't always pay to be first\n  return arr.slice(howMany);\n}\n\nslasher([1, 2, 3], 2);\n"
       ],
       "type": "bonfire",
       "challengeType": 5,
@@ -524,6 +545,9 @@
       "MDNlinks": [
         "Array.indexOf()"
       ],
+      "solutions": [
+        "function mutation(arr) {\n  var hash = Object.create(null);\n  arr[0].toLowerCase().split('').forEach(function(c) {\n    hash[c] = true;\n  });\n  return !arr[1].toLowerCase().split('').filter(function(c) {\n    return !hash[c];\n  }).length;\n}\n\nmutation(['hello', 'hey']);\n"
+      ],
       "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
@@ -561,6 +585,9 @@
       "MDNlinks": [
         "Boolean Objects",
         "Array.filter()"
+      ],
+      "solutions": [
+        "function bouncer(arr) {\n  // Don't show a false ID to this bouncer.\n  return arr.filter(function(e) {return e;});\n}\n\nbouncer([7, 'ate', '', false, 9]);\n"
       ],
       "type": "bonfire",
       "challengeType": 5,
@@ -601,6 +628,9 @@
         "Arguments object",
         "Array.filter()"
       ],
+      "solutions": [
+        "function destroyer(arr) {\n  var hash = Object.create(null);\n  [].slice.call(arguments, 1).forEach(function(e) {\n    hash[e] = true;\n  });\n  // Remove all the values\n  return arr.filter(function(e) { return !(e in hash);});\n}\n\ndestroyer([1, 2, 3, 1, 2, 3], 2, 3);\n"
+      ],
       "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
@@ -633,6 +663,9 @@
       ],
       "MDNlinks": [
         "Array.sort()"
+      ],
+      "solutions": [
+        "function where(arr, num) {\n  // Find my place in this sorted array.\n  return num;\n}\n\nwhere([40, 60], 50);\n"
       ],
       "tests": [
         "assert(where([10, 20, 30, 40, 50], 35) === 3, 'message: <code>where([10, 20, 30, 40, 50], 35)</code> should return <code>3</code>.');",
