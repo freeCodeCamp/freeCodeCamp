@@ -32,49 +32,43 @@
           ""
         ],
         [
-          "",
+          "http://i.imgur.com/jkQX9SQ.gif",
           "A gif showing you how to prep your environmental variables in your .env file.",
           "Open your .env file and paste this into it, then save it: <br><code>GITHUB_KEY=<br>GITHUB_SECRET=<br>MONGO_URI=mongodb://localhost:27017/clementinejs<br>PORT=8080<br>APP_URL=http://localhost:8080/</code>",
           ""
         ],
         [
-          "http://i.imgur.com/BH2qLhB.gif",
+          "http://i.imgur.com/f3DE7zB.gif",
           "A gif showing you how to open c9.io's preview window.",
           "Open up your application in a preview tab by clicking window > share > application > open.",
           ""
         ],
         [
-          "http://i.imgur.com/EIiaiPg.gif",
-          "A gif showing you how to creat ea GitHub app using c9.io's preview URL.",
+          "http://i.imgur.com/Ip0qUdQ.gif",
+          "A gif showing you how to create a GitHub app using c9.io's preview URL.",
           "Create a GitHub app for authentication and choose an \"Application name\". For the homepage URL, paste the URL from your preview tab. You'll also paste the URL from your preview tab into \"Authorization callback URL\", then add to it: <code>auth/github/callback</code>",
           "https://github.com/settings/applications/new"
         ],
         [
-          "http://i.imgur.com/drPlNaE.gif",
+          "http://i.imgur.com/qCUVRFb.gif",
           "A gif showing you how to transfer GitHub's key and secret over to your .env file, as well as your c9.io URL.",
           "GitHub will create an app and present you with a Client ID and a Client Secret. Set your .env file's GITHUB_KEY equal to the Client ID, and set your .env file's GITHUB_SECRET equal to the Client Secret. Copy the URL from the your preview tab and paste it into your .env file as your APP_URL.",
           ""
         ],
         [
-          "http://i.imgur.com/VqCmJOh.gif",
-          "A gif showing you how to update the ajax-functions.js file with your c9.io preview URL.",
-          "Open <code>app/common/ajax-functions.js</code> and replace <code>http://localhost:8080/</code> with the URL from your clipboard (the URL from your preview tab).",
-          ""
-        ],
-        [
-          "http://i.imgur.com/bLXrt6P.gif",
+          "http://i.imgur.com/2a20Vah.gif",
           "A gif showing you how to start mongoDB in c9.io's terminal.",
           "In your terminal, start MongoDB by entering <code>mongod --smallfiles</code>",
           ""
         ],
         [
-          "http://i.imgur.com/TNygDfF.gif",
+          "http://i.imgur.com/dC55pWk.gif",
           "A gif showing you how to open a new tab in c9.io's terminal.",
           "Open a new terminal tab with the + button above your terminal, then run <code>npm install</code>",
           ""
         ],
         [
-          "http://i.imgur.com/NYk4VeS.gif",
+          "http://i.imgur.com/54OC2Ro.gif",
           "A gif showing you how to navigate to your preview tab and sign in to your new Clementine.js app.",
           "run <code>node server.js</code> to start the server. Refresh your preview tab. You should see the Clementine.js logo. Click \"sign in\" and accept GitHub's prompt to authorize the application.",
           ""
