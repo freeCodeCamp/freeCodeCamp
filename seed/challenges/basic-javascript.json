@@ -41,11 +41,11 @@
       "challengeSeed": [
         "function welcomeToBooleans() {",
         "",
-        "// Only change code below this line.",
+        "  // Only change code below this line.",
         "",
         "  return false;",
         "",
-        "// Only change code above this line.",
+        "  // Only change code above this line.",
         "}",
         "",
         "welcomeToBooleans();"
@@ -69,10 +69,10 @@
       "challengeSeed": [
         "// var ourName = \"Free Code Camp\";",
         "",
+        "// Only change code below this line.",
+        "",
         "",
         "// Only change code above this line.",
-        "// We use this function to show you the value of your variable in your output box.",
-        "// You'll learn about functions soon.",
         "",
         "if(typeof(myName) !== \"undefined\"){(function(v){return v;})(myName);}"
       ],
@@ -881,7 +881,7 @@
         "<code>&thinsp;&thinsp;ourArray.push(i);</code>",
         "<code>}</code>",
         "<code>ourArray</code> will now contain [10,8,6,4,2] ",
-        "Let's change our <code>initialization</code> and <code>final-expression</code> so we can count backward by twos for numbers."
+        "Let's change our <code>initialization</code> and <code>final-expression</code> so we can count backward by twos for odd numbers."
       ],
       "tests": [
         "assert(editor.getValue().match(/for\\s*\\(/g).length > 1, 'message: You should be using a <code>for</code> loop for this.');",
