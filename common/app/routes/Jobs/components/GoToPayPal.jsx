@@ -28,7 +28,47 @@ export default contain(
     propTypes: {
       id: PropTypes.string,
       isHighlighted: PropTypes.bool,
-      buttonId: PropTypes.string
+      buttonId: PropTypes.string,
+      price: PropTypes.number,
+      discountAmount: PropTypes.number
+    },
+
+    renderDiscount(discountAmount) {
+      if (!discountAmount) {
+        return null;
+      }
+      return (
+        <Row>
+          <Col
+            md={ 3 }
+            mdOffset={ 3 }>
+            <h4>Discount</h4>
+          </Col>
+          <Col
+            md={ 3 }>
+              <h4>-{ discountAmount }</h4>
+          </Col>
+        </Row>
+      );
+    },
+
+    renderHighlightPrice(isHighlighted) {
+      if (!isHighlighted) {
+        return null;
+      }
+      return (
+        <Row>
+          <Col
+            md={ 3 }
+            mdOffset={ 3 }>
+            <h4>Highlighting</h4>
+          </Col>
+          <Col
+            md={ 3 }>
+            <h4>+ 50</h4>
+          </Col>
+        </Row>
+      );
     },
 
     render() {
@@ -68,17 +108,8 @@ export default contain(
                         <h4>+{ price }</h4>
                     </Col>
                   </Row>
-                  <Row>
-                    <Col
-                      md={ 3 }
-                      mdOffset={ 3 }>
-                      <h4>Discount</h4>
-                    </Col>
-                    <Col
-                      md={ 6 }>
-                        <h4>-{ discountAmount }</h4>
-                    </Col>
-                  </Row>
+                  { this.renderDiscount(discountAmount) }
+                  { this.renderHighlightPrice(isHighlighted) }
                   <Row>
                     <Col
                       md={ 3 }
@@ -87,7 +118,9 @@ export default contain(
                     </Col>
                     <Col
                       md={ 6 }>
-                        <h4>${ price - discountAmount }</h4>
+                      <h4>${
+                        price - discountAmount + (isHighlighted ? 50 : 0)
+                      }</h4>
                     </Col>
                   </Row>
                 </Well>
