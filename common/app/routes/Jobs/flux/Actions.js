@@ -71,6 +71,16 @@ export default Actions({
     return { promoCode: value.replace(/[^\d\w\s]/, '') };
   },
   applyCode: null,
+  clearPromo(foo, undef) {
+    return {
+      price: undef,
+      buttonId: undef,
+      discountAmount: undef,
+      promoCode: undef,
+      promoApplied: false,
+      promoName: undef
+    };
+  },
   applyPromo({
     fullPrice: price,
     buttonId,

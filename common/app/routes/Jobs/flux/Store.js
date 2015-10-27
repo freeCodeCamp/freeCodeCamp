@@ -22,7 +22,8 @@ export default Store({
       setForm,
       setFollowersCount,
       setPromoCode,
-      applyPromo
+      applyPromo,
+      clearPromo
     } = cat.getActions('JobActions');
     const register = createRegistrar(jobsStore);
     register(setter(setJobs));
@@ -32,6 +33,7 @@ export default Store({
     register(setter(setForm));
     register(setter(setPromoCode));
     register(setter(applyPromo));
+    register(setter(clearPromo));
     register(setter(setFollowersCount));
 
     register(transformer(findJob));
