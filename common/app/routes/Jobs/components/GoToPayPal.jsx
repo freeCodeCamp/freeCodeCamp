@@ -15,7 +15,9 @@ export default contain(
     actions: 'jobActions',
     map({
       job: { id, isHighlighted } = {},
-      buttonId = paypalIds.regular,
+      buttonId = isHighlighted ?
+        paypalIds.highlighted :
+        paypalIds.regular,
       price = 200,
       discountAmount = 0,
       promoCode = '',
