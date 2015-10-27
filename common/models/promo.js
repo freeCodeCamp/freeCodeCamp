@@ -1,8 +1,7 @@
 import { isAlphanumeric } from 'validator';
 
 export default function promo(Promo) {
-  Promo.getButton = function getButton(code, type = null) {
-
+  Promo.getButton = function getButton(code, type = 'isNot') {
     if (
       !isAlphanumeric(code) &&
       type &&
@@ -15,8 +14,7 @@ export default function promo(Promo) {
 
     const query = {
       where: {
-        code,
-        type
+        and: [{ code }, { type }]
       }
     };
 

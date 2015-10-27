@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import { Button, Col, Panel, Row, Well } from 'react-bootstrap';
+import { Button, Input, Col, Panel, Row, Well } from 'react-bootstrap';
 import { contain } from 'thundercats-react';
 
 const paypalIds = {
@@ -12,14 +12,26 @@ const paypalIds = {
 export default contain(
   {
     store: 'JobsStore',
-    actions: 'JobActions',
+    actions: 'jobActions',
     map({
       job: { id, isHighlighted } = {},
       buttonId = paypalIds.regular,
       price = 200,
-      discountAmount = 0
+      discountAmount = 0,
+      promoCode = '',
+      promoApplied = false,
+      promoName
     }) {
-      return { id, isHighlighted, buttonId, price, discountAmount };
+      return {
+        id,
+        isHighlighted,
+        buttonId,
+        price,
+        discountAmount,
+        promoName,
+        promoCode,
+        promoApplied
+      };
     }
   },
   React.createClass({
@@ -30,7 +42,11 @@ export default contain(
       isHighlighted: PropTypes.bool,
       buttonId: PropTypes.string,
       price: PropTypes.number,
-      discountAmount: PropTypes.number
+      discountAmount: PropTypes.number,
+      promoName: PropTypes.string,
+      promoCode: PropTypes.string,
+      promoApplied: PropTypes.bool,
+      jobActions: PropTypes.object
     },
 
     renderDiscount(discountAmount) {
@@ -42,7 +58,7 @@ export default contain(
           <Col
             md={ 3 }
             mdOffset={ 3 }>
-            <h4>Discount</h4>
+            <h4>Promo Discount</h4>
           </Col>
           <Col
             md={ 3 }>
@@ -71,8 +87,75 @@ export default contain(
       );
     },
 
+    renderPromo() {
+      const {
+        promoApplied,
+        promoCode,
+        promoName,
+        isHighlighted,
+        jobActions
+      } = this.props;
+      if (promoApplied) {
+        return (
+          <div>
+            <div className='spacer' />
+            <Row>
+              <Col
+                md={ 3 }
+                mdOffset={ 3 }>
+                { promoName } applied
+              </Col>
+            </Row>
+          </div>
+        );
+      }
+      return (
+        <div>
+          <div className='spacer' />
+          <Row>
+            <Col
+              md={ 3 }
+              mdOffset={ 3 }>
+              Have a promo code?
+            </Col>
+          </Row>
+          <Row>
+            <Col
+              md={ 3 }
+              mdOffset={ 3 }>
+              <Input
+                onChange={ jobActions.setPromoCode }
+                type='text'
+                value={ promoCode } />
+            </Col>
+            <Col
+              md={ 3 }>
+              <Button
+                block={ true }
+                bsSize='large'
+                onClick={ () => {
+                  jobActions.applyCode({
+                    code: promoCode,
+                    type: isHighlighted ? 'isHighlighted' : null
+                  });
+                }}>
+                Find Promo
+              </Button>
+            </Col>
+          </Row>
+        </div>
+      );
+    },
+
     render() {
-      const { id, isHighlighted, buttonId, price, discountAmount } = this.props;
+      const {
+        id,
+        isHighlighted,
+        buttonId,
+        price,
+        discountAmount
+      } = this.props;
+
       return (
         <div>
           <Row>
@@ -124,6 +207,7 @@ export default contain(
                     </Col>
                   </Row>
                 </Well>
+                { this.renderPromo() }
                 <div className='spacer' />
                 <Row>
                   <Col
