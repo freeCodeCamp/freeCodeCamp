@@ -61,7 +61,7 @@ export default contain(
                   block={ true }
                   className='signup-btn'
                   onClick={ () => {
-                    // jobActions.clearSavedForm();
+                    jobActions.clearSavedForm();
                     jobActions.saveJobToDb({
                       goTo: '/jobs/new/check-out',
                       job
