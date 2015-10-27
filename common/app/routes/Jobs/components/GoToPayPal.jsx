@@ -188,11 +188,11 @@ export default contain(
                     </Col>
                     <Col
                       md={ 6 }>
-                        <h4>+{ price }</h4>
+                        <h4>+ { price }</h4>
                     </Col>
                   </Row>
-                  { this.renderDiscount(discountAmount) }
                   { this.renderHighlightPrice(isHighlighted) }
+                  { this.renderDiscount(discountAmount) }
                   <Row>
                     <Col
                       md={ 3 }
