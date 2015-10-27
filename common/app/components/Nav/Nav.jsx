@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import { LinkContainer } from 'react-router-bootstrap';
 import {
   Col,
   CollapsibleNav,
@@ -11,16 +12,6 @@ import navLinks from './links.json';
 import FCCNavItem from './NavItem.jsx';
 
 const fCClogo = 'https://s3.amazonaws.com/freecodecamp/freecodecamp_logo.svg';
-const navElements = navLinks.map((navItem, index) => {
-  return (
-    <NavItem
-      eventKey={ index + 1 }
-      href={ navItem.link }
-      key={ index }>
-      { navItem.content }
-    </NavItem>
-  );
-});
 
 const logoElement = (
   <a href='/'>
@@ -39,18 +30,40 @@ const toggleButton = (
   </button>
 );
 
-export default class extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+export default React.createClass({
+  displayName: 'Nav',
 
-  static displayName = 'Nav'
-  static propTypes = {
+  propTypes: {
     points: PropTypes.number,
     picture: PropTypes.string,
     signedIn: PropTypes.bool,
     username: PropTypes.string
-  }
+  },
+
+  renderLinks() {
+    return navLinks.map(({ content, link, react }, index) => {
+      if (react) {
+        return (
+          <LinkContainer
+            eventKey={ index + 1 }
+            key={ content }
+            to={ link }>
+            <NavItem>
+              { content }
+            </NavItem>
+          </LinkContainer>
+        );
+      }
+      return (
+        <NavItem
+          eventKey={ index + 1 }
+          href={ link }
+          key={ content }>
+          { content }
+        </NavItem>
+      );
+    });
+  },
 
   renderPoints(username, points) {
     if (!username) {
@@ -62,7 +75,7 @@ export default class extends React.Component {
         [ { points } ]
       </NavItem>
     );
-  }
+  },
 
   renderSignin(username, picture) {
     if (username) {
@@ -87,7 +100,7 @@ export default class extends React.Component {
         </FCCNavItem>
       );
     }
-  }
+  },
 
   render() {
     const { username, points, picture } = this.props;
@@ -103,12 +116,12 @@ export default class extends React.Component {
             className='hamburger-dropdown'
             navbar={ true }
             right={ true }>
-            { navElements }
-            { this.renderPoints(username, points)}
+            { this.renderLinks() }
+            { this.renderPoints(username, points) }
             { this.renderSignin(username, picture) }
           </Nav>
         </CollapsibleNav>
       </Navbar>
     );
   }
-}
+});
