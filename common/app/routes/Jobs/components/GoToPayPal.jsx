@@ -132,14 +132,13 @@ export default contain(
               md={ 3 }>
               <Button
                 block={ true }
-                bsSize='large'
                 onClick={ () => {
                   jobActions.applyCode({
                     code: promoCode,
                     type: isHighlighted ? 'isHighlighted' : null
                   });
                 }}>
-                Find Promo
+                Apply Promo Code
               </Button>
             </Col>
           </Row>
