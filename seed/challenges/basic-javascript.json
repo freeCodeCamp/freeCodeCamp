@@ -32,7 +32,7 @@
       "description": [
         "In computer science, <code>data structures</code> are things that hold data. JavaScript has seven of these. For example, the <code>Number</code> data structure holds numbers.",
         "Let's learn about the most basic data structure of all: the <code>Boolean</code>. Booleans can only hold the value of either true or false. They are basically little on-off switches.",
-        "Let's modify our <code>welcomeToBooleans</code> function so that it will return <code>true</code>instead of <code>false</code>when the run button is clicked."
+        "Let's modify our <code>welcomeToBooleans</code> function so that it will return <code>true</code> instead of <code>false</code> when the run button is clicked."
       ],
       "tests": [
         "assert(typeof(welcomeToBooleans()) === 'boolean', 'message: The <code>welcomeToBooleans()</code> function should return a boolean &#40;true/false&#41; value.');",
