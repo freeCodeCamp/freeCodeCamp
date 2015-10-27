@@ -27,7 +27,7 @@ app$({ history, location: appLocation })
   .flatMap(
     ({ AppCat }) => {
       // instantiate the cat with service
-      const appCat = AppCat(null, services);
+      const appCat = AppCat(null, services, history);
       // hydrate the stores
       return hydrate(appCat, catState)
         .map(() => appCat);

@@ -1,6 +1,9 @@
 import React, { PropTypes } from 'react';
-import { Row, Thumbnail, Panel, Well } from 'react-bootstrap';
-import moment from 'moment';
+import { Row, Col, Thumbnail, Panel } from 'react-bootstrap';
+
+const defaultImage =
+  'https://pbs.twimg.com/' +
+  'profile_images/562385977390272512/AK29YaTf_400x400.png';
 
 const thumbnailStyle = {
   backgroundColor: 'white',
@@ -36,30 +39,62 @@ export default React.createClass({
       city,
       company,
       state,
+      locale,
       email,
       phone,
-      postedOn,
       description
     } = job;
 
     return (
       <div>
         <Row>
-          <Well>
-            <Thumbnail
-              alt={ company + 'company logo' }
-              src={ logo }
-              style={ thumbnailStyle } />
+          <Col
+            md={ 10 }
+            mdOffset={ 1 }
+            xs={ 12 }>
             <Panel>
-              Position: { position }
-              Location: { city }, { state }
-              <br />
-              Contact: { email || phone || 'N/A' }
-              <br />
-              Posted On: { moment(postedOn).format('MMMM Do, YYYY') }
+              <Row>
+                <h2 className='text-center'>
+                  { company }
+                </h2>
+              </Row>
+              <div className='spacer' />
+              <Row>
+                <Col
+                  md={ 2 }
+                  mdOffset={ 3 }>
+                  <Thumbnail
+                    alt={ logo ? company + 'company logo' : 'stock image' }
+                    src={ logo || defaultImage }
+                    style={ thumbnailStyle } />
+                </Col>
+                <Col
+                  md={ 4 }>
+
+                  <bold>Position: </bold> { position || 'N/A' }
+                  <br />
+                  <bold>Location: </bold>
+                  { locale ? locale : `${city}, ${state}` }
+                </Col>
+              </Row>
+              <div className='spacer' />
+              <Row>
+                <Col
+                  md={ 6 }
+                  mdOffset={ 3 }
+                  xs={ 12 }>
+                  <p>{ description }</p>
+                </Col>
+              </Row>
+              <Row>
+                <Col
+                  md={ 6 }
+                  mdOffset={ 3 }>
+                  <bold>Contact:</bold> { email || phone }
+                </Col>
+              </Row>
             </Panel>
-            <p>{ description }</p>
-          </Well>
+          </Col>
         </Row>
       </div>
     );
