@@ -2,6 +2,7 @@ import { Actions } from 'thundercats';
 import store from 'store';
 import debugFactory from 'debug';
 import { jsonp$ } from '../../../../utils/jsonp$';
+import { postJSON$ } from '../../../../utils/ajax-stream';
 
 const debug = debugFactory('freecc:jobs:actions');
 const assign = Object.assign;
@@ -65,6 +66,26 @@ export default Actions({
   getFollowers: null,
   setFollowersCount(numOfFollowers) {
     return { numOfFollowers };
+  },
+  setPromoCode({ target: { value = '' }} = {}) {
+    return { promoCode: value.replace(/[^\d\w\s]/, '') };
+  },
+  applyCode: null,
+  applyPromo({
+    fullPrice: price,
+    buttonId,
+    discountAmount,
+    code: promoCode,
+    name: promoName
+  } = {}) {
+    return {
+      price,
+      buttonId,
+      discountAmount,
+      promoCode,
+      promoApplied: true,
+      promoName
+    };
   }
 })
   .refs({ displayName: 'JobActions' })
@@ -139,5 +160,23 @@ export default Actions({
         );
     });
 
+    jobActions.applyCode.subscribe(({ code = '', type = null}) => {
+      const body = { code: code.replace(/[^\d\w\s]/, '') };
+      if (type) {
+        body.type = type;
+      }
+      postJSON$('/api/promos/getButton', body)
+        .pluck('response')
+        .subscribe(
+          ({ promo }) => {
+            if (promo && promo.buttonId) {
+              jobActions.applyPromo(promo);
+            }
+            jobActions.setError(new Error('no promo found'));
+          },
+          jobActions.setError
+        );
+    });
+
     return jobActions;
-  });
+    });

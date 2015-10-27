@@ -255,6 +255,7 @@ export function postJSON$(url, body) {
     url,
     body: JSON.stringify(body),
     method: 'POST',
+    responseType: 'json',
     headers: { 'Content-Type': 'application/json' }
   });
 }
@@ -277,10 +278,7 @@ export function get$(url) {
   * @returns {Observable} The observable sequence which contains the parsed JSON
   */
 export function getJSON$(url) {
-  if (!root.JSON && typeof root.JSON.parse !== 'function') {
-    throw new TypeError('JSON is not supported in your runtime.');
-  }
-  return ajax$({url: url, responseType: 'json'}).map(function(x) {
+  return ajax$({ url: url, responseType: 'json' }).map(function(x) {
     return x.response;
   });
 }
