@@ -512,9 +512,9 @@
       ],
       "tests": [
         "assert($(\"h2\").css(\"color\") === \"rgb(255, 0, 0)\", 'Your <code>h2</code> element should be red.')",
-        "assert($(\"h2\").hasClass(\"red-text\"), 'Your <code>h2</code> element should have the class <code>red-text</code>')",
+        "assert($(\"h2\").hasClass(\"red-text\"), 'Your <code>h2</code> element should have the class <code>red-text</code>.')",
         "assert($(\"p\").css(\"color\") === \"rgb(255, 0, 0)\", 'Your <code>p</code> element should be red.')",
-        "assert($(\"p\").hasClass(\"red-text\"), 'Your <code>p</code> element should have the class <code>red-text</code>')"
+        "assert($(\"p\").hasClass(\"red-text\"), 'Your <code>p</code> element should have the class <code>red-text</code>.')"
       ],
       "challengeSeed": [
         "<style>",
@@ -3151,7 +3151,10 @@
         "Now let's start fresh and talk about CSS inheritance.",
         "Every HTML page has a <code>body</code> element.",
         "We can prove that the <code>body</code> element exists here by giving it a <code>background-color</code> of black.",
-        "We can do this by adding <code>body { background-color: black; }</code> to our <code>style</code> element."
+        "We can do this by adding the following to our <code>style</code> element:",
+        "<code>body {</code>",
+        "<code>&thinsp;&thinsp;background-color: black;</code>",
+        "<code>}</code>"
       ],
       "tests": [
         "assert($(\"body\").css(\"background-color\") === \"rgb(0, 0, 0)\", 'Give your <code>body</code> element the <code>background-color</code> of black.')"
@@ -3226,7 +3229,7 @@
         "For example, your <code>h1</code> element can't be both green and pink at the same time.",
         "Let's see what happens when we create a class that makes text pink, then apply it to an element. Will our class <code>override</code> the <code>body</code> element's <code>color: green;</code> CSS property?",
         "Create a CSS class called <code>pink-text</code> that gives an element the color pink.",
-        "Give your <code>h1</code> element the class of <code>pink-text</code>"
+        "Give your <code>h1</code> element the class of <code>pink-text</code>."
       ],
       "tests": [
         "assert($(\"h1\").hasClass(\"pink-text\"), 'Your <code>h1</code> element should have the class <code>pink-text</code>.')",
@@ -3313,7 +3316,7 @@
         "Leave the <code>blue-text</code> and <code>pink-text</code> classes on your <code>h1</code> element.",
         "Create a CSS declaration for your <code>orange-text</code> id in your <code>style</code> element. Here's an example of what this looks like:",
         "<code>#brown-text {</code>",
-        "<code>color: brown;</code>",
+        "<code>&thinsp;&thinsp;color: brown;</code>",
         "<code>}</code>"
       ],
       "tests": [

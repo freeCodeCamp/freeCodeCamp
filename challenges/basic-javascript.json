@@ -65,7 +65,7 @@
         "assert((function(){if(typeof(myName) !== \"undefined\" && typeof(myName) === \"string\" && myName.length > 0){return true;}else{return false;}})(), 'message: <code>myName</code> should be a string that contains at least one character in it.');"
       ],
       "challengeSeed": [
-        "// var ourName = \"Free Code Camp\";",
+        "var ourName = \"Free Code Camp\";",
         "",
         "",
         "// Only change code above this line.",
@@ -87,9 +87,9 @@
         "assert((function(){if(typeof(myLastName) !== \"undefined\" && typeof(myLastName) === \"string\" && myLastName.length > 0){return true;}else{return false;}})(), 'message: <code>myLastName</code> should be a string with at least one character in it.');"
       ],
       "challengeSeed": [
-        "// var name = \"Alan Turing\";",
-        "// var firstName = \"Alan\";",
-        "// var lastName = \"Turing\";",
+        "var name = \"Alan Turing\";",
+        "var firstName = \"Alan\";",
+        "var lastName = \"Turing\";",
         "",
         "",
         "// Only change code above this line.",
@@ -230,7 +230,7 @@
       "title": "Use Bracket Notation to Find the Nth-to-Last Character in a String",
       "description": [
         "In order to get the last letter of a string, you can subtract one from the string's length.",
-        "For example, you can get the value of the third-to-last letter of the <code>var firstName = \"Charles\"</code> string by using <code>firstName[firstName.length - 3]</code>.",
+        "For example, you can get the value of the third-to-last letter of the <code>var firstName = \"Charles\"</code> string by using <code>firstName[firstName.length - 3]</code>",
         "Use <code>bracket notation</code> to find the second-to-last character in the <code>lastName</code> string.",
         "Try looking at the <code>thirdToLastLetterOfFirstName</code> variable declaration if you get stuck."
       ],
@@ -288,7 +288,7 @@
         "assert((function(){if(difference === 12 && editor.getValue().match(/\\-/g)){return true;}else{return false;}})(), 'message: Make the variable <code>difference</code> equal 12.');"
       ],
       "challengeSeed": [
-        "var difference = 45 - 0; //12",
+        "var difference = 45 - 0;",
         "",
         "// Only change code above this line.",
         "",
@@ -390,10 +390,10 @@
         "Change the <code>0.0</code> so that your quotient will equal <code>2.2</code>."
       ],
       "tests": [
-        "assert((function(){if(quotient === 2.2 && editor.getValue().match(/\\//g)){return true;}else{return false;}})(), 'message: Make the variable <code>quotient</code> equal 2.2.');"
+        "assert((function(){if(quotient === 2.2 && editor.getValue().match(/\\//g)){return true;}else{return false;}})(), 'message: Make the variable <code>quotient</code> equal <code>2.2</code>.');"
       ],
       "challengeSeed": [
-        "var quotient = 0.0 / 2.0; // equals 2.2",
+        "var quotient = 0.0 / 2.0;",
         "",
         "",
         "// Only change code above this line.",
@@ -418,7 +418,7 @@
         "assert(typeof(myArray[1]) !== 'undefined' && typeof(myArray[1]) == 'number', 'message: The second item in <code>myArray</code> should be a <code>number</code>.');"
       ],
       "challengeSeed": [
-        "// var array = [\"John\", 23];",
+        "var array = [\"John\", 23];",
         "",
         "// Only change code below this line.",
         "",
@@ -471,8 +471,9 @@
         "assert((function(){if(typeof(myArray) != 'undefined' && typeof(myData) != 'undefined' && myArray[0] == myData){return true;}else{return false;}})(), 'message: The variable <code>myData</code> should equal the first value of <code>myArray</code>.');"
       ],
       "challengeSeed": [
-        "// var ourArray = [1,2,3];",
-        "// var ourData = ourArray[0]; // equals 1",
+        "var ourArray = [1,2,3];",
+        "",
+        "var ourData = ourArray[0]; // equals 1",
         "",
         "var myArray = [1,2,3];",
         "",
@@ -502,11 +503,13 @@
       ],
       "challengeSeed": [
         "var ourArray = [1,2,3];",
+        "",
         "ourArray[1] = 3; // ourArray now equals [1,3,3].",
         "",
         "var myArray = [1,2,3];",
         "",
         "// Only change code below this line.",
+        "",
         "",
         "",
         "// Only change code above this line.",
@@ -527,18 +530,18 @@
       ],
       "tests": [
         "assert((function(d){if(d[0] == 'John' && d[1] == 23 && d[2] == undefined){return true;}else{return false;}})(myArray), 'message: <code>myArray</code> should only contain <code>[\"John\", 23]</code>.');",
-        "assert((function(d){if(d[0] == 'cat' && d[1] == 2 && d[2] == undefined){return true;}else{return false;}})(removed), 'message: <code>removedFromMyArray</code> should only contain <code>[\"cat\", 2]</code>.');"
-
+        "assert((function(d){if(d[0] == 'cat' && d[1] == 2 && d[2] == undefined){return true;}else{return false;}})(removedFromMyArray), 'message: <code>removedFromMyArray</code> should only contain <code>[\"cat\", 2]</code>.');"
       ],
       "challengeSeed": [
         "var ourArray = [1,2,3];",
-        "var removedFromOurArray = numbers.pop(); // removedFromOurArray now equals 3, and ourArray now equals [1,2]",
+        "",
+        "var removedFromOurArray = ourArray.pop(); // removedFromOurArray now equals 3, and ourArray now equals [1,2]",
         "",
         "var myArray = [\"John\", 23, [\"cat\", 2]];",
         "",
         "// Only change code below this line.",
         "",
-        "",
+        "var removedFromMyArray;",
         "",
         "// Only change code above this line.",
         "",
@@ -600,7 +603,7 @@
         "",
         "// Only change code below this line.",
         "",
-        "",
+        "var removedFromMyArray;",
         "",
         "// Only change code above this line.",
         "",
@@ -725,7 +728,7 @@
         "};",
         "",
         "// Only change code above this line.",
-        "// We use this function to show you the value of your variable in your output box.",
+        "",
         "(function(z){return z;})(myDog);"
       ],
       "type": "waypoint",
@@ -749,7 +752,7 @@
         "Let's update <code>yourDog</code> object's name property. Let's change her name from \"Coder\" to \"Happy Coder\"."
       ],
       "tests": [
-        "assert(myDog.name.match(/Happy Coder/), 'message: Update <code>myDog</code>'s <code>\"name\"</code> property to equal \"Happy Coder\".');"
+        "assert(/happy coder/gi.test(myDog.name), 'message: Update <code>myDog</code>'s <code>\"name\"</code> property to equal \"Happy Coder\".');"
       ],
       "challengeSeed": [
         "var ourDog = {",
@@ -776,7 +779,7 @@
         "",
         "",
         "// Only change code above this line.",
-        "// We use this function to show you the value of your variable in your output box.",
+        "",
         "(function(z){return z;})(myDog);"
       ],
       "type": "waypoint",
@@ -818,7 +821,6 @@
         "",
         "// Only change code above this line.",
         "",
-        "// We use this function to show you the value of your variable in your output box.",
         "(function(z){return z;})(myDog);"
       ],
       "type": "waypoint",
@@ -840,7 +842,7 @@
         "  \"name\": \"Camper\",",
         "  \"legs\": 4,",
         "  \"tails\": 1,",
-        "  \"friends\": [\"everything!\"]",
+        "  \"friends\": [\"everything!\"],",
         "  \"bark\": \"bow-wow\"",
         "};",
         "",
@@ -850,7 +852,7 @@
         "  \"name\": \"Happy Coder\",",
         "  \"legs\": 4,",
         "  \"tails\": 1,",
-        "  \"friends\": [\"Free Code Camp Campers\"]",
+        "  \"friends\": [\"Free Code Camp Campers\"],",
         "  \"bark\": \"woof\"",
         "};",
         "",
@@ -860,7 +862,6 @@
         "",
         "// Only change code above this line.",
         "",
-        "// We use this function to show you the value of your variable in your output box.",
         "(function(z){return z;})(myDog);"
       ],
       "type": "waypoint",
@@ -887,18 +888,21 @@
       ],
       "tests": [
         "assert(editor.getValue().match(/for\\s*\\(/g).length > 1, 'message: You should be using a <code>for</code> loop for this.');",
-        "assert.deepEqual(myArray, [0,1,2,3,4], 'message: <code>myArray</code> should equal [0,1,2,3,4].');"
+        "assert.deepEqual(myArray, [0,1,2,3,4], 'message: <code>myArray</code> should equal <code>[0,1,2,3,4]</code>');"
       ],
       "challengeSeed": [
         "var ourArray = [];",
+        "",
         "for(var i = 0; i < 5; i++){",
         "  ourArray.push(i);",
         "}",
+        "",
         "var myArray = [];",
         "",
         "// Only change code below this line.",
         "",
-
+        "",
+        "",
         "// Only change code above this line.",
         "",
         "if(typeof(myArray) !== \"undefined\"){(function(){return myArray;})();}",
@@ -918,26 +922,28 @@
         "<code>&thinsp;&thinsp;ourArray.push(i);</code>",
         "<code>}</code>",
         "<code>ourArray</code> will now contain [0,2,4,6,8] ",
-        "Let's change our <code>initialization</code> and <code>final-expression</code> so we can count by odd numbers."
+        "Let's change our <code>initialization</code> and <code>final-expression</code> so we can count by odd numbers.",
+        "Push the odd numbers from 1 through 9 to <code>myArray</code> using a <code>for loop</code>."
       ],
       "tests":[
         "assert(editor.getValue().match(/for\\s*\\(/g).length > 1, 'message: You should be using a <code>for</code> loop for this.');",
-        "assert.deepEqual(myArray, [1,3,5,7,9], 'message: <code>myArray</code> should equal [1,3,5,7,9].');"
+        "assert.deepEqual(myArray, [1,3,5,7,9], 'message: <code>myArray</code> should equal <code>[1,3,5,7,9]</code>');"
       ],
       "challengeSeed":[
         "var ourArray = [];",
+        "",
         "for(var i = 1; i < 10; i += 2){",
         "  ourArray.push(i);",
         "}",
+        "",
         "var myArray = [];",
         "",
         "// Only change code below this line.",
         "",
-        "// Push the odd numbers from one through nine to myArray using a \"for loop\" like above.",
+        "",
         "",
         "// Only change code above this line.",
-        "// We use this function to show you the value of your variable in your output box.",
-        "// You'll learn about functions soon.",
+        "",
         "if(typeof(myArray) !== \"undefined\"){(function(){return myArray;})();}",
         ""
       ],
@@ -955,27 +961,29 @@
         "<code>for(var i = 10; i > 0; i -= 2) {</code>",
         "<code>&thinsp;&thinsp;ourArray.push(i);</code>",
         "<code>}</code>",
-        "<code>ourArray</code> will now contain [10,8,6,4,2] ",
-        "Let's change our <code>initialization</code> and <code>final-expression</code> so we can count backward by twos for numbers."
+        "<code>ourArray</code> will now contain <code>[10,8,6,4,2]</code>",
+        "Let's change our <code>initialization</code> and <code>final-expression</code> so we can count backward by twos for numbers.",
+        "Push the odd numbers from 9 through 1 to <code>myArray</code> using a <code>for loop</code>."
       ],
       "tests":[
         "assert(editor.getValue().match(/for\\s*\\(/g).length > 1, 'message: You should be using a <code>for</code> loop for this.');",
-        "assert.deepEqual(myArray, [9,7,5,3,1], 'message: <code>myArray</code> should equal [9,7,5,3,1].');"
+        "assert.deepEqual(myArray, [9,7,5,3,1], 'message: <code>myArray</code> should equal <code>[9,7,5,3,1]</code>');"
       ],
       "challengeSeed":[
         "ourArray = [];",
+        "",
         "for(var i = 9; i > 0; i -= 2){",
         "  ourArray.push(i);",
         "}",
+        "",
         "var myArray = [];",
         "",
         "// Only change code below this line.",
         "",
-        "// Push the odd numbers from nine through one to myArray using a \"for loop\" like above.",
+        "",
         "",
         "// Only change code above this line.",
-        "// We use this function to show you the value of your variable in your output box.",
-        "// You'll learn about functions soon.",
+        "",
         "if(typeof(myArray) !== \"undefined\"){(function(){return myArray;})();}",
         ""
       ],
@@ -994,17 +1002,19 @@
         "<code>&thinsp;&thinsp;ourArray.push(i);</code>",
         "<code>&thinsp;&thinsp;i++;</code>",
         "<code>}</code>",
-        "Let's try getting a while loop to work by pushing values to an array."
+        "Let's try getting a while loop to work by pushing values to an array.",
+        "Push the numbers 0 through 4 to <code>myArray</code> using a <code>while loop</code>."
       ],
       "tests": [
         "assert(editor.getValue().match(/while/g), 'message: You should be using a <code>while</code> loop for this.');",
-        "assert.deepEqual(myArray, [0,1,2,3,4], 'message: <code>myArray</code> should equal [0,1,2,3,4].');"
+        "assert.deepEqual(myArray, [0,1,2,3,4], 'message: <code>myArray</code> should equal <code>[0,1,2,3,4]</code>');"
       ],
       "challengeSeed": [
         "var myArray = [];",
+        "",
         "// Only change code below this line.",
         "",
-        "// Push the numbers zero through four to myArray using a \"while loop\".",
+        "",
         "",
         "// Only change code above this line.",
         "",
@@ -1020,16 +1030,17 @@
       "description": [
         "Random numbers are useful for creating random behavior.",
         "JavaScript has a <code>Math.random()</code> function that generates a random decimal number.",
-        "Change </code>myFunction</code> to return a random number instead of returning <code>0</code>.",
+        "Change <code>myFunction</code> to return a random number instead of returning <code>0</code>.",
         "Note that you can return a function, just like you would return a variable or value."
       ],
       "tests": [
         "assert(typeof(myFunction()) === \"number\", 'message: <code>myFunction</code> should return a random number.');",
         "assert((myFunction()+''). match(/\\./g), 'message: The number returned by <code>myFunction</code> should be a decimal.');",
-        "assert(editor.getValue().match(/Math\\.random/g).length >= 2, 'message: You should be using <code>Math.random</code> to generate the random decimal number.');"
+        "assert(editor.getValue().match(/Math\\.random/g).length >= 0, 'message: You should be using <code>Math.random</code> to generate the random decimal number.');"
       ],
       "challengeSeed": [
         "function myFunction() {",
+        "",
         "  // Only change code below this line.",
         "",
         "  return 0;",
@@ -1086,7 +1097,7 @@
       "description": [
         "Instead of generating a random number between zero and a given number like we did before, we can generate a random number that falls within a range of two specific numbers.",
         "To do this, we'll define a minimum number <code>min</code> and a maximum number <code>max</code>.",
-        "Here's the formula we'll use. Take a moment to read and try to understand what this code is doing.",
+        "Here's the formula we'll use. Take a moment to read it and try to understand what this code is doing:",
         "<code>Math.floor(Math.random() * (max - min + 1)) + min</code>",
         "Define two variables: <code>myMin</code> and </code>myMax</code>, and set them both equal to numbers.",
         "Then create a function called <code>myFunction</code> that returns a random number that's greater than or equal to <code>myMin</code>, and is less than <code>myMax</code>."
@@ -1095,7 +1106,7 @@
         "assert(myFunction() >= myMin, 'message: The random number generated by <code>myFunction</code> should be greater than or equal to your minimum number, <code>myMin</code>.');",
         "assert(myFunction() <= myMax, 'message: The random number generated by <code>myFunction</code> should be less than or equal to your maximum number, <code>myMax</code>.');",
         "assert(myFunction() % 1 === 0 , 'message: The random number generated by <code>myFunction</code> should be an integer, not a decimal.');",
-        "assert((function(){if(editor.getValue().match(/myMax/g).length >= 3 && editor.getValue().match(/myMin/g).length >= 4 && editor.getValue().match(/Math.floor/g) && editor.getValue().match(/Math.random/g)){return true;}else{return false;}})(), 'message: You should be using a function called <code>myFunction()</code> to calculate your random  number in your range.');"
+        "assert((function(){if(editor.getValue().match(/myMax/g).length > 1 && editor.getValue().match(/myMin/g).length > 2 && editor.getValue().match(/Math.floor/g) && editor.getValue().match(/Math.random/g)){return true;}else{return false;}})(), 'message: <code>myFunction()</code> should use use both <code>myMax</code> and <code>myMin</code>, and return a random number in your range.');"
       ],
       "challengeSeed": [
         "var ourMin = 1;",
@@ -1108,15 +1119,17 @@
         "",
         "}",
         "",
-        "  // Only change code below this line.",
+        "// Only change code below this line.",
         "",
+        "var myMin;",
         "",
+        "var myMax;",
         "",
+        "function myFunction() {",
         "",
+        "  return;",
         "",
-        "",
-        "",
-        "",
+        "}",
         "",
         "// Only change code above this line.",
         "",
@@ -1142,14 +1155,15 @@
         "Create <code>if</code> and <code>else</code> statements to return the string <code>\"heads\"</code> if the flip variable is zero, or else return the string <code>\"tails\"</code> if the flip variable is not zero."
       ],
       "tests": [
+        "assert(editor.getValue().match(/if/g).length >= 2, 'message: Create a new if statement.');",
+        "assert(editor.getValue().match(/else/g).length >= 1, 'message: Created a new else statement.');",
         "assert((function(){var result = myFunction();if(result === 'heads' || result === 'tails'){return true;} else {return false;}})(), 'message: <code>myFunction</code> should either return <code>heads</code> or <code>tails</code>.');",
-        "assert((function(){var result = myFunction();if(result === 'heads' && flip === 0 || result === 'tails' && flip !== 0){return true;} else {return false;}})(), 'message: <code>myFunction</code> should return <code>heads</code> when flip equals 0 and <code>tails</code> when flip equals 1.');",
-        "assert(editor.getValue().match(/if/g).length >= 4, 'message: You should have created a new if statement.');",
-        "assert(editor.getValue().match(/else/g).length >= 2, 'message: You should have created a new else statement.');"
+        "assert((function(){var result = myFunction();if(result === 'heads' && flip === 0 || result === 'tails' && flip !== 0){return true;} else {return false;}})(), 'message: <code>myFunction</code> should return <code>heads</code> when flip equals 0 and <code>tails</code> when flip equals 1.');"
       ],
       "challengeSeed": [
         "var flip = Math.floor(Math.random() * (1 - 0 + 1)) + 0;",
-        "function myFunction(){",
+        "",
+        "function myFunction() {",
         "",
         "  // Only change code below this line.",
         "",
