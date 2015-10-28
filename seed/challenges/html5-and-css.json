@@ -10,7 +10,12 @@
         "Welcome to Free Code Camp's first coding challenge.",
         "You can edit <code>code</code> in your <code>text editor</code>, which we've embedded into this web page.",
         "Do you see the code in your text editor that says <code>&#60;h1&#62;Hello&#60;/h1&#62;</code>? That's an HTML <code>element</code>.",
-        "Most HTML elements have an <code>opening tag</code> and a <code>closing tag</code>. Opening tags look like this: <code>&#60;h1&#62;</code>. Closing tags look like this: <code>&#60;/h1&#62;</code>. Note that the only difference between opening tags and closing tags is that closing tags have a slash after their opening angle bracket.",
+        "Most HTML elements have an <code>opening tag</code> and a <code>closing tag</code>.",
+        "Opening tags look like this:",
+        "<code>&#60;h1&#62;</code>",
+        "Closing tags look like this:",
+        "<code>&#60;/h1&#62;</code>",
+        "Note that the only difference between opening tags and closing tags is that closing tags have a slash after their opening angle bracket.",
         "Each challenge has tests that you can run at any time by clicking the \"Run tests\" button. Once you get all tests passing, you can advance to the next challenge.",
         "To pass the test on this challenge, change your <code>h1</code> element's text to say \"Hello World\" instead of \"Hello\". Then click the \"Run tests\" button."
       ],
@@ -405,7 +410,7 @@
         "Borra el atributo <code>style</code> de tu elemento <code>h2</code> y escribe el CSS para hacer todos los elementos <code>h2</code> de color azul.",
         "Con CSS, hay cientos de <code>atributos CSS</code> que puedes usar para cambiar como un elemento se ve en una página web.",
         "Cuando entraste <code>&#60;h2 style=\"color: red\"&#62;CatPhotoApp&#60;h2&#62;</code>, le estuviste dando a ese elemento h2 en particular un <code>estilo en línea</code>",
-        "Esa es una forma de agregar estilo a un elemento, pero una manera mejor es usando <code>Hojas de Estilo en Cascada (Cascading Style Sheets, CSS)</code>",
+        "Esa es una forma de agregar estilo a un elemento, pero una manera mejor es usando <code>Hojas de Estilo en Cascada (Cascading Style Sheets, CSS)</code>.",
         "Al principio de tu código, crea una <code>etiqueta style</code> como ésta: <code>&#60;style&#62;&#60;/style&#62;</code>",
         "Dentro de ese elemento style, puedes crear un <code>selector css</code> para todos los elementos <code>h2</code>. Por ejemplo, si querías que todos los elementos <code>h2</code> sean rojos, tu elemento style se vería así: <code>&#60;style&#62;h2 {color: red;}&#60;/style&#62;</code>",
         "Fíjate que es importante tener <code>llaves de apertura y de cierre</code> (<code>{</code> y <code>}</code>) alrededor del estilo para cada elemento. También necesitas asegurarte que el estilo para tu elemento está entre las etiquetas style de apertura y cierre. Finalmente, asegúrate de agregar el punto y coma al final de cada uno de los estilos de tu elemento."
@@ -435,7 +440,8 @@
         "<code>&thinsp;&thinsp;}</code>",
         "<code>&#60;/style&#62;</code>",
         "You can see that we've created a CSS class called <code>blue-text</code> within the <code>&#60;style&#62;</code> tag.",
-        "You can apply a class to an HTML element like this: <code>&#60;h2 class=\"blue-text\"&#62;CatPhotoApp&#60;/h2&#62;</code>",
+        "You can apply a class to an HTML element like this:",
+        "<code>&#60;h2 class=\"blue-text\"&#62;CatPhotoApp&#60;/h2&#62;</code>",
         "Note that in your CSS <code>style</code> element, classes should start with a period. In your HTML elements' class declarations, classes shouldn't start with a period.",
         "Instead of creating a new <code>style</code> element, try removing the <code>h2</code> style declaration from your existing style element, then replace it with the class declaration for <code>.red-text</code>",
         "Create a CSS class called <code>red-text</code> and apply it to your <code>h2</code> element."
@@ -651,7 +657,7 @@
       "description": [
         "Now, let's import and apply a Google font (note that if Google is blocked in your country, you will need to skip this challenge).",
         "First, you'll need to make a <code>call</code> to Google to grab the <code>Lobster</code> font and load it into your HTML.",
-        "Copy the following code snippet and paste it into your code editor:",
+        "Copy the following code snippet and paste it into the top of your code editor:",
         "<code>&#60;link href=\"http://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\"&#62;</code>",
         "Now you can set <code>Lobster</code> as a font-family value on your <code>h2</code> element.",
         "Apply the <code>font-family</code> of <code>Lobster</code> to your <code>h2</code> element."
@@ -768,7 +774,8 @@
         "An example of this would be:",
         "<code>&#60img src=\"http://www.your-image-source.com/your-image.jpg\"&#62</code>",
         "Note that in most cases, <code>img</code> elements are self-closing.",
-        "Try it with this image: <code>https://bit.ly/fcc-relaxing-cat</code>"
+        "Try it with this image:",
+        "<code>https://bit.ly/fcc-relaxing-cat</code>"
       ],
       "tests": [
         "assert($(\"img\").length > 0, 'Your page should have an image element.')",
@@ -951,9 +958,9 @@
       "id": "bad87fee1348bd9aedf08814",
       "title": "Add Rounded Corners with a Border Radius",
       "description": [
-        "Your cat photo currently has sharp corners. We can round out those corners with a CSS property called <code>border-radius</code>",
-        "You can specify a <code>border-radius</code> with pixels. This will affect how rounded the corners are. Add this property to your <code>thick-green-border</code> class and set it to <code>10px</code>",
-        "Give your cat photo a <code>border-radius</code> of <code>10px</code>"
+        "Your cat photo currently has sharp corners. We can round out those corners with a CSS property called <code>border-radius</code>.",
+        "You can specify a <code>border-radius</code> with pixels. This will affect how rounded the corners are. Add this property to your <code>thick-green-border</code> class and set it to <code>10px</code>.",
+        "Give your cat photo a <code>border-radius</code> of <code>10px</code>."
       ],
       "tests": [
         "assert($(\"img\").hasClass(\"thick-green-border\"), 'Your image element should have the class \"thick-green-border\".')",
@@ -1017,7 +1024,7 @@
       "title": "Make Circular Images with a Border Radius",
       "description": [
         "In addition to pixels, you can also specify a <code>border-radius</code> using a percentage.",
-        "Give your cat photo a <code>border-radius</code> of <code>50%</code>"
+        "Give your cat photo a <code>border-radius</code> of <code>50%</code>."
       ],
       "tests": [
         "assert(parseInt($(\"img\").css(\"border-top-left-radius\")) > 48, 'Your image should have a border radius of <code>50&#37;</code>&#44; making it perfectly circular.')",
@@ -1085,11 +1092,11 @@
         "<a href=\"http://i.imgur.com/hviuZwe.png\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" title=\"Click to enlarge\" alt=\"a diagram of how anchor tags are composed with the same text as on the following line\" src=\"http://i.imgur.com/hviuZwe.png\"></a>",
         "Here's an example:",
          "<code>&#60;p&#62;Here's a &#60;a href=\"http://freecodecamp.com\"&#62; link to Free Code Camp&#60;/a&#62; for you to follow.&#60;/p&#62;</code>",
-        "Create an <code>a</code> element that links to <code>http://freecatphotoapp.com</code> and has \"cat photos\" as its <code>anchor text</code>"
+        "Create an <code>a</code> element that links to <code>http://freecatphotoapp.com</code> and has \"cat photos\" as its <code>anchor text</code>."
       ],
       "tests": [
-        "assert((/cat photos/gi).test($(\"a\").text()), 'Your <code>a</code> element should have the <code>anchor text</code> of \"cat photos\"')",
-        "assert(/http:\\/\\/freecatphotoapp\\.com/gi.test($(\"a\").attr(\"href\")), 'You need an <code>a</code> element that links to <code>http&#58;//freecatphotoapp.com</code>.')",
+        "assert((/cat photos/gi).test($(\"a\").text()), 'Your <code>a</code> element should have the <code>anchor text</code> of \"cat photos\".')",
+        "assert(/http:\\/\\/freecatphotoapp\\.com/gi.test($(\"a\").attr(\"href\")), 'You need an <code>a</code> element that links to <code>http&#58;//freecatphotoapp.com</code>')",
         "assert(editor.match(/<\\/a>/g) && editor.match(/<\\/a>/g).length === editor.match(/<a/g).length, 'Make sure your <code>a</code> element has a closing tag.')"
       ],
       "challengeSeed": [
@@ -1376,7 +1383,7 @@
         "Add an <code>alt</code> attribute with the text <code>A cute orange cat lying on its back</code> to our cat photo."
       ],
       "tests": [
-        "assert($(\"img\").filter(function(){ return /cat/gi.test(this.alt) }).length > 0, 'Your image element should have an <code>alt</code> attribute set to <code>A cute orange cat lying on its back</code>.')"
+        "assert($(\"img\").filter(function(){ return /cat/gi.test(this.alt) }).length > 0, 'Your image element should have an <code>alt</code> attribute set to <code>A cute orange cat lying on its back</code>')"
       ],
       "challengeSeed": [
         "<link href=\"http://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
@@ -1521,10 +1528,10 @@
         "Ordered lists start with a <code>&#60;ol&#62;</code> element. Then they contain some number of <code>&#60;li&#62;</code> elements.",
         "For example:",
         "<code>&#60;ol&#62;</code>",
-        "&thinsp;&thinsp;<code>&#60;li&#62;hydrogen&#60;/li&#62;</code>",
-        "&thinsp;&thinsp;<code>&#60;li&#62;helium&#60;/li&#62;</code>",
+        "&thinsp;&thinsp;<code>&#60;li&#62;Garfield&#60;/li&#62;</code>",
+        "&thinsp;&thinsp;<code>&#60;li&#62;Sylvester&#60;/li&#62;</code>",
         "<code>&#60;/ol&#62;</code>",
-        "would create a numbered list of \"hydrogen\" and \"helium\".",
+        "would create a numbered list of \"Garfield\" and \"Sylvester\".",
         "Create an ordered list of the top 3 things cats hate the most."
       ],
       "tests": [
@@ -1602,7 +1609,7 @@
       "id": "bad87fee1348bd9aedf08829",
       "title": "Create a Text Field",
       "description": [
-        "Now let's create a web <code>form</code>",
+        "Now let's create a web form.",
         "Text inputs are a convenient way to get input from your user.",
         "You can create one like this:",
          "<code>&#60;input type=\"text\"&#62;</code>",
@@ -1929,7 +1936,8 @@
       "description": [
         "You can require specific form fields so that your user will not be able to submit your form until he or she has filled them out.",
         "For example, if you wanted to make a text input field required, you can just add the word <code>required</code> within your <code>input</code> element, you would use: <code>&#60;input type=\"text\" required&#62;</code>",
-        "Make your text <code>input</code> a <code>required</code> field, so that your user can't submit the form without completing this field."
+        "Make your text <code>input</code> a <code>required</code> field, so that your user can't submit the form without completing this field.",
+        "Then try to submit the form without inputing any text. See how your HTML5 form notifies you that the field is required?"
       ],
       "tests": [
         "assert($(\"input\").prop(\"required\"), 'Your text <code>input</code> element should have the <code>required</code> attribute.')"
@@ -2014,13 +2022,13 @@
         "All related radio buttons should have the same <code>name</code> attribute.",
         "Here's an example of a radio button:",
         "<code>&#60;label&#62;&#60;input type=\"radio\" name=\"indoor-outdoor\"&#62; Indoor&#60;/label&#62;</code>",
-        "Add to your form a pair of radio buttons. Each radio button should be nested within its own <code>label</code> element. They should share a common <code>name</code> attribute. One should have the option of <code>indoor</code> and the other should have the option of <code>outdoor</code>"
+        "Add to your form a pair of radio buttons. Each radio button should be nested within its own <code>label</code> element. They should share a common <code>name</code> attribute. One should have the option of <code>indoor</code> and the other should have the option of <code>outdoor</code>."
       ],
       "tests": [
         "assert($('input[type=\"radio\"]').length > 1, 'Your page should have two radio button elements.')",
         "assert($('label > input[type=\"radio\"]').filter(\"[name='indoor-outdoor']\").length > 1, 'Give your radio buttons the <code>name</code> attribute of <code>indoor-outdoor</code>.')",
         "assert($('label > input[type=\"radio\"]:only-child').length > 1, 'Each of your two radio button elements should be nested in its own <code>label</code> element.')",
-        "assert(editor.match(/<\\/label>/g) && editor.match(/<label/g) && editor.match(/<\\/label>/g).length === editor.match(/<label/g).length, 'Make sure each of your <code>label</code> elements has a closing tag.')",
+        "assert((editor.match(/<\\/label>/g) && editor.match(/<label/g) && editor.match(/<\\/label>/g).length === editor.match(/<label/g).length), 'Make sure each of your <code>label</code> elements has a closing tag.')",
         "assert($(\"label\").text().match(/indoor/gi), 'One of your radio buttons should have the label <code>indoor</code>.')",
         "assert($(\"label\").text().match(/outdoor/gi), 'One of your radio buttons should have the label <code>outdoor</code>.')"
       ],
@@ -2107,7 +2115,7 @@
         "All related checkbox inputs should have the same <code>name</code> attribute.",
         "Here's an example of a checkbox:",
         "<code>&#60;label&#62;&#60;input type=\"checkbox\" name=\"personality\"&#62; Loving&#60;/label&#62;</code>",
-        "Add to your form a set of three checkboxes. Each checkbox should be nested within its own <code>label</code> element. All three should share the <code>name</code> attribute of <code>personality</code>"
+        "Add to your form a set of three checkboxes. Each checkbox should be nested within its own <code>label</code> element. All three should share the <code>name</code> attribute of <code>personality</code>."
       ],
       "tests": [
         "assert($('input[type=\"checkbox\"]').length > 2, 'Your page should have three checkbox elements.')",
@@ -2281,8 +2289,8 @@
       "description": [
         "The <code>div</code> element, also known as a division element, is a general purpose container for other elements.",
         "The <code>div</code> element is probably the most commonly used HTML element of all. It's useful for passing the CSS of its own class declarations down to all the elements that it contains.",
-        "Just like any other non-self-closing element, you can open a <code>div</code> element with <code>&#60;div&#62;</code> and close it on another line with <code>&#60;/div&#62;</code>",
-        "Try putting your opening <code>div</code> tag above your \"Things cats love\" <code>p</code> element and your closing <code>div</code> tag after your closing <code>ol</code> tag so that both of your lists are within one <code>div</code>",
+        "Just like any other non-self-closing element, you can open a <code>div</code> element with <code>&#60;div&#62;</code> and close it on another line with <code>&#60;/div&#62;</code>.",
+        "Try putting your opening <code>div</code> tag above your \"Things cats love\" <code>p</code> element and your closing <code>div</code> tag after your closing <code>ol</code> tag so that both of your lists are within one <code>div</code>.",
         "Nest your \"Things cats love\" and \"Things cats hate\" lists all within a single <code>div</code> element."
       ],
       "tests": [
@@ -2374,7 +2382,10 @@
       "title": "Give a Background Color to a Div Element",
       "description": [
         "You can set an element's background color with the <code>background-color</code> property.",
-        "For example, if you wanted an element's background color to be <code>green</code>, you'd use <code>.green-background { background-color: green; }</code> within your <code>style</code> element.",
+        "For example, if you wanted an element's background color to be <code>green</code>, you'd put this within your <code>style</code> element:",
+        "<code>.green-background {</code>",
+        "<code>&thinsp;&thinsp;background-color: green;</code>",
+        "<code>}</code>",
         "Create a class called <code>gray-background</code> with the <code>background-color</code> of gray. Assign this class to your <code>div</code> element."
       ],
       "tests": [
@@ -2462,8 +2473,9 @@
         "In addition to classes, each HTML element can also have an <code>id</code> attribute.",
         "There are several benefits to using <code>id</code> attributes, and you'll learn more about them once you start using jQuery.",
         "<code>id</code> attributes should be unique. Browsers won't enforce this, but it is a widely agreed upon best practice. So please don't give more than one element the same <code>id</code> attribute.",
-        "Here's an example of how you give your <code>h2</code> element the id of <code>cat-photo-app</code>: <code>&#60;h2 id=\"cat-photo-app\"></code>",
-        "Give your <code>form</code> element the id <code>cat-photo-form</code>"
+        "Here's an example of how you give your <code>h2</code> element the id of <code>cat-photo-app</code>:",
+        "<code>&#60;h2 id=\"cat-photo-app\"></code>",
+        "Give your <code>form</code> element the id <code>cat-photo-form</code>."
       ],
       "tests": [
         "assert($(\"form\").attr(\"id\") === \"cat-photo-form\", 'Give your <code>form</code> element the id of <code>cat-photo-form</code>.')"
@@ -2550,7 +2562,10 @@
       "title": "Use an ID Attribute to Style an Element",
       "description": [
         "One cool thing about <code>id</code> attributes is that, like classes, you can style them using CSS.",
-        "Here's an example of how you can take your element with the <code>id</code> attribute of <code>cat-photo-element</code> and give it the background color of green. In your <code>style</code> element: <code>#cat-photo-element { background-color: green; }</code>",
+        "Here's an example of how you can take your element with the <code>id</code> attribute of <code>cat-photo-element</code> and give it the background color of green. In your <code>style</code> element:",
+        "<code>#cat-photo-element {</code>",
+        "<code>&thinsp;&thinsp;background-color: green;</code>",
+        "<code>}</code>",
         "Note that inside your <code>style</code> element, you always reference classes by putting a <code>.</code> in front of their names. You always reference ids by putting a <code>#</code> in front of their names.",
         "Try giving your form, which now has the <code>id</code> attribute of <code>cat-photo-form</code>, a green background."
       ],
@@ -2641,9 +2656,10 @@
       "id": "bad88fee1348bd9aedf08825",
       "title": "Adjusting the Padding of an Element",
       "description": [
+        "Now let's put our Cat Photo App away for a little while and learn more about styling HTML.",
         "You may have already noticed this, but all HTML elements are essentially little rectangles.",
-        "Three important properties control the space that surrounds each HTML element: <code>padding</code>, <code>margin</code>, and <code>border</code>",
-        "An element's <code>padding</code> controls the amount of space between the element and its <code>border</code>",
+        "Three important properties control the space that surrounds each HTML element: <code>padding</code>, <code>margin</code>, and <code>border</code>.",
+        "An element's <code>padding</code> controls the amount of space between the element and its <code>border</code>.",
         "Here, we can see that the green box and the red box are nested within the yellow box. Note that the red box has more <code>padding</code> than the green box.",
         "When you increase the green box's <code>padding</code>, it will increase the distance between the text <code>padding</code> and the border around it.",
         "Change the <code>padding</code> of your green box to match that of your red box."
@@ -2991,7 +3007,8 @@
       "id": "bad87fee1348bd9aedf08826",
       "title": "Use Clockwise Notation to Specify the Padding of an Element",
       "description": [
-        "Instead of specifying an element's <code>padding-top</code>, <code>padding-right</code>, <code>padding-bottom</code>, and <code>padding-left</code> properties, you can specify them all in one line, like this: <code>padding: 10px 20px 10px 20px;</code>",
+        "Instead of specifying an element's <code>padding-top</code>, <code>padding-right</code>, <code>padding-bottom</code>, and <code>padding-left</code> properties, you can specify them all in one line, like this:",
+        "<code>padding: 10px 20px 10px 20px;</code>",
         "These four values work like a clock: top, right, bottom, left, and will produce the exact same result as using the side-specific padding instructions.",
         "Use Clockwise Notation to give the \".green-box\" class a <code>padding</code> of <code>40px</code> on its top and left side, but only <code>20px</code> on its bottom and right side."
       ],
@@ -3060,7 +3077,8 @@
       "title": "Use Clockwise Notation to Specify the Margin of an Element",
       "description": [
         "Let's try this again, but with <code>margin</code> this time.",
-        "Instead of specifying an element's <code>margin-top</code>, <code>margin-right</code>, <code>margin-bottom</code>, and <code>margin-left</code> properties, you can specify them all in one line, like this: <code>margin: 10px 20px 10px 20px;</code>",
+        "Instead of specifying an element's <code>margin-top</code>, <code>margin-right</code>, <code>margin-bottom</code>, and <code>margin-left</code> properties, you can specify them all in one line, like this:",
+        "<code>margin: 10px 20px 10px 20px;</code>",
         "These four values work like a clock: top, right, bottom, left, and will produce the exact same result as using the side-specific margin instructions.",
         "Use <code>Clockwise Notation</code> to give the element with the <code>green-box</code> class a margin of <code>40px</code> on its top and left side, but only <code>20px</code> on its bottom and right side."
       ],
@@ -3245,7 +3263,8 @@
         "We just proved that our classes will override the <code>body</code> element's CSS. So the next logical question is, what can we do to override our <code>pink-text</code> class?",
         "Create an additional CSS class called <code>blue-text</code> that gives an element the color blue. Make sure it's below your <code>pink-text</code> class declaration.",
         "Apply the <code>blue-text</code> class to your <code>h1</code> element in addition to your <code>pink-text</code> class, and let's see which one wins.",
-        "Applying multiple class attributes to a HTML element is done with a space between them like this: <code>class=\"class1 class2\"</code>"
+        "Applying multiple class attributes to a HTML element is done with a space between them like this:",
+        "<code>class=\"class1 class2\"</code>"
       ],
       "tests": [
         "assert($(\"h1\").hasClass(\"pink-text\"), 'Your <code>h1</code> element should have the class <code>pink-text</code>.')",
@@ -3287,9 +3306,13 @@
         "We just proved that browsers read CSS from top to bottom. That means that, in the event of a conflict, the browser will use whichever CSS declaration came last.",
         "But we're not done yet. There are other ways that you can override CSS. Do you remember id attributes?",
         "Let's override your <code>pink-text</code> and <code>blue-text</code> classes, and make your <code>h1</code> element orange, by giving the <code>h1</code> element an id and then styling that id.",
-        "Give your <code>h1</code> element the <code>id</code> attribute of <code>orange-text</code>. Remember, id styles look like this: <code>&#60;h1 id=\"orange-text\"&#62;</code>",
+        "Give your <code>h1</code> element the <code>id</code> attribute of <code>orange-text</code>. Remember, id styles look like this:",
+        "<code>&#60;h1 id=\"orange-text\"&#62;</code>",
         "Leave the <code>blue-text</code> and <code>pink-text</code> classes on your <code>h1</code> element.",
-        "Create a CSS declaration for your <code>orange-text</code> id in your <code>style</code> element. Here's an example of what this looks like: <code>#brown-text { color: brown; }</code>"
+        "Create a CSS declaration for your <code>orange-text</code> id in your <code>style</code> element. Here's an example of what this looks like:",
+        "<code>#brown-text {</code>",
+        "<code>color: brown;</code>",
+        "<code>}</code>"
       ],
       "tests": [
         "assert($(\"h1\").hasClass(\"pink-text\"), 'Your <code>h1</code> element should have the class <code>pink-text</code>.')",
@@ -3336,7 +3359,8 @@
       "description": [
         "So we've proven that id declarations override class declarations, regardless of where they are declared in your <code>style</code> element CSS.",
         "There are other ways that you can override CSS. Do you remember inline styles?",
-        "Use an <code>in-line style</code> to try to make our <code>h1</code> element white. Remember, in line styles look like this: <code>&#60;h1 style=\"color: green\"&#62;</code>",
+        "Use an <code>in-line style</code> to try to make our <code>h1</code> element white. Remember, in line styles look like this:",
+        "<code>&#60;h1 style=\"color: green\"&#62;</code>",
         "Leave the <code>blue-text</code> and <code>pink-text</code> classes on your <code>h1</code> element."
       ],
       "tests": [
@@ -3389,7 +3413,8 @@
         "In many situations, you will use CSS libraries. These may accidentally override your own CSS. So when you absolutely need to be sure that an element has specific CSS, you can use <code>!important</code>",
         "Let's go all the way back to our <code>pink-text</code> class declaration. Remember that our <code>pink-text</code> class was overridden by subsequent class declarations, id declarations, and in-line styles.",
         "Let's add the keyword <code>!important</code> to your pink-text element's color declaration to make 100% sure that your <code>h1</code> element will be pink.",
-        "An example of how to do this is: <code>color: red !important;</code>"
+        "An example of how to do this is:",
+        "<code>color: red !important;</code>"
       ],
       "tests": [
         "assert($(\"h1\").hasClass(\"pink-text\"), 'Your <code>h1</code> element should have the class <code>pink-text</code>.')",
@@ -3440,11 +3465,11 @@
         "Did you know there are other ways to represent colors in CSS? One of these ways is called hexadecimal code, or <code>hex code</code> for short.",
         "<code>Decimal</code> means the numbers zero through nine - the numbers that people use in everyday life. <code>Hexadecimal</code> includes these 10 numbers, plus the letters A, B, C, D, E and F. This means that Hexidecimal has a total of 16 possible values, instead of the 10 possible values that our normal base-10 number system gives us.",
         "With CSS, we use 6 hexadecimal numbers to represent colors. For example, <code>#000000</code> is the lowest possible value, and it represents the color black.",
-        "Replace the word <code>black</code> in our <code>body</code> element's background-color with its <code>hex code</code> representation, <code>#000000</code>. "
+        "Replace the word <code>black</code> in our <code>body</code> element's background-color with its <code>hex code</code> representation, <code>#000000</code> "
       ],
       "tests": [
         "assert($(\"body\").css(\"background-color\") === \"rgb(0, 0, 0)\", 'Give your <code>body</code> element the background-color of black.')",
-        "assert(editor.match(/#000000/g) && editor.match(/#000000/g).length > 0, 'Use the <code>hex code</code> for the color black instead of the word <code>black</code>. For example <code>body { color&#58; #000000; }</code>.')"
+        "assert(editor.match(/#000000/g) && editor.match(/#000000/g).length > 0, 'Use the <code>hex code</code> for the color black instead of the word <code>black</code>. For example <code>body { color&#58; #000000; }</code>')"
       ],
       "challengeSeed": [
         "<style>",
@@ -3478,7 +3503,7 @@
       ],
       "tests": [
         "assert($(\"body\").css(\"background-color\") === \"rgb(255, 255, 255)\", 'Your <code>body</code> element should have the <code>background-color</code> of white.')",
-        "assert(editor.match(/#FFFFFF/ig) && editor.match(/#FFFFFF/ig).length > 0, 'Use the <code>hex code</code> for the color white instead of the word <code>white</code>. For example <code>body { color&#58; #FFFFFF; }</code>.')"
+        "assert(editor.match(/#FFFFFF/ig) && editor.match(/#FFFFFF/ig).length > 0, 'Use the <code>hex code</code> for the color white instead of the word <code>white</code>. For example <code>body { color&#58; #FFFFFF; }</code>')"
       ],
       "challengeSeed": [
         "<style>",
@@ -3514,7 +3539,7 @@
       ],
       "tests": [
         "assert($(\"body\").css(\"background-color\") === \"rgb(255, 0, 0)\", 'Give your <code>body</code> element the <code>background-color</code> of red.')",
-        "assert(editor.match(/#FF0000/ig) && editor.match(/#FF0000/ig).length > 0, 'Use the <code>hex code</code> for the color red instead of the word <code>red</code>. For example <code>body { color&#58; #FF0000; }</code>.')"
+        "assert(editor.match(/#FF0000/ig) && editor.match(/#FF0000/ig).length > 0, 'Use the <code>hex code</code> for the color red instead of the word <code>red</code>. For example <code>body { color&#58; #FF0000; }</code>')"
       ],
       "challengeSeed": [
         "<style>",
@@ -3548,7 +3573,7 @@
       ],
       "tests": [
         "assert($(\"body\").css(\"background-color\") === \"rgb(0, 255, 0)\", 'Give your <code>body</code> element the <code>background-color</code> of <code>green</code>.')",
-        "assert(editor.match(/#00FF00/ig) && editor.match(/#00FF00/ig).length > 0, 'Use the <code>hex code</code> for the color green instead of the word <code>green</code>. For example <code>body { color&#58; #00FF00; }</code>.')"
+        "assert(editor.match(/#00FF00/ig) && editor.match(/#00FF00/ig).length > 0, 'Use the <code>hex code</code> for the color green instead of the word <code>green</code>. For example <code>body { color&#58; #00FF00; }</code>')"
       ],
       "challengeSeed": [
         "<style>",
@@ -3582,7 +3607,7 @@
       ],
       "tests": [
         "assert($(\"body\").css(\"background-color\") === \"rgb(0, 0, 255)\", 'Give your <code>body</code> element the <code>background-color</code> of blue.')",
-        "assert(editor.match(/#0000FF/ig) && editor.match(/#0000FF/ig).length > 0, 'Use the <code>hex code</code> for the color blue instead of the word <code>blue</code>. For example <code>body { color&#58; #0000FF; }</code>.')"
+        "assert(editor.match(/#0000FF/ig) && editor.match(/#0000FF/ig).length > 0, 'Use the <code>hex code</code> for the color blue instead of the word <code>blue</code>. For example <code>body { color&#58; #0000FF; }</code>')"
       ],
       "challengeSeed": [
         "<style>",
@@ -3616,7 +3641,7 @@
       ],
       "tests": [
         "assert($(\"body\").css(\"background-color\") === \"rgb(255, 165, 0)\", 'Give your <code>body</code> element the <code>background-color</code> of orange.')",
-        "assert(editor.match(/#FFA500/ig) && editor.match(/#FFA500/ig).length > 0, 'Use the <code>hex code</code> for the color orange instead of the word <code>orange</code>. For example <code>body { color&#58; #FFA500; }</code>.')"
+        "assert(editor.match(/#FFA500/ig) && editor.match(/#FFA500/ig).length > 0, 'Use the <code>hex code</code> for the color orange instead of the word <code>orange</code>. For example <code>body { color&#58; #FFA500; }</code>')"
       ],
       "challengeSeed": [
         "<style>",
@@ -3650,7 +3675,7 @@
       ],
       "tests": [
         "assert($(\"body\").css(\"background-color\") === \"rgb(128, 128, 128)\", 'Give your <code>body</code> element the <code>background-color</code> of gray.')",
-        "assert(editor.match(/#808080/g) && editor.match(/#808080/g).length > 0, 'Use the <code>hex code</code> the color gray instead of the word <code>gray</code>. For example <code>body { color&#58; #808080; }</code>.')"
+        "assert(editor.match(/#808080/g) && editor.match(/#808080/g).length > 0, 'Use the <code>hex code</code> the color gray instead of the word <code>gray</code>. For example <code>body { color&#58; #808080; }</code>')"
       ],
       "challengeSeed": [
         "<style>",
@@ -3683,7 +3708,7 @@
       ],
       "tests": [
         "assert($(\"body\").css(\"background-color\") === \"rgb(17, 17, 17)\", 'Give your <code>body</code> element the <code>background-color</code> of a dark gray.')",
-        "assert(editor.match(/#111111/g) && editor.match(/#111111/g).length > 0, 'Use <code>hex code</code> to make a dark gray. For example <code>body { color&#58; #111111; }</code>.')"
+        "assert(editor.match(/#111111/g) && editor.match(/#111111/g).length > 0, 'Use <code>hex code</code> to make a dark gray. For example <code>body { color&#58; #111111; }</code>')"
       ],
       "challengeSeed": [
         "<style>",
@@ -3718,7 +3743,7 @@
       ],
       "tests": [
         "assert($(\"body\").css(\"background-color\") === \"rgb(255, 0, 0)\", 'Give your <code>body</code> element the <code>background-color</code> of red.')",
-        "assert(editor.match(/#F00/ig) && editor.match(/#F00/ig).length > 0, 'Use <code>abbreviated hex code</code> instead of a six-character <code>hex code</code>. For example <code>body { color&#58; #F00; }</code>.')"
+        "assert(editor.match(/#F00/ig) && editor.match(/#F00/ig).length > 0, 'Use <code>abbreviated hex code</code> instead of a six-character <code>hex code</code>. For example <code>body { color&#58; #F00; }</code>')"
       ],
       "challengeSeed": [
         "<style>",
@@ -3747,14 +3772,17 @@
       "title": "Use RGB values to Color Elements",
       "description": [
         "Another way you can represent colors in CSS is by using <code>rgb</code> values.",
-        "RGB values look like this: <code>rgb(0, 0, 0)</code> for black and <code>rgb(255, 255, 255)</code> for white.",
+        "The RGB value for black looks like this:",
+        "<code>rgb(0, 0, 0)</code>",
+        "The RGB value for white looks like this:",
+        "<code>rgb(255, 255, 255)</code>",
         "Instead of using six hexadecimal digits like you do with hex code, with <code>rgb</code> you specify the brightness of each color with a number between 0 and 255.",
         "If you do the math, 16 times 16 is 256 total values. So <code>rgb</code>, which starts counting from zero, has the exact same number of possible values as hex code.",
         "Let's replace the hex code in our <code>body</code> element's background color with the RGB value for black: <code>rgb(0, 0, 0)</code>"
       ],
       "tests": [
         "assert($(\"body\").css(\"background-color\") === \"rgb(0, 0, 0)\", 'Your <code>body</code> element should have a black background.')",
-        "assert(editor.match(/rgb\\s*\\(\\s*0\\s*,\\s*0\\s*,\\s*0\\s*\\)/ig), 'Use <code>rgb</code> to give your <code>body</code> element the <code>background-color</code> of black. For example <code>body { color&#58; rgb&#40;0&#44; 0&#44; 0&#41;; }</code>.')"
+        "assert(editor.match(/rgb\\s*\\(\\s*0\\s*,\\s*0\\s*,\\s*0\\s*\\)/ig), 'Use <code>rgb</code> to give your <code>body</code> element the <code>background-color</code> of black. For example <code>body { color&#58; rgb&#40;0&#44; 0&#44; 0&#41;; }</code>')"
       ],
       "challengeSeed": [
         "<style>",
@@ -3782,13 +3810,16 @@
       "id": "bad88fee1348bd9aedf08726",
       "title": "Use RGB to Color Elements White",
       "description": [
-        "RGB values look like this: <code>rgb(0, 0, 0)</code> for black and <code>rgb(255, 255, 255)</code> for white.",
+        "The RGB value for black looks like this:",
+        "<code>rgb(0, 0, 0)</code>",
+        "The RGB value for white looks like this:",
+        "<code>rgb(255, 255, 255)</code>",
         "Instead of using six hexadecimal digits like you do with hex code, with <code>rgb</code> you specify the brightness of each color with a number between 0 and 255.",
         "Change the <code>body</code> element's background color from the RGB value for black to the <code>rgb</code> value for white: <code>rgb(255, 255, 255)</code>"
       ],
       "tests": [
         "assert($(\"body\").css(\"background-color\") === \"rgb(255, 255, 255)\", 'Your <code>body</code> should have a white background.')",
-        "assert(editor.match(/rgb\\s*\\(\\s*255\\s*,\\s*255\\s*,\\s*255\\s*\\)/ig), 'Use <code>rgb</code> to give your <code>body</code> element the <code>background-color</code> of white. For example <code>body { background-color&#58; rgb&#40;255&#44; 255 &#44; 255&#41;; }</code>.')"
+        "assert(editor.match(/rgb\\s*\\(\\s*255\\s*,\\s*255\\s*,\\s*255\\s*\\)/ig), 'Use <code>rgb</code> to give your <code>body</code> element the <code>background-color</code> of white. For example <code>body { background-color&#58; rgb&#40;255&#44; 255 &#44; 255&#41;; }</code>')"
       ],
       "challengeSeed": [
         "<style>",
@@ -3822,7 +3853,7 @@
       ],
       "tests": [
         "assert($(\"body\").css(\"background-color\") === \"rgb(255, 0, 0)\", 'Your <code>body</code> should have a red background.')",
-        "assert(editor.match(/rgb\\s*\\(\\s*255\\s*,\\s*0\\s*,\\s*0\\s*\\)/ig), 'Use <code>rgb</code> to give your <code>body</code> element the <code>background-color</code> of red. For example <code>body { background-color&#58; rgb&#40;255&#44; 0&#44; 0&#41;; }</code>.')"
+        "assert(editor.match(/rgb\\s*\\(\\s*255\\s*,\\s*0\\s*,\\s*0\\s*\\)/ig), 'Use <code>rgb</code> to give your <code>body</code> element the <code>background-color</code> of red. For example <code>body { background-color&#58; rgb&#40;255&#44; 0&#44; 0&#41;; }</code>')"
       ],
       "challengeSeed": [
         "<style>",
@@ -3854,7 +3885,7 @@
       ],
       "tests": [
         "assert($(\"body\").css(\"background-color\") === \"rgb(0, 255, 0)\", 'Your <code>body</code> element should have a green background.')",
-        "assert(editor.match(/rgb\\s*\\(\\s*0\\s*,\\s*255\\s*,\\s*0\\s*\\)/ig), 'Use <code>rgb</code> to give your <code>body</code> element the <code>background-color</code> of green. For example <code>body { background-color&#58; rgb&#40;0&#44; 255&#44; 0&#41;; }</code>.')"
+        "assert(editor.match(/rgb\\s*\\(\\s*0\\s*,\\s*255\\s*,\\s*0\\s*\\)/ig), 'Use <code>rgb</code> to give your <code>body</code> element the <code>background-color</code> of green. For example <code>body { background-color&#58; rgb&#40;0&#44; 255&#44; 0&#41;; }</code>')"
       ],
       "challengeSeed": [
         "<style>",
@@ -3886,7 +3917,7 @@
       ],
       "tests": [
         "assert($(\"body\").css(\"background-color\") === \"rgb(0, 0, 255)\", 'Your <code>body</code> element should have a blue background.')",
-        "assert(editor.match(/rgb\\s*\\(\\s*0\\s*,\\s*0\\s*,\\s*255\\s*\\)/ig), 'Use <code>rgb</code> to give your <code>body</code> element the <code>background-color</code> of blue. For example <code>body { background-color&#58; rgb&#40;0&#44; 0&#44; 255&#41;; }</code>.')"
+        "assert(editor.match(/rgb\\s*\\(\\s*0\\s*,\\s*0\\s*,\\s*255\\s*\\)/ig), 'Use <code>rgb</code> to give your <code>body</code> element the <code>background-color</code> of blue. For example <code>body { background-color&#58; rgb&#40;0&#44; 0&#44; 255&#41;; }</code>')"
       ],
       "challengeSeed": [
         "<style>",
@@ -3919,7 +3950,7 @@
       ],
       "tests": [
         "assert($(\"body\").css(\"background-color\") === \"rgb(255, 165, 0)\", 'Your <code>body</code> element should have an orange background.')",
-        "assert(editor.match(/rgb\\s*\\(\\s*255\\s*,\\s*165\\s*,\\s*0\\s*\\)/ig), 'Use <code>rgb</code> to give your <code>body</code> element the <code>background-color</code> of orange. For example <code>body { background-color&#58; rgb&#40;255&#44; 165&#44; 0&#41;; }</code>.')"
+        "assert(editor.match(/rgb\\s*\\(\\s*255\\s*,\\s*165\\s*,\\s*0\\s*\\)/ig), 'Use <code>rgb</code> to give your <code>body</code> element the <code>background-color</code> of orange. For example <code>body { background-color&#58; rgb&#40;255&#44; 165&#44; 0&#41;; }</code>')"
       ],
       "challengeSeed": [
         "<style>",
