@@ -12,7 +12,10 @@ const paypalIds = {
 export default contain(
   {
     store: 'JobsStore',
-    actions: 'jobActions',
+    actions: [
+      'jobActions',
+      'appActions'
+    ],
     map({
       job: { id, isHighlighted } = {},
       buttonId = isHighlighted ?
@@ -40,6 +43,7 @@ export default contain(
     displayName: 'GoToPayPal',
 
     propTypes: {
+      appActions: PropTypes.object,
       id: PropTypes.string,
       isHighlighted: PropTypes.bool,
       buttonId: PropTypes.string,
@@ -49,6 +53,11 @@ export default contain(
       promoCode: PropTypes.string,
       promoApplied: PropTypes.bool,
       jobActions: PropTypes.object
+    },
+
+    goToJobBoard() {
+      const { appActions } = this.props;
+      appActions.goTo('/jobs');
     },
 
     renderDiscount(discountAmount) {
@@ -217,7 +226,8 @@ export default contain(
                     <form
                       action='https://www.sandbox.paypal.com/cgi-bin/webscr'
                       method='post'
-                      target='_top'>
+                      onClick={ this.goToJobBoard }
+                      target='_blank'>
                       <input
                         name='cmd'
                         type='hidden'

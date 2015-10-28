@@ -27,7 +27,7 @@ app$({ history, location: appLocation })
   .flatMap(
     ({ AppCat }) => {
       // instantiate the cat with service
-      const appCat = AppCat(null, services, history);
+      const appCat = AppCat(null, services);
       // hydrate the stores
       return hydrate(appCat, catState)
         .map(() => appCat);
@@ -36,6 +36,20 @@ app$({ history, location: appLocation })
     // redirects in the future
     ({ nextLocation, props }, appCat) => ({ nextLocation, props, appCat })
   )
+  .doOnNext(({ appCat }) => {
+    const appStore = appCat.getStore('appStore');
+    const appActions = appCat.getActions('appActions');
+
+    appStore
+      .distinctUntilChanged()
+      .subscribe(function({ route = appLocation.pathname }) {
+        history.pushState(null, route);
+      });
+
+    appActions.goBack.subscribe(function() {
+      history.goBack();
+    });
+  })
   .flatMap(({ props, appCat }) => {
     props.history = history;
     return Render(

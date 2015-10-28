@@ -17,19 +17,13 @@ export default Actions({
   },
 
   getUser: null,
-  goTo: null,
+  goTo(route) {
+    return { route };
+  },
   goBack: null
 })
   .refs({ displayName: 'AppActions' })
-  .init(({ instance: appActions, args: [services, history] }) => {
-    appActions.goTo.subscribe((url) => {
-      history.pushState(null, url);
-    });
-
-    appActions.goBack.subscribe(() => {
-      history.goBack();
-    });
-
+  .init(({ instance: appActions, args: [services] }) => {
     appActions.getUser.subscribe(({ isPrimed }) => {
       if (isPrimed) {
         debug('isPrimed');

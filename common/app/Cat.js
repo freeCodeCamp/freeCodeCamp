@@ -5,8 +5,8 @@ import { HikesActions, HikesStore } from './routes/Hikes/flux';
 import { JobActions, JobsStore} from './routes/Jobs/flux';
 
 export default Cat()
-  .init(({ instance: cat, args: [services, history] }) => {
-    cat.register(AppActions, null, services, history);
+  .init(({ instance: cat, args: [services] }) => {
+    cat.register(AppActions, null, services);
     cat.register(AppStore, null, cat);
 
     cat.register(HikesActions, null, services);
