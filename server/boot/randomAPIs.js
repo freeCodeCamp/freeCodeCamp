@@ -30,6 +30,7 @@ module.exports = function(app) {
   router.get('/nonprofits-form', nonprofitsForm);
   router.get('/our-sponsors', sponsors);
   router.get('/unsubscribe/:email', unsubscribe);
+  router.get('/unsubscribe', unsubscribeWithoutEmail);
   router.get('/unsubscribed', unsubscribed);
   router.get('/get-started', getStarted);
   router.get('/submit-cat-photo', submitCatPhoto);
@@ -260,6 +261,23 @@ module.exports = function(app) {
         res.redirect('/unsubscribed');
       }
     });
+  }
+
+  function unsubscribeWithoutEmail(req, res, next) {
+      if (req.user) {
+        if (err) {
+          return next(err);
+        }
+        req.user.sendMonthlyEmail = false;
+        req.user.save(function() {
+          if (err) {
+            return next(err);
+          }
+          res.redirect('/unsubscribed');
+        });
+      } else {
+        res.redirect('/login');
+      }
   }
 
   function unsubscribed(req, res) {
