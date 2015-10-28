@@ -115,10 +115,10 @@
       ],
       "tests": [
         "assert(editor.match(/\\$\\s*?\\(\\s*?(\\\"|\\')\\#getMessage(\\\"|\\')\\s*?\\)\\s*?\\.\\s*?on\\s*?\\(\\s*?(\\\"|\\')click(\\\"|\\')\\s*?\\,\\s*?function\\s*?\\(\\s*?\\)\\s*?\\{/gi), 'You should have a click handler on the getMessage button to trigger the AJAX request.')",
-        "assert(editor.match(/\\s*?\\}\\s*?\\)\\s*?\\;/gi), 'You should have at least on closing set of brackets and parenthesis.')",
+        "assert(editor.match(/\\s*?\\}\\s*?\\)\\s*?\\;/gi), 'You should have at least one closing set of brackets and parenthesis.')",
         "assert(editor.match(/\\s*?\\}\\s*?\\)\\s*?\\;/gi) && editor.match(/\\,\\s*?function\\s*?\\(\\s*?\\w*?\\s*?\\)\\s*?\\{/gi) && editor.match(/\\s*?\\}\\s*?\\)\\s*?\\;/gi).length === editor.match(/\\s*?function\\s*?\\(\\s*?\\w*?\\s*?\\)\\s*?\\{/gi).length, 'Each callback function should have a closing set of brackets and parenthesis.')",
-        "assert(editor.match(/\\$\\s*?\\.\\s*?getJSON\\s*?\\(\\s*?\"\\\/json\\\/cats\\.json\\?callback\\=\"\\s*?\\,\\s*?function\\s*?\\(\\s*?json\\s*?\\)\\s*?\\{/gi), 'You should be making use of the getJSON method given in the description to load data from the json file.')",
-        "assert(editor.match(/\\$\\s*?\\(\\s*?\\\"\\.message\\\"\\s*?\\)\\s*?\\.\\s*?html\\s*?\\(\\s*?JSON\\s*?\\.\\s*?stringify\\s*?\\(\\s*?json\\s*?\\)\\s*?\\)/gi), 'Don\\'t forget to make the <code>.html</code> change the contents of the message box so that it contains the result of the getJSON.')"
+        "assert(editor.match(/\\$\\s*?\\.\\s*?getJSON\\s*?\\(\\s*?(\\\"|\\')\\\/json\\\/cats\\.json\\?callback\\=(\\\"|\\')\\s*?\\,\\s*?function\\s*?\\(\\s*?json\\s*?\\)\\s*?\\{/gi), 'You should be making use of the getJSON method given in the description to load data from the json file.')",
+        "assert(editor.match(/\\$\\s*?\\(\\s*?(\\\"|\\')\\.message(\\\"|\\')\\s*?\\)\\s*?\\.\\s*?html\\s*?\\(\\s*?JSON\\s*?\\.\\s*?stringify\\s*?\\(\\s*?json\\s*?\\)\\s*?\\)/gi), 'Don\\'t forget to make the <code>.html</code> change the contents of the message box so that it contains the result of the getJSON.')"
       ],
       "challengeSeed": [
         "fccss",
