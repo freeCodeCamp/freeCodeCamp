@@ -16,8 +16,7 @@
         "This is important because without your <code>document ready function</code>, your code may run before your HTML is rendered, which would cause bugs."
       ],
       "tests": [
-        "assert(editor.match(/<script>/g), 'Create a <code>script</code> element.')",
-        "assert(editor.match(/<\\/script>/g) && editor.match(/<script/g) && editor.match(/<\\/script>/g).length === editor.match(/<script/g).length, 'Make sure your <code>script</code> element has a closing tag.')",
+        "assert(editor.match(/<\\/script\\s*>/g) && editor.match(/<script(\\sasync|\\sdefer)*(\\s(charset|src|type)\\s*=\\s*[\"\\']+[^\"\\']*[\"\\']+)*(\\sasync|\\sdefer)*\\s*>/g) && editor.match(/<\\/script\\s*>/g).length === editor.match(/<script(\\sasync|\\sdefer)*(\\s(charset|src|type)\\s*=\\s*[\"\\']+[^\"\\']*[\"\\']+)*(\\sasync|\\sdefer)*\\s*>/g).length, 'Create a <code>script</code> element making sure it is valid and has a closing tag.')",
         "assert(editor.match(/\\$\\s*?\\(\\s*?document\\)\\.ready\\s*?\\(\\s*?function\\s*?\\(\\s*?\\)\\s*?\\{/g), 'You should add <code>$&#40;document&#41;.ready&#40;function&#40;&#41; {</code> to the beginning of your <code>script</code> element.')",
         "assert(editor.match(/\\n*?\\s*?\\}\\s*?\\);/g), 'Close your <code>$&#40;document&#41;.ready&#40;function&#40;&#41; {</code> function with <code>}&#41;;</code>')"
       ],
@@ -258,8 +257,10 @@
       "title": "Target the same element with multiple jQuery Selectors",
       "description": [
         "Now you know three ways of targeting elements: by type: <code>$(\"button\")</code>, by class: <code>$(\".btn\")</code>, and by id <code>$(\"#target1\")</code>.",
-        "Use each of these jQuery selectors to target your <code>button</code> element with the class <code>btn</code> and the id <code>target1</code>.",
-        "Use the <code>addClass()</code> jQuery function to give the element one new class for each selector: <code>animated</code>, <code>shake</code>, and <code>btn-primary</code>."
+        "Using each of the above jQuery selectors and the <code>addClass()</code> function:",
+        "Add the <code>animated</code> class to all elements with type <code>button</code>.",
+        "Add the <code>shake</code> class to all the buttons with class <code>.btn</code>.",
+        "Add the <code>btn-primary</code> class to the button with id <code>#target1</code>."
       ],
       "tests": [
         "assert(editor.match(/\\$\\s*?\\(\\s*?(?:'|\")\\s*?button\\s*?(?:'|\")/gi), 'Use the <code>$&#40\"button\"&#41</code> selector.')",
