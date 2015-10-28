@@ -30,7 +30,7 @@
       "description": [
         "In computer science, <code>data structures</code> are things that hold data. JavaScript has seven of these. For example, the <code>Number</code> data structure holds numbers.",
         "Let's learn about the most basic data structure of all: the <code>Boolean</code>. Booleans can only hold the value of either true or false. They are basically little on-off switches.",
-        "Let's modify our <code>welcomeToBooleans</code>function so that it will return <code>true</code>instead of <code>false</code>when the run button is clicked."
+        "Let's modify our <code>welcomeToBooleans</code> function so that it will return <code>true</code> instead of <code>false</code>when the run button is clicked."
       ],
       "tests": [
         "assert(typeof(welcomeToBooleans()) === 'boolean', 'message: The <code>welcomeToBooleans()</code> function should return a boolean &#40;true/false&#41; value.');",
@@ -80,7 +80,7 @@
       "title": "Declare String Variables",
       "description": [
         "In the previous challenge, we used the code <code>var myName = \"your name\"</code>. This is what we call a <code>String</code> variable. It is nothing more than a \"string\" of characters. JavaScript strings are always wrapped in quotes.",
-        "Now let's create two new string variables: <code>myFirstName</code>and <code>myLastName</code> and assign them the values of your first and last name, respectively."
+        "Now let's create two new string variables: <code>myFirstName</code> and <code>myLastName</code> and assign them the values of your first and last name, respectively."
       ],
       "tests": [
         "assert((function(){if(typeof(myFirstName) !== \"undefined\" && typeof(myFirstName) === \"string\" && myFirstName.length > 0){return true;}else{return false;}})(), 'message: <code>myFirstName</code> should be a string with at least one character in it.');",
@@ -528,6 +528,7 @@
       "tests": [
         "assert((function(d){if(d[0] == 'John' && d[1] == 23 && d[2] == undefined){return true;}else{return false;}})(myArray), 'message: <code>myArray</code> should only contain <code>[\"John\", 23]</code>.');",
         "assert((function(d){if(d[0] == 'cat' && d[1] == 2 && d[2] == undefined){return true;}else{return false;}})(removed), 'message: <code>removedFromMyArray</code> should only contain <code>[\"cat\", 2]</code>.');"
+
       ],
       "challengeSeed": [
         "var ourArray = [1,2,3];",
@@ -871,6 +872,12 @@
       "description": [
         "You can run the same code multiple times by using a loop.",
         "The most common type of JavaScript loop is called a \"for loop\" because it runs \"for\" a specific number of times.",
+        "For loops are declared with three optional expressions seperated by semicolons:",
+        "<code>for([initialization]; [condition]; [final-expression])</code>",
+        "The <code>initialization</code> statement is executed one time only before the loop starts. It is typically used to define and setup your loop varaible.",
+        "The <code>condition</code> statement is evaluated at the beginning of every loop and will continue as long as it evalutes <code>true</code>. When <code>condition</code> is <code>false</code> at the start of the loop, the loop will stop executing.  This means if <code>condition</code> starts as <code>false</code>, your loop will never execute.",
+        "The <code>final-expression</code> is executed at the end of each loop iteration, prior to the next <code>condition</code> check and is usually used to increment or decrement your loop counter.",
+        "We'll initialize with <code>i = 0</code> and loop while our condition <code>i < 5</code> is true.  We'll increment <code>i</code> by 1 each loop with <code>i++</code> as our <code>final-expression</code>.",
         "<code>var ourArray = [];</code>",
         "<code>for(var i = 0; i < 5; i++) {</code>",
         "<code>&thinsp;&thinsp;ourArray.push(i);</code>",
@@ -879,7 +886,7 @@
         "Let's try getting a for loop to work by pushing values to an array."
       ],
       "tests": [
-        "assert(editor.getValue().match(/for/g), 'message: You should be using a <code>for</code> loop for this.');",
+        "assert(editor.getValue().match(/for\\s*\\(/g).length > 1, 'message: You should be using a <code>for</code> loop for this.');",
         "assert.deepEqual(myArray, [0,1,2,3,4], 'message: <code>myArray</code> should equal [0,1,2,3,4].');"
       ],
       "challengeSeed": [
@@ -894,6 +901,81 @@
 
         "// Only change code above this line.",
         "",
+        "if(typeof(myArray) !== \"undefined\"){(function(){return myArray;})();}",
+        ""
+      ],
+      "type": "waypoint",
+      "challengeType": 1
+    },
+    {
+      "id":"56104e9e514f539506016a5c",
+      "title": "Iterate Odd Numbers With a For Loop",
+      "description":[
+        "For loops don't have to iterate one at a time. By changing our <code>final-expression</code>, we can count by even numbers.",
+        "We'll start at <code>i = 0</code> and loop while <code>i < 10</code>.  We'll increment <code>i</code> by 2 each loop with <code>i += 2</code>.",
+        "<code>var ourArray = [];</code>",
+        "<code>for(var i = 0; i < 10; i += 2) {</code>",
+        "<code>&thinsp;&thinsp;ourArray.push(i);</code>",
+        "<code>}</code>",
+        "<code>ourArray</code> will now contain [0,2,4,6,8] ",
+        "Let's change our <code>initialization</code> and <code>final-expression</code> so we can count by odd numbers."
+      ],
+      "tests":[
+        "assert(editor.getValue().match(/for\\s*\\(/g).length > 1, 'message: You should be using a <code>for</code> loop for this.');",
+        "assert.deepEqual(myArray, [1,3,5,7,9], 'message: <code>myArray</code> should equal [1,3,5,7,9].');"
+      ],
+      "challengeSeed":[
+        "var ourArray = [];",
+        "for(var i = 1; i < 10; i += 2){",
+        "  ourArray.push(i);",
+        "}",
+        "var myArray = [];",
+        "",
+        "// Only change code below this line.",
+        "",
+        "// Push the odd numbers from one through nine to myArray using a \"for loop\" like above.",
+        "",
+        "// Only change code above this line.",
+        "// We use this function to show you the value of your variable in your output box.",
+        "// You'll learn about functions soon.",
+        "if(typeof(myArray) !== \"undefined\"){(function(){return myArray;})();}",
+        ""
+      ],
+      "type": "waypoint",
+      "challengeType": 1
+    },
+    {
+      "id":"56105e7b514f539506016a5e",
+      "title": "Count Backwards With a For Loop",
+      "description":[
+        "A for loop can also count backwards, so long as we can define the right conditions.",
+        "In order to count backwards by twos, we'll need to change our <code>initialization</code>, <code>condition</code>, and <code>final-expression</code>.",
+        "We'll start at <code>i = 10</code> and loop while <code>i > 0</code>.  We'll decrement <code>i</code> by 2 each loop with <code>i -= 2</code>.",
+        "<code>var ourArray = [];</code>",
+        "<code>for(var i = 10; i > 0; i -= 2) {</code>",
+        "<code>&thinsp;&thinsp;ourArray.push(i);</code>",
+        "<code>}</code>",
+        "<code>ourArray</code> will now contain [10,8,6,4,2] ",
+        "Let's change our <code>initialization</code> and <code>final-expression</code> so we can count backward by twos for numbers."
+      ],
+      "tests":[
+        "assert(editor.getValue().match(/for\\s*\\(/g).length > 1, 'message: You should be using a <code>for</code> loop for this.');",
+        "assert.deepEqual(myArray, [9,7,5,3,1], 'message: <code>myArray</code> should equal [9,7,5,3,1].');"
+      ],
+      "challengeSeed":[
+        "ourArray = [];",
+        "for(var i = 9; i > 0; i -= 2){",
+        "  ourArray.push(i);",
+        "}",
+        "var myArray = [];",
+        "",
+        "// Only change code below this line.",
+        "",
+        "// Push the odd numbers from nine through one to myArray using a \"for loop\" like above.",
+        "",
+        "// Only change code above this line.",
+        "// We use this function to show you the value of your variable in your output box.",
+        "// You'll learn about functions soon.",
         "if(typeof(myArray) !== \"undefined\"){(function(){return myArray;})();}",
         ""
       ],
@@ -1219,10 +1301,10 @@
         "<code>Math.floor(Math.random() * (3 - 1 + 1)) + 1;</code>"
       ],
       "tests": [
-        "assert(typeof(runSlots($(\".slot\"))[0]) === \"number\", '<code>slotOne</code> should be a random number.')",
-        "assert(typeof(runSlots($(\".slot\"))[1]) === \"number\", '<code>slotTwo</code> should be a random number.')",
-        "assert(typeof(runSlots($(\".slot\"))[2]) === \"number\", '<code>slotThree</code> should be a random number.')",
-        "assert((function(){if(editor.match(/Math\\.floor\\(\\s?Math\\.random\\(\\)\\s?\\*\\s?\\(\\s?3\\s?\\-\\s?1\\s?\\+\\s?1\\s?\\)\\s?\\)\\s?\\+\\s?1;/gi) !== null){return editor.match(/Math\\.floor\\(\\s?Math\\.random\\(\\)\\s?\\*\\s?\\(\\s?3\\s?\\-\\s?1\\s?\\+\\s?1\\s?\\)\\s?\\)\\s?\\+\\s?1;/gi).length >= 3;}else{return false;}})(), 'You should have used <code>Math.floor(Math.random() * (3 - 1 + 1)) + 1;</code> three times to generate your random numbers.')"
+        "assert(typeof(runSlots($(\".slot\"))[0]) === \"number\" && runSlots($(\".slot\"))[0] > 0 && runSlots($(\".slot\"))[0] < 4, '<code>slotOne</code> should be a random number.')",
+        "assert(typeof(runSlots($(\".slot\"))[1]) === \"number\" && runSlots($(\".slot\"))[1] > 0 && runSlots($(\".slot\"))[1] < 4, '<code>slotTwo</code> should be a random number.')",
+        "assert(typeof(runSlots($(\".slot\"))[2]) === \"number\" && runSlots($(\".slot\"))[2] > 0 && runSlots($(\".slot\"))[2] < 4, '<code>slotThree</code> should be a random number.')",
+        "assert((function(){if(editor.match(/Math\\.floor\\(\\s?Math\\.random\\(\\)\\s?\\*\\s?\\(\\s?3\\s?\\-\\s?1\\s?\\+\\s?1\\s?\\)\\s?\\)\\s?\\+\\s?1/gi) !== null){return editor.match(/slot.*?=.*?\\(.*?\\).*?/gi).length >= 3;}else{return false;}})(), 'You should have used <code>Math.floor(Math.random() * (3 - 1 + 1)) + 1;</code> three times to generate your random numbers.')"
       ],
       "challengeSeed": [
         "fccss",
@@ -1375,7 +1457,7 @@
         "<code>}</code>"
       ],
       "tests": [
-        "assert((function(){var data = runSlots();if(data === null){return true}else{if(data[0] === data[1] && data[1] === data[2]){return true;}else{return false;}}})(), 'If all three of our random numbers are the same we should return that number. Otherwise we should return <code>null</code>.')"
+        "assert((function(){var data = runSlots();return data === null || data.toString().length === 1;})(), 'If all three of our random numbers are the same we should return that number. Otherwise we should return <code>null</code>.')"
       ],
       "challengeSeed": [
         "fccss",
@@ -1557,8 +1639,8 @@
         "    ",
         "    // Only change code above this line.",
         "    ",
-        "    if(slotOne !== slotTwo || slotTwo !== slotThree){",
-        "      return null;",
+        "    if (slotOne === slotTwo && slotTwo === slotThree) {",
+        "      return slotOne;",
         "    }",
         "    ",
         "    if(slotOne !== undefined && slotTwo !== undefined && slotThree !== undefined){",
@@ -1726,8 +1808,8 @@
         "    ",
         "    // Only change code above this line.",
         "    ",
-        "    if(slotOne !== slotTwo || slotTwo !== slotThree){",
-        "      return null;",
+        "    if (slotOne === slotTwo && slotTwo === slotThree) {",
+        "      return slotOne;",
         "    }",
         "    ",
         "    if(slotOne !== undefined && slotTwo !== undefined && slotThree !== undefined){",
