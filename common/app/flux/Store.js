@@ -14,10 +14,10 @@ export default Store({
     value: initValue
   },
   init({ instance: appStore, args: [cat] }) {
-    const { goTo, setUser, setTitle } = cat.getActions('appActions');
+    const { updateRoute, setUser, setTitle } = cat.getActions('appActions');
     const register = createRegistrar(appStore);
 
-    register(setter(fromMany(setUser, setTitle, goTo)));
+    register(setter(fromMany(setUser, setTitle, updateRoute)));
 
     return appStore;
   }

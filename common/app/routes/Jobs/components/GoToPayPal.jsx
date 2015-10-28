@@ -57,7 +57,7 @@ export default contain(
 
     goToJobBoard() {
       const { appActions } = this.props;
-      appActions.goTo('/jobs');
+      appActions.updateRoute('/jobs');
     },
 
     renderDiscount(discountAmount) {

@@ -37,7 +37,7 @@ export default contain(
         return null;
       }
       jobActions.findJob(id);
-      appActions.goTo(`/jobs/${id}`);
+      appActions.updateRoute(`/jobs/${id}`);
     },
 
     renderList(handleJobClick, jobs) {
@@ -91,7 +91,7 @@ export default contain(
                     bsSize='large'
                     className='signup-btn btn-block'
                     onClick={ ()=> {
-                      appActions.goTo('/jobs/new');
+                      appActions.updateRoute('/jobs/new');
                     }}>
                     Post a job: $200 for 30 days + weekly tweets
                   </Button>

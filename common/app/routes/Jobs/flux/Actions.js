@@ -151,7 +151,7 @@ export default Actions({
           return jobActions.setError(err);
         }
         jobActions.setJobs({ job });
-        appActions.goTo(goTo);
+        appActions.updateRoute(goTo);
       });
     });
 

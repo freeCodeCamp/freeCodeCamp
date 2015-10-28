@@ -17,7 +17,7 @@ export default Actions({
   },
 
   getUser: null,
-  goTo(route) {
+  updateRoute(route) {
     return { route };
   },
   goBack: null

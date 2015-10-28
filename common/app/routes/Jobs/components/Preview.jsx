@@ -32,7 +32,7 @@ export default contain(
       const { appActions, job } = this.props;
       // redirect user in client
       if (!job || !job.position || !job.description) {
-        appActions.goTo('/jobs/new');
+        appActions.updateRoute('/jobs/new');
       }
     },
 
