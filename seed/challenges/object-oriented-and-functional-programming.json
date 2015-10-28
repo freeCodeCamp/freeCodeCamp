@@ -15,7 +15,6 @@
     {
       "id":"cf1111c1c15feddfaeb1bdef",
       "title": "Declare JavaScript Objects as Variables",
-      "difficulty":0,
       "description":[
         "Before we dive into Object Oriented Programming, let's revisit JavaScript objects.",
         "Give your <code>motorBike</code> object a <code>wheels</code>, <code>engines</code> and <code>seats</code> attribute and set them to numbers."
@@ -26,21 +25,20 @@
         "assert(typeof(motorBike.seats) === 'number', 'message: <code>motorBike</code> should have a <code>seats</code> attribute set to a number.');"
       ],
       "challengeSeed":[
-        "//Here is a sample Object",
         "var car = {",
         "  \"wheels\":4,",
         "  \"engines\":1,",
         "  \"seats\":5",
         "};",
         "",
-        "//Now Let's make a similar Object called motorBike",
-        "//Give it two wheels, one engine and one seat",
         "var motorBike = {",
+        "",
         "  // Only change code below this line.",
         "",
         "",
         "",
         "  // Only change code above this line.",
+        "",
         "};",
         "",
         "(function() {return JSON.stringify(motorBike);})();"
@@ -52,9 +50,14 @@
     {
       "id":"cf1111c1c15feddfaeb2bdef",
       "title": "Construct JavaScript Objects with Functions",
-      "difficulty":0,
       "description":[
         "We are also able to create objects using <code>constructor</code> functions.",
+        "Here's an example of a constructor function:",
+        "<code>var Car = function() {</code>",
+        "<code>&thinsp;&thinsp;this.wheels = 4;</code>",
+        "<code>&thinsp;&thinsp;this.engines = 1;</code>",
+        "<code>&thinsp;&thinsp;this.seats = 1;</code>",
+        "<code>};</code>",
         "Give your <code>myMotorBike</code> object a <code>wheels</code>, <code>engines</code> and <code>seats</code> attribute and set them to numbers."
       ],
       "tests":[
@@ -63,7 +66,6 @@
         "assert(typeof((new MotorBike()).seats) === 'number', 'message: <code>myMotorBike</code> should have a <code>seats</code> attribute set to a number.');"
       ],
       "challengeSeed":[
-        "// Let's add the properties engines and seats to the car in the same way that the property wheels has been added below. They should both be numbers.",
         "var Car = function() {",
         "  this.wheels = 4;",
         "  this.engines = 1;",
@@ -73,6 +75,7 @@
         "var myCar = new Car();",
         "",
         "// Only change code below this line.",
+        "",
         "var MotorBike = function() {",
         "",
         "",
@@ -80,6 +83,7 @@
         "};",
         "",
         "var myMotorBike = new MotorBike();",
+        "",
         "// Only change code above this line.",
         "",
         "(function() {return JSON.stringify(myMotorBike);})();"
@@ -90,12 +94,12 @@
     {
       "id":"cf1111c1c15feddfaeb3bdef",
       "title":"Make Object Properties Private",
-      "difficulty":0,
       "description":[
         "Objects have their own attributes, called <code>properties</code>, and their own functions, called <code>methods</code>.",
         "In the previous challenge, we used the <code>this</code> keyword to reference <code>public properties</code> and <code>public methods</code> of the current object.",
         "We can also create <code>private properties</code> and <code>private methods</code>, which aren't accessible from outside the object.",
-        "To do this, we omit the word <code>this</code> from the <code>property</code> or <code>method</code> declaration.",
+        "To do this, just declare properties or functions within the constructor.",
+        "Let's create an object with two functions. One attached as a property and one not.",
         "See if you can keep <code>myBike.speed</code> and <code>myBike.addUnit</code> private, while making <code>myBike.getSpeed</code> publicly accessible."
       ],
       "tests":[
@@ -104,35 +108,43 @@
         "assert(typeof(myBike.addUnit) === 'undefined', 'message: <code>myBike.addUnit</code> should remain undefined.');"
       ],
       "challengeSeed":[
-        "//Let's create an object with two functions. One attached as a property and one not.",
         "var Car = function() {",
-        "  this.gear = 1;",
+        " // this is a private variable",
+        "  var gear = 1;",
+        " // this is a private function (also known as a private method)",
         "  function addStyle(styleMe){",
         "    return 'The Current Gear Is: ' + styleMe;",
         "  }",
+        " // this is a public method",
         "  this.getGear = function() {",
         "    return addStyle(this.gear);",
         "  };",
+        "",
         "};",
         "",
         "var Bike = function() {",
+        "",
         "  // Only change code below this line.",
+        "",
         "  this.speed = 100;",
+        "",
         "  function addUnit(value) {",
         "    return value + \"KM/H\";",
         "  }",
-        "  ",
+        "",
         "  getSpeed = function () {",
         "    return addUnit(speed);",
         "  };",
-        "  ",
+        "",
         "};",
         "",
         "// Only change code above this line.",
+        "",
         "var myCar = new Car();",
+        "",
         "var myBike = new Bike();",
         "",
-        "if(myBike.hasOwnProperty('getSpeed')){(function() {return JSON.stringify(myBike.getSpeed());})();};"
+        "if(myBike.hasOwnProperty('getSpeed')){(function() {return JSON.stringify(myBike.getSpeed());})();}"
       ],
       "challengeType":1,
       "type": "waypoint"
@@ -140,12 +152,11 @@
     {
       "id":"cf1111c1c15feddfaeb4bdef",
       "title":"Make Instances of Objects with a Constructor Function",
-      "difficulty":0,
       "description":[
-        "Sometimes you'll want to be able to easily create similar objects.",
+        "Sometimes you'll want to be able to easily create many copies of an objects that all share the same methods.",
         "Objects have their own attributes, called <code>properties</code>, and their own functions, called <code>methods</code>.",
-        "A function that creates objects is called a <code>constructor</code>.",
         "You can create <code>instances</code> of an object using a <code>constructor</code>.",
+        "A constructor is a function that creates instances of an object that share the same methods and properties",
         "Each new <code>instance</code> of this object <code>inherits</code> all the <code>properties</code> and <code>methods</code> of your original object.",
         "Once an <code>instance</code> has been created you can add <code>properties</code> to that <code>instance</code> individually.",
         "Add an <code>engines</code> property with a number value to the <code>myCar</code> instance."
@@ -164,7 +175,6 @@
         "// Only change code below this line.",
         "var myCar = new Car();",
         "",
-        "//Add the property \"engines\" to myCar, and make it a number.",
         "",
         "",
         "// Only change code above this line.",
@@ -176,7 +186,6 @@
     {
       "id":"cf1111c1c15feddfaeb7bdef",
       "title":"Iterate over Arrays with .map",
-      "difficulty":0,
       "description":[
         "The <code>map</code> method is a convenient way to iterate through arrays. Here's an example usage:",
         "<code>var timesFour = array.map(function(val){</code>",
@@ -188,19 +197,23 @@
         "Use the map function to add 3 to every value in the variable <code>array</code>."
       ],
       "tests":[
-        "assert.deepEqual(array, [4,5,6,7,8], 'message: You should add three to each value in the array.');",
+        "assert.deepEqual(newArray, [4,5,6,7,8], 'message: You should add three to each value in the array.');",
         "assert(editor.getValue().match(/\\.map\\s*\\(/gi), 'message: You should be making use of the <code>map</code> method.');",
         "assert(editor.getValue().match(/\\[1\\,2\\,3\\,4\\,5\\]/gi), 'message: You should only modify the array with <code>map</code>.');"
       ],
       "challengeSeed":[
-        "//Use map to add three to each value in the array",
-        "var array = [1,2,3,4,5];",
+        "var oldArray = [1,2,3,4,5];",
+        "",
         "// Only change code below this line.",
+        "",
+        "",
+        "var newArray = oldArray;",
         "",
         "",
         "",
         "// Only change code above this line.",
-        "(function() {return array;})();"
+        "",
+        "(function() {return newArray;})();"
       ],
       "MDNlinks":[
         "Array.map()"
@@ -211,15 +224,14 @@
     {
       "id":"cf1111c1c15feddfaeb8bdef",
       "title":"Condense arrays with .reduce",
-      "difficulty":0,
       "description":[
         "The array method <code>reduce</code> is used to iterate through an array and condense it into one value.",
         "To use <code>reduce</code> you pass in a callback whose arguments are an accumulator (in this case, <code>previousVal</code>) and the current value (<code>currentVal</code>).",
-        "<code>reduce</code> has an optional second argument which can be used to set the initial value of the accumulator. If no initial value is specified if will be the first array element.",
-        "Here is an example of <code>reduce</code> being used to sum all the values of an array:",
-        "<code>var singleVal = array.reduce(function(previousVal, currentVal){</code>",
-        "<code>&thinsp;&thinsp;return previousVal+currentVal;</code>",
-        "<code>});</code>",
+        "<code>reduce</code> has an optional second argument which can be used to set the initial value of the accumulator. If no initial value is specified it will be the first array element and currentVal will start with the second array element.",
+        "Here is an example of <code>reduce</code> being used to subtract all the values of an array:",
+        "<code>var singleVal = array.reduce(function(previousVal, currentVal) {</code>",
+        "<code>&thinsp;&thinsp;return previousVal - currentVal;</code>",
+        "<code>}, 0);</code>",
         "Use the <code>reduce</code> method to sum all the values in <code>array</code> and assign it to <code>singleVal</code>."
       ],
       "tests":[
@@ -228,12 +240,16 @@
       ],
       "challengeSeed":[
         "var array = [4,5,6,7,8];",
-        "var singleVal = 0;",
+        "",
+        "",
         "// Only change code below this line.",
+        "",
+        "var singleVal = array;",
         "",
         "",
         "",
         "// Only change code above this line.",
+        "",
         "(function() {return singleVal;})();"
       ],
       "MDNlinks":[
@@ -245,30 +261,32 @@
     {
       "id":"cf1111c1c15feddfaeb9bdef",
       "title":"Filter Arrays with .filter",
-      "difficulty":0,
       "description":[
         "The <code>filter</code> method is used to iterate through an array and filter out elements where a given condition is not true.",
-        "<code>filter</code> is passed a callback function which takes the current value (we've called that <code>val</code>) as an argument. It can also use arguments for the <code>index</code> and <code>array</code> being acted on.",
+        "<code>filter</code> is passed a callback function which takes the current value (we've called that <code>val</code>) as an argument.",
         "Any array element for which the callback returns true will be kept and elements that return false will be filtered out.",
         "The following code is an example of using filter to remove array elements that are not even numbers:",
+        "Note: We omit the second and third arguments since we only need the value",
         "<code>array = array.filter(function(val) {</code>",
         "<code>&thinsp;&thinsp;return val % 2 === 0;</code>",
         "<code>});</code>",
         "Use <code>filter</code> to remove all elements from <code>array</code> that are greater than 5."
       ],
       "tests":[
-        "assert.deepEqual(array, [1,2,3,4,5], 'message: You should have removed all the values from the array that are greater than 5.');",
+        "assert.deepEqual(newArray, [1,2,3,4,5], 'message: You should have removed all the values from the array that are greater than 5.');",
         "assert(editor.getValue().match(/array\\.filter\\s*\\(/gi), 'message: You should be using the <code>filter</code> method to remove the values from the array.');",
         "assert(editor.getValue().match(/\\[1\\,2\\,3\\,4\\,5\\,6\\,7\\,8\\,9\\,10\\]/gi), 'message: You should only be using <code>filter</code> to modify the contents of the array.');"
       ],
       "challengeSeed":[
-        "var array = [1,2,3,4,5,6,7,8,9,10];",
+        "var oldArray = [1,2,3,4,5,6,7,8,9,10];",
+        "",
         "// Only change code below this line.",
         "",
-        "",
+        "var newArray = oldArray;",
         "",
         "// Only change code above this line.",
-        "(function() {return array;})();"
+        "",
+        "(function() { return newArray; })();"
       ],
       "MDNlinks":[
         "Array.filter()"
@@ -279,7 +297,6 @@
     {
       "id":"cf1111c1c16feddfaeb1bdef",
       "title": "Sort Arrays with .sort",
-      "difficulty":0,
       "description":[
         "You can use the method <code>sort</code> to easily sort the values in an array alphabetically or numerically.",
         "Unlike the previous array methods we have been looking at, <code>sort</code> actually alters the array in place. However, it also returns this sorted array.",
@@ -289,21 +306,23 @@
         "<code>array.sort(function(a, b) {</code>",
         "<code>&thinsp;&thinsp;return a - b;</code>",
         "<code>});</code>",
-        "Use <code>sort</code> to sort <code>array</code> alphabetically."
+        "Use <code>sort</code> to sort <code>array</code> from largest to smallest."
       ],
       "tests":[
-        "assert.deepEqual(array, ['alpha', 'beta', 'charlie'], 'message: You should have sorted the array alphabetically.');",
-        "assert(editor.getValue().match(/\\[\\'beta\\'\\,\\s\\'alpha\\'\\,\\s'charlie\\'\\];/gi), 'message: You should only be using <code>sort</code> to modify the array.');",
-        "assert(editor.getValue().match(/\\.sort\\s*\\(\\)/gi), 'message: You should have made use of the <code>sort</code> method.');"
+        "assert.deepEqual(array, [21, 12, 2, 1], 'message: You should have sorted the array from largest to smallest.');",
+        "assert(editor.getValue().match(/\\[1,\\s*12,\\s*21,\\s*2\\];/gi), 'message: You should only be using <code>sort</code> to modify the array.');",
+        "assert(editor.getValue().match(/\\.sort\\s*\\(/g), 'message: You should have made use of the <code>sort</code> method.');"
       ],
       "challengeSeed":[
-        "var array = ['beta', 'alpha', 'charlie'];",
+        "var array = [1, 12, 21, 2];",
+        "",
         "// Only change code below this line.",
         "",
-        "",
+        "array.sort();",
         "",
         "// Only change code above this line.",
-        "(function() {return array;})();"
+        "",
+        "(function() { return array; })();"
       ],
       "MDNlinks":[
         "Array.sort()"
@@ -326,11 +345,13 @@
       ],
       "challengeSeed": [
         "var array = [1,2,3,4,5,6,7];",
+        "",
         "// Only change code below this line.",
         "",
         "",
         "",
         "// Only change code above this line.",
+        "",
         "(function() {return array;})();"
       ],
       "MDNlinks":[
@@ -345,25 +366,27 @@
       "description": [
         "<code>concat</code> can be used to merge the contents of two arrays into one.",
         "<code>concat</code> takes an array as an argument and returns a new array with the elements of this array concatenated onto the end.",
-        "Here is an example of <code>concat</code> being used to concatenate <code>otherArray</code> onto the end of <code>array</code>:",
-        "<code>array = array.concat(otherArray);</code>",
-        "Use <code>.concat()</code> to concatenate <code>concatMe</code> onto the end of <code>array</code> and assign it back to <code>array</code>."
+        "Here is an example of <code>concat</code> being used to concatenate <code>otherArray</code> onto the end of <code>oldArray</code>:",
+        "<code>newArray = oldArray.concat(otherArray);</code>",
+        "Use <code>.concat()</code> to concatenate <code>concatMe</code> onto the end of <code>oldArray</code> and assign it to <code>newArray</code>."
       ],
       "tests": [
-        "assert.deepEqual(array, [1,2,3,4,5,6], 'message: You should concatenate the two arrays together.');",
+        "assert.deepEqual(newArray, [1,2,3,4,5,6], 'message: You should concatenate the two arrays together.');",
         "assert(editor.getValue().match(/\\.concat\\s*\\(/gi), 'message: You should be using the <code>concat</code> method to merge the two arrays.');",
         "assert(editor.getValue().match(/\\[1\\,2\\,3\\]/gi) && editor.getValue().match(/\\[4\\,5\\,6\\]/gi), 'message: You should only be using <code>concat</code> to modify the arrays.');"
       ],
       "challengeSeed": [
-        "var array = [1,2,3];",
+        "var oldArray = [1,2,3];",
         "",
         "var concatMe = [4,5,6];",
+        "",
         "// Only change code below this line.",
         "",
-        "",
+        "var newArray = oldArray;",
         "",
         "// Only change code above this line.",
-        "(function() {return array;})();"
+        "",
+        "(function() { return newArray; })();"
       ],
       "MDNlinks":[
         "Array.concat()"
@@ -374,25 +397,26 @@
     {
       "id":"cf1111c1c16feddfaeb4bdef",
       "title":"Split Strings with .split",
-      "difficulty":0,
       "description":[
         "You can use the <code>split</code> method to split a string into an array.",
         "<code>split</code> uses the argument you pass in as a delimiter to determine which points the string should be split at.",
-        "Here is an example of <code>split</code> being used to split an array at every space character:",
-        "<code>var array = string.split(' ');</code>",
+        "Here is an example of <code>split</code> being used to split an array at every <code>s</code> character:",
+        "<code>var array = string.split('s');</code>",
         "Use <code>split</code> to create an array of words from <code>string</code> and assign it to <code>array</code>."
       ],
       "tests":[
-        "assert(typeof(array) === 'object' && array.length === 5, 'message: You should split the string by its spaces.');",
-        "assert(/\\.split\\(/gi, 'message: You should use the <code>split</code> method on the string.');"
+        "assert(/\\.split\\(/gi, 'message: You should use the <code>split</code> method on the string.');",
+        "assert(typeof(array) === 'object' && array.length === 5, 'message: You should split the string by its spaces.');"
       ],
       "challengeSeed":[
         "var string = \"Split me into an array\";",
+        "",
         "// Only change code below this line.",
         "",
         "var array = string;",
         "",
         "// Only change code above this line.",
+        "",
         "(function() {return array;})();"
       ],
       "MDNlinks":[
@@ -404,11 +428,12 @@
     {
       "id":"cf1111c1c16feddfaeb5bdef",
       "title":"Join Strings with .join",
-      "difficulty":0,
       "description":[
         "We can use the <code>join</code> method to join each element of an array into a string separated by whatever delimiter you provide as an argument.",
-        "The following is an example of using <code>join</code> to join all of the elements of an array into a string with all the elements seperated by a space:",
-        "<code>var joinedString = joinMe.join(\" \");</code>",
+        "The following is an example of using <code>join</code> to join all of the elements of an array into a string with all the elements seperated by word `Na`:",
+        "<code>var joinMe = [\"Na \", \"Na \", \"Na \", \"Na \", \"Batman!\"];</code>",
+        "<code>var joinedString = joinMe.join(\"Na \");</code>",
+        "<code>console.log(joinedString);</code>",
         "Use the <code>join</code> method to create a string from <code>joinMe</code> with spaces in between each element and assign it to <code>joinedString</code>."
       ],
       "tests":[
@@ -417,11 +442,13 @@
       ],
       "challengeSeed":[
         "var joinMe = [\"Split\",\"me\",\"into\",\"an\",\"array\"];",
+        "",
         "// Only change code below this line.",
         "",
         "var joinedString = joinMe;",
         "",
         "// Only change code above this line.",
+        "",
         "(function() {return joinedString;})();"
       ],
       "MDNlinks":[
