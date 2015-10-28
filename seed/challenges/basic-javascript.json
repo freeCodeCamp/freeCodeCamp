@@ -963,9 +963,9 @@
         "assert.deepEqual(myArray, [9,7,5,3,1], 'message: <code>myArray</code> should equal <code>[9,7,5,3,1]</code>');"
       ],
       "challengeSeed":[
-        "ourArray = [];",
+        "var ourArray = [];",
         "",
-        "for(var i = 9; i > 0; i -= 2){",
+        "for(var i = 10; i > 0; i -= 2){",
         "  ourArray.push(i);",
         "}",
         "",
