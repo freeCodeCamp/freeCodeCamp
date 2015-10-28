@@ -179,7 +179,8 @@
       "title": "Center Text with Bootstrap",
       "description": [
         "Now that we're using Bootstrap, we can center our heading element to make it look better. All we need to do is add the class <code>text-center</code> to our <code>h2</code> element.",
-        "Remember that you can add several classes to the same element by separating each of them with a space, like this: <code>&#60h2 class=\"red-text text-center\"&#62your text&#60/h2&#62</code>."
+        "Remember that you can add several classes to the same element by separating each of them with a space, like this:",
+        "<code>&#60h2 class=\"red-text text-center\"&#62your text&#60/h2&#62</code>"
       ],
       "tests": [
         "assert($(\"h2\").hasClass(\"text-center\"), 'Your <code>h2</code> element should be centered by applying the class <code>text-center</code>')"
@@ -892,7 +893,8 @@
         "<a href=\"http://i.imgur.com/O32cDWE.png\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" src=\"http://i.imgur.com/O32cDWE.png\" title=\"Click to enlarge\" alt=\"An \"inline\" button is as small as the text it contains. In this image, it's centered. Below it is a \"block-level\" button, which stretches to fill the entire horizontal space.'></a>",
         "By using the <code>span</code> element, you can put several elements together, and even style different parts of the same element differently.",
         "Nest the word \"love\" in your \"Things cats love\" element below within a <code>span</code> element. Then give that <code>span</code> the class <code>text-danger</code> to make the text red.",
-        "Here's how you would do this with the \"Top 3 things cats hate\" element: <code>&#60;p&#62;Top 3 things cats &#60;span class = \"text-danger\"&#62;hate&#60;/span&#62;&#60;/p&#62;</code>"
+        "Here's how you would do this with the \"Top 3 things cats hate\" element:",
+        "<code>&#60;p&#62;Top 3 things cats &#60;span class = \"text-danger\"&#62;hate&#60;/span&#62;&#60;/p&#62;</code>"
       ],
       "tests": [
         "assert($(\"p span\") && $(\"p span\").length > 0, 'Your <code>span</code> element should be inside your <code>p</code> element.')",
@@ -2111,11 +2113,11 @@
         "When we start using jQuery, we will modify HTML elements without needing to actually change them in HTML.",
         "Let's make sure that everyone knows they shouldn't actually modify any of this code directly.",
         "Remember that you can start a comment with <code>&#60;!--</code> and end a comment with <code>--&#62;</code>",
-        "Add a comment at the top of your HTML that says <code>You shouldn't need to modify code below this line</code>."
+        "Add a comment at the top of your HTML that says <code>Only change code above this line.</code>"
       ],
       "tests": [
         "assert(editor.match(/<!--/g) && editor.match(/<!--/g).length > 0, 'Start a comment with <code>&#60;!--</code>.')",
-        "assert(editor.match(/this line/g) && editor.match(/this line/g).length > 0, 'Your comment should have the text <code>You shouldn&#39;t need to modify code below this line</code>.')",
+        "assert(editor.match(/this line/g) && editor.match(/this line/g).length > 0, 'Your comment should have the text <code>Only change code above this line</code>.')",
         "assert(editor.match(/-->.*\\n+.+/g), 'Be sure to close your comment with <code>--&#62;</code>.')"
       ],
       "challengeSeed": [
