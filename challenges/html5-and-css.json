@@ -390,6 +390,7 @@
         "assert(!$(\"h2\").attr(\"style\"), 'Remove the style attribute from your <code>h2</code> element.')",
         "assert($(\"style\") && $(\"style\").length > 1, 'Create a <code>style</code> element.')",
         "assert($(\"h2\").css(\"color\") === \"rgb(0, 0, 255)\", 'Your <code>h2</code> element should be blue.')",
+        "assert(editor.match(/h2\\s*\\{\\s*color:\\s*blue;\\s*\\}/g), 'Ensure that your stylesheet <code>h2</code> declaration is valid with a semicolon and closing brace')",
         "assert(editor.match(/<\\/style>/g) && editor.match(/<\\/style>/g).length === (editor.match(/<style((\\s)*((type|media|scoped|title|disabled)=\"[^\"]*\")?(\\s)*)*>/g) || []).length, 'Make sure all your <code>style</code> elements are valid and have a closing tag.')"
       ],
       "challengeSeed": [
@@ -449,6 +450,7 @@
       "tests": [
         "assert($(\"h2\").css(\"color\") === \"rgb(255, 0, 0)\", 'Your <code>h2</code> element should be red.')",
         "assert($(\"h2\").hasClass(\"red-text\"), 'Your <code>h2</code> element should have the class <code>red-text</code>.')",
+        "assert(editor.match(/\\.red-text\\s*\\{\\s*color:\\s*red;\\s*\\}/g), 'Your stylesheet should declare a <code>red-text</code> class and have its color set to red.')",
         "assert($(\"h2\").attr(\"style\") === undefined, 'Do not use inline style declarations like <code>style=\"color&#58; red\"</code> in your <code>h2</code> element.')"
       ],
       "challengeSeed": [

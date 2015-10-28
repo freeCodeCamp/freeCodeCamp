@@ -938,7 +938,7 @@
       "description": [
         "Random numbers are useful for creating random behavior.",
         "JavaScript has a <code>Math.random()</code> function that generates a random decimal number.",
-        "Change </code>myFunction</code> to return a random number instead of returning <code>0</code>."
+        "Change </code>myFunction</code> to return a random number instead of returning <code>0</code>.",
         "Note that you can return a function, just like you would return a variable or value."
       ],
       "tests": [
@@ -972,7 +972,7 @@
         "Note that because we're rounding down, it's impossible to actually get 20.",
         "Putting everything together, this is what our code looks like:",
         "<code>Math.floor(Math.random() * 20);</code>",
-        "See how <code>Math.floor</code> takes <code>(Math.random() * 20)</code> as its argument? That's right - you can pass a function to another function as an argument."
+        "See how <code>Math.floor</code> takes <code>(Math.random() * 20)</code> as its argument? That's right - you can pass a function to another function as an argument.",
         "Let's use this technique to generate and return a random whole number between 0 and 9."
       ],
       "tests": [
@@ -1003,7 +1003,7 @@
       "title": "Generate Random Whole Numbers within a Range",
       "description": [
         "Instead of generating a random number between zero and a given number like we did before, we can generate a random number that falls within a range of two specific numbers.",
-        "To do this, we'll define a minimum number <code>min</code> and a maximum number <code>max</code>."
+        "To do this, we'll define a minimum number <code>min</code> and a maximum number <code>max</code>.",
         "Here's the formula we'll use. Take a moment to read and try to understand what this code is doing.",
         "<code>Math.floor(Math.random() * (max - min + 1)) + min</code>",
         "Define two variables: <code>myMin</code> and </code>myMax</code>, and set them both equal to numbers.",
@@ -1035,7 +1035,7 @@
         "",
         "",
         "",
-        "",        
+        "",
         "// Only change code above this line.",
         "",
         "",
@@ -1186,7 +1186,7 @@
       "description": [
         "You can invert any match by using the uppercase version of the regular expression selector.",
         "For example, <code>\\s</code> will match any whitespace, and <code>\\S</code> will match anything that isn't whitespace.",
-        "Use <code>/\\S/g</code> to count the number of non-whitespace characters in <code>testString</code>.",
+        "Use <code>/\\S/g</code> to count the number of non-whitespace characters in <code>testString</code>."
       ],
       "tests": [
         "assert(editor.getValue().match(/\\/\\\\S\\/g/g), 'message: Use the <code>/\\S/g</code> regular expression to find non-space characters in <code>testString</code>.');",

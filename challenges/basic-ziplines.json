@@ -35,7 +35,7 @@
         [
           "http://i.imgur.com/Wzt6Y9Y.gif",
           "A gif showing the process of saving and forking a pen.",
-          "Save your pen with the \"Save\" button. Then click the \"Fork\" button. This will create a fork (copy) of your pen that you can experimient with.",
+          "Save your pen with the \"Save\" button. Then click the \"Fork\" button. This will create a fork (copy) of your pen that you can experiment with.",
           ""
         ]
       ],
@@ -68,7 +68,7 @@
         "<span class='text-info'>User Story:</span> As a user, I can click different buttons that will take me to the portfolio creator's different social media pages.",
         "<span class='text-info'>User Story:</span> As a user, I can see thumbnail images of different projects the portfolio creator has built (if you haven't built any websites before, use placeholders.)",
         "<span class='text-info'>Bonus User Story:</span> As a user, I navigate to different sections of the webpage by clicking buttons in the navigation.",
-        "Don't worry if you don't have anything to showcase on your portfolio yet - you will build several several apps on the next few CodePen challenges, and can come back and update your portfolio later.",
+        "Don't worry if you don't have anything to showcase on your portfolio yet - you will build several apps on the next few CodePen challenges, and can come back and update your portfolio later.",
         "There are many great portfolio templates out there, but for this challenge, you'll need to build a portfolio page yourself. Using Bootstrap will make this much easier for you.",
         "Note that CodePen.io overrides the Window.open() function, so if you want to open windows using jquery, you will need to target invisible anchor elements like this one: <code>&lt;a target='_blank'&gt;</a></code>.",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck.",
