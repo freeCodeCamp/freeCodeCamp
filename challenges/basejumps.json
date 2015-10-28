@@ -11,7 +11,7 @@
         [
           "http://i.imgur.com/4IZjWZ3.gif",
           "A gif showing how to create a c9.io account.",
-          "We recommend building our full stack Basejump challenges on c9.io, a powerful browser-based development environment. This save you hours of time that you would spend configuring your local computer to run Node.js and MongoDB - time you could instead spend coding. <br>Create a c9.io account bu clicking the GitHub symbol in the upper right hand corner of the c9.io page. Click the big plus symbol to create a new workspace. Enter your email address when prompted.",
+          "We recommend building our full stack Basejump challenges on c9.io, a powerful browser-based development environment. This save you hours of time that you would spend configuring your local computer to run Node.js and MongoDB - time you could instead spend coding. <br>Create a c9.io account by clicking the GitHub symbol in the upper right hand corner of the c9.io page. Click the big plus symbol to create a new workspace. Enter your email address when prompted.",
           "http://c9.io"
         ],
         [
@@ -71,7 +71,7 @@
         [
           "http://i.imgur.com/54OC2Ro.gif",
           "A gif showing you how to navigate to your preview tab and sign in to your new Clementine.js app.",
-          "run <code>node server.js</code> to start the server. Refresh your preview tab. You should see the Clementine.js logo. Click \"sign in\" and accept GitHub's prompt to authorize the application.",
+          "Run <code>node server.js</code> to start the server. Refresh your preview tab. You should see the Clementine.js logo. Click \"sign in\" and accept GitHub's prompt to authorize the application.",
           ""
         ],
         [
