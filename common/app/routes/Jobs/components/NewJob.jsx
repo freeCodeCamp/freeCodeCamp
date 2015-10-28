@@ -84,7 +84,7 @@ function formatValue(value, validator, type = 'string') {
 }
 
 function isValidURL(data) {
-  return isURL(data, { 'require_protocol': false });
+  return isURL(data, { 'require_protocol': true });
 }
 
 function makeRequired(validator) {
@@ -100,7 +100,7 @@ export default contain({
         locale,
         description,
         email,
-        url,
+        url = 'http://',
         logo,
         company,
         isHighlighted,

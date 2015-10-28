@@ -2,8 +2,7 @@ import React, { PropTypes } from 'react';
 import { Row, Col, Thumbnail, Panel } from 'react-bootstrap';
 
 const defaultImage =
-  'https://pbs.twimg.com/' +
-  'profile_images/562385977390272512/AK29YaTf_400x400.png';
+  'https://s3.amazonaws.com/freecodecamp/camper-image-placeholder.png';
 
 const thumbnailStyle = {
   backgroundColor: 'white',
