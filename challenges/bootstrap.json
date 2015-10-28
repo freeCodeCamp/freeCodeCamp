@@ -343,7 +343,7 @@
       "id": "bad87fee1348cd8acef08812",
       "title": "Create a Block Element Bootstrap Button",
       "description": [
-        "Normally, your <code>button</code> elements are only as wide as the text that they contain. By making them block elements, your button will stretch to fill your page's entire horizontal space.",
+        "Normally, your <code>button</code> elements are only as wide as the text that they contain. By making them block elements, your button will stretch to fill your page's entire horizontal space and any elements following it will flow onto a \"new line\" below the block.",
         "This image illustrates the difference between <code>inline</code> elements and <code>block-level</code> elements:",
         "<a href=\"http://i.imgur.com/O32cDWE.png\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" src=\"http://i.imgur.com/O32cDWE.png\" title=\"Click to enlarge\" alt=\"An \"inline\" button is as small as the text it contains. In this image, it's centered. Below it is a \"block-level\" button, which stretches to fill the entire horizontal space.'></a>",
         "Note that these buttons still need the <code>btn</code> class.",
@@ -1906,7 +1906,7 @@
       "title": "Add ID Attributes to Bootstrap Elements",
       "description": [
         "Recall that in addition to class attributes, you can give each of your elements an <code>id</code> attribute.",
-        "Each id should be unique to a specific element.",
+        "Each id must be unique to a specific element and used only once per page.",
         "Let's give a unique id to each of our <code>div</code> elements of class <code>well</code>.",
         "Remember that you can give an element an id like this: <code>&#60;div class=\"well\" id=\"center-well\"&#62;</code>",
         "Give the well on the left the id of <code>left-well</code>. Give the well on the right the <code>id</code> of <code>right-well</code>."
