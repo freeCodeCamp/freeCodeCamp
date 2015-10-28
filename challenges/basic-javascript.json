@@ -4,26 +4,23 @@
   "time": "3h",
   "challenges": [
     {
-      "id":"bd7123c9c441eddfaeb4bdef",
+      "id": "bd7123c9c441eddfaeb4bdef",
       "title": "Comment your JavaScript Code",
-      "difficulty":"9.98",
-      "description":[
+      "description": [
         "Comments are lines of code that your computer will intentionally ignore. Comments are a great way to leave notes to yourself and to other people who will later need to figure out what it does.",
         "Let's take a look at the two ways you can write comments in JavaScript.",
         "The double-slash comment will comment out the remainder of the text on the current line:",
         "<code>// This is a comment.</code>",
         "The slash-star-star-slash comment will comment out everything between the <code>/*</code> and the <code>*/</code> characters:",
         "<code>/* This is also a comment */</code>",
-        "Try creating one of each.",
-        "And one more thing you need to notice. Starting at this waypoint in JavaScript related challenges (except AngularJS, all Ziplines, Git, Node.js and Express.js, MongoDB and Full Stack JavaScript Projects) you can see contents of <code>assert()</code> functions (in some challenges <code>except()</code>, <code>assert.equal()</code> and so on) which are used to test your code. It's part of these challenges that you are able to see the tests that are running against your code."
+        "Try creating one of each."
       ],
-      "tests":[
-        "assert(editor.getValue().match(/(\\/\\/)...../g), 'message: Create a <code>//</code> style comment that contains at least five letters');",
+      "tests": [
+        "assert(editor.getValue().match(/(\\/\\/)...../g), 'message: Create a <code>//</code> style comment that contains at least five letters.');",
         "assert(editor.getValue().match(/(\\/\\*)[\\w\\W]{5,}(?=\\*\\/)/gm), 'message: Create a <code>/* */</code> style comment that contains at least five letters.');",
-        "assert(editor.getValue().match(/(\\*\\/)/g), 'message: Make sure that you close the comment with a <code>*/</code>');"
+        "assert(editor.getValue().match(/(\\*\\/)/g), 'message: Make sure that you close the comment with a <code>*/</code>.');"
       ],
-      "challengeSeed":[
-      ],
+      "challengeSeed": [],
       "type": "waypoint",
       "challengeType": 1
     },
@@ -72,8 +69,6 @@
         "",
         "",
         "// Only change code above this line.",
-        "// We use this function to show you the value of your variable in your output box.",
-        "// You'll learn about functions soon.",
         "",
         "if(typeof(myName) !== \"undefined\"){(function(v){return v;})(myName);}"
       ],
@@ -98,8 +93,7 @@
         "",
         "",
         "// Only change code above this line.",
-        "// We use this function to show you the value of your variable in your output box.",
-        "// You'll learn about functions soon.",
+        "",
         "if(typeof(myFirstName) !== \"undefined\" && typeof(myLastName) !== \"undefined\"){(function(){return myFirstName + ', ' + myLastName;})();}"
       ],
       "type": "waypoint",
@@ -133,8 +127,7 @@
         "",
         "",
         "// Only change code above this line.",
-        "// We use this function to show you the value of your variable in your output box.",
-        "// You'll learn about functions soon.",
+        "",
         "if(typeof(lastNameLength) !== \"undefined\"){(function(){return lastNameLength;})();}"
       ],
       "type": "waypoint",
@@ -167,8 +160,7 @@
         "",
         "",
         "// Only change code above this line.",
-        "// We use this function to show you the value of your variable in your output box.",
-        "// You'll learn about functions soon.",
+        "",
         "(function(v){return v;})(firstLetterOfLastName);"
       ],
       "type": "waypoint",
@@ -197,8 +189,7 @@
         "",
         "",
         "// Only change code above this line.",
-        "// We use this function to show you the value of your variable in your output box.",
-        "// You'll learn about functions soon.",
+        "",
         "(function(v){return v;})(thirdLetterOfLastName);"
       ],
       "type": "waypoint",
@@ -228,8 +219,7 @@
         "",
         "",
         "// Only change code above this line.",
-        "// We use this function to show you the value of your variable in your output box.",
-        "// You'll learn about functions soon.",
+        "",
         "(function(v){return v;})(lastLetterOfLastName);"
       ],
       "type": "waypoint",
@@ -259,8 +249,7 @@
         "",
         "",
         "// Only change code above this line.",
-        "// We use this function to show you the value of your variable in your output box.",
-        "// You'll learn about functions soon.",
+        "",
         "(function(v){return v;})(secondToLastLetterOfLastName);"
       ],
       "type": "waypoint",
@@ -272,17 +261,16 @@
       "description": [
         "Let's try to add two numbers using JavaScript.",
         "JavaScript uses the <code>+</code> symbol for addition.",
-        "Replace the <code>0</code> with the correct number so you can get the result mentioned in the comment."
+        "Change the <code>0</code> so that sum will equal <code>20</code>."
       ],
       "tests": [
         "assert((function(){if(sum === 20 && editor.getValue().match(/\\+/g).length >= 2){return true;}else{return false;}})(), 'message: Make the variable <code>sum</code> equal 20.');"
       ],
       "challengeSeed": [
-        "var sum = 10 + 0; //make this equal to 20 by changing the 0 into the appropriate number.",
+        "var sum = 10 + 0;",
         "",
         "// Only change code above this line.",
-        "// We use this function to show you the value of your variable in your output box.",
-        "// You'll learn about functions soon.",
+        "",
         "(function(z){return 'sum='+z;})(sum);"
       ],
       "type": "waypoint",
@@ -294,17 +282,16 @@
       "description": [
         "We can also subtract one number from another.",
         "JavaScript uses the <code>-</code> symbol for subtraction.",
-        "Replace the <code>0</code> with the correct number so you can get the result mentioned in the comment."
+        "Change the <code>0</code> so that difference will equal <code>12</code>."
       ],
       "tests": [
         "assert((function(){if(difference === 12 && editor.getValue().match(/\\-/g)){return true;}else{return false;}})(), 'message: Make the variable <code>difference</code> equal 12.');"
       ],
       "challengeSeed": [
-        "var difference = 45 - 0; //make this equal to 12 by changing the 0 into the appropriate number.",
+        "var difference = 45 - 0; //12",
         "",
         "// Only change code above this line.",
-        "// We use this function to show you the value of your variable in your output box.",
-        "// You'll learn about functions soon.",
+        "",
         "(function(z){return 'difference='+z;})(difference);"
       ],
       "type": "waypoint",
@@ -316,17 +303,16 @@
       "description": [
         "We can also multiply one number by another.",
         "JavaScript uses the <code>*</code> symbol for multiplication.",
-        "Replace the <code>0</code> with the correct number so you can get the result mentioned in the comment."
+        "Change the <code>0</code> so that product will equal <code>80</code>."
       ],
       "tests": [
         "assert((function(){if(product === 80 && editor.getValue().match(/\\*/g)){return true;}else{return false;}})(), 'message: Make the variable <code>product</code> equal 80.');"
       ],
       "challengeSeed": [
-        "var product = 8 * 0; // Make this equal to 80 by changing the 0 into the appropriate number.",
+        "var product = 8 * 0;",
         "",
         "// Only change code above this line.",
-        "// We use this function to show you the value of your variable in your output box.",
-        "// You'll learn about functions soon.",
+        "",
         "(function(z){return 'product='+z;})(product);"
       ],
       "type": "waypoint",
@@ -338,17 +324,16 @@
       "description": [
         "We can also divide one number by another.",
         "JavaScript uses the <code>/</code> symbol for division.",
-        "Replace the <code>0</code> with the correct number so you can get the result mentioned in the comment."
+        "Change the <code>0</code> so that quotient will equal <code>2</code>."
       ],
       "tests": [
         "assert((function(){if(quotient === 2 && editor.getValue().match(/var\\s*?quotient\\s*?\\=\\s*?\\d+\\s*?\\/\\s*?\\d+\\s*?;/g)){return true;}else{return false;}})(), 'message: Make the variable <code>quotient</code> equal 2.');"
       ],
       "challengeSeed": [
-        "var quotient = 66 / 0; //make this equal to 2 by changing the 0 into the appropriate number.",
+        "var quotient = 66 / 0;",
         "",
         "// Only change code above this line.",
-        "// We use this function to show you the value of your variable in your output box.",
-        "// You'll learn about functions soon.",
+        "",
         "(function(z){return 'quotient='+z;})(quotient);"
       ],
       "type": "waypoint",
@@ -365,14 +350,11 @@
         "assert((function(){if(typeof(myDecimal) !== \"undefined\" && typeof(myDecimal) === \"number\" && editor.getValue().match(/\\./g).length >=2){return true;}else{return false;}})(), 'message: <code>myDecimal</code> should be a decimal point number.');"
       ],
       "challengeSeed": [
-        "// var ourDecimal = 5.7;",
-        "// Create a number with a decimal point here called myDecimal",
-        "",
+        "var ourDecimal = 5.7;",
         "",
         "",
         "// Only change code above this line.",
-        "// We use this function to show you the value of your variable in your output box.",
-        "// You'll learn about functions soon.",
+        "",
         "(function(){if(typeof(myDecimal) !== \"undefined\"){return myDecimal;}})();"
       ],
       "type": "waypoint",
@@ -380,24 +362,43 @@
     },
     {
       "id": "bd7993c9c69feddfaeb7bdef",
-      "title": "Perform Arithmetic Operations on Decimals with JavaScript",
+      "title": "Multiply Two Decimals with JavaScript",
       "description": [
         "In JavaScript, you can also perform calculations with decimal numbers, just like whole numbers.",
-        "Replace the <code>0.0</code> with the correct number so that you get the result mentioned in the comments."
+        "Let's multiply two decimals together to get their product.",
+        "Change the <code>0.0</code> so that product will equal <code>5.0</code>."
       ],
       "tests": [
-        "assert((function(){if(product === 5.0 && editor.getValue().match(/\\*/g)){return true;}else{return false;}})(), 'message: Make the variable <code>product</code> equal 5.0.');",
-        "assert((function(){if(quotient === 2.2 && editor.getValue().match(/\\//g)){return true;}else{return false;}})(), 'message: Make the variable <code>quotient</code> equal 2.2.');"
+        "assert((function(){if(product === 5.0 && editor.getValue().match(/\\*/g)){return true;}else{return false;}})(), 'message: Make the variable <code>product</code> equal 5.0.');"
       ],
       "challengeSeed": [
-        "var quotient = 4.4 / 2.0; // equals 2.2",
-        "var product = 2.0 * 0.0; // equals 5.0",
+        "var product = 2.0 * 0.0;",
         "",
         "",
         "// Only change code above this line.",
-        "// We use this function to show you the value of your variable in your output box.",
-        "// You'll learn about functions soon.",
+        "",
         "(function(y){return 'product='+y;})(product);"
+      ],
+      "type": "waypoint",
+      "challengeType": 1
+    },
+    {
+      "id": "bd7993c9ca9feddfaeb7bdef",
+      "title": "Divide one Decimal by Another with JavaScript",
+      "description": [
+        "Now let's divide one decimal by another.",
+        "Change the <code>0.0</code> so that your quotient will equal <code>2.2</code>."
+      ],
+      "tests": [
+        "assert((function(){if(quotient === 2.2 && editor.getValue().match(/\\//g)){return true;}else{return false;}})(), 'message: Make the variable <code>quotient</code> equal 2.2.');"
+      ],
+      "challengeSeed": [
+        "var quotient = 0.0 / 2.0; // equals 2.2",
+        "",
+        "",
+        "// Only change code above this line.",
+        "",
+        "(function(y){return 'quotient='+y;})(quotient);"
       ],
       "type": "waypoint",
       "challengeType": 1
@@ -424,43 +425,40 @@
         "var myArray = [];",
         "",
         "// Only change code above this line.",
-        "// We use this function to show you the value of your variable in your output box.",
-        "// You'll learn about functions soon.",
+        "",
         "(function(z){return z;})(myArray);"
       ],
       "type": "waypoint",
       "challengeType": 1
     },
     {
-      "id":"cf1111c1c11feddfaeb7bdef",
+      "id": "cf1111c1c11feddfaeb7bdef",
       "title": "Nest one Array within Another Array",
-      "difficulty":"9.98161",
-      "description":[
+      "description": [
         "You can also nest arrays within other arrays, like this: <code>[[\"Bulls\", 23]]</code>.",
         "Let's now go create a nested array called <code>myArray</code>."
       ],
-      "tests":[
+      "tests": [
         "assert(Array.isArray(myArray) && myArray.some(Array.isArray), 'message: <code>myArray</code> should have at least one array nested within another array.');"
       ],
-      "challengeSeed":[
+      "challengeSeed": [
         "var ourArray = [[\"the universe\", \"everything\", 42]];",
+        "",
         "// Only change code below this line.",
         "",
         "var myArray = [];",
         "",
         "// Only change code above this line.",
-        "// We use this function to show you the value of your variable in your output box.",
-        "// You'll learn about functions soon.",
+        "",
         "if(typeof(myArray) !== \"undefined\"){(function(){return myArray;})();}"
       ],
       "type": "waypoint",
       "challengeType": 1
     },
     {
-      "id":"bg9997c9c79feddfaeb9bdef",
+      "id": "bg9997c9c79feddfaeb9bdef",
       "title": "Access Array Data with Indexes",
-      "difficulty":"9.9817",
-      "description":[
+      "description": [
         "We can access the data inside arrays using <code>indexes</code>.",
         "Array indexes are written in the same bracket notation that strings use, except that instead of specifying a character, they are specifying an entry in the array.",
         "For example:",
@@ -469,51 +467,50 @@
         "<code>var data = array[1];</code>",
         "Create a variable called <code>myData</code> and set it to equal the first value of <code>myArray</code>."
       ],
-      "tests":[
+      "tests": [
         "assert((function(){if(typeof(myArray) != 'undefined' && typeof(myData) != 'undefined' && myArray[0] == myData){return true;}else{return false;}})(), 'message: The variable <code>myData</code> should equal the first value of <code>myArray</code>.');"
       ],
-      "challengeSeed":[
+      "challengeSeed": [
         "// var ourArray = [1,2,3];",
         "// var ourData = ourArray[0]; // equals 1",
         "",
         "var myArray = [1,2,3];",
+        "",
         "// Only change code below this line.",
         "",
         "",
         "// Only change code above this line.",
-        "// We use this function to show you the value of your variable in your output box.",
-        "// You'll learn about functions soon.",
+        "",
         "if(typeof(myArray) !== \"undefined\" && typeof(myData) !== \"undefined\"){(function(y,z){return 'myArray = ' + JSON.stringify(y) + ', myData = ' + JSON.stringify(z);})(myArray, myData);}"
       ],
       "type": "waypoint",
       "challengeType": 1
     },
     {
-      "id":"cf1111c1c11feddfaeb8bdef",
+      "id": "cf1111c1c11feddfaeb8bdef",
       "title": "Modify Array Data With Indexes",
-      "difficulty":"9.98171",
-      "description":[
+      "description": [
         "We can also modify the data stored in arrays by using indexes.",
         "For example:",
         "<code>var ourArray = [3,2,1];</code>",
         "<code>ourArray[0] = 1; // equals [1,2,1]</code>",
         "Now modify the data stored at index 0 of <code>myArray</code> to the value of 3."
       ],
-      "tests":[
+      "tests": [
         "assert((function(){if(typeof(myArray) != 'undefined' && myArray[0] == 3 && myArray[1] == 2 && myArray[2] == 3){return true;}else{return false;}})(), 'message: <code>myArray</code> should now be [3,2,3].');",
         "assert((function(){if(editor.getValue().match(/myArray\\[0\\]\\s?=\\s?/g)){return true;}else{return false;}})(), 'message: You should be using correct index to modify the value in <code>myArray</code>.');"
       ],
-      "challengeSeed":[
+      "challengeSeed": [
         "var ourArray = [1,2,3];",
-        "ourArray[1] = 3;",
-        "// ourArray now equals [1,3,3].",
+        "ourArray[1] = 3; // ourArray now equals [1,3,3].",
+        "",
         "var myArray = [1,2,3];",
+        "",
         "// Only change code below this line.",
         "",
         "",
         "// Only change code above this line.",
-        "// We use this function to show you the value of your variable in your output box.",
-        "// You'll learn about functions soon.",
+        "",
         "if(typeof(myArray) !== \"undefined\"){(function(){return myArray;})();}"
       ],
       "type": "waypoint",
@@ -524,30 +521,27 @@
       "title": "Manipulate Arrays With pop()",
       "description": [
         "Another way to change the data in an array is with the <code>.pop()</code> function.",
-        "<code>.pop()</code>is used to \"pop\" a value off of the end of an array. We can retrieve this value by performing <code>pop()</code> in a variable declaration.",
-        "Any type of variable can be \"popped\" off of an array.",
-        "Use the <code>.pop()</code> function to remove the last item from <code>myArray</code>."
+        "<code>.pop()</code>is used to \"pop\" a value off of the end of an array. We can store this \"popped off\" variable by performing <code>pop()</code> within a variable declaration.",
+        "Any type of data structure can be \"popped\" off of an array - numbers, strings, even nested arrays.",
+        "Use the <code>.pop()</code> function to remove the last item from <code>myArray</code>, assigning the \"popped off\" value to <code>removedFromMyArray</code>."
       ],
       "tests": [
         "assert((function(d){if(d[0] == 'John' && d[1] == 23 && d[2] == undefined){return true;}else{return false;}})(myArray), 'message: <code>myArray</code> should only contain <code>[\"John\", 23]</code>.');",
-        "assert((function(d){if(d[0] == 'cat' && d[1] == 2 && d[2] == undefined){return true;}else{return false;}})(removed), 'message: <code>removed</code> should only contain <code>[\"cat\", 2]</code>.');"
+        "assert((function(d){if(d[0] == 'cat' && d[1] == 2 && d[2] == undefined){return true;}else{return false;}})(removed), 'message: <code>removedFromMyArray</code> should only contain <code>[\"cat\", 2]</code>.');"
       ],
       "challengeSeed": [
-        "// var numbers = [1,2,3];",
-        "// console.log(numbers); // logs [1,2,3]",
-        "// var removed = numbers.pop();",
-        "// console.log(numbers); // logs [1,2]",
-        "// console.log(removed); // logs 3",
+        "var ourArray = [1,2,3];",
+        "var removedFromOurArray = numbers.pop(); // removedFromOurArray now equals 3, and ourArray now equals [1,2]",
         "",
         "var myArray = [\"John\", 23, [\"cat\", 2]];",
+        "",
         "// Only change code below this line.",
         "",
-        "var removed = myArray; // This should be [\"cat\", 2] and myArray should now be [\"John\", 23]",
+        "",
         "",
         "// Only change code above this line.",
-        "// We use this function to show you the value of your variable in your output box.",
-        "// You'll learn about functions soon.",
-        "(function(y, z){return 'myArray = ' + JSON.stringify(y) + ' & removed = ' + JSON.stringify(z);})(myArray, removed);"
+        "",
+        "(function(y, z){return 'removedFromMyArray = ' + JSON.stringify(y) + ' & removed = ' + JSON.stringify(z);})(myArray, removedFromMyArray);"
       ],
       "type": "waypoint",
       "challengeType": 1
@@ -557,26 +551,28 @@
       "title": "Manipulate Arrays With push()",
       "description": [
         "Not only can you <code>pop()</code> data off of the end of an array, you can also <code>push()</code> data onto the end of an array.",
-        "Take the <code>myArray</code> array and <code>push()</code> this value to the end of it: <code>[\"dog\", 3]</code>."
+        "Push <code>[\"dog\", 3]</code> onto the end of the <code>myArray</code> variable."
       ],
       "tests": [
         "assert((function(d){if(d[2] != undefined && d[0] == 'John' && d[1] == 23 && d[2][0] == 'dog' && d[2][1] == 3 && d[2].length == 2){return true;}else{return false;}})(myArray), 'message: <code>myArray</code> should now equal <code>[\"John\", 23, [\"dog\", 3]]</code>.');"
       ],
       "challengeSeed": [
         "var ourArray = [\"Stimpson\", \"J\", [\"cat\"]];",
-        "ourArray.pop();",
-        "ourArray.push([\"happy\", \"joy\"]);",
-        "// ourArray now equals [\"Stimpson\", \"J\", [\"happy\", \"joy\"]].",
+        "",
+        "ourArray.pop(); // ourArray now equals [\"Stimpson\", \"J\"]",
+        "",
+        "ourArray.push([\"happy\", \"joy\"]); // ourArray now equals [\"Stimpson\", \"J\", [\"happy\", \"joy\"]]",
         "",
         "var myArray = [\"John\", 23, [\"cat\", 2]];",
+        "",
         "myArray.pop();",
-        "// Add a [\"dog\", 3] to the end of myArray using push().",
+        "",
         "// Only change code below this line.",
         "",
         "",
+        "",
         "// Only change code above this line.",
-        "// We use this function to show you the value of your variable in your output box.",
-        "// You'll learn about functions soon.",
+        "",
         "(function(z){return 'myArray = ' + JSON.stringify(z);})(myArray);"
       ],
       "type": "waypoint",
@@ -586,28 +582,29 @@
       "id": "bg9996c9c69feddfaeb9bdef",
       "title": "Manipulate Arrays With shift()",
       "description": [
-        "<code>pop()</code> always removes the last element of an array. What if you want to remove the first? That's where <code>.shift()</code> comes in.",
-        "Take the <code>myArray</code> array and <code>shift()</code> the first value off of it. Set <code>myRemoved</code> to the first value of <code>myArray</code> using <code>shift()</code>."
+        "<code>pop()</code> always removes the last element of an array. What if you want to remove the first?",
+        "That's where <code>.shift()</code> comes in. It works just like <code>.pop()</code>, except it removes the first element instead of the last.",
+        "Use the <code>.shift()</code> function to remove the first item from <code>myArray</code>, assigning the \"shifted off\" value to <code>removedFromMyArray</code>."
       ],
       "tests": [
         "assert((function(d){if(d[0] == 23 && d[1][0] == 'dog' && d[1][1] == 3 && d[2] == undefined){return true;}else{return false;}})(myArray), 'message: <code>myArray</code> should now equal <code>[23, [\"dog\", 3]]</code>.');",
-        "assert((function(d){if(d === 'John' && typeof(myRemoved) === 'string'){return true;}else{return false;}})(myRemoved), 'message: <code>myRemoved</code> should contain <code>\"John\"</code>.');"
+        "assert((function(d){if(d === 'John' && typeof(removedFromMyArray) === 'string'){return true;}else{return false;}})(removedFromMyArray), 'message: <code>removedFromMyArray</code> should contain <code>\"John\"</code>.');"
       ],
       "challengeSeed": [
         "var ourArray = [\"Stimpson\", \"J\", [\"cat\"]];",
-        "ourRemoved = ourArray.shift();",
-        "// ourArray now equals [\"J\", [\"cat\"]].",
+        "",
+        "removedFromOurArray = ourArray.shift(); // removedFromOurArray now equals \"Stimpson\" and ourArray now equals [\"J\", [\"cat\"]].",
         "",
         "var myArray = [\"John\", 23, [\"dog\", 3]];",
+        "",
         "// Only change code below this line.",
         "",
-        "var myRemoved = myArray; // This should be [\"John\"] and myArray should now be [23, [\"dog\", 3]].",
+        "",
         "",
         "// Only change code above this line.",
         "",
-        "// We use this function to show you the value of your variable in your output box.",
-        "// You'll learn about functions soon.",
-        "(function(y, z){return 'myArray = ' + JSON.stringify(y) + ' & myRemoved = ' + JSON.stringify(z);})(myArray, myRemoved);"
+        "",
+        "(function(y, z){return 'myArray = ' + JSON.stringify(y) + ' & removedFromMyArray = ' + JSON.stringify(z);})(myArray, removedFromMyArray);"
       ],
       "type": "waypoint",
       "challengeType": 1
@@ -616,39 +613,39 @@
       "id": "bg9997c9c69feddfaeb9bdef",
       "title": "Manipulate Arrays With unshift()",
       "description": [
-        "Now that we've learned how to <code>shift</code>things from the start of the array, we need to learn how to <code>unshift</code>stuff back to the start.",
-        "Let's take the code we had last time and <code>unshift</code>this value to the start: <code>\"Paul\"</code>."
+        "Not only can you <code>shift</code> elements off of the beginning of an array, you can also <code>unshift</code> elements onto the beginning of an array.",
+        "<code>unshift()</code> works exactly like <code>push()</code>, but instead of adding the element at the end of the array, <code>unshift()</code> adds the element at the beginning of the array.",
+        "Add <code>\"Paul\"</code> onto the beginning of the <code>myArray</code> variable using <code>unshift()</code>."
       ],
       "tests": [
         "assert((function(d){if(typeof(d[0]) === \"string\" && d[0].toLowerCase() == 'paul' && d[1] == 23 && d[2][0] != undefined && d[2][0] == 'dog' && d[2][1] != undefined && d[2][1] == 3){return true;}else{return false;}})(myArray), 'message: <code>myArray</code> should now have [\"Paul\", 23, [\"dog\", 3]]).');"
       ],
       "challengeSeed": [
         "var ourArray = [\"Stimpson\", \"J\", [\"cat\"]];",
-        "ourArray.shift();",
-        "// ourArray now equals [\"J\", [\"cat\"]]",
-        "ourArray.unshift(\"happy\");",
-        "// ourArray now equals [\"happy\", \"J\", [\"cat\"]]",
+        "",
+        "ourArray.shift(); // ourArray now equals [\"J\", [\"cat\"]]",
+        "",
+        "ourArray.unshift(\"happy\"); // ourArray now equals [\"happy\", \"J\", [\"cat\"]]",
         "",
         "var myArray = [\"John\", 23, [\"dog\", 3]];",
+        "",
         "myArray.shift();",
         "",
-        "// Add \"Paul\" to the start of myArray.",
         "// Only change code below this line.",
         "",
         "",
+        "",
         "// Only change code above this line.",
-        "// We use this function to show you the value of your variable in your output box.",
-        "// You'll learn about functions soon.",
+        "",
         "(function(y, z){return 'myArray = ' + JSON.stringify(y);})(myArray);"
       ],
       "type": "waypoint",
       "challengeType": 1
     },
     {
-      "id":"bg9997c9c89feddfaeb9bdef",
+      "id": "bg9997c9c89feddfaeb9bdef",
       "title": "Write Reusable JavaScript with Functions",
-      "difficulty":"9.9819",
-      "description":[
+      "description": [
         "In JavaScript, we can divide up our code into reusable parts called functions.",
         "Here's an example of a function:",
         "<code>function functionName(a, b) {</code>",
@@ -659,10 +656,10 @@
         "In this example, the function will return the number <code>6</code> as this is the result of <code>4 + 2</code>.",
         "Create and call a function called <code>myFunction</code> that returns the sum of <code>a</code> and <code>b</code>."
       ],
-      "tests":[
+      "tests": [
         "assert((function(){if(typeof(f) !== \"undefined\" && f === a + b){return true;}else{return false;}})(), 'message: Your function should return the value of a + b');"
       ],
-      "challengeSeed":[
+      "challengeSeed": [
         "var a = 4;",
         "var b = 5;",
         "",
@@ -670,15 +667,13 @@
         "  return a - b;",
         "}",
         "",
-        "// Create a function called myFunction that returns the value of a plus b.",
         "// Only change code below this line.",
         "",
         "",
         "",
         "",
         "// Only change code above this line.",
-        "// We use this function to show you the value of your variable in your output box.",
-        "// You'll learn about functions soon.",
+        "",
         "if(typeof(myFunction) !== \"undefined\"){",
         "var f=myFunction(a,b);",
         "(function(){return f;})();",
@@ -688,44 +683,44 @@
       "challengeType": 1
     },
     {
-      "id":"bg9998c9c99feddfaeb9bdef",
+      "id": "bg9998c9c99feddfaeb9bdef",
       "title": "Build JavaScript Objects",
-      "difficulty":"9.9822",
-      "description":[
+      "description": [
         "You may have heard the term <code>object</code> before.",
         "Objects are similar to <code>arrays</code>, except that instead of using indexes to access and modify their data, you access the data in objects through what are called <code>properties</code>.",
         "Here's a sample object:",
         "<code>var cat = {</code>",
-        "<code>  \"name\": \"Whiskers\",</code>",
-        "<code>  \"legs\": 4,</code>",
-        "<code>  \"tails\": 1,</code>",
-        "<code>  \"enemies\": [\"Water\", \"Dogs\"]</code>",
+        "<code>&thinsp;&thinsp;\"name\": \"Whiskers\",</code>",
+        "<code>&thinsp;&thinsp;\"legs\": 4,</code>",
+        "<code>&thinsp;&thinsp;\"tails\": 1,</code>",
+        "<code>&thinsp;&thinsp;\"enemies\": [\"Water\", \"Dogs\"]</code>",
         "<code>};</code>",
         "</code>",
         "Objects are useful for storing data in a structured way, and can represent real world objects, like a cat.",
-        "Let's try to make an object that represents a dog called <code>myDog</code> which contains the properties <code>'name'</code> (String), <code>'legs'</code> (Number), <code>'tails'</code> (Number) and <code>'friends'</code> (Array)!"
+        "Let's try to make an object that represents a dog called <code>myDog</code> which contains the properties <code>\"name\"</code> (a string), <code>\"legs\"</code>, <code>\"tails\"</code> and <code>\"friends\"</code>.",
+        "You can set these object properties to whatever values you want, as long <code>\"name\"</code> is a string, <code>\"legs\"</code> and <code>\"tails\"</code> are numbers, and <code>\"friends\"</code> is an array."
       ],
-      "tests":[
+      "tests": [
         "assert((function(z){if(z.hasOwnProperty(\"name\") && z.name !== undefined && typeof(z.name) === \"string\"){return true;}else{return false;}})(myDog), 'message: <code>myDog</code> should contain the property <code>name</code> and it should be a <code>string</code>.');",
         "assert((function(z){if(z.hasOwnProperty(\"legs\") && z.legs !== undefined && typeof(z.legs) === \"number\"){return true;}else{return false;}})(myDog), 'message: <code>myDog</code> should contain the property <code>legs</code> and it should be a <code>number</code>.');",
         "assert((function(z){if(z.hasOwnProperty(\"tails\") && z.tails !== undefined && typeof(z.tails) === \"number\"){return true;}else{return false;}})(myDog), 'message: <code>myDog</code> should contain the property <code>tails</code> and it should be a <code>number</code>.');",
         "assert((function(z){if(z.hasOwnProperty(\"friends\") && z.friends !== undefined && Array.isArray(z.friends)){return true;}else{return false;}})(myDog), 'message: <code>myDog</code> should contain the property <code>friends</code> and it should be an <code>array</code>.');"
       ],
-      "challengeSeed":[
-        "// var ourDog = {",
-        "//   \"name\": \"Camper\",",
-        "//   \"legs\": 4,",
-        "//   \"tails\": 1,",
-        "//   \"friends\": [\"everything!\"]",
-        "// };",
-        "",
-        "// Add the name (string), legs (number), tails (number) and friends (array) properties to myDog.",
-        "// You can set them to whatever you want.",
+      "challengeSeed": [
+        "var ourDog = {",
+        "  \"name\": \"Camper\",",
+        "  \"legs\": 4,",
+        "  \"tails\": 1,",
+        "  \"friends\": [\"everything!\"]",
+        "};",
         "",
         "// Only change code below this line.",
         "",
         "var myDog = {",
-        "   ",
+        "",
+        "",
+        "",
+        "",
         "};",
         "",
         "// Only change code above this line.",
@@ -736,42 +731,44 @@
       "challengeType": 1
     },
     {
-      "id":"bg9999c9c99feddfaeb9bdef",
-      "title": "Manipulate JavaScript Objects",
-      "difficulty":"9.9823",
-      "description":[
-        "There are many ways to add and remove properties from objects.",
-        "For example, we can add properties to objects like this:",
-        "<code>myObject.myProperty = \"myValue\";</code>",
-        "We can also delete them like this:",
-        "<code>delete myObject.myProperty;</code>",
-        "Let's add the property <code>\"bark\"</code>, and delete the property <code>\"tails\"</code>."
+      "id": "bg9999c9c99feddfaeb9bdef",
+      "title": "Update the Properties of a JavaScript Object",
+      "description": [
+        "After you've created a JavaScript object, you can update its properties at any time just like you would update any other variable.",
+        "For example, let's look at <code>ourDog</code>:",
+        "<code>var ourDog = {</code>",
+        "<code>  \"name\": \"Camper\",</code>",
+        "<code>  \"legs\": 4,</code>",
+        "<code>  \"tails\": 1,</code>,",
+        "<code>  \"friends\": [\"everything!\"]</code>",
+        "<code>};</code>",
+        "Since he's a particularly happy dog, let's change his name to \"Happy Camper\". Here's how we update his object's name property:",
+        "<code>myDog.name = \"Happy Camper\";</code>",
+        "Now when we run <code>return myDog.name</code>, instead of getting \"Camper\", we'll get his new name, \"Happy Camper\".",
+        "Let's update <code>yourDog</code> object's name property. Let's change her name from \"Coder\" to \"Happy Coder\"."
       ],
-      "tests":[
-        "assert(myDog.bark !== undefined, 'message: Add the property <code>\"bark\"</code> to <code>myDog</code>.');",
-        "assert(myDog.tails === undefined, 'message: Delete the property <code>\"tails\"</code> from <code>myDog</code>.');"
+      "tests": [
+        "assert(myDog.name.match(/Happy Coder/), 'message: Update <code>myDog</code>'s <code>\"name\"</code> property to equal \"Happy Coder\".');"
       ],
-      "challengeSeed":[
-        "// var ourDog = {",
-        "//   \"name\": \"Camper\",",
-        "//   \"legs\": 4,",
-        "//   \"tails\": 1,",
-        "//   \"friends\": [\"everything!\"]",
-        "// };",
+      "challengeSeed": [
+        "var ourDog = {",
+        "  \"name\": \"Camper\",",
+        "  \"legs\": 4,",
+        "  \"tails\": 1,",
+        "  \"friends\": [\"everything!\"]",
+        "};",
         "",
-        "// ourDog.bark = \"arf!\";",
-        "// delete ourDog.tails;",
+        "ourDog.name = \"Happy Camper\";",
         "",
         "var myDog = {",
-        "   \"name\": \"Camper\",",
-        "   \"legs\": 4,",
-        "   \"tails\": 1,",
-        "   \"friends\": []",
+        "  \"name\": \"Coder\",",
+        "  \"legs\": 4,",
+        "  \"tails\": 1,",
+        "  \"friends\": [\"Free Code Camp Campers\"]",
         "};",
         "",
         "// Only change code below this line.",
         "",
-        "// Let's add the property bark to myDog",
         "",
         "",
         "// Now delete the property tails",
@@ -785,10 +782,93 @@
       "challengeType": 1
     },
     {
-      "id":"cf1111c1c11feddfaeb5bdef",
+      "id": "bg9999c9c99feedfaeb9bdef",
+      "title": "Add New Properties to a JavaScript Object",
+      "description": [
+        "You can add new properties to existing JavaScript objects the same way you would modify them.",
+        "Here's how we would add a <code>\"bark\"</code> property to <code>ourDog</code>:",
+        "<code>myDog.bark = \"bow-wow\";</code>",
+        "Now when we run <code>return myDog.bark</code>, we'll get his bark, \"bow-wow\".",
+        "Let's add a <code>\"bark\"</code> property to <code>myDog</code> and set it to a dog sound, such as \"woof\"."
+      ],
+      "tests": [
+        "assert(myDog.bark !== undefined, 'message: Add the property <code>\"bark\"</code> to <code>myDog</code>.');"
+      ],
+      "challengeSeed": [
+        "var ourDog = {",
+        "  \"name\": \"Camper\",",
+        "  \"legs\": 4,",
+        "  \"tails\": 1,",
+        "  \"friends\": [\"everything!\"]",
+        "};",
+        "",
+        "ourDog.bark = \"bow-wow\";",
+        "",
+        "var myDog = {",
+        "  \"name\": \"Happy Coder\",",
+        "  \"legs\": 4,",
+        "  \"tails\": 1,",
+        "  \"friends\": [\"Free Code Camp Campers\"]",
+        "};",
+        "",
+        "// Only change code below this line.",
+        "",
+        "",
+        "",
+        "// Only change code above this line.",
+        "",
+        "// We use this function to show you the value of your variable in your output box.",
+        "(function(z){return z;})(myDog);"
+      ],
+      "type": "waypoint",
+      "challengeType": 1
+    },
+    {
+      "id": "bg9999c9c99fdddfaeb9bdef",
+      "title": "Delete Properties from a JavaScript Object",
+      "description": [
+        "We can also delete properties from objects like this:",
+        "<code>delete myDog.bark;</code>",
+        "Let's delete the <code>\"tails\"</code> property from <code>myDog</code>."
+      ],
+      "tests": [
+        "assert(myDog.bark === undefined, 'message: Delete the property <code>\"bark\"</code> from <code>myDog</code>.');"
+      ],
+      "challengeSeed": [
+        "var ourDog = {",
+        "  \"name\": \"Camper\",",
+        "  \"legs\": 4,",
+        "  \"tails\": 1,",
+        "  \"friends\": [\"everything!\"]",
+        "  \"bark\": \"bow-wow\"",
+        "};",
+        "",
+        "delete ourDog.bark;",
+        "",
+        "var myDog = {",
+        "  \"name\": \"Happy Coder\",",
+        "  \"legs\": 4,",
+        "  \"tails\": 1,",
+        "  \"friends\": [\"Free Code Camp Campers\"]",
+        "  \"bark\": \"woof\"",
+        "};",
+        "",
+        "// Only change code below this line.",
+        "",
+        "",
+        "",
+        "// Only change code above this line.",
+        "",
+        "// We use this function to show you the value of your variable in your output box.",
+        "(function(z){return z;})(myDog);"
+      ],
+      "type": "waypoint",
+      "challengeType": 1
+    },
+    {
+      "id": "cf1111c1c11feddfaeb5bdef",
       "title": "Iterate with JavaScript For Loops",
-      "difficulty":"9.9824",
-      "description":[
+      "description": [
         "You can run the same code multiple times by using a loop.",
         "The most common type of JavaScript loop is called a \"for loop\" because it runs \"for\" a specific number of times.",
         "<code>var ourArray = [];</code>",
@@ -798,11 +878,11 @@
         "<code>ourArray</code> will now contain [0,1,2,3,4] ",
         "Let's try getting a for loop to work by pushing values to an array."
       ],
-      "tests":[
+      "tests": [
         "assert(editor.getValue().match(/for/g), 'message: You should be using a <code>for</code> loop for this.');",
         "assert.deepEqual(myArray, [0,1,2,3,4], 'message: <code>myArray</code> should equal [0,1,2,3,4].');"
       ],
-      "challengeSeed":[
+      "challengeSeed": [
         "var ourArray = [];",
         "for(var i = 0; i < 5; i++){",
         "  ourArray.push(i);",
@@ -811,11 +891,9 @@
         "",
         "// Only change code below this line.",
         "",
-        "// Push the numbers zero through four to myArray using a \"for loop\" like above.",
-        "",
+
         "// Only change code above this line.",
-        "// We use this function to show you the value of your variable in your output box.",
-        "// You'll learn about functions soon.",
+        "",
         "if(typeof(myArray) !== \"undefined\"){(function(){return myArray;})();}",
         ""
       ],
@@ -823,10 +901,9 @@
       "challengeType": 1
     },
     {
-      "id":"cf1111c1c11feddfaeb1bdef",
+      "id": "cf1111c1c11feddfaeb1bdef",
       "title": "Iterate with JavaScript While Loops",
-      "difficulty":"9.9825",
-      "description":[
+      "description": [
         "You can run the same code multiple times by using a loop.",
         "Another type of JavaScript loop is called a \"while loop\", because it runs \"while\" something is true and stops once that something is no longer true.",
         "<code>var ourArray = [];</code>",
@@ -837,19 +914,18 @@
         "<code>}</code>",
         "Let's try getting a while loop to work by pushing values to an array."
       ],
-      "tests":[
+      "tests": [
         "assert(editor.getValue().match(/while/g), 'message: You should be using a <code>while</code> loop for this.');",
         "assert.deepEqual(myArray, [0,1,2,3,4], 'message: <code>myArray</code> should equal [0,1,2,3,4].');"
       ],
-      "challengeSeed":[
+      "challengeSeed": [
         "var myArray = [];",
         "// Only change code below this line.",
         "",
         "// Push the numbers zero through four to myArray using a \"while loop\".",
         "",
         "// Only change code above this line.",
-        "// We use this function to show you the value of your variable in your output box.",
-        "// You'll learn about functions soon.",
+        "",
         "if(typeof(myArray) !== \"undefined\"){(function(){return myArray;})();}",
         ""
       ],
@@ -857,22 +933,21 @@
       "challengeType": 1
     },
     {
-      "id":"cf1111c1c11feddfaeb9bdef",
+      "id": "cf1111c1c11feddfaeb9bdef",
       "title": "Generate Random Fractions with JavaScript",
-      "difficulty":"9.9827",
-      "description":[
+      "description": [
         "Random numbers are useful for creating random behavior.",
         "JavaScript has a <code>Math.random()</code> function that generates a random decimal number.",
-        "Use <code>Math.random()</code> to get <code>myFunction</code> to return a random number."
+        "Change </code>myFunction</code> to return a random number instead of returning <code>0</code>."
+        "Note that you can return a function, just like you would return a variable or value."
       ],
-      "tests":[
+      "tests": [
         "assert(typeof(myFunction()) === \"number\", 'message: <code>myFunction</code> should return a random number.');",
         "assert((myFunction()+''). match(/\\./g), 'message: The number returned by <code>myFunction</code> should be a decimal.');",
         "assert(editor.getValue().match(/Math\\.random/g).length >= 2, 'message: You should be using <code>Math.random</code> to generate the random decimal number.');"
       ],
-      "challengeSeed":[
+      "challengeSeed": [
         "function myFunction() {",
-        "  // Change the 0 to Math.random().",
         "  // Only change code below this line.",
         "",
         "  return 0;",
@@ -887,26 +962,30 @@
       "challengeType": 1
     },
     {
-      "id":"cf1111c1c12feddfaeb1bdef",
+      "id": "cf1111c1c12feddfaeb1bdef",
       "title": "Generate Random Whole Numbers with JavaScript",
-      "difficulty":"9.9828",
-      "description":[
-        "It's great that we can create random decimal numbers, but it's even more useful if we use it to generate a random whole number.",
-        "To achieve this we can multiply the random number by ten and use the <code>Math.floor()</code> to convert the decimal number to the nearest less than or equal whole number.",
-        "This technique gives us a whole number between zero and nine.",
-        "Example:",
-        "<code>Math.floor(Math.random()*10);</code>",
-        "Let's give this technique a go now."
+      "description": [
+        "It's great that we can create random decimal numbers, but it's even more useful if we use it to generate random whole numbers.",
+        "First, let's use <code>Math.random()</code> to create a random decimal.",
+        "Then let's multiply this random decimal by 20.",
+        "Finally, let's use another function, <code>Math.floor()</code> to round the number down to its nearest whole number.",
+        "This technique will gives us a whole number between 0 and 19.",
+        "Note that because we're rounding down, it's impossible to actually get 20.",
+        "Putting everything together, this is what our code looks like:",
+        "<code>Math.floor(Math.random() * 20);</code>",
+        "See how <code>Math.floor</code> takes <code>(Math.random() * 20)</code> as its argument? That's right - you can pass a function to another function as an argument."
+        "Let's use this technique to create and return a random whole number between 0 and 9."
       ],
-      "tests":[
+      "tests": [
         "assert(typeof(myFunction()) === \"number\", 'message: The result of <code>myFunction</code> should be a number.');",
         "assert(editor.getValue().match(/Math.random/g), 'message: You should be using Math.random to create a random number.');",
         "assert(editor.getValue().match(/\\(\\s*?Math.random\\s*?\\(\\s*?\\)\\s*?\\*\\s*?10\\s*?\\)/g) || editor.getValue().match(/\\(\\s*?10\\s*?\\*\\s*?Math.random\\s*?\\(\\s*?\\)\\s*?\\)/g), 'message: You should have multiplied the result of <code>Math.random</code> by 10 to make it a number that is between zero and nine.');",
         "assert(editor.getValue().match(/Math.floor/g), 'message: You should use <code>Math.floor</code> to remove the decimal part of the number.');"
       ],
-      "challengeSeed":[
+      "challengeSeed": [
+        "var randomNumberBetween0and19 = Math.floor(Math.random() * 20);",
+        "",
         "function myFunction(){",
-        "  // Make myFunction return a random number between zero and nine instead of a decimal.",
         "",
         "  // Only change code below this line.",
         "",
@@ -922,42 +1001,41 @@
       "challengeType": 1
     },
     {
-      "id":"cf1111c1c12feddfaeb2bdef",
+      "id": "cf1111c1c12feddfaeb2bdef",
       "title": "Generate Random Whole Numbers within a Range",
-      "difficulty":"9.9829",
-      "description":[
+      "description": [
         "We can use a certain mathematical expression to get a random number between two numbers.",
         "<code>Math.floor(Math.random() * (max - min + 1)) + min</code>",
         "By using this, we can control the output of a random number."
       ],
-      "tests":[
+      "tests": [
         "assert(myFunction() >= min, 'message: The random number generated by <code>myFunction</code> should be greater than or equal to the minimum number.');",
         "assert(myFunction() <= max, 'message: The random number generated by <code>myFunction</code> should be less than or equal to the maximum number.');",
         "assert(myFunction() % 1 === 0 , 'message: The random number generated by <code>myFunction</code> should be an integer, not a decimal.');",
         "assert((function(){if(editor.getValue().match(/max/g).length >= 3 && editor.getValue().match(/min/g).length >= 4 && editor.getValue().match(/Math.floor/g) && editor.getValue().match(/Math.random/g)){return true;}else{return false;}})(), 'message: You should be using the function given in the description to calculate the random in number in a range.');"
       ],
-      "challengeSeed":[
+      "challengeSeed": [
         "var min = 1;",
         "var max = 9;",
         "function myFunction() {",
-        "  // Make myFunction return a random number between min and max values instead of a decimal",
+        "",
         "  // Only change code below this line.",
         "",
         "  return Math.random();",
-        "}",
         "",
         "// Only change code above this line.",
-        "// We use this function to show you the value of your variable in your output box.",
+        "",
+        "}",
+        "",
         "(function(){return myFunction();})();"
       ],
       "type": "waypoint",
       "challengeType": 1
     },
     {
-      "id":"cf1111c1c12feddfaeb3bdef",
+      "id": "cf1111c1c12feddfaeb3bdef",
       "title": "Use Conditional Logic with If and Else Statements",
-      "difficulty":"9.983",
-      "description":[
+      "description": [
         "We can use <code>if</code> statements in JavaScript to only execute code if a certain condition is met.",
         "<code>if</code> statements require some sort of boolean condition to evaluate.",
         "For example:",
@@ -969,13 +1047,13 @@
         "Let's use <code>if</code> and <code>else</code> statements to make a coin-flip game.",
         "Create <code>if</code> and <code>else</code> statements to return the string <code>\"heads\"</code> if the flip variable is zero, or else return the string <code>\"tails\"</code> if the flip variable is not zero."
       ],
-      "tests":[
+      "tests": [
         "assert((function(){var result = myFunction();if(result === 'heads' || result === 'tails'){return true;} else {return false;}})(), 'message: <code>myFunction</code> should either return <code>heads</code> or <code>tails</code>.');",
         "assert((function(){var result = myFunction();if(result === 'heads' && flip === 0 || result === 'tails' && flip !== 0){return true;} else {return false;}})(), 'message: <code>myFunction</code> should return <code>heads</code> when flip equals 0 and <code>tails</code> when flip equals 1.');",
         "assert(editor.getValue().match(/if/g).length >= 4, 'message: You should have created a new if statement.');",
         "assert(editor.getValue().match(/else/g).length >= 2, 'message: You should have created a new else statement.');"
       ],
-      "challengeSeed":[
+      "challengeSeed": [
         "var flip = Math.floor(Math.random() * (1 - 0 + 1)) + 0;",
         "function myFunction(){",
         "  // Create an if-else statement here to return \"heads\" if flip is 0. Otherwise return \"tails\".",
@@ -994,12 +1072,11 @@
       "challengeType": 1
     },
     {
-      "id":"cf1111c1c12feddfaeb6bdef",
+      "id": "cf1111c1c12feddfaeb6bdef",
       "title": "Sift through Text with Regular Expressions",
-      "difficulty":"9.984",
-      "description":[
+      "description": [
         "<code>Regular expressions</code> are used to find certain words or patterns inside of <code>strings</code>.",
-        "For example, if we wanted to find the word <code>the</code> in the string <code>The dog chased the cat</code>, we could use the following <code>regular expression</code>: <code>\/the\/gi</code>",
+        "For example, if we wanted to find the word <code>the</code> in the string <code>The dog chased the cat</code>, we could use the following <code>regular expression</code>: <code>/the/gi</code>",
         "Let's break this down a bit:",
         "<code>the</code> is the pattern we want to match.",
         "<code>g</code> means that we want to search the entire string for this pattern instead of just the first match.",
@@ -1007,11 +1084,11 @@
         "<code>Regular expressions</code> are written by surrounding the pattern with <code>/</code> symbols.",
         "Let's try selecting all the occurrences of the word <code>and</code> in the string <code>Ada Lovelace and Charles Babbage designed the first computer and the software that would have run on it</code>. We can do this by replacing the <code>.</code> part of our regular expression with the current <code>regular expression</code> with the word <code>and</code>."
       ],
-      "tests":[
+      "tests": [
         "assert(test==2, 'message: Your <code>regular expression</code> should find two occurrences of the word <code>and</code>.');",
         "assert(editor.getValue().match(/\\/and\\/gi/), 'message: You should have used <code>regular expressions</code> to find the word <code>and</code>.');"
       ],
-      "challengeSeed":[
+      "challengeSeed": [
         "var test = (function() {",
         "  var testString = \"Ada Lovelace and Charles Babbage designed the first computer and the software that would have run on it.\";",
         "  var expressionToGetSoftware = /software/gi;",
@@ -1028,21 +1105,20 @@
       "challengeType": 1
     },
     {
-      "id":"cf1111c1c12feddfaeb7bdef",
+      "id": "cf1111c1c12feddfaeb7bdef",
       "title": "Find Numbers with Regular Expressions",
-      "difficulty":"9.985",
-      "description":[
+      "description": [
         "We can use special selectors in <code>Regular Expressions</code> to select a particular type of value.",
         "One such selector is the digit selector <code>\\d</code> which is used to grab the numbers in a string.",
         "It is used like this: <code>/\\d/g</code>.",
         "For numbers this is often written as <code>/\\d+/g</code>, where the <code>+</code> following the digit selector allows this regular expression to match multi-digit numbers.",
         "Use the <code>\\d</code> selector to select the number of numbers in the string, allowing for the possibility of multi-digit numbers."
       ],
-      "tests":[
+      "tests": [
         "assert(test === 2, 'message: Your RegEx should have found two numbers in the <code>testString</code>.');",
         "assert(editor.getValue().match(/\\/\\\\d\\+\\//g), 'message: You should be using the following expression <code>/\\d+/g</code> to find the numbers in the <code>testString</code>.');"
       ],
-      "challengeSeed":[
+      "challengeSeed": [
         "var test = (function() {",
         "  var testString = \"There are 3 cats but 4 dogs.\";",
         "",
@@ -1059,21 +1135,20 @@
       "challengeType": 1
     },
     {
-      "id":"cf1111c1c12feddfaeb8bdef",
+      "id": "cf1111c1c12feddfaeb8bdef",
       "title": "Find Whitespace with Regular Expressions",
-      "difficulty":"9.986",
-      "description":[
+      "description": [
         "We can also use selectors like <code>\\s</code> to find whitespace in a string.",
         "The whitespace characters are <code>\" \"</code> (space), <code>\\r</code> (carriage return), <code>\\n</code> (newline), <code>\\t</code> (tab), and <code>\\f</code> (form feed).",
         "It is used like this:",
         "<code>/\\s+/g</code>",
         "Select all the whitespace characters in the sentence string."
       ],
-      "tests":[
+      "tests": [
         "assert(test === 7, 'message: Your RegEx should have found seven spaces in the <code>testString</code>.');",
         "assert(editor.getValue().match(/\\/\\\\s\\+\\//g), 'message: You should be using the following expression <code>/\\s+/g</code> to find the spaces in the <code>testString</code>.');"
       ],
-      "challengeSeed":[
+      "challengeSeed": [
         "var test = (function(){",
         "  var testString = \"How many spaces are there in this sentence?\";",
         "",
@@ -1090,18 +1165,17 @@
       "challengeType": 1
     },
     {
-      "id":"cf1111c1c13feddfaeb3bdef",
+      "id": "cf1111c1c13feddfaeb3bdef",
       "title": "Invert Regular Expression Matches with JavaScript",
-      "difficulty":"9.987",
-      "description":[
+      "description": [
         "Use <code>/\\S/g</code> to match everything that isn't a space in the string.",
         "You can invert any match by using the uppercase version of the selector <code>\\s</code> versus <code>\\S</code> for example."
       ],
-      "tests":[
+      "tests": [
         "assert(test === 49, 'message: Your RegEx should have found forty nine non-space characters in the <code>testString</code>.');",
         "assert(editor.getValue().match(/\\/\\\\S\\/g/g), 'message: You should be using the following expression <code>/\\S/g</code> to find non-space characters in the <code>testString</code>.');"
       ],
-      "challengeSeed":[
+      "challengeSeed": [
         "var test = (function(){",
         "  var testString = \"How many non-space characters are there in this sentence?\";",
         "",
@@ -1115,26 +1189,25 @@
         "})();(function(){return test;})();"
       ],
       "type": "waypoint",
-      "challengeType":1
+      "challengeType": 1
     },
     {
-      "id":"cf1111c1c12feddfaeb9bdef",
+      "id": "cf1111c1c12feddfaeb9bdef",
       "title": "Create a JavaScript Slot Machine",
-      "difficulty":"9.988",
-      "description":[
+      "description": [
         "We are now going to try and combine some of the stuff we've just learned and create the logic for a slot machine game.",
         "For this we will need to generate three random numbers between <code>1</code> and <code>3</code> to represent the possible values of each individual slot.",
         "Store the three random numbers in <code>slotOne</code>, <code>slotTwo</code> and <code>slotThree</code>.",
         "Generate the random numbers by using the system we used earlier (an explanation of the formula can be found <a href=\"https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/Waypoint-Generate-Random-Whole-Numbers-within-a-Range#explanation\">here</a>):",
         "<code>Math.floor(Math.random() * (3 - 1 + 1)) + 1;</code>"
       ],
-      "tests":[
+      "tests": [
         "assert(typeof(runSlots($(\".slot\"))[0]) === \"number\", '<code>slotOne</code> should be a random number.')",
         "assert(typeof(runSlots($(\".slot\"))[1]) === \"number\", '<code>slotTwo</code> should be a random number.')",
         "assert(typeof(runSlots($(\".slot\"))[2]) === \"number\", '<code>slotThree</code> should be a random number.')",
         "assert((function(){if(editor.match(/Math\\.floor\\(\\s?Math\\.random\\(\\)\\s?\\*\\s?\\(\\s?3\\s?\\-\\s?1\\s?\\+\\s?1\\s?\\)\\s?\\)\\s?\\+\\s?1;/gi) !== null){return editor.match(/Math\\.floor\\(\\s?Math\\.random\\(\\)\\s?\\*\\s?\\(\\s?3\\s?\\-\\s?1\\s?\\+\\s?1\\s?\\)\\s?\\)\\s?\\+\\s?1;/gi).length >= 3;}else{return false;}})(), 'You should have used <code>Math.floor(Math.random() * (3 - 1 + 1)) + 1;</code> three times to generate your random numbers.')"
       ],
-      "challengeSeed":[
+      "challengeSeed": [
         "fccss",
         "  function runSlots(){",
         "    var slotOne;",
@@ -1272,10 +1345,9 @@
       "challengeType": 0
     },
     {
-      "id":"cf1111c1c13feddfaeb1bdef",
+      "id": "cf1111c1c13feddfaeb1bdef",
       "title": "Add your JavaScript Slot Machine Slots",
-      "difficulty":"9.989",
-      "description":[
+      "description": [
         "Now that our slots will each generate random numbers, we need to check whether they've all returned the same number.",
         "If they have, we should notify our user that they've won.",
         "Otherwise, we should return <code>null</code>, which is a JavaScript data structure that means nothing.",
@@ -1285,10 +1357,10 @@
         "<code>&thinsp;&thinsp;return null;</code>",
         "<code>}</code>"
       ],
-      "tests":[
+      "tests": [
         "assert((function(){var data = runSlots();if(data === null){return true}else{if(data[0] === data[1] && data[1] === data[2]){return true;}else{return false;}}})(), 'If all three of our random numbers are the same we should return that number. Otherwise we should return <code>null</code>.')"
       ],
-      "challengeSeed":[
+      "challengeSeed": [
         "fccss",
         "  function runSlots(){",
         "    var slotOne;",
@@ -1432,10 +1504,9 @@
       "challengeType": 0
     },
     {
-      "id":"cf1111c1c13feddfaeb2bdef",
+      "id": "cf1111c1c13feddfaeb2bdef",
       "title": "Bring your JavaScript Slot Machine to Life",
-      "difficulty":"9.990",
-      "description":[
+      "description": [
         "Now we can detect a win. Let's get this slot machine working.",
         "Let's use the jQuery <code>selector</code> <code>$(\".slot\")</code> to select all of the slots.",
         "Once they are all selected, we can use <code>bracket notation</code> to access each individual slot:",
@@ -1443,11 +1514,11 @@
         "This jQuery will select the first and update the slot's HTML to display the correct number.",
         "Use the above selector to display each number in its corresponding slot."
       ],
-      "tests":[
+      "tests": [
         "assert((function(){runSlots();if($($(\".slot\")[0]).html().replace(/\\s/gi, \"\") !== \"\" && $($(\".slot\")[1]).html().replace(/\\s/gi, \"\") !== \"\" && $($(\".slot\")[2]).html().replace(/\\s/gi, \"\") !== \"\"){return true;}else{return false;}})(), 'You should be displaying the result of the slot numbers in the corresponding slots.')",
         "assert((editor.match( /\\$\\s*?\\(\\s*?\\$\\s*?\\(\\s*?(?:'|\")\\s*?\\.slot\\s*?(?:'|\")\\s*?\\)\\[\\d\\]\\s*?\\)/gi) && editor.match( /\\$\\s*?\\(\\s*?\\$\\s*?\\(\\s*?(?:'|\")\\s*?\\.slot\\s*?(?:'|\")\\s*?\\)\\[\\d\\]\\s*?\\)/gi ).length >= 3 && editor.match( /\\.html\\(slotOne\\)/gi ) && editor.match( /\\.html\\(slotTwo\\)/gi ) && editor.match( /\\.html\\(slotThree\\)/gi )), 'You should have used the the selector given in the description to select each slot and assign it the value of <code>slotOne</code>&#44; <code>slotTwo</code> and <code>slotThree</code> respectively.')"
       ],
-      "challengeSeed":[
+      "challengeSeed": [
         "fccss",
         "  function runSlots(){",
         "    var slotOne;",
@@ -1598,17 +1669,16 @@
       "challengeType": 0
     },
     {
-      "id":"cf1111c1c11feddfaeb1bdff",
+      "id": "cf1111c1c11feddfaeb1bdff",
       "title": "Give your JavaScript Slot Machine some Stylish Images",
-      "difficulty":"9.9901",
-      "description":[
+      "description": [
         "Now let's add some images to our slots.",
         "We've already set up the images for you in an array called <code>images</code>. We can use different indexes to grab each of these.",
         "Here's how we would set the first slot to show a different image depending on which number its random number generates:",
         "<code>$($('.slot')[0]).html('&lt;img src = \"' + images[slotOne-1] + '\"&gt;');</code>",
         "Set up all three slots like this, then click the \"Go\" button to play the slot machine."
       ],
-      "tests":[
+      "tests": [
         "assert((editor.match(/\\$\\s*?\\(\\s*?\\$\\s*?\\(\\s*?(?:'|\")\\s*?\\.slot\\s*?(?:'|\")\\s*?\\)\\[\\d\\]\\s*?\\)\\.html\\(\\s*?\\'\\<img\\s?src\\s?=\\s?\"\\'\\s?\\+\\s?images\\[\\w+\\-1\\]\\s?\\+\\s?\\'\"\\>\\'\\s*?\\);/gi) && editor.match(/\\$\\s*?\\(\\s*?\\$\\s*?\\(\\s*?(?:'|\")\\s*?\\.slot\\s*?(?:'|\")\\s*?\\)\\[\\d\\]\\s*?\\)\\.html\\(\\s*?\\'\\<img\\s?src\\s?=\\s?\"\\'\\s?\\+\\s?images\\[\\w+\\-1\\]\\s?\\+\\s?\\'\"\\>\\'\\s*?\\);/gi).length >= 3), 'Use the provided code three times. One for each slot.')",
         "assert(editor.match(/\\$\\s*?\\(\\s*?\\$\\s*?\\(\\s*?(?:'|\")\\s*?\\.slot\\s*?(?:'|\")\\s*?\\)\\[0\\]\\s*?\\)/gi), 'You should have used <code>$&#40;&#39;.slot&#39;&#41;[0]</code> at least once.')",
         "assert(editor.match(/\\$\\s*?\\(\\s*?\\$\\s*?\\(\\s*?(?:'|\")\\s*?\\.slot\\s*?(?:'|\")\\s*?\\)\\[1\\]\\s*?\\)/gi), 'You should have used <code>$&#40;&#39;.slot&#39;&#41;[1]</code> at least once.')",
@@ -1617,7 +1687,7 @@
         "assert(editor.match(/slotTwo/gi) && editor.match(/slotTwo/gi).length >= 8, 'You should have used the <code>slotTwo</code> value at least once.')",
         "assert(editor.match(/slotThree/gi) && editor.match(/slotThree/gi).length >= 7, 'You should have used the <code>slotThree</code> value at least once.')"
       ],
-      "challengeSeed":[
+      "challengeSeed": [
         "fccss",
         "  function runSlots(){",
         "    var slotOne;",
