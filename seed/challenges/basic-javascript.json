@@ -771,7 +771,7 @@
         "  \"friends\": [\"Free Code Camp Campers\"]",
         "};",
         "",
-        "// Only change code below this line.",
+        "// Only change code above this line.",
         "",
         "(function(z){return z;})(myDog);"
       ],

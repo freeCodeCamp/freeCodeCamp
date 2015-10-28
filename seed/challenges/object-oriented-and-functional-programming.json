@@ -197,23 +197,23 @@
         "Use the map function to add 3 to every value in the variable <code>array</code>."
       ],
       "tests":[
-        "assert.deepEqual(array, [4,5,6,7,8], 'message: You should add three to each value in the array.');",
+        "assert.deepEqual(newArray, [4,5,6,7,8], 'message: You should add three to each value in the array.');",
         "assert(editor.getValue().match(/\\.map\\s*\\(/gi), 'message: You should be making use of the <code>map</code> method.');",
         "assert(editor.getValue().match(/\\[1\\,2\\,3\\,4\\,5\\]/gi), 'message: You should only modify the array with <code>map</code>.');"
       ],
       "challengeSeed":[
-        "var array = [1,2,3,4,5];",
+        "var oldArray = [1,2,3,4,5];",
         "",
         "// Only change code below this line.",
         "",
         "",
-        "",
+        "var newArray = oldArray;",
         "",
         "",
         "",
         "// Only change code above this line.",
         "",
-        "(function() {return array;})();"
+        "(function() {return newArray;})();"
       ],
       "MDNlinks":[
         "Array.map()"
