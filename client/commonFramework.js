@@ -1060,7 +1060,7 @@ function bonfireExecute(shouldTest) {
     // checks if the number of opening comments(/*) matches the number of
     // closing comments(*/)
     if (
-      userJavaScript.match(/\/\*/gi) &&
+      userJavaScript.match(/\/\*/gi) && userJavaScript.match(/\*\//gi) &&
       userJavaScript.match(/\/\*/gi).length > userJavaScript.match(/\*\//gi).length
     ) {
       failedCommentTest = true;
