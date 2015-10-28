@@ -828,7 +828,7 @@
         "Let's delete the <code>\"tails\"</code> property from <code>myDog</code>."
       ],
       "tests": [
-        "assert(myDog.bark === undefined, 'message: Delete the property <code>\"bark\"</code> from <code>myDog</code>.');"
+        "assert(myDog.tails === undefined, 'message: Delete the property <code>\"tails\"</code> from <code>myDog</code>.');"
       ],
       "challengeSeed": [
         "var ourDog = {",
