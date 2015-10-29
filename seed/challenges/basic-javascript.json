@@ -747,9 +747,9 @@
         "<code>&thinsp;&thinsp;\"friends\": [\"everything!\"]</code>",
         "<code>};</code>",
         "Since he's a particularly happy dog, let's change his name to \"Happy Camper\". Here's how we update his object's name property:",
-        "<code>myDog.name = \"Happy Camper\";</code>",
-        "Now when we run <code>return myDog.name</code>, instead of getting \"Camper\", we'll get his new name, \"Happy Camper\".",
-        "Let's update <code>yourDog</code> object's name property. Let's change her name from \"Coder\" to \"Happy Coder\"."
+        "<code>ourDog.name = \"Happy Camper\";</code>",
+        "Now when we run <code>return ourDog.name</code>, instead of getting \"Camper\", we'll get his new name, \"Happy Camper\".",
+        "Let's update the <code>myDog</code> object's name property. Let's change her name from \"Coder\" to \"Happy Coder\"."
       ],
       "tests": [
         "assert(/happy coder/gi.test(myDog.name), 'message: Update <code>myDog</code>\\'s <code>\"name\"</code> property to equal \"Happy Coder\".');"
@@ -784,8 +784,8 @@
       "description": [
         "You can add new properties to existing JavaScript objects the same way you would modify them.",
         "Here's how we would add a <code>\"bark\"</code> property to <code>ourDog</code>:",
-        "<code>myDog.bark = \"bow-wow\";</code>",
-        "Now when we run <code>return myDog.bark</code>, we'll get his bark, \"bow-wow\".",
+        "<code>ourDog.bark = \"bow-wow\";</code>",
+        "Now when we run <code>return ourDog.bark</code>, we'll get his bark, \"bow-wow\".",
         "Let's add a <code>\"bark\"</code> property to <code>myDog</code> and set it to a dog sound, such as \"woof\"."
       ],
       "tests": [
@@ -824,7 +824,7 @@
       "title": "Delete Properties from a JavaScript Object",
       "description": [
         "We can also delete properties from objects like this:",
-        "<code>delete myDog.bark;</code>",
+        "<code>delete ourDog.bark;</code>",
         "Let's delete the <code>\"tails\"</code> property from <code>myDog</code>."
       ],
       "tests": [
