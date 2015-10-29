@@ -4,7 +4,8 @@ block content
         .col-md-8.col-md-offset-2
                 for step, index in description
                     .thumbnail.challenge-step(class=index !== 0 ? 'hidden': '')
-                        img.gif-block.img-center.img-responsive.thumbnail(src='#{step[0]}' alt='#{step[1]}')
+                        a(href=step[0] data-lightbox='img-enlarge')
+                            img.gif-block.img-center.img-responsive.thumbnail(src='#{step[0]}' alt='#{step[1]}')
                         .caption
                             p.large-p!= step[2]
                         if step[3]

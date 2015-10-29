@@ -82,6 +82,10 @@
     },
     "descriptionPt": {
       "type": "array"
+    },
+    "solutions": {
+      "type": "array",
+      "default": []
     }
   },
   "validations": [],

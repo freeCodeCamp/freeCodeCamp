@@ -96,6 +96,10 @@ h1, h2, h3, h4, h5, h6, p, li {
   margin-right: 5px;
 }
 
+.fa:hover {
+  text-decoration: none;
+}
+
 .img-center {
   margin: 0 auto;
 }
@@ -951,6 +955,11 @@ code {
   margin: 0!important;
 }
 
+// gitter chat
+.gitter-chat-embed {
+ z-index: 20000 !important;
+}
+
 //uncomment this to see the dimensions of all elements outlined in red
 //* {
 //  border-color: red;
@@ -1058,3 +1067,5 @@ code {
     transform: rotate(0deg);
   }
 }
+
+@import "chat.less";

@@ -72,9 +72,9 @@ module.exports = function(app) {
         'Feel free to email us at this address if you have ',
         'any questions about Free Code Camp.\n',
         'And if you have a moment, check out our blog: ',
-        'blog.freecodecamp.com.\n\n',
+        'medium.freecodecamp.com.\n\n',
         'Good luck with the challenges!\n\n',
-        '- the Free Code Camp Volunteer Team'
+        '- the Free Code Camp Team'
       ].join('')
     };
 

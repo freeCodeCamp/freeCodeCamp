@@ -1,12 +1,12 @@
 extends ../layout-wide
 block content
 
+    script(type='text/javascript', src='/bower_components/jshint/dist/jshint.js')
     script(type='text/javascript', src='/js/lib/codemirror/lib/codemirror.js')
     script(type='text/javascript', src='/js/lib/codemirror/addon/edit/closebrackets.js')
     script(type='text/javascript', src='/js/lib/codemirror/addon/edit/matchbrackets.js')
     script(type='text/javascript', src='/js/lib/codemirror/addon/lint/lint.js')
     script(type='text/javascript', src='/js/lib/codemirror/addon/lint/javascript-lint.js')
-    script(type='text/javascript', src='/bower_components/jshint/dist/jshint.js')
     script(type='text/javascript', src='/js/lib/chai/chai.js')
     link(rel='stylesheet', href='/js/lib/codemirror/lib/codemirror.css')
     link(rel='stylesheet', href='/js/lib/codemirror/addon/lint/lint.css')
@@ -52,7 +52,7 @@ block content
                     label.btn.btn-success#trigger-reset-modal
                         i.fa.fa-refresh
                             | &nbsp; Reset
-                    label.btn.btn-success#trigger-help-modal
+                    label.btn.btn-success#challenge-help-btn
                         i.fa.fa-medkit
                             | &nbsp; Help
                     label.btn.btn-success#trigger-issue-modal
@@ -88,8 +88,6 @@ block content
                         .form-group.codeMirrorView
                             textarea#codeEditor(autofocus=true, style='display: none;')
                     script(src=rev('/js', 'commonFramework.js'))
-                    script.
-                        editor.setOption("mode", "javascript");
 
     #complete-courseware-dialog.modal(tabindex='-1')
         .modal-dialog.animated.fadeIn.fast-animation
@@ -122,7 +120,14 @@ block content
                     a.btn.btn-lg.btn-primary.btn-block(href='#', data-dismiss='modal', aria-hidden='true') Cancel
     include ../partials/challenge-modals
     script.
-        var MDNlinks = !{JSON.stringify(MDNlinks)};
-        if (!MDNlinks.length) {
-            $('#MDN-links').addClass('collapse');
+
+      document.addEventListener('gitter-sidecar-ready', function(e) {
+        if (window.main) {
+          window.main.chat.createHelpChat('freecodecamp/helpbonfires', '#challenge-help-btn', 'Bonfires Help');
         }
+      });
+
+      var MDNlinks = !{JSON.stringify(MDNlinks)};
+      if (!MDNlinks.length) {
+          $('#MDN-links').addClass('collapse');
+      }

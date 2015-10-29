@@ -12,13 +12,18 @@ var Rx = require('rx'),
     validator = require('validator'),
     secrets = require('../../config/secrets');
 
-var foundationDate = 1413298800000;
-var time48Hours = 172800000;
+import {
+  ifNoUser401,
+  ifNoUserRedirectTo
+} from '../utils/middleware';
 
-var unDasherize = utils.unDasherize;
-var dasherize = utils.dasherize;
-var getURLTitle = utils.getURLTitle;
-var ifNoUser401 = require('../utils/middleware').ifNoUser401;
+const foundationDate = 1413298800000;
+const time48Hours = 172800000;
+
+const unDasherize = utils.unDasherize;
+const dasherize = utils.dasherize;
+const getURLTitle = utils.getURLTitle;
+const sendNonUserToNews = ifNoUserRedirectTo('/news');
 
 function hotRank(timeValue, rank) {
   /*
@@ -62,8 +67,16 @@ module.exports = function(app) {
 
   router.get('/news/hot', hotJSON);
   router.get('/stories/hotStories', hotJSON);
-  router.get('/stories/submit', submitNew);
-  router.get('/stories/submit/new-story', preSubmit);
+  router.get(
+    '/stories/submit',
+    sendNonUserToNews,
+    submitNew
+  );
+  router.get(
+    '/stories/submit/new-story',
+    sendNonUserToNews,
+    preSubmit
+  );
   router.post('/stories/preliminary', ifNoUser401, newStory);
   router.post('/stories/', ifNoUser401, storySubmission);
   router.get('/news/', hot);
@@ -102,17 +115,25 @@ module.exports = function(app) {
   }
 
   function submitNew(req, res) {
+    if (!req.user.isGithubCool) {
+      req.flash('errors', {
+        msg: 'You must link GitHub with your account before you can post' +
+          ' on Camper News.'
+      });
+      return res.redirect('/news');
+    }
+
     return res.render('stories/index', {
       title: 'Submit a new story to Camper News',
       page: 'submit'
     });
   }
 
-  function preSubmit(req, res, next) {
+  function preSubmit(req, res) {
     var data = req.query;
     if (typeof data.url !== 'string') {
       req.flash('errors', { msg: 'No URL supplied with story' });
-      return next(new TypeError('No URL supplied with story'));
+      return res.redirect('/news');
     }
     var cleanedData = cleanData(data.url);
 
@@ -264,8 +285,11 @@ module.exports = function(app) {
   }
 
   function newStory(req, res, next) {
-    if (!req.user) {
-      return next(new Error('Must be logged in'));
+    if (!req.user.isGithubCool) {
+      req.flash('errors', {
+        msg: 'You must authenticate with Github to post to Camper News'
+      });
+      return res.redirect('/news');
     }
     var url = req.body.data.url;
 
