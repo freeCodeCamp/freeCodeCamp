@@ -342,12 +342,10 @@ var sandBox = (function(jailed, codeOutput) {
         endLoading();
         console.log('resetting on fatal plugin error');
 
-        if (common.challengeType === 0) {
-          codeOutput.setValue(
-            'Sorry, your code is either too slow, has a fatal error, ' +
-            'or contains an infinite loop.'
-          );
-        }
+        codeOutput.setValue(
+          'Sorry, your code is either too slow, has a fatal error, ' +
+          'or contains an infinite loop.'
+        );
         reset();
       }, 10);
     });
@@ -857,35 +855,33 @@ var runTests = function(err, data) {
     }];
     createTestDisplay();
   } else if (userTests) {
-    userTests.push(false);
-    pushed = true;
-    userTests.forEach(function(
-      chaiTestFromJSON,
-      indexOfTestArray,
-      __testArray
-    ) {
-      try {
-        if (chaiTestFromJSON) {
-          /* eslint-disable no-eval, no-unused-vars */
-          var output = eval(reassembleTest(chaiTestFromJSON, data));
-          /* eslint-enable no-eval, no-unused-vars */
-        }
-      } catch (error) {
-        allTestsPassed = false;
-        __testArray[indexOfTestArray].err = error.message;
-      } finally {
-        if (!chaiTestFromJSON) {
-          createTestDisplay();
-        }
-      }
-    });
+    var recurse = function(indexOfTestArray) {
+      if (userTests.length === indexOfTestArray) {
+        createTestDisplay();
 
-    if (allTestsPassed) {
-      allTestsPassed = false;
-      showCompletion();
-    } else {
-      isInitRun = false;
-    }
+        if (allTestsPassed) {
+          allTestsPassed = false;
+          showCompletion();
+        } else {
+          isInitRun = false;
+        }
+
+        return;
+      }
+
+      var chaiTestFromJSON = reassembleTest(userTests[indexOfTestArray], data);
+      setTimeout(function() {
+        sandBox.submit(chaiTestFromJSON, function(cls, message) {
+          if (cls) {
+            allTestsPassed = false;
+            userTests[indexOfTestArray].err = message.error;
+          }
+
+          recurse(indexOfTestArray + 1);
+        });
+      }, 10);
+    };
+    recurse(0);
   }
 };
 
