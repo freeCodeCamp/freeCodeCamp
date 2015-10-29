@@ -15,6 +15,12 @@ export default function getJobServices(app) {
       if (!job) {
         return cb(new Error('job creation should get a job object'));
       }
+
+      Object.assign(job, {
+        isPaid: false,
+        isApproved: false
+      });
+
       Job.create(job, (err, savedJob) => {
         cb(err, savedJob);
       });
