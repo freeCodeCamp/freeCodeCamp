@@ -58,7 +58,8 @@
         "<code>&thinsp;&thinsp;this.engines = 1;</code>",
         "<code>&thinsp;&thinsp;this.seats = 1;</code>",
         "<code>};</code>",
-        "Give your <code>myMotorBike</code> object a <code>wheels</code>, <code>engines</code> and <code>seats</code> attribute and set them to numbers."
+        "Give your <code>myMotorBike</code> object a <code>wheels</code>, <code>engines</code> and <code>seats</code> attribute and set them to numbers.",
+        "You may be confused by the <code>this</code> keyword here. Don't worry, we will get to that very soon."
       ],
       "tests":[
         "assert(typeof((new MotorBike()).engines) === 'number', 'message: <code>myMotorBike</code> should have a <code>engines</code> attribute set to a number.');",
