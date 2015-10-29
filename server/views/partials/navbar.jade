@@ -8,11 +8,15 @@ nav.navbar.navbar-default.navbar-fixed-top.nav-height
     .collapse.navbar-collapse
         ul.nav.navbar-nav.navbar-right.hamburger-dropdown
             li
+                a.learn-btn(href='#') Learn
+            li
                 a(href='/map') Map
+            li.hidden-xs
+                a#nav-chat-btn(href='#' onclick="return false") Chat
+            li.visible-xs
+                a(href="//gitter.im/freecodecamp/freecodecamp" target="_blank") Chat
             li
-                a(href='//gitter.im/FreeCodeCamp/FreeCodeCamp', target='_blank') Chat
-            li
-                a(href='/news') News
+                a(href='/news', target='_blank') News
             li
                 a(href='//github.com/FreeCodeCamp/freecodecamp/wiki/Home', target='_blank') Wiki
             if !user
@@ -20,15 +24,24 @@ nav.navbar.navbar-default.navbar-fixed-top.nav-height
                 li
                     a.btn.signup-btn.signup-btn-nav(href='/login') Sign in
             else
-              if user.isGithubCool
                 li
                   a(href='/' + user.username) [&thinsp;#{user.progressTimestamps.length}&thinsp;]
                 .hidden-xs.hidden-sm
                     a(href='/' + user.username)
                         img.profile-picture.float-right(src='#{user.picture}')
-              else
-                li
-                    a(href='/account') [&thinsp;#{user.progressTimestamps.length}&thinsp;]
-                .hidden-xs.hidden-sm
-                    a(href='/account')
-                        img.profile-picture.float-right(src='#{user.picture}')
+script.
+    $(document).ready(function() {
+        $('.learn-btn').click(function(e) {
+            var challengeDashedName = null;
+            e.preventDefault();
+            if (typeof dashedName === "string") {
+                return location.reload();
+            }
+            if (typeof localStorage !== 'undefined') {
+                challengeDashedName = localStorage.getItem('currentDashedName');
+            }
+            window.location = challengeDashedName ?
+            '/challenges/' + challengeDashedName :
+                    '/map';
+        });
+    });

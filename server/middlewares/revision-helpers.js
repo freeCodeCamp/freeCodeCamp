@@ -1,6 +1,8 @@
 import manifest from '../rev-manifest.json';
 
 const __DEV__ = process.env.NODE_ENV === 'development';
+const manifestPath = '../rev-manifest.json';
+
 export default function({ globalPrepend = '' } = {}) {
 
   function rev(manifest, scopedPrepend, asset) {
@@ -13,7 +15,10 @@ export default function({ globalPrepend = '' } = {}) {
     // this means we do not need to restart server on every change to
     // client code
     if (__DEV__) {
-      const manifest = require('../rev-manifest.json');
+      // we first need to remove the manifest from require cache
+      delete require.cache[require.resolve(manifestPath)];
+      // and re-require
+      const manifest = require(manifestPath);
       res.locals.rev = rev.bind(null, manifest);
       return next();
     }

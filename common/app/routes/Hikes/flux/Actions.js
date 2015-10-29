@@ -1,10 +1,9 @@
 import { Actions } from 'thundercats';
-import assign from 'object.assign';
 import debugFactory from 'debug';
 
 const debug = debugFactory('freecc:hikes:actions');
 
-function getCurrentHike(hikes =[{}], dashedName, currentHike) {
+function getCurrentHike(hikes = [{}], dashedName, currentHike) {
   if (!dashedName) {
     debug('no dashedName');
     return hikes[0];
@@ -45,7 +44,7 @@ export default Actions({
                 dashedName,
                 oldState.currentHike
               );
-              return assign({}, oldState, { currentHike });
+              return Object.assign({}, oldState, { currentHike });
             }
           });
         }

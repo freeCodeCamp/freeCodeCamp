@@ -1,21 +1,21 @@
 {
   "name": "Git",
-  "order" : 0.016,
+  "order" : 17,
+  "time": "3h",
   "challenges": [
     {
       "id": "bd7353d8c341eddeaeb5bd0f",
       "title": "Save your Code Revisions Forever with Git",
-      "difficulty": 0.01,
       "challengeSeed": ["133316034"],
       "description": [
         "We'll build this Waypoint on Cloud 9, a powerful online code editor with a full Ubuntu Linux workspace, all running in the cloud.",
         "If you don't already have Cloud 9 account, create one now at <a href='http://c9.io' target='_blank'>http://c9.io</a>.",
         "Open up <a href='http://c9.io' target='_blank'>http://c9.io</a> and sign in to your account.",
-        "Click on Create New Workspace at the top right of the c9.io page, then click on the \"Create a new workspace\" popup that appears below it the button after you click on it.",
-        "Give your workspace a name.",
+        "Click on the \"+\" icon at the top right of the c9.io page to create a new workspace.",
+        "Give your workspace a name and an optional description.",
         "Choose Node.js in the selection area below the name field.",
-        "Click the Create button. Then click into your new workspace.",
-        "In the lower right hand corner you should see a terminal window. In this window use the following commands. You don't need to know what these mean at this point.",
+        "Click the \"Create workspace\" button.",
+        "Once C9 builds and loads your workspace, you should see a terminal window in the lower right hand corner. In this window use the following commands. You don't need to know what these mean at this point.",
         "Install <code>git-it</code> with this command: <code>npm install -g git-it</code>",
         "Now start the tutorial by running <code>git-it</code>.",
         "Note that you can resize the c9.io's windows by dragging their borders.",

@@ -1,11 +1,11 @@
 {
   "name": "Intermediate Algorithm Scripting",
-  "order": 0.009,
+  "order": 10,
+  "time": "50h",
   "challenges": [
     {
       "id": "a3566b1109230028080c9345",
       "title": "Sum All Numbers in a Range",
-      "difficulty": "2.00",
       "description": [
         "We'll pass you an array of two numbers. Return the sum of those two numbers and all numbers between them.",
         "The lowest number will not always come first.",
@@ -19,16 +19,19 @@
         "sumAll([1, 4]);"
       ],
       "tests": [
-        "expect(sumAll([1, 4])).to.be.a('Number');",
-        "expect(sumAll([1, 4])).to.equal(10);",
-        "expect(sumAll([4, 1])).to.equal(10);",
-        "expect(sumAll([5, 10])).to.equal(45);",
-        "expect(sumAll([10, 5])).to.equal(45);"
+        "assert(typeof(sumAll([1, 4])) === \"number\", 'message: <code>sumAll()</code> should return a number.');",
+        "assert.deepEqual(sumAll([1, 4]), 10, 'message: <code>sumAll([1, 4])</code> should return 10.');",
+        "assert.deepEqual(sumAll([4, 1]), 10, 'message: <code>sumAll([4, 1])</code> should return 10.');",
+        "assert.deepEqual(sumAll([5, 10]), 45, 'message: <code>sumAll([5, 10])</code> should return 45.');",
+        "assert.deepEqual(sumAll([10, 5]), 45, 'message: <code>sumAll([10, 5])</code> should return 45.');"
       ],
       "MDNlinks": [
         "Math.max()",
         "Math.min()",
         "Array.reduce()"
+      ],
+      "solutions": [
+        "function sumAll(arr) {\n  var sum = 0;\n  arr.sort(function(a,b) {return a-b;});\n  for (var i = arr[0]; i <= arr[1]; i++) {\n    sum += i; \n  }\n  return sum;\n}\n\nsumAll([1, 4]);\n"
       ],
       "type": "bonfire",
       "challengeType": 5,
@@ -46,7 +49,6 @@
     {
       "id": "a5de63ebea8dbee56860f4f2",
       "title": "Diff Two Arrays",
-      "difficulty": "2.01",
       "description": [
         "Compare two arrays and return a new array with any items not found in both of the original arrays.",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
@@ -61,13 +63,14 @@
         "diff([1, 2, 3, 5], [1, 2, 3, 4, 5]);"
       ],
       "tests": [
-        "expect(diff([1, 2, 3, 5], [1, 2, 3, 4, 5])).to.be.a('array');",
-        "assert.deepEqual(diff(['diorite', 'andesite', 'grass', 'dirt', 'pink wool', 'dead shrub'], ['diorite', 'andesite', 'grass', 'dirt', 'dead shrub']), ['pink wool'], 'arrays with only one difference');",
-        "assert.includeMembers(diff(['andesite', 'grass', 'dirt', 'pink wool', 'dead shrub'], ['diorite', 'andesite', 'grass', 'dirt', 'dead shrub']), ['diorite', 'pink wool'], 'arrays with more than one difference');",
-        "assert.deepEqual(diff(['andesite', 'grass', 'dirt', 'dead shrub'], ['andesite', 'grass', 'dirt', 'dead shrub']), [], 'arrays with no difference');",
-        "assert.deepEqual(diff([1, 2, 3, 5], [1, 2, 3, 4, 5]), [4], 'arrays with numbers');",
-        "assert.includeMembers(diff([1, 'calf', 3, 'piglet'], [1, 'calf', 3, 4]), ['piglet', 4], 'arrays with numbers and strings');",
-        "assert.deepEqual(diff([], ['snuffleupagus', 'cookie monster', 'elmo']), ['snuffleupagus', 'cookie monster', 'elmo'], 'empty array');"
+        "assert(typeof(diff([1, 2, 3, 5], [1, 2, 3, 4, 5])) === \"object\", 'message: <code>diff()</code> should return an array.');",
+        "assert.deepEqual(diff([\"diorite\", \"andesite\", \"grass\", \"dirt\", \"pink wool\", \"dead shrub\"], [\"diorite\", \"andesite\", \"grass\", \"dirt\", \"dead shrub\"]), [\"pink wool\"], 'message: <code>[\"diorite\", \"andesite\", \"grass\", \"dirt\", \"pink wool\", \"dead shrub\"], [\"diorite\", \"andesite\", \"grass\", \"dirt\", \"dead shrub\"]</code> should return <code>[\"pink wool\"]</code>.');",
+        "assert.includeMembers(diff([\"andesite\", \"grass\", \"dirt\", \"pink wool\", \"dead shrub\"], [\"diorite\", \"andesite\", \"grass\", \"dirt\", \"dead shrub\"]), [\"diorite\", \"pink wool\"], 'message: <code>[\"andesite\", \"grass\", \"dirt\", \"pink wool\", \"dead shrub\"], [\"diorite\", \"andesite\", \"grass\", \"dirt\", \"dead shrub\"]</code> should return <code>[\"diorite\", \"pink wool\"]</code>.');",
+        "assert.deepEqual(diff([\"andesite\", \"grass\", \"dirt\", \"dead shrub\"], [\"andesite\", \"grass\", \"dirt\", \"dead shrub\"]), [], 'message: <code>[\"andesite\", \"grass\", \"dirt\", \"dead shrub\"], [\"andesite\", \"grass\", \"dirt\", \"dead shrub\"]</code> should return <code>[]</code>.');",
+        "assert.deepEqual(diff([1, 2, 3, 5], [1, 2, 3, 4, 5]), [4], 'message: <code>[1, 2, 3, 5], [1, 2, 3, 4, 5]</code> should return <code>[4]</code>.');",
+        "assert.includeMembers(diff([1, \"calf\", 3, \"piglet\"], [1, \"calf\", 3, 4]), [\"piglet\", 4], 'message: <code>[1, \"calf\", 3, \"piglet\"], [1, \"calf\", 3, 4]</code> should return <code>[\"piglet\", 4]</code>.');",
+        "assert.deepEqual(diff([], [\"snuffleupagus\", \"cookie monster\", \"elmo\"]), [\"snuffleupagus\", \"cookie monster\", \"elmo\"], 'message: <code>[], [\"snuffleupagus\", \"cookie monster\", \"elmo\"]</code> should return <code>[\"snuffleupagus\", \"cookie monster\", \"elmo\"]</code>.');",
+        "assert.includeMembers(diff([1, \"calf\", 3, \"piglet\"], [7, \"filly\"]), [1, \"calf\", 3, \"piglet\", 7, \"filly\"], 'message: <code>[1, \"calf\", 3, \"piglet\"], [7, \"filly\"]</code> should return <code>[1, \"calf\", 3, \"piglet\", 7, \"filly\"]</code>.');"
       ],
       "MDNlinks": [
         "Comparison Operators",
@@ -75,6 +78,9 @@
         "Array.filter()",
         "Array.indexOf()",
         "Array.concat()"
+      ],
+      "solutions": [
+        "function diff(arr1, arr2) {\n  var newArr = [];\n  var h1 = Object.create(null);\n  arr1.forEach(function(e) {\n    h1[e] = e;\n  });\n  \n  var h2 = Object.create(null);\n  arr2.forEach(function(e) {\n    h2[e] = e;\n  });\n  \n  Object.keys(h1).forEach(function(e) {\n     if (!(e in h2)) newArr.push(h1[e]);\n  });\n  Object.keys(h2).forEach(function(e) {\n     if (!(e in h1)) newArr.push(h2[e]);\n  });\n  // Same, same; but different.\n  return newArr;\n}\n\ndiff([1, 2, 3, 5], [1, 2, 3, 4, 5]);\n"
       ],
       "type": "bonfire",
       "challengeType": 5,
@@ -93,13 +99,26 @@
       "id": "a7f4d8f2483413a6ce226cac",
       "title": "Roman Numeral Converter",
       "tests": [
-        "expect(convert(12)).to.equal(\"XII\");",
-        "expect(convert(5)).to.equal(\"V\");",
-        "expect(convert(9)).to.equal(\"IX\");",
-        "expect(convert(29)).to.equal(\"XXIX\");",
-        "expect(convert(16)).to.equal(\"XVI\");"
+        "assert.deepEqual(convert(5), \"V\", 'message: <code>convert(5)</code> should return \"V\".');",
+        "assert.deepEqual(convert(9), \"IX\", 'message: <code>convert(9)</code> should return \"IX\".');",
+        "assert.deepEqual(convert(12), \"XII\", 'message: <code>convert(12)</code> should return \"XII\".');",
+        "assert.deepEqual(convert(16), \"XVI\", 'message: <code>convert(16)</code> should return \"XVI\".');",
+        "assert.deepEqual(convert(29), \"XXIX\", 'message: <code>convert(29)</code> should return \"XXIX\".');",
+        "assert.deepEqual(convert(44), \"XLIV\", 'message: <code>convert(44)</code> should return \"XLIV\".');",
+        "assert.deepEqual(convert(45), \"XLV\", '<code>convert(45)</code> should return \"XLV\"');",
+        "assert.deepEqual(convert(68), \"LXVIII\", '<code>convert(68)</code> should return \"LXVIII\"');",
+        "assert.deepEqual(convert(83), \"LXXXIII\", '<code>convert(83)</code> should return \"LXXXIII\"');",
+        "assert.deepEqual(convert(97), \"XCVII\", '<code>convert(97)</code> should return \"XCVII\"');",
+        "assert.deepEqual(convert(99), \"XCIX\", '<code>convert(99)</code> should return \"XCIX\"');",
+        "assert.deepEqual(convert(500), \"D\", '<code>convert(500)</code> should return \"D\"');",
+        "assert.deepEqual(convert(501), \"DI\", '<code>convert(501)</code> should return \"DI\"');",
+        "assert.deepEqual(convert(649), \"DCXLIX\", '<code>convert(649)</code> should return \"DCXLIX\"');",
+        "assert.deepEqual(convert(798), \"DCCXCVIII\", '<code>convert(798)</code> should return \"DCCXCVIII\"');",
+        "assert.deepEqual(convert(891), \"DCCCXCI\", '<code>convert(891)</code> should return \"DCCCXCI\"');",
+        "assert.deepEqual(convert(1000), \"M\", '<code>convert(1000)</code> should return \"M\"');",
+        "assert.deepEqual(convert(1004), \"MIV\", '<code>convert(1004)</code> should return \"MIV\"');",
+        "assert.deepEqual(convert(1006), \"MVI\", '<code>convert(1006)</code> should return \"MVI\"');"
       ],
-      "difficulty": "2.02",
       "description": [
         "Convert the given number into a roman numeral.",
         "All <a href=\"http://www.mathsisfun.com/roman-numerals.html\" target=\"_blank\">roman numerals</a> answers should be provided in upper-case.",
@@ -113,9 +132,56 @@
         "convert(36);"
       ],
       "MDNlinks": [
+        "Roman Numerals",
         "Array.splice()",
         "Array.indexOf()",
         "Array.join()"
+      ],
+      "solutions": [
+        "function convert(num) {\n  var ref = [['M', 1000], ['CM', 900], ['D', 500], ['CD', 400], ['C', 100], ['XC', 90], ['L', 50], ['XL', 40], ['X', 10], ['IX', 9], ['V', 5], ['IV', 4], ['I', 1]];\n  var res = [];\n  ref.forEach(function(p) {\n    while (num >= p[1]) {\n      res.push(p[0]);\n      num -= p[1];\n    }\n  });\n  return res.join('');\n}\n\nconvert(36);\n"
+      ],
+      "type": "bonfire",
+      "challengeType": 5,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
+    },
+    {
+      "id": "a8e512fbe388ac2f9198f0fa",
+      "title": "Where art thou",
+      "description": [
+        "Make a function that looks through an array of objects (first argument) and returns an array of all objects that have matching property and value pairs (second argument). Each property and value pair of the source object has to be present in the object from the collection if it is to be included in the returned array.",
+        "For example, if the first argument is <code>[{ first: \"Romeo\", last: \"Montague\" }, { first: \"Mercutio\", last: null }, { first: \"Tybalt\", last: \"Capulet\" }]</code>, and the second argument is <code>{ last: \"Capulet\" }</code>, then you must return the third object from the array (the first argument), because it contains the property and it's value, that was passed on as the second argument.",
+        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Write your own code."
+      ],
+      "challengeSeed": [
+        "function where(collection, source) {",
+        "  var arr = [];",
+        "  // What's in a name?",
+        "  return arr;",
+        "}",
+        "",
+        "where([{ first: \"Romeo\", last: \"Montague\" }, { first: \"Mercutio\", last: null }, { first: \"Tybalt\", last: \"Capulet\" }], { last: \"Capulet\" });"
+      ],
+      "tests": [
+        "assert.deepEqual(where([{ first: \"Romeo\", last: \"Montague\" }, { first: \"Mercutio\", last: null }, { first: \"Tybalt\", last: \"Capulet\" }], { last: \"Capulet\" }), [{ first: \"Tybalt\", last: \"Capulet\" }], 'message: <code>where([{ first: \"Romeo\", last: \"Montague\" }, { first: \"Mercutio\", last: null }, { first: \"Tybalt\", last: \"Capulet\" }], { last: \"Capulet\" })</code> should return <code>[{ first: \"Tybalt\", last: \"Capulet\" }]</code>.');",
+        "assert.deepEqual(where([{ \"a\": 1 }, { \"a\": 1 }, { \"a\": 1, \"b\": 2 }], { \"a\": 1 }), [{ \"a\": 1 }, { \"a\": 1 }, { \"a\": 1, \"b\": 2 }], 'message: <code>where([{ \"a\": 1 }, { \"a\": 1 }, { \"a\": 1, \"b\": 2 }], { \"a\": 1 })</code> should return <code>[{ \"a\": 1 }, { \"a\": 1 }, { \"a\": 1, \"b\": 2 }]</code>.');",
+        "assert.deepEqual(where([{ \"a\": 1, \"b\": 2 }, { \"a\": 1 }, { \"a\": 1, \"b\": 2, \"c\": 2 }], { \"a\": 1, \"b\": 2 }), [{ \"a\": 1, \"b\": 2 }, { \"a\": 1, \"b\": 2, \"c\": 2 }], 'message: <code>where([{ \"a\": 1, \"b\": 2 }, { \"a\": 1 }, { \"a\": 1, \"b\": 2, \"c\": 2 }], { \"a\": 1, \"b\": 2 })</code> should return <code>[{ \"a\": 1, \"b\": 2 }, { \"a\": 1, \"b\": 2, \"c\": 2 }]</code>.');"
+      ],
+      "MDNlinks": [
+        "Global Object",
+        "Object.hasOwnProperty()",
+        "Object.keys()"
+      ],
+      "solutions": [
+        "function where(collection, source) {\n  var arr = [];\n  var keys = Object.keys(source);\n  collection.forEach(function(e) {\n    if(keys.every(function(key) {return e[key] === source[key];})) {\n      arr.push(e);  \n    }\n  });\n  return arr;\n}\n\nwhere([{ first: 'Romeo', last: 'Montague' }, { first: 'Mercutio', last: null }, { first: 'Tybalt', last: 'Capulet' }], { last: 'Capulet' });\n"
       ],
       "type": "bonfire",
       "challengeType": 5,
@@ -134,32 +200,34 @@
       "id": "a0b5010f579e69b815e7c5d6",
       "title": "Search and Replace",
       "tests": [
-        "expect(replace(\"Let us go to the store\", \"store\", \"mall\")).to.equal(\"Let us go to the mall\");",
-        "expect(replace(\"He is Sleeping on the couch\", \"Sleeping\", \"sitting\")).to.equal(\"He is Sitting on the couch\");",
-        "expect(replace(\"This has a spellngi error\", \"spellngi\", \"spelling\")).to.equal(\"This has a spelling error\");",
-        "expect(replace(\"His name is Tom\", \"Tom\", \"john\")).to.equal(\"His name is John\");",
-        "expect(replace(\"Let us get back to more Coding\", \"Coding\", \"bonfires\")).to.equal(\"Let us get back to more Bonfires\");"
+        "assert.deepEqual(myReplace(\"Let us go to the store\", \"store\", \"mall\"), \"Let us go to the mall\", 'message: <code>myReplace(\"Let us go to the store\", \"store\", \"mall\")</code> should return \"Let us go to the mall\".');",
+        "assert.deepEqual(myReplace(\"He is Sleeping on the couch\", \"Sleeping\", \"sitting\"), \"He is Sitting on the couch\", 'message: <code>myReplace(\"He is Sleeping on the couch\", \"Sleeping\", \"sitting\")</code> should return \"He is Sitting on the couch\".');",
+        "assert.deepEqual(myReplace(\"This has a spellngi error\", \"spellngi\", \"spelling\"), \"This has a spelling error\", 'message: <code>myReplace(\"This has a spellngi error\", \"spellngi\", \"spelling\")</code> should return \"This has a spelling error\".');",
+        "assert.deepEqual(myReplace(\"His name is Tom\", \"Tom\", \"john\"), \"His name is John\", 'message: <code>myReplace(\"His name is Tom\", \"Tom\", \"john\")</code> should return \"His name is John\".');",
+        "assert.deepEqual(myReplace(\"Let us get back to more Coding\", \"Coding\", \"bonfires\"), \"Let us get back to more Bonfires\", 'message: <code>myReplace(\"Let us get back to more Coding\", \"Coding\", \"bonfires\")</code> should return \"Let us get back to more Bonfires\".');"
       ],
-      "difficulty": "2.03",
       "description": [
         "Perform a search and replace on the sentence using the arguments provided and return the new sentence.",
         "First argument is the sentence to perform the search and replace on.",
         "Second argument is the word that you will be replacing (before).",
         "Third argument is what you will be replacing the second argument with (after).",
-        "NOTE: Preserve the case of the original word when you are replacing it. For example if you mean to replace the word 'Book' with the word 'dog', it should be replaced as 'Dog'",
+        "NOTE: Preserve the case of the original word when you are replacing it. For example if you mean to replace the word \"Book\" with the word \"dog\", it should be replaced as \"Dog\"",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "challengeSeed": [
-        "function replace(str, before, after) {",
+        "function myReplace(str, before, after) {",
         " return str;",
         "}",
         "",
-        "replace(\"A quick brown fox jumped over the lazy dog\", \"jumped\", \"leaped\");"
+        "myReplace(\"A quick brown fox jumped over the lazy dog\", \"jumped\", \"leaped\");"
       ],
       "MDNlinks": [
         "Array.splice()",
         "String.replace()",
         "Array.join()"
+      ],
+      "solutions": [
+        "function replace(str, before, after) {\n  if (before.charAt(0) === before.charAt(0).toUpperCase()) {\n    after = after.charAt(0).toUpperCase() + after.substring(1);\n  } else {\n    after = after.charAt(0).toLowerCase() + after.substring(1);\n  }\n  return str.replace(before, after);\n}\n\nreplace(\"A quick brown fox jumped over the lazy dog\", \"jumped\", \"leaped\");\n"
       ],
       "type": "bonfire",
       "challengeType": 5,
@@ -178,13 +246,12 @@
       "id": "aa7697ea2477d1316795783b",
       "title": "Pig Latin",
       "tests": [
-        "expect(translate(\"california\")).to.equal(\"aliforniacay\");",
-        "expect(translate(\"paragraphs\")).to.equal(\"aragraphspay\");",
-        "expect(translate(\"glove\")).to.equal(\"oveglay\");",
-        "expect(translate(\"algorithm\")).to.equal(\"algorithmway\");",
-        "expect(translate(\"eight\")).to.equal(\"eightway\");"
+        "assert.deepEqual(translate(\"california\"), \"aliforniacay\", 'message: <code>translate(\"california\")</code> should return \"aliforniacay\".');",
+        "assert.deepEqual(translate(\"paragraphs\"), \"aragraphspay\", 'message: <code>translate(\"paragraphs\")</code> should return \"aragraphspay\".');",
+        "assert.deepEqual(translate(\"glove\"), \"oveglay\", 'message: <code>translate(\"glove\")</code> should return \"oveglay\".');",
+        "assert.deepEqual(translate(\"algorithm\"), \"algorithmway\", 'message: <code>translate(\"algorithm\")</code> should return \"algorithmway\".');",
+        "assert.deepEqual(translate(\"eight\"), \"eightway\", 'message: <code>translate(\"eight\")</code> should return \"eightway\".');"
       ],
-      "difficulty": "2.04",
       "description": [
         "Translate the provided string to pig latin.",
         "<a href=\"http://en.wikipedia.org/wiki/Pig_Latin\" target=\"_blank\">Pig Latin</a> takes the first consonant (or consonant cluster) of an English word, moves it to the end of the word and suffixes an \"ay\".",
@@ -205,6 +272,9 @@
         "String.substr()",
         "String.split()"
       ],
+      "solutions": [
+        "function translate(str) {\n  if (isVowel(str.charAt(0))) return str + \"way\";\n  var front = [];\n  str = str.split('');\n  while (str.length && !isVowel(str[0])) {\n    front.push(str.shift());\n  }\n  return [].concat(str, front).join('') + 'ay';\n}\n\nfunction isVowel(c) {\n  return ['a', 'e', 'i', 'o', 'u'].indexOf(c.toLowerCase()) !== -1;\n}\n\ntranslate(\"consonant\");\n"
+      ],
       "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
@@ -222,17 +292,16 @@
       "id": "afd15382cdfb22c9efe8b7de",
       "title": "DNA Pairing",
       "tests": [
-        "assert.deepEqual(pair(\"ATCGA\"),[['A','T'],['T','A'],['C','G'],['G','C'],['A','T']], 'should return the dna pair');",
-        "assert.deepEqual(pair(\"TTGAG\"),[['T','A'],['T','A'],['G','C'],['A','T'],['G','C']], 'should return the dna pair');",
-        "assert.deepEqual(pair(\"CTCTA\"),[['C','G'],['T','A'],['C','G'],['T','A'],['A','T']], 'should return the dna pair');"
+        "assert.deepEqual(pair(\"ATCGA\"),[[\"A\",\"T\"],[\"T\",\"A\"],[\"C\",\"G\"],[\"G\",\"C\"],[\"A\",\"T\"]], 'message: <code>pair(\"ATCGA\")</code> should return <code>[[\"A\",\"T\"],[\"T\",\"A\"],[\"C\",\"G\"],[\"G\",\"C\"],[\"A\",\"T\"]]</code>.');",
+        "assert.deepEqual(pair(\"TTGAG\"),[[\"T\",\"A\"],[\"T\",\"A\"],[\"G\",\"C\"],[\"A\",\"T\"],[\"G\",\"C\"]], 'message: <code>pair(\"TTGAG\")</code> should return <code>[[\"T\",\"A\"],[\"T\",\"A\"],[\"G\",\"C\"],[\"A\",\"T\"],[\"G\",\"C\"]]</code>.');",
+        "assert.deepEqual(pair(\"CTCTA\"),[[\"C\",\"G\"],[\"T\",\"A\"],[\"C\",\"G\"],[\"T\",\"A\"],[\"A\",\"T\"]], 'message: <code>pair(\"CTCTA\")</code> should return <code>[[\"C\",\"G\"],[\"T\",\"A\"],[\"C\",\"G\"],[\"T\",\"A\"],[\"A\",\"T\"]]</code>.');"
       ],
-      "difficulty": "2.05",
       "description": [
         "The DNA strand is missing the pairing element. Take each character, get its pair, and return the results as a 2d array.",
         "<a href=\"http://en.wikipedia.org/wiki/Base_pair\" target=\"_blank\">Base pairs</a> are a pair of AT and CG. Match the missing element to the provided character.",
         "Return the provided character as the first element in each array.",
-        "For example, for the input GCG, return [['G', 'C'], ['C','G'],['G', 'C']]",
-        "The charater and its pair are paired up in an array, and all the arrays are grouped into one encapsulating array.",
+        "For example, for the input GCG, return [[\"G\", \"C\"], [\"C\",\"G\"],[\"G\", \"C\"]]",
+        "The character and its pair are paired up in an array, and all the arrays are grouped into one encapsulating array.",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "challengeSeed": [
@@ -245,6 +314,9 @@
       "MDNlinks": [
         "Array.push()",
         "String.split()"
+      ],
+      "solutions": [
+        "var lookup = Object.create(null);\nlookup.A = 'T';\nlookup.T = 'A';\nlookup.C = 'G';\nlookup.G = 'C';\n\nfunction pair(str) {\n return str.split('').map(function(p) {return [p, lookup[p]];});\n}\n\npair(\"GCG\");\n"
       ],
       "type": "bonfire",
       "challengeType": 5,
@@ -262,7 +334,6 @@
     {
       "id": "af7588ade1100bde429baf20",
       "title": "Missing letters",
-      "difficulty": "2.05",
       "description": [
         "Find the missing letter in the passed letter range and return it.",
         "If all letters are present in the range, return undefined.",
@@ -273,17 +344,20 @@
         "  return str;",
         "}",
         "",
-        "fearNotLetter('abce');"
+        "fearNotLetter(\"abce\");"
       ],
       "tests": [
-        "expect(fearNotLetter('abce')).to.equal('d');",
-        "expect(fearNotLetter('bcd')).to.be.undefined;",
-        "expect(fearNotLetter('abcdefghjklmno')).to.equal('i');",
-        "expect(fearNotLetter('yz')).to.be.undefined;"
+        "assert.deepEqual(fearNotLetter(\"abce\"), \"d\", 'message: <code>fearNotLetter(\"abce\")</code> should return \"d\".');",
+        "assert.deepEqual(fearNotLetter(\"abcdefghjklmno\"), \"i\", 'message: <code>fearNotLetter(\"abcdefghjklmno\")</code> should return \"i\".');",
+        "assert.isUndefined(fearNotLetter(\"bcd\"), 'message: <code>fearNotLetter(\"bcd\")</code> should return undefined.');",
+        "assert.isUndefined(fearNotLetter(\"yz\"), 'message: <code>fearNotLetter(\"yz\")</code> should return undefined.');"
       ],
       "MDNlinks": [
         "String.charCodeAt()",
         "String.fromCharCode()"
+      ],
+      "solutions": [
+        "function fearNotLetter(str) {\n  var s = str.split('').map(function(c) {return c.charCodeAt(0);});\n  for (var i = 1; i < s.length; i++) {\n    if (s[i]-1 != s[i-1]) {\n      return String.fromCharCode(s[i]-1);\n    }\n  }\n}\n\nfearNotLetter('abce');\n"
       ],
       "type": "bonfire",
       "challengeType": 5,
@@ -301,7 +375,6 @@
     {
       "id": "a77dbc43c33f39daa4429b4f",
       "title": "Boo who",
-      "difficulty": "2.06",
       "description": [
         "Check if a value is classified as a boolean primitive. Return true or false.",
         "Boolean primitives are true and false.",
@@ -316,17 +389,20 @@
         "boo(null);"
       ],
       "tests": [
-        "assert.strictEqual(boo(true), true);",
-        "assert.strictEqual(boo(false), true);",
-        "assert.strictEqual(boo([1, 2, 3]), false);",
-        "assert.strictEqual(boo([].slice), false);",
-        "assert.strictEqual(boo({ 'a': 1 }), false);",
-        "assert.strictEqual(boo(1), false);",
-        "assert.strictEqual(boo(NaN), false);",
-        "assert.strictEqual(boo('a'), false);"
+        "assert.strictEqual(boo(true), true, 'message: <code>boo(true)</code> should return true.');",
+        "assert.strictEqual(boo(false), true, 'message: <code>boo(false)</code> should return true.');",
+        "assert.strictEqual(boo([1, 2, 3]), false, 'message: <code>boo([1, 2, 3])</code> should return false.');",
+        "assert.strictEqual(boo([].slice), false, 'message: <code>boo([].slice)</code> should return false.');",
+        "assert.strictEqual(boo({ \"a\": 1 }), false, 'message: <code>boo({ \"a\": 1 })</code> should return false.');",
+        "assert.strictEqual(boo(1), false, 'message: <code>boo(1)</code> should return false.');",
+        "assert.strictEqual(boo(NaN), false, 'message: <code>boo(NaN)</code> should return false.');",
+        "assert.strictEqual(boo(\"a\"), false, 'message: <code>boo(\"a\")</code> should return false.');"
       ],
       "MDNlinks": [
         "Boolean Objects"
+      ],
+      "solutions": [
+        "function boo(bool) {\n  // What is the new fad diet for ghost developers? The Boolean.\n  return typeof(bool) === \"boolean\";\n}\n\nboo(null);\n"
       ],
       "type": "bonfire",
       "challengeType": 5,
@@ -344,7 +420,6 @@
     {
       "id": "a105e963526e7de52b219be9",
       "title": "Sorted Union",
-      "difficulty": "2.07",
       "description": [
         "Write a function that takes two or more arrays and returns a new array of unique values in the order of the original provided arrays.",
         "In other words, all values present from all arrays should be included in their original order, but with no duplicates in the final array.",
@@ -360,14 +435,17 @@
         "unite([1, 3, 2], [5, 2, 1, 4], [2, 1]);"
       ],
       "tests": [
-        "assert.deepEqual(unite([1, 3, 2], [5, 2, 1, 4], [2, 1]), [1, 3, 2, 5, 4], 'should return the union of the given arrays');",
-        "assert.deepEqual(unite([1, 3, 2], [1, [5]], [2, [4]]), [1, 3, 2, [5], [4]], 'should not flatten nested arrays');",
-        "assert.deepEqual(unite([1, 2, 3], [5, 2, 1]), [1, 2, 3, 5], 'should correctly handle exactly two arguments');",
-        "assert.deepEqual(unite([1, 2, 3], [5, 2, 1, 4], [2, 1], [6, 7, 8]), [ 1, 2, 3, 5, 4, 6, 7, 8 ], 'should correctly handle higher numbers of arguments');"
+        "assert.deepEqual(unite([1, 3, 2], [5, 2, 1, 4], [2, 1]), [1, 3, 2, 5, 4], 'message: <code>unite([1, 3, 2], [5, 2, 1, 4], [2, 1])</code> should return <code>[1, 3, 2, 5, 4]</code>.');",
+        "assert.deepEqual(unite([1, 3, 2], [1, [5]], [2, [4]]), [1, 3, 2, [5], [4]], 'message: <code>unite([1, 3, 2], [1, [5]], [2, [4]])</code> should return <code>[1, 3, 2, [5], [4]]</code>.');",
+        "assert.deepEqual(unite([1, 2, 3], [5, 2, 1]), [1, 2, 3, 5], 'message: <code>unite([1, 2, 3], [5, 2, 1])</code> should return <code>[1, 2, 3, 5]</code>.');",
+        "assert.deepEqual(unite([1, 2, 3], [5, 2, 1, 4], [2, 1], [6, 7, 8]), [1, 2, 3, 5, 4, 6, 7, 8], 'message: <code>unite([1, 2, 3], [5, 2, 1, 4], [2, 1], [6, 7, 8])</code> should return <code>[1, 2, 3, 5, 4, 6, 7, 8]</code>.');"
       ],
       "MDNlinks": [
         "Arguments object",
         "Array.reduce()"
+      ],
+      "solutions": [
+        "function unite(arr1, arr2, arr3) {\n  return [].slice.call(arguments).reduce(function(a, b) {\n    return [].concat(a, b.filter(function(e) {return a.indexOf(e) === -1;}));\n  }, []);\n}\n\nunite([1, 2, 3], [5, 2, 1, 4], [2, 1]);\n"
       ],
       "type": "bonfire",
       "challengeType": 5,
@@ -385,7 +463,6 @@
     {
       "id": "a6b0bb188d873cb2c8729495",
       "title": "Convert HTML Entities",
-      "difficulty": "2.07",
       "description": [
         "Convert the characters \"&\", \"<\", \">\", '\"' (double quote), and \"'\" (apostrophe), in a string to their corresponding HTML entities.",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
@@ -396,20 +473,23 @@
         "  return str;",
         "}",
         "",
-        "convert('Dolce & Gabbana');"
+        "convert(\"Dolce & Gabbana\");"
       ],
       "tests": [
-        "assert.match(convert('Dolce & Gabbana'), /Dolce &(amp|AMP|#x00026|#38); Gabbana/, 'should escape characters');",
-        "assert.match(convert('Hamburgers < Pizza < Tacos'), /Hamburgers &(lt|LT|#x0003C|#60); Pizza &(lt|LT|#x0003C|#60); Tacos/, 'should escape characters');",
-        "assert.match(convert('Sixty > twelve'), /Sixty &(gt|GT|#x0003E|#62); twelve/, 'should escape characters');",
-        "assert.match(convert('Stuff in \"quotation marks\"'), /Stuff in &(quot|QUOT|#x00022|#34);quotation marks&(quot|QUOT|#x00022|#34);/, 'should escape characters');",
-        "assert.match(convert(\"Shindler's List\"), /Shindler&(apos|#x00027|#39);s List/, 'should escape characters');",
-        "assert.match(convert('<>'), /&(lt|LT|#x0003C|#60);&(gt|GT|#x0003E|#62);/, 'should escape characters');",
-        "assert.strictEqual(convert('abc'), 'abc', 'should handle strings with nothing to escape');"
+        "assert.match(convert(\"Dolce & Gabbana\"), /Dolce &amp; Gabbana/, 'message: <code>convert(\"Dolce & Gabbana\")</code> should return <code>Dolce &&#8203;amp; Gabbana</code>.');",
+        "assert.match(convert(\"Hamburgers < Pizza < Tacos\"), /Hamburgers &lt; Pizza &lt; Tacos/, 'message: <code>convert(\"Hamburgers < Pizza < Tacos\")</code> should return <code>Hamburgers &&#8203;lt; Pizza &&#8203;lt; Tacos</code>.');",
+        "assert.match(convert(\"Sixty > twelve\"), /Sixty &gt; twelve/, 'message: <code>convert(\"Sixty > twelve\")</code> should return <code>Sixty &&#8203;gt; twelve</code>.');",
+        "assert.match(convert('Stuff in \"quotation marks\"'), /Stuff in &quot;quotation marks&quot;/, 'message: <code>convert(&apos;Stuff in \"quotation marks\"&apos;)</code> should return <code>Stuff in &&#8203;quot;quotation marks&&#8203;quot;</code>.');",
+        "assert.match(convert(\"Shindler's List\"), /Shindler&apos;s List/, 'message: <code>convert(\"Shindler&apos;s List\")</code> should return <code>Shindler&&#8203;apos;s List</code>.');",
+        "assert.match(convert('<>'), /&lt;&gt;/, 'message: <code>convert(\"<>\")</code> should return <code>&&#8203;lt;&&#8203;gt;</code>.');",
+        "assert.strictEqual(convert('abc'), 'abc', 'message: <code>convert(\"abc\")</code> should return <code>abc</code>.');"
       ],
       "MDNlinks": [
         "RegExp",
         "HTML Entities"
+      ],
+      "solutions": [
+        "var MAP = { '&': '&amp;',\n            '<': '&lt;',\n            '>': '&gt;',\n            '\"': '&quot;',\n            \"'\": '&apos;'};\n\nfunction convert(str) {\n  return str.replace(/[&<>\"']/g, function(c) {\n    return MAP[c];\n  });\n}\n\nconvert('Dolce & Gabbana');\n"
       ],
       "type": "bonfire",
       "challengeType": 5,
@@ -427,7 +507,6 @@
     {
       "id": "a103376db3ba46b2d50db289",
       "title": "Spinal Tap Case",
-      "difficulty": "2.08",
       "description": [
         "Convert a string to spinal case. Spinal case is all-lowercase-words-joined-by-dashes.",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
@@ -442,14 +521,17 @@
         "spinalCase('This Is Spinal Tap');"
       ],
       "tests": [
-        "assert.strictEqual(spinalCase('This Is Spinal Tap'), 'this-is-spinal-tap', 'should return spinal case from string with spaces');",
-        "assert.strictEqual(spinalCase('thisIsSpinalTap'), 'this-is-spinal-tap', 'should return spinal case from string with camel case');",
-        "assert.strictEqual(spinalCase('The_Andy_Griffith_Show'), 'the-andy-griffith-show', 'should return spinal case from string with snake case');",
-        "assert.strictEqual(spinalCase('Teletubbies say Eh-oh'), 'teletubbies-say-eh-oh', 'should return spinal case from string with spaces and hyphens');"
+        "assert.deepEqual(spinalCase(\"This Is Spinal Tap\"), \"this-is-spinal-tap\", 'message: <code>spinalCase(\"This Is Spinal Tap\")</code> should return <code>\"this-is-spinal-tap\"</code>.');",
+        "assert.strictEqual(spinalCase('thisIsSpinalTap'), \"this-is-spinal-tap\", 'message: <code>spinalCase(\"thisIsSpinalTap\")</code> should return <code>\"this-is-spinal-tap\"</code>.');",
+        "assert.strictEqual(spinalCase(\"The_Andy_Griffith_Show\"), \"the-andy-griffith-show\", 'message: <code>spinalCase(\"The_Andy_Griffith_Show\")</code> should return <code>\"the-andy-griffith-show\"</code>.');",
+        "assert.strictEqual(spinalCase(\"Teletubbies say Eh-oh\"), \"teletubbies-say-eh-oh\", 'message: <code>spinalCase(\"Teletubbies say Eh-oh\")</code> should return <code>\"teletubbies-say-eh-oh\"</code>.');"
       ],
       "MDNlinks": [
         "RegExp",
         "String.replace()"
+      ],
+      "solutions": [
+        "function spinalCase(str) {\n  // \"It's such a fine line between stupid, and clever.\"\n  // --David St. Hubbins\n  str = str.replace(/([a-z](?=[A-Z]))/g, '$1 ');\n  return str.toLowerCase().replace(/\\ |\\_/g, '-');\n}\n\nspinalCase('This Is Spinal Tap');\n"
       ],
       "type": "bonfire",
       "challengeType": 5,
@@ -467,7 +549,6 @@
     {
       "id": "a5229172f011153519423690",
       "title": "Sum All Odd Fibonacci Numbers",
-      "difficulty": "2.09",
       "description": [
         "Return the sum of all odd Fibonacci numbers up to and including the passed number if it is a Fibonacci number.",
         "The first few numbers of the Fibonacci sequence are 1, 1, 2, 3, 5 and 8, and each subsequent number is the sum of the previous two numbers.",
@@ -482,15 +563,18 @@
         "sumFibs(4);"
       ],
       "tests": [
-        "expect(sumFibs(1)).to.be.a('number');",
-        "expect(sumFibs(1000)).to.equal(1785);",
-        "expect(sumFibs(4000000)).to.equal(4613732);",
-        "expect(sumFibs(4)).to.equal(5);",
-        "expect(sumFibs(75024)).to.equal(60696);",
-        "expect(sumFibs(75025)).to.equal(135721);"
+        "assert(typeof(sumFibs(1)) === \"number\", 'message: <code>sumFibs(1)</code> should return a number.');",
+        "assert.deepEqual(sumFibs(1000), 1785, 'message: <code>sumFibs(1000)</code> should return 1785.');",
+        "assert.deepEqual(sumFibs(4000000), 4613732, 'message: <code>sumFibs(4000000)</code> should return 4613732.');",
+        "assert.deepEqual(sumFibs(4), 5, 'message: <code>sumFibs(4)</code> should return 5.');",
+        "assert.deepEqual(sumFibs(75024), 60696, 'message: <code>sumFibs(75024)</code> should return 60696.');",
+        "assert.deepEqual(sumFibs(75025), 135721, 'message: <code>sumFibs(75025)</code> should return 135721.');"
       ],
       "MDNlinks": [
         "Remainder"
+      ],
+      "solutions": [
+        "function sumFibs(num) {\n  var a = 1; \n  var b = 1;\n  var s = 0;\n  while (a <= num) {\n    if (a % 2 !== 0) {   \n      s += a; \n    }\n    a = [b, b=b+a][0];\n  }\n  return s;\n}\n\nsumFibs(4);\n"
       ],
       "type": "bonfire",
       "challengeType": 5,
@@ -508,7 +592,6 @@
     {
       "id": "a3bfc1673c0526e06d3ac698",
       "title": "Sum All Primes",
-      "difficulty": "2.10",
       "description": [
         "Sum all the prime numbers up to and including the provided number.",
         "A prime number is defined as having only two divisors, 1 and itself. For example, 2 is a prime number because it's only divisible by 1 and 2. 1 isn't a prime number, because it's only divisible by itself.",
@@ -523,13 +606,16 @@
         "sumPrimes(10);"
       ],
       "tests": [
-        "expect(sumPrimes(10)).to.be.a('number');",
-        "expect(sumPrimes(10)).to.equal(17);",
-        "expect(sumPrimes(977)).to.equal(73156);"
+        "assert.deepEqual(typeof(sumPrimes(10)), \"number\", 'message: <code>sumPrimes()</code> should return a number.');",
+        "assert.deepEqual(sumPrimes(10), 17, 'message: <code>sumPrimes(10)</code> should return 17.');",
+        "assert.deepEqual(sumPrimes(977), 73156, 'message: <code>sumPrimes(977)</code> should return 73156.');"
       ],
       "MDNlinks": [
         "For Loops",
         "Array.push()"
+      ],
+      "solutions": [
+        "function eratosthenesArray(n) {\n    var primes = [];\n    if (n > 2) {\n        var half = n>>1;\n        var sieve = Array(half);\n        for (var i = 1, limit = Math.sqrt(n)>>1; i <= limit; i++) {\n            if (!sieve[i]) {\n                for (var step = 2*i+1, j = (step*step)>>1; j < half; j+=step) {\n                    sieve[j] = true;\n                }\n            }\n        }\n        primes.push(2);\n        for (var p = 1; p < half; p++) {\n            if (!sieve[p]) primes.push(2*p+1);\n        }\n    }\n    return primes;\n}\n\nfunction sumPrimes(num) {\n  return eratosthenesArray(num+1).reduce(function(a,b) {return a+b;}, 0);\n}\n\nsumPrimes(10);\n"
       ],
       "type": "bonfire",
       "challengeType": 5,
@@ -547,11 +633,10 @@
     {
       "id": "ae9defd7acaf69703ab432ea",
       "title": "Smallest Common Multiple",
-      "difficulty": "2.11",
       "description": [
-        "Find the smallest number that is evenly divisible by all numbers in the provided range.",
-        "In other words, given the range [3,7], you will need to find the least common multiple of 3, 4, 5, 6, and 7.",
+        "Find the smallest common multiple of the provided parameters that can be evenly divided by both, as well as by all sequential numbers in the range between these parameters.",
         "The range will be an array of two numbers that will not necessarily be in numerical order.",
+        "e.g. for 1 and 3 - find the smallest common multiple of both 1 and 3 that is evenly divisible by all numbers <em>between</em> 1 and 3.",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "challengeSeed": [
@@ -563,13 +648,16 @@
         "smallestCommons([1,5]);"
       ],
       "tests": [
-        "expect(smallestCommons([1,5])).to.be.a('number');",
-        "expect(smallestCommons([1,5])).to.equal(60);",
-        "expect(smallestCommons([5,1])).to.equal(60);",
-        "expect(smallestCommons([1,13])).to.equal(360360);"
+        "assert.deepEqual(typeof(smallestCommons([1, 5])), \"number\", 'message: <code>smallestCommons()</code> should return a number.');",
+        "assert.deepEqual(smallestCommons([1, 5]), 60, 'message: <code>smallestCommons([1, 5])</code> should return 60.');",
+        "assert.deepEqual(smallestCommons([5, 1]), 60, 'message: <code>smallestCommons([5, 1])</code> should return 60.');",
+        "assert.deepEqual(smallestCommons([1, 13]), 360360, 'message: <code>smallestCommons([1, 13])</code> should return 360360.');"
       ],
       "MDNlinks": [
         "Smallest Common Multiple"
+      ],
+      "solutions": [
+        "function gcd(a, b) {\n    while (b !== 0) {\n        a = [b, b = a % b][0];\n    }\n    return a;\n}\n\nfunction lcm(a, b) {\n    return (a * b) / gcd(a, b);\n}\n\nfunction smallestCommons(arr) {\n  arr.sort(function(a,b) {return a-b;});\n  var rng = [];\n  for (var i = arr[0]; i <= arr[1]; i++) {\n    rng.push(i);\n  }\n  return rng.reduce(lcm);\n}\n\n\nsmallestCommons([1,5]);\n"
       ],
       "type": "bonfire",
       "challengeType": 5,
@@ -587,7 +675,6 @@
     {
       "id": "a6e40f1041b06c996f7b2406",
       "title": "Finders Keepers",
-      "difficulty": "2.12",
       "description": [
         "Create a function that looks through an array (first argument) and returns the first element in the array that passes a truth test (second argument).",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
@@ -601,11 +688,14 @@
         "find([1, 2, 3, 4], function(num){ return num % 2 === 0; });"
       ],
       "tests": [
-        "assert.strictEqual(find([1, 3, 5, 8, 9, 10], function(num) { return num % 2 === 0; }), 8, 'should return first found value');",
-        "assert.strictEqual(find([1, 3, 5, 9], function(num) { return num % 2 === 0; }), undefined, 'should return undefined if not found');"
+        "assert.strictEqual(find([1, 3, 5, 8, 9, 10], function(num) { return num % 2 === 0; }), 8, 'message: <code>find([1, 3, 5, 8, 9, 10], function(num) { return num % 2 === 0; })</code> should return 8.');",
+        "assert.strictEqual(find([1, 3, 5, 9], function(num) { return num % 2 === 0; }), undefined, 'message: <code>find([1, 3, 5, 9], function(num) { return num % 2 === 0; })</code> should return undefined.');"
       ],
       "MDNlinks": [
-        "Array.some()"
+        "Array.filter()"
+      ],
+      "solutions": [
+        "function find(arr, func) {\n  var num;\n  arr.some(function(e) {\n    if (func(e)) {\n      num = e;\n      return true;\n    }\n  });\n  return num;\n}\n\nfind([1, 2, 3, 4], function(num){ return num % 2 === 0; });\n"
       ],
       "type": "bonfire",
       "challengeType": 5,
@@ -623,7 +713,6 @@
     {
       "id": "a5deed1811a43193f9f1c841",
       "title": "Drop it",
-      "difficulty": "2.13",
       "description": [
         "Drop the elements of an array (first argument), starting from the front, until the predicate (second argument) returns true.",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
@@ -637,13 +726,17 @@
         "drop([1, 2, 3], function(n) {return n < 3; });"
       ],
       "tests": [
-        "expect(drop([1, 2, 3, 4], function(n) {return n >= 3; })).to.eqls([3, 4]);",
-        "expect(drop([1, 2, 3], function(n) {return n > 0; })).to.eqls([1, 2, 3]);",
-        "expect(drop([1, 2, 3, 4], function(n) {return n > 5; })).to.eqls([]);"
+        "assert.deepEqual(drop([1, 2, 3, 4], function(n) {return n>= 3;}), [3, 4], 'message: <code>drop([1, 2, 3, 4], function(n) {return n >= 3;})</code> should return <code>[3, 4]</code>.');",
+        "assert.deepEqual(drop([1, 2, 3], function(n) {return n > 0; }), [1, 2, 3], 'message: <code>drop([1, 2, 3], function(n) {return n > 0; })</code> should return <code>[1, 2, 3]</code>.');",
+        "assert.deepEqual(drop([1, 2, 3, 4], function(n) {return n > 5;}), [], 'message: <code>drop([1, 2, 3, 4], function(n) {return n > 5;})</code> should return <code>[]</code>.');",
+        "assert.deepEqual(drop([1, 2, 3, 7, 4], function(n) {return n > 3}), [7, 4], 'message: <code>drop([1, 2, 3, 7, 4], function(n) {return n > 3})</code> should return <code>[7, 4]</code>.');"
       ],
       "MDNlinks": [
         "Arguments object",
         "Array.shift()"
+      ],
+      "solutions": [
+        "(function drop(arr, func) {\n  // Drop them elements.\n  while (arr.length && !func(arr[0])) {\n    arr.shift();\n  }\n  return arr;\n}\n\ndrop([1, 2, 3], function(n) {return n < 3; });\n)"
       ],
       "type": "bonfire",
       "challengeType": 5,
@@ -661,7 +754,6 @@
     {
       "id": "ab306dbdcc907c7ddfc30830",
       "title": "Steamroller",
-      "difficulty": "2.14",
       "description": [
         "Flatten a nested array. You must account for varying levels of nesting.",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
@@ -675,13 +767,16 @@
         "steamroller([1, [2], [3, [[4]]]]);"
       ],
       "tests": [
-        "assert.deepEqual(steamroller([[['a']], [['b']]]), ['a', 'b'], 'should flatten nested arrays');",
-        "assert.deepEqual(steamroller([1, [2], [3, [[4]]]]), [1, 2, 3, 4], 'should flatten nested arrays');",
-        "assert.deepEqual(steamroller([1, [], [3, [[4]]]]), [1, 3, 4], 'should work with empty arrays');",
-        "assert.deepEqual(steamroller([1, {}, [3, [[4]]]]), [1, {}, 3, 4], 'should work with actual objects');"
+        "assert.deepEqual(steamroller([[[\"a\"]], [[\"b\"]]]), [\"a\", \"b\"], 'message: <code>steamroller([[[\"a\"]], [[\"b\"]]])</code> should return <code>[\"a\", \"b\"]</code>.');",
+        "assert.deepEqual(steamroller([1, [2], [3, [[4]]]]), [1, 2, 3, 4], 'message: <code>steamroller([1, [2], [3, [[4]]]])</code> should return <code>[1, 2, 3, 4]</code>.');",
+        "assert.deepEqual(steamroller([1, [], [3, [[4]]]]), [1, 3, 4], 'message: <code>steamroller([1, [], [3, [[4]]]])</code> should return <code>[1, 3, 4]</code>.');",
+        "assert.deepEqual(steamroller([1, {}, [3, [[4]]]]), [1, {}, 3, 4], 'message: <code>steamroller([1, {}, [3, [[4]]]])</code> should return <code>[1, {}, 3, 4]</code>.');"
       ],
       "MDNlinks": [
         "Array.isArray()"
+      ],
+      "solutions": [
+        "function steamroller(arr) {\n  if (!Array.isArray(arr)) {\n    return [arr];\n  }\n  var out = [];\n  arr.forEach(function(e) {\n    steamroller(e).forEach(function(v) {\n      out.push(v);\n    });\n  });\n  return out;\n}\n\nsteamroller([1, [2], [3, [[4]]]]);\n"
       ],
       "type": "bonfire",
       "challengeType": 5,
@@ -699,7 +794,6 @@
     {
       "id": "a8d97bd4c764e91f9d2bda01",
       "title": "Binary Agents",
-      "difficulty": "2.15",
       "description": [
         "Return an English translated sentence of the passed binary string.",
         "The binary string will be space separated.",
@@ -710,15 +804,18 @@
         "  return str;",
         "}",
         "",
-        "binaryAgent('01000001 01110010 01100101 01101110 00100111 01110100 00100000 01100010 01101111 01101110 01100110 01101001 01110010 01100101 01110011 00100000 01100110 01110101 01101110 00100001 00111111');"
+        "binaryAgent(\"01000001 01110010 01100101 01101110 00100111 01110100 00100000 01100010 01101111 01101110 01100110 01101001 01110010 01100101 01110011 00100000 01100110 01110101 01101110 00100001 00111111\");"
       ],
       "tests": [
-        "expect(binaryAgent('01000001 01110010 01100101 01101110 00100111 01110100 00100000 01100010 01101111 01101110 01100110 01101001 01110010 01100101 01110011 00100000 01100110 01110101 01101110 00100001 00111111')).to.equal(\"Aren't bonfires fun!?\");",
-        "expect(binaryAgent('01001001 00100000 01101100 01101111 01110110 01100101 00100000 01000110 01110010 01100101 01100101 01000011 01101111 01100100 01100101 01000011 01100001 01101101 01110000 00100001')).to.equal(\"I love FreeCodeCamp!\");"
+        "assert.deepEqual(binaryAgent('01000001 01110010 01100101 01101110 00100111 01110100 00100000 01100010 01101111 01101110 01100110 01101001 01110010 01100101 01110011 00100000 01100110 01110101 01101110 00100001 00111111'), \"Aren't bonfires fun!?\", 'message: <code>binaryAgent(\"01000001 01110010 01100101 01101110 00100111 01110100 00100000 01100010 01101111 01101110 01100110 01101001 01110010 01100101 01110011 00100000 01100110 01110101 01101110 00100001 00111111\")</code> should return \"Aren&#39;t bonfires fun!?\"');",
+        "assert.deepEqual(binaryAgent(\"01001001 00100000 01101100 01101111 01110110 01100101 00100000 01000110 01110010 01100101 01100101 01000011 01101111 01100100 01100101 01000011 01100001 01101101 01110000 00100001\"), \"I love FreeCodeCamp!\", 'message: <code>binaryAgent(\"01001001 00100000 01101100 01101111 01110110 01100101 00100000 01000110 01110010 01100101 01100101 01000011 01101111 01100100 01100101 01000011 01100001 01101101 01110000 00100001\"</code> should return \"I love FreeCodeCamp!\"');"
       ],
       "MDNlinks": [
         "String.charCodeAt()",
         "String.fromCharCode()"
+      ],
+      "solutions": [
+        "function binaryAgent(str) {\n  return str.split(' ').map(function(s) { return parseInt(s, 2); }).map(function(b) { return String.fromCharCode(b);}).join('');\n}\n\nbinaryAgent('01000001 01110010 01100101 01101110 00100111 01110100 00100000 01100010 01101111 01101110 01100110 01101001 01110010 01100101 01110011 00100000 01100110 01110101 01101110 00100001 00111111');\n"
       ],
       "type": "bonfire",
       "challengeType": 5,
@@ -736,29 +833,32 @@
     {
       "id": "a10d2431ad0c6a099a4b8b52",
       "title": "Everything Be True",
-      "difficulty": "2.21",
       "description": [
-        "Check if the predicate (second argument) returns truthy (defined) for all elements of a collection (first argument).",
-        "For this, check to see if the property defined in the second argument is present on every element of the collection.",
+        "Check if the predicate (second argument) is truthy on all elements of a collection (first argument).",
         "Remember, you can access object properties through either dot notation or [] notation.",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "challengeSeed": [
         "function every(collection, pre) {",
-        "  // Does everyone have one of these?",
+        "  // Is everyone being true?",
         "  return pre;",
         "}",
         "",
-        "every([{'user': 'Tinky-Winky', 'sex': 'male'}, {'user': 'Dipsy', 'sex': 'male'}, {'user': 'Laa-Laa', 'sex': 'female'}, {'user': 'Po', 'sex': 'female'}], 'sex');"
+        "every([{\"user\": \"Tinky-Winky\", \"sex\": \"male\"}, {\"user\": \"Dipsy\", \"sex\": \"male\"}, {\"user\": \"Laa-Laa\", \"sex\": \"female\"}, {\"user\": \"Po\", \"sex\": \"female\"}], \"sex\");"
       ],
       "tests": [
-        "assert.strictEqual(every([{'user': 'Tinky-Winky', 'sex': 'male'}, {'user': 'Dipsy', 'sex': 'male'}, {'user': 'Laa-Laa', 'sex': 'female'}, {'user': 'Po', 'sex': 'female'}], 'sex'), true, 'should return true if predicate returns truthy for all elements in the collection');",
-        "assert.strictEqual(every([{'user': 'Tinky-Winky', 'sex': 'male'}, {'user': 'Dipsy', 'sex': 'male'}, {'user': 'Laa-Laa', 'sex': 'female'}, {'user': 'Po', 'sex': 'female'}], {'sex': 'female'}), false, 'should return false if predicate returns falsey for any element in the collection');",
-        "assert.strictEqual(every([{'user': 'Tinky-Winky', 'sex': 'female'}, {'user': 'Dipsy', 'sex': 'male'}, {'user': 'Laa-Laa', 'sex': 'female'}, {'user': 'Po', 'sex': 'female'}], {'sex': 'female'}), false, 'should return false if predicate returns falsey for any element in the collection');"
+        "assert.strictEqual(every([{\"user\": \"Tinky-Winky\", \"sex\": \"male\"}, {\"user\": \"Dipsy\", \"sex\": \"male\"}, {\"user\": \"Laa-Laa\", \"sex\": \"female\"}, {\"user\": \"Po\", \"sex\": \"female\"}], \"sex\"), true, 'message: <code>every([{\"user\": \"Tinky-Winky\", \"sex\": \"male\"}, {\"user\": \"Dipsy\", \"sex\": \"male\"}, {\"user\": \"Laa-Laa\", \"sex\": \"female\"}, {\"user\": \"Po\", \"sex\": \"female\"}], \"sex\")</code> should return true.');",
+        "assert.strictEqual(every([{\"user\": \"Tinky-Winky\", \"sex\": \"male\"}, {\"user\": \"Dipsy\"}, {\"user\": \"Laa-Laa\", \"sex\": \"female\"}, {\"user\": \"Po\", \"sex\": \"female\"}], \"sex\"), false, 'message: <code>every([{\"user\": \"Tinky-Winky\", \"sex\": \"male\"}, {\"user\": \"Dipsy\"}, {\"user\": \"Laa-Laa\", \"sex\": \"female\"}, {\"user\": \"Po\", \"sex\": \"female\"}], \"sex\")</code> should return false.');",
+        "assert.strictEqual(every([{\"user\": \"Tinky-Winky\", \"sex\": \"male\", \"age\": 2}, {\"user\": \"Dipsy\", \"sex\": \"male\", \"age\": 0}, {\"user\": \"Laa-Laa\", \"sex\": \"female\", \"age\": 5}, {\"user\": \"Po\", \"sex\": \"female\", \"age\": 4}], \"age\"), false, 'message: <code>every([{\"user\": \"Tinky-Winky\", \"sex\": \"male\", \"age\": 0}, {\"user\": \"Dipsy\", \"sex\": \"male\", \"age\": 3}, {\"user\": \"Laa-Laa\", \"sex\": \"female\", \"age\": 5}, {\"user\": \"Po\", \"sex\": \"female\", \"age\": 4}], \"age\")</code> should return false.');",
+        "assert.strictEqual(every([{\"name\": \"Pete\", \"onBoat\": true}, {\"name\": \"Repeat\", \"onBoat\": true}, {\"name\": \"FastFoward\", \"onBoat\": null}], \"onBoat\"), false, 'message: <code>every([{\"name\": \"Pete\", \"onBoat\": true}, {\"name\": \"Repeat\", \"onBoat\": true}, {\"name\": \"FastFoward\", \"onBoat\": null}], \"onBoat\")</code> should return false');",
+        "assert.strictEqual(every([{\"name\": \"Pete\", \"onBoat\": true}, {\"name\": \"Repeat\", \"onBoat\": true, \"alias\": \"Repete\"}, {\"name\": \"FastFoward\", \"onBoat\": true}], \"onBoat\"), true, 'message: <code>every([{\"name\": \"Pete\", \"onBoat\": true}, {\"name\": \"Repeat\", \"onBoat\": true, \"alias\": \"Repete\"}, {\"name\": \"FastFoward\", \"onBoat\": true}], \"onBoat\")</code> should return true');",
+        "assert.strictEqual(every([{\"single\": \"yes\"}], \"single\"), true, 'message: <code>every([{\"single\": \"yes\"}], \"single\")</code> should return true');",
+        "assert.strictEqual(every([{\"single\": \"\"}, {\"single\": \"double\"}], \"single\"), false, 'message: <code>every([{\"single\": \"\"}, {\"single\": \"double\"}], \"single\")</code> should return false');",
+        "assert.strictEqual(every([{\"single\": \"double\"}, {\"single\": undefined}], \"single\"), false, 'message: <code>every([{\"single\": \"double\"}, {\"single\": undefined}], \"single\")</code> should return false');",
+        "assert.strictEqual(every([{\"single\": \"double\"}, {\"single\": NaN}], \"single\"), false, 'message: <code>every([{\"single\": \"double\"}, {\"single\": NaN}], \"single\")</code> should return false');"
       ],
-      "MDNlinks": [
-        "Object.hasOwnProperty()",
-        "Object.getOwnPropertyNames()"
+      "solutions": [
+        "function every(collection, pre) {\n  // Does everyone have one of these?\n  return collection.every(function(e) { return e[pre]; });\n}\n\nevery([{'user': 'Tinky-Winky', 'sex': 'male'}, {'user': 'Dipsy', 'sex': 'male'}, {'user': 'Laa-Laa', 'sex': 'female'}, {'user': 'Po', 'sex': 'female'}], 'sex');\n"
       ],
       "type": "bonfire",
       "challengeType": 5,
@@ -776,10 +876,12 @@
     {
       "id": "a97fd23d9b809dac9921074f",
       "title": "Arguments Optional",
-      "difficulty": "2.22",
       "description": [
-        "Create a function that sums two arguments together. If only one argument is provided, return a function that expects one additional argument and will return the sum.",
-        "For example, add(2, 3) should return 5, and add(2) should return a function that is waiting for an argument so that <code>var sum2And = add(2); return sum2And(3); // 5</code>",
+        "Create a function that sums two arguments together. If only one argument is provided, then return a function that expects one argument and returns the sum.",
+        "For example, <code>add(2, 3)</code> should return <code>5</code>, and <code>add(2)</code> should return a function.",
+        "Calling this returned function with a single argument will then return the sum:",
+        "<code>var sumTwoAnd = add(2);</code>",
+        "<code>sumTwoAnd(3)</code> returns <code>5</code>.",
         "If either argument isn't a valid number, return undefined.",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
       ],
@@ -791,15 +893,19 @@
         "add(2,3);"
       ],
       "tests": [
-        "expect(add(2, 3)).to.equal(5);",
-        "expect(add(2)(3)).to.equal(5);",
-        "expect(add('http://bit.ly/IqT6zt')).to.be.undefined;",
-        "expect(add(2, '3')).to.be.undefined;",
-        "expect(add(2)([3])).to.be.undefined;"
+        "assert.deepEqual(add(2, 3), 5, 'message: <code>add(2, 3)</code> should return 5.');",
+        "assert.deepEqual(add(2)(3), 5, 'message: <code>add(2)(3)</code> should return 5.');",
+        "assert.isUndefined(add(\"http://bit.ly/IqT6zt\"), 'message: <code>add(\"http://bit.ly/IqT6zt\")</code> should return undefined.');",
+        "assert.isUndefined(add(2, \"3\"), 'message: <code>add(2, \"3\")</code> should return undefined.');",
+        "assert.isUndefined(add(2)([3]), 'message: <code>add(2)([3])</code> should return undefined.');"
       ],
       "MDNlinks": [
-        "Global Function Object",
+        "Closures",
         "Arguments object"
+      ],
+      "solutions": [
+        "function add() {\n  if (arguments.length == 1) {\n    var a = arguments[0];\n    if (!isNumber(a)) return;\n    return function(b) {\n      if (!isNumber(b)) return;\n      return a+b;\n    };\n  }\n  if (![].slice.call(arguments).every(isNumber)) return;\n  return arguments[0] + arguments[1];\n}\n  \nfunction isNumber(obj) {\n    return toString.call(obj) == '[object Number]';\n}\n\nadd(2,3);\n",
+        "function add() {\n  var a = arguments[0];\n  if (toString.call(a) !== '[object Number]') return;  \n  if (arguments.length === 1) {\n    return function(b) {\n      if (toString.call(b) !== '[object Number]') return;\n      return a + b;\n    };\n  }\n  var b = arguments[1];\n  if (toString.call(b) !== '[object Number]') return;  \n  return a + arguments[1];\n}\n\nadd(2,3);\n"
       ],
       "type": "bonfire",
       "challengeType": 5,

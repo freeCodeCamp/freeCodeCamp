@@ -1,0 +1,8 @@
+script.
+  (function() {
+    var containerWidth = document.getElementById('cert').offsetWidth;
+    var nameDiv = document.getElementById('name');
+    var nameWidth = nameDiv.offsetWidth;
+    console.log(containerWidth, nameWidth);
+    nameDiv.style.left = ((containerWidth - nameWidth) / 2) + 15;
+  })();

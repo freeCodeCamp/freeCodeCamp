@@ -10,11 +10,11 @@ block content
     link(rel='stylesheet', href='/js/lib/codemirror/lib/codemirror.css')
     link(rel='stylesheet', href='/js/lib/codemirror/addon/lint/lint.css')
     link(rel='stylesheet', href='/js/lib/codemirror/theme/monokai.css')
-    link(rel="stylesheet", href="//fonts.googleapis.com/css?family=Ubuntu+Mono")
+    link(rel='stylesheet', href='/css/ubuntu.css')
     script(type='text/javascript', src='/js/lib/codemirror/mode/javascript/javascript.js')
     script(type='text/javascript', src='/js/lib/jailed/jailed.js')
     .row(ng-controller="pairedWithController")
-        .col-xs-12.col-sm-12.col-md-4.col-lg-3
+        .col-md-4.col-lg-3
             .scroll-locker(id = "scroll-locker")
                 .innerMarginFix(style = "width: 99%;")
                     #testCreatePanel.well
@@ -35,7 +35,7 @@ block content
                             .form-group.text-center.negative-10
                                 .col-xs-12
                                     // extra field to distract password tools like lastpass from injecting css into our username field
-                    label.negative-10.btn.btn-primary.btn-block#submitButton
+                    label.negative-10.btn.btn-primary.btn-lg.btn-block#submitButton
                         i.fa.fa-play
                             | &nbsp; Run tests (ctrl + enter)
                     .button-spacer
@@ -43,12 +43,17 @@ block content
                         label.btn.btn-success#trigger-reset-modal
                             i.fa.fa-refresh
                                 | &nbsp; Reset
-                        label.btn.btn-success#trigger-help-modal
+                        label.btn.btn-success#challenge-help-btn
                             i.fa.fa-medkit
                                 | &nbsp; Help
                         label.btn.btn-success#trigger-issue-modal
                             i.fa.fa-bug
                                 | &nbsp; Bug
+                    if (!user)
+                        .button-spacer
+                        a.btn.signup-btn.btn-block.btn-block(href='/login') Sign in so you can save your progress
+                            script.
+                                var userLoggedIn = false;
                     .button-spacer
                     form.code
                         .form-group.codeMirrorView
@@ -61,11 +66,12 @@ block content
                         var challengeSeed = !{JSON.stringify(challengeSeed)};
                         var challenge_Id = !{JSON.stringify(challengeId)};
                         var challenge_Name = !{JSON.stringify(name)};
+                        var dashedName = !{JSON.stringify(dashedName)};
                         var started = Math.floor(Date.now());
                         var challengeType = !{JSON.stringify(challengeType)};
                         var _ = R;
                         var dashed = !{JSON.stringify(dashedName)};
-        .col-xs-12.col-sm-12.col-md-8
+        .col-md-8.col-lg-9
             .editorScrollDiv(style = "overflow-y: auto; overflow-x: hidden;")
                 #mainEditorPanel
                     form.code
@@ -75,7 +81,7 @@ block content
                             script.
                                 editor.setOption("mode", "javascript");
     #complete-courseware-dialog.modal(tabindex='-1')
-        .modal-dialog.animated.zoomIn.fast-animation
+        .modal-dialog.animated.fadeIn.fast-animation
             .modal-content
                 .modal-header.challenge-list-header= compliment
                     a.close.closing-x(href='#', data-dismiss='modal', aria-hidden='true') ×
@@ -87,16 +93,17 @@ block content
                         .spacer
                         .row
                         if (user)
-                            #submit-challenge.animated.fadeIn.btn.btn-lg.btn-primary.btn-block Submit
-                            if (user.progressTimestamps.length > 2)
-                                a.animated.fadeIn.btn.btn-lg.btn-block.btn-twitter(target="_blank", href="https://twitter.com/intent/tweet?text=I%20just%20#{verb}%20%40FreeCodeCamp%20#{name}&url=http%3A%2F%2Ffreecodecamp.com/challenges/#{dashedName}&hashtags=LearnToCode, JavaScript")
-                                    i.fa.fa-twitter &thinsp;
-                                        = phrase
+                            #submit-challenge.animated.fadeIn.btn.btn-lg.btn-primary.btn-block Submit and go to my next challenge (ctrl + enter)
                         else
-                            a.animated.fadeIn.btn.btn-lg.signup-btn.btn-block(href='/login') Sign in so you can save your progress
+                            a.animated.fadeIn.btn.btn-lg.btn-primary.btn-block(href='/challenges/next-challenge?id=' + challengeId) Go to my next challenge
     include ../partials/challenge-modals
     script.
-        var MDNlinks = !{JSON.stringify(MDNlinks)};
-        if (!MDNlinks.length) {
-            $('#MDN-links').addClass('collapse');
+      var MDNlinks = !{JSON.stringify(MDNlinks)};
+      if (!MDNlinks.length) {
+          $('#MDN-links').addClass('collapse');
+      }
+      document.addEventListener('gitter-sidecar-ready', function(e) {
+        if (window.main) {
+          window.main.chat.createHelpChat('freecodecamp/help', '#challenge-help-btn');
         }
+      });

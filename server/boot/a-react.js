@@ -1,7 +1,7 @@
 import React from 'react';
-import Router from 'react-router';
+import { RoutingContext } from 'react-router';
 import Fetchr from 'fetchr';
-import Location from 'react-router/lib/Location';
+import { createLocation } from 'history';
 import debugFactory from 'debug';
 import { app$ } from '../../common/app';
 import { RenderToString } from 'thundercats-react';
@@ -13,7 +13,8 @@ const debug = debugFactory('freecc:react-server');
 const routes = [
   '/hikes',
   '/hikes/*',
-  '/jobs'
+  '/jobs',
+  '/jobs/*'
 ];
 
 export default function reactSubRouter(app) {
@@ -29,25 +30,25 @@ export default function reactSubRouter(app) {
 
   function serveReactApp(req, res, next) {
     const services = new Fetchr({ req });
-    const location = new Location(req.path, req.query);
+    const location = createLocation(req.path);
 
     // returns a router wrapped app
-    app$(location)
+    app$({ location })
       // if react-router does not find a route send down the chain
-      .filter(function({ initialState }) {
-        if (!initialState) {
+      .filter(function({ props}) {
+        if (!props) {
           debug('react tried to find %s but got 404', location.pathname);
           return next();
         }
-        return !!initialState;
+        return !!props;
       })
-      .flatMap(function({ initialState, AppCat }) {
+      .flatMap(function({ props, AppCat }) {
         // call thundercats renderToString
         // prefetches data and sets up it up for current state
         debug('rendering to string');
         return RenderToString(
           AppCat(null, services),
-          React.createElement(Router, initialState)
+          React.createElement(RoutingContext, props)
         );
       })
       // makes sure we only get one onNext and closes subscription

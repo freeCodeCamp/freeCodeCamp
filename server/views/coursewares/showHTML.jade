@@ -11,7 +11,7 @@ block content
     link(rel='stylesheet', href='/js/lib/codemirror/lib/codemirror.css')
     link(rel='stylesheet', href='/js/lib/codemirror/addon/lint/lint.css')
     link(rel='stylesheet', href='/js/lib/codemirror/theme/monokai.css')
-    link(rel="stylesheet", href="http://fonts.googleapis.com/css?family=Ubuntu+Mono")
+    link(rel='stylesheet', href='/css/ubuntu.css')
     script(src='/js/lib/codemirror/mode/javascript/javascript.js')
     script(src='/js/lib/jailed/jailed.js')
     script(src='/js/lib/codemirror/mode/xml/xml.js')
@@ -19,7 +19,7 @@ block content
     script(src='/js/lib/codemirror/mode/htmlmixed/htmlmixed.js')
     script(src='/js/lib/codemirror/addon/emmet/emmet.js')
     .row.courseware-height
-        .col-xs-12.col-sm-12.col-md-3.col-lg-3
+        .col-md-3.col-lg-3
             .scroll-locker(id = "scroll-locker")
                 .innerMarginFix(style = "width: 99%;")
                     .well
@@ -30,31 +30,33 @@ block content
                                     for sentence in details
                                         p.wrappable.negative-10!= sentence
                                     .negative-bottom-margin-30
-                    label.negative-10.btn.btn-primary.btn-block#submitButton
+                    label.negative-10.btn.btn-primary.btn-lg.btn-block#submitButton
                         i.fa.fa-play
                             | &nbsp; Run tests (ctrl + enter)
-                    br
-                    if (user)
-                        .button-spacer
-                        .btn-group.input-group.btn-group-justified
-                            label.btn.btn-success#trigger-reset-modal
-                                i.fa.fa-refresh
-                                    | &nbsp; Reset
-                            label.btn.btn-success#trigger-help-modal
+                    .button-spacer
+                    .btn-group.input-group.btn-group-justified
+                        label.btn.btn-success#trigger-reset-modal
+                            i.fa.fa-refresh
+                                | &nbsp; Reset
+                        label.btn.btn-success.hidden-sm.hidden-md.hidden-lg
+                            a(href='//gitter.im/freecodecamp/help')
                                 i.fa.fa-medkit
                                     | &nbsp; Help
-                            label.btn.btn-success#trigger-issue-modal
-                                i.fa.fa-bug
-                                    | &nbsp; Bug
-                        script.
-                            var userLoggedIn = true;
-                    else
+                        label.btn.btn-success.hidden-xs#challenge-help-btn
+                            i.fa.fa-medkit
+                                | &nbsp; Help
+                        label.btn.btn-success#trigger-issue-modal
+                            i.fa.fa-bug
+                                | &nbsp; Bug
+                    script.
+                        var userLoggedIn = true;
+                    if (!user)
                         .button-spacer
-                        a.btn.signup-btn.btn-block.btn-block.negative-15(href='/login') Sign in so you can save your progress
+                        a.btn.signup-btn.btn-block.btn-block(href='/login') Sign in so you can save your progress
                             script.
                                 var userLoggedIn = false;
                     .button-spacer
-                    ul#testSuite.list-group
+                    #testSuite
                     br
                     script(type="text/javascript").
                         $('#next-courseware-button').attr('disabled', 'disabled');
@@ -63,9 +65,10 @@ block content
                         var challenge_Id = !{JSON.stringify(challengeId)};
                         var challenge_Name = !{JSON.stringify(name)};
                         var prodOrDev = !{JSON.stringify(environment)};
+                        var dashedName = !{JSON.stringify(dashedName)};
                         var challengeType = !{JSON.stringify(challengeType)};
                         var started = Math.floor(Date.now());
-        .col-xs-12.col-sm-12.col-md-5.col-lg-6
+        .col-md-5.col-lg-6
             .editorScrollDiv(style = "overflow-y: auto; overflow-x: hidden;")
                     #mainEditorPanel
                         form.code
@@ -73,6 +76,7 @@ block content
                                 textarea#codeEditor(autofocus=true, style='display: none;')
                                 script(src=rev('/js', 'commonFramework.js'))
                                 script.
+                                    editor.setOption('lint', false);
                                     editor.setOption("mode", "text/html");
         .col-md-4.col-lg-3
             .hidden-xs.hidden-sm
@@ -80,7 +84,7 @@ block content
             iframe.iphone.iframe-scroll#preview
             .spacer
         #complete-courseware-dialog.modal(tabindex='-1')
-            .modal-dialog.animated.zoomIn.fast-animation
+            .modal-dialog.animated.fadeIn.fast-animation
                 .modal-content
                     .modal-header.challenge-list-header
                         = compliment
@@ -91,9 +95,14 @@ block content
                                 #challenge-checkmark.animated.zoomInDown.delay-half
                                     span.completion-icon.ion-checkmark-circled.text-primary
                             .spacer
-                            .row
-                                if(user)
-                                    #submit-challenge.animated.fadeIn.btn.btn-lg.btn-primary.btn-block Submit
-                                else
-                                    a.animated.fadeIn.btn.btn-lg.signup-btn.btn-block(href='/login') Sign in so you can save your progress
+                            if(user)
+                                #submit-challenge.animated.fadeIn.btn.btn-lg.btn-primary.btn-block Submit and go to my next challenge (ctrl + enter)
+                            else
+                                a.btn.btn-lg.btn-primary.btn-block(href='/challenges/next-challenge?id=' + challengeId) Go to my next challenge
     include ../partials/challenge-modals
+    script.
+      document.addEventListener('gitter-sidecar-ready', function(e) {
+        if (window.main) {
+          window.main.chat.createHelpChat('freecodecamp/help', '#challenge-help-btn');
+        }
+      });

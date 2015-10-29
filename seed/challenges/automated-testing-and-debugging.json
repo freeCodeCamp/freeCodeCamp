@@ -1,6 +1,7 @@
 {
   "name": "Automated Testing and Debugging",
-  "order": 0.012,
+  "order": 14,
+  "time": "15m",
   "challenges": [
     {
       "id":"cf1111c1c16feddfaeb6bdef",
@@ -13,7 +14,7 @@
         "<code>console.log('Hello world!')</code>"
       ],
       "tests":[
-        "assert(editor.getValue().match(/console\\.log\\(/gi), 'You should use the console.log method to log \"Hello world!\" to your JavaScript console.');"
+        "assert(editor.getValue().match(/console\\.log\\(/gi), 'message: You should use the console.log method to log \"Hello world!\" to your JavaScript console.');"
       ],
       "challengeSeed":[
         "",
@@ -28,19 +29,19 @@
       "title":"Using typeof",
       "difficulty":0,
       "description":[
-        "<code>typeof</code> is a useful method that we can use to check the type of a variable.",
-        "One thing to be careful of is that an array has the type objects.",
-        "Try using each of these to see the types they have.",
+        "You can use <code>typeof</code> to check the <code>data structure</code>, or type, of a variable.",
+        "Note that in JavaScript, arrays are technically a type of object.",
+        "Try using <code>typeof</code> on each of the following to see which types they have.",
         "<code>console.log(typeof(\"\"));</code>",
         "<code>console.log(typeof(0));</code>",
         "<code>console.log(typeof([]));</code>",
         "<code>console.log(typeof({}));</code>"
       ],
       "tests":[
-        "assert(editor.getValue().match(/console\\.log\\(typeof\\(\"\"\\)\\);/gi), 'You should <code>console.log</code> the <code>typeof</code> a string.');",
-        "assert(editor.getValue().match(/console\\.log\\(typeof\\(0\\)\\);/gi), 'You should <code>console.log</code> the <code>typeof</code> a number.');",
-        "assert(editor.getValue().match(/console\\.log\\(typeof\\(\\[\\]\\)\\);/gi), 'You should <code>console.log</code> the <code>typeof</code> an array.');",
-        "assert(editor.getValue().match(/console\\.log\\(typeof\\(\\{\\}\\)\\);/gi), 'You should <code>console.log</code> the <code>typeof</code> a object.');"
+        "assert(editor.getValue().match(/console\\.log\\(typeof\\(\"\"\\)\\);/gi), 'message: You should <code>console.log</code> the <code>typeof</code> a string.');",
+        "assert(editor.getValue().match(/console\\.log\\(typeof\\(0\\)\\);/gi), 'message: You should <code>console.log</code> the <code>typeof</code> a number.');",
+        "assert(editor.getValue().match(/console\\.log\\(typeof\\(\\[\\]\\)\\);/gi), 'message: You should <code>console.log</code> the <code>typeof</code> an array.');",
+        "assert(editor.getValue().match(/console\\.log\\(typeof\\(\\{\\}\\)\\);/gi), 'message: You should <code>console.log</code> the <code>typeof</code> a object.');"
       ],
       "challengeSeed":[
         "",

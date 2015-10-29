@@ -1,28 +1,29 @@
 {
   "name": "jQuery",
-  "order": 0.004,
+  "order": 5,
+  "time": "2h",
   "challenges": [
     {
       "id": "bad87fee1348bd9acdd08826",
       "title": "Learn how Script Tags and Document Ready Work",
-      "difficulty": 3.01,
       "description": [
         "Now we're ready to learn jQuery, the most popular JavaScript tool of all time. Don't worry about JavaScript itself - we will cover it soon.",
         "Before we can start using jQuery, we need to add some things to our HTML.",
         "First, add a <code>script</code> element at the top of your page. Be sure to close it on the following line.",
         "Your browser will run any JavaScript inside a <code>script</code> element, including jQuery.",
-        "Inside your <code>script</code> element, add this code: <code>$(document).ready(function() {</code> to your <code>script</code>. Then close it on the following line (still inside your <code>script</code> element) with: <code>});</code>"
+        "Inside your <code>script</code> element, add this code: <code>$(document).ready(function() {</code> to your <code>script</code>. Then close it on the following line (still inside your <code>script</code> element) with: <code>});</code>",
+        "We'll learn more about <code>functions</code> later. The important thing to know is that code you put inside this <code>function</code> will run as soon as your browser has loaded your page.",
+        "This is important because without your <code>document ready function</code>, your code may run before your HTML is rendered, which would cause bugs."
       ],
       "tests": [
-        "assert(editor.match(/<script>/g), 'Create a <code>script</code> element.')",
-        "assert(editor.match(/<\\/script>/g) && editor.match(/<script/g) && editor.match(/<\\/script>/g).length === editor.match(/<script/g).length, 'Make sure your <code>script</code> element has a closing tag.')",
-        "assert(editor.match(/\\$\\s*?\\(\\s*?document\\)\\.ready\\s*?\\(\\s*?function\\s*?\\(\\s*?\\)\\s*?\\{/g), 'Add <code>$(document).ready(function() {</code> to the beginning of your <code>script</code> element.')",
-        "assert(editor.match(/\\n*?\\s*?\\}\\s*?\\);/g), 'Close your <code>$(document).ready(function() {</code> function with <code>});</code>.')"
+        "assert(editor.match(/<\\/script\\s*>/g) && editor.match(/<script(\\sasync|\\sdefer)*(\\s(charset|src|type)\\s*=\\s*[\"\\']+[^\"\\']*[\"\\']+)*(\\sasync|\\sdefer)*\\s*>/g) && editor.match(/<\\/script\\s*>/g).length === editor.match(/<script(\\sasync|\\sdefer)*(\\s(charset|src|type)\\s*=\\s*[\"\\']+[^\"\\']*[\"\\']+)*(\\sasync|\\sdefer)*\\s*>/g).length, 'Create a <code>script</code> element making sure it is valid and has a closing tag.')",
+        "assert(editor.match(/\\$\\s*?\\(\\s*?document\\)\\.ready\\s*?\\(\\s*?function\\s*?\\(\\s*?\\)\\s*?\\{/g), 'You should add <code>$&#40;document&#41;.ready&#40;function&#40;&#41; {</code> to the beginning of your <code>script</code> element.')",
+        "assert(editor.match(/\\n*?\\s*?\\}\\s*?\\);/g), 'Close your <code>$&#40;document&#41;.ready&#40;function&#40;&#41; {</code> function with <code>}&#41;;</code>')"
       ],
       "challengeSeed": [
         "",
         "",
-        "<!-- You shouldn't need to modify code below this line -->",
+        "<!-- Only change code above this line. -->",
         "",
         "<div class=\"container-fluid\">",
         "  <h3 class=\"text-primary text-center\">jQuery Playground</h3>",
@@ -52,13 +53,12 @@
     {
       "id": "bad87fee1348bd9bedc08826",
       "title": "Target HTML Elements with Selectors Using jQuery",
-      "difficulty": 3.02,
       "description": [
-        "Now we have a <code>document ready function</code>. We'll learn more about <code>functions</code> later. The important thing to know is that code you put inside this <code>function</code> will run as soon as your browser has loaded your page.",
-        "This is important because without your <code>document ready function</code>, your code may run before your HTML is rendered, which would cause bugs.",
+        "Now we have a <code>document ready function</code>.",
         "Now let's write our first jQuery statement. All jQuery functions start with a <code>$</code>, usually referred to as a <code>dollar sign operator</code>, or simply as <code>bling</code>.",
         "jQuery often selects an HTML element with a <code>selector</code>, then does something to that element.",
-        "For example, let's make all of your <code>button</code> elements bounce. Just add this code inside your <code>document ready function</code>: <code>$(\"button\").addClass(\"animated bounce\")</code>.",
+        "For example, let's make all of your <code>button</code> elements bounce. Just add this code inside your document ready function:",
+        "<code>$(\"button\").addClass(\"animated bounce\")</code>",
         "Note that we've already included both the jQuery library and the Animate.css library in your code editor. So you are using jQuery to apply the Animate.css <code>bounce</code> class to your <code>button</code> elements."
       ],
       "tests": [
@@ -72,7 +72,7 @@
         "  });",
         "fcces",
         "",
-        "<!-- You shouldn't need to modify code below this line -->",
+        "<!-- Only change code above this line. -->",
         "",
         "<div class=\"container-fluid\">",
         "  <h3 class=\"text-primary text-center\">jQuery Playground</h3>",
@@ -102,14 +102,14 @@
     {
       "id": "bad87fee1348bd9aedc08826",
       "title": "Target Elements by Class Using jQuery",
-      "difficulty": 3.03,
       "description": [
         "You see how we made all of your <code>button</code> elements bounce? We selected them with <code>$(\"button\")</code>, then we added some CSS classes to them with <code>.addClass(\"animated bounce\");</code>.",
         "You just used jQuery's <code>.addClass()</code> function, which allows you to add classes to elements.",
         "First, let's target your <code>div</code> elements with the class <code>well</code> by using the <code>$(\".well\")</code> selector.",
         "Note that, just like with CSS declarations, you type a <code>.</code> before the class's name.",
         "Then use jQuery's <code>.addClass()</code> function to add the classes <code>animated</code> and <code>shake</code>.",
-        "For example, you could make all the elements with the class <code>text-primary</code> shake by adding the following to your <code>document ready function</code>: <code>$(\".text-primary\").addClass(\"animated shake\");</code>"
+        "For example, you could make all the elements with the class <code>text-primary</code> shake by adding the following to your <code>document ready function</code>:",
+        "<code>$(\".text-primary\").addClass(\"animated shake\");</code>"
       ],
       "tests": [
         "assert($(\".well\").hasClass(\"animated\") && $(\".well\").hasClass(\"shake\"), 'Use the jQuery <code>addClass&#40&#41</code> function to give the classes <code>animated</code> and <code>shake</code> to all your elements with the class <code>well</code>.')",
@@ -122,7 +122,7 @@
         "  });",
         "fcces",
         "",
-        "<!-- You shouldn't need to modify code below this line -->",
+        "<!-- Only change code above this line. -->",
         "",
         "<div class=\"container-fluid\">",
         "  <h3 class=\"text-primary text-center\">jQuery Playground</h3>",
@@ -152,17 +152,17 @@
     {
       "id": "bad87fee1348bd9aeda08826",
       "title": "Target Elements by ID Using jQuery",
-      "difficulty": 3.04,
       "description": [
         "You can also target elements by their id attributes.",
         "First target your <code>button</code> element with the id <code>target3</code> by using the <code>$(\"#target3\")</code> selector.",
         "Note that, just like with CSS declarations, you type a <code>#</code> before the id's name.",
         "Then use jQuery's <code>.addClass()</code> function to add the classes <code>animated</code> and <code>fadeOut</code>.",
-        "Here's how you'd make the <code>button</code> element with the id <code>target6</code> fade out: <code>$(\"#target6\").addClass(\"animated fadeOut\")</code>."
+        "Here's how you'd make the <code>button</code> element with the id <code>target6</code> fade out:",
+        "<code>$(\"#target6\").addClass(\"animated fadeOut\")</code>."
       ],
       "tests": [
-        "assert($(\"#target3\").hasClass(\"animated\"), 'Select the <code>button</code>element with the <code>id</code> of <code>target3</code> and use the jQuery <code>addClass&#40&#41</code> function to give it the class of <code>animated</code>.');",
-        "assert($(\"#target3\").hasClass(\"fadeOut\") || $(\"#target3\").hasClass(\"fadeout\"), 'Target the element with the id <code>target3</code> and use the jQuery <code>addClass&#40&#41</code> function to give it the class <code>fadeOut</code>.')",
+        "assert($(\"#target3\").hasClass(\"animated\"), 'Select the <code>button</code>element with the <code>id</code> of <code>target3</code> and use the jQuery <code>addClass&#40&#41</code> function to give it the class of <code>animated</code>.')",
+        "assert(($(\"#target3\").hasClass(\"fadeOut\") || $(\"#target3\").hasClass(\"fadeout\"))  && editor.match(/\\$\\(.#target3.\\)/g), 'Target the element with the id <code>target3</code> and use the jQuery <code>addClass&#40&#41</code> function to give it the class <code>fadeOut</code>.')",
         "assert(!editor.match(/class.*animated/g), 'Only use jQuery to add these classes to the element.')"
       ],
       "challengeSeed": [
@@ -174,7 +174,7 @@
         "  });",
         "fcces",
         "",
-        "<!-- You shouldn't need to modify code below this line -->",
+        "<!-- Only change code above this line. -->",
         "",
         "<div class=\"container-fluid\">",
         "  <h3 class=\"text-primary text-center\">jQuery Playground</h3>",
@@ -204,7 +204,6 @@
     {
       "id": "bad87fee1348bd9aeda08726",
       "title": "Delete your jQuery Functions",
-      "difficulty": 3.05,
       "description": [
         "These animations were cool at first, but now they're getting kind of distracting.",
         "Delete all three of these jQuery functions from your <code>document ready function</code>, but leave your <code>document ready function</code> itself intact."
@@ -213,7 +212,7 @@
         "assert(!editor.match(/e\"\\);/g) && !editor.match(/t\"\\);/g), 'Delete all three of your jQuery functions from your <code>document ready function</code>.')",
         "assert(editor.match(/<script>/g), 'Leave your <code>script</code> element intact.')",
         "assert(editor.match(/\\$\\(document\\)\\.ready\\(function\\(\\)\\s?\\{/g), 'Leave your <code>$&#40document&#41.ready&#40function&#40&#41 {</code> to the beginning of your <code>script</code> element.')",
-        "assert(editor.match(/\\n\\s+?\\}\\);/g), 'Leave your \"document ready function\" closing <code>\\}&#41;</code> intact.')",
+        "assert(editor.match(/\\n\\s+?\\}\\);/g), 'Leave your \"document ready function\" closing <code>&#125;&#41;</code> intact.')",
         "assert(editor.match(/<\\/script>/g) && editor.match(/<script/g) && editor.match(/<\\/script>/g).length === editor.match(/<script/g).length, 'Leave your <code>script</code> element closing tag intact.')"
       ],
       "challengeSeed": [
@@ -226,7 +225,7 @@
         "  });",
         "fcces",
         "",
-        "<!-- You shouldn't need to modify code below this line -->",
+        "<!-- Only change code above this line. -->",
         "",
         "<div class=\"container-fluid\">",
         "  <h3 class=\"text-primary text-center\">jQuery Playground</h3>",
@@ -256,16 +255,17 @@
     {
       "id": "bad87fee1348bd9aed908626",
       "title": "Target the same element with multiple jQuery Selectors",
-      "difficulty": 3.06,
       "description": [
         "Now you know three ways of targeting elements: by type: <code>$(\"button\")</code>, by class: <code>$(\".btn\")</code>, and by id <code>$(\"#target1\")</code>.",
-        "Use each of these jQuery selectors to target your <code>button</code> element with the class <code>btn</code> and the id <code>target1</code>.",
-        "Use the <code>addClass()</code> jQuery function to give the element one new class for each selector: <code>animated</code>, <code>shake</code>, and <code>btn-primary</code>."
+        "Using each of the above jQuery selectors and the <code>addClass()</code> function:",
+        "Add the <code>animated</code> class to all elements with type <code>button</code>.",
+        "Add the <code>shake</code> class to all the buttons with class <code>.btn</code>.",
+        "Add the <code>btn-primary</code> class to the button with id <code>#target1</code>."
       ],
       "tests": [
-        "assert(editor.match(/\\$\\(.*button/g), 'Use the <code>$&#40\"button\"&#41</code> selector.')",
-        "assert(editor.match(/\\$\\(.*\\.btn/g), 'Use the <code>$&#40\".btn\"&#41</code> selector.')",
-        "assert(editor.match(/\\$\\(.*#target1/g), 'Use the <code>$&#40\"#target1\"&#41</code> selector.')",
+        "assert(editor.match(/\\$\\s*?\\(\\s*?(?:'|\")\\s*?button\\s*?(?:'|\")/gi), 'Use the <code>$&#40\"button\"&#41</code> selector.')",
+        "assert(editor.match(/\\$\\s*?\\(\\s*?(?:'|\")\\s*?\\.btn\\s*?(?:'|\")/gi), 'Use the <code>$&#40\".btn\"&#41</code> selector.')",
+        "assert(editor.match(/\\$\\s*?\\(\\s*?(?:'|\")\\s*?#target1\\s*?(?:'|\")/gi), 'Use the <code>$&#40\"#target1\"&#41</code> selector.')",
         "assert(editor.match(/addClass/g) && editor.match(/addClass/g).length > 2, 'Only add one class with each of your three selectors.')",
         "assert($(\"#target1\").hasClass(\"animated\") && $(\"#target1\").hasClass(\"shake\") && $(\"#target1\").hasClass(\"btn-primary\"), 'Your <code>#target1</code> element should have the classes <code>animated</code>&#130; <code>shake</code> and <code>btn-primary</code>.')",
         "assert(!editor.match(/class.*animated/g), 'Only use jQuery to add these classes to the element.')"
@@ -277,7 +277,7 @@
         "  });",
         "fcces",
         "",
-        "<!-- You shouldn't need to modify code below this line -->",
+        "<!-- Only change code above this line. -->",
         "",
         "<div class=\"container-fluid\">",
         "  <h3 class=\"text-primary text-center\">jQuery Playground</h3>",
@@ -307,15 +307,16 @@
     {
       "id": "bad87fee1348bd9aed918626",
       "title": "Remove Classes from an element with jQuery",
-      "difficulty": 3.07,
       "description": [
         "In the same way you can add classes to an element with jQuery's <code>addClass()</code> function, you can remove them with jQuery's <code>removeClass()</code> function.",
-        "Let's remove the <code>btn-default</code> class from all of our <code>button</code> elements.",
-        "Here's how you would do this for a specific button, add <code>$(\"#target2\").removeClass(\"btn-default\");</code>"
+        "Here's how you would do this for a specific button:",
+        "<code>$(\"#target2\").removeClass(\"btn-default\");</code>",
+        "Let's remove the <code>btn-default</code> class from all of our <code>button</code> elements."
       ],
       "tests": [
         "assert($(\".btn-default\").length === 0, 'Remove the <code>btn-default</code> class from all of your <code>button</code> elements.')",
-        "assert(editor.match(/btn btn-default/g), 'Only use jQuery to remove this class from the element.')"
+        "assert(editor.match(/btn btn-default/g), 'Only use jQuery to remove this class from the element.')",
+        "assert(editor.match(/\\.[\\v\\s]*removeClass[\\s\\v]*\\([\\s\\v]*('|\")\\s*btn-default\\s*('|\")[\\s\\v]*\\)/gm), 'Only remove the <code>btn-default</code> class.')"
       ],
       "challengeSeed": [
         "fccss",
@@ -327,7 +328,7 @@
         "  });",
         "fcces",
         "",
-        "<!-- You shouldn't need to modify code below this line -->",
+        "<!-- Only change code above this line. -->",
         "",
         "<div class=\"container-fluid\">",
         "  <h3 class=\"text-primary text-center\">jQuery Playground</h3>",
@@ -357,14 +358,14 @@
     {
       "id": "bad87fee1348bd9aed908826",
       "title": "Change the CSS of an Element Using jQuery",
-      "difficulty": 3.08,
       "description": [
         "We can also change the CSS of an HTML element directly with jQuery.",
-        "Delete your jQuery selectors, leaving an empty <code>document ready function</code>.",
-        "Select <code>target1</code> and change its color to red.",
         "jQuery has a function called <code>.css()</code> that allows you to change the CSS of an element.",
-        "Here's how we would change its color to blue: <code>$(\"#target1\").css(\"color\", \"blue\");</code>",
-        "This is slightly different from a normal CSS declaration, because the CSS property and its value are in quotes, and separated with a comma instead of a colon."
+        "Here's how we would change its color to blue:",
+        "<code>$(\"#target1\").css(\"color\", \"blue\");</code>",
+        "This is slightly different from a normal CSS declaration, because the CSS property and its value are in quotes, and separated with a comma instead of a colon.",
+        "Delete your jQuery selectors, leaving an empty <code>document ready function</code>.",
+        "Select <code>target1</code> and change its color to red."
       ],
       "tests": [
         "assert($(\"#target1\").css(\"color\") === 'rgb(255, 0, 0)', 'Your <code>target1</code> element should have red text.')",
@@ -381,7 +382,7 @@
         "  });",
         "fcces",
         "",
-        "<!-- You shouldn't need to modify code below this line -->",
+        "<!-- Only change code above this line. -->",
         "",
         "<div class=\"container-fluid\">",
         "  <h3 class=\"text-primary text-center\">jQuery Playground</h3>",
@@ -411,12 +412,12 @@
     {
       "id": "bad87fee1348bd9aed808826",
       "title": "Disable an Element Using jQuery",
-      "difficulty": 3.09,
       "description": [
         "You can also change the non-CSS properties of HTML elements with jQuery. For example, you can disable buttons.",
         "When you disable a button, it will become grayed-out and can no longer be clicked.",
         "jQuery has a function called <code>.prop()</code> that allows you to adjust the properties of elements.",
-        "Here's how you would disable all buttons: <code>$(\"button\").prop(\"disabled\", true);</code>",
+        "Here's how you would disable all buttons:",
+        "<code>$(\"button\").prop(\"disabled\", true);</code>",
         "Disable only the <code>target1</code> button."
       ],
       "tests": [
@@ -432,7 +433,7 @@
         "  });",
         "fcces",
         "",
-        "<!-- You shouldn't need to modify code below this line -->",
+        "<!-- Only change code above this line. -->",
         "",
         "<div class=\"container-fluid\">",
         "  <h3 class=\"text-primary text-center\">jQuery Playground</h3>",
@@ -462,7 +463,6 @@
     {
       "id": "bad87fee1348bd9aed708826",
       "title": "Remove an Element Using jQuery",
-      "difficulty": 3.10,
       "description": [
         "Now let's remove an HTML element from your page using jQuery.",
         "jQuery has a function called <code>.remove()</code> that will remove an HTML element entirely",
@@ -481,7 +481,7 @@
         "  });",
         "fcces",
         "",
-        "<!-- You shouldn't need to modify code below this line -->",
+        "<!-- Only change code above this line. -->",
         "",
         "<div class=\"container-fluid\">",
         "  <h3 class=\"text-primary text-center\">jQuery Playground</h3>",
@@ -511,11 +511,11 @@
     {
       "id": "bad87fee1348bd9aed608826",
       "title": "Use appendTo to Move Elements with jQuery",
-      "difficulty": 3.11,
       "description": [
         "Now let's try moving elements from one <code>div</code> to another.",
         "jQuery has a function called <code>appendTo()</code> that allows you to select HTML elements and append them to another element.",
-        "For example, if we wanted to move <code>target4</code> from our right well to our left well, we would use <code>$(\"#target4\").appendTo(\"#left-well\");</code>",
+        "For example, if we wanted to move <code>target4</code> from our right well to our left well, we would use:",
+        "<code>$(\"#target4\").appendTo(\"#left-well\");</code>",
         "Move your <code>target2</code> element from your <code>left-well</code> to your <code>right-well</code>."
       ],
       "tests": [
@@ -533,7 +533,7 @@
         "  });",
         "fcces",
         "",
-        "<!-- You shouldn't need to modify code below this line -->",
+        "<!-- Only change code above this line. -->",
         "",
         "<div class=\"container-fluid\">",
         "  <h3 class=\"text-primary text-center\">jQuery Playground</h3>",
@@ -563,11 +563,11 @@
     {
       "id": "bad87fee1348bd9aed508826",
       "title": "Clone an Element Using jQuery",
-      "difficulty": 3.12,
       "description": [
         "In addition to moving elements, you can also copy them from one place to another.",
         "jQuery has a function called <code>clone()</code> that makes a copy of an element.",
-        "For example, if we wanted to copy <code>target2</code> from our <code>left-well</code> to our <code>right-well</code>, we would use <code>$(\"#target2\").clone().appendTo(\"#right-well\");</code>",
+        "For example, if we wanted to copy <code>target2</code> from our <code>left-well</code> to our <code>right-well</code>, we would use:",
+        "<code>$(\"#target2\").clone().appendTo(\"#right-well\");</code>",
         "Did you notice this involves sticking two jQuery functions together? This is called <code>function chaining</code> and it's a convenient way to get things done with jQuery.",
         "Clone your <code>target5</code> element and append it to your <code>left-well</code>."
       ],
@@ -587,7 +587,7 @@
         "  });",
         "fcces",
         "",
-        "<!-- You shouldn't need to modify code below this line -->",
+        "<!-- Only change code above this line. -->",
         "",
         "<div class=\"container-fluid\">",
         "  <h3 class=\"text-primary text-center\">jQuery Playground</h3>",
@@ -617,17 +617,18 @@
     {
       "id": "bad87fee1348bd9aed308826",
       "title": "Target the Parent of an Element Using jQuery",
-      "difficulty": 3.13,
       "description": [
         "Every HTML element has a <code>parent</code> element from which it <code>inherits</code> properties.",
         "For example, your <code>jQuery Playground</code> <code>h3</code> element has the parent element of <code>&#60;div class=\"container-fluid\"&#62</code>, which itself has the parent <code>body</code>.",
         "jQuery has a function called <code>parent()</code> that allows you to access the parent of whichever element you've selected.",
-        "Give the parent of the <code>#target1</code> element background-color of red.",
-        "Here's an example of how you would use the <code>parent()</code> function: <code>$(\"#left-well\").parent().css(\"background-color\", \"blue\")</code>"
+        "Here's an example of how you would use the <code>parent()</code> function if you wanted to give the parent element of the <code>left-well</code> element a background color of blue:",
+        "<code>$(\"#left-well\").parent().css(\"background-color\", \"blue\")</code>",
+        "Give the parent of the <code>#target1</code> element a background-color of red."
       ],
       "tests": [
         "assert($(\"#left-well\").css(\"background-color\") === 'red' || $(\"#left-well\").css(\"background-color\") === 'rgb(255, 0, 0)' || $(\"#left-well\").css(\"background-color\").toLowerCase() === '#ff0000' || $(\"#left-well\").css(\"background-color\").toLowerCase() === '#f00', 'Your <code>left-well</code> element should have a red background.')",
-        "assert(editor.match(/\\.parent\\(\\)\\.css/g), 'You should use the <code>parent()</code> function to modify this element.')",
+        "assert(editor.match(/\\.parent\\(\\)\\.css/g), 'You should use the <code>&#46;parent&#40;&#41;</code> function to modify this element.')",
+        "assert(editor.match(/\\$\\s*?\\(\\s*?(?:'|\")\\s*?#target1\\s*?(?:'|\")\\s*?\\)\\.parent/gi), 'The <code>&#46;parent&#40;&#41;</code> method should be called on the <code>&#35;target1</code> element.')",
         "assert(editor.match(/<div class=\"well\" id=\"left-well\">/g), 'Only use jQuery to add these classes to the element.')"
       ],
       "challengeSeed": [
@@ -642,7 +643,7 @@
         "  });",
         "fcces",
         "",
-        "<!-- You shouldn't need to modify code below this line -->",
+        "<!-- Only change code above this line. -->",
         "",
         "<div class=\"container-fluid\">",
         "  <h3 class=\"text-primary text-center\">jQuery Playground</h3>",
@@ -672,16 +673,16 @@
     {
       "id": "bad87fee1348bd9aed208826",
       "title": "Target the Children of an Element Using jQuery",
-      "difficulty": 3.14,
       "description": [
-        "Many HTML elements have <code>children</code> elements from which <code>inherit</code> their properties.",
+        "Many HTML elements have <code>children</code> which <code>inherit</code> their properties from their parent HTML elements.",
         "For example, every HTML element is a child of your <code>body</code> element, and your \"jQuery Playground\" <code>h3</code> element is a child of your <code>&#60;div class=\"container-fluid\"&#62</code> element.",
         "jQuery has a function called <code>children()</code> that allows you to access the children of whichever element you've selected.",
-        "Give all the children of your <code>#right-well</code> element a color of green.",
-        "Here's an example of how you would use the <code>children()</code> function: <code>$(\"#left-well\").children().css(\"color\", \"blue\")</code>"
+        "Here's an example of how you would use the <code>children()</code> function to give the children of your <code>left-well</code> element the color of blue:",
+        "<code>$(\"#left-well\").children().css(\"color\", \"blue\")</code>",
+        "Give all the children of your <code>#right-well</code> element a color of green."
       ],
       "tests": [
-        "assert($(\"#target6\").css(\"color\") === 'rgb(0, 128, 0)', 'Your <code>target6</code> element should have green text.')",
+        "assert($(\"#right-well\").children().css(\"color\") === 'rgb(0, 128, 0)', 'All children of <code>#right-well</code> should have green text.')",
         "assert(editor.match(/\\.children\\(\\)\\.css/g), 'You should use the <code>children&#40&#41</code> function to modify these elements.')",
         "assert(editor.match(/<div class=\"well\" id=\"right-well\">/g), 'Only use jQuery to add these classes to the element.')"
       ],
@@ -698,7 +699,7 @@
         "  });",
         "fcces",
         "",
-        "<!-- You shouldn't need to modify code below this line -->",
+        "<!-- Only change code above this line. -->",
         "",
         "<div class=\"container-fluid\">",
         "  <h3 class=\"text-primary text-center\">jQuery Playground</h3>",
@@ -728,16 +729,16 @@
     {
       "id": "bad87fee1348bd9aed108826",
       "title": "Target a Specific Child of an Element Using jQuery",
-      "difficulty": 3.15,
       "description": [
         "You've seen why id attributes are so convenient for targeting with jQuery selectors. But you won't always have such neat ids to work with.",
         "Fortunately, jQuery has some other tricks for targeting the right elements.",
         "jQuery uses CSS Selectors to target elements. <code>target:nth-child(n)</code> css selector allows you to select all the nth element with the target class or element type.",
-        "Make the second child in each of your well elements bounce.",
-        "Here's how you would give the third element in each well bounce: <code>$(\".target:nth-child(3)\").addClass(\"animated bounce\");</code>"
+        "Here's how you would give the third element in each well bounce:",
+        "<code>$(\".target:nth-child(3)\").addClass(\"animated bounce\");</code>",
+        "Make the second child in each of your well elements bounce. You must target the children of element with the <code>target</code> class."
       ],
       "tests": [
-        "assert($(\".target:nth-child(2)\").hasClass(\"animated\") && $(\".target:nth-child(2)\").hasClass(\"bounce\"), 'The second element in each of your <code>well</code> elements should bounce.')",
+        "assert($(\".target:nth-child(2)\").hasClass(\"animated\") && $(\".target:nth-child(2)\").hasClass(\"bounce\"), 'The second element in your <code>target</code> elements should bounce.')",
         "assert(editor.match(/\\:nth-child\\(/g), 'You should use the <code>&#58;nth-child&#40&#41</code> function to modify these elements.')",
         "assert(editor.match(/<button class=\"btn btn-default target\" id=\"target2\">/g), 'Only use jQuery to add these classes to the element.')"
       ],
@@ -755,7 +756,7 @@
         "  });",
         "fcces",
         "",
-        "<!-- You shouldn't need to modify code below this line -->",
+        "<!-- Only change code above this line. -->",
         "",
         "<div class=\"container-fluid\">",
         "  <h3 class=\"text-primary text-center\">jQuery Playground</h3>",
@@ -785,11 +786,11 @@
     {
       "id": "bad87fee1348bd9aed008826",
       "title": "Target Even Numbered Elements Using jQuery",
-      "difficulty": 3.16,
       "description": [
         "You can also target all the even-numbered elements.",
-        "Here's how you would target all the odd-numbered elements with class <code>target</code> and give them classes: <code>$(\".target:odd\").addClass(\"animated shake\");</code>",
-        "Try selecting all the even-numbered elements - that is, what your browser will consider even-numbered elements - and giving them the classes of <code>animated</code> and <code>shake</code>."
+        "Here's how you would target all the odd-numbered elements with class <code>target</code> and give them classes:",
+        "<code>$(\".target:odd\").addClass(\"animated shake\");</code>",
+        "Try selecting all the even-numbered elements and giving them the classes of <code>animated</code> and <code>shake</code>."
       ],
       "tests": [
         "assert($('.target:even').hasClass('animated') && $('.target:even').hasClass('shake'), 'All the <code>target</code> elements that computer considers even should shake.')",
@@ -812,7 +813,7 @@
         "  });",
         "fcces",
         "",
-        "<!-- You shouldn't need to modify code below this line -->",
+        "<!-- Only change code above this line. -->",
         "",
         "<div class=\"container-fluid\">",
         "  <h3 class=\"text-primary text-center\">jQuery Playground</h3>",
@@ -842,7 +843,6 @@
     {
       "id": "bad87fee1348bd9aecb08826",
       "title": "Use jQuery to Modify the Entire Page",
-      "difficulty": 3.20,
       "description": [
         "We're done playing with our jQuery playground. Let's tear it down!",
         "jQuery can target the <code>body</code> element as well.",
@@ -869,7 +869,7 @@
         "  });",
         "fcces",
         "",
-        "<!-- You shouldn't need to modify code below this line -->",
+        "<!-- Only change code above this line. -->",
         "",
         "<div class=\"container-fluid\">",
         "  <h3 class=\"text-primary text-center\">jQuery Playground</h3>",

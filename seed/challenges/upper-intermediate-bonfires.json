@@ -1,11 +1,11 @@
 {
   "name": "Upper Intermediate Algorithm Scripting",
-  "order": 0.011,
+  "order": 13,
+  "time": "50h",
   "challenges": [
     {
       "id": "a2f1d72d9b908d0bd72bb9f6",
       "title": "Make a Person",
-      "difficulty": "3.01",
       "description": [
         "Fill in the object constructor with the methods specified in the tests.",
         "Those methods are getFirstName(), getLastName(), getFullName(), setFirstName(first), setLastName(last), and setFullName(firstAndLast).",
@@ -22,24 +22,25 @@
         "bob.getFullName();"
       ],
       "tests": [
-        "expect(Object.keys(bob).length).to.eql(6);",
-        "expect(bob instanceof Person).to.be.true;",
-        "expect(bob.firstName).to.be.undefined();",
-        "expect(bob.lastName).to.be.undefined();",
-        "expect(bob.getFirstName()).to.eql('Bob');",
-        "expect(bob.getLastName()).to.eql('Ross');",
-        "expect(bob.getFullName()).to.eql('Bob Ross');",
-        "bob.setFirstName('Happy');",
-        "expect(bob.getFirstName()).to.eql('Happy');",
-        "bob.setLastName('Trees');",
-        "expect(bob.getLastName()).to.eql('Trees');",
-        "bob.setFullName('George Carlin');",
-        "expect(bob.getFullName()).to.eql('George Carlin');",
-        "bob.setFullName('Bob Ross');"
+        "assert.deepEqual(Object.keys(bob).length, 6, 'message: <code>Object.keys(bob).length</code> should return 6.');",
+        "assert.deepEqual(bob instanceof Person, true, 'message: <code>bob instanceof Person</code> should return true.');",
+        "assert.deepEqual(bob.firstName, undefined, 'message: <code>bob.firstName</code> should return undefined.');",
+        "assert.deepEqual(bob.lastName, undefined, 'message: <code>bob.lastName</code> should return undefined.');",
+        "assert.deepEqual(bob.getFirstName(), 'Bob', 'message: <code>bob.getFirstName()</code> should return \"Bob\".');",
+        "assert.deepEqual(bob.getLastName(), 'Ross', 'message: <code>bob.getLastName()</code> should return \"Ross\".');",
+        "assert.deepEqual(bob.getFullName(), 'Bob Ross', 'message: <code>bob.getFullName()</code> should return \"Bob Ross\".');",
+        "assert.strictEqual((function () { bob.setFirstName(\"Haskell\"); return bob.getFullName(); })(), 'Haskell Ross', 'message: <code>bob.getFullName()</code> should return \"Haskell Ross\" after <code>bob.setFirstName(\"Haskell\")</code>.');",
+        "assert.strictEqual((function () { bob.setLastName(\"Curry\"); return bob.getFullName(); })(), 'Bob Curry', 'message: <code>bob.getFullName()</code> should return \"Bob Curry\" after <code>bob.setLastName(\"Curry\")</code>.');",
+        "assert.strictEqual((function () { bob.setFullName(\"Haskell Curry\"); return bob.getFullName(); })(), 'Haskell Curry', 'message: <code>bob.getFullName()</code> should return \"Haskell Curry\" after <code>bob.setFullName(\"Haskell Curry\")</code>.');",
+        "assert.strictEqual((function () { bob.setFullName(\"Haskell Curry\"); return bob.getFirstName(); })(), 'Haskell', 'message: <code>bob.getFirstName()</code> should return \"Haskell\" after <code>bob.setFullName(\"Haskell Curry\")</code>.');",
+        "assert.strictEqual((function () { bob.setFullName(\"Haskell Curry\"); return bob.getLastName(); })(), 'Curry', 'message: <code>bob.getLastName()</code> should return \"Curry\" after <code>bob.setFullName(\"Haskell Curry\")</code>.');"
       ],
       "MDNlinks": [
         "Closures",
         "Details of the Object Model"
+      ],
+      "solutions": [
+        "var Person = function(firstAndLast) {\n\n  var firstName, lastName;\n\n  function updateName(str) {    \n    firstName = str.split(\" \")[0];\n    lastName = str.split(\" \")[1];    \n  }\n\n  updateName(firstAndLast);\n\n  this.getFirstName = function(){\n    return firstName;\n  };\n  \n  this.getLastName = function(){\n    return lastName;\n  };\n  \n  this.getFullName = function(){\n    return firstName + \" \" + lastName;\n  };\n  \n  this.setFirstName = function(str){\n    firstName = str;\n  };\n  \n\n  this.setLastName = function(str){\n    lastName = str;\n  };\n  \n  this.setFullName = function(str){\n    updateName(str);\n  };\n};\n\nvar bob = new Person('Bob Ross');\nbob.getFullName();"
       ],
       "type": "bonfire",
       "challengeType": 5,
@@ -58,7 +59,6 @@
       "id": "af4afb223120f7348cdfc9fd",
       "title": "Map the Debris",
       "dashedName": "bonfire-map-the-debris",
-      "difficulty": "3.02",
       "description": [
         "Return a new array that transforms the element's average altitude into their orbital periods.",
         "The array will contain objects in the format <code>{name: 'name', avgAlt: avgAlt}</code>.",
@@ -77,11 +77,14 @@
         "orbitalPeriod([{name : \"sputnik\", avgAlt : 35873.5553}]);"
       ],
       "tests": [
-        "expect(orbitalPeriod([{name : \"sputnik\", avgAlt : 35873.5553}])).to.eqls([{name: \"sputnik\", orbitalPeriod: 86400}]);",
-        "expect(orbitalPeriod([{name: \"iss\", avgAlt: 413.6}, {name: \"hubble\", avgAlt: 556.7}, {name: \"moon\", avgAlt: 378632.553}])).to.eqls([{name : \"iss\", orbitalPeriod: 5557}, {name: \"hubble\", orbitalPeriod: 5734}, {name: \"moon\", orbitalPeriod: 2377399}]);"
+        "assert.deepEqual(orbitalPeriod([{name : \"sputnik\", avgAlt : 35873.5553}]), [{name: \"sputnik\", orbitalPeriod: 86400}], 'message: <code>orbitalPeriod([{name : \"sputnik\", avgAlt : 35873.5553}])</code> should return <code>[{name: \"sputnik\", orbitalPeriod: 86400}]</code>.');",
+        "assert.deepEqual(orbitalPeriod([{name: \"iss\", avgAlt: 413.6}, {name: \"hubble\", avgAlt: 556.7}, {name: \"moon\", avgAlt: 378632.553}]), [{name : \"iss\", orbitalPeriod: 5557}, {name: \"hubble\", orbitalPeriod: 5734}, {name: \"moon\", orbitalPeriod: 2377399}], 'message: <code>orbitalPeriod([{name: \"iss\", avgAlt: 413.6}, {name: \"hubble\", avgAlt: 556.7}, {name: \"moon\", avgAlt: 378632.553}])</code> should return <code>[{name : \"iss\", orbitalPeriod: 5557}, {name: \"hubble\", orbitalPeriod: 5734}, {name: \"moon\", orbitalPeriod: 2377399}]</code>.');"
       ],
       "MDNlinks": [
         "Math.pow()"
+      ],
+      "solutions": [
+        "function orbitalPeriod(arr) {\n  var GM = 398600.4418;\n  var earthRadius = 6367.4447;\n  var TAU = 2 * Math.PI; \n  return arr.map(function(obj) {\n    return {\n      name: obj.name,\n      orbitalPeriod: Math.round(TAU * Math.sqrt(Math.pow(obj.avgAlt+earthRadius, 3)/GM))\n    };\n  });\n}\n\norbitalPeriod([{name : \"sputkin\", avgAlt : 35873.5553}]);\n"
       ],
       "type": "bonfire",
       "challengeType": 5,
@@ -99,7 +102,6 @@
     {
       "id": "a3f503de51cfab748ff001aa",
       "title": "Pairwise",
-      "difficulty": "3.03",
       "description": [
         "Return the sum of all indices of elements of 'arr' that can be paired with one other element to form a sum that equals the value in the second argument 'arg'. If multiple sums are possible, return the smallest sum. Once an element has been used, it cannot be reused to pair with another.",
         "For example, pairwise([1, 4, 2, 3, 0, 5], 7) should return 11 because 4, 2, 3 and 5 can be paired with each other to equal 7.",
@@ -114,16 +116,19 @@
         "pairwise([1,4,2,3,0,5], 7);"
       ],
       "tests": [
-        "expect(pairwise([1, 4, 2, 3, 0, 5], 7)).to.equal(11);",
-        "expect(pairwise([1, 3, 2, 4], 4)).to.equal(1);",
-        "expect(pairwise([1,1,1], 2)).to.equal(1);",
-        "expect(pairwise([0, 0, 0, 0, 1, 1], 1)).to.equal(10);",
-        "expect(pairwise([], 100)).to.equal(0);"
+        "assert.deepEqual(pairwise([1, 4, 2, 3, 0, 5], 7), 11, 'message: <code>pairwise([1, 4, 2, 3, 0, 5], 7)</code> should return 11.');",
+        "assert.deepEqual(pairwise([1, 3, 2, 4], 4), 1, 'message: <code>pairwise([1, 3, 2, 4], 4), 1</code> should return 1.');",
+        "assert.deepEqual(pairwise([1,1,1], 2), 1, 'message: <code>pairwise([1,1,1], 2)</code> should return 1.');",
+        "assert.deepEqual(pairwise([0, 0, 0, 0, 1, 1], 1), 10, 'message: <code>pairwise([0, 0, 0, 0, 1, 1], 1)</code> should return 10.');",
+        "assert.deepEqual(pairwise([], 100), 0, 'message: <code>pairwise([], 100)</code> should return 0.');"
       ],
       "MDNlinks": [
         "Array.reduce()"
       ],
       "type": "bonfire",
+      "solutions": [
+        "function pairwise(arr, arg) {\n  var sum = 0;\n  arr.forEach(function(e, i, a) {\n    if (e != null) {      \n      var diff = arg-e;\n      a[i] = null;\n      var dix = a.indexOf(diff);\n      if (dix !== -1) {\n        sum += dix;\n        sum += i;\n        a[dix] = null;\n      }  \n    }\n  });\n  return sum;\n}\n\npairwise([1,4,2,3,0,5], 7);\n"
+      ],
       "challengeType": 5,
       "nameCn": "",
       "descriptionCn": [],

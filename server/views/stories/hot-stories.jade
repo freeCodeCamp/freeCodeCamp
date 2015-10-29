@@ -47,8 +47,8 @@
                                   "<br>" +
                                   (typeof username !== 'undefined' ?
                                     "<button id='" + data[i].id + "' class='btn btn-no-shadow btn-primary btn-block btn-primary-ghost btn-upvote'>upvote</button>" :
-                                    "<a href='/signup' class='btn btn-no-shadow btn-primary btn-block btn-primary-ghost btn-upvote'>upvote</a>") +
-                                    "<a class='btn btn-no-shadow btn-primary btn-block btn-primary-ghost' href='/news/" + linkedName + "'>more info...</a>" +
+                                    "<a href='/signin' class='btn btn-no-shadow btn-primary btn-block btn-primary-ghost btn-upvote'>upvote</a>") +
+                                    "<a class='btn btn-no-shadow btn-primary btn-block btn-primary-ghost hidden' href='/news/" + linkedName + "'>more info</a>" +
                                 "</div>" +
                             "</div>" +
                             "<div class='hidden-xs row media-stories'>" +
@@ -69,7 +69,7 @@
                                                 (typeof username !== 'undefined' ?
                                                   "<button id='" + data[i].id + "' class='btn btn-no-shadow btn-primary btn-xs btn-primary-ghost btn-upvote'>upvote</button>" :
                                                   "<a href='/signin' class='btn btn-no-shadow btn-primary btn-xs btn-primary-ghost'>upvote</a>") +
-                                                " · <a class='btn btn-no-shadow btn-primary btn-xs btn-primary-ghost' href='/news/" + linkedName + "'>more info...</a> · " +
+                                                "<a class='btn btn-no-shadow btn-primary btn-xs btn-primary-ghost hidden' href='/news/" + linkedName + "'>more info</a> &nbsp; " +
                                                 rank + (rank > 1 ? " points" : " point") + " · posted " +
                                                 moment(data[i].timePosted).fromNow() +
                                                 " by <a href='/" + data[i].author.username + "'>@" + data[i].author.username + "</a> " +

@@ -1,11 +1,11 @@
 {
   "name": "AngularJS",
-  "order": 0.014,
+  "order": 16,
+  "time": "5h",
   "challenges": [
     {
       "id": "bd7154d8c441eddfaeb5bdef",
       "title": "Get Started with Angular.js",
-      "difficulty": 0.34,
       "challengeSeed": ["114684726"],
       "description": [
         "Code School has a short, free Angular.js course. This will give us a quick tour of Angular.js's mechanics and features.",
@@ -29,7 +29,6 @@
     {
       "id": "bd7155d8c441eddfaeb5bdef",
       "title": "Apply Angular.js Directives",
-      "difficulty": 0.35,
       "challengeSeed": ["114684727"],
       "description": [
         "Directives serve as markers in your HTML. When Angular.js compiles your HTML, it will alter the behavior of DOM elements based on the directives you've used.",
@@ -53,7 +52,6 @@
     {
       "id": "bd7156d8c441eddfaeb5bdef",
       "title": "Power Forms with Angular.js",
-      "difficulty": 0.36,
       "challengeSeed": ["114684729"],
       "description": [
         "One area where Angular.js really shines is its powerful web forms.",
@@ -77,7 +75,6 @@
     {
       "id": "bd7157d8c441eddfaeb5bdef",
       "title": "Customize Angular.js Directives",
-      "difficulty": 0.37,
       "challengeSeed": ["114685062"],
       "description": [
         "Now we'll learn how to modify existing Angular.js directives, and even build directives of your own.",
@@ -100,7 +97,6 @@
     {
       "id": "bd7158d8c441eddfaeb5bdef",
       "title": "Create Angular.js Services",
-      "difficulty": 0.38,
       "challengeSeed": ["114685060"],
       "description": [
         "Services are functions that you can use and reuse throughout your Angular.js app to get things done.",

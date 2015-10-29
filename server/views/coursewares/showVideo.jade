@@ -15,21 +15,23 @@ block content
         .col-xs-12.col-sm-12.col-md-8
             .embed-responsive.embed-responsive-16by9
                 iframe.embed-responsive-item(src='//player.vimeo.com/video/#{video}')
-            br
+            .spacer
             if (user)
-                a.btn.btn-primary.btn-big.btn-block#completed-courseware-editorless I've completed this challenge  (ctrl + enter)
+                a.btn.btn-primary.btn-big.btn-block#completed-courseware-editorless I've completed this challenge (ctrl + enter)
+            else
+                a.btn.btn-big.btn-primary.btn-block(href='/challenges/next-challenge?id=' + challengeId) I've completed this challenge (ctrl + enter)
                 script.
                     var userLoggedIn = true;
+            .button-spacer
+            .btn-group.input-group.btn-group-justified
+                .btn.btn-success.btn-big#challenge-help-btn
+                    i.fa.fa-medkit
+                        | &nbsp; Get help
+                .btn.btn-success.btn-big#trigger-issue-modal
+                    i.fa.fa-bug
+                        | &nbsp; Report a bug
+            if (!user)
                 .button-spacer
-                .btn-group.input-group.btn-group-justified
-                    .btn.btn-success.btn-big#trigger-help-modal-modal
-                        i.fa.fa-medkit
-                            | &nbsp; Get help
-                    .btn.btn-success.btn-big#trigger-issue-modal
-                        i.fa.fa-bug
-                            | &nbsp; Report a bug
-                .button-spacer
-            else
                 a.btn.btn-big.signup-btn.btn-block(href='/login') Sign in so you can save your progress
                     script.
                         var userLoggedIn = false;
@@ -55,31 +57,31 @@ block content
                 };
 
     #complete-courseware-editorless-dialog.modal(tabindex='-1')
-        .modal-dialog.animated.zoomIn.fast-animation
+        .modal-dialog.animated.fadeIn.fast-animation
             .modal-content
                 .modal-header.challenge-list-header= compliment
                     a.close.closing-x(href='#', data-dismiss='modal', aria-hidden='true') ×
                 .modal-body(ng-controller="pairedWithController")
                     .text-center
-                        .animated.zoomInDown.delay-half
+                        .animated.zoomInDown
                             span.completion-icon.ion-checkmark-circled.text-primary
                         if (user)
-                            a.animated.fadeIn.btn.btn-lg.btn-primary.btn-block#next-courseware-button(name='_csrf', value=_csrf) On to my next challenge (ctrl + enter)
+                            a.btn.btn-lg.btn-primary.btn-block#next-courseware-button(name='_csrf', value=_csrf) I've completed this challenge (ctrl + enter)
                             script.
                               $('#complete-courseware-editorless-dialog').bind('keypress', modalControlEnterHandler);
-
-                            if (user.progressTimestamps.length > 2)
-                                .button-spacer
-                                a.animated.fadeIn.btn.btn-lg.btn-block.btn-twitter(href="https://twitter.com/intent/tweet?text=I%20just%20#{verb}%20%40FreeCodeCamp%20#{name}&url=http%3A%2F%2Ffreecodecamp.com/challenges/#{dashedName}&hashtags=LearnToCode, JavaScript" target="_blank")
-                                    i.fa.fa-twitter &thinsp;
-                                    = phrase
                         else
-                            a.animated.fadeIn.btn.btn-lg.signup-btn.btn-block(href='/login') Sign in so you can save your progress
-                                h1 #{name}
+                            a.animated.fadeIn.btn.btn-lg.btn-primary.btn-block(href='/challenges/next-challenge?id=' + challengeId) I've completed this challenge (ctrl + enter)
         script.
             $('body').bind('keypress', controlEnterHandler);
     script.
-        var challenge_Id = !{JSON.stringify(challengeId)};
-        var challenge_Name = !{JSON.stringify(name)};
-        var challengeType = !{JSON.stringify(challengeType)};
+      var challenge_Id = !{JSON.stringify(challengeId)};
+      var challenge_Name = !{JSON.stringify(name)};
+      var challengeType = !{JSON.stringify(challengeType)};
+      var dashedName = !{JSON.stringify(dashedName)};
+      document.addEventListener('gitter-sidecar-ready', function(e) {
+        if (window.main) {
+          window.main.chat.createHelpChat('freecodecamp/help', '#challenge-help-btn');
+        }
+      });
     include ../partials/challenge-modals
+

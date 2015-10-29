@@ -1,7 +1,7 @@
 extends ../layout-wide
 block content
     .row
-        .col-xs-12.col-sm-12.col-md-4.bonfire-top
+        .col-md-4.bonfire-top
             h1.text-center= name
             .well
                 h4
@@ -12,28 +12,27 @@ block content
                                     input(type='checkbox' class='challenge-list-checkbox')
                                 .col-xs-9.col-sm-11.col-md-10
                                     li.step-text.wrappable!= step
-        .col-xs-12.col-sm-12.col-md-8
+        .col-md-8
             .embed-responsive.embed-responsive-16by9
                 iframe.embed-responsive-item(src='//player.vimeo.com/video/#{video}')
             br
             if (user)
-                a.btn.btn-primary.btn-big.btn-block#completed-zipline-or-basejump I've completed this challenge  (ctrl + enter)
-                .button-spacer
-                .btn-group.input-group.btn-group-justified
-                    .btn.btn-success.btn-big#trigger-help-modal
-                        i.fa.fa-medkit
-                            | &nbsp; Help
-                    .btn.btn-success.btn-big#trigger-pair-modal
-                        i.fa.fa-user-plus
-                            | &nbsp; Pair
-                    .btn.btn-success.btn-big#trigger-issue-modal
-                        i.fa.fa-bug
-                            | &nbsp; Bug
-                .button-spacer
+                a.btn.btn-primary.btn-big.btn-block#completed-zipline-or-basejump I've completed this challenge (ctrl + enter)
                 script.
                     var userLoggedIn = true;
             else
-                a.btn.btn-lg.signup-btn.btn-block(href='/login') Sign in so you can save your progress
+                a.btn.btn-big.btn-primary.btn-block(href='/challenges/next-challenge?id=' + challengeId) Go to my next challenge (ctrl + enter)
+            .button-spacer
+            .btn-group.input-group.btn-group-justified
+                .btn.btn-success.btn-big#challenge-help-btn
+                    i.fa.fa-medkit
+                        | &nbsp; Help
+                .btn.btn-success.btn-big#trigger-issue-modal
+                    i.fa.fa-bug
+                        | &nbsp; Bug
+            if (!user)
+                .button-spacer
+                a.btn.btn-big.signup-btn.btn-block(href='/login') Sign in so you can save your progress
                     script.
                         var userLoggedIn = false;
                 br
@@ -41,6 +40,7 @@ block content
                 var challenge_Id = !{JSON.stringify(challengeId)};
                 var challenge_Name = !{JSON.stringify(name)};
                 var started = Math.floor(Date.now());
+                var dashedName = !{JSON.stringify(dashedName)};
                 var challengeType = !{JSON.stringify(challengeType)};
                 var controlEnterHandler = function (e) {
                   $('body').unbind('keypress');
@@ -60,21 +60,21 @@ block content
                 };
 
     #complete-zipline-or-basejump-dialog.modal(tabindex='-1')
-        .modal-dialog.animated.zoomIn.fast-animation
+        .modal-dialog.animated.fadeIn.fast-animation
             .modal-content
                 .modal-header.challenge-list-header= compliment
                     a.close.closing-x(href='#', data-dismiss='modal', aria-hidden='true') ×
                 .modal-body(ng-controller="pairedWithController")
                     .text-center
-                        .animated.zoomInDown.delay-half
+                        .animated.zoomInDown
                             span.completion-icon.ion-checkmark-circled.text-primary
                     if (user)
                         form.form-horizontal(novalidate='novalidate', name='completedWithForm')
                             .form-group.text-center
-                                .col-xs-10.col-xs-offset-1.col-sm-8.col-sm-offset-2.col-md-8.col-md-offset-2.animated.fadeIn
+                                .col-xs-10.col-xs-offset-1.col-sm-8.col-sm-offset-2.col-md-8.col-md-offset-2
                                     // extra field to distract password tools like lastpass from injecting css into our username field
                                     input.form-control(ng-show="false")
-                                    if (challengeType === 3)
+                                    if (challengeType === "3")
                                         input.form-control#public-url(type='url', name="solutionUrl", placeholder="http://codepen.io/your-pen-here", autofocus, required, ng-minlength="10", ng-model="deploymentUrl")
                                     else
                                         input.form-control#public-url(type='url', name="solutionUrl", placeholder="http://yourapp.com", autofocus, required, ng-minlength="10", ng-model="deploymentUrl")
@@ -87,11 +87,32 @@ block content
                                         | Username not found
 
                     if (user)
-                        a.animated.fadeIn.btn.btn-lg.btn-primary.btn-block#next-courseware-button(name='_csrf', value=_csrf, ng-disabled='completedWithForm.$invalid') Go to my next challenge (ctrl + enter)
+                        a.btn.btn-lg.btn-primary.btn-block#next-courseware-button(name='_csrf', value=_csrf, ng-disabled='completedWithForm.$invalid') Go to my next challenge
+                        .button-spacer
                         script.
                           $('#complete-zipline-or-basejump-dialog').on('keypress', modalControlEnterHandler);
                     else
-                        a.animated.fadeIn.btn.btn-lg.signup-btn.btn-block(href='/login') Sign in so you can save your progress
+                        a.btn.btn-lg.btn-primary.btn-block(href='/challenges/next-challenge?id=' + challengeId) Go to my next challenge
         script.
             $('body').on('keypress', controlEnterHandler);
     include ../partials/challenge-modals
+    script.
+      document.addEventListener('gitter-sidecar-ready', function(e) {
+        var challengeType = !{JSON.stringify(challengeType)};
+        var room = 'freecodecamp/help';
+        var title;
+
+        if (challengeType === '4') {
+          room = 'freecodecamp/helpBasejumps';
+          title = 'Basejump Help';
+        }
+
+        if (challengeType === '3') {
+          room = 'freecodecamp/helpZiplines';
+          title = 'Zipline Help';
+        }
+
+        if (window.main) {
+          window.main.chat.createHelpChat(room, '#challenge-help-btn', title);
+        }
+      });

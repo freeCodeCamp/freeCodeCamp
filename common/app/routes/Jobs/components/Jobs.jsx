@@ -1,23 +1,43 @@
 import React, { cloneElement, PropTypes } from 'react';
 import { contain } from 'thundercats-react';
+import { History } from 'react-router';
 import { Button, Jumbotron, Row } from 'react-bootstrap';
+
+import CreateJobModal from './CreateJobModal.jsx';
 import ListJobs from './List.jsx';
 
 export default contain(
   {
     store: 'jobsStore',
-    fetchAction: 'jobActions.getJobs'
+    fetchAction: 'jobActions.getJobs',
+    actions: 'jobActions'
   },
   React.createClass({
     displayName: 'Jobs',
+
+    mixins: [History],
+
     propTypes: {
       children: PropTypes.element,
-      jobs: PropTypes.array
+      jobActions: PropTypes.object,
+      jobs: PropTypes.array,
+      showModal: PropTypes.bool
     },
 
-    renderList(jobs) {
+    handleJobClick(id) {
+      const { jobActions } = this.props;
+      if (!id) {
+        return null;
+      }
+      jobActions.findJob(id);
+      this.history.pushState(null, `/jobs/${id}`);
+    },
+
+    renderList(handleJobClick, jobs) {
       return (
-        <ListJobs jobs={ jobs }/>
+        <ListJobs
+          handleClick={ handleJobClick }
+          jobs={ jobs }/>
       );
     },
 
@@ -32,7 +52,12 @@ export default contain(
     },
 
     render() {
-      const { children, jobs } = this.props;
+      const {
+        children,
+        jobs,
+        showModal,
+        jobActions
+      } = this.props;
 
       return (
         <div>
@@ -46,15 +71,19 @@ export default contain(
               </p>
               <Button
                 bsSize='large'
-                className='signup-btn'>
+                className='signup-btn'
+                onClick={ jobActions.openModal }>
                 Try the first month 20% off!
               </Button>
             </Jumbotron>
           </Row>
           <Row>
             { this.renderChild(children, jobs) ||
-              this.renderList(jobs) }
-            </Row>
+              this.renderList(this.handleJobClick, jobs) }
+          </Row>
+          <CreateJobModal
+            onHide={ jobActions.closeModal }
+            showModal={ showModal } />
         </div>
       );
     }

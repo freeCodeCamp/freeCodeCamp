@@ -1,20 +1,20 @@
 {
   "name": "Basic Algorithm Scripting",
-  "order": 0.006,
+  "order": 8,
+  "time": "50h",
   "challenges": [
     {
       "id": "ad7123c8c441eddfaeb5bdef",
       "title": "Meet Bonfire",
-      "difficulty": "0",
       "description": [
         "Your goal is to fix the failing test.",
-        "First, run all the tests by clicking \"Run code\" or by pressing Control + Enter.",
+        "First, run all the tests by clicking \"Run tests\" or by pressing Control + Enter.",
         "The failing test is in red. Fix the code so that all tests pass. Then you can move on to the next Bonfire.",
         "Make this function return true no matter what."
       ],
       "tests": [
-        "expect(meetBonfire()).to.be.a(\"boolean\");",
-        "expect(meetBonfire()).to.be.true;"
+        "assert(typeof(meetBonfire()) === \"boolean\", 'message: <code>meetBonfire()</code> should return a boolean value.');",
+        "assert(meetBonfire() === true, 'message: <code>meetBonfire()</code> should return true.');"
       ],
       "challengeSeed": [
         "function meetBonfire(argument) {",
@@ -27,6 +27,9 @@
         "",
         "",
         "meetBonfire(\"You can do this!\");"
+      ],
+      "solutions": [
+        "function meetBonfire(argument) {\n  // Good luck!\n  console.log(\"you can read this function's argument in the developer tools\", argument);\n\n  return true;\n}\n\n\n\nmeetBonfire(\"You can do this!\");\n"
       ],
       "type": "bonfire",
       "challengeType": 5,
@@ -44,31 +47,33 @@
     {
       "id": "a202eed8fc186c8434cb6d61",
       "title": "Reverse a String",
-      "difficulty": "1.01",
       "tests": [
-        "expect(reverseString('hello')).to.be.a('String');",
-        "expect(reverseString('hello')).to.equal('olleh');",
-        "expect(reverseString('Howdy')).to.equal('ydwoH');",
-        "expect(reverseString('Greetings from Earth')).to.equal('htraE morf sgniteerG');"
+        "assert(typeof(reverseString(\"hello\")) === \"string\", 'message: <code>reverseString()</code> should return a string.');",
+        "assert(reverseString(\"hello\") === \"olleh\", 'message: <code>reverseString(\"hello\")</code> should become <code>\"olleh\"</code>.');",
+        "assert(reverseString(\"Howdy\") === \"ydwoH\", 'message: <code>reverseString(\"Howdy\")</code> should become <code>\"ydwoH\"</code>.');",
+        "assert(reverseString(\"Greetings from Earth\") === \"htraE morf sgniteerG\", 'message: <code>reverseString(\"Greetings from Earth\")</code> should return <code>\"htraE morf sgniteerG\"</code>.');"
       ],
       "description": [
         "Reverse the provided string.",
         "You may need to turn the string into an array before you can reverse it.",
         "Your result must be a string.",
-        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Write your own code."
+        "Remember to use <a href=\"//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck\" target=\"_blank\">Read-Search-Ask</a> if you get stuck. Write your own code."
       ],
       "challengeSeed": [
         "function reverseString(str) {",
         "  return str;",
         "}",
         "",
-        "reverseString('hello');"
+        "reverseString(\"hello\");"
       ],
       "MDNlinks": [
         "Global String Object",
         "String.split()",
         "Array.reverse()",
         "Array.join()"
+      ],
+      "solutions": [
+        "function reverseString(str) {\n  return str.split('').reverse().join(\"\");\n}\n\nreverseString('hello');\n"
       ],
       "type": "bonfire",
       "challengeType": 5,
@@ -87,18 +92,18 @@
       "id": "a302f7aae1aa3152a5b413bc",
       "title": "Factorialize a Number",
       "tests": [
-        "expect(factorialize(5)).to.be.a(\"Number\");",
-        "expect(factorialize(5)).to.equal(120);",
-        "expect(factorialize(10)).to.equal(3628800);",
-        "expect(factorialize(20)).to.equal(2432902008176640000);"
+        "assert(typeof(factorialize(5)) === \"number\", 'message: <code>factorialize()</code> should return a number.');",
+        "assert(factorialize(5) === 120, 'message: <code>factorialize(5)</code> should return 120.');",
+        "assert(factorialize(10) === 3628800, 'message: <code>factorialize(10)</code> should return 3628800.');",
+        "assert(factorialize(20) === 2432902008176640000, 'message: <code>factorialize(20)</code> should return 2432902008176640000.');",
+        "assert(factorialize(0) === 1, 'message: <code>factorialize(0)</code> should return 1.');"
       ],
-      "difficulty": "1.02",
       "description": [
         "Return the factorial of the provided integer.",
         "If the integer is represented with the letter n, a factorial is the product of all positive integers less than or equal to n.",
-        "Factorials are often represented with the shorthand notation n!",
-        "For example: 5! = 1 * 2 * 3 * 4 * 5 = 120f",
-        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Write your own code."
+        "Factorials are often represented with the shorthand notation <code>n!</code>",
+        "For example: <code>5! = 1 * 2 * 3 * 4 * 5 = 120</code>",
+        "Remember to use <a href=\"//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck\" target=\"_blank\">Read-Search-Ask</a> if you get stuck. Write your own code."
       ],
       "challengeSeed": [
         "function factorialize(num) {",
@@ -109,6 +114,9 @@
       ],
       "MDNlinks": [
         "Arithmetic Operators"
+      ],
+      "solutions": [
+        "function factorialize(num) {\n  return num === 1 ? 1 : num * factorialize(num-1);\n}\n\nfactorialize(5);\n"
       ],
       "type": "bonfire",
       "challengeType": 5,
@@ -126,23 +134,25 @@
     {
       "id": "aaa48de84e1ecc7c742e1124",
       "title": "Check for Palindromes",
-      "difficulty": "1.03",
       "description": [
         "Return true if the given string is a palindrome. Otherwise, return false.",
         "A palindrome is a word or sentence that's spelled the same way both forward and backward, ignoring punctuation, case, and spacing.",
         "You'll need to remove punctuation and turn everything lower case in order to check for palindromes.",
         "We'll pass strings with varying formats, such as \"racecar\", \"RaceCar\", and \"race CAR\" among others.",
-        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Write your own code."
+        "Remember to use <a href=\"//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck\" target=\"_blank\">Read-Search-Ask</a> if you get stuck. Write your own code."
       ],
       "tests": [
-        "expect(palindrome(\"eye\")).to.be.a(\"boolean\");",
-        "assert.deepEqual(palindrome(\"eye\"), true);",
-        "assert.deepEqual(palindrome(\"race car\"), true);",
-        "assert.deepEqual(palindrome(\"not a palindrome\"), false);",
-        "assert.deepEqual(palindrome(\"A man, a plan, a canal. Panama\"), true);",
-        "assert.deepEqual(palindrome(\"never odd or even\"), true);",
-        "assert.deepEqual(palindrome(\"nope\"), false);",
-        "assert.deepEqual(palindrome(\"almostomla\"), false);"
+        "assert(typeof(palindrome(\"eye\")) === \"boolean\", 'message: <code>palindrome()</code> should return a boolean.');",
+        "assert(palindrome(\"eye\") === true, 'message: <code>palindrome(\"eye\")</code> should return true.');",
+        "assert(palindrome(\"race car\") === true, 'message: <code>palindrome(\"race car\")</code> should return true.');",
+        "assert(palindrome(\"not a palindrome\") === false, 'message: <code>palindrome(\"not a palindrome\")</code> should return false.');",
+        "assert(palindrome(\"A man, a plan, a canal. Panama\") === true, 'message: <code>palindrome(\"A man, a plan, a canal. Panama\")</code> should return true.');",
+        "assert(palindrome(\"never odd or even\") === true, 'message: <code>palindrome(\"never odd or even\")</code> should return true.');",
+        "assert(palindrome(\"nope\") === false, 'message: <code>palindrome(\"nope\")</code> should return false.');",
+        "assert(palindrome(\"almostomla\") === false, 'message: <code>palindrome(\"almostomla\")</code> should return false.');",
+        "assert(palindrome(\"My age is 0, 0 si ega ym.\") === true, 'message: <code>palindrome(\"My age is 0, 0 si ega ym.\")</code> should return true.');",
+        "assert(palindrome(\"1 eye for of 1 eye.\") === false, 'message: <code>palindrome(\"1 eye for of 1 eye.\")</code> should return false.');",
+        "assert(palindrome(\"0_0 (: /-\\ :) 0-0\") === true, 'message: <code>palindrome(\"0_0 (: /-\\ :) 0-0\")</code> should return true.');"
       ],
       "challengeSeed": [
         "function palindrome(str) {",
@@ -157,6 +167,9 @@
       "MDNlinks": [
         "String.replace()",
         "String.toLowerCase()"
+      ],
+      "solutions": [
+        "function palindrome(str) {\n  var a = str.toLowerCase().replace(/[^a-z]/g, '');\n  console.log(a.split('').reverse().join(''));\n  return a == a.split('').reverse().join('');\n}\n\n\n\npalindrome(\"eye\");\npalindrome(\"A man, a plan, a canal. Panama\");\n"
       ],
       "type": "bonfire",
       "challengeType": 5,
@@ -174,30 +187,32 @@
     {
       "id": "a26cbbe9ad8655a977e1ceb5",
       "title": "Find the Longest Word in a String",
-      "difficulty": "1.04",
       "description": [
         "Return the length of the longest word in the provided sentence.",
         "Your response should be a number.",
-        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Write your own code."
+        "Remember to use <a href=\"//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck\" target=\"_blank\">Read-Search-Ask</a> if you get stuck. Write your own code."
       ],
       "challengeSeed": [
         "function findLongestWord(str) {",
         "  return str.length;",
         "}",
         "",
-        "findLongestWord('The quick brown fox jumped over the lazy dog');"
+        "findLongestWord(\"The quick brown fox jumped over the lazy dog\");"
       ],
       "tests": [
-        "expect(findLongestWord('The quick brown fox jumped over the lazy dog')).to.be.a('Number');",
-        "expect(findLongestWord('The quick brown fox jumped over the lazy dog')).to.equal(6);",
-        "expect(findLongestWord('May the force be with you')).to.equal(5);",
-        "expect(findLongestWord('Google do a barrel roll')).to.equal(6);",
-        "expect(findLongestWord('What is the average airspeed velocity of an unladen swallow')).to.equal(8);",
-        "expect(findLongestWord('What if we try a super-long word such as otorhinolaryngology')).to.equal(19);"
+        "assert(typeof(findLongestWord(\"The quick brown fox jumped over the lazy dog\")) === \"number\", 'message: <code>findLongestWord()</code> should return a number.');",
+        "assert(findLongestWord(\"The quick brown fox jumped over the lazy dog\") === 6, 'message: <code>findLongestWord(\"The quick brown fox jumped over the lazy dog\")</code> should return 6.');",
+        "assert(findLongestWord(\"May the force be with you\") === 5, 'message: <code>findLongestWord(\"May the force be with you\")</code> should return 5.');",
+        "assert(findLongestWord(\"Google do a barrel roll\") === 6, 'message: <code>findLongestWord(\"Google do a barrel roll\")</code> should return 6.');",
+        "assert(findLongestWord(\"What is the average airspeed velocity of an unladen swallow\") === 8, 'message: <code>findLongestWord(\"What is the average airspeed velocity of an unladen swallow\")</code> should return 8.');",
+        "assert(findLongestWord(\"What if we try a super-long word such as otorhinolaryngology\") === 19, 'message: <code>findLongestWord(\"What if we try a super-long word such as otorhinolaryngology\")</code> should return 19.');"
       ],
       "MDNlinks": [
         "String.split()",
         "String.length"
+      ],
+      "solutions": [
+        "function findLongestWord(str) {\n  return str.split(' ').sort(function(a, b) { return b.length - a.length;})[0].length;\n}\n\nfindLongestWord('The quick brown fox jumped over the lazy dog');\n"
       ],
       "type": "bonfire",
       "challengeType": 5,
@@ -215,11 +230,10 @@
     {
       "id": "ab6137d4e35944e21037b769",
       "title": "Title Case a Sentence",
-      "difficulty": "1.05",
       "description": [
-        "Return the provided string with the first letter of each word capitalized.",
-        "For the purpose of this exercise, you should also capitalize connecting words like 'the' and 'of'.",
-        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Write your own code."
+        "Return the provided string with the first letter of each word capitalized. Make sure the rest of the word is in lower case.",
+        "For the purpose of this exercise, you should also capitalize connecting words like \"the\" and \"of\".",
+        "Remember to use <a href=\"//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck\" target=\"_blank\">Read-Search-Ask</a> if you get stuck. Write your own code."
       ],
       "challengeSeed": [
         "function titleCase(str) {",
@@ -229,13 +243,16 @@
         "titleCase(\"I'm a little tea pot\");"
       ],
       "tests": [
-        "expect(titleCase(\"I'm a little tea pot\")).to.be.a('String');",
-        "expect(titleCase(\"I'm a little tea pot\")).to.equal(\"I'm A Little Tea Pot\");",
-        "expect(titleCase(\"sHoRt AnD sToUt\")).to.equal(\"Short And Stout\");",
-        "expect(titleCase(\"HERE IS MY HANDLE HERE IS MY SPOUT\")).to.equal(\"Here Is My Handle Here Is My Spout\");"
+        "assert(typeof(titleCase(\"I&#39;m a little tea pot\")) === \"string\", 'message: <code>titleCase()</code> should return a string.');",
+        "assert(titleCase(\"I&#39;m a little tea pot\") === \"I&#39;m A Little Tea Pot\", 'message: <code>titleCase(\"I&#39;m a little tea pot\")</code> should return \"I&#39;m A Little Tea Pot\".');",
+        "assert(titleCase(\"sHoRt AnD sToUt\") === \"Short And Stout\", 'message: <code>titleCase(\"sHoRt AnD sToUt\")</code> should return \"Short And Stout\".');",
+        "assert(titleCase(\"HERE IS MY HANDLE HERE IS MY SPOUT\") === \"Here Is My Handle Here Is My Spout\", 'message: <code>titleCase(\"HERE IS MY HANDLE HERE IS MY SPOUT\")</code> should return \"Here Is My Handle Here Is My Spout\".');"
       ],
       "MDNlinks": [
         "String.charAt()"
+      ],
+      "solutions": [
+        "function titleCase(str) {\n  return str.split(' ').map(function(word) {\n    return word.charAt(0).toUpperCase() + word.substring(1).toLowerCase();\n  }).join(' ');\n}\n\ntitleCase(\"I'm a little tea pot\");\n"
       ],
       "type": "bonfire",
       "challengeType": 5,
@@ -253,12 +270,11 @@
     {
       "id": "a789b3483989747d63b0e427",
       "title": "Return Largest Numbers in Arrays",
-      "difficulty": "1.06",
       "description": [
         "Return an array consisting of the largest number from each provided sub-array. For simplicity, the provided array will contain exactly 4 sub-arrays.",
         "Remember, you can iterate through an array with a simple for loop, and access each member with array syntax arr[i] .",
         "If you are writing your own Chai.js tests, be sure to use a deep equal statement instead of an equal statement when comparing arrays.",
-        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Write your own code."
+        "Remember to use <a href=\"//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck\" target=\"_blank\">Read-Search-Ask</a> if you get stuck. Write your own code."
       ],
       "challengeSeed": [
         "function largestOfFour(arr) {",
@@ -269,12 +285,15 @@
         "largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]);"
       ],
       "tests": [
-        "expect(largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]])).to.be.a('array');",
-        "(largestOfFour([[13, 27, 18, 26], [4, 5, 1, 3], [32, 35, 37, 39], [1000, 1001, 857, 1]])).should.eql([27,5,39,1001]);",
-        "assert(largestOfFour([[4, 9, 1, 3], [13, 35, 18, 26], [32, 35, 97, 39], [1000000, 1001, 857, 1]]).should.eql([9,35,97,1000000]));"
+        "assert(largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]).constructor === Array, 'message: <code>largestOfFour()</code> should return an array.');",
+        "assert.deepEqual(largestOfFour([[13, 27, 18, 26], [4, 5, 1, 3], [32, 35, 37, 39], [1000, 1001, 857, 1]]), [27,5,39,1001], 'message: <code>largestOfFour([[13, 27, 18, 26], [4, 5, 1, 3], [32, 35, 37, 39], [1000, 1001, 857, 1]])</code> should return <code>[27,5,39,1001]</code>.');",
+        "assert.deepEqual(largestOfFour([[4, 9, 1, 3], [13, 35, 18, 26], [32, 35, 97, 39], [1000000, 1001, 857, 1]]), [9,35,97,1000000], 'message: <code>largestOfFour([[4, 9, 1, 3], [13, 35, 18, 26], [32, 35, 97, 39], [1000000, 1001, 857, 1]])</code> should return <code>[9, 35, 97, 1000000]</code>.');"
       ],
       "MDNlinks": [
         "Comparison Operators"
+      ],
+      "solutions": [
+        "function largestOfFour(arr) {\n  return arr.map(function(subArr) {\n    return Math.max.apply(null, subArr);\n  });\n}\n\nlargestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]);\n"
       ],
       "type": "bonfire",
       "challengeType": 5,
@@ -292,10 +311,9 @@
     {
       "id": "acda2fb1324d9b0fa741e6b5",
       "title": "Confirm the Ending",
-      "difficulty": "1.07",
       "description": [
         "Check if a string (first argument) ends with the given target string (second argument).",
-        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Write your own code."
+        "Remember to use <a href=\"//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck\" target=\"_blank\">Read-Search-Ask</a> if you get stuck. Write your own code."
       ],
       "challengeSeed": [
         "function end(str, target) {",
@@ -304,17 +322,21 @@
         "  return str;",
         "}",
         "",
-        "end('Bastian', 'n');"
+        "end(\"Bastian\", \"n\");"
       ],
       "tests": [
-        "assert.strictEqual(end('Bastian', 'n'), true, 'should equal true if target equals end of string');",
-        "assert.strictEqual(end('Connor', 'n'), false, 'should equal false if target does not equal end of string');",
-        "assert.strictEqual(end('Walking on water and developing software from a specification are easy if both are frozen.', 'specification'), false, 'should equal false if target does not equal end of string');",
-        "assert.strictEqual(end('He has to give me a new name', 'name'), true, 'should equal true if target equals end of string');",
-        "assert.strictEqual(end('If you want to save our world, you must hurry. We dont know how much longer we can withstand the nothing', 'mountain'), false, 'should equal false if target does not equal end of string');"
+        "assert(end(\"Bastian\", \"n\") === true, 'message: <code>end(\"Bastian\", \"n\")</code> should return true.');",
+        "assert(end(\"Connor\", \"n\") === false, 'message: <code>end(\"Connor\", \"n\")</code> should return false.');",
+        "assert(end(\"Walking on water and developing software from a specification are easy if both are frozen\", \"specification\") === false, '<code>\"Walking on water and developing software from a specification are easy if both are frozen\"&#44; \"specification\"&#41;</code> should return false.');",
+        "assert(end(\"He has to give me a new name\", \"name\") === true, 'message: <code>end(\"He has to give me a new name\", \"name\")</code> should return true.');",
+        "assert(end(\"He has to give me a new name\", \"me\") === true, 'message: <code>end(\"He has to give me a new name\", \"me\")</code> should return true.');",
+        "assert(end(\"If you want to save our world, you must hurry. We dont know how much longer we can withstand the nothing\", \"mountain\") === false, 'message: <code>end(\"If you want to save our world, you must hurry. We dont know how much longer we can withstand the nothing\", \"mountain\")</code> should return false.');"
       ],
       "MDNlinks": [
         "String.substr()"
+      ],
+      "solutions": [
+        "function end(str, target) {\n  // \"Never give up and good luck will find you.\"\n  // -- Falcor\n  return str.substring(str.length-target.length) === target;\n}\n\nend('Bastian', 'n');\n"
       ],
       "type": "bonfire",
       "challengeType": 5,
@@ -332,10 +354,9 @@
     {
       "id": "afcc8d540bea9ea2669306b6",
       "title": "Repeat a string repeat a string",
-      "difficulty": "1.08",
       "description": [
         "Repeat a given string (first argument) n times (second argument). Return an empty string if n is a negative number.",
-        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Write your own code."
+        "Remember to use <a href=\"//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck\" target=\"_blank\">Read-Search-Ask</a> if you get stuck. Write your own code."
       ],
       "challengeSeed": [
         "function repeat(str, num) {",
@@ -343,15 +364,18 @@
         "  return str;",
         "}",
         "",
-        "repeat('abc', 3);"
+        "repeat(\"abc\", 3);"
       ],
       "tests": [
-        "assert.strictEqual(repeat('*', 3), '***', 'should repeat a string n times');",
-        "assert.strictEqual(repeat('abc', 3), 'abcabcabc', 'should repeat a string n times');",
-        "assert.strictEqual(repeat('abc', -2), '', 'should return an empty string for negative numbers');"
+        "assert(repeat(\"*\", 3) === \"***\", 'message: <code>repeat(\"*\", 3)</code> should return <code>\"***\"</code>.');",
+        "assert(repeat(\"abc\", 3) === \"abcabcabc\", 'message: <code>repeat(\"abc\", 3)</code> should return <code>\"abcabcabc\"</code>.');",
+        "assert(repeat(\"abc\", -2) === \"\", 'message: <code>repeat(\"abc\", -2)</code> should return <code>\"\"</code>.');"
       ],
       "MDNlinks": [
         "Global String Object"
+      ],
+      "solutions": [
+        "function repeat(str, num) {\n  if (num < 0) return '';\n  return num === 1 ? str : str + repeat(str, num-1);\n}\n\nrepeat('abc', 3);\n"
       ],
       "type": "bonfire",
       "challengeType": 5,
@@ -369,11 +393,11 @@
     {
       "id": "ac6993d51946422351508a41",
       "title": "Truncate a string",
-      "difficulty": "1.09",
       "description": [
-        "Truncate a string (first argument) if it is longer than the given maximum string length (second argument). Return the truncated string with a '...' ending.",
+        "Truncate a string (first argument) if it is longer than the given maximum string length (second argument). Return the truncated string with a \"...\" ending.",
         "Note that the three dots at the end add to the string length.",
-        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Write your own code."
+        "If the length of the string is less than or equal to 3 characters, then the length of the three dots is not added to the string length.",
+        "Remember to use <a href=\"//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck\" target=\"_blank\">Read-Search-Ask</a> if you get stuck. Write your own code."
       ],
       "challengeSeed": [
         "function truncate(str, num) {",
@@ -381,16 +405,20 @@
         "  return str;",
         "}",
         "",
-        "truncate('A-tisket a-tasket A green and yellow basket', 11);"
+        "truncate(\"A-tisket a-tasket A green and yellow basket\", 11);"
       ],
       "tests": [
-        "expect(truncate('A-tisket a-tasket A green and yellow basket', 11)).to.eqls('A-tisket...');",
-        "expect(truncate('Peter Piper picked a peck of pickled peppers', 14)).to.eqls('Peter Piper...');",
-        "assert(truncate('A-tisket a-tasket A green and yellow basket', 'A-tisket a-tasket A green and yellow basket'.length) === 'A-tisket a-tasket A green and yellow basket', 'should not truncate if string is = length');",
-        "assert.strictEqual(truncate('A-tisket a-tasket A green and yellow basket', 'A-tisket a-tasket A green and yellow basket'.length + 2), 'A-tisket a-tasket A green and yellow basket', 'should not truncate if string is < length');"
+        "assert(truncate(\"A-tisket a-tasket A green and yellow basket\", 11) === \"A-tisket...\", 'message: <code>truncate(\"A-tisket a-tasket A green and yellow basket\", 11)</code> should return \"A-tisket...\".');",
+        "assert(truncate(\"Peter Piper picked a peck of pickled peppers\", 14) === \"Peter Piper...\", 'message: <code>truncate(\"Peter Piper picked a peck of pickled peppers\", 14)</code> should return \"Peter Piper...\".');",
+        "assert(truncate(\"A-tisket a-tasket A green and yellow basket\", \"A-tisket a-tasket A green and yellow basket\".length) === \"A-tisket a-tasket A green and yellow basket\", 'message: <code>truncate(\"A-tisket a-tasket A green and yellow basket\", \"A-tisket a-tasket A green and yellow basket\".length)</code> should return \"A-tisket a-tasket A green and yellow basket\".');",
+        "assert(truncate('A-tisket a-tasket A green and yellow basket', 'A-tisket a-tasket A green and yellow basket'.length + 2) === 'A-tisket a-tasket A green and yellow basket', 'message: <code>truncate(\"A-tisket a-tasket A green and yellow basket\", \"A-tisket a-tasket A green and yellow basket\".length + 2)</code> should return \"A-tisket a-tasket A green and yellow basket\".');",
+        "assert(truncate(\"A-\", 1) === \"A...\", 'message: <code>truncate(\"A-\", 1)</code> should return \"A...\".');"
       ],
       "MDNlinks": [
         "String.slice()"
+      ],
+      "solutions": [
+        "function truncate(str, num) {\n  if (str.length > num) {\n    return str.substring(0, num-3) + '...';\n  }\n  return str;\n}\n\ntruncate('A-tisket a-tasket A green and yellow basket', 11);\n"
       ],
       "type": "bonfire",
       "challengeType": 5,
@@ -408,10 +436,9 @@
     {
       "id": "a9bd25c716030ec90084d8a1",
       "title": "Chunky Monkey",
-      "difficulty": "1.10",
       "description": [
         "Write a function that splits an array (first argument) into groups the length of size (second argument) and returns them as a multidimensional array.",
-        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Write your own code."
+        "Remember to use <a href=\"//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck\" target=\"_blank\">Read-Search-Ask</a> if you get stuck. Write your own code."
       ],
       "challengeSeed": [
         "function chunk(arr, size) {",
@@ -419,16 +446,19 @@
         "  return arr;",
         "}",
         "",
-        "chunk(['a', 'b', 'c', 'd'], 2);"
+        "chunk([\"a\", \"b\", \"c\", \"d\"], 2);"
       ],
       "tests": [
-        "assert.deepEqual(chunk(['a', 'b', 'c', 'd'], 2), [['a', 'b'], ['c', 'd']], 'should return chunked arrays');",
-        "assert.deepEqual(chunk([0, 1, 2, 3, 4, 5], 3), [[0, 1, 2], [3, 4, 5]], 'should return chunked arrays');",
-        "assert.deepEqual(chunk([0, 1, 2, 3, 4, 5], 2), [[0, 1], [2, 3], [4, 5]], 'should return chunked arrays');",
-        "assert.deepEqual(chunk([0, 1, 2, 3, 4, 5], 4), [[0, 1, 2, 3], [4, 5]], 'should return the last chunk as remaining elements');"
+        "assert.deepEqual(chunk([\"a\", \"b\", \"c\", \"d\"], 2), [[\"a\", \"b\"], [\"c\", \"d\"]], 'message: <code>chunk([\"a\", \"b\", \"c\", \"d\"], 2)</code> should return <code>[[\"a\", \"b\"], [\"c\", \"d\"]]</code>.');",
+        "assert.deepEqual(chunk([0, 1, 2, 3, 4, 5], 3), [[0, 1, 2], [3, 4, 5]], 'message: <code>chunk([0, 1, 2, 3, 4, 5], 3)</code> should return <code>[[0, 1, 2], [3, 4, 5]]</code>.');",
+        "assert.deepEqual(chunk([0, 1, 2, 3, 4, 5], 2), [[0, 1], [2, 3], [4, 5]], 'message: <code>chunk([0, 1, 2, 3, 4, 5], 2)</code> should return <code>[[0, 1], [2, 3], [4, 5]]</code>.');",
+        "assert.deepEqual(chunk([0, 1, 2, 3, 4, 5], 4), [[0, 1, 2, 3], [4, 5]], 'message: <code>chunk([0, 1, 2, 3, 4, 5], 4)</code> should return <code>[[0, 1, 2, 3], [4, 5]]</code>.');"
       ],
       "MDNlinks": [
         "Array.push()"
+      ],
+      "solutions": [
+        "function chunk(arr, size) {\n  var out = [];\n  for (var i = 0; i < arr.length; i+=size) {\n    out.push(arr.slice(i,i+size));\n  }\n  return out;\n}\n\nchunk(['a', 'b', 'c', 'd'], 2);\n"
       ],
       "type": "bonfire",
       "challengeType": 5,
@@ -446,10 +476,10 @@
     {
       "id": "ab31c21b530c0dafa9e241ee",
       "title": "Slasher Flick",
-      "difficulty": "1.11",
       "description": [
         "Return the remaining elements of an array after chopping off n elements from the head.",
-        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Write your own code."
+        "The head meaning the beginning of the array, or the zeroth index",
+        "Remember to use <a href=\"//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck\" target=\"_blank\">Read-Search-Ask</a> if you get stuck. Write your own code."
       ],
       "challengeSeed": [
         "function slasher(arr, howMany) {",
@@ -460,13 +490,17 @@
         "slasher([1, 2, 3], 2);"
       ],
       "tests": [
-        "assert.deepEqual(slasher([1, 2, 3], 2), [3], 'should drop the first two elements');",
-        "assert.deepEqual(slasher([1, 2, 3], 0), [1, 2, 3], 'should return all elements');",
-        "assert.deepEqual(slasher([1, 2, 3], 9), [], 'should return an empty array');"
+        "assert.deepEqual(slasher([1, 2, 3], 2), [3], 'message: <code>slasher([1, 2, 3], 2)</code> should return <code>[3]</code>.');",
+        "assert.deepEqual(slasher([1, 2, 3], 0), [1, 2, 3], 'message: <code>slasher([1, 2, 3], 0)</code> should return <code>[1, 2, 3]</code>.');",
+        "assert.deepEqual(slasher([1, 2, 3], 9), [], 'message: <code>slasher([1, 2, 3], 9)</code> should return <code>[]</code>.');",
+        "assert.deepEqual(slasher([1, 2, 3], 4), [], 'message: <code>slasher([1, 2, 3], 4)</code> should return <code>[]</code>.');"
       ],
       "MDNlinks": [
         "Array.slice()",
         "Array.splice()"
+      ],
+      "solutions": [
+        "function slasher(arr, howMany) {\n  // it doesn't always pay to be first\n  return arr.slice(howMany);\n}\n\nslasher([1, 2, 3], 2);\n"
       ],
       "type": "bonfire",
       "challengeType": 5,
@@ -484,33 +518,35 @@
     {
       "id": "af2170cad53daa0770fabdea",
       "title": "Mutations",
-      "difficulty": "1.12",
       "description": [
         "Return true if the string in the first element of the array contains all of the letters of the string in the second element of the array.",
-        "For example, ['hello', 'Hello'], should return true because all of the letters in the second string are present in the first, ignoring case.",
-        "The arguments ['hello', 'hey'] should return false because the string 'hello' does not contain a 'y'.",
-        "Lastly, ['Alien', 'line'], should return true because all of the letters in 'line' are present in 'Alien'.",
-        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Write your own code."
+        "For example, <code>[\"hello\", \"Hello\"]</code>, should return true because all of the letters in the second string are present in the first, ignoring case.",
+        "The arguments <code>[\"hello\", \"hey\"]</code> should return false because the string \"hello\" does not contain a \"y\".",
+        "Lastly, <code>[\"Alien\", \"line\"]</code>, should return true because all of the letters in \"line\" are present in \"Alien\".",
+        "Remember to use <a href=\"//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck\" target=\"_blank\">Read-Search-Ask</a> if you get stuck. Write your own code."
       ],
       "challengeSeed": [
         "function mutation(arr) {",
         "  return arr;",
         "}",
         "",
-        "mutation(['hello', 'hey']);"
+        "mutation([\"hello\", \"hey\"]);"
       ],
       "tests": [
-        "expect(mutation(['hello', 'hey'])).to.be.false;",
-        "expect(mutation(['hello', 'Hello'])).to.be.true;",
-        "expect(mutation(['zyxwvutsrqponmlkjihgfedcba', 'qrstu'])).to.be.true;",
-        "expect(mutation(['Mary', 'Army'])).to.be.true;",
-        "expect(mutation(['Mary', 'Aarmy'])).to.be.true;",
-        "expect(mutation(['Alien', 'line'])).to.be.true;",
-        "expect(mutation(['floor', 'for'])).to.be.true;",
-        "expect(mutation(['hello', 'neo'])).to.be.false;"
+        "assert(mutation([\"hello\", \"hey\"]) === false, 'message: <code>mutation([\"hello\", \"hey\"])</code> should return false.');",
+        "assert(mutation([\"hello\", \"Hello\"]) === true, 'message: <code>mutation([\"hello\", \"Hello\"])</code> should return true.');",
+        "assert(mutation([\"zyxwvutsrqponmlkjihgfedcba\", \"qrstu\"]) === true, 'message: <code>mutation([\"zyxwvutsrqponmlkjihgfedcba\", \"qrstu\"])</code> should return true.');",
+        "assert(mutation([\"Mary\", \"Army\"]) === true, 'message: <code>mutation([\"Mary\", \"Army\"])</code> should return true.');",
+        "assert(mutation([\"Mary\", \"Aarmy\"]) === true, 'message: <code>mutation([\"Mary\", \"Aarmy\"])</code> should return true.');",
+        "assert(mutation([\"Alien\", \"line\"]) === true, 'message: <code>mutation([\"Alien\", \"line\"])</code> should return true.');",
+        "assert(mutation([\"floor\", \"for\"]) === true, 'message: <code>mutation([\"floor\", \"for\"])</code> should return true.');",
+        "assert(mutation([\"hello\", \"neo\"]) === false, 'message: <code>mutation([\"hello\", \"neo\"])</code> should return false.');"
       ],
       "MDNlinks": [
         "Array.indexOf()"
+      ],
+      "solutions": [
+        "function mutation(arr) {\n  var hash = Object.create(null);\n  arr[0].toLowerCase().split('').forEach(function(c) {\n    hash[c] = true;\n  });\n  return !arr[1].toLowerCase().split('').filter(function(c) {\n    return !hash[c];\n  }).length;\n}\n\nmutation(['hello', 'hey']);\n"
       ],
       "type": "bonfire",
       "challengeType": 5,
@@ -527,12 +563,11 @@
     },
     {
       "id": "adf08ec01beb4f99fc7a68f2",
-      "title": "Falsey Bouncer",
-      "difficulty": "1.50",
+      "title": "Falsy Bouncer",
       "description": [
-        "Remove all falsey values from an array.",
-        "Falsey values in javascript are false, null, 0, \"\", undefined, and NaN.",
-        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Write your own code."
+        "Remove all falsy values from an array.",
+        "Falsy values in javascript are <code>false</code>, <code>null</code>, <code>0</code>, <code>\"\"</code>, <code>undefined</code>, and <code>NaN</code>.",
+        "Remember to use <a href=\"//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck\" target=\"_blank\">Read-Search-Ask</a> if you get stuck. Write your own code."
       ],
       "challengeSeed": [
         "function bouncer(arr) {",
@@ -540,58 +575,19 @@
         "  return arr;",
         "}",
         "",
-        "bouncer([7, 'ate', '', false, 9]);"
+        "bouncer([7, \"ate\", \"\", false, 9]);"
       ],
       "tests": [
-        "assert.deepEqual(bouncer([7, 'ate', '', false, 9]), [7, 'ate', 9], 'should remove falsey values');",
-        "assert.deepEqual(bouncer(['a', 'b', 'c']), ['a', 'b', 'c'], 'should return full array if no falsey elements');",
-        "assert.deepEqual(bouncer([false, null, 0]), [], 'should return empty array if all elements are falsey');"
+        "assert.deepEqual(bouncer([7, \"ate\", \"\", false, 9]), [7, \"ate\", 9], 'message: <code>bouncer([7, \"ate\", \"\", false, 9])</code> should return <code>[7, \"ate\", 9]</code>.');",
+        "assert.deepEqual(bouncer([\"a\", \"b\", \"c\"]), [\"a\", \"b\", \"c\"], 'message: <code>bouncer([\"a\", \"b\", \"c\"])</code> should return <code>[\"a\", \"b\", \"c\"]</code>.');",
+        "assert.deepEqual(bouncer([false, null, 0, NaN, undefined, \"\"]), [], 'message: <code>bouncer([false, null, 0, NaN, undefined, \"\"])</code> should return <code>[]</code>.');"
       ],
       "MDNlinks": [
         "Boolean Objects",
         "Array.filter()"
       ],
-      "type": "bonfire",
-      "challengeType": 5,
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
-      "nameRu": "",
-      "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
-      "namePt": "",
-      "descriptionPt": []
-    },
-    {
-      "id": "a8e512fbe388ac2f9198f0fa",
-      "title": "Where art thou",
-      "difficulty": "1.55",
-      "description": [
-        "Make a function that looks through an array (first argument) and returns an array of all objects that have equivalent property and value pair (second argument).",
-        "For example, if the first argument is <code>[{ first: 'Romeo', last: 'Montague' }, { first: 'Mercutio', last: null }, { first: 'Tybalt', last: 'Capulet' }]</code>, and the second argument is <code>{ last: 'Capulet' }</code>, then you must return the the third object from the array (the first argument), because it contains the property and it's value, that was passed on as the second argument.",
-        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Write your own code."
-      ],
-      "challengeSeed": [
-        "function where(collection, source) {",
-        "  var arr = [];",
-        "  // What's in a name?",
-        "  return arr;",
-        "}",
-        "",
-        "where([{ first: 'Romeo', last: 'Montague' }, { first: 'Mercutio', last: null }, { first: 'Tybalt', last: 'Capulet' }], { last: 'Capulet' });"
-      ],
-      "tests": [
-        "assert.deepEqual(where([{ first: 'Romeo', last: 'Montague' }, { first: 'Mercutio', last: null }, { first: 'Tybalt', last: 'Capulet' }], { last: 'Capulet' }), [{ first: 'Tybalt', last: 'Capulet' }], 'should return an array of objects');",
-        "assert.deepEqual(where([{ 'a': 1 }, { 'a': 1 }, { 'a': 1, 'b': 2 }], { 'a': 1 }), [{ 'a': 1 }, { 'a': 1 }, { 'a': 1, 'b': 2 }], 'should return with multiples');",
-        "assert.deepEqual(where([{ 'a': 1, 'b': 2 }, { 'a': 1 }, { 'a': 1, 'b': 2, 'c': 2 }], { 'a': 1, 'b': 2 }), [{ 'a': 1, 'b': 2 }, { 'a': 1, 'b': 2, 'c': 2 }], 'should return two objects in array');",
-        "assert.deepEqual(where([{ 'a': 5 }, { 'a': 5 }, { 'a': 5, 'b': 10 }], { 'a': 5, 'b': 10 }), [{ 'a': 5, 'b': 10 }], 'should return a single object in array');"
-      ],
-      "MDNlinks": [
-        "Global Object",
-        "Object.hasOwnProperty()",
-        "Object.keys()"
+      "solutions": [
+        "function bouncer(arr) {\n  // Don't show a false ID to this bouncer.\n  return arr.filter(function(e) {return e;});\n}\n\nbouncer([7, 'ate', '', false, 9]);\n"
       ],
       "type": "bonfire",
       "challengeType": 5,
@@ -609,10 +605,9 @@
     {
       "id": "a39963a4c10bc8b4d4f06d7e",
       "title": "Seek and Destroy",
-      "difficulty": "1.60",
       "description": [
         "You will be provided with an initial array (the first argument in the destroyer function), followed by one or more arguments. Remove all elements from the initial array that are of the same value as these arguments.",
-        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Write your own code."
+        "Remember to use <a href=\"//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck\" target=\"_blank\">Read-Search-Ask</a> if you get stuck. Write your own code."
       ],
       "challengeSeed": [
         "function destroyer(arr) {",
@@ -623,15 +618,18 @@
         "destroyer([1, 2, 3, 1, 2, 3], 2, 3);"
       ],
       "tests": [
-        "assert.deepEqual(destroyer([1, 2, 3, 1, 2, 3], 2, 3), [1, 1], 'should remove correct values from an array');",
-        "assert.deepEqual(destroyer([1, 2, 3, 5, 1, 2, 3], 2, 3), [1, 5, 1], 'should remove correct values from an array');",
-        "assert.deepEqual(destroyer([3, 5, 1, 2, 2], 2, 3, 5), [1], 'should accept more than two additional arguments');",
-        "assert.deepEqual(destroyer([2, 3, 2, 3], 2, 3), [], 'should remove correct values from an array');",
-        "assert.deepEqual(destroyer(['tree', 'hamburger', 53], 'tree', 53), ['hamburger'], 'should handle NaN-elements');"
+        "assert.deepEqual(destroyer([1, 2, 3, 1, 2, 3], 2, 3), [1, 1], 'message: <code>destroyer([1, 2, 3, 1, 2, 3], 2, 3)</code> should return <code>[1, 1]</code>.');",
+        "assert.deepEqual(destroyer([1, 2, 3, 5, 1, 2, 3], 2, 3), [1, 5, 1], 'message: <code>destroyer([1, 2, 3, 5, 1, 2, 3], 2, 3)</code> should return <code>[1, 5, 1]</code>.');",
+        "assert.deepEqual(destroyer([3, 5, 1, 2, 2], 2, 3, 5), [1], 'message: <code>destroyer([3, 5, 1, 2, 2], 2, 3, 5)</code> should return <code>[1]</code>.');",
+        "assert.deepEqual(destroyer([2, 3, 2, 3], 2, 3), [], 'message: <code>destroyer([2, 3, 2, 3], 2, 3)</code> should return <code>[]</code>.');",
+        "assert.deepEqual(destroyer([\"tree\", \"hamburger\", 53], \"tree\", 53), [\"hamburger\"], 'message: <code>destroyer([\"tree\", \"hamburger\", 53], \"tree\", 53)</code> should return <code>[\"hamburger\"]</code>.');"
       ],
       "MDNlinks": [
         "Arguments object",
         "Array.filter()"
+      ],
+      "solutions": [
+        "function destroyer(arr) {\n  var hash = Object.create(null);\n  [].slice.call(arguments, 1).forEach(function(e) {\n    hash[e] = true;\n  });\n  // Remove all the values\n  return arr.filter(function(e) { return !(e in hash);});\n}\n\ndestroyer([1, 2, 3, 1, 2, 3], 2, 3);\n"
       ],
       "type": "bonfire",
       "challengeType": 5,
@@ -649,11 +647,11 @@
     {
       "id": "a24c1a4622e3c05097f71d67",
       "title": "Where do I belong",
-      "difficulty": "1.61",
       "description": [
-        "Return the lowest index at which a value (second argument) should be inserted into a sorted array (first argument).",
-        "For example, where([1,2,3,4], 1.5) should return 1 because it is greater than 1 (0th index), but less than 2 (1st index).",
-        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Write your own code."
+        "Return the lowest index at which a value (second argument) should be inserted into an array (first argument) once it has been sorted.",
+        "For example, where([1,2,3,4], 1.5) should return 1 because it is greater than 1 (index 0), but less than 2 (index 1).",
+        "Likewise, where([20,3,5], 19) should return 2 because it is less than 20 (index 2) and greater than 5 (index 1).",
+        "Remember to use <a href=\"//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck\" target=\"_blank\">Read-Search-Ask</a> if you get stuck. Write your own code."
       ],
       "challengeSeed": [
         "function where(arr, num) {",
@@ -666,9 +664,16 @@
       "MDNlinks": [
         "Array.sort()"
       ],
+      "solutions": [
+        "function where(arr, num) {\n  // Find my place in this sorted array.\n  return num;\n}\n\nwhere([40, 60], 50);\n"
+      ],
       "tests": [
-        "expect(where([10, 20, 30, 40, 50], 35)).to.equal(3);",
-        "expect(where([10, 20, 30, 40, 50], 30)).to.equal(2);"
+        "assert(where([10, 20, 30, 40, 50], 35) === 3, 'message: <code>where([10, 20, 30, 40, 50], 35)</code> should return <code>3</code>.');",
+        "assert(where([10, 20, 30, 40, 50], 30) === 2, 'message: <code>where([10, 20, 30, 40, 50], 30)</code> should return <code>2</code>.');",
+        "assert(where([40, 60], 50) === 1, 'message: <code>where([40, 60,], 50)</code> should return <code>1</code>.');",
+        "assert(where([5, 3, 20, 3], 5) === 2, 'message: <code>where([5, 3, 20, 3], 5)</code> should return <code>2</code>.');",
+        "assert(where([2, 20, 10], 19) === 2, 'message: <code>where([2, 20, 10], 19)</code> should return <code>2</code>.');",
+        "assert(where([2, 5, 10], 15) === 3, 'message: <code>where([2, 5, 10], 15)</code> should return <code>3</code>.');"
       ],
       "type": "bonfire",
       "challengeType": 5,

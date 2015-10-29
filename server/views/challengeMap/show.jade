@@ -9,7 +9,7 @@ block content
                 audio(autoplay src='https://s3.amazonaws.com/freecodecamp/t-rex-roar.mp3')
             else
                 img.img-responsive.img-center.border-radius-5(src='https://s3.amazonaws.com/freecodecamp/wide-social-banner.png')
-            .col-xs-12.col-md-10.col-md-offset-1
+            .col-xs-12.col-md-8.col-md-offset-2
                 h2.text-center
                     span.text-primary #{camperCount} &thinsp;
                     | campers have joined our community
@@ -18,6 +18,20 @@ block content
                     span.text-primary #{daysRunning} &thinsp;
                     | days ago.
                 .spacer
+                if (user && user.progressTimestamps.length > 5)
+                    #tshirt-notice.col-xs-12.col-md-8.col-md-offset-2.hidden
+                        h2.text-center Get our first-edition t-shirt.
+                            br
+                            span.text-success Only available until Oct 29!
+                        img.thumbnail.img-center.img-responsive(src="http://i.imgur.com/o07uuOL.png")
+                        p.text-justify Our community has voted. Get our winning design emblazoned on a durable, American-made American Apparel shirt (available in women's and men's sizes).&thinsp;
+                            a(href="https://teespring.com/free-code-camp-shirt-eu" target="_blank") Also ships from Europe
+                            | .
+                        a.button.btn.btn-block.signup-btn(href="https://teespring.com/get-free-code-camp-t-shirt" target="_blank") Get yours
+                        .button-spacer
+                        .text-center
+                            a#hideTshirtNoticeButton(href='#') Hide this forever
+                        .spacer
                 .row
                     .col-xs-12.col-sm-8.col-sm-offset-2
                         h3 800 Hours of Practice:
@@ -26,22 +40,22 @@ block content
                         .row
                             if (user)
                                 if (challengeBlock.completed === 100)
-                                    .hidden-xs.col-sm-3.col-md-2.text-primary.ion-checkmark-circled.padded-ionic-icon.text-center.large-p.negative-10
+                                    .hidden-xs.col-sm-3.col-md-2.text-primary.ion-checkmark-circled.padded-ionic-icon.text-center.map-p.negative-10
                                     .col-xs-12.col-sm-9.col-md-10
-                                        li.large-p.faded.negative-10
+                                        li.map-p.faded.negative-10
                                             a(href='#' + challengeBlock.dashedName)= challengeBlock.name
                                 else
                                     .hidden-xs.col-sm-3.col-md-2
                                         .progress.progress-bar-padding.text-center.thin-progress-bar
                                             .progress-bar(role='progressbar', aria-valuenow=(challengeBlock.completed), aria-valuemin='0', aria-valuemax='100', style='width: ' + challengeBlock.completed + '%;')
                                     .col-xs-12.col-sm-9.col-md-10
-                                        li.large-p.negative-10
+                                        li.map-p.negative-10
                                             a(href='#' + challengeBlock.dashedName)= challengeBlock.name
                             else
                                 .hidden-xs.col-sm-3.col-md-2
                                     span.negative-10
                                 .col-xs-12.col-sm-9.col-md-10
-                                    li.large-p.negative-10
+                                    li.map-p.negative-10
                                         a(href='#' + challengeBlock.dashedName)= challengeBlock.name
 
                 .row
@@ -51,21 +65,21 @@ block content
                             | :
                 ol
                     .row
-                        .hidden-xs.col-sm-3.col-md-2.ion-locked.padded-ionic-icon.text-center.large-p.negative-10
+                        .hidden-xs.col-sm-3.col-md-2.ion-locked.padded-ionic-icon.text-center.map-p.negative-10
                         .col-xs-12.col-sm-9.col-md-10
-                            li.large-p.negative-10 100-hour Nonprofit Project
+                            li.map-p.negative-10 100-hour Nonprofit Project
                     .row
-                        .hidden-xs.col-sm-3.col-md-2.ion-locked.padded-ionic-icon.text-center.large-p.negative-10
+                        .hidden-xs.col-sm-3.col-md-2.ion-locked.padded-ionic-icon.text-center.map-p.negative-10
                         .col-xs-12.col-sm-9.col-md-10
-                            li.large-p.negative-10 200-hour Nonprofit Project #1
+                            li.map-p.negative-10 200-hour Nonprofit Project #1
                     .row
-                        .hidden-xs.col-sm-3.col-md-2.ion-locked.padded-ionic-icon.text-center.large-p.negative-10
+                        .hidden-xs.col-sm-3.col-md-2.ion-locked.padded-ionic-icon.text-center.map-p.negative-10
                         .col-xs-12.col-sm-9.col-md-10
-                            li.large-p.negative-10 200-hour Nonprofit Project #2
+                            li.map-p.negative-10 200-hour Nonprofit Project #2
                     .row
-                        .hidden-xs.col-sm-3.col-md-2.ion-locked.padded-ionic-icon.text-center.large-p.negative-10
+                        .hidden-xs.col-sm-3.col-md-2.ion-locked.padded-ionic-icon.text-center.map-p.negative-10
                         .col-xs-12.col-sm-9.col-md-10
-                            li.large-p.negative-10 300-hour Nonprofit Project
+                            li.map-p.negative-10 300-hour Nonprofit Project
                 hr
 
                 for challengeBlock in blocks
@@ -74,49 +88,57 @@ block content
                         .spacer.negative-55
 
                     .row
-                        .col-xs-12.col-sm-8.col-sm-offset-2
-                            h3 #{challengeBlock.name}
+                        .hidden-xs.col-sm-3.col-md-2
+                            h3.text-primary.text-right.nowrap
+                                i.fa.fa-clock-o
+                                = challengeBlock.time
+                        .col-xs-12.col-sm-9.col-md-10
+                            h3 #{challengeBlock.name} &thinsp;
+
+
                     .row
-                        .col-xs-12
-                            ol
-                                for challenge in challengeBlock.challenges
-                                    if challenge.completed
-                                        .row
-                                            .hidden-xs.col-sm-3.col-md-2.text-primary.ion-checkmark-circled.padded-ionic-icon.text-center.large-p.negative-10
-                                            .col-xs-12.col-sm-9.col-md-10
-                                                li.faded.large-p.negative-10
-                                                    a(href="/challenges/#{challenge.dashedName}")
-                                                        span.capitalize= challenge.type + ': '
-                                                        span= challenge.title
-                                                            span.sr-only= "Complete"
+                        ol
+                            for challenge in challengeBlock.challenges
+                                if challenge.completed
+                                    .row
+                                        .hidden-xs.col-sm-3.col-md-2.text-primary.ion-checkmark-circled.padded-ionic-icon.text-center.map-p.negative-10
+                                        .col-xs-12.col-sm-9.col-md-10
+                                            li.faded.map-p.negative-10
+                                                a(href="/challenges/#{challenge.dashedName}")
+                                                    span.capitalize= challenge.type + ': '
+                                                    span= challenge.title
+                                                        span.sr-only= " Complete"
 
 
-                                    else
-                                        .row
-                                            .hidden-xs.col-sm-3.col-md-2
-                                                span.negative-10
-                                            .col-xs-12.col-sm-9.col-md-10
-                                                li.large-p.negative-10
-                                                    a(href="/challenges/#{challenge.dashedName}")
-                                                        span.capitalize= challenge.type + ': '
-                                                        span= challenge.title
-                                                            span.sr-only= "InComplete"
+                                else
+                                    .row
+                                        .hidden-xs.col-sm-3.col-md-2
+                                            span.negative-10
+                                        .col-xs-12.col-sm-9.col-md-10
+                                            li.map-p.negative-10
+                                                a(href="/challenges/#{challenge.dashedName}")
+                                                    span.capitalize= challenge.type + ': '
+                                                    span= challenge.title
+                                                        span.sr-only= " Incomplete"
 
-    //#announcementModal.modal(tabindex='-1')
-    //    .modal-dialog.animated.fadeInUp.fast-animation
-    //        .modal-content
-    //            .modal-header.challenge-list-header Add us to your LinkedIn profile
-    //                a.close.closing-x(href='#', data-dismiss='modal', aria-hidden='true') ×
-    //            .modal-body
-    //                h3.text-left LinkedIn now recognizes Free Code Camp as a university.
-    //                img.img-responsive.img-center(src='https://www.evernote.com/l/AHTzkHwtg-BHj57bqqDL7WFF8WgrI5V8cxwB/image.png')
-    //                h3.text-left It takes less than a minute to add Free Code Camp to your LinkedIn profile.
-    //                a.btn.btn-lg.btn-info.btn-block(name='_csrf', value=_csrf, aria-hidden='true', href='/linkedin', target='_blank') Show me how to do this
-    //                a.btn.btn-lg.btn-primary.btn-block(href='#', data-dismiss='modal', aria-hidden='true') Thanks for the heads-up
-    //script.
-    //    $(document).ready(function () {
-    //        if (!localStorage || !localStorage.linkedIn) {
-    //            $('#announcementModal').modal('show');
-    //            localStorage.linkedIn = "true";
-    //        }
-    //    });
+                            if (challengeBlock.completed === 100)
+                                .button-spacer
+                                .row
+                                    .col-xs-12.col-sm-8.col-md-6.col-sm-offset-3.col-md-offset-2.hidden
+                                        a.btn.btn-lg.btn-block.signup-btn.map-challenge-block-share Section complete. Share your code portfolio with your friends.
+                                            .hidden(id="#{challengeBlock.name}")
+    script.
+        var username = !{JSON.stringify(user && user.username || '')};
+        var lastCompleted = !{JSON.stringify(lastCompleted || false)}
+        $(document).ready(function () {
+            if (!localStorage || !localStorage.hideTshirtNotice) {
+                $("#tshirt-notice").removeClass("hidden");
+            }
+            $("#hideTshirtNoticeButton").on("click", function() {
+                $("#tshirt-notice").addClass('animated fadeOut');
+                setTimeout(function() {
+                    $("#tshirt-notice").hide();
+                }, 1000);
+                localStorage.hideTshirtNotice = "true";
+            });
+        });
