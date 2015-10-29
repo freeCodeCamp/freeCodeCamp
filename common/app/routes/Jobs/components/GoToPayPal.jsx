@@ -2,11 +2,11 @@ import React, { PropTypes } from 'react';
 import { Button, Input, Col, Panel, Row, Well } from 'react-bootstrap';
 import { contain } from 'thundercats-react';
 
+// real paypal buttons
+// will take your money
 const paypalIds = {
-  regular: 'ZVU498PLMPHKU',
-  regularDiscount: '58U7P36W3L2GQ',
-  highlighted: '3YYSTBAMJYTUW',
-  highlightedDiscount: 'QGWTUZ9XEE6EL'
+  regular: 'Q8Z82ZLAX3Q8N',
+  highlighted: 'VC8QPSKCYMZLN'
 };
 
 export default contain(
