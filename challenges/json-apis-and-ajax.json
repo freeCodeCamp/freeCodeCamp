@@ -377,7 +377,7 @@
         "Here's some code that does this:",
         "<code>if (navigator.geolocation) {</code>",
         "<code>&thinsp;&thinsp;navigator.geolocation.getCurrentPosition(function(position) {</code>",
-        "<code>&thinsp;&thinsp;&thinsp;&thinsp;$(\"#data\").html(\"latitiude\" + position.coords.latitude + \"longitude\" + position.coords.longitude);</code>",
+        "<code>&thinsp;&thinsp;&thinsp;&thinsp;$(\"#data\").html(\"latitude: \" + position.coords.latitude + \"&lt;br&gt;longitude: \" + position.coords.longitude);</code>",
         "<code>&thinsp;&thinsp;});</code>",
         "<code>}</code>"
       ],
