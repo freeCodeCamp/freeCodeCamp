@@ -173,7 +173,7 @@
       ],
       "tests": [
         "assert(editor.match(/json\\.map/gi), 'The message box should have something in it.')"
-    ],
+      ],
       "challengeSeed": [
         "fccss",
         "  $(document).ready(function() {",
@@ -224,15 +224,15 @@
       "id": "bb000000000000000000004",
       "title":  "Render Images from Data Sources",
       "description": [
-        "In the JSON that we receive from Free Code Camp's Cat Photo API, each object has an attribute called \"imageLink\".",
-        "When we're looping through these objects, let's check whether an object attribute (key) is <code>imageLink</code>. If it is, instead of outputing the image link, let's render the image.",
+        "In the JSON that we receive data from Free Code Camp's Cat Photo API.",
+        "When we're looping through these strings, let's check whether they are links. If it is, instead of outputing the image link, let's render the image.",
         "Here's the code that does this:",
         "<code>if(val.match(\"http\")) {</code>",
         "<code>&thinsp;&thinsp;html = html + '&lt;img src = \"' + val + '\"&gt;';</code>",
         "<code>}</code>"
       ],
       "tests": [
-        "assert(editor.match(/val.match/gi), 'You should have accessed the imageLink of each cat object.')"
+        "assert(editor.match(/val.match/gi), 'You should have checked whether the strings contain links.')"
       ],
       "challengeSeed": [
         "fccss",
