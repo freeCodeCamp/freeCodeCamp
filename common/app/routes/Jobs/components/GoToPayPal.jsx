@@ -224,7 +224,7 @@ export default contain(
                     md={ 6 }
                     mdOffset={ 3 }>
                     <form
-                      action='https://www.sandbox.paypal.com/cgi-bin/webscr'
+                      action='https://www.paypal.com/cgi-bin/webscr'
                       method='post'
                       onClick={ this.goToJobBoard }
                       target='_blank'>
