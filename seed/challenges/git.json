@@ -1,6 +1,7 @@
 {
   "name": "Git",
   "order" : 17,
+  "time": "3h",
   "challenges": [
     {
       "id": "bd7353d8c341eddeaeb5bd0f",

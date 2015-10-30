@@ -6,9 +6,12 @@ const {
   transformer
 } = Store;
 
-export default Store({ showModal: false })
-  .refs({ displayName: 'JobsStore' })
-  .init(({ instance: jobsStore, args: [cat] }) => {
+export default Store({
+  refs: {
+    displayName: 'JobsStore',
+    value: { showModal: false }
+  },
+  init({ instance: jobsStore, args: [cat] }) {
     const {
       setJobs,
       findJob,
@@ -16,7 +19,11 @@ export default Store({ showModal: false })
       openModal,
       closeModal,
       handleForm,
-      setForm
+      setForm,
+      setFollowersCount,
+      setPromoCode,
+      applyPromo,
+      clearPromo
     } = cat.getActions('JobActions');
     const register = createRegistrar(jobsStore);
     register(setter(setJobs));
@@ -24,7 +31,12 @@ export default Store({ showModal: false })
     register(setter(openModal));
     register(setter(closeModal));
     register(setter(setForm));
+    register(setter(setPromoCode));
+    register(setter(applyPromo));
+    register(setter(clearPromo));
+    register(setter(setFollowersCount));
 
     register(transformer(findJob));
     register(handleForm);
-  });
+  }
+});

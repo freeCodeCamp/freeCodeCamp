@@ -22,6 +22,19 @@ const history = createHistory();
 const appLocation = createLocation(
   location.pathname + location.search
 );
+
+function location$(history) {
+  return Rx.Observable.create(function(observer) {
+    const dispose = history.listen(function(location) {
+      observer.onNext(location.pathname);
+    });
+
+    return Rx.Disposable.create(() => {
+      dispose();
+    });
+  });
+}
+
 // returns an observable
 app$({ history, location: appLocation })
   .flatMap(
@@ -36,6 +49,27 @@ app$({ history, location: appLocation })
     // redirects in the future
     ({ nextLocation, props }, appCat) => ({ nextLocation, props, appCat })
   )
+  .doOnNext(({ appCat }) => {
+    const appActions = appCat.getActions('appActions');
+
+    location$(history)
+      .pluck('pathname')
+      .distinctUntilChanged()
+      .doOnNext(route => debug('route change', route))
+      .subscribe(route => appActions.updateRoute(route));
+
+    appActions.goBack.subscribe(function() {
+      history.goBack();
+    });
+
+    appActions
+      .updateRoute
+      .pluck('route')
+      .doOnNext(route => debug('update route', route))
+      .subscribe(function(route) {
+        history.pushState(null, route);
+      });
+  })
   .flatMap(({ props, appCat }) => {
     props.history = history;
     return Render(
@@ -49,7 +83,7 @@ app$({ history, location: appLocation })
       debug('react rendered');
     },
     err => {
-      debug('an error has occured', err.stack);
+      throw err;
     },
     () => {
       debug('react closed subscription');

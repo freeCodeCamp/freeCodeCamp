@@ -12,6 +12,10 @@ module.exports = function(app) {
     res.redirect(301, '/pmi-acp-agile-project-managers');
   });
 
+  router.get('/wiki', function(req, res) {
+    res.redirect(301, '//github.com/freecodecamp/freecodecamp/wiki');
+  });
+
   router.get('/privacy', function(req, res) {
     res.redirect(
       301, "//github.com/FreeCodeCamp/freecodecamp/wiki/Free-Code-Camp's-Privacy-Policy"

@@ -16,7 +16,11 @@ export default Actions({
     };
   },
 
-  getUser: null
+  getUser: null,
+  updateRoute(route) {
+    return { route };
+  },
+  goBack: null
 })
   .refs({ displayName: 'AppActions' })
   .init(({ instance: appActions, args: [services] }) => {

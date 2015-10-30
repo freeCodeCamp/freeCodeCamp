@@ -2,7 +2,8 @@ require('dotenv').load();
 var pmx = require('pmx');
 pmx.init();
 
-var uuid = require('node-uuid'),
+var _ = require('lodash'),
+    uuid = require('node-uuid'),
     assign = require('lodash').assign,
     loopback = require('loopback'),
     boot = require('loopback-boot'),
@@ -16,6 +17,7 @@ var getUsernameFromProvider = require('./utils/auth').getUsernameFromProvider;
 var generateKey =
   require('loopback-component-passport/lib/models/utils').generateKey;
 
+var isBeta = !!process.env.BETA;
 var app = loopback();
 
 expressState.extend(app);
@@ -92,16 +94,19 @@ Object.keys(passportProviders).map(function(strategy) {
   );
 });
 
-app.start = function() {
+app.start = _.once(function() {
   app.listen(app.get('port'), function() {
     app.emit('started');
     console.log(
-      'FreeCodeCamp server listening on port %d in %s mode',
+      'FreeCodeCamp server listening on port %d in %s',
       app.get('port'),
       app.get('env')
     );
+    if (isBeta) {
+      console.log('Free Code Camp is in beta mode');
+    }
   });
-};
+});
 
 module.exports = app;
 
