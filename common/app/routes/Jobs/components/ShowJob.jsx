@@ -39,9 +39,8 @@ export default React.createClass({
       company,
       state,
       locale,
-      email,
-      phone,
-      description
+      description,
+      howToApply
     } = job;
 
     return (
@@ -89,7 +88,7 @@ export default React.createClass({
                 <Col
                   md={ 6 }
                   mdOffset={ 3 }>
-                  <bold>Contact:</bold> { email || phone }
+                  <bold>How do I apply? </bold> { howToApply }
                 </Col>
               </Row>
             </Panel>
