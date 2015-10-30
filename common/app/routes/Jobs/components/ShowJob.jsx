@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import { Row, Col, Thumbnail, Panel } from 'react-bootstrap';
+import { Well, Row, Col, Thumbnail, Panel } from 'react-bootstrap';
 
 const defaultImage =
   'https://s3.amazonaws.com/freecodecamp/camper-image-placeholder.png';
@@ -85,13 +85,18 @@ export default React.createClass({
                   <p>{ description }</p>
                 </Col>
               </Row>
-              <Row>
-                <Col
-                  md={ 6 }
-                  mdOffset={ 3 }>
-                  <bold>How do I apply? </bold> { howToApply }
-                </Col>
-              </Row>
+              <Well>
+                <Row>
+                    <Col
+                      md={ 6 }
+                      mdOffset={ 3 }>
+                        <bold>How do I apply? </bold>
+                        <br />
+                        <br />
+                        { howToApply }
+                    </Col>
+                </Row>
+              </Well>
             </Panel>
           </Col>
         </Row>
