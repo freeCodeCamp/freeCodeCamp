@@ -3,6 +3,7 @@ import { History } from 'react-router';
 import { contain } from 'thundercats-react';
 import debugFactory from 'debug';
 import dedent from 'dedent';
+import normalizeUrl from 'normalize-url';
 
 import { getDefaults } from '../utils';
 
@@ -83,6 +84,21 @@ function formatValue(value, validator, type = 'string') {
   return formated;
 }
 
+const normalizeOptions = {
+  stripWWW: false
+};
+
+function formatUrl(url) {
+  if (
+    typeof url === 'string' &&
+    url.length > 4 &&
+    url.indexOf('.') !== -1
+  ) {
+    return normalizeUrl(url, normalizeOptions);
+  }
+  return url;
+}
+
 function isValidURL(data) {
   return isURL(data, { 'require_protocol': true });
 }
@@ -100,7 +116,7 @@ export default contain({
         locale,
         description,
         email,
-        url = 'http://',
+        url,
         logo,
         company,
         isHighlighted,
@@ -114,8 +130,8 @@ export default contain({
         locale: formatValue(locale, makeRequired(isAscii)),
         description: formatValue(description, makeRequired(isAscii)),
         email: formatValue(email, makeRequired(isEmail)),
-        url: formatValue(url, isValidURL),
-        logo: formatValue(logo, isValidURL),
+        url: formatValue(formatUrl(url), isValidURL),
+        logo: formatValue(formatUrl(logo), isValidURL),
         company: formatValue(company, makeRequired(isAscii)),
         isHighlighted: formatValue(isHighlighted, null, 'bool'),
         isFullStackCert: formatValue(isFullStackCert, null, 'bool'),
