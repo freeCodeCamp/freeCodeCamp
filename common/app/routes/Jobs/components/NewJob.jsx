@@ -1,3 +1,4 @@
+import { helpers } from 'rx';
 import React, { PropTypes } from 'react';
 import { History } from 'react-router';
 import { contain } from 'thundercats-react';
@@ -133,7 +134,7 @@ export default contain({
       return {
         position: formatValue(position, makeRequired(isAscii)),
         locale: formatValue(locale, makeRequired(isAscii)),
-        description: formatValue(description, makeRequired(isAscii)),
+        description: formatValue(description, makeRequired(helpers.identity)),
         email: formatValue(email, makeRequired(isEmail)),
         url: formatValue(formatUrl(url), isValidURL),
         logo: formatValue(formatUrl(logo), isValidURL),
