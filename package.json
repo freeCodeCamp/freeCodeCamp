@@ -113,6 +113,7 @@
     "thundercats-react": "^0.3.0",
     "twit": "~1.1.20",
     "uglify-js": "~2.4.15",
+    "url-regex": "^3.0.0",
     "validator": "^3.22.1",
     "webpack": "^1.9.12",
     "xss-filters": "^1.2.6",

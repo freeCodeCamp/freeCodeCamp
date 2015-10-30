@@ -1,6 +1,8 @@
 import React, { PropTypes } from 'react';
 import { Well, Row, Col, Thumbnail, Panel } from 'react-bootstrap';
+import urlRegexFactory from 'url-regex';
 
+const urlRegex = urlRegexFactory();
 const defaultImage =
   'https://s3.amazonaws.com/freecodecamp/camper-image-placeholder.png';
 
@@ -9,6 +11,12 @@ const thumbnailStyle = {
   maxHeight: '100px',
   maxWidth: '100px'
 };
+
+function addATags(text) {
+  return text.replace(urlRegex, function(match) {
+    return `<a href=${match}>${match}</a>`;
+  });
+}
 
 export default React.createClass({
   displayName: 'ShowJob',
@@ -90,10 +98,12 @@ export default React.createClass({
                     <Col
                       md={ 6 }
                       mdOffset={ 3 }>
-                        <bold>How do I apply? </bold>
+                        <bold>How do I apply?</bold>
                         <br />
                         <br />
-                        { howToApply }
+                        <span dangerouslySetInnerHTML={{
+                          __html: addATags(howToApply)
+                        }} />
                     </Col>
                 </Row>
               </Well>
