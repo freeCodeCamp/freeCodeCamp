@@ -88,7 +88,7 @@ const normalizeOptions = {
   stripWWW: false
 };
 
-function formatUrl(url) {
+function formatUrl(url, shouldKeepTrailingSlash = true) {
   if (
     typeof url === 'string' &&
     url.length > 4 &&
@@ -96,7 +96,7 @@ function formatUrl(url) {
   ) {
     // prevent trailing / from being stripped during typing
     let lastChar = '';
-    if (url.substring(url.length - 1) === '/') {
+    if (shouldKeepTrailingSlash && url.substring(url.length - 1) === '/') {
       lastChar = '/';
     }
     return normalizeUrl(url, normalizeOptions) + lastChar;
@@ -210,8 +210,8 @@ export default contain({
         locale: inHTMLData(locale.value),
         description: inHTMLData(description.value),
         email: inHTMLData(email.value),
-        url: uriInSingleQuotedAttr(url.value),
-        logo: uriInSingleQuotedAttr(logo.value),
+        url: formatUrl(uriInSingleQuotedAttr(url.value), false),
+        logo: formatUrl(uriInSingleQuotedAttr(logo.value), false),
         company: inHTMLData(company.value),
         isHighlighted: !!isHighlighted.value,
         isFrontEndCert: !!isFrontEndCert.value,
