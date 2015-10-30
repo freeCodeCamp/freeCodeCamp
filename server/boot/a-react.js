@@ -23,11 +23,10 @@ const devRoutes = [
 export default function reactSubRouter(app) {
   var router = app.loopback.Router();
 
-  if (process.env.BETA) {
-    routes.forEach((route) => {
-      router.get(route, serveReactApp);
-    });
-  }
+  // These routes are in production
+  routes.forEach((route) => {
+    router.get(route, serveReactApp);
+  });
 
   if (process.env.NODE_ENV === 'development') {
     devRoutes.forEach(function(route) {
