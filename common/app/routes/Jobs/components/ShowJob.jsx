@@ -80,6 +80,7 @@ export default React.createClass({
                 <Col
                   md={ 6 }
                   mdOffset={ 3 }
+                  style={{ whiteSpace: 'pre-line' }}
                   xs={ 12 }>
                   <p>{ description }</p>
                 </Col>
