@@ -94,7 +94,12 @@ function formatUrl(url) {
     url.length > 4 &&
     url.indexOf('.') !== -1
   ) {
-    return normalizeUrl(url, normalizeOptions);
+    // prevent trailing / from being stripped during typing
+    let lastChar = '';
+    if (url.substring(url.length - 1) === '/') {
+      lastChar = '/';
+    }
+    return normalizeUrl(url, normalizeOptions) + lastChar;
   }
   return url;
 }
