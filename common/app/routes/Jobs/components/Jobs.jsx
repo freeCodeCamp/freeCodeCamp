@@ -73,16 +73,11 @@ export default contain(
               md={ 10 }
               mdOffset= { 1 }
               xs={ 12 }>
-              <h1 className='text-center'>Job Opportunities</h1>
+              <h1 className='text-center'>
+                Talented web developers with strong portfolios are eager
+                to work for your company
+              </h1>
               <Row className='text-center'>
-                <Col
-                  xs={ 12 }
-                  xsOffset={ 0 }>
-                  <p className='text-center large-p'>
-                    Talented web developers with strong portfolios are eager
-                    to work for your company.
-                  </p>
-                </Col>
                 <Col
                   sm={ 8 }
                   smOffset={ 2 }
