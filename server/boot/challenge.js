@@ -581,7 +581,7 @@ module.exports = function(app) {
             daysRunning,
             camperCount,
             lastCompleted,
-            title: "A map of all Free Code Camp's Challenges"
+            title: "A Map to Learn to Code and Become a Software Engineer"
           });
         },
         next
