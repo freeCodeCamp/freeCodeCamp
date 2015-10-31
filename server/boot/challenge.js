@@ -579,6 +579,7 @@ module.exports = function(app) {
           res.render('challengeMap/show', {
             blocks,
             daysRunning,
+            globalCompletedCount: numberWithCommas(5612952 + (Math.floor((Date.now() - 1446268581061) / 3000))),
             camperCount,
             lastCompleted,
             title: "A map of all Free Code Camp's Challenges"
