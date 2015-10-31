@@ -2,7 +2,8 @@ require('dotenv').load();
 var pmx = require('pmx');
 pmx.init();
 
-var uuid = require('node-uuid'),
+var _ = require('lodash'),
+    uuid = require('node-uuid'),
     assign = require('lodash').assign,
     loopback = require('loopback'),
     boot = require('loopback-boot'),
@@ -93,7 +94,7 @@ Object.keys(passportProviders).map(function(strategy) {
   );
 });
 
-app.start = function() {
+app.start = _.once(function() {
   app.listen(app.get('port'), function() {
     app.emit('started');
     console.log(
@@ -105,7 +106,7 @@ app.start = function() {
       console.log('Free Code Camp is in beta mode');
     }
   });
-};
+});
 
 module.exports = app;
 

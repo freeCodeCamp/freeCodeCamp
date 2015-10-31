@@ -1,6 +1,7 @@
 {
   "name": "MongoDB",
   "order" : 19,
+  "time": "3h",
   "challenges": [
     {
       "id": "bd7243d8c341eddeaeb5bd0f",
@@ -24,7 +25,7 @@
         "Complete \"Mongod\"",
         "Complete \"Connect\"",
         "Complete \"Find\"",
-        "Complete \"Find Limit\"",
+        "Complete \"Find Project\"",
         "Complete \"Insert\"",
         "Complete \"Update\"",
         "Complete \"Remove\"",

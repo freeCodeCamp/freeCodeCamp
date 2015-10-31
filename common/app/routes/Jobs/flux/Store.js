@@ -6,9 +6,12 @@ const {
   transformer
 } = Store;
 
-export default Store({ showModal: false })
-  .refs({ displayName: 'JobsStore' })
-  .init(({ instance: jobsStore, args: [cat] }) => {
+export default Store({
+  refs: {
+    displayName: 'JobsStore',
+    value: { showModal: false }
+  },
+  init({ instance: jobsStore, args: [cat] }) {
     const {
       setJobs,
       findJob,
@@ -27,4 +30,5 @@ export default Store({ showModal: false })
 
     register(transformer(findJob));
     register(handleForm);
-  });
+  }
+});
