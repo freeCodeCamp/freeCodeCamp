@@ -354,6 +354,8 @@
       "description": [
         "Another cool thing we can do is access our user's current location. Every browser has a built in navigator that can give us this information.",
         "The navigator will get our user's current longitude and latitude.",
+        "You will see a prompt to allow or block this site from knowing your current location. The challenge can be completed either way, as long as the code is correct.",
+        "By selecting allow you will see the text on the output phone change to your latitude and longitude",
         "Here's some code that does this:",
         "<code>if (navigator.geolocation) {</code>",
         "<code>&thinsp;&thinsp;navigator.geolocation.getCurrentPosition(function(position) {</code>",
