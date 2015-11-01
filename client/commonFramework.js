@@ -892,11 +892,31 @@ var runTests = function(err, data) {
 // step challenge
 common.init.push((function() {
   var stepClass = '.challenge-step';
+  var prevBtnClass = '.challenge-step-btn-prev';
   var nextBtnClass = '.challenge-step-btn-next';
   var actionBtnClass = '.challenge-step-btn-action';
   var finishBtnClass = '.challenge-step-btn-finish';
   var submitBtnId = '#challenge-step-btn-submit';
   var submitModalId = '#challenge-step-modal';
+
+  function getPreviousStep($challengeSteps) {
+    var length = $challengeSteps.length;
+    var $prevStep = false;
+    var prevStepIndex = 0;
+    $challengeSteps.each(function(index) {
+      var $step = $(this);
+      if (
+        !$step.hasClass('hidden') &&
+        index + 1 !== length
+      ) {
+        prevStepIndex = index - 1;
+      }
+    });
+
+    $prevStep = $challengeSteps[prevStepIndex];
+
+    return $prevStep;
+  }
 
   function getNextStep($challengeSteps) {
     var length = $challengeSteps.length;
@@ -917,11 +937,36 @@ common.init.push((function() {
     return $nextStep;
   }
 
+  function handlePrevStepClick(e) {
+    e.preventDefault();
+    var prevStep = getPreviousStep($(stepClass));
+    $(this)
+      .parent()
+      .removeClass('fadeOutLeft')
+      .addClass('animated fadeOutRight fast-animation')
+      .delay(250)
+      .queue(function(prev) {
+        $(this).addClass('hidden');
+        if (prevStep) {
+          $(prevStep)
+            .removeClass('hidden')
+            .removeClass('slideInRight')
+            .addClass('animated slideInLeft fast-animation')
+            .delay(500)
+            .queue(function(prev) {
+              prev();
+            });
+        }
+        prev();
+      });
+  }
+
   function handleNextStepClick(e) {
     e.preventDefault();
     var nextStep = getNextStep($(stepClass));
     $(this)
       .parent()
+      .removeClass('fadeOutRight')
       .addClass('animated fadeOutLeft fast-animation')
       .delay(250)
       .queue(function(next) {
@@ -929,10 +974,10 @@ common.init.push((function() {
         if (nextStep) {
           $(nextStep)
             .removeClass('hidden')
+            .removeClass('slideInLeft')
             .addClass('animated slideInRight fast-animation')
             .delay(500)
             .queue(function(next) {
-              $(this).removeClass('slideInRight');
               next();
             });
         }
@@ -1035,6 +1080,7 @@ common.init.push((function() {
   }
 
   return function($) {
+    $(prevBtnClass).click(handlePrevStepClick);
     $(nextBtnClass).click(handleNextStepClick);
     $(actionBtnClass).click(handleActionClick);
     $(finishBtnClass).click(handleFinishClick);
