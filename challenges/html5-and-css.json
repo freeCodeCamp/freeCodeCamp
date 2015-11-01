@@ -2024,7 +2024,7 @@
         "All related radio buttons should have the same <code>name</code> attribute.",
         "Here's an example of a radio button:",
         "<code>&#60;label&#62;&#60;input type=\"radio\" name=\"indoor-outdoor\"&#62; Indoor&#60;/label&#62;</code>",
-        "Add to your form a pair of radio buttons. Each radio button should be nested within its own <code>label</code> element. They should share a common <code>name</code> attribute. One should have the option of <code>indoor</code> and the other should have the option of <code>outdoor</code>."
+        "Add a pair of radio buttons to your form. One should have the option of <code>indoor</code> and the other should have the option of <code>outdoor</code>."
       ],
       "tests": [
         "assert($('input[type=\"radio\"]').length > 1, 'Your page should have two radio button elements.')",
