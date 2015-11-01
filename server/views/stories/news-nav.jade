@@ -31,11 +31,16 @@ script.
     });
     function executeSearch() {
         $('#stories').empty();
-        var searchTerm = $('#searchArea').val();
+        var searchTerm = $('#searchArea').val(),
+        url = '/stories/search';
+        if (searchTerm.match(/^\@\w+$/)) {
+            url = '/news/userstories';
+            searchTerm = searchTerm.match(/^\@\w+$/)[0].split('@')[1];
+        }
         var getLinkedName = function getLinkedName(name) {
             return name.toLowerCase().replace(/\s/g, '-');
         }
-        $.post('/stories/search', { search: searchTerm })
+        $.post(url, { search: searchTerm })
                 .fail(function(xhr, textStatus, errorThrown) {
                     $('#search-results').empty();
                     var div = document.createElement("div");
