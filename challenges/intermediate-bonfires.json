@@ -50,7 +50,7 @@
       "id": "a5de63ebea8dbee56860f4f2",
       "title": "Diff Two Arrays",
       "description": [
-        "Compare two arrays and return a new array with any items not found in both of the original arrays.",
+        "Compare two arrays and return a new array with any items only found in one of the original arrays.",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "challengeSeed": [
