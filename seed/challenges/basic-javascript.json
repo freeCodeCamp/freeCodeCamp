@@ -1183,7 +1183,7 @@
         "<code>i</code> means that we want to ignore the case (uppercase or lowercase) when searching for the pattern.",
         "<code>Regular expressions</code> are written by surrounding the pattern with <code>/</code> symbols.",
         "Let's try selecting all the occurrences of the word <code>and</code> in the string <code>Ada Lovelace and Charles Babbage designed the first computer and the software that would have run on it</code>.",
-        "We can do this by replacing the <code>.</code> part of our regular expression with the current <code>regular expression</code> with the word <code>and</code>."
+        "We can do this by replacing the <code>.</code> part of our regular expression with the word <code>and</code>."
       ],
       "tests": [
         "assert(test==2, 'message: Your <code>regular expression</code> should find two occurrences of the word <code>and</code>.');",
