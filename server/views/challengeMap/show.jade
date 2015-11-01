@@ -10,27 +10,36 @@ block content
             else
                 img.img-responsive.img-center.border-radius-5(src='https://s3.amazonaws.com/freecodecamp/wide-social-banner.png')
             .col-xs-12.col-md-8.col-md-offset-2
-                h2.text-center
-                    span.text-primary #{camperCount} &thinsp;
-                    | campers have joined our community
-                    br
-                    | since we launched &thinsp;
-                    span.text-primary #{daysRunning} &thinsp;
-                    | days ago.
+                h2
+                    table.population-table.img-center
+                        tr
+                            td Established:&thinsp;
+                            td
+                                span.text-primary #{daysRunning}&thinsp;
+                                | days ago
+                        tr
+                            td Population:&thinsp;
+                            td
+                                span.text-primary #{camperCount}&thinsp;
+                                | campers
+                        tr
+                            td Completed:&thinsp;
+                            td
+                                span.text-primary #{globalCompletedCount}&thinsp;
+                                | challenges
+
+
+
                 .spacer
-                if (user && user.progressTimestamps.length > 5)
-                    #tshirt-notice.col-xs-12.col-md-8.col-md-offset-2.hidden
-                        h2.text-center Get our first-edition t-shirt.
-                            br
-                            span.text-success Only available until Oct 29!
-                        img.thumbnail.img-center.img-responsive(src="http://i.imgur.com/o07uuOL.png")
-                        p.text-justify Our community has voted. Get our winning design emblazoned on a durable, American-made American Apparel shirt (available in women's and men's sizes).&thinsp;
-                            a(href="https://teespring.com/free-code-camp-shirt-eu" target="_blank") Also ships from Europe
-                            | .
-                        a.button.btn.btn-block.signup-btn(href="https://teespring.com/get-free-code-camp-t-shirt" target="_blank") Get yours
+                if (user && user.progressTimestamps.length > 100)
+                    #map-notice.col-xs-12.col-md-8.col-md-offset-2.hidden
+                        h2.text-center We have a subreddit
+                        img.thumbnail.img-center.img-responsive(src="http://i.imgur.com/lyd0bfM.jpg")
+                        h4.text-center We welcome you to come ask questions and share your thoughts with our entire open source community.
+                        a.button.btn.btn-block.btn-primary(href="https://reddit.com/r/freecodecamp" target="_blank") Check it out
                         .button-spacer
                         .text-center
-                            a#hideTshirtNoticeButton(href='#') Hide this forever
+                            a#hide-map-notice-button(href='#') Hide this
                         .spacer
                 .row
                     .col-xs-12.col-sm-8.col-sm-offset-2
@@ -131,14 +140,14 @@ block content
         var username = !{JSON.stringify(user && user.username || '')};
         var lastCompleted = !{JSON.stringify(lastCompleted || false)}
         $(document).ready(function () {
-            if (!localStorage || !localStorage.hideTshirtNotice) {
-                $("#tshirt-notice").removeClass("hidden");
+            if (!localStorage || !localStorage.hideRedditNotice) {
+                $("#map-notice").removeClass("hidden");
             }
-            $("#hideTshirtNoticeButton").on("click", function() {
-                $("#tshirt-notice").addClass('animated fadeOut');
+            $("#hide-map-notice-button").on("click", function() {
+                $("#map-notice").addClass('animated fadeOut');
                 setTimeout(function() {
-                    $("#tshirt-notice").hide();
+                    $("#map-notice").hide();
                 }, 1000);
-                localStorage.hideTshirtNotice = "true";
+                localStorage.hideRedditNotice = "true";
             });
         });
