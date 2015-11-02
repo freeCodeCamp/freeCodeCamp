@@ -109,7 +109,7 @@ module.exports = function(app) {
 
   function hot(req, res) {
     return res.render('stories/index', {
-      title: 'Hot stories currently trending on Camper News',
+      title: 'Top Stories on Camper News',
       page: 'hot'
     });
   }

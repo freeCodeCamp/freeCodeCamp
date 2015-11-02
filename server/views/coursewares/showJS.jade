@@ -95,7 +95,7 @@ block content
                         if (user)
                             #submit-challenge.animated.fadeIn.btn.btn-lg.btn-primary.btn-block Submit and go to my next challenge (ctrl + enter)
                         else
-                            a.animated.fadeIn.btn.btn-lg.btn-primary.btn-block(href='/challenges/next-challenge?id=' + challengeId) Go to my next challenge
+                            #next-challenge.animated.fadeIn.btn.btn-lg.btn-primary.btn-block Go to my next challenge (ctrl + enter)
     include ../partials/challenge-modals
     script.
       var MDNlinks = !{JSON.stringify(MDNlinks)};

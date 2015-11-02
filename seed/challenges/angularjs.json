@@ -14,7 +14,12 @@
       ],
       "type": "waypoint",
       "challengeType": 2,
-      "tests": [],
+      "tests": [
+        "assert(true, 'No test needed');"
+      ],
+      "solutions": [
+        "/* no test needed */"
+      ],
       "nameCn": "",
       "descriptionCn": [],
       "nameFr": "",
@@ -37,7 +42,12 @@
       ],
       "type": "waypoint",
       "challengeType": 2,
-      "tests": [],
+      "tests": [
+        "assert(true, 'No test needed');"
+      ],
+      "solutions": [
+        "/* no test needed */"
+      ],
       "nameCn": "",
       "descriptionCn": [],
       "nameFr": "",
@@ -60,7 +70,12 @@
       ],
       "type": "waypoint",
       "challengeType": 2,
-      "tests": [],
+      "tests": [
+        "assert(true, 'No test needed');"
+      ],
+      "solutions": [
+        "/* no test needed */"
+      ],
       "nameCn": "",
       "descriptionCn": [],
       "nameFr": "",
@@ -82,7 +97,12 @@
       ],
       "type": "waypoint",
       "challengeType": 2,
-      "tests": [],
+      "tests": [
+        "assert(true, 'No test needed');"
+      ],
+      "solutions": [
+        "/* no test needed */"
+      ],
       "nameCn": "",
       "descriptionCn": [],
       "nameFr": "",
@@ -105,7 +125,12 @@
       ],
       "type": "waypoint",
       "challengeType": 2,
-      "tests": [],
+      "tests": [
+        "assert(true, 'No test needed');"
+      ],
+      "solutions": [
+        "/* no test needed */"
+      ],
       "nameCn": "",
       "descriptionCn": [],
       "nameFr": "",

@@ -26,8 +26,32 @@ urlset(xmlns="http://www.sitemaps.org/schemas/sitemap/0.9")
     priority= 0.9
 
   url
-    loc http://www.freecodecamp.com/coding-bootcamp-cost-calculator
+    loc http://www.freecodecamp.com/labs
     changefreq weekly
+    lastmod= now
+    priority= 0.9
+
+  url
+    loc http://www.freecodecamp.com/stories
+    changefreq weekly
+    lastmod= now
+    priority= 0.9
+
+  url
+    loc http://www.freecodecamp.com/twitch
+    changefreq weekly
+    lastmod= now
+    priority= 0.9
+
+  url
+    loc http://www.freecodecamp.com/jobs
+    changefreq weekly
+    lastmod= now
+    priority= 0.9
+
+  url
+    loc http://www.freecodecamp.com/coding-bootcamp-cost-calculator
+    changefreq monthly
     lastmod= now
     priority= 0.9
 
@@ -36,7 +60,7 @@ urlset(xmlns="http://www.sitemaps.org/schemas/sitemap/0.9")
     url
       loc #{appUrl}/#{user}
       lastmod= now
-      changefreq daily
+      changefreq weekly
       priority= 0.5
 
   each challenge in challenges
@@ -44,18 +68,18 @@ urlset(xmlns="http://www.sitemaps.org/schemas/sitemap/0.9")
       loc #{appUrl}/challenges/#{challenge.replace(/\s/g, '-')}
       lastmod= now
       changefreq weekly
-      priority= 0.5
+      priority= 0.9
 
   each story in stories
     url
       loc #{appUrl}/news/#{story.replace(/\s/g, '-')}
       lastmod= now
-      changefreq daily
-      priority= 0.9
+      changefreq weekly
+      priority= 0.5
 
   each nonprofit in nonprofits
     url
       loc #{appUrl}/nonprofits/#{nonprofit.replace(/\s/g, '-')}
       lastmod= now
-      changefreq daily
+      changefreq weekly
       priority= 0.9

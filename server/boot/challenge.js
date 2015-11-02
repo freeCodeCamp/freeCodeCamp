@@ -35,12 +35,14 @@ const dasherize = utils.dasherize;
 const unDasherize = utils.unDasherize;
 const getMDNLinks = utils.getMDNLinks;
 
+/*
 function makeChallengesUnique(challengeArr) {
   // clone and reverse challenges
   // then filter by unique id's
   // then reverse again
   return _.uniq(challengeArr.slice().reverse(), 'id').reverse();
 }
+*/
 function numberWithCommas(x) {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 }
@@ -535,6 +537,11 @@ module.exports = function(app) {
         if (completedChallenges.indexOf(challenge.id) !== -1) {
           challenge.completed = true;
         }
+        if (typeof challenge.releasedOn !== 'undefined' &&
+          moment(challenge.releasedOn, 'MMM MMMM DD, YYYY').diff(moment(),
+            'days') >= -30) {
+          challenge.markNew = true;
+        }
         return challenge;
       })
       // group challenges by block | returns a stream of observables
@@ -556,7 +563,7 @@ module.exports = function(app) {
           dashedName: dasherize(blockArray[0].block),
           challenges: blockArray,
           completed: completedCount / blockArray.length * 100,
-          time: blockArray[0] && blockArray[0].time || "???"
+          time: blockArray[0] && blockArray[0].time || '???'
         };
       })
       .filter(({ name }) => name !== 'Hikes')
@@ -579,9 +586,12 @@ module.exports = function(app) {
           res.render('challengeMap/show', {
             blocks,
             daysRunning,
+            globalCompletedCount: numberWithCommas(
+              5612952 + (Math.floor((Date.now() - 1446268581061) / 3000))
+            ),
             camperCount,
             lastCompleted,
-            title: "A map of all Free Code Camp's Challenges"
+            title: "A Map to Learn to Code and Become a Software Engineer"
           });
         },
         next

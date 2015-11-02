@@ -13,7 +13,11 @@
     "prestart-production": "bower cache clean && bower install && gulp build",
     "start-production": "node pm2Start",
     "lint": "eslint --ext=.js,.jsx .",
-    "test": "gulp test-challenges"
+    "lint-challenges": "jsonlint -q seed/challenges/*.json",
+    "lint-nonprofits": "jsonlint -q seed/nonprofits.json",
+    "test-challenges": "babel-node seed/test-challenges.js | tnyan",
+    "pretest": "npm run lint-challenges && npm run lint-nonprofits",
+    "test": "npm run test-challenges"
   },
   "license": "(BSD-3-Clause AND CC-BY-SA-4.0)",
   "dependencies": {
@@ -127,11 +131,14 @@
     "chai": "~1.10.0",
     "envify": "^3.4.0",
     "istanbul": "^0.3.15",
+    "jsonlint": "^1.6.2",
     "loopback-explorer": "^1.7.2",
     "loopback-testing": "^1.1.0",
     "mocha": "~2.0.1",
     "multiline": "~1.0.1",
     "supertest": "~0.15.0",
+    "tap-nyan": "0.0.2",
+    "tape": "^4.2.2",
     "vinyl-source-stream": "^1.1.0"
   }
 }
