@@ -785,7 +785,7 @@ var scrapeTests = function(userJavaScript) {
 };
 
 function removeComments(userJavaScript) {
-    var regex = new RegExp(/(\/\*[^(\*\/)]*\*\/)|\/\/[^\n]*/g);
+    var regex = new RegExp(/(\/\*[^(\*\/)]*\*\/)|([ \n]\/\/[^\n]*)/g);
     return userJavaScript.replace(regex, '');
 }
 
