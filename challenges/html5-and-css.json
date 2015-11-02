@@ -1457,7 +1457,7 @@
         "&thinsp;&thinsp;<code>&#60;li&#62;cheese&#60;/li&#62;</code>",
         "<code>&#60;/ul&#62;</code>",
         "would create a bullet point-style list of \"milk\" and \"cheese\".",
-        "Replace your <code>p</code> elements with an unordered list of three things that cats love."
+        "Remove the last two <code>p</code> elements and create an unordered list of three things that cats love at the bottom of the page."
       ],
       "tests": [
         "assert($(\"ul\").length > 0, 'Create a <code>ul</code> element.')",
