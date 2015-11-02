@@ -98,7 +98,7 @@ block content
                             if(user)
                                 #submit-challenge.animated.fadeIn.btn.btn-lg.btn-primary.btn-block Submit and go to my next challenge (ctrl + enter)
                             else
-                                a.btn.btn-lg.btn-primary.btn-block(href='/challenges/next-challenge?id=' + challengeId) Go to my next challenge
+                                #next-challenge.btn.btn-lg.btn-primary.btn-block Go to my next challenge (ctrl + enter)
     include ../partials/challenge-modals
     script.
       document.addEventListener('gitter-sidecar-ready', function(e) {

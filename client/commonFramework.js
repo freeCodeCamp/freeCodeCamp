@@ -659,7 +659,11 @@ function ctrlEnterClickHandler(e) {
   // ctrl + enter
   if (e.ctrlKey && e.keyCode === 13) {
     $('#complete-courseware-dialog').off('keydown', ctrlEnterClickHandler);
-    $('#submit-challenge').click();
+    if ($('#submit-challenge').length > 0) {
+      $('#submit-challenge').click();
+    } else {
+      window.location = '/challenges/next-challenge?id=' + common.challengeId;
+    }
   }
 }
 
