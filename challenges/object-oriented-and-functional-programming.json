@@ -54,9 +54,9 @@
         "We are also able to create objects using <code>constructor</code> functions.",
         "Here's an example of a constructor function:",
         "<code>var Car = function() {</code>",
-        "<code>&thinsp;&thinsp;this.wheels = 4;</code>",
-        "<code>&thinsp;&thinsp;this.engines = 1;</code>",
-        "<code>&thinsp;&thinsp;this.seats = 1;</code>",
+        "<code>&nbsp;&nbsp;this.wheels = 4;</code>",
+        "<code>&nbsp;&nbsp;this.engines = 1;</code>",
+        "<code>&nbsp;&nbsp;this.seats = 1;</code>",
         "<code>};</code>",
         "Give your <code>myMotorBike</code> object a <code>wheels</code>, <code>engines</code> and <code>seats</code> attribute and set them to numbers.",
         "You may be confused by the <code>this</code> keyword here. Don't worry, we will get to that very soon."
@@ -190,7 +190,7 @@
       "description":[
         "The <code>map</code> method is a convenient way to iterate through arrays. Here's an example usage:",
         "<code>var timesFour = oldArray.map(function(val){</code>",
-        "<code>&thinsp;&thinsp;return val * 4;</code>",
+        "<code>&nbsp;&nbsp;return val * 4;</code>",
         "<code>});</code>",
         "",
         "The <code>map</code> method will iterate through every element of the array, creating a new array with values that have been modified by the callback function, and return it.",
@@ -228,7 +228,7 @@
         "<code>reduce</code> has an optional second argument which can be used to set the initial value of the accumulator. If no initial value is specified it will be the first array element and currentVal will start with the second array element.",
         "Here is an example of <code>reduce</code> being used to subtract all the values of an array:",
         "<code>var singleVal = array.reduce(function(previousVal, currentVal) {</code>",
-        "<code>&thinsp;&thinsp;return previousVal - currentVal;</code>",
+        "<code>&nbsp;&nbsp;return previousVal - currentVal;</code>",
         "<code>}, 0);</code>",
         "Use the <code>reduce</code> method to sum all the values in <code>array</code> and assign it to <code>singleVal</code>."
       ],
@@ -263,7 +263,7 @@
         "The following code is an example of using filter to remove array elements that are not even numbers:",
         "Note: We omit the second and third arguments since we only need the value",
         "<code>array = array.filter(function(val) {</code>",
-        "<code>&thinsp;&thinsp;return val % 2 === 0;</code>",
+        "<code>&nbsp;&nbsp;return val % 2 === 0;</code>",
         "<code>});</code>",
         "Use <code>filter</code> to remove all elements from <code>array</code> that are greater than 5."
       ],
@@ -296,7 +296,7 @@
         "Here is an example of using sort with a compare function that will sort the elements from smallest to largest number:",
         "<code>var array = [1, 12, 21, 2];</code>",
         "<code>array.sort(function(a, b) {</code>",
-        "<code>&thinsp;&thinsp;return a - b;</code>",
+        "<code>&nbsp;&nbsp;return a - b;</code>",
         "<code>});</code>",
         "Use <code>sort</code> to sort <code>array</code> from largest to smallest."
       ],
