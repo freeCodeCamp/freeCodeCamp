@@ -8,7 +8,7 @@
       "title": "Show the Local Weather",
       "challengeSeed": ["126415127"],
       "description": [
-        "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that successfully reverse-engineers this: <a href='http://codepen.io/FreeCodeCamp/pen/avqvgJ' target='_blank'>http://codepen.io/FreeCodeCamp/pen/avqvgJ</a>.",
+        "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that successfully reverse-engineers this: <a href='http://codepen.io/FreeCodeCamp/full/avqvgJ' target='_blank'>http://codepen.io/FreeCodeCamp/full/avqvgJ</a>.",
         "<span class='text-info'>Rule #1:</span> Don't look at the example project's code on CodePen. Figure it out for yourself.",
         "<span class='text-info'>Rule #2:</span> You may use whichever libraries or APIs you need.",
         "<span class='text-info'>Rule #3:</span> Reverse engineer the example project's functionality, and also feel free to personalize it.",
@@ -64,7 +64,7 @@
         "<span class='text-info'>User Story:</span> As a user, if Free Code Camp is streaming, I can see additional details about what they are streaming.",
         "<span class='text-info'>Bonus User Story:</span> As a user, I can search through the streams listed.",
         "<span class='text-info'>Bonus User Story:</span> As a user, I will see a placeholder notification if a streamer has closed their Twitch account. You can verify this works by adding brunofin and comster404 to your array of Twitch streamers.",
-        "<span class='text-info'>Hint:</span> Here's an example call to Twitch.tv's JSON API: <code>https://api.twitch.tv/kraken/streams/freecodecamp</code>.",
+        "<span class='text-info'>Hint:</span> See an example call to Twitch.tv's JSONP API at <code>https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/Zipline-Use-the-Twitchtv-JSON-API</code>.",
         "<span class='text-info'>Hint:</span> The relevant documentation about this API call is here: <a href='https://github.com/justintv/Twitch-API/blob/master/v3_resources/streams.md#get-streamschannel' target='_blank'>https://github.com/justintv/Twitch-API/blob/master/v3_resources/streams.md#get-streamschannel</a>.",
         "<span class='text-info'>Hint:</span> Here's an array of the Twitch.tv usernames of people who regularly stream coding: <code>[\"freecodecamp\", \"storbeck\", \"terakilobyte\", \"habathcx\",\"RobotCaleb\",\"thomasballinger\",\"noobs2ninjas\",\"beohoff\"]</code>",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck.",

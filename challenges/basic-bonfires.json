@@ -116,7 +116,7 @@
         "Arithmetic Operators"
       ],
       "solutions": [
-        "function factorialize(num) {\n  return num === 1 ? 1 : num * factorialize(num-1);\n}\n\nfactorialize(5);\n"
+        "function factorialize(num) {\n  return num < 1 ? 1 : num * factorialize(num-1);\n}\n\nfactorialize(5);\n"
       ],
       "type": "bonfire",
       "challengeType": 5,
@@ -169,7 +169,6 @@
         "String.toLowerCase()"
       ],
       "solutions": [
-        "function palindrome(str) {\n  var a = str.toLowerCase().replace(/[^a-z]/g, '');\n  console.log(a.split('').reverse().join(''));\n  return a == a.split('').reverse().join('');\n}\n\n\n\npalindrome(\"eye\");\npalindrome(\"A man, a plan, a canal. Panama\");\n"
       ],
       "type": "bonfire",
       "challengeType": 5,
@@ -243,8 +242,8 @@
         "titleCase(\"I'm a little tea pot\");"
       ],
       "tests": [
-        "assert(typeof(titleCase(\"I&#39;m a little tea pot\")) === \"string\", 'message: <code>titleCase()</code> should return a string.');",
-        "assert(titleCase(\"I&#39;m a little tea pot\") === \"I&#39;m A Little Tea Pot\", 'message: <code>titleCase(\"I&#39;m a little tea pot\")</code> should return \"I&#39;m A Little Tea Pot\".');",
+        "assert(typeof(titleCase(\"I'm a little tea pot\")) === \"string\", 'message: <code>titleCase()</code> should return a string.');",
+        "assert(titleCase(\"I'm a little tea pot\") === \"I'm A Little Tea Pot\", 'message: <code>titleCase(\"I&#39;m a little tea pot\")</code> should return \"I&#39;m A Little Tea Pot\".');",
         "assert(titleCase(\"sHoRt AnD sToUt\") === \"Short And Stout\", 'message: <code>titleCase(\"sHoRt AnD sToUt\")</code> should return \"Short And Stout\".');",
         "assert(titleCase(\"HERE IS MY HANDLE HERE IS MY SPOUT\") === \"Here Is My Handle Here Is My Spout\", 'message: <code>titleCase(\"HERE IS MY HANDLE HERE IS MY SPOUT\")</code> should return \"Here Is My Handle Here Is My Spout\".');"
       ],
@@ -273,7 +272,6 @@
       "description": [
         "Return an array consisting of the largest number from each provided sub-array. For simplicity, the provided array will contain exactly 4 sub-arrays.",
         "Remember, you can iterate through an array with a simple for loop, and access each member with array syntax arr[i] .",
-        "If you are writing your own Chai.js tests, be sure to use a deep equal statement instead of an equal statement when comparing arrays.",
         "Remember to use <a href=\"//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck\" target=\"_blank\">Read-Search-Ask</a> if you get stuck. Write your own code."
       ],
       "challengeSeed": [
@@ -418,7 +416,6 @@
         "String.slice()"
       ],
       "solutions": [
-        "function truncate(str, num) {\n  if (str.length > num) {\n    return str.substring(0, num-3) + '...';\n  }\n  return str;\n}\n\ntruncate('A-tisket a-tasket A green and yellow basket', 11);\n"
       ],
       "type": "bonfire",
       "challengeType": 5,
@@ -664,9 +661,7 @@
       "MDNlinks": [
         "Array.sort()"
       ],
-      "solutions": [
-        "function where(arr, num) {\n  // Find my place in this sorted array.\n  return num;\n}\n\nwhere([40, 60], 50);\n"
-      ],
+      "solutions": [],
       "tests": [
         "assert(where([10, 20, 30, 40, 50], 35) === 3, 'message: <code>where([10, 20, 30, 40, 50], 35)</code> should return <code>3</code>.');",
         "assert(where([10, 20, 30, 40, 50], 30) === 2, 'message: <code>where([10, 20, 30, 40, 50], 30)</code> should return <code>2</code>.');",

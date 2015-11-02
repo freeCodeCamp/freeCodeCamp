@@ -183,7 +183,8 @@
         "<code>&#60h2 class=\"red-text text-center\"&#62your text&#60/h2&#62</code>"
       ],
       "tests": [
-        "assert($(\"h2\").hasClass(\"text-center\"), 'Your <code>h2</code> element should be centered by applying the class <code>text-center</code>')"
+        "assert($(\"h2\").hasClass(\"text-center\"), 'Your <code>h2</code> element should be centered by applying the class <code>text-center</code>')",
+        "assert($(\"h2\").hasClass(\"red-text\"), 'Your <code>h2</code> element should still have the class <code>red-text</code>')"
       ],
       "challengeSeed": [
         "<link href=\"http://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
