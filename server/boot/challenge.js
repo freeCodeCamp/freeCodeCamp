@@ -537,8 +537,8 @@ module.exports = function(app) {
         if (completedChallenges.indexOf(challenge.id) !== -1) {
           challenge.completed = true;
         }
-        if (typeof(challenge.releasedOn) !== 'undefined'
-          && moment(challenge.releasedOn, 'MMM MMMM DD, YYYY').diff(moment(),
+        if (typeof challenge.releasedOn !== 'undefined' &&
+          moment(challenge.releasedOn, 'MMM MMMM DD, YYYY').diff(moment(),
             'days') >= -30) {
           challenge.markNew = true;
         }
