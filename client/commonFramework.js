@@ -426,6 +426,11 @@ var editor = (function(CodeMirror, emmetCodeMirror, common) {
       isInitRun = false;
       bonfireExecute(true);
       return false;
+    },
+    'Cmd-Enter': function() {
+      isInitRun = false;
+      bonfireExecute(true);
+      return false;
     }
   });
 
@@ -656,8 +661,9 @@ var testSuccess = function() {
 };
 
 function ctrlEnterClickHandler(e) {
-  // ctrl + enter
-  if (e.ctrlKey && e.keyCode === 13) {
+  // ctrl + enter or cmd + enter
+  if (e.metaKey && e.keyCode === 13 ||
+      e.ctrlKey && e.keyCode === 13) {
     $('#complete-courseware-dialog').off('keydown', ctrlEnterClickHandler);
     if ($('#submit-challenge').length > 0) {
       $('#submit-challenge').click();
