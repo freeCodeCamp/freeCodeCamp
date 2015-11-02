@@ -1,14 +1,13 @@
 doctype html
-html(ng-app='profileValidation', lang='en')
+html(lang='en')
   head
     if title
       title= title
     else
-      title redirecting to | Free Code Camp
-    include partials/small-head
+      title Free Code Camp
+    include partials/react-stylesheets
   body.top-and-bottom-margins(style='overflow: hidden')
     .container
-      include partials/flash
       #fcc!= markup
     script!= state
     script(src=rev('/js', 'bundle.js'))

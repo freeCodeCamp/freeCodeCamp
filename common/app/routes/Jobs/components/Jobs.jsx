@@ -1,36 +1,43 @@
 import React, { cloneElement, PropTypes } from 'react';
 import { contain } from 'thundercats-react';
-import { History } from 'react-router';
-import { Button, Jumbotron, Row } from 'react-bootstrap';
+import { Button, Panel, Row, Col } from 'react-bootstrap';
 
-import CreateJobModal from './CreateJobModal.jsx';
 import ListJobs from './List.jsx';
+import TwitterBtn from './TwitterBtn.jsx';
 
 export default contain(
   {
     store: 'jobsStore',
     fetchAction: 'jobActions.getJobs',
-    actions: 'jobActions'
+    actions: [
+      'appActions',
+      'jobActions'
+    ]
   },
   React.createClass({
     displayName: 'Jobs',
 
-    mixins: [History],
-
     propTypes: {
       children: PropTypes.element,
+      numOfFollowers: PropTypes.number,
+      appActions: PropTypes.object,
       jobActions: PropTypes.object,
       jobs: PropTypes.array,
       showModal: PropTypes.bool
     },
 
-    handleJobClick(id) {
+    componentDidMount() {
       const { jobActions } = this.props;
+      jobActions.getFollowers();
+    },
+
+    handleJobClick(id) {
+      const { appActions, jobActions } = this.props;
       if (!id) {
         return null;
       }
       jobActions.findJob(id);
-      this.history.pushState(null, `/jobs/${id}`);
+      appActions.updateRoute(`/jobs/${id}`);
     },
 
     renderList(handleJobClick, jobs) {
@@ -54,37 +61,47 @@ export default contain(
     render() {
       const {
         children,
+        numOfFollowers,
         jobs,
-        showModal,
-        jobActions
+        appActions
       } = this.props;
 
       return (
-        <div>
+        <Panel>
           <Row>
-            <Jumbotron>
-              <h1>Free Code Camps' Job Board</h1>
-              <p>
-                Need to find the best junior developers?
-                Want to find dedicated developers eager to join your company?
-                Sign up now to post your job!
-              </p>
-              <Button
-                bsSize='large'
-                className='signup-btn'
-                onClick={ jobActions.openModal }>
-                Try the first month 20% off!
-              </Button>
-            </Jumbotron>
+            <Col
+              md={ 10 }
+              mdOffset= { 1 }
+              xs={ 12 }>
+              <h1 className='text-center'>
+                Talented web developers with strong portfolios are eager
+                to work for your company
+              </h1>
+              <Row className='text-center'>
+                <Col
+                  sm={ 8 }
+                  smOffset={ 2 }
+                  xs={ 12 }>
+                  <Button
+                    bsSize='large'
+                    className='signup-btn btn-block'
+                    onClick={ ()=> {
+                      appActions.updateRoute('/jobs/new');
+                    }}>
+                    Post a job: $200 for 30 days + weekly tweets
+                  </Button>
+                  <div className='button-spacer' />
+                  <TwitterBtn count={ numOfFollowers || 0 } />
+                  <div className='spacer' />
+                </Col>
+              </Row>
+              <Row>
+              { this.renderChild(children, jobs) ||
+                this.renderList(this.handleJobClick, jobs) }
+              </Row>
+            </Col>
           </Row>
-          <Row>
-            { this.renderChild(children, jobs) ||
-              this.renderList(this.handleJobClick, jobs) }
-          </Row>
-          <CreateJobModal
-            onHide={ jobActions.closeModal }
-            showModal={ showModal } />
-        </div>
+        </Panel>
       );
     }
   })

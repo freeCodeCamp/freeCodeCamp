@@ -12,6 +12,6 @@ export default Cat()
     cat.register(HikesActions, null, services);
     cat.register(HikesStore, null, cat);
 
-    cat.register(JobActions, null, services);
+    cat.register(JobActions, null, cat, services);
     cat.register(JobsStore, null, cat);
   });

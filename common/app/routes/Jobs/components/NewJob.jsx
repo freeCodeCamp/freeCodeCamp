@@ -1,7 +1,11 @@
+import { helpers } from 'rx';
 import React, { PropTypes } from 'react';
 import { History } from 'react-router';
 import { contain } from 'thundercats-react';
 import debugFactory from 'debug';
+import dedent from 'dedent';
+import normalizeUrl from 'normalize-url';
+
 import { getDefaults } from '../utils';
 
 import {
@@ -14,13 +18,13 @@ import {
   Col,
   Input,
   Row,
+  Panel,
   Well
 } from 'react-bootstrap';
 
 import {
   isAscii,
   isEmail,
-  isMobilePhone,
   isURL
 } from 'validator';
 
@@ -31,12 +35,43 @@ const checkValidity = [
   'locale',
   'description',
   'email',
-  'phone',
   'url',
   'logo',
-  'name',
-  'highlight'
+  'company',
+  'isHighlighted',
+  'howToApply'
 ];
+const hightlightCopy = `
+Highlight my post to make it stand out. (+$50)
+`;
+
+const foo = `
+  This will narrow the field substantially with higher quality applicants
+`;
+
+const isFullStackCopy = `
+Applicants must have earned Free Code Camp’s Full Stack Certification to apply.*
+`;
+
+const isFrontEndCopy = `
+Applicants must have earned Free Code Camp’s Front End Certification to apply.*
+`;
+
+const isRemoteCopy = `
+This job can be performed remotely.
+`;
+
+const howToApplyCopy = dedent`
+  Examples: click here to apply yourcompany.com/jobs/33
+  Or email jobs@yourcompany.com
+`;
+
+const checkboxClass = dedent`
+  text-left
+  jobs-checkbox-spacer
+  col-sm-offset-2
+  col-sm-6 col-md-offset-3
+`;
 
 function formatValue(value, validator, type = 'string') {
   const formated = getDefaults(type);
@@ -50,12 +85,32 @@ function formatValue(value, validator, type = 'string') {
   return formated;
 }
 
+const normalizeOptions = {
+  stripWWW: false
+};
+
+function formatUrl(url, shouldKeepTrailingSlash = true) {
+  if (
+    typeof url === 'string' &&
+    url.length > 4 &&
+    url.indexOf('.') !== -1
+  ) {
+    // prevent trailing / from being stripped during typing
+    let lastChar = '';
+    if (shouldKeepTrailingSlash && url.substring(url.length - 1) === '/') {
+      lastChar = '/';
+    }
+    return normalizeUrl(url, normalizeOptions) + lastChar;
+  }
+  return url;
+}
+
 function isValidURL(data) {
   return isURL(data, { 'require_protocol': true });
 }
 
-function isValidPhone(data) {
-  return isMobilePhone(data, 'en-US');
+function makeRequired(validator) {
+  return (val) => !!val && validator(val);
 }
 
 export default contain({
@@ -67,22 +122,28 @@ export default contain({
         locale,
         description,
         email,
-        phone,
         url,
         logo,
-        name,
-        highlight
+        company,
+        isHighlighted,
+        isFullStackCert,
+        isFrontEndCert,
+        isRemoteOk,
+        howToApply
       } = form;
       return {
-        position: formatValue(position, isAscii),
-        locale: formatValue(locale, isAscii),
-        description: formatValue(description, isAscii),
-        email: formatValue(email, isEmail),
-        phone: formatValue(phone, isValidPhone),
-        url: formatValue(url, isValidURL),
-        logo: formatValue(logo, isValidURL),
-        name: formatValue(name, isAscii),
-        highlight: formatValue(highlight, null, 'bool')
+        position: formatValue(position, makeRequired(isAscii)),
+        locale: formatValue(locale, makeRequired(isAscii)),
+        description: formatValue(description, makeRequired(helpers.identity)),
+        email: formatValue(email, makeRequired(isEmail)),
+        url: formatValue(formatUrl(url), isValidURL),
+        logo: formatValue(formatUrl(logo), isValidURL),
+        company: formatValue(company, makeRequired(isAscii)),
+        isHighlighted: formatValue(isHighlighted, null, 'bool'),
+        isFullStackCert: formatValue(isFullStackCert, null, 'bool'),
+        isFrontEndCert: formatValue(isFrontEndCert, null, 'bool'),
+        isRemoteOk: formatValue(isRemoteOk, null, 'bool'),
+        howToApply: formatValue(howToApply, makeRequired(isAscii))
       };
     },
     subscribeOnWillMount() {
@@ -98,11 +159,14 @@ export default contain({
       locale: PropTypes.object,
       description: PropTypes.object,
       email: PropTypes.object,
-      phone: PropTypes.object,
       url: PropTypes.object,
       logo: PropTypes.object,
-      name: PropTypes.object,
-      highlight: PropTypes.object
+      company: PropTypes.object,
+      isHighlighted: PropTypes.object,
+      isFullStackCert: PropTypes.object,
+      isFrontEndCert: PropTypes.object,
+      isRemoteOk: PropTypes.object,
+      howToApply: PropTypes.object
     },
 
     mixins: [History],
@@ -124,29 +188,37 @@ export default contain({
       }
 
       const {
+        jobActions,
+
+        // form values
         position,
         locale,
         description,
         email,
-        phone,
         url,
         logo,
-        name,
-        highlight,
-        jobActions
+        company,
+        isHighlighted,
+        isFullStackCert,
+        isFrontEndCert,
+        isRemoteOk,
+        howToApply
       } = this.props;
 
       // sanitize user output
       const jobValues = {
         position: inHTMLData(position.value),
-        location: inHTMLData(locale.value),
+        locale: inHTMLData(locale.value),
         description: inHTMLData(description.value),
         email: inHTMLData(email.value),
-        phone: inHTMLData(phone.value),
-        url: uriInSingleQuotedAttr(url.value),
-        logo: uriInSingleQuotedAttr(logo.value),
-        name: inHTMLData(name.value),
-        highlight: !!highlight.value
+        url: formatUrl(uriInSingleQuotedAttr(url.value), false),
+        logo: formatUrl(uriInSingleQuotedAttr(logo.value), false),
+        company: inHTMLData(company.value),
+        isHighlighted: !!isHighlighted.value,
+        isFrontEndCert: !!isFrontEndCert.value,
+        isFullStackCert: !!isFullStackCert.value,
+        isRemoteOk: !!isRemoteOk.value,
+        howToApply: inHTMLData(howToApply.value)
       };
 
       const job = Object.keys(jobValues).reduce((accu, prop) => {
@@ -179,11 +251,14 @@ export default contain({
         locale,
         description,
         email,
-        phone,
         url,
         logo,
-        name,
-        highlight,
+        company,
+        isHighlighted,
+        isFrontEndCert,
+        isFullStackCert,
+        isRemoteOk,
+        howToApply,
         jobActions: { handleForm }
       } = this.props;
       const { handleChange } = this;
@@ -193,22 +268,26 @@ export default contain({
       return (
         <div>
           <Row>
-            <Col>
-              <Well className='text-center'>
-                <h1>Create Your Job Post</h1>
+            <Col
+              md={ 10 }
+              mdOffset={ 1 }>
+              <Panel className='text-center'>
                 <form
                   className='form-horizontal'
                   onSubmit={ this.handleSubmit }>
 
                   <div className='spacer'>
-                    <h2>Job Information</h2>
+                    <h2>First, tell us about the position</h2>
                   </div>
                   <Input
                     bsStyle={ position.bsStyle }
-                    label='Position'
+                    label='Job Title'
                     labelClassName={ labelClass }
                     onChange={ (e) => handleChange('position', e) }
-                    placeholder='Position'
+                    placeholder={
+                      'e.g. Full Stack Developer, Front End Developer, etc.'
+                    }
+                    required={ true }
                     type='text'
                     value={ position.value }
                     wrapperClassName={ inputClass } />
@@ -217,7 +296,8 @@ export default contain({
                     label='Location'
                     labelClassName={ labelClass }
                     onChange={ (e) => handleChange('locale', e) }
-                    placeholder='Location'
+                    placeholder='e.g. San Francisco, Remote, etc.'
+                    required={ true }
                     type='text'
                     value={ locale.value }
                     wrapperClassName={ inputClass } />
@@ -226,48 +306,90 @@ export default contain({
                     label='Description'
                     labelClassName={ labelClass }
                     onChange={ (e) => handleChange('description', e) }
-                    placeholder='Description'
+                    required={ true }
                     rows='10'
                     type='textarea'
                     value={ description.value }
                     wrapperClassName={ inputClass } />
+                  <Input
+                    checked={ isFrontEndCert.value }
+                    label={ isFrontEndCopy }
+                    onChange={
+                      ({ target: { checked } }) => handleForm({
+                        isFrontEndCert: !!checked
+                      })
+                    }
+                    type='checkbox'
+                    wrapperClassName={ checkboxClass } />
+                  <Input
+                    checked={ isFullStackCert.value }
+                    label={ isFullStackCopy }
+                    onChange={
+                      ({ target: { checked } }) => handleForm({
+                        isFullStackCert: !!checked
+                      })
+                    }
+                    type='checkbox'
+                    wrapperClassName={ checkboxClass } />
+                  <Input
+                    checked={ isRemoteOk.value }
+                    label={ isRemoteCopy }
+                    onChange={
+                      ({ target: { checked } }) => handleForm({
+                        isRemoteOk: !!checked
+                      })
+                    }
+                    type='checkbox'
+                    wrapperClassName={ checkboxClass } />
+                  <Row>
+                    <small>* { foo }</small>
+                  </Row>
+                  <div className='spacer' />
+                  <Row>
+                    <div>
+                      <h2>How should they apply?</h2>
+                    </div>
+                    <Input
+                      bsStyle={ howToApply.bsStyle }
+                      label='   '
+                      labelClassName={ labelClass }
+                      onChange={ (e) => handleChange('howToApply', e) }
+                      placeholder={ howToApplyCopy }
+                      required={ true }
+                      rows='2'
+                      type='textarea'
+                      value={ howToApply.value }
+                      wrapperClassName={ inputClass } />
+                  </Row>
 
-                  <div className='divider'>
-                    <h2>Company Information</h2>
+                  <div className='spacer' />
+                  <div>
+                    <h2>Tell us about your organization</h2>
                   </div>
                   <Input
-                    bsStyle={ name.bsStyle }
+                    bsStyle={ company.bsStyle }
                     label='Company Name'
                     labelClassName={ labelClass }
-                    onChange={ (e) => handleChange('name', e) }
-                    placeholder='Foo, INC'
+                    onChange={ (e) => handleChange('company', e) }
                     type='text'
-                    value={ name.value }
+                    value={ company.value }
                     wrapperClassName={ inputClass } />
                   <Input
                     bsStyle={ email.bsStyle }
                     label='Email'
                     labelClassName={ labelClass }
                     onChange={ (e) => handleChange('email', e) }
-                    placeholder='Email'
+                    placeholder='This is how we will contact you'
+                    required={ true }
                     type='email'
                     value={ email.value }
-                    wrapperClassName={ inputClass } />
-                  <Input
-                    bsStyle={ phone.bsStyle }
-                    label='Phone'
-                    labelClassName={ labelClass }
-                    onChange={ (e) => handleChange('phone', e) }
-                    placeholder='555-123-1234'
-                    type='tel'
-                    value={ phone.value }
                     wrapperClassName={ inputClass } />
                   <Input
                     bsStyle={ url.bsStyle }
                     label='URL'
                     labelClassName={ labelClass }
                     onChange={ (e) => handleChange('url', e) }
-                    placeholder='http://freecatphotoapp.com'
+                    placeholder='http://yourcompany.com'
                     type='url'
                     value={ url.value }
                     wrapperClassName={ inputClass } />
@@ -276,27 +398,48 @@ export default contain({
                     label='Logo'
                     labelClassName={ labelClass }
                     onChange={ (e) => handleChange('logo', e) }
-                    placeholder='http://freecatphotoapp.com/logo.png'
+                    placeholder='http://yourcompany.com/logo.png'
                     type='url'
                     value={ logo.value }
                     wrapperClassName={ inputClass } />
 
-                  <div className='divider'>
-                    <h2>Make it stand out</h2>
-                  </div>
-                  <Input
-                    checked={ highlight.value }
-                    label='Highlight your ad'
-                    labelClassName={ 'col-sm-offset-1 col-sm-6'}
-                    onChange={
-                      ({ target: { checked } }) => handleForm({
-                        highlight: !!checked
-                      })
-                    }
-                    type='checkbox' />
                   <div className='spacer' />
+                  <Well>
+                    <div>
+                      <h2>Make it stand out</h2>
+                    </div>
+                    <div className='spacer' />
+                    <Row>
+                      <Col
+                        md={ 6 }
+                        mdOffset={ 3 }>
+                      Highlight this ad to give it extra attention.
+                      <br />
+                    Featured listings receive more clicks and more applications.
+                      </Col>
+                    </Row>
+                    <div className='spacer' />
+                    <Row>
+                      <Input
+                        bsSize='large'
+                        bsStyle='success'
+                        checked={ isHighlighted.value }
+                        label={ hightlightCopy }
+                        onChange={
+                          ({ target: { checked } }) => handleForm({
+                            isHighlighted: !!checked
+                          })
+                        }
+                        type='checkbox'
+                        wrapperClassName={
+                          checkboxClass.replace('text-left', '')
+                        } />
+                    </Row>
+                  </Well>
+
                   <Row>
                     <Col
+                      className='text-left'
                       lg={ 6 }
                       lgOffset={ 3 }>
                       <Button
@@ -309,7 +452,7 @@ export default contain({
                     </Col>
                   </Row>
                 </form>
-              </Well>
+              </Panel>
             </Col>
           </Row>
         </div>

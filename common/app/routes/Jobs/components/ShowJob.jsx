@@ -1,12 +1,22 @@
 import React, { PropTypes } from 'react';
-import { Row, Thumbnail, Panel, Well } from 'react-bootstrap';
-import moment from 'moment';
+import { Well, Row, Col, Thumbnail, Panel } from 'react-bootstrap';
+import urlRegexFactory from 'url-regex';
+
+const urlRegex = urlRegexFactory();
+const defaultImage =
+  'https://s3.amazonaws.com/freecodecamp/camper-image-placeholder.png';
 
 const thumbnailStyle = {
   backgroundColor: 'white',
   maxHeight: '100px',
   maxWidth: '100px'
 };
+
+function addATags(text) {
+  return text.replace(urlRegex, function(match) {
+    return `<a href=${match}>${match}</a>`;
+  });
+}
 
 export default React.createClass({
   displayName: 'ShowJob',
@@ -36,30 +46,69 @@ export default React.createClass({
       city,
       company,
       state,
-      email,
-      phone,
-      postedOn,
-      description
+      locale,
+      description,
+      howToApply
     } = job;
 
     return (
       <div>
         <Row>
-          <Well>
-            <Thumbnail
-              alt={ company + 'company logo' }
-              src={ logo }
-              style={ thumbnailStyle } />
+          <Col
+            md={ 10 }
+            mdOffset={ 1 }
+            xs={ 12 }>
             <Panel>
-              Position: { position }
-              Location: { city }, { state }
-              <br />
-              Contact: { email || phone || 'N/A' }
-              <br />
-              Posted On: { moment(postedOn).format('MMMM Do, YYYY') }
+              <Row>
+                <h2 className='text-center'>
+                  { company }
+                </h2>
+              </Row>
+              <div className='spacer' />
+              <Row>
+                <Col
+                  md={ 2 }
+                  mdOffset={ 3 }>
+                  <Thumbnail
+                    alt={ logo ? company + 'company logo' : 'stock image' }
+                    src={ logo || defaultImage }
+                    style={ thumbnailStyle } />
+                </Col>
+                <Col
+                  md={ 4 }>
+
+                  <bold>Position: </bold> { position || 'N/A' }
+                  <br />
+                  <bold>Location: </bold>
+                  { locale ? locale : `${city}, ${state}` }
+                </Col>
+              </Row>
+              <div className='spacer' />
+              <Row>
+                <Col
+                  md={ 6 }
+                  mdOffset={ 3 }
+                  style={{ whiteSpace: 'pre-line' }}
+                  xs={ 12 }>
+                  <p>{ description }</p>
+                </Col>
+              </Row>
+              <Well>
+                <Row>
+                    <Col
+                      md={ 6 }
+                      mdOffset={ 3 }>
+                        <bold>How do I apply?</bold>
+                        <br />
+                        <br />
+                        <span dangerouslySetInnerHTML={{
+                          __html: addATags(howToApply)
+                        }} />
+                    </Col>
+                </Row>
+              </Well>
             </Panel>
-            <p>{ description }</p>
-          </Well>
+          </Col>
         </Row>
       </div>
     );

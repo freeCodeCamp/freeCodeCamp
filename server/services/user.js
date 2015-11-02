@@ -9,7 +9,7 @@ const protectedUserFields = {
   profiles: censor
 };
 
-export default function userServices(/* app */) {
+export default function userServices() {
   return {
     name: 'user',
     read: (req, resource, params, config, cb) => {
