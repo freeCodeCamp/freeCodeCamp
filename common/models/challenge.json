@@ -86,6 +86,9 @@
     "solutions": {
       "type": "array",
       "default": []
+    },
+    "releasedOn": {
+      "type": "string"
     }
   },
   "validations": [],

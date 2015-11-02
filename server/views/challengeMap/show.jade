@@ -129,6 +129,10 @@ block content
                                                     span.capitalize= challenge.type + ': '
                                                     span= challenge.title
                                                         span.sr-only= " Incomplete"
+                                                if challenge.markNew
+                                                    span.text-danger.small &thinsp; &thinsp;
+                                                        strong
+                                                            em NEW
 
                             if (challengeBlock.completed === 100)
                                 .button-spacer
