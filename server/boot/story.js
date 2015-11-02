@@ -211,7 +211,7 @@ module.exports = function(app) {
       if (err) {
         return next(err);
       }
-      database.collection('stories').find({
+      database.collection('story').find({
         '$text': {
           '$search': req.body.data ? req.body.data.searchValue : ''
         }
