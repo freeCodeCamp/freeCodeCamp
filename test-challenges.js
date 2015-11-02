@@ -72,7 +72,11 @@ function createTest({ title, tests = [], solutions = [] }) {
         /* eslint-enable no-unused-vars */
           solutions.forEach(solution => {
             tests.forEach(test => {
-              eval(solution + ';;' + test);
+              try {
+                eval(solution + ';;' + test);
+              } catch (e) {
+                t.fail(e);
+              }
             });
           });
         })
