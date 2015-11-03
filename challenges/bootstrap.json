@@ -100,6 +100,7 @@
       "tests": [
         "assert($(\"img\").length === 2, 'You should have a total of two images.')",
         "assert($(\"img:eq(1)\").hasClass(\"img-responsive\"), 'Your new image should be below your old one and have the class <code>img-responsive</code>.')",
+        "assert(!$(\"img:eq(1)\").hasClass(\"smaller-image\"), 'Your new image should not have the class <code>smaller-image</code>.')",
         "assert($(\"img:eq(1)\").attr(\"src\") === \"http://bit.ly/fcc-running-cats\", 'Your new image should have a <code>src</code> of <code>http&#58;//bit.ly/fcc-running-cats</code>.')",
         "assert(editor.match(/<img/g) && editor.match(/<img.*>/g).length === 2 && editor.match(/<img/g).length === 2, 'Make sure your new <code>img</code> element has a closing angle bracket.')"
       ],
