@@ -233,8 +233,8 @@ module.exports = function(app) {
             req.flash('info', {
               msg: dedent`
                 Once you have completed all of our challenges, you should
-                join our <a href=\"//gitter.im/freecodecamp/HalfWayClub\"
-                target=\"_blank\">Half Way Club</a> and start getting
+                join our <a href="https://gitter.im/freecodecamp/HalfWayClub"
+                target="_blank">Half Way Club</a> and start getting
                 ready for our nonprofit projects.
               `.split('\n').join(' ')
             });
