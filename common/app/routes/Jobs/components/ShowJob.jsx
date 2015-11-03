@@ -14,7 +14,7 @@ const thumbnailStyle = {
 
 function addATags(text) {
   return text.replace(urlRegex, function(match) {
-    return `<a href=${match}>${match}</a>`;
+    return `<a href=${match} target='_blank'>${match}</a>`;
   });
 }
 
