@@ -132,7 +132,7 @@
     "envify": "^3.4.0",
     "istanbul": "^0.3.15",
     "jsonlint": "^1.6.2",
-    "loopback-explorer": "^1.7.2",
+    "loopback-explorer": "^2.0.2",
     "loopback-testing": "^1.1.0",
     "mocha": "~2.0.1",
     "multiline": "~1.0.1",
