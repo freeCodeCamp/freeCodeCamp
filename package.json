@@ -114,7 +114,7 @@
     "source-map-support": "^0.3.2",
     "store": "https://github.com/berkeleytrue/store.js.git#feature/noop-server",
     "thundercats": "^3.0.0",
-    "thundercats-react": "^0.3.0",
+    "thundercats-react": "^0.4.0",
     "twit": "~1.1.20",
     "uglify-js": "~2.4.15",
     "url-regex": "^3.0.0",
