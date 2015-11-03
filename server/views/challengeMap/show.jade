@@ -54,6 +54,10 @@ block content
                                     .col-xs-12.col-sm-9.col-md-10
                                         li.map-p.faded.negative-10
                                             a(href='#' + challengeBlock.dashedName)= challengeBlock.name
+                                            if challengeBlock.markNew
+                                                span.text-danger.small &thinsp; &thinsp;
+                                                    strong
+                                                        em NEW
                                 else
                                     .hidden-xs.col-sm-3.col-md-2
                                         .progress.progress-bar-padding.text-center.thin-progress-bar
@@ -61,12 +65,20 @@ block content
                                     .col-xs-12.col-sm-9.col-md-10
                                         li.map-p.negative-10
                                             a(href='#' + challengeBlock.dashedName)= challengeBlock.name
+                                            if challengeBlock.markNew
+                                                span.text-danger.small &thinsp; &thinsp;
+                                                    strong
+                                                        em NEW
                             else
                                 .hidden-xs.col-sm-3.col-md-2
                                     span.negative-10
                                 .col-xs-12.col-sm-9.col-md-10
                                     li.map-p.negative-10
                                         a(href='#' + challengeBlock.dashedName)= challengeBlock.name
+                                        if challengeBlock.markNew
+                                            span.text-danger.small &thinsp; &thinsp;
+                                                strong
+                                                    em NEW
 
                 .row
                     .col-xs-12.col-sm-8.col-sm-offset-2.negative-28

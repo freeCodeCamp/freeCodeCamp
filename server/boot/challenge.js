@@ -517,6 +517,24 @@ module.exports = function(app) {
   }
 
   function challengeMap({ user = {} }, res, next) {
+
+    // small helper function to determine whether to mark something as new
+    function shouldShowNew(element, block) {
+      if (element) {
+        return (typeof element.releasedOn !== 'undefined' &&
+               moment(element.releasedOn, 'MMM MMMM DD, YYYY')
+               .diff(moment(), 'days') >= -30);
+      } else if (block) {
+        const newCount = block.reduce((sum, { markNew }) => {
+          if (markNew) {
+            return sum + 1;
+          }
+          return sum;
+        }, 0);
+        return newCount / block.length * 100 === 100;
+      }
+    }
+
     let lastCompleted;
     const daysRunning = moment().diff(new Date('10/15/2014'), 'days');
 
@@ -537,11 +555,7 @@ module.exports = function(app) {
         if (completedChallenges.indexOf(challenge.id) !== -1) {
           challenge.completed = true;
         }
-        if (typeof challenge.releasedOn !== 'undefined' &&
-          moment(challenge.releasedOn, 'MMM MMMM DD, YYYY').diff(moment(),
-            'days') >= -30) {
-          challenge.markNew = true;
-        }
+        challenge.markNew = shouldShowNew(challenge);
         return challenge;
       })
       // group challenges by block | returns a stream of observables
@@ -561,6 +575,7 @@ module.exports = function(app) {
           isBeta,
           name: blockArray[0].block,
           dashedName: dasherize(blockArray[0].block),
+          markNew: shouldShowNew(null, blockArray),
           challenges: blockArray,
           completed: completedCount / blockArray.length * 100,
           time: blockArray[0] && blockArray[0].time || '???'
