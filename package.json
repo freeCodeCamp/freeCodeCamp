@@ -24,7 +24,7 @@
     "accepts": "~1.2.5",
     "async": "~0.9.0",
     "babel": "5.8.23",
-    "babel-core": "5.8.23",
+    "babel-core": "6.0.19",
     "babel-eslint": "4.1.1",
     "babel-loader": "5.2.2",
     "bcrypt-nodejs": "~0.0.3",
