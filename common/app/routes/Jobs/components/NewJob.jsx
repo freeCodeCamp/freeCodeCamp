@@ -114,7 +114,7 @@ export default contain({
         url,
         logo,
         company,
-        isFrontEndCert,
+        isFrontEndCert = true,
         isFullStackCert,
         isHighlighted,
         isRemoteOk,
@@ -171,7 +171,7 @@ export default contain({
         }
       });
 
-      if (!valid) {
+      if (!valid || !props.isFrontEndCert && !props.isFullStackCert ) {
         debug('form not valid');
         return;
       }
@@ -234,6 +234,18 @@ export default contain({
       handleForm({ [name]: value });
     },
 
+    handleCertClick(name) {
+      const { jobActions: { handleForm } } = this.props;
+      const otherButton = name === 'isFrontEndCert' ?
+        'isFullStackCert' :
+        'isFrontEndCert';
+
+      handleForm({
+        [name]: true,
+        [otherButton]: false
+      });
+    },
+
     render() {
       const {
         position,
@@ -275,7 +287,11 @@ export default contain({
                       xs={ 6 }
                       xsOffset={ 3 }>
                       <Row>
-                        <Button className={ isFrontEndCert ? '' : 'active' }>
+                        <Button
+                          className={ isFrontEndCert ? 'active' : '' }
+                          onClick={ () => this.handleCertClick(
+                            'isFrontEndCert'
+                          )}>
                           <h4>Front End Development Certified</h4>
                           You can expect each applicant
                           to have a code portfolio using the
@@ -287,7 +303,11 @@ export default contain({
                       </Row>
                       <div className='button-spacer' />
                       <Row>
-                        <Button className={ isFullStackCert ? 'active' : ''}>
+                        <Button
+                          className={ isFullStackCert ? 'active' : ''}
+                          onClick={ () => this.handleCertClick(
+                            'isFullStackCert'
+                          )}>
                           <h4>Full Stack Development Certified</h4>
                           You can expect each applicant to have a code
                           portfolio using the following technologies:
