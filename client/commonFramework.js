@@ -136,8 +136,16 @@ common.codeUri = (function(common, encode, decode, location, history) {
       if (!codeUri.enabled) {
         return null;
       }
-      location.hash = '?solution=' +
-        codeUri.encode(encodeFcc(solution));
+      if (history && typeof history.replaceState === 'function') {
+        history.replaceState(
+          history.state,
+          null,
+          '?solution=' + codeUri.encode(encodeFcc(solution))
+        );
+      } else {
+        location.hash = '?solution=' +
+          codeUri.encode(encodeFcc(solution));
+      }
 
       return solution;
     },
