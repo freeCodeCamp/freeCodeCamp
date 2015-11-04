@@ -45,18 +45,6 @@ const hightlightCopy = `
 Highlight my post to make it stand out. (+$50)
 `;
 
-const foo = `
-  This will narrow the field substantially with higher quality applicants
-`;
-
-const isFullStackCopy = `
-Applicants must have earned Free Code Camp’s Full Stack Certification to apply.*
-`;
-
-const isFrontEndCopy = `
-Applicants must have earned Free Code Camp’s Front End Certification to apply.*
-`;
-
 const isRemoteCopy = `
 This job can be performed remotely.
 `;
@@ -126,8 +114,6 @@ export default contain({
         logo,
         company,
         isHighlighted,
-        isFullStackCert,
-        isFrontEndCert,
         isRemoteOk,
         howToApply
       } = form;
@@ -140,8 +126,6 @@ export default contain({
         logo: formatValue(formatUrl(logo), isValidURL),
         company: formatValue(company, makeRequired(isAscii)),
         isHighlighted: formatValue(isHighlighted, null, 'bool'),
-        isFullStackCert: formatValue(isFullStackCert, null, 'bool'),
-        isFrontEndCert: formatValue(isFrontEndCert, null, 'bool'),
         isRemoteOk: formatValue(isRemoteOk, null, 'bool'),
         howToApply: formatValue(howToApply, makeRequired(isAscii))
       };
@@ -163,8 +147,6 @@ export default contain({
       logo: PropTypes.object,
       company: PropTypes.object,
       isHighlighted: PropTypes.object,
-      isFullStackCert: PropTypes.object,
-      isFrontEndCert: PropTypes.object,
       isRemoteOk: PropTypes.object,
       howToApply: PropTypes.object
     },
@@ -199,8 +181,6 @@ export default contain({
         logo,
         company,
         isHighlighted,
-        isFullStackCert,
-        isFrontEndCert,
         isRemoteOk,
         howToApply
       } = this.props;
@@ -215,8 +195,6 @@ export default contain({
         logo: formatUrl(uriInSingleQuotedAttr(logo.value), false),
         company: inHTMLData(company.value),
         isHighlighted: !!isHighlighted.value,
-        isFrontEndCert: !!isFrontEndCert.value,
-        isFullStackCert: !!isFullStackCert.value,
         isRemoteOk: !!isRemoteOk.value,
         howToApply: inHTMLData(howToApply.value)
       };
@@ -255,8 +233,6 @@ export default contain({
         logo,
         company,
         isHighlighted,
-        isFrontEndCert,
-        isFullStackCert,
         isRemoteOk,
         howToApply,
         jobActions: { handleForm }
@@ -312,26 +288,6 @@ export default contain({
                     value={ description.value }
                     wrapperClassName={ inputClass } />
                   <Input
-                    checked={ isFrontEndCert.value }
-                    label={ isFrontEndCopy }
-                    onChange={
-                      ({ target: { checked } }) => handleForm({
-                        isFrontEndCert: !!checked
-                      })
-                    }
-                    type='checkbox'
-                    wrapperClassName={ checkboxClass } />
-                  <Input
-                    checked={ isFullStackCert.value }
-                    label={ isFullStackCopy }
-                    onChange={
-                      ({ target: { checked } }) => handleForm({
-                        isFullStackCert: !!checked
-                      })
-                    }
-                    type='checkbox'
-                    wrapperClassName={ checkboxClass } />
-                  <Input
                     checked={ isRemoteOk.value }
                     label={ isRemoteCopy }
                     onChange={
@@ -341,9 +297,6 @@ export default contain({
                     }
                     type='checkbox'
                     wrapperClassName={ checkboxClass } />
-                  <Row>
-                    <small>* { foo }</small>
-                  </Row>
                   <div className='spacer' />
                   <Row>
                     <div>
