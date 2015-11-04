@@ -85,6 +85,12 @@
           "A gif showing you how to create a new GitHub repository and push your code up to it.",
           "Create a new GitHub repository. Then copy its .git URL. <br>Return to c9.io's terminal and set your GitHub remote URL: <code>git remote set-url origin</code> followed by the URL you copied from GitHub. <br>Run <code>git push origin master</code>. <br>Now tab back to GitHub and refresh, and you'll see that your code is now on GitHub.",
           "https://github.com/new"
+        ],
+        [
+          "http://i.imgur.com/Qn0K65B.gif",
+          "A gif showing you how to add add-ons to Heroku.",
+          "We will soon add instructions for getting Clementine running on Heroku. For now, develop your Basejumps right on c9.io.",
+          ""
         ]
       ],
       "type": "Waypoint",
@@ -119,7 +125,6 @@
         "<span class='text-info'>Bonus User Story:</span> As an unauthenticated or authenticated user, I can see and vote on everyone's polls.",
         "<span class='text-info'>Bonus User Story:</span> As an unauthenticated or authenticated user, I can see the results of polls in chart form. (This could be implemented using Chart.js or Google Charts.)",
         "<span class='text-info'>Bonus User Story:</span> As an authenticated user, if I don't like the options on a poll, I can create a new option.",
-        "If you need further guidance on using Yeoman Angular-Fullstack Generator, check out: <a href='https://github.com/clnhll/guidetobasejumps' target='_blank'>https://github.com/clnhll/guidetobasejumps</a>.",
         "Once you've finished implementing these user stories, click the \"I've completed this challenge\" button and enter the URLs for both your GitHub repository and your live app running on Heroku. If you pair programmed with a friend, enter his or her Free Code Camp username as well so that you both get credit for completing it.",
         "If you'd like immediate feedback on your project from fellow campers, click this button and paste in a link to your CodePen project. <br><br><a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20PASTE_YOUR_CODEPEN_URL_HERE%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Click here then add your link to your tweet's text</a>"
       ],
@@ -151,8 +156,7 @@
         "<span class='text-info'>User Story:</span> As an authenticated user, I can add myself to a bar to indicate I am going there tonight.",
         "<span class='text-info'>User Story:</span> As an authenticated user, I can remove myself from a bar if I no longer want to go there.",
         "<span class='text-info'>Bonus User Story:</span> As an unauthenticated user, when I login I should not have to search again.",
-        "<span class='text-info'>Hint:</span> Try using the <a href='https://www.yelp.com/developers/documentation/v2/overview' target='_blank'>Yelp API</a> to find venues in the cities your users search for.",
-        "If you need further guidance on using Yeoman Angular-Fullstack Generator, check out: <a href='https://github.com/clnhll/guidetobasejumps' target='_blank'>https://github.com/clnhll/guidetobasejumps</a>.",
+        "<span class='text-info'>Hint:</span> Try using the <a href='https://www.yelp.com/developers/documentation/v2/overview' target='_blank'>Yelp API</a> to find venues in the cities your users search for. If you use Yelp's API, be sure to mention so in your app.",
         "Once you've finished implementing these user stories, click the \"I've completed this challenge\" button and enter the URLs for both your GitHub repository and your live app running on Heroku. If you pair programmed with a friend, enter his or her Free Code Camp username as well so that you both get credit for completing it.",
         "If you'd like immediate feedback on your project from fellow campers, click this button and paste in a link to your CodePen project. <br><br><a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20PASTE_YOUR_CODEPEN_URL_HERE%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Click here then add your link to your tweet's text</a>"
       ],
@@ -184,7 +188,6 @@
         "<span class='text-info'>User Story:</span> As a user, I can add new stocks by their symbol name.",
         "<span class='text-info'>User Story:</span> As a user, I can remove stocks.",
         "<span class='text-info'>Bonus User Story:</span> As a user, I can see changes in real-time when any other user adds or removes a stock.",
-        "If you need further guidance on using Yeoman Angular-Fullstack Generator, check out: <a href='https://github.com/clnhll/guidetobasejumps' target='_blank'>https://github.com/clnhll/guidetobasejumps</a>.",
         "Once you've finished implementing these user stories, click the \"I've completed this challenge\" button and enter the URLs for both your GitHub repository and your live app running on Heroku. If you pair programmed with a friend, enter his or her Free Code Camp username as well so that you both get credit for completing it.",
         "If you'd like immediate feedback on your project from fellow campers, click this button and paste in a link to your CodePen project. <br><br><a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20PASTE_YOUR_CODEPEN_URL_HERE%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Click here then add your link to your tweet's text</a>"
       ],
@@ -216,7 +219,6 @@
         "<span class='text-info'>User Story:</span> As an authenticated user, I can add a new book.",
         "<span class='text-info'>User Story:</span> As an authenticated user, I can update my settings to store my full name, city, and state.",
         "<span class='text-info'>Bonus User Story:</span> As an authenticated user, I can propose a trade and wait for the other user to accept the trade.",
-        "If you need further guidance on using Yeoman Angular-Fullstack Generator, check out: <a href='https://github.com/clnhll/guidetobasejumps' target='_blank'>https://github.com/clnhll/guidetobasejumps</a>.",
         "Once you've finished implementing these user stories, click the \"I've completed this challenge\" button and enter the URLs for both your GitHub repository and your live app running on Heroku. If you pair programmed with a friend, enter his or her Free Code Camp username as well so that you both get credit for completing it.",
         "If you'd like immediate feedback on your project from fellow campers, click this button and paste in a link to your CodePen project. <br><br><a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20PASTE_YOUR_CODEPEN_URL_HERE%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Click here then add your link to your tweet's text</a>"
       ],
@@ -251,7 +253,6 @@
         "<span class='text-info'>User Story:</span> As an unauthenticated user, I can browse other users' walls of images.",
         "<span class='text-info'>Bonus User Story:</span> As an authenticated user, if I upload an image that is broken, it will be replaced by a placeholder image. (can use jQuery broken image detection)",
         "<span class='text-info'>Hint:</span> <a href='http://masonry.desandro.com/' target='_blank'>Masonry.js</a> is a library that allows for Pinterest-style image grids.",
-        "If you need further guidance on using Yeoman Angular-Fullstack Generator, check out: <a href='https://github.com/clnhll/guidetobasejumps' target='_blank'>https://github.com/clnhll/guidetobasejumps</a>.",
         "Once you've finished implementing these user stories, click the \"I've completed this challenge\" button and enter the URLs for both your GitHub repository and your live app running on Heroku. If you pair programmed with a friend, enter his or her Free Code Camp username as well so that you both get credit for completing it.",
         "If you'd like immediate feedback on your project from fellow campers, click this button and paste in a link to your CodePen project. <br><br><a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20PASTE_YOUR_CODEPEN_URL_HERE%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Click here then add your link to your tweet's text</a>"
       ],
