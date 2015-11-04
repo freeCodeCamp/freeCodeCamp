@@ -248,7 +248,8 @@ $(document).ready(function() {
             }
           };
           var data = {
-            description: (challenge_Name || challengeName),
+            description: (username ? 'http://www.freecodecamp.com/' + username +
+            ' \'s s' : 'S') + 'olution for ' + (challenge_Name || challengeName),
             public: true,
             files: {}
           },
@@ -257,7 +258,7 @@ $(document).ready(function() {
           .substr(queryIssue.lastIndexOf('challenges/') + 11)
           .replace('/', '') + '.js';
           data['files'][filename] = {
-            content: '// ' + data.description + '\n' +
+            content: '// ' + (challenge_Name || challengeName) + '\n' +
             (username ? '// Author: @' + username + '\n' : '') +
             '// Challenge: ' + queryIssue + '\n' +
             '// Learn to Code at Free Code Camp (www.freecodecamp.com)' +
