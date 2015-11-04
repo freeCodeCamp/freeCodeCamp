@@ -587,7 +587,7 @@ module.exports = function(app) {
             blocks,
             daysRunning,
             globalCompletedCount: numberWithCommas(
-              5612952 + (Math.floor((Date.now() - 1446268581061) / 3000))
+              5612952 + (Math.floor((Date.now() - 1446268581061) / 2000))
             ),
             camperCount,
             lastCompleted,
