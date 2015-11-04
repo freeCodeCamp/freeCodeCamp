@@ -23,7 +23,7 @@ function run(code) {
     var codeExec = runHidden(code);
     result.type = typeof codeExec;
     result.output = stringify(codeExec);
-  } catch(e) {
+  } catch (e) {
     result.error = e.message;
   }
 
