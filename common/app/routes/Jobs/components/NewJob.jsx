@@ -45,6 +45,7 @@ const hightlightCopy = `
 Highlight my post to make it stand out. (+$50)
 `;
 
+
 const isRemoteCopy = `
 This job can be performed remotely.
 `;
@@ -113,6 +114,8 @@ export default contain({
         url,
         logo,
         company,
+        isFrontEndCert,
+        isFullStackCert,
         isHighlighted,
         isRemoteOk,
         howToApply
@@ -127,7 +130,9 @@ export default contain({
         company: formatValue(company, makeRequired(isAscii)),
         isHighlighted: formatValue(isHighlighted, null, 'bool'),
         isRemoteOk: formatValue(isRemoteOk, null, 'bool'),
-        howToApply: formatValue(howToApply, makeRequired(isAscii))
+        howToApply: formatValue(howToApply, makeRequired(isAscii)),
+        isFrontEndCert,
+        isFullStackCert
       };
     },
     subscribeOnWillMount() {
@@ -148,6 +153,8 @@ export default contain({
       company: PropTypes.object,
       isHighlighted: PropTypes.object,
       isRemoteOk: PropTypes.object,
+      isFrontEndCert: PropTypes.bool,
+      isFullStackCert: PropTypes.bool,
       howToApply: PropTypes.object
     },
 
@@ -180,6 +187,8 @@ export default contain({
         url,
         logo,
         company,
+        isFrontEndCert,
+        isFullStackCert,
         isHighlighted,
         isRemoteOk,
         howToApply
@@ -196,7 +205,9 @@ export default contain({
         company: inHTMLData(company.value),
         isHighlighted: !!isHighlighted.value,
         isRemoteOk: !!isRemoteOk.value,
-        howToApply: inHTMLData(howToApply.value)
+        howToApply: inHTMLData(howToApply.value),
+        isFrontEndCert,
+        isFullStackCert
       };
 
       const job = Object.keys(jobValues).reduce((accu, prop) => {
@@ -235,8 +246,11 @@ export default contain({
         isHighlighted,
         isRemoteOk,
         howToApply,
+        isFrontEndCert,
+        isFullStackCert,
         jobActions: { handleForm }
       } = this.props;
+
       const { handleChange } = this;
       const labelClass = 'col-sm-offset-1 col-sm-2';
       const inputClass = 'col-sm-6';
@@ -253,7 +267,40 @@ export default contain({
                   onSubmit={ this.handleSubmit }>
 
                   <div className='spacer'>
-                    <h2>First, tell us about the position</h2>
+                    <h2>First, select your ideal applicant: </h2>
+                  </div>
+
+                  <Row>
+                    <Col
+                      xs={ 6 }
+                      xsOffset={ 3 }>
+                      <Row>
+                        <Button className={ isFrontEndCert ? '' : 'active' }>
+                          <h4>Front End Development Certified</h4>
+                          You can expect each applicant
+                          to have a code portfolio using the
+                          following technologies:
+                          HTML5, CSS, jQuery, API integrations, MVC Framework
+                          <br />
+                          <br />
+                        </Button>
+                      </Row>
+                      <div className='button-spacer' />
+                      <Row>
+                        <Button className={ isFullStackCert ? 'active' : ''}>
+                          <h4>Full Stack Development Certified</h4>
+                          You can expect each applicant to have a code
+                          portfolio using the following technologies:
+                          HTML5, CSS, jQuery, API integrations, MVC Framework,
+                          JavaScript, Node.js, MongoDB, Express.js
+                          <br />
+                          <br />
+                        </Button>
+                      </Row>
+                    </Col>
+                  </Row>
+                  <div className='spacer'>
+                    <h2>Tell us about the position</h2>
                   </div>
                   <Input
                     bsStyle={ position.bsStyle }
