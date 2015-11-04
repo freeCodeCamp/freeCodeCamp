@@ -752,7 +752,7 @@
         "Let's update the <code>myDog</code> object's name property. Let's change her name from \"Coder\" to \"Happy Coder\"."
       ],
       "tests": [
-        "assert(/happy coder/gi.test(myDog.name), 'message: Update <code>myDog</code>\\'s <code>\"name\"</code> property to equal \"Happy Coder\".');"
+        "assert(/happy coder/gi.test(myDog.name), 'message: Update <code>myDog</code>&apos;s <code>\"name\"</code> property to equal \"Happy Coder\".');"
       ],
       "challengeSeed": [
         "var ourDog = {",
