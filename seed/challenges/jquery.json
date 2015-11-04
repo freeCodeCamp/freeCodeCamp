@@ -161,7 +161,7 @@
         "<code>$(\"#target6\").addClass(\"animated fadeOut\")</code>."
       ],
       "tests": [
-        "assert($(\"#target3\").hasClass(\"animated\"), 'Select the <code>button</code>element with the <code>id</code> of <code>target3</code> and use the jQuery <code>addClass&#40&#41</code> function to give it the class of <code>animated</code>.')",
+        "assert($(\"#target3\").hasClass(\"animated\"), 'Select the <code>button</code> element with the <code>id</code> of <code>target3</code> and use the jQuery <code>addClass&#40&#41</code> function to give it the class of <code>animated</code>.')",
         "assert(($(\"#target3\").hasClass(\"fadeOut\") || $(\"#target3\").hasClass(\"fadeout\"))  && editor.match(/\\$\\(.#target3.\\)/g), 'Target the element with the id <code>target3</code> and use the jQuery <code>addClass&#40&#41</code> function to give it the class <code>fadeOut</code>.')",
         "assert(!editor.match(/class.*animated/g), 'Only use jQuery to add these classes to the element.')"
       ],
