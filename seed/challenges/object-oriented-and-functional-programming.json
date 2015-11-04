@@ -154,7 +154,7 @@
       "id":"cf1111c1c15feddfaeb4bdef",
       "title":"Make Instances of Objects with a Constructor Function",
       "description":[
-        "Sometimes you'll want to be able to easily create many copies of an objects that all share the same methods.",
+        "Sometimes you'll want to be able to easily create many copies of an object that shares the same methods.",
         "Objects have their own attributes, called <code>properties</code>, and their own functions, called <code>methods</code>.",
         "You can create <code>instances</code> of an object using a <code>constructor</code>.",
         "A constructor is a function that creates instances of an object that share the same methods and properties",
