@@ -591,7 +591,7 @@ module.exports = function(app) {
             ),
             camperCount,
             lastCompleted,
-            title: "A Map to Learn to Code and Become a Software Engineer"
+            title: 'A Map to Learn to Code and Become a Software Engineer'
           });
         },
         next

@@ -5,7 +5,7 @@ module.exports = function mountLoopBackExplorer(app) {
   var explorer;
   try {
     explorer = require('loopback-explorer');
-  } catch(err) {
+  } catch (err) {
     // Print the message only when the app was started via `app.listen()`.
     // Do not print any message when the project is used as a component.
     app.once('started', function() {

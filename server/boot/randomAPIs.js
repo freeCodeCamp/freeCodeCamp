@@ -192,7 +192,8 @@ module.exports = function(app) {
 
   function showTestimonials(req, res) {
     res.render('resources/stories', {
-      title: 'Testimonials from Happy Free Code Camp Students who got Software Engineer Jobs',
+      title: 'Testimonials from Happy Free Code Camp Students ' +
+        'who got Software Engineer Jobs',
       stories: testimonials.slice(0, 72),
       moreStories: true
     });
@@ -200,7 +201,8 @@ module.exports = function(app) {
 
   function showAllTestimonials(req, res) {
     res.render('resources/stories', {
-      title: 'Testimonials from Happy Free Code Camp Students who got Software Engineer Jobs',
+      title: 'Testimonials from Happy Free Code Camp Students ' +
+        'who got Software Engineer Jobs',
       stories: testimonials,
       moreStories: false
     });
