@@ -18,12 +18,12 @@ block content
                                 span.text-primary #{daysRunning}&thinsp;
                                 | days ago
                         tr
-                            td Population:&thinsp;
+                            td Population:&thinsp;&thinsp;&thinsp;
                             td
                                 span.text-primary #{camperCount}&thinsp;
                                 | campers
                         tr
-                            td Completed:&thinsp;
+                            td Completed:&thinsp;&thinsp;&thinsp;
                             td
                                 span.text-primary #{globalCompletedCount}&thinsp;
                                 | challenges
@@ -42,6 +42,7 @@ block content
                         .text-center
                             a#hide-map-notice-button(href='#') Hide this forever
                         .spacer
+
                 .row
                     .col-xs-12.col-sm-8.col-sm-offset-2
                         h3 800 Hours of Practice:
@@ -160,7 +161,8 @@ block content
             if (!localStorage || !localStorage.hideMediumNotice) {
                 $("#map-notice").removeClass("hidden");
             }
-            $("#hide-map-notice-button").on("click", function() {
+            $("#hide-map-notice-button").on("click", function(e) {
+                e.preventDefault();
                 $("#map-notice").addClass('animated fadeOut');
                 setTimeout(function() {
                     $("#map-notice").hide();
