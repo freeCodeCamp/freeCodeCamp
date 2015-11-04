@@ -34,6 +34,7 @@ module.exports = function(app) {
   router.get('/submit-cat-photo', submitCatPhoto);
   router.get('/labs', showLabs);
   router.get('/stories', showTestimonials);
+  router.get('/all-stories', showAllTestimonials);
 
   app.use(router);
 
@@ -192,7 +193,16 @@ module.exports = function(app) {
   function showTestimonials(req, res) {
     res.render('resources/stories', {
       title: 'Testimonials from Happy Free Code Camp Students who got Software Engineer Jobs',
-      stories: testimonials
+      stories: testimonials.slice(0, 75),
+      moreStories: true
+    });
+  }
+
+  function showAllTestimonials(req, res) {
+    res.render('resources/stories', {
+      title: 'Testimonials from Happy Free Code Camp Students who got Software Engineer Jobs',
+      stories: testimonials,
+      moreStories: false
     });
   }
 

@@ -17,6 +17,12 @@ block content
                                     p.text-justify= story.quote
 
 
+                    if moreStories
+                        .text-center
+                            a.btn.btn-lg.btn-primary.btn-primary-ghost.btn-block(href="/all-stories") Show more stories
+                    .spacer
+
+
             if !user
                 .text-center
                     a.btn.btn-cta.signup-btn(href="/login") Start learning to code (it's free)
