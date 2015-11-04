@@ -18,12 +18,12 @@ block content
                                 span.text-primary #{daysRunning}&thinsp;
                                 | days ago
                         tr
-                            td Population:&thinsp;
+                            td Population:&thinsp;&thinsp;&thinsp;
                             td
                                 span.text-primary #{camperCount}&thinsp;
                                 | campers
                         tr
-                            td Completed:&thinsp;
+                            td Completed:&thinsp;&thinsp;&thinsp;
                             td
                                 span.text-primary #{globalCompletedCount}&thinsp;
                                 | challenges
@@ -33,14 +33,16 @@ block content
                 .spacer
                 if (user && user.progressTimestamps.length > 100)
                     #map-notice.col-xs-12.col-md-8.col-md-offset-2.hidden
-                        h2.text-center We have a subreddit
-                        img.thumbnail.img-center.img-responsive(src="http://i.imgur.com/lyd0bfM.jpg")
-                        h4.text-center We welcome you to come ask questions and share your thoughts with our entire open source community.
-                        a.button.btn.btn-block.btn-primary(href="https://reddit.com/r/freecodecamp" target="_blank") Check it out
+                        h2.text-center Black, white, and read all over
+                        a(href="http://i.imgur.com/UfBkxQw.png" data-lightbox="img-enlarge")
+                            img.thumbnail.img-center.img-responsive(src="http://i.imgur.com/UfBkxQw.png")
+                        h4.text-center Our open source community now has a camper-run Medium publication. Read the best articles from your fellow campers, and even publish your own.
+                        a.button.btn.btn-block.btn-primary(href="https://medium.freecodecamp.com" target="_blank") Check it out
                         .button-spacer
                         .text-center
-                            a#hide-map-notice-button(href='#') Hide this
+                            a#hide-map-notice-button(href='#') Hide this forever
                         .spacer
+
                 .row
                     .col-xs-12.col-sm-8.col-sm-offset-2
                         h3 800 Hours of Practice:
@@ -144,14 +146,15 @@ block content
         var username = !{JSON.stringify(user && user.username || '')};
         var lastCompleted = !{JSON.stringify(lastCompleted || false)}
         $(document).ready(function () {
-            if (!localStorage || !localStorage.hideRedditNotice) {
+            if (!localStorage || !localStorage.hideMediumNotice) {
                 $("#map-notice").removeClass("hidden");
             }
-            $("#hide-map-notice-button").on("click", function() {
+            $("#hide-map-notice-button").on("click", function(e) {
+                e.preventDefault();
                 $("#map-notice").addClass('animated fadeOut');
                 setTimeout(function() {
                     $("#map-notice").hide();
                 }, 1000);
-                localStorage.hideRedditNotice = "true";
+                localStorage.hideMediumNotice = "true";
             });
         });
