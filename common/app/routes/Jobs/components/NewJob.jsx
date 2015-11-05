@@ -289,14 +289,16 @@ export default contain({
                       <Row>
                         <Button
                           className={ isFrontEndCert ? 'active' : '' }
-                          onClick={ () => this.handleCertClick(
-                            'isFrontEndCert'
-                          )}>
+                          onClick={ () => {
+                            if (!isFrontEndCert) {
+                              this.handleCertClick('isFrontEndCert');
+                            }
+                          }}>
                           <h4>Front End Development Certified</h4>
                           You can expect each applicant
                           to have a code portfolio using the
                           following technologies:
-                          HTML5, CSS, jQuery, API integrations, MVC Framework
+                          HTML5, CSS, jQuery, API integrations
                           <br />
                           <br />
                         </Button>
@@ -305,9 +307,11 @@ export default contain({
                       <Row>
                         <Button
                           className={ isFullStackCert ? 'active' : ''}
-                          onClick={ () => this.handleCertClick(
-                            'isFullStackCert'
-                          )}>
+                          onClick={ () => {
+                            if (!isFullStackCert) {
+                              this.handleCertClick('isFullStackCert');
+                            }
+                          }}>
                           <h4>Full Stack Development Certified</h4>
                           You can expect each applicant to have a code
                           portfolio using the following technologies:
