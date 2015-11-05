@@ -1,4 +1,4 @@
-import React, { createClass } from 'react';
+import React, { PropTypes } from 'react';
 import { History } from 'react-router';
 import { contain } from 'thundercats-react';
 
@@ -6,7 +6,7 @@ import ShowJob from './ShowJob.jsx';
 import JobNotFound from './JobNotFound.jsx';
 import { isJobValid } from '../utils';
 
-function shouldShowJob(
+function shouldShowApply(
   {
     isFrontEndCert: isFrontEndCertReq = false,
     isFullStackCert: isFullStackCertReq = false
@@ -22,9 +22,12 @@ function shouldShowJob(
 
 function generateMessage(
   {
-    isFrontEndCert: isFrontEndCertReq = false
-  }, {
+    isFrontEndCert: isFrontEndCertReq = false,
+    isFullStackCert: isFullStackCertReq = false
+  },
+  {
     isFrontEndCert = false,
+    isFullStackCert = false,
     isSignedIn = false
   }
 ) {
@@ -33,9 +36,19 @@ function generateMessage(
     return 'Must be signed in to apply';
   }
   if (isFrontEndCertReq && !isFrontEndCert) {
-    return 'You must earn your Full Stack Certification to apply';
+    return 'This employer requires Free Code Camp’s Front ' +
+      'End Development Certification in order to apply';
   }
-  return 'You must earn your Front End Certification to apply';
+  if (isFullStackCertReq && !isFullStackCert) {
+    return 'This employer requires Free Code Camp’s Full ' +
+      'Stack Development Certification in order to apply';
+  }
+  if (isFrontEndCertReq && isFrontEndCertReq) {
+    return 'This employer requires the Front End Development Certification. ' +
+      "You've earned it, so feel free to apply.";
+  }
+  return 'This employer requires the Full Stack Development Certification. ' +
+    "You've earned it, so feel free to apply.";
 }
 
 export default contain(
@@ -66,8 +79,15 @@ export default contain(
       return job.id !== id;
     }
   },
-  createClass({
+  React.createClass({
     displayName: 'Show',
+
+    propTypes: {
+      job: PropTypes.object,
+      isFullStackCert: PropTypes.bool,
+      isFrontEndCert: PropTypes.bool,
+      username: PropTypes.string
+    },
 
     mixins: [History],
 
@@ -86,15 +106,28 @@ export default contain(
         job,
         username
       } = this.props;
-      const isSignedIn = !!username;
 
       if (!isJobValid(job)) {
         return <JobNotFound />;
       }
+
+      const isSignedIn = !!username;
+
+      const showApply = shouldShowApply(
+        job,
+        { isFrontEndCert, isFullStackCert }
+      );
+
+      const message = generateMessage(
+        job,
+        { isFrontEndCert, isFullStackCert, isSignedIn }
+      );
+
       return (
         <ShowJob
-          message={ generateMessage(job, { isFrontEndCert, isSignedIn }) }
-          showApply={ shouldShowJob(job, { isFrontEndCert, isFullStackCert }) }
+          message={ message }
+          preview={ false }
+          showApply={ showApply }
           { ...this.props }/>
       );
     }

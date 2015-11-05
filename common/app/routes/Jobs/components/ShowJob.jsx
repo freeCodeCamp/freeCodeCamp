@@ -24,6 +24,7 @@ export default React.createClass({
     job: PropTypes.object,
     params: PropTypes.object,
     showApply: PropTypes.bool,
+    preview: PropTypes.bool,
     message: PropTypes.string
   },
 
@@ -40,39 +41,42 @@ export default React.createClass({
     );
   },
 
-  renderHowToApply(showApply, message, howToApply) {
+  renderHowToApply(showApply, preview, message, howToApply) {
     if (!showApply) {
       return (
         <Row>
             <Col
               md={ 6 }
               mdOffset={ 3 }>
-              <h4 className='bg-danger text-center'>{ message }</h4>
+                <h4 className='bg-info text-center'>{ message }</h4>
             </Col>
         </Row>
       );
     }
 
     return (
-      <Row>
+        <Row>
           <Col
             md={ 6 }
             mdOffset={ 3 }>
-              <bold>How do I apply?</bold>
+            <Well>
+              <bold>{ preview ? 'How do I apply?' : message }</bold>
               <br />
               <br />
               <span dangerouslySetInnerHTML={{
                 __html: addATags(howToApply)
               }} />
+            </Well>
           </Col>
-      </Row>
+        </Row>
     );
   },
 
   render() {
     const {
-      showApply,
+      showApply = true,
       message,
+      preview = true,
       job = {}
     } = this.props;
 
@@ -129,9 +133,7 @@ export default React.createClass({
                   <p>{ description }</p>
                 </Col>
               </Row>
-              <Well>
-                { this.renderHowToApply(showApply, message, howToApply) }
-              </Well>
+              { this.renderHowToApply(showApply, preview, message, howToApply) }
             </Panel>
           </Col>
         </Row>
