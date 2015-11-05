@@ -15,15 +15,13 @@ block content
                                         | &nbsp;
                                         a.fa.fa-linkedin-square.text-primary(alt="#{story.camper}'s LinkedIn Profile", href=story.linkedin, target='_blank')
                                     p.text-justify= story.quote
+                    .col-xs-12.col-sm-10.col-sm-offset-1
+                            if moreStories
+                                .text-center
+                                    a.btn.btn-lg.btn-primary.btn-primary-ghost.btn-block(href="/all-stories") Show more stories
+                            .spacer
 
-
-                    if moreStories
-                        .text-center
-                            a.btn.btn-lg.btn-primary.btn-primary-ghost.btn-block(href="/all-stories") Show more stories
-                    .spacer
-
-
-            if !user
-                .text-center
-                    a.btn.btn-cta.signup-btn(href="/login") Start learning to code (it's free)
-            .spacer
+                            if !user
+                                .text-center
+                                    a.btn.btn-cta.signup-btn.btn-block(href="/login") Start learning to code (it's free)
+                            .spacer
