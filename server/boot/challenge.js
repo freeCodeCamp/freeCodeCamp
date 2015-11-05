@@ -35,12 +35,14 @@ const dasherize = utils.dasherize;
 const unDasherize = utils.unDasherize;
 const getMDNLinks = utils.getMDNLinks;
 
+/*
 function makeChallengesUnique(challengeArr) {
   // clone and reverse challenges
   // then filter by unique id's
   // then reverse again
   return _.uniq(challengeArr.slice().reverse(), 'id').reverse();
 }
+*/
 function numberWithCommas(x) {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 }
@@ -231,8 +233,8 @@ module.exports = function(app) {
             req.flash('info', {
               msg: dedent`
                 Once you have completed all of our challenges, you should
-                join our <a href=\"//gitter.im/freecodecamp/HalfWayClub\"
-                target=\"_blank\">Half Way Club</a> and start getting
+                join our <a href="https://gitter.im/freecodecamp/HalfWayClub"
+                target="_blank">Half Way Club</a> and start getting
                 ready for our nonprofit projects.
               `.split('\n').join(' ')
             });
@@ -515,6 +517,24 @@ module.exports = function(app) {
   }
 
   function challengeMap({ user = {} }, res, next) {
+
+    // small helper function to determine whether to mark something as new
+    function shouldShowNew(element, block) {
+      if (element) {
+        return (typeof element.releasedOn !== 'undefined' &&
+               moment(element.releasedOn, 'MMM MMMM DD, YYYY')
+               .diff(moment(), 'days') >= -30);
+      } else if (block) {
+        const newCount = block.reduce((sum, { markNew }) => {
+          if (markNew) {
+            return sum + 1;
+          }
+          return sum;
+        }, 0);
+        return newCount / block.length * 100 === 100;
+      }
+    }
+
     let lastCompleted;
     const daysRunning = moment().diff(new Date('10/15/2014'), 'days');
 
@@ -535,6 +555,7 @@ module.exports = function(app) {
         if (completedChallenges.indexOf(challenge.id) !== -1) {
           challenge.completed = true;
         }
+        challenge.markNew = shouldShowNew(challenge);
         return challenge;
       })
       // group challenges by block | returns a stream of observables
@@ -554,9 +575,10 @@ module.exports = function(app) {
           isBeta,
           name: blockArray[0].block,
           dashedName: dasherize(blockArray[0].block),
+          markNew: shouldShowNew(null, blockArray),
           challenges: blockArray,
           completed: completedCount / blockArray.length * 100,
-          time: blockArray[0] && blockArray[0].time || "???"
+          time: blockArray[0] && blockArray[0].time || '???'
         };
       })
       .filter(({ name }) => name !== 'Hikes')
@@ -579,9 +601,12 @@ module.exports = function(app) {
           res.render('challengeMap/show', {
             blocks,
             daysRunning,
+            globalCompletedCount: numberWithCommas(
+              5612952 + (Math.floor((Date.now() - 1446268581061) / 2000))
+            ),
             camperCount,
             lastCompleted,
-            title: "A map of all Free Code Camp's Challenges"
+            title: 'A Map to Learn to Code and Become a Software Engineer'
           });
         },
         next

@@ -10,8 +10,12 @@ block content
                             p.large-p!= step[2]
                         if step[3]
                             a.btn.btn-block.btn-primary.challenge-step-btn-action(id='#{index}' href='#{step[3]}' target='_blank') Open link in new tab
+                            .button-spacer
                         if index + 1 === description.length
                             .btn.btn-block.btn-primary.challenge-step-btn-finish(id='last' class=step[3] ? 'disabled' : '') Finish challenge
+                        else if index !== 0
+                            .btn.btn-block.btn-primary.challenge-step-btn-next(id='#{index}' class=step[3] ? 'disabled' : '') Go to my next step
+                            .btn.btn-block.btn-warning-ghost.challenge-step-btn-prev(id='#{index - 1}') Go to my previous step
                         else
                             .btn.btn-block.btn-primary.challenge-step-btn-next(id='#{index}' class=step[3] ? 'disabled' : '') Go to my next step
     #challenge-step-modal.modal(tabindex='-1')

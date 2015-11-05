@@ -58,7 +58,7 @@
         "When our click event happens, we can use Ajax to update an HTML element.",
         "Let's make it so that when a user clicks the \"Get Message\" button, we change the text of the element with the class <code>message</code> to say \"Here is the message\".",
         "We can do this by adding the following code within our click event:",
-        "<code>&thinsp;&thinsp;$(\".message\").html(\"Here is the message\");</code>"
+        "<code>&nbsp;&nbsp;$(\".message\").html(\"Here is the message\");</code>"
       ],
       "tests": [
         "assert(editor.match(/\\$\\s*?\\(\\s*?(?:'|\")\\.message(?:'|\")\\s*?\\)\\s*?\\.html\\s*?\\(\\s*?(?:'|\")Here\\sis\\sthe\\smessage(?:'|\")\\s*?\\);/gi), 'Clicking the \"Get Message\" button should give the element with the class <code>message</code> the text \"Here is the message\".')"
@@ -107,9 +107,9 @@
         "These properties and their values are often referred to as \"key-value pairs\".",
         "Let's get the JSON from Free Code Camp's Cat Photo API.",
         "Here's the code you can put in your click event to do this:",
-        "<code>&thinsp;&thinsp;$.getJSON(\"/json/cats.json\", function(json) {</code>",
-        "<code>&thinsp;&thinsp;&thinsp;&thinsp;$(\".message\").html(JSON.stringify(json));</code>",
-        "<code>&thinsp;&thinsp;});</code>",
+        "<code>&nbsp;&nbsp;$.getJSON(\"/json/cats.json\", function(json) {</code>",
+        "<code>&nbsp;&nbsp;&nbsp;&nbsp;$(\".message\").html(JSON.stringify(json));</code>",
+        "<code>&nbsp;&nbsp;});</code>",
         "Once you've added this, click the \"Get Message\" button. Your Ajax function will replace the \"The message will go here\" text with the raw JSON output from the Free Code Camp Cat Photo API."
       ],
       "tests": [
@@ -165,12 +165,12 @@
         "Then, let's loop through our JSON, adding more HTML to that variable. When the loop is finished, we'll render it.",
         "Here's the code that does this:",
         "<code>json.map(function(val) {</code>",
-        "<code>&thinsp;&thinsp;var keys = Object.keys(val);</code>",
-        "<code>&thinsp;&thinsp;html += \"&lt;div class = 'cat'&gt;\";</code>",
-        "<code>&thinsp;&thinsp;keys.map(function(key) {</code>",
-        "<code>&thinsp;&thinsp;&thinsp;&thinsp;html += \"&lt;b&gt;\" + key + \"&lt;/b&gt;: \" + val[key] + \"&lt;br&gt;\";</code>",
-        "<code>&thinsp;&thinsp;});</code>",
-        "<code>&thinsp;&thinsp;html += \"&lt;/div&gt;&lt;br&gt;\";</code>",
+        "<code>&nbsp;&nbsp;var keys = Object.keys(val);</code>",
+        "<code>&nbsp;&nbsp;html += \"&lt;div class = 'cat'&gt;\";</code>",
+        "<code>&nbsp;&nbsp;keys.map(function(key) {</code>",
+        "<code>&nbsp;&nbsp;&nbsp;&nbsp;html += \"&lt;b&gt;\" + key + \"&lt;/b&gt;: \" + val[key] + \"&lt;br&gt;\";</code>",
+        "<code>&nbsp;&nbsp;});</code>",
+        "<code>&nbsp;&nbsp;html += \"&lt;/div&gt;&lt;br&gt;\";</code>",
         "<code>});</code>"
       ],
       "tests": [
@@ -225,7 +225,7 @@
         "We've seen from the last two lessons that each object in our JSON array contains an <code>imageLink</code> key with a value that is the url of a cat's image.",
         "When we're looping through these objects, let's use this <code>imageLink</code> property to display this image in an <code>img</code> element.",
         "Here's the code that does this:",
-        "<code>&thinsp;&thinsp;html += \"&lt;img src = '\" + val.imageLink + \"'&gt;\";</code>"
+        "<code>&nbsp;&nbsp;html += \"&lt;img src = '\" + val.imageLink + \"'&gt;\";</code>"
       ],
       "tests": [
         "assert(editor.match(/val.imageLink/gi), 'You should have used the <code>imageLink</code> property to display the images.')"
@@ -289,7 +289,7 @@
         "Let's filter out the cat who's \"id\" key has a value of 1.",
         "Here's the code to do this:",
         "<code>json = json.filter(function(val) {</code>",
-        "<code>&thinsp;&thinsp;return(val.id !== 1);</code>",
+        "<code>&nbsp;&nbsp;return(val.id !== 1);</code>",
         "<code>});</code>"
       ],
       "tests": [
@@ -358,9 +358,9 @@
         "By selecting allow you will see the text on the output phone change to your latitude and longitude",
         "Here's some code that does this:",
         "<code>if (navigator.geolocation) {</code>",
-        "<code>&thinsp;&thinsp;navigator.geolocation.getCurrentPosition(function(position) {</code>",
-        "<code>&thinsp;&thinsp;&thinsp;&thinsp;$(\"#data\").html(\"latitude: \" + position.coords.latitude + \"&lt;br&gt;longitude: \" + position.coords.longitude);</code>",
-        "<code>&thinsp;&thinsp;});</code>",
+        "<code>&nbsp;&nbsp;navigator.geolocation.getCurrentPosition(function(position) {</code>",
+        "<code>&nbsp;&nbsp;&nbsp;&nbsp;$(\"#data\").html(\"latitude: \" + position.coords.latitude + \"&lt;br&gt;longitude: \" + position.coords.longitude);</code>",
+        "<code>&nbsp;&nbsp;});</code>",
         "<code>}</code>"
       ],
       "tests": [

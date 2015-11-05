@@ -28,13 +28,13 @@ module.exports = function(app) {
   router.get('/pmi-acp-agile-project-managers-form', agileProjectManagersForm);
   router.get('/nonprofits', nonprofits);
   router.get('/nonprofits-form', nonprofitsForm);
-  router.get('/our-sponsors', sponsors);
   router.get('/unsubscribe/:email', unsubscribe);
   router.get('/unsubscribed', unsubscribed);
   router.get('/get-started', getStarted);
   router.get('/submit-cat-photo', submitCatPhoto);
   router.get('/labs', showLabs);
   router.get('/stories', showTestimonials);
+  router.get('/all-stories', showAllTestimonials);
 
   app.use(router);
 
@@ -185,15 +185,26 @@ module.exports = function(app) {
 
   function showLabs(req, res) {
     res.render('resources/labs', {
-      title: 'Projects Built by Free Code Camp Students',
+      title: 'Projects Built by Free Code Camp Software Engineers',
       projects: labs
     });
   }
 
   function showTestimonials(req, res) {
     res.render('resources/stories', {
-      title: 'Stories from Happy Free Code Camp Campers',
-      stories: testimonials
+      title: 'Testimonials from Happy Free Code Camp Students ' +
+        'who got Software Engineer Jobs',
+      stories: testimonials.slice(0, 72),
+      moreStories: true
+    });
+  }
+
+  function showAllTestimonials(req, res) {
+    res.render('resources/stories', {
+      title: 'Testimonials from Happy Free Code Camp Students ' +
+        'who got Software Engineer Jobs',
+      stories: testimonials,
+      moreStories: false
     });
   }
 
@@ -207,15 +218,9 @@ module.exports = function(app) {
     });
   }
 
-  function sponsors(req, res) {
-    res.render('sponsors/sponsors', {
-      title: 'The Sponsors who make Free Code Camp Possible'
-    });
-  }
-
   function nonprofits(req, res) {
     res.render('resources/nonprofits', {
-      title: 'A guide to our Nonprofit Projects'
+      title: 'Your Nonprofit Can Get Pro Bono Code'
     });
   }
 

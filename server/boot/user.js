@@ -128,7 +128,7 @@ module.exports = function(app) {
       return res.redirect('/');
     }
     res.render('account/signin', {
-      title: 'Free Code Camp Login'
+      title: 'Sign in to Free Code Camp using a Social Media Account'
     });
   }
 
@@ -142,7 +142,7 @@ module.exports = function(app) {
       return res.redirect('/');
     }
     res.render('account/email-signin', {
-      title: 'Sign in to your Free Code Camp Account'
+      title: 'Sign in to Free Code Camp using your Email Address'
     });
   }
 
@@ -151,7 +151,7 @@ module.exports = function(app) {
       return res.redirect('/');
     }
     res.render('account/email-signup', {
-      title: 'Create Your Free Code Camp Account'
+      title: 'Sign up for Free Code Camp using your Email Address'
     });
   }
 
@@ -222,7 +222,7 @@ module.exports = function(app) {
         });
 
         res.render('account/show', {
-          title: 'Camper ' + profileUser.username + '\'s portfolio',
+          title: 'Camper ' + profileUser.username + '\'s Code Portfolio',
           username: profileUser.username,
           name: profileUser.name,
 
@@ -397,7 +397,7 @@ module.exports = function(app) {
       return res.render('account/forgot');
     }
     res.render('account/reset', {
-      title: 'Password Reset',
+      title: 'Reset your Password',
       accessToken: req.accessToken.id
     });
   }

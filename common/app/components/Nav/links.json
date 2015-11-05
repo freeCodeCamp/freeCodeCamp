@@ -9,5 +9,6 @@
   "link": "/news"
 },{
   "content": "Jobs",
-  "link": "/jobs"
+  "link": "/jobs",
+  "react": true
 }]

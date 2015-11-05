@@ -11,17 +11,25 @@ const debug = debugFactory('freecc:react-server');
 // add routes here as they slowly get reactified
 // remove their individual controllers
 const routes = [
-  '/hikes',
-  '/hikes/*',
   '/jobs',
   '/jobs/*'
+];
+
+const devRoutes = [
+  '/hikes',
+  '/hikes/*'
 ];
 
 export default function reactSubRouter(app) {
   var router = app.loopback.Router();
 
+  // These routes are in production
+  routes.forEach((route) => {
+    router.get(route, serveReactApp);
+  });
+
   if (process.env.NODE_ENV === 'development') {
-    routes.forEach(function(route) {
+    devRoutes.forEach(function(route) {
       router.get(route, serveReactApp);
     });
   }
@@ -35,7 +43,7 @@ export default function reactSubRouter(app) {
     // returns a router wrapped app
     app$({ location })
       // if react-router does not find a route send down the chain
-      .filter(function({ props}) {
+      .filter(function({ props }) {
         if (!props) {
           debug('react tried to find %s but got 404', location.pathname);
           return next();

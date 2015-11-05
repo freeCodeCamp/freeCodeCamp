@@ -19,7 +19,11 @@ export default Store({
       openModal,
       closeModal,
       handleForm,
-      setForm
+      setForm,
+      setFollowersCount,
+      setPromoCode,
+      applyPromo,
+      clearPromo
     } = cat.getActions('JobActions');
     const register = createRegistrar(jobsStore);
     register(setter(setJobs));
@@ -27,6 +31,10 @@ export default Store({
     register(setter(openModal));
     register(setter(closeModal));
     register(setter(setForm));
+    register(setter(setPromoCode));
+    register(setter(applyPromo));
+    register(setter(clearPromo));
+    register(setter(setFollowersCount));
 
     register(transformer(findJob));
     register(handleForm);

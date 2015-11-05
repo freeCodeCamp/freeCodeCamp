@@ -40,19 +40,21 @@ block content
         script(type="text/javascript").
 
                 var controlEnterHandler = function(e) {
-                    $('body').unbind('keypress');
-                    if (e.ctrlKey && e.keyCode == 13) {
+                    $('body').unbind('keydown');
+                    if (e.metaKey && e.keyCode === 13 ||
+                        e.ctrlKey && e.keyCode === 13) {
                       $('#complete-courseware-editorless-dialog').modal('show');
                     } else {
-                      $('body').bind('keypress', controlEnterHandler);
+                      $('body').bind('keydown', controlEnterHandler);
                     }
                 };
                 var modalControlEnterHandler = function(e) {
-                  $('#complete-courseware-editorless-dialog').unbind('keypress');
-                  if (e.ctrlKey && e.keyCode == 13) {
+                  $('#complete-courseware-editorless-dialog').unbind('keydown');
+                  if (e.metaKey && e.keyCode === 13 ||
+                      e.ctrlKey && e.keyCode === 13) {
                     $('#next-courseware-button').click();
                   } else {
-                    $('#complete-courseware-editorless-dialog').bind('keypress', modalControlEnterHandler);
+                    $('#complete-courseware-editorless-dialog').bind('keydown', modalControlEnterHandler);
                   }
                 };
 
@@ -68,11 +70,11 @@ block content
                         if (user)
                             a.btn.btn-lg.btn-primary.btn-block#next-courseware-button(name='_csrf', value=_csrf) I've completed this challenge (ctrl + enter)
                             script.
-                              $('#complete-courseware-editorless-dialog').bind('keypress', modalControlEnterHandler);
+                              $('#complete-courseware-editorless-dialog').bind('keydown', modalControlEnterHandler);
                         else
                             a.animated.fadeIn.btn.btn-lg.btn-primary.btn-block(href='/challenges/next-challenge?id=' + challengeId) I've completed this challenge (ctrl + enter)
         script.
-            $('body').bind('keypress', controlEnterHandler);
+            $('body').bind('keydown', controlEnterHandler);
     script.
       var challenge_Id = !{JSON.stringify(challengeId)};
       var challenge_Name = !{JSON.stringify(name)};
@@ -84,4 +86,3 @@ block content
         }
       });
     include ../partials/challenge-modals
-
