@@ -22,7 +22,9 @@ export default React.createClass({
   displayName: 'ShowJob',
   propTypes: {
     job: PropTypes.object,
-    params: PropTypes.object
+    params: PropTypes.object,
+    showApply: PropTypes.bool,
+    message: PropTypes.string
   },
 
   renderHeader({ company, position }) {
@@ -38,8 +40,42 @@ export default React.createClass({
     );
   },
 
+  renderHowToApply(showApply, message, howToApply) {
+    if (!showApply) {
+      return (
+        <Row>
+            <Col
+              md={ 6 }
+              mdOffset={ 3 }>
+              <h4>{ message }</h4>
+            </Col>
+        </Row>
+      );
+    }
+
+    return (
+      <Row>
+          <Col
+            md={ 6 }
+            mdOffset={ 3 }>
+              <bold>How do I apply?</bold>
+              <br />
+              <br />
+              <span dangerouslySetInnerHTML={{
+                __html: addATags(howToApply)
+              }} />
+          </Col>
+      </Row>
+    );
+  },
+
   render() {
-    const { job = {} } = this.props;
+    const {
+      showApply,
+      message,
+      job = {}
+    } = this.props;
+
     const {
       logo,
       position,
@@ -94,18 +130,7 @@ export default React.createClass({
                 </Col>
               </Row>
               <Well>
-                <Row>
-                    <Col
-                      md={ 6 }
-                      mdOffset={ 3 }>
-                        <bold>How do I apply?</bold>
-                        <br />
-                        <br />
-                        <span dangerouslySetInnerHTML={{
-                          __html: addATags(howToApply)
-                        }} />
-                    </Col>
-                </Row>
+                { this.renderHowToApply(showApply, message, howToApply) }
               </Well>
             </Panel>
           </Col>

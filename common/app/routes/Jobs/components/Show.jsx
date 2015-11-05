@@ -6,12 +6,49 @@ import ShowJob from './ShowJob.jsx';
 import JobNotFound from './JobNotFound.jsx';
 import { isJobValid } from '../utils';
 
+function shouldShowJob(
+  {
+    isFrontEndCert: isFrontEndCertReq = false,
+    isFullStackCert: isFullStackCertReq = false
+  }, {
+    isFrontEndCert = false,
+    isFullStackCert = false
+  }
+) {
+  return (!isFrontEndCertReq && !isFullStackCertReq) ||
+    (isFullStackCertReq && isFullStackCert) ||
+    (isFrontEndCertReq && isFrontEndCert);
+}
+
+function generateMessage(
+  {
+    isFrontEndCert: isFrontEndCertReq = false
+  }, {
+    isFrontEndCert = false,
+    isSignedIn = false
+  }
+) {
+
+  if (!isSignedIn) {
+    return 'Must be singed in to apply';
+  }
+  if (isFrontEndCertReq && !isFrontEndCert) {
+    return 'Job requires applicant be Front End Certified';
+  }
+  return 'Job requires applicant be Full Stack Certified';
+}
+
 export default contain(
   {
-    store: 'jobsStore',
+    stores: ['appStore', 'jobsStore'],
+    fetchWaitFor: 'jobsStore',
     fetchAction: 'jobActions.getJob',
-    map({ currentJob }) {
-      return { job: currentJob };
+    combineLatest({ isFrontEndCert, isFullStackCert }, { currentJob }) {
+      return {
+        job: currentJob,
+        isFrontEndCert,
+        isFullStackCert
+      };
     },
     getPayload({ params: { id }, job = {} }) {
       return {
@@ -39,12 +76,23 @@ export default contain(
     },
 
     render() {
-      const { job } = this.props;
+      const {
+        isFullStackCert,
+        isFrontEndCert,
+        job,
+        username
+      } = this.props;
+      const isSignedIn = !!username;
 
       if (!isJobValid(job)) {
         return <JobNotFound />;
       }
-      return <ShowJob { ...this.props }/>;
+      return (
+        <ShowJob
+          message={ generateMessage(job, { isFrontEndCert, isSignedIn }) }
+          showApply={ shouldShowJob(job, { isFrontEndCert, isFullStackCert }) }
+          { ...this.props }/>
+      );
     }
   })
 );
