@@ -30,12 +30,12 @@ function generateMessage(
 ) {
 
   if (!isSignedIn) {
-    return 'Must be singed in to apply';
+    return 'Must be signed in to apply';
   }
   if (isFrontEndCertReq && !isFrontEndCert) {
-    return 'Job requires applicant be Front End Certified';
+    return 'You must earn your Full Stack Certification to apply';
   }
-  return 'Job requires applicant be Full Stack Certified';
+  return 'You must earn your Front End Certification to apply';
 }
 
 export default contain(
@@ -43,8 +43,12 @@ export default contain(
     stores: ['appStore', 'jobsStore'],
     fetchWaitFor: 'jobsStore',
     fetchAction: 'jobActions.getJob',
-    combineLatest({ isFrontEndCert, isFullStackCert }, { currentJob }) {
+    combineLatest(
+      { username, isFrontEndCert, isFullStackCert },
+      { currentJob }
+    ) {
       return {
+        username,
         job: currentJob,
         isFrontEndCert,
         isFullStackCert

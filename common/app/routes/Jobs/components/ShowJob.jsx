@@ -47,7 +47,7 @@ export default React.createClass({
             <Col
               md={ 6 }
               mdOffset={ 3 }>
-              <h4>{ message }</h4>
+              <h4 className='bg-danger text-center'>{ message }</h4>
             </Col>
         </Row>
       );
