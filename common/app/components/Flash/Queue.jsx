@@ -1,7 +1,7 @@
-import React, { createClass, PropTypes } from 'react';
+import React, { PropTypes } from 'react';
 import { Alert } from 'react-bootstrap';
 
-export default createClass({
+export default React.createClass({
   displayName: 'FlashQueue',
 
   propTypes: {
@@ -9,9 +9,9 @@ export default createClass({
   },
 
   renderMessages(messages) {
-    return messages.map(message => {
+    return messages.map(() => {
       return (
-        <Alert>
+        <Alert />
       );
     });
   },

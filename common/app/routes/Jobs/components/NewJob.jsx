@@ -162,16 +162,16 @@ export default contain({
 
     handleSubmit(e) {
       e.preventDefault();
-      const props = this.props;
+      const pros = this.props;
       let valid = true;
       checkValidity.forEach((prop) => {
         // if value exist, check if it is valid
-        if (props[prop].value && props[prop].type !== 'boolean') {
-          valid = valid && !!props[prop].valid;
+        if (pros[prop].value && pros[prop].type !== 'boolean') {
+          valid = valid && !!pros[prop].valid;
         }
       });
 
-      if (!valid || !props.isFrontEndCert && !props.isFullStackCert ) {
+      if (!valid || !pros.isFrontEndCert && !pros.isFullStackCert ) {
         debug('form not valid');
         return;
       }

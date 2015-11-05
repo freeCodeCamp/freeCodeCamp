@@ -1,8 +1,8 @@
-import React, { createClass } from 'react';
+import React from 'react';
 import { LinkContainer } from 'react-router-bootstrap';
 import { Button, Row, Col, Panel } from 'react-bootstrap';
 
-export default createClass({
+export default React.createClass({
   displayName: 'NoJobFound',
 
   render() {
