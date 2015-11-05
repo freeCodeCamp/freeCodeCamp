@@ -225,7 +225,7 @@
       "description":[
         "The array method <code>reduce</code> is used to iterate through an array and condense it into one value.",
         "To use <code>reduce</code> you pass in a callback whose arguments are an accumulator (in this case, <code>previousVal</code>) and the current value (<code>currentVal</code>).",
-        "<code>reduce</code> has an optional second argument which can be used to set the initial value of the accumulator. If no initial value is specified it will be the first array element and currentVal will start with the second array element.",
+        "<code>reduce</code> has an optional second argument which can be used to set the initial value of the accumulator. If no initial value is specified it will be the first array element and <code>currentVal</code> will start with the second array element.",
         "Here is an example of <code>reduce</code> being used to subtract all the values of an array:",
         "<code>var singleVal = array.reduce(function(previousVal, currentVal) {</code>",
         "<code>&nbsp;&nbsp;return previousVal - currentVal;</code>",
