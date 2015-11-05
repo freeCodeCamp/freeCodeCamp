@@ -1480,7 +1480,7 @@
         "    slotThree = Math.floor(Math.random() * (3 - 1 + 1)) + 1;",
         "    ",
         "    $(\".logger\").html(\"\");",
-        "    $(\".logger\").html(\"Not A Win\")",
+        "    $(\".logger\").html(\"Not A Win\");",
         "    ",
         "    // Only change code below this line.",
         "    ",
