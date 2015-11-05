@@ -56,7 +56,7 @@
     "express-state": "^1.2.0",
     "express-validator": "~2.8.0",
     "fetchr": "^0.5.12",
-    "font-awesome": "~4.3.0",
+    "font-awesome": "~4.4.0",
     "forever": "~0.14.1",
     "frameguard": "^0.2.2",
     "github-api": "~0.7.0",
