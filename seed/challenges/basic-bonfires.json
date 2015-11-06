@@ -410,12 +410,14 @@
         "assert(truncate(\"Peter Piper picked a peck of pickled peppers\", 14) === \"Peter Piper...\", 'message: <code>truncate(\"Peter Piper picked a peck of pickled peppers\", 14)</code> should return \"Peter Piper...\".');",
         "assert(truncate(\"A-tisket a-tasket A green and yellow basket\", \"A-tisket a-tasket A green and yellow basket\".length) === \"A-tisket a-tasket A green and yellow basket\", 'message: <code>truncate(\"A-tisket a-tasket A green and yellow basket\", \"A-tisket a-tasket A green and yellow basket\".length)</code> should return \"A-tisket a-tasket A green and yellow basket\".');",
         "assert(truncate('A-tisket a-tasket A green and yellow basket', 'A-tisket a-tasket A green and yellow basket'.length + 2) === 'A-tisket a-tasket A green and yellow basket', 'message: <code>truncate(\"A-tisket a-tasket A green and yellow basket\", \"A-tisket a-tasket A green and yellow basket\".length + 2)</code> should return \"A-tisket a-tasket A green and yellow basket\".');",
-        "assert(truncate(\"A-\", 1) === \"A...\", 'message: <code>truncate(\"A-\", 1)</code> should return \"A...\".');"
+        "assert(truncate(\"A-\", 1) === \"A...\", 'message: <code>truncate(\"A-\", 1)</code> should return \"A...\".');",
+        "assert(truncate(\"Abolutely Longer\", 2) === \"Ab...\", 'message: <code>truncate(\"Absolutely Longer\", 2)</code> should return \"Ab...\".');"
       ],
       "MDNlinks": [
         "String.slice()"
       ],
       "solutions": [
+        "function truncate(str, num) {\n  if(str.length > num ) {\n    if(num > 3) {\n      return str.slice(0, num - 3) + '...';\n    } else {\n      return str.slice(0,num) + '...';\n    }\n  } \n  return str;\n}"
       ],
       "type": "bonfire",
       "challengeType": 5,
