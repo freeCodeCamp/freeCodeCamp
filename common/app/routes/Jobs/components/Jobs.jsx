@@ -74,8 +74,8 @@ export default contain(
               mdOffset= { 1 }
               xs={ 12 }>
               <h1 className='text-center'>
-                Talented web developers with strong portfolios are eager
-                to work for your company
+                Hire JavaScript engineers experienced in
+                HTML5, Node.js, MongoDB, and Agile Development
               </h1>
               <Row className='text-center'>
                 <Col

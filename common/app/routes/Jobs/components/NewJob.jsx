@@ -45,17 +45,6 @@ const hightlightCopy = `
 Highlight my post to make it stand out. (+$50)
 `;
 
-const foo = `
-  This will narrow the field substantially with higher quality applicants
-`;
-
-const isFullStackCopy = `
-Applicants must have earned Free Code Camp’s Full Stack Certification to apply.*
-`;
-
-const isFrontEndCopy = `
-Applicants must have earned Free Code Camp’s Front End Certification to apply.*
-`;
 
 const isRemoteCopy = `
 This job can be performed remotely.
@@ -125,9 +114,9 @@ export default contain({
         url,
         logo,
         company,
-        isHighlighted,
+        isFrontEndCert = true,
         isFullStackCert,
-        isFrontEndCert,
+        isHighlighted,
         isRemoteOk,
         howToApply
       } = form;
@@ -140,10 +129,10 @@ export default contain({
         logo: formatValue(formatUrl(logo), isValidURL),
         company: formatValue(company, makeRequired(isAscii)),
         isHighlighted: formatValue(isHighlighted, null, 'bool'),
-        isFullStackCert: formatValue(isFullStackCert, null, 'bool'),
-        isFrontEndCert: formatValue(isFrontEndCert, null, 'bool'),
         isRemoteOk: formatValue(isRemoteOk, null, 'bool'),
-        howToApply: formatValue(howToApply, makeRequired(isAscii))
+        howToApply: formatValue(howToApply, makeRequired(isAscii)),
+        isFrontEndCert,
+        isFullStackCert
       };
     },
     subscribeOnWillMount() {
@@ -163,9 +152,9 @@ export default contain({
       logo: PropTypes.object,
       company: PropTypes.object,
       isHighlighted: PropTypes.object,
-      isFullStackCert: PropTypes.object,
-      isFrontEndCert: PropTypes.object,
       isRemoteOk: PropTypes.object,
+      isFrontEndCert: PropTypes.bool,
+      isFullStackCert: PropTypes.bool,
       howToApply: PropTypes.object
     },
 
@@ -173,16 +162,16 @@ export default contain({
 
     handleSubmit(e) {
       e.preventDefault();
-      const props = this.props;
+      const pros = this.props;
       let valid = true;
       checkValidity.forEach((prop) => {
         // if value exist, check if it is valid
-        if (props[prop].value && props[prop].type !== 'boolean') {
-          valid = valid && !!props[prop].valid;
+        if (pros[prop].value && pros[prop].type !== 'boolean') {
+          valid = valid && !!pros[prop].valid;
         }
       });
 
-      if (!valid) {
+      if (!valid || !pros.isFrontEndCert && !pros.isFullStackCert ) {
         debug('form not valid');
         return;
       }
@@ -198,9 +187,9 @@ export default contain({
         url,
         logo,
         company,
-        isHighlighted,
-        isFullStackCert,
         isFrontEndCert,
+        isFullStackCert,
+        isHighlighted,
         isRemoteOk,
         howToApply
       } = this.props;
@@ -215,10 +204,10 @@ export default contain({
         logo: formatUrl(uriInSingleQuotedAttr(logo.value), false),
         company: inHTMLData(company.value),
         isHighlighted: !!isHighlighted.value,
-        isFrontEndCert: !!isFrontEndCert.value,
-        isFullStackCert: !!isFullStackCert.value,
         isRemoteOk: !!isRemoteOk.value,
-        howToApply: inHTMLData(howToApply.value)
+        howToApply: inHTMLData(howToApply.value),
+        isFrontEndCert,
+        isFullStackCert
       };
 
       const job = Object.keys(jobValues).reduce((accu, prop) => {
@@ -245,6 +234,18 @@ export default contain({
       handleForm({ [name]: value });
     },
 
+    handleCertClick(name) {
+      const { jobActions: { handleForm } } = this.props;
+      const otherButton = name === 'isFrontEndCert' ?
+        'isFullStackCert' :
+        'isFrontEndCert';
+
+      handleForm({
+        [name]: true,
+        [otherButton]: false
+      });
+    },
+
     render() {
       const {
         position,
@@ -255,12 +256,13 @@ export default contain({
         logo,
         company,
         isHighlighted,
-        isFrontEndCert,
-        isFullStackCert,
         isRemoteOk,
         howToApply,
+        isFrontEndCert,
+        isFullStackCert,
         jobActions: { handleForm }
       } = this.props;
+
       const { handleChange } = this;
       const labelClass = 'col-sm-offset-1 col-sm-2';
       const inputClass = 'col-sm-6';
@@ -277,7 +279,52 @@ export default contain({
                   onSubmit={ this.handleSubmit }>
 
                   <div className='spacer'>
-                    <h2>First, tell us about the position</h2>
+                    <h2>First, select your ideal applicant: </h2>
+                  </div>
+
+                  <Row>
+                    <Col
+                      xs={ 6 }
+                      xsOffset={ 3 }>
+                      <Row>
+                        <Button
+                          className={ isFrontEndCert ? 'active' : '' }
+                          onClick={ () => {
+                            if (!isFrontEndCert) {
+                              this.handleCertClick('isFrontEndCert');
+                            }
+                          }}>
+                          <h4>Front End Development Certified</h4>
+                          You can expect each applicant
+                          to have a code portfolio using the
+                          following technologies:
+                          HTML5, CSS, jQuery, API integrations
+                          <br />
+                          <br />
+                        </Button>
+                      </Row>
+                      <div className='button-spacer' />
+                      <Row>
+                        <Button
+                          className={ isFullStackCert ? 'active' : ''}
+                          onClick={ () => {
+                            if (!isFullStackCert) {
+                              this.handleCertClick('isFullStackCert');
+                            }
+                          }}>
+                          <h4>Full Stack Development Certified</h4>
+                          You can expect each applicant to have a code
+                          portfolio using the following technologies:
+                          HTML5, CSS, jQuery, API integrations, MVC Framework,
+                          JavaScript, Node.js, MongoDB, Express.js
+                          <br />
+                          <br />
+                        </Button>
+                      </Row>
+                    </Col>
+                  </Row>
+                  <div className='spacer'>
+                    <h2>Tell us about the position</h2>
                   </div>
                   <Input
                     bsStyle={ position.bsStyle }
@@ -312,26 +359,6 @@ export default contain({
                     value={ description.value }
                     wrapperClassName={ inputClass } />
                   <Input
-                    checked={ isFrontEndCert.value }
-                    label={ isFrontEndCopy }
-                    onChange={
-                      ({ target: { checked } }) => handleForm({
-                        isFrontEndCert: !!checked
-                      })
-                    }
-                    type='checkbox'
-                    wrapperClassName={ checkboxClass } />
-                  <Input
-                    checked={ isFullStackCert.value }
-                    label={ isFullStackCopy }
-                    onChange={
-                      ({ target: { checked } }) => handleForm({
-                        isFullStackCert: !!checked
-                      })
-                    }
-                    type='checkbox'
-                    wrapperClassName={ checkboxClass } />
-                  <Input
                     checked={ isRemoteOk.value }
                     label={ isRemoteCopy }
                     onChange={
@@ -341,9 +368,6 @@ export default contain({
                     }
                     type='checkbox'
                     wrapperClassName={ checkboxClass } />
-                  <Row>
-                    <small>* { foo }</small>
-                  </Row>
                   <div className='spacer' />
                   <Row>
                     <div>

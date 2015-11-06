@@ -18,7 +18,7 @@
     "lint-server": "jsonlint -q server/*.json",
     "lint-resources": "jsonlint -q server/resources/*.json",
     "lint-utils": "jsonlint -q server/utils/*.json",
-    "lint-js": "eslint --ext=.js,.jsx server/ common/models common/utils config/",
+    "lint-js": "eslint --ext=.js,.jsx server/ common/ common/utils config/ client/",
     "lint-json": "npm run lint-server && npm run lint-nonprofits && npm run lint-challenges && npm run lint-resources && npm run lint-utils",
     "test-challenges": "babel-node seed/test-challenges.js | tnyan",
     "pretest": "npm run lint",
