@@ -410,7 +410,7 @@
       "title":"Join Strings with .join",
       "description":[
         "We can use the <code>join</code> method to join each element of an array into a string separated by whatever delimiter you provide as an argument.",
-        "The following is an example of using <code>join</code> to join all of the elements of an array into a string with all the elements seperated by word `Na`:",
+        "The following is an example of using <code>join</code> to join all of the elements of an array into a string with all the elements separated by word `Na`:",
         "<code>var joinMe = [\"Na \", \"Na \", \"Na \", \"Na \", \"Batman!\"];</code>",
         "<code>var joinedString = joinMe.join(\"Na \");</code>",
         "<code>console.log(joinedString);</code>",
