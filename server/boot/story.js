@@ -105,27 +105,6 @@ module.exports = function(app) {
     );
   }
 
-  function userStories({ body: { search = '' } = {} }, res, next) {
-    if (!search || typeof search !== 'string') {
-      return res.sendStatus(404);
-    }
-
-    return app.dataSources.db.connector
-      .collection('story')
-      .find({
-        'author.username': search.replace('$', '')
-      })
-      .toArray(function(err, items) {
-        if (err) {
-          return next(err);
-        }
-        if (items && items.length !== 0) {
-          return res.json(items.sort(sortByRank));
-        }
-        return res.sendStatus(404);
-      });
-  }
-
   function hot(req, res) {
     return res.render('stories/index', {
       title: 'Top Stories on Camper News',
@@ -223,6 +202,27 @@ module.exports = function(app) {
       },
       next
     );
+  }
+
+  function userStories({ body: { search = '' } = {} }, res, next) {
+    if (!search || typeof search !== 'string') {
+      return res.sendStatus(404);
+    }
+
+    return app.dataSources.db.connector
+      .collection('story')
+      .find({
+        'author.username': search.toLowerCase().replace('$', '')
+      })
+      .toArray(function(err, items) {
+        if (err) {
+          return next(err);
+        }
+        if (items && items.length !== 0) {
+          return res.json(items.sort(sortByRank));
+        }
+        return res.sendStatus(404);
+      });
   }
 
   function getStories({ body: { search = '' } = {} }, res, next) {
