@@ -62,6 +62,7 @@ module.exports = function(app) {
   var findStoryById = observeMethod(Story, 'findById');
   var countStories = observeMethod(Story, 'count');
 
+  router.post('/news/userstories', userStories);
   router.get('/news/hot', hotJSON);
   router.get('/stories/hotStories', hotJSON);
   router.get(
@@ -201,6 +202,27 @@ module.exports = function(app) {
       },
       next
     );
+  }
+
+  function userStories({ body: { search = '' } = {} }, res, next) {
+    if (!search || typeof search !== 'string') {
+      return res.sendStatus(404);
+    }
+
+    return app.dataSources.db.connector
+      .collection('story')
+      .find({
+        'author.username': search.toLowerCase().replace('$', '')
+      })
+      .toArray(function(err, items) {
+        if (err) {
+          return next(err);
+        }
+        if (items && items.length !== 0) {
+          return res.json(items.sort(sortByRank));
+        }
+        return res.sendStatus(404);
+      });
   }
 
   function getStories({ body: { search = '' } = {} }, res, next) {
