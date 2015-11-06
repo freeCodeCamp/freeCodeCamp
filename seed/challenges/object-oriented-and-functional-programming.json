@@ -20,9 +20,9 @@
         "Give your <code>motorBike</code> object a <code>wheels</code>, <code>engines</code> and <code>seats</code> attribute and set them to numbers."
       ],
       "tests":[
-        "assert(typeof(motorBike.engines) === 'number', 'message: <code>motorBike</code> should have a <code>engines</code> attribute set to a number.');",
-        "assert(typeof(motorBike.wheels) === 'number', 'message: <code>motorBike</code> should have a <code>wheels</code> attribute set to a number.');",
-        "assert(typeof(motorBike.seats) === 'number', 'message: <code>motorBike</code> should have a <code>seats</code> attribute set to a number.');"
+        "assert(typeof motorBike.engines === 'number', 'message: <code>motorBike</code> should have a <code>engines</code> attribute set to a number.');",
+        "assert(typeof motorBike.wheels === 'number', 'message: <code>motorBike</code> should have a <code>wheels</code> attribute set to a number.');",
+        "assert(typeof motorBike.seats === 'number', 'message: <code>motorBike</code> should have a <code>seats</code> attribute set to a number.');"
       ],
       "challengeSeed":[
         "var car = {",
@@ -39,12 +39,15 @@
         "",
         "  // Only change code above this line.",
         "",
-        "};",
-        "",
+        "};"
+      ],
+      "tail":[
         "(function() {return JSON.stringify(motorBike);})();"
       ],
+      "solutions":[
+        "var car = {\n  \"wheels\":4,\n  \"engines\":1,\n  \"seats\":5\n};\n\nvar motorBike = {\n  \"wheels\": 4,\n  \"engines\": 1,\n  \"seats\": 2\n};"
+      ],
       "challengeType":1,
-          "type": "waypoint",
       "type": "waypoint"
     },
     {
@@ -52,19 +55,23 @@
       "title": "Construct JavaScript Objects with Functions",
       "description":[
         "We are also able to create objects using <code>constructor</code> functions.",
-        "Here's an example of a constructor function:",
+        "A <code>constructor</code> function is given a capitalized name to make it clear that it is a <code>constructor</code>.",
+        "Here's an example of a <code>constructor</code> function:",
         "<code>var Car = function() {</code>",
         "<code>&nbsp;&nbsp;this.wheels = 4;</code>",
         "<code>&nbsp;&nbsp;this.engines = 1;</code>",
         "<code>&nbsp;&nbsp;this.seats = 1;</code>",
         "<code>};</code>",
-        "Give your <code>myMotorBike</code> object a <code>wheels</code>, <code>engines</code> and <code>seats</code> attribute and set them to numbers.",
-        "You may be confused by the <code>this</code> keyword here. Don't worry, we will get to that very soon."
+        "In a <code>constructor</code> the <code>this</code> variable refers to the new object being created by the constructor. So when we write,",
+        "<code>&nbsp;&nbsp;this.wheels = 4;</code>",
+        "inside of the <code>constructor</code> we are giving the new object it creates a property called <code>wheels</code> with a value of <code>4</code>.",
+        "You can think of a <code>constructor</code> as a description for the object it will create.",
+        "Have your <code>MotorBike</code> <code>constructor</code> describe an object with <code>wheels</code>, <code>engines</code> and <code>seats</code> properties and set them to numbers."
       ],
       "tests":[
-        "assert(typeof((new MotorBike()).engines) === 'number', 'message: <code>myMotorBike</code> should have a <code>engines</code> attribute set to a number.');",
-        "assert(typeof((new MotorBike()).wheels) === 'number', 'message: <code>myMotorBike</code> should have a <code>wheels</code> attribute set to a number.');",
-        "assert(typeof((new MotorBike()).seats) === 'number', 'message: <code>myMotorBike</code> should have a <code>seats</code> attribute set to a number.');"
+        "assert(typeof (new MotorBike()).engines === 'number', 'message: <code>myMotorBike</code> should have a <code>engines</code> attribute set to a number.');",
+        "assert(typeof (new MotorBike()).wheels === 'number', 'message: <code>myMotorBike</code> should have a <code>wheels</code> attribute set to a number.');",
+        "assert(typeof (new MotorBike()).seats === 'number', 'message: <code>myMotorBike</code> should have a <code>seats</code> attribute set to a number.');"
       ],
       "challengeSeed":[
         "var Car = function() {",
@@ -81,13 +88,107 @@
         "",
         "",
         "",
+        "};"
+      ],
+      "tail":[
+        "var myMotorBike = new MotorBike();",
+        "(function() {return JSON.stringify(myMotorBike);})();"
+      ],
+      "solutions":[
+        "var Car = function() {\n  this.wheels = 4;\n  this.engines = 1;\n  this.seats = 1;\n};\n\nvar myCar = new Car();\n\nvar MotorBike = function() {\n  this.engines = 1;\n  this.seats = 1;\n  this.wheels = 4;\n};\n\nvar myMotorBike = new MotorBike();"
+      ],
+      "challengeType":1,
+      "type": "waypoint"
+    },
+    {
+      "id":"cf1111c1c15feddfaeb4bdef",
+      "title":"Make Instances of Objects with a Constructor Function",
+      "description":[
+        "Now let's put that great <code>constructor</code> function we made in the last lesson to use!",
+        "To use a <code>constructor</code> function we call it with the <code>new</code> keyword in front if it like:",
+        "<code>var myCar = new Car();</code>",
+        "<code>myCar</code> is now an <code>instance</code> of the <code>Car</code> constructor that looks like the object it described:",
+        "<code>{</code>",
+        "<code>&nbsp;&nbsp;wheels: 4,</code>",
+        "<code>&nbsp;&nbsp;engines: 1,</code>",
+        "<code>&nbsp;&nbsp;seats: 1</code>",
+        "<code>}</code>",
+        "Note that it is important to use the <code>new</code> keyword when calling a constructor. This is how javascript knows to create a new object and that all the references to <code>this</code> inside the constructor should be referring to this new object.",
+        "Now, once the <code>myCar</code> <code>instance</code> is created it can be used like any other object and can have its properties accessed and modified the same way you would usually. For example:",
+        "<code>var myCar.turboType = \"twin\";</code>",
+        "Our <code>myCar</code> variable now has a property <code>turboType</code> with a value of <code>\"twin\"</code>.",
+        "In the editor, use the <code>Car</code> <code>constructor</code> to create a new <code>instance</code> and assign it to <code>myCar</code>.",
+        "Then give <code>myCar</code> a <code>nickname</code> property with a string value."
+      ],
+      "tests":[
+        "assert((new Car()).wheels === 4, 'message: The property <code>wheels</code> should still be <code>4</code> in the object <code>constructor</code>.');",
+        "assert(typeof (new Car()).nickname === 'undefined', 'message: There should not be a property <code>nickname</code> in the object <code>constructor</code>.');",
+        "assert(myCar.wheels === 4, 'message: The property <code>wheels</code> of <code>myCar</code> should equal <code>4</code>.');",
+        "assert(typeof myCar.nickname === 'string', 'message: The property <code>nickname</code> of <code>myCar</code> should be a string.');"
+      ],
+      "challengeSeed":[
+        "var Car = function() {",
+        "  this.wheels = 4;",
+        "  this.engines = 1;",
+        "  this.seats = 1;",
         "};",
         "",
-        "var myMotorBike = new MotorBike();",
+        "// Only change code below this line.",
         "",
-        "// Only change code above this line.",
+        "var myCar;"
+      ],
+      "tail":[
+        "(function() {return JSON.stringify(myCar);})();"
+      ],
+      "solutions":[
+        "var Car = function() {\n  this.wheels = 4;\n  this.engines = 1;\n  this.seats = 1;\n};\n\nvar myCar = new Car();\n\nmyCar.nickname = \"Lucy\";"
+      ],
+      "challengeType":1,
+      "type": "waypoint"
+    },
+    {
+      "id":"563cfb55594311ffcb333c70",
+      "title":"Make Unique Objects by Passing Parameters to our Constructor",
+      "description":[
+        "The <code>constructor</code> we have is great, but what if we don't always want to create the same object?",
+        "To solve this we can add <code>parameters</code> to our <code>constructor</code>. We do this like the following example:",
+        "<code>var Car = function(wheels, seats, engines) {</code>",
+        "<code>&nbsp;&nbsp;this.wheels = wheels;</code>",
+        "<code>&nbsp;&nbsp;this.seats = seats;</code>",
+        "<code>&nbsp;&nbsp;this.engines = engines;</code>",
+        "<code>};</code>",
+        "Now we can pass in <code>arguments</code> when we call our <code>constructor</code>.",
+        "<code>var myCar = new Car(6, 3, 1);</code>",
+        "This code will create an object that uses the <code>arguments</code> we passed in and looks like:",
+        "<code>{</code>",
+        "<code>&nbsp;&nbsp;wheels: 6,</code>",
+        "<code>&nbsp;&nbsp;seats: 3,</code>",
+        "<code>&nbsp;&nbsp;engines: 1</code>",
+        "<code>}</code>",
+        "Now give it a try yourself! Alter the <code>Car</code> <code>constructor</code> to use <code>parameters</code> to assign values to the <code>wheels</code>, <code>seats</code>, and <code>engines</code> properties.",
+        "Then call your new <code>constructor</code> with three number <code>arguments</code> and assign it to <code>myCar</code> to see it in action."
+      ],
+      "tests":[
+        "assert((function(){var testCar = new Car(3,1,2); return testCar.wheels === 3 && testCar.seats === 1 && testCar.engines === 2;})(), 'message: Calling <code>new Car(3,1,2)</code> should produce and object with a <code>wheels</code> property of <code>3</code>, a <code>seats</code> property of <code>1</code>, and an <code>engines</code> property of <code>2</code>.');",
+        "assert(typeof myCar.wheels === 'number' && typeof myCar.seats === 'number' && typeof myCar.engines === 'number', 'message: <code>myCar</code> should have number values for the <code>wheels</code>, <code>seats</code>, and <code>engines</code> properties.');"
+      ],
+      "challengeSeed":[
+        "var Car = function() {",
+        "  //Change this constructor",
+        "  this.wheels = 4;",
+        "  this.seats = 1;",
+        "  this.engines = 1;",
+        "};",
         "",
-        "(function() {return JSON.stringify(myMotorBike);})();"
+        "//Try it out here",
+        "var myCar;",
+        "",
+        "// Only change code above this line",
+        "",
+        "(function() {return JSON.stringify(myCar);})();"
+      ],
+      "solutions":[
+        "var Car = function(wheels,seats,engines) {\n  this.wheels = wheels;\n  this.seats = seats;\n  this.engines = engines;\n};\n\nvar myCar = new Car(4,1,1);"
       ],
       "challengeType":1,
       "type": "waypoint"
@@ -97,89 +198,56 @@
       "title":"Make Object Properties Private",
       "description":[
         "Objects have their own attributes, called <code>properties</code>, and their own functions, called <code>methods</code>.",
-        "In the previous challenge, we used the <code>this</code> keyword to reference <code>public properties</code> and <code>public methods</code> of the current object.",
+        "In the previous challenges, we used the <code>this</code> keyword to reference <code>public properties</code> of the current object.",
         "We can also create <code>private properties</code> and <code>private methods</code>, which aren't accessible from outside the object.",
-        "To do this, just declare properties or functions within the constructor.",
-        "Let's create an object with two functions. One attached as a property and one not.",
-        "See if you can keep <code>myBike.speed</code> and <code>myBike.addUnit</code> private, while making <code>myBike.getSpeed</code> publicly accessible."
+        "To do this, we create the variable inside the <code>constructor</code> using the <code>var</code> keyword we're familiar with, instead of creating it as a <code>property</code> of <code>this</code>.",
+        "This is useful for when we need to store information about an object but we want to control how it is used by outside code.",
+        "For example, what if we want to store the <code>speed</code> our car is traveling at but we only want outside code to be able to modify it by accelerating or decelerating, so the speed changes in a controlled way?",
+        "In the editor you can see an example of a <code>Car</code> <code>constructor</code> that implements this pattern.",
+        "Now try it yourself! Modify the <code>Bike</code> <code>constructor</code> to have a <code>private property</code> called <code>gear</code> and two <code>public methods</code> called <code>getGear</code> and <code>setGear</code> to get and set that value."
       ],
       "tests":[
-        "assert(typeof(myBike.getSpeed)!=='undefined' && typeof(myBike.getSpeed) === 'function', 'message: The method getSpeed of myBike should be accessible outside the object.');",
-        "assert(typeof(myBike.speed) === 'undefined', 'message: <code>myBike.speed</code> should be undefined.');",
-        "assert(typeof(myBike.addUnit) === 'undefined', 'message: <code>myBike.addUnit</code> should remain undefined.');"
+        "assert(typeof myBike.getGear !== 'undefined' && typeof(myBike.getGear) === 'function', 'message: The method <code>getGear</code> of <code>myBike</code> should be accessible outside the object.');",
+        "assert(typeof myBike.setGear !== 'undefined' && typeof(myBike.setGear) === 'function', 'message: The method <code>setGear</code> of <code>myBike</code> should be accessible outside the object.');",
+        "assert(typeof myBike.gear === 'undefined', 'message: <code>myBike.gear</code> should remain undefined.');"
       ],
       "challengeSeed":[
         "var Car = function() {",
-        " // this is a private variable",
-        "  var gear = 1;",
-        " // this is a private function (also known as a private method)",
-        "  function addStyle(styleMe){",
-        "    return 'The Current Gear Is: ' + styleMe;",
-        "  }",
-        " // this is a public method",
-        "  this.getGear = function() {",
-        "    return addStyle(this.gear);",
+        "  // this is a private variable",
+        "  var speed = 10;",
+        "",
+        "  // these are public methods",
+        "  this.accelerate = function(change) {",
+        "    speed += change;",
         "  };",
         "",
+        "  this.decelerate = function() {",
+        "    speed -= 5;",
+        "  };",
+        "",
+        "  this.getSpeed = function() {",
+        "    return speed;",
+        "  };",
         "};",
         "",
         "var Bike = function() {",
         "",
         "  // Only change code below this line.",
         "",
-        "  this.speed = 100;",
         "",
-        "  function addUnit(value) {",
-        "    return value + \"KM/H\";",
-        "  }",
         "",
-        "  getSpeed = function () {",
-        "    return addUnit(speed);",
-        "  };",
-        "",
+        "  // Only change code above this line.",
         "};",
-        "",
-        "// Only change code above this line.",
         "",
         "var myCar = new Car();",
         "",
-        "var myBike = new Bike();",
-        "",
-        "if(myBike.hasOwnProperty('getSpeed')){(function() {return JSON.stringify(myBike.getSpeed());})();}"
+        "var myBike = new Bike();"
       ],
-      "challengeType":1,
-      "type": "waypoint"
-    },
-    {
-      "id":"cf1111c1c15feddfaeb4bdef",
-      "title":"Make Instances of Objects with a Constructor Function",
-      "description":[
-        "Sometimes you'll want to be able to easily create many copies of an objects that all share the same methods.",
-        "Objects have their own attributes, called <code>properties</code>, and their own functions, called <code>methods</code>.",
-        "You can create <code>instances</code> of an object using a <code>constructor</code>.",
-        "A constructor is a function that creates instances of an object that share the same methods and properties",
-        "Each new <code>instance</code> of this object <code>inherits</code> all the <code>properties</code> and <code>methods</code> of your original object.",
-        "Once an <code>instance</code> has been created you can add <code>properties</code> to that <code>instance</code> individually.",
-        "Add an <code>engines</code> property with a number value to the <code>myCar</code> instance."
+      "tail":[
+        "if(myBike.hasOwnProperty('getGear')){(function() {return JSON.stringify(myBike.getGear());})();}"
       ],
-      "tests":[
-        "assert((new Car()).wheels === 4, 'message: The property <code>wheels</code> should still be 4 in the object constructor.');",
-        "assert(typeof((new Car()).engines) === 'undefined', 'message: There should not be a property <code>engines</code> in the object constructor.');",
-        "assert(myCar.wheels === 4, 'message: The property <code>wheels</code> of myCar should equal 4.');",
-        "assert(typeof(myCar.engines) === 'number', 'message: The property <code>engines</code> of myCar should be a number.');"
-      ],
-      "challengeSeed":[
-        "var Car = function() {",
-        "   this.wheels = 4;",
-        "};",
-        "",
-        "// Only change code below this line.",
-        "var myCar = new Car();",
-        "",
-        "",
-        "",
-        "// Only change code above this line.",
-        "(function() {return JSON.stringify(myCar);})();"
+      "solutions":[
+        "var Car = function() {\n  var speed = 10;\n\n  this.accelerate = function(change) {\n    speed += change;\n  };\n\n  this.decelerate = function() {\n    speed -= 5;\n  };\n\n  this.getSpeed = function() {\n    return speed;\n  };\n};\n\nvar Bike = function() {\n  var gear = 1;\n  \n  this.getGear = function() {\n    return gear;\n  };\n  \n  this.setGear = function(newGear) {\n    gear = newGear;\n  };\n};\n\nvar myCar = new Car();\n\nvar myBike = new Bike();"
       ],
       "challengeType":1,
       "type": "waypoint"
@@ -207,10 +275,7 @@
         "",
         "// Only change code below this line.",
         "",
-        "",
         "var newArray = oldArray;",
-        "",
-        "",
         "",
         "// Only change code above this line.",
         "",
@@ -239,12 +304,9 @@
       "challengeSeed":[
         "var array = [4,5,6,7,8];",
         "",
-        "",
         "// Only change code below this line.",
         "",
         "var singleVal = array;",
-        "",
-        "",
         "",
         "// Only change code above this line.",
         "",
@@ -325,10 +387,10 @@
       "description": [
         "You can use the <code>reverse</code> method to reverse the elements of an array.",
         "<code>reverse</code> is another array method that alters the array in place, but it also returns the reversed array.",
-        "Add a line of code that uses <code>reverse</code> to reverse the <code>array</code> variable."
+        "Use <code>reverse</code> to reverse the <code>array</code> variable and assign it to <code>myArray</code>."
       ],
       "tests": [
-        "assert.deepEqual(array, [7,6,5,4,3,2,1], 'message: You should reverse the array.');",
+        "assert.deepEqual(newArray, [7,6,5,4,3,2,1], 'message: You should reverse the array.');",
         "assert(editor.getValue().match(/\\.reverse\\s*\\(\\)/gi), 'message: You should use the <code>reverse</code> method.');",
         "assert(editor.getValue().match(/\\[1\\,2\\,3\\,4\\,5\\,6\\,7/gi), 'message: You should only be using <code>reverse</code> to modify <code>array</code>.');"
       ],
@@ -337,11 +399,11 @@
         "",
         "// Only change code below this line.",
         "",
-        "",
+        "var newArray = array;",
         "",
         "// Only change code above this line.",
         "",
-        "(function() {return array;})();"
+        "(function() {return newArray;})();"
       ],
       "challengeType": 1,
       "type": "waypoint"
