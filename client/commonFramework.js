@@ -18,14 +18,14 @@ var common = (function() {
   common.head = common.head || '';
   common.tail = common.tail || '';
 
-  common.convertSeed = function(seedData) {
+  common.arrayToNewLineString = function arrayToNewLineString(seedData) {
     seedData = seedData || [];
     return seedData.reduce(function(seed, line) {
-      return seed + line + '\n';
+      return '' + seed + line + '\n';
     }, '');
   };
 
-  common.seed = common.convertSeed(common.challengeSeed);
+  common.seed = common.arrayToNewLineString(common.challengeSeed);
 
   common.replaceScriptTags = function replaceScriptTags(value) {
     return value
@@ -1112,8 +1112,8 @@ var reassembleTest = function(test, data) {
 };
 
 var runTests = function(err, data) {
-  var head = common.convertSeed(common.head);
-  var tail = common.convertSeed(common.tail);
+  var head = common.arrayToNewLineString(common.head);
+  var tail = common.arrayToNewLineString(common.tail);
 
   var editorValue = head + editor.getValue() + tail;
   // userTests = userTests ? null : [];
@@ -1367,8 +1367,8 @@ common.init.push((function() {
 }(window.$)));
 
 function bonfireExecute(shouldTest) {
-  var head = common.convertSeed(common.head);
-  var tail = common.convertSeed(common.tail);
+  var head = common.arrayToNewLineString(common.head);
+  var tail = common.arrayToNewLineString(common.tail);
   var codeOutput = common.codeOutput;
   initPreview = false;
   goodTests = 0;
