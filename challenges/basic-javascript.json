@@ -545,7 +545,7 @@
         "",
         "// Only change code above this line.",
         "",
-        "(function(y, z){return 'removedFromMyArray = ' + JSON.stringify(y) + ' & removed = ' + JSON.stringify(z);})(myArray, removedFromMyArray);"
+        "(function(y, z){return 'myArray = ' + JSON.stringify(y) + ' & removedFromMyArray = ' + JSON.stringify(z);})(myArray, removedFromMyArray);"
       ],
       "type": "waypoint",
       "challengeType": 1
