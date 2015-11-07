@@ -125,9 +125,7 @@ block content
       common.dashedName = !{JSON.stringify(dashedName)};
 
       common.started = Math.floor(Date.now());
-      if (user) {
-        common.username = !{JSON.stringify(user.username)};
-      }
+      common.username = !{JSON.stringify(user && user.username || '')};
 
     include ../partials/challenge-footer
     script.

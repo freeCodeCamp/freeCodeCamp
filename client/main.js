@@ -300,34 +300,49 @@ $(document).ready(function() {
       }
 
       var request = createCORSRequest('post', 'https://api.github.com/gists');
-      if (request) {
-        request.onload = function() {
-          if (request.readyState === 4 &&
-              request.status === 201 &&
-              request.statusText === 'Created') {
-            gistWindow.location.href = JSON.parse(request.responseText)['html_url'];
-          }
-        };
-        var data = {
-          description: (username ? 'http://www.freecodecamp.com/' + username +
-          ' \'s s' : 'S') + 'olution for ' + (challenge_Name || challengeName),
-          public: true,
-          files: {}
-        },
-        queryIssue = window.location.href.toString().split('#?')[0],
-        filename = queryIssue
+      if (!request) {
+        return null;
+      }
+
+      request.onload = function() {
+        if (
+          request.readyState === 4 &&
+          request.status === 201 &&
+          request.statusText === 'Created'
+        ) {
+          gistWindow.location.href =
+            JSON.parse(request.responseText)['html_url'];
+        }
+      };
+
+      var description = common.username ?
+        'http://www.freecodecamp.com/' + common.username + ' \'s s' :
+        'S';
+
+      var data = {
+        description: description + 'olution for ' + common.challengeName,
+        public: true,
+        files: {}
+      };
+      var queryIssue = window.location.href.toString().split('#?')[0];
+      var filename = queryIssue
         .substr(queryIssue.lastIndexOf('challenges/') + 11)
         .replace('/', '') + '.js';
-        data['files'][filename] = {
-          content: '// ' + (challenge_Name || challengeName) + '\n' +
-          (username ? '// Author: @' + username + '\n' : '') +
-          '// Challenge: ' + queryIssue + '\n' +
-          '// Learn to Code at Free Code Camp (www.freecodecamp.com)' +
-          '\n\n' + editor.getValue().trim()
-        };
 
-        request.send(JSON.stringify(data));
-      }
+      data.files[filename] = {
+        content: '// ' +
+          common.challengeName +
+          '\n' +
+          (common.username ? '// Author: @' + common.username + '\n' : '') +
+          '// Challenge: ' +
+          queryIssue +
+          '\n' +
+          '// Learn to Code at Free Code Camp (www.freecodecamp.com)' +
+          '\n\n' +
+          window.editor.getValue().trim()
+      };
+
+      request.send(JSON.stringify(data));
     });
 
     $('#help-ive-found-a-bug-wiki-article').unbind('click');
