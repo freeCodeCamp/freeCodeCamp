@@ -252,7 +252,7 @@ $(document).ready(function() {
 
   function reBindModals() {
     if (!window.common) {
-      throw new Error('common framework should be loaded.');
+      return;
     }
     var common = window.common;
 

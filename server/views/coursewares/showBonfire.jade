@@ -135,6 +135,6 @@ block content
         }
       });
 
-      if (!{JSON.stringify(MDNlinks.length)}) {
+      if (!!{JSON.stringify(MDNlinks.length)}) {
           $('#MDN-links').addClass('collapse');
       }

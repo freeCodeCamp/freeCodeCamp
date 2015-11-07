@@ -101,7 +101,7 @@ block content
 
     include ../partials/challenge-footer
     script.
-      if (!{JSON.stringify(MDNlinks.length)}) {
+      if (!!{JSON.stringify(MDNlinks.length)}) {
           $('#MDN-links').addClass('collapse');
       }
       document.addEventListener('gitter-sidecar-ready', function(e) {
