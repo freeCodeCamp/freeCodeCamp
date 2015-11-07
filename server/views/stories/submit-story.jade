@@ -1,10 +1,12 @@
 .spacer
 .col-xs-12
     script.
-        var storyURL = !{JSON.stringify(storyURL)};
-        var storyTitle = !{JSON.stringify(storyTitle)};
-        var storyImage = !{JSON.stringify(storyImage)};
-        var storyMetaDescription = !{JSON.stringify(storyMetaDescription)};
+      var main = window.main || { init: [] };
+      main.storyURL = !{JSON.stringify(storyURL)};
+      main.storyTitle = !{JSON.stringify(storyTitle)};
+      main.storyImage = !{JSON.stringify(storyImage)};
+      main.storyMetaDescription = !{JSON.stringify(storyMetaDescription)};
+
     form.form-horizontal.control-label-story-submission#story-submission-form(name="submitStory")
         .col-xs-12
             .form-group

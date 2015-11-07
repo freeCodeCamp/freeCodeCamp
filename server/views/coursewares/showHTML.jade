@@ -58,26 +58,12 @@ block content
                     .button-spacer
                     #testSuite
                     br
-                    script(type="text/javascript").
-                        $('#next-courseware-button').attr('disabled', 'disabled');
-                        var tests = !{JSON.stringify(tests)};
-                        var challengeSeed = !{JSON.stringify(challengeSeed)};
-                        var challenge_Id = !{JSON.stringify(challengeId)};
-                        var challenge_Name = !{JSON.stringify(name)};
-                        var prodOrDev = !{JSON.stringify(environment)};
-                        var dashedName = !{JSON.stringify(dashedName)};
-                        var challengeType = !{JSON.stringify(challengeType)};
-                        var started = Math.floor(Date.now());
         .col-md-5.col-lg-6
             .editorScrollDiv(style = "overflow-y: auto; overflow-x: hidden;")
                     #mainEditorPanel
                         form.code
                             .codeMirrorView
                                 textarea#codeEditor(autofocus=true, style='display: none;')
-                                script(src=rev('/js', 'commonFramework.js'))
-                                script.
-                                    editor.setOption('lint', false);
-                                    editor.setOption("mode", "text/html");
         .col-md-4.col-lg-3
             .hidden-xs.hidden-sm
                 img.iphone-position.iframe-scroll(src="https://s3.amazonaws.com/freecodecamp/iphone6-frame.png", style = "z-index: -2;")
@@ -100,9 +86,30 @@ block content
                             else
                                 #next-challenge.btn.btn-lg.btn-primary.btn-block Go to my next challenge (ctrl + enter)
     include ../partials/challenge-modals
+    script(type="text/javascript").
+      $('#next-courseware-button').attr('disabled', 'disabled');
+      var common = window.common || { init: [] };
+
+      common.tests = !{JSON.stringify(tests)};
+      common.head = !{JSON.stringify(head)};
+      common.tail = !{JSON.stringify(tail)};
+
+      common.challengeId = !{JSON.stringify(challengeId)};
+      common.challengeName = !{JSON.stringify(name)};
+      common.challengeSeed = !{JSON.stringify(challengeSeed)};
+      common.challengeType = !{JSON.stringify(challengeType)};
+      common.dashedName = !{JSON.stringify(dashedName)};
+
+      common.prodOrDev = !{JSON.stringify(environment)};
+      common.started = Math.floor(Date.now());
+
+    include ../partials/challenge-footer
     script.
       document.addEventListener('gitter-sidecar-ready', function(e) {
         if (window.main) {
           window.main.chat.createHelpChat('freecodecamp/help', '#challenge-help-btn');
         }
       });
+
+      editor.setOption('lint', false);
+      editor.setOption("mode", "text/html");

@@ -70,20 +70,6 @@ block content
                 br
                 #testSuite.negative-10
                 br
-                script(type="text/javascript").
-                    var tests = !{JSON.stringify(tests)};
-                    var challengeSeed = !{JSON.stringify(challengeSeed)};
-                    var challenge_Id = !{JSON.stringify(challengeId)};
-                    var challenge_Name = !{JSON.stringify(name)};
-                    var started = Math.floor(Date.now());
-                    var challengeType = !{JSON.stringify(challengeType)};
-                    var dashedName = !{JSON.stringify(dashedName)};
-                    var _ = R;
-                    var dashed = !{JSON.stringify(dashedName)};
-                    var username;
-                if (user)
-                    script(type="text/javascript").
-                        username = !{JSON.stringify(user.username)};
 
         .col-md-8.col-lg-9
             .editorScrollDiv(style = "overflow-y: auto; overflow-x: hidden;")
@@ -91,7 +77,7 @@ block content
                     form.code
                         .form-group.codeMirrorView
                             textarea#codeEditor(autofocus=true, style='display: none;')
-                    script(src=rev('/js', 'commonFramework.js'))
+
 
     #complete-courseware-dialog.modal(tabindex='-1')
         .modal-dialog.animated.fadeIn.fast-animation
@@ -125,15 +111,30 @@ block content
                     a.btn.btn-lg.btn-info.btn-block#reset-button(href='#', data-dismiss='modal', aria-hidden='true') Clear my code
                     a.btn.btn-lg.btn-primary.btn-block(href='#', data-dismiss='modal', aria-hidden='true') Cancel
     include ../partials/challenge-modals
-    script.
+    script(type="text/javascript").
+      var common = window.common = { init: [] };
 
+      common.tests = !{JSON.stringify(tests)};
+      common.head = !{JSON.stringify(head)};
+      common.tail = !{JSON.stringify(tail)};
+
+      common.challengeId = !{JSON.stringify(challengeId)};
+      common.challengeName = !{JSON.stringify(name)};
+      common.challengeSeed = !{JSON.stringify(challengeSeed)};
+      common.challengeType = !{JSON.stringify(challengeType)};
+      common.dashedName = !{JSON.stringify(dashedName)};
+
+      common.started = Math.floor(Date.now());
+      common.username = !{JSON.stringify(user && user.username || '')};
+
+    include ../partials/challenge-footer
+    script.
       document.addEventListener('gitter-sidecar-ready', function(e) {
         if (window.main) {
           window.main.chat.createHelpChat('freecodecamp/helpbonfires', '#challenge-help-btn', 'Bonfires Help');
         }
       });
 
-      var MDNlinks = !{JSON.stringify(MDNlinks)};
-      if (!MDNlinks.length) {
+      if (!!{JSON.stringify(MDNlinks.length)}) {
           $('#MDN-links').addClass('collapse');
       }

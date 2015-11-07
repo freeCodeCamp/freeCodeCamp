@@ -44,8 +44,9 @@
         "  return false;",
         "",
         "// Only change code above this line.",
-        "}",
-        "",
+        "}"
+      ],
+      "tail": [
         "welcomeToBooleans();"
       ],
       "type": "waypoint",
@@ -67,9 +68,9 @@
       "challengeSeed": [
         "var ourName = \"Free Code Camp\";",
         "",
-        "",
-        "// Only change code above this line.",
-        "",
+        ""
+      ],
+      "tail": [
         "if(typeof(myName) !== \"undefined\"){(function(v){return v;})(myName);}"
       ],
       "type": "waypoint",

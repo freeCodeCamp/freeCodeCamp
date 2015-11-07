@@ -44,6 +44,16 @@
     "tests": {
       "type": "array"
     },
+    "head": {
+      "type": "array",
+      "default": [],
+      "description": "appended to user code"
+    },
+    "tail": {
+      "type": "array",
+      "default": [],
+      "description": "prepended to user code"
+    },
     "challengeSeed": {
       "type": "array"
     },

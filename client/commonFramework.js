@@ -7,23 +7,25 @@ var common = (function() {
     init: []
   };
 
-  common.challengeName = common.challengeName || window.challenge_Name ?
-    window.challenge_Name :
-    '';
+  common.challengeName = common.challengeName || window.challenge_Name || '';
 
-  common.challengeType = common.challengeType || window.challengeType ?
-    window.challengeType :
-    0;
+  common.challengeType = common.challengeType || window.challengeType || 0;
 
   common.challengeId = common.challengeId || window.challenge_Id;
 
-  common.challengeSeed = common.challengeSeed || window.challengeSeed ?
-    window.challengeSeed :
-    [];
+  common.challengeSeed = common.challengeSeed || window.challengeSeed || [];
 
-  common.seed = common.challengeSeed.reduce(function(seed, line) {
-    return seed + line + '\n';
-  }, '');
+  common.head = common.head || '';
+  common.tail = common.tail || '';
+
+  common.arrayToNewLineString = function arrayToNewLineString(seedData) {
+    seedData = Array.isArray(seedData) ? seedData : [seedData];
+    return seedData.reduce(function(seed, line) {
+      return '' + seed + line + '\n';
+    }, '');
+  };
+
+  common.seed = common.arrayToNewLineString(common.challengeSeed);
 
   common.replaceScriptTags = function replaceScriptTags(value) {
     return value
@@ -482,7 +484,7 @@ var editor = (function(CodeMirror, emmetCodeMirror, common) {
 }(window.CodeMirror, window.emmetCodeMirror, common));
 
 
-var tests = tests || [];
+var tests = common.tests || [];
 
 var libraryIncludes =
   "<script src='//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js'>" +
@@ -873,17 +875,8 @@ function updatePreview() {
   }
 }
 
-if (typeof prodOrDev !== 'undefined') {
-
-  /* eslint-disable no-unused-vars */
-  var nodeEnv = window.prodOrDev === 'production' ?
-    'http://www.freecodecamp.com' :
-    'http://localhost:3001';
-  /* eslint-enable no-unused-vars */
-
-  if (common.challengeType === '0') {
-    setTimeout(updatePreview, 300);
-  }
+if (common.challengeType === '0') {
+  setTimeout(updatePreview, 300);
 }
 
 /**
@@ -1119,7 +1112,10 @@ var reassembleTest = function(test, data) {
 };
 
 var runTests = function(err, data) {
-  var editorValue = editor.getValue();
+  var head = common.arrayToNewLineString(common.head);
+  var tail = common.arrayToNewLineString(common.tail);
+
+  var editorValue = head + editor.getValue() + tail;
   // userTests = userTests ? null : [];
   var allTestsPassed = true;
   pushed = false;
@@ -1371,6 +1367,8 @@ common.init.push((function() {
 }(window.$)));
 
 function bonfireExecute(shouldTest) {
+  var head = common.arrayToNewLineString(common.head);
+  var tail = common.arrayToNewLineString(common.tail);
   var codeOutput = common.codeOutput;
   initPreview = false;
   goodTests = 0;
@@ -1383,7 +1381,7 @@ function bonfireExecute(shouldTest) {
     common.challengeType !== '0' &&
     !editor.getValue().match(/\$\s*?\(\s*?\$\s*?\)/gi)
   ) {
-    var userJavaScript = editor.getValue();
+    var userJavaScript = head + editor.getValue() + tail;
     var failedCommentTest = false;
 
     var openingComments = userJavaScript.match(/\/\*/gi);
@@ -1502,7 +1500,7 @@ $(document).ready(function() {
         bonfireExecute(true);
       }
     });
-  } else if (common.challengeType !== 7) {
+  } else if (common.challengeType !== '7' && common.challengeType !== '2') {
     bonfireExecute(true);
   }
 

@@ -1,0 +1,5 @@
+script(src=rev('/js', 'commonFramework.js'))
+script.
+  if (typeof localStorage !== 'undefined') {
+    localStorage.setItem('currentDashedName', typeof common !== 'undefined' && common.dashedName || '');
+  }
