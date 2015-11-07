@@ -1674,11 +1674,12 @@
       "title": "Create a Bootstrap Row",
       "description": [
         "Now we'll create a Bootstrap row for our inline elements.",
-        "Create a <code>div</code> element with the class <code>row</code>."
+        "Create a <code>div</code> element below the <code>h3</code> tag, with a class of <code>row</code>."
       ],
       "tests": [
         "assert($(\"div\").length > 1, 'Add a <code>div</code> element below your <code>h3</code> element.')",
         "assert($(\"div\").hasClass(\"row\"), 'Your <code>div</code> element should have the class <code>row</code>')",
+        "assert($(\"div.container-fluid div.row\").length > 0, 'Your <code>row div</code> should be nested inside the <code>container-fluid div</code>')",
         "assert(editor.match(/<\\/div>/g) && editor.match(/<div/g) && editor.match(/<\\/div>/g).length === editor.match(/<div/g).length, 'Make sure your <code>div</code> element has a closing tag.')"
       ],
       "challengeSeed": [
