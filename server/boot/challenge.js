@@ -288,27 +288,34 @@ module.exports = function(app) {
 
         // save user does nothing if user does not exist
         return Observable.just({
+
           title: challenge.name,
-          dashedName: origChallengeName,
           name: challenge.name,
           details: challenge.description,
           description: challenge.description,
-          tests: challenge.tests,
-          challengeSeed: challenge.challengeSeed,
-          verb: utils.randomVerb(),
-          phrase: utils.randomPhrase(),
-          compliment: utils.randomCompliment(),
           challengeId: challenge.id,
           challengeType: challenge.challengeType,
+          dashedName: origChallengeName,
+
+          challengeSeed: challenge.challengeSeed,
+          head: challenge.head,
+          tail: challenge.tail,
+          tests: challenge.tests,
+
           // video challenges
           video: challenge.challengeSeed[0],
+
           // bonfires specific
-          difficulty: Math.floor(+challenge.difficulty),
           bonfires: challenge,
           MDNkeys: challenge.MDNlinks,
           MDNlinks: getMDNLinks(challenge.MDNlinks),
+
           // htmls specific
-          environment: utils.whichEnvironment()
+          environment: utils.whichEnvironment(),
+
+          verb: utils.randomVerb(),
+          phrase: utils.randomPhrase(),
+          compliment: utils.randomCompliment()
         });
       })
       .subscribe(
