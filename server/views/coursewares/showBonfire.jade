@@ -80,6 +80,10 @@ block content
                     var dashedName = !{JSON.stringify(dashedName)};
                     var _ = R;
                     var dashed = !{JSON.stringify(dashedName)};
+                    var username;
+                if (user)
+                    script(type="text/javascript").
+                        username = !{JSON.stringify(user.username)};
 
         .col-md-8.col-lg-9
             .editorScrollDiv(style = "overflow-y: auto; overflow-x: hidden;")
@@ -103,12 +107,14 @@ block content
                       .row
                       if (user)
                           #submit-challenge.animated.fadeIn.btn.btn-lg.btn-primary.btn-block Submit and go to my next challenge (ctrl + enter)
+                          a.animated.fadeIn.btn.btn-lg.btn-danger.btn-block#gist-share Share your solution as a GitHub gist
                           if (user.progressTimestamps.length > 2)
                               a.btn.btn-lg.btn-block.btn-twitter(target="_blank", href="https://twitter.com/intent/tweet?text=I%20just%20#{verb}%20%40FreeCodeCamp%20#{name}&url=http%3A%2F%2Ffreecodecamp.com/challenges/#{dashedName}&hashtags=LearnToCode, JavaScript", onclick="ga('send', 'event', 'twitter', 'share', 'challenge completion share');")
                                   i.fa.fa-twitter &thinsp;
                                       = phrase
                       else
                           #next-challenge.btn.btn-lg.btn-primary.btn-block Go to my next challenge (ctrl + enter)
+                          a.btn.btn-lg.btn-danger.btn-block#gist-share Share your solution as a GitHub gist
     #reset-modal.modal(tabindex='-1')
         .modal-dialog.animated.fadeInUp.fast-animation
             .modal-content
