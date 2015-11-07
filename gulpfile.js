@@ -178,7 +178,14 @@ gulp.task('sync', syncDepenedents, function() {
 });
 
 gulp.task('lint-js', function() {
-  return gulp.src(['public/js/lib/**/*'])
+  return gulp.src([
+    'common/**/*.js',
+    'common/**/*.jsx',
+    'client/**/*.js',
+    'client/**/*.jsx',
+    'server/**/*.js',
+    'config/**/*.js'
+  ])
     .pipe(eslint())
     .pipe(eslint.format());
 });
