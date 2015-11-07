@@ -19,7 +19,7 @@ var common = (function() {
   common.tail = common.tail || '';
 
   common.arrayToNewLineString = function arrayToNewLineString(seedData) {
-    seedData = seedData || [];
+    seedData = Array.isArray(seedData) ? seedData : [seedData];
     return seedData.reduce(function(seed, line) {
       return '' + seed + line + '\n';
     }, '');
