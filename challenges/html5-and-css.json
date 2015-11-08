@@ -1168,7 +1168,7 @@
         "Now nest your existing <code>a</code> element within a new <code>p</code> element so that the surrounding paragraph says \"View more cat photos\", but where only \"cat photos\" is a link, and the rest of the text is plain text."
       ],
       "tests": [
-        "assert($(\"a\").attr(\"href\").match(/freecatphotoapp.com/gi).length > 0, 'You need an <code>a</code> element that links to \"freecatphotoapp.com\".')",
+        "assert($(\"a[href=\\\"http://www.freecatphotoapp.com\\\"]\").length > 0, 'You need an <code>a</code> element that links to \"freecatphotoapp.com\".')",
         "assert($(\"a\").text().match(/cat\\sphotos/gi), 'Your <code>a</code> element should have the anchor text of \"cat photos\"')",
         "assert($(\"p\") && $(\"p\").length > 2, 'Create a new <code>p</code> element around your <code>a</code> element.')",
         "assert($(\"a[href=\\\"http://www.freecatphotoapp.com\\\"]\").parent().is(\"p\"), 'Your <code>a</code> element should be nested within your new <code>p</code> element.')",
