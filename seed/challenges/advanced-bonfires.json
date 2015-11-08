@@ -157,7 +157,7 @@
         "Global Object"
       ],
       "solutions": [
-        "function drawer(E,N,r){for(var T=N-E,e=[],n={PENNY:0.01,NICKEL:0.05,DIME:0.1,QUARTER:0.25,ONE:1,FIVE:5,TEN:10,TWENTY:20,\"ONE HUNDRED\":100},I=!0,a=r.length-1;a>=0;a--){var f=Math.floor((T+0.005)/n[r[a][0]]);if(f<r[a][1]/n[r[a][0]]?I=!1:f=r[a][1]/n[r[a][0]],f>0&&(e.push([r[a][0],f*n[r[a][0]]]),T-=f*n[r[a][0]]),0===T)break;}return T>0?\"Insufficient Funds\":I?\"Closed\":e;}drawer(19.5,20,[[\"PENNY\",1.01],[\"NICKEL\",2.05],[\"DIME\",3.1],[\"QUARTER\",4.25],[\"ONE\",90],[\"FIVE\",55],[\"TEN\",20],[\"TWENTY\",60],[\"ONE HUNDRED\",100]]);"
+        "function drawer(E,N,r){for(var T=N-E,e=[],n={PENNY:0.01,NICKEL:0.05,DIME:0.1,QUARTER:0.25,ONE:1,FIVE:5,TEN:10,TWENTY:20,\"ONE HUNDRED\":100},I=!0,a=r.length-1;a>=0;a--){var f=Math.floor((T+0.005)/n[r[a][0]]);if(f<r[a][1]/n[r[a][0]]?I=!1:f=r[a][1]/n[r[a][0]],f>0&&(e.push([r[a][0],f*n[r[a][0]]]),T-=f*n[r[a][0]]),0===T)break;}return T>0?\"Insufficient Funds\":I?\"Closed\":e;}"
       ],
       "type": "bonfire",
       "challengeType": 5,
