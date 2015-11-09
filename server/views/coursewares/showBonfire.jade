@@ -99,7 +99,7 @@ block content
                                   i.fa.fa-twitter &thinsp;
                                       = phrase
                       else
-                          #next-challenge.btn.btn-lg.btn-primary.btn-block Go to my next challenge (ctrl + enter)
+                          a#next-challenge.btn.btn-lg.btn-primary.btn-block(href="/challenges/next-challenge?id="+challengeId) Go to my next challenge (ctrl + enter)
                           a.btn.btn-lg.btn-danger.btn-block#gist-share Share your solution as a GitHub gist
     #reset-modal.modal(tabindex='-1')
         .modal-dialog.animated.fadeInUp.fast-animation
