@@ -367,6 +367,9 @@
       "tests": [
         "assert(repeat(\"*\", 3) === \"***\", 'message: <code>repeat(\"*\", 3)</code> should return <code>\"***\"</code>.');",
         "assert(repeat(\"abc\", 3) === \"abcabcabc\", 'message: <code>repeat(\"abc\", 3)</code> should return <code>\"abcabcabc\"</code>.');",
+        "assert(repeat(\"abc\", 4) === \"abcabcabcabc\", 'message: <code>repeat(\"abc\", 4)</code> should return <code>\"abcabcabcabc\"</code>.');",
+        "assert(repeat(\"abc\", 1) === \"abc\", 'message: <code>repeat(\"abc\", 1)</code> should return <code>\"abc\"</code>.');",
+        "assert(repeat(\"*\", 8) === \"********\", 'message: <code>repeat(\"*\", 8)</code> should return <code>\"********\"</code>.');",
         "assert(repeat(\"abc\", -2) === \"\", 'message: <code>repeat(\"abc\", -2)</code> should return <code>\"\"</code>.');"
       ],
       "MDNlinks": [
