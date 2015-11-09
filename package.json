@@ -79,7 +79,7 @@
     "lodash": "^3.9.3",
     "loopback": "^2.22.0",
     "loopback-boot": "^2.13.0",
-    "loopback-component-passport": "https://github.com/FreeCodeCamp/loopback-component-passport.git#feature/flashfailure",
+    "loopback-component-passport": "^1.6.0",
     "loopback-connector-mongodb": "^1.10.0",
     "method-override": "~2.3.0",
     "moment": "~2.10.2",
