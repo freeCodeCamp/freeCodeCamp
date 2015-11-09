@@ -251,9 +251,7 @@ $(document).ready(function() {
   });
 
   function reBindModals() {
-    if (!window.common) {
-      return;
-    }
+
     var common = window.common;
 
     $('.close-modal').unbind('click');
