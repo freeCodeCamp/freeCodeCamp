@@ -1501,9 +1501,10 @@ $(document).ready(function() {
       }
     });
   } else if (
-    common.challengeType !== '7' &&
     common.challengeType !== '2' &&
-    common.challengeType !== '3'
+    common.challengeType !== '3' &&
+    common.challengeType !== '4' &&
+    common.challengeType !== '7'
   ) {
     bonfireExecute(true);
   }
