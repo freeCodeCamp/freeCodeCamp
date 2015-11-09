@@ -1500,7 +1500,11 @@ $(document).ready(function() {
         bonfireExecute(true);
       }
     });
-  } else if (common.challengeType !== '7' && common.challengeType !== '2') {
+  } else if (
+    common.challengeType !== '7' &&
+    common.challengeType !== '2' &&
+    common.challengeType !== '3'
+  ) {
     bonfireExecute(true);
   }
 
