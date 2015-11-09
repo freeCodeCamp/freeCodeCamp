@@ -38,6 +38,7 @@ export default React.createClass({
 
         const className = classnames({
           'jobs-list': true,
+          'col-xs-12': true,
           'jobs-list-highlight': isHighlighted
         });
 
@@ -47,7 +48,7 @@ export default React.createClass({
             key={ id }
             onClick={ () => handleClick(id) }>
             <div>
-              <h4 style={{ display: 'inline-block' }}>
+              <h4 className='pull-left' style={{ display: 'inline-block' }}>
                 <bold>{ company }</bold>
                 {' '}
                 <span className='hidden-xs hidden-sm'>
