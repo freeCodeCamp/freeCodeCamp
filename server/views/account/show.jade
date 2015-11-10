@@ -80,14 +80,27 @@ block content
                     #cal-heatmap.d3-centered
                         script.
                             $(document).ready(function () {
+                                var estUTCOffset = -5;
+                                // moment returns the utc offset in minutes
+                                var userUTCOffset = moment().utcOffset() / 60;
+                                var secondsToOffset =
+                                  (estUTCOffset - userUTCOffset) * 3600;
                                 var cal = new CalHeatMap();
                                 var calendar = !{JSON.stringify(calender)};
+                                var offsetCalendar = {};
+                                for (var prop in calendar) {
+                                  if (calendar.hasOwnProperty(prop)) {
+                                    var offsetProp = +prop + secondsToOffset;
+                                      offsetCalendar[offsetProp] =
+                                        calendar[prop];
+                                  }
+                                }
                                 cal.init({
                                     itemSelector: "#cal-heatmap",
                                     domain: "month",
                                     subDomain: "x_day",
                                     domainGutter: 10,
-                                    data: calendar,
+                                    data: offsetCalendar,
                                     cellSize: 15,
                                     align: 'center',
                                     cellRadius: 3,
