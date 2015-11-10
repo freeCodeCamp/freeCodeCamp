@@ -5,6 +5,12 @@ import { Observable } from 'rx';
 const basePath = process.cwd() + '/seed/challenges/';
 
 export default function getFromDisk$(challenge) {
+  if (challenge && !challenge.fileName) {
+    throw new Error(
+      `Challenge ${challenge.name} has no fileName.
+      Did you remember run node seed?`
+    );
+  }
   delete require.cache[require.resolve(
     path.join(basePath, challenge.fileName)
   )];
