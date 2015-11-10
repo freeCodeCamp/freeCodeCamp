@@ -162,7 +162,7 @@
         "Choose Node.js in the selection area below the name field.",
         "Click the \"Create workspace\" button.",
         "Once C9 builds and loads your workspace, you should see a terminal window in the lower right hand corner. In this window use the following commands. You don't need to know what these mean at this point.",
-        "Run this command: <code>git clone http://github.com/reddock/fcc_express && chmod 744 fcc_express/setup.sh && fcc_express/setup.sh && source ~/.profile</code>",
+        "Run this command: <code>git clone https://github.com/FreeCodeCamp/fcc-expressworks.git && chmod 744 fcc-expressworks/setup.sh && fcc-expressworks/setup.sh && source ~/.profile</code>",
         "Now start this tutorial by running <code>expressworks</code>",
         "Note that you can resize the c9.io's windows by dragging their borders.",
         "Make sure that you are always in your project's \"workspace\" directory. You can always navigate back to this directory by running this command: <code>cd ~/workspace</code>.",
