@@ -4,12 +4,17 @@ block content
         .text-center
             .row
                 .col-xs-12
-                    h1.nonprofit-landing.hug-top Get pro bono code for your nonprofit
+                    h1.landing-heading Get pro bono code for your nonprofit.
                     .big-break
                     .col-xs-12.col-sm-12.col-md-12
                         .embed-responsive.embed-responsive-16by9
                             iframe.embed-responsive-item(src='//player.vimeo.com/video/126228100')
                         .big-break
+                    h2 As featured in:
+                    img.img-center.img-responsive(src='https://s3.amazonaws.com/freecodecamp/as-seen-on.png')
+                    .spacer
+                    hr
+                    .spacer
                     h2 Our process:
                     .row
                         .col-xs-12.col-sm-12.col-md-4
@@ -24,7 +29,9 @@ block content
                             h3.nowrap Your solution
                             img.img-responsive.landing-icon.img-center(src= 'https://s3.amazonaws.com/freecodecamp/landingIcons_connect.svg.gz', alt='image of two people high-fiving')
                             p.landing-p Together we'll set milestones and complete your project.
-                    .big-break
+                    .spacer
+                    hr
+                    .spacer
                     h2 Solutions we can help you build:
                     .text-center.negative-35
                         .col-xs-12.col-sm-12.col-md-3
@@ -51,7 +58,20 @@ block content
                         .col-xs-12.col-sm-12.col-md-3
                             .landing-skill-icon.ion-settings
                             h2.black-text ...and other tools
+            .spacer
+            hr
+            .spacer
+            .large-p.text-left.col-xs-offset-0.col-sm-offset-1
+                h2 Our developers build projects for nonprofits who:
+                ul.large-li
+                    li.ion-code &thinsp; already have people who benefit from their services.
+                    li.ion-code &thinsp; are registered with their government and have tax-exempt status.
+                    li.ion-code &thinsp; have a stakeholder who can meet with our developers to direct the project.
+                    li.ion-code &thinsp; can budget at least $20 per month for their own cloud servers.
+                    li.ion-code &thinsp; can commit to using and maintaining the solution that our developers build.
             .big-break
-            a.btn.btn-cta.signup-btn.btn-block(href="/nonprofits-form") My nonprofit needs coding help
-            .button-spacer
-            a.btn.btn-cta.btn-success.btn-block(href="/nonprofits/directory") Browse our directory of nonprofits we've helped
+            .row
+                .col-xs-12.col-sm-8.col-sm-offset-2
+                    a.btn.btn-cta.signup-btn.btn-block(href="/nonprofits-form") My nonprofit needs coding help
+                    .button-spacer
+                    a.btn.btn-lg.btn-primary.btn-primary-ghost.btn-block(href="/nonprofits/directory") Browse our directory of nonprofits we've helped

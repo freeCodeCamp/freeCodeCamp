@@ -116,7 +116,7 @@
         "Arithmetic Operators"
       ],
       "solutions": [
-        "function factorialize(num) {\n  return num === 1 ? 1 : num * factorialize(num-1);\n}\n\nfactorialize(5);\n"
+        "function factorialize(num) {\n  return num < 1 ? 1 : num * factorialize(num-1);\n}\n\nfactorialize(5);\n"
       ],
       "type": "bonfire",
       "challengeType": 5,
@@ -169,7 +169,6 @@
         "String.toLowerCase()"
       ],
       "solutions": [
-        "function palindrome(str) {\n  var a = str.toLowerCase().replace(/[^a-z]/g, '');\n  console.log(a.split('').reverse().join(''));\n  return a == a.split('').reverse().join('');\n}\n\n\n\npalindrome(\"eye\");\npalindrome(\"A man, a plan, a canal. Panama\");\n"
       ],
       "type": "bonfire",
       "challengeType": 5,
@@ -243,8 +242,8 @@
         "titleCase(\"I'm a little tea pot\");"
       ],
       "tests": [
-        "assert(typeof(titleCase(\"I&#39;m a little tea pot\")) === \"string\", 'message: <code>titleCase()</code> should return a string.');",
-        "assert(titleCase(\"I&#39;m a little tea pot\") === \"I&#39;m A Little Tea Pot\", 'message: <code>titleCase(\"I&#39;m a little tea pot\")</code> should return \"I&#39;m A Little Tea Pot\".');",
+        "assert(typeof(titleCase(\"I'm a little tea pot\")) === \"string\", 'message: <code>titleCase()</code> should return a string.');",
+        "assert(titleCase(\"I'm a little tea pot\") === \"I'm A Little Tea Pot\", 'message: <code>titleCase(\"I&#39;m a little tea pot\")</code> should return \"I&#39;m A Little Tea Pot\".');",
         "assert(titleCase(\"sHoRt AnD sToUt\") === \"Short And Stout\", 'message: <code>titleCase(\"sHoRt AnD sToUt\")</code> should return \"Short And Stout\".');",
         "assert(titleCase(\"HERE IS MY HANDLE HERE IS MY SPOUT\") === \"Here Is My Handle Here Is My Spout\", 'message: <code>titleCase(\"HERE IS MY HANDLE HERE IS MY SPOUT\")</code> should return \"Here Is My Handle Here Is My Spout\".');"
       ],
@@ -273,7 +272,6 @@
       "description": [
         "Return an array consisting of the largest number from each provided sub-array. For simplicity, the provided array will contain exactly 4 sub-arrays.",
         "Remember, you can iterate through an array with a simple for loop, and access each member with array syntax arr[i] .",
-        "If you are writing your own Chai.js tests, be sure to use a deep equal statement instead of an equal statement when comparing arrays.",
         "Remember to use <a href=\"//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck\" target=\"_blank\">Read-Search-Ask</a> if you get stuck. Write your own code."
       ],
       "challengeSeed": [
@@ -327,7 +325,7 @@
       "tests": [
         "assert(end(\"Bastian\", \"n\") === true, 'message: <code>end(\"Bastian\", \"n\")</code> should return true.');",
         "assert(end(\"Connor\", \"n\") === false, 'message: <code>end(\"Connor\", \"n\")</code> should return false.');",
-        "assert(end(\"Walking on water and developing software from a specification are easy if both are frozen\", \"specification\") === false, '<code>\"Walking on water and developing software from a specification are easy if both are frozen\"&#44; \"specification\"&#41;</code> should return false.');",
+        "assert(end(\"Walking on water and developing software from a specification are easy if both are frozen\", \"specification\") === false, 'message: <code>end(\"Walking on water and developing software from a specification are easy if both are frozen\"&#44; \"specification\"&#41;</code> should return false.');",
         "assert(end(\"He has to give me a new name\", \"name\") === true, 'message: <code>end(\"He has to give me a new name\", \"name\")</code> should return true.');",
         "assert(end(\"He has to give me a new name\", \"me\") === true, 'message: <code>end(\"He has to give me a new name\", \"me\")</code> should return true.');",
         "assert(end(\"If you want to save our world, you must hurry. We dont know how much longer we can withstand the nothing\", \"mountain\") === false, 'message: <code>end(\"If you want to save our world, you must hurry. We dont know how much longer we can withstand the nothing\", \"mountain\")</code> should return false.');"
@@ -369,6 +367,9 @@
       "tests": [
         "assert(repeat(\"*\", 3) === \"***\", 'message: <code>repeat(\"*\", 3)</code> should return <code>\"***\"</code>.');",
         "assert(repeat(\"abc\", 3) === \"abcabcabc\", 'message: <code>repeat(\"abc\", 3)</code> should return <code>\"abcabcabc\"</code>.');",
+        "assert(repeat(\"abc\", 4) === \"abcabcabcabc\", 'message: <code>repeat(\"abc\", 4)</code> should return <code>\"abcabcabcabc\"</code>.');",
+        "assert(repeat(\"abc\", 1) === \"abc\", 'message: <code>repeat(\"abc\", 1)</code> should return <code>\"abc\"</code>.');",
+        "assert(repeat(\"*\", 8) === \"********\", 'message: <code>repeat(\"*\", 8)</code> should return <code>\"********\"</code>.');",
         "assert(repeat(\"abc\", -2) === \"\", 'message: <code>repeat(\"abc\", -2)</code> should return <code>\"\"</code>.');"
       ],
       "MDNlinks": [
@@ -412,13 +413,14 @@
         "assert(truncate(\"Peter Piper picked a peck of pickled peppers\", 14) === \"Peter Piper...\", 'message: <code>truncate(\"Peter Piper picked a peck of pickled peppers\", 14)</code> should return \"Peter Piper...\".');",
         "assert(truncate(\"A-tisket a-tasket A green and yellow basket\", \"A-tisket a-tasket A green and yellow basket\".length) === \"A-tisket a-tasket A green and yellow basket\", 'message: <code>truncate(\"A-tisket a-tasket A green and yellow basket\", \"A-tisket a-tasket A green and yellow basket\".length)</code> should return \"A-tisket a-tasket A green and yellow basket\".');",
         "assert(truncate('A-tisket a-tasket A green and yellow basket', 'A-tisket a-tasket A green and yellow basket'.length + 2) === 'A-tisket a-tasket A green and yellow basket', 'message: <code>truncate(\"A-tisket a-tasket A green and yellow basket\", \"A-tisket a-tasket A green and yellow basket\".length + 2)</code> should return \"A-tisket a-tasket A green and yellow basket\".');",
-        "assert(truncate(\"A-\", 1) === \"A...\", 'message: <code>truncate(\"A-\", 1)</code> should return \"A...\".');"
+        "assert(truncate(\"A-\", 1) === \"A...\", 'message: <code>truncate(\"A-\", 1)</code> should return \"A...\".');",
+        "assert(truncate(\"Abolutely Longer\", 2) === \"Ab...\", 'message: <code>truncate(\"Absolutely Longer\", 2)</code> should return \"Ab...\".');"
       ],
       "MDNlinks": [
         "String.slice()"
       ],
       "solutions": [
-        "function truncate(str, num) {\n  if (str.length > num) {\n    return str.substring(0, num-3) + '...';\n  }\n  return str;\n}\n\ntruncate('A-tisket a-tasket A green and yellow basket', 11);\n"
+        "function truncate(str, num) {\n  if(str.length > num ) {\n    if(num > 3) {\n      return str.slice(0, num - 3) + '...';\n    } else {\n      return str.slice(0,num) + '...';\n    }\n  } \n  return str;\n}"
       ],
       "type": "bonfire",
       "challengeType": 5,
@@ -664,9 +666,7 @@
       "MDNlinks": [
         "Array.sort()"
       ],
-      "solutions": [
-        "function where(arr, num) {\n  // Find my place in this sorted array.\n  return num;\n}\n\nwhere([40, 60], 50);\n"
-      ],
+      "solutions": [],
       "tests": [
         "assert(where([10, 20, 30, 40, 50], 35) === 3, 'message: <code>where([10, 20, 30, 40, 50], 35)</code> should return <code>3</code>.');",
         "assert(where([10, 20, 30, 40, 50], 30) === 2, 'message: <code>where([10, 20, 30, 40, 50], 30)</code> should return <code>2</code>.');",

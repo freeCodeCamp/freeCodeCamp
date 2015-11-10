@@ -7,3 +7,8 @@
   font-family: "Lato Light";
   src: url(/fonts/Lato-Light.ttf) format("truetype");
 }
+
+@font-face {
+  font-family: "Lato Bold";
+  src: url(/fonts/Lato-Bold.ttf) format("truetype");
+}

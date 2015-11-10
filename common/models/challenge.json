@@ -44,6 +44,20 @@
     "tests": {
       "type": "array"
     },
+    "head": {
+      "type": "array",
+      "default": [],
+      "description": "appended to user code"
+    },
+    "tail": {
+      "type": "array",
+      "default": [],
+      "description": "prepended to user code"
+    },
+    "fileName": {
+      "type": "string",
+      "description": "filename challenge comes from. Used in dev mode"
+    },
     "challengeSeed": {
       "type": "array"
     },
@@ -86,6 +100,9 @@
     "solutions": {
       "type": "array",
       "default": []
+    },
+    "releasedOn": {
+      "type": "string"
     }
   },
   "validations": [],

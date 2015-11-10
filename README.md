@@ -4,22 +4,24 @@
 
 [![Join the chat at https://gitter.im/freecodecamp/freecodecamp](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/freecodecamp/freecodecamp?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-Welcome to Free Code Camp's open source codebase!
+Welcome to Free Code Camp's open source codebase and curriculum!
 =======================
 
-Free Code Camp is an open-source community of busy people who learn to code and build projects for nonprofits.
+Free Code Camp is an open-source community where you learn to code and help nonprofits.
 
-Our campers (students) start by working through our free, self-paced, browser-based curriculum. Next, they build several practice projects. Finally, we pair two campers together with a stakeholder from a nonprofit organization, and help them build the solution the nonprofit has requested.
+You start by working through our self-paced, browser-based full stack JavaScript curriculum. 
+
+After you complete the first 400 hours worth of challenges (which involves building 10 single-page apps), you'll earn your Front End Development Certification.
+
+After you complete the second 400 hours worth of challenges (which involves building and deploying 5 full stack apps), you'll earn your Full Stack Development Certification.
+
+Then we'll pair you with another camper, an agile project manager, and a stakeholder from a nonprofit organization. Together, you'll plan and build an app that helps that nonprofit carry out its mission more effectively.
 
 **We help our campers build job-worthy portfolios of real apps used by real people, while helping nonprofits.**
 
-80% of our campers are over 25, and nearly a fifth of our campers are women.
-
-This code is running live at [FreeCodeCamp.com](http://www.FreeCodeCamp.com). We also have [Gitter](https://gitter.im/FreeCodeCamp/FreeCodeCamp), a [blog](http://medium.freecodecamp.com), and even a [Twitch.tv channel](http://twitch.tv/freecodecamp).
+This code is running live at [FreeCodeCamp.com](http://www.FreeCodeCamp.com). We also have [Gitter](https://gitter.im/FreeCodeCamp/FreeCodeCamp), a [Medium publication](http://medium.freecodecamp.com), and even a [Twitch.tv channel](http://twitch.tv/freecodecamp).
 
 [Join our community here](http://www.freecodecamp.com/signin).
-
-*Note: We're currently very close to moving from Express to Loopback. As such, please keep in mind that the instructions here for setting up and running the project do not directly translate to the staging branch. Additionally, the file structure is quite a bit different. As always, the staging branch is the appropriate place to branch off of to fix/add something.*
 
 Wiki
 ------------

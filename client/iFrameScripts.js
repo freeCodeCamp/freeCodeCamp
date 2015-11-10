@@ -1,3 +1,4 @@
+/* eslint-disable no-undef, no-unused-vars, no-native-reassign */
 (function() {
   var expect = chai.expect;
   var tests = parent.tests;
@@ -7,7 +8,9 @@
     for (var i = 0; i < tests.length; i++) {
       var thisTest = true;
       try {
+        /* eslint-disable no-eval */
         eval(parent.tests[i]);
+        /* eslint-enable no-eval */
       } catch (err) {
         allTestsGood = false;
         thisTest = false;

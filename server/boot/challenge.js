@@ -4,7 +4,15 @@ import moment from 'moment';
 import { Observable, Scheduler } from 'rx';
 import assign from 'object.assign';
 import debugFactory from 'debug';
-import utils from '../utils';
+
+import {
+  dasherize,
+  unDasherize,
+  getMDNLinks,
+  randomVerb,
+  randomPhrase,
+  randomCompliment
+} from '../utils';
 
 import {
   saveUser,
@@ -15,6 +23,8 @@ import {
 import {
   ifNoUserSend
 } from '../utils/middleware';
+
+import getFromDisk$ from '../utils/getFromDisk$';
 
 const isDev = process.env.NODE_ENV !== 'production';
 const isBeta = !!process.env.BETA;
@@ -31,16 +41,14 @@ const challengeView = {
   7: 'coursewares/showStep'
 };
 
-const dasherize = utils.dasherize;
-const unDasherize = utils.unDasherize;
-const getMDNLinks = utils.getMDNLinks;
-
+/*
 function makeChallengesUnique(challengeArr) {
   // clone and reverse challenges
   // then filter by unique id's
   // then reverse again
   return _.uniq(challengeArr.slice().reverse(), 'id').reverse();
 }
+*/
 function numberWithCommas(x) {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 }
@@ -231,8 +239,8 @@ module.exports = function(app) {
             req.flash('info', {
               msg: dedent`
                 Once you have completed all of our challenges, you should
-                join our <a href=\"//gitter.im/freecodecamp/HalfWayClub\"
-                target=\"_blank\">Half Way Club</a> and start getting
+                join our <a href="https://gitter.im/freecodecamp/HalfWayClub"
+                target="_blank">Half Way Club</a> and start getting
                 ready for our nonprofit projects.
               `.split('\n').join(' ')
             });
@@ -261,6 +269,12 @@ module.exports = function(app) {
       })
       .last({ defaultValue: null })
       .flatMap(challenge => {
+        if (challenge && isDev) {
+          return getFromDisk$(challenge);
+        }
+        return Observable.just(challenge);
+      })
+      .flatMap(challenge => {
 
         // Handle not found
         if (!challenge) {
@@ -286,27 +300,32 @@ module.exports = function(app) {
 
         // save user does nothing if user does not exist
         return Observable.just({
+
           title: challenge.name,
-          dashedName: origChallengeName,
           name: challenge.name,
           details: challenge.description,
           description: challenge.description,
-          tests: challenge.tests,
-          challengeSeed: challenge.challengeSeed,
-          verb: utils.randomVerb(),
-          phrase: utils.randomPhrase(),
-          compliment: utils.randomCompliment(),
           challengeId: challenge.id,
           challengeType: challenge.challengeType,
+          dashedName: origChallengeName,
+
+          challengeSeed: challenge.challengeSeed,
+          head: challenge.head,
+          tail: challenge.tail,
+          tests: challenge.tests,
+
           // video challenges
           video: challenge.challengeSeed[0],
+
           // bonfires specific
-          difficulty: Math.floor(+challenge.difficulty),
           bonfires: challenge,
           MDNkeys: challenge.MDNlinks,
           MDNlinks: getMDNLinks(challenge.MDNlinks),
+
           // htmls specific
-          environment: utils.whichEnvironment()
+          verb: randomVerb(),
+          phrase: randomPhrase(),
+          compliment: randomCompliment()
         });
       })
       .subscribe(
@@ -515,6 +534,24 @@ module.exports = function(app) {
   }
 
   function challengeMap({ user = {} }, res, next) {
+
+    // small helper function to determine whether to mark something as new
+    function shouldShowNew(element, block) {
+      if (element) {
+        return (typeof element.releasedOn !== 'undefined' &&
+               moment(element.releasedOn, 'MMM MMMM DD, YYYY')
+               .diff(moment(), 'days') >= -30);
+      } else if (block) {
+        const newCount = block.reduce((sum, { markNew }) => {
+          if (markNew) {
+            return sum + 1;
+          }
+          return sum;
+        }, 0);
+        return newCount / block.length * 100 === 100;
+      }
+    }
+
     let lastCompleted;
     const daysRunning = moment().diff(new Date('10/15/2014'), 'days');
 
@@ -535,6 +572,7 @@ module.exports = function(app) {
         if (completedChallenges.indexOf(challenge.id) !== -1) {
           challenge.completed = true;
         }
+        challenge.markNew = shouldShowNew(challenge);
         return challenge;
       })
       // group challenges by block | returns a stream of observables
@@ -554,9 +592,10 @@ module.exports = function(app) {
           isBeta,
           name: blockArray[0].block,
           dashedName: dasherize(blockArray[0].block),
+          markNew: shouldShowNew(null, blockArray),
           challenges: blockArray,
           completed: completedCount / blockArray.length * 100,
-          time: blockArray[0] && blockArray[0].time || "???"
+          time: blockArray[0] && blockArray[0].time || '???'
         };
       })
       .filter(({ name }) => name !== 'Hikes')
@@ -579,9 +618,12 @@ module.exports = function(app) {
           res.render('challengeMap/show', {
             blocks,
             daysRunning,
+            globalCompletedCount: numberWithCommas(
+              5612952 + (Math.floor((Date.now() - 1446268581061) / 2000))
+            ),
             camperCount,
             lastCompleted,
-            title: "A map of all Free Code Camp's Challenges"
+            title: 'A Map to Learn to Code and Become a Software Engineer'
           });
         },
         next

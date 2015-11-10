@@ -100,6 +100,7 @@
       "tests": [
         "assert($(\"img\").length === 2, 'You should have a total of two images.')",
         "assert($(\"img:eq(1)\").hasClass(\"img-responsive\"), 'Your new image should be below your old one and have the class <code>img-responsive</code>.')",
+        "assert(!$(\"img:eq(1)\").hasClass(\"smaller-image\"), 'Your new image should not have the class <code>smaller-image</code>.')",
         "assert($(\"img:eq(1)\").attr(\"src\") === \"http://bit.ly/fcc-running-cats\", 'Your new image should have a <code>src</code> of <code>http&#58;//bit.ly/fcc-running-cats</code>.')",
         "assert(editor.match(/<img/g) && editor.match(/<img.*>/g).length === 2 && editor.match(/<img/g).length === 2, 'Make sure your new <code>img</code> element has a closing angle bracket.')"
       ],
@@ -183,7 +184,8 @@
         "<code>&#60h2 class=\"red-text text-center\"&#62your text&#60/h2&#62</code>"
       ],
       "tests": [
-        "assert($(\"h2\").hasClass(\"text-center\"), 'Your <code>h2</code> element should be centered by applying the class <code>text-center</code>')"
+        "assert($(\"h2\").hasClass(\"text-center\"), 'Your <code>h2</code> element should be centered by applying the class <code>text-center</code>')",
+        "assert($(\"h2\").hasClass(\"red-text\"), 'Your <code>h2</code> element should still have the class <code>red-text</code>')"
       ],
       "challengeSeed": [
         "<link href=\"http://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
@@ -1672,11 +1674,12 @@
       "title": "Create a Bootstrap Row",
       "description": [
         "Now we'll create a Bootstrap row for our inline elements.",
-        "Create a <code>div</code> element with the class <code>row</code>."
+        "Create a <code>div</code> element below the <code>h3</code> tag, with a class of <code>row</code>."
       ],
       "tests": [
         "assert($(\"div\").length > 1, 'Add a <code>div</code> element below your <code>h3</code> element.')",
         "assert($(\"div\").hasClass(\"row\"), 'Your <code>div</code> element should have the class <code>row</code>')",
+        "assert($(\"div.container-fluid div.row\").length > 0, 'Your <code>row div</code> should be nested inside the <code>container-fluid div</code>')",
         "assert(editor.match(/<\\/div>/g) && editor.match(/<div/g) && editor.match(/<\\/div>/g).length === editor.match(/<div/g).length, 'Make sure your <code>div</code> element has a closing tag.')"
       ],
       "challengeSeed": [

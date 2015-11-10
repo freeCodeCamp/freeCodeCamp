@@ -31,23 +31,23 @@ script.
     });
     function executeSearch() {
         $('#stories').empty();
-        var searchTerm = $('#searchArea').val();
+        var searchTerm = $('#searchArea').val(),
+        url = '/stories/search';
+        if (searchTerm.match(/^\@\w+$/)) {
+            url = '/news/userstories';
+            searchTerm = searchTerm.match(/^\@\w+$/)[0].split('@')[1];
+        }
         var getLinkedName = function getLinkedName(name) {
             return name.toLowerCase().replace(/\s/g, '-');
         }
-        $.post('/stories/search',
-                {
-                    data: {
-                        searchValue: searchTerm
-                    }
-                })
-                .fail(function (xhr, textStatus, errorThrown) {
+        $.post(url, { search: searchTerm })
+                .fail(function(xhr, textStatus, errorThrown) {
                     $('#search-results').empty();
                     var div = document.createElement("div");
                     $(div).html("<h3 class='text-center text-warning dotted-underline'><em>No Results Found</em></h3>");
                     $(div).appendTo($('#search-results'));
                 })
-                .done(function (data, textStatus, xhr) {
+                .done(function(data, textStatus, xhr) {
                     $('#search-results').empty();
                     var spacer = document.createElement('div');
                     $(spacer).html("<div class='spacer'></div>");

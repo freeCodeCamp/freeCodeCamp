@@ -2,29 +2,24 @@
 require('babel/register');
 require('dotenv').load();
 
-var fs = require('fs'),
-    Rx = require('rx'),
+var Rx = require('rx'),
     _ = require('lodash'),
-    path = require('path'),
+    getChallenges = require('./getChallenges'),
     app = require('../server/server');
 
-function getFilesFor(dir) {
-  return fs.readdirSync(path.join(__dirname, '/' + dir));
-}
 
 var Challenge = app.models.Challenge;
-var challenges = getFilesFor('challenges');
 var destroy = Rx.Observable.fromNodeCallback(Challenge.destroyAll, Challenge);
 var create = Rx.Observable.fromNodeCallback(Challenge.create, Challenge);
 
 destroy()
-  .flatMap(function() { return Rx.Observable.from(challenges); })
-  .flatMap(function(file) {
-    var challengeSpec = require('./challenges/' + file);
+  .flatMap(function() { return Rx.Observable.from(getChallenges()); })
+  .flatMap(function(challengeSpec) {
     var order = challengeSpec.order;
     var block = challengeSpec.name;
     var isBeta = !!challengeSpec.isBeta;
-    console.log('parsed %s successfully', file);
+    var fileName = challengeSpec.fileName;
+    console.log('parsed %s successfully', block);
 
     // challenge file has no challenges...
     if (challengeSpec.challenges.length === 0) {
@@ -43,6 +38,8 @@ destroy()
           .toLowerCase()
           .replace(/\:/g, '')
           .replace(/\s/g, '-');
+
+        challenge.fileName = fileName;
         challenge.order = order;
         challenge.suborder = index + 1;
         challenge.block = block;

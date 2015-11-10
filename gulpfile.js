@@ -93,8 +93,7 @@ var paths = {
   ],
 
   challenges: [
-    'seed/challenges/*.json',
-    'seed/under-construction/*.json'
+    'seed/challenges/*.json'
   ]
 };
 
@@ -178,7 +177,14 @@ gulp.task('sync', syncDepenedents, function() {
 });
 
 gulp.task('lint-js', function() {
-  return gulp.src(['public/js/lib/**/*'])
+  return gulp.src([
+    'common/**/*.js',
+    'common/**/*.jsx',
+    'client/**/*.js',
+    'client/**/*.jsx',
+    'server/**/*.js',
+    'config/**/*.js'
+  ])
     .pipe(eslint())
     .pipe(eslint.format());
 });
@@ -392,10 +398,15 @@ var watchDependents = [
   'pack-watch-manifest'
 ];
 
+gulp.task('reload', function() {
+  notify({ message: 'test changed' });
+  reload();
+});
+
 gulp.task('watch', watchDependents, function() {
   gulp.watch(paths.lessFiles, ['less']);
   gulp.watch(paths.js, ['js']);
-  gulp.watch(paths.challenges, ['test-challenges']);
+  gulp.watch(paths.challenges, ['test-challenges', 'reload']);
   gulp.watch(paths.js, ['js', 'dependents']);
   gulp.watch(paths.dependents, ['dependents']);
   gulp.watch(paths.manifest + '/*.json', ['build-manifest-watch']);

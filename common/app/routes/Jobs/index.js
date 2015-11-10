@@ -2,6 +2,8 @@ import Jobs from './components/Jobs.jsx';
 import NewJob from './components/NewJob.jsx';
 import Show from './components/Show.jsx';
 import Preview from './components/Preview.jsx';
+import GoToPayPal from './components/GoToPayPal.jsx';
+import NewJobCompleted from './components/NewJobCompleted.jsx';
 
 /*
  *  index: /jobs list jobs
@@ -19,6 +21,12 @@ export default {
   }, {
     path: 'jobs/new/preview',
     component: Preview
+  }, {
+    path: 'jobs/new/check-out',
+    component: GoToPayPal
+  }, {
+    path: 'jobs/new/completed',
+    component: NewJobCompleted
   }, {
     path: 'jobs/:id',
     component: Show

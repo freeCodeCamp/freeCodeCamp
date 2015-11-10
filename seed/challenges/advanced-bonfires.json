@@ -157,7 +157,6 @@
         "Global Object"
       ],
       "solutions": [
-        "var VALUES = [1, 5, 10, 25, 100, 500, 1000, 2000, 10000];\n\nfunction drawer(price, cash, cid) {\n  cash = ~~(cash * 100);\n  price = ~~(price * 100);\n  var diff = cash-price;\n  cid.forEach(function(c) {\n    c[1] = ~~(c[1] * 100);\n  });\n  var totalCid = cid.reduce(function(a, c) {\n    return a + c[1];\n  }, 0);\n  if (diff > totalCid) {\n    return \"Insufficient Funds\";\n  }\n  if (diff === totalCid) {\n    return \"Closed\";\n  }\n  \n  var change = []; \n  var index = cid.length;\n  while (diff > 0 && --index > -1) {\n    var t = 0;\n    var value = VALUES[index];\n    while (diff >= value && cid[index][1] > 0) {\n      t += value;\n      cid[index][1] -= value;\n      diff -= value;\n    }\n    if (t) {\n      change.push([cid[index][0], t/100]);\n    }\n    console.log(JSON.stringify(change));\n  }\n  // Here is your change, ma'am.\n  return change;\n}\n\n// Example cash-in-drawer array:\n// [['PENNY', 1.01],\n// ['NICKEL', 2.05],\n// ['DIME', 3.10],\n// ['QUARTER', 4.25],\n// ['ONE', 90.00],\n// ['FIVE', 55.00],\n// ['TEN', 20.00],\n// ['TWENTY', 60.00],\n// ['ONE HUNDRED', 100.00]]\n\ndrawer(19.50, 20.00, [['PENNY', 1.01], ['NICKEL', 2.05], ['DIME', 3.10], ['QUARTER', 4.25], ['ONE', 90.00], ['FIVE', 55.00], ['TEN', 20.00], ['TWENTY', 60.00], ['ONE HUNDRED', 100.00]]);\n"
       ],
       "type": "bonfire",
       "challengeType": 5,
