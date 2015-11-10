@@ -122,7 +122,7 @@
   "devDependencies": {
     "blessed": "~0.1.81",
     "bower-main-files": "~0.0.4",
-    "browser-sync": "~2.9.12",
+    "browser-sync": "~2.10.0",
     "chai": "~3.4.0",
     "envify": "^3.4.0",
     "istanbul": "^0.4.0",
