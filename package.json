@@ -57,7 +57,7 @@
     "forever": "~0.15.1",
     "frameguard": "^0.2.2",
     "gulp": "~3.9.0",
-    "gulp-eslint": "~1.0.0",
+    "gulp-eslint": "~1.1.0",
     "gulp-inject": "~3.0.0",
     "gulp-jsonlint": "^1.1.0",
     "gulp-less": "^3.0.3",
