@@ -54,6 +54,10 @@
       "default": [],
       "description": "prepended to user code"
     },
+    "fileName": {
+      "type": "string",
+      "description": "filename challenge comes from. Used in dev mode"
+    },
     "challengeSeed": {
       "type": "array"
     },
