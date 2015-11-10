@@ -398,7 +398,7 @@ var watchDependents = [
   'pack-watch-manifest'
 ];
 
-gulp.task('reload', () => {
+gulp.task('reload', function() {
   notify({ message: 'test changed' });
   reload();
 });
