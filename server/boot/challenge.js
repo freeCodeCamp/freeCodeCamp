@@ -4,7 +4,15 @@ import moment from 'moment';
 import { Observable, Scheduler } from 'rx';
 import assign from 'object.assign';
 import debugFactory from 'debug';
-import utils from '../utils';
+
+import {
+  dasherize,
+  unDasherize,
+  getMDNLinks,
+  randomVerb,
+  randomPhrase,
+  randomCompliment
+} from '../utils';
 
 import {
   saveUser,
@@ -15,6 +23,8 @@ import {
 import {
   ifNoUserSend
 } from '../utils/middleware';
+
+import getFromDisk$ from '../utils/getFromDisk$';
 
 const isDev = process.env.NODE_ENV !== 'production';
 const isBeta = !!process.env.BETA;
@@ -30,10 +40,6 @@ const challengeView = {
   5: 'coursewares/showBonfire',
   7: 'coursewares/showStep'
 };
-
-const dasherize = utils.dasherize;
-const unDasherize = utils.unDasherize;
-const getMDNLinks = utils.getMDNLinks;
 
 /*
 function makeChallengesUnique(challengeArr) {
@@ -263,6 +269,12 @@ module.exports = function(app) {
       })
       .last({ defaultValue: null })
       .flatMap(challenge => {
+        if (challenge && isDev) {
+          return getFromDisk$(challenge);
+        }
+        return Observable.just(challenge);
+      })
+      .flatMap(challenge => {
 
         // Handle not found
         if (!challenge) {
@@ -311,11 +323,9 @@ module.exports = function(app) {
           MDNlinks: getMDNLinks(challenge.MDNlinks),
 
           // htmls specific
-          environment: utils.whichEnvironment(),
-
-          verb: utils.randomVerb(),
-          phrase: utils.randomPhrase(),
-          compliment: utils.randomCompliment()
+          verb: randomVerb(),
+          phrase: randomPhrase(),
+          compliment: randomCompliment()
         });
       })
       .subscribe(
