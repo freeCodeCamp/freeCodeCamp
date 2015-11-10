@@ -90,9 +90,8 @@ block content
                                 var offsetCalendar = {};
                                 for (var prop in calendar) {
                                   if (calendar.hasOwnProperty(prop)) {
-                                    var offsetProp = +prop + secondsToOffset;
-                                      offsetCalendar[offsetProp] =
-                                        calendar[prop];
+                                    var offsetProp = prop + secondsToOffset;
+                                    offsetCalendar[offsetProp] = calendar[prop];
                                   }
                                 }
                                 cal.init({
