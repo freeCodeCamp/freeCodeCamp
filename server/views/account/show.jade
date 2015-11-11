@@ -76,8 +76,8 @@ block content
                     //        | Add them to my personal leaderboard
 
             .spacer
-                .hidden-xs.hidden-sm.col-md-12
-                    #cal-heatmap.d3-centered
+                .col-md-12
+                    #cal-heatmap.hidden-xs.hidden-sm.d3-centered
                         script.
                             $(document).ready(function () {
                                 var estUTCOffset = -5;
@@ -128,47 +128,55 @@ block content
                                     thead
                                         tr
                                             th.col-xs-4 Project
-                                            th.col-xs-2 Completed
-                                            th.col-xs-6 Link
+                                            th.col-xs-2.hidden-xs Completed
+                                            th.col-xs-6.hidden-xs Link
                                     for challenge in baseAndZip
                                         tr
-                                            td.col-xs-4
+                                            td.col-xs-4.hidden-xs
                                                 a(href='/challenges/' + challenge.name, target='_blank')= challenge.name
-                                            td.col-xs-2= moment(challenge.completedDate, 'x').format("MMM DD, YYYY")
-                                            td.col-xs-6
+                                            td.col-xs-2.hidden-xs= moment(challenge.completedDate, 'x').format("MMM DD, YYYY")
+                                            td.col-xs-6.hidden-xs
                                                 a(href=challenge.solution, target='_blank') View my project
+                                            td.col-xs-12.visible-xs
+                                                a(href=challenge.solution, target='_blank')=challenge.name
                         if (bonfires.length > 0)
                             .col-sm-12
                                 table.table.table-striped
                                     thead
                                         tr
                                             th.col-xs-4 Bonfire
-                                            th.col-xs-2 Completed
-                                            th.col-xs-6 Solution
+                                            th.col-xs-2.hidden-xs Completed
+                                            th.col-xs-6.hidden-xs Solution
                                     for bonfire in bonfires
                                         tr
-                                            td.col-xs-4= bonfire.name
-                                            td.col-xs-2= moment(bonfire.completedDate, 'x').format("MMM DD, YYYY")
-                                            td.col-xs-6
+                                            td.col-xs-4.hidden-xs= bonfire.name
+                                            td.col-xs-2.hidden-xs= moment(bonfire.completedDate, 'x').format("MMM DD, YYYY")
+                                            td.col-xs-6.hidden-xs
                                                 a(href='/challenges/' + bonfire.name + '?solution=' + encodeURIComponent(replaceScriptTags(bonfire.solution)), target='_blank') View my solution
+                                            td.col-xs-12.visible-xs
+                                                a(href='/challenges/' + bonfire.name + '?solution=' + encodeURIComponent(replaceScriptTags(bonfire.solution)), target='_blank')= bonfire.name
                         if (waypoints.length > 0)
                             .col-sm-12
                                 table.table.table-striped
                                     thead
                                         tr
                                             th.col-xs-4 Waypoints
-                                            th.col-xs-2 Completed
-                                            th.col-xs-6 Solution
+                                            th.col-xs-2.hidden-xs Completed
+                                            th.col-xs-6.hidden-xs Solution
                                     for challenge in waypoints
                                         tr
-                                            td.col-xs-4= challenge.name
-                                            td.col-xs-2= moment(challenge.completedDate, 'x').format("MMM DD, YYYY")
-                                            td.col-xs-6
+                                            td.col-xs-4.hidden-xs= challenge.name
+                                            td.col-xs-2.hidden-xs= moment(challenge.completedDate, 'x').format("MMM DD, YYYY")
+                                            td.col-xs-6.hidden-xs
                                               if (challenge.solution)
                                                   a(href='/challenges/' + challenge.name + '?solution=' + encodeURIComponent(replaceScriptTags(challenge.solution)), target='_blank') View my solution
                                               else
                                                   a(href='/challenges/' + challenge.name) View this challenge
-
+                                            td.col-xs-12.visible-xs
+                                              if (challenge.solution)
+                                                  a(href='/challenges/' + challenge.name + '?solution=' + encodeURIComponent(replaceScriptTags(challenge.solution)), target='_blank')= challenge.name
+                                              else
+                                                  a(href='/challenges/' + challenge.name)= challenge.name
     if (user && user.username === username)
         .panel.panel-info
             .panel-heading.text-center Manage your account
