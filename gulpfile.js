@@ -19,7 +19,7 @@ var Rx = require('rx'),
   merge = require('merge-stream'),
 
   // react app
-  webpack = require('gulp-webpack'),
+  webpack = require('webpack-stream'),
   webpackConfig = require('./webpack.config.js'),
   webpackConfigNode = require('./webpack.config.node.js'),
 
@@ -356,40 +356,25 @@ function getFilesGlob(files) {
   });
 }
 
-gulp.task('vendor', ['js'], function() {
-  var manifestName = 'js-manifest.json';
-  var dest = paths.publicJs;
-
-  var vendorFiles = merge(
-    gulp.src(getFilesGlob(paths.vendorMain))
-      .pipe(concat('vendor-main.js')),
-    gulp.src(paths.vendorChallenges)
-      .pipe(__DEV__ ? gutil.noop() : uglify())
-      .pipe(concat('vendor-challenges.js'))
-  );
-
-  return vendorFiles.pipe(gulp.dest(dest))
-    // create registry file
-    .pipe(rev())
-    // copy revisioned assets to dest
-    .pipe(gulp.dest(dest))
-    // create manifest file
-    .pipe(rev.manifest(manifestName))
-    .pipe(delRev(
-      dest,
-      manifestName
-    ))
-    // copy manifest file to dest
-    .pipe(gulp.dest(paths.manifest));
-});
-
 gulp.task('js', function() {
   var manifestName = 'js-manifest.json';
   var dest = paths.publicJs;
 
-  return gulp.src(paths.js)
-    .pipe(plumber({ errorHandler: errorHandler }))
-    .pipe(__DEV__ ? gutil.noop() : uglify())
+  var jsFiles = merge(
+
+    gulp.src(getFilesGlob(paths.vendorMain))
+      .pipe(concat('vendor-main.js')),
+
+    gulp.src(paths.vendorChallenges)
+      .pipe(__DEV__ ? gutil.noop() : uglify())
+      .pipe(concat('vendor-challenges.js')),
+
+    gulp.src(paths.js)
+      .pipe(plumber({ errorHandler: errorHandler }))
+      .pipe(__DEV__ ? gutil.noop() : uglify())
+  );
+
+  return jsFiles
     .pipe(gulp.dest(dest))
     // create registry file
     .pipe(rev())
@@ -444,7 +429,7 @@ function buildManifest() {
     .pipe(gulp.dest('server/'));
 }
 
-var buildDependents = ['less', 'js', 'dependents', 'vendor'];
+var buildDependents = ['less', 'js', 'dependents'];
 
 gulp.task('build-manifest', buildDependents, function() {
   return buildManifest();

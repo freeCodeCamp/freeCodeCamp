@@ -1,3 +1,4 @@
+var webpack = require('webpack');
 var path = require('path');
 var webpack = require('webpack');
 
@@ -31,6 +32,8 @@ module.exports = {
     ]
   },
   plugins: [
+    new webpack.optimize.DedupePlugin(),
+    new webpack.optimize.OccurenceOrderPlugin(true),
     new webpack.DefinePlugin({
       'process.env': {
         'NODE_ENV': JSON.stringify(__DEV__ ? 'development' : 'production')
