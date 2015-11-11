@@ -10,7 +10,7 @@
     "create-rev": "test ! -e server/rev-manifest.json && echo '\n\ncreating manifest\n\n' && touch server/rev-manifest.json && echo '{}' >> server/rev-manifest.json",
     "build": "NODE_ENV=production gulp build -p",
     "start": "babel-node server/server.js",
-    "prestart-production": "bower cache clean && bower install && gulp build",
+    "prestart-production": "bower cache clean && bower install && gulp build -p",
     "start-production": "node pm2Start",
     "lint": "npm run lint-js && npm run lint-json",
     "lint-challenges": "jsonlint -q seed/challenges/*.json",
@@ -122,12 +122,9 @@
     "url-regex": "^3.0.0",
     "validator": "^4.2.1",
     "webpack": "^1.9.12",
+    "webpack-stream": "^2.1.1",
     "xss-filters": "^1.2.6",
-<<<<<<< HEAD
     "yargs": "^3.30.0"
-=======
-    "yargs": "^3.29.0"
->>>>>>> bundle vendor files
   },
   "devDependencies": {
     "blessed": "~0.1.81",
