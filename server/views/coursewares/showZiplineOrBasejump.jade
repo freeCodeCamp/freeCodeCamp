@@ -68,10 +68,8 @@ block content
                     if (user)
                         a.btn.btn-lg.btn-primary.btn-block#next-courseware-button(name='_csrf', value=_csrf, ng-disabled='completedWithForm.$invalid') Go to my next challenge
                         .button-spacer
-                        script.
                     else
                         a.btn.btn-lg.btn-primary.btn-block(href='/challenges/next-challenge?id=' + challengeId) Go to my next challenge
-        script.
     include ../partials/challenge-modals
     script.
       var common = window.common || { init: [] };
