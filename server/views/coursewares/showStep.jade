@@ -52,4 +52,4 @@ block content
       common.isFrontEndCert = !{JSON.stringify(isFrontEndCert || false)};
       common.isFullStackCert = !{JSON.stringify(isFullStackCert || false)};
       common.challengeSeed = !{JSON.stringify(challengeSeed || [])};
-    script(src=rev('/js', 'commonFramework.js'))
+    include ..partials/challenge-footer

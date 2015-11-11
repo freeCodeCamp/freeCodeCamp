@@ -268,7 +268,7 @@ common.codeOutput = (function(CodeMirror, document, challengeType) {
   return codeOutput;
 }(window.CodeMirror, window.document, common.challengeType || 0));
 
-var sandBox = (function(jailed, codeOutput) {
+common.sandBox = (function(jailed, codeOutput) {
   if (!jailed) {
     return {};
   }
@@ -818,7 +818,7 @@ function safeHTMLRun(test) {
         '  return this;' +
         '};' + s;
 
-      sandBox.submit(scopejQuery(s), function(cls, message) {
+      common.sandBox.submit(scopejQuery(s), function(cls, message) {
         if (cls) {
           console.log(message.error);
           workerError(message.error);
@@ -1398,7 +1398,7 @@ function bonfireExecute(shouldTest) {
 
     if (userJavaScript.match(/function/gi)) {
       if (userJavaScript.match(/function\s*?\(|function\s+\w+\s*?\(/gi)) {
-        sandBox.submit(userJavaScript, function(cls, message) {
+        common.sandBox.submit(userJavaScript, function(cls, message) {
           if (failedCommentTest) {
             editor.setValue(editor.getValue() + '*/');
             console.log('Caught Unfinished Comment');
@@ -1422,7 +1422,7 @@ function bonfireExecute(shouldTest) {
         codeOutput.setValue('Unsafe or unfinished function declaration');
       }
     } else {
-      sandBox.submit(userJavaScript, function(cls, message) {
+      common.sandBox.submit(userJavaScript, function(cls, message) {
 
         if (failedCommentTest) {
           editor.setValue(editor.getValue() + '*/');

@@ -1,23 +1,9 @@
 extends ../layout-wide
 block content
-    script(src='/js/lib/codemirror/lib/codemirror.js')
-    script(src='/js/lib/codemirror/addon/edit/closebrackets.js')
-    script(src='/js/lib/codemirror/addon/edit/matchbrackets.js')
-    script(src='/js/lib/codemirror/addon/lint/lint.js')
-    script(src='/js/lib/codemirror/addon/lint/javascript-lint.js')
-    script(src='/bower_components/jshint/dist/jshint.js')
-    script(src='/js/lib/chai/chai.js')
-    script(src='/js/lib/chai/chai-jquery.js')
     link(rel='stylesheet', href='/js/lib/codemirror/lib/codemirror.css')
     link(rel='stylesheet', href='/js/lib/codemirror/addon/lint/lint.css')
     link(rel='stylesheet', href='/js/lib/codemirror/theme/monokai.css')
     link(rel='stylesheet', href='/css/ubuntu.css')
-    script(src='/js/lib/codemirror/mode/javascript/javascript.js')
-    script(src='/js/lib/jailed/jailed.js')
-    script(src='/js/lib/codemirror/mode/xml/xml.js')
-    script(src='/js/lib/codemirror/mode/css/css.js')
-    script(src='/js/lib/codemirror/mode/htmlmixed/htmlmixed.js')
-    script(src='/js/lib/codemirror/addon/emmet/emmet.js')
     .row.courseware-height
         .col-md-3.col-lg-3
             .scroll-locker(id = "scroll-locker")

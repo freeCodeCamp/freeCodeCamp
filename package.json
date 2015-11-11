@@ -57,6 +57,7 @@
     "forever": "~0.15.1",
     "frameguard": "~0.2.2",
     "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0",
     "gulp-eslint": "^1.1.0",
     "gulp-inject": "^3.0.0",
     "gulp-jsonlint": "^1.1.0",
@@ -64,6 +65,7 @@
     "gulp-minify-css": "^1.2.1",
     "gulp-nodemon": "^2.0.3",
     "gulp-notify": "^2.2.0",
+    "gulp-order": "^1.1.1",
     "gulp-plumber": "^1.0.1",
     "gulp-reduce-file": "0.0.1",
     "gulp-rev": "^6.0.1",
@@ -82,6 +84,7 @@
     "loopback-boot": "^2.13.0",
     "loopback-component-passport": "^1.6.0",
     "loopback-connector-mongodb": "^1.10.0",
+    "merge-stream": "^1.0.0",
     "method-override": "^2.3.0",
     "moment": "^2.10.2",
     "mongodb": "^2.0.33",
@@ -120,7 +123,11 @@
     "validator": "^4.2.1",
     "webpack": "^1.9.12",
     "xss-filters": "^1.2.6",
+<<<<<<< HEAD
     "yargs": "^3.30.0"
+=======
+    "yargs": "^3.29.0"
+>>>>>>> bundle vendor files
   },
   "devDependencies": {
     "blessed": "~0.1.81",
