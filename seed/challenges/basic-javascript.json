@@ -7,7 +7,7 @@
       "id": "bd7123c9c441eddfaeb4bdef",
       "title": "Comment your JavaScript Code",
       "description": [
-        "Comments are lines of code that your computer will intentionally ignore. Comments are a great way to leave notes to yourself and to other people who will later need to figure out what it does.",
+        "Comments are lines of code that your computer will intentionally ignore. Comments are a great way to leave notes to yourself and to other people who will later need to figure out what that code does.",
         "Let's take a look at the two ways you can write comments in JavaScript.",
         "The double-slash comment will comment out the remainder of the text on the current line:",
         "<code>// This is a comment.</code>",
@@ -30,7 +30,7 @@
       "description": [
         "In computer science, <code>data structures</code> are things that hold data. JavaScript has seven of these. For example, the <code>Number</code> data structure holds numbers.",
         "Let's learn about the most basic data structure of all: the <code>Boolean</code>. Booleans can only hold the value of either true or false. They are basically little on-off switches.",
-        "Let's modify our <code>welcomeToBooleans</code> function so that it will return <code>true</code> instead of <code>false</code>when the run button is clicked."
+        "Let's modify our <code>welcomeToBooleans</code> function so that it will return <code>true</code> instead of <code>false</code> when the run button is clicked."
       ],
       "tests": [
         "assert(typeof(welcomeToBooleans()) === 'boolean', 'message: The <code>welcomeToBooleans()</code> function should return a boolean &#40;true/false&#41; value.');",
@@ -88,7 +88,6 @@
         "assert((function(){if(typeof(myLastName) !== \"undefined\" && typeof(myLastName) === \"string\" && myLastName.length > 0){return true;}else{return false;}})(), 'message: <code>myLastName</code> should be a string with at least one character in it.');"
       ],
       "challengeSeed": [
-        "var name = \"Alan Turing\";",
         "var firstName = \"Alan\";",
         "var lastName = \"Turing\";",
         "",
@@ -141,11 +140,11 @@
         "<code>Bracket notation</code> is a way to get a character at a specific <code>index</code> within a string.",
         "Computers don't start counting at 1 like humans do. They start at 0.",
         "For example, the character at index 0 in the word \"Charles\" is \"C\". So if <code>var firstName = \"Charles\"</code>, you can get the value of the first letter of the string by using <code>firstName[0]</code>.",
-        "Use <code>bracket notation</code> to find the first character in the <code>firstLetterOfLastName</code> variable.",
+        "Use <code>bracket notation</code> to find the first character in the <code>lastName</code> variable and assign it to <code>firstLetterOfLastName</code>.",
         "Try looking at the <code>firstLetterOfFirstName</code> variable declaration if you get stuck."
       ],
       "tests": [
-        "assert((function(){if(typeof(firstLetterOfLastName) !== \"undefined\" && editor.getValue().match(/\\[0\\]/gi) && typeof(firstLetterOfLastName) === \"string\" && firstLetterOfLastName === \"L\"){return true;}else{return false;}})(), 'message: The first letter of <code>firstLetterOfLastName</code> should be a <code>\"L\"</code>.');"
+        "assert((function(){if(typeof(firstLetterOfLastName) !== \"undefined\" && editor.getValue().match(/\\[0\\]/gi) && typeof(firstLetterOfLastName) === \"string\" && firstLetterOfLastName === \"L\"){return true;}else{return false;}})(), 'message: The <code>firstLetterOfLastName</code> variable should have the value of <code>L</code>.');"
       ],
       "challengeSeed": [
         "var firstLetterOfFirstName = \"\";",
@@ -177,7 +176,7 @@
         "Try looking at the <code>secondLetterOfFirstName</code> variable declaration if you get stuck."
       ],
       "tests": [
-        "assert(thirdLetterOfLastName === 'v', 'message: The third letter of <code>lastName</code> should be a \"v\".');"
+        "assert(thirdLetterOfLastName === 'v', 'message: The <code>thirdLetterOfLastName</code> variable should have the value of <code>v</code>.');"
       ],
       "challengeSeed": [
         "var firstName = \"Ada\";",
@@ -230,7 +229,7 @@
       "id": "bd7123c9c452eddfaeb5bdef",
       "title": "Use Bracket Notation to Find the Nth-to-Last Character in a String",
       "description": [
-        "In order to get the last letter of a string, you can subtract one from the string's length.",
+        "You can use the same principle we just used to retrieve the last character in a string to retrieve the Nth-to-last character.",
         "For example, you can get the value of the third-to-last letter of the <code>var firstName = \"Charles\"</code> string by using <code>firstName[firstName.length - 3]</code>",
         "Use <code>bracket notation</code> to find the second-to-last character in the <code>lastName</code> string.",
         "Try looking at the <code>thirdToLastLetterOfFirstName</code> variable declaration if you get stuck."
@@ -525,7 +524,7 @@
       "title": "Manipulate Arrays With pop()",
       "description": [
         "Another way to change the data in an array is with the <code>.pop()</code> function.",
-        "<code>.pop()</code>is used to \"pop\" a value off of the end of an array. We can store this \"popped off\" variable by performing <code>pop()</code> within a variable declaration.",
+        "<code>.pop()</code> is used to \"pop\" a value off of the end of an array. We can store this \"popped off\" variable by performing <code>pop()</code> within a variable declaration.",
         "Any type of data structure can be \"popped\" off of an array - numbers, strings, even nested arrays.",
         "Use the <code>.pop()</code> function to remove the last item from <code>myArray</code>, assigning the \"popped off\" value to <code>removedFromMyArray</code>."
       ],
@@ -662,7 +661,7 @@
         "Create and call a function called <code>myFunction</code> that returns the sum of <code>a</code> and <code>b</code>."
       ],
       "tests": [
-        "assert((function(){if(typeof(f) !== \"undefined\" && f === a + b){return true;}else{return false;}})(), 'message: Your function should return the value of a + b');"
+        "assert((function(){if(typeof(f) !== \"undefined\" && f === a + b){return true;}else{return false;}})(), 'message: Your function should return the value of <code>a + b</code>.');"
       ],
       "challengeSeed": [
         "var a = 4;",
@@ -772,6 +771,10 @@
         "  \"friends\": [\"Free Code Camp Campers\"]",
         "};",
         "",
+        "// Only change code below this line.",
+        "",
+        "",
+        "",
         "// Only change code above this line.",
         "",
         "(function(z){return z;})(myDog);"
@@ -868,26 +871,26 @@
         "You can run the same code multiple times by using a loop.",
         "The most common type of JavaScript loop is called a \"for loop\" because it runs \"for\" a specific number of times.",
         "For loops are declared with three optional expressions seperated by semicolons:",
-        "<code>for([initialization]; [condition]; [final-expression])</code>",
+        "<code>for ([initialization]; [condition]; [final-expression])</code>",
         "The <code>initialization</code> statement is executed one time only before the loop starts. It is typically used to define and setup your loop variable.",
         "The <code>condition</code> statement is evaluated at the beginning of every loop iteration and will continue as long as it evalutes to <code>true</code>. When <code>condition</code> is <code>false</code> at the start of the iteration, the loop will stop executing.  This means if <code>condition</code> starts as <code>false</code>, your loop will never execute.",
         "The <code>final-expression</code> is executed at the end of each loop iteration, prior to the next <code>condition</code> check and is usually used to increment or decrement your loop counter.",
         "In the following example we initialize with <code>i = 0</code> and iterate while our condition <code>i < 5</code> is true.  We'll increment <code>i</code> by <code>1</code> in each loop iteration with <code>i++</code> as our <code>final-expression</code>.",
         "<code>var ourArray = [];</code>",
-        "<code>for(var i = 0; i < 5; i++) {</code>",
+        "<code>for (var i = 0; i < 5; i++) {</code>",
         "<code>&nbsp;&nbsp;ourArray.push(i);</code>",
         "<code>}</code>",
         "<code>ourArray</code> will now contain <code>[0,1,2,3,4]</code>.",
-        "Let's try getting a <code>for</code> loop to work by pushing values to an array."
+        "Let's use a <code>for</code> loop to work to push the values 1 through 5 onto <code>myArray</code>."
       ],
       "tests": [
         "assert(editor.getValue().match(/for\\s*\\(/g).length > 1, 'message: You should be using a <code>for</code> loop for this.');",
-        "assert.deepEqual(myArray, [0,1,2,3,4], 'message: <code>myArray</code> should equal <code>[0,1,2,3,4]</code>');"
+        "assert.deepEqual(myArray, [1,2,3,4,5], 'message: <code>myArray</code> should equal <code>[1,2,3,4,5]</code>.');"
       ],
       "challengeSeed": [
         "var ourArray = [];",
         "",
-        "for(var i = 0; i < 5; i++){",
+        "for (var i = 0; i < 5; i++) {",
         "  ourArray.push(i);",
         "}",
         "",
@@ -912,21 +915,21 @@
         "For loops don't have to iterate one at a time. By changing our <code>final-expression</code>, we can count by even numbers.",
         "We'll start at <code>i = 0</code> and loop while <code>i < 10</code>.  We'll increment <code>i</code> by 2 each loop with <code>i += 2</code>.",
         "<code>var ourArray = [];</code>",
-        "<code>for(var i = 0; i < 10; i += 2) {</code>",
+        "<code>for (var i = 0; i < 10; i += 2) {</code>",
         "<code>&nbsp;&nbsp;ourArray.push(i);</code>",
         "<code>}</code>",
-        "<code>ourArray</code> will now contain [0,2,4,6,8] ",
+        "<code>ourArray</code> will now contain <code>[0,2,4,6,8]</code>.",
         "Let's change our <code>initialization</code> and <code>final-expression</code> so we can count by odd numbers.",
-        "Push the odd numbers from 1 through 9 to <code>myArray</code> using a <code>for loop</code>."
+        "Push the odd numbers from 1 through 9 to <code>myArray</code> using a <code>for</code> loop."
       ],
       "tests":[
         "assert(editor.getValue().match(/for\\s*\\(/g).length > 1, 'message: You should be using a <code>for</code> loop for this.');",
-        "assert.deepEqual(myArray, [1,3,5,7,9], 'message: <code>myArray</code> should equal <code>[1,3,5,7,9]</code>');"
+        "assert.deepEqual(myArray, [1,3,5,7,9], 'message: <code>myArray</code> should equal <code>[1,3,5,7,9]</code>.');"
       ],
       "challengeSeed":[
         "var ourArray = [];",
         "",
-        "for(var i = 0; i < 10; i += 2){",
+        "for (var i = 0; i < 10; i += 2) {",
         "  ourArray.push(i);",
         "}",
         "",
@@ -952,21 +955,21 @@
         "In order to count backwards by twos, we'll need to change our <code>initialization</code>, <code>condition</code>, and <code>final-expression</code>.",
         "We'll start at <code>i = 10</code> and loop while <code>i > 0</code>.  We'll decrement <code>i</code> by 2 each loop with <code>i -= 2</code>.",
         "<code>var ourArray = [];</code>",
-        "<code>for(var i = 10; i > 0; i -= 2) {</code>",
+        "<code>for (var i = 10; i > 0; i -= 2) {</code>",
         "<code>&nbsp;&nbsp;ourArray.push(i);</code>",
         "<code>}</code>",
-        "<code>ourArray</code> will now contain <code>[10,8,6,4,2]</code>",
+        "<code>ourArray</code> will now contain <code>[10,8,6,4,2]</code>.",
         "Let's change our <code>initialization</code> and <code>final-expression</code> so we can count backward by twos for numbers.",
-        "Push the odd numbers from 9 through 1 to <code>myArray</code> using a <code>for loop</code>."
+        "Push the odd numbers from 9 through 1 to <code>myArray</code> using a <code>for</code> loop."
       ],
       "tests":[
         "assert(editor.getValue().match(/for\\s*\\(/g).length > 1, 'message: You should be using a <code>for</code> loop for this.');",
-        "assert.deepEqual(myArray, [9,7,5,3,1], 'message: <code>myArray</code> should equal <code>[9,7,5,3,1]</code>');"
+        "assert.deepEqual(myArray, [9,7,5,3,1], 'message: <code>myArray</code> should equal <code>[9,7,5,3,1]</code>.');"
       ],
       "challengeSeed":[
         "var ourArray = [];",
         "",
-        "for(var i = 10; i > 0; i -= 2){",
+        "for (var i = 10; i > 0; i -= 2) {",
         "  ourArray.push(i);",
         "}",
         "",
@@ -997,11 +1000,11 @@
         "<code>&nbsp;&nbsp;i++;</code>",
         "<code>}</code>",
         "Let's try getting a while loop to work by pushing values to an array.",
-        "Push the numbers 0 through 4 to <code>myArray</code> using a <code>while loop</code>."
+        "Push the numbers 0 through 4 to <code>myArray</code> using a <code>while</code> loop."
       ],
       "tests": [
         "assert(editor.getValue().match(/while/g), 'message: You should be using a <code>while</code> loop for this.');",
-        "assert.deepEqual(myArray, [0,1,2,3,4], 'message: <code>myArray</code> should equal <code>[0,1,2,3,4]</code>');"
+        "assert.deepEqual(myArray, [0,1,2,3,4], 'message: <code>myArray</code> should equal <code>[0,1,2,3,4]</code>.');"
       ],
       "challengeSeed": [
         "var myArray = [];",
@@ -1071,7 +1074,7 @@
       "challengeSeed": [
         "var randomNumberBetween0and19 = Math.floor(Math.random() * 20);",
         "",
-        "function myFunction(){",
+        "function myFunction() {",
         "",
         "  // Only change code below this line.",
         "",
@@ -1093,7 +1096,7 @@
         "To do this, we'll define a minimum number <code>min</code> and a maximum number <code>max</code>.",
         "Here's the formula we'll use. Take a moment to read it and try to understand what this code is doing:",
         "<code>Math.floor(Math.random() * (max - min + 1)) + min</code>",
-        "Define two variables: <code>myMin</code> and </code>myMax</code>, and set them both equal to numbers.",
+        "Define two variables: <code>myMin</code> and <code>myMax</code>, and set them both equal to numbers.",
         "Then create a function called <code>myFunction</code> that returns a random number that's greater than or equal to <code>myMin</code>, and is less than or equal to <code>myMax</code>."
       ],
       "tests": [
@@ -1212,7 +1215,7 @@
       "title": "Find Numbers with Regular Expressions",
       "description": [
         "We can use special selectors in <code>Regular Expressions</code> to select a particular type of value.",
-        "One such selector is the digit selector <code>\\d</code> which is used to grab the numbers in a string.",
+        "One such selector is the digit selector <code>\\d</code> which is used to retrieve the numbers in a string.",
         "It is used like this: <code>/\\d/g</code>.",
         "For numbers this is often written as <code>/\\d+/g</code>, where the <code>+</code> following the digit selector allows this regular expression to match multi-digit numbers.",
         "Use the <code>\\d</code> selector to select the number of numbers in the string, allowing for the possibility of multi-digit numbers."
@@ -1316,7 +1319,7 @@
       ],
       "challengeSeed": [
         "fccss",
-        "  function runSlots(){",
+        "  function runSlots() {",
         "    var slotOne;",
         "    var slotTwo;",
         "    var slotThree;",
@@ -1332,14 +1335,14 @@
         "    $(\".logger\").html(\"\");",
         "    $(\".logger\").html(\"Not A Win\")",
         "    ",
-        "    if(slotOne !== undefined && slotTwo !== undefined && slotThree !== undefined){",
+        "    if (slotOne !== undefined && slotTwo !== undefined && slotThree !== undefined) {",
         "      $(\".logger\").html(slotOne + \" \" + slotTwo + \" \" + slotThree);",
         "    }",
         "    return [slotOne, slotTwo, slotThree];",
         "  }",
         "",
-        "  $(document).ready(function(){",
-        "     $(\".go\").click(function(){",
+        "  $(document).ready(function() {",
+        "     $(\".go\").click(function() {",
         "       runSlots();",
         "     });",
         "   });",
@@ -1460,7 +1463,7 @@
         "Otherwise, we should return <code>null</code>, which is a JavaScript data structure that means nothing.",
         "If all three numbers match, we should return the number that we have in three of slots or leave it as <code>null</code>.",
         "Let's create an <code>if statement</code> with multiple conditions in order to check whether all numbers are equal.",
-        "<code>if(slotOne !== slotTwo || slotTwo !== slotThree){</code>",
+        "<code>if (slotOne !== slotTwo || slotTwo !== slotThree) {</code>",
         "<code>&nbsp;&nbsp;return null;</code>",
         "<code>}</code>"
       ],
@@ -1469,7 +1472,7 @@
       ],
       "challengeSeed": [
         "fccss",
-        "  function runSlots(){",
+        "  function runSlots() {",
         "    var slotOne;",
         "    var slotTwo;",
         "    var slotThree;",
@@ -1489,7 +1492,7 @@
         "    ",
         "    // Only change code above this line.",
         "    ",
-        "    if(slotOne !== undefined && slotTwo !== undefined && slotThree !== undefined){",
+        "    if (slotOne !== undefined && slotTwo !== undefined && slotThree !== undefined) {",
         "      $(\".logger\").html(slotOne);",
         "      $(\".logger\").append(\" \" + slotTwo);",
         "      $(\".logger\").append(\" \" + slotThree);",
@@ -1497,8 +1500,8 @@
         "    return [slotOne, slotTwo, slotThree];",
         "  }",
         "",
-        "  $(document).ready(function(){",
-        "     $(\".go\").click(function(){",
+        "  $(document).ready(function() {",
+        "     $(\".go\").click(function() {",
         "       runSlots();",
         "     });",
         "   });",
@@ -1627,7 +1630,7 @@
       ],
       "challengeSeed": [
         "fccss",
-        "  function runSlots(){",
+        "  function runSlots() {",
         "    var slotOne;",
         "    var slotTwo;",
         "    var slotThree;",
@@ -1651,7 +1654,7 @@
         "      return slotOne;",
         "    }",
         "    ",
-        "    if(slotOne !== undefined && slotTwo !== undefined && slotThree !== undefined){",
+        "    if (slotOne !== undefined && slotTwo !== undefined && slotThree !== undefined) {",
         "      $(\".logger\").html(slotOne);",
         "      $(\".logger\").append(\" \" + slotTwo);",
         "      $(\".logger\").append(\" \" + slotThree);",
@@ -1660,8 +1663,8 @@
         "    return [slotOne, slotTwo, slotThree];",
         "  }",
         "",
-        "  $(document).ready(function(){",
-        "     $(\".go\").click(function(){",
+        "  $(document).ready(function() {",
+        "     $(\".go\").click(function() {",
         "       runSlots();",
         "     });",
         "   });",
@@ -1796,7 +1799,7 @@
       ],
       "challengeSeed": [
         "fccss",
-        "  function runSlots(){",
+        "  function runSlots() {",
         "    var slotOne;",
         "    var slotTwo;",
         "    var slotThree;",
@@ -1820,7 +1823,7 @@
         "      return slotOne;",
         "    }",
         "    ",
-        "    if(slotOne !== undefined && slotTwo !== undefined && slotThree !== undefined){",
+        "    if (slotOne !== undefined && slotTwo !== undefined && slotThree !== undefined) {",
         "      $('.logger').html(slotOne);",
         "      $('.logger').append(' ' + slotTwo);",
         "      $('.logger').append(' ' + slotThree);",
@@ -1829,8 +1832,8 @@
         "    return [slotOne, slotTwo, slotThree];",
         "  }",
         "",
-        "  $(document).ready(function(){",
-        "     $('.go').click(function(){",
+        "  $(document).ready(function() {",
+        "     $('.go').click(function() {",
         "       runSlots();",
         "     });",
         "   });",
