@@ -328,13 +328,14 @@
         "assert(end(\"Walking on water and developing software from a specification are easy if both are frozen\", \"specification\") === false, 'message: <code>end(\"Walking on water and developing software from a specification are easy if both are frozen\"&#44; \"specification\"&#41;</code> should return false.');",
         "assert(end(\"He has to give me a new name\", \"name\") === true, 'message: <code>end(\"He has to give me a new name\", \"name\")</code> should return true.');",
         "assert(end(\"He has to give me a new name\", \"me\") === true, 'message: <code>end(\"He has to give me a new name\", \"me\")</code> should return true.');",
+        "assert(end(\"He has to give me a new name\", \"na\") === false, 'message: <code>end(\"He has to give me a new name\", \"na\")</code> should return false.');",
         "assert(end(\"If you want to save our world, you must hurry. We dont know how much longer we can withstand the nothing\", \"mountain\") === false, 'message: <code>end(\"If you want to save our world, you must hurry. We dont know how much longer we can withstand the nothing\", \"mountain\")</code> should return false.');"
       ],
       "MDNlinks": [
         "String.substr()"
       ],
       "solutions": [
-        "function end(str, target) {\n  // \"Never give up and good luck will find you.\"\n  // -- Falcor\n  return str.substring(str.length-target.length) === target;\n}\n\nend('Bastian', 'n');\n"
+        "function end(str, target) {\n  return str.substring(str.length-target.length) === target;\n};\n"
       ],
       "type": "bonfire",
       "challengeType": 5,
