@@ -1463,7 +1463,7 @@
         "If they have, we should notify our user that they've won.",
         "Otherwise, we should return <code>null</code>, which is a JavaScript data structure that means nothing.",
         "If all three numbers match, we should return the number that we have in three of slots or leave it as <code>null</code>.",
-        "Let's create an <code>if statement</code> with multiple conditions in order to check whether all numbers are equal.",
+        "Let's create an <code>if statement</code> with multiple conditions in order to check whether the numbers are not equal.",
         "<code>if (slotOne !== slotTwo || slotTwo !== slotThree) {</code>",
         "<code>&nbsp;&nbsp;return null;</code>",
         "<code>}</code>"
