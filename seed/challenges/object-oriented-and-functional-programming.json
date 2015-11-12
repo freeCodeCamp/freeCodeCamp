@@ -115,7 +115,7 @@
         "<code>}</code>",
         "Note that it is important to use the <code>new</code> keyword when calling a constructor. This is how javascript knows to create a new object and that all the references to <code>this</code> inside the constructor should be referring to this new object.",
         "Now, once the <code>myCar</code> <code>instance</code> is created it can be used like any other object and can have its properties accessed and modified the same way you would usually. For example:",
-        "<code>var myCar.turboType = \"twin\";</code>",
+        "<code>myCar.turboType = \"twin\";</code>",
         "Our <code>myCar</code> variable now has a property <code>turboType</code> with a value of <code>\"twin\"</code>.",
         "In the editor, use the <code>Car</code> <code>constructor</code> to create a new <code>instance</code> and assign it to <code>myCar</code>.",
         "Then give <code>myCar</code> a <code>nickname</code> property with a string value."
