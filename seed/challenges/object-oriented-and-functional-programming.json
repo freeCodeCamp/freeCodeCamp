@@ -169,7 +169,7 @@
         "Then call your new <code>constructor</code> with three number <code>arguments</code> and assign it to <code>myCar</code> to see it in action."
       ],
       "tests":[
-        "assert((function(){var testCar = new Car(3,1,2); return testCar.wheels === 3 && testCar.seats === 1 && testCar.engines === 2;})(), 'message: Calling <code>new Car(3,1,2)</code> should produce and object with a <code>wheels</code> property of <code>3</code>, a <code>seats</code> property of <code>1</code>, and an <code>engines</code> property of <code>2</code>.');",
+        "assert((function(){var testCar = new Car(3,1,2); return testCar.wheels === 3 && testCar.seats === 1 && testCar.engines === 2;})(), 'message: Calling <code>new Car(3,1,2)</code> should produce an object with a <code>wheels</code> property of <code>3</code>, a <code>seats</code> property of <code>1</code>, and an <code>engines</code> property of <code>2</code>.');",
         "assert(typeof myCar.wheels === 'number' && typeof myCar.seats === 'number' && typeof myCar.engines === 'number', 'message: <code>myCar</code> should have number values for the <code>wheels</code>, <code>seats</code>, and <code>engines</code> properties.');"
       ],
       "challengeSeed":[
