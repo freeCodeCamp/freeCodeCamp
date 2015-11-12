@@ -3157,7 +3157,8 @@
         "<code>}</code>"
       ],
       "tests": [
-        "assert($(\"body\").css(\"background-color\") === \"rgb(0, 0, 0)\", 'Give your <code>body</code> element the <code>background-color</code> of black.')"
+        "assert($(\"body\").css(\"background-color\") === \"rgb(0, 0, 0)\", 'Give your <code>body</code> element the <code>background-color</code> of black.')",
+        "assert(editor.match(/<style>\\s*body\\s*\\{\\s*background-color\\s*:\\s*black;?\\s*\\}\\s*<\\/style>/i), 'Make sure your CSS rule is properly formatted with both and opening and closing curly bracket.')"
       ],
       "challengeSeed": [
         "<style>",
