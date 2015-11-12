@@ -105,7 +105,7 @@
       "title":"Make Instances of Objects with a Constructor Function",
       "description":[
         "Now let's put that great <code>constructor</code> function we made in the last lesson to use!",
-        "To use a <code>constructor</code> function we call it with the <code>new</code> keyword in front if it like:",
+        "To use a <code>constructor</code> function we call it with the <code>new</code> keyword in front of it like:",
         "<code>var myCar = new Car();</code>",
         "<code>myCar</code> is now an <code>instance</code> of the <code>Car</code> constructor that looks like the object it described:",
         "<code>{</code>",
@@ -113,7 +113,7 @@
         "<code>&nbsp;&nbsp;engines: 1,</code>",
         "<code>&nbsp;&nbsp;seats: 1</code>",
         "<code>}</code>",
-        "Note that it is important to use the <code>new</code> keyword when calling a constructor. This is how javascript knows to create a new object and that all the references to <code>this</code> inside the constructor should be referring to this new object.",
+        "Note that it is important to use the <code>new</code> keyword when calling a constructor. This is how Javascript knows to create a new object and that all the references to <code>this</code> inside the constructor should be referring to this new object.",
         "Now, once the <code>myCar</code> <code>instance</code> is created it can be used like any other object and can have its properties accessed and modified the same way you would usually. For example:",
         "<code>myCar.turboType = \"twin\";</code>",
         "Our <code>myCar</code> variable now has a property <code>turboType</code> with a value of <code>\"twin\"</code>.",
