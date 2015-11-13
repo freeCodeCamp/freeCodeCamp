@@ -257,6 +257,7 @@
       "title": "Target the same element with multiple jQuery Selectors",
       "description": [
         "Now you know three ways of targeting elements: by type: <code>$(\"button\")</code>, by class: <code>$(\".btn\")</code>, and by id <code>$(\"#target1\")</code>.",
+        "Although it is possible to add multiple classes in a single <code>.addClass()</code> call, let's add them to the same element in three different ways.",
         "Using each of the above jQuery selectors and the <code>addClass()</code> function:",
         "Add the <code>animated</code> class to all elements with type <code>button</code>.",
         "Add the <code>shake</code> class to all the buttons with class <code>.btn</code>.",
@@ -266,7 +267,7 @@
         "assert(editor.match(/\\$\\s*?\\(\\s*?(?:'|\")\\s*?button\\s*?(?:'|\")/gi), 'Use the <code>$&#40\"button\"&#41</code> selector.')",
         "assert(editor.match(/\\$\\s*?\\(\\s*?(?:'|\")\\s*?\\.btn\\s*?(?:'|\")/gi), 'Use the <code>$&#40\".btn\"&#41</code> selector.')",
         "assert(editor.match(/\\$\\s*?\\(\\s*?(?:'|\")\\s*?#target1\\s*?(?:'|\")/gi), 'Use the <code>$&#40\"#target1\"&#41</code> selector.')",
-        "assert(editor.match(/addClass/g) && editor.match(/addClass/g).length > 2, 'Only add one class with each of your three selectors.')",
+        "assert(editor.match(/addClass/g) && editor.match(/addClass\\(\\s*?('|\")[\\w-]+\\1\\s*?\\)/g).length > 2, 'Only add one class with each of your three selectors.')",
         "assert($(\"#target1\").hasClass(\"animated\") && $(\"#target1\").hasClass(\"shake\") && $(\"#target1\").hasClass(\"btn-primary\"), 'Your <code>#target1</code> element should have the classes <code>animated</code>&#130; <code>shake</code> and <code>btn-primary</code>.')",
         "assert(!editor.match(/class.*animated/g), 'Only use jQuery to add these classes to the element.')"
       ],
