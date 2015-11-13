@@ -557,16 +557,15 @@
         "Font size is controlled by the <code>font-size</code> CSS property, like this:",
          "<code>h1 {</code>",
         "<code>&nbsp;&nbsp;font-size: 30px;</code>",
-        "}</code>",
-        "See if you can figure out how to give both of your <code>p</code> elements the font-size of 16 pixels (<code>16px</code>). You can do this inside the same <code>&#60;style&#62;</code> tag that we created for your <code>red-text</code> class.",
+        "<code>}</code>",
         "Create a second <code>p</code> element with the following kitty ipsum text: <code>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</code>",
-        "Then, inside your <code>&#60;style&#62;</code> element, set the <code>font-size</code> of all <code>p</code> elements to 16 pixels."
+        "Inside the same <code>&#60;style&#62;</code> tag that we created for your <code>red-text</code> class, set the <code>font-size</code> of all <code>p</code> elements to 16 pixels (<code>16px</code>)."
       ],
       "tests": [
         "assert($(\"p\").length > 1, 'You need 2 <code>p</code> elements with Kitty Ipsum text.')",
         "assert(editor.match(/<\\/p>/g) && editor.match(/<\\/p>/g).length === editor.match(/<p/g).length, 'Make sure each of your <code>p</code> elements has a closing tag.')",
         "assert.isTrue((/Purr\\s+jump\\s+eat/gi).test($(\"p\").text()), 'Your <code>p</code> element should contain the first few words of the provided additional <code>kitty ipsum text</code>.')",
-        "assert($(\"p\").css(\"font-size\") === \"16px\", 'Give elements with the <code>red-text</code> class a <code>font-size</code> of 16px.')"
+        "assert($(\"p\").css(\"font-size\") === \"16px\", 'Give elements with the <code>p</code> tag a <code>font-size</code> of <code>16px</code>.')"
       ],
       "challengeSeed": [
         "<style>",
@@ -905,7 +904,7 @@
       "tests": [
         "assert($(\"img\").hasClass(\"smaller-image\"), 'Your <code>img</code> element should have the class <code>smaller-image</code>.')",
         "assert($(\"img\").hasClass(\"thick-green-border\"), 'Your <code>img</code> element should have the class <code>thick-green-border</code>.')",
-        "assert($(\"img\").hasClass(\"thick-green-border\") && parseInt($(\"img\").css(\"border-top-width\"), 10) === 10, 'Give your image a border width of <code>10px</code>.')",
+        "assert($(\"img\").hasClass(\"thick-green-border\") && parseInt($(\"img\").css(\"border-top-width\"), 10) >= 8 && parseInt($(\"img\").css(\"border-top-width\"), 10) <= 12, 'Give your image a border width of <code>10px</code>.')",
         "assert($(\"img\").css(\"border-right-style\") === \"solid\", 'Give your image a border style of <code>solid</code>.')",
         "assert($(\"img\").css(\"border-left-color\") === \"rgb(0, 128, 0)\", 'The border around your <code>img</code> element should be green.')"
       ],
@@ -1168,7 +1167,7 @@
         "Now nest your existing <code>a</code> element within a new <code>p</code> element so that the surrounding paragraph says \"View more cat photos\", but where only \"cat photos\" is a link, and the rest of the text is plain text."
       ],
       "tests": [
-        "assert($(\"a\").attr(\"href\").match(/freecatphotoapp.com/gi).length > 0, 'You need an <code>a</code> element that links to \"freecatphotoapp.com\".')",
+        "assert($(\"a[href=\\\"http://www.freecatphotoapp.com\\\"]\").length > 0, 'You need an <code>a</code> element that links to \"http://www.freecatphotoapp.com\".')",
         "assert($(\"a\").text().match(/cat\\sphotos/gi), 'Your <code>a</code> element should have the anchor text of \"cat photos\"')",
         "assert($(\"p\") && $(\"p\").length > 2, 'Create a new <code>p</code> element around your <code>a</code> element.')",
         "assert($(\"a[href=\\\"http://www.freecatphotoapp.com\\\"]\").parent().is(\"p\"), 'Your <code>a</code> element should be nested within your new <code>p</code> element.')",
@@ -2603,8 +2602,9 @@
         "  .smaller-image {",
         "    width: 100px;",
         "  }",
+        "",
         "  .gray-background {",
-        "    background-color: gray",
+        "    background-color: gray;",
         "  }",
         "</style>",
         "",
@@ -2939,9 +2939,9 @@
       "id": "bad87fee1248bd9aedf08824",
       "title": "Add Different Margins to Each Side of an Element",
       "description": [
-        "Give the green box a <code>margin</code> of <code>40px</code> on its top and left side, but only <code>20px</code> on its bottom and right side.",
         "Sometimes you will want to customize an element so that it has a different <code>margin</code> on each of its sides.",
-        "CSS allows you to control the <code>margin</code> of an element on all four sides with <code>margin-top</code>, <code>margin-right</code>, <code>margin-bottom</code>, and <code>margin-left</code> properties."
+        "CSS allows you to control the <code>margin</code> of an element on all four sides with <code>margin-top</code>, <code>margin-right</code>, <code>margin-bottom</code>, and <code>margin-left</code> properties.",
+        "Give the green box a <code>margin</code> of <code>40px</code> on its top and left side, but only <code>20px</code> on its bottom and right side."
       ],
       "tests": [
         "assert($(\".green-box\").css(\"margin-top\") === \"40px\", 'Your <code>green-box</code> class should give the top of elements <code>40px</code> of <code>margin</code>.')",
@@ -3157,7 +3157,8 @@
         "<code>}</code>"
       ],
       "tests": [
-        "assert($(\"body\").css(\"background-color\") === \"rgb(0, 0, 0)\", 'Give your <code>body</code> element the <code>background-color</code> of black.')"
+        "assert($(\"body\").css(\"background-color\") === \"rgb(0, 0, 0)\", 'Give your <code>body</code> element the <code>background-color</code> of black.')",
+        "assert(editor.match(/<style>\\s*body\\s*\\{\\s*background-color\\s*:\\s*black;?\\s*\\}\\s*<\\/style>/i), 'Make sure your CSS rule is properly formatted with both and opening and closing curly bracket.')"
       ],
       "challengeSeed": [
         "<style>",

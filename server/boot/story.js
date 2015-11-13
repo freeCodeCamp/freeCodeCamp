@@ -2,15 +2,12 @@ var Rx = require('rx'),
     assign = require('object.assign'),
     sanitizeHtml = require('sanitize-html'),
     moment = require('moment'),
-    mongodb = require('mongodb'),
     debug = require('debug')('freecc:cntr:story'),
     utils = require('../utils'),
     observeMethod = require('../utils/rx').observeMethod,
     saveUser = require('../utils/rx').saveUser,
     saveInstance = require('../utils/rx').saveInstance,
-    MongoClient = mongodb.MongoClient,
-    validator = require('validator'),
-    secrets = require('../../config/secrets');
+    validator = require('validator');
 
 import {
   ifNoUser401,
@@ -65,6 +62,7 @@ module.exports = function(app) {
   var findStoryById = observeMethod(Story, 'findById');
   var countStories = observeMethod(Story, 'count');
 
+  router.post('/news/userstories', userStories);
   router.get('/news/hot', hotJSON);
   router.get('/stories/hotStories', hotJSON);
   router.get(
@@ -206,45 +204,75 @@ module.exports = function(app) {
     );
   }
 
-  function getStories(req, res, next) {
-    MongoClient.connect(secrets.db, function(err, database) {
-      if (err) {
-        return next(err);
-      }
-      database.collection('story').find({
-        '$text': {
-          '$search': req.body.data ? req.body.data.searchValue : ''
-        }
-      }, {
-        headline: 1,
-        timePosted: 1,
-        link: 1,
-        description: 1,
-        rank: 1,
-        upVotes: 1,
-        author: 1,
-        image: 1,
-        storyLink: 1,
-        metaDescription: 1,
-        textScore: {
-          $meta: 'textScore'
-        }
-      }, {
-        sort: {
-          textScore: {
-            $meta: 'textScore'
-          }
-        }
-      }).toArray(function(err, items) {
+  function userStories({ body: { search = '' } = {} }, res, next) {
+    if (!search || typeof search !== 'string') {
+      return res.sendStatus(404);
+    }
+
+    return app.dataSources.db.connector
+      .collection('story')
+      .find({
+        'author.username': search.toLowerCase().replace('$', '')
+      })
+      .toArray(function(err, items) {
         if (err) {
           return next(err);
         }
-        if (items !== null && items.length !== 0) {
+        if (items && items.length !== 0) {
+          return res.json(items.sort(sortByRank));
+        }
+        return res.sendStatus(404);
+      });
+  }
+
+  function getStories({ body: { search = '' } = {} }, res, next) {
+    if (!search || typeof search !== 'string') {
+      return res.sendStatus(404);
+    }
+
+    const query = {
+      '$text': {
+        // protect against NoSQL injection
+        '$search': search.replace('$', '')
+      }
+    };
+
+    const fields = {
+      headline: 1,
+      timePosted: 1,
+      link: 1,
+      description: 1,
+      rank: 1,
+      upVotes: 1,
+      author: 1,
+      image: 1,
+      storyLink: 1,
+      metaDescription: 1,
+      textScore: {
+        $meta: 'textScore'
+      }
+    };
+
+    const options = {
+      sort: {
+        textScore: {
+          $meta: 'textScore'
+        }
+      }
+    };
+
+    return app.dataSources.db.connector
+      .collection('story')
+      .find(query, fields, options)
+      .toArray(function(err, items) {
+        if (err) {
+          return next(err);
+        }
+        if (items && items.length !== 0) {
           return res.json(items);
         }
         return res.sendStatus(404);
       });
-    });
   }
 
   function upvote(req, res, next) {

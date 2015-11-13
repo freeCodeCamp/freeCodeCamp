@@ -18,6 +18,7 @@ destroy()
     var order = challengeSpec.order;
     var block = challengeSpec.name;
     var isBeta = !!challengeSpec.isBeta;
+    var fileName = challengeSpec.fileName;
     console.log('parsed %s successfully', block);
 
     // challenge file has no challenges...
@@ -37,6 +38,8 @@ destroy()
           .toLowerCase()
           .replace(/\:/g, '')
           .replace(/\s/g, '-');
+
+        challenge.fileName = fileName;
         challenge.order = order;
         challenge.suborder = index + 1;
         challenge.block = block;

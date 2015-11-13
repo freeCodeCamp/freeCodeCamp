@@ -1,4 +1,4 @@
-import React, { createClass, PropTypes } from 'react';
+import React, { PropTypes } from 'react';
 import { Button } from 'react-bootstrap';
 
 const followLink = 'https://twitter.com/intent/follow?' +
@@ -9,7 +9,7 @@ function commify(count) {
   return Number(count).toLocaleString('en');
 }
 
-export default createClass({
+export default React.createClass({
 
   displayName: 'FollowButton',
 

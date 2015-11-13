@@ -75,14 +75,19 @@ block content
                             a.animated.fadeIn.btn.btn-lg.btn-primary.btn-block(href='/challenges/next-challenge?id=' + challengeId) I've completed this challenge (ctrl + enter)
         script.
             $('body').bind('keydown', controlEnterHandler);
+
+    include ../partials/challenge-modals
     script.
-      var challenge_Id = !{JSON.stringify(challengeId)};
-      var challenge_Name = !{JSON.stringify(name)};
-      var challengeType = !{JSON.stringify(challengeType)};
-      var dashedName = !{JSON.stringify(dashedName)};
+      var common = window.common = { init: [] };
+
+      common.challengeId = !{JSON.stringify(challengeId)};
+      common.challengeName = !{JSON.stringify(name)};
+      common.challengeType = !{JSON.stringify(challengeType)};
+      common.dashedName = !{JSON.stringify(dashedName)};
+
       document.addEventListener('gitter-sidecar-ready', function(e) {
         if (window.main) {
           window.main.chat.createHelpChat('freecodecamp/help', '#challenge-help-btn');
         }
       });
-    include ../partials/challenge-modals
+    include ../partials/challenge-footer

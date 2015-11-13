@@ -37,29 +37,6 @@ block content
                         var userLoggedIn = false;
                 br
             script(type="text/javascript").
-                var challenge_Id = !{JSON.stringify(challengeId)};
-                var challenge_Name = !{JSON.stringify(name)};
-                var started = Math.floor(Date.now());
-                var dashedName = !{JSON.stringify(dashedName)};
-                var challengeType = !{JSON.stringify(challengeType)};
-                var controlEnterHandler = function (e) {
-                  $('body').unbind('keydown');
-                  if (e.metaKey && e.keyCode === 13 ||
-                      e.ctrlKey && e.keyCode === 13) {
-                    $('#complete-zipline-or-basejump-dialog').modal('show');
-                  } else {
-                    $('body').bind('keydown', controlEnterHandler);
-                  }
-                };
-                var modalControlEnterHandler = function (e) {
-                  $('#complete-zipline-or-basejump-dialog').unbind('keydown');
-                  if (e.metaKey && e.keyCode === 13 ||
-                      e.ctrlKey && e.keyCode === 13) {
-                    $('#next-courseware-button').click();
-                  } else {
-                    $('#complete-zipline-or-basejump-dialog').on('keydown', modalControlEnterHandler);
-                  }
-                };
 
     #complete-zipline-or-basejump-dialog.modal(tabindex='-1')
         .modal-dialog.animated.fadeIn.fast-animation
@@ -92,24 +69,57 @@ block content
                         a.btn.btn-lg.btn-primary.btn-block#next-courseware-button(name='_csrf', value=_csrf, ng-disabled='completedWithForm.$invalid') Go to my next challenge
                         .button-spacer
                         script.
-                          $('#complete-zipline-or-basejump-dialog').on('keydown', modalControlEnterHandler);
                     else
                         a.btn.btn-lg.btn-primary.btn-block(href='/challenges/next-challenge?id=' + challengeId) Go to my next challenge
         script.
-            $('body').on('keydown', controlEnterHandler);
     include ../partials/challenge-modals
     script.
+      var common = window.common || { init: [] };
+      common.challengeId = !{JSON.stringify(challengeId)};
+      common.challengeName = !{JSON.stringify(name)};
+      common.started = Math.floor(Date.now());
+      common.dashedName = !{JSON.stringify(dashedName)};
+      common.challengeType = !{JSON.stringify(challengeType)};
+
+      common.controlEnterHandler = function (e) {
+        $('body').unbind('keydown');
+        if (e.metaKey && e.keyCode === 13 ||
+            e.ctrlKey && e.keyCode === 13) {
+          $('#complete-zipline-or-basejump-dialog').modal('show');
+        } else {
+          $('body').bind('keydown', common.controlEnterHandler);
+        }
+      };
+
+      common.modalControlEnterHandler = function (e) {
+        $('#complete-zipline-or-basejump-dialog').unbind('keydown');
+        if (e.metaKey && e.keyCode === 13 ||
+            e.ctrlKey && e.keyCode === 13) {
+          $('#next-courseware-button').click();
+        } else {
+          $('#complete-zipline-or-basejump-dialog').on('keydown', common.modalControlEnterHandler);
+        }
+      };
+
+      common.init.push(function() {
+        $('body').on('keydown', common.controlEnterHandler);
+
+        if (!!{ JSON.stringify(user ? true : false)}) {
+          $('#complete-zipline-or-basejump-dialog').on('keydown', common.modalControlEnterHandler);
+        }
+      });
+
+
       document.addEventListener('gitter-sidecar-ready', function(e) {
-        var challengeType = !{JSON.stringify(challengeType)};
         var room = 'freecodecamp/help';
         var title;
 
-        if (challengeType === '4') {
+        if (common.challengeType === '4') {
           room = 'freecodecamp/helpBasejumps';
           title = 'Basejump Help';
         }
 
-        if (challengeType === '3') {
+        if (common.challengeType === '3') {
           room = 'freecodecamp/helpZiplines';
           title = 'Zipline Help';
         }
@@ -118,3 +128,4 @@ block content
           window.main.chat.createHelpChat(room, '#challenge-help-btn', title);
         }
       });
+    include ../partials/challenge-footer

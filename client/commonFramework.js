@@ -7,23 +7,25 @@ var common = (function() {
     init: []
   };
 
-  common.challengeName = common.challengeName || window.challenge_Name ?
-    window.challenge_Name :
-    '';
+  common.challengeName = common.challengeName || window.challenge_Name || '';
 
-  common.challengeType = common.challengeType || window.challengeType ?
-    window.challengeType :
-    0;
+  common.challengeType = common.challengeType || window.challengeType || 0;
 
   common.challengeId = common.challengeId || window.challenge_Id;
 
-  common.challengeSeed = common.challengeSeed || window.challengeSeed ?
-    window.challengeSeed :
-    [];
+  common.challengeSeed = common.challengeSeed || window.challengeSeed || [];
 
-  common.seed = common.challengeSeed.reduce(function(seed, line) {
-    return seed + line + '\n';
-  }, '');
+  common.head = common.head || '';
+  common.tail = common.tail || '';
+
+  common.arrayToNewLineString = function arrayToNewLineString(seedData) {
+    seedData = Array.isArray(seedData) ? seedData : [seedData];
+    return seedData.reduce(function(seed, line) {
+      return '' + seed + line + '\n';
+    }, '');
+  };
+
+  common.seed = common.arrayToNewLineString(common.challengeSeed);
 
   common.replaceScriptTags = function replaceScriptTags(value) {
     return value
@@ -136,8 +138,16 @@ common.codeUri = (function(common, encode, decode, location, history) {
       if (!codeUri.enabled) {
         return null;
       }
-      location.hash = '?solution=' +
-        codeUri.encode(encodeFcc(solution));
+      if (history && typeof history.replaceState === 'function') {
+        history.replaceState(
+          history.state,
+          null,
+          '?solution=' + codeUri.encode(encodeFcc(solution))
+        );
+      } else {
+        location.hash = '?solution=' +
+          codeUri.encode(encodeFcc(solution));
+      }
 
       return solution;
     },
@@ -474,17 +484,24 @@ var editor = (function(CodeMirror, emmetCodeMirror, common) {
 }(window.CodeMirror, window.emmetCodeMirror, common));
 
 
-var tests = tests || [];
+var tests = common.tests || [];
 
-var libraryIncludes = "<script src='//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>" +
-    "<script src='/js/lib/chai/chai.js'></script>" +
-    "<script src='/js/lib/chai/chai-jquery.js'></script>" +
-    "<script src='//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js'></script>" +
-    "<link rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.min.css'/>" +
-    "<link rel='stylesheet' href='//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css'/>" +
-    "<link rel='stylesheet' href='//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css'/>" +
-    '<style>body { padding: 0px 3px 0px 3px; }</style>' +
-    '<script>var expect = chai.expect; var should = chai.should(); var assert = chai.assert;</script>';
+var libraryIncludes =
+  "<script src='//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js'>" +
+  '</script>' +
+  "<script src='/js/lib/chai/chai.js'></script>" +
+  "<script src='/js/lib/chai/chai-jquery.js'></script>" +
+  "<script src='//cdnjs.cloudflare.com/ajax/libs/lodash.js/" +
+  "2.4.1/lodash.min.js'></script>" +
+  "<link rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/" +
+  "libs/animate.css/3.2.0/animate.min.css'/>" +
+  "<link rel='stylesheet' href='//maxcdn.bootstrapcdn.com/" +
+  "bootstrap/3.3.1/css/bootstrap.min.css'/>" +
+  "<link rel='stylesheet' href='//maxcdn.bootstrapcdn.com/" +
+  "font-awesome/4.2.0/css/font-awesome.min.css'/>" +
+  '<style>body { padding: 0px 3px 0px 3px; }</style>' +
+  '<script>var expect = chai.expect; var should = ' +
+  'chai.should(); var assert = chai.assert;</script>';
 
 var editorValueForIFrame;
 var iFrameScript = "<script src='/js/iFrameScripts.js'></script>";
@@ -498,9 +515,13 @@ function workerError(error) {
 
     housing.prepend(
       '<div class="runTimeError" style="font-size: 18px;"><code>' +
-      error.replace(/j\$/gi, '$').replace(/jdocument/gi, 'document').replace(/jjQuery/gi, 'jQuery') +
+      error
+        .replace(/j\$/gi, '$')
+        .replace(/jdocument/gi, 'document')
+        .replace(/jjQuery/gi, 'jQuery') +
       '</code></div>'
     );
+
     display.hide().fadeIn(function() {
       setTimeout(function() {
         display.fadeOut(function() {
@@ -533,21 +554,269 @@ function safeHTMLRun(test) {
         .split(/\<\s?\/\s?script\s?\>/gi)[0];
 
         // add feuxQuery
-      s = 'var document = \"\"; var $ = function() {return(new function() {this.add=function() {return(this);};this.addBack=function() {return(this);};this.addClass=function() {return(this);};this.after=function() {return(this);};this.ajaxComplete=function() {return(this);};this.ajaxError=function() {return(this);};this.ajaxSend=function() {return(this);};this.ajaxStart=function() {return(this);};this.ajaxStop=function() {return(this);};this.ajaxSuccess=function() {return(this);};this.andSelf=function() {return(this);};this.animate=function() {return(this);};this.append=function() {return(this);};this.appendTo=function() {return(this);};this.attr=function() {return(this);};this.before=function() {return(this);};this.bind=function() {return(this);};this.blur=function() {return(this);};this.callbacksadd=function() {return(this);};this.callbacksdisable=function() {return(this);};this.callbacksdisabled=function() {return(this);};this.callbacksempty=function() {return(this);};this.callbacksfire=function() {return(this);};this.callbacksfired=function() {return(this);};this.callbacksfireWith=function() {return(this);};this.callbackshas=function() {return(this);};this.callbackslock=function() {return(this);};this.callbackslocked=function() {return(this);};this.callbacksremove=function() {return(this);};this.change=function() {return(this);};this.children=function() {return(this);};this.clearQueue=function() {return(this);};this.click=function() {return(this);};this.clone=function() {return(this);};this.closest=function() {return(this);};this.contents=function() {return(this);};this.context=function() {return(this);};this.css=function() {return(this);};this.data=function() {return(this);};this.dblclick=function() {return(this);};this.delay=function() {return(this);};this.delegate=function() {return(this);};this.dequeue=function() {return(this);};this.detach=function() {return(this);};this.die=function() {return(this);};this.each=function() {return(this);};this.empty=function() {return(this);};this.end=function() {return(this);};this.eq=function() {return(this);};this.error=function() {return(this);};this.fadeIn=function() {return(this);};this.fadeOut=function() {return(this);};this.fadeTo=function() {return(this);};this.fadeToggle=function() {return(this);};this.filter=function() {return(this);};this.find=function() {return(this);};this.finish=function() {return(this);};this.first=function() {return(this);};this.focus=function() {return(this);};this.focusin=function() {return(this);};this.focusout=function() {return(this);};this.get=function() {return(this);};this.has=function() {return(this);};this.hasClass=function() {return(this);};this.height=function() {return(this);};this.hide=function() {return(this);};this.hover=function() {return(this);};this.html=function() {return(this);};this.index=function() {return(this);};this.innerHeight=function() {return(this);};this.innerWidth=function() {return(this);};this.insertAfter=function() {return(this);};this.insertBefore=function() {return(this);};this.is=function() {return(this);};this.jQuery=function() {return(this);};this.jquery=function() {return(this);};this.keydown=function() {return(this);};this.keypress=function() {return(this);};this.keyup=function() {return(this);};this.last=function() {return(this);};this.length=function() {return(this);};this.live=function() {return(this);};this.load=function() {return(this);};this.load=function() {return(this);};this.map=function() {return(this);};this.mousedown=function() {return(this);};this.mouseenter=function() {return(this);};this.mouseleave=function() {return(this);};this.mousemove=function() {return(this);};this.mouseout=function() {return(this);};this.mouseover=function() {return(this);};this.mouseup=function() {return(this);};this.next=function() {return(this);};this.nextAll=function() {return(this);};this.nextUntil=function() {return(this);};this.not=function() {return(this);};this.off=function() {return(this);};this.offset=function() {return(this);};this.offsetParent=function() {return(this);};this.on=function() {return(this);};this.one=function() {return(this);};this.outerHeight=function() {return(this);};this.outerWidth=function() {return(this);};this.parent=function() {return(this);};this.parents=function() {return(this);};this.parentsUntil=function() {return(this);};this.position=function() {return(this);};this.prepend=function() {return(this);};this.prependTo=function() {return(this);};this.prev=function() {return(this);};this.prevAll=function() {return(this);};this.prevUntil=function() {return(this);};this.promise=function() {return(this);};this.prop=function() {return(this);};this.pushStack=function() {return(this);};this.queue=function() {return(this);};this.ready=function() {return(this);};this.remove=function() {return(this);};this.removeAttr=function() {return(this);};this.removeClass=function() {return(this);};this.removeData=function() {return(this);};this.removeProp=function() {return(this);};this.replaceAll=function() {return(this);};this.replaceWith=function() {return(this);};this.resize=function() {return(this);};this.scroll=function() {return(this);};this.scrollLeft=function() {return(this);};this.scrollTop=function() {return(this);};this.select=function() {return(this);};this.selector=function() {return(this);};this.serialize=function() {return(this);};this.serializeArray=function() {return(this);};this.show=function() {return(this);};this.siblings=function() {return(this);};this.size=function() {return(this);};this.slice=function() {return(this);};this.slideDown=function() {return(this);};this.slideToggle=function() {return(this);};this.slideUp=function() {return(this);};this.stop=function() {return(this);};this.submit=function() {return(this);};this.text=function() {return(this);};this.toArray=function() {return(this);};this.toggle=function() {return(this);};this.toggle=function() {return(this);};this.toggleClass=function() {return(this);};this.trigger=function() {return(this);};this.triggerHandler=function() {return(this);};this.unbind=function() {return(this);};this.undelegate=function() {return(this);};this.unload=function() {return(this);};this.unwrap=function() {return(this);};this.val=function() {return(this);};this.width=function() {return(this);};this.wrap=function() {return(this);};this.wrapAll=function() {return(this);};this.wrapInner=function() {return(this);}});};$.ajax=function() {return($);};$.ajaxPrefilter=function() {return($);};$.ajaxSetup=function() {return($);};$.ajaxTransport=function() {return($);};$.boxModel=function() {return($);};$.browser=function() {return($);};$.Callbacks=function() {return($);};$.contains=function() {return($);};$.cssHooks=function() {return($);};$.cssNumber=function() {return($);};$.data=function() {return($);};$.Deferred=function() {return($);};$.dequeue=function() {return($);};$.each=function() {return($);};$.error=function() {return($);};$.extend=function() {return($);};$.fnextend=function() {return($);};$.fxinterval=function() {return($);};$.fxoff=function() {return($);};$.get=function() {return($);};$.getJSON=function() {return($);};$.getScript=function() {return($);};$.globalEval=function() {return($);};$.grep=function() {return($);};$.hasData=function() {return($);};$.holdReady=function() {return($);};$.inArray=function() {return($);};$.isArray=function() {return($);};$.isEmptyObject=function() {return($);};$.isFunction=function() {return($);};$.isNumeric=function() {return($);};$.isPlainObject=function() {return($);};$.isWindow=function() {return($);};$.isXMLDoc=function() {return($);};$.makeArray=function() {return($);};$.map=function() {return($);};$.merge=function() {return($);};$.noConflict=function() {return($);};$.noop=function() {return($);};$.now=function() {return($);};$.param=function() {return($);};$.parseHTML=function() {return($);};$.parseJSON=function() {return($);};$.parseXML=function() {return($);};$.post=function() {return($);};$.proxy=function() {return($);};$.queue=function() {return($);};$.removeData=function() {return($);};$.sub=function() {return($);};$.support=function() {return($);};$.trim=function() {return($);};$.type=function() {return($);};$.unique=function() {return($);};$.when=function() {return($);};$.always=function() {return($);};$.done=function() {return($);};$.fail=function() {return($);};$.isRejected=function() {return($);};$.isResolved=function() {return($);};$.notify=function() {return($);};$.notifyWith=function() {return($);};$.pipe=function() {return($);};$.progress=function() {return($);};$.promise=function() {return($);};$.reject=function() {return($);};$.rejectWith=function() {return($);};$.resolve=function() {return($);};$.resolveWith=function() {return($);};$.state=function() {return($);};$.then=function() {return($);};$.currentTarget=function() {return($);};$.data=function() {return($);};$.delegateTarget=function() {return($);};$.isDefaultPrevented=function() {return($);};$.isImmediatePropagationStopped=function() {return($);};$.isPropagationStopped=function() {return($);};$.metaKey=function() {return($);};$.namespace=function() {return($);};$.pageX=function() {return($);};$.pageY=function() {return($);};$.preventDefault=function() {return($);};$.relatedTarget=function() {return($);};$.result=function() {return($);};$.stopImmediatePropagation=function() {return($);};$.stopPropagation=function() {return($);};$.target=function() {return($);};$.timeStamp=function() {return($);};$.type=function() {return($);};$.which=function() {return($);};' + s;
+      s = 'var document = ""; ' +
+        'var $ = function() {' +
+        'return new function() { this.add=function() { return this; };' +
+        'this.addBack=function() {return this; };' +
+        'this.addClass=function() {return this; };' +
+        'this.after=function() {return this; };' +
+        'this.ajaxComplete=function() {return this; };' +
+        'this.ajaxError=function() {return this; };' +
+        'this.ajaxSend=function() {return this; };' +
+        'this.ajaxStart=function() {return this; };' +
+        'this.ajaxStop=function() {return this; };' +
+        'this.ajaxSuccess=function() {return this; };' +
+        'this.andSelf=function() {return this; };' +
+        'this.animate=function() {return this; };' +
+        'this.append=function() {return this; };' +
+        'this.appendTo=function() {return this; };' +
+        'this.attr=function() {return this; };' +
+        'this.before=function() {return this; };' +
+        'this.bind=function() {return this; };' +
+        'this.blur=function() {return this; };' +
+        'this.callbacksadd=function() {return this; };' +
+        'this.callbacksdisable=function() {return this; };' +
+        'this.callbacksdisabled=function() {return this; };' +
+        'this.callbacksempty=function() {return this; };' +
+        'this.callbacksfire=function() {return this; };' +
+        'this.callbacksfired=function() {return this; };' +
+        'this.callbacksfireWith=function() {return this; };' +
+        'this.callbackshas=function() {return this; };' +
+        'this.callbackslock=function() {return this; };' +
+        'this.callbackslocked=function() {return this; };' +
+        'this.callbacksremove=function() {return this; };' +
+        'this.change=function() {return this; };' +
+        'this.children=function() {return this; };' +
+        'this.clearQueue=function() {return this; };' +
+        'this.click=function() {return this; };' +
+        'this.clone=function() {return this; };' +
+        'this.closest=function() {return this; };' +
+        'this.contents=function() {return this; };' +
+        'this.context=function() {return this; };' +
+        'this.css=function() {return this; };' +
+        'this.data=function() {return this; };' +
+        'this.dblclick=function() {return this; };' +
+        'this.delay=function() {return this; };' +
+        'this.delegate=function() {return this; };' +
+        'this.dequeue=function() {return this; };' +
+        'this.detach=function() {return this; };' +
+        'this.die=function() {return this; };' +
+        'this.each=function() {return this; };' +
+        'this.empty=function() {return this; };' +
+        'this.end=function() {return this; };' +
+        'this.eq=function() {return this; };' +
+        'this.error=function() {return this; };' +
+        'this.fadeIn=function() {return this; };' +
+        'this.fadeOut=function() {return this; };' +
+        'this.fadeTo=function() {return this; };' +
+        'this.fadeToggle=function() {return this; };' +
+        'this.filter=function() {return this; };' +
+        'this.find=function() {return this; };' +
+        'this.finish=function() {return this; };' +
+        'this.first=function() {return this; };' +
+        'this.focus=function() {return this; };' +
+        'this.focusin=function() {return this; };' +
+        'this.focusout=function() {return this; };' +
+        'this.get=function() {return this; };' +
+        'this.has=function() {return this; };' +
+        'this.hasClass=function() {return this; };' +
+        'this.height=function() {return this; };' +
+        'this.hide=function() {return this; };' +
+        'this.hover=function() {return this; };' +
+        'this.html=function() {return this; };' +
+        'this.index=function() {return this; };' +
+        'this.innerHeight=function() {return this; };' +
+        'this.innerWidth=function() {return this; };' +
+        'this.insertAfter=function() {return this; };' +
+        'this.insertBefore=function() {return this; };' +
+        'this.is=function() {return this; };' +
+        'this.jQuery=function() {return this; };' +
+        'this.jquery=function() {return this; };' +
+        'this.keydown=function() {return this; };' +
+        'this.keypress=function() {return this; };' +
+        'this.keyup=function() {return this; };' +
+        'this.last=function() {return this; };' +
+        'this.length=function() {return this; };' +
+        'this.live=function() {return this; };' +
+        'this.load=function() {return this; };' +
+        'this.load=function() {return this; };' +
+        'this.map=function() {return this; };' +
+        'this.mousedown=function() {return this; };' +
+        'this.mouseenter=function() {return this; };' +
+        'this.mouseleave=function() {return this; };' +
+        'this.mousemove=function() {return this; };' +
+        'this.mouseout=function() {return this; };' +
+        'this.mouseover=function() {return this; };' +
+        'this.mouseup=function() {return this; };' +
+        'this.next=function() {return this; };' +
+        'this.nextAll=function() {return this; };' +
+        'this.nextUntil=function() {return this; };' +
+        'this.not=function() {return this; };' +
+        'this.off=function() {return this; };' +
+        'this.offset=function() {return this; };' +
+        'this.offsetParent=function() {return this; };' +
+        'this.on=function() {return this; };' +
+        'this.one=function() {return this; };' +
+        'this.outerHeight=function() {return this; };' +
+        'this.outerWidth=function() {return this; };' +
+        'this.parent=function() {return this; };' +
+        'this.parents=function() {return this; };' +
+        'this.parentsUntil=function() {return this; };' +
+        'this.position=function() {return this; };' +
+        'this.prepend=function() {return this; };' +
+        'this.prependTo=function() {return this; };' +
+        'this.prev=function() {return this; };' +
+        'this.prevAll=function() {return this; };' +
+        'this.prevUntil=function() {return this; };' +
+        'this.promise=function() {return this; };' +
+        'this.prop=function() {return this; };' +
+        'this.pushStack=function() {return this; };' +
+        'this.queue=function() {return this; };' +
+        'this.ready=function() {return this; };' +
+        'this.remove=function() {return this; };' +
+        'this.removeAttr=function() {return this; };' +
+        'this.removeClass=function() {return this; };' +
+        'this.removeData=function() {return this; };' +
+        'this.removeProp=function() {return this; };' +
+        'this.replaceAll=function() {return this; };' +
+        'this.replaceWith=function() {return this; };' +
+        'this.resize=function() {return this; };' +
+        'this.scroll=function() {return this; };' +
+        'this.scrollLeft=function() {return this; };' +
+        'this.scrollTop=function() {return this; };' +
+        'this.select=function() {return this; };' +
+        'this.selector=function() {return this; };' +
+        'this.serialize=function() {return this; };' +
+        'this.serializeArray=function() {return this; };' +
+        'this.show=function() {return this; };' +
+        'this.siblings=function() {return this; };' +
+        'this.size=function() {return this; };' +
+        'this.slice=function() {return this; };' +
+        'this.slideDown=function() {return this; };' +
+        'this.slideToggle=function() {return this; };' +
+        'this.slideUp=function() {return this; };' +
+        'this.stop=function() {return this; };' +
+        'this.submit=function() {return this; };' +
+        'this.text=function() {return this; };' +
+        'this.toArray=function() {return this; };' +
+        'this.toggle=function() {return this; };' +
+        'this.toggle=function() {return this; };' +
+        'this.toggleClass=function() {return this; };' +
+        'this.trigger=function() {return this; };' +
+        'this.triggerHandler=function() {return this; };' +
+        'this.unbind=function() {return this; };' +
+        'this.undelegate=function() {return this; };' +
+        'this.unload=function() {return this; };' +
+        'this.unwrap=function() {return this; };' +
+        'this.val=function() {return this; };' +
+        'this.width=function() {return this; };' +
+        'this.wrap=function() {return this; };' +
+        'this.wrapAll=function() {return this; };' +
+        'this.wrapInner=function() {return this; };};};' +
+        '$.ajax=function() {return $;};' +
+        '$.ajaxPrefilter=function() {return $; };' +
+        '$.ajaxSetup=function() {return $; };' +
+        '$.ajaxTransport=function() {return $; };' +
+        '$.boxModel=function() {return $; };' +
+        '$.browser=function() {return $; };' +
+        '$.Callbacks=function() {return $; };' +
+        '$.contains=function() {return $; };' +
+        '$.cssHooks=function() {return $; };' +
+        '$.cssNumber=function() {return $; };' +
+        '$.data=function() {return $; };' +
+        '$.Deferred=function() {return $; };' +
+        '$.dequeue=function() {return $; };' +
+        '$.each=function() {return $; };' +
+        '$.error=function() {return $; };' +
+        '$.extend=function() {return $; };' +
+        '$.fnextend=function() {return $; };' +
+        '$.fxinterval=function() {return $; };' +
+        '$.fxoff=function() {return $; };' +
+        '$.get=function() {return $; };' +
+        '$.getJSON=function() {return $; };' +
+        '$.getScript=function() {return $; };' +
+        '$.globalEval=function() {return $; };' +
+        '$.grep=function() {return $; };' +
+        '$.hasData=function() {return $; };' +
+        '$.holdReady=function() {return $; };' +
+        '$.inArray=function() {return $; };' +
+        '$.isArray=function() {return $; };' +
+        '$.isEmptyObject=function() {return $; };' +
+        '$.isFunction=function() {return $; };' +
+        '$.isNumeric=function() {return $; };' +
+        '$.isPlainObject=function() {return $; };' +
+        '$.isWindow=function() {return $; };' +
+        '$.isXMLDoc=function() {return $; };' +
+        '$.makeArray=function() {return $; };' +
+        '$.map=function() {return $; };' +
+        '$.merge=function() {return $; };' +
+        '$.noConflict=function() {return $; };' +
+        '$.noop=function() {return $; };' +
+        '$.now=function() {return $; };' +
+        '$.param=function() {return $; };' +
+        '$.parseHTML=function() {return $; };' +
+        '$.parseJSON=function() {return $; };' +
+        '$.parseXML=function() {return $; };' +
+        '$.post=function() {return $; };' +
+        '$.proxy=function() {return $; };' +
+        '$.queue=function() {return $; };' +
+        '$.removeData=function() {return $; };' +
+        '$.sub=function() {return $; };' +
+        '$.support=function() {return $; };' +
+        '$.trim=function() {return $; };' +
+        '$.type=function() {return $; };' +
+        '$.unique=function() {return $; };' +
+        '$.when=function() {return $; };' +
+        '$.always=function() {return $; };' +
+        '$.done=function() {return $; };' +
+        '$.fail=function() {return $; };' +
+        '$.isRejected=function() {return $; };' +
+        '$.isResolved=function() {return $; };' +
+        '$.notify=function() {return $; };' +
+        '$.notifyWith=function() {return $; };' +
+        '$.pipe=function() {return $; };' +
+        '$.progress=function() {return $; };' +
+        '$.promise=function() {return $; };' +
+        '$.reject=function() {return $; };' +
+        '$.rejectWith=function() {return $; };' +
+        '$.resolve=function() {return $; };' +
+        '$.resolveWith=function() {return $; };' +
+        '$.state=function() {return $; };' +
+        '$.then=function() {return $; };' +
+        '$.currentTarget=function() {return $; };' +
+        '$.data=function() {return $; };' +
+        '$.delegateTarget=function() {return $; };' +
+        '$.isDefaultPrevented=function() {return $; };' +
+        '$.isImmediatePropagationStopped=function() {return $; };' +
+        '$.isPropagationStopped=function() {return $; };' +
+        '$.metaKey=function() {return $; };' +
+        '$.namespace=function() {return $; };' +
+        '$.pageX=function() {return $; };' +
+        '$.pageY=function() {return $; };' +
+        '$.preventDefault=function() {return $; };' +
+        '$.relatedTarget=function() {return $; };' +
+        '$.result=function() {return $; };' +
+        '$.stopImmediatePropagation=function() {return $; };' +
+        '$.stopPropagation=function() {return $; };' +
+        '$.target=function() {return $; };' +
+        '$.timeStamp=function() {return $; };' +
+        '$.type=function() {return $; };' +
+        '$.which=function() {return $; };' +
+        '' + s;
 
         // add spoofigator
 
-      s = " var navigator = " +
-        "function(){" +
-        "  this.geolocation=function(){" +
-        "    this.getCurrentPosition=function(){" +
-        "      this.coords = {latitude: \"\", longitude: \"\"};" +
-        "      return(this);" +
-        "    };" +
-        "    return(this);" +
-        "  };" +
-        "  return(this);" +
-        "};" + s;
+      s = ' var navigator = ' +
+        'function() {' +
+        '  this.geolocation=function() {' +
+        '    this.getCurrentPosition=function() {' +
+        '      this.coords = {latitude: "", longitude: ""};' +
+        '      return this;' +
+        '    };' +
+        '    return this;' +
+        '  };' +
+        '  return this;' +
+        '};' + s;
 
       sandBox.submit(scopejQuery(s), function(cls, message) {
         if (cls) {
@@ -582,14 +851,14 @@ function safeHTMLRun(test) {
 function updatePreview() {
   editorValueForIFrame = editor.getValue();
   var failedCommentTest = false;
+  var openingComments = editorValueForIFrame.match(/\<\!\-\-/gi);
+  var closingComments = editorValueForIFrame.match(/\-\-\>/gi);
   if (
-    editorValueForIFrame.match(/\<\!\-\-/gi) &&
-    editorValueForIFrame.match(/\-\-\>/gi) == null
-  ) {
-    failedCommentTest = true;
-  } else if (
-    editorValueForIFrame.match(/\<\!\-\-/gi) &&
-    editorValueForIFrame.match(/\<\!\-\-/gi).length > editorValueForIFrame.match(/\-\-\>/gi).length
+    openingComments &&
+    (
+      !closingComments ||
+      openingComments.length > closingComments.length
+    )
   ) {
     failedCommentTest = true;
   }
@@ -606,17 +875,8 @@ function updatePreview() {
   }
 }
 
-if (typeof prodOrDev !== 'undefined') {
-
-  /* eslint-disable no-unused-vars */
-  var nodeEnv = window.prodOrDev === 'production' ?
-    'http://www.freecodecamp.com' :
-    'http://localhost:3001';
-  /* eslint-enable no-unused-vars */
-
-  if (common.challengeType === '0') {
-    setTimeout(updatePreview, 300);
-  }
+if (common.challengeType === '0') {
+  setTimeout(updatePreview, 300);
 }
 
 /**
@@ -630,7 +890,9 @@ var postSuccess = function(data) {
 
   var testDoc = document.createElement('div');
   $(testDoc).html(
-    "<div class='row'><div class='col-xs-2 text-center'><i class='ion-checkmark-circled big-success-icon'></i></div><div class='col-xs-10 test-output test-vertical-center wrappable'>" +
+    "<div class='row'><div class='col-xs-2 text-center'>" +
+    "<i class='ion-checkmark-circled big-success-icon'></i></div>" +
+    "<div class='col-xs-10 test-output test-vertical-center wrappable'>" +
     JSON.parse(data) +
     '</div>'
   );
@@ -639,11 +901,15 @@ var postSuccess = function(data) {
   testSuccess();
 };
 
+/* eslint-disable no-unused-vars */
 var postError = function(data) {
+/* eslint-enable no-unused-vars */
   var testDoc = document.createElement('div');
 
   $(testDoc).html(
-    "<div class='row'><div class='col-xs-2 text-center'><i class='ion-close-circled big-error-icon'></i></div><div class='col-xs-10 test-vertical-center test-output wrappable'>" +
+    "<div class='row'><div class='col-xs-2 text-center'>" +
+    "<i class='ion-close-circled big-error-icon'></i></div>" +
+    "<div class='col-xs-10 test-vertical-center test-output wrappable'>" +
     JSON.parse(data) +
     '</div>'
   );
@@ -846,7 +1112,10 @@ var reassembleTest = function(test, data) {
 };
 
 var runTests = function(err, data) {
-  var editorValue = editor.getValue();
+  var head = common.arrayToNewLineString(common.head);
+  var tail = common.arrayToNewLineString(common.tail);
+
+  var editorValue = head + editor.getValue() + tail;
   // userTests = userTests ? null : [];
   var allTestsPassed = true;
   pushed = false;
@@ -1098,6 +1367,8 @@ common.init.push((function() {
 }(window.$)));
 
 function bonfireExecute(shouldTest) {
+  var head = common.arrayToNewLineString(common.head);
+  var tail = common.arrayToNewLineString(common.tail);
   var codeOutput = common.codeOutput;
   initPreview = false;
   goodTests = 0;
@@ -1110,14 +1381,15 @@ function bonfireExecute(shouldTest) {
     common.challengeType !== '0' &&
     !editor.getValue().match(/\$\s*?\(\s*?\$\s*?\)/gi)
   ) {
-    var userJavaScript = editor.getValue();
+    var userJavaScript = head + editor.getValue() + tail;
     var failedCommentTest = false;
 
+    var openingComments = userJavaScript.match(/\/\*/gi);
     // checks if the number of opening comments(/*) matches the number of
     // closing comments(*/)
     if (
-      userJavaScript.match(/\/\*/gi) &&
-      userJavaScript.match(/\/\*/gi).length > userJavaScript.match(/\*\//gi).length
+      openingComments &&
+      openingComments.length > userJavaScript.match(/\*\//gi).length
     ) {
       failedCommentTest = true;
     }
@@ -1228,7 +1500,12 @@ $(document).ready(function() {
         bonfireExecute(true);
       }
     });
-  } else if (common.challengeType !== 7) {
+  } else if (
+    common.challengeType !== '2' &&
+    common.challengeType !== '3' &&
+    common.challengeType !== '4' &&
+    common.challengeType !== '7'
+  ) {
     bonfireExecute(true);
   }
 

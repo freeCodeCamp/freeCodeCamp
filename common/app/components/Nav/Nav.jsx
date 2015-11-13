@@ -4,6 +4,7 @@ import {
   Col,
   CollapsibleNav,
   Nav,
+  NavBrand,
   Navbar,
   NavItem
 } from 'react-bootstrap';
@@ -107,11 +108,11 @@ export default React.createClass({
     const { username, points, picture } = this.props;
     return (
       <Navbar
-        brand={ logoElement }
         className='nav-height'
         fixedTop={ true }
         toggleButton={ toggleButton }
         toggleNavKey={ 0 }>
+        <NavBrand>{ logoElement }</NavBrand>
         <CollapsibleNav eventKey={ 0 }>
           <Nav
             className='hamburger-dropdown'

@@ -19,7 +19,3 @@
                 h3 This will restore your code editor to its original state.
                 a.btn.btn-lg.btn-info.btn-block#reset-button(href='#', data-dismiss='modal', aria-hidden='true') Clear my code
                 a.btn.btn-lg.btn-primary.btn-block(href='#', data-dismiss='modal', aria-hidden='true') Cancel
-script.
-  if (typeof localStorage !== 'undefined') {
-    localStorage.setItem('currentDashedName', typeof common !== 'undefined' && common.dashedName || dashedName || '');
-  }

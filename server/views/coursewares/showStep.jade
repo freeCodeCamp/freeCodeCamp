@@ -34,14 +34,15 @@ block content
                           #challenge-step-btn-submit.animated.fadeIn.btn.btn-lg.btn-primary.btn-block Submit and go to my next challenge
                       else
                           a.btn.btn-lg.btn-primary.btn-block(href='/challenges/next-challenge?id=' + challengeId) Go to my next challenge
-    script(src=rev('/js', 'commonFramework.js'))
     script.
       var common = window.common || { init: [] };
+
       common.challengeId = !{JSON.stringify(challengeId)};
       common.challengeName = !{JSON.stringify(name)};
-      common.challengeType = 7;
+      common.challengeType = !{JSON.stringify(challengeType)};
       common.dashedName = !{JSON.stringify(dashedName || '')};
       common.isHonest = !{JSON.stringify(isHonest || false)};
       common.isFrontEndCert = !{JSON.stringify(isFrontEndCert || false)};
       common.isFullStackCert = !{JSON.stringify(isFullStackCert || false)};
       common.challengeSeed = !{JSON.stringify(challengeSeed || [])};
+    script(src=rev('/js', 'commonFramework.js'))

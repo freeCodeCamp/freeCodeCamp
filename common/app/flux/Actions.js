@@ -8,11 +8,19 @@ export default Actions({
     return { title: title + '| Free Code Camp' };
   },
 
-  setUser({ username, picture, progressTimestamps = [] }) {
+  setUser({
+    username,
+    picture,
+    progressTimestamps = [],
+    isFrontEndCert,
+    isFullStackCert
+  }) {
     return {
       username,
       picture,
-      points: progressTimestamps.length
+      points: progressTimestamps.length,
+      isFrontEndCert,
+      isFullStackCert
     };
   },
 
