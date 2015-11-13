@@ -22,6 +22,20 @@
   },
   {
     "camper": "akiralaine",
+    "name": "Musare",
+    "url": "http://musare.com/",
+    "description": "Musare is a modern, collaborative, open-source Music App.",
+    "image": "http://i.imgur.com/Y4D4MPL.png"
+  },
+  {
+    "camper": "storbeck",
+    "name": "Free Code Camp Event Zipline: Recipe Box",
+    "url": "http://codepen.io/GeoffStorbeck/full/bVKyzd/",
+    "description": "Try to reverse engineer this Recipe Box as an optional Zipline challenge.",
+    "image": "http://i.imgur.com/5o0bwVQ.png"
+  },
+  {
+    "camper": "akiralaine",
     "name": "Camper News Bot",
     "url": "https://twitter.com/campernewsbot",
     "description": "This twitter bot tweets out Camper News stories once they hit 5 upvotes.",
