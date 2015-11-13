@@ -387,7 +387,7 @@
       "description": [
         "You can use the <code>reverse</code> method to reverse the elements of an array.",
         "<code>reverse</code> is another array method that alters the array in place, but it also returns the reversed array.",
-        "Use <code>reverse</code> to reverse the <code>array</code> variable and assign it to <code>myArray</code>."
+        "Use <code>reverse</code> to reverse the <code>array</code> variable and assign it to <code>newArray</code>."
       ],
       "tests": [
         "assert.deepEqual(newArray, [7,6,5,4,3,2,1], 'message: You should reverse the array.');",
@@ -402,7 +402,9 @@
         "var newArray = array;",
         "",
         "// Only change code above this line.",
-        "",
+        ""
+      ],
+      "tail":[
         "(function() {return newArray;})();"
       ],
       "challengeType": 1,
