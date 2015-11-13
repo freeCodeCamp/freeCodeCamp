@@ -959,7 +959,7 @@
         "<code>&nbsp;&nbsp;ourArray.push(i);</code>",
         "<code>}</code>",
         "<code>ourArray</code> will now contain <code>[10,8,6,4,2]</code>.",
-        "Let's change our <code>initialization</code> and <code>final-expression</code> so we can count backward by twos for numbers.",
+        "Let's change our <code>initialization</code> and <code>final-expression</code> so we can count backward by twos by odd numbers.",
         "Push the odd numbers from 9 through 1 to <code>myArray</code> using a <code>for</code> loop."
       ],
       "tests":[
@@ -978,11 +978,10 @@
         "// Only change code below this line.",
         "",
         "",
-        "",
-        "// Only change code above this line.",
-        "",
-        "if(typeof(myArray) !== \"undefined\"){(function(){return myArray;})();}",
         ""
+      ],
+      "tail": [
+        "if(typeof(myArray) !== \"undefined\"){(function(){return myArray;})();}"
       ],
       "type": "waypoint",
       "challengeType": 1
