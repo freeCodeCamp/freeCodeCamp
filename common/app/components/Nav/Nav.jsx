@@ -41,12 +41,13 @@ export default React.createClass({
   },
 
   renderLinks() {
-    return navLinks.map(({ content, link, react }, index) => {
+    return navLinks.map(({ content, link, react, target }, index) => {
       if (react) {
         return (
           <LinkContainer
             eventKey={ index + 1 }
             key={ content }
+            target={ target || "_self"}
             to={ link }>
             <NavItem>
               { content }
