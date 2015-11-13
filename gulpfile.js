@@ -17,6 +17,7 @@ var Rx = require('rx'),
   concat = require('gulp-concat'),
   uglify = require('gulp-uglify'),
   merge = require('merge-stream'),
+  babel = require('gulp-babel'),
 
   // react app
   webpack = require('webpack-stream'),
@@ -375,6 +376,7 @@ gulp.task('js', function() {
 
     gulp.src(paths.js)
       .pipe(plumber({ errorHandler: errorHandler }))
+      .pipe(babel())
       .pipe(__DEV__ ? gutil.noop() : uglify())
   );
 
@@ -395,7 +397,6 @@ gulp.task('js', function() {
 });
 
 // commonFramework depend on iFrameScripts
-// sandbox depends on plugin
 gulp.task('dependents', ['js'], function() {
   var manifestName = 'dependents-manifest.json';
   var dest = paths.publicJs;
@@ -406,6 +407,7 @@ gulp.task('dependents', ['js'], function() {
 
   return gulp.src(paths.dependents)
     .pipe(plumber({ errorHandler: errorHandler }))
+    .pipe(babel())
     .pipe(__DEV__ ? gutil.noop() : uglify())
     .pipe(revReplace({ manifest: manifest }))
     .pipe(gulp.dest(dest))
