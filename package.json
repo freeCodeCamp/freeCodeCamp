@@ -57,6 +57,7 @@
     "forever": "~0.15.1",
     "frameguard": "~0.2.2",
     "gulp": "^3.9.0",
+    "gulp-babel": "^5.3.0",
     "gulp-concat": "^2.6.0",
     "gulp-eslint": "^1.1.0",
     "gulp-inject": "^3.0.0",

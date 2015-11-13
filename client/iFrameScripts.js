@@ -1,26 +1,26 @@
 /* eslint-disable no-undef, no-unused-vars, no-native-reassign */
-(function() {
+window.$ = parent.$;
+window.$(function() {
+  var _ = parent._;
+  var chai = parent.chai;
   var expect = chai.expect;
   var tests = parent.tests;
-  var editor = parent.editorValueForIFrame;
+  var common = parent.common;
+  var editorValue = common.editor.getValue();
 
-  setTimeout(function() {
-    for (var i = 0; i < tests.length; i++) {
-      var thisTest = true;
-      try {
-        /* eslint-disable no-eval */
-        eval(parent.tests[i]);
-        /* eslint-enable no-eval */
-      } catch (err) {
-        allTestsGood = false;
-        thisTest = false;
-        parent.postError(JSON.stringify(err.message.split(':').shift()));
-      } finally {
-        if (thisTest) {
-          parent.postSuccess(JSON.stringify(tests[i].split(',').pop().replace(
-            /\'/g, '').replace(/\)/, '')));
-        }
-      }
+  common.tests.forEach(test => {
+    try {
+      /* eslint-disable no-eval */
+      eval(test);
+      /* eslint-enable no-eval */
+    } catch (e) {
+      parent.postError(JSON.stringify(e.message.split(':').shift()));
+    } finally {
+      parent.postSuccess(
+        JSON.stringify(
+          test.split(',').pop().replace(/\'/g, '').replace(/\)/, '')
+        )
+      );
     }
-  }, 10);
-})();
+  });
+});

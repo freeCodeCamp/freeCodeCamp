@@ -11,11 +11,11 @@ function importScript(url, error) {
   return error;
 }
 
-function run(code) {
+function run(code, cb) {
+  var err = null;
   var result = {
     input: code,
     output: null,
-    error: null,
     type: null
   };
 
@@ -24,10 +24,15 @@ function run(code) {
     result.type = typeof codeExec;
     result.output = stringify(codeExec);
   } catch (e) {
-    result.error = e.message;
+    err = e;
   }
 
-  application.remote.output(result);
+  if (err) {
+    cb(err.message, null);
+  } else {
+    cb(null, result);
+  }
+
   self.close();
 }
 
