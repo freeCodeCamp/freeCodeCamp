@@ -1468,7 +1468,7 @@
         "<code>&nbsp;&nbsp;return null;</code>",
         "<code>}</code>",
         "Also, we need to show the user that he has won the game when he gets the same number in all the slots.",
-        "If all three numbers match, we should set the text <code>\"It's A Win\"</code> to the element with class <code>logger</code> or leave it as it is."
+        "If all three numbers match, we should also set the text <code>\"It's A Win\"</code> to the element with class <code>logger</code>."
       ],
       "tests": [
         "assert((function(){var data = runSlots();return data === null || data.toString().length === 1;})(), 'If all three of our random numbers are the same we should return that number. Otherwise we should return <code>null</code>.')"
