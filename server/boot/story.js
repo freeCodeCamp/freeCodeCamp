@@ -64,6 +64,7 @@ module.exports = function(app) {
 
   router.post('/news/userstories', userStories);
   router.get('/news/hot', hotJSON);
+  router.get('/news/feed', RSSFeed);
   router.get('/stories/hotStories', hotJSON);
   router.get(
     '/stories/submit',
@@ -100,6 +101,26 @@ module.exports = function(app) {
         var sliceVal = stories.length >= 100 ? 100 : stories.length;
         var data = stories.sort(sortByRank).slice(0, sliceVal);
         res.json(data);
+      },
+      next
+    );
+  }
+
+  function RSSFeed(req, res, next) {
+    var query = {
+      order: 'timePosted DESC',
+      limit: 1000
+    };
+    findStory(query).subscribe(
+      function(stories) {
+        var sliceVal = stories.length >= 100 ? 100 : stories.length;
+        var data = stories.sort(sortByRank).slice(0, sliceVal);
+        res.render('feed', {
+          title: 'FreeCodeCamp Camper News RSS Feed',
+          description: 'RSS Feed for FreeCodeCamp Top 100 Hot Camper News',
+          url: 'http://www.freecodecamp.com/news',
+          FeedPosts: data
+        });
       },
       next
     );
