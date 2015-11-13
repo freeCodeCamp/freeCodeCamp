@@ -48,7 +48,7 @@ export default React.createClass({
           <LinkContainer
             eventKey={ index + 1 }
             key={ content }
-            target={ target || "_self"}
+            target={ target || null }
             to={ link }>
             <NavItem>
               { content }

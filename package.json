@@ -101,7 +101,7 @@
     "react": "~0.14.2",
     "react-bootstrap": "~0.27.3",
     "react-motion": "~0.3.1",
-    "react-router": "^1.0.0-rc4",
+    "react-router": "^1.0.0",
     "react-router-bootstrap": "~0.19.2",
     "react-vimeo": "~0.0.3",
     "request": "^2.65.0",
