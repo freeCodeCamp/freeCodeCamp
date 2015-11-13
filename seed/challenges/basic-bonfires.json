@@ -39,8 +39,13 @@
       "descriptionFr": [],
       "nameRu": "",
       "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
+      "nameEs": "¡Bienvenido a los Bonfires!",
+      "descriptionEs": [
+        "Tu objetivo es arreglar la prueba que falla",
+        "Primero, ejecuta todos las pruebas dando click en \"Run tests\" o presionando Control + Enter.",
+        "La prueba que falla está marcada en rojo. Arregla el código de tal forma que todos las pruebas pasen. Luego, puedes continuar con el siguiente Bonfire",
+        "Haz que esta función devuelva true (verdadero) bajo cualquier circunstancia."
+        ],
       "namePt": "",
       "descriptionPt": []
     },
@@ -83,8 +88,13 @@
       "descriptionFr": [],
       "nameRu": "",
       "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
+      "nameEs": "Invierte el texto",
+      "descriptionEs": [
+        "Invierte la cadena de texto que se te provee",
+        "Puede que necesites convertir la cadena de texto en un arreglo antes de que puedas invertirla",
+        "El resultado debe ser una cadena de texto",
+        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+        ],
       "namePt": "",
       "descriptionPt": []
     },
@@ -126,8 +136,14 @@
       "descriptionFr": [],
       "nameRu": "",
       "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
+      "nameEs": "Factoriza un número",
+      "descriptionEs": [
+        "Crea una función que devuelva el factorial del número entero que se te provee",
+        "El factorial de un número entero positivo n es la multiplicación de todos los enteros positivos menores o iguales a n",
+        "Los factoriales son comúnmente representados con la notación <code>n!</code>",
+        "Por ejemplo: <code>5! = 1 * 2 * 3 * 4 * 5 = 120</code>",
+        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+        ],
       "namePt": "",
       "descriptionPt": []
     },
@@ -178,8 +194,14 @@
       "descriptionFr": [],
       "nameRu": "",
       "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
+      "nameEs": "Verifica si es palíndromo",
+      "descriptionEs": [
+        "Crea una función que devuelva true si una cadena de texto dada es un palíndromo, y que devuelva false en caso contrario",
+        "Un palíndromo es una palabra u oración que se escribe de la misma forma en ambos sentidos, sin tomar en cuenta signos de puntuación, espacios y sin distinguir entre mayúsculas y minúsculas.",
+        "Tendrás que quitar los signos de puntuación y transformar las letras a minúsculas para poder verificar si el texto es palíndromo.",
+        "Te proveeremos textos en varios formatos, como \"racecar\", \"RaceCar\", and \"race CAR\" entre otros.",
+        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+        ],
       "namePt": "",
       "descriptionPt": []
     },
@@ -221,8 +243,12 @@
       "descriptionFr": [],
       "nameRu": "",
       "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
+      "nameEs": "Encuentra la palabra más larga",
+      "descriptionEs": [
+        "Crea una función que devuelva la longitud de la palabra más larga en una frase dada",
+        "El resultado debe ser un número",
+        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+        ],
       "namePt": "",
       "descriptionPt": []
     },
@@ -261,8 +287,12 @@
       "descriptionFr": [],
       "nameRu": "",
       "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
+      "nameEs": "Aplica formato de título",
+      "descriptionEs": [
+        "Crea una función que devuelva la cadena de texto dada con la primera letra de cada palabra en mayúscula. Asegúrate de que el resto de las letras sean minúsculas",
+        "Para este ejercicio, también debes poner en mayúscula conectores como \"the\" y \"of\".",
+        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+        ],
       "namePt": "",
       "descriptionPt": []
     },
@@ -301,8 +331,13 @@
       "descriptionFr": [],
       "nameRu": "",
       "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
+      "nameEs": "Devuelve el entero mayor en cada arreglo",
+      "descriptionEs": [
+        "Crea una función que devuelva un arreglo que contenga el mayor de los números de cada sub-arreglo que se te presenta. Para simplificar las cosas, el arreglo que te presentamos tendrá exactamente 4 sub-arreglos",
+        "Recuerda que puedes iterar a través de un arreglo con un búcle simple, y acceder a cada miembro utilizando la sintaxis arr[i].",
+        "Si escribes tu propio test con Chai.js, asegúrate de utilizar un operador de igualdad estricto en lugar de un operador de igualdad cuando compares arreglos. ",
+        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+        ],
       "namePt": "",
       "descriptionPt": []
     },
@@ -345,8 +380,11 @@
       "descriptionFr": [],
       "nameRu": "",
       "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
+      "nameEs": "Confirma la terminación",
+      "descriptionEs": [
+        "Verifica si una cadena de texto (primer argumento) termina con una cadena de texto dada (segundo argumento).",
+        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+        ],
       "namePt": "",
       "descriptionPt": []
     },
@@ -387,8 +425,11 @@
       "descriptionFr": [],
       "nameRu": "",
       "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
+      "nameEs": "Repite el texto Repite el texto",
+      "descriptionEs": [
+        "Repite una cadena de texto dada (primer argumento) n veces (segundo argumento). Devuelve una cadena de texto vacía si n es un número negativo.",
+        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+        ],
       "namePt": "",
       "descriptionPt": []
     },
@@ -431,8 +472,12 @@
       "descriptionFr": [],
       "nameRu": "",
       "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
+      "nameEs": "Trunca una cadena de texto",
+      "descriptionEs": [
+        "Trunca una cadena de texto (primer argumento) si su longitud es mayor que un máximo de caracteres dado (segundo argumento). Devuelve la cadena de texto truncada con una terminación \"...\".",
+        "Ten en cuenta que los tres puntos al final también se cuentan dentro de la longitud de la cadena de texto.",
+        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+        ],
       "namePt": "",
       "descriptionPt": []
     },
@@ -471,8 +516,11 @@
       "descriptionFr": [],
       "nameRu": "",
       "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
+      "nameEs": "En mil pedazos",
+      "descriptionEs": [
+        "Escribe una función que parta un arreglo (primer argumento) en fragmentos de una longitud dada (segundo argumento) y los devuelva en forma de un arreglo multidimensional.",
+        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+        ],
       "namePt": "",
       "descriptionPt": []
     },
@@ -513,8 +561,12 @@
       "descriptionFr": [],
       "nameRu": "",
       "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
+      "nameEs": "Vuélale la cabeza",
+      "descriptionEs": [
+        "Crea una función que devuelva los elementos restantes de un arreglo después de eliminar n elementos de la cabeza.",
+        "Por cabeza nos referimos al inicio de un arreglo, comenzando por el índice 0.",
+        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+        ],
       "namePt": "",
       "descriptionPt": []
     },
@@ -559,8 +611,14 @@
       "descriptionFr": [],
       "nameRu": "",
       "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
+      "nameEs": "Mutaciones",
+      "descriptionEs": [
+        "Crea una función que devuelva true si la cadena de texto en el primer elemento de un arreglo contiene todas las letras de la cadena de texto en el segundo elemento del arreglo.",
+        "Por ejemplo, <code>[\"hello\", \"Hello\"]</code>, debe devolver true porque todas las letras en la segunda cadena de texto están presentes en la primera, sin distinguir entre mayúsculas y minúsculas.",
+        "En el caso de <code>[\"hello\", \"hey\"]</code> la función debe devolver false porque la cadena de texto \"hello\" no contiene una \"y\".",
+        "Finalmente, <code>[\"Alien\", \"line\"]</code>, la función debe devolver true porque todas las letras en \"line\" están presentes en \"Alien\".",
+        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+        ],
       "namePt": "",
       "descriptionPt": []
     },
@@ -600,8 +658,12 @@
       "descriptionFr": [],
       "nameRu": "",
       "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
+      "nameEs": "Detector de mentiras",
+      "descriptionEs": [
+        "Remueve todos los valores falsy de un arreglo dado",
+        "En javascript, valores falsy son los siguientes: <code>false</code>, <code>null</code>, <code>0</code>, <code>\"\"</code>, <code>undefined</code>, y <code>NaN</code>.",
+        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+        ],
       "namePt": "",
       "descriptionPt": []
     },
@@ -642,8 +704,11 @@
       "descriptionFr": [],
       "nameRu": "",
       "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
+      "nameEs": "Buscar y destruir",
+      "descriptionEs": [
+        "Se te proveerá un arreglo inicial (el primer argumento en la función destroyer), seguido por uno o más argumentos. Elimina todos los elementos del arreglo inicial que tengan el mismo valor que el resto de argumentos.",
+        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+        ],
       "namePt": "",
       "descriptionPt": []
     },
@@ -684,8 +749,12 @@
       "descriptionFr": [],
       "nameRu": "",
       "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
+      "nameEs": "¿Cuál es mi asiento?",
+      "descriptionEs": [
+        "Devuelve el menor índice en el que un valor (segundo argumento) debe ser insertado en un arreglo ordenado (primer argumento).",
+        "Por ejemplo, where([1,2,3,4], 1.5) debe devolver 1 porque el segundo argumento de la función (1.5) es mayor que 1 (con índice 0 en el arreglo), pero menor que 2 (con índice 1).",
+        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+        ],
       "namePt": "",
       "descriptionPt": []
     }
