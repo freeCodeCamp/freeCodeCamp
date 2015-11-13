@@ -410,7 +410,7 @@
     },
     {
       "id": "cf1111c1c16feddfaeb3bdef",
-      "title": "Concatenate Strings with .concat",
+      "title": "Concatenate Arrays with .concat",
       "description": [
         "<code>concat</code> can be used to merge the contents of two arrays into one.",
         "<code>concat</code> takes an array as an argument and returns a new array with the elements of this array concatenated onto the end.",
