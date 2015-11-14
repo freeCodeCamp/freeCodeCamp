@@ -42,14 +42,15 @@ export default React.createClass({
   },
 
   renderLinks() {
-    return navLinks.map(({ content, link, react }, index) => {
+    return navLinks.map(({ content, link, react, target }, index) => {
       if (react) {
         return (
           <LinkContainer
             eventKey={ index + 1 }
             key={ content }
             to={ link }>
-            <NavItem>
+            <NavItem
+              target={ target || null } >
               { content }
             </NavItem>
           </LinkContainer>
@@ -59,7 +60,8 @@ export default React.createClass({
         <NavItem
           eventKey={ index + 1 }
           href={ link }
-          key={ content }>
+          key={ content }
+          target={ target || null }>
           { content }
         </NavItem>
       );

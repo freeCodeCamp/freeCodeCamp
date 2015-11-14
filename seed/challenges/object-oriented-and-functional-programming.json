@@ -105,7 +105,7 @@
       "title":"Make Instances of Objects with a Constructor Function",
       "description":[
         "Now let's put that great <code>constructor</code> function we made in the last lesson to use!",
-        "To use a <code>constructor</code> function we call it with the <code>new</code> keyword in front if it like:",
+        "To use a <code>constructor</code> function we call it with the <code>new</code> keyword in front of it like:",
         "<code>var myCar = new Car();</code>",
         "<code>myCar</code> is now an <code>instance</code> of the <code>Car</code> constructor that looks like the object it described:",
         "<code>{</code>",
@@ -113,7 +113,7 @@
         "<code>&nbsp;&nbsp;engines: 1,</code>",
         "<code>&nbsp;&nbsp;seats: 1</code>",
         "<code>}</code>",
-        "Note that it is important to use the <code>new</code> keyword when calling a constructor. This is how javascript knows to create a new object and that all the references to <code>this</code> inside the constructor should be referring to this new object.",
+        "Note that it is important to use the <code>new</code> keyword when calling a constructor. This is how Javascript knows to create a new object and that all the references to <code>this</code> inside the constructor should be referring to this new object.",
         "Now, once the <code>myCar</code> <code>instance</code> is created it can be used like any other object and can have its properties accessed and modified the same way you would usually. For example:",
         "<code>myCar.turboType = \"twin\";</code>",
         "Our <code>myCar</code> variable now has a property <code>turboType</code> with a value of <code>\"twin\"</code>.",
@@ -387,7 +387,7 @@
       "description": [
         "You can use the <code>reverse</code> method to reverse the elements of an array.",
         "<code>reverse</code> is another array method that alters the array in place, but it also returns the reversed array.",
-        "Use <code>reverse</code> to reverse the <code>array</code> variable and assign it to <code>myArray</code>."
+        "Use <code>reverse</code> to reverse the <code>array</code> variable and assign it to <code>newArray</code>."
       ],
       "tests": [
         "assert.deepEqual(newArray, [7,6,5,4,3,2,1], 'message: You should reverse the array.');",
@@ -402,7 +402,9 @@
         "var newArray = array;",
         "",
         "// Only change code above this line.",
-        "",
+        ""
+      ],
+      "tail":[
         "(function() {return newArray;})();"
       ],
       "challengeType": 1,
@@ -410,7 +412,7 @@
     },
     {
       "id": "cf1111c1c16feddfaeb3bdef",
-      "title": "Concatenate Strings with .concat",
+      "title": "Concatenate Arrays with .concat",
       "description": [
         "<code>concat</code> can be used to merge the contents of two arrays into one.",
         "<code>concat</code> takes an array as an argument and returns a new array with the elements of this array concatenated onto the end.",
