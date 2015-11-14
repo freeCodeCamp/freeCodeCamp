@@ -127,9 +127,9 @@ block content
                                 table.table.table-striped
                                     thead
                                         tr
-                                            th.col-xs-4 Project
-                                            th.col-xs-2.hidden-xs Completed
-                                            th.col-xs-6.hidden-xs Link
+                                            th.col-xs-6 Projects
+                                            th.col-xs-3.hidden-xs Completed
+                                            th.col-xs-3.hidden-xs Link
                                     for challenge in baseAndZip
                                         tr
                                             td.col-xs-4.hidden-xs
@@ -144,14 +144,14 @@ block content
                                 table.table.table-striped
                                     thead
                                         tr
-                                            th.col-xs-4 Bonfire
-                                            th.col-xs-2.hidden-xs Completed
-                                            th.col-xs-6.hidden-xs Solution
+                                            th.col-xs-6 Bonfires
+                                            th.col-xs-3.hidden-xs Completed
+                                            th.col-xs-3.hidden-xs Solution
                                     for bonfire in bonfires
                                         tr
-                                            td.col-xs-4.hidden-xs= bonfire.name
-                                            td.col-xs-2.hidden-xs= moment(bonfire.completedDate, 'x').format("MMM DD, YYYY")
-                                            td.col-xs-6.hidden-xs
+                                            td.col-xs-6.hidden-xs= bonfire.name
+                                            td.col-xs-3.hidden-xs= moment(bonfire.completedDate, 'x').format("MMM DD, YYYY")
+                                            td.col-xs-3.hidden-xs
                                                 a(href='/challenges/' + bonfire.name + '?solution=' + encodeURIComponent(replaceScriptTags(bonfire.solution)), target='_blank') View my solution
                                             td.col-xs-12.visible-xs
                                                 a(href='/challenges/' + bonfire.name + '?solution=' + encodeURIComponent(replaceScriptTags(bonfire.solution)), target='_blank')= bonfire.name
@@ -160,14 +160,14 @@ block content
                                 table.table.table-striped
                                     thead
                                         tr
-                                            th.col-xs-4 Waypoints
-                                            th.col-xs-2.hidden-xs Completed
-                                            th.col-xs-6.hidden-xs Solution
+                                            th.col-xs-6 Waypoints
+                                            th.col-xs-3.hidden-xs Completed
+                                            th.col-xs-3.hidden-xs Solution
                                     for challenge in waypoints
                                         tr
-                                            td.col-xs-4.hidden-xs= challenge.name
-                                            td.col-xs-2.hidden-xs= moment(challenge.completedDate, 'x').format("MMM DD, YYYY")
-                                            td.col-xs-6.hidden-xs
+                                            td.col-xs-6.hidden-xs= challenge.name
+                                            td.col-xs-3.hidden-xs= moment(challenge.completedDate, 'x').format("MMM DD, YYYY")
+                                            td.col-xs-3.hidden-xs
                                               if (challenge.solution)
                                                   a(href='/challenges/' + challenge.name + '?solution=' + encodeURIComponent(replaceScriptTags(challenge.solution)), target='_blank') View my solution
                                               else
