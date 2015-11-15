@@ -31,7 +31,7 @@
     "babel": "5.8.29",
     "babel-core": "5.8.34",
     "babel-eslint": "^4.1.4",
-    "babel-loader": "5.3.3",
+    "babel-loader": "5.4.0",
     "body-parser": "^1.13.2",
     "chai-jquery": "^2.0.0",
     "cheerio": "~0.19.0",
