@@ -40,7 +40,7 @@
         "¿Ves el código en tu editor de texto que dice <code>&#60;h1&#62;Hello&#60;/h1&#62;</code>? Ese es un <code>elemento</code> HTML.",
         "La mayoría de los elementos HTML tienen una <code>etiqueta de apertura</code> y una <code>etiqueta de cierre</code>. Las etiquetas de apertura se ven como: <code>&#60;h1&#62;</code>. Las etiquetas de cierre se ven como: <code>&#60;/h1&#62;</code>. Fíjate que la única diferencia entre las etiquetas de apertura y de cierre es que estas últimas tienen un / después de su signo de apertura (<).",
         "Cada desafio tiene pruebas que puedes ejecutar en cualquier momento presionado el botón \"Ejecutar pruebas\". Una vez logres pasar todas las pruebas, podrás avanzar al siguiente desafio.",
-        "Para pasar la prueba en este desafio, cambia tu texto de la etiqueta <code>h1</code> para que diga \"Hello World\" en lugar de \"Hello\". Entonces presion el botón \"Ejecutar pruebas\"."
+        "Para pasar la prueba en este desafio, cambia tu texto de la etiqueta <code>h1</code> para que diga \"Hello World\" en lugar de \"Hello\". Entonces presiona el botón \"Ejecutar pruebas\"."
       ],
       "namePt": "",
       "descriptionPt": [],
