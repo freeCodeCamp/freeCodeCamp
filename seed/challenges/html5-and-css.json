@@ -35,13 +35,12 @@
       "descriptionRu": [],
       "nameEs": "Waypoint: Saluda a los Elementos HTML",
       "descriptionEs": [
-        "¡Bienvenido/a al primer desafío de programación de Free Code Camp! Haz click en el botón de abajo para tener más instrucciones.",
-        "Genial. Ahora puedes leer el resto de las instrucciones de este desafío.",
+        "¡Bienvenido/a al primer desafío de programación de Free Code Camp!",
         "Puedes editar tu <code>código</code> en tu <code>editor de texto</code>, que hemos incrustado en esta página web.",
         "¿Ves el código en tu editor de texto que dice <code>&#60;h1&#62;Hello&#60;/h1&#62;</code>? Ese es un <code>elemento</code> HTML.",
         "La mayoría de los elementos HTML tienen una <code>etiqueta de apertura</code> y una <code>etiqueta de cierre</code>. Las etiquetas de apertura se ven como: <code>&#60;h1&#62;</code>. Las etiquetas de cierre se ven como: <code>&#60;/h1&#62;</code>. Fíjate que la única diferencia entre las etiquetas de apertura y de cierre es que estas últimas tienen un / después de su signo de apertura (<).",
-        "Una vez que hayas completado cada desafío, y que hayas pasado todas sus pruebas, el botón \"Ir a mi siguiente desafío\" se activará. Haz click en él - o presiona control y enter al mismo tiempo - para avanzar al siguiente desafío.",
-        "Para activar el botón \"Ir a mi siguiente desafío\" de este ejercicio, cambia tu texto de la etiqueta <code>h1</code> para que diga \"Hello World\" en lugar de \"Hello\"."
+        "Cada desafio tiene pruebas que puedes ejecutar en cualquier momento presionado el botón \"Ejecutar pruebas\". Una vez logres pasar todas las pruebas, podrás avanzar al siguiente desafio.",
+        "Para pasar la prueba en este desafio, cambia tu texto de la etiqueta <code>h1</code> para que diga \"Hello World\" en lugar de \"Hello\". Entonces presiona el botón \"Ejecutar pruebas\"."
       ],
       "namePt": "",
       "descriptionPt": [],
@@ -86,10 +85,12 @@
       "descriptionRu": [],
       "nameEs": "Waypoint: Encabezado con el elemento h2",
       "descriptionEs": [
-        "Agrega una etiqueta <code>h2</code> que diga \"CatPhotoApp\" para crear un segundo <code>elemento</code> HTML debajo de tu elemento <code>h1</code> \"Hello World\".",
-        "El elemento h2 que ingreses creará un elemento h2 en el sitio web.",
+		"Durante los siguientes desafios, construiremos una aplicación HTML que lucirá como la siguiente:",
+        "<a href=\"http://i.imgur.com/jOc1JF1.png\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" src=\"http://i.imgur.com/jOc1JF1.png\" title=\"Pulsa para agrandar\" alt=\"Pantallazo de la aplicación Cat Photo terminada\"></a>",
+        "El elemento <code>h2</code> que ingreses creará un elemento <code>h2</code> en el sitio web.",
         "Este elemento le dice al navegador cómo mostrar el texto que contiene.",
-        "Los elementos <code>h2</code> son ligeramente más pequeños que los elementos <code>h1</code>. También hay elementos <code>h3</code>, <code>h4</code>, <code>h5</code> y <code>h6</code>"
+        "Los elementos <code>h2</code> son ligeramente más pequeños que los elementos <code>h1</code>. También hay elementos <code>h3</code>, <code>h4</code>, <code>h5</code> y <code>h6</code>",
+        "Agrega una etiqueta <code>h2</code> que diga \"CatPhotoApp\" para crear un segundo <code>elemento</code> HTML debajo de tu elemento <code>h1</code> \"Hello World\"."
       ],
       "namePt": "",
       "descriptionPt": [],
@@ -129,9 +130,9 @@
       "descriptionRu": [],
       "nameEs": "Waypoint: Informa con el Elemento Párrafo",
       "descriptionEs": [
-        "Crea un elemento párrafo debajo de tu elemento h2, y dale el texto \"Hello Paragraph\". Apenas escribas la etiqueta de apertura <code>&#60;p&#62;</code>, una de nuestras pruebas pasarán (ya que ésta es HTML válido). Asegúrate de cerrar el elemento agregando la etiqueta de cierre <code>&#60;/p&#62;</code>",
-        "Los elementos párrafo son los principales elementos para los párrafos de texto en tamaño normal en sitios web.",
-        "Tú puedes crear un elemento párrafo como éste: <code>&#60;p&#62;I'm a p tag!&#60;/p&#62;</code>"
+        "Los elementos <code>p</code> son los elementos preferidos en los sitios web para los párrafos de texto en tamaño normal. La P es abreviatura de \"párrafo\".",
+        "Tú puedes crear un elemento párrafo como éste: <code>&#60;p&#62;¡Soy una etiqueta p!&#60;/p&#62;</code>",
+        "Crea un elemento <code>p</code> debajo de tu elemento <code>h2</code>, y ponle el texto \"Hello Paragraph\"."
       ],
       "namePt": "",
       "descriptionPt": [],
@@ -176,10 +177,10 @@
       "descriptionRu": [],
       "nameEs": "Waypoint: Quitar comentarios HTML",
       "descriptionEs": [
-        "Quitar el comentario a los elementos <code>h1</code>, <code>h2</code> y <code>p</code>",
-        "Crear comentarios es una forma en la que puedes dejar mensajes dentro de tu código sin afectar el resultado.",
-        "Agregar comentarios es también una forma conveniente de desactivar tu código sin tener que borrarlo por completo.",
-        "Puedes comenzar un comentario con <code>&#60;!--</code> y terminar de comentar con <code>--&#62;</code>"
+        "\"Comentar\" es una manera en la que puedes dejar anotaciones en tu código sin afectar el código mismo.",
+        "Comentar también es una forma conveniente de desactivar código sin tener que borrarlo por completo.",
+        "Puedes comenzar un comentario con <code>&#60;!--</code> y terminar de comentar con <code>--&#62;</code>",
+        "Quita el comentario a los elementos <code>h1</code>, <code>h2</code> y <code>p</code>"
       ],
       "namePt": "",
       "descriptionPt": [],
@@ -224,9 +225,9 @@
       "descriptionRu": [],
       "nameEs": "Waypoint: Comenta en HTML",
       "descriptionEs": [
-        "Comenta el elemento <code>h1</code> y el elemento <code>p</code>, pero deja sin comentar el elemento <code>h2</code>",
         "Recuerda que para comenzar un comentario, necesitas usar <code>&#60;!--</code> y para terminar un comentario, necesitas usar <code>--&#62;</code>",
-        "Aquí necesitarás terminar el comentario antes que comience el elemento h2."
+        "Aquí necesitarás terminar el comentario antes que comience el elemento <code>h2</code>.",
+        "Comenta el elemento <code>h1</code> y el elemento <code>p</code>, pero deja sin comentar el elemento <code>h2</code>"
       ],
       "namePt": "",
       "descriptionPt": [],
@@ -313,9 +314,9 @@
       "descriptionRu": [],
       "nameEs": "Waypoint: Borra elementos HTML",
       "descriptionEs": [
-        "Borra los elementos h1 y br para simplificar nuestra vista.",
-        "Nuestro teléfono no tiene mucho espacio para elementos HTML.",
-        "Removamos los elementos innecesarios para que empecemos a construir nuestra CatPhotoApp."
+        "Nuestro teléfono no tiene mucho espacio vertical.",
+        "Eliminemos los elementos innecesarios para que empecemos a construir nuestra CatPhotoApp.",
+        "Borra el elemento <code>h1</code> para simplificar nuestra vista."
       ],
       "namePt": "",
       "descriptionPt": [],
