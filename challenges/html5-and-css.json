@@ -1164,7 +1164,7 @@
         "Here's an example:",
          "<code>&#60;p&#62;Here's a &#60;a href=\"http://freecodecamp.com\"&#62; link to Free Code Camp&#60;/a&#62; for you to follow.&#60;/p&#62;</code>",
         "<code>Nesting</code> just means putting one element inside of another element.",
-        "Now nest your existing <code>a</code> element within a new <code>p</code> element so that the surrounding paragraph says \"View more cat photos\", but where only \"cat photos\" is a link, and the rest of the text is plain text."
+        "Now nest your existing <code>a</code> element within a new <code>p</code> element (just after the existing <code>h2</code> element) so that the surrounding paragraph says \"View more cat photos\", but where only \"cat photos\" is a link, and the rest of the text is plain text."
       ],
       "tests": [
         "assert($(\"a[href=\\\"http://www.freecatphotoapp.com\\\"]\").length > 0, 'You need an <code>a</code> element that links to \"http://www.freecatphotoapp.com\".')",
