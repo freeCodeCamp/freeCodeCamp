@@ -68,8 +68,19 @@
       "descriptionFr": [],
       "nameRu": "",
       "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
+      "nameEs": "Valida Números Telefónicos de los EEUU",
+      "descriptionEs": [
+        "Haz que la función devuelva true (verdadero) si el texto introducido es un número válido en los EEUU.",
+        "El usuario debe llenar el campo del formulario de la forma que desee siempre y cuando sea un número válido en los EEUU. Los números mostrados a continuación tienen formatos válidos en los EEUU:",
+        "<code>555-555-5555</code>",
+        "<code>(555)555-5555</code>",
+        "<code>(555) 555-5555</code>",
+        "<code>555 555 5555</code>",
+        "<code>5555555555</code>",
+        "<code>1 555 555 5555</code>",
+        "Para esta prueba se te presentará una cadena de texto como por ejemplo: <code>800-692-7753</code> o <code>8oo-six427676;laskdjf</code>. Tu trabajo consiste en validar o rechazar el número telefónico tomando como base cualquier combinación de los formatos anteriormente presentados. El código de área es requrido. Si el código de país es provisto, debes confirmar que este es <code>1</code>. La función debe devolver true si la cadena de texto es un número telefónico válido en los EEUU; de lo contrario, debe devolver false.",
+        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+        ],
       "namePt": "",
       "descriptionPt": []
     },
@@ -109,8 +120,12 @@
       "descriptionFr": [],
       "nameRu": "",
       "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
+      "nameEs": "Diferencia simétrica",
+      "descriptionEs": [
+        "Crea una función que acepte dos o más arreglos y que devuelva un arreglo conteniendo la diferenia simétrica entre ambos",
+        "En Matemáticas, el término 'diferencia simétrica' se refiere a los elementos en dos conjuntos que están en el primer conjunto o en el segundo, pero no en ambos.",
+        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+        ],
       "namePt": "",
       "descriptionPt": []
     },
@@ -167,8 +182,14 @@
       "descriptionFr": [],
       "nameRu": "",
       "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
+      "nameEs": "Cambio exacto",
+      "descriptionEs": [
+        "Crea una función que simule una caja registradora que acepte el precio de compra como el primer argumento, la cantidad recibida como el segundo argumento, y la cantidad de dinero disponible en la registradora (cid) como tercer argumento",
+        "cid es un arreglo bidimensional que lista la cantidad de dinero disponible",
+        "La función debe devolver la cadena de texto \"Insufficient Funds\" si el cid es menor al cambio requerido. También debe devolver \"Closed\" si el cid es igual al cambio",
+        "De no ser el caso, devuelve el cambio en monedas y billetes, ordenados de mayor a menor denominación.",
+        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+        ],
       "namePt": "",
       "descriptionPt": []
     },
@@ -224,8 +245,11 @@
       "descriptionFr": [],
       "nameRu": "",
       "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
+      "nameEs": "Actualizando el inventario",
+      "descriptionEs": [
+        "Compara y actualiza el inventario actual, almacenado en un arreglo bidimensional, contra otro arreglo bidimensional de inventario nuevo. Actualiza las cantidades en el inventario actual y, en caso de recibir una nueva mercancía, añade su nombre y la cantidad recibida al arreglo del inventario en orden alfabético.",
+        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+        ],
       "namePt": "",
       "descriptionPt": []
     },
@@ -268,8 +292,12 @@
       "descriptionFr": [],
       "nameRu": "",
       "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
+      "nameEs": "Sin repeticiones, por favor",
+      "descriptionEs": [
+        "Crea una función que devuelva el número total de permutaciones de las letras en la cadena de texto provista, en las cuales no haya letras consecutivas repetidas",
+        "Por ejemplo, 'aab' debe retornar 2 porque, del total de 6 permutaciones posibles, solo 2 de ellas no tienen repetida la misma letra (en este caso 'a').",
+        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+        ],
       "namePt": "",
       "descriptionPt": []
     },
@@ -316,8 +344,14 @@
       "descriptionFr": [],
       "nameRu": "",
       "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
+      "nameEs": "Rangos amigables de fechas",
+      "descriptionEs": [
+        "Implementa una forma de convertir dos fechas en un rango en formato amigable que pueda ser presentado a un usuario.",
+        "Ninguna información redundante debe ser mostrada en el rango de fechas.",
+        "Además, si el año inicial es el actual, y el año de finalización puede ser inferido por el lector, el año debe omitirse.",
+        "La fecha que se introduce como argumento tiene el formato YYYY-MM-DD",
+        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+        ],
       "namePt": "",
       "descriptionPt": []
     }

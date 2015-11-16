@@ -50,8 +50,14 @@
       "descriptionFr": [],
       "nameRu": "",
       "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
+      "nameEs": "Crea una Persona",
+      "descriptionEs": [
+        "Completa el constructor de objetos con los métodos especificados en las pruebas.",
+        "Los métodos son: getFirstName(), getLastName(), getFullName(), setFirstName(first), setLastName(last), y setFullName(firstAndLast). ",
+        "Todas las funciones que aceptan un argumento tienen un arity de 1, y el argumento es una cadena de texto",
+        "Estos métodos deben ser el único medio para interactuar con el objeto",
+        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+        ],
       "namePt": "",
       "descriptionPt": []
     },
@@ -94,8 +100,15 @@
       "descriptionFr": [],
       "nameRu": "",
       "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
+      "nameEs": "Ubica los escombros",
+      "descriptionEs": [
+        "Crea una función que devuelva un nuevo arreglo que transforme la altitud promedio del elemento en su período orbital.",
+        "El arreglo debe contener objetos en el formato <code>{name: 'name', avgAlt: avgAlt}</code>.",
+        "Puedes leer acerca de períodos orbitales en <a href=\"http://en.wikipedia.org/wiki/Orbital_period\" target='_blank'>on wikipedia</a>.",
+        "Los valores deben estar redondeados al número entero más próximo. El cuerpo orbitado es la Tierra",
+        "El radio de la Tierra es 6367.4447 kilómetros, y el valor GM del planeta es de 398600.4418",
+        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+        ],
       "namePt": "",
       "descriptionPt": []
     },
@@ -136,8 +149,13 @@
       "descriptionFr": [],
       "nameRu": "",
       "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
+      "nameEs": "En parejas",
+      "descriptionEs": [
+        "Crea una función que devuelva la suma de todos los índices de los elementos de 'arr' que pueden ser emparejados con otro elemento de tal forma que la suma de ambos equivalga al valor del segundo argumento, 'arg'. Si varias combinaciones son posibles, devuelve la menor suma de índices. Una vez un elemento ha sido usado, no puede ser usado de nuevo para emparejarlo con otro elemento.",
+        "Por ejemplo, pairwise([1, 4, 2, 3, 0, 5], 7) debe devolver 11 porque 4, 2, 3 y 5 pueden ser emparejados para obtener una suma de 7",
+        "pairwise([1, 3, 2, 4], 4) devolvería el valor de 1, porque solo los primeros dos elementos pueden ser emparejados para sumar 4. ¡Recuerda que el primer elemento tiene un índice de 0!",
+        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+        ],
       "namePt": "",
       "descriptionPt": []
     }
