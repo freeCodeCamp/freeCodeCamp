@@ -41,8 +41,12 @@
       "descriptionFr": [],
       "nameRu": "",
       "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
+      "nameEs": "Suma todos los números en un rango",
+      "descriptionEs": [
+        "Te pasaremos un arreglo que contiene dos números. Crea una función que devuelva la suma de esos dos números y todos los números entre ellos.",
+        "El número menor no siempre será el primer elemento en el arreglo.",
+        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+        ],
       "namePt": "",
       "descriptionPt": []
     },
@@ -90,8 +94,11 @@
       "descriptionFr": [],
       "nameRu": "",
       "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
+      "nameEs": "Obtén la diferencia entre dos arreglos",
+      "descriptionEs": [
+        "Crea una función que compare dos arreglos y que devuelva un nuevo arreglo que contenga los elementos que no se encuentren simultáneamente en ambos arreglos.",
+        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+        ],
       "namePt": "",
       "descriptionPt": []
     },
@@ -148,8 +155,12 @@
       "descriptionFr": [],
       "nameRu": "",
       "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
+      "nameEs": "Convertior de números romanos",
+      "descriptionEs": [
+        "Convierte el número dado en numeral romano.",
+        "Todos los <a href=\"http://www.mathsisfun.com/roman-numerals.html\" target=\"_blank\">numerales romanos</a> en las respuestas deben estar en mayúsculas.",
+        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+        ],
       "namePt": "",
       "descriptionPt": []
     },
@@ -191,8 +202,12 @@
       "descriptionFr": [],
       "nameRu": "",
       "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
+      "nameEs": "¿Dónde estás que no te veo?",
+      "descriptionEs": [
+        "Crea una función que busque en un arreglo de objetos (primer argumento) y devuelva un arreglo con todos los objetos que compartan el valor indicado para una propiedad dada (segundo argumento). Cada pareja de propiedad y valor debe estar presente en el objeto de la colección para ser incluido en el arreglo devuelto por la función",
+        "Por ejemplo, si el primer argumento es <code>[{ first: \"Romeo\", last: \"Montague\" }, { first: \"Mercutio\", last: null }, { first: \"Tybalt\", last: \"Capulet\" }]</code>, y el segundo argumento es <code>{ last: \"Capulet\" }</code>, entonces tu función debe devolver el tercer objeto del arreglo en el primer argumento, ya que contiene la propiedad y el valor indicados en el segundo argumento.",
+        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+        ],
       "namePt": "",
       "descriptionPt": []
     },
@@ -237,8 +252,15 @@
       "descriptionFr": [],
       "nameRu": "",
       "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
+      "nameEs": "Buscar y reemplazar",
+      "descriptionEs": [
+        "Crea una función que busque un fragmento en una frase dada y lo reemplace por otro fragmento, devolviendo la nueva frase.",
+        "El primer argumento es la frase en la que se ejecutará la búsqueda y el reemplazo",
+        "El segundo argumento es la palabra que se va a reemplazar",
+        "El tercer argumento es lo que reemplazará a la palabra indicada en el segundo argumento",
+        "NOTA: Debes respetar mayúsculas y minúsculas cuando ejecutes el reemplazo. Por ejemplo, si quisieras reemplazar la palabra \"Libro\" con la palabra \"perro\", deberías insertar en vez la palabra \"Perro\"",
+        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+        ],
       "namePt": "",
       "descriptionPt": []
     },
@@ -283,8 +305,13 @@
       "descriptionFr": [],
       "nameRu": "",
       "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
+      "nameEs": "Latín de los cerdos",
+      "descriptionEs": [
+        "Traduce la cadena de texto que se te provee al Latín de los cerdos (Pig Latin)",
+        "<a href=\"http://en.wikipedia.org/wiki/Pig_Latin\" target=\"_blank\">Pig Latin</a> toma la primera consonante (o grupo de consonantes) de una palabra en inglés, la mueve al final de la palabra y agrega un \"ay\".",
+        "Si la palabra comienza con una vocal, simplemente añade \"way\" al final.",
+        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+        ],
       "namePt": "",
       "descriptionPt": []
     },
@@ -326,8 +353,15 @@
       "descriptionFr": [],
       "nameRu": "",
       "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
+      "nameEs": "Emparejando bases de ADN",
+      "descriptionEs": [
+        "A la cadena de ADN que se te pasa le hace falta una hebra. Toma cada una de las letras, obtén su pareja correspondiente y devuelve los resultados en un segundo arreglo",
+        "<a href=\"http://es.wikipedia.org/wiki/Apareamiento_de_bases\" target=\"_blank\">Parejas de bases</a> son pares de AT y CG. Encuentra el elemento que hace falta para cada una de las letras que se te presentan.",
+        "Devuelve la letra que se te provee como el primer elemento en cada arreglo",
+        "Por ejemplo, si te pasáramos la cadena GCG, tu función debería devolver el arreglo: [[\"G\", \"C\"], [\"C\",\"G\"],[\"G\", \"C\"]]",
+        "Cada letra que se te provee y su pareja deben estar contenidos en un arreglo, y cada uno de estos arreglos debe estar contenidos en un arreglo.",
+        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+        ],
       "namePt": "",
       "descriptionPt": []
     },
@@ -367,8 +401,12 @@
       "descriptionFr": [],
       "nameRu": "",
       "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
+      "nameEs": "Letras perdidas",
+      "descriptionEs": [
+        "Crea una función que devuelva la letra que falta en el rango de letras que se le pasa",
+        "Si todas las letras en el rango están presentes, la función debe devolver undefined.",
+        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+        ],
       "namePt": "",
       "descriptionPt": []
     },
@@ -412,8 +450,12 @@
       "descriptionFr": [],
       "nameRu": "",
       "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
+      "nameEs": "¡Bu!",
+      "descriptionEs": [
+        "Crea una función que verifique si el valor que se le pasa es de tipo booleano. Haz que la función devuelva true o false según corresponda.",
+        "Los primitivos buleanos primitivos son: true y false",
+        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+        ],
       "namePt": "",
       "descriptionPt": []
     },
@@ -455,8 +497,14 @@
       "descriptionFr": [],
       "nameRu": "",
       "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
+      "nameEs": "Intersección ordenada",
+      "descriptionEs": [
+        "Escribe una función que tome dos o más arreglos y que devuelva un nuevo arreglo con los valores únicos en el orden de aparición de los arreglos que se te pasaron",
+        "En otra palabras, todos los valores presentes en todos los arreglos deben aparecer en el arreglo final en su orden original, pero sin duplicados.",
+        "Los valores únicos deben aparecer en el orden original, pero el arreglo final no necesariamente debe mostrar los elementos en orden numérico.",
+        "Puedes usar de referencia las pruebas de verificación si necesitas ejemplos.",
+        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+        ],
       "namePt": "",
       "descriptionPt": []
     },
@@ -499,8 +547,11 @@
       "descriptionFr": [],
       "nameRu": "",
       "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
+      "nameEs": "Convierte entidades HTML",
+      "descriptionEs": [
+        "Convierte los caracteres \"&\", \"<\", \">\", '\"' (double quote), and \"'\" (apostrophe), contenidos en la cadena de texto que se te pasa, en sus entidades HTML correspondientes",
+        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+        ],
       "namePt": "",
       "descriptionPt": []
     },
@@ -541,8 +592,11 @@
       "descriptionFr": [],
       "nameRu": "",
       "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
+      "nameEs": "separado-por-guiones",
+      "descriptionEs": [
+        "Convierte la cadena de texto que se te pasa al formato spinal case. Spinal case es cuando escribes todas las palabras en-minúsculas-unidas-por-guiones.",
+        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+        ],
       "namePt": "",
       "descriptionPt": []
     },
@@ -584,8 +638,13 @@
       "descriptionFr": [],
       "nameRu": "",
       "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
+      "nameEs": "Suma todos los números de Fibonacci que son impares",
+      "descriptionEs": [
+        "Crea una función que devuelva la suma de todos los números impares en la secuencia de Fibonacci hasta el número que se le pasa como argumento, incluyéndolo en caso de ser un número de la secuencia.",
+        "Los primeros números de la secuencia son 1, 1, 2, 3, 5 y 8, y cada número siguiente es la suma de los dos números anteriores.",
+        "Por ejemplo, si se te pasa el número 4, la función deberá devolver 5, ya que los números impares menores que 4 son 1, 1 y 3.",
+        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+        ],
       "namePt": "",
       "descriptionPt": []
     },
@@ -625,8 +684,13 @@
       "descriptionFr": [],
       "nameRu": "",
       "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
+      "nameEs": "Suma todos los números primos",
+      "descriptionEs": [
+        "Suma todos los números primos hasta, e incluyendo, el número que se te pasa",
+        "Números primos son todos aquellos que sólo son divisibles entre 1 y entre sí mismos. Por ejemplo, el número 2 es primo porque solo es divisible por 1 y por 2. Por el contrario, el número 1 no es primo, ya que sólo puede dividirse por sí mismo",
+        "El número que se le provee a la función no puede ser primo",
+        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+        ],
       "namePt": "",
       "descriptionPt": []
     },
@@ -667,8 +731,13 @@
       "descriptionFr": [],
       "nameRu": "",
       "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
+      "nameEs": "Mínimo común múltiplo",
+      "descriptionEs": [
+        "En el ejercicio se te provee un arreglo con dos números. Crea una función que encuentre el número más pequeño que sea divisible entre ambos números, así como todos los números enteros entre ellos.",
+        "Tu función debe aceptar como argumento un arreglo con dos números, los cuales no necesariamente estarán en orden.",
+        "Por ejemplo, si se te pasan los números 1 y 3, deberás encontrar el mínimo común múltiplo de 1 y 3 que es divisible por todos los números <em>entre</em> 1 y 3.",
+        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+        ],
       "namePt": "",
       "descriptionPt": []
     },
@@ -705,8 +774,11 @@
       "descriptionFr": [],
       "nameRu": "",
       "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
+      "nameEs": "Buscando la verdad",
+      "descriptionEs": [
+        "Crea una función que busque dentro de un arreglo (primer argumento) y que devuelva el primer elemento que pase una prueba de verdad (segundo argumento).",
+        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+        ],
       "namePt": "",
       "descriptionPt": []
     },
@@ -747,8 +819,11 @@
       "descriptionFr": [],
       "nameRu": "",
       "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
+      "nameEs": "¡Fuera de aquí!",
+      "descriptionEs": [
+        "Toma los elementos contenidos en el arreglo que se te provee en el primer argumento de la función y elimínalos uno por uno, hasta que la función provista en el segundo argumento devuelva true.",
+        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+        ],
       "namePt": "",
       "descriptionPt": []
     },
@@ -787,8 +862,11 @@
       "descriptionFr": [],
       "nameRu": "",
       "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
+      "nameEs": "Aplanadora",
+      "descriptionEs": [
+        "Aplana el arreglo anidado que se te provee. Tu función debe poder aplanar arreglos de cualquier forma.",
+        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+        ],
       "namePt": "",
       "descriptionPt": []
     },
@@ -826,8 +904,12 @@
       "descriptionFr": [],
       "nameRu": "",
       "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
+      "nameEs": "Mensaje secreto",
+      "descriptionEs": [
+        "Haz que la función devuelva el mensaje en inglés escondido en el código binario de la cadena de texto que se le pasa.",
+        "La cadena de texto binaria estará separada por espacios.",
+        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+        ],
       "namePt": "",
       "descriptionPt": []
     },
@@ -869,8 +951,12 @@
       "descriptionFr": [],
       "nameRu": "",
       "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
+      "nameEs": "Que todo sea verdadero",
+      "descriptionEs": [
+        "Verifica si la función en el segundo argumento devuelve true para todos los elementos de la colección en el primer argumento.",
+        "Recuerda que puedes accesar a las propiedades de un objeto, ya sea a través de la notación por punto o de la notación por corchete usando [].",
+        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+        ],
       "namePt": "",
       "descriptionPt": []
     },
@@ -915,8 +1001,16 @@
       "descriptionFr": [],
       "nameRu": "",
       "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
+      "nameEs": "Argumentos opcionales",
+      "descriptionEs": [
+        "Crea una función que sume dos argumentos. Si sólo se le pasa un argumento a la función, haz que devuelva otra función que acepte un argumento y que devuelva la suma correspondiente.",
+        "Por ejemplo, <code>add(2, 3)</code> debe devolver <code>5</code>, y <code>add(2)</code> debe devolver una función.",
+        "Al llamar esta función con un único argumento devolverá la suma:",
+        "<code>var sumTwoAnd = add(2);</code>",
+        "<code>sumTwoAnd(3)</code> devuelve <code>5</code>.",
+        "Si alguno de los argumentos no es un número válido, haz que devuelva undefined.",
+        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+        ],
       "namePt": "",
       "descriptionPt": []
     }
