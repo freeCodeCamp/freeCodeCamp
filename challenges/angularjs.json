@@ -26,8 +26,12 @@
       "descriptionFr": [],
       "nameRu": "",
       "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
+      "nameEs": "Aprendamos a usar Angular.js",
+      "descriptionEs": [
+        "Code School tiene un curso corto gratuito sobre Angular.js. Este curso nos dará un vistazo a las características y la mecánica de Angular.js.",
+        "En este curso crearemos una pequeña tienda virtual completamente en Angular.js.",
+        "Ve a <a href='http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/1/section/1/video/1' target='_blank'>http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/1/section/1/video/1</a> y completa esa sección."
+        ],
       "namePt": "",
       "descriptionPt": []
     },
@@ -54,8 +58,12 @@
       "descriptionFr": [],
       "nameRu": "",
       "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
+      "nameEs": "Aplica directivas en Angular.js",
+      "descriptionEs": [
+        "Las directivas sirven como marcadores en tu HTML. Cuando Angular.js compila tu código HTML, también altera el comportamiento de los elementos del DOM basándose en las directivas que usaste.",
+        "Aprendamos a utilizar el poder de estas directivas, y cómo emplearlas para hacer tus apps más dinámicas.",
+        "Ve a <a href='http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/2/section/1/video/1' target='_blank'>http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/2/section/1/video/1</a> y completa esa sección."
+        ],
       "namePt": "",
       "descriptionPt": []
     },
@@ -82,8 +90,12 @@
       "descriptionFr": [],
       "nameRu": "",
       "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
+      "nameEs": "Formularios con Angular.js",
+      "descriptionEs": [
+        "Un área donde Angular.js muestra su verdadero poder es en sus formularios web.",
+        "Aprendamos ahora a crear formularios reactivos en Angular.js, incluyendo validación en tiempo real.",
+        "Ve a <a href='http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/3/section/1/video/1' target='_blank'>http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/3/section/1/video/1</a> y completa esa sección."
+        ],
       "namePt": "",
       "descriptionPt": []
     },
@@ -109,8 +121,11 @@
       "descriptionFr": [],
       "nameRu": "",
       "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
+      "nameEs": "Crea directivas personalizadas con Angular.js",
+      "descriptionEs": [
+        "Ahora aprenderemos a modificar directivas existentes en Angular.js y a crear nuestras propias directivas.",
+        "Ve a <a href='http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/4/section/1/video/1' target='_blank'>http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/4/section/1/video/1</a> y completa esa sección."
+        ],
       "namePt": "",
       "descriptionPt": []
     },
@@ -137,8 +152,12 @@
       "descriptionFr": [],
       "nameRu": "",
       "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
+      "nameEs": "Crea servicios con Angular.js",
+      "descriptionEs": [
+        "Servicios son funciones que puedes usar y reciclar en tu app en Angular.js para mejorar tu eficiencia.",
+        "Aprenderemos cómo utilizar servicios en este desafío final de Angular.js en Code School.",
+        "Ve a <a href='http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/5/section/1/video/1' target='_blank'>http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/5/section/1/video/1</a> y completa esa sección."
+        ],
       "namePt": "",
       "descriptionPt": []
     }
