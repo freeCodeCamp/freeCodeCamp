@@ -743,7 +743,7 @@
         "<code>var ourDog = {</code>",
         "<code>&nbsp;&nbsp;\"name\": \"Camper\",</code>",
         "<code>&nbsp;&nbsp;\"legs\": 4,</code>",
-        "<code>&nbsp;&nbsp;\"tails\": 1,</code>,",
+        "<code>&nbsp;&nbsp;\"tails\": 1,</code>",
         "<code>&nbsp;&nbsp;\"friends\": [\"everything!\"]</code>",
         "<code>};</code>",
         "Since he's a particularly happy dog, let's change his name to \"Happy Camper\". Here's how we update his object's name property:",
