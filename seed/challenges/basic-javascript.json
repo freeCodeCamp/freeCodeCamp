@@ -977,11 +977,8 @@
         "",
         "// Only change code below this line.",
         "",
-        "",
+        "if(typeof(myArray) !== \"undefined\"){(function(){return myArray;})();}",
         ""
-      ],
-      "tail": [
-        "if(typeof(myArray) !== \"undefined\"){(function(){return myArray;})();}"
       ],
       "type": "waypoint",
       "challengeType": 1
