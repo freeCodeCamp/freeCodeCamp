@@ -99,7 +99,7 @@
     "pmx": "~0.5.5",
     "ramda": "~0.18.0",
     "react": "~0.14.2",
-    "react-bootstrap": "~0.27.3",
+    "react-bootstrap": "~0.28.1",
     "react-motion": "~0.3.1",
     "react-router": "^1.0.0",
     "react-router-bootstrap": "https://github.com/FreeCodeCamp/react-router-bootstrap.git#freecodecamp",
