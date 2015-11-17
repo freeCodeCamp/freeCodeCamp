@@ -1255,7 +1255,7 @@
       "description": [
         "Sometimes you want to add <code>a</code> elements to your website before you know where they will link.",
         "This is also handy when you're changing the behavior of a link using <code>jQuery</code>, which we'll learn about later.",
-        "Replace your <code>a</code> element's <code>href</code> attribute with a <code>#</code>, also known as a hash symbol, to turn it into a dead link."
+        "Replace the value of your <code>a</code> element's <code>href</code> attribute with a <code>#</code>, also known as a hash symbol, to turn it into a dead link."
       ],
       "tests": [
         "assert($(\"a\").attr(\"href\") === \"#\", 'Your <code>a</code> element should be a dead link with a <code>href</code> attribute set to \"#\".')"
