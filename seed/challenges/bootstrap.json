@@ -1067,6 +1067,8 @@
       "title": "Add Font Awesome Icons to our Buttons",
       "description": [
         "Font Awesome is a convenient library of icons. These icons are vector graphics, stored in the <code>.svg</code> file format. These icons are treated just like fonts. You can specify their size using pixels, and they will assume the font size of their parent HTML elements.",
+        "The <code>i</code> element was originally used to make other elements italic, but is now commonly used for icons. You add the Font Awesome classes to the <code>i</code> element to turn it into an icon, for example:",
+        "<code>&lt;i class=\"fa fa-info-circle\"&gt;&lt;/i&gt;</code>",
         "Use Font Awesome to add a <code>thumbs-up</code> icon to your like button by giving it a <code>i</code> element with the classes <code>fa</code> and <code>fa-thumbs-up</code>."
       ],
       "tests": [
