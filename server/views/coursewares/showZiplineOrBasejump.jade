@@ -105,7 +105,12 @@ block content
         if (!!{ JSON.stringify(user ? true : false)}) {
           $('#complete-zipline-or-basejump-dialog').on('keydown', common.modalControlEnterHandler);
         }
+
+        $('#completed-zipline-or-basejump').on('click', function() {
+          $('#complete-zipline-or-basejump-dialog').modal('show');
+        });
       });
+
 
 
       document.addEventListener('gitter-sidecar-ready', function(e) {

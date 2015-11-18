@@ -102,7 +102,7 @@ block content
                     a.btn.btn-lg.btn-primary.btn-block(href='#', data-dismiss='modal', aria-hidden='true') Cancel
     include ../partials/challenge-modals
     script(type="text/javascript").
-      var common = window.common = { init: [] };
+      var common = window.common = window.common || { init: [] };
 
       common.tests = !{JSON.stringify(tests)};
       common.head = !{JSON.stringify(head)};

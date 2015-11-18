@@ -5,25 +5,35 @@ window.common = (function(global) {
     common = { init: [] }
   } = global;
 
-  if (!CodeMirror) {
-    return {};
+  const { challengeType = '0' } = common;
+
+  if (
+    !CodeMirror ||
+    challengeType === '0' ||
+    challengeType === '7'
+  ) {
+    common.editor = {};
+    return common;
   }
 
   var delay;
   var codeStorageFactory = common.codeStorageFactory;
 
-  var editor = CodeMirror.fromTextArea(document.getElementById('codeEditor'), {
-    lint: true,
-    lineNumbers: true,
-    mode: 'javascript',
-    theme: 'monokai',
-    runnable: true,
-    matchBrackets: true,
-    autoCloseBrackets: true,
-    scrollbarStyle: 'null',
-    lineWrapping: true,
-    gutters: ['CodeMirror-lint-markers']
-  });
+  var editor = CodeMirror.fromTextArea(
+    document.getElementById('codeEditor'),
+    {
+      lint: true,
+      lineNumbers: true,
+      mode: 'javascript',
+      theme: 'monokai',
+      runnable: true,
+      matchBrackets: true,
+      autoCloseBrackets: true,
+      scrollbarStyle: 'null',
+      lineWrapping: true,
+      gutters: ['CodeMirror-lint-markers']
+    }
+  );
 
   editor.setSize('100%', 'auto');
 

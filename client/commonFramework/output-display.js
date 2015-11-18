@@ -7,18 +7,17 @@ window.common = (function(global) {
 
   const { challengeType = '0' } = common;
 
-  if (!CodeMirror) {
-    return {};
-  }
-
   if (
+    !CodeMirror ||
     challengeType === '0' ||
     challengeType === '7'
   ) {
-    return {};
+    common.updateOutputDisplay = () => {};
+    common.appendToOutputDisplay = () => {};
+    return common;
   }
 
-  common.codeOutput = CodeMirror.fromTextArea(
+  var codeOutput = CodeMirror.fromTextArea(
     doc.getElementById('codeOutput'),
     {
       lineNumbers: false,
@@ -29,7 +28,7 @@ window.common = (function(global) {
     }
   );
 
-  common.codeOutput.setValue(`
+  codeOutput.setValue(`
     /**
       * Your output will go here.
       * Console.log() -type statements
@@ -38,7 +37,17 @@ window.common = (function(global) {
       */'
   `);
 
-  common.codeOutput.setSize('100%', '100%');
+  codeOutput.setSize('100%', '100%');
+
+  common.updateOutputDisplay = function updateOutputDisplay(str) {
+    codeOutput.setValue(str);
+    return str;
+  };
+
+  common.appendToOutputDisplay = function appendToOutputDisplay(str) {
+    codeOutput.setValue(codeOutput.getValue() + str);
+    return str;
+  };
 
   return common;
 }(window));

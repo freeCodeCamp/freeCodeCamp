@@ -8,15 +8,11 @@ window.common = (function({ $, common = { init: [] }}) {
   const submitModalId = '#challenge-step-modal';
 
   function getPreviousStep($challengeSteps) {
-    var length = $challengeSteps.length;
     var $prevStep = false;
     var prevStepIndex = 0;
     $challengeSteps.each(function(index) {
       var $step = $(this);
-      if (
-        !$step.hasClass('hidden') &&
-        index + 1 !== length
-      ) {
+      if (!$step.hasClass('hidden')) {
         prevStepIndex = index - 1;
       }
     });
@@ -50,7 +46,8 @@ window.common = (function({ $, common = { init: [] }}) {
     var prevStep = getPreviousStep($(stepClass));
     $(this)
     .parent()
-    .removeClass('fadeOutLeft')
+    .parent()
+    .removeClass('slideInLeft slideInRight')
     .addClass('animated fadeOutRight fast-animation')
     .delay(250)
     .queue(function(prev) {
@@ -58,7 +55,7 @@ window.common = (function({ $, common = { init: [] }}) {
       if (prevStep) {
         $(prevStep)
         .removeClass('hidden')
-        .removeClass('slideInRight')
+        .removeClass('fadeOutLeft fadeOutRight')
         .addClass('animated slideInLeft fast-animation')
         .delay(500)
         .queue(function(prev) {
@@ -74,7 +71,8 @@ window.common = (function({ $, common = { init: [] }}) {
     var nextStep = getNextStep($(stepClass));
     $(this)
     .parent()
-    .removeClass('fadeOutRight')
+    .parent()
+    .removeClass('slideInRight slideInLeft')
     .addClass('animated fadeOutLeft fast-animation')
     .delay(250)
     .queue(function(next) {
@@ -82,7 +80,7 @@ window.common = (function({ $, common = { init: [] }}) {
       if (nextStep) {
         $(nextStep)
         .removeClass('hidden')
-        .removeClass('slideInLeft')
+        .removeClass('fadeOutRight fadeOutLeft')
         .addClass('animated slideInRight fast-animation')
         .delay(500)
         .queue(function(next) {
