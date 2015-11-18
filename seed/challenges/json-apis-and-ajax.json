@@ -174,7 +174,7 @@
         "<code>});</code>"
       ],
       "tests": [
-        "assert(editor.match(/json\\.map/gi), 'The message box should have something in it.')"
+        "assert(editor.match(/json\\.forEach/gi), 'The message box should have something in it.')"
       ],
       "challengeSeed": [
         "fccss",
