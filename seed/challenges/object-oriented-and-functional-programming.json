@@ -89,6 +89,7 @@
         "",
         "",
         "};",
+        "// Only change code above this line.",
         "var myMotorBike = new MotorBike();"
       ],
       "tail":[
