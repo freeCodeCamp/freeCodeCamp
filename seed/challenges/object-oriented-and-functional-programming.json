@@ -88,10 +88,10 @@
         "",
         "",
         "",
-        "};"
+        "};",
+        "var myMotorBike = new MotorBike();"
       ],
       "tail":[
-        "var myMotorBike = new MotorBike();",
         "(function() {return JSON.stringify(myMotorBike);})();"
       ],
       "solutions":[
