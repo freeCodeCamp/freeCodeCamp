@@ -471,7 +471,7 @@
       ],
       "tests": [
         "assert($(\"#target4\").length === 0, 'Use jQuery to remove your <code>target4</code> element from your page.')",
-        "assert(editor.match(/id=\"target4/g), 'Only use jQuery to add these classes to the element.')"
+        "assert(editor.match(/id=\"target4/g), 'Only use jQuery to remove this element.')"
       ],
       "challengeSeed": [
         "fccss",
@@ -522,7 +522,7 @@
       "tests": [
         "assert($(\"#left-well\").children(\"#target2\").length === 0, 'Your <code>target2</code> element should not be inside your <code>left-well</code>.')",
         "assert($(\"#right-well\").children(\"#target2\").length > 0, 'Your <code>target2</code> element should be inside your <code>right-well</code>.')",
-        "assert(!editor.match(/class.*animated/g), 'Only use jQuery to move these elements.')"
+        "assert(!editor.match(/class.*animated/g), 'Only use jQuery to move this element.')"
       ],
       "challengeSeed": [
         "fccss",
@@ -575,7 +575,7 @@
       "tests": [
         "assert($(\"#right-well\").children(\"#target5\").length > 0, 'Your <code>target5</code> element should be inside your <code>right-well</code>.')",
         "assert($(\"#left-well\").children(\"#target5\").length > 0, 'A copy of your <code>target5</code> element should also be inside your <code>left-well</code>.')",
-        "assert(!editor.match(/class.*animated/g), 'Only use jQuery to move these elements.')"
+        "assert(!editor.match(/class.*animated/g), 'Only use jQuery to copy this element.')"
       ],
       "challengeSeed": [
         "fccss",
