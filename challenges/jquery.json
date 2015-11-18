@@ -849,7 +849,7 @@
       "description": [
         "We're done playing with our jQuery playground. Let's tear it down!",
         "jQuery can target the <code>body</code> element as well.",
-        "Here's how we would make the entire body fade out: <code> $('body').addClass('animated fadeOut')</code>",
+        "Here's how we would make the entire body fade out: <code> $(\"body\").addClass(\"animated fadeOut\")</code>",
         "But let's do something more dramatic. Add the classes <code>animated</code> and <code>hinge</code> to your <code>body</code> element."
       ],
       "tests": [
