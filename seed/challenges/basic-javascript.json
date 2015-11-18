@@ -1304,6 +1304,7 @@
     {
       "id": "cf1111c1c12feddfaeb9bdef",
       "title": "Create a JavaScript Slot Machine",
+      "isBeta": true,
       "description": [
         "We are now going to try and combine some of the stuff we've just learned and create the logic for a slot machine game.",
         "For this we will need to generate three random numbers between <code>1</code> and <code>3</code> to represent the possible values of each individual slot.",
@@ -1458,6 +1459,7 @@
     {
       "id": "cf1111c1c13feddfaeb1bdef",
       "title": "Add your JavaScript Slot Machine Slots",
+      "isBeta": true,
       "description": [
         "Now that our slots will each generate random numbers, we need to check whether they've all returned the same number.",
         "If they have, we should notify our user that they've won and we should return <code>null</code>.",
@@ -1617,6 +1619,7 @@
     {
       "id": "cf1111c1c13feddfaeb2bdef",
       "title": "Bring your JavaScript Slot Machine to Life",
+      "isBeta": true,
       "description": [
         "Now we can detect a win. Let's get this slot machine working.",
         "Let's use the jQuery <code>selector</code> <code>$(\".slot\")</code> to select all of the slots.",
@@ -1782,6 +1785,7 @@
     {
       "id": "cf1111c1c11feddfaeb1bdff",
       "title": "Give your JavaScript Slot Machine some Stylish Images",
+      "isBeta": true,
       "description": [
         "Now let's add some images to our slots.",
         "We've already set up the images for you in an array called <code>images</code>. We can use different indexes to grab each of these.",
