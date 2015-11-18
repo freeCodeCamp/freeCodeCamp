@@ -8,15 +8,11 @@ window.common = (function({ $, common = { init: [] }}) {
   const submitModalId = '#challenge-step-modal';
 
   function getPreviousStep($challengeSteps) {
-    var length = $challengeSteps.length;
     var $prevStep = false;
     var prevStepIndex = 0;
     $challengeSteps.each(function(index) {
       var $step = $(this);
-      if (
-        !$step.hasClass('hidden') &&
-        index + 1 !== length
-      ) {
+      if (!$step.hasClass('hidden')) {
         prevStepIndex = index - 1;
       }
     });
@@ -50,6 +46,7 @@ window.common = (function({ $, common = { init: [] }}) {
     var prevStep = getPreviousStep($(stepClass));
     $(this)
     .parent()
+    .parent()
     .removeClass('fadeOutLeft')
     .addClass('animated fadeOutRight fast-animation')
     .delay(250)
@@ -73,6 +70,7 @@ window.common = (function({ $, common = { init: [] }}) {
     e.preventDefault();
     var nextStep = getNextStep($(stepClass));
     $(this)
+    .parent()
     .parent()
     .removeClass('fadeOutRight')
     .addClass('animated fadeOutLeft fast-animation')

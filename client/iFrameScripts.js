@@ -7,20 +7,22 @@ window.$(function() {
   var tests = parent.tests;
   var common = parent.common;
   var editorValue = common.editor.getValue();
+  var editor = common.editor;
 
-  common.tests.forEach(test => {
+  var userTests = common.tests.map(test => {
+    var userTest = {};
     try {
       /* eslint-disable no-eval */
       eval(test);
       /* eslint-enable no-eval */
     } catch (e) {
-      parent.postError(JSON.stringify(e.message.split(':').shift()));
+      userTest.err = e.message.split(':').shift();
     } finally {
-      parent.postSuccess(
-        JSON.stringify(
-          test.split(',').pop().replace(/\'/g, '').replace(/\)/, '')
-        )
-      );
+      userTest.text = test
+        .split(',')
+        .pop()
+        .replace(/\'/g, '')
+        .replace(/\)/, '');
     }
   });
 });

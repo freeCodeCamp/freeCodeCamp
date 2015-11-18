@@ -10,6 +10,18 @@ window.common = (function(global) {
   common.tail = common.tail || [];
   common.salt = Math.random();
 
+  common.challengeTypes = {
+    HTML: '0',
+    JS: '1',
+    VIDEO: '2',
+    ZIPLINE: '3',
+    BASEJUMP: '4',
+    BONFIRE: '5',
+    HIKES: '6',
+    STEP: '7'
+  };
+
+
   common.arrayToNewLineString = function arrayToNewLineString(seedData) {
     seedData = Array.isArray(seedData) ? seedData : [seedData];
     return seedData.reduce(function(seed, line) {
@@ -67,12 +79,10 @@ window.common = (function(global) {
     return str.replace(logRegex, '');
   };
 
-  common.reassembleTest = function reassembleTest(test, data) {
-    var lineNum = test.line;
-    var regexp = new RegExp('\/\/' + lineNum + common.salt);
-    return data.input.replace(regexp, test.text);
+  common.reassembleTest = function reassembleTest(code = '', { line, text }) {
+    var regexp = new RegExp('\/\/' + line + common.salt);
+    return code.replace(regexp, text);
   };
-
 
   return common;
 })();

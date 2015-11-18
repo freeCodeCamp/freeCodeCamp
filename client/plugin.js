@@ -13,22 +13,18 @@ function importScript(url, error) {
 
 function run(code, cb) {
   var err = null;
-  var result = {
-    input: code,
-    output: null,
-    type: null
-  };
+  var result = {};
 
   try {
     var codeExec = runHidden(code);
     result.type = typeof codeExec;
     result.output = stringify(codeExec);
   } catch (e) {
-    err = e;
+    err = e.mesage;
   }
 
   if (err) {
-    cb(err.message, null);
+    cb(err, null);
   } else {
     cb(null, result);
   }
@@ -40,7 +36,7 @@ function run(code, cb) {
 // protects even the worker scope from being accessed
 function runHidden(code) {
 
-  /* eslint-disable */
+  /* eslint-disable no-unused-vars */
   var indexedDB = null;
   var location = null;
   var navigator = null;
@@ -63,21 +59,15 @@ function runHidden(code) {
   var dump = null;
   var onoffline = null;
   var ononline = null;
-  /* eslint-enable */
+  /* eslint-enable no-unused-vars */
 
   var error = null;
-  error = importScript(
-    error,
-    'https://cdnjs.cloudflare.com/ajax/libs/ramda/0.13.0/ramda.min.js'
-  );
-
   error = importScript(
     'https://cdnjs.cloudflare.com/ajax/libs/chai/2.2.0/chai.min.js'
   );
 
 
   /* eslint-disable*/
-  var expect = chai.expect;
   var assert = chai.assert;
   /* eslint-enable */
 
