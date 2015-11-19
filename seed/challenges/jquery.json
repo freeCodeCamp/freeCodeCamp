@@ -461,6 +461,57 @@
       "type": "waypoint",
       "challengeType": 0
     },
+      {
+      "id": "564944c91be2204b269d51e3",
+      "title": "Change Text Inside an Element Using jQuery",
+      "description": [
+        "Using jQuery, you can change the text between the start and end tags of an element. You can even change HTML markup.",
+        "jQuery has a function called <code>.html()</code> that lets you add HTML tags and text within an element. Any content previously within the element will be completely replaced with the content you provide using this function.",
+        "Here's how you would rewrite and italicize the text of our heading:",
+        "<code>$(\"h3\").html(\"&#60;i&#62;jQuery Funhouse&#60;/i&#62;\");</code>",
+        "jQuery also has a similar function called <code>.text()</code> that only alters text without adding tags.",
+        "Change the button with id <code>target4</code> by italicizing its text."
+      ],
+      "tests": [
+        "assert.isTrue((/<i>/gi).test($(\"#target4\").html()), 'Italicize the text in your <code>target4</code> button by adding HTML tags.')",
+        "assert($(\"#target4\") && $(\"#target4\").text() === '#target4', 'Make sure the text is otherwise unchanged.')",
+        "assert.isFalse((/<i>/gi).test($(\"h3\").html()), 'Do not alter any other text.')"
+      ],
+      "challengeSeed": [
+        "fccss",
+        "  $(document).ready(function() {",
+        "    $(\"#target1\").css(\"color\", \"red\");",
+        "",
+        "  });",
+        "fcces",
+        "",
+        "<!-- Only change code above this line. -->",
+        "",
+        "<div class=\"container-fluid\">",
+        "  <h3 class=\"text-primary text-center\">jQuery Playground</h3>",
+        "  <div class=\"row\">",
+        "    <div class=\"col-xs-6\">",
+        "      <h4>#left-well</h4>",
+        "      <div class=\"well\" id=\"left-well\">",
+        "        <button class=\"btn btn-default target\" id=\"target1\">#target1</button>",
+        "        <button class=\"btn btn-default target\" id=\"target2\">#target2</button>",
+        "        <button class=\"btn btn-default target\" id=\"target3\">#target3</button>",
+        "      </div>",
+        "    </div>",
+        "    <div class=\"col-xs-6\">",
+        "      <h4>#right-well</h4>",
+        "      <div class=\"well\" id=\"right-well\">",
+        "        <button class=\"btn btn-default target\" id=\"target4\">#target4</button>",
+        "        <button class=\"btn btn-default target\" id=\"target5\">#target5</button>",
+        "        <button class=\"btn btn-default target\" id=\"target6\">#target6</button>",
+        "      </div>",
+        "    </div>",
+        "  </div>",
+        "</div>"
+      ],
+      "type": "waypoint",
+      "challengeType": 0
+    },
     {
       "id": "bad87fee1348bd9aed708826",
       "title": "Remove an Element Using jQuery",
