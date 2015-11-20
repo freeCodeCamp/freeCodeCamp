@@ -35,6 +35,7 @@ module.exports = function(app) {
   router.get('/labs', showLabs);
   router.get('/stories', showTestimonials);
   router.get('/all-stories', showAllTestimonials);
+  router.get('/links', showLinks);
 
   app.use(router);
 
@@ -187,6 +188,13 @@ module.exports = function(app) {
     res.render('resources/labs', {
       title: 'Projects Built by Free Code Camp Software Engineers',
       projects: labs
+    });
+  }
+
+  function showLinks(req, res) {
+    res.render('resources/links', {
+      title: 'Links to external Free Code Camp resources and ' +
+      'social media communities'
     });
   }
 
