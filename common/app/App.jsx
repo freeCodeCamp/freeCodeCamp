@@ -3,7 +3,6 @@ import { contain } from 'thundercats-react';
 import { Row } from 'react-bootstrap';
 
 import { Nav } from './components/Nav';
-import { Footer } from './components/Footer';
 
 export default contain(
   {
@@ -52,7 +51,6 @@ export default contain(
           <Row>
             { this.props.children }
           </Row>
-          <Footer />
         </div>
       );
     }

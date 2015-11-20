@@ -62,7 +62,7 @@ body.top-and-bottom-margins {
 }
 
 body.no-top-and-bottom-margins {
-  margin: 70px 20px 50px 20px;
+  margin: 70px 20px 0px 20px;
 }
 
 h1, h2 {
@@ -401,6 +401,19 @@ thead {
   width: 50px;
 }
 
+.brownie-points-nav {
+  @media (min-width: 991px) and (max-width: 999px) {
+    margin-right: -10px;
+  }
+}
+
+.signin-button-nav {
+  @media (min-width: 991px) and (max-width: 1010px) {
+    margin-left: -10px;
+    margin-right: -5px;
+  }
+}
+
 .navbar-nav a {
   color: @gray-lighter;
   font-size: 20px;
@@ -420,6 +433,7 @@ thead {
   margin-top: -2px !important;
   padding-top: 10px !important;
   padding-bottom: 10px !important;
+  margin-right: -12px;
 }
 
 .public-profile-img {
