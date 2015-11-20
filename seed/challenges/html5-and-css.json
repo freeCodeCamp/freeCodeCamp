@@ -721,7 +721,7 @@
       "descriptionEs": [
         "Ahora, importemos y apliquemos un tipo de letra de Google (tenga en cuenta que si Google es bloqueado en su país, debera saltarse este desafio).",
 		"Primero, haga un <code>llamado</code> a Google para tomar el tipo de letra <code>Lobster</code> y para cargarlo en su HTML.",
-		"Copie la siguiente porción de código y peguela en la parte superior de su editor de texto:",
+		"Copie la siguiente porción de código y péguela en la parte superior de su editor de texto:",
         "<code>&#60;link href=\"http://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\"&#62;</code>",
        "Ahora establezca <code>Lobster</code> como valor de font-family en su elemento <code>h2</code>.",
        "Aplique la familia de fuente (<code>font-family</code>) <code>Lobster</code> a su elemento <code>h2</code>."
@@ -787,13 +787,13 @@
       "descriptionRu": [],
       "nameEs": "Especifique como deben degradarse los tipos de letra",
       "descriptionEs": [
-        "Hay diversos tipos de letra por omisión disponible en todos los navegadores.  Estos incluyend <code>Monospace</code>, <code>Serif</code> y <code>Sans-Serif</code>",
+        "Hay diversos tipos de letra disponibles por omisión en todos los navegadores.  Estos incluyend <code>Monospace</code>, <code>Serif</code> y <code>Sans-Serif</code>",
 		"Cuando un tipo de letra no está disponible, puede decirle al navegador que \"degrade\" a otro tipo de letra.",
 		"Por ejemplo, si quiere que un elemento use el tipo <code>Helvetica</code>, o que se degrade a <code>Sans-Serif</code> cuando <code>Helvetica</code> no esté disponible, puede usar el siguiente estilo CSS:",
         "<code>p {</code>",
         "<code>&nbsp;&nbsp;font-family: Helvetica, Sans-Serif;</code>",
         "<code>}</code>",
-        "Ahora ponga en comentarios sus llamadas a tipos de letra de Google, de forma que el tipo <code>Lobster</code> no esté disponible. Note como se degrada al tipo <code>Monospace</code>."
+        "Ahora ponga como comentarios sus llamadas a tipos de letra de Google, de forma que el tipo <code>Lobster</code> no esté disponible. Note como se degrada al tipo <code>Monospace</code>."
       ],
       "namePt": "",
       "descriptionPt": [],
@@ -928,7 +928,7 @@
         "<code>&nbsp;&nbsp;&nbsp;&nbsp;width: 500px;</code>",
         "<code>&nbsp;&nbsp;}</code>",
         "<code>&#60;/style&#62;</code>",
-        "Crea una clase llamada <code>smaller-image</code> y utilizala para cambiar el tamaño de la imagen de modo que sea de sólo 100 píxeles de ancho."
+        "Crea una clase llamada <code>smaller-image</code> y utilízala para cambiar el tamaño de la imagen de modo que sea de sólo 100 píxeles de ancho."
       ],
       "namePt": "",
       "descriptionPt": [],
@@ -1228,7 +1228,7 @@
       "descriptionFr": [],
       "nameRu": "",
       "descriptionRu": [],
-      "nameEs": "Enlaza páginas externas con elementos de anclaje",
+      "nameEs": "Enlaza páginas externas con elementos ancla",
       "descriptionEs": [
         "Los elementos <code>a</code>, también conocido como elementos <code>ancla</code>, se utilizan para enlazar a contenido fuera de la página actual.",
         "Aquí está un diagrama de un elemento <code>a</code>. En este caso, el elemento <code>a</code> se utiliza en el medio de un elemento de párrafo, lo que significa que el enlace aparecerá en el medio de una frase. ",
@@ -1389,7 +1389,7 @@
       "descriptionRu": [],
       "nameEs": "Haz vínculos muertos utilizando el símbolo de numero",
       "descriptionEs": [
-        "A veces quieres agregar elementos <code>a</code> a tu sitio web antes de saber que enlazarán.",
+        "A veces quieres agregar elementos <code>a</code> a tu sitio web antes de saber qué enlazarán.",
         "Esto también es útil cuando estás cambiando el comportamiento de un enlace usando <code>jQuery</code>, que aprenderemos más adelante.",
         "Reemplaza el atributo <code>href</code> de tu elemento <code>a</code> con un <code>#</code>, también conocido como un símbolo de número o de <em>hash</em>, para convertirlo en un vínculo muerto."
       ],
@@ -1540,9 +1540,9 @@
       "descriptionFr": [],
       "nameRu": "",
       "descriptionRu": [],
-      "nameEs": "Agrega Texto alternativo a una imagen para dar Accesibilidad",
+      "nameEs": "Agrega texto alternativo a una imagen para dar Accesibilidad",
       "descriptionEs": [
-        "Los atributos <code>alt</code> también conocidos como <code>  texto alternativo</code>, son lo que se presentaran si el navegador no puede mostrar la imagen. Los atributos <code>alt</code> también son importantes para los usuarios ciegos o con deficiencia visual para entender lo que una imagen retrata. Y los motores de búsqueda también examinan los atributos <code>alt</code>. ",
+        "Los atributos <code>alt</code> también conocidos como <code>texto alternativo</code>, son lo que se presentarán en caso que el navegador no puede mostrar la imagen. Los atributos <code>alt</code> también son importantes para los usuarios ciegos o con deficiencia visual para entender lo que una imagen retrata. Y los motores de búsqueda también examinan los atributos <code>alt</code>. ",
         "En resumen, ¡cada imagen debe tener un atributo <code>alt</code>!",
         "Usted puede agregar un atributo <code>alt</code> justo en el elemento <code>img</code> así:",
         "<code>&#60img src=\"www.your-image-source.com/your-image.jpg\" alt=\"tu texto alternativo\"&#62</code>",
@@ -1633,7 +1633,7 @@
         "&nbsp;&nbsp;<code>&#60;li&#62;leche&#60;/li&#62;</code>",
         "&nbsp;&nbsp;<code>&#60;li&#62;queso&#60;/li&#62;</code>",
         "<code>&#60;/ul&#62;</code>",
-        "crea una lista con viñetas con \"leche\" y \"queso\".",
+        "creará una lista con viñetas con \"leche\" y \"queso\".",
         "Elimina los dos últimos elementos <code>p</code> y en la parte inferior de la página crea una lista no ordenada de tres cosas que los gatos aman."
       ],
       "namePt": "",
@@ -1728,7 +1728,7 @@
         "&nbsp;&nbsp;<code>&#60;li&#62;Garfield&#60;/li&#62;</code>",
         "&nbsp;&nbsp;<code>&#60;li&#62;Sylvester&#60;/li&#62;</code>",
         "<code>&#60;/ol&#62;</code>",
-        "crea una lista numerada con \"Garfield\" y \"Sylvester\".",
+        "creará una lista numerada con \"Garfield\" y \"Sylvester\".",
         "Crea una lista ordenada de los 3 cosas que más odian los gatos."
       ],
       "namePt": "",
@@ -2074,7 +2074,7 @@
       "descriptionRu": [],
       "nameEs": "Agrega un botón Enviar a un formulario",
       "descriptionEs": [
-        "Añadamos un elemento <code>submit</code> a tu formulario. Al hacer clic en este botón enviará los datos del formulario a la URL especificada en el atributo <code>actio</code> de tu formulario. ",
+        "Añadamos un elemento <code>submit</code> a tu formulario. Al hacer clic en este botón enviará los datos del formulario a la URL especificada en el atributo <code>action</code> de tu formulario. ",
         "He aquí un ejemplo de un botón de envío:",
         "<code>&#60;button type=\" submit\"&#62;este botón envía el formulario&#60;/botón&#62;</code>",
         "Agrega un botón de enviar a tu elemento <code>form</code> con el tipo <code>submit</code> y con el texto \"Submit\"."
@@ -2162,7 +2162,7 @@
       "nameEs": "Utiliza HTML5 para especificar campos obligatorios",
       "descriptionEs": [
         "Puedes especificar un campo obligatorio en un formulario para que tu usuario no pueda enviar el formulario hasta que él o ella lo haya llenado.",
-        "Por ejemplo, si quieres requerir obligatoriamente un campo de texto, puedes agregar la palabra <code>required</code> dentro de tu elemento <code>input</code>, usarías: <code>&#60;input type=\"text\" requiere&#62;</code> ",
+        "Por ejemplo, si quieres requerir obligatoriamente un campo de texto, puedes agregar la palabra <code>required</code> dentro de tu elemento <code>input</code>, usarías: <code>&#60;input type=\"text\" required&#62;</code> ",
         "Haz de tu campo de texto un campo obligatorio, de manera que tu usuario no pueda enviar el formulario sin completar este campo.",
         "A continuación, intenta enviar el formulario sin ingresar texto alguno. ¿Ves cómo tu formulario HTML5 te notifica que el campo es obligatorio?"
       ],
@@ -2363,7 +2363,7 @@
         "Todas las entradas de casillas de verificación relacionadas deben tener el mismo atributo <code>name</code>.",
         "He aquí un ejemplo de una casilla de verificación:",
         "<code>&#60;label&#62;&#60;input type=\"checkbox\" name=\"personality\"&#62; Cariñoso&#60;/label&#62;</code>",
-        "Añade a tu formulario un conjunto de tres casillas de verificación. Cada casilla de verificación debe estar anidada dentro de su propio elemento <code>label</​​code>. Los tres deben compartir el <code> nombre </code> atributo <code> personalidad </code> ."
+        "Añade a tu formulario un conjunto de tres casillas de verificación. Cada casilla de verificación debe estar anidada dentro de su propio elemento <code>label</code>. Las tres deben compartir el atributo <code>nombre</code>."
       ],
       "namePt": "",
       "descriptionPt": [],
@@ -2747,7 +2747,7 @@
       "descriptionFr": [],
       "nameRu": "",
       "descriptionRu": [],
-      "nameEs": "Establecer la ID de un elemento",
+      "nameEs": "Establecer el ID de un elemento",
       "descriptionEs": [
         "Además de las clases, cada elemento HTML también puede tener un atributo de identificación <code>id</code>.",
         "Hay varias ventajas al usar atributos <code>id</code>, y aprenderás más sobre estas cuando comiences a usar jQuery.",
@@ -2852,7 +2852,7 @@
       "descriptionRu": [],
       "nameEs": "Usa un atributo ID para dar estilo a un elemento",
       "descriptionEs": [
-        "Una buena cosa sobre los atributos <code>id</code> es que, al igual que con clases, puede darles estilo usando CSS.",
+        "Una cosa buena sobre los atributos <code>id</code> es que, al igual que con clases, puede darles estilo usando CSS.",
         "He aquí un ejemplo de cómo puede tomar su elemento con atributo <code>id</code> en <code>cat-photo-element</code> y póngale el color de fondo verde. En su elemento <code>style</code>: ",
         "<code>#cat-photo-element {</code>",
         "<code>&nbsp;&nbsp;background-color: green;</code>",
@@ -3007,7 +3007,7 @@
         "El margen (<code>margin</code>) de un elemento controla la cantidad de espacio entre el borde (<code>border</code>) y los elementos alrededor.",
         "Aquí, podemos ver que la caja verde y la caja roja se anidan dentro de la caja amarilla. Tenga en cuenta que la caja roja tiene más margen (<code>margin</code>) que la caja verde, haciendo que parezca más pequeña. ",
         "Cuando aumentas el margen (<code>margin</code>) de la caja verde, aumentará la distancia entre su borde y los elementos que la rodean.",
-        "Cambia el maregn (<code>margin</code>) de la caja verde para que coincida con el de la caja roja."
+        "Cambia el margen (<code>margin</code>) de la caja verde para que coincida con el de la caja roja."
       ],
       "namePt": "",
       "descriptionPt": [],
@@ -3076,7 +3076,7 @@
       "descriptionFr": [],
       "nameRu": "",
       "descriptionRu": [],
-      "nameEs": "Agregar un margen negativo a un Elemento",
+      "nameEs": "Agregar un margen negativo a un elemento",
       "descriptionEs": [
         "El margen de un elemento controla la cantidad de espacio entre el borde del elemento y los elementos que lo rodean.",
         "Si estableces el margen de un elemento en un valor negativo, el elemento se hará más grande.",
@@ -3305,7 +3305,7 @@
         "En lugar de especificar las propiedades <code>padding-top</code>, <code>padding-right</code>, <code>padding-bottom</code> y <code>padding-left</code> de un elemento, puedes especificar todas en una sola línea, así: ",
         "<code>padding: 10px 20px 10px 20px;</code>",
         "Estos cuatro valores funcionan como un reloj: arriba, derecha, abajo, izquierda, y producirán exactamente el mismo resultado de las cuatro instrucciones de relleno.",
-        "Usa la notación en sentido horario notación para darle a la clase \".green-box\" un relleno de <code>40px</code> en la parte superior e izquierda, pero sólo <code>20px</code> en su parte inferior y al lado derecho ."
+        "Usa la notación en sentido horario para darle a la clase \".green-box\" un relleno de <code>40px</code> en la parte superior e izquierda, pero sólo <code>20px</code> en su parte inferior y al lado derecho ."
       ],
       "namePt": "",
       "descriptionPt": [],
@@ -3425,7 +3425,7 @@
       "descriptionEs": [
         "Ahora vamos a empezar de nuevo y hablaremos de herencia CSS.",
         "Cada página HTML tiene un cuerpo (<code>body</code>).",
-        "Podemos demostrar que el elemento (<code>body</code>) aquí, dandole un color de fondo (<code>background-color</code>) negro.",
+        "Podemos demostrar que el elemento (<code>body</code>) existe aquí, dandole un color de fondo (<code>background-color</code>) negro.",
         "Podemos hacer esto añadiendo lo siguiente a nuestro elemento <code>style</code>:",
         "<code>body {</code>",
         "<code>&nbsp;&nbsp;background-color: black;</code>",
@@ -3473,10 +3473,10 @@
       "descriptionRu": [],
       "nameEs": "Hereda estilos del elemento cuerpo",
       "descriptionEs": [
-        "Ya hemos demostrado que cada página HTML tiene un cuerpo (<code>body</code>), y que puede dársele estilo CSS a su elemento <code>body</code>.",
-        "Recuerda, que puedes dar estilo de tu elemento <code>body</code> como a cualquier otro elemento HTML, y que todos tus otros elementos heredará sus estilos de tu elemento <code>body</code>.",
+        "Ya hemos demostrado que cada página HTML tiene un cuerpo (<code>body</code>), y que puede dársele estilo CSS.",
+        "Recuerda, que puedes dar estilo de tu elemento <code>body</code> como a cualquier otro elemento HTML, y que todos tus otros elementos heredarán sus estilos de tu elemento <code>body</code>.",
         "En primer lugar, crea un elemento <code>h1</code> con el texto <code>Hello World</code>",
-        "Después, vamos a darle a todos los elementos de tu página el color vere (<code>green</code>) añadiendo <code>color: green;</code> a la declaración de estilo de tu elemento <code>body</code>.",
+        "Después, vamos a darle a todos los elementos de tu página el color verde (<code>green</code>) añadiendo <code>color: green;</code> a la declaración de estilo de tu elemento <code>body</code>.",
         "Por último, da a tu elmento <code>body</code> el tipo de letra <code>Monospace</code> añadiendo <code>font-family: Monospace;</code> a la declaración del estilo de tu elemento <code>body</code>."
       ],
       "namePt": "",
@@ -3571,8 +3571,8 @@
         "Nuestra clase \"pink-text\" anuló la declaración CSS de nuestro elemento <code>body</code>!",
         "Acabamos de demostrar que nuestras clases anularán el CSS del elemento <code>body</code>. Así que la siguiente pregunta lógica es: ¿qué podemos hacer para anular nuestra clase <code>pink-text</code>?",
         "Crea una clase CSS adicional llamada <code>texto-azul</code> que le de a un elemento el color azul. Asegúrate de que está debajo de tu declaración de la clase <code>pink-text</code>. ",
-        "Aplica la clase <code>blue-text</code> a tu elementou <code>h1</code> además de tu clase <code>pink-text</code> y veamos cual gana.",
-        "La aplicación de múltiple atributos de clase a un elemento HTML se hace usando espacios entre ellas así:",
+        "Aplica la clase <code>blue-text</code> a tu elemento <code>h1</code> además de tu clase <code>pink-text</code> y veamos cual gana.",
+        "La aplicación de múltiples atributos de clase a un elemento HTML se hace usando espacios entre ellos así:",
         "<code>class=\"clase1 clase2\"</code>"
       ],
       "namePt": "",
@@ -3631,7 +3631,7 @@
       "descriptionEs": [
         "Acabamos de demostrar que los navegadores leen CSS de arriba hacia abajo. Eso significa que, en el caso de un conflicto, el navegador utilizará la última declaración CSS. ",
         "Pero no hemos terminado todavía. Hay otras maneras que usted puede anular CSS. ¿Te acuerdas de los atributos id?",
-        "Anulemos tus clases <code>pink-text</code> y <code>blue-text</code>, y pongamos anaranjado tu elemento <code>h1</code>, dandole una identificación al elemento <code>h1</code> y poniendole estilo a esa identificación (<code>id</code>).",
+        "Anulemos tus clases <code>pink-text</code> y <code>blue-text</code>, y pongamos anaranjado tu elemento <code>h1</code>, dándole una identificación al elemento <code>h1</code> y poniéndole estilo a esa identificación (<code>id</code>).",
         "Dale a tu elemento <code>h1</code> el atributo <code>id</code> con valor <code>orange-text</code>. Recuerda, los estilos id se ven así: ",
         "<code>&#60;h1 id=\"orange-text\"&#62;</code>",
         "Deja las clases <code>blue-text</code> y <code>pink-text</code> de tu elemento <code>h1</code>.",
@@ -3689,11 +3689,11 @@
       "descriptionFr": [],
       "nameRu": "",
       "descriptionRu": [],
-      "nameEs": "Anula declaraciones de clase con un estilos en línea",
+      "nameEs": "Anula declaraciones de clase con estilos en línea",
       "descriptionEs": [
         "Así que hemos demostrado que las declaraciones de identificadores anulan las declaraciones de clase, independientemente del lugar donde se declaran en tu elemento de estilo CSS <code>style</code>.",
         "Hay otras maneras en las que puedes anular CSS. ¿Te acuerdas de los estilos en línea?",
-        "Utiliza un <code>in-line style</code> para tratar de hacer blanco nuestro elemento <code>h1</code>. Recuerda, los estílos en línea se ven así: ",
+        "Utiliza un <code>in-line style</code> para tratar de hacer blanco nuestro elemento <code>h1</code>. Recuerda, los estilos en línea se ven así: ",
         "<code>&#60;h1 style=\"color: green\"&#62;</code>",
         "Deja las clases <code>blue-text</code> y <code>pink-text</code> en tu elmento <code>h1</code>."
       ],
@@ -3873,7 +3873,7 @@
       "descriptionRu": [],
       "nameEs": "Usa el código hexadecimal para colorear de rojo los elementos",
       "descriptionEs": [
-        "Te puede estar preguntando por qué usamos 6 dígitos para representar un color en lugar de sólo uno o dos. La respuesta es que el uso de 6 dígitos nos da una enorme variedad. ",
+        "Te puedes estar preguntando por qué usamos 6 dígitos para representar un color en lugar de sólo uno o dos. La respuesta es que el uso de 6 dígitos nos da una enorme variedad. ",
         "¿Cuántos colores son posibles? 16 valores y 6 posiciones significa que tenemos 16 a la sexta potencia, o más de 16 millones de colores posibles. ",
         "Los códigos hexadecimales siguen el formato rojo-verde-azul (<em>red-green-blue</em>) o formato <code>rgb</code>. Los dos primeros dígitos del código hexadecimal representan la cantidad de rojo en el color. El tercer y cuarto dígitos representan la cantidad de verde. El quinto y sexto representan la cantidad de azul .",
         "Así que para conseguir el rojo absolutamente más brillante, basta que uses <code>F</code> para el primer y segundo dígitos (el valor más alto posible) y <code>0</code> para el tercero, cuarto, quinto y sexto dígitos (el valor más bajo posible).",
@@ -3991,7 +3991,7 @@
       "descriptionEs": [
         "A partir de estos tres colores puros (rojo, verde y azul), podemos crear 16 millones de colores.",
         "Por ejemplo, el naranja es rojo puro, mezclado con un poco de verde, y sin azul.",
-        "Hacer que el color de fondo del elemento <code>body</code> sea anaranjado, dándole el código hexadecimal <code>#FFA500</code>"
+        "Haz que el color de fondo del elemento <code>body</code> sea anaranjado, dándole el código hexadecimal <code>#FFA500</code>"
       ],
       "namePt": "",
       "descriptionPt": [],
@@ -4025,11 +4025,11 @@
       "descriptionFr": [],
       "nameRu": "",
       "descriptionRu": [],
-      "nameEs": "Usa código hex para mezclar colores",
+      "nameEs": "Usa el código hexadecimal para colorear de gris los elementos",
       "descriptionEs": [
         "A partir de estos tres colores puros (rojo, verde y azul), podemos crear 16 millones de colores.",
-        "Por ejemplo, el naranja es rojo puro, mezclado con un poco de verde, y sin azul.",
-        "Hacer que el color de fondo del elemento <code>body</code> sea anaranjado, dándole el código hexadecimal <code>#FFA500</code>"
+        "También podemos crear diferentes tonos de gris mezclando uniformemente los tres colores.",
+        "Hacer que el color de fondo del elemento <code>body</code> sea gris, dándole el código hexadecimal <code>#808080</code>"
       ],
       "namePt": "",
       "descriptionPt": [],
@@ -4062,11 +4062,10 @@
       "descriptionFr": [],
       "nameRu": "",
       "descriptionRu": [],
-      "nameEs": "Usa el código hexadecimal para los colorear de gris los elementos",
+      "nameEs": "Usa el código hexadecimal para colorear con tonos grises",
       "descriptionEs": [
-        "A partir de estos tres colores puros (rojo, verde y azul), podemos crear 16 millones de colores.",
-        "También podemos crear diferentes tonos de gris mezclando uniformemente los tres colores.",
-        "Hacer que el color de fondo dele elemento <code>body</code> sea gris, dándole el código hexadecimal <code>#808080</code>"
+        "También podemos crear otros tonos de gris mezclando uniformemente los tres colores. Podemos ir muy cerca del verdadero negro. ",
+        "Haz que el color de fondo del elemento <code>body</code> sea gris oscuro dandole el código hexadecimal <code>#111111</code>"
       ],
       "namePt": "",
       "descriptionPt": [],
@@ -4101,10 +4100,12 @@
       "descriptionFr": [],
       "nameRu": "",
       "descriptionRu": [],
-      "nameEs": "Usa el código hexadecimal para colorear con tonos grises",
+      "nameEs": "Uso código hex abreviado",
       "descriptionEs": [
-        "También podemos crear otros tonos de gris mezclando uniformemente los tres colores. Podemos ir muy cerca del verdadero negro. ",
-        "Haz que el color de fondo del elemento <code>body</code> sea gris oscuro dandole el código hexadecimal <code>#111111</code>"
+        "Mucha gente se siente abrumada por las posibilidades de más de 16 millones de colores. Y es difícil recordar el código hexadecimal. Afortunadamente, usted puede acortarlo. ",
+        "Por ejemplo, el rojo, que es <code>#FF0000</code> en código hexadecimal, se puede abreviar a <code>#F00</code>. Es decir, un dígito para el rojo, un dígito para el verde, un dígito para el azul. ",
+        "Esto reduce el número total de posibles colores a alrededor de 4.000. Pero los navegadores interpretarán <code>#FF0000</code> y <code>#F00</code> como exactamente el mismo color. ",
+        "Adelante, intente usar <code>#F00</code> para volver rojo el color de fondo del elemento <code>body</code>."
       ],
       "namePt": "",
       "descriptionPt": [],
@@ -4143,13 +4144,18 @@
       "descriptionFr": [],
       "nameRu": "",
       "descriptionRu": [],
-      "nameEs": "Uso código hex abreviado",
+      "nameEs": "Usa RGB para colorear elementos",
       "descriptionEs": [
-        "Mucha gente se siente abrumada por las posibilidades de más de 16 millones de colores. Y es difícil recordar el código hexadecimal. Afortunadamente, usted puede acortarlo. ",
-        "Por ejemplo, el rojo, que es <code>#FF0000</code> en código hexadecimal, se puede abreviar a <code>#F00</code>. Es decir, un dígito para el rojo, un dígito para el verde, un dígito para el azul. ",
-        "Esto reduce el número total de posibles colores a alrededor de 4.000. Pero los navegadores interpretarán <code>#FF0000</code> y <code>#F00</code> como exactamente el mismo color. ",
-        "Adelante, intente usar <code>#F00</code> para volver rojo el color de fondo del elemento <code>body</code>."
+        "Otra forma en la que puedes representar colores en CSS es usando valores <code>rgb</code>.",
+        "El valor RGB para el negro, luce así:",
+        "<code>rgb(0, 0, 0)</code>",
+        "El valor RGB para el blanco, se ve así:",
+        "<code>rgb(255, 255, 255)</code>",
+        "En lugar de utilizar seis dígitos hexadecimales, con <code>rgb</code> especificas el brillo de cada color con un número entre 0 y 255.",
+        "Si haces la matemática, 16 veces 16 es 256 valores totales.  Así que <code>rgb</code>, que comienza a contar desde cero, tiene exactamente el mismo número de valores posibles que el código hexadecimal.",
+        "Remplacemos el código hexadecimal del color de fondo de nuestro elemento <code>body</code> por el valor RGB para el negro: <code>rgb(0, 0, 0)</code>"
       ],
+
       "namePt": "",
       "descriptionPt": [],
       "nameDe": "",
@@ -4185,7 +4191,7 @@
       "descriptionFr": [],
       "nameRu": "",
       "descriptionRu": [],
-	  "nameEs": "Usa RGB para colorear de blanco los elementos",
+      "nameEs": "Usa RGB para colorear de blanco los elementos",
       "descriptionEs": [
         "El valor RGB para el negro, luce así:",
         "<code>rgb(0, 0, 0)</code>",
@@ -4298,7 +4304,7 @@
       "descriptionRu": [],
       "nameEs": "Usa RGB para colorear de azul los elementos",
       "descriptionEs": [
-        "Cambuia el color de fondo del elemento <code>body</code> a azul usando su valor RGB: <code>rgb(0, 0, 255)</code>"
+        "Cambia el color de fondo del elemento <code>body</code> a azul usando su valor RGB: <code>rgb(0, 0, 255)</code>"
       ],
       "namePt": "",
       "descriptionPt": [],
