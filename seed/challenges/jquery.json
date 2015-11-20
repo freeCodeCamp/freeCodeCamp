@@ -48,7 +48,17 @@
         "</div>"
       ],
       "type": "waypoint",
-      "challengeType": 0
+      "challengeType": 0,
+      "nameEs": "Aprende cómo funcionan las etiquetas de programa y la función de documento listo.",
+      "descriptionEs": [
+        "Ahora estamos listos para aprender jQuery, la herramienta de JavaScript más popular de todos los tiempos. No te preocupes por JavaScript en si --lo cubriremos pronto.",
+        "Antes de que podamos comenzar a usar jQuery, tenemos que añadir algunas cosas a nuestro HTML.",
+        "En primer lugar, añade un elemento de programa <code>script</code> en la parte superior de la página. Asegúrate de cerrarlo en la línea siguiente. ",
+        "Tu navegador ejecutará todo JavaScript dentro de un elemento <code>script</code>, incluyendo jQuery.",
+        "Dentro de tu elemento <code>script</code>, agrega este código: <code>$(document).ready(function () {</code> A continuación, ciérralo en la línea siguiente (aún dentro de tu elemento <code>script</code>) con: <code>})</code>",
+        "Más adelante aprenderemos más acerca de funciones. Lo importante es saber que el código que pongas dentro de esta función (<code>function</code>) se ejecutará tan pronto como tu navegador haya cargado la página.",
+        "Esto es importante porque sin su <code>función de documento listo</code>, su código puede ejecutarse antes de que se haya presentado el HTML, lo que podría causar errores."
+      ]
     },
     {
       "id": "bad87fee1348bd9bedc08826",
@@ -97,7 +107,16 @@
         "</div>"
       ],
       "type": "waypoint",
-      "challengeType": 0
+      "challengeType": 0,
+      "nameEs": "Elige elementos HTML usando selectores y jQuery",
+      "descriptionEs": [
+        "Ahora tenemos una <code>función de documento listo</code>.",
+        "Ahora vamos a escribir nuestra primera instrucción jQuery. Todas las funciones de jQuery comienzan con un <code>$</code>, al que suele referirse como <code>operador de signo de dólar</code>, o simplemente como <code>bling</code>. ",
+        "jQuery a menudo selecciona un elemento HTML con un <code>selector</code>, y luego hace algo a ese elemento.",
+        "Por ejemplo, hagamos que todos tus elementos <code>button</code> reboten. Sólo tienes que añadir este código dentro de la función de documento listo: ",
+        "<code>$(\"button\").addClass(\"animated bounce\")</code>",
+        "Ten en cuenta que ya hemos incluido tanto la biblioteca jQuery como la biblioteca Animate.css en segundo plano para que pueda utilizarlos en el editor. Así que estás usando jQuery para aplicar la clase <code>bounce</code> de Animate.css a sus elementos <code>button</code>."
+      ]
     },
     {
       "id": "bad87fee1348bd9aedc08826",
@@ -147,7 +166,17 @@
         "</div>"
       ],
       "type": "waypoint",
-      "challengeType": 0
+      "challengeType": 0,
+      "nameEs": "Elige elementos por su clase usando jQuery",
+      "descriptionEs": [
+        "¿Viste como hicimos rebotar todos tus elementos <code>button</code>? Los seleccionamos con <code>$(\"button\")</code>, y luego les añadimos algunas clases CSS con <code>.addClass(\"animated bounce\");.</code> ",
+        "Acabas de usar la función <code>addClass()</code> de jQuery, que te permite añadir clases a los elementos.",
+        "En primer lugar, apuntemos a tus elementos <code>div</code> que tengan la clase <code>well</code> usando el selector <code>$(\".well\")</code>.",
+        "Ten en cuenta que, al igual que con las declaraciones CSS, escribes un <code>.</code> antes del nombre de la clase.",
+        "A continuación, utiliza la función <code>.addClass()</code> de jQuery para agregar las clases <code>animated</code> y <code>shake</code>.",
+        "Por ejemplo, podrías hacer que todos los elementos con la clase <code>text-primary</code> se sacudieran añadiendo lo siguiente a tu <code>función de documento listo</code>:",
+        "<code>$(\".text-primary\").addClass(\"animated shake\");</code>"
+      ]
     },
     {
       "id": "bad87fee1348bd9aeda08826",
@@ -199,7 +228,16 @@
         "</div>"
       ],
       "type": "waypoint",
-      "challengeType": 0
+      "challengeType": 0,
+      "nameEs": "Elige elementos por ID usando jQuery",
+      "descriptionEs": [
+        "También puedes elegir un elemento por su atributo id.",
+        "Primero selecciona tu elemento <code>button</code> con el id <code>target3</code> mediante el uso del selector <code>$(\"#target3\")</code>.",
+        "Ten en cuenta que, al igual que con las declaraciones CSS, debes escribir un <code>#</code> antes de la identificación.",
+        "A continuación, utiliza la función <code>.addClass()</code> de jQuery para agregar las clases <code>animated</code> y <code>fadeOut</code>.",
+        "He aquí cómo haces que desaparezca el elemento <code>button</code> con la identificación <code>target6</code>:",
+        "<code>$(\"#target6\").addClass(\"animated fadeOut\")</code>."
+      ]
     },
     {
       "id": "bad87fee1348bd9aeda08726",
@@ -250,7 +288,12 @@
         "</div>"
       ],
       "type": "waypoint",
-      "challengeType": 0
+      "challengeType": 0,
+      "nameEs": "Elimina tus funciones jQuery",
+      "descriptionEs": [
+        "Estas animaciones eran divertidas al principio, pero ahora se están volviendo una distracción.",
+        "Elimina esas tres funciones de jQuery de tu <code>función de documento listo</code>, pero deja intacta la declaración de la <code>función de documento listo</code>."
+      ]
     },
     {
       "id": "bad87fee1348bd9aed908626",
@@ -303,7 +346,16 @@
         "</div>"
       ],
       "type": "waypoint",
-      "challengeType": 0
+      "challengeType": 0,
+      "nameEs": "Elige un mismo elemento con múltiples selectores jQuery",
+      "descriptionEs": [
+        "Ahora ya sabes tres formas de seleccionar elementos: por tipo: <code>$(\"button\")</code>, por clase: <code>$(\".btn\")</code>, y por identificación <code>$(\"#target1\")</code>. ",
+        "Aunque es posible agregar varias clases en una sola llamada a <code>.addClass()</code>, vamos a añadirlas al mismo elemento de tres maneras diferentes.",
+        "Usa cada uno de los selectores jQuery vistos y la función <code>addClass()</code>:",
+        "Agrega la clase <code>animated</code> a todos los elementos con tipo <code>button</code>.",
+        "Agrega la clase <code>shake</code> a todos los botones con clase <code>.btn</code>.",
+        "Agrega la clase <code>btn-primary</code> al botón con identificación <code>#target1</code>."
+      ]
     },
     {
       "id": "bad87fee1348bd9aed918626",
@@ -354,7 +406,14 @@
         "</div>"
       ],
       "type": "waypoint",
-      "challengeType": 0
+      "challengeType": 0,
+      "nameEs": "Elimina clases de un elemento con jQuery",
+      "descriptionEs": [
+        "De la misma manera que puedes agregar clases a un elemento con la función <code>addClass()</code> de jQuery, puedes eliminarlas con la función <code>removeClass()</code>.",
+        "He aquí cómo puedes hacerlo para un botón específico:",
+        "<code>$(\"#target2\").removeClass(\"btn-default\");</code>",
+        "Vamos a quitar la clase <code>btn-default</code> de todos nuestros elementos <code>button</code>."
+      ]
     },
     {
       "id": "bad87fee1348bd9aed908826",
@@ -408,7 +467,17 @@
         "</div>"
       ],
       "type": "waypoint",
-      "challengeType": 0
+      "challengeType": 0,
+      "nameEs": "Cambia el CSS de un elemento usando jQuery",
+      "descriptionEs": [
+        "También podemos cambiar el CSS de un elemento HTML directamente con jQuery.",
+        "jQuery tiene una función llamada <code>.css()</code> que te permite cambiar el CSS de un elemento.",
+        "Así es como cambiaríamos su color a azul:",
+        "<code>$(\"#target1\").css(\"color\", \"blue\");</code>",
+        "Esto es un poco diferente a una declaración normal CSS, porque la propiedad CSS y su valor están entre comillas y separadas por una coma en lugar de dos puntos.",
+        "Elimina tus selectores jQuery, dejando en blanco la <code>función de documento listo</code>.",
+        "Selecciona <code>target1</code> y cambia su color a rojo."
+      ]
     },
     {
       "id": "bad87fee1348bd9aed808826",
@@ -459,7 +528,16 @@
         "</div>"
       ],
       "type": "waypoint",
-      "challengeType": 0
+      "challengeType": 0,
+      "nameEs": "Desactiva un elemento usando jQuery",
+      "descriptionEs": [
+        "También puedes cambiar propiedades que no son CSS de los elementos HTML con jQuery. Por ejemplo, puedes desactivar los botones. ",
+        "Al deshabilitar un botón, se volverá gris y no podrá pulsarse.",
+        "jQuery tiene una función llamada <code>.prop()</code> que te permite ajustar las propiedades de los elementos.",
+        "He aquí cómo puedes desactivar todos los botones:",
+        "<code>$(\"button\").prop(\"disabled\", true);</code>",
+        "Desactiva sólo el botón <code>target1</code>."
+      ]
     },
       {
       "id": "564944c91be2204b269d51e3",
@@ -558,7 +636,13 @@
         "</div>"
       ],
       "type": "waypoint",
-      "challengeType": 0
+      "challengeType": 0,
+      "nameEs": "Elimina un elemento usando jQuery",
+      "descriptionEs": [
+        "Ahora quitemos un elemento HTML de tu página usando jQuery.",
+        "jQuery tiene una función llamada <code>.remove()</code> que eliminará un elemento HTML por completo",
+        "Elimina el elemento <code>target4</code> de la página utilizando la función <code>.remove()</code>."
+      ]
     },
     {
       "id": "bad87fee1348bd9aed608826",
@@ -610,7 +694,15 @@
         "</div>"
       ],
       "type": "waypoint",
-      "challengeType": 0
+      "challengeType": 0,
+      "nameEs": "Usa appendTo para mover elementos con jQuery",
+      "descriptionEs": [
+        "Ahora intentemos mover elementos de un <code>div</code> a otro.",
+        "jQuery tiene una función llamada <code>appendTo()</code> que le permite seleccionar elementos HTML y anexarlos a otro elemento.",
+        "Por ejemplo, si quisiéramos mover <code>target4</code> de nuestro pozo (<em>well</em>) derecho a nuestro pozo izquierdo, usaríamos:",
+        "<code>$(\"#target4\").appendTo(\"#left-well\");</code>",
+        "Mueve tu elemento <code>target2</code> de tu <code>left-well</code> a tu <code>right-well</code>."
+      ]
     },
     {
       "id": "bad87fee1348bd9aed508826",
@@ -664,7 +756,16 @@
         "</div>"
       ],
       "type": "waypoint",
-      "challengeType": 0
+      "challengeType": 0,
+      "nameEs": "Clona un elemento usando jQuery",
+      "descriptionEs": [
+        "Además de mover elementos, puedes copiarlos de un sitio a otro.",
+        "jQuery tiene una función llamada <code>clone()</code> que hace una copia de un elemento.",
+        "Por ejemplo, si quisiéramos copiar <code>target2</code> de nuestro <code>left-well</code> a nuestro <code>right-well</code>, usaríamos:",
+        "<code>$(\"#target2\").clone().appendTo(\"#right-well\");</code>",
+        "¿Te diste cuenta que esto implica pegar dos funciones jQuery? Esto se conoce como <code>encadenamiento</code> y es una manera conveniente de hacer las cosas con jQuery. ",
+        "Clona tu elemento <code>target5</code> y añadelo a tu <code>left-well</code>."
+      ]
     },
     {
       "id": "bad87fee1348bd9aed308826",
@@ -722,7 +823,16 @@
         "</body>"
       ],
       "type": "waypoint",
-      "challengeType": 0
+      "challengeType": 0,
+      "nameEs": "Elige el padre de un elemento usando jQuery",
+      "descriptionEs": [
+        "Cada elemento HTML tiene un elemento <code>padre</code> del cual <code>hereda</code> propiedades.",
+        "Por ejemplo, tu elemento <code>h3</code> <code>jQuery Playground</code> tiene el elemento padre <code>&#60;div class=\"container-fluid\"&#62</code>, que a su vez tiene el padre <code>body</code>. ",
+        "jQuery tiene una función llamada <code>parent()</code> que te permite acceder al padre de cualquier elemento que haya seleccionado.",
+        "He aquí un ejemplo de cómo se utiliza la función <code>parent()</code> si quisieras darle al elemento padre del elemento <code>left-well</code> un color de fondo azul:",
+        "<code>$(\"#left-well\").parent().css(\"background-color\", \"blue\")</code>",
+        "Dale al padre del elemento <code>#target1</code> un color de fondo (<code>background-color</code>) rojo."
+      ]
     },
     {
       "id": "bad87fee1348bd9aed208826",
@@ -778,7 +888,16 @@
         "</div>"
       ],
       "type": "waypoint",
-      "challengeType": 0
+      "challengeType": 0,
+      "nameEs": "Elige los hjos de un elemento usando jQuery",
+      "descriptionEs": [
+        "Muchos elementos HTML tienen <code>hijos</code>, los cuales <code>heredan</code> sus propiedades de sus elementos padres",
+        "Por ejemplo, cada elemento HTML es un hijo de tu elemento <code>body</code>, y tu elemento <code>h3</code> \"jQuery Playground\" es un hijo de tu elemento <code>&#60;div class=\"container-fluid\"&#62</code>.",
+        "jQuery tiene una función llamada <code>children()</code> que te permite acceder a los hijos de cualquier elemento que hayas seleccionado.",
+        "He aquí un ejemplo de cómo se utiliza la función <code>children()</code> para darle a los hijos de tu elemento <code>left-well</code> el color azul:",
+        "<code>$(\"#left-well\").children().css(\"color\", \"blue\")</code>",
+        "Da a todos los hijos de tu elemento <code>right-well</code> el color verde."
+      ]
     },
     {
       "id": "bad87fee1348bd9aed108826",
@@ -835,7 +954,16 @@
         "</div>"
       ],
       "type": "waypoint",
-      "challengeType": 0
+      "challengeType": 0,
+      "nameEs": "Elige un hijo específico de un elemento usando jQuery",
+      "descriptionEs": [
+        "Seguramente habrás entendido porque los atributos id son tan convenientes para elegir con selectores jQuery. Pero no siempre contarás con estos agradables identificadores para trabajar. ",
+        "Afortunadamente, jQuery tiene algunos otros trucos para elegir los elementos adecuados.",
+        "jQuery usa selectores CSS para elegir elementos, El selector CSS <code>.clase:nth-child(i)</code> le permite seleccionar de los elementos con la clase dada, los que sean los i-ésimos hijos de su elemento padre. En lugar de una clase también puede usarse un elemento",
+        "He aquí cómo le asignarás la clase <code>bounce</code> al tercer elemento de cada pozo:",
+        "<code>$(\".target:nth-child(3)\").addClass(\"animated bounce\");</code>",
+        "Haz que rebote el segundo hijo de cada uno de los elementos de tus pozos. Debes elegir los hijos con la clase <code>target</code>."
+      ]
     },
     {
       "id": "bad87fee1348bd9aed008826",
@@ -892,7 +1020,14 @@
         "</div>"
       ],
       "type": "waypoint",
-      "challengeType": 0
+      "challengeType": 0,
+      "nameEs": "Elige elementos con numeración par usando jQuery",
+      "descriptionEs": [
+        "También puedes elegir todos los elementos con numeración par.",
+        "He aquí cómo elegirías todos los elementos impares con clase <code>target</code> y como les agregarías unas clases:",
+        "<code>$(\".target:odd\").addClass(\"animated shake\");</code>",
+        "Intenta seleccionar todos los elementos de número par y agrégales las clases <code>animated</code> y <code>shake</code>."
+      ]
     },
     {
       "id": "bad87fee1348bd9aecb08826",
@@ -948,7 +1083,14 @@
         "</div>"
       ],
       "type": "waypoint",
-      "challengeType": 0
+      "challengeType": 0,
+      "nameEs": "Usa jQuery para modificar la página entera",
+      "descriptionEs": [
+        "Hemos terminado de jugar en nuestro patio de recreo jQuery. ¡Vamos a derribarlo!",
+        "jQuery también puede elegir el elemento <code>body</code>.",
+        "Así es como haríamos que el cuerpo entero desapareciera: <code>$(\"body\").addClass('animated fadeOut')</code>",
+        "Pero vamos a hacer algo más dramático. Añade las clases <code>animated</code> y <code>hinge</code> a tu elemento <code>body</code>."
+      ]
     }
   ]
 }
