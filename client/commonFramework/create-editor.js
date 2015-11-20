@@ -1,23 +1,24 @@
 window.common = (function(global) {
   const {
+    Rx: { Subject, Observable },
     CodeMirror,
     emmetCodeMirror,
     common = { init: [] }
   } = global;
 
-  const { challengeType = '0' } = common;
+  const { challengeType = '0', challengeTypes } = common;
 
   if (
     !CodeMirror ||
-    challengeType === '0' ||
-    challengeType === '7'
+    challengeType === challengeTypes.BONFIRE ||
+    challengeType === challengeTypes.ZIPLINE ||
+    challengeType === challengeTypes.VIDEO ||
+    challengeType === challengeTypes.STEP ||
+    challengeType === challengeTypes.HIKES
   ) {
     common.editor = {};
     return common;
   }
-
-  var delay;
-  var codeStorageFactory = common.codeStorageFactory;
 
   var editor = CodeMirror.fromTextArea(
     document.getElementById('codeEditor'),
@@ -37,22 +38,12 @@ window.common = (function(global) {
 
   editor.setSize('100%', 'auto');
 
-  var codeStorage = common.codeStorage =
-    codeStorageFactory(editor, common.challengeName);
+  common.editorKeyUp$ = Observable.fromEventPattern(
+    () => editor.on('keyup'),
+    () => editor.off('keyup')
+  );
 
-  editor.on('keyup', function() {
-    clearTimeout(codeStorage.updateTimeoutId);
-    codeStorage.updateTimeoutId = setTimeout(
-      codeStorage.updateStorage.bind(codeStorage),
-      codeStorage.updateWait
-    );
-  });
-
-  // Initialize CodeMirror editor with a nice html5 canvas demo.
-  editor.on('keyup', function() {
-    clearTimeout(delay);
-    delay = setTimeout(common.updatePreview, 300);
-  });
+  common.editorExecute$ = new Subject();
 
   editor.setOption('extraKeys', {
     Tab: function(cm) {
@@ -72,11 +63,11 @@ window.common = (function(global) {
       }
     },
     'Ctrl-Enter': function() {
-      common.executeChallenge(true);
+      common.editorExecute$.onNext();
       return false;
     },
     'Cmd-Enter': function() {
-      common.executeChallenge(true);
+      common.editorExecute$.onNext();
       return false;
     }
   });
@@ -104,12 +95,12 @@ window.common = (function(global) {
     );
   }
   common.init.push(function() {
-    var editorValue;
+    let editorValue;
     if (common.codeUri.isAlive()) {
       editorValue = common.codeUri.parse();
     } else {
-      editorValue = codeStorage.isAlive() ?
-        codeStorage.getStoredValue() :
+      editorValue = common.codeStorage.isAlive() ?
+        common.codeStorage.getStoredValue() :
         common.seed;
     }
 
