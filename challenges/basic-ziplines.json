@@ -48,8 +48,40 @@
       "descriptionFr": [],
       "nameRu": "",
       "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
+      "nameEs": "Prepárate para los Ziplines",
+      "descriptionEs": [
+        [
+          "http://i.imgur.com/6WLULsC.gif",
+          "Un gif que muestra cómo crear una cuenta en Codepen.",
+          "Para nuestros desafíos de front end, los Ziplines, usaremos un editor muy famoso llamado Codepen, el cual es completamente basado en el navegador. Abre CodePen y pulsa en \"Sign up\" en la esquina superior derecha, luego ve hacia abajo donde se encuentra el plan gratuito (free plan) y pulsa en \"Sign up\". Da clic en el botón que dice \"Use info from GitHub\", luego agrega tu dirección de correo electrónico y crea una contraseña. Pulsa el botón que dice \"Sign up\". Luego, en la esquina superior derecha , da clic en \"New pen\".",
+          "http://codepen.io"
+        ],
+        [
+          "http://i.imgur.com/U4y9RJ1.gif",
+          "Un gif que muestra que puedes escribir \"hello world\" en el editor, lo cual escribirá \"hello world\" en la ventana de vista previa. También puedes mover las ventanas para cambiar su tamaño, y cambiar su orientación.",
+          "En la ventana de HTML, crea un elemento h1 con el texto \"Hola mundo\". Puedes arrastrar los bordes de las ventanas para cambiar su tamaño. Tambiénn puedes pulsar el botón de \"Change View\" para cambiar la orientación de las ventanas.",
+          ""
+        ],
+        [
+          "http://i.imgur.com/G9KFQDL.gif",
+          "Un gif que muestra el proceso de agregar Bootstrap a tu proyecto.",
+          "Pulsa el engrane en la esquina superior izquierda de la ventana de CSS, luego ve hacia abajo hasta donde dice \"Quick add\" y elige Bootstrap. Ahora dale a tu elemento h1 la clase \"text-primary\" para cambiar su color y verificar que Bootstrap está activado.",
+          ""
+        ],
+        [
+          "http://i.imgur.com/Gi3aig0.gif",
+          "Un gif que muestra el proceso de agregar Animate.css y jQuery a tu proyecto.",
+          "Pulsa el engrane en la esquina superior izquierda de la ventana de CSS, luego ve hacia abajo hasta donde dice \"Quick add\" y elige Animate.css. Haz clic en el engrane en la esquina superior izquierda de la ventana de JS, luego ve hacia abajo hasta donde dice \"Quick add\" y elige jQuery. Provemos que Animate.css y jQuery se cargaron propiamente. En la ventana de JS, agrega el siguiente código para hacer tu elemento h1 rebotar: <code>$(document).ready(function(){ $(\"h1\").addClass(\"animated bounce\"); });</code>.",
+          ""
+        ],
+        [
+          "http://i.imgur.com/Wzt6Y9Y.gif",
+          "Un gif que muestra el proceso de guardar y bifurcar un proyecto.",
+          "Guarda tu proyecto con el botón \"Save\". Luego pulsa el botón de \"Fork\". Esto crea una bifurcación (copia) de tu proyecto con la que puedes experimentar.",
+          ""
+        ]
+        
+        ],
       "namePt": "",
       "descriptionPt": []
     },
@@ -101,8 +133,25 @@
         "Когда выполните задание кликните кнопку \"I've completed this challenge\" и добавьте ссылку на ваш CodePen. Если вы программировали с кем-то в паре, также добавьте имя вашего напарника.",
         "Если вы хотите получить немедленную оценку вашего проекта, нажмите эту кнопку и добавьте ссылку на ваш CodePen. В противном случае мы проверим его перед тем как вы приступите к проектам для некоммерческих организаций.<br><br><a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Click here then add your link to your tweet's text</a>"
       ],
-      "nameEs": "",
-      "descriptionEs": [],
+      "nameEs": "Construye una página web para tu portafolio",
+      "descriptionEs": [
+        "<span class='text-info'>Objetivo:</span> Crea una aplicación con <a href='http://codepen.io' target='_blank'>CodePen.io</a> que reproduzca efectivamente mediante ingeniería inversa este app: <a href='http://codepen.io/ThiagoFerreir4/full/eNMxEp' target='_blank'>http://codepen.io/ThiagoFerreir4/full/eNMxEp</a>.",
+        "<span class='text-info'>Regla #1:</span> No veas el código del proyecto de ejemplo en CodePen. Encuentra la forma de hacerlo por tu cuenta.",
+        "<span class='text-info'>Regla #2:</span> Puedes usar cualquier librería o APIs que necesites.",
+        "<span class='text-info'>Regla #3:</span> Usa ingeniería inversa para reproducir la funcionalidad del proyecto de ejemplo, pero también siéntete en la libertad de personalizarlo.",
+        "<span class='text-info'>Pista:</span> Si no quieres iniciar desde cero, puedes bifurcar (fork) la siguiente plantilla simple de Bootstrap en CodePen: <a href='http://codepen.io/FreeCodeCamp/pen/mJNqQj/' target='_blank'>http://codepen.io/FreeCodeCamp/pen/mJNqQj</a>.",
+        "Las siguientes son las <a href='http://en.wikipedia.org/wiki/User_story' target='_blank'>historias de usuario</a> que debes satisfacer, incluyendo las historias opcionales:",
+        "<span class='text-info'>Historia de usuario:</span> Como usuario, puedo acceder a todo el contenido de la página del portafolio con sólo desplazarme en la ventana.",
+        "<span class='text-info'>Historia de usuario:</span> Como usuario, puedo pulsar diferentes botones que me llevarán a las páginas de las diferentes cuentas de redes sociales del creador.",
+        "<span class='text-info'>Historia de usuario:</span> Como usuario, puedo ver una imagen de los diferentes proyectos que el creador del portafolio ha construido (si no has construido ningún sitio web antes, usa placeholders.)",
+        "<span class='text-info'>Historia de usuario opcional:</span> Como usuario, puedo navegar a las diferentes secciones de la página web pulsando botones de navegación.",
+        "No te preocupes si no tienes nada que mostrar en tu portafolio todavía - en los siguientes desafíos crearás varias apps en CodePen, así que puedes regresar luego para actualizar tu portafolio.",
+        "Hay varias buenas plantillas, pero para este desafío, tendrás que construir la página web de tu portafolio completamente por tu cuenta. Usar Bootstrap hará el trabajo mucho más fácil para ti.",
+        "Ten en mente que CodePen.io ignora la función Window.open(), así que si quieres abrir alguna ventana usando jQuery, necesitarás utilizar como objetivo un elemento de ancla invisible como el siguiente: <code>&lt;a target='_blank'&gt;</a></code>.",
+        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado.",
+        "Cuando hayas terminado, pulsa el botón de \"I've completed this challenge\" e incluye un link a tu CodePen. Si programaste en pareja, debes incluir también el nombre de usuario de Free Code Camp de tu compañero.",
+        "Si quieres retroalimentación inmediata de parte de tus compañeros campistas, pulsa este botón y pega el link de tu proyecto en CodePen. <br><br><a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20PASTE_YOUR_CODEPEN_URL_HERE%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Pulsa aquí y agrega tu link en el texto del tweet</a>"
+        ],
       "namePt": "",
       "descriptionPt": []
     },
@@ -143,8 +192,19 @@
         "Когда выполните задание кликните кнопку \"I've completed this challenge\" и добавьте ссылку на ваш CodePen. Если вы программировали с кем-то в паре, также добавьте имя вашего напарника.",
         "Если вы хотите получить немедленную оценку вашего проекта, нажмите эту кнопку и добавьте ссылку на ваш CodePen. В противном случае мы проверим его перед тем как вы приступите к проектам для некоммерческих организаций.<br><br><a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Click here then add your link to your tweet's text</a>"
       ],
-      "nameEs": "",
-      "descriptionEs": [],
+      "nameEs": "Crea una máquina de frases aleatorias",
+      "descriptionEs": [
+        "<span class='text-info'>Objetivo:</span> Crea una aplicación con <a href='http://codepen.io' target='_blank'>CodePen.io</a> que reproduzca efectivamente mediante ingeniería inversa este app: <a href='http://codepen.io/AdventureBear/full/vEoVMw' target='_blank'>http://codepen.io/AdventureBear/full/vEoVMw</a>.",
+        "<span class='text-info'>Regla #1:</span> No veas el código del proyecto de ejemplo en CodePen. Encuentra la forma de hacerlo por tu cuenta.",
+        "<span class='text-info'>Regla #2:</span> Puedes usar cualquier librería o APIs que necesites.",
+        "<span class='text-info'>Regla #3:</span> Usa ingeniería inversa para reproducir la funcionalidad del proyecto de ejemplo, pero también siéntete en la libertad de personalizarlo.",
+        "Las siguientes son las <a href='http://en.wikipedia.org/wiki/User_story' target='_blank'>historias de usuario</a> que debes satisfacer, incluyendo las historias opcionales:",
+        "<span class='text-info'>Historia de usuario:</span> Como usuario, puedo pulsar un botón que me mostrará una nueva frase aleatoria.",
+        "<span class='text-info'>Bonus User Story:</span> Como usuario, puedo presionar un botón para twitear una frase.",
+        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado.",
+        "Cuando hayas terminado, pulsa el botón de \"I've completed this challenge\" e incluye un link a tu CodePen. Si programaste en pareja, debes incluir también el nombre de usuario de Free Code Camp de tu compañero.",
+        "Si quieres retroalimentación inmediata de parte de tus compañeros campistas, pulsa este botón y pega el link de tu proyecto en CodePen. <br><br><a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20PASTE_YOUR_CODEPEN_URL_HERE%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Pulsa aquí y agrega tu link en el texto del tweet</a>"
+        ],
       "namePt": "",
       "descriptionPt": []
     },
@@ -186,8 +246,20 @@
         "Когда выполните задание кликните кнопку \"I've completed this challenge\" и добавьте ссылку на ваш CodePen. Если вы программировали с кем-то в паре, также добавьте имя вашего напарника.",
         "Если вы хотите получить немедленную оценку вашего проекта, нажмите эту кнопку и добавьте ссылку на ваш CodePen. В противном случае мы проверим его перед тем как вы приступите к проектам для некоммерческих организаций.<br><br><a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Click here then add your link to your tweet's text</a>"
       ],
-      "nameEs": "",
-      "descriptionEs": [],
+      "nameEs": "Crea un reloj pomodoro",
+      "descriptionEs": [
+        "<span class='text-info'>Objetivo:</span> Crea una aplicación con <a href='http://codepen.io' target='_blank'>CodePen.io</a> que reproduzca efectivamente mediante ingeniería inversa este app: <a href='http://codepen.io/GeoffStorbeck/full/RPbGxZ/' target='_blank'>http://codepen.io/GeoffStorbeck/full/RPbGxZ/</a>.",
+        "<span class='text-info'>Regla #1:</span> No veas el código del proyecto de ejemplo en CodePen. Encuentra la forma de hacerlo por tu cuenta.",
+        "<span class='text-info'>Regla #2:</span> Puedes usar cualquier librería o APIs que necesites.",
+        "<span class='text-info'>Regla #3:</span> Usa ingeniería inversa para reproducir la funcionalidad del proyecto de ejemplo, pero también siéntete en la libertad de personalizarlo.",
+        "Las siguientes son las <a href='http://en.wikipedia.org/wiki/User_story' target='_blank'>historias de usuario</a> que debes satisfacer, incluyendo las historias opcionales:",
+        "<span class='text-info'>Historia de usuario:</span> Como usuario, puedo iniciar un pomodoro de 25 minutos, y el cronómetro terminará cuando pasen 25 minutos.",
+        "<span class='text-info'>Historia de usuario:</span> Como usuario, puedo reiniciar el reloj para comenzar mi siguiente pomodoro.",
+        "<span class='text-info'>Historia de usuario opcional:</span> Como usuario, puedo personalizar la longitud de cada pomodoro.",
+        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado.",
+        "Cuando hayas terminado, pulsa el botón de \"I've completed this challenge\" e incluye un link a tu CodePen. Si programaste en pareja, debes incluir también el nombre de usuario de Free Code Camp de tu compañero.",
+        "Si quieres retroalimentación inmediata de parte de tus compañeros campistas, pulsa este botón y pega el link de tu proyecto en CodePen. <br><br><a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20PASTE_YOUR_CODEPEN_URL_HERE%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Pulsa aquí y agrega tu link en el texto del tweet</a>"
+        ],
       "namePt": "",
       "descriptionPt": []
     },
@@ -217,8 +289,20 @@
       "descriptionFr": [],
       "nameRu": "",
       "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
+      "nameEs": "Crea una calculadora JavaScript",
+      "descriptionEs": [
+        "<span class='text-info'>Objetivo:</span> Crea una aplicación con <a href='http://codepen.io' target='_blank'>CodePen.io</a> que reproduzca efectivamente mediante ingeniería inversa este app: <a href='http://codepen.io/GeoffStorbeck/full/zxgaqw' target='_blank'>http://codepen.io/GeoffStorbeck/full/zxgaqw</a>.",
+        "<span class='text-info'>Regla #1:</span> No veas el código del proyecto de ejemplo en CodePen. Encuentra la forma de hacerlo por tu cuenta.",
+        "<span class='text-info'>Regla #2:</span> Puedes usar cualquier librería o APIs que necesites.",
+        "<span class='text-info'>Regla #3:</span> Usa ingeniería inversa para reproducir la funcionalidad del proyecto de ejemplo, pero también siéntete en la libertad de personalizarlo.",
+        "Las siguientes son las <a href='http://en.wikipedia.org/wiki/User_story' target='_blank'>historias de usuario</a> que debes satisfacer, incluyendo las historias opcionales:",
+        "<span class='text-info'>Historia de usuario:</span> Como usuario, puedo sumar, restar, multiplicar y dividir dos números.",
+        "<span class='text-info'>Historia de usuario opcional:</span> Puedo limpiar la pantalla con un botón de borrar.",
+        "<span class='text-info'>Historia de usuario opcional:</span> Puedo concatenar continuamente varias operaciones hasta que pulse el botón de igual, y la calculadora me mostrará la respuesta correcta.",
+        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado.",
+        "Cuando hayas terminado, pulsa el botón de \"I've completed this challenge\" e incluye un link a tu CodePen. Si programaste en pareja, debes incluir también el nombre de usuario de Free Code Camp de tu compañero.",
+        "Si quieres retroalimentación inmediata de parte de tus compañeros campistas, pulsa este botón y pega el link de tu proyecto en CodePen. <br><br><a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20PASTE_YOUR_CODEPEN_URL_HERE%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Pulsa aquí y agrega tu link en el texto del tweet</a>"
+        ],
       "namePt": "",
       "descriptionPt": []
     }
