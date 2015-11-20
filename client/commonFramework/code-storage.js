@@ -7,6 +7,15 @@ window.common = (function(global) {
 
   var codeStorage = {
     getStoredValue(key) {
+      if (
+        !localStorage ||
+        typeof localStorage.getItem !== 'function' ||
+        !key ||
+        typeof key !== 'string'
+      ) {
+        console.log('unable to save to storage');
+        return '';
+      }
       return '' + localStorage.getItem(key + 'Val');
     },
 
@@ -20,7 +29,7 @@ window.common = (function(global) {
     updateStorage(key, code) {
       if (
         !localStorage ||
-        typeof localStorage !== 'function' ||
+        typeof localStorage.setItem !== 'function' ||
         !key ||
         typeof key !== 'string'
       ) {
@@ -28,6 +37,7 @@ window.common = (function(global) {
         return code;
       }
       localStorage.setItem(key + 'Val', code);
+      return code;
     }
   };
 

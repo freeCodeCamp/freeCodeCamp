@@ -1,4 +1,4 @@
-window.common = (function({ $, common = { init: [] }}) {
+window.common = (function({ $, Rx, common = { init: [] }}) {
 
   common.ctrlEnterClickHandler = function ctrlEnterClickHandler(e) {
     // ctrl + enter or cmd + enter
@@ -13,12 +13,6 @@ window.common = (function({ $, common = { init: [] }}) {
         window.location = '/challenges/next-challenge?id=' + common.challengeId;
       }
     }
-  };
-
-  common.resetEditor = function resetEditor() {
-    common.editor.setValue(common.replaceSafeTags(common.seed));
-    common.executeChallenge(true);
-    common.codeStorage.updateStorage();
   };
 
   common.init.push(function($) {
@@ -133,20 +127,18 @@ window.common = (function({ $, common = { init: [] }}) {
       }
     });
 
-    $('#submitButton').on('click', function() {
-      common.executeChallenge(true);
-    });
+    common.submitBtn$ = Rx.Observable.fromEvent($('#submitButton'), 'click');
 
-    if (common.editor) {
-      $('#reset-button').on('click', common.resetEditor);
-    }
+    common.resetBtn$ = Rx.Observable.fromEvent($('#reset-button'), 'click');
 
     if (common.challengeName) {
       window.ga('send', 'event', 'Challenge', 'load', common.challengeName);
     }
 
     $('#complete-courseware-dialog').on('hidden.bs.modal', function() {
-      common.editor.focus();
+      if (common.editor.focus) {
+        common.editor.focus();
+      }
     });
 
     $('#trigger-issue-modal').on('click', function() {

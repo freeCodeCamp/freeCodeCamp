@@ -29,25 +29,24 @@ window.common = (function(global) {
 
     // checks if the number of opening comments(/*) matches the number of
     // closing comments(*/)
-    Observable.just({ code })
-      .flatMap(code => {
+    return Observable.just({ code })
+      .flatMap(({ code }) => {
         if (
           code.match(/\$\s*?\(\s*?\$\s*?\)/gi) &&
           openingComments &&
           openingComments.length > code.match(/\*\//gi).length
         ) {
 
-          return Observable.just({
+          return Observable.throw({
             err: 'SyntaxError: Unfinished multi-line comment',
-            code: code
+            code
           });
         }
 
         if (code.match(detectUnsafeJQ)) {
-          return Observable.just({
+          return Observable.throw({
             err: 'Unsafe $($)',
-            output: 'Unsafe $($)',
-            code: code
+            code
           });
         }
 
@@ -55,9 +54,9 @@ window.common = (function(global) {
           code.match(/function/g) &&
           !code.match(detectFunctionCall)
         ) {
-          return Observable.just({
+          return Observable.throw({
             err: 'SyntaxError: Unsafe or unfinished function declaration',
-            code: code
+            code
           });
         }
 
@@ -68,50 +67,54 @@ window.common = (function(global) {
             openingComments &&
             openingComments.length > closingComments.length
           ) {
-            return Observable.just({
+            return Observable.throw({
               err: 'SyntaxError: Unfinished HTML comment',
-              code: code
+              code
             });
           }
         }
 
         if (code.match(detectUnsafeConsoleCall)) {
-          return Observable.just({
+          return Observable.throw({
             err: 'Invalid if (null) console.log(1); detected',
-            code: code
+            code
           });
         }
 
         // add head and tail and detect loops
-        return Observable.just({ code: head + code + tail })
-          .map(code => {
-            if (common.challengeType === common.challengeTypes.HTML) {
-              return common.getScriptCode(code);
-            }
+        return Observable.just({ code: head + code + tail, original: code });
+      })
+      .map(data => {
+        if (common.challengeType === common.challengeTypes.HTML) {
+          return common.getScriptCode(data);
+        }
 
-            return common.addTestsToString(
-              common.removeComments(code),
-              common.tests.slice()
-            );
-          })
-          .flatMap(common.detectLoops)
-          .flatMap(({ err, code, data, userTests }) => {
-              if (err) {
-                return Observable.just({
-                  err,
-                  code,
-                  data
-                });
-              }
+        return common.addTestsToString(Object.assign(
+          data,
+          {
+            code: common.removeComments(code),
+            tests: common.tests.slice()
+          }
+        ));
+      })
+      .flatMap(common.detectLoops$)
+      .flatMap(({ err, code, data, userTests, original }) => {
+          if (err) {
+            return Observable.throw({ err });
+          }
 
-              return common.runTests$({
-                output: data.output.replace(/\\\"/gi, ''),
-                data,
-                code,
-                userTests
-              });
+          return common.runTests$({
+            data,
+            code,
+            userTests,
+            original,
+            output: data.output.replace(/\\\"/gi, '')
           });
-
+      })
+      .catch(e => {
+        return e && e.err ?
+          Observable.throw(e) :
+          Observable.throw({ err: e });
       });
   };
 

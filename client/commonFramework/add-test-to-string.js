@@ -7,13 +7,10 @@ window.common = (function({ common = { init: [] }}) {
     '(.*\\.should\\..*\\;)/'
   );
 
-  common.addTestsToString = function(code) {
+  common.addTestsToString = function({ code, tests = [], ...rest }) {
     const userTests = [];
 
-    // insert tests from mongo
-    for (var i = 0; i < common.tests.length; i++) {
-      code += '\n' + common.tests[i];
-    }
+    code = tests.reduce((code, test) => '\n' + code + test, code);
 
     var counter = 0;
     var match = BDDregex.exec(code);
@@ -34,7 +31,7 @@ window.common = (function({ common = { init: [] }}) {
       match = BDDregex.exec(code);
     }
 
-    return { code, userTests };
+    return { ...rest, code, userTests };
   };
 
   return common;

@@ -28,23 +28,21 @@ window.common = (function(global) {
     }
   );
 
-  codeOutput.setValue(`
-    /**
-      * Your output will go here.
-      * Console.log() -type statements
-      * will appear in your browser\'s
-      * DevTools JavaScript console.
-      */'
-  `);
+  codeOutput.setValue(`/**
+  * Your output will go here.
+  * Console.log() -type statements
+  * will appear in your browser\'s
+  * DevTools JavaScript console.
+  */'`);
 
   codeOutput.setSize('100%', '100%');
 
-  common.updateOutputDisplay = function updateOutputDisplay(str) {
+  common.updateOutputDisplay = function updateOutputDisplay(str = '') {
     codeOutput.setValue(str);
     return str;
   };
 
-  common.appendToOutputDisplay = function appendToOutputDisplay(str) {
+  common.appendToOutputDisplay = function appendToOutputDisplay(str = '') {
     codeOutput.setValue(codeOutput.getValue() + str);
     return str;
   };
