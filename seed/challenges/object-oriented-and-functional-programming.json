@@ -1,7 +1,7 @@
 {
   "name": "Object Oriented and Functional Programming",
   "order": 7,
-  "time": "1h",
+  "time": "2h",
   "note": [
     "Methods",
     "Closures",
