@@ -119,18 +119,16 @@ main.lockTop = function lockTop() {
     if ($('.editorScrollDiv').html()) {
 
       magiVal = $(window).height() -
-        $('.navbar').height() +
-        $('.footer').height();
+        $('.navbar').height();
 
       if (magiVal < 0) {
         magiVal = 0;
       }
-      $('.editorScrollDiv').css('height', magiVal - 85 + 'px');
+      $('.editorScrollDiv').css('height', magiVal - 35 + 'px');
     }
 
     magiVal = $(window).height() -
-      $('.navbar').height() +
-      $('.footer').height();
+      $('.navbar').height();
 
     if (magiVal < 0) {
       magiVal = 0;

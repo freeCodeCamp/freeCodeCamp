@@ -19,12 +19,16 @@ nav.navbar.navbar-default.navbar-fixed-top.nav-height
                 a(href='/news', target='_blank') News
             li
                 a(href='//github.com/FreeCodeCamp/freecodecamp/wiki/Home', target='_blank') Wiki
+            li
+                a(href='/jobs') Jobs
+            li
+                a(href='/links') Links
             if !user
                 li &thinsp; &thinsp; &thinsp;
                 li
-                    a.btn.signup-btn.signup-btn-nav(href='/login') Sign in
+                    a.btn.signup-btn.signup-btn-nav.signin-button-nav(href='/login') Sign in
             else
-                li
+                li.brownie-points-nav
                   a(href='/' + user.username) [&thinsp;#{user.progressTimestamps.length}&thinsp;]
                 .hidden-xs.hidden-sm
                     a(href='/' + user.username)
