@@ -35,7 +35,7 @@ window.common = (function(global) {
       this.plugin = new jailed.Plugin(path + 'plugin.js');
       this.startTimeout();
       this.plugin.whenConnected(() => {
-        this.endTimeout();
+        this.cancelTimout();
       });
     },
     destroyPlugin() {
@@ -45,8 +45,8 @@ window.common = (function(global) {
 
 
   // sends the input to the plugin for evaluation
-  common.detectLoops = function detectLoops({ code = '', ...rest }) {
-    return new Observable(function(observer) {
+  common.detectLoops$ = function detectLoops$({ code = '', ...rest }) {
+    return Observable.create(function(observer) {
       const sandbox = Object.create(Sandbox);
 
       sandbox.createPlugin();

@@ -108,20 +108,24 @@ var paths = {
 
   commonFramework: [
     'init',
+    'bindings',
+    'add-test-to-string',
+    'add-faux-stream',
     'code-storage',
     'code-uri',
     'create-editor',
     'detect-loops-stream',
     'display-test-results',
     'execute-challenge-stream',
-    'out-display',
+    'output-display',
     'phone-scroll-lock',
     'report-issue',
     'run-tests-stream',
     'show-completion',
     'step-challenge',
     'test-script-stream',
-    'update-preview'
+    'update-preview',
+    'end'
   ],
 
   less: './client/less/main.less',

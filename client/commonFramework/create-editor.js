@@ -10,7 +10,7 @@ window.common = (function(global) {
 
   if (
     !CodeMirror ||
-    challengeType === challengeTypes.BONFIRE ||
+    challengeType === challengeTypes.BASEJUMP ||
     challengeType === challengeTypes.ZIPLINE ||
     challengeType === challengeTypes.VIDEO ||
     challengeType === challengeTypes.STEP ||

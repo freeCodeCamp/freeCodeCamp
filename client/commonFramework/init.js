@@ -3,9 +3,11 @@ window.common = (function(global) {
   // all classes should be stored here
   // called at the beginning of dom ready
   const {
+    Rx: { config },
     common = { init: [] }
   } = global;
 
+  config.longStackSupport = true;
   common.head = common.head || [];
   common.tail = common.tail || [];
   common.salt = Math.random();
@@ -70,7 +72,7 @@ window.common = (function(global) {
   };
 
   const commentRegex = /(\/\*[^(\*\/)]*\*\/)|([ \n]\/\/[^\n]*)/g;
-  common.removeLogs = function removeComments(str) {
+  common.removeComments = function removeComments(str) {
     return str.replace(commentRegex, '');
   };
 
