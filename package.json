@@ -29,7 +29,7 @@
     "accepts": "^1.3.0",
     "async": "^1.5.0",
     "babel": "5.8.34",
-    "babel-core": "5.8.33",
+    "babel-core": "5.8.34",
     "babel-eslint": "^4.1.4",
     "babel-loader": "5.3.3",
     "body-parser": "^1.13.2",
