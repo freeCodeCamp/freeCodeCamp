@@ -1,8 +1,8 @@
 extends ../layout-wide
 block content
-    link(rel='stylesheet', href='/js/lib/codemirror/lib/codemirror.css')
-    link(rel='stylesheet', href='/js/lib/codemirror/addon/lint/lint.css')
-    link(rel='stylesheet', href='/js/lib/codemirror/theme/monokai.css')
+    link(rel='stylesheet', href='/bower_components/CodeMirror/lib/codemirror.css')
+    link(rel='stylesheet', href='/bower_components/CodeMirror/addon/lint/lint.css')
+    link(rel='stylesheet', href='/bower_components/Codemirror/theme/monokai.css')
     link(rel='stylesheet', href='/css/ubuntu.css')
     .row.courseware-height
         .col-md-3.col-lg-3
@@ -87,6 +87,10 @@ block content
       common.dashedName = !{JSON.stringify(dashedName)};
 
       common.started = Math.floor(Date.now());
+      common.init.push(function() {
+        common.editor.setOption('lint', false);
+        common.editor.setOption('mode', 'text/html');
+      });
 
     include ../partials/challenge-footer
     script.
@@ -96,5 +100,3 @@ block content
         }
       });
 
-      editor.setOption('lint', false);
-      editor.setOption("mode", "text/html");

@@ -106,8 +106,22 @@ var paths = {
     'client/plugin.js'
   ],
 
-  dependents: [
-    'client/commonFramework.js'
+  commonFramework: [
+    'init',
+    'code-storage',
+    'code-uri',
+    'create-editor',
+    'detect-loops-stream',
+    'display-test-results',
+    'execute-challenge-stream',
+    'out-display',
+    'phone-scroll-lock',
+    'report-issue',
+    'run-tests-stream',
+    'show-completion',
+    'step-challenge',
+    'test-script-stream',
+    'update-preview'
   ],
 
   less: './client/less/main.less',
@@ -132,6 +146,12 @@ var paths = {
 var webpackOptions = {
   devtool: 'inline-source-map'
 };
+
+function formatCommonFrameworkPaths() {
+  return this.map(function(script) {
+    return 'client/commonFramework/' + script + '.js';
+  });
+}
 
 function errorHandler() {
   var args = Array.prototype.slice.call(arguments);
@@ -405,9 +425,10 @@ gulp.task('dependents', ['js'], function() {
     path.join(__dirname, paths.manifest, 'js-manifest.json')
   );
 
-  return gulp.src(paths.dependents)
+  return gulp.src(formatCommonFrameworkPaths.call(paths.commonFramework))
     .pipe(plumber({ errorHandler: errorHandler }))
     .pipe(babel())
+    .pipe(concat('commonFramework.js'))
     .pipe(__DEV__ ? gutil.noop() : uglify())
     .pipe(revReplace({ manifest: manifest }))
     .pipe(gulp.dest(dest))
@@ -474,7 +495,10 @@ gulp.task('watch', watchDependents, function() {
   gulp.watch(paths.js, ['js']);
   gulp.watch(paths.challenges, ['test-challenges', 'reload']);
   gulp.watch(paths.js, ['js', 'dependents']);
-  gulp.watch(paths.dependents, ['dependents']);
+  gulp.watch(
+    formatCommonFrameworkPaths.call(paths.commonFramework),
+    ['dependents']
+  );
   gulp.watch(paths.manifest + '/*.json', ['build-manifest-watch']);
   gulp.watch(webpackConfig.output.path + '/bundle.js', ['pack-watch-manifest']);
 });

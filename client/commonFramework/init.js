@@ -85,5 +85,4 @@ window.common = (function(global) {
   };
 
   return common;
-})();
-
+})(window);
