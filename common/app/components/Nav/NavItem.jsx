@@ -1,11 +1,8 @@
 import React from 'react';
 import classNames from 'classnames';
-import BootstrapMixin from 'react-bootstrap/lib/BootstrapMixin';
 
 export default React.createClass({
   displayName: 'FCCNavItem',
-
-  mixins: [BootstrapMixin],
 
   propTypes: {
     active: React.PropTypes.bool,
