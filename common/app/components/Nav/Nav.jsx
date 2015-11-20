@@ -12,6 +12,7 @@ import {
 import navLinks from './links.json';
 import FCCNavItem from './NavItem.jsx';
 
+const win = typeof window !== 'undefined' ? window : {};
 const fCClogo = 'https://s3.amazonaws.com/freecodecamp/freecodecamp_logo.svg';
 
 const logoElement = (
@@ -30,6 +31,16 @@ const toggleButton = (
     </Col>
   </button>
 );
+
+function getDashedName() {
+  let challengeDashedName;
+  if (typeof win.localStorage !== 'undefined') {
+    challengeDashedName = win.localStorage.getItem('currentDashedName');
+  }
+  return challengeDashedName && challengeDashedName !== 'undefined' ?
+    challengeDashedName :
+    '';
+}
 
 export default React.createClass({
   displayName: 'Nav',
@@ -66,6 +77,22 @@ export default React.createClass({
         </NavItem>
       );
     });
+  },
+
+  renderLearnBtn() {
+    return (
+      <NavItem
+        href='#'
+        onClick={ () => {
+          const challengeDashedName = getDashedName();
+          const goTo = challengeDashedName ?
+          '/challenges/' + challengeDashedName :
+          '/map';
+          win.location = goTo;
+        }}>
+        Learn
+      </NavItem>
+    );
   },
 
   renderPoints(username, points) {
@@ -107,6 +134,7 @@ export default React.createClass({
 
   render() {
     const { username, points, picture } = this.props;
+
     return (
       <Navbar
         className='nav-height'
@@ -119,6 +147,7 @@ export default React.createClass({
             className='hamburger-dropdown'
             navbar={ true }
             right={ true }>
+            { this.renderLearnBtn() }
             { this.renderLinks() }
             { this.renderPoints(username, points) }
             { this.renderSignin(username, picture) }
