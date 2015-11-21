@@ -10,7 +10,7 @@ window.common = (function({ common = { init: [] }}) {
   common.addTestsToString = function({ code, tests = [], ...rest }) {
     const userTests = [];
 
-    code = tests.reduce((code, test) => '\n' + code + test, code);
+    code = tests.reduce((code, test) => code + test + '\n', code + '\n');
 
     var counter = 0;
     var match = BDDregex.exec(code);

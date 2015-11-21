@@ -30,9 +30,10 @@ $(document).ready(function() {
       return common.executeChallenge$();
     })
     .subscribe(
-      ({ output, original, userTests }) => {
+      ({ output, original, tests }) => {
         common.updateOutputDisplay(output);
         common.codeStorage.updateStorage(challengeName, original);
+        common.displayTestResults(tests);
       }
     );
 
