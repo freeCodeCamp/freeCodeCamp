@@ -1,12 +1,13 @@
 window.common = (function({ $, common = { init: [] }}) {
 
   common.displayTestResults = function displayTestResults(data = []) {
+    $('#testSuite').children().remove();
     data.forEach(({ err = false, text = '' }) => {
+      console.log('err', err);
       var iconClass = err ?
-        '"ion-checkmark-circled big-success-icon"' :
-        '"ion-close-circled big-error-icon"';
+        '"ion-close-circled big-error-icon"' :
+        '"ion-checkmark-circled big-success-icon"';
 
-      $('#testSuite').children().remove();
       $('<div></div>').html(`
         <div class='row'>
           <div class='col-xs-2 text-center'>

@@ -82,7 +82,7 @@ window.common = (function(global) {
   };
 
   common.reassembleTest = function reassembleTest(code = '', { line, text }) {
-    var regexp = new RegExp('\/\/' + line + common.salt);
+    var regexp = new RegExp('//' + line + common.salt);
     return code.replace(regexp, text);
   };
 

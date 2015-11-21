@@ -18,7 +18,7 @@ window.common = (function(global) {
         try {
           if (test) {
             /* eslint-disable no-eval  */
-            eval(common.reassembleTest(test, code));
+            eval(common.reassembleTest(code, test));
             /* eslint-enable no-eval */
           }
         } catch (e) {
