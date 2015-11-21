@@ -32,10 +32,10 @@
         "You can use <code>typeof</code> to check the <code>data structure</code>, or type, of a variable.",
         "Note that in JavaScript, arrays are technically a type of object.",
         "Try using <code>typeof</code> on each of the following to see which types they have.",
-        "<code>console.log(typeof(\"\"));</code>",
-        "<code>console.log(typeof(0));</code>",
-        "<code>console.log(typeof([]));</code>",
-        "<code>console.log(typeof({}));</code>"
+        "<code>console.log(typeof \"\");</code>",
+        "<code>console.log(typeof 0);</code>",
+        "<code>console.log(typeof []);</code>",
+        "<code>console.log(typeof {});</code>"
       ],
       "tests":[
         "assert(editor.getValue().match(/console\\.log\\(typeof\\(\"\"\\)\\);/gi), 'message: You should <code>console.log</code> the <code>typeof</code> a string.');",

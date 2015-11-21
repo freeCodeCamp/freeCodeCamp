@@ -661,12 +661,12 @@
       "nameEs": "Establecer la familia del tipo de letra de un elemento",
       "descriptionEs": [
         "Puede establecer el tipo de letra de un elemento usando la propiedad <code>font-family</code>.",
-		"Por ejemplo, si quiere establecer el tipo de letra de su elemento <code>h2</code> como <code>Sans-serif</code>, use el siguiente CSS:",
-		"<code>h2 {</code>",
+        "Por ejemplo, si quiere establecer el tipo de letra de su elemento <code>h2</code> como <code>Sans-serif</code>, use el siguiente CSS:",
+        "<code>h2 {</code>",
         "<code>&nbsp;&nbsp;font-family: Sans-serif;</code>",
         "<code>}</code>",
         "Haga que todos sus elementos <code>p</code> utilicen el tipo de letra <code>Monospace</code>."
-	  ],
+      ],
       "namePt": "",
       "descriptionPt": [],
       "nameDe": "Waypoint: Definiere die Schriftart eines Elements",
@@ -720,12 +720,12 @@
       "nameEs": "Importar un tipo de letra de Google",
       "descriptionEs": [
         "Ahora, importemos y apliquemos un tipo de letra de Google (tenga en cuenta que si Google es bloqueado en su país, debera saltarse este desafio).",
-		"Primero, haga un <code>llamado</code> a Google para tomar el tipo de letra <code>Lobster</code> y para cargarlo en su HTML.",
-		"Copie la siguiente porción de código y péguela en la parte superior de su editor de texto:",
+        "Primero, haga un <code>llamado</code> a Google para tomar el tipo de letra <code>Lobster</code> y para cargarlo en su HTML.",
+        "Copie la siguiente porción de código y péguela en la parte superior de su editor de texto:",
         "<code>&#60;link href=\"http://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\"&#62;</code>",
-       "Ahora establezca <code>Lobster</code> como valor de font-family en su elemento <code>h2</code>.",
-       "Aplique la familia de fuente (<code>font-family</code>) <code>Lobster</code> a su elemento <code>h2</code>."
-	  ],
+        "Ahora establezca <code>Lobster</code> como valor de font-family en su elemento <code>h2</code>.",
+        "Aplique la familia de fuente (<code>font-family</code>) <code>Lobster</code> a su elemento <code>h2</code>."
+      ],
       "namePt": "",
       "descriptionPt": [],
       "nameDe": "Waypoint: Importiere eine Google Font",
