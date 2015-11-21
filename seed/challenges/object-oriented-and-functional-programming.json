@@ -263,7 +263,7 @@
         "",
         "The <code>map</code> method will iterate through every element of the array, creating a new array with values that have been modified by the callback function, and return it.",
         "In our example the callback only uses the value of the array element (the <code>val</code> argument) but your callback can also include arguments for the <code>index</code> and <code>array</code> being acted on.",
-        "Use the map function to add 3 to every value in the variable <code>array</code>."
+        "Use the map function to add 3 to every value in the variable <code>oldArray</code>."
       ],
       "tests":[
         "assert.deepEqual(newArray, [4,5,6,7,8], 'message: You should add three to each value in the array.');",
