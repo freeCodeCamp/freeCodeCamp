@@ -10,6 +10,7 @@ $(document).ready(function() {
   common.editorKeyUp$
     .debounce(750)
     .map(() => common.editor.getValue())
+    .distinctUntilChanged()
     .doOnNext(() => console.log('updating value'))
     .subscribe(
       code => {
@@ -32,6 +33,9 @@ $(document).ready(function() {
         common.updateOutputDisplay('' + output);
       },
       ({ err }) => {
+        if (err.stack) {
+          console.error(err);
+        }
         common.updateOutputDisplay('' + err);
       }
     );
@@ -42,19 +46,28 @@ $(document).ready(function() {
   )
     .flatMap(() => {
       common.appendToOutputDisplay('\n// testing challenge...');
-      return common.executeChallenge$();
-    })
-    .map(({ tests, ...rest }) => {
-      const solved = tests.every(test => !test.err);
-      return { ...rest, tests, solved };
+      return common.executeChallenge$()
+        .map(({ tests, ...rest }) => {
+          const solved = tests.every(test => !test.err);
+          return { ...rest, tests, solved };
+        })
+        .catch(err => Observable.just(err));
     })
     .subscribe(
-      ({ solved, output, tests }) => {
+      ({ err, solved, output, tests }) => {
+        if (err) {
+          console.error(err);
+          return common.updateOutputDisplay('' + err);
+        }
         common.updateOutputDisplay(output);
         common.displayTestResults(tests);
         if (solved) {
           common.showCompletion();
         }
+      },
+      (err) => {
+        console.error(err);
+        common.updateOutputDisplay('' + err);
       }
     );
 
