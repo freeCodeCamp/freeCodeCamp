@@ -19,8 +19,8 @@ window.common = (function(global) {
       return '' + localStorage.getItem(key + 'Val');
     },
 
-    isAlive: function() {
-      var val = this.getStoredValue();
+    isAlive: function(key) {
+      var val = this.getStoredValue(key);
       return val !== 'null' &&
         val !== 'undefined' &&
         (val && val.length > 0);

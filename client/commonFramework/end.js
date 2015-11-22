@@ -7,6 +7,17 @@ $(document).ready(function() {
     init($);
   });
 
+  common.editorKeyUp$
+    .debounce(750)
+    .map(() => common.editor.getValue())
+    .doOnNext(() => console.log('updating value'))
+    .subscribe(
+      code => {
+        common.codeStorage.updateStorage(common.challengeName, code);
+        common.codeUri.querify(code);
+      },
+      err => console.error(err)
+    );
 
   common.resetBtn$
     .doOnNext(() => {
