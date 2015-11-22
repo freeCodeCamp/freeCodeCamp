@@ -90,7 +90,9 @@ $(document).ready(function() {
     challengeType !== '4' &&
     challengeType !== '7'
   ) {
-    common.executeChallenge$()
+    Observable.just({})
+      .delay(500)
+      .flatMap(() => common.executeChallenge$())
       .subscribe(
         ({ original, tests }) => {
           common.codeStorage.updateStorage(challengeName, original);
