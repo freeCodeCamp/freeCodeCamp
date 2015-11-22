@@ -38,12 +38,11 @@ window.common = (function(global) {
 
   editor.setSize('100%', 'auto');
 
-  common.editorKeyUp$ = Observable.fromEventPattern(
-    () => editor.on('keyup'),
-    () => editor.off('keyup')
-  );
-
   common.editorExecute$ = new Subject();
+  common.editorKeyUp$ = Observable.fromEventPattern(
+    (handler) => editor.on('keyup', handler),
+    (handler) => editor.off('keyup', handler)
+  );
 
   editor.setOption('extraKeys', {
     Tab: function(cm) {
@@ -99,8 +98,8 @@ window.common = (function(global) {
     if (common.codeUri.isAlive()) {
       editorValue = common.codeUri.parse();
     } else {
-      editorValue = common.codeStorage.isAlive() ?
-        common.codeStorage.getStoredValue() :
+      editorValue = common.codeStorage.isAlive(common.challengeName) ?
+        common.codeStorage.getStoredValue(common.challengeName) :
         common.seed;
     }
 
