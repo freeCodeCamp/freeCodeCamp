@@ -25,15 +25,25 @@ $(document).ready(function() {
       }
     );
 
-  common.submitBtn$
+  Observable.merge(
+    common.editorExecute$,
+    common.submitBtn$
+  )
     .flatMap(() => {
+      common.appendToOutputDisplay('\n// testing challenge...');
       return common.executeChallenge$();
     })
+    .map(({ tests, ...rest }) => {
+      const solved = tests.every(test => !test.err);
+      return { ...rest, tests, solved };
+    })
     .subscribe(
-      ({ output, original, tests }) => {
+      ({ solved, output, tests }) => {
         common.updateOutputDisplay(output);
-        common.codeStorage.updateStorage(challengeName, original);
         common.displayTestResults(tests);
+        if (solved) {
+          common.showCompletion();
+        }
       }
     );
 
@@ -58,9 +68,9 @@ $(document).ready(function() {
   ) {
     common.executeChallenge$()
       .subscribe(
-        ({ original }) => {
-          // common.updateOutputDisplay('' + output);
+        ({ original, tests }) => {
           common.codeStorage.updateStorage(challengeName, original);
+          common.displayTestResults(tests);
         },
         ({ err }) => {
           if (err.stack) {

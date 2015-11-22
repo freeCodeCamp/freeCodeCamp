@@ -20,7 +20,7 @@ function run(code, cb) {
     result.type = typeof codeExec;
     result.output = stringify(codeExec);
   } catch (e) {
-    err = e.mesage;
+    err = e.message;
   }
 
   if (err) {

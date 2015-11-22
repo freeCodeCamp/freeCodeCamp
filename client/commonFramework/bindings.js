@@ -1,10 +1,16 @@
-window.common = (function({ $, Rx, common = { init: [] }}) {
+window.common = (function(global) {
+  const {
+    $,
+    Rx: { Observable },
+    common = { init: [] }
+  } = global;
 
   common.ctrlEnterClickHandler = function ctrlEnterClickHandler(e) {
     // ctrl + enter or cmd + enter
     if (
-      e.metaKey && e.keyCode === 13 ||
-      e.ctrlKey && e.keyCode === 13
+      e.keyCode === 13 &&
+      e.metaKey ||
+      e.ctrlKey
     ) {
       $('#complete-courseware-dialog').off('keydown', ctrlEnterClickHandler);
       if ($('#submit-challenge').length > 0) {
@@ -19,6 +25,10 @@ window.common = (function({ $, Rx, common = { init: [] }}) {
 
     var $marginFix = $('.innerMarginFix');
     $marginFix.css('min-height', $marginFix.height());
+
+    common.submitBtn$ = Observable.fromEvent($('#submitButton'), 'click');
+
+    common.resetBtn$ = Observable.fromEvent($('#reset-button'), 'click');
 
     // init modal keybindings on open
     $('#complete-courseware-dialog').on('shown.bs.modal', function() {
@@ -126,10 +136,6 @@ window.common = (function({ $, Rx, common = { init: [] }}) {
           }
       }
     });
-
-    common.submitBtn$ = Rx.Observable.fromEvent($('#submitButton'), 'click');
-
-    common.resetBtn$ = Rx.Observable.fromEvent($('#reset-button'), 'click');
 
     if (common.challengeName) {
       window.ga('send', 'event', 'Challenge', 'load', common.challengeName);
