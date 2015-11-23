@@ -1,6 +1,6 @@
 /* eslint-disable no-undef, no-unused-vars, no-native-reassign */
-window.$ = parent.$;
-window.$(function() {
+window.__$ = parent.$;
+window.__$(function() {
   var _ = parent._;
   var Rx = parent.Rx;
   var chai = parent.chai;
@@ -9,6 +9,10 @@ window.$(function() {
   var common = parent.common;
   var code = common.editor.getValue();
   var editor = common.editor;
+  // grab the iframe body element
+  var body = document.getElementsByTagName('body');
+  // change the context of $ so it uses the iFrame for testing
+  var $ = __$.proxy(__$.fn.find, __$(body));
 
   common.runPreviewTests$ =
     function runPreviewTests$({ tests = [], ...rest }) {
