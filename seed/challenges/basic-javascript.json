@@ -77,6 +77,530 @@
       "challengeType": 1
     },
     {
+      "id": "56533eb9ac21ba0edf2244a8",
+      "title": "Storing Values with the Equal Operator",
+      "description": [
+        "Introduce Assignment (Equals) Operator"
+      ],
+      "releasedOn": "11/27/2015",
+      "tests": [
+        "assert(1===1, 'message: message here');"
+      ],
+      "challengeSeed": [
+        "",
+        "",
+        ""
+      ],
+      "solutions": [
+        ""
+      ],
+      "type": "waypoint",
+      "challengeType": 1,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
+    },
+    {
+      "id": "56533eb9ac21ba0edf2244a9",
+      "title": "Initializing Variables with the Equal Operator",
+      "description": [
+        "Initialize a variable on the same line it is declared"
+      ],
+      "releasedOn": "11/27/2015",
+      "tests": [
+        "assert(1===1, 'message: message here');"
+      ],
+      "challengeSeed": [
+        "",
+        "",
+        ""
+      ],
+      "solutions": [
+        ""
+      ],
+      "type": "waypoint",
+      "challengeType": 1,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
+    },
+    {
+      "id": "56533eb9ac21ba0edf2244aa",
+      "title": "Understanding Uninitialized Variables",
+      "description": [
+        "Show how a varible that has not been initalized is undefined"
+      ],
+      "releasedOn": "11/27/2015",
+      "tests": [
+        "assert(1===1, 'message: message here');"
+      ],
+      "challengeSeed": [
+        "",
+        "",
+        ""
+      ],
+      "solutions": [
+        ""
+      ],
+      "type": "waypoint",
+      "challengeType": 1,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
+    },
+    {
+      "id": "56533eb9ac21ba0edf2244ab",
+      "title": "Understanding Case Sensitivity in Variables",
+      "description": [
+        "Case sensitive, add camelCase best practice"
+      ],
+      "releasedOn": "11/27/2015",
+      "tests": [
+        "assert(1===1, 'message: message here');"
+      ],
+      "challengeSeed": [
+        "",
+        "",
+        ""
+      ],
+      "solutions": [
+        ""
+      ],
+      "type": "waypoint",
+      "challengeType": 1,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
+    },
+    {
+      "id": "cf1111c1c11feddfaeb3bdef",
+      "title": "Add Two Numbers with JavaScript",
+      "description": [
+        "Let's try to add two numbers using JavaScript.",
+        "JavaScript uses the <code>+</code> symbol for addition.",
+        "Change the <code>0</code> so that sum will equal <code>20</code>."
+      ],
+      "tests": [
+        "assert((function(){if(sum === 20 && editor.getValue().match(/\\+/g).length >= 2){return true;}else{return false;}})(), 'message: Make the variable <code>sum</code> equal 20.');"
+      ],
+      "challengeSeed": [
+        "var sum = 10 + 0;",
+        "",
+        "// Only change code above this line.",
+        "",
+        "(function(z){return 'sum='+z;})(sum);"
+      ],
+      "type": "waypoint",
+      "challengeType": 1
+    },
+    {
+      "id": "cf1111c1c11feddfaeb4bdef",
+      "title": "Subtract One Number from Another with JavaScript",
+      "description": [
+        "We can also subtract one number from another.",
+        "JavaScript uses the <code>-</code> symbol for subtraction.",
+        "Change the <code>0</code> so that difference will equal <code>12</code>."
+      ],
+      "tests": [
+        "assert((function(){if(difference === 12 && editor.getValue().match(/\\-/g)){return true;}else{return false;}})(), 'message: Make the variable <code>difference</code> equal 12.');"
+      ],
+      "challengeSeed": [
+        "var difference = 45 - 0;",
+        "",
+        "// Only change code above this line.",
+        "",
+        "(function(z){return 'difference='+z;})(difference);"
+      ],
+      "type": "waypoint",
+      "challengeType": 1
+    },
+    {
+      "id": "cf1231c1c11feddfaeb5bdef",
+      "title": "Multiply Two Numbers with JavaScript",
+      "description": [
+        "We can also multiply one number by another.",
+        "JavaScript uses the <code>*</code> symbol for multiplication.",
+        "Change the <code>0</code> so that product will equal <code>80</code>."
+      ],
+      "tests": [
+        "assert((function(){if(product === 80 && editor.getValue().match(/\\*/g)){return true;}else{return false;}})(), 'message: Make the variable <code>product</code> equal 80.');"
+      ],
+      "challengeSeed": [
+        "var product = 8 * 0;",
+        "",
+        "// Only change code above this line.",
+        "",
+        "(function(z){return 'product='+z;})(product);"
+      ],
+      "type": "waypoint",
+      "challengeType": 1
+    },
+    {
+      "id": "cf1111c1c11feddfaeb6bdef",
+      "title": "Divide One Number by Another with JavaScript",
+      "description": [
+        "We can also divide one number by another.",
+        "JavaScript uses the <code>/</code> symbol for division.",
+        "Change the <code>0</code> so that quotient will equal <code>2</code>."
+      ],
+      "tests": [
+        "assert((function(){if(quotient === 2 && editor.getValue().match(/var\\s*?quotient\\s*?\\=\\s*?\\d+\\s*?\\/\\s*?\\d+\\s*?;/g)){return true;}else{return false;}})(), 'message: Make the variable <code>quotient</code> equal 2.');"
+      ],
+      "challengeSeed": [
+        "var quotient = 66 / 0;",
+        "",
+        "// Only change code above this line.",
+        "",
+        "(function(z){return 'quotient='+z;})(quotient);"
+      ],
+      "type": "waypoint",
+      "challengeType": 1
+    },
+    {
+      "id": "56533eb9ac21ba0edf2244ac",
+      "title": "Increment a Number with Javascript",
+      "description": [
+        "++"
+      ],
+      "releasedOn": "11/27/2015",
+      "tests": [
+        "assert(1===1, 'message: message here');"
+      ],
+      "challengeSeed": [
+        "",
+        "",
+        ""
+      ],
+      "solutions": [
+        ""
+      ],
+      "type": "waypoint",
+      "challengeType": 1,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
+    },
+    {
+      "id": "56533eb9ac21ba0edf2244ad",
+      "title": "Decrement a Number with Javascript",
+      "description": [
+        "--"
+      ],
+      "releasedOn": "11/27/2015",
+      "tests": [
+        "assert(1===1, 'message: message here');"
+      ],
+      "challengeSeed": [
+        "",
+        "",
+        ""
+      ],
+      "solutions": [
+        ""
+      ],
+      "type": "waypoint",
+      "challengeType": 1,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
+    },
+    {
+      "id": "cf1391c1c11feddfaeb4bdef",
+      "title": "Create Decimal Numbers with JavaScript",
+      "description": [
+        "JavaScript number variables can also have decimals.",
+        "Let's create a variable <code>myDecimal</code> and give it a decimal value."
+      ],
+      "tests": [
+        "assert((function(){if(typeof(myDecimal) !== \"undefined\" && typeof(myDecimal) === \"number\" && editor.getValue().match(/\\./g).length >=2){return true;}else{return false;}})(), 'message: <code>myDecimal</code> should be a decimal point number.');"
+      ],
+      "challengeSeed": [
+        "var ourDecimal = 5.7;",
+        "",
+        "",
+        "// Only change code above this line.",
+        "",
+        "(function(){if(typeof(myDecimal) !== \"undefined\"){return myDecimal;}})();"
+      ],
+      "type": "waypoint",
+      "challengeType": 1
+    },
+    {
+      "id": "bd7993c9c69feddfaeb7bdef",
+      "title": "Multiply Two Decimals with JavaScript",
+      "description": [
+        "In JavaScript, you can also perform calculations with decimal numbers, just like whole numbers.",
+        "Let's multiply two decimals together to get their product.",
+        "Change the <code>0.0</code> so that product will equal <code>5.0</code>."
+      ],
+      "tests": [
+        "assert((function(){if(product === 5.0 && editor.getValue().match(/\\*/g)){return true;}else{return false;}})(), 'message: Make the variable <code>product</code> equal 5.0.');"
+      ],
+      "challengeSeed": [
+        "var product = 2.0 * 0.0;",
+        "",
+        "",
+        "// Only change code above this line.",
+        "",
+        "(function(y){return 'product='+y;})(product);"
+      ],
+      "type": "waypoint",
+      "challengeType": 1
+    },
+    {
+      "id": "bd7993c9ca9feddfaeb7bdef",
+      "title": "Divide one Decimal by Another with JavaScript",
+      "description": [
+        "Now let's divide one decimal by another.",
+        "Change the <code>0.0</code> so that your quotient will equal <code>2.2</code>."
+      ],
+      "tests": [
+        "assert((function(){if(quotient === 2.2 && editor.getValue().match(/\\//g)){return true;}else{return false;}})(), 'message: Make the variable <code>quotient</code> equal <code>2.2</code>.');"
+      ],
+      "challengeSeed": [
+        "var quotient = 0.0 / 2.0;",
+        "",
+        "",
+        "// Only change code above this line.",
+        "",
+        "(function(y){return 'quotient='+y;})(quotient);"
+      ],
+      "type": "waypoint",
+      "challengeType": 1
+    },
+    {
+      "id": "56533eb9ac21ba0edf2244ae",
+      "title": "Find a Remainder with Modulus",
+      "description": [
+        "Modulus Operator (%)"
+      ],
+      "releasedOn": "11/27/2015",
+      "tests": [
+        "assert(1===1, 'message: message here');"
+      ],
+      "challengeSeed": [
+        "",
+        "",
+        ""
+      ],
+      "solutions": [
+        ""
+      ],
+      "type": "waypoint",
+      "challengeType": 1,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
+    },
+    {
+      "id": "56533eb9ac21ba0edf2244af",
+      "title": "Assignment with Plus Equals",
+      "description": [
+        "Introduce +=",
+        "Convert a = a + 5 to a += 5"
+      ],
+      "releasedOn": "11/27/2015",
+      "tests": [
+        "assert(1===1, 'message: message here');"
+      ],
+      "challengeSeed": [
+        "",
+        "",
+        ""
+      ],
+      "solutions": [
+        ""
+      ],
+      "type": "waypoint",
+      "challengeType": 1,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
+    },
+    {
+      "id": "56533eb9ac21ba0edf2244b0",
+      "title": "Assignment with Minus Equals",
+      "description": [
+        "Introduce -=",
+        "Convert a = a - 9 to a -= 9"
+      ],
+      "releasedOn": "11/27/2015",
+      "tests": [
+        "assert(1===1, 'message: message here');"
+      ],
+      "challengeSeed": [
+        "",
+        "",
+        ""
+      ],
+      "solutions": [
+        ""
+      ],
+      "type": "waypoint",
+      "challengeType": 1,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
+    },
+    {
+      "id": "56533eb9ac21ba0edf2244b1",
+      "title": "Assignment with Times Equals",
+      "description": [
+        "Introduce *=",
+        "Convert a = a * 3 to a *= 3"
+      ],
+      "releasedOn": "11/27/2015",
+      "tests": [
+        "assert(1===1, 'message: message here');"
+      ],
+      "challengeSeed": [
+        "",
+        "",
+        ""
+      ],
+      "solutions": [
+        ""
+      ],
+      "type": "waypoint",
+      "challengeType": 1,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
+    },
+    {
+      "id": "56533eb9ac21ba0edf2244b2",
+      "title": "Assignment with Divided by Equals",
+      "description": [
+        "Introduce /=",
+        "Convert a = a / 5 to a /= 5"
+      ],
+      "releasedOn": "11/27/2015",
+      "tests": [
+        "assert(1===1, 'message: message here');"
+      ],
+      "challengeSeed": [
+        "",
+        "",
+        ""
+      ],
+      "solutions": [
+        ""
+      ],
+      "type": "waypoint",
+      "challengeType": 1,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
+    },
+    {
+      "id": "56533eb9ac21ba0edf2244b3",
+      "title": "Checkpoint: Variables and Assignement",
+      "description": [
+        "TBD"
+      ],
+      "releasedOn": "11/27/2015",
+      "tests": [
+        "assert(1===1, 'message: message here');"
+      ],
+      "challengeSeed": [
+        "",
+        "",
+        ""
+      ],
+      "solutions": [
+        ""
+      ],
+      "type": "waypoint",
+      "challengeType": 1,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
+    },
+    {
       "id": "bd7123c9c444eddfaeb5bdef",
       "title": "Declare String Variables",
       "description": [
@@ -98,6 +622,233 @@
       ],
       "type": "waypoint",
       "challengeType": 1
+    },
+    {
+      "id": "56533eb9ac21ba0edf2244b4",
+      "title": "Quoting Strings with Single Quotes",
+      "description": [
+        "Show how to use Single Quotes for declaring Strings",
+        "Include escaping single quotes",
+        "Example: Encoding HTML?"
+      ],
+      "releasedOn": "11/27/2015",
+      "tests": [
+        "assert(1===1, 'message: message here');"
+      ],
+      "challengeSeed": [
+        "",
+        "",
+        ""
+      ],
+      "solutions": [
+        ""
+      ],
+      "type": "waypoint",
+      "challengeType": 1,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
+    },
+    {
+      "id": "56533eb9ac21ba0edf2244b5",
+      "title": "Quoting Strings with Double Quotes",
+      "description": [
+        "Show how to use double quotes, including escaping double quotes",
+        "Note: State that Double/Single quotes are identical in JS.",
+        "Note: State that FCC prefers Double Quotes."
+      ],
+      "releasedOn": "11/27/2015",
+      "tests": [
+        "assert(1===1, 'message: message here');"
+      ],
+      "challengeSeed": [
+        "",
+        "",
+        ""
+      ],
+      "solutions": [
+        ""
+      ],
+      "type": "waypoint",
+      "challengeType": 1,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
+    },
+    {
+      "id": "56533eb9ac21ba0edf2244b6",
+      "title": "Escape Sequences in String",
+      "description": [
+        "Show more escape sequences than just for double quotes"
+      ],
+      "releasedOn": "11/27/2015",
+      "tests": [
+        "assert(1===1, 'message: message here');"
+      ],
+      "challengeSeed": [
+        "",
+        "",
+        ""
+      ],
+      "solutions": [
+        ""
+      ],
+      "type": "waypoint",
+      "challengeType": 1,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
+    },
+    {
+      "id": "56533eb9ac21ba0edf2244b7",
+      "title": "Concatanting strings with the Plus Operator",
+      "description": [
+        "Introduce + operator to build a string from pieces",
+        "var myString = \"This is the start. \" + \"This is the end\";"
+      ],
+      "releasedOn": "11/27/2015",
+      "tests": [
+        "assert(1===1, 'message: message here');"
+      ],
+      "challengeSeed": [
+        "",
+        "",
+        ""
+      ],
+      "solutions": [
+        ""
+      ],
+      "type": "waypoint",
+      "challengeType": 1,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
+    },
+    {
+      "id": "56533eb9ac21ba0edf2244b8",
+      "title": "Concatanting strings with the Plus Equals Operator",
+      "description": [
+        "Introduce += Operator to build a string across multiple assignments.",
+        "var myString = \"This is the first line. \";",
+        "myString = \"This is the second line.\";"
+      ],
+      "releasedOn": "11/27/2015",
+      "tests": [
+        "assert(1===1, 'message: message here');"
+      ],
+      "challengeSeed": [
+        "",
+        "",
+        ""
+      ],
+      "solutions": [
+        ""
+      ],
+      "type": "waypoint",
+      "challengeType": 1,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
+    },
+    {
+      "id": "56533eb9ac21ba0edf2244b9",
+      "title": "Constructing Strings with Variables",
+      "description": [
+        "Use the + operator to buid a string with a variable in it.",
+        "var myString = \"This is a string with \" + aVariable + \" in it!\";"
+      ],
+      "releasedOn": "11/27/2015",
+      "tests": [
+        "assert(1===1, 'message: message here');"
+      ],
+      "challengeSeed": [
+        "",
+        "",
+        ""
+      ],
+      "solutions": [
+        ""
+      ],
+      "type": "waypoint",
+      "challengeType": 1,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
+    },
+    {
+      "id": "56533eb9ac21ba0edf2244ed",
+      "title": "Appending Variables to Strings",
+      "description": [
+        "Append to a string using the += operator",
+        "var myString = \"SaintPeter is totally: \";",
+        "myString += someAdjective;"
+      ],
+      "releasedOn": "11/27/2015",
+      "tests": [
+        "assert(1===1, 'message: message here');"
+      ],
+      "challengeSeed": [
+        "",
+        "",
+        ""
+      ],
+      "solutions": [
+        ""
+      ],
+      "type": "waypoint",
+      "challengeType": 1,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "id": "bd7123c9c448eddfaeb5bdef",
@@ -165,6 +916,37 @@
       ],
       "type": "waypoint",
       "challengeType": 1
+    },
+    {
+      "id": "56533eb9ac21ba0edf2244ba",
+      "title": "Understand String Immutability",
+      "description": [
+        "Explain string Immutability"
+      ],
+      "releasedOn": "11/27/2015",
+      "tests": [
+        "assert(1===1, 'message: message here');"
+      ],
+      "challengeSeed": [
+        "",
+        "",
+        ""
+      ],
+      "solutions": [
+        ""
+      ],
+      "type": "waypoint",
+      "challengeType": 1,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "id": "bd7123c9c450eddfaeb5bdef",
@@ -256,152 +1038,35 @@
       "challengeType": 1
     },
     {
-      "id": "cf1111c1c11feddfaeb3bdef",
-      "title": "Add Two Numbers with JavaScript",
+      "id": "56533eb9ac21ba0edf2244bb",
+      "title": "Checkpoint: Strings",
       "description": [
-        "Let's try to add two numbers using JavaScript.",
-        "JavaScript uses the <code>+</code> symbol for addition.",
-        "Change the <code>0</code> so that sum will equal <code>20</code>."
+        ""
       ],
+      "releasedOn": "11/27/2015",
       "tests": [
-        "assert((function(){if(sum === 20 && editor.getValue().match(/\\+/g).length >= 2){return true;}else{return false;}})(), 'message: Make the variable <code>sum</code> equal 20.');"
+        "assert(1===1, 'message: message here');"
       ],
       "challengeSeed": [
-        "var sum = 10 + 0;",
         "",
-        "// Only change code above this line.",
         "",
-        "(function(z){return 'sum='+z;})(sum);"
+        ""
+      ],
+      "solutions": [
+        ""
       ],
       "type": "waypoint",
-      "challengeType": 1
-    },
-    {
-      "id": "cf1111c1c11feddfaeb4bdef",
-      "title": "Subtract One Number from Another with JavaScript",
-      "description": [
-        "We can also subtract one number from another.",
-        "JavaScript uses the <code>-</code> symbol for subtraction.",
-        "Change the <code>0</code> so that difference will equal <code>12</code>."
-      ],
-      "tests": [
-        "assert((function(){if(difference === 12 && editor.getValue().match(/\\-/g)){return true;}else{return false;}})(), 'message: Make the variable <code>difference</code> equal 12.');"
-      ],
-      "challengeSeed": [
-        "var difference = 45 - 0;",
-        "",
-        "// Only change code above this line.",
-        "",
-        "(function(z){return 'difference='+z;})(difference);"
-      ],
-      "type": "waypoint",
-      "challengeType": 1
-    },
-    {
-      "id": "cf1231c1c11feddfaeb5bdef",
-      "title": "Multiply Two Numbers with JavaScript",
-      "description": [
-        "We can also multiply one number by another.",
-        "JavaScript uses the <code>*</code> symbol for multiplication.",
-        "Change the <code>0</code> so that product will equal <code>80</code>."
-      ],
-      "tests": [
-        "assert((function(){if(product === 80 && editor.getValue().match(/\\*/g)){return true;}else{return false;}})(), 'message: Make the variable <code>product</code> equal 80.');"
-      ],
-      "challengeSeed": [
-        "var product = 8 * 0;",
-        "",
-        "// Only change code above this line.",
-        "",
-        "(function(z){return 'product='+z;})(product);"
-      ],
-      "type": "waypoint",
-      "challengeType": 1
-    },
-    {
-      "id": "cf1111c1c11feddfaeb6bdef",
-      "title": "Divide One Number by Another with JavaScript",
-      "description": [
-        "We can also divide one number by another.",
-        "JavaScript uses the <code>/</code> symbol for division.",
-        "Change the <code>0</code> so that quotient will equal <code>2</code>."
-      ],
-      "tests": [
-        "assert((function(){if(quotient === 2 && editor.getValue().match(/var\\s*?quotient\\s*?\\=\\s*?\\d+\\s*?\\/\\s*?\\d+\\s*?;/g)){return true;}else{return false;}})(), 'message: Make the variable <code>quotient</code> equal 2.');"
-      ],
-      "challengeSeed": [
-        "var quotient = 66 / 0;",
-        "",
-        "// Only change code above this line.",
-        "",
-        "(function(z){return 'quotient='+z;})(quotient);"
-      ],
-      "type": "waypoint",
-      "challengeType": 1
-    },
-    {
-      "id": "cf1391c1c11feddfaeb4bdef",
-      "title": "Create Decimal Numbers with JavaScript",
-      "description": [
-        "JavaScript number variables can also have decimals.",
-        "Let's create a variable <code>myDecimal</code> and give it a decimal value."
-      ],
-      "tests": [
-        "assert((function(){if(typeof(myDecimal) !== \"undefined\" && typeof(myDecimal) === \"number\" && editor.getValue().match(/\\./g).length >=2){return true;}else{return false;}})(), 'message: <code>myDecimal</code> should be a decimal point number.');"
-      ],
-      "challengeSeed": [
-        "var ourDecimal = 5.7;",
-        "",
-        "",
-        "// Only change code above this line.",
-        "",
-        "(function(){if(typeof(myDecimal) !== \"undefined\"){return myDecimal;}})();"
-      ],
-      "type": "waypoint",
-      "challengeType": 1
-    },
-    {
-      "id": "bd7993c9c69feddfaeb7bdef",
-      "title": "Multiply Two Decimals with JavaScript",
-      "description": [
-        "In JavaScript, you can also perform calculations with decimal numbers, just like whole numbers.",
-        "Let's multiply two decimals together to get their product.",
-        "Change the <code>0.0</code> so that product will equal <code>5.0</code>."
-      ],
-      "tests": [
-        "assert((function(){if(product === 5.0 && editor.getValue().match(/\\*/g)){return true;}else{return false;}})(), 'message: Make the variable <code>product</code> equal 5.0.');"
-      ],
-      "challengeSeed": [
-        "var product = 2.0 * 0.0;",
-        "",
-        "",
-        "// Only change code above this line.",
-        "",
-        "(function(y){return 'product='+y;})(product);"
-      ],
-      "type": "waypoint",
-      "challengeType": 1
-    },
-    {
-      "id": "bd7993c9ca9feddfaeb7bdef",
-      "title": "Divide one Decimal by Another with JavaScript",
-      "description": [
-        "Now let's divide one decimal by another.",
-        "Change the <code>0.0</code> so that your quotient will equal <code>2.2</code>."
-      ],
-      "tests": [
-        "assert((function(){if(quotient === 2.2 && editor.getValue().match(/\\//g)){return true;}else{return false;}})(), 'message: Make the variable <code>quotient</code> equal <code>2.2</code>.');"
-      ],
-      "challengeSeed": [
-        "var quotient = 0.0 / 2.0;",
-        "",
-        "",
-        "// Only change code above this line.",
-        "",
-        "(function(y){return 'quotient='+y;})(quotient);"
-      ],
-      "type": "waypoint",
-      "challengeType": 1
+      "challengeType": 1,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "id": "bd7993c9c69feddfaeb8bdef",
@@ -520,37 +1185,6 @@
       "challengeType": 1
     },
     {
-      "id": "bg9994c9c69feddfaeb9bdef",
-      "title": "Manipulate Arrays With pop()",
-      "description": [
-        "Another way to change the data in an array is with the <code>.pop()</code> function.",
-        "<code>.pop()</code> is used to \"pop\" a value off of the end of an array. We can store this \"popped off\" variable by performing <code>pop()</code> within a variable declaration.",
-        "Any type of data structure can be \"popped\" off of an array - numbers, strings, even nested arrays.",
-        "Use the <code>.pop()</code> function to remove the last item from <code>myArray</code>, assigning the \"popped off\" value to <code>removedFromMyArray</code>."
-      ],
-      "tests": [
-        "assert((function(d){if(d[0] == 'John' && d[1] == 23 && d[2] == undefined){return true;}else{return false;}})(myArray), 'message: <code>myArray</code> should only contain <code>[\"John\", 23]</code>.');",
-        "assert((function(d){if(d[0] == 'cat' && d[1] == 2 && d[2] == undefined){return true;}else{return false;}})(removedFromMyArray), 'message: <code>removedFromMyArray</code> should only contain <code>[\"cat\", 2]</code>.');"
-      ],
-      "challengeSeed": [
-        "var ourArray = [1,2,3];",
-        "",
-        "var removedFromOurArray = ourArray.pop(); // removedFromOurArray now equals 3, and ourArray now equals [1,2]",
-        "",
-        "var myArray = [\"John\", 23, [\"cat\", 2]];",
-        "",
-        "// Only change code below this line.",
-        "",
-        "var removedFromMyArray;",
-        "",
-        "// Only change code above this line.",
-        "",
-        "(function(y, z){return 'myArray = ' + JSON.stringify(y) + ' & removedFromMyArray = ' + JSON.stringify(z);})(myArray, removedFromMyArray);"
-      ],
-      "type": "waypoint",
-      "challengeType": 1
-    },
-    {
       "id": "bg9995c9c69feddfaeb9bdef",
       "title": "Manipulate Arrays With push()",
       "description": [
@@ -578,6 +1212,37 @@
         "// Only change code above this line.",
         "",
         "(function(z){return 'myArray = ' + JSON.stringify(z);})(myArray);"
+      ],
+      "type": "waypoint",
+      "challengeType": 1
+    },
+    {
+      "id": "bg9994c9c69feddfaeb9bdef",
+      "title": "Manipulate Arrays With pop()",
+      "description": [
+        "Another way to change the data in an array is with the <code>.pop()</code> function.",
+        "<code>.pop()</code> is used to \"pop\" a value off of the end of an array. We can store this \"popped off\" variable by performing <code>pop()</code> within a variable declaration.",
+        "Any type of data structure can be \"popped\" off of an array - numbers, strings, even nested arrays.",
+        "Use the <code>.pop()</code> function to remove the last item from <code>myArray</code>, assigning the \"popped off\" value to <code>removedFromMyArray</code>."
+      ],
+      "tests": [
+        "assert((function(d){if(d[0] == 'John' && d[1] == 23 && d[2] == undefined){return true;}else{return false;}})(myArray), 'message: <code>myArray</code> should only contain <code>[\"John\", 23]</code>.');",
+        "assert((function(d){if(d[0] == 'cat' && d[1] == 2 && d[2] == undefined){return true;}else{return false;}})(removedFromMyArray), 'message: <code>removedFromMyArray</code> should only contain <code>[\"cat\", 2]</code>.');"
+      ],
+      "challengeSeed": [
+        "var ourArray = [1,2,3];",
+        "",
+        "var removedFromOurArray = ourArray.pop(); // removedFromOurArray now equals 3, and ourArray now equals [1,2]",
+        "",
+        "var myArray = [\"John\", 23, [\"cat\", 2]];",
+        "",
+        "// Only change code below this line.",
+        "",
+        "var removedFromMyArray;",
+        "",
+        "// Only change code above this line.",
+        "",
+        "(function(y, z){return 'myArray = ' + JSON.stringify(y) + ' & removedFromMyArray = ' + JSON.stringify(z);})(myArray, removedFromMyArray);"
       ],
       "type": "waypoint",
       "challengeType": 1
@@ -647,6 +1312,37 @@
       "challengeType": 1
     },
     {
+      "id": "56533eb9ac21ba0edf2244bc",
+      "title": "Checkpoint: Arrays",
+      "description": [
+        ""
+      ],
+      "releasedOn": "11/27/2015",
+      "tests": [
+        "assert(1===1, 'message: message here');"
+      ],
+      "challengeSeed": [
+        "",
+        "",
+        ""
+      ],
+      "solutions": [
+        ""
+      ],
+      "type": "waypoint",
+      "challengeType": 1,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
+    },
+    {
       "id": "bg9997c9c89feddfaeb9bdef",
       "title": "Write Reusable JavaScript with Functions",
       "description": [
@@ -685,6 +1381,316 @@
       ],
       "type": "waypoint",
       "challengeType": 1
+    },
+    {
+      "id": "56533eb9ac21ba0edf2244bd",
+      "title": "Passing Values to Functions with Arguments",
+      "description": [
+        "Sometimes called parameters"
+      ],
+      "releasedOn": "11/27/2015",
+      "tests": [
+        "assert(1===1, 'message: message here');"
+      ],
+      "challengeSeed": [
+        "",
+        "",
+        ""
+      ],
+      "solutions": [
+        ""
+      ],
+      "type": "waypoint",
+      "challengeType": 1,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
+    },
+    {
+      "id": "56533eb9ac21ba0edf2244be",
+      "title": "Global Scope and Functions",
+      "description": [
+        "Show how globals are availible in functions"
+      ],
+      "releasedOn": "11/27/2015",
+      "tests": [
+        "assert(1===1, 'message: message here');"
+      ],
+      "challengeSeed": [
+        "",
+        "",
+        ""
+      ],
+      "solutions": [
+        ""
+      ],
+      "type": "waypoint",
+      "challengeType": 1,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
+    },
+    {
+      "id": "56533eb9ac21ba0edf2244bf",
+      "title": "Local Scope and Functions",
+      "description": [
+        "Show how locals are constrained to the function they are created in  Note: Hoisting?"
+      ],
+      "releasedOn": "11/27/2015",
+      "tests": [
+        "assert(1===1, 'message: message here');"
+      ],
+      "challengeSeed": [
+        "",
+        "",
+        ""
+      ],
+      "solutions": [
+        ""
+      ],
+      "type": "waypoint",
+      "challengeType": 1,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
+    },
+    {
+      "id": "56533eb9ac21ba0edf2244c0",
+      "title": "Global vs. Local Scope in Functions",
+      "description": [
+        "Show how global and local scopes interact"
+      ],
+      "releasedOn": "11/27/2015",
+      "tests": [
+        "assert(1===1, 'message: message here');"
+      ],
+      "challengeSeed": [
+        "",
+        "",
+        ""
+      ],
+      "solutions": [
+        ""
+      ],
+      "type": "waypoint",
+      "challengeType": 1,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
+    },
+    {
+      "id": "56533eb9ac21ba0edf2244c1",
+      "title": "Context for Functions",
+      "description": [
+        "Show how each instance of a function has its own values/context"
+      ],
+      "releasedOn": "11/27/2015",
+      "tests": [
+        "assert(1===1, 'message: message here');"
+      ],
+      "challengeSeed": [
+        "",
+        "",
+        ""
+      ],
+      "solutions": [
+        ""
+      ],
+      "type": "waypoint",
+      "challengeType": 1,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
+    },
+    {
+      "id": "56533eb9ac21ba0edf2244c2",
+      "title": "Return a Value from a Function with Return",
+      "description": [
+        "Introduce the return statement"
+      ],
+      "releasedOn": "11/27/2015",
+      "tests": [
+        "assert(1===1, 'message: message here');"
+      ],
+      "challengeSeed": [
+        "",
+        "",
+        ""
+      ],
+      "solutions": [
+        ""
+      ],
+      "type": "waypoint",
+      "challengeType": 1,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
+    },
+    {
+      "id": "56533eb9ac21ba0edf2244c3",
+      "title": "Assignment with a Returned Value",
+      "description": [
+        "Show how to assign a returned value to a variable"
+      ],
+      "releasedOn": "11/27/2015",
+      "tests": [
+        "assert(1===1, 'message: message here');"
+      ],
+      "challengeSeed": [
+        "",
+        "",
+        ""
+      ],
+      "solutions": [
+        ""
+      ],
+      "type": "waypoint",
+      "challengeType": 1,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
+    },
+    {
+      "id": "56533eb9ac21ba0edf2244c4",
+      "title": "Return Early Pattern",
+      "description": [
+        "Explain how to use return early for functions"
+      ],
+      "releasedOn": "11/27/2015",
+      "tests": [
+        "assert(1===1, 'message: message here');"
+      ],
+      "challengeSeed": [
+        "",
+        "",
+        ""
+      ],
+      "solutions": [
+        ""
+      ],
+      "type": "waypoint",
+      "challengeType": 1,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
+    },
+    {
+      "id": "56533eb9ac21ba0edf2244c5",
+      "title": "Optional Arguments for Functions",
+      "description": [
+        ""
+      ],
+      "releasedOn": "11/27/2015",
+      "tests": [
+        "assert(1===1, 'message: message here');"
+      ],
+      "challengeSeed": [
+        "",
+        "",
+        ""
+      ],
+      "solutions": [
+        ""
+      ],
+      "type": "waypoint",
+      "challengeType": 1,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
+    },
+    {
+      "id": "56533eb9ac21ba0edf2244c6",
+      "title": "Checkpoint: Functions",
+      "description": [
+        "Note: Function Length tips - 10-20 lines, etc"
+      ],
+      "releasedOn": "11/27/2015",
+      "tests": [
+        "assert(1===1, 'message: message here');"
+      ],
+      "challengeSeed": [
+        "",
+        "",
+        ""
+      ],
+      "solutions": [
+        ""
+      ],
+      "type": "waypoint",
+      "challengeType": 1,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "id": "bg9998c9c99feddfaeb9bdef",
@@ -735,9 +1741,103 @@
       "challengeType": 1
     },
     {
-      "id": "bg9999c9c99feddfaeb9bdef",
-      "title": "Update the Properties of a JavaScript Object",
+      "id": "56533eb9ac21ba0edf2244c7",
+      "title": "Accessing Objects Properties with the Dot Operator",
       "description": [
+        "Show obj.prop"
+      ],
+      "releasedOn": "11/27/2015",
+      "tests": [
+        "assert(1===1, 'message: message here');"
+      ],
+      "challengeSeed": [
+        "",
+        "",
+        ""
+      ],
+      "solutions": [
+        ""
+      ],
+      "type": "waypoint",
+      "challengeType": 1,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
+    },
+    {
+      "id": "56533eb9ac21ba0edf2244c8",
+      "title": "Accessing Objects Properties with Bracket Notation",
+      "description": [
+        "Show obj['property']"
+      ],
+      "releasedOn": "11/27/2015",
+      "tests": [
+        "assert(1===1, 'message: message here');"
+      ],
+      "challengeSeed": [
+        "",
+        "",
+        ""
+      ],
+      "solutions": [
+        ""
+      ],
+      "type": "waypoint",
+      "challengeType": 1,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
+    },
+    {
+      "id": "56533eb9ac21ba0edf2244c9",
+      "title": "Accessing Objects Properties with Variables",
+      "description": [
+        "Show obj[propertyVariable]"
+      ],
+      "releasedOn": "11/27/2015",
+      "tests": [
+        "assert(1===1, 'message: message here');"
+      ],
+      "challengeSeed": [
+        "",
+        "",
+        ""
+      ],
+      "solutions": [
+        ""
+      ],
+      "type": "waypoint",
+      "challengeType": 1,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
+    },
+    {
+      "id": "bg9999c9c99feddfaeb9bdef",
+      "title": "Deleting Object Properties",
+      "description": [
+        "REWRITE:  Just Delete Object Properties",
         "After you've created a JavaScript object, you can update its properties at any time just like you would update any other variable.",
         "For example, let's look at <code>ourDog</code>:",
         "<code>var ourDog = {</code>",
@@ -865,6 +1965,759 @@
       "challengeType": 1
     },
     {
+      "id": "56533eb9ac21ba0edf2244ca",
+      "title": "Using Objects for Lookups",
+      "description": [
+        ""
+      ],
+      "releasedOn": "11/27/2015",
+      "tests": [
+        "assert(1===1, 'message: message here');"
+      ],
+      "challengeSeed": [
+        "",
+        "",
+        ""
+      ],
+      "solutions": [
+        ""
+      ],
+      "type": "waypoint",
+      "challengeType": 1,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
+    },
+    {
+      "id": "56533eb9ac21ba0edf2244cb",
+      "title": "Introducing JavaScript Object Notation (JSON)",
+      "description": [
+        "Introduce mixed Array/Object Structures"
+      ],
+      "releasedOn": "11/27/2015",
+      "tests": [
+        "assert(1===1, 'message: message here');"
+      ],
+      "challengeSeed": [
+        "",
+        "",
+        ""
+      ],
+      "solutions": [
+        ""
+      ],
+      "type": "waypoint",
+      "challengeType": 1,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
+    },
+    {
+      "id": "56533eb9ac21ba0edf2244cc",
+      "title": "Accessing Nested Objects in JSON",
+      "description": [
+        "myObj.subObject.subSubObject"
+      ],
+      "releasedOn": "11/27/2015",
+      "tests": [
+        "assert(1===1, 'message: message here');"
+      ],
+      "challengeSeed": [
+        "",
+        "",
+        ""
+      ],
+      "solutions": [
+        ""
+      ],
+      "type": "waypoint",
+      "challengeType": 1,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
+    },
+    {
+      "id": "56533eb9ac21ba0edf2244cd",
+      "title": "Accessing Nested Arrays in JSON",
+      "description": [
+        "myObj.subArray[n].subObject"
+      ],
+      "releasedOn": "11/27/2015",
+      "tests": [
+        "assert(1===1, 'message: message here');"
+      ],
+      "challengeSeed": [
+        "",
+        "",
+        ""
+      ],
+      "solutions": [
+        ""
+      ],
+      "type": "waypoint",
+      "challengeType": 1,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
+    },
+    {
+      "id": "56533eb9ac21ba0edf2244ce",
+      "title": "Arbitrary Nesting in JSON",
+      "description": [
+        "Retrieve a value from an arbitary JSON"
+      ],
+      "releasedOn": "11/27/2015",
+      "tests": [
+        "assert(1===1, 'message: message here');"
+      ],
+      "challengeSeed": [
+        "",
+        "",
+        ""
+      ],
+      "solutions": [
+        ""
+      ],
+      "type": "waypoint",
+      "challengeType": 1,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
+    },
+    {
+      "id": "56533eb9ac21ba0edf2244cf",
+      "title": "Checkpoint: Objects",
+      "description": [
+        ""
+      ],
+      "releasedOn": "11/27/2015",
+      "tests": [
+        "assert(1===1, 'message: message here');"
+      ],
+      "challengeSeed": [
+        "",
+        "",
+        ""
+      ],
+      "solutions": [
+        ""
+      ],
+      "type": "waypoint",
+      "challengeType": 1,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
+    },
+    {
+      "id": "cf1111c1c12feddfaeb3bdef",
+      "title": "Use Conditional Logic with If Statements",
+      "description": [
+        "REWRITE: Remove Else Statements",
+        "We can use <code>if</code> statements in JavaScript to only execute code if a certain condition is met.",
+        "<code>if</code> statements require some sort of boolean condition to evaluate.",
+        "For example:",
+        "<code>if (1 === 2) {</code>",
+        "<code>&nbsp;&nbsp;return true;</code>",
+        "<code>} else {</code>",
+        "<code>&nbsp;&nbsp;return false;</code>",
+        "<code>}</code>",
+        "Let's use <code>if</code> and <code>else</code> statements to make a coin-flip game.",
+        "Create <code>if</code> and <code>else</code> statements to return the string <code>\"heads\"</code> if the flip variable is zero, or else return the string <code>\"tails\"</code> if the flip variable is not zero."
+      ],
+      "tests": [
+        "assert(editor.getValue().match(/if/g).length >= 2, 'message: Create a new if statement.');",
+        "assert(editor.getValue().match(/else/g).length >= 1, 'message: Created a new else statement.');",
+        "assert((function(){var result = myFunction();if(result === 'heads' || result === 'tails'){return true;} else {return false;}})(), 'message: <code>myFunction</code> should either return <code>heads</code> or <code>tails</code>.');",
+        "assert((function(){var result = myFunction();if(result === 'heads' && flip === 0 || result === 'tails' && flip !== 0){return true;} else {return false;}})(), 'message: <code>myFunction</code> should return <code>heads</code> when flip equals 0 and <code>tails</code> when flip equals 1.');"
+      ],
+      "challengeSeed": [
+        "var flip = Math.floor(Math.random() * (1 - 0 + 1)) + 0;",
+        "",
+        "function myFunction() {",
+        "",
+        "  // Only change code below this line.",
+        "",
+        "",
+        "",
+        "  // Only change code above this line.",
+        "",
+        "}",
+        "",
+        "var result = myFunction();if(typeof(flip) !== \"undefined\" && typeof(flip) === \"number\" && typeof(result) !== \"undefined\" && typeof(result) === \"string\"){(function(y,z){return 'flip = ' + y.toString() + ', text = ' + z;})(flip, result);}"
+      ],
+      "type": "waypoint",
+      "challengeType": 1
+    },
+    {
+      "id": "56533eb9ac21ba0edf2244d0",
+      "title": "Comparison Operators - Equality Test",
+      "description": [
+        "=="
+      ],
+      "releasedOn": "11/27/2015",
+      "tests": [
+        "assert(1===1, 'message: message here');"
+      ],
+      "challengeSeed": [
+        "",
+        "",
+        ""
+      ],
+      "solutions": [
+        ""
+      ],
+      "type": "waypoint",
+      "challengeType": 1,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
+    },
+    {
+      "id": "56533eb9ac21ba0edf2244d1",
+      "title": "Comparison Operators - Strict Equality Test",
+      "description": [
+        "==="
+      ],
+      "releasedOn": "11/27/2015",
+      "tests": [
+        "assert(1===1, 'message: message here');"
+      ],
+      "challengeSeed": [
+        "",
+        "",
+        ""
+      ],
+      "solutions": [
+        ""
+      ],
+      "type": "waypoint",
+      "challengeType": 1,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
+    },
+    {
+      "id": "56533eb9ac21ba0edf2244d2",
+      "title": "Comparison Operators - Inequality",
+      "description": [
+        "!="
+      ],
+      "releasedOn": "11/27/2015",
+      "tests": [
+        "assert(1===1, 'message: message here');"
+      ],
+      "challengeSeed": [
+        "",
+        "",
+        ""
+      ],
+      "solutions": [
+        ""
+      ],
+      "type": "waypoint",
+      "challengeType": 1,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
+    },
+    {
+      "id": "56533eb9ac21ba0edf2244d3",
+      "title": "Comparison Operators - Strict Inequality",
+      "description": [
+        "!=="
+      ],
+      "releasedOn": "11/27/2015",
+      "tests": [
+        "assert(1===1, 'message: message here');"
+      ],
+      "challengeSeed": [
+        "",
+        "",
+        ""
+      ],
+      "solutions": [
+        ""
+      ],
+      "type": "waypoint",
+      "challengeType": 1,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
+    },
+    {
+      "id": "56533eb9ac21ba0edf2244d4",
+      "title": "Comparison Operators - Greater Than",
+      "description": [
+        ">"
+      ],
+      "releasedOn": "11/27/2015",
+      "tests": [
+        "assert(1===1, 'message: message here');"
+      ],
+      "challengeSeed": [
+        "",
+        "",
+        ""
+      ],
+      "solutions": [
+        ""
+      ],
+      "type": "waypoint",
+      "challengeType": 1,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
+    },
+    {
+      "id": "56533eb9ac21ba0edf2244d5",
+      "title": "Comparison Operators - Greater Than Equal To",
+      "description": [
+        ">="
+      ],
+      "releasedOn": "11/27/2015",
+      "tests": [
+        "assert(1===1, 'message: message here');"
+      ],
+      "challengeSeed": [
+        "",
+        "",
+        ""
+      ],
+      "solutions": [
+        ""
+      ],
+      "type": "waypoint",
+      "challengeType": 1,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
+    },
+    {
+      "id": "56533eb9ac21ba0edf2244d6",
+      "title": "Comparison Operators - Less Than",
+      "description": [
+        "<"
+      ],
+      "releasedOn": "11/27/2015",
+      "tests": [
+        "assert(1===1, 'message: message here');"
+      ],
+      "challengeSeed": [
+        "",
+        "",
+        ""
+      ],
+      "solutions": [
+        ""
+      ],
+      "type": "waypoint",
+      "challengeType": 1,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
+    },
+    {
+      "id": "56533eb9ac21ba0edf2244d7",
+      "title": "Comparison Operators - Less Than Equal To",
+      "description": [
+        "<="
+      ],
+      "releasedOn": "11/27/2015",
+      "tests": [
+        "assert(1===1, 'message: message here');"
+      ],
+      "challengeSeed": [
+        "",
+        "",
+        ""
+      ],
+      "solutions": [
+        ""
+      ],
+      "type": "waypoint",
+      "challengeType": 1,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
+    },
+    {
+      "id": "56533eb9ac21ba0edf2244d8",
+      "title": "Comparison Operators - Logical And",
+      "description": [
+        "Introduce && Operator"
+      ],
+      "releasedOn": "11/27/2015",
+      "tests": [
+        "assert(1===1, 'message: message here');"
+      ],
+      "challengeSeed": [
+        "",
+        "",
+        ""
+      ],
+      "solutions": [
+        ""
+      ],
+      "type": "waypoint",
+      "challengeType": 1,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
+    },
+    {
+      "id": "56533eb9ac21ba0edf2244d9",
+      "title": "Comparison Operators - Logical Or",
+      "description": [
+        "Introduce || Operator"
+      ],
+      "releasedOn": "11/27/2015",
+      "tests": [
+        "assert(1===1, 'message: message here');"
+      ],
+      "challengeSeed": [
+        "",
+        "",
+        ""
+      ],
+      "solutions": [
+        ""
+      ],
+      "type": "waypoint",
+      "challengeType": 1,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
+    },
+    {
+      "id": "56533eb9ac21ba0edf2244da",
+      "title": "Introducing Else Statements",
+      "description": [
+        "Add Else statements"
+      ],
+      "releasedOn": "11/27/2015",
+      "tests": [
+        "assert(1===1, 'message: message here');"
+      ],
+      "challengeSeed": [
+        "",
+        "",
+        ""
+      ],
+      "solutions": [
+        ""
+      ],
+      "type": "waypoint",
+      "challengeType": 1,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
+    },
+    {
+      "id": "56533eb9ac21ba0edf2244db",
+      "title": "Introducing Else If Statements",
+      "description": [
+        "If . . . else if"
+      ],
+      "releasedOn": "11/27/2015",
+      "tests": [
+        "assert(1===1, 'message: message here');"
+      ],
+      "challengeSeed": [
+        "",
+        "",
+        ""
+      ],
+      "solutions": [
+        ""
+      ],
+      "type": "waypoint",
+      "challengeType": 1,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
+    },
+    {
+      "id": "56533eb9ac21ba0edf2244dc",
+      "title": "Chaining If/Else Statements",
+      "description": [
+        "If . . . else if . . else . . . if .. . else"
+      ],
+      "releasedOn": "11/27/2015",
+      "tests": [
+        "assert(1===1, 'message: message here');"
+      ],
+      "challengeSeed": [
+        "",
+        "",
+        ""
+      ],
+      "solutions": [
+        ""
+      ],
+      "type": "waypoint",
+      "challengeType": 1,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
+    },
+    {
+      "id": "56533eb9ac21ba0edf2244dd",
+      "title": "Selecting from many options with Switch Statements",
+      "description": [
+        "Switch/Case:"
+      ],
+      "releasedOn": "11/27/2015",
+      "tests": [
+        "assert(1===1, 'message: message here');"
+      ],
+      "challengeSeed": [
+        "",
+        "",
+        ""
+      ],
+      "solutions": [
+        ""
+      ],
+      "type": "waypoint",
+      "challengeType": 1,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
+    },
+    {
+      "id": "56533eb9ac21ba0edf2244de",
+      "title": "Adding a default option in Switch statements",
+      "description": [
+        "Switch/Case/Default"
+      ],
+      "releasedOn": "11/27/2015",
+      "tests": [
+        "assert(1===1, 'message: message here');"
+      ],
+      "challengeSeed": [
+        "",
+        "",
+        ""
+      ],
+      "solutions": [
+        ""
+      ],
+      "type": "waypoint",
+      "challengeType": 1,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
+    },
+    {
+      "id": "56533eb9ac21ba0edf2244df",
+      "title": "Multiple Identical Options in Switch Statements",
+      "description": [
+        "Case Statements without break statements"
+      ],
+      "releasedOn": "11/27/2015",
+      "tests": [
+        "assert(1===1, 'message: message here');"
+      ],
+      "challengeSeed": [
+        "",
+        "",
+        ""
+      ],
+      "solutions": [
+        ""
+      ],
+      "type": "waypoint",
+      "challengeType": 1,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
+    },
+    {
+      "id": "56533eb9ac21ba0edf2244e0",
+      "title": "Replacing If/Else chains with Switch",
+      "description": [
+        "Show how chained if/else statements can be replaced by a single switch statement"
+      ],
+      "releasedOn": "11/27/2015",
+      "tests": [
+        "assert(1===1, 'message: message here');"
+      ],
+      "challengeSeed": [
+        "",
+        "",
+        ""
+      ],
+      "solutions": [
+        ""
+      ],
+      "type": "waypoint",
+      "challengeType": 1,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
+    },
+    {
       "id": "cf1111c1c11feddfaeb5bdef",
       "title": "Iterate with JavaScript For Loops",
       "description": [
@@ -987,6 +2840,37 @@
       "challengeType": 1
     },
     {
+      "id": "56533eb9ac21ba0edf2244e1",
+      "title": "Nesting For Loops",
+      "description": [
+        "Show a for loop inside a for loop"
+      ],
+      "releasedOn": "11/27/2015",
+      "tests": [
+        "assert(1===1, 'message: message here');"
+      ],
+      "challengeSeed": [
+        "",
+        "",
+        ""
+      ],
+      "solutions": [
+        ""
+      ],
+      "type": "waypoint",
+      "challengeType": 1,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
+    },
+    {
       "id": "cf1111c1c11feddfaeb1bdef",
       "title": "Iterate with JavaScript While Loops",
       "description": [
@@ -1048,6 +2932,37 @@
       ],
       "type": "waypoint",
       "challengeType": 1
+    },
+    {
+      "id": "56533eb9ac21ba0edf2244e2",
+      "title": "Checkpoint: Conditionals and Loops",
+      "description": [
+        ""
+      ],
+      "releasedOn": "11/27/2015",
+      "tests": [
+        "assert(1===1, 'message: message here');"
+      ],
+      "challengeSeed": [
+        "",
+        "",
+        ""
+      ],
+      "solutions": [
+        ""
+      ],
+      "type": "waypoint",
+      "challengeType": 1,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "id": "cf1111c1c12feddfaeb1bdef",
@@ -1132,45 +3047,6 @@
         "",
         "",
         "(function(){return myFunction();})();"
-      ],
-      "type": "waypoint",
-      "challengeType": 1
-    },
-    {
-      "id": "cf1111c1c12feddfaeb3bdef",
-      "title": "Use Conditional Logic with If and Else Statements",
-      "description": [
-        "We can use <code>if</code> statements in JavaScript to only execute code if a certain condition is met.",
-        "<code>if</code> statements require some sort of boolean condition to evaluate.",
-        "For example:",
-        "<code>if (1 === 2) {</code>",
-        "<code>&nbsp;&nbsp;return true;</code>",
-        "<code>} else {</code>",
-        "<code>&nbsp;&nbsp;return false;</code>",
-        "<code>}</code>",
-        "Let's use <code>if</code> and <code>else</code> statements to make a coin-flip game.",
-        "Create <code>if</code> and <code>else</code> statements to return the string <code>\"heads\"</code> if the flip variable is zero, or else return the string <code>\"tails\"</code> if the flip variable is not zero."
-      ],
-      "tests": [
-        "assert(editor.getValue().match(/if/g).length >= 2, 'message: Create a new if statement.');",
-        "assert(editor.getValue().match(/else/g).length >= 1, 'message: Created a new else statement.');",
-        "assert((function(){var result = myFunction();if(result === 'heads' || result === 'tails'){return true;} else {return false;}})(), 'message: <code>myFunction</code> should either return <code>heads</code> or <code>tails</code>.');",
-        "assert((function(){var result = myFunction();if(result === 'heads' && flip === 0 || result === 'tails' && flip !== 0){return true;} else {return false;}})(), 'message: <code>myFunction</code> should return <code>heads</code> when flip equals 0 and <code>tails</code> when flip equals 1.');"
-      ],
-      "challengeSeed": [
-        "var flip = Math.floor(Math.random() * (1 - 0 + 1)) + 0;",
-        "",
-        "function myFunction() {",
-        "",
-        "  // Only change code below this line.",
-        "",
-        "",
-        "",
-        "  // Only change code above this line.",
-        "",
-        "}",
-        "",
-        "var result = myFunction();if(typeof(flip) !== \"undefined\" && typeof(flip) === \"number\" && typeof(result) !== \"undefined\" && typeof(result) === \"string\"){(function(y,z){return 'flip = ' + y.toString() + ', text = ' + z;})(flip, result);}"
       ],
       "type": "waypoint",
       "challengeType": 1
