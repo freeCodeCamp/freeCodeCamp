@@ -13,6 +13,8 @@ var Rx = require('rx'),
   reduce = require('gulp-reduce-file'),
   sortKeys = require('sort-keys'),
   debug = require('debug')('freecc:gulp'),
+  yargs = require('yargs'),
+  uglify = require('gulp-uglify'),
 
   // react app
   webpack = require('gulp-webpack'),
@@ -38,7 +40,7 @@ var Rx = require('rx'),
 
 Rx.config.longStackSupport = true;
 
-var __DEV__ = process.env.NODE_ENV !== 'production';
+var __DEV__ = !yargs.argv.p;
 var reloadDelay = 1000;
 var reload = sync.reload;
 var paths = {
@@ -198,6 +200,8 @@ gulp.task('lint-json', function() {
 gulp.task('test-challenges', ['lint-json']);
 
 gulp.task('pack-client', function() {
+  if (!__DEV__) { console.log('\n\nbundling production\n\n'); }
+
   var manifestName = 'react-manifest.json';
   var dest = webpackConfig.output.path;
 
@@ -208,6 +212,7 @@ gulp.task('pack-client', function() {
       webpackConfig,
       webpackOptions
     )))
+    .pipe(__DEV__ ? gutil.noop() : uglify())
     .pipe(gulp.dest(dest))
     .pipe(rev())
     // copy files to public
