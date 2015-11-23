@@ -1,4 +1,7 @@
 var path = require('path');
+var webpack = require('webpack');
+
+var __DEV__ = process.env.NODE_ENV !== 'production';
 
 module.exports = {
   entry: './client',
@@ -27,5 +30,12 @@ module.exports = {
       }
     ]
   },
-  plugins: []
+  plugins: [
+    new webpack.DefinePlugin({
+      'process.env': {
+        'NODE_ENV': JSON.stringify(__DEV__ ? 'development' : 'production')
+      },
+      '__DEVTOOLS__': !__DEV__
+    })
+  ]
 };
