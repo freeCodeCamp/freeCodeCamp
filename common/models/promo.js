@@ -35,11 +35,13 @@ export default function promo(Promo) {
 
     return Promo.findOne(query)
       .then(function(promo) {
+        // turn promo model to plain js object;
+        promo = promo.toJSON();
         return Job.updateAll({ id: id }, { promoCodeUsed: code })
           .then(function({ count = 0 } = {}) {
             log('job', count);
             if (count) {
-              return promo;
+              return Object.assign({}, promo, { name: `${code} Discount` });
             }
             return Promise.reject(new Error(
               `Job ${id} not found`
