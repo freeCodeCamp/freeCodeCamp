@@ -88,6 +88,10 @@
       "type": "string",
       "required": true,
       "description": "How do campers apply to job"
+    },
+    "promoCodeUsed": {
+      "type": "string",
+      "description": "the promocode, if any, that the job uses"
     }
   },
   "validations": [],

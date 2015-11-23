@@ -100,6 +100,7 @@ export default contain(
 
     renderPromo() {
       const {
+        id,
         promoApplied,
         promoCode,
         promoName,
@@ -145,6 +146,7 @@ export default contain(
                 block={ true }
                 onClick={ () => {
                   jobActions.applyCode({
+                    id,
                     code: promoCode,
                     type: isHighlighted ? 'isHighlighted' : null
                   });
