@@ -1,4 +1,9 @@
-window.common = (function({ Rx: { Observable }, common = { init: [] } }) {
+window.common = (function(global) {
+  const {
+    Rx: { Observable },
+    common = { init: [] }
+  } = global;
+
   var libraryIncludes = `
 <link
   rel='stylesheet'
@@ -13,7 +18,7 @@ window.common = (function({ Rx: { Observable }, common = { init: [] } }) {
   rel='stylesheet'
   href='//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css'
   />
-
+<script src='https://cdn.jsdelivr.net/jquery/1.9.0/jquery.js'></script>
 <style>
   body { padding: 0px 3px 0px 3px; }
 </style>
@@ -36,10 +41,14 @@ window.common = (function({ Rx: { Observable }, common = { init: [] } }) {
 
     return iFrameScript$
       .map(script => `<script>${script}</script>`)
-      .doOnNext(script => {
+      .flatMap(script => {
         preview.open();
         preview.write(libraryIncludes + code + script);
         preview.close();
+        return Observable.fromCallback($(preview).ready, $(preview))()
+          .first()
+          // delay is need here for first initial run
+          .delay(50);
       })
       .map(() => code);
   };

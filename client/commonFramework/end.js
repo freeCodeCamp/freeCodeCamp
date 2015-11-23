@@ -77,7 +77,7 @@ $(document).ready(function() {
       .delay(500)
       .flatMap(() => common.executeChallenge$())
       .subscribe(
-        ({ code, tests }) => {
+        ({ tests }) => {
           common.displayTestResults(tests);
         },
         ({ err }) => {
