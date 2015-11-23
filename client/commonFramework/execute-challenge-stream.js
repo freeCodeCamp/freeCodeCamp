@@ -84,9 +84,28 @@ window.common = (function(global) {
         // add head and tail and detect loops
         return Observable.just({ code: head + code + tail, original: code });
       })
-      .map(data => {
+      .flatMap(data => {
         if (common.challengeType === common.challengeTypes.HTML) {
-          return common.getScriptCode(data);
+
+          if (common.hasJs(code)) {
+            return common.addFaux$(data)
+              .flatMap(code => common.detectLoops$(code))
+              .flatMap(({ err }) => {
+                if (err) {
+                  return Observable.throw({ err });
+                }
+                return common.runPreviewTests$({
+                  code: data.code,
+                  tests: common.tests.slice()
+                });
+              });
+          }
+
+          return common.updatePreview$(data.code)
+            .flatMap(code => common.runPreviewTests$({
+              code,
+              tests: common.tests.slice()
+            }));
         }
 
         return common.addTestsToString(Object.assign(
@@ -95,21 +114,21 @@ window.common = (function(global) {
             code: common.removeComments(code),
             tests: common.tests.slice()
           }
-        ));
-      })
-      .flatMap(common.detectLoops$)
-      .flatMap(({ err, code, data, userTests, original }) => {
-          if (err) {
-            return Observable.throw({ err });
-          }
+        ))
+        .flatMap(common.detectLoops$)
+        .flatMap(({ err, code, data, userTests, original }) => {
+            if (err) {
+              return Observable.throw({ err });
+            }
 
-          return common.runTests$({
-            data,
-            code,
-            userTests,
-            original,
-            output: data.output.replace(/\\\"/gi, '')
-          });
+            return common.runTests$({
+              data,
+              code,
+              userTests,
+              original,
+              output: data.output.replace(/\\\"/gi, '')
+            });
+        });
       })
       .catch(e => {
         return e && e.err ?

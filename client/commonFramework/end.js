@@ -71,24 +71,24 @@ $(document).ready(function() {
       }
     );
 
-  var $preview = $('#preview');
-  if ($preview.html()) {
-    $preview.load(function() {
-      common.executeChallenge()
-        .subscribe(
-          ({ output = '' }) => {
-            common.updateOutputDisplay(output);
-          },
-          ({ err }) => {
-            common.updateOutputDisplay('' + err);
-          }
-        );
-    });
-  } else if (
-    challengeType !== '2' &&
-    challengeType !== '3' &&
-    challengeType !== '4' &&
-    challengeType !== '7'
+  if (challengeType === challengeTypes.HTML) {
+    var $preview = $('#preview');
+    return Observable.fromCallback($preview.ready, $preview)()
+      .delay(500)
+      .flatMap(() => common.executeChallenge$())
+      .subscribe(
+        ({ code, tests }) => {
+          common.displayTestResults(tests);
+        },
+        ({ err }) => {
+          console.error(err);
+        }
+      );
+  }
+
+  if (
+    challengeType === challengeTypes.BONFIRE &&
+    challengeType === challengeTypes.JS
   ) {
     Observable.just({})
       .delay(500)

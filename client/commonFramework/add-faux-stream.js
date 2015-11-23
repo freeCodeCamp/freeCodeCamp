@@ -1,35 +1,22 @@
 window.common = (function(global) {
   const {
-    $,
-    Rx: { Observable, Disposable },
     common = { init: [] }
   } = global;
 
 
-  function getFaux() {
-    return new Observable(function(observer) {
-      const jqXHR = $.get('/js/faux.js')
-        .success(data => observer.onNext(data))
-        .fail(e => observer.onError(e))
-        .always(() => observer.onCompleted());
+  const faux$ = common.getScriptContent$('/js/faux.js').shareReplay();
 
-      return new Disposable(() => {
-        jqXHR.abort();
-      });
-    });
-  }
+  common.hasJs = function hasJs(code = '') {
+    return code.match(/\<\s?script\s?\>/gi) &&
+      code.match(/\<\s?\/\s?script\s?\>/gi);
+  };
 
-  const faux$ = getFaux().shareReplay();
-
-  common.safeHTMLRun = function safeHTMLRun(code) {
-    if (!code.match(/\<script\>/gi)) {
-      return Observable.just(code);
-    }
-
+  common.addFaux$ = function addFaux$(code) {
     // grab user javaScript
     var scriptCode = code
       .split(/\<\s?script\s?\>/gi)[1]
       .split(/\<\s?\/\s?script\s?\>/gi)[0];
+
     return faux$.map(faux => faux + scriptCode);
   };
 

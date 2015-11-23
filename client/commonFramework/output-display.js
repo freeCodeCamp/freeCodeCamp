@@ -5,12 +5,12 @@ window.common = (function(global) {
     common = { init: [] }
   } = global;
 
-  const { challengeType = '0' } = common;
+  const { challengeTypes, challengeType = '0' } = common;
 
   if (
     !CodeMirror ||
-    challengeType === '0' ||
-    challengeType === '7'
+    challengeType !== challengeTypes.JS ||
+    challengeType !== challengeTypes.BONFIRE
   ) {
     common.updateOutputDisplay = () => {};
     common.appendToOutputDisplay = () => {};
