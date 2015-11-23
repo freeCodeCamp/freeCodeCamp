@@ -1,4 +1,4 @@
-window.common = (function({ common = { init: [] } }) {
+window.common = (function({ Rx: { Observable }, common = { init: [] } }) {
   var libraryIncludes = `
 <link
   rel='stylesheet'
@@ -19,21 +19,29 @@ window.common = (function({ common = { init: [] } }) {
 </style>
   `;
 
-  var iFrameScript = "<script src='/js/iFrameScripts.js'></script>";
+  const iFrameScript$ =
+    common.getScriptContent$('/js/iFrameScripts.js').shareReplay();
 
+  // runPreviewTests$ should be set up in the preview window
+  common.runPreviewTests$ =
+    () => Observable.throw({ err: new Error('run preview not enabled') });
 
-  common.updatePreview = function updatePreview(code = '', shouldTest = false) {
+  common.updatePreview$ = function updatePreview$(code = '') {
     const previewFrame = document.getElementById('preview');
     const preview = previewFrame.contentDocument ||
       previewFrame.contentWindow.document;
     if (!preview) {
-      return code;
+      return Observable.just(code);
     }
-    preview.open();
-    preview.write(libraryIncludes + code + (shouldTest ? iFrameScript : ''));
-    preview.close();
 
-    return code;
+    return iFrameScript$
+      .map(script => `<script>${script}</script>`)
+      .doOnNext(script => {
+        preview.open();
+        preview.write(libraryIncludes + code + script);
+        preview.close();
+      })
+      .map(() => code);
   };
 
   return common;

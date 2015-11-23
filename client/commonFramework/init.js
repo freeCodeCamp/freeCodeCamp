@@ -3,7 +3,7 @@ window.common = (function(global) {
   // all classes should be stored here
   // called at the beginning of dom ready
   const {
-    Rx: { config },
+    Rx: { Disposable, Observable, config },
     common = { init: [] }
   } = global;
 
@@ -84,6 +84,22 @@ window.common = (function(global) {
   common.reassembleTest = function reassembleTest(code = '', { line, text }) {
     var regexp = new RegExp('//' + line + common.salt);
     return code.replace(regexp, text);
+  };
+
+  common.getScriptContent$ = function getScriptContent$(script) {
+    return Observable.create(function(observer) {
+      const jqXHR = $.get(script)
+        .success(data => {
+          observer.onNext(data);
+          observer.onCompleted();
+        })
+        .fail(e => observer.onError(e))
+        .always(() => observer.onCompleted());
+
+      return new Disposable(() => {
+        jqXHR.abort();
+      });
+    });
   };
 
   return common;
