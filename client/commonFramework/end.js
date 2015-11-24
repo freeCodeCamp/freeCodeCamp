@@ -7,42 +7,44 @@ $(document).ready(function() {
     init($);
   });
 
-  const code$ = common.editorKeyUp$
-    .debounce(750)
-    .map(() => common.editor.getValue())
-    .distinctUntilChanged()
-    .shareReplay();
+  if (common.editor.getValue) {
+    const code$ = common.editorKeyUp$
+      .debounce(750)
+      .map(() => common.editor.getValue())
+      .distinctUntilChanged()
+      .shareReplay();
 
-  // update storage
-  code$.subscribe(
-      code => {
-        common.codeStorage.updateStorage(common.challengeName, code);
-        common.codeUri.querify(code);
-      },
-      err => console.error(err)
-    );
+    // update storage
+    code$.subscribe(
+        code => {
+          common.codeStorage.updateStorage(common.challengeName, code);
+          common.codeUri.querify(code);
+        },
+        err => console.error(err)
+      );
 
-  code$
-    .flatMap(code => {
-      if (common.hasJs(code)) {
-        return common.detectUnsafeCode$(code)
-          .flatMap(code => common.detectLoops$(code))
-          .flatMap(
-            ({ err }) => err ? Observable.throw(err) : Observable.just(code)
-          );
-      }
-      return Observable.just(code);
-    })
-    .flatMap(code => common.updatePreview$(code))
-    .catch(err => Observable.just({ err }))
-    .subscribe(
-      ({ err }) => {
-        if (err) {
-          return console.error(err);
+    code$
+      .flatMap(code => {
+        if (common.hasJs(code)) {
+          return common.detectUnsafeCode$(code)
+            .flatMap(code => common.detectLoops$(code))
+            .flatMap(
+              ({ err }) => err ? Observable.throw(err) : Observable.just(code)
+            );
         }
-      },
-      err => console.error(err)
-    );
+        return Observable.just(code);
+      })
+      .flatMap(code => common.updatePreview$(code))
+      .catch(err => Observable.just({ err }))
+      .subscribe(
+        ({ err }) => {
+          if (err) {
+            return console.error(err);
+          }
+        },
+        err => console.error(err)
+      );
+  }
 
   common.resetBtn$
     .doOnNext(() => {
