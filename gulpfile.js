@@ -125,7 +125,6 @@ var paths = {
     'run-tests-stream',
     'show-completion',
     'step-challenge',
-    'test-script-stream',
     'update-preview',
     'end'
   ],

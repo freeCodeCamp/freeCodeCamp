@@ -11,7 +11,6 @@ $(document).ready(function() {
     .debounce(750)
     .map(() => common.editor.getValue())
     .distinctUntilChanged()
-    .doOnNext(() => console.log('updating value'))
     .shareReplay();
 
   // update storage
@@ -41,7 +40,6 @@ $(document).ready(function() {
         if (err) {
           return console.error(err);
         }
-        console.log('updating preview');
       },
       err => console.error(err)
     );
