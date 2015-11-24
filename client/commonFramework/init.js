@@ -88,7 +88,7 @@ window.common = (function(global) {
 
   common.getScriptContent$ = function getScriptContent$(script) {
     return Observable.create(function(observer) {
-      const jqXHR = $.get(script)
+      const jqXHR = $.get(script, null, null, 'text')
         .success(data => {
           observer.onNext(data);
           observer.onCompleted();
