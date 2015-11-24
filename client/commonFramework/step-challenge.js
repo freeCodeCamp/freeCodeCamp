@@ -186,7 +186,7 @@ window.common = (function({ $, common = { init: [] }}) {
   }
 
   common.init.push(function($) {
-    if (common.challengeType === '7') {
+    if (common.challengeType !== '7') {
       return null;
     }
 
