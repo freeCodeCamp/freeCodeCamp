@@ -43,7 +43,7 @@ window.common = (function(global) {
       .map(script => `<script>${script}</script>`)
       .flatMap(script => {
         preview.open();
-        preview.write(libraryIncludes + code + script);
+        preview.write(libraryIncludes + code + '<!-- -->' + script);
         preview.close();
         return Observable.fromCallback($(preview).ready, $(preview))()
           .first()
