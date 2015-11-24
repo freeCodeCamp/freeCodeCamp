@@ -7,6 +7,7 @@ $(document).ready(function() {
     init($);
   });
 
+  // only run if editor present
   if (common.editor.getValue) {
     const code$ = common.editorKeyUp$
       .debounce(750)
@@ -24,8 +25,12 @@ $(document).ready(function() {
       );
 
     code$
+      // only run for HTML
+      .filter(() => common.challengeType === challengeTypes.HTML)
       .flatMap(code => {
-        if (common.hasJs(code)) {
+        if (
+          common.hasJs(code)
+        ) {
           return common.detectUnsafeCode$(code)
             .flatMap(code => common.detectLoops$(code))
             .flatMap(
@@ -44,6 +49,7 @@ $(document).ready(function() {
         },
         err => console.error(err)
       );
+
   }
 
   common.resetBtn$
@@ -129,21 +135,24 @@ $(document).ready(function() {
   }
 
   if (
-    challengeType === challengeTypes.BONFIRE &&
+    challengeType === challengeTypes.BONFIRE ||
     challengeType === challengeTypes.JS
   ) {
     Observable.just({})
       .delay(500)
       .flatMap(() => common.executeChallenge$())
+      .catch(err => Observable.just({ err }))
       .subscribe(
-        ({ original, tests }) => {
+        ({ err, original, tests }) => {
+          if (err) {
+            console.error(err);
+            return common.updateOutputDisplay('' + err);
+          }
           common.codeStorage.updateStorage(challengeName, original);
           common.displayTestResults(tests);
         },
-        ({ err }) => {
-          if (err.stack) {
-            console.error(err);
-          }
+        (err) => {
+          console.error(err);
           common.updateOutputDisplay('' + err);
         }
       );
