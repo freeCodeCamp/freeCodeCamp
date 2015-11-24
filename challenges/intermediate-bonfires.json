@@ -124,7 +124,10 @@
         "assert.deepEqual(convert(891), \"DCCCXCI\", '<code>convert(891)</code> should return \"DCCCXCI\"');",
         "assert.deepEqual(convert(1000), \"M\", '<code>convert(1000)</code> should return \"M\"');",
         "assert.deepEqual(convert(1004), \"MIV\", '<code>convert(1004)</code> should return \"MIV\"');",
-        "assert.deepEqual(convert(1006), \"MVI\", '<code>convert(1006)</code> should return \"MVI\"');"
+        "assert.deepEqual(convert(1006), \"MVI\", '<code>convert(1006)</code> should return \"MVI\"');",
+        "assert.deepEqual(convert(1023), \"MXXIII\", '<code>convert(1023)</code> should return \"MXXIII\"');",
+        "assert.deepEqual(convert(2014), \"MMXIV\", '<code>convert(2014)</code> should return \"MMXIV\"');",
+        "assert.deepEqual(convert(3999), \"MMMCMXCIX\", '<code>convert(3999)</code> should return \"MMMCMXCIX\"');"
       ],
       "description": [
         "Convert the given number into a roman numeral.",
