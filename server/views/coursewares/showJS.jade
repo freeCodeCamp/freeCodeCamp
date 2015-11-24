@@ -1,8 +1,8 @@
 extends ../layout-wide
 block content
-    link(rel='stylesheet', href='/js/lib/CodeMirror/lib/codemirror.css')
-    link(rel='stylesheet', href='/js/lib/CodeMirror/addon/lint/lint.css')
-    link(rel='stylesheet', href='/js/lib/CodeMirror/theme/monokai.css')
+    link(rel='stylesheet', href='/bower_components/CodeMirror/lib/codemirror.css')
+    link(rel='stylesheet', href='/bower_components/CodeMirror/addon/lint/lint.css')
+    link(rel='stylesheet', href='/bower_components/CodeMirror/theme/monokai.css')
     link(rel='stylesheet', href='/css/ubuntu.css')
     .row(ng-controller="pairedWithController")
         .col-md-4.col-lg-3
@@ -100,4 +100,7 @@ block content
           window.main.chat.createHelpChat('freecodecamp/help', '#challenge-help-btn');
         }
       });
-      editor.setOption("mode", "javascript");
+
+      common.init.push(function() {
+        common.editor.setOption('mode', 'javascript');
+      });
