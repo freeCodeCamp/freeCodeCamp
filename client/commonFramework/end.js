@@ -7,15 +7,40 @@ $(document).ready(function() {
     init($);
   });
 
-  common.editorKeyUp$
+  const code$ = common.editorKeyUp$
     .debounce(750)
     .map(() => common.editor.getValue())
     .distinctUntilChanged()
     .doOnNext(() => console.log('updating value'))
-    .subscribe(
+    .shareReplay();
+
+  // update storage
+  code$.subscribe(
       code => {
         common.codeStorage.updateStorage(common.challengeName, code);
         common.codeUri.querify(code);
+      },
+      err => console.error(err)
+    );
+
+  code$
+    .flatMap(code => {
+      if (common.hasJs(code)) {
+        return common.detectLoops$(code)
+          .flatMap(
+            ({ err }) => err ? Observable.throw(err) : Observable.just(code)
+          );
+      }
+      return Observable.just(code);
+    })
+    .flatMap(code => common.updatePreview$(code))
+    .catch(err => Observable.just({ err }))
+    .subscribe(
+      ({ err }) => {
+        if (err) {
+          return console.error(err);
+        }
+        console.log('updating preview');
       },
       err => console.error(err)
     );

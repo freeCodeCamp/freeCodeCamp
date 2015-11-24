@@ -60,20 +60,6 @@ window.common = (function(global) {
           });
         }
 
-        if (common.challengeType === '0') {
-          let openingComments = code.match(/\<\!\-\-/gi);
-          let closingComments = code.match(/\-\-\>/gi) || [];
-          if (
-            openingComments &&
-            openingComments.length > closingComments.length
-          ) {
-            return Observable.throw({
-              err: 'SyntaxError: Unfinished HTML comment',
-              code
-            });
-          }
-        }
-
         if (code.match(detectUnsafeConsoleCall)) {
           return Observable.throw({
             err: 'Invalid if (null) console.log(1); detected',
