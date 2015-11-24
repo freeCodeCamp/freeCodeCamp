@@ -26,7 +26,8 @@ $(document).ready(function() {
   code$
     .flatMap(code => {
       if (common.hasJs(code)) {
-        return common.detectLoops$(code)
+        return common.detectUnsafeCode$(code)
+          .flatMap(code => common.detectLoops$(code))
           .flatMap(
             ({ err }) => err ? Observable.throw(err) : Observable.just(code)
           );
@@ -101,12 +102,13 @@ $(document).ready(function() {
       }
     );
 
+  // initial challenge run to populate tests
   if (challengeType === challengeTypes.HTML) {
     var $preview = $('#preview');
     return Observable.fromCallback($preview.ready, $preview)()
       .delay(500)
       .flatMap(() => common.executeChallenge$())
-      .catch(err => Observable.just(err))
+      .catch(err => Observable.just({ err }))
       .subscribe(
         ({ err, tests }) => {
           if (err) {

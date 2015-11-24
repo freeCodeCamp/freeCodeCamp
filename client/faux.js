@@ -1,8 +1,9 @@
-document = {};
+/* eslint-disable no-unused-vars */
+var document = {};
 var navigator = function() {
   this.geolocation = function() {
     this.getCurrentPosition = function() {
-      this.coords = {latitude: "", longitude: ""};
+      this.coords = {latitude: '', longitude: '' };
       return this;
     };
     return this;
