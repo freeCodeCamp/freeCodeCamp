@@ -9,7 +9,7 @@ window.common = (function(global) {
 
   if (
     !CodeMirror ||
-    challengeType !== challengeTypes.JS ||
+    challengeType !== challengeTypes.JS &&
     challengeType !== challengeTypes.BONFIRE
   ) {
     common.updateOutputDisplay = () => {};
