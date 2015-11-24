@@ -170,8 +170,11 @@ export default Actions({
         );
     });
 
-    jobActions.applyCode.subscribe(({ code = '', type = null}) => {
-      const body = { code: code.replace(/[^\d\w\s]/, '') };
+    jobActions.applyCode.subscribe(({ id, code = '', type = null}) => {
+      const body = {
+        id,
+        code: code.replace(/[^\d\w\s]/, '')
+      };
       if (type) {
         body.type = type;
       }
