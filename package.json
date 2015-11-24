@@ -35,7 +35,7 @@
     "body-parser": "^1.13.2",
     "chai-jquery": "^2.0.0",
     "cheerio": "~0.19.0",
-    "classnames": "^2.1.2",
+    "classnames": "^2.2.0",
     "compression": "^1.6.0",
     "connect-mongo": "~0.8.2",
     "cookie-parser": "^1.4.0",
@@ -77,7 +77,7 @@
     "jade": "^1.11.0",
     "json-loader": "~0.5.2",
     "less": "^2.5.1",
-    "lodash": "^3.9.3",
+    "lodash": "^3.10.1",
     "loopback": "^2.22.0",
     "loopback-boot": "^2.13.0",
     "loopback-component-passport": "^1.6.0",
@@ -123,6 +123,7 @@
     "yargs": "^3.30.0"
   },
   "devDependencies": {
+    "babel-core": "^5.8.34",
     "blessed": "~0.1.81",
     "bower-main-files": "~0.0.4",
     "browser-sync": "^2.9.12",
