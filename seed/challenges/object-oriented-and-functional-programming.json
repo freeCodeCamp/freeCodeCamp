@@ -360,6 +360,7 @@
         "<code>array.sort(function(a, b) {</code>",
         "<code>&nbsp;&nbsp;return a - b;</code>",
         "<code>});</code>",
+        "The compare function that you pass should return a negative number if <code>a</code> should be before <code>b</code>, a positive number if <code>b</code> should be before <code>a</code>, or <code>0</code> if they should be sorted as equal",
         "Use <code>sort</code> to sort <code>array</code> from largest to smallest."
       ],
       "tests":[
