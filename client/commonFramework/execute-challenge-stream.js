@@ -57,12 +57,12 @@ window.common = (function(global) {
 
         // js challenge
         // remove comments and add tests to string
-        return common.addTestsToString(Object.assign(
+        return Observable.just(common.addTestsToString(Object.assign(
           {
             code: common.removeComments(code),
             tests: common.tests.slice()
           }
-        ))
+        )))
         .flatMap(common.detectLoops$)
         .flatMap(({ err, code, data, userTests }) => {
             if (err) {
