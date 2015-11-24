@@ -81,8 +81,10 @@ block content
 
       common.controlEnterHandler = function (e) {
         $('body').unbind('keydown');
-        if (e.metaKey && e.keyCode === 13 ||
-            e.ctrlKey && e.keyCode === 13) {
+        if (
+          e.keyCode === 13 &&
+          (e.metaKey || e.ctrlKey)
+        ) {
           $('#complete-zipline-or-basejump-dialog').modal('show');
         } else {
           $('body').bind('keydown', common.controlEnterHandler);
@@ -91,8 +93,10 @@ block content
 
       common.modalControlEnterHandler = function (e) {
         $('#complete-zipline-or-basejump-dialog').unbind('keydown');
-        if (e.metaKey && e.keyCode === 13 ||
-            e.ctrlKey && e.keyCode === 13) {
+        if (
+          e.keyCode === 13 &&
+          (e.metaKey ||  e.ctrlKey)
+        ) {
           $('#next-courseware-button').click();
         } else {
           $('#complete-zipline-or-basejump-dialog').on('keydown', common.modalControlEnterHandler);

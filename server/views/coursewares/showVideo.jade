@@ -65,8 +65,7 @@ block content
         function controlEnterHandler(e) {
             if (
               e.keyCode === 13 &&
-              e.ctrlKey ||
-              e.metaKey
+              (e.ctrlKey || e.metaKey)
             ) {
               $('body').unbind('keydown');
               $('#complete-courseware-editorless-dialog').modal('show');
@@ -76,8 +75,7 @@ block content
         function modalControlEnterHandler(e) {
           if (
             e.keyCode === 13 &&
-            e.ctrlKey ||
-            e.metaKey
+            (e.ctrlKey || e.metaKey)
           ) {
             $('#complete-courseware-editorless-dialog').unbind('keydown');
             $('#next-courseware-button').click();

@@ -9,8 +9,7 @@ window.common = (function(global) {
     // ctrl + enter or cmd + enter
     if (
       e.keyCode === 13 &&
-      e.metaKey ||
-      e.ctrlKey
+      (e.metaKey || e.ctrlKey)
     ) {
       $('#complete-courseware-dialog').off('keydown', ctrlEnterClickHandler);
       if ($('#submit-challenge').length > 0) {
