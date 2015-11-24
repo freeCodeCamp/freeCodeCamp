@@ -1,6 +1,6 @@
 {
   "name": "Basic JavaScript",
-  "order": 6,
+  "order": "6",
   "time": "5h",
   "challenges": [
     {
@@ -20,9 +20,8 @@
         "assert(editor.getValue().match(/(\\/\\*)[\\w\\W]{5,}(?=\\*\\/)/gm), 'message: Create a <code>/* */</code> style comment that contains at least five letters.');",
         "assert(editor.getValue().match(/(\\*\\/)/g), 'message: Make sure that you close the comment with a <code>*/</code>.');"
       ],
-      "challengeSeed": [],
       "type": "waypoint",
-      "challengeType": 1
+      "challengeType": "1"
     },
     {
       "id": "bd7123c9c441eddfaeb5bdef",
@@ -50,7 +49,7 @@
         "welcomeToBooleans();"
       ],
       "type": "waypoint",
-      "challengeType": 1
+      "challengeType": "1"
     },
     {
       "id": "bd7123c9c443eddfaeb5bdef",
@@ -74,131 +73,182 @@
         "if(typeof(myName) !== \"undefined\"){(function(v){return v;})(myName);}"
       ],
       "type": "waypoint",
-      "challengeType": 1
+      "challengeType": "1"
     },
     {
       "id": "56533eb9ac21ba0edf2244a8",
       "title": "Storing Values with the Equal Operator",
       "description": [
-        "Introduce Assignment (Equals) Operator"
+        "In Javascript, you can store a value in a variable with the <code>=</code> or <dfn>assignment<dfn> operator.",
+        "<code>myVariable = 5;</code>",
+        "Assigns the value <code>5</code> to <code>myVariable</code>.",
+        "Assignment always goes from right to left.  Everything to the right of the <code>=</code> operator is resolved before the value is assigned to the variable to the left of the operator.",
+        "<code>myVar = 5;</code>",
+        "<code>myNum = myVar;</code>",
+        "Assigns <code>5</code> to <code>myVar</code> and then resolves <code>myVar</code> to <code>5</code>  again and assigns it to <code>myNum</code>.",
+        "<h4>Instructions</h4>",
+        "Assign the value 7 to variable <code>a</code>",
+        "Assign the contents of <code>a</code> to variable <code>b</code>."
       ],
       "releasedOn": "11/27/2015",
       "tests": [
-        "assert(1===1, 'message: message here');"
+        "assert(/var a;/.test(editor.getValue()) && /var b = 2;/.test(editor.getValue()), 'message: Do not change code above the line');",
+        "assert(typeof a === 'number' && a === 7, 'message: <code>a</code> should have a value of 7');",
+        "assert(typeof b === 'number' && b === 7, 'message: <code>b</code> should have a value of 7');",
+        "assert(editor.getValue().match(/b\\s*=\\s*a\\s*;/g), 'message: <code>a</code> should be assigned to <code>b</code> with <code>=</code>');"
       ],
       "challengeSeed": [
+        "var a;",
+        "var b = 2;",
         "",
-        "",
-        ""
+        "// Only add code below this line",
+        " "
+      ],
+      "tail": [
+        "(function(a,b){return \"a = \" + a + \", b = \" + b;})(a,b);"
       ],
       "solutions": [
-        ""
+        "var a;",
+        "var b=2;",
+        "a = 7;",
+        "b = a;7"
       ],
       "type": "waypoint",
-      "challengeType": 1,
+      "challengeType": "1",
       "nameCn": "",
-      "descriptionCn": [],
       "nameFr": "",
-      "descriptionFr": [],
       "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "",
-      "descriptionEs": [],
-      "namePt": "",
-      "descriptionPt": []
+      "namePt": ""
     },
     {
       "id": "56533eb9ac21ba0edf2244a9",
       "title": "Initializing Variables with the Equal Operator",
       "description": [
-        "Initialize a variable on the same line it is declared"
+        "It is common to <dfn>initialize</dfn> a variable to a starting value on the same line as it is defined.",
+        "",
+        "<code>var myVar = 0;</code>",
+        "Creates a new variable called <code>myVar</code> and assigns it an inital value of <code>0</code>.",
+        "",
+        "<h4>Instructions</h4>",
+        "Assign an initial value of <code>9</code> to the variable <code>a</code>."
       ],
       "releasedOn": "11/27/2015",
       "tests": [
-        "assert(1===1, 'message: message here');"
+        "assert(/var\\s+a\\s*=\\s*9\\s*/.test(editor.getValue()), 'message: Initialize <code>a</code> to a value of <code>9</code>');"
       ],
       "challengeSeed": [
+        "var example = 19;",
         "",
-        "",
+        "// Only add code below this line",
         ""
+      ],
+      "tail": [
+        "if(typeof a !== 'undefined') {(function(a){return \"a = \" + a;})(a);} else { (function() {return 'a is undefined';})(); }"
       ],
       "solutions": [
-        ""
+        "var a = 9;"
       ],
       "type": "waypoint",
-      "challengeType": 1,
+      "challengeType": "1",
       "nameCn": "",
-      "descriptionCn": [],
       "nameFr": "",
-      "descriptionFr": [],
       "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "",
-      "descriptionEs": [],
-      "namePt": "",
-      "descriptionPt": []
+      "namePt": ""
     },
     {
       "id": "56533eb9ac21ba0edf2244aa",
       "title": "Understanding Uninitialized Variables",
       "description": [
-        "Show how a varible that has not been initalized is undefined"
+        "When Javascript variables are declared, they have an inital value of <dfn>undefined</dfn>.  If you do a mathematical operation on an <code>undefined</code> variable your result will be <dfn>NaN</dfn> which means \"Not a Number\". If you concatanate a string with an <code>undefined</code> variable, you will get a <dfn>literal</dfn> string of \"undefined\".",
+        "<h4>Instructions</h4>",
+        "Initialize the three variables <code>a</code>, <code>b</code>, and <code>c</code> with <code>5</code>, <code>10</code>, and <code>\"I am a\"</code> respectively so that they will not be <code>undefined</code>."
       ],
       "releasedOn": "11/27/2015",
       "tests": [
-        "assert(1===1, 'message: message here');"
+        "assert(typeof a === 'number' && a === 6, 'message: <code>a</code> should be defined and have a value of <code>6</code>');",
+        "assert(typeof b === 'number' && b === 15, 'message: <code>b</code> should be defined and have a value of <code>15</code>');",
+        "assert(!/undefined/.test(c) && c === \"I am a String!\", 'message: <code>c</code> should not contain <code>undefined</code> and should have a value of \"I am a String!\"');",
+        "assert(/a = a \\+ 1;/.test(editor.getValue()) && /b = b \\+ 5;/.test(editor.getValue()) && /c = c \\+ \" String!\";/.test(editor.getValue()), 'message: Do not change code below the line');"
       ],
       "challengeSeed": [
+        "// Initialize these three variables",
+        "var a;",
+        "var b;",
+        "var c;",
         "",
+        "// Do not change code below with line",
         "",
+        "a = a + 1;",
+        "b = b + 5;",
+        "c = c + \" String!\";",
         ""
+      ],
+      "tail": [
+        "(function(a,b,c){ return \"a = \" + a + \", b = \" + b + \", c = '\" + c + \"'\"; })(a,b,c);"
       ],
       "solutions": [
-        ""
+        "var a = 5;",
+        "var b = 10;",
+        "var c = \"I am a\";",
+        "a = a + 1;",
+        "b = b + 5;",
+        "c = c + \" String!\";"
       ],
       "type": "waypoint",
-      "challengeType": 1,
+      "challengeType": "1",
       "nameCn": "",
-      "descriptionCn": [],
       "nameFr": "",
-      "descriptionFr": [],
       "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "",
-      "descriptionEs": [],
-      "namePt": "",
-      "descriptionPt": []
+      "namePt": ""
     },
     {
       "id": "56533eb9ac21ba0edf2244ab",
       "title": "Understanding Case Sensitivity in Variables",
       "description": [
-        "Case sensitive, add camelCase best practice"
+        "In Javascript all variables and function names are case sensitive.  This means that capitalization matters.",
+        "<code>MYVAR</code> is not the same as <code>MyVar</code> nor <code>myvar</code>.  It is possible to have mulitpe distinct variables with the same name but different capitalization. It is strongly reccomended that for sake of clarity you <em>do not</em> use this language feature.",
+        "<h4>Best Practice</h4><div class=\"bestpractice\">Variables in Javascript should use camelCase.  In camelCase, variables made of multiple words have the first word in all lowercase and the first letter of each subsequent word capitalized.",
+        "Examples:",
+        "<code>var someVariable;</code>",
+        "<code>var anotherVariableName;</code>",
+        "<code>car thisVariableNameIsTooLong;</code></div>",
+        "<h4>Instructions</h4>Correct the variable assignements so their names match their variable declarations above.\""
       ],
       "releasedOn": "11/27/2015",
       "tests": [
-        "assert(1===1, 'message: message here');"
+        "assert(StUdLyCapVaR === 10, 'message: StUdLyCapVaR has the correct case');\nassert(properCamelCase === \"A String\", 'message: properCamelCase has the correct case');\nassert(TitleCaseOver === 9000, 'message: TitleCaseOver has the correct case');"
       ],
       "challengeSeed": [
+        "var StUdLyCapVaR;",
+        "var properCamelCase;",
+        "var TitleCaseOver;",
         "",
+        "// Only change code below this line",
         "",
+        "STUDLYCAPVAR = 10;",
+        "PRoperCAmelCAse = \"A String\";",
+        "tITLEcASEoVER = \"9000\";",
         ""
       ],
       "solutions": [
-        ""
+        "var StUdLyCapVaR;",
+        "var properCamelCase;",
+        "var TitleCase;",
+        "",
+        "StUdLyCapVaR = 10;",
+        "properCamelCase = \"A String\";",
+        "TitleCaseOver = \"9000\";"
       ],
       "type": "waypoint",
-      "challengeType": 1,
+      "challengeType": "1",
       "nameCn": "",
-      "descriptionCn": [],
       "nameFr": "",
-      "descriptionFr": [],
       "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "",
-      "descriptionEs": [],
-      "namePt": "",
-      "descriptionPt": []
+      "namePt": ""
     },
     {
       "id": "cf1111c1c11feddfaeb3bdef",
@@ -206,20 +256,21 @@
       "description": [
         "Let's try to add two numbers using JavaScript.",
         "JavaScript uses the <code>+</code> symbol for addition.",
-        "Change the <code>0</code> so that sum will equal <code>20</code>."
+        "<h4>Instructions</h4>Change the <code>0</code> so that sum will equal <code>20</code>."
       ],
       "tests": [
-        "assert((function(){if(sum === 20 && editor.getValue().match(/\\+/g).length >= 2){return true;}else{return false;}})(), 'message: Make the variable <code>sum</code> equal 20.');"
+        "assert(sum === 20, 'message: <code>sum</code> should equal <code>20</code>');",
+        "assert(/\\+/.test(editor.getValue()), 'message: Use the <code>+</code> operator');"
       ],
       "challengeSeed": [
         "var sum = 10 + 0;",
-        "",
-        "// Only change code above this line.",
-        "",
+        ""
+      ],
+      "tail": [
         "(function(z){return 'sum='+z;})(sum);"
       ],
       "type": "waypoint",
-      "challengeType": 1
+      "challengeType": "1"
     },
     {
       "id": "cf1111c1c11feddfaeb4bdef",
@@ -227,20 +278,22 @@
       "description": [
         "We can also subtract one number from another.",
         "JavaScript uses the <code>-</code> symbol for subtraction.",
-        "Change the <code>0</code> so that difference will equal <code>12</code>."
+        "<h4>Instructions</h4>Change the <code>0</code> so that difference will equal <code>12</code>."
       ],
       "tests": [
-        "assert((function(){if(difference === 12 && editor.getValue().match(/\\-/g)){return true;}else{return false;}})(), 'message: Make the variable <code>difference</code> equal 12.');"
+        "assert(difference === 12, 'message: Make the variable <code>difference</code> equal 12.');",
+        "assert(/-/.test(editor.getValue()),'message: User the <code>-</code> operator');"
       ],
       "challengeSeed": [
         "var difference = 45 - 0;",
         "",
-        "// Only change code above this line.",
-        "",
+        ""
+      ],
+      "tail": [
         "(function(z){return 'difference='+z;})(difference);"
       ],
       "type": "waypoint",
-      "challengeType": 1
+      "challengeType": "1"
     },
     {
       "id": "cf1231c1c11feddfaeb5bdef",
@@ -248,20 +301,22 @@
       "description": [
         "We can also multiply one number by another.",
         "JavaScript uses the <code>*</code> symbol for multiplication.",
-        "Change the <code>0</code> so that product will equal <code>80</code>."
+        "<h4>Instructions</h4>Change the <code>0</code> so that product will equal <code>80</code>."
       ],
       "tests": [
-        "assert((function(){if(product === 80 && editor.getValue().match(/\\*/g)){return true;}else{return false;}})(), 'message: Make the variable <code>product</code> equal 80.');"
+        "assert(product === 80,'message: Make the variable <code>product</code> equal 80');",
+        "assert(/\\*/.test(editor.getValue()), 'message: Use the <code>*</code> operator');"
       ],
       "challengeSeed": [
         "var product = 8 * 0;",
         "",
-        "// Only change code above this line.",
-        "",
-        "(function(z){return 'product='+z;})(product);"
+        ""
+      ],
+      "tail": [
+        "(function(z){return 'product = '+z;})(product);"
       ],
       "type": "waypoint",
-      "challengeType": 1
+      "challengeType": "1"
     },
     {
       "id": "cf1111c1c11feddfaeb6bdef",
@@ -269,103 +324,125 @@
       "description": [
         "We can also divide one number by another.",
         "JavaScript uses the <code>/</code> symbol for division.",
-        "Change the <code>0</code> so that quotient will equal <code>2</code>."
+        "<h4>Instructions</h4>Change the <code>0</code> so that quotient will equal <code>2</code>."
       ],
       "tests": [
-        "assert((function(){if(quotient === 2 && editor.getValue().match(/var\\s*?quotient\\s*?\\=\\s*?\\d+\\s*?\\/\\s*?\\d+\\s*?;/g)){return true;}else{return false;}})(), 'message: Make the variable <code>quotient</code> equal 2.');"
+        "assert(quotient === 2, 'message: Make the variable <code>quotient</code> equal 2.');",
+        "assert(/\\d+\\s*\\/\\s*\\d+/.test(editor.getValue()), 'message: Use the <code>/</code> operator');"
       ],
       "challengeSeed": [
         "var quotient = 66 / 0;",
         "",
-        "// Only change code above this line.",
-        "",
-        "(function(z){return 'quotient='+z;})(quotient);"
+        ""
+      ],
+      "tail": [
+        "(function(z){return 'quotient = '+z;})(quotient);"
       ],
       "type": "waypoint",
-      "challengeType": 1
+      "challengeType": "1"
     },
     {
       "id": "56533eb9ac21ba0edf2244ac",
       "title": "Increment a Number with Javascript",
       "description": [
-        "++"
+        "You can easily <dfn>increment</dfn> or add one to a Javascript variable with the <code>++</code> operator.",
+        "<code>i++;</code>",
+        "is the equivilent of",
+        "<code>i = i + 1;</code>",
+        "<h4>Instructions</h4>Change the code to use the <code>++</code> operator on <code>myVar</code>"
       ],
       "releasedOn": "11/27/2015",
       "tests": [
-        "assert(1===1, 'message: message here');"
+        "assert(myVar === 88, 'message: <code>myVar</code> should equal <code>88</code>');",
+        "assert(/[+]{2}/.test(editor.getValue()), 'message: Use the <code>++</code> operator');",
+        "assert(/var myVar = 87;/.test(editor.getValue()), 'message: Do not change code above the line');"
       ],
       "challengeSeed": [
+        "var myVar = 87;",
         "",
-        "",
+        "// Only change code below this line",
+        "myVar = myVar + 1;",
         ""
+      ],
+      "tail": [
+        "(function(z){return 'myVar = ' + z;})(myVar);"
       ],
       "solutions": [
-        ""
+        "var myVar = 87;",
+        "myVar++;"
       ],
       "type": "waypoint",
-      "challengeType": 1,
+      "challengeType": "1",
       "nameCn": "",
-      "descriptionCn": [],
       "nameFr": "",
-      "descriptionFr": [],
       "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "",
-      "descriptionEs": [],
-      "namePt": "",
-      "descriptionPt": []
+      "namePt": ""
     },
     {
       "id": "56533eb9ac21ba0edf2244ad",
       "title": "Decrement a Number with Javascript",
       "description": [
-        "--"
+        "You can easily <dfn>decrement</dfn> or decrease by one a Javascript variable with the <code>--</code> operator.",
+        "<code>i--;</code>",
+        "is the equivilent of",
+        "<code>i = i - 1;</code>",
+        "<h4>Instructions</h4>Change the code to use the <code>--</code> operator on <code>myVar</code>"
       ],
       "releasedOn": "11/27/2015",
       "tests": [
-        "assert(1===1, 'message: message here');"
+        "assert(myVar === 10, 'message: <code>myVar</code> should equal <code>10</code>');",
+        "assert(/myVar[-]{2}/.test(editor.getValue()), 'message: Use the <code>--</code> operator on <code>myVar</code>');",
+        "assert(/var myVar = 11;/.test(editor.getValue()), 'message: Do not change code above the line');"
       ],
       "challengeSeed": [
+        "var myVar = 11;",
         "",
-        "",
+        "// Only change code below this line",
+        "myVar = myVar - 1;",
         ""
+      ],
+      "tail": [
+        "(function(z){return 'myVar = ' + z;})(myVar);"
       ],
       "solutions": [
-        ""
+        "var myVar = 87;",
+        "myVar--;"
       ],
       "type": "waypoint",
-      "challengeType": 1,
+      "challengeType": "1",
       "nameCn": "",
-      "descriptionCn": [],
       "nameFr": "",
-      "descriptionFr": [],
       "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "",
-      "descriptionEs": [],
-      "namePt": "",
-      "descriptionPt": []
+      "namePt": ""
     },
     {
       "id": "cf1391c1c11feddfaeb4bdef",
       "title": "Create Decimal Numbers with JavaScript",
       "description": [
-        "JavaScript number variables can also have decimals.",
+        "JavaScript number variables can also have decimal points.  Decimal numbers are sometimes refered to as <dfn>floating point<dfn> numbers or <dfn>floats</dfn>.  ",
+        "<strong>Note</strong>",
+        "Not all real numbers can be accurately represented in <code>floating point</code>.  This can lead to rounding errors.  <a href=\"https://en.wikipedia.org/wiki/Floating_point#Accuracy_problems\" target=\"_blank\">Details Here</a>.",
+        "",
         "Let's create a variable <code>myDecimal</code> and give it a decimal value."
       ],
       "tests": [
-        "assert((function(){if(typeof(myDecimal) !== \"undefined\" && typeof(myDecimal) === \"number\" && editor.getValue().match(/\\./g).length >=2){return true;}else{return false;}})(), 'message: <code>myDecimal</code> should be a decimal point number.');"
+        "assert(typeof myDecimal === \"number\", 'message: <code>myDecimal</code> should be a number.');",
+        "assert(editor.getValue().match(/\\d+\\.\\d+/g).length >= 2, 'message: <code>myDecimal</code> should have a decimal point'); "
       ],
       "challengeSeed": [
         "var ourDecimal = 5.7;",
         "",
+        "// Only change code below this line",
         "",
-        "// Only change code above this line.",
-        "",
+        ""
+      ],
+      "tail": [
         "(function(){if(typeof(myDecimal) !== \"undefined\"){return myDecimal;}})();"
       ],
       "type": "waypoint",
-      "challengeType": 1
+      "challengeType": "1"
     },
     {
       "id": "bd7993c9c69feddfaeb7bdef",
@@ -376,18 +453,19 @@
         "Change the <code>0.0</code> so that product will equal <code>5.0</code>."
       ],
       "tests": [
-        "assert((function(){if(product === 5.0 && editor.getValue().match(/\\*/g)){return true;}else{return false;}})(), 'message: Make the variable <code>product</code> equal 5.0.');"
+        "assert(product === 5.0, 'message: The variable <code>product</code> should equal <code>5.0</code>.');",
+        "assert(/\\*/.test(editor.getValue()), 'message: You should use the <code>*</code> operator');"
+      ],
+      "tail": [
+        "(function(y){return 'product = '+y;})(product);"
       ],
       "challengeSeed": [
         "var product = 2.0 * 0.0;",
         "",
-        "",
-        "// Only change code above this line.",
-        "",
-        "(function(y){return 'product='+y;})(product);"
+        ""
       ],
       "type": "waypoint",
-      "challengeType": 1
+      "challengeType": "1"
     },
     {
       "id": "bd7993c9ca9feddfaeb7bdef",
@@ -397,177 +475,263 @@
         "Change the <code>0.0</code> so that your quotient will equal <code>2.2</code>."
       ],
       "tests": [
-        "assert((function(){if(quotient === 2.2 && editor.getValue().match(/\\//g)){return true;}else{return false;}})(), 'message: Make the variable <code>quotient</code> equal <code>2.2</code>.');"
+        "assert(quotient === 2.2, 'message: The variable <code>quotient</code> should equal <code>2.2</code>.');",
+        "assert(/\\//.test(editor.getValue()), 'message: You should use the <code>/</code> operator');"
       ],
       "challengeSeed": [
         "var quotient = 0.0 / 2.0;",
         "",
-        "",
-        "// Only change code above this line.",
-        "",
-        "(function(y){return 'quotient='+y;})(quotient);"
+        ""
+      ],
+      "tail": [
+        "(function(y){return 'quotient = '+y;})(quotient);"
       ],
       "type": "waypoint",
-      "challengeType": 1
+      "challengeType": "1"
     },
     {
       "id": "56533eb9ac21ba0edf2244ae",
       "title": "Find a Remainder with Modulus",
       "description": [
-        "Modulus Operator (%)"
+        "The modulus operator <code>%</code> gives the remainder of the division of two numbers.",
+        "<code>5 % 2</code> is <code>1</code> because",
+        "<code>Math.floor(5 / 2) === 2<br />2 * 2 === 4<br />5 - 4 === 1</code>",
+        "<strong>Usage</strong>",
+        "Modulus can be helpful in creating alternating or cycling values.  For example, in a loop an increasing variable <code>myVar % 2</code> will alternate between 0 and 1 as myVar goes between even and odd numbers respectively.",
+        "<h4>Instructions<h4>Set <code>remainder</code> equal to the remainder of 11 divided by 3 using the modulus operator."
       ],
       "releasedOn": "11/27/2015",
       "tests": [
-        "assert(1===1, 'message: message here');"
+        "assert(remainder === 2, 'message: The value of <code>remainder</code> should be <code>2</code>');",
+        "assert(/\\d+\\s*%\\s*\\d+/.test(editor.getValue()), 'message: You should use the <code>%</code> operator');"
       ],
       "challengeSeed": [
+        "var quotient = Math.floor(11 / 3);",
         "",
+        "// Only change code below this line",
+        "",
+        "var remainder;",
         "",
         ""
+      ],
+      "tail": [
+        "(function(y){return 'remainder = '+y;})(remainder);"
       ],
       "solutions": [
         ""
       ],
       "type": "waypoint",
-      "challengeType": 1,
+      "challengeType": "1",
       "nameCn": "",
-      "descriptionCn": [],
       "nameFr": "",
-      "descriptionFr": [],
       "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "",
-      "descriptionEs": [],
-      "namePt": "",
-      "descriptionPt": []
+      "namePt": ""
     },
     {
       "id": "56533eb9ac21ba0edf2244af",
       "title": "Assignment with Plus Equals",
       "description": [
-        "Introduce +=",
-        "Convert a = a + 5 to a += 5"
+        "In Javascript it is common to need to modify the contents of a variable mathematically.  Remember that everything to the right of the equals sign is evaluated first, so we can say:",
+        "<code>myVar = myVar + 5;</code>",
+        "to add <code>5</code> to <code>myVar</code>.  Since this is such a common pattern, there are operators which do both a mathematical operation and assignement in one step.",
+        "One such operator is the <code>+=</code> operator.",
+        "<code>myVar += 5;</code> will add <code>5</code> to <code>myVar</code>.",
+        "<h4>Instructions</h4>Convert the assignements for <code>a</code>, <code>b</code>, and <code>c</code> to use the <code>+=</code> operator."
       ],
       "releasedOn": "11/27/2015",
       "tests": [
-        "assert(1===1, 'message: message here');"
+        "assert(a === 15, 'message: <code>a</code> should equal <code>15</code>');",
+        "assert(b === 26, 'message: <code>b</code> should equal <code>26</code>');",
+        "assert(c === 19, 'message: <code>c</code> should equal <code>19</code>');",
+        "assert(editor.getValue().match(/\\+=/g).length === 3, 'message: You should use the <code>+=</code> operator for each variable');",
+        "assert(/var a = 3;/.test(editor.getValue()) && /var b = 17;/.test(editor.getValue()) && /var c = 12;/.test(editor.getValue()), 'message: Do not modify the code above the line');"
       ],
       "challengeSeed": [
+        "var a = 3;",
+        "var b = 17;",
+        "var c = 12;",
         "",
+        "// Only modify code below this line",
         "",
+        "a = a + 12;",
+        "b = 9 + b;",
+        "c = c + 7;",
         ""
+      ],
+      "tail": [
+        "(function(a,b,c){ return \"a = \" + a + \", b = \" + b + \", c = '\" + c + \"'\"; })(a,b,c);"
       ],
       "solutions": [
-        ""
+        "var a = 3;",
+        "var b = 17;",
+        "var c = 12;",
+        "",
+        "a += 12;",
+        "b += 9;",
+        "c += 7;"
       ],
       "type": "waypoint",
-      "challengeType": 1,
+      "challengeType": "1",
       "nameCn": "",
-      "descriptionCn": [],
       "nameFr": "",
-      "descriptionFr": [],
       "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "",
-      "descriptionEs": [],
-      "namePt": "",
-      "descriptionPt": []
+      "namePt": ""
     },
     {
       "id": "56533eb9ac21ba0edf2244b0",
       "title": "Assignment with Minus Equals",
       "description": [
-        "Introduce -=",
-        "Convert a = a - 9 to a -= 9"
+        "Like the <code>+=</code> operator, <code>-=</code> subtracts a number from a variable.",
+        "<code>myVar = myVar - 5;</code>",
+        "Will subtract <code>5</code> from <code>myVar</code>. This can be rewritten as: ",
+        "<code>myVar -= 5;</code>",
+        "<h4>Instructions</h4>Convert the assignements for <code>a</code>, <code>b</code>, and <code>c</code> to use the <code>-=</code> operator."
       ],
       "releasedOn": "11/27/2015",
       "tests": [
-        "assert(1===1, 'message: message here');"
+        "assert(a === 5, 'message: <code>a</code> should equal <code>5</code>');",
+        "assert(b === -6, 'message: <code>b</code> should equal <code>-6</code>');",
+        "assert(c === 2, 'message: <code>c</code> should equal <code>2</code>');",
+        "assert(editor.getValue().match(/-=/g).length === 3, 'message: You should use the <code>-=</code> operator for each variable');",
+        "assert(/var a = 11;/.test(editor.getValue()) && /var b = 9;/.test(editor.getValue()) && /var c = 3;/.test(editor.getValue()), 'message: Do not modify the code above the line');"
       ],
       "challengeSeed": [
+        "var a = 11;",
+        "var b = 9;",
+        "var c = 3;",
         "",
+        "// Only modify code below this line",
+        "",
+        "a = a - 6;",
+        "b = b - 15;",
+        "c = c - 1;",
         "",
         ""
       ],
+      "tail": [
+        "(function(a,b,c){ return \"a = \" + a + \", b = \" + b + \", c = '\" + c + \"'\"; })(a,b,c);"
+      ],
       "solutions": [
+        "var a = 11;",
+        "var b = 9;",
+        "var c = 3;",
+        "",
+        "a -= 6;",
+        "b -= 15;",
+        "c -= 1;",
+        "",
         ""
       ],
       "type": "waypoint",
-      "challengeType": 1,
+      "challengeType": "1",
       "nameCn": "",
-      "descriptionCn": [],
       "nameFr": "",
-      "descriptionFr": [],
       "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "",
-      "descriptionEs": [],
-      "namePt": "",
-      "descriptionPt": []
+      "namePt": ""
     },
     {
       "id": "56533eb9ac21ba0edf2244b1",
       "title": "Assignment with Times Equals",
       "description": [
-        "Introduce *=",
-        "Convert a = a * 3 to a *= 3"
+        "Yhe <code>*=</code> operator multiplies a variable by a number.",
+        "<code>myVar = myVar * 5;</code>",
+        "Will multiply <code>myVar</code> by <code>5</code>. This can be rewritten as: ",
+        "<code>myVar *= 5;</code>",
+        "<h4>Instructions</h4>Convert the assignements for <code>a</code>, <code>b</code>, and <code>c</code> to use the <code>*=</code> operator."
       ],
       "releasedOn": "11/27/2015",
       "tests": [
-        "assert(1===1, 'message: message here');"
+        "assert(a === 25, 'message: <code>a</code> should equal <code>25</code>');",
+        "assert(b === 36, 'message: <code>b</code> should equal <code>36</code>');",
+        "assert(c === 46, 'message: <code>c</code> should equal <code>46</code>');",
+        "assert(editor.getValue().match(/\\*=/g).length === 3, 'message: You should use the <code>*=</code> operator for each variable');",
+        "assert(/var a = 5;/.test(editor.getValue()) && /var b = 12;/.test(editor.getValue()) && /var c = 4\\.6;/.test(editor.getValue()), 'message: Do not modify the code above the line');"
       ],
       "challengeSeed": [
+        "var a = 5;",
+        "var b = 12;",
+        "var c = 4.6;",
         "",
+        "// Only modify code below this line",
+        "",
+        "a = a * 5;",
+        "b = 3 * b;",
+        "c = c * 10;",
         "",
         ""
+      ],
+      "tail": [
+        "(function(a,b,c){ return \"a = \" + a + \", b = \" + b + \", c = '\" + c + \"'\"; })(a,b,c);"
       ],
       "solutions": [
-        ""
+        "var a = 20;",
+        "var b = 12;",
+        "var c = 96;",
+        "",
+        "a *= 5;",
+        "b *= 3;",
+        "c *= 10;"
       ],
       "type": "waypoint",
-      "challengeType": 1,
+      "challengeType": "1",
       "nameCn": "",
-      "descriptionCn": [],
       "nameFr": "",
-      "descriptionFr": [],
       "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "",
-      "descriptionEs": [],
-      "namePt": "",
-      "descriptionPt": []
+      "namePt": ""
     },
     {
       "id": "56533eb9ac21ba0edf2244b2",
       "title": "Assignment with Divided by Equals",
       "description": [
-        "Introduce /=",
-        "Convert a = a / 5 to a /= 5"
+        "The <code>/=</code> operator divides a variable by another number.",
+        "<code>myVar = myVar / 5;</code>",
+        "Will divide <code>myVar</code> by <code>5</code>. This can be rewritten as: ",
+        "<code>myVar /= 5;</code>",
+        "<h4>Instructions</h4>Convert the assignments for <code>a</code>, <code>b</code>, and <code>c</code> to use the <code>/=</code> operator."
       ],
       "releasedOn": "11/27/2015",
       "tests": [
-        "assert(1===1, 'message: message here');"
+        "assert(a === 4, 'message: <code>a</code> should equal <code>4</code>');",
+        "assert(b === 27, 'message: <code>b</code> should equal <code>27</code>');",
+        "assert(c === 3, 'message: <code>c</code> should equal <code>3</code>');",
+        "assert(editor.getValue().match(/\\/=/g).length === 3, 'message: You should use the <code>/=</code> operator for each variable');",
+        "assert(/var a = 48;/.test(editor.getValue()) && /var b = 108;/.test(editor.getValue()) && /var c = 33;/.test(editor.getValue()), 'message: Do not modify the code above the line');"
       ],
       "challengeSeed": [
+        "var a = 48;",
+        "var b = 108;",
+        "var c = 33;",
         "",
+        "// Only modify code below this line",
         "",
+        "a = a / 12;",
+        "b = b / 4;",
+        "c = c / 11;",
         ""
+      ],
+      "tail": [
+        "(function(a,b,c){ return \"a = \" + a + \", b = \" + b + \", c = '\" + c + \"'\"; })(a,b,c);"
       ],
       "solutions": [
-        ""
+        "var a = 48;",
+        "var b = 108;",
+        "var c = 33;",
+        "",
+        "a /= 12;",
+        "b /= 4;",
+        "c /= 11;"
       ],
       "type": "waypoint",
-      "challengeType": 1,
+      "challengeType": "1",
       "nameCn": "",
-      "descriptionCn": [],
       "nameFr": "",
-      "descriptionFr": [],
       "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "",
-      "descriptionEs": [],
-      "namePt": "",
-      "descriptionPt": []
+      "namePt": ""
     },
     {
       "id": "56533eb9ac21ba0edf2244b3",
@@ -588,17 +752,12 @@
         ""
       ],
       "type": "waypoint",
-      "challengeType": 1,
+      "challengeType": "1",
       "nameCn": "",
-      "descriptionCn": [],
       "nameFr": "",
-      "descriptionFr": [],
       "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "",
-      "descriptionEs": [],
-      "namePt": "",
-      "descriptionPt": []
+      "namePt": ""
     },
     {
       "id": "bd7123c9c444eddfaeb5bdef",
@@ -621,7 +780,7 @@
         "if(typeof(myFirstName) !== \"undefined\" && typeof(myLastName) !== \"undefined\"){(function(){return myFirstName + ', ' + myLastName;})();}"
       ],
       "type": "waypoint",
-      "challengeType": 1
+      "challengeType": "1"
     },
     {
       "id": "56533eb9ac21ba0edf2244b4",
@@ -644,17 +803,12 @@
         ""
       ],
       "type": "waypoint",
-      "challengeType": 1,
+      "challengeType": "1",
       "nameCn": "",
-      "descriptionCn": [],
       "nameFr": "",
-      "descriptionFr": [],
       "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "",
-      "descriptionEs": [],
-      "namePt": "",
-      "descriptionPt": []
+      "namePt": ""
     },
     {
       "id": "56533eb9ac21ba0edf2244b5",
@@ -677,17 +831,12 @@
         ""
       ],
       "type": "waypoint",
-      "challengeType": 1,
+      "challengeType": "1",
       "nameCn": "",
-      "descriptionCn": [],
       "nameFr": "",
-      "descriptionFr": [],
       "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "",
-      "descriptionEs": [],
-      "namePt": "",
-      "descriptionPt": []
+      "namePt": ""
     },
     {
       "id": "56533eb9ac21ba0edf2244b6",
@@ -708,17 +857,12 @@
         ""
       ],
       "type": "waypoint",
-      "challengeType": 1,
+      "challengeType": "1",
       "nameCn": "",
-      "descriptionCn": [],
       "nameFr": "",
-      "descriptionFr": [],
       "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "",
-      "descriptionEs": [],
-      "namePt": "",
-      "descriptionPt": []
+      "namePt": ""
     },
     {
       "id": "56533eb9ac21ba0edf2244b7",
@@ -740,17 +884,12 @@
         ""
       ],
       "type": "waypoint",
-      "challengeType": 1,
+      "challengeType": "1",
       "nameCn": "",
-      "descriptionCn": [],
       "nameFr": "",
-      "descriptionFr": [],
       "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "",
-      "descriptionEs": [],
-      "namePt": "",
-      "descriptionPt": []
+      "namePt": ""
     },
     {
       "id": "56533eb9ac21ba0edf2244b8",
@@ -773,17 +912,12 @@
         ""
       ],
       "type": "waypoint",
-      "challengeType": 1,
+      "challengeType": "1",
       "nameCn": "",
-      "descriptionCn": [],
       "nameFr": "",
-      "descriptionFr": [],
       "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "",
-      "descriptionEs": [],
-      "namePt": "",
-      "descriptionPt": []
+      "namePt": ""
     },
     {
       "id": "56533eb9ac21ba0edf2244b9",
@@ -805,17 +939,12 @@
         ""
       ],
       "type": "waypoint",
-      "challengeType": 1,
+      "challengeType": "1",
       "nameCn": "",
-      "descriptionCn": [],
       "nameFr": "",
-      "descriptionFr": [],
       "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "",
-      "descriptionEs": [],
-      "namePt": "",
-      "descriptionPt": []
+      "namePt": ""
     },
     {
       "id": "56533eb9ac21ba0edf2244ed",
@@ -838,17 +967,12 @@
         ""
       ],
       "type": "waypoint",
-      "challengeType": 1,
+      "challengeType": "1",
       "nameCn": "",
-      "descriptionCn": [],
       "nameFr": "",
-      "descriptionFr": [],
       "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "",
-      "descriptionEs": [],
-      "namePt": "",
-      "descriptionPt": []
+      "namePt": ""
     },
     {
       "id": "bd7123c9c448eddfaeb5bdef",
@@ -882,7 +1006,7 @@
         "if(typeof(lastNameLength) !== \"undefined\"){(function(){return lastNameLength;})();}"
       ],
       "type": "waypoint",
-      "challengeType": 1
+      "challengeType": "1"
     },
     {
       "id": "bd7123c9c549eddfaeb5bdef",
@@ -915,7 +1039,7 @@
         "(function(v){return v;})(firstLetterOfLastName);"
       ],
       "type": "waypoint",
-      "challengeType": 1
+      "challengeType": "1"
     },
     {
       "id": "56533eb9ac21ba0edf2244ba",
@@ -936,17 +1060,12 @@
         ""
       ],
       "type": "waypoint",
-      "challengeType": 1,
+      "challengeType": "1",
       "nameCn": "",
-      "descriptionCn": [],
       "nameFr": "",
-      "descriptionFr": [],
       "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "",
-      "descriptionEs": [],
-      "namePt": "",
-      "descriptionPt": []
+      "namePt": ""
     },
     {
       "id": "bd7123c9c450eddfaeb5bdef",
@@ -975,7 +1094,7 @@
         "(function(v){return v;})(thirdLetterOfLastName);"
       ],
       "type": "waypoint",
-      "challengeType": 1
+      "challengeType": "1"
     },
     {
       "id": "bd7123c9c451eddfaeb5bdef",
@@ -1005,7 +1124,7 @@
         "(function(v){return v;})(lastLetterOfLastName);"
       ],
       "type": "waypoint",
-      "challengeType": 1
+      "challengeType": "1"
     },
     {
       "id": "bd7123c9c452eddfaeb5bdef",
@@ -1035,7 +1154,7 @@
         "(function(v){return v;})(secondToLastLetterOfLastName);"
       ],
       "type": "waypoint",
-      "challengeType": 1
+      "challengeType": "1"
     },
     {
       "id": "56533eb9ac21ba0edf2244bb",
@@ -1056,17 +1175,12 @@
         ""
       ],
       "type": "waypoint",
-      "challengeType": 1,
+      "challengeType": "1",
       "nameCn": "",
-      "descriptionCn": [],
       "nameFr": "",
-      "descriptionFr": [],
       "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "",
-      "descriptionEs": [],
-      "namePt": "",
-      "descriptionPt": []
+      "namePt": ""
     },
     {
       "id": "bd7993c9c69feddfaeb8bdef",
@@ -1094,7 +1208,7 @@
         "(function(z){return z;})(myArray);"
       ],
       "type": "waypoint",
-      "challengeType": 1
+      "challengeType": "1"
     },
     {
       "id": "cf1111c1c11feddfaeb7bdef",
@@ -1118,7 +1232,7 @@
         "if(typeof(myArray) !== \"undefined\"){(function(){return myArray;})();}"
       ],
       "type": "waypoint",
-      "challengeType": 1
+      "challengeType": "1"
     },
     {
       "id": "bg9997c9c79feddfaeb9bdef",
@@ -1150,7 +1264,7 @@
         "if(typeof(myArray) !== \"undefined\" && typeof(myData) !== \"undefined\"){(function(y,z){return 'myArray = ' + JSON.stringify(y) + ', myData = ' + JSON.stringify(z);})(myArray, myData);}"
       ],
       "type": "waypoint",
-      "challengeType": 1
+      "challengeType": "1"
     },
     {
       "id": "cf1111c1c11feddfaeb8bdef",
@@ -1182,7 +1296,7 @@
         "if(typeof(myArray) !== \"undefined\"){(function(){return myArray;})();}"
       ],
       "type": "waypoint",
-      "challengeType": 1
+      "challengeType": "1"
     },
     {
       "id": "bg9995c9c69feddfaeb9bdef",
@@ -1214,7 +1328,7 @@
         "(function(z){return 'myArray = ' + JSON.stringify(z);})(myArray);"
       ],
       "type": "waypoint",
-      "challengeType": 1
+      "challengeType": "1"
     },
     {
       "id": "bg9994c9c69feddfaeb9bdef",
@@ -1245,7 +1359,7 @@
         "(function(y, z){return 'myArray = ' + JSON.stringify(y) + ' & removedFromMyArray = ' + JSON.stringify(z);})(myArray, removedFromMyArray);"
       ],
       "type": "waypoint",
-      "challengeType": 1
+      "challengeType": "1"
     },
     {
       "id": "bg9996c9c69feddfaeb9bdef",
@@ -1276,7 +1390,7 @@
         "(function(y, z){return 'myArray = ' + JSON.stringify(y) + ' & removedFromMyArray = ' + JSON.stringify(z);})(myArray, removedFromMyArray);"
       ],
       "type": "waypoint",
-      "challengeType": 1
+      "challengeType": "1"
     },
     {
       "id": "bg9997c9c69feddfaeb9bdef",
@@ -1309,7 +1423,7 @@
         "(function(y, z){return 'myArray = ' + JSON.stringify(y);})(myArray);"
       ],
       "type": "waypoint",
-      "challengeType": 1
+      "challengeType": "1"
     },
     {
       "id": "56533eb9ac21ba0edf2244bc",
@@ -1330,17 +1444,12 @@
         ""
       ],
       "type": "waypoint",
-      "challengeType": 1,
+      "challengeType": "1",
       "nameCn": "",
-      "descriptionCn": [],
       "nameFr": "",
-      "descriptionFr": [],
       "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "",
-      "descriptionEs": [],
-      "namePt": "",
-      "descriptionPt": []
+      "namePt": ""
     },
     {
       "id": "bg9997c9c89feddfaeb9bdef",
@@ -1380,7 +1489,7 @@
         "}"
       ],
       "type": "waypoint",
-      "challengeType": 1
+      "challengeType": "1"
     },
     {
       "id": "56533eb9ac21ba0edf2244bd",
@@ -1401,17 +1510,12 @@
         ""
       ],
       "type": "waypoint",
-      "challengeType": 1,
+      "challengeType": "1",
       "nameCn": "",
-      "descriptionCn": [],
       "nameFr": "",
-      "descriptionFr": [],
       "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "",
-      "descriptionEs": [],
-      "namePt": "",
-      "descriptionPt": []
+      "namePt": ""
     },
     {
       "id": "56533eb9ac21ba0edf2244be",
@@ -1432,17 +1536,12 @@
         ""
       ],
       "type": "waypoint",
-      "challengeType": 1,
+      "challengeType": "1",
       "nameCn": "",
-      "descriptionCn": [],
       "nameFr": "",
-      "descriptionFr": [],
       "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "",
-      "descriptionEs": [],
-      "namePt": "",
-      "descriptionPt": []
+      "namePt": ""
     },
     {
       "id": "56533eb9ac21ba0edf2244bf",
@@ -1463,17 +1562,12 @@
         ""
       ],
       "type": "waypoint",
-      "challengeType": 1,
+      "challengeType": "1",
       "nameCn": "",
-      "descriptionCn": [],
       "nameFr": "",
-      "descriptionFr": [],
       "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "",
-      "descriptionEs": [],
-      "namePt": "",
-      "descriptionPt": []
+      "namePt": ""
     },
     {
       "id": "56533eb9ac21ba0edf2244c0",
@@ -1494,17 +1588,12 @@
         ""
       ],
       "type": "waypoint",
-      "challengeType": 1,
+      "challengeType": "1",
       "nameCn": "",
-      "descriptionCn": [],
       "nameFr": "",
-      "descriptionFr": [],
       "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "",
-      "descriptionEs": [],
-      "namePt": "",
-      "descriptionPt": []
+      "namePt": ""
     },
     {
       "id": "56533eb9ac21ba0edf2244c1",
@@ -1525,17 +1614,12 @@
         ""
       ],
       "type": "waypoint",
-      "challengeType": 1,
+      "challengeType": "1",
       "nameCn": "",
-      "descriptionCn": [],
       "nameFr": "",
-      "descriptionFr": [],
       "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "",
-      "descriptionEs": [],
-      "namePt": "",
-      "descriptionPt": []
+      "namePt": ""
     },
     {
       "id": "56533eb9ac21ba0edf2244c2",
@@ -1556,17 +1640,12 @@
         ""
       ],
       "type": "waypoint",
-      "challengeType": 1,
+      "challengeType": "1",
       "nameCn": "",
-      "descriptionCn": [],
       "nameFr": "",
-      "descriptionFr": [],
       "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "",
-      "descriptionEs": [],
-      "namePt": "",
-      "descriptionPt": []
+      "namePt": ""
     },
     {
       "id": "56533eb9ac21ba0edf2244c3",
@@ -1587,17 +1666,12 @@
         ""
       ],
       "type": "waypoint",
-      "challengeType": 1,
+      "challengeType": "1",
       "nameCn": "",
-      "descriptionCn": [],
       "nameFr": "",
-      "descriptionFr": [],
       "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "",
-      "descriptionEs": [],
-      "namePt": "",
-      "descriptionPt": []
+      "namePt": ""
     },
     {
       "id": "56533eb9ac21ba0edf2244c4",
@@ -1618,17 +1692,12 @@
         ""
       ],
       "type": "waypoint",
-      "challengeType": 1,
+      "challengeType": "1",
       "nameCn": "",
-      "descriptionCn": [],
       "nameFr": "",
-      "descriptionFr": [],
       "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "",
-      "descriptionEs": [],
-      "namePt": "",
-      "descriptionPt": []
+      "namePt": ""
     },
     {
       "id": "56533eb9ac21ba0edf2244c5",
@@ -1649,17 +1718,12 @@
         ""
       ],
       "type": "waypoint",
-      "challengeType": 1,
+      "challengeType": "1",
       "nameCn": "",
-      "descriptionCn": [],
       "nameFr": "",
-      "descriptionFr": [],
       "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "",
-      "descriptionEs": [],
-      "namePt": "",
-      "descriptionPt": []
+      "namePt": ""
     },
     {
       "id": "56533eb9ac21ba0edf2244c6",
@@ -1680,17 +1744,12 @@
         ""
       ],
       "type": "waypoint",
-      "challengeType": 1,
+      "challengeType": "1",
       "nameCn": "",
-      "descriptionCn": [],
       "nameFr": "",
-      "descriptionFr": [],
       "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "",
-      "descriptionEs": [],
-      "namePt": "",
-      "descriptionPt": []
+      "namePt": ""
     },
     {
       "id": "bg9998c9c99feddfaeb9bdef",
@@ -1738,7 +1797,7 @@
         "(function(z){return z;})(myDog);"
       ],
       "type": "waypoint",
-      "challengeType": 1
+      "challengeType": "1"
     },
     {
       "id": "56533eb9ac21ba0edf2244c7",
@@ -1759,17 +1818,12 @@
         ""
       ],
       "type": "waypoint",
-      "challengeType": 1,
+      "challengeType": "1",
       "nameCn": "",
-      "descriptionCn": [],
       "nameFr": "",
-      "descriptionFr": [],
       "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "",
-      "descriptionEs": [],
-      "namePt": "",
-      "descriptionPt": []
+      "namePt": ""
     },
     {
       "id": "56533eb9ac21ba0edf2244c8",
@@ -1790,17 +1844,12 @@
         ""
       ],
       "type": "waypoint",
-      "challengeType": 1,
+      "challengeType": "1",
       "nameCn": "",
-      "descriptionCn": [],
       "nameFr": "",
-      "descriptionFr": [],
       "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "",
-      "descriptionEs": [],
-      "namePt": "",
-      "descriptionPt": []
+      "namePt": ""
     },
     {
       "id": "56533eb9ac21ba0edf2244c9",
@@ -1821,17 +1870,12 @@
         ""
       ],
       "type": "waypoint",
-      "challengeType": 1,
+      "challengeType": "1",
       "nameCn": "",
-      "descriptionCn": [],
       "nameFr": "",
-      "descriptionFr": [],
       "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "",
-      "descriptionEs": [],
-      "namePt": "",
-      "descriptionPt": []
+      "namePt": ""
     },
     {
       "id": "bg9999c9c99feddfaeb9bdef",
@@ -1880,7 +1924,7 @@
         "(function(z){return z;})(myDog);"
       ],
       "type": "waypoint",
-      "challengeType": 1
+      "challengeType": "1"
     },
     {
       "id": "bg9999c9c99feedfaeb9bdef",
@@ -1921,7 +1965,7 @@
         "(function(z){return z;})(myDog);"
       ],
       "type": "waypoint",
-      "challengeType": 1
+      "challengeType": "1"
     },
     {
       "id": "bg9999c9c99fdddfaeb9bdef",
@@ -1962,7 +2006,7 @@
         "(function(z){return z;})(myDog);"
       ],
       "type": "waypoint",
-      "challengeType": 1
+      "challengeType": "1"
     },
     {
       "id": "56533eb9ac21ba0edf2244ca",
@@ -1983,17 +2027,12 @@
         ""
       ],
       "type": "waypoint",
-      "challengeType": 1,
+      "challengeType": "1",
       "nameCn": "",
-      "descriptionCn": [],
       "nameFr": "",
-      "descriptionFr": [],
       "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "",
-      "descriptionEs": [],
-      "namePt": "",
-      "descriptionPt": []
+      "namePt": ""
     },
     {
       "id": "56533eb9ac21ba0edf2244cb",
@@ -2014,17 +2053,12 @@
         ""
       ],
       "type": "waypoint",
-      "challengeType": 1,
+      "challengeType": "1",
       "nameCn": "",
-      "descriptionCn": [],
       "nameFr": "",
-      "descriptionFr": [],
       "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "",
-      "descriptionEs": [],
-      "namePt": "",
-      "descriptionPt": []
+      "namePt": ""
     },
     {
       "id": "56533eb9ac21ba0edf2244cc",
@@ -2045,17 +2079,12 @@
         ""
       ],
       "type": "waypoint",
-      "challengeType": 1,
+      "challengeType": "1",
       "nameCn": "",
-      "descriptionCn": [],
       "nameFr": "",
-      "descriptionFr": [],
       "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "",
-      "descriptionEs": [],
-      "namePt": "",
-      "descriptionPt": []
+      "namePt": ""
     },
     {
       "id": "56533eb9ac21ba0edf2244cd",
@@ -2076,17 +2105,12 @@
         ""
       ],
       "type": "waypoint",
-      "challengeType": 1,
+      "challengeType": "1",
       "nameCn": "",
-      "descriptionCn": [],
       "nameFr": "",
-      "descriptionFr": [],
       "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "",
-      "descriptionEs": [],
-      "namePt": "",
-      "descriptionPt": []
+      "namePt": ""
     },
     {
       "id": "56533eb9ac21ba0edf2244ce",
@@ -2107,17 +2131,12 @@
         ""
       ],
       "type": "waypoint",
-      "challengeType": 1,
+      "challengeType": "1",
       "nameCn": "",
-      "descriptionCn": [],
       "nameFr": "",
-      "descriptionFr": [],
       "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "",
-      "descriptionEs": [],
-      "namePt": "",
-      "descriptionPt": []
+      "namePt": ""
     },
     {
       "id": "56533eb9ac21ba0edf2244cf",
@@ -2138,17 +2157,12 @@
         ""
       ],
       "type": "waypoint",
-      "challengeType": 1,
+      "challengeType": "1",
       "nameCn": "",
-      "descriptionCn": [],
       "nameFr": "",
-      "descriptionFr": [],
       "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "",
-      "descriptionEs": [],
-      "namePt": "",
-      "descriptionPt": []
+      "namePt": ""
     },
     {
       "id": "cf1111c1c12feddfaeb3bdef",
@@ -2188,7 +2202,7 @@
         "var result = myFunction();if(typeof(flip) !== \"undefined\" && typeof(flip) === \"number\" && typeof(result) !== \"undefined\" && typeof(result) === \"string\"){(function(y,z){return 'flip = ' + y.toString() + ', text = ' + z;})(flip, result);}"
       ],
       "type": "waypoint",
-      "challengeType": 1
+      "challengeType": "1"
     },
     {
       "id": "56533eb9ac21ba0edf2244d0",
@@ -2209,17 +2223,12 @@
         ""
       ],
       "type": "waypoint",
-      "challengeType": 1,
+      "challengeType": "1",
       "nameCn": "",
-      "descriptionCn": [],
       "nameFr": "",
-      "descriptionFr": [],
       "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "",
-      "descriptionEs": [],
-      "namePt": "",
-      "descriptionPt": []
+      "namePt": ""
     },
     {
       "id": "56533eb9ac21ba0edf2244d1",
@@ -2240,17 +2249,12 @@
         ""
       ],
       "type": "waypoint",
-      "challengeType": 1,
+      "challengeType": "1",
       "nameCn": "",
-      "descriptionCn": [],
       "nameFr": "",
-      "descriptionFr": [],
       "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "",
-      "descriptionEs": [],
-      "namePt": "",
-      "descriptionPt": []
+      "namePt": ""
     },
     {
       "id": "56533eb9ac21ba0edf2244d2",
@@ -2271,17 +2275,12 @@
         ""
       ],
       "type": "waypoint",
-      "challengeType": 1,
+      "challengeType": "1",
       "nameCn": "",
-      "descriptionCn": [],
       "nameFr": "",
-      "descriptionFr": [],
       "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "",
-      "descriptionEs": [],
-      "namePt": "",
-      "descriptionPt": []
+      "namePt": ""
     },
     {
       "id": "56533eb9ac21ba0edf2244d3",
@@ -2302,17 +2301,12 @@
         ""
       ],
       "type": "waypoint",
-      "challengeType": 1,
+      "challengeType": "1",
       "nameCn": "",
-      "descriptionCn": [],
       "nameFr": "",
-      "descriptionFr": [],
       "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "",
-      "descriptionEs": [],
-      "namePt": "",
-      "descriptionPt": []
+      "namePt": ""
     },
     {
       "id": "56533eb9ac21ba0edf2244d4",
@@ -2333,17 +2327,12 @@
         ""
       ],
       "type": "waypoint",
-      "challengeType": 1,
+      "challengeType": "1",
       "nameCn": "",
-      "descriptionCn": [],
       "nameFr": "",
-      "descriptionFr": [],
       "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "",
-      "descriptionEs": [],
-      "namePt": "",
-      "descriptionPt": []
+      "namePt": ""
     },
     {
       "id": "56533eb9ac21ba0edf2244d5",
@@ -2364,17 +2353,12 @@
         ""
       ],
       "type": "waypoint",
-      "challengeType": 1,
+      "challengeType": "1",
       "nameCn": "",
-      "descriptionCn": [],
       "nameFr": "",
-      "descriptionFr": [],
       "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "",
-      "descriptionEs": [],
-      "namePt": "",
-      "descriptionPt": []
+      "namePt": ""
     },
     {
       "id": "56533eb9ac21ba0edf2244d6",
@@ -2395,17 +2379,12 @@
         ""
       ],
       "type": "waypoint",
-      "challengeType": 1,
+      "challengeType": "1",
       "nameCn": "",
-      "descriptionCn": [],
       "nameFr": "",
-      "descriptionFr": [],
       "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "",
-      "descriptionEs": [],
-      "namePt": "",
-      "descriptionPt": []
+      "namePt": ""
     },
     {
       "id": "56533eb9ac21ba0edf2244d7",
@@ -2426,17 +2405,12 @@
         ""
       ],
       "type": "waypoint",
-      "challengeType": 1,
+      "challengeType": "1",
       "nameCn": "",
-      "descriptionCn": [],
       "nameFr": "",
-      "descriptionFr": [],
       "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "",
-      "descriptionEs": [],
-      "namePt": "",
-      "descriptionPt": []
+      "namePt": ""
     },
     {
       "id": "56533eb9ac21ba0edf2244d8",
@@ -2457,17 +2431,12 @@
         ""
       ],
       "type": "waypoint",
-      "challengeType": 1,
+      "challengeType": "1",
       "nameCn": "",
-      "descriptionCn": [],
       "nameFr": "",
-      "descriptionFr": [],
       "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "",
-      "descriptionEs": [],
-      "namePt": "",
-      "descriptionPt": []
+      "namePt": ""
     },
     {
       "id": "56533eb9ac21ba0edf2244d9",
@@ -2488,17 +2457,12 @@
         ""
       ],
       "type": "waypoint",
-      "challengeType": 1,
+      "challengeType": "1",
       "nameCn": "",
-      "descriptionCn": [],
       "nameFr": "",
-      "descriptionFr": [],
       "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "",
-      "descriptionEs": [],
-      "namePt": "",
-      "descriptionPt": []
+      "namePt": ""
     },
     {
       "id": "56533eb9ac21ba0edf2244da",
@@ -2519,17 +2483,12 @@
         ""
       ],
       "type": "waypoint",
-      "challengeType": 1,
+      "challengeType": "1",
       "nameCn": "",
-      "descriptionCn": [],
       "nameFr": "",
-      "descriptionFr": [],
       "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "",
-      "descriptionEs": [],
-      "namePt": "",
-      "descriptionPt": []
+      "namePt": ""
     },
     {
       "id": "56533eb9ac21ba0edf2244db",
@@ -2550,17 +2509,12 @@
         ""
       ],
       "type": "waypoint",
-      "challengeType": 1,
+      "challengeType": "1",
       "nameCn": "",
-      "descriptionCn": [],
       "nameFr": "",
-      "descriptionFr": [],
       "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "",
-      "descriptionEs": [],
-      "namePt": "",
-      "descriptionPt": []
+      "namePt": ""
     },
     {
       "id": "56533eb9ac21ba0edf2244dc",
@@ -2581,17 +2535,12 @@
         ""
       ],
       "type": "waypoint",
-      "challengeType": 1,
+      "challengeType": "1",
       "nameCn": "",
-      "descriptionCn": [],
       "nameFr": "",
-      "descriptionFr": [],
       "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "",
-      "descriptionEs": [],
-      "namePt": "",
-      "descriptionPt": []
+      "namePt": ""
     },
     {
       "id": "56533eb9ac21ba0edf2244dd",
@@ -2612,17 +2561,12 @@
         ""
       ],
       "type": "waypoint",
-      "challengeType": 1,
+      "challengeType": "1",
       "nameCn": "",
-      "descriptionCn": [],
       "nameFr": "",
-      "descriptionFr": [],
       "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "",
-      "descriptionEs": [],
-      "namePt": "",
-      "descriptionPt": []
+      "namePt": ""
     },
     {
       "id": "56533eb9ac21ba0edf2244de",
@@ -2643,17 +2587,12 @@
         ""
       ],
       "type": "waypoint",
-      "challengeType": 1,
+      "challengeType": "1",
       "nameCn": "",
-      "descriptionCn": [],
       "nameFr": "",
-      "descriptionFr": [],
       "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "",
-      "descriptionEs": [],
-      "namePt": "",
-      "descriptionPt": []
+      "namePt": ""
     },
     {
       "id": "56533eb9ac21ba0edf2244df",
@@ -2674,17 +2613,12 @@
         ""
       ],
       "type": "waypoint",
-      "challengeType": 1,
+      "challengeType": "1",
       "nameCn": "",
-      "descriptionCn": [],
       "nameFr": "",
-      "descriptionFr": [],
       "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "",
-      "descriptionEs": [],
-      "namePt": "",
-      "descriptionPt": []
+      "namePt": ""
     },
     {
       "id": "56533eb9ac21ba0edf2244e0",
@@ -2705,17 +2639,12 @@
         ""
       ],
       "type": "waypoint",
-      "challengeType": 1,
+      "challengeType": "1",
       "nameCn": "",
-      "descriptionCn": [],
       "nameFr": "",
-      "descriptionFr": [],
       "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "",
-      "descriptionEs": [],
-      "namePt": "",
-      "descriptionPt": []
+      "namePt": ""
     },
     {
       "id": "cf1111c1c11feddfaeb5bdef",
@@ -2759,12 +2688,12 @@
         ""
       ],
       "type": "waypoint",
-      "challengeType": 1
+      "challengeType": "1"
     },
     {
-      "id":"56104e9e514f539506016a5c",
+      "id": "56104e9e514f539506016a5c",
       "title": "Iterate Odd Numbers With a For Loop",
-      "description":[
+      "description": [
         "For loops don't have to iterate one at a time. By changing our <code>final-expression</code>, we can count by even numbers.",
         "We'll start at <code>i = 0</code> and loop while <code>i < 10</code>.  We'll increment <code>i</code> by 2 each loop with <code>i += 2</code>.",
         "<code>var ourArray = [];</code>",
@@ -2775,11 +2704,11 @@
         "Let's change our <code>initialization</code> and <code>final-expression</code> so we can count by odd numbers.",
         "Push the odd numbers from 1 through 9 to <code>myArray</code> using a <code>for</code> loop."
       ],
-      "tests":[
+      "tests": [
         "assert(editor.getValue().match(/for\\s*\\(/g).length > 1, 'message: You should be using a <code>for</code> loop for this.');",
         "assert.deepEqual(myArray, [1,3,5,7,9], 'message: <code>myArray</code> should equal <code>[1,3,5,7,9]</code>.');"
       ],
-      "challengeSeed":[
+      "challengeSeed": [
         "var ourArray = [];",
         "",
         "for (var i = 0; i < 10; i += 2) {",
@@ -2798,12 +2727,12 @@
         ""
       ],
       "type": "waypoint",
-      "challengeType": 1
+      "challengeType": "1"
     },
     {
-      "id":"56105e7b514f539506016a5e",
+      "id": "56105e7b514f539506016a5e",
       "title": "Count Backwards With a For Loop",
-      "description":[
+      "description": [
         "A for loop can also count backwards, so long as we can define the right conditions.",
         "In order to count backwards by twos, we'll need to change our <code>initialization</code>, <code>condition</code>, and <code>final-expression</code>.",
         "We'll start at <code>i = 10</code> and loop while <code>i > 0</code>.  We'll decrement <code>i</code> by 2 each loop with <code>i -= 2</code>.",
@@ -2815,11 +2744,11 @@
         "Let's change our <code>initialization</code> and <code>final-expression</code> so we can count backward by twos by odd numbers.",
         "Push the odd numbers from 9 through 1 to <code>myArray</code> using a <code>for</code> loop."
       ],
-      "tests":[
+      "tests": [
         "assert(editor.getValue().match(/for\\s*\\(/g).length > 1, 'message: You should be using a <code>for</code> loop for this.');",
         "assert.deepEqual(myArray, [9,7,5,3,1], 'message: <code>myArray</code> should equal <code>[9,7,5,3,1]</code>.');"
       ],
-      "challengeSeed":[
+      "challengeSeed": [
         "var ourArray = [];",
         "",
         "for (var i = 10; i > 0; i -= 2) {",
@@ -2837,7 +2766,7 @@
         "if(typeof(myArray) !== \"undefined\"){(function(){return myArray;})();}"
       ],
       "type": "waypoint",
-      "challengeType": 1
+      "challengeType": "1"
     },
     {
       "id": "56533eb9ac21ba0edf2244e1",
@@ -2858,17 +2787,12 @@
         ""
       ],
       "type": "waypoint",
-      "challengeType": 1,
+      "challengeType": "1",
       "nameCn": "",
-      "descriptionCn": [],
       "nameFr": "",
-      "descriptionFr": [],
       "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "",
-      "descriptionEs": [],
-      "namePt": "",
-      "descriptionPt": []
+      "namePt": ""
     },
     {
       "id": "cf1111c1c11feddfaeb1bdef",
@@ -2902,7 +2826,7 @@
         ""
       ],
       "type": "waypoint",
-      "challengeType": 1
+      "challengeType": "1"
     },
     {
       "id": "cf1111c1c11feddfaeb9bdef",
@@ -2931,7 +2855,7 @@
         "(function(){return myFunction();})();"
       ],
       "type": "waypoint",
-      "challengeType": 1
+      "challengeType": "1"
     },
     {
       "id": "56533eb9ac21ba0edf2244e2",
@@ -2952,17 +2876,12 @@
         ""
       ],
       "type": "waypoint",
-      "challengeType": 1,
+      "challengeType": "1",
       "nameCn": "",
-      "descriptionCn": [],
       "nameFr": "",
-      "descriptionFr": [],
       "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "",
-      "descriptionEs": [],
-      "namePt": "",
-      "descriptionPt": []
+      "namePt": ""
     },
     {
       "id": "cf1111c1c12feddfaeb1bdef",
@@ -2997,11 +2916,11 @@
         "  // Only change code above this line.",
         "}"
       ],
-      "tail":[
+      "tail": [
         "(function(){return myFunction();})();"
       ],
       "type": "waypoint",
-      "challengeType": 1
+      "challengeType": "1"
     },
     {
       "id": "cf1111c1c12feddfaeb2bdef",
@@ -3049,7 +2968,7 @@
         "(function(){return myFunction();})();"
       ],
       "type": "waypoint",
-      "challengeType": 1
+      "challengeType": "1"
     },
     {
       "id": "cf1111c1c12feddfaeb6bdef",
@@ -3084,7 +3003,7 @@
         "})();(function(){return test;})();"
       ],
       "type": "waypoint",
-      "challengeType": 1
+      "challengeType": "1"
     },
     {
       "id": "cf1111c1c12feddfaeb7bdef",
@@ -3116,7 +3035,7 @@
         "})();(function(){return test;})();"
       ],
       "type": "waypoint",
-      "challengeType": 1
+      "challengeType": "1"
     },
     {
       "id": "cf1111c1c12feddfaeb8bdef",
@@ -3147,7 +3066,7 @@
         "})();(function(){return test;})();"
       ],
       "type": "waypoint",
-      "challengeType": 1
+      "challengeType": "1"
     },
     {
       "id": "cf1111c1c13feddfaeb3bdef",
@@ -3175,12 +3094,12 @@
         "})();(function(){return test;})();"
       ],
       "type": "waypoint",
-      "challengeType": 1
+      "challengeType": "1"
     },
     {
       "id": "cf1111c1c12feddfaeb9bdef",
       "title": "Create a JavaScript Slot Machine",
-      "isBeta": true,
+      "isBeta": "true",
       "description": [
         "We are now going to try and combine some of the stuff we've just learned and create the logic for a slot machine game.",
         "For this we will need to generate three random numbers between <code>1</code> and <code>3</code> to represent the possible values of each individual slot.",
@@ -3330,12 +3249,12 @@
         "</style>"
       ],
       "type": "waypoint",
-      "challengeType": 0
+      "challengeType": "0"
     },
     {
       "id": "cf1111c1c13feddfaeb1bdef",
       "title": "Add your JavaScript Slot Machine Slots",
-      "isBeta": true,
+      "isBeta": "true",
       "description": [
         "Now that our slots will each generate random numbers, we need to check whether they've all returned the same number.",
         "If they have, we should notify our user that they've won and we should return <code>null</code>.",
@@ -3490,12 +3409,12 @@
         "</style>"
       ],
       "type": "waypoint",
-      "challengeType": 0
+      "challengeType": "0"
     },
     {
       "id": "cf1111c1c13feddfaeb2bdef",
       "title": "Bring your JavaScript Slot Machine to Life",
-      "isBeta": true,
+      "isBeta": "true",
       "description": [
         "Now we can detect a win. Let's get this slot machine working.",
         "Let's use the jQuery <code>selector</code> <code>$(\".slot\")</code> to select all of the slots.",
@@ -3656,12 +3575,12 @@
         "</style>"
       ],
       "type": "waypoint",
-      "challengeType": 0
+      "challengeType": "0"
     },
     {
       "id": "cf1111c1c11feddfaeb1bdff",
       "title": "Give your JavaScript Slot Machine some Stylish Images",
-      "isBeta": true,
+      "isBeta": "true",
       "description": [
         "Now let's add some images to our slots.",
         "We've already set up the images for you in an array called <code>images</code>. We can use different indexes to grab each of these.",
@@ -3830,7 +3749,7 @@
         "</style>"
       ],
       "type": "waypoint",
-      "challengeType": 0
+      "challengeType": "0"
     }
   ]
 }
