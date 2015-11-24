@@ -7,8 +7,7 @@ window.__$(function() {
   var assert = chai.assert;
   var tests = parent.tests;
   var common = parent.common;
-  var code = common.editor.getValue();
-  var editor = common.editor;
+  var editor = common.editor.getValue();
   // grab the iframe body element
   var body = document.getElementsByTagName('body');
   // change the context of $ so it uses the iFrame for testing
