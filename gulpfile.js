@@ -103,7 +103,8 @@ var paths = {
   js: [
     'client/main.js',
     'client/iFrameScripts.js',
-    'client/plugin.js'
+    'client/plugin.js',
+    'client/faux.js'
   ],
 
   commonFramework: [
@@ -114,6 +115,7 @@ var paths = {
     'code-storage',
     'code-uri',
     'create-editor',
+    'detect-unsafe-code-stream',
     'detect-loops-stream',
     'display-test-results',
     'execute-challenge-stream',
@@ -421,6 +423,7 @@ gulp.task('js', function() {
 });
 
 // commonFramework depend on iFrameScripts
+// and faux.js
 gulp.task('dependents', ['js'], function() {
   var manifestName = 'dependents-manifest.json';
   var dest = paths.publicJs;

@@ -12,9 +12,6 @@ window.common = (function(global) {
   } = global;
 
   let attempts = 0;
-  const detectFunctionCall = /function\s*?\(|function\s+\w+\s*?\(/gi;
-  const detectUnsafeJQ = /\$\s*?\(\s*?\$\s*?\)/gi;
-  const detectUnsafeConsoleCall = /if\s\(null\)\sconsole\.log\(1\);/gi;
 
   common.executeChallenge$ = function executeChallenge$() {
     const code = common.editor.getValue();
@@ -25,101 +22,62 @@ window.common = (function(global) {
 
     ga('send', 'event', 'Challenge', 'ran-code', common.challengeName);
 
-    let openingComments = code.match(/\/\*/gi);
-
-    // checks if the number of opening comments(/*) matches the number of
-    // closing comments(*/)
-    return Observable.just({ code })
-      .flatMap(({ code }) => {
-        if (
-          code.match(/\$\s*?\(\s*?\$\s*?\)/gi) &&
-          openingComments &&
-          openingComments.length > code.match(/\*\//gi).length
-        ) {
-
-          return Observable.throw({
-            err: 'SyntaxError: Unfinished multi-line comment',
-            code
-          });
-        }
-
-        if (code.match(detectUnsafeJQ)) {
-          return Observable.throw({
-            err: 'Unsafe $($)',
-            code
-          });
-        }
-
-        if (
-          code.match(/function/g) &&
-          !code.match(detectFunctionCall)
-        ) {
-          return Observable.throw({
-            err: 'SyntaxError: Unsafe or unfinished function declaration',
-            code
-          });
-        }
-
-        if (code.match(detectUnsafeConsoleCall)) {
-          return Observable.throw({
-            err: 'Invalid if (null) console.log(1); detected',
-            code
-          });
-        }
-
-        // add head and tail and detect loops
-        return Observable.just({ code: head + code + tail, original: code });
-      })
-      .flatMap(data => {
+    // run checks for unsafe code
+    return common.detectUnsafeCode$(code)
+      // add head and tail and detect loops
+      .map(code => head + code + tail)
+      .flatMap(code => {
         if (common.challengeType === common.challengeTypes.HTML) {
 
           if (common.hasJs(code)) {
-            return common.addFaux$(data)
+            // html has a script code
+            // add faux code and test in webworker
+            return common.addFaux$(code)
               .flatMap(code => common.detectLoops$(code))
               .flatMap(({ err }) => {
                 if (err) {
-                  return Observable.throw({ err });
+                  return Observable.throw(err);
                 }
-                return common.runPreviewTests$({
-                  code: data.code,
-                  tests: common.tests.slice()
-                });
+                return common.updatePreview$(code)
+                  .flatMap(() => common.runPreviewTests$({
+                    code,
+                    tests: common.tests.slice()
+                  }));
               });
           }
 
-          return common.updatePreview$(data.code)
+          // no script code detected in html code
+          // Update preview and run tests in iframe
+          return common.updatePreview$(code)
             .flatMap(code => common.runPreviewTests$({
               code,
               tests: common.tests.slice()
             }));
         }
 
+        // js challenge
+        // remove comments and add tests to string
         return common.addTestsToString(Object.assign(
-          data,
           {
             code: common.removeComments(code),
             tests: common.tests.slice()
           }
         ))
         .flatMap(common.detectLoops$)
-        .flatMap(({ err, code, data, userTests, original }) => {
+        .flatMap(({ err, code, data, userTests }) => {
             if (err) {
-              return Observable.throw({ err });
+              return Observable.throw(err);
             }
 
+            // run tests
+            // for now these are running in the browser
             return common.runTests$({
               data,
               code,
               userTests,
-              original,
               output: data.output.replace(/\\\"/gi, '')
             });
         });
-      })
-      .catch(e => {
-        return e && e.err ?
-          Observable.throw(e) :
-          Observable.throw({ err: e });
       });
   };
 

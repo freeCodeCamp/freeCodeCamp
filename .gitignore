@@ -45,6 +45,7 @@ public/js/sandbox*
 public/js/iFrameScripts*
 public/js/plugin*
 public/js/vendor*
+public/js/faux*
 public/css/main*
 
 server/rev-manifest.json
