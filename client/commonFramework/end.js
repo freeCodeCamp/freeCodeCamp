@@ -57,6 +57,11 @@ $(document).ready(function() {
       ({ err, solved, output, tests }) => {
         if (err) {
           console.error(err);
+          if (common.challengeType === common.challengeTypes.HTML) {
+            return common.updatePreview$(`
+              <h1>${err}</h1>
+            `).subscribe(() => {});
+          }
           return common.updateOutputDisplay('' + err);
         }
         common.updateOutputDisplay(output);
@@ -65,7 +70,7 @@ $(document).ready(function() {
           common.showCompletion();
         }
       },
-      (err) => {
+      ({ err }) => {
         console.error(err);
         common.updateOutputDisplay('' + err);
       }
@@ -76,8 +81,18 @@ $(document).ready(function() {
     return Observable.fromCallback($preview.ready, $preview)()
       .delay(500)
       .flatMap(() => common.executeChallenge$())
+      .catch(err => Observable.just(err))
       .subscribe(
-        ({ tests }) => {
+        ({ err, tests }) => {
+          if (err) {
+            console.error(err);
+            if (common.challengeType === common.challengeTypes.HTML) {
+              return common.updatePreview$(`
+                <h1>${err}</h1>
+              `).subscribe(() => {});
+            }
+            return common.updateOutputDisplay('' + err);
+          }
           common.displayTestResults(tests);
         },
         ({ err }) => {
