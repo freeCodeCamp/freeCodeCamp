@@ -752,8 +752,8 @@
       "tests": [
         "assert($(\"h2\").css(\"font-family\").match(/^\"?lobster/i), 'Your h2 element should use the font <code>Lobster</code>.')",
         "assert($(\"h2\").css(\"font-family\").match(/lobster.*,.*monospace/i), 'Your h2 element should degrade to the font <code>Monospace</code> when <code>Lobster</code> is not available.')",
-        "assert(new RegExp(\"<!--\", \"gi\").test(editor), 'Comment out your call to Google for the <code>Lobster</code> font by putting <code>&#60!-- in front of it.')",
-        "assert(new RegExp(\"-->\", \"gi\").test(editor), 'Be sure to close your comment by deleting all trailing comment tags&#44; i.e. <code>--&#62;</code>.')"
+        "assert(new RegExp(\"<!--\", \"gi\").test(editor), 'Comment out your call to Google for the <code>Lobster</code> font by putting <code>&#60!--</code> in front of it.')",
+        "assert(new RegExp(\"-->\", \"gi\").test(editor), 'Be sure to close your comment by adding <code>--&#62;</code>.')"
       ],
       "challengeSeed": [
         "<link href=\"http://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
