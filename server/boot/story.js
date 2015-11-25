@@ -78,7 +78,7 @@ module.exports = function(app) {
   );
   router.post('/stories/preliminary', ifNoUser401, newStory);
   router.post('/stories/', ifNoUser401, storySubmission);
-  router.get('/news/', hot);
+  // router.get('/news/', hot);
   router.post('/stories/search', getStories);
   router.get('/news/:storyName', returnIndividualStory);
   router.post('/stories/upvote/', ifNoUser401, upvote);

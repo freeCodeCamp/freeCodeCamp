@@ -1,12 +1,14 @@
-import Jobs from './Jobs';
-import Hikes from './Hikes';
+import jobs from './Jobs';
+import hikes from './Hikes';
+import news from './News';
 import NotFound from '../components/NotFound/index.jsx';
 
 export default {
   path: '/',
   childRoutes: [
-    Jobs,
-    Hikes,
+    jobs,
+    hikes,
+    news,
     {
       path: '*',
       component: NotFound
