@@ -35,16 +35,21 @@ $(document).ready(function() {
             .flatMap(code => common.detectLoops$(code))
             .flatMap(
               ({ err }) => err ? Observable.throw(err) : Observable.just(code)
-            );
+            )
+            .flatMap(code => common.updatePreview$(code))
+            .catch(err => Observable.just({ err }));
         }
-        return Observable.just(code);
+        return Observable.just(code)
+          .flatMap(code => common.updatePreview$(code))
+          .catch(err => Observable.just({ err }));
       })
-      .flatMap(code => common.updatePreview$(code))
-      .catch(err => Observable.just({ err }))
       .subscribe(
         ({ err }) => {
           if (err) {
-            return console.error(err);
+            console.error(err);
+            return common.updatePreview$(`
+              <h1>${err}</h1>
+            `).subscribe(() => {});
           }
         },
         err => console.error(err)
@@ -57,15 +62,20 @@ $(document).ready(function() {
       common.editor.setValue(common.replaceSafeTags(common.seed));
     })
     .flatMap(() => {
-      return common.executeChallenge$();
+      return common.executeChallenge$()
+        .catch(err => Observable.just({ err }));
     })
     .subscribe(
-      ({ output, original }) => {
+      ({ err, output, original }) => {
+        if (err) {
+          console.error(err);
+          return common.updateOutputDisplay('' + err);
+        }
         common.codeStorage.updateStorage(challengeName, original);
         common.updateOutputDisplay('' + output);
       },
-      ({ err }) => {
-        if (err.stack) {
+      (err) => {
+        if (err) {
           console.error(err);
         }
         common.updateOutputDisplay('' + err);
@@ -83,7 +93,7 @@ $(document).ready(function() {
           const solved = tests.every(test => !test.err);
           return { ...rest, tests, solved };
         })
-        .catch(err => Observable.just(err));
+        .catch(err => Observable.just({ err }));
     })
     .subscribe(
       ({ err, solved, output, tests }) => {
