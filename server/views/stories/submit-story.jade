@@ -13,7 +13,7 @@
                 .col-xs-12.col-md-1
                     label.control-label.control-label-story-submission(for='name') Link
                 .col-xs-12.col-md-11
-                    input#story-url.form-control(placeholder='Paste your link here', name='Link')
+                    input#story-url.form-control(name='Link', ng-model='submitStory.url', disabled="disabled", ng-init='submitStory.url="#{storyURL}"')
             .form-group
                 .col-xs-12.col-md-1
                     label.control-label.control-label-story-submission(for='name') Title
