@@ -2291,7 +2291,7 @@
       "tests": [
         "assert($('input[type=\"checkbox\"]').length > 2, 'Your page should have three checkbox elements.')",
         "assert($('label > input[type=\"checkbox\"]:only-child').length > 2, 'Each of your three checkbox elements should be nested in its own <code>label</code> element.')",
-        "assert(editor.match(/<\\/label>/g) && editor.match(/<label/g) && editor.match(/<\\/label>/g).length === editor.match(/<label/g).length, \"Make sure each of your <code>label</code> elements has a closing tag.\")",
+        "assert(editor.match(/<\\/label>/g) && editor.match(/<label/g) && editor.match(/<\\/label>/g).length === editor.match(/<label/g).length, 'Make sure each of your <code>label</code> elements has a closing tag.')",
         "assert($('label > input[type=\"checkbox\"]').filter(\"[name='personality']\").length > 2, 'Give your checkboxes the <code>name</code> attribute of <code>personality</code>.')"
       ],
       "challengeSeed": [
