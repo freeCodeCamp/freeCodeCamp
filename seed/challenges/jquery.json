@@ -550,6 +550,7 @@
         "jQuery also has a similar function called <code>.text()</code> that only alters text without adding tags.",
         "Change the button with id <code>target4</code> by italicizing its text."
       ],
+      "releasedOn": "November 18, 2015",
       "tests": [
         "assert.isTrue((/<i>/gi).test($(\"#target4\").html()), 'Italicize the text in your <code>target4</code> button by adding HTML tags.')",
         "assert($(\"#target4\") && $(\"#target4\").text() === '#target4', 'Make sure the text is otherwise unchanged.')",
