@@ -36,6 +36,7 @@ module.exports = function(app) {
   router.get('/stories', showTestimonials);
   router.get('/all-stories', showAllTestimonials);
   router.get('/links', showLinks);
+  router.get('/the-fastest-web-page-on-the-internet', theFastestWebPageOnTheInternet);
 
   app.use(router);
 
@@ -195,6 +196,12 @@ module.exports = function(app) {
     res.render('resources/links', {
       title: 'Links to external Free Code Camp resources and ' +
       'social media communities'
+    });
+  }
+
+  function theFastestWebPageOnTheInternet(req, res) {
+    res.render('resources/the-fastest-web-page-on-the-internet', {
+      title: 'This is the fastest web page on the internet'
     });
   }
 
