@@ -763,8 +763,8 @@
       "id": "bd7123c9c444eddfaeb5bdef",
       "title": "Declare String Variables",
       "description": [
-        "In the previous challenge, we used the code <code>var myName = \"your name\"</code>. This is what we call a <code>String</code> variable. It is nothing more than a \"string\" of characters. JavaScript strings are always wrapped in quotes.",
-        "Now let's create two new string variables: <code>myFirstName</code> and <code>myLastName</code> and assign them the values of your first and last name, respectively."
+        "Previously we have used the code <code>var myName = \"your name\"</code>. This is what we call a <code>String</code> variable. It is nothing more than a \"string\" of characters. JavaScript strings are always wrapped in quotes.",
+        "<h4>Instructions</h4>Create two new string variables: <code>myFirstName</code> and <code>myLastName</code> and assign them the values of your first and last name, respectively."
       ],
       "tests": [
         "assert((function(){if(typeof(myFirstName) !== \"undefined\" && typeof(myFirstName) === \"string\" && myFirstName.length > 0){return true;}else{return false;}})(), 'message: <code>myFirstName</code> should be a string with at least one character in it.');",
@@ -774,33 +774,40 @@
         "var firstName = \"Alan\";",
         "var lastName = \"Turing\";",
         "",
+        "// Only change code below this line",
         "",
-        "// Only change code above this line.",
         "",
+        ""
+      ],
+      "tail": [
         "if(typeof(myFirstName) !== \"undefined\" && typeof(myLastName) !== \"undefined\"){(function(){return myFirstName + ', ' + myLastName;})();}"
+      ],
+      "solutions": [
+        "var myFirstName = \"Alan\";",
+        "var myLastName = \"Turing\";"
       ],
       "type": "waypoint",
       "challengeType": "1"
     },
     {
-      "id": "56533eb9ac21ba0edf2244b4",
-      "title": "Quoting Strings with Single Quotes",
+      "id": "56533eb9ac21ba0edf2244b5",
+      "title": "Escaping Literal Quotes in Strings",
       "description": [
-        "Show how to use Single Quotes for declaring Strings",
-        "Include escaping single quotes",
-        "Example: Encoding HTML?"
+        "When you are defining a string you must start and end with a double or single quote.  What happens when you need a <dfn>literal</dfn> quote inside of your string?",
+        "In Javascript you can <dfn>escape</dfn> a quote inside a string by placing a <dfn>backslash</dfn> (<code>\\</code>) in front of the quote.  This signals Javascript that the following quote is not the end of the string, but should instead should appear inside the string.",
+        "<h4>Instruction</h4>Use <dfn>backslashes</dfn> to assign the following to <code>myStr</code>:<br /><code>\"I am a \"double quoted\" string inside \"double quotes\"\"</code>"
       ],
       "releasedOn": "11/27/2015",
       "tests": [
-        "assert(1===1, 'message: message here');"
+        "assert(editor.getValue().match(/\\\\\"/g).length === 4 && editor.getValue().match(/[^\\\\]\"/g).length === 2, 'message: You should use two double quotes (<code>&quot;</code>) and four escaped double quotes (<code>&#92;&quot;</code>) ');"
       ],
       "challengeSeed": [
-        "",
+        "var myStr;",
         "",
         ""
       ],
       "solutions": [
-        ""
+        "var myStr = \"I am a \\\"double quoted\\\" string inside \\\"double quotes\\\"\";"
       ],
       "type": "waypoint",
       "challengeType": "1",
@@ -811,24 +818,27 @@
       "namePt": ""
     },
     {
-      "id": "56533eb9ac21ba0edf2244b5",
-      "title": "Quoting Strings with Double Quotes",
+      "id": "56533eb9ac21ba0edf2244b4",
+      "title": "Quoting Strings with Single Quotes",
       "description": [
-        "Show how to use double quotes, including escaping double quotes",
-        "Note: State that Double/Single quotes are identical in JS.",
-        "Note: State that FCC prefers Double Quotes."
+        "<dfn>Strings</dfn> in Javascript may be declared with both single or double quotes, so long as you start and end with the same type of quote.  Unlike some languages, single and double quotes are functionally identical in Javascript.",
+        "<code>\"This string has \\\"double quotes\\\" in it\"</code>",
+        "The value in using one or the other has to do with the need to <dfn>escape</dfn> quotes of the same type.  If you have a string with many double quotes, this can be difficult to write and to read.  Instead, use single quotes:",
+        "<code>'This string has \"double quotes\" in it'</code>",
+        "<h4>Instructions</h4>Change the provided string from double to single quotes and remove the escaping."
       ],
       "releasedOn": "11/27/2015",
       "tests": [
-        "assert(1===1, 'message: message here');"
+        "assert(!/\\\\/g.test(editor.getValue()), 'message: Remove all the <code>backslashes</code> (<code>\\</code>)');",
+        "assert(editor.getValue().match(/\"/g).length === 4 && editor.getValue().match(/'/g).length === 2, 'message: You should have two single quotes <code>&#39;</code> and four double quotes <code>&quot;</code>')"
       ],
       "challengeSeed": [
-        "",
+        "var myStr = \"<a href=\\\"http://www.example.com\\\" target=\\\"_blank\\\">Link</a>\";",
         "",
         ""
       ],
       "solutions": [
-        ""
+        "var myStr = '<a href=\"http://www.example.com\" target=\"_blank\">Link</a>';"
       ],
       "type": "waypoint",
       "challengeType": "1",
@@ -840,9 +850,12 @@
     },
     {
       "id": "56533eb9ac21ba0edf2244b6",
-      "title": "Escape Sequences in String",
+      "title": "Escape Sequences in Strings",
       "description": [
-        "Show more escape sequences than just for double quotes"
+        "Quotes are not the only character than can be <dfn>escaped</dfn> inside a string.  Here is a table of common escape sequences:",
+        "<table class=\"table table-striped\"><thead><tr><th>Code</th><th>Output</th></tr></thead><tbody><tr><td>\\'</td><td>single quote</td></tr><tr><td>\\\"</td><td>double quote</td></tr><tr><td>\\\\</td><td>backslash</td></tr><tr><td>\\n</td><td>new line</td></tr><tr><td>\\r</td><td>carriage return</td></tr><tr><td>\\t</td><td>tab</td></tr><tr><td>\\b</td><td>backspace</td></tr><tr><td>\\f</td><td>form feed</td></tr></tbody></table>",
+        "Note that the backslash itself must be escaped in order to display as a backslash.",
+        "<h4>Instructions</h4>Encode the following sequence in a string, seperated by spaces:<br /> <code>backslash tab tab carriage return new line</code>"
       ],
       "releasedOn": "11/27/2015",
       "tests": [
@@ -866,7 +879,7 @@
     },
     {
       "id": "56533eb9ac21ba0edf2244b7",
-      "title": "Concatanting strings with the Plus Operator",
+      "title": "Concatanting Strings with the Plus Operator",
       "description": [
         "Introduce + operator to build a string from pieces",
         "var myString = \"This is the start. \" + \"This is the end\";"
@@ -893,7 +906,7 @@
     },
     {
       "id": "56533eb9ac21ba0edf2244b8",
-      "title": "Concatanting strings with the Plus Equals Operator",
+      "title": "Concatanting Strings with the Plus Equals Operator",
       "description": [
         "Introduce += Operator to build a string across multiple assignments.",
         "var myString = \"This is the first line. \";",
