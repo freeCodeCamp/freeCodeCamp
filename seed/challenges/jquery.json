@@ -601,7 +601,7 @@
       ],
       "tests": [
         "assert($(\"#target4\").length === 0, 'Use jQuery to remove your <code>target4</code> element from your page.')",
-        "assert(editor.match(/id=\"target4/g), 'Only use jQuery to add these classes to the element.')"
+        "assert(editor.match(/id=\"target4/g), 'Only use jQuery to remove this element.')"
       ],
       "challengeSeed": [
         "fccss",
