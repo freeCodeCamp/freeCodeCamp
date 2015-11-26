@@ -1025,7 +1025,7 @@
       "title": "Generate Random Fractions with JavaScript",
       "description": [
         "Random numbers are useful for creating random behavior.",
-        "JavaScript has a <code>Math.random()</code> function that generates a random decimal number.",
+        "JavaScript has a <code>Math.random()</code> function that generates a random decimal number between 0 and 1.",
         "Change <code>myFunction</code> to return a random number instead of returning <code>0</code>.",
         "Note that you can return a function, just like you would return a variable or value."
       ],
