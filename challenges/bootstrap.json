@@ -2121,7 +2121,7 @@
         "Add a comment at the top of your HTML that says <code>Only change code above this line.</code>"
       ],
       "tests": [
-        "assert(editor.match(/<!--/g) && editor.match(/<!--/g).length > 0, 'Start a comment with <code>&#60;!--</code>.')",
+        "assert(editor.match(/^<!--/) && editor.match(/<!--/g).length > 0, 'Start a comment with <code>&#60;!--</code> at the top of your HTML.')",
         "assert(editor.match(/this line/g) && editor.match(/this line/g).length > 0, 'Your comment should have the text <code>Only change code above this line</code>.')",
         "assert(editor.match(/-->.*\\n+.+/g), 'Be sure to close your comment with <code>--&#62;</code>.')"
       ],
