@@ -46,7 +46,7 @@
     "dotenv": "^1.2.0",
     "errorhandler": "^1.4.2",
     "es6-map": "~0.1.1",
-    "eslint": "~1.9.0",
+    "eslint": "~1.10.2",
     "eslint-plugin-react": "^3.7.1",
     "express": "^4.13.3",
     "express-flash": "~0.0.2",
