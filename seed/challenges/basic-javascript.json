@@ -855,14 +855,14 @@
         "Quotes are not the only character than can be <dfn>escaped</dfn> inside a string.  Here is a table of common escape sequences:",
         "<table class=\"table table-striped\"><thead><tr><th>Code</th><th>Output</th></tr></thead><tbody><tr><td>\\'</td><td>single quote</td></tr><tr><td>\\\"</td><td>double quote</td></tr><tr><td>\\\\</td><td>backslash</td></tr><tr><td>\\n</td><td>new line</td></tr><tr><td>\\r</td><td>carriage return</td></tr><tr><td>\\t</td><td>tab</td></tr><tr><td>\\b</td><td>backspace</td></tr><tr><td>\\f</td><td>form feed</td></tr></tbody></table>",
         "Note that the backslash itself must be escaped in order to display as a backslash.",
-        "<h4>Instructions</h4>Encode the following sequence in a string, seperated by spaces:<br /> <code>backslash tab tab carriage return new line</code>"
+        "<h4>Instructions</h4>Encode the following sequence, seperated by spaces:<br /> <code>backslash tab tab carriage return new line</code> and assign it to <code>myStr</code>"
       ],
       "releasedOn": "11/27/2015",
       "tests": [
-        "assert(1===1, 'message: message here');"
+        "assert(myStr === \"\\\\ \\t \\t \\r \\n\", 'message: <code>myStr</code> should have the escape sequences for <code>backslash tab tab carriage return new line</code> seperated by spaces');"
       ],
       "challengeSeed": [
-        "",
+        "var myStr;",
         "",
         ""
       ],
@@ -881,20 +881,27 @@
       "id": "56533eb9ac21ba0edf2244b7",
       "title": "Concatanting Strings with the Plus Operator",
       "description": [
-        "Introduce + operator to build a string from pieces",
-        "var myString = \"This is the start. \" + \"This is the end\";"
+        "In Javascript the <code>+</code> operator for strings is called the <dfn>concatanation</dfn> operator.  You can build strings out of other strings by <dfn>concatanating</dfn> them together.",
+        "<h4>Instructions</h4>Build <code>myStr</code> from the strings <code>\"This is the start. \"</code> and <code>\"This is the end.\"</code> using the <code>+</code> operator.",
+        ""
       ],
       "releasedOn": "11/27/2015",
       "tests": [
-        "assert(1===1, 'message: message here');"
+        "assert(myStr === \"This is the start. This is the end.\", 'message: <code>myStr</code> should have a value of <code>This is the start. This is the end</code>');",
+        "assert(editor.getValue().match(/\"\\s*\\+\\s*\"/g).length > 1, 'message: Use the <code>+</code> operator to build <code>myStr</code>');"
       ],
       "challengeSeed": [
+        "// Example",
+        "var ourStr = \"I come first. \" + \"I come second.\";",
         "",
+        "// Only change code below this line",
+        "",
+        "var myStr;",
         "",
         ""
       ],
       "solutions": [
-        ""
+        "var myStr = \"This is the start. \" + \"This is the end.\";"
       ],
       "type": "waypoint",
       "challengeType": "1",
@@ -908,21 +915,29 @@
       "id": "56533eb9ac21ba0edf2244b8",
       "title": "Concatanting Strings with the Plus Equals Operator",
       "description": [
-        "Introduce += Operator to build a string across multiple assignments.",
-        "var myString = \"This is the first line. \";",
-        "myString = \"This is the second line.\";"
+        "We can also use the <code>+=</code> operator to concatanae a string onto the end of an existing string.  This can be very helpful to break a long string over several lines.",
+        "<h4>Instructions</h4>",
+        "Build <code>myStr</code> over several lines by concatanating these two strings:<br /><code>\"This is the first line. \"</code> and <code>\"This is the second line.\"</code> using the <code>+=</code> operator."
       ],
       "releasedOn": "11/27/2015",
       "tests": [
-        "assert(1===1, 'message: message here');"
+        "assert(myStr === \"This is the first line. This is the second line.\", 'message: <code>myStr</code> should have a value of <code>This is the first line. This is the second line.</code>');",
+        "assert(editor.getValue().match(/\\w\\s*\\+=\\s*\"/g).length > 1 && editor.getValue().match(/\\w\\s*\\=\\s*\"/g).length > 1, 'message: Use the <code>+=</code> operator to build <code>myStr</code>');"
       ],
       "challengeSeed": [
+        "// Example",
+        "var ourStr = \"I come first. \";",
+        "ourStr += \"I come second.\";",
         "",
+        "// Only change code below this line",
+        "",
+        "var myStr;",
         "",
         ""
       ],
       "solutions": [
-        ""
+        "var myStr = \"This is the first line. \";",
+        "myStr += \"This is the second line.\";"
       ],
       "type": "waypoint",
       "challengeType": "1",
@@ -936,20 +951,28 @@
       "id": "56533eb9ac21ba0edf2244b9",
       "title": "Constructing Strings with Variables",
       "description": [
-        "Use the + operator to buid a string with a variable in it.",
-        "var myString = \"This is a string with \" + aVariable + \" in it!\";"
+        "Sometimes you will need to build a string, <a href=\"https://en.wikipedia.org/wiki/Mad_Libs\">Mad Libs</a> style.  By using the concatanation operator (<code>+</code>) you can insert one or more varaibles into a string you're building.",
+        "<h4>Instructions</h4>Set <code>myName</code> and build <code>myStr</code> with <code>myName</code> between the strings <code>\"My name is \"</code> and <code>\" and I am swell!\"</code>"
       ],
       "releasedOn": "11/27/2015",
       "tests": [
-        "assert(1===1, 'message: message here');"
+        "assert(typeof myName !== 'undefined' && myName.length > 2, 'message: <code>myName</code> should be set to a string at least 3 characters long');",
+        "assert(editor.getValue().match(/\"\\s*\\+\\s*myName\\s*\\+\\s*\"/g).length > 0, 'message: Use two <code>+</code> operators to build <code>myStr</code> with <code>myName<code> inside it');"
       ],
       "challengeSeed": [
+        "// Example",
+        "var ourName = \"Free Code Camp\";",
+        "var ourStr = \"Hello, our name is \" + ourName + \", how are you?\";",
         "",
+        "// Only change code below this line",
+        "var myName;",
+        "var myStr;",
         "",
         ""
       ],
       "solutions": [
-        ""
+        "var myName = \"Bob\";",
+        "var myStr = \"My name is \" + myName + \" and I am swell!\";"
       ],
       "type": "waypoint",
       "challengeType": "1",
@@ -963,21 +986,34 @@
       "id": "56533eb9ac21ba0edf2244ed",
       "title": "Appending Variables to Strings",
       "description": [
-        "Append to a string using the += operator",
-        "var myString = \"SaintPeter is totally: \";",
-        "myString += someAdjective;"
+        "Just as we can build a string over multiple lines out of string <dfn>literals</dfn>, we can also append variables to a string using the plus equals (<code>+=</code>) operator.",
+        "<h4>Instructions</h4>Set <code>someAdjective</code> and append it to <code>myStr</code> using the <code>+=</code> operator."
       ],
       "releasedOn": "11/27/2015",
       "tests": [
-        "assert(1===1, 'message: message here');"
+        "assert(typeof someAdjective !== 'undefined' && someAdjective.length > 2, 'message: <code>someAdjective</code> should be set to a string at least 3 characters long');",
+        "assert(editor.getValue().match(/\\w\\s*\\+=\\s*someAdjective\\s*;/).length > 0, 'message: Append <code>someAdjective</code> to <code>myStr</code> using the <code>+=</code> operator');"
       ],
       "challengeSeed": [
+        "// Example",
+        "var anAdjective = \"awesome!\";",
+        "var ourStr = \"Free Code Camp is \";",
+        "ourStr += anAdjective;",
         "",
+        "// Only change code below this line",
         "",
+        "var someAdjective;",
+        "var myStr = \"Learning to code is \";",
         ""
       ],
       "solutions": [
-        ""
+        "var anAdjective = \"awesome!\";",
+        "var ourStr = \"Free Code Camp is \";",
+        "ourStr += anAdjective;",
+        "",
+        "var someAdjective = \"neat\";",
+        "var myStr = \"Learning to code is \";",
+        "myStr += someAdjective;"
       ],
       "type": "waypoint",
       "challengeType": "1",
@@ -1000,24 +1036,26 @@
         "assert((function(){if(editor.getValue().match(/\\.length/gi) && editor.getValue().match(/\\.length/gi).length >= 2 && editor.getValue().match(/var lastNameLength \\= 0;/gi) && editor.getValue().match(/var lastNameLength \\= 0;/gi).length >= 1){return true;}else{return false;}})(), 'message: You should be getting the length of <code>lastName</code> by using <code>.length</code> like this: <code>lastName.length</code>.');"
       ],
       "challengeSeed": [
+        "// Example",
         "var firstNameLength = 0;",
-        "var lastNameLength = 0;",
         "var firstName = \"Ada\";",
         "",
         "firstNameLength = firstName.length;",
         "",
+        "// Setup",
+        "var lastNameLength = 0;",
         "var lastName = \"Lovelace\";",
         "",
         "// Only change code below this line.",
         "",
         "lastNameLength = lastName;",
         "",
-        "",
-        "",
-        "// Only change code above this line.",
-        "",
+        ""
+      ],
+      "tail": [
         "if(typeof(lastNameLength) !== \"undefined\"){(function(){return lastNameLength;})();}"
       ],
+      "solution": "var lastNameLength = 0;\nvar lastName = \"Lovelace\";\nlastNameLength = lastName.length;",
       "type": "waypoint",
       "challengeType": "1"
     },
@@ -1026,30 +1064,38 @@
       "title": "Use Bracket Notation to Find the First Character in a String",
       "description": [
         "<code>Bracket notation</code> is a way to get a character at a specific <code>index</code> within a string.",
-        "Computers don't start counting at 1 like humans do. They start at 0.",
+        "Computers don't start counting at 1 like humans do. They start at 0.  This is refered to as <dfn>Zero-based</dfn> indexing.",
         "For example, the character at index 0 in the word \"Charles\" is \"C\". So if <code>var firstName = \"Charles\"</code>, you can get the value of the first letter of the string by using <code>firstName[0]</code>.",
-        "Use <code>bracket notation</code> to find the first character in the <code>lastName</code> variable and assign it to <code>firstLetterOfLastName</code>.",
-        "Try looking at the <code>firstLetterOfFirstName</code> variable declaration if you get stuck."
+        "<h4>Instructions</h4>Use <code>bracket notation</code> to find the first character in the <code>lastName</code> variable and assign it to <code>firstLetterOfLastName</code>.",
+        "<strong>Hint</strong><br />Try looking at the <code>firstLetterOfFirstName</code> variable declaration if you get stuck."
       ],
       "tests": [
         "assert((function(){if(typeof(firstLetterOfLastName) !== \"undefined\" && editor.getValue().match(/\\[0\\]/gi) && typeof(firstLetterOfLastName) === \"string\" && firstLetterOfLastName === \"L\"){return true;}else{return false;}})(), 'message: The <code>firstLetterOfLastName</code> variable should have the value of <code>L</code>.');"
       ],
       "challengeSeed": [
+        "// Example",
         "var firstLetterOfFirstName = \"\";",
-        "var firstLetterOfLastName = \"\";",
-        "",
         "var firstName = \"Ada\";",
         "",
         "firstLetterOfFirstName = firstName[0];",
         "",
+        "// Setup",
+        "var firstLetterOfLastName = \"\";",
         "var lastName = \"Lovelace\";",
         "",
+        "// Only change code below this line",
         "firstLetterOfLastName = lastName;",
-        "",
-        "",
-        "// Only change code above this line.",
-        "",
+        ""
+      ],
+      "tail": [
         "(function(v){return v;})(firstLetterOfLastName);"
+      ],
+      "solutions": [
+        "var firstLetterOfLastName = \"\";",
+        "var lastName = \"Lovelace\";",
+        "",
+        "// Only change code below this line",
+        "firstLetterOfLastName = lastName.length"
       ],
       "type": "waypoint",
       "challengeType": "1"
@@ -1058,19 +1104,33 @@
       "id": "56533eb9ac21ba0edf2244ba",
       "title": "Understand String Immutability",
       "description": [
-        "Explain string Immutability"
+        "In Javascript, strings are <dfn>immutable</dfn>, which means that they cannot be changed or modified once created.  For example, this code:",
+        "<code>var myStr = \"Bob\";<br />myStr[0] = \"J\";</code>",
+        "will not change the contents of <code>myStr</code> to \"Job\", because the contents of myStr cannot be altered. Note that this does <em>not</em> mean that <code>myStr</code> cannot be change, just that individual characters cannot be changes. The only way to change <code>myStr</code> would be to overwrite the contents with a new string, like this:",
+        "<code>var myStr = \"Bob\";<br />myStr = \"Job\";</code>",
+        "<h4>Instructions</h4>Correct the assignment to <code>myStr</code> to achieve the desired effect."
       ],
       "releasedOn": "11/27/2015",
       "tests": [
-        "assert(1===1, 'message: message here');"
+        "assert(myStr === \"Hello World\", 'message: <code>myStr</code> should have a value of <code>Hello World</code>');",
+        "assert(/myStr = \"Jello World\"/.test(editor.getValue()), 'message: Do not change the code above the line');"
+      ],
+      "tail": [
+        "(function(v){return \"myStr = \" + v;})(myStr);"
       ],
       "challengeSeed": [
+        "// Setup",
+        "var myStr = \"Jello World\";",
         "",
+        "// Only change code below this line",
+        "",
+        "myStr[0] = \"H\"; // Fix Me",
         "",
         ""
       ],
       "solutions": [
-        ""
+        "var myStr = \"Jello World\";",
+        "myStr = \"Hello World\";"
       ],
       "type": "waypoint",
       "challengeType": "1",
@@ -1086,25 +1146,31 @@
       "description": [
         "You can also use <code>bracket notation</code> to get the character at other positions within a string.",
         "Remember that computers start counting at 0, so the first character is actually the zeroth character.",
-        "Let's try to set <code>thirdLetterOfLastName</code> to equal the <code>third letter</code> of the <code>lastName</code> variable.",
-        "Try looking at the <code>secondLetterOfFirstName</code> variable declaration if you get stuck."
+        "<h4>Instructions</h4>Let's try to set <code>thirdLetterOfLastName</code> to equal the <code>third letter</code> of the <code>lastName</code> variable.",
+        "<strong>Hint</strong><br />Try looking at the <code>secondLetterOfFirstName</code> variable declaration if you get stuck."
       ],
       "tests": [
         "assert(thirdLetterOfLastName === 'v', 'message: The <code>thirdLetterOfLastName</code> variable should have the value of <code>v</code>.');"
       ],
       "challengeSeed": [
+        "// Example",
         "var firstName = \"Ada\";",
-        "",
         "var secondLetterOfFirstName = firstName[1];",
         "",
+        "// Setup",
         "var lastName = \"Lovelace\";",
         "",
+        "// Only change code below this line.",
         "var thirdLetterOfLastName = lastName;",
         "",
-        "",
-        "// Only change code above this line.",
-        "",
+        ""
+      ],
+      "tail": [
         "(function(v){return v;})(thirdLetterOfLastName);"
+      ],
+      "solutions": [
+        "var lastName = \"Lovelace\";",
+        "var thirdLetterOfLastName = lastName[2];"
       ],
       "type": "waypoint",
       "challengeType": "1"
@@ -1115,26 +1181,32 @@
       "description": [
         "In order to get the last letter of a string, you can subtract one from the string's length.",
         "For example, if <code>var firstName = \"Charles\"</code>, you can get the value of the last letter of the string by using <code>firstName[firstName.length - 1]</code>.",
-        "Use <code>bracket notation</code> to find the last character in the <code>lastName</code> variable.",
-        "Try looking at the <code>lastLetterOfFirstName</code> variable declaration if you get stuck."
+        "<h4>Instructions</h4>Use <code>bracket notation</code> to find the last character in the <code>lastName</code> variable.",
+        "<strong>Hint</strong><br />Try looking at the <code>lastLetterOfFirstName</code> variable declaration if you get stuck."
       ],
       "tests": [
         "assert(lastLetterOfLastName === \"e\", 'message: <code>lastLetterOfLastName</code> should be \"e\".');",
         "assert(editor.getValue().match(/\\.length/g).length === 2, 'message: You have to use <code>.length</code> to get the last letter.');"
       ],
       "challengeSeed": [
+        "// Example",
         "var firstName = \"Ada\";",
-        "",
         "var lastLetterOfFirstName = firstName[firstName.length - 1];",
         "",
+        "// Setup",
         "var lastName = \"Lovelace\";",
         "",
+        "// Only change code below this line.",
         "var lastLetterOfLastName = lastName;",
         "",
-        "",
-        "// Only change code above this line.",
-        "",
+        ""
+      ],
+      "tail": [
         "(function(v){return v;})(lastLetterOfLastName);"
+      ],
+      "solutions": [
+        "var lastName = \"Lovelace\";",
+        "var lastLetterOfLastName = lastName[lastName.length - 1];"
       ],
       "type": "waypoint",
       "challengeType": "1"
@@ -1145,50 +1217,79 @@
       "description": [
         "You can use the same principle we just used to retrieve the last character in a string to retrieve the Nth-to-last character.",
         "For example, you can get the value of the third-to-last letter of the <code>var firstName = \"Charles\"</code> string by using <code>firstName[firstName.length - 3]</code>",
-        "Use <code>bracket notation</code> to find the second-to-last character in the <code>lastName</code> string.",
-        "Try looking at the <code>thirdToLastLetterOfFirstName</code> variable declaration if you get stuck."
+        "<h4>Instructions</h4>Use <code>bracket notation</code> to find the second-to-last character in the <code>lastName</code> string.",
+        "  <strong>Hint</strong><br />Try looking at the <code>thirdToLastLetterOfFirstName</code> variable declaration if you get stuck."
       ],
       "tests": [
         "assert(secondToLastLetterOfLastName === 'c', 'message: <code>secondToLastLetterOfLastName</code> should be \"c\".');",
         "assert(editor.getValue().match(/\\.length/g).length === 2, 'message: You have to use <code>.length</code> to get the second last letter.');"
       ],
       "challengeSeed": [
+        "// Example",
         "var firstName = \"Ada\";",
-        "",
         "var thirdToLastLetterOfFirstName = firstName[firstName.length - 3];",
         "",
+        "// Setup",
         "var lastName = \"Lovelace\";",
         "",
+        "// Only change code below this line",
         "var secondToLastLetterOfLastName = lastName;",
         "",
-        "",
-        "// Only change code above this line.",
-        "",
+        ""
+      ],
+      "tail": [
         "(function(v){return v;})(secondToLastLetterOfLastName);"
+      ],
+      "solutions": [
+        "var lastName = \"Lovelace\";",
+        "var secondToLastLetterOfLastName = lastName[lastName.length - 2];"
       ],
       "type": "waypoint",
       "challengeType": "1"
     },
     {
       "id": "56533eb9ac21ba0edf2244bb",
-      "title": "Checkpoint: Strings",
+      "title": "Word Blanks",
       "description": [
-        ""
+        "We will now use our knowledge of strings to build a \"Mad Libs\" style word game we're calling \"Word Blanks\". We have provided a framework for testing your results with different words.  ",
+        "You will need to use string operators to build a new string, <code>result</code>, using the provided variables: ",
+        "<code>myNoun</code>, <code>myAdjative</code>, <code>myVerb</code>, and <code>myAdverb</code>.",
+        "The tests will run your function with several different inputs to make sure it works properly."
       ],
       "releasedOn": "11/27/2015",
       "tests": [
-        "assert(1===1, 'message: message here');"
+        "assert(typeof wordBlanks(\"\",\"\",\"\",\"\") === 'string', 'message: <code>wordBlanks(\"\",\"\",\"\",\"\")</code> should return a string');",
+        "assert(wordBlanks(\"\",\"\",\"\",\"\").length > 50, 'message: <code>wordBlanks(\"\",\"\",\"\",\"\")</code> should return at least 50 characters with empty inputs');",
+        "assert(/dog/.test(test1) && /big/.test(test1) && /ran/.test(test1) && /quickly/.test(test1),'message: <code>wordBlanks(\"dog\", \"big\", \"ran\", \"quickly\")</code> should contain all of the passed words.');",
+        "assert(/cat/.test(test2) && /little/.test(test2) && /hit/.test(test2) && /slowly/.test(test2),'message: <code>wordBlanks(\"cat\", \"little\", \"hit\", \"slowly\")</code> should contain all of the passed words.');"
       ],
       "challengeSeed": [
+        "function wordBlanks(myNoun, myAdjative, myVerb, myAdverb) {",
+        "    var result = \"\";",
+        "    // Your code below this line",
         "",
         "",
-        ""
+        "    // Your code above this line",
+        "\treturn result;",
+        "}",
+        "",
+        "// Change the words here to test your function",
+        "wordBlanks(\"dog\", \"big\", \"ran\", \"quickly\");"
+      ],
+      "tail": [
+        "var test1 = wordBlanks(\"dog\", \"big\", \"ran\", \"quickly\");",
+        "var test2 = wordBlanks(\"cat\", \"little\", \"hit\", \"slowly\");"
       ],
       "solutions": [
-        ""
+        "function wordBlanks(myNoun, myAdjative, myVerb, myAdverb) {",
+        "    var result = \"\";",
+        "    result = \"Once there was a \" + myNoun + \" which was very \" + myAdjative + \". \";",
+        "\tresult += \"It \" + myVerb + \" \" + myAdverb + \" around the yard.\";",
+        "\treturn result;",
+        "}"
       ],
-      "type": "waypoint",
-      "challengeType": "1",
+      "type": "bonfire",
+      "challengeType": "5",
       "nameCn": "",
       "nameFr": "",
       "nameRu": "",
