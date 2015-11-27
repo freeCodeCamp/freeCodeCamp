@@ -48,7 +48,7 @@ window.common = (function(global) {
         return Observable.fromCallback($(preview).ready, $(preview))()
           .first()
           // delay is need here for first initial run
-          .delay(50);
+          .delay(100);
       })
       .map(() => code);
   };
