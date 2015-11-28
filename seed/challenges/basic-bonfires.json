@@ -440,7 +440,7 @@
       "description": [
         "Truncate a string (first argument) if it is longer than the given maximum string length (second argument). Return the truncated string with a \"...\" ending.",
         "Note that the three dots at the end add to the string length.",
-        "If the length of the string is less than or equal to 3 characters, then the length of the three dots is not added to the string length.",
+        "If the <code>num</code> is less than or equal to 3, then the length of the three dots is not added to the string length.",
         "Remember to use <a href=\"//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck\" target=\"_blank\">Read-Search-Ask</a> if you get stuck. Write your own code."
       ],
       "challengeSeed": [
