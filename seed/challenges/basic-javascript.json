@@ -1065,6 +1065,7 @@
         "Let's use this technique to generate and return a random whole number between 0 and 9."
       ],
       "tests": [
+        "assert(editor.getValue().match(/var\\srandomNumberBetween0and19\\s=\\sMath.floor\\(Math.random\\(\\)\\s\\*\\s20\\);/).length == 1, 'message: The first line of code should not be changed.');",
         "assert(typeof(myFunction()) === \"number\" && (function(){var r = myFunction();return Math.floor(r) === r;})(), 'message: The result of <code>myFunction</code> should be a whole number.');",
         "assert(editor.getValue().match(/Math.random/g).length > 1, 'message: You should be using <code>Math.random</code> to generate a random number.');",
         "assert(editor.getValue().match(/\\(\\s*?Math.random\\s*?\\(\\s*?\\)\\s*?\\*\\s*?10\\s*?\\)/g) || editor.getValue().match(/\\(\\s*?10\\s*?\\*\\s*?Math.random\\s*?\\(\\s*?\\)\\s*?\\)/g), 'message: You should have multiplied the result of <code>Math.random</code> by 10 to make it a number that is between zero and nine.');",
