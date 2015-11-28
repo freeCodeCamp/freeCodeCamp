@@ -1301,9 +1301,9 @@
       "title": "Store Multiple Values in one Variable using JavaScript Arrays",
       "description": [
         "With JavaScript <code>array</code> variables, we can store several pieces of data in one place.",
-        "You start an array declaration with an opening square bracket, end it with a closing square bracket, and put a comma between each entry, like this: <code>var sandwich = [\"peanut butter\", \"jelly\", \"bread\"]</code>.",
-        "Now let's create a new array called <code>myArray</code> that contains both a <code>string</code> and a <code>number</code> (in that order).",
-        "Refer to the commented code in the text editor if you get stuck."
+        "You start an array declaration with an opening square bracket, end it with a closing square bracket, and put a comma between each entry, like this:<br /><code>var sandwich = [\"peanut butter\", \"jelly\", \"bread\"]</code>.",
+        "<h4>Instructions</h4>Create a new array called <code>myArray</code> that contains both a <code>string</code> and a <code>number</code> (in that order).",
+        "<strong>Hint</strong><br />Refer to the example code in the text editor if you get stuck."
       ],
       "tests": [
         "assert(typeof(myArray) == 'object', 'message: <code>myArray</code> should be an <code>array</code>.');",
@@ -1311,15 +1311,18 @@
         "assert(typeof(myArray[1]) !== 'undefined' && typeof(myArray[1]) == 'number', 'message: The second item in <code>myArray</code> should be a <code>number</code>.');"
       ],
       "challengeSeed": [
+        "// Example",
         "var array = [\"John\", 23];",
         "",
         "// Only change code below this line.",
-        "",
         "var myArray = [];",
-        "",
-        "// Only change code above this line.",
-        "",
+        ""
+      ],
+      "tail": [
         "(function(z){return z;})(myArray);"
+      ],
+      "solutions": [
+        "var myArray = [\"The Answer\", 42];"
       ],
       "type": "waypoint",
       "challengeType": "1"
@@ -1328,22 +1331,25 @@
       "id": "cf1111c1c11feddfaeb7bdef",
       "title": "Nest one Array within Another Array",
       "description": [
-        "You can also nest arrays within other arrays, like this: <code>[[\"Bulls\", 23]]</code>.",
-        "Let's now go create a nested array called <code>myArray</code>."
+        "You can also nest arrays within other arrays, like this: <code>[[\"Bulls\", 23]]</code>. This is also called a <dfn>Multi-dimensional Array<dfn>.",
+        "<h4>Instructions</h4>Create a nested array called <code>myArray</code>."
       ],
       "tests": [
         "assert(Array.isArray(myArray) && myArray.some(Array.isArray), 'message: <code>myArray</code> should have at least one array nested within another array.');"
       ],
       "challengeSeed": [
+        "// Example",
         "var ourArray = [[\"the universe\", \"everything\", 42]];",
         "",
         "// Only change code below this line.",
-        "",
         "var myArray = [];",
-        "",
-        "// Only change code above this line.",
-        "",
+        ""
+      ],
+      "tail": [
         "if(typeof(myArray) !== \"undefined\"){(function(){return myArray;})();}"
+      ],
+      "solutions": [
+        "var myArray = [[1,2,3]];"
       ],
       "type": "waypoint",
       "challengeType": "1"
@@ -1353,29 +1359,33 @@
       "title": "Access Array Data with Indexes",
       "description": [
         "We can access the data inside arrays using <code>indexes</code>.",
-        "Array indexes are written in the same bracket notation that strings use, except that instead of specifying a character, they are specifying an entry in the array.",
+        "Array indexes are written in the same bracket notation that strings use, except that instead of specifying a character, they are specifying an entry in the array.  Like strings, arrays use <dfn>zero-based</dfn> indexing, so the first element in an array is element <code>0</code>",
         "For example:",
         "<code>var array = [1,2,3];</code>",
         "<code>array[0]; //equals 1</code>",
         "<code>var data = array[1];</code>",
-        "Create a variable called <code>myData</code> and set it to equal the first value of <code>myArray</code>."
+        "<h4>Instructions</h4>Create a variable called <code>myData</code> and set it to equal the first value of <code>myArray</code>."
       ],
       "tests": [
         "assert((function(){if(typeof(myArray) != 'undefined' && typeof(myData) != 'undefined' && myArray[0] == myData){return true;}else{return false;}})(), 'message: The variable <code>myData</code> should equal the first value of <code>myArray</code>.');"
       ],
       "challengeSeed": [
+        "// Example",
         "var ourArray = [1,2,3];",
-        "",
         "var ourData = ourArray[0]; // equals 1",
         "",
+        "// Setup",
         "var myArray = [1,2,3];",
         "",
         "// Only change code below this line.",
-        "",
-        "",
-        "// Only change code above this line.",
-        "",
+        ""
+      ],
+      "tail": [
         "if(typeof(myArray) !== \"undefined\" && typeof(myData) !== \"undefined\"){(function(y,z){return 'myArray = ' + JSON.stringify(y) + ', myData = ' + JSON.stringify(z);})(myArray, myData);}"
+      ],
+      "solutions": [
+        "var myArray = [1,2,3];",
+        "var myData = myArray[0];"
       ],
       "type": "waypoint",
       "challengeType": "1"
@@ -1384,30 +1394,68 @@
       "id": "cf1111c1c11feddfaeb8bdef",
       "title": "Modify Array Data With Indexes",
       "description": [
-        "We can also modify the data stored in arrays by using indexes.",
+        "Unlike strings, the contents of arrays can are <dfn>mutable</dfn> and can be freely changed.",
         "For example:",
         "<code>var ourArray = [3,2,1];</code>",
         "<code>ourArray[0] = 1; // equals [1,2,1]</code>",
-        "Now modify the data stored at index 0 of <code>myArray</code> to the value of 3."
+        "<h4>Instructions</h4>Modify the data stored at index <code>0</code> of <code>myArray</code> to a value of <code>3</code>."
       ],
       "tests": [
         "assert((function(){if(typeof(myArray) != 'undefined' && myArray[0] == 3 && myArray[1] == 2 && myArray[2] == 3){return true;}else{return false;}})(), 'message: <code>myArray</code> should now be [3,2,3].');",
         "assert((function(){if(editor.getValue().match(/myArray\\[0\\]\\s?=\\s?/g)){return true;}else{return false;}})(), 'message: You should be using correct index to modify the value in <code>myArray</code>.');"
       ],
       "challengeSeed": [
+        "// Example",
         "var ourArray = [1,2,3];",
-        "",
         "ourArray[1] = 3; // ourArray now equals [1,3,3].",
         "",
+        "// Setup",
         "var myArray = [1,2,3];",
         "",
         "// Only change code below this line.",
         "",
-        "",
-        "",
-        "// Only change code above this line.",
-        "",
+        ""
+      ],
+      "tail": [
         "if(typeof(myArray) !== \"undefined\"){(function(){return myArray;})();}"
+      ],
+      "solutions": [
+        "var myArray = [1,2,3];",
+        "myArray[0] = 3;"
+      ],
+      "type": "waypoint",
+      "challengeType": "1"
+    },
+    {
+      "id": "56592a60ddddeae28f7aa8e1",
+      "title": "Access Multi-Dimensional Arrays With Indexes",
+      "description": [
+        "One way to think of a <dfn>multi-dimensional</dfn> array, is as an <em>array of arrays</em>. When you use brackets to access your array, the first set of bracket refers to the outer-most array, and each subsequent level of brackets refers to the next level in.",
+        "For example:",
+        "<pre>var arr = [<br />           [1,2,3],<br />           [4,5,6], <br />           [7,8,9], <br />           [[10,11,12], 13, 14]<br />          ];</pre>",
+        "<code>arr[0]; // equals [1,2,3]</code>",
+        "<code>arr[1][2]; // equals 6</code>",
+        "<code>arr[3][0][1]; // equals 11</code>",
+        "<h4>Instructions</h4>Read from <code>myArray</code> using bracket notation so that myData is equal to <code>8</code>"
+      ],
+      "tests": [
+        "assert(myData === 8, 'message: <code>myData</code> should be equal to <code>8</code>.');",
+        "assert(/myArray\\[2\\]\\[1\\]/g.test(editor.getValue()), 'message: You should be using bracket notation to read the value from <code>myArray</code>.');"
+      ],
+      "challengeSeed": [
+        "// Setup",
+        "var myArray = [[1,2,3],[4,5,6], [7,8,9], [[10,11,12], 13, 14]];",
+        "",
+        "// Only change code below this line.",
+        "var myData = myArray[0][0];",
+        ""
+      ],
+      "tail": [
+        "if(typeof(myArray) !== \"undefined\"){(function(){return \"myData: \" + myData + \" myArray: \" + JSON.stringify(myArray);})();}"
+      ],
+      "solutions": [
+        "var myArray = [[1,2,3],[4,5,6], [7,8,9], [[10,11,12], 13, 14]];",
+        "var myData = myArray[2][1];"
       ],
       "type": "waypoint",
       "challengeType": "1"
@@ -1441,6 +1489,12 @@
         "",
         "(function(z){return 'myArray = ' + JSON.stringify(z);})(myArray);"
       ],
+      "tail": [
+        ""
+      ],
+      "solutions": [
+        ""
+      ],
       "type": "waypoint",
       "challengeType": "1"
     },
@@ -1472,6 +1526,12 @@
         "",
         "(function(y, z){return 'myArray = ' + JSON.stringify(y) + ' & removedFromMyArray = ' + JSON.stringify(z);})(myArray, removedFromMyArray);"
       ],
+      "tail": [
+        ""
+      ],
+      "solutions": [
+        ""
+      ],
       "type": "waypoint",
       "challengeType": "1"
     },
@@ -1502,6 +1562,12 @@
         "",
         "",
         "(function(y, z){return 'myArray = ' + JSON.stringify(y) + ' & removedFromMyArray = ' + JSON.stringify(z);})(myArray, removedFromMyArray);"
+      ],
+      "tail": [
+        ""
+      ],
+      "solutions": [
+        ""
       ],
       "type": "waypoint",
       "challengeType": "1"
@@ -1535,6 +1601,12 @@
         "// Only change code above this line.",
         "",
         "(function(y, z){return 'myArray = ' + JSON.stringify(y);})(myArray);"
+      ],
+      "tail": [
+        ""
+      ],
+      "solutions": [
+        ""
       ],
       "type": "waypoint",
       "challengeType": "1"
