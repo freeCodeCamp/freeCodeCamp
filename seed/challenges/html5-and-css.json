@@ -31,6 +31,12 @@
       "descriptionCn": [],
       "nameFr": "",
       "descriptionFr": [],
+      "nameAr": "HTML قل مرحبا لعناصر",
+      "descriptionAr": [
+      "يمكنك تعديل <code>التعليمات البرمجية</code> في <code>محرر النصوص</code>،الذي قمنا بتضمينه داخل صفحة الويب هذه.",
+      "HTML ؟ هذا عنصر<code>&#60;h1&#62;Hello&#60;/h1&#62;</code>  هل ترى التعليمات البرمجية في محرر النصوص والتي تقول",
+      ],
+      "nameRu": "",
       "nameRu": "",
       "descriptionRu": [],
       "nameEs": "Saluda a los Elementos HTML",
