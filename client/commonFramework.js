@@ -1219,7 +1219,7 @@ common.init.push((function() {
     var prevStep = getPreviousStep($(stepClass));
     $(this)
       .parent().parent()
-      .removeClass('fadeOutLeft')
+      .removeClass('slideInLeft slideInRight')
       .addClass('animated fadeOutRight fast-animation')
       .delay(250)
       .queue(function(prev) {
@@ -1227,7 +1227,7 @@ common.init.push((function() {
         if (prevStep) {
           $(prevStep)
             .removeClass('hidden')
-            .removeClass('slideInRight')
+            .removeClass('fadeOutLeft fadeOutRight')
             .addClass('animated slideInLeft fast-animation')
             .delay(500)
             .queue(function(prev) {
@@ -1243,7 +1243,7 @@ common.init.push((function() {
     var nextStep = getNextStep($(stepClass));
     $(this)
       .parent().parent()
-      .removeClass('fadeOutRight')
+      .removeClass('slideInRight slideInLeft')
       .addClass('animated fadeOutLeft fast-animation')
       .delay(250)
       .queue(function(next) {
@@ -1251,7 +1251,7 @@ common.init.push((function() {
         if (nextStep) {
           $(nextStep)
             .removeClass('hidden')
-            .removeClass('slideInLeft')
+            .removeClass('fadeOutRight fadeOutLeft')
             .addClass('animated slideInRight fast-animation')
             .delay(500)
             .queue(function(next) {
