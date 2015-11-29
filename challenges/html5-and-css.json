@@ -2095,7 +2095,8 @@
         "You can require specific form fields so that your user will not be able to submit your form until he or she has filled them out.",
         "For example, if you wanted to make a text input field required, you can just add the word <code>required</code> within your <code>input</code> element, you would use: <code>&#60;input type=\"text\" required&#62;</code>",
         "Make your text <code>input</code> a <code>required</code> field, so that your user can't submit the form without completing this field.",
-        "Then try to submit the form without inputing any text. See how your HTML5 form notifies you that the field is required?"
+        "Then try to submit the form without inputing any text. See how your HTML5 form notifies you that the field is required?",
+        "Note: This field does not work in Safari."
       ],
       "tests": [
         "assert($(\"input\").prop(\"required\"), 'Your text <code>input</code> element should have the <code>required</code> attribute.')"
