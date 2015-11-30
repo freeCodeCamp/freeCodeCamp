@@ -714,7 +714,7 @@
         ""
       ],
       "tail": [
-        "(function(a,b,c){ return \"a = \" + a + \", b = \" + b + \", c = '\" + c + \"'\"; })(a,b,c);"
+        "(function(a,b,c){ return \"a = \" + a + \", b = \" + b + \", c = \" + c; })(a,b,c);"
       ],
       "solutions": [
         "var a = 48;",
@@ -1774,7 +1774,10 @@
       "id": "56533eb9ac21ba0edf2244bf",
       "title": "Local Scope and Functions",
       "description": [
-        "Show how locals are constrained to the function they are created in  Note: Hoisting?"
+        "In Javascript, <code>Scope</code> is the test of variables, object, and functions you have access to.  Variables which are defined within a function and parameters are <dfn>local</dfn>, which means they are only visible within that function. ",
+        "Here is a function <code>test</code> with a local variable called <code>loc</code>.",
+        "<blockquote>function test() {<br />  var loc = \"foo\";<br />  console.log(local1); // \"foo\"<br />}<br />test();<br />console.log(loc); // \"undefined\"</blockquote>",
+        "<code>loc</code> is not defined outside of the function."
       ],
       "releasedOn": "11/27/2015",
       "tests": [
@@ -1999,7 +2002,6 @@
       "nameEs": "",
       "namePt": ""
     },
-
     {
       "id": "cf1111c1c12feddfaeb3bdef",
       "title": "Use Conditional Logic with If Statements",
@@ -2008,7 +2010,7 @@
         "<code>if</code> statements require some sort of boolean condition to evaluate.",
         "For example:",
         "<code>if (1 > 2) {</code>",
-        "<code>&nbsp;&nbsp;console.log(\"Greater Than\");</code>",
+        "<code>&nbsp;&nbsp;return \"Greater Than\";</code>",
         "<code>}</code>",
         "Let's use <code>if</code> and <code>else</code> statements to make a coin-flip game.",
         "Create <code>if</code> and <code>else</code> statements to return the string <code>\"heads\"</code> if the flip variable is zero, or else return the string <code>\"tails\"</code> if the flip variable is not zero."
