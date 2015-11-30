@@ -17,7 +17,9 @@ const routes = [
 
 const devRoutes = [
   '/hikes',
-  '/hikes/*'
+  '/hikes/*',
+  '/challenges/',
+  '/challenges/*'
 ];
 
 export default function reactSubRouter(app) {
