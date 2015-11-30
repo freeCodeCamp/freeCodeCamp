@@ -994,7 +994,7 @@
         "Another type of JavaScript loop is called a \"while loop\", because it runs \"while\" something is true and stops once that something is no longer true.",
         "<code>var ourArray = [];</code>",
         "<code>var i = 0;</code>",
-        "<code>while(i < 5) {</code>",
+        "<code>while (i < 5) {</code>",
         "<code>&nbsp;&nbsp;ourArray.push(i);</code>",
         "<code>&nbsp;&nbsp;i++;</code>",
         "<code>}</code>",
