@@ -550,6 +550,7 @@
         "jQuery also has a similar function called <code>.text()</code> that only alters text without adding tags.",
         "Change the button with id <code>target4</code> by italicizing its text."
       ],
+      "releasedOn": "November 18, 2015",
       "tests": [
         "assert.isTrue((/<i>/gi).test($(\"#target4\").html()), 'Italicize the text in your <code>target4</code> button by adding HTML tags.')",
         "assert($(\"#target4\") && $(\"#target4\").text() === '#target4', 'Make sure the text is otherwise unchanged.')",
@@ -600,7 +601,7 @@
       ],
       "tests": [
         "assert($(\"#target4\").length === 0, 'Use jQuery to remove your <code>target4</code> element from your page.')",
-        "assert(editor.match(/id=\"target4/g), 'Only use jQuery to add these classes to the element.')"
+        "assert(editor.match(/id=\"target4/g), 'Only use jQuery to remove this element.')"
       ],
       "challengeSeed": [
         "fccss",
@@ -972,6 +973,7 @@
         "You can also target all the even-numbered elements.",
         "Here's how you would target all the odd-numbered elements with class <code>target</code> and give them classes:",
         "<code>$(\".target:odd\").addClass(\"animated shake\");</code>",
+        "Note that jQuery is zero-indexed, meaning that, counter-intuitively, <code>:odd</code> selects the second element, fourth element, and so on.",
         "Try selecting all the even-numbered elements and giving them the classes of <code>animated</code> and <code>shake</code>."
       ],
       "tests": [

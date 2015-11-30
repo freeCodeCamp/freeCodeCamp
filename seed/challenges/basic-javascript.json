@@ -1025,7 +1025,7 @@
       "title": "Generate Random Fractions with JavaScript",
       "description": [
         "Random numbers are useful for creating random behavior.",
-        "JavaScript has a <code>Math.random()</code> function that generates a random decimal number.",
+        "JavaScript has a <code>Math.random()</code> function that generates a random decimal number between 0 and 1.",
         "Change <code>myFunction</code> to return a random number instead of returning <code>0</code>.",
         "Note that you can return a function, just like you would return a variable or value."
       ],
@@ -1065,6 +1065,7 @@
         "Let's use this technique to generate and return a random whole number between 0 and 9."
       ],
       "tests": [
+        "assert(editor.getValue().match(/var\\srandomNumberBetween0and19\\s=\\sMath.floor\\(Math.random\\(\\)\\s\\*\\s20\\);/).length == 1, 'message: The first line of code should not be changed.');",
         "assert(typeof myFunction() === \"number\" && (function(){var r = myFunction();return Math.floor(r) === r;})(), 'message: The result of <code>myFunction</code> should be a whole number.');",
         "assert(editor.getValue().match(/Math.random/g).length > 1, 'message: You should be using <code>Math.random</code> to generate a random number.');",
         "assert(editor.getValue().match(/\\(\\s*?Math.random\\s*?\\(\\s*?\\)\\s*?\\*\\s*?10\\s*?\\)/g) || editor.getValue().match(/\\(\\s*?10\\s*?\\*\\s*?Math.random\\s*?\\(\\s*?\\)\\s*?\\)/g), 'message: You should have multiplied the result of <code>Math.random</code> by 10 to make it a number that is between zero and nine.');",
@@ -1143,10 +1144,11 @@
         "We can use <code>if</code> statements in JavaScript to only execute code if a certain condition is met.",
         "<code>if</code> statements require some sort of boolean condition to evaluate.",
         "For example:",
-        "<code>if (1 === 2) {</code>",
-        "<code>&nbsp;&nbsp;return true;</code>",
+        "<code>var x = 1;</code>",
+        "<code>if (x === 2) {</code>",
+        "<code>&nbsp;&nbsp;return 'x is 2';</code>",
         "<code>} else {</code>",
-        "<code>&nbsp;&nbsp;return false;</code>",
+        "<code>&nbsp;&nbsp;return 'x is not 2';</code>",
         "<code>}</code>",
         "Let's use <code>if</code> and <code>else</code> statements to make a coin-flip game.",
         "Create <code>if</code> and <code>else</code> statements to return the string <code>\"heads\"</code> if the flip variable is zero, or else return the string <code>\"tails\"</code> if the flip variable is not zero."

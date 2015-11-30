@@ -153,7 +153,7 @@
       "description": [
         "Return true if the given string is a palindrome. Otherwise, return false.",
         "A palindrome is a word or sentence that's spelled the same way both forward and backward, ignoring punctuation, case, and spacing.",
-        "You'll need to remove punctuation and turn everything lower case in order to check for palindromes.",
+        "You'll need to remove all non-alphanumeric characters (punctuation, spaces and symbols) and turn everything lower case in order to check for palindromes.",
         "We'll pass strings with varying formats, such as \"racecar\", \"RaceCar\", and \"race CAR\" among others.",
         "Remember to use <a href=\"//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck\" target=\"_blank\">Read-Search-Ask</a> if you get stuck. Write your own code."
       ],
@@ -440,7 +440,7 @@
       "description": [
         "Truncate a string (first argument) if it is longer than the given maximum string length (second argument). Return the truncated string with a \"...\" ending.",
         "Note that the three dots at the end add to the string length.",
-        "If the length of the string is less than or equal to 3 characters, then the length of the three dots is not added to the string length.",
+        "If the <code>num</code> is less than or equal to 3, then the length of the three dots is not added to the string length.",
         "Remember to use <a href=\"//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck\" target=\"_blank\">Read-Search-Ask</a> if you get stuck. Write your own code."
       ],
       "challengeSeed": [
@@ -740,6 +740,7 @@
         "assert(where([10, 20, 30, 40, 50], 35) === 3, 'message: <code>where([10, 20, 30, 40, 50], 35)</code> should return <code>3</code>.');",
         "assert(where([10, 20, 30, 40, 50], 30) === 2, 'message: <code>where([10, 20, 30, 40, 50], 30)</code> should return <code>2</code>.');",
         "assert(where([40, 60], 50) === 1, 'message: <code>where([40, 60,], 50)</code> should return <code>1</code>.');",
+        "assert(where([3, 10, 5], 3) === 0, 'message: <code>where([3, 10, 5], 3)</code> should return <code>0</code>.');",
         "assert(where([5, 3, 20, 3], 5) === 2, 'message: <code>where([5, 3, 20, 3], 5)</code> should return <code>2</code>.');",
         "assert(where([2, 20, 10], 19) === 2, 'message: <code>where([2, 20, 10], 19)</code> should return <code>2</code>.');",
         "assert(where([2, 5, 10], 15) === 3, 'message: <code>where([2, 5, 10], 15)</code> should return <code>3</code>.');"
