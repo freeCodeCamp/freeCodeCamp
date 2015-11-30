@@ -25,8 +25,10 @@
     "font-awesome": "~4.3.0",
     "moment": "~2.10.2",
     "angular-bootstrap": "~0.13.0",
-    "ramda": "~0.13.0",
-    "jshint": "~2.7.0",
-    "lightbox2": "~2.8.1"
+    "jshint": "~2.9.0",
+    "lightbox2": "~2.8.1",
+    "rxjs": "~4.0.6",
+    "CodeMirror": "~5.8.0",
+    "chai": "~3.4.1"
   }
 }

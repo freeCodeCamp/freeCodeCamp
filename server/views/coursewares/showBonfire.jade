@@ -1,19 +1,9 @@
 extends ../layout-wide
 block content
-
-    script(type='text/javascript', src='/bower_components/jshint/dist/jshint.js')
-    script(type='text/javascript', src='/js/lib/codemirror/lib/codemirror.js')
-    script(type='text/javascript', src='/js/lib/codemirror/addon/edit/closebrackets.js')
-    script(type='text/javascript', src='/js/lib/codemirror/addon/edit/matchbrackets.js')
-    script(type='text/javascript', src='/js/lib/codemirror/addon/lint/lint.js')
-    script(type='text/javascript', src='/js/lib/codemirror/addon/lint/javascript-lint.js')
-    script(type='text/javascript', src='/js/lib/chai/chai.js')
-    link(rel='stylesheet', href='/js/lib/codemirror/lib/codemirror.css')
-    link(rel='stylesheet', href='/js/lib/codemirror/addon/lint/lint.css')
-    link(rel='stylesheet', href='/js/lib/codemirror/theme/monokai.css')
+    link(rel='stylesheet', href='/bower_components/CodeMirror/lib/codemirror.css')
+    link(rel='stylesheet', href='/bower_components/CodeMirror/addon/lint/lint.css')
+    link(rel='stylesheet', href='/bower_components/CodeMirror/theme/monokai.css')
     link(rel='stylesheet', href='/css/ubuntu.css')
-    script(type='text/javascript', src='/js/lib/codemirror/mode/javascript/javascript.js')
-    script(type='text/javascript', src='/js/lib/jailed/jailed.js')
 
     .row(ng-controller="pairedWithController")
         .col-md-4.col-lg-3
@@ -112,7 +102,7 @@ block content
                     a.btn.btn-lg.btn-primary.btn-block(href='#', data-dismiss='modal', aria-hidden='true') Cancel
     include ../partials/challenge-modals
     script(type="text/javascript").
-      var common = window.common = { init: [] };
+      var common = window.common = window.common || { init: [] };
 
       common.tests = !{JSON.stringify(tests)};
       common.head = !{JSON.stringify(head)};
