@@ -38,10 +38,10 @@
         "<code>console.log(typeof {});</code>"
       ],
       "tests":[
-        "assert(editor.getValue().match(/console\\.log\\(typeof\\(\"\"\\)\\);/gi), 'message: You should <code>console.log</code> the <code>typeof</code> a string.');",
-        "assert(editor.getValue().match(/console\\.log\\(typeof\\(0\\)\\);/gi), 'message: You should <code>console.log</code> the <code>typeof</code> a number.');",
-        "assert(editor.getValue().match(/console\\.log\\(typeof\\(\\[\\]\\)\\);/gi), 'message: You should <code>console.log</code> the <code>typeof</code> an array.');",
-        "assert(editor.getValue().match(/console\\.log\\(typeof\\(\\{\\}\\)\\);/gi), 'message: You should <code>console.log</code> the <code>typeof</code> a object.');"
+        "assert(editor.getValue().match(/console\\.log\\(typeof[\\( ]\"\"\\)?\\);/gi), 'message: You should <code>console.log</code> the <code>typeof</code> a string.');",
+        "assert(editor.getValue().match(/console\\.log\\(typeof[\\( ]0\\)?\\);/gi), 'message: You should <code>console.log</code> the <code>typeof</code> a number.');",
+        "assert(editor.getValue().match(/console\\.log\\(typeof[\\( ]\\[\\]\\)?\\);/gi), 'message: You should <code>console.log</code> the <code>typeof</code> an array.');",
+        "assert(editor.getValue().match(/console\\.log\\(typeof[\\( ]\\{\\}\\)?\\);/gi), 'message: You should <code>console.log</code> the <code>typeof</code> a object.');"
       ],
       "challengeSeed":[
         "",
