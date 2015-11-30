@@ -221,7 +221,6 @@
       "id": "bb000000000000000000004",
       "title":  "Render Images from Data Sources",
       "description": [
-        "In the JSON that we receive data from Free Code Camp's Cat Photo API.",
         "We've seen from the last two lessons that each object in our JSON array contains an <code>imageLink</code> key with a value that is the url of a cat's image.",
         "When we're looping through these objects, let's use this <code>imageLink</code> property to display this image in an <code>img</code> element.",
         "Here's the code that does this:",
