@@ -486,7 +486,7 @@
       "id": "a9bd25c716030ec90084d8a1",
       "title": "Chunky Monkey",
       "description": [
-        "Write a function that splits an array (first argument) into groups the length of size (second argument) and returns them as a multidimensional array.",
+        "Write a function that splits an array (first argument) into groups the length of <code>size</code> (second argument) and returns them as a multidimensional array.",
         "Remember to use <a href=\"//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck\" target=\"_blank\">Read-Search-Ask</a> if you get stuck. Write your own code."
       ],
       "challengeSeed": [
