@@ -19,7 +19,7 @@
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "tests": [
-        "assert.isBoolean(telephoneCheck(\"555-555-5555\"), 'message: should return a boolean.');",
+        "assert(typeof telephoneCheck(\"555-555-5555\") === \"boolean\", 'message: <code>telephoneCheck(\"555-555-5555\")</code> should return a boolean.');",
         "assert(telephoneCheck(\"1 555-555-5555\") === true, 'message: <code>telephoneCheck(\"1 555-555-5555\")</code> should return true.');",
         "assert(telephoneCheck(\"1 (555) 555-5555\") === true, 'message: <code>telephoneCheck(\"1 (555) 555-5555\")</code> should return true.');",
         "assert(telephoneCheck(\"5555555555\") === true, 'message: <code>telephoneCheck(\"5555555555\")</code> should return true.');",
@@ -268,13 +268,13 @@
         "permAlone('aab');"
       ],
       "tests": [
-        "assert.isNumber(permAlone('aab'), 'message: <code>permAlone()</code> should return a number.');",
-        "assert.strictEqual(permAlone('aab'), 2, 'message: <code>permAlone(aab)</code> should return 2.');",
-        "assert.strictEqual(permAlone('aaa'), 0, 'message: <code>permAlone(aaa)</code> should return 0.');",
-        "assert.strictEqual(permAlone('aabb'), 8, 'message: <code>permAlone(aabb)</code> should return 8.');",
-        "assert.strictEqual(permAlone('abcdefa'), 3600, 'message: <code>permAlone(abcdefa)</code> should return 3600.');",
-        "assert.strictEqual(permAlone('abfdefa'), 2640, 'message: <code>permAlone(abfdefa)</code> should return 2640.');",
-        "assert.strictEqual(permAlone('zzzzzzzz'), 0, 'message: <code>permAlone(zzzzzzzz)</code> should return 0.');"
+        "assert.isNumber(permAlone('aab'), 'message: <code>permAlone(\"aab\")</code> should return a number.');",
+        "assert.strictEqual(permAlone('aab'), 2, 'message: <code>permAlone(\"aab\")</code> should return 2.');",
+        "assert.strictEqual(permAlone('aaa'), 0, 'message: <code>permAlone(\"aaa\")</code> should return 0.');",
+        "assert.strictEqual(permAlone('aabb'), 8, 'message: <code>permAlone(\"aabb\")</code> should return 8.');",
+        "assert.strictEqual(permAlone('abcdefa'), 3600, 'message: <code>permAlone(\"abcdefa\")</code> should return 3600.');",
+        "assert.strictEqual(permAlone('abfdefa'), 2640, 'message: <code>permAlone(\"abfdefa\")</code> should return 2640.');",
+        "assert.strictEqual(permAlone('zzzzzzzz'), 0, 'message: <code>permAlone(\"zzzzzzzz\")</code> should return 0.');"
       ],
       "MDNlinks": [
         "Permutations",

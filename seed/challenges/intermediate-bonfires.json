@@ -19,7 +19,7 @@
         "sumAll([1, 4]);"
       ],
       "tests": [
-        "assert(typeof sumAll([1, 4]) === \"number\", 'message: <code>sumAll()</code> should return a number.');",
+        "assert(typeof sumAll([1, 4]) === 'number', 'message: <code>sumAll([1, 4])</code> should return a number.');",
         "assert.deepEqual(sumAll([1, 4]), 10, 'message: <code>sumAll([1, 4])</code> should return 10.');",
         "assert.deepEqual(sumAll([4, 1]), 10, 'message: <code>sumAll([4, 1])</code> should return 10.');",
         "assert.deepEqual(sumAll([5, 10]), 45, 'message: <code>sumAll([5, 10])</code> should return 45.');",
@@ -67,7 +67,7 @@
         "diff([1, 2, 3, 5], [1, 2, 3, 4, 5]);"
       ],
       "tests": [
-        "assert(typeof diff([1, 2, 3, 5], [1, 2, 3, 4, 5]) === \"object\", 'message: <code>diff()</code> should return an array.');",
+        "assert(typeof diff([1, 2, 3, 5], [1, 2, 3, 4, 5]) === \"object\", 'message: <code>diff([1, 2, 3, 5], [1, 2, 3, 4, 5])</code> should return an array.');",
         "assert.sameMembers(diff([\"diorite\", \"andesite\", \"grass\", \"dirt\", \"pink wool\", \"dead shrub\"], [\"diorite\", \"andesite\", \"grass\", \"dirt\", \"dead shrub\"]), [\"pink wool\"], 'message: <code>[\"diorite\", \"andesite\", \"grass\", \"dirt\", \"pink wool\", \"dead shrub\"], [\"diorite\", \"andesite\", \"grass\", \"dirt\", \"dead shrub\"]</code> should return <code>[\"pink wool\"]</code>.');",
         "assert.sameMembers(diff([\"andesite\", \"grass\", \"dirt\", \"pink wool\", \"dead shrub\"], [\"diorite\", \"andesite\", \"grass\", \"dirt\", \"dead shrub\"]), [\"diorite\", \"pink wool\"], 'message: <code>[\"andesite\", \"grass\", \"dirt\", \"pink wool\", \"dead shrub\"], [\"diorite\", \"andesite\", \"grass\", \"dirt\", \"dead shrub\"]</code> should return <code>[\"diorite\", \"pink wool\"]</code>.');",
         "assert.sameMembers(diff([\"andesite\", \"grass\", \"dirt\", \"dead shrub\"], [\"andesite\", \"grass\", \"dirt\", \"dead shrub\"]), [], 'message: <code>[\"andesite\", \"grass\", \"dirt\", \"dead shrub\"], [\"andesite\", \"grass\", \"dirt\", \"dead shrub\"]</code> should return <code>[]</code>.');",
@@ -668,7 +668,7 @@
         "sumPrimes(10);"
       ],
       "tests": [
-        "assert.deepEqual(typeof sumPrimes(10), \"number\", 'message: <code>sumPrimes()</code> should return a number.');",
+        "assert.deepEqual(typeof sumPrimes(10), 'number', 'message: <code>sumPrimes(10)</code> should return a number.');",
         "assert.deepEqual(sumPrimes(10), 17, 'message: <code>sumPrimes(10)</code> should return 17.');",
         "assert.deepEqual(sumPrimes(977), 73156, 'message: <code>sumPrimes(977)</code> should return 73156.');"
       ],
@@ -715,7 +715,7 @@
         "smallestCommons([1,5]);"
       ],
       "tests": [
-        "assert.deepEqual(typeof smallestCommons([1, 5]), \"number\", 'message: <code>smallestCommons()</code> should return a number.');",
+        "assert.deepEqual(typeof smallestCommons([1, 5]), 'number', 'message: <code>smallestCommons([1, 5])</code> should return a number.');",
         "assert.deepEqual(smallestCommons([1, 5]), 60, 'message: <code>smallestCommons([1, 5])</code> should return 60.');",
         "assert.deepEqual(smallestCommons([5, 1]), 60, 'message: <code>smallestCommons([5, 1])</code> should return 60.');",
         "assert.deepEqual(smallestCommons([1, 13]), 360360, 'message: <code>smallestCommons([1, 13])</code> should return 360360.');"
