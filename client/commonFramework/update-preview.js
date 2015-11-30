@@ -18,7 +18,6 @@ window.common = (function(global) {
   rel='stylesheet'
   href='//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css'
   />
-<script src='https://cdn.jsdelivr.net/jquery/1.9.0/jquery.js'></script>
 <style>
   body { padding: 0px 3px 0px 3px; }
 </style>
