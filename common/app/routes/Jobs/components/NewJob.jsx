@@ -42,7 +42,7 @@ const checkValidity = [
   'howToApply'
 ];
 const hightlightCopy = `
-Highlight my post to make it stand out. (+$50)
+Highlight my post to make it stand out. (+$250)
 `;
 
 

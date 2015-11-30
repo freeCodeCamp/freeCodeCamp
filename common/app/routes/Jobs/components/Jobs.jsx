@@ -86,7 +86,7 @@ export default contain(
                     onClick={ ()=> {
                       appActions.updateRoute('/jobs/new');
                     }}>
-                    Post a job: $200 for 30 days
+                    Post a job: $1000
                   </Button>
                   <div className='spacer' />
                 </Col>

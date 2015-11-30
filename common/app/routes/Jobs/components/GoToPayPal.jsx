@@ -21,7 +21,7 @@ export default contain(
       buttonId = isHighlighted ?
         paypalIds.highlighted :
         paypalIds.regular,
-      price = 200,
+      price = 1000,
       discountAmount = 0,
       promoCode = '',
       promoApplied = false,
@@ -92,7 +92,7 @@ export default contain(
           </Col>
           <Col
             md={ 3 }>
-            <h4>+ 50</h4>
+            <h4>+ 250</h4>
           </Col>
         </Row>
       );
@@ -214,7 +214,7 @@ export default contain(
                     <Col
                       md={ 6 }>
                       <h4>${
-                        price - discountAmount + (isHighlighted ? 50 : 0)
+                        price - discountAmount + (isHighlighted ? 250 : 0)
                       }</h4>
                     </Col>
                   </Row>
