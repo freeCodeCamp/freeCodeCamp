@@ -68,7 +68,7 @@
       ],
       "tests": [
         "assert(($(\"h2\").length > 0), 'message: Create an <code>h2</code> element.')",
-        "assert(editor.match(/<\\/h2>/g) && editor.match(/<\\/h2>/g).length === editor.match(/<h2>/g).length, 'message: Make sure your <code>h2</code> element has a closing tag.')",
+        "assert(code.match(/<\\/h2>/g) && code.match(/<\\/h2>/g).length === code.match(/<h2>/g).length, 'message: Make sure your <code>h2</code> element has a closing tag.')",
         "assert.isTrue((/cat(\\s)?photo(\\s)?app/gi).test($(\"h2\").text()), 'message: Your <code>h2</code> element should have the text \"CatPhotoApp\".')",
         "assert.isTrue((/hello(\\s)+world/gi).test($(\"h1\").text()), 'message: Your <code>h1</code> element should have the text \"Hello World\".')"
       ],
@@ -114,7 +114,7 @@
       "tests": [
         "assert(($(\"p\").length > 0), 'message: Create a <code>p</code> element.')",
         "assert.isTrue((/hello(\\s)+paragraph/gi).test($(\"p\").text()), 'message: Your <code>p</code> element should have the text \"Hello Paragraph\".')",
-        "assert(editor.match(/<\\/p>/g) && editor.match(/<\\/p>/g).length === editor.match(/<p/g).length, 'message: Make sure your <code>p</code> element has a closing tag.')"
+        "assert(code.match(/<\\/p>/g) && code.match(/<\\/p>/g).length === code.match(/<p/g).length, 'message: Make sure your <code>p</code> element has a closing tag.')"
       ],
       "challengeSeed": [
         "<h1>Hello World</h1>",
@@ -204,7 +204,7 @@
         "assert(($(\"h1\").length === 0), 'message: Comment out your <code>h1</code> element so that it is not visible on your page.')",
         "assert(($(\"h2\").length > 0), 'message: Leave your <code>h2</code> element uncommented so that it is visible on your page.')",
         "assert(($(\"p\").length === 0), 'message: Comment out your <code>p</code> element so that it is not visible on your page.')",
-        "assert(editor.match(/-->/g).length > 1, 'message: Be sure to close each of your comments with <code>--&#62;</code>.')"
+        "assert(code.match(/-->/g).length > 1, 'message: Be sure to close each of your comments with <code>--&#62;</code>.')"
       ],
       "challengeSeed": [
         "<!--",
@@ -392,8 +392,8 @@
         "assert(!$(\"h2\").attr(\"style\"), 'message: Remove the style attribute from your <code>h2</code> element.')",
         "assert($(\"style\") && $(\"style\").length > 1, 'message: Create a <code>style</code> element.')",
         "assert($(\"h2\").css(\"color\") === \"rgb(0, 0, 255)\", 'message: Your <code>h2</code> element should be blue.')",
-        "assert(editor.match(/h2\\s*\\{\\s*color\\s*:.*;\\s*\\}/g), 'message: Ensure that your stylesheet <code>h2</code> declaration is valid with a semicolon and closing brace.')",
-        "assert(editor.match(/<\\/style>/g) && editor.match(/<\\/style>/g).length === (editor.match(/<style((\\s)*((type|media|scoped|title|disabled)=\"[^\"]*\")?(\\s)*)*>/g) || []).length, 'message: Make sure all your <code>style</code> elements are valid and have a closing tag.')"
+        "assert(code.match(/h2\\s*\\{\\s*color\\s*:.*;\\s*\\}/g), 'message: Ensure that your stylesheet <code>h2</code> declaration is valid with a semicolon and closing brace.')",
+        "assert(code.match(/<\\/style>/g) && code.match(/<\\/style>/g).length === (code.match(/<style((\\s)*((type|media|scoped|title|disabled)=\"[^\"]*\")?(\\s)*)*>/g) || []).length, 'message: Make sure all your <code>style</code> elements are valid and have a closing tag.')"
       ],
       "challengeSeed": [
         "<h2 style=\"color: red\">CatPhotoApp</h2>",
@@ -455,7 +455,7 @@
       "tests": [
         "assert($(\"h2\").css(\"color\") === \"rgb(255, 0, 0)\", 'message: Your <code>h2</code> element should be red.')",
         "assert($(\"h2\").hasClass(\"red-text\"), 'message: Your <code>h2</code> element should have the class <code>red-text</code>.')",
-        "assert(editor.match(/\\.red-text\\s*\\{\\s*color:\\s*red;\\s*\\}/g), 'message: Your stylesheet should declare a <code>red-text</code> class and have its color set to red.')",
+        "assert(code.match(/\\.red-text\\s*\\{\\s*color:\\s*red;\\s*\\}/g), 'message: Your stylesheet should declare a <code>red-text</code> class and have its color set to red.')",
         "assert($(\"h2\").attr(\"style\") === undefined, 'message: Do not use inline style declarations like <code>style=\"color&#58; red\"</code> in your <code>h2</code> element.')"
       ],
       "challengeSeed": [
@@ -578,7 +578,7 @@
       ],
       "tests": [
         "assert($(\"p\").length > 1, 'message: You need 2 <code>p</code> elements with Kitty Ipsum text.')",
-        "assert(editor.match(/<\\/p>/g) && editor.match(/<\\/p>/g).length === editor.match(/<p/g).length, 'message: Make sure each of your <code>p</code> elements has a closing tag.')",
+        "assert(code.match(/<\\/p>/g) && code.match(/<\\/p>/g).length === code.match(/<p/g).length, 'message: Make sure each of your <code>p</code> elements has a closing tag.')",
         "assert.isTrue((/Purr\\s+jump\\s+eat/gi).test($(\"p\").text()), 'message: Your <code>p</code> element should contain the first few words of the provided additional <code>kitty ipsum text</code>.')",
         "assert($(\"p\").css(\"font-size\") === \"16px\", 'message: Give elements with the <code>p</code> tag a <code>font-size</code> of <code>16px</code>.')"
       ],
@@ -1110,7 +1110,7 @@
       ],
       "tests": [
         "assert(parseInt($(\"img\").css(\"border-top-left-radius\")) > 48, 'message: Your image should have a border radius of <code>50&#37;</code>&#44; making it perfectly circular.')",
-        "assert(editor.match(/50%/g), 'message: Be sure to use a percentage instead of a pixel value.')"
+        "assert(code.match(/50%/g), 'message: Be sure to use a percentage instead of a pixel value.')"
       ],
       "challengeSeed": [
         "<link href=\"http://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
@@ -1183,7 +1183,7 @@
       "tests": [
         "assert((/cat photos/gi).test($(\"a\").text()), 'message: Your <code>a</code> element should have the <code>anchor text</code> of \"cat photos\".')",
         "assert(/http:\\/\\/freecatphotoapp\\.com/gi.test($(\"a\").attr(\"href\")), 'message: You need an <code>a</code> element that links to <code>http&#58;//freecatphotoapp.com</code>')",
-        "assert(editor.match(/<\\/a>/g) && editor.match(/<\\/a>/g).length === editor.match(/<a/g).length, 'message: Make sure your <code>a</code> element has a closing tag.')"
+        "assert(code.match(/<\\/a>/g) && code.match(/<\\/a>/g).length === code.match(/<a/g).length, 'message: Make sure your <code>a</code> element has a closing tag.')"
       ],
       "challengeSeed": [
         "<link href=\"http://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
@@ -1265,8 +1265,8 @@
         "assert($(\"a[href=\\\"http://www.freecatphotoapp.com\\\"]\").parent().is(\"p\"), 'message: Your <code>a</code> element should be nested within your new <code>p</code> element.')",
         "assert($(\"a[href=\\\"http://www.freecatphotoapp.com\\\"]\").parent().text().match(/^\\s*View\\smore\\s/gi), 'message: Your <code>p</code> element should have the text \"View more \" (with a space after it).')",
         "assert(!$(\"a\").text().match(/View\\smore/gi), 'message: Your <code>a</code> element should <em>not</em> have the text \"View more\".')",
-        "assert(editor.match(/<\\/p>/g) && editor.match(/<p/g) && editor.match(/<\\/p>/g).length === editor.match(/<p/g).length, 'message: Make sure each of your <code>p</code> elements has a closing tag.')",
-        "assert(editor.match(/<\\/a>/g) && editor.match(/<a/g) && editor.match(/<\\/a>/g).length === editor.match(/<a/g).length, 'message: Make sure each of your <code>a</code> elements has a closing tag.')"
+        "assert(code.match(/<\\/p>/g) && code.match(/<p/g) && code.match(/<\\/p>/g).length === code.match(/<p/g).length, 'message: Make sure each of your <code>p</code> elements has a closing tag.')",
+        "assert(code.match(/<\\/a>/g) && code.match(/<a/g) && code.match(/<\\/a>/g).length === code.match(/<a/g).length, 'message: Make sure each of your <code>a</code> elements has a closing tag.')"
       ],
       "challengeSeed": [
         "<link href=\"http://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
@@ -1416,7 +1416,7 @@
       "tests": [
         "assert($(\"a\").children(\"img.smaller-image\").length > 0, 'message: Nest the existing <code>img</code> element within an <code>a</code> element.')",
         "assert(new RegExp(\"#\").test($(\"a\").children(\"img\").parent().attr(\"href\")), 'message: Your <code>a</code> element should be a dead link with a <code>href</code> attribute set to <code>#</code>.')",
-        "assert(editor.match(/<\\/a>/g) && editor.match(/<a/g) && editor.match(/<\\/a>/g).length === editor.match(/<a/g).length, 'message: Make sure each of your <code>a</code> elements has a closing tag.')"
+        "assert(code.match(/<\\/a>/g) && code.match(/<a/g) && code.match(/<\\/a>/g).length === code.match(/<a/g).length, 'message: Make sure each of your <code>a</code> elements has a closing tag.')"
       ],
       "challengeSeed": [
         "<link href=\"http://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
@@ -1576,8 +1576,8 @@
       "tests": [
         "assert($(\"ul\").length > 0, 'message: Create a <code>ul</code> element.')",
         "assert($(\"ul li\").length > 2, 'message: You should have three <code>li</code> elements within your <code>ul</code> element.')",
-        "assert(editor.match(/<\\/ul>/gi) && editor.match(/<ul/gi) && editor.match(/<\\/ul>/gi).length === editor.match(/<ul/gi).length, 'message: Make sure your <code>ul</code> element has a closing tag.')",
-        "assert(editor.match(/<\\/li>/gi) && editor.match(/<li[\\s>]/gi) && editor.match(/<\\/li>/gi).length === editor.match(/<li[\\s>]/gi).length, 'message: Make sure your <code>li</code> elements have closing tags.')"
+        "assert(code.match(/<\\/ul>/gi) && code.match(/<ul/gi) && code.match(/<\\/ul>/gi).length === code.match(/<ul/gi).length, 'message: Make sure your <code>ul</code> element has a closing tag.')",
+        "assert(code.match(/<\\/li>/gi) && code.match(/<li[\\s>]/gi) && code.match(/<\\/li>/gi).length === code.match(/<li[\\s>]/gi).length, 'message: Make sure your <code>li</code> elements have closing tags.')"
       ],
       "challengeSeed": [
         "<link href=\"http://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
@@ -1665,9 +1665,9 @@
         "assert($(\"ol\").length > 0, 'message: You should have an <code>ol</code> element on your page.')",
         "assert($(\"ul li\").length > 2, 'message: You should have three <code>li</code> elements within your <code>ul</code> element.')",
         "assert($(\"ol li\").length > 2, 'message: You should have three <code>li</code> elements within your <code>ol</code> element.')",
-        "assert(editor.match(/<\\/ul>/g) && editor.match(/<\\/ul>/g).length === editor.match(/<ul>/g).length, 'message: Make sure your <code>ul</code> element has a closing tag.')",
-        "assert(editor.match(/<\\/ol>/g) && editor.match(/<\\/ol>/g).length === editor.match(/<ol>/g).length, 'message: Make sure your <code>ol</code> element has a closing tag.')",
-        "assert(editor.match(/<\\/li>/g) && editor.match(/<li>/g) && editor.match(/<\\/li>/g).length === editor.match(/<li>/g).length, 'message: Make sure your <code>li</code> element has a closing tag.')"
+        "assert(code.match(/<\\/ul>/g) && code.match(/<\\/ul>/g).length === code.match(/<ul>/g).length, 'message: Make sure your <code>ul</code> element has a closing tag.')",
+        "assert(code.match(/<\\/ol>/g) && code.match(/<\\/ol>/g).length === code.match(/<ol>/g).length, 'message: Make sure your <code>ol</code> element has a closing tag.')",
+        "assert(code.match(/<\\/li>/g) && code.match(/<li>/g) && code.match(/<\\/li>/g).length === code.match(/<li>/g).length, 'message: Make sure your <code>li</code> element has a closing tag.')"
       ],
       "challengeSeed": [
         "<link href=\"http://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
@@ -1925,7 +1925,7 @@
       "tests": [
         "assert($(\"form\") && $(\"form\").children(\"input\") && $(\"form\").children(\"input\").length > 0, 'message: Nest your text input element within a <code>form</code> element.')",
         "assert($(\"form\").attr(\"action\") === \"/submit-cat-photo\", 'message: Make sure your <code>form</code> has an <code>action</code> attribute which is set to <code>/submit-cat-photo</code>')",
-        "assert(editor.match(/<\\/form>/g) && editor.match(/<form/g) && editor.match(/<\\/form>/g).length === editor.match(/<form/g).length, 'message: Make sure your <code>form</code> element has a closing tag.')"
+        "assert(code.match(/<\\/form>/g) && code.match(/<form/g) && code.match(/<\\/form>/g).length === code.match(/<form/g).length, 'message: Make sure your <code>form</code> element has a closing tag.')"
       ],
       "challengeSeed": [
         "<link href=\"http://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
@@ -2012,7 +2012,7 @@
         "assert($(\"form\").children(\"button\").length > 0, 'message: Your form should have a button inside it.')",
         "assert($(\"button\").attr(\"type\") === \"submit\", 'message: Your submit button should have the attribute <code>type</code> set to <code>submit</code>.')",
         "assert($(\"button\").text().match(/submit/gi), 'message: Your submit button should have the text \"submit\".')",
-        "assert(editor.match(/<\\/button>/g) && editor.match(/<button/g) && editor.match(/<\\/button>/g).length === editor.match(/<button/g).length, 'message: Make sure your <code>button</code> element has a closing tag.')"
+        "assert(code.match(/<\\/button>/g) && code.match(/<button/g) && code.match(/<\\/button>/g).length === code.match(/<button/g).length, 'message: Make sure your <code>button</code> element has a closing tag.')"
       ],
       "challengeSeed": [
         "<link href=\"http://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
@@ -2192,7 +2192,7 @@
         "assert($('input[type=\"radio\"]').length > 1, 'message: Your page should have two radio button elements.')",
         "assert($('label > input[type=\"radio\"]').filter(\"[name='indoor-outdoor']\").length > 1, 'message: Give your radio buttons the <code>name</code> attribute of <code>indoor-outdoor</code>.')",
         "assert($('label > input[type=\"radio\"]:only-child').length > 1, 'message: Each of your two radio button elements should be nested in its own <code>label</code> element.')",
-        "assert((editor.match(/<\\/label>/g) && editor.match(/<label/g) && editor.match(/<\\/label>/g).length === editor.match(/<label/g).length), 'message: Make sure each of your <code>label</code> elements has a closing tag.')",
+        "assert((code.match(/<\\/label>/g) && code.match(/<label/g) && code.match(/<\\/label>/g).length === code.match(/<label/g).length), 'message: Make sure each of your <code>label</code> elements has a closing tag.')",
         "assert($(\"label\").text().match(/indoor/gi), 'message: One of your radio buttons should have the label <code>indoor</code>.')",
         "assert($(\"label\").text().match(/outdoor/gi), 'message: One of your radio buttons should have the label <code>outdoor</code>.')"
       ],
@@ -2292,7 +2292,7 @@
       "tests": [
         "assert($('input[type=\"checkbox\"]').length > 2, 'message: Your page should have three checkbox elements.')",
         "assert($('label > input[type=\"checkbox\"]:only-child').length > 2, 'message: Each of your three checkbox elements should be nested in its own <code>label</code> element.')",
-        "assert(editor.match(/<\\/label>/g) && editor.match(/<label/g) && editor.match(/<\\/label>/g).length === editor.match(/<label/g).length, 'message: Make sure each of your <code>label</code> elements has a closing tag.')",
+        "assert(code.match(/<\\/label>/g) && code.match(/<label/g) && code.match(/<\\/label>/g).length === code.match(/<label/g).length, 'message: Make sure each of your <code>label</code> elements has a closing tag.')",
         "assert($('label > input[type=\"checkbox\"]').filter(\"[name='personality']\").length > 2, 'message: Give your checkboxes the <code>name</code> attribute of <code>personality</code>.')"
       ],
       "challengeSeed": [
@@ -2482,7 +2482,7 @@
         "assert($(\"div\").children(\"p\").length > 1, 'message: Nest your <code>p</code> element inside your <code>div</code> element.')",
         "assert($(\"div\").children(\"ul\").length > 0, 'message: Nest your <code>ul</code> element inside your <code>div</code> element.')",
         "assert($(\"div\").children(\"ol\").length > 0, 'message: Nest your <code>ol</code> element inside your <code>div</code> element.')",
-        "assert(editor.match(/<\\/div>/g) && editor.match(/<\\/div>/g).length === editor.match(/<div>/g).length, 'message: Make sure your <code>div</code> element has a closing tag.')"
+        "assert(code.match(/<\\/div>/g) && code.match(/<\\/div>/g).length === code.match(/<div>/g).length, 'message: Make sure your <code>div</code> element has a closing tag.')"
       ],
       "challengeSeed": [
         "<link href=\"http://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
@@ -2777,8 +2777,8 @@
       "tests": [
         "assert($(\"form\").attr(\"id\") === \"cat-photo-form\", 'message: Give your <code>form</code> element the id of <code>cat-photo-form</code>.')",
         "assert($(\"#cat-photo-form\").css(\"background-color\") === \"rgb(0, 128, 0)\", 'message: Your <code>form</code> element should have the <code>background-color</code> of green.')",
-        "assert(editor.match(/<form.*cat-photo-form.*>/gi) && editor.match(/<form.*cat-photo-form.*>/gi).length > 0, 'message: Make sure your <code>form</code> element has an <code>id</code> attribute.')",
-        "assert(!editor.match(/<form.*style.*>/gi) && !editor.match(/<form.*class.*>/gi), 'message: Do not give your <code>form</code> any <code>class</code> or <code>style</code> attributes.')"
+        "assert(code.match(/<form.*cat-photo-form.*>/gi) && code.match(/<form.*cat-photo-form.*>/gi).length > 0, 'message: Make sure your <code>form</code> element has an <code>id</code> attribute.')",
+        "assert(!code.match(/<form.*style.*>/gi) && !code.match(/<form.*class.*>/gi), 'message: Do not give your <code>form</code> any <code>class</code> or <code>style</code> attributes.')"
       ],
       "challengeSeed": [
         "<link href=\"http://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
@@ -3407,7 +3407,7 @@
       ],
       "tests": [
         "assert($(\"body\").css(\"background-color\") === \"rgb(0, 0, 0)\", 'message: Give your <code>body</code> element the <code>background-color</code> of black.')",
-        "assert(editor.match(/<style>\\s*body\\s*\\{\\s*background-color\\s*:\\s*black;?\\s*\\}\\s*<\\/style>/i), 'message: Make sure your CSS rule is properly formatted with both and opening and closing curly bracket.')"
+        "assert(code.match(/<style>\\s*body\\s*\\{\\s*background-color\\s*:\\s*black;?\\s*\\}\\s*<\\/style>/i), 'message: Make sure your CSS rule is properly formatted with both and opening and closing curly bracket.')"
       ],
       "challengeSeed": [
         "<style>",
@@ -3450,7 +3450,7 @@
       "tests": [
         "assert(($(\"h1\").length > 0), 'message: Create an <code>h1</code> element.')",
         "assert(($(\"h1\").length > 0 && $(\"h1\").text().match(/hello world/i)), 'message: Your <code>h1</code> element should have the text <code>Hello World</code>.')",
-        "assert(editor.match(/<\\/h1>/g) && editor.match(/<h1/g) && editor.match(/<\\/h1>/g).length === editor.match(/<h1/g).length, 'message: Make sure your <code>h1</code> element has a closing tag.')",
+        "assert(code.match(/<\\/h1>/g) && code.match(/<h1/g) && code.match(/<\\/h1>/g).length === code.match(/<h1/g).length, 'message: Make sure your <code>h1</code> element has a closing tag.')",
         "assert(($(\"body\").css(\"color\") === \"rgb(0, 128, 0)\"), 'message: Give your <code>body</code> element the <code>color</code> property of <code>green</code>.')",
         "assert(($(\"body\").css(\"font-family\").match(/Monospace/i)), 'message: Give your <code>body</code> element the <code>font-family</code> property of <code>Monospace</code>.')",
         "assert(($(\"h1\").length > 0 && $(\"h1\").css(\"font-family\").match(/monospace/i)), 'message: Your <code>h1</code> element should inherit the font <code>Monospace</code> from your <code>body</code> element.')",
@@ -3600,8 +3600,8 @@
         "assert($(\"h1\").hasClass(\"pink-text\"), 'message: Your <code>h1</code> element should have the class <code>pink-text</code>.')",
         "assert($(\"h1\").hasClass(\"blue-text\"), 'message: Your <code>h1</code> element should have the class <code>blue-text</code>.')",
         "assert($(\"h1\").attr(\"id\") === \"orange-text\", 'message: Give your <code>h1</code> element the id of <code>orange-text</code>.')",
-        "assert(editor.match(/#orange-text\\s*{/gi), 'message: Create a CSS declaration for your <code>orange-text</code> id')",
-        "assert(!editor.match(/<h1.*style.*>/gi), 'message: Do not give your <code>h1</code> any <code>style</code> attributes.')",
+        "assert(code.match(/#orange-text\\s*{/gi), 'message: Create a CSS declaration for your <code>orange-text</code> id')",
+        "assert(!code.match(/<h1.*style.*>/gi), 'message: Do not give your <code>h1</code> any <code>style</code> attributes.')",
         "assert($(\"h1\").css(\"color\") === \"rgb(255, 165, 0)\", 'message: Your <code>h1</code> element should be orange.')"
       ],
       "challengeSeed": [
@@ -3660,7 +3660,7 @@
         "assert($(\"h1\").hasClass(\"pink-text\"), 'message: Your <code>h1</code> element should have the class <code>pink-text</code>.')",
         "assert($(\"h1\").hasClass(\"blue-text\"), 'message: Your <code>h1</code> element should have the class <code>blue-text</code>.')",
         "assert($(\"h1\").attr(\"id\") === \"orange-text\", 'message: Your <code>h1</code> element should have the id of <code>orange-text</code>.')",
-        "assert(editor.match(/<h1.*style/gi) && editor.match(/<h1.*style.*color\\s*?:/gi), 'message: Give your <code>h1</code> element the inline style of <code>color&#58; white</code>.')",
+        "assert(code.match(/<h1.*style/gi) && code.match(/<h1.*style.*color\\s*?:/gi), 'message: Give your <code>h1</code> element the inline style of <code>color&#58; white</code>.')",
         "assert($(\"h1\").css(\"color\") === \"rgb(255, 255, 255)\", 'message: Your <code>h1</code> element should be white.')"
       ],
       "challengeSeed": [
@@ -3719,8 +3719,8 @@
         "assert($(\"h1\").hasClass(\"pink-text\"), 'message: Your <code>h1</code> element should have the class <code>pink-text</code>.')",
         "assert($(\"h1\").hasClass(\"blue-text\"), 'message: Your <code>h1</code> element should have the class <code>blue-text</code>.')",
         "assert($(\"h1\").attr(\"id\") === \"orange-text\", 'message: Your <code>h1</code> element should have the id of <code>orange-text</code>.')",
-        "assert(editor.match(/<h1.*style/gi) && editor.match(/<h1.*style.*color\\s*?:/gi), 'message: Your <code>h1</code> element should have the inline style of <code>color&#58; white</code>.')",
-        "assert(editor.match(/pink.*\\!important;/gi), 'message: Your <code>pink-text</code> class should have the <code>!important</code> keyword to override all other declarations.')",
+        "assert(code.match(/<h1.*style/gi) && code.match(/<h1.*style.*color\\s*?:/gi), 'message: Your <code>h1</code> element should have the inline style of <code>color&#58; white</code>.')",
+        "assert(code.match(/pink.*\\!important;/gi), 'message: Your <code>pink-text</code> class should have the <code>!important</code> keyword to override all other declarations.')",
         "assert($(\"h1\").css(\"color\") === \"rgb(255, 192, 203)\", 'message: Your <code>h1</code> element should be pink.')"
       ],
       "challengeSeed": [
@@ -3776,7 +3776,7 @@
       ],
       "tests": [
         "assert($(\"body\").css(\"background-color\") === \"rgb(0, 0, 0)\", 'message: Give your <code>body</code> element the background-color of black.')",
-        "assert(editor.match(/#000000/g) && editor.match(/#000000/g).length > 0, 'message: Use the <code>hex code</code> for the color black instead of the word <code>black</code>. For example <code>body { color&#58; #000000; }</code>')"
+        "assert(code.match(/#000000/g) && code.match(/#000000/g).length > 0, 'message: Use the <code>hex code</code> for the color black instead of the word <code>black</code>. For example <code>body { color&#58; #000000; }</code>')"
       ],
       "challengeSeed": [
         "<style>",
@@ -3815,7 +3815,7 @@
       ],
       "tests": [
         "assert($(\"body\").css(\"background-color\") === \"rgb(255, 255, 255)\", 'message: Your <code>body</code> element should have the <code>background-color</code> of white.')",
-        "assert(editor.match(/#FFFFFF/ig) && editor.match(/#FFFFFF/ig).length > 0, 'message: Use the <code>hex code</code> for the color white instead of the word <code>white</code>. For example <code>body { color&#58; #FFFFFF; }</code>')"
+        "assert(code.match(/#FFFFFF/ig) && code.match(/#FFFFFF/ig).length > 0, 'message: Use the <code>hex code</code> for the color white instead of the word <code>white</code>. For example <code>body { color&#58; #FFFFFF; }</code>')"
       ],
       "challengeSeed": [
         "<style>",
@@ -3855,7 +3855,7 @@
       ],
       "tests": [
         "assert($(\"body\").css(\"background-color\") === \"rgb(255, 0, 0)\", 'message: Give your <code>body</code> element the <code>background-color</code> of red.')",
-        "assert(editor.match(/#FF0000/ig) && editor.match(/#FF0000/ig).length > 0, 'message: Use the <code>hex code</code> for the color red instead of the word <code>red</code>. For example <code>body { color&#58; #FF0000; }</code>')"
+        "assert(code.match(/#FF0000/ig) && code.match(/#FF0000/ig).length > 0, 'message: Use the <code>hex code</code> for the color red instead of the word <code>red</code>. For example <code>body { color&#58; #FF0000; }</code>')"
       ],
       "challengeSeed": [
         "<style>",
@@ -3895,7 +3895,7 @@
       ],
       "tests": [
         "assert($(\"body\").css(\"background-color\") === \"rgb(0, 255, 0)\", 'message: Give your <code>body</code> element the <code>background-color</code> of <code>green</code>.')",
-        "assert(editor.match(/#00FF00/ig) && editor.match(/#00FF00/ig).length > 0, 'message: Use the <code>hex code</code> for the color green instead of the word <code>green</code>. For example <code>body { color&#58; #00FF00; }</code>')"
+        "assert(code.match(/#00FF00/ig) && code.match(/#00FF00/ig).length > 0, 'message: Use the <code>hex code</code> for the color green instead of the word <code>green</code>. For example <code>body { color&#58; #00FF00; }</code>')"
       ],
       "challengeSeed": [
         "<style>",
@@ -3933,7 +3933,7 @@
       ],
       "tests": [
         "assert($(\"body\").css(\"background-color\") === \"rgb(0, 0, 255)\", 'message: Give your <code>body</code> element the <code>background-color</code> of blue.')",
-        "assert(editor.match(/#0000FF/ig) && editor.match(/#0000FF/ig).length > 0, 'message: Use the <code>hex code</code> for the color blue instead of the word <code>blue</code>. For example <code>body { color&#58; #0000FF; }</code>')"
+        "assert(code.match(/#0000FF/ig) && code.match(/#0000FF/ig).length > 0, 'message: Use the <code>hex code</code> for the color blue instead of the word <code>blue</code>. For example <code>body { color&#58; #0000FF; }</code>')"
       ],
       "challengeSeed": [
         "<style>",
@@ -3971,7 +3971,7 @@
       ],
       "tests": [
         "assert($(\"body\").css(\"background-color\") === \"rgb(255, 165, 0)\", 'message: Give your <code>body</code> element the <code>background-color</code> of orange.')",
-        "assert(editor.match(/#FFA500/ig) && editor.match(/#FFA500/ig).length > 0, 'message: Use the <code>hex code</code> for the color orange instead of the word <code>orange</code>. For example <code>body { color&#58; #FFA500; }</code>')"
+        "assert(code.match(/#FFA500/ig) && code.match(/#FFA500/ig).length > 0, 'message: Use the <code>hex code</code> for the color orange instead of the word <code>orange</code>. For example <code>body { color&#58; #FFA500; }</code>')"
       ],
       "challengeSeed": [
         "<style>",
@@ -4009,7 +4009,7 @@
       ],
       "tests": [
         "assert($(\"body\").css(\"background-color\") === \"rgb(128, 128, 128)\", 'message: Give your <code>body</code> element the <code>background-color</code> of gray.')",
-        "assert(editor.match(/#808080/g) && editor.match(/#808080/g).length > 0, 'message: Use the <code>hex code</code> the color gray instead of the word <code>gray</code>. For example <code>body { color&#58; #808080; }</code>')"
+        "assert(code.match(/#808080/g) && code.match(/#808080/g).length > 0, 'message: Use the <code>hex code</code> the color gray instead of the word <code>gray</code>. For example <code>body { color&#58; #808080; }</code>')"
       ],
       "challengeSeed": [
         "<style>",
@@ -4046,7 +4046,7 @@
       ],
       "tests": [
         "assert($(\"body\").css(\"background-color\") === \"rgb(17, 17, 17)\", 'message: Give your <code>body</code> element the <code>background-color</code> of a dark gray.')",
-        "assert(editor.match(/#111111/g) && editor.match(/#111111/g).length > 0, 'message: Use <code>hex code</code> to make a dark gray. For example <code>body { color&#58; #111111; }</code>')"
+        "assert(code.match(/#111111/g) && code.match(/#111111/g).length > 0, 'message: Use <code>hex code</code> to make a dark gray. For example <code>body { color&#58; #111111; }</code>')"
       ],
       "challengeSeed": [
         "<style>",
@@ -4084,7 +4084,7 @@
       ],
       "tests": [
         "assert($(\"body\").css(\"background-color\") === \"rgb(255, 0, 0)\", 'message: Give your <code>body</code> element the <code>background-color</code> of red.')",
-        "assert(editor.match(/#F00/ig) && editor.match(/#F00/ig).length > 0, 'message: Use <code>abbreviated hex code</code> instead of a six-character <code>hex code</code>. For example <code>body { color&#58; #F00; }</code>')"
+        "assert(code.match(/#F00/ig) && code.match(/#F00/ig).length > 0, 'message: Use <code>abbreviated hex code</code> instead of a six-character <code>hex code</code>. For example <code>body { color&#58; #F00; }</code>')"
       ],
       "challengeSeed": [
         "<style>",
@@ -4128,7 +4128,7 @@
       ],
       "tests": [
         "assert($(\"body\").css(\"background-color\") === \"rgb(0, 0, 0)\", 'message: Your <code>body</code> element should have a black background.')",
-        "assert(editor.match(/rgb\\s*\\(\\s*0\\s*,\\s*0\\s*,\\s*0\\s*\\)/ig), 'message: Use <code>rgb</code> to give your <code>body</code> element the <code>background-color</code> of black. For example <code>body { background-color&#58; rgb&#40;0&#44; 0&#44; 0&#41;; }</code>')"
+        "assert(code.match(/rgb\\s*\\(\\s*0\\s*,\\s*0\\s*,\\s*0\\s*\\)/ig), 'message: Use <code>rgb</code> to give your <code>body</code> element the <code>background-color</code> of black. For example <code>body { background-color&#58; rgb&#40;0&#44; 0&#44; 0&#41;; }</code>')"
       ],
       "challengeSeed": [
         "<style>",
@@ -4175,7 +4175,7 @@
       ],
       "tests": [
         "assert($(\"body\").css(\"background-color\") === \"rgb(255, 255, 255)\", 'message: Your <code>body</code> should have a white background.')",
-        "assert(editor.match(/rgb\\s*\\(\\s*255\\s*,\\s*255\\s*,\\s*255\\s*\\)/ig), 'message: Use <code>rgb</code> to give your <code>body</code> element the <code>background-color</code> of white. For example <code>body { background-color&#58; rgb&#40;255&#44; 255 &#44; 255&#41;; }</code>')"
+        "assert(code.match(/rgb\\s*\\(\\s*255\\s*,\\s*255\\s*,\\s*255\\s*\\)/ig), 'message: Use <code>rgb</code> to give your <code>body</code> element the <code>background-color</code> of white. For example <code>body { background-color&#58; rgb&#40;255&#44; 255 &#44; 255&#41;; }</code>')"
       ],
       "challengeSeed": [
         "<style>",
@@ -4216,7 +4216,7 @@
       ],
       "tests": [
         "assert($(\"body\").css(\"background-color\") === \"rgb(255, 0, 0)\", 'message: Your <code>body</code> should have a red background.')",
-        "assert(editor.match(/rgb\\s*\\(\\s*255\\s*,\\s*0\\s*,\\s*0\\s*\\)/ig), 'message: Use <code>rgb</code> to give your <code>body</code> element the <code>background-color</code> of red. For example <code>body { background-color&#58; rgb&#40;255&#44; 0&#44; 0&#41;; }</code>')"
+        "assert(code.match(/rgb\\s*\\(\\s*255\\s*,\\s*0\\s*,\\s*0\\s*\\)/ig), 'message: Use <code>rgb</code> to give your <code>body</code> element the <code>background-color</code> of red. For example <code>body { background-color&#58; rgb&#40;255&#44; 0&#44; 0&#41;; }</code>')"
       ],
       "challengeSeed": [
         "<style>",
@@ -4252,7 +4252,7 @@
       ],
       "tests": [
         "assert($(\"body\").css(\"background-color\") === \"rgb(0, 255, 0)\", 'message: Your <code>body</code> element should have a green background.')",
-        "assert(editor.match(/rgb\\s*\\(\\s*0\\s*,\\s*255\\s*,\\s*0\\s*\\)/ig), 'message: Use <code>rgb</code> to give your <code>body</code> element the <code>background-color</code> of green. For example <code>body { background-color&#58; rgb&#40;0&#44; 255&#44; 0&#41;; }</code>')"
+        "assert(code.match(/rgb\\s*\\(\\s*0\\s*,\\s*255\\s*,\\s*0\\s*\\)/ig), 'message: Use <code>rgb</code> to give your <code>body</code> element the <code>background-color</code> of green. For example <code>body { background-color&#58; rgb&#40;0&#44; 255&#44; 0&#41;; }</code>')"
       ],
       "challengeSeed": [
         "<style>",
@@ -4286,7 +4286,7 @@
       ],
       "tests": [
         "assert($(\"body\").css(\"background-color\") === \"rgb(0, 0, 255)\", 'message: Your <code>body</code> element should have a blue background.')",
-        "assert(editor.match(/rgb\\s*\\(\\s*0\\s*,\\s*0\\s*,\\s*255\\s*\\)/ig), 'message: Use <code>rgb</code> to give your <code>body</code> element the <code>background-color</code> of blue. For example <code>body { background-color&#58; rgb&#40;0&#44; 0&#44; 255&#41;; }</code>')"
+        "assert(code.match(/rgb\\s*\\(\\s*0\\s*,\\s*0\\s*,\\s*255\\s*\\)/ig), 'message: Use <code>rgb</code> to give your <code>body</code> element the <code>background-color</code> of blue. For example <code>body { background-color&#58; rgb&#40;0&#44; 0&#44; 255&#41;; }</code>')"
       ],
       "challengeSeed": [
         "<style>",
@@ -4321,7 +4321,7 @@
       ],
       "tests": [
         "assert($(\"body\").css(\"background-color\") === \"rgb(255, 165, 0)\", 'message: Your <code>body</code> element should have an orange background.')",
-        "assert(editor.match(/rgb\\s*\\(\\s*255\\s*,\\s*165\\s*,\\s*0\\s*\\)/ig), 'message: Use <code>rgb</code> to give your <code>body</code> element the <code>background-color</code> of orange. For example <code>body { background-color&#58; rgb&#40;255&#44; 165&#44; 0&#41;; }</code>')"
+        "assert(code.match(/rgb\\s*\\(\\s*255\\s*,\\s*165\\s*,\\s*0\\s*\\)/ig), 'message: Use <code>rgb</code> to give your <code>body</code> element the <code>background-color</code> of orange. For example <code>body { background-color&#58; rgb&#40;255&#44; 165&#44; 0&#41;; }</code>')"
       ],
       "challengeSeed": [
         "<style>",
