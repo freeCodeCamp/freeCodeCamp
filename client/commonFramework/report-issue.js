@@ -21,11 +21,11 @@ window.common = (function({ common = { init: [] } }) {
       ) {
         var type;
         switch (common.challengeType) {
-          case common.challengeTypes.html:
+          case common.challengeTypes.HTML:
             type = 'html';
             break;
-          case common.challengeTypes.js:
-          case common.challengeTypes.bonfire:
+          case common.challengeTypes.JS:
+          case common.challengeTypes.BONFIRE:
             type = 'javascript';
             break;
           default:
