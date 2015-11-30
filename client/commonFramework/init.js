@@ -102,5 +102,19 @@ window.common = (function(global) {
     });
   };
 
+  const openScript = /\<\s?script\s?\>/gi;
+  const closingScript = /\<\s?\/\s?script\s?\>/gi;
+
+  // detects if there is JavaScript in the first script tag
+  common.hasJs = function hasJs(code) {
+    return !!common.getJsFromHtml(code);
+  };
+
+  // grabs the content from the first script tag in the code
+  common.getJsFromHtml = function getJsFromHtml(code) {
+    // grab user javaScript
+    return (code.split(openScript)[1] || '').split(closingScript)[0] || '';
+  };
+
   return common;
 })(window);

@@ -134,6 +134,7 @@
     "browser-sync": "^2.9.12",
     "chai": "^3.4.0",
     "envify": "^3.4.0",
+    "gulp-sourcemaps": "^1.6.0",
     "istanbul": "~0.4.0",
     "jsonlint": "^1.6.2",
     "loopback-component-explorer": "^2.1.1",

@@ -1,21 +1,43 @@
 /* eslint-disable no-undef, no-unused-vars, no-native-reassign */
-window.__$ = parent.$;
-window.__$(function() {
+// the $ on the iframe window object is the same
+// as the one used on the main site, but
+// uses the iframe document as the context
+window.$(document).ready(function() {
   var _ = parent._;
   var Rx = parent.Rx;
   var chai = parent.chai;
   var assert = chai.assert;
   var tests = parent.tests;
   var common = parent.common;
-  var editor = common.editor.getValue();
-  // change the context of $ so it uses the iFrame for testing
-  var $ = __$.proxy(__$.fn.find, __$(document));
+
+  common.getJsOutput = function evalJs(code = '') {
+    let output;
+    try {
+      /* eslint-disable no-eval */
+      output = eval(code);
+      /* eslint-enable no-eval */
+    } catch (e) {
+      window.__err = e;
+    }
+    return output;
+  };
 
   common.runPreviewTests$ =
-    function runPreviewTests$({ tests = [], ...rest }) {
+    function runPreviewTests$({
+    tests = [],
+    originalCode,
+    ...rest
+  }) {
+      const code = originalCode;
+      const editor = { getValue() { return originalCode; } };
+      if (window.__err) {
+        return Rx.Observable.throw(window.__err);
+      }
+
       return Rx.Observable.from(tests)
         .map(test => {
           const userTest = {};
+          common.appendToOutputDisplay('');
           try {
             /* eslint-disable no-eval */
             eval(test);
@@ -32,12 +54,13 @@ window.__$(function() {
           return userTest;
         })
         .toArray()
-        .map(tests => ({ ...rest, tests }));
+        .map(tests => ({ ...rest, tests, originalCode }));
     };
 
   // now that the runPreviewTest$ is defined
   // we set the subject to true
   // this will let the updatePreview
   // script now that we are ready.
+  console.log('second');
   common.previewReady$.onNext(true);
 });
