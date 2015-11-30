@@ -1622,6 +1622,9 @@
         "",
         ""
       ],
+      "tail": [
+        ""
+      ],
       "solutions": [
         ""
       ],
@@ -1637,37 +1640,59 @@
       "id": "bg9997c9c89feddfaeb9bdef",
       "title": "Write Reusable JavaScript with Functions",
       "description": [
-        "In JavaScript, we can divide up our code into reusable parts called functions.",
+        "In JavaScript, we can divide up our code into reusable parts called <dfn>functions</dfn>.",
         "Here's an example of a function:",
-        "<code>function functionName(a, b) {</code>",
-        "<code>&nbsp;&nbsp;return a + b;</code>",
+        "<code>function functionName() {</code>",
+        "<code>&nbsp;&nbsp;console.log(\"Hello World\");</code>",
         "<code>}</code>",
-        "After writing the above lines in our code, we can then pass values to our function and the result following the <code>return</code> statement will be returned.",
-        "For example, we can pass numbers <code>4</code> and <code>2</code> by “calling” the function later in our code like this: <code>functionName(4, 2)</code>.",
-        "In this example, the function will return the number <code>6</code> as this is the result of <code>4 + 2</code>.",
-        "Create and call a function called <code>myFunction</code> that returns the sum of <code>a</code> and <code>b</code>."
+        "You can call or <dfn>invoke</dfn> this function by using its name followed by parenthese, like this:",
+        "<code>functionName();</code>",
+        "Each time the function is called it will print out the message \"Hello World\" on the dev console. All of the code between the curly braces will be executed every time the function is called.",
+        "<h4>Instructions</h4>Create a function called <code>myFunction</code> which prints \"Hi World\" to the dev console. Call that function."
       ],
       "tests": [
-        "assert((function(){if(typeof(f) !== \"undefined\" && f === a + b){return true;}else{return false;}})(), 'message: Your function should return the value of <code>a + b</code>.');"
+        "assert(typeof myFunction === 'function', 'message: <code>myFunction</code> should be a function');",
+        "console.log(\"1 '\" + logOutput + \"'\", /Hi World/.test(logOutput)); assert(/Hi World/.test(logOutput), 'message: <code>myFunction</code> should output \"Hi World\"');"
       ],
       "challengeSeed": [
-        "var a = 4;",
-        "var b = 5;",
-        "",
-        "function ourFunction(a, b) {",
-        "  return a - b;",
+        "// Example",
+        "function ourFunction() {",
+        "  console.log(\"Heyya, World\");",
         "}",
         "",
-        "// Only change code below this line.",
+        "// Only change code below this line",
+        "",
+        ""
+      ],
+      "tail": [
+        "var logOutput = \"\";",
+        "var oldLog = console.log;",
+        "function capture() {",
+        "    console.log = function (message) {",
+        "        logOutput = message.trim();",
+        "        oldLog.apply(console, arguments);",
+        "    };",
+        "}",
+        "",
+        "function uncapture() {",
+        "  console.log = oldLog;",
+        "}",
         "",
         "",
         "",
-        "",
-        "// Only change code above this line.",
-        "",
-        "if(typeof(myFunction) !== \"undefined\"){",
-        "var f=myFunction(a,b);",
-        "(function(){return f;})();",
+        "if(typeof myFunction !== \"function\") { ",
+        "  (function() { return \"myFunction is not defined\"; })();",
+        "} else {",
+        "  capture();",
+        "  myFunction();  ",
+        "  uncapture();",
+        "  (function() { return logOutput || \"console.log never called\"; })();",
+        "}",
+        ""
+      ],
+      "solutions": [
+        "function myFunction() {",
+        "  console.log(\"Hi World\");",
         "}"
       ],
       "type": "waypoint",
@@ -1677,15 +1702,32 @@
       "id": "56533eb9ac21ba0edf2244bd",
       "title": "Passing Values to Functions with Arguments",
       "description": [
-        "Sometimes called parameters"
+        "Functions can take input in the form of <dfn>parameters</dfn>. <code>Parameters</code> are variables that take on the value of the <dfn>arguments</dfn> which are passed in to the function.  Here is a function with two parameters, <code>param1</code> and <code>param2</code>:",
+        "<code>function testFunct(param1, param2) {</code>",
+        "<code>&nbsp;&nbsp;console.log(param1, param2);</code>",
+        "<code>}</code>",
+        "Then we can call <code>testFunction</code>:",
+        "<code>testFunction(\"Hello\", \"World\");</code>",
+        "We have <dfn>passed</dfn> two arguments, \"Hello\" and \"World\".  Inside the function, <code>param1</code> will equal \"Hello\" and <code>param2</code> will equal \"World\".  Note that you could call <code>testFunction</code> again with different arguments and the parameters would take on the value of the new arguments.",
+        "<h4>Instructions</h4>Create a function called <code>myFunction</code> that accepts two arguements and outputs their sum to <code>console.log</code>"
       ],
       "releasedOn": "11/27/2015",
       "tests": [
-        "assert(1===1, 'message: message here');"
+        "assert((function(){if(typeof(f) !== \"undefined\" && f === a + b){return true;}else{return false;}})(), 'message: Your function should return the value of <code>a + b</code>.');"
       ],
       "challengeSeed": [
+        "// Example",
+        "function ourFunction(a, b) {",
+        "  console.log(a - b);",
+        "}",
+        "ourFunction(10, 5); // Outputs 5",
+        "",
+        "// Only change code below this line.",
         "",
         "",
+        ""
+      ],
+      "tail": [
         ""
       ],
       "solutions": [
@@ -1703,7 +1745,7 @@
       "id": "56533eb9ac21ba0edf2244be",
       "title": "Global Scope and Functions",
       "description": [
-        "Show how globals are availible in functions"
+        "Show how globals are available in functions"
       ],
       "releasedOn": "11/27/2015",
       "tests": [
@@ -1712,6 +1754,9 @@
       "challengeSeed": [
         "",
         "",
+        ""
+      ],
+      "tail": [
         ""
       ],
       "solutions": [
@@ -1738,6 +1783,9 @@
       "challengeSeed": [
         "",
         "",
+        ""
+      ],
+      "tail": [
         ""
       ],
       "solutions": [
@@ -1792,6 +1840,9 @@
         "",
         ""
       ],
+      "tail": [
+        ""
+      ],
       "solutions": [
         ""
       ],
@@ -1816,6 +1867,9 @@
       "challengeSeed": [
         "",
         "",
+        ""
+      ],
+      "tail": [
         ""
       ],
       "solutions": [
@@ -1844,6 +1898,9 @@
         "",
         ""
       ],
+      "tail": [
+        ""
+      ],
       "solutions": [
         ""
       ],
@@ -1857,7 +1914,7 @@
     },
     {
       "id": "56533eb9ac21ba0edf2244c4",
-      "title": "Return Early Pattern",
+      "title": "Return Early Pattern for Functions",
       "description": [
         "Explain how to use return early for functions"
       ],
@@ -1868,6 +1925,9 @@
       "challengeSeed": [
         "",
         "",
+        ""
+      ],
+      "tail": [
         ""
       ],
       "solutions": [
@@ -1896,6 +1956,9 @@
         "",
         ""
       ],
+      "tail": [
+        ""
+      ],
       "solutions": [
         ""
       ],
@@ -1922,78 +1985,7 @@
         "",
         ""
       ],
-      "solutions": [
-        ""
-      ],
-      "type": "waypoint",
-      "challengeType": "1",
-      "nameCn": "",
-      "nameFr": "",
-      "nameRu": "",
-      "nameEs": "",
-      "namePt": ""
-    },
-    {
-      "id": "bg9998c9c99feddfaeb9bdef",
-      "title": "Build JavaScript Objects",
-      "description": [
-        "You may have heard the term <code>object</code> before.",
-        "Objects are similar to <code>arrays</code>, except that instead of using indexes to access and modify their data, you access the data in objects through what are called <code>properties</code>.",
-        "Here's a sample object:",
-        "<code>var cat = {</code>",
-        "<code>&nbsp;&nbsp;\"name\": \"Whiskers\",</code>",
-        "<code>&nbsp;&nbsp;\"legs\": 4,</code>",
-        "<code>&nbsp;&nbsp;\"tails\": 1,</code>",
-        "<code>&nbsp;&nbsp;\"enemies\": [\"Water\", \"Dogs\"]</code>",
-        "<code>};</code>",
-        "</code>",
-        "Objects are useful for storing data in a structured way, and can represent real world objects, like a cat.",
-        "Let's try to make an object that represents a dog called <code>myDog</code> which contains the properties <code>\"name\"</code> (a string), <code>\"legs\"</code>, <code>\"tails\"</code> and <code>\"friends\"</code>.",
-        "You can set these object properties to whatever values you want, as long <code>\"name\"</code> is a string, <code>\"legs\"</code> and <code>\"tails\"</code> are numbers, and <code>\"friends\"</code> is an array."
-      ],
-      "tests": [
-        "assert((function(z){if(z.hasOwnProperty(\"name\") && z.name !== undefined && typeof(z.name) === \"string\"){return true;}else{return false;}})(myDog), 'message: <code>myDog</code> should contain the property <code>name</code> and it should be a <code>string</code>.');",
-        "assert((function(z){if(z.hasOwnProperty(\"legs\") && z.legs !== undefined && typeof(z.legs) === \"number\"){return true;}else{return false;}})(myDog), 'message: <code>myDog</code> should contain the property <code>legs</code> and it should be a <code>number</code>.');",
-        "assert((function(z){if(z.hasOwnProperty(\"tails\") && z.tails !== undefined && typeof(z.tails) === \"number\"){return true;}else{return false;}})(myDog), 'message: <code>myDog</code> should contain the property <code>tails</code> and it should be a <code>number</code>.');",
-        "assert((function(z){if(z.hasOwnProperty(\"friends\") && z.friends !== undefined && Array.isArray(z.friends)){return true;}else{return false;}})(myDog), 'message: <code>myDog</code> should contain the property <code>friends</code> and it should be an <code>array</code>.');"
-      ],
-      "challengeSeed": [
-        "var ourDog = {",
-        "  \"name\": \"Camper\",",
-        "  \"legs\": 4,",
-        "  \"tails\": 1,",
-        "  \"friends\": [\"everything!\"]",
-        "};",
-        "",
-        "// Only change code below this line.",
-        "",
-        "var myDog = {",
-        "",
-        "",
-        "",
-        "",
-        "};",
-        "",
-        "// Only change code above this line.",
-        "",
-        "(function(z){return z;})(myDog);"
-      ],
-      "type": "waypoint",
-      "challengeType": "1"
-    },
-    {
-      "id": "56533eb9ac21ba0edf2244c7",
-      "title": "Accessing Objects Properties with the Dot Operator",
-      "description": [
-        "Show obj.prop"
-      ],
-      "releasedOn": "11/27/2015",
-      "tests": [
-        "assert(1===1, 'message: message here');"
-      ],
-      "challengeSeed": [
-        "",
-        "",
+      "tail": [
         ""
       ],
       "solutions": [
@@ -2007,357 +1999,16 @@
       "nameEs": "",
       "namePt": ""
     },
-    {
-      "id": "56533eb9ac21ba0edf2244c8",
-      "title": "Accessing Objects Properties with Bracket Notation",
-      "description": [
-        "Show obj['property']"
-      ],
-      "releasedOn": "11/27/2015",
-      "tests": [
-        "assert(1===1, 'message: message here');"
-      ],
-      "challengeSeed": [
-        "",
-        "",
-        ""
-      ],
-      "solutions": [
-        ""
-      ],
-      "type": "waypoint",
-      "challengeType": "1",
-      "nameCn": "",
-      "nameFr": "",
-      "nameRu": "",
-      "nameEs": "",
-      "namePt": ""
-    },
-    {
-      "id": "56533eb9ac21ba0edf2244c9",
-      "title": "Accessing Objects Properties with Variables",
-      "description": [
-        "Show obj[propertyVariable]"
-      ],
-      "releasedOn": "11/27/2015",
-      "tests": [
-        "assert(1===1, 'message: message here');"
-      ],
-      "challengeSeed": [
-        "",
-        "",
-        ""
-      ],
-      "solutions": [
-        ""
-      ],
-      "type": "waypoint",
-      "challengeType": "1",
-      "nameCn": "",
-      "nameFr": "",
-      "nameRu": "",
-      "nameEs": "",
-      "namePt": ""
-    },
-    {
-      "id": "bg9999c9c99feddfaeb9bdef",
-      "title": "Deleting Object Properties",
-      "description": [
-        "REWRITE:  Just Delete Object Properties",
-        "After you've created a JavaScript object, you can update its properties at any time just like you would update any other variable.",
-        "For example, let's look at <code>ourDog</code>:",
-        "<code>var ourDog = {</code>",
-        "<code>&nbsp;&nbsp;\"name\": \"Camper\",</code>",
-        "<code>&nbsp;&nbsp;\"legs\": 4,</code>",
-        "<code>&nbsp;&nbsp;\"tails\": 1,</code>",
-        "<code>&nbsp;&nbsp;\"friends\": [\"everything!\"]</code>",
-        "<code>};</code>",
-        "Since he's a particularly happy dog, let's change his name to \"Happy Camper\". Here's how we update his object's name property:",
-        "<code>ourDog.name = \"Happy Camper\";</code>",
-        "Now when we run <code>return ourDog.name</code>, instead of getting \"Camper\", we'll get his new name, \"Happy Camper\".",
-        "Let's update the <code>myDog</code> object's name property. Let's change her name from \"Coder\" to \"Happy Coder\"."
-      ],
-      "tests": [
-        "assert(/happy coder/gi.test(myDog.name), 'message: Update <code>myDog</code>&apos;s <code>\"name\"</code> property to equal \"Happy Coder\".');"
-      ],
-      "challengeSeed": [
-        "var ourDog = {",
-        "  \"name\": \"Camper\",",
-        "  \"legs\": 4,",
-        "  \"tails\": 1,",
-        "  \"friends\": [\"everything!\"]",
-        "};",
-        "",
-        "ourDog.name = \"Happy Camper\";",
-        "",
-        "var myDog = {",
-        "  \"name\": \"Coder\",",
-        "  \"legs\": 4,",
-        "  \"tails\": 1,",
-        "  \"friends\": [\"Free Code Camp Campers\"]",
-        "};",
-        "",
-        "// Only change code below this line.",
-        "",
-        "",
-        "",
-        "// Only change code above this line.",
-        "",
-        "(function(z){return z;})(myDog);"
-      ],
-      "type": "waypoint",
-      "challengeType": "1"
-    },
-    {
-      "id": "bg9999c9c99feedfaeb9bdef",
-      "title": "Add New Properties to a JavaScript Object",
-      "description": [
-        "You can add new properties to existing JavaScript objects the same way you would modify them.",
-        "Here's how we would add a <code>\"bark\"</code> property to <code>ourDog</code>:",
-        "<code>ourDog.bark = \"bow-wow\";</code>",
-        "Now when we run <code>return ourDog.bark</code>, we'll get his bark, \"bow-wow\".",
-        "Let's add a <code>\"bark\"</code> property to <code>myDog</code> and set it to a dog sound, such as \"woof\"."
-      ],
-      "tests": [
-        "assert(myDog.bark !== undefined, 'message: Add the property <code>\"bark\"</code> to <code>myDog</code>.');"
-      ],
-      "challengeSeed": [
-        "var ourDog = {",
-        "  \"name\": \"Camper\",",
-        "  \"legs\": 4,",
-        "  \"tails\": 1,",
-        "  \"friends\": [\"everything!\"]",
-        "};",
-        "",
-        "ourDog.bark = \"bow-wow\";",
-        "",
-        "var myDog = {",
-        "  \"name\": \"Happy Coder\",",
-        "  \"legs\": 4,",
-        "  \"tails\": 1,",
-        "  \"friends\": [\"Free Code Camp Campers\"]",
-        "};",
-        "",
-        "// Only change code below this line.",
-        "",
-        "",
-        "",
-        "// Only change code above this line.",
-        "",
-        "(function(z){return z;})(myDog);"
-      ],
-      "type": "waypoint",
-      "challengeType": "1"
-    },
-    {
-      "id": "bg9999c9c99fdddfaeb9bdef",
-      "title": "Delete Properties from a JavaScript Object",
-      "description": [
-        "We can also delete properties from objects like this:",
-        "<code>delete ourDog.bark;</code>",
-        "Let's delete the <code>\"tails\"</code> property from <code>myDog</code>."
-      ],
-      "tests": [
-        "assert(myDog.tails === undefined, 'message: Delete the property <code>\"tails\"</code> from <code>myDog</code>.');"
-      ],
-      "challengeSeed": [
-        "var ourDog = {",
-        "  \"name\": \"Camper\",",
-        "  \"legs\": 4,",
-        "  \"tails\": 1,",
-        "  \"friends\": [\"everything!\"],",
-        "  \"bark\": \"bow-wow\"",
-        "};",
-        "",
-        "delete ourDog.bark;",
-        "",
-        "var myDog = {",
-        "  \"name\": \"Happy Coder\",",
-        "  \"legs\": 4,",
-        "  \"tails\": 1,",
-        "  \"friends\": [\"Free Code Camp Campers\"],",
-        "  \"bark\": \"woof\"",
-        "};",
-        "",
-        "// Only change code below this line.",
-        "",
-        "",
-        "",
-        "// Only change code above this line.",
-        "",
-        "(function(z){return z;})(myDog);"
-      ],
-      "type": "waypoint",
-      "challengeType": "1"
-    },
-    {
-      "id": "56533eb9ac21ba0edf2244ca",
-      "title": "Using Objects for Lookups",
-      "description": [
-        ""
-      ],
-      "releasedOn": "11/27/2015",
-      "tests": [
-        "assert(1===1, 'message: message here');"
-      ],
-      "challengeSeed": [
-        "",
-        "",
-        ""
-      ],
-      "solutions": [
-        ""
-      ],
-      "type": "waypoint",
-      "challengeType": "1",
-      "nameCn": "",
-      "nameFr": "",
-      "nameRu": "",
-      "nameEs": "",
-      "namePt": ""
-    },
-    {
-      "id": "56533eb9ac21ba0edf2244cb",
-      "title": "Introducing JavaScript Object Notation (JSON)",
-      "description": [
-        "Introduce mixed Array/Object Structures"
-      ],
-      "releasedOn": "11/27/2015",
-      "tests": [
-        "assert(1===1, 'message: message here');"
-      ],
-      "challengeSeed": [
-        "",
-        "",
-        ""
-      ],
-      "solutions": [
-        ""
-      ],
-      "type": "waypoint",
-      "challengeType": "1",
-      "nameCn": "",
-      "nameFr": "",
-      "nameRu": "",
-      "nameEs": "",
-      "namePt": ""
-    },
-    {
-      "id": "56533eb9ac21ba0edf2244cc",
-      "title": "Accessing Nested Objects in JSON",
-      "description": [
-        "myObj.subObject.subSubObject"
-      ],
-      "releasedOn": "11/27/2015",
-      "tests": [
-        "assert(1===1, 'message: message here');"
-      ],
-      "challengeSeed": [
-        "",
-        "",
-        ""
-      ],
-      "solutions": [
-        ""
-      ],
-      "type": "waypoint",
-      "challengeType": "1",
-      "nameCn": "",
-      "nameFr": "",
-      "nameRu": "",
-      "nameEs": "",
-      "namePt": ""
-    },
-    {
-      "id": "56533eb9ac21ba0edf2244cd",
-      "title": "Accessing Nested Arrays in JSON",
-      "description": [
-        "myObj.subArray[n].subObject"
-      ],
-      "releasedOn": "11/27/2015",
-      "tests": [
-        "assert(1===1, 'message: message here');"
-      ],
-      "challengeSeed": [
-        "",
-        "",
-        ""
-      ],
-      "solutions": [
-        ""
-      ],
-      "type": "waypoint",
-      "challengeType": "1",
-      "nameCn": "",
-      "nameFr": "",
-      "nameRu": "",
-      "nameEs": "",
-      "namePt": ""
-    },
-    {
-      "id": "56533eb9ac21ba0edf2244ce",
-      "title": "Arbitrary Nesting in JSON",
-      "description": [
-        "Retrieve a value from an arbitary JSON"
-      ],
-      "releasedOn": "11/27/2015",
-      "tests": [
-        "assert(1===1, 'message: message here');"
-      ],
-      "challengeSeed": [
-        "",
-        "",
-        ""
-      ],
-      "solutions": [
-        ""
-      ],
-      "type": "waypoint",
-      "challengeType": "1",
-      "nameCn": "",
-      "nameFr": "",
-      "nameRu": "",
-      "nameEs": "",
-      "namePt": ""
-    },
-    {
-      "id": "56533eb9ac21ba0edf2244cf",
-      "title": "Checkpoint: Objects",
-      "description": [
-        ""
-      ],
-      "releasedOn": "11/27/2015",
-      "tests": [
-        "assert(1===1, 'message: message here');"
-      ],
-      "challengeSeed": [
-        "",
-        "",
-        ""
-      ],
-      "solutions": [
-        ""
-      ],
-      "type": "waypoint",
-      "challengeType": "1",
-      "nameCn": "",
-      "nameFr": "",
-      "nameRu": "",
-      "nameEs": "",
-      "namePt": ""
-    },
+
     {
       "id": "cf1111c1c12feddfaeb3bdef",
       "title": "Use Conditional Logic with If Statements",
       "description": [
-        "REWRITE: Remove Else Statements",
         "We can use <code>if</code> statements in JavaScript to only execute code if a certain condition is met.",
         "<code>if</code> statements require some sort of boolean condition to evaluate.",
         "For example:",
-        "<code>if (1 === 2) {</code>",
-        "<code>&nbsp;&nbsp;return true;</code>",
-        "<code>} else {</code>",
-        "<code>&nbsp;&nbsp;return false;</code>",
+        "<code>if (1 > 2) {</code>",
+        "<code>&nbsp;&nbsp;console.log(\"Greater Than\");</code>",
         "<code>}</code>",
         "Let's use <code>if</code> and <code>else</code> statements to make a coin-flip game.",
         "Create <code>if</code> and <code>else</code> statements to return the string <code>\"heads\"</code> if the flip variable is zero, or else return the string <code>\"tails\"</code> if the flip variable is not zero."
@@ -2807,6 +2458,454 @@
       "title": "Replacing If/Else chains with Switch",
       "description": [
         "Show how chained if/else statements can be replaced by a single switch statement"
+      ],
+      "releasedOn": "11/27/2015",
+      "tests": [
+        "assert(1===1, 'message: message here');"
+      ],
+      "challengeSeed": [
+        "",
+        "",
+        ""
+      ],
+      "solutions": [
+        ""
+      ],
+      "type": "waypoint",
+      "challengeType": "1",
+      "nameCn": "",
+      "nameFr": "",
+      "nameRu": "",
+      "nameEs": "",
+      "namePt": ""
+    },
+    {
+      "id": "565bbe00e9cc8ac0725390f4",
+      "title": "Checkpoint: Conditional Logic",
+      "description": [
+        "Do something with if and else statements"
+      ],
+      "releasedOn": "11/27/2015",
+      "tests": [
+        "assert(1===1, 'message: message here');"
+      ],
+      "challengeSeed": [
+        "",
+        "",
+        ""
+      ],
+      "solutions": [
+        ""
+      ],
+      "type": "bonfire",
+      "challengeType": "5",
+      "nameCn": "",
+      "nameFr": "",
+      "nameRu": "",
+      "nameEs": "",
+      "namePt": ""
+    },
+    {
+      "id": "bg9998c9c99feddfaeb9bdef",
+      "title": "Build JavaScript Objects",
+      "description": [
+        "You may have heard the term <code>object</code> before.",
+        "Objects are similar to <code>arrays</code>, except that instead of using indexes to access and modify their data, you access the data in objects through what are called <code>properties</code>.",
+        "Here's a sample object:",
+        "<code>var cat = {</code>",
+        "<code>&nbsp;&nbsp;\"name\": \"Whiskers\",</code>",
+        "<code>&nbsp;&nbsp;\"legs\": 4,</code>",
+        "<code>&nbsp;&nbsp;\"tails\": 1,</code>",
+        "<code>&nbsp;&nbsp;\"enemies\": [\"Water\", \"Dogs\"]</code>",
+        "<code>};</code>",
+        "</code>",
+        "Objects are useful for storing data in a structured way, and can represent real world objects, like a cat.",
+        "Let's try to make an object that represents a dog called <code>myDog</code> which contains the properties <code>\"name\"</code> (a string), <code>\"legs\"</code>, <code>\"tails\"</code> and <code>\"friends\"</code>.",
+        "You can set these object properties to whatever values you want, as long <code>\"name\"</code> is a string, <code>\"legs\"</code> and <code>\"tails\"</code> are numbers, and <code>\"friends\"</code> is an array."
+      ],
+      "tests": [
+        "assert((function(z){if(z.hasOwnProperty(\"name\") && z.name !== undefined && typeof(z.name) === \"string\"){return true;}else{return false;}})(myDog), 'message: <code>myDog</code> should contain the property <code>name</code> and it should be a <code>string</code>.');",
+        "assert((function(z){if(z.hasOwnProperty(\"legs\") && z.legs !== undefined && typeof(z.legs) === \"number\"){return true;}else{return false;}})(myDog), 'message: <code>myDog</code> should contain the property <code>legs</code> and it should be a <code>number</code>.');",
+        "assert((function(z){if(z.hasOwnProperty(\"tails\") && z.tails !== undefined && typeof(z.tails) === \"number\"){return true;}else{return false;}})(myDog), 'message: <code>myDog</code> should contain the property <code>tails</code> and it should be a <code>number</code>.');",
+        "assert((function(z){if(z.hasOwnProperty(\"friends\") && z.friends !== undefined && Array.isArray(z.friends)){return true;}else{return false;}})(myDog), 'message: <code>myDog</code> should contain the property <code>friends</code> and it should be an <code>array</code>.');"
+      ],
+      "challengeSeed": [
+        "var ourDog = {",
+        "  \"name\": \"Camper\",",
+        "  \"legs\": 4,",
+        "  \"tails\": 1,",
+        "  \"friends\": [\"everything!\"]",
+        "};",
+        "",
+        "// Only change code below this line.",
+        "",
+        "var myDog = {",
+        "",
+        "",
+        "",
+        "",
+        "};",
+        "",
+        "// Only change code above this line.",
+        "",
+        "(function(z){return z;})(myDog);"
+      ],
+      "tail": [
+        ""
+      ],
+      "solutions": [
+        ""
+      ],
+      "type": "waypoint",
+      "challengeType": "1"
+    },
+    {
+      "id": "56533eb9ac21ba0edf2244c7",
+      "title": "Accessing Objects Properties with the Dot Operator",
+      "description": [
+        "Show obj.prop"
+      ],
+      "releasedOn": "11/27/2015",
+      "tests": [
+        "assert(1===1, 'message: message here');"
+      ],
+      "challengeSeed": [
+        "",
+        "",
+        ""
+      ],
+      "tail": [
+        ""
+      ],
+      "solutions": [
+        ""
+      ],
+      "type": "waypoint",
+      "challengeType": "1",
+      "nameCn": "",
+      "nameFr": "",
+      "nameRu": "",
+      "nameEs": "",
+      "namePt": ""
+    },
+    {
+      "id": "56533eb9ac21ba0edf2244c8",
+      "title": "Accessing Objects Properties with Bracket Notation",
+      "description": [
+        "Show obj['property']"
+      ],
+      "releasedOn": "11/27/2015",
+      "tests": [
+        "assert(1===1, 'message: message here');"
+      ],
+      "challengeSeed": [
+        "",
+        "",
+        ""
+      ],
+      "solutions": [
+        ""
+      ],
+      "type": "waypoint",
+      "challengeType": "1",
+      "nameCn": "",
+      "nameFr": "",
+      "nameRu": "",
+      "nameEs": "",
+      "namePt": ""
+    },
+    {
+      "id": "56533eb9ac21ba0edf2244c9",
+      "title": "Accessing Objects Properties with Variables",
+      "description": [
+        "Show obj[propertyVariable]"
+      ],
+      "releasedOn": "11/27/2015",
+      "tests": [
+        "assert(1===1, 'message: message here');"
+      ],
+      "challengeSeed": [
+        "",
+        "",
+        ""
+      ],
+      "solutions": [
+        ""
+      ],
+      "type": "waypoint",
+      "challengeType": "1",
+      "nameCn": "",
+      "nameFr": "",
+      "nameRu": "",
+      "nameEs": "",
+      "namePt": ""
+    },
+    {
+      "id": "bg9999c9c99feddfaeb9bdef",
+      "title": "Deleting Object Properties",
+      "description": [
+        "REWRITE:  Just Delete Object Properties",
+        "After you've created a JavaScript object, you can update its properties at any time just like you would update any other variable.",
+        "For example, let's look at <code>ourDog</code>:",
+        "<code>var ourDog = {</code>",
+        "<code>&nbsp;&nbsp;\"name\": \"Camper\",</code>",
+        "<code>&nbsp;&nbsp;\"legs\": 4,</code>",
+        "<code>&nbsp;&nbsp;\"tails\": 1,</code>",
+        "<code>&nbsp;&nbsp;\"friends\": [\"everything!\"]</code>",
+        "<code>};</code>",
+        "Since he's a particularly happy dog, let's change his name to \"Happy Camper\". Here's how we update his object's name property:",
+        "<code>ourDog.name = \"Happy Camper\";</code>",
+        "Now when we run <code>return ourDog.name</code>, instead of getting \"Camper\", we'll get his new name, \"Happy Camper\".",
+        "Let's update the <code>myDog</code> object's name property. Let's change her name from \"Coder\" to \"Happy Coder\"."
+      ],
+      "tests": [
+        "assert(/happy coder/gi.test(myDog.name), 'message: Update <code>myDog</code>&apos;s <code>\"name\"</code> property to equal \"Happy Coder\".');"
+      ],
+      "challengeSeed": [
+        "var ourDog = {",
+        "  \"name\": \"Camper\",",
+        "  \"legs\": 4,",
+        "  \"tails\": 1,",
+        "  \"friends\": [\"everything!\"]",
+        "};",
+        "",
+        "ourDog.name = \"Happy Camper\";",
+        "",
+        "var myDog = {",
+        "  \"name\": \"Coder\",",
+        "  \"legs\": 4,",
+        "  \"tails\": 1,",
+        "  \"friends\": [\"Free Code Camp Campers\"]",
+        "};",
+        "",
+        "// Only change code below this line.",
+        "",
+        "",
+        "",
+        "// Only change code above this line.",
+        "",
+        "(function(z){return z;})(myDog);"
+      ],
+      "type": "waypoint",
+      "challengeType": "1"
+    },
+    {
+      "id": "bg9999c9c99feedfaeb9bdef",
+      "title": "Add New Properties to a JavaScript Object",
+      "description": [
+        "You can add new properties to existing JavaScript objects the same way you would modify them.",
+        "Here's how we would add a <code>\"bark\"</code> property to <code>ourDog</code>:",
+        "<code>ourDog.bark = \"bow-wow\";</code>",
+        "Now when we run <code>return ourDog.bark</code>, we'll get his bark, \"bow-wow\".",
+        "Let's add a <code>\"bark\"</code> property to <code>myDog</code> and set it to a dog sound, such as \"woof\"."
+      ],
+      "tests": [
+        "assert(myDog.bark !== undefined, 'message: Add the property <code>\"bark\"</code> to <code>myDog</code>.');"
+      ],
+      "challengeSeed": [
+        "var ourDog = {",
+        "  \"name\": \"Camper\",",
+        "  \"legs\": 4,",
+        "  \"tails\": 1,",
+        "  \"friends\": [\"everything!\"]",
+        "};",
+        "",
+        "ourDog.bark = \"bow-wow\";",
+        "",
+        "var myDog = {",
+        "  \"name\": \"Happy Coder\",",
+        "  \"legs\": 4,",
+        "  \"tails\": 1,",
+        "  \"friends\": [\"Free Code Camp Campers\"]",
+        "};",
+        "",
+        "// Only change code below this line.",
+        "",
+        "",
+        "",
+        "// Only change code above this line.",
+        "",
+        "(function(z){return z;})(myDog);"
+      ],
+      "type": "waypoint",
+      "challengeType": "1"
+    },
+    {
+      "id": "bg9999c9c99fdddfaeb9bdef",
+      "title": "Delete Properties from a JavaScript Object",
+      "description": [
+        "We can also delete properties from objects like this:",
+        "<code>delete ourDog.bark;</code>",
+        "Let's delete the <code>\"tails\"</code> property from <code>myDog</code>."
+      ],
+      "tests": [
+        "assert(myDog.tails === undefined, 'message: Delete the property <code>\"tails\"</code> from <code>myDog</code>.');"
+      ],
+      "challengeSeed": [
+        "var ourDog = {",
+        "  \"name\": \"Camper\",",
+        "  \"legs\": 4,",
+        "  \"tails\": 1,",
+        "  \"friends\": [\"everything!\"],",
+        "  \"bark\": \"bow-wow\"",
+        "};",
+        "",
+        "delete ourDog.bark;",
+        "",
+        "var myDog = {",
+        "  \"name\": \"Happy Coder\",",
+        "  \"legs\": 4,",
+        "  \"tails\": 1,",
+        "  \"friends\": [\"Free Code Camp Campers\"],",
+        "  \"bark\": \"woof\"",
+        "};",
+        "",
+        "// Only change code below this line.",
+        "",
+        "",
+        "",
+        "// Only change code above this line.",
+        "",
+        "(function(z){return z;})(myDog);"
+      ],
+      "type": "waypoint",
+      "challengeType": "1"
+    },
+    {
+      "id": "56533eb9ac21ba0edf2244ca",
+      "title": "Using Objects for Lookups",
+      "description": [
+        ""
+      ],
+      "releasedOn": "11/27/2015",
+      "tests": [
+        "assert(1===1, 'message: message here');"
+      ],
+      "challengeSeed": [
+        "",
+        "",
+        ""
+      ],
+      "solutions": [
+        ""
+      ],
+      "type": "waypoint",
+      "challengeType": "1",
+      "nameCn": "",
+      "nameFr": "",
+      "nameRu": "",
+      "nameEs": "",
+      "namePt": ""
+    },
+    {
+      "id": "56533eb9ac21ba0edf2244cb",
+      "title": "Introducing JavaScript Object Notation (JSON)",
+      "description": [
+        "Introduce mixed Array/Object Structures"
+      ],
+      "releasedOn": "11/27/2015",
+      "tests": [
+        "assert(1===1, 'message: message here');"
+      ],
+      "challengeSeed": [
+        "",
+        "",
+        ""
+      ],
+      "solutions": [
+        ""
+      ],
+      "type": "waypoint",
+      "challengeType": "1",
+      "nameCn": "",
+      "nameFr": "",
+      "nameRu": "",
+      "nameEs": "",
+      "namePt": ""
+    },
+    {
+      "id": "56533eb9ac21ba0edf2244cc",
+      "title": "Accessing Nested Objects in JSON",
+      "description": [
+        "myObj.subObject.subSubObject"
+      ],
+      "releasedOn": "11/27/2015",
+      "tests": [
+        "assert(1===1, 'message: message here');"
+      ],
+      "challengeSeed": [
+        "",
+        "",
+        ""
+      ],
+      "solutions": [
+        ""
+      ],
+      "type": "waypoint",
+      "challengeType": "1",
+      "nameCn": "",
+      "nameFr": "",
+      "nameRu": "",
+      "nameEs": "",
+      "namePt": ""
+    },
+    {
+      "id": "56533eb9ac21ba0edf2244cd",
+      "title": "Accessing Nested Arrays in JSON",
+      "description": [
+        "myObj.subArray[n].subObject"
+      ],
+      "releasedOn": "11/27/2015",
+      "tests": [
+        "assert(1===1, 'message: message here');"
+      ],
+      "challengeSeed": [
+        "",
+        "",
+        ""
+      ],
+      "solutions": [
+        ""
+      ],
+      "type": "waypoint",
+      "challengeType": "1",
+      "nameCn": "",
+      "nameFr": "",
+      "nameRu": "",
+      "nameEs": "",
+      "namePt": ""
+    },
+    {
+      "id": "56533eb9ac21ba0edf2244ce",
+      "title": "Arbitrary Nesting in JSON",
+      "description": [
+        "Retrieve a value from an arbitary JSON"
+      ],
+      "releasedOn": "11/27/2015",
+      "tests": [
+        "assert(1===1, 'message: message here');"
+      ],
+      "challengeSeed": [
+        "",
+        "",
+        ""
+      ],
+      "solutions": [
+        ""
+      ],
+      "type": "waypoint",
+      "challengeType": "1",
+      "nameCn": "",
+      "nameFr": "",
+      "nameRu": "",
+      "nameEs": "",
+      "namePt": ""
+    },
+    {
+      "id": "56533eb9ac21ba0edf2244cf",
+      "title": "Checkpoint: Objects",
+      "description": [
+        ""
       ],
       "releasedOn": "11/27/2015",
       "tests": [
