@@ -35,4 +35,9 @@ window.__$(function() {
         .map(tests => ({ ...rest, tests }));
     };
 
+  // now that the runPreviewTest$ is defined
+  // we set the subject to true
+  // this will let the updatePreview
+  // script now that we are ready.
+  common.previewReady$.onNext(true);
 });
