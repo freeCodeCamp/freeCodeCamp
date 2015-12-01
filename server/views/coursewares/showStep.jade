@@ -12,17 +12,14 @@ block content
                             if step[3]
                                 a.btn.btn-block.btn-primary.challenge-step-btn-action(id='#{index}' href='#{step[3]}' target='_blank') Open link in new tab
                                 .button-spacer
-                            if index + 1 === description.length
-                                .btn.btn-warning.col-sm-5.col-xs-12.challenge-step-btn-prev(id='#{index - 1}') Go to my previous step
-                                .challenge-step-counter.large-p.col-sm-2.col.xs-12.text-center (#{index + 1} / #{description.length})
-                                .btn.btn-primary.col-sm-5.col-xs-12.challenge-step-btn-finish(id='last' class=step[3] ? 'disabled' : '') Finish challenge
-                            else if index !== 0
-                               .btn.btn-warning.col-sm-5.col-xs-12.challenge-step-btn-prev(id='#{index - 1}') Go to my previous step
-                               .challenge-step-counter.large-p.col-sm-2.col.xs-12.text-center (#{index + 1} / #{description.length})
-                               .btn.btn-primary.col-sm-5.col-xs-12.challenge-step-btn-next(id='#{index}' class=step[3] ? 'disabled' : '') Go to my next step
-                            else
+                            if index === 0
                                 .col-sm-5.hidden-xs &nbsp;
-                                .challenge-step-counter.large-p.col-sm-2.col-xs-6.text-center (#{index + 1} / #{description.length})
+                            else
+                                .btn.btn-warning.col-sm-5.col-xs-12.challenge-step-btn-prev(id='#{index - 1}') Go to my previous step
+                            .challenge-step-counter.large-p.col-sm-2.col.xs-12.text-center (#{index + 1} / #{description.length})
+                            if index + 1 === description.length
+                                .btn.btn-primary.col-sm-5.col-xs-12.challenge-step-btn-finish(id='last' class=step[3] ? 'disabled' : '') Finish challenge
+                            else
                                 .btn.btn-primary.col-sm-5.col-xs-6.challenge-step-btn-next(id='#{index}' class=step[3] ? 'disabled' : '') Go to my next step
                         .clearfix
     #challenge-step-modal.modal(tabindex='-1')
