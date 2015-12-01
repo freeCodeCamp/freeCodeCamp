@@ -175,7 +175,7 @@ window.common = (function(global) {
     });
 
     $('#search-issue').on('click', function() {
-      var queryIssue = window.location.href.toString();
+      var queryIssue = window.location.href.toString().split('?')[0];
       window.open(
         'https://github.com/FreeCodeCamp/FreeCodeCamp/issues?q=' +
         'is:issue is:all ' +
@@ -233,7 +233,7 @@ window.common = (function(global) {
         public: true,
         files: {}
       };
-      var queryIssue = window.location.href.toString().split('#?')[0];
+      var queryIssue = window.location.href.toString().split('?')[0];
       var filename = queryIssue
         .substr(queryIssue.lastIndexOf('challenges/') + 11)
         .replace('/', '') + '.js';
@@ -248,7 +248,7 @@ window.common = (function(global) {
           '\n' +
           '// Learn to Code at Free Code Camp (www.freecodecamp.com)' +
           '\n\n' +
-          window.editor.getValue().trim()
+          common.editor.getValue().trim()
       };
 
       request.send(JSON.stringify(data));
