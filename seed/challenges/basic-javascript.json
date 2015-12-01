@@ -22,7 +22,17 @@
       ],
       "challengeSeed": [],
       "type": "waypoint",
-      "challengeType": 1
+      "challengeType": 1,
+      "nameEs": "Agrega comentarios a tu código JavaScript",
+      "descriptionEs": [
+        "Los comentarios son líneas de código que el computador ignorará intencionalmente. Los comentarios son una gran forma de dejarte notas a ti mismo y a otras personas que luego tendrán que averiguar lo que hace que el código. ",
+        "Vamos a echar un vistazo a las dos maneras en las que puedes agregar tus comentarios en JavaScript.",
+        "El comentario de doble barra comentará el resto del texto en la línea donde se ubica:",
+        "<code>// Este es un comentario.</code>",
+        "El comentario de barra-estrella-estrella-barra, comentará todo lo que haya entre los caracteres <code>/*</code> y <code>*/</code>:",
+        "<code>/* Este es también un comentario */</code>",
+        "Trata de crear uno de cada uno."
+      ]
     },
     {
       "id": "bd7123c9c441eddfaeb5bdef",
@@ -50,7 +60,13 @@
         "welcomeToBooleans();"
       ],
       "type": "waypoint",
-      "challengeType": 1
+      "challengeType": 1,
+      "nameEs": "Entiende los valores booleanos",
+      "descriptionEs": [
+        "En informática las <code>estructuras de datos</code> son cosas que contienen datos. JavaScript tiene siete de estas. Por ejemplo, la estructura de datos <code>Número</code> contiene números. ",
+        "Vamos a aprender acerca de la estructura de datos más básica de todas: el <code>Boolean</code>. Los booleanos sólo puede contener el valor verdadero o el valor falso. Son básicamente pequeños interruptores de encendido y apagado. ",
+        "Vamos a modificar nuestra función <code>welcomeToBooleans</code> para que devuelva <code>true</code> en lugar de <code>false</code> cuando se pulse el botón de ejecución."
+      ]
     },
     {
       "id": "bd7123c9c443eddfaeb5bdef",
@@ -74,7 +90,15 @@
         "if(typeof myName !== \"undefined\"){(function(v){return v;})(myName);}"
       ],
       "type": "waypoint",
-      "challengeType": 1
+      "challengeType": 1,
+      "nameEs": "Declara variables en JavaScript",
+      "descriptionEs": [
+        "Cuando almacenamos datos en una <code>estructura de datos</code>, la llamamos una <code>variable</code>. Estas variables no son diferentes de las variables x e y que utilizas en matemáticas. ",
+        "Vamos a crear nuestra primera variable y a llamarla \"myName\".",
+        "Te darás cuenta que en <code>myName</code>, no usamos un espacio, y que la \" N\"se escribe con mayúscula. Las variables en JavaScript se escriben con <code>capitalización camello (camel case)</code>. Un ejemplo de capitalización camello: capitalizacionCamello.",
+        "Ahora, utiliza la palabra clave <code>var</code> para crear una variable llamada <code>myName</code>. Establecele como valor tu nombre, entre comillas dobles. ",
+        "Mira el ejemplo con <code>ourName</code> si te quedas atascado."
+      ]
     },
     {
       "id": "bd7123c9c444eddfaeb5bdef",
@@ -97,7 +121,12 @@
         "if(typeof myFirstName !== \"undefined\" && typeof myLastName !== \"undefined\"){(function(){return myFirstName + ', ' + myLastName;})();}"
       ],
       "type": "waypoint",
-      "challengeType": 1
+      "challengeType": 1,
+      "nameEs": "Declara variables tipo cadena",
+      "descriptionEs": [
+        "En el reto anterior, se utilizó el código <code>myName var = \"su nombre\"</code>. Esto es lo que llamamos una variable tipo <code>cadena</code>. No es nada más que una \"cadena\" de caracteres. Las cadenas en JavaScript siempre se encierran entre comillas. ",
+        "Ahora vamos a crear dos nuevas variables tipo cadena: <code>myFirstName</code> y <code>myLastName</code> y asignarles los valores de tu nombre y tu apellido, respectivamente."
+      ]
     },
     {
       "id": "bd7123c9c448eddfaeb5bdef",
@@ -131,7 +160,13 @@
         "if(typeof lastNameLength !== \"undefined\"){(function(){return lastNameLength;})();}"
       ],
       "type": "waypoint",
-      "challengeType": 1
+      "challengeType": 1,
+      "nameEs": "Comprueba la propiedad longitud (length) de una variable tipo cadena",
+      "descriptionEs": [
+        "Las <code>estructuras de datos</code> tienen <code>propiedades</code>. Por ejemplo, las <code>cadenas</code> tienen una propiedad llamada <code>.length </code> que te dirá cuántos caracteres hay en la cadena.",
+        "Por ejemplo, si creamos una variable <code>var firstName=\"Charles\"</code>, podemos averiguar la longitud de la cadena \"Charles\" usando la propiedad <code>firstName.length</code>. ",
+        "Usa la propiedad <code>.length</code> para contar el número de caracteres en el variable <code>lastName</code>."
+      ]
     },
     {
       "id": "bd7123c9c549eddfaeb5bdef",
@@ -164,7 +199,15 @@
         "(function(v){return v;})(firstLetterOfLastName);"
       ],
       "type": "waypoint",
-      "challengeType": 1
+      "challengeType": 1,
+      "nameEs": "Usa la notación de corchetes para encontrar el primer acaracter de una cadena",
+      "descriptionEs": [
+        "La <code>notación de corchetes</code> es una forma de obtener el caracter en un <code>índice</code> específico de una cadena.",
+        "Los computadoras no empiezan a contar desde 1 como hacen los humanos. Comienzan en 0 ",
+        "Por ejemplo, el caracter en el índice 0 en la palabra \"Charles \" es \"C\". Entonces si <code>var firstName = \"Charles\"</code>, puedes obtener la primera letra de la cadena usando <code>firstName[0]</code> .",
+        "Usa la <code>notación de corchetes</code> para encontrar el primer caracter en la variable <code>lastName</code> y asignarlo a <code>firstLetterOfLastName</code>.",
+        "Si te atascas intenta mirar la declaración de la variable <code>firstLetterOfFirstName</code>."
+      ]
     },
     {
       "id": "bd7123c9c450eddfaeb5bdef",
@@ -193,7 +236,14 @@
         "(function(v){return v;})(thirdLetterOfLastName);"
       ],
       "type": "waypoint",
-      "challengeType": 1
+      "challengeType": 1,
+      "nameEs": "Usa la notación de corchetes para encontrar el n-ésimo caracter en una cadena",
+      "descriptionEs": [
+        "También puede usar <code>notación de corchetes</code> para obtener el caracter en otras posiciones dentro de una cadena.",
+        "Recuerda que los computadores empiezan a contar a 0, por lo que el primer caracter es en realidad el caracter cero.",
+        "Vamos a tratar de asignar a <code>thirdLetterOfLastName</code> la <code>tercera letra</code> de la variable <code>lastName</code>.",
+        "Si te atascas intenta mirar la declaración de la variable <code>secondLetterOfFirstName</code>."
+      ]
     },
     {
       "id": "bd7123c9c451eddfaeb5bdef",
@@ -223,7 +273,14 @@
         "(function(v){return v;})(lastLetterOfLastName);"
       ],
       "type": "waypoint",
-      "challengeType": 1
+      "challengeType": 1,
+      "nameEs": "Usa notación de corchetes para encontrar el último caracter de una cadena",
+      "descriptionEs": [
+        "Con el fin de conseguir la última letra de una cadena, puedes restar uno a la longitud de la cadena.",
+        "Por ejemplo, si <code>var firstName = \"Charles\"</code>, se puede obtener la última letra usando <code>firstName[firstName.length - 1]</code>. ",
+        "Utiliza <code>notación de corchetes</code> para encontrar el último caracter de la variabel <code>lastName</code>.",
+        "Si te atascas intenta mirando la declaración de la variable <code>lastLetterOfFirstName</code>."
+      ]
     },
     {
       "id": "bd7123c9c452eddfaeb5bdef",
@@ -253,7 +310,14 @@
         "(function(v){return v;})(secondToLastLetterOfLastName);"
       ],
       "type": "waypoint",
-      "challengeType": 1
+      "challengeType": 1,
+      "nameEs": "Usa notación de corchetes para encontrar el n-ésimo último caracter de una cadena",
+      "descriptionEs": [
+        "Puede utilizar el mismo principio utilizamos para recuperar el último caracter de una cadena para recuperar el n-ésimo último caracter.",
+        "Por ejemplo, se puede obtener el valor de la tercera última letra de la cadena <code>var firstName = \"Charles\"</code> utilizando <code>firstName[firstName.length - 3]</code> ",
+        "Usa <code>notación de corchete</code> para encontrar el segundo último caracter de la cadena en <code>lastName</code>.",
+        "Si te atascas intenta mirando la declaración de la variable <code>thirdToLastLetterOfFirstName</code>."
+      ]
     },
     {
       "id": "cf1111c1c11feddfaeb3bdef",
@@ -274,7 +338,13 @@
         "(function(z){return 'sum='+z;})(sum);"
       ],
       "type": "waypoint",
-      "challengeType": 1
+      "challengeType": 1,
+      "nameEs": "Suma dos números con JavaScript",
+      "descriptionEs": [
+        "Intentemos sumar dos números con JavaScript.",
+        "JavaScript utiliza el símbolo <code>+</code> para la adición.",
+        "Cambie el <code>0</code> para que la suma seá igual a <code>20</code>."
+      ]
     },
     {
       "id": "cf1111c1c11feddfaeb4bdef",
@@ -295,7 +365,13 @@
         "(function(z){return 'difference='+z;})(difference);"
       ],
       "type": "waypoint",
-      "challengeType": 1
+      "challengeType": 1,
+      "nameEs": "Resta un número de otro con JavaScript",
+      "descriptionEs": [
+        "También podemos restar un número de otro.",
+        "JavaScript utiliza el símbolo <code>-</code> de sustracción",
+        "Cambia el <code>0</code> para que la diferencia sea <code>12</code>."
+      ]
     },
     {
       "id": "cf1231c1c11feddfaeb5bdef",
@@ -316,7 +392,13 @@
         "(function(z){return 'product='+z;})(product);"
       ],
       "type": "waypoint",
-      "challengeType": 1
+      "challengeType": 1,
+      "nameEs": "Multiplica dos números con JavaScript",
+      "descriptionEs": [
+        "También podemos multiplicar un número por otro.",
+        "JavaScript utiliza el símbolo <code>*</code> de la multiplicación.",
+        "Cambie el <code>0</code> para que el producto sea igual a <code>80</code>."
+      ]
     },
     {
       "id": "cf1111c1c11feddfaeb6bdef",
@@ -337,7 +419,13 @@
         "(function(z){return 'quotient='+z;})(quotient);"
       ],
       "type": "waypoint",
-      "challengeType": 1
+      "challengeType": 1,
+      "nameEs": "Divide un número por otro con JavaScript",
+      "descriptionEs": [
+        "También podemos dividir un número por otro.",
+        "JavaScript utiliza el símbolo <code>/</code> para dividir.",
+        "Cambia el <code>0</code> para que el cociente sea igual a <code>2</code>."
+      ]
     },
     {
       "id": "cf1391c1c11feddfaeb4bdef",
@@ -358,7 +446,12 @@
         "(function(){if(typeof myDecimal !== \"undefined\"){return myDecimal;}})();"
       ],
       "type": "waypoint",
-      "challengeType": 1
+      "challengeType": 1,
+      "nameEs": "Crea números decimales con JavaScript",
+      "descriptionEs": [
+        "Las variables tipo número en JavaScript también pueden tener decimales.",
+        "Vamos a crear una variable <code>myDecimal</code> y a darle un valor decimal."
+      ]
     },
     {
       "id": "bd7993c9c69feddfaeb7bdef",
@@ -380,7 +473,13 @@
         "(function(y){return 'product='+y;})(product);"
       ],
       "type": "waypoint",
-      "challengeType": 1
+      "challengeType": 1,
+      "nameEs": "Multiplica dos decimales con JavaScript",
+      "descriptionEs": [
+        "En JavaScript, también puedes realizar cálculos con números decimales, al igual que con números enteros.",
+        "Vamos a multiplicar dos números decimales para obtener su producto.",
+        "Cambia el <code>0.0</code> para que el producto sea igual a <code>5.0</code>."
+      ]
     },
     {
       "id": "bd7993c9ca9feddfaeb7bdef",
@@ -401,7 +500,12 @@
         "(function(y){return 'quotient='+y;})(quotient);"
       ],
       "type": "waypoint",
-      "challengeType": 1
+      "challengeType": 1,
+      "nameEs": "Divide un número decimal por otro con JavaScript",
+      "descriptionEs": [
+        "Ahora vamos a dividir un decimal por otro.",
+        "Cambia el <code>0.0</code> para que tu cociente sea igual a <code>2.2</code>."
+      ]
     },
     {
       "id": "bd7993c9c69feddfaeb8bdef",
@@ -429,7 +533,14 @@
         "(function(z){return z;})(myArray);"
       ],
       "type": "waypoint",
-      "challengeType": 1
+      "challengeType": 1,
+      "nameEs": "Almacena múltiples valores en una variable utilizando vectores en JavaScript",
+      "descriptionEs": [
+        "Con las variables tipo <code>vector</code> (o en inglés <code>array</code>) podemos almacenar diversos datos en un solo lugar.",
+        "Empiezas la declaración de un vector con un corchete de apertura, y terminas con un corchete de cierre, y pones una coma entre cada entrada, así: <code>var sandwich = [\"mantequilla de maní\", \"jalea\" , \"pan\"]</code>. ",
+        "Ahora vamos a crear un nuevo vector llamado <code>myArray</code> que contenga una <code>cadena</code> y un <code>número</code> (en ese orden).",
+        "Consulta el código comentado en el editor de texto si te atascas."
+      ]
     },
     {
       "id": "cf1111c1c11feddfaeb7bdef",
@@ -453,7 +564,12 @@
         "if(typeof myArray !== \"undefined\"){(function(){return myArray;})();}"
       ],
       "type": "waypoint",
-      "challengeType": 1
+      "challengeType": 1,
+      "nameEs": "Anida un vector dentro de otro vector",
+      "descriptionEs": [
+        "También puedes anidar vectores dentro de otros vectores, como este: <code>[[\"Bulls\", 23]]</code>.",
+        "Ahora vamos a crear un vector anidado llamado <code>myArray</code>."
+      ]
     },
     {
       "id": "bg9997c9c79feddfaeb9bdef",
@@ -485,7 +601,17 @@
         "if(typeof myArray !== \"undefined\" && typeof myData !== \"undefined\"){(function(y,z){return 'myArray = ' + JSON.stringify(y) + ', myData = ' + JSON.stringify(z);})(myArray, myData);}"
       ],
       "type": "waypoint",
-      "challengeType": 1
+      "challengeType": 1,
+      "nameEs": "Accede a los datos de un vector mediante índices",
+      "descriptionEs": [
+        "Podemos acceder a los datos dentro de los vectores usando <code>índices</code>.",
+        "Los índices del vector se escriben en la misma notación con corchetes usado con cadenas, excepto que en lugar de especificar un caracter, especifican un elemento del vector.",
+        "Por ejemplo:",
+        "<code>var array = [1,2,3];</code>",
+        "<code>array[0]; //es igual a 1</code>",
+        "<code>var data = array[1];</code>",
+        "Crea una variable llamada <code>myData</ ​​code> y asignale el primer valor del vector <code>myArray</code>."
+      ]
     },
     {
       "id": "cf1111c1c11feddfaeb8bdef",
@@ -517,7 +643,15 @@
         "if(typeof myArray !== \"undefined\"){(function(){return myArray;})();}"
       ],
       "type": "waypoint",
-      "challengeType": 1
+      "challengeType": 1,
+      "nameEs": "Modifica datos de un vector usando índices",
+      "descriptionEs": [
+        "También podemos modificar los datos almacenados en vectores usando índices.",
+        "Por ejemplo:",
+        "<code>var ourArray = [3,2,1];</code>",
+        "<code>ourArray[0] = 1; // equals [1,2,1]</code>",
+        "Ahora establece el dato almacenado en el índice 0 de <code>myArray</code> para que sea el valor 3."
+      ]
     },
     {
       "id": "bg9994c9c69feddfaeb9bdef",
@@ -548,7 +682,14 @@
         "(function(y, z){return 'myArray = ' + JSON.stringify(y) + ' & removedFromMyArray = ' + JSON.stringify(z);})(myArray, removedFromMyArray);"
       ],
       "type": "waypoint",
-      "challengeType": 1
+      "challengeType": 1,
+      "nameEs": "Manipula vectores con pop()",
+      "descriptionEs": [
+        "Otra forma de cambiar los datos en un vector es con la función <code>.pop()</code>.",
+        "<code>.pop()</code> se utiliza para \"sacar\" el valor final de un vector. Podemos almacenar el valor \"sacado\" asignando <code>pop</code> a una variable por ejemplo durante su declaración.",
+        "Todo tipo de datos puede ser \"sacado\" de un vector --números, cadenas, incluso los vectores anidadas.",
+        "Usa la función <code>.pop()</code> para sacar el último elemento de <code>myArray</code> y asigna ese valor \"sacado\" a <code>removedFromMyArray </code>."
+      ]
     },
     {
       "id": "bg9995c9c69feddfaeb9bdef",
@@ -580,7 +721,12 @@
         "(function(z){return 'myArray = ' + JSON.stringify(z);})(myArray);"
       ],
       "type": "waypoint",
-      "challengeType": 1
+      "challengeType": 1,
+      "nameEs": "Manipula vectores con push()",
+      "descriptionEs": [
+        "No sólo se pueden sacar datos del final de un vector con <code>pop()</code>, también puedes empujar (<code>push()</code>) datos al final del vector.",
+        "Empuja <code>[\"dog\", 3]</code> al final de la variable <code>myArray</code>."
+      ]
     },
     {
       "id": "bg9996c9c69feddfaeb9bdef",
@@ -609,7 +755,13 @@
         "(function(y, z){return 'myArray = ' + JSON.stringify(y) + ' & removedFromMyArray = ' + JSON.stringify(z);})(myArray, removedFromMyArray);"
       ],
       "type": "waypoint",
-      "challengeType": 1
+      "challengeType": 1,
+      "nameEs": "Manipula vectores con shift()",
+      "descriptionEs": [
+        "<code>pop()</code> siempre elimina el último elemento de un vector. ¿Qué pasa si quieres quitar el primero?",
+        "Ahí es donde entra <code>.shift()</code>. Funciona igual que <code>.pop ()</code>, excepto que elimina el primer elemento en lugar del pasado. ",
+        "Usa la función <code>.shift()</code> para eliminar el primer elemento de <code>myArray</code>, y el elemento que saques asignalo a <code>removedFromMyArra</code>"
+      ]
     },
     {
       "id": "bg9997c9c69feddfaeb9bdef",
@@ -642,7 +794,13 @@
         "(function(y, z){return 'myArray = ' + JSON.stringify(y);})(myArray);"
       ],
       "type": "waypoint",
-      "challengeType": 1
+      "challengeType": 1,
+      "nameEs": "Manipula vectores con unshift()",
+      "descriptionEs": [
+        "No sólo se puedes <code>correr</code> (shift) elementos del comienzo de un vector, también puedes <code>descorrerlos</code> (unshift) al comienzo.",
+        "<code>unshift()</code> funciona exactamente igual que <code>push()</code>, pero en lugar de añadir el elemento al final del vector, <code>unshift()</code> añade el elemento al comienzo del vector. ",
+        "Añade <code>\"Paul\"</code> al comienzo de la variable <code>myArray</code> usando <code>unshift()</code>."
+      ]
     },
     {
       "id": "bg9997c9c89feddfaeb9bdef",
@@ -682,7 +840,19 @@
         "}"
       ],
       "type": "waypoint",
-      "challengeType": 1
+      "challengeType": 1,
+      "nameEs": "Escribe código Javascript reutilizable con funciones",
+      "descriptionEs": [
+        "En JavaScript, podemos dividir nuestro código en partes reutilizables llamadas funciones.",
+        "He aquí un ejemplo de una función:",
+        "<code>function nombreDeFuncion(a, b) {</code>",
+        "<code>& nbsp; & nbsp; return a + b;</code>",
+        "<code>}</code>",
+        "Después de escribir las líneas anteriores en nuestro código, podemos pasar valores a nuestra función y el resultado que sigue a la instrucción <code>return</code> será retornado.",
+        "Por ejemplo, podemos pasar los números <code>4</code> y <code>2</code> al \"llamar\" la función más adelante en nuestro código, así: <code>nombreDeFuncion(4, 2)</ code >. ",
+        "En este ejemplo, la función devolverá el número <code>6</code>, ya que es el resultado de <code>4 + 2</code>.",
+        "Crea y llama una función de nombre <code>myFunction</code> que devuelva la suma de <code>a</code> y <code>b</code>."
+      ]
     },
     {
       "id": "bg9998c9c99feddfaeb9bdef",
@@ -730,7 +900,22 @@
         "(function(z){return z;})(myDog);"
       ],
       "type": "waypoint",
-      "challengeType": 1
+      "challengeType": 1,
+      "nameEs": "Construye objetos en JavaScript",
+      "descriptionEs": [
+        "Es posible que haya oído el término <code>objeto</code> antes.",
+        "Los objetos son similares a los <code>vectores</code>, excepto que en lugar de utilizar los índices para acceder y modificar sus datos, pueden accederse mediante lo que se llama <code>propiedades</code>.",
+        "Esto es un objeto de ejemplo:",
+        "<code>var cat = {</code>",
+        "<code>&nbsp;&nbsp;\"name\": \"Whiskers\",</code>",
+        "<code>&nbsp;&nbsp;\"legs\": 4,</code>",
+        "<code>&nbsp;&nbsp;\"tails\": 1,</code>",
+        "<code>&nbsp;&nbsp;\"enemies\": [\"Water\", \"Dogs\"]</code>",
+        "<code>};</code>",
+        "Los objetos son útiles para almacenar datos de manera estructurada, y pueden representar objetos del mundo real, como un gato.",
+        "Vamos a tratar de hacer un objeto que representa un perro, lo llamaremos <code>mydog</code> y contendrá las propiedades <code>\"name\"</code> (una cadena con el nombre), <code>\"legs\"</code> (piernas), <code>\"tails\"</code> (colas) y <code>\"friends\" (amigos)</code>. ",
+        "Podrás establecer estas propiedades del objeto en los valores que desees, siempre y cuando <code>\"name\"</code> sea una cadena, <code>\"legs\"</code> y <code>\"tails\"</code> sean números, y <code>\"friends\"</code> sea un vector."
+      ]
     },
     {
       "id": "bg9999c9c99feddfaeb9bdef",
@@ -778,7 +963,22 @@
         "(function(z){return z;})(myDog);"
       ],
       "type": "waypoint",
-      "challengeType": 1
+      "challengeType": 1,
+      "nameEs": "Actualiza las propiedades de un objeto en JavaScript",
+      "descriptionEs": [
+        "Después de que hayas creado un objeto de JavaScript, puedes actualizar sus propiedades en cualquier momento, tal y como harías con cualquier otra variable.",
+        "Por ejemplo, echemos un vistazo a <code>ourDog</code>:",
+        "<code>var ourDog = {</code>",
+        "<code>&nbsp;&nbsp;\"name\": \"Camper\",</code>",
+        "<code>&nbsp;&nbsp;\"legs\": 4,</code>",
+        "<code>&nbsp;&nbsp;\"tails\": 1,</code>",
+        "<code>&nbsp;&nbsp;\"friends\": [\"everything!\"]</code>",
+        "<code>};</code>",
+        "Dado que es un perro particularmente feliz, vamos a cambiar su nombre a \"Happy Camper\". Así es como actualizamos la propiedad nombre del objeto: ",
+        "<code>ourDog.name = \"Happy Camper\";</code>",
+        "Ahora, cuando ejecutemos <code>return ourDog.name</code>, en lugar de obtener \"Camper\", vamos a recibir su nuevo nombre, \"Happy Camper\".",
+        "Vamos a actualizar la propiedad del objeto <code>mydog</code>. Cambiemos su nombre de \"Coder\" a \"Happy Coder\"."
+      ]
     },
     {
       "id": "bg9999c9c99feedfaeb9bdef",
@@ -819,7 +1019,15 @@
         "(function(z){return z;})(myDog);"
       ],
       "type": "waypoint",
-      "challengeType": 1
+      "challengeType": 1,
+      "nameEs": "Añade nuevas propiedades a un objeto JavaScript",
+      "descriptionEs": [
+        "Puedes añadir nuevas propiedades a objetos existente de la misma forma que usarías para modificarlos.",
+        "Así es como añadimos una propiedad <code>\"bark\"</code> (ladra) a nuestro objeto <code>ourDog</code>:",
+        "<code>ourDog.bark = \"bow-wow\";</code>",
+        "Ahora, cuando ejecutemos <code>return ourDog.bark</code>, vamos a recbir su ladrido, \" bow-wow \".",
+        "Vamos a añadir una propiedad <code>ladra</code> a <code>myDog</code> y a ponerle un sonido de perro, tal como \"woof\"."
+      ]
     },
     {
       "id": "bg9999c9c99fdddfaeb9bdef",
@@ -860,7 +1068,13 @@
         "(function(z){return z;})(myDog);"
       ],
       "type": "waypoint",
-      "challengeType": 1
+      "challengeType": 1,
+      "nameEs": "Elimina propiedades de un objeto JavaScript",
+      "descriptionEs": [
+        "También podemos eliminar propiedades de los objetos de esta manera:",
+        "<code>delete ourDog.bark;</code>",
+        "Borremos la propiedad <code>\"tails\"</code> de <code>myDog</code>."
+      ]
     },
     {
       "id": "cf1111c1c11feddfaeb5bdef",
@@ -904,12 +1118,29 @@
         ""
       ],
       "type": "waypoint",
-      "challengeType": 1
+      "challengeType": 1,
+      "nameEs": "Iterar con JavaScript en ciclos",
+      "descriptionEs": [
+        "Puede ejecutar el mismo código varias veces mediante el uso de un ciclo.",
+        "El tipo más común de bucle de JavaScript se llama \"ciclo for\"porque se ejecuta \"por\" (for) un número específico de veces.",
+        "Los ciclos for se declaran con tres expresiones opcionales separadas por punto y coma:",
+        "<code>for ([inicialización]; [condición]; [expresión-final])</code>",
+        "La <code>inicialización</code> se ejecuta sólo una vez antes de que empiece el ciclo. Normalmente se utiliza para definir e inicializar su variable de ciclo. ",
+        "La expresión <code>condición</code> se evalúa al principio de cada iteración del ciclo y continuará en el ciclo siempre y cuando sea verdadera (<code>true</code>). Cuando la <code>condición</code> sea falsa (<code>false</code>) al comienzo de la iteración, se detendrá la ejecución del ciclo.  Esto significa que si la <code>condición</code> inicia en el valor falso <code>false</code>, el ciclo no se ejecutará. ",
+        "La <code>expresión final</code> se ejecuta al final de cada repetición del ciclo, antes del siguiente chequeo de la <code>condición</code> y se utiliza generalmente para aumentar o disminuir el contador del ciclo.",
+        "En el siguiente ejemplo inicializamos con <code>i = 0</code> e iteramos mientras nuestra condición <code>i <5</code> sea verdadera.  Vamos a incrementar <code>i</code> en <code>1</code> en cada iteración del ciclo con <code>i++</code> como nuestra <code>expresión final</code>. ",
+        "<code>var ourArray = [];</code>",
+        "<code>for (var i = 0; i < 5; i++) {</code>",
+        "<code>&nbsp;&nbsp;ourArray.push(i);</code>",
+        "<code>}</code>",
+        "<code>ourArray</code> ahora contendrá <code>[0,1,2,3,4]</code>.",
+        "Vamos a utilizar un ciclo <code>for</code> para empujar los valores del 1 al 5 en <code>myArray</code>."
+      ]
     },
     {
-      "id":"56104e9e514f539506016a5c",
+      "id": "56104e9e514f539506016a5c",
       "title": "Iterate Odd Numbers With a For Loop",
-      "description":[
+      "description": [
         "For loops don't have to iterate one at a time. By changing our <code>final-expression</code>, we can count by even numbers.",
         "We'll start at <code>i = 0</code> and loop while <code>i < 10</code>.  We'll increment <code>i</code> by 2 each loop with <code>i += 2</code>.",
         "<code>var ourArray = [];</code>",
@@ -920,11 +1151,11 @@
         "Let's change our <code>initialization</code> and <code>final-expression</code> so we can count by odd numbers.",
         "Push the odd numbers from 1 through 9 to <code>myArray</code> using a <code>for</code> loop."
       ],
-      "tests":[
+      "tests": [
         "assert(editor.getValue().match(/for\\s*\\(/g).length > 1, 'message: You should be using a <code>for</code> loop for this.');",
         "assert.deepEqual(myArray, [1,3,5,7,9], 'message: <code>myArray</code> should equal <code>[1,3,5,7,9]</code>.');"
       ],
-      "challengeSeed":[
+      "challengeSeed": [
         "var ourArray = [];",
         "",
         "for (var i = 0; i < 10; i += 2) {",
@@ -943,12 +1174,24 @@
         ""
       ],
       "type": "waypoint",
-      "challengeType": 1
+      "challengeType": 1,
+      "nameEs": "Itera por los números pares con un ciclo for",
+      "descriptionEs": [
+        "Los ciclos <code>for</code> no siempre iteran incrementado de a uno. Cambiando nuestra <code>expresión final</code>, podemos contar los números pares.",
+        "Vamos a empezar con <code>i = 0</code> e iterar mientras <code>i <10</code>.  Vamos a incrementar <code>i</code> de a 2 en cada iteración <code>i + = 2</code>. ",
+        "<code>var ourArray = [];</code>",
+        "<code>for (var i = 0; i < 10; i += 2) {</code>",
+        "<code>&nbsp;&nbsp;ourArray.push(i);</code>",
+        "<code>}</code>",
+        "<code>ourArray</code> ahora contendrá <code>[0,2,4,6,8]</code>.",
+        "Vamos a cambiar nuestra <code>inicialización</code> y <code>expresión final</code> para que podamos contar los números impares.",
+        "Empuja los números impares del 1 al 9 en <code>myArray</code> utilizando un ciclo <code>for</code>."
+      ]
     },
     {
-      "id":"56105e7b514f539506016a5e",
+      "id": "56105e7b514f539506016a5e",
       "title": "Count Backwards With a For Loop",
-      "description":[
+      "description": [
         "A for loop can also count backwards, so long as we can define the right conditions.",
         "In order to count backwards by twos, we'll need to change our <code>initialization</code>, <code>condition</code>, and <code>final-expression</code>.",
         "We'll start at <code>i = 10</code> and loop while <code>i > 0</code>.  We'll decrement <code>i</code> by 2 each loop with <code>i -= 2</code>.",
@@ -960,11 +1203,11 @@
         "Let's change our <code>initialization</code> and <code>final-expression</code> so we can count backward by twos by odd numbers.",
         "Push the odd numbers from 9 through 1 to <code>myArray</code> using a <code>for</code> loop."
       ],
-      "tests":[
+      "tests": [
         "assert(editor.getValue().match(/for\\s*\\(/g).length > 1, 'message: You should be using a <code>for</code> loop for this.');",
         "assert.deepEqual(myArray, [9,7,5,3,1], 'message: <code>myArray</code> should equal <code>[9,7,5,3,1]</code>.');"
       ],
-      "challengeSeed":[
+      "challengeSeed": [
         "var ourArray = [];",
         "",
         "for (var i = 10; i > 0; i -= 2) {",
@@ -982,7 +1225,20 @@
         "if(typeof myArray !== \"undefined\"){(function(){return myArray;})();}"
       ],
       "type": "waypoint",
-      "challengeType": 1
+      "challengeType": 1,
+      "nameEs": "Cuenta hacia atrás con un ciclo for",
+      "descriptionEs": [
+        "Un ciclo también puede contar hacia atrás, siempre y cuando definamos las condiciones adecuadas.",
+        "Para contar hacia atrás de dos en dos, tendremos que cambiar nuestra <code>inicialización</code>, la <code>condición</code> y la <code>última-expresión</code>.",
+        "Vamos a empezar con <code>i = 10</code> e iteraremos mientras <code>i > 0</code>.  Vamos a decrementar <code>i</code> de a 2 por cada iteración con <code>i -= 2</code>. ",
+        "<code>var ourArray = [];</code>",
+        "<code>for (var i = 10; i > 0; i -= 2) {</code>",
+        "<code>&nbsp;&nbsp;ourArray.push(i);</code>",
+        "<code>}</code>",
+        "<code>ourArray</code> ahora contendrá <code>[10,8,6,4,2]</code>.",
+        "Vamos a cambiar nuestra <code>inicialización</code> y la <code>expresión final</code> para que podamos contar hacia atrás de dos en dos pero números impares.",
+        "Empuja los números impares del 9 a 1 en <code>myArray</code> utilizando un ciclo <code>for</code>."
+      ]
     },
     {
       "id": "cf1111c1c11feddfaeb1bdef",
@@ -1016,7 +1272,20 @@
         ""
       ],
       "type": "waypoint",
-      "challengeType": 1
+      "challengeType": 1,
+      "nameEs": "Iterar con JavaScript con ciclos while",
+      "descriptionEs": [
+        "Puede ejecutar el mismo código varias veces mediante el uso de un ciclo.",
+        "Otro tipo de ciclo de JavaScript se llama un ciclo \"while\", ya que se ejecuta, \"mientras que\" algo sea cierto y se detiene una vez que ya no sea así.",
+        "<code>var ourArray = [];</code>",
+        "<code>var i = 0;</code>",
+        "<code>while(i < 5) {</code>",
+        "<code>&nbsp;&nbsp;ourArray.push(i);</code>",
+        "<code>&nbsp;&nbsp;i++;</code>",
+        "<code>}</code>",
+        "Intentemos que un ciclo <code>while</code> empuje valores en un vector.",
+        "Empuja los números de 0 a 4 para <code>myArray</code> utilizando un ciclo <code>while</code>."
+      ]
     },
     {
       "id": "cf1111c1c11feddfaeb9bdef",
@@ -1045,7 +1314,14 @@
         "(function(){return myFunction();})();"
       ],
       "type": "waypoint",
-      "challengeType": 1
+      "challengeType": 1,
+      "nameEs": "Generar fracciones al azar con JavaScript",
+      "descriptionEs": [
+        "Los números aleatorios son útiles para crear un comportamiento aleatorio.",
+        "JavaScript tiene una función <code>Math.random()</code> que genera un número decimal aleatorio.",
+        "Cambia <code>myFunction</code> para que devuelva un número al azar en lugar de devolver <code>0</code>.",
+        "Ten en cuenta que puedes retornar lo retornado por una función, igual que harías para devolver una variable o valor."
+      ]
     },
     {
       "id": "cf1111c1c12feddfaeb1bdef",
@@ -1081,11 +1357,24 @@
         "  // Only change code above this line.",
         "}"
       ],
-      "tail":[
+      "tail": [
         "(function(){return myFunction();})();"
       ],
       "type": "waypoint",
-      "challengeType": 1
+      "challengeType": 1,
+      "nameEs": "Genera números aleatorios enteros con JavaScript",
+      "descriptionEs": [
+        "Es muy bueno que podamos generar números decimales al azar, pero es aún más útil si lo utilizamos para generar números enteros aleatorios.",
+        "En primer lugar, vamos a usar <code>Math.random()</code> para generar un decimal aleatorio.",
+        "Entonces vamos a multiplicar este decimal azar por 20.",
+        "Por último, vamos a usar otra función, <code>Math.floor()</code> para redondear el número hasta su número entero más próximo.",
+        "Esta técnica nos da un número entero entre 0 y 19.",
+        "Tenga en cuenta que debido a que estamos redondeando, es imposible obtener 20.",
+        "Poniendo todo junto, así es como se ve nuestro código:",
+        "<code>Math.floor(Math.random() * 20);</code>",
+        "¿Ves como <code>Math.floor</code> toma <code>(Math.random() * 20)</code> como su argumento? Así es - puedes pasar el resultado de un función como argumento de otra función.",
+        "usemos esta técnica para generar y devolver un número entero aleatorio entre 0 y 9."
+      ]
     },
     {
       "id": "cf1111c1c12feddfaeb2bdef",
@@ -1133,7 +1422,16 @@
         "(function(){return myFunction();})();"
       ],
       "type": "waypoint",
-      "challengeType": 1
+      "challengeType": 1,
+      "nameEs": "Genera números aleatorios enteros dentro de un rango",
+      "descriptionEs": [
+        "En lugar de generar un número aleatorio entre cero y un número dado como lo hicimos antes, podemos generar un número aleatorio que caiga dentro de un rango de dos números específicos.",
+        "Para ello, vamos a definir un número mínimo <code>min</code> y un número máximo <code>max</code>.",
+        "He aquí la fórmula que utilizaremos. Tómate un momento para leer y tratar de entender lo que el código está haciendo: ",
+        "<code>Math.floor(Math.random() * (max - min + 1)) + min</code>",
+        "Definir dos variables: <code>myMin</code> y <code>myMax</code>, y asignales valores enteros.",
+        "A continuación, crea una función llamada <code>myFunction</code> que devuelva un número aleatorio mayor o igual a <code>myMin</code>, y menor o igual a <code>myMax</code>. "
+      ]
     },
     {
       "id": "cf1111c1c12feddfaeb3bdef",
@@ -1173,7 +1471,20 @@
         "var result = myFunction();if(typeof flip !== \"undefined\" && typeof flip === \"number\" && typeof result !== \"undefined\" && typeof result === \"string\"){(function(y,z){return 'flip = ' + y.toString() + ', text = ' + z;})(flip, result);}"
       ],
       "type": "waypoint",
-      "challengeType": 1
+      "challengeType": 1,
+      "nameEs": "Usa lógica condicional con instrucciones if y else",
+      "descriptionEs": [
+        "Podemos usar instrucciones <code>if</code> (\"if\" es \"si\" en español) en JavaScript para ejecutar código sólo cuando cierta condición se cumpla.",
+        "Las instrucciones <code>if</code> requieren evaluar algún tipo de condición booleana.",
+        "Por ejemplo:",
+        "<code>if (1 === 2) {</code>",
+        "<code>&nbsp;&nbsp;return true;</code>",
+        "<code>} else {</code>",
+        "<code>&nbsp;&nbsp;return false;</code>",
+        "<code>}</code>",
+        "Vamos a usar la instrucción <code>if</code> con <code>else</code> (\"else\" puede traducirse como \"de lo contrario\") para hacer un juego de cara o sello.",
+        "Crea una instrucción <code>if</code> con <code>else</code> que retorne la cadena <code>\"heads\"</code> si la variable <code>flip</code> es cero, o bien que retorne <code >\"tails\"</code> si la variable <code>flip</code> no es cero. "
+      ]
     },
     {
       "id": "cf1111c1c12feddfaeb6bdef",
@@ -1208,7 +1519,19 @@
         "})();(function(){return test;})();"
       ],
       "type": "waypoint",
-      "challengeType": 1
+      "challengeType": 1,
+      "nameEs": "Examina un texto con expresiones regulares",
+      "descriptionEs": [
+        "Las <code>expresiones regulares</code> se utilizan para encontrar ciertas palabras o patrones dentro de <code>cadenas</code>.",
+        "Por ejemplo, si quisiéramos encontrar la palabra <code>el</code> en la cadena <code>El perro persiguió al gato el lunes</code>, podríamos utilizar la siguiente <code>expresión regular</code>: <code>/el/gi</code> ",
+        "Vamos a dividirla un poco:",
+        "<code>el</code> es el patrón con el que queremos coincidir.",
+        "<code>g</code> significa que queremos buscar el patrón en toda la cadena y no sólo la primera ocurrencia.",
+        "<code>i</code> significa que queremos ignorar la capitalización (en mayúsculas o minúsculas) cuando se busque el patrón.",
+        "Las <code>expresiones regulares</code> se escriben rodeando el patrón con símbolos de barra <code>/</code>.",
+        "Vamos a tratar de seleccionar todas las apariciones de la palabra <code>and</code> en la cadena <code>Ada Lovelace and Charles Babbage designed the first computer and the software that would have run on it</code>.",
+        "Podemos hacer esto sustituyendo la parte <code>.</code> de nuestra expresión regular por la palabra <code>and</code>."
+      ]
     },
     {
       "id": "cf1111c1c12feddfaeb7bdef",
@@ -1240,7 +1563,15 @@
         "})();(function(){return test;})();"
       ],
       "type": "waypoint",
-      "challengeType": 1
+      "challengeType": 1,
+      "nameEs": "Encuentra números con expresiones regulares",
+      "descriptionEs": [
+        "Podemos usar selectores especiales en las <code>expresiones regulares</code> para seleccionar un determinado tipo de valor.",
+        "Uno de estos selectores es el de dígitos <code>\\d</code> que se utiliza para hacer coincidir números en una cadena.",
+        "Se usa así para hacer coincidir un dígito: <code>/\\d/g</code>.",
+        "Para hacer coincidir números de varios dígtios a menudo se escribe <code>/\\d+/ g </code>, donde el <code>+</code> que sigue al selector de dígito le permite a la expresión regular coincidir con uno o más dígito es decir coincide con números de varios dígitos.",
+        "Usa el selector <code>\\d</code> para hacer coincidir todos los números de la cadena, permitiendo la posibilidad de hacer coincidir números de varios dígitos."
+      ]
     },
     {
       "id": "cf1111c1c12feddfaeb8bdef",
@@ -1271,7 +1602,15 @@
         "})();(function(){return test;})();"
       ],
       "type": "waypoint",
-      "challengeType": 1
+      "challengeType": 1,
+      "nameEs": "Encuentra espacios en blanco con las expresiones regulares",
+      "descriptionEs": [
+        "También podemos utilizar selectores de expresiones regulares como <code>\\s</code> para encontrar un espacio en blanco en una cadena.",
+        "Los espacios en blanco son <code>\" \"</code> (espacio), <code>\\r</code> (el retorno de carro), <code>\\n</code> (nueva línea), <code>\\t</code> (tabulador), y <code>\\f</code> (el avance de página). ",
+        "Una expresión regular con el selector de espacios en blanco puede ser:",
+        "<code>/\\s+/g</code>",
+        "Se usa para hacer coincidir todos los espacios en blanco en una cadena."
+      ]
     },
     {
       "id": "cf1111c1c13feddfaeb3bdef",
@@ -1299,7 +1638,13 @@
         "})();(function(){return test;})();"
       ],
       "type": "waypoint",
-      "challengeType": 1
+      "challengeType": 1,
+      "nameEs": "Hacer coincidir con una expresión regular invertida",
+      "descriptionEs": [
+        "Puedes invertir las coincidencias de un selector usando su versión en mayúsculas.",
+        "Por ejemplo, <code>\\s</code> coincidirá con cualquier espacio en blanco, mientras que <code>\\S</code> coincidirá con todo lo que no sea espacio en blanco.",
+        "Usa <code>/\\S/g</code> para contar el número de caracteres que no están en blanco en <code>testString</code>."
+      ]
     },
     {
       "id": "cf1111c1c12feddfaeb9bdef",
@@ -1454,7 +1799,15 @@
         "</style>"
       ],
       "type": "waypoint",
-      "challengeType": 0
+      "challengeType": 0,
+      "nameEs": "Crea una máquina tragamonedas en JavaScript",
+      "descriptionEs": [
+        "Ahora vamos a tratar de combinar algunas de las cosas que hemos aprendido para crear la lógica de una máquina tragamonedas.",
+        "Para esto tendremos que generar tres números aleatorios entre <code>1</code> y <code>3</code> que representen los valores posibles de cada casilla.",
+        "Guarda los tres números aleatorios en <code>slotOne</code>, <code>slotTwo</code> y <code>slotThree</code>.",
+        "Genera los números aleatorios utilizando el sistema que usamos anteriormente (puedes encontrar una explicación de la fórmula <a href=\"https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/Waypoint-Generate-Random-Whole-Numbers-within-a-Range#explanation\">aquí</a>):",
+        "<code>Math.floor(Math.random() * (3 - 1 + 1)) + 1;</code>"
+      ]
     },
     {
       "id": "cf1111c1c13feddfaeb1bdef",
@@ -1614,7 +1967,19 @@
         "</style>"
       ],
       "type": "waypoint",
-      "challengeType": 0
+      "challengeType": 0,
+      "nameEs": "Añade casillas a tu tragamonedas JavaScript",
+      "descriptionEs": [
+        "Ahora que cada una de nuestras casillas genera números aleatorios, tenemos que comprobar si todos quedan con el mismo número.",
+        "Si es así, debemos notificar a nuestros usuarios que han ganado y debemos retornar <code>null</code>.",
+        "<code>null</code> es una estructura de datos de JavaScript que significa \"nada\".",
+        "El usuario gana cuando los tres números coinciden. Cremos una instrucción <code>if</code> con varias condiciones, a fin de comprobar si todos los números son iguales. ",
+        "<code>if(slotOne === slotTwo && slotTwo === slotThree){</code>",
+        "<code>&nbsp;&nbsp;return null;</code>",
+        "<code>}</code>",
+        "Además, tenemos que mostrar al usuario que ha ganado la partida e caso de que esté el mismo número en todas las casillas.",
+        "Si los tres números coinciden, también hay que poner el texto <code>\"It's A Win\"</code> en el elemento HTML con clase <code>logger</code>."
+      ]
     },
     {
       "id": "cf1111c1c13feddfaeb2bdef",
@@ -1780,7 +2145,16 @@
         "</style>"
       ],
       "type": "waypoint",
-      "challengeType": 0
+      "challengeType": 0,
+      "nameEs": "Da vida a tu máquina tragamonedas en JavaScript",
+      "descriptionEs": [
+        "Ahora podemos detectar una victoria. Logremos que la máquina tragamonedas funcione. ",
+        "Usemos un <code>selector</code> de jQuery <code>$(\".slot\")</code> para seleccionar todas las casillas.",
+        "Una vez que todas estén seleccionados, podemos usar <code>notación de corchetes</code> para acceder a cada casilla individual:",
+        "<code>$($(\".slot\")[0]).html(slotOne);</code>",
+        "Este jQuery seleccionará la primera ranura y actualizará su HTML para mostrar el número correcto.",
+        "Usa el selector anterior para mostrar cada número en su casilla correspondiente."
+      ]
     },
     {
       "id": "cf1111c1c11feddfaeb1bdff",
@@ -1954,7 +2328,15 @@
         "</style>"
       ],
       "type": "waypoint",
-      "challengeType": 0
+      "challengeType": 0,
+      "nameEs": "Dale a tu máquina tragamonedas JavaScript algunas imágenes con estilo",
+      "descriptionEs": [
+        "Ahora añadamos algunas imágenes en nuestras casillas.",
+        "Ya hemos creado las imágenes por ti en una matriz llamada <code>images</code>. Podemos utilizar diferentes índices para tomara cada una de estas. ",
+        "Aquí está como haríamos que la primera casilla muestre una imagen diferente dependiendo del número aleatorio que se genere:",
+        "<code>$($('.slot')[0]).html('&lt;img src = \"' + images[slotOne-1] + '\"&gt;');</code>",
+        "Configura las tres casillas de manera análoga, a continuación, pulsa el botón \"Go\" para jugar con la máquina tragamonedas."
+      ]
     }
   ]
 }
