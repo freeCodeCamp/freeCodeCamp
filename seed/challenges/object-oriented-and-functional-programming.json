@@ -69,9 +69,9 @@
         "Have your <code>MotorBike</code> <code>constructor</code> describe an object with <code>wheels</code>, <code>engines</code> and <code>seats</code> properties and set them to numbers."
       ],
       "tests":[
-        "assert(typeof (new MotorBike()).engines === 'number', 'message: <code>myMotorBike</code> should have a <code>engines</code> attribute set to a number.');",
-        "assert(typeof (new MotorBike()).wheels === 'number', 'message: <code>myMotorBike</code> should have a <code>wheels</code> attribute set to a number.');",
-        "assert(typeof (new MotorBike()).seats === 'number', 'message: <code>myMotorBike</code> should have a <code>seats</code> attribute set to a number.');"
+        "assert(typeof (new MotorBike()).engines === 'number', 'message: <code>MotorBike</code> should have a <code>engines</code> attribute set to a number.');",
+        "assert(typeof (new MotorBike()).wheels === 'number', 'message: <code>MotorBike</code> should have a <code>wheels</code> attribute set to a number.');",
+        "assert(typeof (new MotorBike()).seats === 'number', 'message: <code>MotorBike</code> should have a <code>seats</code> attribute set to a number.');"
       ],
       "challengeSeed":[
         "var Car = function() {",
@@ -79,8 +79,6 @@
         "  this.engines = 1;",
         "  this.seats = 1;",
         "};",
-        "",
-        "var myCar = new Car();",
         "",
         "// Only change code below this line.",
         "",
@@ -91,8 +89,7 @@
         "};"
       ],
       "tail":[
-        "var myMotorBike = new MotorBike();",
-        "(function() {return JSON.stringify(myMotorBike);})();"
+        "(function() {return JSON.stringify(new MotorBike());})();"
       ],
       "solutions":[
         "var Car = function() {\n  this.wheels = 4;\n  this.engines = 1;\n  this.seats = 1;\n};\n\nvar myCar = new Car();\n\nvar MotorBike = function() {\n  this.engines = 1;\n  this.seats = 1;\n  this.wheels = 4;\n};\n\nvar myMotorBike = new MotorBike();"
