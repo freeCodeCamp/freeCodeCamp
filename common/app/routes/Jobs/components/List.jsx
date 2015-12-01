@@ -1,7 +1,6 @@
 import React, { PropTypes } from 'react';
 import classnames from 'classnames';
 import { ListGroup, ListGroupItem } from 'react-bootstrap';
-import moment from 'moment';
 
 export default React.createClass({
   displayName: 'ListJobs',
@@ -17,7 +16,7 @@ export default React.createClass({
     }
     return (
       <span className='hidden-xs hidden-sm'>
-        { locale } - {' '}
+        { locale }
       </span>
     );
   },
@@ -32,7 +31,6 @@ export default React.createClass({
         company,
         position,
         isHighlighted,
-        postedOn,
         locale
       }) => {
 
@@ -59,7 +57,6 @@ export default React.createClass({
                 className='pull-right'
                 style={{ display: 'inline-block' }}>
                 { this.addLocation(locale) }
-                { moment(new Date(postedOn)).format('MMM Do') }
               </h4>
             </div>
           </ListGroupItem>
