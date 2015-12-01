@@ -1,6 +1,6 @@
 window.common = (function(global) {
   const {
-    Rx: { Observable },
+    Rx: { BehaviorSubject, Observable },
     common = { init: [] }
   } = global;
 
@@ -27,6 +27,11 @@ window.common = (function(global) {
   const iFrameScript$ =
     common.getScriptContent$('/js/iFrameScripts.js').shareReplay();
 
+  // behavior subject allways remembers the last value
+  // we use this to determine if runPreviewTest$ is defined
+  // and prime it with false
+  common.previewReady$ = new BehaviorSubject(false);
+
   // runPreviewTests$ should be set up in the preview window
   common.runPreviewTests$ =
     () => Observable.throw({ err: new Error('run preview not enabled') });
@@ -42,13 +47,16 @@ window.common = (function(global) {
     return iFrameScript$
       .map(script => `<script>${script}</script>`)
       .flatMap(script => {
+        // we make sure to override the last value in the
+        // subject to false here.
+        common.previewReady$.onNext(false);
         preview.open();
         preview.write(libraryIncludes + code + '<!-- -->' + script);
         preview.close();
-        return Observable.fromCallback($(preview).ready, $(preview))()
-          .first()
-          // delay is need here for first initial run
-          .delay(100);
+        // now we filter false values and wait for the first true
+        return common.previewReady$
+          .filter(ready => ready)
+          .first();
       })
       .map(() => code);
   };
