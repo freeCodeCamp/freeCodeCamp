@@ -8,10 +8,8 @@ window.__$(function() {
   var tests = parent.tests;
   var common = parent.common;
   var editor = common.editor.getValue();
-  // grab the iframe body element
-  var body = document.getElementsByTagName('body');
   // change the context of $ so it uses the iFrame for testing
-  var $ = __$.proxy(__$.fn.find, __$(body));
+  var $ = __$.proxy(__$.fn.find, __$(document));
 
   common.runPreviewTests$ =
     function runPreviewTests$({ tests = [], ...rest }) {
