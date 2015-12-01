@@ -376,11 +376,11 @@
       "title": "Use CSS Selectors to Style Elements",
       "description": [
         "With CSS, there are hundreds of CSS <code>properties</code> that you can use to change the way an element looks on your page.",
-        "When you entered <code>&#60;h2 style=\"color: red\"&#62;CatPhotoApp&#60;/h2&#62;</code>, you were giving that individual <code>h2</code> element an <code>inline style</code>",
-        "That's one way to add style to an element, but a better way is by using <code>CSS</code>, which stands for <code>Cascading Style Sheets</code>",
+        "When you entered <code>&#60;h2 style=\"color: red\"&#62;CatPhotoApp&#60;/h2&#62;</code>, you were giving that individual <code>h2</code> element an <code>inline style</code>.",
+        "That's one way to add style to an element, but a better way is by using <code>CSS</code>, which stands for <code>Cascading Style Sheets</code>.",
         "At the top of your code, create a <code>style</code> element like this:",
-         "<code>&#60;style&#62;</code>",
-         "<code>&#60;/style&#62;</code>",
+        "<code>&#60;style&#62;</code>",
+        "<code>&#60;/style&#62;</code>",
         "Inside that style element, you can create a <code>CSS selector</code> for all <code>h2</code> elements. For example, if you wanted all <code>h2</code> elements to be red, your style element would look like this:",
         "<code>&#60;style&#62;</code>",
         "&nbsp;&nbsp;<code>h2 {color: red;}</code>",
@@ -392,7 +392,7 @@
         "assert(!$(\"h2\").attr(\"style\"), 'Remove the style attribute from your <code>h2</code> element.')",
         "assert($(\"style\") && $(\"style\").length > 1, 'Create a <code>style</code> element.')",
         "assert($(\"h2\").css(\"color\") === \"rgb(0, 0, 255)\", 'Your <code>h2</code> element should be blue.')",
-        "assert(editor.match(/h2\\s*\\{\\s*color\\s*:\\s*blue;\\s*\\}/g), 'Ensure that your stylesheet <code>h2</code> declaration is valid with a semicolon and closing brace')",
+        "assert(editor.match(/h2\\s*\\{\\s*color\\s*:.*;\\s*\\}/g), 'Ensure that your stylesheet <code>h2</code> declaration is valid with a semicolon and closing brace.')",
         "assert(editor.match(/<\\/style>/g) && editor.match(/<\\/style>/g).length === (editor.match(/<style((\\s)*((type|media|scoped|title|disabled)=\"[^\"]*\")?(\\s)*)*>/g) || []).length, 'Make sure all your <code>style</code> elements are valid and have a closing tag.')"
       ],
       "challengeSeed": [
