@@ -15,6 +15,7 @@ window.common = (function(global) {
 
   common.executeChallenge$ = function executeChallenge$() {
     const code = common.editor.getValue();
+    const originalCode = code;
     const head = common.arrayToNewLineString(common.head);
     const tail = common.arrayToNewLineString(common.tail);
 
@@ -75,6 +76,7 @@ window.common = (function(global) {
               data,
               code,
               userTests,
+              originalCode,
               output: data.output.replace(/\\\"/gi, '')
             });
         });

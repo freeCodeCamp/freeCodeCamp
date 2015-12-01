@@ -5,14 +5,19 @@ window.common = (function(global) {
     common = { init: [] }
   } = global;
 
-  common.runTests$ = function runTests$({ code, userTests, ...rest }) {
+  common.runTests$ = function runTests$({
+    code,
+    originalCode,
+    userTests,
+    ...rest
+  }) {
 
     return Observable.from(userTests)
       .map(function(test) {
 
         /* eslint-disable no-unused-vars */
         const assert = chai.assert;
-        const editor = { getValue() { return code; }};
+        const editor = { getValue() { return originalCode; }};
         /* eslint-enable no-unused-vars */
 
         try {
