@@ -1414,7 +1414,7 @@
         "Once you've done this, hover over your image with your cursor. Your cursor's normal pointer should become the link clicking pointer. The photo is now a link."
       ],
       "tests": [
-        "assert($(\"a\").children(\"img\").length > 0, 'Nest your <code>img</code> element within an <code>a</code> element.')",
+        "assert($(\"a\").children(\"img.smaller-image\").length > 0, 'Nest the existing <code>img</code> element within an <code>a</code> element.')",
         "assert(new RegExp(\"#\").test($(\"a\").children(\"img\").parent().attr(\"href\")), 'Your <code>a</code> element should be a dead link with a <code>href</code> attribute set to <code>#</code>.')",
         "assert(editor.match(/<\\/a>/g) && editor.match(/<a/g) && editor.match(/<\\/a>/g).length === editor.match(/<a/g).length, 'Make sure each of your <code>a</code> elements has a closing tag.')"
       ],
