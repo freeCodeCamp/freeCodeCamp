@@ -248,7 +248,7 @@ window.common = (function(global) {
           '\n' +
           '// Learn to Code at Free Code Camp (www.freecodecamp.com)' +
           '\n\n' +
-          window.editor.getValue().trim()
+          common.editor.getValue().trim()
       };
 
       request.send(JSON.stringify(data));
