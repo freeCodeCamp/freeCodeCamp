@@ -233,7 +233,7 @@ window.common = (function(global) {
         public: true,
         files: {}
       };
-      var queryIssue = window.location.href.toString().split('#?')[0];
+      var queryIssue = window.location.href.toString().split('?')[0];
       var filename = queryIssue
         .substr(queryIssue.lastIndexOf('challenges/') + 11)
         .replace('/', '') + '.js';
