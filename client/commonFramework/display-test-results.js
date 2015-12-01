@@ -12,7 +12,7 @@ window.common = (function({ $, common = { init: [] }}) {
           <div class='col-xs-2 text-center'>
             <i class=${iconClass}></i>
           </div>
-          <div class='col-xs-10 test-output wrappable'>
+          <div class='col-xs-10 test-output'>
             ${text.split('message: ').pop().replace(/\'\);/g, '')}
           </div>
           <div class='ten-pixel-break'/>
