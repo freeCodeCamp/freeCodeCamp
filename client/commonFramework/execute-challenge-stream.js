@@ -6,6 +6,7 @@ window.common = (function(global) {
 
   const {
     addLoopProtect,
+    getJsFromHtml,
     detectUnsafeCode$,
     updatePreview$,
     challengeType,
@@ -43,9 +44,9 @@ window.common = (function(global) {
           challengeType === challengeTypes.HTML &&
           common.hasJs(code)
         ) {
-          output = common.getJsOutput(common.getJsFromHtml(code));
+          output = common.getJsOutput(getJsFromHtml(code));
         } else if (challengeType !== challengeTypes.HTML) {
-          output = common.getJsOutput(combinedCode);
+          output = common.getJsOutput(addLoopProtect(combinedCode));
         }
 
         return common.runPreviewTests$({

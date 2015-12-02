@@ -10,6 +10,7 @@ window.common = (function(global) {
   var libraryIncludes = `
 <script>
   window.$ = parent.$.proxy(parent.$.fn.find, parent.$(document));
+  window.loopProtect = parent.loopProtect;
 </script>
 <link
   rel='stylesheet'
