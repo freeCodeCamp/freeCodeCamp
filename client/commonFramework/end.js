@@ -28,18 +28,7 @@ $(document).ready(function() {
       // only run for HTML
       .filter(() => common.challengeType === challengeTypes.HTML)
       .flatMap(code => {
-        if (
-          common.hasJs(code)
-        ) {
-          return common.detectUnsafeCode$(code)
-            .flatMap(code => common.detectLoops$(code))
-            .flatMap(
-              ({ err }) => err ? Observable.throw(err) : Observable.just(code)
-            )
-            .flatMap(code => common.updatePreview$(code))
-            .catch(err => Observable.just({ err }));
-        }
-        return Observable.just(code)
+        return common.detectUnsafeCode$(code)
           .flatMap(code => common.updatePreview$(code))
           .catch(err => Observable.just({ err }));
       })
@@ -66,12 +55,12 @@ $(document).ready(function() {
         .catch(err => Observable.just({ err }));
     })
     .subscribe(
-      ({ err, output, original }) => {
+      ({ err, output, originalCode }) => {
         if (err) {
           console.error(err);
           return common.updateOutputDisplay('' + err);
         }
-        common.codeStorage.updateStorage(challengeName, original);
+        common.codeStorage.updateStorage(challengeName, originalCode);
         common.updateOutputDisplay('' + output);
       },
       (err) => {
@@ -102,11 +91,11 @@ $(document).ready(function() {
           if (common.challengeType === common.challengeTypes.HTML) {
             return common.updatePreview$(`
               <h1>${err}</h1>
-            `).subscribe(() => {});
+            `).first().subscribe(() => {});
           }
           return common.updateOutputDisplay('' + err);
         }
-        common.updateOutputDisplay(output);
+        common.updateOutputDisplay('' + output);
         common.displayTestResults(tests);
         if (solved) {
           common.showCompletion();
@@ -153,12 +142,12 @@ $(document).ready(function() {
       .flatMap(() => common.executeChallenge$())
       .catch(err => Observable.just({ err }))
       .subscribe(
-        ({ err, original, tests }) => {
+        ({ err, originalCode, tests }) => {
           if (err) {
             console.error(err);
             return common.updateOutputDisplay('' + err);
           }
-          common.codeStorage.updateStorage(challengeName, original);
+          common.codeStorage.updateStorage(challengeName, originalCode);
           common.displayTestResults(tests);
         },
         (err) => {

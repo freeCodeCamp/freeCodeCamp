@@ -1,21 +1,50 @@
 /* eslint-disable no-undef, no-unused-vars, no-native-reassign */
-window.__$ = parent.$;
-window.__$(function() {
+// the $ on the iframe window object is the same
+// as the one used on the main site, but
+// uses the iframe document as the context
+window.$(document).ready(function() {
   var _ = parent._;
   var Rx = parent.Rx;
   var chai = parent.chai;
   var assert = chai.assert;
   var tests = parent.tests;
   var common = parent.common;
-  var editor = common.editor.getValue();
-  // change the context of $ so it uses the iFrame for testing
-  var $ = __$.proxy(__$.fn.find, __$(document));
+
+  window.loopProtect.hit = function(line) {
+    window.__err = new Error(
+      'Potential infinite loop at line ' + line
+    );
+  };
+
+  common.getJsOutput = function evalJs(code = '') {
+    let output;
+    try {
+      /* eslint-disable no-eval */
+      output = eval(code);
+      /* eslint-enable no-eval */
+    } catch (e) {
+      window.__err = e;
+    }
+    return output;
+  };
 
   common.runPreviewTests$ =
-    function runPreviewTests$({ tests = [], ...rest }) {
-      return Rx.Observable.from(tests)
+    function runPreviewTests$({
+    tests = [],
+    originalCode,
+    ...rest
+  }) {
+      const code = originalCode;
+      const editor = { getValue() { return originalCode; } };
+      if (window.__err) {
+        return Rx.Observable.throw(window.__err);
+      }
+
+      return Rx.Observable.from(tests, null, null, Rx.Scheduler.default)
+        .delay(100)
         .map(test => {
           const userTest = {};
+          common.appendToOutputDisplay('');
           try {
             /* eslint-disable no-eval */
             eval(test);
@@ -23,16 +52,21 @@ window.__$(function() {
           } catch (e) {
             userTest.err = e.message.split(':').shift();
           } finally {
-            userTest.text = test
-              .split(',')
-              .pop()
-              .replace(/\'/g, '')
-              .replace(/\)/, '');
+            if (!test.match(/message: /g)) {
+              // assumes test does not contain arrays
+              // This is a patch until all test fall into this pattern
+              userTest.text = test
+                .split(',')
+                .pop();
+              userTest.text = 'message: ' + userTest.text + '\');';
+            } else {
+              userTest.text = test;
+            }
           }
           return userTest;
         })
         .toArray()
-        .map(tests => ({ ...rest, tests }));
+        .map(tests => ({ ...rest, tests, originalCode }));
     };
 
   // now that the runPreviewTest$ is defined

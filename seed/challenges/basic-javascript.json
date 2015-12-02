@@ -1658,10 +1658,10 @@
         "<code>Math.floor(Math.random() * (3 - 1 + 1)) + 1;</code>"
       ],
       "tests": [
-        "assert(typeof runSlots($(\".slot\"))[0] === \"number\" && runSlots($(\".slot\"))[0] > 0 && runSlots($(\".slot\"))[0] < 4, 'message: <code>slotOne</code> should be a random number.')",
-        "assert(typeof runSlots($(\".slot\"))[1] === \"number\" && runSlots($(\".slot\"))[1] > 0 && runSlots($(\".slot\"))[1] < 4, 'message: <code>slotTwo</code> should be a random number.')",
-        "assert(typeof runSlots($(\".slot\"))[2] === \"number\" && runSlots($(\".slot\"))[2] > 0 && runSlots($(\".slot\"))[2] < 4, 'message: <code>slotThree</code> should be a random number.')",
-        "assert((function(){if(editor.match(/Math\\.floor\\(\\s?Math\\.random\\(\\)\\s?\\*\\s?\\(\\s?3\\s?\\-\\s?1\\s?\\+\\s?1\\s?\\)\\s?\\)\\s?\\+\\s?1/gi) !== null){return editor.match(/slot.*?=.*?\\(.*?\\).*?/gi).length >= 3;}else{return false;}})(), 'message: You should have used <code>Math.floor(Math.random() * (3 - 1 + 1)) + 1;</code> three times to generate your random numbers.')"
+        "assert(typeof runSlots($(\".slot\"))[0] === \"number\" && runSlots($(\".slot\"))[0] > 0 && runSlots($(\".slot\"))[0] < 4, 'message: <code>slotOne</code> should be a random number.');",
+        "assert(typeof runSlots($(\".slot\"))[1] === \"number\" && runSlots($(\".slot\"))[1] > 0 && runSlots($(\".slot\"))[1] < 4, 'message: <code>slotTwo</code> should be a random number.');",
+        "assert(typeof runSlots($(\".slot\"))[2] === \"number\" && runSlots($(\".slot\"))[2] > 0 && runSlots($(\".slot\"))[2] < 4, 'message: <code>slotThree</code> should be a random number.');",
+        "assert((function(){if(code.match(/Math\\.floor\\(\\s?Math\\.random\\(\\)\\s?\\*\\s?\\(\\s?3\\s?\\-\\s?1\\s?\\+\\s?1\\s?\\)\\s?\\)\\s?\\+\\s?1/gi) !== null){return code.match(/slot.*?=.*?\\(.*?\\).*?/gi).length >= 3;}else{return false;}})(), 'message: You should have used <code>Math.floor(Math.random() * (3 - 1 + 1)) + 1;</code> three times to generate your random numbers.');"
       ],
       "challengeSeed": [
         "fccss",
@@ -1825,7 +1825,7 @@
         "If all three numbers match, we should also set the text <code>\"It's A Win\"</code> to the element with class <code>logger</code>."
       ],
       "tests": [
-        "assert((function(){var data = runSlots();return data === null || data.toString().length === 1;})(), 'message: If all three of our random numbers are the same we should return that number. Otherwise we should return <code>null</code>.')"
+        "assert((function(){var data = runSlots();return data === null || data.toString().length === 1;})(), 'message: If all three of our random numbers are the same we should return that number. Otherwise we should return <code>null</code>.');"
       ],
       "challengeSeed": [
         "fccss",
@@ -1994,8 +1994,8 @@
         "Use the above selector to display each number in its corresponding slot."
       ],
       "tests": [
-        "assert((function(){runSlots();if($($(\".slot\")[0]).html().replace(/\\s/gi, \"\") !== \"\" && $($(\".slot\")[1]).html().replace(/\\s/gi, \"\") !== \"\" && $($(\".slot\")[2]).html().replace(/\\s/gi, \"\") !== \"\"){return true;}else{return false;}})(), 'message: You should be displaying the result of the slot numbers in the corresponding slots.')",
-        "assert((editor.match( /\\$\\s*?\\(\\s*?\\$\\s*?\\(\\s*?(?:'|\")\\s*?\\.slot\\s*?(?:'|\")\\s*?\\)\\[\\d\\]\\s*?\\)/gi) && editor.match( /\\$\\s*?\\(\\s*?\\$\\s*?\\(\\s*?(?:'|\")\\s*?\\.slot\\s*?(?:'|\")\\s*?\\)\\[\\d\\]\\s*?\\)/gi ).length >= 3 && editor.match( /\\.html\\(slotOne\\)/gi ) && editor.match( /\\.html\\(slotTwo\\)/gi ) && editor.match( /\\.html\\(slotThree\\)/gi )), 'message: You should have used the the selector given in the description to select each slot and assign it the value of <code>slotOne</code>&#44; <code>slotTwo</code> and <code>slotThree</code> respectively.')"
+        "assert((function(){runSlots();if($($(\".slot\")[0]).html().replace(/\\s/gi, \"\") !== \"\" && $($(\".slot\")[1]).html().replace(/\\s/gi, \"\") !== \"\" && $($(\".slot\")[2]).html().replace(/\\s/gi, \"\") !== \"\"){return true;}else{return false;}})(), 'message: You should be displaying the result of the slot numbers in the corresponding slots.');",
+        "assert((code.match( /\\$\\s*?\\(\\s*?\\$\\s*?\\(\\s*?(?:'|\")\\s*?\\.slot\\s*?(?:'|\")\\s*?\\)\\[\\d\\]\\s*?\\)/gi) && code.match( /\\$\\s*?\\(\\s*?\\$\\s*?\\(\\s*?(?:'|\")\\s*?\\.slot\\s*?(?:'|\")\\s*?\\)\\[\\d\\]\\s*?\\)/gi ).length >= 3 && code.match( /\\.html\\(slotOne\\)/gi ) && code.match( /\\.html\\(slotTwo\\)/gi ) && code.match( /\\.html\\(slotThree\\)/gi )), 'message: You should have used the the selector given in the description to select each slot and assign it the value of <code>slotOne</code>&#44; <code>slotTwo</code> and <code>slotThree</code> respectively.');"
       ],
       "challengeSeed": [
         "fccss",
@@ -2168,13 +2168,13 @@
         "Set up all three slots like this, then click the \"Go\" button to play the slot machine."
       ],
       "tests": [
-        "assert((editor.match(/\\$\\s*?\\(\\s*?\\$\\s*?\\(\\s*?(?:'|\")\\s*?\\.slot\\s*?(?:'|\")\\s*?\\)\\[\\d\\]\\s*?\\)\\.html\\(\\s*?\\'\\<img\\s?src\\s?=\\s?\"\\'\\s?\\+\\s?images\\[\\w+\\s*\\-\\s*1\\]\\s?\\+\\s?\\'\"\\>\\'\\s*?\\);/gi) && editor.match(/\\$\\s*?\\(\\s*?\\$\\s*?\\(\\s*?(?:'|\")\\s*?\\.slot\\s*?(?:'|\")\\s*?\\)\\[\\d\\]\\s*?\\)\\.html\\(\\s*?\\'\\<img\\s?src\\s?=\\s?\"\\'\\s?\\+\\s?images\\[\\w+\\s*\\-\\s*1\\]\\s?\\+\\s?\\'\"\\>\\'\\s*?\\);/gi).length >= 3), 'message: Use the provided code three times. One for each slot.')",
-        "assert(editor.match(/\\$\\s*?\\(\\s*?\\$\\s*?\\(\\s*?(?:'|\")\\s*?\\.slot\\s*?(?:'|\")\\s*?\\)\\[0\\]\\s*?\\)/gi), 'message: You should have used <code>$&#40;&#39;.slot&#39;&#41;[0]</code> at least once.')",
-        "assert(editor.match(/\\$\\s*?\\(\\s*?\\$\\s*?\\(\\s*?(?:'|\")\\s*?\\.slot\\s*?(?:'|\")\\s*?\\)\\[1\\]\\s*?\\)/gi), 'message: You should have used <code>$&#40;&#39;.slot&#39;&#41;[1]</code> at least once.')",
-        "assert(editor.match(/\\$\\s*?\\(\\s*?\\$\\s*?\\(\\s*?(?:'|\")\\s*?\\.slot\\s*?(?:'|\")\\s*?\\)\\[2\\]\\s*?\\)/gi), 'message: You should have used <code>$&#40;&#39;.slot&#39;&#41;[2]</code> at least once.')",
-        "assert(editor.match(/slotOne/gi) && editor.match(/slotOne/gi).length >= 7, 'message: You should have used the <code>slotOne</code> value at least once.')",
-        "assert(editor.match(/slotTwo/gi) && editor.match(/slotTwo/gi).length >= 8, 'message: You should have used the <code>slotTwo</code> value at least once.')",
-        "assert(editor.match(/slotThree/gi) && editor.match(/slotThree/gi).length >= 7, 'message: You should have used the <code>slotThree</code> value at least once.')"
+        "assert((code.match(/\\$\\s*?\\(\\s*?\\$\\s*?\\(\\s*?(?:'|\")\\s*?\\.slot\\s*?(?:'|\")\\s*?\\)\\[\\d\\]\\s*?\\)\\.html\\(\\s*?\\'\\<img\\s?src\\s?=\\s?\"\\'\\s?\\+\\s?images\\[\\w+\\s*\\-\\s*1\\]\\s?\\+\\s?\\'\"\\>\\'\\s*?\\);/gi) && code.match(/\\$\\s*?\\(\\s*?\\$\\s*?\\(\\s*?(?:'|\")\\s*?\\.slot\\s*?(?:'|\")\\s*?\\)\\[\\d\\]\\s*?\\)\\.html\\(\\s*?\\'\\<img\\s?src\\s?=\\s?\"\\'\\s?\\+\\s?images\\[\\w+\\s*\\-\\s*1\\]\\s?\\+\\s?\\'\"\\>\\'\\s*?\\);/gi).length >= 3), 'message: Use the provided code three times. One for each slot.');",
+        "assert(code.match(/\\$\\s*?\\(\\s*?\\$\\s*?\\(\\s*?(?:'|\")\\s*?\\.slot\\s*?(?:'|\")\\s*?\\)\\[0\\]\\s*?\\)/gi), 'message: You should have used <code>$&#40;&#39;.slot&#39;&#41;[0]</code> at least once.');",
+        "assert(code.match(/\\$\\s*?\\(\\s*?\\$\\s*?\\(\\s*?(?:'|\")\\s*?\\.slot\\s*?(?:'|\")\\s*?\\)\\[1\\]\\s*?\\)/gi), 'message: You should have used <code>$&#40;&#39;.slot&#39;&#41;[1]</code> at least once.');",
+        "assert(code.match(/\\$\\s*?\\(\\s*?\\$\\s*?\\(\\s*?(?:'|\")\\s*?\\.slot\\s*?(?:'|\")\\s*?\\)\\[2\\]\\s*?\\)/gi), 'message: You should have used <code>$&#40;&#39;.slot&#39;&#41;[2]</code> at least once.');",
+        "assert(code.match(/slotOne/gi) && code.match(/slotOne/gi).length >= 7, 'message: You should have used the <code>slotOne</code> value at least once.');",
+        "assert(code.match(/slotTwo/gi) && code.match(/slotTwo/gi).length >= 8, 'message: You should have used the <code>slotTwo</code> value at least once.');",
+        "assert(code.match(/slotThree/gi) && code.match(/slotThree/gi).length >= 7, 'message: You should have used the <code>slotThree</code> value at least once.');"
       ],
       "challengeSeed": [
         "fccss",

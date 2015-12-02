@@ -18,6 +18,7 @@ var Rx = require('rx'),
   uglify = require('gulp-uglify'),
   merge = require('merge-stream'),
   babel = require('gulp-babel'),
+  sourcemaps = require('gulp-sourcemaps'),
 
   // react app
   webpack = require('webpack-stream'),
@@ -85,7 +86,8 @@ var paths = {
     'public/bower_components/CodeMirror/mode/xml/xml.js',
     'public/bower_components/CodeMirror/mode/css/css.js',
     'public/bower_components/CodeMirror/mode/htmlmixed/htmlmixed.js',
-    'node_modules/emmet-codemirror/dist/emmet.js'
+    'node_modules/emmet-codemirror/dist/emmet.js',
+    'public/js/lib/loop-protect/loop-protect.js'
   ],
 
   vendorMain: [
@@ -103,20 +105,20 @@ var paths = {
   js: [
     'client/main.js',
     'client/iFrameScripts.js',
-    'client/plugin.js',
-    'client/faux.js'
+    'client/plugin.js'
   ],
 
   commonFramework: [
     'init',
     'bindings',
     'add-test-to-string',
-    'add-faux-stream',
     'code-storage',
     'code-uri',
+    'add-loop-protect',
+    'get-iframe',
+    'update-preview',
     'create-editor',
     'detect-unsafe-code-stream',
-    'detect-loops-stream',
     'display-test-results',
     'execute-challenge-stream',
     'output-display',
@@ -125,7 +127,6 @@ var paths = {
     'run-tests-stream',
     'show-completion',
     'step-challenge',
-    'update-preview',
     'end'
   ],
 
@@ -434,7 +435,9 @@ gulp.task('dependents', ['js'], function() {
   return gulp.src(formatCommonFrameworkPaths.call(paths.commonFramework))
     .pipe(plumber({ errorHandler: errorHandler }))
     .pipe(babel())
+    .pipe(__DEV__ ? sourcemaps.init() : gutil.noop())
     .pipe(concat('commonFramework.js'))
+    .pipe(__DEV__ ? sourcemaps.write() : gutil.noop())
     .pipe(__DEV__ ? gutil.noop() : uglify())
     .pipe(revReplace({ manifest: manifest }))
     .pipe(gulp.dest(dest))

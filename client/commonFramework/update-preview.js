@@ -4,7 +4,15 @@ window.common = (function(global) {
     common = { init: [] }
   } = global;
 
+  // the first script tag here is to proxy jQuery
+  // We use the same jQuery on the main window but we change the
+  // context to that of the iframe.
   var libraryIncludes = `
+<script>
+  window.$ = parent.$.proxy(parent.$.fn.find, parent.$(document));
+  window.loopProtect = parent.loopProtect;
+  window.__err = null;
+</script>
 <link
   rel='stylesheet'
   href='//cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.min.css'
@@ -18,7 +26,6 @@ window.common = (function(global) {
   rel='stylesheet'
   href='//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css'
   />
-<script src='https://cdn.jsdelivr.net/jquery/1.9.0/jquery.js'></script>
 <style>
   body { padding: 0px 3px 0px 3px; }
 </style>
@@ -34,15 +41,10 @@ window.common = (function(global) {
 
   // runPreviewTests$ should be set up in the preview window
   common.runPreviewTests$ =
-    () => Observable.throw({ err: new Error('run preview not enabled') });
+    () => Observable.throw(new Error('run preview not enabled'));
 
   common.updatePreview$ = function updatePreview$(code = '') {
-    const previewFrame = document.getElementById('preview');
-    const preview = previewFrame.contentDocument ||
-      previewFrame.contentWindow.document;
-    if (!preview) {
-      return Observable.just(code);
-    }
+    const preview = common.getIframe('preview');
 
     return iFrameScript$
       .map(script => `<script>${script}</script>`)
@@ -56,7 +58,10 @@ window.common = (function(global) {
         // now we filter false values and wait for the first true
         return common.previewReady$
           .filter(ready => ready)
-          .first();
+          .first()
+          // the delay here is to give code within the iframe
+          // control to run
+          .delay(400);
       })
       .map(() => code);
   };
