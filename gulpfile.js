@@ -85,7 +85,7 @@ var paths = {
     'public/bower_components/CodeMirror/mode/xml/xml.js',
     'public/bower_components/CodeMirror/mode/css/css.js',
     'public/bower_components/CodeMirror/mode/htmlmixed/htmlmixed.js',
-    'public/bower_components/CodeMirror/addon/emmet/emmet.js'
+    'node_modules/emmet-codemirror/dist/emmet.js'
   ],
 
   vendorMain: [
@@ -517,4 +517,3 @@ gulp.task('default', [
   'watch',
   'sync'
 ]);
-

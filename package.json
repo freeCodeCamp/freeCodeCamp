@@ -44,6 +44,7 @@
     "debug": "^2.2.0",
     "dedent": "~0.6.0",
     "dotenv": "^1.2.0",
+    "emmet-codemirror": "^1.2.5",
     "errorhandler": "^1.4.2",
     "es6-map": "~0.1.1",
     "eslint": "~1.10.2",
