@@ -1,7 +1,12 @@
 $(document).ready(function() {
   const common = window.common;
   const { Observable } = window.Rx;
-  const { challengeName, challengeType, challengeTypes } = common;
+  const {
+    addLoopProtect,
+    challengeName,
+    challengeType,
+    challengeTypes
+  } = common;
 
   common.init.forEach(function(init) {
     init($);
@@ -29,7 +34,13 @@ $(document).ready(function() {
       .filter(() => common.challengeType === challengeTypes.HTML)
       .flatMap(code => {
         return common.detectUnsafeCode$(code)
+          .map(() => {
+            const combinedCode = common.head + code + common.tail;
+
+            return addLoopProtect(combinedCode);
+          })
           .flatMap(code => common.updatePreview$(code))
+          .flatMap(() => common.checkPreview$({ code }))
           .catch(err => Observable.just({ err }));
       })
       .subscribe(

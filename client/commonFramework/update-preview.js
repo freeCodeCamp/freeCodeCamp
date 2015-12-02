@@ -12,6 +12,11 @@ window.common = (function(global) {
   window.$ = parent.$.proxy(parent.$.fn.find, parent.$(document));
   window.loopProtect = parent.loopProtect;
   window.__err = null;
+  window.loopProtect.hit = function(line) {
+    window.__err = new Error(
+      'Potential infinite loop at line ' + line
+    );
+  };
 </script>
 <link
   rel='stylesheet'
@@ -39,9 +44,13 @@ window.common = (function(global) {
   // and prime it with false
   common.previewReady$ = new BehaviorSubject(false);
 
-  // runPreviewTests$ should be set up in the preview window
+  // These should be set up in the preview window
+  // if this error is seen it is because the function tried to run
+  // before the iframe has completely loaded
   common.runPreviewTests$ =
-    () => Observable.throw(new Error('run preview not enabled'));
+    common.checkPreview$ =
+    () => Observable.throw(new Error('Preview not fully loaded'));
+
 
   common.updatePreview$ = function updatePreview$(code = '') {
     const preview = common.getIframe('preview');
