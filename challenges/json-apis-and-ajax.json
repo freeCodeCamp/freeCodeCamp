@@ -17,8 +17,8 @@
         "<code>});</code>"
       ],
       "tests": [
-        "assert(code.match(/\\$\\s*?\\(\\s*?(?:'|\")\\#getMessage(?:'|\")\\s*?\\)\\s*?\\.on\\s*?\\(\\s*?(?:'|\")click(?:'|\")\\s*?\\,\\s*?function\\s*?\\(\\s*?\\)\\s*?\\{/gi), 'message: Bind the click event to the button with the ID of <code>getMessage</code>')",
-        "assert(code.match(/\\n*?\\s*?\\}\\n*?\\s*?\\);/gi) && code.match(/\\n*?\\s*?\\}\\);/gi).length >= 2, 'message: Be sure to close your functions with <code>}&#41;;</code>')"
+        "assert(code.match(/\\$\\s*?\\(\\s*?(?:'|\")\\#getMessage(?:'|\")\\s*?\\)\\s*?\\.on\\s*?\\(\\s*?(?:'|\")click(?:'|\")\\s*?\\,\\s*?function\\s*?\\(\\s*?\\)\\s*?\\{/gi), 'message: Bind the click event to the button with the ID of <code>getMessage</code>');",
+        "assert(code.match(/\\n*?\\s*?\\}\\n*?\\s*?\\);/gi) && code.match(/\\n*?\\s*?\\}\\);/gi).length >= 2, 'message: Be sure to close your functions with <code>}&#41;;</code>');"
       ],
       "challengeSeed": [
         "fccss",
@@ -61,7 +61,7 @@
         "<code>&nbsp;&nbsp;$(\".message\").html(\"Here is the message\");</code>"
       ],
       "tests": [
-        "assert(code.match(/\\$\\s*?\\(\\s*?(?:'|\")\\.message(?:'|\")\\s*?\\)\\s*?\\.html\\s*?\\(\\s*?(?:'|\")Here\\sis\\sthe\\smessage(?:'|\")\\s*?\\);/gi), 'message: Clicking the \"Get Message\" button should give the element with the class <code>message</code> the text \"Here is the message\".')"
+        "assert(code.match(/\\$\\s*?\\(\\s*?(?:'|\")\\.message(?:'|\")\\s*?\\)\\s*?\\.html\\s*?\\(\\s*?(?:'|\")Here\\sis\\sthe\\smessage(?:'|\")\\s*?\\);/gi), 'message: Clicking the \"Get Message\" button should give the element with the class <code>message</code> the text \"Here is the message\".');"
       ],
       "challengeSeed": [
         "fccss",
@@ -113,11 +113,11 @@
         "Once you've added this, click the \"Get Message\" button. Your Ajax function will replace the \"The message will go here\" text with the raw JSON output from the Free Code Camp Cat Photo API."
       ],
       "tests": [
-        "assert(code.match(/\\$\\s*?\\(\\s*?(\\\"|\\')\\#getMessage(\\\"|\\')\\s*?\\)\\s*?\\.\\s*?on\\s*?\\(\\s*?(\\\"|\\')click(\\\"|\\')\\s*?\\,\\s*?function\\s*?\\(\\s*?\\)\\s*?\\{/gi), 'message: You should have a click handler on the getMessage button to trigger the AJAX request.')",
-        "assert(code.match(/\\s*?\\}\\s*?\\)\\s*?\\;/gi), 'message: You should have at least one closing set of brackets and parenthesis.')",
-        "assert(code.match(/\\s*?\\}\\s*?\\)\\s*?\\;/gi) && code.match(/\\,\\s*?function\\s*?\\(\\s*?\\w*?\\s*?\\)\\s*?\\{/gi) && code.match(/\\s*?\\}\\s*?\\)\\s*?\\;/gi).length === code.match(/\\s*?function\\s*?\\(\\s*?\\w*?\\s*?\\)\\s*?\\{/gi).length, 'message: Each callback function should have a closing set of brackets and parenthesis.')",
-        "assert(code.match(/\\$\\s*?\\.\\s*?getJSON\\s*?\\(\\s*?(\\\"|\\')\\\/json\\\/cats\\.json(\\\"|\\')\\s*?\\,\\s*?function\\s*?\\(\\s*?json\\s*?\\)\\s*?\\{/gi), 'message: You should be making use of the getJSON method given in the description to load data from the json file.')",
-        "assert(code.match(/\\$\\s*?\\(\\s*?(\\\"|\\')\\.message(\\\"|\\')\\s*?\\)\\s*?\\.\\s*?html\\s*?\\(\\s*?JSON\\s*?\\.\\s*?stringify\\s*?\\(\\s*?json\\s*?\\)\\s*?\\)/gi), 'message: Don\\'t forget to make the <code>.html</code> change the contents of the message box so that it contains the result of the getJSON.')"
+        "assert(code.match(/\\$\\s*?\\(\\s*?(\\\"|\\')\\#getMessage(\\\"|\\')\\s*?\\)\\s*?\\.\\s*?on\\s*?\\(\\s*?(\\\"|\\')click(\\\"|\\')\\s*?\\,\\s*?function\\s*?\\(\\s*?\\)\\s*?\\{/gi), 'message: You should have a click handler on the getMessage button to trigger the AJAX request.');",
+        "assert(code.match(/\\s*?\\}\\s*?\\)\\s*?\\;/gi), 'message: You should have at least one closing set of brackets and parenthesis.');",
+        "assert(code.match(/\\s*?\\}\\s*?\\)\\s*?\\;/gi) && code.match(/\\,\\s*?function\\s*?\\(\\s*?\\w*?\\s*?\\)\\s*?\\{/gi) && code.match(/\\s*?\\}\\s*?\\)\\s*?\\;/gi).length === code.match(/\\s*?function\\s*?\\(\\s*?\\w*?\\s*?\\)\\s*?\\{/gi).length, 'message: Each callback function should have a closing set of brackets and parenthesis.');",
+        "assert(code.match(/\\$\\s*?\\.\\s*?getJSON\\s*?\\(\\s*?(\\\"|\\')\\\/json\\\/cats\\.json(\\\"|\\')\\s*?\\,\\s*?function\\s*?\\(\\s*?json\\s*?\\)\\s*?\\{/gi), 'message: You should be making use of the getJSON method given in the description to load data from the json file.');",
+        "assert(code.match(/\\$\\s*?\\(\\s*?(\\\"|\\')\\.message(\\\"|\\')\\s*?\\)\\s*?\\.\\s*?html\\s*?\\(\\s*?JSON\\s*?\\.\\s*?stringify\\s*?\\(\\s*?json\\s*?\\)\\s*?\\)/gi), 'message: Don\\'t forget to make the <code>.html</code> change the contents of the message box so that it contains the result of the getJSON.');"
       ],
       "challengeSeed": [
         "fccss",
@@ -174,7 +174,7 @@
         "<code>});</code>"
       ],
       "tests": [
-        "assert(code.match(/json\\.forEach/gi), 'message: The message box should have something in it.')"
+        "assert(code.match(/json\\.forEach/gi), 'message: The message box should have something in it.');"
       ],
       "challengeSeed": [
         "fccss",
@@ -227,7 +227,7 @@
         "<code>&nbsp;&nbsp;html += \"&lt;img src = '\" + val.imageLink + \"'&gt;\";</code>"
       ],
       "tests": [
-        "assert(code.match(/val.imageLink/gi), 'message: You should have used the <code>imageLink</code> property to display the images.')"
+        "assert(code.match(/val.imageLink/gi), 'message: You should have used the <code>imageLink</code> property to display the images.');"
       ],
       "challengeSeed": [
         "fccss",
@@ -292,7 +292,7 @@
         "<code>});</code>"
       ],
       "tests": [
-        "assert(code.match(/filter/gi), 'message: You should be making use of the .filter method.')"
+        "assert(code.match(/filter/gi), 'message: You should be making use of the .filter method.');"
       ],
       "challengeSeed": [
         "fccss",
@@ -363,7 +363,7 @@
         "<code>}</code>"
       ],
       "tests": [
-        "assert(code.match(/navigator\\.geolocation\\.getCurrentPosition/gi), 'message: You should make use of the <code>navigator.geolocation</code> to access the users current location.')"
+        "assert(code.match(/navigator\\.geolocation\\.getCurrentPosition/gi), 'message: You should make use of the <code>navigator.geolocation</code> to access the users current location.');"
       ],
       "challengeSeed": [
         "fccss",
