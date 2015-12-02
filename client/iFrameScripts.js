@@ -51,11 +51,15 @@ window.$(document).ready(function() {
           } catch (e) {
             userTest.err = e.message.split(':').shift();
           } finally {
-            userTest.text = test
-              .split(',')
-              .pop()
-              .replace(/\'/g, '')
-              .replace(/\)/, '');
+            if (!test.match(/message: /g)) {
+              userTest.text = 'message: ' + test
+                .split(',')
+                .pop()
+                .replace(/\'/g, '')
+                .replace(/\)/, '');
+            } else {
+              userTest.text = test;
+            }
           }
           return userTest;
         })
