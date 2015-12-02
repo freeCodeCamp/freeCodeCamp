@@ -11,6 +11,7 @@ window.common = (function(global) {
 <script>
   window.$ = parent.$.proxy(parent.$.fn.find, parent.$(document));
   window.loopProtect = parent.loopProtect;
+  window.__err = null;
 </script>
 <link
   rel='stylesheet'

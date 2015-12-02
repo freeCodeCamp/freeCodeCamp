@@ -10,6 +10,12 @@ window.$(document).ready(function() {
   var tests = parent.tests;
   var common = parent.common;
 
+  window.loopProtect.hit = function(line) {
+    window.__err = new Error(
+      'Potential infinite loop at line ' + line
+    );
+  };
+
   common.getJsOutput = function evalJs(code = '') {
     let output;
     try {
