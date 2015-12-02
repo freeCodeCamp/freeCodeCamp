@@ -53,11 +53,12 @@ window.$(document).ready(function() {
             userTest.err = e.message.split(':').shift();
           } finally {
             if (!test.match(/message: /g)) {
-              userTest.text = 'message: ' + test
+              // assumes test does not contain arrays
+              // This is a patch until all test fall into this pattern
+              userTest.text = test
                 .split(',')
-                .pop()
-                .replace(/\'/g, '')
-                .replace(/\)/, '');
+                .pop();
+              userTest.text = 'message: ' + userTest.text + '\');';
             } else {
               userTest.text = test;
             }
