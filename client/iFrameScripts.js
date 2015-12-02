@@ -40,7 +40,8 @@ window.$(document).ready(function() {
         return Rx.Observable.throw(window.__err);
       }
 
-      return Rx.Observable.from(tests)
+      return Rx.Observable.from(tests, null, null, Rx.Scheduler.default)
+        .delay(100)
         .map(test => {
           const userTest = {};
           common.appendToOutputDisplay('');

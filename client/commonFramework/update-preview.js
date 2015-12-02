@@ -61,7 +61,7 @@ window.common = (function(global) {
           .first()
           // the delay here is to give code within the iframe
           // control to run
-          .delay(100);
+          .delay(400);
       })
       .map(() => code);
   };
