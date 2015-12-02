@@ -10,12 +10,6 @@ window.$(document).ready(function() {
   var tests = parent.tests;
   var common = parent.common;
 
-  window.loopProtect.hit = function(line) {
-    window.__err = new Error(
-      'Potential infinite loop at line ' + line
-    );
-  };
-
   common.getJsOutput = function evalJs(code = '') {
     let output;
     try {
@@ -40,11 +34,13 @@ window.$(document).ready(function() {
         return Rx.Observable.throw(window.__err);
       }
 
+      // Iterate throught the test one at a time
+      // on new stacks
       return Rx.Observable.from(tests, null, null, Rx.Scheduler.default)
+        // add delay here for firefox to catch up
         .delay(100)
         .map(test => {
           const userTest = {};
-          common.appendToOutputDisplay('');
           try {
             /* eslint-disable no-eval */
             eval(test);
@@ -65,9 +61,18 @@ window.$(document).ready(function() {
           }
           return userTest;
         })
+        // gather tests back into an array
         .toArray()
         .map(tests => ({ ...rest, tests, originalCode }));
     };
+
+  // used when updating preview without running tests
+  common.checkPreview$ = function checkPreview$(args) {
+    if (window.__err) {
+      return Rx.Observable.throw(window.__err);
+    }
+    return Rx.Observable.just(args);
+  };
 
   // now that the runPreviewTest$ is defined
   // we set the subject to true
