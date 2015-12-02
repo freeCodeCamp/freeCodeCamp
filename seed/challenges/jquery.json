@@ -16,9 +16,9 @@
         "This is important because without your <code>document ready function</code>, your code may run before your HTML is rendered, which would cause bugs."
       ],
       "tests": [
-        "assert(editor.match(/<\\/script\\s*>/g) && editor.match(/<script(\\sasync|\\sdefer)*(\\s(charset|src|type)\\s*=\\s*[\"\\']+[^\"\\']*[\"\\']+)*(\\sasync|\\sdefer)*\\s*>/g) && editor.match(/<\\/script\\s*>/g).length === editor.match(/<script(\\sasync|\\sdefer)*(\\s(charset|src|type)\\s*=\\s*[\"\\']+[^\"\\']*[\"\\']+)*(\\sasync|\\sdefer)*\\s*>/g).length, 'Create a <code>script</code> element making sure it is valid and has a closing tag.')",
-        "assert(editor.match(/\\$\\s*?\\(\\s*?document\\)\\.ready\\s*?\\(\\s*?function\\s*?\\(\\s*?\\)\\s*?\\{/g), 'You should add <code>$&#40;document&#41;.ready&#40;function&#40;&#41; {</code> to the beginning of your <code>script</code> element.')",
-        "assert(editor.match(/\\n*?\\s*?\\}\\s*?\\);/g), 'Close your <code>$&#40;document&#41;.ready&#40;function&#40;&#41; {</code> function with <code>}&#41;;</code>')"
+        "assert(editor.match(/<\\/script\\s*>/g) && editor.match(/<script(\\sasync|\\sdefer)*(\\s(charset|src|type)\\s*=\\s*[\"\\']+[^\"\\']*[\"\\']+)*(\\sasync|\\sdefer)*\\s*>/g) && editor.match(/<\\/script\\s*>/g).length === editor.match(/<script(\\sasync|\\sdefer)*(\\s(charset|src|type)\\s*=\\s*[\"\\']+[^\"\\']*[\"\\']+)*(\\sasync|\\sdefer)*\\s*>/g).length, 'message: Create a <code>script</code> element making sure it is valid and has a closing tag.')",
+        "assert(editor.match(/\\$\\s*?\\(\\s*?document\\)\\.ready\\s*?\\(\\s*?function\\s*?\\(\\s*?\\)\\s*?\\{/g), 'message: You should add <code>$&#40;document&#41;.ready&#40;function&#40;&#41; {</code> to the beginning of your <code>script</code> element.')",
+        "assert(editor.match(/\\n*?\\s*?\\}\\s*?\\);/g), 'message: Close your <code>$&#40;document&#41;.ready&#40;function&#40;&#41; {</code> function with <code>}&#41;;</code>')"
       ],
       "challengeSeed": [
         "",
@@ -72,8 +72,8 @@
         "Note that we've already included both the jQuery library and the Animate.css library in the background so that you can use them in the editor. So you are using jQuery to apply the Animate.css <code>bounce</code> class to your <code>button</code> elements."
       ],
       "tests": [
-        "assert($(\"button\").hasClass(\"animated\") && $(\"button\").hasClass(\"bounce\"), 'Use the jQuery <code>addClass&#40&#41</code> function to give the classes <code>animated</code> and <code>bounce</code> to your <code>button</code> elements.')",
-        "assert(!editor.match(/class.*animated/g), 'Only use jQuery to add these classes to the element.')"
+        "assert($(\"button\").hasClass(\"animated\") && $(\"button\").hasClass(\"bounce\"), 'message: Use the jQuery <code>addClass&#40&#41</code> function to give the classes <code>animated</code> and <code>bounce</code> to your <code>button</code> elements.')",
+        "assert(!editor.match(/class.*animated/g), 'message: Only use jQuery to add these classes to the element.')"
       ],
       "challengeSeed": [
         "fccss",
@@ -131,8 +131,8 @@
         "<code>$(\".text-primary\").addClass(\"animated shake\");</code>"
       ],
       "tests": [
-        "assert($(\".well\").hasClass(\"animated\") && $(\".well\").hasClass(\"shake\"), 'Use the jQuery <code>addClass&#40&#41</code> function to give the classes <code>animated</code> and <code>shake</code> to all your elements with the class <code>well</code>.')",
-        "assert(!editor.match(/class\\.\\*animated/g), 'Only use jQuery to add these classes to the element.')"
+        "assert($(\".well\").hasClass(\"animated\") && $(\".well\").hasClass(\"shake\"), 'message: Use the jQuery <code>addClass&#40&#41</code> function to give the classes <code>animated</code> and <code>shake</code> to all your elements with the class <code>well</code>.')",
+        "assert(!editor.match(/class\\.\\*animated/g), 'message: Only use jQuery to add these classes to the element.')"
       ],
       "challengeSeed": [
         "fccss",
@@ -190,9 +190,9 @@
         "<code>$(\"#target6\").addClass(\"animated fadeOut\")</code>."
       ],
       "tests": [
-        "assert($(\"#target3\").hasClass(\"animated\"), 'Select the <code>button</code> element with the <code>id</code> of <code>target3</code> and use the jQuery <code>addClass&#40&#41</code> function to give it the class of <code>animated</code>.')",
-        "assert(($(\"#target3\").hasClass(\"fadeOut\") || $(\"#target3\").hasClass(\"fadeout\"))  && editor.match(/\\$\\(.#target3.\\)/g), 'Target the element with the id <code>target3</code> and use the jQuery <code>addClass&#40&#41</code> function to give it the class <code>fadeOut</code>.')",
-        "assert(!editor.match(/class.*animated/g), 'Only use jQuery to add these classes to the element.')"
+        "assert($(\"#target3\").hasClass(\"animated\"), 'message: Select the <code>button</code> element with the <code>id</code> of <code>target3</code> and use the jQuery <code>addClass&#40&#41</code> function to give it the class of <code>animated</code>.')",
+        "assert(($(\"#target3\").hasClass(\"fadeOut\") || $(\"#target3\").hasClass(\"fadeout\"))  && editor.match(/\\$\\(.#target3.\\)/g), 'message: Target the element with the id <code>target3</code> and use the jQuery <code>addClass&#40&#41</code> function to give it the class <code>fadeOut</code>.')",
+        "assert(!editor.match(/class.*animated/g), 'message: Only use jQuery to add these classes to the element.')"
       ],
       "challengeSeed": [
         "fccss",
@@ -247,11 +247,11 @@
         "Delete all three of these jQuery functions from your <code>document ready function</code>, but leave your <code>document ready function</code> itself intact."
       ],
       "tests": [
-        "assert(!editor.match(/e\"\\);/g) && !editor.match(/t\"\\);/g), 'Delete all three of your jQuery functions from your <code>document ready function</code>.')",
-        "assert(editor.match(/<script>/g), 'Leave your <code>script</code> element intact.')",
-        "assert(editor.match(/\\$\\(document\\)\\.ready\\(function\\(\\)\\s?\\{/g), 'Leave your <code>$&#40document&#41.ready&#40function&#40&#41 {</code> to the beginning of your <code>script</code> element.')",
-        "assert(editor.match(/\\n\\s+?\\}\\);/g), 'Leave your \"document ready function\" closing <code>&#125;&#41;</code> intact.')",
-        "assert(editor.match(/<\\/script>/g) && editor.match(/<script/g) && editor.match(/<\\/script>/g).length === editor.match(/<script/g).length, 'Leave your <code>script</code> element closing tag intact.')"
+        "assert(!editor.match(/e\"\\);/g) && !editor.match(/t\"\\);/g), 'message: Delete all three of your jQuery functions from your <code>document ready function</code>.')",
+        "assert(editor.match(/<script>/g), 'message: Leave your <code>script</code> element intact.')",
+        "assert(editor.match(/\\$\\(document\\)\\.ready\\(function\\(\\)\\s?\\{/g), 'message: Leave your <code>$&#40document&#41.ready&#40function&#40&#41 {</code> to the beginning of your <code>script</code> element.')",
+        "assert(editor.match(/\\n\\s+?\\}\\);/g), 'message: Leave your \"document ready function\" closing <code>&#125;&#41;</code> intact.')",
+        "assert(editor.match(/<\\/script>/g) && editor.match(/<script/g) && editor.match(/<\\/script>/g).length === editor.match(/<script/g).length, 'message: Leave your <code>script</code> element closing tag intact.')"
       ],
       "challengeSeed": [
         "fccss",
@@ -307,12 +307,12 @@
         "Add the <code>btn-primary</code> class to the button with id <code>#target1</code>."
       ],
       "tests": [
-        "assert(editor.match(/\\$\\s*?\\(\\s*?(?:'|\")\\s*?button\\s*?(?:'|\")/gi), 'Use the <code>$&#40\"button\"&#41</code> selector.')",
-        "assert(editor.match(/\\$\\s*?\\(\\s*?(?:'|\")\\s*?\\.btn\\s*?(?:'|\")/gi), 'Use the <code>$&#40\".btn\"&#41</code> selector.')",
-        "assert(editor.match(/\\$\\s*?\\(\\s*?(?:'|\")\\s*?#target1\\s*?(?:'|\")/gi), 'Use the <code>$&#40\"#target1\"&#41</code> selector.')",
-        "assert(editor.match(/addClass/g) && editor.match(/addClass\\(\\s*?('|\")[\\w-]+\\1\\s*?\\)/g).length > 2, 'Only add one class with each of your three selectors.')",
-        "assert($(\"#target1\").hasClass(\"animated\") && $(\"#target1\").hasClass(\"shake\") && $(\"#target1\").hasClass(\"btn-primary\"), 'Your <code>#target1</code> element should have the classes <code>animated</code>&#130; <code>shake</code> and <code>btn-primary</code>.')",
-        "assert(!editor.match(/class.*animated/g), 'Only use jQuery to add these classes to the element.')"
+        "assert(editor.match(/\\$\\s*?\\(\\s*?(?:'|\")\\s*?button\\s*?(?:'|\")/gi), 'message: Use the <code>$&#40\"button\"&#41</code> selector.')",
+        "assert(editor.match(/\\$\\s*?\\(\\s*?(?:'|\")\\s*?\\.btn\\s*?(?:'|\")/gi), 'message: Use the <code>$&#40\".btn\"&#41</code> selector.')",
+        "assert(editor.match(/\\$\\s*?\\(\\s*?(?:'|\")\\s*?#target1\\s*?(?:'|\")/gi), 'message: Use the <code>$&#40\"#target1\"&#41</code> selector.')",
+        "assert(editor.match(/addClass/g) && editor.match(/addClass\\(\\s*?('|\")[\\w-]+\\1\\s*?\\)/g).length > 2, 'message: Only add one class with each of your three selectors.')",
+        "assert($(\"#target1\").hasClass(\"animated\") && $(\"#target1\").hasClass(\"shake\") && $(\"#target1\").hasClass(\"btn-primary\"), 'message: Your <code>#target1</code> element should have the classes <code>animated</code>&#130; <code>shake</code> and <code>btn-primary</code>.')",
+        "assert(!editor.match(/class.*animated/g), 'message: Only use jQuery to add these classes to the element.')"
       ],
       "challengeSeed": [
         "fccss",
@@ -367,9 +367,9 @@
         "Let's remove the <code>btn-default</code> class from all of our <code>button</code> elements."
       ],
       "tests": [
-        "assert($(\".btn-default\").length === 0, 'Remove the <code>btn-default</code> class from all of your <code>button</code> elements.')",
-        "assert(editor.match(/btn btn-default/g), 'Only use jQuery to remove this class from the element.')",
-        "assert(editor.match(/\\.[\\v\\s]*removeClass[\\s\\v]*\\([\\s\\v]*('|\")\\s*btn-default\\s*('|\")[\\s\\v]*\\)/gm), 'Only remove the <code>btn-default</code> class.')"
+        "assert($(\".btn-default\").length === 0, 'message: Remove the <code>btn-default</code> class from all of your <code>button</code> elements.')",
+        "assert(editor.match(/btn btn-default/g), 'message: Only use jQuery to remove this class from the element.')",
+        "assert(editor.match(/\\.[\\v\\s]*removeClass[\\s\\v]*\\([\\s\\v]*('|\")\\s*btn-default\\s*('|\")[\\s\\v]*\\)/gm), 'message: Only remove the <code>btn-default</code> class.')"
       ],
       "challengeSeed": [
         "fccss",
@@ -428,8 +428,8 @@
         "Select <code>target1</code> and change its color to red."
       ],
       "tests": [
-        "assert($(\"#target1\").css(\"color\") === 'rgb(255, 0, 0)', 'Your <code>target1</code> element should have red text.')",
-        "assert(!editor.match(/class.*animated/g), 'Only use jQuery to add these classes to the element.')"
+        "assert($(\"#target1\").css(\"color\") === 'rgb(255, 0, 0)', 'message: Your <code>target1</code> element should have red text.')",
+        "assert(!editor.match(/class.*animated/g), 'message: Only use jQuery to add these classes to the element.')"
       ],
       "challengeSeed": [
         "fccss",
@@ -491,9 +491,9 @@
         "Disable only the <code>target1</code> button."
       ],
       "tests": [
-        "assert($(\"#target1\") && $(\"#target1\").prop(\"disabled\"), 'Disable your <code>target1</code> button.')",
-        "assert($(\"#target2\") && !$(\"#target2\").prop(\"disabled\"), 'Do not disable any other buttons.')",
-        "assert(!editor.match(/disabled>/g), 'Only use jQuery to add these classes to the element.')"
+        "assert($(\"#target1\") && $(\"#target1\").prop(\"disabled\"), 'message: Disable your <code>target1</code> button.')",
+        "assert($(\"#target2\") && !$(\"#target2\").prop(\"disabled\"), 'message: Do not disable any other buttons.')",
+        "assert(!editor.match(/disabled>/g), 'message: Only use jQuery to add these classes to the element.')"
       ],
       "challengeSeed": [
         "fccss",
@@ -552,9 +552,9 @@
       ],
       "releasedOn": "November 18, 2015",
       "tests": [
-        "assert.isTrue((/<i>/gi).test($(\"#target4\").html()), 'Italicize the text in your <code>target4</code> button by adding HTML tags.')",
-        "assert($(\"#target4\") && $(\"#target4\").text() === '#target4', 'Make sure the text is otherwise unchanged.')",
-        "assert.isFalse((/<i>/gi).test($(\"h3\").html()), 'Do not alter any other text.')"
+        "assert.isTrue((/<i>/gi).test($(\"#target4\").html()), 'message: Italicize the text in your <code>target4</code> button by adding HTML tags.')",
+        "assert($(\"#target4\") && $(\"#target4\").text() === '#target4', 'message: Make sure the text is otherwise unchanged.')",
+        "assert.isFalse((/<i>/gi).test($(\"h3\").html()), 'message: Do not alter any other text.')"
       ],
       "challengeSeed": [
         "fccss",
@@ -600,8 +600,8 @@
         "Remove element <code>target4</code> from the page by using the <code>.remove()</code> function."
       ],
       "tests": [
-        "assert($(\"#target4\").length === 0, 'Use jQuery to remove your <code>target4</code> element from your page.')",
-        "assert(editor.match(/id=\"target4/g), 'Only use jQuery to remove this element.')"
+        "assert($(\"#target4\").length === 0, 'message: Use jQuery to remove your <code>target4</code> element from your page.')",
+        "assert(editor.match(/id=\"target4/g), 'message: Only use jQuery to remove this element.')"
       ],
       "challengeSeed": [
         "fccss",
@@ -656,9 +656,9 @@
         "Move your <code>target2</code> element from your <code>left-well</code> to your <code>right-well</code>."
       ],
       "tests": [
-        "assert($(\"#left-well\").children(\"#target2\").length === 0, 'Your <code>target2</code> element should not be inside your <code>left-well</code>.')",
-        "assert($(\"#right-well\").children(\"#target2\").length > 0, 'Your <code>target2</code> element should be inside your <code>right-well</code>.')",
-        "assert(!editor.match(/class.*animated/g), 'Only use jQuery to move these elements.')"
+        "assert($(\"#left-well\").children(\"#target2\").length === 0, 'message: Your <code>target2</code> element should not be inside your <code>left-well</code>.')",
+        "assert($(\"#right-well\").children(\"#target2\").length > 0, 'message: Your <code>target2</code> element should be inside your <code>right-well</code>.')",
+        "assert(!editor.match(/class.*animated/g), 'message: Only use jQuery to move these elements.')"
       ],
       "challengeSeed": [
         "fccss",
@@ -717,9 +717,9 @@
         "Clone your <code>target5</code> element and append it to your <code>left-well</code>."
       ],
       "tests": [
-        "assert($(\"#right-well\").children(\"#target5\").length > 0, 'Your <code>target5</code> element should be inside your <code>right-well</code>.')",
-        "assert($(\"#left-well\").children(\"#target5\").length > 0, 'A copy of your <code>target5</code> element should also be inside your <code>left-well</code>.')",
-        "assert(!editor.match(/class.*animated/g), 'Only use jQuery to move these elements.')"
+        "assert($(\"#right-well\").children(\"#target5\").length > 0, 'message: Your <code>target5</code> element should be inside your <code>right-well</code>.')",
+        "assert($(\"#left-well\").children(\"#target5\").length > 0, 'message: A copy of your <code>target5</code> element should also be inside your <code>left-well</code>.')",
+        "assert(!editor.match(/class.*animated/g), 'message: Only use jQuery to move these elements.')"
       ],
       "challengeSeed": [
         "fccss",
@@ -780,10 +780,10 @@
         "Give the parent of the <code>#target1</code> element a background-color of red."
       ],
       "tests": [
-        "assert($(\"#left-well\").css(\"background-color\") === 'red' || $(\"#left-well\").css(\"background-color\") === 'rgb(255, 0, 0)' || $(\"#left-well\").css(\"background-color\").toLowerCase() === '#ff0000' || $(\"#left-well\").css(\"background-color\").toLowerCase() === '#f00', 'Your <code>left-well</code> element should have a red background.')",
-        "assert(editor.match(/\\.parent\\(\\)\\.css/g), 'You should use the <code>&#46;parent&#40;&#41;</code> function to modify this element.')",
-        "assert(editor.match(/\\$\\s*?\\(\\s*?(?:'|\")\\s*?#target1\\s*?(?:'|\")\\s*?\\)\\.parent/gi), 'The <code>&#46;parent&#40;&#41;</code> method should be called on the <code>&#35;target1</code> element.')",
-        "assert(editor.match(/<div class=\"well\" id=\"left-well\">/g), 'Only use jQuery to add these classes to the element.')"
+        "assert($(\"#left-well\").css(\"background-color\") === 'red' || $(\"#left-well\").css(\"background-color\") === 'rgb(255, 0, 0)' || $(\"#left-well\").css(\"background-color\").toLowerCase() === '#ff0000' || $(\"#left-well\").css(\"background-color\").toLowerCase() === '#f00', 'message: Your <code>left-well</code> element should have a red background.')",
+        "assert(editor.match(/\\.parent\\(\\)\\.css/g), 'message: You should use the <code>&#46;parent&#40;&#41;</code> function to modify this element.')",
+        "assert(editor.match(/\\$\\s*?\\(\\s*?(?:'|\")\\s*?#target1\\s*?(?:'|\")\\s*?\\)\\.parent/gi), 'message: The <code>&#46;parent&#40;&#41;</code> method should be called on the <code>&#35;target1</code> element.')",
+        "assert(editor.match(/<div class=\"well\" id=\"left-well\">/g), 'message: Only use jQuery to add these classes to the element.')"
       ],
       "challengeSeed": [
         "fccss",
@@ -847,9 +847,9 @@
         "Give all the children of your <code>#right-well</code> element a color of green."
       ],
       "tests": [
-        "assert($(\"#right-well\").children().css(\"color\") === 'rgb(0, 128, 0)', 'All children of <code>#right-well</code> should have green text.')",
-        "assert(editor.match(/\\.children\\(\\)\\.css/g), 'You should use the <code>children&#40&#41</code> function to modify these elements.')",
-        "assert(editor.match(/<div class=\"well\" id=\"right-well\">/g), 'Only use jQuery to add these classes to the element.')"
+        "assert($(\"#right-well\").children().css(\"color\") === 'rgb(0, 128, 0)', 'message: All children of <code>#right-well</code> should have green text.')",
+        "assert(editor.match(/\\.children\\(\\)\\.css/g), 'message: You should use the <code>children&#40&#41</code> function to modify these elements.')",
+        "assert(editor.match(/<div class=\"well\" id=\"right-well\">/g), 'message: Only use jQuery to add these classes to the element.')"
       ],
       "challengeSeed": [
         "fccss",
@@ -912,9 +912,9 @@
         "Make the second child in each of your well elements bounce. You must target the children of element with the <code>target</code> class."
       ],
       "tests": [
-        "assert($(\".target:nth-child(2)\").hasClass(\"animated\") && $(\".target:nth-child(2)\").hasClass(\"bounce\"), 'The second element in your <code>target</code> elements should bounce.')",
-        "assert(editor.match(/\\:nth-child\\(/g), 'You should use the <code>&#58;nth-child&#40&#41</code> function to modify these elements.')",
-        "assert(editor.match(/<button class=\"btn btn-default target\" id=\"target2\">/g), 'Only use jQuery to add these classes to the element.')"
+        "assert($(\".target:nth-child(2)\").hasClass(\"animated\") && $(\".target:nth-child(2)\").hasClass(\"bounce\"), 'message: The second element in your <code>target</code> elements should bounce.')",
+        "assert(editor.match(/\\:nth-child\\(/g), 'message: You should use the <code>&#58;nth-child&#40&#41</code> function to modify these elements.')",
+        "assert(editor.match(/<button class=\"btn btn-default target\" id=\"target2\">/g), 'message: Only use jQuery to add these classes to the element.')"
       ],
       "challengeSeed": [
         "fccss",
@@ -977,9 +977,9 @@
         "Try selecting all the even-numbered elements and giving them the classes of <code>animated</code> and <code>shake</code>."
       ],
       "tests": [
-        "assert($('.target:even').hasClass('animated') && $('.target:even').hasClass('shake'), 'All the <code>target</code> elements that computer considers even should shake.')",
-        "assert(editor.match(/\\:even/g), 'You should use the <code>&#58;even</code> function to modify these elements.')",
-        "assert(editor.match(/<button class=\"btn btn-default target\" id=\"target3\">/g), 'Only use jQuery to add these classes to the element.')"
+        "assert($('.target:even').hasClass('animated') && $('.target:even').hasClass('shake'), 'message: All the <code>target</code> elements that computer considers even should shake.')",
+        "assert(editor.match(/\\:even/g), 'message: You should use the <code>&#58;even</code> function to modify these elements.')",
+        "assert(editor.match(/<button class=\"btn btn-default target\" id=\"target3\">/g), 'message: Only use jQuery to add these classes to the element.')"
       ],
       "challengeSeed": [
         "fccss",
@@ -1041,7 +1041,7 @@
         "But let's do something more dramatic. Add the classes <code>animated</code> and <code>hinge</code> to your <code>body</code> element."
       ],
       "tests": [
-        "assert($('body').hasClass('animated') && $('body').hasClass('hinge'), 'Add the classes <code>animated</code> and <code>hinge</code> to your <code>body</code> element.')"
+        "assert($('body').hasClass('animated') && $('body').hasClass('hinge'), 'message: Add the classes <code>animated</code> and <code>hinge</code> to your <code>body</code> element.')"
       ],
       "challengeSeed": [
         "fccss",
