@@ -9,7 +9,6 @@ window.common = (function(global) {
   // context to that of the iframe.
   var libraryIncludes = `
 <script>
-  window.$ = parent.$.proxy(parent.$.fn.find, parent.$(document));
   window.loopProtect = parent.loopProtect;
   window.__err = null;
   window.loopProtect.hit = function(line) {
@@ -38,6 +37,9 @@ window.common = (function(global) {
 
   const iFrameScript$ =
     common.getScriptContent$('/js/iFrameScripts.js').shareReplay();
+  const jQueryScript$ = common.getScriptContent$(
+    '/bower_components/jquery/dist/jquery.js'
+  ).shareReplay();
 
   // behavior subject allways remembers the last value
   // we use this to determine if runPreviewTest$ is defined
@@ -55,14 +57,27 @@ window.common = (function(global) {
   common.updatePreview$ = function updatePreview$(code = '') {
     const preview = common.getIframe('preview');
 
-    return iFrameScript$
-      .map(script => `<script>${script}</script>`)
-      .flatMap(script => {
+    return Observable.combineLatest(
+      iFrameScript$,
+      jQueryScript$,
+      (iframe, jQuery) => ({
+        iframeScript: `<script>${iframe}</script>`,
+        jQuery: `<script>${jQuery}</script>`
+      })
+    )
+      .first()
+      .flatMap(({ iframeScript, jQuery }) => {
         // we make sure to override the last value in the
         // subject to false here.
         common.previewReady$.onNext(false);
         preview.open();
-        preview.write(libraryIncludes + code + '<!-- -->' + script);
+        preview.write(
+          libraryIncludes +
+          jQuery +
+          code +
+          '<!-- -->' +
+          iframeScript
+        );
         preview.close();
         // now we filter false values and wait for the first true
         return common.previewReady$
