@@ -72,7 +72,7 @@
         "  <label><input type=\"checkbox\" name=\"personality\"> Loving</label>",
         "  <label><input type=\"checkbox\" name=\"personality\"> Lazy</label>",
         "  <label><input type=\"checkbox\" name=\"personality\"> Crazy</label>",
-        "  <input type=\"text\" placeholder=\"cat photo URL\" required>",
+        "  <input type=\"text\" placeholder=\"http://example.com/cat-photo\" required>",
         "  <button type=\"submit\">Submit</button>",
         "</form>"
       ],
@@ -165,7 +165,7 @@
         "    <label><input type=\"checkbox\" name=\"personality\"> Loving</label>",
         "    <label><input type=\"checkbox\" name=\"personality\"> Lazy</label>",
         "    <label><input type=\"checkbox\" name=\"personality\"> Crazy</label>",
-        "    <input type=\"text\" placeholder=\"cat photo URL\" required>",
+        "    <input type=\"text\" placeholder=\"http://example.com/cat-photo\" required>",
         "    <button type=\"submit\">Submit</button>",
         "  </form>",
         "</div>"
@@ -253,7 +253,7 @@
         "    <label><input type=\"checkbox\" name=\"personality\"> Loving</label>",
         "    <label><input type=\"checkbox\" name=\"personality\"> Lazy</label>",
         "    <label><input type=\"checkbox\" name=\"personality\"> Crazy</label>",
-        "    <input type=\"text\" placeholder=\"cat photo URL\" required>",
+        "    <input type=\"text\" placeholder=\"http://example.com/cat-photo\" required>",
         "    <button type=\"submit\">Submit</button>",
         "  </form>",
         "</div>"
@@ -342,7 +342,7 @@
         "    <label><input type=\"checkbox\" name=\"personality\"> Loving</label>",
         "    <label><input type=\"checkbox\" name=\"personality\"> Lazy</label>",
         "    <label><input type=\"checkbox\" name=\"personality\"> Crazy</label>",
-        "    <input type=\"text\" placeholder=\"cat photo URL\" required>",
+        "    <input type=\"text\" placeholder=\"http://example.com/cat-photo\" required>",
         "    <button type=\"submit\">Submit</button>",
         "  </form>",
         "</div>"
@@ -433,7 +433,7 @@
         "    <label><input type=\"checkbox\" name=\"personality\"> Loving</label>",
         "    <label><input type=\"checkbox\" name=\"personality\"> Lazy</label>",
         "    <label><input type=\"checkbox\" name=\"personality\"> Crazy</label>",
-        "    <input type=\"text\" placeholder=\"cat photo URL\" required>",
+        "    <input type=\"text\" placeholder=\"http://example.com/cat-photo\" required>",
         "    <button type=\"submit\">Submit</button>",
         "  </form>",
         "</div>"
@@ -525,7 +525,7 @@
         "    <label><input type=\"checkbox\" name=\"personality\"> Loving</label>",
         "    <label><input type=\"checkbox\" name=\"personality\"> Lazy</label>",
         "    <label><input type=\"checkbox\" name=\"personality\"> Crazy</label>",
-        "    <input type=\"text\" placeholder=\"cat photo URL\" required>",
+        "    <input type=\"text\" placeholder=\"http://example.com/cat-photo\" required>",
         "    <button type=\"submit\">Submit</button>",
         "  </form>",
         "</div>"
@@ -616,7 +616,7 @@
         "    <label><input type=\"checkbox\" name=\"personality\"> Loving</label>",
         "    <label><input type=\"checkbox\" name=\"personality\"> Lazy</label>",
         "    <label><input type=\"checkbox\" name=\"personality\"> Crazy</label>",
-        "    <input type=\"text\" placeholder=\"cat photo URL\" required>",
+        "    <input type=\"text\" placeholder=\"http://example.com/cat-photo\" required>",
         "    <button type=\"submit\">Submit</button>",
         "  </form>",
         "</div>"
@@ -708,7 +708,7 @@
         "    <label><input type=\"checkbox\" name=\"personality\"> Loving</label>",
         "    <label><input type=\"checkbox\" name=\"personality\"> Lazy</label>",
         "    <label><input type=\"checkbox\" name=\"personality\"> Crazy</label>",
-        "    <input type=\"text\" placeholder=\"cat photo URL\" required>",
+        "    <input type=\"text\" placeholder=\"http://example.com/cat-photo\" required>",
         "    <button type=\"submit\">Submit</button>",
         "  </form>",
         "</div>"
@@ -805,7 +805,7 @@
         "    <label><input type=\"checkbox\" name=\"personality\"> Loving</label>",
         "    <label><input type=\"checkbox\" name=\"personality\"> Lazy</label>",
         "    <label><input type=\"checkbox\" name=\"personality\"> Crazy</label>",
-        "    <input type=\"text\" placeholder=\"cat photo URL\" required>",
+        "    <input type=\"text\" placeholder=\"http://example.com/cat-photo\" required>",
         "    <button type=\"submit\">Submit</button>",
         "  </form>",
         "</div>"
@@ -913,7 +913,7 @@
         "    <label><input type=\"checkbox\" name=\"personality\"> Loving</label>",
         "    <label><input type=\"checkbox\" name=\"personality\"> Lazy</label>",
         "    <label><input type=\"checkbox\" name=\"personality\"> Crazy</label>",
-        "    <input type=\"text\" placeholder=\"cat photo URL\" required>",
+        "    <input type=\"text\" placeholder=\"http://example.com/cat-photo\" required>",
         "    <button type=\"submit\">Submit</button>",
         "  </form>",
         "</div>"
@@ -1007,7 +1007,7 @@
         "    <label><input type=\"checkbox\" name=\"personality\"> Loving</label>",
         "    <label><input type=\"checkbox\" name=\"personality\"> Lazy</label>",
         "    <label><input type=\"checkbox\" name=\"personality\"> Crazy</label>",
-        "    <input type=\"text\" placeholder=\"cat photo URL\" required>",
+        "    <input type=\"text\" placeholder=\"http://example.com/cat-photo\" required>",
         "    <button type=\"submit\">Submit</button>",
         "  </form>",
         "</div>"
@@ -1103,7 +1103,7 @@
         "    <label><input type=\"checkbox\" name=\"personality\"> Loving</label>",
         "    <label><input type=\"checkbox\" name=\"personality\"> Lazy</label>",
         "    <label><input type=\"checkbox\" name=\"personality\"> Crazy</label>",
-        "    <input type=\"text\" placeholder=\"cat photo URL\" required>",
+        "    <input type=\"text\" placeholder=\"http://example.com/cat-photo\" required>",
         "    <button type=\"submit\">Submit</button>",
         "  </form>",
         "</div>"
@@ -1199,7 +1199,7 @@
         "    <label><input type=\"checkbox\" name=\"personality\"> Loving</label>",
         "    <label><input type=\"checkbox\" name=\"personality\"> Lazy</label>",
         "    <label><input type=\"checkbox\" name=\"personality\"> Crazy</label>",
-        "    <input type=\"text\" placeholder=\"cat photo URL\" required>",
+        "    <input type=\"text\" placeholder=\"http://example.com/cat-photo\" required>",
         "    <button type=\"submit\">Submit</button>",
         "  </form>",
         "</div>"
@@ -1286,7 +1286,7 @@
         "    <label><input type=\"checkbox\" name=\"personality\"> Loving</label>",
         "    <label><input type=\"checkbox\" name=\"personality\"> Lazy</label>",
         "    <label><input type=\"checkbox\" name=\"personality\"> Crazy</label>",
-        "    <input type=\"text\" placeholder=\"cat photo URL\" required>",
+        "    <input type=\"text\" placeholder=\"http://example.com/cat-photo\" required>",
         "    <button type=\"submit\">Submit</button>",
         "  </form>",
         "</div>"
@@ -1373,7 +1373,7 @@
         "    <label><input type=\"checkbox\" name=\"personality\"> Loving</label>",
         "    <label><input type=\"checkbox\" name=\"personality\"> Lazy</label>",
         "    <label><input type=\"checkbox\" name=\"personality\"> Crazy</label>",
-        "    <input type=\"text\" placeholder=\"cat photo URL\" required>",
+        "    <input type=\"text\" placeholder=\"http://example.com/cat-photo\" required>",
         "    <button type=\"submit\">Submit</button>",
         "  </form>",
         "</div>"
@@ -1467,7 +1467,7 @@
         "    <label><input type=\"checkbox\" name=\"personality\"> Loving</label>",
         "    <label><input type=\"checkbox\" name=\"personality\"> Lazy</label>",
         "    <label><input type=\"checkbox\" name=\"personality\"> Crazy</label>",
-        "    <input type=\"text\" placeholder=\"cat photo URL\" required>",
+        "    <input type=\"text\" placeholder=\"http://example.com/cat-photo\" required>",
         "    <button type=\"submit\">Submit</button>",
         "  </form>",
         "</div>"
@@ -1570,7 +1570,7 @@
         "        <label><input type=\"checkbox\" name=\"personality\"> Crazy</label>",
         "      </div>",
         "    </div>",
-        "    <input type=\"text\" placeholder=\"cat photo URL\" required>",
+        "    <input type=\"text\" placeholder=\"http://example.com/cat-photo\" required>",
         "    <button type=\"submit\">Submit</button>",
         "  </form>",
         "</div>"
@@ -1674,7 +1674,7 @@
         "        <label><input type=\"checkbox\" name=\"personality\"> Crazy</label>",
         "      </div>",
         "    </div>",
-        "    <input type=\"text\" class=\"form-control\" placeholder=\"cat photo URL\" required>",
+        "    <input type=\"text\" class=\"form-control\" placeholder=\"http://example.com/cat-photo\" required>",
         "    <button type=\"submit\" class=\"btn btn-primary\"><i class=\"fa fa-paper-plane\"></i> Submit</button>",
         "  </form>",
         "</div>"
