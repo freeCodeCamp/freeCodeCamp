@@ -11,6 +11,9 @@ window.$(document).ready(function() {
   var common = parent.common;
 
   common.getJsOutput = function evalJs(code = '') {
+    if (window.__err || !common.shouldRun()) {
+      return window.__err || 'code disabled';
+    }
     let output;
     try {
       /* eslint-disable no-eval */

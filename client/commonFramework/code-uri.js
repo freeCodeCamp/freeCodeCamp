@@ -133,6 +133,7 @@ window.common = (function(global) {
   });
 
   common.codeUri = codeUri;
+  common.shouldRun = () => codeUri.shouldRun();
 
   return common;
 }(window));
