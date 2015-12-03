@@ -3407,7 +3407,7 @@
       ],
       "tests": [
         "assert($(\"body\").css(\"background-color\") === \"rgb(0, 0, 0)\", 'message: Give your <code>body</code> element the <code>background-color</code> of black.');",
-        "assert(code.match(/<style>\\s*body\\s*\\{\\s*background-color\\s*:\\s*black;?\\s*\\}\\s*<\\/style>/i), 'message: Make sure your CSS rule is properly formatted with both and opening and closing curly bracket.');"
+        "assert(code.match(/<style>\\s*body\\s*\\{\\s*background.*\\s*:\\s*.*;?\\s*\\}\\s*<\\/style>/i), 'message: Make sure your CSS rule is properly formatted with both opening and closing curly brackets.');"
       ],
       "challengeSeed": [
         "<style>",
