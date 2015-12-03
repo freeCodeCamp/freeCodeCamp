@@ -1501,11 +1501,11 @@
         "We can do this by replacing the <code>.</code> part of our regular expression with the word <code>and</code>."
       ],
       "tests": [
-        "assert(test==2, 'message: Your <code>regular expression</code> should find two occurrences of the word <code>and</code>.');",
+        "assert(myTest==2, 'message: Your <code>regular expression</code> should find two occurrences of the word <code>and</code>.');",
         "assert(editor.getValue().match(/\\/and\\/gi/), 'message: Use <code>regular expressions</code> to find the word <code>and</code> in <code>testString</code>.');"
       ],
       "challengeSeed": [
-        "var test = (function() {",
+        "var myTest = (function() {",
         "  var testString = \"Ada Lovelace and Charles Babbage designed the first computer and the software that would have run on it.\";",
         "  var expressionToGetSoftware = /software/gi;",
         "",
@@ -1516,7 +1516,7 @@
         "  // Only change code above this line.",
         "",
         "  return testString.match(expression).length;",
-        "})();(function(){return test;})();"
+        "})();(function(){return myTest;})();"
       ],
       "type": "waypoint",
       "challengeType": 1,
@@ -1545,10 +1545,10 @@
       ],
       "tests": [
         "assert(editor.getValue().match(/\\/\\\\d\\+\\//g), 'message: Use the <code>/\\d+/g</code> regular expression to find the numbers in <code>testString</code>.');",
-        "assert(test === 2, 'message: Your regular expression should find two numbers in <code>testString</code>.');"
+        "assert(myTest === 2, 'message: Your regular expression should find two numbers in <code>testString</code>.');"
       ],
       "challengeSeed": [
-        "var test = (function() {",
+        "var myTest = (function() {",
         "",
         "  var testString = \"There are 3 cats but 4 dogs.\";",
         "",
@@ -1560,7 +1560,7 @@
         "",
         "  return testString.match(expression).length;",
         "",
-        "})();(function(){return test;})();"
+        "})();(function(){return myTest;})();"
       ],
       "type": "waypoint",
       "challengeType": 1,
@@ -1585,10 +1585,10 @@
       ],
       "tests": [
         "assert(editor.getValue().match(/\\/\\\\s\\+\\//g), 'message: Use the <code>/\\s+/g</code> regular expression to find the spaces in <code>testString</code>.');",
-        "assert(test === 7, 'message: Your regular expression should find seven spaces in <code>testString</code>.');"
+        "assert(myTest === 7, 'message: Your regular expression should find seven spaces in <code>testString</code>.');"
       ],
       "challengeSeed": [
-        "var test = (function(){",
+        "var myTest = (function(){",
         "  var testString = \"How many spaces are there in this sentence?\";",
         "",
         "  // Only change code below this line.",
@@ -1599,7 +1599,7 @@
         "",
         "  return testString.match(expression).length;",
         "",
-        "})();(function(){return test;})();"
+        "})();(function(){return myTest;})();"
       ],
       "type": "waypoint",
       "challengeType": 1,
@@ -1622,10 +1622,10 @@
       ],
       "tests": [
         "assert(editor.getValue().match(/\\/\\\\S\\/g/g), 'message: Use the <code>/\\S/g</code> regular expression to find non-space characters in <code>testString</code>.');",
-        "assert(test === 49, 'message: Your regular expression should find forty nine non-space characters in the <code>testString</code>.');"
+        "assert(myTest === 49, 'message: Your regular expression should find forty nine non-space characters in the <code>testString</code>.');"
       ],
       "challengeSeed": [
-        "var test = (function(){",
+        "var myTest = (function(){",
         "  var testString = \"How many non-space characters are there in this sentence?\";",
         "",
         "  // Only change code below this line.",
@@ -1635,7 +1635,7 @@
         "  // Only change code above this line.",
         "",
         "  return testString.match(expression).length;",
-        "})();(function(){return test;})();"
+        "})();(function(){return myTest;})();"
       ],
       "type": "waypoint",
       "challengeType": 1,
