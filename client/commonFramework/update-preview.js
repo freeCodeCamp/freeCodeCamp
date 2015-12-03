@@ -74,7 +74,7 @@ window.common = (function(global) {
         preview.write(
           libraryIncludes +
           jQuery +
-          code +
+          (common.codeUri.shouldRun() ? code : '' ) +
           '<!-- -->' +
           iframeScript
         );
