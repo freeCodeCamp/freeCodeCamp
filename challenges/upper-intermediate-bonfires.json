@@ -54,7 +54,7 @@
       "descriptionEs": [
         "Completa el constructor de objetos con los métodos especificados en las pruebas.",
         "Los métodos son: getFirstName(), getLastName(), getFullName(), setFirstName(first), setLastName(last), y setFullName(firstAndLast). ",
-        "Todas las funciones que aceptan un argumento tienen un arity de 1, y el argumento es una cadena de texto",
+        "Todas las funciones que aceptan un argumento tienen una aridad de 1, y el argumento es una cadena de texto",
         "Estos métodos deben ser el único medio para interactuar con el objeto",
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
         ],
@@ -104,7 +104,7 @@
       "descriptionEs": [
         "Crea una función que devuelva un nuevo arreglo que transforme la altitud promedio del elemento en su período orbital.",
         "El arreglo debe contener objetos en el formato <code>{name: 'name', avgAlt: avgAlt}</code>.",
-        "Puedes leer acerca de períodos orbitales en <a href=\"http://en.wikipedia.org/wiki/Orbital_period\" target='_blank'>on wikipedia</a>.",
+        "Puedes leer acerca de períodos orbitales <a href=\"http://en.wikipedia.org/wiki/Orbital_period\" target='_blank'>en wikipedia</a>.",
         "Los valores deben estar redondeados al número entero más próximo. El cuerpo orbitado es la Tierra",
         "El radio de la Tierra es 6367.4447 kilómetros, y el valor GM del planeta es de 398600.4418",
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
