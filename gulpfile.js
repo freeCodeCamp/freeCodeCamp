@@ -394,11 +394,23 @@ gulp.task('js', function() {
   var jsFiles = merge(
 
     gulp.src(getFilesGlob(paths.vendorMain))
-      .pipe(concat('vendor-main.js')),
+      .pipe(__DEV__ ? sourcemaps.init() : gutil.noop())
+      .pipe(concat('vendor-main.js'))
+      .pipe(
+        __DEV__ ?
+          sourcemaps.write({ sourceRoot: '/vendor' }) :
+          gutil.noop()
+      ),
 
     gulp.src(paths.vendorChallenges)
+      .pipe(__DEV__ ? sourcemaps.init() : gutil.noop())
       .pipe(__DEV__ ? gutil.noop() : uglify())
-      .pipe(concat('vendor-challenges.js')),
+      .pipe(concat('vendor-challenges.js'))
+      .pipe(
+        __DEV__ ?
+          sourcemaps.write({ sourceRoot: '/vendor' }) :
+          gutil.noop()
+      ),
 
     gulp.src(paths.js)
       .pipe(plumber({ errorHandler: errorHandler }))
@@ -437,7 +449,11 @@ gulp.task('dependents', ['js'], function() {
     .pipe(babel())
     .pipe(__DEV__ ? sourcemaps.init() : gutil.noop())
     .pipe(concat('commonFramework.js'))
-    .pipe(__DEV__ ? sourcemaps.write() : gutil.noop())
+    .pipe(
+      __DEV__ ?
+        sourcemaps.write({ sourceRoot: '/commonFramework' }) :
+        gutil.noop()
+    )
     .pipe(__DEV__ ? gutil.noop() : uglify())
     .pipe(revReplace({ manifest: manifest }))
     .pipe(gulp.dest(dest))
