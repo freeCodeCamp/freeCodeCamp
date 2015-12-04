@@ -20,6 +20,7 @@ if (typeof DEBUG === 'undefined') { DEBUG = true; }
   var reSingle = /\b(for|while|do)\b/;
   var labelRe = /\b([a-z_]{1}\w+:)/i;
   var comments = /(?:\/\*(?:[\s\S]*?)\*\/)|(?:([\s;])+\/\/(?:.*)$)/gm;
+  var loopTimeout = 500;
 
   var loopProtect = rewriteLoops;
 
@@ -404,8 +405,7 @@ if (typeof DEBUG === 'undefined') { DEBUG = true; }
     }
 
     line.hit++;
-    if ((now - line.time) > 100) {//} && line.hit !== line.last+1) {
-      // We've spent over 100ms on this loop... smells infinite.
+    if ((now - line.time) > loopTimeout) {//} && line.hit !== line.last+1) {
       loopProtect.hit(state.line);
       // Returning true prevents the loop running again
       return true;
