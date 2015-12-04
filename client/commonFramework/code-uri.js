@@ -105,12 +105,17 @@ window.common = (function(global) {
         return null;
       }
       if (history && typeof history.replaceState === 'function') {
+        // grab the url up to the query
+        // destroy any hash symbols still clinging to life
+        const url = (location.href.split('?')[0]).replace(/(#*)$/, '');
         history.replaceState(
           history.state,
           null,
-          '#?solution=' +
-            codeUri.encode(encodeFcc(solution)) +
-            (codeUri.shouldRun() ? '&run=disabled' : '' )
+          url +
+            '#?' +
+            (codeUri.shouldRun() ? '' : 'run=disabled&') +
+            'solution=' +
+            codeUri.encode(encodeFcc(solution))
         );
       } else {
         location.hash = '?solution=' +
