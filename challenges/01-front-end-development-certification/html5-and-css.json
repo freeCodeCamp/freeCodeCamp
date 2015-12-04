@@ -3777,7 +3777,7 @@
       ],
       "tests": [
         "assert($(\"body\").css(\"background-color\") === \"rgb(0, 0, 0)\", 'message: Give your <code>body</code> element the background-color of black.');",
-        "assert(code.match(/#000000/g) && code.match(/#000000/g).length > 0, 'message: Use the <code>hex code</code> for the color black instead of the word <code>black</code>. For example <code>body { color&#58; #000000; }</code>');"
+        "assert(code.match(/body\\s*{(([\\s\\S]*;\\s*?)|\\s*?)background.*\\s*:\\s*?#000(000)?((\\s*})|(;[\\s\\S]*?}))/gi), 'message: Use the <code>hex code</code> for the color black instead of the word <code>black</code>. For example <code>body { color&#58; #000000; }</code>');"
       ],
       "challengeSeed": [
         "<style>",
@@ -3816,7 +3816,7 @@
       ],
       "tests": [
         "assert($(\"body\").css(\"background-color\") === \"rgb(255, 255, 255)\", 'message: Your <code>body</code> element should have the <code>background-color</code> of white.');",
-        "assert(code.match(/#FFFFFF/ig) && code.match(/#FFFFFF/ig).length > 0, 'message: Use the <code>hex code</code> for the color white instead of the word <code>white</code>. For example <code>body { color&#58; #FFFFFF; }</code>');"
+        "assert(code.match(/body\\s*{(([\\s\\S]*;\\s*?)|\\s*?)background.*\\s*:\\s*?#FFF(FFF)?((\\s*})|(;[\\s\\S]*?}))/gi), 'message: Use the <code>hex code</code> for the color white instead of the word <code>white</code>. For example <code>body { color&#58; #FFFFFF; }</code>');"
       ],
       "challengeSeed": [
         "<style>",
@@ -3856,7 +3856,7 @@
       ],
       "tests": [
         "assert($(\"body\").css(\"background-color\") === \"rgb(255, 0, 0)\", 'message: Give your <code>body</code> element the <code>background-color</code> of red.');",
-        "assert(code.match(/#FF0000/ig) && code.match(/#FF0000/ig).length > 0, 'message: Use the <code>hex code</code> for the color red instead of the word <code>red</code>. For example <code>body { color&#58; #FF0000; }</code>');"
+        "assert(code.match(/body\\s*{(([\\s\\S]*;\\s*?)|\\s*?)background.*\\s*:\\s*?#((F00)|(FF0000))((\\s*})|(;[\\s\\S]*?}))/gi), 'message: Use the <code>hex code</code> for the color red instead of the word <code>red</code>. For example <code>body { color&#58; #FF0000; }</code>');"
       ],
       "challengeSeed": [
         "<style>",
@@ -3896,7 +3896,7 @@
       ],
       "tests": [
         "assert($(\"body\").css(\"background-color\") === \"rgb(0, 255, 0)\", 'message: Give your <code>body</code> element the <code>background-color</code> of <code>green</code>.');",
-        "assert(code.match(/#00FF00/ig) && code.match(/#00FF00/ig).length > 0, 'message: Use the <code>hex code</code> for the color green instead of the word <code>green</code>. For example <code>body { color&#58; #00FF00; }</code>');"
+        "assert(code.match(/body\\s*{(([\\s\\S]*;\\s*?)|\\s*?)background.*\\s*:\\s*?#((0F0)|(00FF00))((\\s*})|(;[\\s\\S]*?}))/gi), 'message: Use the <code>hex code</code> for the color green instead of the word <code>green</code>. For example <code>body { color&#58; #00FF00; }</code>');"
       ],
       "challengeSeed": [
         "<style>",
@@ -3934,7 +3934,7 @@
       ],
       "tests": [
         "assert($(\"body\").css(\"background-color\") === \"rgb(0, 0, 255)\", 'message: Give your <code>body</code> element the <code>background-color</code> of blue.');",
-        "assert(code.match(/#0000FF/ig) && code.match(/#0000FF/ig).length > 0, 'message: Use the <code>hex code</code> for the color blue instead of the word <code>blue</code>. For example <code>body { color&#58; #0000FF; }</code>');"
+        "assert(code.match(/body\\s*{(([\\s\\S]*;\\s*?)|\\s*?)background.*\\s*:\\s*?#((00F)|(0000FF))((\\s*})|(;[\\s\\S]*?}))/gi), 'message: Use the <code>hex code</code> for the color blue instead of the word <code>blue</code>. For example <code>body { color&#58; #0000FF; }</code>');"
       ],
       "challengeSeed": [
         "<style>",
@@ -3972,7 +3972,7 @@
       ],
       "tests": [
         "assert($(\"body\").css(\"background-color\") === \"rgb(255, 165, 0)\", 'message: Give your <code>body</code> element the <code>background-color</code> of orange.');",
-        "assert(code.match(/#FFA500/ig) && code.match(/#FFA500/ig).length > 0, 'message: Use the <code>hex code</code> for the color orange instead of the word <code>orange</code>. For example <code>body { color&#58; #FFA500; }</code>');"
+        "assert(code.match(/body\\s*{(([\\s\\S]*;\\s*?)|\\s*?)background.*\\s*:\\s*?#FFA500((\\s*})|(;[\\s\\S]*?}))/gi), 'message: Use the <code>hex code</code> for the color orange instead of the word <code>orange</code>. For example <code>body { color&#58; #FFA500; }</code>');"
       ],
       "challengeSeed": [
         "<style>",
@@ -4010,7 +4010,7 @@
       ],
       "tests": [
         "assert($(\"body\").css(\"background-color\") === \"rgb(128, 128, 128)\", 'message: Give your <code>body</code> element the <code>background-color</code> of gray.');",
-        "assert(code.match(/#808080/g) && code.match(/#808080/g).length > 0, 'message: Use the <code>hex code</code> the color gray instead of the word <code>gray</code>. For example <code>body { color&#58; #808080; }</code>');"
+        "assert(code.match(/body\\s*{(([\\s\\S]*;\\s*?)|\\s*?)background.*\\s*:\\s*?#808080((\\s*})|(;[\\s\\S]*?}))/gi), 'message: Use the <code>hex code</code> the color gray instead of the word <code>gray</code>. For example <code>body { color&#58; #808080; }</code>');"
       ],
       "challengeSeed": [
         "<style>",
@@ -4047,7 +4047,7 @@
       ],
       "tests": [
         "assert($(\"body\").css(\"background-color\") === \"rgb(17, 17, 17)\", 'message: Give your <code>body</code> element the <code>background-color</code> of a dark gray.');",
-        "assert(code.match(/#111111/g) && code.match(/#111111/g).length > 0, 'message: Use <code>hex code</code> to make a dark gray. For example <code>body { color&#58; #111111; }</code>');"
+        "assert(code.match(/body\\s*{(([\\s\\S]*;\\s*?)|\\s*?)background.*\\s*:\\s*?#111(111)?((\\s*})|(;[\\s\\S]*?}))/gi), 'message: Use <code>hex code</code> to make a dark gray. For example <code>body { color&#58; #111111; }</code>');"
       ],
       "challengeSeed": [
         "<style>",
@@ -4085,7 +4085,7 @@
       ],
       "tests": [
         "assert($(\"body\").css(\"background-color\") === \"rgb(255, 0, 0)\", 'message: Give your <code>body</code> element the <code>background-color</code> of red.');",
-        "assert(code.match(/#F00/ig) && code.match(/#F00/ig).length > 0, 'message: Use <code>abbreviated hex code</code> instead of a six-character <code>hex code</code>. For example <code>body { color&#58; #F00; }</code>');"
+        "assert(code.match(/body\\s*{(([\\s\\S]*;\\s*?)|\\s*?)background.*\\s*:\\s*?#F00((\\s*})|(;[\\s\\S]*?}))/gi), 'message: Use <code>abbreviated hex code</code> instead of a six-character <code>hex code</code>. For example <code>body { color&#58; #F00; }</code>');"
       ],
       "challengeSeed": [
         "<style>",
