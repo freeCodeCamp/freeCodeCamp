@@ -34,6 +34,11 @@ window.common = (function(global) {
   body { padding: 0px 3px 0px 3px; }
 </style>
   `;
+  const codeDisabledError = `
+    <script>
+      window.__err = new Error('code has been disabled');
+    </script>
+  `;
 
   const iFrameScript$ =
     common.getScriptContent$('/js/iFrameScripts.js').shareReplay();
@@ -74,7 +79,7 @@ window.common = (function(global) {
         preview.write(
           libraryIncludes +
           jQuery +
-          code +
+          (common.shouldRun() ? code : codeDisabledError) +
           '<!-- -->' +
           iframeScript
         );
