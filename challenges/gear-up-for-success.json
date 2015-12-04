@@ -24,8 +24,15 @@
       "descriptionFr": [],
       "nameRu": "",
       "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
+      "nameEs": "Navega por las Noticias Campistas",
+      "descriptionEs": [
+        [
+          "http://i.imgur.com/YNwsMXM.gif",
+          "Un gif mostrando como acceder a nuestra página de Noticias Campistas y pulsar el botón \"voto a favor\" para votar por una historia.",
+          "Pulsa el botón de \"Noticias\" en tu esquina superior derecha. <br>Puedes navegar mediante los enlaces en Noticias Campistas y votar por aquellas que disfrutes.",
+          ""
+        ]
+      ],
       "namePt": "",
       "descriptionPt": []
     },
@@ -50,8 +57,15 @@
       "descriptionFr": [],
       "nameRu": "",
       "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
+      "nameEs": "Referencía nuestra Wiki",
+      "descriptionEs": [
+        [
+          "http://i.imgur.com/4GO4zcI.gif",
+          "Un gif mostrando como puedes pulsar el botón de \"Wiki\" en tu esquina superior derecha para acceder a la wiki.",
+          "Pulsa el botón de \"Wiki\" en tu esquina superior derecha. <br>Nuestra comunidad ha contribuido información bastante útil en esta wiki.",
+          ""
+        ]
+      ],
       "namePt": "",
       "descriptionPt": []
     },
@@ -76,8 +90,15 @@
       "descriptionFr": [],
       "nameRu": "",
       "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
+      "nameEs": "Únete a nuestra red de alumnos en LinkedIn",
+      "descriptionEs": [
+        [
+          "http://i.imgur.com/vJyiXzU.gif",
+          "Un gif mostrando como puedes pulsar el enlace que está más adelante y llenar todos los campos necesarios para agregar los estudios de Free Code Camp a tu perfil de LinkedIn",
+          "LinkedIn reconoce a Free Code Camp como una universidad. Puedes obtener acceso a nuestra larga red de alumnos agregando Free Code Camp a la sección de educación de tu LinkedIn. <br>Define tu fecha de graduación para el siguiente año. <br> En el campo \"Grado\", escribe \"Certificación de Desarrollo Web Full Stack\". <br> En \"Campo de estudio\", escribe \"Ingeniería de Software\". <br>Después pulsa \"Guardar Cambios\".",
+          "https://www.linkedin.com/profile/edit-education?school=Free+Code+Camp"
+        ]
+      ],
       "namePt": "",
       "descriptionPt": []
     },
@@ -102,8 +123,15 @@
       "descriptionFr": [],
       "nameRu": "",
       "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
+      "nameEs": "Comprométete con una meta y con una organización sin fines de lucro",
+      "descriptionEs": [
+        [
+          "http://i.imgur.com/Og1ifsn.gif",
+          "Un gif mostrando como te puedes comprometer con una meta para tus estudios de Free Code Camp y prometer una donación mensual a una organización sin fines de lucro para darte motivación externa de alcanzar esa meta.",
+          "Puedes poner una meta y prometer donar mensualmente a una organización sin fines de lucro hasta que alcances tu meta. <br>Esto te dará motivación externa en tu aventura de aprender a programar, así como una oportunidad para ayudar inmediatamente a organizaciones sin fines de lucro. <br>Elige tu meta, después elige tu donativo mensual. Cuando pulses en \"comprometerse\", la página de donación de la organización sin fines de lucro se abrirá en una nueva pestaña. <br>Esto es completamente opcional, y puedes cambiar tu compromiso o detenerlo en cualquier momento.",
+          "/comprometerse"
+        ]
+      ],
       "namePt": "",
       "descriptionPt": []
     }
