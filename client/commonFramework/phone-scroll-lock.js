@@ -11,7 +11,7 @@ window.common = (function({ common = { init: [] }}) {
         if (magiVal < 0) {
           magiVal = 0;
         }
-        $('.editorScrollDiv').css('height', magiVal - 85 + 'px');
+        $('.editorScrollDiv').css('height', magiVal - 50 + 'px');
       }
 
       magiVal = $(window).height() - $('.navbar').height();
