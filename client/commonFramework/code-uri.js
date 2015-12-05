@@ -15,6 +15,7 @@ window.common = (function(global) {
     replaceFccfaaAttr
   } = common;
 
+  const queryRegex = /^(\?|#\?)/;
   function encodeFcc(val) {
     return replaceScriptTags(replaceFormActionAttr(val));
   }
@@ -40,9 +41,7 @@ window.common = (function(global) {
         return false;
       }
       return decoded
-        .split('?')
-        .splice(1)
-        .pop()
+        .replace(queryRegex, '')
         .split('&')
         .reduce(function(found, param) {
           var key = param.split('=')[0];
@@ -62,7 +61,11 @@ window.common = (function(global) {
         .split('&')
         .reduce(function(oldValue, param) {
           var key = param.split('=')[0];
-          var value = param.split('=')[1];
+          var value = param
+            .split('=')
+            .slice(1)
+            .join('=');
+
           if (key === keyToFind) {
             return value;
           }
@@ -127,7 +130,7 @@ window.common = (function(global) {
     enabled: true,
     shouldRun() {
       return !this.getKeyInQuery(
-        (location.search || location.hash).replace(/^(\?|#\?)/, ''),
+        (location.search || location.hash).replace(queryRegex, ''),
         'run'
       );
     }
