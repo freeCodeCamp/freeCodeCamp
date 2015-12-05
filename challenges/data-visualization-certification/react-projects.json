@@ -1,0 +1,112 @@
+{
+  "name": "React Projects",
+  "order": 20,
+  "time": "200h",
+  "challenges": [
+    {
+      "id": "bd7158d8c443ede1aeb5bdef",
+      "title": "React Project 1",
+      "challengeSeed": [],
+      "description": [
+      ],
+      "type": "zipline",
+      "challengeType": 3,
+      "tests": [],
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "Crea una aplicación de votaciones",
+      "descriptionEs": [
+        ],
+      "namePt": "",
+      "descriptionPt": []
+    },
+    {
+      "id": "bd7158d8c443ede1aeb5bdff",
+      "title": "React Project 2",
+      "challengeSeed": [],
+      "description": [
+      ],
+      "type": "zipline",
+      "challengeType": 3,
+      "tests": [],
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "Crea una aplicación de coordinación de vida nocturna",
+      "descriptionEs": [
+        ],
+      "namePt": "",
+      "descriptionPt": []
+    },
+    {
+      "id": "bd7158d8c443ede1aeb5bd0e",
+      "title": "React Project 3",
+      "challengeSeed": [],
+      "description": [
+      ],
+      "type": "zipline",
+      "challengeType": 3,
+      "tests": [],
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "Grafica el mercado de acciones",
+      "descriptionEs": [
+        ],
+      "namePt": "",
+      "descriptionPt": []
+    },
+    {
+      "id": "bd7158d8c443ede1aeb5bd0f",
+      "title": "React Project 4",
+      "challengeSeed": [],
+      "description": [
+      ],
+      "type": "zipline",
+      "challengeType": 3,
+      "tests": [],
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "Administra un club de intercambio de libros",
+      "descriptionEs": [
+        ],
+      "namePt": "",
+      "descriptionPt": []
+    },
+    {
+      "id": "bd7158d8c443ede1aeb5bdee",
+      "title": "React Project 5",
+      "challengeSeed": ["133315784"],
+      "description": [
+      ],
+      "type": "zipline",
+      "challengeType": 3,
+      "tests": [],
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "Crea un clon de Pinterest",
+      "descriptionEs": [
+        ],
+      "namePt": "",
+      "descriptionPt": []
+    }
+  ]
+}
