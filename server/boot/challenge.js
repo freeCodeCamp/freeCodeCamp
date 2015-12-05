@@ -146,8 +146,9 @@ module.exports = function(app) {
       challenges: blockArray,
       superBlock: blockArray[0].superBlock
     }))
-    .filter(({ name })=> {
-      return name !== 'Hikes';
+    .filter(({ superBlock }) => {
+      console.log('sup', superBlock);
+      return challengesRegex.test(superBlock);
     })
     .groupBy(block => block.superBlock)
     .flatMap(superBlocks$ => superBlocks$.toArray())
@@ -191,7 +192,7 @@ module.exports = function(app) {
     // find challenge
     return challenge$
       .map(challenge => challenge.toJSON())
-      .filter(({ superBlock }) => superBlock !== 'hikes')
+      .filter(({ superBlock }) => challengesRegex.test(superBlock))
       .filter(({ id }) => id === challengeId)
       // now lets find the block it belongs to
       .flatMap(challenge => {
@@ -529,7 +530,9 @@ module.exports = function(app) {
           time: blockArray[0] && blockArray[0].time || '???'
         };
       })
-      .filter(({ superBlock }) => superBlock !== 'hikes')
+      .filter(({ superBlock }) => {
+        return !(/hikes/i).test(superBlock);
+      })
       // turn stream of blocks into a stream of an array
       .toArray()
       .doOnNext(blocks => {

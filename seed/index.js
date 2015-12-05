@@ -44,9 +44,14 @@ destroy()
         challenge.order = order;
         challenge.suborder = index + 1;
         challenge.block = block;
-        challenge.superBlock = superBlock;
         challenge.isBeta = challenge.isBeta || isBeta;
         challenge.time = challengeSpec.time;
+        challenge.superBlock = superBlock
+          .split('-')
+          .map(function(word) {
+            return _.capitalize(word);
+          })
+          .join(' ');
 
         return challenge;
       });
