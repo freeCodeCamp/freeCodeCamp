@@ -17,6 +17,7 @@ destroy()
   .flatMap(function(challengeSpec) {
     var order = challengeSpec.order;
     var block = challengeSpec.name;
+    var superBlock = challengeSpec.superBlock;
     var isBeta = !!challengeSpec.isBeta;
     var fileName = challengeSpec.fileName;
     console.log('parsed %s successfully', block);
@@ -43,6 +44,7 @@ destroy()
         challenge.order = order;
         challenge.suborder = index + 1;
         challenge.block = block;
+        challenge.superBlock = superBlock;
         challenge.isBeta = challenge.isBeta || isBeta;
         challenge.time = challengeSpec.time;
 
