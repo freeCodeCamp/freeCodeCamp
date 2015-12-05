@@ -43,30 +43,24 @@ block content
             .modal-content
                 .modal-header.challenge-list-header= compliment
                     a.close.closing-x(href='#', data-dismiss='modal', aria-hidden='true') ×
-                .modal-body(ng-controller="pairedWithController")
+                .modal-body
                     .text-center
                         .animated.zoomInDown
                             span.completion-icon.ion-checkmark-circled.text-primary
                     if (user)
-                        form.form-horizontal(novalidate='novalidate', name='completedWithForm')
+                        form.form-horizontal(name='completedWithForm', id='basejump-or-zipline-submit-form')
                             .form-group.text-center
                                 .col-xs-10.col-xs-offset-1.col-sm-8.col-sm-offset-2.col-md-8.col-md-offset-2
                                     // extra field to distract password tools like lastpass from injecting css into our username field
-                                    input.form-control(ng-show="false")
+                                    input.form-control.hidden
                                     if (challengeType === "3")
-                                        input.form-control#public-url(type='url', name="solutionUrl", placeholder="http://codepen.io/your-pen-here", autofocus, required, ng-minlength="10", ng-model="deploymentUrl")
+                                        input.form-control#public-url(type="url", name="solutionUrl", placeholder="http://codepen.io/your-pen-here", autofocus, required)
                                     else
-                                        input.form-control#public-url(type='url', name="solutionUrl", placeholder="http://yourapp.com", autofocus, required, ng-minlength="10", ng-model="deploymentUrl")
-                                        input.form-control#github-url(name="githubUrl", placeholder="http://github.com/camper/project", ng-model="githubUrl")
-
-                                    input.form-control#completed-with(name="existingUser", ng-minlength placeholder="If you paired, enter your pair's username here", existing-username='', ng-model="existingUser")
-                                .col-xs-10.col-xs-offset-1.col-sm-8.col-sm-offset-2.col-md-8.col-md-offset-2(ng-cloak, ng-show="completedWithForm.$error.exists && !completedWithForm.existingUser.$pristine && existingUser.length > 0")
-                                    alert(type='danger')
-                                        span.ion-close-circled
-                                        | Username not found
+                                        input.form-control#public-url(type="url", name="solutionUrl", placeholder="http://yourapp.com", autofocus, required)
+                                        input.form-control#github-url(name="githubUrl", placeholder="http://github.com/camper/project")
 
                     if (user)
-                        a.btn.btn-lg.btn-primary.btn-block#next-courseware-button(name='_csrf', value=_csrf, ng-disabled='completedWithForm.$invalid') Go to my next challenge
+                        a.btn.btn-lg.btn-primary.btn-block#next-courseware-button(name='_csrf', value=_csrf) Go to my next challenge
                         .button-spacer
                     else
                         a.btn.btn-lg.btn-primary.btn-block(href='/challenges/next-challenge?id=' + challengeId) Go to my next challenge

@@ -2,10 +2,6 @@
   "name": "freecodecamp",
   "version": "0.0.0",
   "homepage": "http://freecodecamp.com",
-  "authors": [
-    "Quincy Larson <michaelqlarson@gmail.com>"
-  ],
-  "license": "MIT",
   "private": true,
   "ignore": [
     "**/.*",
@@ -16,15 +12,12 @@
     "tests"
   ],
   "dependencies": {
-    "angular-ui-bootstrap": "~0.13.0",
-    "angular": "~1.3.15",
     "d3": "~3.5.5",
     "jquery": "~2.1.4",
     "cal-heatmap": "~3.5.2",
     "bootstrap": "~3.3.4",
     "font-awesome": "~4.3.0",
     "moment": "~2.10.2",
-    "angular-bootstrap": "~0.13.0",
     "jshint": "~2.9.0",
     "lightbox2": "~2.8.1",
     "rxjs": "~4.0.6",

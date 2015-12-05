@@ -164,7 +164,7 @@ module.exports = function(User) {
     req.flash('errors', {
       msg: 'Invalid username or password.'
     });
-    return res.redirect('/');
+    return res.redirect('/email-signin');
   });
 
   User.afterRemote('logout', function(ctx, result, next) {
