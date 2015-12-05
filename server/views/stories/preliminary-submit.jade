@@ -1,10 +1,10 @@
 .col-xs-12
-    div(ng-controller="URLSubmitController")
+    div
         form.input-group(name='URLSubmit')
-                input#story-url.big-text-field.field-responsive.form-control(placeholder='Paste your link here', name='link', type='url', ng-model='possibleURL', required='required', autofocus)
+                input#story-url.big-text-field.field-responsive.form-control(placeholder='Paste your link here', name='link', type='url', required='required', autofocus)
                 span.input-group-btn
-                    button#preliminary-story-submit.btn.btn-big.btn-primary.btn-responsive(type='button', ng-disabled='URLSubmit.link.$invalid') Submit
-        div(ng-show="URLSubmit.link.$error.url && !URLsubmit.link.$pristine")
+                    button#preliminary-story-submit.btn.btn-big.btn-primary.btn-responsive(type='button') Submit
+        div
             alert(type='danger')
                 span.ion-close-circled
                 | Please enter a valid URL format (http://www.example.com/).
