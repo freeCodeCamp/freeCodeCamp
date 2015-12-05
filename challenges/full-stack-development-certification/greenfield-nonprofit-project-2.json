@@ -1,0 +1,227 @@
+{
+  "name": "Greenfield Nonprofit Project 2",
+  "order": 12,
+  "time": "5m",
+  "challenges": [
+    {
+      "id": "561add10cc82ad38a17513be",
+      "title": "Greenfield Nonprofit Project 2",
+      "challengeSeed": [
+        {
+          "properties": ["isHonest", "isFrontEndCert"],
+          "apis": ["/certificate/honest", "/certificate/verify/front-end"],
+          "stepIndex": [1, 2]
+        }
+      ],
+      "description": [
+      ],
+      "type": "Waypoint",
+      "challengeType": 7,
+      "tests": [
+        {
+          "id": "ad7123c8c441eddfaeb5bdef",
+          "title": "Meet Bonfire"
+        },
+        {
+          "id": "a202eed8fc186c8434cb6d61",
+          "title": "Reverse a String"
+        },
+        {
+          "id": "a302f7aae1aa3152a5b413bc",
+          "title": "Factorialize a Number"
+        },
+        {
+          "id": "aaa48de84e1ecc7c742e1124",
+          "title": "Check for Palindromes"
+        },
+        {
+          "id": "a26cbbe9ad8655a977e1ceb5",
+          "title": "Find the Longest Word in a String"
+        },
+        {
+          "id": "ab6137d4e35944e21037b769",
+          "title": "Title Case a Sentence"
+        },
+        {
+          "id": "a789b3483989747d63b0e427",
+          "title": "Return Largest Numbers in Arrays"
+        },
+        {
+          "id": "acda2fb1324d9b0fa741e6b5",
+          "title": "Confirm the Ending"
+        },
+        {
+          "id": "afcc8d540bea9ea2669306b6",
+          "title": "Repeat a string repeat a string"
+        },
+        {
+          "id": "ac6993d51946422351508a41",
+          "title": "Truncate a string"
+        },
+        {
+          "id": "a9bd25c716030ec90084d8a1",
+          "title": "Chunky Monkey"
+        },
+        {
+          "id": "ab31c21b530c0dafa9e241ee",
+          "title": "Slasher Flick"
+        },
+        {
+          "id": "af2170cad53daa0770fabdea",
+          "title": "Mutations"
+        },
+        {
+          "id": "adf08ec01beb4f99fc7a68f2",
+          "title": "Falsy Bouncer"
+        },
+        {
+          "id": "a39963a4c10bc8b4d4f06d7e",
+          "title": "Seek and Destroy"
+        },
+        {
+          "id": "a24c1a4622e3c05097f71d67",
+          "title": "Where do I belong"
+        },
+        {
+          "id": "a3566b1109230028080c9345",
+          "title": "Sum All Numbers in a Range"
+        },
+        {
+          "id": "a5de63ebea8dbee56860f4f2",
+          "title": "Diff Two Arrays"
+        },
+        {
+          "id": "a7f4d8f2483413a6ce226cac",
+          "title": "Roman Numeral Converter"
+        },
+        {
+          "id": "a8e512fbe388ac2f9198f0fa",
+          "title": "Where art thou"
+        },
+        {
+          "id": "a0b5010f579e69b815e7c5d6",
+          "title": "Search and Replace"
+        },
+        {
+          "id": "aa7697ea2477d1316795783b",
+          "title": "Pig Latin"
+        },
+        {
+          "id": "afd15382cdfb22c9efe8b7de",
+          "title": "DNA Pairing"
+        },
+        {
+          "id": "af7588ade1100bde429baf20",
+          "title": "Missing letters"
+        },
+        {
+          "id": "a77dbc43c33f39daa4429b4f",
+          "title": "Boo who"
+        },
+        {
+          "id": "a105e963526e7de52b219be9",
+          "title": "Sorted Union"
+        },
+        {
+          "id": "a6b0bb188d873cb2c8729495",
+          "title": "Convert HTML Entities"
+        },
+        {
+          "id": "a103376db3ba46b2d50db289",
+          "title": "Spinal Tap Case"
+        },
+        {
+          "id": "a5229172f011153519423690",
+          "title": "Sum All Odd Fibonacci Numbers"
+        },
+        {
+          "id": "a3bfc1673c0526e06d3ac698",
+          "title": "Sum All Primes"
+        },
+        {
+          "id": "ae9defd7acaf69703ab432ea",
+          "title": "Smallest Common Multiple"
+        },
+        {
+          "id": "a6e40f1041b06c996f7b2406",
+          "title": "Finders Keepers"
+        },
+        {
+          "id": "a5deed1811a43193f9f1c841",
+          "title": "Drop it"
+        },
+        {
+          "id": "ab306dbdcc907c7ddfc30830",
+          "title": "Steamroller"
+        },
+        {
+          "id": "a8d97bd4c764e91f9d2bda01",
+          "title": "Binary Agents"
+        },
+        {
+          "id": "a10d2431ad0c6a099a4b8b52",
+          "title": "Everything Be True"
+        },
+        {
+          "id": "a97fd23d9b809dac9921074f",
+          "title": "Arguments Optional"
+        },
+        {
+          "id": "bd7158d8c442eddfbeb5bd1f",
+          "title": "Get Set for Ziplines"
+        },
+        {
+          "id": "bd7158d8c242eddfaeb5bd13",
+          "title": "Build a Personal Portfolio Webpage"
+        },
+        {
+          "id": "bd7158d8c442eddfaeb5bd13",
+          "title": "Build a Random Quote Machine"
+        },
+        {
+          "id": "bd7158d8c442eddfaeb5bd0f",
+          "title": "Build a Pomodoro Clock"
+        },
+        {
+          "id": "bd7158d8c442eddfaeb5bd17",
+          "title": "Build a JavaScript Calculator"
+        },
+        {
+          "id": "bd7158d8c442eddfaeb5bd10",
+          "title": "Show the Local Weather"
+        },
+        {
+          "id": "bd7158d8c442eddfaeb5bd1f",
+          "title": "Use the Twitch.tv JSON API"
+        },
+        {
+          "id": "bd7158d8c442eddfaeb5bd18",
+          "title": "Stylize Stories on Camper News"
+        },
+        {
+          "id": "bd7158d8c442eddfaeb5bd19",
+          "title": "Build a Wikipedia Viewer"
+        },
+        {
+          "id": "bd7158d8c442eedfaeb5bd1c",
+          "title": "Build a Tic Tac Toe Game"
+        },
+        {
+          "id": "bd7158d8c442eddfaeb5bd1c",
+          "title": "Build a Simon Game"
+        }
+      ],
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "Reclama tu certificado de desarrollo Front End",
+      "descriptionEs": [
+        ],
+      "namePt": "",
+      "descriptionPt": []
+    }
+  ]
+}
