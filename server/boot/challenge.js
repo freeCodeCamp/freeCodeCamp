@@ -157,7 +157,6 @@ module.exports = function(app) {
     .flatMap(superBlock => Observable.just(superBlock))
     .shareReplay();
 
-  superBlocks$.subscribe(() => {});
   const User = app.models.User;
   const userCount$ = observeMethod(User, 'count');
 
@@ -192,7 +191,7 @@ module.exports = function(app) {
     // find challenge
     return challenge$
       .map(challenge => challenge.toJSON())
-      .filter(({ block }) => block !== 'Hikes')
+      .filter(({ superBlock }) => superBlock !== 'hikes')
       .filter(({ id }) => id === challengeId)
       // now lets find the block it belongs to
       .flatMap(challenge => {
@@ -530,7 +529,7 @@ module.exports = function(app) {
           time: blockArray[0] && blockArray[0].time || '???'
         };
       })
-      .filter(({ name }) => name !== 'Hikes')
+      .filter(({ superBlock }) => superBlock !== 'hikes')
       // turn stream of blocks into a stream of an array
       .toArray()
       .doOnNext(blocks => {
