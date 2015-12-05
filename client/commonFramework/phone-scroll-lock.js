@@ -11,7 +11,7 @@ window.common = (function({ common = { init: [] }}) {
         if (magiVal < 0) {
           magiVal = 0;
         }
-        $('.editorScrollDiv').css('height', magiVal - 85 + 'px');
+        $('.editorScrollDiv').css('height', magiVal - 50 + 'px');
       }
 
       magiVal = $(window).height() - $('.navbar').height();
@@ -22,7 +22,7 @@ window.common = (function({ common = { init: [] }}) {
 
       $('.scroll-locker')
         .css('min-height', $('.editorScrollDiv').height())
-        .css('height', magiVal - 185);
+        .css('height', magiVal - 50);
     } else {
       $('.editorScrollDiv').css('max-height', 500 + 'px');
 
@@ -30,7 +30,7 @@ window.common = (function({ common = { init: [] }}) {
         .css('position', 'inherit')
         .css('top', 'inherit')
         .css('width', '100%')
-        .css('max-height', '85%');
+        .css('max-height', '100%');
     }
   };
 

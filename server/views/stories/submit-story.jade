@@ -13,17 +13,12 @@
                 .col-xs-12.col-md-1
                     label.control-label.control-label-story-submission(for='name') Link
                 .col-xs-12.col-md-11
-                    input#story-url.form-control(name='Link', ng-model='submitStory.url', disabled="disabled", ng-init='submitStory.url="#{storyURL}"')
+                  input#story-url.form-control(name='Link', disabled, value='#{storyURL}')
             .form-group
                 .col-xs-12.col-md-1
                     label.control-label.control-label-story-submission(for='name') Title
                 .col-xs-12.col-md-11
-
-                    input#story-title.form-control(placeholder='Type a headline for your link here', name='Title', maxlength='90' ng-model='submitStory.title',required='required', autocomplete="off", ng-init='submitStory.title="#{storyTitle}"' autofocus)
-                .col-xs-12.col-md-11.col-md-offset-1(ng-cloak, ng-show="submitStory.title.$error.required")
-                    alert(type='danger')
-                        span.ion-close-circled
-                        |  A headline is required to submit.
+                  input#story-title.form-control(value='#{storyTitle}', name='Title', maxlength='90', autocomplete="off", autofocus, required)
             .form-group
                 .col-xs-12.col-md-offset-1
                     span.pull-left#textarea_feedback
@@ -40,10 +35,8 @@
             .row
                 .form-group
 
-                    button.btn.btn-big.btn-block.btn-primary#story-submit(type='submit', ng-disabled='submitStory.$invalid || !submitStory') Submit
+                    button.btn.btn-big.btn-block.btn-primary#story-submit(type='submit') Submit
     script.
-        $('#story-url').val(storyURL).attr('disabled', 'disabled');
-        $('#story-title').val(storyTitle);
-        if (storyImage) {
-            $('#image-display').removeClass('hidden-element');
-        }
+      if (main.storyImage) {
+        $('#image-display').removeClass('hidden-element');
+      }
