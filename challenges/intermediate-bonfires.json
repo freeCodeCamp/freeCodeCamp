@@ -262,7 +262,7 @@
         "El primer argumento es la frase en la que se ejecutará la búsqueda y el reemplazo",
         "El segundo argumento es la palabra que se va a reemplazar",
         "El tercer argumento es lo que reemplazará a la palabra indicada en el segundo argumento",
-        "NOTA: Debes respetar mayúsculas y minúsculas cuando ejecutes el reemplazo. Por ejemplo, si quisieras reemplazar la palabra \"Libro\" con la palabra \"perro\", deberías insertar en vez la palabra \"Perro\"",
+        "NOTA: Debes respetar mayúsculas y minúsculas de la palabra original cuando ejecutes el reemplazo. Por ejemplo, si quisieras reemplazar la palabra \"Libro\" con la palabra \"perro\", deberías insertar en vez la palabra \"Perro\"",
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
         ],
       "namePt": "",
@@ -457,7 +457,7 @@
       "nameEs": "¡Bu!",
       "descriptionEs": [
         "Crea una función que verifique si el valor que se le pasa es de tipo booleano. Haz que la función devuelva true o false según corresponda.",
-        "Los primitivos buleanos primitivos son: true y false",
+        "Los primitivos booleanos primitivos son: true y false",
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
         ],
       "namePt": "",
@@ -553,7 +553,7 @@
       "descriptionRu": [],
       "nameEs": "Convierte entidades HTML",
       "descriptionEs": [
-        "Convierte los caracteres \"&\", \"<\", \">\", '\"' (double quote), and \"'\" (apostrophe), contenidos en la cadena de texto que se te pasa, en sus entidades HTML correspondientes",
+        "Convierte los caracteres \"&\", \"<\", \">\", '\"' (comilla), y \"'\" (apostrofe), contenidos en la cadena de texto que se te pasa, en sus entidades HTML correspondientes",
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
         ],
       "namePt": "",
@@ -737,7 +737,7 @@
       "descriptionRu": [],
       "nameEs": "Mínimo común múltiplo",
       "descriptionEs": [
-        "En el ejercicio se te provee un arreglo con dos números. Crea una función que encuentre el número más pequeño que sea divisible entre ambos números, así como todos los números enteros entre ellos.",
+        "En el ejercicio se te provee un arreglo con dos números. Crea una función que encuentre el número más pequeño que sea divisible entre ambos números, así como entre todos los números enteros entre ellos.",
         "Tu función debe aceptar como argumento un arreglo con dos números, los cuales no necesariamente estarán en orden.",
         "Por ejemplo, si se te pasan los números 1 y 3, deberás encontrar el mínimo común múltiplo de 1 y 3 que es divisible por todos los números <em>entre</em> 1 y 3.",
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."

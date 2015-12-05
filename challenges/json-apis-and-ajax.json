@@ -328,7 +328,7 @@
       ],
       "challengeType": 0,
       "type": "waypoint",
-      "nameEs": "Presentar imágenes de fuentes de datos",
+      "nameEs": "Presenta imágenes de fuentes de datos",
       "descriptionEs": [
         "Tanto en el JSON que recibimos de la API de fotos de gato de Free Code Camp, como en ",
         "lo que hemos visto en las dos últimas lecciones, cada objeto en nuestro vector JSON contiene una llave <code>imageLink</code> con un valor que corresponde a la url de la imagen de un gato.",

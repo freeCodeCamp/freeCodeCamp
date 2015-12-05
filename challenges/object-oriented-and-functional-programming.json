@@ -104,7 +104,7 @@
       "nameEs": "Construye objetos de JavaScript con funciones",
       "descriptionEs": [
         "También podemos crear objetos utilizando funciones <code>constructoras</code>.",
-        "A cada función <code>constructora</code>se le da un nombre comenzando en mayúsculas para que quede claro que es una <code>constructora</code>.",
+        "A cada función <code>constructora</code> se le da un nombre comenzando en mayúsculas para que quede claro que es una <code>constructora</code>.",
         "He aquí un ejemplo de una función <code>constructora</code>:",
         "<code>var Carro = function() {</code>",
         "<code>& nbsp; & nbsp; this.llantas = 4; </code>",
