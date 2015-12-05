@@ -5,12 +5,17 @@ var path = require('path');
 function getFilesFor(dir) {
   return fs.readdirSync(path.join(__dirname, '/' + dir))
     .map(function(file) {
+      let superBlock;
       if (fs.statSync(path.join(__dirname, dir + '/' + file)).isFile()) {
-        return file;
+        return { file: file };
       }
-      return getFilesFor(dir + '/' + file)
-        .map(function(_file) {
-          return file + '/' + _file;
+      superBlock = file;
+      return getFilesFor(dir + '/' + superBlock)
+        .map(function(data) {
+          return {
+            file: superBlock + '/' + data.file,
+            superBlock: superBlock
+          };
         });
     })
     .reduce(function(files, file) {
@@ -25,10 +30,10 @@ function getFilesFor(dir) {
 module.exports = function getChallenges() {
   try {
     return getFilesFor('challenges')
-      .map(function(file) {
-        console.log('fo', file);
-        var challengeSpec = require('./challenges/' + file);
-        challengeSpec.fileName = file;
+      .map(function(data) {
+        var challengeSpec = require('./challenges/' + data.file);
+        challengeSpec.fileName = data.file;
+        challengeSpec.superBlock = data.superBlock;
 
         return challengeSpec;
       });

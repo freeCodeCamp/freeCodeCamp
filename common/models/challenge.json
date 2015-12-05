@@ -32,6 +32,10 @@
     "dashedName": {
       "type": "string"
     },
+    "superBlock": {
+      "type": "string",
+      "description": "Used for ordering challenge blocks in map"
+    },
     "block": {
       "type": "string"
     },
