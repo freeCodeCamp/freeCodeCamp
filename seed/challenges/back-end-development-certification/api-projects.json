@@ -1,0 +1,301 @@
+{
+  "name": "API Projects",
+  "order": 20,
+  "time": "100h",
+  "challenges": [
+    {
+      "id": "bd7158d8c443edefaeb5bcef",
+      "title": "Get Set for Basejumps",
+      "challengeSeed": [],
+      "description": [
+        [
+          "http://i.imgur.com/4IZjWZ3.gif",
+          "A gif showing how to create a c9.io account.",
+          "We recommend building our full stack Basejump challenges on c9.io, a powerful browser-based development environment. This save you hours of time that you would spend configuring your local computer to run Node.js and MongoDB - time you could instead spend coding. <br>Create a c9.io account by clicking the GitHub symbol in the upper right hand corner of the c9.io page. Click the big plus symbol to create a new workspace. Enter your email address when prompted.",
+          "http://c9.io"
+        ],
+        [
+          "http://i.imgur.com/F7i5Hhi.gif",
+          "A gif showing how to fill out the new workspace form",
+          "Instead of starting from scratch, we recommend using Clementine.js, a full stack JavaScript \"boilerplate\" that already has some basic code written for you. Clementine.js has a detailed tutorial you can go through to build it yourself, but for now let's just clone its code. On c9.io, give your workspace a name, then leave \"Template\" as custom and create your workspace from this GitHub url: <code>https://github.com/johnstonbl01/clementinejs-fcc.git</code>",
+          ""
+        ],
+        [
+          "http://i.imgur.com/42m1vyr.gif",
+          "A gif showing you how to show hidden files.",
+          "Click the gear in the upper right corner of c9.io's file structure. Select \"show hidden files\".",
+          ""
+        ],
+        [
+          "http://i.imgur.com/qrE8xaK.gif",
+          "A gif showing you how to create a new file.",
+          "Right click and create a new file called <code>.env</code>.",
+          ""
+        ],
+        [
+          "http://i.imgur.com/jkQX9SQ.gif",
+          "A gif showing you how to prep your environmental variables in your .env file.",
+          "Open your .env file and paste this into it, then save it: <br><code>GITHUB_KEY=<br>GITHUB_SECRET=<br>MONGO_URI=mongodb://localhost:27017/clementinejs<br>PORT=8080<br>APP_URL=http://localhost:8080/</code>",
+          ""
+        ],
+        [
+          "http://i.imgur.com/f3DE7zB.gif",
+          "A gif showing you how to open c9.io's preview window.",
+          "Open up your application in a preview tab by clicking window > share > application > open.",
+          ""
+        ],
+        [
+          "http://i.imgur.com/Ip0qUdQ.gif",
+          "A gif showing you how to create a GitHub app using c9.io's preview URL.",
+          "Create a GitHub app for authentication and choose an \"Application name\". For the homepage URL, paste the URL from your preview tab. You'll also paste the URL from your preview tab into \"Authorization callback URL\", then add to it: <code>auth/github/callback</code>",
+          "https://github.com/settings/applications/new"
+        ],
+        [
+          "http://i.imgur.com/qCUVRFb.gif",
+          "A gif showing you how to transfer GitHub's key and secret over to your .env file, as well as your c9.io URL.",
+          "GitHub will create an app and present you with a Client ID and a Client Secret. Set your .env file's GITHUB_KEY equal to the Client ID, and set your .env file's GITHUB_SECRET equal to the Client Secret. Copy the URL from the your preview tab and paste it into your .env file as your APP_URL.",
+          ""
+        ],
+        [
+          "http://i.imgur.com/2a20Vah.gif",
+          "A gif showing you how to start mongoDB in c9.io's terminal.",
+          "In your terminal, start MongoDB by entering <code>mongod --smallfiles</code>",
+          ""
+        ],
+        [
+          "http://i.imgur.com/dC55pWk.gif",
+          "A gif showing you how to open a new tab in c9.io's terminal.",
+          "Open a new terminal tab with the + button above your terminal, then run <code>npm install</code>",
+          ""
+        ],
+        [
+          "http://i.imgur.com/54OC2Ro.gif",
+          "A gif showing you how to navigate to your preview tab and sign in to your new Clementine.js app.",
+          "Run <code>node server.js</code> to start the server. Refresh your preview tab. You should see the Clementine.js logo. Click \"sign in\" and accept GitHub's prompt to authorize the application.",
+          ""
+        ],
+        [
+          "http://i.imgur.com/2IJfyvN.gif",
+          "A gif showing you how to click the button to trigger an AJAX action with Clementine.js and how to look at your user profile from the GitHub authentication data.",
+          "Click the \"click me\" button and you'll see that it increments the number clicks. Click the profile button and you'll see that it has your GitHub information.",
+          ""
+        ],
+        [
+          "http://i.imgur.com/bjO5pnq.gif",
+          "A gif showing you how to create a new GitHub repository and push your code up to it.",
+          "Create a new GitHub repository. Then copy its .git URL. <br>Return to c9.io's terminal and set your GitHub remote URL: <code>git remote set-url origin</code> followed by the URL you copied from GitHub. <br>Run <code>git push origin master</code>. <br>Now tab back to GitHub and refresh, and you'll see that your code is now on GitHub.",
+          "https://github.com/new"
+        ],
+        [
+          "http://i.imgur.com/Qn0K65B.gif",
+          "A gif showing you how to add add-ons to Heroku.",
+          "We will soon add instructions for getting Clementine running on Heroku. For now, develop your Basejumps right on c9.io.",
+          ""
+        ]
+      ],
+      "type": "Waypoint",
+      "challengeType": 7,
+      "tests": [],
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "Prepárate para los Basejumps",
+      "descriptionEs": [
+        [
+          "http://i.imgur.com/4IZjWZ3.gif",
+          "Una imagen gif que te muestra cómo crear una cuenta en c9.io.",
+          "Te recomendamos resolver nuestros desafíos de pila completa (full stack) en c9.io, un poderoso ambiente de desarrollo basado en tu navegador. Esto te ahorrará muchas horas que utilizarías configurando tu computadora para correr Node.js y MongoDB - tiempo que podrías utilizar escribiendo código. <br>Crea una cuenta en c9.io pulsando el símbolo de GitHub en la esquina superior derecha de la página de c9.io. Pulsa el botón con el símbolo de suma para crear una área de trabajo nueva. Introduce tu dirección de correo electrónico cuando se te solicite.",
+          "http://c9.io"
+        ],
+        [
+          "http://i.imgur.com/F7i5Hhi.gif",
+          "Una imagen gif que te muestra cómo llenar el formulario para crear un área de trabajo nueva",
+          "En vez de iniciar desde cero, recomendamos utilizar Clementine.js, un modelo (<em>bolierplate</em>) de JavaScript pila completa (full stack) que viene con código básico ya escrito para ti. Clementine.js tiene un tutorial detallado que puedes seguir para construirlo por ti mismo, pero por ahora simplemente vamos a clonarlo. En c9.io, dale un nombre a tu área de trabajo, luego deja \"Plantilla\" (\"Template\") como personalizado y crea tu espacio de trabajo usando el siguiente url de Github: <code>https://github.com/johnstonbl01/clementinejs-fcc.git</code>",
+          ""
+        ],
+        [
+          "http://i.imgur.com/42m1vyr.gif",
+          "Una imagen gif que te muestra cómo mostrar los archivos ocultos.",
+          "Pulsa el engrane en la esquina superior derecha del árbol de archivos de c9.io. Selecciona \"show hidden files\".",
+          ""
+        ],
+        [
+          "http://i.imgur.com/qrE8xaK.gif",
+          "Una imagen gif que te muestra cómo crear un archivo nuevo.",
+          "Haciendo clic derecho, crea un nuevo archivo llamado <code>.env</code>.",
+          ""
+        ],
+        [
+          "http://i.imgur.com/jkQX9SQ.gif",
+          "Una imagen gif que te muestra cómo preparar tus variables de ambiente en tu archivo .env.",
+          "Abre tu archivo .env pega el siguiente código, y luego guárdalo: <br><code>GITHUB_KEY=<br>GITHUB_SECRET=<br>MONGO_URI=mongodb://localhost:27017/clementinejs<br>PORT=8080<br>APP_URL=http://localhost:8080/</code>",
+          ""
+        ],
+        [
+          "http://i.imgur.com/f3DE7zB.gif",
+          "Una imagen gif que te muestra cómo abir la vista previa de la ventana de c9.io.",
+          "Abre tu aplicación en una pestaña de vista previa pulsando window > share > application > open.",
+          ""
+        ],
+        [
+          "http://i.imgur.com/Ip0qUdQ.gif",
+          "Una imagen gif que te muestra cómo crear una aplicación de GitHub usando la URL de vista previa de c9.io.",
+          "Crea una aplicación de GitHub para autenticación y elige un \"Nombre de aplicación\". Para la URL de inicio (homepage), pega la URL de tu pestaña de vista previa. También debes pegar la URL de tu pestaña de vista previa en <code>Authorization callback URL</code>, agrégale: <code>auth/github/callback</code>",
+          "https://github.com/settings/applications/new"
+        ],
+        [
+          "http://i.imgur.com/qCUVRFb.gif",
+          "Una imagen gif que te muestra cómo transferir tu llave (key) y tu código secreto (secret) de GitHub a tu archivo .env, así como tu URL de c9.io.",
+          "GitHub creará una aplicación y te entregará un ID de cliente (Client ID) y un Código secreto de cliente (Client Secret). Haz que el GITHUB_KEY en tu archivo .env sea igual al ID de cliente, y haz que tu GITHUB_SECRET en el archivo .env sea igual al Código secreto de cliente. Copia la URL de tu pestaña de vista previa y pégala en tu archivo .env como tu APP_URL.",
+          ""
+        ],
+        [
+          "http://i.imgur.com/2a20Vah.gif",
+          "Una imagen gif que te muestra cómo iniciar mongoDB en la terminal de c9.io.",
+          "En tu terminal, inicia MongoDB con el siguiente comando: <code>mongod --smallfiles</code>",
+          ""
+        ],
+        [
+          "http://i.imgur.com/dC55pWk.gif",
+          "Una imagen gif que te muestra cómo abrir una nueva pestaña en la terminal de c9.io.",
+          "Abre una nueva pestaña de terminal pulsando el botón de + sobre tu terminal, luego ejecuta <code>npm install</code>",
+          ""
+        ],
+        [
+          "http://i.imgur.com/54OC2Ro.gif",
+          "Una imagen gif que te muestra cómo navegar a tu pestaña de vista previa e ingresar a tu nueva aplicación Clementine.js.",
+          "Ejecuta <code>node server.js</code> para iniciar el servidor. Actualiza tu pestaña de vista previa. Deberías poder ver el logo de Clementine.js. Pulsa \"sign in\"  y acepta la solicitud de GitHub para autorizar la aplicación.",
+          ""
+        ],
+        [
+          "http://i.imgur.com/2IJfyvN.gif",
+          "Una imagen gif que te muestra cómo pulsar un botón para desencadenar una acción AJAX con Clementine.js y cómo ver tu perfil de usuario en los datos de autenticación provistos por GitHub.",
+          "Pulsa el botón que dice \"click me\" y verás que se incrementa el número de clics. Pulsa el botón de perfil (profile) y verás la información de tu perfil de GitHub.",
+          ""
+        ],
+        [
+          "http://i.imgur.com/bjO5pnq.gif",
+          "Una imagen gif que te muestra cómo crear un nuevo repositorio de GitHub GitHub y empujar allí tu código.",
+          "Crea un nuevo repositorio en GitHub. Luego copia su ULR .git. <br>Regresa a tu terminal de c9.io y establece tu URL remota de GitHub: <code>git remote set-url origin</code> seguido de la URL que copiaste de GitHub. <br>Ejecuta <code>git push origin master</code>. <br>Ahora ve de regreso a la página de GitHub y actualízala. Verás que tu código ahora está ahora en GitHub.",
+          "https://github.com/new"
+        ],
+        [
+          "http://i.imgur.com/Qn0K65B.gif",
+          "Una imagen gif que te muestra cómo agregar complementos a Heroku.",
+          "Pronto agregaremos instrucciones para hacer que Clementine corra en Heroku. Por ahora, desarrolla tus Basejumps en c9.io.",
+          ""
+        ]
+        ],
+      "namePt": "",
+      "descriptionPt": []
+    },
+    {
+      "id": "bd7158d8c443edefaeb5bdef",
+      "title": "API Project 1",
+      "challengeSeed": [],
+      "description": [
+      ],
+      "type": "basejump",
+      "challengeType": 4,
+      "tests": [],
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "Crea una aplicación de votaciones",
+      "descriptionEs": [
+        ],
+      "namePt": "",
+      "descriptionPt": []
+    },
+    {
+      "id": "bd7158d8c443edefaeb5bdff",
+      "title": "API Project 2",
+      "challengeSeed": [],
+      "description": [
+      ],
+      "type": "basejump",
+      "challengeType": 4,
+      "tests": [],
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "Crea una aplicación de coordinación de vida nocturna",
+      "descriptionEs": [
+        ],
+      "namePt": "",
+      "descriptionPt": []
+    },
+    {
+      "id": "bd7158d8c443edefaeb5bd0e",
+      "title": "API Project 3",
+      "challengeSeed": [],
+      "description": [
+      ],
+      "type": "basejump",
+      "challengeType": 4,
+      "tests": [],
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "Grafica el mercado de acciones",
+      "descriptionEs": [
+        ],
+      "namePt": "",
+      "descriptionPt": []
+    },
+    {
+      "id": "bd7158d8c443edefaeb5bd0f",
+      "title": "API Project 4",
+      "challengeSeed": [],
+      "description": [
+      ],
+      "type": "basejump",
+      "challengeType": 4,
+      "tests": [],
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "Administra un club de intercambio de libros",
+      "descriptionEs": [
+        ],
+      "namePt": "",
+      "descriptionPt": []
+    },
+    {
+      "id": "bd7158d8c443edefaeb5bdee",
+      "title": "API Project 5",
+      "challengeSeed": ["133315784"],
+      "description": [
+      ],
+      "type": "basejump",
+      "challengeType": 4,
+      "tests": [],
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "Crea un clon de Pinterest",
+      "descriptionEs": [
+        ],
+      "namePt": "",
+      "descriptionPt": []
+    }
+  ]
+}

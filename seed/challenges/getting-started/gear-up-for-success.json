@@ -1,7 +1,7 @@
 {
-  "name": "Get Started with Free Code Camp",
+  "name": "Gear up for Success",
   "order": 1,
-  "time": "10m",
+  "time": "15m",
   "challenges": [
     {
       "id": "560add10cb82ac38a17513be",
@@ -22,7 +22,7 @@
         ],
         [
           "http://i.imgur.com/D7Y5luw.jpg",
-          "A graph of the rate of job growth against growth in computer science degree graduates. There are 1.4 million jobs and only 400 thousand people to fill them.",
+          "A graph of the rate of job growth against growth in computer science degree graduates. There are 1.4 million jobs and only 400 million people to fill them.",
           "There are thousands of coding jobs currently going unfilled, and the demand for coders grows every year.",
           ""
         ],
@@ -189,63 +189,8 @@
       "descriptionFr": [],
       "nameRu": "",
       "descriptionRu": [],
-      "nameEs": "Crea una Cuenta de GitHub y Únete a nuestras Salas de Chat",
-      "descriptionEs": [
-        [
-          "http://i.imgur.com/EAR7Lvh.jpg",
-          "Una imagen de una de nuestras salas de chat en Gitter.",
-          "Ahora únete a las salas de chat de Free Code Camp. Puedes venir aquí en cualquier momento para charlar, hacer preguntas, o encontrar otro campista para programar juntos. Primero necesitaras una cuenta de GitHub.",
-          ""
-        ],
-        [
-          "http://i.imgur.com/FEImaEN.gif",
-          "Una imagen mostrandote como pulsar en el enlace inferior para ir a GitHub, llenar los campos necesarios y enviarlos.",
-          "Crea una cuenta en GitHub. Asegúrate de usar tu dirección de correo real - GitHub mantendrá esto en privado.",
-          "https://github.com/join"
-        ],
-        [
-          "http://i.imgur.com/ALN6zPK.gif",
-          "Un gif mostrandote como pulsar en la imagen de perfil en la esquina superior derecha de GitHub. Sube una foto tuya o continuaras usando la imagen de pixeles generada automáticamente. Entonces llena los campos restantes y haz clic en envíar.",
-          "En la esquina superior derecha pulsa sobre la imagen de pixeles, entonces selecciona configuraciones. <br>Sube una imagen tuya. Una foto de tu cara es mejor. Así es como tus compañeros campistas te verán en nuestras salas de chat, así que toma tu mejor ángulo. <br>Puedes añadir tu ciudad y tu nombre si lo deseas.",
-          "https://github.com/settings/profile"
-        ],
-        [
-          "http://i.imgur.com/pYk0wOk.gif",
-          "Un gif mostrandote como puedes dar una estrella a un repositorio de GitHub.",
-          "Ve al repositorio de código libre de Free Code Camp y dale una \"estrella\". Las \"estrellas\" son el equivalente en GitHub de los \"me gusta\".",
-          "https://github.com/freecodecamp/freecodecamp"
-        ],
-        [
-          "http://i.imgur.com/zwYPeQT.gif",
-          "Un gif mostrandote como pulsar en el enlace inferior para ir a nuestra sala de chat y pulsar en el botón de \"iniciar sesión con GitHub\". Entonces puedes pulsar en el próximo campo de texto y escribir un mensaje a tus compañeros campistas.",
-          "Ahora que tienes una cuenta de GitHub, puedes unirte a nuestro chat principal al iniciar sesión con GitHub. Presentate diciendo \"Hello world!\". <br>Cuéntales a los tus compañeros campistas como encontraste Free Code Camp. Además cuéntanos porque deseas aprender a programar.",
-          "https://gitter.im/FreeCodeCamp/FreeCodeCamp"
-        ],
-        [
-          "http://i.imgur.com/Ecs5XAd.gif",
-          "Un gif mostrandote como puedes pulsar en el botón de configuraciones en la esquina superior derecha y modificar tus configuraciones de notificaciones.",
-          "Nuestras salas de chat son extremadamente activas. Deberías cambiar tus configuraciones para ser notificado únicamente si alguien te menciona.",
-          ""
-        ],
-        [
-          "http://i.imgur.com/T0bGJPe.gif",
-          "Un gif mostrandote como puedes pulsar en la imagen de perfil de un usuario para iniciar una conversación privada con ese usuario.",
-          "Por favor nota que todas nuestras salas de chat son visibles para el público. Si necesitas compartir información privada, como una dirección de correo o un número de teléfono, hazlo en un mensaje privado.",
-          ""
-        ],
-        [
-          "http://i.imgur.com/vDTMJSh.gif",
-          "Un gif mostrandote que puedes cambiar entre desafíos y nuestras salas de chat.",
-          "Mantén nuestra sala de chat abierta mientras trabajas en nuestros desafíos. De esta manera, puedes pedir ayuda si quedas atascado. Además puedes socializar con otros campistas cuando quieras tomar un descanso.",
-          ""
-        ],
-        [
-          "http://i.imgur.com/WvQvNGN.gif",
-          "Un gif mostrandote como puedes pulsar abajo para descargar una aplicación de chat nativa para tu computadora.",
-          "También puedes descargar la aplicación de chat para tu computadora o teléfono móvil.",
-          "https://gitter.im/apps"
-        ]
-      ],
+      "nameEs": "",
+      "descriptionEs": [],
       "namePt": "",
       "descriptionPt": []
     },
@@ -270,15 +215,8 @@
       "descriptionFr": [],
       "nameRu": "",
       "descriptionRu": [],
-      "nameEs": "Configura tu portafolio de código",
-      "descriptionEs": [
-        [
-          "http://i.imgur.com/tP2ccTE.gif",
-          "Un gif mostrandore como puedes pulsar en tu imagen de perfil en la esquina superior derecha conectar tu portafolio y GitHub.",
-          "Dale un vistazo de tu portafolio de código. Da click en tu imagen en la esquina superior derecha. Para activar tu portafolio de código, necesitaras conectar tu cuenta de GitHub con Free Code Camp. <br>Tu portafolio de código muestra tu progreso y cuantos Brownie Points tienes. Puedes obtener Brownie Points completando desafíos y ayudando a otros campistas en nuestras salas de chat. Si obtienes Brownie Points varios días consecutivos, obtendrás una racha.",
-          ""
-        ]
-      ],
+      "nameEs": "",
+      "descriptionEs": [],
       "namePt": "",
       "descriptionPt": []
     },
@@ -309,21 +247,60 @@
       "descriptionFr": [],
       "nameRu": "",
       "descriptionRu": [],
-      "nameEs": "Únete a un Campamento en Tu Ciudad",
-      "descriptionEs": [
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
+    },
+        {
+      "id": "570add8ccb82ac38a17513c3",
+      "title": "Join our LinkedIn Alumni Network",
+      "challengeSeed": [],
+      "description": [
         [
-          "http://i.imgur.com/NAOFJWN.jpg",
-          "Una imagen de algunos de nuestros campistas compartiendo en un café local. 3 hombres y 3 mujeres estan sentados alrededor de una mesa con portátiles afuera, y estan sonriendo y programando.",
-          "Nuestros Campamentos te ayudan a programar con otros campistas en tu ciudad. Puedes coordinar grupos de estudio o atender eventos de programación locales juntos.",
-          ""
-        ],
-        [
-          "http://i.imgur.com/fTFMjwf.gif",
-          "Un gif mostrandote como puedes pulsar en el enlace inferior, encontrar tu ciudad en la lista de Campamentos, entonces haz clic en el enlace de Facebook para tu ciudad y unirte al grupo de Facebook de tu ciudad.",
-          "Encuentra tu ciudad en esta lista y haz clic en esta. Esto te llevara al grupo de Facebook del Campamento de tu ciudad. <br>Da clic en el botón de \"Unirse al grupo\" para unirte a el grupo. Alguien del mismo campamento debería aprobarte en breve. <br>Si tu ciudad no esta en esta lista, ve al final del articulo de la wiki para instrucciones en como crear un campamento para tu ciudad.",
-          "https://github.com/FreeCodeCamp/freecodecamp/wiki/List-of-Free-Code-Camp-city-based-Campsites"
+          "http://i.imgur.com/vJyiXzU.gif",
+          "A gif showing how you can click the link below and fill in the necessary fields to add your Free Code Camp studies to your LinkedIn profile.",
+          "LinkedIn recognizes Free Code Camp as a university. You can gain access to our large alumni network by adding Free Code Camp to your LinkedIn profile's education section. <br>Set your graduation date as next year. <br>For \"Degree\", type \"Full Stack Web Development Certification\". <br>For \"Field of study\", type \"Computer Software Engineering\". <br>Then click \"Save Changes\".",
+          "https://www.linkedin.com/profile/edit-education?school=Free+Code+Camp"
         ]
       ],
+      "type": "Waypoint",
+      "challengeType": 7,
+      "tests": [],
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
+    },
+    {
+      "id": "560add8ccb81ac38a17513c4",
+      "title": "Commit to a Goal and a Nonprofit",
+      "challengeSeed": [],
+      "description": [
+        [
+          "http://i.imgur.com/Og1ifsn.gif",
+          "A gif showing how you can commit to a goal for your Free Code Camp studies and pledge a monthly donation to a nonprofit to give you external motivation to reach that goal.",
+          "You can set a goal and pledge to donate to a nonprofit each month until you achieve that goal. <br>This will give you external motivation in your quest to learn to code, as well as an opportunity to help nonprofits right away. <br>Choose your goal, then choose a monthly donation. When you click \"commit\", the nonprofit's donation page will open in a new tab. <br>This is completely optional, and you can change your commitment or stop it at any time.",
+          "/commit"
+        ]
+      ],
+      "type": "Waypoint",
+      "challengeType": 7,
+      "tests": [],
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
       "namePt": "",
       "descriptionPt": []
     },
