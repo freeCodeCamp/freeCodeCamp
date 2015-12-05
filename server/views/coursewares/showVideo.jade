@@ -24,7 +24,7 @@ block content
                     var userLoggedIn = true;
             .button-spacer
             .btn-group.input-group.btn-group-justified
-                .btn.btn-success.btn-big#trigger-help-modal
+                .btn.btn-success.btn-big#challenge-help-btn
                     i.fa.fa-medkit
                         | &nbsp; Get help
                 .btn.btn-success.btn-big#trigger-issue-modal
@@ -39,23 +39,6 @@ block content
 
         script(type="text/javascript").
 
-                var controlEnterHandler = function(e) {
-                    $('body').unbind('keypress');
-                    if (e.ctrlKey && e.keyCode == 13) {
-                      $('#complete-courseware-editorless-dialog').modal('show');
-                    } else {
-                      $('body').bind('keypress', controlEnterHandler);
-                    }
-                };
-                var modalControlEnterHandler = function(e) {
-                  $('#complete-courseware-editorless-dialog').unbind('keypress');
-                  if (e.ctrlKey && e.keyCode == 13) {
-                    $('#next-courseware-button').click();
-                  } else {
-                    $('#complete-courseware-editorless-dialog').bind('keypress', modalControlEnterHandler);
-                  }
-                };
-
     #complete-courseware-editorless-dialog.modal(tabindex='-1')
         .modal-dialog.animated.fadeIn.fast-animation
             .modal-content
@@ -67,15 +50,50 @@ block content
                             span.completion-icon.ion-checkmark-circled.text-primary
                         if (user)
                             a.btn.btn-lg.btn-primary.btn-block#next-courseware-button(name='_csrf', value=_csrf) I've completed this challenge (ctrl + enter)
-                            script.
-                              $('#complete-courseware-editorless-dialog').bind('keypress', modalControlEnterHandler);
                         else
                             a.animated.fadeIn.btn.btn-lg.btn-primary.btn-block(href='/challenges/next-challenge?id=' + challengeId) I've completed this challenge (ctrl + enter)
-        script.
-            $('body').bind('keypress', controlEnterHandler);
-    script.
-        var challenge_Id = !{JSON.stringify(challengeId)};
-        var challenge_Name = !{JSON.stringify(name)};
-        var challengeType = !{JSON.stringify(challengeType)};
-        var dashedName = !{JSON.stringify(dashedName)};
+
     include ../partials/challenge-modals
+    script.
+      var common = window.common || { init: [] };
+
+      common.challengeId = !{JSON.stringify(challengeId)};
+      common.challengeName = !{JSON.stringify(name)};
+      common.challengeType = !{JSON.stringify(challengeType)};
+      common.dashedName = !{JSON.stringify(dashedName)};
+      common.init.push(function($) {
+        function controlEnterHandler(e) {
+            if (
+              e.keyCode === 13 &&
+              (e.ctrlKey || e.metaKey)
+            ) {
+              $('body').unbind('keydown');
+              $('#complete-courseware-editorless-dialog').modal('show');
+            }
+        };
+
+        function modalControlEnterHandler(e) {
+          if (
+            e.keyCode === 13 &&
+            (e.ctrlKey || e.metaKey)
+          ) {
+            $('#complete-courseware-editorless-dialog').unbind('keydown');
+            $('#next-courseware-button').click();
+          }
+        };
+        if (!{JSON.stringify(user && user.username ? true : false)}) {
+          $('#complete-courseware-editorless-dialog').bind('keydown', modalControlEnterHandler);
+        }
+        $('body').bind('keydown', controlEnterHandler);
+
+        $('#completed-courseware-editorless').on('click', function() {
+          $('#complete-courseware-editorless-dialog').modal('show');
+        });
+      });
+
+      document.addEventListener('gitter-sidecar-ready', function(e) {
+        if (window.main) {
+          window.main.chat.createHelpChat('freecodecamp/help', '#challenge-help-btn');
+        }
+      });
+    include ../partials/challenge-footer

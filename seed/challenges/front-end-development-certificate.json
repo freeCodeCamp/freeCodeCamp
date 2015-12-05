@@ -1,6 +1,7 @@
 {
   "name": "Claim Your Front End Development Certificate",
   "order": 12,
+  "time": "5m",
   "challenges": [
     {
       "id": "561add10cb82ac38a17513be",
@@ -14,7 +15,7 @@
       ],
       "description": [
         [
-          "http://i.imgur.com/luMkKst.jpg",
+          "http://i.imgur.com/syJxavV.jpg",
           "An image of our Front End Development Certificate",
           "This challenge will give you your verified Front End Development Certificate. Before we issue your certificate, we must verify that you have completed all of our basic and intermediate Bonfires, and all our basic and intermediate Ziplines. You must also accept our Academic Honesty Pledge. Click the button below to start this process.",
           ""
@@ -240,8 +241,33 @@
       "descriptionFr": [],
       "nameRu": "",
       "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
+      "nameEs": "Reclama tu certificado de desarrollo Front End",
+      "descriptionEs": [
+        [
+          "http://i.imgur.com/syJxavV.jpg",
+          "Una imagen que muestra nuestro certificado de desarrollo Front End",
+          "Este desafío te otorga tu certificado autenticado de desarrollo Front End. Antes de que podamos emitir tu certificado, debemos verificar que has completado todos los Bonfires básicos e intermedios, y todos los Ziplines básicos e intermedios. También debes aceptar nuestro Juramento de honestidad académica. Pulsa el botón siguiente para iniciar este proceso.",
+          ""
+        ],
+        [
+          "http://i.imgur.com/HArFfMN.jpg",
+          "Plagio (nombre): acción y efecto de plagiar. Plagiar (verbo) - copiar en lo sustancial obras ajenas, dándolas como propias.",
+          "Al pulsar el botón siguiente, juras que todo el código en tus soluciones a los desafíos A) es código que tú o tu compañero escribieron personalmente, o B) proviene de librerías de código abierto como jQuery, o C) ha sido claramente atribuido a sus autores originales. También nos otorgas el permiso para auditar tus soluciones a los desafíos y revocar tu certificado si encontramos evidencia de plagio.",
+          "#"
+        ],
+        [
+          "http://i.imgur.com/14F2Van.jpg",
+          "Una imagen del texto \"Front End Development Certificate requirements\"",
+          "Confirmemos que has completado todos nuestros Bonfires básicos e intermedios, y todos nuestros Ziplines básicos e intermedios. Pulsa el botón siguiente para hacer la verificación.",
+          "#"
+        ],
+        [
+          "http://i.imgur.com/16SIhHO.jpg",
+          "Una imagen de la palabra \"Congratulations\"",
+          "¡Felicitaciones! Hemos agregado tu Certificado de desarrollo Front End a tu portafolio. A menos que elijas no mostrar tus soluciones, este certificado será públicamente visible y verificable.",
+          ""
+        ]
+        ],
       "namePt": "",
       "descriptionPt": []
     }

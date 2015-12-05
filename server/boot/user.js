@@ -15,6 +15,12 @@ const debug = debugFactory('freecc:boot:user');
 const daysBetween = 1.5;
 const sendNonUserToMap = ifNoUserRedirectTo('/map');
 
+function replaceScriptTags(value) {
+  return value
+    .replace(/<script>/gi, 'fccss')
+    .replace(/<\/script>/gi, 'fcces');
+}
+
 function calcCurrentStreak(cals) {
   const revCals = cals.concat([Date.now()]).slice().reverse();
   let streakBroken = false;
@@ -122,7 +128,7 @@ module.exports = function(app) {
       return res.redirect('/');
     }
     res.render('account/signin', {
-      title: 'Free Code Camp Login'
+      title: 'Sign in to Free Code Camp using a Social Media Account'
     });
   }
 
@@ -136,7 +142,7 @@ module.exports = function(app) {
       return res.redirect('/');
     }
     res.render('account/email-signin', {
-      title: 'Sign in to your Free Code Camp Account'
+      title: 'Sign in to Free Code Camp using your Email Address'
     });
   }
 
@@ -145,7 +151,7 @@ module.exports = function(app) {
       return res.redirect('/');
     }
     res.render('account/email-signup', {
-      title: 'Create Your Free Code Camp Account'
+      title: 'Sign up for Free Code Camp using your Email Address'
     });
   }
 
@@ -158,7 +164,10 @@ module.exports = function(app) {
     const username = req.params.username.toLowerCase();
     const { path } = req;
     User.findOne(
-      { where: { username } },
+      {
+        where: { username },
+        include: 'pledge'
+      },
       function(err, profileUser) {
         if (err) {
           return next(err);
@@ -169,6 +178,7 @@ module.exports = function(app) {
           });
           return res.redirect('/');
         }
+        profileUser = profileUser.toJSON();
 
         var cals = profileUser
           .progressTimestamps
@@ -211,15 +221,16 @@ module.exports = function(app) {
           return (obj.name || '').match(/^Waypoint/i);
         });
 
-        debug('user is fec', profileUser.isFrontEndCert);
         res.render('account/show', {
-          title: 'Camper ' + profileUser.username + '\'s portfolio',
+          title: 'Camper ' + profileUser.username + '\'s Code Portfolio',
           username: profileUser.username,
           name: profileUser.name,
 
           isMigrationGrandfathered: profileUser.isMigrationGrandfathered,
           isGithubCool: profileUser.isGithubCool,
           isLocked: !!profileUser.isLocked,
+
+          pledge: profileUser.pledge,
 
           isFrontEndCert: profileUser.isFrontEndCert,
           isFullStackCert: profileUser.isFullStackCert,
@@ -243,7 +254,9 @@ module.exports = function(app) {
           moment,
 
           longestStreak: profileUser.longestStreak,
-          currentStreak: profileUser.currentStreak
+          currentStreak: profileUser.currentStreak,
+
+          replaceScriptTags
         });
       }
     );
@@ -259,8 +272,10 @@ module.exports = function(app) {
           return Observable.just(user);
         }
         return findUserByUsername$(username, {
+          isGithubCool: true,
           isFrontEndCert: true,
           isFullStackCert: true,
+          isHonest: true,
           completedChallenges: true,
           username: true,
           name: true
@@ -306,11 +321,12 @@ module.exports = function(app) {
             showFront && user.isFrontEndCert ||
             !showFront && user.isFullStackCert
           ) {
-            var { completedDate } = _.find(user.completedChallenges, {
-              id: showFront ?
-                frontEndChallangeId :
-                fullStackChallangeId
-            });
+            var { completedDate = new Date() } =
+              _.find(user.completedChallenges, {
+                id: showFront ?
+                  frontEndChallangeId :
+                  fullStackChallangeId
+              }) || {};
 
             return res.render(
               showFront ?
@@ -329,7 +345,7 @@ module.exports = function(app) {
               `Looks like user ${username} is not Front End certified` :
               `Looks like user ${username} is not Full Stack certified`
           });
-          res.redirect('/map');
+          res.redirect('back');
         },
         next
       );
@@ -381,7 +397,7 @@ module.exports = function(app) {
       return res.render('account/forgot');
     }
     res.render('account/reset', {
-      title: 'Password Reset',
+      title: 'Reset your Password',
       accessToken: req.accessToken.id
     });
   }

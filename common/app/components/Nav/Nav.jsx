@@ -1,8 +1,9 @@
 import React, { PropTypes } from 'react';
+import { LinkContainer } from 'react-router-bootstrap';
 import {
   Col,
-  CollapsibleNav,
   Nav,
+  NavbarBrand,
   Navbar,
   NavItem
 } from 'react-bootstrap';
@@ -10,17 +11,8 @@ import {
 import navLinks from './links.json';
 import FCCNavItem from './NavItem.jsx';
 
+const win = typeof window !== 'undefined' ? window : {};
 const fCClogo = 'https://s3.amazonaws.com/freecodecamp/freecodecamp_logo.svg';
-const navElements = navLinks.map((navItem, index) => {
-  return (
-    <NavItem
-      eventKey={ index + 1 }
-      href={ navItem.link }
-      key={ index }>
-      { navItem.content }
-    </NavItem>
-  );
-});
 
 const logoElement = (
   <a href='/'>
@@ -31,38 +23,87 @@ const logoElement = (
   </a>
 );
 
-const toggleButton = (
-  <button className='hamburger'>
+const toggleButtonChild = (
     <Col xs={ 12 }>
       <span className='hamburger-text'>Menu</span>
     </Col>
-  </button>
 );
 
-export default class extends React.Component {
-  constructor(props) {
-    super(props);
+function getDashedName() {
+  let challengeDashedName;
+  if (typeof win.localStorage !== 'undefined') {
+    challengeDashedName = win.localStorage.getItem('currentDashedName');
   }
+  return challengeDashedName && challengeDashedName !== 'undefined' ?
+    challengeDashedName :
+    '';
+}
 
-  static displayName = 'Nav'
-  static propTypes = {
+export default React.createClass({
+  displayName: 'Nav',
+
+  propTypes: {
     points: PropTypes.number,
     picture: PropTypes.string,
     signedIn: PropTypes.bool,
     username: PropTypes.string
-  }
+  },
+
+  renderLinks() {
+    return navLinks.map(({ content, link, react, target }, index) => {
+      if (react) {
+        return (
+          <LinkContainer
+            eventKey={ index + 1 }
+            key={ content }
+            to={ link }>
+            <NavItem
+              target={ target || null }>
+              { content }
+            </NavItem>
+          </LinkContainer>
+        );
+      }
+      return (
+        <NavItem
+          eventKey={ index + 1 }
+          href={ link }
+          key={ content }
+          target={ target || null }>
+          { content }
+        </NavItem>
+      );
+    });
+  },
+
+  renderLearnBtn() {
+    return (
+      <NavItem
+        href='#'
+        onClick={ () => {
+          const challengeDashedName = getDashedName();
+          const goTo = challengeDashedName ?
+          '/challenges/' + challengeDashedName :
+          '/map';
+          win.location = goTo;
+        }}>
+        Learn
+      </NavItem>
+    );
+  },
 
   renderPoints(username, points) {
     if (!username) {
       return null;
     }
     return (
-      <NavItem
+      <FCCNavItem
+        className='brownie-points-nav'
         href={ '/' + username }>
         [ { points } ]
-      </NavItem>
+      </FCCNavItem>
     );
-  }
+  },
 
   renderSignin(username, picture) {
     if (username) {
@@ -80,35 +121,36 @@ export default class extends React.Component {
     } else {
       return (
         <FCCNavItem
-          className='btn signup-btn signup-btn-nav'
+          className='btn signup-btn signup-btn-nav signin-button-nav'
           eventKey={ 2 }
           href='/login'>
           Sign In
         </FCCNavItem>
       );
     }
-  }
+  },
 
   render() {
     const { username, points, picture } = this.props;
+
     return (
       <Navbar
-        brand={ logoElement }
         className='nav-height'
-        fixedTop={ true }
-        toggleButton={ toggleButton }
-        toggleNavKey={ 0 }>
-        <CollapsibleNav eventKey={ 0 }>
+        fixedTop={ true }>
+        <NavbarBrand>{ logoElement }</NavbarBrand>
+        <Navbar.Toggle children={ toggleButtonChild } />
+        <Navbar.Collapse eventKey={ 0 }>
           <Nav
             className='hamburger-dropdown'
             navbar={ true }
-            right={ true }>
-            { navElements }
-            { this.renderPoints(username, points)}
+            pullRight={ true }>
+            { this.renderLearnBtn() }
+            { this.renderLinks() }
+            { this.renderPoints(username, points) }
             { this.renderSignin(username, picture) }
           </Nav>
-        </CollapsibleNav>
+        </Navbar.Collapse>
       </Navbar>
     );
   }
-}
+});

@@ -1,66 +1,196 @@
 {
   "name": "Full Stack JavaScript Projects",
   "order": 20,
+  "time": "300h",
   "challenges": [
     {
       "id": "bd7158d8c443eddfaeb5bcef",
       "title": "Get Set for Basejumps",
-      "challengeSeed": ["128451852"],
+      "challengeSeed": [],
       "description": [
-        "<span class='text-info'>Objective:</span> Get the MEAN stack running on Cloud 9, push your code to GitHub, and deploy it to Heroku.",
-        "We'll build our Basejumps on Cloud 9, a powerful online code editor with a full Ubuntu Linux workspace, all running in the cloud.",
-        "If you don't already have Cloud 9 account, create one now at <a href='http://c9.io' target='_blank'>http://c9.io</a>.",
-        "Now let's get your development environment ready for a new Angular-Fullstack application provided by Yeoman.",
-        "Open up <a href='http://c9.io' target='_blank'>http://c9.io</a> and sign in to your account.",
-        "Click on the \"+\" icon at the top right of the c9.io page to create a new workspace.",
-        "Give your workspace a name and an optional description.",
-        "Choose Node.js in the selection area below the name field.",
-        "Click the \"Create workspace\" button.",
-        "Once C9 builds and loads your workspace, you should see a terminal window in the lower right hand corner. In this window use the following commands. You don't need to know what these mean at this point.",
-        "Never run this command on your local machine. But in your Cloud 9 terminal window, run: <code>rm -rf * && echo \"export NODE_PATH=$NODE_PATH:/home/ubuntu/.nvm/v0.10.35/lib/node_modules\" >> ~/.bashrc && source ~/.bashrc && npm install -g yo grunt grunt-cli generator-angular-fullstack && yo angular-fullstack</code>",
-        "Yeoman will prompt you to answer some questions. Answer them like this:",
-        "What would you like to write scripts with? <span class='text-success'>JavaScript</span>",
-        "What would you like to write markup with? <span class='text-success'>HTML</span>",
-        "What would you like to write stylesheets with? <span class='text-success'>CSS</span>",
-        "What Angular router would you like to use? <span class='text-success'>ngRoute</span>",
-        "Would you like to include Bootstrap? <span class='text-success'>Yes</span>",
-        "Would you like to include UI Bootstrap? <span class='text-success'>Yes</span>",
-        "Would you like to use MongoDB with Mongoose for data modeling? <span class='text-success'>Yes</span>",
-        "Would you scaffold out an authentication boilerplate? <span class='text-success'>Yes</span>",
-        "Would you like to include additional oAuth strategies? <span class='text-success'>Twitter</span>",
-        "Would you like to use socket.io? <span class='text-success'>No</span>",
-        "May bower anonymously report usage statistics to improve the tool over time? (Y/n) <span class='text-success'>Y</span>",
-        "You may get an error similar to <code> ERR! EEXIST, open ‘/home/ubuntu/.npm</code>. This is caused when Cloud9 runs out of memory and kills an install. If you get this, simply re-run this process with the command <code>yo angular-fullstack</code>. You will then be asked a few questions regarding the re-install. Answer them as follows:",
-        "Existing .yo-rc configuration found, would you like to use it? (Y/n) <span class='text-success'>Y</span>",
-        "Overwrite client/favicon.ico? (Ynaxdh) <span class='text-success'>Y</span>",
-        "To finish the installation run the commands: <code>bower install && npm install</code>",
-        "To start MongoDB, run the following commands in your terminal: <code>mkdir data && echo 'mongod --bind_ip=$IP --dbpath=data --nojournal --rest \"$@\"' > mongod && chmod a+x mongod && ./mongod</code>",
-        "You will want to open up a new terminal to work from by clicking on the + icon and select New Terminal",
-        "Start the application by running the following command in your new terminal window: <code>grunt serve</code>",
-        "Wait for the following message to appear: <code>xdg-open: no method available for opening 'http://localhost:8080' </code>. Now you can open the internal Cloud9 browser. To launch the browser select Preview in the toolbar then select the dropdown option Preview Running Application.",
-        "Turn the folder in which your application is running into a Git repository by running the following commands: <code>git init && git add . && git commit -am 'initial commit'</code>.",
-        "Now we need to add your GitHub SSH key to c9.io. Click the \"Add-on Services\" button in the lower left of your C9 dashboard. Click \"activate\" next to the GitHub icon.",
-        "A pop up will appear. Allow access to your account.",
-        "While still on the dashboard, under “Account Settings”, click the link for \"Show your SSH key\". Copy the key to you clipboard.",
-        "Sign in to <a href='http://github.com' target='_blank'>http://github.com</a> and navigate to the GitHub SSH settings page. Click the \"Add SSH Key\". Give your key the title \"cloud 9\". Paste your SSH Key into the \"Key\" box, then click \"Add Key\".",
-        "Create a new GitHub repository by  and clicking on the + button next to your username in the upper-right hand side of your screen, then selecting \"New Repository\".",
-        "Enter a project name, then click the \"Create Repository\" button.",
-        "Find the \"...or push an existing repository from the command line\" section and click the Copy to Clipboard button beside it.",
-        "Paste the commands from your clipboard into the Cloud9 terminal prompt. This will push your changes to your repository on Cloud 9 up to GitHub.",
-        "Check back on your GitHub profile to verify the changes were successfully pushed up to GitHub.",
-        "Now let's push your code to Heroku. If you don't already have a Heroku account, create one at <a href='http://heroku.com' target='_blank'>http://heroku.com</a>. You shouldn't be charged for anything, but you will need to add your credit card information to your Heroku before you will be able to use Heroku's free MongoLab add on.",
-        "Before you publish to Heroku, you should free up as much memory as possible on Cloud9. In each of the Cloud9 terminal prompt tabs where MongoDB and Grunt are running, press the <code>control + c</code> hotkey to shut down these processes.",
-        "Run the following command in a Cloud9 terminal prompt tab: <code>npm install grunt-contrib-imagemin --save-dev && npm install --save-dev && heroku login</code>. At this point, the terminal will prompt you to log in to Heroku from the command line.",
-        "Now run <code>yo angular-fullstack:heroku</code>. You can choose a name for your Heroku project, or Heroku will create a random one for you. You can choose whether you want to deploy to servers the US or the EU.",
-        "Set the config flag for your Heroku environment and add MongoLab for your MongoDB instance by running the following command: <code>cd ~/workspace/dist && heroku config:set NODE_ENV=production && heroku addons:create mongolab</code>.",
-        "As you build your app, you should frequently commit changes to your codebase. Make sure you're in the <code>~/workspace</code> directory by running <code>cd ~/workspace</code>. Then you can use this code to stage the changes to your changes and commit them: <code>git commit -am \"your commit message\"</code>. Note that you should replace \"your commit message\" with a short summary of the changes you made to your code, such as \"added a records controller and corresponding routes\".",
-        "You can push these new commits to GitHub by running <code>git push origin master</code>, and to Heroku by running <code>grunt --force && grunt buildcontrol:heroku</code>.",
-        "If you need further guidance on using Yeoman Angular-Fullstack Generator, check out: <a href='https://github.com/clnhll/guidetobasejumps' target='_blank'>https://github.com/clnhll/guidetobasejumps</a>.",
-        "Now you're ready to move on to your first Basejump. Click the \"I've completed this challenge\" and move on."
+        [
+          "http://i.imgur.com/4IZjWZ3.gif",
+          "A gif showing how to create a c9.io account.",
+          "We recommend building our full stack Basejump challenges on c9.io, a powerful browser-based development environment. This save you hours of time that you would spend configuring your local computer to run Node.js and MongoDB - time you could instead spend coding. <br>Create a c9.io account by clicking the GitHub symbol in the upper right hand corner of the c9.io page. Click the big plus symbol to create a new workspace. Enter your email address when prompted.",
+          "http://c9.io"
+        ],
+        [
+          "http://i.imgur.com/F7i5Hhi.gif",
+          "A gif showing how to fill out the new workspace form",
+          "Instead of starting from scratch, we recommend using Clementine.js, a full stack JavaScript \"boilerplate\" that already has some basic code written for you. Clementine.js has a detailed tutorial you can go through to build it yourself, but for now let's just clone its code. On c9.io, give your workspace a name, then leave \"Template\" as custom and create your workspace from this GitHub url: <code>https://github.com/johnstonbl01/clementinejs-fcc.git</code>",
+          ""
+        ],
+        [
+          "http://i.imgur.com/42m1vyr.gif",
+          "A gif showing you how to show hidden files.",
+          "Click the gear in the upper right corner of c9.io's file structure. Select \"show hidden files\".",
+          ""
+        ],
+        [
+          "http://i.imgur.com/qrE8xaK.gif",
+          "A gif showing you how to create a new file.",
+          "Right click and create a new file called <code>.env</code>.",
+          ""
+        ],
+        [
+          "http://i.imgur.com/jkQX9SQ.gif",
+          "A gif showing you how to prep your environmental variables in your .env file.",
+          "Open your .env file and paste this into it, then save it: <br><code>GITHUB_KEY=<br>GITHUB_SECRET=<br>MONGO_URI=mongodb://localhost:27017/clementinejs<br>PORT=8080<br>APP_URL=http://localhost:8080/</code>",
+          ""
+        ],
+        [
+          "http://i.imgur.com/f3DE7zB.gif",
+          "A gif showing you how to open c9.io's preview window.",
+          "Open up your application in a preview tab by clicking window > share > application > open.",
+          ""
+        ],
+        [
+          "http://i.imgur.com/Ip0qUdQ.gif",
+          "A gif showing you how to create a GitHub app using c9.io's preview URL.",
+          "Create a GitHub app for authentication and choose an \"Application name\". For the homepage URL, paste the URL from your preview tab. You'll also paste the URL from your preview tab into \"Authorization callback URL\", then add to it: <code>auth/github/callback</code>",
+          "https://github.com/settings/applications/new"
+        ],
+        [
+          "http://i.imgur.com/qCUVRFb.gif",
+          "A gif showing you how to transfer GitHub's key and secret over to your .env file, as well as your c9.io URL.",
+          "GitHub will create an app and present you with a Client ID and a Client Secret. Set your .env file's GITHUB_KEY equal to the Client ID, and set your .env file's GITHUB_SECRET equal to the Client Secret. Copy the URL from the your preview tab and paste it into your .env file as your APP_URL.",
+          ""
+        ],
+        [
+          "http://i.imgur.com/2a20Vah.gif",
+          "A gif showing you how to start mongoDB in c9.io's terminal.",
+          "In your terminal, start MongoDB by entering <code>mongod --smallfiles</code>",
+          ""
+        ],
+        [
+          "http://i.imgur.com/dC55pWk.gif",
+          "A gif showing you how to open a new tab in c9.io's terminal.",
+          "Open a new terminal tab with the + button above your terminal, then run <code>npm install</code>",
+          ""
+        ],
+        [
+          "http://i.imgur.com/54OC2Ro.gif",
+          "A gif showing you how to navigate to your preview tab and sign in to your new Clementine.js app.",
+          "Run <code>node server.js</code> to start the server. Refresh your preview tab. You should see the Clementine.js logo. Click \"sign in\" and accept GitHub's prompt to authorize the application.",
+          ""
+        ],
+        [
+          "http://i.imgur.com/2IJfyvN.gif",
+          "A gif showing you how to click the button to trigger an AJAX action with Clementine.js and how to look at your user profile from the GitHub authentication data.",
+          "Click the \"click me\" button and you'll see that it increments the number clicks. Click the profile button and you'll see that it has your GitHub information.",
+          ""
+        ],
+        [
+          "http://i.imgur.com/bjO5pnq.gif",
+          "A gif showing you how to create a new GitHub repository and push your code up to it.",
+          "Create a new GitHub repository. Then copy its .git URL. <br>Return to c9.io's terminal and set your GitHub remote URL: <code>git remote set-url origin</code> followed by the URL you copied from GitHub. <br>Run <code>git push origin master</code>. <br>Now tab back to GitHub and refresh, and you'll see that your code is now on GitHub.",
+          "https://github.com/new"
+        ],
+        [
+          "http://i.imgur.com/Qn0K65B.gif",
+          "A gif showing you how to add add-ons to Heroku.",
+          "We will soon add instructions for getting Clementine running on Heroku. For now, develop your Basejumps right on c9.io.",
+          ""
+        ]
       ],
-      "type": "waypoint",
-      "challengeType": 2,
-      "tests": []
+      "type": "Waypoint",
+      "challengeType": 7,
+      "tests": [],
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "Prepárate para los Basejumps",
+      "descriptionEs": [
+        [
+          "http://i.imgur.com/4IZjWZ3.gif",
+          "Una imagen gif que te muestra cómo crear una cuenta en c9.io.",
+          "Te recomendamos resolver nuestros desafíos de pila completa (full stack) en c9.io, un poderoso ambiente de desarrollo basado en tu navegador. Esto te ahorrará muchas horas que utilizarías configurando tu computadora para correr Node.js y MongoDB - tiempo que podrías utilizar escribiendo código. <br>Crea una cuenta en c9.io pulsando el símbolo de GitHub en la esquina superior derecha de la página de c9.io. Pulsa el botón con el símbolo de suma para crear una área de trabajo nueva. Introduce tu dirección de correo electrónico cuando se te solicite.",
+          "http://c9.io"
+        ],
+        [
+          "http://i.imgur.com/F7i5Hhi.gif",
+          "Una imagen gif que te muestra cómo llenar el formulario para crear un área de trabajo nueva",
+          "En vez de iniciar desde cero, recomendamos utilizar Clementine.js, un modelo (<em>bolierplate</em>) de JavaScript pila completa (full stack) que viene con código básico ya escrito para ti. Clementine.js tiene un tutorial detallado que puedes seguir para construirlo por ti mismo, pero por ahora simplemente vamos a clonarlo. En c9.io, dale un nombre a tu área de trabajo, luego deja \"Plantilla\" (\"Template\") como personalizado y crea tu espacio de trabajo usando el siguiente url de Github: <code>https://github.com/johnstonbl01/clementinejs-fcc.git</code>",
+          ""
+        ],
+        [
+          "http://i.imgur.com/42m1vyr.gif",
+          "Una imagen gif que te muestra cómo mostrar los archivos ocultos.",
+          "Pulsa el engrane en la esquina superior derecha del árbol de archivos de c9.io. Selecciona \"show hidden files\".",
+          ""
+        ],
+        [
+          "http://i.imgur.com/qrE8xaK.gif",
+          "Una imagen gif que te muestra cómo crear un archivo nuevo.",
+          "Haciendo clic derecho, crea un nuevo archivo llamado <code>.env</code>.",
+          ""
+        ],
+        [
+          "http://i.imgur.com/jkQX9SQ.gif",
+          "Una imagen gif que te muestra cómo preparar tus variables de ambiente en tu archivo .env.",
+          "Abre tu archivo .env pega el siguiente código, y luego guárdalo: <br><code>GITHUB_KEY=<br>GITHUB_SECRET=<br>MONGO_URI=mongodb://localhost:27017/clementinejs<br>PORT=8080<br>APP_URL=http://localhost:8080/</code>",
+          ""
+        ],
+        [
+          "http://i.imgur.com/f3DE7zB.gif",
+          "Una imagen gif que te muestra cómo abir la vista previa de la ventana de c9.io.",
+          "Abre tu aplicación en una pestaña de vista previa pulsando window > share > application > open.",
+          ""
+        ],
+        [
+          "http://i.imgur.com/Ip0qUdQ.gif",
+          "Una imagen gif que te muestra cómo crear una aplicación de GitHub usando la URL de vista previa de c9.io.",
+          "Crea una aplicación de GitHub para autenticación y elige un \"Nombre de aplicación\". Para la URL de inicio (homepage), pega la URL de tu pestaña de vista previa. También debes pegar la URL de tu pestaña de vista previa en <code>Authorization callback URL</code>, agrégale: <code>auth/github/callback</code>",
+          "https://github.com/settings/applications/new"
+        ],
+        [
+          "http://i.imgur.com/qCUVRFb.gif",
+          "Una imagen gif que te muestra cómo transferir tu llave (key) y tu código secreto (secret) de GitHub a tu archivo .env, así como tu URL de c9.io.",
+          "GitHub creará una aplicación y te entregará un ID de cliente (Client ID) y un Código secreto de cliente (Client Secret). Haz que el GITHUB_KEY en tu archivo .env sea igual al ID de cliente, y haz que tu GITHUB_SECRET en el archivo .env sea igual al Código secreto de cliente. Copia la URL de tu pestaña de vista previa y pégala en tu archivo .env como tu APP_URL.",
+          ""
+        ],
+        [
+          "http://i.imgur.com/2a20Vah.gif",
+          "Una imagen gif que te muestra cómo iniciar mongoDB en la terminal de c9.io.",
+          "En tu terminal, inicia MongoDB con el siguiente comando: <code>mongod --smallfiles</code>",
+          ""
+        ],
+        [
+          "http://i.imgur.com/dC55pWk.gif",
+          "Una imagen gif que te muestra cómo abrir una nueva pestaña en la terminal de c9.io.",
+          "Abre una nueva pestaña de terminal pulsando el botón de + sobre tu terminal, luego ejecuta <code>npm install</code>",
+          ""
+        ],
+        [
+          "http://i.imgur.com/54OC2Ro.gif",
+          "Una imagen gif que te muestra cómo navegar a tu pestaña de vista previa e ingresar a tu nueva aplicación Clementine.js.",
+          "Ejecuta <code>node server.js</code> para iniciar el servidor. Actualiza tu pestaña de vista previa. Deberías poder ver el logo de Clementine.js. Pulsa \"sign in\"  y acepta la solicitud de GitHub para autorizar la aplicación.",
+          ""
+        ],
+        [
+          "http://i.imgur.com/2IJfyvN.gif",
+          "Una imagen gif que te muestra cómo pulsar un botón para desencadenar una acción AJAX con Clementine.js y cómo ver tu perfil de usuario en los datos de autenticación provistos por GitHub.",
+          "Pulsa el botón que dice \"click me\" y verás que se incrementa el número de clics. Pulsa el botón de perfil (profile) y verás la información de tu perfil de GitHub.",
+          ""
+        ],
+        [
+          "http://i.imgur.com/bjO5pnq.gif",
+          "Una imagen gif que te muestra cómo crear un nuevo repositorio de GitHub GitHub y empujar allí tu código.",
+          "Crea un nuevo repositorio en GitHub. Luego copia su ULR .git. <br>Regresa a tu terminal de c9.io y establece tu URL remota de GitHub: <code>git remote set-url origin</code> seguido de la URL que copiaste de GitHub. <br>Ejecuta <code>git push origin master</code>. <br>Ahora ve de regreso a la página de GitHub y actualízala. Verás que tu código ahora está ahora en GitHub.",
+          "https://github.com/new"
+        ],
+        [
+          "http://i.imgur.com/Qn0K65B.gif",
+          "Una imagen gif que te muestra cómo agregar complementos a Heroku.",
+          "Pronto agregaremos instrucciones para hacer que Clementine corra en Heroku. Por ahora, desarrolla tus Basejumps en c9.io.",
+          ""
+        ]
+        ],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "id": "bd7158d8c443eddfaeb5bdef",
@@ -80,7 +210,6 @@
         "<span class='text-info'>Bonus User Story:</span> As an unauthenticated or authenticated user, I can see and vote on everyone's polls.",
         "<span class='text-info'>Bonus User Story:</span> As an unauthenticated or authenticated user, I can see the results of polls in chart form. (This could be implemented using Chart.js or Google Charts.)",
         "<span class='text-info'>Bonus User Story:</span> As an authenticated user, if I don't like the options on a poll, I can create a new option.",
-        "If you need further guidance on using Yeoman Angular-Fullstack Generator, check out: <a href='https://github.com/clnhll/guidetobasejumps' target='_blank'>https://github.com/clnhll/guidetobasejumps</a>.",
         "Once you've finished implementing these user stories, click the \"I've completed this challenge\" button and enter the URLs for both your GitHub repository and your live app running on Heroku. If you pair programmed with a friend, enter his or her Free Code Camp username as well so that you both get credit for completing it.",
         "If you'd like immediate feedback on your project from fellow campers, click this button and paste in a link to your CodePen project. <br><br><a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20PASTE_YOUR_CODEPEN_URL_HERE%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Click here then add your link to your tweet's text</a>"
       ],
@@ -93,8 +222,24 @@
       "descriptionFr": [],
       "nameRu": "",
       "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
+      "nameEs": "Crea una aplicación de votaciones",
+      "descriptionEs": [
+        "<span class='text-info'>Objetivo:</span> Construye una aplicación de pila completa (full stack) en JavaScript que mediante ingeniería inversa replique el siguiente proyecto: <a href='http://votingapp.herokuapp.com/' target='_blank'>http://votingapp.herokuapp.com/</a> y despliégala en Heroku.",
+        "Ten en cuenta que para cada Basejump, debes crear un nuevo repositorio en GitHub y un nuevo proyecto en Heroku. Si no puedes recordar cómo hacerlo, visita de nuevo <a href='/challenges/get-set-for-basejumps'>http://freecodecamp.com/challenges/get-set-for-basejumps</a>.",
+        "Mientras construyes tu aplicación, debes consignar frecuentemente los cambios a tu código. Puedes hacerlo ejecutando <code>git commit -am \"un mensaje\"</code>. Ten en cuenta que debes reemplazar \"tu mensaje\" con un breve recuento de los cambios que le hiciste a tu código.",
+        "Puedes empujar estos nuevos cambios consignados a GitHub ejecutando <code>git push origin master</code>, y a Heroku ejecutando <code>grunt --force && grunt buildcontrol:heroku</code>.",
+        "Estas son las Historias de usuario que debes satisfacer para este Basejump:",
+        "<span class='text-info'>Historia de usuario:</span> Como un usuario autenticado, puedo guardar mis votaciones y acceder a ellas posteriormente.",
+        "<span class='text-info'>Historia de usuario:</span> Como un usuario autenticado, puedo compartir mis votaciones con mis amigos.",
+        "<span class='text-info'>Historia de usuario:</span> Como un usuario autenticado, puedo ver los resultados agregados de mis votaciones.",
+        "<span class='text-info'>Historia de usuario:</span> Como un usuario autenticado, puedo eliminar votaciones que ya no quiero tener guardadas.",
+        "<span class='text-info'>Historia de usuario:</span> Como un usuario autenticado, puedo crear una votación con cualquier número de opciones.",
+        "<span class='text-info'>Historia de usuario opcional:</span> Como un usuario autenticado o no autenticado, puedo ver y votar en las votaciones de otros.",
+        "<span class='text-info'>Historia de usuario opcional:</span> Como un usuario autenticado o no autenticado, puedo ver los resultados de las votaciones por medio de un gráfico. (Esto podría implementarse utilizando Chart.js o Google Charts.)",
+        "<span class='text-info'>Historia de usuario opcional:</span> Como un usuario autenticado, si no me gustan las opciones en una votación, puedo crear una nueva opción.",
+        "Una vez hayas terminado de implementar estas historias de usuario, pulsa el botón de \"I've completed this challenge\" e incluye las URLs de tu repositorio GitHub y de tu aplicación corriendo en Heroku. Si programaste en pareja, agrega su nombre de usuario de Free Code Camp también para que ambos reciban el crédito por completarlo.",
+        "Si quieres retroalimentación inmediata de parte de tus compañeros campistas, pulsa este botón y pega el enlace de tu proyecto. <br><br><a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20PASTE_YOUR_CODEPEN_URL_HERE%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Pulsa aquí y agrega tu link en el texto de tu tweet</a>"
+        ],
       "namePt": "",
       "descriptionPt": []
     },
@@ -112,8 +257,7 @@
         "<span class='text-info'>User Story:</span> As an authenticated user, I can add myself to a bar to indicate I am going there tonight.",
         "<span class='text-info'>User Story:</span> As an authenticated user, I can remove myself from a bar if I no longer want to go there.",
         "<span class='text-info'>Bonus User Story:</span> As an unauthenticated user, when I login I should not have to search again.",
-        "<span class='text-info'>Hint:</span> Try using the <a href='https://www.yelp.com/developers/documentation/v2/overview' target='_blank'>Yelp API</a> to find venues in the cities your users search for.",
-        "If you need further guidance on using Yeoman Angular-Fullstack Generator, check out: <a href='https://github.com/clnhll/guidetobasejumps' target='_blank'>https://github.com/clnhll/guidetobasejumps</a>.",
+        "<span class='text-info'>Hint:</span> Try using the <a href='https://www.yelp.com/developers/documentation/v2/overview' target='_blank'>Yelp API</a> to find venues in the cities your users search for. If you use Yelp's API, be sure to mention so in your app.",
         "Once you've finished implementing these user stories, click the \"I've completed this challenge\" button and enter the URLs for both your GitHub repository and your live app running on Heroku. If you pair programmed with a friend, enter his or her Free Code Camp username as well so that you both get credit for completing it.",
         "If you'd like immediate feedback on your project from fellow campers, click this button and paste in a link to your CodePen project. <br><br><a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20PASTE_YOUR_CODEPEN_URL_HERE%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Click here then add your link to your tweet's text</a>"
       ],
@@ -126,8 +270,21 @@
       "descriptionFr": [],
       "nameRu": "",
       "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
+      "nameEs": "Crea una aplicación de coordinación de vida nocturna",
+      "descriptionEs": [
+        "<span class='text-info'>Objetivo:</span> Construye una aplicación de pila completa (full stack) en JavaScript que mediante ingeniería inversa replique el siguiente proyecto: <a href='http://whatsgoinontonight.herokuapp.com/' target='_blank'>http://whatsgoinontonight.herokuapp.com/</a> y despliégala en Heroku.",
+        "Ten en cuenta que para cada Basejump, debes crear un nuevo repositorio en GitHub y un nuevo proyecto en Heroku. Si no puedes recordar cómo hacerlo, visita de nuevo <a href='/challenges/get-set-for-basejumps'>http://freecodecamp.com/challenges/get-set-for-basejumps</a>.",
+        "Mientras construyes tu aplicación, debes consignar frecuentemente los cambios a tu código. Puedes hacerlo ejecutando <code>git commit -am \"un mensaje\"</code>. Ten en cuenta que debes reemplazar \"tu mensaje\" con un breve recuento de los cambios que le hiciste a tu código.",
+        "Puedes empujar estos nuevos cambios consignados a GitHub ejecutando <code>git push origin master</code>, y a Heroku ejecutando <code>grunt --force && grunt buildcontrol:heroku</code>.",
+        "Estas son las Historias de usuario que debes satisfacer para este Basejump:",
+        "<span class='text-info'>Historia de usuario:</span> Como un usuario no autenticado, puedo ver todos los bares en mi área.",
+        "<span class='text-info'>Historia de usuario:</span> Como un usuario autenticado, puedo agregarme a mí mismo a un bar para indicar que voy a estar allí esta noche.",
+        "<span class='text-info'>Historia de usuario:</span> Como un usuario autenticado, puedo removerme de un bar si ya no pienso ir allí.",
+        "<span class='text-info'>Historia de usuario opcional:</span> Como un usuario no autenticado, cuando accedo a mi cuenta no debo tener la necesidad de buscar de nuevo.",
+        "<span class='text-info'>Pista:</span> Prueba utilizar el <a href='https://www.yelp.com/developers/documentation/v2/overview' target='_blank'>API de Yelp</a> para encontrar lugares en las ciudades donde tus usuarios buscan. Si utilizas el API de Yelp, asegúrate de mencionarlo en tu aplicación.",
+        "Una vez hayas terminado de implementar estas historias de usuario, pulsa el botón de \"I've completed this challenge\" e incluye las URLs de tu repositorio GitHub y de tu aplicación corriendo en Heroku. Si programaste en pareja, agrega su nombre de usuario de Free Code Camp también para que ambos reciban el crédito por completarlo.",
+        "Si quieres retroalimentación inmediata de parte de tus compañeros campistas, pulsa este botón y pega el enlace de tu proyecto. <br><br><a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20PASTE_YOUR_CODEPEN_URL_HERE%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Pulsa aquí y agrega tu link en el texto de tu tweet</a>"
+        ],
       "namePt": "",
       "descriptionPt": []
     },
@@ -145,7 +302,6 @@
         "<span class='text-info'>User Story:</span> As a user, I can add new stocks by their symbol name.",
         "<span class='text-info'>User Story:</span> As a user, I can remove stocks.",
         "<span class='text-info'>Bonus User Story:</span> As a user, I can see changes in real-time when any other user adds or removes a stock.",
-        "If you need further guidance on using Yeoman Angular-Fullstack Generator, check out: <a href='https://github.com/clnhll/guidetobasejumps' target='_blank'>https://github.com/clnhll/guidetobasejumps</a>.",
         "Once you've finished implementing these user stories, click the \"I've completed this challenge\" button and enter the URLs for both your GitHub repository and your live app running on Heroku. If you pair programmed with a friend, enter his or her Free Code Camp username as well so that you both get credit for completing it.",
         "If you'd like immediate feedback on your project from fellow campers, click this button and paste in a link to your CodePen project. <br><br><a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20PASTE_YOUR_CODEPEN_URL_HERE%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Click here then add your link to your tweet's text</a>"
       ],
@@ -158,8 +314,20 @@
       "descriptionFr": [],
       "nameRu": "",
       "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
+      "nameEs": "Grafica el mercado de acciones",
+      "descriptionEs": [
+        "<span class='text-info'>Objetivo:</span> Crea una aplicación de pila completa (full stack) en JavaScript que mediante ingeniería inversa replique el siguiente proyecto: <a href='http://stockstream.herokuapp.com/' target='_blank'>http://stockstream.herokuapp.com/</a> y despliégalo en Heroku.",
+        "Ten en cuenta que para cada Basejump, debes crear un nuevo repositorio en GitHub y un nuevo proyecto en Heroku. Si no puedes recordar cómo hacerlo, visita de nuevo <a href='/challenges/get-set-for-basejumps'>http://freecodecamp.com/challenges/get-set-for-basejumps</a>.",
+        "Mientras construyes tu aplicación, debes consignar frecuentemente los cambios a tu código. Puedes hacerlo ejecutando <code>git commit -am \"un mensaje\"</code>. Ten en cuenta que debes reemplazar \"tu mensaje\" con un breve recuento de los cambios que le hiciste a tu código.",
+        "Puedes empujar estos nuevos cambios consignados a GitHub ejecutando <code>git push origin master</code>, y a Heroku ejecutando <code>grunt --force && grunt buildcontrol:heroku</code>.",
+        "Estas son las Historias de usuario que debes satisfacer para este Basejump:",
+        "<span class='text-info'>Historia de usuario:</span> Como usuario, puedo ver un gráfico que me muestre las líneas de tendencia recientes para cada acción agregada.",
+        "<span class='text-info'>Historia de usuario:</span> Como usuario, puedo agregar nuevas acciones por su símbolo.",
+        "<span class='text-info'>Historia de usuario:</span> Como usuario, puedo remover acciones.",
+        "<span class='text-info'>Historia de usuario opcional:</span> Como usuario, puedo ver cambios en tiempo real cuando algún otro usuario agrega o remueve una acción.",
+        "Una vez hayas terminado de implementar estas historias de usuario, pulsa el botón de \"I've completed this challenge\" e incluye las URLs de tu repositorio GitHub y de tu aplicación corriendo en Heroku. Si programaste en pareja, agrega su nombre de usuario de Free Code Camp también para que ambos reciban el crédito por completarlo.",
+        "Si quieres retroalimentación inmediata de parte de tus compañeros campistas, pulsa este botón y pega el enlace de tu proyecto. <br><br><a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20PASTE_YOUR_CODEPEN_URL_HERE%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Pulsa aquí y agrega tu link en el texto de tu tweet</a>"
+        ],
       "namePt": "",
       "descriptionPt": []
     },
@@ -177,7 +345,6 @@
         "<span class='text-info'>User Story:</span> As an authenticated user, I can add a new book.",
         "<span class='text-info'>User Story:</span> As an authenticated user, I can update my settings to store my full name, city, and state.",
         "<span class='text-info'>Bonus User Story:</span> As an authenticated user, I can propose a trade and wait for the other user to accept the trade.",
-        "If you need further guidance on using Yeoman Angular-Fullstack Generator, check out: <a href='https://github.com/clnhll/guidetobasejumps' target='_blank'>https://github.com/clnhll/guidetobasejumps</a>.",
         "Once you've finished implementing these user stories, click the \"I've completed this challenge\" button and enter the URLs for both your GitHub repository and your live app running on Heroku. If you pair programmed with a friend, enter his or her Free Code Camp username as well so that you both get credit for completing it.",
         "If you'd like immediate feedback on your project from fellow campers, click this button and paste in a link to your CodePen project. <br><br><a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20PASTE_YOUR_CODEPEN_URL_HERE%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Click here then add your link to your tweet's text</a>"
       ],
@@ -190,8 +357,20 @@
       "descriptionFr": [],
       "nameRu": "",
       "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
+      "nameEs": "Administra un club de intercambio de libros",
+      "descriptionEs": [
+        "<span class='text-info'>Objetivo:</span> Crea una aplicación de pila completa (full stack) en JavaScript que mediante ingeniería inversa replique el siguiente proyecto: <a href='http://bookjump.herokuapp.com/' target='_blank'>http://bookjump.herokuapp.com/</a> y despliégalo en Heroku.",
+        "Ten en cuenta que para cada Basejump, debes crear un nuevo repositorio en GitHub y un nuevo proyecto en Heroku. Si no puedes recordar cómo hacerlo, visita de nuevo <a href='/challenges/get-set-for-basejumps'>http://freecodecamp.com/challenges/get-set-for-basejumps</a>.",
+        "Mientras construyes tu aplicación, debes consignar frecuentemente los cambios a tu código. Puedes hacerlo ejecutando <code>git commit -am \"un mensaje\"</code>. Ten en cuenta que debes reemplazar \"tu mensaje\" con un breve recuento de los cambios que le hiciste a tu código.",
+        "Puedes empujar estos nuevos cambios consignados a GitHub ejecutando <code>git push origin master</code>, y a Heroku ejecutando <code>grunt --force && grunt buildcontrol:heroku</code>.",
+        "Estas son las Historias de usuario que debes satisfacer para este Basejump:",
+        "<span class='text-info'>Historia de usuario:</span> Como un usuario autenticado, puedo ver todos los libros agregados por cada usuarios.",
+        "<span class='text-info'>Historia de usuario:</span> Como un usuario autenticado, puedo agregar un nuevo libro.",
+        "<span class='text-info'>Historia de usuario:</span> Como un usuario autenticado, puedo actualizar mi configuración para que almacene mi nombre completo, ciudad y Estado.",
+        "<span class='text-info'>Historia de usuario opcional:</span> Como un usuario autenticado, puedo proponer un intercambio y esperar a que algún otro usuario acepte el trato.",
+        "Una vez hayas terminado de implementar estas historias de usuario, pulsa el botón de \"I've completed this challenge\" e incluye las URLs de tu repositorio GitHub y de tu aplicación corriendo en Heroku. Si programaste en pareja, agrega su nombre de usuario de Free Code Camp también para que ambos reciban el crédito por completarlo.",
+        "Si quieres retroalimentación inmediata de parte de tus compañeros campistas, pulsa este botón y pega el enlace de tu proyecto. <br><br><a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20PASTE_YOUR_CODEPEN_URL_HERE%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Pulsa aquí y agrega tu link en el texto de tu tweet</a>"
+        ],
       "namePt": "",
       "descriptionPt": []
     },
@@ -212,7 +391,6 @@
         "<span class='text-info'>User Story:</span> As an unauthenticated user, I can browse other users' walls of images.",
         "<span class='text-info'>Bonus User Story:</span> As an authenticated user, if I upload an image that is broken, it will be replaced by a placeholder image. (can use jQuery broken image detection)",
         "<span class='text-info'>Hint:</span> <a href='http://masonry.desandro.com/' target='_blank'>Masonry.js</a> is a library that allows for Pinterest-style image grids.",
-        "If you need further guidance on using Yeoman Angular-Fullstack Generator, check out: <a href='https://github.com/clnhll/guidetobasejumps' target='_blank'>https://github.com/clnhll/guidetobasejumps</a>.",
         "Once you've finished implementing these user stories, click the \"I've completed this challenge\" button and enter the URLs for both your GitHub repository and your live app running on Heroku. If you pair programmed with a friend, enter his or her Free Code Camp username as well so that you both get credit for completing it.",
         "If you'd like immediate feedback on your project from fellow campers, click this button and paste in a link to your CodePen project. <br><br><a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20PASTE_YOUR_CODEPEN_URL_HERE%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Click here then add your link to your tweet's text</a>"
       ],
@@ -225,8 +403,23 @@
       "descriptionFr": [],
       "nameRu": "",
       "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
+      "nameEs": "Crea un clon de Pinterest",
+      "descriptionEs": [
+        "<span class='text-info'>Objetivo:</span> Crea una aplicación de pila completa (full stack) en JavaScript que mediante ingeniería inversa replique el siguiente proyecto: <a href='http://stark-lowlands-3680.herokuapp.com/' target='_blank'>http://stark-lowlands-3680.herokuapp.com/</a> y despliégalo en Heroku.",
+        "Ten en cuenta que para cada Basejump, debes crear un nuevo repositorio en GitHub y un nuevo proyecto en Heroku. Si no puedes recordar cómo hacerlo, visita de nuevo <a href='/challenges/get-set-for-basejumps'>http://freecodecamp.com/challenges/get-set-for-basejumps</a>.",
+        "Mientras construyes tu aplicación, debes consignar frecuentemente los cambios a tu código. Puedes hacerlo ejecutando <code>git commit -am \"un mensaje\"</code>. Ten en cuenta que debes reemplazar \"tu mensaje\" con un breve recuento de los cambios que le hiciste a tu código.",
+        "Puedes empujar estos nuevos cambios consignados a GitHub ejecutando <code>git push origin master</code>, y a Heroku ejecutando <code>grunt --force && grunt buildcontrol:heroku</code>.",
+        "Estas son las Historias de usuario que debes satisfacer para este Basejump:",
+        "<span class='text-info'>Historia de usuario:</span> Como usuario autenticado, puedo acceder a mi cuenta con Twitter.",
+        "<span class='text-info'>Historia de usuario:</span> Como usuario autenticado, puedo agregar enlaces a imágenes.",
+        "<span class='text-info'>Historia de usuario:</span> Como usuario autenticado, puedo elimiar imágenes que he agregado.",
+        "<span class='text-info'>Historia de usuario:</span> Como usuario autenticado, puedo ver un muro al estilo de Pinterest con todas las imágenes para las que he agregado un enlace.",
+        "<span class='text-info'>Historia de usuario:</span> Como usuario no autenticado, puedo navegar los muros de imágenes de otros usuarios.",
+        "<span class='text-info'>Historia de usuario opcional:</span> Como usuario autenticado, si agrego una imagen corrupta, será reemplazada por una imagen predeterminada. (Puedes utilizar la detección de imágenes corruptas de jQuery)",
+        "<span class='text-info'>Pista:</span> <a href='http://masonry.desandro.com/' target='_blank'>Masonry.js</a> es una librería que permite crear cuadrículas de imágenes al estilo de Pinterest.",
+        "Una vez hayas terminado de implementar estas historias de usuario, pulsa el botón de \"I've completed this challenge\" e incluye las URLs de tu repositorio GitHub y de tu aplicación corriendo en Heroku. Si programaste en pareja, agrega su nombre de usuario de Free Code Camp también para que ambos reciban el crédito por completarlo.",
+        "Si quieres retroalimentación inmediata de parte de tus compañeros campistas, pulsa este botón y pega el enlace de tu proyecto. <br><br><a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20PASTE_YOUR_CODEPEN_URL_HERE%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Pulsa aquí y agrega tu link en el texto de tu tweet</a>"
+        ],
       "namePt": "",
       "descriptionPt": []
     }

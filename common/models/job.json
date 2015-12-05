@@ -22,7 +22,8 @@
       "type": "string"
     },
     "email": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "phone": {
       "type": "string"
@@ -36,24 +37,61 @@
     "country": {
       "type": "string"
     },
+    "locale": {
+      "type": "string",
+      "required": true,
+      "description": "format: city, state"
+    },
     "location": {
-      "type": "geopoint"
+      "type": "geopoint",
+      "description": "location in lat, long"
     },
     "description": {
       "type": "string"
     },
     "isApproved": {
-      "type": "boolean"
+      "type": "boolean",
+      "default": false
     },
     "isHighlighted": {
-      "type": "boolean"
+      "type": "boolean",
+      "default": false
     },
     "isPaid": {
-      "type": "boolean"
+      "type": "boolean",
+      "default": false
+    },
+    "isFilled": {
+      "type": "boolean",
+      "default": false
     },
     "postedOn": {
       "type": "date",
       "defaultFn": "now"
+    },
+    "isFrontEndCert": {
+      "type": "boolean",
+      "defaut": false,
+      "description": "Camper must be front end certified to apply"
+    },
+    "isFullStackCert": {
+      "type": "boolean",
+      "default": false,
+      "description": "Camper must be full stack certified to apply"
+    },
+    "isRemoteOk": {
+      "type": "boolean",
+      "default": false,
+      "description": "Camper may work remotely"
+    },
+    "howToApply": {
+      "type": "string",
+      "required": true,
+      "description": "How do campers apply to job"
+    },
+    "promoCodeUsed": {
+      "type": "string",
+      "description": "the promocode, if any, that the job uses"
     }
   },
   "validations": [],

@@ -1,0 +1,111 @@
+{
+  "name": "Gear up for Success",
+  "order": 4,
+  "time": "20m",
+  "challenges": [
+    {
+      "id": "560add65cb82ac38a17513c2",
+      "title": "Browse Camper News",
+      "challengeSeed": [],
+      "description": [
+        [
+          "http://i.imgur.com/YNwsMXM.gif",
+          "A gif showing how you can access our Camper News page and click the \"upvote\" button to upvote a story.",
+          "Click the \"News\" button in your upper right hand corner. <br>You can browse links on Camper News and upvote the ones that you enjoy.",
+          ""
+        ]
+      ],
+      "type": "Waypoint",
+      "challengeType": 7,
+      "tests": [],
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
+    },
+    {
+      "id": "560add65cb82ac38a17513c1",
+      "title": "Reference our Wiki",
+      "challengeSeed": [],
+      "description": [
+        [
+          "http://i.imgur.com/4GO4zcI.gif",
+          "A gif showing how you can click the \"Wiki\" button in your upper-right corner to access the wiki.",
+          "Click the \"Wiki\" button in your upper right hand corner. <br>Our community has contributed lots of useful information to this searchable wiki.",
+          ""
+        ]
+      ],
+      "type": "Waypoint",
+      "challengeType": 7,
+      "tests": [],
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
+    },
+    {
+      "id": "570add8ccb82ac38a17513c3",
+      "title": "Join our LinkedIn Alumni Network",
+      "challengeSeed": [],
+      "description": [
+        [
+          "http://i.imgur.com/vJyiXzU.gif",
+          "A gif showing how you can click the link below and fill in the necessary fields to add your Free Code Camp studies to your LinkedIn profile.",
+          "LinkedIn recognizes Free Code Camp as a university. You can gain access to our large alumni network by adding Free Code Camp to your LinkedIn profile's education section. <br>Set your graduation date as next year. <br>For \"Degree\", type \"Full Stack Web Development Certification\". <br>For \"Field of study\", type \"Computer Software Engineering\". <br>Then click \"Save Changes\".",
+          "https://www.linkedin.com/profile/edit-education?school=Free+Code+Camp"
+        ]
+      ],
+      "type": "Waypoint",
+      "challengeType": 7,
+      "tests": [],
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
+    },
+    {
+      "id": "560add8ccb81ac38a17513c4",
+      "title": "Commit to a Goal and a Nonprofit",
+      "challengeSeed": [],
+      "description": [
+        [
+          "http://i.imgur.com/Og1ifsn.gif",
+          "A gif showing how you can commit to a goal for your Free Code Camp studies and pledge a monthly donation to a nonprofit to give you external motivation to reach that goal.",
+          "You can set a goal and pledge to donate to a nonprofit each month until you achieve that goal. <br>This will give you external motivation in your quest to learn to code, as well as an opportunity to help nonprofits right away. <br>Choose your goal, then choose a monthly donation. When you click \"commit\", the nonprofit's donation page will open in a new tab. <br>This is completely optional, and you can change your commitment or stop it at any time.",
+          "/commit"
+        ]
+      ],
+      "type": "Waypoint",
+      "challengeType": 7,
+      "tests": [],
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
+    }
+  ]
+}

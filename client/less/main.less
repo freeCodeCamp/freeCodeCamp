@@ -9,6 +9,11 @@ html,body,div,span,a,li,td,th {
   font-weight: 300;
 }
 
+bold {
+  font-family: 'Lato-Bold', sans-serif;
+  font-weight: Bold;
+}
+
 li, .wrappable {
   white-space: pre;           /* CSS 2.0 */
   white-space: pre-wrap;      /* CSS 2.1 */
@@ -57,7 +62,7 @@ body.top-and-bottom-margins {
 }
 
 body.no-top-and-bottom-margins {
-  margin: 70px 20px 50px 20px;
+  margin: 70px 20px 0px 20px;
 }
 
 h1, h2 {
@@ -94,6 +99,10 @@ h1, h2, h3, h4, h5, h6, p, li {
 .fa,
 [class^='ion-'] {
   margin-right: 5px;
+}
+
+.fa:hover {
+  text-decoration: none;
 }
 
 .img-center {
@@ -139,6 +148,12 @@ ul {
 
 .navbar-brand {
   font-size: 26px;
+}
+
+.navbar > .container {
+  width: auto;
+  padding-left: 0px;
+  padding-right: 0px;
 }
 
 .nav-height {
@@ -216,8 +231,13 @@ ul {
   font-size: 20px;
 }
 
-.large-li {
-  font-size: 24px;
+.link-table td{
+  font-size: 16px;
+  border-top: none !important;
+  @media (min-width: 767px) {
+    font-size: 24px;
+  }
+
 }
 
 .capitalize {
@@ -374,10 +394,6 @@ ul {
   }
 }
 
-.table {
-  margin-left: -16px;
-}
-
 thead {
   font-size: 150%;
 }
@@ -394,6 +410,19 @@ thead {
 .profile-picture {
   height: 50px;
   width: 50px;
+}
+
+.brownie-points-nav {
+  @media (min-width: 991px) and (max-width: 999px) {
+    margin-right: -10px;
+  }
+}
+
+.signin-button-nav {
+  @media (min-width: 991px) and (max-width: 1010px) {
+    margin-left: -10px;
+    margin-right: -5px;
+  }
 }
 
 .navbar-nav a {
@@ -415,6 +444,7 @@ thead {
   margin-top: -2px !important;
   padding-top: 10px !important;
   padding-bottom: 10px !important;
+  margin-right: -12px;
 }
 
 .public-profile-img {
@@ -486,15 +516,27 @@ thead {
   color: #009900
 }
 
+.testimonial-image-jobs {
+  border-radius: 5px;
+  color: #009900
+}
+
+
 .default-border-radius {
   border-radius: 5px;
 }
 
+.story-section {
+  height: 500px;
+}
+
 .testimonial-copy {
-  font-size: 20px;
-  text-align: center;
+  text-align: justify;
+  font-size: 18px !important;
+  margin-left: 20px;
+  margin-right: 20px;
   @media (min-width: 991px) and (max-width: 1199px) {
-    height: 120px;
+    height: 140px;
   }
   @media (min-width: 1200px) {
     height: 90px;
@@ -580,6 +622,10 @@ form.code span {
   padding-bottom: 0px;
   margin-bottom: 0px;
   height: 100%;
+}
+
+.CodeMirror {
+  line-height: 1 !important;
 }
 
 .CodeMirror-linenumber {
@@ -679,6 +725,24 @@ iframe.iphone {
   transition: background .2s ease-in-out, border .2s ease-in-out;
 }
 
+.btn-warning-ghost {
+  background: transparent;
+  color: @brand-warning;
+
+  /* CSS Transition */
+  -webkit-transition: background .2s ease-in-out, border .2s ease-in-out;
+  -moz-transition: background .2s ease-in-out, border .2s ease-in-out;
+  -ms-transition: background .2s ease-in-out, border .2s ease-in-out;
+  -o-transition: background .2s ease-in-out, border .2s ease-in-out;
+  transition: background .2s ease-in-out, border .2s ease-in-out;
+}
+
+.population-table {
+  @media (max-width: 767px) {
+    font-size: 16px;
+  }
+}
+
 @media (max-width: 991px) {
   .navbar-header {
     float: none;
@@ -721,7 +785,7 @@ iframe.iphone {
   }
 }
 
-.hamburger {
+.navbar-toggle {
   width: 80px;
   padding-left: 0px;
   padding-right: 8px;
@@ -781,7 +845,8 @@ iframe.iphone {
 
 .news-box-search {
   @media (min-width: 768px) {
-    margin-top: -50px;
+    margin-top: -30px;
+    padding-bottom: 20px;
   }
   @media (max-width: 767px) {
     padding: 5px;
@@ -800,6 +865,10 @@ iframe.iphone {
   margin-top: -5px;
 }
 
+.landing-heading {
+  font-size: 50px !important;
+}
+
 .mobile-story-headline {
   font-size: 20px;
 }
@@ -814,15 +883,9 @@ iframe.iphone {
 }
 
 hr {
-  -moz-border-bottom-colors: none;
-  -moz-border-image: none;
-  -moz-border-left-colors: none;
-  -moz-border-right-colors: none;
-  -moz-border-top-colors: none;
-  border-color: @gray;
-  border-style: solid none;
-  border-width: 1px 0;
-  margin: 18px 0;
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
 }
 
 .big-spacer {
@@ -945,6 +1008,11 @@ code {
   margin: 0!important;
 }
 
+.gitter-chat-embed {
+ z-index: 20000 !important;
+}
+
+
 //uncomment this to see the dimensions of all elements outlined in red
 //* {
 //  border-color: red;
@@ -1052,3 +1120,6 @@ code {
     transform: rotate(0deg);
   }
 }
+
+@import "chat.less";
+@import "jobs.less";

@@ -1,21 +1,3 @@
-script(src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js")
-script.
-    window.jQuery || document.write('<script src="/bower_components/jquery/dist/jquery.min.js"><\/script>');
-script(src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js")
-script.
-    window.d3 || document.write('<script src="/bower_components/d3/d3.js"><\/script>');
-script(src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/js/bootstrap.min.js")
-script.
-    if (typeof($.fn.modal) === 'undefined') {
-        document.write('<script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"><\/script>');
-    }
-script(src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.2/moment.min.js")
-script.
-    window.moment || document.write('<script src="/bower_components/moment/min/moment.min.js"><\/script>');
-// Leave the below lines alone!
-script(src=rev('/js', 'main.js'))
-script(src="/bower_components/ramda/dist/ramda.min.js")
-script(src='/bower_components/lightbox2/dist/js/lightbox.min.js')
 script.
     (function(i,s,o,g,r,a,m){ i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
                 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -24,3 +6,6 @@ script.
     ga('create', 'UA-55446531-1', 'auto');
     ga('require', 'displayfeatures');
     ga('send', 'pageview');
+// Leave the below lines alone!
+script(src=rev('/js', 'vendor-main.js'))
+script(src=rev('/js', 'main.js'))

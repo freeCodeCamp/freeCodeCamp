@@ -1,54 +1,29 @@
 /* eslint-disable no-process-exit */
 require('babel/register');
 require('dotenv').load();
-var fs = require('fs'),
-    _ = require('lodash'),
-    path = require('path'),
-    app = require('../server/server'),
-    nonprofits = require('./nonprofits.json'),
-    jobs = require('./jobs.json');
 
-function getFilesFor(dir) {
-  return fs.readdirSync(path.join(__dirname, '/' + dir));
-}
+var Rx = require('rx'),
+    _ = require('lodash'),
+    getChallenges = require('./getChallenges'),
+    app = require('../server/server');
+
 
 var Challenge = app.models.Challenge;
-var Nonprofit = app.models.Nonprofit;
-var Job = app.models.Job;
-var counter = 0;
-var challenges = getFilesFor('challenges');
-// plus two accounts for nonprofits and jobs seed.
-var numberToSave = challenges.length + 1;
+var destroy = Rx.Observable.fromNodeCallback(Challenge.destroyAll, Challenge);
+var create = Rx.Observable.fromNodeCallback(Challenge.create, Challenge);
 
-function completionMonitor() {
-  // Increment counter
-  counter++;
-
-  // Exit if all challenges have been checked
-  if (counter >= numberToSave) {
-    process.exit(0);
-  }
-
-  // Log where in the seed order we're currently at
-  console.log('Call: ' + counter + '/' + numberToSave);
-}
-
-Challenge.destroyAll(function(err, info) {
-  if (err) {
-    throw err;
-  } else {
-    console.log('Deleted ', info);
-  }
-  challenges.forEach(function(file) {
-    var challengeSpec = require('./challenges/' + file);
+destroy()
+  .flatMap(function() { return Rx.Observable.from(getChallenges()); })
+  .flatMap(function(challengeSpec) {
     var order = challengeSpec.order;
     var block = challengeSpec.name;
+    var isBeta = !!challengeSpec.isBeta;
+    var fileName = challengeSpec.fileName;
+    console.log('parsed %s successfully', block);
 
     // challenge file has no challenges...
     if (challengeSpec.challenges.length === 0) {
-      console.log('file %s has no challenges', file);
-      completionMonitor();
-      return;
+      return Rx.Observable.just([{ block: 'empty ' + block }]);
     }
 
     var challenges = challengeSpec.challenges
@@ -63,57 +38,26 @@ Challenge.destroyAll(function(err, info) {
           .toLowerCase()
           .replace(/\:/g, '')
           .replace(/\s/g, '-');
+
+        challenge.fileName = fileName;
         challenge.order = order;
         challenge.suborder = index + 1;
         challenge.block = block;
+        challenge.isBeta = challenge.isBeta || isBeta;
+        challenge.time = challengeSpec.time;
 
         return challenge;
       });
 
-    Challenge.create(
-      challenges,
-      function(err) {
-        if (err) {
-          throw err;
-        } else {
-          console.log('Successfully parsed %s', file);
-          completionMonitor(err);
-        }
-      }
-    );
-  });
-});
-
-Nonprofit.destroyAll(function(err, info) {
-  if (err) {
-    console.error(err);
-  } else {
-    console.log('Deleted ', info);
-  }
-  Nonprofit.create(nonprofits, function(err, data) {
-    if (err) {
-      throw err;
-    } else {
-      console.log('Saved ', data);
+    return create(challenges);
+  })
+  .subscribe(
+    function(challenges) {
+      console.log('%s successfully saved', challenges[0].block);
+    },
+    function(err) { throw err; },
+    function() {
+      console.log('challenge seed completed');
+      process.exit(0);
     }
-    completionMonitor(err);
-    console.log('nonprofits');
-  });
-});
-
-Job.destroyAll(function(err, info) {
-  if (err) {
-    throw err;
-  } else {
-    console.log('Deleted ', info);
-  }
-  Job.create(jobs, function(err, data) {
-    if (err) {
-      console.log('error: ', err);
-    } else {
-      console.log('Saved ', data);
-    }
-    console.log('jobs');
-    completionMonitor(err);
-  });
-});
+  );

@@ -11,18 +11,24 @@ nav.navbar.navbar-default.navbar-fixed-top.nav-height
                 a.learn-btn(href='#') Learn
             li
                 a(href='/map') Map
+            li.hidden-xs
+                a#nav-chat-btn(href='#' onclick="return false") Chat
+            li.visible-xs
+                a(href="//gitter.im/freecodecamp/freecodecamp" target="_blank") Chat
             li
-                a(href='//gitter.im/FreeCodeCamp/FreeCodeCamp', target='_blank') Chat
-            li
-                a(href='/news') News
+                a(href='/news', target='_blank') News
             li
                 a(href='//github.com/FreeCodeCamp/freecodecamp/wiki/Home', target='_blank') Wiki
+            li
+                a(href='/jobs') Jobs
+            li
+                a(href='/links') Links
             if !user
                 li &thinsp; &thinsp; &thinsp;
                 li
-                    a.btn.signup-btn.signup-btn-nav(href='/login') Sign in
+                    a.btn.signup-btn.signup-btn-nav.signin-button-nav(href='/login') Sign in
             else
-                li
+                li.brownie-points-nav
                   a(href='/' + user.username) [&thinsp;#{user.progressTimestamps.length}&thinsp;]
                 .hidden-xs.hidden-sm
                     a(href='/' + user.username)

@@ -2,84 +2,94 @@ extends layout
 block content
     .jumbotron
         .text-center
-            h1.hug-top Code with Us
-            h2 Let's learn to code and build projects for nonprofits
+            h1.landing-heading Learn to code and help nonprofits.
+            .spacer
             .row
                 .col-xs-12.col-sm-12.col-md-3
-                    h3.nowrap Get Connected
+                    h3.nowrap Get connected
                     img.img-responsive.landing-icon.img-center(src= 'https://s3.amazonaws.com/freecodecamp/landingIcons_connect.svg.gz', alt='Get great references and connections to start your software engineer career')
-                    p.landing-p Join a community of busy, motivated people.
+                    p.landing-p Join a community of 100,000+ motivated people.
                 .col-xs-12.col-sm-12.col-md-3
                     h3.nowrap Learn JavaScript
                     img.img-responsive.landing-icon.img-center(src= 'https://s3.amazonaws.com/freecodecamp/landingIcons_learn.svg.gz', alt='Learn to code and learn full stack JavaScript')
                     p.landing-p Work together on Full Stack JavaScript coding challenges.
                 .col-xs-12.col-sm-12.col-md-3
-                    h3.nowrap Build your Portfolio
+                    h3.nowrap Build your portfolio
                     img.img-responsive.landing-icon.img-center(src= 'https://s3.amazonaws.com/freecodecamp/landingIcons_portfolio.svg.gz', alt='Build a portfolio of apps for nonprofits')
                     p.landing-p Build apps that solve real problems for real people.
                 .col-xs-12.col-sm-12.col-md-3
-                    h3.nowrap Help Nonprofits
+                    h3.nowrap Help nonprofits
                     img.img-responsive.landing-icon.img-center(src= 'https://s3.amazonaws.com/freecodecamp/landingIcons_nonprofits.svg.gz', alt='Help empower nonprofits with code')
                     p.landing-p Give nonprofits a boost by empowering them with code.
             .big-break
             .row
                 .col-xs-12.col-sm-8.col-sm-offset-2
-                    a.btn.btn-cta.signup-btn.btn-block(href="/login") Start learning to code (it's free)
+                    a.btn.btn-cta.signup-btn.btn-block(href="/signin") Start learning to code (it's free)
                     .button-spacer
-                    a.btn.btn-cta.btn-success.btn-block(href="/nonprofits") My nonprofit needs coding help
-            h2 As featured in
+                    a.btn.btn-lg.btn-primary.btn-primary-ghost.btn-block(href="/nonprofits") My nonprofit needs coding help
+            .spacer
+            h2 As featured in:
             img.img-center.img-responsive(src='https://s3.amazonaws.com/freecodecamp/as-seen-on.png')
             .spacer
-            h2 We're a proven way to start your software engineering career:
-            img.img-center.img-responsive(src='https://s3.amazonaws.com/freecodecamp/linkedin-alumni.png')
+            hr
             .spacer
-            h2 Campers you'll hang out with:
+            h2 Launch your career as a software engineer:
+            .spacer
             .row
                 .col-xs-12.col-sm-12.col-md-4
-                    img.img-responsive.testimonial-image.img-center(src="https://s3.amazonaws.com/freecodecamp/testimonial-jen.jpg", alt="@jenthebest's testimonial image")
-                    .testimonial-copy Getting back on track with Free Code Camp and committing to a new career in 2015!
-                    h3 - @jenbestyoga
+                    img.img-responsive.testimonial-image.img-center(src="http://i.imgur.com/nsvNixW.jpg", alt="Meta's testimonial image")
+                    p.testimonial-copy Through Free Code Camp, I built a robust and highly functional web app for a nonprofit. This led me to getting a fantastic job.
+                    h3 - Meta Hirschl
                 .col-xs-12.col-sm-12.col-md-4
-                    img.img-responsive.testimonial-image.img-center(src="https://s3.amazonaws.com/freecodecamp/testimonial-tate.jpg", alt="@TateThurston's testimonial image")
-                    .testimonial-copy Just built my company's website with skills I've learned from Free Code Camp!
-                    h3 - @TateThurston
+                    img.img-responsive.testimonial-image.img-center(src="http://i.imgur.com/QPpjPac.jpg", alt="Brian's testimonial image")
+                    p.testimonial-copy Free Code Camp's a great way for disabled veterans like me to retrain. I'm receiving engineering job offers, and I haven't even finished yet.
+                    h3 - Brian Grant
                 .col-xs-12.col-sm-12.col-md-4
-                    img.img-responsive.testimonial-image.img-center(src="https://s3.amazonaws.com/freecodecamp/testimonial-cynthia.jpg", alt="@cynthialanel's testimonial image")
-                    .testimonial-copy  I'm currently working through Free Code Camp to improve my JavaScript. The community is very welcoming!
-                    h3 - @cynthialanel
-            .big-break
+                    img.img-responsive.testimonial-image.img-center(src="http://i.imgur.com/wjlDigg.jpg", alt="Maxim Orlov's testimonial image")
+                    p.testimonial-copy I started Free Code Camp with zero knowledge of web development. 6 months later, I landed my first job as a back end engineer.
+                    h3 - Maxim Orlov
+            .spacer
+            .row
+                .col-xs-12.col-sm-8.col-sm-offset-2
+                    a.btn.btn-lg.btn-primary.btn-primary-ghost.btn-block(href='/stories') Hear from more of our campers
+            .spacer
+            .spacer
+            hr
+            .spacer
             h2 Skills you'll learn:
-            .text-center.negative-35
-                .col-xs-12.col-sm-12.col-md-3
-                    .landing-skill-icon.ion-social-html5
-                    h2.black-text HTML5
-                .col-xs-12.col-sm-12.col-md-3
-                    .landing-skill-icon.ion-social-css3
-                    h2.black-text CSS3
-                .col-xs-12.col-sm-12.col-md-3
-                    .landing-skill-icon.ion-social-javascript
-                    h2.black-text JavaScript
-                .col-xs-12.col-sm-12.col-md-3
-                    .landing-skill-icon.fa.fa-database.font-awesome-padding
-                    h2.black-text Databases
-                .col-xs-12.col-sm-12.col-md-3
-                    .landing-skill-icon.ion-social-github
-                    h2.black-text Git
-                .col-xs-12.col-sm-12.col-md-3
-                    .landing-skill-icon.ion-social-nodejs
-                    h2.black-text Node.js
-                .col-xs-12.col-sm-12.col-md-3
-                    .landing-skill-icon.ion-social-angular
-                    h2.black-text Angular.js
-                .col-xs-12.col-sm-12.col-md-3
-                    .landing-skill-icon.ion-ios-loop-strong
-                    h2.black-text Agile
-                    br
-                    br
-            .big-break
-            h2 Why you should join our open source community right now:
-            h3.col-xs-offset-0.col-sm-offset-1
-                ul.text-left
+            .spacer
+            .row
+                .text-center.negative-35
+                    .col-xs-12.col-sm-12.col-md-3
+                        .landing-skill-icon.ion-social-html5
+                        h2.black-text HTML5
+                    .col-xs-12.col-sm-12.col-md-3
+                        .landing-skill-icon.ion-social-css3
+                        h2.black-text CSS3
+                    .col-xs-12.col-sm-12.col-md-3
+                        .landing-skill-icon.ion-social-javascript
+                        h2.black-text JavaScript
+                    .col-xs-12.col-sm-12.col-md-3
+                        .landing-skill-icon.fa.fa-database.font-awesome-padding
+                        h2.black-text Databases
+                    .col-xs-12.col-sm-12.col-md-3
+                        .landing-skill-icon.ion-social-github
+                        h2.black-text Git
+                    .col-xs-12.col-sm-12.col-md-3
+                        .landing-skill-icon.ion-social-nodejs
+                        h2.black-text Node.js
+                    .col-xs-12.col-sm-12.col-md-3
+                        .landing-skill-icon.ion-social-angular
+                        h2.black-text Angular.js
+                    .col-xs-12.col-sm-12.col-md-3
+                        .landing-skill-icon.ion-ios-loop-strong
+                        h2.black-text Agile
+            .spacer
+            hr
+            .spacer
+            .col-xs-offset-0.col-sm-offset-1.text-left
+                h2 Here's why you should join our open source community right now:
+                ul.large-li
                     li.ion-code &thinsp; You'll get help in real time from our community chat rooms.
                     li.ion-code &thinsp; You'll meet up with other coders in your city.
                     li.ion-code &thinsp; You'll learn to code at your own pace, in your browser or on your phone.
@@ -90,6 +100,6 @@ block content
             .big-break
             .row
                 .col-xs-12.col-sm-8.col-sm-offset-2
-                    a.btn.btn-cta.signup-btn.btn-block(href="/login") Learn to code today (it's free)
+                    a.btn.btn-cta.signup-btn.btn-block(href="/signin") Learn to code today (it's free)
             script.
                 challengeName = 'Home'

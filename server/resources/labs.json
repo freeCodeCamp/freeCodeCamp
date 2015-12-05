@@ -1,0 +1,51 @@
+[
+  {
+    "camper": "johnstonbl01",
+    "name": "Clementine.js",
+    "url": "http://johnstonbl01.github.io/clementinejs/",
+    "description": "The elegant and lightweight boilerplate for full stack JavaScript.",
+    "image": "http://i.imgur.com/ib1wOho.png"
+  },
+  {
+    "camper": "adventurebear",
+    "name": "Coding Bootcamp Cost Calculator",
+    "url": "http://www.freecodecamp.com/coding-bootcamp-cost-calculator",
+    "description": "This d3.js-powered coding bootcamp cost calculator takes into account tuition, financing, lost wages and cost of living.",
+    "image": "https://qph.is.quoracdn.net/main-qimg-670d6a0c5b01f74138e777732994240f?convert_to_webp=true"
+  },
+  {
+    "camper": "ericdouglas",
+    "name": "Open Source Society",
+    "url": "https://github.com/open-source-society/computer-science",
+    "description": "A path to a free education in Computer Science.",
+    "image": "https://camo.githubusercontent.com/c42438055d3fee26b29e6d046fd8d06ebff3db20/687474703a2f2f692e696d6775722e636f6d2f6838786a72726a2e706e67"
+  },
+  {
+    "camper": "akiralaine",
+    "name": "Musare",
+    "url": "http://musare.com/",
+    "description": "Musare is a modern, collaborative, open-source Music App.",
+    "image": "http://i.imgur.com/Y4D4MPL.png"
+  },
+  {
+    "camper": "storbeck",
+    "name": "Free Code Camp Event Zipline: Recipe Box",
+    "url": "http://codepen.io/GeoffStorbeck/full/bVKyzd/",
+    "description": "Try to reverse engineer this Recipe Box as an optional Zipline challenge.",
+    "image": "http://i.imgur.com/5o0bwVQ.png"
+  },
+  {
+    "camper": "akiralaine",
+    "name": "Camper News Bot",
+    "url": "https://twitter.com/campernewsbot",
+    "description": "This twitter bot tweets out Camper News stories once they hit 5 upvotes.",
+    "image": "https://pbs.twimg.com/media/CLXOFLPWIAEHYPJ.png"
+  },
+  {
+    "camper": "roelver",
+    "name": "Free Code Camp Top 100 Campers",
+    "url": "http://fcctop100.herokuapp.com/",
+    "description": "This leaderboard tracks the campers who have been most active (completing challenges, helping other campers) in the past 30 days.",
+    "image": "http://i.imgur.com/4CrQfFi.png"
+  }
+]

@@ -1,6 +1,7 @@
 {
   "name": "Automated Testing and Debugging",
   "order": 14,
+  "time": "15m",
   "challenges": [
     {
       "id":"cf1111c1c16feddfaeb6bdef",
@@ -21,7 +22,22 @@
         ""
       ],
       "challengeType":1,
-      "type": "waypoint"
+      "type": "waypoint",
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "Utiliza la consola de JavaScript",
+      "descriptionEs": [
+        "Tanto Chrome como Firefox tienen excelentes consolas JavaScript, también conocidas como DevTools, para depurar tu código JavaScript.",
+        "Puedes encontrar las Herramientas para desarrolladores (<code>Developer tools</code>) en el menú de Chrome o la Consola web (<code>Web Console</code>) en el menú de FireFox. Si estás utilizando un navegador diferente, o un dispositivo móvil, nuestra recomendación es que cambies a la versión de escritorio de Firefox o Chrome.",
+        "Vamos a imprimir en esta consola utilizando el método <code>console.log</code>.",
+        "<code>console.log('Hello world!')</code>"
+        ],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "id":"cf1111c1c16feddfaeb7bdef",
@@ -31,16 +47,16 @@
         "You can use <code>typeof</code> to check the <code>data structure</code>, or type, of a variable.",
         "Note that in JavaScript, arrays are technically a type of object.",
         "Try using <code>typeof</code> on each of the following to see which types they have.",
-        "<code>console.log(typeof(\"\"));</code>",
-        "<code>console.log(typeof(0));</code>",
-        "<code>console.log(typeof([]));</code>",
-        "<code>console.log(typeof({}));</code>"
+        "<code>console.log(typeof \"\");</code>",
+        "<code>console.log(typeof 0);</code>",
+        "<code>console.log(typeof []);</code>",
+        "<code>console.log(typeof {});</code>"
       ],
       "tests":[
-        "assert(editor.getValue().match(/console\\.log\\(typeof\\(\"\"\\)\\);/gi), 'message: You should <code>console.log</code> the <code>typeof</code> a string.');",
-        "assert(editor.getValue().match(/console\\.log\\(typeof\\(0\\)\\);/gi), 'message: You should <code>console.log</code> the <code>typeof</code> a number.');",
-        "assert(editor.getValue().match(/console\\.log\\(typeof\\(\\[\\]\\)\\);/gi), 'message: You should <code>console.log</code> the <code>typeof</code> an array.');",
-        "assert(editor.getValue().match(/console\\.log\\(typeof\\(\\{\\}\\)\\);/gi), 'message: You should <code>console.log</code> the <code>typeof</code> a object.');"
+        "assert(editor.getValue().match(/console\\.log\\(typeof[\\( ]\"\"\\)?\\);/gi), 'message: You should <code>console.log</code> the <code>typeof</code> a string.');",
+        "assert(editor.getValue().match(/console\\.log\\(typeof[\\( ]0\\)?\\);/gi), 'message: You should <code>console.log</code> the <code>typeof</code> a number.');",
+        "assert(editor.getValue().match(/console\\.log\\(typeof[\\( ]\\[\\]\\)?\\);/gi), 'message: You should <code>console.log</code> the <code>typeof</code> an array.');",
+        "assert(editor.getValue().match(/console\\.log\\(typeof[\\( ]\\{\\}\\)?\\);/gi), 'message: You should <code>console.log</code> the <code>typeof</code> a object.');"
       ],
       "challengeSeed":[
         "",
@@ -48,7 +64,25 @@
         ""
       ],
       "challengeType":1,
-      "type": "waypoint"
+      "type": "waypoint",
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "Usando typeof",
+      "descriptionEs": [
+        "Puedes usar <code>typeof</code> para verificar la <code>estructura de datos</code>, o el tipo, de una variable.",
+        "Ten en cuenta que, en JavaScript, los vectores son técnicamente un tipo de objeto.",
+        "Intenta utilizar <code>typeof</code> en cada uno de los siguientes valores para ver de qué tipo son.",
+        "<code>console.log(typeof(\"\"));</code>",
+        "<code>console.log(typeof(0));</code>",
+        "<code>console.log(typeof([]));</code>",
+        "<code>console.log(typeof({}));</code>"
+        ],
+      "namePt": "",
+      "descriptionPt": []
     }
   ]
 }

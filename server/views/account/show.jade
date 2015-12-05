@@ -5,38 +5,38 @@ block content
         var challengeName = 'Profile View';
     if (user && user.username === username)
         .panel.panel-info
-            .panel-heading.text-center Update Your Portfolio
+            .panel-heading.text-center Update your code portfolio
             .panel-body
                 .row
                     .col-xs-12
                         if (!user.isGithubCool)
                             a.btn.btn-lg.btn-block.btn-github.btn-link-social(href='/link/github')
                                 i.fa.fa-github
-                                | Link my GitHub to unlock this profile
+                                | Link my GitHub to unlock my portfolio
                         else
                             a.btn.btn-lg.btn-block.btn-github.btn-link-social(href='/link/github')
                                 i.fa.fa-github
-                                | Update my profile from GitHub
+                                | Update my portfolio from GitHub
                             if (!user.twitter)
                                 a.btn.btn-lg.btn-block.btn-twitter.btn-link-social(href='/link/twitter')
                                     i.fa.fa-twitter
-                                    | Add my Twitter to my profile
+                                    | Add my Twitter to my portfolio
                             if (!user.facebook)
                                 a.btn.btn-lg.btn-block.btn-facebook.btn-link-social(href='/link/facebook')
                                     i.fa.fa-facebook
-                                    | Add my Facebook to my profile
+                                    | Add my Facebook to my portfolio
                             if (!user.linkedin)
                                 a.btn.btn-lg.btn-block.btn-linkedin.btn-link-social(href='/link/linkedin')
                                     i.fa.fa-linkedin
-                                    | Add my LinkedIn to my profile
+                                    | Add my LinkedIn to my portfolio
                             if (!user.google)
                                 a.btn.btn-lg.btn-block.btn-google-plus.btn-link-social(href='/link/google')
                                     i.fa.fa-google-plus
-                                    | Add my Google+ to my profile
+                                    | Add my Google+ to my portfolio
 
     .panel.panel-info
         .panel-heading.text-center
-            h1 #{username}'s portfolio
+            h1 #{username}'s code portfolio
         .panel-body
             .row
                 .col-xs-12.col-sm-10.col-sm-offset-1.col-md-8.col-md-offset-2.text-center
@@ -58,23 +58,44 @@ block content
                     h1.flat-top.wrappable= name
                     h1.flat-top.wrappable= location
                     h1.flat-top.text-primary= "[ " + (progressTimestamps.length) + " ]"
+                    if pledge
+                        .spacer
+                          h4
+                            | This camper has committed to giving $#{pledge.amount} to
+                            a(href='#{pledge.donateUrl}?ref=freecodecamp.com' target='_blank')  #{pledge.displayName}
+                            |  each month until they have completed their #{pledge.goal}.
+                        .spacer
                     if isFrontEndCert
                         a.btn.btn-primary(href='/' + username + '/front-end-certification') View My Front End Development Certification
                     if isFullStackCert
                         .button-spacer
                         a.btn.btn-success(href='/' + username + '/full-stack-certification') View My Full Stack Development Certification
-                    if (user && user.username !== username)
-                        a.btn.btn-lg.btn-block.btn-twitter.btn-link-social(href='/leaderboard/add?username=#{username}')
-                            i.fa.fa-plus-square
-                            | Add them to my personal leaderboard
+                    //if (user && user.username !== username)
+                    //    a.btn.btn-lg.btn-block.btn-twitter.btn-link-social(href='/leaderboard/add?username=#{username}')
+                    //        i.fa.fa-plus-square
+                    //        | Add them to my personal leaderboard
 
             .spacer
-                .hidden-xs.hidden-sm.col-md-12
-                    #cal-heatmap.d3-centered
+                .col-md-12
+                    #cal-heatmap.hidden-xs.hidden-sm.d3-centered
                         script.
                             $(document).ready(function () {
                                 var cal = new CalHeatMap();
                                 var calendar = !{JSON.stringify(calender)};
+                              /*
+                                var estUTCOffset = -5;
+                                // moment returns the utc offset in minutes
+                                var userUTCOffset = moment().utcOffset() / 60;
+                                var secondsToOffset =
+                                  (estUTCOffset - userUTCOffset) * 3600;
+                                var offsetCalendar = {};
+                                for (var prop in calendar) {
+                                  if (calendar.hasOwnProperty(prop)) {
+                                    var offsetProp = prop + secondsToOffset;
+                                    offsetCalendar[offsetProp] = calendar[prop];
+                                  }
+                                }
+                                */
                                 cal.init({
                                     itemSelector: "#cal-heatmap",
                                     domain: "month",
@@ -108,52 +129,64 @@ block content
                                 table.table.table-striped
                                     thead
                                         tr
-                                            th.col-xs-4 Project
-                                            th.col-xs-2 Completed
-                                            th.col-xs-6 Link
+                                            th.col-xs-6 Projects
+                                            th.col-xs-3.hidden-xs Completed
+                                            th.col-xs-3.hidden-xs Link
                                     for challenge in baseAndZip
                                         tr
-                                            td.col-xs-4
+                                            td.col-xs-4.hidden-xs
                                                 a(href='/challenges/' + challenge.name, target='_blank')= challenge.name
-                                            td.col-xs-2= moment(challenge.completedDate, 'x').format("MMM DD, YYYY")
-                                            td.col-xs-6
+                                            td.col-xs-2.hidden-xs= moment(challenge.completedDate, 'x').format("MMM DD, YYYY")
+                                            td.col-xs-6.hidden-xs
                                                 a(href=challenge.solution, target='_blank') View my project
+                                            td.col-xs-12.visible-xs
+                                                a(href=challenge.solution, target='_blank')=challenge.name
                         if (bonfires.length > 0)
                             .col-sm-12
                                 table.table.table-striped
                                     thead
                                         tr
-                                            th.col-xs-4 Bonfire
-                                            th.col-xs-2 Completed
-                                            th.col-xs-6 Solution
+                                            th.col-xs-6 Bonfires
+                                            th.col-xs-3.hidden-xs Completed
+                                            th.col-xs-3.hidden-xs Solution
                                     for bonfire in bonfires
                                         tr
-                                            td.col-xs-4= bonfire.name
-                                            td.col-xs-2= moment(bonfire.completedDate, 'x').format("MMM DD, YYYY")
-                                            td.col-xs-6
-                                                a(href='/challenges/' + bonfire.name + '?solution=' + encodeURIComponent(bonfire.solution), target='_blank') View my solution
+                                            td.col-xs-6.hidden-xs= bonfire.name
+                                            td.col-xs-3.hidden-xs= moment(bonfire.completedDate, 'x').format("MMM DD, YYYY")
+                                            td.col-xs-3.hidden-xs
+                                                a(href='/challenges/' + bonfire.name + '?solution=' + encodeURIComponent(replaceScriptTags(bonfire.solution)), target='_blank') View my solution
+                                            td.col-xs-12.visible-xs
+                                                a(href='/challenges/' + bonfire.name + '?solution=' + encodeURIComponent(replaceScriptTags(bonfire.solution)), target='_blank')= bonfire.name
                         if (waypoints.length > 0)
                             .col-sm-12
                                 table.table.table-striped
                                     thead
                                         tr
-                                            th.col-xs-4 Waypoints
-                                            th.col-xs-2 Completed
-                                            th.col-xs-6 Solution
+                                            th.col-xs-6 Waypoints
+                                            th.col-xs-3.hidden-xs Completed
+                                            th.col-xs-3.hidden-xs Solution
                                     for challenge in waypoints
                                         tr
-                                            td.col-xs-4= challenge.name
-                                            td.col-xs-2= moment(challenge.completedDate, 'x').format("MMM DD, YYYY")
-                                            td.col-xs-6
+                                            td.col-xs-6.hidden-xs= challenge.name
+                                            td.col-xs-3.hidden-xs= moment(challenge.completedDate, 'x').format("MMM DD, YYYY")
+                                            td.col-xs-3.hidden-xs
                                               if (challenge.solution)
-                                                  a(href='/challenges/' + challenge.name + '?solution=' + encodeURIComponent(challenge.solution), target='_blank') View my solution
+                                                  a(href='/challenges/' + challenge.name + '?solution=' + encodeURIComponent(replaceScriptTags(challenge.solution)), target='_blank') View my solution
                                               else
                                                   a(href='/challenges/' + challenge.name) View this challenge
-
+                                            td.col-xs-12.visible-xs
+                                              if (challenge.solution)
+                                                  a(href='/challenges/' + challenge.name + '?solution=' + encodeURIComponent(replaceScriptTags(challenge.solution)), target='_blank')= challenge.name
+                                              else
+                                                  a(href='/challenges/' + challenge.name)= challenge.name
     if (user && user.username === username)
         .panel.panel-info
-            .panel-heading.text-center Manage Your Account
+            .panel-heading.text-center Manage your account
             .panel-body
+                .col-xs-12
+                    a.btn.btn-lg.btn-block.btn-warning.btn-link-social(href='/logout')
+                        span.ion-android-exit
+                        | Sign me out of Free Code Camp
                 .col-xs-12
                     a.btn.btn-lg.btn-block.btn-primary.btn-link-social(href='mailto:team@freecodecamp.com')
                         span.ion-email
@@ -169,9 +202,9 @@ block content
                             span.ion-unlocked
                             | Let other people see all my solutions
                 .col-xs-12
-                    a.btn.btn-lg.btn-block.btn-warning.btn-link-social(href='/logout')
-                        span.ion-android-exit
-                        | Sign me out of Free Code Camp
+                    a.btn.btn-lg.btn-block.btn-success.btn-link-social(href='/commit')
+                        span.ion-edit
+                        | Edit my pledge
                 .col-xs-12
                     a.btn.btn-lg.btn-block.btn-danger.btn-link-social.confirm-deletion
                         span.ion-trash-b

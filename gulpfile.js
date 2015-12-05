@@ -13,9 +13,15 @@ var Rx = require('rx'),
   reduce = require('gulp-reduce-file'),
   sortKeys = require('sort-keys'),
   debug = require('debug')('freecc:gulp'),
+  yargs = require('yargs'),
+  concat = require('gulp-concat'),
+  uglify = require('gulp-uglify'),
+  merge = require('merge-stream'),
+  babel = require('gulp-babel'),
+  sourcemaps = require('gulp-sourcemaps'),
 
   // react app
-  webpack = require('gulp-webpack'),
+  webpack = require('webpack-stream'),
   webpackConfig = require('./webpack.config.js'),
   webpackConfigNode = require('./webpack.config.node.js'),
 
@@ -38,7 +44,7 @@ var Rx = require('rx'),
 
 Rx.config.longStackSupport = true;
 
-var __DEV__ = process.env.NODE_ENV !== 'production';
+var __DEV__ = !yargs.argv.p;
 var reloadDelay = 1000;
 var reload = sync.reload;
 var paths = {
@@ -68,17 +74,64 @@ var paths = {
     dest: 'public/js'
   },
 
+  vendorChallenges: [
+    'public/bower_components/jshint/dist/jshint.js',
+    'public/bower_components/chai/chai.js',
+    'public/bower_components/CodeMirror/lib/codemirror.js',
+    'public/bower_components/CodeMirror/addon/edit/closebrackets.js',
+    'public/bower_components/CodeMirror/addon/edit/matchbrackets.js',
+    'public/bower_components/CodeMirror/addon/lint/lint.js',
+    'public/bower_components/CodeMirror/addon/lint/javascript-lint.js',
+    'public/bower_components/CodeMirror/mode/javascript/javascript.js',
+    'public/bower_components/CodeMirror/mode/xml/xml.js',
+    'public/bower_components/CodeMirror/mode/css/css.js',
+    'public/bower_components/CodeMirror/mode/htmlmixed/htmlmixed.js',
+    'node_modules/emmet-codemirror/dist/emmet.js',
+    'public/js/lib/loop-protect/loop-protect.js'
+  ],
+
+  vendorMain: [
+    'public/bower_components/jquery/dist/jquery.min.js',
+    'public/bower_components/bootstrap/dist/js/bootstrap.min.js',
+    'public/bower_components/angular/angular.min.js',
+    'public/bower_components/angular-bootstrap/ui-bootstrap.min.js',
+    'public/bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js',
+    'public/bower_components/d3/d3.min.js',
+    'public/bower_components/moment/min/moment.min.js',
+    'public/bower_components/lightbox2/dist/js/lightbox.min.js',
+    'public/bower_components/rxjs/dist/rx.all.min.js'
+  ],
+
   js: [
     'client/main.js',
     'client/iFrameScripts.js',
     'client/plugin.js'
   ],
 
-  dependents: [
-    'client/commonFramework.js'
+  commonFramework: [
+    'init',
+    'bindings',
+    'add-test-to-string',
+    'code-storage',
+    'code-uri',
+    'add-loop-protect',
+    'get-iframe',
+    'update-preview',
+    'create-editor',
+    'detect-unsafe-code-stream',
+    'display-test-results',
+    'execute-challenge-stream',
+    'output-display',
+    'phone-scroll-lock',
+    'report-issue',
+    'run-tests-stream',
+    'show-completion',
+    'step-challenge',
+    'end'
   ],
 
   less: './client/less/main.less',
+  lessFiles: './client/less/*.less',
 
   manifest: 'server/manifests/',
 
@@ -92,14 +145,19 @@ var paths = {
   ],
 
   challenges: [
-    'seed/challenges/*.json',
-    'seed/under-construction/*.json'
+    'seed/challenges/*.json'
   ]
 };
 
 var webpackOptions = {
   devtool: 'inline-source-map'
 };
+
+function formatCommonFrameworkPaths() {
+  return this.map(function(script) {
+    return 'client/commonFramework/' + script + '.js';
+  });
+}
 
 function errorHandler() {
   var args = Array.prototype.slice.call(arguments);
@@ -177,7 +235,14 @@ gulp.task('sync', syncDepenedents, function() {
 });
 
 gulp.task('lint-js', function() {
-  return gulp.src(['public/js/lib/**/*'])
+  return gulp.src([
+    'common/**/*.js',
+    'common/**/*.jsx',
+    'client/**/*.js',
+    'client/**/*.jsx',
+    'server/**/*.js',
+    'config/**/*.js'
+  ])
     .pipe(eslint())
     .pipe(eslint.format());
 });
@@ -191,6 +256,8 @@ gulp.task('lint-json', function() {
 gulp.task('test-challenges', ['lint-json']);
 
 gulp.task('pack-client', function() {
+  if (!__DEV__) { console.log('\n\nbundling production\n\n'); }
+
   var manifestName = 'react-manifest.json';
   var dest = webpackConfig.output.path;
 
@@ -201,6 +268,7 @@ gulp.task('pack-client', function() {
       webpackConfig,
       webpackOptions
     )))
+    .pipe(__DEV__ ? gutil.noop() : uglify())
     .pipe(gulp.dest(dest))
     .pipe(rev())
     // copy files to public
@@ -231,8 +299,12 @@ var defaultStatsOptions = {
   errorDetails: false
 };
 
+var webpackCalled = false;
 gulp.task('pack-watch', function(cb) {
-  var called = false;
+  if (webpackCalled) {
+    console.log('webpack watching already runnning');
+    return cb();
+  }
   gulp.src(webpackConfig.entry)
     .pipe(plumber({ errorHandler: errorHandler }))
     .pipe(webpack(Object.assign(
@@ -245,9 +317,9 @@ gulp.task('pack-watch', function(cb) {
         gutil.log(stats.toString(defaultStatsOptions));
       }
 
-      if (!called) {
-        debug('webpack watch completed');
-        called = true;
+      if (!webpackCalled) {
+        debug('webpack init completed');
+        webpackCalled = true;
         cb();
       }
 
@@ -255,7 +327,7 @@ gulp.task('pack-watch', function(cb) {
     .pipe(gulp.dest(webpackConfig.output.path));
 });
 
-gulp.task('pack-watch-manifest', function() {
+gulp.task('pack-watch-manifest', ['pack-watch'], function() {
   var manifestName = 'react-manifest.json';
   var dest = webpackConfig.output.path;
   return gulp.src(dest + '/bundle.js')
@@ -285,7 +357,7 @@ gulp.task('less', function() {
   var dest = paths.css;
   return gulp.src(paths.less)
     .pipe(plumber({ errorHandler: errorHandler }))
-    // copile
+    // compile
     .pipe(less({
       paths: [ path.join(__dirname, 'less', 'includes') ]
     }))
@@ -303,12 +375,50 @@ gulp.task('less', function() {
     .pipe(gulp.dest(paths.manifest));
 });
 
+function getFilesGlob(files) {
+  if (!__DEV__) {
+    return files;
+  }
+  return files.map(function(file) {
+    return file
+      .replace('.min.', '.')
+      // moment breaks the pattern
+      .replace('/min/', '/');
+  });
+}
+
 gulp.task('js', function() {
   var manifestName = 'js-manifest.json';
   var dest = paths.publicJs;
 
-  return gulp.src(paths.js)
-    .pipe(plumber({ errorHandler: errorHandler }))
+  var jsFiles = merge(
+
+    gulp.src(getFilesGlob(paths.vendorMain))
+      .pipe(__DEV__ ? sourcemaps.init() : gutil.noop())
+      .pipe(concat('vendor-main.js'))
+      .pipe(
+        __DEV__ ?
+          sourcemaps.write({ sourceRoot: '/vendor' }) :
+          gutil.noop()
+      ),
+
+    gulp.src(paths.vendorChallenges)
+      .pipe(__DEV__ ? sourcemaps.init() : gutil.noop())
+      .pipe(__DEV__ ? gutil.noop() : uglify())
+      .pipe(concat('vendor-challenges.js'))
+      .pipe(
+        __DEV__ ?
+          sourcemaps.write({ sourceRoot: '/vendor' }) :
+          gutil.noop()
+      ),
+
+    gulp.src(paths.js)
+      .pipe(plumber({ errorHandler: errorHandler }))
+      .pipe(babel())
+      .pipe(__DEV__ ? gutil.noop() : uglify())
+  );
+
+  return jsFiles
     .pipe(gulp.dest(dest))
     // create registry file
     .pipe(rev())
@@ -325,7 +435,7 @@ gulp.task('js', function() {
 });
 
 // commonFramework depend on iFrameScripts
-// sandbox depends on plugin
+// and faux.js
 gulp.task('dependents', ['js'], function() {
   var manifestName = 'dependents-manifest.json';
   var dest = paths.publicJs;
@@ -334,8 +444,17 @@ gulp.task('dependents', ['js'], function() {
     path.join(__dirname, paths.manifest, 'js-manifest.json')
   );
 
-  return gulp.src(paths.dependents)
+  return gulp.src(formatCommonFrameworkPaths.call(paths.commonFramework))
     .pipe(plumber({ errorHandler: errorHandler }))
+    .pipe(babel())
+    .pipe(__DEV__ ? sourcemaps.init() : gutil.noop())
+    .pipe(concat('commonFramework.js'))
+    .pipe(
+      __DEV__ ?
+        sourcemaps.write({ sourceRoot: '/commonFramework' }) :
+        gutil.noop()
+    )
+    .pipe(__DEV__ ? gutil.noop() : uglify())
     .pipe(revReplace({ manifest: manifest }))
     .pipe(gulp.dest(dest))
     .pipe(rev())
@@ -391,12 +510,20 @@ var watchDependents = [
   'pack-watch-manifest'
 ];
 
+gulp.task('reload', function() {
+  notify({ message: 'test changed' });
+  reload();
+});
+
 gulp.task('watch', watchDependents, function() {
-  gulp.watch(paths.less, ['less']);
+  gulp.watch(paths.lessFiles, ['less']);
   gulp.watch(paths.js, ['js']);
-  gulp.watch(paths.challenges, ['test-challenges']);
+  gulp.watch(paths.challenges, ['test-challenges', 'reload']);
   gulp.watch(paths.js, ['js', 'dependents']);
-  gulp.watch(paths.dependents, ['dependents']);
+  gulp.watch(
+    formatCommonFrameworkPaths.call(paths.commonFramework),
+    ['dependents']
+  );
   gulp.watch(paths.manifest + '/*.json', ['build-manifest-watch']);
   gulp.watch(webpackConfig.output.path + '/bundle.js', ['pack-watch-manifest']);
 });
@@ -409,4 +536,3 @@ gulp.task('default', [
   'watch',
   'sync'
 ]);
-

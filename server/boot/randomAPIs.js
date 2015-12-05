@@ -5,6 +5,8 @@ var Rx = require('rx'),
     request = require('request'),
     debug = require('debug')('freecc:cntr:resources'),
     constantStrings = require('../utils/constantStrings.json'),
+    labs = require('../resources/labs.json'),
+    testimonials = require('../resources/testimonials.json'),
     secrets = require('../../config/secrets');
 
 module.exports = function(app) {
@@ -26,12 +28,15 @@ module.exports = function(app) {
   router.get('/pmi-acp-agile-project-managers-form', agileProjectManagersForm);
   router.get('/nonprofits', nonprofits);
   router.get('/nonprofits-form', nonprofitsForm);
-  router.get('/our-sponsors', sponsors);
-  router.get('/jobs-form', jobsForm);
   router.get('/unsubscribe/:email', unsubscribe);
   router.get('/unsubscribed', unsubscribed);
   router.get('/get-started', getStarted);
   router.get('/submit-cat-photo', submitCatPhoto);
+  router.get('/labs', showLabs);
+  router.get('/stories', showTestimonials);
+  router.get('/all-stories', showAllTestimonials);
+  router.get('/links', showLinks);
+  router.get('/the-fastest-web-page-on-the-internet', theFastestWebPageOnTheInternet);
 
   app.use(router);
 
@@ -96,10 +101,10 @@ module.exports = function(app) {
             });
         },
 
-        challenges: function (callback) {
+        challenges: function(callback) {
           Challenge.find(
             { fields: { name: true } },
-            function (err, challenges) {
+            function(err, challenges) {
               if (err) {
                 debug('Challenge err: ', err);
                 callback(err);
@@ -116,10 +121,10 @@ module.exports = function(app) {
               }
             });
         },
-        stories: function (callback) {
+        stories: function(callback) {
           Story.find(
             { field: { link: true } },
-            function (err, stories) {
+            function(err, stories) {
               if (err) {
                 debug('Story err: ', err);
                 callback(err);
@@ -137,7 +142,7 @@ module.exports = function(app) {
             }
           );
         },
-        nonprofits: function (callback) {
+        nonprofits: function(callback) {
           Nonprofit.find(
             { field: { name: true } },
             function(err, nonprofits) {
@@ -180,6 +185,44 @@ module.exports = function(app) {
     res.redirect('https://gitter.im/FreeCodeCamp/FreeCodeCamp');
   }
 
+  function showLabs(req, res) {
+    res.render('resources/labs', {
+      title: 'Projects Built by Free Code Camp Software Engineers',
+      projects: labs
+    });
+  }
+
+  function showLinks(req, res) {
+    res.render('resources/links', {
+      title: 'Links to external Free Code Camp resources and ' +
+      'social media communities'
+    });
+  }
+
+  function theFastestWebPageOnTheInternet(req, res) {
+    res.render('resources/the-fastest-web-page-on-the-internet', {
+      title: 'This is the fastest web page on the internet'
+    });
+  }
+
+  function showTestimonials(req, res) {
+    res.render('resources/stories', {
+      title: 'Testimonials from Happy Free Code Camp Students ' +
+        'who got Software Engineer Jobs',
+      stories: testimonials.slice(0, 72),
+      moreStories: true
+    });
+  }
+
+  function showAllTestimonials(req, res) {
+    res.render('resources/stories', {
+      title: 'Testimonials from Happy Free Code Camp Students ' +
+        'who got Software Engineer Jobs',
+      stories: testimonials,
+      moreStories: false
+    });
+  }
+
   function submitCatPhoto(req, res) {
     res.send('Submitted!');
   }
@@ -190,29 +233,9 @@ module.exports = function(app) {
     });
   }
 
-  function jobsForm(req, res) {
-    res.render('resources/jobs-form', {
-      title: 'Employer Partnership Form for Job Postings,' +
-        ' Recruitment and Corporate Sponsorships'
-    });
-  }
-
-  function catPhotoSubmit(req, res) {
-    res.send(
-      'Success! You have submitted your cat photo. Return to your website ' +
-      'by typing any letter into your code editor.'
-    );
-  }
-
-  function sponsors(req, res) {
-    res.render('sponsors/sponsors', {
-      title: 'The Sponsors who make Free Code Camp Possible'
-    });
-  }
-
   function nonprofits(req, res) {
     res.render('resources/nonprofits', {
-      title: 'A guide to our Nonprofit Projects'
+      title: 'Your Nonprofit Can Get Pro Bono Code'
     });
   }
 
@@ -247,7 +270,7 @@ module.exports = function(app) {
           return next(err);
         }
         user.sendMonthlyEmail = false;
-        user.save(function () {
+        user.save(function() {
           if (err) {
             return next(err);
           }
@@ -302,7 +325,7 @@ module.exports = function(app) {
             secrets.github.clientSecret
           ].join(''),
           githubHeaders,
-          function (err, status2, issues) {
+          function(err, status2, issues) {
             if (err) { return next(err); }
             issues = ((pulls === parseInt(pulls, 10)) && issues) ?
             Object.keys(JSON.parse(issues)).length - pulls :
@@ -336,7 +359,7 @@ module.exports = function(app) {
       'https://www.googleapis.com/blogger/v3/blogs/2421288658305323950/' +
         'posts?key=' +
       secrets.blogger.key,
-      function (err, status, blog) {
+      function(err, status, blog) {
         if (err) { return next(err); }
 
         blog = (status && status.statusCode === 200) ?

@@ -4,22 +4,24 @@
 
 [![Join the chat at https://gitter.im/freecodecamp/freecodecamp](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/freecodecamp/freecodecamp?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-Welcome to Free Code Camp's open source codebase!
+Welcome to Free Code Camp's open source codebase and curriculum!
 =======================
 
-Free Code Camp is an open-source community of busy people who learn to code and build projects for nonprofits.
+Free Code Camp is an open-source community where you learn to code and help nonprofits.
 
-Our campers (students) start by working through our free, self-paced, browser-based curriculum. Next, they build several practice projects. Finally, we pair two campers together with a stakeholder from a nonprofit organization, and help them build the solution the nonprofit has requested.
+You start by working through our self-paced, browser-based full stack JavaScript curriculum. 
+
+After you complete the first 400 hours worth of challenges (which involves building 10 single-page apps), you'll earn your Front End Development Certification.
+
+After you complete the second 400 hours worth of challenges (which involves building and deploying 5 full stack apps), you'll earn your Full Stack Development Certification.
+
+Then we'll pair you with another camper, an agile project manager, and a stakeholder from a nonprofit organization. Together, you'll plan and build an app that helps that nonprofit carry out its mission more effectively.
 
 **We help our campers build job-worthy portfolios of real apps used by real people, while helping nonprofits.**
 
-80% of our campers are over 25, and nearly a fifth of our campers are women.
-
-This code is running live at [FreeCodeCamp.com](http://www.FreeCodeCamp.com). We also have [Gitter](https://gitter.im/FreeCodeCamp/FreeCodeCamp), a [blog](http://blog.freecodecamp.com), and even a [Twitch.tv channel](http://twitch.tv/freecodecamp).
+This code is running live at [FreeCodeCamp.com](http://www.FreeCodeCamp.com). We also have [Gitter](https://gitter.im/FreeCodeCamp/FreeCodeCamp), a [Medium publication](http://medium.freecodecamp.com), and even a [Twitch.tv channel](http://twitch.tv/freecodecamp).
 
 [Join our community here](http://www.freecodecamp.com/signin).
-
-*Note: We're currently very close to moving from Express to Loopback. As such, please keep in mind that the instructions here for setting up and running the project do not directly translate to the staging branch. Additionally, the file structure is quite a bit different. As always, the staging branch is the appropriate place to branch off of to fix/add something.*
 
 Wiki
 ------------
@@ -54,22 +56,26 @@ The easiest way to get started is to clone the repository:
 # Get the latest snapshot
 git clone --depth=1 https://github.com/freecodecamp/freecodecamp.git freecodecamp
 
+# Change directory
 cd freecodecamp
 
 # Install NPM dependencies
 npm install
+
+# Install Gulp globally
+npm install -g gulp
+
+# Install Bower globally
+npm install -g bower
 
 # Install Bower dependencies
 bower install
 
 # Create a .env file and populate it with the necessary API keys and secrets:
 touch .env
-
-# Install Gulp globally
-npm install -g gulp
 ```
 
-Edit your `.env` file with the following API keys accordingly (if you only use email login, only the `MONGOHQ_URL`, `SESSION_SECRET`, `MANDRILL_USER` and `MANDRILL_PASSWORD` fields are necessary. Keep in mind if you want to use more services you'll have to get your own API keys for those services.
+Edit your `.env` file with the following API keys accordingly. If you only use email login, only the `MONGOHQ_URL`, `SESSION_SECRET`, `MANDRILL_USER` and `MANDRILL_PASSWORD` fields are necessary. Keep in mind if you want to use more services you'll have to get your own API keys for those services. If you only use a subset or no OAuth2 authentication methods, you may want to remove them from ```server/passport-providers.js``` - otherwise the server will complain about missing clientIDs at launch.
 
 ```
 MONGOHQ_URL='mongodb://localhost:27017/freecodecamp'
@@ -107,20 +113,20 @@ DEBUG=true
 ```
 
 ```bash
-# Start the mongo server
+# Start the mongo server in a seperate terminal
 mongod
 
-# Create your mongo database.
-# Type "mongo" in your terminal to access the mongo shell
-use freecodecamp
-# Exit the mongo shell with control + d
-
-# Seed your database with the challenges
-node seed/
+# Initialize Free Code Camp
+# This will seed the database for the first time.
+# This command should only be run once.
+npm run first-time
 
 # start the application
 gulp
 ```
+Now navigate to your browser and open http://localhost:3001
+If the app loads, congratulations - you're all set. Otherwise, let us know by opening a GitHub issue and with your error.
+
 
 License
 -------

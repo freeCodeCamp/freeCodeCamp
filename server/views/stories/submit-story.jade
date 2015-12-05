@@ -1,17 +1,19 @@
 .spacer
 .col-xs-12
     script.
-        var storyURL = !{JSON.stringify(storyURL)};
-        var storyTitle = !{JSON.stringify(storyTitle)};
-        var storyImage = !{JSON.stringify(storyImage)};
-        var storyMetaDescription = !{JSON.stringify(storyMetaDescription)};
+      var main = window.main || { init: [] };
+      main.storyURL = !{JSON.stringify(storyURL)};
+      main.storyTitle = !{JSON.stringify(storyTitle)};
+      main.storyImage = !{JSON.stringify(storyImage)};
+      main.storyMetaDescription = !{JSON.stringify(storyMetaDescription)};
+
     form.form-horizontal.control-label-story-submission#story-submission-form(name="submitStory")
         .col-xs-12
             .form-group
                 .col-xs-12.col-md-1
                     label.control-label.control-label-story-submission(for='name') Link
                 .col-xs-12.col-md-11
-                    input#story-url.form-control(placeholder='Paste your link here', name='Link')
+                    input#story-url.form-control(name='Link', ng-model='submitStory.url', disabled="disabled", ng-init='submitStory.url="#{storyURL}"')
             .form-group
                 .col-xs-12.col-md-1
                     label.control-label.control-label-story-submission(for='name') Title
