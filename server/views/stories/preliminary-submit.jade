@@ -1,53 +1,53 @@
 .col-xs-12
     div
-        form.input-group(name='URLSubmit')
-                input#story-url.big-text-field.field-responsive.form-control(placeholder='Paste your link here', name='link', type='url', required='required', autofocus)
-                span.input-group-btn
-                    button#preliminary-story-submit.btn.btn-big.btn-primary.btn-responsive(type='button') Submit
-        div
-            alert(type='danger')
-                span.ion-close-circled
-                | Please enter a valid URL format (http://www.example.com/).
+        form.input-group(id='URLSubmit' name='URLSubmit')
+            input#story-url.big-text-field.field-responsive.form-control(placeholder='Paste your link here', name='link', type='url', required, autofocus)
+            span.input-group-btn
+                button#preliminary-story-submit.btn.btn-big.btn-primary.btn-responsive(type='submit') Submit
     .spacer
 
     script.
-            $('#story-url').on('keypress', function(e) {
-                if (e.which === 13 || e === 13) {
-                    $('#preliminary-story-submit').click();
-                }
-            });
-            var preliminaryStorySubmit = function preliminaryStorySubmit() {
+      $('#story-url').on('keypress', function(e) {
+        if (e.keyCode === 13) {
+          $('#preliminary-story-submit').click();
+        }
+      });
+      function preliminaryStorySubmit(e) {
+        if (!$('#URLSubmit')[0].checkValidity()) {
+          return null;
+        }
+        e.preventDefault();
 
-                var storyURL = $('#story-url').val();
-                $('#preliminary-story-submit').attr('disabled', 'disabled');
+          var storyURL = $('#story-url').val();
+          $('#preliminary-story-submit').attr('disabled', 'disabled');
 
-                $.post('/stories/preliminary',
-                {
-                    data: {
-                        url: storyURL
-                    }
-                })
-                .fail(function (xhr, textStatus, errorThrown) {
-                    $('#preliminary-story-submit').attr('disabled', false);
-                })
-                .done(function (data, textStatus, xhr) {
-                    if (data.alreadyPosted) {
-                        window.location = data.storyURL;
-                    } else {
-                        window.location = '/stories/submit/new-story?url=' +
-                        encodeURIComponent(data.storyURL) +
-                        '&title=' + encodeURIComponent(data.storyTitle) +
-                        '&image=' + encodeURIComponent(data.storyImage) +
-                        '&description=' + encodeURIComponent(data.storyMetaDescription);
-                    }
-                });
-            }
-            $('#preliminary-story-submit').on('click', preliminaryStorySubmit);
+          $.post('/stories/preliminary',
+          {
+              data: {
+                  url: storyURL
+              }
+          })
+          .fail(function (xhr, textStatus, errorThrown) {
+              $('#preliminary-story-submit').attr('disabled', false);
+          })
+          .done(function (data, textStatus, xhr) {
+              if (data.alreadyPosted) {
+                  window.location = data.storyURL;
+              } else {
+                  window.location = '/stories/submit/new-story?url=' +
+                  encodeURIComponent(data.storyURL) +
+                  '&title=' + encodeURIComponent(data.storyTitle) +
+                  '&image=' + encodeURIComponent(data.storyImage) +
+                  '&description=' + encodeURIComponent(data.storyMetaDescription);
+              }
+          });
+      }
 
+      $('#preliminary-story-submit').on('click', preliminaryStorySubmit);
 
-            arr = $( "h3 input:checked" )
-                .map(function() {
-                return this.id;
-            })
-            .get()
-            .join('&');
+      arr = $( "h3 input:checked" )
+        .map(function() {
+          return this.id;
+        })
+        .get()
+        .join('&');

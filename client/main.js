@@ -190,6 +190,10 @@ $(document).ready(function() {
 
   var storySubmitButtonHandler = function storySubmitButtonHandler() {
 
+    if (!$('#story-submission-form')[0].checkValidity()) {
+      return null;
+    }
+
     var link = $('#story-url').val();
     var headline = $('#story-title').val();
     var description = $('#description-box').val();
