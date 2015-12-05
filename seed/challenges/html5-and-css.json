@@ -660,7 +660,7 @@
       "descriptionRu": [],
       "nameEs": "Establecer la familia del tipo de letra de un elemento",
       "descriptionEs": [
-        "Puede establecer el tipo de letra de un elemento usando la propiedad <code>font-family</code>.",
+        "Puedes establecer el tipo de letra de un elemento usando la propiedad <code>font-family</code>.",
         "Por ejemplo, si quiere establecer el tipo de letra de su elemento <code>h2</code> como <code>Sans-serif</code>, use el siguiente CSS:",
         "<code>h2 {</code>",
         "<code>&nbsp;&nbsp;font-family: Sans-serif;</code>",
@@ -2257,7 +2257,7 @@
       "descriptionRu": [],
       "nameEs": "Crea un Conjunto de botones de radio",
       "descriptionEs": [
-        "Puede usar <code>botones de radio</code> para las preguntas en las que desea que el usuario sólo le de una de varias posibles respuestas.",
+        "Puedes usar <code>botones de radio</code> para las preguntas en las que desea que el usuario sólo le de una de varias posibles respuestas.",
         "Los botones de radio son un tipo de <code>input</code>",
         "Cada uno de los botones de radio debe estar anidado dentro de su propio elemento <code>label</​​code>.",
         "Todos los botones de radio relacionados deben tener el mismo atributo <code>name</code>.",
@@ -3753,7 +3753,7 @@
       "nameEs": "Anula todos los demás estilos utilizando Important",
       "descriptionEs": [
         "¡Hurra! Demostramos que los estilos en línea anularán todas las declaraciones CSS de tu elemento <code>style</code>. ",
-        "Pero espera. Hay una última forma de anular CSS. Este es el método más poderoso de todos. Pero antes de hacerlo, vamos a hablar de por qué puedes querer anular CSS. ",
+        "¡Pero espera! Hay una última forma de anular CSS. Este es el método más poderoso de todos. Pero antes de hacerlo, vamos a hablar de por qué puedes querer anular CSS. ",
         "En muchas situaciones, usarás bibliotecas CSS. Estas pueden anular accidentalmente tu propio CSS. Por eso, cuando necesitas estar seguro de que un elemento tiene un CSS específico puedes usar <code>!important</code>",
         "Regresemos a nuestra declaración de clase <code>pink-text</code>. Recuerda que nuestra clase <code>pink-text</code> fue anulada por declaraciones de clases posteriores, declaraciones id, y estilos en línea. ",
         "Vamos a añadir la palabra clave <code>!important</code> a tu declaración del color de <code>pink-text</code> para estar 100% seguros que tu elemento <code>h1</code> será rosado.",
