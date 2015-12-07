@@ -109,6 +109,7 @@ module.exports = function(app) {
 
   const challengesQuery = {
     order: [
+      'superOrder ASC',
       'order ASC',
       'suborder ASC'
     ]

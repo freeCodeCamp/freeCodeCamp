@@ -1,6 +1,6 @@
+/* eslint-disable no-self-compare */
 var fs = require('fs');
 var path = require('path');
-
 
 function getFilesFor(dir) {
   return fs.readdirSync(path.join(__dirname, '/' + dir))
@@ -27,13 +27,33 @@ function getFilesFor(dir) {
     }, []);
 }
 
+function getSupOrder(filePath) {
+  var order = parseInt((filePath || '').split('-')[0], 10);
+  // check for NaN
+  if (order !== order) {
+    return 0;
+  }
+  return order;
+}
+
+function getSupName(filePath) {
+  var order = parseInt((filePath || '').split('-')[0], 10);
+  // check for NaN
+  if (order !== order) {
+    return filePath;
+  }
+
+  return (filePath || '').split('-').splice(1).join('-');
+}
+
 module.exports = function getChallenges() {
   try {
     return getFilesFor('challenges')
       .map(function(data) {
         var challengeSpec = require('./challenges/' + data.file);
         challengeSpec.fileName = data.file;
-        challengeSpec.superBlock = data.superBlock;
+        challengeSpec.superBlock = getSupName(data.superBlock);
+        challengeSpec.superBlockOrder = getSupOrder(data.superBlock);
 
         return challengeSpec;
       });

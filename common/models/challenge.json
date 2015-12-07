@@ -36,6 +36,10 @@
       "type": "string",
       "description": "Used for ordering challenge blocks in map"
     },
+    "superBlockOrder": {
+      "type": "number",
+      "description": "Used to determine superBlock order, set by prepending two digit number to super block folder name"
+    },
     "block": {
       "type": "string"
     },
