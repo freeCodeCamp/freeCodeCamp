@@ -280,7 +280,12 @@ module.exports = function(app) {
     debug('looking for %s', testChallengeName);
     challenge$
       .filter((challenge) => {
-        return testChallengeName.test(challenge.name);
+        return testChallengeName.test(challenge.name) &&
+          (
+            isDev ||
+            !challenge.isComingSoon ||
+            (isBeta && challenge.isBeta)
+          );
       })
       .last({ defaultValue: null })
       .flatMap(challenge => {
