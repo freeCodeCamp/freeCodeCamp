@@ -3,6 +3,50 @@
   "order": 8,
   "time": "50h",
   "challenges": [
+      {
+      "id": "bd7158d2c442eddfbeb5bd1f",
+      "title": "Get Set for Bonfires",
+      "challengeSeed": [],
+      "description": [
+        [
+          "http://i.imgur.com/sJkp30a.png",
+          "An image of our a Bonfire challenge showing directions, tests, and the code editor.",
+          "Bonfires are algorithm challenges that teach you how to think like a programmer.",
+          ""
+        ],
+        [
+          "http://i.imgur.com/d8LuRNh.png",
+          "A mother bird kicks a baby bird out of her nest.",
+          "Our Waypoint challenges merely introduced you to programming concepts. For our Bonfire challenges, you'll now need to apply what you learned to solve open-ended problems.",
+          ""
+        ],
+        [
+          "http://i.imgur.com/WBetuBa.jpg",
+          "A programmer punching through his laptop screen in frustration.",
+          "Bonfires are hard. It takes most campers several hours to solve each Bonfire. You will get frustrated. But don't quit.",
+          ""
+        ],
+        [
+          "http://i.imgur.com/5pAl7TV.jpg",
+          "A beagle winking and pointing his paw at you.",
+          "When you get stuck, just use the Read-Search-Ask methodology.<br>Don't worry - you've got this.",
+          ""
+        ]
+      ],
+      "type": "Waypoint",
+      "challengeType": 7,
+      "tests": [],
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "Prepárate para los Ziplines",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
+    },
     {
       "id": "ad7123c8c441eddfaeb5bdef",
       "title": "Meet Bonfire",
