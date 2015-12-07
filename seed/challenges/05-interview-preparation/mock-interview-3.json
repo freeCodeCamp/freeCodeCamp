@@ -1,11 +1,12 @@
 {
-  "name": "Legacy Nonprofit Project 1",
-  "order": 3,
-  "time": "5m",
+  "name": "Mock Interview 3",
+  "order": 5,
+  "isComingSoon": true,  
+  "time": "2h",
   "challenges": [
     {
-      "id": "561add10cd82ad38a17513b3",
-      "title": "Legacy Nonprofit Project 1",
+      "id": "561add10cd82ad37a17523b3",
+      "title": "Mock Interview 3",
       "challengeSeed": [
         {
           "properties": ["isHonest", "isFrontEndCert"],

@@ -1,11 +1,12 @@
 {
-  "name": "Greenfield Nonprofit Project 1",
-  "order": 1,
-  "time": "5m",
+  "name": "Legacy Nonprofit Project 1",
+  "order": 3,
+  "isComingSoon": true,  
+  "time": "200h",
   "challenges": [
     {
-      "id": "561add10cc82ac38a17513be",
-      "title": "Greenfield Nonprofit Project 1",
+      "id": "561add10cd82ad38a17513b3",
+      "title": "Legacy Nonprofit Project 1",
       "challengeSeed": [
         {
           "properties": ["isHonest", "isFrontEndCert"],

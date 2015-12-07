@@ -1,7 +1,8 @@
 {
   "name": "Mock Interview 1",
-  "order": 1,
-  "time": "5m",
+  "order": 3,
+  "isComingSoon": true,
+  "time": "2h",
   "challenges": [
     {
       "id": "561add10cd82ad37a17513b4",
