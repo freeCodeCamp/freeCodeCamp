@@ -1,6 +1,7 @@
 {
   "name": "API Projects",
   "order": 20,
+  "isComingSoon": true,
   "time": "100h",
   "challenges": [
     {

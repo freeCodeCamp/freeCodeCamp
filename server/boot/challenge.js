@@ -518,9 +518,11 @@ module.exports = function(app) {
           return sum;
         }, 0);
         const isBeta = _.every(blockArray, 'isBeta');
+        const isComingSoon = _.every(blockArray, 'isComingSoon');
 
         return {
           isBeta,
+          isComingSoon,
           name: blockArray[0].block,
           superBlock: blockArray[0].superBlock,
           dashedName: dasherize(blockArray[0].block),
