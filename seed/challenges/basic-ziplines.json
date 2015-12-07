@@ -9,6 +9,18 @@
       "challengeSeed": [],
       "description": [
         [
+          "http://i.imgur.com/OAD6SJz.png",
+          "An image of a Simon game, one our Zipline projects.",
+          "Ziplines are front end development projects that will give you a chance to apply the front end skills you've developed up to this point. We'll use a popular browser-based code editor called CodePen.",
+          ""
+        ],
+        [
+          "http://i.imgur.com/WBetuBa.jpg",
+          "A programmer punching through his laptop screen in frustration.",
+          "Ziplines are hard. It takes most campers several days to build each Zipline. You will get frustrated. But don't quit. This gets easier with practice.",
+          ""
+        ],
+        [
           "http://i.imgur.com/6WLULsC.gif",
           "A gif showing how to create a Codepen account.",
           "For our front end Zipline challenges, we'll use a popular browser-based code editor called CodePen. Open CodePen and click \"Sign up\" in the upper right hand corner, then scroll down to the free plan and click \"Sign up\" again. Click the \"Use info from GitHub button\", then add your email address and create a password. Click the \"Sign up\" button. Then in the upper right hand corner, click \"New pen\".",
