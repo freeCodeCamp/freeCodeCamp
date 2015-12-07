@@ -1,11 +1,12 @@
 {
-  "name": "Legacy Nonprofit Project 2",
-  "order": 4,
-  "time": "5m",
+  "name": "Critical Thinking Interview Prep",
+  "order": 2,
+  "time": "35h",
+  "isComingSoon": true,
   "challenges": [
     {
-      "id": "561add10cd82ad38a17513be",
-      "title": "Legacy Nonprofit Project 2",
+      "id": "561add10cd82ad31a17513be",
+      "title": "Critical Thinking Interview Prep",
       "challengeSeed": [
         {
           "properties": ["isHonest", "isFrontEndCert"],

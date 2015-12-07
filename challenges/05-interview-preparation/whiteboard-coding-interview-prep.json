@@ -1,11 +1,12 @@
 {
-  "name": "Mock Interview 3",
+  "name": "Whiteboard Coding Interview Prep",
   "order": 1,
-  "time": "5m",
+  "isComingSoon": true,
+  "time": "35h",
   "challenges": [
     {
-      "id": "561add10cd82ad37a17523b3",
-      "title": "Mock Interview 3",
+      "id": "561add10cd82ad37a17513be",
+      "title": "Whiteboard Coding Interview Prep",
       "challengeSeed": [
         {
           "properties": ["isHonest", "isFrontEndCert"],

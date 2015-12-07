@@ -1,11 +1,12 @@
 {
-  "name": "Critical Thinking Interview Prep",
-  "order": 1,
+  "name": "Claim Your Full Stack Development Certificate",
+  "order": 5,
+  "isComingSoon": true,  
   "time": "5m",
   "challenges": [
     {
-      "id": "561add10cd82ad31a17513be",
-      "title": "Critical Thinking Interview Prep",
+      "id": "561add10cb82ac38a17514be",
+      "title": "Claim Your Front End Development Certificate",
       "challengeSeed": [
         {
           "properties": ["isHonest", "isFrontEndCert"],
@@ -14,6 +15,30 @@
         }
       ],
       "description": [
+        [
+          "http://i.imgur.com/syJxavV.jpg",
+          "An image of our Front End Development Certificate",
+          "This challenge will give you your verified Front End Development Certificate. Before we issue your certificate, we must verify that you have completed all of our basic and intermediate Bonfires, and all our basic and intermediate Ziplines. You must also accept our Academic Honesty Pledge. Click the button below to start this process.",
+          ""
+        ],
+        [
+          "http://i.imgur.com/HArFfMN.jpg",
+          "The definition of plagiarism: Plagiarism (noun) - copying someone else’s work and presenting it as your own without crediting them",
+          "By clicking below, you pledge that all of your submitted code A) is code you or your pair personally wrote, or B) comes from open source libraries like jQuery, or C) has been clearly attributed to its original authors. You also give us permission to audit your challenge solutions and revoke your certificate if we discover evidence of plagiarism.",
+          "#"
+        ],
+        [
+          "http://i.imgur.com/14F2Van.jpg",
+          "An image of the text \"Front End Development Certificate requirements\"",
+          "Let's confirm that you have completed all of our basic and intermediate Bonfires, and all our basic and intermediate Ziplines. Click the button below to verify this.",
+          "#"
+        ],
+        [
+          "http://i.imgur.com/16SIhHO.jpg",
+          "An image of the word \"Congratulations\"",
+          "Congratulations! We've added your Front End Development Certificate to your certificate to your portfolio page. Unless you choose to hide your solutions, this certificate will remain publicly visible and verifiable.",
+          ""
+        ]
       ],
       "type": "Waypoint",
       "challengeType": 7,
@@ -219,6 +244,30 @@
       "descriptionRu": [],
       "nameEs": "Reclama tu certificado de desarrollo Front End",
       "descriptionEs": [
+        [
+          "http://i.imgur.com/syJxavV.jpg",
+          "Una imagen que muestra nuestro certificado de desarrollo Front End",
+          "Este desafío te otorga tu certificado autenticado de desarrollo Front End. Antes de que podamos emitir tu certificado, debemos verificar que has completado todos los Bonfires básicos e intermedios, y todos los Ziplines básicos e intermedios. También debes aceptar nuestro Juramento de honestidad académica. Pulsa el botón siguiente para iniciar este proceso.",
+          ""
+        ],
+        [
+          "http://i.imgur.com/HArFfMN.jpg",
+          "Plagio (nombre): acción y efecto de plagiar. Plagiar (verbo) - copiar en lo sustancial obras ajenas, dándolas como propias.",
+          "Al pulsar el botón siguiente, juras que todo el código en tus soluciones a los desafíos A) es código que tú o tu compañero escribieron personalmente, o B) proviene de librerías de código abierto como jQuery, o C) ha sido claramente atribuido a sus autores originales. También nos otorgas el permiso para auditar tus soluciones a los desafíos y revocar tu certificado si encontramos evidencia de plagio.",
+          "#"
+        ],
+        [
+          "http://i.imgur.com/14F2Van.jpg",
+          "Una imagen del texto \"Front End Development Certificate requirements\"",
+          "Confirmemos que has completado todos nuestros Bonfires básicos e intermedios, y todos nuestros Ziplines básicos e intermedios. Pulsa el botón siguiente para hacer la verificación.",
+          "#"
+        ],
+        [
+          "http://i.imgur.com/16SIhHO.jpg",
+          "Una imagen de la palabra \"Congratulations\"",
+          "¡Felicitaciones! Hemos agregado tu Certificado de desarrollo Front End a tu portafolio. A menos que elijas no mostrar tus soluciones, este certificado será públicamente visible y verificable.",
+          ""
+        ]
         ],
       "namePt": "",
       "descriptionPt": []

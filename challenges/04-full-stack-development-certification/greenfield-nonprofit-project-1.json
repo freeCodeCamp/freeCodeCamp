@@ -1,11 +1,12 @@
 {
-  "name": "Greenfield Nonprofit Project 2",
-  "order": 2,
-  "time": "5m",
+  "name": "Greenfield Nonprofit Project 1",
+  "order": 1,
+  "isComingSoon": true,  
+  "time": "200h",
   "challenges": [
     {
-      "id": "561add10cc82ad38a17513be",
-      "title": "Greenfield Nonprofit Project 2",
+      "id": "561add10cc82ac38a17513be",
+      "title": "Greenfield Nonprofit Project 1",
       "challengeSeed": [
         {
           "properties": ["isHonest", "isFrontEndCert"],
