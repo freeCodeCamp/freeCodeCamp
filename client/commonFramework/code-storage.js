@@ -13,7 +13,7 @@ window.common = (function(global) {
         !key ||
         typeof key !== 'string'
       ) {
-        console.log('unable to save to storage');
+        console.log('unable to read from storage');
         return '';
       }
       return '' + localStorage.getItem(key + 'Val');
