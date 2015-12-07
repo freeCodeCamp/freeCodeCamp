@@ -53,7 +53,7 @@ module.exports = function getChallenges() {
         var challengeSpec = require('./challenges/' + data.file);
         challengeSpec.fileName = data.file;
         challengeSpec.superBlock = getSupName(data.superBlock);
-        challengeSpec.superBlockOrder = getSupOrder(data.superBlock);
+        challengeSpec.superOrder = getSupOrder(data.superBlock);
 
         return challengeSpec;
       });

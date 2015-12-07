@@ -18,8 +18,9 @@ destroy()
     var order = challengeSpec.order;
     var block = challengeSpec.name;
     var superBlock = challengeSpec.superBlock;
-    var superBlockOrder = challengeSpec.superBlockOrder;
+    var superOrder = challengeSpec.superOrder;
     var isBeta = !!challengeSpec.isBeta;
+    var isComingSoon = !!challengeSpec.isComingSoon;
     var fileName = challengeSpec.fileName;
     console.log('parsed %s successfully', block);
 
@@ -46,8 +47,9 @@ destroy()
         challenge.suborder = index + 1;
         challenge.block = block;
         challenge.isBeta = challenge.isBeta || isBeta;
+        challenge.isComingSoon = challenge.isComingSoon || isComingSoon;
         challenge.time = challengeSpec.time;
-        challenge.superBlockOrder = superBlockOrder;
+        challenge.superOrder = superOrder;
         challenge.superBlock = superBlock
           .split('-')
           .map(function(word) {
