@@ -148,7 +148,6 @@ module.exports = function(app) {
       superBlock: blockArray[0].superBlock
     }))
     .filter(({ superBlock }) => {
-      console.log('sup', superBlock);
       return challengesRegex.test(superBlock);
     })
     .groupBy(block => block.superBlock)
