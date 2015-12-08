@@ -16,7 +16,7 @@ window.common = (function(global) {
       common.challengeName + ', Time: ' + time + ', Attempts: ' + 0
     );
 
-    var bonfireSolution = common.editor.getValue();
+    var solution = common.editor.getValue();
     var didCompleteWith = $('#completed-with').val() || null;
 
     $('#complete-courseware-dialog').modal('show');
@@ -46,23 +46,20 @@ window.common = (function(global) {
           next();
         });
 
-      $.post(
-        '/completed-bonfire/', {
-          challengeInfo: {
-            challengeId: common.challengeId,
-            challengeName: common.challengeName,
-            completedWith: didCompleteWith,
-            challengeType: common.challengeType,
-            solution: bonfireSolution
-          }
-        },
-        function(res) {
-          if (res) {
-            window.location =
-              '/challenges/next-challenge?id=' + common.challengeId;
-          }
+      const data = {
+        id: common.challengeId,
+        name: common.challengeName,
+        completedWith: didCompleteWith,
+        challengeType: common.challengeType,
+        solution
+      };
+
+      $.post('/completed-challenge/', data, function(res) {
+        if (res) {
+          window.location =
+            '/challenges/next-challenge?id=' + common.challengeId;
         }
-      );
+      });
     });
   };
 

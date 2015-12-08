@@ -41,28 +41,12 @@ const challengeView = {
   7: 'coursewares/showStep'
 };
 
-/*
-function makeChallengesUnique(challengeArr) {
-  // clone and reverse challenges
-  // then filter by unique id's
-  // then reverse again
-  return _.uniq(challengeArr.slice().reverse(), 'id').reverse();
-}
-*/
 function numberWithCommas(x) {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 }
 
 function updateUserProgress(user, challengeId, completedChallenge) {
   let { completedChallenges } = user;
-
-  // migrate user challenges object to remove
-  /* if (!user.isUniqMigrated) {
-    user.isUniqMigrated = true;
-
-    completedChallenges = user.completedChallenges =
-      makeChallengesUnique(completedChallenges);
-  }*/
 
   const indexOfChallenge = _.findIndex(completedChallenges, {
     id: challengeId
@@ -152,11 +136,6 @@ module.exports = function(app) {
     '/completed-zipline-or-basejump',
     send200toNonUser,
     completedZiplineOrBasejump
-  );
-  router.post(
-    '/completed-bonfire',
-    send200toNonUser,
-    completedBonfire
   );
 
   router.get('/map', challengeMap);
@@ -342,95 +321,25 @@ module.exports = function(app) {
       );
   }
 
-  function completedBonfire(req, res, next) {
-    debug('compltedBonfire');
-    var completedWith = req.body.challengeInfo.completedWith || false;
-    var challengeId = req.body.challengeInfo.challengeId;
-
-    var challengeData = {
-      id: challengeId,
-      name: req.body.challengeInfo.challengeName || '',
-      completedDate: Math.round(+new Date()),
-      solution: req.body.challengeInfo.solution,
-      challengeType: 5
-    };
-
-    observeQuery(
-        User,
-        'findOne',
-        { where: { username: ('' + completedWith).toLowerCase() } }
-      )
-      .doOnNext(function(pairedWith) {
-        debug('paired with ', pairedWith);
-        if (pairedWith) {
-          updateUserProgress(
-            pairedWith,
-            challengeId,
-            assign({ completedWith: req.user.id }, challengeData)
-          );
-        }
-      })
-      .withLatestFrom(
-        Observable.just(req.user),
-        function(pairedWith, user) {
-          return {
-            user: user,
-            pairedWith: pairedWith
-          };
-        }
-      )
-      // side effects should always be done in do's and taps
-      .doOnNext(function(dats) {
-        updateUserProgress(
-          dats.user,
-          challengeId,
-          dats.pairedWith ?
-            // paired programmer found and adding to data
-            assign({ completedWith: dats.pairedWith.id }, challengeData) :
-            // user said they paired, but pair wasn't found
-            challengeData
-        );
-      })
-      // iterate users
-      .flatMap(function(dats) {
-        debug('flatmap');
-        return Observable.from([dats.user, dats.pairedWith]);
-      })
-      // save user
-      .flatMap(function(user) {
-        // save user will do nothing if user is falsey
-        return saveUser(user);
-      })
-      .subscribe(
-        function(user) {
-          debug('onNext');
-          if (user) {
-            debug('user %s saved', user.username);
-          }
-        },
-        next,
-        function() {
-          debug('completed');
-          return res.status(200).send(true);
-        }
-      );
-  }
-
   function completedChallenge(req, res, next) {
 
     const completedDate = Math.round(+new Date());
-    const { id, name } = req.body;
-    const { challengeId, challengeName } = req.body.challengeInfo || {};
+    const {
+      id,
+      name,
+      challengeType,
+      solution
+    } = req.body;
 
     updateUserProgress(
       req.user,
-      id || challengeId,
+      id,
       {
-        id: id || challengeId,
-        completedDate: completedDate,
-        name: name || challengeName || '',
-        solution: null,
-        githubLink: null,
+        id,
+        challengeType,
+        solution,
+        name,
+        completedDate,
         verified: true
       }
     );

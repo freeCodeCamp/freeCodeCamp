@@ -78,14 +78,10 @@ window.common = (function(global) {
         var publicURL = $('#public-url').val() || null;
         var githubURL = $('#github-url').val() || null;
         switch (common.challengeType) {
-          case common.challengeTypes.HTML:
-          case common.challengeTypes.JS:
           case common.challengeTypes.VIDEO:
             data = {
-              challengeInfo: {
-                challengeId: common.challengeId,
-                challengeName: common.challengeName
-              }
+              id: common.challengeId,
+              name: common.challengeName
             };
             $.post('/completed-challenge/', data)
               .success(function(res) {

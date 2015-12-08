@@ -169,12 +169,10 @@ window.common = (function({ $, common = { init: [] }}) {
     });
 
     $.post(
-      '/completed-bonfire/', {
-        challengeInfo: {
-          challengeId: common.challengeId,
-          challengeName: common.challengeName,
-          challengeType: common.challengeType
-        }
+      '/completed-challenge/', {
+        id: common.challengeId,
+        name: common.challengeName,
+        challengeType: common.challengeType
       },
       function(res) {
         if (res) {
