@@ -1,0 +1,29 @@
+{
+  "name": "SASS",
+  "order": 18,
+  "isComingSoon": true,
+  "time": "5h",
+  "challenges": [
+    {
+      "id": "bd7158d8c423ede2aeb5bdee",
+      "title": "Learn SASS Challenges",
+      "challengeSeed": [],
+      "description": [
+      ],
+      "type": "waypoint",
+      "challengeType": 3,
+      "tests": [],
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "Crea una aplicación de votaciones",
+      "descriptionEs": [
+        ],
+      "namePt": "",
+      "descriptionPt": []
+    }
+  ]
+}
