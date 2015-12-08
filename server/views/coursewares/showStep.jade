@@ -16,11 +16,11 @@ block content
                                 .col-sm-5.hidden-xs &nbsp;
                             else
                                 .btn.btn-warning.col-sm-5.col-xs-12.challenge-step-btn-prev(id='#{index - 1}') Go to my previous step
-                            .challenge-step-counter.large-p.col-sm-2.col.xs-12.text-center (#{index + 1} / #{description.length})
+                            .challenge-step-counter.large-p.col-sm-2.col-xs-12.text-center (#{index + 1} / #{description.length})
                             if index + 1 === description.length
                                 .btn.btn-primary.col-sm-5.col-xs-12.challenge-step-btn-finish(id='last' class=step[3] ? 'disabled' : '') Finish challenge
                             else
-                                .btn.btn-primary.col-sm-5.col-xs-6.challenge-step-btn-next(id='#{index}' class=step[3] ? 'disabled' : '') Go to my next step
+                                .btn.btn-primary.col-sm-5.col-xs-12.challenge-step-btn-next(id='#{index}' class=step[3] ? 'disabled' : '') Go to my next step
                         .clearfix
     #challenge-step-modal.modal(tabindex='-1')
         .modal-dialog.animated.fadeIn.fast-animation
