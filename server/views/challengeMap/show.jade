@@ -45,63 +45,77 @@ block content
                 .row
                     .col-xs-12.col-sm-8.col-sm-offset-2
                         h3 800 Hours of Practice:
-                ol
-                    for challengeBlock in blocks
-                        .row
-                            if (user)
-                                if (challengeBlock.completed === 100)
-                                    .hidden-xs.col-sm-3.col-md-2.text-primary.ion-checkmark-circled.padded-ionic-icon.text-center.map-p.negative-10
-                                    .col-xs-12.col-sm-9.col-md-10
-                                        li.map-p.faded.negative-10
-                                            a(href='#' + challengeBlock.dashedName)= challengeBlock.name
-                                            if challengeBlock.markNew
-                                                span.text-danger.small &thinsp; &thinsp;
-                                                    strong
-                                                        em NEW
-                                else
-                                    .hidden-xs.col-sm-3.col-md-2
-                                        .progress.progress-bar-padding.text-center.thin-progress-bar
-                                            .progress-bar(role='progressbar', aria-valuenow=(challengeBlock.completed), aria-valuemin='0', aria-valuemax='100', style='width: ' + challengeBlock.completed + '%;')
-                                    .col-xs-12.col-sm-9.col-md-10
-                                        li.map-p.negative-10
-                                            a(href='#' + challengeBlock.dashedName)= challengeBlock.name
-                                            if challengeBlock.markNew
-                                                span.text-danger.small &thinsp; &thinsp;
-                                                    strong
-                                                        em NEW
-                            else
-                                .hidden-xs.col-sm-3.col-md-2
-                                    span.negative-10
-                                .col-xs-12.col-sm-9.col-md-10
-                                    li.map-p.negative-10
+                - var i = 0
+                for challengeBlock in blocks
+                    - i++
+                    .row
+                        if (user)
+                            if (challengeBlock.completed === 100)
+                                .hidden-xs.col-sm-3.col-md-2.text-primary.ion-checkmark-circled.padded-ionic-icon.text-center.map-p.negative-10
+                                .col-xs-1.col-sm-1.col-md-1.map-row-numbers
+                                    span.map-p.negative-10  #{i}.
+                                .col-xs-11.col-sm-8.col-md-9
+                                    span.map-p.faded.negative-10
                                         a(href='#' + challengeBlock.dashedName)= challengeBlock.name
                                         if challengeBlock.markNew
                                             span.text-danger.small &thinsp; &thinsp;
                                                 strong
                                                     em NEW
+                            else
+                                .hidden-xs.col-sm-3.col-md-2
+                                    .progress.progress-bar-padding.text-center.thin-progress-bar
+                                        .progress-bar(role='progressbar', aria-valuenow=(challengeBlock.completed), aria-valuemin='0', aria-valuemax='100', style='width: ' + challengeBlock.completed + '%;')
+                                .col-xs-1.col-sm-1.col-md-1.map-row-numbers
+                                    span.map-p.negative-10  #{i}.
+                                .col-xs-11.col-sm-8.col-md-9
+                                    span.map-p.negative-10
+                                        a(href='#' + challengeBlock.dashedName)= challengeBlock.name
+                                        if challengeBlock.markNew
+                                            span.text-danger.small &thinsp; &thinsp;
+                                                strong
+                                                    em NEW
+                        else
+                            .hidden-xs.col-sm-3.col-md-2
+                            .col-xs-1.col-sm-1.col-md-1.map-row-numbers
+                                span.map-p.negative-10  #{i}.
+                            .col-xs-10.col-sm-8.col-md-9
+                                span.map-p.negative-10
+                                    a(href='#' + challengeBlock.dashedName)= challengeBlock.name
+                                    if challengeBlock.markNew
+                                        span.text-danger.small &thinsp; &thinsp;
+                                            strong
+                                                em NEW
 
                 .row
-                    .col-xs-12.col-sm-8.col-sm-offset-2.negative-28
+                    .col-xs-12.col-sm-8.col-sm-offset-2
                         h3 800 Hours of &thinsp;
                             a(href="/nonprofits/directory") Real World Work Experience
                             | :
-                ol
-                    .row
-                        .hidden-xs.col-sm-3.col-md-2.ion-locked.padded-ionic-icon.text-center.map-p.negative-10
-                        .col-xs-12.col-sm-9.col-md-10
-                            li.map-p.negative-10 100-hour Nonprofit Project
-                    .row
-                        .hidden-xs.col-sm-3.col-md-2.ion-locked.padded-ionic-icon.text-center.map-p.negative-10
-                        .col-xs-12.col-sm-9.col-md-10
-                            li.map-p.negative-10 200-hour Nonprofit Project #1
-                    .row
-                        .hidden-xs.col-sm-3.col-md-2.ion-locked.padded-ionic-icon.text-center.map-p.negative-10
-                        .col-xs-12.col-sm-9.col-md-10
-                            li.map-p.negative-10 200-hour Nonprofit Project #2
-                    .row
-                        .hidden-xs.col-sm-3.col-md-2.ion-locked.padded-ionic-icon.text-center.map-p.negative-10
-                        .col-xs-12.col-sm-9.col-md-10
-                            li.map-p.negative-10 300-hour Nonprofit Project
+                - var i = 0
+                .row
+                    .hidden-xs.col-sm-3.col-md-2.ion-locked.padded-ionic-icon.text-center.map-p.negative-10
+                    .col-xs-1.col-sm-1.col-md-1.map-row-numbers
+                        span.map-p.negative-10  #{++i}.
+                    .col-xs-10.col-sm-8.col-md-9
+                        span.map-p.negative-10 100-hour Nonprofit Project
+                .row
+                    .hidden-xs.col-sm-3.col-md-2.ion-locked.padded-ionic-icon.text-center.map-p.negative-10
+                    .col-xs-1.col-sm-1.col-md-1.map-row-numbers
+                        span.map-p.negative-10  #{++i}.
+                    .col-xs-10.col-sm-8.col-md-9
+                        span.map-p.negative-10 200-hour Nonprofit Project #1
+                .row
+                    .hidden-xs.col-sm-3.col-md-2.ion-locked.padded-ionic-icon.text-center.map-p.negative-10
+                    .col-xs-1.col-sm-1.col-md-1.map-row-numbers
+                        span.map-p.negative-10  #{++i}.
+                    .col-xs-10.col-sm-8.col-md-9
+                        span.map-p.negative-10 200-hour Nonprofit Project #2
+                .row
+                    .hidden-xs.col-sm-3.col-md-2.ion-locked.padded-ionic-icon.text-center.map-p.negative-10
+                    .col-xs-1.col-sm-1.col-md-1.map-row-numbers
+                        span.map-p.negative-10  #{++i}.
+                    .col-xs-10.col-sm-8.col-md-9
+                        span.map-p.negative-10 300-hour Nonprofit Project
                 hr
 
                 for challengeBlock in blocks
@@ -118,41 +132,44 @@ block content
                             h3 #{challengeBlock.name} &thinsp;
 
 
-                    .row
-                        ol
-                            for challenge in challengeBlock.challenges
-                                if challenge.completed
-                                    .row
-                                        .hidden-xs.col-sm-3.col-md-2.text-primary.ion-checkmark-circled.padded-ionic-icon.text-center.map-p.negative-10
-                                        .col-xs-12.col-sm-9.col-md-10
-                                            li.faded.map-p.negative-10
-                                                a(href="/challenges/#{challenge.dashedName}")
-                                                    span.capitalize= challenge.type + ': '
-                                                    span= challenge.title
-                                                        span.sr-only= " Complete"
+                    - var i = 0
+                    for challenge in challengeBlock.challenges
+                        - i++
+                        .row
+                            if challenge.completed
+                                .hidden-xs.col-sm-3.col-md-2.text-primary.ion-checkmark-circled.padded-ionic-icon.text-center.map-p.negative-10
+                                .col-xs-1.col-sm-1.col-md-1.map-row-numbers
+                                    span.map-p.negative-10  #{i}.
+                                .col-xs-10.col-sm-8.col-md-9
+                                    span.faded.map-p.negative-10
+                                        a(href="/challenges/#{challenge.dashedName}")
+                                            span.capitalize= challenge.type + ': '
+                                            span= challenge.title
+                                                span.sr-only= " Complete"
 
 
-                                else
-                                    .row
-                                        .hidden-xs.col-sm-3.col-md-2
-                                            span.negative-10
-                                        .col-xs-12.col-sm-9.col-md-10
-                                            li.map-p.negative-10
-                                                a(href="/challenges/#{challenge.dashedName}")
-                                                    span.capitalize= challenge.type + ': '
-                                                    span= challenge.title
-                                                        span.sr-only= " Incomplete"
-                                                if challenge.markNew
-                                                    span.text-danger.small &thinsp; &thinsp;
-                                                        strong
-                                                            em NEW
+                            else
+                                .hidden-xs.col-sm-3.col-md-2
+                                    span.negative-10
+                                .col-xs-1.col-sm-1.col-md-1.map-row-numbers
+                                    span.map-p.negative-10  #{i}.
+                                .col-xs-10.col-sm-8.col-md-9
+                                    span.map-p.negative-10
+                                        a(href="/challenges/#{challenge.dashedName}")
+                                            span.capitalize= challenge.type + ': '
+                                            span= challenge.title
+                                                span.sr-only= " Incomplete"
+                                        if challenge.markNew
+                                            span.text-danger.small &thinsp; &thinsp;
+                                                strong
+                                                    em NEW
 
-                            if (challengeBlock.completed === 100)
-                                .button-spacer
-                                .row
-                                    .col-xs-12.col-sm-8.col-md-6.col-sm-offset-3.col-md-offset-2.hidden
-                                        a.btn.btn-lg.btn-block.signup-btn.map-challenge-block-share Section complete. Share your code portfolio with your friends.
-                                            .hidden(id="#{challengeBlock.name}")
+                    if (challengeBlock.completed === 100)
+                        .button-spacer
+                        .row
+                            .col-xs-12.col-sm-8.col-md-6.col-sm-offset-3.col-md-offset-2.hidden
+                                a.btn.btn-lg.btn-block.signup-btn.map-challenge-block-share Section complete. Share your code portfolio with your friends.
+                                    .hidden(id="#{challengeBlock.name}")
     script.
         var username = !{JSON.stringify(user && user.username || '')};
         var lastCompleted = !{JSON.stringify(lastCompleted || false)}
