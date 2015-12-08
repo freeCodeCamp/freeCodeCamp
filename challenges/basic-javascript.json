@@ -1453,7 +1453,8 @@
         "assert(editor.getValue().match(/if/g).length >= 2, 'message: Create a new if statement.');",
         "assert(editor.getValue().match(/else/g).length >= 1, 'message: Created a new else statement.');",
         "assert((function(){var result = myFunction();if(result === 'heads' || result === 'tails'){return true;} else {return false;}})(), 'message: <code>myFunction</code> should either return <code>heads</code> or <code>tails</code>.');",
-        "assert((function(){var result = myFunction();if(result === 'heads' && flip === 0 || result === 'tails' && flip !== 0){return true;} else {return false;}})(), 'message: <code>myFunction</code> should return <code>heads</code> when flip equals 0 and <code>tails</code> when flip equals 1.');"
+        "assert((function(){flip = 0; var result = myFunction(); if(result === 'heads'){return true;} else {return false;}})(), 'message: <code>myFunction</code> should return <code>heads</code> when flip equals 0');",
+        "assert((function(){flip = 1; var result = myFunction(); if(result === 'tails'){return true;} else {return false;}})(), 'message: <code>myFunction</code> should return <code>tails</code> when flip equals 1');"
       ],
       "challengeSeed": [
         "var flip = Math.floor(Math.random() * (1 - 0 + 1)) + 0;",
