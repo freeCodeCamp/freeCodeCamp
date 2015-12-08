@@ -108,7 +108,7 @@
     "react-bootstrap": "~0.28.1",
     "react-dom": "~0.14.3",
     "react-motion": "~0.3.1",
-    "react-router": "^1.0.0",
+    "react-router": "^1.0.2",
     "react-router-bootstrap": "https://github.com/FreeCodeCamp/react-router-bootstrap.git#freecodecamp",
     "react-vimeo": "~0.0.3",
     "request": "^2.65.0",
