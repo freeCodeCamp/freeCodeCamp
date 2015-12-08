@@ -58,11 +58,11 @@ block content
                                         li.map-p.faded.negative-10
                                             a(href='#' + challengeBlock.dashedName)= challengeBlock.name
                                             if challengeBlock.markNew
-                                                span.text-danger.small &thinsp; &thinsp;
+                                                span.text-info.small &thinsp; &thinsp;
                                                     strong
                                                         em NEW
                                             if challengeBlock.isComingSoon
-                                                span.text-danger.small &thinsp; &thinsp;
+                                                span.text-info.small &thinsp; &thinsp;
                                                     strong
                                                         em Coming Soon
                                 else
@@ -75,11 +75,11 @@ block content
                                         li.map-p.negative-10
                                             a(href='#' + challengeBlock.dashedName)= challengeBlock.name
                                             if challengeBlock.markNew
-                                                span.text-danger.small &thinsp; &thinsp;
+                                                span.text-info.small &thinsp; &thinsp;
                                                     strong
                                                         em NEW
                                             if challengeBlock.isComingSoon
-                                                span.text-danger.small &thinsp; &thinsp;
+                                                span.text-info.small &thinsp; &thinsp;
                                                     strong
                                                         em Coming Soon
                             else
@@ -90,20 +90,64 @@ block content
                                     span.map-p.negative-10
                                         a(href='#' + challengeBlock.dashedName)= challengeBlock.name
                                         if challengeBlock.markNew
-                                            span.text-danger.small &thinsp; &thinsp;
+                                            span.text-info.small &thinsp; &thinsp;
                                                 strong
                                                     em NEW
                                         if challengeBlock.isComingSoon
-                                            span.text-danger.small &thinsp; &thinsp;
+                                            span.text-info.small &thinsp; &thinsp;
                                                 strong
                                                     em Coming Soon
+                  h1 Full Stack Development Certification
+                  .row                                        
+                    .hidden-xs.col-sm-3.col-md-2.ion-locked.padded-ionic-icon.text-center.map-p.negative-10
+                    .col-xs-12.col-sm-9.col-md-10
+                        li.map-p.negative-10 Greefield Nonprofit Project 1
+                    .hidden-xs.col-sm-3.col-md-2.ion-locked.padded-ionic-icon.text-center.map-p.negative-10
+                    .col-xs-12.col-sm-9.col-md-10
+                        li.map-p.negative-10 Greefield Nonprofit Project 2
+                    .hidden-xs.col-sm-3.col-md-2.ion-locked.padded-ionic-icon.text-center.map-p.negative-10
+                    .col-xs-12.col-sm-9.col-md-10
+                        li.map-p.negative-10 Legacy Nonprofit Project 1
+                    .hidden-xs.col-sm-3.col-md-2.ion-locked.padded-ionic-icon.text-center.map-p.negative-10
+                    .col-xs-12.col-sm-9.col-md-10
+                        li.map-p.negative-10 Legacy Nonprofit Project 2
+                    .hidden-xs.col-sm-3.col-md-2.ion-locked.padded-ionic-icon.text-center.map-p.negative-10
+                    .col-xs-12.col-sm-9.col-md-10
+                        li.map-p.negative-10 Claim your Full Stack Development Certification
+
+                  h1 Coding Interview Preparation
+                  .row                                        
+                    .hidden-xs.col-sm-3.col-md-2.ion-locked.padded-ionic-icon.text-center.map-p.negative-10
+                    .col-xs-12.col-sm-9.col-md-10
+                        li.map-p.negative-10 Whiteboard Coding Interview Training
+                    .hidden-xs.col-sm-3.col-md-2.ion-locked.padded-ionic-icon.text-center.map-p.negative-10
+                    .col-xs-12.col-sm-9.col-md-10
+                        li.map-p.negative-10 Critical Thinking Interview Training
+                    .hidden-xs.col-sm-3.col-md-2.ion-locked.padded-ionic-icon.text-center.map-p.negative-10
+                    .col-xs-12.col-sm-9.col-md-10
+                        li.map-p.negative-10 Mock Interview 1
+                    .hidden-xs.col-sm-3.col-md-2.ion-locked.padded-ionic-icon.text-center.map-p.negative-10
+                    .col-xs-12.col-sm-9.col-md-10
+                        li.map-p.negative-10 Mock Interview 2
+                    .hidden-xs.col-sm-3.col-md-2.ion-locked.padded-ionic-icon.text-center.map-p.negative-10
+                    .col-xs-12.col-sm-9.col-md-10
+                        li.map-p.negative-10 Mock Interview 3
 
                 hr
-                for superBlock in superBlocks
-                    for challengeBlock in superBlock.blocks
-                        .row
-                            a(href='#' name=challengeBlock.dashedName)
-                            .spacer.negative-55
+
+                for superBlock, index in superBlocks
+                  for challengeBlock in superBlock.blocks
+                      .row
+                          a(href='#' name=challengeBlock.dashedName)
+                          .spacer.negative-55
+
+                      .row
+                          .hidden-xs.col-sm-3.col-md-2
+                              h3.text-primary.text-right.nowrap
+                                  i.fa.fa-clock-o
+                                  = challengeBlock.time
+                          .col-xs-12.col-sm-9.col-md-10
+                              h3 #{challengeBlock.name} &thinsp;
 
                         .row
                             .hidden-xs.col-sm-3.col-md-2
@@ -126,7 +170,6 @@ block content
                                                 span.capitalize= challenge.type + ': '
                                                 span= challenge.title
                                                     span.sr-only= " Complete"
-
 
                                 else
                                     .hidden-xs.col-sm-3.col-md-2
@@ -154,6 +197,12 @@ block content
                                 .col-xs-12.col-sm-8.col-md-6.col-sm-offset-3.col-md-offset-2.hidden
                                     a.btn.btn-lg.btn-block.signup-btn.map-challenge-block-share Section complete. Share your code portfolio with your friends.
                                         .hidden(id="#{challengeBlock.name}")
+
+                  if (index < superBlocks.length - 1)
+                    .spacer
+                    hr
+                    .spacer
+
     script.
         var username = !{JSON.stringify(user && user.username || '')};
         var lastCompleted = !{JSON.stringify(lastCompleted || false)}
