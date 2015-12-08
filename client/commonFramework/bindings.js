@@ -175,7 +175,10 @@ window.common = (function(global) {
     });
 
     $('#search-issue').on('click', function() {
-      var queryIssue = window.location.href.toString().split('?')[0];
+      var queryIssue = window.location.href
+        .toString()
+        .split('?')[0]
+        .replace(/(#*)$/, '');
       window.open(
         'https://github.com/FreeCodeCamp/FreeCodeCamp/issues?q=' +
         'is:issue is:all ' +

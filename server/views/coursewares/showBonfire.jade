@@ -79,15 +79,6 @@ block content
                       else
                           a#next-challenge.btn.btn-lg.btn-primary.btn-block(href="/challenges/next-challenge?id="+challengeId) Go to my next challenge (ctrl + enter)
                           a.btn.btn-lg.btn-danger.btn-block#gist-share Share your solution as a GitHub gist
-    #reset-modal.modal(tabindex='-1')
-        .modal-dialog.animated.fadeInUp.fast-animation
-            .modal-content
-                .modal-header.challenge-list-header Clear your code?
-                    a.close.closing-x(href='#', data-dismiss='modal', aria-hidden='true') ×
-                .modal-body
-                    h3 This will restore your code editor to its original state.
-                    a.btn.btn-lg.btn-info.btn-block#reset-button(href='#', data-dismiss='modal', aria-hidden='true') Clear my code
-                    a.btn.btn-lg.btn-primary.btn-block(href='#', data-dismiss='modal', aria-hidden='true') Cancel
     include ../partials/challenge-modals
     script(type="text/javascript").
       var common = window.common = window.common || { init: [] };
