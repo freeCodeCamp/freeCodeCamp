@@ -21,6 +21,16 @@ function replaceScriptTags(value) {
     .replace(/<\/script>/gi, 'fcces');
 }
 
+function replaceFormAction(value) {
+  return value.replace(/<form[^>]*>/, function(val) {
+    return val.replace(/action(\s*?)=/, 'fccfaa$1=');
+  });
+}
+
+function encodeFcc(value = '') {
+  return replaceScriptTags(replaceFormAction(value));
+}
+
 function calcCurrentStreak(cals) {
   const revCals = cals.concat([Date.now()]).slice().reverse();
   let streakBroken = false;
@@ -256,7 +266,7 @@ module.exports = function(app) {
           longestStreak: profileUser.longestStreak,
           currentStreak: profileUser.currentStreak,
 
-          replaceScriptTags
+          encodeFcc
         });
       }
     );

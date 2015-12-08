@@ -154,9 +154,9 @@ block content
                                             td.col-xs-6.hidden-xs= bonfire.name
                                             td.col-xs-3.hidden-xs= moment(bonfire.completedDate, 'x').format("MMM DD, YYYY")
                                             td.col-xs-3.hidden-xs
-                                                a(href='/challenges/' + bonfire.name + '?solution=' + encodeURIComponent(replaceScriptTags(bonfire.solution)), target='_blank') View my solution
+                                                a(href='/challenges/' + bonfire.name + '?solution=' + encodeURIComponent(encodeFcc(bonfire.solution)), target='_blank') View my solution
                                             td.col-xs-12.visible-xs
-                                                a(href='/challenges/' + bonfire.name + '?solution=' + encodeURIComponent(replaceScriptTags(bonfire.solution)), target='_blank')= bonfire.name
+                                                a(href='/challenges/' + bonfire.name + '?solution=' + encodeURIComponent(encodeFcc(bonfire.solution)), target='_blank')= bonfire.name
                         if (waypoints.length > 0)
                             .col-sm-12
                                 table.table.table-striped
@@ -171,12 +171,12 @@ block content
                                             td.col-xs-3.hidden-xs= moment(challenge.completedDate, 'x').format("MMM DD, YYYY")
                                             td.col-xs-3.hidden-xs
                                               if (challenge.solution)
-                                                  a(href='/challenges/' + challenge.name + '?solution=' + encodeURIComponent(replaceScriptTags(challenge.solution)), target='_blank') View my solution
+                                                  a(href='/challenges/' + challenge.name + '?solution=' + encodeURIComponent(encodeFcc(challenge.solution)), target='_blank') View my solution
                                               else
                                                   a(href='/challenges/' + challenge.name) View this challenge
                                             td.col-xs-12.visible-xs
                                               if (challenge.solution)
-                                                  a(href='/challenges/' + challenge.name + '?solution=' + encodeURIComponent(replaceScriptTags(challenge.solution)), target='_blank')= challenge.name
+                                                  a(href='/challenges/' + challenge.name + '?solution=' + encodeURIComponent(encodeFcc(challenge.solution)), target='_blank')= challenge.name
                                               else
                                                   a(href='/challenges/' + challenge.name)= challenge.name
     if (user && user.username === username)
