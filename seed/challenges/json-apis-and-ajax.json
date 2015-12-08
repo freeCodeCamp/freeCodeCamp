@@ -342,7 +342,7 @@
       "title": "Prefilter JSON",
       "description": [
         "If we don't want to render every cat photo we get from our Free Code Camp's Cat Photo JSON API, we can pre-filter the json before we loop through it.",
-        "Let's filter out the cat who's \"id\" key has a value of 1.",
+        "Let's filter out the cat whose \"id\" key has a value of 1.",
         "Here's the code to do this:",
         "<code>json = json.filter(function(val) {</code>",
         "<code>&nbsp;&nbsp;return(val.id !== 1);</code>",
