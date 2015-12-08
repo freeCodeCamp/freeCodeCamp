@@ -546,7 +546,7 @@
         "Using jQuery, you can change the text between the start and end tags of an element. You can even change HTML markup.",
         "jQuery has a function called <code>.html()</code> that lets you add HTML tags and text within an element. Any content previously within the element will be completely replaced with the content you provide using this function.",
         "Here's how you would rewrite and italicize the text of our heading:",
-        "<code>$(\"h3\").html(\"&#60;i&#62;jQuery Funhouse&#60;/i&#62;\");</code>",
+        "<code>$(\"h3\").html(\"&#60;i&#62;jQuery Playground&#60;/i&#62;\");</code>",
         "jQuery also has a similar function called <code>.text()</code> that only alters text without adding tags.",
         "Change the button with id <code>target4</code> by italicizing its text."
       ],
