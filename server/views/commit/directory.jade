@@ -6,15 +6,10 @@ block content
             .row
                 .col-xs-12.col-sm-10.col-sm-offset-1
                     for nonprofit in nonprofits
-                        .col-xs-12.col-sm-6.col-md-4.story-section
+                        .col-xs-12.col-sm-6.col-md-4.height-300
                             .text-center
                                 h2= nonprofit.displayName
                                 img.testimonial-image.img-responsive.img-center(src=nonprofit.imgUrl)
                                 .button-spacer
                                 a.text-center(href='/commit?nonprofit=#{nonprofit.name}') Commit to #{nonprofit.displayName}
                                 p= nonprofit.description
-            .spacer
-            .col-xs-12
-                a.btn.btn-lg.btn-block.btn-primary.btn-link-social(href='mailto:team@freecodecamp.com?subject=Supporting%20Nonprofits')
-                    span.ion-email
-                    | Email us about adding your nonprofit here
