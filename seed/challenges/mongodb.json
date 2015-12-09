@@ -13,7 +13,7 @@
         "Open up <a href='http://c9.io' target='_blank'>http://c9.io</a> and sign in to your account.",
         "Click on the \"+\" icon at the top right of the c9.io page to create a new workspace.",
         "Give your workspace a name and an optional description.",
-        "Choose Node.js in the selection area below the name field.",
+        "Select Node.js from the Choose a template option.",
         "Click the \"Create workspace\" button.",
         "Once C9 builds and loads your workspace, you should see a terminal window in the lower right hand corner. In this window use the following commands. You don't need to know what these mean at this point.",
         "Install <code>learnyoumongo</code> with this command: <code>npm install learnyoumongo -g</code>",
