@@ -14,8 +14,8 @@ import {
 } from '../utils/rx';
 
 import {
-  frontEndChallangeId,
-  fullStackChallangeId
+  frontEndChallengeId,
+  backEndChallengeId
 } from '../utils/constantStrings.json';
 
 import {
@@ -27,11 +27,8 @@ const sendMessageToNonUser = ifNoUserSend(
   'must be logged in to complete.'
 );
 
-function isCertified(frontEndIds, { completedChallenges, isFrontEndCert }) {
-  if (isFrontEndCert) {
-    return true;
-  }
-  return _.every(frontEndIds, ({ id }) => {
+function isCertified(ids, { completedChallenges }) {
+  return _.every(ids, ({ id }) => {
     return _.some(completedChallenges, (challenge) => {
       return challenge.id === id || challenge._id === id;
     });
@@ -42,10 +39,10 @@ export default function certificate(app) {
   const router = app.loopback.Router();
   const { Challenge } = app.models;
 
-  const frontEndChallangeIds$ = observeQuery(
+  const frontEndChallengeIds$ = observeQuery(
     Challenge,
     'findById',
-    frontEndChallangeId,
+    frontEndChallengeId,
     {
       id: true,
       tests: true,
@@ -55,10 +52,10 @@ export default function certificate(app) {
   )
     .shareReplay();
 
-  const fullStackChallangeIds$ = observeQuery(
+  const backEndChallengeIds$ = observeQuery(
     Challenge,
     'findById',
-    fullStackChallangeId,
+    backEndChallengeId,
     {
       id: true,
       tests: true,
@@ -75,7 +72,7 @@ export default function certificate(app) {
   );
 
   router.post(
-    '/certificate/verify/full-stack',
+    '/certificate/verify/back-end',
     ifNoUser401,
     verifyCert
   );
@@ -93,9 +90,9 @@ export default function certificate(app) {
     Observable.just({})
       .flatMap(() => {
         if (isFront) {
-          return frontEndChallangeIds$;
+          return frontEndChallengeIds$;
         }
-        return fullStackChallangeIds$;
+        return backEndChallengeIds$;
       })
       .flatMap(challenge => {
         const { user } = req;
@@ -106,14 +103,21 @@ export default function certificate(app) {
           challengeType
         } = challenge;
         if (
-          isFront && !user.isFrontEndCert && isCertified(tests, user) ||
-          !isFront && !user.isFullStackCert && isCertified(tests, user)
+
+          isFront &&
+          !user.isFrontEndCert &&
+          isCertified(tests, user) ||
+
+          !isFront &&
+          !user.isBackEndCert &&
+          isCertified(tests, user)
+
         ) {
           debug('certified');
           if (isFront) {
             user.isFrontEndCert = true;
           } else {
-            user.isFullStackCert = true;
+            user.isBackEndCert = true;
           }
 
           user.completedChallenges.push({
@@ -143,7 +147,7 @@ export default function certificate(app) {
         user => {
           if (
             isFront && user.isFrontEndCert ||
-            !isFront && user.isFullStackCert
+            !isFront && user.isBackEndCert
           ) {
             return res.status(200).send(true);
           }
