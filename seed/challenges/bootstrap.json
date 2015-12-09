@@ -2253,9 +2253,10 @@
         "Add a comment at the top of your HTML that says <code>Only change code above this line.</code>"
       ],
       "tests": [
-        "assert(code.match(/^<!--/) && code.match(/<!--/g).length > 0, 'message: Start a comment with <code>&#60;!--</code> at the top of your HTML.');",
-        "assert(code.match(/this line/g) && code.match(/this line/g).length > 0, 'message: Your comment should have the text <code>Only change code above this line</code>.');",
-        "assert(code.match(/-->.*\\n+.+/g), 'message: Be sure to close your comment with <code>--&#62;</code>.');"
+        "assert(code.match(/^<!--/) && code.match(/^<!--/g).length > 0, 'message: Start a comment with <code>&#60;!--</code> at the top of your HTML.');",
+        "assert(code.match(/<!--(?!(>|->|.*-->.*this line)).*this line.*-->/gi), 'message: Your comment should have the text <code>Only change code above this line</code>.');",
+        "assert(code.match(/-->.*\\n+.+/g), 'message: Be sure to close your comment with <code>--&#62;</code>.');",
+        "assert(code.match(/<!--/g).length === code.match(/-->/g).length, 'message: You should have the same number of comment openers and closers.');"
       ],
       "challengeSeed": [
         "<div class=\"container-fluid\">",
