@@ -123,6 +123,11 @@
       "defaut": false,
       "description": "Camper is front end certified"
     },
+    "isBackEndCert": {
+      "type": "boolean",
+      "default": false,
+      "description": "Campers is back end certified"
+    },
     "isFullStackCert": {
       "type": "boolean",
       "default": false,
