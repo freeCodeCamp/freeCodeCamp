@@ -136,7 +136,7 @@ block content
                                         tr
                                             td.col-xs-4.hidden-xs
                                                 a(href='/challenges/' + challenge.name, target='_blank')= challenge.name
-                                            td.col-xs-2.hidden-xs= moment(challenge.completedDate, 'x').format("MMM DD, YYYY")
+                                            td.col-xs-2.hidden-xs= challenge.completedDate ? moment(challenge.completedDate, 'x').format("MMM DD, YYYY") : 'Not Available'
                                             td.col-xs-6.hidden-xs
                                                 a(href=challenge.solution, target='_blank') View my project
                                             td.col-xs-12.visible-xs
@@ -152,7 +152,7 @@ block content
                                     for bonfire in bonfires
                                         tr
                                             td.col-xs-6.hidden-xs= bonfire.name
-                                            td.col-xs-3.hidden-xs= moment(bonfire.completedDate, 'x').format("MMM DD, YYYY")
+                                            td.col-xs-3.hidden-xs= bonfire.completedDate ? moment(bonfire.completedDate, 'x').format("MMM DD, YYYY") : 'Not Available'
                                             td.col-xs-3.hidden-xs
                                                 a(href='/challenges/' + bonfire.name + '?solution=' + encodeURIComponent(encodeFcc(bonfire.solution)), target='_blank') View my solution
                                             td.col-xs-12.visible-xs
@@ -168,7 +168,7 @@ block content
                                     for challenge in waypoints
                                         tr
                                             td.col-xs-6.hidden-xs= challenge.name
-                                            td.col-xs-3.hidden-xs= moment(challenge.completedDate, 'x').format("MMM DD, YYYY")
+                                            td.col-xs-3.hidden-xs= challenge.completedDate ?moment(challenge.completedDate, 'x').format("MMM DD, YYYY") : 'Not Available'
                                             td.col-xs-3.hidden-xs
                                               if (challenge.solution)
                                                   a(href='/challenges/' + challenge.name + '?solution=' + encodeURIComponent(encodeFcc(challenge.solution)), target='_blank') View my solution

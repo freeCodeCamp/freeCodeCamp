@@ -224,7 +224,7 @@ module.exports = function(app) {
         );
 
         const bonfires = profileUser.completedChallenges.filter(function(obj) {
-          return obj.challengeType === 5 && (obj.name || '').match(/Bonfire/g);
+          return (obj.name || '').match(/^Bonfire/g);
         });
 
         const waypoints = profileUser.completedChallenges.filter(function(obj) {
