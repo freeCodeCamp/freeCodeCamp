@@ -22,7 +22,7 @@ export default function csp() {
       '*.twimg.com',
       'https://*.twimg.com'
     ].concat(trusted),
-    'connect-src': [
+    connectSrc: [
       'vimeo.com'
     ].concat(trusted),
     styleSrc: [
@@ -58,7 +58,8 @@ export default function csp() {
       '*.gitter.im https:',
       '*.vimeo.com',
       '*.twitter.com',
-      '*.ghbtns.com'
+      '*.ghbtns.com',
+      '*.freecatphotoapp.com'
     ].concat(trusted),
     // set to true if you only want to report errors
     reportOnly: false,
