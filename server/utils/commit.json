@@ -15,28 +15,28 @@
     "imgAlt": "Girls developing code with instructor",
     "imgUrl": "http://i.imgur.com/HBVrdaj.jpg"
   },
-   {
+  {
     "name": "coderdojo",
     "displayName": "CoderDojo",
     "donateUrl": "https://www.globalgiving.org/projects/coderdojo-start-a-dojo-support/",
     "description": "CoderDojo is the global network of free computer programming clubs for young people.",
-    "imgAlt": "Seven children with laptops in their laps smiling at the camera.",
-    "imgUrl": "http://i.imgur.com/N9l2atG.jpg"
-  }
+    "imgAlt": "Two adults help several kids program on their laptops.",
+    "imgUrl": "http://i.imgur.com/701RLfV.jpg"
+  },
   {
     "name": "women who code",
     "displayName": "Women Who Code",
     "donateUrl": "https://www.womenwhocode.com/donate",
     "description": "Women Who Code (WWCode) is a global leader in propelling women in the tech industry.",
-    "imgAlt": "Seven women sitting at a conference table in Chennai, India.",
-    "imgUrl": "http://i.imgur.com/7GatDU3.jpg"
+    "imgAlt": "Four women sitting in a classroom together learning to code.",
+    "imgUrl": "http://i.imgur.com/tKUi6Rf.jpg"
   },
   {
     "name": "girls who code",
     "displayName": "Girls Who Code",
     "donateUrl": "http://girlswhocode.com/",
     "description": "Girls Who Code programs work to inspire, educate, and equip girls with the computing skills to pursue 21st century opportunities.",
-    "imgAlt": "Girls in a classroom holding up a sign that reads, 'Thank you!'",
-    "imgUrl": "http://i.imgur.com/hULqjO0.jpg"
+    "imgAlt": "Three women smiling while they code on a computer together.",
+    "imgUrl": "http://i.imgur.com/op8BVph.jpg"
   }
 ]
