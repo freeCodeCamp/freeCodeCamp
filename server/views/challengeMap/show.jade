@@ -82,64 +82,14 @@ block content
                                                 span.text-danger.small &thinsp; &thinsp;
                                                     strong
                                                         em Coming Soon
-                        else
-                            .hidden-xs.col-sm-3.col-md-2
-                            .col-xs-1.col-sm-1.col-md-1.map-row-numbers
-                                span.map-p.negative-10  #{i}.
-                            .col-xs-10.col-sm-8.col-md-9
-                                span.map-p.negative-10
-                                    a(href='#' + challengeBlock.dashedName)= challengeBlock.name
-                                    if challengeBlock.markNew
-                                        span.text-danger.small &thinsp; &thinsp;
-                                            strong
-                                                em NEW
-                                    if challengeBlock.isComingSoon
-                                        span.text-danger.small &thinsp; &thinsp;
-                                            strong
-                                                em Coming Soon
-
-                hr
-                for superBlock in superBlocks
-                  for challengeBlock in superBlock.blocks
-                      .row
-                          a(href='#' name=challengeBlock.dashedName)
-                          .spacer.negative-55
-
-                      .row
-                          .hidden-xs.col-sm-3.col-md-2
-                              h3.text-primary.text-right.nowrap
-                                  i.fa.fa-clock-o
-                                  = challengeBlock.time
-                          .col-xs-12.col-sm-9.col-md-10
-                              h3 #{challengeBlock.name} &thinsp;
-                    - var i = 0
-                    for challenge in challengeBlock.challenges
-                        - i++
-                        .row
-                            if challenge.completed
-                                .hidden-xs.col-sm-3.col-md-2.text-primary.ion-checkmark-circled.padded-ionic-icon.text-center.map-p.negative-10
-                                .col-xs-1.col-sm-1.col-md-1.map-row-numbers
-                                    span.map-p.negative-10  #{i}.
-                                .col-xs-10.col-sm-8.col-md-9
-                                    span.faded.map-p.negative-10
-                                        a(href="/challenges/#{challenge.dashedName}")
-                                            span.capitalize= challenge.type + ': '
-                                            span= challenge.title
-                                                span.sr-only= " Complete"
-
-
                             else
                                 .hidden-xs.col-sm-3.col-md-2
-                                    span.negative-10
                                 .col-xs-1.col-sm-1.col-md-1.map-row-numbers
                                     span.map-p.negative-10  #{i}.
                                 .col-xs-10.col-sm-8.col-md-9
                                     span.map-p.negative-10
-                                        a(href="/challenges/#{challenge.dashedName}" class=challenge.isComingSoon ? 'disabled' : '')
-                                            span.capitalize= challenge.type + ': '
-                                            span= challenge.title
-                                                span.sr-only= " Incomplete"
-                                        if challenge.markNew
+                                        a(href='#' + challengeBlock.dashedName)= challengeBlock.name
+                                        if challengeBlock.markNew
                                             span.text-danger.small &thinsp; &thinsp;
                                                 strong
                                                     em NEW
@@ -148,12 +98,62 @@ block content
                                                 strong
                                                     em Coming Soon
 
-                    if (challengeBlock.completed === 100)
-                        .button-spacer
+                hr
+                for superBlock in superBlocks
+                    for challengeBlock in superBlock.blocks
                         .row
-                            .col-xs-12.col-sm-8.col-md-6.col-sm-offset-3.col-md-offset-2.hidden
-                                a.btn.btn-lg.btn-block.signup-btn.map-challenge-block-share Section complete. Share your code portfolio with your friends.
-                                    .hidden(id="#{challengeBlock.name}")
+                            a(href='#' name=challengeBlock.dashedName)
+                            .spacer.negative-55
+
+                        .row
+                            .hidden-xs.col-sm-3.col-md-2
+                                h3.text-primary.text-right.nowrap
+                                    i.fa.fa-clock-o
+                                    = challengeBlock.time
+                            .col-xs-12.col-sm-9.col-md-10
+                                h3 #{challengeBlock.name} &thinsp;
+                        - var i = 0
+                        for challenge in challengeBlock.challenges
+                            - i++
+                            .row
+                                if challenge.completed
+                                    .hidden-xs.col-sm-3.col-md-2.text-primary.ion-checkmark-circled.padded-ionic-icon.text-center.map-p.negative-10
+                                    .col-xs-1.col-sm-1.col-md-1.map-row-numbers
+                                        span.map-p.negative-10  #{i}.
+                                    .col-xs-10.col-sm-8.col-md-9
+                                        span.faded.map-p.negative-10
+                                            a(href="/challenges/#{challenge.dashedName}")
+                                                span.capitalize= challenge.type + ': '
+                                                span= challenge.title
+                                                    span.sr-only= " Complete"
+
+
+                                else
+                                    .hidden-xs.col-sm-3.col-md-2
+                                        span.negative-10
+                                    .col-xs-1.col-sm-1.col-md-1.map-row-numbers
+                                        span.map-p.negative-10  #{i}.
+                                    .col-xs-10.col-sm-8.col-md-9
+                                        span.map-p.negative-10
+                                            a(href="/challenges/#{challenge.dashedName}" class=challenge.isComingSoon ? 'disabled' : '')
+                                                span.capitalize= challenge.type + ': '
+                                                span= challenge.title
+                                                    span.sr-only= " Incomplete"
+                                            if challenge.markNew
+                                                span.text-danger.small &thinsp; &thinsp;
+                                                    strong
+                                                        em NEW
+                                            if challengeBlock.isComingSoon
+                                                span.text-danger.small &thinsp; &thinsp;
+                                                    strong
+                                                        em Coming Soon
+
+                        if (challengeBlock.completed === 100)
+                            .button-spacer
+                            .row
+                                .col-xs-12.col-sm-8.col-md-6.col-sm-offset-3.col-md-offset-2.hidden
+                                    a.btn.btn-lg.btn-block.signup-btn.map-challenge-block-share Section complete. Share your code portfolio with your friends.
+                                        .hidden(id="#{challengeBlock.name}")
     script.
         var username = !{JSON.stringify(user && user.username || '')};
         var lastCompleted = !{JSON.stringify(lastCompleted || false)}
