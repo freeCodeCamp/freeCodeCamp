@@ -28,10 +28,10 @@ block content
                                 input(type='radio' id=frontEndCert value=frontEndCert name='goal' checked="checked")
                                 | Front End Development Certification (takes about 400 hours)
                             label.btn.btn-primary.btn-lg
-                                input(type='radio' id=fullStackCert value=dataVisCert name='goal')
+                                input(type='radio' id=dataVisCert value=dataVisCert name='goal')
                                 | Data Visualization Certification (takes about 800 hours)
                             label.btn.btn-primary.btn-lg
-                                input(type='radio' id=fullStackCert value=backEndCert name='goal')
+                                input(type='radio' id=backEndCert value=backEndCert name='goal')
                                 | Back End Development Certification (takes about 1,200 hours)
                             label.btn.btn-primary.btn-lg
                                 input(type='radio' id=fullStackCert value=fullStackCert name='goal')
@@ -91,6 +91,15 @@ block content
         });
 
         $('#commit-btn-submit').click(function() {
+
+          if (
+            history &&
+            typeof history.pushState === 'function'
+          ) {
+            history.pushState(history.state, null, '/commit/pledge?' + $('form').serialize());
+            return null;
+          }
+
           window.location.href = '/commit/pledge?' + $('form').serialize();
         });
       });
