@@ -14,5 +14,29 @@
     "description": "Black Girls CODE is devoted to showing the world that black girls can code, and do so much more.",
     "imgAlt": "Girls developing code with instructor",
     "imgUrl": "http://i.imgur.com/HBVrdaj.jpg"
+  },
+   {
+    "name": "coderdojo",
+    "displayName": "CoderDojo",
+    "donateUrl": "https://www.globalgiving.org/projects/coderdojo-start-a-dojo-support/",
+    "description": "CoderDojo is the global network of free computer programming clubs for young people.",
+    "imgAlt": "Seven children with laptops in their laps smiling at the camera.",
+    "imgUrl": "http://i.imgur.com/N9l2atG.jpg"
+  }
+  {
+    "name": "women who code",
+    "displayName": "Women Who Code",
+    "donateUrl": "https://www.womenwhocode.com/donate",
+    "description": "Women Who Code (WWCode) is a global leader in propelling women in the tech industry.",
+    "imgAlt": "Seven women sitting at a conference table in Chennai, India.",
+    "imgUrl": "http://i.imgur.com/7GatDU3.jpg"
+  },
+  {
+    "name": "girls who code",
+    "displayName": "Girls Who Code",
+    "donateUrl": "http://girlswhocode.com/",
+    "description": "Girls Who Code programs work to inspire, educate, and equip girls with the computing skills to pursue 21st century opportunities.",
+    "imgAlt": "Girls in a classroom holding up a sign that reads, 'Thank you!'",
+    "imgUrl": "http://i.imgur.com/hULqjO0.jpg"
   }
 ]
