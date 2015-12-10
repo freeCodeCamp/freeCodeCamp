@@ -2580,8 +2580,8 @@
         "Create a class called <code>gray-background</code> with the <code>background-color</code> of gray. Assign this class to your <code>div</code> element."
       ],
       "tests": [
-        "assert($(\"div\").hasClass(\"gray-background\"), 'message: Give your <code>div</code> element the class <code>gray-background</code>.');",
-        "assert($(\".gray-background\").css(\"background-color\") === \"rgb(128, 128, 128)\", 'message: Your <code>div</code> element should have a gray background.');"
+        "assert(($(\"div\").hasClass(\"gray-background\") || ($(\"div\").hasClass(\"grey-background\")), 'message: Give your <code>div</code> element the class <code>gray-background</code>.');",
+        "assert($(\"div\").css(\"background-color\") === \"rgb(128, 128, 128)\", 'message: Your <code>div</code> element should have a gray background.');"
       ],
       "challengeSeed": [
         "<link href=\"http://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
