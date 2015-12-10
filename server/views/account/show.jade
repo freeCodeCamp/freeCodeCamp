@@ -119,8 +119,8 @@ block content
                     .row
                         .hidden-xs.col-sm-12.text-center
                             .row.text-primary
-                              h4.col-sm-6.text-right Longest Streak: #{longestStreak} #{longestStreak + longestStreak === 1 ? ' day' : ' days'}
-                                h4.col-sm-6.text-left Current Streak: #{currentStreak} #{currentStreak + currentStreak === 1 ? ' day' : ' days'}
+                                h4.col-sm-6.text-right Longest Streak: #{longestStreak} #{longestStreak === 1 ? ' day' : ' days'}
+                                h4.col-sm-6.text-left Current Streak: #{currentStreak} #{currentStreak === 1 ? ' day' : ' days'}
 
 
                     if (user && user.username == username || !isLocked)
