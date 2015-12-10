@@ -455,7 +455,7 @@ module.exports = function(app) {
       email: email
     }, function(err) {
       if (err) {
-        req.flash('errors', err);
+        req.flash('errors', err.message);
         return res.redirect('/forgot');
       }
 
