@@ -210,7 +210,7 @@ module.exports = function(app) {
               objOrNum.timestamp;
           })
           .filter((timestamp) => {
-            return !!timestamp;
+            return Boolean(timestamp);
           })
           .reduce((data, timeStamp) => {
             data[(timeStamp / 1000)] = 1;
@@ -238,7 +238,7 @@ module.exports = function(app) {
 
           isMigrationGrandfathered: profileUser.isMigrationGrandfathered,
           isGithubCool: profileUser.isGithubCool,
-          isLocked: !!profileUser.isLocked,
+          isLocked: Boolean(profileUser.isLocked),
 
           pledge: profileUser.pledge,
 
