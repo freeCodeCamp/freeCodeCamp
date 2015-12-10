@@ -41,6 +41,14 @@ const challengeView = {
   7: 'coursewares/showStep'
 };
 
+function isChallengeCompleted(user, challengeId) {
+  if (!user) {
+    return false;
+  }
+  return user.completedChallenges.some(challenge =>
+    challenge.id === challengeId );
+}
+
 function numberWithCommas(x) {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 }
@@ -292,6 +300,9 @@ module.exports = function(app) {
           head: challenge.head,
           tail: challenge.tail,
           tests: challenge.tests,
+
+          // identifies if a challenge is completed
+          isCompleted: isChallengeCompleted(req.user, challenge.id),
 
           // video challenges
           video: challenge.challengeSeed[0],
