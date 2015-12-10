@@ -1,4 +1,6 @@
 {
   "frontEndCert": "Front End Development Certification",
+  "backEndCert": "Back End Development Certification",
+  "dataVisCert": "Data Visualisation Certification",
   "fullStackCert": "Full Stack Development Certification"
 }

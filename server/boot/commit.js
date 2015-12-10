@@ -106,10 +106,9 @@ export default function commit(app) {
             Object.assign(
               {
                 title: 'Commit to a nonprofit. Commit to your goal.',
-                pledge,
-                frontEndCert: commitGoals.frontEndCert,
-                fullStackCert: commitGoals.fullStackCert
+                pledge
               },
+              commitGoals,
               nonprofit
             )
           );
