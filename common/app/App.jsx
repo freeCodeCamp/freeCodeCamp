@@ -10,7 +10,7 @@ export default contain(
     fetchAction: 'appActions.getUser',
     getPayload(props) {
       return {
-        isPrimed: !!props.username
+        isPrimed: Boolean(props.username)
       };
     }
   },

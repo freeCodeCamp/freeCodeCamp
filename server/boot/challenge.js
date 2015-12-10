@@ -27,7 +27,7 @@ import {
 import getFromDisk$ from '../utils/getFromDisk$';
 
 const isDev = process.env.NODE_ENV !== 'production';
-const isBeta = !!process.env.BETA;
+const isBeta = Boolean(process.env.BETA);
 const debug = debugFactory('freecc:challenges');
 const challengesRegex = /^(bonfire|waypoint|zipline|basejump)/i;
 const firstChallenge = 'waypoint-learn-how-free-code-camp-works';
@@ -334,7 +334,7 @@ module.exports = function(app) {
 
   function completedChallenge(req, res, next) {
 
-    const completedDate = Math.round(+new Date());
+    const completedDate = Math.round(Number(new Date()));
     const {
       id,
       name,
@@ -373,7 +373,7 @@ module.exports = function(app) {
   function completedZiplineOrBasejump(req, res, next) {
 
     var completedWith = req.body.challengeInfo.completedWith || '';
-    var completedDate = Math.round(+new Date());
+    var completedDate = Math.round(Number(new Date()));
     var challengeId = req.body.challengeInfo.challengeId;
     var solutionLink = req.body.challengeInfo.publicURL;
 

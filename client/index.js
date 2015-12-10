@@ -17,7 +17,7 @@ const services = new Fetchr({
   xhrPath: '/services'
 });
 
-Rx.config.longStackSupport = !!debug.enabled;
+Rx.config.longStackSupport = Boolean(debug.enabled);
 const history = createHistory();
 const appLocation = createLocation(
   location.pathname + location.search

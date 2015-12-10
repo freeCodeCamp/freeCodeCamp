@@ -16,7 +16,7 @@ window.common = (function(global) {
         console.log('unable to read from storage');
         return '';
       }
-      return '' + localStorage.getItem(key + 'Val');
+      return String(localStorage.getItem(key + 'Val'));
     },
 
     isAlive: function(key) {

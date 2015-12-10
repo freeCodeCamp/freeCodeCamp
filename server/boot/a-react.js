@@ -48,7 +48,7 @@ export default function reactSubRouter(app) {
           debug('react tried to find %s but got 404', location.pathname);
           return next();
         }
-        return !!props;
+        return Boolean(props);
       })
       .flatMap(function({ props, AppCat }) {
         // call thundercats renderToString

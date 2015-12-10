@@ -27,7 +27,7 @@ window.common = (function(global) {
   common.arrayToNewLineString = function arrayToNewLineString(seedData) {
     seedData = Array.isArray(seedData) ? seedData : [seedData];
     return seedData.reduce(function(seed, line) {
-      return '' + seed + line + '\n';
+      return String(seed + line + '\n');
     }, '');
   };
 
@@ -107,7 +107,7 @@ window.common = (function(global) {
 
   // detects if there is JavaScript in the first script tag
   common.hasJs = function hasJs(code) {
-    return !!common.getJsFromHtml(code);
+    return Boolean(common.getJsFromHtml(code));
   };
 
   // grabs the content from the first script tag in the code

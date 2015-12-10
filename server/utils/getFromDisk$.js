@@ -20,7 +20,7 @@ export default function getFromDisk$(challenge) {
     .map(challenge => {
       challenge.head = challenge.head || [];
       challenge.tail = challenge.tail || [];
-      challenge.challengeType = '' + challenge.challengeType;
+      challenge.challengeType = String(challenge.challengeType);
 
       challenge.name =
         _.capitalize(challenge.type) +
