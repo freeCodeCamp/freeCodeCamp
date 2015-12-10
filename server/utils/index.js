@@ -11,14 +11,14 @@ var allNonprofitNames;
 
 module.exports = {
   dasherize: function dasherize(name) {
-    return ('' + name)
+    return String(name)
       .toLowerCase()
       .replace(/\s/g, '-')
       .replace(/[^a-z0-9\-\.]/gi, '');
   },
 
   unDasherize: function unDasherize(name) {
-    return ('' + name)
+    return String(name)
       // replace dash with space
       .replace(/\-/g, ' ')
       // strip nonalphanumarics chars except whitespace

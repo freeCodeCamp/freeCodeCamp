@@ -17,7 +17,7 @@ var getUsernameFromProvider = require('./utils/auth').getUsernameFromProvider;
 var generateKey =
   require('loopback-component-passport/lib/models/utils').generateKey;
 
-var isBeta = !!process.env.BETA;
+var isBeta = Boolean(process.env.BETA);
 var app = loopback();
 
 expressState.extend(app);

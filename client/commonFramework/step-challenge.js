@@ -96,7 +96,7 @@ window.common = (function({ $, common = { init: [] }}) {
       { stepIndex: [] };
 
     var $el = $(this);
-    var index = +$el.attr('id');
+    var index = Number($el.attr('id'));
     var propIndex = props.stepIndex.indexOf(index);
 
     if (propIndex === -1) {

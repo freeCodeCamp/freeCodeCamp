@@ -146,7 +146,7 @@ export default React.createClass({
     const { hikes, currentHike } = this.props;
     const { dashedName, number } = this.props.params;
     const { id, name, difficulty, tests } = currentHike;
-    const nextQuestionIndex = +number;
+    const nextQuestionIndex = Number(number);
 
     postJSON$('/completed-challenge', { id, name }).subscribeOnCompleted(() => {
       if (tests[nextQuestionIndex]) {

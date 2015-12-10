@@ -99,7 +99,7 @@ function isValidURL(data) {
 }
 
 function makeRequired(validator) {
-  return (val) => !!val && validator(val);
+  return (val) => Boolean(val) && validator(val);
 }
 
 export default contain({
@@ -167,7 +167,7 @@ export default contain({
       checkValidity.forEach((prop) => {
         // if value exist, check if it is valid
         if (pros[prop].value && pros[prop].type !== 'boolean') {
-          valid = valid && !!pros[prop].valid;
+          valid = valid && Boolean(pros[prop].valid);
         }
       });
 
@@ -203,8 +203,8 @@ export default contain({
         url: formatUrl(uriInSingleQuotedAttr(url.value), false),
         logo: formatUrl(uriInSingleQuotedAttr(logo.value), false),
         company: inHTMLData(company.value),
-        isHighlighted: !!isHighlighted.value,
-        isRemoteOk: !!isRemoteOk.value,
+        isHighlighted: Boolean(isHighlighted.value),
+        isRemoteOk: Boolean(isRemoteOk.value),
         howToApply: inHTMLData(howToApply.value),
         isFrontEndCert,
         isFullStackCert
@@ -363,7 +363,7 @@ export default contain({
                     label={ isRemoteCopy }
                     onChange={
                       ({ target: { checked } }) => handleForm({
-                        isRemoteOk: !!checked
+                        isRemoteOk: Boolean(checked)
                       })
                     }
                     type='checkbox'
@@ -451,7 +451,7 @@ export default contain({
                         label={ hightlightCopy }
                         onChange={
                           ({ target: { checked } }) => handleForm({
-                            isHighlighted: !!checked
+                            isHighlighted: Boolean(checked)
                           })
                         }
                         type='checkbox'

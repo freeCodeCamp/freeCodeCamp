@@ -13,7 +13,7 @@ export default contain(
     actions: ['appActions'],
     fetchAction: 'hikesActions.fetchHikes',
     getPayload: ({ hikes, params }) => ({
-      isPrimed: (hikes && !!hikes.length),
+      isPrimed: (hikes && Boolean(hikes.length)),
       dashedName: params.dashedName
     }),
     shouldContainerFetch(props, nextProps) {

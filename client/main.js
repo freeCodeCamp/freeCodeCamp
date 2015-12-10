@@ -47,7 +47,7 @@ main = (function(main) {
 
       var helpTitleAdd = false;
       $('#chat-embed-help').on('gitter-chat-toggle', function(e) {
-        var shouldButtonBePressed = !!e.originalEvent.detail.state;
+        var shouldButtonBePressed = Boolean(e.originalEvent.detail.state);
 
         if (!helpTitleAdd) {
           helpTitleAdd = true;

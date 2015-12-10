@@ -241,7 +241,7 @@ export default contain(
                       <input
                         name='custom'
                         type='hidden'
-                        value={ '' + id } />
+                        value={ String(id) } />
                       <Button
                         block={ true }
                         bsSize='large'

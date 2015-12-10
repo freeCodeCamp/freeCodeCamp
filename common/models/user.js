@@ -137,7 +137,7 @@ module.exports = function(User) {
     // var args = ctx.args;
 
     var config = {
-      signed: !!req.signedCookies,
+      signed: Boolean(req.signedCookies),
       maxAge: accessToken.ttl
     };
 
@@ -311,7 +311,8 @@ module.exports = function(User) {
           return Observable.from(progressTimestamps);
         })
         // filter out non objects
-        .filter((timestamp) => !!timestamp || typeof timestamp === 'object')
+        .filter((timestamp) => Boolean(timestamp) ||
+                            typeof timestamp === 'object')
         // filterout timestamps older then an hour
         .filter(({ timestamp = 0 }) => {
           return timestamp >= browniePoints;

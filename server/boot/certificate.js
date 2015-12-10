@@ -164,7 +164,7 @@ export default function certificate(app) {
     saveUser(user)
       .subscribe(
         (user) => {
-          res.status(200).send(!!user.isHonest);
+          res.status(200).send(Boolean(user.isHonest));
         },
         next
       );

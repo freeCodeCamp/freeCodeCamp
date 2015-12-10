@@ -111,7 +111,7 @@ export default contain(
         return <JobNotFound />;
       }
 
-      const isSignedIn = !!username;
+      const isSignedIn = Boolean(username);
 
       const showApply = shouldShowApply(
         job,
