@@ -121,7 +121,6 @@ module.exports = function(app) {
   const findChallenge$ = observeMethod(Challenge, 'find');
   // create a stream of all the challenges
   const challenge$ = findChallenge$(challengesQuery)
-    .doOnNext(() => debug('query challenges'))
     .flatMap(challenges => Observable.from(
       challenges,
       null,
@@ -147,15 +146,21 @@ module.exports = function(app) {
       challenges: blockArray,
       superBlock: blockArray[0].superBlock
     }))
+    // filter out hikes
     .filter(({ superBlock }) => {
-      return challengesRegex.test(superBlock);
+      return !(/hikes/gi).test(superBlock);
     })
     .groupBy(block => block.superBlock)
     .flatMap(superBlocks$ => superBlocks$.toArray())
+    .map(superBlockArr => ({
+      name: superBlockArr[0].superBlock,
+      superOrder: superBlockArr[0].superOrder,
+      blocks: superBlockArr
+    }))
     .shareReplay();
 
   const blocks$ = superBlocks$
-    .flatMap(superBlock => Observable.just(superBlock))
+    .flatMap(superBlock => Observable.from(superBlock.blocks))
     .shareReplay();
 
   const User = app.models.User;
@@ -192,7 +197,8 @@ module.exports = function(app) {
     // find challenge
     return challenge$
       .map(challenge => challenge.toJSON())
-      .filter(({ superBlock }) => challengesRegex.test(superBlock))
+      // filter out hikes
+      .filter(({ superBlock }) => !(/hikes/gi).test(superBlock))
       .filter(({ id }) => id === challengeId)
       // now lets find the block it belongs to
       .flatMap(challenge => {
@@ -537,6 +543,7 @@ module.exports = function(app) {
           time: blockArray[0] && blockArray[0].time || '???'
         };
       })
+      // filter out hikes
       .filter(({ superBlock }) => {
         return !(/hikes/i).test(superBlock);
       })
