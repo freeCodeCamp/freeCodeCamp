@@ -20,7 +20,7 @@ if (typeof DEBUG === 'undefined') { DEBUG = true; }
   var reSingle = /\b(for|while|do)\b/;
   var labelRe = /\b([a-z_]{1}\w+:)/i;
   var comments = /(?:\/\*(?:[\s\S]*?)\*\/)|(?:([\s;])+\/\/(?:.*)$)/gm;
-  var loopTimeout = 500;
+  var loopTimeout = 1000;
 
   var loopProtect = rewriteLoops;
 
