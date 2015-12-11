@@ -133,34 +133,24 @@ module.exports = function(app) {
     .shareReplay();
 
   // create a stream of challenge blocks
-  const superBlocks$ = challenge$
+  const blocks$ = challenge$
     .map(challenge => challenge.toJSON())
     // group challenges by block | returns a stream of observables
     .groupBy(challenge => challenge.block)
     // turn block group stream into an array
     .flatMap(blocks$ => blocks$.toArray())
     // turn array into stream of object
-    .map(blockArray => ({
-      name: blockArray[0].block,
-      dashedName: dasherize(blockArray[0].block),
-      challenges: blockArray,
-      superBlock: blockArray[0].superBlock
+    .map(blocksArray => ({
+      name: blocksArray[0].block,
+      dashedName: dasherize(blocksArray[0].block),
+      challenges: blocksArray,
+      superBlock: blocksArray[0].superBlock,
+      order: blocksArray[0].order
     }))
     // filter out hikes
     .filter(({ superBlock }) => {
       return !(/hikes/gi).test(superBlock);
     })
-    .groupBy(block => block.superBlock)
-    .flatMap(superBlocks$ => superBlocks$.toArray())
-    .map(superBlockArr => ({
-      name: superBlockArr[0].superBlock,
-      superOrder: superBlockArr[0].superOrder,
-      blocks: superBlockArr
-    }))
-    .shareReplay();
-
-  const blocks$ = superBlocks$
-    .flatMap(superBlock => Observable.from(superBlock.blocks))
     .shareReplay();
 
   const User = app.models.User;
@@ -205,6 +195,7 @@ module.exports = function(app) {
         // find the index of the block this challenge resides in
         const blockIndex$ = blocks$
           .findIndex(({ name }) => name === challenge.block);
+
 
         return blockIndex$
           .flatMap(blockIndex => {
