@@ -206,6 +206,8 @@
       ],
       "tests": [
         "assert((function(){var testCar = new Car(3,1,2); return testCar.wheels === 3 && testCar.seats === 1 && testCar.engines === 2;})(), 'message: Calling <code>new Car(3,1,2)</code> should produce an object with a <code>wheels</code> property of <code>3</code>, a <code>seats</code> property of <code>1</code>, and an <code>engines</code> property of <code>2</code>.');",
+        "assert((function(){var testCar = new Car(4,4,2); return testCar.wheels === 4 && testCar.seats === 4 && testCar.engines === 2;})(), 'message: Calling <code>new Car(4,4,2)</code> should produce an object with a <code>wheels</code> property of <code>4</code>, a <code>seats</code> property of <code>4</code>, and an <code>engines</code> property of <code>2</code>.');",
+        "assert((function(){var testCar = new Car(2,6,3); return testCar.wheels === 2 && testCar.seats === 6 && testCar.engines === 3;})(), 'message: Calling <code>new Car(2,6,3)</code> should produce an object with a <code>wheels</code> property of <code>2</code>, a <code>seats</code> property of <code>6</code>, and an <code>engines</code> property of <code>3</code>.');",
         "assert(typeof myCar.wheels === 'number' && typeof myCar.seats === 'number' && typeof myCar.engines === 'number', 'message: <code>myCar</code> should have number values for the <code>wheels</code>, <code>seats</code>, and <code>engines</code> properties.');"
       ],
       "challengeSeed": [
