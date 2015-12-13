@@ -1835,11 +1835,11 @@
         "Your placeholder text is what appears in your text <code>input</code> before your user has inputed anything.",
         "You can create placeholder text like so:",
          "<code>&#60;input type=\"text\" placeholder=\"this is placeholder text\"&#62;</code>",
-        "Set the <code>placeholder</code> value of your text <code>input</code> to \"cat photo URL\"."
+        "Set the <code>placeholder</code> value of your text <code>input</code> to \"http://example.com/cat-photo\"."
       ],
       "tests": [
         "assert($(\"input[placeholder]\").length > 0, 'message: Add a <code>placeholder</code> attribute text <code>input</code> element.');",
-        "assert($(\"input\") && $(\"input\").attr(\"placeholder\") && $(\"input\").attr(\"placeholder\").match(/cat\\s+photo\\s+URL/gi), 'message: Set the value of your placeholder attribute to \"cat photo URL\".');"
+        "assert($(\"input\") && $(\"input\").attr(\"placeholder\") && $(\"input\").attr(\"placeholder\").match(/http:\/\/example.com\/cat-photo/gi), 'message: Set the value of your placeholder attribute to \"http://example.com/cat-photo\".');"
       ],
       "challengeSeed": [
         "<link href=\"http://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
@@ -1902,13 +1902,13 @@
         "Tu texto de relleno es el que aparece campo de texto antes de que tu usuario haya ingresado datos.",
         "Puedes crear un texto de relleno de esta manera:",
         "<code>&#60;input type=\"text\" placeholder=\"este es un texto de relleno\"&#62;</code>",
-        "Establece el valor del <code>texto de relleno</code> de tu campo de texto como \"cat photo URL\"."
+        "Establece el valor del <code>texto de relleno</code> de tu campo de texto como \"http://example.com/cat-photo\"."
       ],
       "namePt": "",
       "descriptionPt": [],
       "nameDe": "Waypoint: Füge Platzhalter zu einem Textfeld hinzu",
       "descriptionDe": [
-        "Setze bei deinem <code>input</code> Element den Wert für <code>placeholder</code> auf \"cat photo URL\".",
+        "Setze bei deinem <code>input</code> Element den Wert für <code>placeholder</code> auf \"http://example.com/cat-photo\".",
         "Platzhalter erscheinen in <code>input</code> Feldern, bevor der Nutzer etwas eingibt.",
         "Du kannst Platzhalter auf folgende Weise erstellen: <code>&#60;input type=\"text\" placeholder=\"Das ist ein Platzhalter.\"&#62;</code>"
       ]
@@ -1973,7 +1973,7 @@
         "  <li>thunder</li>",
         "  <li>other cats</li>",
         "</ol>",
-        "<input type=\"text\" placeholder=\"cat photo URL\">"
+        "<input type=\"text\" placeholder=\"http://example.com/cat-photo\">"
       ],
       "type": "waypoint",
       "challengeType": 0,
@@ -2061,7 +2061,7 @@
         "  <li>other cats</li>",
         "</ol>",
         "<form action=\"/submit-cat-photo\">",
-        "  <input type=\"text\" placeholder=\"cat photo URL\">",
+        "  <input type=\"text\" placeholder=\"http://example.com/cat-photo\">",
         "</form>"
       ],
       "type": "waypoint",
@@ -2148,7 +2148,7 @@
         "  <li>other cats</li>",
         "</ol>",
         "<form action=\"/submit-cat-photo\">",
-        "  <input type=\"text\" placeholder=\"cat photo URL\">",
+        "  <input type=\"text\" placeholder=\"http://example.com/cat-photo\">",
         "  <button type=\"submit\">Submit</button>",
         "</form>"
       ],
@@ -2243,7 +2243,7 @@
         "  <li>other cats</li>",
         "</ol>",
         "<form action=\"/submit-cat-photo\">",
-        "  <input type=\"text\" placeholder=\"cat photo URL\" required>",
+        "  <input type=\"text\" placeholder=\"http://example.com/cat-photo\" required>",
         "  <button type=\"submit\">Submit</button>",
         "</form>"
       ],
@@ -2344,7 +2344,7 @@
         "<form action=\"/submit-cat-photo\">",
         "  <label><input type=\"radio\" name=\"indoor-outdoor\"> Indoor</label>",
         "  <label><input type=\"radio\" name=\"indoor-outdoor\"> Outdoor</label>",
-        "  <input type=\"text\" placeholder=\"cat photo URL\" required>",
+        "  <input type=\"text\" placeholder=\"http://example.com/cat-photo\" required>",
         "  <button type=\"submit\">Submit</button>",
         "</form>"
       ],
@@ -2440,7 +2440,7 @@
         "  <label><input type=\"checkbox\" name=\"personality\"> Loving</label>",
         "  <label><input type=\"checkbox\" name=\"personality\"> Lazy</label>",
         "  <label><input type=\"checkbox\" name=\"personality\"> Energetic</label>",
-        "  <input type=\"text\" placeholder=\"cat photo URL\" required>",
+        "  <input type=\"text\" placeholder=\"http://example.com/cat-photo\" required>",
         "  <button type=\"submit\">Submit</button>",
         "</form>"
       ],
@@ -2537,7 +2537,7 @@
         "  <label><input type=\"checkbox\" name=\"personality\" checked> Loving</label>",
         "  <label><input type=\"checkbox\" name=\"personality\"> Lazy</label>",
         "  <label><input type=\"checkbox\" name=\"personality\"> Energetic</label>",
-        "  <input type=\"text\" placeholder=\"cat photo URL\" required>",
+        "  <input type=\"text\" placeholder=\"http://example.com/cat-photo\" required>",
         "  <button type=\"submit\">Submit</button>",
         "</form>"
       ],
@@ -2638,7 +2638,7 @@
         "  <label><input type=\"checkbox\" name=\"personality\" checked> Loving</label>",
         "  <label><input type=\"checkbox\" name=\"personality\"> Lazy</label>",
         "  <label><input type=\"checkbox\" name=\"personality\"> Energetic</label>",
-        "  <input type=\"text\" placeholder=\"cat photo URL\" required>",
+        "  <input type=\"text\" placeholder=\"http://example.com/cat-photo\" required>",
         "  <button type=\"submit\">Submit</button>",
         "</form>"
       ],
@@ -2736,7 +2736,7 @@
         "  <label><input type=\"checkbox\" name=\"personality\" checked> Loving</label>",
         "  <label><input type=\"checkbox\" name=\"personality\"> Lazy</label>",
         "  <label><input type=\"checkbox\" name=\"personality\"> Energetic</label>",
-        "  <input type=\"text\" placeholder=\"cat photo URL\" required>",
+        "  <input type=\"text\" placeholder=\"http://example.com/cat-photo\" required>",
         "  <button type=\"submit\">Submit</button>",
         "</form>"
       ],
@@ -2839,7 +2839,7 @@
         "  <label><input type=\"checkbox\" name=\"personality\" checked> Loving</label>",
         "  <label><input type=\"checkbox\" name=\"personality\"> Lazy</label>",
         "  <label><input type=\"checkbox\" name=\"personality\"> Energetic</label>",
-        "  <input type=\"text\" placeholder=\"cat photo URL\" required>",
+        "  <input type=\"text\" placeholder=\"http://example.com/cat-photo\" required>",
         "  <button type=\"submit\">Submit</button>",
         "</form>"
       ],
