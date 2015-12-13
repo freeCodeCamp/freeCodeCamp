@@ -549,6 +549,7 @@
       ],
       "MDNlinks": [
         "Array.push()"
+        "Array.slice()"
       ],
       "solutions": [
         "function chunk(arr, size) {\n  var out = [];\n  for (var i = 0; i < arr.length; i+=size) {\n    out.push(arr.slice(i,i+size));\n  }\n  return out;\n}\n\nchunk(['a', 'b', 'c', 'd'], 2);\n"
