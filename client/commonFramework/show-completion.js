@@ -6,7 +6,7 @@ window.common = (function(global) {
   } = global;
 
   common.showCompletion = function showCompletion() {
-    var time = Math.floor(Date.now() - window.started);
+    var time = Math.floor(Date.now() - common.started);
 
     ga(
       'send',
