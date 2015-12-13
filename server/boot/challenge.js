@@ -186,6 +186,12 @@ module.exports = function(app) {
 
     // find challenge
     return challenge$
+      // filter out challenges coming soon
+      .filter(challenge => {
+        return isDev ||
+          !challenge.isComingSoon ||
+          (isBeta && challenge.isBeta);
+      })
       .map(challenge => challenge.toJSON())
       // filter out hikes
       .filter(({ superBlock }) => !(/hikes/gi).test(superBlock))
