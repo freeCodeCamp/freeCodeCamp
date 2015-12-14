@@ -104,6 +104,16 @@ function shouldShowNew(element, block) {
   }
 }
 
+// meant to be used with a filter method
+// on an array or observable stream
+// true if challenge should be passed through
+// false if should filter challenge out of array or stream
+function shouldNotFilterComingSoon({ isComingSoon, isBeta: challengeIsBeta }) {
+  return isDev ||
+    !isComingSoon ||
+    (isBeta && challengeIsBeta);
+}
+
 module.exports = function(app) {
   const router = app.loopback.Router();
 
@@ -135,6 +145,7 @@ module.exports = function(app) {
   // create a stream of challenge blocks
   const blocks$ = challenge$
     .map(challenge => challenge.toJSON())
+    .filter(shouldNotFilterComingSoon)
     // group challenges by block | returns a stream of observables
     .groupBy(challenge => challenge.block)
     // turn block group stream into an array
@@ -186,13 +197,9 @@ module.exports = function(app) {
 
     // find challenge
     return challenge$
-      // filter out challenges coming soon
-      .filter(challenge => {
-        return isDev ||
-          !challenge.isComingSoon ||
-          (isBeta && challenge.isBeta);
-      })
       .map(challenge => challenge.toJSON())
+      // filter out challenges coming soon
+      .filter(shouldNotFilterComingSoon)
       // filter out hikes
       .filter(({ superBlock }) => !(/hikes/gi).test(superBlock))
       .filter(({ id }) => id === challengeId)
@@ -216,6 +223,7 @@ module.exports = function(app) {
               .map(({ challenges = [] }) => challenges[0]);
 
             return blocks$
+              .filter(shouldNotFilterComingSoon)
               .elementAt(blockIndex)
               .flatMap(block => {
                 // find where our challenge lies in the block
@@ -284,11 +292,7 @@ module.exports = function(app) {
     challenge$
       .filter((challenge) => {
         return testChallengeName.test(challenge.name) &&
-          (
-            isDev ||
-            !challenge.isComingSoon ||
-            (isBeta && challenge.isBeta)
-          );
+          shouldNotFilterComingSoon(challenge);
       })
       .last({ defaultValue: null })
       .flatMap(challenge => {
