@@ -13,7 +13,7 @@
     "prestart-production": "bower cache clean && bower install && gulp build -p",
     "start-production": "node pm2Start",
     "lint": "npm run lint-js && npm run lint-json",
-    "lint-challenges": "jsonlint -q seed/challenges/*.json",
+    "lint-challenges": "jsonlint -q seed/challenges/**/*.json",
     "lint-nonprofits": "jsonlint -q seed/nonprofits.json",
     "lint-server": "jsonlint -q server/*.json",
     "lint-resources": "jsonlint -q server/resources/*.json",

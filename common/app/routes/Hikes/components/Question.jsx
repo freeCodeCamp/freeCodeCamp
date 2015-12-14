@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import { Spring } from 'react-motion';
+import { Motion } from 'react-motion';
 import { History, Lifecycle } from 'react-router';
 import debugFactory from 'debug';
 import {
@@ -215,7 +215,8 @@ export default React.createClass({
   },
 
   renderQuestion(number, question, answer, shake) {
-    return ({ val: { x } }) => {
+    return ({ x: xFunc }) => {
+      const x = xFunc().val.x;
       const style = {
         WebkitTransform: `translate3d(${ x }px, 0, 0)`,
         transform: `translate3d(${ x }px, 0, 0)`
@@ -252,9 +253,9 @@ export default React.createClass({
         xs={ 8 }
         xsOffset={ 2 }>
         <Row>
-          <Spring endValue={ this.getTweenValues }>
+          <Motion style={{ x: this.getTweenValues }}>
             { this.renderQuestion(number, question, answer, shake) }
-          </Spring>
+          </Motion>
           { this.renderInfo(showInfo, info) }
           <Panel>
             <Button

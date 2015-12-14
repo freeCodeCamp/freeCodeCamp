@@ -84,11 +84,42 @@ function updateUserProgress(user, challengeId, completedChallenge) {
   return user;
 }
 
+
+// small helper function to determine whether to mark something as new
+const dateFormat = 'MMM MMMM DD, YYYY';
+function shouldShowNew(element, block) {
+  if (element) {
+    return typeof element.releasedOn !== 'undefined' &&
+      moment(element.releasedOn, dateFormat).diff(moment(), 'days') >= -30;
+  }
+
+  if (block) {
+    const newCount = block.reduce((sum, { markNew }) => {
+      if (markNew) {
+        return sum + 1;
+      }
+      return sum;
+    }, 0);
+    return newCount / block.length * 100 === 100;
+  }
+}
+
+// meant to be used with a filter method
+// on an array or observable stream
+// true if challenge should be passed through
+// false if should filter challenge out of array or stream
+function shouldNotFilterComingSoon({ isComingSoon, isBeta: challengeIsBeta }) {
+  return isDev ||
+    !isComingSoon ||
+    (isBeta && challengeIsBeta);
+}
+
 module.exports = function(app) {
   const router = app.loopback.Router();
 
   const challengesQuery = {
     order: [
+      'superOrder ASC',
       'order ASC',
       'suborder ASC'
     ]
@@ -100,7 +131,6 @@ module.exports = function(app) {
   const findChallenge$ = observeMethod(Challenge, 'find');
   // create a stream of all the challenges
   const challenge$ = findChallenge$(challengesQuery)
-    .doOnNext(() => debug('query challenges'))
     .flatMap(challenges => Observable.from(
       challenges,
       null,
@@ -115,18 +145,22 @@ module.exports = function(app) {
   // create a stream of challenge blocks
   const blocks$ = challenge$
     .map(challenge => challenge.toJSON())
+    .filter(shouldNotFilterComingSoon)
     // group challenges by block | returns a stream of observables
     .groupBy(challenge => challenge.block)
     // turn block group stream into an array
-    .flatMap(block$ => block$.toArray())
+    .flatMap(blocks$ => blocks$.toArray())
     // turn array into stream of object
-    .map(blockArray => ({
-      name: blockArray[0].block,
-      dashedName: dasherize(blockArray[0].block),
-      challenges: blockArray
+    .map(blocksArray => ({
+      name: blocksArray[0].block,
+      dashedName: dasherize(blocksArray[0].block),
+      challenges: blocksArray,
+      superBlock: blocksArray[0].superBlock,
+      order: blocksArray[0].order
     }))
-    .filter(({ name })=> {
-      return name !== 'Hikes';
+    // filter out hikes
+    .filter(({ superBlock }) => {
+      return !(/hikes/gi).test(superBlock);
     })
     .shareReplay();
 
@@ -164,13 +198,17 @@ module.exports = function(app) {
     // find challenge
     return challenge$
       .map(challenge => challenge.toJSON())
-      .filter(({ block }) => block !== 'Hikes')
+      // filter out challenges coming soon
+      .filter(shouldNotFilterComingSoon)
+      // filter out hikes
+      .filter(({ superBlock }) => !(/hikes/gi).test(superBlock))
       .filter(({ id }) => id === challengeId)
       // now lets find the block it belongs to
       .flatMap(challenge => {
         // find the index of the block this challenge resides in
         const blockIndex$ = blocks$
           .findIndex(({ name }) => name === challenge.block);
+
 
         return blockIndex$
           .flatMap(blockIndex => {
@@ -185,6 +223,7 @@ module.exports = function(app) {
               .map(({ challenges = [] }) => challenges[0]);
 
             return blocks$
+              .filter(shouldNotFilterComingSoon)
               .elementAt(blockIndex)
               .flatMap(block => {
                 // find where our challenge lies in the block
@@ -252,7 +291,8 @@ module.exports = function(app) {
     debug('looking for %s', testChallengeName);
     challenge$
       .filter((challenge) => {
-        return testChallengeName.test(challenge.name);
+        return testChallengeName.test(challenge.name) &&
+          shouldNotFilterComingSoon(challenge);
       })
       .last({ defaultValue: null })
       .flatMap(challenge => {
@@ -455,23 +495,6 @@ module.exports = function(app) {
 
   function challengeMap({ user = {} }, res, next) {
 
-    // small helper function to determine whether to mark something as new
-    function shouldShowNew(element, block) {
-      if (element) {
-        return (typeof element.releasedOn !== 'undefined' &&
-               moment(element.releasedOn, 'MMM MMMM DD, YYYY')
-               .diff(moment(), 'days') >= -30);
-      } else if (block) {
-        const newCount = block.reduce((sum, { markNew }) => {
-          if (markNew) {
-            return sum + 1;
-          }
-          return sum;
-        }, 0);
-        return newCount / block.length * 100 === 100;
-      }
-    }
-
     let lastCompleted;
     const daysRunning = moment().diff(new Date('10/15/2014'), 'days');
 
@@ -485,7 +508,7 @@ module.exports = function(app) {
       .map(camperCount => numberWithCommas(camperCount));
 
     // create a stream of an array of all the challenge blocks
-    const blocks$ = challenge$
+    const superBlocks$ = challenge$
       // mark challenge completed
       .map(challengeModel => {
         const challenge = challengeModel.toJSON();
@@ -507,10 +530,13 @@ module.exports = function(app) {
           return sum;
         }, 0);
         const isBeta = _.every(blockArray, 'isBeta');
+        const isComingSoon = _.every(blockArray, 'isComingSoon');
 
         return {
           isBeta,
+          isComingSoon,
           name: blockArray[0].block,
+          superBlock: blockArray[0].superBlock,
           dashedName: dasherize(blockArray[0].block),
           markNew: shouldShowNew(null, blockArray),
           challenges: blockArray,
@@ -518,25 +544,36 @@ module.exports = function(app) {
           time: blockArray[0] && blockArray[0].time || '???'
         };
       })
-      .filter(({ name }) => name !== 'Hikes')
+      // filter out hikes
+      .filter(({ superBlock }) => {
+        return !(/hikes/i).test(superBlock);
+      })
       // turn stream of blocks into a stream of an array
       .toArray()
-      .doOnNext((blocks) => {
+      .doOnNext(blocks => {
         const lastCompletedBlock = _.findLast(blocks, (block) => {
           return block.completed === 100;
         });
         lastCompleted = lastCompletedBlock && lastCompletedBlock.name || null;
-      });
+      })
+      .flatMap(blocks => Observable.from(blocks, null, null, Scheduler.default))
+      .groupBy(block => block.superBlock)
+      .flatMap(blocks$ => blocks$.toArray())
+      .map(superBlockArray => ({
+        name: superBlockArray[0].superBlock,
+        blocks: superBlockArray
+      }))
+      .toArray();
 
     Observable.combineLatest(
       camperCount$,
-      blocks$,
-      (camperCount, blocks) => ({ camperCount, blocks })
+      superBlocks$,
+      (camperCount, superBlocks) => ({ camperCount, superBlocks })
     )
       .subscribe(
-        ({ camperCount, blocks }) => {
+        ({ camperCount, superBlocks }) => {
           res.render('challengeMap/show', {
-            blocks,
+            superBlocks,
             daysRunning,
             globalCompletedCount: numberWithCommas(
               5612952 + (Math.floor((Date.now() - 1446268581061) / 2000))

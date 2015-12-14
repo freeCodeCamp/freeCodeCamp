@@ -1,0 +1,113 @@
+{
+  "name": "API Projects",
+  "order": 26,
+  "isComingSoon": true,
+  "time": "100h",
+  "challenges": [
+    {
+      "id": "bd7158d8c443edefaeb5bdef",
+      "title": "API Project 1",
+      "challengeSeed": [],
+      "description": [
+      ],
+      "type": "basejump",
+      "challengeType": 4,
+      "tests": [],
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "Crea una aplicación de votaciones",
+      "descriptionEs": [
+        ],
+      "namePt": "",
+      "descriptionPt": []
+    },
+    {
+      "id": "bd7158d8c443edefaeb5bdff",
+      "title": "API Project 2",
+      "challengeSeed": [],
+      "description": [
+      ],
+      "type": "basejump",
+      "challengeType": 4,
+      "tests": [],
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "Crea una aplicación de coordinación de vida nocturna",
+      "descriptionEs": [
+        ],
+      "namePt": "",
+      "descriptionPt": []
+    },
+    {
+      "id": "bd7158d8c443edefaeb5bd0e",
+      "title": "API Project 3",
+      "challengeSeed": [],
+      "description": [
+      ],
+      "type": "basejump",
+      "challengeType": 4,
+      "tests": [],
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "Grafica el mercado de acciones",
+      "descriptionEs": [
+        ],
+      "namePt": "",
+      "descriptionPt": []
+    },
+    {
+      "id": "bd7158d8c443edefaeb5bd0f",
+      "title": "API Project 4",
+      "challengeSeed": [],
+      "description": [
+      ],
+      "type": "basejump",
+      "challengeType": 4,
+      "tests": [],
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "Administra un club de intercambio de libros",
+      "descriptionEs": [
+        ],
+      "namePt": "",
+      "descriptionPt": []
+    },
+    {
+      "id": "bd7158d8c443edefaeb5bdee",
+      "title": "API Project 5",
+      "challengeSeed": ["133315784"],
+      "description": [
+      ],
+      "type": "basejump",
+      "challengeType": 4,
+      "tests": [],
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "Crea un clon de Pinterest",
+      "descriptionEs": [
+        ],
+      "namePt": "",
+      "descriptionPt": []
+    }
+  ]
+}

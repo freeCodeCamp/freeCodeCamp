@@ -36,7 +36,10 @@ module.exports = function(app) {
   router.get('/stories', showTestimonials);
   router.get('/all-stories', showAllTestimonials);
   router.get('/links', showLinks);
-  router.get('/the-fastest-web-page-on-the-internet', theFastestWebPageOnTheInternet);
+  router.get(
+    '/the-fastest-web-page-on-the-internet',
+    theFastestWebPageOnTheInternet
+  );
 
   app.use(router);
 

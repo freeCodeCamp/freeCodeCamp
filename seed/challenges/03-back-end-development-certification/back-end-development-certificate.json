@@ -1,23 +1,23 @@
 {
-  "name": "Claim Your Full Stack Development Certificate",
-  "order": 21,
+  "name": "Claim Your Back End Development Certificate",
+  "order": 29,
   "time": "5m",
   "challenges": [
     {
       "id": "660add10cb82ac38a17513be",
-      "title": "Claim Your Full Stack Development Certificate",
+      "title": "Claim Your Back End Development Certificate",
       "challengeSeed": [
         {
-          "properties": ["isHonest", "isFullStackCert"],
-          "apis": ["/certificate/honest", "/certificate/verify/full-stack"],
+          "properties": ["isHonest", "isBackEndCert"],
+          "apis": ["/certificate/honest", "/certificate/verify/back-end"],
           "stepIndex": [1, 2]
         }
       ],
       "description": [
         [
           "http://i.imgur.com/sKYQhdG.jpg",
-          "An image of our Full Stack Development Certificate",
-          "This challenge will give you your verified Full Stack Development Certificate. Before we issue your certificate, we must verify that you have completed all of Bonfires, Ziplines and Basejumps. You must also accept our Academic Honesty Pledge. Click the button below to start this process.",
+          "An image of our Back End Development Certificate",
+          "This challenge will give you your verified Back End Development Certificate. Before we issue your certificate, we must verify that you have completed all of Bonfires, Ziplines and Basejumps. You must also accept our Academic Honesty Pledge. Click the button below to start this process.",
           ""
         ],
         [
@@ -28,7 +28,7 @@
         ],
         [
           "http://i.imgur.com/2qn7tHp.jpg",
-          "An image of the text \"Full Stack Development Certificate requirements\"",
+          "An image of the text \"Back End Development Certificate requirements\"",
           "Let's confirm that you have completed all of our Bonfires, Ziplines and Basejumps. Click the button below to verify this.",
           "#"
         ],

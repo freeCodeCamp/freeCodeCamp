@@ -5,8 +5,8 @@ import { Observable } from 'rx';
 import debugFactory from 'debug';
 
 import {
-  frontEndChallangeId,
-  fullStackChallangeId
+  frontEndChallengeId,
+  backEndChallengeId
 } from '../utils/constantStrings.json';
 import { ifNoUser401, ifNoUserRedirectTo } from '../utils/middleware';
 import { observeQuery } from '../utils/rx';
@@ -126,6 +126,11 @@ module.exports = function(app) {
 
   router.get(
     '/:username/full-stack-certification',
+    (req, res) => res.redirect(req.url.replace('full-stack', 'back-end'))
+  );
+
+  router.get(
+    '/:username/back-end-certification',
     showCert
   );
 
@@ -243,6 +248,7 @@ module.exports = function(app) {
           pledge: profileUser.pledge,
 
           isFrontEndCert: profileUser.isFrontEndCert,
+          isBackEndCert: profileUser.isBackEndCert,
           isFullStackCert: profileUser.isFullStackCert,
           isHonest: profileUser.isHonest,
 
@@ -275,7 +281,8 @@ module.exports = function(app) {
   function showCert(req, res, next) {
     const username = req.params.username.toLowerCase();
     const { user } = req;
-    const showFront = req.path.split('/').pop() === 'front-end-certification';
+    const whichCert = req.path.split('/').pop();
+    const showFront = whichCert === 'front-end-certification';
     Observable.just(user)
       .flatMap(user => {
         if (user && user.username === username) {
@@ -285,6 +292,7 @@ module.exports = function(app) {
           isGithubCool: true,
           isFrontEndCert: true,
           isFullStackCert: true,
+          isBackEndCert: true,
           isHonest: true,
           completedChallenges: true,
           username: true,
@@ -329,19 +337,19 @@ module.exports = function(app) {
 
           if (
             showFront && user.isFrontEndCert ||
-            !showFront && user.isFullStackCert
+            !showFront && user.isBackEndCert
           ) {
             var { completedDate = new Date() } =
               _.find(user.completedChallenges, {
                 id: showFront ?
-                  frontEndChallangeId :
-                  fullStackChallangeId
+                  frontEndChallengeId :
+                  backEndChallengeId
               }) || {};
 
             return res.render(
               showFront ?
                 'certificate/front-end.jade' :
-                'certificate/full-stack.jade',
+                'certificate/back-end.jade',
               {
                 username: user.username,
                 date: moment(new Date(completedDate))
@@ -353,7 +361,7 @@ module.exports = function(app) {
           req.flash('errors', {
             msg: showFront ?
               `Looks like user ${username} is not Front End certified` :
-              `Looks like user ${username} is not Full Stack certified`
+              `Looks like user ${username} is not Back End certified`
           });
           res.redirect('back');
         },

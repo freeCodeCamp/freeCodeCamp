@@ -29,8 +29,24 @@
     "suborder": {
       "type": "number"
     },
+    "isBeta": {
+      "type": "boolean",
+      "description": "Show only during dev or on beta site. Completely omitted otherwise"
+    },
+    "isComingSoon": {
+      "type": "boolean",
+      "description": "Challenge shows in production, but is unreachable and disabled. Is reachable in beta/dev only if isBeta flag is set"
+    },
     "dashedName": {
       "type": "string"
+    },
+    "superBlock": {
+      "type": "string",
+      "description": "Used for ordering challenge blocks in map"
+    },
+    "superOrder": {
+      "type": "number",
+      "description": "Used to determine super block order, set by prepending two digit number to super block folder name"
     },
     "block": {
       "type": "string"
