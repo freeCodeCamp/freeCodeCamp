@@ -124,7 +124,7 @@
     "url-regex": "^3.0.0",
     "validator": "^4.2.1",
     "webpack": "^1.9.12",
-    "webpack-stream": "^2.1.1",
+    "webpack-stream": "^3.1.0",
     "xss-filters": "^1.2.6",
     "yargs": "^3.30.0"
   },
