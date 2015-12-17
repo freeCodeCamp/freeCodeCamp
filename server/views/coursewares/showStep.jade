@@ -10,7 +10,7 @@ block content
                             p.large-p!= step[2]
                         .challenge-button-block
                             if step[3]
-                                a.btn.btn-block.btn-primary.challenge-step-btn-action(id='#{index}' href='#{step[3]}' target='_blank') Open link in new tab
+                                a.btn.btn-block.btn-primary.challenge-step-btn-action(id='#{index}' href='#{step[3]}' target='_blank') Open link in new tab (this unlocks the next step)
                                 .button-spacer
                             if index === 0
                                 .col-sm-5.hidden-xs &nbsp;
