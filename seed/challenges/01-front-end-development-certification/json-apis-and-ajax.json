@@ -135,7 +135,7 @@
         "assert(code.match(/\\s*?\\}\\s*?\\)\\s*?\\;/gi), 'message: You should have at least one closing set of brackets and parenthesis.');",
         "assert(code.match(/\\s*?\\}\\s*?\\)\\s*?\\;/gi) && code.match(/\\,\\s*?function\\s*?\\(\\s*?\\w*?\\s*?\\)\\s*?\\{/gi) && code.match(/\\s*?\\}\\s*?\\)\\s*?\\;/gi).length === code.match(/\\s*?function\\s*?\\(\\s*?\\w*?\\s*?\\)\\s*?\\{/gi).length, 'message: Each callback function should have a closing set of brackets and parenthesis.');",
         "assert(code.match(/\\$\\s*?\\.\\s*?getJSON\\s*?\\(\\s*?(\\\"|\\')\\\/json\\\/cats\\.json(\\\"|\\')\\s*?\\,\\s*?function\\s*?\\(\\s*?json\\s*?\\)\\s*?\\{/gi), 'message: You should be making use of the getJSON method given in the description to load data from the json file.');",
-        "assert(code.match(/\\$\\s*?\\(\\s*?(\\\"|\\')\\.message(\\\"|\\')\\s*?\\)\\s*?\\.\\s*?html\\s*?\\(\\s*?JSON\\s*?\\.\\s*?stringify\\s*?\\(\\s*?json\\s*?\\)\\s*?\\)/gi), 'message: Don\\'t forget to make the <code>.html</code> change the contents of the message box so that it contains the result of the getJSON.');"
+        "assert(code.match(/\\$\\s*?\\(\\s*?(\\\"|\\')\\.message(\\\"|\\')\\s*?\\)\\s*?\\.\\s*?html\\s*?\\(\\s*?JSON\\s*?\\.\\s*?stringify\\s*?\\(\\s*?json\\s*?\\)\\s*?\\)/gi), 'message: Don&apos;t forget to make the <code>.html</code> change the contents of the message box so that it contains the result of the getJSON.');"
       ],
       "challengeSeed": [
         "fccss",
