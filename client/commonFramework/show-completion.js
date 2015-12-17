@@ -9,9 +9,10 @@ window.common = (function(global) {
     ga(
       'send',
       'event',
-      'Challenge',
-      'solved',
-      common.challengeName + ', Attempts: '
+      'Challenge', //category
+      'solved',    //action
+      common.challengeName + ' Attempts: ', //label
+	  true //opt_noninteraction: not counting as bounce
     );
 
     var solution = common.editor.getValue();
