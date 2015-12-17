@@ -13,8 +13,32 @@ window.common = (function(global) {
     challengeTypes
   } = common;
 
-  let attempts = 0;
-
+  let attempts = "NaN";
+  let attempts_val = 0;
+  let attempts_ranges = function(attempts){
+	if (attempts == 0){
+		return "0";
+	}
+	else if (attempts > 0 && attempts <= 5){
+		return "1-5";
+	}
+	else if (attempts > 5 && attempts <= 10){
+		return "6-10";
+	}
+	else if (attempts > 10 && attempts <= 20){
+		return "11-20";
+	}
+	else if (attempts > 20 && attempts <= 30){
+		return "21-30";
+	}
+	else if (attempts > 30 && attempts <= 50){
+		return "31-50";
+	}
+	else{
+		return "51+";
+	} 
+  }
+  
   common.executeChallenge$ = function executeChallenge$() {
     const code = common.editor.getValue();
     const originalCode = code;
@@ -22,7 +46,9 @@ window.common = (function(global) {
     const tail = common.arrayToNewLineString(common.tail);
     const combinedCode = head + code + tail;
 
-    attempts++;
+    attempts_val++;
+	attempts = attempts_ranges(attempts_val);
+	
 
     ga('send', 'event', 'Challenge', 'ran-code', common.challengeName);
 

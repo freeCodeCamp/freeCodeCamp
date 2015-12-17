@@ -6,14 +6,12 @@ window.common = (function(global) {
   } = global;
 
   common.showCompletion = function showCompletion() {
-    var time = Math.floor(Date.now() - common.started);
-
     ga(
       'send',
       'event',
       'Challenge',
       'solved',
-      common.challengeName + ', Time: ' + time + ', Attempts: ' + 0
+      common.challengeName + ', Attempts: '
     );
 
     var solution = common.editor.getValue();
