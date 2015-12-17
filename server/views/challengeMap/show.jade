@@ -32,15 +32,16 @@ block content
 
                 .spacer
                 if (user && user.progressTimestamps.length > 100)
-                    #map-notice.col-xs-12.col-md-8.col-md-offset-2.hidden
-                        h2.text-center Reddit or not, here we come
-                        img.thumbnail.img-center.img-responsive(src="http://i.imgur.com/lyd0bfM.jpg")
-                        h4.text-center Come ask questions and share your thoughts with our entire open source community on our subreddit.
-                        a.button.btn.btn-block.btn-primary(href="https://reddit.com/r/freecodecamp" target="_blank") Check it out
-                        .button-spacer
-                        .text-center
-                            a#hide-map-notice-button(href='#') Hide this forever
-                        .spacer
+                    .row
+                        #map-notice.col-xs-12.col-md-8.col-md-offset-2.hidden
+                            h2.text-center Reddit or not, here we come
+                            img.thumbnail.img-center.img-responsive(src="http://i.imgur.com/lyd0bfM.jpg")
+                            h4.text-center Come ask questions and share your thoughts with our entire open source community on our subreddit.
+                            a.button.btn.btn-block.btn-primary(href="https://reddit.com/r/freecodecamp" target="_blank") Check it out
+                            .button-spacer
+                            .text-center
+                                a#hide-map-notice-button(href='#') Hide this forever
+                            .spacer
 
                 ul
                   for superBlock in superBlocks
@@ -84,7 +85,7 @@ block content
                                                         em Coming Soon
                             else
                                 .hidden-xs.col-sm-3.col-md-2
-                                .col-xs-1.col-sm-1.col-md-1.map-row-numbers.negative-5
+                                .col-xs-1.col-sm-1.col-md-1.map-row-numbers
                                     span.map-p.negative-10  #{i}.
                                 .col-xs-10.col-sm-8.col-md-9
                                     span.map-p.negative-10
