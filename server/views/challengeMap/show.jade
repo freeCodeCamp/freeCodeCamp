@@ -44,7 +44,7 @@ block content
 
                 ul
                   for superBlock in superBlocks
-                    h1= superBlock.name
+                    h2= superBlock.name
                     - var i = 0
                     for challengeBlock in superBlock.blocks
                         - i++
@@ -52,7 +52,7 @@ block content
                             if (user)
                                 if (challengeBlock.completed === 100)
                                     .hidden-xs.col-sm-3.col-md-2.text-primary.ion-checkmark-circled.padded-ionic-icon.text-center.map-p.negative-10
-                                    .col-xs-1.col-sm-1.col-md-1.map-row-numbers
+                                    .col-xs-1.col-sm-1.col-md-1.map-row-numbers.negative-5
                                       span.map-p.negative-10 #{i}.
                                     .col-xs-11.col-sm-8.col-md-9
                                         li.map-p.faded.negative-10
@@ -69,8 +69,8 @@ block content
                                     .hidden-xs.col-sm-3.col-md-2
                                         .progress.progress-bar-padding.text-center.thin-progress-bar
                                             .progress-bar(role='progressbar', aria-valuenow=(challengeBlock.completed), aria-valuemin='0', aria-valuemax='100', style='width: ' + challengeBlock.completed + '%;')
-                                    .col-xs-1.col-sm-1.col-md-1.map-row-numbers
-                                      span.map-p.negative-10 #{i}.
+                                    .col-xs-1.col-sm-1.col-md-1.map-row-numbers.negative-5
+                                      span.map-p #{i}.
                                     .col-xs-11.col-sm-8.col-md-9
                                         li.map-p.negative-10
                                             a(href='#' + challengeBlock.dashedName)= challengeBlock.name
@@ -84,7 +84,7 @@ block content
                                                         em Coming Soon
                             else
                                 .hidden-xs.col-sm-3.col-md-2
-                                .col-xs-1.col-sm-1.col-md-1.map-row-numbers
+                                .col-xs-1.col-sm-1.col-md-1.map-row-numbers.negative-5
                                     span.map-p.negative-10  #{i}.
                                 .col-xs-10.col-sm-8.col-md-9
                                     span.map-p.negative-10
@@ -97,7 +97,7 @@ block content
                                             span.text-info.small &thinsp; &thinsp;
                                                 strong
                                                     em Coming Soon
-                  h1 Full Stack Development Certification
+                  h2 Full Stack Development Certification
                   .row                                        
                     .hidden-xs.col-sm-3.col-md-2.ion-locked.padded-ionic-icon.text-center.map-p.negative-10
                     .col-xs-12.col-sm-9.col-md-10
@@ -115,7 +115,7 @@ block content
                     .col-xs-12.col-sm-9.col-md-10
                         li.map-p.negative-10 Claim your Full Stack Development Certification
 
-                  h1 Coding Interview Preparation
+                  h2 Coding Interview Preparation
                   .row                                        
                     .hidden-xs.col-sm-3.col-md-2.ion-locked.padded-ionic-icon.text-center.map-p.negative-10
                     .col-xs-12.col-sm-9.col-md-10
