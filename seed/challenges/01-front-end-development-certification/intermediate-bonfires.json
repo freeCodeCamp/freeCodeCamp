@@ -438,7 +438,9 @@
         "assert.strictEqual(boo({ \"a\": 1 }), false, 'message: <code>boo({ \"a\": 1 })</code> should return false.');",
         "assert.strictEqual(boo(1), false, 'message: <code>boo(1)</code> should return false.');",
         "assert.strictEqual(boo(NaN), false, 'message: <code>boo(NaN)</code> should return false.');",
-        "assert.strictEqual(boo(\"a\"), false, 'message: <code>boo(\"a\")</code> should return false.');"
+        "assert.strictEqual(boo(\"a\"), false, 'message: <code>boo(\"a\")</code> should return false.');",
+        "assert.strictEqual(boo(\"true\"), false, 'message: <code>boo(\"true\")</code> should return false.');",
+        "assert.strictEqual(boo(\"false\"), false, 'message: <code>boo(\"false\")</code> should return false.');"
       ],
       "MDNlinks": [
         "Boolean Objects"
