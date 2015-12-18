@@ -73,13 +73,13 @@
       "title": "Declare JavaScript Variables",
       "description": [
         "When we store data in a <code>data structure</code>, we call it a <code>variable</code>. These variables are no different from the x and y variables you use in math.",
-        "Let's create our first variable and call it \"myName\".",
-        "You'll notice that in <code>myName</code>, we didn't use a space, and that the \"N\" is capitalized. JavaScript variables are written in <code>camel case</code>. An example of camel case is: camelCase.",
-        "Now, use the <code>var</code> keyword to create a variable called <code>myName</code>. Set its value to your name, in double quotes.",
+        "Let's create our first variable and call it \"ourName\".",
+        "You'll notice that in <code>ourName</code>, we didn't use a space, and that the \"N\" is capitalized. JavaScript variables are written in <code>camel case</code>. An example of camel case is: camelCase.",
+        "Now, use the <code>var</code> keyword to create a variable called <code>ourName</code>. Set its value to your name, in double quotes.",
         "Look at the <code>ourName</code> example if you get stuck."
       ],
       "tests": [
-        "assert((function(){if(typeof myName !== \"undefined\" && typeof myName === \"string\" && myName.length > 0){return true;}else{return false;}})(), 'message: <code>myName</code> should be a string that contains at least one character in it.');"
+        "assert((function(){if(typeof ourName !== \"undefined\" && typeof ourName === \"string\" && ourName.length > 0){return true;}else{return false;}})(), 'message: <code>ourName</code> should be a string that contains at least one character in it.');"
       ],
       "challengeSeed": [
         "var ourName = \"Free Code Camp\";",
@@ -87,16 +87,16 @@
         ""
       ],
       "tail": [
-        "if(typeof myName !== \"undefined\"){(function(v){return v;})(myName);}"
+        "if(typeof ourName !== \"undefined\"){(function(v){return v;})(ourName);}"
       ],
       "type": "waypoint",
       "challengeType": 1,
       "nameEs": "Declara variables en JavaScript",
       "descriptionEs": [
         "Cuando almacenamos datos en una <code>estructura de datos</code>, la llamamos una <code>variable</code>. Estas variables no son diferentes de las variables x e y que utilizas en matemáticas. ",
-        "Vamos a crear nuestra primera variable y a llamarla \"myName\".",
-        "Te darás cuenta que en <code>myName</code>, no usamos un espacio, y que la \" N\"se escribe con mayúscula. Las variables en JavaScript se escriben con <code>capitalización camello (camel case)</code>. Un ejemplo de capitalización camello: capitalizacionCamello.",
-        "Ahora, utiliza la palabra clave <code>var</code> para crear una variable llamada <code>myName</code>. Establecele como valor tu nombre, entre comillas dobles. ",
+        "Vamos a crear nuestra primera variable y a llamarla \"ourName\".",
+        "Te darás cuenta que en <code>ourName</code>, no usamos un espacio, y que la \" N\"se escribe con mayúscula. Las variables en JavaScript se escriben con <code>capitalización camello (camel case)</code>. Un ejemplo de capitalización camello: capitalizacionCamello.",
+        "Ahora, utiliza la palabra clave <code>var</code> para crear una variable llamada <code>ourName</code>. Establecele como valor tu nombre, entre comillas dobles. ",
         "Mira el ejemplo con <code>ourName</code> si te quedas atascado."
       ]
     },
@@ -104,7 +104,7 @@
       "id": "bd7123c9c444eddfaeb5bdef",
       "title": "Declare String Variables",
       "description": [
-        "In the previous challenge, we used the code <code>var myName = \"your name\"</code>. This is what we call a <code>String</code> variable. It is nothing more than a \"string\" of characters. JavaScript strings are always wrapped in quotes.",
+        "In the previous challenge, we used the code <code>var ourName = \"your name\"</code>. This is what we call a <code>String</code> variable. It is nothing more than a \"string\" of characters. JavaScript strings are always wrapped in quotes.",
         "Now let's create two new string variables: <code>myFirstName</code> and <code>myLastName</code> and assign them the values of your first and last name, respectively."
       ],
       "tests": [
@@ -124,7 +124,7 @@
       "challengeType": 1,
       "nameEs": "Declara variables tipo cadena",
       "descriptionEs": [
-        "En el reto anterior, se utilizó el código <code>myName var = \"su nombre\"</code>. Esto es lo que llamamos una variable tipo <code>cadena</code>. No es nada más que una \"cadena\" de caracteres. Las cadenas en JavaScript siempre se encierran entre comillas. ",
+        "En el reto anterior, se utilizó el código <code>ourName var = \"su nombre\"</code>. Esto es lo que llamamos una variable tipo <code>cadena</code>. No es nada más que una \"cadena\" de caracteres. Las cadenas en JavaScript siempre se encierran entre comillas. ",
         "Ahora vamos a crear dos nuevas variables tipo cadena: <code>myFirstName</code> y <code>myLastName</code> y asignarles los valores de tu nombre y tu apellido, respectivamente."
       ]
     },
