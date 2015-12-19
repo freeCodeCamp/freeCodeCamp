@@ -793,6 +793,7 @@
       "title": "Drop it",
       "description": [
         "Drop the elements of an array (first argument), starting from the front, until the predicate (second argument) returns true.",
+        "Return the rest of the array, otherwise return an empty array.",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "challengeSeed": [
@@ -813,7 +814,8 @@
       ],
       "MDNlinks": [
         "Arguments object",
-        "Array.shift()"
+        "Array.shift()",
+        "Array.slice()"
       ],
       "solutions": [
         "function drop(arr, func) {\n  // Drop them elements.\n  while (arr.length && !func(arr[0])) {\n    arr.shift();\n  }\n  return arr;\n}"
