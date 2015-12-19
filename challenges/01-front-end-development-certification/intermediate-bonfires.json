@@ -286,7 +286,7 @@
       ],
       "challengeSeed": [
         "function translate(str) {",
-        " return str;",
+        "  return str;",
         "}",
         "",
         "translate(\"consonant\");"
@@ -337,7 +337,7 @@
       ],
       "challengeSeed": [
         "function pair(str) {",
-        " return str;",
+        "  return str;",
         "}",
         "",
         "pair(\"GCG\");"
