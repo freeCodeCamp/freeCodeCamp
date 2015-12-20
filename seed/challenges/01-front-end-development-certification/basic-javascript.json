@@ -1457,7 +1457,7 @@
         "assert((function(){flip = 1; var result = myFunction(); if(result === 'tails'){return true;} else {return false;}})(), 'message: <code>myFunction</code> should return <code>tails</code> when flip equals 1');"
       ],
       "challengeSeed": [
-        "var flip = Math.floor(Math.random() * (1 - 0 + 1)) + 0;",
+        "var flip = Math.floor(Math.random() * 2);",
         "",
         "function myFunction() {",
         "",
