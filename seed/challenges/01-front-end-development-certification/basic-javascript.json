@@ -95,7 +95,7 @@
       "descriptionEs": [
         "Cuando almacenamos datos en una <code>estructura de datos</code>, la llamamos una <code>variable</code>. Estas variables no son diferentes de las variables x e y que utilizas en matemáticas. ",
         "Vamos a crear nuestra primera variable y a llamarla \"myName\".",
-        "Te darás cuenta que en <code>myName</code>, no usamos un espacio, y que la \" N\"se escribe con mayúscula. Las variables en JavaScript se escriben con <code>capitalización camello (camel case)</code>. Un ejemplo de capitalización camello: capitalizacionCamello.",
+        "Te darás cuenta que en <code>ourName</code>, no usamos un espacio, y que la \" N\"se escribe con mayúscula. Las variables en JavaScript se escriben con <code>capitalización camello (camel case)</code>. Un ejemplo de capitalización camello: capitalizacionCamello.",
         "Ahora, utiliza la palabra clave <code>var</code> para crear una variable llamada <code>myName</code>. Establecele como valor tu nombre, entre comillas dobles. ",
         "Mira el ejemplo con <code>ourName</code> si te quedas atascado."
       ]
