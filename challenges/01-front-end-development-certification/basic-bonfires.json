@@ -548,7 +548,8 @@
         "assert.deepEqual(chunk([0, 1, 2, 3, 4, 5], 4), [[0, 1, 2, 3], [4, 5]], 'message: <code>chunk([0, 1, 2, 3, 4, 5], 4)</code> should return <code>[[0, 1, 2, 3], [4, 5]]</code>.');"
       ],
       "MDNlinks": [
-        "Array.push()"
+        "Array.push()",
+        "Array.slice()"
       ],
       "solutions": [
         "function chunk(arr, size) {\n  var out = [];\n  for (var i = 0; i < arr.length; i+=size) {\n    out.push(arr.slice(i,i+size));\n  }\n  return out;\n}\n\nchunk(['a', 'b', 'c', 'd'], 2);\n"
