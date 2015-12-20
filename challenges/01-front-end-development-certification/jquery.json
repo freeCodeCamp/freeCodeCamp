@@ -907,7 +907,7 @@
         "You've seen why id attributes are so convenient for targeting with jQuery selectors. But you won't always have such neat ids to work with.",
         "Fortunately, jQuery has some other tricks for targeting the right elements.",
         "jQuery uses CSS Selectors to target elements. <code>target:nth-child(n)</code> css selector allows you to select all the nth element with the target class or element type.",
-        "Here's how you would give the third element in each well bounce:",
+        "Here's how you would give the third element in each well the bounce class:",
         "<code>$(\".target:nth-child(3)\").addClass(\"animated bounce\");</code>",
         "Make the second child in each of your well elements bounce. You must target the children of element with the <code>target</code> class."
       ],
