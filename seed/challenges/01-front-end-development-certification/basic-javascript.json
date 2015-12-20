@@ -74,7 +74,7 @@
       "description": [
         "When we store data in a <code>data structure</code>, we call it a <code>variable</code>. These variables are no different from the x and y variables you use in math.",
         "Let's create our first variable and call it \"myName\".",
-        "You'll notice that in <code>myName</code>, we didn't use a space, and that the \"N\" is capitalized. JavaScript variables are written in <code>camel case</code>. An example of camel case is: camelCase.",
+        "You'll notice that in <code>ourName</code>, we didn't use a space, and that the \"N\" is capitalized. JavaScript variables are written in <code>camel case</code>. An example of camel case is: camelCase.",
         "Now, use the <code>var</code> keyword to create a variable called <code>myName</code>. Set its value to your name, in double quotes.",
         "Look at the <code>ourName</code> example if you get stuck."
       ],
@@ -95,7 +95,7 @@
       "descriptionEs": [
         "Cuando almacenamos datos en una <code>estructura de datos</code>, la llamamos una <code>variable</code>. Estas variables no son diferentes de las variables x e y que utilizas en matemáticas. ",
         "Vamos a crear nuestra primera variable y a llamarla \"myName\".",
-        "Te darás cuenta que en <code>myName</code>, no usamos un espacio, y que la \" N\"se escribe con mayúscula. Las variables en JavaScript se escriben con <code>capitalización camello (camel case)</code>. Un ejemplo de capitalización camello: capitalizacionCamello.",
+        "Te darás cuenta que en <code>ourName</code>, no usamos un espacio, y que la \" N\"se escribe con mayúscula. Las variables en JavaScript se escriben con <code>capitalización camello (camel case)</code>. Un ejemplo de capitalización camello: capitalizacionCamello.",
         "Ahora, utiliza la palabra clave <code>var</code> para crear una variable llamada <code>myName</code>. Establecele como valor tu nombre, entre comillas dobles. ",
         "Mira el ejemplo con <code>ourName</code> si te quedas atascado."
       ]
