@@ -89,7 +89,7 @@
         "Ahora vamos de vuelta a nuestra aplicación de fotos de gatos. Esta vez, vamos a darle estilo utilizando la infraestructura CSS del popular Bootstrap.",
         "Bootstrap determina qué tan ancha es la pantalla y adapta correspondientemente el tamaño de tus elementos HTML - por eso es que se llama <code>Diseño adaptativo</code> (responsive design).",
         "Con diseño adaptativo, no hay necesidad de diseñar una versión móvil para tu sitio web. Se verá bien en dispositivos con pantallas de cualquier tamaño.",
-        "Puedes agregar Bootstrap a cualquier aplicación simplemente incluyéndolo agregando el siguiente código al inicio de tu HTML:",
+        "Puedes agregar Bootstrap a cualquier aplicación simplemente incluyendo el siguiente código al inicio de tu HTML:",
         "<code>&#60;link rel=\"stylesheet\" href=\"//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css\"/&#62;</code>",
         "En este caso, lo hemos agregado a esta página por ti.",
         "Para iniciar, debemos anidar todo nuestro HTML en un elemento <code>div</code> con la clase <code>container-fluid</code>."
@@ -2292,7 +2292,7 @@
       "nameEs": "Usa elementos para explicar tu código",
       "descriptionEs": [
         "Cuando comencemos a usar jQuery, modificarmemos los elementos HTML sin necesidad de hacer cambios reales en el código HTML.",
-        "Vamos a asegurarnos de que cualquier persona sepa que no deben modificar nada en este código directamente.",
+        "Vamos a asegurar que cualquier persona sepa que no debe modificar nada en este código directamente.",
         "Recuerda que puedes iniciar un comentario usando <code>&#60;!--</code> y terminarlo usando <code>--&#62;</code>",
         "Agrega un comentario al inicio de tu código HTML que diga <code>No hacer cambios en el código debajo de esta línea.</code>"
         ],
