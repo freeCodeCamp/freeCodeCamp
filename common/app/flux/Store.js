@@ -5,7 +5,11 @@ const initValue = {
   title: 'Learn To Code | Free Code Camp',
   username: null,
   picture: null,
-  points: 0
+  points: 0,
+  hikesApp: {
+    hikes: [],
+    currentHikes: {}
+  }
 };
 
 export default Store({
@@ -16,8 +20,13 @@ export default Store({
   init({ instance: appStore, args: [cat] }) {
     const { updateRoute, setUser, setTitle } = cat.getActions('appActions');
     const register = createRegistrar(appStore);
+    let { setHikes } = cat.getActions('hikesActions');
 
+    // app
     register(setter(fromMany(setUser, setTitle, updateRoute)));
+
+    // hikes
+    register(setHikes);
 
     return appStore;
   }

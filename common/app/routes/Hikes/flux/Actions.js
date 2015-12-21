@@ -37,25 +37,34 @@ export default Actions({
       ({ isPrimed, dashedName }) => {
         if (isPrimed) {
           return hikeActions.setHikes({
-            transform: (oldState) => {
-              const { hikes } = oldState;
+            transform: (state) => {
+
+              const { hikesApp: oldState } = state;
               const currentHike = getCurrentHike(
-                hikes,
+                oldState.hikes,
                 dashedName,
                 oldState.currentHike
               );
-              return Object.assign({}, oldState, { currentHike });
+
+              const hikesApp = { ...oldState, currentHike };
+              return Object.assign({}, state, { hikesApp });
             }
           });
         }
+
         services.read('hikes', null, null, (err, hikes) => {
           if (err) {
-            debug('an error occurred fetching hikes', err);
+            return console.error(err);
           }
+
+          const hikesApp = {
+            hikes,
+            currentHike: getCurrentHike(hikes, dashedName)
+          };
+
           hikeActions.setHikes({
-            set: {
-              hikes: hikes,
-              currentHike: getCurrentHike(hikes, dashedName)
+            transform(oldState) {
+              return Object.assign({}, oldState, { hikesApp });
             }
           });
         });
