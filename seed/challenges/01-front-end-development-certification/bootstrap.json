@@ -1885,7 +1885,7 @@
       "id": "bad87fee1348bd9aec908849",
       "title": "Add Elements within your Bootstrap Wells",
       "description": [
-        "Now we're several <code>div</code> elements deep on each column of our row. This is as deep as we'll need to go. Now we can add our <code>button</code> elements.",
+        "Now we've several <code>div</code> elements deep on each column of our row. This is as deep as we'll need to go. Now we can add our <code>button</code> elements.",
         "Nest three <code>button</code> elements within each of your <code>well</code> <code>div</code> elements."
       ],
       "tests": [
