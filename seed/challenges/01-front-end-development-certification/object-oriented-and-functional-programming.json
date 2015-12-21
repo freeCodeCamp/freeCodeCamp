@@ -614,7 +614,6 @@
         "The following is an example of using <code>join</code> to join all of the elements of an array into a string with all the elements separated by word `Na`:",
         "<code>var joinMe = [\"Na \", \"Na \", \"Na \", \"Na \", \"Batman!\"];</code>",
         "<code>var joinedString = joinMe.join(\"Na \");</code>",
-        "<code>console.log(joinedString);</code>",
         "Use the <code>join</code> method to create a string from <code>joinMe</code> with spaces in between each element and assign it to <code>joinedString</code>."
       ],
       "tests": [
@@ -640,7 +639,6 @@
         "El siguiente es un ejemplo del uso de <code>join</code> para unir todos los elementos de un vector en una cadena con todos los elementos separados entre si por palabra` Na`: ",
         "<code>var uneme = [\"Na \", \"Na \", \"Na \", \"Na \", \"Batman!\"];</code>",
         "<code>var cadenaUnida = uneme.join(\"Na \");</code>",
-        "<code>console.log(cadenaUnida);</code>",
         "Usa el método <code>join</code> para crear una cadena a partir <code>joinMe</code> con espacios entre cada par de elementos y asignarla a <code>joinedString </code>."
       ]
     }
