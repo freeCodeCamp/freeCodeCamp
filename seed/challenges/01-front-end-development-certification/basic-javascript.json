@@ -1914,8 +1914,12 @@
         "assert(1===1, 'message: message here');"
       ],
       "challengeSeed": [
+        "function myFunction() {",
+        "  ",
+        "  console.log(myVar);",
+        "}",
         "",
-        "",
+        "console.log(myVar);",
         ""
       ],
       "tail": [
@@ -4127,21 +4131,44 @@
       "description": [
         "If you have a multi-dimensional array, you can use the same logic as the prior waypoint to loop through both the array and any sub-arrays.  Here is an example:",
         "<blockquote>var arr = [<br />  [1,2], [3,4], [5,6]<br />];<br />for (var i=0; i &lt; arr.length; i++) {<br />  for (var j=0; k &lt; arr[i].length; j++) {<br />    console.log(arr[i][j]);<br />  }<br />}</blockquote>",
-        "This outputs each sub-element in <code>arr</code> one at a time.  Note that for the inner loop we are checking the <code>.length</code> of <code>arr[i]</code>, since <code>arr[i]</code> is itself an array."
+        "This outputs each sub-element in <code>arr</code> one at a time.  Note that for the inner loop we are checking the <code>.length</code> of <code>arr[i]</code>, since <code>arr[i]</code> is itself an array.",
+        "<h4>Instructions</h4>The function <code>multiplyAll</code> will be passed a multi-dimensional array, <code>arr</code>. Loop through both levels of <code>arr</code> and multiply <code>product</code> by each one."
       ],
       "releasedOn": "11/27/2015",
       "tests": [
-        "assert(1===1, 'message: message here');"
+        "assert(multiplyAll([[1],[2],[3]]) === 6, 'message: <code>multiplyAll([[1],[2],[3]]);</code> should return <code>6</code>');",
+        "assert(multiplyAll([[1,2],[3,4],[5,6,7]]) === 5040, 'message: <code>multiplyAll([[1,2],[3,4],[5,6,7]])</code> should return <code>5040</code>');",
+        "assert(multiplyAll([[5,1],[0.2, 4, 0.5],[3, 9]]) === 54, 'message: <code>multiplyAll([[5,1],[0.2, 4, 0.5],[3, 9]]);)</code> should return <code>54</code>');"
       ],
       "challengeSeed": [
+        "function multiplyAll(arr) {",
+        "  var product = 1;",
+        "  // Only change code below this line",
         "",
+        "  // Only change code above this line",
+        "  return product;",
+        "}",
         "",
+        "// Modify values below to test your code",
+        "multiplyAll([[1,2],[3,4],[5,6,7]]);",
         ""
       ],
       "tail": [
         ""
       ],
       "solutions": [
+        "function multiplyAll(arr) {",
+        "  var product = 1;",
+        "  for (var i = 0; i < arr.length; i++) {",
+        "    for (var j = 0; j < arr[i].length; j++) {",
+        "      product *= arr[i][j];",
+        "    }",
+        "  }",
+        "  return product;",
+        "}",
+        "",
+        "multiplyAll([[1,2],[3,4],[5,6,7]]);",
+        "",
         ""
       ],
       "type": "waypoint",
@@ -4158,30 +4185,24 @@
       "description": [
         "You can run the same code multiple times by using a loop.",
         "Another type of JavaScript loop is called a \"while loop\", because it runs \"while\" something is true and stops once that something is no longer true.",
-        "<code>var ourArray = [];</code>",
-        "<code>var i = 0;</code>",
-        "<code>while(i < 5) {</code>",
-        "<code>&nbsp;&nbsp;ourArray.push(i);</code>",
-        "<code>&nbsp;&nbsp;i++;</code>",
-        "<code>}</code>",
+        "<blockquote>var ourArray = [];<br />var i = 0;<br />while(i < 5) {<br />  ourArray.push(i);<br />  i++;<br />}</blockquote>",
         "Let's try getting a while loop to work by pushing values to an array.",
-        "Push the numbers 0 through 4 to <code>myArray</code> using a <code>while</code> loop."
+        "<h4>Instructions</h4>Push the numbers 0 through 4 to <code>myArray</code> using a <code>while</code> loop."
       ],
       "tests": [
         "assert(editor.getValue().match(/while/g), 'message: You should be using a <code>while</code> loop for this.');",
         "assert.deepEqual(myArray, [0,1,2,3,4], 'message: <code>myArray</code> should equal <code>[0,1,2,3,4]</code>.');"
       ],
       "challengeSeed": [
+        "// Setup",
         "var myArray = [];",
         "",
         "// Only change code below this line.",
         "",
-        "",
-        "",
-        "// Only change code above this line.",
-        "",
-        "if(typeof(myArray) !== \"undefined\"){(function(){return myArray;})();}",
         ""
+      ],
+      "tail": [
+        "if(typeof(myArray) !== \"undefined\"){(function(){return myArray;})();}"
       ],
       "type": "waypoint",
       "challengeType": "1"
