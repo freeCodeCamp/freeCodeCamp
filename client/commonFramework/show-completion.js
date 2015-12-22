@@ -6,14 +6,13 @@ window.common = (function(global) {
   } = global;
 
   common.showCompletion = function showCompletion() {
-    var time = Math.floor(Date.now() - common.started);
-
     ga(
       'send',
       'event',
-      'Challenge',
-      'solved',
-      common.challengeName + ', Time: ' + time + ', Attempts: ' + 0
+      'Challenge', //category
+      'solved',    //action
+      common.challengeName + ' Attempts: ', //label
+	  true //opt_noninteraction: not counting as bounce
     );
 
     var solution = common.editor.getValue();
