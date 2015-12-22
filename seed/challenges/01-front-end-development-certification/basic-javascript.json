@@ -13,7 +13,8 @@
         "<code>// This is a comment.</code>",
         "The slash-star-star-slash comment will comment out everything between the <code>/*</code> and the <code>*/</code> characters:",
         "<code>/* This is also a comment */</code>",
-        "<h4>Instructions</h4>Try creating one of each type of comment."
+        "<h4>Instructions</h4>",
+        "Try creating one of each type of comment."
       ],
       "tests": [
         "assert(editor.getValue().match(/(\\/\\/)...../g), 'message: Create a <code>//</code> style comment that contains at least five letters.');",
@@ -29,7 +30,8 @@
       "description": [
         "In computer science, <code>data structures</code> are things that hold data. JavaScript has seven of these. For example, the <code>Number</code> data structure holds numbers.",
         "Let's learn about the most basic data structure of all: the <code>Boolean</code>. Booleans can only hold the value of either true or false. They are basically little on-off switches.",
-        "<h4>Instructions</h4>Modify the <code>welcomeToBooleans</code> function so that it will return <code>true</code> instead of <code>false</code> when the run button is clicked."
+        "<h4>Instructions</h4>",
+        "Modify the <code>welcomeToBooleans</code> function so that it will return <code>true</code> instead of <code>false</code> when the run button is clicked."
       ],
       "tests": [
         "assert(typeof(welcomeToBooleans()) === 'boolean', 'message: The <code>welcomeToBooleans()</code> function should return a boolean &#40;true/false&#41; value.');",
@@ -58,7 +60,8 @@
         "When we store data in a <code>data structure</code>, we call it a <code>variable</code>. These variables are no different from the x and y variables you use in math.",
         "Let's create our first variable and call it \"myName\".",
         "You'll notice that in <code>myName</code>, we didn't use a space, and that the \"N\" is capitalized. JavaScript variables are written in <code>camel case</code>. An example of camel case is: camelCase.",
-        "<h4>Instructions</h4>Use the <code>var</code> keyword to create a variable called <code>myName</code>. Set its value to your name, in double quotes.",
+        "<h4>Instructions</h4>",
+        "Use the <code>var</code> keyword to create a variable called <code>myName</code>. Set its value to your name, in double quotes.",
         "<strong>Hint</strong>",
         "Look at the <code>ourName</code> example if you get stuck."
       ],
@@ -89,7 +92,8 @@
         "<code>myVar = 5;</code>",
         "<code>myNum = myVar;</code>",
         "Assigns <code>5</code> to <code>myVar</code> and then resolves <code>myVar</code> to <code>5</code>  again and assigns it to <code>myNum</code>.",
-        "<h4>Instructions</h4>Assign the value 7 to variable <code>a</code>",
+        "<h4>Instructions</h4>",
+        "Assign the value 7 to variable <code>a</code>",
         "Assign the contents of <code>a</code> to variable <code>b</code>."
       ],
       "releasedOn": "11/27/2015",
@@ -133,7 +137,8 @@
         "<code>var myVar = 0;</code>",
         "Creates a new variable called <code>myVar</code> and assigns it an inital value of <code>0</code>.",
         "",
-        "<h4>Instructions</h4>Define a variable <code>a</code> with <code>var</code> and initialize it to a value of <code>9</code>."
+        "<h4>Instructions</h4>",
+        "Define a variable <code>a</code> with <code>var</code> and initialize it to a value of <code>9</code>."
       ],
       "releasedOn": "11/27/2015",
       "tests": [
@@ -165,7 +170,8 @@
       "title": "Understanding Uninitialized Variables",
       "description": [
         "When Javascript variables are declared, they have an inital value of <dfn>undefined</dfn>.  If you do a mathematical operation on an <code>undefined</code> variable your result will be <dfn>NaN</dfn> which means \"Not a Number\". If you concatanate a string with an <code>undefined</code> variable, you will get a <dfn>literal string</dfn> of \"undefined\".",
-        "<h4>Instructions</h4>Initialize the three variables <code>a</code>, <code>b</code>, and <code>c</code> with <code>5</code>, <code>10</code>, and <code>\"I am a\"</code> respectively so that they will not be <code>undefined</code>."
+        "<h4>Instructions</h4>",
+        "Initialize the three variables <code>a</code>, <code>b</code>, and <code>c</code> with <code>5</code>, <code>10</code>, and <code>\"I am a\"</code> respectively so that they will not be <code>undefined</code>."
       ],
       "releasedOn": "11/27/2015",
       "tests": [
@@ -214,7 +220,8 @@
         "<code>MYVAR</code> is not the same as <code>MyVar</code> nor <code>myvar</code>.  It is possible to have mulitpe distinct variables with the same name but different capitalization. It is strongly reccomended that for sake of clarity you <em>do not</em> use this language feature.",
         "<h4>Best Practice</h4><div class=\"bestpractice\">Variables in Javascript should use camelCase.  In camelCase, variables made of multiple words have the first word in all lowercase and the first letter of each subsequent word capitalized.</div>",
         "<strong>Examples:</strong><blockquote>var someVariable;</br />var anotherVariableName;</br />var thisVariableNameIsTooLong;</blockquote>",
-        "<h4>Instructions</h4>Correct the variable assignements so their names match their variable declarations above."
+        "<h4>Instructions</h4>",
+        "Correct the variable assignements so their names match their variable declarations above."
       ],
       "releasedOn": "11/27/2015",
       "tests": [
@@ -258,7 +265,8 @@
       "description": [
         "Let's try to add two numbers using JavaScript.",
         "JavaScript uses the <code>+</code> symbol for addition.",
-        "<h4>Instructions</h4>Change the <code>0</code> so that sum will equal <code>20</code>."
+        "<h4>Instructions</h4>",
+        "Change the <code>0</code> so that sum will equal <code>20</code>."
       ],
       "tests": [
         "assert(sum === 20, 'message: <code>sum</code> should equal <code>20</code>');",
@@ -280,7 +288,8 @@
       "description": [
         "We can also subtract one number from another.",
         "JavaScript uses the <code>-</code> symbol for subtraction.",
-        "<h4>Instructions</h4>Change the <code>0</code> so that difference will equal <code>12</code>."
+        "<h4>Instructions</h4>",
+        "Change the <code>0</code> so that difference will equal <code>12</code>."
       ],
       "tests": [
         "assert(difference === 12, 'message: Make the variable <code>difference</code> equal 12.');",
@@ -306,7 +315,8 @@
       "description": [
         "We can also multiply one number by another.",
         "JavaScript uses the <code>*</code> symbol for multiplication.",
-        "<h4>Instructions</h4>Change the <code>0</code> so that product will equal <code>80</code>."
+        "<h4>Instructions</h4>",
+        "Change the <code>0</code> so that product will equal <code>80</code>."
       ],
       "tests": [
         "assert(product === 80,'message: Make the variable <code>product</code> equal 80');",
@@ -332,7 +342,8 @@
       "description": [
         "We can also divide one number by another.",
         "JavaScript uses the <code>/</code> symbol for division.",
-        "<h4>Instructions</h4>Change the <code>0</code> so that quotient will equal <code>2</code>."
+        "<h4>Instructions</h4>",
+        "Change the <code>0</code> so that quotient will equal <code>2</code>."
       ],
       "tests": [
         "assert(quotient === 2, 'message: Make the variable <code>quotient</code> equal 2.');",
@@ -357,7 +368,8 @@
         "<code>i++;</code>",
         "is the equivilent of",
         "<code>i = i + 1;</code>",
-        "<h4>Instructions</h4>Change the code to use the <code>++</code> operator on <code>myVar</code>"
+        "<h4>Instructions</h4>",
+        "Change the code to use the <code>++</code> operator on <code>myVar</code>"
       ],
       "releasedOn": "11/27/2015",
       "tests": [
@@ -395,7 +407,8 @@
         "<code>i--;</code>",
         "is the equivilent of",
         "<code>i = i - 1;</code>",
-        "<h4>Instructions</h4>Change the code to use the <code>--</code> operator on <code>myVar</code>"
+        "<h4>Instructions</h4>",
+        "Change the code to use the <code>--</code> operator on <code>myVar</code>"
       ],
       "releasedOn": "11/27/2015",
       "tests": [
@@ -506,7 +519,8 @@
         "<code>Math.floor(5 / 2) === 2<br />2 * 2 === 4<br />5 - 4 === 1</code>",
         "<strong>Usage</strong>",
         "Modulus can be helpful in creating alternating or cycling values.  For example, in a loop an increasing variable <code>myVar % 2</code> will alternate between 0 and 1 as myVar goes between even and odd numbers respectively.",
-        "<h4>Instructions</h4>Set <code>remainder</code> equal to the remainder of 11 divided by 3 using the modulus operator."
+        "<h4>Instructions</h4>",
+        "Set <code>remainder</code> equal to the remainder of 11 divided by 3 using the modulus operator."
       ],
       "releasedOn": "11/27/2015",
       "tests": [
@@ -545,7 +559,8 @@
         "to add <code>5</code> to <code>myVar</code>.  Since this is such a common pattern, there are operators which do both a mathematical operation and assignement in one step.",
         "One such operator is the <code>+=</code> operator.",
         "<code>myVar += 5;</code> will add <code>5</code> to <code>myVar</code>.",
-        "<h4>Instructions</h4>Convert the assignements for <code>a</code>, <code>b</code>, and <code>c</code> to use the <code>+=</code> operator."
+        "<h4>Instructions</h4>",
+        "Convert the assignements for <code>a</code>, <code>b</code>, and <code>c</code> to use the <code>+=</code> operator."
       ],
       "releasedOn": "11/27/2015",
       "tests": [
@@ -595,7 +610,8 @@
         "<code>myVar = myVar - 5;</code>",
         "Will subtract <code>5</code> from <code>myVar</code>. This can be rewritten as: ",
         "<code>myVar -= 5;</code>",
-        "<h4>Instructions</h4>Convert the assignements for <code>a</code>, <code>b</code>, and <code>c</code> to use the <code>-=</code> operator."
+        "<h4>Instructions</h4>",
+        "Convert the assignements for <code>a</code>, <code>b</code>, and <code>c</code> to use the <code>-=</code> operator."
       ],
       "releasedOn": "11/27/2015",
       "tests": [
@@ -648,7 +664,8 @@
         "<code>myVar = myVar * 5;</code>",
         "Will multiply <code>myVar</code> by <code>5</code>. This can be rewritten as: ",
         "<code>myVar *= 5;</code>",
-        "<h4>Instructions</h4>Convert the assignements for <code>a</code>, <code>b</code>, and <code>c</code> to use the <code>*=</code> operator."
+        "<h4>Instructions</h4>",
+        "Convert the assignements for <code>a</code>, <code>b</code>, and <code>c</code> to use the <code>*=</code> operator."
       ],
       "releasedOn": "11/27/2015",
       "tests": [
@@ -699,7 +716,8 @@
         "<code>myVar = myVar / 5;</code>",
         "Will divide <code>myVar</code> by <code>5</code>. This can be rewritten as: ",
         "<code>myVar /= 5;</code>",
-        "<h4>Instructions</h4>Convert the assignments for <code>a</code>, <code>b</code>, and <code>c</code> to use the <code>/=</code> operator."
+        "<h4>Instructions</h4>",
+        "Convert the assignments for <code>a</code>, <code>b</code>, and <code>c</code> to use the <code>/=</code> operator."
       ],
       "releasedOn": "11/27/2015",
       "tests": [
@@ -797,7 +815,8 @@
       "title": "Declare String Variables",
       "description": [
         "Previously we have used the code <code>var myName = \"your name\"</code>. This is what we call a <code>String</code> variable. It is nothing more than a \"string\" of characters. JavaScript strings are always wrapped in quotes.",
-        "<h4>Instructions</h4>Create two new string variables: <code>myFirstName</code> and <code>myLastName</code> and assign them the values of your first and last name, respectively."
+        "<h4>Instructions</h4>",
+        "Create two new string variables: <code>myFirstName</code> and <code>myLastName</code> and assign them the values of your first and last name, respectively."
       ],
       "tests": [
         "assert((function(){if(typeof(myFirstName) !== \"undefined\" && typeof(myFirstName) === \"string\" && myFirstName.length > 0){return true;}else{return false;}})(), 'message: <code>myFirstName</code> should be a string with at least one character in it.');",
@@ -829,7 +848,8 @@
       "description": [
         "When you are defining a string you must start and end with a double or single quote.  What happens when you need a <dfn>literal</dfn> quote inside of your string?",
         "In Javascript you can <dfn>escape</dfn> a quote inside a string by placing a <dfn>backslash</dfn> (<code>\\</code>) in front of the quote.  This signals Javascript that the following quote is not the end of the string, but should instead should appear inside the string.",
-        "<h4>Instruction</h4>Use <dfn>backslashes</dfn> to assign the following to <code>myStr</code>:<br /><code>\"I am a \"double quoted\" string inside \"double quotes\"\"</code>"
+        "<h4>Instruction</h4>",
+        "Use <dfn>backslashes</dfn> to assign the following to <code>myStr</code>:<br /><code>\"I am a \"double quoted\" string inside \"double quotes\"\"</code>"
       ],
       "releasedOn": "11/27/2015",
       "tests": [
@@ -859,7 +879,8 @@
         "<code>\"This string has \\\"double quotes\\\" in it\"</code>",
         "The value in using one or the other has to do with the need to <dfn>escape</dfn> quotes of the same type.  If you have a string with many double quotes, this can be difficult to write and to read.  Instead, use single quotes:",
         "<code>'This string has \"double quotes\" in it'</code>",
-        "<h4>Instructions</h4>Change the provided string from double to single quotes and remove the escaping."
+        "<h4>Instructions</h4>",
+        "Change the provided string from double to single quotes and remove the escaping."
       ],
       "releasedOn": "11/27/2015",
       "tests": [
@@ -889,7 +910,8 @@
         "Quotes are not the only character than can be <dfn>escaped</dfn> inside a string.  Here is a table of common escape sequences:",
         "<table class=\"table table-striped\"><thead><tr><th>Code</th><th>Output</th></tr></thead><tbody><tr><td>\\'</td><td>single quote</td></tr><tr><td>\\\"</td><td>double quote</td></tr><tr><td>\\\\</td><td>backslash</td></tr><tr><td>\\n</td><td>new line</td></tr><tr><td>\\r</td><td>carriage return</td></tr><tr><td>\\t</td><td>tab</td></tr><tr><td>\\b</td><td>backspace</td></tr><tr><td>\\f</td><td>form feed</td></tr></tbody></table>",
         "Note that the backslash itself must be escaped in order to display as a backslash.",
-        "<h4>Instructions</h4>Encode the following sequence, seperated by spaces:<br /> <code>backslash tab tab carriage return new line</code> and assign it to <code>myStr</code>"
+        "<h4>Instructions</h4>",
+        "Encode the following sequence, seperated by spaces:<br /> <code>backslash tab tab carriage return new line</code> and assign it to <code>myStr</code>"
       ],
       "releasedOn": "11/27/2015",
       "tests": [
@@ -916,7 +938,8 @@
       "title": "Concatanting Strings with the Plus Operator",
       "description": [
         "In Javascript the <code>+</code> operator for strings is called the <dfn>concatanation</dfn> operator.  You can build strings out of other strings by <dfn>concatanating</dfn> them together.",
-        "<h4>Instructions</h4>Build <code>myStr</code> from the strings <code>\"This is the start. \"</code> and <code>\"This is the end.\"</code> using the <code>+</code> operator.",
+        "<h4>Instructions</h4>",
+        "Build <code>myStr</code> from the strings <code>\"This is the start. \"</code> and <code>\"This is the end.\"</code> using the <code>+</code> operator.",
         ""
       ],
       "releasedOn": "11/27/2015",
@@ -986,7 +1009,8 @@
       "title": "Constructing Strings with Variables",
       "description": [
         "Sometimes you will need to build a string, <a href=\"https://en.wikipedia.org/wiki/Mad_Libs\">Mad Libs</a> style.  By using the concatanation operator (<code>+</code>) you can insert one or more varaibles into a string you're building.",
-        "<h4>Instructions</h4>Set <code>myName</code> and build <code>myStr</code> with <code>myName</code> between the strings <code>\"My name is \"</code> and <code>\" and I am swell!\"</code>"
+        "<h4>Instructions</h4>",
+        "Set <code>myName</code> and build <code>myStr</code> with <code>myName</code> between the strings <code>\"My name is \"</code> and <code>\" and I am swell!\"</code>"
       ],
       "releasedOn": "11/27/2015",
       "tests": [
@@ -1021,7 +1045,8 @@
       "title": "Appending Variables to Strings",
       "description": [
         "Just as we can build a string over multiple lines out of string <dfn>literals</dfn>, we can also append variables to a string using the plus equals (<code>+=</code>) operator.",
-        "<h4>Instructions</h4>Set <code>someAdjective</code> and append it to <code>myStr</code> using the <code>+=</code> operator."
+        "<h4>Instructions</h4>",
+        "Set <code>someAdjective</code> and append it to <code>myStr</code> using the <code>+=</code> operator."
       ],
       "releasedOn": "11/27/2015",
       "tests": [
@@ -1063,7 +1088,8 @@
       "description": [
         "<code>Data structures</code> have <code>properties</code>. For example, <code>strings</code> have a property called <code>.length</code> that will tell you how many characters are in the string.",
         "For example, if we created a variable <code>var firstName = \"Charles\"</code>, we could find out how long the string \"Charles\" is by using the <code>firstName.length</code> property.",
-        "<h4>Instructions</h4>Use the <code>.length</code> property to count the number of characters in the <code>lastName</code> variable and assign it to <code>lastNameLength</code>."
+        "<h4>Instructions</h4>",
+        "Use the <code>.length</code> property to count the number of characters in the <code>lastName</code> variable and assign it to <code>lastNameLength</code>."
       ],
       "tests": [
         "assert((function(){if(typeof(lastNameLength) !== \"undefined\" && typeof(lastNameLength) === \"number\" && lastNameLength === 8){return true;}else{return false;}})(), 'message: <code>lastNameLength</code> should be equal to eight.');",
@@ -1100,7 +1126,8 @@
         "<code>Bracket notation</code> is a way to get a character at a specific <code>index</code> within a string.",
         "Computers don't start counting at 1 like humans do. They start at 0.  This is refered to as <dfn>Zero-based</dfn> indexing.",
         "For example, the character at index 0 in the word \"Charles\" is \"C\". So if <code>var firstName = \"Charles\"</code>, you can get the value of the first letter of the string by using <code>firstName[0]</code>.",
-        "<h4>Instructions</h4>Use <code>bracket notation</code> to find the first character in the <code>lastName</code> variable and assign it to <code>firstLetterOfLastName</code>.",
+        "<h4>Instructions</h4>",
+        "Use <code>bracket notation</code> to find the first character in the <code>lastName</code> variable and assign it to <code>firstLetterOfLastName</code>.",
         "<strong>Hint</strong><br />Try looking at the <code>firstLetterOfFirstName</code> variable declaration if you get stuck."
       ],
       "tests": [
@@ -1142,7 +1169,8 @@
         "<code>var myStr = \"Bob\";<br />myStr[0] = \"J\";</code>",
         "will not change the contents of <code>myStr</code> to \"Job\", because the contents of myStr cannot be altered. Note that this does <em>not</em> mean that <code>myStr</code> cannot be change, just that individual characters cannot be changes. The only way to change <code>myStr</code> would be to overwrite the contents with a new string, like this:",
         "<code>var myStr = \"Bob\";<br />myStr = \"Job\";</code>",
-        "<h4>Instructions</h4>Correct the assignment to <code>myStr</code> to achieve the desired effect."
+        "<h4>Instructions</h4>",
+        "Correct the assignment to <code>myStr</code> to achieve the desired effect."
       ],
       "releasedOn": "11/27/2015",
       "tests": [
@@ -1180,7 +1208,8 @@
       "description": [
         "You can also use <code>bracket notation</code> to get the character at other positions within a string.",
         "Remember that computers start counting at 0, so the first character is actually the zeroth character.",
-        "<h4>Instructions</h4>Let's try to set <code>thirdLetterOfLastName</code> to equal the <code>third letter</code> of the <code>lastName</code> variable.",
+        "<h4>Instructions</h4>",
+        "Let's try to set <code>thirdLetterOfLastName</code> to equal the <code>third letter</code> of the <code>lastName</code> variable.",
         "<strong>Hint</strong><br />Try looking at the <code>secondLetterOfFirstName</code> variable declaration if you get stuck."
       ],
       "tests": [
@@ -1215,7 +1244,8 @@
       "description": [
         "In order to get the last letter of a string, you can subtract one from the string's length.",
         "For example, if <code>var firstName = \"Charles\"</code>, you can get the value of the last letter of the string by using <code>firstName[firstName.length - 1]</code>.",
-        "<h4>Instructions</h4>Use <code>bracket notation</code> to find the last character in the <code>lastName</code> variable.",
+        "<h4>Instructions</h4>",
+        "Use <code>bracket notation</code> to find the last character in the <code>lastName</code> variable.",
         "<strong>Hint</strong><br />Try looking at the <code>lastLetterOfFirstName</code> variable declaration if you get stuck."
       ],
       "tests": [
@@ -1251,7 +1281,8 @@
       "description": [
         "You can use the same principle we just used to retrieve the last character in a string to retrieve the Nth-to-last character.",
         "For example, you can get the value of the third-to-last letter of the <code>var firstName = \"Charles\"</code> string by using <code>firstName[firstName.length - 3]</code>",
-        "<h4>Instructions</h4>Use <code>bracket notation</code> to find the second-to-last character in the <code>lastName</code> string.",
+        "<h4>Instructions</h4>",
+        "Use <code>bracket notation</code> to find the second-to-last character in the <code>lastName</code> string.",
         "  <strong>Hint</strong><br />Try looking at the <code>thirdToLastLetterOfFirstName</code> variable declaration if you get stuck."
       ],
       "tests": [
@@ -1336,7 +1367,8 @@
       "description": [
         "With JavaScript <code>array</code> variables, we can store several pieces of data in one place.",
         "You start an array declaration with an opening square bracket, end it with a closing square bracket, and put a comma between each entry, like this:<br /><code>var sandwich = [\"peanut butter\", \"jelly\", \"bread\"]</code>.",
-        "<h4>Instructions</h4>Create a new array called <code>myArray</code> that contains both a <code>string</code> and a <code>number</code> (in that order).",
+        "<h4>Instructions</h4>",
+        "Create a new array called <code>myArray</code> that contains both a <code>string</code> and a <code>number</code> (in that order).",
         "<strong>Hint</strong><br />Refer to the example code in the text editor if you get stuck."
       ],
       "tests": [
@@ -1366,7 +1398,8 @@
       "title": "Nest one Array within Another Array",
       "description": [
         "You can also nest arrays within other arrays, like this: <code>[[\"Bulls\", 23]]</code>. This is also called a <dfn>Multi-dimensional Array<dfn>.",
-        "<h4>Instructions</h4>Create a nested array called <code>myArray</code>."
+        "<h4>Instructions</h4>",
+        "Create a nested array called <code>myArray</code>."
       ],
       "tests": [
         "assert(Array.isArray(myArray) && myArray.some(Array.isArray), 'message: <code>myArray</code> should have at least one array nested within another array.');"
@@ -1398,7 +1431,8 @@
         "<code>var array = [1,2,3];</code>",
         "<code>array[0]; //equals 1</code>",
         "<code>var data = array[1];</code>",
-        "<h4>Instructions</h4>Create a variable called <code>myData</code> and set it to equal the first value of <code>myArray</code>."
+        "<h4>Instructions</h4>",
+        "Create a variable called <code>myData</code> and set it to equal the first value of <code>myArray</code>."
       ],
       "tests": [
         "assert((function(){if(typeof(myArray) != 'undefined' && typeof(myData) != 'undefined' && myArray[0] == myData){return true;}else{return false;}})(), 'message: The variable <code>myData</code> should equal the first value of <code>myArray</code>.');"
@@ -1432,7 +1466,8 @@
         "For example:",
         "<code>var ourArray = [3,2,1];</code>",
         "<code>ourArray[0] = 1; // equals [1,2,1]</code>",
-        "<h4>Instructions</h4>Modify the data stored at index <code>0</code> of <code>myArray</code> to a value of <code>3</code>."
+        "<h4>Instructions</h4>",
+        "Modify the data stored at index <code>0</code> of <code>myArray</code> to a value of <code>3</code>."
       ],
       "tests": [
         "assert((function(){if(typeof(myArray) != 'undefined' && myArray[0] == 3 && myArray[1] == 2 && myArray[2] == 3){return true;}else{return false;}})(), 'message: <code>myArray</code> should now be [3,2,3].');",
@@ -1470,7 +1505,8 @@
         "<code>arr[0]; // equals [1,2,3]</code>",
         "<code>arr[1][2]; // equals 6</code>",
         "<code>arr[3][0][1]; // equals 11</code>",
-        "<h4>Instructions</h4>Read from <code>myArray</code> using bracket notation so that myData is equal to <code>8</code>"
+        "<h4>Instructions</h4>",
+        "Read from <code>myArray</code> using bracket notation so that myData is equal to <code>8</code>"
       ],
       "tests": [
         "assert(myData === 8, 'message: <code>myData</code> should be equal to <code>8</code>.');",
@@ -1502,7 +1538,8 @@
         "<code>var arr = [1,2,3];</code>",
         "<code>arr.push(4);</code>",
         "<code>// arr is now [1,2,3,4]</code>",
-        "<h4>Instructions</h4>Push <code>[\"dog\", 3]</code> onto the end of the <code>myArray</code> variable."
+        "<h4>Instructions</h4>",
+        "Push <code>[\"dog\", 3]</code> onto the end of the <code>myArray</code> variable."
       ],
       "tests": [
         "\nassert((function(d){if(d[2] != undefined && d[0][0] == 'John' && d[0][1] == 23 && d[2][0] == 'dog' && d[2][1] == 3 && d[2].length == 2){return true;}else{return false;}})(myArray), 'message: <code>myArray</code> should now equal <code>[[\"John\", 23], [\"cat\", 2], [\"dog\", 3]]</code>.');"
@@ -1537,7 +1574,8 @@
         "Another way to change the data in an array is with the <code>.pop()</code> function. ",
         "<code>.pop()</code> is used to \"pop\" a value off of the end of an array. We can store this \"popped off\" variable by performing <code>pop()</code> within a variable declaration.",
         "Any type of data structure can be \"popped\" off of an array - numbers, strings, even nested arrays.",
-        "<h4>Instructions</h4>Use the <code>.pop()</code> function to remove the last item from <code>myArray</code>, assigning the \"popped off\" value to <code>removedFromMyArray</code>."
+        "<h4>Instructions</h4>",
+        "Use the <code>.pop()</code> function to remove the last item from <code>myArray</code>, assigning the \"popped off\" value to <code>removedFromMyArray</code>."
       ],
       "tests": [
         "assert((function(d){if(d[0][0] == 'John' && d[0][1] == 23 && d[2] == undefined){return true;}else{return false;}})(myArray), 'message: <code>myArray</code> should only contain <code>[[\"John\", 23]]</code>.');",
@@ -1572,7 +1610,8 @@
       "description": [
         "<code>pop()</code> always removes the last element of an array. What if you want to remove the first?",
         "That's where <code>.shift()</code> comes in. It works just like <code>.pop()</code>, except it removes the first element instead of the last.",
-        "<h4>Instructions</h4>Use the <code>.shift()</code> function to remove the first item from <code>myArray</code>, assigning the \"shifted off\" value to <code>removedFromMyArray</code>."
+        "<h4>Instructions</h4>",
+        "Use the <code>.shift()</code> function to remove the first item from <code>myArray</code>, assigning the \"shifted off\" value to <code>removedFromMyArray</code>."
       ],
       "tests": [
         "assert((function(d){if(d[0][0] == 'dog' && d[0][1] == 3 && d[1] == undefined){return true;}else{return false;}})(myArray), 'message: <code>myArray</code> should now equal <code>[[\"dog\", 3]]</code>.');",
@@ -1610,7 +1649,8 @@
       "description": [
         "Not only can you <code>shift</code> elements off of the beginning of an array, you can also <code>unshift</code> elements onto the beginning of an array.",
         "<code>unshift()</code> works exactly like <code>push()</code>, but instead of adding the element at the end of the array, <code>unshift()</code> adds the element at the beginning of the array.",
-        "<h4>Instructions</h4>Add <code>[\"Paul\",35]</code> onto the beginning of the <code>myArray</code> variable using <code>unshift()</code>."
+        "<h4>Instructions</h4>",
+        "Add <code>[\"Paul\",35]</code> onto the beginning of the <code>myArray</code> variable using <code>unshift()</code>."
       ],
       "tests": [
         "assert((function(d){if(typeof(d[0]) === \"object\" && d[0][0].toLowerCase() == 'paul' && d[0][1] == 35 && d[1][0] != undefined && d[1][0] == 'dog' && d[1][1] != undefined && d[1][1] == 3){return true;}else{return false;}})(myArray), 'message: <code>myArray</code> should now have [[\"Paul\", 35], [\"dog\", 3]]).');"
@@ -1713,7 +1753,8 @@
         "You can call or <dfn>invoke</dfn> this function by using its name followed by parentheses, like this:",
         "<code>functionName();</code>",
         "Each time the function is called it will print out the message \"Hello World\" on the dev console. All of the code between the curly braces will be executed every time the function is called.",
-        "<h4>Instructions</h4>Create a function called <code>myFunction</code> which prints \"Hi World\" to the dev console. Call that function."
+        "<h4>Instructions</h4>",
+        "Create a function called <code>myFunction</code> which prints \"Hi World\" to the dev console. Call that function."
       ],
       "tests": [
         "assert(typeof myFunction === 'function', 'message: <code>myFunction</code> should be a function');",
@@ -1773,7 +1814,8 @@
         "Then we can call <code>testFun</code>:",
         "<code>testFun(\"Hello\", \"World\");</code>",
         "We have <dfn>passed</dfn> two arguments, \"Hello\" and \"World\".  Inside the function, <code>param1</code> will equal \"Hello\" and <code>param2</code> will equal \"World\".  Note that you could call <code>testFun</code> again with different arguments and the parameters would take on the value of the new arguments.",
-        "<h4>Instructions</h4>Create a function called <code>myFunction</code> that accepts two arguments and outputs their sum to the dev console. Call your function."
+        "<h4>Instructions</h4>",
+        "Create a function called <code>myFunction</code> that accepts two arguments and outputs their sum to the dev console. Call your function."
       ],
       "releasedOn": "11/27/2015",
       "tests": [
@@ -1835,7 +1877,8 @@
       "description": [
         "In Javascript, <dfn>scope</dfn> refers to the visibility of variables. Variables which are defined outside of a function block have <dfn>Global</dfn> scope.  This means the can be seen everywhere in your Javascript code.  ",
         "Variables which are used without the <code>var</code> keyword are automatically created in the <code>global</code> scope. This can create unintended concequences elsewhere in your code or when running a function again.  You should always declare your variables with <code>var</code>.",
-        "<h4>Instructions</h4>Declare a <code>global</code> variable <code>myGlobal</code> outside of any function. Initialize it to have a value of <code>10</code> ",
+        "<h4>Instructions</h4>",
+        "Declare a <code>global</code> variable <code>myGlobal</code> outside of any function. Initialize it to have a value of <code>10</code> ",
         "Inside function <code>fun1</code>, assign <code>5</code> to <code>oopsGlobal</code> <strong><em>without</em></strong> using the <code>var</code> keyword."
       ],
       "releasedOn": "11/27/2015",
@@ -1907,7 +1950,8 @@
         "Here is a function <code>myTest</code> with a local variable called <code>loc</code>.",
         "<blockquote>function myTest() {<br />  var local1 = \"foo\";<br />  console.log(local1);<br />}<br />myTest(); // \"foo\"<br />console.log(local1); // \"undefined\"</blockquote>",
         "<code>local1</code> is not defined outside of the function.",
-        "<h4>Instructions</h4>Declare a local variable <code>myVar</code> inside <code>myFunction</code>"
+        "<h4>Instructions</h4>",
+        "Declare a local variable <code>myVar</code> inside <code>myFunction</code>"
       ],
       "releasedOn": "11/27/2015",
       "tests": [
@@ -1940,7 +1984,12 @@
       "id": "56533eb9ac21ba0edf2244c0",
       "title": "Global vs. Local Scope in Functions",
       "description": [
-        "Show how global and local scopes interact"
+        "It is possible to have both a <dfn>local</dfn> and <dfn>global</dfn> variables with the same name.  When you do this, the <code>local</code> variable takes precedence over the <code>global</code> variable.",
+        "In this example:",
+        "<blockquote>var someVar = \"Hat\";<br />function myFun() {<br />  var someVar = \"Head\";<br />  return someVar;<br />}</blockquote>",
+        "The function <code>myFun</code> will return <code>\"Head\"</code> because the <code>local</code> version of the variable is present.",
+        "<h4>Instructions</h4>",
+        "Add a local variable to <code>myFunction</code> to override the value of <code>"
       ],
       "releasedOn": "11/27/2015",
       "tests": [
@@ -1999,7 +2048,8 @@
         "For Example:",
         "<blockquote>function plusThree(num) {<br />  return num + 3;<br />}<br />var answer = plusThree(5); // 8</blockquote>",
         "<code>plusThree</code> takes an <dfn>argument</dfn> for <code>num</code> and returns a value equal to <code>num + 3</code>.",
-        "<h4>Instructions</h4>Create a function <code>timesFive</code> that accepts one argument, multiplies it by <code>5</code>, and returns the new value."
+        "<h4>Instructions</h4>",
+        "Create a function <code>timesFive</code> that accepts one argument, multiplies it by <code>5</code>, and returns the new value."
       ],
       "releasedOn": "11/27/2015",
       "tests": [
@@ -2168,7 +2218,8 @@
         "For example:",
         "<blockquote>function test(myVal) {<br />  if (myVal > 10) {<br />     return \"Greater Than\";<br />  }<br />  return \"Not Greater Than\";<br />}</blockquote>",
         "If <code>myVal</code> is greater than <code>10</code>, the function will return \"Greater Than\".  If it is not, the function will return \"Not Greater Than\".",
-        "<h4>Instructions</h4>Create an <code>if</code> statement inside the function to return <code>\"Yes\"</code> if <code>testMe</code> is greater than <code>5</code>.  Return <code>\"No\"</code> if it is less than <code>5</code>."
+        "<h4>Instructions</h4>",
+        "Create an <code>if</code> statement inside the function to return <code>\"Yes\"</code> if <code>testMe</code> is greater than <code>5</code>.  Return <code>\"No\"</code> if it is less than <code>5</code>."
       ],
       "tests": [
         "assert(typeof myFunction === \"function\", 'message: <code>myFunction</code> should be a function');",
@@ -2222,7 +2273,8 @@
         "If <code>myVal</code> is equal to <code>10</code>, the function will return \"Equal\".  If it is not, the function will return \"Not Equal\".",
         "The equality operator will do it's best to convert values for comparison, for example:",
         "<blockquote>   1   ==  1        // true<br>  \"1\"  ==  1        // true<br />   1   == '1'       // true<br />   0   == false     // true<br>   0   == null      // false<br>   0   == undefined // false<br> null  == undefined // true</blockquote>",
-        "<h4>Instructions</h4>Add the <code>equality operator</code> to the indicated line so the function will return \"Equal\" when <code>val</code> is equivilent to <code>12</code>"
+        "<h4>Instructions</h4>",
+        "Add the <code>equality operator</code> to the indicated line so the function will return \"Equal\" when <code>val</code> is equivilent to <code>12</code>"
       ],
       "releasedOn": "11/27/2015",
       "tests": [
@@ -2265,7 +2317,8 @@
       "description": [
         "Strict equality (<code>===</code>) is the counterpart to the equality operator (<code>==</code>).  Unlike the equality operator, strict equality tests both the <dfn>type</dfn> and <dfn>value</dfn> of the compared elements.",
         "<strong>Examples</strong><blockquote>3 === 3   // true<br />3 === '3' // false</blockquote>",
-        "<h4>Instructions</h4>Change the equality operator to a strict equality on the <code>if</code> statement so the function will return \"Equal\" when <code>val</code> is strictltly equal to <code>7</code>"
+        "<h4>Instructions</h4>",
+        "Change the equality operator to a strict equality on the <code>if</code> statement so the function will return \"Equal\" when <code>val</code> is strictltly equal to <code>7</code>"
       ],
       "releasedOn": "11/27/2015",
       "tests": [
@@ -2308,7 +2361,8 @@
       "description": [
         "The inequality operator (<code>!=</code>) is the opposite of the equality operator.  It means \"Not Equal\" and returns <code>false</code> where equality would return <code>true</code> and <i>vice versa</i>.  Like the equality operator, the inequality operator will convert types.",
         "<strong>Examples</strong><blockquote>1 !=   2     // true<br />1 !=  \"1\"    // false<br />1 !=  '1'    // false<br />1 !=  true   // false<br />0 !=  false  // false</blockquote>",
-        "<h4>Instructions</h4>Add the inequality operator <code>!=</code> to the <code>if</code> statement so the function will return \"Not Equal\" when <code>val</code> is not equivilent to <code>99</code>"
+        "<h4>Instructions</h4>",
+        "Add the inequality operator <code>!=</code> to the <code>if</code> statement so the function will return \"Not Equal\" when <code>val</code> is not equivilent to <code>99</code>"
       ],
       "releasedOn": "11/27/2015",
       "tests": [
@@ -2353,7 +2407,8 @@
       "description": [
         "The inequality operator (<code>!==</code>) is the opposite of the strict equality operator.  It means \"Strictly Not Equal\" and returns <code>false</code> where strict equality would return <code>true</code> and <i>vice versa</i>.  Strict inequality will not convert types.",
         "<strong>Examples</strong><blockquote>3 !== 3   // false<br />3 !== '3' // true<br />4 !== 3   // true</blockquote>",
-        "<h4>Instructions</h4>Add the <code>strict inequality operator</code> to the <code>if</code> statement so the function will return \"Not Equal\" when <code>val</code> is not strictly equal to <code>17</code>"
+        "<h4>Instructions</h4>",
+        "Add the <code>strict inequality operator</code> to the <code>if</code> statement so the function will return \"Not Equal\" when <code>val</code> is not strictly equal to <code>17</code>"
       ],
       "releasedOn": "11/27/2015",
       "tests": [
@@ -2402,7 +2457,8 @@
       "description": [
         "The greater than operator (<code>&gt;</code>) compares the values of two numbers.  If the number to the left is greater than the number to the right, it returns <code>true</code>. If the number on the left is less than or equal to the number on the right, it returns <code>false</code>.  Like the equality operator, greater than converts data types.",
         "<strong>Examples</strong><blockquote>  5 > 3   // true<br />  7 > '3' // true<br />  2 > 3   // false<br />'1' > 9   // false</blockquote>",
-        "<h4>Instructions</h4>Add the <code>greater than</code> operator to the indicated lines so that the return statements make sense."
+        "<h4>Instructions</h4>",
+        "Add the <code>greater than</code> operator to the indicated lines so that the return statements make sense."
       ],
       "releasedOn": "11/27/2015",
       "tests": [
@@ -2455,7 +2511,8 @@
       "description": [
         "The greater than equal to operator (<code>&gt;=</code>) compares the values of two numbers.  If the number to the left is greater than or equal the number to the right, it returns <code>true</code>. If the number on the left is less than the number on the right, it returns <code>false</code>.  Like the equality operator, greater than equal to converts data types.",
         "<strong>Examples</strong><blockquote>  6 >= 6   // true<br />  7 >= '3' // true<br />  2 >= 3   // false<br />'7' >= 9   // false</blockquote>",
-        "<h4>Instructions</h4>Add the <code>greater than equal to</code> operator to the indicated lines so that the return statements make sense."
+        "<h4>Instructions</h4>",
+        "Add the <code>greater than equal to</code> operator to the indicated lines so that the return statements make sense."
       ],
       "releasedOn": "11/27/2015",
       "tests": [
@@ -2501,7 +2558,8 @@
       "description": [
         "The <code>less than</code> operator (<code>&lt;</code>) compares the values of two numbers.  If the number to the left is less than the number to the right, it returns <code>true</code>. If the number on the left is greater than or equal to the number on the right, it returns <code>false</code>.  Like the equality operator, <code>less than</code> converts data types.",
         "<strong>Examples</strong><blockquote>  2 &lt; 5  // true<br />'3' &lt; 7  // true<br />  5 &lt; 5  // false<br />  3 &lt; 2  // false<br />'8' &lt; 4  // false</blockquote>",
-        "<h4>Instructions</h4>Add the <code>less than</code> operator to the indicated lines so that the return statements make sense."
+        "<h4>Instructions</h4>",
+        "Add the <code>less than</code> operator to the indicated lines so that the return statements make sense."
       ],
       "releasedOn": "11/27/2015",
       "tests": [
@@ -2546,7 +2604,8 @@
       "description": [
         "The <code>less than equal to</code> operator (<code>&lt;=</code>) compares the values of two numbers.  If the number to the left is less than or equl the number to the right, it returns <code>true</code>. If the number on the left is greater than the number on the right, it returns <code>false</code>.  Like the equality operator, <code>less than equal to</code> converts data types.",
         "<strong>Examples</strong><blockquote>  4 &lt;= 5  // true<br />'7' &lt;= 7  // true<br />  5 &lt;= 5  // true<br />  3 &lt;= 2  // false<br />'8' &lt;= 4  // false</blockquote>",
-        "<h4>Instructions</h4>Add the <code>less than equal to</code> operator to the indicated lines so that the return statements make sense."
+        "<h4>Instructions</h4>",
+        "Add the <code>less than equal to</code> operator to the indicated lines so that the return statements make sense."
       ],
       "releasedOn": "11/27/2015",
       "tests": [
@@ -2593,7 +2652,8 @@
         "Sometimes you will need to test more than one thing at a time.  The <dfn>logical and</dfn> operator (<code>&&</code>) returns <code>true</code> if and only if the <dfn>operands</dfn> to the left and right of it are true.",
         "The same effect could be achieved by nesting an if statement inside another if:",
         "<blockquote>if (num < 10) { <br />  if (num > 5) {<br />    return \"Yes\";<br />  }<br />}<br />return \"No\";</blockquote>Will only return \"Yes\" if <code>num</code> is between <code>6</code> and <code>9</code>.  The same logic can be written as:<blockquote>if (num < 10 && num > 5) {<br />  return \"Yes\";<br />}</br>return \"No\";</blockquote>",
-        "<h4>Instructions</h4>Combine the two if statements into one statement which returns <code>\"Yes\"</code> if <code>val</code> is less than or equal to <code>50</code> and greater than or equal to <code>25</code>.  Otherwise, return <code>\"No\"</code>."
+        "<h4>Instructions</h4>",
+        "Combine the two if statements into one statement which returns <code>\"Yes\"</code> if <code>val</code> is less than or equal to <code>50</code> and greater than or equal to <code>25</code>.  Otherwise, return <code>\"No\"</code>."
       ],
       "releasedOn": "11/27/2015",
       "tests": [
@@ -2648,7 +2708,8 @@
         "The <dfn>logical or</dfn> operator (<code>||</code>) returns <code>true</code> if either of<dfn>operands</dfn> is true, or false if neither is true.",
         "The pattern below should look familiar from prior waypoints:",
         "<blockquote>if (num > 10) { <br />  return \"No\";<br />}<br />if (num < 5) {<br />    return \"No\";<br />}<br />return \"Yes\";</blockquote>Will only return \"Yes\" if <code>num</code> is between <code>5</code> and <code>10</code>.  The same logic can be written as:<blockquote>if (num > 10 || num < 5) {<br />  return \"No\";<br />}</br>return \"Yes\";</blockquote>",
-        "<h4>Instructions</h4>Combine the two if statements into one statement which returns <code>\"Inside\"</code> if <code>val</code> is between <code>10</code> and <code>20</code>, inclusive.  Otherwise, return <code>\"Outside\"</code>."
+        "<h4>Instructions</h4>",
+        "Combine the two if statements into one statement which returns <code>\"Inside\"</code> if <code>val</code> is between <code>10</code> and <code>20</code>, inclusive.  Otherwise, return <code>\"Outside\"</code>."
       ],
       "releasedOn": "11/27/2015",
       "tests": [
@@ -2775,7 +2836,8 @@
       "description": [
         "When a condition for an <code>if</code> statement is true, the block of code following it is executed.  What about when that condition is false?  Normally nothing would happen.  With an <code>else</code> statement, an alternate block of code can be executed.",
         "<blockquote>if (num > 10) {<br />  return \"Bigger than 10\";<br />} else {<br />  return \"10 or Less\";<br />}</blockquote>",
-        "<h4>Instructions</h4>Combine the <code>if</code> statements into a single statement."
+        "<h4>Instructions</h4>",
+        "Combine the <code>if</code> statements into a single statement."
       ],
       "releasedOn": "11/27/2015",
       "tests": [
@@ -2887,7 +2949,8 @@
       "description": [
         "<code>if...else if</code> statements can be chained together for complex logic.  Here is <dfn>pseudocode</dfn> of multiple chained <code>if</code>/<code>else if</code> statements:",
         "<blockquote>if(<i>condition1</i>) {<br />  <i>statement1</i><br />} else if (<i>condition1</i>) {<br />  <i>statement1</i><br />} else if (<i>condition3</i>) {<br />  <i>statement3</i><br />. . .<br />} else {<br />  <i>statementN</i><br />}</blockquote>",
-        "<h4>Instructions</h4>Write chained <code>if</code>/<code>else if</code> statements to fulfill the following conditions:",
+        "<h4>Instructions</h4>",
+        "Write chained <code>if</code>/<code>else if</code> statements to fulfill the following conditions:",
         "<code>num &lt; 5</code> - return \"Tiny\"<br /><code>num &lt; 10</code> - return \"Small\"<br /><code>num &lt; 15</code> - return \"Medium\"<br /><code>num &lt; 20</code> - return \"Large\"<br /><code>num >= 20</code>  - return \"Huge\""
       ],
       "releasedOn": "11/27/2015",
@@ -2948,7 +3011,8 @@
         "If you have many options to choose from use a <code>switch</code> statement  A <code>switch</code> statement tests a value and has many <code>case</code> statements which define that value can be, shown here in <dfn>pseudocode<dfn>:",
         "<blockquote>switch (num) {<br />  case value1:<br />    statement1<br />    break;<br />  value2:<br />    statement2;<br />    break;<br />...<br />  valueN:<br />    statementN;<br />}</blockquote>",
         "<code>case</code> values are tested with strict equality (<code>===</code>).  The <code>break</code> tells Javascript to stop executing statements.  If the <code>break</code> is omitted, the next statement will be executed.",
-        "<h4>Instructions</h4>Write a switch statement to set <code>answer</code> for the following conditions:<br /><code>1</code> - \"alpha\"<br /><code>2</code> - \"beta\"<br /><code>3</code> - \"gamma\"<br /><code>4</code> - \"delta\""
+        "<h4>Instructions</h4>",
+        "Write a switch statement to set <code>answer</code> for the following conditions:<br /><code>1</code> - \"alpha\"<br /><code>2</code> - \"beta\"<br /><code>3</code> - \"gamma\"<br /><code>4</code> - \"delta\""
       ],
       "releasedOn": "11/27/2015",
       "tests": [
@@ -3009,7 +3073,8 @@
         "In a <code>switch</code> statement you may not be able to specify all possible values as <code>case</code> statements.  Instead, you can use the <code>default</code> statement where a <code>case</code> would go.  Think of it like an <code>else</code> statement for <code>switch</code>.",
         "A <code>default</code> statement should be the last \"<code>case</code>\" in the list.",
         "<blockquote>switch (num) {<br />  case value1:<br />    statement1<br />    break;<br />  value2:<br />    statement2;<br />    break;<br />...<br />  default:<br />    defaultStatement;<br />}</blockquote>",
-        "<h4>Instructions</h4>Write a switch statement to set <code>answer</code> for the following conditions:<br /><code>\"a\"</code> - \"apple\"<br /><code>\"b\"</code> - \"bird\"<br /><code>\"c\"</code> - \"cat\"<br /><code>default</code> - \"stuff\""
+        "<h4>Instructions</h4>",
+        "Write a switch statement to set <code>answer</code> for the following conditions:<br /><code>\"a\"</code> - \"apple\"<br /><code>\"b\"</code> - \"bird\"<br /><code>\"c\"</code> - \"cat\"<br /><code>default</code> - \"stuff\""
       ],
       "releasedOn": "11/27/2015",
       "tests": [
@@ -3071,7 +3136,8 @@
         "If the <code>break</code> statement is ommitted from a <code>switch</code> statement <code>case</code>, the following <code>case</code> statement(s).  If you have mutiple inputs with the same output, you can represent them in a <code>switch</code> statement like this:",
         "<blockquote>switch(val) {<br />  case 1:<br />  case 2:<br />  case 3:<br />    result = \"1, 2, or 3\";<br />    break;<br />  case 4:<br />    result = \"4 alone\";<br />}</blockquote>",
         "Cases for 1, 2, and 3 will all produce the same result.",
-        "<h4>Instructions</h4>Write a switch statement to set <code>answer</code> for the following ranges:<br /><code>1-3</code> - \"Low\"<br /><code>4-6</code> - \"Mid\"<br /><code>7-9</code> - \"High\"",
+        "<h4>Instructions</h4>",
+        "Write a switch statement to set <code>answer</code> for the following ranges:<br /><code>1-3</code> - \"Low\"<br /><code>4-6</code> - \"Mid\"<br /><code>7-9</code> - \"High\"",
         "<strong>Note</strong><br />You will need to have a <code>case</code> statement for each number in the range."
       ],
       "releasedOn": "11/27/2015",
@@ -3143,7 +3209,8 @@
         "<blockquote>if(val === 1) {<br />  answer = \"a\";<br />} else if(val === 2) {<br />  answer = \"b\";<br />} else {<br />  answer = \"c\";<br />}</blockquote>",
         "can be replaced with:",
         "<blockquote>switch (val) {<br />  case 1:<br />    answer = \"a\";<br />    break;<br />  case 2:<br />    answer = \"b\";<br />    break;<br />  default:<br />    answer = \"c\";<br />}</blockquote>",
-        "<h4>Instructions</h4>Change the chained <code>if</code>/<code>if else</code> statements into a <code>switch</code> statement."
+        "<h4>Instructions</h4>",
+        "Change the chained <code>if</code>/<code>if else</code> statements into a <code>switch</code> statement."
       ],
       "releasedOn": "11/27/2015",
       "tests": [
@@ -3287,7 +3354,8 @@
         "Here's a sample object:",
         "<blockquote>var cat = {<br />  \"name\": \"Whiskers\",<br />  \"legs\": 4,<br />  \"tails\": 1,<br />  \"enemies\": [\"Water\", \"Dogs\"]<br />};</blockquote>",
         "Objects are useful for storing data in a structured way, and can represent real world objects, like a cat.",
-        "<h4>Instructions</h4>Make an object that represents a dog called <code>myDog</code> which contains the properties <code>\"name\"</code> (a string), <code>\"legs\"</code>, <code>\"tails\"</code> and <code>\"friends\"</code>.",
+        "<h4>Instructions</h4>",
+        "Make an object that represents a dog called <code>myDog</code> which contains the properties <code>\"name\"</code> (a string), <code>\"legs\"</code>, <code>\"tails\"</code> and <code>\"friends\"</code>.",
         "You can set these object properties to whatever values you want, as long <code>\"name\"</code> is a string, <code>\"legs\"</code> and <code>\"tails\"</code> are numbers, and <code>\"friends\"</code> is an array."
       ],
       "tests": [
@@ -3331,7 +3399,8 @@
         "The dot operator is what you use when you know the name of the property you're trying to access ahead of time.",
         "Here is a sample of using the <code>.</code> to read an object property:",
         "<blockquote>var myObj = {<br />  prop1: \"val1\",<br />  prop2: \"val2\"<br />};<br />myObj.prop1; // val1<br />myObj.prop2; // val2</blockquote>",
-        "<h4>Instructions</h4>Read the values of the properties <code>hat</code> and <code>shirt</code> of <code>testObj</code> using dot notation."
+        "<h4>Instructions</h4>",
+        "Read the values of the properties <code>hat</code> and <code>shirt</code> of <code>testObj</code> using dot notation."
       ],
       "releasedOn": "11/27/2015",
       "tests": [
@@ -3382,7 +3451,8 @@
         "Here is a sample of using bracket notation to read an object property:",
         "<blockquote>var myObj = {<br />  \"Space Name\": \"Kirk\",<br />  \"More Space\": \"Spock\"<br />  };<br />myObj[\"Space Name\"]; // Kirk<br />myObj['More Space']; // Spock</blockquote>",
         "Note that property names with spaces in them must be in quotes (single or double).",
-        "<h4>Instructions</h4>Read the values of the properties <code>\"an entree\"</code> and <code>\"the drink\"</code> of <code>testObj</code> using bracket notation."
+        "<h4>Instructions</h4>",
+        "Read the values of the properties <code>\"an entree\"</code> and <code>\"the drink\"</code> of <code>testObj</code> using bracket notation."
       ],
       "releasedOn": "11/27/2015",
       "tests": [
@@ -3433,7 +3503,8 @@
         "Here is an example of using a variable to access a property:",
         "<blockquote>var someProp = \"propName\";<br />var myObj = {<br />  propName: \"Some Value\"<br >}<br />myObj[someProp]; // \"Some Value\"</blockquote>",
         "Note that we  do <em>not</em> use quotes around the variable name when using it to access the property because we are using the <em>value</em> of the variable, not the <em>name</em>",
-        "<h4>Instructions</h4>Use the <code>playerNumber</code> variable to lookup player <code>16</code> in <code>testObj</code> using bracket notation."
+        "<h4>Instructions</h4>",
+        "Use the <code>playerNumber</code> variable to lookup player <code>16</code> in <code>testObj</code> using bracket notation."
       ],
       "releasedOn": "11/27/2015",
       "tests": [
@@ -3480,7 +3551,8 @@
         "<code>ourDog.name = \"Happy Camper\";</code> or",
         "<code>outDog[\"name\"] = \"Happy Camper\";</code>",
         "Now when we evaluate <code>ourDog.name</code>, instead of getting \"Camper\", we'll get his new name, \"Happy Camper\".",
-        "<h4>Instructions</h4>Update the <code>myDog</code> object's name property. Let's change her name from \"Coder\" to \"Happy Coder\".  You can use either dot or bracket notation."
+        "<h4>Instructions</h4>",
+        "Update the <code>myDog</code> object's name property. Let's change her name from \"Coder\" to \"Happy Coder\".  You can use either dot or bracket notation."
       ],
       "tests": [
         "assert(/happy coder/gi.test(myDog.name), 'message: Update <code>myDog</code>&apos;s <code>\"name\"</code> property to equal \"Happy Coder\".');",
@@ -3525,7 +3597,8 @@
         "or",
         "<code>ourDog[\"bark\"] = \"bow-wow\";</code>",
         "Now when we evaluate <code>ourDog.bark</code>, we'll get his bark, \"bow-wow\".",
-        "<h4>Instructions</h4>Add a <code>\"bark\"</code> property to <code>myDog</code> and set it to a dog sound, such as \"woof\". You may use either dot or bracket notation."
+        "<h4>Instructions</h4>",
+        "Add a <code>\"bark\"</code> property to <code>myDog</code> and set it to a dog sound, such as \"woof\". You may use either dot or bracket notation."
       ],
       "tests": [
         "assert(myDog.bark !== undefined, 'message: Add the property <code>\"bark\"</code> to <code>myDog</code>.');",
@@ -3574,7 +3647,8 @@
       "description": [
         "We can also delete properties from objects like this:",
         "<code>delete ourDog.bark;</code>",
-        "<h4>Instructions</h4>Delete the <code>\"tails\"</code> property from <code>myDog</code>. You may use either dot or bracket notation."
+        "<h4>Instructions</h4>",
+        "Delete the <code>\"tails\"</code> property from <code>myDog</code>. You may use either dot or bracket notation."
       ],
       "tests": [
         "assert(myDog.tails === undefined, 'message: Delete the property <code>\"tails\"</code> from <code>myDog</code>.');",
@@ -3629,7 +3703,8 @@
         "Objects can be thought of as a key/value storage, like a dictonary. If you have tabular data, you can use an object to \"lookup\" values rather than a <code>switch</code> statement or an <code>if...else</code> chain. This is most useful when you know that your input data is limited to a certain range.",
         "Here is an example of a simple reverse alphabet lookup:",
         "<blockquote>var alpha = {<br />  1:\"Z\"<br />  2:\"Y\"<br />  3:\"X\"<br />...<br />  4:\"W\"<br />  24:\"C\"<br />  25:\"B\"<br />  26:\"A\"<br />};<br />alpha[2]; // \"Y\"<br />alpha[24]; // \"C\"</blockquote>",
-        "<h4>Instructions</h4>Convert the switch statement into a lookup table called <code>lookup</code>.  Use it to lookup <code>val</code> and return the associated string."
+        "<h4>Instructions</h4>",
+        "Convert the switch statement into a lookup table called <code>lookup</code>.  Use it to lookup <code>val</code> and return the associated string."
       ],
       "releasedOn": "11/27/2015",
       "tests": [
@@ -3727,7 +3802,8 @@
         "Here is an example of a JSON object:",
         "<blockquote>var ourMusic = [<br />  {<br />    \"artist\": \"Daft Punk\",<br />    \"title\": \"Homework\",<br />    \"release_year\": 1997,<br />    \"formats\": [ <br />      \"CD\", <br />      \"Cassette\", <br />      \"LP\" ],<br />    \"gold\": true<br />  }<br />];</blockquote>",
         "This is an array of objects and the object has various peices of <dfn>metadata</dfn> about an album.  It also has a nested array of formats. Additional album records could be added to the top level array.",
-        "<h4>Instructions</h4>Add a new album to the <code>myMusic</code> JSON object.  Add  <code>artist</code> and <code>title</code> strings, <code>release_year</code> year, and a <code>formats</code> array of strings."
+        "<h4>Instructions</h4>",
+        "Add a new album to the <code>myMusic</code> JSON object.  Add  <code>artist</code> and <code>title</code> strings, <code>release_year</code> year, and a <code>formats</code> array of strings."
       ],
       "releasedOn": "11/27/2015",
       "tests": [
@@ -3802,7 +3878,8 @@
         "The properties and sub-properties of JSON objects can be accessed by chaining together the dot or bracket notation.",
         "Here is a nested JSON Object:",
         "<blockquote>var ourStorage = {<br />  \"desk\": {<br />    \"drawer\": \"stapler\"<br />  },<br />  \"cabinet\": {<br />    \"top drawer\": { <br />      \"folder1\": \"a file\",<br />      \"folder2\": \"secrets\"<br />    },<br />    \"bottom drawer\": \"soda\"<br />  }<br />}<br />ourStorage.cabinet[\"top drawer\"].folder2;  // \"secrets\"<br />ourStoage.desk.drawer; // \"stapler\"</blockquote>",
-        "<h4>Instructions</h4>Access the <code>myStorage</code> JSON object to retrieve the contents of the <code>glove box</code>.  Only use object notation for properties with a space in their name."
+        "<h4>Instructions</h4>",
+        "Access the <code>myStorage</code> JSON object to retrieve the contents of the <code>glove box</code>.  Only use object notation for properties with a space in their name."
       ],
       "releasedOn": "11/27/2015",
       "tests": [
@@ -3860,7 +3937,8 @@
         "As we have seen in earlier examples, JSON objects can contain both nested objects and nested arrays.  Similar to accessing nested objects, Array bracket notation can be chained to access nested arrays.",
         "Here is an example of how to access a nested array:",
         "<blockquote>var ourPets = { <br />  \"cats\": [<br />    \"Meowzer\",<br />    \"Fluffy\",<br />    \"Kit-Cat\"<br />  ],<br />  \"dogs:\" [<br />    \"Spot\",<br />    \"Bowser\",<br />    \"Frankie\"<br />  ]<br />};<br />ourPets.cats[1]; // \"Fluffy\"<br />ourPets.dogs[0]; // \"Spot\"</blockquote>",
-        "<h4>Instructions</h4>Retrieve the second tree using object dot and array bracket notation."
+        "<h4>Instructions</h4>",
+        "Retrieve the second tree using object dot and array bracket notation."
       ],
       "releasedOn": "11/27/2015",
       "tests": [
@@ -3976,7 +4054,8 @@
         "In the following example we initialize with <code>i = 0</code> and iterate while our condition <code>i < 5</code> is true.  We'll increment <code>i</code> by <code>1</code> in each loop iteration with <code>i++</code> as our <code>final-expression</code>.",
         "<blockquote>var ourArray = [];<br />for (var i = 0; i < 5; i++) {<br />  ourArray.push(i);<br />}</blockquote>",
         "<code>ourArray</code> will now contain <code>[0,1,2,3,4]</code>.",
-        "<h4>Instructions</h4>Use a <code>for</code> loop to work to push the values 1 through 5 onto <code>myArray</code>."
+        "<h4>Instructions</h4>",
+        "Use a <code>for</code> loop to work to push the values 1 through 5 onto <code>myArray</code>."
       ],
       "tests": [
         "assert(editor.getValue().match(/for\\s*\\(/g).length > 1, 'message: You should be using a <code>for</code> loop for this.');",
@@ -4012,7 +4091,8 @@
         "<blockquote>var ourArray = [];<br />for (var i = 0; i < 10; i += 2) {<br />  ourArray.push(i);<br />}</blockquote>",
         "<code>ourArray</code> will now contain <code>[0,2,4,6,8]</code>.",
         "Let's change our <code>initialization</code> so we can count by odd numbers.",
-        "<h4>Instructions</h4>Push the odd numbers from 1 through 9 to <code>myArray</code> using a <code>for</code> loop."
+        "<h4>Instructions</h4>",
+"Push the odd numbers from 1 through 9 to <code>myArray</code> using a <code>for</code> loop."
       ],
       "tests": [
         "assert(editor.getValue().match(/for\\s*\\(/g).length > 1, 'message: You should be using a <code>for</code> loop for this.');",
@@ -4049,7 +4129,8 @@
         "<blockquote>var ourArray = [];<br />for (var i=10; i > 0; i-=2) {<br />  ourArray.push(i);<br />}</blockquote>",
         "<code>ourArray</code> will now contain <code>[10,8,6,4,2]</code>.",
         "Let's change our <code>initialization</code> and <code>final-expression</code> so we can count backward by twos by odd numbers.",
-        "<h4>Instructions</h4>Push the odd numbers from 9 through 1 to <code>myArray</code> using a <code>for</code> loop."
+        "<h4>Instructions</h4>",
+"Push the odd numbers from 9 through 1 to <code>myArray</code> using a <code>for</code> loop."
       ],
       "tests": [
         "assert(editor.getValue().match(/for\\s*\\(/g).length > 1, 'message: You should be using a <code>for</code> loop for this.');",
@@ -4082,7 +4163,8 @@
         "A common task in Javascript is to iterate through the contents of an array.  One way to do that is with a <code>for</code> loop. This code will output each element of the array <code>arr</code> to the console:",
         "<blockquote>var arr = [10,9,8,7,6];<br />for (var i=0; i < arr.length; i++) {<br />   console.log(arr[i]);<br />}</blockquote>",
         "Remember that Arrays have zero-based numbering, which means the last index of the array is length - 1.  Our <dfn>condition</dfn> for this loop is <code>i < arr.length</code>, which stops when <code>i</code> is at length - 1.",
-        "<h4>Instructions</h4>Create a variable <code>total</code>. Use a <code>for</code> loop to add each element of <code>myArr</code> to total."
+        "<h4>Instructions</h4>",
+        "Create a variable <code>total</code>. Use a <code>for</code> loop to add each element of <code>myArr</code> to total."
       ],
       "releasedOn": "11/27/2015",
       "tests": [
@@ -4132,7 +4214,8 @@
         "If you have a multi-dimensional array, you can use the same logic as the prior waypoint to loop through both the array and any sub-arrays.  Here is an example:",
         "<blockquote>var arr = [<br />  [1,2], [3,4], [5,6]<br />];<br />for (var i=0; i &lt; arr.length; i++) {<br />  for (var j=0; k &lt; arr[i].length; j++) {<br />    console.log(arr[i][j]);<br />  }<br />}</blockquote>",
         "This outputs each sub-element in <code>arr</code> one at a time.  Note that for the inner loop we are checking the <code>.length</code> of <code>arr[i]</code>, since <code>arr[i]</code> is itself an array.",
-        "<h4>Instructions</h4>The function <code>multiplyAll</code> will be passed a multi-dimensional array, <code>arr</code>. Loop through both levels of <code>arr</code> and multiply <code>product</code> by each one."
+        "<h4>Instructions</h4>",
+        "Modify function <code>multiplyAll</code> so that it multiplies <code>product</code> by each number in the subarrays of <code>arr</code>"
       ],
       "releasedOn": "11/27/2015",
       "tests": [
@@ -4187,7 +4270,8 @@
         "Another type of JavaScript loop is called a \"while loop\", because it runs \"while\" something is true and stops once that something is no longer true.",
         "<blockquote>var ourArray = [];<br />var i = 0;<br />while(i < 5) {<br />  ourArray.push(i);<br />  i++;<br />}</blockquote>",
         "Let's try getting a while loop to work by pushing values to an array.",
-        "<h4>Instructions</h4>Push the numbers 0 through 4 to <code>myArray</code> using a <code>while</code> loop."
+        "<h4>Instructions</h4>",
+        "Push the numbers 0 through 4 to <code>myArray</code> using a <code>while</code> loop."
       ],
       "tests": [
         "assert(editor.getValue().match(/while/g), 'message: You should be using a <code>while</code> loop for this.');",
