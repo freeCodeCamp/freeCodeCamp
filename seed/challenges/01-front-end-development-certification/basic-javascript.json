@@ -1989,48 +1989,35 @@
         "<blockquote>var someVar = \"Hat\";<br />function myFun() {<br />  var someVar = \"Head\";<br />  return someVar;<br />}</blockquote>",
         "The function <code>myFun</code> will return <code>\"Head\"</code> because the <code>local</code> version of the variable is present.",
         "<h4>Instructions</h4>",
-        "Add a local variable to <code>myFunction</code> to override the value of <code>"
+        "Add a local variable to <code>myFunction</code> to override the value of <code>outerWear</code> with <code>\"sweater\"</code>."
       ],
       "releasedOn": "11/27/2015",
       "tests": [
-        "assert(1===1, 'message: message here');"
+        "assert(outerWear === \"T-Shirt\", 'message: Do not change the value of the global <code>outerWear</code>');",
+        "assert(myFunction() === \"sweater\", 'message: <code>myFunction</code> should return <code>\"sweater\"</code>');",
+        "assert(/return outerWear/.test(editor.getValue()), 'message: Do not change the return statement');"
       ],
       "challengeSeed": [
+        "// Setup",
+        "var outerWear = \"T-Shirt\";",
+        "",
+        "function myFunction() {",
+        "  // Only change code below this line",
         "",
         "",
-        ""
+        "",
+        "  // Only change code above this line",
+        "  return outerWear;",
+        "}",
+        "",
+        "myFunction();"
       ],
       "solutions": [
-        ""
-      ],
-      "type": "waypoint",
-      "challengeType": "1",
-      "nameCn": "",
-      "nameFr": "",
-      "nameRu": "",
-      "nameEs": "",
-      "namePt": ""
-    },
-    {
-      "id": "56533eb9ac21ba0edf2244c1",
-      "title": "Context for Functions",
-      "description": [
-        "Show how each instance of a function has its own values/context"
-      ],
-      "releasedOn": "11/27/2015",
-      "tests": [
-        "assert(1===1, 'message: message here');"
-      ],
-      "challengeSeed": [
-        "",
-        "",
-        ""
-      ],
-      "tail": [
-        ""
-      ],
-      "solutions": [
-        ""
+        "var outerWear = \"T-Shirt\";",
+        "function myFunction() {",
+        "  var outerWear = \"sweater\";",
+        "  return outerWear;",
+        "}"
       ],
       "type": "waypoint",
       "challengeType": "1",
@@ -2092,77 +2079,23 @@
         "Assume we have pre-defined a function <code>sum</code> which adds two numbers together, then: ",
         "<code>var ourSum = sum(5, 12);</code>",
         "will call <code>sum</code>, which returns a value of <code>17</code> and assigns it to <code>ourSum</code>.",
-        "<h4>Instructions</h4>"
+        "<h4>Instructions</h4>",
+        "Call <code>process</code> with an argument of <code>7</code> and assign it's return valueto the variable <code>processed</code>."
       ],
       "releasedOn": "11/27/2015",
       "tests": [
-        "assert(1===1, 'message: message here');"
+        "assert(processed === 2, 'message: <code>processed</code> should have a value of <code>10</code>');",
+        "assert(/processed\\s*=\\s*process\\(\\s*7\\s*\\)\\s*;/.test(editor.getValue()), 'message: You should assign <code>process</code> to <code>processed</code>');"
       ],
       "challengeSeed": [
         "// Setup",
+        "var processed = 0;",
+        "",
         "function process(num) {",
         "  return (num + 3) / 5;",
         "}",
         "",
         "// Only change code below this line",
-        "var processed = 0; // Change this line",
-        ""
-      ],
-      "tail": [
-        ""
-      ],
-      "solutions": [
-        ""
-      ],
-      "type": "waypoint",
-      "challengeType": "1",
-      "nameCn": "",
-      "nameFr": "",
-      "nameRu": "",
-      "nameEs": "",
-      "namePt": ""
-    },
-    {
-      "id": "56533eb9ac21ba0edf2244c4",
-      "title": "Return Early Pattern for Functions",
-      "description": [
-        "Explain how to use return early for functions"
-      ],
-      "releasedOn": "11/27/2015",
-      "tests": [
-        "assert(1===1, 'message: message here');"
-      ],
-      "challengeSeed": [
-        "",
-        "",
-        ""
-      ],
-      "tail": [
-        ""
-      ],
-      "solutions": [
-        ""
-      ],
-      "type": "waypoint",
-      "challengeType": "1",
-      "nameCn": "",
-      "nameFr": "",
-      "nameRu": "",
-      "nameEs": "",
-      "namePt": ""
-    },
-    {
-      "id": "56533eb9ac21ba0edf2244c5",
-      "title": "Optional Arguments for Functions",
-      "description": [
-        ""
-      ],
-      "releasedOn": "11/27/2015",
-      "tests": [
-        "assert(1===1, 'message: message here');"
-      ],
-      "challengeSeed": [
-        "",
         "",
         ""
       ],
@@ -2759,7 +2692,7 @@
       "nameEs": "",
       "namePt": ""
     },
-    {
+        {
       "id": "5664820f61c48e80c9fa476c",
       "title": "Golf Code",
       "description": [
@@ -3270,6 +3203,93 @@
         "  }",
         "  return answer;  ",
         "}"
+      ],
+      "type": "waypoint",
+      "challengeType": "1",
+      "nameCn": "",
+      "nameFr": "",
+      "nameRu": "",
+      "nameEs": "",
+      "namePt": ""
+    },
+    {
+      "id": "5679ceb97cbaa8c51670a16b",
+      "title": "Returning Boolean Values from Functions",
+      "description": [
+        "Explain how to return booleans vs. if/else "
+      ],
+      "releasedOn": "11/27/2015",
+      "tests": [
+        "assert(1===1, 'message: message here');"
+      ],
+      "challengeSeed": [
+        "",
+        "",
+        ""
+      ],
+      "tail": [
+        ""
+      ],
+      "solutions": [
+        ""
+      ],
+      "type": "waypoint",
+      "challengeType": "1",
+      "nameCn": "",
+      "nameFr": "",
+      "nameRu": "",
+      "nameEs": "",
+      "namePt": ""
+    },
+    {
+      "id": "56533eb9ac21ba0edf2244c4",
+      "title": "Return Early Pattern for Functions",
+      "description": [
+        "Explain how to use return early for functions"
+      ],
+      "releasedOn": "11/27/2015",
+      "tests": [
+        "assert(1===1, 'message: message here');"
+      ],
+      "challengeSeed": [
+        "",
+        "",
+        ""
+      ],
+      "tail": [
+        ""
+      ],
+      "solutions": [
+        ""
+      ],
+      "type": "waypoint",
+      "challengeType": "1",
+      "nameCn": "",
+      "nameFr": "",
+      "nameRu": "",
+      "nameEs": "",
+      "namePt": ""
+    },
+    {
+      "id": "56533eb9ac21ba0edf2244c5",
+      "title": "Optional Arguments for Functions",
+      "description": [
+        ""
+      ],
+      "releasedOn": "11/27/2015",
+      "tests": [
+        "assert(1===1, 'message: message here');"
+      ],
+      "challengeSeed": [
+        "",
+        "",
+        ""
+      ],
+      "tail": [
+        ""
+      ],
+      "solutions": [
+        ""
       ],
       "type": "waypoint",
       "challengeType": "1",
@@ -4092,7 +4112,7 @@
         "<code>ourArray</code> will now contain <code>[0,2,4,6,8]</code>.",
         "Let's change our <code>initialization</code> so we can count by odd numbers.",
         "<h4>Instructions</h4>",
-"Push the odd numbers from 1 through 9 to <code>myArray</code> using a <code>for</code> loop."
+        "Push the odd numbers from 1 through 9 to <code>myArray</code> using a <code>for</code> loop."
       ],
       "tests": [
         "assert(editor.getValue().match(/for\\s*\\(/g).length > 1, 'message: You should be using a <code>for</code> loop for this.');",
@@ -4130,7 +4150,7 @@
         "<code>ourArray</code> will now contain <code>[10,8,6,4,2]</code>.",
         "Let's change our <code>initialization</code> and <code>final-expression</code> so we can count backward by twos by odd numbers.",
         "<h4>Instructions</h4>",
-"Push the odd numbers from 9 through 1 to <code>myArray</code> using a <code>for</code> loop."
+        "Push the odd numbers from 9 through 1 to <code>myArray</code> using a <code>for</code> loop."
       ],
       "tests": [
         "assert(editor.getValue().match(/for\\s*\\(/g).length > 1, 'message: You should be using a <code>for</code> loop for this.');",
