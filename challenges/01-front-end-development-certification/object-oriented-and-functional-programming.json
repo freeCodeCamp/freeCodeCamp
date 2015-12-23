@@ -267,7 +267,8 @@
       "tests": [
         "assert(typeof myBike.getGear !== 'undefined' && typeof myBike.getGear === 'function', 'message: The method <code>getGear</code> of <code>myBike</code> should be accessible outside the object.');",
         "assert(typeof myBike.setGear !== 'undefined' && typeof myBike.setGear === 'function', 'message: The method <code>setGear</code> of <code>myBike</code> should be accessible outside the object.');",
-        "assert(typeof myBike.gear === 'undefined', 'message: <code>myBike.gear</code> should remain undefined.');"
+        "assert(typeof myBike.gear === 'undefined', 'message: <code>myBike.gear</code> should remain undefined.');",
+        "assert.strictEqual((function () { myBike.setGear(4); return myBike.getGear(); })(), 4, 'message: <code>myBike.getGear()</code> should return <code>4</code> after <code>myBike.setGear(4)</code>.');"
       ],
       "challengeSeed": [
         "var Car = function() {",
