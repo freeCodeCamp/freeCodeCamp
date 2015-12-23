@@ -11,8 +11,9 @@ export default React.createClass({
   mixins: [History],
 
   propTypes: {
-    currentHike: PropTypes.object,
-    params: PropTypes.object
+    dashedName: PropTypes.string,
+    description: PropTypes.array,
+    id: PropTypes.string
   },
 
   handleError: debug,
@@ -29,12 +30,10 @@ export default React.createClass({
 
   render() {
     const {
-      challengeSeed = ['1'],
+      id = '1',
+      dashedName,
       description = []
-    } = this.props.currentHike;
-    const { dashedName } = this.props.params;
-
-    const [ id ] = challengeSeed;
+    } = this.props;
 
     return (
       <Col xs={ 12 }>
