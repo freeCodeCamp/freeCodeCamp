@@ -12,11 +12,12 @@ export default React.createClass({
   displayName: 'Hike',
 
   propTypes: {
-    showQuestions: PropTypes.bool,
-    currentHike: PropTypes.object
+    dashedName: PropTypes.string,
+    currentHike: PropTypes.object,
+    showQuestions: PropTypes.bool
   },
 
-  renderBody(showQuestions, currentHike) {
+  renderBody(showQuestions, currentHike, dashedName) {
     if (showQuestions) {
       return (
         <Questions hike={ currentHike }/>
@@ -30,13 +31,18 @@ export default React.createClass({
 
     return (
       <Lecture
+        dashedName={ dashedName }
         description={ description }
         id={ id } />
     );
   },
 
   render() {
-    const { currentHike, showQuestions } = this.props;
+    const {
+      currentHike = {},
+      dashedName,
+      showQuestions
+    } = this.props;
     const { title } = currentHike;
 
     const videoTitle = <h2>{ title }</h2>;
@@ -47,7 +53,7 @@ export default React.createClass({
           <Panel
             className={ 'text-center' }
             title={ videoTitle }>
-            { this.renderBody(showQuestions, currentHike) }
+            { this.renderBody(showQuestions, currentHike, dashedName) }
           </Panel>
         </Row>
       </Col>
