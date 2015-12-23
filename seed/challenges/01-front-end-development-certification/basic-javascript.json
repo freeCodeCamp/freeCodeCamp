@@ -28,10 +28,11 @@
       "id": "bd7123c9c441eddfaeb5bdef",
       "title": "Understand Boolean Values",
       "description": [
-        "In computer science, <code>data structures</code> are things that hold data. JavaScript has seven of these. For example, the <code>Number</code> data structure holds numbers.",
-        "Let's learn about the most basic data structure of all: the <code>Boolean</code>. Booleans can only hold the value of either true or false. They are basically little on-off switches.",
+        "Computers are not inherently smart. Hence, javascript developers made it easy for us to represent data to computer. <code>Data</code> is anything that is meaningful to the computer.",
+        "In computer science, <code>Data types</code> are things that represent various types of data. JavaScript has seven data types which are <code>Undefined</code>, <code>Null</code>, <code>Boolean</code>, <code>String</code>, <code>Symbol</code>, <code>Number</code>, and <code>Object</code>. For example, the <code>Number</code> data type represents numbers.",
+        "Now let's learn about the most basic one: the <code>Boolean</code> data type. Booleans represent a <code>true</code> or <code>false</code> value. They are basically little on-off switches.",
         "<h4>Instructions</h4>",
-        "Modify the <code>welcomeToBooleans</code> function so that it will return <code>true</code> instead of <code>false</code> when the run button is clicked."
+        "Modify the <code>welcomeToBooleans</code> function so that it returns <code>true</code> instead of <code>false</code> when the run button is clicked."
       ],
       "tests": [
         "assert(typeof(welcomeToBooleans()) === 'boolean', 'message: The <code>welcomeToBooleans()</code> function should return a boolean &#40;true/false&#41; value.');",
