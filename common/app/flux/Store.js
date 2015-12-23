@@ -18,15 +18,15 @@ export default Store({
     value: initValue
   },
   init({ instance: appStore, args: [cat] }) {
-    const { updateRoute, setUser, setTitle } = cat.getActions('appActions');
+    const { updateRoute, getUser, setTitle } = cat.getActions('appActions');
     const register = createRegistrar(appStore);
-    let { setHikes } = cat.getActions('hikesActions');
+    const { fetchHikes } = cat.getActions('hikesActions');
 
     // app
-    register(setter(fromMany(setUser, setTitle, updateRoute)));
+    register(setter(fromMany(getUser, setTitle, updateRoute)));
 
     // hikes
-    register(setHikes);
+    register(fetchHikes);
 
     return appStore;
   }

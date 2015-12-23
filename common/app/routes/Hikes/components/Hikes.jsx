@@ -9,7 +9,10 @@ import HikesMap from './Map.jsx';
 
 export default contain(
   {
-    store: 'hikesStore',
+    store: 'appStore',
+    map(state) {
+      return state.hikesApp;
+    },
     actions: ['appActions'],
     fetchAction: 'hikesActions.fetchHikes',
     getPayload: ({ hikes, params }) => ({
@@ -54,8 +57,12 @@ export default contain(
       return (
         <div>
           <Row style={ preventOverflow }>
-            { this.renderChild(children, hikes, currentHike) ||
-              this.renderMap(hikes) }
+            {
+              // render sub-route
+              this.renderChild(children, hikes, currentHike) ||
+              // if no sub-route render hikes map
+              this.renderMap(hikes)
+            }
           </Row>
         </div>
       );
