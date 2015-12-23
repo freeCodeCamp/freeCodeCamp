@@ -11,7 +11,7 @@ export default function hikesService(app) {
     read: (req, resource, params, config, cb) => {
       const query = {
         where: { challengeType: '6' },
-        order: 'suborder ASC'
+        order: ['order ASC', 'suborder ASC' ]
       };
 
       debug('params', params);
