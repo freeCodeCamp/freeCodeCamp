@@ -6,7 +6,7 @@ import debugFactory from 'debug';
 import { Router } from 'react-router';
 import { createLocation, createHistory } from 'history';
 import { hydrate } from 'thundercats';
-import { Render } from 'thundercats-react';
+import { render$ } from 'thundercats-react';
 
 import { app$ } from '../common/app';
 
@@ -72,7 +72,7 @@ app$({ history, location: appLocation })
   })
   .flatMap(({ props, appCat }) => {
     props.history = history;
-    return Render(
+    return render$(
       appCat,
       React.createElement(Router, props),
       DOMContianer

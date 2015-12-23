@@ -3,8 +3,10 @@ import { RoutingContext } from 'react-router';
 import Fetchr from 'fetchr';
 import { createLocation } from 'history';
 import debugFactory from 'debug';
+import { dehydrate } from 'thundercats';
+import { renderToString$ } from 'thundercats-react';
+
 import { app$ } from '../../common/app';
-import { RenderToString } from 'thundercats-react';
 
 const debug = debugFactory('freecc:react-server');
 
@@ -12,13 +14,12 @@ const debug = debugFactory('freecc:react-server');
 // remove their individual controllers
 const routes = [
   '/jobs',
-  '/jobs/*'
-];
-
-const devRoutes = [
+  '/jobs/*',
   '/hikes',
   '/hikes/*'
 ];
+
+const devRoutes = [];
 
 export default function reactSubRouter(app) {
   var router = app.loopback.Router();
@@ -51,20 +52,22 @@ export default function reactSubRouter(app) {
         return !!props;
       })
       .flatMap(function({ props, AppCat }) {
-        // call thundercats renderToString
-        // prefetches data and sets up it up for current state
-        debug('rendering to string');
-        return RenderToString(
-          AppCat(null, services),
+        const cat = AppCat(null, services);
+        debug('render react markup and pre-fetch data');
+        return renderToString$(
+          cat,
           React.createElement(RoutingContext, props)
-        );
+        )
+          .flatMap(
+            dehydrate(cat),
+            ({ markup }, data) => ({ markup, data, cat })
+          );
       })
-      // makes sure we only get one onNext and closes subscription
-      .flatMap(function({ data, markup }) {
-        debug('react rendered');
+      .flatMap(function({ data, markup, cat }) {
+        debug('react markup rendered, data fetched');
+        cat.dispose();
         const { title } = data.AppStore;
         res.expose(data, 'data');
-        // now render jade file with markup injected from react
         return res.render$(
           'layout-react',
           { markup, title }
@@ -72,7 +75,7 @@ export default function reactSubRouter(app) {
       })
       .subscribe(
         function(markup) {
-          debug('jade rendered');
+          debug('html rendered and ready to send');
           res.send(markup);
         },
         next
