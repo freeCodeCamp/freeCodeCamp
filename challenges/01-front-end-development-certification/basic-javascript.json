@@ -118,9 +118,9 @@
       ],
       "solutions": [
         "var a;",
-        "var b=2;",
+        "var b = 2;",
         "a = 7;",
-        "b = a;7"
+        "b = a;"
       ],
       "type": "waypoint",
       "challengeType": "1",
