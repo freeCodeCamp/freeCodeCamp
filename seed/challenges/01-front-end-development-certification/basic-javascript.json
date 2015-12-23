@@ -58,11 +58,12 @@
       "id": "bd7123c9c443eddfaeb5bdef",
       "title": "Declare JavaScript Variables",
       "description": [
-        "When we store data in a <code>data structure</code>, we call it a <code>variable</code>. These variables are no different from the x and y variables you use in math.",
-        "Let's create our first variable and call it \"myName\".",
-        "You'll notice that in <code>myName</code>, we didn't use a space, and that the \"N\" is capitalized. JavaScript variables are written in <code>camel case</code>. An example of camel case is: camelCase.",
+        "It's nice to have seven different ways of representing data. But to use them in other parts of code, we must store the data somewhere. In computer science, the placeholder where data is stored for further use is known as <code>variable</code>.",
+        "These variables are no different from the x and y variables you use in Maths. Which means they're just a simple name to represent the data we want to refer to.",
+        "Now let's create our first variable and call it \"myName\".",
+        "You'll notice that in <code>myName</code>, we didn't use a space, and that the \"N\" is capitalized. In JavaScript, we write variable names in \"camelCase\".",
         "<h4>Instructions</h4>",
-        "Use the <code>var</code> keyword to create a variable called <code>myName</code>. Set its value to your name, in double quotes.",
+        "Use the <code>var</code> keyword to create a variable called <code>myName</code>. Set its value to your name, wrapped in double quotes.",
         "<strong>Hint</strong>",
         "Look at the <code>ourName</code> example if you get stuck."
       ],
@@ -88,7 +89,7 @@
       "description": [
         "In Javascript, you can store a value in a variable with the <code>=</code> or <dfn>assignment<dfn> operator.",
         "<code>myVariable = 5;</code>",
-        "Assigns the value <code>5</code> to <code>myVariable</code>.",
+        "Assigns the <code>Number</code> value <code>5</code> to <code>myVariable</code>.",
         "Assignment always goes from right to left.  Everything to the right of the <code>=</code> operator is resolved before the value is assigned to the variable to the left of the operator.",
         "<code>myVar = 5;</code>",
         "<code>myNum = myVar;</code>",
