@@ -1,8 +1,12 @@
 import helmet from 'helmet';
 
-const trusted = [
+let trusted = [
   "'self'"
 ];
+
+if (process.env.NODE_ENV !== 'production') {
+  trusted.push('ws://localhost:3001');
+}
 
 export default function csp() {
   return helmet.csp({

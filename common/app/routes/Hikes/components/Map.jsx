@@ -11,7 +11,7 @@ export default React.createClass({
 
   render() {
     const {
-      hikes
+      hikes = [{}]
     } = this.props;
 
     const vidElements = hikes.map(({ title, dashedName}) => {

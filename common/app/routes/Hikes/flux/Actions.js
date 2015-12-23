@@ -25,49 +25,41 @@ function getCurrentHike(hikes = [{}], dashedName, currentHike) {
 }
 
 export default Actions({
-  // start fetching hikes
-  fetchHikes: null,
-  // set hikes on store
-  setHikes: null
-})
-  .refs({ displayName: 'HikesActions' })
-  .init(({ instance: hikeActions, args: [services] }) => {
-    // set up hikes fetching
-    hikeActions.fetchHikes.subscribe(
-      ({ isPrimed, dashedName }) => {
-        if (isPrimed) {
-          return hikeActions.setHikes({
-            transform: (state) => {
+  refs: { displayName: 'HikesActions' },
+  shouldBindMethods: true,
+  fetchHikes({ isPrimed, dashedName }) {
+    if (isPrimed) {
+      return {
+        transform: (state) => {
 
-              const { hikesApp: oldState } = state;
-              const currentHike = getCurrentHike(
-                oldState.hikes,
-                dashedName,
-                oldState.currentHike
-              );
+          const { hikesApp: oldState } = state;
+          const currentHike = getCurrentHike(
+            oldState.hikes,
+            dashedName,
+            oldState.currentHike
+          );
 
-              const hikesApp = { ...oldState, currentHike };
-              return Object.assign({}, state, { hikesApp });
-            }
-          });
+          const hikesApp = { ...oldState, currentHike };
+          return Object.assign({}, state, { hikesApp });
         }
+      };
+    }
 
-        services.read('hikes', null, null, (err, hikes) => {
-          if (err) {
-            return console.error(err);
+    return this.readService$('hikes', null, null)
+      .map(hikes => {
+        const hikesApp = {
+          hikes,
+          currentHike: getCurrentHike(hikes, dashedName)
+        };
+
+        return {
+          transform(oldState) {
+            return Object.assign({}, oldState, { hikesApp });
           }
-
-          const hikesApp = {
-            hikes,
-            currentHike: getCurrentHike(hikes, dashedName)
-          };
-
-          hikeActions.setHikes({
-            transform(oldState) {
-              return Object.assign({}, oldState, { hikesApp });
-            }
-          });
-        });
-      }
-    );
-  });
+        };
+      })
+      .catch(err => {
+        console.error(err);
+      });
+  }
+});

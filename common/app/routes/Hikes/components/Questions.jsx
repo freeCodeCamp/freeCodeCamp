@@ -16,7 +16,7 @@ const debug = debugFactory('freecc:hikes');
 const ANSWER_THRESHOLD = 200;
 
 export default React.createClass({
-  displayName: 'Question',
+  displayName: 'Questions',
 
   mixins: [
     History,

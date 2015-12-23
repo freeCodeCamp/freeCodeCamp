@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import { Button, Col, Row, Panel } from 'react-bootstrap';
+import { Button, Col, Row } from 'react-bootstrap';
 import { History } from 'react-router';
 import Vimeo from 'react-vimeo';
 import debugFactory from 'debug';
@@ -19,8 +19,6 @@ export default React.createClass({
 
   handleFinish() {
     debug('loading questions');
-    const { dashedName } = this.props.params;
-    this.history.pushState(null, `/hikes/${dashedName}/questions/1`);
   },
 
   renderTranscript(transcript, dashedName) {
@@ -31,7 +29,6 @@ export default React.createClass({
 
   render() {
     const {
-      title,
       challengeSeed = ['1'],
       description = []
     } = this.props.currentHike;
@@ -39,31 +36,22 @@ export default React.createClass({
 
     const [ id ] = challengeSeed;
 
-    const videoTitle = <h2>{ title }</h2>;
     return (
       <Col xs={ 12 }>
         <Row>
-          <Panel className={ 'text-center' } title={ videoTitle }>
-            <Vimeo
-              onError={ this.handleError }
-              onFinish= { this.handleFinish }
-              videoId={ id } />
-          </Panel>
+          <Vimeo
+            onError={ this.handleError }
+            onFinish= { this.handleFinish }
+            videoId={ id } />
         </Row>
         <Row>
-          <Col xs={ 12 }>
-            <Panel>
-              { this.renderTranscript(description, dashedName) }
-            </Panel>
-            <Panel>
-              <Button
-                block={ true }
-                bsSize='large'
-                onClick={ this.handleFinish }>
-                Take me to the Questions
-              </Button>
-            </Panel>
-          </Col>
+          { this.renderTranscript(description, dashedName) }
+          <Button
+            block={ true }
+            bsSize='large'
+            onClick={ this.handleFinish }>
+            Take me to the Questions
+          </Button>
         </Row>
       </Col>
     );
