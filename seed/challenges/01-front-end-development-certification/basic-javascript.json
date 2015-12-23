@@ -2117,7 +2117,13 @@
       "id": "56533eb9ac21ba0edf2244c6",
       "title": "Checkpoint: Functions",
       "description": [
-        "Note: Function Length tips - 10-20 lines, etc"
+        "Note: Function Length tips - 10-20 lines, etc",
+        "\"Queue\"",
+        "myFunction(arr, item)",
+        "",
+        "Push item on end of array",
+        "pop item off front",
+        ""
       ],
       "releasedOn": "11/27/2015",
       "tests": [
@@ -2132,7 +2138,12 @@
         ""
       ],
       "solutions": [
-        ""
+        "var arr = [ 1,2,3,4,5];",
+        "",
+        "function queue(myArr, item) {",
+        "    myArr.push(item);",
+        "    return myArr.shift();",
+        "}"
       ],
       "type": "waypoint",
       "challengeType": "1",
@@ -2692,7 +2703,7 @@
       "nameEs": "",
       "namePt": ""
     },
-        {
+    {
       "id": "5664820f61c48e80c9fa476c",
       "title": "Golf Code",
       "description": [
@@ -3216,7 +3227,8 @@
       "id": "5679ceb97cbaa8c51670a16b",
       "title": "Returning Boolean Values from Functions",
       "description": [
-        "Explain how to return booleans vs. if/else "
+        "You may recall from <a href=\"challenges/waypoint-comparison-with-the-equality-operator\">Comparison with the Equality Operator</a> that all comparison operators return a boolean <code>true</code> or <code>false</code> value.",
+        "A common <dfn>anti-pattern</dfn> is to use an <code>if/else</code> statement to do a comparison and then <code>return</code> <code>true</code>/<code>false</code>."
       ],
       "releasedOn": "11/27/2015",
       "tests": [
@@ -4035,7 +4047,7 @@
       "id": "56533eb9ac21ba0edf2244cf",
       "title": "Checkpoint: Objects",
       "description": [
-        ""
+        "Update a JSON or other Object with a property name and value passed in variables"
       ],
       "releasedOn": "11/27/2015",
       "tests": [
