@@ -171,7 +171,7 @@
       "id": "56533eb9ac21ba0edf2244aa",
       "title": "Understanding Uninitialized Variables",
       "description": [
-        "When Javascript variables are declared, they have an inital value of <dfn>undefined</dfn>.  If you do a mathematical operation on an <code>undefined</code> variable your result will be <dfn>NaN</dfn> which means \"Not a Number\". If you concatanate a string with an <code>undefined</code> variable, you will get a <dfn>literal string</dfn> of \"undefined\".",
+        "When Javascript variables are declared, they have an inital value of <code>undefined</code>.  If you do a mathematical operation on an <code>undefined</code> variable your result will be <code>NaN</code> which means <dfn>\"Not a Number\"</dfn>. If you concatanate a string with an <code>undefined</code> variable, you will get a literal <dfn>string</dfn> of <code>\"undefined\"</code>.",
         "<h4>Instructions</h4>",
         "Initialize the three variables <code>a</code>, <code>b</code>, and <code>c</code> with <code>5</code>, <code>10</code>, and <code>\"I am a\"</code> respectively so that they will not be <code>undefined</code>."
       ],
