@@ -266,8 +266,12 @@
       "id": "cf1111c1c11feddfaeb3bdef",
       "title": "Add Two Numbers with JavaScript",
       "description": [
-        "Let's try to add two numbers using JavaScript.",
-        "JavaScript uses the <code>+</code> symbol for addition.",
+        "<code>Number</code> is another data type in JavaScript which represents numeric data.",
+        "Now let's try to add two numbers using JavaScript.",
+        "JavaScript uses the <code>+</code> symbol as addition operation when placed between two numbers.",
+        "",
+        "<strong>Example</strong><blockquote>5 + 10 = 15</blockquote>",
+        "",
         "<h4>Instructions</h4>",
         "Change the <code>0</code> so that sum will equal <code>20</code>."
       ],
