@@ -954,9 +954,12 @@
     },
     {
       "id": "56533eb9ac21ba0edf2244b7",
-      "title": "Concatanting Strings with the Plus Operator",
+      "title": "Concatenating Strings with Plus Operator",
       "description": [
-        "In Javascript the <code>+</code> operator for strings is called the <dfn>concatanation</dfn> operator.  You can build strings out of other strings by <dfn>concatanating</dfn> them together.",
+        "In JavaScript, the <code>+</code> operator when used with a <code>String</code> value, it is called <dfn>concatenation</dfn> operator.  You can build a string out of other strings by <dfn>concatenating</dfn> them together.",
+        "",
+        "<code>'My name is Alan.' + ' And I am able to concatenate.'</code>",
+        "",
         "<h4>Instructions</h4>",
         "Build <code>myStr</code> from the strings <code>\"This is the start. \"</code> and <code>\"This is the end.\"</code> using the <code>+</code> operator.",
         ""
