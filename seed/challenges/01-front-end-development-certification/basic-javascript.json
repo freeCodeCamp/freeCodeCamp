@@ -861,10 +861,13 @@
       "id": "56533eb9ac21ba0edf2244b5",
       "title": "Escaping Literal Quotes in Strings",
       "description": [
-        "When you are defining a string you must start and end with a double or single quote.  What happens when you need a <dfn>literal</dfn> quote inside of your string?",
-        "In Javascript you can <dfn>escape</dfn> a quote inside a string by placing a <dfn>backslash</dfn> (<code>\\</code>) in front of the quote.  This signals Javascript that the following quote is not the end of the string, but should instead should appear inside the string.",
+        "When you are defining a string you must start and end with a single or double quote.  What happens when you need a literal quote: <code>\"</code> or <code>'</code> inside of your string?",
+        "In JavaScript, you can <dfn>escape</dfn> a quote from considering it as an end of string quote by placing a <dfn>backslash</dfn> (<code>\\</code>) in front of the quote.",
+        "<code>\"Alan said, \\\"Peter is learning JavaScript\\\".\"</code>",
+        "This signals JavaScript that the following quote is not the end of the string, but should instead appear inside the string.",
         "<h4>Instruction</h4>",
-        "Use <dfn>backslashes</dfn> to assign the following to <code>myStr</code>:<br /><code>\"I am a \"double quoted\" string inside \"double quotes\"\"</code>"
+        "Use <dfn>backslashes</dfn> to assign the following to <code>myStr</code> variable:",
+        "<code>\"I am a \"double quoted\" string inside \"double quotes\"\"</code>"
       ],
       "releasedOn": "11/27/2015",
       "tests": [
