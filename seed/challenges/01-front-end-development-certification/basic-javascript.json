@@ -346,10 +346,10 @@
         "We can also divide one number by another.",
         "JavaScript uses the <code>/</code> symbol for division.",
         "<h4>Instructions</h4>",
-        "Change the <code>0</code> so that quotient will equal <code>2</code>."
+        "Change the <code>0</code> so that <code>answer</code> will equal <code>2</code>."
       ],
       "tests": [
-        "assert(quotient === 2, 'message: Make the variable <code>quotient</code> equal 2.');",
+        "assert(answer === 2, 'message: Make the variable <code>answer</code> equal 2.');",
         "assert(/\\d+\\s*\\/\\s*\\d+/.test(editor.getValue()), 'message: Use the <code>/</code> operator');"
       ],
       "challengeSeed": [
@@ -358,7 +358,7 @@
         ""
       ],
       "tail": [
-        "(function(z){return 'quotient = '+z;})(quotient);"
+        "(function(z){return 'answer = '+z;})(answer);"
       ],
       "type": "waypoint",
       "challengeType": "1"
@@ -975,7 +975,7 @@
       "id": "56533eb9ac21ba0edf2244b8",
       "title": "Concatanting Strings with the Plus Equals Operator",
       "description": [
-        "We can also use the <code>+=</code> operator to concatanae a string onto the end of an existing string.  This can be very helpful to break a long string over several lines.",
+        "We can also use the <code>+=</code> operator to concatanate a string onto the end of an existing string.  This can be very helpful to break a long string over several lines.",
         "<h4>Instructions</h4>",
         "Build <code>myStr</code> over several lines by concatanating these two strings:<br /><code>\"This is the first line. \"</code> and <code>\"This is the second line.\"</code> using the <code>+=</code> operator."
       ],
@@ -1650,10 +1650,10 @@
       "id": "bg9997c9c69feddfaeb9bdef",
       "title": "Manipulate Arrays With unshift()",
       "description": [
-        "Not only can you <code>shift</code> elements off of the beginning of an array, you can also <code>unshift</code> elements onto the beginning of an array.",
+        "Not only can you <code>shift</code> elements off of the beginning of an array, you can also <code>unshift</code> elements to the beginning of an array.",
         "<code>unshift()</code> works exactly like <code>push()</code>, but instead of adding the element at the end of the array, <code>unshift()</code> adds the element at the beginning of the array.",
         "<h4>Instructions</h4>",
-        "Add <code>[\"Paul\",35]</code> onto the beginning of the <code>myArray</code> variable using <code>unshift()</code>."
+        "Add <code>[\"Paul\",35]</code> to the beginning of the <code>myArray</code> variable using <code>unshift()</code>."
       ],
       "tests": [
         "assert((function(d){if(typeof(d[0]) === \"object\" && d[0][0].toLowerCase() == 'paul' && d[0][1] == 35 && d[1][0] != undefined && d[1][0] == 'dog' && d[1][1] != undefined && d[1][1] == 3){return true;}else{return false;}})(myArray), 'message: <code>myArray</code> should now have [[\"Paul\", 35], [\"dog\", 3]]).');"
