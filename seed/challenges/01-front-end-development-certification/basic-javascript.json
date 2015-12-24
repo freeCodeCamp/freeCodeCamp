@@ -778,7 +778,7 @@
       "description": [
         "To test your learning you will create a solution \"from scratch\".  Place your code between the indicated lines and it will be tested against multiple test cases.",
         "The algorithm to convert from Celsius to Fahrenheit is the temperature in Celsius times 9/5, plus 32.",
-        "You are given a variable <code>Tc</code> representing a temperature in Celsius.  Create a variable <code>Tf</code> and apply the algorithm to assign it the corrasponding temperature in Fahrenheit."
+        "You are given a variable <code>Tc</code> representing a temperature in Celsius.  Create a variable <code>Tf</code> and apply the algorithm to assign it the corresponding temperature in Fahrenheit."
       ],
       "releasedOn": "11/27/2015",
       "tests": [
@@ -792,7 +792,7 @@
       "challengeSeed": [
         "function convert(Tc) {",
         "  // Only change code below this line",
-        "",
+        "  ",
         "",
         "  // Only change code above this line",
         "  if(typeof Tf !== 'undefined') {",
