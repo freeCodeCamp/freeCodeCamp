@@ -419,7 +419,7 @@
         "<code>array = array.filter(function(val) {</code>",
         "<code>&nbsp;&nbsp;return val !== 5;</code>",
         "<code>});</code>",
-        "Use <code>filter</code> to remove all elements from <code>array</code> that are greater than 5."
+        "Use <code>filter</code> to remove all elements from <code>oldArray</code> that are greater than 5."
       ],
       "tests": [
         "assert.deepEqual(newArray, [1,2,3,4,5], 'message: You should have removed all the values from the array that are greater than 5.');",
