@@ -509,7 +509,7 @@
       "title": "Divide one Decimal by Another with JavaScript",
       "description": [
         "Now let's divide one decimal by another.",
-        "Change the <code>0.0</code> so that your quotient will equal <code>2.2</code>."
+        "Change the <code>0.0</code> so that <code>quotient</code> will equal to <code>2.2</code>."
       ],
       "tests": [
         "assert(quotient === 2.2, 'message: The variable <code>quotient</code> should equal <code>2.2</code>.');",
