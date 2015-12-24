@@ -928,7 +928,7 @@
       "description": [
         "Quotes are not the only characters that can be <dfn>escaped</dfn> inside a string.  Here is a table of common escape sequences:",
         "<table class=\"table table-striped\"><thead><tr><th>Code</th><th>Output</th></tr></thead><tbody><tr><td>\\'</td><td>single quote</td></tr><tr><td>\\\"</td><td>double quote</td></tr><tr><td>\\\\</td><td>backslash</td></tr><tr><td>\\n</td><td>new line</td></tr><tr><td>\\r</td><td>carriage return</td></tr><tr><td>\\t</td><td>tab</td></tr><tr><td>\\b</td><td>backspace</td></tr><tr><td>\\f</td><td>form feed</td></tr></tbody></table>",
-        "<emphasis>Note that the backslash itself must be escaped in order to display as a backslash.</emphasis>",
+        "<em>Note that the backslash itself must be escaped in order to display as a backslash.</em>",
         "<h4>Instructions</h4>",
         "Encode the following sequence, separated by spaces:<br><code>backslash tab tab carriage-return new-line</code> and assign it to <code>myStr</code>"
       ],
