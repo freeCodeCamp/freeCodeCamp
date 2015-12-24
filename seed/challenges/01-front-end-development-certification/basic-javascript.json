@@ -324,7 +324,10 @@
       "title": "Multiply Two Numbers with JavaScript",
       "description": [
         "We can also multiply one number by another.",
-        "JavaScript uses the <code>*</code> symbol for multiplication.",
+        "JavaScript uses the <code>*</code> symbol for multiplication of two numbers.",
+        "",
+        "<strong>Example</strong><blockquote>13 * 13 = 169</blockquote>",
+        "",
         "<h4>Instructions</h4>",
         "Change the <code>0</code> so that product will equal <code>80</code>."
       ],
