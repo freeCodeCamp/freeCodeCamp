@@ -567,13 +567,13 @@
       "id": "56533eb9ac21ba0edf2244af",
       "title": "Assignment with Plus Equals",
       "description": [
-        "In Javascript it is common to need to modify the contents of a variable mathematically.  Remember that everything to the right of the equals sign is evaluated first, so we can say:",
+        "In programming, it is common to use assignments to modify the contents of a variable. Remember that everything to the right of the equals sign is evaluated first, so we can say:",
         "<code>myVar = myVar + 5;</code>",
-        "to add <code>5</code> to <code>myVar</code>.  Since this is such a common pattern, there are operators which do both a mathematical operation and assignement in one step.",
+        "to add <code>5</code> to <code>myVar</code>. Since this is such a common pattern, there are operators which do both a mathematical operation and assignment in one step.",
         "One such operator is the <code>+=</code> operator.",
         "<code>myVar += 5;</code> will add <code>5</code> to <code>myVar</code>.",
         "<h4>Instructions</h4>",
-        "Convert the assignements for <code>a</code>, <code>b</code>, and <code>c</code> to use the <code>+=</code> operator."
+        "Convert the assignments for <code>a</code>, <code>b</code>, and <code>c</code> to use the <code>+=</code> operator."
       ],
       "releasedOn": "11/27/2015",
       "tests": [
