@@ -992,11 +992,11 @@
     },
     {
       "id": "56533eb9ac21ba0edf2244b8",
-      "title": "Concatanting Strings with the Plus Equals Operator",
+      "title": "Concatenating Strings with the Plus Equals Operator",
       "description": [
-        "We can also use the <code>+=</code> operator to concatanate a string onto the end of an existing string.  This can be very helpful to break a long string over several lines.",
+        "We can also use the <code>+=</code> operator to <dfn>concatenate</dfn> a string onto the end of an existing string variable. This can be very helpful to break a long string over several lines.",
         "<h4>Instructions</h4>",
-        "Build <code>myStr</code> over several lines by concatenating these two strings:<br /><code>\"This is the first line. \"</code> and <code>\"This is the second line.\"</code> using the <code>+=</code> operator."
+        "Build <code>myStr</code> over several lines by concatenating these two strings:<br><code>\"This is the first line. \"</code> and <code>\"This is the second line.\"</code> using the <code>+=</code> operator."
       ],
       "releasedOn": "11/27/2015",
       "tests": [
