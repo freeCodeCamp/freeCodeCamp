@@ -893,17 +893,18 @@
       "id": "56533eb9ac21ba0edf2244b4",
       "title": "Quoting Strings with Single Quotes",
       "description": [
-        "<dfn>Strings</dfn> in Javascript may be declared with both single or double quotes, so long as you start and end with the same type of quote.  Unlike some languages, single and double quotes are functionally identical in Javascript.",
+        "<dfn>String</dfn> values in JavaScript may be written with single or double quotes, so long as you start and end with the same type of quote.  Unlike some languages, single and double quotes are functionally identical in Javascript.",
         "<code>\"This string has \\\"double quotes\\\" in it\"</code>",
-        "The value in using one or the other has to do with the need to <dfn>escape</dfn> quotes of the same type.  If you have a string with many double quotes, this can be difficult to write and to read.  Instead, use single quotes:",
-        "<code>'This string has \"double quotes\" in it'</code>",
+        "The value in using one or the other has to do with the need to <dfn>escape</dfn> quotes of the same type.  If you have a string with many double quotes, this can be difficult to read and write.  Instead, use single quotes:",
+        "<code>'This string has \"double quotes\" in it. And \"probably\" lots of them.'</code>",
         "<h4>Instructions</h4>",
         "Change the provided string from double to single quotes and remove the escaping."
       ],
       "releasedOn": "11/27/2015",
       "tests": [
         "assert(!/\\\\/g.test(editor.getValue()), 'message: Remove all the <code>backslashes</code> (<code>\\</code>)');",
-        "assert(editor.getValue().match(/\"/g).length === 4 && editor.getValue().match(/'/g).length === 2, 'message: You should have two single quotes <code>&#39;</code> and four double quotes <code>&quot;</code>')"
+        "assert(editor.getValue().match(/\"/g).length === 4 && editor.getValue().match(/'/g).length === 2, 'message: You should have two single quotes <code>&#39;</code> and four double quotes <code>&quot;</code>');",
+        "assert(myStr === '<a href=\"http://www.example.com\" target=\"_blank\">Link</a>', 'message: Only remove the backslashes <code>\\</code> used to escape quotes.');"
       ],
       "challengeSeed": [
         "var myStr = \"<a href=\\\"http://www.example.com\\\" target=\\\"_blank\\\">Link</a>\";",
