@@ -531,12 +531,12 @@
       "title": "Find a Remainder with Modulus",
       "description": [
         "The modulus operator <code>%</code> gives the remainder of the division of two numbers.",
-        "<code>5 % 2</code> is <code>1</code> because",
-        "<code>Math.floor(5 / 2) === 2<br />2 * 2 === 4<br />5 - 4 === 1</code>",
+        "<strong>Example</strong><blockquote>5 % 2 = 1 because<br>Math.floor(5 / 2) = 2 (Quotient)<br>2 * 2 = 4<br>5 - 4 = 1 (Remainder)</blockquote>",
         "<strong>Usage</strong>",
-        "Modulus can be helpful in creating alternating or cycling values.  For example, in a loop an increasing variable <code>myVar % 2</code> will alternate between 0 and 1 as myVar goes between even and odd numbers respectively.",
+        "In Maths, a number can be checked even or odd by checking the remainder of division of the number by <code>2</code>. ",
+        "<blockquote>17 % 2 = 1 (17 is Odd)<br>48 % 2 = 0 (48 is Even)</blockquote>",
         "<h4>Instructions</h4>",
-        "Set <code>remainder</code> equal to the remainder of 11 divided by 3 using the modulus operator."
+        "Set <code>remainder</code> equal to the remainder of <code>11</code> divided by <code>3</code> using the <dfn>modulus</dfn> operator."
       ],
       "releasedOn": "11/27/2015",
       "tests": [
@@ -544,12 +544,9 @@
         "assert(/\\d+\\s*%\\s*\\d+/.test(editor.getValue()), 'message: You should use the <code>%</code> operator');"
       ],
       "challengeSeed": [
-        "var quotient = Math.floor(11 / 3);",
-        "",
         "// Only change code below this line",
         "",
         "var remainder;",
-        "",
         ""
       ],
       "tail": [
