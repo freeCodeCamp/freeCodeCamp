@@ -380,7 +380,7 @@
       "id": "56533eb9ac21ba0edf2244ac",
       "title": "Increment a Number with Javascript",
       "description": [
-        "You can easily <dfn>increment</dfn> or add one to a Javascript variable with the <code>++</code> operator.",
+        "You can easily <dfn>increment</dfn> or add one to a variable with the <code>++</code> operator.",
         "<code>i++;</code>",
         "is the equivilent of",
         "<code>i = i + 1;</code>",
