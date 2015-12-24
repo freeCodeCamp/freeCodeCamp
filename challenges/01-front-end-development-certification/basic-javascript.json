@@ -295,6 +295,9 @@
       "description": [
         "We can also subtract one number from another.",
         "JavaScript uses the <code>-</code> symbol for subtraction.",
+        "",
+        "<strong>Example</strong><blockquote>12 - 6 = 6</blockquote>",
+        "",
         "<h4>Instructions</h4>",
         "Change the <code>0</code> so that difference will equal <code>12</code>."
       ],
