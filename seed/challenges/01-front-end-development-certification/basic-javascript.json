@@ -419,7 +419,7 @@
       "id": "56533eb9ac21ba0edf2244ad",
       "title": "Decrement a Number with Javascript",
       "description": [
-        "You can easily <dfn>decrement</dfn> or decrease by one a Javascript variable with the <code>--</code> operator.",
+        "You can easily <dfn>decrement</dfn> or decrease a variable by one with the <code>--</code> operator.",
         "<code>i--;</code>",
         "is the equivilent of",
         "<code>i = i - 1;</code>",
