@@ -458,9 +458,9 @@
       "id": "cf1391c1c11feddfaeb4bdef",
       "title": "Create Decimal Numbers with JavaScript",
       "description": [
-        "JavaScript number variables can also have decimal points.  Decimal numbers are sometimes refered to as <dfn>floating point<dfn> numbers or <dfn>floats</dfn>.  ",
+        "We can store decimal numbers in variables too. Decimal numbers are sometimes refered to as <dfn>floating point</dfn> numbers or <dfn>floats</dfn>.  ",
         "<strong>Note</strong>",
-        "Not all real numbers can be accurately represented in <code>floating point</code>.  This can lead to rounding errors.  <a href=\"https://en.wikipedia.org/wiki/Floating_point#Accuracy_problems\" target=\"_blank\">Details Here</a>.",
+        "Not all real numbers can accurately be represented in <dfn>floating point</dfn>.  This can lead to rounding errors. <a href=\"https://en.wikipedia.org/wiki/Floating_point#Accuracy_problems\" target=\"_blank\">Details Here</a>.",
         "",
         "Let's create a variable <code>myDecimal</code> and give it a decimal value."
       ],
