@@ -77,19 +77,19 @@
         [
           "http://i.imgur.com/Elb3dfj.jpg",
           "Una imagen de algunos de nuestros campistas programando juntos en Toronto.",
-          "<bold>Aprender a programar es difícil.</bold> Para tener éxito, necesitaras mucha práctica y apoyo. Por eso es que hemos creado un riguroso curriculum y una comunidad de apoyo.",
+          "<bold>Aprender a programar es difícil.</bold> Para tener éxito, necesitarás mucha práctica y apoyo. Por eso es que hemos creado un riguroso currículo y una comunidad de apoyo.",
           ""
         ],
         [
           "http://i.imgur.com/D7Y5luw.jpg",
           "Una gráfica del crecimiento de trabajos en comparación con los graduados en un pregrado de ciencias de la computación. Hay 1.4 millones de empleos y solo 400 mil personas para ocuparlos.",
-          "Hay miles de trabajos de programación actualmente sin ocupar, y la demanda por programadores crece cada año.",
+          "Actualmente, hay miles de trabajos de programación sin ocupar, y la demanda de programadores crece cada año.",
           ""
         ],
         [
           "http://i.imgur.com/WD3STY6.jpg",
           "Fotos de tres campistas quienes obtuvieron trabajos después de aprender a programar en Free Code Camp.",
-          "Free Code Camp es un camino probado para tu primer trabajo de programación. De hecho, nadie actualmente ha completado nuestro programa entero, porque los campistas obtienen trabajos antes de poder hacerlo.",
+          "Free Code Camp es un camino probado para que obtengas tu primer trabajo de programación. De hecho, nadie actualmente ha completado nuestro programa entero, porque los campistas obtienen trabajos antes de poder hacerlo.",
           ""
         ],
         [
@@ -113,7 +113,7 @@
         [
           "http://i.imgur.com/yXyxbDd.jpg",
           "Una imagen de nuestro directorio de organizaciones sin ánimo de lucro.",
-          "Entonces construiras varios proyectos reales para organizaciones sin ánimo de lucro. Para cuando termines, tendrás un portafolio de aplicaciones reales que las personas usan cada día.",
+          "Entonces construirás varios proyectos reales para organizaciones sin ánimo de lucro. Para cuando termines, tendrás un portafolio de aplicaciones reales que las personas usan a diario.",
           ""
         ]
       ],
@@ -194,7 +194,7 @@
         [
           "http://i.imgur.com/EAR7Lvh.jpg",
           "Una imagen de una de nuestras salas de chat en Gitter.",
-          "Ahora únete a las salas de chat de Free Code Camp. Puedes venir aquí en cualquier momento para charlar, hacer preguntas, o encontrar otro campista para programar juntos. Primero necesitaras una cuenta de GitHub.",
+          "Ahora únete a las salas de chat de Free Code Camp. Puedes venir aquí en cualquier momento para charlar, hacer preguntas, o encontrar otro campista para programar juntos. Primero necesitarás una cuenta de GitHub.",
           ""
         ],
         [
@@ -320,7 +320,7 @@
         [
           "http://i.imgur.com/fTFMjwf.gif",
           "Un gif mostrandote como puedes pulsar en el enlace inferior, encontrar tu ciudad en la lista de Campamentos, entonces haz clic en el enlace de Facebook para tu ciudad y unirte al grupo de Facebook de tu ciudad.",
-          "Encuentra tu ciudad en esta lista y haz clic en esta. Esto te llevara al grupo de Facebook del Campamento de tu ciudad. <br>Da clic en el botón de \"Unirse al grupo\" para unirte a el grupo. Alguien del mismo campamento debería aprobarte en breve. <br>Si tu ciudad no esta en esta lista, ve al final del articulo de la wiki para instrucciones en como crear un campamento para tu ciudad.",
+          "Encuentra tu ciudad en esta lista y haz clic en esta. Esto te llevara al grupo de Facebook del Campamento de tu ciudad. <br>Da clic en el botón de \"Unirse al grupo\" para unirte a el grupo. Alguien del mismo campamento debería aprobarte en breve. <br>Si tu ciudad no esta en esta lista, ve al final del articulo de la wiki para ver instrucciones de como crear un campamento para tu ciudad.",
           "https://github.com/FreeCodeCamp/freecodecamp/wiki/List-of-Free-Code-Camp-city-based-Campsites"
         ]
       ],
@@ -400,8 +400,8 @@
         ],
         [
           "http://i.imgur.com/sfsidp6.jpg",
-          "El texto \"Toma tiempo para ser bueno programando.\"",
-          "Toma tiempo para ser bueno programando. No esperarías derrotar a un maestro del ajedrez después de jugar por 3 meses. No esperes crear el próximo Facebook después de programar 3 meses.",
+          "El texto \"Volverse bueno programa requiere tiempo.\"",
+          "Volverse bueno programando requiere tiempo. No esperarías derrotar a un maestro del ajedrez después de jugar por 3 meses. No esperes crear el próximo Facebook después de programar 3 meses.",
           ""
         ],
         [
@@ -425,13 +425,13 @@
         [
           "http://i.imgur.com/GxvrsFb.gif",
           "Un gif mostrandote como hacer una búsqueda avanzada en Google. Primero, escribimos la consulta \"jquery no corre cuando mi página carga\". Entonces damos clic en el botón de herramientas y cambiamos la selección de \"En cualquier momento\" a \"en el último año\". Entonces hacemos clic en un resultado o leemos a través del artículo y encontramos nuestra respuesta.",
-          "Si eso no ayudo, busca en Google. Buenas búsquedas en Google toman mucha práctica. Cuando buscas en Google, usualmente quieres incluir el lenguaje o framework que estás usando. También quieres limitar los resultados a un período reciente.",
+          "Si eso no ayudo, busca en Google. Buenas búsquedas en Google toman mucha práctica. Cuando buscas en Google, usualmente querrás incluir el lenguaje o framework que estás usando. También querrás limitar los resultados a un período reciente.",
           ""
         ],
         [
           "http://i.imgur.com/LZYU7p2.gif",
           "Un gif mostrandonos como seguir el enlace inferior para ir a nuestra sala de chat de ayuda y preguntar \"jquery no corre cuando mi página carga\".",
-          "Si eso no te ayudo, preguntale a tus amigos. Si tienes problemas, puedes preguntar a tus compañeros campistas en nuestra sala de chat.",
+          "Si eso no te ayudó, preguntale a tus amigos. Si tienes problemas, puedes preguntar a tus compañeros campistas en nuestra sala de chat.",
           "https://gitter.im/FreeCodeCamp/Help"
         ],
         [
