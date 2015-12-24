@@ -13,7 +13,10 @@ window.common = (function(global) {
   window.__err = null;
   window.loopProtect.hit = function(line) {
     window.__err = new Error(
-      'Potential infinite loop at line ' + line
+      'Error: Exiting potential infinite loop at line ${line}. You can '
+      + 'disable loop protection by adding "//noprotect" to your code; ho'
+      + 'wever, be aware that by disabling this feature, you run the risk '
+      + 'of your browser crashing should an infinite loop occur.';
     );
   };
 </script>
