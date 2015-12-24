@@ -621,10 +621,10 @@
       "description": [
         "Like the <code>+=</code> operator, <code>-=</code> subtracts a number from a variable.",
         "<code>myVar = myVar - 5;</code>",
-        "Will subtract <code>5</code> from <code>myVar</code>. This can be rewritten as: ",
+        "will subtract <code>5</code> from <code>myVar</code>. This can be rewritten as: ",
         "<code>myVar -= 5;</code>",
         "<h4>Instructions</h4>",
-        "Convert the assignements for <code>a</code>, <code>b</code>, and <code>c</code> to use the <code>-=</code> operator."
+        "Convert the assignments for <code>a</code>, <code>b</code>, and <code>c</code> to use the <code>-=</code> operator."
       ],
       "releasedOn": "11/27/2015",
       "tests": [
