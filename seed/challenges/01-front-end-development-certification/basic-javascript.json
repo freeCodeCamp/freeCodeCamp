@@ -355,11 +355,14 @@
       "description": [
         "We can also divide one number by another.",
         "JavaScript uses the <code>/</code> symbol for division.",
+        "",
+        "<strong>Example</strong><blockquote>16 / 2 = 8</blockquote>",
+        "",
         "<h4>Instructions</h4>",
-        "Change the <code>0</code> so that <code>answer</code> will equal <code>2</code>."
+        "Change the <code>0</code> so that <code>quotient</code> will equal to <code>2</code>."
       ],
       "tests": [
-        "assert(answer === 2, 'message: Make the variable <code>answer</code> equal 2.');",
+        "assert(quotient === 2, 'message: Make the variable <code>quotient</code> equal to 2.');",
         "assert(/\\d+\\s*\\/\\s*\\d+/.test(editor.getValue()), 'message: Use the <code>/</code> operator');"
       ],
       "challengeSeed": [
@@ -368,7 +371,7 @@
         ""
       ],
       "tail": [
-        "(function(z){return 'answer = '+z;})(answer);"
+        "(function(z){return 'quotient = '+z;})(quotient);"
       ],
       "type": "waypoint",
       "challengeType": "1"
