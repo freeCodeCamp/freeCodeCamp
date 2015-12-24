@@ -2118,27 +2118,52 @@
     },
     {
       "id": "56533eb9ac21ba0edf2244c6",
-      "title": "Checkpoint: Functions",
+      "title": "Stand in Line",
       "description": [
-        "Note: Function Length tips - 10-20 lines, etc",
-        "\"Queue\"",
-        "myFunction(arr, item)",
-        "",
-        "Push item on end of array",
-        "pop item off front",
-        ""
+        "In Computer Science a <dfn>queue</dfn> is an abastract datatype where items are kept in order.  New items can be added to the back of the <code>queue</code> and old items are taken off the front of the <code>queue</code>.",
+        "Write a function <code>queue</code> which takes an array and an item as arguments.  Add the item onto the end of the array, then remove and return the item at the front of the queue."
       ],
       "releasedOn": "11/27/2015",
       "tests": [
-        "assert(1===1, 'message: message here');"
+        "assert(queue([],1) === 1, 'message: <code>queue([], 1)</code> should return <code>1</code>');",
+        "assert(queue([2],1) === 2, 'message: <code>queue([2], 1)</code> should return <code>2</code>');",
+        "queue(myArr, 10); assert(myArr[4] === 10, 'message: After <code>queue(myArr, 10)</code>, <code>myArr[4]</code> should be <code>10</code>');"
+      ],
+      "head": [
+        "var logOutput = [];",
+        "var oldLog = console.log;",
+        "function capture() {",
+        "    console.log = function (message) {",
+        "        logOutput.push(message);",
+        "        oldLog.apply(console, arguments);",
+        "    };",
+        "}",
+        "",
+        "function uncapture() {",
+        "  console.log = oldLog;",
+        "}",
+        "",
+        "capture();"
       ],
       "challengeSeed": [
+        "// Setup",
+        "var myArr = [1,2,3,4,5];",
         "",
+        "function queue(arr, item) {",
+        "  // Your code here",
+        "  ",
+        "  return item;  // Change this line",
+        "}",
         "",
-        ""
+        "// Display Code",
+        "console.log(\"Before: \" + JSON.stringify(myArr));",
+        "console.log(queue(myArr, 6)); // Modify this line to test",
+        "console.log(\"After: \" + JSON.stringify(myArr));"
       ],
       "tail": [
-        ""
+        "uncapture();",
+        "myArr = [1,2,3,4,5];",
+        "(function() { return logOutput.join(\"\\n\");})();"
       ],
       "solutions": [
         "var arr = [ 1,2,3,4,5];",
@@ -2148,8 +2173,8 @@
         "    return myArr.shift();",
         "}"
       ],
-      "type": "waypoint",
-      "challengeType": "1",
+      "type": "bonfire",
+      "challengeType": "5",
       "nameCn": "",
       "nameFr": "",
       "nameRu": "",
@@ -3231,16 +3256,31 @@
       "title": "Returning Boolean Values from Functions",
       "description": [
         "You may recall from <a href=\"challenges/waypoint-comparison-with-the-equality-operator\">Comparison with the Equality Operator</a> that all comparison operators return a boolean <code>true</code> or <code>false</code> value.",
-        "A common <dfn>anti-pattern</dfn> is to use an <code>if/else</code> statement to do a comparison and then <code>return</code> <code>true</code>/<code>false</code>."
+        "A common <dfn>anti-pattern</dfn> is to use an <code>if/else</code> statement to do a comparison and then <code>return</code> <code>true</code>/<code>false</code>:",
+        "<blockquote>function isEqual(a,b) {<br />  if(a === b) {<br />    return true;<br/>  } else {<br />    return false;<br/>  }<br />}</blockquote>",
+        "Since <code>===</code> returns <code>true</code> or <code>false</code>, we can simply return the result of the comparion:",
+        "<blockquote>function isEqual(a,b) {<br />  return a === b;<br />}</blockquote>",
+        "<h4>Instructions</h4>",
+        "Fix the function <code>isLess</code> to remove the <code>if/else</code> statements."
       ],
       "releasedOn": "11/27/2015",
       "tests": [
-        "assert(1===1, 'message: message here');"
+        "assert(isLess(10,15) === true, 'message: <code>isLess(10,15)</code> should return <code>true</code>');",
+        "assert(isLess(15, 10) === false, 'message: <code>isLess(15,10)</code> should return <code>true</code>');",
+        "assert(!/if|else/g.test(editor.getValue()), 'message: You should not use any <code>if</code> or <code>else</code> statements');"
       ],
       "challengeSeed": [
+        "function isLess(a, b) {",
+        "  // Fix this code",
+        "  if(a < b) {",
+        "    return true;",
+        "  } else {",
+        "    return false;",
+        "  }",
+        "}",
         "",
-        "",
-        ""
+        "// Change these values to test",
+        "isLess(10, 15);"
       ],
       "tail": [
         ""
@@ -3260,7 +3300,7 @@
       "id": "56533eb9ac21ba0edf2244c4",
       "title": "Return Early Pattern for Functions",
       "description": [
-        "Explain how to use return early for functions"
+        "When a <code>return</code> statement is reached, the execution of the current function stops at that point.  "
       ],
       "releasedOn": "11/27/2015",
       "tests": [
@@ -3830,6 +3870,58 @@
       "namePt": ""
     },
     {
+      "id": "567af2437cbaa8c51670a16c",
+      "title": "Testing Objects for Properties",
+      "description": [
+        "Sometimes it is useful to check of the property of a given object exists or not.  We can use the <code>.hasOwnProperty([propname])</code> method of objects to determine if that object has the given property name. <code>.hasOwnProperty()</code> returns <code>true</code> or <code>false</code> if the property is found or not.",
+        "Example:",
+        "<blockquote>var myObj = {<br />  top: \"hat\",<br />  bottom: \"pants\"<br />};<br />myObj.hasOwnProperty(\"hat\");    // true<br />myObj.hasOwnProperty(\"middle\"); // false</blockquote>",
+        "<h4>Instructions</h4>",
+        "  Modify function <code>checkObj</code> to test <code>myObj</code> for <code>checkProp</code>.  If the property is found, return that property's value.  If not return <code>\"Not Found\"</code>."
+      ],
+      "tests": [
+        "assert(checkObj(\"gift\") === \"pony\", 'message: <code>checkObj(\"gift\")</code> should return  <code>\"pony\"</code>.');",
+        "assert(checkObj(\"pet\") === \"kitten\", 'message: <code>checkObj(\"gift\")</code> should return  <code>\"kitten\"</code>.');",
+        "assert(checkObj(\"house\") === \"Not Found\", 'message: <code>checkObj(\"house\")</code> should return  <code>\"Not Found\"</code>.');"
+      ],
+      "challengeSeed": [
+        "// Setup",
+        "var myObj = {",
+        "  gift: \"pony\",",
+        "  pet: \"kitten\",",
+        "  bed: \"sleigh\"",
+        "};",
+        "",
+        "function checkObj(checkProp) {",
+        "  // Your Code Here",
+        "",
+        "  return \"Change Me!\";",
+        "}",
+        "",
+        "// Test your code by modifying these values",
+        "checkObj(\"gift\");"
+      ],
+      "tail": [
+        ""
+      ],
+      "solutions": [
+        "var myObj = {",
+        "  gift: \"pony\",",
+        "  pet: \"kitten\",",
+        "  bed: \"sleigh\"",
+        "};",
+        "function checkObj(checkProp) {",
+        "  if(myObj.hasOwnProperty(checkProp)) {",
+        "    return myObj[checkProp];",
+        "  } else {",
+        "    return \"Not Found\";",
+        "  }",
+        "}"
+      ],
+      "type": "waypoint",
+      "challengeType": "1"
+    },
+    {
       "id": "56533eb9ac21ba0edf2244cb",
       "title": "Introducing JavaScript Object Notation (JSON)",
       "description": [
@@ -4022,9 +4114,9 @@
     },
     {
       "id": "56533eb9ac21ba0edf2244ce",
-      "title": "Arbitrary Nesting in JSON",
+      "title": "Modifying JSON Values",
       "description": [
-        "Retrieve a value from an arbitary JSON"
+        "Modify the contents of a JSON object"
       ],
       "releasedOn": "11/27/2015",
       "tests": [
@@ -4033,6 +4125,9 @@
       "challengeSeed": [
         "",
         "",
+        ""
+      ],
+      "tail": [
         ""
       ],
       "solutions": [
@@ -4328,24 +4423,35 @@
     },
     {
       "id": "56533eb9ac21ba0edf2244e2",
-      "title": "Checkpoint: Conditionals and Loops",
+      "title": "Caesar's Cipher",
       "description": [
-        ""
+        "One of the simplest and most widely known <dfn>ciphers</dfn> is a <code>Caesar cipher</code>, also known as a <code>shift cipher</code>.  In a <code>shift cipher</code> the meanings of the letters are shifted by some set amount.  ",
+        "A common modern use is a <a href=\"https://en.wikipedia.org/wiki/ROT13\">ROT13</a> cipher, where the values of the letters are shifted by 13 places.  Thus A = N, B = O and so on.",
+        "Write a function which takes a <code>ROT13</code> encoded array of characters as input and returns a plain text encoded array.  All letters will be uppercase.  Do not transform any non-alphabetic character (IE: spaces, punctiation)."
       ],
       "releasedOn": "11/27/2015",
       "tests": [
-        "assert(1===1, 'message: message here');"
+        "assert( rot13([ 'S', 'E', 'R', 'R', ' ', 'P', 'B', 'Q', 'R', ' ', 'P', 'N', 'Z', 'C' ]).join(\"\") === \"FREE CODE CAMP\", 'message: <code>rot13([ 'S', 'E', 'R', 'R', ' ', 'P', 'B', 'Q', 'R', ' ', 'P', 'N', 'Z', 'C' ])</code> should decode to <code>[ 'F', 'R', 'E', 'E', ' ', 'C', 'O', 'D', 'E', ' ', 'C', 'A', 'M', 'P' ]</code>');",
+        "assert(1===1, 'message: blah');"
       ],
       "challengeSeed": [
+        "function rot13(codeArr) {",
+        "  // Your Code Here",
         "",
+        "  return []; // Change this Line",
+        "}",
         "",
+        "// Change the inputs below to test",
+        "rot13([ 'S', 'E', 'R', 'R', ' ', 'P', 'B', 'Q', 'R', ' ', 'P', 'N', 'Z', 'C' ]);"
+      ],
+      "tail": [
         ""
       ],
       "solutions": [
         ""
       ],
-      "type": "waypoint",
-      "challengeType": "1",
+      "type": "bonfire",
+      "challengeType": "5",
       "nameCn": "",
       "nameFr": "",
       "nameRu": "",
