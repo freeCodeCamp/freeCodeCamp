@@ -926,15 +926,15 @@
       "id": "56533eb9ac21ba0edf2244b6",
       "title": "Escape Sequences in Strings",
       "description": [
-        "Quotes are not the only character than can be <dfn>escaped</dfn> inside a string.  Here is a table of common escape sequences:",
+        "Quotes are not the only characters that can be <dfn>escaped</dfn> inside a string.  Here is a table of common escape sequences:",
         "<table class=\"table table-striped\"><thead><tr><th>Code</th><th>Output</th></tr></thead><tbody><tr><td>\\'</td><td>single quote</td></tr><tr><td>\\\"</td><td>double quote</td></tr><tr><td>\\\\</td><td>backslash</td></tr><tr><td>\\n</td><td>new line</td></tr><tr><td>\\r</td><td>carriage return</td></tr><tr><td>\\t</td><td>tab</td></tr><tr><td>\\b</td><td>backspace</td></tr><tr><td>\\f</td><td>form feed</td></tr></tbody></table>",
-        "Note that the backslash itself must be escaped in order to display as a backslash.",
+        "<emphasis>Note that the backslash itself must be escaped in order to display as a backslash.</emphasis>",
         "<h4>Instructions</h4>",
-        "Encode the following sequence, seperated by spaces:<br /> <code>backslash tab tab carriage return new line</code> and assign it to <code>myStr</code>"
+        "Encode the following sequence, separated by spaces:<br><code>backslash tab tab carriage-return new-line</code> and assign it to <code>myStr</code>"
       ],
       "releasedOn": "11/27/2015",
       "tests": [
-        "assert(myStr === \"\\\\ \\t \\t \\r \\n\", 'message: <code>myStr</code> should have the escape sequences for <code>backslash tab tab carriage return new line</code> seperated by spaces');"
+        "assert(myStr === \"\\\\ \\t \\t \\r \\n\", 'message: <code>myStr</code> should have the escape sequences for <code>backslash tab tab carriage-return new-line</code> separated by spaces');"
       ],
       "challengeSeed": [
         "var myStr; // Change this line",
@@ -942,7 +942,7 @@
         ""
       ],
       "solutions": [
-        ""
+        "var myStr = \"\\\\ \\t \\t \\r \\n\";"
       ],
       "type": "waypoint",
       "challengeType": "1",
