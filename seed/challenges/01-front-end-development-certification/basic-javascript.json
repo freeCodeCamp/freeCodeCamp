@@ -134,7 +134,7 @@
       "id": "56533eb9ac21ba0edf2244a9",
       "title": "Initializing Variables with the Equal Operator",
       "description": [
-        "It is common to <dfn>initialize</dfn> a variable to a starting value on the same line as it is defined.",
+        "It is common to <dfn>initialize</dfn> a variable to an initial value in the same line as it is declared.",
         "",
         "<code>var myVar = 0;</code>",
         "Creates a new variable called <code>myVar</code> and assigns it an inital value of <code>0</code>.",
