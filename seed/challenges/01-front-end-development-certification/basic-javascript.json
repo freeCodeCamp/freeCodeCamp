@@ -894,9 +894,9 @@
         "",
         "",
         "};",
-        "",
-        "// Only change code above this line.",
-        "",
+        ""
+      ],
+      "tail": [
         "(function(z){return JSON.stringify(z, null, 2);})(myDog);"
       ],
       "type": "waypoint",
@@ -957,9 +957,9 @@
         "// Only change code below this line.",
         "",
         "",
-        "",
-        "// Only change code above this line.",
-        "",
+        ""
+      ],
+      "tail": [
         "(function(z){return JSON.stringify(z, null, 2);})(myDog);"
       ],
       "type": "waypoint",
@@ -1013,9 +1013,9 @@
         "// Only change code below this line.",
         "",
         "",
-        "",
-        "// Only change code above this line.",
-        "",
+        ""
+      ],
+      "tail": [
         "(function(z){return JSON.stringify(z, null, 2);})(myDog);"
       ],
       "type": "waypoint",
@@ -1062,9 +1062,9 @@
         "// Only change code below this line.",
         "",
         "",
-        "",
-        "// Only change code above this line.",
-        "",
+        ""
+      ],
+      "tail": [
         "(function(z){return JSON.stringify(z, null, 2);})(myDog);"
       ],
       "type": "waypoint",
