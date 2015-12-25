@@ -1831,13 +1831,13 @@
       "id": "56533eb9ac21ba0edf2244bd",
       "title": "Passing Values to Functions with Arguments",
       "description": [
-        "Functions can take input in the form of <dfn>parameters</dfn>. <code>Parameters</code> are variables that take on the value of the <dfn>arguments</dfn> which are passed in to the function.  Here is a function with two parameters, <code>param1</code> and <code>param2</code>:",
-        "<blockquote>function testFun(param1, param2) {<br />  console.log(param1, param2);<br />}</blockquote>",
+        "Functions can take input in the form of <dfn>parameter</dfn>. Parameters are variables that take on the value of the <dfn>arguments</dfn> which are passed in to the function.  Here is a function with two parameters, <code>param1</code> and <code>param2</code>:",
+        "<blockquote>function testFun(param1, param2) {<br>  console.log(param1, param2);<br>}</blockquote>",
         "Then we can call <code>testFun</code>:",
         "<code>testFun(\"Hello\", \"World\");</code>",
-        "We have <dfn>passed</dfn> two arguments, \"Hello\" and \"World\".  Inside the function, <code>param1</code> will equal \"Hello\" and <code>param2</code> will equal \"World\".  Note that you could call <code>testFun</code> again with different arguments and the parameters would take on the value of the new arguments.",
+        "We have passed two arguments, <code>\"Hello\"</code> and <code>\"World\"</code>.  Inside the function, <code>param1</code> will equal \"Hello\" and <code>param2</code> will equal \"World\".  Note that you could call <code>testFun</code> again with different arguments and the parameters would take on the value of the new arguments.",
         "<h4>Instructions</h4>",
-        "Create a function called <code>myFunction</code> that accepts two arguments and outputs their sum to the dev console. Call your function."
+        "<ol><li>Create a function called <code>myFunction</code> that accepts two arguments and outputs their sum to the dev console.</li><li>Call the function.</li></ol>"
       ],
       "releasedOn": "11/27/2015",
       "tests": [
