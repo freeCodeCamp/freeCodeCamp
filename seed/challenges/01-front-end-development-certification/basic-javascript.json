@@ -1708,7 +1708,7 @@
       "title": "Shopping List",
       "description": [
         "Create a shopping list in the variable <code>myList</code>.  The list should be a multi-dimensional array containing several sub-arrays.  ",
-        "The first element in each sub-array should contain a string with the name of the item. The second element should be a number representing the quantity. IE:",
+        "The first element in each sub-array should contain a string with the name of the item. The second element should be a number representing the quantity i.e.",
         "<code>[\"Chocolate Bar\", 15]</code>",
         "There should be at least 5 sub-arrays in the list."
       ],
