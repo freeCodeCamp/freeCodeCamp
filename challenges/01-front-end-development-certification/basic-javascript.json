@@ -1269,8 +1269,8 @@
         "In order to get the last letter of a string, you can subtract one from the string's length.",
         "For example, if <code>var firstName = \"Charles\"</code>, you can get the value of the last letter of the string by using <code>firstName[firstName.length - 1]</code>.",
         "<h4>Instructions</h4>",
-        "Use <code>bracket notation</code> to find the last character in the <code>lastName</code> variable.",
-        "<strong>Hint</strong><br />Try looking at the <code>lastLetterOfFirstName</code> variable declaration if you get stuck."
+        "Use <dfn>bracket notation</dfn> to find the last character in the <code>lastName</code> variable.",
+        "<strong>Hint</strong><br>Try looking at the <code>lastLetterOfFirstName</code> variable declaration if you get stuck."
       ],
       "tests": [
         "assert(lastLetterOfLastName === \"e\", 'message: <code>lastLetterOfLastName</code> should be \"e\".');",
