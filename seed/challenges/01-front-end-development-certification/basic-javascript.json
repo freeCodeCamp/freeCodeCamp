@@ -1306,8 +1306,8 @@
         "You can use the same principle we just used to retrieve the last character in a string to retrieve the Nth-to-last character.",
         "For example, you can get the value of the third-to-last letter of the <code>var firstName = \"Charles\"</code> string by using <code>firstName[firstName.length - 3]</code>",
         "<h4>Instructions</h4>",
-        "Use <code>bracket notation</code> to find the second-to-last character in the <code>lastName</code> string.",
-        "  <strong>Hint</strong><br />Try looking at the <code>thirdToLastLetterOfFirstName</code> variable declaration if you get stuck."
+        "Use <dfn>bracket notation</dfn> to find the second-to-last character in the <code>lastName</code> string.",
+        "  <strong>Hint</strong><br>Try looking at the <code>thirdToLastLetterOfFirstName</code> variable declaration if you get stuck."
       ],
       "tests": [
         "assert(secondToLastLetterOfLastName === 'c', 'message: <code>secondToLastLetterOfLastName</code> should be \"c\".');",
