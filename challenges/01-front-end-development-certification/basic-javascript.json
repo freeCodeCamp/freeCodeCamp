@@ -1030,7 +1030,7 @@
       "id": "56533eb9ac21ba0edf2244b9",
       "title": "Constructing Strings with Variables",
       "description": [
-        "Sometimes you will need to build a string, <a href=\"https://en.wikipedia.org/wiki/Mad_Libs\">Mad Libs</a> style.  By using the concatanation operator (<code>+</code>) you can insert one or more varaibles into a string you're building.",
+        "Sometimes you will need to build a string, <a href=\"https://en.wikipedia.org/wiki/Mad_Libs\">Mad Libs</a> style. By using the concatenation operator (<code>+</code>), you can insert one or more variables into a string you're building.",
         "<h4>Instructions</h4>",
         "Set <code>myName</code> and build <code>myStr</code> with <code>myName</code> between the strings <code>\"My name is \"</code> and <code>\" and I am swell!\"</code>"
       ],
