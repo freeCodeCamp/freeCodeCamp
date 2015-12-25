@@ -1106,10 +1106,11 @@
     },
     {
       "id": "bd7123c9c448eddfaeb5bdef",
-      "title": "Check the Length Property of a String Variable",
+      "title": "Find Length of a String",
       "description": [
-        "<code>Data structures</code> have <code>properties</code>. For example, <code>strings</code> have a property called <code>.length</code> that will tell you how many characters are in the string.",
-        "For example, if we created a variable <code>var firstName = \"Charles\"</code>, we could find out how long the string \"Charles\" is by using the <code>firstName.length</code> property.",
+        "You can find the length of a <code>String</code> value by writing <code>.length</code> after the string variable or string literal.",
+        "<code>\"Alan Peter\".length; // 10</code>",
+        "For example, if we created a variable <code>var firstName = \"Charles\"</code>, we could find out how long the string <code>\"Charles\"</code> is by using the <code>firstName.length</code> property.",
         "<h4>Instructions</h4>",
         "Use the <code>.length</code> property to count the number of characters in the <code>lastName</code> variable and assign it to <code>lastNameLength</code>."
       ],
