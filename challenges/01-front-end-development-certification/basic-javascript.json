@@ -1340,9 +1340,9 @@
       "id": "56533eb9ac21ba0edf2244bb",
       "title": "Word Blanks",
       "description": [
-        "We will now use our knowledge of strings to build a \"Mad Libs\" style word game we're calling \"Word Blanks\". We have provided a framework for testing your results with different words.  ",
+        "We will now use our knowledge of strings to build a \"<a href='https://en.wikipedia.org/wiki/Mad_Libs' target='_blank'>Mad Libs</a>\" style word game we're calling \"Word Blanks\". We have provided a framework for testing your results with different words.",
         "You will need to use string operators to build a new string, <code>result</code>, using the provided variables: ",
-        "<code>myNoun</code>, <code>myAdjative</code>, <code>myVerb</code>, and <code>myAdverb</code>.",
+        "<code>myNoun</code>, <code>myAdjective</code>, <code>myVerb</code>, and <code>myAdverb</code>.",
         "The tests will run your function with several different inputs to make sure it works properly."
       ],
       "releasedOn": "11/27/2015",
@@ -1353,10 +1353,10 @@
         "assert(/cat/.test(test2) && /little/.test(test2) && /hit/.test(test2) && /slowly/.test(test2),'message: <code>wordBlanks(\"cat\", \"little\", \"hit\", \"slowly\")</code> should contain all of the passed words.');"
       ],
       "challengeSeed": [
-        "function wordBlanks(myNoun, myAdjative, myVerb, myAdverb) {",
+        "function wordBlanks(myNoun, myAdjective, myVerb, myAdverb) {",
         "    var result = \"\";",
         "    // Your code below this line",
-        "",
+        "    ",
         "",
         "    // Your code above this line",
         "\treturn result;",
@@ -1370,9 +1370,9 @@
         "var test2 = wordBlanks(\"cat\", \"little\", \"hit\", \"slowly\");"
       ],
       "solutions": [
-        "function wordBlanks(myNoun, myAdjative, myVerb, myAdverb) {",
+        "function wordBlanks(myNoun, myAdjective, myVerb, myAdverb) {",
         "    var result = \"\";",
-        "    result = \"Once there was a \" + myNoun + \" which was very \" + myAdjative + \". \";",
+        "    result = \"Once there was a \" + myNoun + \" which was very \" + myAdjective + \". \";",
         "\tresult += \"It \" + myVerb + \" \" + myAdverb + \" around the yard.\";",
         "\treturn result;",
         "}"
