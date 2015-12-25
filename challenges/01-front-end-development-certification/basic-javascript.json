@@ -1669,8 +1669,8 @@
       "id": "bg9997c9c69feddfaeb9bdef",
       "title": "Manipulate Arrays With unshift()",
       "description": [
-        "Not only can you <code>shift</code> elements off of the beginning of an array, you can also <code>unshift</code> elements to the beginning of an array.",
-        "<code>unshift()</code> works exactly like <code>push()</code>, but instead of adding the element at the end of the array, <code>unshift()</code> adds the element at the beginning of the array.",
+        "Not only can you <code>shift</code> elements off of the beginning of an array, you can also <code>unshift</code> elements to the beginning of an array i.e. add elements in front of the array.",
+        "<code>.unshift()</code> works exactly like <code>.push()</code>, but instead of adding the element at the end of the array, <code>unshift()</code> adds the element at the beginning of the array.",
         "<h4>Instructions</h4>",
         "Add <code>[\"Paul\",35]</code> to the beginning of the <code>myArray</code> variable using <code>unshift()</code>."
       ],
