@@ -897,7 +897,7 @@
         "",
         "// Only change code above this line.",
         "",
-        "(function(z){return z;})(myDog);"
+        "(function(z){return JSON.stringify(z, null, 2);})(myDog);"
       ],
       "type": "waypoint",
       "challengeType": 1,
@@ -960,7 +960,7 @@
         "",
         "// Only change code above this line.",
         "",
-        "(function(z){return z;})(myDog);"
+        "(function(z){return JSON.stringify(z, null, 2);})(myDog);"
       ],
       "type": "waypoint",
       "challengeType": 1,
@@ -1016,7 +1016,7 @@
         "",
         "// Only change code above this line.",
         "",
-        "(function(z){return z;})(myDog);"
+        "(function(z){return JSON.stringify(z, null, 2);})(myDog);"
       ],
       "type": "waypoint",
       "challengeType": 1,
@@ -1065,7 +1065,7 @@
         "",
         "// Only change code above this line.",
         "",
-        "(function(z){return z;})(myDog);"
+        "(function(z){return JSON.stringify(z, null, 2);})(myDog);"
       ],
       "type": "waypoint",
       "challengeType": 1,
