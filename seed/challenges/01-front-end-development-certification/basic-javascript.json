@@ -1554,7 +1554,8 @@
       "id": "bg9995c9c69feddfaeb9bdef",
       "title": "Manipulate Arrays With push()",
       "description": [
-        "An easy way to append data to the end of an array is via the <code>push()</code> method.  <code>push()</code> takes a value and \"pushes\" it onto the end of the array.",
+        "An easy way to append data to the end of an array is via the <code>push()</code> function.",
+        "<code>.push()</code> takes one or more <dfn>parameter</dfn> and \"pushes\" it onto the end of the array.",
         "<code>var arr = [1,2,3];</code>",
         "<code>arr.push(4);</code>",
         "<code>// arr is now [1,2,3,4]</code>",
@@ -1562,7 +1563,7 @@
         "Push <code>[\"dog\", 3]</code> onto the end of the <code>myArray</code> variable."
       ],
       "tests": [
-        "\nassert((function(d){if(d[2] != undefined && d[0][0] == 'John' && d[0][1] == 23 && d[2][0] == 'dog' && d[2][1] == 3 && d[2].length == 2){return true;}else{return false;}})(myArray), 'message: <code>myArray</code> should now equal <code>[[\"John\", 23], [\"cat\", 2], [\"dog\", 3]]</code>.');"
+        "assert((function(d){if(d[2] != undefined && d[0][0] == 'John' && d[0][1] == 23 && d[2][0] == 'dog' && d[2][1] == 3 && d[2].length == 2){return true;}else{return false;}})(myArray), 'message: <code>myArray</code> should now equal <code>[[\"John\", 23], [\"cat\", 2], [\"dog\", 3]]</code>.');"
       ],
       "challengeSeed": [
         "// Example",
