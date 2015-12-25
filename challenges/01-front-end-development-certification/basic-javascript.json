@@ -1774,9 +1774,9 @@
         "<blockquote>function functionName() {<br />  console.log(\"Hello World\");<br />}</blockquote>",
         "You can call or <dfn>invoke</dfn> this function by using its name followed by parentheses, like this:",
         "<code>functionName();</code>",
-        "Each time the function is called it will print out the message \"Hello World\" on the dev console. All of the code between the curly braces will be executed every time the function is called.",
+        "Each time the function is called it will print out the message <code>\"Hello World\"</code> on the dev console. All of the code between the curly braces will be executed every time the function is called.",
         "<h4>Instructions</h4>",
-        "Create a function called <code>myFunction</code> which prints \"Hi World\" to the dev console. Call that function."
+        "<ol><li>Create a function called <code>myFunction</code> which prints <code>\"Hi World\"</code> to the dev console.</li><li>Call the function.</li></ol>"
       ],
       "tests": [
         "assert(typeof myFunction === 'function', 'message: <code>myFunction</code> should be a function');",
