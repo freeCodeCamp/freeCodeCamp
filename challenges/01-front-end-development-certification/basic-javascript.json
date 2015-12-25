@@ -1230,11 +1230,11 @@
       "id": "bd7123c9c450eddfaeb5bdef",
       "title": "Use Bracket Notation to Find the Nth Character in a String",
       "description": [
-        "You can also use <code>bracket notation</code> to get the character at other positions within a string.",
-        "Remember that computers start counting at 0, so the first character is actually the zeroth character.",
+        "You can also use <dfn>bracket notation</dfn> to get the character at other positions within a string.",
+        "Remember that computers start counting at <code>0</code>, so the first character is actually the zeroth character.",
         "<h4>Instructions</h4>",
-        "Let's try to set <code>thirdLetterOfLastName</code> to equal the <code>third letter</code> of the <code>lastName</code> variable.",
-        "<strong>Hint</strong><br />Try looking at the <code>secondLetterOfFirstName</code> variable declaration if you get stuck."
+        "Let's try to set <code>thirdLetterOfLastName</code> to equal the third letter of the <code>lastName</code> variable.",
+        "<strong>Hint</strong><br>Try looking at the <code>secondLetterOfFirstName</code> variable declaration if you get stuck."
       ],
       "tests": [
         "assert(thirdLetterOfLastName === 'v', 'message: The <code>thirdLetterOfLastName</code> variable should have the value of <code>v</code>.');"
