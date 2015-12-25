@@ -15,7 +15,7 @@ block content
                         .col-xs-12
                             .bonfire-instructions
                                 for sentence in details
-                                    if (/blockquote|h4/.test(sentence))
+                                    if (/blockquote|h4|table/.test(sentence))
                                         !=sentence
                                     else
                                         p.wrappable.negative-10!= sentence
