@@ -788,11 +788,9 @@
         "// Only change code below this line.",
         "",
         "",
-        "",
-        "// Only change code above this line.",
-        "",
-        "(function(y, z){return 'myArray = ' + JSON.stringify(y);})(myArray);"
+        ""
       ],
+      "tail": "(function(y, z){return 'myArray = ' + JSON.stringify(y);})(myArray);",
       "type": "waypoint",
       "challengeType": 1,
       "nameEs": "Manipula vectores con unshift()",
@@ -830,15 +828,9 @@
         "// Only change code below this line.",
         "",
         "",
-        "",
-        "",
-        "// Only change code above this line.",
-        "",
-        "if(typeof myFunction !== \"undefined\"){",
-        "var f=myFunction(a,b);",
-        "(function(){return f;})();",
-        "}"
+        ""
       ],
+      "tail": "if((typeof myFunction !== \"undefined\"){(function(){return myFunction(a,b);})()}",
       "type": "waypoint",
       "challengeType": 1,
       "nameEs": "Escribe código Javascript reutilizable con funciones",
@@ -894,10 +886,10 @@
         "",
         "",
         "};",
-        "",
-        "// Only change code above this line.",
-        "",
-        "(function(z){return z;})(myDog);"
+        ""
+      ],
+      "tail": [
+        "(function(z){return JSON.stringify(z, null, 2);})(myDog);"
       ],
       "type": "waypoint",
       "challengeType": 1,
@@ -957,10 +949,10 @@
         "// Only change code below this line.",
         "",
         "",
-        "",
-        "// Only change code above this line.",
-        "",
-        "(function(z){return z;})(myDog);"
+        ""
+      ],
+      "tail": [
+        "(function(z){return JSON.stringify(z, null, 2);})(myDog);"
       ],
       "type": "waypoint",
       "challengeType": 1,
@@ -1013,10 +1005,10 @@
         "// Only change code below this line.",
         "",
         "",
-        "",
-        "// Only change code above this line.",
-        "",
-        "(function(z){return z;})(myDog);"
+        ""
+      ],
+      "tail": [
+        "(function(z){return JSON.stringify(z, null, 2);})(myDog);"
       ],
       "type": "waypoint",
       "challengeType": 1,
@@ -1062,10 +1054,10 @@
         "// Only change code below this line.",
         "",
         "",
-        "",
-        "// Only change code above this line.",
-        "",
-        "(function(z){return z;})(myDog);"
+        ""
+      ],
+      "tail": [
+        "(function(z){return JSON.stringify(z, null, 2);})(myDog);"
       ],
       "type": "waypoint",
       "challengeType": 1,
@@ -1111,12 +1103,9 @@
         "// Only change code below this line.",
         "",
         "",
-        "",
-        "// Only change code above this line.",
-        "",
-        "if(typeof myArray !== \"undefined\"){(function(){return myArray;})();}",
         ""
       ],
+      "tail": "if(typeof myArray !== \"undefined\"){(function(){return myArray;})();}",
       "type": "waypoint",
       "challengeType": 1,
       "nameEs": "Iterar con JavaScript en ciclos",
@@ -1167,12 +1156,9 @@
         "// Only change code below this line.",
         "",
         "",
-        "",
-        "// Only change code above this line.",
-        "",
-        "if(typeof myArray !== \"undefined\"){(function(){return myArray;})();}",
         ""
       ],
+      "tail": "if(typeof myArray !== \"undefined\"){(function(){return myArray;})();}",
       "type": "waypoint",
       "challengeType": 1,
       "nameEs": "Itera por los números pares con un ciclo for",
@@ -1265,12 +1251,9 @@
         "// Only change code below this line.",
         "",
         "",
-        "",
-        "// Only change code above this line.",
-        "",
-        "if(typeof myArray !== \"undefined\"){(function(){return myArray;})();}",
         ""
       ],
+      "tail": "if(typeof myArray !== \"undefined\"){(function(){return myArray;})();}",
       "type": "waypoint",
       "challengeType": 1,
       "nameEs": "Iterar con JavaScript con ciclos while",
@@ -1310,9 +1293,9 @@
         "",
         "  // Only change code above this line.",
         "}",
-        "",
-        "(function(){return myFunction();})();"
+        ""
       ],
+      "tail": "(function(){return myFunction();})();",
       "type": "waypoint",
       "challengeType": 1,
       "nameEs": "Generar fracciones al azar con JavaScript",
@@ -1415,12 +1398,9 @@
         "  return;",
         "",
         "}",
-        "",
-        "// Only change code above this line.",
-        "",
-        "",
-        "(function(){return myFunction();})();"
+        ""
       ],
+      "tail": "(function(){return myFunction();})();",
       "type": "waypoint",
       "challengeType": 1,
       "nameEs": "Genera números aleatorios enteros dentro de un rango",
@@ -1467,10 +1447,9 @@
         "",
         "  // Only change code above this line.",
         "",
-        "}",
-        "",
-        "var result = myFunction();if(typeof flip !== \"undefined\" && typeof flip === \"number\" && typeof result !== \"undefined\" && typeof result === \"string\"){(function(y,z){return 'flip = ' + y.toString() + ', text = ' + z;})(flip, result);}"
+        "}"
       ],
+      "tail": "var result = myFunction(); if(typeof flip !== \"undefined\" && typeof flip === \"number\" && typeof result !== \"undefined\" && typeof result === \"string\"){(function(y,z){return 'flip = ' + y.toString() + ', text = ' + z;})(flip, result);}",
       "type": "waypoint",
       "challengeType": 1,
       "nameEs": "Usa lógica condicional con instrucciones if y else",
