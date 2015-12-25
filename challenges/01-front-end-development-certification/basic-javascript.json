@@ -1486,7 +1486,7 @@
       "id": "cf1111c1c11feddfaeb8bdef",
       "title": "Modify Array Data With Indexes",
       "description": [
-        "Unlike strings, the contents of arrays can are <dfn>mutable</dfn> and can be freely changed.",
+        "Unlike strings, the entries of arrays are <dfn>mutable</dfn> and can be changed freely.",
         "For example:",
         "<code>var ourArray = [3,2,1];</code>",
         "<code>ourArray[0] = 1; // equals [1,2,1]</code>",
