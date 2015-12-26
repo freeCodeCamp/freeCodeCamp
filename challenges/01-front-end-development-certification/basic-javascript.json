@@ -2748,11 +2748,13 @@
       "id": "56533eb9ac21ba0edf2244d9",
       "title": "Comparisons with the Logical Or Operator",
       "description": [
-        "The <dfn>logical or</dfn> operator (<code>||</code>) returns <code>true</code> if either of<dfn>operands</dfn> is true, or false if neither is true.",
+        "The <dfn>logical or</dfn> operator (<code>||</code>) returns <code>true</code> if either of<dfn>operands</dfn> is <code>true</code>. Otherwise, it returns <code>false</code>.",
         "The pattern below should look familiar from prior waypoints:",
-        "<blockquote>if (num > 10) { <br />  return \"No\";<br />}<br />if (num < 5) {<br />    return \"No\";<br />}<br />return \"Yes\";</blockquote>Will only return \"Yes\" if <code>num</code> is between <code>5</code> and <code>10</code>.  The same logic can be written as:<blockquote>if (num > 10 || num < 5) {<br />  return \"No\";<br />}</br>return \"Yes\";</blockquote>",
+        "<blockquote>if (num > 10) {<br>  return \"No\";<br>}<br>if (num < 5) {<br>    return \"No\";<br>}<br>return \"Yes\";</blockquote>",
+        "will return \"Yes\" only if <code>num</code> is between <code>5</code> and <code>10</code> (5 and 10 included). The same logic can be written as:",
+        "<blockquote>if (num > 10 || num < 5) {<br>  return \"No\";<br>}<br>return \"Yes\";</blockquote>",
         "<h4>Instructions</h4>",
-        "Combine the two if statements into one statement which returns <code>\"Inside\"</code> if <code>val</code> is between <code>10</code> and <code>20</code>, inclusive.  Otherwise, return <code>\"Outside\"</code>."
+        "Combine the two <code>if</code> statements into one statement which returns <code>\"Inside\"</code> if <code>val</code> is between <code>10</code> and <code>20</code>, inclusive.  Otherwise, return <code>\"Outside\"</code>."
       ],
       "releasedOn": "11/27/2015",
       "tests": [
