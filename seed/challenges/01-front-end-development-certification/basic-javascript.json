@@ -3116,11 +3116,11 @@
       "id": "56533eb9ac21ba0edf2244de",
       "title": "Adding a default option in Switch statements",
       "description": [
-        "In a <code>switch</code> statement you may not be able to specify all possible values as <code>case</code> statements.  Instead, you can use the <code>default</code> statement where a <code>case</code> would go.  Think of it like an <code>else</code> statement for <code>switch</code>.",
-        "A <code>default</code> statement should be the last \"<code>case</code>\" in the list.",
-        "<blockquote>switch (num) {<br />  case value1:<br />    statement1<br />    break;<br />  value2:<br />    statement2;<br />    break;<br />...<br />  default:<br />    defaultStatement;<br />}</blockquote>",
+        "In a <code>switch</code> statement you may not be able to specify all possible values as <code>case</code> statements. Instead, you can add the <code>default</code> statement which will be executed if no matching <code>case</code> are found. Think of it like the final <code>else</code> statement in an <code>if...else</code> chain.",
+        "A <code>default</code> statement should be the last case.",
+        "<blockquote>switch (num) {<br>  case value1:<br>    statement1<br>    break;<br>  case value2:<br>    statement2;<br>    break;<br>...<br>  default:<br>    defaultStatement;<br>}</blockquote>",
         "<h4>Instructions</h4>",
-        "Write a switch statement to set <code>answer</code> for the following conditions:<br /><code>\"a\"</code> - \"apple\"<br /><code>\"b\"</code> - \"bird\"<br /><code>\"c\"</code> - \"cat\"<br /><code>default</code> - \"stuff\""
+        "Write a switch statement to set <code>answer</code> for the following conditions:<br><code>\"a\"</code> - \"apple\"<br><code>\"b\"</code> - \"bird\"<br><code>\"c\"</code> - \"cat\"<br><code>default</code> - \"stuff\""
       ],
       "releasedOn": "11/27/2015",
       "tests": [
@@ -3138,7 +3138,7 @@
         "  // Only change code below this line",
         "  ",
         "  ",
-        "",
+        "  ",
         "  // Only change code above this line  ",
         "  return answer;  ",
         "}",
