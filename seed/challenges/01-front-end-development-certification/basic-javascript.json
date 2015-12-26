@@ -2157,8 +2157,8 @@
       "id": "56533eb9ac21ba0edf2244c6",
       "title": "Stand in Line",
       "description": [
-        "In Computer Science a <dfn>queue</dfn> is an abastract datatype where items are kept in order.  New items can be added to the back of the <code>queue</code> and old items are taken off the front of the <code>queue</code>.",
-        "Write a function <code>queue</code> which takes an array and an item as arguments.  Add the item onto the end of the array, then remove and return the item at the front of the queue."
+        "In Computer Science a <dfn>queue</dfn> is an abstract <dfn>Data Structure</dfn> where items are kept in order. New items can be added at the back of the <code>queue</code> and old items are taken off from the front of the <code>queue</code>.",
+        "Write a function <code>queue</code> which takes an \"array\" and an \"item\" as arguments.  Add the item onto the end of the array, then remove and return the item at the front of the queue."
       ],
       "releasedOn": "11/27/2015",
       "tests": [
