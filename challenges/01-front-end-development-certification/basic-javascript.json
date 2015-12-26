@@ -3054,11 +3054,11 @@
       "id": "56533eb9ac21ba0edf2244dd",
       "title": "Selecting from many options with Switch Statements",
       "description": [
-        "If you have many options to choose from use a <code>switch</code> statement  A <code>switch</code> statement tests a value and has many <code>case</code> statements which define that value can be, shown here in <dfn>pseudocode<dfn>:",
-        "<blockquote>switch (num) {<br />  case value1:<br />    statement1<br />    break;<br />  value2:<br />    statement2;<br />    break;<br />...<br />  valueN:<br />    statementN;<br />}</blockquote>",
-        "<code>case</code> values are tested with strict equality (<code>===</code>).  The <code>break</code> tells Javascript to stop executing statements.  If the <code>break</code> is omitted, the next statement will be executed.",
+        "If you have many options to choose from, use a <code>switch</code> statement. A <code>switch</code> statement tests a value and can have many <code>case</code> statements which defines various possible values. Statements are executed from the first matched <code>case</code> value unless a <code>break</code> is encountered. Shown here in <dfn>pseudocode<dfn>:",
+        "<blockquote>switch (num) {<br>  case value1:<br>    statement1;<br>    break;<br>  case value2:<br>    statement2;<br>    break;<br>...<br>  case valueN:<br>    statementN;<br>    break;<br>}</blockquote>",
+        "<code>case</code> values are tested with strict equality (<code>===</code>).  The <code>break</code> tells JavaScript to stop executing statements.  If the <code>break</code> is omitted, the next statement will be executed.",
         "<h4>Instructions</h4>",
-        "Write a switch statement to set <code>answer</code> for the following conditions:<br /><code>1</code> - \"alpha\"<br /><code>2</code> - \"beta\"<br /><code>3</code> - \"gamma\"<br /><code>4</code> - \"delta\""
+        "Write a switch statement to set <code>answer</code> for the following conditions:<br><code>1</code> - \"alpha\"<br><code>2</code> - \"beta\"<br><code>3</code> - \"gamma\"<br><code>4</code> - \"delta\""
       ],
       "releasedOn": "11/27/2015",
       "tests": [
@@ -3075,7 +3075,7 @@
         "  // Only change code below this line",
         "  ",
         "  ",
-        "",
+        "  ",
         "  // Only change code above this line  ",
         "  return answer;  ",
         "}",
