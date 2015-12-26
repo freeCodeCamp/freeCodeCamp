@@ -12,38 +12,22 @@ export default React.createClass({
   displayName: 'Hike',
 
   propTypes: {
-    dashedName: PropTypes.string,
     currentHike: PropTypes.object,
     showQuestions: PropTypes.bool
   },
 
-  renderBody(showQuestions, currentHike, dashedName) {
+  renderBody(showQuestions) {
     if (showQuestions) {
-      return (
-        <Questions hike={ currentHike }/>
-      );
+      return <Questions />;
     }
-
-    const {
-      challengeSeed: [ id ] = ['1'],
-      description = []
-    } = currentHike;
-
-    return (
-      <Lecture
-        dashedName={ dashedName }
-        description={ description }
-        id={ id } />
-    );
+    return <Lecture />;
   },
 
   render() {
     const {
-      currentHike = {},
-      dashedName,
+      currentHike: { title } = {},
       showQuestions
     } = this.props;
-    const { title } = currentHike;
 
     const videoTitle = <h2>{ title }</h2>;
 
@@ -53,7 +37,7 @@ export default React.createClass({
           <Panel
             className={ 'text-center' }
             title={ videoTitle }>
-            { this.renderBody(showQuestions, currentHike, dashedName) }
+            { this.renderBody(showQuestions) }
           </Panel>
         </Row>
       </Col>

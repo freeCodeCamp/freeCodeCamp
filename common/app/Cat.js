@@ -2,9 +2,16 @@ import { Cat } from 'thundercats';
 import stamp from 'stampit';
 import { Disposable, Observable } from 'rx';
 
+import { postJSON$ } from '../utils/ajax-stream.js';
 import { AppActions, AppStore } from './flux';
 import { HikesActions } from './routes/Hikes/flux';
 import { JobActions, JobsStore} from './routes/Jobs/flux';
+
+const ajaxStamp = stamp({
+  methods: {
+    postJSON$: postJSON$
+  }
+});
 
 export default Cat().init(({ instance: cat, args: [services] }) => {
   const serviceStamp = stamp({
@@ -30,7 +37,7 @@ export default Cat().init(({ instance: cat, args: [services] }) => {
     }
   });
 
-  cat.register(HikesActions.compose(serviceStamp), null, services);
+  cat.register(HikesActions.compose(serviceStamp, ajaxStamp), null, services);
   cat.register(AppActions.compose(serviceStamp), null, services);
   cat.register(AppStore, null, cat);
 
