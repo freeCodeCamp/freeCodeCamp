@@ -135,12 +135,14 @@
     "chai": "^3.4.0",
     "envify": "^3.4.0",
     "gulp-sourcemaps": "^1.6.0",
+    "gulp-tape": "0.0.7",
     "istanbul": "~0.4.0",
     "jsonlint": "^1.6.2",
     "loopback-component-explorer": "^2.1.1",
     "loopback-testing": "^1.1.0",
     "mocha": "^2.3.3",
     "tap-nyan": "0.0.2",
+    "tap-spec": "^4.1.1",
     "tape": "^4.2.2"
   }
 }
