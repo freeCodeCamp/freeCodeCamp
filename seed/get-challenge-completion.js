@@ -1,34 +1,45 @@
 /* eslint-disable no-process-exit */
+
+/**
+ * Data creation script for academic data pushes. Run this script with
+ * node seed/get-challenge-completion.js >> ~/output.json
+ * For large data sets supply the flag --max_old_space_size=2000000 to node.
+ * Run from the root FCC directory. Beware, this will generate a very large file
+ * if you have a large user collection such as the production mongo db.
+*/
+
 require('dotenv').load();
 var secrets = require('../config/secrets'),
     mongodb = require('mongodb'),
-    MongoClient = mongodb.MongoClient,
-    _ = require('lodash');
+    MongoClient = mongodb.MongoClient;
 
 MongoClient.connect(secrets.db, function(err, database) {
   if (err) {
     throw err;
   }
-
-  database.collection('user').aggregate([
-    {$match: { 'completedChallenges': { $exists: true } } },
-    {$match: { 'completedChallenges': { $ne: '' } } },
-    {$match: { 'completedChallenges': { $ne: null } } },
-    {$group: { '_id': 1, 'completedChallenges': {$addToSet: '$completedChallenges' } } }
-  ], function(err, results) {
-    if (err) { throw err; }
-    var testout = results.map(function(camper) {
-      return _.flatten(camper.completedChallenges.map(function(challenges) {
-        return challenges.map(function(challenge) {
-          return { 
-            name: challenge.name,
-            completedDate: challenge.completedDate,
-            solution: challenge.solution
-          };
+  var stream = database.collection('user')
+        .find({'completedChallenges': { $ne: null }},
+              {'completedChallenges': true})
+        .stream();
+  console.log('[');
+  stream.on('data', function(results) {
+    if (!results.completedChallenges) {
+      // dud
+    } else {
+      var testout = [];
+      results.completedChallenges.forEach(function(challenge) {
+        testout.push({
+          name: challenge.name,
+          completedDate: challenge.completedDate,
+          solution: challenge.solution
         });
-      }), true); 
-    });
-    console.log(JSON.stringify(testout));
+      });
+      if (testout.length) {
+          console.log(JSON.stringify(testout) + ',');
+      }
+    }
+  }).on('end', function() {
+    console.log(']');
     process.exit(0);
   });
 });
