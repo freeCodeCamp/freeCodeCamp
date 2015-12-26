@@ -2692,9 +2692,11 @@
       "description": [
         "Sometimes you will need to test more than one thing at a time.  The <dfn>logical and</dfn> operator (<code>&&</code>) returns <code>true</code> if and only if the <dfn>operands</dfn> to the left and right of it are true.",
         "The same effect could be achieved by nesting an if statement inside another if:",
-        "<blockquote>if (num < 10) { <br />  if (num > 5) {<br />    return \"Yes\";<br />  }<br />}<br />return \"No\";</blockquote>Will only return \"Yes\" if <code>num</code> is between <code>6</code> and <code>9</code>.  The same logic can be written as:<blockquote>if (num < 10 && num > 5) {<br />  return \"Yes\";<br />}</br>return \"No\";</blockquote>",
+        "<blockquote>if (num > 5) {<br>  if (num < 10) {<br>    return \"Yes\";<br>  }<br>}<br>return \"No\";</blockquote>",
+        "will only return \"Yes\" if <code>num</code> is between <code>6</code> and <code>9</code> (6 and 9 included). The same logic can be written as:",
+        "<blockquote>if (num > 5 && num < 10) {<br>  return \"Yes\";<br>}<br>return \"No\";</blockquote>",
         "<h4>Instructions</h4>",
-        "Combine the two if statements into one statement which returns <code>\"Yes\"</code> if <code>val</code> is less than or equal to <code>50</code> and greater than or equal to <code>25</code>.  Otherwise, return <code>\"No\"</code>."
+        "Combine the two if statements into one statement which will return <code>\"Yes\"</code> if <code>val</code> is less than or equal to <code>50</code> and greater than or equal to <code>25</code>.  Otherwise, will return <code>\"No\"</code>."
       ],
       "releasedOn": "11/27/2015",
       "tests": [
