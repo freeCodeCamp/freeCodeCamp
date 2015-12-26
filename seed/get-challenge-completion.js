@@ -18,7 +18,8 @@ MongoClient.connect(secrets.db, function(err, database) {
     throw err;
   }
   var stream = database.collection('user')
-        .find({'completedChallenges': { $ne: null }},
+        .find({'completedChallenges': { $ne: null },
+               'isLocked': { $ne: true } },
               {'completedChallenges': true})
         .stream();
   console.log('[');
@@ -26,16 +27,16 @@ MongoClient.connect(secrets.db, function(err, database) {
     if (!results.completedChallenges) {
       // dud
     } else {
-      var testout = [];
+      var dataOut = [];
       results.completedChallenges.forEach(function(challenge) {
-        testout.push({
+        dataOut.push({
           name: challenge.name,
           completedDate: challenge.completedDate,
           solution: challenge.solution
         });
       });
-      if (testout.length) {
-          console.log(JSON.stringify(testout) + ',');
+      if (dataOut.length) {
+          console.log(JSON.stringify(dataOut) + ',');
       }
     }
   }).on('end', function() {
