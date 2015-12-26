@@ -2993,11 +2993,11 @@
       "id": "56533eb9ac21ba0edf2244dc",
       "title": "Chaining If/Else Statements",
       "description": [
-        "<code>if...else if</code> statements can be chained together for complex logic.  Here is <dfn>pseudocode</dfn> of multiple chained <code>if</code>/<code>else if</code> statements:",
-        "<blockquote>if(<i>condition1</i>) {<br />  <i>statement1</i><br />} else if (<i>condition1</i>) {<br />  <i>statement1</i><br />} else if (<i>condition3</i>) {<br />  <i>statement3</i><br />. . .<br />} else {<br />  <i>statementN</i><br />}</blockquote>",
+        "<code>if...else</code> statements can be chained together for complex logic. Here is <dfn>pseudocode</dfn> of multiple chained <code>if</code> / <code>else if</code> statements:",
+        "<blockquote>if(<em>condition1</em>) {<br>  <em>statement1</em><br>} else if (<em>condition1</em>) {<br>  <em>statement1</em><br>} else if (<em>condition3</em>) {<br>  <em>statement3</em><br>. . .<br>} else {<br>  <em>statementN</em><br>}</blockquote>",
         "<h4>Instructions</h4>",
         "Write chained <code>if</code>/<code>else if</code> statements to fulfill the following conditions:",
-        "<code>num &lt; 5</code> - return \"Tiny\"<br /><code>num &lt; 10</code> - return \"Small\"<br /><code>num &lt; 15</code> - return \"Medium\"<br /><code>num &lt; 20</code> - return \"Large\"<br /><code>num >= 20</code>  - return \"Huge\""
+        "<code>num &lt;   5</code> - return \"Tiny\"<br><code>num &lt;  10</code> - return \"Small\"<br><code>num &lt; 15</code> - return \"Medium\"<br><code>num &lt; 20</code> - return \"Large\"<br><code>num >= 20</code>  - return \"Huge\""
       ],
       "releasedOn": "11/27/2015",
       "tests": [
@@ -3018,8 +3018,8 @@
       "challengeSeed": [
         "function myTest(num) {",
         "  // Only change code below this line",
-        "",
-        "",
+        "  ",
+        "  ",
         "  return \"Change Me\";",
         "  // Only change code above this line",
         "}",
