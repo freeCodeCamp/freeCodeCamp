@@ -2415,8 +2415,8 @@
       "id": "56533eb9ac21ba0edf2244d3",
       "title": "Comparison with the Strict Inequality Operator",
       "description": [
-        "The inequality operator (<code>!==</code>) is the opposite of the strict equality operator.  It means \"Strictly Not Equal\" and returns <code>false</code> where strict equality would return <code>true</code> and <i>vice versa</i>.  Strict inequality will not convert types.",
-        "<strong>Examples</strong><blockquote>3 !== 3   // false<br />3 !== '3' // true<br />4 !== 3   // true</blockquote>",
+        "The inequality operator (<code>!==</code>) is the opposite of the strict equality operator. It means \"Strictly Not Equal\" and returns <code>false</code> where strict equality would return <code>true</code> and <em>vice versa</em>. Strict inequality will not convert data types.",
+        "<strong>Examples</strong><blockquote>3 !== 3   // false<br>3 !== '3' // true<br>4 !== 3   // true</blockquote>",
         "<h4>Instructions</h4>",
         "Add the <code>strict inequality operator</code> to the <code>if</code> statement so the function will return \"Not Equal\" when <code>val</code> is not strictly equal to <code>17</code>"
       ],
