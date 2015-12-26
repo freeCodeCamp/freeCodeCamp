@@ -2326,8 +2326,9 @@
       "description": [
         "Strict equality (<code>===</code>) is the counterpart to the equality operator (<code>==</code>).  Unlike the equality operator, strict equality tests both the <dfn>type</dfn> and <dfn>value</dfn> of the compared elements.",
         "<strong>Examples</strong><blockquote>3 === 3   // true<br />3 === '3' // false</blockquote>",
+        "<em>In the second example, <code>3</code> is a <code>Number</code> type and <code>'3'</code> is a <code>String</code> type.</em>",
         "<h4>Instructions</h4>",
-        "Change the equality operator to a strict equality on the <code>if</code> statement so the function will return \"Equal\" when <code>val</code> is strictltly equal to <code>7</code>"
+        "Use strict equality operator in <code>if</code> statement so the function will return \"Equal\" when <code>val</code> is strictly equal to <code>7</code>"
       ],
       "releasedOn": "11/27/2015",
       "tests": [
