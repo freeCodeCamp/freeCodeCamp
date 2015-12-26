@@ -2519,8 +2519,8 @@
       "id": "56533eb9ac21ba0edf2244d5",
       "title": "Comparison with the Greater Than Equal To Operator",
       "description": [
-        "The greater than equal to operator (<code>&gt;=</code>) compares the values of two numbers.  If the number to the left is greater than or equal the number to the right, it returns <code>true</code>. If the number on the left is less than the number on the right, it returns <code>false</code>.  Like the equality operator, greater than equal to converts data types.",
-        "<strong>Examples</strong><blockquote>  6 >= 6   // true<br />  7 >= '3' // true<br />  2 >= 3   // false<br />'7' >= 9   // false</blockquote>",
+        "The greater than equal to operator (<code>&gt;=</code>) compares the values of two numbers. If the number to the left is greater than or equal to the number to the right, it returns <code>true</code>. Otherwise, it returns <code>false</code>.<br>Like the equality operator, greater than equal to operator will convert data types while comparing.",
+        "<strong>Examples</strong><blockquote> 6  >=  6  // true<br> 7  >= '3' // true<br> 2  >=  3  // false<br>'7' >=  9  // false</blockquote>",
         "<h4>Instructions</h4>",
         "Add the <code>greater than equal to</code> operator to the indicated lines so that the return statements make sense."
       ],
@@ -2552,7 +2552,17 @@
         "myTest(10);"
       ],
       "solutions": [
-        ""
+        "function myTest(val) {",
+        "  if (val >= 20) {  // Change this line",
+        "    return \"20 or Over\";",
+        "  }",
+        "  ",
+        "  if (val >= 10) {  // Change this line",
+        "    return \"10 or Over\";",
+        "  }",
+        "",
+        "  return \"9 or Under\";",
+        "}"
       ],
       "type": "waypoint",
       "challengeType": "1",
