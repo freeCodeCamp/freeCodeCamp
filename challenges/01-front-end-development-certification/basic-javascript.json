@@ -1969,30 +1969,47 @@
       "id": "56533eb9ac21ba0edf2244bf",
       "title": "Local Scope and Functions",
       "description": [
-        "Variables which are declared within a function, as well as function parameters are <dfn>local</dfn>. Thos means they are only visible within that function. ",
+        "Variables which are declared within a function, as well as the function parameters have <dfn>local</dfn> scope. That means, they are only visible within that function. ",
         "Here is a function <code>myTest</code> with a local variable called <code>loc</code>.",
-        "<blockquote>function myTest() {<br />  var local1 = \"foo\";<br />  console.log(local1);<br />}<br />myTest(); // \"foo\"<br />console.log(local1); // \"undefined\"</blockquote>",
-        "<code>local1</code> is not defined outside of the function.",
+        "<blockquote>function myTest() {<br>  var loc = \"foo\";<br>  console.log(loc);<br>}<br>myTest(); // \"foo\"<br>console.log(loc); // \"undefined\"</blockquote>",
+        "<code>loc</code> is not defined outside of the function.",
         "<h4>Instructions</h4>",
         "Declare a local variable <code>myVar</code> inside <code>myFunction</code>"
       ],
       "releasedOn": "11/27/2015",
       "tests": [
-        "assert(1===1, 'message: message here');"
+        ""
       ],
       "challengeSeed": [
         "function myFunction() {",
         "  ",
         "  console.log(myVar);",
         "}",
+        "myFunction();",
         "",
+        "// run and check the console ",
+        "// myVar is not defined outside of myFunction",
         "console.log(myVar);",
+        "",
+        "// now remove the console.log line to pass the test",
         ""
       ],
       "tail": [
         ""
       ],
       "solutions": [
+        "function myFunction() {",
+        "  var myVar;",
+        "  console.log(myVar);",
+        "}",
+        "myFunction();",
+        "",
+        "// run and check the console ",
+        "// myVar is not defined outside of myFunction",
+        "",
+        "",
+        "// now remove the console.log line to pass the test",
+        "",
         ""
       ],
       "type": "waypoint",
