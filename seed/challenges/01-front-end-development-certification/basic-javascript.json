@@ -2576,8 +2576,8 @@
       "id": "56533eb9ac21ba0edf2244d6",
       "title": "Comparison with the Less Than Operator",
       "description": [
-        "The <code>less than</code> operator (<code>&lt;</code>) compares the values of two numbers.  If the number to the left is less than the number to the right, it returns <code>true</code>. If the number on the left is greater than or equal to the number on the right, it returns <code>false</code>.  Like the equality operator, <code>less than</code> converts data types.",
-        "<strong>Examples</strong><blockquote>  2 &lt; 5  // true<br />'3' &lt; 7  // true<br />  5 &lt; 5  // false<br />  3 &lt; 2  // false<br />'8' &lt; 4  // false</blockquote>",
+        "The <dfn>less than</dfn> operator (<code>&lt;</code>) compares the values of two numbers. If the number to the left is less than the number to the right, it returns <code>true</code>. Otherwise, it returns <code>false</code>.  Like the equality operator, <dfn>less than</dfn> operator converts data types while comparing.",
+        "<strong>Examples</strong><blockquote>  2 &lt; 5  // true<br>'3' &lt; 7  // true<br>  5 &lt; 5  // false<br>  3 &lt; 2  // false<br>'8' &lt; 4  // false</blockquote>",
         "<h4>Instructions</h4>",
         "Add the <code>less than</code> operator to the indicated lines so that the return statements make sense."
       ],
@@ -2608,7 +2608,17 @@
         "myTest(10);"
       ],
       "solutions": [
-        ""
+        "function myTest(val) {",
+        "  if (val < 25) {  // Change this line",
+        "    return \"Under 25\";",
+        "  }",
+        "  ",
+        "  if (val < 55) {  // Change this line",
+        "    return \"Under 55\";",
+        "  }",
+        "",
+        "  return \"55 or Over\";",
+        "}"
       ],
       "type": "waypoint",
       "challengeType": "1",
