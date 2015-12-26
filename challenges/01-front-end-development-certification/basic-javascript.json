@@ -2369,10 +2369,10 @@
       "id": "56533eb9ac21ba0edf2244d2",
       "title": "Comparison with the Inequality Operator",
       "description": [
-        "The inequality operator (<code>!=</code>) is the opposite of the equality operator.  It means \"Not Equal\" and returns <code>false</code> where equality would return <code>true</code> and <i>vice versa</i>.  Like the equality operator, the inequality operator will convert types.",
-        "<strong>Examples</strong><blockquote>1 !=   2     // true<br />1 !=  \"1\"    // false<br />1 !=  '1'    // false<br />1 !=  true   // false<br />0 !=  false  // false</blockquote>",
+        "The inequality operator (<code>!=</code>) is the opposite of the equality operator.  It means \"Not Equal\" and returns <code>false</code> where equality would return <code>true</code> and <em>vice versa</em>. Like the equality operator, the inequality operator will convert data types of values while comparing.",
+        "<strong>Examples</strong><blockquote>1 != 2      // true<br>1 != \"1\"    // false<br>1 != '1'    // false<br>1 != true   // false<br>0 != false  // false</blockquote>",
         "<h4>Instructions</h4>",
-        "Add the inequality operator <code>!=</code> to the <code>if</code> statement so the function will return \"Not Equal\" when <code>val</code> is not equivilent to <code>99</code>"
+        "Add the inequality operator <code>!=</code> in the <code>if</code> statement so that the function will return \"Not Equal\" when <code>val</code> is not equivalent to <code>99</code>"
       ],
       "releasedOn": "11/27/2015",
       "tests": [
