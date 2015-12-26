@@ -31,7 +31,8 @@ export default contain(
       children: PropTypes.element,
       currentHike: PropTypes.object,
       hikes: PropTypes.array,
-      params: PropTypes.object
+      params: PropTypes.object,
+      showQuestions: PropTypes.bool
     },
 
     componentWillMount() {
@@ -45,15 +46,15 @@ export default contain(
       );
     },
 
-    renderChild(children, hikes, currentHike, dashedName) {
+    renderChild({ children, ...props }) {
       if (!children) {
         return null;
       }
-      return React.cloneElement(children, { hikes, currentHike, dashedName });
+      return React.cloneElement(children, props);
     },
 
     render() {
-      const { hikes, children, currentHike } = this.props;
+      const { hikes } = this.props;
       const { dashedName } = this.props.params;
       const preventOverflow = { overflow: 'hidden' };
       return (
@@ -61,7 +62,7 @@ export default contain(
           <Row style={ preventOverflow }>
             {
               // render sub-route
-              this.renderChild(children, hikes, currentHike, dashedName) ||
+              this.renderChild({ ...this.props, dashedName }) ||
               // if no sub-route render hikes map
               this.renderMap(hikes)
             }

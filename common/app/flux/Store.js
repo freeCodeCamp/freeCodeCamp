@@ -8,7 +8,9 @@ const initValue = {
   points: 0,
   hikesApp: {
     hikes: [],
-    currentHikes: {}
+    currentHikes: {},
+    currentQuestion: 1,
+    showQuestion: false
   }
 };
 
@@ -20,13 +22,13 @@ export default Store({
   init({ instance: appStore, args: [cat] }) {
     const { updateRoute, getUser, setTitle } = cat.getActions('appActions');
     const register = createRegistrar(appStore);
-    const { fetchHikes } = cat.getActions('hikesActions');
+    const { toggleQuestions, fetchHikes } = cat.getActions('hikesActions');
 
     // app
     register(setter(fromMany(getUser, setTitle, updateRoute)));
 
     // hikes
-    register(fetchHikes);
+    register(fromMany(fetchHikes, toggleQuestions));
 
     return appStore;
   }
