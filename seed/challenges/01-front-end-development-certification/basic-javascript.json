@@ -3252,9 +3252,9 @@
       "title": "Replacing If/Else chains with Switch",
       "description": [
         "If you have many options to choose from, a <code>switch</code> statement can be easier to write than many chained <code>if</code>/<code>if else</code> statements.  The following:",
-        "<blockquote>if(val === 1) {<br />  answer = \"a\";<br />} else if(val === 2) {<br />  answer = \"b\";<br />} else {<br />  answer = \"c\";<br />}</blockquote>",
+        "<blockquote>if(val === 1) {<br>  answer = \"a\";<br>} else if(val === 2) {<br>  answer = \"b\";<br>} else {<br>  answer = \"c\";<br>}</blockquote>",
         "can be replaced with:",
-        "<blockquote>switch (val) {<br />  case 1:<br />    answer = \"a\";<br />    break;<br />  case 2:<br />    answer = \"b\";<br />    break;<br />  default:<br />    answer = \"c\";<br />}</blockquote>",
+        "<blockquote>switch (val) {<br>  case 1:<br>    answer = \"a\";<br>    break;<br>  case 2:<br>    answer = \"b\";<br>    break;<br>  default:<br>    answer = \"c\";<br>}</blockquote>",
         "<h4>Instructions</h4>",
         "Change the chained <code>if</code>/<code>if else</code> statements into a <code>switch</code> statement."
       ],
@@ -3267,7 +3267,9 @@
         "assert(myTest(42) === \"The Answer\", 'message: <code>myTest(42)</code> should be \"The Answer\"');",
         "assert(myTest(1) === \"There is no #1\", 'message: <code>myTest(1)</code> should be \"There is no #1\"');",
         "assert(myTest(99) === \"Missed me by this much!\", 'message: <code>myTest(99)</code> should be \"Missed me by this much!\"');",
-        "assert(myTest(7) === \"Ate Nine\", 'message: <code>myTest(7)</code> should be \"Ate Nine\"');"
+        "assert(myTest(7) === \"Ate Nine\", 'message: <code>myTest(7)</code> should be \"Ate Nine\"');",
+        "assert(myTest(\"John\") === \"\", 'message: <code>myTest(\"John\")</code> should be \"\" (empty string)');",
+        "assert(myTest(156) === \"\", 'message: <code>myTest(156)</code> should be \"\" (empty string)');"
       ],
       "challengeSeed": [
         "function myTest(val) {",
@@ -3285,7 +3287,7 @@
         "  } else if(val === 7) {",
         "    answer = \"Ate Nine\";",
         "  }",
-        "",
+        "  ",
         "  // Only change code above this line  ",
         "  return answer;  ",
         "}",
