@@ -3677,7 +3677,7 @@
       "id": "56533eb9ac21ba0edf2244c9",
       "title": "Accessing Objects Properties with Variables",
       "description": [
-        "Another use of bracket notation on objects is to use a variable to access a property. This can be very useful for itterating through lists of object properties or for doing lookups.",
+        "Another use of bracket notation on objects is to use a variable to access a property. This can be very useful for iterating through lists of object properties or for doing lookup.",
         "Here is an example of using a variable to access a property:",
         "<blockquote>var someProp = \"propName\";<br>var myObj = {<br>  propName: \"Some Value\"<br >}<br>myObj[someProp]; // \"Some Value\"</blockquote>",
         "Note that we  do <em>not</em> use quotes around the variable name when using it to access the property because we are using the <em>value</em> of the variable, not the <em>name</em>",
@@ -3708,7 +3708,8 @@
         ""
       ],
       "solutions": [
-        ""
+        "var playerNumber = 16;",
+        "var player = testObj[playerNumber];"
       ],
       "type": "waypoint",
       "challengeType": "1",
