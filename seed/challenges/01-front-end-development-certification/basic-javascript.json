@@ -98,7 +98,7 @@
         "Assign the value 7 to variable <code>a</code>",
         "Assign the contents of <code>a</code> to variable <code>b</code>."
       ],
-      "releasedOn": "11/27/2015",
+      "releasedOn": "January 1, 2016",
       "tests": [
         "assert(/var a;/.test(editor.getValue()) && /var b = 2;/.test(editor.getValue()), 'message: Do not change code above the line');",
         "assert(typeof a === 'number' && a === 7, 'message: <code>a</code> should have a value of 7');",
@@ -142,7 +142,7 @@
         "<h4>Instructions</h4>",
         "Define a variable <code>a</code> with <code>var</code> and initialize it to a value of <code>9</code>."
       ],
-      "releasedOn": "11/27/2015",
+      "releasedOn": "January 1, 2016",
       "tests": [
         "assert(/var\\s+a\\s*=\\s*9\\s*/.test(editor.getValue()), 'message: Initialize <code>a</code> to a value of <code>9</code>');"
       ],
@@ -175,7 +175,7 @@
         "<h4>Instructions</h4>",
         "Initialize the three variables <code>a</code>, <code>b</code>, and <code>c</code> with <code>5</code>, <code>10</code>, and <code>\"I am a\"</code> respectively so that they will not be <code>undefined</code>."
       ],
-      "releasedOn": "11/27/2015",
+      "releasedOn": "January 1, 2016",
       "tests": [
         "assert(typeof a === 'number' && a === 6, 'message: <code>a</code> should be defined and have a value of <code>6</code>');",
         "assert(typeof b === 'number' && b === 15, 'message: <code>b</code> should be defined and have a value of <code>15</code>');",
@@ -227,7 +227,7 @@
         "<h4>Instructions</h4>",
         "Correct the variable assignments so their names match their variable declarations above."
       ],
-      "releasedOn": "11/27/2015",
+      "releasedOn": "January 1, 2016",
       "tests": [
         "assert(StUdLyCapVaR === 10, 'message: StUdLyCapVaR has the correct case');",
         "assert(properCamelCase === \"A String\", 'message: properCamelCase has the correct case');",
@@ -392,7 +392,7 @@
         "<h4>Instructions</h4>",
         "Change the code to use the <code>++</code> operator on <code>myVar</code>"
       ],
-      "releasedOn": "11/27/2015",
+      "releasedOn": "January 1, 2016",
       "tests": [
         "assert(myVar === 88, 'message: <code>myVar</code> should equal <code>88</code>');",
         "assert(/[+]{2}/.test(editor.getValue()), 'message: Use the <code>++</code> operator');",
@@ -431,7 +431,7 @@
         "<h4>Instructions</h4>",
         "Change the code to use the <code>--</code> operator on <code>myVar</code>"
       ],
-      "releasedOn": "11/27/2015",
+      "releasedOn": "January 1, 2016",
       "tests": [
         "assert(myVar === 10, 'message: <code>myVar</code> should equal <code>10</code>');",
         "assert(/myVar[-]{2}/.test(editor.getValue()), 'message: Use the <code>--</code> operator on <code>myVar</code>');",
@@ -548,7 +548,7 @@
         "<h4>Instructions</h4>",
         "Set <code>remainder</code> equal to the remainder of <code>11</code> divided by <code>3</code> using the <dfn>remainder</dfn> (<code>%</code>) operator."
       ],
-      "releasedOn": "11/27/2015",
+      "releasedOn": "January 1, 2016",
       "tests": [
         "assert(remainder === 2, 'message: The value of <code>remainder</code> should be <code>2</code>');",
         "assert(/\\d+\\s*%\\s*\\d+/.test(editor.getValue()), 'message: You should use the <code>%</code> operator');"
@@ -585,7 +585,7 @@
         "<h4>Instructions</h4>",
         "Convert the assignments for <code>a</code>, <code>b</code>, and <code>c</code> to use the <code>+=</code> operator."
       ],
-      "releasedOn": "11/27/2015",
+      "releasedOn": "January 1, 2016",
       "tests": [
         "assert(a === 15, 'message: <code>a</code> should equal <code>15</code>');",
         "assert(b === 26, 'message: <code>b</code> should equal <code>26</code>');",
@@ -636,7 +636,7 @@
         "<h4>Instructions</h4>",
         "Convert the assignments for <code>a</code>, <code>b</code>, and <code>c</code> to use the <code>-=</code> operator."
       ],
-      "releasedOn": "11/27/2015",
+      "releasedOn": "January 1, 2016",
       "tests": [
         "assert(a === 5, 'message: <code>a</code> should equal <code>5</code>');",
         "assert(b === -6, 'message: <code>b</code> should equal <code>-6</code>');",
@@ -690,7 +690,7 @@
         "<h4>Instructions</h4>",
         "Convert the assignments for <code>a</code>, <code>b</code>, and <code>c</code> to use the <code>*=</code> operator."
       ],
-      "releasedOn": "11/27/2015",
+      "releasedOn": "January 1, 2016",
       "tests": [
         "assert(a === 25, 'message: <code>a</code> should equal <code>25</code>');",
         "assert(b === 36, 'message: <code>b</code> should equal <code>36</code>');",
@@ -742,7 +742,7 @@
         "<h4>Instructions</h4>",
         "Convert the assignments for <code>a</code>, <code>b</code>, and <code>c</code> to use the <code>/=</code> operator."
       ],
-      "releasedOn": "11/27/2015",
+      "releasedOn": "January 1, 2016",
       "tests": [
         "assert(a === 4, 'message: <code>a</code> should equal <code>4</code>');",
         "assert(b === 27, 'message: <code>b</code> should equal <code>27</code>');",
@@ -790,7 +790,7 @@
         "The algorithm to convert from Celsius to Fahrenheit is the temperature in Celsius times 9/5, plus 32.",
         "You are given a variable <code>Tc</code> representing a temperature in Celsius.  Create a variable <code>Tf</code> and apply the algorithm to assign it the corresponding temperature in Fahrenheit."
       ],
-      "releasedOn": "11/27/2015",
+      "releasedOn": "January 1, 2016",
       "tests": [
         "assert(typeof convert(0) === 'number', 'message: <code>convert(0)</code> should return a number');",
         "assert(convert(-30) === -22, 'message: <code>convert(-30)</code> should return a value of <code>-22</code>');",
@@ -879,7 +879,7 @@
         "Use <dfn>backslashes</dfn> to assign the following to <code>myStr</code> variable:",
         "<code>\"I am a \"double quoted\" string inside \"double quotes\"\"</code>"
       ],
-      "releasedOn": "11/27/2015",
+      "releasedOn": "January 1, 2016",
       "tests": [
         "assert(editor.getValue().match(/\\\\\"/g).length === 4 && editor.getValue().match(/[^\\\\]\"/g).length === 2, 'message: You should use two double quotes (<code>&quot;</code>) and four escaped double quotes (<code>&#92;&quot;</code>) ');"
       ],
@@ -910,7 +910,7 @@
         "<h4>Instructions</h4>",
         "Change the provided string from double to single quotes and remove the escaping."
       ],
-      "releasedOn": "11/27/2015",
+      "releasedOn": "January 1, 2016",
       "tests": [
         "assert(!/\\\\/g.test(editor.getValue()), 'message: Remove all the <code>backslashes</code> (<code>\\</code>)');",
         "assert(editor.getValue().match(/\"/g).length === 4 && editor.getValue().match(/'/g).length === 2, 'message: You should have two single quotes <code>&#39;</code> and four double quotes <code>&quot;</code>');",
@@ -945,7 +945,7 @@
         "<h4>Instructions</h4>",
         "Encode the following sequence, separated by spaces:<br><code>backslash tab tab carriage-return new-line</code> and assign it to <code>myStr</code>"
       ],
-      "releasedOn": "11/27/2015",
+      "releasedOn": "January 1, 2016",
       "tests": [
         "assert(myStr === \"\\\\ \\t \\t \\r \\n\", 'message: <code>myStr</code> should have the escape sequences for <code>backslash tab tab carriage-return new-line</code> separated by spaces');"
       ],
@@ -977,7 +977,7 @@
         "Build <code>myStr</code> from the strings <code>\"This is the start. \"</code> and <code>\"This is the end.\"</code> using the <code>+</code> operator.",
         ""
       ],
-      "releasedOn": "11/27/2015",
+      "releasedOn": "January 1, 2016",
       "tests": [
         "assert(myStr === \"This is the start. This is the end.\", 'message: <code>myStr</code> should have a value of <code>This is the start. This is the end</code>');",
         "assert(editor.getValue().match(/\"\\s*\\+\\s*\"/g).length > 1, 'message: Use the <code>+</code> operator to build <code>myStr</code>');"
@@ -1011,7 +1011,7 @@
         "<h4>Instructions</h4>",
         "Build <code>myStr</code> over several lines by concatenating these two strings:<br><code>\"This is the first line. \"</code> and <code>\"This is the second line.\"</code> using the <code>+=</code> operator."
       ],
-      "releasedOn": "11/27/2015",
+      "releasedOn": "January 1, 2016",
       "tests": [
         "assert(myStr === \"This is the first line. This is the second line.\", 'message: <code>myStr</code> should have a value of <code>This is the first line. This is the second line.</code>');",
         "assert(editor.getValue().match(/\\w\\s*\\+=\\s*\"/g).length > 1 && editor.getValue().match(/\\w\\s*\\=\\s*\"/g).length > 1, 'message: Use the <code>+=</code> operator to build <code>myStr</code>');"
@@ -1047,7 +1047,7 @@
         "<h4>Instructions</h4>",
         "Set <code>myName</code> and build <code>myStr</code> with <code>myName</code> between the strings <code>\"My name is \"</code> and <code>\" and I am swell!\"</code>"
       ],
-      "releasedOn": "11/27/2015",
+      "releasedOn": "January 1, 2016",
       "tests": [
         "assert(typeof myName !== 'undefined' && myName.length > 2, 'message: <code>myName</code> should be set to a string at least 3 characters long');",
         "assert(editor.getValue().match(/\"\\s*\\+\\s*myName\\s*\\+\\s*\"/g).length > 0, 'message: Use two <code>+</code> operators to build <code>myStr</code> with <code>myName<code> inside it');"
@@ -1083,7 +1083,7 @@
         "<h4>Instructions</h4>",
         "Set <code>someAdjective</code> and append it to <code>myStr</code> using the <code>+=</code> operator."
       ],
-      "releasedOn": "11/27/2015",
+      "releasedOn": "January 1, 2016",
       "tests": [
         "assert(typeof someAdjective !== 'undefined' && someAdjective.length > 2, 'message: <code>someAdjective</code> should be set to a string at least 3 characters long');",
         "assert(editor.getValue().match(/\\w\\s*\\+=\\s*someAdjective\\s*;/).length > 0, 'message: Append <code>someAdjective</code> to <code>myStr</code> using the <code>+=</code> operator');"
@@ -1119,7 +1119,7 @@
     },
     {
       "id": "bd7123c9c448eddfaeb5bdef",
-      "title": "Find Length of a String",
+      "title": "Find the Length of a String",
       "description": [
         "You can find the length of a <code>String</code> value by writing <code>.length</code> after the string variable or string literal.",
         "<code>\"Alan Peter\".length; // 10</code>",
@@ -1210,7 +1210,7 @@
         "<h4>Instructions</h4>",
         "Correct the assignment to <code>myStr</code> to achieve the desired effect."
       ],
-      "releasedOn": "11/27/2015",
+      "releasedOn": "January 1, 2016",
       "tests": [
         "assert(myStr === \"Hello World\", 'message: <code>myStr</code> should have a value of <code>Hello World</code>');",
         "assert(/myStr = \"Jello World\"/.test(editor.getValue()), 'message: Do not change the code above the line');"
@@ -1362,7 +1362,7 @@
         "<code>myNoun</code>, <code>myAdjective</code>, <code>myVerb</code>, and <code>myAdverb</code>.",
         "The tests will run your function with several different inputs to make sure it works properly."
       ],
-      "releasedOn": "11/27/2015",
+      "releasedOn": "January 1, 2016",
       "tests": [
         "assert(typeof wordBlanks(\"\",\"\",\"\",\"\") === 'string', 'message: <code>wordBlanks(\"\",\"\",\"\",\"\")</code> should return a string');",
         "assert(wordBlanks(\"\",\"\",\"\",\"\").length > 30, 'message: <code>wordBlanks(\"\",\"\",\"\",\"\")</code> should return at least 30 characters with empty inputs');",
@@ -1544,6 +1544,7 @@
         "<h4>Instructions</h4>",
         "Read from <code>myArray</code> using bracket notation so that myData is equal to <code>8</code>"
       ],
+      "releasedOn": "January 1, 2016",
       "tests": [
         "assert(myData === 8, 'message: <code>myData</code> should be equal to <code>8</code>.');",
         "assert(/myArray\\[2\\]\\[1\\]/g.test(editor.getValue()), 'message: You should be using bracket notation to read the value from <code>myArray</code>.');"
@@ -1728,7 +1729,7 @@
         "<code>[\"Chocolate Bar\", 15]</code>",
         "There should be at least 5 sub-arrays in the list."
       ],
-      "releasedOn": "11/27/2015",
+      "releasedOn": "January 1, 2016",
       "tests": [
         "assert(isArray, 'message: <code>myList</code> should be an array');",
         "assert(hasString, 'message: The first elements in each of your sub-arrays must all be strings');",
@@ -1855,7 +1856,7 @@
         "<h4>Instructions</h4>",
         "<ol><li>Create a function called <code>myFunction</code> that accepts two arguments and outputs their sum to the dev console.</li><li>Call the function.</li></ol>"
       ],
-      "releasedOn": "11/27/2015",
+      "releasedOn": "January 1, 2016",
       "tests": [
         "assert(typeof myFunction === 'function', 'message: <code>myFunction</code> should be a function');",
         "capture(); myFunction(1,2); uncapture(); assert(logOutput == 3, 'message: <code>myFunction(1,2)</code> should output <code>3</code>');",
@@ -1919,7 +1920,7 @@
         "Declare a <code>global</code> variable <code>myGlobal</code> outside of any function. Initialize it to have a value of <code>10</code> ",
         "Inside function <code>fun1</code>, assign <code>5</code> to <code>oopsGlobal</code> <strong><em>without</em></strong> using the <code>var</code> keyword."
       ],
-      "releasedOn": "11/27/2015",
+      "releasedOn": "January 1, 2016",
       "tests": [
         "assert(typeof myGlobal != \"undefined\", 'message: <code>myGlobal</code> should be defined');",
         "assert(myGlobal === 10, 'message: <code>myGlobal</code> should have a value of <code>10</code>');",
@@ -1992,7 +1993,7 @@
         "<h4>Instructions</h4>",
         "Declare a local variable <code>myVar</code> inside <code>myFunction</code>"
       ],
-      "releasedOn": "11/27/2015",
+      "releasedOn": "January 1, 2016",
       "tests": [
         ""
       ],
@@ -2047,7 +2048,7 @@
         "<h4>Instructions</h4>",
         "Add a local variable to <code>myFunction</code> to override the value of <code>outerWear</code> with <code>\"sweater\"</code>."
       ],
-      "releasedOn": "11/27/2015",
+      "releasedOn": "January 1, 2016",
       "tests": [
         "assert(outerWear === \"T-Shirt\", 'message: Do not change the value of the global <code>outerWear</code>');",
         "assert(myFunction() === \"sweater\", 'message: <code>myFunction</code> should return <code>\"sweater\"</code>');",
@@ -2094,7 +2095,7 @@
         "<h4>Instructions</h4>",
         "Create a function <code>timesFive</code> that accepts one argument, multiplies it by <code>5</code>, and returns the new value."
       ],
-      "releasedOn": "11/27/2015",
+      "releasedOn": "January 1, 2016",
       "tests": [
         "assert(typeof timesFive === 'function', 'message: <code>timesFive</code> should be a function');",
         "assert(timesFive(5) === 25, 'message: <code>timesFive(5)</code> should return <code>25</code>');",
@@ -2138,7 +2139,7 @@
         "<h4>Instructions</h4>",
         "Call <code>process</code> function with an argument of <code>7</code> and assign it's return value to the variable <code>processed</code>."
       ],
-      "releasedOn": "11/27/2015",
+      "releasedOn": "January 1, 2016",
       "tests": [
         "assert(processed === 2, 'message: <code>processed</code> should have a value of <code>10</code>');",
         "assert(/processed\\s*=\\s*process\\(\\s*7\\s*\\)\\s*;/.test(editor.getValue()), 'message: You should assign <code>process</code> to <code>processed</code>');"
@@ -2176,7 +2177,7 @@
         "In Computer Science a <dfn>queue</dfn> is an abstract <dfn>Data Structure</dfn> where items are kept in order. New items can be added at the back of the <code>queue</code> and old items are taken off from the front of the <code>queue</code>.",
         "Write a function <code>queue</code> which takes an \"array\" and an \"item\" as arguments.  Add the item onto the end of the array, then remove and return the item at the front of the queue."
       ],
-      "releasedOn": "11/27/2015",
+      "releasedOn": "January 1, 2016",
       "tests": [
         "assert(queue([],1) === 1, 'message: <code>queue([], 1)</code> should return <code>1</code>');",
         "assert(queue([2],1) === 2, 'message: <code>queue([2], 1)</code> should return <code>2</code>');",
@@ -2301,7 +2302,7 @@
         "<h4>Instructions</h4>",
         "Add the <code>equality operator</code> to the indicated line so that the function will return \"Equal\" when <code>val</code> is equivalent to <code>12</code>"
       ],
-      "releasedOn": "11/27/2015",
+      "releasedOn": "January 1, 2016",
       "tests": [
         "assert(myTest(10) === \"Not Equal\", 'message: <code>myTest(10)</code> should return \"Not Equal\"');",
         "assert(myTest(12) === \"Equal\", 'message: <code>myTest(12)</code> should return \"Equal\"');",
@@ -2347,7 +2348,7 @@
         "<h4>Instructions</h4>",
         "Use strict equality operator in <code>if</code> statement so the function will return \"Equal\" when <code>val</code> is strictly equal to <code>7</code>"
       ],
-      "releasedOn": "11/27/2015",
+      "releasedOn": "January 1, 2016",
       "tests": [
         "assert(myTest(10) === \"Not Equal\", 'message: <code>myTest(10)</code> should return \"Not Equal\"');",
         "assert(myTest(7) === \"Equal\", 'message: <code>myTest(7)</code> should return \"Equal\"');",
@@ -2392,7 +2393,7 @@
         "<h4>Instructions</h4>",
         "Add the inequality operator <code>!=</code> in the <code>if</code> statement so that the function will return \"Not Equal\" when <code>val</code> is not equivalent to <code>99</code>"
       ],
-      "releasedOn": "11/27/2015",
+      "releasedOn": "January 1, 2016",
       "tests": [
         "assert(myTest(99) === \"Equal\", 'message: <code>myTest(99)</code> should return \"Equal\"');",
         "assert(myTest(\"99\") === \"Equal\", 'message: <code>myTest(\"99\")</code> should return \"Equal\"');",
@@ -2439,7 +2440,7 @@
         "<h4>Instructions</h4>",
         "Add the <code>strict inequality operator</code> to the <code>if</code> statement so the function will return \"Not Equal\" when <code>val</code> is not strictly equal to <code>17</code>"
       ],
-      "releasedOn": "11/27/2015",
+      "releasedOn": "January 1, 2016",
       "tests": [
         "assert(myTest(17) === \"Equal\", 'message: <code>myTest(17)</code> should return \"Equal\"');",
         "assert(myTest(\"17\") === \"Not Equal\", 'message: <code>myTest(\"17\")</code> should return \"Not Equal\"');",
@@ -2490,7 +2491,7 @@
         "<h4>Instructions</h4>",
         "Add the <code>greater than</code> operator to the indicated lines so that the return statements make sense."
       ],
-      "releasedOn": "11/27/2015",
+      "releasedOn": "January 1, 2016",
       "tests": [
         "assert(myTest(0) === \"10 or Under\", 'message: <code>myTest(0)</code> should return \"10 or Under\"');",
         "assert(myTest(10) === \"10 or Under\", 'message: <code>myTest(10)</code> should return \"10 or Under\"');",
@@ -2545,7 +2546,7 @@
         "<h4>Instructions</h4>",
         "Add the <code>greater than equal to</code> operator to the indicated lines so that the return statements make sense."
       ],
-      "releasedOn": "11/27/2015",
+      "releasedOn": "January 1, 2016",
       "tests": [
         "assert(myTest(0) === \"9 or Under\", 'message: <code>myTest(0)</code> should return \"9 or Under\"');",
         "assert(myTest(9) === \"9 or Under\", 'message: <code>myTest(9)</code> should return \"9 or Under\"');",
@@ -2603,7 +2604,7 @@
         "<h4>Instructions</h4>",
         "Add the <code>less than</code> operator to the indicated lines so that the return statements make sense."
       ],
-      "releasedOn": "11/27/2015",
+      "releasedOn": "January 1, 2016",
       "tests": [
         "assert(myTest(0) === \"Under 25\", 'message: <code>myTest(0)</code> should return \"Under 25\"');",
         "assert(myTest(24) === \"Under 25\", 'message: <code>myTest(24)</code> should return \"Under 25\"');",
@@ -2660,7 +2661,7 @@
         "<h4>Instructions</h4>",
         "Add the <code>less than equal to</code> operator to the indicated lines so that the return statements make sense."
       ],
-      "releasedOn": "11/27/2015",
+      "releasedOn": "January 1, 2016",
       "tests": [
         "assert(myTest(0) === \"Smaller Than or Equal to 12\", 'message: <code>myTest(0)</code> should return \"Smaller Than or Equal to 12\"');",
         "assert(myTest(11) === \"Smaller Than or Equal to 12\", 'message: <code>myTest(11)</code> should return \"Smaller Than or Equal to 12\"');",
@@ -2721,7 +2722,7 @@
         "<h4>Instructions</h4>",
         "Combine the two if statements into one statement which will return <code>\"Yes\"</code> if <code>val</code> is less than or equal to <code>50</code> and greater than or equal to <code>25</code>.  Otherwise, will return <code>\"No\"</code>."
       ],
-      "releasedOn": "11/27/2015",
+      "releasedOn": "January 1, 2016",
       "tests": [
         "assert(editor.getValue().match(/&&/g).length === 1, 'message: You should use the <code>&&</code> operator once');",
         "assert(editor.getValue().match(/if/g).length === 1, 'message: You should only have one <code>if</code> statement');",
@@ -2779,7 +2780,7 @@
         "<h4>Instructions</h4>",
         "Combine the two <code>if</code> statements into one statement which returns <code>\"Inside\"</code> if <code>val</code> is between <code>10</code> and <code>20</code>, inclusive.  Otherwise, return <code>\"Outside\"</code>."
       ],
-      "releasedOn": "11/27/2015",
+      "releasedOn": "January 1, 2016",
       "tests": [
         "assert(editor.getValue().match(/\\|\\|/g).length === 1, 'message: You should use the <code>||</code> operator once');",
         "assert(editor.getValue().match(/if/g).length === 1, 'message: You should only have one <code>if</code> statement');",
@@ -2836,7 +2837,7 @@
         "<h4>Instructions</h4>",
         "Combine the <code>if</code> statements into a single statement."
       ],
-      "releasedOn": "11/27/2015",
+      "releasedOn": "January 1, 2016",
       "tests": [
         "assert(editor.getValue().match(/if/g).length === 1, 'message: You should only have one <code>if</code> statement');",
         "assert(/else/g.test(editor.getValue()), 'message: You should use an <code>else</code> statement');",
@@ -2894,7 +2895,7 @@
         "<blockquote>if (num > 15) {<br>  return \"Bigger then 15\";<br>} else if (num < 5) {<br>  return \"Smaller than 5\";<br>} else {<br>  return \"Between 5 and 15\";<br>}</blockquote>",
         "<h4>Instructions<h4>Convert the logic to use <code>else if</code> statements."
       ],
-      "releasedOn": "11/27/2015",
+      "releasedOn": "January 1, 2016",
       "tests": [
         "assert(editor.getValue().match(/else/g).length > 1, 'message: You should have at least two <code>else</code> statements');",
         "assert(editor.getValue().match(/if/g).length > 1, 'message: You should have at least two <code>if</code> statements');",
@@ -2950,7 +2951,7 @@
         "Write chained <code>if</code>/<code>else if</code> statements to fulfill the following conditions:",
         "<code>num &lt;   5</code> - return \"Tiny\"<br><code>num &lt;  10</code> - return \"Small\"<br><code>num &lt; 15</code> - return \"Medium\"<br><code>num &lt; 20</code> - return \"Large\"<br><code>num >= 20</code>  - return \"Huge\""
       ],
-      "releasedOn": "11/27/2015",
+      "releasedOn": "January 1, 2016",
       "tests": [
         "assert(editor.getValue().match(/else/g).length > 3, 'message: You should have at least four <code>else</code> statements');",
         "assert(editor.getValue().match(/if/g).length > 3, 'message: You should have at least four <code>if</code> statements');",
@@ -3010,7 +3011,7 @@
         "<table class=\"table table-striped\"><thead><tr><th>Strokes</th><th>Return</th></tr></thead><tbody><tr><td>1</td><td>\"Hole-in-one!\"</td></tr><tr><td>&lt;= par - 2</td><td>\"Eagle\"</td></tr><tr><td>par - 1</td><td>\"Birdie\"</td></tr><tr><td>par</td><td>\"Par\"</td></tr><tr><td>par + 1</td><td>\"Bogey\"</td></tr><tr><td>par + 2</td><td>\"Double Bogey\"</td></tr><tr><td>&gt;= par + 3</td><td>\"Go Home!\"</td></tr></tbody></table>",
         "<code>par</code> and <code>strokes</code> will always be numeric and positive."
       ],
-      "releasedOn": "11/27/2015",
+      "releasedOn": "January 1, 2016",
       "tests": [
         "assert(golfScore(4, 1) === \"Hole-in-one!\", 'message: <code>golfScore(4, 1)</code> should return \"Hole-in-one!\"');",
         "assert(golfScore(4, 2) === \"Eagle\", 'message: <code>golfScore(4, 2)</code> should return \"Eagle\"');",
@@ -3083,7 +3084,7 @@
         "<h4>Instructions</h4>",
         "Write a switch statement to set <code>answer</code> for the following conditions:<br><code>1</code> - \"alpha\"<br><code>2</code> - \"beta\"<br><code>3</code> - \"gamma\"<br><code>4</code> - \"delta\""
       ],
-      "releasedOn": "11/27/2015",
+      "releasedOn": "January 1, 2016",
       "tests": [
         "assert(myTest(1) === \"alpha\", 'message: <code>myTest(1) should have a value of \"alpha\"');",
         "assert(myTest(2) === \"beta\", 'message: <code>myTest(2) should have a value of \"beta\"');",
@@ -3145,7 +3146,7 @@
         "<h4>Instructions</h4>",
         "Write a switch statement to set <code>answer</code> for the following conditions:<br><code>\"a\"</code> - \"apple\"<br><code>\"b\"</code> - \"bird\"<br><code>\"c\"</code> - \"cat\"<br><code>default</code> - \"stuff\""
       ],
-      "releasedOn": "11/27/2015",
+      "releasedOn": "January 1, 2016",
       "tests": [
         "assert(myTest(\"a\") === \"apple\", 'message: <code>myTest(\"a\") should have a value of \"apple\"');",
         "assert(myTest(\"b\") === \"bird\", 'message: <code>myTest(\"b\") should have a value of \"bird\"');",
@@ -3210,7 +3211,7 @@
         "<strong>Note</strong>",
         "<ber>You will need to have a <code>case</code> statement for each number in the range."
       ],
-      "releasedOn": "11/27/2015",
+      "releasedOn": "January 1, 2016",
       "tests": [
         "assert(myTest(1) === \"Low\", 'message: <code>myTest(1)</code> should return \"Low\"');",
         "assert(myTest(2) === \"Low\", 'message: <code>myTest(2)</code> should return \"Low\"');",
@@ -3282,7 +3283,7 @@
         "<h4>Instructions</h4>",
         "Change the chained <code>if</code>/<code>if else</code> statements into a <code>switch</code> statement."
       ],
-      "releasedOn": "11/27/2015",
+      "releasedOn": "January 1, 2016",
       "tests": [
         "assert(!/else/g.test(editor.getValue()), 'message: You should not use any <code>else</code> statements');",
         "assert(!/if/g.test(editor.getValue()), 'message: You should not use any <code>if</code> statements');",
@@ -3363,7 +3364,7 @@
         "<h4>Instructions</h4>",
         "Fix the function <code>isLess</code> to remove the <code>if/else</code> statements."
       ],
-      "releasedOn": "11/27/2015",
+      "releasedOn": "January 1, 2016",
       "tests": [
         "assert(isLess(10,15) === true, 'message: <code>isLess(10,15)</code> should return <code>true</code>');",
         "assert(isLess(15, 10) === false, 'message: <code>isLess(15,10)</code> should return <code>true</code>');",
@@ -3407,7 +3408,7 @@
         "<h4>Instructions</h4>",
         "Modify the function <code>abTest</code> so that if <code>a</code> or <code>b</code> are less than <code>0</code> the function will immediately exit with a value of <code>undefined</code>."
       ],
-      "releasedOn": "11/27/2015",
+      "releasedOn": "January 1, 2016",
       "tests": [
         "assert(typeof abTest(2,2) === 'number' , 'message: <code>abTest(2,2)</code> should return a number');",
         "assert(abTest(2,2) === 8 , 'message: <code>abTest(2,2)</code> should return <code>8</code>');",
@@ -3461,7 +3462,7 @@
         "<strong>Example Output</strong>",
         "<code>-3 Hold</code><br><code>5 Bet</code>"
       ],
-      "releasedOn": "11/27/2015",
+      "releasedOn": "January 1, 2016",
       "tests": [
         "assert((function(){ count = 0; cc(2);cc(3);cc(4);cc(5);var out = cc(6); if(out === \"5 Bet\") {return true;} return false; })(), 'message: Cards Sequence 2, 3, 4, 5, 6 should return <code>\"5 Bet\"</code>');",
         "assert((function(){ count = 0; cc(7);cc(8);var out = cc(9); if(out === \"0 Hold\") {return true;} return false; })(), 'message: Cards Sequence 7, 8, 9 should return <code>\"0 Hold\"</code>');",
@@ -3573,7 +3574,7 @@
         "<h4>Instructions</h4>",
         "Read the values of the properties <code>hat</code> and <code>shirt</code> of <code>testObj</code> using dot notation."
       ],
-      "releasedOn": "11/27/2015",
+      "releasedOn": "January 1, 2016",
       "tests": [
         "assert(typeof hatValue === 'string' , 'message: <code>hatValue</code> should be a string');",
         "assert(hatValue === 'ballcap' , 'message: The value of <code>hatValue</code> should be <code>\"ballcap\"</code>');",
@@ -3625,7 +3626,7 @@
         "<h4>Instructions</h4>",
         "Read the values of the properties <code>\"an entree\"</code> and <code>\"the drink\"</code> of <code>testObj</code> using bracket notation."
       ],
-      "releasedOn": "11/27/2015",
+      "releasedOn": "January 1, 2016",
       "tests": [
         "assert(typeof entreeValue === 'string' , 'message: <code>entreeValue</code> should be a string');",
         "assert(entreeValue === 'hamburger' , 'message: The value of <code>entreeValue</code> should be <code>\"hamburger\"</code>');",
@@ -3677,7 +3678,7 @@
         "<h4>Instructions</h4>",
         "Use the <code>playerNumber</code> variable to lookup player <code>16</code> in <code>testObj</code> using bracket notation."
       ],
-      "releasedOn": "11/27/2015",
+      "releasedOn": "January 1, 2016",
       "tests": [
         "assert(typeof playerNumber === 'number', 'message: <code>playerNumber</code> should be a number');",
         "assert(typeof player === 'string', 'message: The variable <code>player</code> should be a string');",
@@ -3877,7 +3878,7 @@
         "<h4>Instructions</h4>",
         "Convert the switch statement into a lookup table called <code>lookup</code>.  Use it to lookup <code>val</code> and return the associated string."
       ],
-      "releasedOn": "11/27/2015",
+      "releasedOn": "January 1, 2016",
       "tests": [
         "assert(numberLookup(0) === 'zero', 'message: <code>numberLookup(0)</code> should equal <code>\"zero\"</code>');",
         "assert(numberLookup(1) === 'one', 'message: <code>numberLookup(1)</code> should equal <code>\"one\"</code>');",
@@ -3975,6 +3976,7 @@
         "<h4>Instructions</h4>",
         "  Modify function <code>checkObj</code> to test <code>myObj</code> for <code>checkProp</code>.  If the property is found, return that property's value.  If not return <code>\"Not Found\"</code>."
       ],
+      "releasedOn": "January 1, 2016",
       "tests": [
         "assert(checkObj(\"gift\") === \"pony\", 'message: <code>checkObj(\"gift\")</code> should return  <code>\"pony\"</code>.');",
         "assert(checkObj(\"pet\") === \"kitten\", 'message: <code>checkObj(\"gift\")</code> should return  <code>\"kitten\"</code>.');",
@@ -4028,7 +4030,7 @@
         "<h4>Instructions</h4>",
         "Add a new album to the <code>myMusic</code> JSON object.  Add  <code>artist</code> and <code>title</code> strings, <code>release_year</code> year, and a <code>formats</code> array of strings."
       ],
-      "releasedOn": "11/27/2015",
+      "releasedOn": "January 1, 2016",
       "tests": [
         "assert(Array.isArray(myMusic), 'message: <code>myMusic</code> should be an array');",
         "assert(myMusic.length > 1, 'message: <code>myMusic</code> should have at least two elements');",
@@ -4104,7 +4106,7 @@
         "<h4>Instructions</h4>",
         "Access the <code>myStorage</code> JSON object to retrieve the contents of the <code>glove box</code>.  Only use object notation for properties with a space in their name."
       ],
-      "releasedOn": "11/27/2015",
+      "releasedOn": "January 1, 2016",
       "tests": [
         "assert(gloveBoxContents === \"maps\", 'message: <code>gloveBoxContents</code> should equal \"maps\"');",
         "assert(/=\\s*myStorage\\.car\\.inside\\[([\"'])glove box\\1\\]/.test(editor.getValue()), 'message: Use dot and bracket notation to access <code>myStorage</code>');"
@@ -4163,7 +4165,7 @@
         "<h4>Instructions</h4>",
         "Retrieve the second tree using object dot and array bracket notation."
       ],
-      "releasedOn": "11/27/2015",
+      "releasedOn": "January 1, 2016",
       "tests": [
         "assert(secondTree === \"pine\", 'message: <code>secondTree</code> should equal \"pine\"');",
         "assert(/=\\s*myPlants\\[1\\].list\\[1\\]/.test(editor.getValue()), 'message: Use dot and bracket notation to access <code>myPlants</code>');"
@@ -4214,7 +4216,7 @@
       "description": [
         "Modify the contents of a JSON object"
       ],
-      "releasedOn": "11/27/2015",
+      "releasedOn": "January 1, 2016",
       "tests": [
         "assert(1===1, 'message: message here');"
       ],
@@ -4249,7 +4251,7 @@
         "If <code>value</code> is blank, delete that <code>prop</code>.",
         "Always return the entire collection object."
       ],
-      "releasedOn": "11/27/2015",
+      "releasedOn": "January 1, 2016",
       "tests": [
         "collection = collectionCopy; assert(update(5439, \"artist\", \"ABBA\")[5439][\"artist\"] === \"ABBA\", 'message: After <code>update(5439, \"artist\", \"ABBA\")</code>, <code>artist</code> should be <code>\"ABBA\"</code>');",
         "update(2548, \"artist\", \"\"); assert(!collection[2548].hasOwnProperty(\"artist\"), 'message: After <code>update(2548, \"artist\", \"\")</code>, <code>artist</code> should not be set');",
@@ -4478,7 +4480,7 @@
         "<h4>Instructions</h4>",
         "Create a variable <code>total</code>. Use a <code>for</code> loop to add each element of <code>myArr</code> to total."
       ],
-      "releasedOn": "11/27/2015",
+      "releasedOn": "January 1, 2016",
       "tests": [
         "assert(total !== 'undefined', 'message: <code>total</code> should be defined');",
         "assert(total === 20, 'message: <code>total</code> should equal 20');",
@@ -4529,7 +4531,7 @@
         "<h4>Instructions</h4>",
         "Modify function <code>multiplyAll</code> so that it multiplies <code>product</code> by each number in the subarrays of <code>arr</code>"
       ],
-      "releasedOn": "11/27/2015",
+      "releasedOn": "January 1, 2016",
       "tests": [
         "assert(multiplyAll([[1],[2],[3]]) === 6, 'message: <code>multiplyAll([[1],[2],[3]]);</code> should return <code>6</code>');",
         "assert(multiplyAll([[1,2],[3,4],[5,6,7]]) === 5040, 'message: <code>multiplyAll([[1,2],[3,4],[5,6,7]])</code> should return <code>5040</code>');",
@@ -4612,7 +4614,7 @@
         "Write a function which takes a <code>ROT13</code> encoded string as input and returns a decoded string.  All letters will be uppercase.  Do not transform any non-alphabetic character (IE: spaces, punctiation), but do pass them on.",
         "The provided code transforms the input into an array for you, <code>codeArr</code>. Place the decoded values into the <code>decodedArr</code> array where the provided code will transform it back into a string."
       ],
-      "releasedOn": "11/27/2015",
+      "releasedOn": "January 1, 2016",
       "tests": [
         "assert(rot13(\"SERR PBQR PNZC\") === \"FREE CODE CAMP\", 'message: <code>rot13(\"SERR PBQR PNZC\")</code> should decode to <code>\"FREE CODE CAMP\"</code>');",
         "assert(rot13(\"SERR CVMMN!\") === \"FREE PIZZA!\", 'message: <code>rot13(\"SERR CVMMN!\")</code> should decode to <code>\"FREE PIZZA!\"</code>');",
