@@ -87,7 +87,7 @@
       "id": "56533eb9ac21ba0edf2244a8",
       "title": "Storing Values with the Equal Operator",
       "description": [
-        "In Javascript, you can store a value in a variable with the <code>=</code> or <dfn>assignment<dfn> operator.",
+        "In Javascript, you can store a value in a variable with the <dfn>assignment</dfn> or <code>equal</code> (<code>=</code>)  operator.",
         "<code>myVariable = 5;</code>",
         "Assigns the <code>Number</code> value <code>5</code> to <code>myVariable</code>.",
         "Assignment always goes from right to left.  Everything to the right of the <code>=</code> operator is resolved before the value is assigned to the variable to the left of the operator.",
@@ -225,7 +225,7 @@
         "<strong>Examples:</strong>",
         "<blockquote>var someVariable;<br>var anotherVariableName;<br>var thisVariableNameIsTooLong;</blockquote>",
         "<h4>Instructions</h4>",
-        "Correct the variable assignements so their names match their variable declarations above."
+        "Correct the variable assignments so their names match their variable declarations above."
       ],
       "releasedOn": "11/27/2015",
       "tests": [
@@ -272,7 +272,7 @@
         "JavaScript uses the <code>+</code> symbol as addition operation when placed between two numbers.",
         "",
         "<strong>Example</strong>",
-        "<blockquote>5 + 10 = 15</blockquote>",
+        "<blockquote>myVar = 5 + 10; // assigned 15</blockquote>",
         "",
         "<h4>Instructions</h4>",
         "Change the <code>0</code> so that sum will equal <code>20</code>."
@@ -299,10 +299,10 @@
         "JavaScript uses the <code>-</code> symbol for subtraction.",
         "",
         "<strong>Example</strong>",
-        "<blockquote>12 - 6 = 6</blockquote>",
+        "<blockquote>myVAr = 12 - 6; // assigned 6</blockquote>",
         "",
         "<h4>Instructions</h4>",
-        "Change the <code>0</code> so that difference will equal <code>12</code>."
+        "Change the <code>0</code> so the difference is <code>12</code>."
       ],
       "tests": [
         "assert(difference === 12, 'message: Make the variable <code>difference</code> equal 12.');",
@@ -330,7 +330,7 @@
         "JavaScript uses the <code>*</code> symbol for multiplication of two numbers.",
         "",
         "<strong>Example</strong>",
-        "<blockquote>13 * 13 = 169</blockquote>",
+        "<blockquote>myVar = 13 * 13; // assigned 169</blockquote>",
         "",
         "<h4>Instructions</h4>",
         "Change the <code>0</code> so that product will equal <code>80</code>."
@@ -361,10 +361,10 @@
         "JavaScript uses the <code>/</code> symbol for division.",
         "",
         "<strong>Example</strong>",
-        "<blockquote>16 / 2 = 8</blockquote>",
+        "<blockquote>myVar = 16 / 2; // assigned 8</blockquote>",
         "",
         "<h4>Instructions</h4>",
-        "Change the <code>0</code> so that <code>quotient</code> will equal to <code>2</code>."
+        "Change the <code>0</code> so that the <code>quotient</code> is equal to <code>2</code>."
       ],
       "tests": [
         "assert(quotient === 2, 'message: Make the variable <code>quotient</code> equal to 2.');",
@@ -387,7 +387,7 @@
       "description": [
         "You can easily <dfn>increment</dfn> or add one to a variable with the <code>++</code> operator.",
         "<code>i++;</code>",
-        "is the equivilent of",
+        "is the equivalent of",
         "<code>i = i + 1;</code>",
         "<h4>Instructions</h4>",
         "Change the code to use the <code>++</code> operator on <code>myVar</code>"
@@ -426,7 +426,7 @@
       "description": [
         "You can easily <dfn>decrement</dfn> or decrease a variable by one with the <code>--</code> operator.",
         "<code>i--;</code>",
-        "is the equivilent of",
+        "is the equivalent of",
         "<code>i = i - 1;</code>",
         "<h4>Instructions</h4>",
         "Change the code to use the <code>--</code> operator on <code>myVar</code>"
@@ -466,8 +466,8 @@
         "We can store decimal numbers in variables too. Decimal numbers are sometimes refered to as <dfn>floating point</dfn> numbers or <dfn>floats</dfn>.  ",
         "<strong>Note</strong>",
         "Not all real numbers can accurately be represented in <dfn>floating point</dfn>.  This can lead to rounding errors. <a href=\"https://en.wikipedia.org/wiki/Floating_point#Accuracy_problems\" target=\"_blank\">Details Here</a>.",
-        "",
-        "Let's create a variable <code>myDecimal</code> and give it a decimal value."
+        "<h4>Instructions</h4>",
+        "Create a variable <code>myDecimal</code> and give it a decimal value."
       ],
       "tests": [
         "assert(typeof myDecimal === \"number\", 'message: <code>myDecimal</code> should be a number.');",
@@ -492,6 +492,7 @@
       "description": [
         "In JavaScript, you can also perform calculations with decimal numbers, just like whole numbers.",
         "Let's multiply two decimals together to get their product.",
+        "<h4>Instructions</h4>",
         "Change the <code>0.0</code> so that product will equal <code>5.0</code>."
       ],
       "tests": [
@@ -514,6 +515,7 @@
       "title": "Divide one Decimal by Another with JavaScript",
       "description": [
         "Now let's divide one decimal by another.",
+        "<h4>Instructions</h4>",
         "Change the <code>0.0</code> so that <code>quotient</code> will equal to <code>2.2</code>."
       ],
       "tests": [
@@ -533,16 +535,18 @@
     },
     {
       "id": "56533eb9ac21ba0edf2244ae",
-      "title": "Find a Remainder with Modulus",
+      "title": "Finding a Remainder in Javascript",
       "description": [
-        "The modulus operator <code>%</code> gives the remainder of the division of two numbers.",
+        "The <dfn>remainder</dfn> operator <code>%</code> gives the remainder of the division of two numbers.  ",
         "<strong>Example</strong>",
         "<blockquote>5 % 2 = 1 because<br>Math.floor(5 / 2) = 2 (Quotient)<br>2 * 2 = 4<br>5 - 4 = 1 (Remainder)</blockquote>",
         "<strong>Usage</strong>",
-        "In Maths, a number can be checked even or odd by checking the remainder of division of the number by <code>2</code>. ",
+        "In mathematics, a number can be checked even or odd by checking the remainder of division of the number by <code>2</code>. ",
         "<blockquote>17 % 2 = 1 (17 is Odd)<br>48 % 2 = 0 (48 is Even)</blockquote>",
+        "<strong>Note</strong>",
+        "The <dfn>remainder</dfn> operator is sometimes incorrectly refered to as  the \"modulus\" operator.  It is very similar to modulus, but does not work properly with negative numbers.",
         "<h4>Instructions</h4>",
-        "Set <code>remainder</code> equal to the remainder of <code>11</code> divided by <code>3</code> using the <dfn>modulus</dfn> operator."
+        "Set <code>remainder</code> equal to the remainder of <code>11</code> divided by <code>3</code> using the <dfn>remainder</dfn> (<code>%</code>) operator."
       ],
       "releasedOn": "11/27/2015",
       "tests": [
@@ -916,6 +920,9 @@
         "var myStr = \"<a href=\\\"http://www.example.com\\\" target=\\\"_blank\\\">Link</a>\";",
         "",
         ""
+      ],
+      "tail": [
+        "(function() { return \"myStr = \" + myStr; })();"
       ],
       "solutions": [
         "var myStr = '<a href=\"http://www.example.com\" target=\"_blank\">Link</a>';"
@@ -1358,7 +1365,7 @@
       "releasedOn": "11/27/2015",
       "tests": [
         "assert(typeof wordBlanks(\"\",\"\",\"\",\"\") === 'string', 'message: <code>wordBlanks(\"\",\"\",\"\",\"\")</code> should return a string');",
-        "assert(wordBlanks(\"\",\"\",\"\",\"\").length > 50, 'message: <code>wordBlanks(\"\",\"\",\"\",\"\")</code> should return at least 50 characters with empty inputs');",
+        "assert(wordBlanks(\"\",\"\",\"\",\"\").length > 30, 'message: <code>wordBlanks(\"\",\"\",\"\",\"\")</code> should return at least 30 characters with empty inputs');",
         "assert(/dog/.test(test1) && /big/.test(test1) && /ran/.test(test1) && /quickly/.test(test1),'message: <code>wordBlanks(\"dog\", \"big\", \"ran\", \"quickly\")</code> should contain all of the passed words.');",
         "assert(/cat/.test(test2) && /little/.test(test2) && /hit/.test(test2) && /slowly/.test(test2),'message: <code>wordBlanks(\"cat\", \"little\", \"hit\", \"slowly\")</code> should contain all of the passed words.');"
       ],
@@ -2821,78 +2828,6 @@
       "namePt": ""
     },
     {
-      "id": "5664820f61c48e80c9fa476c",
-      "title": "Golf Code",
-      "description": [
-        "In the game of golf each hole has a <dfn>par</dfn> for the average number of <dfn>strokes</dfn> needed to sink the ball. Depending on how far above or below <code>par</code> your <code>stokes</code> are, there is a different nickname.",
-        "Your function will be passed a <code>par</code> and <code>strokes</code>. Return strings according to this table (based on order of priority - top (highest) to bottom (lowest)):",
-        "<table class=\"table table-striped\"><thead><tr><th>Stokes</th><th>Return</th></tr></thead><tbody><tr><td>1</td><td>\"Hole-in-one!\"</td></tr><tr><td>&lt;= par - 2</td><td>\"Eagle\"</td></tr><tr><td>par - 1</td><td>\"Birdie\"</td></tr><tr><td>par</td><td>\"Par\"</td></tr><tr><td>par + 1</td><td>\"Bogey\"</td></tr><tr><td>par + 2</td><td>\"Double Bogey\"</td></tr><tr><td>&gt;= par + 3</td><td>\"Go Home!\"</td></tr></tbody></table>",
-        "<code>par</code> and <code>strokes</code> will always be numeric and positive."
-      ],
-      "releasedOn": "11/27/2015",
-      "tests": [
-        "assert(golfScore(4, 1) === \"Hole-in-one!\", 'message: <code>golfScore(4, 1)</code> should return \"Hole-in-one!\"');",
-        "assert(golfScore(4, 2) === \"Eagle\", 'message: <code>golfScore(4, 2)</code> should return \"Eagle\"');",
-        "assert(golfScore(5, 2) === \"Eagle\", 'message: <code>golfScore(4, 2)</code> should return \"Eagle\"');",
-        "assert(golfScore(4, 3) === \"Birdie\", 'message: <code>golfScore(4, 3)</code> should return \"Birdie\"');",
-        "assert(golfScore(4, 4) === \"Par\", 'message: <code>golfScore(4, 4)</code> should return \"Par\"');",
-        "assert(golfScore(1, 1) === \"Hole-in-one!\", 'message: <code>golfScore(1, 1)</code> should return \"Hole-in-one!\"');",
-        "assert(golfScore(5, 5) === \"Par\", 'message: <code>golfScore(5, 5)</code> should return \"Par\"');",
-        "assert(golfScore(4, 5) === \"Bogey\", 'message: <code>golfScore(4, 5)</code> should return \"Bogey\"');",
-        "assert(golfScore(4, 6) === \"Double Bogey\", 'message: <code>golfScore(4, 6)</code> should return \"Double Bogey\"');",
-        "assert(golfScore(4, 7) === \"Go Home!\", 'message: <code>golfScore(4, 7)</code> should return \"Go Home!\"');",
-        "assert(golfScore(5, 9) === \"Go Home!\", 'message: <code>golfScore(5, 9)</code> should return \"Go Home!\"');"
-      ],
-      "challengeSeed": [
-        "function golfScore(par, strokes) {",
-        "  // Only change code below this line",
-        "  ",
-        "  ",
-        "  return \"Change Me\";",
-        "  // Only change code above this line",
-        "}",
-        "",
-        "// Change these values to test",
-        "golfScore(5, 4);"
-      ],
-      "solutions": [
-        "function golfScore(par, strokes) {",
-        "  if (strokes === 1) {",
-        "    return \"Hole-in-one!\";",
-        "  }",
-        "  ",
-        "  if (strokes <= par - 2) {",
-        "    return \"Eagle\";",
-        "  }",
-        "  ",
-        "  if (strokes === par - 1) {",
-        "    return \"Birdie\";",
-        "  }",
-        "  ",
-        "  if (strokes === par) {",
-        "    return \"Par\";",
-        "  }",
-        "  ",
-        "  if (strokes === par + 1) {",
-        "    return \"Bogey\";",
-        "  }",
-        "  ",
-        "  if(strokes === par + 2) {",
-        "    return \"Double Bogey\";",
-        "  }",
-        "  ",
-        "  return \"Go Home!\";",
-        "}"
-      ],
-      "type": "bonfire",
-      "challengeType": "5",
-      "nameCn": "",
-      "nameFr": "",
-      "nameRu": "",
-      "nameEs": "",
-      "namePt": ""
-    },
-    {
       "id": "56533eb9ac21ba0edf2244da",
       "title": "Introducing Else Statements",
       "description": [
@@ -3060,6 +2995,78 @@
       ],
       "type": "waypoint",
       "challengeType": "1",
+      "nameCn": "",
+      "nameFr": "",
+      "nameRu": "",
+      "nameEs": "",
+      "namePt": ""
+    },
+    {
+      "id": "5664820f61c48e80c9fa476c",
+      "title": "Golf Code",
+      "description": [
+        "In the game of <a href=\"https://en.wikipedia.org/wiki/Golf\">golf</a> each hole has a <dfn>par</dfn> for the average number of <dfn>strokes</dfn> needed to sink the ball. Depending on how far above or below <code>par</code> your <code>strokes</code> are, there is a different nickname.",
+        "Your function will be passed a <code>par</code> and <code>strokes</code>. Return strings according to this table (based on order of priority - top (highest) to bottom (lowest)):",
+        "<table class=\"table table-striped\"><thead><tr><th>Strokes</th><th>Return</th></tr></thead><tbody><tr><td>1</td><td>\"Hole-in-one!\"</td></tr><tr><td>&lt;= par - 2</td><td>\"Eagle\"</td></tr><tr><td>par - 1</td><td>\"Birdie\"</td></tr><tr><td>par</td><td>\"Par\"</td></tr><tr><td>par + 1</td><td>\"Bogey\"</td></tr><tr><td>par + 2</td><td>\"Double Bogey\"</td></tr><tr><td>&gt;= par + 3</td><td>\"Go Home!\"</td></tr></tbody></table>",
+        "<code>par</code> and <code>strokes</code> will always be numeric and positive."
+      ],
+      "releasedOn": "11/27/2015",
+      "tests": [
+        "assert(golfScore(4, 1) === \"Hole-in-one!\", 'message: <code>golfScore(4, 1)</code> should return \"Hole-in-one!\"');",
+        "assert(golfScore(4, 2) === \"Eagle\", 'message: <code>golfScore(4, 2)</code> should return \"Eagle\"');",
+        "assert(golfScore(5, 2) === \"Eagle\", 'message: <code>golfScore(5, 2)</code> should return \"Eagle\"');",
+        "assert(golfScore(4, 3) === \"Birdie\", 'message: <code>golfScore(4, 3)</code> should return \"Birdie\"');",
+        "assert(golfScore(4, 4) === \"Par\", 'message: <code>golfScore(4, 4)</code> should return \"Par\"');",
+        "assert(golfScore(1, 1) === \"Hole-in-one!\", 'message: <code>golfScore(1, 1)</code> should return \"Hole-in-one!\"');",
+        "assert(golfScore(5, 5) === \"Par\", 'message: <code>golfScore(5, 5)</code> should return \"Par\"');",
+        "assert(golfScore(4, 5) === \"Bogey\", 'message: <code>golfScore(4, 5)</code> should return \"Bogey\"');",
+        "assert(golfScore(4, 6) === \"Double Bogey\", 'message: <code>golfScore(4, 6)</code> should return \"Double Bogey\"');",
+        "assert(golfScore(4, 7) === \"Go Home!\", 'message: <code>golfScore(4, 7)</code> should return \"Go Home!\"');",
+        "assert(golfScore(5, 9) === \"Go Home!\", 'message: <code>golfScore(5, 9)</code> should return \"Go Home!\"');"
+      ],
+      "challengeSeed": [
+        "function golfScore(par, strokes) {",
+        "  // Only change code below this line",
+        "  ",
+        "  ",
+        "  return \"Change Me\";",
+        "  // Only change code above this line",
+        "}",
+        "",
+        "// Change these values to test",
+        "golfScore(5, 4);"
+      ],
+      "solutions": [
+        "function golfScore(par, strokes) {",
+        "  if (strokes === 1) {",
+        "    return \"Hole-in-one!\";",
+        "  }",
+        "  ",
+        "  if (strokes <= par - 2) {",
+        "    return \"Eagle\";",
+        "  }",
+        "  ",
+        "  if (strokes === par - 1) {",
+        "    return \"Birdie\";",
+        "  }",
+        "  ",
+        "  if (strokes === par) {",
+        "    return \"Par\";",
+        "  }",
+        "  ",
+        "  if (strokes === par + 1) {",
+        "    return \"Bogey\";",
+        "  }",
+        "  ",
+        "  if(strokes === par + 2) {",
+        "    return \"Double Bogey\";",
+        "  }",
+        "  ",
+        "  return \"Go Home!\";",
+        "}"
+      ],
+      "type": "bonfire",
+      "challengeType": "5",
       "nameCn": "",
       "nameFr": "",
       "nameRu": "",
@@ -3450,7 +3457,7 @@
         "In the casino game Blackjack, a player can gain an advantage over the house by keeping track of the relative number of high and low cards remaining in the deck. This is called <a href=\"https://en.wikipedia.org/wiki/Card_counting\">Card Counting</a>.  ",
         "Having more high cards remaining in the deck favors the player.  Each card is assigned a value according to the table below.   When the count is positive, the player should bet high.  When the count is zero or negative, the player should bet low.",
         "<table class=\"table table-striped\"><thead><tr><th>Value</th><th>Cards</th></tr></thead><tbody><tr><td>+1</td><td>2, 3, 4, 5, 6</td></tr><tr><td>0</td><td>7, 8, 9</td></tr><tr><td>-1</td><td>10, 'J', 'Q', 'K','A'</td></tr></tbody></table>",
-        "You will write a card counting function.  It will recieve a <code>card</code> parameter and increment or decrement the global <code>count</code> variable according to the card's value (see table).  The function will then return the current count and the string <code>\"Bet\"</code> if the count if positive, or <code>\"Hold\"</code> if the count is zero or negative.",
+        "You will write a card counting function.  It will receive a <code>card</code> parameter and increment or decrement the global <code>count</code> variable according to the card's value (see table).  The function will then return the current count and the string <code>\"Bet\"</code> if the count if positive, or <code>\"Hold\"</code> if the count is zero or negative.",
         "<strong>Example Output</strong>",
         "<code>-3 Hold</code><br><code>5 Bet</code>"
       ],
@@ -4017,7 +4024,7 @@
         "JavaScript Object Notation or <code>JSON</code> uses the format of Javascript Objects to store data.  JSON is flexible becuase it allows for data structures with arbitrary combinations of <dfn>strings</dfn>, <dfn>numbers</dfn>, <dfn>booleans</dfn>, <dfn>arrays</dfn>, and <dfn>objects</dfn>.  ",
         "Here is an example of a JSON object:",
         "<blockquote>var ourMusic = [<br>  {<br>    \"artist\": \"Daft Punk\",<br>    \"title\": \"Homework\",<br>    \"release_year\": 1997,<br>    \"formats\": [ <br>      \"CD\", <br>      \"Cassette\", <br>      \"LP\" ],<br>    \"gold\": true<br>  }<br>];</blockquote>",
-        "This is an array of objects and the object has various peices of <dfn>metadata</dfn> about an album.  It also has a nested array of formats. Additional album records could be added to the top level array.",
+        "This is an array of objects and the object has various pieces of <dfn>metadata</dfn> about an album.  It also has a nested array of formats. Additional album records could be added to the top level array.",
         "<h4>Instructions</h4>",
         "Add a new album to the <code>myMusic</code> JSON object.  Add  <code>artist</code> and <code>title</code> strings, <code>release_year</code> year, and a <code>formats</code> array of strings."
       ],
@@ -4234,7 +4241,7 @@
       "id": "56533eb9ac21ba0edf2244cf",
       "title": "Record Collection",
       "description": [
-        "You are given a JSON object representing (a small part of) your record collection.  Each album is identified by a unqiue id number and which has several properties. Not all albums have complete information.",
+        "You are given a JSON object representing (a small part of) your record collection.  Each album is identified by a unique id number and which has several properties. Not all albums have complete information.",
         "Write a function which takes an <code>id</code>, a property (<code>prop</code>), and a <code>value</code>.",
         "For the given <code>id</code> in <code>collection</code>:",
         "If <code>value</code> is non-blank (<code>value !== \"\"</code>), then update or set the <code>value</code> for the <code>prop</code>.",
@@ -4250,6 +4257,7 @@
         "update(2548, \"tracks\", \"\"); assert(!collection[2548].hasOwnProperty(\"tracks\"), 'message: After <code>update(2548, \"tracks\", \"\")</code>, <code>tracks</code> should not be set');"
       ],
       "challengeSeed": [
+        "// Setup",
         "var collection = {",
         "    2548: {",
         "      album: \"Slippery When Wet\",",
