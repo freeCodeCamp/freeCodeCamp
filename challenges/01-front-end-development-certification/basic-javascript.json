@@ -3625,9 +3625,9 @@
       "id": "56533eb9ac21ba0edf2244c8",
       "title": "Accessing Objects Properties with Bracket Notation",
       "description": [
-        "The second way to access the properties of an objectis bracket notation (<code>[]</code>).  If the property of the object you are trying to access has a space in it, you will need to use bracket notation.",
+        "The second way to access the properties of an object is bracket notation (<code>[]</code>).  If the property of the object you are trying to access has a space in it, you will need to use bracket notation.",
         "Here is a sample of using bracket notation to read an object property:",
-        "<blockquote>var myObj = {<br>  \"Space Name\": \"Kirk\",<br>  \"More Space\": \"Spock\"<br>  };<br>myObj[\"Space Name\"]; // Kirk<br>myObj['More Space']; // Spock</blockquote>",
+        "<blockquote>var myObj = {<br>  \"Space Name\": \"Kirk\",<br>  \"More Space\": \"Spock\"<br>};<br>myObj[\"Space Name\"]; // Kirk<br>myObj['More Space']; // Spock</blockquote>",
         "Note that property names with spaces in them must be in quotes (single or double).",
         "<h4>Instructions</h4>",
         "Read the values of the properties <code>\"an entree\"</code> and <code>\"the drink\"</code> of <code>testObj</code> using bracket notation."
