@@ -3575,7 +3575,7 @@
       "description": [
         "There are two ways to access the properties of an object: the dot operator (<code>.</code>) and bracket notation (<code>[]</code>), similar to an array.",
         "The dot operator is what you use when you know the name of the property you're trying to access ahead of time.",
-        "Here is a sample of using the <code>.</code> to read an object property:",
+        "Here is a sample of using the dot operator (<code>.</code>) to read an object property:",
         "<blockquote>var myObj = {<br>  prop1: \"val1\",<br>  prop2: \"val2\"<br>};<br>myObj.prop1; // val1<br>myObj.prop2; // val2</blockquote>",
         "<h4>Instructions</h4>",
         "Read the values of the properties <code>hat</code> and <code>shirt</code> of <code>testObj</code> using dot notation."
