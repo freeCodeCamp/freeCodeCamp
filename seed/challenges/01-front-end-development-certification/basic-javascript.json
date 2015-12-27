@@ -3728,7 +3728,7 @@
         "<blockquote>var ourDog = {<br>  \"name\": \"Camper\",<br>  \"legs\": 4,<br>  \"tails\": 1,<br>  \"friends\": [\"everything!\"]<br>};</blockquote>",
         "Since he's a particularly happy dog, let's change his name to \"Happy Camper\". Here's how we update his object's name property:",
         "<code>ourDog.name = \"Happy Camper\";</code> or",
-        "<code>outDog[\"name\"] = \"Happy Camper\";</code>",
+        "<code>ourDog[\"name\"] = \"Happy Camper\";</code>",
         "Now when we evaluate <code>ourDog.name</code>, instead of getting \"Camper\", we'll get his new name, \"Happy Camper\".",
         "<h4>Instructions</h4>",
         "Update the <code>myDog</code> object's name property. Let's change her name from \"Coder\" to \"Happy Coder\".  You can use either dot or bracket notation."
