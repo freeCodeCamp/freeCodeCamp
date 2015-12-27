@@ -77,7 +77,7 @@
     "gulp-webpack": "^1.5.0",
     "helmet": "~0.15.0",
     "helmet-csp": "~0.3.0",
-    "history": "~1.13.0",
+    "history": "^1.17.0",
     "jade": "^1.11.0",
     "json-loader": "~0.5.2",
     "less": "^2.5.1",
