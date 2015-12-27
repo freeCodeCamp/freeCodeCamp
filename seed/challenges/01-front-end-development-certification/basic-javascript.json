@@ -3359,7 +3359,7 @@
       "id": "5679ceb97cbaa8c51670a16b",
       "title": "Returning Boolean Values from Functions",
       "description": [
-        "You may recall from <a href=\"challenges/waypoint-comparison-with-the-equality-operator\">Comparison with the Equality Operator</a> that all comparison operators return a boolean <code>true</code> or <code>false</code> value.",
+        "You may recall from <a href=\"waypoint-comparison-with-the-equality-operator\" target=\"_blank\">Comparison with the Equality Operator</a> that all comparison operators return a boolean <code>true</code> or <code>false</code> value.",
         "A common <dfn>anti-pattern</dfn> is to use an <code>if/else</code> statement to do a comparison and then <code>return</code> <code>true</code>/<code>false</code>:",
         "<blockquote>function isEqual(a,b) {<br>  if(a === b) {<br>    return true;<br/>  } else {<br>    return false;<br/>  }<br>}</blockquote>",
         "Since <code>===</code> returns <code>true</code> or <code>false</code>, we can simply return the result of the comparion:",
@@ -3390,7 +3390,9 @@
         ""
       ],
       "solutions": [
-        ""
+        "function isLess(a, b) {",
+        "  return a < b;",
+        "}"
       ],
       "type": "waypoint",
       "challengeType": "1",
