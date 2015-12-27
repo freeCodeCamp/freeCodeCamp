@@ -552,7 +552,7 @@
       ],
       "releasedOn": "November 18, 2015",
       "tests": [
-        "assert.isTrue((/<i>/gi).test($(\"#target4\").html()), 'message: Italicize the text in your <code>target4</code> button by adding HTML tags.');",
+        "assert.isTrue((/<i>#target4<\\/i>/gi).test($(\"#target4\").html()), 'message: Italicize the text in your <code>target4</code> button by adding HTML tags.');",
         "assert($(\"#target4\") && $(\"#target4\").text() === '#target4', 'message: Make sure the text is otherwise unchanged.');",
         "assert.isFalse((/<i>/gi).test($(\"h3\").html()), 'message: Do not alter any other text.');"
       ],
