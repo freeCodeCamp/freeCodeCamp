@@ -517,7 +517,7 @@
         "<code>&nbsp;&nbsp;color: blue;</code>",
         "<code>}</code>",
         "But also remember that class declarations don't use a period, like this:",
-        "<code>&#60;h2 class=\"blue-text\"&#62;CatPhotoApp&#60;h2&#62;</code>",
+        "<code>&#60;h2 class=\"blue-text\"&#62;CatPhotoApp&#60;/h2&#62;</code>",
         "Apply the <code>red-text</code> class to your <code>h2</code> and <code>p</code> elements."
       ],
       "tests": [
