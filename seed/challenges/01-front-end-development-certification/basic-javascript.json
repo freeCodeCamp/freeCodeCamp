@@ -20,9 +20,9 @@
         "  "
       ],
       "tests": [
-        "assert(editor.getValue().match(/(\\/\\/)...../g), 'message: Create a <code>//</code> style comment that contains at least five letters.');",
-        "assert(editor.getValue().match(/(\\/\\*)[\\w\\W]{5,}(?=\\*\\/)/gm), 'message: Create a <code>/* */</code> style comment that contains at least five letters.');",
-        "assert(editor.getValue().match(/(\\*\\/)/g), 'message: Make sure that you close the comment with a <code>*/</code>.');"
+        "assert(code.match(/(\\/\\/)...../g), 'message: Create a <code>//</code> style comment that contains at least five letters.');",
+        "assert(code.match(/(\\/\\*)[\\w\\W]{5,}(?=\\*\\/)/gm), 'message: Create a <code>/* */</code> style comment that contains at least five letters.');",
+        "assert(code.match(/(\\*\\/)/g), 'message: Make sure that you close the comment with a <code>*/</code>.');"
       ],
       "type": "waypoint",
       "challengeType": "1"
@@ -103,10 +103,10 @@
       ],
       "releasedOn": "January 1, 2016",
       "tests": [
-        "assert(/var a;/.test(editor.getValue()) && /var b = 2;/.test(editor.getValue()), 'message: Do not change code above the line');",
+        "assert(/var a;/.test(code) && /var b = 2;/.test(code), 'message: Do not change code above the line');",
         "assert(typeof a === 'number' && a === 7, 'message: <code>a</code> should have a value of 7');",
         "assert(typeof b === 'number' && b === 7, 'message: <code>b</code> should have a value of 7');",
-        "assert(editor.getValue().match(/b\\s*=\\s*a\\s*;/g), 'message: <code>a</code> should be assigned to <code>b</code> with <code>=</code>');"
+        "assert(code.match(/b\\s*=\\s*a\\s*;/g), 'message: <code>a</code> should be assigned to <code>b</code> with <code>=</code>');"
       ],
       "challengeSeed": [
         "// Setup",
@@ -147,7 +147,7 @@
       ],
       "releasedOn": "January 1, 2016",
       "tests": [
-        "assert(/var\\s+a\\s*=\\s*9\\s*/.test(editor.getValue()), 'message: Initialize <code>a</code> to a value of <code>9</code>');"
+        "assert(/var\\s+a\\s*=\\s*9\\s*/.test(code), 'message: Initialize <code>a</code> to a value of <code>9</code>');"
       ],
       "challengeSeed": [
         "// Example",
@@ -183,7 +183,7 @@
         "assert(typeof a === 'number' && a === 6, 'message: <code>a</code> should be defined and have a value of <code>6</code>');",
         "assert(typeof b === 'number' && b === 15, 'message: <code>b</code> should be defined and have a value of <code>15</code>');",
         "assert(!/undefined/.test(c) && c === \"I am a String!\", 'message: <code>c</code> should not contain <code>undefined</code> and should have a value of \"I am a String!\"');",
-        "assert(/a = a \\+ 1;/.test(editor.getValue()) && /b = b \\+ 5;/.test(editor.getValue()) && /c = c \\+ \" String!\";/.test(editor.getValue()), 'message: Do not change code below the line');"
+        "assert(/a = a \\+ 1;/.test(code) && /b = b \\+ 5;/.test(code) && /c = c \\+ \" String!\";/.test(code), 'message: Do not change code below the line');"
       ],
       "challengeSeed": [
         "// Initialize these three variables",
@@ -282,7 +282,7 @@
       ],
       "tests": [
         "assert(sum === 20, 'message: <code>sum</code> should equal <code>20</code>');",
-        "assert(/\\+/.test(editor.getValue()), 'message: Use the <code>+</code> operator');"
+        "assert(/\\+/.test(code), 'message: Use the <code>+</code> operator');"
       ],
       "challengeSeed": [
         "var sum = 10 + 0;",
@@ -309,7 +309,7 @@
       ],
       "tests": [
         "assert(difference === 12, 'message: Make the variable <code>difference</code> equal 12.');",
-        "assert(/\\d+\\s*-\\s*\\d+/.test(editor.getValue()),'message: User the <code>-</code> operator');"
+        "assert(/\\d+\\s*-\\s*\\d+/.test(code),'message: User the <code>-</code> operator');"
       ],
       "challengeSeed": [
         "var difference = 45 - 0;",
@@ -340,7 +340,7 @@
       ],
       "tests": [
         "assert(product === 80,'message: Make the variable <code>product</code> equal 80');",
-        "assert(/\\*/.test(editor.getValue()), 'message: Use the <code>*</code> operator');"
+        "assert(/\\*/.test(code), 'message: Use the <code>*</code> operator');"
       ],
       "challengeSeed": [
         "var product = 8 * 0;",
@@ -371,7 +371,7 @@
       ],
       "tests": [
         "assert(quotient === 2, 'message: Make the variable <code>quotient</code> equal to 2.');",
-        "assert(/\\d+\\s*\\/\\s*\\d+/.test(editor.getValue()), 'message: Use the <code>/</code> operator');"
+        "assert(/\\d+\\s*\\/\\s*\\d+/.test(code), 'message: Use the <code>/</code> operator');"
       ],
       "challengeSeed": [
         "var quotient = 66 / 0;",
@@ -398,8 +398,8 @@
       "releasedOn": "January 1, 2016",
       "tests": [
         "assert(myVar === 88, 'message: <code>myVar</code> should equal <code>88</code>');",
-        "assert(/[+]{2}/.test(editor.getValue()), 'message: Use the <code>++</code> operator');",
-        "assert(/var myVar = 87;/.test(editor.getValue()), 'message: Do not change code above the line');"
+        "assert(/[+]{2}/.test(code), 'message: Use the <code>++</code> operator');",
+        "assert(/var myVar = 87;/.test(code), 'message: Do not change code above the line');"
       ],
       "challengeSeed": [
         "var myVar = 87;",
@@ -437,8 +437,8 @@
       "releasedOn": "January 1, 2016",
       "tests": [
         "assert(myVar === 10, 'message: <code>myVar</code> should equal <code>10</code>');",
-        "assert(/myVar[-]{2}/.test(editor.getValue()), 'message: Use the <code>--</code> operator on <code>myVar</code>');",
-        "assert(/var myVar = 11;/.test(editor.getValue()), 'message: Do not change code above the line');"
+        "assert(/myVar[-]{2}/.test(code), 'message: Use the <code>--</code> operator on <code>myVar</code>');",
+        "assert(/var myVar = 11;/.test(code), 'message: Do not change code above the line');"
       ],
       "challengeSeed": [
         "var myVar = 11;",
@@ -474,7 +474,7 @@
       ],
       "tests": [
         "assert(typeof myDecimal === \"number\", 'message: <code>myDecimal</code> should be a number.');",
-        "assert(editor.getValue().match(/\\d+\\.\\d+/g).length >= 2, 'message: <code>myDecimal</code> should have a decimal point'); "
+        "assert(code.match(/\\d+\\.\\d+/g).length >= 2, 'message: <code>myDecimal</code> should have a decimal point'); "
       ],
       "challengeSeed": [
         "var ourDecimal = 5.7;",
@@ -500,7 +500,7 @@
       ],
       "tests": [
         "assert(product === 5.0, 'message: The variable <code>product</code> should equal <code>5.0</code>.');",
-        "assert(/\\*/.test(editor.getValue()), 'message: You should use the <code>*</code> operator');"
+        "assert(/\\*/.test(code), 'message: You should use the <code>*</code> operator');"
       ],
       "tail": [
         "(function(y){return 'product = '+y;})(product);"
@@ -523,7 +523,7 @@
       ],
       "tests": [
         "assert(quotient === 2.2, 'message: The variable <code>quotient</code> should equal <code>2.2</code>.');",
-        "assert(/\\//.test(editor.getValue()), 'message: You should use the <code>/</code> operator');"
+        "assert(/\\//.test(code), 'message: You should use the <code>/</code> operator');"
       ],
       "challengeSeed": [
         "var quotient = 0.0 / 2.0;",
@@ -544,7 +544,7 @@
         "<strong>Example</strong>",
         "<blockquote>5 % 2 = 1 because<br>Math.floor(5 / 2) = 2 (Quotient)<br>2 * 2 = 4<br>5 - 4 = 1 (Remainder)</blockquote>",
         "<strong>Usage</strong>",
-        "In mathematics, a number can be checked even or odd by checking the remainder of division of the number by <code>2</code>. ",
+        "In mathematics, a number can be checked even or odd by checking the remainder of the division of the number by <code>2</code>. ",
         "<blockquote>17 % 2 = 1 (17 is Odd)<br>48 % 2 = 0 (48 is Even)</blockquote>",
         "<strong>Note</strong>",
         "The <dfn>remainder</dfn> operator is sometimes incorrectly refered to as  the \"modulus\" operator.  It is very similar to modulus, but does not work properly with negative numbers.",
@@ -554,7 +554,7 @@
       "releasedOn": "January 1, 2016",
       "tests": [
         "assert(remainder === 2, 'message: The value of <code>remainder</code> should be <code>2</code>');",
-        "assert(/\\d+\\s*%\\s*\\d+/.test(editor.getValue()), 'message: You should use the <code>%</code> operator');"
+        "assert(/\\d+\\s*%\\s*\\d+/.test(code), 'message: You should use the <code>%</code> operator');"
       ],
       "challengeSeed": [
         "// Only change code below this line",
@@ -593,8 +593,8 @@
         "assert(a === 15, 'message: <code>a</code> should equal <code>15</code>');",
         "assert(b === 26, 'message: <code>b</code> should equal <code>26</code>');",
         "assert(c === 19, 'message: <code>c</code> should equal <code>19</code>');",
-        "assert(editor.getValue().match(/\\+=/g).length === 3, 'message: You should use the <code>+=</code> operator for each variable');",
-        "assert(/var a = 3;/.test(editor.getValue()) && /var b = 17;/.test(editor.getValue()) && /var c = 12;/.test(editor.getValue()), 'message: Do not modify the code above the line');"
+        "assert(code.match(/\\+=/g).length === 3, 'message: You should use the <code>+=</code> operator for each variable');",
+        "assert(/var a = 3;/.test(code) && /var b = 17;/.test(code) && /var c = 12;/.test(code), 'message: Do not modify the code above the line');"
       ],
       "challengeSeed": [
         "var a = 3;",
@@ -644,8 +644,8 @@
         "assert(a === 5, 'message: <code>a</code> should equal <code>5</code>');",
         "assert(b === -6, 'message: <code>b</code> should equal <code>-6</code>');",
         "assert(c === 2, 'message: <code>c</code> should equal <code>2</code>');",
-        "assert(editor.getValue().match(/-=/g).length === 3, 'message: You should use the <code>-=</code> operator for each variable');",
-        "assert(/var a = 11;/.test(editor.getValue()) && /var b = 9;/.test(editor.getValue()) && /var c = 3;/.test(editor.getValue()), 'message: Do not modify the code above the line');"
+        "assert(code.match(/-=/g).length === 3, 'message: You should use the <code>-=</code> operator for each variable');",
+        "assert(/var a = 11;/.test(code) && /var b = 9;/.test(code) && /var c = 3;/.test(code), 'message: Do not modify the code above the line');"
       ],
       "challengeSeed": [
         "var a = 11;",
@@ -698,8 +698,8 @@
         "assert(a === 25, 'message: <code>a</code> should equal <code>25</code>');",
         "assert(b === 36, 'message: <code>b</code> should equal <code>36</code>');",
         "assert(c === 46, 'message: <code>c</code> should equal <code>46</code>');",
-        "assert(editor.getValue().match(/\\*=/g).length === 3, 'message: You should use the <code>*=</code> operator for each variable');",
-        "assert(/var a = 5;/.test(editor.getValue()) && /var b = 12;/.test(editor.getValue()) && /var c = 4\\.6;/.test(editor.getValue()), 'message: Do not modify the code above the line');"
+        "assert(code.match(/\\*=/g).length === 3, 'message: You should use the <code>*=</code> operator for each variable');",
+        "assert(/var a = 5;/.test(code) && /var b = 12;/.test(code) && /var c = 4\\.6;/.test(code), 'message: Do not modify the code above the line');"
       ],
       "challengeSeed": [
         "var a = 5;",
@@ -750,8 +750,8 @@
         "assert(a === 4, 'message: <code>a</code> should equal <code>4</code>');",
         "assert(b === 27, 'message: <code>b</code> should equal <code>27</code>');",
         "assert(c === 3, 'message: <code>c</code> should equal <code>3</code>');",
-        "assert(editor.getValue().match(/\\/=/g).length === 3, 'message: You should use the <code>/=</code> operator for each variable');",
-        "assert(/var a = 48;/.test(editor.getValue()) && /var b = 108;/.test(editor.getValue()) && /var c = 33;/.test(editor.getValue()), 'message: Do not modify the code above the line');"
+        "assert(code.match(/\\/=/g).length === 3, 'message: You should use the <code>/=</code> operator for each variable');",
+        "assert(/var a = 48;/.test(code) && /var b = 108;/.test(code) && /var c = 33;/.test(code), 'message: Do not modify the code above the line');"
       ],
       "challengeSeed": [
         "var a = 48;",
@@ -884,7 +884,7 @@
       ],
       "releasedOn": "January 1, 2016",
       "tests": [
-        "assert(editor.getValue().match(/\\\\\"/g).length === 4 && editor.getValue().match(/[^\\\\]\"/g).length === 2, 'message: You should use two double quotes (<code>&quot;</code>) and four escaped double quotes (<code>&#92;&quot;</code>) ');"
+        "assert(code.match(/\\\\\"/g).length === 4 && code.match(/[^\\\\]\"/g).length === 2, 'message: You should use two double quotes (<code>&quot;</code>) and four escaped double quotes (<code>&#92;&quot;</code>) ');"
       ],
       "challengeSeed": [
         "var myStr; // Change this line",
@@ -915,8 +915,8 @@
       ],
       "releasedOn": "January 1, 2016",
       "tests": [
-        "assert(!/\\\\/g.test(editor.getValue()), 'message: Remove all the <code>backslashes</code> (<code>\\</code>)');",
-        "assert(editor.getValue().match(/\"/g).length === 4 && editor.getValue().match(/'/g).length === 2, 'message: You should have two single quotes <code>&#39;</code> and four double quotes <code>&quot;</code>');",
+        "assert(!/\\\\/g.test(code), 'message: Remove all the <code>backslashes</code> (<code>\\</code>)');",
+        "assert(code.match(/\"/g).length === 4 && code.match(/'/g).length === 2, 'message: You should have two single quotes <code>&#39;</code> and four double quotes <code>&quot;</code>');",
         "assert(myStr === '<a href=\"http://www.example.com\" target=\"_blank\">Link</a>', 'message: Only remove the backslashes <code>\\</code> used to escape quotes.');"
       ],
       "challengeSeed": [
@@ -972,18 +972,16 @@
       "id": "56533eb9ac21ba0edf2244b7",
       "title": "Concatenating Strings with Plus Operator",
       "description": [
-        "In JavaScript, the <code>+</code> operator when used with a <code>String</code> value, it is called a <dfn>concatenation</dfn> operator. You can build a string out of other strings by <dfn>concatenating</dfn> them together.",
-        "",
-        "<code>'My name is Alan.' + ' And I am able to concatenate.'</code>",
-        "",
+        "In JavaScript, when the <code>+</code> operator is used with a <code>String</code> value, it is called the <dfn>concatenation</dfn> operator. You can build a new string out of other strings by <dfn>concatenating</dfn> them together.",
+        "<strong>Example</strong>",
+        "<blockquote>'My name is Alan,' + ' I concatenate.'</blockquote>",
         "<h4>Instructions</h4>",
-        "Build <code>myStr</code> from the strings <code>\"This is the start. \"</code> and <code>\"This is the end.\"</code> using the <code>+</code> operator.",
-        ""
+        "Build <code>myStr</code> from the strings <code>\"This is the start. \"</code> and <code>\"This is the end.\"</code> using the <code>+</code> operator."
       ],
       "releasedOn": "January 1, 2016",
       "tests": [
         "assert(myStr === \"This is the start. This is the end.\", 'message: <code>myStr</code> should have a value of <code>This is the start. This is the end.</code>');",
-        "assert(editor.getValue().match(/\"\\s*\\+\\s*\"/g).length > 1, 'message: Use the <code>+</code> operator to build <code>myStr</code>');"
+        "assert(code.match(/\"\\s*\\+\\s*\"/g).length > 1, 'message: Use the <code>+</code> operator to build <code>myStr</code>');"
       ],
       "challengeSeed": [
         "// Example",
@@ -1012,12 +1010,12 @@
       "description": [
         "We can also use the <code>+=</code> operator to <dfn>concatenate</dfn> a string onto the end of an existing string variable. This can be very helpful to break a long string over several lines.",
         "<h4>Instructions</h4>",
-        "Build <code>myStr</code> over several lines by concatenating these two strings:<br><code>\"This is the first line. \"</code> and <code>\"This is the second line.\"</code> using the <code>+=</code> operator."
+        "Build <code>myStr</code> over several lines by concatenating these two strings:<br><code>\"This is the first sentance. \"</code> and <code>\"This is the second sentance.\"</code> using the <code>+=</code> operator."
       ],
       "releasedOn": "January 1, 2016",
       "tests": [
-        "assert(myStr === \"This is the first line. This is the second line.\", 'message: <code>myStr</code> should have a value of <code>This is the first line. This is the second line.</code>');",
-        "assert(editor.getValue().match(/\\w\\s*\\+=\\s*\"/g).length > 1 && editor.getValue().match(/\\w\\s*\\=\\s*\"/g).length > 1, 'message: Use the <code>+=</code> operator to build <code>myStr</code>');"
+        "assert(myStr === \"This is the first sentance. This is the second sentance.\", 'message: <code>myStr</code> should have a value of <code>This is the first sentance. This is the second sentance.</code>');",
+        "assert(code.match(/\\w\\s*\\+=\\s*\"/g).length > 1 && code.match(/\\w\\s*\\=\\s*\"/g).length > 1, 'message: Use the <code>+=</code> operator to build <code>myStr</code>');"
       ],
       "challengeSeed": [
         "// Example",
@@ -1031,8 +1029,8 @@
         ""
       ],
       "solutions": [
-        "var myStr = \"This is the first line. \";",
-        "myStr += \"This is the second line.\";"
+        "var myStr = \"This is the first sentance. \";",
+        "myStr += \"This is the second sentance.\";"
       ],
       "type": "waypoint",
       "challengeType": "1",
@@ -1053,7 +1051,7 @@
       "releasedOn": "January 1, 2016",
       "tests": [
         "assert(typeof myName !== 'undefined' && myName.length > 2, 'message: <code>myName</code> should be set to a string at least 3 characters long');",
-        "assert(editor.getValue().match(/\"\\s*\\+\\s*myName\\s*\\+\\s*\"/g).length > 0, 'message: Use two <code>+</code> operators to build <code>myStr</code> with <code>myName<code> inside it');"
+        "assert(code.match(/\"\\s*\\+\\s*myName\\s*\\+\\s*\"/g).length > 0, 'message: Use two <code>+</code> operators to build <code>myStr</code> with <code>myName<code> inside it');"
       ],
       "challengeSeed": [
         "// Example",
@@ -1089,7 +1087,7 @@
       "releasedOn": "January 1, 2016",
       "tests": [
         "assert(typeof someAdjective !== 'undefined' && someAdjective.length > 2, 'message: <code>someAdjective</code> should be set to a string at least 3 characters long');",
-        "assert(editor.getValue().match(/\\w\\s*\\+=\\s*someAdjective\\s*;/).length > 0, 'message: Append <code>someAdjective</code> to <code>myStr</code> using the <code>+=</code> operator');"
+        "assert(code.match(/\\w\\s*\\+=\\s*someAdjective\\s*;/).length > 0, 'message: Append <code>someAdjective</code> to <code>myStr</code> using the <code>+=</code> operator');"
       ],
       "challengeSeed": [
         "// Example",
@@ -1132,7 +1130,7 @@
       ],
       "tests": [
         "assert((function(){if(typeof(lastNameLength) !== \"undefined\" && typeof(lastNameLength) === \"number\" && lastNameLength === 8){return true;}else{return false;}})(), 'message: <code>lastNameLength</code> should be equal to eight.');",
-        "assert((function(){if(editor.getValue().match(/\\.length/gi) && editor.getValue().match(/\\.length/gi).length >= 2 && editor.getValue().match(/var lastNameLength \\= 0;/gi) && editor.getValue().match(/var lastNameLength \\= 0;/gi).length >= 1){return true;}else{return false;}})(), 'message: You should be getting the length of <code>lastName</code> by using <code>.length</code> like this: <code>lastName.length</code>.');"
+        "assert((function(){if(code.match(/\\.length/gi) && code.match(/\\.length/gi).length >= 2 && code.match(/var lastNameLength \\= 0;/gi) && code.match(/var lastNameLength \\= 0;/gi).length >= 1){return true;}else{return false;}})(), 'message: You should be getting the length of <code>lastName</code> by using <code>.length</code> like this: <code>lastName.length</code>.');"
       ],
       "challengeSeed": [
         "// Example",
@@ -1171,7 +1169,7 @@
         "<br>Try looking at the <code>firstLetterOfFirstName</code> variable declaration if you get stuck."
       ],
       "tests": [
-        "assert((function(){if(typeof(firstLetterOfLastName) !== \"undefined\" && editor.getValue().match(/\\[0\\]/gi) && typeof(firstLetterOfLastName) === \"string\" && firstLetterOfLastName === \"L\"){return true;}else{return false;}})(), 'message: The <code>firstLetterOfLastName</code> variable should have the value of <code>L</code>.');"
+        "assert((function(){if(typeof(firstLetterOfLastName) !== \"undefined\" && code.match(/\\[0\\]/gi) && typeof(firstLetterOfLastName) === \"string\" && firstLetterOfLastName === \"L\"){return true;}else{return false;}})(), 'message: The <code>firstLetterOfLastName</code> variable should have the value of <code>L</code>.');"
       ],
       "challengeSeed": [
         "// Example",
@@ -1216,7 +1214,7 @@
       "releasedOn": "January 1, 2016",
       "tests": [
         "assert(myStr === \"Hello World\", 'message: <code>myStr</code> should have a value of <code>Hello World</code>');",
-        "assert(/myStr = \"Jello World\"/.test(editor.getValue()), 'message: Do not change the code above the line');"
+        "assert(/myStr = \"Jello World\"/.test(code), 'message: Do not change the code above the line');"
       ],
       "tail": [
         "(function(v){return \"myStr = \" + v;})(myStr);"
@@ -1293,7 +1291,7 @@
       ],
       "tests": [
         "assert(lastLetterOfLastName === \"e\", 'message: <code>lastLetterOfLastName</code> should be \"e\".');",
-        "assert(editor.getValue().match(/\\.length/g).length === 2, 'message: You have to use <code>.length</code> to get the last letter.');"
+        "assert(code.match(/\\.length/g).length === 2, 'message: You have to use <code>.length</code> to get the last letter.');"
       ],
       "challengeSeed": [
         "// Example",
@@ -1331,7 +1329,7 @@
       ],
       "tests": [
         "assert(secondToLastLetterOfLastName === 'c', 'message: <code>secondToLastLetterOfLastName</code> should be \"c\".');",
-        "assert(editor.getValue().match(/\\.length/g).length === 2, 'message: You have to use <code>.length</code> to get the second last letter.');"
+        "assert(code.match(/\\.length/g).length === 2, 'message: You have to use <code>.length</code> to get the second last letter.');"
       ],
       "challengeSeed": [
         "// Example",
@@ -1513,7 +1511,7 @@
       ],
       "tests": [
         "assert((function(){if(typeof(myArray) != 'undefined' && myArray[0] == 3 && myArray[1] == 2 && myArray[2] == 3){return true;}else{return false;}})(), 'message: <code>myArray</code> should now be [3,2,3].');",
-        "assert((function(){if(editor.getValue().match(/myArray\\[0\\]\\s?=\\s?/g)){return true;}else{return false;}})(), 'message: You should be using correct index to modify the value in <code>myArray</code>.');"
+        "assert((function(){if(code.match(/myArray\\[0\\]\\s?=\\s?/g)){return true;}else{return false;}})(), 'message: You should be using correct index to modify the value in <code>myArray</code>.');"
       ],
       "challengeSeed": [
         "// Example",
@@ -1541,7 +1539,7 @@
       "id": "56592a60ddddeae28f7aa8e1",
       "title": "Access Multi-Dimensional Arrays With Indexes",
       "description": [
-        "One way to think of a <dfn>multi-dimensional</dfn> array, is as an <em>array of arrays</em>. When you use brackets to access your array, the first set of bracket refers to the entries in the outer-most array, and each subsequent level of brackets refers to the next level of entry inside.",
+        "One way to think of a <dfn>multi-dimensional</dfn> array, is as an <em>array of arrays</em>. When you use brackets to access your array, the first set of bracket refers to the entries in the outer-most array, and each subsequent level of brackets refers to the next level of entries inside.",
         "<strong>Example</strong>",
         "<blockquote>var arr = [<br>    [1,2,3],<br>    [4,5,6],<br>    [7,8,9],<br>    [[10,11,12], 13, 14]<br>];<br><code>arr[0]; // equals [1,2,3]</code><br><code>arr[1][2]; // equals 6</code><br><code>arr[3][0][1]; // equals 11</code></blockquote>",
         "<h4>Instructions</h4>",
@@ -1550,7 +1548,7 @@
       "releasedOn": "January 1, 2016",
       "tests": [
         "assert(myData === 8, 'message: <code>myData</code> should be equal to <code>8</code>.');",
-        "assert(/myArray\\[2\\]\\[1\\]/g.test(editor.getValue()), 'message: You should be using bracket notation to read the value from <code>myArray</code>.');"
+        "assert(/myArray\\[2\\]\\[1\\]/g.test(code), 'message: You should be using bracket notation to read the value from <code>myArray</code>.');"
       ],
       "challengeSeed": [
         "// Setup",
@@ -1801,7 +1799,7 @@
       "tests": [
         "assert(typeof myFunction === 'function', 'message: <code>myFunction</code> should be a function');",
         "assert(\"Hi World\" === logOutput, 'message: <code>myFunction</code> should output \"Hi World\" to the dev console');",
-        "assert(/^\\s*myFunction\\(\\)\\s*;/m.test(editor.getValue()), 'message: Call <code>myFunction</code> after you define it');"
+        "assert(/^\\s*myFunction\\(\\)\\s*;/m.test(code), 'message: Call <code>myFunction</code> after you define it');"
       ],
       "challengeSeed": [
         "// Example",
@@ -1851,7 +1849,8 @@
       "id": "56533eb9ac21ba0edf2244bd",
       "title": "Passing Values to Functions with Arguments",
       "description": [
-        "Functions can take input in the form of <dfn>parameter</dfn>. Parameters are variables that take on the value of the <dfn>arguments</dfn> which are passed in to the function.  Here is a function with two parameters, <code>param1</code> and <code>param2</code>:",
+        "Functions can take input with <dfn>parameters</dfn>. Parameters are local variables that take on the value of the <dfn>arguments</dfn> which are passed into the function.  ",
+        "Here is a function with two parameters, <code>param1</code> and <code>param2</code>:",
         "<blockquote>function testFun(param1, param2) {<br>  console.log(param1, param2);<br>}</blockquote>",
         "Then we can call <code>testFun</code>:",
         "<code>testFun(\"Hello\", \"World\");</code>",
@@ -1864,7 +1863,7 @@
         "assert(typeof myFunction === 'function', 'message: <code>myFunction</code> should be a function');",
         "capture(); myFunction(1,2); uncapture(); assert(logOutput == 3, 'message: <code>myFunction(1,2)</code> should output <code>3</code>');",
         "capture(); myFunction(7,9); uncapture(); assert(logOutput == 16, 'message: <code>myFunction(7,9)</code> should output <code>16</code>');",
-        "assert(/^\\s*myFunction\\(\\s*\\d+\\s*,\\s*\\d+\\s*\\)\\s*;/m.test(editor.getValue()), 'message: Call <code>myFunction</code> after you define it');"
+        "assert(/^\\s*myFunction\\(\\s*\\d+\\s*,\\s*\\d+\\s*\\)\\s*;/m.test(code), 'message: Call <code>myFunction</code> after you define it');"
       ],
       "head": [
         "var logOutput = \"\";",
@@ -1927,9 +1926,9 @@
       "tests": [
         "assert(typeof myGlobal != \"undefined\", 'message: <code>myGlobal</code> should be defined');",
         "assert(myGlobal === 10, 'message: <code>myGlobal</code> should have a value of <code>10</code>');",
-        "assert(/var\\s+myGlobal/.test(editor.getValue()), 'message: <code>myGlobal</code> should be declared using the <code>var</code> keyword');",
+        "assert(/var\\s+myGlobal/.test(code), 'message: <code>myGlobal</code> should be declared using the <code>var</code> keyword');",
         "assert(typeof oopsGlobal != \"undefined\" && oopsGlobal === 5, 'message: <code>oopsGlobal</code> should have a value of <code>5</code>');",
-        "assert(!/var\\s+oopsGlobal/.test(editor.getValue()), 'message: Do not decalre <code>oopsGlobal</code> using the <code>var</code> keyword');"
+        "assert(!/var\\s+oopsGlobal/.test(code), 'message: Do not decalre <code>oopsGlobal</code> using the <code>var</code> keyword');"
       ],
       "head": [
         "var logOutput = \"\";",
@@ -2055,7 +2054,7 @@
       "tests": [
         "assert(outerWear === \"T-Shirt\", 'message: Do not change the value of the global <code>outerWear</code>');",
         "assert(myFunction() === \"sweater\", 'message: <code>myFunction</code> should return <code>\"sweater\"</code>');",
-        "assert(/return outerWear/.test(editor.getValue()), 'message: Do not change the return statement');"
+        "assert(/return outerWear/.test(code), 'message: Do not change the return statement');"
       ],
       "challengeSeed": [
         "// Setup",
@@ -2140,12 +2139,12 @@
         "<code>var ourSum = sum(5, 12);</code>",
         "will call <code>sum</code> function, which returns a value of <code>17</code> and assigns it to <code>ourSum</code> variable.",
         "<h4>Instructions</h4>",
-        "Call <code>process</code> function with an argument of <code>7</code> and assign it's return value to the variable <code>processed</code>."
+        "Call the <code>process</code> function with an argument of <code>7</code> and assign its return value to the variable <code>processed</code>."
       ],
       "releasedOn": "January 1, 2016",
       "tests": [
-        "assert(processed === 2, 'message: <code>processed</code> should have a value of <code>10</code>');",
-        "assert(/processed\\s*=\\s*process\\(\\s*7\\s*\\)\\s*;/.test(editor.getValue()), 'message: You should assign <code>process</code> to <code>processed</code>');"
+        "assert(processed === 2, 'message: <code>processed</code> should have a value of <code>2</code>');",
+        "assert(/processed\\s*=\\s*process\\(\\s*7\\s*\\)\\s*;/.test(code), 'message: You should assign <code>process</code> to <code>processed</code>');"
       ],
       "challengeSeed": [
         "// Setup",
@@ -2160,7 +2159,7 @@
         ""
       ],
       "tail": [
-        ""
+        "(function(){return \"processed = \" + processed})();"
       ],
       "solutions": [
         "processed = process(7);"
@@ -2310,7 +2309,7 @@
         "assert(myTest(10) === \"Not Equal\", 'message: <code>myTest(10)</code> should return \"Not Equal\"');",
         "assert(myTest(12) === \"Equal\", 'message: <code>myTest(12)</code> should return \"Equal\"');",
         "assert(myTest(\"12\") === \"Equal\", 'message: <code>myTest(\"12\")</code> should return \"Equal\"');",
-        "assert(editor.getValue().match(/val\\s*==\\s*\\d+/g).length > 0, 'message: You should use the <code>==</code> operator');"
+        "assert(code.match(/val\\s*==\\s*\\d+/g).length > 0, 'message: You should use the <code>==</code> operator');"
       ],
       "challengeSeed": [
         "// Setup",
@@ -2356,7 +2355,7 @@
         "assert(myTest(10) === \"Not Equal\", 'message: <code>myTest(10)</code> should return \"Not Equal\"');",
         "assert(myTest(7) === \"Equal\", 'message: <code>myTest(7)</code> should return \"Equal\"');",
         "assert(myTest(\"7\") === \"Not Equal\", 'message: <code>myTest(\"7\")</code> should return \"Not Equal\"');",
-        "assert(editor.getValue().match(/val\\s*===\\s*\\d+/g).length > 0, 'message: You should use the <code>===</code> operator');"
+        "assert(code.match(/val\\s*===\\s*\\d+/g).length > 0, 'message: You should use the <code>===</code> operator');"
       ],
       "challengeSeed": [
         "// Setup",
@@ -2403,7 +2402,7 @@
         "assert(myTest(12) === \"Not Equal\", 'message: <code>myTest(12)</code> should return \"Not Equal\"');",
         "assert(myTest(\"12\") === \"Not Equal\", 'message: <code>myTest(\"12\")</code> should return \"Not Equal\"');",
         "assert(myTest(\"bob\") === \"Not Equal\", 'message: <code>myTest(\"bob\")</code> should return \"Not Equal\"');",
-        "assert(editor.getValue().match(/val\\s*!=\\s*\\d+/g).length > 0, 'message: You should use the <code>!=</code> operator');"
+        "assert(code.match(/val\\s*!=\\s*\\d+/g).length > 0, 'message: You should use the <code>!=</code> operator');"
       ],
       "challengeSeed": [
         "// Setup",
@@ -2437,7 +2436,7 @@
       "id": "56533eb9ac21ba0edf2244d3",
       "title": "Comparison with the Strict Inequality Operator",
       "description": [
-        "The inequality operator (<code>!==</code>) is the opposite of the strict equality operator. It means \"Strictly Not Equal\" and returns <code>false</code> where strict equality would return <code>true</code> and <em>vice versa</em>. Strict inequality will not convert data types.",
+        "The strict inequality operator (<code>!==</code>) is the opposite of the strict equality operator. It means \"Strictly Not Equal\" and returns <code>false</code> where strict equality would return <code>true</code> and <em>vice versa</em>. Strict inequality will not convert data types.",
         "<strong>Examples</strong>",
         "<blockquote>3 !== 3   // false<br>3 !== '3' // true<br>4 !== 3   // true</blockquote>",
         "<h4>Instructions</h4>",
@@ -2449,7 +2448,7 @@
         "assert(myTest(\"17\") === \"Not Equal\", 'message: <code>myTest(\"17\")</code> should return \"Not Equal\"');",
         "assert(myTest(12) === \"Not Equal\", 'message: <code>myTest(12)</code> should return \"Not Equal\"');",
         "assert(myTest(\"bob\") === \"Not Equal\", 'message: <code>myTest(\"bob\")</code> should return \"Not Equal\"');",
-        "assert(editor.getValue().match(/val\\s*!==\\s*\\d+/g).length > 0, 'message: You should use the <code>!==</code> operator');"
+        "assert(code.match(/val\\s*!==\\s*\\d+/g).length > 0, 'message: You should use the <code>!==</code> operator');"
       ],
       "challengeSeed": [
         "// Setup",
@@ -2502,7 +2501,7 @@
         "assert(myTest(99) === \"Over 10\", 'message: <code>myTest(99)</code> should return \"Over 10\"');",
         "assert(myTest(100) === \"Over 10\", 'message: <code>myTest(100)</code> should return \"Over 10\"');",
         "assert(myTest(101) === \"Over 100\", 'message: <code>myTest(101)</code> should return \"Over 100\"');",
-        "assert(myTest(150) === \"Over 100\", 'message: <code>myTest(150)</code> should return \"Over 100\"');\nassert(editor.getValue().match(/val\\s*>\\s*\\d+/g).length > 1, 'message: You should use the <code>&gt;</code> operator at least twice');"
+        "assert(myTest(150) === \"Over 100\", 'message: <code>myTest(150)</code> should return \"Over 100\"');\nassert(code.match(/val\\s*>\\s*\\d+/g).length > 1, 'message: You should use the <code>&gt;</code> operator at least twice');"
       ],
       "challengeSeed": [
         "function myTest(val) {",
@@ -2558,7 +2557,7 @@
         "assert(myTest(19) === \"10 or Over\", 'message: <code>myTest(19)</code> should return \"10 or Over\"');",
         "assert(myTest(20) === \"20 or Over\", 'message: <code>myTest(100)</code> should return \"20 or Over\"');",
         "assert(myTest(21) === \"20 or Over\", 'message: <code>myTest(101)</code> should return \"20 or Over\"');",
-        "assert(editor.getValue().match(/val\\s*>=\\s*\\d+/g).length > 1, 'message: You should use the <code>&gt;=</code> operator at least twice');"
+        "assert(code.match(/val\\s*>=\\s*\\d+/g).length > 1, 'message: You should use the <code>&gt;=</code> operator at least twice');"
       ],
       "challengeSeed": [
         "function myTest(val) {",
@@ -2615,7 +2614,7 @@
         "assert(myTest(54) === \"Under 55\", 'message: <code>myTest(54)</code> should return \"Under 55\"');",
         "assert(myTest(55) === \"55 or Over\", 'message: <code>myTest(55)</code> should return \"55 or Over\"');",
         "assert(myTest(99) === \"55 or Over\", 'message: <code>myTest(99)</code> should return \"55 or Over\"');",
-        "assert(editor.getValue().match(/val\\s*<\\s*\\d+/g).length > 1, 'message: You should use the <code>&lt;</code> operator at least twice');"
+        "assert(code.match(/val\\s*<\\s*\\d+/g).length > 1, 'message: You should use the <code>&lt;</code> operator at least twice');"
       ],
       "challengeSeed": [
         "function myTest(val) {",
@@ -2658,7 +2657,7 @@
       "id": "56533eb9ac21ba0edf2244d7",
       "title": "Comparison with the Less Than Equal To Operator",
       "description": [
-        "The <code>less than equal to</code> operator (<code>&lt;=</code>) compares the values of two numbers.  If the number to the left is less than or equl the number to the right, it returns <code>true</code>. If the number on the left is greater than the number on the right, it returns <code>false</code>.  Like the equality operator, <code>less than equal to</code> converts data types.",
+        "The <code>less than equal to</code> operator (<code>&lt;=</code>) compares the values of two numbers.  If the number to the left is less than or equal the number to the right, it returns <code>true</code>. If the number on the left is greater than the number on the right, it returns <code>false</code>.  Like the equality operator, <code>less than equal to</code> converts data types.",
         "<strong>Examples</strong>",
         "<blockquote>  4 &lt;= 5  // true<br>'7' &lt;= 7  // true<br>  5 &lt;= 5  // true<br>  3 &lt;= 2  // false<br>'8' &lt;= 4  // false</blockquote>",
         "<h4>Instructions</h4>",
@@ -2673,7 +2672,7 @@
         "assert(myTest(24) === \"Smaller Than or Equal to 24\", 'message: <code>myTest(24)</code> should return \"Smaller Than or Equal to 24\"');",
         "assert(myTest(25) === \"25 or More\", 'message: <code>myTest(25)</code> should return \"25 or More\"');",
         "assert(myTest(55) === \"25 or More\", 'message: <code>myTest(55)</code> should return \"25 or More\"');",
-        "assert(editor.getValue().match(/val\\s*<=\\s*\\d+/g).length > 1, 'message: You should use the <code>&lt;=</code> operator at least twice');"
+        "assert(code.match(/val\\s*<=\\s*\\d+/g).length > 1, 'message: You should use the <code>&lt;=</code> operator at least twice');"
       ],
       "challengeSeed": [
         "function myTest(val) {",
@@ -2727,8 +2726,8 @@
       ],
       "releasedOn": "January 1, 2016",
       "tests": [
-        "assert(editor.getValue().match(/&&/g).length === 1, 'message: You should use the <code>&&</code> operator once');",
-        "assert(editor.getValue().match(/if/g).length === 1, 'message: You should only have one <code>if</code> statement');",
+        "assert(code.match(/&&/g).length === 1, 'message: You should use the <code>&&</code> operator once');",
+        "assert(code.match(/if/g).length === 1, 'message: You should only have one <code>if</code> statement');",
         "assert(myTest(0) === \"No\", 'message: <code>myTest(0)</code> should return \"No\"');",
         "assert(myTest(24) === \"No\", 'message: <code>myTest(24)</code> should return \"No\"');",
         "assert(myTest(25) === \"Yes\", 'message: <code>myTest(25)</code> should return \"Yes\"');",
@@ -2775,7 +2774,7 @@
       "id": "56533eb9ac21ba0edf2244d9",
       "title": "Comparisons with the Logical Or Operator",
       "description": [
-        "The <dfn>logical or</dfn> operator (<code>||</code>) returns <code>true</code> if either of<dfn>operands</dfn> is <code>true</code>. Otherwise, it returns <code>false</code>.",
+        "The <dfn>logical or</dfn> operator (<code>||</code>) returns <code>true</code> if either of the <dfn>operands</dfn> is <code>true</code>. Otherwise, it returns <code>false</code>.",
         "The pattern below should look familiar from prior waypoints:",
         "<blockquote>if (num > 10) {<br>  return \"No\";<br>}<br>if (num < 5) {<br>    return \"No\";<br>}<br>return \"Yes\";</blockquote>",
         "will return \"Yes\" only if <code>num</code> is between <code>5</code> and <code>10</code> (5 and 10 included). The same logic can be written as:",
@@ -2785,8 +2784,8 @@
       ],
       "releasedOn": "January 1, 2016",
       "tests": [
-        "assert(editor.getValue().match(/\\|\\|/g).length === 1, 'message: You should use the <code>||</code> operator once');",
-        "assert(editor.getValue().match(/if/g).length === 1, 'message: You should only have one <code>if</code> statement');",
+        "assert(code.match(/\\|\\|/g).length === 1, 'message: You should use the <code>||</code> operator once');",
+        "assert(code.match(/if/g).length === 1, 'message: You should only have one <code>if</code> statement');",
         "assert(myTest(0) === \"Outside\", 'message: <code>myTest(0)</code> should return \"Outside\"');",
         "assert(myTest(9) === \"Outside\", 'message: <code>myTest(9)</code> should return \"Outside\"');",
         "assert(myTest(10) === \"Inside\", 'message: <code>myTest(10)</code> should return \"Inside\"');",
@@ -2842,13 +2841,13 @@
       ],
       "releasedOn": "January 1, 2016",
       "tests": [
-        "assert(editor.getValue().match(/if/g).length === 1, 'message: You should only have one <code>if</code> statement');",
-        "assert(/else/g.test(editor.getValue()), 'message: You should use an <code>else</code> statement');",
+        "assert(code.match(/if/g).length === 1, 'message: You should only have one <code>if</code> statement');",
+        "assert(/else/g.test(code), 'message: You should use an <code>else</code> statement');",
         "assert(myTest(4) === \"5 or Smaller\", 'message: <code>myTest(4)</code> should return \"5 or Smaller\"');",
         "assert(myTest(5) === \"5 or Smaller\", 'message: <code>myTest(5)</code> should return \"5 or Smaller\"');",
         "assert(myTest(6) === \"Bigger than 5\", 'message: <code>myTest(6)</code> should return \"Bigger than 5\"');",
         "assert(myTest(10) === \"Bigger than 5\", 'message: <code>myTest(10)</code> should return \"Bigger than 5\"');",
-        "assert(/var result = \"\";/.test(editor.getValue()) && /return result;/.test(editor.getValue()), 'message: Do not change the code above or below the lines.');"
+        "assert(/var result = \"\";/.test(code) && /return result;/.test(code), 'message: Do not change the code above or below the lines.');"
       ],
       "challengeSeed": [
         "function myTest(val) {",
@@ -2900,8 +2899,8 @@
       ],
       "releasedOn": "January 1, 2016",
       "tests": [
-        "assert(editor.getValue().match(/else/g).length > 1, 'message: You should have at least two <code>else</code> statements');",
-        "assert(editor.getValue().match(/if/g).length > 1, 'message: You should have at least two <code>if</code> statements');",
+        "assert(code.match(/else/g).length > 1, 'message: You should have at least two <code>else</code> statements');",
+        "assert(code.match(/if/g).length > 1, 'message: You should have at least two <code>if</code> statements');",
         "assert(myTest(0) === \"Smaller than 5\", 'message: <code>myTest(4)</code> should return \"Smaller than 5\"');",
         "assert(myTest(5) === \"Between 5 and 10\", 'message: <code>myTest(5)</code> should return \"Smaller than 5\"');",
         "assert(myTest(7) === \"Between 5 and 10\", 'message: <code>myTest(7)</code> should return \"Between 5 and 10\"');",
@@ -2946,9 +2945,9 @@
     },
     {
       "id": "56533eb9ac21ba0edf2244dc",
-      "title": "Chaining If/Else Statements",
+      "title": "Chaining If Else Statements",
       "description": [
-        "<code>if...else</code> statements can be chained together for complex logic. Here is <dfn>pseudocode</dfn> of multiple chained <code>if</code> / <code>else if</code> statements:",
+        "<code>if/else</code> statements can be chained together for complex logic. Here is <dfn>pseudocode</dfn> of multiple chained <code>if</code> / <code>else if</code> statements:",
         "<blockquote>if(<em>condition1</em>) {<br>  <em>statement1</em><br>} else if (<em>condition1</em>) {<br>  <em>statement1</em><br>} else if (<em>condition3</em>) {<br>  <em>statement3</em><br>. . .<br>} else {<br>  <em>statementN</em><br>}</blockquote>",
         "<h4>Instructions</h4>",
         "Write chained <code>if</code>/<code>else if</code> statements to fulfill the following conditions:",
@@ -2956,9 +2955,9 @@
       ],
       "releasedOn": "January 1, 2016",
       "tests": [
-        "assert(editor.getValue().match(/else/g).length > 3, 'message: You should have at least four <code>else</code> statements');",
-        "assert(editor.getValue().match(/if/g).length > 3, 'message: You should have at least four <code>if</code> statements');",
-        "assert(editor.getValue().match(/return/g).length === 5, 'message: You should have five <code>return</code> statements');",
+        "assert(code.match(/else/g).length > 3, 'message: You should have at least four <code>else</code> statements');",
+        "assert(code.match(/if/g).length > 3, 'message: You should have at least four <code>if</code> statements');",
+        "assert(code.match(/return/g).length === 5, 'message: You should have five <code>return</code> statements');",
         "assert(myTest(0) === \"Tiny\", 'message: <code>myTest(0)</code> should return \"Tiny\"');",
         "assert(myTest(4) === \"Tiny\", 'message: <code>myTest(4)</code> should return \"Tiny\"');",
         "assert(myTest(5) === \"Small\", 'message: <code>myTest(5)</code> should return \"Small\"');",
@@ -3081,11 +3080,12 @@
       "id": "56533eb9ac21ba0edf2244dd",
       "title": "Selecting from many options with Switch Statements",
       "description": [
-        "If you have many options to choose from, use a <code>switch</code> statement. A <code>switch</code> statement tests a value and can have many <code>case</code> statements which defines various possible values. Statements are executed from the first matched <code>case</code> value unless a <code>break</code> is encountered. Shown here in <dfn>pseudocode<dfn>:",
+        "If you have many options to choose from, use a <code>switch</code> statement. A <code>switch</code> statement tests a value and can have many <code>case</code> statements which defines various possible values. Statements are executed from the first matched <code>case</code> value until a <code>break</code> is encountered. ",
+        "Here is a <dfn>pseudocode</dfn> example:",
         "<blockquote>switch (num) {<br>  case value1:<br>    statement1;<br>    break;<br>  case value2:<br>    statement2;<br>    break;<br>...<br>  case valueN:<br>    statementN;<br>    break;<br>}</blockquote>",
         "<code>case</code> values are tested with strict equality (<code>===</code>).  The <code>break</code> tells JavaScript to stop executing statements.  If the <code>break</code> is omitted, the next statement will be executed.",
         "<h4>Instructions</h4>",
-        "Write a switch statement to set <code>answer</code> for the following conditions:<br><code>1</code> - \"alpha\"<br><code>2</code> - \"beta\"<br><code>3</code> - \"gamma\"<br><code>4</code> - \"delta\""
+        "Write a switch statement which tests <code>val</code> and sets <code>answer</code> for the following conditions:<br><code>1</code> - \"alpha\"<br><code>2</code> - \"beta\"<br><code>3</code> - \"gamma\"<br><code>4</code> - \"delta\""
       ],
       "releasedOn": "January 1, 2016",
       "tests": [
@@ -3093,8 +3093,8 @@
         "assert(myTest(2) === \"beta\", 'message: <code>myTest(2) should have a value of \"beta\"');",
         "assert(myTest(3) === \"gamma\", 'message: <code>myTest(3) should have a value of \"gamma\"');",
         "assert(myTest(4) === \"delta\", 'message: <code>myTest(4) should have a value of \"delta\"');",
-        "assert(!/else/g.test(editor.getValue()) || !/if/g.test(editor.getValue()), 'message: You should not use any <code>if</code> or <code>else</code> statements');",
-        "assert(editor.getValue().match(/break/g).length > 2, 'message: You should have at least 3 <code>break</code> statements');"
+        "assert(!/else/g.test(code) || !/if/g.test(code), 'message: You should not use any <code>if</code> or <code>else</code> statements');",
+        "assert(code.match(/break/g).length > 2, 'message: You should have at least 3 <code>break</code> statements');"
       ],
       "challengeSeed": [
         "function myTest(val) {",
@@ -3143,7 +3143,7 @@
       "id": "56533eb9ac21ba0edf2244de",
       "title": "Adding a default option in Switch statements",
       "description": [
-        "In a <code>switch</code> statement you may not be able to specify all possible values as <code>case</code> statements. Instead, you can add the <code>default</code> statement which will be executed if no matching <code>case</code> are found. Think of it like the final <code>else</code> statement in an <code>if...else</code> chain.",
+        "In a <code>switch</code> statement you may not be able to specify all possible values as <code>case</code> statements. Instead, you can add the <code>default</code> statement which will be executed if no matching <code>case</code> statements are found. Think of it like the final <code>else</code> statement in an <code>if/else</code> chain.",
         "A <code>default</code> statement should be the last case.",
         "<blockquote>switch (num) {<br>  case value1:<br>    statement1<br>    break;<br>  case value2:<br>    statement2;<br>    break;<br>...<br>  default:<br>    defaultStatement;<br>}</blockquote>",
         "<h4>Instructions</h4>",
@@ -3156,8 +3156,8 @@
         "assert(myTest(\"c\") === \"cat\", 'message: <code>myTest(\"c\") should have a value of \"cat\"');",
         "assert(myTest(\"d\") === \"stuff\", 'message: <code>myTest(\"d\") should have a value of \"stuff\"');",
         "assert(myTest(4) === \"stuff\", 'message: <code>myTest(4) should have a value of \"stuff\"');",
-        "assert(!/else/g.test(editor.getValue()) || !/if/g.test(editor.getValue()), 'message: You should not use any <code>if</code> or <code>else</code> statements');",
-        "assert(editor.getValue().match(/break/g).length > 2, 'message: You should have at least 3 <code>break</code> statements');"
+        "assert(!/else/g.test(code) || !/if/g.test(code), 'message: You should not use any <code>if</code> or <code>else</code> statements');",
+        "assert(code.match(/break/g).length > 2, 'message: You should have at least 3 <code>break</code> statements');"
       ],
       "challengeSeed": [
         "function myTest(val) {",
@@ -3206,7 +3206,7 @@
       "id": "56533eb9ac21ba0edf2244df",
       "title": "Multiple Identical Options in Switch Statements",
       "description": [
-        "If the <code>break</code> statement is omitted from a <code>switch</code> statement <code>case</code>, the following <code>case</code> statement(s) are executed unless a <code>break</code> is encountered.  If you have multiple inputs with the same output, you can represent them in a <code>switch</code> statement like this:",
+        "If the <code>break</code> statement is ommitted from a <code>switch</code> statement's <code>case</code>, the following <code>case</code> statement(s) are executed until a <code>break</code> is encountered.  If you have multiple inputs with the same output, you can represent them in a <code>switch</code> statement like this:",
         "<blockquote>switch(val) {<br>  case 1:<br>  case 2:<br>  case 3:<br>    result = \"1, 2, or 3\";<br>    break;<br>  case 4:<br>    result = \"4 alone\";<br>}</blockquote>",
         "Cases for 1, 2, and 3 will all produce the same result.",
         "<h4>Instructions</h4>",
@@ -3225,8 +3225,8 @@
         "assert(myTest(7) === \"High\", 'message: <code>myTest(7)</code> should return \"High\"');",
         "assert(myTest(8) === \"High\", 'message: <code>myTest(8)</code> should return \"High\"');",
         "assert(myTest(9) === \"High\", 'message: <code>myTest(9)</code> should return \"High\"');",
-        "assert(!/else/g.test(editor.getValue()) || !/if/g.test(editor.getValue()), 'message: You should not use any <code>if</code> or <code>else</code> statements');",
-        "assert(editor.getValue().match(/case/g).length === 9, 'message: You should have nine <code>case</code> statements');"
+        "assert(!/else/g.test(code) || !/if/g.test(code), 'message: You should not use any <code>if</code> or <code>else</code> statements');",
+        "assert(code.match(/case/g).length === 9, 'message: You should have nine <code>case</code> statements');"
       ],
       "challengeSeed": [
         "function myTest(val) {",
@@ -3277,7 +3277,7 @@
     },
     {
       "id": "56533eb9ac21ba0edf2244e0",
-      "title": "Replacing If/Else chains with Switch",
+      "title": "Replacing If Else chains with Switch",
       "description": [
         "If you have many options to choose from, a <code>switch</code> statement can be easier to write than many chained <code>if</code>/<code>if else</code> statements.  The following:",
         "<blockquote>if(val === 1) {<br>  answer = \"a\";<br>} else if(val === 2) {<br>  answer = \"b\";<br>} else {<br>  answer = \"c\";<br>}</blockquote>",
@@ -3288,9 +3288,9 @@
       ],
       "releasedOn": "January 1, 2016",
       "tests": [
-        "assert(!/else/g.test(editor.getValue()), 'message: You should not use any <code>else</code> statements');",
-        "assert(!/if/g.test(editor.getValue()), 'message: You should not use any <code>if</code> statements');",
-        "assert(editor.getValue().match(/break/g).length === 4, 'message: You should have four <code>break</code> statements');",
+        "assert(!/else/g.test(code), 'message: You should not use any <code>else</code> statements');",
+        "assert(!/if/g.test(code), 'message: You should not use any <code>if</code> statements');",
+        "assert(code.match(/break/g).length === 4, 'message: You should have four <code>break</code> statements');",
         "assert(myTest(\"bob\") === \"Marley\", 'message: <code>myTest(\"bob\")</code> should be \"Marley\"');",
         "assert(myTest(42) === \"The Answer\", 'message: <code>myTest(42)</code> should be \"The Answer\"');",
         "assert(myTest(1) === \"There is no #1\", 'message: <code>myTest(1)</code> should be \"There is no #1\"');",
@@ -3371,7 +3371,7 @@
       "tests": [
         "assert(isLess(10,15) === true, 'message: <code>isLess(10,15)</code> should return <code>true</code>');",
         "assert(isLess(15, 10) === false, 'message: <code>isLess(15,10)</code> should return <code>true</code>');",
-        "assert(!/if|else/g.test(editor.getValue()), 'message: You should not use any <code>if</code> or <code>else</code> statements');"
+        "assert(!/if|else/g.test(code), 'message: You should not use any <code>if</code> or <code>else</code> statements');"
       ],
       "challengeSeed": [
         "function isLess(a, b) {",
@@ -3585,7 +3585,7 @@
         "assert(typeof hatValue === 'string' , 'message: <code>hatValue</code> should be a string');",
         "assert(hatValue === 'ballcap' , 'message: The value of <code>hatValue</code> should be <code>\"ballcap\"</code>');",
         "assert(typeof shirtValue === 'string' , 'message: <code>shirtValue</code> should be a string');",
-        "assert(shirtValue === 'jersey' , 'message: The value of <code>shirtValue</code> should be <code>\"jersey\"</code>');\nassert(editor.getValue().match(/testObj\\.\\w+/g).length > 1, 'message: You should use dot notation twice');"
+        "assert(shirtValue === 'jersey' , 'message: The value of <code>shirtValue</code> should be <code>\"jersey\"</code>');\nassert(code.match(/testObj\\.\\w+/g).length > 1, 'message: You should use dot notation twice');"
       ],
       "challengeSeed": [
         "// Setup",
@@ -3638,7 +3638,7 @@
         "assert(entreeValue === 'hamburger' , 'message: The value of <code>entreeValue</code> should be <code>\"hamburger\"</code>');",
         "assert(typeof drinkValue === 'string' , 'message: <code>drinkValue</code> should be a string');",
         "assert(drinkValue === 'water' , 'message: The value of <code>drinkValue</code> should be <code>\"water\"</code>');",
-        "assert(editor.getValue().match(/testObj\\[('|\")[^'\"]+\\1\\]/g).length > 1, 'message: You should use bracket notation twice');"
+        "assert(code.match(/testObj\\[('|\")[^'\"]+\\1\\]/g).length > 1, 'message: You should use bracket notation twice');"
       ],
       "challengeSeed": [
         "// Setup",
@@ -3689,7 +3689,7 @@
         "assert(typeof playerNumber === 'number', 'message: <code>playerNumber</code> should be a number');",
         "assert(typeof player === 'string', 'message: The variable <code>player</code> should be a string');",
         "assert(player === 'Montana', 'message: The value of <code>player</code> should be \"Montana\"');",
-        "assert(/testObj\\[\\s*playerNumber\\s*\\]/.test(editor.getValue()),'message: You should use bracket notation to access <code>testObj</code>');"
+        "assert(/testObj\\[\\s*playerNumber\\s*\\]/.test(code),'message: You should use bracket notation to access <code>testObj</code>');"
       ],
       "challengeSeed": [
         "// Setup",
@@ -3735,7 +3735,7 @@
       ],
       "tests": [
         "assert(/happy coder/gi.test(myDog.name), 'message: Update <code>myDog</code>&apos;s <code>\"name\"</code> property to equal \"Happy Coder\".');",
-        "assert(/\"name\": \"Coder\"/.test(editor.getValue()), 'message: Do not edit the <code>myDog</code> definition');"
+        "assert(/\"name\": \"Coder\"/.test(code), 'message: Do not edit the <code>myDog</code> definition');"
       ],
       "challengeSeed": [
         "// Example",
@@ -3781,7 +3781,7 @@
       ],
       "tests": [
         "assert(myDog.bark !== undefined, 'message: Add the property <code>\"bark\"</code> to <code>myDog</code>.');",
-        "assert(!/bark[^\\n]:/.test(editor.getValue()), 'message: Do not add <code>\"bark\"</code> to the setup section');"
+        "assert(!/bark[^\\n]:/.test(code), 'message: Do not add <code>\"bark\"</code> to the setup section');"
       ],
       "challengeSeed": [
         "// Example",
@@ -3831,7 +3831,7 @@
       ],
       "tests": [
         "assert(myDog.tails === undefined, 'message: Delete the property <code>\"tails\"</code> from <code>myDog</code>.');",
-        "assert(editor.getValue().match(/\"tails\": 1/g).length > 1, 'message: Do not modify the <code>myDog</code> setup');"
+        "assert(code.match(/\"tails\": 1/g).length > 1, 'message: Do not modify the <code>myDog</code> setup');"
       ],
       "challengeSeed": [
         "// Example",
@@ -3879,9 +3879,9 @@
       "id": "56533eb9ac21ba0edf2244ca",
       "title": "Using Objects for Lookups",
       "description": [
-        "Objects can be thought of as a key/value storage, like a dictonary. If you have tabular data, you can use an object to \"lookup\" values rather than a <code>switch</code> statement or an <code>if...else</code> chain. This is most useful when you know that your input data is limited to a certain range.",
+        "Objects can be thought of as a key/value storage, like a dictonary. If you have tabular data, you can use an object to \"lookup\" values rather than a <code>switch</code> statement or an <code>if/else</code> chain. This is most useful when you know that your input data is limited to a certain range.",
         "Here is an example of a simple reverse alphabet lookup:",
-        "<blockquote>var alpha = {<br>  1:\"Z\"<br>  2:\"Y\"<br>  3:\"X\"<br>...<br>  4:\"W\"<br>  24:\"C\"<br>  25:\"B\"<br>  26:\"A\"<br>};<br>alpha[2]; // \"Y\"<br>alpha[24]; // \"C\"</blockquote>",
+        "<blockquote>var alpha = {<br>  1:\"Z\",<br>  2:\"Y\",<br>  3:\"X\",<br>...<br>  4:\"W\",<br>  24:\"C\",<br>  25:\"B\",<br>  26:\"A\"<br>};<br>alpha[2]; // \"Y\"<br>alpha[24]; // \"C\"</blockquote>",
         "<h4>Instructions</h4>",
         "Convert the switch statement into a lookup table called <code>lookup</code>.  Use it to lookup <code>val</code> and return the associated string."
       ],
@@ -3897,7 +3897,7 @@
         "assert(numberLookup(7) === 'seven', 'message: <code>numberLookup(7)</code> should equal <code>\"seven\"</code>');",
         "assert(numberLookup(8) === 'eight', 'message: <code>numberLookup(8)</code> should equal <code>\"eight\"</code>');",
         "assert(numberLookup(9) === 'nine', 'message: <code>numberLookup(9)</code> should equal <code>\"nine\"</code>');",
-        "assert(!/case|switch|if/g.test(editor.getValue()), 'message: You should not use <code>case</code>, <code>switch</code>, or <code>if</code> statements');"
+        "assert(!/case|switch|if/g.test(code), 'message: You should not use <code>case</code>, <code>switch</code>, or <code>if</code> statements');"
       ],
       "challengeSeed": [
         "// Setup",
@@ -3977,11 +3977,11 @@
       "id": "567af2437cbaa8c51670a16c",
       "title": "Testing Objects for Properties",
       "description": [
-        "Sometimes it is useful to check of the property of a given object exists or not.  We can use the <code>.hasOwnProperty([propname])</code> method of objects to determine if that object has the given property name. <code>.hasOwnProperty()</code> returns <code>true</code> or <code>false</code> if the property is found or not.",
+        "Sometimes it is useful to check if the property of a given object exists or not.  We can use the <code>.hasOwnProperty([propname])</code> method of objects to determine if that object has the given property name. <code>.hasOwnProperty()</code> returns <code>true</code> or <code>false</code> if the property is found or not.",
         "<strong>Example</strong>",
         "<blockquote>var myObj = {<br>  top: \"hat\",<br>  bottom: \"pants\"<br>};<br>myObj.hasOwnProperty(\"hat\");    // true<br>myObj.hasOwnProperty(\"middle\"); // false</blockquote>",
         "<h4>Instructions</h4>",
-        "  Modify function <code>checkObj</code> to test <code>myObj</code> for <code>checkProp</code>.  If the property is found, return that property's value.  If not return <code>\"Not Found\"</code>."
+        "Modify the function <code>checkObj</code> to test <code>myObj</code> for <code>checkProp</code>.  If the property is found, return that property's value.  If not, return <code>\"Not Found\"</code>."
       ],
       "releasedOn": "January 1, 2016",
       "tests": [
@@ -4047,7 +4047,7 @@
         "assert(myMusic[1].hasOwnProperty('title') && typeof myMusic[1].title === 'string', 'message: <code>myMusic[1]</code> should  contain a <code>title</code> property which is a string');",
         "assert(myMusic[1].hasOwnProperty('release_year') && typeof myMusic[1].release_year === 'number', 'message: <code>myMusic[1]</code> should contain a <code>release_year</code> property which is a number');",
         "assert(myMusic[1].hasOwnProperty('formats') && Array.isArray(myMusic[1].formats), 'message: <code>myMusic[1]</code> should contain a <code>formats</code> property which is an array');",
-        "assert(typeof myMusic[1].formats[0] === 'string' && myMusic[1].formats.length > 1, 'message: <code>formats</code> should be an array of strings with at least two elements');"
+        "assert(myMusic[1].formats.every(function(item) { return (typeof item === \"string\")}) && myMusic[1].formats.length > 1, 'message: <code>formats</code> should be an array of strings with at least two elements');"
       ],
       "challengeSeed": [
         "var myMusic = [",
@@ -4116,7 +4116,7 @@
       "releasedOn": "January 1, 2016",
       "tests": [
         "assert(gloveBoxContents === \"maps\", 'message: <code>gloveBoxContents</code> should equal \"maps\"');",
-        "assert(/=\\s*myStorage\\.car\\.inside\\[([\"'])glove box\\1\\]/.test(editor.getValue()), 'message: Use dot and bracket notation to access <code>myStorage</code>');"
+        "assert(/=\\s*myStorage\\.car\\.inside\\[([\"'])glove box\\1\\]/.test(code), 'message: Use dot and bracket notation to access <code>myStorage</code>');"
       ],
       "challengeSeed": [
         "// Setup",
@@ -4175,7 +4175,7 @@
       "releasedOn": "January 1, 2016",
       "tests": [
         "assert(secondTree === \"pine\", 'message: <code>secondTree</code> should equal \"pine\"');",
-        "assert(/=\\s*myPlants\\[1\\].list\\[1\\]/.test(editor.getValue()), 'message: Use dot and bracket notation to access <code>myPlants</code>');"
+        "assert(/=\\s*myPlants\\[1\\].list\\[1\\]/.test(code), 'message: Use dot and bracket notation to access <code>myPlants</code>');"
       ],
       "challengeSeed": [
         "// Setup",
@@ -4250,7 +4250,7 @@
       "id": "56533eb9ac21ba0edf2244cf",
       "title": "Record Collection",
       "description": [
-        "You are given a JSON object representing (a small part of) your record collection.  Each album is identified by a unique id number and which has several properties. Not all albums have complete information.",
+        "You are given a JSON object representing (a small part of) your record collection.  Each album is identified by a unique id number and has several properties. Not all albums have complete information.",
         "Write a function which takes an <code>id</code>, a property (<code>prop</code>), and a <code>value</code>.",
         "For the given <code>id</code> in <code>collection</code>:",
         "If <code>value</code> is non-blank (<code>value !== \"\"</code>), then update or set the <code>value</code> for the <code>prop</code>.",
@@ -4379,7 +4379,7 @@
         "Use a <code>for</code> loop to work to push the values 1 through 5 onto <code>myArray</code>."
       ],
       "tests": [
-        "assert(editor.getValue().match(/for\\s*\\(/g).length > 1, 'message: You should be using a <code>for</code> loop for this.');",
+        "assert(code.match(/for\\s*\\(/g).length > 1, 'message: You should be using a <code>for</code> loop for this.');",
         "assert.deepEqual(myArray, [1,2,3,4,5], 'message: <code>myArray</code> should equal <code>[1,2,3,4,5]</code>.');"
       ],
       "challengeSeed": [
@@ -4416,7 +4416,7 @@
         "Push the odd numbers from 1 through 9 to <code>myArray</code> using a <code>for</code> loop."
       ],
       "tests": [
-        "assert(editor.getValue().match(/for\\s*\\(/g).length > 1, 'message: You should be using a <code>for</code> loop for this.');",
+        "assert(code.match(/for\\s*\\(/g).length > 1, 'message: You should be using a <code>for</code> loop for this.');",
         "assert.deepEqual(myArray, [1,3,5,7,9], 'message: <code>myArray</code> should equal <code>[1,3,5,7,9]</code>.');"
       ],
       "challengeSeed": [
@@ -4454,7 +4454,7 @@
         "Push the odd numbers from 9 through 1 to <code>myArray</code> using a <code>for</code> loop."
       ],
       "tests": [
-        "assert(editor.getValue().match(/for\\s*\\(/g).length > 1, 'message: You should be using a <code>for</code> loop for this.');",
+        "assert(code.match(/for\\s*\\(/g).length > 1, 'message: You should be using a <code>for</code> loop for this.');",
         "assert.deepEqual(myArray, [9,7,5,3,1], 'message: <code>myArray</code> should equal <code>[9,7,5,3,1]</code>.');"
       ],
       "challengeSeed": [
@@ -4491,7 +4491,7 @@
       "tests": [
         "assert(total !== 'undefined', 'message: <code>total</code> should be defined');",
         "assert(total === 20, 'message: <code>total</code> should equal 20');",
-        "assert(!/20/.test(editor.getValue()), 'message: Do not set <code>total</code> to 20 directly');"
+        "assert(!/20/.test(code), 'message: Do not set <code>total</code> to 20 directly');"
       ],
       "challengeSeed": [
         "// Example",
@@ -4595,7 +4595,7 @@
         "Push the numbers 0 through 4 to <code>myArray</code> using a <code>while</code> loop."
       ],
       "tests": [
-        "assert(editor.getValue().match(/while/g), 'message: You should be using a <code>while</code> loop for this.');",
+        "assert(code.match(/while/g), 'message: You should be using a <code>while</code> loop for this.');",
         "assert.deepEqual(myArray, [0,1,2,3,4], 'message: <code>myArray</code> should equal <code>[0,1,2,3,4]</code>.');"
       ],
       "challengeSeed": [
@@ -4618,7 +4618,7 @@
       "description": [
         "One of the simplest and most widely known <dfn>ciphers</dfn> is a <code>Caesar cipher</code>, also known as a <code>shift cipher</code>.  In a <code>shift cipher</code> the meanings of the letters are shifted by some set amount.  ",
         "A common modern use is the <a href=\"https://en.wikipedia.org/wiki/ROT13\">ROT13</a> cipher, where the values of the letters are shifted by 13 places.  Thus 'A' &harr; 'N', 'B' &harr;  'O' and so on.",
-        "Write a function which takes a <code>ROT13</code> encoded string as input and returns a decoded string.  All letters will be uppercase.  Do not transform any non-alphabetic character (IE: spaces, punctiation), but do pass them on.",
+        "Write a function which takes a <code>ROT13</code> encoded string as input and returns a decoded string.  All letters will be uppercase.  Do not transform any non-alphabetic character (i.e. spaces, punctuation), but do pass them on.",
         "The provided code transforms the input into an array for you, <code>codeArr</code>. Place the decoded values into the <code>decodedArr</code> array where the provided code will transform it back into a string."
       ],
       "releasedOn": "January 1, 2016",
@@ -4693,7 +4693,7 @@
       "tests": [
         "assert(typeof(myFunction()) === \"number\", 'message: <code>myFunction</code> should return a random number.');",
         "assert((myFunction()+''). match(/\\./g), 'message: The number returned by <code>myFunction</code> should be a decimal.');",
-        "assert(editor.getValue().match(/Math\\.random/g).length >= 0, 'message: You should be using <code>Math.random</code> to generate the random decimal number.');"
+        "assert(code.match(/Math\\.random/g).length >= 0, 'message: You should be using <code>Math.random</code> to generate the random decimal number.');"
       ],
       "challengeSeed": [
         "function myFunction() {",
@@ -4728,9 +4728,9 @@
       ],
       "tests": [
         "assert(typeof(myFunction()) === \"number\" && (function(){var r = myFunction();return Math.floor(r) === r;})(), 'message: The result of <code>myFunction</code> should be a whole number.');",
-        "assert(editor.getValue().match(/Math.random/g).length > 1, 'message: You should be using <code>Math.random</code> to generate a random number.');",
-        "assert(editor.getValue().match(/\\(\\s*?Math.random\\s*?\\(\\s*?\\)\\s*?\\*\\s*?10\\s*?\\)/g) || editor.getValue().match(/\\(\\s*?10\\s*?\\*\\s*?Math.random\\s*?\\(\\s*?\\)\\s*?\\)/g), 'message: You should have multiplied the result of <code>Math.random</code> by 10 to make it a number that is between zero and nine.');",
-        "assert(editor.getValue().match(/Math.floor/g).length > 1, 'message: You should use <code>Math.floor</code> to remove the decimal part of the number.');"
+        "assert(code.match(/Math.random/g).length > 1, 'message: You should be using <code>Math.random</code> to generate a random number.');",
+        "assert(code.match(/\\(\\s*?Math.random\\s*?\\(\\s*?\\)\\s*?\\*\\s*?10\\s*?\\)/g) || code.match(/\\(\\s*?10\\s*?\\*\\s*?Math.random\\s*?\\(\\s*?\\)\\s*?\\)/g), 'message: You should have multiplied the result of <code>Math.random</code> by 10 to make it a number that is between zero and nine.');",
+        "assert(code.match(/Math.floor/g).length > 1, 'message: You should use <code>Math.floor</code> to remove the decimal part of the number.');"
       ],
       "challengeSeed": [
         "var randomNumberBetween0and19 = Math.floor(Math.random() * 20);",
@@ -4763,7 +4763,7 @@
         "assert(myFunction() >= myMin, 'message: The random number generated by <code>myFunction</code> should be greater than or equal to your minimum number, <code>myMin</code>.');",
         "assert(myFunction() <= myMax, 'message: The random number generated by <code>myFunction</code> should be less than or equal to your maximum number, <code>myMax</code>.');",
         "assert(myFunction() % 1 === 0 , 'message: The random number generated by <code>myFunction</code> should be an integer, not a decimal.');",
-        "assert((function(){if(editor.getValue().match(/myMax/g).length > 1 && editor.getValue().match(/myMin/g).length > 2 && editor.getValue().match(/Math.floor/g) && editor.getValue().match(/Math.random/g)){return true;}else{return false;}})(), 'message: <code>myFunction()</code> should use use both <code>myMax</code> and <code>myMin</code>, and return a random number in your range.');"
+        "assert((function(){if(code.match(/myMax/g).length > 1 && code.match(/myMin/g).length > 2 && code.match(/Math.floor/g) && code.match(/Math.random/g)){return true;}else{return false;}})(), 'message: <code>myFunction()</code> should use use both <code>myMax</code> and <code>myMin</code>, and return a random number in your range.');"
       ],
       "challengeSeed": [
         "var ourMin = 1;",
@@ -4810,7 +4810,7 @@
       ],
       "tests": [
         "assert(test==2, 'message: Your <code>regular expression</code> should find two occurrences of the word <code>and</code>.');",
-        "assert(editor.getValue().match(/\\/and\\/gi/), 'message: Use <code>regular expressions</code> to find the word <code>and</code> in <code>testString</code>.');"
+        "assert(code.match(/\\/and\\/gi/), 'message: Use <code>regular expressions</code> to find the word <code>and</code> in <code>testString</code>.');"
       ],
       "head": [
         ""
@@ -4847,7 +4847,7 @@
         "Use the <code>\\d</code> selector to select the number of numbers in the string, allowing for the possibility of multi-digit numbers."
       ],
       "tests": [
-        "assert(editor.getValue().match(/\\/\\\\d\\+\\//g), 'message: Use the <code>/\\d+/g</code> regular expression to find the numbers in <code>testString</code>.');",
+        "assert(code.match(/\\/\\\\d\\+\\//g), 'message: Use the <code>/\\d+/g</code> regular expression to find the numbers in <code>testString</code>.');",
         "assert(test === 2, 'message: Your regular expression should find two numbers in <code>testString</code>.');"
       ],
       "head": [
@@ -4881,7 +4881,7 @@
         "Use it to select all the whitespace characters in the sentence string."
       ],
       "tests": [
-        "assert(editor.getValue().match(/\\/\\\\s\\+\\//g), 'message: Use the <code>/\\s+/g</code> regular expression to find the spaces in <code>testString</code>.');",
+        "assert(code.match(/\\/\\\\s\\+\\//g), 'message: Use the <code>/\\s+/g</code> regular expression to find the spaces in <code>testString</code>.');",
         "assert(test === 7, 'message: Your regular expression should find seven spaces in <code>testString</code>.');"
       ],
       "head": [
@@ -4912,7 +4912,7 @@
         "Use <code>/\\S/g</code> to count the number of non-whitespace characters in <code>testString</code>."
       ],
       "tests": [
-        "assert(editor.getValue().match(/\\/\\\\S\\/g/g), 'message: Use the <code>/\\S/g</code> regular expression to find non-space characters in <code>testString</code>.');",
+        "assert(code.match(/\\/\\\\S\\/g/g), 'message: Use the <code>/\\S/g</code> regular expression to find non-space characters in <code>testString</code>.');",
         "assert(test === 49, 'message: Your regular expression should find forty nine non-space characters in the <code>testString</code>.');"
       ],
       "head": [
