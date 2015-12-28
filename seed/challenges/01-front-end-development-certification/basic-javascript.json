@@ -2140,11 +2140,11 @@
         "<code>var ourSum = sum(5, 12);</code>",
         "will call <code>sum</code> function, which returns a value of <code>17</code> and assigns it to <code>ourSum</code> variable.",
         "<h4>Instructions</h4>",
-        "Call <code>process</code> function with an argument of <code>7</code> and assign it's return value to the variable <code>processed</code>."
+        "Call <code>process</code> function with an argument of <code>7</code> and assign its return value to the variable <code>processed</code>."
       ],
       "releasedOn": "January 1, 2016",
       "tests": [
-        "assert(processed === 2, 'message: <code>processed</code> should have a value of <code>10</code>');",
+        "assert(processed === 2, 'message: <code>processed</code> should have a value of <code>2</code>');",
         "assert(/processed\\s*=\\s*process\\(\\s*7\\s*\\)\\s*;/.test(editor.getValue()), 'message: You should assign <code>process</code> to <code>processed</code>');"
       ],
       "challengeSeed": [
