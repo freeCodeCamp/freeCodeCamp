@@ -2297,10 +2297,10 @@
       "title": "Comparison with the Equality Operator",
       "description": [
         "There are many <dfn>Comparison Operators</dfn> in JavaScript. All of these operators return a boolean <code>true</code> or <code>false</code> value.",
-        "The most basic operator is the equality operator <code>==</code>.  The equality operator compares two values and returns <code>true</code> if they're equivalent or <code>false</code> if they are not.  Note that equality is different from assignment (<code>=</code>), which assigns the value at the right of the operator to a variable in the left.",
+        "The most basic operator is the equality operator <code>==</code>. The equality operator compares two values and returns <code>true</code> if they're equivalent or <code>false</code> if they are not. Note that equality is different from assignment (<code>=</code>), which assigns the value at the right of the operator to a variable in the left.",
         "<blockquote>function equalityTest(myVal) {<br>  if (myVal == 10) {<br>     return \"Equal\";<br>  }<br>  return \"Not Equal\";<br>}</blockquote>",
         "If <code>myVal</code> is equal to <code>10</code>, the function will return \"Equal\".  If it is not, the function will return \"Not Equal\".",
-        "The equality operator will do it's best to convert values for comparison, for example:",
+        "The equality operator will do its best to convert values for comparison, for example:",
         "<blockquote>   1   ==  1        // true<br>  \"1\"  ==  1        // true<br>   1   == '1'       // true<br>   0   == false     // true<br>   0   == null      // false<br>   0   == undefined // false<br> null  == undefined // true</blockquote>",
         "<h4>Instructions</h4>",
         "Add the <code>equality operator</code> to the indicated line so that the function will return \"Equal\" when <code>val</code> is equivalent to <code>12</code>"
