@@ -98,8 +98,8 @@
         "<code>myNum = myVar;</code>",
         "Assigns <code>5</code> to <code>myVar</code> and then resolves <code>myVar</code> to <code>5</code>  again and assigns it to <code>myNum</code>.",
         "<h4>Instructions</h4>",
-        "Assign the value 7 to variable <code>a</code>",
-        "Assign the contents of <code>a</code> to variable <code>b</code>."
+        "Assign the value 7 to the variable <code>a</code>",
+        "Assign the contents of <code>a</code> to the variable <code>b</code>."
       ],
       "releasedOn": "January 1, 2016",
       "tests": [
@@ -174,7 +174,7 @@
       "id": "56533eb9ac21ba0edf2244aa",
       "title": "Understanding Uninitialized Variables",
       "description": [
-        "When Javascript variables are declared, they have an inital value of <code>undefined</code>.  If you do a mathematical operation on an <code>undefined</code> variable your result will be <code>NaN</code> which means <dfn>\"Not a Number\"</dfn>. If you concatanate a string with an <code>undefined</code> variable, you will get a literal <dfn>string</dfn> of <code>\"undefined\"</code>.",
+        "When Javascript variables are declared, they have an inital value of <code>undefined</code>.  If you do a mathematical operation on an <code>undefined</code> variable your result will be <code>NaN</code> which means <dfn>\"Not a Number\"</dfn>. If you concatenate a string with an <code>undefined</code> variable, you will get a literal <dfn>string</dfn> of <code>\"undefined\"</code>.",
         "<h4>Instructions</h4>",
         "Initialize the three variables <code>a</code>, <code>b</code>, and <code>c</code> with <code>5</code>, <code>10</code>, and <code>\"I am a\"</code> respectively so that they will not be <code>undefined</code>."
       ],
@@ -544,7 +544,7 @@
         "<strong>Example</strong>",
         "<blockquote>5 % 2 = 1 because<br>Math.floor(5 / 2) = 2 (Quotient)<br>2 * 2 = 4<br>5 - 4 = 1 (Remainder)</blockquote>",
         "<strong>Usage</strong>",
-        "In mathematics, a number can be checked even or odd by checking the remainder of division of the number by <code>2</code>. ",
+        "In mathematics, a number can be checked even or odd if we divide that number by <code>2</code>. ",
         "<blockquote>17 % 2 = 1 (17 is Odd)<br>48 % 2 = 0 (48 is Even)</blockquote>",
         "<strong>Note</strong>",
         "The <dfn>remainder</dfn> operator is sometimes incorrectly refered to as  the \"modulus\" operator.  It is very similar to modulus, but does not work properly with negative numbers.",
@@ -1012,11 +1012,11 @@
       "description": [
         "We can also use the <code>+=</code> operator to <dfn>concatenate</dfn> a string onto the end of an existing string variable. This can be very helpful to break a long string over several lines.",
         "<h4>Instructions</h4>",
-        "Build <code>myStr</code> over several lines by concatenating these two strings:<br><code>\"This is the first line. \"</code> and <code>\"This is the second line.\"</code> using the <code>+=</code> operator."
+        "Build <code>myStr</code> over several lines by concatenating these two strings:<br><code>\"This is the first string. \"</code> and <code>\"This is the second string.\"</code> using the <code>+=</code> operator."
       ],
       "releasedOn": "January 1, 2016",
       "tests": [
-        "assert(myStr === \"This is the first line. This is the second line.\", 'message: <code>myStr</code> should have a value of <code>This is the first line. This is the second line.</code>');",
+        "assert(myStr === \"This is the first string. This is the second string.\", 'message: <code>myStr</code> should have a value of <code>This is the first string. This is the second string.</code>');",
         "assert(editor.getValue().match(/\\w\\s*\\+=\\s*\"/g).length > 1 && editor.getValue().match(/\\w\\s*\\=\\s*\"/g).length > 1, 'message: Use the <code>+=</code> operator to build <code>myStr</code>');"
       ],
       "challengeSeed": [
@@ -1851,7 +1851,7 @@
       "id": "56533eb9ac21ba0edf2244bd",
       "title": "Passing Values to Functions with Arguments",
       "description": [
-        "Functions can take input in the form of <dfn>parameter</dfn>. Parameters are variables that take on the value of the <dfn>arguments</dfn> which are passed in to the function.  Here is a function with two parameters, <code>param1</code> and <code>param2</code>:",
+        "Functions can take an input in the form of a <dfn>parameter</dfn>. Parameters are variables that take on the value of the <dfn>arguments</dfn> which are passed in to the function.  Here is a function with two parameters, <code>param1</code> and <code>param2</code>:",
         "<blockquote>function testFun(param1, param2) {<br>  console.log(param1, param2);<br>}</blockquote>",
         "Then we can call <code>testFun</code>:",
         "<code>testFun(\"Hello\", \"World\");</code>",
@@ -2349,7 +2349,7 @@
         "<blockquote>3 === 3   // true<br>3 === '3' // false</blockquote>",
         "<em>In the second example, <code>3</code> is a <code>Number</code> type and <code>'3'</code> is a <code>String</code> type.</em>",
         "<h4>Instructions</h4>",
-        "Use strict equality operator in <code>if</code> statement so the function will return \"Equal\" when <code>val</code> is strictly equal to <code>7</code>"
+        "Use the strict equality operator in <code>if</code> statement so the function will return \"Equal\" when <code>val</code> is strictly equal to <code>7</code>"
       ],
       "releasedOn": "January 1, 2016",
       "tests": [
@@ -2437,7 +2437,7 @@
       "id": "56533eb9ac21ba0edf2244d3",
       "title": "Comparison with the Strict Inequality Operator",
       "description": [
-        "The inequality operator (<code>!==</code>) is the opposite of the strict equality operator. It means \"Strictly Not Equal\" and returns <code>false</code> where strict equality would return <code>true</code> and <em>vice versa</em>. Strict inequality will not convert data types.",
+        "The strict inequality operator (<code>!==</code>) is the opposite of the strict equality operator. It means \"Strictly Not Equal\" and returns <code>false</code> where strict equality would return <code>true</code> and <em>vice versa</em>. Strict inequality will not convert data types.",
         "<strong>Examples</strong>",
         "<blockquote>3 !== 3   // false<br>3 !== '3' // true<br>4 !== 3   // true</blockquote>",
         "<h4>Instructions</h4>",
@@ -2658,7 +2658,7 @@
       "id": "56533eb9ac21ba0edf2244d7",
       "title": "Comparison with the Less Than Equal To Operator",
       "description": [
-        "The <code>less than equal to</code> operator (<code>&lt;=</code>) compares the values of two numbers.  If the number to the left is less than or equl the number to the right, it returns <code>true</code>. If the number on the left is greater than the number on the right, it returns <code>false</code>.  Like the equality operator, <code>less than equal to</code> converts data types.",
+        "The <code>less than equal to</code> operator (<code>&lt;=</code>) compares the values of two numbers.  If the number to the left is less than or equal the number to the right, it returns <code>true</code>. If the number on the left is greater than the number on the right, it returns <code>false</code>.  Like the equality operator, <code>less than equal to</code> converts data types.",
         "<strong>Examples</strong>",
         "<blockquote>  4 &lt;= 5  // true<br>'7' &lt;= 7  // true<br>  5 &lt;= 5  // true<br>  3 &lt;= 2  // false<br>'8' &lt;= 4  // false</blockquote>",
         "<h4>Instructions</h4>",
@@ -2715,7 +2715,7 @@
     },
     {
       "id": "56533eb9ac21ba0edf2244d8",
-      "title": "Comparisons with the Logical And Operator",
+      "title": "Comparisons with the Logical 'AND' Operator",
       "description": [
         "Sometimes you will need to test more than one thing at a time.  The <dfn>logical and</dfn> operator (<code>&&</code>) returns <code>true</code> if and only if the <dfn>operands</dfn> to the left and right of it are true.",
         "The same effect could be achieved by nesting an if statement inside another if:",
@@ -2773,9 +2773,9 @@
     },
     {
       "id": "56533eb9ac21ba0edf2244d9",
-      "title": "Comparisons with the Logical Or Operator",
+      "title": "Comparisons with the Logical 'OR' Operator",
       "description": [
-        "The <dfn>logical or</dfn> operator (<code>||</code>) returns <code>true</code> if either of<dfn>operands</dfn> is <code>true</code>. Otherwise, it returns <code>false</code>.",
+        "The <dfn>logical or</dfn> operator (<code>||</code>) returns <code>true</code> if at least one of the <dfn>operands</dfn> is <code>true</code>. Otherwise, it returns <code>false</code>.",
         "The pattern below should look familiar from prior waypoints:",
         "<blockquote>if (num > 10) {<br>  return \"No\";<br>}<br>if (num < 5) {<br>    return \"No\";<br>}<br>return \"Yes\";</blockquote>",
         "will return \"Yes\" only if <code>num</code> is between <code>5</code> and <code>10</code> (5 and 10 included). The same logic can be written as:",
@@ -2895,7 +2895,7 @@
       "title": "Introducing Else If Statements",
       "description": [
         "If you have multiple conditions that need to be addressed, you can chain <code>if</code> statements together with <code>else if</code> statements.",
-        "<blockquote>if (num > 15) {<br>  return \"Bigger then 15\";<br>} else if (num < 5) {<br>  return \"Smaller than 5\";<br>} else {<br>  return \"Between 5 and 15\";<br>}</blockquote>",
+        "<blockquote>if (num > 15) {<br>  return \"Bigger than 15\";<br>} else if (num < 5) {<br>  return \"Smaller than 5\";<br>} else {<br>  return \"Between 5 and 15\";<br>}</blockquote>",
         "<h4>Instructions<h4>Convert the logic to use <code>else if</code> statements."
       ],
       "releasedOn": "January 1, 2016",
@@ -3143,7 +3143,7 @@
       "id": "56533eb9ac21ba0edf2244de",
       "title": "Adding a default option in Switch statements",
       "description": [
-        "In a <code>switch</code> statement you may not be able to specify all possible values as <code>case</code> statements. Instead, you can add the <code>default</code> statement which will be executed if no matching <code>case</code> are found. Think of it like the final <code>else</code> statement in an <code>if...else</code> chain.",
+        "In a <code>switch</code> statement you may not be able to specify all possible values as <code>case</code> statements. Instead, you can add the <code>default</code> statement which will be executed if no matching <code>cases</code> are found. Think of it like the final <code>else</code> statement in an <code>if...else</code> chain.",
         "A <code>default</code> statement should be the last case.",
         "<blockquote>switch (num) {<br>  case value1:<br>    statement1<br>    break;<br>  case value2:<br>    statement2;<br>    break;<br>...<br>  default:<br>    defaultStatement;<br>}</blockquote>",
         "<h4>Instructions</h4>",
@@ -3622,7 +3622,7 @@
       "id": "56533eb9ac21ba0edf2244c8",
       "title": "Accessing Objects Properties with Bracket Notation",
       "description": [
-        "The second way to access the properties of an objectis bracket notation (<code>[]</code>).  If the property of the object you are trying to access has a space in it, you will need to use bracket notation.",
+        "The second way to access the properties of an object is bracket notation (<code>[]</code>).  If the property of the object you are trying to access has a space in it, you will need to use bracket notation.",
         "Here is a sample of using bracket notation to read an object property:",
         "<blockquote>var myObj = {<br>  \"Space Name\": \"Kirk\",<br>  \"More Space\": \"Spock\"<br>  };<br>myObj[\"Space Name\"]; // Kirk<br>myObj['More Space']; // Spock</blockquote>",
         "Note that property names with spaces in them must be in quotes (single or double).",
@@ -3674,7 +3674,7 @@
       "id": "56533eb9ac21ba0edf2244c9",
       "title": "Accessing Objects Properties with Variables",
       "description": [
-        "Another use of bracket notation on objects is to use a variable to access a property. This can be very useful for itterating through lists of object properties or for doing lookups.",
+        "Another use of bracket notation on objects is to use a variable to access a property. This can be very useful for iterating through lists of object properties or for doing lookups.",
         "Here is an example of using a variable to access a property:",
         "<blockquote>var someProp = \"propName\";<br>var myObj = {<br>  propName: \"Some Value\"<br >}<br>myObj[someProp]; // \"Some Value\"</blockquote>",
         "Note that we  do <em>not</em> use quotes around the variable name when using it to access the property because we are using the <em>value</em> of the variable, not the <em>name</em>",
@@ -3877,7 +3877,7 @@
       "description": [
         "Objects can be thought of as a key/value storage, like a dictonary. If you have tabular data, you can use an object to \"lookup\" values rather than a <code>switch</code> statement or an <code>if...else</code> chain. This is most useful when you know that your input data is limited to a certain range.",
         "Here is an example of a simple reverse alphabet lookup:",
-        "<blockquote>var alpha = {<br>  1:\"Z\"<br>  2:\"Y\"<br>  3:\"X\"<br>...<br>  4:\"W\"<br>  24:\"C\"<br>  25:\"B\"<br>  26:\"A\"<br>};<br>alpha[2]; // \"Y\"<br>alpha[24]; // \"C\"</blockquote>",
+        "<blockquote>var alpha = {<br>  1:\"Z\",<br>  2:\"Y\",<br>  3:\"X\",<br>...<br>  4:\"W\",<br>  24:\"C\",<br>  25:\"B\",<br>  26:\"A\",<br>};<br>alpha[2]; // \"Y\"<br>alpha[24]; // \"C\"</blockquote>",
         "<h4>Instructions</h4>",
         "Convert the switch statement into a lookup table called <code>lookup</code>.  Use it to lookup <code>val</code> and return the associated string."
       ],
@@ -3973,11 +3973,11 @@
       "id": "567af2437cbaa8c51670a16c",
       "title": "Testing Objects for Properties",
       "description": [
-        "Sometimes it is useful to check of the property of a given object exists or not.  We can use the <code>.hasOwnProperty([propname])</code> method of objects to determine if that object has the given property name. <code>.hasOwnProperty()</code> returns <code>true</code> or <code>false</code> if the property is found or not.",
+        "Sometimes it is useful to check if the property of a given object exists or not.  We can use the <code>.hasOwnProperty([propname])</code> method of objects to determine if that object has the given property name. <code>.hasOwnProperty()</code> returns <code>true</code> or <code>false</code> if the property is found or not.",
         "<strong>Example</strong>",
         "<blockquote>var myObj = {<br>  top: \"hat\",<br>  bottom: \"pants\"<br>};<br>myObj.hasOwnProperty(\"hat\");    // true<br>myObj.hasOwnProperty(\"middle\"); // false</blockquote>",
         "<h4>Instructions</h4>",
-        "  Modify function <code>checkObj</code> to test <code>myObj</code> for <code>checkProp</code>.  If the property is found, return that property's value.  If not return <code>\"Not Found\"</code>."
+        " Modify the function <code>checkObj</code> to test <code>myObj</code> for <code>checkProp</code>.  If the property is found, return that property's value.  If not, return <code>\"Not Found\"</code>."
       ],
       "releasedOn": "January 1, 2016",
       "tests": [
@@ -4026,7 +4026,7 @@
       "id": "56533eb9ac21ba0edf2244cb",
       "title": "Introducing JavaScript Object Notation (JSON)",
       "description": [
-        "JavaScript Object Notation or <code>JSON</code> uses the format of Javascript Objects to store data.  JSON is flexible becuase it allows for data structures with arbitrary combinations of <dfn>strings</dfn>, <dfn>numbers</dfn>, <dfn>booleans</dfn>, <dfn>arrays</dfn>, and <dfn>objects</dfn>.  ",
+        "JavaScript Object Notation or <code>JSON</code> uses the format of Javascript Objects to store data.  JSON is flexible because it allows for data structures with arbitrary combinations of <dfn>strings</dfn>, <dfn>numbers</dfn>, <dfn>booleans</dfn>, <dfn>arrays</dfn>, and <dfn>objects</dfn>.  ",
         "Here is an example of a JSON object:",
         "<blockquote>var ourMusic = [<br>  {<br>    \"artist\": \"Daft Punk\",<br>    \"title\": \"Homework\",<br>    \"release_year\": 1997,<br>    \"formats\": [ <br>      \"CD\", <br>      \"Cassette\", <br>      \"LP\" ],<br>    \"gold\": true<br>  }<br>];</blockquote>",
         "This is an array of objects and the object has various pieces of <dfn>metadata</dfn> about an album.  It also has a nested array of formats. Additional album records could be added to the top level array.",
@@ -4107,7 +4107,7 @@
         "Here is a nested JSON Object:",
         "<blockquote>var ourStorage = {<br>  \"desk\": {<br>    \"drawer\": \"stapler\"<br>  },<br>  \"cabinet\": {<br>    \"top drawer\": { <br>      \"folder1\": \"a file\",<br>      \"folder2\": \"secrets\"<br>    },<br>    \"bottom drawer\": \"soda\"<br>  }<br>}<br>ourStorage.cabinet[\"top drawer\"].folder2;  // \"secrets\"<br>ourStoage.desk.drawer; // \"stapler\"</blockquote>",
         "<h4>Instructions</h4>",
-        "Access the <code>myStorage</code> JSON object to retrieve the contents of the <code>glove box</code>.  Only use object notation for properties with a space in their name."
+        "Access the <code>myStorage</code> JSON object to retrieve the contents of the <code>glove box</code>.  Only use bracket notation for properties with a space in their name."
       ],
       "releasedOn": "January 1, 2016",
       "tests": [
