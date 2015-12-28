@@ -3206,13 +3206,13 @@
       "id": "56533eb9ac21ba0edf2244df",
       "title": "Multiple Identical Options in Switch Statements",
       "description": [
-        "If the <code>break</code> statement is ommitted from a <code>switch</code> statement <code>case</code>, the following <code>case</code> statement(s) are executed unless a <code>break</code> is encountered.  If you have mutiple inputs with the same output, you can represent them in a <code>switch</code> statement like this:",
+        "If the <code>break</code> statement is omitted from a <code>switch</code> statement <code>case</code>, the following <code>case</code> statement(s) are executed unless a <code>break</code> is encountered.  If you have multiple inputs with the same output, you can represent them in a <code>switch</code> statement like this:",
         "<blockquote>switch(val) {<br>  case 1:<br>  case 2:<br>  case 3:<br>    result = \"1, 2, or 3\";<br>    break;<br>  case 4:<br>    result = \"4 alone\";<br>}</blockquote>",
         "Cases for 1, 2, and 3 will all produce the same result.",
         "<h4>Instructions</h4>",
         "Write a switch statement to set <code>answer</code> for the following ranges:<br><code>1-3</code> - \"Low\"<br><code>4-6</code> - \"Mid\"<br><code>7-9</code> - \"High\"",
         "<strong>Note</strong>",
-        "<ber>You will need to have a <code>case</code> statement for each number in the range."
+        "You will need to have a <code>case</code> statement for each number in the range."
       ],
       "releasedOn": "January 1, 2016",
       "tests": [
