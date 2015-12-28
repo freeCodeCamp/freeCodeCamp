@@ -2895,7 +2895,8 @@
       "description": [
         "If you have multiple conditions that need to be addressed, you can chain <code>if</code> statements together with <code>else if</code> statements.",
         "<blockquote>if (num > 15) {<br>  return \"Bigger then 15\";<br>} else if (num < 5) {<br>  return \"Smaller than 5\";<br>} else {<br>  return \"Between 5 and 15\";<br>}</blockquote>",
-        "<h4>Instructions<h4>Convert the logic to use <code>else if</code> statements."
+        "<h4>Instructions</h4>",
+        "Convert the logic to use <code>else if</code> statements."
       ],
       "releasedOn": "January 1, 2016",
       "tests": [
@@ -3277,7 +3278,7 @@
     },
     {
       "id": "56533eb9ac21ba0edf2244e0",
-      "title": "Replacing If Else chains with Switch",
+      "title": "Replacing If Else Chains with Switch",
       "description": [
         "If you have many options to choose from, a <code>switch</code> statement can be easier to write than many chained <code>if</code>/<code>if else</code> statements.  The following:",
         "<blockquote>if(val === 1) {<br>  answer = \"a\";<br>} else if(val === 2) {<br>  answer = \"b\";<br>} else {<br>  answer = \"c\";<br>}</blockquote>",
