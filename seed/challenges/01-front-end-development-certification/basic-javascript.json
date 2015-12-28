@@ -972,7 +972,7 @@
       "id": "56533eb9ac21ba0edf2244b7",
       "title": "Concatenating Strings with Plus Operator",
       "description": [
-        "In JavaScript, the <code>+</code> operator when used with a <code>String</code> value, it is called <dfn>concatenation</dfn> operator.  You can build a string out of other strings by <dfn>concatenating</dfn> them together.",
+        "In JavaScript, the <code>+</code> operator when used with a <code>String</code> value, it is called a <dfn>concatenation</dfn> operator. You can build a string out of other strings by <dfn>concatenating</dfn> them together.",
         "",
         "<code>'My name is Alan.' + ' And I am able to concatenate.'</code>",
         "",
@@ -982,7 +982,7 @@
       ],
       "releasedOn": "January 1, 2016",
       "tests": [
-        "assert(myStr === \"This is the start. This is the end.\", 'message: <code>myStr</code> should have a value of <code>This is the start. This is the end</code>');",
+        "assert(myStr === \"This is the start. This is the end.\", 'message: <code>myStr</code> should have a value of <code>This is the start. This is the end.</code>');",
         "assert(editor.getValue().match(/\"\\s*\\+\\s*\"/g).length > 1, 'message: Use the <code>+</code> operator to build <code>myStr</code>');"
       ],
       "challengeSeed": [
