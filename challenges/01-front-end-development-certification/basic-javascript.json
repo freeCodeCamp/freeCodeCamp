@@ -16,6 +16,9 @@
         "<h4>Instructions</h4>",
         "Try creating one of each type of comment."
       ],
+      "challengeSeed": [
+        "  "
+      ],
       "tests": [
         "assert(editor.getValue().match(/(\\/\\/)...../g), 'message: Create a <code>//</code> style comment that contains at least five letters.');",
         "assert(editor.getValue().match(/(\\/\\*)[\\w\\W]{5,}(?=\\*\\/)/gm), 'message: Create a <code>/* */</code> style comment that contains at least five letters.');",
