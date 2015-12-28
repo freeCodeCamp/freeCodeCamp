@@ -61,7 +61,7 @@
       "id": "bd7123c9c443eddfaeb5bdef",
       "title": "Declare JavaScript Variables",
       "description": [
-        "It's nice to have seven different ways of representing data. But to use them in other parts of code, we must store the data somewhere. In computer science, the placeholder where data is stored for further use is known as <code>variable</code>.",
+        "It's nice to have seven different ways of representing data. But to use them in other parts of code, we must store the data somewhere. In computer science, the placeholder where data is stored for further use is known as a <code>variable</code>.",
         "These variables are no different from the x and y variables you use in Maths. Which means they're just a simple name to represent the data we want to refer to.",
         "Now let's create our first variable and call it \"myName\".",
         "You'll notice that in <code>myName</code>, we didn't use a space, and that the \"N\" is capitalized. In JavaScript, we write variable names in \"camelCase\".",
