@@ -232,10 +232,10 @@ block content
                             .modal-footer
                                 a.btn.btn-success.btn-block(href='#', data-dismiss='modal', aria-hidden='true')
                                     span.ion-happy
-                                    | Nevermind, I don't want to delete all my progress
-                                .btn-spacer
+                                    | Nevermind, I don't want to delete all of my progress
+                                .spacer
                                 form(action='/account/delete', method='POST')
                                     input(type='hidden', name='_csrf', value=_csrf)
                                     button.btn.btn-danger.btn-block(type='submit')
                                         span.ion-trash-b
-                                        | I am 100% sure I want to delete all my progress
+                                        | I am 100% sure I want to delete my account and all of my progress

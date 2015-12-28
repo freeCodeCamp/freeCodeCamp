@@ -92,7 +92,8 @@ module.exports = function(User) {
 
         req.flash('error', {
           msg:
-            `email ${req.body.email} is already in user, try signing in instead`
+            `The ${req.body.email} email address is already associated with an account. 
+            Try signing in with it here instead.`
         });
 
         return res.redirect('/email-signin');
