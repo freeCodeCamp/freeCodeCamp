@@ -1028,8 +1028,8 @@
       "title": "Add Rounded Corners with a Border Radius",
       "description": [
         "Your cat photo currently has sharp corners. We can round out those corners with a CSS property called <code>border-radius</code>.",
-        "You can specify a <code>border-radius</code> with pixels. This will affect how rounded the corners are. Add this property to your <code>thick-green-border</code> class and set it to <code>10px</code>.",
-        "Give your cat photo a <code>border-radius</code> of <code>10px</code>."
+        "You can specify a <code>border-radius</code> with pixels. Give your cat photo a <code>border-radius</code> of <code>10px</code>.",
+        "Note: this waypoint allows for multiple possible solutions. For example, you may add <code>border-radius</code> to either the <code>.thick-green-border</code> class or <code>.smaller-image</code> class."
       ],
       "tests": [
         "assert($(\"img\").hasClass(\"thick-green-border\"), 'message: Your image element should have the class \"thick-green-border\".');",
