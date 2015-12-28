@@ -1,14 +1,28 @@
 {
   "name": "React Projects",
   "order": 15,
-  "isComingSoon": true,
   "time": "200h",
   "challenges": [
     {
-      "id": "bd7158d8c443ede1aeb5bdef",
-      "title": "React Project 1",
-      "challengeSeed": [],
+      "id": "bd7157d8c242eddfaeb5bd13",
+      "title": "Build a Markdown Previewer",
+      "challengeSeed": [
+        "133315782"
+      ],
       "description": [
+        "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='http://codepen.io/ThiagoFerreir4/full/eNMxEp' target='_blank'>http://codepen.io/ThiagoFerreir4/full/eNMxEp</a>.",
+        "<span class='text-info'>Rule #1:</span> Don't look at the example project's code on CodePen. Figure it out for yourself.",
+        "<span class='text-info'>Rule #2:</span> Fulfill the below <a href='http://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
+        "<span class='text-info'>User Story:</span> I can access all of the portfolio webpage's content just by scrolling.",
+        "<span class='text-info'>User Story:</span> I can click different buttons that will take me to the portfolio creator's different social media pages.",
+        "<span class='text-info'>User Story:</span> I can see thumbnail images of different projects the portfolio creator has built (if you haven't built any websites before, use placeholders.)",
+        "<span class='text-info'>User Story:</span> I navigate to different sections of the webpage by clicking buttons in the navigation.",
+        "Don't worry if you don't have anything to showcase on your portfolio yet - you will build several apps on the next few CodePen challenges, and can come back and update your portfolio later.",
+        "There are many great portfolio templates out there, but for this challenge, you'll need to build a portfolio page yourself. Using Bootstrap will make this much easier for you.",
+        "Note that CodePen.io overrides the Window.open() function, so if you want to open windows using jQuery, you will need to target invisible anchor elements like this one: <code>&lt;a target='_blank'&gt;</a></code>.",
+        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck.",
+        "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen. ",
+        "You can get feedback on your project from fellow campers by sharing it in our <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Code Review Chatroom</a>. You can also share it on Twitter and your city's Campsite (on Facebook)."
       ],
       "type": "zipline",
       "challengeType": 3,
@@ -19,17 +33,31 @@
       "descriptionFr": [],
       "nameRu": "",
       "descriptionRu": [],
-      "nameEs": "Crea una aplicación de votaciones",
-      "descriptionEs": [
-        ],
+      "nameEs": "",
+      "descriptionEs": [],
       "namePt": "",
       "descriptionPt": []
     },
     {
-      "id": "bd7158d8c443ede1aeb5bdff",
-      "title": "React Project 2",
-      "challengeSeed": [],
+      "id": "bd7156d8c242eddfaeb5bd13",
+      "title": "Build an Camper Leaderboard",
+      "challengeSeed": [
+        "133315782"
+      ],
       "description": [
+        "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='http://codepen.io/ThiagoFerreir4/full/eNMxEp' target='_blank'>http://codepen.io/ThiagoFerreir4/full/eNMxEp</a>.",
+        "<span class='text-info'>Rule #1:</span> Don't look at the example project's code on CodePen. Figure it out for yourself.",
+        "<span class='text-info'>Rule #2:</span> Fulfill the below <a href='http://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
+        "<span class='text-info'>User Story:</span> I can access all of the portfolio webpage's content just by scrolling.",
+        "<span class='text-info'>User Story:</span> I can click different buttons that will take me to the portfolio creator's different social media pages.",
+        "<span class='text-info'>User Story:</span> I can see thumbnail images of different projects the portfolio creator has built (if you haven't built any websites before, use placeholders.)",
+        "<span class='text-info'>User Story:</span> I navigate to different sections of the webpage by clicking buttons in the navigation.",
+        "Don't worry if you don't have anything to showcase on your portfolio yet - you will build several apps on the next few CodePen challenges, and can come back and update your portfolio later.",
+        "There are many great portfolio templates out there, but for this challenge, you'll need to build a portfolio page yourself. Using Bootstrap will make this much easier for you.",
+        "Note that CodePen.io overrides the Window.open() function, so if you want to open windows using jQuery, you will need to target invisible anchor elements like this one: <code>&lt;a target='_blank'&gt;</a></code>.",
+        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck.",
+        "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen. ",
+        "You can get feedback on your project from fellow campers by sharing it in our <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Code Review Chatroom</a>. You can also share it on Twitter and your city's Campsite (on Facebook)."
       ],
       "type": "zipline",
       "challengeType": 3,
@@ -40,17 +68,31 @@
       "descriptionFr": [],
       "nameRu": "",
       "descriptionRu": [],
-      "nameEs": "Crea una aplicación de coordinación de vida nocturna",
-      "descriptionEs": [
-        ],
+      "nameEs": "",
+      "descriptionEs": [],
       "namePt": "",
       "descriptionPt": []
     },
     {
-      "id": "bd7158d8c443ede1aeb5bd0e",
-      "title": "React Project 3",
-      "challengeSeed": [],
+      "id": "bd7155d8c242eddfaeb5bd13",
+      "title": "Build a Recipe Box",
+      "challengeSeed": [
+        "133315782"
+      ],
       "description": [
+        "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='http://codepen.io/ThiagoFerreir4/full/eNMxEp' target='_blank'>http://codepen.io/ThiagoFerreir4/full/eNMxEp</a>.",
+        "<span class='text-info'>Rule #1:</span> Don't look at the example project's code on CodePen. Figure it out for yourself.",
+        "<span class='text-info'>Rule #2:</span> Fulfill the below <a href='http://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
+        "<span class='text-info'>User Story:</span> I can access all of the portfolio webpage's content just by scrolling.",
+        "<span class='text-info'>User Story:</span> I can click different buttons that will take me to the portfolio creator's different social media pages.",
+        "<span class='text-info'>User Story:</span> I can see thumbnail images of different projects the portfolio creator has built (if you haven't built any websites before, use placeholders.)",
+        "<span class='text-info'>User Story:</span> I navigate to different sections of the webpage by clicking buttons in the navigation.",
+        "Don't worry if you don't have anything to showcase on your portfolio yet - you will build several apps on the next few CodePen challenges, and can come back and update your portfolio later.",
+        "There are many great portfolio templates out there, but for this challenge, you'll need to build a portfolio page yourself. Using Bootstrap will make this much easier for you.",
+        "Note that CodePen.io overrides the Window.open() function, so if you want to open windows using jQuery, you will need to target invisible anchor elements like this one: <code>&lt;a target='_blank'&gt;</a></code>.",
+        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck.",
+        "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen. ",
+        "You can get feedback on your project from fellow campers by sharing it in our <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Code Review Chatroom</a>. You can also share it on Twitter and your city's Campsite (on Facebook)."
       ],
       "type": "zipline",
       "challengeType": 3,
@@ -61,17 +103,31 @@
       "descriptionFr": [],
       "nameRu": "",
       "descriptionRu": [],
-      "nameEs": "Grafica el mercado de acciones",
-      "descriptionEs": [
-        ],
+      "nameEs": "",
+      "descriptionEs": [],
       "namePt": "",
       "descriptionPt": []
     },
     {
-      "id": "bd7158d8c443ede1aeb5bd0f",
-      "title": "React Project 4",
-      "challengeSeed": [],
+      "id": "bd7154d8c242eddfaeb5bd13",
+      "title": "Build the Conway Game of Life",
+      "challengeSeed": [
+        "133315782"
+      ],
       "description": [
+        "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='http://codepen.io/ThiagoFerreir4/full/eNMxEp' target='_blank'>http://codepen.io/ThiagoFerreir4/full/eNMxEp</a>.",
+        "<span class='text-info'>Rule #1:</span> Don't look at the example project's code on CodePen. Figure it out for yourself.",
+        "<span class='text-info'>Rule #2:</span> Fulfill the below <a href='http://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
+        "<span class='text-info'>User Story:</span> I can access all of the portfolio webpage's content just by scrolling.",
+        "<span class='text-info'>User Story:</span> I can click different buttons that will take me to the portfolio creator's different social media pages.",
+        "<span class='text-info'>User Story:</span> I can see thumbnail images of different projects the portfolio creator has built (if you haven't built any websites before, use placeholders.)",
+        "<span class='text-info'>User Story:</span> I navigate to different sections of the webpage by clicking buttons in the navigation.",
+        "Don't worry if you don't have anything to showcase on your portfolio yet - you will build several apps on the next few CodePen challenges, and can come back and update your portfolio later.",
+        "There are many great portfolio templates out there, but for this challenge, you'll need to build a portfolio page yourself. Using Bootstrap will make this much easier for you.",
+        "Note that CodePen.io overrides the Window.open() function, so if you want to open windows using jQuery, you will need to target invisible anchor elements like this one: <code>&lt;a target='_blank'&gt;</a></code>.",
+        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck.",
+        "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen. ",
+        "You can get feedback on your project from fellow campers by sharing it in our <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Code Review Chatroom</a>. You can also share it on Twitter and your city's Campsite (on Facebook)."
       ],
       "type": "zipline",
       "challengeType": 3,
@@ -82,17 +138,31 @@
       "descriptionFr": [],
       "nameRu": "",
       "descriptionRu": [],
-      "nameEs": "Administra un club de intercambio de libros",
-      "descriptionEs": [
-        ],
+      "nameEs": "",
+      "descriptionEs": [],
       "namePt": "",
       "descriptionPt": []
     },
     {
-      "id": "bd7158d8c443ede1aeb5bdee",
-      "title": "React Project 5",
-      "challengeSeed": ["133315784"],
+      "id": "bd7153d8c242eddfaeb5bd13",
+      "title": "Build a Roguelike Dungeon Crawler Game",
+      "challengeSeed": [
+        "133315782"
+      ],
       "description": [
+        "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='http://codepen.io/ThiagoFerreir4/full/eNMxEp' target='_blank'>http://codepen.io/ThiagoFerreir4/full/eNMxEp</a>.",
+        "<span class='text-info'>Rule #1:</span> Don't look at the example project's code on CodePen. Figure it out for yourself.",
+        "<span class='text-info'>Rule #2:</span> Fulfill the below <a href='http://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
+        "<span class='text-info'>User Story:</span> I can access all of the portfolio webpage's content just by scrolling.",
+        "<span class='text-info'>User Story:</span> I can click different buttons that will take me to the portfolio creator's different social media pages.",
+        "<span class='text-info'>User Story:</span> I can see thumbnail images of different projects the portfolio creator has built (if you haven't built any websites before, use placeholders.)",
+        "<span class='text-info'>User Story:</span> I navigate to different sections of the webpage by clicking buttons in the navigation.",
+        "Don't worry if you don't have anything to showcase on your portfolio yet - you will build several apps on the next few CodePen challenges, and can come back and update your portfolio later.",
+        "There are many great portfolio templates out there, but for this challenge, you'll need to build a portfolio page yourself. Using Bootstrap will make this much easier for you.",
+        "Note that CodePen.io overrides the Window.open() function, so if you want to open windows using jQuery, you will need to target invisible anchor elements like this one: <code>&lt;a target='_blank'&gt;</a></code>.",
+        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck.",
+        "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen. ",
+        "You can get feedback on your project from fellow campers by sharing it in our <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Code Review Chatroom</a>. You can also share it on Twitter and your city's Campsite (on Facebook)."
       ],
       "type": "zipline",
       "challengeType": 3,
@@ -103,9 +173,8 @@
       "descriptionFr": [],
       "nameRu": "",
       "descriptionRu": [],
-      "nameEs": "Crea un clon de Pinterest",
-      "descriptionEs": [
-        ],
+      "nameEs": "",
+      "descriptionEs": [],
       "namePt": "",
       "descriptionPt": []
     }
