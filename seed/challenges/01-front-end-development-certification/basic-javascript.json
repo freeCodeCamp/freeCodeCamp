@@ -90,7 +90,7 @@
       "id": "56533eb9ac21ba0edf2244a8",
       "title": "Storing Values with the Equal Operator",
       "description": [
-        "In Javascript, you can store a value in a variable with the <dfn>assignment</dfn> or <code>equal</code> (<code>=</code>)  operator.",
+        "In JavaScript, you can store a value in a variable with the <dfn>assignment</dfn> or <code>equal</code> (<code>=</code>)  operator.",
         "<code>myVariable = 5;</code>",
         "Assigns the <code>Number</code> value <code>5</code> to <code>myVariable</code>.",
         "Assignment always goes from right to left.  Everything to the right of the <code>=</code> operator is resolved before the value is assigned to the variable to the left of the operator.",
@@ -98,7 +98,7 @@
         "<code>myNum = myVar;</code>",
         "Assigns <code>5</code> to <code>myVar</code> and then resolves <code>myVar</code> to <code>5</code>  again and assigns it to <code>myNum</code>.",
         "<h4>Instructions</h4>",
-        "Assign the value 7 to variable <code>a</code>",
+        "Assign the value <code>7</code> to variable <code>a</code>",
         "Assign the contents of <code>a</code> to variable <code>b</code>."
       ],
       "releasedOn": "January 1, 2016",
