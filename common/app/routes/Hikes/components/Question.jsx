@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
-import { Spring } from 'react-motion';
-import { Navigation, TransitionHook } from 'react-router';
+import { Motion } from 'react-motion';
+import { History, Lifecycle } from 'react-router';
 import debugFactory from 'debug';
 import {
   Button,
@@ -19,8 +19,8 @@ export default React.createClass({
   displayName: 'Question',
 
   mixins: [
-    Navigation,
-    TransitionHook
+    History,
+    Lifecycle
   ],
 
   propTypes: {
@@ -150,7 +150,8 @@ export default React.createClass({
 
     postJSON$('/completed-challenge', { id, name }).subscribeOnCompleted(() => {
       if (tests[nextQuestionIndex]) {
-        return this.transitionTo(
+        return this.history.pushState(
+          null,
           `/hikes/${ dashedName }/questions/${ nextQuestionIndex + 1 }`
         );
       }
@@ -168,13 +169,13 @@ export default React.createClass({
         }, null);
 
       if (nextHike) {
-        return this.transitionTo(`/hikes/${ nextHike.dashedName }`);
+        return this.history.pushState(null, `/hikes/${ nextHike.dashedName }`);
       }
       debug(
         'next Hike was not found, currentHike %s',
         currentHike.dashedName
       );
-      this.transitionTo('/hikes');
+      this.history.pushState(null, '/hikes');
     });
   },
 
@@ -214,7 +215,8 @@ export default React.createClass({
   },
 
   renderQuestion(number, question, answer, shake) {
-    return ({ val: { x } }) => {
+    return ({ x: xFunc }) => {
+      const x = xFunc().val.x;
       const style = {
         WebkitTransform: `translate3d(${ x }px, 0, 0)`,
         transform: `translate3d(${ x }px, 0, 0)`
@@ -251,9 +253,9 @@ export default React.createClass({
         xs={ 8 }
         xsOffset={ 2 }>
         <Row>
-          <Spring endValue={ this.getTweenValues }>
+          <Motion style={{ x: this.getTweenValues }}>
             { this.renderQuestion(number, question, answer, shake) }
-          </Spring>
+          </Motion>
           { this.renderInfo(showInfo, info) }
           <Panel>
             <Button

@@ -3,14 +3,13 @@ extends ../layout
 block content
     .col-sm-8.col-sm-offset-2.jumbotron
       form(method='POST', action="/forgot")
-        h1 Forgot Password
+        h2.text-center Forgot Password Reset
         input(type='hidden', name='_csrf', value=_csrf)
         .form-group
-          p Enter your email address below and we will send you password reset instructions.
-          label.control-label(for='email') Email
-          input.form-control(type='email', name='email', id='email', placeholder='Email', autofocus=true)
+          p Enter your email address. We'll send you password reset instructions.
+          input.form-control.input-lg(type='email', name='email', id='email', placeholder='Email', autofocus=true required)
         .form-group
-          button.btn.btn-primary(type='submit')
+          button.btn.btn-primary.btn-lg.btn-block(type='submit')
             i.fa.fa-key
             | Reset Password
 

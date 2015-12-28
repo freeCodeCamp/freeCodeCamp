@@ -1,14 +1,15 @@
 import Jobs from './Jobs';
 import Hikes from './Hikes';
+import NotFound from '../components/NotFound/index.jsx';
 
 export default {
   path: '/',
-  getChildRoutes(locationState, cb) {
-    setTimeout(() => {
-      cb(null, [
-        Jobs,
-        Hikes
-      ]);
-    }, 0);
-  }
+  childRoutes: [
+    Jobs,
+    Hikes,
+    {
+      path: '*',
+      component: NotFound
+    }
+  ]
 };

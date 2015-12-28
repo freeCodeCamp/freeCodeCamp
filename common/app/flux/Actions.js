@@ -8,15 +8,27 @@ export default Actions({
     return { title: title + '| Free Code Camp' };
   },
 
-  setUser({ username, picture, progressTimestamps = [] }) {
+  setUser({
+    username,
+    picture,
+    progressTimestamps = [],
+    isFrontEndCert,
+    isFullStackCert
+  }) {
     return {
       username,
       picture,
-      points: progressTimestamps.length
+      points: progressTimestamps.length,
+      isFrontEndCert,
+      isFullStackCert
     };
   },
 
-  getUser: null
+  getUser: null,
+  updateRoute(route) {
+    return { route };
+  },
+  goBack: null
 })
   .refs({ displayName: 'AppActions' })
   .init(({ instance: appActions, args: [services] }) => {

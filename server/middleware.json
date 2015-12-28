@@ -15,7 +15,7 @@
   "initial": {
     "compression": {},
     "morgan": {
-      "params": "dev"
+      "params": ":status :method :response-time ms - :url"
     }
   },
   "session": {

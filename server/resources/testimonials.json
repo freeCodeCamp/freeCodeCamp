@@ -1,0 +1,569 @@
+[
+  {
+    "camper": "Meta Hirschl",
+    "quote": "By building a robust and highly functional web app I was able to not only increase my confidence but was able to show potential employers what I was able to create. Both were huge for me and led me to getting a fantastic job.",
+    "github": "MetaCoderHirschl",
+    "linkedin": "https://www.linkedin.com/profile/view?id=ADEAAAKX2fEBfeZ1GVdOh-c0zzkYZKw38o8qzow",
+    "image": "http://i.imgur.com/nsvNixW.jpg"
+  },
+  {
+    "camper": "Branden Byers",
+    "quote": "My goal was to become employed by the end of 2015. Instead, I ended up with a job at the beginning of 2015. This was directly related to my work at Free Code Camp.",
+    "github": "brandenbyers",
+    "linkedin": "https://www.linkedin.com/in/brandenbyers",
+    "image": "http://i.imgur.com/NbzknHq.jpg"
+  },
+  {
+    "camper": "Bruna Torman Reseres Franasa",
+    "quote": "I’m now receiving offers for internships. I have no experience in IT, but now good things are happening!",
+    "github": "brunatrf",
+    "linkedin": "https://www.linkedin.com/profile/view?id=AAkAABVPh9IB730qyshrsqO1hDNNRUL-X_4i8n0",
+    "image": "http://i.imgur.com/TqxHSNY.jpg"
+  },
+  {
+    "camper": "Maxim Orlov",
+    "quote": "I started Free Code Camp with zero knowledge of web development. 6 months later, I landed my first job as a back end engineer.",
+    "github": "Maximization",
+    "linkedin": "https://www.linkedin.com/profile/view?id=AAkAAAo83nwBF57LpD9mZlm5dH6OcovOpYKPs3k",
+    "image": "http://i.imgur.com/wjlDigg.jpg"
+  },
+  {
+    "camper": "Alexander Black, Jr.",
+    "quote": "My work on a nonprofit project gave me the opportunity to learn how to build Chrome extensions and showcase my skills as a full-stack developer.",
+    "github": "alexblackjr",
+    "linkedin": "https://www.linkedin.com/profile/view?id=AAkAAA553L4BgfgBR-M9RQc7x5matd6FUx3a6-I",
+    "image": "http://i.imgur.com/iHC6ZI4.jpg"
+  },
+  {
+    "camper": "Cristiane Henriques",
+    "quote": "I am getting more work contacts after including Free Code Camp on my CV and my LinkedIn.",
+    "github": "CrisHenriques",
+    "linkedin": "https://www.linkedin.com/in/crishenriques",
+    "image": "http://i.imgur.com/T6iTQHs.jpg"
+  },
+  {
+    "camper": "Viktor Bakurin",
+    "quote": "During my work on Free Code Camp's nonprofit projects, I found a MEAN stack position outside of my home country. Now I work in Budapest.",
+    "github": "letalumil",
+    "linkedin": "https://www.linkedin.com/profile/view?id=AAkAAAq6G3QBA1DIwFZGrS4DGqDzBDTzFjrbNQo",
+    "image": "http://i.imgur.com/fvUAWlx.jpg"
+  },
+  {
+    "camper": "Ashley Drake",
+    "quote": "Free Code Camp helped me get my first engineering job. This amazing community made my career switch a lot easier and more fun.",
+    "github": "aldraco",
+    "linkedin": "https://www.linkedin.com/profile/view?id=AAkAABcdBycB1iVHvcW7N3yVK-18ES7Nrxx2jbE",
+    "image": "http://i.imgur.com/xzDoJef.jpg"
+  },
+  {
+    "camper": "Brian Grant",
+    "quote": "Free Code Camp's a great way for disabled veterans like me to retrain. I'm receiving engineering job offers, and I haven't even finished yet.",
+    "github": "codeseekingman",
+    "linkedin": "https://www.linkedin.com/profile/view?id=AAkAAAEUqXoBFOq1SWQrBsTMHG4ij9Ss4Qqnrtg",
+    "image": "http://i.imgur.com/QPpjPac.jpg"
+  },
+  {
+    "camper": "Thomas Joseph Izen",
+    "quote": "After spending lots of time trying different sites that aim to teach people how to code, FreeCodeCamp has been different from the beginning. They provide the best and most organized track for anyone at any level to learn how to code and build an amazing, marketable portfolio.",
+    "github": "TommyIzen",
+    "linkedin": "https://www.linkedin.com/profile/view?id=AAkAAA79qIYB_RHmvOP59S6VPK3Lm06oG8fM6dw",
+    "image": "http://i.imgur.com/RkO2ISf.jpg"
+  },
+  {
+    "camper": "Lori Becker",
+    "quote": "After graduating with a Masters degree in computer science, I could not share any of my code with employers (university policy: fear of aiding cheating). With FreeCodeCamp, I was able to develop a small portfolio.",
+    "github": "LCBecker",
+    "linkedin": "https://www.linkedin.com/profile/view?id=AAkAAADrtuwBOA_0ihkKIbUFXoXskXikQT9uVeo",
+    "image": "http://i.imgur.com/J1cbqDQ.jpg"
+  },
+  {
+    "camper": "Robert Trammel",
+    "quote": "I'm working a job integrating JavaScript into FileMaker and doing some custom web publishing for a school district. I've also have job offers from Apple and a few technology firms around the country. If it wasn't for Free Code Camp, I'd still be in the dark with some really awesome but irrelevant skills.",
+    "github": "comajama",
+    "linkedin": "https://www.linkedin.com/profile/view?id=AAIAABQsM30BEAI6xyAhk-OqbBNUJL0WD2uA3GE",
+    "image": "http://i.imgur.com/E9YdQIn.jpg"
+  },
+  {
+    "camper": "Brian Atkins",
+    "quote": "I'm spending less time then I used to on Free Code Camp, because people have begun to hire me to work on their projects. Free Code Camp has provided me the foundation I have needed to get these jobs.",
+    "github": "BrianAtk",
+    "linkedin": "https://www.linkedin.com/profile/view?id=AAkAAABtTx0BmDzmB7eDGOkAJbRw8RZdvysreso",
+    "image": "http://i.imgur.com/veN77Iw.jpg"
+  },
+  {
+    "camper": "Andrea Goulet",
+    "quote": "Before enrolling in Free Code Camp, I was nervous when people asked me, \"Do you code?\", Now, I answer with a confident \"YES!\"",
+    "github": "andreagoulet",
+    "linkedin": "https://www.linkedin.com/profile/view?id=AAkAAAA4KWYB-mCMwEU3LvDHXt6H0rVHbBvszq0",
+    "image": "http://i.imgur.com/XWt7fXk.jpg"
+  },
+  {
+    "camper": "David McGill",
+    "quote": "Even if you have a CS degree like I do, you still need projects to prove to employers that you care about coding. Free Code Camp provided me with a platform for doing this. It's all laid out for you - you just have step up and step into the map!",
+    "github": "dmcgill50",
+    "linkedin": "https://www.linkedin.com/profile/view?id=AAkAAAEBy74BHsJCpgrbohr2dJxbdXuvMuJDx6k",
+    "image": "http://i.imgur.com/ZVNPIYU.jpg"
+  },
+  {
+    "camper": "Adam Recvlohe",
+    "quote": "I had no previous development experience and I was working a full-time as an Instructional Designer. Free Code Camp helped me get hired as a JavaScript developer.",
+    "github": "arecvlohe",
+    "linkedin": "https://www.linkedin.com/in/adamrecvlohe",
+    "image": "http://i.imgur.com/oFxOlRG.jpg"
+  },
+  {
+    "camper": "John Ellis",
+    "quote": "Free Code Camp has been one of the major contributors to my career in software development. I started as an apps analyst, spent 3 months going through the coursework in my off time and weekends, and just landed a job as a business systems developer.",
+    "github": "johnmellis",
+    "linkedin": "https://www.linkedin.com/profile/view?id=AAkAAAbrISEBqAVYOBfhni9mB3YoFFzzrAbYvvo",
+    "image": "http://i.imgur.com/qLfaM9Y.jpg"
+  },
+  {
+    "camper": "Rachel Krantz",
+    "quote": "Free Code Camp gave me confidence that I could apply to software engineering jobs, because I knew I was capable of learning. That confidence convinced the hiring manager to hire me.",
+    "github": "krantzinator",
+    "linkedin": "https://www.linkedin.com/profile/view?id=AAkAAAOdv-oBnOGtQCoGooUB0xGJ4TWoAgV_z_E",
+    "image": "http://i.imgur.com/dqHrkkC.jpg"
+  },
+  {
+    "camper": "Alex Dixon",
+    "quote": "I was hired by the owner of the company, a programmer with 25 years of experience in web development. I graduated from university with a degree in English and had no programming experience prior to attending FreeCodeCamp.",
+    "github": "alex-dixon",
+    "linkedin": "https://www.linkedin.com/profile/view?id=AAkAABhCmLMBLAR1AXskaJXDMT-uLPZ8M7TynPQ",
+    "image": "http://i.imgur.com/poiaanK.jpg"
+  },
+  {
+    "camper": "Ryan Lindeman",
+    "quote": "Free Code Camp has been great in giving me a direct path to the full stack development skills I wanted to become more involved in projects at work.",
+    "github": "fai1whale",
+    "linkedin": "https://www.linkedin.com/profile/view?id=AAkAAAkMT1EBFCY849rMWYSDIEj6kosBJSH9n2s",
+    "image": "http://i.imgur.com/jHOjcyN.jpg"
+  },
+  {
+    "camper": "Stephanie Brown",
+    "quote": "Free Code Camp has given me structure and a direction while learning to code.",
+    "github": "strawmitch",
+    "linkedin": "https://www.linkedin.com/profile/view?id=AAkAAARqP5cBDDdBxPUzluctvjUhOP3UsiowRtM",
+    "image": "http://i.imgur.com/k5EEyNf.jpg"
+  },
+  {
+    "camper": "Jimson Sulit",
+    "quote": "Aside from the fact that I’m learning full stack web development, Free Code Camp has also given me the opportunity to lead local community projects.",
+    "github": "webdevjedi25",
+    "linkedin": "https://www.linkedin.com/profile/view?id=AAkAAAWqUccBopX2Wo_P1gYgy0iIEqChwXPTh2k",
+    "image": "http://i.imgur.com/DzMDPS5.jpg"
+  },
+  {
+    "camper": "Brian Emory",
+    "quote": "I like to learn by doing but with the books, while very informative, there was more reading than doing. I came across Free Code Camp which has allowed me to learn by doing. Whereas before I was struggling to learn, I am now not only learning but learning while building cool projects.",
+    "github": "thebrianemory",
+    "linkedin": "https://www.linkedin.com/profile/view?id=AAkAABc3jXwB-iZdZKZIVAvL93RHGB7_J9gDbVA",
+    "image": "http://i.imgur.com/JcdSD9H.jpg"
+  },
+  {
+    "camper": "Ralph Cachero",
+    "quote": "I am a software QA engineer. Free Code Camp has helped me understand what the developers go through.",
+    "github": "rcachero",
+    "linkedin": "https://www.linkedin.com/profile/view?id=AAkAAAJEF88BiUtMoxS3Ww7ooI9QmTZdrgP272Q",
+    "image": "http://i.imgur.com/5umfPRq.jpg"
+  },
+  {
+    "camper": "Ina Tsetsova",
+    "quote": "Bonfires really make me think and combine programming concepts creatively.",
+    "github": "Tsetsova",
+    "linkedin": "https://www.linkedin.com/profile/view?id=AAkAAAjPoIcBJsAF91dqwgxFQ4qct88yFcljXNU",
+    "image": "http://i.imgur.com/9Ta15Ow.jpg"
+  },
+  {
+    "camper": "Ryan Jones",
+    "quote": "Learning to code with Free Code Camp has given me a leg up in my career. It has helped to train my brain to think with the logic that computers use. This is a tremendous aid in the field of digital forensics.",
+    "github": "ryanmjones",
+    "linkedin": "https://www.linkedin.com/profile/view?id=AAkAABPJt1MBxC4Yero3PJPhF9rrr_Y7WfOGcCU",
+    "image": "http://i.imgur.com/8cRU20S.jpg"
+  },
+  {
+    "camper": "Sara Powell",
+    "quote": "I’ve progressed from not coding very much at all, to coding well enough to land job interviews for front end development positions.",
+    "github": "newtcobell",
+    "linkedin": "https://www.linkedin.com/profile/view?id=AAkAAAy1jmQBRjoGSUWd6Zib7FtekpSMBVHr7Vw",
+    "image": "http://i.imgur.com/4l4OBbR.jpg"
+  },
+  {
+    "camper": "Rhonadale Florentino",
+    "quote": "I can now confidently tell clients that I can design their website.",
+    "github": "None Given",
+    "linkedin": "https://www.linkedin.com/profile/view?id=AAkAAAI53oUBmy6MPKp1UeHxBy3_y0cyTS4bWow",
+    "image": "http://i.imgur.com/soEDnv6.jpg"
+  },
+  {
+    "camper": "Justin Clay Lane",
+    "quote": "Free Code Camp provided a structured learning experience more akin to an actual class, compared to other free learning sites. I was recently hired to update and maintain the website for a local doctor’s office. The extra money and experience from that is wonderful.",
+    "github": "jclane",
+    "linkedin": "https://www.linkedin.com/profile/view?id=AAkAAAYZYQ4BBY337OqRUhMnZqDJNX1wNXjT7Bk",
+    "image": "http://i.imgur.com/COEPda5.jpg"
+  },
+  {
+    "camper": "Angshuman Gupta",
+    "quote": "I’m a co-founder of a startup. We had been coding with PHP, but always wanted to shift to meteor.js. Free Code Camp gave me a structured JavaScript guide.",
+    "github": "codingang",
+    "linkedin": "https://www.linkedin.com/profile/view?id=AAkAAAhIipMB6vAXaratEs0MtUd3GgyYm70cvbE",
+    "image": "http://i.imgur.com/7pwkFQ5.jpg"
+  },
+  {
+    "camper": "Genavieve Clausen",
+    "quote": "Free Code Camp has benefitted me in numerous ways, including the opportunity to learn in a self-paced, supportive environment. I am excited to be a part of a growing community making lasting connections for the career and lifestyle I am pursuing.",
+    "github": "GenavieveMarie",
+    "linkedin": "https://www.linkedin.com/profile/view?id=AAkAAAOISlMBAi43m1SG-xM_S2B8Vy05yiQz5rE",
+    "image": "http://i.imgur.com/vr7lTkx.jpg"
+  },
+  {
+    "camper": "Tim Stauffer",
+    "quote": "I found Free Code Camp more helpful than my MS degree, so I quit college. Learning so much. Also saving $50,000.",
+    "github": "timstauffer",
+    "linkedin": "https://www.linkedin.com/profile/view?id=AAkAAADVcVIBz8UCNjQKl2GUy9ka8UGnQXAXAYw",
+    "image": "http://i.imgur.com/b8YCzf1.jpg"
+  },
+  {
+    "camper": "Marquina M Iliev-Piselli",
+    "quote": "I’m re-designing a site for my full-time job.",
+    "github": "Marquina",
+    "linkedin": "https://www.linkedin.com/profile/view?id=AAkAAACYvVUBTuu8dNRHthN1TFiyk137PLDqnv4",
+    "image": "http://i.imgur.com/6Ep9hfs.jpg"
+  },
+  {
+    "camper": "Pete Considine",
+    "quote": "The guided and structured lessons have been really helpful, as has the relatively slow pace that new concepts are introduced. I had been taking a Udemy course and it really seemed to be skimming the surface of JavaScript in the interest of \"getting to everything.\"",
+    "github": "Pjconsidine",
+    "linkedin": "https://www.linkedin.com/profile/view?id=AAkAAAAi8-8BxUVpoi_VuJQmeGWN5zhMBgbvPbs",
+    "image": "http://i.imgur.com/SkYRcDW.jpg"
+  },
+  {
+    "camper": "Khatra Ahmed",
+    "quote": "I can learn to code with support by my side. Everyone is so helpful and it makes learning to code less of a struggle.",
+    "github": "Mystfreak",
+    "linkedin": "https://www.linkedin.com/profile/view?id=AAkAAAbdUsIBApacWEmL7CIxe2q7aevMn7aQvmQ",
+    "image": "http://i.imgur.com/XguPEF7.jpg"
+  },
+  {
+    "camper": "Marcus Lyons",
+    "quote": "Free Code Camp has helped me gain the confidence to automate part of my work responsibilities. I was able to use skills I learned from Free Code Camp to help with writing a bash script to search through mobile app database log files to find errors.",
+    "github": "auron1223",
+    "linkedin": "https://www.linkedin.com/profile/view?id=AAkAAA_1aLABo1pVJH9ijSqz8PvLgpzVYkIsjVc",
+    "image": "http://i.imgur.com/X5c77Ov.jpg"
+  },
+  {
+    "camper": "Reynald Emmanuel Endaya",
+    "quote": "There is an active community (even in Manila) and it’s interactive, unlike all the MOOCs I tried before where I had to listen to somebody speak for a long time. I am learning a lot here and I have not yet lost my momentum.",
+    "github": "None Given",
+    "linkedin": "https://www.linkedin.com/profile/view?id=AAkAAAUlm8oBQuXm_Y89_LDC9mb2vOjjQH_pZDo",
+    "image": "http://i.imgur.com/oA5CtWF.jpg"
+  },
+  {
+    "camper": "Victoria Kariolic",
+    "quote": "I discovered a coding partner through the Free Code Camp groups who has been able to cover gaps for my client work.",
+    "github": "Niaskywalk",
+    "linkedin": "https://www.linkedin.com/profile/view?id=AAkAAAEFmXMBlTFIR2j1G-vJhAMsUOPONILGrLM",
+    "image": "http://i.imgur.com/TiqbM1f.jpg"
+  },
+  {
+    "camper": "Cameron Eshgh",
+    "quote": "Free Code Camp enables me as a digital marketer to dive right into whatever asset or content and fix things that haven’t been working, as well as roll up my sleeves when our web developers are not available.",
+    "github": "eshghitude",
+    "linkedin": "https://www.linkedin.com/profile/view?id=AAkAAAVdU1MBFFiei4ZYNImnVDcR3H_EiuS6qLY",
+    "image": "http://i.imgur.com/PEzJLCp.jpg"
+  },
+  {
+    "camper": "Devarsh Ruparelia",
+    "quote": "Even though I am still just a high school student. The startup I intern for said that if I finish the full track of Free Code Camp, they will strongly consider me for their programming jobs. Thanks Free Code Camp!",
+    "github": "devarsh1997",
+    "linkedin": "https://www.linkedin.com/profile/view?id=AAkAAApxpP8BZBcHQzr6Ci3xmkkZX-OSH_oLuJs",
+    "image": "http://i.imgur.com/ouv1qUd.jpg"
+  },
+  {
+    "camper": "Miranda Bashore",
+    "quote": "I want to be able to freelance and create dynamic websites. Free Code Camp makes that more of a reality for me, as I cannot afford an expensive bootcamp while getting my Master’s degree.",
+    "github": "DutchBay",
+    "linkedin": "https://www.linkedin.com/profile/view?id=AAkAAA8KmJMBTtvvgJzjeAUo_YOssh2yLZZlvlk",
+    "image": "http://i.imgur.com/mJlUzOq.jpg"
+  },
+  {
+    "camper": "Christian Morera",
+    "quote": "Free Code Camp has been a great experience. I’ve learned so many things. I am in the process of transitioning from content developer to full stack developer.",
+    "github": "chrmorfeus",
+    "linkedin": "https://www.linkedin.com/profile/view?id=AAkAAAMc-tYBtYri0H1KHz1WNQjWxZ23jg0tMNU",
+    "image": "http://i.imgur.com/sfhBDHw.jpg"
+  },
+  {
+    "camper": "Jason Arnold",
+    "quote": "I like self-paced learning, so Free Code Camp has been great. The challenges are difficult enough to push boundaries but not so tough to scare people off.",
+    "github": "thejasonfile",
+    "linkedin": "https://www.linkedin.com/profile/view?id=AAkAAABlImsBwAEZ3u3A5NIlCegho8WZ2j4h0w0",
+    "image": "http://i.imgur.com/hqQ3nPA.jpg"
+  },
+  {
+    "camper": "Kaveet Laxmidas",
+    "quote": "Free Code Camp is inspiring me to overhaul some of my old open source projects using more modern approaches and technologies.",
+    "github": "kaveet",
+    "linkedin": "https://www.linkedin.com/profile/view?id=AAkAABZooOgBZJg_0MAJ09pd5vROk83oBFA1cEE",
+    "image": "http://i.imgur.com/1PadpKm.jpg"
+  },
+  {
+    "camper": "Brett Guillory",
+    "quote": "Free Code Camp has given me a great, goal oriented curriculum to learn exactly what I was looking for. And best of all it’s 100% free!",
+    "github": "Kurzninja",
+    "linkedin": "https://www.linkedin.com/profile/view?id=AAkAAAUMPqMBa6GwMTkA_oHUeqnZzyD95FisjwM",
+    "image": "http://i.imgur.com/WjHNwIu.jpg"
+  },
+  {
+    "camper": "Kory J. Campbell",
+    "quote": "I just graduated university, so my financial status is pretty meager, however this camp has definitely helped me improve my skills.",
+    "github": "@koryjcampbell [sic]",
+    "linkedin": "https://www.linkedin.com/profile/view?id=AAkAAAtxvTgB0N_uJhW-87Dew4wHyeqLUP-XyZk",
+    "image": "http://i.imgur.com/buAYlTA.jpg"
+  },
+  {
+    "camper": "Bryon Christopher Miller",
+    "quote": "Free Code Camp has given me a free, online opportunity to study full stack JavaScript in a structured, community-based format. I am very grateful for this opportunity.",
+    "github": "bryonmiller",
+    "linkedin": "https://www.linkedin.com/profile/view?id=AAkAABEXhHoBxj3Uiq7I0a5v1pVkeJ1gWycbm90",
+    "image": "http://i.imgur.com/ssKAX9d.jpg"
+  },
+  {
+    "camper": "Darren Joy",
+    "quote": "Great learning opportunity. Good coding challenges and I’m meeting some very motivated people.",
+    "github": "Darrenfj",
+    "linkedin": "https://www.linkedin.com/profile/view?id=AAkAAARv6UIBWeXw4ZfCJ70kBKgnhcv8XgnVsa8",
+    "image": "http://i.imgur.com/sCkeJ0z.jpg"
+  },
+  {
+    "camper": "Stephen Mayeux",
+    "quote": "Free Code Camp is helpful because it’s not 100% hand-holding, and it pushes me out of my comfort zone.",
+    "github": "stephenmayeux",
+    "linkedin": "https://www.linkedin.com/profile/view?id=AAkAAAjTe7cBhjovoz6zTE_M6MwZ_rr3szhiSOM",
+    "image": "http://i.imgur.com/TbuwAJ3.jpg"
+  },
+  {
+    "camper": "John Hillegass",
+    "quote": "Free Code Camp has given me the confidence that I need when heading into high level client meetings and developer scrum sessions.",
+    "github": "Ohillio",
+    "linkedin": "https://www.linkedin.com/profile/view?id=AAkAAAWEO3AB51y8eR2tYF8nydQb8kANkdPwR5U",
+    "image": "http://i.imgur.com/P61e3dt.jpg"
+  },
+  {
+    "camper": "Eric Hartline",
+    "quote": "The community is very helpful, and I have already accomplished so much more than what I did with other self-guided courses.",
+    "github": "wildlifehexagon",
+    "linkedin": "https://www.linkedin.com/profile/view?id=AAkAAAFitUwByB_tgxdExntMnakgQnTK1H3eEd8",
+    "image": "http://i.imgur.com/PgvxbY2.jpg"
+  },
+  {
+    "camper": "Danielle J Moss",
+    "quote": "Aside from learning to code in a fun way, I also know I’m not alone and have somewhere to go when I do get stuck and need help.",
+    "github": "psykobilliethekid",
+    "linkedin": "https://www.linkedin.com/profile/view?id=AAkAAAV4ccABlbMXZ5VfzvlYentPOIKzFbjgbZM",
+    "image": "http://i.imgur.com/AhaRZ3I.jpg"
+  },
+  {
+    "camper": "Orcun Tonyali",
+    "quote": "The thorough curriculum helped a lot in managing my company’s website.",
+    "github": "orcuntonyali",
+    "linkedin": "https://www.linkedin.com/profile/view?id=AAkAAAVwBQIBvE3-M8pDWxzep9umHDnV6JjKmTU",
+    "image": "http://i.imgur.com/54O0p69.jpg"
+  },
+  {
+    "camper": "Brendan Murphy",
+    "quote": "I like that it isn’t just a 9 week course. The chat room and partner coding were also very helpful.",
+    "github": "dendari",
+    "linkedin": "https://www.linkedin.com/profile/view?id=AAkAAAA06V8BqPNnPod-FGRuvifILht-QwZX3YY",
+    "image": "http://i.imgur.com/36Ba4HU.jpg"
+  },
+  {
+    "camper": "Michael Berry",
+    "quote": "Free Code Camp has helped me learn JavaScript, jQuery, and Bootstrap as well as helped me brush up on my HTML and CSS skills. I was laid off from Boeing in April. I’m hoping to land a job as a JavaScript developer as I get closer to finishing the curriculum. I wish I had known about Free Code Camp sooner.",
+    "github": "Karnblack ",
+    "linkedin": "https://www.linkedin.com/profile/view?id=AAkAAAGRqf4BwCI3cdJw9wAPc6NlReG3fzOIQq0",
+    "image": "http://i.imgur.com/rIhq3gl.jpg"
+  },
+  {
+    "camper": "Angie Canon",
+    "quote": "Free Code Camp is helping my career. I work with developers and I’m beginning to understand their world better. I can phrase questions more clearly, and begin to guess what an issue might be related to.",
+    "github": "angiecan",
+    "linkedin": "https://www.linkedin.com/profile/view?id=AAkAAACfWbABAMsll9ovljvvsLpH317o47hNHX0",
+    "image": "http://i.imgur.com/v258ssn.jpg"
+  },
+  {
+    "camper": "Irfan Kucuk",
+    "quote": "I’ve long been looking for a place that could keep me interested in learning how to code. I’ve tried several Codecademy and comparable places, but none have proven as engaging as Free Code Camp.",
+    "github": "Ikucuk",
+    "linkedin": "https://www.linkedin.com/profile/view?id=AAkAAA5ripkBiFAjXkB3ndO6sKiiq6gD21mk6bw",
+    "image": "http://i.imgur.com/Ox8ycSi.jpg"
+  },
+  {
+    "camper": "Jonathan Kvicky",
+    "quote": "Free Code Camp has given me a strong foundational advantage into pursuing a career in software/web development, and has also served as a great platform for connecting with others who share the same passion for software engineering.",
+    "github": "jonkvix",
+    "linkedin": "https://www.linkedin.com/profile/view?id=AAkAABk3i9YB_hcw1AyVg2QHaf8KMQ8ADQ_R_vg",
+    "image": "http://i.imgur.com/CZsAqDK.jpg"
+  },
+  {
+    "camper": "Susannah Skyer Gupta",
+    "quote": "As a jack-of-all-trades at a small educational software company, I’m already putting my coding skills to work, beginning to submit my own pull requests for bug fixes instead of just opening a problem ticket and waiting for someone else to fix it.",
+    "github": "SuzGupta",
+    "linkedin": "https://www.linkedin.com/profile/view?id=AAkAAAFIosEBLewkmbuudMwAqiTM5YE3wHvcE4A",
+    "image": "http://i.imgur.com/sazGykY.jpg"
+  },
+  {
+    "camper": "Puneet Shivanand",
+    "quote": "Free Code Camp has helped me create and maintain a website for a local bioinformatics conference.",
+    "github": "puneet-shivanand",
+    "linkedin": "https://www.linkedin.com/profile/view?id=AAkAAArBgXABw4qoSJQoGjqrvU6_vBX1gUmcwGg",
+    "image": "http://i.imgur.com/5BJDA16.jpg"
+  },
+  {
+    "camper": "Ian Seabrook",
+    "quote": "I’ve made connections with people I never would have approached before Free Code Camp.",
+    "github": "ianseabrook",
+    "linkedin": "https://www.linkedin.com/profile/view?id=AAkAAAuVUi4BSJ3K6fcyTa2fnZr_9Oosb3nKM34",
+    "image": "http://i.imgur.com/z17zai3.jpg"
+  },
+  {
+    "camper": "Oleh Kuchuk",
+    "quote": "The coding exercises helped me to prepare for my first job interview.",
+    "github": "drkraken",
+    "linkedin": "https://www.linkedin.com/profile/view?id=AAkAABgy6MwBva2OKpsffAU-OBBeTC7qahTYpGw",
+    "image": "http://i.imgur.com/4KHGgjR.jpg"
+  },
+  {
+    "camper": "Larisa Bekerman",
+    "quote": "Free Code Camp has made me more comfortable with certain aspects of code and helped me review and understand concepts in a more hands-on style. Some people learn by reading theory, I don’t understand things until I’ve made them work myself!",
+    "github": "xaosqueen",
+    "linkedin": "https://www.linkedin.com/profile/view?id=AAkAAAB-SHUBga96BB-iaHe7QFI-S2dFmeUQaq0",
+    "image": "http://i.imgur.com/EptT3Yl.jpg"
+  },
+  {
+    "camper": "Jesse Mull",
+    "quote": "I learned more using Free Code Camp in three months than I ever could have at a traditional university.",
+    "github": "jessemull",
+    "linkedin": "https://www.linkedin.com/profile/view?id=AAkAAAr2HfcBswHtmQeLM1rxDEg7GdCuxvNin5s",
+    "image": "http://i.imgur.com/853QDiC.jpg"
+  },
+  {
+    "camper": "Mihai Popescu",
+    "quote": "The exercises helped me hone my skills and get an internship at a tech startup. My projects were a great talking point in the interview, showing them what I did and how I approached the problems.",
+    "github": "Mihaisavezi",
+    "linkedin": "https://www.linkedin.com/profile/view?id=AAkAAApQxGQBYz-WAQu_0zXPTkW-R7QbdaXEZeA",
+    "image": "http://i.imgur.com/FfrhMjg.jpg"
+  },
+  {
+    "camper": "Normandy Real",
+    "quote": "I'm doing Free Code Camp to transition from mainframe programming to front end development.",
+    "github": "mandyreal",
+    "linkedin": "https://www.linkedin.com/profile/view?id=AAkAAAdebIIBHfcSRnxGI-j6g5y6crfOXSg55Dc",
+    "image": "http://i.imgur.com/U5jVHGk.jpg"
+  },
+  {
+    "camper": "Kristin Anthony",
+    "quote": "The layout, pacing, and resources of Free Code Camp have given me focus and shown me a path to mastery. Just being able to tell people in my field that I’m learning full stack JavaScript and having projects to show for it has been immensely helpful.",
+    "github": "anthkris",
+    "linkedin": "https://www.linkedin.com/profile/view?id=AAkAAAZRM5MBACvQe36s4cvpe5ZHWEfgxprDUFg",
+    "image": "http://i.imgur.com/LAE3xBr.jpg"
+  },
+  {
+    "camper": "Zlatko Cabric",
+    "quote": "I am still in school, pursuing an AS in web development. The JavaScript course in college was a breeze thanks to Free Code Camp.",
+    "github": "zlajac ",
+    "linkedin": "https://www.linkedin.com/profile/view?id=AAkAAAsCCFMBUlE24Ie41G_YS3XhdtQMDl5vCZA",
+    "image": "http://i.imgur.com/X2ozvfP.jpg"
+  },
+  {
+    "camper": "Geoff Storbeck",
+    "quote": "I've been able to build tools that has helped moved my current career further and has opened up many more doors in the field.",
+    "github": "storbeck",
+    "linkedin": "https://www.linkedin.com/profile/view?id=AAkAAAdVQZYBHPYLt5efKwqZmiDM5SqIdH0_AR4",
+    "image": "http://i.imgur.com/DULhJ8z.jpg"
+  },
+  {
+    "camper": "Jason Rueckert",
+    "quote": "Free Code Camp helped me get to the point as a programmer that I felt confident enough to apply for tech jobs. I got the third one I interviewed for.",
+    "github": "jsonify",
+    "linkedin": "https://www.linkedin.com/profile/view?id=AAkAAAF-rVIBwdzAFzGkWCaIw81O_jajBs-zKZU",
+    "image": "http://i.imgur.com/vSkODHr.jpg"
+  },
+  {
+    "camper": "Anthony DePaolo",
+    "quote": "I can learn web development at my own pace, which is great with my crazy life’s schedule. It also doesn’t cost $10k-$17k, which I just can’t fork over right now.",
+    "github": "adepaolo",
+    "linkedin": "https://www.linkedin.com/profile/view?id=AAkAAAOCUkABzCvw3p1mBiPbbFWq91BEFXGXKxA",
+    "image": "http://i.imgur.com/Dm02s0W.jpg"
+  },
+  {
+    "camper": "Jimmy Epperson",
+    "quote": "I learned to build websites, which is now a new service I offer to local businesses.",
+    "github": "jimmyepp",
+    "linkedin": "https://www.linkedin.com/profile/view?id=AAkAAADg3N8BTBm_D58gu8Tgq6UPa3OQ_19CrSE",
+    "image": "https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAALWAAAAJDUwZDc5YzYwLTc2MjYtNDIzYy1iYzAyLWNlNzZmMTNjM2M1NA.jpg"
+  },
+  {
+    "camper": "Jonathan Lucas",
+    "quote": "Free Code Camp has been nothing but supportive and helpful, taking me from a rather basic knowledge of front end technologies to a better, more complete understanding from a full stack perspective.",
+    "github": "jonslucas",
+    "linkedin": "https://www.linkedin.com/profile/view?id=AAkAAATn9H4BI7BP7MBpZ0NR1EvldkWTvAdGy2w",
+    "image": "http://i.imgur.com/Fn91jpJ.jpg"
+  },
+  {
+    "camper": "Brian Barrow",
+    "quote": "Free Code Camp has given me confidence that I can become a web developer.",
+    "github": "briancbarrow",
+    "linkedin": "https://www.linkedin.com/profile/view?id=AAkAAAVH-osBCI8WZTtv3Om5WjeD2rYnjQ6z7zA",
+    "image": "http://i.imgur.com/VfdBd5Z.jpg"
+  },
+  {
+    "camper": "Josh Cronkhite",
+    "quote": "My resume has been bolstered by adding a completely new stack, providing value to my clients and opening up the pool of potential clients that I would have otherwise referred to peers.",
+    "github": "joshcronkhite",
+    "linkedin": "https://www.linkedin.com/profile/view?id=AAkAAAGTPvoBg__9rivrYrYgo8sDJ561JpAfhHk",
+    "image": "http://i.imgur.com/DjAIqps.jpg"
+  },
+  {
+    "camper": "Adam Goswick",
+    "quote": "Free Code Camp is helping me learn web development when I can’t afford to go back to school.",
+    "github": "thegoz85",
+    "linkedin": "https://www.linkedin.com/profile/view?id=AAkAAAObbhkBzeCKrzuEB0ssE_iGrBX0Xnu9URc",
+    "image": "http://i.imgur.com/XYdoDCQ.jpg"
+  },
+  {
+    "camper": "Travis Wouters",
+    "quote": "Free Code Camp helped me add skillsets to my resume that show experience instead of knowledge without practical application.",
+    "github": "",
+    "linkedin": "https://www.linkedin.com/profile/view?id=AAkAAABHP0YBddxsmaf2OghV2jAy17RVMhig4RM",
+    "image": "http://i.imgur.com/fyRsiOs.jpg"
+  },
+  {
+    "camper": "Nicholas Slaven",
+    "quote": "Free Code Camp has given me the courage to open the door to the idea of programming for a career.",
+    "github": "nslaven22",
+    "linkedin": "https://www.linkedin.com/profile/view?id=AAkAAA5HGyIBmpNcXY_tfHBkWxXI6OtwsFAeHRQ",
+    "image": "http://i.imgur.com/9ZYscsm.jpg"
+  },
+  {
+    "camper": "John Bull",
+    "quote": "I am now able to add customized branding and layouts to web applications that fellow employees and customers use everyday. I’m now looking to move away from desktop support and into development roles.",
+    "github": "Jbull328",
+    "linkedin": "https://www.linkedin.com/profile/view?id=AAkAABAyfz8BsjE-oGv1k3URGzhRyeupnTGuK3I",
+    "image": "http://i.imgur.com/U2kJtoX.jpg"
+  },
+  {
+    "camper": "Nick Galluzzo",
+    "quote": "I currently work in a support role for a tech startup. The more I learn about JavaScript, the more I’m able to contribute to a product I really believe in!",
+    "github": "ngalluzzo",
+    "linkedin": "https://www.linkedin.com/profile/view?id=AAkAAAjQl1EBZPrbUQ6zGPXmKIuNzpCyqqsnox4",
+    "image": "http://i.imgur.com/edJP2Qt.jpg"
+  },
+  {
+    "camper": "James Allen",
+    "quote": "I finally feel like I can learn to code in my own time and progress to the point of employability.",
+    "github": "None Given",
+    "linkedin": "https://www.linkedin.com/profile/view?id=AAkAAA4OrsIB5WyfuqeECSQO7HYisImVMDiFBl0",
+    "image": "http://i.imgur.com/quRxESK.jpg"
+  }
+]

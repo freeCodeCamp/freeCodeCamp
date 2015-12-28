@@ -1,0 +1,332 @@
+{
+  "name": "Programming",
+  "order": 0.050,
+  "time": "3h",
+  "challenges": [
+    {
+      "id": "bd712bd8c441eddfbeb5bddf",
+      "title": "What Do Programmers Do?",
+      "challengeSeed": [
+        "133166912"
+      ],
+      "description": [
+        "Programmers (a.k.a. coders, developers, or software engineers) solve problems by turning big ideas into tiny steps that a computer can understand.",
+        "In this video, we'll discuss what programmers do.",
+        "Programmers can also be called coders, developers, or software engineers, and what all of these peple do is take ideas and turn them into functional code.",
+        "It's not just creating that code, but also maintaining it.",
+        "Let's look at how the computer looks at code, specifically javascript.",
+        "The computer looks at code one line at a time, and as you're writing code, you will notice numbers on the left hand side.",
+        "The computer literally goes down line by line, making sense of what each line has to say.",
+        "Everything is done sequentially, just straight down, so refrencing something that is below and hasn't happened yet will lead to a problem.",
+        "Computers just read straight down like you would read a book.",
+        "Programmers are the ones responsible for breaking their ideas down into the little tiny steps and writing them in a way that computers can understand them."
+      ],
+      "type": "hike",
+      "challengeType": 6,
+      "tests": [
+        ["Computers look at code one line at a time", true],
+        ["Programmers and developers are totally different professions with very little in common.", false, "Those titles are so similar they could even describe the same job position."],
+        ["Programmers take ideas and break them down into little tiny steps the computer can understand", true]
+      ],
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
+    },
+    {
+      "id": "bd712ad8c441eddfbeb5bddf",
+      "title": "Console and Logging",
+      "challengeSeed": [
+        "133170880"
+      ],
+      "description": [
+        "We discuss what (and where) the console is, why it's useful, and show a little of how it works.",
+        "The console: what it is, where you can find it, and what you use it for.",
+        "The console is very commonly used to display system adminstrative messages.",
+        "Your browser and your computer both have their own consoles.",
+        "Once you become famlliar with it, you will find it to be a very useful and powerful tool.",
+        "In Javascript, the console is used as a great tool for debugging and finding out where in your code there's a problem.",
+        "One of the most important terms you'll need to remember is \"console.log()\".",
+        "The process of doing this can be put anywhere in the lines of code to help find, identify, and ultimately fix specific issues.",
+        "Using the Chrome browser and the Chrome console, if we type in \"console.log(\"Free Code Camp rocks!\");\", the console will literally display \"Free Code Camp rocks!\".",
+        "This will also work with numbers and booleans, which are true/false statements.",
+        "When consoling words, it's important to put it inside of quotations so it recognizes it's a string."
+      ],
+      "type": "hike",
+      "challengeType": 6,
+      "tests": [
+        ["The console serves only small, unnecessary purposes.", false, "The console's main purpose is to debug, which is a vital step in creating code."],
+        ["You can console strings (sets of words), numbers, and booleans (true/false statements)", true]
+      ],
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
+    },
+    {
+      "id": "bd7119d8c441eddfbeb5bddf",
+      "title": "Variables In Code",
+      "challengeSeed": [
+        "133172920"
+      ],
+      "description": [
+        "Variables are used frequently in Javascript and many other coding languages.",
+        "In this video, we're going to talk about variables in code.",
+        "Variables, just like in Algebra, are when you have a letter or a word and it represents something else.",
+        "Here we're doing var x = \"Briana\". When we reference \"x\" later on, it's going to know that's Briana.",
+        "When we console.log(x), it's going to output \"Briana\".",
+        "But be careful - if we put console.log(\"x\"), with the x in quotation marks, it will output the letter \"x\".",
+        "What I want you to take away from this video is that variables exist in code, and you can store everything from a simple string all the way up to a function, all within a simple name."
+      ],
+      "type": "hike",
+      "challengeType": 6,
+      "tests": [
+        ["Variables are useful in coding languages like JavaScript.", true],
+        ["Variables can't stand for anything that isn't a string, number, or boolean.", false, "Variables can stand for things ranging from simple to very complex"]
+      ],
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
+    },
+    {
+      "id": "bd7029d8c441eddfbeb5bddf",
+      "title": "Source Code",
+      "challengeSeed": [
+        "133177129"
+      ],
+      "description": [
+        "In this video we discuss what source code is, interpreters and compilers, and what open source means.",
+        "Let's talk about source code: what source code is, where you'll see it, and how the computer makes sense of it.",
+        "Source code itself is the actual text document that the programmer creates: they type it up, it's letters, numbers, and symbols.",
+        "If you give that to somebody and have them look at that document on their computer, that's not going to help them view their email, it's not going to be a browser, it's just a text document.",
+        "The computer has to have a way of interpreting that and making something really powerful run from it.",
+        "There are two main ways this is done: either by an interpreter or a compiler.",
+        "Every browser has an interpreter, and that's how javascript is processed.",
+        "Other languages, like C++, are used with a compiler.",
+        "Unlike an interpreter, the compiler does all of its work on the programmer's end.",
+        "They send out their package, their product, and it's already been compiled, it can already run on a machine.",
+        "Javascript, however, and other interpreter languages, you just write the javascript and the browser on the user's end has the capability to interpret it so you don't need a compiler.",
+        "Everyone has an opinion to which is better (interpreter or compiler), but really each has their pros and cons, and it goes on a case by case basis.",
+        "They're better at different things.",
+        "Now, let's focus on what open source means.",
+        "Free Code Camp is open source, meaning that all of the documentation and source code is open and accessable.",
+        "You may be thinking, \"so what?\", but what's awesome is that if you want to change or improve Free Code Camp, you can write that improvement and maybe get it implemented.",
+        "It's a great way for websites and software to grow in a strong and fast way because of the community working together to improve it.",
+        "One unwritten rule of contributing to open source projects is that you should generally submit your improvements to also be open source, and by giving that improvement back to the public, you let others use your improvement as well."
+      ],
+      "type": "hike",
+      "challengeType": 6,
+      "tests": [
+        ["Source code is a text document.", true],
+        ["Javascript is a compiler language.", false, "Javascript is an interpreter language"],
+        ["Free Code Camp is open source.", true]
+      ],
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
+    },
+    {
+      "id": "bd7129d8b441eddfbeb5bddf",
+      "title": "Routers and Packets",
+      "challengeSeed": [
+        "133181251"
+      ],
+      "description": [
+        "In this video, we go into a little more detail about routers and packets, important concepts to understand about how the internet works.",
+        "Let's talk more about routers and how they relate to networking.",
+        "Routers are the things that connect different small area networks.",
+        "I want to give a metaphor for this: I'm a teacher and I work at a school.",
+        "Say I have a package that I need to get to someone who works in the district offices.",
+        "I don't know where she is, I don't know where her office is located, but I know her name.",
+        "I go to my secretary, like my first router, and I say \"Hey, I need to get this to so-and-so at the district office, can you please help me?\", and she'll say \"Sure, I don't know exactly where her office is either, but I know the next step, I can get it to the district\".",
+        "So she goes on and sends it to the secretary at the district office, the next router.",
+        "That secretary has no idea who I am or where I am, but she sees the name on the package and knows the end location.",
+        "What I'm trying to get across here is that each router only has to know its own little network, the stops right next to it.",
+        "It doesn't have to know the whole internet, but just its own connections.",
+        "It can take information and say, alright, I don't know exactly where that's going, but I'll pass it along in the right direction.",
+        "That's really all it takes.",
+        "Routers can be different sizes, different capacities, but what they do is know their own neighborhood, take the information, and pass it in the right direction.",
+        "Another thing we'll get into a little later is that the routers don't even have to have the full package of information.",
+        "If one comptuer is trying to send information to another, the data might get split up between different routers and that's okay.",
+        "The computers still know how to put the information back together correctly.",
+        "The little pieces of information that are sent are called packets.",
+        "Packets are actually little pieces of binary code (drawn on board).",
+        "This is an example of what packets might look like, a visual representation of the electrical current that the computer can translate into 1's and 0's, which we all know is binary that can represent literally any digital data.",
+        "These little packets are sent across through routers, and if a file is too large for one packet, it can be broken up into frames (smaller little packets).",
+        "The frames don't have to take the same route to the end destination.",
+        "They can take whichever route is open, whichever is fastest, and since they have the end IP address, all of the routers know where to send them.",
+        "Once they get to the end destination, that computer knows how to put all of the information back together."
+      ],
+      "type": "hike",
+      "challengeType": 6,
+      "tests": [
+        ["Routers have to know the whole internet.", false, "Routers just have to know the stops around them to send information in the right direction."],
+        ["Packets are little peices of binary code.", true],
+        ["Packets have to be sent in one piece.", false, "packets can be broken up into frames."]
+      ],
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
+    },
+    {
+      "id": "bd7129d8a441eddfbeb5bddf",
+      "title": "Hardware: Chips and Moore's Law",
+      "challengeSeed": [
+        "133182057"
+      ],
+      "description": [
+        "We discuss what constitutes a chip and why technology gets cheaper every year.",
+        "In this video we are going to be talking about chips and something called Moore's Law.",
+        "You've probably noticed over the last 10 or so years, if you're going to go buy an MP3 player, you can get a lot more storage for a lot lower price.",
+        "You probably have even done the thing where you're at the store and you think, \"Well, I can get one now, or I could wait 6 months and see how far the price has dropped\", which might sound ridiculous but this is actually a trend that's been happening for a long time.",
+        "Let's talk about what makes a chip.",
+        "A chip is full of these little things called transistors, which are switches that can either be a 1 or a 0 (noticing a theme here?).",
+        "All of these transistors fit onto a chip, and that's how it stores information.",
+        "What makes these chips larger/faster is the amount of transistors on a single chip.",
+        "Moore's Law is the observation that the amount of transistors fit on each chip has doubled every two years since 1965.",
+        "This is important because it's making technology more affordable and accessible."
+      ],
+      "type": "hike",
+      "challengeType": 6,
+      "tests": [
+        ["Chips have transistors, little switches that can store a 1 or a 0.", true],
+        ["Moore's Law is the observation that technology doubles in speed every year.", false, "Moore's Law is the observation that the number of transistors per chip doubles every 2 years)."],
+        ["Moore's Law has slowed down in recent years.", false, "Somehow this continues to be true."]
+      ],
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
+    },
+    {
+      "id": "bd7129d80441eddfbeb5bddf",
+      "title": "Analog vs Digital and File Compression",
+      "challengeSeed": [
+        "133182587"
+      ],
+      "description": [
+        "How computers turn analog sound into digital files, and the pros and cons of data compression.",
+        "Let's discuss analog vs digital on a very basic level.",
+        "Most specifically, we'll talk about how computers interpret analog sound and turn it into a digital file.",
+        "An analog sound wave could look like anything, but for this example it's a wavy line.",
+        "The computer takes it and measures at lots of different points, turning them into numbers.",
+        "This is called sampling.",
+        "Later, the computer can take those numbers and turn them into sound again.",
+        "Let's also discuss data compression.",
+        "The benefit of compression is that it's a smaller file: it's easier to store, it's easier to send to someone else, and it just takes up less space.",
+        "One of the ways this is done in sound is that the sampling is taken less often.",
+        "Another way is that it takes the measurement from a median point instead of from 0, so the numbers recorded are smaller.",
+        "In images, it's done by measuring groups of pixels by 16 instead of individually.",
+        "The takeaway from this video is that you'll want to use digital files as they're a higher quality, and when you're looking at compression, you want to decide how far you are willing to go to ensure the user still has the best possible experience."
+      ],
+      "type": "hike",
+      "challengeType": 6,
+      "tests": [
+        ["Digital files can be made from analog sounds and analog sounds can be made from digital files.", true],
+        ["Compression is not worth it, because it lessens quality.", false, "Sometimes compression is a great idea. It depends on what you're trying to do and what your end goal for the product is."]
+      ],
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
+    },
+    {
+      "id": "bd7129d89441eddfbeb5bddf",
+      "title": "Computer Security",
+      "challengeSeed": [
+        "133186284"
+      ],
+      "description": [
+        "The basics of computer security, and how to make sure you protect your information.",
+        "Let's cover computer security.",
+        "The first thing we're going to talk about is something called a dictionary attack which has to do with your passwords.",
+        "When creating your passwords, some sites require extremely specific and complicated passwords, which is actually a bit unnecessary.",
+        "The type of attacks they're trying to gaurd you from are dictionary attacks.",
+        "Dictionary attacks are programmed to try every word in the dictionary, or in its own database of common words and passwords, as the password for a large mass of usernames.",
+        "If your password is Kangaroo, they're probably going to break into your account.",
+        "Most passwords aren't this simple, but that doesn't matter.",
+        "They attack such a massive amount of accounts that they only need a few passwords that are relatively simple.",
+        "When creating a password, you want to use different cases, numbers, and symbols, but one of the most effective ways to create a good password is to throw some random letters in there (ex: kangarooSyCA67).",
+        "Also, stay away from sequential numbers.",
+        "Phishing, another thing to watch out for, is emails or webpages that mimic other valid sites to try and trick people into entering their personal information, though the site truly isn't connected to the site it's trying to mimic.",
+        "In general, two ways to safeguard from these attacks are checking the address in the browser and to open a new browser and go to the website that is claiming to contact you.",
+        "Let's also discuss encryption and HTTPS.",
+        "If you are at Starbucks trying to access your bank account, you have reason to be suspicious that someone could see and take your information.",
+        "You will want to look for a green HTTPS instead of HTTP at the beginning of the web address.",
+        "That means that the site you're sending your information to is encrypting your passwords and other information, scrambling up data according to a code that only they know.",
+        "In general, whenever you're showing private or sensitive information, check for HTTPS.",
+        "A few other general tips: don't share passwords between important accounts.",
+        "If a site you use gets hacked into, your password may be compromised regardless of its strength.",
+        "Also, don't download strange files.",
+        "If you don't recognise the file type like .pdf, .txt, .jpg, be wary.",
+        "Some of these files you download can be very powerful and even run your computer from the inside.",
+        "Lastly, keep your software updated, particularly software that interacts with the internet.",
+        "One way that information can be compromised is when 'bad guys' find holes and gaps in security of older versions of softwares.",
+        "Those bugs have been patched in newer versions, so if you keep everything updated, you'll avoid lots of problems.",
+        "These are all very basic things you should know about how to keep your information safe on your computer."
+      ],
+      "type": "hike",
+      "challengeType": 6,
+      "tests": [
+        ["Passwords should be shared with all of your accounts.", false, "Don't reuse important passwords"],
+        ["If you don't trust a site or an email, open a new browser and re-enter the intended location.", true],
+        ["Keeping software updated will help protect your computer and your information.", true]
+      ],
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
+    }
+  ]
+}

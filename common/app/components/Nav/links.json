@@ -3,11 +3,21 @@
   "link": "/map"
 }, {
   "content": "Chat",
-  "link": "//gitter.im/FreeCodeCamp/FreeCodeCamp"
+  "link": "//gitter.im/FreeCodeCamp/FreeCodeCamp",
+  "target": "_blank"
 },{
   "content": "News",
-  "link": "/news"
+  "link": "/news",
+  "target": "_blank"
+},{
+  "content": "Wiki",
+  "link": "https://github.com/freecodecamp/freecodecamp/wiki/",
+  "target": "_blank"
 },{
   "content": "Jobs",
-  "link": "/jobs"
+  "link": "/jobs",
+  "react": true
+},{
+  "content": "Links",
+  "link": "/links"
 }]
