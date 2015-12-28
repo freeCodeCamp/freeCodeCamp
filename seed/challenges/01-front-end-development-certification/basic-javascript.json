@@ -61,7 +61,7 @@
       "id": "bd7123c9c443eddfaeb5bdef",
       "title": "Declare JavaScript Variables",
       "description": [
-        "It's nice to have seven different ways of representing data. But to use them in other parts of code, we must store the data somewhere. In computer science, the placeholder where data is stored for further use is known as <code>variable</code>.",
+        "It's nice to have seven different ways of representing data. But to use them in other parts of code, we must store the data somewhere. In computer science, the placeholder where data is stored for further use is known as a <code>variable</code>.",
         "These variables are no different from the x and y variables you use in Maths. Which means they're just a simple name to represent the data we want to refer to.",
         "Now let's create our first variable and call it \"myName\".",
         "You'll notice that in <code>myName</code>, we didn't use a space, and that the \"N\" is capitalized. In JavaScript, we write variable names in \"camelCase\".",
@@ -174,7 +174,7 @@
       "id": "56533eb9ac21ba0edf2244aa",
       "title": "Understanding Uninitialized Variables",
       "description": [
-        "When Javascript variables are declared, they have an inital value of <code>undefined</code>.  If you do a mathematical operation on an <code>undefined</code> variable your result will be <code>NaN</code> which means <dfn>\"Not a Number\"</dfn>. If you concatanate a string with an <code>undefined</code> variable, you will get a literal <dfn>string</dfn> of <code>\"undefined\"</code>.",
+        "When JavaScript variables are declared, they have an initial value of <code>undefined</code>.  If you do a mathematical operation on an <code>undefined</code> variable your result will be <code>NaN</code> which means <dfn>\"Not a Number\"</dfn>. If you concatenate a string with an <code>undefined</code> variable, you will get a literal <dfn>string</dfn> of <code>\"undefined\"</code>.",
         "<h4>Instructions</h4>",
         "Initialize the three variables <code>a</code>, <code>b</code>, and <code>c</code> with <code>5</code>, <code>10</code>, and <code>\"I am a\"</code> respectively so that they will not be <code>undefined</code>."
       ],
@@ -221,8 +221,8 @@
       "id": "56533eb9ac21ba0edf2244ab",
       "title": "Understanding Case Sensitivity in Variables",
       "description": [
-        "In Javascript all variables and function names are case sensitive.  This means that capitalization matters.",
-        "<code>MYVAR</code> is not the same as <code>MyVar</code> nor <code>myvar</code>.  It is possible to have multiple distinct variables with the same name but different casing. It is strongly reccomended that for sake of clarity you <em>do not</em> use this language feature.",
+        "In JavaScript all variables and function names are case sensitive.  This means that capitalization matters.",
+        "<code>MYVAR</code> is not the same as <code>MyVar</code> nor <code>myvar</code>.  It is possible to have multiple distinct variables with the same name but different casing. It is strongly recommended that for the sake of clarity, you <em>do not</em> use this language feature.",
         "<h4>Best Practice</h4><div class=\"bestpractice\">Write variable names in Javascript in camelCase. In camelCase, variable names made of multiple words have the first word in all lowercase and the first letter of each subsequent word(s) capitalized.</div>",
         "    ",
         "<strong>Examples:</strong>",
@@ -972,7 +972,7 @@
       "id": "56533eb9ac21ba0edf2244b7",
       "title": "Concatenating Strings with Plus Operator",
       "description": [
-        "In JavaScript, the <code>+</code> operator when used with a <code>String</code> value, it is called <dfn>concatenation</dfn> operator.  You can build a string out of other strings by <dfn>concatenating</dfn> them together.",
+        "In JavaScript, the <code>+</code> operator when used with a <code>String</code> value, it is called a <dfn>concatenation</dfn> operator. You can build a string out of other strings by <dfn>concatenating</dfn> them together.",
         "",
         "<code>'My name is Alan.' + ' And I am able to concatenate.'</code>",
         "",
@@ -982,7 +982,7 @@
       ],
       "releasedOn": "January 1, 2016",
       "tests": [
-        "assert(myStr === \"This is the start. This is the end.\", 'message: <code>myStr</code> should have a value of <code>This is the start. This is the end</code>');",
+        "assert(myStr === \"This is the start. This is the end.\", 'message: <code>myStr</code> should have a value of <code>This is the start. This is the end.</code>');",
         "assert(editor.getValue().match(/\"\\s*\\+\\s*\"/g).length > 1, 'message: Use the <code>+</code> operator to build <code>myStr</code>');"
       ],
       "challengeSeed": [
@@ -1541,7 +1541,7 @@
       "id": "56592a60ddddeae28f7aa8e1",
       "title": "Access Multi-Dimensional Arrays With Indexes",
       "description": [
-        "One way to think of a <dfn>multi-dimensional</dfn> array, is as an <em>array of arrays</em>. When you use brackets to access your array, the first set of bracket refers to the entries in outer-most array, and each subsequent level of brackets refers to the next level of entry in.",
+        "One way to think of a <dfn>multi-dimensional</dfn> array, is as an <em>array of arrays</em>. When you use brackets to access your array, the first set of bracket refers to the entries in the outer-most array, and each subsequent level of brackets refers to the next level of entry inside.",
         "<strong>Example</strong>",
         "<blockquote>var arr = [<br>    [1,2,3],<br>    [4,5,6],<br>    [7,8,9],<br>    [[10,11,12], 13, 14]<br>];<br><code>arr[0]; // equals [1,2,3]</code><br><code>arr[1][2]; // equals 6</code><br><code>arr[3][0][1]; // equals 11</code></blockquote>",
         "<h4>Instructions</h4>",
@@ -2044,7 +2044,7 @@
       "id": "56533eb9ac21ba0edf2244c0",
       "title": "Global vs. Local Scope in Functions",
       "description": [
-        "It is possible to have both a <dfn>local</dfn> and <dfn>global</dfn> variables with the same name. When you do this, the <code>local</code> variable takes precedence over the <code>global</code> variable.",
+        "It is possible to have both <dfn>local</dfn> and <dfn>global</dfn> variables with the same name. When you do this, the <code>local</code> variable takes precedence over the <code>global</code> variable.",
         "In this example:",
         "<blockquote>var someVar = \"Hat\";<br>function myFun() {<br>  var someVar = \"Head\";<br>  return someVar;<br>}</blockquote>",
         "The function <code>myFun</code> will return <code>\"Head\"</code> because the <code>local</code> version of the variable is present.",
@@ -2297,10 +2297,10 @@
       "title": "Comparison with the Equality Operator",
       "description": [
         "There are many <dfn>Comparison Operators</dfn> in JavaScript. All of these operators return a boolean <code>true</code> or <code>false</code> value.",
-        "The most basic operator is the equality operator <code>==</code>.  The equality operator compares two values and returns <code>true</code> if they're equivalent or <code>false</code> if they are not.  Note that equality is different from assignment (<code>=</code>), which assigns the value at the right of the operator to a variable in the left.",
+        "The most basic operator is the equality operator <code>==</code>. The equality operator compares two values and returns <code>true</code> if they're equivalent or <code>false</code> if they are not. Note that equality is different from assignment (<code>=</code>), which assigns the value at the right of the operator to a variable in the left.",
         "<blockquote>function equalityTest(myVal) {<br>  if (myVal == 10) {<br>     return \"Equal\";<br>  }<br>  return \"Not Equal\";<br>}</blockquote>",
         "If <code>myVal</code> is equal to <code>10</code>, the function will return \"Equal\".  If it is not, the function will return \"Not Equal\".",
-        "The equality operator will do it's best to convert values for comparison, for example:",
+        "The equality operator will do its best to convert values for comparison, for example:",
         "<blockquote>   1   ==  1        // true<br>  \"1\"  ==  1        // true<br>   1   == '1'       // true<br>   0   == false     // true<br>   0   == null      // false<br>   0   == undefined // false<br> null  == undefined // true</blockquote>",
         "<h4>Instructions</h4>",
         "Add the <code>equality operator</code> to the indicated line so that the function will return \"Equal\" when <code>val</code> is equivalent to <code>12</code>"
@@ -3206,13 +3206,13 @@
       "id": "56533eb9ac21ba0edf2244df",
       "title": "Multiple Identical Options in Switch Statements",
       "description": [
-        "If the <code>break</code> statement is ommitted from a <code>switch</code> statement <code>case</code>, the following <code>case</code> statement(s) are executed unless a <code>break</code> is encountered.  If you have mutiple inputs with the same output, you can represent them in a <code>switch</code> statement like this:",
+        "If the <code>break</code> statement is omitted from a <code>switch</code> statement <code>case</code>, the following <code>case</code> statement(s) are executed unless a <code>break</code> is encountered.  If you have multiple inputs with the same output, you can represent them in a <code>switch</code> statement like this:",
         "<blockquote>switch(val) {<br>  case 1:<br>  case 2:<br>  case 3:<br>    result = \"1, 2, or 3\";<br>    break;<br>  case 4:<br>    result = \"4 alone\";<br>}</blockquote>",
         "Cases for 1, 2, and 3 will all produce the same result.",
         "<h4>Instructions</h4>",
         "Write a switch statement to set <code>answer</code> for the following ranges:<br><code>1-3</code> - \"Low\"<br><code>4-6</code> - \"Mid\"<br><code>7-9</code> - \"High\"",
         "<strong>Note</strong>",
-        "<ber>You will need to have a <code>case</code> statement for each number in the range."
+        "You will need to have a <code>case</code> statement for each number in the range."
       ],
       "releasedOn": "January 1, 2016",
       "tests": [
@@ -3359,10 +3359,10 @@
       "id": "5679ceb97cbaa8c51670a16b",
       "title": "Returning Boolean Values from Functions",
       "description": [
-        "You may recall from <a href=\"challenges/waypoint-comparison-with-the-equality-operator\">Comparison with the Equality Operator</a> that all comparison operators return a boolean <code>true</code> or <code>false</code> value.",
+        "You may recall from <a href=\"waypoint-comparison-with-the-equality-operator\" target=\"_blank\">Comparison with the Equality Operator</a> that all comparison operators return a boolean <code>true</code> or <code>false</code> value.",
         "A common <dfn>anti-pattern</dfn> is to use an <code>if/else</code> statement to do a comparison and then <code>return</code> <code>true</code>/<code>false</code>:",
-        "<blockquote>function isEqual(a,b) {<br>  if(a === b) {<br>    return true;<br/>  } else {<br>    return false;<br/>  }<br>}</blockquote>",
-        "Since <code>===</code> returns <code>true</code> or <code>false</code>, we can simply return the result of the comparion:",
+        "<blockquote>function isEqual(a,b) {<br>  if(a === b) {<br>    return true;<br>  } else {<br>    return false;<br>  }<br>}</blockquote>",
+        "Since <code>===</code> returns <code>true</code> or <code>false</code>, we can simply return the result of the comparison:",
         "<blockquote>function isEqual(a,b) {<br>  return a === b;<br>}</blockquote>",
         "<h4>Instructions</h4>",
         "Fix the function <code>isLess</code> to remove the <code>if/else</code> statements."
@@ -3390,7 +3390,9 @@
         ""
       ],
       "solutions": [
-        ""
+        "function isLess(a, b) {",
+        "  return a < b;",
+        "}"
       ],
       "type": "waypoint",
       "challengeType": "1",
@@ -3459,9 +3461,9 @@
       "title": "Counting Cards",
       "description": [
         "In the casino game Blackjack, a player can gain an advantage over the house by keeping track of the relative number of high and low cards remaining in the deck. This is called <a href=\"https://en.wikipedia.org/wiki/Card_counting\">Card Counting</a>.  ",
-        "Having more high cards remaining in the deck favors the player.  Each card is assigned a value according to the table below.   When the count is positive, the player should bet high.  When the count is zero or negative, the player should bet low.",
+        "Having more high cards remaining in the deck favors the player. Each card is assigned a value according to the table below. When the count is positive, the player should bet high. When the count is zero or negative, the player should bet low.",
         "<table class=\"table table-striped\"><thead><tr><th>Value</th><th>Cards</th></tr></thead><tbody><tr><td>+1</td><td>2, 3, 4, 5, 6</td></tr><tr><td>0</td><td>7, 8, 9</td></tr><tr><td>-1</td><td>10, 'J', 'Q', 'K','A'</td></tr></tbody></table>",
-        "You will write a card counting function.  It will receive a <code>card</code> parameter and increment or decrement the global <code>count</code> variable according to the card's value (see table).  The function will then return the current count and the string <code>\"Bet\"</code> if the count if positive, or <code>\"Hold\"</code> if the count is zero or negative.",
+        "You will write a card counting function.  It will receive a <code>card</code> parameter and increment or decrement the global <code>count</code> variable according to the card's value (see table). The function will then return the current count and the string <code>\"Bet\"</code> if the count is positive, or <code>\"Hold\"</code> if the count is zero or negative.",
         "<strong>Example Output</strong>",
         "<code>-3 Hold</code><br><code>5 Bet</code>"
       ],
@@ -3477,8 +3479,8 @@
         "",
         "function cc(card) {",
         "  // Only change code below this line",
-        "",
-        "",
+        "  ",
+        "  ",
         "  return \"Change Me\";",
         "  // Only change code above this line",
         "}",
@@ -3537,7 +3539,8 @@
         "assert((function(z){if(z.hasOwnProperty(\"name\") && z.name !== undefined && typeof(z.name) === \"string\"){return true;}else{return false;}})(myDog), 'message: <code>myDog</code> should contain the property <code>name</code> and it should be a <code>string</code>.');",
         "assert((function(z){if(z.hasOwnProperty(\"legs\") && z.legs !== undefined && typeof(z.legs) === \"number\"){return true;}else{return false;}})(myDog), 'message: <code>myDog</code> should contain the property <code>legs</code> and it should be a <code>number</code>.');",
         "assert((function(z){if(z.hasOwnProperty(\"tails\") && z.tails !== undefined && typeof(z.tails) === \"number\"){return true;}else{return false;}})(myDog), 'message: <code>myDog</code> should contain the property <code>tails</code> and it should be a <code>number</code>.');",
-        "assert((function(z){if(z.hasOwnProperty(\"friends\") && z.friends !== undefined && Array.isArray(z.friends)){return true;}else{return false;}})(myDog), 'message: <code>myDog</code> should contain the property <code>friends</code> and it should be an <code>array</code>.');"
+        "assert((function(z){if(z.hasOwnProperty(\"friends\") && z.friends !== undefined && Array.isArray(z.friends)){return true;}else{return false;}})(myDog), 'message: <code>myDog</code> should contain the property <code>friends</code> and it should be an <code>array</code>.');",
+        "assert((function(z){return Object.keys(z).length === 4;})(myDog), 'message: <code>myDog</code> should only contain all the given properties.');"
       ],
       "challengeSeed": [
         "// Example",
@@ -3551,10 +3554,10 @@
         "// Only change code below this line.",
         "",
         "var myDog = {",
-        "",
-        "",
-        "",
-        "",
+        "  ",
+        "  ",
+        "  ",
+        "  ",
         "};"
       ],
       "tail": [
@@ -3572,7 +3575,7 @@
       "description": [
         "There are two ways to access the properties of an object: the dot operator (<code>.</code>) and bracket notation (<code>[]</code>), similar to an array.",
         "The dot operator is what you use when you know the name of the property you're trying to access ahead of time.",
-        "Here is a sample of using the <code>.</code> to read an object property:",
+        "Here is a sample of using the dot operator (<code>.</code>) to read an object property:",
         "<blockquote>var myObj = {<br>  prop1: \"val1\",<br>  prop2: \"val2\"<br>};<br>myObj.prop1; // val1<br>myObj.prop2; // val2</blockquote>",
         "<h4>Instructions</h4>",
         "Read the values of the properties <code>hat</code> and <code>shirt</code> of <code>testObj</code> using dot notation."
@@ -3622,9 +3625,9 @@
       "id": "56533eb9ac21ba0edf2244c8",
       "title": "Accessing Objects Properties with Bracket Notation",
       "description": [
-        "The second way to access the properties of an objectis bracket notation (<code>[]</code>).  If the property of the object you are trying to access has a space in it, you will need to use bracket notation.",
+        "The second way to access the properties of an object is bracket notation (<code>[]</code>).  If the property of the object you are trying to access has a space in it, you will need to use bracket notation.",
         "Here is a sample of using bracket notation to read an object property:",
-        "<blockquote>var myObj = {<br>  \"Space Name\": \"Kirk\",<br>  \"More Space\": \"Spock\"<br>  };<br>myObj[\"Space Name\"]; // Kirk<br>myObj['More Space']; // Spock</blockquote>",
+        "<blockquote>var myObj = {<br>  \"Space Name\": \"Kirk\",<br>  \"More Space\": \"Spock\"<br>};<br>myObj[\"Space Name\"]; // Kirk<br>myObj['More Space']; // Spock</blockquote>",
         "Note that property names with spaces in them must be in quotes (single or double).",
         "<h4>Instructions</h4>",
         "Read the values of the properties <code>\"an entree\"</code> and <code>\"the drink\"</code> of <code>testObj</code> using bracket notation."
@@ -3674,7 +3677,7 @@
       "id": "56533eb9ac21ba0edf2244c9",
       "title": "Accessing Objects Properties with Variables",
       "description": [
-        "Another use of bracket notation on objects is to use a variable to access a property. This can be very useful for itterating through lists of object properties or for doing lookups.",
+        "Another use of bracket notation on objects is to use a variable to access a property. This can be very useful for iterating through lists of object properties or for doing lookup.",
         "Here is an example of using a variable to access a property:",
         "<blockquote>var someProp = \"propName\";<br>var myObj = {<br>  propName: \"Some Value\"<br >}<br>myObj[someProp]; // \"Some Value\"</blockquote>",
         "Note that we  do <em>not</em> use quotes around the variable name when using it to access the property because we are using the <em>value</em> of the variable, not the <em>name</em>",
@@ -3705,7 +3708,8 @@
         ""
       ],
       "solutions": [
-        ""
+        "var playerNumber = 16;",
+        "var player = testObj[playerNumber];"
       ],
       "type": "waypoint",
       "challengeType": "1",
@@ -3724,7 +3728,7 @@
         "<blockquote>var ourDog = {<br>  \"name\": \"Camper\",<br>  \"legs\": 4,<br>  \"tails\": 1,<br>  \"friends\": [\"everything!\"]<br>};</blockquote>",
         "Since he's a particularly happy dog, let's change his name to \"Happy Camper\". Here's how we update his object's name property:",
         "<code>ourDog.name = \"Happy Camper\";</code> or",
-        "<code>outDog[\"name\"] = \"Happy Camper\";</code>",
+        "<code>ourDog[\"name\"] = \"Happy Camper\";</code>",
         "Now when we evaluate <code>ourDog.name</code>, instead of getting \"Camper\", we'll get his new name, \"Happy Camper\".",
         "<h4>Instructions</h4>",
         "Update the <code>myDog</code> object's name property. Let's change her name from \"Coder\" to \"Happy Coder\".  You can use either dot or bracket notation."
