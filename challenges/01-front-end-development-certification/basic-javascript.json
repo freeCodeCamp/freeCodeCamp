@@ -221,8 +221,8 @@
       "id": "56533eb9ac21ba0edf2244ab",
       "title": "Understanding Case Sensitivity in Variables",
       "description": [
-        "In Javascript all variables and function names are case sensitive.  This means that capitalization matters.",
-        "<code>MYVAR</code> is not the same as <code>MyVar</code> nor <code>myvar</code>.  It is possible to have multiple distinct variables with the same name but different casing. It is strongly reccomended that for sake of clarity you <em>do not</em> use this language feature.",
+        "In JavaScript all variables and function names are case sensitive.  This means that capitalization matters.",
+        "<code>MYVAR</code> is not the same as <code>MyVar</code> nor <code>myvar</code>.  It is possible to have multiple distinct variables with the same name but different casing. It is strongly recommended that for the sake of clarity, you <em>do not</em> use this language feature.",
         "<h4>Best Practice</h4><div class=\"bestpractice\">Write variable names in Javascript in camelCase. In camelCase, variable names made of multiple words have the first word in all lowercase and the first letter of each subsequent word(s) capitalized.</div>",
         "    ",
         "<strong>Examples:</strong>",
