@@ -2896,7 +2896,8 @@
       "description": [
         "If you have multiple conditions that need to be addressed, you can chain <code>if</code> statements together with <code>else if</code> statements.",
         "<blockquote>if (num > 15) {<br>  return \"Bigger then 15\";<br>} else if (num < 5) {<br>  return \"Smaller than 5\";<br>} else {<br>  return \"Between 5 and 15\";<br>}</blockquote>",
-        "<h4>Instructions<h4>Convert the logic to use <code>else if</code> statements."
+        "<h4>Instructions</h4>  ",
+        "Convert the logic to use <code>else if</code> statements."
       ],
       "releasedOn": "January 1, 2016",
       "tests": [
