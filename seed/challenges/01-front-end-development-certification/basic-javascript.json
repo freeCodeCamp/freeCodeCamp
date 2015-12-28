@@ -4030,12 +4030,12 @@
       "id": "56533eb9ac21ba0edf2244cb",
       "title": "Introducing JavaScript Object Notation (JSON)",
       "description": [
-        "JavaScript Object Notation or <code>JSON</code> uses the format of Javascript Objects to store data.  JSON is flexible becuase it allows for data structures with arbitrary combinations of <dfn>strings</dfn>, <dfn>numbers</dfn>, <dfn>booleans</dfn>, <dfn>arrays</dfn>, and <dfn>objects</dfn>.  ",
+        "JavaScript Object Notation or <code>JSON</code> uses the format of JavaScript Objects to store data. JSON is flexible because it allows for <dfn>data structures</dfn> with arbitrary combinations of <dfn>strings</dfn>, <dfn>numbers</dfn>, <dfn>booleans</dfn>, <dfn>arrays</dfn>, and <dfn>objects</dfn>.",
         "Here is an example of a JSON object:",
         "<blockquote>var ourMusic = [<br>  {<br>    \"artist\": \"Daft Punk\",<br>    \"title\": \"Homework\",<br>    \"release_year\": 1997,<br>    \"formats\": [ <br>      \"CD\", <br>      \"Cassette\", <br>      \"LP\" ],<br>    \"gold\": true<br>  }<br>];</blockquote>",
-        "This is an array of objects and the object has various pieces of <dfn>metadata</dfn> about an album.  It also has a nested array of formats. Additional album records could be added to the top level array.",
+        "This is an array of objects and the object has various pieces of <dfn>metadata</dfn> about an album. It also has a nested array of formats. Additional album records could be added to the top level array.",
         "<h4>Instructions</h4>",
-        "Add a new album to the <code>myMusic</code> JSON object.  Add  <code>artist</code> and <code>title</code> strings, <code>release_year</code> year, and a <code>formats</code> array of strings."
+        "Add a new album to the <code>myMusic</code> JSON object. Add  <code>artist</code> and <code>title</code> strings, <code>release_year</code> year, and a <code>formats</code> array of strings."
       ],
       "releasedOn": "January 1, 2016",
       "tests": [
