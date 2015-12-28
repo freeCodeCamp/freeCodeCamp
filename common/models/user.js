@@ -79,9 +79,32 @@ module.exports = function(User) {
     ctx.res.redirect('/email-signin');
   });
 
-  User.beforeRemote('create', function({ req }, notUsed, next) {
+  User.beforeRemote('create', function({ req, res }, _, next) {
     req.body.username = 'fcc' + uuid.v4().slice(0, 8);
-    next();
+    if (!req.body.email) {
+      return next();
+    }
+    return User.doesExist(null, req.body.email)
+      .then(exists => {
+        if (!exists) {
+          return next();
+        }
+
+        req.flash('error', {
+          msg:
+            `The ${req.body.email} email address is already associated with an account. 
+            Try signing in with it here instead.`
+        });
+
+        return res.redirect('/email-signin');
+      })
+      .catch(err => {
+        console.error(err);
+        req.flash('error', {
+          msg: 'Oops, something went wrong, please try again later'
+        });
+        return res.redirect('/email-signup');
+      });
   });
 
   User.on('resetPasswordRequest', function(info) {
@@ -174,17 +197,15 @@ module.exports = function(User) {
     next();
   });
 
-  User.doesExist = function doesExist(username, email, cb) {
+  User.doesExist = function doesExist(username, email) {
     if (!username && !email) {
-      return nextTick(function() {
-        cb(null, false);
-      });
+      return Promise.resolve(false);
     }
     debug('checking existence');
 
     // check to see if username is on blacklist
     if (username && blacklistedUsernames.indexOf(username) !== -1) {
-      return cb(null, true);
+      return Promise.resolve(true);
     }
 
     var where = {};
@@ -194,19 +215,8 @@ module.exports = function(User) {
       where.email = email ? email.toLowerCase() : email;
     }
     debug('where', where);
-    User.count(
-      where,
-      function(err, count) {
-        if (err) {
-          debug('err checking existance: ', err);
-          return cb(err);
-        }
-        if (count > 0) {
-          return cb(null, true);
-        }
-        return cb(null, false);
-      }
-    );
+    return User.count(where)
+    .then(count => count > 0);
   };
 
   User.remoteMethod(
