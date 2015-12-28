@@ -1851,7 +1851,7 @@
       "id": "56533eb9ac21ba0edf2244bd",
       "title": "Passing Values to Functions with Arguments",
       "description": [
-        "Functions can take input in the form of <dfn>parameter</dfn>. Parameters are variables that take on the value of the <dfn>arguments</dfn> which are passed in to the function.  Here is a function with two parameters, <code>param1</code> and <code>param2</code>:",
+        "Functions can take input in the form of <dfn>parameters</dfn>. Parameters are variables that take on the value of the <dfn>arguments</dfn> which are passed into the function.  Here is a function with two parameters, <code>param1</code> and <code>param2</code>:",
         "<blockquote>function testFun(param1, param2) {<br>  console.log(param1, param2);<br>}</blockquote>",
         "Then we can call <code>testFun</code>:",
         "<code>testFun(\"Hello\", \"World\");</code>",
