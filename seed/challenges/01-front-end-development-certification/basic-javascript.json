@@ -3361,8 +3361,8 @@
       "description": [
         "You may recall from <a href=\"waypoint-comparison-with-the-equality-operator\" target=\"_blank\">Comparison with the Equality Operator</a> that all comparison operators return a boolean <code>true</code> or <code>false</code> value.",
         "A common <dfn>anti-pattern</dfn> is to use an <code>if/else</code> statement to do a comparison and then <code>return</code> <code>true</code>/<code>false</code>:",
-        "<blockquote>function isEqual(a,b) {<br>  if(a === b) {<br>    return true;<br/>  } else {<br>    return false;<br/>  }<br>}</blockquote>",
-        "Since <code>===</code> returns <code>true</code> or <code>false</code>, we can simply return the result of the comparion:",
+        "<blockquote>function isEqual(a,b) {<br>  if(a === b) {<br>    return true;<br>  } else {<br>    return false;<br>  }<br>}</blockquote>",
+        "Since <code>===</code> returns <code>true</code> or <code>false</code>, we can simply return the result of the comparison:",
         "<blockquote>function isEqual(a,b) {<br>  return a === b;<br>}</blockquote>",
         "<h4>Instructions</h4>",
         "Fix the function <code>isLess</code> to remove the <code>if/else</code> statements."
