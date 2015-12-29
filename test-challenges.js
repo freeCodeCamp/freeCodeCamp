@@ -55,11 +55,13 @@ function createTest({
   title,
   tests = [],
   solutions = [],
-  head = '',
-  tail = ''
+  head = [],
+  tail = []
 }) {
   solutions = solutions.filter(solution => !!solution);
   tests = tests.filter(test => !!test);
+  head = head.join('\n');
+  tail = tail.join('\n');
   const plan = tests.length;
   if (!plan) {
     return Observable.just({
@@ -87,11 +89,13 @@ function createTest({
         .doOnNext(assert => {
           solutions.forEach(solution => {
             tests.forEach(test => {
-              const code = head + solution + tail;
+              const code = solution;
               const editor = { getValue() { return code; } };
               /* eslint-enable no-unused-vars */
               try {
-                (() => { return eval(solution + ';;' + test); })();
+                (() => {
+                  return eval(head + solution + tail + ';;' + test);
+                })();
               } catch (e) {
                 t.fail(e);
               }
