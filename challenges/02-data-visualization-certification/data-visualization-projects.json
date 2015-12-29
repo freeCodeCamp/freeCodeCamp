@@ -5,21 +5,18 @@
   "challenges": [
     {
       "id": "bd7168d8c242eddfaeb5bd13",
-      "title": "",
+      "title": "Visualize Data with a Bar Chart",
       "challengeSeed": [
         "133315782"
       ],
       "description": [
-        "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='http://codepen.io/ThiagoFerreir4/full/eNMxEp' target='_blank'>http://codepen.io/ThiagoFerreir4/full/eNMxEp</a>.",
+        "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='http://codepen.io/FreeCodeCamp/full/adBBWd' target='_blank'>http://codepen.io/FreeCodeCamp/full/adBBWd</a>.",
         "<span class='text-info'>Rule #1:</span> Don't look at the example project's code on CodePen. Figure it out for yourself.",
         "<span class='text-info'>Rule #2:</span> Fulfill the below <a href='http://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
-        "<span class='text-info'>User Story:</span> I can access all of the portfolio webpage's content just by scrolling.",
-        "<span class='text-info'>User Story:</span> I can click different buttons that will take me to the portfolio creator's different social media pages.",
-        "<span class='text-info'>User Story:</span> I can see thumbnail images of different projects the portfolio creator has built (if you haven't built any websites before, use placeholders.)",
-        "<span class='text-info'>User Story:</span> I navigate to different sections of the webpage by clicking buttons in the navigation.",
-        "Don't worry if you don't have anything to showcase on your portfolio yet - you will build several apps on the next few CodePen challenges, and can come back and update your portfolio later.",
-        "There are many great portfolio templates out there, but for this challenge, you'll need to build a portfolio page yourself. Using Bootstrap will make this much easier for you.",
-        "Note that CodePen.io overrides the Window.open() function, so if you want to open windows using jQuery, you will need to target invisible anchor elements like this one: <code>&lt;a target='_blank'&gt;</a></code>.",
+        "<span class='text-info'>Rule #3:</span> You must use D3.js to build this project.",
+        "<span class='text-info'>User Story:</span> I can see US Gross Domestic Product by quarter, over time.",
+        "<span class='text-info'>User Story:</span> I can mouse over a bar and see a tooltip with the GDP amount and exact year and month that bar represents.",
+        "<span class='text-info'>Hint:</span> Here's a dataset you can use to build this: <a href='https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/master/GDP-data.json' target='_blank'>https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/master/GDP-data.json</a>",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck.",
         "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen. ",
         "You can get feedback on your project from fellow campers by sharing it in our <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Code Review Chatroom</a>. You can also share it on Twitter and your city's Campsite (on Facebook)."
@@ -40,21 +37,18 @@
     },
     {
       "id": "bd7178d8c242eddfaeb5bd13",
-      "title": "",
+      "title": "Visualize Data with a Scatterplot Graph",
       "challengeSeed": [
         "133315782"
       ],
       "description": [
-        "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='http://codepen.io/ThiagoFerreir4/full/eNMxEp' target='_blank'>http://codepen.io/ThiagoFerreir4/full/eNMxEp</a>.",
+        "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='http://codepen.io/FreeCodeCamp/full/GoNNEy' target='_blank'>http://codepen.io/FreeCodeCamp/full/GoNNEy</a>.",
         "<span class='text-info'>Rule #1:</span> Don't look at the example project's code on CodePen. Figure it out for yourself.",
         "<span class='text-info'>Rule #2:</span> Fulfill the below <a href='http://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
-        "<span class='text-info'>User Story:</span> I can access all of the portfolio webpage's content just by scrolling.",
-        "<span class='text-info'>User Story:</span> I can click different buttons that will take me to the portfolio creator's different social media pages.",
-        "<span class='text-info'>User Story:</span> I can see thumbnail images of different projects the portfolio creator has built (if you haven't built any websites before, use placeholders.)",
-        "<span class='text-info'>User Story:</span> I navigate to different sections of the webpage by clicking buttons in the navigation.",
-        "Don't worry if you don't have anything to showcase on your portfolio yet - you will build several apps on the next few CodePen challenges, and can come back and update your portfolio later.",
-        "There are many great portfolio templates out there, but for this challenge, you'll need to build a portfolio page yourself. Using Bootstrap will make this much easier for you.",
-        "Note that CodePen.io overrides the Window.open() function, so if you want to open windows using jQuery, you will need to target invisible anchor elements like this one: <code>&lt;a target='_blank'&gt;</a></code>.",
+        "<span class='text-info'>Rule #3:</span> You must use D3.js to build this project.",
+        "<span class='text-info'>User Story:</span> I can see performance time visualized in a scatterplot graph.",
+        "<span class='text-info'>User Story:</span> I can mouse over a plot to see a tooltip with additional details.",
+        "<span class='text-info'>Hint:</span> Here's a dataset you can use to build this: <a href='https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/master/cyclist-data.json' target='_blank'>https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/master/cyclist-data.json</a>",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck.",
         "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen. ",
         "You can get feedback on your project from fellow campers by sharing it in our <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Code Review Chatroom</a>. You can also share it on Twitter and your city's Campsite (on Facebook)."
@@ -75,21 +69,19 @@
     },
     {
       "id": "bd7188d8c242eddfaeb5bd13",
-      "title": "",
+      "title": "Visualize Data with a Heat Map",
       "challengeSeed": [
         "133315782"
       ],
       "description": [
-        "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='http://codepen.io/ThiagoFerreir4/full/eNMxEp' target='_blank'>http://codepen.io/ThiagoFerreir4/full/eNMxEp</a>.",
+        "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='http://codepen.io/FreeCodeCamp/full/rxWWGa' target='_blank'>http://codepen.io/FreeCodeCamp/full/rxWWGa</a>.",
         "<span class='text-info'>Rule #1:</span> Don't look at the example project's code on CodePen. Figure it out for yourself.",
         "<span class='text-info'>Rule #2:</span> Fulfill the below <a href='http://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
-        "<span class='text-info'>User Story:</span> I can access all of the portfolio webpage's content just by scrolling.",
-        "<span class='text-info'>User Story:</span> I can click different buttons that will take me to the portfolio creator's different social media pages.",
-        "<span class='text-info'>User Story:</span> I can see thumbnail images of different projects the portfolio creator has built (if you haven't built any websites before, use placeholders.)",
-        "<span class='text-info'>User Story:</span> I navigate to different sections of the webpage by clicking buttons in the navigation.",
-        "Don't worry if you don't have anything to showcase on your portfolio yet - you will build several apps on the next few CodePen challenges, and can come back and update your portfolio later.",
-        "There are many great portfolio templates out there, but for this challenge, you'll need to build a portfolio page yourself. Using Bootstrap will make this much easier for you.",
-        "Note that CodePen.io overrides the Window.open() function, so if you want to open windows using jQuery, you will need to target invisible anchor elements like this one: <code>&lt;a target='_blank'&gt;</a></code>.",
+        "<span class='text-info'>Rule #3:</span> You must use D3.js to build this project.",
+        "<span class='text-info'>User Story:</span> I can view a heat map of the temperature by month, sorted into rows by year.",
+        "<span class='text-info'>User Story:</span> Each month is colored based on its relative heat.",
+        "<span class='text-info'>User Story:</span> I can hover over a month to get its exact temperature.",
+        "<span class='text-info'>Hint:</span> Here's a dataset you can use to build this: <a href='https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/master/global-temperature.json' target='_blank'>https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/master/global-temperature.json</a>",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck.",
         "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen. ",
         "You can get feedback on your project from fellow campers by sharing it in our <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Code Review Chatroom</a>. You can also share it on Twitter and your city's Campsite (on Facebook)."
@@ -110,21 +102,21 @@
     },
     {
       "id": "bd7198d8c242eddfaeb5bd13",
-      "title": "",
+      "title": "Show Relationships with a Force-Directed Graph",
       "challengeSeed": [
         "133315782"
       ],
       "description": [
-        "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='http://codepen.io/ThiagoFerreir4/full/eNMxEp' target='_blank'>http://codepen.io/ThiagoFerreir4/full/eNMxEp</a>.",
+        "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='http://codepen.io/FreeCodeCamp/full/KVNNXY' target='_blank'>http://codepen.io/FreeCodeCamp/full/KVNNXY</a>.",
         "<span class='text-info'>Rule #1:</span> Don't look at the example project's code on CodePen. Figure it out for yourself.",
         "<span class='text-info'>Rule #2:</span> Fulfill the below <a href='http://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
-        "<span class='text-info'>User Story:</span> I can access all of the portfolio webpage's content just by scrolling.",
-        "<span class='text-info'>User Story:</span> I can click different buttons that will take me to the portfolio creator's different social media pages.",
-        "<span class='text-info'>User Story:</span> I can see thumbnail images of different projects the portfolio creator has built (if you haven't built any websites before, use placeholders.)",
-        "<span class='text-info'>User Story:</span> I navigate to different sections of the webpage by clicking buttons in the navigation.",
-        "Don't worry if you don't have anything to showcase on your portfolio yet - you will build several apps on the next few CodePen challenges, and can come back and update your portfolio later.",
-        "There are many great portfolio templates out there, but for this challenge, you'll need to build a portfolio page yourself. Using Bootstrap will make this much easier for you.",
-        "Note that CodePen.io overrides the Window.open() function, so if you want to open windows using jQuery, you will need to target invisible anchor elements like this one: <code>&lt;a target='_blank'&gt;</a></code>.",
+        "<span class='text-info'>Rule #3:</span> You must use D3.js to build this project.",
+        "<span class='text-info'>User Story:</span> I can see a Force-directed Graph that shows which campers are posting links on Camper News to which domains.",
+        "<span class='text-info'>User Story:</span> I can see each camper's icon on their node.",
+        "<span class='text-info'>User Story:</span> I can see the relationship between the campers and the domains they're posting.",
+        "<span class='text-info'>User Story:</span> I can tell approximately many times campers have linked to a specific domain from it's node size.",
+        "<span class='text-info'>User Story:</span> I can tell approximately how many times a specific camper has posted a link from their node's size.",
+        "<span class='text-info'>Hint:</span> Here's the Camper News Hot Stories API endpoint: <code>http://www.freecodecamp.com/news/hot</code>.",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck.",
         "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen. ",
         "You can get feedback on your project from fellow campers by sharing it in our <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Code Review Chatroom</a>. You can also share it on Twitter and your city's Campsite (on Facebook)."
@@ -145,21 +137,19 @@
     },
     {
       "id": "bd7108d8c242eddfaeb5bd13",
-      "title": "",
+      "title": "Map Data Across the Globe",
       "challengeSeed": [
         "133315782"
       ],
       "description": [
-        "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='http://codepen.io/ThiagoFerreir4/full/eNMxEp' target='_blank'>http://codepen.io/ThiagoFerreir4/full/eNMxEp</a>.",
+        "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='http://codepen.io/FreeCodeCamp/full/mVEJag' target='_blank'>http://codepen.io/FreeCodeCamp/full/mVEJag</a>.",
         "<span class='text-info'>Rule #1:</span> Don't look at the example project's code on CodePen. Figure it out for yourself.",
         "<span class='text-info'>Rule #2:</span> Fulfill the below <a href='http://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
-        "<span class='text-info'>User Story:</span> I can access all of the portfolio webpage's content just by scrolling.",
-        "<span class='text-info'>User Story:</span> I can click different buttons that will take me to the portfolio creator's different social media pages.",
-        "<span class='text-info'>User Story:</span> I can see thumbnail images of different projects the portfolio creator has built (if you haven't built any websites before, use placeholders.)",
-        "<span class='text-info'>User Story:</span> I navigate to different sections of the webpage by clicking buttons in the navigation.",
-        "Don't worry if you don't have anything to showcase on your portfolio yet - you will build several apps on the next few CodePen challenges, and can come back and update your portfolio later.",
-        "There are many great portfolio templates out there, but for this challenge, you'll need to build a portfolio page yourself. Using Bootstrap will make this much easier for you.",
-        "Note that CodePen.io overrides the Window.open() function, so if you want to open windows using jQuery, you will need to target invisible anchor elements like this one: <code>&lt;a target='_blank'&gt;</a></code>.",
+        "<span class='text-info'>Rule #3:</span> You must use D3.js to build this project.",
+        "<span class='text-info'>User Story:</span> I can see where all Meteorites landed on a world map.",
+        "<span class='text-info'>User Story:</span> I can tell the relative size of the meteorite, just by looking at the way it's represented on the map.",
+        "<span class='text-info'>User Story:</span> I can mouse over the meteorite's data point for additional data.",
+        "<span class='text-info'>Hint:</span> Here's a dataset you can use to build this: <a href='https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/master/meteorite-strike-data.json' target='_blank'>https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/master/meteorite-strike-data.json</a>",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck.",
         "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen. ",
         "You can get feedback on your project from fellow campers by sharing it in our <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Code Review Chatroom</a>. You can also share it on Twitter and your city's Campsite (on Facebook)."
