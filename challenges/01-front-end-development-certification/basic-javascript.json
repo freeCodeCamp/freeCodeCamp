@@ -3708,7 +3708,7 @@
         "})(gloveBoxContents);"
       ],
       "solutions": [
-        "var myStorage = {\n  \"car\": {\n    \"inside\": {\n      \"glove box\": \"maps\",\n      \"passenger seat\": \"crumbs\"\n     },\n    \"outside\": {\n      \"trunk\": \"jack\"\n    }\n  }\n};\n\nvar gloveBoxContents = myStorage.car.inside[\"glove box\"]; // Change this line"
+        "var myStorage = {  \n  \"car\":{  \n    \"inside\":{  \n      \"glove box\":\"maps\",\n      \"passenger seat\":\"crumbs\"\n    },\n    \"outside\":{  \n      \"trunk\":\"jack\"\n    }\n  }\n};\nvar gloveBoxContents = myStorage.car.inside[\"glove box\"];"
       ],
       "type": "waypoint",
       "challengeType": "1",
@@ -3726,7 +3726,7 @@
         "Here is an example of how to access a nested array:",
         "<blockquote>var ourPets = { <br>  \"cats\": [<br>    \"Meowzer\",<br>    \"Fluffy\",<br>    \"Kit-Cat\"<br>  ],<br>  \"dogs:\" [<br>    \"Spot\",<br>    \"Bowser\",<br>    \"Frankie\"<br>  ]<br>};<br>ourPets.cats[1]; // \"Fluffy\"<br>ourPets.dogs[0]; // \"Spot\"</blockquote>",
         "<h4>Instructions</h4>",
-        "Retrieve the second tree using object dot and array bracket notation."
+        "Retrieve the second tree from the variable <code>myPlants</code> using object dot and array bracket notation."
       ],
       "releasedOn": "January 1, 2016",
       "tests": [
@@ -3760,39 +3760,15 @@
         ""
       ],
       "tail": [
-        ""
+        "(function(x) { ",
+        "  if(typeof x != 'undefined') { ",
+        "    return \"secondTree = \" + x;",
+        "  }",
+        "  return \"secondTree is undefined\";",
+        "})(secondTree);"
       ],
       "solutions": [
-        ""
-      ],
-      "type": "waypoint",
-      "challengeType": "1",
-      "nameCn": "",
-      "nameFr": "",
-      "nameRu": "",
-      "nameEs": "",
-      "namePt": ""
-    },
-    {
-      "id": "56533eb9ac21ba0edf2244ce",
-      "title": "Modifying JSON Values",
-      "description": [
-        "Modify the contents of a JSON object"
-      ],
-      "releasedOn": "January 1, 2016",
-      "tests": [
-        "assert(1===1, 'message: message here');"
-      ],
-      "challengeSeed": [
-        "",
-        "",
-        ""
-      ],
-      "tail": [
-        ""
-      ],
-      "solutions": [
-        ""
+        "var myPlants = [\n  { \n    type: \"flowers\",\n    list: [\n      \"rose\",\n      \"tulip\",\n      \"dandelion\"\n    ]\n  },\n  {\n    type: \"trees\",\n    list: [\n      \"fir\",\n      \"pine\",\n      \"birch\"\n    ]\n  }  \n];\n\n// Only change code below this line\n\nvar secondTree = myPlants[1].list[1];"
       ],
       "type": "waypoint",
       "challengeType": "1",
