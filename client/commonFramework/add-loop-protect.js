@@ -5,7 +5,10 @@ window.common = (function(global) {
   } = global;
 
   loopProtect.hit = function hit(line) {
-    var err = `Error: Exiting potential infinite loop at line ${line}.`;
+    var err = 'Error: Exiting potential infinite loop at line ${line}. ' + 
+      'You can disable loop protection by adding "//noprotect" to your code; ' + 
+      'however, be aware that by disabling this feature, you run the risk ' + 
+      'of your browser crashing should an infinite loop occur.';
     console.error(err);
   };
 
