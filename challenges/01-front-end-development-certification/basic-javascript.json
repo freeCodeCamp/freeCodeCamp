@@ -106,7 +106,7 @@
         "assert(/var a;/.test(code) && /var b = 2;/.test(code), 'message: Do not change code above the line');",
         "assert(typeof a === 'number' && a === 7, 'message: <code>a</code> should have a value of 7');",
         "assert(typeof b === 'number' && b === 7, 'message: <code>b</code> should have a value of 7');",
-        "assert(code.match(/b\\s*=\\s*a\\s*;/g) > 0, 'message: <code>a</code> should be assigned to <code>b</code> with <code>=</code>');"
+        "assert(/b\\s*=\\s*a\\s*;/g.test(code) > 0, 'message: <code>a</code> should be assigned to <code>b</code> with <code>=</code>');"
       ],
       "challengeSeed": [
         "// Setup",
@@ -2115,7 +2115,7 @@
         "(function() { return logOutput.join(\"\\n\");})();"
       ],
       "solutions": [
-        "var arr = [ 1,2,3,4,5];\n\nfunction queue(myArr, item) {\n    myArr.push(item);\n    return myArr.shift();\n}"
+        "var myArr = [ 1,2,3,4,5];\n\nfunction queue(myArr, item) {\n    myArr.push(item);\n    return myArr.shift();\n}"
       ],
       "type": "bonfire",
       "challengeType": "5",
@@ -3678,7 +3678,7 @@
       "releasedOn": "January 1, 2016",
       "tests": [
         "assert(gloveBoxContents === \"maps\", 'message: <code>gloveBoxContents</code> should equal \"maps\"');",
-        "assert(/=\\s*myStorage\\.car\\.inside\\[([\"'])glove box\\1\\]/g.test(code), 'message: Use dot and bracket notation to access <code>myStorage</code>');"
+        "assert(/=\\s*myStorage\\.car\\.inside\\[(\"|')glove box\\1\\]/g.test(code), 'message: Use dot and bracket notation to access <code>myStorage</code>');"
       ],
       "challengeSeed": [
         "// Setup",
@@ -3703,13 +3703,12 @@
         "(function(x) { ",
         "  if(typeof x != 'undefined') { ",
         "    return \"gloveBoxContents = \" + x;",
-        "  } else { ",
-        "    return \"gloveBoxContents is undefined\";",
         "  }",
+        "  return \"gloveBoxContents is undefined\";",
         "})(gloveBoxContents);"
       ],
       "solutions": [
-        "var myStorage = {\n  \"car\": {\n    \"inside\": {\n      \"glove box\": \"maps\",\n      \"passenger seat\": \"crumbs\"\n     },\n    \"outside\": {\n      \"trunk\": \"jack\"\n    }\n  }\n};\n\nvar gloveBoxContents = myStorage.car.inside['glove box']; // Change this line"
+        "var myStorage = {\n  \"car\": {\n    \"inside\": {\n      \"glove box\": \"maps\",\n      \"passenger seat\": \"crumbs\"\n     },\n    \"outside\": {\n      \"trunk\": \"jack\"\n    }\n  }\n};\n\nvar gloveBoxContents = myStorage.car.inside[\"glove box\"]; // Change this line"
       ],
       "type": "waypoint",
       "challengeType": "1",
