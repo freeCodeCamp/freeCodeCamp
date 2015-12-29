@@ -85,7 +85,7 @@ function createTest({
       return Observable.just(t)
         .map(fillAssert)
         /* eslint-disable no-unused-vars */
-        // assert is used within the eval
+        // assert and code used within the eval
         .doOnNext(assert => {
           solutions.forEach(solution => {
             tests.forEach(test => {
@@ -94,7 +94,11 @@ function createTest({
               /* eslint-enable no-unused-vars */
               try {
                 (() => {
-                  return eval(head + solution + tail + ';;' + test);
+                  return eval(
+                    head + '\n;;' +
+                    solution + '\n;;' +
+                    tail + '\n;;' +
+                    test);
                 })();
               } catch (e) {
                 t.fail(e);
