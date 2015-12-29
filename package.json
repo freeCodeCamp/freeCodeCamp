@@ -37,7 +37,7 @@
     "cheerio": "~0.19.0",
     "classnames": "^2.1.2",
     "compression": "^1.6.0",
-    "connect-mongo": "~0.8.2",
+    "connect-mongo": "~1.1.0",
     "cookie-parser": "^1.4.0",
     "csso": "^1.4.1",
     "dateformat": "^1.0.11",
