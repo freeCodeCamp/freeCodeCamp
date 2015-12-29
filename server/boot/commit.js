@@ -24,12 +24,14 @@ import {
 
 const sendNonUserToSignIn = ifNoUserRedirectTo(
   '/login',
-  'You must be signed in to commit to a non-profit'
+  'You must be signed in to commit to a nonprofit.',
+  'info'
 );
 
 const sendNonUserToCommit = ifNoUserRedirectTo(
   '/commit',
-  'You must be signed in to update commit'
+  'You must be signed in to update commit',
+  'info'
 );
 
 const debug = debugFactory('freecc:commit');
