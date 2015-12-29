@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  var bootcamps = ''
+  var bootcamps = "";
   $.getJSON('/json/bootcamps.json', function(data) {
     bootcamps = data;
   });
