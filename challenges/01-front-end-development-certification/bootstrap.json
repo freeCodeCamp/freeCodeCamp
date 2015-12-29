@@ -2294,7 +2294,7 @@
         "Cuando comencemos a usar jQuery, modificarmemos los elementos HTML sin necesidad de hacer cambios reales en el código HTML.",
         "Vamos a asegurarnos de que cualquier persona sepa que no deben modificar nada en este código directamente.",
         "Recuerda que puedes iniciar un comentario usando <code>&#60;!--</code> y terminarlo usando <code>--&#62;</code>",
-        "Agrega un comentario al inicio de tu código HTML que diga <code>No hacer cambios en el código debajo de esta línea.</code>"
+        "Agrega un comentario al inicio de tu código HTML que diga <code>Only change code above this line.</code>"
         ],
       "namePt": "",
       "descriptionPt": []
