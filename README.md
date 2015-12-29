@@ -50,7 +50,7 @@ Prerequisites
 Getting Started
 ---------------
 
-The easiest way to get started is to clone the repository:
+The easiest way to get started is to clone the repository: (NOTE: node version 4.2.2 and npm version 2.X.X is needed as a minumium requirement)
 
 ```bash
 # Get the latest snapshot
@@ -74,7 +74,7 @@ bower install
 # Create a .env file and populate it with the necessary API keys and secrets:
 touch .env
 ```
-
+(Note if you're having issues with any of these steps or have installed something with npm delete your modules AND clean your npm cache with npm cache clear)
 Edit your `.env` file with the following API keys accordingly. If you only use email login, only the `MONGOHQ_URL`, `SESSION_SECRET`, `MANDRILL_USER` and `MANDRILL_PASSWORD` fields are necessary. Keep in mind if you want to use more services you'll have to get your own API keys for those services. If you only use a subset or no OAuth2 authentication methods, you may want to remove them from ```server/passport-providers.js``` - otherwise the server will complain about missing clientIDs at launch.
 
 ```
