@@ -1489,7 +1489,7 @@
     },
     {
       "id": "cf1111c1c12feddfaeb6bdef",
-      "title": "Sift through Text with Regular Expressions",
+      "title": "Shift through Text with Regular Expressions",
       "description": [
         "<code>Regular expressions</code> are used to find certain words or patterns inside of <code>strings</code>.",
         "For example, if we wanted to find the word <code>the</code> in the string <code>The dog chased the cat</code>, we could use the following <code>regular expression</code>: <code>/the/gi</code>",
