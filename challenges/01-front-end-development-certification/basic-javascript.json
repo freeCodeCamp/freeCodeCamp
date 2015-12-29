@@ -106,7 +106,7 @@
         "assert(/var a;/.test(code) && /var b = 2;/.test(code), 'message: Do not change code above the line');",
         "assert(typeof a === 'number' && a === 7, 'message: <code>a</code> should have a value of 7');",
         "assert(typeof b === 'number' && b === 7, 'message: <code>b</code> should have a value of 7');",
-        "assert(code.match(/b\\s*=\\s*a\\s*;/g), 'message: <code>a</code> should be assigned to <code>b</code> with <code>=</code>');"
+        "assert(code.match(/b\\s*=\\s*a\\s*;/g) > 0, 'message: <code>a</code> should be assigned to <code>b</code> with <code>=</code>');"
       ],
       "challengeSeed": [
         "// Setup",
@@ -242,7 +242,7 @@
         ""
       ],
       "solutions": [
-        "var StUdLyCapVaR;\nvar properCamelCase;\nvar TitleCase;\n\nStUdLyCapVaR = 10;\nproperCamelCase = \"A String\";\nTitleCaseOver = \"9000\";"
+        "var StUdLyCapVaR;\nvar properCamelCase;\nvar TitleCaseOver;\n\nStUdLyCapVaR = 10;\nproperCamelCase = \"A String\";\nTitleCaseOver = 9000;"
       ],
       "type": "waypoint",
       "challengeType": "1",
@@ -436,7 +436,7 @@
         "(function(z){return 'myVar = ' + z;})(myVar);"
       ],
       "solutions": [
-        "var myVar = 87;\nmyVar--;"
+        "var myVar = 11;\nmyVar--;"
       ],
       "type": "waypoint",
       "challengeType": "1",
@@ -550,7 +550,7 @@
         "(function(y){return 'remainder = '+y;})(remainder);"
       ],
       "solutions": [
-        ""
+        "var remainder =  11 % 3;"
       ],
       "type": "waypoint",
       "challengeType": "1",
@@ -688,7 +688,7 @@
         "(function(a,b,c){ return \"a = \" + a + \", b = \" + b + \", c = '\" + c + \"'\"; })(a,b,c);"
       ],
       "solutions": [
-        "var a = 20;\nvar b = 12;\nvar c = 96;\n\na *= 5;\nb *= 3;\nc *= 10;"
+        "var a = 5;\nvar b = 12;\nvar c = 4.6;\n\na *= 5;\nb *= 3;\nc *= 10;"
       ],
       "type": "waypoint",
       "challengeType": "1",
@@ -767,7 +767,7 @@
         "",
         "  // Only change code above this line",
         "  if(typeof Tf !== 'undefined') {",
-        "\treturn Tf;",
+        "  return Tf;",
         "  } else {",
         "    return \"Tf not defined\";",
         "  }",
@@ -777,7 +777,7 @@
         "convert(30);"
       ],
       "solutions": [
-        "function convert(Tc) {\n  var Tf = Tc * 9/5 + 32;\n  if(typeof Tf !== 'undefined') {\n\treturn Tf;\n  } else {\n    return \"Tf not defined\";\n  }\n}"
+        "function convert(Tc) {\n  var Tf = Tc * 9/5 + 32;\n  if(typeof Tf !== 'undefined') {\n  return Tf;\n  } else {\n    return \"Tf not defined\";\n  }\n}"
       ],
       "type": "bonfire",
       "challengeType": "5",
@@ -944,7 +944,7 @@
         ""
       ],
       "solutions": [
-        "var myStr = \"This is the start. \" + \"This is the end.\";"
+        "var ourStr = \"I come first. \" + \"I come second.\";\nvar myStr = \"This is the start. \" + \"This is the end.\";"
       ],
       "type": "waypoint",
       "challengeType": "1",
@@ -979,7 +979,7 @@
         ""
       ],
       "solutions": [
-        "var myStr = \"This is the first sentance. \";\nmyStr += \"This is the second sentance.\";"
+        "var ourStr = \"I come first. \";\nourStr += \"I come second.\";\n\nvar myStr = \"This is the first sentance. \";\nmyStr += \"This is the second sentance.\";"
       ],
       "type": "waypoint",
       "challengeType": "1",
@@ -1132,7 +1132,7 @@
         "(function(v){return v;})(firstLetterOfLastName);"
       ],
       "solutions": [
-        "var firstLetterOfLastName = \"\";\nvar lastName = \"Lovelace\";\n\n// Only change code below this line\nfirstLetterOfLastName = lastName.length"
+        "var firstLetterOfLastName = \"\";\nvar lastName = \"Lovelace\";\n\n// Only change code below this line\nfirstLetterOfLastName = lastName[0];"
       ],
       "type": "waypoint",
       "challengeType": "1"
@@ -1246,7 +1246,7 @@
         "(function(v){return v;})(lastLetterOfLastName);"
       ],
       "solutions": [
-        "var lastName = \"Lovelace\";\nvar lastLetterOfLastName = lastName[lastName.length - 1];"
+        "var firstName = \"Ada\";\nvar lastLetterOfFirstName = firstName[firstName.length - 1];\n\nvar lastName = \"Lovelace\";\nvar lastLetterOfLastName = lastName[lastName.length - 1];"
       ],
       "type": "waypoint",
       "challengeType": "1"
@@ -1283,7 +1283,7 @@
         "(function(v){return v;})(secondToLastLetterOfLastName);"
       ],
       "solutions": [
-        "var lastName = \"Lovelace\";\nvar secondToLastLetterOfLastName = lastName[lastName.length - 2];"
+        "var firstName = \"Ada\";\nvar thirdToLastLetterOfFirstName = firstName[firstName.length - 3];\n\nvar lastName = \"Lovelace\";\nvar secondToLastLetterOfLastName = lastName[lastName.length - 2];"
       ],
       "type": "waypoint",
       "challengeType": "1"
@@ -1311,7 +1311,7 @@
         "    ",
         "",
         "    // Your code above this line",
-        "\treturn result;",
+        "  return result;",
         "}",
         "",
         "// Change the words here to test your function",
@@ -1322,7 +1322,7 @@
         "var test2 = wordBlanks(\"cat\", \"little\", \"hit\", \"slowly\");"
       ],
       "solutions": [
-        "function wordBlanks(myNoun, myAdjective, myVerb, myAdverb) {\n    var result = \"\";\n    result = \"Once there was a \" + myNoun + \" which was very \" + myAdjective + \". \";\n\tresult += \"It \" + myVerb + \" \" + myAdverb + \" around the yard.\";\n\treturn result;\n}"
+        "function wordBlanks(myNoun, myAdjective, myVerb, myAdverb) {\n  var result = \"\";\n\n  result = \"Once there was a \" + myNoun + \" which was very \" + myAdjective + \". \";\n  result += \"It \" + myVerb + \" \" + myAdverb + \" around the yard.\";\n\n  return result;\n}"
       ],
       "type": "bonfire",
       "challengeType": "5",
@@ -1520,7 +1520,7 @@
         "",
         "// Only change code below this line.",
         "",
-        "\t"
+        ""
       ],
       "tail": [
         "(function(z){return 'myArray = ' + JSON.stringify(z);})(myArray);"
@@ -1564,7 +1564,7 @@
         "(function(y, z){return 'myArray = ' + JSON.stringify(y) + ' & removedFromMyArray = ' + JSON.stringify(z);})(myArray, removedFromMyArray);"
       ],
       "solutions": [
-        ""
+        "var myArray = [[\"John\", 23], [\"cat\", 2]];\nvar removedFromMyArray = myArray.pop();"
       ],
       "type": "waypoint",
       "challengeType": "1"
@@ -1600,7 +1600,7 @@
         "(function(y, z){return 'myArray = ' + JSON.stringify(y) + ' & removedFromMyArray = ' + JSON.stringify(z);})(myArray, removedFromMyArray);"
       ],
       "solutions": [
-        "var myArray = [\"John\", 23, [\"dog\", 3]];\n\n// Only change code below this line.\nvar removedFromMyArray = myArray.shift();"
+        "var myArray = [[\"John\", 23], [\"dog\", 3]];\n\n// Only change code below this line.\nvar removedFromMyArray = myArray.shift();"
       ],
       "type": "waypoint",
       "challengeType": "1"
@@ -1908,7 +1908,7 @@
       ],
       "releasedOn": "January 1, 2016",
       "tests": [
-        ""
+        "assert(code.match(/console\\.log/gi).length === 1, 'message: Remove the second console log');"
       ],
       "challengeSeed": [
         "function myFunction() {",
@@ -1928,7 +1928,7 @@
         ""
       ],
       "solutions": [
-        "function myFunction() {\n  var myVar;\n  console.log(myVar);\n}\nmyFunction();\n\n// run and check the console \n// myVar is not defined outside of myFunction\n\n\n// now remove the console.log line to pass the test\n\n"
+        "function myFunction() {\n  var myVar;\n  console.log(myVar);\n}\nmyFunction();"
       ],
       "type": "waypoint",
       "challengeType": "1",
@@ -2055,7 +2055,7 @@
         "(function(){return \"processed = \" + processed})();"
       ],
       "solutions": [
-        "processed = process(7);"
+        "var processed = 0;\n\nfunction process(num) {\n  return (num + 3) / 5;\n}\n\nprocessed = process(7);"
       ],
       "type": "waypoint",
       "challengeType": "1",
@@ -2248,7 +2248,7 @@
         "myTest(10);"
       ],
       "solutions": [
-        "function myTest(val) {\n  if (val == 7) {\n    return \"Equal\";\n  }\n  return \"Not Equal\";\n}"
+        "function myTest(val) {\n  if (val === 7) {\n    return \"Equal\";\n  }\n  return \"Not Equal\";\n}"
       ],
       "type": "waypoint",
       "challengeType": "1",
@@ -2336,7 +2336,7 @@
         "myTest(10);"
       ],
       "solutions": [
-        "function myTest(val) {\n  if (val != 17) {\n    return \"Not Equal\";\n  }\n  return \"Equal\";\n}"
+        "function myTest(val) {\n  if (val !== 17) {\n    return \"Not Equal\";\n  }\n  return \"Equal\";\n}"
       ],
       "type": "waypoint",
       "challengeType": "1",
@@ -2364,7 +2364,8 @@
         "assert(myTest(99) === \"Over 10\", 'message: <code>myTest(99)</code> should return \"Over 10\"');",
         "assert(myTest(100) === \"Over 10\", 'message: <code>myTest(100)</code> should return \"Over 10\"');",
         "assert(myTest(101) === \"Over 100\", 'message: <code>myTest(101)</code> should return \"Over 100\"');",
-        "assert(myTest(150) === \"Over 100\", 'message: <code>myTest(150)</code> should return \"Over 100\"');\nassert(code.match(/val\\s*>\\s*\\d+/g).length > 1, 'message: You should use the <code>&gt;</code> operator at least twice');"
+        "assert(myTest(150) === \"Over 100\", 'message: <code>myTest(150)</code> should return \"Over 100\"');",
+        "assert(code.match(/val\\s*>\\s*\\d+/g).length > 1, 'message: You should use the <code>&gt;</code> operator at least twice');"
       ],
       "challengeSeed": [
         "function myTest(val) {",
@@ -2569,7 +2570,7 @@
         "  if (val) {",
         "     if (val) {",
         "       return \"Yes\";",
-        "\t }",
+        "   }",
         "  }",
         "",
         "  // Only change code above this line",
@@ -3222,7 +3223,7 @@
         "(function(z){return z;})(myDog);"
       ],
       "solutions": [
-        ""
+        "var myDog = {\n  \"name\": \"Camper\",\n  \"legs\": 4,\n  \"tails\": 1,\n  \"friends\": [\"everything!\"]  \n};"
       ],
       "type": "waypoint",
       "challengeType": "1"
@@ -3243,7 +3244,8 @@
         "assert(typeof hatValue === 'string' , 'message: <code>hatValue</code> should be a string');",
         "assert(hatValue === 'ballcap' , 'message: The value of <code>hatValue</code> should be <code>\"ballcap\"</code>');",
         "assert(typeof shirtValue === 'string' , 'message: <code>shirtValue</code> should be a string');",
-        "assert(shirtValue === 'jersey' , 'message: The value of <code>shirtValue</code> should be <code>\"jersey\"</code>');\nassert(code.match(/testObj\\.\\w+/g).length > 1, 'message: You should use dot notation twice');"
+        "assert(shirtValue === 'jersey' , 'message: The value of <code>shirtValue</code> should be <code>\"jersey\"</code>');",
+        "assert(code.match(/testObj\\.\\w+/g).length > 1, 'message: You should use dot notation twice');"
       ],
       "challengeSeed": [
         "// Setup",
@@ -3353,7 +3355,7 @@
         ""
       ],
       "solutions": [
-        "var playerNumber = 16;\nvar player = testObj[playerNumber];"
+        "var testObj = {\n  12: \"Namath\",\n  16: \"Montana\",\n  19: \"Unitas\"\n};\nvar playerNumber = 16;\nvar player = testObj[playerNumber];"
       ],
       "type": "waypoint",
       "challengeType": "1",
@@ -3500,7 +3502,7 @@
         "(function(z){return z;})(myDog);"
       ],
       "solutions": [
-        "// Setup\nvar myDog = {\n  \"name\": \"Happy Coder\",\n  \"legs\": 4,\n  \"tails\": 1,\n  \"friends\": [\"Free Code Camp Campers\"],\n  \"bark\": \"woof\"\n};\ndelete myDog.tails;"
+        "var ourDog = {\n  \"name\": \"Camper\",\n  \"legs\": 4,\n  \"tails\": 1,\n  \"friends\": [\"everything!\"],\n  \"bark\": \"bow-wow\"\n};\n\nvar myDog = {\n  \"name\": \"Happy Coder\",\n  \"legs\": 4,\n  \"tails\": 1,\n  \"friends\": [\"Free Code Camp Campers\"],\n  \"bark\": \"woof\"\n};\n\ndelete myDog.tails;"
       ],
       "type": "waypoint",
       "challengeType": "1"
@@ -3524,7 +3526,7 @@
         "assert(phoneticLookup(\"echo\") === 'Easy', 'message: <code>phoneticLookup(\"echo\")</code> should equal <code>\"Easy\"</code>');",
         "assert(phoneticLookup(\"foxtrot\") === 'Frank', 'message: <code>phoneticLookup(\"foxtrot\")</code> should equal <code>\"Frank\"</code>');",
         "assert(typeof phoneticLookup(\"\") === 'undefined', 'message: <code>phoneticLookup(\"\")</code> should equal <code>undefined</code>');",
-        "assert(!/case|switch|if/g.test(editor.getValue()), 'message: You should not use <code>case</code>, <code>switch</code>, or <code>if</code> statements'); "
+        "assert(!/case|switch|if/g.test(code), 'message: You should not use <code>case</code>, <code>switch</code>, or <code>if</code> statements'); "
       ],
       "challengeSeed": [
         "// Setup",
@@ -3558,7 +3560,7 @@
         ""
       ],
       "solutions": [
-        "function phoneticLookup(val) {\n  var result = \"\";\n\n  var lookup = {\n    alpha: \"Adams\",\n    bravo: \"Boston\",\n    charlie: \"Chicago\",\n    delta: \"Denver\",\n    echo: \"Easy\",\n    foxtrot: \"Frank\"\n  };\n\n  result = lookup[val];\n\n  return result;\n}\n\nphoneticLookup(\"charlie\");"
+        "function phoneticLookup(val) {\n  var result = \"\";\n\n  var lookup = {\n    alpha: \"Adams\",\n    bravo: \"Boston\",\n    charlie: \"Chicago\",\n    delta: \"Denver\",\n    echo: \"Easy\",\n    foxtrot: \"Frank\"\n  };\n\n  result = lookup[val];\n\n  return result;\n}"
       ],
       "type": "waypoint",
       "challengeType": "1",
@@ -3636,7 +3638,7 @@
       "challengeSeed": [
         "var myMusic = [",
         "  {",
-        "  \t\"artist\": \"Billy Joel\",",
+        "    \"artist\": \"Billy Joel\",",
         "    \"title\": \"Piano Man\",",
         "    \"release_year\": 1993,",
         "    \"formats\": [ ",
@@ -3653,7 +3655,7 @@
         "(function(x){ if (Array.isArray(x)) { return JSON.stringify(x); } return \"myMusic is not an array\"})(myMusic);"
       ],
       "solutions": [
-        "var myMusic = [\n  {\n  \t\"artist\": \"Billy Joel\",\n    \"title\": \"Piano Man\",\n    \"release_year\": 1993,\n    \"formats\": [ \n      \"CS\", \n      \"8T\", \n      \"LP\" ],\n    \"gold\": true\n  }, \n  {\n    \"artist\": \"ABBA\",\n    \"title\": \"Ring Ring\",\n    \"release_year\": 1973,\n    \"formats\": [ \n      \"CS\", \n      \"8T\", \n      \"LP\",\n\t  \"CD\",\n\t]\n  }\n}\n  // Add record here\n];"
+        "var myMusic = [\n  {\n    \"artist\": \"Billy Joel\",\n    \"title\": \"Piano Man\",\n    \"release_year\": 1993,\n    \"formats\": [ \n      \"CS\", \n      \"8T\", \n      \"LP\" ],\n    \"gold\": true\n  }, \n  {\n    \"artist\": \"ABBA\",\n    \"title\": \"Ring Ring\",\n    \"release_year\": 1973,\n    \"formats\": [ \n      \"CS\", \n      \"8T\", \n      \"LP\",\n    \"CD\",\n  ]\n  }\n];"
       ],
       "type": "waypoint",
       "challengeType": "1",
@@ -3676,7 +3678,7 @@
       "releasedOn": "January 1, 2016",
       "tests": [
         "assert(gloveBoxContents === \"maps\", 'message: <code>gloveBoxContents</code> should equal \"maps\"');",
-        "assert(/=\\s*myStorage\\.car\\.inside\\[([\"'])glove box\\1\\]/.test(code), 'message: Use dot and bracket notation to access <code>myStorage</code>');"
+        "assert(/=\\s*myStorage\\.car\\.inside\\[([\"'])glove box\\1\\]/g.test(code), 'message: Use dot and bracket notation to access <code>myStorage</code>');"
       ],
       "challengeSeed": [
         "// Setup",
@@ -3698,10 +3700,16 @@
         ""
       ],
       "tail": [
-        "(function(x) { if(typeof gloveBoxContents != 'undefined') { return \"gloveBoxContents = \", x} else return \"gloveBoxContents is undefined\";})(gloveBoxContents);"
+        "(function(x) { ",
+        "  if(typeof x != 'undefined') { ",
+        "    return \"gloveBoxContents = \" + x;",
+        "  } else { ",
+        "    return \"gloveBoxContents is undefined\";",
+        "  }",
+        "})(gloveBoxContents);"
       ],
       "solutions": [
-        "var myStorage = {\n  \"car\": {\n    \"inside\": {\n      \"glove box\": \"maps\",\n      \"passenger seat\": \"crumbs\"\n     },\n    \"outside\": {\n      \"trunk\": \"jack\"\n    }\n  }\n};\nvar gloveBoxContents = myStorage.car.inside['glove box']; // Change this line"
+        "var myStorage = {\n  \"car\": {\n    \"inside\": {\n      \"glove box\": \"maps\",\n      \"passenger seat\": \"crumbs\"\n     },\n    \"outside\": {\n      \"trunk\": \"jack\"\n    }\n  }\n};\n\nvar gloveBoxContents = myStorage.car.inside['glove box']; // Change this line"
       ],
       "type": "waypoint",
       "challengeType": "1",
