@@ -19,6 +19,9 @@
       "challengeSeed": [
         "  "
       ],
+      "solutions": [
+        "// Fake Comment\n/* Another Comment */"
+      ],
       "tests": [
         "assert(code.match(/(\\/\\/)...../g), 'message: Create a <code>//</code> style comment that contains at least five letters.');",
         "assert(code.match(/(\\/\\*)[\\w\\W]{5,}(?=\\*\\/)/gm), 'message: Create a <code>/* */</code> style comment that contains at least five letters.');",
@@ -37,10 +40,6 @@
         "<h4>Instructions</h4>",
         "Modify the <code>welcomeToBooleans</code> function so that it returns <code>true</code> instead of <code>false</code> when the run button is clicked."
       ],
-      "tests": [
-        "assert(typeof(welcomeToBooleans()) === 'boolean', 'message: The <code>welcomeToBooleans()</code> function should return a boolean &#40;true/false&#41; value.');",
-        "assert(welcomeToBooleans() === true, 'message: <code>welcomeToBooleans()</code> should return true.');"
-      ],
       "challengeSeed": [
         "function welcomeToBooleans() {",
         "",
@@ -53,6 +52,13 @@
       ],
       "tail": [
         "welcomeToBooleans();"
+      ],
+      "solutions": [
+        "function welcomeToBooleans() {\n  return true; // Change this line\n}"
+      ],
+      "tests": [
+        "assert(typeof(welcomeToBooleans()) === 'boolean', 'message: The <code>welcomeToBooleans()</code> function should return a boolean &#40;true/false&#41; value.');",
+        "assert(welcomeToBooleans() === true, 'message: <code>welcomeToBooleans()</code> should return true.');"
       ],
       "type": "waypoint",
       "challengeType": "1"
@@ -70,9 +76,6 @@
         "<strong>Hint</strong>",
         "Look at the <code>ourName</code> example if you get stuck."
       ],
-      "tests": [
-        "assert((function(){if(typeof(myName) !== \"undefined\" && typeof(myName) === \"string\" && myName.length > 0){return true;}else{return false;}})(), 'message: <code>myName</code> should be a string that contains at least one character in it.');"
-      ],
       "challengeSeed": [
         "// Example",
         "var ourName = \"Free Code Camp\";",
@@ -82,6 +85,12 @@
       ],
       "tail": [
         "if(typeof(myName) !== \"undefined\"){(function(v){return v;})(myName);}"
+      ],
+      "solutions": [
+        "var myName = \"Test Testerson\";"
+      ],
+      "tests": [
+        "assert((function(){if(typeof(myName) !== \"undefined\" && typeof(myName) === \"string\" && myName.length > 0){return true;}else{return false;}})(), 'message: <code>myName</code> should be a string that contains at least one character in it.');"
       ],
       "type": "waypoint",
       "challengeType": "1"
@@ -102,12 +111,6 @@
         "Assign the contents of <code>a</code> to variable <code>b</code>."
       ],
       "releasedOn": "January 1, 2016",
-      "tests": [
-        "assert(/var a;/.test(code) && /var b = 2;/.test(code), 'message: Do not change code above the line');",
-        "assert(typeof a === 'number' && a === 7, 'message: <code>a</code> should have a value of 7');",
-        "assert(typeof b === 'number' && b === 7, 'message: <code>b</code> should have a value of 7');",
-        "assert(/b\\s*=\\s*a\\s*;/g.test(code) > 0, 'message: <code>a</code> should be assigned to <code>b</code> with <code>=</code>');"
-      ],
       "challengeSeed": [
         "// Setup",
         "var a;",
@@ -121,6 +124,12 @@
       ],
       "solutions": [
         "var a;\nvar b = 2;\na = 7;\nb = a;"
+      ],
+      "tests": [
+        "assert(/var a;/.test(code) && /var b = 2;/.test(code), 'message: Do not change code above the line');",
+        "assert(typeof a === 'number' && a === 7, 'message: <code>a</code> should have a value of 7');",
+        "assert(typeof b === 'number' && b === 7, 'message: <code>b</code> should have a value of 7');",
+        "assert(/b\\s*=\\s*a\\s*;/g.test(code) > 0, 'message: <code>a</code> should be assigned to <code>b</code> with <code>=</code>');"
       ],
       "type": "waypoint",
       "challengeType": "1",
@@ -143,9 +152,6 @@
         "Define a variable <code>a</code> with <code>var</code> and initialize it to a value of <code>9</code>."
       ],
       "releasedOn": "January 1, 2016",
-      "tests": [
-        "assert(/var\\s+a\\s*=\\s*9\\s*/.test(code), 'message: Initialize <code>a</code> to a value of <code>9</code>');"
-      ],
       "challengeSeed": [
         "// Example",
         "var ourVar = 19;",
@@ -158,6 +164,9 @@
       ],
       "solutions": [
         "var a = 9;"
+      ],
+      "tests": [
+        "assert(/var\\s+a\\s*=\\s*9\\s*/.test(code), 'message: Initialize <code>a</code> to a value of <code>9</code>');"
       ],
       "type": "waypoint",
       "challengeType": "1",
@@ -176,12 +185,6 @@
         "Initialize the three variables <code>a</code>, <code>b</code>, and <code>c</code> with <code>5</code>, <code>10</code>, and <code>\"I am a\"</code> respectively so that they will not be <code>undefined</code>."
       ],
       "releasedOn": "January 1, 2016",
-      "tests": [
-        "assert(typeof a === 'number' && a === 6, 'message: <code>a</code> should be defined and have a value of <code>6</code>');",
-        "assert(typeof b === 'number' && b === 15, 'message: <code>b</code> should be defined and have a value of <code>15</code>');",
-        "assert(!/undefined/.test(c) && c === \"I am a String!\", 'message: <code>c</code> should not contain <code>undefined</code> and should have a value of \"I am a String!\"');",
-        "assert(/a = a \\+ 1;/.test(code) && /b = b \\+ 5;/.test(code) && /c = c \\+ \" String!\";/.test(code), 'message: Do not change code below the line');"
-      ],
       "challengeSeed": [
         "// Initialize these three variables",
         "var a;",
@@ -200,6 +203,12 @@
       ],
       "solutions": [
         "var a = 5;\nvar b = 10;\nvar c = \"I am a\";\na = a + 1;\nb = b + 5;\nc = c + \" String!\";"
+      ],
+      "tests": [
+        "assert(typeof a === 'number' && a === 6, 'message: <code>a</code> should be defined and have a value of <code>6</code>');",
+        "assert(typeof b === 'number' && b === 15, 'message: <code>b</code> should be defined and have a value of <code>15</code>');",
+        "assert(!/undefined/.test(c) && c === \"I am a String!\", 'message: <code>c</code> should not contain <code>undefined</code> and should have a value of \"I am a String!\"');",
+        "assert(/a = a \\+ 1;/.test(code) && /b = b \\+ 5;/.test(code) && /c = c \\+ \" String!\";/.test(code), 'message: Do not change code below the line');"
       ],
       "type": "waypoint",
       "challengeType": "1",
@@ -223,11 +232,6 @@
         "Correct the variable assignments so their names match their variable declarations above."
       ],
       "releasedOn": "January 1, 2016",
-      "tests": [
-        "assert(StUdLyCapVaR === 10, 'message: StUdLyCapVaR has the correct case');",
-        "assert(properCamelCase === \"A String\", 'message: properCamelCase has the correct case');",
-        "assert(TitleCaseOver === 9000, 'message: TitleCaseOver has the correct case');"
-      ],
       "challengeSeed": [
         "// Setup",
         "var StUdLyCapVaR;",
@@ -243,6 +247,11 @@
       ],
       "solutions": [
         "var StUdLyCapVaR;\nvar properCamelCase;\nvar TitleCaseOver;\n\nStUdLyCapVaR = 10;\nproperCamelCase = \"A String\";\nTitleCaseOver = 9000;"
+      ],
+      "tests": [
+        "assert(StUdLyCapVaR === 10, 'message: StUdLyCapVaR has the correct case');",
+        "assert(properCamelCase === \"A String\", 'message: properCamelCase has the correct case');",
+        "assert(TitleCaseOver === 9000, 'message: TitleCaseOver has the correct case');"
       ],
       "type": "waypoint",
       "challengeType": "1",
@@ -266,16 +275,19 @@
         "<h4>Instructions</h4>",
         "Change the <code>0</code> so that sum will equal <code>20</code>."
       ],
-      "tests": [
-        "assert(sum === 20, 'message: <code>sum</code> should equal <code>20</code>');",
-        "assert(/\\+/.test(code), 'message: Use the <code>+</code> operator');"
-      ],
       "challengeSeed": [
         "var sum = 10 + 0;",
         ""
       ],
       "tail": [
         "(function(z){return 'sum='+z;})(sum);"
+      ],
+      "solutions": [
+        "var sum = 10 + 10;"
+      ],
+      "tests": [
+        "assert(sum === 20, 'message: <code>sum</code> should equal <code>20</code>');",
+        "assert(/\\+/.test(code), 'message: Use the <code>+</code> operator');"
       ],
       "type": "waypoint",
       "challengeType": "1"
@@ -293,10 +305,6 @@
         "<h4>Instructions</h4>",
         "Change the <code>0</code> so the difference is <code>12</code>."
       ],
-      "tests": [
-        "assert(difference === 12, 'message: Make the variable <code>difference</code> equal 12.');",
-        "assert(/\\d+\\s*-\\s*\\d+/.test(code),'message: User the <code>-</code> operator');"
-      ],
       "challengeSeed": [
         "var difference = 45 - 0;",
         "",
@@ -307,6 +315,10 @@
       ],
       "solutions": [
         "var difference = 45 - 33;"
+      ],
+      "tests": [
+        "assert(difference === 12, 'message: Make the variable <code>difference</code> equal 12.');",
+        "assert(/\\d+\\s*-\\s*\\d+/.test(code),'message: User the <code>-</code> operator');"
       ],
       "type": "waypoint",
       "challengeType": "1"
@@ -324,10 +336,6 @@
         "<h4>Instructions</h4>",
         "Change the <code>0</code> so that product will equal <code>80</code>."
       ],
-      "tests": [
-        "assert(product === 80,'message: Make the variable <code>product</code> equal 80');",
-        "assert(/\\*/.test(code), 'message: Use the <code>*</code> operator');"
-      ],
       "challengeSeed": [
         "var product = 8 * 0;",
         "",
@@ -338,6 +346,10 @@
       ],
       "solutions": [
         "var product = 8 * 10;"
+      ],
+      "tests": [
+        "assert(product === 80,'message: Make the variable <code>product</code> equal 80');",
+        "assert(/\\*/.test(code), 'message: Use the <code>*</code> operator');"
       ],
       "type": "waypoint",
       "challengeType": "1"
@@ -355,10 +367,6 @@
         "<h4>Instructions</h4>",
         "Change the <code>0</code> so that the <code>quotient</code> is equal to <code>2</code>."
       ],
-      "tests": [
-        "assert(quotient === 2, 'message: Make the variable <code>quotient</code> equal to 2.');",
-        "assert(/\\d+\\s*\\/\\s*\\d+/.test(code), 'message: Use the <code>/</code> operator');"
-      ],
       "challengeSeed": [
         "var quotient = 66 / 0;",
         "",
@@ -366,6 +374,13 @@
       ],
       "tail": [
         "(function(z){return 'quotient = '+z;})(quotient);"
+      ],
+      "solutions": [
+        "var quotient = 66 / 33;"
+      ],
+      "tests": [
+        "assert(quotient === 2, 'message: Make the variable <code>quotient</code> equal to 2.');",
+        "assert(/\\d+\\s*\\/\\s*\\d+/.test(code), 'message: Use the <code>/</code> operator');"
       ],
       "type": "waypoint",
       "challengeType": "1"
@@ -382,11 +397,6 @@
         "Change the code to use the <code>++</code> operator on <code>myVar</code>"
       ],
       "releasedOn": "January 1, 2016",
-      "tests": [
-        "assert(myVar === 88, 'message: <code>myVar</code> should equal <code>88</code>');",
-        "assert(/[+]{2}/.test(code), 'message: Use the <code>++</code> operator');",
-        "assert(/var myVar = 87;/.test(code), 'message: Do not change code above the line');"
-      ],
       "challengeSeed": [
         "var myVar = 87;",
         "",
@@ -399,6 +409,11 @@
       ],
       "solutions": [
         "var myVar = 87;\nmyVar++;"
+      ],
+      "tests": [
+        "assert(myVar === 88, 'message: <code>myVar</code> should equal <code>88</code>');",
+        "assert(/[+]{2}/.test(code), 'message: Use the <code>++</code> operator');",
+        "assert(/var myVar = 87;/.test(code), 'message: Do not change code above the line');"
       ],
       "type": "waypoint",
       "challengeType": "1",
@@ -420,11 +435,6 @@
         "Change the code to use the <code>--</code> operator on <code>myVar</code>"
       ],
       "releasedOn": "January 1, 2016",
-      "tests": [
-        "assert(myVar === 10, 'message: <code>myVar</code> should equal <code>10</code>');",
-        "assert(/myVar[-]{2}/.test(code), 'message: Use the <code>--</code> operator on <code>myVar</code>');",
-        "assert(/var myVar = 11;/.test(code), 'message: Do not change code above the line');"
-      ],
       "challengeSeed": [
         "var myVar = 11;",
         "",
@@ -437,6 +447,11 @@
       ],
       "solutions": [
         "var myVar = 11;\nmyVar--;"
+      ],
+      "tests": [
+        "assert(myVar === 10, 'message: <code>myVar</code> should equal <code>10</code>');",
+        "assert(/myVar[-]{2}/.test(code), 'message: Use the <code>--</code> operator on <code>myVar</code>');",
+        "assert(/var myVar = 11;/.test(code), 'message: Do not change code above the line');"
       ],
       "type": "waypoint",
       "challengeType": "1",
@@ -456,10 +471,6 @@
         "<h4>Instructions</h4>",
         "Create a variable <code>myDecimal</code> and give it a decimal value."
       ],
-      "tests": [
-        "assert(typeof myDecimal === \"number\", 'message: <code>myDecimal</code> should be a number.');",
-        "assert(code.match(/\\d+\\.\\d+/g).length >= 2, 'message: <code>myDecimal</code> should have a decimal point'); "
-      ],
       "challengeSeed": [
         "var ourDecimal = 5.7;",
         "",
@@ -468,7 +479,14 @@
         ""
       ],
       "tail": [
-        "(function(){if(typeof(myDecimal) !== \"undefined\"){return myDecimal;}})();"
+        "(function(){if(typeof myDecimal !== \"undefined\"){return myDecimal;}})();"
+      ],
+      "solutions": [
+        "var myDecimal = 9.9;"
+      ],
+      "tests": [
+        "assert(typeof myDecimal === \"number\", 'message: <code>myDecimal</code> should be a number.');",
+        "assert(myDecimal % 1 != 0, 'message: <code>myDecimal</code> should have a decimal point'); "
       ],
       "type": "waypoint",
       "challengeType": "1"
@@ -482,17 +500,20 @@
         "<h4>Instructions</h4>",
         "Change the <code>0.0</code> so that product will equal <code>5.0</code>."
       ],
-      "tests": [
-        "assert(product === 5.0, 'message: The variable <code>product</code> should equal <code>5.0</code>.');",
-        "assert(/\\*/.test(code), 'message: You should use the <code>*</code> operator');"
-      ],
-      "tail": [
-        "(function(y){return 'product = '+y;})(product);"
-      ],
       "challengeSeed": [
         "var product = 2.0 * 0.0;",
         "",
         ""
+      ],
+      "tail": [
+        "(function(y){return 'product = '+y;})(product);"
+      ],
+      "solutions": [
+        "var product = 2.0 * 2.5;"
+      ],
+      "tests": [
+        "assert(product === 5.0, 'message: The variable <code>product</code> should equal <code>5.0</code>.');",
+        "assert(/\\*/.test(code), 'message: You should use the <code>*</code> operator');"
       ],
       "type": "waypoint",
       "challengeType": "1"
@@ -505,10 +526,6 @@
         "<h4>Instructions</h4>",
         "Change the <code>0.0</code> so that <code>quotient</code> will equal to <code>2.2</code>."
       ],
-      "tests": [
-        "assert(quotient === 2.2, 'message: The variable <code>quotient</code> should equal <code>2.2</code>.');",
-        "assert(/\\//.test(code), 'message: You should use the <code>/</code> operator');"
-      ],
       "challengeSeed": [
         "var quotient = 0.0 / 2.0;",
         "",
@@ -516,6 +533,13 @@
       ],
       "tail": [
         "(function(y){return 'quotient = '+y;})(quotient);"
+      ],
+      "solutions": [
+        "var quotient = 4.4 / 2.0;"
+      ],
+      "tests": [
+        "assert(quotient === 2.2, 'message: The variable <code>quotient</code> should equal <code>2.2</code>.');",
+        "assert(/\\//.test(code), 'message: You should use the <code>/</code> operator');"
       ],
       "type": "waypoint",
       "challengeType": "1"
@@ -536,10 +560,6 @@
         "Set <code>remainder</code> equal to the remainder of <code>11</code> divided by <code>3</code> using the <dfn>remainder</dfn> (<code>%</code>) operator."
       ],
       "releasedOn": "January 1, 2016",
-      "tests": [
-        "assert(remainder === 2, 'message: The value of <code>remainder</code> should be <code>2</code>');",
-        "assert(/\\d+\\s*%\\s*\\d+/.test(code), 'message: You should use the <code>%</code> operator');"
-      ],
       "challengeSeed": [
         "// Only change code below this line",
         "",
@@ -551,6 +571,10 @@
       ],
       "solutions": [
         "var remainder =  11 % 3;"
+      ],
+      "tests": [
+        "assert(remainder === 2, 'message: The value of <code>remainder</code> should be <code>2</code>');",
+        "assert(/\\d+\\s*%\\s*\\d+/.test(code), 'message: You should use the <code>%</code> operator');"
       ],
       "type": "waypoint",
       "challengeType": "1",
@@ -573,13 +597,6 @@
         "Convert the assignments for <code>a</code>, <code>b</code>, and <code>c</code> to use the <code>+=</code> operator."
       ],
       "releasedOn": "January 1, 2016",
-      "tests": [
-        "assert(a === 15, 'message: <code>a</code> should equal <code>15</code>');",
-        "assert(b === 26, 'message: <code>b</code> should equal <code>26</code>');",
-        "assert(c === 19, 'message: <code>c</code> should equal <code>19</code>');",
-        "assert(code.match(/\\+=/g).length === 3, 'message: You should use the <code>+=</code> operator for each variable');",
-        "assert(/var a = 3;/.test(code) && /var b = 17;/.test(code) && /var c = 12;/.test(code), 'message: Do not modify the code above the line');"
-      ],
       "challengeSeed": [
         "var a = 3;",
         "var b = 17;",
@@ -597,6 +614,13 @@
       ],
       "solutions": [
         "var a = 3;\nvar b = 17;\nvar c = 12;\n\na += 12;\nb += 9;\nc += 7;"
+      ],
+      "tests": [
+        "assert(a === 15, 'message: <code>a</code> should equal <code>15</code>');",
+        "assert(b === 26, 'message: <code>b</code> should equal <code>26</code>');",
+        "assert(c === 19, 'message: <code>c</code> should equal <code>19</code>');",
+        "assert(code.match(/\\+=/g).length === 3, 'message: You should use the <code>+=</code> operator for each variable');",
+        "assert(/var a = 3;/.test(code) && /var b = 17;/.test(code) && /var c = 12;/.test(code), 'message: Do not modify the code above the line');"
       ],
       "type": "waypoint",
       "challengeType": "1",
@@ -618,13 +642,6 @@
         "Convert the assignments for <code>a</code>, <code>b</code>, and <code>c</code> to use the <code>-=</code> operator."
       ],
       "releasedOn": "January 1, 2016",
-      "tests": [
-        "assert(a === 5, 'message: <code>a</code> should equal <code>5</code>');",
-        "assert(b === -6, 'message: <code>b</code> should equal <code>-6</code>');",
-        "assert(c === 2, 'message: <code>c</code> should equal <code>2</code>');",
-        "assert(code.match(/-=/g).length === 3, 'message: You should use the <code>-=</code> operator for each variable');",
-        "assert(/var a = 11;/.test(code) && /var b = 9;/.test(code) && /var c = 3;/.test(code), 'message: Do not modify the code above the line');"
-      ],
       "challengeSeed": [
         "var a = 11;",
         "var b = 9;",
@@ -643,6 +660,13 @@
       ],
       "solutions": [
         "var a = 11;\nvar b = 9;\nvar c = 3;\n\na -= 6;\nb -= 15;\nc -= 1;\n\n"
+      ],
+      "tests": [
+        "assert(a === 5, 'message: <code>a</code> should equal <code>5</code>');",
+        "assert(b === -6, 'message: <code>b</code> should equal <code>-6</code>');",
+        "assert(c === 2, 'message: <code>c</code> should equal <code>2</code>');",
+        "assert(code.match(/-=/g).length === 3, 'message: You should use the <code>-=</code> operator for each variable');",
+        "assert(/var a = 11;/.test(code) && /var b = 9;/.test(code) && /var c = 3;/.test(code), 'message: Do not modify the code above the line');"
       ],
       "type": "waypoint",
       "challengeType": "1",
@@ -664,13 +688,6 @@
         "Convert the assignments for <code>a</code>, <code>b</code>, and <code>c</code> to use the <code>*=</code> operator."
       ],
       "releasedOn": "January 1, 2016",
-      "tests": [
-        "assert(a === 25, 'message: <code>a</code> should equal <code>25</code>');",
-        "assert(b === 36, 'message: <code>b</code> should equal <code>36</code>');",
-        "assert(c === 46, 'message: <code>c</code> should equal <code>46</code>');",
-        "assert(code.match(/\\*=/g).length === 3, 'message: You should use the <code>*=</code> operator for each variable');",
-        "assert(/var a = 5;/.test(code) && /var b = 12;/.test(code) && /var c = 4\\.6;/.test(code), 'message: Do not modify the code above the line');"
-      ],
       "challengeSeed": [
         "var a = 5;",
         "var b = 12;",
@@ -689,6 +706,13 @@
       ],
       "solutions": [
         "var a = 5;\nvar b = 12;\nvar c = 4.6;\n\na *= 5;\nb *= 3;\nc *= 10;"
+      ],
+      "tests": [
+        "assert(a === 25, 'message: <code>a</code> should equal <code>25</code>');",
+        "assert(b === 36, 'message: <code>b</code> should equal <code>36</code>');",
+        "assert(c === 46, 'message: <code>c</code> should equal <code>46</code>');",
+        "assert(code.match(/\\*=/g).length === 3, 'message: You should use the <code>*=</code> operator for each variable');",
+        "assert(/var a = 5;/.test(code) && /var b = 12;/.test(code) && /var c = 4\\.6;/.test(code), 'message: Do not modify the code above the line');"
       ],
       "type": "waypoint",
       "challengeType": "1",
@@ -710,13 +734,6 @@
         "Convert the assignments for <code>a</code>, <code>b</code>, and <code>c</code> to use the <code>/=</code> operator."
       ],
       "releasedOn": "January 1, 2016",
-      "tests": [
-        "assert(a === 4, 'message: <code>a</code> should equal <code>4</code>');",
-        "assert(b === 27, 'message: <code>b</code> should equal <code>27</code>');",
-        "assert(c === 3, 'message: <code>c</code> should equal <code>3</code>');",
-        "assert(code.match(/\\/=/g).length === 3, 'message: You should use the <code>/=</code> operator for each variable');",
-        "assert(/var a = 48;/.test(code) && /var b = 108;/.test(code) && /var c = 33;/.test(code), 'message: Do not modify the code above the line');"
-      ],
       "challengeSeed": [
         "var a = 48;",
         "var b = 108;",
@@ -735,6 +752,13 @@
       "solutions": [
         "var a = 48;\nvar b = 108;\nvar c = 33;\n\na /= 12;\nb /= 4;\nc /= 11;"
       ],
+      "tests": [
+        "assert(a === 4, 'message: <code>a</code> should equal <code>4</code>');",
+        "assert(b === 27, 'message: <code>b</code> should equal <code>27</code>');",
+        "assert(c === 3, 'message: <code>c</code> should equal <code>3</code>');",
+        "assert(code.match(/\\/=/g).length === 3, 'message: You should use the <code>/=</code> operator for each variable');",
+        "assert(/var a = 48;/.test(code) && /var b = 108;/.test(code) && /var c = 33;/.test(code), 'message: Do not modify the code above the line');"
+      ],
       "type": "waypoint",
       "challengeType": "1",
       "nameCn": "",
@@ -752,14 +776,6 @@
         "You are given a variable <code>Tc</code> representing a temperature in Celsius.  Create a variable <code>Tf</code> and apply the algorithm to assign it the corresponding temperature in Fahrenheit."
       ],
       "releasedOn": "January 1, 2016",
-      "tests": [
-        "assert(typeof convert(0) === 'number', 'message: <code>convert(0)</code> should return a number');",
-        "assert(convert(-30) === -22, 'message: <code>convert(-30)</code> should return a value of <code>-22</code>');",
-        "assert(convert(-10) === 14, 'message: <code>convert(-10)</code> should return a value of <code>14</code>');",
-        "assert(convert(0) === 32, 'message: <code>convert(0)</code> should return a value of <code>32</code>');",
-        "assert(convert(20) === 68, 'message: <code>convert(20)</code> should return a value of <code>68</code>');",
-        "assert(convert(30) === 86, 'message: <code>convert(30)</code> should return a value of <code>86</code>');"
-      ],
       "challengeSeed": [
         "function convert(Tc) {",
         "  // Only change code below this line",
@@ -779,6 +795,14 @@
       "solutions": [
         "function convert(Tc) {\n  var Tf = Tc * 9/5 + 32;\n  if(typeof Tf !== 'undefined') {\n  return Tf;\n  } else {\n    return \"Tf not defined\";\n  }\n}"
       ],
+      "tests": [
+        "assert(typeof convert(0) === 'number', 'message: <code>convert(0)</code> should return a number');",
+        "assert(convert(-30) === -22, 'message: <code>convert(-30)</code> should return a value of <code>-22</code>');",
+        "assert(convert(-10) === 14, 'message: <code>convert(-10)</code> should return a value of <code>14</code>');",
+        "assert(convert(0) === 32, 'message: <code>convert(0)</code> should return a value of <code>32</code>');",
+        "assert(convert(20) === 68, 'message: <code>convert(20)</code> should return a value of <code>68</code>');",
+        "assert(convert(30) === 86, 'message: <code>convert(30)</code> should return a value of <code>86</code>');"
+      ],
       "type": "bonfire",
       "challengeType": "5",
       "nameCn": "",
@@ -797,10 +821,6 @@
         "<h4>Instructions</h4>",
         "Create two new <code>string</code> variables: <code>myFirstName</code> and <code>myLastName</code> and assign them the values of your first and last name, respectively."
       ],
-      "tests": [
-        "assert((function(){if(typeof(myFirstName) !== \"undefined\" && typeof(myFirstName) === \"string\" && myFirstName.length > 0){return true;}else{return false;}})(), 'message: <code>myFirstName</code> should be a string with at least one character in it.');",
-        "assert((function(){if(typeof(myLastName) !== \"undefined\" && typeof(myLastName) === \"string\" && myLastName.length > 0){return true;}else{return false;}})(), 'message: <code>myLastName</code> should be a string with at least one character in it.');"
-      ],
       "challengeSeed": [
         "// Example",
         "var firstName = \"Alan\";",
@@ -816,6 +836,10 @@
       ],
       "solutions": [
         "var myFirstName = \"Alan\";\nvar myLastName = \"Turing\";"
+      ],
+      "tests": [
+        "assert((function(){if(typeof(myFirstName) !== \"undefined\" && typeof(myFirstName) === \"string\" && myFirstName.length > 0){return true;}else{return false;}})(), 'message: <code>myFirstName</code> should be a string with at least one character in it.');",
+        "assert((function(){if(typeof(myLastName) !== \"undefined\" && typeof(myLastName) === \"string\" && myLastName.length > 0){return true;}else{return false;}})(), 'message: <code>myLastName</code> should be a string with at least one character in it.');"
       ],
       "type": "waypoint",
       "challengeType": "1"
@@ -833,9 +857,6 @@
         "<code>\"I am a \"double quoted\" string inside \"double quotes\"\"</code>"
       ],
       "releasedOn": "January 1, 2016",
-      "tests": [
-        "assert(code.match(/\\\\\"/g).length === 4 && code.match(/[^\\\\]\"/g).length === 2, 'message: You should use two double quotes (<code>&quot;</code>) and four escaped double quotes (<code>&#92;&quot;</code>) ');"
-      ],
       "challengeSeed": [
         "var myStr; // Change this line",
         "",
@@ -843,6 +864,9 @@
       ],
       "solutions": [
         "var myStr = \"I am a \\\"double quoted\\\" string inside \\\"double quotes\\\"\";"
+      ],
+      "tests": [
+        "assert(code.match(/\\\\\"/g).length === 4 && code.match(/[^\\\\]\"/g).length === 2, 'message: You should use two double quotes (<code>&quot;</code>) and four escaped double quotes (<code>&#92;&quot;</code>) ');"
       ],
       "type": "waypoint",
       "challengeType": "1",
@@ -864,11 +888,6 @@
         "Change the provided string from double to single quotes and remove the escaping."
       ],
       "releasedOn": "January 1, 2016",
-      "tests": [
-        "assert(!/\\\\/g.test(code), 'message: Remove all the <code>backslashes</code> (<code>\\</code>)');",
-        "assert(code.match(/\"/g).length === 4 && code.match(/'/g).length === 2, 'message: You should have two single quotes <code>&#39;</code> and four double quotes <code>&quot;</code>');",
-        "assert(myStr === '<a href=\"http://www.example.com\" target=\"_blank\">Link</a>', 'message: Only remove the backslashes <code>\\</code> used to escape quotes.');"
-      ],
       "challengeSeed": [
         "var myStr = \"<a href=\\\"http://www.example.com\\\" target=\\\"_blank\\\">Link</a>\";",
         "",
@@ -879,6 +898,11 @@
       ],
       "solutions": [
         "var myStr = '<a href=\"http://www.example.com\" target=\"_blank\">Link</a>';"
+      ],
+      "tests": [
+        "assert(!/\\\\/g.test(code), 'message: Remove all the <code>backslashes</code> (<code>\\</code>)');",
+        "assert(code.match(/\"/g).length === 4 && code.match(/'/g).length === 2, 'message: You should have two single quotes <code>&#39;</code> and four double quotes <code>&quot;</code>');",
+        "assert(myStr === '<a href=\"http://www.example.com\" target=\"_blank\">Link</a>', 'message: Only remove the backslashes <code>\\</code> used to escape quotes.');"
       ],
       "type": "waypoint",
       "challengeType": "1",
@@ -899,9 +923,6 @@
         "Encode the following sequence, separated by spaces:<br><code>backslash tab tab carriage-return new-line</code> and assign it to <code>myStr</code>"
       ],
       "releasedOn": "January 1, 2016",
-      "tests": [
-        "assert(myStr === \"\\\\ \\t \\t \\r \\n\", 'message: <code>myStr</code> should have the escape sequences for <code>backslash tab tab carriage-return new-line</code> separated by spaces');"
-      ],
       "challengeSeed": [
         "var myStr; // Change this line",
         "",
@@ -909,6 +930,9 @@
       ],
       "solutions": [
         "var myStr = \"\\\\ \\t \\t \\r \\n\";"
+      ],
+      "tests": [
+        "assert(myStr === \"\\\\ \\t \\t \\r \\n\", 'message: <code>myStr</code> should have the escape sequences for <code>backslash tab tab carriage-return new-line</code> separated by spaces');"
       ],
       "type": "waypoint",
       "challengeType": "1",
@@ -929,10 +953,6 @@
         "Build <code>myStr</code> from the strings <code>\"This is the start. \"</code> and <code>\"This is the end.\"</code> using the <code>+</code> operator."
       ],
       "releasedOn": "January 1, 2016",
-      "tests": [
-        "assert(myStr === \"This is the start. This is the end.\", 'message: <code>myStr</code> should have a value of <code>This is the start. This is the end.</code>');",
-        "assert(code.match(/\"\\s*\\+\\s*\"/g).length > 1, 'message: Use the <code>+</code> operator to build <code>myStr</code>');"
-      ],
       "challengeSeed": [
         "// Example",
         "var ourStr = \"I come first. \" + \"I come second.\";",
@@ -945,6 +965,10 @@
       ],
       "solutions": [
         "var ourStr = \"I come first. \" + \"I come second.\";\nvar myStr = \"This is the start. \" + \"This is the end.\";"
+      ],
+      "tests": [
+        "assert(myStr === \"This is the start. This is the end.\", 'message: <code>myStr</code> should have a value of <code>This is the start. This is the end.</code>');",
+        "assert(code.match(/\"\\s*\\+\\s*\"/g).length > 1, 'message: Use the <code>+</code> operator to build <code>myStr</code>');"
       ],
       "type": "waypoint",
       "challengeType": "1",
@@ -963,10 +987,6 @@
         "Build <code>myStr</code> over several lines by concatenating these two strings:<br><code>\"This is the first sentance. \"</code> and <code>\"This is the second sentance.\"</code> using the <code>+=</code> operator."
       ],
       "releasedOn": "January 1, 2016",
-      "tests": [
-        "assert(myStr === \"This is the first sentance. This is the second sentance.\", 'message: <code>myStr</code> should have a value of <code>This is the first sentance. This is the second sentance.</code>');",
-        "assert(code.match(/\\w\\s*\\+=\\s*\"/g).length > 1 && code.match(/\\w\\s*\\=\\s*\"/g).length > 1, 'message: Use the <code>+=</code> operator to build <code>myStr</code>');"
-      ],
       "challengeSeed": [
         "// Example",
         "var ourStr = \"I come first. \";",
@@ -980,6 +1000,10 @@
       ],
       "solutions": [
         "var ourStr = \"I come first. \";\nourStr += \"I come second.\";\n\nvar myStr = \"This is the first sentance. \";\nmyStr += \"This is the second sentance.\";"
+      ],
+      "tests": [
+        "assert(myStr === \"This is the first sentance. This is the second sentance.\", 'message: <code>myStr</code> should have a value of <code>This is the first sentance. This is the second sentance.</code>');",
+        "assert(code.match(/\\w\\s*\\+=\\s*\"/g).length > 1 && code.match(/\\w\\s*\\=\\s*\"/g).length > 1, 'message: Use the <code>+=</code> operator to build <code>myStr</code>');"
       ],
       "type": "waypoint",
       "challengeType": "1",
@@ -998,10 +1022,6 @@
         "Set <code>myName</code> and build <code>myStr</code> with <code>myName</code> between the strings <code>\"My name is \"</code> and <code>\" and I am swell!\"</code>"
       ],
       "releasedOn": "January 1, 2016",
-      "tests": [
-        "assert(typeof myName !== 'undefined' && myName.length > 2, 'message: <code>myName</code> should be set to a string at least 3 characters long');",
-        "assert(code.match(/\"\\s*\\+\\s*myName\\s*\\+\\s*\"/g).length > 0, 'message: Use two <code>+</code> operators to build <code>myStr</code> with <code>myName<code> inside it');"
-      ],
       "challengeSeed": [
         "// Example",
         "var ourName = \"Free Code Camp\";",
@@ -1015,6 +1035,10 @@
       ],
       "solutions": [
         "var myName = \"Bob\";\nvar myStr = \"My name is \" + myName + \" and I am swell!\";"
+      ],
+      "tests": [
+        "assert(typeof myName !== 'undefined' && myName.length > 2, 'message: <code>myName</code> should be set to a string at least 3 characters long');",
+        "assert(code.match(/\"\\s*\\+\\s*myName\\s*\\+\\s*\"/g).length > 0, 'message: Use two <code>+</code> operators to build <code>myStr</code> with <code>myName<code> inside it');"
       ],
       "type": "waypoint",
       "challengeType": "1",
@@ -1033,10 +1057,6 @@
         "Set <code>someAdjective</code> and append it to <code>myStr</code> using the <code>+=</code> operator."
       ],
       "releasedOn": "January 1, 2016",
-      "tests": [
-        "assert(typeof someAdjective !== 'undefined' && someAdjective.length > 2, 'message: <code>someAdjective</code> should be set to a string at least 3 characters long');",
-        "assert(code.match(/\\w\\s*\\+=\\s*someAdjective\\s*;/).length > 0, 'message: Append <code>someAdjective</code> to <code>myStr</code> using the <code>+=</code> operator');"
-      ],
       "challengeSeed": [
         "// Example",
         "var anAdjective = \"awesome!\";",
@@ -1051,6 +1071,10 @@
       ],
       "solutions": [
         "var anAdjective = \"awesome!\";\nvar ourStr = \"Free Code Camp is \";\nourStr += anAdjective;\n\nvar someAdjective = \"neat\";\nvar myStr = \"Learning to code is \";\nmyStr += someAdjective;"
+      ],
+      "tests": [
+        "assert(typeof someAdjective !== 'undefined' && someAdjective.length > 2, 'message: <code>someAdjective</code> should be set to a string at least 3 characters long');",
+        "assert(code.match(/\\w\\s*\\+=\\s*someAdjective\\s*;/).length > 0, 'message: Append <code>someAdjective</code> to <code>myStr</code> using the <code>+=</code> operator');"
       ],
       "type": "waypoint",
       "challengeType": "1",
@@ -1069,10 +1093,6 @@
         "For example, if we created a variable <code>var firstName = \"Charles\"</code>, we could find out how long the string <code>\"Charles\"</code> is by using the <code>firstName.length</code> property.",
         "<h4>Instructions</h4>",
         "Use the <code>.length</code> property to count the number of characters in the <code>lastName</code> variable and assign it to <code>lastNameLength</code>."
-      ],
-      "tests": [
-        "assert((function(){if(typeof(lastNameLength) !== \"undefined\" && typeof(lastNameLength) === \"number\" && lastNameLength === 8){return true;}else{return false;}})(), 'message: <code>lastNameLength</code> should be equal to eight.');",
-        "assert((function(){if(code.match(/\\.length/gi) && code.match(/\\.length/gi).length >= 2 && code.match(/var lastNameLength \\= 0;/gi) && code.match(/var lastNameLength \\= 0;/gi).length >= 1){return true;}else{return false;}})(), 'message: You should be getting the length of <code>lastName</code> by using <code>.length</code> like this: <code>lastName.length</code>.');"
       ],
       "challengeSeed": [
         "// Example",
@@ -1094,7 +1114,13 @@
       "tail": [
         "if(typeof(lastNameLength) !== \"undefined\"){(function(){return lastNameLength;})();}"
       ],
-      "solution": "var lastNameLength = 0;\nvar lastName = \"Lovelace\";\nlastNameLength = lastName.length;",
+      "solutions": [
+        "var firstNameLength = 0;\nvar firstName = \"Ada\";\nfirstNameLength = firstName.length;\n\nvar lastNameLength = 0;\nvar lastName = \"Lovelace\";\nlastNameLength = lastName.length;"
+      ],
+      "tests": [
+        "assert((function(){if(typeof(lastNameLength) !== \"undefined\" && typeof(lastNameLength) === \"number\" && lastNameLength === 8){return true;}else{return false;}})(), 'message: <code>lastNameLength</code> should be equal to eight.');",
+        "assert((function(){if(code.match(/\\.length/gi) && code.match(/\\.length/gi).length >= 2 && code.match(/var lastNameLength \\= 0;/gi) && code.match(/var lastNameLength \\= 0;/gi).length >= 1){return true;}else{return false;}})(), 'message: You should be getting the length of <code>lastName</code> by using <code>.length</code> like this: <code>lastName.length</code>.');"
+      ],
       "type": "waypoint",
       "challengeType": "1"
     },
@@ -1109,9 +1135,6 @@
         "Use <dfn>bracket notation</dfn> to find the first character in the <code>lastName</code> variable and assign it to <code>firstLetterOfLastName</code>.",
         "<strong>Hint</strong>",
         "<br>Try looking at the <code>firstLetterOfFirstName</code> variable declaration if you get stuck."
-      ],
-      "tests": [
-        "assert((function(){if(typeof(firstLetterOfLastName) !== \"undefined\" && code.match(/\\[0\\]/gi) && typeof(firstLetterOfLastName) === \"string\" && firstLetterOfLastName === \"L\"){return true;}else{return false;}})(), 'message: The <code>firstLetterOfLastName</code> variable should have the value of <code>L</code>.');"
       ],
       "challengeSeed": [
         "// Example",
@@ -1134,6 +1157,9 @@
       "solutions": [
         "var firstLetterOfLastName = \"\";\nvar lastName = \"Lovelace\";\n\n// Only change code below this line\nfirstLetterOfLastName = lastName[0];"
       ],
+      "tests": [
+        "assert((function(){if(typeof(firstLetterOfLastName) !== \"undefined\" && code.match(/\\[0\\]/gi) && typeof(firstLetterOfLastName) === \"string\" && firstLetterOfLastName === \"L\"){return true;}else{return false;}})(), 'message: The <code>firstLetterOfLastName</code> variable should have the value of <code>L</code>.');"
+      ],
       "type": "waypoint",
       "challengeType": "1"
     },
@@ -1150,13 +1176,6 @@
         "Correct the assignment to <code>myStr</code> to achieve the desired effect."
       ],
       "releasedOn": "January 1, 2016",
-      "tests": [
-        "assert(myStr === \"Hello World\", 'message: <code>myStr</code> should have a value of <code>Hello World</code>');",
-        "assert(/myStr = \"Jello World\"/.test(code), 'message: Do not change the code above the line');"
-      ],
-      "tail": [
-        "(function(v){return \"myStr = \" + v;})(myStr);"
-      ],
       "challengeSeed": [
         "// Setup",
         "var myStr = \"Jello World\";",
@@ -1167,8 +1186,15 @@
         "",
         ""
       ],
+      "tail": [
+        "(function(v){return \"myStr = \" + v;})(myStr);"
+      ],
       "solutions": [
         "var myStr = \"Jello World\";\nmyStr = \"Hello World\";"
+      ],
+      "tests": [
+        "assert(myStr === \"Hello World\", 'message: <code>myStr</code> should have a value of <code>Hello World</code>');",
+        "assert(/myStr = \"Jello World\"/.test(code), 'message: Do not change the code above the line');"
       ],
       "type": "waypoint",
       "challengeType": "1",
@@ -1189,9 +1215,6 @@
         "<strong>Hint</strong>",
         "<br>Try looking at the <code>secondLetterOfFirstName</code> variable declaration if you get stuck."
       ],
-      "tests": [
-        "assert(thirdLetterOfLastName === 'v', 'message: The <code>thirdLetterOfLastName</code> variable should have the value of <code>v</code>.');"
-      ],
       "challengeSeed": [
         "// Example",
         "var firstName = \"Ada\";",
@@ -1211,6 +1234,9 @@
       "solutions": [
         "var lastName = \"Lovelace\";\nvar thirdLetterOfLastName = lastName[2];"
       ],
+      "tests": [
+        "assert(thirdLetterOfLastName === 'v', 'message: The <code>thirdLetterOfLastName</code> variable should have the value of <code>v</code>.');"
+      ],
       "type": "waypoint",
       "challengeType": "1"
     },
@@ -1224,10 +1250,6 @@
         "Use <dfn>bracket notation</dfn> to find the last character in the <code>lastName</code> variable.",
         "<strong>Hint</strong>",
         "<br>Try looking at the <code>lastLetterOfFirstName</code> variable declaration if you get stuck."
-      ],
-      "tests": [
-        "assert(lastLetterOfLastName === \"e\", 'message: <code>lastLetterOfLastName</code> should be \"e\".');",
-        "assert(code.match(/\\.length/g).length === 2, 'message: You have to use <code>.length</code> to get the last letter.');"
       ],
       "challengeSeed": [
         "// Example",
@@ -1248,6 +1270,10 @@
       "solutions": [
         "var firstName = \"Ada\";\nvar lastLetterOfFirstName = firstName[firstName.length - 1];\n\nvar lastName = \"Lovelace\";\nvar lastLetterOfLastName = lastName[lastName.length - 1];"
       ],
+      "tests": [
+        "assert(lastLetterOfLastName === \"e\", 'message: <code>lastLetterOfLastName</code> should be \"e\".');",
+        "assert(code.match(/\\.length/g).length === 2, 'message: You have to use <code>.length</code> to get the last letter.');"
+      ],
       "type": "waypoint",
       "challengeType": "1"
     },
@@ -1261,10 +1287,6 @@
         "Use <dfn>bracket notation</dfn> to find the second-to-last character in the <code>lastName</code> string.",
         "  <strong>Hint</strong>",
         "<br>Try looking at the <code>thirdToLastLetterOfFirstName</code> variable declaration if you get stuck."
-      ],
-      "tests": [
-        "assert(secondToLastLetterOfLastName === 'c', 'message: <code>secondToLastLetterOfLastName</code> should be \"c\".');",
-        "assert(code.match(/\\.length/g).length === 2, 'message: You have to use <code>.length</code> to get the second last letter.');"
       ],
       "challengeSeed": [
         "// Example",
@@ -1285,6 +1307,10 @@
       "solutions": [
         "var firstName = \"Ada\";\nvar thirdToLastLetterOfFirstName = firstName[firstName.length - 3];\n\nvar lastName = \"Lovelace\";\nvar secondToLastLetterOfLastName = lastName[lastName.length - 2];"
       ],
+      "tests": [
+        "assert(secondToLastLetterOfLastName === 'c', 'message: <code>secondToLastLetterOfLastName</code> should be \"c\".');",
+        "assert(code.match(/\\.length/g).length === 2, 'message: You have to use <code>.length</code> to get the second last letter.');"
+      ],
       "type": "waypoint",
       "challengeType": "1"
     },
@@ -1298,12 +1324,6 @@
         "The tests will run your function with several different inputs to make sure it works properly."
       ],
       "releasedOn": "January 1, 2016",
-      "tests": [
-        "assert(typeof wordBlanks(\"\",\"\",\"\",\"\") === 'string', 'message: <code>wordBlanks(\"\",\"\",\"\",\"\")</code> should return a string');",
-        "assert(wordBlanks(\"\",\"\",\"\",\"\").length > 30, 'message: <code>wordBlanks(\"\",\"\",\"\",\"\")</code> should return at least 30 characters with empty inputs');",
-        "assert(/dog/.test(test1) && /big/.test(test1) && /ran/.test(test1) && /quickly/.test(test1),'message: <code>wordBlanks(\"dog\", \"big\", \"ran\", \"quickly\")</code> should contain all of the passed words.');",
-        "assert(/cat/.test(test2) && /little/.test(test2) && /hit/.test(test2) && /slowly/.test(test2),'message: <code>wordBlanks(\"cat\", \"little\", \"hit\", \"slowly\")</code> should contain all of the passed words.');"
-      ],
       "challengeSeed": [
         "function wordBlanks(myNoun, myAdjective, myVerb, myAdverb) {",
         "    var result = \"\";",
@@ -1324,6 +1344,12 @@
       "solutions": [
         "function wordBlanks(myNoun, myAdjective, myVerb, myAdverb) {\n  var result = \"\";\n\n  result = \"Once there was a \" + myNoun + \" which was very \" + myAdjective + \". \";\n  result += \"It \" + myVerb + \" \" + myAdverb + \" around the yard.\";\n\n  return result;\n}"
       ],
+      "tests": [
+        "assert(typeof wordBlanks(\"\",\"\",\"\",\"\") === 'string', 'message: <code>wordBlanks(\"\",\"\",\"\",\"\")</code> should return a string');",
+        "assert(wordBlanks(\"\",\"\",\"\",\"\").length > 30, 'message: <code>wordBlanks(\"\",\"\",\"\",\"\")</code> should return at least 30 characters with empty inputs');",
+        "assert(/dog/.test(test1) && /big/.test(test1) && /ran/.test(test1) && /quickly/.test(test1),'message: <code>wordBlanks(\"dog\", \"big\", \"ran\", \"quickly\")</code> should contain all of the passed words.');",
+        "assert(/cat/.test(test2) && /little/.test(test2) && /hit/.test(test2) && /slowly/.test(test2),'message: <code>wordBlanks(\"cat\", \"little\", \"hit\", \"slowly\")</code> should contain all of the passed words.');"
+      ],
       "type": "bonfire",
       "challengeType": "5",
       "nameCn": "",
@@ -1343,11 +1369,6 @@
         "<strong>Hint</strong>",
         "<br>Refer to the example code in the text editor if you get stuck."
       ],
-      "tests": [
-        "assert(typeof(myArray) == 'object', 'message: <code>myArray</code> should be an <code>array</code>.');",
-        "assert(typeof(myArray[0]) !== 'undefined' && typeof(myArray[0]) == 'string', 'message: The first item in <code>myArray</code> should be a <code>string</code>.');",
-        "assert(typeof(myArray[1]) !== 'undefined' && typeof(myArray[1]) == 'number', 'message: The second item in <code>myArray</code> should be a <code>number</code>.');"
-      ],
       "challengeSeed": [
         "// Example",
         "var array = [\"John\", 23];",
@@ -1362,6 +1383,11 @@
       "solutions": [
         "var myArray = [\"The Answer\", 42];"
       ],
+      "tests": [
+        "assert(typeof(myArray) == 'object', 'message: <code>myArray</code> should be an <code>array</code>.');",
+        "assert(typeof(myArray[0]) !== 'undefined' && typeof(myArray[0]) == 'string', 'message: The first item in <code>myArray</code> should be a <code>string</code>.');",
+        "assert(typeof(myArray[1]) !== 'undefined' && typeof(myArray[1]) == 'number', 'message: The second item in <code>myArray</code> should be a <code>number</code>.');"
+      ],
       "type": "waypoint",
       "challengeType": "1"
     },
@@ -1372,9 +1398,6 @@
         "You can also nest arrays within other arrays, like this: <code>[[\"Bulls\", 23]]</code>. This is also called a <dfn>Multi-dimensional Array<dfn>.",
         "<h4>Instructions</h4>",
         "Create a nested array called <code>myArray</code>."
-      ],
-      "tests": [
-        "assert(Array.isArray(myArray) && myArray.some(Array.isArray), 'message: <code>myArray</code> should have at least one array nested within another array.');"
       ],
       "challengeSeed": [
         "// Example",
@@ -1390,6 +1413,9 @@
       "solutions": [
         "var myArray = [[1,2,3]];"
       ],
+      "tests": [
+        "assert(Array.isArray(myArray) && myArray.some(Array.isArray), 'message: <code>myArray</code> should have at least one array nested within another array.');"
+      ],
       "type": "waypoint",
       "challengeType": "1"
     },
@@ -1403,9 +1429,6 @@
         "<blockquote>var array = [1,2,3];<br>array[0]; // equals 1<br>var data = array[1];  // equals 2</blockquote>",
         "<h4>Instructions</h4>",
         "Create a variable called <code>myData</code> and set it to equal the first value of <code>myArray</code>."
-      ],
-      "tests": [
-        "assert((function(){if(typeof(myArray) != 'undefined' && typeof(myData) != 'undefined' && myArray[0] == myData){return true;}else{return false;}})(), 'message: The variable <code>myData</code> should equal the first value of <code>myArray</code>.');"
       ],
       "challengeSeed": [
         "// Example",
@@ -1424,6 +1447,9 @@
       "solutions": [
         "var myArray = [1,2,3];\nvar myData = myArray[0];"
       ],
+      "tests": [
+        "assert((function(){if(typeof(myArray) != 'undefined' && typeof(myData) != 'undefined' && myArray[0] == myData){return true;}else{return false;}})(), 'message: The variable <code>myData</code> should equal the first value of <code>myArray</code>.');"
+      ],
       "type": "waypoint",
       "challengeType": "1"
     },
@@ -1436,10 +1462,6 @@
         "<blockquote>var ourArray = [3,2,1];<br>ourArray[0] = 1; // equals [1,2,1]</blockquote>",
         "<h4>Instructions</h4>",
         "Modify the data stored at index <code>0</code> of <code>myArray</code> to a value of <code>3</code>."
-      ],
-      "tests": [
-        "assert((function(){if(typeof(myArray) != 'undefined' && myArray[0] == 3 && myArray[1] == 2 && myArray[2] == 3){return true;}else{return false;}})(), 'message: <code>myArray</code> should now be [3,2,3].');",
-        "assert((function(){if(code.match(/myArray\\[0\\]\\s?=\\s?/g)){return true;}else{return false;}})(), 'message: You should be using correct index to modify the value in <code>myArray</code>.');"
       ],
       "challengeSeed": [
         "// Example",
@@ -1459,6 +1481,10 @@
       "solutions": [
         "var myArray = [1,2,3];\nmyArray[0] = 3;"
       ],
+      "tests": [
+        "assert((function(){if(typeof(myArray) != 'undefined' && myArray[0] == 3 && myArray[1] == 2 && myArray[2] == 3){return true;}else{return false;}})(), 'message: <code>myArray</code> should now be [3,2,3].');",
+        "assert((function(){if(code.match(/myArray\\[0\\]\\s?=\\s?/g)){return true;}else{return false;}})(), 'message: You should be using correct index to modify the value in <code>myArray</code>.');"
+      ],
       "type": "waypoint",
       "challengeType": "1"
     },
@@ -1473,10 +1499,6 @@
         "Read from <code>myArray</code> using bracket notation so that myData is equal to <code>8</code>"
       ],
       "releasedOn": "January 1, 2016",
-      "tests": [
-        "assert(myData === 8, 'message: <code>myData</code> should be equal to <code>8</code>.');",
-        "assert(/myArray\\[2\\]\\[1\\]/g.test(code), 'message: You should be using bracket notation to read the value from <code>myArray</code>.');"
-      ],
       "challengeSeed": [
         "// Setup",
         "var myArray = [[1,2,3], [4,5,6], [7,8,9], [[10,11,12], 13, 14]];",
@@ -1490,6 +1512,10 @@
       ],
       "solutions": [
         "var myArray = [[1,2,3],[4,5,6], [7,8,9], [[10,11,12], 13, 14]];\nvar myData = myArray[2][1];"
+      ],
+      "tests": [
+        "assert(myData === 8, 'message: <code>myData</code> should be equal to <code>8</code>.');",
+        "assert(/myArray\\[2\\]\\[1\\]/g.test(code), 'message: You should be using bracket notation to read the value from <code>myArray</code>.');"
       ],
       "type": "waypoint",
       "challengeType": "1"
@@ -1505,9 +1531,6 @@
         "<code>// arr is now [1,2,3,4]</code>",
         "<h4>Instructions</h4>",
         "Push <code>[\"dog\", 3]</code> onto the end of the <code>myArray</code> variable."
-      ],
-      "tests": [
-        "assert((function(d){if(d[2] != undefined && d[0][0] == 'John' && d[0][1] == 23 && d[2][0] == 'dog' && d[2][1] == 3 && d[2].length == 2){return true;}else{return false;}})(myArray), 'message: <code>myArray</code> should now equal <code>[[\"John\", 23], [\"cat\", 2], [\"dog\", 3]]</code>.');"
       ],
       "challengeSeed": [
         "// Example",
@@ -1528,6 +1551,9 @@
       "solutions": [
         "var myArray = [[\"John\", 23], [\"cat\", 2]];\nmyArray.push([\"dog\",3]);"
       ],
+      "tests": [
+        "assert((function(d){if(d[2] != undefined && d[0][0] == 'John' && d[0][1] == 23 && d[2][0] == 'dog' && d[2][1] == 3 && d[2].length == 2){return true;}else{return false;}})(myArray), 'message: <code>myArray</code> should now equal <code>[[\"John\", 23], [\"cat\", 2], [\"dog\", 3]]</code>.');"
+      ],
       "type": "waypoint",
       "challengeType": "1"
     },
@@ -1541,10 +1567,6 @@
         "For example, for the code<br><code>var oneDown = [1, 4, 6].pop();</code><br>the variable <code>oneDown</code> now holds the value <code>6</code> and the array becomes <code>[1, 4]</code>.",
         "<h4>Instructions</h4>",
         "Use the <code>.pop()</code> function to remove the last item from <code>myArray</code>, assigning the \"popped off\" value to <code>removedFromMyArray</code>."
-      ],
-      "tests": [
-        "assert((function(d){if(d[0][0] == 'John' && d[0][1] == 23 && d[2] == undefined){return true;}else{return false;}})(myArray), 'message: <code>myArray</code> should only contain <code>[[\"John\", 23]]</code>.');",
-        "assert((function(d){if(d[0] == 'cat' && d[1] == 2 && d[2] == undefined){return true;}else{return false;}})(removedFromMyArray), 'message: <code>removedFromMyArray</code> should only contain <code>[\"cat\", 2]</code>.');"
       ],
       "challengeSeed": [
         "// Example",
@@ -1566,6 +1588,10 @@
       "solutions": [
         "var myArray = [[\"John\", 23], [\"cat\", 2]];\nvar removedFromMyArray = myArray.pop();"
       ],
+      "tests": [
+        "assert((function(d){if(d[0][0] == 'John' && d[0][1] == 23 && d[2] == undefined){return true;}else{return false;}})(myArray), 'message: <code>myArray</code> should only contain <code>[[\"John\", 23]]</code>.');",
+        "assert((function(d){if(d[0] == 'cat' && d[1] == 2 && d[2] == undefined){return true;}else{return false;}})(removedFromMyArray), 'message: <code>removedFromMyArray</code> should only contain <code>[\"cat\", 2]</code>.');"
+      ],
       "type": "waypoint",
       "challengeType": "1"
     },
@@ -1577,10 +1603,6 @@
         "That's where <code>.shift()</code> comes in. It works just like <code>.pop()</code>, except it removes the first element instead of the last.",
         "<h4>Instructions</h4>",
         "Use the <code>.shift()</code> function to remove the first item from <code>myArray</code>, assigning the \"shifted off\" value to <code>removedFromMyArray</code>."
-      ],
-      "tests": [
-        "assert((function(d){if(d[0][0] == 'dog' && d[0][1] == 3 && d[1] == undefined){return true;}else{return false;}})(myArray), 'message: <code>myArray</code> should now equal <code>[[\"dog\", 3]]</code>.');",
-        "assert((function(d){if(d[0] === 'John' && d[1] === 23 && typeof(removedFromMyArray) === 'object'){return true;}else{return false;}})(removedFromMyArray), 'message: <code>removedFromMyArray</code> should contain <code>[\"John\", 23]</code>.');"
       ],
       "challengeSeed": [
         "// Example",
@@ -1602,6 +1624,10 @@
       "solutions": [
         "var myArray = [[\"John\", 23], [\"dog\", 3]];\n\n// Only change code below this line.\nvar removedFromMyArray = myArray.shift();"
       ],
+      "tests": [
+        "assert((function(d){if(d[0][0] == 'dog' && d[0][1] == 3 && d[1] == undefined){return true;}else{return false;}})(myArray), 'message: <code>myArray</code> should now equal <code>[[\"dog\", 3]]</code>.');",
+        "assert((function(d){if(d[0] === 'John' && d[1] === 23 && typeof(removedFromMyArray) === 'object'){return true;}else{return false;}})(removedFromMyArray), 'message: <code>removedFromMyArray</code> should contain <code>[\"John\", 23]</code>.');"
+      ],
       "type": "waypoint",
       "challengeType": "1"
     },
@@ -1613,9 +1639,6 @@
         "<code>.unshift()</code> works exactly like <code>.push()</code>, but instead of adding the element at the end of the array, <code>unshift()</code> adds the element at the beginning of the array.",
         "<h4>Instructions</h4>",
         "Add <code>[\"Paul\",35]</code> to the beginning of the <code>myArray</code> variable using <code>unshift()</code>."
-      ],
-      "tests": [
-        "assert((function(d){if(typeof(d[0]) === \"object\" && d[0][0].toLowerCase() == 'paul' && d[0][1] == 35 && d[1][0] != undefined && d[1][0] == 'dog' && d[1][1] != undefined && d[1][1] == 3){return true;}else{return false;}})(myArray), 'message: <code>myArray</code> should now have [[\"Paul\", 35], [\"dog\", 3]]).');"
       ],
       "challengeSeed": [
         "// Example",
@@ -1638,6 +1661,9 @@
       "solutions": [
         "var myArray = [[\"John\", 23], [\"dog\", 3]];\nmyArray.shift();\nmyArray.unshift([\"Paul\", 35]);"
       ],
+      "tests": [
+        "assert((function(d){if(typeof(d[0]) === \"object\" && d[0][0].toLowerCase() == 'paul' && d[0][1] == 35 && d[1][0] != undefined && d[1][0] == 'dog' && d[1][1] != undefined && d[1][1] == 3){return true;}else{return false;}})(myArray), 'message: <code>myArray</code> should now have [[\"Paul\", 35], [\"dog\", 3]]).');"
+      ],
       "type": "waypoint",
       "challengeType": "1"
     },
@@ -1651,12 +1677,6 @@
         "There should be at least 5 sub-arrays in the list."
       ],
       "releasedOn": "January 1, 2016",
-      "tests": [
-        "assert(isArray, 'message: <code>myList</code> should be an array');",
-        "assert(hasString, 'message: The first elements in each of your sub-arrays must all be strings');",
-        "assert(hasNumber, 'message: The second elements in each of your sub-arrays must all be numbers');",
-        "assert(count > 4, 'message: You must have at least 5 items in your list');"
-      ],
       "challengeSeed": [
         "var myList = [];",
         "",
@@ -1689,6 +1709,12 @@
       "solutions": [
         "var myList = [\n  [\"Candy\", 10],\n  [\"Potatoes\", 12],\n  [\"Eggs\", 12],\n  [\"Catfood\", 1],\n  [\"Toads\", 9]\n];"
       ],
+      "tests": [
+        "assert(isArray, 'message: <code>myList</code> should be an array');",
+        "assert(hasString, 'message: The first elements in each of your sub-arrays must all be strings');",
+        "assert(hasNumber, 'message: The second elements in each of your sub-arrays must all be numbers');",
+        "assert(count > 4, 'message: You must have at least 5 items in your list');"
+      ],
       "type": "bonfire",
       "challengeType": "5",
       "nameCn": "",
@@ -1709,11 +1735,6 @@
         "Each time the function is called it will print out the message <code>\"Hello World\"</code> on the dev console. All of the code between the curly braces will be executed every time the function is called.",
         "<h4>Instructions</h4>",
         "<ol><li>Create a function called <code>myFunction</code> which prints <code>\"Hi World\"</code> to the dev console.</li><li>Call the function.</li></ol>"
-      ],
-      "tests": [
-        "assert(typeof myFunction === 'function', 'message: <code>myFunction</code> should be a function');",
-        "assert(\"Hi World\" === logOutput, 'message: <code>myFunction</code> should output \"Hi World\" to the dev console');",
-        "assert(/^\\s*myFunction\\(\\)\\s*;/m.test(code), 'message: Call <code>myFunction</code> after you define it');"
       ],
       "challengeSeed": [
         "// Example",
@@ -1753,6 +1774,11 @@
       "solutions": [
         "function myFunction() {\n  console.log(\"Hi World\");\n}\nmyFunction();"
       ],
+      "tests": [
+        "assert(typeof myFunction === 'function', 'message: <code>myFunction</code> should be a function');",
+        "assert(\"Hi World\" === logOutput, 'message: <code>myFunction</code> should output \"Hi World\" to the dev console');",
+        "assert(/^\\s*myFunction\\(\\)\\s*;/m.test(code), 'message: Call <code>myFunction</code> after you define it');"
+      ],
       "type": "waypoint",
       "challengeType": "1"
     },
@@ -1770,12 +1796,6 @@
         "<ol><li>Create a function called <code>myFunction</code> that accepts two arguments and outputs their sum to the dev console.</li><li>Call the function.</li></ol>"
       ],
       "releasedOn": "January 1, 2016",
-      "tests": [
-        "assert(typeof myFunction === 'function', 'message: <code>myFunction</code> should be a function');",
-        "capture(); myFunction(1,2); uncapture(); assert(logOutput == 3, 'message: <code>myFunction(1,2)</code> should output <code>3</code>');",
-        "capture(); myFunction(7,9); uncapture(); assert(logOutput == 16, 'message: <code>myFunction(7,9)</code> should output <code>16</code>');",
-        "assert(/^\\s*myFunction\\(\\s*\\d+\\s*,\\s*\\d+\\s*\\)\\s*;/m.test(code), 'message: Call <code>myFunction</code> after you define it');"
-      ],
       "head": [
         "var logOutput = \"\";",
         "var oldLog = console.log;",
@@ -1813,7 +1833,13 @@
         "}"
       ],
       "solutions": [
-        ""
+        "function myFunction(a, b) {\n  console.log(a + b);\n}\nmyFunction(10, 5);"
+      ],
+      "tests": [
+        "assert(typeof myFunction === 'function', 'message: <code>myFunction</code> should be a function');",
+        "capture(); myFunction(1,2); uncapture(); assert(logOutput == 3, 'message: <code>myFunction(1,2)</code> should output <code>3</code>');",
+        "capture(); myFunction(7,9); uncapture(); assert(logOutput == 16, 'message: <code>myFunction(7,9)</code> should output <code>16</code>');",
+        "assert(/^\\s*myFunction\\(\\s*\\d+\\s*,\\s*\\d+\\s*\\)\\s*;/m.test(code), 'message: Call <code>myFunction</code> after you define it');"
       ],
       "type": "waypoint",
       "challengeType": "1",
@@ -1834,13 +1860,6 @@
         "Inside function <code>fun1</code>, assign <code>5</code> to <code>oopsGlobal</code> <strong><em>without</em></strong> using the <code>var</code> keyword."
       ],
       "releasedOn": "January 1, 2016",
-      "tests": [
-        "assert(typeof myGlobal != \"undefined\", 'message: <code>myGlobal</code> should be defined');",
-        "assert(myGlobal === 10, 'message: <code>myGlobal</code> should have a value of <code>10</code>');",
-        "assert(/var\\s+myGlobal/.test(code), 'message: <code>myGlobal</code> should be declared using the <code>var</code> keyword');",
-        "assert(typeof oopsGlobal != \"undefined\" && oopsGlobal === 5, 'message: <code>oopsGlobal</code> should have a value of <code>5</code>');",
-        "assert(!/var\\s+oopsGlobal/.test(code), 'message: Do not decalre <code>oopsGlobal</code> using the <code>var</code> keyword');"
-      ],
       "head": [
         "var logOutput = \"\";",
         "var oldLog = console.log;",
@@ -1854,7 +1873,7 @@
         "function uncapture() {",
         "  console.log = oldLog;",
         "}",
-        "",
+        "var oopsGlobal;",
         "capture();"
       ],
       "challengeSeed": [
@@ -1885,7 +1904,14 @@
         "(function() { return logOutput || \"console.log never called\"; })();"
       ],
       "solutions": [
-        ""
+        "// Declare your variable here\nvar myGlobal = 10;\n\nfunction fun1() {\n  // Assign 5 to oopsGlobal Here\n  oopsGlobal = 5;\n}\n\n// Only change code above this line\nfunction fun2() {\n  var output = \"\";\n  if(typeof myGlobal != \"undefined\") {\n    output += \"myGlobal: \" + myGlobal;\n  }\n  if(typeof oopsGlobal != \"undefined\") {\n    output += \" oopsGlobal: \" + oopsGlobal;\n  }\n  console.log(output);\n}"
+      ],
+      "tests": [
+        "assert(typeof myGlobal != \"undefined\", 'message: <code>myGlobal</code> should be defined');",
+        "assert(myGlobal === 10, 'message: <code>myGlobal</code> should have a value of <code>10</code>');",
+        "assert(/var\\s+myGlobal/.test(code), 'message: <code>myGlobal</code> should be declared using the <code>var</code> keyword');",
+        "assert(typeof oopsGlobal != \"undefined\" && oopsGlobal === 5, 'message: <code>oopsGlobal</code> should have a value of <code>5</code>');",
+        "assert(!/var\\s+oopsGlobal/.test(code), 'message: Do not decalre <code>oopsGlobal</code> using the <code>var</code> keyword');"
       ],
       "type": "waypoint",
       "challengeType": "1",
@@ -1907,9 +1933,6 @@
         "Declare a local variable <code>myVar</code> inside <code>myFunction</code>"
       ],
       "releasedOn": "January 1, 2016",
-      "tests": [
-        "assert(code.match(/console\\.log/gi).length === 1, 'message: Remove the second console log');"
-      ],
       "challengeSeed": [
         "function myFunction() {",
         "  ",
@@ -1929,6 +1952,9 @@
       ],
       "solutions": [
         "function myFunction() {\n  var myVar;\n  console.log(myVar);\n}\nmyFunction();"
+      ],
+      "tests": [
+        "assert(code.match(/console\\.log/gi).length === 1, 'message: Remove the second console log');"
       ],
       "type": "waypoint",
       "challengeType": "1",
@@ -1950,11 +1976,6 @@
         "Add a local variable to <code>myFunction</code> to override the value of <code>outerWear</code> with <code>\"sweater\"</code>."
       ],
       "releasedOn": "January 1, 2016",
-      "tests": [
-        "assert(outerWear === \"T-Shirt\", 'message: Do not change the value of the global <code>outerWear</code>');",
-        "assert(myFunction() === \"sweater\", 'message: <code>myFunction</code> should return <code>\"sweater\"</code>');",
-        "assert(/return outerWear/.test(code), 'message: Do not change the return statement');"
-      ],
       "challengeSeed": [
         "// Setup",
         "var outerWear = \"T-Shirt\";",
@@ -1972,6 +1993,11 @@
       ],
       "solutions": [
         "var outerWear = \"T-Shirt\";\nfunction myFunction() {\n  var outerWear = \"sweater\";\n  return outerWear;\n}"
+      ],
+      "tests": [
+        "assert(outerWear === \"T-Shirt\", 'message: Do not change the value of the global <code>outerWear</code>');",
+        "assert(myFunction() === \"sweater\", 'message: <code>myFunction</code> should return <code>\"sweater\"</code>');",
+        "assert(/return outerWear/.test(code), 'message: Do not change the return statement');"
       ],
       "type": "waypoint",
       "challengeType": "1",
@@ -1993,12 +2019,6 @@
         "Create a function <code>timesFive</code> that accepts one argument, multiplies it by <code>5</code>, and returns the new value."
       ],
       "releasedOn": "January 1, 2016",
-      "tests": [
-        "assert(typeof timesFive === 'function', 'message: <code>timesFive</code> should be a function');",
-        "assert(timesFive(5) === 25, 'message: <code>timesFive(5)</code> should return <code>25</code>');",
-        "assert(timesFive(2) === 10, 'message: <code>timesFive(2)</code> should return <code>10</code>');",
-        "assert(timesFive(0) === 0, 'message: <code>timesFive(0)</code> should return <code>0</code>');"
-      ],
       "challengeSeed": [
         "// Example",
         "function minusSeven(num) {",
@@ -2014,6 +2034,12 @@
       ],
       "solutions": [
         "function timesFive(num) {\n  return num * 5;\n}"
+      ],
+      "tests": [
+        "assert(typeof timesFive === 'function', 'message: <code>timesFive</code> should be a function');",
+        "assert(timesFive(5) === 25, 'message: <code>timesFive(5)</code> should return <code>25</code>');",
+        "assert(timesFive(2) === 10, 'message: <code>timesFive(2)</code> should return <code>10</code>');",
+        "assert(timesFive(0) === 0, 'message: <code>timesFive(0)</code> should return <code>0</code>');"
       ],
       "type": "waypoint",
       "challengeType": "1",
@@ -2035,10 +2061,6 @@
         "Call the <code>process</code> function with an argument of <code>7</code> and assign its return value to the variable <code>processed</code>."
       ],
       "releasedOn": "January 1, 2016",
-      "tests": [
-        "assert(processed === 2, 'message: <code>processed</code> should have a value of <code>2</code>');",
-        "assert(/processed\\s*=\\s*process\\(\\s*7\\s*\\)\\s*;/.test(code), 'message: You should assign <code>process</code> to <code>processed</code>');"
-      ],
       "challengeSeed": [
         "// Setup",
         "var processed = 0;",
@@ -2057,6 +2079,10 @@
       "solutions": [
         "var processed = 0;\n\nfunction process(num) {\n  return (num + 3) / 5;\n}\n\nprocessed = process(7);"
       ],
+      "tests": [
+        "assert(processed === 2, 'message: <code>processed</code> should have a value of <code>2</code>');",
+        "assert(/processed\\s*=\\s*process\\(\\s*7\\s*\\)\\s*;/.test(code), 'message: You should assign <code>process</code> to <code>processed</code>');"
+      ],
       "type": "waypoint",
       "challengeType": "1",
       "nameCn": "",
@@ -2073,11 +2099,6 @@
         "Write a function <code>queue</code> which takes an \"array\" and an \"item\" as arguments.  Add the item onto the end of the array, then remove and return the item at the front of the queue."
       ],
       "releasedOn": "January 1, 2016",
-      "tests": [
-        "assert(queue([],1) === 1, 'message: <code>queue([], 1)</code> should return <code>1</code>');",
-        "assert(queue([2],1) === 2, 'message: <code>queue([2], 1)</code> should return <code>2</code>');",
-        "queue(myArr, 10); assert(myArr[4] === 10, 'message: After <code>queue(myArr, 10)</code>, <code>myArr[4]</code> should be <code>10</code>');"
-      ],
       "head": [
         "var logOutput = [];",
         "var oldLog = console.log;",
@@ -2117,6 +2138,11 @@
       "solutions": [
         "var myArr = [ 1,2,3,4,5];\n\nfunction queue(myArr, item) {\n    myArr.push(item);\n    return myArr.shift();\n}"
       ],
+      "tests": [
+        "assert(queue([],1) === 1, 'message: <code>queue([], 1)</code> should return <code>1</code>');",
+        "assert(queue([2],1) === 2, 'message: <code>queue([2], 1)</code> should return <code>2</code>');",
+        "queue(myArr, 10); assert(myArr[4] === 10, 'message: After <code>queue(myArr, 10)</code>, <code>myArr[4]</code> should be <code>10</code>');"
+      ],
       "type": "bonfire",
       "challengeType": "5",
       "nameCn": "",
@@ -2136,14 +2162,6 @@
         "If <code>myVal</code> is greater than <code>10</code>, the function will return <code>\"Greater Than\"</code>.  If it is not, the function will return <code>\"Not Greater Than\"</code>.",
         "<h4>Instructions</h4>",
         "Create an <code>if</code> statement inside the function to return <code>\"Yes\"</code> if <code>testMe</code> is greater than <code>5</code>.  Return <code>\"No\"</code> if it is less than or equal to <code>5</code>."
-      ],
-      "tests": [
-        "assert(typeof myFunction === \"function\", 'message: <code>myFunction</code> should be a function');",
-        "assert(typeof myFunction(4) === \"string\", 'message: <code>myFunction(4)</code> should return a string');",
-        "assert(typeof myFunction(6) === \"string\", 'message: <code>myFunction(6)</code> should return a string');",
-        "assert(myFunction(4) === \"No\", 'message: <code>myFunction(4)</code> should \"No\"');",
-        "assert(myFunction(5) === \"No\", 'message: <code>myFunction(5)</code> should \"No\"');",
-        "assert(myFunction(6) === \"Yes\", 'message: <code>myFunction(6)</code> should \"Yes\"');"
       ],
       "challengeSeed": [
         "// Example",
@@ -2171,6 +2189,14 @@
       "solutions": [
         "function myFunction(testMe) {\n  if (testMe > 5) {\n    return 'Yes';\n  }\n  return 'No';\n}"
       ],
+      "tests": [
+        "assert(typeof myFunction === \"function\", 'message: <code>myFunction</code> should be a function');",
+        "assert(typeof myFunction(4) === \"string\", 'message: <code>myFunction(4)</code> should return a string');",
+        "assert(typeof myFunction(6) === \"string\", 'message: <code>myFunction(6)</code> should return a string');",
+        "assert(myFunction(4) === \"No\", 'message: <code>myFunction(4)</code> should \"No\"');",
+        "assert(myFunction(5) === \"No\", 'message: <code>myFunction(5)</code> should \"No\"');",
+        "assert(myFunction(6) === \"Yes\", 'message: <code>myFunction(6)</code> should \"Yes\"');"
+      ],
       "type": "waypoint",
       "challengeType": "1"
     },
@@ -2188,12 +2214,6 @@
         "Add the <code>equality operator</code> to the indicated line so that the function will return \"Equal\" when <code>val</code> is equivalent to <code>12</code>"
       ],
       "releasedOn": "January 1, 2016",
-      "tests": [
-        "assert(myTest(10) === \"Not Equal\", 'message: <code>myTest(10)</code> should return \"Not Equal\"');",
-        "assert(myTest(12) === \"Equal\", 'message: <code>myTest(12)</code> should return \"Equal\"');",
-        "assert(myTest(\"12\") === \"Equal\", 'message: <code>myTest(\"12\")</code> should return \"Equal\"');",
-        "assert(code.match(/val\\s*==\\s*\\d+/g).length > 0, 'message: You should use the <code>==</code> operator');"
-      ],
       "challengeSeed": [
         "// Setup",
         "function myTest(val) {",
@@ -2208,6 +2228,12 @@
       ],
       "solutions": [
         "function myTest(val) {\n  if (val == 12) {\n    return \"Equal\";\n  }\n  return \"Not Equal\";\n}"
+      ],
+      "tests": [
+        "assert(myTest(10) === \"Not Equal\", 'message: <code>myTest(10)</code> should return \"Not Equal\"');",
+        "assert(myTest(12) === \"Equal\", 'message: <code>myTest(12)</code> should return \"Equal\"');",
+        "assert(myTest(\"12\") === \"Equal\", 'message: <code>myTest(\"12\")</code> should return \"Equal\"');",
+        "assert(code.match(/val\\s*==\\s*\\d+/g).length > 0, 'message: You should use the <code>==</code> operator');"
       ],
       "type": "waypoint",
       "challengeType": "1",
@@ -2229,12 +2255,6 @@
         "Use strict equality operator in <code>if</code> statement so the function will return \"Equal\" when <code>val</code> is strictly equal to <code>7</code>"
       ],
       "releasedOn": "January 1, 2016",
-      "tests": [
-        "assert(myTest(10) === \"Not Equal\", 'message: <code>myTest(10)</code> should return \"Not Equal\"');",
-        "assert(myTest(7) === \"Equal\", 'message: <code>myTest(7)</code> should return \"Equal\"');",
-        "assert(myTest(\"7\") === \"Not Equal\", 'message: <code>myTest(\"7\")</code> should return \"Not Equal\"');",
-        "assert(code.match(/val\\s*===\\s*\\d+/g).length > 0, 'message: You should use the <code>===</code> operator');"
-      ],
       "challengeSeed": [
         "// Setup",
         "function myTest(val) {",
@@ -2249,6 +2269,12 @@
       ],
       "solutions": [
         "function myTest(val) {\n  if (val === 7) {\n    return \"Equal\";\n  }\n  return \"Not Equal\";\n}"
+      ],
+      "tests": [
+        "assert(myTest(10) === \"Not Equal\", 'message: <code>myTest(10)</code> should return \"Not Equal\"');",
+        "assert(myTest(7) === \"Equal\", 'message: <code>myTest(7)</code> should return \"Equal\"');",
+        "assert(myTest(\"7\") === \"Not Equal\", 'message: <code>myTest(\"7\")</code> should return \"Not Equal\"');",
+        "assert(code.match(/val\\s*===\\s*\\d+/g).length > 0, 'message: You should use the <code>===</code> operator');"
       ],
       "type": "waypoint",
       "challengeType": "1",
@@ -2269,14 +2295,6 @@
         "Add the inequality operator <code>!=</code> in the <code>if</code> statement so that the function will return \"Not Equal\" when <code>val</code> is not equivalent to <code>99</code>"
       ],
       "releasedOn": "January 1, 2016",
-      "tests": [
-        "assert(myTest(99) === \"Equal\", 'message: <code>myTest(99)</code> should return \"Equal\"');",
-        "assert(myTest(\"99\") === \"Equal\", 'message: <code>myTest(\"99\")</code> should return \"Equal\"');",
-        "assert(myTest(12) === \"Not Equal\", 'message: <code>myTest(12)</code> should return \"Not Equal\"');",
-        "assert(myTest(\"12\") === \"Not Equal\", 'message: <code>myTest(\"12\")</code> should return \"Not Equal\"');",
-        "assert(myTest(\"bob\") === \"Not Equal\", 'message: <code>myTest(\"bob\")</code> should return \"Not Equal\"');",
-        "assert(code.match(/val\\s*!=\\s*\\d+/g).length > 0, 'message: You should use the <code>!=</code> operator');"
-      ],
       "challengeSeed": [
         "// Setup",
         "function myTest(val) {",
@@ -2291,6 +2309,14 @@
       ],
       "solutions": [
         "function myTest(val) {\n  if (val != 99) {\n    return \"Not Equal\";\n  }\n  return \"Equal\";\n}"
+      ],
+      "tests": [
+        "assert(myTest(99) === \"Equal\", 'message: <code>myTest(99)</code> should return \"Equal\"');",
+        "assert(myTest(\"99\") === \"Equal\", 'message: <code>myTest(\"99\")</code> should return \"Equal\"');",
+        "assert(myTest(12) === \"Not Equal\", 'message: <code>myTest(12)</code> should return \"Not Equal\"');",
+        "assert(myTest(\"12\") === \"Not Equal\", 'message: <code>myTest(\"12\")</code> should return \"Not Equal\"');",
+        "assert(myTest(\"bob\") === \"Not Equal\", 'message: <code>myTest(\"bob\")</code> should return \"Not Equal\"');",
+        "assert(code.match(/val\\s*!=\\s*\\d+/g).length > 0, 'message: You should use the <code>!=</code> operator');"
       ],
       "type": "waypoint",
       "challengeType": "1",
@@ -2311,13 +2337,6 @@
         "Add the <code>strict inequality operator</code> to the <code>if</code> statement so the function will return \"Not Equal\" when <code>val</code> is not strictly equal to <code>17</code>"
       ],
       "releasedOn": "January 1, 2016",
-      "tests": [
-        "assert(myTest(17) === \"Equal\", 'message: <code>myTest(17)</code> should return \"Equal\"');",
-        "assert(myTest(\"17\") === \"Not Equal\", 'message: <code>myTest(\"17\")</code> should return \"Not Equal\"');",
-        "assert(myTest(12) === \"Not Equal\", 'message: <code>myTest(12)</code> should return \"Not Equal\"');",
-        "assert(myTest(\"bob\") === \"Not Equal\", 'message: <code>myTest(\"bob\")</code> should return \"Not Equal\"');",
-        "assert(code.match(/val\\s*!==\\s*\\d+/g).length > 0, 'message: You should use the <code>!==</code> operator');"
-      ],
       "challengeSeed": [
         "// Setup",
         "function myTest(val) {",
@@ -2338,6 +2357,13 @@
       "solutions": [
         "function myTest(val) {\n  if (val !== 17) {\n    return \"Not Equal\";\n  }\n  return \"Equal\";\n}"
       ],
+      "tests": [
+        "assert(myTest(17) === \"Equal\", 'message: <code>myTest(17)</code> should return \"Equal\"');",
+        "assert(myTest(\"17\") === \"Not Equal\", 'message: <code>myTest(\"17\")</code> should return \"Not Equal\"');",
+        "assert(myTest(12) === \"Not Equal\", 'message: <code>myTest(12)</code> should return \"Not Equal\"');",
+        "assert(myTest(\"bob\") === \"Not Equal\", 'message: <code>myTest(\"bob\")</code> should return \"Not Equal\"');",
+        "assert(code.match(/val\\s*!==\\s*\\d+/g).length > 0, 'message: You should use the <code>!==</code> operator');"
+      ],
       "type": "waypoint",
       "challengeType": "1",
       "nameCn": "",
@@ -2357,16 +2383,6 @@
         "Add the <code>greater than</code> operator to the indicated lines so that the return statements make sense."
       ],
       "releasedOn": "January 1, 2016",
-      "tests": [
-        "assert(myTest(0) === \"10 or Under\", 'message: <code>myTest(0)</code> should return \"10 or Under\"');",
-        "assert(myTest(10) === \"10 or Under\", 'message: <code>myTest(10)</code> should return \"10 or Under\"');",
-        "assert(myTest(11) === \"Over 10\", 'message: <code>myTest(11)</code> should return \"Over 10\"');",
-        "assert(myTest(99) === \"Over 10\", 'message: <code>myTest(99)</code> should return \"Over 10\"');",
-        "assert(myTest(100) === \"Over 10\", 'message: <code>myTest(100)</code> should return \"Over 10\"');",
-        "assert(myTest(101) === \"Over 100\", 'message: <code>myTest(101)</code> should return \"Over 100\"');",
-        "assert(myTest(150) === \"Over 100\", 'message: <code>myTest(150)</code> should return \"Over 100\"');",
-        "assert(code.match(/val\\s*>\\s*\\d+/g).length > 1, 'message: You should use the <code>&gt;</code> operator at least twice');"
-      ],
       "challengeSeed": [
         "function myTest(val) {",
         "  if (val) {  // Change this line",
@@ -2385,6 +2401,16 @@
       ],
       "solutions": [
         "function myTest(val) {\n  if (val > 100) {  // Change this line\n    return \"Over 100\";\n  }\n  if (val > 10) {  // Change this line\n    return \"Over 10\";\n  }\n  return \"10 or Under\";\n}"
+      ],
+      "tests": [
+        "assert(myTest(0) === \"10 or Under\", 'message: <code>myTest(0)</code> should return \"10 or Under\"');",
+        "assert(myTest(10) === \"10 or Under\", 'message: <code>myTest(10)</code> should return \"10 or Under\"');",
+        "assert(myTest(11) === \"Over 10\", 'message: <code>myTest(11)</code> should return \"Over 10\"');",
+        "assert(myTest(99) === \"Over 10\", 'message: <code>myTest(99)</code> should return \"Over 10\"');",
+        "assert(myTest(100) === \"Over 10\", 'message: <code>myTest(100)</code> should return \"Over 10\"');",
+        "assert(myTest(101) === \"Over 100\", 'message: <code>myTest(101)</code> should return \"Over 100\"');",
+        "assert(myTest(150) === \"Over 100\", 'message: <code>myTest(150)</code> should return \"Over 100\"');",
+        "assert(code.match(/val\\s*>\\s*\\d+/g).length > 1, 'message: You should use the <code>&gt;</code> operator at least twice');"
       ],
       "type": "waypoint",
       "challengeType": "1",
@@ -2405,16 +2431,6 @@
         "Add the <code>greater than equal to</code> operator to the indicated lines so that the return statements make sense."
       ],
       "releasedOn": "January 1, 2016",
-      "tests": [
-        "assert(myTest(0) === \"9 or Under\", 'message: <code>myTest(0)</code> should return \"9 or Under\"');",
-        "assert(myTest(9) === \"9 or Under\", 'message: <code>myTest(9)</code> should return \"9 or Under\"');",
-        "assert(myTest(10) === \"10 or Over\", 'message: <code>myTest(10)</code> should return \"10 or Over\"');",
-        "assert(myTest(11) === \"10 or Over\", 'message: <code>myTest(10)</code> should return \"10 or Over\"');",
-        "assert(myTest(19) === \"10 or Over\", 'message: <code>myTest(19)</code> should return \"10 or Over\"');",
-        "assert(myTest(20) === \"20 or Over\", 'message: <code>myTest(100)</code> should return \"20 or Over\"');",
-        "assert(myTest(21) === \"20 or Over\", 'message: <code>myTest(101)</code> should return \"20 or Over\"');",
-        "assert(code.match(/val\\s*>=\\s*\\d+/g).length > 1, 'message: You should use the <code>&gt;=</code> operator at least twice');"
-      ],
       "challengeSeed": [
         "function myTest(val) {",
         "  if (val) {  // Change this line",
@@ -2433,6 +2449,16 @@
       ],
       "solutions": [
         "function myTest(val) {\n  if (val >= 20) {  // Change this line\n    return \"20 or Over\";\n  }\n  \n  if (val >= 10) {  // Change this line\n    return \"10 or Over\";\n  }\n\n  return \"9 or Under\";\n}"
+      ],
+      "tests": [
+        "assert(myTest(0) === \"9 or Under\", 'message: <code>myTest(0)</code> should return \"9 or Under\"');",
+        "assert(myTest(9) === \"9 or Under\", 'message: <code>myTest(9)</code> should return \"9 or Under\"');",
+        "assert(myTest(10) === \"10 or Over\", 'message: <code>myTest(10)</code> should return \"10 or Over\"');",
+        "assert(myTest(11) === \"10 or Over\", 'message: <code>myTest(10)</code> should return \"10 or Over\"');",
+        "assert(myTest(19) === \"10 or Over\", 'message: <code>myTest(19)</code> should return \"10 or Over\"');",
+        "assert(myTest(20) === \"20 or Over\", 'message: <code>myTest(100)</code> should return \"20 or Over\"');",
+        "assert(myTest(21) === \"20 or Over\", 'message: <code>myTest(101)</code> should return \"20 or Over\"');",
+        "assert(code.match(/val\\s*>=\\s*\\d+/g).length > 1, 'message: You should use the <code>&gt;=</code> operator at least twice');"
       ],
       "type": "waypoint",
       "challengeType": "1",
@@ -2453,15 +2479,6 @@
         "Add the <code>less than</code> operator to the indicated lines so that the return statements make sense."
       ],
       "releasedOn": "January 1, 2016",
-      "tests": [
-        "assert(myTest(0) === \"Under 25\", 'message: <code>myTest(0)</code> should return \"Under 25\"');",
-        "assert(myTest(24) === \"Under 25\", 'message: <code>myTest(24)</code> should return \"Under 25\"');",
-        "assert(myTest(25) === \"Under 55\", 'message: <code>myTest(25)</code> should return \"Under 55\"');",
-        "assert(myTest(54) === \"Under 55\", 'message: <code>myTest(54)</code> should return \"Under 55\"');",
-        "assert(myTest(55) === \"55 or Over\", 'message: <code>myTest(55)</code> should return \"55 or Over\"');",
-        "assert(myTest(99) === \"55 or Over\", 'message: <code>myTest(99)</code> should return \"55 or Over\"');",
-        "assert(code.match(/val\\s*<\\s*\\d+/g).length > 1, 'message: You should use the <code>&lt;</code> operator at least twice');"
-      ],
       "challengeSeed": [
         "function myTest(val) {",
         "  if (val) {  // Change this line",
@@ -2480,6 +2497,15 @@
       ],
       "solutions": [
         "function myTest(val) {\n  if (val < 25) {  // Change this line\n    return \"Under 25\";\n  }\n  \n  if (val < 55) {  // Change this line\n    return \"Under 55\";\n  }\n\n  return \"55 or Over\";\n}"
+      ],
+      "tests": [
+        "assert(myTest(0) === \"Under 25\", 'message: <code>myTest(0)</code> should return \"Under 25\"');",
+        "assert(myTest(24) === \"Under 25\", 'message: <code>myTest(24)</code> should return \"Under 25\"');",
+        "assert(myTest(25) === \"Under 55\", 'message: <code>myTest(25)</code> should return \"Under 55\"');",
+        "assert(myTest(54) === \"Under 55\", 'message: <code>myTest(54)</code> should return \"Under 55\"');",
+        "assert(myTest(55) === \"55 or Over\", 'message: <code>myTest(55)</code> should return \"55 or Over\"');",
+        "assert(myTest(99) === \"55 or Over\", 'message: <code>myTest(99)</code> should return \"55 or Over\"');",
+        "assert(code.match(/val\\s*<\\s*\\d+/g).length > 1, 'message: You should use the <code>&lt;</code> operator at least twice');"
       ],
       "type": "waypoint",
       "challengeType": "1",
@@ -2500,16 +2526,6 @@
         "Add the <code>less than equal to</code> operator to the indicated lines so that the return statements make sense."
       ],
       "releasedOn": "January 1, 2016",
-      "tests": [
-        "assert(myTest(0) === \"Smaller Than or Equal to 12\", 'message: <code>myTest(0)</code> should return \"Smaller Than or Equal to 12\"');",
-        "assert(myTest(11) === \"Smaller Than or Equal to 12\", 'message: <code>myTest(11)</code> should return \"Smaller Than or Equal to 12\"');",
-        "assert(myTest(12) === \"Smaller Than or Equal to 12\", 'message: <code>myTest(12)</code> should return \"Smaller Than or Equal to 12\"');",
-        "assert(myTest(23) === \"Smaller Than or Equal to 24\", 'message: <code>myTest(23)</code> should return \"Smaller Than or Equal to 24\"');",
-        "assert(myTest(24) === \"Smaller Than or Equal to 24\", 'message: <code>myTest(24)</code> should return \"Smaller Than or Equal to 24\"');",
-        "assert(myTest(25) === \"25 or More\", 'message: <code>myTest(25)</code> should return \"25 or More\"');",
-        "assert(myTest(55) === \"25 or More\", 'message: <code>myTest(55)</code> should return \"25 or More\"');",
-        "assert(code.match(/val\\s*<=\\s*\\d+/g).length > 1, 'message: You should use the <code>&lt;=</code> operator at least twice');"
-      ],
       "challengeSeed": [
         "function myTest(val) {",
         "  if (val) {  // Change this line",
@@ -2529,6 +2545,16 @@
       ],
       "solutions": [
         "function myTest(val) {\n  if (val <= 12) {  // Change this line\n    return \"Smaller Than or Equal to 12\";\n  }\n  \n  if (val <= 24) {  // Change this line\n    return \"Smaller Than or Equal to 24\";\n  }\n\n  return \"25 or More\";\n}"
+      ],
+      "tests": [
+        "assert(myTest(0) === \"Smaller Than or Equal to 12\", 'message: <code>myTest(0)</code> should return \"Smaller Than or Equal to 12\"');",
+        "assert(myTest(11) === \"Smaller Than or Equal to 12\", 'message: <code>myTest(11)</code> should return \"Smaller Than or Equal to 12\"');",
+        "assert(myTest(12) === \"Smaller Than or Equal to 12\", 'message: <code>myTest(12)</code> should return \"Smaller Than or Equal to 12\"');",
+        "assert(myTest(23) === \"Smaller Than or Equal to 24\", 'message: <code>myTest(23)</code> should return \"Smaller Than or Equal to 24\"');",
+        "assert(myTest(24) === \"Smaller Than or Equal to 24\", 'message: <code>myTest(24)</code> should return \"Smaller Than or Equal to 24\"');",
+        "assert(myTest(25) === \"25 or More\", 'message: <code>myTest(25)</code> should return \"25 or More\"');",
+        "assert(myTest(55) === \"25 or More\", 'message: <code>myTest(55)</code> should return \"25 or More\"');",
+        "assert(code.match(/val\\s*<=\\s*\\d+/g).length > 1, 'message: You should use the <code>&lt;=</code> operator at least twice');"
       ],
       "type": "waypoint",
       "challengeType": "1",
@@ -2551,18 +2577,6 @@
         "Combine the two if statements into one statement which will return <code>\"Yes\"</code> if <code>val</code> is less than or equal to <code>50</code> and greater than or equal to <code>25</code>.  Otherwise, will return <code>\"No\"</code>."
       ],
       "releasedOn": "January 1, 2016",
-      "tests": [
-        "assert(code.match(/&&/g).length === 1, 'message: You should use the <code>&&</code> operator once');",
-        "assert(code.match(/if/g).length === 1, 'message: You should only have one <code>if</code> statement');",
-        "assert(myTest(0) === \"No\", 'message: <code>myTest(0)</code> should return \"No\"');",
-        "assert(myTest(24) === \"No\", 'message: <code>myTest(24)</code> should return \"No\"');",
-        "assert(myTest(25) === \"Yes\", 'message: <code>myTest(25)</code> should return \"Yes\"');",
-        "assert(myTest(49) === \"Yes\", 'message: <code>myTest(30)</code> should return \"Yes\"');",
-        "assert(myTest(50) === \"Yes\", 'message: <code>myTest(50)</code> should return \"Yes\"');",
-        "assert(myTest(51) === \"No\", 'message: <code>myTest(51)</code> should return \"No\"');",
-        "assert(myTest(75) === \"No\", 'message: <code>myTest(75)</code> should return \"No\"');",
-        "assert(myTest(51) === \"No\", 'message: <code>myTest(51)</code> should return \"No\"');"
-      ],
       "challengeSeed": [
         "function myTest(val) {",
         "  // Only change code below this line",
@@ -2582,6 +2596,18 @@
       ],
       "solutions": [
         "function myTest(val) {\n  if (val >= 25 && val <= 50) {\n    return \"Yes\";\n  }\n  return \"No\";\n}"
+      ],
+      "tests": [
+        "assert(code.match(/&&/g).length === 1, 'message: You should use the <code>&&</code> operator once');",
+        "assert(code.match(/if/g).length === 1, 'message: You should only have one <code>if</code> statement');",
+        "assert(myTest(0) === \"No\", 'message: <code>myTest(0)</code> should return \"No\"');",
+        "assert(myTest(24) === \"No\", 'message: <code>myTest(24)</code> should return \"No\"');",
+        "assert(myTest(25) === \"Yes\", 'message: <code>myTest(25)</code> should return \"Yes\"');",
+        "assert(myTest(49) === \"Yes\", 'message: <code>myTest(30)</code> should return \"Yes\"');",
+        "assert(myTest(50) === \"Yes\", 'message: <code>myTest(50)</code> should return \"Yes\"');",
+        "assert(myTest(51) === \"No\", 'message: <code>myTest(51)</code> should return \"No\"');",
+        "assert(myTest(75) === \"No\", 'message: <code>myTest(75)</code> should return \"No\"');",
+        "assert(myTest(51) === \"No\", 'message: <code>myTest(51)</code> should return \"No\"');"
       ],
       "type": "waypoint",
       "challengeType": "1",
@@ -2604,18 +2630,6 @@
         "Combine the two <code>if</code> statements into one statement which returns <code>\"Inside\"</code> if <code>val</code> is between <code>10</code> and <code>20</code>, inclusive.  Otherwise, return <code>\"Outside\"</code>."
       ],
       "releasedOn": "January 1, 2016",
-      "tests": [
-        "assert(code.match(/\\|\\|/g).length === 1, 'message: You should use the <code>||</code> operator once');",
-        "assert(code.match(/if/g).length === 1, 'message: You should only have one <code>if</code> statement');",
-        "assert(myTest(0) === \"Outside\", 'message: <code>myTest(0)</code> should return \"Outside\"');",
-        "assert(myTest(9) === \"Outside\", 'message: <code>myTest(9)</code> should return \"Outside\"');",
-        "assert(myTest(10) === \"Inside\", 'message: <code>myTest(10)</code> should return \"Inside\"');",
-        "assert(myTest(15) === \"Inside\", 'message: <code>myTest(15)</code> should return \"Inside\"');",
-        "assert(myTest(19) === \"Inside\", 'message: <code>myTest(19)</code> should return \"Inside\"');",
-        "assert(myTest(20) === \"Inside\", 'message: <code>myTest(20)</code> should return \"Inside\"');",
-        "assert(myTest(21) === \"Outside\", 'message: <code>myTest(21)</code> should return \"Outside\"');",
-        "assert(myTest(25) === \"Outside\", 'message: <code>myTest(25)</code> should return \"Outside\"');"
-      ],
       "challengeSeed": [
         "function myTest(val) {",
         "  // Only change code below this line",
@@ -2638,6 +2652,18 @@
       "solutions": [
         "function myTest(val) {\n  if (val < 10 || val > 20) {\n    return \"Outside\";\n  }\n  return \"Inside\";\n}"
       ],
+      "tests": [
+        "assert(code.match(/\\|\\|/g).length === 1, 'message: You should use the <code>||</code> operator once');",
+        "assert(code.match(/if/g).length === 1, 'message: You should only have one <code>if</code> statement');",
+        "assert(myTest(0) === \"Outside\", 'message: <code>myTest(0)</code> should return \"Outside\"');",
+        "assert(myTest(9) === \"Outside\", 'message: <code>myTest(9)</code> should return \"Outside\"');",
+        "assert(myTest(10) === \"Inside\", 'message: <code>myTest(10)</code> should return \"Inside\"');",
+        "assert(myTest(15) === \"Inside\", 'message: <code>myTest(15)</code> should return \"Inside\"');",
+        "assert(myTest(19) === \"Inside\", 'message: <code>myTest(19)</code> should return \"Inside\"');",
+        "assert(myTest(20) === \"Inside\", 'message: <code>myTest(20)</code> should return \"Inside\"');",
+        "assert(myTest(21) === \"Outside\", 'message: <code>myTest(21)</code> should return \"Outside\"');",
+        "assert(myTest(25) === \"Outside\", 'message: <code>myTest(25)</code> should return \"Outside\"');"
+      ],
       "type": "waypoint",
       "challengeType": "1",
       "nameCn": "",
@@ -2656,15 +2682,6 @@
         "Combine the <code>if</code> statements into a single statement."
       ],
       "releasedOn": "January 1, 2016",
-      "tests": [
-        "assert(code.match(/if/g).length === 1, 'message: You should only have one <code>if</code> statement');",
-        "assert(/else/g.test(code), 'message: You should use an <code>else</code> statement');",
-        "assert(myTest(4) === \"5 or Smaller\", 'message: <code>myTest(4)</code> should return \"5 or Smaller\"');",
-        "assert(myTest(5) === \"5 or Smaller\", 'message: <code>myTest(5)</code> should return \"5 or Smaller\"');",
-        "assert(myTest(6) === \"Bigger than 5\", 'message: <code>myTest(6)</code> should return \"Bigger than 5\"');",
-        "assert(myTest(10) === \"Bigger than 5\", 'message: <code>myTest(10)</code> should return \"Bigger than 5\"');",
-        "assert(/var result = \"\";/.test(code) && /return result;/.test(code), 'message: Do not change the code above or below the lines.');"
-      ],
       "challengeSeed": [
         "function myTest(val) {",
         "  var result = \"\";",
@@ -2689,6 +2706,15 @@
       "solutions": [
         "function myTest(val) {\n  var result = \"\";\n  if(val > 5) {\n    result = \"Bigger than 5\";\n  } else {\n    result = \"5 or Smaller\";\n  }\n  return result;\n}"
       ],
+      "tests": [
+        "assert(code.match(/if/g).length === 1, 'message: You should only have one <code>if</code> statement');",
+        "assert(/else/g.test(code), 'message: You should use an <code>else</code> statement');",
+        "assert(myTest(4) === \"5 or Smaller\", 'message: <code>myTest(4)</code> should return \"5 or Smaller\"');",
+        "assert(myTest(5) === \"5 or Smaller\", 'message: <code>myTest(5)</code> should return \"5 or Smaller\"');",
+        "assert(myTest(6) === \"Bigger than 5\", 'message: <code>myTest(6)</code> should return \"Bigger than 5\"');",
+        "assert(myTest(10) === \"Bigger than 5\", 'message: <code>myTest(10)</code> should return \"Bigger than 5\"');",
+        "assert(/var result = \"\";/.test(code) && /return result;/.test(code), 'message: Do not change the code above or below the lines.');"
+      ],
       "type": "waypoint",
       "challengeType": "1",
       "nameCn": "",
@@ -2707,15 +2733,6 @@
         "Convert the logic to use <code>else if</code> statements."
       ],
       "releasedOn": "January 1, 2016",
-      "tests": [
-        "assert(code.match(/else/g).length > 1, 'message: You should have at least two <code>else</code> statements');",
-        "assert(code.match(/if/g).length > 1, 'message: You should have at least two <code>if</code> statements');",
-        "assert(myTest(0) === \"Smaller than 5\", 'message: <code>myTest(4)</code> should return \"Smaller than 5\"');",
-        "assert(myTest(5) === \"Between 5 and 10\", 'message: <code>myTest(5)</code> should return \"Smaller than 5\"');",
-        "assert(myTest(7) === \"Between 5 and 10\", 'message: <code>myTest(7)</code> should return \"Between 5 and 10\"');",
-        "assert(myTest(10) === \"Between 5 and 10\", 'message: <code>myTest(10)</code> should return \"Between 5 and 10\"');",
-        "assert(myTest(12) === \"10 or Bigger\", 'message: <code>myTest(12)</code> should return \"10 or Bigger\"');"
-      ],
       "challengeSeed": [
         "function myTest(val) {",
         "  if(val > 10) {",
@@ -2736,6 +2753,15 @@
       "solutions": [
         "function myTest(val) {\n  if(val > 10) {\n    return \"10 or Bigger\";\n  } else if(val < 5) {\n    return \"Smaller than 5\";\n  } else {\n    return \"Between 5 and 10\";\n  }\n}"
       ],
+      "tests": [
+        "assert(code.match(/else/g).length > 1, 'message: You should have at least two <code>else</code> statements');",
+        "assert(code.match(/if/g).length > 1, 'message: You should have at least two <code>if</code> statements');",
+        "assert(myTest(0) === \"Smaller than 5\", 'message: <code>myTest(4)</code> should return \"Smaller than 5\"');",
+        "assert(myTest(5) === \"Between 5 and 10\", 'message: <code>myTest(5)</code> should return \"Smaller than 5\"');",
+        "assert(myTest(7) === \"Between 5 and 10\", 'message: <code>myTest(7)</code> should return \"Between 5 and 10\"');",
+        "assert(myTest(10) === \"Between 5 and 10\", 'message: <code>myTest(10)</code> should return \"Between 5 and 10\"');",
+        "assert(myTest(12) === \"10 or Bigger\", 'message: <code>myTest(12)</code> should return \"10 or Bigger\"');"
+      ],
       "type": "waypoint",
       "challengeType": "1",
       "nameCn": "",
@@ -2755,21 +2781,6 @@
         "<code>num &lt;   5</code> - return \"Tiny\"<br><code>num &lt;  10</code> - return \"Small\"<br><code>num &lt; 15</code> - return \"Medium\"<br><code>num &lt; 20</code> - return \"Large\"<br><code>num >= 20</code>  - return \"Huge\""
       ],
       "releasedOn": "January 1, 2016",
-      "tests": [
-        "assert(code.match(/else/g).length > 3, 'message: You should have at least four <code>else</code> statements');",
-        "assert(code.match(/if/g).length > 3, 'message: You should have at least four <code>if</code> statements');",
-        "assert(code.match(/return/g).length === 5, 'message: You should have five <code>return</code> statements');",
-        "assert(myTest(0) === \"Tiny\", 'message: <code>myTest(0)</code> should return \"Tiny\"');",
-        "assert(myTest(4) === \"Tiny\", 'message: <code>myTest(4)</code> should return \"Tiny\"');",
-        "assert(myTest(5) === \"Small\", 'message: <code>myTest(5)</code> should return \"Small\"');",
-        "assert(myTest(8) === \"Small\", 'message: <code>myTest(8)</code> should return \"Small\"');",
-        "assert(myTest(10) === \"Medium\", 'message: <code>myTest(10)</code> should return \"Medium\"');",
-        "assert(myTest(14) === \"Medium\", 'message: <code>myTest(14)</code> should return \"Medium\"');",
-        "assert(myTest(15) === \"Large\", 'message: <code>myTest(15)</code> should return \"Large\"');",
-        "assert(myTest(17) === \"Large\", 'message: <code>myTest(17)</code> should return \"Large\"');",
-        "assert(myTest(20) === \"Huge\", 'message: <code>myTest(20)</code> should return \"Huge\"');",
-        "assert(myTest(25) === \"Huge\", 'message: <code>myTest(25)</code> should return \"Huge\"');"
-      ],
       "challengeSeed": [
         "function myTest(num) {",
         "  // Only change code below this line",
@@ -2784,6 +2795,21 @@
       ],
       "solutions": [
         "function myTest(num) {\n  if (num < 5) {\n    return \"Tiny\";\n  } else if (num < 10) {\n    return \"Small\";\n  } else if (num < 15) {\n    return \"Medium\";\n  } else if (num < 20) {\n    return \"Large\";\n  } else {\n    return \"Huge\";\n  }\n}"
+      ],
+      "tests": [
+        "assert(code.match(/else/g).length > 3, 'message: You should have at least four <code>else</code> statements');",
+        "assert(code.match(/if/g).length > 3, 'message: You should have at least four <code>if</code> statements');",
+        "assert(code.match(/return/g).length === 5, 'message: You should have five <code>return</code> statements');",
+        "assert(myTest(0) === \"Tiny\", 'message: <code>myTest(0)</code> should return \"Tiny\"');",
+        "assert(myTest(4) === \"Tiny\", 'message: <code>myTest(4)</code> should return \"Tiny\"');",
+        "assert(myTest(5) === \"Small\", 'message: <code>myTest(5)</code> should return \"Small\"');",
+        "assert(myTest(8) === \"Small\", 'message: <code>myTest(8)</code> should return \"Small\"');",
+        "assert(myTest(10) === \"Medium\", 'message: <code>myTest(10)</code> should return \"Medium\"');",
+        "assert(myTest(14) === \"Medium\", 'message: <code>myTest(14)</code> should return \"Medium\"');",
+        "assert(myTest(15) === \"Large\", 'message: <code>myTest(15)</code> should return \"Large\"');",
+        "assert(myTest(17) === \"Large\", 'message: <code>myTest(17)</code> should return \"Large\"');",
+        "assert(myTest(20) === \"Huge\", 'message: <code>myTest(20)</code> should return \"Huge\"');",
+        "assert(myTest(25) === \"Huge\", 'message: <code>myTest(25)</code> should return \"Huge\"');"
       ],
       "type": "waypoint",
       "challengeType": "1",
@@ -2803,19 +2829,6 @@
         "<code>par</code> and <code>strokes</code> will always be numeric and positive."
       ],
       "releasedOn": "January 1, 2016",
-      "tests": [
-        "assert(golfScore(4, 1) === \"Hole-in-one!\", 'message: <code>golfScore(4, 1)</code> should return \"Hole-in-one!\"');",
-        "assert(golfScore(4, 2) === \"Eagle\", 'message: <code>golfScore(4, 2)</code> should return \"Eagle\"');",
-        "assert(golfScore(5, 2) === \"Eagle\", 'message: <code>golfScore(5, 2)</code> should return \"Eagle\"');",
-        "assert(golfScore(4, 3) === \"Birdie\", 'message: <code>golfScore(4, 3)</code> should return \"Birdie\"');",
-        "assert(golfScore(4, 4) === \"Par\", 'message: <code>golfScore(4, 4)</code> should return \"Par\"');",
-        "assert(golfScore(1, 1) === \"Hole-in-one!\", 'message: <code>golfScore(1, 1)</code> should return \"Hole-in-one!\"');",
-        "assert(golfScore(5, 5) === \"Par\", 'message: <code>golfScore(5, 5)</code> should return \"Par\"');",
-        "assert(golfScore(4, 5) === \"Bogey\", 'message: <code>golfScore(4, 5)</code> should return \"Bogey\"');",
-        "assert(golfScore(4, 6) === \"Double Bogey\", 'message: <code>golfScore(4, 6)</code> should return \"Double Bogey\"');",
-        "assert(golfScore(4, 7) === \"Go Home!\", 'message: <code>golfScore(4, 7)</code> should return \"Go Home!\"');",
-        "assert(golfScore(5, 9) === \"Go Home!\", 'message: <code>golfScore(5, 9)</code> should return \"Go Home!\"');"
-      ],
       "challengeSeed": [
         "function golfScore(par, strokes) {",
         "  // Only change code below this line",
@@ -2830,6 +2843,19 @@
       ],
       "solutions": [
         "function golfScore(par, strokes) {\n  if (strokes === 1) {\n    return \"Hole-in-one!\";\n  }\n  \n  if (strokes <= par - 2) {\n    return \"Eagle\";\n  }\n  \n  if (strokes === par - 1) {\n    return \"Birdie\";\n  }\n  \n  if (strokes === par) {\n    return \"Par\";\n  }\n  \n  if (strokes === par + 1) {\n    return \"Bogey\";\n  }\n  \n  if(strokes === par + 2) {\n    return \"Double Bogey\";\n  }\n  \n  return \"Go Home!\";\n}"
+      ],
+      "tests": [
+        "assert(golfScore(4, 1) === \"Hole-in-one!\", 'message: <code>golfScore(4, 1)</code> should return \"Hole-in-one!\"');",
+        "assert(golfScore(4, 2) === \"Eagle\", 'message: <code>golfScore(4, 2)</code> should return \"Eagle\"');",
+        "assert(golfScore(5, 2) === \"Eagle\", 'message: <code>golfScore(5, 2)</code> should return \"Eagle\"');",
+        "assert(golfScore(4, 3) === \"Birdie\", 'message: <code>golfScore(4, 3)</code> should return \"Birdie\"');",
+        "assert(golfScore(4, 4) === \"Par\", 'message: <code>golfScore(4, 4)</code> should return \"Par\"');",
+        "assert(golfScore(1, 1) === \"Hole-in-one!\", 'message: <code>golfScore(1, 1)</code> should return \"Hole-in-one!\"');",
+        "assert(golfScore(5, 5) === \"Par\", 'message: <code>golfScore(5, 5)</code> should return \"Par\"');",
+        "assert(golfScore(4, 5) === \"Bogey\", 'message: <code>golfScore(4, 5)</code> should return \"Bogey\"');",
+        "assert(golfScore(4, 6) === \"Double Bogey\", 'message: <code>golfScore(4, 6)</code> should return \"Double Bogey\"');",
+        "assert(golfScore(4, 7) === \"Go Home!\", 'message: <code>golfScore(4, 7)</code> should return \"Go Home!\"');",
+        "assert(golfScore(5, 9) === \"Go Home!\", 'message: <code>golfScore(5, 9)</code> should return \"Go Home!\"');"
       ],
       "type": "bonfire",
       "challengeType": "5",
@@ -2851,14 +2877,6 @@
         "Write a switch statement which tests <code>val</code> and sets <code>answer</code> for the following conditions:<br><code>1</code> - \"alpha\"<br><code>2</code> - \"beta\"<br><code>3</code> - \"gamma\"<br><code>4</code> - \"delta\""
       ],
       "releasedOn": "January 1, 2016",
-      "tests": [
-        "assert(myTest(1) === \"alpha\", 'message: <code>myTest(1) should have a value of \"alpha\"');",
-        "assert(myTest(2) === \"beta\", 'message: <code>myTest(2) should have a value of \"beta\"');",
-        "assert(myTest(3) === \"gamma\", 'message: <code>myTest(3) should have a value of \"gamma\"');",
-        "assert(myTest(4) === \"delta\", 'message: <code>myTest(4) should have a value of \"delta\"');",
-        "assert(!/else/g.test(code) || !/if/g.test(code), 'message: You should not use any <code>if</code> or <code>else</code> statements');",
-        "assert(code.match(/break/g).length > 2, 'message: You should have at least 3 <code>break</code> statements');"
-      ],
       "challengeSeed": [
         "function myTest(val) {",
         "  var answer = \"\";",
@@ -2876,6 +2894,14 @@
       ],
       "solutions": [
         "function myTest(val) {\n  var answer = \"\";\n\n  switch (val) {\n    case 1:\n      answer = \"alpha\";\n      break;\n    case 2:\n      answer = \"beta\";\n      break;\n    case 3:\n      answer = \"gamma\";\n      break;\n    case 4:\n      answer = \"delta\";\n  }\n  return answer;  \n}"
+      ],
+      "tests": [
+        "assert(myTest(1) === \"alpha\", 'message: <code>myTest(1) should have a value of \"alpha\"');",
+        "assert(myTest(2) === \"beta\", 'message: <code>myTest(2) should have a value of \"beta\"');",
+        "assert(myTest(3) === \"gamma\", 'message: <code>myTest(3) should have a value of \"gamma\"');",
+        "assert(myTest(4) === \"delta\", 'message: <code>myTest(4) should have a value of \"delta\"');",
+        "assert(!/else/g.test(code) || !/if/g.test(code), 'message: You should not use any <code>if</code> or <code>else</code> statements');",
+        "assert(code.match(/break/g).length > 2, 'message: You should have at least 3 <code>break</code> statements');"
       ],
       "type": "waypoint",
       "challengeType": "1",
@@ -2896,15 +2922,6 @@
         "Write a switch statement to set <code>answer</code> for the following conditions:<br><code>\"a\"</code> - \"apple\"<br><code>\"b\"</code> - \"bird\"<br><code>\"c\"</code> - \"cat\"<br><code>default</code> - \"stuff\""
       ],
       "releasedOn": "January 1, 2016",
-      "tests": [
-        "assert(myTest(\"a\") === \"apple\", 'message: <code>myTest(\"a\") should have a value of \"apple\"');",
-        "assert(myTest(\"b\") === \"bird\", 'message: <code>myTest(\"b\") should have a value of \"bird\"');",
-        "assert(myTest(\"c\") === \"cat\", 'message: <code>myTest(\"c\") should have a value of \"cat\"');",
-        "assert(myTest(\"d\") === \"stuff\", 'message: <code>myTest(\"d\") should have a value of \"stuff\"');",
-        "assert(myTest(4) === \"stuff\", 'message: <code>myTest(4) should have a value of \"stuff\"');",
-        "assert(!/else/g.test(code) || !/if/g.test(code), 'message: You should not use any <code>if</code> or <code>else</code> statements');",
-        "assert(code.match(/break/g).length > 2, 'message: You should have at least 3 <code>break</code> statements');"
-      ],
       "challengeSeed": [
         "function myTest(val) {",
         "  var answer = \"\";",
@@ -2922,6 +2939,15 @@
       ],
       "solutions": [
         "function myTest(val) {\n  var answer = \"\";\n\n  switch(val) {\n    case \"a\":\n      answer = \"apple\";\n      break;\n    case \"b\":\n      answer = \"bird\";\n      break;\n    case \"c\":\n      answer = \"cat\";\n      break;\n    default:\n      answer = \"stuff\";\n  }\n  return answer;  \n}"
+      ],
+      "tests": [
+        "assert(myTest(\"a\") === \"apple\", 'message: <code>myTest(\"a\") should have a value of \"apple\"');",
+        "assert(myTest(\"b\") === \"bird\", 'message: <code>myTest(\"b\") should have a value of \"bird\"');",
+        "assert(myTest(\"c\") === \"cat\", 'message: <code>myTest(\"c\") should have a value of \"cat\"');",
+        "assert(myTest(\"d\") === \"stuff\", 'message: <code>myTest(\"d\") should have a value of \"stuff\"');",
+        "assert(myTest(4) === \"stuff\", 'message: <code>myTest(4) should have a value of \"stuff\"');",
+        "assert(!/else/g.test(code) || !/if/g.test(code), 'message: You should not use any <code>if</code> or <code>else</code> statements');",
+        "assert(code.match(/break/g).length > 2, 'message: You should have at least 3 <code>break</code> statements');"
       ],
       "type": "waypoint",
       "challengeType": "1",
@@ -2944,19 +2970,6 @@
         "You will need to have a <code>case</code> statement for each number in the range."
       ],
       "releasedOn": "January 1, 2016",
-      "tests": [
-        "assert(myTest(1) === \"Low\", 'message: <code>myTest(1)</code> should return \"Low\"');",
-        "assert(myTest(2) === \"Low\", 'message: <code>myTest(2)</code> should return \"Low\"');",
-        "assert(myTest(3) === \"Low\", 'message: <code>myTest(3)</code> should return \"Low\"');",
-        "assert(myTest(4) === \"Mid\", 'message: <code>myTest(4)</code> should return \"Mid\"');",
-        "assert(myTest(5) === \"Mid\", 'message: <code>myTest(5)</code> should return \"Mid\"');",
-        "assert(myTest(6) === \"Mid\", 'message: <code>myTest(6)</code> should return \"Mid\"');",
-        "assert(myTest(7) === \"High\", 'message: <code>myTest(7)</code> should return \"High\"');",
-        "assert(myTest(8) === \"High\", 'message: <code>myTest(8)</code> should return \"High\"');",
-        "assert(myTest(9) === \"High\", 'message: <code>myTest(9)</code> should return \"High\"');",
-        "assert(!/else/g.test(code) || !/if/g.test(code), 'message: You should not use any <code>if</code> or <code>else</code> statements');",
-        "assert(code.match(/case/g).length === 9, 'message: You should have nine <code>case</code> statements');"
-      ],
       "challengeSeed": [
         "function myTest(val) {",
         "  var answer = \"\";",
@@ -2974,6 +2987,19 @@
       ],
       "solutions": [
         "function myTest(val) {\n  var answer = \"\";\n  \n  switch (val) {\n    case 1:\n    case 2:\n    case 3:\n      answer = \"Low\";\n      break;\n    case 4:\n    case 5:\n    case 6:\n      answer = \"Mid\";\n      break;\n    case 7:\n    case 8:\n    case 9:\n      answer = \"High\";\n  }\n  \n  return answer;  \n}"
+      ],
+      "tests": [
+        "assert(myTest(1) === \"Low\", 'message: <code>myTest(1)</code> should return \"Low\"');",
+        "assert(myTest(2) === \"Low\", 'message: <code>myTest(2)</code> should return \"Low\"');",
+        "assert(myTest(3) === \"Low\", 'message: <code>myTest(3)</code> should return \"Low\"');",
+        "assert(myTest(4) === \"Mid\", 'message: <code>myTest(4)</code> should return \"Mid\"');",
+        "assert(myTest(5) === \"Mid\", 'message: <code>myTest(5)</code> should return \"Mid\"');",
+        "assert(myTest(6) === \"Mid\", 'message: <code>myTest(6)</code> should return \"Mid\"');",
+        "assert(myTest(7) === \"High\", 'message: <code>myTest(7)</code> should return \"High\"');",
+        "assert(myTest(8) === \"High\", 'message: <code>myTest(8)</code> should return \"High\"');",
+        "assert(myTest(9) === \"High\", 'message: <code>myTest(9)</code> should return \"High\"');",
+        "assert(!/else/g.test(code) || !/if/g.test(code), 'message: You should not use any <code>if</code> or <code>else</code> statements');",
+        "assert(code.match(/case/g).length === 9, 'message: You should have nine <code>case</code> statements');"
       ],
       "type": "waypoint",
       "challengeType": "1",
@@ -2995,18 +3021,6 @@
         "Change the chained <code>if</code>/<code>if else</code> statements into a <code>switch</code> statement."
       ],
       "releasedOn": "January 1, 2016",
-      "tests": [
-        "assert(!/else/g.test(code), 'message: You should not use any <code>else</code> statements');",
-        "assert(!/if/g.test(code), 'message: You should not use any <code>if</code> statements');",
-        "assert(code.match(/break/g).length === 4, 'message: You should have four <code>break</code> statements');",
-        "assert(myTest(\"bob\") === \"Marley\", 'message: <code>myTest(\"bob\")</code> should be \"Marley\"');",
-        "assert(myTest(42) === \"The Answer\", 'message: <code>myTest(42)</code> should be \"The Answer\"');",
-        "assert(myTest(1) === \"There is no #1\", 'message: <code>myTest(1)</code> should be \"There is no #1\"');",
-        "assert(myTest(99) === \"Missed me by this much!\", 'message: <code>myTest(99)</code> should be \"Missed me by this much!\"');",
-        "assert(myTest(7) === \"Ate Nine\", 'message: <code>myTest(7)</code> should be \"Ate Nine\"');",
-        "assert(myTest(\"John\") === \"\", 'message: <code>myTest(\"John\")</code> should be \"\" (empty string)');",
-        "assert(myTest(156) === \"\", 'message: <code>myTest(156)</code> should be \"\" (empty string)');"
-      ],
       "challengeSeed": [
         "function myTest(val) {",
         "  var answer = \"\";",
@@ -3035,6 +3049,18 @@
       "solutions": [
         "function myTest(val) {\n  var answer = \"\";\n\n  switch (val) {\n    case \"bob\":\n      answer = \"Marley\";\n      break;\n    case 42:\n      answer = \"The Answer\";\n      break;\n    case 1:\n      answer = \"There is no #1\";\n      break;\n    case 99:\n      answer = \"Missed me by this much!\";\n      break;\n    case 7:\n      answer = \"Ate Nine\";\n  }\n  return answer;  \n}"
       ],
+      "tests": [
+        "assert(!/else/g.test(code), 'message: You should not use any <code>else</code> statements');",
+        "assert(!/if/g.test(code), 'message: You should not use any <code>if</code> statements');",
+        "assert(code.match(/break/g).length === 4, 'message: You should have four <code>break</code> statements');",
+        "assert(myTest(\"bob\") === \"Marley\", 'message: <code>myTest(\"bob\")</code> should be \"Marley\"');",
+        "assert(myTest(42) === \"The Answer\", 'message: <code>myTest(42)</code> should be \"The Answer\"');",
+        "assert(myTest(1) === \"There is no #1\", 'message: <code>myTest(1)</code> should be \"There is no #1\"');",
+        "assert(myTest(99) === \"Missed me by this much!\", 'message: <code>myTest(99)</code> should be \"Missed me by this much!\"');",
+        "assert(myTest(7) === \"Ate Nine\", 'message: <code>myTest(7)</code> should be \"Ate Nine\"');",
+        "assert(myTest(\"John\") === \"\", 'message: <code>myTest(\"John\")</code> should be \"\" (empty string)');",
+        "assert(myTest(156) === \"\", 'message: <code>myTest(156)</code> should be \"\" (empty string)');"
+      ],
       "type": "waypoint",
       "challengeType": "1",
       "nameCn": "",
@@ -3056,11 +3082,6 @@
         "Fix the function <code>isLess</code> to remove the <code>if/else</code> statements."
       ],
       "releasedOn": "January 1, 2016",
-      "tests": [
-        "assert(isLess(10,15) === true, 'message: <code>isLess(10,15)</code> should return <code>true</code>');",
-        "assert(isLess(15, 10) === false, 'message: <code>isLess(15,10)</code> should return <code>true</code>');",
-        "assert(!/if|else/g.test(code), 'message: You should not use any <code>if</code> or <code>else</code> statements');"
-      ],
       "challengeSeed": [
         "function isLess(a, b) {",
         "  // Fix this code",
@@ -3079,6 +3100,11 @@
       ],
       "solutions": [
         "function isLess(a, b) {\n  return a < b;\n}"
+      ],
+      "tests": [
+        "assert(isLess(10,15) === true, 'message: <code>isLess(10,15)</code> should return <code>true</code>');",
+        "assert(isLess(15, 10) === false, 'message: <code>isLess(15,10)</code> should return <code>true</code>');",
+        "assert(!/if|else/g.test(code), 'message: You should not use any <code>if</code> or <code>else</code> statements');"
       ],
       "type": "waypoint",
       "challengeType": "1",
@@ -3100,14 +3126,6 @@
         "Modify the function <code>abTest</code> so that if <code>a</code> or <code>b</code> are less than <code>0</code> the function will immediately exit with a value of <code>undefined</code>."
       ],
       "releasedOn": "January 1, 2016",
-      "tests": [
-        "assert(typeof abTest(2,2) === 'number' , 'message: <code>abTest(2,2)</code> should return a number');",
-        "assert(abTest(2,2) === 8 , 'message: <code>abTest(2,2)</code> should return <code>8</code>');",
-        "assert(abTest(-2,2) === undefined , 'message: <code>abTest(-2,2)</code> should return <code>undefined</code>');",
-        "assert(abTest(2,-2) === undefined , 'message: <code>abTest(2,-2)</code> should return <code>undefined</code>');",
-        "assert(abTest(2,8) === 18 , 'message: <code>abTest(2,8)</code> should return <code>18</code>');",
-        "assert(abTest(3,3) === 12 , 'message: <code>abTest(3,3)</code> should return <code>12</code>');"
-      ],
       "challengeSeed": [
         "// Setup",
         "function abTest(a, b) {",
@@ -3129,6 +3147,14 @@
       "solutions": [
         "function abTest(a, b) {\n  if(a < 0 || b < 0) {\n    return undefined;\n  } \n  return Math.round(Math.pow(Math.sqrt(a) + Math.sqrt(b), 2));\n}"
       ],
+      "tests": [
+        "assert(typeof abTest(2,2) === 'number' , 'message: <code>abTest(2,2)</code> should return a number');",
+        "assert(abTest(2,2) === 8 , 'message: <code>abTest(2,2)</code> should return <code>8</code>');",
+        "assert(abTest(-2,2) === undefined , 'message: <code>abTest(-2,2)</code> should return <code>undefined</code>');",
+        "assert(abTest(2,-2) === undefined , 'message: <code>abTest(2,-2)</code> should return <code>undefined</code>');",
+        "assert(abTest(2,8) === 18 , 'message: <code>abTest(2,8)</code> should return <code>18</code>');",
+        "assert(abTest(3,3) === 12 , 'message: <code>abTest(3,3)</code> should return <code>12</code>');"
+      ],
       "type": "waypoint",
       "challengeType": "1",
       "nameCn": "",
@@ -3149,12 +3175,6 @@
         "<code>-3 Hold</code><br><code>5 Bet</code>"
       ],
       "releasedOn": "January 1, 2016",
-      "tests": [
-        "assert((function(){ count = 0; cc(2);cc(3);cc(4);cc(5);var out = cc(6); if(out === \"5 Bet\") {return true;} return false; })(), 'message: Cards Sequence 2, 3, 4, 5, 6 should return <code>\"5 Bet\"</code>');",
-        "assert((function(){ count = 0; cc(7);cc(8);var out = cc(9); if(out === \"0 Hold\") {return true;} return false; })(), 'message: Cards Sequence 7, 8, 9 should return <code>\"0 Hold\"</code>');",
-        "assert((function(){ count = 0; cc(10);cc('J');cc('Q');cc('K');var out = cc('A'); if(out === \"-5 Hold\") {return true;} return false; })(), 'message: Cards Sequence 10, J, Q, K, A should return <code>\"-5 Hold\"</code>');",
-        "assert((function(){ count = 0; cc(3);cc(2);cc('A');cc(10);var out = cc('K'); if(out === \"-1 Hold\") {return true;} return false; })(), 'message: Cards Sequence 3, 2, A, 10, K should return <code>\"-1 Hold\"</code>');"
-      ],
       "challengeSeed": [
         "var count = 0;",
         "",
@@ -3172,6 +3192,12 @@
       ],
       "solutions": [
         "var count = 0;\nfunction cc(card) {\n  switch(card) {\n    case 2:\n    case 3:\n    case 4:\n    case 5:\n    case 6:\n      count++;\n      break;\n    case 10:\n    case 'J':\n    case 'Q':\n    case 'K':\n    case 'A':\n      count--;\n  }\n  if(count > 0) {\n    return count + \" Bet\";\n  } else {\n    return count + \" Hold\";\n  }\n}"
+      ],
+      "tests": [
+        "assert((function(){ count = 0; cc(2);cc(3);cc(4);cc(5);var out = cc(6); if(out === \"5 Bet\") {return true;} return false; })(), 'message: Cards Sequence 2, 3, 4, 5, 6 should return <code>\"5 Bet\"</code>');",
+        "assert((function(){ count = 0; cc(7);cc(8);var out = cc(9); if(out === \"0 Hold\") {return true;} return false; })(), 'message: Cards Sequence 7, 8, 9 should return <code>\"0 Hold\"</code>');",
+        "assert((function(){ count = 0; cc(10);cc('J');cc('Q');cc('K');var out = cc('A'); if(out === \"-5 Hold\") {return true;} return false; })(), 'message: Cards Sequence 10, J, Q, K, A should return <code>\"-5 Hold\"</code>');",
+        "assert((function(){ count = 0; cc(3);cc(2);cc('A');cc(10);var out = cc('K'); if(out === \"-1 Hold\") {return true;} return false; })(), 'message: Cards Sequence 3, 2, A, 10, K should return <code>\"-1 Hold\"</code>');"
       ],
       "type": "bonfire",
       "challengeType": "5",
@@ -3193,13 +3219,6 @@
         "<h4>Instructions</h4>",
         "Make an object that represents a dog called <code>myDog</code> which contains the properties <code>\"name\"</code> (a string), <code>\"legs\"</code>, <code>\"tails\"</code> and <code>\"friends\"</code>.",
         "You can set these object properties to whatever values you want, as long <code>\"name\"</code> is a string, <code>\"legs\"</code> and <code>\"tails\"</code> are numbers, and <code>\"friends\"</code> is an array."
-      ],
-      "tests": [
-        "assert((function(z){if(z.hasOwnProperty(\"name\") && z.name !== undefined && typeof(z.name) === \"string\"){return true;}else{return false;}})(myDog), 'message: <code>myDog</code> should contain the property <code>name</code> and it should be a <code>string</code>.');",
-        "assert((function(z){if(z.hasOwnProperty(\"legs\") && z.legs !== undefined && typeof(z.legs) === \"number\"){return true;}else{return false;}})(myDog), 'message: <code>myDog</code> should contain the property <code>legs</code> and it should be a <code>number</code>.');",
-        "assert((function(z){if(z.hasOwnProperty(\"tails\") && z.tails !== undefined && typeof(z.tails) === \"number\"){return true;}else{return false;}})(myDog), 'message: <code>myDog</code> should contain the property <code>tails</code> and it should be a <code>number</code>.');",
-        "assert((function(z){if(z.hasOwnProperty(\"friends\") && z.friends !== undefined && Array.isArray(z.friends)){return true;}else{return false;}})(myDog), 'message: <code>myDog</code> should contain the property <code>friends</code> and it should be an <code>array</code>.');",
-        "assert((function(z){return Object.keys(z).length === 4;})(myDog), 'message: <code>myDog</code> should only contain all the given properties.');"
       ],
       "challengeSeed": [
         "// Example",
@@ -3225,6 +3244,13 @@
       "solutions": [
         "var myDog = {\n  \"name\": \"Camper\",\n  \"legs\": 4,\n  \"tails\": 1,\n  \"friends\": [\"everything!\"]  \n};"
       ],
+      "tests": [
+        "assert((function(z){if(z.hasOwnProperty(\"name\") && z.name !== undefined && typeof(z.name) === \"string\"){return true;}else{return false;}})(myDog), 'message: <code>myDog</code> should contain the property <code>name</code> and it should be a <code>string</code>.');",
+        "assert((function(z){if(z.hasOwnProperty(\"legs\") && z.legs !== undefined && typeof(z.legs) === \"number\"){return true;}else{return false;}})(myDog), 'message: <code>myDog</code> should contain the property <code>legs</code> and it should be a <code>number</code>.');",
+        "assert((function(z){if(z.hasOwnProperty(\"tails\") && z.tails !== undefined && typeof(z.tails) === \"number\"){return true;}else{return false;}})(myDog), 'message: <code>myDog</code> should contain the property <code>tails</code> and it should be a <code>number</code>.');",
+        "assert((function(z){if(z.hasOwnProperty(\"friends\") && z.friends !== undefined && Array.isArray(z.friends)){return true;}else{return false;}})(myDog), 'message: <code>myDog</code> should contain the property <code>friends</code> and it should be an <code>array</code>.');",
+        "assert((function(z){return Object.keys(z).length === 4;})(myDog), 'message: <code>myDog</code> should only contain all the given properties.');"
+      ],
       "type": "waypoint",
       "challengeType": "1"
     },
@@ -3240,13 +3266,6 @@
         "Read the values of the properties <code>hat</code> and <code>shirt</code> of <code>testObj</code> using dot notation."
       ],
       "releasedOn": "January 1, 2016",
-      "tests": [
-        "assert(typeof hatValue === 'string' , 'message: <code>hatValue</code> should be a string');",
-        "assert(hatValue === 'ballcap' , 'message: The value of <code>hatValue</code> should be <code>\"ballcap\"</code>');",
-        "assert(typeof shirtValue === 'string' , 'message: <code>shirtValue</code> should be a string');",
-        "assert(shirtValue === 'jersey' , 'message: The value of <code>shirtValue</code> should be <code>\"jersey\"</code>');",
-        "assert(code.match(/testObj\\.\\w+/g).length > 1, 'message: You should use dot notation twice');"
-      ],
       "challengeSeed": [
         "// Setup",
         "var testObj = {",
@@ -3265,6 +3284,13 @@
       ],
       "solutions": [
         "var testObj = {\n  \"hat\": \"ballcap\",\n  \"shirt\": \"jersey\",\n  \"shoes\": \"cleats\"\n};\n\nvar hatValue = testObj.hat;  \nvar shirtValue = testObj.shirt;"
+      ],
+      "tests": [
+        "assert(typeof hatValue === 'string' , 'message: <code>hatValue</code> should be a string');",
+        "assert(hatValue === 'ballcap' , 'message: The value of <code>hatValue</code> should be <code>\"ballcap\"</code>');",
+        "assert(typeof shirtValue === 'string' , 'message: <code>shirtValue</code> should be a string');",
+        "assert(shirtValue === 'jersey' , 'message: The value of <code>shirtValue</code> should be <code>\"jersey\"</code>');",
+        "assert(code.match(/testObj\\.\\w+/g).length > 1, 'message: You should use dot notation twice');"
       ],
       "type": "waypoint",
       "challengeType": "1",
@@ -3286,13 +3312,6 @@
         "Read the values of the properties <code>\"an entree\"</code> and <code>\"the drink\"</code> of <code>testObj</code> using bracket notation."
       ],
       "releasedOn": "January 1, 2016",
-      "tests": [
-        "assert(typeof entreeValue === 'string' , 'message: <code>entreeValue</code> should be a string');",
-        "assert(entreeValue === 'hamburger' , 'message: The value of <code>entreeValue</code> should be <code>\"hamburger\"</code>');",
-        "assert(typeof drinkValue === 'string' , 'message: <code>drinkValue</code> should be a string');",
-        "assert(drinkValue === 'water' , 'message: The value of <code>drinkValue</code> should be <code>\"water\"</code>');",
-        "assert(code.match(/testObj\\[('|\")[^'\"]+\\1\\]/g).length > 1, 'message: You should use bracket notation twice');"
-      ],
       "challengeSeed": [
         "// Setup",
         "var testObj = {",
@@ -3311,6 +3330,13 @@
       ],
       "solutions": [
         "var testObj = {\n  \"an entree\": \"hamburger\",\n  \"my side\": \"veggies\",\n  \"the drink\": \"water\"\n};\nvar entreeValue = testObj[\"an entree\"];\nvar drinkValue = testObj['the drink'];"
+      ],
+      "tests": [
+        "assert(typeof entreeValue === 'string' , 'message: <code>entreeValue</code> should be a string');",
+        "assert(entreeValue === 'hamburger' , 'message: The value of <code>entreeValue</code> should be <code>\"hamburger\"</code>');",
+        "assert(typeof drinkValue === 'string' , 'message: <code>drinkValue</code> should be a string');",
+        "assert(drinkValue === 'water' , 'message: The value of <code>drinkValue</code> should be <code>\"water\"</code>');",
+        "assert(code.match(/testObj\\[('|\")[^'\"]+\\1\\]/g).length > 1, 'message: You should use bracket notation twice');"
       ],
       "type": "waypoint",
       "challengeType": "1",
@@ -3332,12 +3358,6 @@
         "Use the <code>playerNumber</code> variable to lookup player <code>16</code> in <code>testObj</code> using bracket notation."
       ],
       "releasedOn": "January 1, 2016",
-      "tests": [
-        "assert(typeof playerNumber === 'number', 'message: <code>playerNumber</code> should be a number');",
-        "assert(typeof player === 'string', 'message: The variable <code>player</code> should be a string');",
-        "assert(player === 'Montana', 'message: The value of <code>player</code> should be \"Montana\"');",
-        "assert(/testObj\\[\\s*playerNumber\\s*\\]/.test(code),'message: You should use bracket notation to access <code>testObj</code>');"
-      ],
       "challengeSeed": [
         "// Setup",
         "var testObj = {",
@@ -3356,6 +3376,12 @@
       ],
       "solutions": [
         "var testObj = {\n  12: \"Namath\",\n  16: \"Montana\",\n  19: \"Unitas\"\n};\nvar playerNumber = 16;\nvar player = testObj[playerNumber];"
+      ],
+      "tests": [
+        "assert(typeof playerNumber === 'number', 'message: <code>playerNumber</code> should be a number');",
+        "assert(typeof player === 'string', 'message: The variable <code>player</code> should be a string');",
+        "assert(player === 'Montana', 'message: The value of <code>player</code> should be \"Montana\"');",
+        "assert(/testObj\\[\\s*playerNumber\\s*\\]/.test(code),'message: You should use bracket notation to access <code>testObj</code>');"
       ],
       "type": "waypoint",
       "challengeType": "1",
@@ -3378,10 +3404,6 @@
         "Now when we evaluate <code>ourDog.name</code>, instead of getting \"Camper\", we'll get his new name, \"Happy Camper\".",
         "<h4>Instructions</h4>",
         "Update the <code>myDog</code> object's name property. Let's change her name from \"Coder\" to \"Happy Coder\".  You can use either dot or bracket notation."
-      ],
-      "tests": [
-        "assert(/happy coder/gi.test(myDog.name), 'message: Update <code>myDog</code>&apos;s <code>\"name\"</code> property to equal \"Happy Coder\".');",
-        "assert(/\"name\": \"Coder\"/.test(code), 'message: Do not edit the <code>myDog</code> definition');"
       ],
       "challengeSeed": [
         "// Example",
@@ -3409,6 +3431,13 @@
       "tail": [
         "(function(z){return z;})(myDog);"
       ],
+      "solutions": [
+        "var myDog = {\n  \"name\": \"Coder\",\n  \"legs\": 4,\n  \"tails\": 1,\n  \"friends\": [\"Free Code Camp Campers\"]\n};\nmyDog.name = \"Happy Coder\";"
+      ],
+      "tests": [
+        "assert(/happy coder/gi.test(myDog.name), 'message: Update <code>myDog</code>&apos;s <code>\"name\"</code> property to equal \"Happy Coder\".');",
+        "assert(/\"name\": \"Coder\"/.test(code), 'message: Do not edit the <code>myDog</code> definition');"
+      ],
       "type": "waypoint",
       "challengeType": "1"
     },
@@ -3424,10 +3453,6 @@
         "Now when we evaluate <code>ourDog.bark</code>, we'll get his bark, \"bow-wow\".",
         "<h4>Instructions</h4>",
         "Add a <code>\"bark\"</code> property to <code>myDog</code> and set it to a dog sound, such as \"woof\". You may use either dot or bracket notation."
-      ],
-      "tests": [
-        "assert(myDog.bark !== undefined, 'message: Add the property <code>\"bark\"</code> to <code>myDog</code>.');",
-        "assert(!/bark[^\\n]:/.test(code), 'message: Do not add <code>\"bark\"</code> to the setup section');"
       ],
       "challengeSeed": [
         "// Example",
@@ -3457,6 +3482,10 @@
       "solutions": [
         "var myDog = {\n  \"name\": \"Happy Coder\",\n  \"legs\": 4,\n  \"tails\": 1,\n  \"friends\": [\"Free Code Camp Campers\"]\n};\nmyDog.bark = \"Woof Woof\";"
       ],
+      "tests": [
+        "assert(myDog.bark !== undefined, 'message: Add the property <code>\"bark\"</code> to <code>myDog</code>.');",
+        "assert(!/bark[^\\n]:/.test(code), 'message: Do not add <code>\"bark\"</code> to the setup section');"
+      ],
       "type": "waypoint",
       "challengeType": "1"
     },
@@ -3468,10 +3497,6 @@
         "<code>delete ourDog.bark;</code>",
         "<h4>Instructions</h4>",
         "Delete the <code>\"tails\"</code> property from <code>myDog</code>. You may use either dot or bracket notation."
-      ],
-      "tests": [
-        "assert(myDog.tails === undefined, 'message: Delete the property <code>\"tails\"</code> from <code>myDog</code>.');",
-        "assert(code.match(/\"tails\": 1/g).length > 1, 'message: Do not modify the <code>myDog</code> setup');"
       ],
       "challengeSeed": [
         "// Example",
@@ -3504,6 +3529,10 @@
       "solutions": [
         "var ourDog = {\n  \"name\": \"Camper\",\n  \"legs\": 4,\n  \"tails\": 1,\n  \"friends\": [\"everything!\"],\n  \"bark\": \"bow-wow\"\n};\n\nvar myDog = {\n  \"name\": \"Happy Coder\",\n  \"legs\": 4,\n  \"tails\": 1,\n  \"friends\": [\"Free Code Camp Campers\"],\n  \"bark\": \"woof\"\n};\n\ndelete myDog.tails;"
       ],
+      "tests": [
+        "assert(myDog.tails === undefined, 'message: Delete the property <code>\"tails\"</code> from <code>myDog</code>.');",
+        "assert(code.match(/\"tails\": 1/g).length > 1, 'message: Do not modify the <code>myDog</code> setup');"
+      ],
       "type": "waypoint",
       "challengeType": "1"
     },
@@ -3518,16 +3547,6 @@
         "Convert the switch statement into a lookup table called <code>lookup</code>.  Use it to lookup <code>val</code> and return the associated string."
       ],
       "releasedOn": "January 1, 2016",
-      "tests": [
-        "assert(phoneticLookup(\"alpha\") === 'Adams', 'message: <code>phoneticLookup(\"alpha\")</code> should equal <code>\"Adams\"</code>');",
-        "assert(phoneticLookup(\"bravo\") === 'Boston', 'message: <code>phoneticLookup(\"bravo\")</code> should equal <code>\"Boston\"</code>');",
-        "assert(phoneticLookup(\"charlie\") === 'Chicago', 'message: <code>phoneticLookup(\"charlie\")</code> should equal <code>\"Chicago\"</code>');",
-        "assert(phoneticLookup(\"delta\") === 'Denver', 'message: <code>phoneticLookup(\"delta\")</code> should equal <code>\"Denver\"</code>');",
-        "assert(phoneticLookup(\"echo\") === 'Easy', 'message: <code>phoneticLookup(\"echo\")</code> should equal <code>\"Easy\"</code>');",
-        "assert(phoneticLookup(\"foxtrot\") === 'Frank', 'message: <code>phoneticLookup(\"foxtrot\")</code> should equal <code>\"Frank\"</code>');",
-        "assert(typeof phoneticLookup(\"\") === 'undefined', 'message: <code>phoneticLookup(\"\")</code> should equal <code>undefined</code>');",
-        "assert(!/case|switch|if/g.test(code), 'message: You should not use <code>case</code>, <code>switch</code>, or <code>if</code> statements'); "
-      ],
       "challengeSeed": [
         "// Setup",
         "function phoneticLookup(val) {",
@@ -3562,6 +3581,16 @@
       "solutions": [
         "function phoneticLookup(val) {\n  var result = \"\";\n\n  var lookup = {\n    alpha: \"Adams\",\n    bravo: \"Boston\",\n    charlie: \"Chicago\",\n    delta: \"Denver\",\n    echo: \"Easy\",\n    foxtrot: \"Frank\"\n  };\n\n  result = lookup[val];\n\n  return result;\n}"
       ],
+      "tests": [
+        "assert(phoneticLookup(\"alpha\") === 'Adams', 'message: <code>phoneticLookup(\"alpha\")</code> should equal <code>\"Adams\"</code>');",
+        "assert(phoneticLookup(\"bravo\") === 'Boston', 'message: <code>phoneticLookup(\"bravo\")</code> should equal <code>\"Boston\"</code>');",
+        "assert(phoneticLookup(\"charlie\") === 'Chicago', 'message: <code>phoneticLookup(\"charlie\")</code> should equal <code>\"Chicago\"</code>');",
+        "assert(phoneticLookup(\"delta\") === 'Denver', 'message: <code>phoneticLookup(\"delta\")</code> should equal <code>\"Denver\"</code>');",
+        "assert(phoneticLookup(\"echo\") === 'Easy', 'message: <code>phoneticLookup(\"echo\")</code> should equal <code>\"Easy\"</code>');",
+        "assert(phoneticLookup(\"foxtrot\") === 'Frank', 'message: <code>phoneticLookup(\"foxtrot\")</code> should equal <code>\"Frank\"</code>');",
+        "assert(typeof phoneticLookup(\"\") === 'undefined', 'message: <code>phoneticLookup(\"\")</code> should equal <code>undefined</code>');",
+        "assert(!/case|switch|if/g.test(code), 'message: You should not use <code>case</code>, <code>switch</code>, or <code>if</code> statements'); "
+      ],
       "type": "waypoint",
       "challengeType": "1",
       "nameCn": "",
@@ -3581,11 +3610,6 @@
         "Modify the function <code>checkObj</code> to test <code>myObj</code> for <code>checkProp</code>.  If the property is found, return that property's value.  If not, return <code>\"Not Found\"</code>."
       ],
       "releasedOn": "January 1, 2016",
-      "tests": [
-        "assert(checkObj(\"gift\") === \"pony\", 'message: <code>checkObj(\"gift\")</code> should return  <code>\"pony\"</code>.');",
-        "assert(checkObj(\"pet\") === \"kitten\", 'message: <code>checkObj(\"gift\")</code> should return  <code>\"kitten\"</code>.');",
-        "assert(checkObj(\"house\") === \"Not Found\", 'message: <code>checkObj(\"house\")</code> should return  <code>\"Not Found\"</code>.');"
-      ],
       "challengeSeed": [
         "// Setup",
         "var myObj = {",
@@ -3609,6 +3633,11 @@
       "solutions": [
         "var myObj = {\n  gift: \"pony\",\n  pet: \"kitten\",\n  bed: \"sleigh\"\n};\nfunction checkObj(checkProp) {\n  if(myObj.hasOwnProperty(checkProp)) {\n    return myObj[checkProp];\n  } else {\n    return \"Not Found\";\n  }\n}"
       ],
+      "tests": [
+        "assert(checkObj(\"gift\") === \"pony\", 'message: <code>checkObj(\"gift\")</code> should return  <code>\"pony\"</code>.');",
+        "assert(checkObj(\"pet\") === \"kitten\", 'message: <code>checkObj(\"gift\")</code> should return  <code>\"kitten\"</code>.');",
+        "assert(checkObj(\"house\") === \"Not Found\", 'message: <code>checkObj(\"house\")</code> should return  <code>\"Not Found\"</code>.');"
+      ],
       "type": "waypoint",
       "challengeType": "1"
     },
@@ -3624,17 +3653,6 @@
         "Add a new album to the <code>myMusic</code> JSON object.  Add  <code>artist</code> and <code>title</code> strings, <code>release_year</code> year, and a <code>formats</code> array of strings."
       ],
       "releasedOn": "January 1, 2016",
-      "tests": [
-        "assert(Array.isArray(myMusic), 'message: <code>myMusic</code> should be an array');",
-        "assert(myMusic.length > 1, 'message: <code>myMusic</code> should have at least two elements');",
-        "assert(typeof myMusic[1] === 'object', 'message: <code>myMusic[1]</code> should be an object');",
-        "assert(Object.keys(myMusic[1]).length > 3, 'message: <code>myMusic[1]</code> should have at least 4 properties');",
-        "assert(myMusic[1].hasOwnProperty('artist') && typeof myMusic[1].artist === 'string', 'message: <code>myMusic[1]</code> should contain an <code>artist</code> property which is a string');",
-        "assert(myMusic[1].hasOwnProperty('title') && typeof myMusic[1].title === 'string', 'message: <code>myMusic[1]</code> should  contain a <code>title</code> property which is a string');",
-        "assert(myMusic[1].hasOwnProperty('release_year') && typeof myMusic[1].release_year === 'number', 'message: <code>myMusic[1]</code> should contain a <code>release_year</code> property which is a number');",
-        "assert(myMusic[1].hasOwnProperty('formats') && Array.isArray(myMusic[1].formats), 'message: <code>myMusic[1]</code> should contain a <code>formats</code> property which is an array');",
-        "assert(myMusic[1].formats.every(function(item) { return (typeof item === \"string\")}) && myMusic[1].formats.length > 1, 'message: <code>formats</code> should be an array of strings with at least two elements');"
-      ],
       "challengeSeed": [
         "var myMusic = [",
         "  {",
@@ -3657,6 +3675,17 @@
       "solutions": [
         "var myMusic = [\n  {\n    \"artist\": \"Billy Joel\",\n    \"title\": \"Piano Man\",\n    \"release_year\": 1993,\n    \"formats\": [ \n      \"CS\", \n      \"8T\", \n      \"LP\" ],\n    \"gold\": true\n  }, \n  {\n    \"artist\": \"ABBA\",\n    \"title\": \"Ring Ring\",\n    \"release_year\": 1973,\n    \"formats\": [ \n      \"CS\", \n      \"8T\", \n      \"LP\",\n    \"CD\",\n  ]\n  }\n];"
       ],
+      "tests": [
+        "assert(Array.isArray(myMusic), 'message: <code>myMusic</code> should be an array');",
+        "assert(myMusic.length > 1, 'message: <code>myMusic</code> should have at least two elements');",
+        "assert(typeof myMusic[1] === 'object', 'message: <code>myMusic[1]</code> should be an object');",
+        "assert(Object.keys(myMusic[1]).length > 3, 'message: <code>myMusic[1]</code> should have at least 4 properties');",
+        "assert(myMusic[1].hasOwnProperty('artist') && typeof myMusic[1].artist === 'string', 'message: <code>myMusic[1]</code> should contain an <code>artist</code> property which is a string');",
+        "assert(myMusic[1].hasOwnProperty('title') && typeof myMusic[1].title === 'string', 'message: <code>myMusic[1]</code> should  contain a <code>title</code> property which is a string');",
+        "assert(myMusic[1].hasOwnProperty('release_year') && typeof myMusic[1].release_year === 'number', 'message: <code>myMusic[1]</code> should contain a <code>release_year</code> property which is a number');",
+        "assert(myMusic[1].hasOwnProperty('formats') && Array.isArray(myMusic[1].formats), 'message: <code>myMusic[1]</code> should contain a <code>formats</code> property which is an array');",
+        "assert(myMusic[1].formats.every(function(item) { return (typeof item === \"string\")}) && myMusic[1].formats.length > 1, 'message: <code>formats</code> should be an array of strings with at least two elements');"
+      ],
       "type": "waypoint",
       "challengeType": "1",
       "nameCn": "",
@@ -3676,10 +3705,6 @@
         "Access the <code>myStorage</code> JSON object to retrieve the contents of the <code>glove box</code>.  Only use object notation for properties with a space in their name."
       ],
       "releasedOn": "January 1, 2016",
-      "tests": [
-        "assert(gloveBoxContents === \"maps\", 'message: <code>gloveBoxContents</code> should equal \"maps\"');",
-        "assert(/=\\s*myStorage\\.car\\.inside\\[(\"|')glove box\\1\\]/g.test(code), 'message: Use dot and bracket notation to access <code>myStorage</code>');"
-      ],
       "challengeSeed": [
         "// Setup",
         "var myStorage = {",
@@ -3710,6 +3735,10 @@
       "solutions": [
         "var myStorage = {  \n  \"car\":{  \n    \"inside\":{  \n      \"glove box\":\"maps\",\n      \"passenger seat\":\"crumbs\"\n    },\n    \"outside\":{  \n      \"trunk\":\"jack\"\n    }\n  }\n};\nvar gloveBoxContents = myStorage.car.inside[\"glove box\"];"
       ],
+      "tests": [
+        "assert(gloveBoxContents === \"maps\", 'message: <code>gloveBoxContents</code> should equal \"maps\"');",
+        "assert(/=\\s*myStorage\\.car\\.inside\\[(\"|')glove box\\1\\]/g.test(code), 'message: Use dot and bracket notation to access <code>myStorage</code>');"
+      ],
       "type": "waypoint",
       "challengeType": "1",
       "nameCn": "",
@@ -3729,10 +3758,6 @@
         "Retrieve the second tree from the variable <code>myPlants</code> using object dot and array bracket notation."
       ],
       "releasedOn": "January 1, 2016",
-      "tests": [
-        "assert(secondTree === \"pine\", 'message: <code>secondTree</code> should equal \"pine\"');",
-        "assert(/=\\s*myPlants\\[1\\].list\\[1\\]/.test(code), 'message: Use dot and bracket notation to access <code>myPlants</code>');"
-      ],
       "challengeSeed": [
         "// Setup",
         "var myPlants = [",
@@ -3770,6 +3795,10 @@
       "solutions": [
         "var myPlants = [\n  { \n    type: \"flowers\",\n    list: [\n      \"rose\",\n      \"tulip\",\n      \"dandelion\"\n    ]\n  },\n  {\n    type: \"trees\",\n    list: [\n      \"fir\",\n      \"pine\",\n      \"birch\"\n    ]\n  }  \n];\n\n// Only change code below this line\n\nvar secondTree = myPlants[1].list[1];"
       ],
+      "tests": [
+        "assert(secondTree === \"pine\", 'message: <code>secondTree</code> should equal \"pine\"');",
+        "assert(/=\\s*myPlants\\[1\\].list\\[1\\]/.test(code), 'message: Use dot and bracket notation to access <code>myPlants</code>');"
+      ],
       "type": "waypoint",
       "challengeType": "1",
       "nameCn": "",
@@ -3791,12 +3820,6 @@
         "Always return the entire collection object."
       ],
       "releasedOn": "January 1, 2016",
-      "tests": [
-        "collection = collectionCopy; assert(update(5439, \"artist\", \"ABBA\")[5439][\"artist\"] === \"ABBA\", 'message: After <code>update(5439, \"artist\", \"ABBA\")</code>, <code>artist</code> should be <code>\"ABBA\"</code>');",
-        "update(2548, \"artist\", \"\"); assert(!collection[2548].hasOwnProperty(\"artist\"), 'message: After <code>update(2548, \"artist\", \"\")</code>, <code>artist</code> should not be set');",
-        "assert(update(1245, \"tracks\", \"Addicted to Love\")[1245][\"tracks\"].length === 1, 'message: After <code>update(1245, \"tracks\", \"Addicted to Love\")</code>, <code>tracks</code> should have a length of <code>1</code>');",
-        "update(2548, \"tracks\", \"\"); assert(!collection[2548].hasOwnProperty(\"tracks\"), 'message: After <code>update(2548, \"tracks\", \"\")</code>, <code>tracks</code> should not be set');"
-      ],
       "challengeSeed": [
         "// Setup",
         "var collection = {",
@@ -3844,6 +3867,12 @@
       "solutions": [
         "var collection = {\n    2548: {\n      album: \"Slippery When Wet\",\n      artist: \"Bon Jovi\",\n      tracks: [ \n        \"Let It Rock\", \n        \"You Give Love a Bad Name\" \n      ]\n    },\n    2468: {\n      album: \"1999\",\n      artist: \"Prince\",\n      tracks: [ \n        \"1999\", \n        \"Little Red Corvette\" \n      ]\n    },\n    1245: {\n      artist: \"Robert Palmer\",\n      tracks: [ ]\n    },\n    5439: {\n      album: \"ABBA Gold\"\n    }\n};\n// Keep a copy of the collection for tests\nvar collectionCopy = JSON.parse(JSON.stringify(collection));\n\n// Only change code below this line\nfunction update(id, prop, value) {\n  if(value !== \"\") {\n    if(prop === \"tracks\") {\n      collection[id][prop].push(value);\n    } else {\n      collection[id][prop] = value;\n    }\n  } else {\n    delete collection[id][prop];\n  }\n\n  return collection;\n}"
       ],
+      "tests": [
+        "collection = collectionCopy; assert(update(5439, \"artist\", \"ABBA\")[5439][\"artist\"] === \"ABBA\", 'message: After <code>update(5439, \"artist\", \"ABBA\")</code>, <code>artist</code> should be <code>\"ABBA\"</code>');",
+        "update(2548, \"artist\", \"\"); assert(!collection[2548].hasOwnProperty(\"artist\"), 'message: After <code>update(2548, \"artist\", \"\")</code>, <code>artist</code> should not be set');",
+        "assert(update(1245, \"tracks\", \"Addicted to Love\")[1245][\"tracks\"].length === 1, 'message: After <code>update(1245, \"tracks\", \"Addicted to Love\")</code>, <code>tracks</code> should have a length of <code>1</code>');",
+        "update(2548, \"tracks\", \"\"); assert(!collection[2548].hasOwnProperty(\"tracks\"), 'message: After <code>update(2548, \"tracks\", \"\")</code>, <code>tracks</code> should not be set');"
+      ],
       "type": "bonfire",
       "challengeType": "5",
       "nameCn": "",
@@ -3869,10 +3898,6 @@
         "<h4>Instructions</h4>",
         "Use a <code>for</code> loop to work to push the values 1 through 5 onto <code>myArray</code>."
       ],
-      "tests": [
-        "assert(code.match(/for\\s*\\(/g).length > 1, 'message: You should be using a <code>for</code> loop for this.');",
-        "assert.deepEqual(myArray, [1,2,3,4,5], 'message: <code>myArray</code> should equal <code>[1,2,3,4,5]</code>.');"
-      ],
       "challengeSeed": [
         "// Example",
         "var ourArray = [];",
@@ -3891,6 +3916,13 @@
       "tail": [
         "if (typeof(myArray) !== \"undefined\"){(function(){return myArray;})();}"
       ],
+      "solutions": [
+        "var ourArray = [];\nfor (var i = 0; i < 5; i++) {\n  ourArray.push(i);\n}\nvar myArray = [];\nfor (var i = 1; i < 6; i++) {\n  myArray.push(i);\n}"
+      ],
+      "tests": [
+        "assert(code.match(/for\\s*\\(/g).length > 1, 'message: You should be using a <code>for</code> loop for this.');",
+        "assert.deepEqual(myArray, [1,2,3,4,5], 'message: <code>myArray</code> should equal <code>[1,2,3,4,5]</code>.');"
+      ],
       "type": "waypoint",
       "challengeType": "1"
     },
@@ -3905,10 +3937,6 @@
         "Let's change our <code>initialization</code> so we can count by odd numbers.",
         "<h4>Instructions</h4>",
         "Push the odd numbers from 1 through 9 to <code>myArray</code> using a <code>for</code> loop."
-      ],
-      "tests": [
-        "assert(code.match(/for\\s*\\(/g).length > 1, 'message: You should be using a <code>for</code> loop for this.');",
-        "assert.deepEqual(myArray, [1,3,5,7,9], 'message: <code>myArray</code> should equal <code>[1,3,5,7,9]</code>.');"
       ],
       "challengeSeed": [
         "// Example",
@@ -3928,6 +3956,13 @@
       "tail": [
         "if(typeof(myArray) !== \"undefined\"){(function(){return myArray;})();}"
       ],
+      "solutions": [
+        "var ourArray = [];\nfor (var i = 0; i < 10; i += 2) {\n  ourArray.push(i);\n}\nvar myArray = [];\nfor (var i = 1; i < 10; i += 2) {\n  myArray.push(i);\n}"
+      ],
+      "tests": [
+        "assert(code.match(/for\\s*\\(/g).length > 1, 'message: You should be using a <code>for</code> loop for this.');",
+        "assert.deepEqual(myArray, [1,3,5,7,9], 'message: <code>myArray</code> should equal <code>[1,3,5,7,9]</code>.');"
+      ],
       "type": "waypoint",
       "challengeType": "1"
     },
@@ -3943,10 +3978,6 @@
         "Let's change our <code>initialization</code> and <code>final-expression</code> so we can count backward by twos by odd numbers.",
         "<h4>Instructions</h4>",
         "Push the odd numbers from 9 through 1 to <code>myArray</code> using a <code>for</code> loop."
-      ],
-      "tests": [
-        "assert(code.match(/for\\s*\\(/g).length > 1, 'message: You should be using a <code>for</code> loop for this.');",
-        "assert.deepEqual(myArray, [9,7,5,3,1], 'message: <code>myArray</code> should equal <code>[9,7,5,3,1]</code>.');"
       ],
       "challengeSeed": [
         "// Example",
@@ -3965,6 +3996,13 @@
       "tail": [
         "if(typeof(myArray) !== \"undefined\"){(function(){return myArray;})();}"
       ],
+      "solutions": [
+        "var ourArray = [];\nfor (var i = 10; i > 0; i -= 2) {\n  ourArray.push(i);\n}\nvar myArray = [];\nfor (var i = 9; i > 0; i -= 2) {\n  myArray.push(i);\n}"
+      ],
+      "tests": [
+        "assert(code.match(/for\\s*\\(/g).length > 1, 'message: You should be using a <code>for</code> loop for this.');",
+        "assert.deepEqual(myArray, [9,7,5,3,1], 'message: <code>myArray</code> should equal <code>[9,7,5,3,1]</code>.');"
+      ],
       "type": "waypoint",
       "challengeType": "1"
     },
@@ -3979,11 +4017,6 @@
         "Create a variable <code>total</code>. Use a <code>for</code> loop to add each element of <code>myArr</code> to total."
       ],
       "releasedOn": "January 1, 2016",
-      "tests": [
-        "assert(total !== 'undefined', 'message: <code>total</code> should be defined');",
-        "assert(total === 20, 'message: <code>total</code> should equal 20');",
-        "assert(!/20/.test(code), 'message: Do not set <code>total</code> to 20 directly');"
-      ],
       "challengeSeed": [
         "// Example",
         "var ourArr = [ 9, 10, 11, 12];",
@@ -4006,6 +4039,11 @@
       "solutions": [
         "var myArr = [ 2, 3, 4, 5, 6];\nvar total = 0;\n\nfor (var i = 0; i < myArr.length; i++) {\n  total += myArr[i];\n}"
       ],
+      "tests": [
+        "assert(total !== 'undefined', 'message: <code>total</code> should be defined');",
+        "assert(total === 20, 'message: <code>total</code> should equal 20');",
+        "assert(!/20/.test(code), 'message: Do not set <code>total</code> to 20 directly');"
+      ],
       "type": "waypoint",
       "challengeType": "1",
       "nameCn": "",
@@ -4025,11 +4063,6 @@
         "Modify function <code>multiplyAll</code> so that it multiplies <code>product</code> by each number in the subarrays of <code>arr</code>"
       ],
       "releasedOn": "January 1, 2016",
-      "tests": [
-        "assert(multiplyAll([[1],[2],[3]]) === 6, 'message: <code>multiplyAll([[1],[2],[3]]);</code> should return <code>6</code>');",
-        "assert(multiplyAll([[1,2],[3,4],[5,6,7]]) === 5040, 'message: <code>multiplyAll([[1,2],[3,4],[5,6,7]])</code> should return <code>5040</code>');",
-        "assert(multiplyAll([[5,1],[0.2, 4, 0.5],[3, 9]]) === 54, 'message: <code>multiplyAll([[5,1],[0.2, 4, 0.5],[3, 9]]);)</code> should return <code>54</code>');"
-      ],
       "challengeSeed": [
         "function multiplyAll(arr) {",
         "  var product = 1;",
@@ -4047,7 +4080,12 @@
         ""
       ],
       "solutions": [
-        "function multiplyAll(arr) {\n  var product = 1;\n  for (var i = 0; i < arr.length; i++) {\n    for (var j = 0; j < arr[i].length; j++) {\n      product *= arr[i][j];\n    }\n  }\n  return product;\n}\n\nmultiplyAll([[1,2],[3,4],[5,6,7]]);\n\n"
+        "function multiplyAll(arr) {\n  var product = 1;\n  for (var i = 0; i < arr.length; i++) {\n    for (var j = 0; j < arr[i].length; j++) {\n      product *= arr[i][j];\n    }\n  }\n  return product;\n}\n\nmultiplyAll([[1,2],[3,4],[5,6,7]]);"
+      ],
+      "tests": [
+        "assert(multiplyAll([[1],[2],[3]]) === 6, 'message: <code>multiplyAll([[1],[2],[3]]);</code> should return <code>6</code>');",
+        "assert(multiplyAll([[1,2],[3,4],[5,6,7]]) === 5040, 'message: <code>multiplyAll([[1,2],[3,4],[5,6,7]])</code> should return <code>5040</code>');",
+        "assert(multiplyAll([[5,1],[0.2, 4, 0.5],[3, 9]]) === 54, 'message: <code>multiplyAll([[5,1],[0.2, 4, 0.5],[3, 9]]);)</code> should return <code>54</code>');"
       ],
       "type": "waypoint",
       "challengeType": "1",
@@ -4068,10 +4106,6 @@
         "<h4>Instructions</h4>",
         "Push the numbers 0 through 4 to <code>myArray</code> using a <code>while</code> loop."
       ],
-      "tests": [
-        "assert(code.match(/while/g), 'message: You should be using a <code>while</code> loop for this.');",
-        "assert.deepEqual(myArray, [0,1,2,3,4], 'message: <code>myArray</code> should equal <code>[0,1,2,3,4]</code>.');"
-      ],
       "challengeSeed": [
         "// Setup",
         "var myArray = [];",
@@ -4082,6 +4116,13 @@
       ],
       "tail": [
         "if(typeof(myArray) !== \"undefined\"){(function(){return myArray;})();}"
+      ],
+      "solutions": [
+        "var myArray = [];\nvar i = 0;\nwhile(i < 5) {\n  myArray.push(i);\n  i++;\n}"
+      ],
+      "tests": [
+        "assert(code.match(/while/g), 'message: You should be using a <code>while</code> loop for this.');",
+        "assert.deepEqual(myArray, [0,1,2,3,4], 'message: <code>myArray</code> should equal <code>[0,1,2,3,4]</code>.');"
       ],
       "type": "waypoint",
       "challengeType": "1"
@@ -4096,12 +4137,6 @@
         "The provided code transforms the input into an array for you, <code>codeArr</code>. Place the decoded values into the <code>decodedArr</code> array where the provided code will transform it back into a string."
       ],
       "releasedOn": "January 1, 2016",
-      "tests": [
-        "assert(rot13(\"SERR PBQR PNZC\") === \"FREE CODE CAMP\", 'message: <code>rot13(\"SERR PBQR PNZC\")</code> should decode to <code>\"FREE CODE CAMP\"</code>');",
-        "assert(rot13(\"SERR CVMMN!\") === \"FREE PIZZA!\", 'message: <code>rot13(\"SERR CVMMN!\")</code> should decode to <code>\"FREE PIZZA!\"</code>');",
-        "assert(rot13(\"SERR YBIR?\") === \"FREE LOVE?\", 'message: <code>rot13(\"SERR YBIR?\")</code> should decode to <code>\"FREE LOVE?\"</code>');",
-        "assert(rot13(\"GUR DHVPX OEBJA QBT WHZCRQ BIRE GUR YNML SBK.\") === \"THE QUICK BROWN DOG JUMPED OVER THE LAZY FOX.\", 'message: <code>rot13(\"GUR DHVPX OEBJA QBT WHZCRQ BIRE GUR YNML SBK.\")</code> should decode to <code>\"THE QUICK BROWN DOG JUMPED OVER THE LAZY FOX.\"</code>');"
-      ],
       "challengeSeed": [
         "function rot13(encodedStr) {",
         "  var codeArr = encodedStr.split(\"\");  // String to Array",
@@ -4123,6 +4158,12 @@
       "solutions": [
         "var lookup = {\n  'A': 'N','B': 'O','C': 'P','D': 'Q',\n  'E': 'R','F': 'S','G': 'T','H': 'U',\n  'I': 'V','J': 'W','K': 'X','L': 'Y',\n  'M': 'Z','N': 'A','O': 'B','P': 'C',\n  'Q': 'D','R': 'E','S': 'F','T': 'G',\n  'U': 'H','V': 'I','W': 'J','X': 'K',\n  'Y': 'L','Z': 'M' \n};\n\nfunction rot13(encodedStr) {\n  var codeArr = encodedStr.split(\"\");  // String to Array\n  var decodedArr = []; // Your Result goes here\n  // Only change code below this line\n  \n  decodedArr = codeArr.map(function(letter) {\n    if(lookup.hasOwnProperty(letter)) {\n      letter = lookup[letter];\n    }\n    return letter;\n  });\n\n  // Only change code above this line\n  return decodedArr.join(\"\"); // Array to String\n}"
       ],
+      "tests": [
+        "assert(rot13(\"SERR PBQR PNZC\") === \"FREE CODE CAMP\", 'message: <code>rot13(\"SERR PBQR PNZC\")</code> should decode to <code>\"FREE CODE CAMP\"</code>');",
+        "assert(rot13(\"SERR CVMMN!\") === \"FREE PIZZA!\", 'message: <code>rot13(\"SERR CVMMN!\")</code> should decode to <code>\"FREE PIZZA!\"</code>');",
+        "assert(rot13(\"SERR YBIR?\") === \"FREE LOVE?\", 'message: <code>rot13(\"SERR YBIR?\")</code> should decode to <code>\"FREE LOVE?\"</code>');",
+        "assert(rot13(\"GUR DHVPX OEBJA QBT WHZCRQ BIRE GUR YNML SBK.\") === \"THE QUICK BROWN DOG JUMPED OVER THE LAZY FOX.\", 'message: <code>rot13(\"GUR DHVPX OEBJA QBT WHZCRQ BIRE GUR YNML SBK.\")</code> should decode to <code>\"THE QUICK BROWN DOG JUMPED OVER THE LAZY FOX.\"</code>');"
+      ],
       "type": "bonfire",
       "challengeType": "5",
       "nameCn": "",
@@ -4136,14 +4177,11 @@
       "title": "Generate Random Fractions with JavaScript",
       "description": [
         "Random numbers are useful for creating random behavior.",
-        "JavaScript has a <code>Math.random()</code> function that generates a random decimal number.",
-        "Change <code>myFunction</code> to return a random number instead of returning <code>0</code>.",
-        "Note that you can return a function, just like you would return a variable or value."
-      ],
-      "tests": [
-        "assert(typeof(myFunction()) === \"number\", 'message: <code>myFunction</code> should return a random number.');",
-        "assert((myFunction()+''). match(/\\./g), 'message: The number returned by <code>myFunction</code> should be a decimal.');",
-        "assert(code.match(/Math\\.random/g).length >= 0, 'message: You should be using <code>Math.random</code> to generate the random decimal number.');"
+        "JavaScript has a <code>Math.random()</code> function that generates a random decimal number between <code>0</code> (inclusive) and not quite up to <code>1</code> (exclusive).  Thus <code>Math.random()</code> can return a <code>0</code> but never quite return a <code>1</code>",
+        "<strong>Note</strong>",
+        "Like <a href=\"waypoint-storing-values-with-the-equal-operator\">Storing Values with the Equal Operator</a>, all function calls will be resolved before the <code>return</code> executes, so we can simply <code>return</code> the value of the <code>Math.random()</code> function.",
+        "<h4>Instructions</h4>",
+        "Change <code>myFunction</code> to return a random number instead of returning <code>0</code>."
       ],
       "challengeSeed": [
         "function myFunction() {",
@@ -4158,6 +4196,14 @@
       "tail": [
         "(function(){return myFunction();})();"
       ],
+      "solutions": [
+        "function myFunction() {\n  return Math.random();\n}"
+      ],
+      "tests": [
+        "assert(typeof(myFunction()) === \"number\", 'message: <code>myFunction</code> should return a random number.');",
+        "assert((myFunction()+''). match(/\\./g), 'message: The number returned by <code>myFunction</code> should be a decimal.');",
+        "assert(code.match(/Math\\.random/g).length >= 0, 'message: You should be using <code>Math.random</code> to generate the random decimal number.');"
+      ],
       "type": "waypoint",
       "challengeType": "1"
     },
@@ -4165,22 +4211,12 @@
       "id": "cf1111c1c12feddfaeb1bdef",
       "title": "Generate Random Whole Numbers with JavaScript",
       "description": [
-        "It's great that we can generate random decimal numbers, but it's even more useful if we use it to generate random whole numbers.",
-        "First, let's use <code>Math.random()</code> to generate a random decimal.",
-        "Then let's multiply this random decimal by 20.",
-        "Finally, let's use another function, <code>Math.floor()</code> to round the number down to its nearest whole number.",
-        "This technique will gives us a whole number between 0 and 19.",
-        "Note that because we're rounding down, it's impossible to actually get 20.",
+        "It's great that we can generate random decimal numbers, but it's even more useful if we use it to generate random whole numbers.<ol><li>Use <code>Math.random()</code> to generate a random decimal.</li><li>Multiply that random decimal by <code>20</code>.</li><li>Use another function, <code>Math.floor()</code> to round the number down to its nearest whole number.</li></ol>Remember that <code>Math.random()</code> can never quite return a <code>1</code> and, because we're rounding down, it's impossible to actually get <code>20</code>.  This technique will gives us a whole number between <code>0</code> and <code>19</code>.",
         "Putting everything together, this is what our code looks like:",
         "<code>Math.floor(Math.random() * 20);</code>",
         "See how <code>Math.floor</code> takes <code>(Math.random() * 20)</code> as its argument? That's right - you can pass a function to another function as an argument.",
-        "Let's use this technique to generate and return a random whole number between 0 and 9."
-      ],
-      "tests": [
-        "assert(typeof(myFunction()) === \"number\" && (function(){var r = myFunction();return Math.floor(r) === r;})(), 'message: The result of <code>myFunction</code> should be a whole number.');",
-        "assert(code.match(/Math.random/g).length > 1, 'message: You should be using <code>Math.random</code> to generate a random number.');",
-        "assert(code.match(/\\(\\s*?Math.random\\s*?\\(\\s*?\\)\\s*?\\*\\s*?10\\s*?\\)/g) || code.match(/\\(\\s*?10\\s*?\\*\\s*?Math.random\\s*?\\(\\s*?\\)\\s*?\\)/g), 'message: You should have multiplied the result of <code>Math.random</code> by 10 to make it a number that is between zero and nine.');",
-        "assert(code.match(/Math.floor/g).length > 1, 'message: You should use <code>Math.floor</code> to remove the decimal part of the number.');"
+        "<h4>Instructions</h4>",
+        "Use this technique to generate and return a random whole number between <code>0</code> and <code>9</code>."
       ],
       "challengeSeed": [
         "var randomNumberBetween0and19 = Math.floor(Math.random() * 20);",
@@ -4195,6 +4231,15 @@
       "tail": [
         "(function(){return myFunction();})();"
       ],
+      "solutions": [
+        "var randomNumberBetween0and19 = Math.floor(Math.random() * 20);\n\nfunction myFunction() {\n  return Math.floor(Math.random() * 10);\n}"
+      ],
+      "tests": [
+        "assert(typeof(myFunction()) === \"number\" && (function(){var r = myFunction();return Math.floor(r) === r;})(), 'message: The result of <code>myFunction</code> should be a whole number.');",
+        "assert(code.match(/Math.random/g).length > 1, 'message: You should be using <code>Math.random</code> to generate a random number.');",
+        "assert(code.match(/\\(\\s*?Math.random\\s*?\\(\\s*?\\)\\s*?\\*\\s*?10\\s*?\\)/g) || code.match(/\\(\\s*?10\\s*?\\*\\s*?Math.random\\s*?\\(\\s*?\\)\\s*?\\)/g), 'message: You should have multiplied the result of <code>Math.random</code> by 10 to make it a number that is between zero and nine.');",
+        "assert(code.match(/Math.floor/g).length > 1, 'message: You should use <code>Math.floor</code> to remove the decimal part of the number.');"
+      ],
       "type": "waypoint",
       "challengeType": "1"
     },
@@ -4206,40 +4251,53 @@
         "To do this, we'll define a minimum number <code>min</code> and a maximum number <code>max</code>.",
         "Here's the formula we'll use. Take a moment to read it and try to understand what this code is doing:",
         "<code>Math.floor(Math.random() * (max - min + 1)) + min</code>",
-        "Define two variables: <code>myMin</code> and <code>myMax</code>, and set them both equal to numbers.",
-        "Then create a function called <code>myFunction</code> that returns a random number that's greater than or equal to <code>myMin</code>, and is less than or equal to <code>myMax</code>."
-      ],
-      "tests": [
-        "assert(myFunction() >= myMin, 'message: The random number generated by <code>myFunction</code> should be greater than or equal to your minimum number, <code>myMin</code>.');",
-        "assert(myFunction() <= myMax, 'message: The random number generated by <code>myFunction</code> should be less than or equal to your maximum number, <code>myMax</code>.');",
-        "assert(myFunction() % 1 === 0 , 'message: The random number generated by <code>myFunction</code> should be an integer, not a decimal.');",
-        "assert((function(){if(code.match(/myMax/g).length > 1 && code.match(/myMin/g).length > 2 && code.match(/Math.floor/g) && code.match(/Math.random/g)){return true;}else{return false;}})(), 'message: <code>myFunction()</code> should use use both <code>myMax</code> and <code>myMin</code>, and return a random number in your range.');"
+        "<h4>Instructions</h4>",
+        "Create a function called <code>randomRange</code> that takes a range <code>myMin</code> and <code>myMax</code> and returns a random number that's greater than or equal to <code>myMin</code>, and is less than or equal to <code>myMax</code>, inclusive."
       ],
       "challengeSeed": [
-        "var ourMin = 1;",
-        "",
-        "var ourMax = 9;",
-        "",
-        "function ourFunction() {",
+        "// Example",
+        "function ourFunction(ourMin, ourMax) {",
         "",
         "  return Math.floor(Math.random() * (ourMax - ourMin + 1)) + ourMin;",
-        "",
         "}",
+        "",
+        "ourFunction(1, 9);",
         "",
         "// Only change code below this line.",
         "",
-        "var myMin;",
+        "function randomRange(myMin, myMax) {",
         "",
-        "var myMax;",
+        "  return 0; // Change this line",
         "",
-        "function myFunction() {",
+        "}",
         "",
-        "  return;",
-        "",
-        "}"
+        "// Change these values to test your function",
+        "var myRandom = randomRange(5, 15);"
       ],
       "tail": [
-        "(function(){return myFunction();})();"
+        "var calcMin = 100;",
+        "var calcMax = -100;",
+        "for(var i = 0; i < 100; i++) {",
+        "  var result = randomRange(5,15);",
+        "  calcMin = Math.min(calcMin, result);",
+        "  calcMax = Math.max(calcMax, result);",
+        "}",
+        "(function(){",
+        "  if(typeof myRandom === 'number') {",
+        "    return \"myRandom = \" + myRandom;",
+        "  } else {",
+        "    return \"myRandom undefined\";",
+        "  }",
+        "})();"
+      ],
+      "solutions": [
+        "function randomRange(myMin, myMax) {\n  return Math.floor(Math.random() * (myMax - myMin + 1)) + myMin;\n}"
+      ],
+      "tests": [
+        "assert(calcMin === 5, 'message: The random number generated by <code>myFunction</code> should be greater than or equal to your minimum number, <code>myMin</code>.');",
+        "assert(calcMax === 15, 'message: The random number generated by <code>myFunction</code> should be less than or equal to your maximum number, <code>myMax</code>.');",
+        "assert(randomRange(0,1) % 1 === 0 , 'message: The random number generated by <code>myFunction</code> should be an integer, not a decimal.');",
+        "assert((function(){if(code.match(/myMax/g).length > 1 && code.match(/myMin/g).length > 2 && code.match(/Math.floor/g) && code.match(/Math.random/g)){return true;}else{return false;}})(), 'message: <code>myFunction()</code> should use use both <code>myMax</code> and <code>myMin</code>, and return a random number in your range.');"
       ],
       "type": "waypoint",
       "challengeType": "1"
@@ -4251,37 +4309,46 @@
         "<code>Regular expressions</code> are used to find certain words or patterns inside of <code>strings</code>.",
         "For example, if we wanted to find the word <code>the</code> in the string <code>The dog chased the cat</code>, we could use the following <code>regular expression</code>: <code>/the/gi</code>",
         "Let's break this down a bit:",
+        "<code>/</code> is the start of the regular expression.",
         "<code>the</code> is the pattern we want to match.",
-        "<code>g</code> means that we want to search the entire string for this pattern instead of just the first match.",
+        "<code>/</code> is the end of the regular expression.",
+        "<code>g</code> means <code>global</code>, which causes the pattern to return all matches in the string, not just the first one.",
         "<code>i</code> means that we want to ignore the case (uppercase or lowercase) when searching for the pattern.",
-        "<code>Regular expressions</code> are written by surrounding the pattern with <code>/</code> symbols.",
-        "Let's try selecting all the occurrences of the word <code>and</code> in the string <code>Ada Lovelace and Charles Babbage designed the first computer and the software that would have run on it</code>.",
-        "We can do this by replacing the <code>.</code> part of our regular expression with the word <code>and</code>."
-      ],
-      "tests": [
-        "assert(test==2, 'message: Your <code>regular expression</code> should find two occurrences of the word <code>and</code>.');",
-        "assert(code.match(/\\/and\\/gi/), 'message: Use <code>regular expressions</code> to find the word <code>and</code> in <code>testString</code>.');"
+        "<h4>Instructions</h4>",
+        "Select all the occurrences of the word <code>and</code> in <code>testString</code>.",
+        "You can do this by replacing the <code>.</code> part of the regular expression with the word <code>and</code>."
       ],
       "head": [
         ""
       ],
       "challengeSeed": [
         "// Setup",
-        "var test = (function() {",
-        "  // Example",
-        "  var testString = \"Ada Lovelace and Charles Babbage designed the first computer and the software that would have run on it.\";",
-        "  var expressionToGetSoftware = /software/gi;",
+        "var testString = \"Ada Lovelace and Charles Babbage designed the first computer and the software that would have run on it.\";",
         "",
-        "  // Only change code below this line.",
+        "// Example",
+        "var expressionToGetSoftware = /software/gi;",
+        "var softwareCount = testString.match(expressionToGetSoftware).length;",
+        "  ",
         "",
-        "  var expression = /./gi;",
+        "// Only change code below this line.",
         "",
-        "  // Only change code above this line",
-        "  return testString.match(expression).length;",
-        "})();(function(){return test;})();"
+        "var expression = /./gi;  // Change this Line",
+        "",
+        "// Only change code above this line",
+        "",
+        "// This code counts the matches of expression in testString",
+        "var andCount = testString.match(expression).length;",
+        ""
       ],
       "tail": [
-        ""
+        "(function(){return andCount;})();"
+      ],
+      "solutions": [
+        "var testString = \"Ada Lovelace and Charles Babbage designed the first computer and the software that would have run on it.\";\nvar expression = /and/gi;  // Change this Line\nvar andCount = testString.match(expression).length;"
+      ],
+      "tests": [
+        "assert(andCount==2, 'message: Your <code>regular expression</code> should find two occurrences of the word <code>and</code>.');",
+        "assert(code.match(/\\/and\\/gi/), 'message: Use <code>regular expressions</code> to find the word <code>and</code> in <code>testString</code>.');"
       ],
       "type": "waypoint",
       "challengeType": "1"
@@ -4293,29 +4360,35 @@
         "We can use special selectors in <code>Regular Expressions</code> to select a particular type of value.",
         "One such selector is the digit selector <code>\\d</code> which is used to retrieve the numbers in a string.",
         "It is used like this: <code>/\\d/g</code>.",
-        "For numbers this is often written as <code>/\\d+/g</code>, where the <code>+</code> following the digit selector allows this regular expression to match multi-digit numbers.",
-        "Use the <code>\\d</code> selector to select the number of numbers in the string, allowing for the possibility of multi-digit numbers."
-      ],
-      "tests": [
-        "assert(code.match(/\\/\\\\d\\+\\//g), 'message: Use the <code>/\\d+/g</code> regular expression to find the numbers in <code>testString</code>.');",
-        "assert(test === 2, 'message: Your regular expression should find two numbers in <code>testString</code>.');"
+        "For numbers this is often written as <code>/\\d+/g</code>, where the <code>+</code> following the digit selector allows this regular expression to match one or more numbers.",
+        "<h4>Instructions</h4>",
+        "Use the <code>\\d</code> selector to select the number of numbers in the string, allowing for the possibility of one or more digit."
       ],
       "head": [
-        "var test = (function() {"
-      ],
-      "challengeSeed": [
-        "var test = (function() {",
-        "",
-        "  var testString = \"There are 3 cats but 4 dogs.\";",
-        "",
-        "  // Only change code below this line.",
-        "",
-        "  var expression = /.+/g;",
         ""
       ],
+      "challengeSeed": [
+        "// Setup",
+        "var testString = \"There are 3 cats but 4 dogs.\";",
+        "",
+        "// Only change code below this line.",
+        "",
+        "var expression = /.+/g;  // Change this line",
+        "",
+        "// Only change code above this line",
+        "",
+        "// This code counts the matches of expression in testString",
+        "var digitCount = testString.match(expression).length;"
+      ],
       "tail": [
-        "  return testString.match(expression).length;",
-        "})();(function(){return test;})();"
+        "(function(){return digitCount;})();"
+      ],
+      "solutions": [
+        "var testString = \"There are 3 cats but 4 dogs.\";\nvar expression = /\\d+/g;  // Change this line\nvar digitCount = testString.match(expression).length;"
+      ],
+      "tests": [
+        "assert(digitCount === 2, 'message: Your regular expression should find two numbers in <code>testString</code>.');",
+        "assert(code.match(/\\/\\\\d\\+\\//g), 'message: Use the <code>/\\d+/g</code> regular expression to find the numbers in <code>testString</code>.');"
       ],
       "type": "waypoint",
       "challengeType": "1"
@@ -4328,27 +4401,34 @@
         "The whitespace characters are <code>\" \"</code> (space), <code>\\r</code> (the carriage return), <code>\\n</code> (newline), <code>\\t</code> (tab), and <code>\\f</code> (the form feed).",
         "The whitespace regular expression looks like this:",
         "<code>/\\s+/g</code>",
-        "Use it to select all the whitespace characters in the sentence string."
-      ],
-      "tests": [
-        "assert(code.match(/\\/\\\\s\\+\\//g), 'message: Use the <code>/\\s+/g</code> regular expression to find the spaces in <code>testString</code>.');",
-        "assert(test === 7, 'message: Your regular expression should find seven spaces in <code>testString</code>.');"
+        "<h4>Instructions</h4>",
+        "Use <code>\\s</code> to select all the whitespace characters in the sentence string."
       ],
       "head": [
-        "var test = (function() {"
-      ],
-      "challengeSeed": [
-        "  var testString = \"How many spaces are there in this sentence?\";",
-        "",
-        "  // Only change code below this line.",
-        "",
-        "  var expression = /.+/g;",
         ""
       ],
-      "tail": [
-        "  return testString.match(expression).length;",
+      "challengeSeed": [
+        "// Setup",
+        "var testString = \"How many spaces are there in this sentence?\";",
         "",
-        "})();(function(){return test;})();"
+        "// Only change code below this line.",
+        "",
+        "var expression = /.+/g;  // Change this line",
+        "",
+        "// Only change code above this line",
+        "",
+        "// This code counts the matches of expression in testString",
+        "var spaceCount = testString.match(expression).length;"
+      ],
+      "tail": [
+        "(function(){return spaceCount;})();"
+      ],
+      "solutions": [
+        "var testString = \"How many spaces are there in this sentence?\";\nvar expression = /\\s+/g;  // Change this line\nvar spaceCount = testString.match(expression).length;"
+      ],
+      "tests": [
+        "assert(spaceCount === 7, 'message: Your regular expression should find seven spaces in <code>testString</code>.');",
+        "assert(code.match(/\\/\\\\s\\+\\//g), 'message: Use the <code>/\\s+/g</code> regular expression to find the spaces in <code>testString</code>.');"
       ],
       "type": "waypoint",
       "challengeType": "1"
@@ -4359,26 +4439,34 @@
       "description": [
         "You can invert any match by using the uppercase version of the regular expression selector.",
         "For example, <code>\\s</code> will match any whitespace, and <code>\\S</code> will match anything that isn't whitespace.",
+        "<h4>Instructions</h4>",
         "Use <code>/\\S/g</code> to count the number of non-whitespace characters in <code>testString</code>."
       ],
-      "tests": [
-        "assert(code.match(/\\/\\\\S\\/g/g), 'message: Use the <code>/\\S/g</code> regular expression to find non-space characters in <code>testString</code>.');",
-        "assert(test === 49, 'message: Your regular expression should find forty nine non-space characters in the <code>testString</code>.');"
-      ],
       "head": [
-        "var test = (function() {"
-      ],
-      "challengeSeed": [
-        "  var testString = \"How many non-space characters are there in this sentence?\";",
-        "",
-        "  // Only change code below this line.",
-        "",
-        "  var expression = /./g;",
         ""
       ],
+      "challengeSeed": [
+        "// Setup",
+        "var testString = \"How many non-space characters are there in this sentence?\";",
+        "",
+        "// Only change code below this line.",
+        "",
+        "var expression = /.+/g;  // Change this line",
+        "",
+        "// Only change code above this line",
+        "",
+        "// This code counts the matches of expression in testString",
+        "var nonSpaceCount = testString.match(expression).length;"
+      ],
       "tail": [
-        "  return testString.match(expression).length;",
-        "})();(function(){return test;})();"
+        "(function(){return nonSpaceCount;})();"
+      ],
+      "solutions": [
+        "var testString = \"How many non-space characters are there in this sentence?\";\nvar expression = /\\S/g;  \nvar nonSpaceCount = testString.match(expression).length;"
+      ],
+      "tests": [
+        "assert(nonSpaceCount === 49, 'message: Your regular expression should find forty nine non-space characters in the <code>testString</code>.');",
+        "assert(code.match(/\\/\\\\S\\/g/g), 'message: Use the <code>/\\S/g</code> regular expression to find non-space characters in <code>testString</code>.');"
       ],
       "type": "waypoint",
       "challengeType": "1"
@@ -4386,19 +4474,12 @@
     {
       "id": "cf1111c1c12feddfaeb9bdef",
       "title": "Create a JavaScript Slot Machine",
-      "isBeta": "true",
       "description": [
         "We are now going to try and combine some of the stuff we've just learned and create the logic for a slot machine game.",
         "For this we will need to generate three random numbers between <code>1</code> and <code>3</code> to represent the possible values of each individual slot.",
         "Store the three random numbers in <code>slotOne</code>, <code>slotTwo</code> and <code>slotThree</code>.",
         "Generate the random numbers by using the system we used earlier (an explanation of the formula can be found <a href=\"https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/Waypoint-Generate-Random-Whole-Numbers-within-a-Range#explanation\">here</a>):",
         "<code>Math.floor(Math.random() * (3 - 1 + 1)) + 1;</code>"
-      ],
-      "tests": [
-        "assert(typeof(runSlots($(\".slot\"))[0]) === \"number\" && runSlots($(\".slot\"))[0] > 0 && runSlots($(\".slot\"))[0] < 4, '<code>slotOne</code> should be a random number.')",
-        "assert(typeof(runSlots($(\".slot\"))[1]) === \"number\" && runSlots($(\".slot\"))[1] > 0 && runSlots($(\".slot\"))[1] < 4, '<code>slotTwo</code> should be a random number.')",
-        "assert(typeof(runSlots($(\".slot\"))[2]) === \"number\" && runSlots($(\".slot\"))[2] > 0 && runSlots($(\".slot\"))[2] < 4, '<code>slotThree</code> should be a random number.')",
-        "assert((function(){if(editor.match(/Math\\.floor\\(\\s?Math\\.random\\(\\)\\s?\\*\\s?\\(\\s?3\\s?\\-\\s?1\\s?\\+\\s?1\\s?\\)\\s?\\)\\s?\\+\\s?1/gi) !== null){return editor.match(/slot.*?=.*?\\(.*?\\).*?/gi).length >= 3;}else{return false;}})(), 'You should have used <code>Math.floor(Math.random() * (3 - 1 + 1)) + 1;</code> three times to generate your random numbers.')"
       ],
       "challengeSeed": [
         "fccss",
@@ -4535,13 +4616,22 @@
         " }",
         "</style>"
       ],
+      "solutions": [
+        ""
+      ],
+      "tests": [
+        "assert(typeof(runSlots($(\".slot\"))[0]) === \"number\" && runSlots($(\".slot\"))[0] > 0 && runSlots($(\".slot\"))[0] < 4, '<code>slotOne</code> should be a random number.')",
+        "assert(typeof(runSlots($(\".slot\"))[1]) === \"number\" && runSlots($(\".slot\"))[1] > 0 && runSlots($(\".slot\"))[1] < 4, '<code>slotTwo</code> should be a random number.')",
+        "assert(typeof(runSlots($(\".slot\"))[2]) === \"number\" && runSlots($(\".slot\"))[2] > 0 && runSlots($(\".slot\"))[2] < 4, '<code>slotThree</code> should be a random number.')",
+        "assert((function(){if(editor.match(/Math\\.floor\\(\\s?Math\\.random\\(\\)\\s?\\*\\s?\\(\\s?3\\s?\\-\\s?1\\s?\\+\\s?1\\s?\\)\\s?\\)\\s?\\+\\s?1/gi) !== null){return editor.match(/slot.*?=.*?\\(.*?\\).*?/gi).length >= 3;}else{return false;}})(), 'You should have used <code>Math.floor(Math.random() * (3 - 1 + 1)) + 1;</code> three times to generate your random numbers.')"
+      ],
       "type": "waypoint",
-      "challengeType": "0"
+      "challengeType": "0",
+      "isBeta": "true"
     },
     {
       "id": "cf1111c1c13feddfaeb1bdef",
       "title": "Add your JavaScript Slot Machine Slots",
-      "isBeta": "true",
       "description": [
         "Now that our slots will each generate random numbers, we need to check whether they've all returned the same number.",
         "If they have, we should notify our user that they've won and we should return <code>null</code>.",
@@ -4552,9 +4642,6 @@
         "<code>}</code>",
         "Also, we need to show the user that he has won the game when he gets the same number in all the slots.",
         "If all three numbers match, we should also set the text <code>\"It's A Win\"</code> to the element with class <code>logger</code>."
-      ],
-      "tests": [
-        "assert((function(){var data = runSlots();return data === null || data.toString().length === 1;})(), 'If all three of our random numbers are the same we should return that number. Otherwise we should return <code>null</code>.')"
       ],
       "challengeSeed": [
         "fccss",
@@ -4695,13 +4782,19 @@
         " }",
         "</style>"
       ],
+      "solutions": [
+        ""
+      ],
+      "tests": [
+        "assert((function(){var data = runSlots();return data === null || data.toString().length === 1;})(), 'If all three of our random numbers are the same we should return that number. Otherwise we should return <code>null</code>.')"
+      ],
       "type": "waypoint",
-      "challengeType": "0"
+      "challengeType": "0",
+      "isBeta": "true"
     },
     {
       "id": "cf1111c1c13feddfaeb2bdef",
       "title": "Bring your JavaScript Slot Machine to Life",
-      "isBeta": "true",
       "description": [
         "Now we can detect a win. Let's get this slot machine working.",
         "Let's use the jQuery <code>selector</code> <code>$(\".slot\")</code> to select all of the slots.",
@@ -4709,10 +4802,6 @@
         "<code>$($(\".slot\")[0]).html(slotOne);</code>",
         "This jQuery will select the first slot and update it's HTML to display the correct number.",
         "Use the above selector to display each number in its corresponding slot."
-      ],
-      "tests": [
-        "assert((function(){runSlots();if($($(\".slot\")[0]).html().replace(/\\s/gi, \"\") !== \"\" && $($(\".slot\")[1]).html().replace(/\\s/gi, \"\") !== \"\" && $($(\".slot\")[2]).html().replace(/\\s/gi, \"\") !== \"\"){return true;}else{return false;}})(), 'You should be displaying the result of the slot numbers in the corresponding slots.')",
-        "assert((editor.match( /\\$\\s*?\\(\\s*?\\$\\s*?\\(\\s*?(?:'|\")\\s*?\\.slot\\s*?(?:'|\")\\s*?\\)\\[\\d\\]\\s*?\\)/gi) && editor.match( /\\$\\s*?\\(\\s*?\\$\\s*?\\(\\s*?(?:'|\")\\s*?\\.slot\\s*?(?:'|\")\\s*?\\)\\[\\d\\]\\s*?\\)/gi ).length >= 3 && editor.match( /\\.html\\(slotOne\\)/gi ) && editor.match( /\\.html\\(slotTwo\\)/gi ) && editor.match( /\\.html\\(slotThree\\)/gi )), 'You should have used the the selector given in the description to select each slot and assign it the value of <code>slotOne</code>&#44; <code>slotTwo</code> and <code>slotThree</code> respectively.')"
       ],
       "challengeSeed": [
         "fccss",
@@ -4861,28 +4950,26 @@
         " }",
         "</style>"
       ],
+      "solutions": [
+        ""
+      ],
+      "tests": [
+        "assert((function(){runSlots();if($($(\".slot\")[0]).html().replace(/\\s/gi, \"\") !== \"\" && $($(\".slot\")[1]).html().replace(/\\s/gi, \"\") !== \"\" && $($(\".slot\")[2]).html().replace(/\\s/gi, \"\") !== \"\"){return true;}else{return false;}})(), 'You should be displaying the result of the slot numbers in the corresponding slots.')",
+        "assert((editor.match( /\\$\\s*?\\(\\s*?\\$\\s*?\\(\\s*?(?:'|\")\\s*?\\.slot\\s*?(?:'|\")\\s*?\\)\\[\\d\\]\\s*?\\)/gi) && editor.match( /\\$\\s*?\\(\\s*?\\$\\s*?\\(\\s*?(?:'|\")\\s*?\\.slot\\s*?(?:'|\")\\s*?\\)\\[\\d\\]\\s*?\\)/gi ).length >= 3 && editor.match( /\\.html\\(slotOne\\)/gi ) && editor.match( /\\.html\\(slotTwo\\)/gi ) && editor.match( /\\.html\\(slotThree\\)/gi )), 'You should have used the the selector given in the description to select each slot and assign it the value of <code>slotOne</code>&#44; <code>slotTwo</code> and <code>slotThree</code> respectively.')"
+      ],
       "type": "waypoint",
-      "challengeType": "0"
+      "challengeType": "0",
+      "isBeta": "true"
     },
     {
       "id": "cf1111c1c11feddfaeb1bdff",
       "title": "Give your JavaScript Slot Machine some Stylish Images",
-      "isBeta": "true",
       "description": [
         "Now let's add some images to our slots.",
         "We've already set up the images for you in an array called <code>images</code>. We can use different indexes to grab each of these.",
         "Here's how we would set the first slot to show a different image depending on which number its random number generates:",
         "<code>$($('.slot')[0]).html('&lt;img src = \"' + images[slotOne-1] + '\"&gt;');</code>",
         "Set up all three slots like this, then click the \"Go\" button to play the slot machine."
-      ],
-      "tests": [
-        "assert((editor.match(/\\$\\s*?\\(\\s*?\\$\\s*?\\(\\s*?(?:'|\")\\s*?\\.slot\\s*?(?:'|\")\\s*?\\)\\[\\d\\]\\s*?\\)\\.html\\(\\s*?\\'\\<img\\s?src\\s?=\\s?\"\\'\\s?\\+\\s?images\\[\\w+\\s*\\-\\s*1\\]\\s?\\+\\s?\\'\"\\>\\'\\s*?\\);/gi) && editor.match(/\\$\\s*?\\(\\s*?\\$\\s*?\\(\\s*?(?:'|\")\\s*?\\.slot\\s*?(?:'|\")\\s*?\\)\\[\\d\\]\\s*?\\)\\.html\\(\\s*?\\'\\<img\\s?src\\s?=\\s?\"\\'\\s?\\+\\s?images\\[\\w+\\s*\\-\\s*1\\]\\s?\\+\\s?\\'\"\\>\\'\\s*?\\);/gi).length >= 3), 'Use the provided code three times. One for each slot.')",
-        "assert(editor.match(/\\$\\s*?\\(\\s*?\\$\\s*?\\(\\s*?(?:'|\")\\s*?\\.slot\\s*?(?:'|\")\\s*?\\)\\[0\\]\\s*?\\)/gi), 'You should have used <code>$&#40;&#39;.slot&#39;&#41;[0]</code> at least once.')",
-        "assert(editor.match(/\\$\\s*?\\(\\s*?\\$\\s*?\\(\\s*?(?:'|\")\\s*?\\.slot\\s*?(?:'|\")\\s*?\\)\\[1\\]\\s*?\\)/gi), 'You should have used <code>$&#40;&#39;.slot&#39;&#41;[1]</code> at least once.')",
-        "assert(editor.match(/\\$\\s*?\\(\\s*?\\$\\s*?\\(\\s*?(?:'|\")\\s*?\\.slot\\s*?(?:'|\")\\s*?\\)\\[2\\]\\s*?\\)/gi), 'You should have used <code>$&#40;&#39;.slot&#39;&#41;[2]</code> at least once.')",
-        "assert(editor.match(/slotOne/gi) && editor.match(/slotOne/gi).length >= 7, 'You should have used the <code>slotOne</code> value at least once.')",
-        "assert(editor.match(/slotTwo/gi) && editor.match(/slotTwo/gi).length >= 8, 'You should have used the <code>slotTwo</code> value at least once.')",
-        "assert(editor.match(/slotThree/gi) && editor.match(/slotThree/gi).length >= 7, 'You should have used the <code>slotThree</code> value at least once.')"
       ],
       "challengeSeed": [
         "fccss",
@@ -5035,8 +5122,21 @@
         " }",
         "</style>"
       ],
+      "solutions": [
+        ""
+      ],
+      "tests": [
+        "assert((editor.match(/\\$\\s*?\\(\\s*?\\$\\s*?\\(\\s*?(?:'|\")\\s*?\\.slot\\s*?(?:'|\")\\s*?\\)\\[\\d\\]\\s*?\\)\\.html\\(\\s*?\\'\\<img\\s?src\\s?=\\s?\"\\'\\s?\\+\\s?images\\[\\w+\\s*\\-\\s*1\\]\\s?\\+\\s?\\'\"\\>\\'\\s*?\\);/gi) && editor.match(/\\$\\s*?\\(\\s*?\\$\\s*?\\(\\s*?(?:'|\")\\s*?\\.slot\\s*?(?:'|\")\\s*?\\)\\[\\d\\]\\s*?\\)\\.html\\(\\s*?\\'\\<img\\s?src\\s?=\\s?\"\\'\\s?\\+\\s?images\\[\\w+\\s*\\-\\s*1\\]\\s?\\+\\s?\\'\"\\>\\'\\s*?\\);/gi).length >= 3), 'Use the provided code three times. One for each slot.')",
+        "assert(editor.match(/\\$\\s*?\\(\\s*?\\$\\s*?\\(\\s*?(?:'|\")\\s*?\\.slot\\s*?(?:'|\")\\s*?\\)\\[0\\]\\s*?\\)/gi), 'You should have used <code>$&#40;&#39;.slot&#39;&#41;[0]</code> at least once.')",
+        "assert(editor.match(/\\$\\s*?\\(\\s*?\\$\\s*?\\(\\s*?(?:'|\")\\s*?\\.slot\\s*?(?:'|\")\\s*?\\)\\[1\\]\\s*?\\)/gi), 'You should have used <code>$&#40;&#39;.slot&#39;&#41;[1]</code> at least once.')",
+        "assert(editor.match(/\\$\\s*?\\(\\s*?\\$\\s*?\\(\\s*?(?:'|\")\\s*?\\.slot\\s*?(?:'|\")\\s*?\\)\\[2\\]\\s*?\\)/gi), 'You should have used <code>$&#40;&#39;.slot&#39;&#41;[2]</code> at least once.')",
+        "assert(editor.match(/slotOne/gi) && editor.match(/slotOne/gi).length >= 7, 'You should have used the <code>slotOne</code> value at least once.')",
+        "assert(editor.match(/slotTwo/gi) && editor.match(/slotTwo/gi).length >= 8, 'You should have used the <code>slotTwo</code> value at least once.')",
+        "assert(editor.match(/slotThree/gi) && editor.match(/slotThree/gi).length >= 7, 'You should have used the <code>slotThree</code> value at least once.')"
+      ],
       "type": "waypoint",
-      "challengeType": "0"
+      "challengeType": "0",
+      "isBeta": "true"
     }
   ]
 }
