@@ -120,10 +120,7 @@
         "(function(a,b){return \"a = \" + a + \", b = \" + b;})(a,b);"
       ],
       "solutions": [
-        "var a;",
-        "var b = 2;",
-        "a = 7;",
-        "b = a;"
+        "var a;\nvar b = 2;\na = 7;\nb = a;"
       ],
       "type": "waypoint",
       "challengeType": "1",
@@ -202,12 +199,7 @@
         "(function(a,b,c){ return \"a = \" + a + \", b = \" + b + \", c = '\" + c + \"'\"; })(a,b,c);"
       ],
       "solutions": [
-        "var a = 5;",
-        "var b = 10;",
-        "var c = \"I am a\";",
-        "a = a + 1;",
-        "b = b + 5;",
-        "c = c + \" String!\";"
+        "var a = 5;\nvar b = 10;\nvar c = \"I am a\";\na = a + 1;\nb = b + 5;\nc = c + \" String!\";"
       ],
       "type": "waypoint",
       "challengeType": "1",
@@ -250,13 +242,7 @@
         ""
       ],
       "solutions": [
-        "var StUdLyCapVaR;",
-        "var properCamelCase;",
-        "var TitleCase;",
-        "",
-        "StUdLyCapVaR = 10;",
-        "properCamelCase = \"A String\";",
-        "TitleCaseOver = \"9000\";"
+        "var StUdLyCapVaR;\nvar properCamelCase;\nvar TitleCase;\n\nStUdLyCapVaR = 10;\nproperCamelCase = \"A String\";\nTitleCaseOver = \"9000\";"
       ],
       "type": "waypoint",
       "challengeType": "1",
@@ -412,8 +398,7 @@
         "(function(z){return 'myVar = ' + z;})(myVar);"
       ],
       "solutions": [
-        "var myVar = 87;",
-        "myVar++;"
+        "var myVar = 87;\nmyVar++;"
       ],
       "type": "waypoint",
       "challengeType": "1",
@@ -451,8 +436,7 @@
         "(function(z){return 'myVar = ' + z;})(myVar);"
       ],
       "solutions": [
-        "var myVar = 87;",
-        "myVar--;"
+        "var myVar = 87;\nmyVar--;"
       ],
       "type": "waypoint",
       "challengeType": "1",
@@ -612,13 +596,7 @@
         "(function(a,b,c){ return \"a = \" + a + \", b = \" + b + \", c = '\" + c + \"'\"; })(a,b,c);"
       ],
       "solutions": [
-        "var a = 3;",
-        "var b = 17;",
-        "var c = 12;",
-        "",
-        "a += 12;",
-        "b += 9;",
-        "c += 7;"
+        "var a = 3;\nvar b = 17;\nvar c = 12;\n\na += 12;\nb += 9;\nc += 7;"
       ],
       "type": "waypoint",
       "challengeType": "1",
@@ -664,15 +642,7 @@
         "(function(a,b,c){ return \"a = \" + a + \", b = \" + b + \", c = '\" + c + \"'\"; })(a,b,c);"
       ],
       "solutions": [
-        "var a = 11;",
-        "var b = 9;",
-        "var c = 3;",
-        "",
-        "a -= 6;",
-        "b -= 15;",
-        "c -= 1;",
-        "",
-        ""
+        "var a = 11;\nvar b = 9;\nvar c = 3;\n\na -= 6;\nb -= 15;\nc -= 1;\n\n"
       ],
       "type": "waypoint",
       "challengeType": "1",
@@ -718,13 +688,7 @@
         "(function(a,b,c){ return \"a = \" + a + \", b = \" + b + \", c = '\" + c + \"'\"; })(a,b,c);"
       ],
       "solutions": [
-        "var a = 20;",
-        "var b = 12;",
-        "var c = 96;",
-        "",
-        "a *= 5;",
-        "b *= 3;",
-        "c *= 10;"
+        "var a = 20;\nvar b = 12;\nvar c = 96;\n\na *= 5;\nb *= 3;\nc *= 10;"
       ],
       "type": "waypoint",
       "challengeType": "1",
@@ -769,13 +733,7 @@
         "(function(a,b,c){ return \"a = \" + a + \", b = \" + b + \", c = \" + c; })(a,b,c);"
       ],
       "solutions": [
-        "var a = 48;",
-        "var b = 108;",
-        "var c = 33;",
-        "",
-        "a /= 12;",
-        "b /= 4;",
-        "c /= 11;"
+        "var a = 48;\nvar b = 108;\nvar c = 33;\n\na /= 12;\nb /= 4;\nc /= 11;"
       ],
       "type": "waypoint",
       "challengeType": "1",
@@ -819,14 +777,7 @@
         "convert(30);"
       ],
       "solutions": [
-        "function convert(Tc) {",
-        "  var Tf = Tc * 9/5 + 32;",
-        "  if(typeof Tf !== 'undefined') {",
-        "\treturn Tf;",
-        "  } else {",
-        "    return \"Tf not defined\";",
-        "  }",
-        "}"
+        "function convert(Tc) {\n  var Tf = Tc * 9/5 + 32;\n  if(typeof Tf !== 'undefined') {\n\treturn Tf;\n  } else {\n    return \"Tf not defined\";\n  }\n}"
       ],
       "type": "bonfire",
       "challengeType": "5",
@@ -864,8 +815,7 @@
         "if(typeof(myFirstName) !== \"undefined\" && typeof(myLastName) !== \"undefined\"){(function(){return myFirstName + ', ' + myLastName;})();}"
       ],
       "solutions": [
-        "var myFirstName = \"Alan\";",
-        "var myLastName = \"Turing\";"
+        "var myFirstName = \"Alan\";\nvar myLastName = \"Turing\";"
       ],
       "type": "waypoint",
       "challengeType": "1"
@@ -1029,8 +979,7 @@
         ""
       ],
       "solutions": [
-        "var myStr = \"This is the first sentance. \";",
-        "myStr += \"This is the second sentance.\";"
+        "var myStr = \"This is the first sentance. \";\nmyStr += \"This is the second sentance.\";"
       ],
       "type": "waypoint",
       "challengeType": "1",
@@ -1065,8 +1014,7 @@
         ""
       ],
       "solutions": [
-        "var myName = \"Bob\";",
-        "var myStr = \"My name is \" + myName + \" and I am swell!\";"
+        "var myName = \"Bob\";\nvar myStr = \"My name is \" + myName + \" and I am swell!\";"
       ],
       "type": "waypoint",
       "challengeType": "1",
@@ -1102,13 +1050,7 @@
         ""
       ],
       "solutions": [
-        "var anAdjective = \"awesome!\";",
-        "var ourStr = \"Free Code Camp is \";",
-        "ourStr += anAdjective;",
-        "",
-        "var someAdjective = \"neat\";",
-        "var myStr = \"Learning to code is \";",
-        "myStr += someAdjective;"
+        "var anAdjective = \"awesome!\";\nvar ourStr = \"Free Code Camp is \";\nourStr += anAdjective;\n\nvar someAdjective = \"neat\";\nvar myStr = \"Learning to code is \";\nmyStr += someAdjective;"
       ],
       "type": "waypoint",
       "challengeType": "1",
@@ -1190,11 +1132,7 @@
         "(function(v){return v;})(firstLetterOfLastName);"
       ],
       "solutions": [
-        "var firstLetterOfLastName = \"\";",
-        "var lastName = \"Lovelace\";",
-        "",
-        "// Only change code below this line",
-        "firstLetterOfLastName = lastName.length"
+        "var firstLetterOfLastName = \"\";\nvar lastName = \"Lovelace\";\n\n// Only change code below this line\nfirstLetterOfLastName = lastName.length"
       ],
       "type": "waypoint",
       "challengeType": "1"
@@ -1230,8 +1168,7 @@
         ""
       ],
       "solutions": [
-        "var myStr = \"Jello World\";",
-        "myStr = \"Hello World\";"
+        "var myStr = \"Jello World\";\nmyStr = \"Hello World\";"
       ],
       "type": "waypoint",
       "challengeType": "1",
@@ -1272,8 +1209,7 @@
         "(function(v){return v;})(thirdLetterOfLastName);"
       ],
       "solutions": [
-        "var lastName = \"Lovelace\";",
-        "var thirdLetterOfLastName = lastName[2];"
+        "var lastName = \"Lovelace\";\nvar thirdLetterOfLastName = lastName[2];"
       ],
       "type": "waypoint",
       "challengeType": "1"
@@ -1310,8 +1246,7 @@
         "(function(v){return v;})(lastLetterOfLastName);"
       ],
       "solutions": [
-        "var lastName = \"Lovelace\";",
-        "var lastLetterOfLastName = lastName[lastName.length - 1];"
+        "var lastName = \"Lovelace\";\nvar lastLetterOfLastName = lastName[lastName.length - 1];"
       ],
       "type": "waypoint",
       "challengeType": "1"
@@ -1348,8 +1283,7 @@
         "(function(v){return v;})(secondToLastLetterOfLastName);"
       ],
       "solutions": [
-        "var lastName = \"Lovelace\";",
-        "var secondToLastLetterOfLastName = lastName[lastName.length - 2];"
+        "var lastName = \"Lovelace\";\nvar secondToLastLetterOfLastName = lastName[lastName.length - 2];"
       ],
       "type": "waypoint",
       "challengeType": "1"
@@ -1388,12 +1322,7 @@
         "var test2 = wordBlanks(\"cat\", \"little\", \"hit\", \"slowly\");"
       ],
       "solutions": [
-        "function wordBlanks(myNoun, myAdjective, myVerb, myAdverb) {",
-        "    var result = \"\";",
-        "    result = \"Once there was a \" + myNoun + \" which was very \" + myAdjective + \". \";",
-        "\tresult += \"It \" + myVerb + \" \" + myAdverb + \" around the yard.\";",
-        "\treturn result;",
-        "}"
+        "function wordBlanks(myNoun, myAdjective, myVerb, myAdverb) {\n    var result = \"\";\n    result = \"Once there was a \" + myNoun + \" which was very \" + myAdjective + \". \";\n\tresult += \"It \" + myVerb + \" \" + myAdverb + \" around the yard.\";\n\treturn result;\n}"
       ],
       "type": "bonfire",
       "challengeType": "5",
@@ -1493,8 +1422,7 @@
         "if(typeof(myArray) !== \"undefined\" && typeof(myData) !== \"undefined\"){(function(y,z){return 'myArray = ' + JSON.stringify(y) + ', myData = ' + JSON.stringify(z);})(myArray, myData);}"
       ],
       "solutions": [
-        "var myArray = [1,2,3];",
-        "var myData = myArray[0];"
+        "var myArray = [1,2,3];\nvar myData = myArray[0];"
       ],
       "type": "waypoint",
       "challengeType": "1"
@@ -1529,8 +1457,7 @@
         "if(typeof(myArray) !== \"undefined\"){(function(){return myArray;})();}"
       ],
       "solutions": [
-        "var myArray = [1,2,3];",
-        "myArray[0] = 3;"
+        "var myArray = [1,2,3];\nmyArray[0] = 3;"
       ],
       "type": "waypoint",
       "challengeType": "1"
@@ -1562,8 +1489,7 @@
         "if(typeof(myArray) !== \"undefined\"){(function(){return \"myData: \" + myData + \" myArray: \" + JSON.stringify(myArray);})();}"
       ],
       "solutions": [
-        "var myArray = [[1,2,3],[4,5,6], [7,8,9], [[10,11,12], 13, 14]];",
-        "var myData = myArray[2][1];"
+        "var myArray = [[1,2,3],[4,5,6], [7,8,9], [[10,11,12], 13, 14]];\nvar myData = myArray[2][1];"
       ],
       "type": "waypoint",
       "challengeType": "1"
@@ -1600,8 +1526,7 @@
         "(function(z){return 'myArray = ' + JSON.stringify(z);})(myArray);"
       ],
       "solutions": [
-        "var myArray = [[\"John\", 23], [\"cat\", 2]];",
-        "myArray.push([\"dog\",3]);"
+        "var myArray = [[\"John\", 23], [\"cat\", 2]];\nmyArray.push([\"dog\",3]);"
       ],
       "type": "waypoint",
       "challengeType": "1"
@@ -1675,10 +1600,7 @@
         "(function(y, z){return 'myArray = ' + JSON.stringify(y) + ' & removedFromMyArray = ' + JSON.stringify(z);})(myArray, removedFromMyArray);"
       ],
       "solutions": [
-        "var myArray = [\"John\", 23, [\"dog\", 3]];",
-        "",
-        "// Only change code below this line.",
-        "var removedFromMyArray = myArray.shift();"
+        "var myArray = [\"John\", 23, [\"dog\", 3]];\n\n// Only change code below this line.\nvar removedFromMyArray = myArray.shift();"
       ],
       "type": "waypoint",
       "challengeType": "1"
@@ -1714,9 +1636,7 @@
         "(function(y, z){return 'myArray = ' + JSON.stringify(y);})(myArray);"
       ],
       "solutions": [
-        "var myArray = [[\"John\", 23], [\"dog\", 3]];",
-        "myArray.shift();",
-        "myArray.unshift([\"Paul\", 35]);"
+        "var myArray = [[\"John\", 23], [\"dog\", 3]];\nmyArray.shift();\nmyArray.unshift([\"Paul\", 35]);"
       ],
       "type": "waypoint",
       "challengeType": "1"
@@ -1767,13 +1687,7 @@
         "})(myList);"
       ],
       "solutions": [
-        "var myList = [",
-        "  [\"Candy\", 10],",
-        "  [\"Potatoes\", 12],",
-        "  [\"Eggs\", 12],",
-        "  [\"Catfood\", 1],",
-        "  [\"Toads\", 9]",
-        "];"
+        "var myList = [\n  [\"Candy\", 10],\n  [\"Potatoes\", 12],\n  [\"Eggs\", 12],\n  [\"Catfood\", 1],\n  [\"Toads\", 9]\n];"
       ],
       "type": "bonfire",
       "challengeType": "5",
@@ -1837,10 +1751,7 @@
         "}"
       ],
       "solutions": [
-        "function myFunction() {",
-        "  console.log(\"Hi World\");",
-        "}",
-        "myFunction();"
+        "function myFunction() {\n  console.log(\"Hi World\");\n}\nmyFunction();"
       ],
       "type": "waypoint",
       "challengeType": "1"
@@ -2017,19 +1928,7 @@
         ""
       ],
       "solutions": [
-        "function myFunction() {",
-        "  var myVar;",
-        "  console.log(myVar);",
-        "}",
-        "myFunction();",
-        "",
-        "// run and check the console ",
-        "// myVar is not defined outside of myFunction",
-        "",
-        "",
-        "// now remove the console.log line to pass the test",
-        "",
-        ""
+        "function myFunction() {\n  var myVar;\n  console.log(myVar);\n}\nmyFunction();\n\n// run and check the console \n// myVar is not defined outside of myFunction\n\n\n// now remove the console.log line to pass the test\n\n"
       ],
       "type": "waypoint",
       "challengeType": "1",
@@ -2072,11 +1971,7 @@
         "myFunction();"
       ],
       "solutions": [
-        "var outerWear = \"T-Shirt\";",
-        "function myFunction() {",
-        "  var outerWear = \"sweater\";",
-        "  return outerWear;",
-        "}"
+        "var outerWear = \"T-Shirt\";\nfunction myFunction() {\n  var outerWear = \"sweater\";\n  return outerWear;\n}"
       ],
       "type": "waypoint",
       "challengeType": "1",
@@ -2118,9 +2013,7 @@
         "(function() { if(typeof timesFive === 'function'){ return \"timesfive(5) === \" + timesFive(5); } else { return \"timesFive is not a function\"} })();"
       ],
       "solutions": [
-        "function timesFive(num) {",
-        "  return num * 5;",
-        "}"
+        "function timesFive(num) {\n  return num * 5;\n}"
       ],
       "type": "waypoint",
       "challengeType": "1",
@@ -2222,12 +2115,7 @@
         "(function() { return logOutput.join(\"\\n\");})();"
       ],
       "solutions": [
-        "var arr = [ 1,2,3,4,5];",
-        "",
-        "function queue(myArr, item) {",
-        "    myArr.push(item);",
-        "    return myArr.shift();",
-        "}"
+        "var arr = [ 1,2,3,4,5];\n\nfunction queue(myArr, item) {\n    myArr.push(item);\n    return myArr.shift();\n}"
       ],
       "type": "bonfire",
       "challengeType": "5",
@@ -2281,12 +2169,7 @@
         "myFunction(10);"
       ],
       "solutions": [
-        "function myFunction(testMe) {",
-        "  if (testMe > 5) {",
-        "    return 'Yes';",
-        "  }",
-        "  return 'No';",
-        "}"
+        "function myFunction(testMe) {\n  if (testMe > 5) {\n    return 'Yes';\n  }\n  return 'No';\n}"
       ],
       "type": "waypoint",
       "challengeType": "1"
@@ -2324,12 +2207,7 @@
         "myTest(10);"
       ],
       "solutions": [
-        "function myTest(val) {",
-        "  if (val == 12) {",
-        "    return \"Equal\";",
-        "  }",
-        "  return \"Not Equal\";",
-        "}"
+        "function myTest(val) {\n  if (val == 12) {\n    return \"Equal\";\n  }\n  return \"Not Equal\";\n}"
       ],
       "type": "waypoint",
       "challengeType": "1",
@@ -2370,12 +2248,7 @@
         "myTest(10);"
       ],
       "solutions": [
-        "function myTest(val) {",
-        "  if (val == 7) {",
-        "    return \"Equal\";",
-        "  }",
-        "  return \"Not Equal\";",
-        "}"
+        "function myTest(val) {\n  if (val == 7) {\n    return \"Equal\";\n  }\n  return \"Not Equal\";\n}"
       ],
       "type": "waypoint",
       "challengeType": "1",
@@ -2417,12 +2290,7 @@
         "myTest(10);"
       ],
       "solutions": [
-        "function myTest(val) {",
-        "  if (val != 99) {",
-        "    return \"Not Equal\";",
-        "  }",
-        "  return \"Equal\";",
-        "}"
+        "function myTest(val) {\n  if (val != 99) {\n    return \"Not Equal\";\n  }\n  return \"Equal\";\n}"
       ],
       "type": "waypoint",
       "challengeType": "1",
@@ -2468,12 +2336,7 @@
         "myTest(10);"
       ],
       "solutions": [
-        "function myTest(val) {",
-        "  if (val != 17) {",
-        "    return \"Not Equal\";",
-        "  }",
-        "  return \"Equal\";",
-        "}"
+        "function myTest(val) {\n  if (val != 17) {\n    return \"Not Equal\";\n  }\n  return \"Equal\";\n}"
       ],
       "type": "waypoint",
       "challengeType": "1",
@@ -2520,15 +2383,7 @@
         "myTest(10);"
       ],
       "solutions": [
-        "function myTest(val) {",
-        "  if (val > 100) {  // Change this line",
-        "    return \"Over 100\";",
-        "  }",
-        "  if (val > 10) {  // Change this line",
-        "    return \"Over 10\";",
-        "  }",
-        "  return \"10 or Under\";",
-        "}"
+        "function myTest(val) {\n  if (val > 100) {  // Change this line\n    return \"Over 100\";\n  }\n  if (val > 10) {  // Change this line\n    return \"Over 10\";\n  }\n  return \"10 or Under\";\n}"
       ],
       "type": "waypoint",
       "challengeType": "1",
@@ -2576,17 +2431,7 @@
         "myTest(10);"
       ],
       "solutions": [
-        "function myTest(val) {",
-        "  if (val >= 20) {  // Change this line",
-        "    return \"20 or Over\";",
-        "  }",
-        "  ",
-        "  if (val >= 10) {  // Change this line",
-        "    return \"10 or Over\";",
-        "  }",
-        "",
-        "  return \"9 or Under\";",
-        "}"
+        "function myTest(val) {\n  if (val >= 20) {  // Change this line\n    return \"20 or Over\";\n  }\n  \n  if (val >= 10) {  // Change this line\n    return \"10 or Over\";\n  }\n\n  return \"9 or Under\";\n}"
       ],
       "type": "waypoint",
       "challengeType": "1",
@@ -2633,17 +2478,7 @@
         "myTest(10);"
       ],
       "solutions": [
-        "function myTest(val) {",
-        "  if (val < 25) {  // Change this line",
-        "    return \"Under 25\";",
-        "  }",
-        "  ",
-        "  if (val < 55) {  // Change this line",
-        "    return \"Under 55\";",
-        "  }",
-        "",
-        "  return \"55 or Over\";",
-        "}"
+        "function myTest(val) {\n  if (val < 25) {  // Change this line\n    return \"Under 25\";\n  }\n  \n  if (val < 55) {  // Change this line\n    return \"Under 55\";\n  }\n\n  return \"55 or Over\";\n}"
       ],
       "type": "waypoint",
       "challengeType": "1",
@@ -2692,17 +2527,7 @@
         ""
       ],
       "solutions": [
-        "function myTest(val) {",
-        "  if (val <= 12) {  // Change this line",
-        "    return \"Smaller Than or Equal to 12\";",
-        "  }",
-        "  ",
-        "  if (val <= 24) {  // Change this line",
-        "    return \"Smaller Than or Equal to 24\";",
-        "  }",
-        "",
-        "  return \"25 or More\";",
-        "}"
+        "function myTest(val) {\n  if (val <= 12) {  // Change this line\n    return \"Smaller Than or Equal to 12\";\n  }\n  \n  if (val <= 24) {  // Change this line\n    return \"Smaller Than or Equal to 24\";\n  }\n\n  return \"25 or More\";\n}"
       ],
       "type": "waypoint",
       "challengeType": "1",
@@ -2755,12 +2580,7 @@
         "myTest(10);"
       ],
       "solutions": [
-        "function myTest(val) {",
-        "  if (val >= 25 && val <= 50) {",
-        "    return \"Yes\";",
-        "  }",
-        "  return \"No\";",
-        "}"
+        "function myTest(val) {\n  if (val >= 25 && val <= 50) {\n    return \"Yes\";\n  }\n  return \"No\";\n}"
       ],
       "type": "waypoint",
       "challengeType": "1",
@@ -2815,12 +2635,7 @@
         "myTest(15);"
       ],
       "solutions": [
-        "function myTest(val) {",
-        "  if (val < 10 || val > 20) {",
-        "    return \"Outside\";",
-        "  }",
-        "  return \"Inside\";",
-        "}"
+        "function myTest(val) {\n  if (val < 10 || val > 20) {\n    return \"Outside\";\n  }\n  return \"Inside\";\n}"
       ],
       "type": "waypoint",
       "challengeType": "1",
@@ -2871,15 +2686,7 @@
         ""
       ],
       "solutions": [
-        "function myTest(val) {",
-        "  var result = \"\";",
-        "  if(val > 5) {",
-        "    result = \"Bigger than 5\";",
-        "  } else {",
-        "    result = \"5 or Smaller\";",
-        "  }",
-        "  return result;",
-        "}"
+        "function myTest(val) {\n  var result = \"\";\n  if(val > 5) {\n    result = \"Bigger than 5\";\n  } else {\n    result = \"5 or Smaller\";\n  }\n  return result;\n}"
       ],
       "type": "waypoint",
       "challengeType": "1",
@@ -2926,15 +2733,7 @@
         ""
       ],
       "solutions": [
-        "function myTest(val) {",
-        "  if(val > 10) {",
-        "    return \"10 or Bigger\";",
-        "  } else if(val < 5) {",
-        "    return \"Smaller than 5\";",
-        "  } else {",
-        "    return \"Between 5 and 10\";",
-        "  }",
-        "}"
+        "function myTest(val) {\n  if(val > 10) {\n    return \"10 or Bigger\";\n  } else if(val < 5) {\n    return \"Smaller than 5\";\n  } else {\n    return \"Between 5 and 10\";\n  }\n}"
       ],
       "type": "waypoint",
       "challengeType": "1",
@@ -2983,19 +2782,7 @@
         "myTest(7);"
       ],
       "solutions": [
-        "function myTest(num) {",
-        "  if (num < 5) {",
-        "    return \"Tiny\";",
-        "  } else if (num < 10) {",
-        "    return \"Small\";",
-        "  } else if (num < 15) {",
-        "    return \"Medium\";",
-        "  } else if (num < 20) {",
-        "    return \"Large\";",
-        "  } else {",
-        "    return \"Huge\";",
-        "  }",
-        "}"
+        "function myTest(num) {\n  if (num < 5) {\n    return \"Tiny\";\n  } else if (num < 10) {\n    return \"Small\";\n  } else if (num < 15) {\n    return \"Medium\";\n  } else if (num < 20) {\n    return \"Large\";\n  } else {\n    return \"Huge\";\n  }\n}"
       ],
       "type": "waypoint",
       "challengeType": "1",
@@ -3041,33 +2828,7 @@
         "golfScore(5, 4);"
       ],
       "solutions": [
-        "function golfScore(par, strokes) {",
-        "  if (strokes === 1) {",
-        "    return \"Hole-in-one!\";",
-        "  }",
-        "  ",
-        "  if (strokes <= par - 2) {",
-        "    return \"Eagle\";",
-        "  }",
-        "  ",
-        "  if (strokes === par - 1) {",
-        "    return \"Birdie\";",
-        "  }",
-        "  ",
-        "  if (strokes === par) {",
-        "    return \"Par\";",
-        "  }",
-        "  ",
-        "  if (strokes === par + 1) {",
-        "    return \"Bogey\";",
-        "  }",
-        "  ",
-        "  if(strokes === par + 2) {",
-        "    return \"Double Bogey\";",
-        "  }",
-        "  ",
-        "  return \"Go Home!\";",
-        "}"
+        "function golfScore(par, strokes) {\n  if (strokes === 1) {\n    return \"Hole-in-one!\";\n  }\n  \n  if (strokes <= par - 2) {\n    return \"Eagle\";\n  }\n  \n  if (strokes === par - 1) {\n    return \"Birdie\";\n  }\n  \n  if (strokes === par) {\n    return \"Par\";\n  }\n  \n  if (strokes === par + 1) {\n    return \"Bogey\";\n  }\n  \n  if(strokes === par + 2) {\n    return \"Double Bogey\";\n  }\n  \n  return \"Go Home!\";\n}"
       ],
       "type": "bonfire",
       "challengeType": "5",
@@ -3113,24 +2874,7 @@
         ""
       ],
       "solutions": [
-        "function myTest(val) {",
-        "  var answer = \"\";",
-        "",
-        "  switch (val) {",
-        "    case 1:",
-        "      answer = \"alpha\";",
-        "      break;",
-        "    case 2:",
-        "      answer = \"beta\";",
-        "      break;",
-        "    case 3:",
-        "      answer = \"gamma\";",
-        "      break;",
-        "    case 4:",
-        "      answer = \"delta\";",
-        "  }",
-        "  return answer;  ",
-        "}"
+        "function myTest(val) {\n  var answer = \"\";\n\n  switch (val) {\n    case 1:\n      answer = \"alpha\";\n      break;\n    case 2:\n      answer = \"beta\";\n      break;\n    case 3:\n      answer = \"gamma\";\n      break;\n    case 4:\n      answer = \"delta\";\n  }\n  return answer;  \n}"
       ],
       "type": "waypoint",
       "challengeType": "1",
@@ -3176,24 +2920,7 @@
         ""
       ],
       "solutions": [
-        "function myTest(val) {",
-        "  var answer = \"\";",
-        "",
-        "  switch(val) {",
-        "    case \"a\":",
-        "      answer = \"apple\";",
-        "      break;",
-        "    case \"b\":",
-        "      answer = \"bird\";",
-        "      break;",
-        "    case \"c\":",
-        "      answer = \"cat\";",
-        "      break;",
-        "    default:",
-        "      answer = \"stuff\";",
-        "  }",
-        "  return answer;  ",
-        "}"
+        "function myTest(val) {\n  var answer = \"\";\n\n  switch(val) {\n    case \"a\":\n      answer = \"apple\";\n      break;\n    case \"b\":\n      answer = \"bird\";\n      break;\n    case \"c\":\n      answer = \"cat\";\n      break;\n    default:\n      answer = \"stuff\";\n  }\n  return answer;  \n}"
       ],
       "type": "waypoint",
       "challengeType": "1",
@@ -3245,28 +2972,7 @@
         ""
       ],
       "solutions": [
-        "function myTest(val) {",
-        "  var answer = \"\";",
-        "  ",
-        "  switch (val) {",
-        "    case 1:",
-        "    case 2:",
-        "    case 3:",
-        "      answer = \"Low\";",
-        "      break;",
-        "    case 4:",
-        "    case 5:",
-        "    case 6:",
-        "      answer = \"Mid\";",
-        "      break;",
-        "    case 7:",
-        "    case 8:",
-        "    case 9:",
-        "      answer = \"High\";",
-        "  }",
-        "  ",
-        "  return answer;  ",
-        "}"
+        "function myTest(val) {\n  var answer = \"\";\n  \n  switch (val) {\n    case 1:\n    case 2:\n    case 3:\n      answer = \"Low\";\n      break;\n    case 4:\n    case 5:\n    case 6:\n      answer = \"Mid\";\n      break;\n    case 7:\n    case 8:\n    case 9:\n      answer = \"High\";\n  }\n  \n  return answer;  \n}"
       ],
       "type": "waypoint",
       "challengeType": "1",
@@ -3326,27 +3032,7 @@
         ""
       ],
       "solutions": [
-        "function myTest(val) {",
-        "  var answer = \"\";",
-        "",
-        "  switch (val) {",
-        "    case \"bob\":",
-        "      answer = \"Marley\";",
-        "      break;",
-        "    case 42:",
-        "      answer = \"The Answer\";",
-        "      break;",
-        "    case 1:",
-        "      answer = \"There is no #1\";",
-        "      break;",
-        "    case 99:",
-        "      answer = \"Missed me by this much!\";",
-        "      break;",
-        "    case 7:",
-        "      answer = \"Ate Nine\";",
-        "  }",
-        "  return answer;  ",
-        "}"
+        "function myTest(val) {\n  var answer = \"\";\n\n  switch (val) {\n    case \"bob\":\n      answer = \"Marley\";\n      break;\n    case 42:\n      answer = \"The Answer\";\n      break;\n    case 1:\n      answer = \"There is no #1\";\n      break;\n    case 99:\n      answer = \"Missed me by this much!\";\n      break;\n    case 7:\n      answer = \"Ate Nine\";\n  }\n  return answer;  \n}"
       ],
       "type": "waypoint",
       "challengeType": "1",
@@ -3391,9 +3077,7 @@
         ""
       ],
       "solutions": [
-        "function isLess(a, b) {",
-        "  return a < b;",
-        "}"
+        "function isLess(a, b) {\n  return a < b;\n}"
       ],
       "type": "waypoint",
       "challengeType": "1",
@@ -3442,12 +3126,7 @@
         ""
       ],
       "solutions": [
-        "function abTest(a, b) {",
-        "  if(a < 0 || b < 0) {",
-        "    return undefined;",
-        "  } ",
-        "  return Math.round(Math.pow(Math.sqrt(a) + Math.sqrt(b), 2));",
-        "}"
+        "function abTest(a, b) {\n  if(a < 0 || b < 0) {\n    return undefined;\n  } \n  return Math.round(Math.pow(Math.sqrt(a) + Math.sqrt(b), 2));\n}"
       ],
       "type": "waypoint",
       "challengeType": "1",
@@ -3491,29 +3170,7 @@
         "cc(2); cc(3); cc(7); cc('K'); cc('A');"
       ],
       "solutions": [
-        "var count = 0;",
-        "function cc(card) {",
-        "  switch(card) {",
-        "    case 2:",
-        "    case 3:",
-        "    case 4:",
-        "    case 5:",
-        "    case 6:",
-        "      count++;",
-        "      break;",
-        "    case 10:",
-        "    case 'J':",
-        "    case 'Q':",
-        "    case 'K':",
-        "    case 'A':",
-        "      count--;",
-        "  }",
-        "  if(count > 0) {",
-        "    return count + \" Bet\";",
-        "  } else {",
-        "    return count + \" Hold\";",
-        "  }",
-        "}"
+        "var count = 0;\nfunction cc(card) {\n  switch(card) {\n    case 2:\n    case 3:\n    case 4:\n    case 5:\n    case 6:\n      count++;\n      break;\n    case 10:\n    case 'J':\n    case 'Q':\n    case 'K':\n    case 'A':\n      count--;\n  }\n  if(count > 0) {\n    return count + \" Bet\";\n  } else {\n    return count + \" Hold\";\n  }\n}"
       ],
       "type": "bonfire",
       "challengeType": "5",
@@ -3605,14 +3262,7 @@
         "(function(a,b) { return \"hatValue = '\" + a + \"', shirtValue = '\" + b + \"'\"; })(hatValue,shirtValue);"
       ],
       "solutions": [
-        "var testObj = {",
-        "  \"hat\": \"ballcap\",",
-        "  \"shirt\": \"jersey\",",
-        "  \"shoes\": \"cleats\"",
-        "};",
-        "",
-        "var hatValue = testObj.hat;  ",
-        "var shirtValue = testObj.shirt;"
+        "var testObj = {\n  \"hat\": \"ballcap\",\n  \"shirt\": \"jersey\",\n  \"shoes\": \"cleats\"\n};\n\nvar hatValue = testObj.hat;  \nvar shirtValue = testObj.shirt;"
       ],
       "type": "waypoint",
       "challengeType": "1",
@@ -3658,13 +3308,7 @@
         "(function(a,b) { return \"entreeValue = '\" + a + \"', shirtValue = '\" + b + \"'\"; })(entreeValue,drinkValue);"
       ],
       "solutions": [
-        "var testObj = {",
-        "  \"an entree\": \"hamburger\",",
-        "  \"my side\": \"veggies\",",
-        "  \"the drink\": \"water\"",
-        "};",
-        "var entreeValue = testObj[\"an entree\"];",
-        "var drinkValue = testObj['the drink'];"
+        "var testObj = {\n  \"an entree\": \"hamburger\",\n  \"my side\": \"veggies\",\n  \"the drink\": \"water\"\n};\nvar entreeValue = testObj[\"an entree\"];\nvar drinkValue = testObj['the drink'];"
       ],
       "type": "waypoint",
       "challengeType": "1",
@@ -3709,8 +3353,7 @@
         ""
       ],
       "solutions": [
-        "var playerNumber = 16;",
-        "var player = testObj[playerNumber];"
+        "var playerNumber = 16;\nvar player = testObj[playerNumber];"
       ],
       "type": "waypoint",
       "challengeType": "1",
@@ -3810,13 +3453,7 @@
         "(function(z){return z;})(myDog);"
       ],
       "solutions": [
-        "var myDog = {",
-        "  \"name\": \"Happy Coder\",",
-        "  \"legs\": 4,",
-        "  \"tails\": 1,",
-        "  \"friends\": [\"Free Code Camp Campers\"]",
-        "};",
-        "myDog.bark = \"Woof Woof\";"
+        "var myDog = {\n  \"name\": \"Happy Coder\",\n  \"legs\": 4,\n  \"tails\": 1,\n  \"friends\": [\"Free Code Camp Campers\"]\n};\nmyDog.bark = \"Woof Woof\";"
       ],
       "type": "waypoint",
       "challengeType": "1"
@@ -3863,15 +3500,7 @@
         "(function(z){return z;})(myDog);"
       ],
       "solutions": [
-        "// Setup",
-        "var myDog = {",
-        "  \"name\": \"Happy Coder\",",
-        "  \"legs\": 4,",
-        "  \"tails\": 1,",
-        "  \"friends\": [\"Free Code Camp Campers\"],",
-        "  \"bark\": \"woof\"",
-        "};",
-        "delete myDog.tails;"
+        "// Setup\nvar myDog = {\n  \"name\": \"Happy Coder\",\n  \"legs\": 4,\n  \"tails\": 1,\n  \"friends\": [\"Free Code Camp Campers\"],\n  \"bark\": \"woof\"\n};\ndelete myDog.tails;"
       ],
       "type": "waypoint",
       "challengeType": "1"
@@ -3929,24 +3558,7 @@
         ""
       ],
       "solutions": [
-        "function phoneticLookup(val) {",
-        "  var result = \"\";",
-        "",
-        "  var lookup = {",
-        "    alpha: \"Adams\",",
-        "    bravo: \"Boston\",",
-        "    charlie: \"Chicago\",",
-        "    delta: \"Denver\",",
-        "    echo: \"Easy\",",
-        "    foxtrot: \"Frank\"",
-        "  };",
-        "",
-        "  result = lookup[val];",
-        "",
-        "  return result;",
-        "}",
-        "",
-        "phoneticLookup(\"charlie\");"
+        "function phoneticLookup(val) {\n  var result = \"\";\n\n  var lookup = {\n    alpha: \"Adams\",\n    bravo: \"Boston\",\n    charlie: \"Chicago\",\n    delta: \"Denver\",\n    echo: \"Easy\",\n    foxtrot: \"Frank\"\n  };\n\n  result = lookup[val];\n\n  return result;\n}\n\nphoneticLookup(\"charlie\");"
       ],
       "type": "waypoint",
       "challengeType": "1",
@@ -3993,18 +3605,7 @@
         ""
       ],
       "solutions": [
-        "var myObj = {",
-        "  gift: \"pony\",",
-        "  pet: \"kitten\",",
-        "  bed: \"sleigh\"",
-        "};",
-        "function checkObj(checkProp) {",
-        "  if(myObj.hasOwnProperty(checkProp)) {",
-        "    return myObj[checkProp];",
-        "  } else {",
-        "    return \"Not Found\";",
-        "  }",
-        "}"
+        "var myObj = {\n  gift: \"pony\",\n  pet: \"kitten\",\n  bed: \"sleigh\"\n};\nfunction checkObj(checkProp) {\n  if(myObj.hasOwnProperty(checkProp)) {\n    return myObj[checkProp];\n  } else {\n    return \"Not Found\";\n  }\n}"
       ],
       "type": "waypoint",
       "challengeType": "1"
@@ -4052,31 +3653,7 @@
         "(function(x){ if (Array.isArray(x)) { return JSON.stringify(x); } return \"myMusic is not an array\"})(myMusic);"
       ],
       "solutions": [
-        "var myMusic = [",
-        "  {",
-        "  \t\"artist\": \"Billy Joel\",",
-        "    \"title\": \"Piano Man\",",
-        "    \"release_year\": 1993,",
-        "    \"formats\": [ ",
-        "      \"CS\", ",
-        "      \"8T\", ",
-        "      \"LP\" ],",
-        "    \"gold\": true",
-        "  }, ",
-        "  {",
-        "    \"artist\": \"ABBA\",",
-        "    \"title\": \"Ring Ring\",",
-        "    \"release_year\": 1973,",
-        "    \"formats\": [ ",
-        "      \"CS\", ",
-        "      \"8T\", ",
-        "      \"LP\",",
-        "\t  \"CD\",",
-        "\t]",
-        "  }",
-        "}",
-        "  // Add record here",
-        "];"
+        "var myMusic = [\n  {\n  \t\"artist\": \"Billy Joel\",\n    \"title\": \"Piano Man\",\n    \"release_year\": 1993,\n    \"formats\": [ \n      \"CS\", \n      \"8T\", \n      \"LP\" ],\n    \"gold\": true\n  }, \n  {\n    \"artist\": \"ABBA\",\n    \"title\": \"Ring Ring\",\n    \"release_year\": 1973,\n    \"formats\": [ \n      \"CS\", \n      \"8T\", \n      \"LP\",\n\t  \"CD\",\n\t]\n  }\n}\n  // Add record here\n];"
       ],
       "type": "waypoint",
       "challengeType": "1",
@@ -4124,18 +3701,7 @@
         "(function(x) { if(typeof gloveBoxContents != 'undefined') { return \"gloveBoxContents = \", x} else return \"gloveBoxContents is undefined\";})(gloveBoxContents);"
       ],
       "solutions": [
-        "var myStorage = {",
-        "  \"car\": {",
-        "    \"inside\": {",
-        "      \"glove box\": \"maps\",",
-        "      \"passenger seat\": \"crumbs\"",
-        "     },",
-        "    \"outside\": {",
-        "      \"trunk\": \"jack\"",
-        "    }",
-        "  }",
-        "};",
-        "var gloveBoxContents = myStorage.car.inside['glove box']; // Change this line"
+        "var myStorage = {\n  \"car\": {\n    \"inside\": {\n      \"glove box\": \"maps\",\n      \"passenger seat\": \"crumbs\"\n     },\n    \"outside\": {\n      \"trunk\": \"jack\"\n    }\n  }\n};\nvar gloveBoxContents = myStorage.car.inside['glove box']; // Change this line"
       ],
       "type": "waypoint",
       "challengeType": "1",
@@ -4293,48 +3859,7 @@
         "(function(x) { return \"collection = \\n\" + JSON.stringify(x, '\\n', 2); })(collection);"
       ],
       "solutions": [
-        "var collection = {",
-        "    2548: {",
-        "      album: \"Slippery When Wet\",",
-        "      artist: \"Bon Jovi\",",
-        "      tracks: [ ",
-        "        \"Let It Rock\", ",
-        "        \"You Give Love a Bad Name\" ",
-        "      ]",
-        "    },",
-        "    2468: {",
-        "      album: \"1999\",",
-        "      artist: \"Prince\",",
-        "      tracks: [ ",
-        "        \"1999\", ",
-        "        \"Little Red Corvette\" ",
-        "      ]",
-        "    },",
-        "    1245: {",
-        "      artist: \"Robert Palmer\",",
-        "      tracks: [ ]",
-        "    },",
-        "    5439: {",
-        "      album: \"ABBA Gold\"",
-        "    }",
-        "};",
-        "// Keep a copy of the collection for tests",
-        "var collectionCopy = JSON.parse(JSON.stringify(collection));",
-        "",
-        "// Only change code below this line",
-        "function update(id, prop, value) {",
-        "  if(value !== \"\") {",
-        "    if(prop === \"tracks\") {",
-        "      collection[id][prop].push(value);",
-        "    } else {",
-        "      collection[id][prop] = value;",
-        "    }",
-        "  } else {",
-        "    delete collection[id][prop];",
-        "  }",
-        "",
-        "  return collection;",
-        "}"
+        "var collection = {\n    2548: {\n      album: \"Slippery When Wet\",\n      artist: \"Bon Jovi\",\n      tracks: [ \n        \"Let It Rock\", \n        \"You Give Love a Bad Name\" \n      ]\n    },\n    2468: {\n      album: \"1999\",\n      artist: \"Prince\",\n      tracks: [ \n        \"1999\", \n        \"Little Red Corvette\" \n      ]\n    },\n    1245: {\n      artist: \"Robert Palmer\",\n      tracks: [ ]\n    },\n    5439: {\n      album: \"ABBA Gold\"\n    }\n};\n// Keep a copy of the collection for tests\nvar collectionCopy = JSON.parse(JSON.stringify(collection));\n\n// Only change code below this line\nfunction update(id, prop, value) {\n  if(value !== \"\") {\n    if(prop === \"tracks\") {\n      collection[id][prop].push(value);\n    } else {\n      collection[id][prop] = value;\n    }\n  } else {\n    delete collection[id][prop];\n  }\n\n  return collection;\n}"
       ],
       "type": "bonfire",
       "challengeType": "5",
@@ -4496,12 +4021,7 @@
         "(function(t) { if(typeof t !== 'undefined') { return \"Total = \" + t; } else { return \"Total is undefined\";}})(total);"
       ],
       "solutions": [
-        "var myArr = [ 2, 3, 4, 5, 6];",
-        "var total = 0;",
-        "",
-        "for (var i = 0; i < myArr.length; i++) {",
-        "  total += myArr[i];",
-        "}"
+        "var myArr = [ 2, 3, 4, 5, 6];\nvar total = 0;\n\nfor (var i = 0; i < myArr.length; i++) {\n  total += myArr[i];\n}"
       ],
       "type": "waypoint",
       "challengeType": "1",
@@ -4544,19 +4064,7 @@
         ""
       ],
       "solutions": [
-        "function multiplyAll(arr) {",
-        "  var product = 1;",
-        "  for (var i = 0; i < arr.length; i++) {",
-        "    for (var j = 0; j < arr[i].length; j++) {",
-        "      product *= arr[i][j];",
-        "    }",
-        "  }",
-        "  return product;",
-        "}",
-        "",
-        "multiplyAll([[1,2],[3,4],[5,6,7]]);",
-        "",
-        ""
+        "function multiplyAll(arr) {\n  var product = 1;\n  for (var i = 0; i < arr.length; i++) {\n    for (var j = 0; j < arr[i].length; j++) {\n      product *= arr[i][j];\n    }\n  }\n  return product;\n}\n\nmultiplyAll([[1,2],[3,4],[5,6,7]]);\n\n"
       ],
       "type": "waypoint",
       "challengeType": "1",
@@ -4630,31 +4138,7 @@
         ""
       ],
       "solutions": [
-        "var lookup = {",
-        "  'A': 'N','B': 'O','C': 'P','D': 'Q',",
-        "  'E': 'R','F': 'S','G': 'T','H': 'U',",
-        "  'I': 'V','J': 'W','K': 'X','L': 'Y',",
-        "  'M': 'Z','N': 'A','O': 'B','P': 'C',",
-        "  'Q': 'D','R': 'E','S': 'F','T': 'G',",
-        "  'U': 'H','V': 'I','W': 'J','X': 'K',",
-        "  'Y': 'L','Z': 'M' ",
-        "};",
-        "",
-        "function rot13(encodedStr) {",
-        "  var codeArr = encodedStr.split(\"\");  // String to Array",
-        "  var decodedArr = []; // Your Result goes here",
-        "  // Only change code below this line",
-        "  ",
-        "  decodedArr = codeArr.map(function(letter) {",
-        "    if(lookup.hasOwnProperty(letter)) {",
-        "      letter = lookup[letter];",
-        "    }",
-        "    return letter;",
-        "  });",
-        "",
-        "  // Only change code above this line",
-        "  return decodedArr.join(\"\"); // Array to String",
-        "}"
+        "var lookup = {\n  'A': 'N','B': 'O','C': 'P','D': 'Q',\n  'E': 'R','F': 'S','G': 'T','H': 'U',\n  'I': 'V','J': 'W','K': 'X','L': 'Y',\n  'M': 'Z','N': 'A','O': 'B','P': 'C',\n  'Q': 'D','R': 'E','S': 'F','T': 'G',\n  'U': 'H','V': 'I','W': 'J','X': 'K',\n  'Y': 'L','Z': 'M' \n};\n\nfunction rot13(encodedStr) {\n  var codeArr = encodedStr.split(\"\");  // String to Array\n  var decodedArr = []; // Your Result goes here\n  // Only change code below this line\n  \n  decodedArr = codeArr.map(function(letter) {\n    if(lookup.hasOwnProperty(letter)) {\n      letter = lookup[letter];\n    }\n    return letter;\n  });\n\n  // Only change code above this line\n  return decodedArr.join(\"\"); // Array to String\n}"
       ],
       "type": "bonfire",
       "challengeType": "5",
