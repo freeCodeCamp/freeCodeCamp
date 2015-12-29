@@ -1,6 +1,7 @@
 import { Observable } from 'rx';
 import uuid from 'node-uuid';
 import moment from 'moment';
+import dedent from 'dedent';
 import debugFactory from 'debug';
 
 import { saveUser, observeMethod } from '../../server/utils/rx';
@@ -91,9 +92,10 @@ module.exports = function(User) {
         }
 
         req.flash('error', {
-          msg:
-            `The ${req.body.email} email address is already associated with an account. 
-            Try signing in with it here instead.`
+          msg: dedent`
+      The ${req.body.email} email address is already associated with an account.
+      Try signing in with it here instead.
+          `
         });
 
         return res.redirect('/email-signin');
@@ -171,10 +173,14 @@ module.exports = function(User) {
     }
 
     return req.logIn({ id: accessToken.userId.toString() }, function(err) {
-      if (err) {
-        return next(err);
-      }
+      if (err) { return next(err); }
+
       debug('user logged in');
+
+      if (req.session && req.session.returnTo) {
+        return res.redirect(req.session.returnTo);
+      }
+
       req.flash('success', { msg: 'Success! You are logged in.' });
       return res.redirect('/');
     });

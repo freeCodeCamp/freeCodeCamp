@@ -22,11 +22,18 @@ import {
   ifNoUserRedirectTo
 } from '../utils/middleware';
 
-const sendNonUserToFront = ifNoUserRedirectTo('/');
+const sendNonUserToSignIn = ifNoUserRedirectTo(
+  '/login',
+  'You must be signed in to commit to a nonprofit.',
+  'info'
+);
+
 const sendNonUserToCommit = ifNoUserRedirectTo(
   '/commit',
-  'Must be signed in to update commit'
+  'You must be signed in to update commit',
+  'info'
 );
+
 const debug = debugFactory('freecc:commit');
 
 function findNonprofit(name) {
@@ -52,7 +59,7 @@ export default function commit(app) {
 
   router.get(
     '/commit/pledge',
-    sendNonUserToFront,
+    sendNonUserToSignIn,
     pledge
   );
 
