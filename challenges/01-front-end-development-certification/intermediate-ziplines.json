@@ -30,7 +30,7 @@
       "descriptionFr": [],
       "nameRu": "Покажите местную погоду",
       "descriptionRu": [
-        "<span class='text-info'>Задание:</span> Создайте <a href='http://codepen.io' target='_blank'>CodePen.io</a> который успешно копирует вот этот: <a href='http://codepen.io/AdventureBear/full/yNBJRj' target='_blank'>http://codepen.io/AdventureBear/full/yNBJRj</a>.",
+        "<span class='text-info'>Задание:</span> Создайте <a href='http://codepen.io' target='_blank'>CodePen.io</a> который успешно копирует вот этот: <a href='http://codepen.io/FreeCodeCamp/full/avqvgJ' target='_blank'>http://codepen.io/FreeCodeCamp/full/avqvgJ</a>.",
         "<span class='text-info'>Правило #1:</span> Не подсматривайте код приведенного на CodePen примера. Напишите его самостоятельно.",
         "<span class='text-info'>Правило #2:</span> Можете использовать любые библиотеки или API, которые потребуются.",
         "<span class='text-info'>Правило #3:</span> Воссоздайте функционал приведенного примера и не стесняйтесь добавить что-нибудь от себя.",
@@ -69,7 +69,7 @@
         "126415129"
       ],
       "description": [
-        "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='http://codepen.io/MarufSarker/full/ZGPZLq/' target='_blank'>http://codepen.io/MarufSarker/full/ZGPZLq/</a>.",
+        "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='http://codepen.io/FreeCodeCamp/full/pgNRoJ' target='_blank'>http://codepen.io/FreeCodeCamp/full/pgNRoJ</a>.",
         "<span class='text-info'>Rule #1:</span> Don't look at the example project's code on CodePen. Figure it out for yourself.",
         "<span class='text-info'>Rule #2:</span> Fulfill the below <a href='http://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
         "<span class='text-info'>User Story:</span> I can browse recent posts from Camper News.",
@@ -91,7 +91,7 @@
       "descriptionRu": [],
       "nameEs": "Adorna las noticias de Camper News",
       "descriptionEs": [
-        "<span class='text-info'>Objetivo:</span> Crea una aplicación con <a href='http://codepen.io' target='_blank'>CodePen.io</a> que reproduzca efectivamente mediante ingeniería inversa este app: <a href='http://codepen.io/MarufSarker/full/ZGPZLq/' target='_blank'>http://codepen.io/MarufSarker/full/ZGPZLq/</a>.",
+        "<span class='text-info'>Objetivo:</span> Crea una aplicación con <a href='http://codepen.io' target='_blank'>CodePen.io</a> que reproduzca efectivamente mediante ingeniería inversa este app: <a href='http://codepen.io/FreeCodeCamp/full/pgNRoJ' target='_blank'>http://codepen.io/FreeCodeCamp/full/pgNRoJ</a>.",
         "<span class='text-info'>Regla #1:</span> No veas el código del proyecto de ejemplo en CodePen. Encuentra la forma de hacerlo por tu cuenta.",
         "<span class='text-info'>Regla #2:</span> Puedes usar cualquier librería o APIs que necesites.",
         "<span class='text-info'>Regla #3:</span> Usa ingeniería inversa para reproducir la funcionalidad del proyecto de ejemplo, pero también siéntete en la libertad de personalizarlo.",
@@ -114,7 +114,7 @@
         "126415131"
       ],
       "description": [
-        "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='http://codepen.io/GeoffStorbeck/full/MwgQea' target='_blank'>http://codepen.io/GeoffStorbeck/full/MwgQea</a>.",
+        "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='http://codepen.io/FreeCodeCamp/full/pgNRvJ' target='_blank'>http://codepen.io/FreeCodeCamp/full/pgNRvJ</a>.",
         "<span class='text-info'>Rule #1:</span> Don't look at the example project's code on CodePen. Figure it out for yourself.",
         "<span class='text-info'>Rule #2:</span> Fulfill the below <a href='http://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
         "<span class='text-info'>User Story:</span> I can search Wikipedia entries in a search box and see the resulting Wikipedia entries.",
@@ -136,7 +136,7 @@
       "descriptionRu": [],
       "nameEs": "Crea un buscador de Wikipedia",
       "descriptionEs": [
-        "<span class='text-info'>Objetivo:</span> Crea una aplicación con <a href='http://codepen.io' target='_blank'>CodePen.io</a> que reproduzca efectivamente mediante ingeniería inversa este app: <a href='http://codepen.io/GeoffStorbeck/full/MwgQea' target='_blank'>http://codepen.io/GeoffStorbeck/full/MwgQea</a>.",
+        "<span class='text-info'>Objetivo:</span> Crea una aplicación con <a href='http://codepen.io' target='_blank'>CodePen.io</a> que reproduzca efectivamente mediante ingeniería inversa este app: <a href='http://codepen.io/FreeCodeCamp/full/pgNRvJ' target='_blank'>http://codepen.io/FreeCodeCamp/full/pgNRvJ</a>.",
         "<span class='text-info'>Regla #1:</span> No veas el código del proyecto de ejemplo en CodePen. Encuentra la forma de hacerlo por tu cuenta.",
         "<span class='text-info'>Regla #2:</span> Puedes usar cualquier librería o APIs que necesites.",
         "<span class='text-info'>Regla #3:</span> Usa ingeniería inversa para reproducir la funcionalidad del proyecto de ejemplo, pero también siéntete en la libertad de personalizarlo.",
@@ -159,13 +159,13 @@
         "126411564"
       ],
       "description": [
-        "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='http://codepen.io/GeoffStorbeck/full/GJKRxZ' target='_blank'>http://codepen.io/GeoffStorbeck/full/GJKRxZ</a>.",
+        "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='http://codepen.io/FreeCodeCamp/full/adBpOw' target='_blank'>http://codepen.io/FreeCodeCamp/full/adBpOw</a>.",
         "<span class='text-info'>Rule #1:</span> Don't look at the example project's code on CodePen. Figure it out for yourself.",
         "<span class='text-info'>Rule #2:</span> Fulfill the below <a href='http://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
         "<span class='text-info'>User Story:</span> I can see whether Free Code Camp is currently streaming on Twitch.tv.",
         "<span class='text-info'>User Story:</span> I can click the status output and be sent directly to the Free Code Camp's Twitch.tv channel.",
         "<span class='text-info'>User Story:</span> if a Twitch user is currently streaming, I can see additional details about what they are streaming.",
-        "<span class='text-info'>User Story:</span> I will see a placeholder notification if a streamer has closed their Twitch account. You can verify this works by adding brunofin and comster404 to your array of Twitch streamers.",
+        "<span class='text-info'>User Story:</span> I will see a placeholder notification if a streamer has closed their Twitch account (or the account never existed). You can verify this works by adding brunofin and comster404 to your array of Twitch streamers.",
         "<span class='text-info'>Hint:</span> See an example call to Twitch.tv's JSONP API at <code>https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/Zipline-Use-the-Twitchtv-JSON-API</code>.",
         "<span class='text-info'>Hint:</span> The relevant documentation about this API call is here: <a href='https://github.com/justintv/Twitch-API/blob/master/v3_resources/streams.md#get-streamschannel' target='_blank'>https://github.com/justintv/Twitch-API/blob/master/v3_resources/streams.md#get-streamschannel</a>.",
         "<span class='text-info'>Hint:</span> Here's an array of the Twitch.tv usernames of people who regularly stream coding: <code>[\"freecodecamp\", \"storbeck\", \"terakilobyte\", \"habathcx\",\"RobotCaleb\",\"thomasballinger\",\"noobs2ninjas\",\"beohoff\"]</code>",
@@ -182,7 +182,7 @@
       "descriptionFr": [],
       "nameRu": "Используйте Twitch.tv JSON API",
       "descriptionRu": [
-        "<span class='text-info'>Задание:</span> Создайте <a href='http://codepen.io' target='_blank'>CodePen.io</a> который успешно копирует вот этот: <a href='http://codepen.io/GeoffStorbeck/full/GJKRxZ' target='_blank'>http://codepen.io/GeoffStorbeck/full/GJKRxZ</a>.",
+        "<span class='text-info'>Задание:</span> Создайте <a href='http://codepen.io' target='_blank'>CodePen.io</a> который успешно копирует вот этот: <a href='http://codepen.io/FreeCodeCamp/full/adBpOw' target='_blank'>http://codepen.io/FreeCodeCamp/full/adBpOw</a>.",
         "<span class='text-info'>Правило #1:</span> Не подсматривайте код приведенного на CodePen примера. Напишите его самостоятельно.",
         "<span class='text-info'>Правило #2:</span> Можете использовать любые библиотеки или API, которые потребуются.",
         "<span class='text-info'>Правило #3:</span> Воссоздайте функционал приведенного примера и не стесняйтесь добавить что-нибудь от себя.",
@@ -201,7 +201,7 @@
       ],
       "nameEs": "Usa el API JSON de Twitch.tv",
       "descriptionEs": [
-        "<span class='text-info'>Objetivo:</span> Crea una aplicación con <a href='http://codepen.io' target='_blank'>CodePen.io</a> que reproduzca efectivamente mediante ingeniería inversa este app: <a href='http://codepen.io/GeoffStorbeck/full/GJKRxZ' target='_blank'>http://codepen.io/GeoffStorbeck/full/GJKRxZ</a>.",
+        "<span class='text-info'>Objetivo:</span> Crea una aplicación con <a href='http://codepen.io' target='_blank'>CodePen.io</a> que reproduzca efectivamente mediante ingeniería inversa este app: <a href='http://codepen.io/FreeCodeCamp/full/adBpOw' target='_blank'>http://codepen.io/FreeCodeCamp/full/adBpOw</a>.",
         "<span class='text-info'>Regla #1:</span> No veas el código del proyecto de ejemplo en CodePen. Encuentra la forma de hacerlo por tu cuenta.",
         "<span class='text-info'>Regla #2:</span> Puedes usar cualquier librería o APIs que necesites.",
         "<span class='text-info'>Regla #3:</span> Usa ingeniería inversa para reproducir la funcionalidad del proyecto de ejemplo, pero también siéntete en la libertad de personalizarlo.",
@@ -228,7 +228,7 @@
         "126415123"
       ],
       "description": [
-        "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='http://codepen.io/alex-dixon/full/JogOpQ/' target='_blank'>http://codepen.io/alex-dixon/full/JogOpQ/</a>.",
+        "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='http://codepen.io/FreeCodeCamp/full/adBpvw' target='_blank'>http://codepen.io/FreeCodeCamp/full/adBpvw</a>.",
         "<span class='text-info'>Rule #1:</span> Don't look at the example project's code on CodePen. Figure it out for yourself.",
         "<span class='text-info'>Rule #2:</span> Fulfill the below <a href='http://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
         "<span class='text-info'>User Story:</span> I can play a game of Tic Tac Toe with the computer.",
@@ -250,7 +250,7 @@
       "descriptionRu": [],
       "nameEs": "Crea un juego de Tic Tac Toe",
       "descriptionEs": [
-        "<span class='text-info'>Objetivo:</span> Crea una aplicación con <a href='http://codepen.io' target='_blank'>CodePen.io</a> que reproduzca efectivamente mediante ingeniería inversa este app: <a href='http://codepen.io/alex-dixon/full/JogOpQ/' target='_blank'>http://codepen.io/alex-dixon/full/JogOpQ/</a>.",
+        "<span class='text-info'>Objetivo:</span> Crea una aplicación con <a href='http://codepen.io' target='_blank'>CodePen.io</a> que reproduzca efectivamente mediante ingeniería inversa este app: <a href='http://codepen.io/FreeCodeCamp/full/adBpvw' target='_blank'>http://codepen.io/FreeCodeCamp/full/adBpvw</a>.",
         "<span class='text-info'>Regla #1:</span> No veas el código del proyecto de ejemplo en CodePen. Encuentra la forma de hacerlo por tu cuenta.",
         "<span class='text-info'>Regla #2:</span> Puedes usar cualquier librería o APIs que necesites.",
         "<span class='text-info'>Regla #3:</span> Usa ingeniería inversa para reproducir la funcionalidad del proyecto de ejemplo, pero también siéntete en la libertad de personalizarlo.",
@@ -273,7 +273,7 @@
         "137213633"
       ],
       "description": [
-        "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='http://codepen.io/Em-Ant/full/QbRyqq/' target='_blank'>http://codepen.io/dting/full/QbRyqq/</a>.",
+        "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='http://codepen.io/Em-Ant/full/QbRyqq/' target='_blank'>http://codepen.io/FreeCodeCamp/full/obYBjE</a>.",
         "<span class='text-info'>Rule #1:</span> Don't look at the example project's code on CodePen. Figure it out for yourself.",
         "<span class='text-info'>Rule #2:</span> Fulfill the below <a href='http://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
         "<span class='text-info'>User Story:</span> I am presented with a random series of button presses.",
@@ -301,7 +301,7 @@
       "descriptionRu": [],
       "nameEs": "Construye un juego de Simon",
       "descriptionEs": [
-        "<span class='text-info'>Objetivo:</span> Crea una aplicación con <a href='http://codepen.io' target='_blank'>CodePen.io</a> que reproduzca efectivamente mediante ingeniería inversa este app: <a href='http://codepen.io/Em-Ant/full/QbRyqq/' target='_blank'>http://codepen.io/dting/full/QbRyqq/</a>.",
+        "<span class='text-info'>Objetivo:</span> Crea una aplicación con <a href='http://codepen.io' target='_blank'>CodePen.io</a> que reproduzca efectivamente mediante ingeniería inversa este app: <a href='http://codepen.io/Em-Ant/full/QbRyqq/' target='_blank'>http://codepen.io/FreeCodeCamp/full/obYBjE</a>.",
         "<span class='text-info'>Regla #1:</span> No veas el código del proyecto de ejemplo en CodePen. Encuentra la forma de hacerlo por tu cuenta.",
         "<span class='text-info'>Regla #2:</span> Puedes usar cualquier librería o APIs que necesites.",
         "<span class='text-info'>Regla #3:</span> Usa ingeniería inversa para reproducir la funcionalidad del proyecto de ejemplo, pero también siéntete en la libertad de personalizarlo.",
