@@ -86,7 +86,6 @@ block content
       common.challengeType = !{JSON.stringify(challengeType)};
       common.dashedName = !{JSON.stringify(dashedName)};
 
-      common.started = Math.floor(Date.now());
       common.init.push(function() {
         common.editor.setOption('lint', false);
         common.editor.setOption('mode', 'text/html');
@@ -99,4 +98,3 @@ block content
           window.main.chat.createHelpChat('freecodecamp/help', '#challenge-help-btn');
         }
       });
-
