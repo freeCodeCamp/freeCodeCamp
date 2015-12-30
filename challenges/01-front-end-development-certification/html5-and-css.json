@@ -3539,7 +3539,8 @@
         "Create an additional CSS class called <code>blue-text</code> that gives an element the color blue. Make sure it's below your <code>pink-text</code> class declaration.",
         "Apply the <code>blue-text</code> class to your <code>h1</code> element in addition to your <code>pink-text</code> class, and let's see which one wins.",
         "Applying multiple class attributes to a HTML element is done with a space between them like this:",
-        "<code>class=\"class1 class2\"</code>"
+        "<code>class=\"class1 class2\"</code>",
+        "Note: It doesn't matter which order the classes are listed in."
       ],
       "tests": [
         "assert($(\"h1\").hasClass(\"pink-text\"), 'message: Your <code>h1</code> element should have the class <code>pink-text</code>.');",
@@ -3575,7 +3576,8 @@
         "Crea una clase CSS adicional llamada <code>texto-azul</code> que le de a un elemento el color azul. Asegúrate de que está debajo de tu declaración de la clase <code>pink-text</code>. ",
         "Aplica la clase <code>blue-text</code> a tu elemento <code>h1</code> además de tu clase <code>pink-text</code> y veamos cual gana.",
         "La aplicación de múltiples atributos de clase a un elemento HTML se hace usando espacios entre ellos así:",
-        "<code>class=\"clase1 clase2\"</code>"
+        "<code>class=\"class1 class2\"</code>",
+        "Nota: No importa lo que ordenan las clases se enumeran en el."
       ],
       "namePt": "",
       "descriptionPt": [],
