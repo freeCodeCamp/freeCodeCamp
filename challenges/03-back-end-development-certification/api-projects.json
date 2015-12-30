@@ -282,7 +282,7 @@
     },
     {
       "id": "bd7158d8c443edefaeb5bdee",
-      "title": "API Project 5",
+      "title": "Image Search Abstraction Layer",
       "challengeSeed": [
         "133315784"
       ],
@@ -290,9 +290,9 @@
         "<span class='text-info'>Objective:</span> Build a full stack JavaScript app that is functionally similar to this: <a href='https://cryptic-ridge-9197.herokuapp.com/api/latest/imagesearch/' target='_blank'>https://cryptic-ridge-9197.herokuapp.com/api/latest/imagesearch/</a> and deploy it to Heroku.",
         "Note that for each Basejump, you should create a new GitHub repository and a new Heroku project. If you can't remember how to do this, revisit <a href='/challenges/get-set-for-basejumps'>http://freecodecamp.com/challenges/get-set-for-basejumps</a>.",
         "Here are the specific user stories you should implement for this Basejump:",
-        "<span class='text-info'>User Story:</span> ",
-        "<span class='text-info'>User Story:</span> ",
-        "<span class='text-info'>User Story:</span> ",
+        "<span class='text-info'>User Story:</span> I can get the image URLs, alt text and page urls for a set of images relating to a given search string.",
+        "<span class='text-info'>User Story:</span> I can paginate through the responses by adding a ?offset=2 parameter to the URL.",
+        "<span class='text-info'>User Story:</span> I can get a list of the most recently submitted search strings.",
         "Once you've finished implementing these user stories, click the \"I've completed this challenge\" button and enter the URLs for both your GitHub repository and your live app running on Heroku.",
         "You can get feedback on your project from fellow campers by sharing it in our <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Code Review Chatroom</a>. You can also share it on Twitter and your city's Campsite (on Facebook)."
       ],
@@ -312,7 +312,7 @@
     },
     {
       "id": "bd7158d8c443edefaeb5bd0f",
-      "title": "Filesize Checker",
+      "title": "File Metadata Microservice",
       "challengeSeed": [
         "133315784"
       ],

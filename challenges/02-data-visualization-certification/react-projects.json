@@ -87,7 +87,7 @@
         "<span class='text-info'>User Story:</span> I can delete these recipes.",
         "<span class='text-info'>User Story:</span> All new recipes I add are saved in my browser's local storage. If I refresh the page, these recipes will still be there.",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck.",
-        "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen. ",
+        "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen.",
         "You can get feedback on your project from fellow campers by sharing it in our <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Code Review Chatroom</a>. You can also share it on Twitter and your city's Campsite (on Facebook)."
       ],
       "type": "zipline",
@@ -106,7 +106,7 @@
     },
     {
       "id": "bd7154d8c242eddfaeb5bd13",
-      "title": "Build the Conway Game of Life",
+      "title": "Build Conway's Game of Life",
       "challengeSeed": [
         "133315782"
       ],
@@ -121,6 +121,7 @@
         "<span class='text-info'>User Story:</span> I can clear the board.",
         "<span class='text-info'>User Story:</span> When I press start, the game will play out.",
         "<span class='text-info'>User Story:</span> Each time the board changes, I can see how many generations have gone by.",
+        "<span class='text-info'>Hint:</span> Here's an explanation of Conway's Game of Life from John Conway himself: <a href='https://www.youtube.com/watch?v=E8kUJL04ELA' target='_blank'>https://www.youtube.com/watch?v=E8kUJL04ELA</a>",
         "<span class='text-info'>Hint:</span> Here's an overview of Conway's Game of Life with rules for your reference: <a href='https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life' target='_blank'>https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life</a>",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck.",
         "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen. ",
@@ -154,10 +155,10 @@
         "<span class='text-info'>User Story:</span> I have health, a level, and a weapon. I can pick up a better weapon. I can pick up health items.",
         "<span class='text-info'>User Story:</span> All the items and enemies on the map are arranged at random.",
         "<span class='text-info'>User Story:</span> I can move throughout a map, discovering items.",
-        "<span class='text-info'>User Story:</span> I can move anywhere within the map's boundaries , but I can't move through an enemy until I've beaten it.",
-        "<span class='text-info'>User Story:</span> Much of the map is hidden. When I take a step, all spaces that are within a certain number of space from me are revealed.",
+        "<span class='text-info'>User Story:</span> I can move anywhere within the map's boundaries, but I can't move through an enemy until I've beaten it.",
+        "<span class='text-info'>User Story:</span> Much of the map is hidden. When I take a step, all spaces that are within a certain number of spaces from me are revealed.",
         "<span class='text-info'>User Story:</span> When I beat an enemy, the enemy goes away and I get XP, which eventually increases my level.",
-        "<span class='text-info'>User Story:</span> When I fight an enemy, we take turns damaging each other until one of us loses. I do damage is based off of my level and my weapon. The enemy does damage based off of its level. Damage is somewhat random within a range.",
+        "<span class='text-info'>User Story:</span> When I fight an enemy, we take turns damaging each other until one of us loses. I do damage based off of my level and my weapon. The enemy does damage based off of its level. Damage is somewhat random within a range.",
         "<span class='text-info'>User Story:</span> When I find and beat the boss, I win.",
         "<span class='text-info'>User Story:</span> The game should be challenging, but theoretically winnable.",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck.",
