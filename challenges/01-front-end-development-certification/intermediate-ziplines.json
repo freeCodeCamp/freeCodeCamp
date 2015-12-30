@@ -6,10 +6,12 @@
     {
       "id": "bd7158d8c442eddfaeb5bd10",
       "title": "Show the Local Weather",
-      "challengeSeed": ["126415127"],
+      "challengeSeed": [
+        "126415127"
+      ],
       "description": [
         "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='http://codepen.io/FreeCodeCamp/full/avqvgJ' target='_blank'>http://codepen.io/FreeCodeCamp/full/avqvgJ</a>.",
-        "<span class='text-info'>Rule #1:</span> Don't look at the example project's code on CodePen. Figure it out for yourself.",
+        "<span class='text-info'>Rule #1:</span> Don't look at the example project's code. Figure it out for yourself.",
         "<span class='text-info'>Rule #2:</span> Fulfill the below <a href='http://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
         "<span class='text-info'>User Story:</span> I can see the weather in my current location.",
         "<span class='text-info'>User Story:</span> I can see a different icon or background image (e.g. snowy mountain, hot desert) depending on the weather.",
@@ -28,7 +30,7 @@
       "descriptionFr": [],
       "nameRu": "Покажите местную погоду",
       "descriptionRu": [
-        "<span class='text-info'>Задание:</span> Создайте <a href='http://codepen.io' target='_blank'>CodePen.io</a> который успешно копирует вот этот: <a href='http://codepen.io/AdventureBear/full/yNBJRj' target='_blank'>http://codepen.io/AdventureBear/full/yNBJRj</a>.",
+        "<span class='text-info'>Задание:</span> Создайте <a href='http://codepen.io' target='_blank'>CodePen.io</a> который успешно копирует вот этот: <a href='http://codepen.io/FreeCodeCamp/full/avqvgJ' target='_blank'>http://codepen.io/FreeCodeCamp/full/avqvgJ</a>.",
         "<span class='text-info'>Правило #1:</span> Не подсматривайте код приведенного на CodePen примера. Напишите его самостоятельно.",
         "<span class='text-info'>Правило #2:</span> Можете использовать любые библиотеки или API, которые потребуются.",
         "<span class='text-info'>Правило #3:</span> Воссоздайте функционал приведенного примера и не стесняйтесь добавить что-нибудь от себя.",
@@ -56,85 +58,19 @@
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado.",
         "Cuando hayas terminado, pulsa el botón de \"I've completed this challenge\" e incluye un link a tu CodePen. Si programaste en pareja, debes incluir también el nombre de usuario de Free Code Camp de tu compañero.",
         "Si quieres retroalimentación inmediata de parte de tus compañeros campistas, pulsa este botón y pega el link de tu proyecto en CodePen. <br><br><a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20PASTE_YOUR_CODEPEN_URL_HERE%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Pulsa aquí y agrega tu link en el texto del tweet</a>"
-        ],
+      ],
       "namePt": "",
       "descriptionPt": []
     },
     {
-      "id": "bd7158d8c442eddfaeb5bd1f",
-      "title": "Use the Twitch.tv JSON API",
-      "challengeSeed": ["126411564"],
-      "description": [
-        "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='http://codepen.io/GeoffStorbeck/full/GJKRxZ' target='_blank'>http://codepen.io/GeoffStorbeck/full/GJKRxZ</a>.",
-        "<span class='text-info'>Rule #1:</span> Don't look at the example project's code on CodePen. Figure it out for yourself.",
-        "<span class='text-info'>Rule #2:</span> Fulfill the below <a href='http://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
-        "<span class='text-info'>User Story:</span> I can see whether Free Code Camp is currently streaming on Twitch.tv.",
-        "<span class='text-info'>User Story:</span> I can click the status output and be sent directly to the Free Code Camp's Twitch.tv channel.",
-        "<span class='text-info'>User Story:</span> if Free Code Camp is streaming, I can see additional details about what they are streaming.",
-        "<span class='text-info'>User Story:</span> I will see a placeholder notification if a streamer has closed their Twitch account. You can verify this works by adding brunofin and comster404 to your array of Twitch streamers.",
-        "<span class='text-info'>Hint:</span> See an example call to Twitch.tv's JSONP API at <code>https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/Zipline-Use-the-Twitchtv-JSON-API</code>.",
-        "<span class='text-info'>Hint:</span> The relevant documentation about this API call is here: <a href='https://github.com/justintv/Twitch-API/blob/master/v3_resources/streams.md#get-streamschannel' target='_blank'>https://github.com/justintv/Twitch-API/blob/master/v3_resources/streams.md#get-streamschannel</a>.",
-        "<span class='text-info'>Hint:</span> Here's an array of the Twitch.tv usernames of people who regularly stream coding: <code>[\"freecodecamp\", \"storbeck\", \"terakilobyte\", \"habathcx\",\"RobotCaleb\",\"thomasballinger\",\"noobs2ninjas\",\"beohoff\"]</code>",
-        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck.",
-        "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen.",
-        "You can get feedback on your project from fellow campers by sharing it in our <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Code Review Chatroom</a>. You can also share it on Twitter and your city's Campsite (on Facebook)."
-      ],
-      "type": "zipline",
-      "challengeType": 3,
-      "tests": [],
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
-      "nameRu": "Используйте Twitch.tv JSON API",
-      "descriptionRu": [
-        "<span class='text-info'>Задание:</span> Создайте <a href='http://codepen.io' target='_blank'>CodePen.io</a> который успешно копирует вот этот: <a href='http://codepen.io/GeoffStorbeck/full/GJKRxZ' target='_blank'>http://codepen.io/GeoffStorbeck/full/GJKRxZ</a>.",
-        "<span class='text-info'>Правило #1:</span> Не подсматривайте код приведенного на CodePen примера. Напишите его самостоятельно.",
-        "<span class='text-info'>Правило #2:</span> Можете использовать любые библиотеки или API, которые потребуются.",
-        "<span class='text-info'>Правило #3:</span> Воссоздайте функционал приведенного примера и не стесняйтесь добавить что-нибудь от себя.",
-        "Реализуйте следующие <a href='http://en.wikipedia.org/wiki/User_story' target='_blank'>пользовательские истории</a>, сделайте также бонусные по желанию:",
-        "<span class='text-info'>Пользовательская история:</span> В качестве пользователя, я могу увидеть идет ли в данный момент на Twitch.tv трансляция Free Code Camp.",
-        "<span class='text-info'>Пользовательская история:</span> В качестве пользователя, я могу, кликнув на описание трансляции, перейти на канал Free Code Camp.",
-        "<span class='text-info'>Пользовательская история:</span> В качестве пользователя, я могу видеть дополнительную информацию о текущей трансляции Free Code Camp.",
-        "<span class='text-info'>Бонусная пользовательская история:</span> В качестве пользователя, я могу произвести поиск среди перечисленных каналов.",
-        "<span class='text-info'>Бонусная пользовательская история:</span> В качестве пользователя, я могу видеть уведомление, если создатель канала закрыл свой аккаунт на Twitch.tv. Добавьте в массив имена пользователей brunofin и comster404, чтобы убедиться, что эта функция реализована правильно.",
-        "<span class='text-info'>Подсказка:</span> Пример запроса к Twitch.tv JSON API: <code>https://api.twitch.tv/kraken/streams/freecodecamp</code>.",
-        "<span class='text-info'>Подсказка:</span> Документацию об этом запросе можно найти по ссылке: <a href='https://github.com/justintv/Twitch-API/blob/master/v3_resources/streams.md#get-streamschannel' target='_blank'>https://github.com/justintv/Twitch-API/blob/master/v3_resources/streams.md#get-streamschannel</a>.",
-        "<span class='text-info'>Подсказка:</span> В этом массиве приведены имена пользователей, которые регулярно пишут код онлайн: <code>[\"freecodecamp\", \"storbeck\", \"terakilobyte\", \"habathcx\",\"RobotCaleb\",\"comster404\",\"brunofin\",\"thomasballinger\",\"noobs2ninjas\",\"beohoff\"]</code>",
-        "Если что-то не получается, воспользуйтесь <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a>.",
-        "Когда выполните задание кликните кнопку \"I've completed this challenge\" и добавьте ссылку на ваш CodePen. Если вы программировали с кем-то в паре, также добавьте имя вашего напарника.",
-        "Если вы хотите получить немедленную оценку вашего проекта, нажмите эту кнопку и добавьте ссылку на ваш CodePen. В противном случае мы проверим его перед тем как вы приступите к проектам для некоммерческих организаций.<br><br><a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Click here then add your link to your tweet's text</a>"
-      ],
-      "nameEs": "Usa el API JSON de Twitch.tv",
-      "descriptionEs": [
-        "<span class='text-info'>Objetivo:</span> Crea una aplicación con <a href='http://codepen.io' target='_blank'>CodePen.io</a> que reproduzca efectivamente mediante ingeniería inversa este app: <a href='http://codepen.io/GeoffStorbeck/full/GJKRxZ' target='_blank'>http://codepen.io/GeoffStorbeck/full/GJKRxZ</a>.",
-        "<span class='text-info'>Regla #1:</span> No veas el código del proyecto de ejemplo en CodePen. Encuentra la forma de hacerlo por tu cuenta.",
-        "<span class='text-info'>Regla #2:</span> Puedes usar cualquier librería o APIs que necesites.",
-        "<span class='text-info'>Regla #3:</span> Usa ingeniería inversa para reproducir la funcionalidad del proyecto de ejemplo, pero también siéntete en la libertad de personalizarlo.",
-        "Las siguientes son las <a href='http://en.wikipedia.org/wiki/User_story' target='_blank'>historias de usuario</a> que debes satisfacer, incluyendo las historias opcionales:",
-        "<span class='text-info'>Historia de usuario:</span> Como usuario, puedo verificar si Free Code Camp está transmitiendo en Twitch.tv",
-        "<span class='text-info'>Historia de usuario:</span> Como usuario, puedo pulsar el estatus y ser enviado directamente al canal de Free Code Camp's en Twitch.tv.",
-        "<span class='text-info'>Historia de usuario:</span> Como usuario, si Free Code Camp está transmitiendo, puedo ver detalles adicionales acerca del contenido que están pasando.",
-        "<span class='text-info'>Historia de usuario opcional:</span> Como usuario, puedo buscar entre los canales listados.",
-        "<span class='text-info'>Historia de usuario opcional:</span> Como usuario, puedo ver una notificación si el usuario ha cerrado su cuenta de Twitch. Puedes verificar si esto funciona agregando brunofin y comster404 a tu vector de usuarios de Twitch.",
-        "<span class='text-info'>Pista:</span> Puedes ver un ejemplo de una llamada al API JSONP de Twitch.tv en <code>https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/Zipline-Use-the-Twitchtv-JSON-API</code>.",
-        "<span class='text-info'>Pista:</span> La documentación relevante para esta llamada al API se encuentra aquí: <a href='https://github.com/justintv/Twitch-API/blob/master/v3_resources/streams.md#get-streamschannel' target='_blank'>https://github.com/justintv/Twitch-API/blob/master/v3_resources/streams.md#get-streamschannel</a>.",
-        "<span class='text-info'>Pista:</span> Aquí te mostramos un vector de usuarios de Twitch.tv de gente que transmite programación a menudo: <code>[\"freecodecamp\", \"storbeck\", \"terakilobyte\", \"habathcx\",\"RobotCaleb\",\"thomasballinger\",\"noobs2ninjas\",\"beohoff\"]</code>",
-        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado.",
-        "Cuando hayas terminado, pulsa el botón de \"I've completed this challenge\" e incluye un link a tu CodePen. Si programaste en pareja, debes incluir también el nombre de usuario de Free Code Camp de tu compañero.",
-        "Si quieres retroalimentación inmediata de parte de tus compañeros campistas, pulsa este botón y pega el link de tu proyecto en CodePen. <br><br><a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20PASTE_YOUR_CODEPEN_URL_HERE%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Pulsa aquí y agrega tu link en el texto del tweet</a>"
-        ],
-      "namePt": "",
-      "descriptionPt": []
-    },
-    {
-
       "id": "bd7158d8c442eddfaeb5bd18",
       "title": "Stylize Stories on Camper News",
-      "challengeSeed": ["126415129"],
+      "challengeSeed": [
+        "126415129"
+      ],
       "description": [
-        "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='http://codepen.io/MarufSarker/full/ZGPZLq/' target='_blank'>http://codepen.io/MarufSarker/full/ZGPZLq/</a>.",
-        "<span class='text-info'>Rule #1:</span> Don't look at the example project's code on CodePen. Figure it out for yourself.",
+        "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='http://codepen.io/FreeCodeCamp/full/pgNRoJ' target='_blank'>http://codepen.io/FreeCodeCamp/full/pgNRoJ</a>.",
+        "<span class='text-info'>Rule #1:</span> Don't look at the example project's code. Figure it out for yourself.",
         "<span class='text-info'>Rule #2:</span> Fulfill the below <a href='http://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
         "<span class='text-info'>User Story:</span> I can browse recent posts from Camper News.",
         "<span class='text-info'>User Story:</span> I can click on a post to be taken to the story's original URL.",
@@ -155,7 +91,7 @@
       "descriptionRu": [],
       "nameEs": "Adorna las noticias de Camper News",
       "descriptionEs": [
-        "<span class='text-info'>Objetivo:</span> Crea una aplicación con <a href='http://codepen.io' target='_blank'>CodePen.io</a> que reproduzca efectivamente mediante ingeniería inversa este app: <a href='http://codepen.io/MarufSarker/full/ZGPZLq/' target='_blank'>http://codepen.io/MarufSarker/full/ZGPZLq/</a>.",
+        "<span class='text-info'>Objetivo:</span> Crea una aplicación con <a href='http://codepen.io' target='_blank'>CodePen.io</a> que reproduzca efectivamente mediante ingeniería inversa este app: <a href='http://codepen.io/FreeCodeCamp/full/pgNRoJ' target='_blank'>http://codepen.io/FreeCodeCamp/full/pgNRoJ</a>.",
         "<span class='text-info'>Regla #1:</span> No veas el código del proyecto de ejemplo en CodePen. Encuentra la forma de hacerlo por tu cuenta.",
         "<span class='text-info'>Regla #2:</span> Puedes usar cualquier librería o APIs que necesites.",
         "<span class='text-info'>Regla #3:</span> Usa ingeniería inversa para reproducir la funcionalidad del proyecto de ejemplo, pero también siéntete en la libertad de personalizarlo.",
@@ -167,17 +103,19 @@
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado.",
         "Cuando hayas terminado, pulsa el botón de \"I've completed this challenge\" e incluye un link a tu CodePen. Si programaste en pareja, debes incluir también el nombre de usuario de Free Code Camp de tu compañero.",
         "Si quieres retroalimentación inmediata de parte de tus compañeros campistas, pulsa este botón y pega el link de tu proyecto en CodePen. <br><br><a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20PASTE_YOUR_CODEPEN_URL_HERE%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Pulsa aquí y agrega tu link en el texto del tweet</a>"
-        ],
+      ],
       "namePt": "",
       "descriptionPt": []
     },
     {
       "id": "bd7158d8c442eddfaeb5bd19",
       "title": "Build a Wikipedia Viewer",
-      "challengeSeed": ["126415131"],
+      "challengeSeed": [
+        "126415131"
+      ],
       "description": [
-        "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='http://codepen.io/GeoffStorbeck/full/MwgQea' target='_blank'>http://codepen.io/GeoffStorbeck/full/MwgQea</a>.",
-        "<span class='text-info'>Rule #1:</span> Don't look at the example project's code on CodePen. Figure it out for yourself.",
+        "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='http://codepen.io/FreeCodeCamp/full/pgNRvJ' target='_blank'>http://codepen.io/FreeCodeCamp/full/pgNRvJ</a>.",
+        "<span class='text-info'>Rule #1:</span> Don't look at the example project's code. Figure it out for yourself.",
         "<span class='text-info'>Rule #2:</span> Fulfill the below <a href='http://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
         "<span class='text-info'>User Story:</span> I can search Wikipedia entries in a search box and see the resulting Wikipedia entries.",
         "<span class='text-info'>User Story:</span> I can click a button to see a random Wikipedia entry.",
@@ -198,7 +136,7 @@
       "descriptionRu": [],
       "nameEs": "Crea un buscador de Wikipedia",
       "descriptionEs": [
-        "<span class='text-info'>Objetivo:</span> Crea una aplicación con <a href='http://codepen.io' target='_blank'>CodePen.io</a> que reproduzca efectivamente mediante ingeniería inversa este app: <a href='http://codepen.io/GeoffStorbeck/full/MwgQea' target='_blank'>http://codepen.io/GeoffStorbeck/full/MwgQea</a>.",
+        "<span class='text-info'>Objetivo:</span> Crea una aplicación con <a href='http://codepen.io' target='_blank'>CodePen.io</a> que reproduzca efectivamente mediante ingeniería inversa este app: <a href='http://codepen.io/FreeCodeCamp/full/pgNRvJ' target='_blank'>http://codepen.io/FreeCodeCamp/full/pgNRvJ</a>.",
         "<span class='text-info'>Regla #1:</span> No veas el código del proyecto de ejemplo en CodePen. Encuentra la forma de hacerlo por tu cuenta.",
         "<span class='text-info'>Regla #2:</span> Puedes usar cualquier librería o APIs que necesites.",
         "<span class='text-info'>Regla #3:</span> Usa ingeniería inversa para reproducir la funcionalidad del proyecto de ejemplo, pero también siéntete en la libertad de personalizarlo.",
@@ -210,17 +148,88 @@
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado.",
         "Cuando hayas terminado, pulsa el botón de \"I've completed this challenge\" e incluye un link a tu CodePen. Si programaste en pareja, debes incluir también el nombre de usuario de Free Code Camp de tu compañero.",
         "Si quieres retroalimentación inmediata de parte de tus compañeros campistas, pulsa este botón y pega el link de tu proyecto en CodePen. <br><br><a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20PASTE_YOUR_CODEPEN_URL_HERE%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Pulsa aquí y agrega tu link en el texto del tweet</a>"
-        ],
+      ],
+      "namePt": "",
+      "descriptionPt": []
+    },
+    {
+      "id": "bd7158d8c442eddfaeb5bd1f",
+      "title": "Use the Twitch.tv JSON API",
+      "challengeSeed": [
+        "126411564"
+      ],
+      "description": [
+        "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='http://codepen.io/FreeCodeCamp/full/adBpOw' target='_blank'>http://codepen.io/FreeCodeCamp/full/adBpOw</a>.",
+        "<span class='text-info'>Rule #1:</span> Don't look at the example project's code. Figure it out for yourself.",
+        "<span class='text-info'>Rule #2:</span> Fulfill the below <a href='http://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
+        "<span class='text-info'>User Story:</span> I can see whether Free Code Camp is currently streaming on Twitch.tv.",
+        "<span class='text-info'>User Story:</span> I can click the status output and be sent directly to the Free Code Camp's Twitch.tv channel.",
+        "<span class='text-info'>User Story:</span> if a Twitch user is currently streaming, I can see additional details about what they are streaming.",
+        "<span class='text-info'>User Story:</span> I will see a placeholder notification if a streamer has closed their Twitch account (or the account never existed). You can verify this works by adding brunofin and comster404 to your array of Twitch streamers.",
+        "<span class='text-info'>Hint:</span> See an example call to Twitch.tv's JSONP API at <code>https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/Zipline-Use-the-Twitchtv-JSON-API</code>.",
+        "<span class='text-info'>Hint:</span> The relevant documentation about this API call is here: <a href='https://github.com/justintv/Twitch-API/blob/master/v3_resources/streams.md#get-streamschannel' target='_blank'>https://github.com/justintv/Twitch-API/blob/master/v3_resources/streams.md#get-streamschannel</a>.",
+        "<span class='text-info'>Hint:</span> Here's an array of the Twitch.tv usernames of people who regularly stream coding: <code>[\"freecodecamp\", \"storbeck\", \"terakilobyte\", \"habathcx\",\"RobotCaleb\",\"thomasballinger\",\"noobs2ninjas\",\"beohoff\"]</code>",
+        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck.",
+        "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen.",
+        "You can get feedback on your project from fellow campers by sharing it in our <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Code Review Chatroom</a>. You can also share it on Twitter and your city's Campsite (on Facebook)."
+      ],
+      "type": "zipline",
+      "challengeType": 3,
+      "tests": [],
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "Используйте Twitch.tv JSON API",
+      "descriptionRu": [
+        "<span class='text-info'>Задание:</span> Создайте <a href='http://codepen.io' target='_blank'>CodePen.io</a> который успешно копирует вот этот: <a href='http://codepen.io/FreeCodeCamp/full/adBpOw' target='_blank'>http://codepen.io/FreeCodeCamp/full/adBpOw</a>.",
+        "<span class='text-info'>Правило #1:</span> Не подсматривайте код приведенного на CodePen примера. Напишите его самостоятельно.",
+        "<span class='text-info'>Правило #2:</span> Можете использовать любые библиотеки или API, которые потребуются.",
+        "<span class='text-info'>Правило #3:</span> Воссоздайте функционал приведенного примера и не стесняйтесь добавить что-нибудь от себя.",
+        "Реализуйте следующие <a href='http://en.wikipedia.org/wiki/User_story' target='_blank'>пользовательские истории</a>, сделайте также бонусные по желанию:",
+        "<span class='text-info'>Пользовательская история:</span> В качестве пользователя, я могу увидеть идет ли в данный момент на Twitch.tv трансляция Free Code Camp.",
+        "<span class='text-info'>Пользовательская история:</span> В качестве пользователя, я могу, кликнув на описание трансляции, перейти на канал Free Code Camp.",
+        "<span class='text-info'>Пользовательская история:</span> В качестве пользователя, я могу видеть дополнительную информацию о текущей трансляции Free Code Camp.",
+        "<span class='text-info'>Бонусная пользовательская история:</span> В качестве пользователя, я могу произвести поиск среди перечисленных каналов.",
+        "<span class='text-info'>Бонусная пользовательская история:</span> В качестве пользователя, я могу видеть уведомление, если создатель канала закрыл свой аккаунт на Twitch.tv. Добавьте в массив имена пользователей brunofin и comster404, чтобы убедиться, что эта функция реализована правильно.",
+        "<span class='text-info'>Подсказка:</span> Пример запроса к Twitch.tv JSON API: <code>https://api.twitch.tv/kraken/streams/freecodecamp</code>.",
+        "<span class='text-info'>Подсказка:</span> Документацию об этом запросе можно найти по ссылке: <a href='https://github.com/justintv/Twitch-API/blob/master/v3_resources/streams.md#get-streamschannel' target='_blank'>https://github.com/justintv/Twitch-API/blob/master/v3_resources/streams.md#get-streamschannel</a>.",
+        "<span class='text-info'>Подсказка:</span> В этом массиве приведены имена пользователей, которые регулярно пишут код онлайн: <code>[\"freecodecamp\", \"storbeck\", \"terakilobyte\", \"habathcx\",\"RobotCaleb\",\"comster404\",\"brunofin\",\"thomasballinger\",\"noobs2ninjas\",\"beohoff\"]</code>",
+        "Если что-то не получается, воспользуйтесь <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a>.",
+        "Когда выполните задание кликните кнопку \"I've completed this challenge\" и добавьте ссылку на ваш CodePen. Если вы программировали с кем-то в паре, также добавьте имя вашего напарника.",
+        "Если вы хотите получить немедленную оценку вашего проекта, нажмите эту кнопку и добавьте ссылку на ваш CodePen. В противном случае мы проверим его перед тем как вы приступите к проектам для некоммерческих организаций.<br><br><a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Click here then add your link to your tweet's text</a>"
+      ],
+      "nameEs": "Usa el API JSON de Twitch.tv",
+      "descriptionEs": [
+        "<span class='text-info'>Objetivo:</span> Crea una aplicación con <a href='http://codepen.io' target='_blank'>CodePen.io</a> que reproduzca efectivamente mediante ingeniería inversa este app: <a href='http://codepen.io/FreeCodeCamp/full/adBpOw' target='_blank'>http://codepen.io/FreeCodeCamp/full/adBpOw</a>.",
+        "<span class='text-info'>Regla #1:</span> No veas el código del proyecto de ejemplo en CodePen. Encuentra la forma de hacerlo por tu cuenta.",
+        "<span class='text-info'>Regla #2:</span> Puedes usar cualquier librería o APIs que necesites.",
+        "<span class='text-info'>Regla #3:</span> Usa ingeniería inversa para reproducir la funcionalidad del proyecto de ejemplo, pero también siéntete en la libertad de personalizarlo.",
+        "Las siguientes son las <a href='http://en.wikipedia.org/wiki/User_story' target='_blank'>historias de usuario</a> que debes satisfacer, incluyendo las historias opcionales:",
+        "<span class='text-info'>Historia de usuario:</span> Como usuario, puedo verificar si Free Code Camp está transmitiendo en Twitch.tv",
+        "<span class='text-info'>Historia de usuario:</span> Como usuario, puedo pulsar el estatus y ser enviado directamente al canal de Free Code Camp's en Twitch.tv.",
+        "<span class='text-info'>Historia de usuario:</span> Como usuario, si Free Code Camp está transmitiendo, puedo ver detalles adicionales acerca del contenido que están pasando.",
+        "<span class='text-info'>Historia de usuario opcional:</span> Como usuario, puedo buscar entre los canales listados.",
+        "<span class='text-info'>Historia de usuario opcional:</span> Como usuario, puedo ver una notificación si el usuario ha cerrado su cuenta de Twitch. Puedes verificar si esto funciona agregando brunofin y comster404 a tu vector de usuarios de Twitch.",
+        "<span class='text-info'>Pista:</span> Puedes ver un ejemplo de una llamada al API JSONP de Twitch.tv en <code>https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/Zipline-Use-the-Twitchtv-JSON-API</code>.",
+        "<span class='text-info'>Pista:</span> La documentación relevante para esta llamada al API se encuentra aquí: <a href='https://github.com/justintv/Twitch-API/blob/master/v3_resources/streams.md#get-streamschannel' target='_blank'>https://github.com/justintv/Twitch-API/blob/master/v3_resources/streams.md#get-streamschannel</a>.",
+        "<span class='text-info'>Pista:</span> Aquí te mostramos un vector de usuarios de Twitch.tv de gente que transmite programación a menudo: <code>[\"freecodecamp\", \"storbeck\", \"terakilobyte\", \"habathcx\",\"RobotCaleb\",\"thomasballinger\",\"noobs2ninjas\",\"beohoff\"]</code>",
+        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado.",
+        "Cuando hayas terminado, pulsa el botón de \"I've completed this challenge\" e incluye un link a tu CodePen. Si programaste en pareja, debes incluir también el nombre de usuario de Free Code Camp de tu compañero.",
+        "Si quieres retroalimentación inmediata de parte de tus compañeros campistas, pulsa este botón y pega el link de tu proyecto en CodePen. <br><br><a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20PASTE_YOUR_CODEPEN_URL_HERE%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Pulsa aquí y agrega tu link en el texto del tweet</a>"
+      ],
       "namePt": "",
       "descriptionPt": []
     },
     {
       "id": "bd7158d8c442eedfaeb5bd1c",
       "title": "Build a Tic Tac Toe Game",
-      "challengeSeed": ["126415123"],
+      "challengeSeed": [
+        "126415123"
+      ],
       "description": [
-        "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='http://codepen.io/alex-dixon/full/JogOpQ/' target='_blank'>http://codepen.io/alex-dixon/full/JogOpQ/</a>.",
-        "<span class='text-info'>Rule #1:</span> Don't look at the example project's code on CodePen. Figure it out for yourself.",
+        "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='http://codepen.io/FreeCodeCamp/full/adBpvw' target='_blank'>http://codepen.io/FreeCodeCamp/full/adBpvw</a>.",
+        "<span class='text-info'>Rule #1:</span> Don't look at the example project's code. Figure it out for yourself.",
         "<span class='text-info'>Rule #2:</span> Fulfill the below <a href='http://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
         "<span class='text-info'>User Story:</span> I can play a game of Tic Tac Toe with the computer.",
         "<span class='text-info'>User Story:</span> I can never actually win against the computer - at best I can tie.",
@@ -241,7 +250,7 @@
       "descriptionRu": [],
       "nameEs": "Crea un juego de Tic Tac Toe",
       "descriptionEs": [
-        "<span class='text-info'>Objetivo:</span> Crea una aplicación con <a href='http://codepen.io' target='_blank'>CodePen.io</a> que reproduzca efectivamente mediante ingeniería inversa este app: <a href='http://codepen.io/alex-dixon/full/JogOpQ/' target='_blank'>http://codepen.io/alex-dixon/full/JogOpQ/</a>.",
+        "<span class='text-info'>Objetivo:</span> Crea una aplicación con <a href='http://codepen.io' target='_blank'>CodePen.io</a> que reproduzca efectivamente mediante ingeniería inversa este app: <a href='http://codepen.io/FreeCodeCamp/full/adBpvw' target='_blank'>http://codepen.io/FreeCodeCamp/full/adBpvw</a>.",
         "<span class='text-info'>Regla #1:</span> No veas el código del proyecto de ejemplo en CodePen. Encuentra la forma de hacerlo por tu cuenta.",
         "<span class='text-info'>Regla #2:</span> Puedes usar cualquier librería o APIs que necesites.",
         "<span class='text-info'>Regla #3:</span> Usa ingeniería inversa para reproducir la funcionalidad del proyecto de ejemplo, pero también siéntete en la libertad de personalizarlo.",
@@ -253,17 +262,19 @@
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado.",
         "Cuando hayas terminado, pulsa el botón de \"I've completed this challenge\" e incluye un link a tu CodePen. Si programaste en pareja, debes incluir también el nombre de usuario de Free Code Camp de tu compañero.",
         "Si quieres retroalimentación inmediata de parte de tus compañeros campistas, pulsa este botón y pega el link de tu proyecto en CodePen. <br><br><a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20PASTE_YOUR_CODEPEN_URL_HERE%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Pulsa aquí y agrega tu link en el texto del tweet</a>"
-        ],
+      ],
       "namePt": "",
       "descriptionPt": []
     },
     {
       "id": "bd7158d8c442eddfaeb5bd1c",
       "title": "Build a Simon Game",
-      "challengeSeed": ["137213633"],
+      "challengeSeed": [
+        "137213633"
+      ],
       "description": [
-        "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='http://codepen.io/Em-Ant/full/QbRyqq/' target='_blank'>http://codepen.io/dting/full/QbRyqq/</a>.",
-        "<span class='text-info'>Rule #1:</span> Don't look at the example project's code on CodePen. Figure it out for yourself.",
+        "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='http://codepen.io/Em-Ant/full/QbRyqq/' target='_blank'>http://codepen.io/FreeCodeCamp/full/obYBjE</a>.",
+        "<span class='text-info'>Rule #1:</span> Don't look at the example project's code. Figure it out for yourself.",
         "<span class='text-info'>Rule #2:</span> Fulfill the below <a href='http://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
         "<span class='text-info'>User Story:</span> I am presented with a random series of button presses.",
         "<span class='text-info'>User Story:</span> each time I input a series of button presses correctly, I see the same series of button presses but with an additional step.",
@@ -290,7 +301,7 @@
       "descriptionRu": [],
       "nameEs": "Construye un juego de Simon",
       "descriptionEs": [
-        "<span class='text-info'>Objetivo:</span> Crea una aplicación con <a href='http://codepen.io' target='_blank'>CodePen.io</a> que reproduzca efectivamente mediante ingeniería inversa este app: <a href='http://codepen.io/Em-Ant/full/QbRyqq/' target='_blank'>http://codepen.io/dting/full/QbRyqq/</a>.",
+        "<span class='text-info'>Objetivo:</span> Crea una aplicación con <a href='http://codepen.io' target='_blank'>CodePen.io</a> que reproduzca efectivamente mediante ingeniería inversa este app: <a href='http://codepen.io/Em-Ant/full/QbRyqq/' target='_blank'>http://codepen.io/FreeCodeCamp/full/obYBjE</a>.",
         "<span class='text-info'>Regla #1:</span> No veas el código del proyecto de ejemplo en CodePen. Encuentra la forma de hacerlo por tu cuenta.",
         "<span class='text-info'>Regla #2:</span> Puedes usar cualquier librería o APIs que necesites.",
         "<span class='text-info'>Regla #3:</span> Usa ingeniería inversa para reproducir la funcionalidad del proyecto de ejemplo, pero también siéntete en la libertad de personalizarlo.",
@@ -308,7 +319,7 @@
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado.",
         "Cuando hayas terminado, pulsa el botón de \"I've completed this challenge\" e incluye un link a tu CodePen. Si programaste en pareja, debes incluir también el nombre de usuario de Free Code Camp de tu compañero.",
         "Si quieres retroalimentación inmediata de parte de tus compañeros campistas, pulsa este botón y pega el link de tu proyecto en CodePen. <br><br><a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20PASTE_YOUR_CODEPEN_URL_HERE%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Pulsa aquí y agrega tu link en el texto del tweet</a>"
-        ],
+      ],
       "namePt": "",
       "descriptionPt": []
     }
