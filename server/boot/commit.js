@@ -44,7 +44,7 @@ function findNonprofit(name) {
     });
   }
 
-  nonprofit = nonprofit || nonprofits[0];
+  nonprofit = nonprofit || nonprofits[ _.random(0, nonprofits.length - 1) ];
   return nonprofit;
 }
 
