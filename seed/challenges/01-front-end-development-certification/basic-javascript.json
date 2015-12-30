@@ -129,7 +129,7 @@
         "assert(/var a;/.test(code) && /var b = 2;/.test(code), 'message: Do not change code above the line');",
         "assert(typeof a === 'number' && a === 7, 'message: <code>a</code> should have a value of 7');",
         "assert(typeof b === 'number' && b === 7, 'message: <code>b</code> should have a value of 7');",
-        "assert(/b\\s*=\\s*a\\s*;/g.test(code) > 0, 'message: <code>a</code> should be assigned to <code>b</code> with <code>=</code>');"
+        "assert(/b\\s*=\\s*a\\s*;/g.test(code), 'message: <code>a</code> should be assigned to <code>b</code> with <code>=</code>');"
       ],
       "type": "waypoint",
       "challengeType": "1",
@@ -146,7 +146,7 @@
         "It is common to <dfn>initialize</dfn> a variable to an initial value in the same line as it is declared.",
         "",
         "<code>var myVar = 0;</code>",
-        "Creates a new variable called <code>myVar</code> and assigns it an inital value of <code>0</code>.",
+        "Creates a new variable called <code>myVar</code> and assigns it an initial value of <code>0</code>.",
         "",
         "<h4>Instructions</h4>",
         "Define a variable <code>a</code> with <code>var</code> and initialize it to a value of <code>9</code>."
@@ -984,7 +984,7 @@
       "description": [
         "We can also use the <code>+=</code> operator to <dfn>concatenate</dfn> a string onto the end of an existing string variable. This can be very helpful to break a long string over several lines.",
         "<h4>Instructions</h4>",
-        "Build <code>myStr</code> over several lines by concatenating these two strings:<br><code>\"This is the first sentance. \"</code> and <code>\"This is the second sentance.\"</code> using the <code>+=</code> operator."
+        "Build <code>myStr</code> over several lines by concatenating these two strings:<br><code>\"This is the first sentence. \"</code> and <code>\"This is the second sentence.\"</code> using the <code>+=</code> operator."
       ],
       "releasedOn": "January 1, 2016",
       "challengeSeed": [
@@ -999,10 +999,10 @@
         ""
       ],
       "solutions": [
-        "var ourStr = \"I come first. \";\nourStr += \"I come second.\";\n\nvar myStr = \"This is the first sentance. \";\nmyStr += \"This is the second sentance.\";"
+        "var ourStr = \"I come first. \";\nourStr += \"I come second.\";\n\nvar myStr = \"This is the first sentence. \";\nmyStr += \"This is the second sentence.\";"
       ],
       "tests": [
-        "assert(myStr === \"This is the first sentance. This is the second sentance.\", 'message: <code>myStr</code> should have a value of <code>This is the first sentance. This is the second sentance.</code>');",
+        "assert(myStr === \"This is the first sentence. This is the second sentence.\", 'message: <code>myStr</code> should have a value of <code>This is the first sentence. This is the second sentence.</code>');",
         "assert(code.match(/\\w\\s*\\+=\\s*\"/g).length > 1 && code.match(/\\w\\s*\\=\\s*\"/g).length > 1, 'message: Use the <code>+=</code> operator to build <code>myStr</code>');"
       ],
       "type": "waypoint",
