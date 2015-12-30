@@ -11,7 +11,7 @@
       ],
       "description": [
         "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='http://codepen.io/FreeCodeCamp/full/avqvgJ' target='_blank'>http://codepen.io/FreeCodeCamp/full/avqvgJ</a>.",
-        "<span class='text-info'>Rule #1:</span> Don't look at the example project's code on CodePen. Figure it out for yourself.",
+        "<span class='text-info'>Rule #1:</span> Don't look at the example project's code. Figure it out for yourself.",
         "<span class='text-info'>Rule #2:</span> Fulfill the below <a href='http://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
         "<span class='text-info'>User Story:</span> I can see the weather in my current location.",
         "<span class='text-info'>User Story:</span> I can see a different icon or background image (e.g. snowy mountain, hot desert) depending on the weather.",
@@ -70,7 +70,7 @@
       ],
       "description": [
         "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='http://codepen.io/FreeCodeCamp/full/pgNRoJ' target='_blank'>http://codepen.io/FreeCodeCamp/full/pgNRoJ</a>.",
-        "<span class='text-info'>Rule #1:</span> Don't look at the example project's code on CodePen. Figure it out for yourself.",
+        "<span class='text-info'>Rule #1:</span> Don't look at the example project's code. Figure it out for yourself.",
         "<span class='text-info'>Rule #2:</span> Fulfill the below <a href='http://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
         "<span class='text-info'>User Story:</span> I can browse recent posts from Camper News.",
         "<span class='text-info'>User Story:</span> I can click on a post to be taken to the story's original URL.",
@@ -115,7 +115,7 @@
       ],
       "description": [
         "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='http://codepen.io/FreeCodeCamp/full/pgNRvJ' target='_blank'>http://codepen.io/FreeCodeCamp/full/pgNRvJ</a>.",
-        "<span class='text-info'>Rule #1:</span> Don't look at the example project's code on CodePen. Figure it out for yourself.",
+        "<span class='text-info'>Rule #1:</span> Don't look at the example project's code. Figure it out for yourself.",
         "<span class='text-info'>Rule #2:</span> Fulfill the below <a href='http://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
         "<span class='text-info'>User Story:</span> I can search Wikipedia entries in a search box and see the resulting Wikipedia entries.",
         "<span class='text-info'>User Story:</span> I can click a button to see a random Wikipedia entry.",
@@ -160,7 +160,7 @@
       ],
       "description": [
         "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='http://codepen.io/FreeCodeCamp/full/adBpOw' target='_blank'>http://codepen.io/FreeCodeCamp/full/adBpOw</a>.",
-        "<span class='text-info'>Rule #1:</span> Don't look at the example project's code on CodePen. Figure it out for yourself.",
+        "<span class='text-info'>Rule #1:</span> Don't look at the example project's code. Figure it out for yourself.",
         "<span class='text-info'>Rule #2:</span> Fulfill the below <a href='http://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
         "<span class='text-info'>User Story:</span> I can see whether Free Code Camp is currently streaming on Twitch.tv.",
         "<span class='text-info'>User Story:</span> I can click the status output and be sent directly to the Free Code Camp's Twitch.tv channel.",
@@ -229,7 +229,7 @@
       ],
       "description": [
         "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='http://codepen.io/FreeCodeCamp/full/adBpvw' target='_blank'>http://codepen.io/FreeCodeCamp/full/adBpvw</a>.",
-        "<span class='text-info'>Rule #1:</span> Don't look at the example project's code on CodePen. Figure it out for yourself.",
+        "<span class='text-info'>Rule #1:</span> Don't look at the example project's code. Figure it out for yourself.",
         "<span class='text-info'>Rule #2:</span> Fulfill the below <a href='http://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
         "<span class='text-info'>User Story:</span> I can play a game of Tic Tac Toe with the computer.",
         "<span class='text-info'>User Story:</span> I can never actually win against the computer - at best I can tie.",
@@ -274,7 +274,7 @@
       ],
       "description": [
         "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='http://codepen.io/Em-Ant/full/QbRyqq/' target='_blank'>http://codepen.io/FreeCodeCamp/full/obYBjE</a>.",
-        "<span class='text-info'>Rule #1:</span> Don't look at the example project's code on CodePen. Figure it out for yourself.",
+        "<span class='text-info'>Rule #1:</span> Don't look at the example project's code. Figure it out for yourself.",
         "<span class='text-info'>Rule #2:</span> Fulfill the below <a href='http://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
         "<span class='text-info'>User Story:</span> I am presented with a random series of button presses.",
         "<span class='text-info'>User Story:</span> each time I input a series of button presses correctly, I see the same series of button presses but with an additional step.",
