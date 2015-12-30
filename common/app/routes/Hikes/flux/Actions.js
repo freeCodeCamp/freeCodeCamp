@@ -136,7 +136,8 @@ export default Actions({
     userAnswer,
     props: {
       hike: { id, name, tests, challengeType },
-      currentQuestion
+      currentQuestion,
+      username
     }
   }) {
 
@@ -180,6 +181,10 @@ export default Actions({
     }
 
     // challenge completed
+    const optimisticSave = username ?
+      this.post$('/completed-challenge', { id, name, challengeType }) :
+      Observable.just(true);
+
     const correctAnswer = {
       transform(state) {
         const hikesApp = {
@@ -193,28 +198,29 @@ export default Actions({
       }
     };
 
-    return this.post$('/completed-challenge', { id, name, challengeType })
-      .map(() => {
-        return {
-          transform(state) {
-            const { hikes, currentHike: { id } } = state.hikesApp;
-            const currentHike = findNextHike(hikes, id);
+    return Observable.just({
+        transform(state) {
+          const { hikes, currentHike: { id } } = state.hikesApp;
+          const currentHike = findNextHike(hikes, id);
 
-            // go to next route
-            state.route = currentHike && currentHike.dashedName ?
-              `/hikes/${ currentHike.dashedName }` :
-              '/hikes';
+          // go to next route
+          state.route = currentHike && currentHike.dashedName ?
+            `/hikes/${ currentHike.dashedName }` :
+            '/hikes';
 
-            const hikesApp = {
-              ...state.hikesApp,
-              currentHike,
-              showQuestions: false
-            };
+          const hikesApp = {
+            ...state.hikesApp,
+            currentHike,
+            showQuestions: false,
+            currentQuestion: 1,
+            mouse: [0, 0]
+          };
 
-            return { ...state, hikesApp };
-          }
-        };
+          return { ...state, hikesApp };
+        },
+        optimistic: optimisticSave
       })
+      .delay(500)
       .startWith(correctAnswer)
       .catch(err => {
         console.error(err);
