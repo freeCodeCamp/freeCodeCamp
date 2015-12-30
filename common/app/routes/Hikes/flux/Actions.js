@@ -163,7 +163,8 @@ export default Actions({
     }
 
     // move to next question
-    if (tests[currentQuestion + 1]) {
+    // index 0
+    if (tests[currentQuestion]) {
 
       return {
         transform(state) {
@@ -204,7 +205,12 @@ export default Actions({
               `/hikes/${ currentHike.dashedName }` :
               '/hikes';
 
-            const hikesApp = { ...state.hikesApp, currentHike };
+            const hikesApp = {
+              ...state.hikesApp,
+              currentHike,
+              showQuestions: false
+            };
+
             return { ...state, hikesApp };
           }
         };
