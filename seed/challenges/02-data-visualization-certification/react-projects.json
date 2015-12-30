@@ -1,14 +1,25 @@
 {
   "name": "React Projects",
   "order": 15,
-  "isComingSoon": true,
   "time": "200h",
   "challenges": [
     {
-      "id": "bd7158d8c443ede1aeb5bdef",
-      "title": "React Project 1",
-      "challengeSeed": [],
+      "id": "bd7157d8c242eddfaeb5bd13",
+      "title": "Build a Markdown Previewer",
+      "challengeSeed": [
+        "150324697"
+      ],
       "description": [
+        "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='http://codepen.io/FreeCodeCamp/full/obYYqW' target='_blank'>http://codepen.io/FreeCodeCamp/full/obYYqW</a>.",
+        "<span class='text-info'>Rule #1:</span> Don't look at the example project's code. Figure it out for yourself.",
+        "<span class='text-info'>Rule #2:</span> Fulfill the below <a href='http://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
+        "<span class='text-info'>Rule #3:</span> You must use both SASS and React to build this project.",
+        "<span class='text-info'>User Story:</span> I can type GitHub-flavored Markdown into a text area.",
+        "<span class='text-info'>User Story:</span> I can see a preview of the output of my markdown that is updated as I type.",
+        "<span class='text-info'>Hint:</span> You don't need to interperate Markdown yourself - you can import the Marked library for this: <a href='https://cdnjs.com/libraries/marked'>https://cdnjs.com/libraries/marked</a>",
+        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck.",
+        "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen. ",
+        "You can get feedback on your project from fellow campers by sharing it in our <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Code Review Chatroom</a>. You can also share it on Twitter and your city's Campsite (on Facebook)."
       ],
       "type": "zipline",
       "challengeType": 3,
@@ -19,17 +30,30 @@
       "descriptionFr": [],
       "nameRu": "",
       "descriptionRu": [],
-      "nameEs": "Crea una aplicación de votaciones",
-      "descriptionEs": [
-        ],
+      "nameEs": "",
+      "descriptionEs": [],
       "namePt": "",
       "descriptionPt": []
     },
     {
-      "id": "bd7158d8c443ede1aeb5bdff",
-      "title": "React Project 2",
-      "challengeSeed": [],
+      "id": "bd7156d8c242eddfaeb5bd13",
+      "title": "Build a Camper Leaderboard",
+      "challengeSeed": [
+        "150324694"
+      ],
       "description": [
+        "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='http://codepen.io/FreeCodeCamp/full/qbqqJm/' target='_blank'>http://codepen.io/FreeCodeCamp/full/qbqqJm/</a>.",
+        "<span class='text-info'>Rule #1:</span> Don't look at the example project's code. Figure it out for yourself.",
+        "<span class='text-info'>Rule #2:</span> Fulfill the below <a href='http://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
+        "<span class='text-info'>Rule #3:</span> You must use both SASS and React to build this project.",
+        "<span class='text-info'>User Story:</span> I can see a table of the Free Code Camp campers who've earned the most brownie points in the past 30 days.",
+        "<span class='text-info'>User Story:</span> I can see how many brownie points they've earned in the past 30 days, and how many they've earned total.",
+        "<span class='text-info'>User Story:</span> I can toggle between sorting the list by how many bronwie points they've earned in the past 30 days and by how many brownie points they've earned total.",
+        "<span class='text-info'>Hint:</span> To get the top 100 campers for the last 30 days: <a href='http://fcctop100.herokuapp.com/api/fccusers/recent/:sortColumnName' target='_blank'>http://fcctop100.herokuapp.com/api/fccusers/recent/:sortColumnName</a>.",
+        "<span class='text-info'>Hint:</span> To get the top 100 campers of all time: <a href='http://fcctop100.herokuapp.com/api/fccusers/alltime/:sortColumnName' target='_blank'>http://fcctop100.herokuapp.com/api/fccusers/alltime/:sortColumnName</a>.",
+        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck.",
+        "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen. ",
+        "You can get feedback on your project from fellow campers by sharing it in our <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Code Review Chatroom</a>. You can also share it on Twitter and your city's Campsite (on Facebook)."
       ],
       "type": "zipline",
       "challengeType": 3,
@@ -40,17 +64,31 @@
       "descriptionFr": [],
       "nameRu": "",
       "descriptionRu": [],
-      "nameEs": "Crea una aplicación de coordinación de vida nocturna",
-      "descriptionEs": [
-        ],
+      "nameEs": "",
+      "descriptionEs": [],
       "namePt": "",
       "descriptionPt": []
     },
     {
-      "id": "bd7158d8c443ede1aeb5bd0e",
-      "title": "React Project 3",
-      "challengeSeed": [],
+      "id": "bd7155d8c242eddfaeb5bd13",
+      "title": "Build a Recipe Box",
+      "challengeSeed": [
+        "150324695"
+      ],
       "description": [
+        "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='http://codepen.io/FreeCodeCamp/full/LGbbqj' target='_blank'>http://codepen.io/FreeCodeCamp/full/LGbbqj</a>.",
+        "<span class='text-info'>Rule #1:</span> Don't look at the example project's code. Figure it out for yourself.",
+        "<span class='text-info'>Rule #2:</span> Fulfill the below <a href='http://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
+        "<span class='text-info'>Rule #3:</span> You must use both SASS and React to build this project.",
+        "<span class='text-info'>User Story:</span> I can create recipes that have names and ingredients.",
+        "<span class='text-info'>User Story:</span> I can see an index view where the names of all the recipes are visible.",
+        "<span class='text-info'>User Story:</span> I can click into any of those recipes to view it.",
+        "<span class='text-info'>User Story:</span> I can edit these recipes.",
+        "<span class='text-info'>User Story:</span> I can delete these recipes.",
+        "<span class='text-info'>User Story:</span> All new recipes I add are saved in my browser's local storage. If I refresh the page, these recipes will still be there.",
+        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck.",
+        "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen.",
+        "You can get feedback on your project from fellow campers by sharing it in our <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Code Review Chatroom</a>. You can also share it on Twitter and your city's Campsite (on Facebook)."
       ],
       "type": "zipline",
       "challengeType": 3,
@@ -61,17 +99,33 @@
       "descriptionFr": [],
       "nameRu": "",
       "descriptionRu": [],
-      "nameEs": "Grafica el mercado de acciones",
-      "descriptionEs": [
-        ],
+      "nameEs": "",
+      "descriptionEs": [],
       "namePt": "",
       "descriptionPt": []
     },
     {
-      "id": "bd7158d8c443ede1aeb5bd0f",
-      "title": "React Project 4",
-      "challengeSeed": [],
+      "id": "bd7154d8c242eddfaeb5bd13",
+      "title": "Build the Game of Life",
+      "challengeSeed": [
+        "150324459"
+      ],
       "description": [
+        "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='http://codepen.io/FreeCodeCamp/full/dGOOrZ' target='_blank'>http://codepen.io/FreeCodeCamp/full/dGOOrZ</a>.",
+        "<span class='text-info'>Rule #1:</span> Don't look at the example project's code. Figure it out for yourself.",
+        "<span class='text-info'>Rule #2:</span> Fulfill the below <a href='http://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
+        "<span class='text-info'>Rule #3:</span> You must use both SASS and React to build this project.",
+        "<span class='text-info'>User Story:</span> When I first arrive at the game, it will randomly generate a board and start playing.",
+        "<span class='text-info'>User Story:</span> I can start and stop the board.",
+        "<span class='text-info'>User Story:</span> I can set up the board.",
+        "<span class='text-info'>User Story:</span> I can clear the board.",
+        "<span class='text-info'>User Story:</span> When I press start, the game will play out.",
+        "<span class='text-info'>User Story:</span> Each time the board changes, I can see how many generations have gone by.",
+        "<span class='text-info'>Hint:</span> Here's an explanation of Conway's Game of Life from John Conway himself: <a href='https://www.youtube.com/watch?v=E8kUJL04ELA' target='_blank'>https://www.youtube.com/watch?v=E8kUJL04ELA</a>",
+        "<span class='text-info'>Hint:</span> Here's an overview of Conway's Game of Life with rules for your reference: <a href='https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life' target='_blank'>https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life</a>",
+        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck.",
+        "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen. ",
+        "You can get feedback on your project from fellow campers by sharing it in our <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Code Review Chatroom</a>. You can also share it on Twitter and your city's Campsite (on Facebook)."
       ],
       "type": "zipline",
       "challengeType": 3,
@@ -82,17 +136,34 @@
       "descriptionFr": [],
       "nameRu": "",
       "descriptionRu": [],
-      "nameEs": "Administra un club de intercambio de libros",
-      "descriptionEs": [
-        ],
+      "nameEs": "",
+      "descriptionEs": [],
       "namePt": "",
       "descriptionPt": []
     },
     {
-      "id": "bd7158d8c443ede1aeb5bdee",
-      "title": "React Project 5",
-      "challengeSeed": ["133315784"],
+      "id": "bd7153d8c242eddfaeb5bd13",
+      "title": "Build a Roguelike Dungeon Crawler Game",
+      "challengeSeed": [
+        "150324693"
+      ],
       "description": [
+        "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='http://codepen.io/FreeCodeCamp/full/dGOOEJ/' target='_blank'>http://codepen.io/FreeCodeCamp/full/dGOOEJ/</a>.",
+        "<span class='text-info'>Rule #1:</span> Don't look at the example project's code. Figure it out for yourself.",
+        "<span class='text-info'>Rule #2:</span> Fulfill the below <a href='http://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
+        "<span class='text-info'>Rule #3:</span> You must use both SASS and React to build this project.",
+        "<span class='text-info'>User Story:</span> I have health, a level, and a weapon. I can pick up a better weapon. I can pick up health items.",
+        "<span class='text-info'>User Story:</span> All the items and enemies on the map are arranged at random.",
+        "<span class='text-info'>User Story:</span> I can move throughout a map, discovering items.",
+        "<span class='text-info'>User Story:</span> I can move anywhere within the map's boundaries, but I can't move through an enemy until I've beaten it.",
+        "<span class='text-info'>User Story:</span> Much of the map is hidden. When I take a step, all spaces that are within a certain number of spaces from me are revealed.",
+        "<span class='text-info'>User Story:</span> When I beat an enemy, the enemy goes away and I get XP, which eventually increases my level.",
+        "<span class='text-info'>User Story:</span> When I fight an enemy, we take turns damaging each other until one of us loses. I do damage based off of my level and my weapon. The enemy does damage based off of its level. Damage is somewhat random within a range.",
+        "<span class='text-info'>User Story:</span> When I find and beat the boss, I win.",
+        "<span class='text-info'>User Story:</span> The game should be challenging, but theoretically winnable.",
+        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck.",
+        "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen. ",
+        "You can get feedback on your project from fellow campers by sharing it in our <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Code Review Chatroom</a>. You can also share it on Twitter and your city's Campsite (on Facebook)."
       ],
       "type": "zipline",
       "challengeType": 3,
@@ -103,9 +174,8 @@
       "descriptionFr": [],
       "nameRu": "",
       "descriptionRu": [],
-      "nameEs": "Crea un clon de Pinterest",
-      "descriptionEs": [
-        ],
+      "nameEs": "",
+      "descriptionEs": [],
       "namePt": "",
       "descriptionPt": []
     }

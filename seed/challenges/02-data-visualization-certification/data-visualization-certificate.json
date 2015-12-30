@@ -1,6 +1,5 @@
 {
   "name": "Claim Your Data Visualization Certificate",
-  "isComingSoon": true,
   "order": 18,
   "time": "5m",
   "challenges": [
@@ -9,16 +8,25 @@
       "title": "Claim Your Data Visualization Certificate",
       "challengeSeed": [
         {
-          "properties": ["isHonest", "isDataVisualizationCert"],
-          "apis": ["/certificate/honest", "/certificate/verify/data-visualization"],
-          "stepIndex": [1, 2]
+          "properties": [
+            "isHonest",
+            "isDataVisualizationCert"
+          ],
+          "apis": [
+            "/certificate/honest",
+            "/certificate/verify/data-visualization"
+          ],
+          "stepIndex": [
+            1,
+            2
+          ]
         }
       ],
       "description": [
         [
           "http://i.imgur.com/syJxavV.jpg",
-          "An image of our Front End Development Certificate",
-          "This challenge will give you your verified Front End Development Certificate. Before we issue your certificate, we must verify that you have completed all of our basic and intermediate Bonfires, and all our basic and intermediate Ziplines. You must also accept our Academic Honesty Pledge. Click the button below to start this process.",
+          "An image of our Data Visualization Certificate",
+          "This challenge will give you your verified Data Visualization Certificate. Before we issue your certificate, we must verify that you have completed all of our basic and intermediate Bonfires, and all our basic and intermediate Ziplines. You must also accept our Academic Honesty Pledge. Click the button below to start this process.",
           ""
         ],
         [
@@ -29,20 +37,61 @@
         ],
         [
           "http://i.imgur.com/14F2Van.jpg",
-          "An image of the text \"Front End Development Certificate requirements\"",
-          "Let's confirm that you have completed all of our basic and intermediate Bonfires, and all our basic and intermediate Ziplines. Click the button below to verify this.",
+          "An image of the text \"Data Visualization Certificate requirements\"",
+          "Let's confirm that you have completed our React and D3.js Ziplines. Click the button below to verify this.",
           "#"
         ],
         [
           "http://i.imgur.com/16SIhHO.jpg",
           "An image of the word \"Congratulations\"",
-          "Congratulations! We've added your Front End Development Certificate to your certificate to your portfolio page. Unless you choose to hide your solutions, this certificate will remain publicly visible and verifiable.",
+          "Congratulations! We've added your Data Visualization Certificate to your portfolio page. Unless you choose to hide your solutions, this certificate will remain publicly visible and verifiable.",
           ""
         ]
       ],
       "type": "Waypoint",
       "challengeType": 7,
-      "tests": [],
+      "tests": [
+        {
+          "id": "bd7157d8c242eddfaeb5bd13",
+          "title": "Build a Markdown Previewer"
+        },
+        {
+          "id": "bd7156d8c242eddfaeb5bd13",
+          "title": "Build a Camper Leaderboard"
+        },
+        {
+          "id": "bd7155d8c242eddfaeb5bd13",
+          "title": "Build a Recipe Box"
+        },
+        {
+          "id": "bd7154d8c242eddfaeb5bd13",
+          "title": "Build the Game of Life"
+        },
+        {
+          "id": "bd7153d8c242eddfaeb5bd13",
+          "title": "Build a Roguelike Dungeon Crawler Game"
+        },
+        {
+          "id": "bd7168d8c242eddfaeb5bd13",
+          "title": "Visualize Data with a Bar Chart"
+        },
+        {
+          "id": "bd7178d8c242eddfaeb5bd13",
+          "title": "Visualize Data with a Scatterplot Graph"
+        },
+        {
+          "id": "bd7188d8c242eddfaeb5bd13",
+          "title": "Visualize Data with a Heat Map"
+        },
+        {
+          "id": "bd7198d8c242eddfaeb5bd13",
+          "title": "Show Relationships with a Force Directed Graph"
+        },
+        {
+          "id": "bd7108d8c242eddfaeb5bd13",
+          "title": "Map Data Across the Globe"
+        }
+      ],
       "nameCn": "",
       "descriptionCn": [],
       "nameFr": "",
@@ -75,7 +124,7 @@
           "¡Felicitaciones! Hemos agregado tu Certificado de desarrollo Front End a tu portafolio. A menos que elijas no mostrar tus soluciones, este certificado será públicamente visible y verificable.",
           ""
         ]
-        ],
+      ],
       "namePt": "",
       "descriptionPt": []
     }
