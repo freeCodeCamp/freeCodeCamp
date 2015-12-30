@@ -3597,7 +3597,8 @@
         "Create a CSS declaration for your <code>orange-text</code> id in your <code>style</code> element. Here's an example of what this looks like:",
         "<code>#brown-text {</code>",
         "<code>&nbsp;&nbsp;color: brown;</code>",
-        "<code>}</code>"
+        "<code>}</code>",
+        "Note: It doesn't matter whether you declare this css above or below pink-text class, since id attribute will always take precedence."
       ],
       "tests": [
         "assert($(\"h1\").hasClass(\"pink-text\"), 'message: Your <code>h1</code> element should have the class <code>pink-text</code>.');",
@@ -3642,7 +3643,8 @@
         "Crea una declaración CSS para tu identificación <code>orange-text</code> en tu elemento <code>style</code>. He aquí un ejemplo de como se ve esto: ",
         "<code>#brown-text {</code>",
         "<code>&nbsp;&nbsp;color: brown;</code>",
-        "<code>}</code>"
+        "<code>}</code>",
+        "Nota: No importa si usted declara este css encima o debajo de la clase de texto de color rosa, ya atributo id siempre tendrá prioridad."
       ],
       "namePt": "",
       "descriptionPt": [],
