@@ -2098,7 +2098,7 @@
       "title": "Stand in Line",
       "description": [
         "In Computer Science a <dfn>queue</dfn> is an abstract <dfn>Data Structure</dfn> where items are kept in order. New items can be added at the back of the <code>queue</code> and old items are taken off from the front of the <code>queue</code>.",
-        "Write a function <code>queue</code> which takes an \"array\" and an \"item\" as arguments.  Add the item onto the end of the array, then remove and return the item at the front of the queue."
+        "Write a function <code>queue</code> which takes an \"array\" and an \"item\" as arguments.  Add the item onto the end of the array, then remove and return the first element of the array."
       ],
       "releasedOn": "January 1, 2016",
       "head": [
