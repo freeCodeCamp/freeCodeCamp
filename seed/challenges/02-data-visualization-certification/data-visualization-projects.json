@@ -7,7 +7,7 @@
       "id": "bd7168d8c242eddfaeb5bd13",
       "title": "Visualize Data with a Bar Chart",
       "challengeSeed": [
-        "133315782"
+        "150324699"
       ],
       "description": [
         "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='http://codepen.io/FreeCodeCamp/full/adBBWd' target='_blank'>http://codepen.io/FreeCodeCamp/full/adBBWd</a>.",
@@ -39,7 +39,7 @@
       "id": "bd7178d8c242eddfaeb5bd13",
       "title": "Visualize Data with a Scatterplot Graph",
       "challengeSeed": [
-        "133315782"
+        "150324700"
       ],
       "description": [
         "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='http://codepen.io/FreeCodeCamp/full/GoNNEy' target='_blank'>http://codepen.io/FreeCodeCamp/full/GoNNEy</a>.",
@@ -71,16 +71,16 @@
       "id": "bd7188d8c242eddfaeb5bd13",
       "title": "Visualize Data with a Heat Map",
       "challengeSeed": [
-        "133315782"
+        "150324701"
       ],
       "description": [
         "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='http://codepen.io/FreeCodeCamp/full/rxWWGa' target='_blank'>http://codepen.io/FreeCodeCamp/full/rxWWGa</a>.",
         "<span class='text-info'>Rule #1:</span> Don't look at the example project's code. Figure it out for yourself.",
         "<span class='text-info'>Rule #2:</span> Fulfill the below <a href='http://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
         "<span class='text-info'>Rule #3:</span> You must use D3.js to build this project.",
-        "<span class='text-info'>User Story:</span> I can view a heat map of the temperature by month, sorted into rows by year.",
-        "<span class='text-info'>User Story:</span> Each month is colored based on its relative heat.",
-        "<span class='text-info'>User Story:</span> I can hover over a month to get its exact temperature.",
+        "<span class='text-info'>User Story:</span> I can view a heat map with data represented both on the Y and X axis.",
+        "<span class='text-info'>User Story:</span> Each cell is colored based its relationship to other data.",
+        "<span class='text-info'>User Story:</span> I can mouse over a cell in the heat map to get more exact information.",
         "<span class='text-info'>Hint:</span> Here's a dataset you can use to build this: <a href='https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/master/global-temperature.json' target='_blank'>https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/master/global-temperature.json</a>",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck.",
         "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen. ",
@@ -102,9 +102,9 @@
     },
     {
       "id": "bd7198d8c242eddfaeb5bd13",
-      "title": "Show Relationships with a Force-Directed Graph",
+      "title": "Show Relationships with a Force Directed Graph",
       "challengeSeed": [
-        "133315782"
+        "150324458"
       ],
       "description": [
         "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='http://codepen.io/FreeCodeCamp/full/KVNNXY' target='_blank'>http://codepen.io/FreeCodeCamp/full/KVNNXY</a>.",
@@ -139,7 +139,7 @@
       "id": "bd7108d8c242eddfaeb5bd13",
       "title": "Map Data Across the Globe",
       "challengeSeed": [
-        "133315782"
+        "150324698"
       ],
       "description": [
         "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='http://codepen.io/FreeCodeCamp/full/mVEJag' target='_blank'>http://codepen.io/FreeCodeCamp/full/mVEJag</a>.",
