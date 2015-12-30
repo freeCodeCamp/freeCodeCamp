@@ -4014,7 +4014,7 @@
         "<blockquote>var arr = [10,9,8,7,6];<br>for (var i=0; i < arr.length; i++) {<br>   console.log(arr[i]);<br>}</blockquote>",
         "Remember that Arrays have zero-based numbering, which means the last index of the array is length - 1.  Our <dfn>condition</dfn> for this loop is <code>i < arr.length</code>, which stops when <code>i</code> is at length - 1.",
         "<h4>Instructions</h4>",
-        "Create a variable <code>total</code>. Use a <code>for</code> loop to add each element of <code>myArr</code> to total."
+        "Declare and initialize a variable <code>total</code> to <code>0</code>. Use a <code>for</code> loop to add the value of each element of the <code>myArr</code> array to <code>total</code>."
       ],
       "releasedOn": "January 1, 2016",
       "challengeSeed": [
