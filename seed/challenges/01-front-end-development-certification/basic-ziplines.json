@@ -110,7 +110,7 @@
       ],
       "description": [
         "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='http://codepen.io/FreeCodeCamp/full/VemmoX/' target='_blank'>http://codepen.io/FreeCodeCamp/full/VemmoX/</a>.",
-        "<span class='text-info'>Rule #1:</span> Don't look at the example project's code on CodePen. Figure it out for yourself.",
+        "<span class='text-info'>Rule #1:</span> Don't look at the example project's code. Figure it out for yourself.",
         "<span class='text-info'>Rule #2:</span> Fulfill the below <a href='http://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
         "<span class='text-info'>User Story:</span> I can access all of the portfolio webpage's content just by scrolling.",
         "<span class='text-info'>User Story:</span> I can click different buttons that will take me to the portfolio creator's different social media pages.",
@@ -179,7 +179,7 @@
       ],
       "description": [
         "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='http://codepen.io/FreeCodeCamp/full/yeVgBY' target='_blank'>http://codepen.io/FreeCodeCamp/full/yeVgBY</a>.",
-        "<span class='text-info'>Rule #1:</span> Don't look at the example project's code on CodePen. Figure it out for yourself.",
+        "<span class='text-info'>Rule #1:</span> Don't look at the example project's code. Figure it out for yourself.",
         "<span class='text-info'>Rule #2:</span> Fulfill the below <a href='http://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
         "<span class='text-info'>User Story:</span> I can click a button to show me a new random quote.",
         "<span class='text-info'>User Story:</span> I can press a button to tweet out a quote.",
@@ -232,7 +232,7 @@
       ],
       "description": [
         "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='http://codepen.io/FreeCodeCamp/full/EPNZYW' target='_blank'>http://codepen.io/FreeCodeCamp/full/EPNZYW</a>.",
-        "<span class='text-info'>Rule #1:</span> Don't look at the example project's code on CodePen. Figure it out for yourself.",
+        "<span class='text-info'>Rule #1:</span> Don't look at the example project's code. Figure it out for yourself.",
         "<span class='text-info'>Rule #2:</span> Fulfill the below <a href='http://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
         "<span class='text-info'>User Story:</span> I can add, subtract, multiply and divide two numbers.",
         "<span class='text-info'>User Story:</span> I can clear the input field with a clear button.",
@@ -275,7 +275,7 @@
       ],
       "description": [
         "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='http://codepen.io/FreeCodeCamp/full/VemPZX' target='_blank'>http://codepen.io/FreeCodeCamp/full/VemPZX</a>.",
-        "<span class='text-info'>Rule #1:</span> Don't look at the example project's code on CodePen. Figure it out for yourself.",
+        "<span class='text-info'>Rule #1:</span> Don't look at the example project's code. Figure it out for yourself.",
         "<span class='text-info'>Rule #2:</span> Fulfill the below <a href='http://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
         "<span class='text-info'>User Story:</span> I can start a 25 minute pomodoro, and the timer will go off once 25 minutes has elapsed.",
         "<span class='text-info'>User Story:</span> I can reset the clock for my next pomodoro.",

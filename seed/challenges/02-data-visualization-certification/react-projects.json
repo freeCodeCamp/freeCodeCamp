@@ -11,7 +11,7 @@
       ],
       "description": [
         "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='http://codepen.io/FreeCodeCamp/full/obYYqW' target='_blank'>http://codepen.io/FreeCodeCamp/full/obYYqW</a>.",
-        "<span class='text-info'>Rule #1:</span> Don't look at the example project's code on CodePen. Figure it out for yourself.",
+        "<span class='text-info'>Rule #1:</span> Don't look at the example project's code. Figure it out for yourself.",
         "<span class='text-info'>Rule #2:</span> Fulfill the below <a href='http://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
         "<span class='text-info'>Rule #3:</span> You must use both SASS and React to build this project.",
         "<span class='text-info'>User Story:</span> I can type GitHub-flavored Markdown into a text area.",
@@ -37,16 +37,16 @@
     },
     {
       "id": "bd7156d8c242eddfaeb5bd13",
-      "title": "Build an Camper Leaderboard",
+      "title": "Build a Camper Leaderboard",
       "challengeSeed": [
         "133315782"
       ],
       "description": [
         "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='http://codepen.io/FreeCodeCamp/full/qbqqJm/' target='_blank'>http://codepen.io/FreeCodeCamp/full/qbqqJm/</a>.",
-        "<span class='text-info'>Rule #1:</span> Don't look at the example project's code on CodePen. Figure it out for yourself.",
+        "<span class='text-info'>Rule #1:</span> Don't look at the example project's code. Figure it out for yourself.",
         "<span class='text-info'>Rule #2:</span> Fulfill the below <a href='http://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
         "<span class='text-info'>Rule #3:</span> You must use both SASS and React to build this project.",
-        "<span class='text-info'>User Story:</span> I can see the a table of the Free Code Camp campers who've earned the most brownie points in the past 30 days.",
+        "<span class='text-info'>User Story:</span> I can see a table of the Free Code Camp campers who've earned the most brownie points in the past 30 days.",
         "<span class='text-info'>User Story:</span> I can see how many brownie points they've earned in the past 30 days, and how many they've earned total.",
         "<span class='text-info'>User Story:</span> I can toggle between sorting the list by how many bronwie points they've earned in the past 30 days and by how many brownie points they've earned total.",
         "<span class='text-info'>Hint:</span> To get the top 100 campers for the last 30 days: <a href='http://fcctop100.herokuapp.com/api/fccusers/recent/:sortColumnName' target='_blank'>http://fcctop100.herokuapp.com/api/fccusers/recent/:sortColumnName</a>.",
@@ -77,7 +77,7 @@
       ],
       "description": [
         "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='http://codepen.io/FreeCodeCamp/full/LGbbqj' target='_blank'>http://codepen.io/FreeCodeCamp/full/LGbbqj</a>.",
-        "<span class='text-info'>Rule #1:</span> Don't look at the example project's code on CodePen. Figure it out for yourself.",
+        "<span class='text-info'>Rule #1:</span> Don't look at the example project's code. Figure it out for yourself.",
         "<span class='text-info'>Rule #2:</span> Fulfill the below <a href='http://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
         "<span class='text-info'>Rule #3:</span> You must use both SASS and React to build this project.",
         "<span class='text-info'>User Story:</span> I can create recipes that have names and ingredients.",
@@ -112,7 +112,7 @@
       ],
       "description": [
         "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='http://codepen.io/FreeCodeCamp/full/dGOOrZ' target='_blank'>http://codepen.io/FreeCodeCamp/full/dGOOrZ</a>.",
-        "<span class='text-info'>Rule #1:</span> Don't look at the example project's code on CodePen. Figure it out for yourself.",
+        "<span class='text-info'>Rule #1:</span> Don't look at the example project's code. Figure it out for yourself.",
         "<span class='text-info'>Rule #2:</span> Fulfill the below <a href='http://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
         "<span class='text-info'>Rule #3:</span> You must use both SASS and React to build this project.",
         "<span class='text-info'>User Story:</span> When I first arrive at the game, it will randomly generate a board and start playing.",
@@ -148,7 +148,7 @@
       ],
       "description": [
         "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='http://codepen.io/FreeCodeCamp/full/dGOOEJ/' target='_blank'>http://codepen.io/FreeCodeCamp/full/dGOOEJ/</a>.",
-        "<span class='text-info'>Rule #1:</span> Don't look at the example project's code on CodePen. Figure it out for yourself.",
+        "<span class='text-info'>Rule #1:</span> Don't look at the example project's code. Figure it out for yourself.",
         "<span class='text-info'>Rule #2:</span> Fulfill the below <a href='http://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
         "<span class='text-info'>Rule #3:</span> You must use both SASS and React to build this project.",
         "<span class='text-info'>User Story:</span> I have health, a level, and a weapon. I can pick up a better weapon. I can pick up health items.",
