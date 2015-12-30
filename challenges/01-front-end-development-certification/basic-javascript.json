@@ -1993,8 +1993,25 @@
         "Declare a local variable <code>myVar</code> inside <code>myFunction</code>"
       ],
       "releasedOn": "January 1, 2016",
+      "head": [
+        "var logOutput = \"\";",
+        "var oldLog = console.log;",
+        "function capture() {",
+        "    console.log = function (message) {",
+        "        logOutput = message;",
+        "        oldLog.apply(console, arguments);",
+        "    };",
+        "}",
+        "",
+        "function uncapture() {",
+        "  console.log = oldLog;",
+        "}",
+        ""
+      ],
       "challengeSeed": [
         "function myFunction() {",
+        "  'use strict';",
+        "  ",
         "  ",
         "  console.log(myVar);",
         "}",
@@ -2004,17 +2021,19 @@
         "// myVar is not defined outside of myFunction",
         "console.log(myVar);",
         "",
-        "// now remove the console.log line to pass the test",
+        "// now remove the console log line to pass the test",
         ""
       ],
       "tail": [
-        ""
+        "typeof myFunction === 'function' && (capture(), myFunction(), uncapture());",
+        "(function() { return logOutput || \"console.log never called\"; })();"
       ],
       "solutions": [
-        "function myFunction() {\n  var myVar;\n  console.log(myVar);\n}\nmyFunction();"
+        "function myFunction() {\n  'use strict';\n  \n  var myVar;\n  console.log(myVar);\n}\nmyFunction();"
       ],
       "tests": [
-        "assert(code.match(/console\\.log/gi).length === 1, 'message: Remove the second console log');"
+        "assert(typeof myVar === 'undefined', 'message: No global <code>myVar</code> variable');",
+        "assert(/var\\s+myVar/.test(code), 'message: Add a local <code>myVar</code> variable');"
       ],
       "type": "waypoint",
       "challengeType": "1",
