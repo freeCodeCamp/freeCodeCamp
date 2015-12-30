@@ -8,8 +8,8 @@ const initValue = {
   points: 0,
   hikesApp: {
     hikes: [],
-    currentHikes: {},
-    currentQuestion: 1,
+    // lecture state
+    currentHike: {},
     showQuestion: false
   }
 };
@@ -22,13 +22,31 @@ export default Store({
   init({ instance: appStore, args: [cat] }) {
     const { updateRoute, getUser, setTitle } = cat.getActions('appActions');
     const register = createRegistrar(appStore);
-    const { toggleQuestions, fetchHikes } = cat.getActions('hikesActions');
+    const {
+      toggleQuestions,
+      fetchHikes,
+      hideInfo,
+      grabQuestion,
+      releaseQuestion,
+      moveQuestion,
+      answer
+    } = cat.getActions('hikesActions');
 
     // app
     register(setter(fromMany(getUser, setTitle, updateRoute)));
 
     // hikes
-    register(fromMany(fetchHikes, toggleQuestions));
+    register(
+      fromMany(
+        toggleQuestions,
+        fetchHikes,
+        hideInfo,
+        grabQuestion,
+        releaseQuestion,
+        moveQuestion,
+        answer
+      )
+    );
 
     return appStore;
   }
