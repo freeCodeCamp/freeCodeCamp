@@ -1,7 +1,6 @@
 import React, { PropTypes } from 'react';
-import { Motion } from 'react-motion';
+import { spring, Motion } from 'react-motion';
 import { contain } from 'thundercats-react';
-import debugFactory from 'debug';
 import {
   Button,
   Col,
@@ -10,19 +9,32 @@ import {
   Row
 } from 'react-bootstrap';
 
-const debug = debugFactory('freecc:hikes');
 const ANSWER_THRESHOLD = 200;
 
 export default contain(
   {
     store: 'appStore',
-    actions: ['hikesAction'],
-    map(state) {
-      const { currentQuestion, currentHike } = state.hikesApp;
-
+    actions: ['hikesActions'],
+    map({ hikesApp }) {
+      const {
+        currentHike,
+        currentQuestion = 1,
+        mouse = [0, 0],
+        isCorrect = false,
+        delta = [0, 0],
+        isPressed = false,
+        showInfo = false,
+        shake = false
+      } = hikesApp;
       return {
         hike: currentHike,
-        currentQuestion
+        currentQuestion,
+        mouse,
+        isCorrect,
+        delta,
+        isPressed,
+        showInfo,
+        shake
       };
     }
   },
@@ -30,150 +42,89 @@ export default contain(
     displayName: 'Questions',
 
     propTypes: {
-      dashedName: PropTypes.string,
-      currentQuestion: PropTypes.number,
       hike: PropTypes.object,
+      currentQuestion: PropTypes.number,
+      mouse: PropTypes.array,
+      isCorrect: PropTypes.bool,
+      delta: PropTypes.array,
+      isPressed: PropTypes.bool,
+      showInfo: PropTypes.bool,
+      shake: PropTypes.bool,
       hikesActions: PropTypes.object
-    },
-
-    getInitialState: () => ({
-      mouse: [0, 0],
-      correct: false,
-      delta: [0, 0],
-      isPressed: false,
-      showInfo: false,
-      shake: false
-    }),
-
-    getTweenValues() {
-      const { mouse: [x, y] } = this.state;
-      return {
-        val: { x, y },
-        config: [120, 10]
-      };
     },
 
     handleMouseDown({ pageX, pageY, touches }) {
       if (touches) {
         ({ pageX, pageY } = touches[0]);
       }
-      const { mouse: [pressX, pressY] } = this.state;
-      const dx = pageX - pressX;
-      const dy = pageY - pressY;
-      this.setState({
-        isPressed: true,
-        delta: [dx, dy],
-        mouse: [pageX - dx, pageY - dy]
-      });
+      const { mouse: [pressX, pressY], hikesActions } = this.props;
+      hikesActions.grabQuestion({ pressX, pressY, pageX, pageY });
     },
 
     handleMouseUp() {
-      const { correct } = this.state;
-      if (correct) {
-        return this.setState({
-          isPressed: false,
-          delta: [0, 0]
-        });
+      if (!this.props.isPressed) {
+        return null;
       }
-      this.setState({
-        isPressed: false,
-        mouse: [0, 0],
-        delta: [0, 0]
-      });
+      this.props.hikesActions.releaseQuestion();
     },
 
     handleMouseMove(answer) {
+      if (!this.props.isPressed) {
+        return () => {};
+      }
+
       return (e) => {
         let { pageX, pageY, touches } = e;
 
         if (touches) {
           e.preventDefault();
-          // these reassins the values of pageX, pageY from touches
+          // these re-assigns the values of pageX, pageY from touches
           ({ pageX, pageY } = touches[0]);
         }
 
-        const { isPressed, delta: [dx, dy] } = this.state;
-        if (isPressed) {
-          const mouse = [pageX - dx, pageY - dy];
-          if (mouse[0] >= ANSWER_THRESHOLD) {
-            this.handleMouseUp();
-            return this.onAnswer(answer, true)();
-          }
-          if (mouse[0] <= -ANSWER_THRESHOLD) {
-            this.handleMouseUp();
-            return this.onAnswer(answer, false)();
-          }
-          this.setState({ mouse });
+        const { delta: [dx, dy], hikesActions } = this.props;
+        const mouse = [pageX - dx, pageY - dy];
+
+        if (mouse[0] >= ANSWER_THRESHOLD) {
+          return this.onAnswer(answer, true)();
         }
+
+        if (mouse[0] <= -ANSWER_THRESHOLD) {
+          return this.onAnswer(answer, false)();
+        }
+
+        return hikesActions.moveQuestion(mouse);
       };
     },
 
-    hideInfo() {
-      this.setState({ showInfo: false });
-    },
-
     onAnswer(answer, userAnswer) {
+      const { hikesActions } = this.props;
       return (e) => {
         if (e && e.preventDefault) {
           e.preventDefault();
         }
 
-        if (this.disposeTimeout) {
-          clearTimeout(this.disposeTimeout);
-          this.disposeTimeout = null;
-        }
-
-        if (answer === userAnswer) {
-          debug('correct answer!');
-          this.setState({
-            correct: true,
-            mouse: [ userAnswer ? 1000 : -1000, 0]
-          });
-          this.disposeTimeout = setTimeout(() => {
-            this.onCorrectAnswer();
-          }, 1000);
-          return;
-        }
-
-        debug('incorrect');
-        this.setState({
-          showInfo: true,
-          shake: true
-        });
-
-        this.disposeTimeout = setTimeout(
-          () => this.setState({ shake: false }),
-          500
-        );
+        return hikesActions.answer({ answer, userAnswer, props: this.props });
       };
-    },
-
-    onCorrectAnswer() {
-      const {
-        hikesActions,
-        hike: { id, name }
-      } = this.props;
-
-      hikesActions.completedHike({ id, name });
     },
 
     routerWillLeave(nextState, router, cb) {
       // TODO(berks): do animated transitions here stuff here
       this.setState({
         showInfo: false,
-        correct: false,
+        isCorrect: false,
         mouse: [0, 0]
       }, cb);
     },
 
-    renderInfo(showInfo, info) {
+    renderInfo(showInfo, info, hideInfo) {
       if (!info) {
         return null;
       }
       return (
         <Modal
           backdrop={ true }
-          onHide={ this.hideInfo }
+          onHide={ hideInfo }
           show={ showInfo }>
           <Modal.Body>
             <h3>
@@ -184,7 +135,7 @@ export default contain(
             <Button
               block={ true }
               bsSize='large'
-              onClick={ this.hideInfo }>
+              onClick={ hideInfo }>
               hide
             </Button>
           </Modal.Footer>
@@ -193,8 +144,7 @@ export default contain(
     },
 
     renderQuestion(number, question, answer, shake) {
-      return ({ x: xFunc }) => {
-        const x = xFunc().val.x;
+      return ({ x }) => {
         const style = {
           WebkitTransform: `translate3d(${ x }px, 0, 0)`,
           transform: `translate3d(${ x }px, 0, 0)`
@@ -219,10 +169,12 @@ export default contain(
     },
 
     render() {
-      const { showInfo, shake } = this.state;
+      const { showInfo, shake } = this.props;
       const {
         hike: { tests = [] } = {},
-        currentQuestion
+        mouse: [x],
+        currentQuestion,
+        hikesActions
       } = this.props;
 
       const [ question, answer, info ] = tests[currentQuestion - 1] || [];
@@ -233,21 +185,21 @@ export default contain(
           xs={ 8 }
           xsOffset={ 2 }>
           <Row>
-            <Motion style={{ x: this.getTweenValues }}>
+            <Motion style={{ x: spring(x, [120, 10]) }}>
               { this.renderQuestion(currentQuestion, question, answer, shake) }
             </Motion>
-            { this.renderInfo(showInfo, info) }
+            { this.renderInfo(showInfo, info, hikesActions.hideInfo) }
             <Panel>
               <Button
                 bsSize='large'
                 className='pull-left'
-                onClick={ this.onAnswer(answer, false, info) }>
+                onClick={ this.onAnswer(answer, false) }>
                 false
               </Button>
               <Button
                 bsSize='large'
                 className='pull-right'
-                onClick={ this.onAnswer(answer, true, info) }>
+                onClick={ this.onAnswer(answer, true) }>
                 true
               </Button>
             </Panel>

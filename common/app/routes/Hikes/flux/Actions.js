@@ -35,6 +35,20 @@ function findNextHike(hikes, id) {
   return hikes[currentIndex + 1] || hikes[0];
 }
 
+function releaseQuestion(state) {
+  const oldHikesApp = state.hikesApp;
+  const hikesApp = {
+    ...oldHikesApp,
+    isPressed: false,
+    delta: [0, 0],
+    mouse: oldHikesApp.isCorrect ?
+      oldHikesApp.mouse :
+      [0, 0]
+  };
+
+  return { ...state, hikesApp };
+}
+
 export default Actions({
   refs: { displayName: 'HikesActions' },
   shouldBindMethods: true,
@@ -74,14 +88,111 @@ export default Actions({
   toggleQuestions() {
     return {
       transform(state) {
-        state.hikesApp.showQuestions = !state.hikesApp.showQuestions;
-        return Object.assign({}, state);
+        const hikesApp = { ...state.hikesApp, showQuestions: true };
+        return { ...state, hikesApp };
       }
     };
   },
 
-  completedHike(data = {}) {
-    return this.postJSON$('/completed-challenge', data)
+  hideInfo() {
+    return {
+      transform(state) {
+        const hikesApp = { ...state.hikesApp, showInfo: false };
+        return { ...state, hikesApp };
+      }
+    };
+  },
+
+  grabQuestion({ pressX, pressY, pageX, pageY }) {
+    const dx = pageX - pressX;
+    const dy = pageY - pressY;
+
+    const delta = [dx, dy];
+    const mouse = [pageX - dx, pageY - dy];
+
+    return {
+      transform(state) {
+        const hikesApp = { ...state.hikesApp, isPressed: true, delta, mouse };
+        return { ...state, hikesApp };
+      }
+    };
+  },
+
+  releaseQuestion() {
+    return { transform: releaseQuestion };
+  },
+
+  moveQuestion(mouse) {
+    return {
+      transform(state) {
+        const hikesApp = { ...state.hikesApp, mouse };
+        return { ...state, hikesApp };
+      }
+    };
+  },
+
+  answer({
+    answer,
+    userAnswer,
+    props: {
+      hike: { id, name, tests, challengeType },
+      currentQuestion
+    }
+  }) {
+
+    // incorrect question
+    if (answer !== userAnswer) {
+      const startShake = {
+        transform(state) {
+          const hikesApp = { ...state.hikesApp, showInfo: true, shake: true };
+          return { ...state, hikesApp };
+        }
+      };
+
+      const removeShake = {
+        transform(state) {
+          const hikesApp = { ...state.hikesApp, shake: false };
+          return { ...state, hikesApp };
+        }
+      };
+
+      return Observable
+        .just(removeShake)
+        .delay(500)
+        .startWith({ transform: releaseQuestion }, startShake);
+    }
+
+    // move to next question
+    if (tests[currentQuestion + 1]) {
+
+      return {
+        transform(state) {
+
+          const hikesApp = {
+            ...state.hikesApp,
+            currentQuestion: currentQuestion + 1
+          };
+
+          return { ...state, hikesApp };
+        }
+      };
+    }
+
+    // challenge completed
+    const correctAnswer = {
+      transform(state) {
+        const hikesApp = {
+          ...state.hikesApp,
+          isCorrect: true,
+          isPressed: false,
+          delta: [0, 0],
+          mouse: [ userAnswer ? 1000 : -1000, 0]
+        };
+        return { ...state, hikesApp };
+      }
+    };
+
+    return this.post$('/completed-challenge', { id, name, challengeType })
       .map(() => {
         return {
           transform(state) {
@@ -98,6 +209,7 @@ export default Actions({
           }
         };
       })
+      .startWith(correctAnswer)
       .catch(err => {
         console.error(err);
         return Observable.just({

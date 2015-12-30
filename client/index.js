@@ -26,7 +26,7 @@ const appLocation = createLocation(
 function location$(history) {
   return Rx.Observable.create(function(observer) {
     const dispose = history.listen(function(location) {
-      observer.onNext(location.pathname);
+      observer.onNext(location);
     });
 
     return Rx.Disposable.create(() => {
@@ -40,10 +40,9 @@ app$({ history, location: appLocation })
   .flatMap(
     ({ AppCat }) => {
       // instantiate the cat with service
-      const appCat = AppCat(null, services);
+      const appCat = AppCat(null, services, history);
       // hydrate the stores
-      return hydrate(appCat, catState)
-        .map(() => appCat);
+      return hydrate(appCat, catState).map(() => appCat);
     },
     // not using nextLocation at the moment but will be used for
     // redirects in the future
@@ -51,12 +50,26 @@ app$({ history, location: appLocation })
   )
   .doOnNext(({ appCat }) => {
     const appActions = appCat.getActions('appActions');
+    const appStore = appCat.getStore('appStore');
 
-    location$(history)
+    const route$ = location$(history)
       .pluck('pathname')
-      .distinctUntilChanged()
-      .doOnNext(route => debug('route change', route))
-      .subscribe(route => appActions.updateRoute(route));
+      .distinctUntilChanged();
+
+    appStore
+      .pluck('route')
+      .filter(route => !!route)
+      .withLatestFrom(
+        route$,
+        (nextRoute, currentRoute) => ({ currentRoute, nextRoute })
+      )
+      // only continue when route change requested
+      .filter(({ currentRoute, nextRoute }) => currentRoute !== nextRoute)
+      .doOnNext(({ nextRoute }) => {
+        debug('route change', nextRoute);
+        history.pushState(history.state, nextRoute);
+      })
+      .subscribeOnError(err => console.error(err));
 
     appActions.goBack.subscribe(function() {
       history.goBack();
@@ -65,10 +78,11 @@ app$({ history, location: appLocation })
     appActions
       .updateRoute
       .pluck('route')
-      .doOnNext(route => debug('update route', route))
-      .subscribe(function(route) {
-        history.pushState(null, route);
-      });
+      .doOnNext(route => {
+        debug('update route', route);
+        history.pushState(history.state, route);
+      })
+      .subscribeOnError(err => console.error(err));
   })
   .flatMap(({ props, appCat }) => {
     props.history = history;

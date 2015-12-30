@@ -2,14 +2,15 @@ import { Cat } from 'thundercats';
 import stamp from 'stampit';
 import { Disposable, Observable } from 'rx';
 
-import { postJSON$ } from '../utils/ajax-stream.js';
+import { post$, postJSON$ } from '../utils/ajax-stream.js';
 import { AppActions, AppStore } from './flux';
 import { HikesActions } from './routes/Hikes/flux';
 import { JobActions, JobsStore} from './routes/Jobs/flux';
 
 const ajaxStamp = stamp({
   methods: {
-    postJSON$: postJSON$
+    postJSON$,
+    post$
   }
 });
 
