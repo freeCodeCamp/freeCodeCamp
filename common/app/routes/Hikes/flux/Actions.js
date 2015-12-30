@@ -167,17 +167,28 @@ export default Actions({
     // index 0
     if (tests[currentQuestion]) {
 
-      return {
+      return Observable.just({
         transform(state) {
-
           const hikesApp = {
             ...state.hikesApp,
-            currentQuestion: currentQuestion + 1
+            mouse: [0, 0]
           };
-
           return { ...state, hikesApp };
         }
-      };
+      })
+        .delay(300)
+        .startWith({
+          transform(state) {
+
+            const hikesApp = {
+              ...state.hikesApp,
+              currentQuestion: currentQuestion + 1,
+              mouse: [ userAnswer ? 1000 : -1000, 0]
+            };
+
+            return { ...state, hikesApp };
+          }
+        });
     }
 
     // challenge completed
@@ -220,7 +231,7 @@ export default Actions({
         },
         optimistic: optimisticSave
       })
-      .delay(500)
+      .delay(300)
       .startWith(correctAnswer)
       .catch(err => {
         console.error(err);
