@@ -15,7 +15,7 @@ export default contain(
   {
     store: 'appStore',
     actions: ['hikesActions'],
-    map({ hikesApp }) {
+    map({ hikesApp, username }) {
       const {
         currentHike,
         currentQuestion = 1,
@@ -34,7 +34,8 @@ export default contain(
         delta,
         isPressed,
         showInfo,
-        shake
+        shake,
+        username
       };
     }
   },
@@ -50,6 +51,7 @@ export default contain(
       isPressed: PropTypes.bool,
       showInfo: PropTypes.bool,
       shake: PropTypes.bool,
+      username: PropTypes.string,
       hikesActions: PropTypes.object
     },
 
@@ -104,7 +106,11 @@ export default contain(
           e.preventDefault();
         }
 
-        return hikesActions.answer({ answer, userAnswer, props: this.props });
+        return hikesActions.answer({
+          answer,
+          userAnswer,
+          props: this.props
+        });
       };
     },
 
