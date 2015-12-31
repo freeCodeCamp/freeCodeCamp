@@ -1320,10 +1320,10 @@
       "id": "56533eb9ac21ba0edf2244bb",
       "title": "Word Blanks",
       "description": [
-        "We will now use our knowledge of strings to build a \"<a href='https://en.wikipedia.org/wiki/Mad_Libs' target='_blank'>Mad Libs</a>\" style word game we're calling \"Word Blanks\". We have provided a framework for testing your results with different words.",
-        "You will need to use string operators to build a new string, <code>result</code>, using the provided variables: ",
-        "<code>myNoun</code>, <code>myAdjective</code>, <code>myVerb</code>, and <code>myAdverb</code>.",
-        "The tests will run your function with several different inputs to make sure it works properly."
+        "We will now use our knowledge of strings to build a \"<a href='https://en.wikipedia.org/wiki/Mad_Libs' target='_blank'>Mad Libs</a>\" style word game we're calling \"Word Blanks\". You will create an (optionally humorous) \"Fill in the Blanks\" style sentence. ",
+        "You will need to use string operators to build a new string, <code>result</code>, using the provided variables: <code>myNoun</code>, <code>myAdjective</code>, <code>myVerb</code>, and <code>myAdverb</code>. ",
+        "You will also need to provide additional strings, which will not change, in between the provided words.",
+        "We have provided a framework for testing your results with different words. The tests will run your function with several different inputs to make sure all of the provided words appear in the output, as well as your extra strings."
       ],
       "releasedOn": "January 1, 2016",
       "challengeSeed": [
