@@ -3328,7 +3328,7 @@
         "var drinkValue = testObj;    // Change this line"
       ],
       "tail": [
-        "(function(a,b) { return \"entreeValue = '\" + a + \"', shirtValue = '\" + b + \"'\"; })(entreeValue,drinkValue);"
+        "(function(a,b) { return \"entreeValue = '\" + a + \"', drinkValue = '\" + b + \"'\"; })(entreeValue,drinkValue);"
       ],
       "solutions": [
         "var testObj = {\n  \"an entree\": \"hamburger\",\n  \"my side\": \"veggies\",\n  \"the drink\": \"water\"\n};\nvar entreeValue = testObj[\"an entree\"];\nvar drinkValue = testObj['the drink'];"
