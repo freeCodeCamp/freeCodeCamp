@@ -205,7 +205,10 @@ export default Actions({
           delta: [0, 0],
           mouse: [ userAnswer ? 1000 : -1000, 0]
         };
-        return { ...state, hikesApp };
+        return {
+          ...state,
+          hikesApp
+        };
       }
     };
 
@@ -227,7 +230,11 @@ export default Actions({
             mouse: [0, 0]
           };
 
-          return { ...state, hikesApp };
+          return {
+            ...state,
+            points: username ? state.points + 1 : state.points,
+            hikesApp
+          };
         },
         optimistic: optimisticSave
       })
