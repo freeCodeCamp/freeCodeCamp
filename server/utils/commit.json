@@ -38,5 +38,13 @@
     "description": "Girls Who Code programs work to inspire, educate, and equip girls with the computing skills to pursue 21st century opportunities.",
     "imgAlt": "Three women smiling while they code on a computer together.",
     "imgUrl": "http://i.imgur.com/op8BVph.jpg"
+  },
+  {
+    "name": "hack club",
+    "displayName": "Hack Club",
+    "donateUrl": "https://hackclub.io/",
+    "description": "Hack Club works with high school students to start and lead programming clubs at their schools.",
+    "imgAlt": "A bunch of high school students posing for a photo in their programming club.",
+    "imgUrl": "http://i.imgur.com/G2YvPHf.jpg"
   }
 ]
