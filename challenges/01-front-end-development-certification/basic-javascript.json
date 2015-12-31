@@ -224,34 +224,32 @@
       "description": [
         "In JavaScript all variables and function names are case sensitive.  This means that capitalization matters.",
         "<code>MYVAR</code> is not the same as <code>MyVar</code> nor <code>myvar</code>.  It is possible to have multiple distinct variables with the same name but different casing. It is strongly recommended that for the sake of clarity, you <em>do not</em> use this language feature.",
-        "<h4>Best Practice</h4><div class=\"bestpractice\">Write variable names in Javascript in camelCase. In camelCase, variable names made of multiple words have the first word in all lowercase and the first letter of each subsequent word(s) capitalized.</div>",
-        "    ",
+        "<h4>Best Practice</h4>",
+        "Write variable names in Javascript in <dfn>camelCase</dfn>. In <dfn>camelCase</dfn>, multi-word variable names have the first word in lowercase and the first letter of each subsequent word is capitalized.",
         "<strong>Examples:</strong>",
         "<blockquote>var someVariable;<br>var anotherVariableName;<br>var thisVariableNameIsTooLong;</blockquote>",
         "<h4>Instructions</h4>",
-        "We have provided some decidedly non-standard case variable declarations.  Update the variable assignments so their names match the case of their declarations above."
+        "Fix the variable declarations and assignments so their names use <dfn>camelCase</dfn>."
       ],
       "releasedOn": "January 1, 2016",
       "challengeSeed": [
-        "// Setup",
+        "// Declarations",
         "var StUdLyCapVaR;",
         "var properCamelCase;",
         "var TitleCaseOver;",
         "",
-        "// Only change code below this line",
-        "",
+        "// Assignments",
         "STUDLYCAPVAR = 10;",
         "PRoperCAmelCAse = \"A String\";",
-        "tITLEcASEoVER = 9000;",
-        ""
+        "tITLEcASEoVER = 9000;"
       ],
       "solutions": [
-        "var StUdLyCapVaR;\nvar properCamelCase;\nvar TitleCaseOver;\n\nStUdLyCapVaR = 10;\nproperCamelCase = \"A String\";\nTitleCaseOver = 9000;"
+        "var studlyCapVar;\nvar properCamelCase;\nvar titleCaseOver;\n\nstudlyCapVar = 10;\nproperCamelCase = \"A String\";\ntitleCaseOver = 9000;"
       ],
       "tests": [
-        "assert(StUdLyCapVaR === 10, 'message: StUdLyCapVaR has the correct case');",
-        "assert(properCamelCase === \"A String\", 'message: properCamelCase has the correct case');",
-        "assert(TitleCaseOver === 9000, 'message: TitleCaseOver has the correct case');"
+        "assert(typeof studlyCapVar !== 'undefined' && studlyCapVar === 10, 'message: <code>studlyCapVar</code> is defined and has a value of <code>10</code>');",
+        "assert(typeof properCamelCase !== 'undefined' && properCamelCase === \"A String\", 'message: <code>properCamelCase</code> is defined and has a value of <code>\"A String\"</code>');",
+        "assert(typeof titleCaseOver !== 'undefined' && titleCaseOver === 9000, 'message: <code>titleCaseOver</code> is defined and has a value of <code>9000</code>');"
       ],
       "type": "waypoint",
       "challengeType": "1",
