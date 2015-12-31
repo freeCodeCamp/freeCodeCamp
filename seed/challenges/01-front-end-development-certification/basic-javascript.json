@@ -775,19 +775,19 @@
       "description": [
         "To test your learning you will create a solution \"from scratch\".  Place your code between the indicated lines and it will be tested against multiple test cases.",
         "The algorithm to convert from Celsius to Fahrenheit is the temperature in Celsius times 9/5, plus 32.",
-        "You are given a variable <code>Tc</code> representing a temperature in Celsius.  Create a variable <code>Tf</code> and apply the algorithm to assign it the corresponding temperature in Fahrenheit."
+        "You are given a variable <code>celsius</code> representing a temperature in Celsius.  Create a variable <code>fahrenheit</code> and apply the algorithm to assign it the corresponding temperature in Fahrenheit."
       ],
       "releasedOn": "January 1, 2016",
       "challengeSeed": [
-        "function convert(Tc) {",
+        "function convert(celsius) {",
         "  // Only change code below this line",
         "  ",
         "",
         "  // Only change code above this line",
-        "  if(typeof Tf !== 'undefined') {",
-        "  return Tf;",
+        "  if ( typeof fahrenheit !== 'undefined' ) {",
+        "  return fahrenheit;",
         "  } else {",
-        "    return \"Tf not defined\";",
+        "    return 'fahrenheit not defined';",
         "  }",
         "}",
         "",
@@ -795,7 +795,7 @@
         "convert(30);"
       ],
       "solutions": [
-        "function convert(Tc) {\n  var Tf = Tc * 9/5 + 32;\n  if(typeof Tf !== 'undefined') {\n  return Tf;\n  } else {\n    return \"Tf not defined\";\n  }\n}"
+        "function convert(celsius) {\n  var fahrenheit = celsius * 9/5 + 32;\n  if ( typeof fahrenheit !== 'undefined' ) {\n  return fahrenheit;\n  } else {\n    return 'fahrenheit not defined';\n  }\n}"
       ],
       "tests": [
         "assert(typeof convert(0) === 'number', 'message: <code>convert(0)</code> should return a number');",
