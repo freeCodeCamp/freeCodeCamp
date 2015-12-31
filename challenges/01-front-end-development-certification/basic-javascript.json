@@ -229,7 +229,7 @@
         "<strong>Examples:</strong>",
         "<blockquote>var someVariable;<br>var anotherVariableName;<br>var thisVariableNameIsTooLong;</blockquote>",
         "<h4>Instructions</h4>",
-        "Correct the variable assignments so their names match their variable declarations above."
+        "We have provided some decidedly non-standard case variable declarations.  Update the variable assignments so their names match the case of their declarations above."
       ],
       "releasedOn": "January 1, 2016",
       "challengeSeed": [
