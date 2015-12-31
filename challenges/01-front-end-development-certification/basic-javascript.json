@@ -2157,8 +2157,8 @@
       "id": "cf1111c1c12feddfaeb3bdef",
       "title": "Use Conditional Logic with If Statements",
       "description": [
-        "We can use <code>if</code> statements in JavaScript to only execute code if a certain condition is met.",
-        "<code>if</code> statements require a <dfn>boolean</dfn> condition to evaluate.  If the boolean evaluates to <code>true</code>, the statement inside the curly braces executes. If it evaluates to <code>false</code>, the code will not execute.",
+        "We can use <code>if</code> statements in JavaScript to execute code only if the specified condition is met.",
+        "Each <code>if</code> statement requires a <dfn>boolean</dfn> condition to evaluate.  If the boolean evaluates to <code>true</code>, the statements inside the curly braces will execute. Otherwise, if it evaluates to <code>false</code>, the code will not execute.",
         "<strong>Example</strong>",
         "<blockquote>function test(myVal) {<br>  if (myVal > 10) {<br>     return \"Greater Than\";<br>  }<br>  return \"Not Greater Than\";<br>}</blockquote>",
         "If <code>myVal</code> is greater than <code>10</code>, the function will return <code>\"Greater Than\"</code>.  If it is not, the function will return <code>\"Not Greater Than\"</code>.",
