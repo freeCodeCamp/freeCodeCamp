@@ -970,7 +970,7 @@
       ],
       "tests": [
         "assert(myStr === \"This is the start. This is the end.\", 'message: <code>myStr</code> should have a value of <code>This is the start. This is the end.</code>');",
-        "assert(code.match(/\"\\s*\\+\\s*\"/g).length > 1, 'message: Use the <code>+</code> operator to build <code>myStr</code>');"
+        "assert(code.match(/This is the start\\.\\s*[\"']\\s*(.)\\s*[\"']This is the end\\.[\"'];\\s*$/)[1] === \"+\", 'message: Use the <code>+</code> operator to build <code>myStr</code>');"
       ],
       "type": "waypoint",
       "challengeType": "1",
