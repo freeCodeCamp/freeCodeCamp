@@ -2740,7 +2740,7 @@
       "challengeSeed": [
         "function myTest(val) {",
         "  if(val > 10) {",
-        "    return \"10 or Bigger\";",
+        "    return \"Greater than 10\";",
         "  }",
         "  ",
         "  if(val < 5) {",
