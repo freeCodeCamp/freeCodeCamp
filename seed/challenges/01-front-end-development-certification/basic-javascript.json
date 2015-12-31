@@ -2629,7 +2629,7 @@
         "will return \"Yes\" only if <code>num</code> is between <code>5</code> and <code>10</code> (5 and 10 included). The same logic can be written as:",
         "<blockquote>if (num > 10 || num < 5) {<br>  return \"No\";<br>}<br>return \"Yes\";</blockquote>",
         "<h4>Instructions</h4>",
-        "Combine the two <code>if</code> statements into one statement which returns <code>\"Inside\"</code> if <code>val</code> is between <code>10</code> and <code>20</code>, inclusive.  Otherwise, return <code>\"Outside\"</code>."
+        "Combine the two <code>if</code> statements into one statement which returns <code>\"Outside\"</code> if <code>val</code> is not between <code>10</code> and <code>20</code>, inclusive.  Otherwise, return <code>\"Inside\"</code>."
       ],
       "releasedOn": "January 1, 2016",
       "challengeSeed": [
