@@ -3702,7 +3702,7 @@
       "description": [
         "The properties and sub-properties of JSON objects can be accessed by chaining together the dot or bracket notation.",
         "Here is a nested JSON Object:",
-        "<blockquote>var ourStorage = {<br>  \"desk\": {<br>    \"drawer\": \"stapler\"<br>  },<br>  \"cabinet\": {<br>    \"top drawer\": { <br>      \"folder1\": \"a file\",<br>      \"folder2\": \"secrets\"<br>    },<br>    \"bottom drawer\": \"soda\"<br>  }<br>}<br>ourStorage.cabinet[\"top drawer\"].folder2;  // \"secrets\"<br>ourStoage.desk.drawer; // \"stapler\"</blockquote>",
+        "<blockquote>var ourStorage = {<br>  \"desk\": {<br>    \"drawer\": \"stapler\"<br>  },<br>  \"cabinet\": {<br>    \"top drawer\": { <br>      \"folder1\": \"a file\",<br>      \"folder2\": \"secrets\"<br>    },<br>    \"bottom drawer\": \"soda\"<br>  }<br>}<br>ourStorage.cabinet[\"top drawer\"].folder2;  // \"secrets\"<br>ourStorage.desk.drawer; // \"stapler\"</blockquote>",
         "<h4>Instructions</h4>",
         "Access the <code>myStorage</code> JSON object to retrieve the contents of the <code>glove box</code>.  Only use object notation for properties with a space in their name."
       ],
