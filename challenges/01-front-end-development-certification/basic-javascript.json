@@ -3607,7 +3607,7 @@
       "description": [
         "Sometimes it is useful to check if the property of a given object exists or not.  We can use the <code>.hasOwnProperty([propname])</code> method of objects to determine if that object has the given property name. <code>.hasOwnProperty()</code> returns <code>true</code> or <code>false</code> if the property is found or not.",
         "<strong>Example</strong>",
-        "<blockquote>var myObj = {<br>  top: \"hat\",<br>  bottom: \"pants\"<br>};<br>myObj.hasOwnProperty(\"hat\");    // true<br>myObj.hasOwnProperty(\"middle\"); // false</blockquote>",
+        "<blockquote>var myObj = {<br>  top: \"hat\",<br>  bottom: \"pants\"<br>};<br>myObj.hasOwnProperty(\"top\");    // true<br>myObj.hasOwnProperty(\"middle\"); // false</blockquote>",
         "<h4>Instructions</h4>",
         "Modify the function <code>checkObj</code> to test <code>myObj</code> for <code>checkProp</code>.  If the property is found, return that property's value.  If not, return <code>\"Not Found\"</code>."
       ],
