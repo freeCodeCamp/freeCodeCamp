@@ -2801,7 +2801,7 @@
       "tests": [
         "assert(code.match(/else/g).length > 3, 'message: You should have at least four <code>else</code> statements');",
         "assert(code.match(/if/g).length > 3, 'message: You should have at least four <code>if</code> statements');",
-        "assert(code.match(/return/g).length === 5, 'message: You should have five <code>return</code> statements');",
+        "assert(code.match(/return/g).length >= 5, 'message: You should have at least five <code>return</code> statements');",
         "assert(myTest(0) === \"Tiny\", 'message: <code>myTest(0)</code> should return \"Tiny\"');",
         "assert(myTest(4) === \"Tiny\", 'message: <code>myTest(4)</code> should return \"Tiny\"');",
         "assert(myTest(5) === \"Small\", 'message: <code>myTest(5)</code> should return \"Small\"');",
