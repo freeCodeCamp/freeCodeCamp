@@ -2740,7 +2740,7 @@
       "challengeSeed": [
         "function myTest(val) {",
         "  if(val > 10) {",
-        "    return \"10 or Bigger\";",
+        "    return \"Greater than 10\";",
         "  }",
         "  ",
         "  if(val < 5) {",
@@ -2755,16 +2755,16 @@
         ""
       ],
       "solutions": [
-        "function myTest(val) {\n  if(val > 10) {\n    return \"10 or Bigger\";\n  } else if(val < 5) {\n    return \"Smaller than 5\";\n  } else {\n    return \"Between 5 and 10\";\n  }\n}"
+        "function myTest(val) {\n  if(val > 10) {\n    return \"Greater than 10\";\n  } else if(val < 5) {\n    return \"Smaller than 5\";\n  } else {\n    return \"Between 5 and 10\";\n  }\n}"
       ],
       "tests": [
         "assert(code.match(/else/g).length > 1, 'message: You should have at least two <code>else</code> statements');",
         "assert(code.match(/if/g).length > 1, 'message: You should have at least two <code>if</code> statements');",
-        "assert(myTest(0) === \"Smaller than 5\", 'message: <code>myTest(4)</code> should return \"Smaller than 5\"');",
-        "assert(myTest(5) === \"Between 5 and 10\", 'message: <code>myTest(5)</code> should return \"Smaller than 5\"');",
+        "assert(myTest(0) === \"Smaller than 5\", 'message: <code>myTest(0)</code> should return \"Smaller than 5\"');",
+        "assert(myTest(5) === \"Between 5 and 10\", 'message: <code>myTest(5)</code> should return \"Between 5 and 10\"');",
         "assert(myTest(7) === \"Between 5 and 10\", 'message: <code>myTest(7)</code> should return \"Between 5 and 10\"');",
         "assert(myTest(10) === \"Between 5 and 10\", 'message: <code>myTest(10)</code> should return \"Between 5 and 10\"');",
-        "assert(myTest(12) === \"10 or Bigger\", 'message: <code>myTest(12)</code> should return \"10 or Bigger\"');"
+        "assert(myTest(12) === \"Greater than 10\", 'message: <code>myTest(12)</code> should return \"Greater than 10\"');"
       ],
       "type": "waypoint",
       "challengeType": "1",
