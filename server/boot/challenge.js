@@ -90,7 +90,7 @@ const dateFormat = 'MMM MMMM DD, YYYY';
 function shouldShowNew(element, block) {
   if (element) {
     return typeof element.releasedOn !== 'undefined' &&
-      moment(element.releasedOn, dateFormat).diff(moment(), 'days') >= -30;
+      moment(element.releasedOn, dateFormat).diff(moment(), 'days') >= -60;
   }
 
   if (block) {
