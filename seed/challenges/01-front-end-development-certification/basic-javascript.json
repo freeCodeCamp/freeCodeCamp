@@ -3113,7 +3113,7 @@
       "tests": [
         "assert(!/else/g.test(code), 'message: You should not use any <code>else</code> statements');",
         "assert(!/if/g.test(code), 'message: You should not use any <code>if</code> statements');",
-        "assert(code.match(/break/g).length === 4, 'message: You should have four <code>break</code> statements');",
+        "assert(code.match(/break/g).length >= 4, 'message: You should have at least four <code>break</code> statements');",
         "assert(myTest(\"bob\") === \"Marley\", 'message: <code>myTest(\"bob\")</code> should be \"Marley\"');",
         "assert(myTest(42) === \"The Answer\", 'message: <code>myTest(42)</code> should be \"The Answer\"');",
         "assert(myTest(1) === \"There is no #1\", 'message: <code>myTest(1)</code> should be \"There is no #1\"');",
