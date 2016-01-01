@@ -9,6 +9,7 @@ import { hydrate } from 'thundercats';
 import { render$ } from 'thundercats-react';
 
 import { app$ } from '../common/app';
+import synchroniseHistory from './synchronise-history';
 
 const debug = debugFactory('fcc:client');
 const DOMContianer = document.getElementById('fcc');
@@ -22,18 +23,6 @@ const history = createHistory();
 const appLocation = createLocation(
   location.pathname + location.search
 );
-
-function location$(history) {
-  return Rx.Observable.create(function(observer) {
-    const dispose = history.listen(function(location) {
-      observer.onNext(location);
-    });
-
-    return Rx.Disposable.create(() => {
-      dispose();
-    });
-  });
-}
 
 // returns an observable
 app$({ history, location: appLocation })
@@ -49,40 +38,22 @@ app$({ history, location: appLocation })
     ({ nextLocation, props }, appCat) => ({ nextLocation, props, appCat })
   )
   .doOnNext(({ appCat }) => {
-    const appActions = appCat.getActions('appActions');
-    const appStore = appCat.getStore('appStore');
+    const { updateLocation, goTo, goBack } = appCat.getActions('appActions');
+    const appStore$ = appCat.getStore('appStore');
 
-    const route$ = location$(history)
-      .pluck('pathname')
-      .distinctUntilChanged();
+    const routerState$ = appStore$
+      .map(({ location }) => location)
+      .distinctUntilChanged(
+        location => location && location.key ? location.key : location
+      );
 
-    appStore
-      .pluck('route')
-      .filter(route => !!route)
-      .withLatestFrom(
-        route$,
-        (nextRoute, currentRoute) => ({ currentRoute, nextRoute })
-      )
-      // only continue when route change requested
-      .filter(({ currentRoute, nextRoute }) => currentRoute !== nextRoute)
-      .doOnNext(({ nextRoute }) => {
-        debug('route change', nextRoute);
-        history.pushState(history.state, nextRoute);
-      })
-      .subscribeOnError(err => console.error(err));
-
-    appActions.goBack.subscribe(function() {
-      history.goBack();
-    });
-
-    appActions
-      .updateRoute
-      .pluck('route')
-      .doOnNext(route => {
-        debug('update route', route);
-        history.pushState(history.state, route);
-      })
-      .subscribeOnError(err => console.error(err));
+    synchroniseHistory(
+      history,
+      updateLocation,
+      goTo,
+      goBack,
+      routerState$
+    );
   })
   .flatMap(({ props, appCat }) => {
     props.history = history;
