@@ -1899,7 +1899,7 @@
         "assert(typeof myFunction === 'function', 'message: <code>myFunction</code> should be a function');",
         "if(typeof myFunction === \"function\") { capture(); myFunction(1,2); uncapture(); } assert(logOutput == 3, 'message: <code>myFunction(1,2)</code> should output <code>3</code>');",
         "if(typeof myFunction === \"function\") { capture(); myFunction(7,9); uncapture(); } assert(logOutput == 16, 'message: <code>myFunction(7,9)</code> should output <code>16</code>');",
-        "assert(/^\\s*myFunction\\(\\s*\\d+\\s*,\\s*\\d+\\s*\\)\\s*;/m.test(code), 'message: Call <code>myFunction</code> after you define it');"
+        "assert(/^\\s*myFunction\\s*\\([\\w\\W]+\\)\\s*;/m.test(code), 'message: Call <code>myFunction</code> after you define it.');"
       ],
       "type": "waypoint",
       "challengeType": "1",
