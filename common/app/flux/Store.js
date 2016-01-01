@@ -20,7 +20,12 @@ export default Store({
     value: initValue
   },
   init({ instance: appStore, args: [cat] }) {
-    const { updateRoute, getUser, setTitle } = cat.getActions('appActions');
+    const {
+      updateLocation,
+      getUser,
+      setTitle
+    } = cat.getActions('appActions');
+
     const register = createRegistrar(appStore);
     const {
       toggleQuestions,
@@ -33,7 +38,17 @@ export default Store({
     } = cat.getActions('hikesActions');
 
     // app
-    register(setter(fromMany(getUser, setTitle, updateRoute)));
+    register(
+      fromMany(
+        setter(
+          fromMany(
+            getUser,
+            setTitle
+          )
+        ),
+        updateLocation
+      )
+    );
 
     // hikes
     register(

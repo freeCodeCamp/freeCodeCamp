@@ -38,8 +38,14 @@ export default Actions({
       });
   },
 
-  updateRoute(route) {
-    return { route };
-  },
-  goBack: null
+  // routing
+  goTo: null,
+  goBack: null,
+  updateLocation(location) {
+    return {
+      transform(state) {
+        return { ...state, location };
+      }
+    };
+  }
 });

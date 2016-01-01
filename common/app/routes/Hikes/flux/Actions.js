@@ -218,9 +218,12 @@ export default Actions({
           const currentHike = findNextHike(hikes, id);
 
           // go to next route
-          state.route = currentHike && currentHike.dashedName ?
-            `/hikes/${ currentHike.dashedName }` :
-            '/hikes';
+          state.location = {
+            action: 'PUSH',
+            pathname: currentHike && currentHike.dashedName ?
+              `/hikes/${ currentHike.dashedName }` :
+              '/hikes'
+          };
 
           const hikesApp = {
             ...state.hikesApp,
