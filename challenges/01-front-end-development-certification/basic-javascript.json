@@ -3967,7 +3967,7 @@
       "title": "Iterate with JavaScript For Loops",
       "description": [
         "You can run the same code multiple times by using a loop.",
-        "The most common type of JavaScript loop is called a \"for loop\" because it runs \"for\" a specific number of times.",
+        "The most common type of JavaScript loop is called a \"<code>for loop</code>\" because it runs \"for\" a specific number of times.",
         "For loops are declared with three optional expressions seperated by semicolons:",
         "<code>for ([initialization]; [condition]; [final-expression])</code>",
         "The <code>initialization</code> statement is executed one time only before the loop starts. It is typically used to define and setup your loop variable.",
@@ -4181,7 +4181,7 @@
       "title": "Iterate with JavaScript While Loops",
       "description": [
         "You can run the same code multiple times by using a loop.",
-        "Another type of JavaScript loop is called a \"while loop\", because it runs \"while\" something is true and stops once that something is no longer true.",
+        "Another type of JavaScript loop is called a \"<code>while loop</code>\", because it runs \"while\" a specified condition is true and stops once that condition is no longer true.",
         "<blockquote>var ourArray = [];<br>var i = 0;<br>while(i < 5) {<br>  ourArray.push(i);<br>  i++;<br>}</blockquote>",
         "Let's try getting a while loop to work by pushing values to an array.",
         "<h4>Instructions</h4>",
