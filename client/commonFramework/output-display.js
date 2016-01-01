@@ -8,14 +8,10 @@ window.common = (function(global) {
   const { challengeTypes, challengeType = '0' } = common;
 
   function convertDisplayValue(displayVal) {
-    var convertedArray = [];
     if (displayVal instanceof Array) {
-       return `["${displayVal.join('", "')}"]`;
-    } else if (displayVal !== null && typeof displayVal === 'object') {
-      convertedArray = Object.keys(displayVal).map((key) =>
-        '' + displayVal[key]
-      );
-       return `["${convertedArray.join('", "')}"]`;
+      return `[${displayVal.map(convertDisplayValue).join(', ')}]`;
+    } else if (typeof displayVal === 'string') {
+      return `"${displayVal}"`;
     }
     return '' + displayVal;
   }
