@@ -117,7 +117,7 @@
         "var b = 2;",
         "",
         "// Only change code below this line",
-        " "
+        ""
       ],
       "tail": [
         "(function(a,b){return \"a = \" + a + \", b = \" + b;})(a,b);"
