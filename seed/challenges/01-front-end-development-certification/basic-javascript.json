@@ -298,7 +298,7 @@
         "JavaScript uses the <code>-</code> symbol for subtraction.",
         "",
         "<strong>Example</strong>",
-        "<blockquote>myVAr = 12 - 6; // assigned 6</blockquote>",
+        "<blockquote>myVar = 12 - 6; // assigned 6</blockquote>",
         "",
         "<h4>Instructions</h4>",
         "Change the <code>0</code> so the difference is <code>12</code>."
