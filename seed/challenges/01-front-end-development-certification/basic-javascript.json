@@ -3834,7 +3834,7 @@
       "description": [
         "As we have seen in earlier examples, JSON objects can contain both nested objects and nested arrays. Similar to accessing nested objects, Array bracket notation can be chained to access nested arrays.",
         "Here is an example of how to access a nested array:",
-        "<blockquote>var ourPets = { <br>  \"cats\": [<br>    \"Meowzer\",<br>    \"Fluffy\",<br>    \"Kit-Cat\"<br>  ],<br>  \"dogs:\" [<br>    \"Spot\",<br>    \"Bowser\",<br>    \"Frankie\"<br>  ]<br>};<br>ourPets.cats[1]; // \"Fluffy\"<br>ourPets.dogs[0]; // \"Spot\"</blockquote>",
+        "<blockquote>var ourPets = { <br>  \"cats\": [<br>    \"Meowzer\",<br>    \"Fluffy\",<br>    \"Kit-Cat\"<br>  ],<br>  \"dogs\": [<br>    \"Spot\",<br>    \"Bowser\",<br>    \"Frankie\"<br>  ]<br>};<br>ourPets.cats[1]; // \"Fluffy\"<br>ourPets.dogs[0]; // \"Spot\"</blockquote>",
         "<h4>Instructions</h4>",
         "Retrieve the second tree from the variable <code>myPlants</code> using object dot and array bracket notation."
       ],
