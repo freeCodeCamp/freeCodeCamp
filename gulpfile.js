@@ -40,7 +40,7 @@ var Rx = require('rx'),
   // lint
   jsonlint = require('gulp-jsonlint'),
   eslint = require('gulp-eslint'),
-  
+
   // unit-tests
   tape = require('gulp-tape'),
   tapSpec = require('tap-spec');
@@ -481,7 +481,11 @@ function buildManifest() {
     .pipe(gulp.dest('server/'));
 }
 
-var buildDependents = ['less', 'js', 'dependents', 'pack-watch-manifest'];
+var buildDependents = ['less', 'js', 'dependents'];
+
+if (__DEV__) {
+  buildDependents.push('pack-watch-manifest');
+}
 
 gulp.task('build-manifest', buildDependents, function() {
   return buildManifest();
