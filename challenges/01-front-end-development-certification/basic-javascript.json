@@ -862,6 +862,15 @@
         "",
         ""
       ],
+      "tail": [
+        "(function(){",
+        "  if(typeof myStr === 'string') {",
+        "    return \"myStr = \" + myStr;",
+        "  } else {",
+        "    return \"myStr is undefined\";",
+        "  }",
+        "})();"
+      ],
       "solutions": [
         "var myStr = \"I am a \\\"double quoted\\\" string inside \\\"double quotes\\\"\";"
       ],
@@ -964,6 +973,15 @@
         "",
         ""
       ],
+      "tail": [
+        "(function(){",
+        "  if(typeof myStr === 'string') {",
+        "    return 'myStr = \"' + myStr + '\"';",
+        "  } else {",
+        "    return 'myStr is not a string';",
+        "  }",
+        "})();"
+      ],
       "solutions": [
         "var ourStr = \"I come first. \" + \"I come second.\";\nvar myStr = \"This is the start. \" + \"This is the end.\";"
       ],
@@ -1000,6 +1018,15 @@
         "",
         ""
       ],
+      "tail": [
+        "(function(){",
+        "  if(typeof myStr === 'string') {",
+        "    return 'myStr = \"' + myStr + '\"';",
+        "  } else {",
+        "    return 'myStr is not a string';",
+        "  }",
+        "})();"
+      ],
       "solutions": [
         "var ourStr = \"I come first. \";\nourStr += \"I come second.\";\n\nvar myStr = \"This is the first sentence. \";\nmyStr += \"This is the second sentence.\";"
       ],
@@ -1034,6 +1061,22 @@
         "var myStr;",
         "",
         ""
+      ],
+      "tail": [
+        "(function(){",
+        "  var output = [];",
+        "  if(typeof myName === 'string') {",
+        "    output.push('myName = \"' + myName + '\"');",
+        "  } else {",
+        "    output.push('myName is not a string');",
+        "  }",
+        "  if(typeof myStr === 'string') {",
+        "    output.push('myStr = \"' + myStr + '\"');",
+        "  } else {",
+        "    output.push('myStr is not a string');",
+        "  }",
+        "  return output.join('\\n');",
+        "})();"
       ],
       "solutions": [
         "var myName = \"Bob\";\nvar myStr = \"My name is \" + myName + \" and I am swell!\";"
@@ -1070,6 +1113,22 @@
         "var someAdjective;",
         "var myStr = \"Learning to code is \";",
         ""
+      ],
+      "tail": [
+        "(function(){",
+        "  var output = [];",
+        "  if(typeof someAdjective === 'string') {",
+        "    output.push('someAdjective = \"' + someAdjective + '\"');",
+        "  } else {",
+        "    output.push('someAdjective is not a string');",
+        "  }",
+        "  if(typeof myStr === 'string') {",
+        "    output.push('myStr = \"' + myStr + '\"');",
+        "  } else {",
+        "    output.push('myStr is not a string');",
+        "  }",
+        "  return output.join('\\n');",
+        "})();"
       ],
       "solutions": [
         "var anAdjective = \"awesome!\";\nvar ourStr = \"Free Code Camp is \";\nourStr += anAdjective;\n\nvar someAdjective = \"neat\";\nvar myStr = \"Learning to code is \";\nmyStr += someAdjective;"
@@ -3578,7 +3637,9 @@
         "  // Only change code above this line",
         "  return result;",
         "}",
-        ""
+        "",
+        "// Change this value to test",
+        "phoneticLookup(\"charlie\");"
       ],
       "solutions": [
         "function phoneticLookup(val) {\n  var result = \"\";\n\n  var lookup = {\n    alpha: \"Adams\",\n    bravo: \"Boston\",\n    charlie: \"Chicago\",\n    delta: \"Denver\",\n    echo: \"Easy\",\n    foxtrot: \"Frank\"\n  };\n\n  result = lookup[val];\n\n  return result;\n}"
