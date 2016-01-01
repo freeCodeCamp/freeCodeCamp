@@ -254,7 +254,7 @@ export default contain(
                       <img
                         alt='An array of credit cards'
                         border='0'
-                        src='http://i.imgur.com/Q2SdSZG.png'
+                        src='https://s3.amazonaws.com/fccimg/Q2SdSZG.png'
                         style={{
                           width: '100%'
                         }} />

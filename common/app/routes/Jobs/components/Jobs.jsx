@@ -102,7 +102,7 @@ export default contain(
                       engineer through Free Code Camp
                     `}
                     className='img-responsive testimonial-image-jobs img-center'
-                    src='http://i.imgur.com/tGcAA8H.jpg' />
+                    src='https://s3.amazonaws.com/fccimg/tGcAA8H.jpg' />
                 </Col>
                 <Col
                   md={ 10 }

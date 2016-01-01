@@ -4,7 +4,7 @@
     "name": "Clementine.js",
     "url": "http://johnstonbl01.github.io/clementinejs/",
     "description": "The elegant and lightweight boilerplate for full stack JavaScript.",
-    "image": "http://i.imgur.com/ib1wOho.png"
+    "image": "https://s3.amazonaws.com/fccimg/ib1wOho.png"
   },
   {
     "camper": "adventurebear",
@@ -25,14 +25,14 @@
     "name": "Musare",
     "url": "http://musare.com/",
     "description": "Musare is a modern, collaborative, open-source Music App.",
-    "image": "http://i.imgur.com/Y4D4MPL.png"
+    "image": "https://s3.amazonaws.com/fccimg/Y4D4MPL.png"
   },
   {
     "camper": "storbeck",
     "name": "Free Code Camp Event Zipline: Recipe Box",
     "url": "http://codepen.io/GeoffStorbeck/full/bVKyzd/",
     "description": "Try to reverse engineer this Recipe Box as an optional Zipline challenge.",
-    "image": "http://i.imgur.com/5o0bwVQ.png"
+    "image": "https://s3.amazonaws.com/fccimg/5o0bwVQ.png"
   },
   {
     "camper": "akiralaine",
@@ -46,6 +46,6 @@
     "name": "Free Code Camp Top 100 Campers",
     "url": "http://fcctop100.herokuapp.com/",
     "description": "This leaderboard tracks the campers who have been most active (completing challenges, helping other campers) in the past 30 days.",
-    "image": "http://i.imgur.com/4CrQfFi.png"
+    "image": "https://s3.amazonaws.com/fccimg/4CrQfFi.png"
   }
 ]

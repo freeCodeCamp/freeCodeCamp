@@ -9,49 +9,49 @@
       "challengeSeed": [],
       "description": [
         [
-          "http://i.imgur.com/OAD6SJz.png",
+          "https://s3.amazonaws.com/fccimg/OAD6SJz.png",
           "An image of a Simon game, one our Zipline projects.",
           "Ziplines are front end development projects that will give you a chance to apply the front end skills you've developed up to this point. We'll use a popular browser-based code editor called CodePen.",
           ""
         ],
         [
-          "http://i.imgur.com/WBetuBa.jpg",
+          "https://s3.amazonaws.com/fccimg/WBetuBa.jpg",
           "A programmer punching through his laptop screen in frustration.",
           "Ziplines are hard. It takes most campers several days to build each Zipline. You will get frustrated. But don't quit. This gets easier with practice.",
           ""
         ],
         [
-          "http://i.imgur.com/p2TpOQd.jpg",
+          "https://s3.amazonaws.com/fccimg/p2TpOQd.jpg",
           "A cute dog jumping over a hurdle and winking and pointing his paw at you.",
           "When you get stuck, just use the Read-Search-Ask methodology.<br>Don't worry - you've got this.",
           ""
         ],
         [
-          "http://i.imgur.com/6WLULsC.gif",
+          "https://s3.amazonaws.com/fccimg/6WLULsC.gif",
           "A gif showing how to create a Codepen account.",
           "For our front end Zipline challenges, we'll use a popular browser-based code editor called CodePen. Open CodePen and click \"Sign up\" in the upper right hand corner, then scroll down to the free plan and click \"Sign up\" again. Click the \"Use info from GitHub button\", then add your email address and create a password. Click the \"Sign up\" button. Then in the upper right hand corner, click \"New pen\".",
           "http://codepen.io"
         ],
         [
-          "http://i.imgur.com/U4y9RJ1.gif",
+          "https://s3.amazonaws.com/fccimg/U4y9RJ1.gif",
           "A gif showing that you can type \"hello world\" will output \"hello world\" in the preview window. You can also drag windows to resize them, and change their orientation.",
           "In the HTML box, create an h1 element with the text \"Hello World\". You can drag the frames around to resize them. You can also click the \"Change View\" button and change the orientation of the frames.",
           ""
         ],
         [
-          "http://i.imgur.com/G9KFQDL.gif",
+          "https://s3.amazonaws.com/fccimg/G9KFQDL.gif",
           "A gif showing the process of adding Bootstrap to your pen.",
           "Click the gear in the upper left hand corner of the CSS box, then scroll down to \"Quick add\" and choose Bootstrap. Now give your h1 element the class of \"text-primary\" to change its color and prove that Bootstrap is now available.",
           ""
         ],
         [
-          "http://i.imgur.com/Gi3aig0.gif",
+          "https://s3.amazonaws.com/fccimg/Gi3aig0.gif",
           "A gif showing the process of adding Animate.css and jQuery to pen.",
           "Click the gear in the upper left hand corner of the CSS box, then scroll down to \"Quick add\" and choose Animate.css. Click the gear in the upper left hand corner of the JS box, then scroll down to \"Quick add\" and choose jQuery. Let's prove that Animate.css and jQuery are loaded properly. In the JS box, add the following code to make your h1 element bounce: <code>$(document).ready(function(){ $(\"h1\").addClass(\"animated bounce\"); });</code>.",
           ""
         ],
         [
-          "http://i.imgur.com/Wzt6Y9Y.gif",
+          "https://s3.amazonaws.com/fccimg/Wzt6Y9Y.gif",
           "A gif showing the process of saving and forking a pen.",
           "Save your pen with the \"Save\" button. Then click the \"Fork\" button. This will create a fork (copy) of your pen that you can experiment with.",
           ""
@@ -69,31 +69,31 @@
       "nameEs": "Prepárate para los Ziplines",
       "descriptionEs": [
         [
-          "http://i.imgur.com/6WLULsC.gif",
+          "https://s3.amazonaws.com/fccimg/6WLULsC.gif",
           "Un gif que muestra cómo crear una cuenta en Codepen.",
           "Para nuestros desafíos de front end, los Ziplines, usaremos un editor muy famoso llamado Codepen, el cual es completamente basado en el navegador. Abre CodePen y pulsa en \"Sign up\" en la esquina superior derecha, luego ve hacia abajo donde se encuentra el plan gratuito (free plan) y pulsa en \"Sign up\". Da clic en el botón que dice \"Use info from GitHub\", luego agrega tu dirección de correo electrónico y crea una contraseña. Pulsa el botón que dice \"Sign up\". Luego, en la esquina superior derecha , da clic en \"New pen\".",
           "http://codepen.io"
         ],
         [
-          "http://i.imgur.com/U4y9RJ1.gif",
+          "https://s3.amazonaws.com/fccimg/U4y9RJ1.gif",
           "Un gif que muestra que puedes escribir \"hello world\" en el editor, lo cual escribirá \"hello world\" en la ventana de vista previa. También puedes mover las ventanas para cambiar su tamaño, y cambiar su orientación.",
           "En la ventana de HTML, crea un elemento h1 con el texto \"Hola mundo\". Puedes arrastrar los bordes de las ventanas para cambiar su tamaño. Tambiénn puedes pulsar el botón de \"Change View\" para cambiar la orientación de las ventanas.",
           ""
         ],
         [
-          "http://i.imgur.com/G9KFQDL.gif",
+          "https://s3.amazonaws.com/fccimg/G9KFQDL.gif",
           "Un gif que muestra el proceso de agregar Bootstrap a tu proyecto.",
           "Pulsa el engrane en la esquina superior izquierda de la ventana de CSS, luego ve hacia abajo hasta donde dice \"Quick add\" y elige Bootstrap. Ahora dale a tu elemento h1 la clase \"text-primary\" para cambiar su color y verificar que Bootstrap está activado.",
           ""
         ],
         [
-          "http://i.imgur.com/Gi3aig0.gif",
+          "https://s3.amazonaws.com/fccimg/Gi3aig0.gif",
           "Un gif que muestra el proceso de agregar Animate.css y jQuery a tu proyecto.",
           "Pulsa el engrane en la esquina superior izquierda de la ventana de CSS, luego ve hacia abajo hasta donde dice \"Quick add\" y elige Animate.css. Haz clic en el engrane en la esquina superior izquierda de la ventana de JS, luego ve hacia abajo hasta donde dice \"Quick add\" y elige jQuery. Provemos que Animate.css y jQuery se cargaron propiamente. En la ventana de JS, agrega el siguiente código para hacer tu elemento h1 rebotar: <code>$(document).ready(function(){ $(\"h1\").addClass(\"animated bounce\"); });</code>.",
           ""
         ],
         [
-          "http://i.imgur.com/Wzt6Y9Y.gif",
+          "https://s3.amazonaws.com/fccimg/Wzt6Y9Y.gif",
           "Un gif que muestra el proceso de guardar y bifurcar un proyecto.",
           "Guarda tu proyecto con el botón \"Save\". Luego pulsa el botón de \"Fork\". Esto crea una bifurcación (copia) de tu proyecto con la que puedes experimentar.",
           ""

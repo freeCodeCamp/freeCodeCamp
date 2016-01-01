@@ -60,7 +60,7 @@
       "title": "Headline with the h2 Element",
       "description": [
         "Over the next few challenges, we'll build an HTML5 app that will look something like this:",
-        "<a href=\"http://i.imgur.com/jOc1JF1.png\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" src=\"http://i.imgur.com/jOc1JF1.png\" title=\"Click to enlarge\" alt=\"A screen shot of our finished Cat Photo App\"></a>",
+        "<a href=\"https://s3.amazonaws.com/fccimg/jOc1JF1.png\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" src=\"https://s3.amazonaws.com/fccimg/jOc1JF1.png\" title=\"Click to enlarge\" alt=\"A screen shot of our finished Cat Photo App\"></a>",
         "The <code>h2</code> element you enter will create an <code>h2</code> element on the website.",
         "This element tells the browser how to render the text that it contains.",
         "<code>h2</code> elements are slightly smaller than <code>h1</code> elements. There are also <code>h3</code>, <code>h4</code>, <code>h5</code> and <code>h6</code> elements.",
@@ -86,7 +86,7 @@
       "nameEs": "Encabezado con el elemento h2",
       "descriptionEs": [
         "Durante los siguientes desafios, construiremos una aplicación HTML que lucirá como la siguiente:",
-        "<a href=\"http://i.imgur.com/jOc1JF1.png\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" src=\"http://i.imgur.com/jOc1JF1.png\" title=\"Pulsa para agrandar\" alt=\"Pantallazo de la aplicación Cat Photo terminada\"></a>",
+        "<a href=\"https://s3.amazonaws.com/fccimg/jOc1JF1.png\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" src=\"https://s3.amazonaws.com/fccimg/jOc1JF1.png\" title=\"Pulsa para agrandar\" alt=\"Pantallazo de la aplicación Cat Photo terminada\"></a>",
         "El elemento <code>h2</code> que ingreses creará un elemento <code>h2</code> en el sitio web.",
         "Este elemento le dice al navegador cómo mostrar el texto que contiene.",
         "Los elementos <code>h2</code> son ligeramente más pequeños que los elementos <code>h1</code>. También hay elementos <code>h3</code>, <code>h4</code>, <code>h5</code> y <code>h6</code>",
@@ -1175,7 +1175,7 @@
       "description": [
         "<code>a</code> elements, also known as <code>anchor</code> elements, are used to link to content outside of the current page.",
         "Here's a diagram of an <code>a</code> element. In this case, the <code>a</code> element is used in the middle of a paragraph element, which means the link will appear in the middle of a sentence.",
-        "<a href=\"http://i.imgur.com/hviuZwe.png\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" title=\"Click to enlarge\" alt=\"a diagram of how anchor tags are composed with the same text as on the following line\" src=\"http://i.imgur.com/hviuZwe.png\"></a>",
+        "<a href=\"https://s3.amazonaws.com/fccimg/hviuZwe.png\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" title=\"Click to enlarge\" alt=\"a diagram of how anchor tags are composed with the same text as on the following line\" src=\"https://s3.amazonaws.com/fccimg/hviuZwe.png\"></a>",
         "Here's an example:",
          "<code>&#60;p&#62;Here's a &#60;a href=\"http://freecodecamp.com\"&#62; link to Free Code Camp&#60;/a&#62; for you to follow.&#60;/p&#62;</code>",
         "Create an <code>a</code> element that links to <code>http://freecatphotoapp.com</code> and has \"cat photos\" as its <code>anchor text</code>."
@@ -1232,7 +1232,7 @@
       "descriptionEs": [
         "Los elementos <code>a</code>, también conocido como elementos <code>ancla</code>, se utilizan para enlazar a contenido fuera de la página actual.",
         "Aquí está un diagrama de un elemento <code>a</code>. En este caso, el elemento <code>a</code> se utiliza en el medio de un elemento de párrafo, lo que significa que el enlace aparecerá en el medio de una frase. ",
-        "<a href=\"http://i.imgur.com/hviuZwe.png\" data-lightbox=\"img-enlarge\"> <img class=\"img-responsive\" title=\"Haga clic para ampliar\" alt=\"un diagrama de cómo las etiquetas de anclaje se componen con el mismo texto, como en la siguiente línea\" src=\"http://i.imgur.com/hviuZwe.png\"></a> ",
+        "<a href=\"https://s3.amazonaws.com/fccimg/hviuZwe.png\" data-lightbox=\"img-enlarge\"> <img class=\"img-responsive\" title=\"Haga clic para ampliar\" alt=\"un diagrama de cómo las etiquetas de anclaje se componen con el mismo texto, como en la siguiente línea\" src=\"https://s3.amazonaws.com/fccimg/hviuZwe.png\"></a> ",
         "He aquí un ejemplo:",
         "<code>&#60;p&#62;Aquí está un &#60;a href=\"http://freecodecamp.com\"&#62; enlace a Free Code Camp&#60;/a&#62; para que lo siga.&#60;/p&#62;</code>",
         "Crea un elemento <code>a</code> que se vincule a <code>http://freecatphotoapp.com</code> y tenga como <code>texto de anclaje</code> \"fotos de gatos\"."
@@ -1252,7 +1252,7 @@
       "title": "Nest an Anchor Element within a Paragraph",
       "description": [
         "Again, here's a diagram of an <code>a</code> element for your reference:",
-        "<a href=\"http://i.imgur.com/hviuZwe.png\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" title=\"Click to enlarge\" alt=\"a diagram of how anchor tags are composed with the same text as on the following line\" src=\"http://i.imgur.com/hviuZwe.png\"></a>",
+        "<a href=\"https://s3.amazonaws.com/fccimg/hviuZwe.png\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" title=\"Click to enlarge\" alt=\"a diagram of how anchor tags are composed with the same text as on the following line\" src=\"https://s3.amazonaws.com/fccimg/hviuZwe.png\"></a>",
         "Here's an example:",
          "<code>&#60;p&#62;Here's a &#60;a href=\"http://freecodecamp.com\"&#62; link to Free Code Camp&#60;/a&#62; for you to follow.&#60;/p&#62;</code>",
         "<code>Nesting</code> just means putting one element inside of another element.",
@@ -1316,7 +1316,7 @@
       "nameEs": "Anida un elemento de anclaje dentro de un párrafo",
       "descriptionEs": [
         "Una vez más, aquí está un diagrama de un elemento <code>a</code> para tu referencia:",
-        "<a href=\"http://i.imgur.com/hviuZwe.png\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" title=\"Pulse para ampliar\" alt=\"un diagrama de como se componen las etiquetas de anclaje con el texto como en la siguiente línea\" src=\"http://i.imgur.com/hviuZwe.png\"></a>",
+        "<a href=\"https://s3.amazonaws.com/fccimg/hviuZwe.png\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" title=\"Pulse para ampliar\" alt=\"un diagrama de como se componen las etiquetas de anclaje con el texto como en la siguiente línea\" src=\"https://s3.amazonaws.com/fccimg/hviuZwe.png\"></a>",
         "He aquí un ejemplo:",
         "<code>&#60;p&#62;Aquí un &#60;a href=\"http://freecodecamp.com\"&#62; enlace a Free Code Camp&#60;/a&#62; para que lo sigas.&#60;/p&#62;</code>",
         "<code>anidamiento</code> significa poner un elemento dentro de otro elemento.",
