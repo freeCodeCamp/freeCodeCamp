@@ -1,11 +1,11 @@
-export function ifNoUserRedirectTo(url, message) {
+export function ifNoUserRedirectTo(url, message, type = 'errors') {
   return function(req, res, next) {
     const { path } = req;
     if (req.user) {
       return next();
     }
 
-    req.flash('errors', {
+    req.flash(type, {
       msg: message || `You must be signed to go to ${path}`
     });
 

@@ -15,7 +15,10 @@ block content
                         .col-xs-12
                             .bonfire-instructions
                                 for sentence in details
-                                    p.wrappable.negative-10!= sentence
+                                    if (/blockquote|h4|table/.test(sentence))
+                                        !=sentence
+                                    else
+                                        p.wrappable.negative-10!= sentence
                                 .negative-30-bottom
                                     #MDN-links
                                         p.negative-10 Here are some helpful links:
@@ -92,7 +95,6 @@ block content
       common.challengeType = !{JSON.stringify(challengeType)};
       common.dashedName = !{JSON.stringify(dashedName)};
 
-      common.started = Math.floor(Date.now());
       common.username = !{JSON.stringify(user && user.username || '')};
 
     include ../partials/challenge-footer
