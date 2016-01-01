@@ -1406,10 +1406,9 @@
         "function wordBlanks(myNoun, myAdjective, myVerb, myAdverb) {\n  var result = \"\";\n\n  result = \"Once there was a \" + myNoun + \" which was very \" + myAdjective + \". \";\n  result += \"It \" + myVerb + \" \" + myAdverb + \" around the yard.\";\n\n  return result;\n}"
       ],
       "tests": [
-        "assert(typeof wordBlanks(\"\",\"\",\"\",\"\") === 'string', 'message: <code>wordBlanks(\"\",\"\",\"\",\"\")</code> should return a string');",
-        "assert(wordBlanks(\"\",\"\",\"\",\"\").length > 30, 'message: <code>wordBlanks(\"\",\"\",\"\",\"\")</code> should return at least 30 characters with empty inputs');",
-        "assert(/dog/.test(test1) && /big/.test(test1) && /ran/.test(test1) && /quickly/.test(test1),'message: <code>wordBlanks(\"dog\", \"big\", \"ran\", \"quickly\")</code> should contain all of the passed words.');",
-        "assert(/cat/.test(test2) && /little/.test(test2) && /hit/.test(test2) && /slowly/.test(test2),'message: <code>wordBlanks(\"cat\", \"little\", \"hit\", \"slowly\")</code> should contain all of the passed words.');"
+        "assert(typeof wordBlanks(\"\",\"\",\"\",\"\") === 'string', 'message: <code>wordBlanks(\"\",\"\",\"\",\"\")</code> should return a string.');",
+        "assert(/\\bdog\\b/.test(test1) && /\\bbig\\b/.test(test1) && /\\bran\\b/.test(test1) && /\\bquickly\\b/.test(test1),'message: <code>wordBlanks(\"dog\", \"big\", \"ran\", \"quickly\")</code> should contain all of the passed words separated by non-word characters (and any additional words in your madlib).');",
+        "assert(/\\bcat\\b/.test(test2) && /\\blittle\\b/.test(test2) && /\\bhit\\b/.test(test2) && /\\bslowly\\b/.test(test2),'message: <code>wordBlanks(\"cat\", \"little\", \"hit\", \"slowly\")</code> should contain all of the passed words separated by non-word characters (and any additional words in your madlib).');"
       ],
       "type": "waypoint",
       "challengeType": "1",
