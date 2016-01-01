@@ -50,13 +50,17 @@ if (typeof DEBUG === 'undefined') { DEBUG = true; }
     var openPos = -1;
 
     do {
-      j -= 1;
       DEBUG && debug('looking backwards ' + lines[j]); // jshint ignore:line
       closePos = lines[j].indexOf('*/');
       openPos = lines[j].indexOf('/*');
 
       if (closePos !== -1) {
         closeCommentTags++;
+      }
+
+      // check for single line /* comment */ formatted comments
+      if (closePos === lines[j].length - 2 && openPos !== -1) {
+        closeCommentTags--;
       }
 
       if (openPos !== -1) {
@@ -67,6 +71,7 @@ if (typeof DEBUG === 'undefined') { DEBUG = true; }
           return true;
         }
       }
+      j -= 1;
     } while (j !== 0);
 
     return false;
