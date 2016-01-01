@@ -51,8 +51,25 @@ function fillAssert(t) {
   return assert;
 }
 
-function createTest({ title, tests = [], solutions = [] }) {
+function createTest({
+  title,
+  tests = [],
+  solutions = [],
+  head = [],
+  tail = []
+}) {
+  solutions = solutions.filter(solution => !!solution);
+  tests = tests.filter(test => !!test);
+  head = head.join('\n');
+  tail = tail.join('\n');
   const plan = tests.length;
+  if (!plan) {
+    return Observable.just({
+      title,
+      type: 'missing'
+    });
+  }
+
   return Observable.fromCallback(tape)(title)
     .doOnNext(t => solutions.length ? t.plan(plan) : t.end())
     .flatMap(t => {
@@ -64,16 +81,25 @@ function createTest({ title, tests = [], solutions = [] }) {
         });
       }
 
+
       return Observable.just(t)
         .map(fillAssert)
         /* eslint-disable no-unused-vars */
-        // assert is used within the eval
+        // assert and code used within the eval
         .doOnNext(assert => {
-        /* eslint-enable no-unused-vars */
           solutions.forEach(solution => {
             tests.forEach(test => {
+              const code = solution;
+              const editor = { getValue() { return code; } };
+              /* eslint-enable no-unused-vars */
               try {
-                eval(solution + ';;' + test);
+                (() => {
+                  return eval(
+                    head + '\n;;' +
+                    solution + '\n;;' +
+                    tail + '\n;;' +
+                    test);
+                })();
               } catch (e) {
                 t.fail(e);
               }

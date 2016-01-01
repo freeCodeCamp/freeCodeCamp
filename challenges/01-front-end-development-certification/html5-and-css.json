@@ -1028,8 +1028,8 @@
       "title": "Add Rounded Corners with a Border Radius",
       "description": [
         "Your cat photo currently has sharp corners. We can round out those corners with a CSS property called <code>border-radius</code>.",
-        "You can specify a <code>border-radius</code> with pixels. This will affect how rounded the corners are. Add this property to your <code>thick-green-border</code> class and set it to <code>10px</code>.",
-        "Give your cat photo a <code>border-radius</code> of <code>10px</code>."
+        "You can specify a <code>border-radius</code> with pixels. Give your cat photo a <code>border-radius</code> of <code>10px</code>.",
+        "Note: this waypoint allows for multiple possible solutions. For example, you may add <code>border-radius</code> to either the <code>.thick-green-border</code> class or <code>.smaller-image</code> class."
       ],
       "tests": [
         "assert($(\"img\").hasClass(\"thick-green-border\"), 'message: Your image element should have the class \"thick-green-border\".');",
@@ -3539,7 +3539,8 @@
         "Create an additional CSS class called <code>blue-text</code> that gives an element the color blue. Make sure it's below your <code>pink-text</code> class declaration.",
         "Apply the <code>blue-text</code> class to your <code>h1</code> element in addition to your <code>pink-text</code> class, and let's see which one wins.",
         "Applying multiple class attributes to a HTML element is done with a space between them like this:",
-        "<code>class=\"class1 class2\"</code>"
+        "<code>class=\"class1 class2\"</code>",
+        "Note: It doesn't matter which order the classes are listed in."
       ],
       "tests": [
         "assert($(\"h1\").hasClass(\"pink-text\"), 'message: Your <code>h1</code> element should have the class <code>pink-text</code>.');",
@@ -3575,7 +3576,8 @@
         "Crea una clase CSS adicional llamada <code>texto-azul</code> que le de a un elemento el color azul. Asegúrate de que está debajo de tu declaración de la clase <code>pink-text</code>. ",
         "Aplica la clase <code>blue-text</code> a tu elemento <code>h1</code> además de tu clase <code>pink-text</code> y veamos cual gana.",
         "La aplicación de múltiples atributos de clase a un elemento HTML se hace usando espacios entre ellos así:",
-        "<code>class=\"clase1 clase2\"</code>"
+        "<code>class=\"class1 class2\"</code>",
+        "Nota: No importa lo que ordenan las clases se enumeran en el."
       ],
       "namePt": "",
       "descriptionPt": [],
@@ -3595,7 +3597,8 @@
         "Create a CSS declaration for your <code>orange-text</code> id in your <code>style</code> element. Here's an example of what this looks like:",
         "<code>#brown-text {</code>",
         "<code>&nbsp;&nbsp;color: brown;</code>",
-        "<code>}</code>"
+        "<code>}</code>",
+        "Note: It doesn't matter whether you declare this css above or below pink-text class, since id attribute will always take precedence."
       ],
       "tests": [
         "assert($(\"h1\").hasClass(\"pink-text\"), 'message: Your <code>h1</code> element should have the class <code>pink-text</code>.');",
@@ -3640,7 +3643,8 @@
         "Crea una declaración CSS para tu identificación <code>orange-text</code> en tu elemento <code>style</code>. He aquí un ejemplo de como se ve esto: ",
         "<code>#brown-text {</code>",
         "<code>&nbsp;&nbsp;color: brown;</code>",
-        "<code>}</code>"
+        "<code>}</code>",
+        "Nota: No importa si usted declara este css encima o debajo de la clase de texto de color rosa, ya atributo id siempre tendrá prioridad."
       ],
       "namePt": "",
       "descriptionPt": [],
@@ -4181,7 +4185,7 @@
       "challengeSeed": [
         "<style>",
         "  body {",
-        "    background-color: rgb(0, 0, 0)",
+        "    background-color: rgb(0, 0, 0);",
         "  }",
         "</style>"
       ],
@@ -4222,7 +4226,7 @@
       "challengeSeed": [
         "<style>",
         "  body {",
-        "    background-color: rgb(255, 255, 255)",
+        "    background-color: rgb(255, 255, 255);",
         "  }",
         "</style>"
       ],
