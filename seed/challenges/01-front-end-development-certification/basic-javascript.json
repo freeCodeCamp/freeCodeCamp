@@ -2195,9 +2195,9 @@
         "assert(typeof myFunction === \"function\", 'message: <code>myFunction</code> should be a function');",
         "assert(typeof myFunction(4) === \"string\", 'message: <code>myFunction(4)</code> should return a string');",
         "assert(typeof myFunction(6) === \"string\", 'message: <code>myFunction(6)</code> should return a string');",
-        "assert(myFunction(4) === \"No\", 'message: <code>myFunction(4)</code> should return\"No\"');",
-        "assert(myFunction(5) === \"No\", 'message: <code>myFunction(5)</code> should return\"No\"');",
-        "assert(myFunction(6) === \"Yes\", 'message: <code>myFunction(6)</code> should return\"Yes\"');"
+        "assert(myFunction(4) === \"No\", 'message: <code>myFunction(4)</code> should return \"No\"');",
+        "assert(myFunction(5) === \"No\", 'message: <code>myFunction(5)</code> should return \"No\"');",
+        "assert(myFunction(6) === \"Yes\", 'message: <code>myFunction(6)</code> should return \"Yes\"');"
       ],
       "type": "waypoint",
       "challengeType": "1"
