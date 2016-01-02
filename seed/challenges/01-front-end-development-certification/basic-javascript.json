@@ -803,7 +803,7 @@
         "assert(convert(20) === 68, 'message: <code>convert(20)</code> should return a value of <code>68</code>');",
         "assert(convert(30) === 86, 'message: <code>convert(30)</code> should return a value of <code>86</code>');"
       ],
-      "type": "waypoint",
+      "type": "checkpoint",
       "challengeType": "1",
       "nameCn": "",
       "nameFr": "",
@@ -1410,7 +1410,7 @@
         "assert(/\\bdog\\b/.test(test1) && /\\bbig\\b/.test(test1) && /\\bran\\b/.test(test1) && /\\bquickly\\b/.test(test1),'message: <code>wordBlanks(\"dog\", \"big\", \"ran\", \"quickly\")</code> should contain all of the passed words separated by non-word characters (and any additional words in your madlib).');",
         "assert(/\\bcat\\b/.test(test2) && /\\blittle\\b/.test(test2) && /\\bhit\\b/.test(test2) && /\\bslowly\\b/.test(test2),'message: <code>wordBlanks(\"cat\", \"little\", \"hit\", \"slowly\")</code> should contain all of the passed words separated by non-word characters (and any additional words in your madlib).');"
       ],
-      "type": "waypoint",
+      "type": "checkpoint",
       "challengeType": "1",
       "nameCn": "",
       "nameFr": "",
@@ -1775,7 +1775,7 @@
         "assert(hasNumber, 'message: The second elements in each of your sub-arrays must all be numbers');",
         "assert(count > 4, 'message: You must have at least 5 items in your list');"
       ],
-      "type": "waypoint",
+      "type": "checkpoint",
       "challengeType": "1",
       "nameCn": "",
       "nameFr": "",
@@ -2222,7 +2222,7 @@
         "assert(queue([2],1) === 2, 'message: <code>queue([2], 1)</code> should return <code>2</code>');",
         "queue(myArr, 10); assert(myArr[4] === 10, 'message: After <code>queue(myArr, 10)</code>, <code>myArr[4]</code> should be <code>10</code>');"
       ],
-      "type": "waypoint",
+      "type": "checkpoint",
       "challengeType": "1",
       "nameCn": "",
       "nameFr": "",
@@ -2936,7 +2936,7 @@
         "assert(golfScore(4, 7) === \"Go Home!\", 'message: <code>golfScore(4, 7)</code> should return \"Go Home!\"');",
         "assert(golfScore(5, 9) === \"Go Home!\", 'message: <code>golfScore(5, 9)</code> should return \"Go Home!\"');"
       ],
-      "type": "waypoint",
+      "type": "checkpoint",
       "challengeType": "1",
       "nameCn": "",
       "nameFr": "",
@@ -3278,7 +3278,7 @@
         "assert((function(){ count = 0; cc(10);cc('J');cc('Q');cc('K');var out = cc('A'); if(out === \"-5 Hold\") {return true;} return false; })(), 'message: Cards Sequence 10, J, Q, K, A should return <code>\"-5 Hold\"</code>');",
         "assert((function(){ count = 0; cc(3);cc(2);cc('A');cc(10);var out = cc('K'); if(out === \"-1 Hold\") {return true;} return false; })(), 'message: Cards Sequence 3, 2, A, 10, K should return <code>\"-1 Hold\"</code>');"
       ],
-      "type": "waypoint",
+      "type": "checkpoint",
       "challengeType": "1",
       "nameCn": "",
       "nameFr": "",
@@ -3954,7 +3954,7 @@
         "assert(update(1245, \"tracks\", \"Addicted to Love\")[1245][\"tracks\"].length === 1, 'message: After <code>update(1245, \"tracks\", \"Addicted to Love\")</code>, <code>tracks</code> should have a length of <code>1</code>');",
         "update(2548, \"tracks\", \"\"); assert(!collection[2548].hasOwnProperty(\"tracks\"), 'message: After <code>update(2548, \"tracks\", \"\")</code>, <code>tracks</code> should not be set');"
       ],
-      "type": "waypoint",
+      "type": "checkpoint",
       "challengeType": "1",
       "nameCn": "",
       "nameFr": "",
