@@ -9,7 +9,7 @@ Welcome to Free Code Camp's open source codebase and curriculum!
 
 Free Code Camp is an open-source community where you learn to code and help nonprofits.
 
-You start by working through our self-paced, browser-based full stack JavaScript curriculum. 
+You start by working through our self-paced, browser-based full stack JavaScript curriculum.
 
 After you complete the first 400 hours worth of challenges (which involves building 10 single-page apps), you'll earn your Front End Development Certification.
 
@@ -27,6 +27,14 @@ Wiki
 ------------
 
 We would love your help expanding our [wiki](https://github.com/freecodecamp/freecodecamp/wiki). Our goal is to become a great resource for people learning to code, building local coding communities, and applying for coding jobs.
+
+Code Not Working?
+-----------------
+
+Do not file an issue until you have:		
+1. Read [Help I've Found a Bug](https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/Help-I've-Found-a-Bug) wiki page and followed the instructions there.		
+2. Asked for confirmation in the appropriate [Help Room](https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/Help-Rooms)		
+3. Please *do not* open an issue without a 3rd party confirmation of your problem.
 
 Contributing
 ------------
