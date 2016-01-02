@@ -503,6 +503,8 @@
       "description": [
         "You can use the <code>reverse</code> method to reverse the elements of an array.",
         "<code>reverse</code> is another array method that alters the array in place, but it also returns the reversed array.",
+        "<code>var myArray = [1, 2, 3];\n myArray.reverse();</code>",
+        "<em>returns [3, 2, 1]</em>",
         "Use <code>reverse</code> to reverse the <code>array</code> variable and assign it to <code>newArray</code>."
       ],
       "tests": [
