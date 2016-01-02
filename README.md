@@ -33,7 +33,7 @@ Code Not Working?
 
 Do not file an issue until you have:		
 1. Read [Help I've Found a Bug](https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/Help-I've-Found-a-Bug) wiki page and followed the instructions there.		
-2. Asked for confirmation in the appropriate [Help Room](https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/Help-Rooms)		
+2. Asked for confirmation in the appropriate [Help Room](https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/Help-Rooms).
 3. Please *do not* open an issue without a 3rd party confirmation of your problem.
 
 Contributing
