@@ -154,6 +154,16 @@ window.common = (function(global) {
       $('#reset-modal').modal('show');
     });
 
+    $('#trigger-next-challenge').on('click', function() {
+      window.location.href =
+      '/challenges/next-challenge?id=' + common.challengeId;
+    });
+
+    $('#trigger-prev-challenge').on('click', function() {
+      window.location.href =
+      '/challenges/prev-challenge?id=' + common.challengeId;
+    }); 
+
     $('#trigger-pair-modal').on('click', function() {
       $('#pair-modal').modal('show');
     });
