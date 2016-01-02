@@ -394,7 +394,7 @@
         "<code>i = i + 1;</code>",
         "<strong>Note</strong><br>The entire line becomes <code>i++;</code>, eliminating the need for the equal sign.",
         "<h4>Instructions</h4>",
-        "Change the code to use the <code>++</code> operator on <code>myVar</code>"
+        "Change the code to use the <code>++</code> operator on <code>myVar</code>."
       ],
       "releasedOn": "January 1, 2016",
       "challengeSeed": [
@@ -433,7 +433,7 @@
         "<code>i = i - 1;</code>",
         "<strong>Note</strong><br>The entire line becomes <code>i--;</code>, eliminating the need for the equal sign.",
         "<h4>Instructions</h4>",
-        "Change the code to use the <code>--</code> operator on <code>myVar</code>"
+        "Change the code to use the <code>--</code> operator on <code>myVar</code>."
       ],
       "releasedOn": "January 1, 2016",
       "challengeSeed": [
