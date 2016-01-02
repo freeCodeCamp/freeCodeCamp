@@ -11,6 +11,7 @@
       ],
       "description": [
         "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='http://codepen.io/FreeCodeCamp/full/obYYqW' target='_blank'>http://codepen.io/FreeCodeCamp/full/obYYqW</a>.",
+        "<span class='text-info'>Note:</span> Select the JavaScript Preprocessor 'Babel' in CodePens Javascript option menu.",
         "<span class='text-info'>Rule #1:</span> Don't look at the example project's code. Figure it out for yourself.",
         "<span class='text-info'>Rule #2:</span> Fulfill the below <a href='http://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
         "<span class='text-info'>Rule #3:</span> You must use both Sass and React to build this project.",
