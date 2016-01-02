@@ -12,6 +12,9 @@ block content
                         .row
                             .col-xs-12
                                 h3.text-center.negative-10= name
+                                    if (isCompleted)
+                                        | &nbsp;
+                                        i.ion-checkmark-circled.text-primary(title="Completed")
                                 .bonfire-instructions
                                     for sentence in details
                                         p.wrappable.negative-10!= sentence
@@ -85,6 +88,7 @@ block content
       common.challengeSeed = !{JSON.stringify(challengeSeed)};
       common.challengeType = !{JSON.stringify(challengeType)};
       common.dashedName = !{JSON.stringify(dashedName)};
+      common.isCompleted = !{JSON.stringify(isCompleted)};
 
       common.init.push(function() {
         common.editor.setOption('lint', false);
