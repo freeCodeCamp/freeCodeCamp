@@ -871,6 +871,12 @@
         "",
         ""
       ],
+      "tail": [
+      "(function(){",
+      "if (myStr !== undefined){",
+      "return 'myStr = '+ JSON.stringify(myStr);}",
+      "else{return null;}})();"
+      ],
       "solutions": [
         "var myStr = \"\\\\ \\t \\t \\r \\n\";"
       ],
