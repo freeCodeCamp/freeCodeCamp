@@ -192,7 +192,7 @@ module.exports = function(app) {
         });
 
         const waypoints = profileUser.completedChallenges.filter(function(obj) {
-          return (obj.name || '').match(/^Waypoint/i);
+          return (obj.name || '').match(/^Waypoint|^Checkpoint/i);
         });
 
         res.render('account/show', {
