@@ -1,18 +1,22 @@
 {
   "name": "React",
   "order": 14,
-  "isComingSoon": true,
+  "isComingSoon": "true",
   "time": "5h",
   "challenges": [
     {
       "id": "bd7158d8c423ede3aeb5bdee",
       "title": "Learn React Challenges",
+      "description": [],
+      "releasedOn": "October 1, 2014",
+      "head": [],
       "challengeSeed": [],
-      "description": [
-      ],
-      "type": "waypoint",
-      "challengeType": 3,
+      "tail": [],
+      "solutions": [],
       "tests": [],
+      "type": "waypoint",
+      "MDNlinks": [],
+      "challengeType": 3,
       "nameCn": "",
       "descriptionCn": [],
       "nameFr": "",
@@ -20,8 +24,7 @@
       "nameRu": "",
       "descriptionRu": [],
       "nameEs": "Crea una aplicación de votaciones",
-      "descriptionEs": [
-        ],
+      "descriptionEs": [],
       "namePt": "",
       "descriptionPt": []
     }

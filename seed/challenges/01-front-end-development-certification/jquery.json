@@ -15,11 +15,8 @@
         "We'll learn more about <code>functions</code> later. The important thing to know is that code you put inside this <code>function</code> will run as soon as your browser has loaded your page.",
         "This is important because without your <code>document ready function</code>, your code may run before your HTML is rendered, which would cause bugs."
       ],
-      "tests": [
-        "assert(code.match(/<\\/script\\s*>/g) && code.match(/<script(\\sasync|\\sdefer)*(\\s(charset|src|type)\\s*=\\s*[\"\\']+[^\"\\']*[\"\\']+)*(\\sasync|\\sdefer)*\\s*>/g) && code.match(/<\\/script\\s*>/g).length === code.match(/<script(\\sasync|\\sdefer)*(\\s(charset|src|type)\\s*=\\s*[\"\\']+[^\"\\']*[\"\\']+)*(\\sasync|\\sdefer)*\\s*>/g).length, 'message: Create a <code>script</code> element making sure it is valid and has a closing tag.');",
-        "assert(code.match(/\\$\\s*?\\(\\s*?document\\)\\.ready\\s*?\\(\\s*?function\\s*?\\(\\s*?\\)\\s*?\\{/g), 'message: You should add <code>$&#40;document&#41;.ready&#40;function&#40;&#41; {</code> to the beginning of your <code>script</code> element.');",
-        "assert(code.match(/\\n*?\\s*?\\}\\s*?\\);/g), 'message: Close your <code>$&#40;document&#41;.ready&#40;function&#40;&#41; {</code> function with <code>}&#41;;</code>');"
-      ],
+      "releasedOn": "October 1, 2014",
+      "head": [],
       "challengeSeed": [
         "",
         "",
@@ -47,8 +44,22 @@
         "  </div>",
         "</div>"
       ],
+      "tail": [],
+      "solutions": [],
+      "tests": [
+        "assert(code.match(/<\\/script\\s*>/g) && code.match(/<script(\\sasync|\\sdefer)*(\\s(charset|src|type)\\s*=\\s*[\"\\']+[^\"\\']*[\"\\']+)*(\\sasync|\\sdefer)*\\s*>/g) && code.match(/<\\/script\\s*>/g).length === code.match(/<script(\\sasync|\\sdefer)*(\\s(charset|src|type)\\s*=\\s*[\"\\']+[^\"\\']*[\"\\']+)*(\\sasync|\\sdefer)*\\s*>/g).length, 'message: Create a <code>script</code> element making sure it is valid and has a closing tag.');",
+        "assert(code.match(/\\$\\s*?\\(\\s*?document\\)\\.ready\\s*?\\(\\s*?function\\s*?\\(\\s*?\\)\\s*?\\{/g), 'message: You should add <code>$&#40;document&#41;.ready&#40;function&#40;&#41; {</code> to the beginning of your <code>script</code> element.');",
+        "assert(code.match(/\\n*?\\s*?\\}\\s*?\\);/g), 'message: Close your <code>$&#40;document&#41;.ready&#40;function&#40;&#41; {</code> function with <code>}&#41;;</code>');"
+      ],
       "type": "waypoint",
+      "MDNlinks": [],
       "challengeType": 0,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
       "nameEs": "Aprende cómo funcionan las etiquetas de programa y la función de documento listo.",
       "descriptionEs": [
         "Ahora estamos listos para aprender jQuery, la herramienta de JavaScript más popular de todos los tiempos. No te preocupes por JavaScript en si --lo cubriremos pronto.",
@@ -58,7 +69,9 @@
         "Dentro de tu elemento <code>script</code>, agrega este código: <code>$(document).ready(function () {</code> A continuación, ciérralo en la línea siguiente (aún dentro de tu elemento <code>script</code>) con: <code>})</code>",
         "Más adelante aprenderemos más acerca de funciones. Lo importante es saber que el código que pongas dentro de esta función (<code>function</code>) se ejecutará tan pronto como tu navegador haya cargado la página.",
         "Esto es importante porque sin su <code>función de documento listo</code>, su código puede ejecutarse antes de que se haya presentado el HTML, lo que podría causar errores."
-      ]
+      ],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "id": "bad87fee1348bd9bedc08826",
@@ -71,10 +84,8 @@
         "<code>$(\"button\").addClass(\"animated bounce\");</code>",
         "Note that we've already included both the jQuery library and the Animate.css library in the background so that you can use them in the editor. So you are using jQuery to apply the Animate.css <code>bounce</code> class to your <code>button</code> elements."
       ],
-      "tests": [
-        "assert($(\"button\").hasClass(\"animated\") && $(\"button\").hasClass(\"bounce\"), 'message: Use the jQuery <code>addClass&#40&#41</code> function to give the classes <code>animated</code> and <code>bounce</code> to your <code>button</code> elements.');",
-        "assert(!code.match(/class.*animated/g), 'message: Only use jQuery to add these classes to the element.');"
-      ],
+      "releasedOn": "October 1, 2014",
+      "head": [],
       "challengeSeed": [
         "fccss",
         "  $(document).ready(function() {",
@@ -106,8 +117,21 @@
         "  </div>",
         "</div>"
       ],
+      "tail": [],
+      "solutions": [],
+      "tests": [
+        "assert($(\"button\").hasClass(\"animated\") && $(\"button\").hasClass(\"bounce\"), 'message: Use the jQuery <code>addClass&#40&#41</code> function to give the classes <code>animated</code> and <code>bounce</code> to your <code>button</code> elements.');",
+        "assert(!code.match(/class.*animated/g), 'message: Only use jQuery to add these classes to the element.');"
+      ],
       "type": "waypoint",
+      "MDNlinks": [],
       "challengeType": 0,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
       "nameEs": "Elige elementos HTML usando selectores y jQuery",
       "descriptionEs": [
         "Ahora tenemos una <code>función de documento listo</code>.",
@@ -116,7 +140,9 @@
         "Por ejemplo, hagamos que todos tus elementos <code>button</code> reboten. Sólo tienes que añadir este código dentro de la función de documento listo: ",
         "<code>$(\"button\").addClass(\"animated bounce\")</code>",
         "Ten en cuenta que ya hemos incluido tanto la biblioteca jQuery como la biblioteca Animate.css en segundo plano para que pueda utilizarlos en el editor. Así que estás usando jQuery para aplicar la clase <code>bounce</code> de Animate.css a sus elementos <code>button</code>."
-      ]
+      ],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "id": "bad87fee1348bd9aedc08826",
@@ -130,10 +156,8 @@
         "For example, you could make all the elements with the class <code>text-primary</code> shake by adding the following to your <code>document ready function</code>:",
         "<code>$(\".text-primary\").addClass(\"animated shake\");</code>"
       ],
-      "tests": [
-        "assert($(\".well\").hasClass(\"animated\") && $(\".well\").hasClass(\"shake\"), 'message: Use the jQuery <code>addClass&#40&#41</code> function to give the classes <code>animated</code> and <code>shake</code> to all your elements with the class <code>well</code>.');",
-        "assert(!code.match(/class\\.\\*animated/g), 'message: Only use jQuery to add these classes to the element.');"
-      ],
+      "releasedOn": "October 1, 2014",
+      "head": [],
       "challengeSeed": [
         "fccss",
         "  $(document).ready(function() {",
@@ -165,8 +189,21 @@
         "  </div>",
         "</div>"
       ],
+      "tail": [],
+      "solutions": [],
+      "tests": [
+        "assert($(\".well\").hasClass(\"animated\") && $(\".well\").hasClass(\"shake\"), 'message: Use the jQuery <code>addClass&#40&#41</code> function to give the classes <code>animated</code> and <code>shake</code> to all your elements with the class <code>well</code>.');",
+        "assert(!code.match(/class\\.\\*animated/g), 'message: Only use jQuery to add these classes to the element.');"
+      ],
       "type": "waypoint",
+      "MDNlinks": [],
       "challengeType": 0,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
       "nameEs": "Elige elementos por su clase usando jQuery",
       "descriptionEs": [
         "¿Viste como hicimos rebotar todos tus elementos <code>button</code>? Los seleccionamos con <code>$(\"button\")</code>, y luego les añadimos algunas clases CSS con <code>.addClass(\"animated bounce\");.</code> ",
@@ -176,7 +213,9 @@
         "A continuación, utiliza la función <code>.addClass()</code> de jQuery para agregar las clases <code>animated</code> y <code>shake</code>.",
         "Por ejemplo, podrías hacer que todos los elementos con la clase <code>text-primary</code> se sacudieran añadiendo lo siguiente a tu <code>función de documento listo</code>:",
         "<code>$(\".text-primary\").addClass(\"animated shake\");</code>"
-      ]
+      ],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "id": "bad87fee1348bd9aeda08826",
@@ -189,11 +228,8 @@
         "Here's how you'd make the <code>button</code> element with the id <code>target6</code> fade out:",
         "<code>$(\"#target6\").addClass(\"animated fadeOut\")</code>."
       ],
-      "tests": [
-        "assert($(\"#target3\").hasClass(\"animated\"), 'message: Select the <code>button</code> element with the <code>id</code> of <code>target3</code> and use the jQuery <code>addClass&#40&#41</code> function to give it the class of <code>animated</code>.');",
-        "assert(($(\"#target3\").hasClass(\"fadeOut\") || $(\"#target3\").hasClass(\"fadeout\"))  && code.match(/\\$\\(.#target3.\\)/g), 'message: Target the element with the id <code>target3</code> and use the jQuery <code>addClass&#40&#41</code> function to give it the class <code>fadeOut</code>.');",
-        "assert(!code.match(/class.*animated/g), 'message: Only use jQuery to add these classes to the element.');"
-      ],
+      "releasedOn": "October 1, 2014",
+      "head": [],
       "challengeSeed": [
         "fccss",
         "  $(document).ready(function() {",
@@ -227,8 +263,22 @@
         "  </div>",
         "</div>"
       ],
+      "tail": [],
+      "solutions": [],
+      "tests": [
+        "assert($(\"#target3\").hasClass(\"animated\"), 'message: Select the <code>button</code> element with the <code>id</code> of <code>target3</code> and use the jQuery <code>addClass&#40&#41</code> function to give it the class of <code>animated</code>.');",
+        "assert(($(\"#target3\").hasClass(\"fadeOut\") || $(\"#target3\").hasClass(\"fadeout\"))  && code.match(/\\$\\(.#target3.\\)/g), 'message: Target the element with the id <code>target3</code> and use the jQuery <code>addClass&#40&#41</code> function to give it the class <code>fadeOut</code>.');",
+        "assert(!code.match(/class.*animated/g), 'message: Only use jQuery to add these classes to the element.');"
+      ],
       "type": "waypoint",
+      "MDNlinks": [],
       "challengeType": 0,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
       "nameEs": "Elige elementos por ID usando jQuery",
       "descriptionEs": [
         "También puedes elegir un elemento por su atributo id.",
@@ -237,7 +287,9 @@
         "A continuación, utiliza la función <code>.addClass()</code> de jQuery para agregar las clases <code>animated</code> y <code>fadeOut</code>.",
         "He aquí cómo haces que desaparezca el elemento <code>button</code> con la identificación <code>target6</code>:",
         "<code>$(\"#target6\").addClass(\"animated fadeOut\")</code>."
-      ]
+      ],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "id": "bad87fee1348bd9aeda08726",
@@ -246,13 +298,8 @@
         "These animations were cool at first, but now they're getting kind of distracting.",
         "Delete all three of these jQuery functions from your <code>document ready function</code>, but leave your <code>document ready function</code> itself intact."
       ],
-      "tests": [
-        "assert(!code.match(/e\"\\);/g) && !code.match(/t\"\\);/g), 'message: Delete all three of your jQuery functions from your <code>document ready function</code>.');",
-        "assert(code.match(/<script>/g), 'message: Leave your <code>script</code> element intact.');",
-        "assert(code.match(/\\$\\(document\\)\\.ready\\(function\\(\\)\\s?\\{/g), 'message: Leave your <code>$&#40document&#41.ready&#40function&#40&#41 {</code> to the beginning of your <code>script</code> element.');",
-        "assert(code.match(/\\n\\s+?\\}\\);/g), 'message: Leave your \"document ready function\" closing <code>&#125;&#41;</code> intact.');",
-        "assert(code.match(/<\\/script>/g) && code.match(/<script/g) && code.match(/<\\/script>/g).length === code.match(/<script/g).length, 'message: Leave your <code>script</code> element closing tag intact.');"
-      ],
+      "releasedOn": "October 1, 2014",
+      "head": [],
       "challengeSeed": [
         "fccss",
         "  $(document).ready(function() {",
@@ -287,13 +334,31 @@
         "  </div>",
         "</div>"
       ],
+      "tail": [],
+      "solutions": [],
+      "tests": [
+        "assert(!code.match(/e\"\\);/g) && !code.match(/t\"\\);/g), 'message: Delete all three of your jQuery functions from your <code>document ready function</code>.');",
+        "assert(code.match(/<script>/g), 'message: Leave your <code>script</code> element intact.');",
+        "assert(code.match(/\\$\\(document\\)\\.ready\\(function\\(\\)\\s?\\{/g), 'message: Leave your <code>$&#40document&#41.ready&#40function&#40&#41 {</code> to the beginning of your <code>script</code> element.');",
+        "assert(code.match(/\\n\\s+?\\}\\);/g), 'message: Leave your \"document ready function\" closing <code>&#125;&#41;</code> intact.');",
+        "assert(code.match(/<\\/script>/g) && code.match(/<script/g) && code.match(/<\\/script>/g).length === code.match(/<script/g).length, 'message: Leave your <code>script</code> element closing tag intact.');"
+      ],
       "type": "waypoint",
+      "MDNlinks": [],
       "challengeType": 0,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
       "nameEs": "Elimina tus funciones jQuery",
       "descriptionEs": [
         "Estas animaciones eran divertidas al principio, pero ahora se están volviendo una distracción.",
         "Elimina esas tres funciones de jQuery de tu <code>función de documento listo</code>, pero deja intacta la declaración de la <code>función de documento listo</code>."
-      ]
+      ],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "id": "bad87fee1348bd9aed908626",
@@ -306,14 +371,8 @@
         "Add the <code>shake</code> class to all the buttons with class <code>.btn</code>.",
         "Add the <code>btn-primary</code> class to the button with id <code>#target1</code>."
       ],
-      "tests": [
-        "assert(code.match(/\\$\\s*?\\(\\s*?(?:'|\")\\s*?button\\s*?(?:'|\")/gi), 'message: Use the <code>$&#40\"button\"&#41</code> selector.');",
-        "assert(code.match(/\\$\\s*?\\(\\s*?(?:'|\")\\s*?\\.btn\\s*?(?:'|\")/gi), 'message: Use the <code>$&#40\".btn\"&#41</code> selector.');",
-        "assert(code.match(/\\$\\s*?\\(\\s*?(?:'|\")\\s*?#target1\\s*?(?:'|\")/gi), 'message: Use the <code>$&#40\"#target1\"&#41</code> selector.');",
-        "assert(code.match(/addClass/g) && code.match(/addClass\\(\\s*?('|\")[\\w-]+\\1\\s*?\\)/g).length > 2, 'message: Only add one class with each of your three selectors.');",
-        "assert($(\"#target1\").hasClass(\"animated\") && $(\"#target1\").hasClass(\"shake\") && $(\"#target1\").hasClass(\"btn-primary\"), 'message: Your <code>#target1</code> element should have the classes <code>animated</code>&#130; <code>shake</code> and <code>btn-primary</code>.');",
-        "assert(!code.match(/class.*animated/g), 'message: Only use jQuery to add these classes to the element.');"
-      ],
+      "releasedOn": "October 1, 2014",
+      "head": [],
       "challengeSeed": [
         "fccss",
         "  $(document).ready(function() {",
@@ -345,8 +404,25 @@
         "  </div>",
         "</div>"
       ],
+      "tail": [],
+      "solutions": [],
+      "tests": [
+        "assert(code.match(/\\$\\s*?\\(\\s*?(?:'|\")\\s*?button\\s*?(?:'|\")/gi), 'message: Use the <code>$&#40\"button\"&#41</code> selector.');",
+        "assert(code.match(/\\$\\s*?\\(\\s*?(?:'|\")\\s*?\\.btn\\s*?(?:'|\")/gi), 'message: Use the <code>$&#40\".btn\"&#41</code> selector.');",
+        "assert(code.match(/\\$\\s*?\\(\\s*?(?:'|\")\\s*?#target1\\s*?(?:'|\")/gi), 'message: Use the <code>$&#40\"#target1\"&#41</code> selector.');",
+        "assert(code.match(/addClass/g) && code.match(/addClass\\(\\s*?('|\")[\\w-]+\\1\\s*?\\)/g).length > 2, 'message: Only add one class with each of your three selectors.');",
+        "assert($(\"#target1\").hasClass(\"animated\") && $(\"#target1\").hasClass(\"shake\") && $(\"#target1\").hasClass(\"btn-primary\"), 'message: Your <code>#target1</code> element should have the classes <code>animated</code>&#130; <code>shake</code> and <code>btn-primary</code>.');",
+        "assert(!code.match(/class.*animated/g), 'message: Only use jQuery to add these classes to the element.');"
+      ],
       "type": "waypoint",
+      "MDNlinks": [],
       "challengeType": 0,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
       "nameEs": "Elige un mismo elemento con múltiples selectores jQuery",
       "descriptionEs": [
         "Ahora ya sabes tres formas de seleccionar elementos: por tipo: <code>$(\"button\")</code>, por clase: <code>$(\".btn\")</code>, y por identificación <code>$(\"#target1\")</code>. ",
@@ -355,7 +431,9 @@
         "Agrega la clase <code>animated</code> a todos los elementos con tipo <code>button</code>.",
         "Agrega la clase <code>shake</code> a todos los botones con clase <code>.btn</code>.",
         "Agrega la clase <code>btn-primary</code> al botón con identificación <code>#target1</code>."
-      ]
+      ],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "id": "bad87fee1348bd9aed918626",
@@ -366,11 +444,8 @@
         "<code>$(\"#target2\").removeClass(\"btn-default\");</code>",
         "Let's remove the <code>btn-default</code> class from all of our <code>button</code> elements."
       ],
-      "tests": [
-        "assert($(\".btn-default\").length === 0, 'message: Remove the <code>btn-default</code> class from all of your <code>button</code> elements.');",
-        "assert(code.match(/btn btn-default/g), 'message: Only use jQuery to remove this class from the element.');",
-        "assert(code.match(/\\.[\\v\\s]*removeClass[\\s\\v]*\\([\\s\\v]*('|\")\\s*btn-default\\s*('|\")[\\s\\v]*\\)/gm), 'message: Only remove the <code>btn-default</code> class.');"
-      ],
+      "releasedOn": "October 1, 2014",
+      "head": [],
       "challengeSeed": [
         "fccss",
         "  $(document).ready(function() {",
@@ -405,15 +480,31 @@
         "  </div>",
         "</div>"
       ],
+      "tail": [],
+      "solutions": [],
+      "tests": [
+        "assert($(\".btn-default\").length === 0, 'message: Remove the <code>btn-default</code> class from all of your <code>button</code> elements.');",
+        "assert(code.match(/btn btn-default/g), 'message: Only use jQuery to remove this class from the element.');",
+        "assert(code.match(/\\.[\\v\\s]*removeClass[\\s\\v]*\\([\\s\\v]*('|\")\\s*btn-default\\s*('|\")[\\s\\v]*\\)/gm), 'message: Only remove the <code>btn-default</code> class.');"
+      ],
       "type": "waypoint",
+      "MDNlinks": [],
       "challengeType": 0,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
       "nameEs": "Elimina clases de un elemento con jQuery",
       "descriptionEs": [
         "De la misma manera que puedes agregar clases a un elemento con la función <code>addClass()</code> de jQuery, puedes eliminarlas con la función <code>removeClass()</code>.",
         "He aquí cómo puedes hacerlo para un botón específico:",
         "<code>$(\"#target2\").removeClass(\"btn-default\");</code>",
         "Vamos a quitar la clase <code>btn-default</code> de todos nuestros elementos <code>button</code>."
-      ]
+      ],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "id": "bad87fee1348bd9aed908826",
@@ -427,10 +518,8 @@
         "Delete your jQuery selectors, leaving an empty <code>document ready function</code>.",
         "Select <code>target1</code> and change its color to red."
       ],
-      "tests": [
-        "assert($(\"#target1\").css(\"color\") === 'rgb(255, 0, 0)', 'message: Your <code>target1</code> element should have red text.');",
-        "assert(!code.match(/class.*animated/g), 'message: Only use jQuery to add these classes to the element.');"
-      ],
+      "releasedOn": "October 1, 2014",
+      "head": [],
       "challengeSeed": [
         "fccss",
         "  $(document).ready(function() {",
@@ -466,8 +555,21 @@
         "  </div>",
         "</div>"
       ],
+      "tail": [],
+      "solutions": [],
+      "tests": [
+        "assert($(\"#target1\").css(\"color\") === 'rgb(255, 0, 0)', 'message: Your <code>target1</code> element should have red text.');",
+        "assert(!code.match(/class.*animated/g), 'message: Only use jQuery to add these classes to the element.');"
+      ],
       "type": "waypoint",
+      "MDNlinks": [],
       "challengeType": 0,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
       "nameEs": "Cambia el CSS de un elemento usando jQuery",
       "descriptionEs": [
         "También podemos cambiar el CSS de un elemento HTML directamente con jQuery.",
@@ -477,7 +579,9 @@
         "Esto es un poco diferente a una declaración normal CSS, porque la propiedad CSS y su valor están entre comillas y separadas por una coma en lugar de dos puntos.",
         "Elimina tus selectores jQuery, dejando en blanco la <code>función de documento listo</code>.",
         "Selecciona <code>target1</code> y cambia su color a rojo."
-      ]
+      ],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "id": "bad87fee1348bd9aed808826",
@@ -490,11 +594,8 @@
         "<code>$(\"button\").prop(\"disabled\", true);</code>",
         "Disable only the <code>target1</code> button."
       ],
-      "tests": [
-        "assert($(\"#target1\") && $(\"#target1\").prop(\"disabled\"), 'message: Disable your <code>target1</code> button.');",
-        "assert($(\"#target2\") && !$(\"#target2\").prop(\"disabled\"), 'message: Do not disable any other buttons.');",
-        "assert(!code.match(/disabled>/g), 'message: Only use jQuery to add these classes to the element.');"
-      ],
+      "releasedOn": "October 1, 2014",
+      "head": [],
       "challengeSeed": [
         "fccss",
         "  $(document).ready(function() {",
@@ -527,8 +628,22 @@
         "  </div>",
         "</div>"
       ],
+      "tail": [],
+      "solutions": [],
+      "tests": [
+        "assert($(\"#target1\") && $(\"#target1\").prop(\"disabled\"), 'message: Disable your <code>target1</code> button.');",
+        "assert($(\"#target2\") && !$(\"#target2\").prop(\"disabled\"), 'message: Do not disable any other buttons.');",
+        "assert(!code.match(/disabled>/g), 'message: Only use jQuery to add these classes to the element.');"
+      ],
       "type": "waypoint",
+      "MDNlinks": [],
       "challengeType": 0,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
       "nameEs": "Desactiva un elemento usando jQuery",
       "descriptionEs": [
         "También puedes cambiar propiedades que no son CSS de los elementos HTML con jQuery. Por ejemplo, puedes desactivar los botones. ",
@@ -537,7 +652,9 @@
         "He aquí cómo puedes desactivar todos los botones:",
         "<code>$(\"button\").prop(\"disabled\", true);</code>",
         "Desactiva sólo el botón <code>target1</code>."
-      ]
+      ],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "id": "564944c91be2204b269d51e3",
@@ -551,11 +668,7 @@
         "Change the button with id <code>target4</code> by italicizing its text."
       ],
       "releasedOn": "November 18, 2015",
-      "tests": [
-        "assert.isTrue((/<i>#target4<\\/i>/gi).test($(\"#target4\").html()), 'message: Italicize the text in your <code>target4</code> button by adding HTML tags.');",
-        "assert($(\"#target4\") && $(\"#target4\").text() === '#target4', 'message: Make sure the text is otherwise unchanged.');",
-        "assert.isFalse((/<i>/gi).test($(\"h3\").html()), 'message: Do not alter any other text.');"
-      ],
+      "head": [],
       "challengeSeed": [
         "fccss",
         "  $(document).ready(function() {",
@@ -588,8 +701,26 @@
         "  </div>",
         "</div>"
       ],
+      "tail": [],
+      "solutions": [],
+      "tests": [
+        "assert.isTrue((/<i>#target4<\\/i>/gi).test($(\"#target4\").html()), 'message: Italicize the text in your <code>target4</code> button by adding HTML tags.');",
+        "assert($(\"#target4\") && $(\"#target4\").text() === '#target4', 'message: Make sure the text is otherwise unchanged.');",
+        "assert.isFalse((/<i>/gi).test($(\"h3\").html()), 'message: Do not alter any other text.');"
+      ],
       "type": "waypoint",
-      "challengeType": 0
+      "MDNlinks": [],
+      "challengeType": 0,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "id": "bad87fee1348bd9aed708826",
@@ -599,10 +730,8 @@
         "jQuery has a function called <code>.remove()</code> that will remove an HTML element entirely",
         "Remove element <code>target4</code> from the page by using the <code>.remove()</code> function."
       ],
-      "tests": [
-        "assert($(\"#target4\").length === 0, 'message: Use jQuery to remove your <code>target4</code> element from your page.');",
-        "assert(code.match(/id=\"target4/g), 'message: Only use jQuery to remove this element.');"
-      ],
+      "releasedOn": "October 1, 2014",
+      "head": [],
       "challengeSeed": [
         "fccss",
         "  $(document).ready(function() {",
@@ -636,14 +765,29 @@
         "  </div>",
         "</div>"
       ],
+      "tail": [],
+      "solutions": [],
+      "tests": [
+        "assert($(\"#target4\").length === 0, 'message: Use jQuery to remove your <code>target4</code> element from your page.');",
+        "assert(code.match(/id=\"target4/g), 'message: Only use jQuery to remove this element.');"
+      ],
       "type": "waypoint",
+      "MDNlinks": [],
       "challengeType": 0,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
       "nameEs": "Elimina un elemento usando jQuery",
       "descriptionEs": [
         "Ahora quitemos un elemento HTML de tu página usando jQuery.",
         "jQuery tiene una función llamada <code>.remove()</code> que eliminará un elemento HTML por completo",
         "Elimina el elemento <code>target4</code> de la página utilizando la función <code>.remove()</code>."
-      ]
+      ],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "id": "bad87fee1348bd9aed608826",
@@ -655,11 +799,8 @@
         "<code>$(\"#target4\").appendTo(\"#left-well\");</code>",
         "Move your <code>target2</code> element from your <code>left-well</code> to your <code>right-well</code>."
       ],
-      "tests": [
-        "assert($(\"#left-well\").children(\"#target2\").length === 0, 'message: Your <code>target2</code> element should not be inside your <code>left-well</code>.');",
-        "assert($(\"#right-well\").children(\"#target2\").length > 0, 'message: Your <code>target2</code> element should be inside your <code>right-well</code>.');",
-        "assert(!code.match(/class.*animated/g), 'message: Only use jQuery to move these elements.');"
-      ],
+      "releasedOn": "October 1, 2014",
+      "head": [],
       "challengeSeed": [
         "fccss",
         "  $(document).ready(function() {",
@@ -694,8 +835,22 @@
         "  </div>",
         "</div>"
       ],
+      "tail": [],
+      "solutions": [],
+      "tests": [
+        "assert($(\"#left-well\").children(\"#target2\").length === 0, 'message: Your <code>target2</code> element should not be inside your <code>left-well</code>.');",
+        "assert($(\"#right-well\").children(\"#target2\").length > 0, 'message: Your <code>target2</code> element should be inside your <code>right-well</code>.');",
+        "assert(!code.match(/class.*animated/g), 'message: Only use jQuery to move these elements.');"
+      ],
       "type": "waypoint",
+      "MDNlinks": [],
       "challengeType": 0,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
       "nameEs": "Usa appendTo para mover elementos con jQuery",
       "descriptionEs": [
         "Ahora intentemos mover elementos de un <code>div</code> a otro.",
@@ -703,7 +858,9 @@
         "Por ejemplo, si quisiéramos mover <code>target4</code> de nuestro pozo (<em>well</em>) derecho a nuestro pozo izquierdo, usaríamos:",
         "<code>$(\"#target4\").appendTo(\"#left-well\");</code>",
         "Mueve tu elemento <code>target2</code> de tu <code>left-well</code> a tu <code>right-well</code>."
-      ]
+      ],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "id": "bad87fee1348bd9aed508826",
@@ -716,11 +873,8 @@
         "Did you notice this involves sticking two jQuery functions together? This is called <code>function chaining</code> and it's a convenient way to get things done with jQuery.",
         "Clone your <code>target5</code> element and append it to your <code>left-well</code>."
       ],
-      "tests": [
-        "assert($(\"#right-well\").children(\"#target5\").length > 0, 'message: Your <code>target5</code> element should be inside your <code>right-well</code>.');",
-        "assert($(\"#left-well\").children(\"#target5\").length > 0, 'message: A copy of your <code>target5</code> element should also be inside your <code>left-well</code>.');",
-        "assert(!code.match(/class.*animated/g), 'message: Only use jQuery to move these elements.');"
-      ],
+      "releasedOn": "October 1, 2014",
+      "head": [],
       "challengeSeed": [
         "fccss",
         "  $(document).ready(function() {",
@@ -756,8 +910,22 @@
         "  </div>",
         "</div>"
       ],
+      "tail": [],
+      "solutions": [],
+      "tests": [
+        "assert($(\"#right-well\").children(\"#target5\").length > 0, 'message: Your <code>target5</code> element should be inside your <code>right-well</code>.');",
+        "assert($(\"#left-well\").children(\"#target5\").length > 0, 'message: A copy of your <code>target5</code> element should also be inside your <code>left-well</code>.');",
+        "assert(!code.match(/class.*animated/g), 'message: Only use jQuery to move these elements.');"
+      ],
       "type": "waypoint",
+      "MDNlinks": [],
       "challengeType": 0,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
       "nameEs": "Clona un elemento usando jQuery",
       "descriptionEs": [
         "Además de mover elementos, puedes copiarlos de un sitio a otro.",
@@ -766,7 +934,9 @@
         "<code>$(\"#target2\").clone().appendTo(\"#right-well\");</code>",
         "¿Te diste cuenta que esto implica pegar dos funciones jQuery? Esto se conoce como <code>encadenamiento</code> y es una manera conveniente de hacer las cosas con jQuery. ",
         "Clona tu elemento <code>target5</code> y añadelo a tu <code>left-well</code>."
-      ]
+      ],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "id": "bad87fee1348bd9aed308826",
@@ -779,12 +949,8 @@
         "<code>$(\"#left-well\").parent().css(\"background-color\", \"blue\")</code>",
         "Give the parent of the <code>#target1</code> element a background-color of red."
       ],
-      "tests": [
-        "assert($(\"#left-well\").css(\"background-color\") === 'red' || $(\"#left-well\").css(\"background-color\") === 'rgb(255, 0, 0)' || $(\"#left-well\").css(\"background-color\").toLowerCase() === '#ff0000' || $(\"#left-well\").css(\"background-color\").toLowerCase() === '#f00', 'message: Your <code>left-well</code> element should have a red background.');",
-        "assert(code.match(/\\.parent\\s*\\(\\)\\s*\\.css/g), 'message: You should use the <code>&#46;parent&#40;&#41;</code> function to modify this element.');",
-        "assert(code.match(/\\$\\s*?\\(\\s*?(?:'|\")\\s*?#target1\\s*?(?:'|\")\\s*?\\)\\.parent/gi), 'message: The <code>&#46;parent&#40;&#41;</code> method should be called on the <code>&#35;target1</code> element.');",
-        "assert(code.match(/<div class=\"well\" id=\"left-well\">/g), 'message: Only use jQuery to add these classes to the element.');"
-      ],
+      "releasedOn": "October 1, 2014",
+      "head": [],
       "challengeSeed": [
         "fccss",
         "  $(document).ready(function() {",
@@ -823,8 +989,23 @@
         "  </div>",
         "</body>"
       ],
+      "tail": [],
+      "solutions": [],
+      "tests": [
+        "assert($(\"#left-well\").css(\"background-color\") === 'red' || $(\"#left-well\").css(\"background-color\") === 'rgb(255, 0, 0)' || $(\"#left-well\").css(\"background-color\").toLowerCase() === '#ff0000' || $(\"#left-well\").css(\"background-color\").toLowerCase() === '#f00', 'message: Your <code>left-well</code> element should have a red background.');",
+        "assert(code.match(/\\.parent\\s*\\(\\)\\s*\\.css/g), 'message: You should use the <code>&#46;parent&#40;&#41;</code> function to modify this element.');",
+        "assert(code.match(/\\$\\s*?\\(\\s*?(?:'|\")\\s*?#target1\\s*?(?:'|\")\\s*?\\)\\.parent/gi), 'message: The <code>&#46;parent&#40;&#41;</code> method should be called on the <code>&#35;target1</code> element.');",
+        "assert(code.match(/<div class=\"well\" id=\"left-well\">/g), 'message: Only use jQuery to add these classes to the element.');"
+      ],
       "type": "waypoint",
+      "MDNlinks": [],
       "challengeType": 0,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
       "nameEs": "Elige el padre de un elemento usando jQuery",
       "descriptionEs": [
         "Cada elemento HTML tiene un elemento <code>padre</code> del cual <code>hereda</code> propiedades.",
@@ -833,7 +1014,9 @@
         "He aquí un ejemplo de cómo se utiliza la función <code>parent()</code> si quisieras darle al elemento padre del elemento <code>left-well</code> un color de fondo azul:",
         "<code>$(\"#left-well\").parent().css(\"background-color\", \"blue\")</code>",
         "Dale al padre del elemento <code>#target1</code> un color de fondo (<code>background-color</code>) rojo."
-      ]
+      ],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "id": "bad87fee1348bd9aed208826",
@@ -846,11 +1029,8 @@
         "<code>$(\"#left-well\").children().css(\"color\", \"blue\")</code>",
         "Give all the children of your <code>#right-well</code> element a color of orange."
       ],
-      "tests": [
-        "assert($(\"#right-well\").children().css(\"color\") === 'rgb(255, 165, 0)', 'message: All children of <code>#right-well</code> should have orange text.');",
-        "assert(code.match(/\\.children\\(\\)\\.css/g), 'message: You should use the <code>children&#40&#41</code> function to modify these elements.');",
-        "assert(code.match(/<div class=\"well\" id=\"right-well\">/g), 'message: Only use jQuery to add these classes to the element.');"
-      ],
+      "releasedOn": "October 1, 2014",
+      "head": [],
       "challengeSeed": [
         "fccss",
         "  $(document).ready(function() {",
@@ -888,8 +1068,22 @@
         "  </div>",
         "</div>"
       ],
+      "tail": [],
+      "solutions": [],
+      "tests": [
+        "assert($(\"#right-well\").children().css(\"color\") === 'rgb(255, 165, 0)', 'message: All children of <code>#right-well</code> should have orange text.');",
+        "assert(code.match(/\\.children\\(\\)\\.css/g), 'message: You should use the <code>children&#40&#41</code> function to modify these elements.');",
+        "assert(code.match(/<div class=\"well\" id=\"right-well\">/g), 'message: Only use jQuery to add these classes to the element.');"
+      ],
       "type": "waypoint",
+      "MDNlinks": [],
       "challengeType": 0,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
       "nameEs": "Elige los hjos de un elemento usando jQuery",
       "descriptionEs": [
         "Muchos elementos HTML tienen <code>hijos</code>, los cuales <code>heredan</code> sus propiedades de sus elementos padres",
@@ -898,7 +1092,9 @@
         "He aquí un ejemplo de cómo se utiliza la función <code>children()</code> para darle a los hijos de tu elemento <code>left-well</code> el color azul:",
         "<code>$(\"#left-well\").children().css(\"color\", \"blue\")</code>",
         "Da a todos los hijos de tu elemento <code>right-well</code> el color naranja."
-      ]
+      ],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "id": "bad87fee1348bd9aed108826",
@@ -911,11 +1107,8 @@
         "<code>$(\".target:nth-child(3)\").addClass(\"animated bounce\");</code>",
         "Make the second child in each of your well elements bounce. You must target the children of element with the <code>target</code> class."
       ],
-      "tests": [
-        "assert($(\".target:nth-child(2)\").hasClass(\"animated\") && $(\".target:nth-child(2)\").hasClass(\"bounce\"), 'message: The second element in your <code>target</code> elements should bounce.');",
-        "assert(code.match(/\\:nth-child\\(/g), 'message: You should use the <code>&#58;nth-child&#40&#41</code> function to modify these elements.');",
-        "assert(code.match(/<button class=\"btn btn-default target\" id=\"target2\">/g), 'message: Only use jQuery to add these classes to the element.');"
-      ],
+      "releasedOn": "October 1, 2014",
+      "head": [],
       "challengeSeed": [
         "fccss",
         "  $(document).ready(function() {",
@@ -954,8 +1147,22 @@
         "  </div>",
         "</div>"
       ],
+      "tail": [],
+      "solutions": [],
+      "tests": [
+        "assert($(\".target:nth-child(2)\").hasClass(\"animated\") && $(\".target:nth-child(2)\").hasClass(\"bounce\"), 'message: The second element in your <code>target</code> elements should bounce.');",
+        "assert(code.match(/\\:nth-child\\(/g), 'message: You should use the <code>&#58;nth-child&#40&#41</code> function to modify these elements.');",
+        "assert(code.match(/<button class=\"btn btn-default target\" id=\"target2\">/g), 'message: Only use jQuery to add these classes to the element.');"
+      ],
       "type": "waypoint",
+      "MDNlinks": [],
       "challengeType": 0,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
       "nameEs": "Elige un hijo específico de un elemento usando jQuery",
       "descriptionEs": [
         "Seguramente habrás entendido porque los atributos id son tan convenientes para elegir con selectores jQuery. Pero no siempre contarás con estos agradables identificadores para trabajar. ",
@@ -964,7 +1171,9 @@
         "He aquí cómo le asignarás la clase <code>bounce</code> al tercer elemento de cada pozo:",
         "<code>$(\".target:nth-child(3)\").addClass(\"animated bounce\");</code>",
         "Haz que rebote el segundo hijo de cada uno de los elementos de tus pozos. Debes elegir los hijos con la clase <code>target</code>."
-      ]
+      ],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "id": "bad87fee1348bd9aed008826",
@@ -976,11 +1185,8 @@
         "Note that jQuery is zero-indexed, meaning that, counter-intuitively, <code>:odd</code> selects the second element, fourth element, and so on.",
         "Try selecting all the even-numbered elements and giving them the classes of <code>animated</code> and <code>shake</code>."
       ],
-      "tests": [
-        "assert($('.target:even').hasClass('animated') && $('.target:even').hasClass('shake'), 'message: All the <code>target</code> elements that computer considers even should shake.');",
-        "assert(code.match(/\\:even/g), 'message: You should use the <code>&#58;even</code> function to modify these elements.');",
-        "assert(code.match(/<button class=\"btn btn-default target\" id=\"target3\">/g), 'message: Only use jQuery to add these classes to the element.');"
-      ],
+      "releasedOn": "October 1, 2014",
+      "head": [],
       "challengeSeed": [
         "fccss",
         "  $(document).ready(function() {",
@@ -1021,15 +1227,31 @@
         "  </div>",
         "</div>"
       ],
+      "tail": [],
+      "solutions": [],
+      "tests": [
+        "assert($('.target:even').hasClass('animated') && $('.target:even').hasClass('shake'), 'message: All the <code>target</code> elements that computer considers even should shake.');",
+        "assert(code.match(/\\:even/g), 'message: You should use the <code>&#58;even</code> function to modify these elements.');",
+        "assert(code.match(/<button class=\"btn btn-default target\" id=\"target3\">/g), 'message: Only use jQuery to add these classes to the element.');"
+      ],
       "type": "waypoint",
+      "MDNlinks": [],
       "challengeType": 0,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
       "nameEs": "Elige elementos con numeración par usando jQuery",
       "descriptionEs": [
         "También puedes elegir todos los elementos con numeración par.",
         "He aquí cómo elegirías todos los elementos impares con clase <code>target</code> y como les agregarías unas clases:",
         "<code>$(\".target:odd\").addClass(\"animated shake\");</code>",
         "Intenta seleccionar todos los elementos de número par y agrégales las clases <code>animated</code> y <code>shake</code>."
-      ]
+      ],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "id": "bad87fee1348bd9aecb08826",
@@ -1040,9 +1262,8 @@
         "Here's how we would make the entire body fade out: <code> $(\"body\").addClass(\"animated fadeOut\")</code>",
         "But let's do something more dramatic. Add the classes <code>animated</code> and <code>hinge</code> to your <code>body</code> element."
       ],
-      "tests": [
-        "assert($('body').hasClass('animated') && $('body').hasClass('hinge'), 'message: Add the classes <code>animated</code> and <code>hinge</code> to your <code>body</code> element.');"
-      ],
+      "releasedOn": "October 1, 2014",
+      "head": [],
       "challengeSeed": [
         "fccss",
         "  $(document).ready(function() {",
@@ -1084,15 +1305,29 @@
         "  </div>",
         "</div>"
       ],
+      "tail": [],
+      "solutions": [],
+      "tests": [
+        "assert($('body').hasClass('animated') && $('body').hasClass('hinge'), 'message: Add the classes <code>animated</code> and <code>hinge</code> to your <code>body</code> element.');"
+      ],
       "type": "waypoint",
+      "MDNlinks": [],
       "challengeType": 0,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
       "nameEs": "Usa jQuery para modificar la página entera",
       "descriptionEs": [
         "Hemos terminado de jugar en nuestro patio de recreo jQuery. ¡Vamos a derribarlo!",
         "jQuery también puede elegir el elemento <code>body</code>.",
         "Así es como haríamos que el cuerpo entero desapareciera: <code>$(\"body\").addClass('animated fadeOut')</code>",
         "Pero vamos a hacer algo más dramático. Añade las clases <code>animated</code> y <code>hinge</code> a tu elemento <code>body</code>."
-      ]
+      ],
+      "namePt": "",
+      "descriptionPt": []
     }
   ]
 }

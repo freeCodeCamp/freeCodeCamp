@@ -11,12 +11,18 @@
         "The lowest number will not always come first.",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
       ],
+      "releasedOn": "October 1, 2014",
+      "head": [],
       "challengeSeed": [
         "function sumAll(arr) {",
         "  return 1;",
         "}",
         "",
         "sumAll([1, 4]);"
+      ],
+      "tail": [],
+      "solutions": [
+        "function sumAll(arr) {\n  var sum = 0;\n  arr.sort(function(a,b) {return a-b;});\n  for (var i = arr[0]; i <= arr[1]; i++) {\n    sum += i; \n  }\n  return sum;\n}"
       ],
       "tests": [
         "assert(typeof sumAll([1, 4]) === 'number', 'message: <code>sumAll([1, 4])</code> should return a number.');",
@@ -25,15 +31,12 @@
         "assert.deepEqual(sumAll([5, 10]), 45, 'message: <code>sumAll([5, 10])</code> should return 45.');",
         "assert.deepEqual(sumAll([10, 5]), 45, 'message: <code>sumAll([10, 5])</code> should return 45.');"
       ],
+      "type": "bonfire",
       "MDNlinks": [
         "Math.max()",
         "Math.min()",
         "Array.reduce()"
       ],
-      "solutions": [
-        "function sumAll(arr) {\n  var sum = 0;\n  arr.sort(function(a,b) {return a-b;});\n  for (var i = arr[0]; i <= arr[1]; i++) {\n    sum += i; \n  }\n  return sum;\n}"
-      ],
-      "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
       "descriptionCn": [],
@@ -46,7 +49,7 @@
         "Te pasaremos un arreglo que contiene dos números. Crea una función que devuelva la suma de esos dos números y todos los números entre ellos.",
         "El número menor no siempre será el primer elemento en el arreglo.",
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
-        ],
+      ],
       "namePt": "",
       "descriptionPt": []
     },
@@ -57,6 +60,8 @@
         "Compare two arrays and return a new array with any items only found in one of the original arrays.",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
       ],
+      "releasedOn": "October 1, 2014",
+      "head": [],
       "challengeSeed": [
         "function diff(arr1, arr2) {",
         "  var newArr = [];",
@@ -65,6 +70,10 @@
         "}",
         "",
         "diff([1, 2, 3, 5], [1, 2, 3, 4, 5]);"
+      ],
+      "tail": [],
+      "solutions": [
+        "function diff(arr1, arr2) {\n  var newArr = [];\n  var h1 = Object.create(null);\n  arr1.forEach(function(e) {\n    h1[e] = e;\n  });\n  \n  var h2 = Object.create(null);\n  arr2.forEach(function(e) {\n    h2[e] = e;\n  });\n  \n  Object.keys(h1).forEach(function(e) {\n     if (!(e in h2)) newArr.push(h1[e]);\n  });\n  Object.keys(h2).forEach(function(e) {\n     if (!(e in h1)) newArr.push(h2[e]);\n  });\n  // Same, same; but different.\n  return newArr;\n}"
       ],
       "tests": [
         "assert(typeof diff([1, 2, 3, 5], [1, 2, 3, 4, 5]) === \"object\", 'message: <code>diff([1, 2, 3, 5], [1, 2, 3, 4, 5])</code> should return an array.');",
@@ -76,6 +85,7 @@
         "assert.sameMembers(diff([], [\"snuffleupagus\", \"cookie monster\", \"elmo\"]), [\"snuffleupagus\", \"cookie monster\", \"elmo\"], 'message: <code>[], [\"snuffleupagus\", \"cookie monster\", \"elmo\"]</code> should return <code>[\"snuffleupagus\", \"cookie monster\", \"elmo\"]</code>.');",
         "assert.sameMembers(diff([1, \"calf\", 3, \"piglet\"], [7, \"filly\"]), [1, \"calf\", 3, \"piglet\", 7, \"filly\"], 'message: <code>[1, \"calf\", 3, \"piglet\"], [7, \"filly\"]</code> should return <code>[1, \"calf\", 3, \"piglet\", 7, \"filly\"]</code>.');"
       ],
+      "type": "bonfire",
       "MDNlinks": [
         "Comparison Operators",
         "Array.slice()",
@@ -83,10 +93,6 @@
         "Array.indexOf()",
         "Array.concat()"
       ],
-      "solutions": [
-        "function diff(arr1, arr2) {\n  var newArr = [];\n  var h1 = Object.create(null);\n  arr1.forEach(function(e) {\n    h1[e] = e;\n  });\n  \n  var h2 = Object.create(null);\n  arr2.forEach(function(e) {\n    h2[e] = e;\n  });\n  \n  Object.keys(h1).forEach(function(e) {\n     if (!(e in h2)) newArr.push(h1[e]);\n  });\n  Object.keys(h2).forEach(function(e) {\n     if (!(e in h1)) newArr.push(h2[e]);\n  });\n  // Same, same; but different.\n  return newArr;\n}"
-      ],
-      "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
       "descriptionCn": [],
@@ -98,13 +104,31 @@
       "descriptionEs": [
         "Crea una función que compare dos arreglos y que devuelva un nuevo arreglo que contenga los elementos que no se encuentren simultáneamente en ambos arreglos.",
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
-        ],
+      ],
       "namePt": "",
       "descriptionPt": []
     },
     {
       "id": "a7f4d8f2483413a6ce226cac",
       "title": "Roman Numeral Converter",
+      "description": [
+        "Convert the given number into a roman numeral.",
+        "All <a href=\"http://www.mathsisfun.com/roman-numerals.html\" target=\"_blank\">roman numerals</a> answers should be provided in upper-case.",
+        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
+      ],
+      "releasedOn": "October 1, 2014",
+      "head": [],
+      "challengeSeed": [
+        "function convert(num) {",
+        " return num;",
+        "}",
+        "",
+        "convert(36);"
+      ],
+      "tail": [],
+      "solutions": [
+        "function convert(num) {\n  var ref = [['M', 1000], ['CM', 900], ['D', 500], ['CD', 400], ['C', 100], ['XC', 90], ['L', 50], ['XL', 40], ['X', 10], ['IX', 9], ['V', 5], ['IV', 4], ['I', 1]];\n  var res = [];\n  ref.forEach(function(p) {\n    while (num >= p[1]) {\n      res.push(p[0]);\n      num -= p[1];\n    }\n  });\n  return res.join('');\n}"
+      ],
       "tests": [
         "assert.deepEqual(convert(5), \"V\", 'message: <code>convert(5)</code> should return \"V\".');",
         "assert.deepEqual(convert(9), \"IX\", 'message: <code>convert(9)</code> should return \"IX\".');",
@@ -129,28 +153,13 @@
         "assert.deepEqual(convert(2014), \"MMXIV\", 'message: <code>convert(2014)</code> should return \"MMXIV\"');",
         "assert.deepEqual(convert(3999), \"MMMCMXCIX\", 'message: <code>convert(3999)</code> should return \"MMMCMXCIX\"');"
       ],
-      "description": [
-        "Convert the given number into a roman numeral.",
-        "All <a href=\"http://www.mathsisfun.com/roman-numerals.html\" target=\"_blank\">roman numerals</a> answers should be provided in upper-case.",
-        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
-      ],
-      "challengeSeed": [
-        "function convert(num) {",
-        " return num;",
-        "}",
-        "",
-        "convert(36);"
-      ],
+      "type": "bonfire",
       "MDNlinks": [
         "Roman Numerals",
         "Array.splice()",
         "Array.indexOf()",
         "Array.join()"
       ],
-      "solutions": [
-        "function convert(num) {\n  var ref = [['M', 1000], ['CM', 900], ['D', 500], ['CD', 400], ['C', 100], ['XC', 90], ['L', 50], ['XL', 40], ['X', 10], ['IX', 9], ['V', 5], ['IV', 4], ['I', 1]];\n  var res = [];\n  ref.forEach(function(p) {\n    while (num >= p[1]) {\n      res.push(p[0]);\n      num -= p[1];\n    }\n  });\n  return res.join('');\n}"
-      ],
-      "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
       "descriptionCn": [],
@@ -163,7 +172,7 @@
         "Convierte el número dado en numeral romano.",
         "Todos los <a href=\"http://www.mathsisfun.com/roman-numerals.html\" target=\"_blank\">numerales romanos</a> en las respuestas deben estar en mayúsculas.",
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
-        ],
+      ],
       "namePt": "",
       "descriptionPt": []
     },
@@ -175,6 +184,8 @@
         "For example, if the first argument is <code>[{ first: \"Romeo\", last: \"Montague\" }, { first: \"Mercutio\", last: null }, { first: \"Tybalt\", last: \"Capulet\" }]</code>, and the second argument is <code>{ last: \"Capulet\" }</code>, then you must return the third object from the array (the first argument), because it contains the property and it's value, that was passed on as the second argument.",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Write your own code."
       ],
+      "releasedOn": "October 1, 2014",
+      "head": [],
       "challengeSeed": [
         "function where(collection, source) {",
         "  var arr = [];",
@@ -184,21 +195,22 @@
         "",
         "where([{ first: \"Romeo\", last: \"Montague\" }, { first: \"Mercutio\", last: null }, { first: \"Tybalt\", last: \"Capulet\" }], { last: \"Capulet\" });"
       ],
+      "tail": [],
+      "solutions": [
+        "function where(collection, source) {\n  var arr = [];\n  var keys = Object.keys(source);\n  collection.forEach(function(e) {\n    if(keys.every(function(key) {return e[key] === source[key];})) {\n      arr.push(e);  \n    }\n  });\n  return arr;\n}"
+      ],
       "tests": [
         "assert.deepEqual(where([{ first: \"Romeo\", last: \"Montague\" }, { first: \"Mercutio\", last: null }, { first: \"Tybalt\", last: \"Capulet\" }], { last: \"Capulet\" }), [{ first: \"Tybalt\", last: \"Capulet\" }], 'message: <code>where([{ first: \"Romeo\", last: \"Montague\" }, { first: \"Mercutio\", last: null }, { first: \"Tybalt\", last: \"Capulet\" }], { last: \"Capulet\" })</code> should return <code>[{ first: \"Tybalt\", last: \"Capulet\" }]</code>.');",
         "assert.deepEqual(where([{ \"a\": 1 }, { \"a\": 1 }, { \"a\": 1, \"b\": 2 }], { \"a\": 1 }), [{ \"a\": 1 }, { \"a\": 1 }, { \"a\": 1, \"b\": 2 }], 'message: <code>where([{ \"a\": 1 }, { \"a\": 1 }, { \"a\": 1, \"b\": 2 }], { \"a\": 1 })</code> should return <code>[{ \"a\": 1 }, { \"a\": 1 }, { \"a\": 1, \"b\": 2 }]</code>.');",
         "assert.deepEqual(where([{ \"a\": 1, \"b\": 2 }, { \"a\": 1 }, { \"a\": 1, \"b\": 2, \"c\": 2 }], { \"a\": 1, \"b\": 2 }), [{ \"a\": 1, \"b\": 2 }, { \"a\": 1, \"b\": 2, \"c\": 2 }], 'message: <code>where([{ \"a\": 1, \"b\": 2 }, { \"a\": 1 }, { \"a\": 1, \"b\": 2, \"c\": 2 }], { \"a\": 1, \"b\": 2 })</code> should return <code>[{ \"a\": 1, \"b\": 2 }, { \"a\": 1, \"b\": 2, \"c\": 2 }]</code>.');",
         "assert.deepEqual(where([{ \"a\": 1, \"b\": 2 }, { \"a\": 1 }, { \"a\": 1, \"b\": 2, \"c\": 2 }], { \"a\": 1, \"c\": 2 }), [{ \"a\": 1, \"b\": 2, \"c\": 2 }], 'message: <code>where([{ \"a\": 1, \"b\": 2 }, { \"a\": 1 }, { \"a\": 1, \"b\": 2, \"c\": 2 }], { \"a\": 1, \"c\": 2 })</code> should return <code>[{ \"a\": 1, \"b\": 2, \"c\": 2 }]</code>.');"
       ],
+      "type": "bonfire",
       "MDNlinks": [
         "Global Object",
         "Object.hasOwnProperty()",
         "Object.keys()"
       ],
-      "solutions": [
-        "function where(collection, source) {\n  var arr = [];\n  var keys = Object.keys(source);\n  collection.forEach(function(e) {\n    if(keys.every(function(key) {return e[key] === source[key];})) {\n      arr.push(e);  \n    }\n  });\n  return arr;\n}"
-      ],
-      "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
       "descriptionCn": [],
@@ -211,20 +223,13 @@
         "Crea una función que busque en un arreglo de objetos (primer argumento) y devuelva un arreglo con todos los objetos que compartan el valor indicado para una propiedad dada (segundo argumento). Cada pareja de propiedad y valor debe estar presente en el objeto de la colección para ser incluido en el arreglo devuelto por la función",
         "Por ejemplo, si el primer argumento es <code>[{ first: \"Romeo\", last: \"Montague\" }, { first: \"Mercutio\", last: null }, { first: \"Tybalt\", last: \"Capulet\" }]</code>, y el segundo argumento es <code>{ last: \"Capulet\" }</code>, entonces tu función debe devolver el tercer objeto del arreglo en el primer argumento, ya que contiene la propiedad y el valor indicados en el segundo argumento.",
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
-        ],
+      ],
       "namePt": "",
       "descriptionPt": []
     },
     {
       "id": "a0b5010f579e69b815e7c5d6",
       "title": "Search and Replace",
-      "tests": [
-        "assert.deepEqual(myReplace(\"Let us go to the store\", \"store\", \"mall\"), \"Let us go to the mall\", 'message: <code>myReplace(\"Let us go to the store\", \"store\", \"mall\")</code> should return \"Let us go to the mall\".');",
-        "assert.deepEqual(myReplace(\"He is Sleeping on the couch\", \"Sleeping\", \"sitting\"), \"He is Sitting on the couch\", 'message: <code>myReplace(\"He is Sleeping on the couch\", \"Sleeping\", \"sitting\")</code> should return \"He is Sitting on the couch\".');",
-        "assert.deepEqual(myReplace(\"This has a spellngi error\", \"spellngi\", \"spelling\"), \"This has a spelling error\", 'message: <code>myReplace(\"This has a spellngi error\", \"spellngi\", \"spelling\")</code> should return \"This has a spelling error\".');",
-        "assert.deepEqual(myReplace(\"His name is Tom\", \"Tom\", \"john\"), \"His name is John\", 'message: <code>myReplace(\"His name is Tom\", \"Tom\", \"john\")</code> should return \"His name is John\".');",
-        "assert.deepEqual(myReplace(\"Let us get back to more Coding\", \"Coding\", \"bonfires\"), \"Let us get back to more Bonfires\", 'message: <code>myReplace(\"Let us get back to more Coding\", \"Coding\", \"bonfires\")</code> should return \"Let us get back to more Bonfires\".');"
-      ],
       "description": [
         "Perform a search and replace on the sentence using the arguments provided and return the new sentence.",
         "First argument is the sentence to perform the search and replace on.",
@@ -233,6 +238,8 @@
         "NOTE: Preserve the case of the original word when you are replacing it. For example if you mean to replace the word \"Book\" with the word \"dog\", it should be replaced as \"Dog\"",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
       ],
+      "releasedOn": "October 1, 2014",
+      "head": [],
       "challengeSeed": [
         "function myReplace(str, before, after) {",
         "  return str;",
@@ -240,15 +247,23 @@
         "",
         "myReplace(\"A quick brown fox jumped over the lazy dog\", \"jumped\", \"leaped\");"
       ],
+      "tail": [],
+      "solutions": [
+        "function myReplace(str, before, after) {\n  if (before.charAt(0) === before.charAt(0).toUpperCase()) {\n    after = after.charAt(0).toUpperCase() + after.substring(1);\n  } else {\n    after = after.charAt(0).toLowerCase() + after.substring(1);\n  }\n  return str.replace(before, after);\n}"
+      ],
+      "tests": [
+        "assert.deepEqual(myReplace(\"Let us go to the store\", \"store\", \"mall\"), \"Let us go to the mall\", 'message: <code>myReplace(\"Let us go to the store\", \"store\", \"mall\")</code> should return \"Let us go to the mall\".');",
+        "assert.deepEqual(myReplace(\"He is Sleeping on the couch\", \"Sleeping\", \"sitting\"), \"He is Sitting on the couch\", 'message: <code>myReplace(\"He is Sleeping on the couch\", \"Sleeping\", \"sitting\")</code> should return \"He is Sitting on the couch\".');",
+        "assert.deepEqual(myReplace(\"This has a spellngi error\", \"spellngi\", \"spelling\"), \"This has a spelling error\", 'message: <code>myReplace(\"This has a spellngi error\", \"spellngi\", \"spelling\")</code> should return \"This has a spelling error\".');",
+        "assert.deepEqual(myReplace(\"His name is Tom\", \"Tom\", \"john\"), \"His name is John\", 'message: <code>myReplace(\"His name is Tom\", \"Tom\", \"john\")</code> should return \"His name is John\".');",
+        "assert.deepEqual(myReplace(\"Let us get back to more Coding\", \"Coding\", \"bonfires\"), \"Let us get back to more Bonfires\", 'message: <code>myReplace(\"Let us get back to more Coding\", \"Coding\", \"bonfires\")</code> should return \"Let us get back to more Bonfires\".');"
+      ],
+      "type": "bonfire",
       "MDNlinks": [
         "Array.splice()",
         "String.replace()",
         "Array.join()"
       ],
-      "solutions": [
-        "function myReplace(str, before, after) {\n  if (before.charAt(0) === before.charAt(0).toUpperCase()) {\n    after = after.charAt(0).toUpperCase() + after.substring(1);\n  } else {\n    after = after.charAt(0).toLowerCase() + after.substring(1);\n  }\n  return str.replace(before, after);\n}"
-      ],
-      "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
       "descriptionCn": [],
@@ -264,26 +279,21 @@
         "El tercer argumento es lo que reemplazará a la palabra indicada en el segundo argumento",
         "NOTA: Debes respetar mayúsculas y minúsculas de la palabra original cuando ejecutes el reemplazo. Por ejemplo, si quisieras reemplazar la palabra \"Libro\" con la palabra \"perro\", deberías insertar en vez la palabra \"Perro\"",
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
-        ],
+      ],
       "namePt": "",
       "descriptionPt": []
     },
     {
       "id": "aa7697ea2477d1316795783b",
       "title": "Pig Latin",
-      "tests": [
-        "assert.deepEqual(translate(\"california\"), \"aliforniacay\", 'message: <code>translate(\"california\")</code> should return \"aliforniacay\".');",
-        "assert.deepEqual(translate(\"paragraphs\"), \"aragraphspay\", 'message: <code>translate(\"paragraphs\")</code> should return \"aragraphspay\".');",
-        "assert.deepEqual(translate(\"glove\"), \"oveglay\", 'message: <code>translate(\"glove\")</code> should return \"oveglay\".');",
-        "assert.deepEqual(translate(\"algorithm\"), \"algorithmway\", 'message: <code>translate(\"algorithm\")</code> should return \"algorithmway\".');",
-        "assert.deepEqual(translate(\"eight\"), \"eightway\", 'message: <code>translate(\"eight\")</code> should return \"eightway\".');"
-      ],
       "description": [
         "Translate the provided string to pig latin.",
         "<a href=\"http://en.wikipedia.org/wiki/Pig_Latin\" target=\"_blank\">Pig Latin</a> takes the first consonant (or consonant cluster) of an English word, moves it to the end of the word and suffixes an \"ay\".",
         "If a word begins with a vowel you just add \"way\" to the end.",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
       ],
+      "releasedOn": "October 1, 2014",
+      "head": [],
       "challengeSeed": [
         "function translate(str) {",
         "  return str;",
@@ -291,6 +301,18 @@
         "",
         "translate(\"consonant\");"
       ],
+      "tail": [],
+      "solutions": [
+        "function translate(str) {\n  if (isVowel(str.charAt(0))) return str + \"way\";\n  var front = [];\n  str = str.split('');\n  while (str.length && !isVowel(str[0])) {\n    front.push(str.shift());\n  }\n  return [].concat(str, front).join('') + 'ay';\n}\n\nfunction isVowel(c) {\n  return ['a', 'e', 'i', 'o', 'u'].indexOf(c.toLowerCase()) !== -1;\n}"
+      ],
+      "tests": [
+        "assert.deepEqual(translate(\"california\"), \"aliforniacay\", 'message: <code>translate(\"california\")</code> should return \"aliforniacay\".');",
+        "assert.deepEqual(translate(\"paragraphs\"), \"aragraphspay\", 'message: <code>translate(\"paragraphs\")</code> should return \"aragraphspay\".');",
+        "assert.deepEqual(translate(\"glove\"), \"oveglay\", 'message: <code>translate(\"glove\")</code> should return \"oveglay\".');",
+        "assert.deepEqual(translate(\"algorithm\"), \"algorithmway\", 'message: <code>translate(\"algorithm\")</code> should return \"algorithmway\".');",
+        "assert.deepEqual(translate(\"eight\"), \"eightway\", 'message: <code>translate(\"eight\")</code> should return \"eightway\".');"
+      ],
+      "type": "bonfire",
       "MDNlinks": [
         "Array.indexOf()",
         "Array.push()",
@@ -298,10 +320,6 @@
         "String.substr()",
         "String.split()"
       ],
-      "solutions": [
-        "function translate(str) {\n  if (isVowel(str.charAt(0))) return str + \"way\";\n  var front = [];\n  str = str.split('');\n  while (str.length && !isVowel(str[0])) {\n    front.push(str.shift());\n  }\n  return [].concat(str, front).join('') + 'ay';\n}\n\nfunction isVowel(c) {\n  return ['a', 'e', 'i', 'o', 'u'].indexOf(c.toLowerCase()) !== -1;\n}"
-      ],
-      "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
       "descriptionCn": [],
@@ -315,18 +333,13 @@
         "<a href=\"http://en.wikipedia.org/wiki/Pig_Latin\" target=\"_blank\">Pig Latin</a> toma la primera consonante (o grupo de consonantes) de una palabra en inglés, la mueve al final de la palabra y agrega un \"ay\".",
         "Si la palabra comienza con una vocal, simplemente añade \"way\" al final.",
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
-        ],
+      ],
       "namePt": "",
       "descriptionPt": []
     },
     {
       "id": "afd15382cdfb22c9efe8b7de",
       "title": "DNA Pairing",
-      "tests": [
-        "assert.deepEqual(pair(\"ATCGA\"),[[\"A\",\"T\"],[\"T\",\"A\"],[\"C\",\"G\"],[\"G\",\"C\"],[\"A\",\"T\"]], 'message: <code>pair(\"ATCGA\")</code> should return <code>[[\"A\",\"T\"],[\"T\",\"A\"],[\"C\",\"G\"],[\"G\",\"C\"],[\"A\",\"T\"]]</code>.');",
-        "assert.deepEqual(pair(\"TTGAG\"),[[\"T\",\"A\"],[\"T\",\"A\"],[\"G\",\"C\"],[\"A\",\"T\"],[\"G\",\"C\"]], 'message: <code>pair(\"TTGAG\")</code> should return <code>[[\"T\",\"A\"],[\"T\",\"A\"],[\"G\",\"C\"],[\"A\",\"T\"],[\"G\",\"C\"]]</code>.');",
-        "assert.deepEqual(pair(\"CTCTA\"),[[\"C\",\"G\"],[\"T\",\"A\"],[\"C\",\"G\"],[\"T\",\"A\"],[\"A\",\"T\"]], 'message: <code>pair(\"CTCTA\")</code> should return <code>[[\"C\",\"G\"],[\"T\",\"A\"],[\"C\",\"G\"],[\"T\",\"A\"],[\"A\",\"T\"]]</code>.');"
-      ],
       "description": [
         "The DNA strand is missing the pairing element. Take each character, get its pair, and return the results as a 2d array.",
         "<a href=\"http://en.wikipedia.org/wiki/Base_pair\" target=\"_blank\">Base pairs</a> are a pair of AT and CG. Match the missing element to the provided character.",
@@ -335,6 +348,8 @@
         "The character and its pair are paired up in an array, and all the arrays are grouped into one encapsulating array.",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
       ],
+      "releasedOn": "October 1, 2014",
+      "head": [],
       "challengeSeed": [
         "function pair(str) {",
         "  return str;",
@@ -342,14 +357,20 @@
         "",
         "pair(\"GCG\");"
       ],
+      "tail": [],
+      "solutions": [
+        "var lookup = Object.create(null);\nlookup.A = 'T';\nlookup.T = 'A';\nlookup.C = 'G';\nlookup.G = 'C';\n\nfunction pair(str) {\n return str.split('').map(function(p) {return [p, lookup[p]];});\n}"
+      ],
+      "tests": [
+        "assert.deepEqual(pair(\"ATCGA\"),[[\"A\",\"T\"],[\"T\",\"A\"],[\"C\",\"G\"],[\"G\",\"C\"],[\"A\",\"T\"]], 'message: <code>pair(\"ATCGA\")</code> should return <code>[[\"A\",\"T\"],[\"T\",\"A\"],[\"C\",\"G\"],[\"G\",\"C\"],[\"A\",\"T\"]]</code>.');",
+        "assert.deepEqual(pair(\"TTGAG\"),[[\"T\",\"A\"],[\"T\",\"A\"],[\"G\",\"C\"],[\"A\",\"T\"],[\"G\",\"C\"]], 'message: <code>pair(\"TTGAG\")</code> should return <code>[[\"T\",\"A\"],[\"T\",\"A\"],[\"G\",\"C\"],[\"A\",\"T\"],[\"G\",\"C\"]]</code>.');",
+        "assert.deepEqual(pair(\"CTCTA\"),[[\"C\",\"G\"],[\"T\",\"A\"],[\"C\",\"G\"],[\"T\",\"A\"],[\"A\",\"T\"]], 'message: <code>pair(\"CTCTA\")</code> should return <code>[[\"C\",\"G\"],[\"T\",\"A\"],[\"C\",\"G\"],[\"T\",\"A\"],[\"A\",\"T\"]]</code>.');"
+      ],
+      "type": "bonfire",
       "MDNlinks": [
         "Array.push()",
         "String.split()"
       ],
-      "solutions": [
-        "var lookup = Object.create(null);\nlookup.A = 'T';\nlookup.T = 'A';\nlookup.C = 'G';\nlookup.G = 'C';\n\nfunction pair(str) {\n return str.split('').map(function(p) {return [p, lookup[p]];});\n}"
-      ],
-      "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
       "descriptionCn": [],
@@ -365,7 +386,7 @@
         "Por ejemplo, si te pasáramos la cadena GCG, tu función debería devolver el arreglo: [[\"G\", \"C\"], [\"C\",\"G\"],[\"G\", \"C\"]]",
         "Cada letra que se te provee y su pareja deben estar contenidos en un arreglo, y cada uno de estos arreglos debe estar contenidos en un arreglo.",
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
-        ],
+      ],
       "namePt": "",
       "descriptionPt": []
     },
@@ -377,6 +398,8 @@
         "If all letters are present in the range, return undefined.",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
       ],
+      "releasedOn": "October 1, 2014",
+      "head": [],
       "challengeSeed": [
         "function fearNotLetter(str) {",
         "  return str;",
@@ -384,20 +407,21 @@
         "",
         "fearNotLetter(\"abce\");"
       ],
+      "tail": [],
+      "solutions": [
+        "function fearNotLetter(str) {\n  var s = str.split('').map(function(c) {return c.charCodeAt(0);});\n  for (var i = 1; i < s.length; i++) {\n    if (s[i]-1 != s[i-1]) {\n      return String.fromCharCode(s[i]-1);\n    }\n  }\n}"
+      ],
       "tests": [
         "assert.deepEqual(fearNotLetter(\"abce\"), \"d\", 'message: <code>fearNotLetter(\"abce\")</code> should return \"d\".');",
         "assert.deepEqual(fearNotLetter(\"abcdefghjklmno\"), \"i\", 'message: <code>fearNotLetter(\"abcdefghjklmno\")</code> should return \"i\".');",
         "assert.isUndefined(fearNotLetter(\"bcd\"), 'message: <code>fearNotLetter(\"bcd\")</code> should return undefined.');",
         "assert.isUndefined(fearNotLetter(\"yz\"), 'message: <code>fearNotLetter(\"yz\")</code> should return undefined.');"
       ],
+      "type": "bonfire",
       "MDNlinks": [
         "String.charCodeAt()",
         "String.fromCharCode()"
       ],
-      "solutions": [
-        "function fearNotLetter(str) {\n  var s = str.split('').map(function(c) {return c.charCodeAt(0);});\n  for (var i = 1; i < s.length; i++) {\n    if (s[i]-1 != s[i-1]) {\n      return String.fromCharCode(s[i]-1);\n    }\n  }\n}"
-      ],
-      "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
       "descriptionCn": [],
@@ -410,7 +434,7 @@
         "Crea una función que devuelva la letra que falta en el rango de letras que se le pasa",
         "Si todas las letras en el rango están presentes, la función debe devolver undefined.",
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
-        ],
+      ],
       "namePt": "",
       "descriptionPt": []
     },
@@ -422,6 +446,8 @@
         "Boolean primitives are true and false.",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
       ],
+      "releasedOn": "October 1, 2014",
+      "head": [],
       "challengeSeed": [
         "function boo(bool) {",
         "  // What is the new fad diet for ghost developers? The Boolean.",
@@ -429,6 +455,10 @@
         "}",
         "",
         "boo(null);"
+      ],
+      "tail": [],
+      "solutions": [
+        "function boo(bool) {\n  // What is the new fad diet for ghost developers? The Boolean.\n  return typeof bool === \"boolean\";\n}\n\nboo(null);"
       ],
       "tests": [
         "assert.strictEqual(boo(true), true, 'message: <code>boo(true)</code> should return true.');",
@@ -442,13 +472,10 @@
         "assert.strictEqual(boo(\"true\"), false, 'message: <code>boo(\"true\")</code> should return false.');",
         "assert.strictEqual(boo(\"false\"), false, 'message: <code>boo(\"false\")</code> should return false.');"
       ],
+      "type": "bonfire",
       "MDNlinks": [
         "Boolean Objects"
       ],
-      "solutions": [
-        "function boo(bool) {\n  // What is the new fad diet for ghost developers? The Boolean.\n  return typeof bool === \"boolean\";\n}\n\nboo(null);"
-      ],
-      "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
       "descriptionCn": [],
@@ -461,7 +488,7 @@
         "Crea una función que verifique si el valor que se le pasa es de tipo booleano. Haz que la función devuelva true o false según corresponda.",
         "Los primitivos booleanos primitivos son: true y false",
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
-        ],
+      ],
       "namePt": "",
       "descriptionPt": []
     },
@@ -475,6 +502,8 @@
         "Check the assertion tests for examples.",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
       ],
+      "releasedOn": "October 1, 2014",
+      "head": [],
       "challengeSeed": [
         "function unite(arr1, arr2, arr3) {",
         "  return arr1;",
@@ -482,20 +511,21 @@
         "",
         "unite([1, 3, 2], [5, 2, 1, 4], [2, 1]);"
       ],
+      "tail": [],
+      "solutions": [
+        "function unite(arr1, arr2, arr3) {\n  return [].slice.call(arguments).reduce(function(a, b) {\n    return [].concat(a, b.filter(function(e) {return a.indexOf(e) === -1;}));\n  }, []);\n}"
+      ],
       "tests": [
         "assert.deepEqual(unite([1, 3, 2], [5, 2, 1, 4], [2, 1]), [1, 3, 2, 5, 4], 'message: <code>unite([1, 3, 2], [5, 2, 1, 4], [2, 1])</code> should return <code>[1, 3, 2, 5, 4]</code>.');",
         "assert.deepEqual(unite([1, 3, 2], [1, [5]], [2, [4]]), [1, 3, 2, [5], [4]], 'message: <code>unite([1, 3, 2], [1, [5]], [2, [4]])</code> should return <code>[1, 3, 2, [5], [4]]</code>.');",
         "assert.deepEqual(unite([1, 2, 3], [5, 2, 1]), [1, 2, 3, 5], 'message: <code>unite([1, 2, 3], [5, 2, 1])</code> should return <code>[1, 2, 3, 5]</code>.');",
         "assert.deepEqual(unite([1, 2, 3], [5, 2, 1, 4], [2, 1], [6, 7, 8]), [1, 2, 3, 5, 4, 6, 7, 8], 'message: <code>unite([1, 2, 3], [5, 2, 1, 4], [2, 1], [6, 7, 8])</code> should return <code>[1, 2, 3, 5, 4, 6, 7, 8]</code>.');"
       ],
+      "type": "bonfire",
       "MDNlinks": [
         "Arguments object",
         "Array.reduce()"
       ],
-      "solutions": [
-        "function unite(arr1, arr2, arr3) {\n  return [].slice.call(arguments).reduce(function(a, b) {\n    return [].concat(a, b.filter(function(e) {return a.indexOf(e) === -1;}));\n  }, []);\n}"
-      ],
-      "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
       "descriptionCn": [],
@@ -510,7 +540,7 @@
         "Los valores únicos deben aparecer en el orden original, pero el arreglo final no necesariamente debe mostrar los elementos en orden numérico.",
         "Puedes usar de referencia las pruebas de verificación si necesitas ejemplos.",
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
-        ],
+      ],
       "namePt": "",
       "descriptionPt": []
     },
@@ -521,6 +551,8 @@
         "Convert the characters \"&\", \"<\", \">\", '\"' (double quote), and \"'\" (apostrophe), in a string to their corresponding HTML entities.",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
       ],
+      "releasedOn": "October 1, 2014",
+      "head": [],
       "challengeSeed": [
         "function convert(str) {",
         "  // &colon;&rpar;",
@@ -528,6 +560,10 @@
         "}",
         "",
         "convert(\"Dolce & Gabbana\");"
+      ],
+      "tail": [],
+      "solutions": [
+        "var MAP = { '&': '&amp;',\n            '<': '&lt;',\n            '>': '&gt;',\n            '\"': '&quot;',\n            \"'\": '&apos;'};\n\nfunction convert(str) {\n  return str.replace(/[&<>\"']/g, function(c) {\n    return MAP[c];\n  });\n}"
       ],
       "tests": [
         "assert.match(convert(\"Dolce & Gabbana\"), /Dolce &amp; Gabbana/, 'message: <code>convert(\"Dolce & Gabbana\")</code> should return <code>Dolce &&#8203;amp; Gabbana</code>.');",
@@ -538,14 +574,11 @@
         "assert.match(convert('<>'), /&lt;&gt;/, 'message: <code>convert(\"<>\")</code> should return <code>&&#8203;lt;&&#8203;gt;</code>.');",
         "assert.strictEqual(convert('abc'), 'abc', 'message: <code>convert(\"abc\")</code> should return <code>abc</code>.');"
       ],
+      "type": "bonfire",
       "MDNlinks": [
         "RegExp",
         "HTML Entities"
       ],
-      "solutions": [
-        "var MAP = { '&': '&amp;',\n            '<': '&lt;',\n            '>': '&gt;',\n            '\"': '&quot;',\n            \"'\": '&apos;'};\n\nfunction convert(str) {\n  return str.replace(/[&<>\"']/g, function(c) {\n    return MAP[c];\n  });\n}"
-      ],
-      "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
       "descriptionCn": [],
@@ -557,7 +590,7 @@
       "descriptionEs": [
         "Convierte los caracteres \"&\", \"<\", \">\", '\"' (comilla), y \"'\" (apostrofe), contenidos en la cadena de texto que se te pasa, en sus entidades HTML correspondientes",
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
-        ],
+      ],
       "namePt": "",
       "descriptionPt": []
     },
@@ -568,6 +601,8 @@
         "Convert a string to spinal case. Spinal case is all-lowercase-words-joined-by-dashes.",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
       ],
+      "releasedOn": "October 1, 2014",
+      "head": [],
       "challengeSeed": [
         "function spinalCase(str) {",
         "  // \"It's such a fine line between stupid, and clever.\"",
@@ -577,20 +612,21 @@
         "",
         "spinalCase('This Is Spinal Tap');"
       ],
+      "tail": [],
+      "solutions": [
+        "function spinalCase(str) {\n  // \"It's such a fine line between stupid, and clever.\"\n  // --David St. Hubbins\n  str = str.replace(/([a-z](?=[A-Z]))/g, '$1 ');\n  return str.toLowerCase().replace(/\\ |\\_/g, '-');\n}"
+      ],
       "tests": [
         "assert.deepEqual(spinalCase(\"This Is Spinal Tap\"), \"this-is-spinal-tap\", 'message: <code>spinalCase(\"This Is Spinal Tap\")</code> should return <code>\"this-is-spinal-tap\"</code>.');",
         "assert.strictEqual(spinalCase('thisIsSpinalTap'), \"this-is-spinal-tap\", 'message: <code>spinalCase(\"thisIsSpinalTap\")</code> should return <code>\"this-is-spinal-tap\"</code>.');",
         "assert.strictEqual(spinalCase(\"The_Andy_Griffith_Show\"), \"the-andy-griffith-show\", 'message: <code>spinalCase(\"The_Andy_Griffith_Show\")</code> should return <code>\"the-andy-griffith-show\"</code>.');",
         "assert.strictEqual(spinalCase(\"Teletubbies say Eh-oh\"), \"teletubbies-say-eh-oh\", 'message: <code>spinalCase(\"Teletubbies say Eh-oh\")</code> should return <code>\"teletubbies-say-eh-oh\"</code>.');"
       ],
+      "type": "bonfire",
       "MDNlinks": [
         "RegExp",
         "String.replace()"
       ],
-      "solutions": [
-        "function spinalCase(str) {\n  // \"It's such a fine line between stupid, and clever.\"\n  // --David St. Hubbins\n  str = str.replace(/([a-z](?=[A-Z]))/g, '$1 ');\n  return str.toLowerCase().replace(/\\ |\\_/g, '-');\n}"
-      ],
-      "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
       "descriptionCn": [],
@@ -602,7 +638,7 @@
       "descriptionEs": [
         "Convierte la cadena de texto que se te pasa al formato spinal case. Spinal case es cuando escribes todas las palabras en-minúsculas-unidas-por-guiones.",
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
-        ],
+      ],
       "namePt": "",
       "descriptionPt": []
     },
@@ -615,12 +651,18 @@
         "As an example, passing 4 to the function should return 5 because all the odd Fibonacci numbers under 4 are 1, 1, and 3.",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
       ],
+      "releasedOn": "October 1, 2014",
+      "head": [],
       "challengeSeed": [
         "function sumFibs(num) {",
         "  return num;",
         "}",
         "",
         "sumFibs(4);"
+      ],
+      "tail": [],
+      "solutions": [
+        "function sumFibs(num) {\n  var a = 1; \n  var b = 1;\n  var s = 0;\n  while (a <= num) {\n    if (a % 2 !== 0) {   \n      s += a; \n    }\n    a = [b, b=b+a][0];\n  }\n  return s;\n}"
       ],
       "tests": [
         "assert(typeof sumFibs(1) === \"number\", 'message: <code>sumFibs(1)</code> should return a number.');",
@@ -630,13 +672,10 @@
         "assert.deepEqual(sumFibs(75024), 60696, 'message: <code>sumFibs(75024)</code> should return 60696.');",
         "assert.deepEqual(sumFibs(75025), 135721, 'message: <code>sumFibs(75025)</code> should return 135721.');"
       ],
+      "type": "bonfire",
       "MDNlinks": [
         "Remainder"
       ],
-      "solutions": [
-        "function sumFibs(num) {\n  var a = 1; \n  var b = 1;\n  var s = 0;\n  while (a <= num) {\n    if (a % 2 !== 0) {   \n      s += a; \n    }\n    a = [b, b=b+a][0];\n  }\n  return s;\n}"
-      ],
-      "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
       "descriptionCn": [],
@@ -650,7 +689,7 @@
         "Los primeros números de la secuencia son 1, 1, 2, 3, 5 y 8, y cada número siguiente es la suma de los dos números anteriores.",
         "Por ejemplo, si se te pasa el número 4, la función deberá devolver 5, ya que los números impares menores que 4 son 1, 1 y 3.",
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
-        ],
+      ],
       "namePt": "",
       "descriptionPt": []
     },
@@ -663,6 +702,8 @@
         "The provided number may not be a prime.",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
       ],
+      "releasedOn": "October 1, 2014",
+      "head": [],
       "challengeSeed": [
         "function sumPrimes(num) {",
         "  return num;",
@@ -670,19 +711,20 @@
         "",
         "sumPrimes(10);"
       ],
+      "tail": [],
+      "solutions": [
+        "function eratosthenesArray(n) {\n    var primes = [];\n    if (n > 2) {\n        var half = n>>1;\n        var sieve = Array(half);\n        for (var i = 1, limit = Math.sqrt(n)>>1; i <= limit; i++) {\n            if (!sieve[i]) {\n                for (var step = 2*i+1, j = (step*step)>>1; j < half; j+=step) {\n                    sieve[j] = true;\n                }\n            }\n        }\n        primes.push(2);\n        for (var p = 1; p < half; p++) {\n            if (!sieve[p]) primes.push(2*p+1);\n        }\n    }\n    return primes;\n}\n\nfunction sumPrimes(num) {\n  return eratosthenesArray(num+1).reduce(function(a,b) {return a+b;}, 0);\n}\n\nsumPrimes(10);"
+      ],
       "tests": [
         "assert.deepEqual(typeof sumPrimes(10), 'number', 'message: <code>sumPrimes(10)</code> should return a number.');",
         "assert.deepEqual(sumPrimes(10), 17, 'message: <code>sumPrimes(10)</code> should return 17.');",
         "assert.deepEqual(sumPrimes(977), 73156, 'message: <code>sumPrimes(977)</code> should return 73156.');"
       ],
+      "type": "bonfire",
       "MDNlinks": [
         "For Loops",
         "Array.push()"
       ],
-      "solutions": [
-        "function eratosthenesArray(n) {\n    var primes = [];\n    if (n > 2) {\n        var half = n>>1;\n        var sieve = Array(half);\n        for (var i = 1, limit = Math.sqrt(n)>>1; i <= limit; i++) {\n            if (!sieve[i]) {\n                for (var step = 2*i+1, j = (step*step)>>1; j < half; j+=step) {\n                    sieve[j] = true;\n                }\n            }\n        }\n        primes.push(2);\n        for (var p = 1; p < half; p++) {\n            if (!sieve[p]) primes.push(2*p+1);\n        }\n    }\n    return primes;\n}\n\nfunction sumPrimes(num) {\n  return eratosthenesArray(num+1).reduce(function(a,b) {return a+b;}, 0);\n}\n\nsumPrimes(10);"
-      ],
-      "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
       "descriptionCn": [],
@@ -696,7 +738,7 @@
         "Números primos son todos aquellos que sólo son divisibles entre 1 y entre sí mismos. Por ejemplo, el número 2 es primo porque solo es divisible por 1 y por 2. Por el contrario, el número 1 no es primo, ya que sólo puede dividirse por sí mismo",
         "El número que se le provee a la función no puede ser primo",
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
-        ],
+      ],
       "namePt": "",
       "descriptionPt": []
     },
@@ -709,6 +751,8 @@
         "e.g. for 1 and 3 - find the smallest common multiple of both 1 and 3 that is evenly divisible by all numbers <em>between</em> 1 and 3.",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
       ],
+      "releasedOn": "October 1, 2014",
+      "head": [],
       "challengeSeed": [
         "function smallestCommons(arr) {",
         "  return arr;",
@@ -717,19 +761,20 @@
         "",
         "smallestCommons([1,5]);"
       ],
+      "tail": [],
+      "solutions": [
+        "function gcd(a, b) {\n    while (b !== 0) {\n        a = [b, b = a % b][0];\n    }\n    return a;\n}\n\nfunction lcm(a, b) {\n    return (a * b) / gcd(a, b);\n}\n\nfunction smallestCommons(arr) {\n  arr.sort(function(a,b) {return a-b;});\n  var rng = [];\n  for (var i = arr[0]; i <= arr[1]; i++) {\n    rng.push(i);\n  }\n  return rng.reduce(lcm);\n}"
+      ],
       "tests": [
         "assert.deepEqual(typeof smallestCommons([1, 5]), 'number', 'message: <code>smallestCommons([1, 5])</code> should return a number.');",
         "assert.deepEqual(smallestCommons([1, 5]), 60, 'message: <code>smallestCommons([1, 5])</code> should return 60.');",
         "assert.deepEqual(smallestCommons([5, 1]), 60, 'message: <code>smallestCommons([5, 1])</code> should return 60.');",
         "assert.deepEqual(smallestCommons([1, 13]), 360360, 'message: <code>smallestCommons([1, 13])</code> should return 360360.');"
       ],
+      "type": "bonfire",
       "MDNlinks": [
         "Smallest Common Multiple"
       ],
-      "solutions": [
-        "function gcd(a, b) {\n    while (b !== 0) {\n        a = [b, b = a % b][0];\n    }\n    return a;\n}\n\nfunction lcm(a, b) {\n    return (a * b) / gcd(a, b);\n}\n\nfunction smallestCommons(arr) {\n  arr.sort(function(a,b) {return a-b;});\n  var rng = [];\n  for (var i = arr[0]; i <= arr[1]; i++) {\n    rng.push(i);\n  }\n  return rng.reduce(lcm);\n}"
-      ],
-      "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
       "descriptionCn": [],
@@ -743,7 +788,7 @@
         "Tu función debe aceptar como argumento un arreglo con dos números, los cuales no necesariamente estarán en orden.",
         "Por ejemplo, si se te pasan los números 1 y 3, deberás encontrar el mínimo común múltiplo de 1 y 3 que es divisible por todos los números <em>entre</em> 1 y 3.",
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
-        ],
+      ],
       "namePt": "",
       "descriptionPt": []
     },
@@ -754,6 +799,8 @@
         "Create a function that looks through an array (first argument) and returns the first element in the array that passes a truth test (second argument).",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
       ],
+      "releasedOn": "October 1, 2014",
+      "head": [],
       "challengeSeed": [
         "function find(arr, func) {",
         "  var num = 0;",
@@ -762,17 +809,18 @@
         "",
         "find([1, 2, 3, 4], function(num){ return num % 2 === 0; });"
       ],
+      "tail": [],
+      "solutions": [
+        "function find(arr, func) {\n  var num;\n  arr.some(function(e) {\n    if (func(e)) {\n      num = e;\n      return true;\n    }\n  });\n  return num;\n}"
+      ],
       "tests": [
         "assert.strictEqual(find([1, 3, 5, 8, 9, 10], function(num) { return num % 2 === 0; }), 8, 'message: <code>find([1, 3, 5, 8, 9, 10], function(num) { return num % 2 === 0; })</code> should return 8.');",
         "assert.strictEqual(find([1, 3, 5, 9], function(num) { return num % 2 === 0; }), undefined, 'message: <code>find([1, 3, 5, 9], function(num) { return num % 2 === 0; })</code> should return undefined.');"
       ],
+      "type": "bonfire",
       "MDNlinks": [
         "Array.filter()"
       ],
-      "solutions": [
-        "function find(arr, func) {\n  var num;\n  arr.some(function(e) {\n    if (func(e)) {\n      num = e;\n      return true;\n    }\n  });\n  return num;\n}"
-      ],
-      "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
       "descriptionCn": [],
@@ -784,7 +832,7 @@
       "descriptionEs": [
         "Crea una función que busque dentro de un arreglo (primer argumento) y que devuelva el primer elemento que pase una prueba de verdad (segundo argumento).",
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
-        ],
+      ],
       "namePt": "",
       "descriptionPt": []
     },
@@ -796,6 +844,8 @@
         "Return the rest of the array, otherwise return an empty array.",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
       ],
+      "releasedOn": "October 1, 2014",
+      "head": [],
       "challengeSeed": [
         "function drop(arr, func) {",
         "  // Drop them elements.",
@@ -803,6 +853,10 @@
         "}",
         "",
         "drop([1, 2, 3], function(n) {return n < 3; });"
+      ],
+      "tail": [],
+      "solutions": [
+        "function drop(arr, func) {\n  // Drop them elements.\n  while (arr.length && !func(arr[0])) {\n    arr.shift();\n  }\n  return arr;\n}"
       ],
       "tests": [
         "assert.deepEqual(drop([1, 2, 3, 4], function(n) {return n >= 3;}), [3, 4], 'message: <code>drop([1, 2, 3, 4], function(n) {return n >= 3;})</code> should return <code>[3, 4]</code>.');",
@@ -812,15 +866,12 @@
         "assert.deepEqual(drop([1, 2, 3, 7, 4], function(n) {return n > 3;}), [7, 4], 'message: <code>drop([1, 2, 3, 7, 4], function(n) {return n > 3;})</code> should return <code>[7, 4]</code>.');",
         "assert.deepEqual(drop([1, 2, 3, 9, 2], function(n) {return n > 2;}), [3, 9, 2], 'message: <code>drop([1, 2, 3, 9, 2], function(n) {return n > 2;})</code> should return <code>[3, 9, 2]</code>.');"
       ],
+      "type": "bonfire",
       "MDNlinks": [
         "Arguments object",
         "Array.shift()",
         "Array.slice()"
       ],
-      "solutions": [
-        "function drop(arr, func) {\n  // Drop them elements.\n  while (arr.length && !func(arr[0])) {\n    arr.shift();\n  }\n  return arr;\n}"
-      ],
-      "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
       "descriptionCn": [],
@@ -832,7 +883,7 @@
       "descriptionEs": [
         "Toma los elementos contenidos en el arreglo que se te provee en el primer argumento de la función y elimínalos uno por uno, hasta que la función provista en el segundo argumento devuelva true.",
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
-        ],
+      ],
       "namePt": "",
       "descriptionPt": []
     },
@@ -843,6 +894,8 @@
         "Flatten a nested array. You must account for varying levels of nesting.",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
       ],
+      "releasedOn": "October 1, 2014",
+      "head": [],
       "challengeSeed": [
         "function steamroller(arr) {",
         "  // I'm a steamroller, baby",
@@ -851,19 +904,20 @@
         "",
         "steamroller([1, [2], [3, [[4]]]]);"
       ],
+      "tail": [],
+      "solutions": [
+        "function steamroller(arr) {\n  if (!Array.isArray(arr)) {\n    return [arr];\n  }\n  var out = [];\n  arr.forEach(function(e) {\n    steamroller(e).forEach(function(v) {\n      out.push(v);\n    });\n  });\n  return out;\n}"
+      ],
       "tests": [
         "assert.deepEqual(steamroller([[[\"a\"]], [[\"b\"]]]), [\"a\", \"b\"], 'message: <code>steamroller([[[\"a\"]], [[\"b\"]]])</code> should return <code>[\"a\", \"b\"]</code>.');",
         "assert.deepEqual(steamroller([1, [2], [3, [[4]]]]), [1, 2, 3, 4], 'message: <code>steamroller([1, [2], [3, [[4]]]])</code> should return <code>[1, 2, 3, 4]</code>.');",
         "assert.deepEqual(steamroller([1, [], [3, [[4]]]]), [1, 3, 4], 'message: <code>steamroller([1, [], [3, [[4]]]])</code> should return <code>[1, 3, 4]</code>.');",
         "assert.deepEqual(steamroller([1, {}, [3, [[4]]]]), [1, {}, 3, 4], 'message: <code>steamroller([1, {}, [3, [[4]]]])</code> should return <code>[1, {}, 3, 4]</code>.');"
       ],
+      "type": "bonfire",
       "MDNlinks": [
         "Array.isArray()"
       ],
-      "solutions": [
-        "function steamroller(arr) {\n  if (!Array.isArray(arr)) {\n    return [arr];\n  }\n  var out = [];\n  arr.forEach(function(e) {\n    steamroller(e).forEach(function(v) {\n      out.push(v);\n    });\n  });\n  return out;\n}"
-      ],
-      "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
       "descriptionCn": [],
@@ -875,7 +929,7 @@
       "descriptionEs": [
         "Aplana el arreglo anidado que se te provee. Tu función debe poder aplanar arreglos de cualquier forma.",
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
-        ],
+      ],
       "namePt": "",
       "descriptionPt": []
     },
@@ -887,6 +941,8 @@
         "The binary string will be space separated.",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
       ],
+      "releasedOn": "October 1, 2014",
+      "head": [],
       "challengeSeed": [
         "function binaryAgent(str) {",
         "  return str;",
@@ -894,18 +950,19 @@
         "",
         "binaryAgent(\"01000001 01110010 01100101 01101110 00100111 01110100 00100000 01100010 01101111 01101110 01100110 01101001 01110010 01100101 01110011 00100000 01100110 01110101 01101110 00100001 00111111\");"
       ],
+      "tail": [],
+      "solutions": [
+        "function binaryAgent(str) {\n  return str.split(' ').map(function(s) { return parseInt(s, 2); }).map(function(b) { return String.fromCharCode(b);}).join('');\n}"
+      ],
       "tests": [
         "assert.deepEqual(binaryAgent('01000001 01110010 01100101 01101110 00100111 01110100 00100000 01100010 01101111 01101110 01100110 01101001 01110010 01100101 01110011 00100000 01100110 01110101 01101110 00100001 00111111'), \"Aren't bonfires fun!?\", 'message: <code>binaryAgent(\"01000001 01110010 01100101 01101110 00100111 01110100 00100000 01100010 01101111 01101110 01100110 01101001 01110010 01100101 01110011 00100000 01100110 01110101 01101110 00100001 00111111\")</code> should return \"Aren&#39;t bonfires fun!?\"');",
         "assert.deepEqual(binaryAgent('01001001 00100000 01101100 01101111 01110110 01100101 00100000 01000110 01110010 01100101 01100101 01000011 01101111 01100100 01100101 01000011 01100001 01101101 01110000 00100001'), \"I love FreeCodeCamp!\", 'message: <code>binaryAgent(\"01001001 00100000 01101100 01101111 01110110 01100101 00100000 01000110 01110010 01100101 01100101 01000011 01101111 01100100 01100101 01000011 01100001 01101101 01110000 00100001\")</code> should return \"I love FreeCodeCamp!\"');"
       ],
+      "type": "bonfire",
       "MDNlinks": [
         "String.charCodeAt()",
         "String.fromCharCode()"
       ],
-      "solutions": [
-        "function binaryAgent(str) {\n  return str.split(' ').map(function(s) { return parseInt(s, 2); }).map(function(b) { return String.fromCharCode(b);}).join('');\n}"
-      ],
-      "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
       "descriptionCn": [],
@@ -918,7 +975,7 @@
         "Haz que la función devuelva el mensaje en inglés escondido en el código binario de la cadena de texto que se le pasa.",
         "La cadena de texto binaria estará separada por espacios.",
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
-        ],
+      ],
       "namePt": "",
       "descriptionPt": []
     },
@@ -930,6 +987,8 @@
         "Remember, you can access object properties through either dot notation or [] notation.",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
       ],
+      "releasedOn": "October 1, 2014",
+      "head": [],
       "challengeSeed": [
         "function every(collection, pre) {",
         "  // Is everyone being true?",
@@ -937,6 +996,10 @@
         "}",
         "",
         "every([{\"user\": \"Tinky-Winky\", \"sex\": \"male\"}, {\"user\": \"Dipsy\", \"sex\": \"male\"}, {\"user\": \"Laa-Laa\", \"sex\": \"female\"}, {\"user\": \"Po\", \"sex\": \"female\"}], \"sex\");"
+      ],
+      "tail": [],
+      "solutions": [
+        "function every(collection, pre) {\n  // Does everyone have one of these?\n  return collection.every(function(e) { return e[pre]; });\n}"
       ],
       "tests": [
         "assert.strictEqual(every([{\"user\": \"Tinky-Winky\", \"sex\": \"male\"}, {\"user\": \"Dipsy\", \"sex\": \"male\"}, {\"user\": \"Laa-Laa\", \"sex\": \"female\"}, {\"user\": \"Po\", \"sex\": \"female\"}], \"sex\"), true, 'message: <code>every([{\"user\": \"Tinky-Winky\", \"sex\": \"male\"}, {\"user\": \"Dipsy\", \"sex\": \"male\"}, {\"user\": \"Laa-Laa\", \"sex\": \"female\"}, {\"user\": \"Po\", \"sex\": \"female\"}], \"sex\")</code> should return true.');",
@@ -949,10 +1012,8 @@
         "assert.strictEqual(every([{\"single\": \"double\"}, {\"single\": undefined}], \"single\"), false, 'message: <code>every([{\"single\": \"double\"}, {\"single\": undefined}], \"single\")</code> should return false');",
         "assert.strictEqual(every([{\"single\": \"double\"}, {\"single\": NaN}], \"single\"), false, 'message: <code>every([{\"single\": \"double\"}, {\"single\": NaN}], \"single\")</code> should return false');"
       ],
-      "solutions": [
-        "function every(collection, pre) {\n  // Does everyone have one of these?\n  return collection.every(function(e) { return e[pre]; });\n}"
-      ],
       "type": "bonfire",
+      "MDNlinks": [],
       "challengeType": 5,
       "nameCn": "",
       "descriptionCn": [],
@@ -965,7 +1026,7 @@
         "Verifica si la función en el segundo argumento devuelve true para todos los elementos de la colección en el primer argumento.",
         "Recuerda que puedes accesar a las propiedades de un objeto, ya sea a través de la notación por punto o de la notación por corchete usando [].",
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
-        ],
+      ],
       "namePt": "",
       "descriptionPt": []
     },
@@ -981,12 +1042,18 @@
         "If either argument isn't a valid number, return undefined.",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
       ],
+      "releasedOn": "October 1, 2014",
+      "head": [],
       "challengeSeed": [
         "function add() {",
         "  return false;",
         "}",
         "",
         "add(2,3);"
+      ],
+      "tail": [],
+      "solutions": [
+        "function add() {\n  var a = arguments[0];\n  if (toString.call(a) !== '[object Number]') return;  \n  if (arguments.length === 1) {\n    return function(b) {\n      if (toString.call(b) !== '[object Number]') return;\n      return a + b;\n    };\n  }\n  var b = arguments[1];\n  if (toString.call(b) !== '[object Number]') return;  \n  return a + arguments[1];\n}"
       ],
       "tests": [
         "assert.deepEqual(add(2, 3), 5, 'message: <code>add(2, 3)</code> should return 5.');",
@@ -995,14 +1062,11 @@
         "assert.isUndefined(add(2, \"3\"), 'message: <code>add(2, \"3\")</code> should return undefined.');",
         "assert.isUndefined(add(2)([3]), 'message: <code>add(2)([3])</code> should return undefined.');"
       ],
+      "type": "bonfire",
       "MDNlinks": [
         "Closures",
         "Arguments object"
       ],
-      "solutions": [
-        "function add() {\n  var a = arguments[0];\n  if (toString.call(a) !== '[object Number]') return;  \n  if (arguments.length === 1) {\n    return function(b) {\n      if (toString.call(b) !== '[object Number]') return;\n      return a + b;\n    };\n  }\n  var b = arguments[1];\n  if (toString.call(b) !== '[object Number]') return;  \n  return a + arguments[1];\n}"
-      ],
-      "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
       "descriptionCn": [],
@@ -1019,7 +1083,7 @@
         "<code>sumTwoAnd(3)</code> devuelve <code>5</code>.",
         "Si alguno de los argumentos no es un número válido, haz que devuelva undefined.",
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
-        ],
+      ],
       "namePt": "",
       "descriptionPt": []
     }

@@ -6,9 +6,6 @@
     {
       "id": "bd7157d8c242eddfaeb5bd13",
       "title": "Build a Markdown Previewer",
-      "challengeSeed": [
-        "150324697"
-      ],
       "description": [
         "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='http://codepen.io/FreeCodeCamp/full/obYYqW' target='_blank'>http://codepen.io/FreeCodeCamp/full/obYYqW</a>.",
         "<span class='text-info'>Rule #1:</span> Don't look at the example project's code. Figure it out for yourself.",
@@ -22,9 +19,17 @@
         "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen. ",
         "You can get feedback on your project from fellow campers by sharing it in our <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Code Review Chatroom</a>. You can also share it on Twitter and your city's Campsite (on Facebook)."
       ],
-      "type": "zipline",
-      "challengeType": 3,
+      "releasedOn": "January 1, 2016",
+      "head": [],
+      "challengeSeed": [
+        "150324697"
+      ],
+      "tail": [],
+      "solutions": [],
       "tests": [],
+      "type": "zipline",
+      "MDNlinks": [],
+      "challengeType": 3,
       "nameCn": "",
       "descriptionCn": [],
       "nameFr": "",
@@ -34,15 +39,11 @@
       "nameEs": "",
       "descriptionEs": [],
       "namePt": "",
-      "descriptionPt": [],
-      "releasedOn": "January 1, 2016"
+      "descriptionPt": []
     },
     {
       "id": "bd7156d8c242eddfaeb5bd13",
       "title": "Build a Camper Leaderboard",
-      "challengeSeed": [
-        "150324694"
-      ],
       "description": [
         "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='http://codepen.io/FreeCodeCamp/full/qbqqJm/' target='_blank'>http://codepen.io/FreeCodeCamp/full/qbqqJm/</a>.",
         "<span class='text-info'>Rule #1:</span> Don't look at the example project's code. Figure it out for yourself.",
@@ -57,9 +58,17 @@
         "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen. ",
         "You can get feedback on your project from fellow campers by sharing it in our <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Code Review Chatroom</a>. You can also share it on Twitter and your city's Campsite (on Facebook)."
       ],
-      "type": "zipline",
-      "challengeType": 3,
+      "releasedOn": "January 1, 2016",
+      "head": [],
+      "challengeSeed": [
+        "150324694"
+      ],
+      "tail": [],
+      "solutions": [],
       "tests": [],
+      "type": "zipline",
+      "MDNlinks": [],
+      "challengeType": 3,
       "nameCn": "",
       "descriptionCn": [],
       "nameFr": "",
@@ -69,15 +78,11 @@
       "nameEs": "",
       "descriptionEs": [],
       "namePt": "",
-      "descriptionPt": [],
-      "releasedOn": "January 1, 2016"
+      "descriptionPt": []
     },
     {
       "id": "bd7155d8c242eddfaeb5bd13",
       "title": "Build a Recipe Box",
-      "challengeSeed": [
-        "150324695"
-      ],
       "description": [
         "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='http://codepen.io/FreeCodeCamp/full/LGbbqj' target='_blank'>http://codepen.io/FreeCodeCamp/full/LGbbqj</a>.",
         "<span class='text-info'>Rule #1:</span> Don't look at the example project's code. Figure it out for yourself.",
@@ -93,9 +98,17 @@
         "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen.",
         "You can get feedback on your project from fellow campers by sharing it in our <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Code Review Chatroom</a>. You can also share it on Twitter and your city's Campsite (on Facebook)."
       ],
-      "type": "zipline",
-      "challengeType": 3,
+      "releasedOn": "January 1, 2016",
+      "head": [],
+      "challengeSeed": [
+        "150324695"
+      ],
+      "tail": [],
+      "solutions": [],
       "tests": [],
+      "type": "zipline",
+      "MDNlinks": [],
+      "challengeType": 3,
       "nameCn": "",
       "descriptionCn": [],
       "nameFr": "",
@@ -105,15 +118,11 @@
       "nameEs": "",
       "descriptionEs": [],
       "namePt": "",
-      "descriptionPt": [],
-      "releasedOn": "January 1, 2016"
+      "descriptionPt": []
     },
     {
       "id": "bd7154d8c242eddfaeb5bd13",
       "title": "Build the Game of Life",
-      "challengeSeed": [
-        "150324459"
-      ],
       "description": [
         "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='http://codepen.io/FreeCodeCamp/full/dGOOrZ' target='_blank'>http://codepen.io/FreeCodeCamp/full/dGOOrZ</a>.",
         "<span class='text-info'>Rule #1:</span> Don't look at the example project's code. Figure it out for yourself.",
@@ -131,9 +140,17 @@
         "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen. ",
         "You can get feedback on your project from fellow campers by sharing it in our <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Code Review Chatroom</a>. You can also share it on Twitter and your city's Campsite (on Facebook)."
       ],
-      "type": "zipline",
-      "challengeType": 3,
+      "releasedOn": "January 1, 2016",
+      "head": [],
+      "challengeSeed": [
+        "150324459"
+      ],
+      "tail": [],
+      "solutions": [],
       "tests": [],
+      "type": "zipline",
+      "MDNlinks": [],
+      "challengeType": 3,
       "nameCn": "",
       "descriptionCn": [],
       "nameFr": "",
@@ -143,15 +160,11 @@
       "nameEs": "",
       "descriptionEs": [],
       "namePt": "",
-      "descriptionPt": [],
-      "releasedOn": "January 1, 2016"
+      "descriptionPt": []
     },
     {
       "id": "bd7153d8c242eddfaeb5bd13",
       "title": "Build a Roguelike Dungeon Crawler Game",
-      "challengeSeed": [
-        "150324693"
-      ],
       "description": [
         "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='http://codepen.io/FreeCodeCamp/full/dGOOEJ/' target='_blank'>http://codepen.io/FreeCodeCamp/full/dGOOEJ/</a>.",
         "<span class='text-info'>Rule #1:</span> Don't look at the example project's code. Figure it out for yourself.",
@@ -170,9 +183,17 @@
         "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen. ",
         "You can get feedback on your project from fellow campers by sharing it in our <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Code Review Chatroom</a>. You can also share it on Twitter and your city's Campsite (on Facebook)."
       ],
-      "type": "zipline",
-      "challengeType": 3,
+      "releasedOn": "January 1, 2016",
+      "head": [],
+      "challengeSeed": [
+        "150324693"
+      ],
+      "tail": [],
+      "solutions": [],
       "tests": [],
+      "type": "zipline",
+      "MDNlinks": [],
+      "challengeType": 3,
       "nameCn": "",
       "descriptionCn": [],
       "nameFr": "",
@@ -182,8 +203,7 @@
       "nameEs": "",
       "descriptionEs": [],
       "namePt": "",
-      "descriptionPt": [],
-      "releasedOn": "January 1, 2016"
+      "descriptionPt": []
     }
   ]
 }

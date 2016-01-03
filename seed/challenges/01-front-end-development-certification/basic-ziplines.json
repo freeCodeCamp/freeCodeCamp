@@ -6,7 +6,6 @@
     {
       "id": "bd7158d8c442eddfbeb5bd1f",
       "title": "Get Set for Ziplines",
-      "challengeSeed": [],
       "description": [
         [
           "http://i.imgur.com/OAD6SJz.png",
@@ -57,9 +56,15 @@
           ""
         ]
       ],
-      "type": "Waypoint",
-      "challengeType": 7,
+      "releasedOn": "October 1, 2014",
+      "head": [],
+      "challengeSeed": [],
+      "tail": [],
+      "solutions": [],
       "tests": [],
+      "type": "Waypoint",
+      "MDNlinks": [],
+      "challengeType": 7,
       "nameCn": "",
       "descriptionCn": [],
       "nameFr": "",
@@ -105,9 +110,6 @@
     {
       "id": "bd7158d8c242eddfaeb5bd13",
       "title": "Build a Personal Portfolio Webpage",
-      "challengeSeed": [
-        "133315782"
-      ],
       "description": [
         "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='http://codepen.io/FreeCodeCamp/full/VemmoX/' target='_blank'>http://codepen.io/FreeCodeCamp/full/VemmoX/</a>.",
         "<span class='text-info'>Rule #1:</span> Don't look at the example project's code. Figure it out for yourself.",
@@ -123,9 +125,17 @@
         "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen. ",
         "You can get feedback on your project from fellow campers by sharing it in our <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Code Review Chatroom</a>. You can also share it on Twitter and your city's Campsite (on Facebook)."
       ],
-      "type": "zipline",
-      "challengeType": 3,
+      "releasedOn": "October 1, 2014",
+      "head": [],
+      "challengeSeed": [
+        "133315782"
+      ],
+      "tail": [],
+      "solutions": [],
       "tests": [],
+      "type": "zipline",
+      "MDNlinks": [],
+      "challengeType": 3,
       "nameCn": "",
       "descriptionCn": [],
       "nameFr": "",
@@ -174,9 +184,6 @@
     {
       "id": "bd7158d8c442eddfaeb5bd13",
       "title": "Build a Random Quote Machine",
-      "challengeSeed": [
-        "126415122"
-      ],
       "description": [
         "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='http://codepen.io/FreeCodeCamp/full/yeVgBY' target='_blank'>http://codepen.io/FreeCodeCamp/full/yeVgBY</a>.",
         "<span class='text-info'>Rule #1:</span> Don't look at the example project's code. Figure it out for yourself.",
@@ -187,9 +194,17 @@
         "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen. ",
         "You can get feedback on your project from fellow campers by sharing it in our <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Code Review Chatroom</a>. You can also share it on Twitter and your city's Campsite (on Facebook)."
       ],
-      "type": "zipline",
-      "challengeType": 3,
+      "releasedOn": "October 1, 2014",
+      "head": [],
+      "challengeSeed": [
+        "126415122"
+      ],
+      "tail": [],
+      "solutions": [],
       "tests": [],
+      "type": "zipline",
+      "MDNlinks": [],
+      "challengeType": 3,
       "nameCn": "",
       "descriptionCn": [],
       "nameFr": "",
@@ -227,9 +242,6 @@
     {
       "id": "bd7158d8c442eddfaeb5bd17",
       "title": "Build a JavaScript Calculator",
-      "challengeSeed": [
-        "126411565"
-      ],
       "description": [
         "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='http://codepen.io/FreeCodeCamp/full/EPNZYW' target='_blank'>http://codepen.io/FreeCodeCamp/full/EPNZYW</a>.",
         "<span class='text-info'>Rule #1:</span> Don't look at the example project's code. Figure it out for yourself.",
@@ -241,9 +253,17 @@
         "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen. ",
         "You can get feedback on your project from fellow campers by sharing it in our <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Code Review Chatroom</a>. You can also share it on Twitter and your city's Campsite (on Facebook)."
       ],
-      "type": "zipline",
-      "challengeType": 3,
+      "releasedOn": "October 1, 2014",
+      "head": [],
+      "challengeSeed": [
+        "126411565"
+      ],
+      "tail": [],
+      "solutions": [],
       "tests": [],
+      "type": "zipline",
+      "MDNlinks": [],
+      "challengeType": 3,
       "nameCn": "",
       "descriptionCn": [],
       "nameFr": "",
@@ -270,9 +290,6 @@
     {
       "id": "bd7158d8c442eddfaeb5bd0f",
       "title": "Build a Pomodoro Clock",
-      "challengeSeed": [
-        "126411567"
-      ],
       "description": [
         "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='http://codepen.io/FreeCodeCamp/full/VemPZX' target='_blank'>http://codepen.io/FreeCodeCamp/full/VemPZX</a>.",
         "<span class='text-info'>Rule #1:</span> Don't look at the example project's code. Figure it out for yourself.",
@@ -284,9 +301,17 @@
         "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen. ",
         "You can get feedback on your project from fellow campers by sharing it in our <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Code Review Chatroom</a>. You can also share it on Twitter and your city's Campsite (on Facebook)."
       ],
-      "type": "zipline",
-      "challengeType": 3,
+      "releasedOn": "October 1, 2014",
+      "head": [],
+      "challengeSeed": [
+        "126411567"
+      ],
+      "tail": [],
+      "solutions": [],
       "tests": [],
+      "type": "zipline",
+      "MDNlinks": [],
+      "challengeType": 3,
       "nameCn": "",
       "descriptionCn": [],
       "nameFr": "",
