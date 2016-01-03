@@ -35,10 +35,6 @@
         "",
         "  // Only change code below this line.",
         "",
-        "",
-        "",
-        "  // Only change code above this line.",
-        "",
         "};"
       ],
       "tail": [
@@ -88,8 +84,6 @@
         "// Only change code below this line.",
         "",
         "var MotorBike = function() {",
-        "",
-        "",
         "",
         "};"
       ],
@@ -219,10 +213,9 @@
         "};",
         "",
         "//Try it out here",
-        "var myCar;",
-        "",
-        "// Only change code above this line",
-        "",
+        "var myCar;"
+      ],
+      "tail": [
         "(function() {return JSON.stringify(myCar);})();"
       ],
       "solutions": [
@@ -293,9 +286,6 @@
         "",
         "  // Only change code below this line.",
         "",
-        "",
-        "",
-        "  // Only change code above this line.",
         "};",
         "",
         "var myCar = new Car();",
@@ -342,13 +332,13 @@
       ],
       "challengeSeed": [
         "var oldArray = [1,2,3,4,5];",
+        "var newArray = [];",
         "",
         "// Only change code below this line.",
         "",
-        "var newArray = oldArray;",
-        "",
-        "// Only change code above this line.",
-        "",
+        "newArray = oldArray;"
+      ],
+      "tail": [
         "(function() {return newArray;})();"
       ],
       "challengeType": 1,
@@ -384,13 +374,13 @@
       ],
       "challengeSeed": [
         "var array = [4,5,6,7,8];",
+        "var singleVal = 0;",
         "",
         "// Only change code below this line.",
         "",
-        "var singleVal = array;",
-        "",
-        "// Only change code above this line.",
-        "",
+        "singleVal = array;"
+      ],
+      "tail": [
         "(function() {return singleVal;})();"
       ],
       "challengeType": 1,
@@ -428,14 +418,14 @@
       ],
       "challengeSeed": [
         "var oldArray = [1,2,3,4,5,6,7,8,9,10];",
+        "var newArray = [];",
         "",
         "// Only change code below this line.",
         "",
-        "var newArray = oldArray;",
-        "",
-        "// Only change code above this line.",
-        "",
-        "(function() { return newArray; })();"
+        "newArray = oldArray;"
+      ],
+      "tail": [
+        "(function() {return newArray;})();"
       ],
       "challengeType": 1,
       "type": "waypoint",
@@ -476,11 +466,10 @@
         "",
         "// Only change code below this line.",
         "",
-        "array.sort();",
-        "",
-        "// Only change code above this line.",
-        "",
-        "(function() { return array; })();"
+        "array.sort();"
+      ],
+      "tail": [
+        "(function() {return array;})();"
       ],
       "challengeType": 1,
       "type": "waypoint",
@@ -512,13 +501,11 @@
       ],
       "challengeSeed": [
         "var array = [1,2,3,4,5,6,7];",
+        "var newArray = [];",
         "",
         "// Only change code below this line.",
         "",
-        "var newArray = array;",
-        "",
-        "// Only change code above this line.",
-        ""
+        "newArray = array;"
       ],
       "tail": [
         "(function() {return newArray;})();"
@@ -549,16 +536,16 @@
       ],
       "challengeSeed": [
         "var oldArray = [1,2,3];",
+        "var newArray = [];",
         "",
         "var concatMe = [4,5,6];",
         "",
         "// Only change code below this line.",
         "",
-        "var newArray = oldArray;",
-        "",
-        "// Only change code above this line.",
-        "",
-        "(function() { return newArray; })();"
+        "newArray = oldArray;"
+      ],
+      "tail": [
+        "(function() {return newArray;})();"
       ],
       "challengeType": 1,
       "type": "waypoint",
@@ -587,13 +574,13 @@
       ],
       "challengeSeed": [
         "var string = \"Split me into an array\";",
+        "var array = [];",
         "",
         "// Only change code below this line.",
         "",
-        "var array = string;",
-        "",
-        "// Only change code above this line.",
-        "",
+        "array = string;"
+      ],
+      "tail": [
         "(function() {return array;})();"
       ],
       "challengeType": 1,
@@ -615,6 +602,7 @@
         "The following is an example of using <code>join</code> to join all of the elements of an array into a string with all the elements separated by word `Na`:",
         "<code>var joinMe = [\"Na \", \"Na \", \"Na \", \"Na \", \"Batman!\"];</code>",
         "<code>var joinedString = joinMe.join(\"Na \");</code>",
+        "<code>console.log(joinedString);</code>",
         "Use the <code>join</code> method to create a string from <code>joinMe</code> with spaces in between each element and assign it to <code>joinedString</code>."
       ],
       "tests": [
@@ -623,13 +611,13 @@
       ],
       "challengeSeed": [
         "var joinMe = [\"Split\",\"me\",\"into\",\"an\",\"array\"];",
+        "var joinedString = '';",
         "",
         "// Only change code below this line.",
         "",
-        "var joinedString = joinMe;",
-        "",
-        "// Only change code above this line.",
-        "",
+        "joinedString = joinMe;"
+      ],
+      "tail": [
         "(function() {return joinedString;})();"
       ],
       "challengeType": 1,
@@ -640,6 +628,7 @@
         "El siguiente es un ejemplo del uso de <code>join</code> para unir todos los elementos de un vector en una cadena con todos los elementos separados entre si por palabra` Na`: ",
         "<code>var uneme = [\"Na \", \"Na \", \"Na \", \"Na \", \"Batman!\"];</code>",
         "<code>var cadenaUnida = uneme.join(\"Na \");</code>",
+        "<code>console.log(cadenaUnida);</code>",
         "Usa el método <code>join</code> para crear una cadena a partir <code>joinMe</code> con espacios entre cada par de elementos y asignarla a <code>joinedString </code>."
       ]
     }
