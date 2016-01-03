@@ -6,9 +6,6 @@
     {
       "id": "bd7158d8c442eddfaeb5bd10",
       "title": "Show the Local Weather",
-      "challengeSeed": [
-        "126415127"
-      ],
       "description": [
         "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='http://codepen.io/FreeCodeCamp/full/avqvgJ' target='_blank'>http://codepen.io/FreeCodeCamp/full/avqvgJ</a>.",
         "<span class='text-info'>Rule #1:</span> Don't look at the example project's code. Figure it out for yourself.",
@@ -21,9 +18,17 @@
         "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen.",
         "You can get feedback on your project from fellow campers by sharing it in our <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Code Review Chatroom</a>. You can also share it on Twitter and your city's Campsite (on Facebook)."
       ],
-      "type": "zipline",
-      "challengeType": 3,
+      "releasedOn": "October 1, 2014",
+      "head": [],
+      "challengeSeed": [
+        "126415127"
+      ],
+      "tail": [],
+      "solutions": [],
       "tests": [],
+      "type": "zipline",
+      "MDNlinks": [],
+      "challengeType": 3,
       "nameCn": "",
       "descriptionCn": [],
       "nameFr": "",
@@ -65,9 +70,6 @@
     {
       "id": "bd7158d8c442eddfaeb5bd18",
       "title": "Stylize Stories on Camper News",
-      "challengeSeed": [
-        "126415129"
-      ],
       "description": [
         "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='http://codepen.io/FreeCodeCamp/full/pgNRoJ' target='_blank'>http://codepen.io/FreeCodeCamp/full/pgNRoJ</a>.",
         "<span class='text-info'>Rule #1:</span> Don't look at the example project's code. Figure it out for yourself.",
@@ -80,9 +82,17 @@
         "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen.",
         "You can get feedback on your project from fellow campers by sharing it in our <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Code Review Chatroom</a>. You can also share it on Twitter and your city's Campsite (on Facebook)."
       ],
-      "type": "zipline",
-      "challengeType": 3,
+      "releasedOn": "October 1, 2014",
+      "head": [],
+      "challengeSeed": [
+        "126415129"
+      ],
+      "tail": [],
+      "solutions": [],
       "tests": [],
+      "type": "zipline",
+      "MDNlinks": [],
+      "challengeType": 3,
       "nameCn": "",
       "descriptionCn": [],
       "nameFr": "",
@@ -110,9 +120,6 @@
     {
       "id": "bd7158d8c442eddfaeb5bd19",
       "title": "Build a Wikipedia Viewer",
-      "challengeSeed": [
-        "126415131"
-      ],
       "description": [
         "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='http://codepen.io/FreeCodeCamp/full/pgNRvJ' target='_blank'>http://codepen.io/FreeCodeCamp/full/pgNRvJ</a>.",
         "<span class='text-info'>Rule #1:</span> Don't look at the example project's code. Figure it out for yourself.",
@@ -125,9 +132,17 @@
         "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen.",
         "You can get feedback on your project from fellow campers by sharing it in our <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Code Review Chatroom</a>. You can also share it on Twitter and your city's Campsite (on Facebook)."
       ],
-      "type": "zipline",
-      "challengeType": 3,
+      "releasedOn": "October 1, 2014",
+      "head": [],
+      "challengeSeed": [
+        "126415131"
+      ],
+      "tail": [],
+      "solutions": [],
       "tests": [],
+      "type": "zipline",
+      "MDNlinks": [],
+      "challengeType": 3,
       "nameCn": "",
       "descriptionCn": [],
       "nameFr": "",
@@ -155,9 +170,6 @@
     {
       "id": "bd7158d8c442eddfaeb5bd1f",
       "title": "Use the Twitch.tv JSON API",
-      "challengeSeed": [
-        "126411564"
-      ],
       "description": [
         "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='http://codepen.io/FreeCodeCamp/full/adBpOw' target='_blank'>http://codepen.io/FreeCodeCamp/full/adBpOw</a>.",
         "<span class='text-info'>Rule #1:</span> Don't look at the example project's code. Figure it out for yourself.",
@@ -173,9 +185,17 @@
         "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen.",
         "You can get feedback on your project from fellow campers by sharing it in our <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Code Review Chatroom</a>. You can also share it on Twitter and your city's Campsite (on Facebook)."
       ],
-      "type": "zipline",
-      "challengeType": 3,
+      "releasedOn": "October 1, 2014",
+      "head": [],
+      "challengeSeed": [
+        "126411564"
+      ],
+      "tail": [],
+      "solutions": [],
       "tests": [],
+      "type": "zipline",
+      "MDNlinks": [],
+      "challengeType": 3,
       "nameCn": "",
       "descriptionCn": [],
       "nameFr": "",
@@ -224,9 +244,6 @@
     {
       "id": "bd7158d8c442eedfaeb5bd1c",
       "title": "Build a Tic Tac Toe Game",
-      "challengeSeed": [
-        "126415123"
-      ],
       "description": [
         "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='http://codepen.io/FreeCodeCamp/full/adBpvw' target='_blank'>http://codepen.io/FreeCodeCamp/full/adBpvw</a>.",
         "<span class='text-info'>Rule #1:</span> Don't look at the example project's code. Figure it out for yourself.",
@@ -239,9 +256,17 @@
         "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen.",
         "You can get feedback on your project from fellow campers by sharing it in our <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Code Review Chatroom</a>. You can also share it on Twitter and your city's Campsite (on Facebook)."
       ],
-      "type": "zipline",
-      "challengeType": 3,
+      "releasedOn": "October 1, 2014",
+      "head": [],
+      "challengeSeed": [
+        "126415123"
+      ],
+      "tail": [],
+      "solutions": [],
       "tests": [],
+      "type": "zipline",
+      "MDNlinks": [],
+      "challengeType": 3,
       "nameCn": "",
       "descriptionCn": [],
       "nameFr": "",
@@ -269,9 +294,6 @@
     {
       "id": "bd7158d8c442eddfaeb5bd1c",
       "title": "Build a Simon Game",
-      "challengeSeed": [
-        "137213633"
-      ],
       "description": [
         "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='http://codepen.io/Em-Ant/full/QbRyqq/' target='_blank'>http://codepen.io/FreeCodeCamp/full/obYBjE</a>.",
         "<span class='text-info'>Rule #1:</span> Don't look at the example project's code. Figure it out for yourself.",
@@ -290,9 +312,17 @@
         "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen.",
         "You can get feedback on your project from fellow campers by sharing it in our <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Code Review Chatroom</a>. You can also share it on Twitter and your city's Campsite (on Facebook)."
       ],
-      "type": "zipline",
-      "challengeType": 3,
+      "releasedOn": "October 1, 2014",
+      "head": [],
+      "challengeSeed": [
+        "137213633"
+      ],
+      "tail": [],
+      "solutions": [],
       "tests": [],
+      "type": "zipline",
+      "MDNlinks": [],
+      "challengeType": 3,
       "nameCn": "",
       "descriptionCn": [],
       "nameFr": "",

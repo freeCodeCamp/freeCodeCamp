@@ -3,10 +3,9 @@
   "order": 8,
   "time": "50h",
   "challenges": [
-      {
+    {
       "id": "bd7158d2c442eddfbeb5bd1f",
       "title": "Get Set for Bonfires",
-      "challengeSeed": [],
       "description": [
         [
           "http://i.imgur.com/sJkp30a.png",
@@ -33,9 +32,15 @@
           ""
         ]
       ],
-      "type": "Waypoint",
-      "challengeType": 7,
+      "releasedOn": "October 1, 2014",
+      "head": [],
+      "challengeSeed": [],
+      "tail": [],
+      "solutions": [],
       "tests": [],
+      "type": "Waypoint",
+      "MDNlinks": [],
+      "challengeType": 7,
       "nameCn": "",
       "descriptionCn": [],
       "nameFr": "",
@@ -56,10 +61,8 @@
         "The failing test is in red. Fix the code so that all tests pass. Then you can move on to the next Bonfire.",
         "Make this function return true no matter what."
       ],
-      "tests": [
-        "assert(typeof meetBonfire() === \"boolean\", 'message: <code>meetBonfire()</code> should return a boolean value.');",
-        "assert(meetBonfire() === true, 'message: <code>meetBonfire()</code> should return true.');"
-      ],
+      "releasedOn": "October 1, 2014",
+      "head": [],
       "challengeSeed": [
         "function meetBonfire(argument) {",
         "  // Good luck!",
@@ -72,10 +75,16 @@
         "",
         "meetBonfire(\"You can do this!\");"
       ],
+      "tail": [],
       "solutions": [
         "function meetBonfire(argument) {\n  // Good luck!\n  console.log(\"you can read this function's argument in the developer tools\", argument);\n\n  return true;\n}\n\n\n\nmeetBonfire(\"You can do this!\");\n"
       ],
+      "tests": [
+        "assert(typeof meetBonfire() === \"boolean\", 'message: <code>meetBonfire()</code> should return a boolean value.');",
+        "assert(meetBonfire() === true, 'message: <code>meetBonfire()</code> should return true.');"
+      ],
       "type": "bonfire",
+      "MDNlinks": [],
       "challengeType": 5,
       "nameCn": "",
       "descriptionCn": [],
@@ -89,25 +98,21 @@
         "Primero, ejecuta todos las pruebas dando click en \"Run tests\" o presionando Control + Enter.",
         "La prueba que falla está marcada en rojo. Arregla el código de tal forma que todos las pruebas pasen. Luego, puedes continuar con el siguiente Bonfire",
         "Haz que esta función devuelva true (verdadero) bajo cualquier circunstancia."
-        ],
+      ],
       "namePt": "",
       "descriptionPt": []
     },
     {
       "id": "a202eed8fc186c8434cb6d61",
       "title": "Reverse a String",
-      "tests": [
-        "assert(typeof reverseString(\"hello\") === \"string\", 'message: <code>reverseString(\"hello\")</code> should return a string.');",
-        "assert(reverseString(\"hello\") === \"olleh\", 'message: <code>reverseString(\"hello\")</code> should become <code>\"olleh\"</code>.');",
-        "assert(reverseString(\"Howdy\") === \"ydwoH\", 'message: <code>reverseString(\"Howdy\")</code> should become <code>\"ydwoH\"</code>.');",
-        "assert(reverseString(\"Greetings from Earth\") === \"htraE morf sgniteerG\", 'message: <code>reverseString(\"Greetings from Earth\")</code> should return <code>\"htraE morf sgniteerG\"</code>.');"
-      ],
       "description": [
         "Reverse the provided string.",
         "You may need to turn the string into an array before you can reverse it.",
         "Your result must be a string.",
         "Remember to use <a href=\"//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck\" target=\"_blank\">Read-Search-Ask</a> if you get stuck. Write your own code."
       ],
+      "releasedOn": "October 1, 2014",
+      "head": [],
       "challengeSeed": [
         "function reverseString(str) {",
         "  return str;",
@@ -115,16 +120,23 @@
         "",
         "reverseString(\"hello\");"
       ],
+      "tail": [],
+      "solutions": [
+        "function reverseString(str) {\n  return str.split('').reverse().join(\"\");\n}\n\nreverseString('hello');\n"
+      ],
+      "tests": [
+        "assert(typeof reverseString(\"hello\") === \"string\", 'message: <code>reverseString(\"hello\")</code> should return a string.');",
+        "assert(reverseString(\"hello\") === \"olleh\", 'message: <code>reverseString(\"hello\")</code> should become <code>\"olleh\"</code>.');",
+        "assert(reverseString(\"Howdy\") === \"ydwoH\", 'message: <code>reverseString(\"Howdy\")</code> should become <code>\"ydwoH\"</code>.');",
+        "assert(reverseString(\"Greetings from Earth\") === \"htraE morf sgniteerG\", 'message: <code>reverseString(\"Greetings from Earth\")</code> should return <code>\"htraE morf sgniteerG\"</code>.');"
+      ],
+      "type": "bonfire",
       "MDNlinks": [
         "Global String Object",
         "String.split()",
         "Array.reverse()",
         "Array.join()"
       ],
-      "solutions": [
-        "function reverseString(str) {\n  return str.split('').reverse().join(\"\");\n}\n\nreverseString('hello');\n"
-      ],
-      "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
       "descriptionCn": [],
@@ -138,20 +150,13 @@
         "Puede que necesites convertir la cadena de texto en un arreglo antes de que puedas invertirla",
         "El resultado debe ser una cadena de texto",
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
-        ],
+      ],
       "namePt": "",
       "descriptionPt": []
     },
     {
       "id": "a302f7aae1aa3152a5b413bc",
       "title": "Factorialize a Number",
-      "tests": [
-        "assert(typeof factorialize(5) === 'number', 'message: <code>factorialize(5)</code> should return a number.');",
-        "assert(factorialize(5) === 120, 'message: <code>factorialize(5)</code> should return 120.');",
-        "assert(factorialize(10) === 3628800, 'message: <code>factorialize(10)</code> should return 3628800.');",
-        "assert(factorialize(20) === 2432902008176640000, 'message: <code>factorialize(20)</code> should return 2432902008176640000.');",
-        "assert(factorialize(0) === 1, 'message: <code>factorialize(0)</code> should return 1.');"
-      ],
       "description": [
         "Return the factorial of the provided integer.",
         "If the integer is represented with the letter n, a factorial is the product of all positive integers less than or equal to n.",
@@ -159,6 +164,8 @@
         "For example: <code>5! = 1 * 2 * 3 * 4 * 5 = 120</code>",
         "Remember to use <a href=\"//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck\" target=\"_blank\">Read-Search-Ask</a> if you get stuck. Write your own code."
       ],
+      "releasedOn": "October 1, 2014",
+      "head": [],
       "challengeSeed": [
         "function factorialize(num) {",
         "  return num;",
@@ -166,13 +173,21 @@
         "",
         "factorialize(5);"
       ],
-      "MDNlinks": [
-        "Arithmetic Operators"
-      ],
+      "tail": [],
       "solutions": [
         "function factorialize(num) {\n  return num < 1 ? 1 : num * factorialize(num-1);\n}\n\nfactorialize(5);\n"
       ],
+      "tests": [
+        "assert(typeof factorialize(5) === 'number', 'message: <code>factorialize(5)</code> should return a number.');",
+        "assert(factorialize(5) === 120, 'message: <code>factorialize(5)</code> should return 120.');",
+        "assert(factorialize(10) === 3628800, 'message: <code>factorialize(10)</code> should return 3628800.');",
+        "assert(factorialize(20) === 2432902008176640000, 'message: <code>factorialize(20)</code> should return 2432902008176640000.');",
+        "assert(factorialize(0) === 1, 'message: <code>factorialize(0)</code> should return 1.');"
+      ],
       "type": "bonfire",
+      "MDNlinks": [
+        "Arithmetic Operators"
+      ],
       "challengeType": 5,
       "nameCn": "",
       "descriptionCn": [],
@@ -187,7 +202,7 @@
         "Los factoriales son comúnmente representados con la notación <code>n!</code>",
         "Por ejemplo: <code>5! = 1 * 2 * 3 * 4 * 5 = 120</code>",
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
-        ],
+      ],
       "namePt": "",
       "descriptionPt": []
     },
@@ -200,6 +215,22 @@
         "You'll need to remove all non-alphanumeric characters (punctuation, spaces and symbols) and turn everything lower case in order to check for palindromes.",
         "We'll pass strings with varying formats, such as \"racecar\", \"RaceCar\", and \"race CAR\" among others.",
         "Remember to use <a href=\"//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck\" target=\"_blank\">Read-Search-Ask</a> if you get stuck. Write your own code."
+      ],
+      "releasedOn": "October 1, 2014",
+      "head": [],
+      "challengeSeed": [
+        "function palindrome(str) {",
+        "  // Good luck!",
+        "  return true;",
+        "}",
+        "",
+        "",
+        "",
+        "palindrome(\"eye\");"
+      ],
+      "tail": [],
+      "solutions": [
+        "function palindrome(str) {\n  var string = str.toLowerCase().split(/[^A-Za-z0-9]/gi).join('');\n  var aux = string.split('');\n  if (aux.join('') === aux.reverse().join('')){\n    return true;\n  }\n\n  return false;\n}"
       ],
       "tests": [
         "assert(typeof palindrome(\"eye\") === \"boolean\", 'message: <code>palindrome(\"eye\")</code> should return a boolean.');",
@@ -214,24 +245,11 @@
         "assert(palindrome(\"1 eye for of 1 eye.\") === false, 'message: <code>palindrome(\"1 eye for of 1 eye.\")</code> should return false.');",
         "assert(palindrome(\"0_0 (: /-\\ :) 0-0\") === true, 'message: <code>palindrome(\"0_0 (: /-\\ :) 0-0\")</code> should return true.');"
       ],
-      "challengeSeed": [
-        "function palindrome(str) {",
-        "  // Good luck!",
-        "  return true;",
-        "}",
-        "",
-        "",
-        "",
-        "palindrome(\"eye\");"
-      ],
+      "type": "bonfire",
       "MDNlinks": [
         "String.replace()",
         "String.toLowerCase()"
       ],
-      "solutions": [
-        "function palindrome(str) {\n  var string = str.toLowerCase().split(/[^A-Za-z0-9]/gi).join('');\n  var aux = string.split('');\n  if (aux.join('') === aux.reverse().join('')){\n    return true;\n  }\n\n  return false;\n}"
-      ],
-      "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
       "descriptionCn": [],
@@ -246,7 +264,7 @@
         "Tendrás que quitar los signos de puntuación y transformar las letras a minúsculas para poder verificar si el texto es palíndromo.",
         "Te proveeremos textos en varios formatos, como \"racecar\", \"RaceCar\", and \"race CAR\" entre otros.",
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
-        ],
+      ],
       "namePt": "",
       "descriptionPt": []
     },
@@ -258,12 +276,18 @@
         "Your response should be a number.",
         "Remember to use <a href=\"//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck\" target=\"_blank\">Read-Search-Ask</a> if you get stuck. Write your own code."
       ],
+      "releasedOn": "October 1, 2014",
+      "head": [],
       "challengeSeed": [
         "function findLongestWord(str) {",
         "  return str.length;",
         "}",
         "",
         "findLongestWord(\"The quick brown fox jumped over the lazy dog\");"
+      ],
+      "tail": [],
+      "solutions": [
+        "function findLongestWord(str) {\n  return str.split(' ').sort(function(a, b) { return b.length - a.length;})[0].length;\n}\n\nfindLongestWord('The quick brown fox jumped over the lazy dog');\n"
       ],
       "tests": [
         "assert(typeof findLongestWord(\"The quick brown fox jumped over the lazy dog\") === \"number\", 'message: <code>findLongestWord(\"The quick brown fox jumped over the lazy dog\")</code> should return a number.');",
@@ -273,14 +297,11 @@
         "assert(findLongestWord(\"What is the average airspeed velocity of an unladen swallow\") === 8, 'message: <code>findLongestWord(\"What is the average airspeed velocity of an unladen swallow\")</code> should return 8.');",
         "assert(findLongestWord(\"What if we try a super-long word such as otorhinolaryngology\") === 19, 'message: <code>findLongestWord(\"What if we try a super-long word such as otorhinolaryngology\")</code> should return 19.');"
       ],
+      "type": "bonfire",
       "MDNlinks": [
         "String.split()",
         "String.length"
       ],
-      "solutions": [
-        "function findLongestWord(str) {\n  return str.split(' ').sort(function(a, b) { return b.length - a.length;})[0].length;\n}\n\nfindLongestWord('The quick brown fox jumped over the lazy dog');\n"
-      ],
-      "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
       "descriptionCn": [],
@@ -293,7 +314,7 @@
         "Crea una función que devuelva la longitud de la palabra más larga en una frase dada",
         "El resultado debe ser un número",
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
-        ],
+      ],
       "namePt": "",
       "descriptionPt": []
     },
@@ -305,6 +326,8 @@
         "For the purpose of this exercise, you should also capitalize connecting words like \"the\" and \"of\".",
         "Remember to use <a href=\"//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck\" target=\"_blank\">Read-Search-Ask</a> if you get stuck. Write your own code."
       ],
+      "releasedOn": "October 1, 2014",
+      "head": [],
       "challengeSeed": [
         "function titleCase(str) {",
         "  return str;",
@@ -312,19 +335,20 @@
         "",
         "titleCase(\"I'm a little tea pot\");"
       ],
+      "tail": [],
+      "solutions": [
+        "function titleCase(str) {\n  return str.split(' ').map(function(word) {\n    return word.charAt(0).toUpperCase() + word.substring(1).toLowerCase();\n  }).join(' ');\n}\n\ntitleCase(\"I'm a little tea pot\");\n"
+      ],
       "tests": [
         "assert(typeof titleCase(\"I'm a little tea pot\") === \"string\", 'message: <code>titleCase(\"I&#39;m a little tea pot\")</code> should return a string.');",
         "assert(titleCase(\"I'm a little tea pot\") === \"I'm A Little Tea Pot\", 'message: <code>titleCase(\"I&#39;m a little tea pot\")</code> should return \"I&#39;m A Little Tea Pot\".');",
         "assert(titleCase(\"sHoRt AnD sToUt\") === \"Short And Stout\", 'message: <code>titleCase(\"sHoRt AnD sToUt\")</code> should return \"Short And Stout\".');",
         "assert(titleCase(\"HERE IS MY HANDLE HERE IS MY SPOUT\") === \"Here Is My Handle Here Is My Spout\", 'message: <code>titleCase(\"HERE IS MY HANDLE HERE IS MY SPOUT\")</code> should return \"Here Is My Handle Here Is My Spout\".');"
       ],
+      "type": "bonfire",
       "MDNlinks": [
         "String.split()"
       ],
-      "solutions": [
-        "function titleCase(str) {\n  return str.split(' ').map(function(word) {\n    return word.charAt(0).toUpperCase() + word.substring(1).toLowerCase();\n  }).join(' ');\n}\n\ntitleCase(\"I'm a little tea pot\");\n"
-      ],
-      "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
       "descriptionCn": [],
@@ -337,7 +361,7 @@
         "Crea una función que devuelva la cadena de texto dada con la primera letra de cada palabra en mayúscula. Asegúrate de que el resto de las letras sean minúsculas",
         "Para este ejercicio, también debes poner en mayúscula conectores como \"the\" y \"of\".",
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
-        ],
+      ],
       "namePt": "",
       "descriptionPt": []
     },
@@ -349,6 +373,8 @@
         "Remember, you can iterate through an array with a simple for loop, and access each member with array syntax arr[i] .",
         "Remember to use <a href=\"//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck\" target=\"_blank\">Read-Search-Ask</a> if you get stuck. Write your own code."
       ],
+      "releasedOn": "October 1, 2014",
+      "head": [],
       "challengeSeed": [
         "function largestOfFour(arr) {",
         "  // You can do this!",
@@ -357,18 +383,19 @@
         "",
         "largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]);"
       ],
+      "tail": [],
+      "solutions": [
+        "function largestOfFour(arr) {\n  return arr.map(function(subArr) {\n    return Math.max.apply(null, subArr);\n  });\n}\n\nlargestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]);\n"
+      ],
       "tests": [
         "assert(largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]).constructor === Array, 'message: <code>largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]])</code> should return an array.');",
         "assert.deepEqual(largestOfFour([[13, 27, 18, 26], [4, 5, 1, 3], [32, 35, 37, 39], [1000, 1001, 857, 1]]), [27,5,39,1001], 'message: <code>largestOfFour([[13, 27, 18, 26], [4, 5, 1, 3], [32, 35, 37, 39], [1000, 1001, 857, 1]])</code> should return <code>[27,5,39,1001]</code>.');",
         "assert.deepEqual(largestOfFour([[4, 9, 1, 3], [13, 35, 18, 26], [32, 35, 97, 39], [1000000, 1001, 857, 1]]), [9,35,97,1000000], 'message: <code>largestOfFour([[4, 9, 1, 3], [13, 35, 18, 26], [32, 35, 97, 39], [1000000, 1001, 857, 1]])</code> should return <code>[9, 35, 97, 1000000]</code>.');"
       ],
+      "type": "bonfire",
       "MDNlinks": [
         "Comparison Operators"
       ],
-      "solutions": [
-        "function largestOfFour(arr) {\n  return arr.map(function(subArr) {\n    return Math.max.apply(null, subArr);\n  });\n}\n\nlargestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]);\n"
-      ],
-      "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
       "descriptionCn": [],
@@ -382,7 +409,7 @@
         "Recuerda que puedes iterar a través de un arreglo con un búcle simple, y acceder a cada miembro utilizando la sintaxis arr[i].",
         "Si escribes tu propio test con Chai.js, asegúrate de utilizar un operador de igualdad estricto en lugar de un operador de igualdad cuando compares arreglos. ",
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
-        ],
+      ],
       "namePt": "",
       "descriptionPt": []
     },
@@ -393,6 +420,8 @@
         "Check if a string (first argument) ends with the given target string (second argument).",
         "Remember to use <a href=\"//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck\" target=\"_blank\">Read-Search-Ask</a> if you get stuck. Write your own code."
       ],
+      "releasedOn": "October 1, 2014",
+      "head": [],
       "challengeSeed": [
         "function end(str, target) {",
         "  // \"Never give up and good luck will find you.\"",
@@ -401,6 +430,10 @@
         "}",
         "",
         "end(\"Bastian\", \"n\");"
+      ],
+      "tail": [],
+      "solutions": [
+        "function end(str, target) {\n  return str.substring(str.length-target.length) === target;\n};\n"
       ],
       "tests": [
         "assert(end(\"Bastian\", \"n\") === true, 'message: <code>end(\"Bastian\", \"n\")</code> should return true.');",
@@ -411,13 +444,10 @@
         "assert(end(\"He has to give me a new name\", \"na\") === false, 'message: <code>end(\"He has to give me a new name\", \"na\")</code> should return false.');",
         "assert(end(\"If you want to save our world, you must hurry. We dont know how much longer we can withstand the nothing\", \"mountain\") === false, 'message: <code>end(\"If you want to save our world, you must hurry. We dont know how much longer we can withstand the nothing\", \"mountain\")</code> should return false.');"
       ],
+      "type": "bonfire",
       "MDNlinks": [
         "String.substr()"
       ],
-      "solutions": [
-        "function end(str, target) {\n  return str.substring(str.length-target.length) === target;\n};\n"
-      ],
-      "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
       "descriptionCn": [],
@@ -429,7 +459,7 @@
       "descriptionEs": [
         "Verifica si una cadena de texto (primer argumento) termina con una cadena de texto dada (segundo argumento).",
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
-        ],
+      ],
       "namePt": "",
       "descriptionPt": []
     },
@@ -440,6 +470,8 @@
         "Repeat a given string (first argument) n times (second argument). Return an empty string if n is a negative number.",
         "Remember to use <a href=\"//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck\" target=\"_blank\">Read-Search-Ask</a> if you get stuck. Write your own code."
       ],
+      "releasedOn": "October 1, 2014",
+      "head": [],
       "challengeSeed": [
         "function repeat(str, num) {",
         "  // repeat after me",
@@ -447,6 +479,10 @@
         "}",
         "",
         "repeat(\"abc\", 3);"
+      ],
+      "tail": [],
+      "solutions": [
+        "function repeat(str, num) {\n  if (num < 0) return '';\n  return num === 1 ? str : str + repeat(str, num-1);\n}\n\nrepeat('abc', 3);\n"
       ],
       "tests": [
         "assert(repeat(\"*\", 3) === \"***\", 'message: <code>repeat(\"*\", 3)</code> should return <code>\"***\"</code>.');",
@@ -456,13 +492,10 @@
         "assert(repeat(\"*\", 8) === \"********\", 'message: <code>repeat(\"*\", 8)</code> should return <code>\"********\"</code>.');",
         "assert(repeat(\"abc\", -2) === \"\", 'message: <code>repeat(\"abc\", -2)</code> should return <code>\"\"</code>.');"
       ],
+      "type": "bonfire",
       "MDNlinks": [
         "Global String Object"
       ],
-      "solutions": [
-        "function repeat(str, num) {\n  if (num < 0) return '';\n  return num === 1 ? str : str + repeat(str, num-1);\n}\n\nrepeat('abc', 3);\n"
-      ],
-      "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
       "descriptionCn": [],
@@ -474,7 +507,7 @@
       "descriptionEs": [
         "Repite una cadena de texto dada (primer argumento) n veces (segundo argumento). Devuelve una cadena de texto vacía si n es un número negativo.",
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
-        ],
+      ],
       "namePt": "",
       "descriptionPt": []
     },
@@ -487,6 +520,8 @@
         "If the <code>num</code> is less than or equal to 3, then the length of the three dots is not added to the string length.",
         "Remember to use <a href=\"//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck\" target=\"_blank\">Read-Search-Ask</a> if you get stuck. Write your own code."
       ],
+      "releasedOn": "October 1, 2014",
+      "head": [],
       "challengeSeed": [
         "function truncate(str, num) {",
         "  // Clear out that junk in your trunk",
@@ -494,6 +529,10 @@
         "}",
         "",
         "truncate(\"A-tisket a-tasket A green and yellow basket\", 11);"
+      ],
+      "tail": [],
+      "solutions": [
+        "function truncate(str, num) {\n  if(str.length > num ) {\n    if(num > 3) {\n      return str.slice(0, num - 3) + '...';\n    } else {\n      return str.slice(0,num) + '...';\n    }\n  } \n  return str;\n}"
       ],
       "tests": [
         "assert(truncate(\"A-tisket a-tasket A green and yellow basket\", 11) === \"A-tisket...\", 'message: <code>truncate(\"A-tisket a-tasket A green and yellow basket\", 11)</code> should return \"A-tisket...\".');",
@@ -503,13 +542,10 @@
         "assert(truncate(\"A-\", 1) === \"A...\", 'message: <code>truncate(\"A-\", 1)</code> should return \"A...\".');",
         "assert(truncate(\"Absolutely Longer\", 2) === \"Ab...\", 'message: <code>truncate(\"Absolutely Longer\", 2)</code> should return \"Ab...\".');"
       ],
+      "type": "bonfire",
       "MDNlinks": [
         "String.slice()"
       ],
-      "solutions": [
-        "function truncate(str, num) {\n  if(str.length > num ) {\n    if(num > 3) {\n      return str.slice(0, num - 3) + '...';\n    } else {\n      return str.slice(0,num) + '...';\n    }\n  } \n  return str;\n}"
-      ],
-      "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
       "descriptionCn": [],
@@ -522,7 +558,7 @@
         "Trunca una cadena de texto (primer argumento) si su longitud es mayor que un máximo de caracteres dado (segundo argumento). Devuelve la cadena de texto truncada con una terminación \"...\".",
         "Ten en cuenta que los tres puntos al final también se cuentan dentro de la longitud de la cadena de texto.",
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
-        ],
+      ],
       "namePt": "",
       "descriptionPt": []
     },
@@ -533,6 +569,8 @@
         "Write a function that splits an array (first argument) into groups the length of <code>size</code> (second argument) and returns them as a multidimensional array.",
         "Remember to use <a href=\"//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck\" target=\"_blank\">Read-Search-Ask</a> if you get stuck. Write your own code."
       ],
+      "releasedOn": "October 1, 2014",
+      "head": [],
       "challengeSeed": [
         "function chunk(arr, size) {",
         "  // Break it up.",
@@ -540,6 +578,10 @@
         "}",
         "",
         "chunk([\"a\", \"b\", \"c\", \"d\"], 2);"
+      ],
+      "tail": [],
+      "solutions": [
+        "function chunk(arr, size) {\n  var out = [];\n  for (var i = 0; i < arr.length; i+=size) {\n    out.push(arr.slice(i,i+size));\n  }\n  return out;\n}\n\nchunk(['a', 'b', 'c', 'd'], 2);\n"
       ],
       "tests": [
         "assert.deepEqual(chunk([\"a\", \"b\", \"c\", \"d\"], 2), [[\"a\", \"b\"], [\"c\", \"d\"]], 'message: <code>chunk([\"a\", \"b\", \"c\", \"d\"], 2)</code> should return <code>[[\"a\", \"b\"], [\"c\", \"d\"]]</code>.');",
@@ -549,14 +591,11 @@
         "assert.deepEqual(chunk([0, 1, 2, 3, 4, 5, 6], 3), [[0, 1, 2], [3, 4, 5], [6]], 'message: <code>chunk([0, 1, 2, 3, 4, 5, 6], 3)</code> should return <code>[[0, 1, 2], [3, 4, 5], [6]]</code>.');",
         "assert.deepEqual(chunk([0, 1, 2, 3, 4, 5, 6, 7, 8], 4), [[0, 1, 2, 3], [4, 5, 6, 7], [8]], 'message: <code>chunk([0, 1, 2, 3, 4, 5, 6, 7, 8], 4)</code> should return <code>[[0, 1, 2, 3], [4, 5, 6, 7], [8]]</code>.');"
       ],
+      "type": "bonfire",
       "MDNlinks": [
         "Array.push()",
         "Array.slice()"
       ],
-      "solutions": [
-        "function chunk(arr, size) {\n  var out = [];\n  for (var i = 0; i < arr.length; i+=size) {\n    out.push(arr.slice(i,i+size));\n  }\n  return out;\n}\n\nchunk(['a', 'b', 'c', 'd'], 2);\n"
-      ],
-      "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
       "descriptionCn": [],
@@ -568,7 +607,7 @@
       "descriptionEs": [
         "Escribe una función que parta un arreglo (primer argumento) en fragmentos de una longitud dada (segundo argumento) y los devuelva en forma de un arreglo multidimensional.",
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
-        ],
+      ],
       "namePt": "",
       "descriptionPt": []
     },
@@ -580,6 +619,8 @@
         "The head meaning the beginning of the array, or the zeroth index",
         "Remember to use <a href=\"//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck\" target=\"_blank\">Read-Search-Ask</a> if you get stuck. Write your own code."
       ],
+      "releasedOn": "October 1, 2014",
+      "head": [],
       "challengeSeed": [
         "function slasher(arr, howMany) {",
         "  // it doesn't always pay to be first",
@@ -588,20 +629,21 @@
         "",
         "slasher([1, 2, 3], 2);"
       ],
+      "tail": [],
+      "solutions": [
+        "function slasher(arr, howMany) {\n  // it doesn't always pay to be first\n  return arr.slice(howMany);\n}\n\nslasher([1, 2, 3], 2);\n"
+      ],
       "tests": [
         "assert.deepEqual(slasher([1, 2, 3], 2), [3], 'message: <code>slasher([1, 2, 3], 2)</code> should return <code>[3]</code>.');",
         "assert.deepEqual(slasher([1, 2, 3], 0), [1, 2, 3], 'message: <code>slasher([1, 2, 3], 0)</code> should return <code>[1, 2, 3]</code>.');",
         "assert.deepEqual(slasher([1, 2, 3], 9), [], 'message: <code>slasher([1, 2, 3], 9)</code> should return <code>[]</code>.');",
         "assert.deepEqual(slasher([1, 2, 3], 4), [], 'message: <code>slasher([1, 2, 3], 4)</code> should return <code>[]</code>.');"
       ],
+      "type": "bonfire",
       "MDNlinks": [
         "Array.slice()",
         "Array.splice()"
       ],
-      "solutions": [
-        "function slasher(arr, howMany) {\n  // it doesn't always pay to be first\n  return arr.slice(howMany);\n}\n\nslasher([1, 2, 3], 2);\n"
-      ],
-      "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
       "descriptionCn": [],
@@ -614,7 +656,7 @@
         "Crea una función que devuelva los elementos restantes de un arreglo después de eliminar n elementos de la cabeza.",
         "Por cabeza nos referimos al inicio de un arreglo, comenzando por el índice 0.",
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
-        ],
+      ],
       "namePt": "",
       "descriptionPt": []
     },
@@ -628,12 +670,18 @@
         "Lastly, <code>[\"Alien\", \"line\"]</code>, should return true because all of the letters in \"line\" are present in \"Alien\".",
         "Remember to use <a href=\"//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck\" target=\"_blank\">Read-Search-Ask</a> if you get stuck. Write your own code."
       ],
+      "releasedOn": "October 1, 2014",
+      "head": [],
       "challengeSeed": [
         "function mutation(arr) {",
         "  return arr;",
         "}",
         "",
         "mutation([\"hello\", \"hey\"]);"
+      ],
+      "tail": [],
+      "solutions": [
+        "function mutation(arr) {\n  var hash = Object.create(null);\n  arr[0].toLowerCase().split('').forEach(function(c) {\n    hash[c] = true;\n  });\n  return !arr[1].toLowerCase().split('').filter(function(c) {\n    return !hash[c];\n  }).length;\n}\n\nmutation(['hello', 'hey']);\n"
       ],
       "tests": [
         "assert(mutation([\"hello\", \"hey\"]) === false, 'message: <code>mutation([\"hello\", \"hey\"])</code> should return false.');",
@@ -645,13 +693,10 @@
         "assert(mutation([\"floor\", \"for\"]) === true, 'message: <code>mutation([\"floor\", \"for\"])</code> should return true.');",
         "assert(mutation([\"hello\", \"neo\"]) === false, 'message: <code>mutation([\"hello\", \"neo\"])</code> should return false.');"
       ],
+      "type": "bonfire",
       "MDNlinks": [
         "String.indexOf()"
       ],
-      "solutions": [
-        "function mutation(arr) {\n  var hash = Object.create(null);\n  arr[0].toLowerCase().split('').forEach(function(c) {\n    hash[c] = true;\n  });\n  return !arr[1].toLowerCase().split('').filter(function(c) {\n    return !hash[c];\n  }).length;\n}\n\nmutation(['hello', 'hey']);\n"
-      ],
-      "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
       "descriptionCn": [],
@@ -666,7 +711,7 @@
         "En el caso de <code>[\"hello\", \"hey\"]</code> la función debe devolver false porque la cadena de texto \"hello\" no contiene una \"y\".",
         "Finalmente, <code>[\"Alien\", \"line\"]</code>, la función debe devolver true porque todas las letras en \"line\" están presentes en \"Alien\".",
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
-        ],
+      ],
       "namePt": "",
       "descriptionPt": []
     },
@@ -678,6 +723,8 @@
         "Falsy values in javascript are <code>false</code>, <code>null</code>, <code>0</code>, <code>\"\"</code>, <code>undefined</code>, and <code>NaN</code>.",
         "Remember to use <a href=\"//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck\" target=\"_blank\">Read-Search-Ask</a> if you get stuck. Write your own code."
       ],
+      "releasedOn": "October 1, 2014",
+      "head": [],
       "challengeSeed": [
         "function bouncer(arr) {",
         "  // Don't show a false ID to this bouncer.",
@@ -686,19 +733,20 @@
         "",
         "bouncer([7, \"ate\", \"\", false, 9]);"
       ],
+      "tail": [],
+      "solutions": [
+        "function bouncer(arr) {\n  // Don't show a false ID to this bouncer.\n  return arr.filter(function(e) {return e;});\n}\n\nbouncer([7, 'ate', '', false, 9]);\n"
+      ],
       "tests": [
         "assert.deepEqual(bouncer([7, \"ate\", \"\", false, 9]), [7, \"ate\", 9], 'message: <code>bouncer([7, \"ate\", \"\", false, 9])</code> should return <code>[7, \"ate\", 9]</code>.');",
         "assert.deepEqual(bouncer([\"a\", \"b\", \"c\"]), [\"a\", \"b\", \"c\"], 'message: <code>bouncer([\"a\", \"b\", \"c\"])</code> should return <code>[\"a\", \"b\", \"c\"]</code>.');",
         "assert.deepEqual(bouncer([false, null, 0, NaN, undefined, \"\"]), [], 'message: <code>bouncer([false, null, 0, NaN, undefined, \"\"])</code> should return <code>[]</code>.');"
       ],
+      "type": "bonfire",
       "MDNlinks": [
         "Boolean Objects",
         "Array.filter()"
       ],
-      "solutions": [
-        "function bouncer(arr) {\n  // Don't show a false ID to this bouncer.\n  return arr.filter(function(e) {return e;});\n}\n\nbouncer([7, 'ate', '', false, 9]);\n"
-      ],
-      "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
       "descriptionCn": [],
@@ -711,7 +759,7 @@
         "Remueve todos los valores falsy de un arreglo dado",
         "En javascript, valores falsy son los siguientes: <code>false</code>, <code>null</code>, <code>0</code>, <code>\"\"</code>, <code>undefined</code>, y <code>NaN</code>.",
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
-        ],
+      ],
       "namePt": "",
       "descriptionPt": []
     },
@@ -722,6 +770,8 @@
         "You will be provided with an initial array (the first argument in the destroyer function), followed by one or more arguments. Remove all elements from the initial array that are of the same value as these arguments.",
         "Remember to use <a href=\"//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck\" target=\"_blank\">Read-Search-Ask</a> if you get stuck. Write your own code."
       ],
+      "releasedOn": "October 1, 2014",
+      "head": [],
       "challengeSeed": [
         "function destroyer(arr) {",
         "  // Remove all the values",
@@ -730,6 +780,10 @@
         "",
         "destroyer([1, 2, 3, 1, 2, 3], 2, 3);"
       ],
+      "tail": [],
+      "solutions": [
+        "function destroyer(arr) {\n  var hash = Object.create(null);\n  [].slice.call(arguments, 1).forEach(function(e) {\n    hash[e] = true;\n  });\n  // Remove all the values\n  return arr.filter(function(e) { return !(e in hash);});\n}\n\ndestroyer([1, 2, 3, 1, 2, 3], 2, 3);\n"
+      ],
       "tests": [
         "assert.deepEqual(destroyer([1, 2, 3, 1, 2, 3], 2, 3), [1, 1], 'message: <code>destroyer([1, 2, 3, 1, 2, 3], 2, 3)</code> should return <code>[1, 1]</code>.');",
         "assert.deepEqual(destroyer([1, 2, 3, 5, 1, 2, 3], 2, 3), [1, 5, 1], 'message: <code>destroyer([1, 2, 3, 5, 1, 2, 3], 2, 3)</code> should return <code>[1, 5, 1]</code>.');",
@@ -737,14 +791,11 @@
         "assert.deepEqual(destroyer([2, 3, 2, 3], 2, 3), [], 'message: <code>destroyer([2, 3, 2, 3], 2, 3)</code> should return <code>[]</code>.');",
         "assert.deepEqual(destroyer([\"tree\", \"hamburger\", 53], \"tree\", 53), [\"hamburger\"], 'message: <code>destroyer([\"tree\", \"hamburger\", 53], \"tree\", 53)</code> should return <code>[\"hamburger\"]</code>.');"
       ],
+      "type": "bonfire",
       "MDNlinks": [
         "Arguments object",
         "Array.filter()"
       ],
-      "solutions": [
-        "function destroyer(arr) {\n  var hash = Object.create(null);\n  [].slice.call(arguments, 1).forEach(function(e) {\n    hash[e] = true;\n  });\n  // Remove all the values\n  return arr.filter(function(e) { return !(e in hash);});\n}\n\ndestroyer([1, 2, 3, 1, 2, 3], 2, 3);\n"
-      ],
-      "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
       "descriptionCn": [],
@@ -756,7 +807,7 @@
       "descriptionEs": [
         "Se te proveerá un arreglo inicial (el primer argumento en la función destroyer), seguido por uno o más argumentos. Elimina todos los elementos del arreglo inicial que tengan el mismo valor que el resto de argumentos.",
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
-        ],
+      ],
       "namePt": "",
       "descriptionPt": []
     },
@@ -769,6 +820,8 @@
         "Likewise, <code>where([20,3,5], 19)</code> should return <code>2</code> because once the array has been sorted it will look like <code>[3,5,20]</code> and <code>19</code> is less than <code>20</code> (index 2) and greater than <code>5</code> (index 1).",
         "Remember to use <a href=\"//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck\" target=\"_blank\">Read-Search-Ask</a> if you get stuck. Write your own code."
       ],
+      "releasedOn": "October 1, 2014",
+      "head": [],
       "challengeSeed": [
         "function where(arr, num) {",
         "  // Find my place in this sorted array.",
@@ -777,9 +830,7 @@
         "",
         "where([40, 60], 50);"
       ],
-      "MDNlinks": [
-        "Array.sort()"
-      ],
+      "tail": [],
       "solutions": [
         "function where(arr, num) {\n  arr = arr.sort(function(a, b){return a-b;});\n  for (var i = 0; i < arr.length; i++) {\n    if (arr[i] >= num)\n      {\n        return i;\n      }\n  }\n  return arr.length;\n}"
       ],
@@ -793,6 +844,9 @@
         "assert(where([2, 5, 10], 15) === 3, 'message: <code>where([2, 5, 10], 15)</code> should return <code>3</code>.');"
       ],
       "type": "bonfire",
+      "MDNlinks": [
+        "Array.sort()"
+      ],
       "challengeType": 5,
       "nameCn": "",
       "descriptionCn": [],
@@ -805,7 +859,7 @@
         "Devuelve el menor índice en el que un valor (segundo argumento) debe ser insertado en un arreglo ordenado (primer argumento).",
         "Por ejemplo, where([1,2,3,4], 1.5) debe devolver 1 porque el segundo argumento de la función (1.5) es mayor que 1 (con índice 0 en el arreglo), pero menor que 2 (con índice 1).",
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
-        ],
+      ],
       "namePt": "",
       "descriptionPt": []
     },
@@ -819,11 +873,8 @@
         "All letters will be uppercase. Do not transform any non-alphabetic character (i.e. spaces, punctuation), but do pass them on.",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
       ],
-      "MDNlinks": [
-        "String.charCodeAt()",
-        "String.fromCharCode()"
-      ],
       "releasedOn": "January 1, 2016",
+      "head": [],
       "challengeSeed": [
         "function rot13(str) { // LBH QVQ VG!",
         " ",
@@ -846,12 +897,21 @@
         "assert(rot13(\"GUR DHVPX OEBJA QBT WHZCRQ BIRE GUR YNML SBK.\") === \"THE QUICK BROWN DOG JUMPED OVER THE LAZY FOX.\", 'message: <code>rot13(\"GUR DHVPX OEBJA QBT WHZCRQ BIRE GUR YNML SBK.\")</code> should decode to <code>\"THE QUICK BROWN DOG JUMPED OVER THE LAZY FOX.\"</code>');"
       ],
       "type": "bonfire",
-      "challengeType": "5",
+      "MDNlinks": [
+        "String.charCodeAt()",
+        "String.fromCharCode()"
+      ],
+      "challengeType": 5,
       "nameCn": "",
+      "descriptionCn": [],
       "nameFr": "",
+      "descriptionFr": [],
       "nameRu": "",
+      "descriptionRu": [],
       "nameEs": "",
-      "namePt": ""
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     }
   ]
 }

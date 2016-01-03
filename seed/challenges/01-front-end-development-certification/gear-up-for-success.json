@@ -6,7 +6,6 @@
     {
       "id": "560add65cb82ac38a17513c2",
       "title": "Browse Camper News",
-      "challengeSeed": [],
       "description": [
         [
           "http://i.imgur.com/YNwsMXM.gif",
@@ -15,9 +14,15 @@
           ""
         ]
       ],
-      "type": "Waypoint",
-      "challengeType": 7,
+      "releasedOn": "October 1, 2014",
+      "head": [],
+      "challengeSeed": [],
+      "tail": [],
+      "solutions": [],
       "tests": [],
+      "type": "Waypoint",
+      "MDNlinks": [],
+      "challengeType": 7,
       "nameCn": "",
       "descriptionCn": [],
       "nameFr": "",
@@ -39,7 +44,6 @@
     {
       "id": "560add65cb82ac38a17513c1",
       "title": "Reference our Wiki",
-      "challengeSeed": [],
       "description": [
         [
           "http://i.imgur.com/4GO4zcI.gif",
@@ -48,9 +52,15 @@
           ""
         ]
       ],
-      "type": "Waypoint",
-      "challengeType": 7,
+      "releasedOn": "October 1, 2014",
+      "head": [],
+      "challengeSeed": [],
+      "tail": [],
+      "solutions": [],
       "tests": [],
+      "type": "Waypoint",
+      "MDNlinks": [],
+      "challengeType": 7,
       "nameCn": "",
       "descriptionCn": [],
       "nameFr": "",
@@ -72,7 +82,6 @@
     {
       "id": "570add8ccb82ac38a17513c3",
       "title": "Join our LinkedIn Alumni Network",
-      "challengeSeed": [],
       "description": [
         [
           "http://i.imgur.com/vJyiXzU.gif",
@@ -81,9 +90,15 @@
           "https://www.linkedin.com/profile/edit-education?school=Free+Code+Camp"
         ]
       ],
-      "type": "Waypoint",
-      "challengeType": 7,
+      "releasedOn": "October 1, 2014",
+      "head": [],
+      "challengeSeed": [],
+      "tail": [],
+      "solutions": [],
       "tests": [],
+      "type": "Waypoint",
+      "MDNlinks": [],
+      "challengeType": 7,
       "nameCn": "",
       "descriptionCn": [],
       "nameFr": "",
@@ -105,7 +120,6 @@
     {
       "id": "560add8ccb81ac38a17513c4",
       "title": "Commit to a Goal and a Nonprofit",
-      "challengeSeed": [],
       "description": [
         [
           "http://i.imgur.com/Og1ifsn.gif",
@@ -114,9 +128,15 @@
           "/commit"
         ]
       ],
-      "type": "Waypoint",
-      "challengeType": 7,
+      "releasedOn": "October 1, 2014",
+      "head": [],
+      "challengeSeed": [],
+      "tail": [],
+      "solutions": [],
       "tests": [],
+      "type": "Waypoint",
+      "MDNlinks": [],
+      "challengeType": 7,
       "nameCn": "",
       "descriptionCn": [],
       "nameFr": "",

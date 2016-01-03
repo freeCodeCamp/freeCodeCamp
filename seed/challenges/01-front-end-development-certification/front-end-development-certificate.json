@@ -6,13 +6,6 @@
     {
       "id": "561add10cb82ac38a17513be",
       "title": "Claim Your Front End Development Certificate",
-      "challengeSeed": [
-        {
-          "properties": ["isHonest", "isFrontEndCert"],
-          "apis": ["/certificate/honest", "/certificate/verify/front-end"],
-          "stepIndex": [1, 2]
-        }
-      ],
       "description": [
         [
           "http://i.imgur.com/syJxavV.jpg",
@@ -39,8 +32,26 @@
           ""
         ]
       ],
-      "type": "Waypoint",
-      "challengeType": 7,
+      "releasedOn": "October 1, 2014",
+      "head": [],
+      "challengeSeed": [
+        {
+          "properties": [
+            "isHonest",
+            "isFrontEndCert"
+          ],
+          "apis": [
+            "/certificate/honest",
+            "/certificate/verify/front-end"
+          ],
+          "stepIndex": [
+            "1",
+            "2"
+          ]
+        }
+      ],
+      "tail": [],
+      "solutions": [],
       "tests": [
         {
           "id": "ad7123c8c441eddfaeb5bdef",
@@ -235,6 +246,9 @@
           "title": "Build a Simon Game"
         }
       ],
+      "type": "Waypoint",
+      "MDNlinks": [],
+      "challengeType": 7,
       "nameCn": "",
       "descriptionCn": [],
       "nameFr": "",
@@ -267,7 +281,7 @@
           "¡Felicitaciones! Hemos agregado tu Certificado de desarrollo Front End a tu portafolio. A menos que elijas no mostrar tus soluciones, este certificado será públicamente visible y verificable.",
           ""
         ]
-        ],
+      ],
       "namePt": "",
       "descriptionPt": []
     }

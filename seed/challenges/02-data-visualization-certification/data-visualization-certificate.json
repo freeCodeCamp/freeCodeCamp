@@ -6,22 +6,6 @@
     {
       "id": "561add10cb82ac38a17513b3",
       "title": "Claim Your Data Visualization Certificate",
-      "challengeSeed": [
-        {
-          "properties": [
-            "isHonest",
-            "isDataVisualizationCert"
-          ],
-          "apis": [
-            "/certificate/honest",
-            "/certificate/verify/data-visualization"
-          ],
-          "stepIndex": [
-            1,
-            2
-          ]
-        }
-      ],
       "description": [
         [
           "http://i.imgur.com/syJxavV.jpg",
@@ -48,8 +32,26 @@
           ""
         ]
       ],
-      "type": "Waypoint",
-      "challengeType": 7,
+      "releasedOn": "October 1, 2014",
+      "head": [],
+      "challengeSeed": [
+        {
+          "properties": [
+            "isHonest",
+            "isDataVisualizationCert"
+          ],
+          "apis": [
+            "/certificate/honest",
+            "/certificate/verify/data-visualization"
+          ],
+          "stepIndex": [
+            "1",
+            "2"
+          ]
+        }
+      ],
+      "tail": [],
+      "solutions": [],
       "tests": [
         {
           "id": "bd7157d8c242eddfaeb5bd13",
@@ -92,6 +94,9 @@
           "title": "Map Data Across the Globe"
         }
       ],
+      "type": "Waypoint",
+      "MDNlinks": [],
+      "challengeType": 7,
       "nameCn": "",
       "descriptionCn": [],
       "nameFr": "",
