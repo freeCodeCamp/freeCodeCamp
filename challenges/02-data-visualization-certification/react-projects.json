@@ -17,6 +17,7 @@
         "<span class='text-info'>User Story:</span> I can type GitHub-flavored Markdown into a text area.",
         "<span class='text-info'>User Story:</span> I can see a preview of the output of my markdown that is updated as I type.",
         "<span class='text-info'>Hint:</span> You don't need to interperate Markdown yourself - you can import the Marked library for this: <a href='https://cdnjs.com/libraries/marked'>https://cdnjs.com/libraries/marked</a>",
+        "<span class='text-info'>Note:</span> If you want to use the React JSX syntax, you need to enable 'Babel' as a preprocessor",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck.",
         "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen. ",
         "You can get feedback on your project from fellow campers by sharing it in our <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Code Review Chatroom</a>. You can also share it on Twitter and your city's Campsite (on Facebook)."
