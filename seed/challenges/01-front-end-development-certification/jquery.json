@@ -539,7 +539,7 @@
         "Desactiva sólo el botón <code>target1</code>."
       ]
     },
-      {
+    {
       "id": "564944c91be2204b269d51e3",
       "title": "Change Text Inside an Element Using jQuery",
       "description": [
@@ -844,10 +844,10 @@
         "jQuery has a function called <code>children()</code> that allows you to access the children of whichever element you've selected.",
         "Here's an example of how you would use the <code>children()</code> function to give the children of your <code>left-well</code> element the color of blue:",
         "<code>$(\"#left-well\").children().css(\"color\", \"blue\")</code>",
-        "Give all the children of your <code>#right-well</code> element a color of green."
+        "Give all the children of your <code>#right-well</code> element a color of orange."
       ],
       "tests": [
-        "assert($(\"#right-well\").children().css(\"color\") === 'rgb(0, 128, 0)', 'message: All children of <code>#right-well</code> should have green text.');",
+        "assert($(\"#right-well\").children().css(\"color\") === 'rgb(255, 165, 0)', 'message: All children of <code>#right-well</code> should have orange text.');",
         "assert(code.match(/\\.children\\(\\)\\.css/g), 'message: You should use the <code>children&#40&#41</code> function to modify these elements.');",
         "assert(code.match(/<div class=\"well\" id=\"right-well\">/g), 'message: Only use jQuery to add these classes to the element.');"
       ],
@@ -897,7 +897,7 @@
         "jQuery tiene una función llamada <code>children()</code> que te permite acceder a los hijos de cualquier elemento que hayas seleccionado.",
         "He aquí un ejemplo de cómo se utiliza la función <code>children()</code> para darle a los hijos de tu elemento <code>left-well</code> el color azul:",
         "<code>$(\"#left-well\").children().css(\"color\", \"blue\")</code>",
-        "Da a todos los hijos de tu elemento <code>right-well</code> el color verde."
+        "Da a todos los hijos de tu elemento <code>right-well</code> el color naranja."
       ]
     },
     {
@@ -925,7 +925,7 @@
         "    $(\"#target2\").appendTo(\"#right-well\");",
         "    $(\"#target5\").clone().appendTo(\"#left-well\");",
         "    $(\"#target1\").parent().css(\"background-color\", \"red\");",
-        "    $(\"#right-well\").children().css(\"color\", \"green\");",
+        "    $(\"#right-well\").children().css(\"color\", \"orange\");",
         "",
         "  });",
         "fcces",
@@ -990,7 +990,7 @@
         "    $(\"#target2\").appendTo(\"#right-well\");",
         "    $(\"#target5\").clone().appendTo(\"#left-well\");",
         "    $(\"#target1\").parent().css(\"background-color\", \"red\");",
-        "    $(\"#right-well\").children().css(\"color\", \"green\");",
+        "    $(\"#right-well\").children().css(\"color\", \"orange\");",
         "    $(\"#left-well\").children().css(\"color\", \"green\");",
         "    $(\".target:nth-child(2)\").addClass(\"animated bounce\");",
         "",
@@ -1052,7 +1052,7 @@
         "    $(\"#target2\").appendTo(\"#right-well\");",
         "    $(\"#target5\").clone().appendTo(\"#left-well\");",
         "    $(\"#target1\").parent().css(\"background-color\", \"red\");",
-        "    $(\"#right-well\").children().css(\"color\", \"green\");",
+        "    $(\"#right-well\").children().css(\"color\", \"orange\");",
         "    $(\"#left-well\").children().css(\"color\", \"green\");",
         "    $(\".target:nth-child(2)\").addClass(\"animated bounce\");",
         "    $(\".target:even\").addClass(\"animated shake\");",
