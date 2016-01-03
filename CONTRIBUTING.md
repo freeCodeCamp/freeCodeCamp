@@ -6,7 +6,7 @@ We welcome pull requests from Free Code Camp campers (our students) and seasoned
 1.  Check our [public Waffle Board](https://waffle.io/freecodecamp/freecodecamp).
 2.  Pick an issue, let us know you're working on it, and start working on it. If you've found a bug that is not on the board, [follow these steps](#found-a-bug).
 3.  You can find issues we are seeking assistance on by searching for the [Help Wanted](https://github.com/FreeCodeCamp/FreeCodeCamp/labels/help%20wanted) tag.
-4.  Feel free to ask for help in our [Help Contributors](https://gitter.im/FreeCodeCamp/FreeCodeCamp) Gitter room.
+4.  Feel free to ask for help in our [Help Contributors](https://gitter.im/FreeCodeCamp/HelpContributors) Gitter room.
 
 ## Contribution Guidelines
 
@@ -192,3 +192,12 @@ Many Pull Requests, especially first Pull Requests, require correction or updati
 If you have a local copy of the repo, you can make the requested changes and amend your commit with: `git commit --amend` This will update your existing commit. When you push it to your fork you will need to do a force push to overwrite your old commit: `git push --force`
 
 Be sure to post in the PR conversation that you have made the requested changes.
+
+##Other resources
+- [Searching for Your Issue on Github](https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/Searching-for-Your-Issue-on-Github)
+- [Creating a New Github Issue](https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/Creating-a-New-Github-Issue)
+- [Select Issues for Contributing Using Labels](https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/Select-Issues-for-Contributing-Using-Labels)
+- [How to clone the FreeCodeCamp website on a Windows pc](https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/How-to-clone-the-FreeCodeCamp-website-on-a-Windows-pc)
+- [How to log in to your local FCC site - using GitHub](https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/How-To-Log-In-To-Your-Local-FCC-Site)
+- [Contributions Guide - With a demo on fixing a typo](https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/Contributions-Guide---with-Typo-Demo)
+- [Writing great git commit message](https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/Writing-great-git-commit-message)
