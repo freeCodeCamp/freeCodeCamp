@@ -3423,7 +3423,7 @@
         "assert(entreeValue === 'hamburger' , 'message: The value of <code>entreeValue</code> should be <code>\"hamburger\"</code>');",
         "assert(typeof drinkValue === 'string' , 'message: <code>drinkValue</code> should be a string');",
         "assert(drinkValue === 'water' , 'message: The value of <code>drinkValue</code> should be <code>\"water\"</code>');",
-        "assert(code.match(/testObj\\[('|\")[^'\"]+\\1\\]/g).length > 1, 'message: You should use bracket notation twice');"
+        "assert(code.match(/testObj\\s*?\\[('|\")[^'\"]+\\1\\]/g).length > 1, 'message: You should use bracket notation twice');"
       ],
       "type": "waypoint",
       "challengeType": "1",
@@ -3468,7 +3468,7 @@
         "assert(typeof playerNumber === 'number', 'message: <code>playerNumber</code> should be a number');",
         "assert(typeof player === 'string', 'message: The variable <code>player</code> should be a string');",
         "assert(player === 'Montana', 'message: The value of <code>player</code> should be \"Montana\"');",
-        "assert(/testObj\\[\\s*playerNumber\\s*\\]/.test(code),'message: You should use bracket notation to access <code>testObj</code>');"
+        "assert(/testObj\\s*?\\[\\s*playerNumber\\s*\\]/.test(code),'message: You should use bracket notation to access <code>testObj</code>');"
       ],
       "type": "waypoint",
       "challengeType": "1",
