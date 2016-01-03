@@ -4,8 +4,8 @@ import moment from 'moment';
 export function dayCount([head, tail]) {
   return Math.ceil(
     moment(moment(head).endOf('day')).diff(
-      moment(tail).startOf('day'), 
-      'days', 
+      moment(tail).startOf('day'),
+      'days',
       true)
     );
 }
