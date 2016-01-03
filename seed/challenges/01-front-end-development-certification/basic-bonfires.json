@@ -815,20 +815,19 @@
       "description": [
         "One of the simplest and most widely known <dfn>ciphers</dfn> is a <code>Caesar cipher</code>, also known as a <code>shift cipher</code>. In a <code>shift cipher</code> the meanings of the letters are shifted by some set amount.",
         "A common modern use is the <a href=\"https://en.wikipedia.org/wiki/ROT13\">ROT13</a> cipher, where the values of the letters are shifted by 13 places. Thus 'A' &harr; 'N', 'B' &harr;  'O' and so on.",
-        "Write a function which takes a <code>ROT13</code> encoded string as input and returns a decoded string. All letters will be uppercase. Do not transform any non-alphabetic character (i.e. spaces, punctuation), but do pass them on.",
-        "The provided code transforms the input into an array for you, <code>codeArr</code>. Place the decoded values into the <code>decodedArr</code> array where the provided code will transform it back into a string."
+        "Write a function which takes a <a href=\"https://en.wikipedia.org/wiki/ROT13\">ROT13</a> encoded string as input and returns a decoded string.",
+        "All letters will be uppercase. Do not transform any non-alphabetic character (i.e. spaces, punctuation), but do pass them on.",
+        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
+      ],
+      "MDNlinks": [
+        "String.charCodeAt()",
+        "String.fromCharCode()"
       ],
       "releasedOn": "January 1, 2016",
       "challengeSeed": [
-        "function rot13(encodedStr) {",
-        "  var codeArr = encodedStr.split(\"\");  // String to Array",
-        "  var decodedArr = []; // Your Result goes here",
-        "  // Only change code below this line",
-        "  ",
-        "  ",
-        "  ",
-        "  // Only change code above this line",
-        "  return decodedArr.join(\"\"); // Array to String",
+        "function rot13(str) { // LBH QVQ VG!",
+        " ",
+        "  return str;",
         "}",
         "",
         "// Change the inputs below to test",
