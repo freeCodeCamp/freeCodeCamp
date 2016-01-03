@@ -11,6 +11,9 @@ block content
               .innerMarginFix(style=' width: 99%')
                 #testCreatePanel.well
                     h3.text-center.negative-10= name
+                      if (isCompleted)
+                          | &nbsp;
+                          i.ion-checkmark-circled.text-primary(title="Completed")
                     .row
                         .col-xs-12
                             .bonfire-instructions
@@ -94,6 +97,7 @@ block content
       common.challengeSeed = !{JSON.stringify(challengeSeed)};
       common.challengeType = !{JSON.stringify(challengeType)};
       common.dashedName = !{JSON.stringify(dashedName)};
+      common.isCompleted = !{JSON.stringify(isCompleted)};
 
       common.username = !{JSON.stringify(user && user.username || '')};
 

@@ -316,7 +316,8 @@
       ],
       "tests": [
         "assert(difference === 12, 'message: Make the variable <code>difference</code> equal 12.');",
-        "assert(/\\d+\\s*-\\s*\\d+/.test(code),'message: User the <code>-</code> operator');"
+        "assert((code).match(/difference/g).length === 1,'message: Only change the first line');",
+        "assert(/\\d+\\s*-\\s*\\d+/.test(code),'message: Use the <code>-</code> operator');"
       ],
       "type": "waypoint",
       "challengeType": "1"
@@ -393,7 +394,7 @@
         "<code>i = i + 1;</code>",
         "<strong>Note</strong><br>The entire line becomes <code>i++;</code>, eliminating the need for the equal sign.",
         "<h4>Instructions</h4>",
-        "Change the code to use the <code>++</code> operator on <code>myVar</code>"
+        "Change the code to use the <code>++</code> operator on <code>myVar</code>."
       ],
       "releasedOn": "January 1, 2016",
       "challengeSeed": [
@@ -432,7 +433,7 @@
         "<code>i = i - 1;</code>",
         "<strong>Note</strong><br>The entire line becomes <code>i--;</code>, eliminating the need for the equal sign.",
         "<h4>Instructions</h4>",
-        "Change the code to use the <code>--</code> operator on <code>myVar</code>"
+        "Change the code to use the <code>--</code> operator on <code>myVar</code>."
       ],
       "releasedOn": "January 1, 2016",
       "challengeSeed": [
@@ -803,7 +804,7 @@
         "assert(convert(20) === 68, 'message: <code>convert(20)</code> should return a value of <code>68</code>');",
         "assert(convert(30) === 86, 'message: <code>convert(30)</code> should return a value of <code>86</code>');"
       ],
-      "type": "waypoint",
+      "type": "checkpoint",
       "challengeType": "1",
       "nameCn": "",
       "nameFr": "",
@@ -987,7 +988,7 @@
       ],
       "tests": [
         "assert(myStr === \"This is the start. This is the end.\", 'message: <code>myStr</code> should have a value of <code>This is the start. This is the end.</code>');",
-        "assert(code.match(/This is the start\\.\\s*[\"']\\s*(.)\\s*[\"']This is the end\\.[\"'];\\s*$/)[1] === \"+\", 'message: Use the <code>+</code> operator to build <code>myStr</code>');"
+        "assert(/var\\s+myStr\\s*=\\s*([\"'])This is the start\\. \\1\\s*\\+\\s*([\"'])This is the end\\.\\2/.test(code), 'message: Use the <code>+</code> operator to build <code>myStr</code>');"
       ],
       "type": "waypoint",
       "challengeType": "1",
@@ -1190,7 +1191,7 @@
       "title": "Use Bracket Notation to Find the First Character in a String",
       "description": [
         "<code>Bracket notation</code> is a way to get a character at a specific <code>index</code> within a string.",
-        "Computers don't start counting at 1 like humans do. They start at 0. This is refered to as <dfn>Zero-based</dfn> indexing.",
+        "Most modern programming languages, like JavaScript, don't start counting at 1 like humans do. They start at 0. This is refered to as <dfn>Zero-based</dfn> indexing.",
         "For example, the character at index 0 in the word \"Charles\" is \"C\". So if <code>var firstName = \"Charles\"</code>, you can get the value of the first letter of the string by using <code>firstName[0]</code>.",
         "<h4>Instructions</h4>",
         "Use <dfn>bracket notation</dfn> to find the first character in the <code>lastName</code> variable and assign it to <code>firstLetterOfLastName</code>.",
@@ -1410,7 +1411,7 @@
         "assert(/\\bdog\\b/.test(test1) && /\\bbig\\b/.test(test1) && /\\bran\\b/.test(test1) && /\\bquickly\\b/.test(test1),'message: <code>wordBlanks(\"dog\", \"big\", \"ran\", \"quickly\")</code> should contain all of the passed words separated by non-word characters (and any additional words in your madlib).');",
         "assert(/\\bcat\\b/.test(test2) && /\\blittle\\b/.test(test2) && /\\bhit\\b/.test(test2) && /\\bslowly\\b/.test(test2),'message: <code>wordBlanks(\"cat\", \"little\", \"hit\", \"slowly\")</code> should contain all of the passed words separated by non-word characters (and any additional words in your madlib).');"
       ],
-      "type": "waypoint",
+      "type": "checkpoint",
       "challengeType": "1",
       "nameCn": "",
       "nameFr": "",
@@ -1744,23 +1745,30 @@
       ],
       "tail": [
         "var count = 0;",
-        "var isArray = true;",
-        "var hasString = true;",
-        "var hasNumber = true;",
+        "var isArray = false;",
+        "var hasString = false;",
+        "var hasNumber = false;",
         "(function(list){",
         "  if(Array.isArray(myList)) {",
-        "    myList.forEach(function(elem) {",
-        "      if(typeof elem[0] !== 'string') {",
-        "        hasString = false;",
-        "      }",
-        "      if(typeof elem[1] !== 'number') {",
-        "        hasNumber = false;",
-        "      }",
-        "    });",
+        "    isArray = true;",
+        "    if(myList.length > 0) {",
+        "      hasString = true;",
+        "      hasNumber = true;",
+        "      myList.forEach(function(elem) {",
+        "        if(typeof elem[0] !== 'string') {",
+        "          hasString = false;",
+        "        }",
+        "        if(typeof elem[1] !== 'number') {",
+        "          hasNumber = false;",
+        "        }",
+        "      });",
+        "    }",
         "    count = myList.length;",
         "    return JSON.stringify(myList);",
         "  } else {",
         "    isArray = false;",
+        "    hasString = false;",
+        "    hasNumber = false;",
         "    return \"myList is not an array\";",
         "  }",
         "",
@@ -1775,7 +1783,7 @@
         "assert(hasNumber, 'message: The second elements in each of your sub-arrays must all be numbers');",
         "assert(count > 4, 'message: You must have at least 5 items in your list');"
       ],
-      "type": "waypoint",
+      "type": "checkpoint",
       "challengeType": "1",
       "nameCn": "",
       "nameFr": "",
@@ -1899,7 +1907,7 @@
         "assert(typeof myFunction === 'function', 'message: <code>myFunction</code> should be a function');",
         "if(typeof myFunction === \"function\") { capture(); myFunction(1,2); uncapture(); } assert(logOutput == 3, 'message: <code>myFunction(1,2)</code> should output <code>3</code>');",
         "if(typeof myFunction === \"function\") { capture(); myFunction(7,9); uncapture(); } assert(logOutput == 16, 'message: <code>myFunction(7,9)</code> should output <code>16</code>');",
-        "assert(/^\\s*myFunction\\(\\s*\\d+\\s*,\\s*\\d+\\s*\\)\\s*;/m.test(code), 'message: Call <code>myFunction</code> after you define it');"
+        "assert(/^\\s*myFunction\\s*\\([\\w\\W]+\\)\\s*;/m.test(code), 'message: Call <code>myFunction</code> after you define it.');"
       ],
       "type": "waypoint",
       "challengeType": "1",
@@ -1993,8 +2001,25 @@
         "Declare a local variable <code>myVar</code> inside <code>myFunction</code>"
       ],
       "releasedOn": "January 1, 2016",
+      "head": [
+        "var logOutput = \"\";",
+        "var oldLog = console.log;",
+        "function capture() {",
+        "    console.log = function (message) {",
+        "        logOutput = message;",
+        "        oldLog.apply(console, arguments);",
+        "    };",
+        "}",
+        "",
+        "function uncapture() {",
+        "  console.log = oldLog;",
+        "}",
+        ""
+      ],
       "challengeSeed": [
         "function myFunction() {",
+        "  'use strict';",
+        "  ",
         "  ",
         "  console.log(myVar);",
         "}",
@@ -2004,17 +2029,19 @@
         "// myVar is not defined outside of myFunction",
         "console.log(myVar);",
         "",
-        "// now remove the console.log line to pass the test",
+        "// now remove the console log line to pass the test",
         ""
       ],
       "tail": [
-        ""
+        "typeof myFunction === 'function' && (capture(), myFunction(), uncapture());",
+        "(function() { return logOutput || \"console.log never called\"; })();"
       ],
       "solutions": [
-        "function myFunction() {\n  var myVar;\n  console.log(myVar);\n}\nmyFunction();"
+        "function myFunction() {\n  'use strict';\n  \n  var myVar;\n  console.log(myVar);\n}\nmyFunction();"
       ],
       "tests": [
-        "assert(code.match(/console\\.log/gi).length === 1, 'message: Remove the second console log');"
+        "assert(typeof myVar === 'undefined', 'message: No global <code>myVar</code> variable');",
+        "assert(/var\\s+myVar/.test(code), 'message: Add a local <code>myVar</code> variable');"
       ],
       "type": "waypoint",
       "challengeType": "1",
@@ -2203,7 +2230,7 @@
         "assert(queue([2],1) === 2, 'message: <code>queue([2], 1)</code> should return <code>2</code>');",
         "queue(myArr, 10); assert(myArr[4] === 10, 'message: After <code>queue(myArr, 10)</code>, <code>myArr[4]</code> should be <code>10</code>');"
       ],
-      "type": "waypoint",
+      "type": "checkpoint",
       "challengeType": "1",
       "nameCn": "",
       "nameFr": "",
@@ -2917,7 +2944,7 @@
         "assert(golfScore(4, 7) === \"Go Home!\", 'message: <code>golfScore(4, 7)</code> should return \"Go Home!\"');",
         "assert(golfScore(5, 9) === \"Go Home!\", 'message: <code>golfScore(5, 9)</code> should return \"Go Home!\"');"
       ],
-      "type": "waypoint",
+      "type": "checkpoint",
       "challengeType": "1",
       "nameCn": "",
       "nameFr": "",
@@ -3259,7 +3286,7 @@
         "assert((function(){ count = 0; cc(10);cc('J');cc('Q');cc('K');var out = cc('A'); if(out === \"-5 Hold\") {return true;} return false; })(), 'message: Cards Sequence 10, J, Q, K, A should return <code>\"-5 Hold\"</code>');",
         "assert((function(){ count = 0; cc(3);cc(2);cc('A');cc(10);var out = cc('K'); if(out === \"-1 Hold\") {return true;} return false; })(), 'message: Cards Sequence 3, 2, A, 10, K should return <code>\"-1 Hold\"</code>');"
       ],
-      "type": "waypoint",
+      "type": "checkpoint",
       "challengeType": "1",
       "nameCn": "",
       "nameFr": "",
@@ -3396,7 +3423,7 @@
         "assert(entreeValue === 'hamburger' , 'message: The value of <code>entreeValue</code> should be <code>\"hamburger\"</code>');",
         "assert(typeof drinkValue === 'string' , 'message: <code>drinkValue</code> should be a string');",
         "assert(drinkValue === 'water' , 'message: The value of <code>drinkValue</code> should be <code>\"water\"</code>');",
-        "assert(code.match(/testObj\\[('|\")[^'\"]+\\1\\]/g).length > 1, 'message: You should use bracket notation twice');"
+        "assert(code.match(/testObj\\s*?\\[('|\")[^'\"]+\\1\\]/g).length > 1, 'message: You should use bracket notation twice');"
       ],
       "type": "waypoint",
       "challengeType": "1",
@@ -3441,7 +3468,7 @@
         "assert(typeof playerNumber === 'number', 'message: <code>playerNumber</code> should be a number');",
         "assert(typeof player === 'string', 'message: The variable <code>player</code> should be a string');",
         "assert(player === 'Montana', 'message: The value of <code>player</code> should be \"Montana\"');",
-        "assert(/testObj\\[\\s*playerNumber\\s*\\]/.test(code),'message: You should use bracket notation to access <code>testObj</code>');"
+        "assert(/testObj\\s*?\\[\\s*playerNumber\\s*\\]/.test(code),'message: You should use bracket notation to access <code>testObj</code>');"
       ],
       "type": "waypoint",
       "challengeType": "1",
@@ -3815,7 +3842,7 @@
       "description": [
         "As we have seen in earlier examples, JSON objects can contain both nested objects and nested arrays. Similar to accessing nested objects, Array bracket notation can be chained to access nested arrays.",
         "Here is an example of how to access a nested array:",
-        "<blockquote>var ourPets = { <br>  \"cats\": [<br>    \"Meowzer\",<br>    \"Fluffy\",<br>    \"Kit-Cat\"<br>  ],<br>  \"dogs:\" [<br>    \"Spot\",<br>    \"Bowser\",<br>    \"Frankie\"<br>  ]<br>};<br>ourPets.cats[1]; // \"Fluffy\"<br>ourPets.dogs[0]; // \"Spot\"</blockquote>",
+        "<blockquote>var ourPets = { <br>  \"cats\": [<br>    \"Meowzer\",<br>    \"Fluffy\",<br>    \"Kit-Cat\"<br>  ],<br>  \"dogs\": [<br>    \"Spot\",<br>    \"Bowser\",<br>    \"Frankie\"<br>  ]<br>};<br>ourPets.cats[1]; // \"Fluffy\"<br>ourPets.dogs[0]; // \"Spot\"</blockquote>",
         "<h4>Instructions</h4>",
         "Retrieve the second tree from the variable <code>myPlants</code> using object dot and array bracket notation."
       ],
@@ -3935,7 +3962,7 @@
         "assert(update(1245, \"tracks\", \"Addicted to Love\")[1245][\"tracks\"].length === 1, 'message: After <code>update(1245, \"tracks\", \"Addicted to Love\")</code>, <code>tracks</code> should have a length of <code>1</code>');",
         "update(2548, \"tracks\", \"\"); assert(!collection[2548].hasOwnProperty(\"tracks\"), 'message: After <code>update(2548, \"tracks\", \"\")</code>, <code>tracks</code> should not be set');"
       ],
-      "type": "waypoint",
+      "type": "checkpoint",
       "challengeType": "1",
       "nameCn": "",
       "nameFr": "",
@@ -3948,7 +3975,7 @@
       "title": "Iterate with JavaScript For Loops",
       "description": [
         "You can run the same code multiple times by using a loop.",
-        "The most common type of JavaScript loop is called a \"for loop\" because it runs \"for\" a specific number of times.",
+        "The most common type of JavaScript loop is called a \"<code>for loop</code>\" because it runs \"for\" a specific number of times.",
         "For loops are declared with three optional expressions seperated by semicolons:",
         "<code>for ([initialization]; [condition]; [final-expression])</code>",
         "The <code>initialization</code> statement is executed one time only before the loop starts. It is typically used to define and setup your loop variable.",
@@ -4162,7 +4189,7 @@
       "title": "Iterate with JavaScript While Loops",
       "description": [
         "You can run the same code multiple times by using a loop.",
-        "Another type of JavaScript loop is called a \"while loop\", because it runs \"while\" something is true and stops once that something is no longer true.",
+        "Another type of JavaScript loop is called a \"<code>while loop</code>\", because it runs \"while\" a specified condition is true and stops once that condition is no longer true.",
         "<blockquote>var ourArray = [];<br>var i = 0;<br>while(i < 5) {<br>  ourArray.push(i);<br>  i++;<br>}</blockquote>",
         "Let's try getting a while loop to work by pushing values to an array.",
         "<h4>Instructions</h4>",
@@ -4188,51 +4215,6 @@
       ],
       "type": "waypoint",
       "challengeType": "1"
-    },
-    {
-      "id": "56533eb9ac21ba0edf2244e2",
-      "title": "Caesar's Cipher",
-      "description": [
-        "One of the simplest and most widely known <dfn>ciphers</dfn> is a <code>Caesar cipher</code>, also known as a <code>shift cipher</code>. In a <code>shift cipher</code> the meanings of the letters are shifted by some set amount.",
-        "A common modern use is the <a href=\"https://en.wikipedia.org/wiki/ROT13\">ROT13</a> cipher, where the values of the letters are shifted by 13 places. Thus 'A' &harr; 'N', 'B' &harr;  'O' and so on.",
-        "Write a function which takes a <code>ROT13</code> encoded string as input and returns a decoded string. All letters will be uppercase. Do not transform any non-alphabetic character (i.e. spaces, punctuation), but do pass them on.",
-        "The provided code transforms the input into an array for you, <code>codeArr</code>. Place the decoded values into the <code>decodedArr</code> array where the provided code will transform it back into a string."
-      ],
-      "releasedOn": "January 1, 2016",
-      "challengeSeed": [
-        "function rot13(encodedStr) {",
-        "  var codeArr = encodedStr.split(\"\");  // String to Array",
-        "  var decodedArr = []; // Your Result goes here",
-        "  // Only change code below this line",
-        "  ",
-        "  ",
-        "  ",
-        "  // Only change code above this line",
-        "  return decodedArr.join(\"\"); // Array to String",
-        "}",
-        "",
-        "// Change the inputs below to test",
-        "rot13(\"SERR PBQR PNZC\");"
-      ],
-      "tail": [
-        ""
-      ],
-      "solutions": [
-        "var lookup = {\n  'A': 'N','B': 'O','C': 'P','D': 'Q',\n  'E': 'R','F': 'S','G': 'T','H': 'U',\n  'I': 'V','J': 'W','K': 'X','L': 'Y',\n  'M': 'Z','N': 'A','O': 'B','P': 'C',\n  'Q': 'D','R': 'E','S': 'F','T': 'G',\n  'U': 'H','V': 'I','W': 'J','X': 'K',\n  'Y': 'L','Z': 'M' \n};\n\nfunction rot13(encodedStr) {\n  var codeArr = encodedStr.split(\"\");  // String to Array\n  var decodedArr = []; // Your Result goes here\n  // Only change code below this line\n  \n  decodedArr = codeArr.map(function(letter) {\n    if(lookup.hasOwnProperty(letter)) {\n      letter = lookup[letter];\n    }\n    return letter;\n  });\n\n  // Only change code above this line\n  return decodedArr.join(\"\"); // Array to String\n}"
-      ],
-      "tests": [
-        "assert(rot13(\"SERR PBQR PNZC\") === \"FREE CODE CAMP\", 'message: <code>rot13(\"SERR PBQR PNZC\")</code> should decode to <code>\"FREE CODE CAMP\"</code>');",
-        "assert(rot13(\"SERR CVMMN!\") === \"FREE PIZZA!\", 'message: <code>rot13(\"SERR CVMMN!\")</code> should decode to <code>\"FREE PIZZA!\"</code>');",
-        "assert(rot13(\"SERR YBIR?\") === \"FREE LOVE?\", 'message: <code>rot13(\"SERR YBIR?\")</code> should decode to <code>\"FREE LOVE?\"</code>');",
-        "assert(rot13(\"GUR DHVPX OEBJA QBT WHZCRQ BIRE GUR YNML SBK.\") === \"THE QUICK BROWN DOG JUMPED OVER THE LAZY FOX.\", 'message: <code>rot13(\"GUR DHVPX OEBJA QBT WHZCRQ BIRE GUR YNML SBK.\")</code> should decode to <code>\"THE QUICK BROWN DOG JUMPED OVER THE LAZY FOX.\"</code>');"
-      ],
-      "type": "waypoint",
-      "challengeType": "1",
-      "nameCn": "",
-      "nameFr": "",
-      "nameRu": "",
-      "nameEs": "",
-      "namePt": ""
     },
     {
       "id": "cf1111c1c11feddfaeb9bdef",

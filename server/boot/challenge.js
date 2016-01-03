@@ -29,7 +29,7 @@ import getFromDisk$ from '../utils/getFromDisk$';
 const isDev = process.env.NODE_ENV !== 'production';
 const isBeta = !!process.env.BETA;
 const debug = debugFactory('freecc:challenges');
-const challengesRegex = /^(bonfire|waypoint|zipline|basejump)/i;
+const challengesRegex = /^(bonfire|waypoint|zipline|basejump|checkpoint)/i;
 const firstChallenge = 'waypoint-learn-how-free-code-camp-works';
 const challengeView = {
   0: 'coursewares/showHTML',
