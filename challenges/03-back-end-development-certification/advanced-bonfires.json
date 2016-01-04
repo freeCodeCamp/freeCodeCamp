@@ -26,6 +26,7 @@
         "assert(telephoneCheck(\"555-555-5555\") === true, 'message: <code>telephoneCheck(\"555-555-5555\")</code> should return true.');",
         "assert(telephoneCheck(\"(555)555-5555\") === true, 'message: <code>telephoneCheck(\"(555)555-5555\")</code> should return true.');",
         "assert(telephoneCheck(\"1(555)555-5555\") === true, 'message: <code>telephoneCheck(\"1(555)555-5555\")</code> should return true.');",
+        "assert(telephoneCheck(\"1 555)555-5555\") === false, 'message: <code>telephoneCheck(\"1 555)555-555\")</code> should return false.');",
         "assert(telephoneCheck(\"1 555 555 5555\") === true, 'message: <code>telephoneCheck(\"1 555 555 5555\")</code> should return true.');",
         "assert(telephoneCheck(\"1 456 789 4444\") === true, 'message: <code>telephoneCheck(\"1 456 789 4444\")</code> should return true.');",
         "assert(telephoneCheck(\"123**&!!asdf#\") === false, 'message: <code>telephoneCheck(\"123**&!!asdf#\")</code> should return false.');",
