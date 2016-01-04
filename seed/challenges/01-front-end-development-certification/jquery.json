@@ -299,16 +299,18 @@
       "id": "bad87fee1348bd9aed908626",
       "title": "Target the same element with multiple jQuery Selectors",
       "description": [
-        "Now you know three ways of targeting elements: by type: <code>$(\"button\")</code>, by class: <code>$(\".btn\")</code>, and by id <code>$(\"#target1\")</code>.",
-        "Although it is possible to add multiple classes in a single <code>.addClass()</code> call, let's add them to the same element in three different ways.",
-        "Using each of the above jQuery selectors and the <code>addClass()</code> function:",
+        "Now you know three ways of targeting elements: ",
+        "by type: <code>$(\"button\")</code>, ",
+        "by class: <code>$(\".btn\")</code>, ",
+        "and by id: <code>$(\"#target1\")</code>.",
+        "Using <code>.addClass()</code>, add only one class at a time to the same element, three different ways:",
         "Add the <code>animated</code> class to all elements with type <code>button</code>.",
         "Add the <code>shake</code> class to all the buttons with class <code>.btn</code>.",
         "Add the <code>btn-primary</code> class to the button with id <code>#target1</code>."
       ],
       "tests": [
         "assert(code.match(/\\$\\s*?\\(\\s*?(?:'|\")\\s*?button\\s*?(?:'|\")/gi), 'message: Use the <code>$&#40\"button\"&#41</code> selector.');",
-        "assert(code.match(/\\$\\s*?\\(\\s*?(?:'|\")\\s*?\\.btn\\s*?(?:'|\")/gi), 'message: Use the <code>$&#40\".btn\"&#41</code> selector.');",
+        "assert(code.match(/\\$\\s*?\\(\\s*?(?:'|\")\\s*?(?:button)?\\.btn\\s*?(?:'|\")/gi), 'message: Use the <code>$&#40\".btn\"&#41</code> selector.');",
         "assert(code.match(/\\$\\s*?\\(\\s*?(?:'|\")\\s*?#target1\\s*?(?:'|\")/gi), 'message: Use the <code>$&#40\"#target1\"&#41</code> selector.');",
         "assert(code.match(/addClass/g) && code.match(/addClass\\(\\s*?('|\")[\\w-]+\\1\\s*?\\)/g).length > 2, 'message: Only add one class with each of your three selectors.');",
         "assert($(\"#target1\").hasClass(\"animated\") && $(\"#target1\").hasClass(\"shake\") && $(\"#target1\").hasClass(\"btn-primary\"), 'message: Your <code>#target1</code> element should have the classes <code>animated</code>&#130; <code>shake</code> and <code>btn-primary</code>.');",
