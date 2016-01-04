@@ -1851,7 +1851,7 @@
       "id": "56533eb9ac21ba0edf2244bd",
       "title": "Passing Values to Functions with Arguments",
       "description": [
-        "Functions can take input with <dfn>parameters</dfn>. Parameters are local variables that take on the value of the <dfn>arguments</dfn> which are passed into the function.",
+        "<dfn>Parameters</dfn> are variables that act as placeholders for the values that are to be input to a function when it is called. When a function is defined, it is typically defined along with one or more parameters. The actual values that are input (or <dfn>\"passed\"</dfn>) into a function when it is called are known as <dfn>arguments</dfn>.",
         "Here is a function with two parameters, <code>param1</code> and <code>param2</code>:",
         "<blockquote>function testFun(param1, param2) {<br>  console.log(param1, param2);<br>}</blockquote>",
         "Then we can call <code>testFun</code>:",
