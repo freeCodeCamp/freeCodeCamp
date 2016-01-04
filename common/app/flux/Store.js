@@ -11,6 +11,9 @@ const initValue = {
     // lecture state
     currentHike: {},
     showQuestion: false
+  },
+  jobsApp: {
+    showModal: false
   }
 };
 
@@ -19,25 +22,15 @@ export default Store({
     displayName: 'AppStore',
     value: initValue
   },
-  init({ instance: appStore, args: [cat] }) {
+  init({ instance: store, args: [cat] }) {
+    const register = createRegistrar(store);
+    // app
     const {
       updateLocation,
       getUser,
       setTitle
     } = cat.getActions('appActions');
 
-    const register = createRegistrar(appStore);
-    const {
-      toggleQuestions,
-      fetchHikes,
-      hideInfo,
-      grabQuestion,
-      releaseQuestion,
-      moveQuestion,
-      answer
-    } = cat.getActions('hikesActions');
-
-    // app
     register(
       fromMany(
         setter(
@@ -51,6 +44,16 @@ export default Store({
     );
 
     // hikes
+    const {
+      toggleQuestions,
+      fetchHikes,
+      hideInfo,
+      grabQuestion,
+      releaseQuestion,
+      moveQuestion,
+      answer
+    } = cat.getActions('hikesActions');
+
     register(
       fromMany(
         toggleQuestions,
@@ -63,6 +66,36 @@ export default Store({
       )
     );
 
-    return appStore;
+
+    // jobs
+    const {
+      findJob,
+      saveJobToDb,
+      getJob,
+      getJobs,
+      openModal,
+      closeModal,
+      handleForm,
+      getSavedForm,
+      setPromoCode,
+      applyCode,
+      clearPromo
+    } = cat.getActions('JobActions');
+
+    register(
+      fromMany(
+        findJob,
+        saveJobToDb,
+        getJob,
+        getJobs,
+        openModal,
+        closeModal,
+        handleForm,
+        getSavedForm,
+        setPromoCode,
+        applyCode,
+        clearPromo
+      )
+    );
   }
 });

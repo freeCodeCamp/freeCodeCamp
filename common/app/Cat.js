@@ -5,7 +5,7 @@ import { Disposable, Observable } from 'rx';
 import { post$, postJSON$ } from '../utils/ajax-stream.js';
 import { AppActions, AppStore } from './flux';
 import { HikesActions } from './routes/Hikes/flux';
-import { JobActions, JobsStore} from './routes/Jobs/flux';
+import { JobActions } from './routes/Jobs/flux';
 
 const ajaxStamp = stamp({
   methods: {
@@ -22,8 +22,7 @@ export default Cat().init(({ instance: cat, args: [services] }) => {
         return Observable.create(function(observer) {
           services.read(resource, params, config, (err, res) => {
             if (err) {
-              observer.onError(err);
-              return observer.onCompleted();
+              return observer.onError(err);
             }
 
             observer.onNext(res);
@@ -31,7 +30,23 @@ export default Cat().init(({ instance: cat, args: [services] }) => {
           });
 
           return Disposable.create(function() {
+            observer.dispose();
+          });
+        });
+      },
+      createService$(resource, params, body, config) {
+        return Observable.create(function(observer) {
+          services.create(resource, params, body, config, (err, res) => {
+            if (err) {
+              return observer.onError(err);
+            }
+
+            observer.onNext(res);
             observer.onCompleted();
+          });
+
+          return Disposable.create(function() {
+            observer.dispose();
           });
         });
       }
@@ -40,9 +55,11 @@ export default Cat().init(({ instance: cat, args: [services] }) => {
 
   cat.register(HikesActions.compose(serviceStamp, ajaxStamp), null, services);
   cat.register(AppActions.compose(serviceStamp), null, services);
+  cat.register(
+    JobActions.compose(serviceStamp, ajaxStamp),
+    null,
+    cat,
+    services
+  );
   cat.register(AppStore, null, cat);
-
-
-  cat.register(JobActions, null, cat, services);
-  cat.register(JobsStore.compose(serviceStamp), null, cat);
 });

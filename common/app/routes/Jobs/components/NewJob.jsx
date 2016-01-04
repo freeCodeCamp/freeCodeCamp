@@ -103,9 +103,9 @@ function makeRequired(validator) {
 }
 
 export default contain({
+    store: 'appStore',
     actions: 'jobActions',
-    store: 'jobsStore',
-    map({ form = {} }) {
+    map({ jobsApp: { form = {} } }) {
       const {
         position,
         locale,

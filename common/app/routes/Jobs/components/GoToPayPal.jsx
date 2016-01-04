@@ -11,12 +11,12 @@ const paypalIds = {
 
 export default contain(
   {
-    store: 'JobsStore',
+    store: 'appStore',
     actions: [
       'jobActions',
       'appActions'
     ],
-    map({
+    map({ jobApp: {
       job: { id, isHighlighted } = {},
       buttonId = isHighlighted ?
         paypalIds.highlighted :
@@ -26,7 +26,7 @@ export default contain(
       promoCode = '',
       promoApplied = false,
       promoName
-    }) {
+    }}) {
       return {
         id,
         isHighlighted,
@@ -57,7 +57,7 @@ export default contain(
 
     goToJobBoard() {
       const { appActions } = this.props;
-      appActions.updateRoute('/jobs');
+      appActions.goTo('/jobs');
     },
 
     renderDiscount(discountAmount) {

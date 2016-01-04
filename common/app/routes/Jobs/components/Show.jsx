@@ -53,13 +53,14 @@ function generateMessage(
 
 export default contain(
   {
-    stores: ['appStore', 'jobsStore'],
-    fetchWaitFor: 'jobsStore',
+    store: 'appStore',
     fetchAction: 'jobActions.getJob',
-    combineLatest(
-      { username, isFrontEndCert, isFullStackCert },
-      { currentJob }
-    ) {
+    map({
+      username,
+      isFrontEndCert,
+      isFullStackCert,
+      jobsApp: { currentJob }
+    }) {
       return {
         username,
         job: currentJob,
@@ -67,11 +68,11 @@ export default contain(
         isFullStackCert
       };
     },
-    getPayload({ params: { id }, job = {} }) {
-      return {
-        id,
-        isPrimed: job.id === id
-      };
+    getPayload({ params: { id } }) {
+      return id;
+    },
+    isPrimed({ params: { id } = {}, job = {} }) {
+      return job.id === id;
     },
     // using es6 destructuring
     shouldContainerFetch({ job = {} }, { params: { id } }
