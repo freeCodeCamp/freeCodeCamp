@@ -8,12 +8,12 @@ import JobNotFound from './JobNotFound.jsx';
 
 export default contain(
   {
-    store: 'JobsStore',
+    store: 'appStore',
     actions: [
       'appActions',
       'jobActions'
     ],
-    map({ form: job = {} }) {
+    map({ jobApp: { form: job = {} } }) {
       return { job };
     }
   },
@@ -32,7 +32,7 @@ export default contain(
       const { appActions, job } = this.props;
       // redirect user in client
       if (!job || !job.position || !job.description) {
-        appActions.updateRoute('/jobs/new');
+        appActions.goTo('/jobs/new');
       }
     },
 
