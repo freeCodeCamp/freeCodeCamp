@@ -54,6 +54,12 @@ export default function reactSubRouter(app) {
       .flatMap(function({ props, AppCat }) {
         const cat = AppCat(null, services);
         debug('render react markup and pre-fetch data');
+        const store = cat.getStore('appStore');
+
+        // primes store to observe action changes
+        // cleaned up by cat.dispose further down
+        store.subscribe(() => {});
+
         return renderToString$(
           cat,
           React.createElement(RoutingContext, props)
