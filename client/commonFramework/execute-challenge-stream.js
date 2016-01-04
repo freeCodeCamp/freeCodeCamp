@@ -18,7 +18,7 @@ window.common = (function(global) {
     const originalCode = code;
     const head = common.arrayToNewLineString(common.head);
     const tail = common.arrayToNewLineString(common.tail);
-    const combinedCode = head + code + tail;
+    const combinedCode = head + '\n;;' + code + '\n;;' + tail;
 
     ga('send', 'event', 'Challenge', 'ran-code', common.challengeName);
 
