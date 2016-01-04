@@ -25,22 +25,6 @@ export default contain(
       username: PropTypes.string
     },
 
-    componentDidMount() {
-      const title = this.props.title;
-      this.setTitle(title);
-    },
-
-    componentWillReceiveProps(nextProps) {
-      if (nextProps.title !== this.props.title) {
-        this.setTitle(nextProps.title);
-      }
-    },
-
-    setTitle(title) {
-      const doc = typeof document !== 'undefined' ? document : {};
-      doc.title = title;
-    },
-
     render() {
       const { username, points, picture } = this.props;
       const navProps = { username, points, picture };

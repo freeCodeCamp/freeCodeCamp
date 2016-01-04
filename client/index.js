@@ -47,6 +47,12 @@ app$({ history, location: appLocation })
         location => location && location.key ? location.key : location
       );
 
+    // set page title
+    appStore$
+      .pluck('title')
+      .doOnNext(title => document.title = title)
+      .subscribe(() => {});
+
     synchroniseHistory(
       history,
       updateLocation,
@@ -55,8 +61,11 @@ app$({ history, location: appLocation })
       routerState$
     );
   })
+  // allow store subscribe to subscribe to actions
+  .delay(10)
   .flatMap(({ props, appCat }) => {
     props.history = history;
+
     return render$(
       appCat,
       React.createElement(Router, props),
