@@ -770,23 +770,23 @@
     },
     {
       "id": "56533eb9ac21ba0edf2244b3",
-      "title": "Convert Celsius to Fahrenheit",
+      "title": "Convert Fahrenheit to Celsius",
       "description": [
         "To test your learning you will create a solution \"from scratch\". Place your code between the indicated lines and it will be tested against multiple test cases.",
-        "The algorithm to convert from Celsius to Fahrenheit is the temperature in Celsius times 9/5, plus 32.",
-        "You are given a variable <code>celsius</code> representing a temperature in Celsius. Create a variable <code>fahrenheit</code> and apply the algorithm to assign it the corresponding temperature in Fahrenheit."
+        "The algorithm to convert from Fahrenheit to Celsius is the temperature in Fahrenheit minus 32 in brackets, times 5/9.",
+        "You are given a variable <code>fahrenheit</code> representing a temperature in Fahrenheit. Create a variable <code>celsius</code> and apply the algorithm to assign it the corresponding temperature in Celsius."
       ],
       "releasedOn": "January 1, 2016",
       "challengeSeed": [
-        "function convert(celsius) {",
+        "function convert(fahrenheit) {",
         "  // Only change code below this line",
         "  ",
         "",
         "  // Only change code above this line",
-        "  if ( typeof fahrenheit !== 'undefined' ) {",
-        "  return fahrenheit;",
+        "  if ( typeof celsius !== 'undefined' ) {",
+        "  return celsius;",
         "  } else {",
-        "    return 'fahrenheit not defined';",
+        "    return 'celsius not defined';",
         "  }",
         "}",
         "",
@@ -794,15 +794,15 @@
         "convert(30);"
       ],
       "solutions": [
-        "function convert(celsius) {\n  var fahrenheit = celsius * 9/5 + 32;\n  if ( typeof fahrenheit !== 'undefined' ) {\n  return fahrenheit;\n  } else {\n    return 'fahrenheit not defined';\n  }\n}"
+        "function convert(fahrenheit) {\n  var celsius = (fahrenheit - 32) * 5/9;\n  if ( typeof celsius !== 'undefined' ) {\n  return celsius;\n  } else {\n    return 'celsius not defined';\n  }\n}"
       ],
       "tests": [
         "assert(typeof convert(0) === 'number', 'message: <code>convert(0)</code> should return a number');",
-        "assert(convert(-30) === -22, 'message: <code>convert(-30)</code> should return a value of <code>-22</code>');",
-        "assert(convert(-10) === 14, 'message: <code>convert(-10)</code> should return a value of <code>14</code>');",
-        "assert(convert(0) === 32, 'message: <code>convert(0)</code> should return a value of <code>32</code>');",
-        "assert(convert(20) === 68, 'message: <code>convert(20)</code> should return a value of <code>68</code>');",
-        "assert(convert(30) === 86, 'message: <code>convert(30)</code> should return a value of <code>86</code>');"
+        "assert(convert(-22) === -30, 'message: <code>convert(-22)</code> should return a value of <code>-30</code>');",
+        "assert(convert(14) === -10, 'message: <code>convert(14)</code> should return a value of <code>-10</code>');",
+        "assert(convert(32) === 0, 'message: <code>convert(32)</code> should return a value of <code>0</code>');",
+        "assert(convert(68) === 20, 'message: <code>convert(68)</code> should return a value of <code>20</code>');",
+        "assert(convert(86) === 30, 'message: <code>convert(86)</code> should return a value of <code>30</code>');"
       ],
       "type": "checkpoint",
       "challengeType": "1",
