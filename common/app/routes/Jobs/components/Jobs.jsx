@@ -11,6 +11,9 @@ export default contain(
       return { jobs, showModal };
     },
     fetchAction: 'jobActions.getJobs',
+    isPrimed({ jobs = [] }) {
+      return !!jobs.length;
+    },
     actions: [
       'appActions',
       'jobActions'
