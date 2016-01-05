@@ -28,7 +28,7 @@
         "assert(code.match(/(\\*\\/)/g), 'message: Make sure that you close the comment with a <code>*/</code>.');"
       ],
       "type": "waypoint",
-      "challengeType": "1"
+      "challengeType": 1
     },
     {
       "id": "bd7123c9c441eddfaeb5bdef",
@@ -61,7 +61,7 @@
         "assert(welcomeToBooleans() === true, 'message: <code>welcomeToBooleans()</code> should return true.');"
       ],
       "type": "waypoint",
-      "challengeType": "1"
+      "challengeType": 1
     },
     {
       "id": "bd7123c9c443eddfaeb5bdef",
@@ -93,7 +93,7 @@
         "assert((function(){if(typeof(myName) !== \"undefined\" && typeof(myName) === \"string\" && myName.length > 0){return true;}else{return false;}})(), 'message: <code>myName</code> should be a string that contains at least one character in it.');"
       ],
       "type": "waypoint",
-      "challengeType": "1"
+      "challengeType": 1
     },
     {
       "id": "56533eb9ac21ba0edf2244a8",
@@ -132,12 +132,7 @@
         "assert(/b\\s*=\\s*a\\s*;/g.test(code), 'message: <code>a</code> should be assigned to <code>b</code> with <code>=</code>');"
       ],
       "type": "waypoint",
-      "challengeType": "1",
-      "nameCn": "",
-      "nameFr": "",
-      "nameRu": "",
-      "nameEs": "",
-      "namePt": ""
+      "challengeType": 1
     },
     {
       "id": "56533eb9ac21ba0edf2244a9",
@@ -169,12 +164,7 @@
         "assert(/var\\s+a\\s*=\\s*9\\s*/.test(code), 'message: Initialize <code>a</code> to a value of <code>9</code>');"
       ],
       "type": "waypoint",
-      "challengeType": "1",
-      "nameCn": "",
-      "nameFr": "",
-      "nameRu": "",
-      "nameEs": "",
-      "namePt": ""
+      "challengeType": 1
     },
     {
       "id": "56533eb9ac21ba0edf2244aa",
@@ -211,12 +201,7 @@
         "assert(/a = a \\+ 1;/.test(code) && /b = b \\+ 5;/.test(code) && /c = c \\+ \" String!\";/.test(code), 'message: Do not change code below the line');"
       ],
       "type": "waypoint",
-      "challengeType": "1",
-      "nameCn": "",
-      "nameFr": "",
-      "nameRu": "",
-      "nameEs": "",
-      "namePt": ""
+      "challengeType": 1
     },
     {
       "id": "56533eb9ac21ba0edf2244ab",
@@ -249,15 +234,13 @@
       "tests": [
         "assert(typeof studlyCapVar !== 'undefined' && studlyCapVar === 10, 'message: <code>studlyCapVar</code> is defined and has a value of <code>10</code>');",
         "assert(typeof properCamelCase !== 'undefined' && properCamelCase === \"A String\", 'message: <code>properCamelCase</code> is defined and has a value of <code>\"A String\"</code>');",
-        "assert(typeof titleCaseOver !== 'undefined' && titleCaseOver === 9000, 'message: <code>titleCaseOver</code> is defined and has a value of <code>9000</code>');"
+        "assert(typeof titleCaseOver !== 'undefined' && titleCaseOver === 9000, 'message: <code>titleCaseOver</code> is defined and has a value of <code>9000</code>');",
+        "assert(code.match(/studlyCapVar/g).length === 2, 'message: <code>studlyCapVar</code> should use camelCase in both declaration and assignment sections.');",
+        "assert(code.match(/properCamelCase/g).length === 2, 'message: <code>properCamelCase</code> should use camelCase in both declaration and assignment sections.');",
+        "assert(code.match(/titleCaseOver/g).length === 2, 'message: <code>titleCaseOver</code> should use camelCase in both declaration and assignment sections.');"
       ],
       "type": "waypoint",
-      "challengeType": "1",
-      "nameCn": "",
-      "nameFr": "",
-      "nameRu": "",
-      "nameEs": "",
-      "namePt": ""
+      "challengeType": 1
     },
     {
       "id": "cf1111c1c11feddfaeb3bdef",
@@ -288,7 +271,7 @@
         "assert(/\\+/.test(code), 'message: Use the <code>+</code> operator');"
       ],
       "type": "waypoint",
-      "challengeType": "1"
+      "challengeType": 1
     },
     {
       "id": "cf1111c1c11feddfaeb4bdef",
@@ -320,7 +303,7 @@
         "assert(/\\d+\\s*-\\s*\\d+/.test(code),'message: Use the <code>-</code> operator');"
       ],
       "type": "waypoint",
-      "challengeType": "1"
+      "challengeType": 1
     },
     {
       "id": "cf1231c1c11feddfaeb5bdef",
@@ -351,7 +334,7 @@
         "assert(/\\*/.test(code), 'message: Use the <code>*</code> operator');"
       ],
       "type": "waypoint",
-      "challengeType": "1"
+      "challengeType": 1
     },
     {
       "id": "cf1111c1c11feddfaeb6bdef",
@@ -382,7 +365,7 @@
         "assert(/\\d+\\s*\\/\\s*\\d+/.test(code), 'message: Use the <code>/</code> operator');"
       ],
       "type": "waypoint",
-      "challengeType": "1"
+      "challengeType": 1
     },
     {
       "id": "56533eb9ac21ba0edf2244ac",
@@ -416,12 +399,7 @@
         "assert(/var myVar = 87;/.test(code), 'message: Do not change code above the line');"
       ],
       "type": "waypoint",
-      "challengeType": "1",
-      "nameCn": "",
-      "nameFr": "",
-      "nameRu": "",
-      "nameEs": "",
-      "namePt": ""
+      "challengeType": 1
     },
     {
       "id": "56533eb9ac21ba0edf2244ad",
@@ -455,12 +433,7 @@
         "assert(/var myVar = 11;/.test(code), 'message: Do not change code above the line');"
       ],
       "type": "waypoint",
-      "challengeType": "1",
-      "nameCn": "",
-      "nameFr": "",
-      "nameRu": "",
-      "nameEs": "",
-      "namePt": ""
+      "challengeType": 1
     },
     {
       "id": "cf1391c1c11feddfaeb4bdef",
@@ -490,7 +463,7 @@
         "assert(myDecimal % 1 != 0, 'message: <code>myDecimal</code> should have a decimal point'); "
       ],
       "type": "waypoint",
-      "challengeType": "1"
+      "challengeType": 1
     },
     {
       "id": "bd7993c9c69feddfaeb7bdef",
@@ -517,7 +490,7 @@
         "assert(/\\*/.test(code), 'message: You should use the <code>*</code> operator');"
       ],
       "type": "waypoint",
-      "challengeType": "1"
+      "challengeType": 1
     },
     {
       "id": "bd7993c9ca9feddfaeb7bdef",
@@ -543,7 +516,7 @@
         "assert(/\\//.test(code), 'message: You should use the <code>/</code> operator');"
       ],
       "type": "waypoint",
-      "challengeType": "1"
+      "challengeType": 1
     },
     {
       "id": "56533eb9ac21ba0edf2244ae",
@@ -578,12 +551,7 @@
         "assert(/\\d+\\s*%\\s*\\d+/.test(code), 'message: You should use the <code>%</code> operator');"
       ],
       "type": "waypoint",
-      "challengeType": "1",
-      "nameCn": "",
-      "nameFr": "",
-      "nameRu": "",
-      "nameEs": "",
-      "namePt": ""
+      "challengeType": 1
     },
     {
       "id": "56533eb9ac21ba0edf2244af",
@@ -624,12 +592,7 @@
         "assert(/var a = 3;/.test(code) && /var b = 17;/.test(code) && /var c = 12;/.test(code), 'message: Do not modify the code above the line');"
       ],
       "type": "waypoint",
-      "challengeType": "1",
-      "nameCn": "",
-      "nameFr": "",
-      "nameRu": "",
-      "nameEs": "",
-      "namePt": ""
+      "challengeType": 1
     },
     {
       "id": "56533eb9ac21ba0edf2244b0",
@@ -670,12 +633,7 @@
         "assert(/var a = 11;/.test(code) && /var b = 9;/.test(code) && /var c = 3;/.test(code), 'message: Do not modify the code above the line');"
       ],
       "type": "waypoint",
-      "challengeType": "1",
-      "nameCn": "",
-      "nameFr": "",
-      "nameRu": "",
-      "nameEs": "",
-      "namePt": ""
+      "challengeType": 1
     },
     {
       "id": "56533eb9ac21ba0edf2244b1",
@@ -716,12 +674,7 @@
         "assert(/var a = 5;/.test(code) && /var b = 12;/.test(code) && /var c = 4\\.6;/.test(code), 'message: Do not modify the code above the line');"
       ],
       "type": "waypoint",
-      "challengeType": "1",
-      "nameCn": "",
-      "nameFr": "",
-      "nameRu": "",
-      "nameEs": "",
-      "namePt": ""
+      "challengeType": 1
     },
     {
       "id": "56533eb9ac21ba0edf2244b2",
@@ -761,12 +714,7 @@
         "assert(/var a = 48;/.test(code) && /var b = 108;/.test(code) && /var c = 33;/.test(code), 'message: Do not modify the code above the line');"
       ],
       "type": "waypoint",
-      "challengeType": "1",
-      "nameCn": "",
-      "nameFr": "",
-      "nameRu": "",
-      "nameEs": "",
-      "namePt": ""
+      "challengeType": 1
     },
     {
       "id": "56533eb9ac21ba0edf2244b3",
@@ -805,12 +753,7 @@
         "assert(convert(30) === 86, 'message: <code>convert(30)</code> should return a value of <code>86</code>');"
       ],
       "type": "checkpoint",
-      "challengeType": "1",
-      "nameCn": "",
-      "nameFr": "",
-      "nameRu": "",
-      "nameEs": "",
-      "namePt": ""
+      "challengeType": 1
     },
     {
       "id": "bd7123c9c444eddfaeb5bdef",
@@ -843,7 +786,7 @@
         "assert((function(){if(typeof(myLastName) !== \"undefined\" && typeof(myLastName) === \"string\" && myLastName.length > 0){return true;}else{return false;}})(), 'message: <code>myLastName</code> should be a string with at least one character in it.');"
       ],
       "type": "waypoint",
-      "challengeType": "1"
+      "challengeType": 1
     },
     {
       "id": "56533eb9ac21ba0edf2244b5",
@@ -879,12 +822,7 @@
         "assert(code.match(/\\\\\"/g).length === 4 && code.match(/[^\\\\]\"/g).length === 2, 'message: You should use two double quotes (<code>&quot;</code>) and four escaped double quotes (<code>&#92;&quot;</code>) ');"
       ],
       "type": "waypoint",
-      "challengeType": "1",
-      "nameCn": "",
-      "nameFr": "",
-      "nameRu": "",
-      "nameEs": "",
-      "namePt": ""
+      "challengeType": 1
     },
     {
       "id": "56533eb9ac21ba0edf2244b4",
@@ -915,12 +853,7 @@
         "assert(myStr === '<a href=\"http://www.example.com\" target=\"_blank\">Link</a>', 'message: Only remove the backslashes <code>\\</code> used to escape quotes.');"
       ],
       "type": "waypoint",
-      "challengeType": "1",
-      "nameCn": "",
-      "nameFr": "",
-      "nameRu": "",
-      "nameEs": "",
-      "namePt": ""
+      "challengeType": 1
     },
     {
       "id": "56533eb9ac21ba0edf2244b6",
@@ -945,12 +878,7 @@
         "assert(myStr === \"\\\\ \\t \\t \\r \\n\", 'message: <code>myStr</code> should have the escape sequences for <code>backslash tab tab carriage-return new-line</code> separated by spaces');"
       ],
       "type": "waypoint",
-      "challengeType": "1",
-      "nameCn": "",
-      "nameFr": "",
-      "nameRu": "",
-      "nameEs": "",
-      "namePt": ""
+      "challengeType": 1
     },
     {
       "id": "56533eb9ac21ba0edf2244b7",
@@ -991,12 +919,7 @@
         "assert(/var\\s+myStr\\s*=\\s*([\"'])This is the start\\. \\1\\s*\\+\\s*([\"'])This is the end\\.([\"'])/.test(code), 'message: Use the <code>+</code> operator to build <code>myStr</code>');"
       ],
       "type": "waypoint",
-      "challengeType": "1",
-      "nameCn": "",
-      "nameFr": "",
-      "nameRu": "",
-      "nameEs": "",
-      "namePt": ""
+      "challengeType": 1
     },
     {
       "id": "56533eb9ac21ba0edf2244b8",
@@ -1036,12 +959,7 @@
         "assert(code.match(/\\w\\s*\\+=\\s*[\"']/g).length > 1 && code.match(/\\w\\s*\\=\\s*[\"']/g).length > 1, 'message: Use the <code>+=</code> operator to build <code>myStr</code>');"
       ],
       "type": "waypoint",
-      "challengeType": "1",
-      "nameCn": "",
-      "nameFr": "",
-      "nameRu": "",
-      "nameEs": "",
-      "namePt": ""
+      "challengeType": 1
     },
     {
       "id": "56533eb9ac21ba0edf2244b9",
@@ -1087,12 +1005,7 @@
         "assert(code.match(/[\"']\\s*\\+\\s*myName\\s*\\+\\s*[\"']/g).length > 0, 'message: Use two <code>+</code> operators to build <code>myStr</code> with <code>myName<code> inside it');"
       ],
       "type": "waypoint",
-      "challengeType": "1",
-      "nameCn": "",
-      "nameFr": "",
-      "nameRu": "",
-      "nameEs": "",
-      "namePt": ""
+      "challengeType": 1
     },
     {
       "id": "56533eb9ac21ba0edf2244ed",
@@ -1139,12 +1052,7 @@
         "assert(code.match(/\\w\\s*\\+=\\s*someAdjective\\s*;/).length > 0, 'message: Append <code>someAdjective</code> to <code>myStr</code> using the <code>+=</code> operator');"
       ],
       "type": "waypoint",
-      "challengeType": "1",
-      "nameCn": "",
-      "nameFr": "",
-      "nameRu": "",
-      "nameEs": "",
-      "namePt": ""
+      "challengeType": 1
     },
     {
       "id": "bd7123c9c448eddfaeb5bdef",
@@ -1184,7 +1092,7 @@
         "assert((function(){if(code.match(/\\.length/gi) && code.match(/\\.length/gi).length >= 2 && code.match(/var lastNameLength \\= 0;/gi) && code.match(/var lastNameLength \\= 0;/gi).length >= 1){return true;}else{return false;}})(), 'message: You should be getting the length of <code>lastName</code> by using <code>.length</code> like this: <code>lastName.length</code>.');"
       ],
       "type": "waypoint",
-      "challengeType": "1"
+      "challengeType": 1
     },
     {
       "id": "bd7123c9c549eddfaeb5bdef",
@@ -1223,7 +1131,7 @@
         "assert((function(){if(typeof(firstLetterOfLastName) !== \"undefined\" && code.match(/\\[0\\]/gi) && typeof(firstLetterOfLastName) === \"string\" && firstLetterOfLastName === \"L\"){return true;}else{return false;}})(), 'message: The <code>firstLetterOfLastName</code> variable should have the value of <code>L</code>.');"
       ],
       "type": "waypoint",
-      "challengeType": "1"
+      "challengeType": 1
     },
     {
       "id": "56533eb9ac21ba0edf2244ba",
@@ -1259,12 +1167,7 @@
         "assert(/myStr = \"Jello World\"/.test(code), 'message: Do not change the code above the line');"
       ],
       "type": "waypoint",
-      "challengeType": "1",
-      "nameCn": "",
-      "nameFr": "",
-      "nameRu": "",
-      "nameEs": "",
-      "namePt": ""
+      "challengeType": 1
     },
     {
       "id": "bd7123c9c450eddfaeb5bdef",
@@ -1300,7 +1203,7 @@
         "assert(thirdLetterOfLastName === 'v', 'message: The <code>thirdLetterOfLastName</code> variable should have the value of <code>v</code>.');"
       ],
       "type": "waypoint",
-      "challengeType": "1"
+      "challengeType": 1
     },
     {
       "id": "bd7123c9c451eddfaeb5bdef",
@@ -1337,7 +1240,7 @@
         "assert(code.match(/\\.length/g).length === 2, 'message: You have to use <code>.length</code> to get the last letter.');"
       ],
       "type": "waypoint",
-      "challengeType": "1"
+      "challengeType": 1
     },
     {
       "id": "bd7123c9c452eddfaeb5bdef",
@@ -1374,7 +1277,7 @@
         "assert(code.match(/\\.length/g).length === 2, 'message: You have to use <code>.length</code> to get the second last letter.');"
       ],
       "type": "waypoint",
-      "challengeType": "1"
+      "challengeType": 1
     },
     {
       "id": "56533eb9ac21ba0edf2244bb",
@@ -1412,12 +1315,7 @@
         "assert(/\\bcat\\b/.test(test2) && /\\blittle\\b/.test(test2) && /\\bhit\\b/.test(test2) && /\\bslowly\\b/.test(test2),'message: <code>wordBlanks(\"cat\", \"little\", \"hit\", \"slowly\")</code> should contain all of the passed words separated by non-word characters (and any additional words in your madlib).');"
       ],
       "type": "checkpoint",
-      "challengeType": "1",
-      "nameCn": "",
-      "nameFr": "",
-      "nameRu": "",
-      "nameEs": "",
-      "namePt": ""
+      "challengeType": 1
     },
     {
       "id": "bd7993c9c69feddfaeb8bdef",
@@ -1450,7 +1348,7 @@
         "assert(typeof(myArray[1]) !== 'undefined' && typeof(myArray[1]) == 'number', 'message: The second item in <code>myArray</code> should be a <code>number</code>.');"
       ],
       "type": "waypoint",
-      "challengeType": "1"
+      "challengeType": 1
     },
     {
       "id": "cf1111c1c11feddfaeb7bdef",
@@ -1478,7 +1376,7 @@
         "assert(Array.isArray(myArray) && myArray.some(Array.isArray), 'message: <code>myArray</code> should have at least one array nested within another array.');"
       ],
       "type": "waypoint",
-      "challengeType": "1"
+      "challengeType": 1
     },
     {
       "id": "bg9997c9c79feddfaeb9bdef",
@@ -1512,7 +1410,7 @@
         "assert((function(){if(typeof(myArray) != 'undefined' && typeof(myData) != 'undefined' && myArray[0] == myData){return true;}else{return false;}})(), 'message: The variable <code>myData</code> should equal the first value of <code>myArray</code>.');"
       ],
       "type": "waypoint",
-      "challengeType": "1"
+      "challengeType": 1
     },
     {
       "id": "cf1111c1c11feddfaeb8bdef",
@@ -1547,7 +1445,7 @@
         "assert((function(){if(code.match(/myArray\\[0\\]\\s?=\\s?/g)){return true;}else{return false;}})(), 'message: You should be using correct index to modify the value in <code>myArray</code>.');"
       ],
       "type": "waypoint",
-      "challengeType": "1"
+      "challengeType": 1
     },
     {
       "id": "56592a60ddddeae28f7aa8e1",
@@ -1579,7 +1477,7 @@
         "assert(/myArray\\[2\\]\\[1\\]/g.test(code), 'message: You should be using bracket notation to read the value from <code>myArray</code>.');"
       ],
       "type": "waypoint",
-      "challengeType": "1"
+      "challengeType": 1
     },
     {
       "id": "bg9995c9c69feddfaeb9bdef",
@@ -1616,7 +1514,7 @@
         "assert((function(d){if(d[2] != undefined && d[0][0] == 'John' && d[0][1] == 23 && d[2][0] == 'dog' && d[2][1] == 3 && d[2].length == 2){return true;}else{return false;}})(myArray), 'message: <code>myArray</code> should now equal <code>[[\"John\", 23], [\"cat\", 2], [\"dog\", 3]]</code>.');"
       ],
       "type": "waypoint",
-      "challengeType": "1"
+      "challengeType": 1
     },
     {
       "id": "bg9994c9c69feddfaeb9bdef",
@@ -1654,7 +1552,7 @@
         "assert((function(d){if(d[0] == 'cat' && d[1] == 2 && d[2] == undefined){return true;}else{return false;}})(removedFromMyArray), 'message: <code>removedFromMyArray</code> should only contain <code>[\"cat\", 2]</code>.');"
       ],
       "type": "waypoint",
-      "challengeType": "1"
+      "challengeType": 1
     },
     {
       "id": "bg9996c9c69feddfaeb9bdef",
@@ -1690,7 +1588,7 @@
         "assert((function(d){if(d[0] === 'John' && d[1] === 23 && typeof(removedFromMyArray) === 'object'){return true;}else{return false;}})(removedFromMyArray), 'message: <code>removedFromMyArray</code> should contain <code>[\"John\", 23]</code>.');"
       ],
       "type": "waypoint",
-      "challengeType": "1"
+      "challengeType": 1
     },
     {
       "id": "bg9997c9c69feddfaeb9bdef",
@@ -1726,7 +1624,7 @@
         "assert((function(d){if(typeof(d[0]) === \"object\" && d[0][0].toLowerCase() == 'paul' && d[0][1] == 35 && d[1][0] != undefined && d[1][0] == 'dog' && d[1][1] != undefined && d[1][1] == 3){return true;}else{return false;}})(myArray), 'message: <code>myArray</code> should now have [[\"Paul\", 35], [\"dog\", 3]]).');"
       ],
       "type": "waypoint",
-      "challengeType": "1"
+      "challengeType": 1
     },
     {
       "id": "56533eb9ac21ba0edf2244bc",
@@ -1781,12 +1679,7 @@
         "assert(count > 4, 'message: You must have at least 5 items in your list');"
       ],
       "type": "checkpoint",
-      "challengeType": "1",
-      "nameCn": "",
-      "nameFr": "",
-      "nameRu": "",
-      "nameEs": "",
-      "namePt": ""
+      "challengeType": 1
     },
     {
       "id": "bg9997c9c89feddfaeb9bdef",
@@ -1845,7 +1738,7 @@
         "assert(/^\\s*myFunction\\(\\)\\s*;/m.test(code), 'message: Call <code>myFunction</code> after you define it');"
       ],
       "type": "waypoint",
-      "challengeType": "1"
+      "challengeType": 1
     },
     {
       "id": "56533eb9ac21ba0edf2244bd",
@@ -1907,12 +1800,7 @@
         "assert(/^\\s*myFunction\\s*\\([\\w\\W]+\\)\\s*;/m.test(code), 'message: Call <code>myFunction</code> after you define it.');"
       ],
       "type": "waypoint",
-      "challengeType": "1",
-      "nameCn": "",
-      "nameFr": "",
-      "nameRu": "",
-      "nameEs": "",
-      "namePt": ""
+      "challengeType": 1
     },
     {
       "id": "56533eb9ac21ba0edf2244be",
@@ -1979,12 +1867,7 @@
         "assert(!/var\\s+oopsGlobal/.test(code), 'message: Do not declare <code>oopsGlobal</code> using the <code>var</code> keyword');"
       ],
       "type": "waypoint",
-      "challengeType": "1",
-      "nameCn": "",
-      "nameFr": "",
-      "nameRu": "",
-      "nameEs": "",
-      "namePt": ""
+      "challengeType": 1
     },
     {
       "id": "56533eb9ac21ba0edf2244bf",
@@ -2041,12 +1924,7 @@
         "assert(/var\\s+myVar/.test(code), 'message: Add a local <code>myVar</code> variable');"
       ],
       "type": "waypoint",
-      "challengeType": "1",
-      "nameCn": "",
-      "nameFr": "",
-      "nameRu": "",
-      "nameEs": "",
-      "namePt": ""
+      "challengeType": 1
     },
     {
       "id": "56533eb9ac21ba0edf2244c0",
@@ -2084,12 +1962,7 @@
         "assert(/return outerWear/.test(code), 'message: Do not change the return statement');"
       ],
       "type": "waypoint",
-      "challengeType": "1",
-      "nameCn": "",
-      "nameFr": "",
-      "nameRu": "",
-      "nameEs": "",
-      "namePt": ""
+      "challengeType": 1
     },
     {
       "id": "56533eb9ac21ba0edf2244c2",
@@ -2126,12 +1999,7 @@
         "assert(timesFive(0) === 0, 'message: <code>timesFive(0)</code> should return <code>0</code>');"
       ],
       "type": "waypoint",
-      "challengeType": "1",
-      "nameCn": "",
-      "nameFr": "",
-      "nameRu": "",
-      "nameEs": "",
-      "namePt": ""
+      "challengeType": 1
     },
     {
       "id": "56533eb9ac21ba0edf2244c3",
@@ -2168,12 +2036,7 @@
         "assert(/processed\\s*=\\s*process\\(\\s*7\\s*\\)\\s*;/.test(code), 'message: You should assign <code>process</code> to <code>processed</code>');"
       ],
       "type": "waypoint",
-      "challengeType": "1",
-      "nameCn": "",
-      "nameFr": "",
-      "nameRu": "",
-      "nameEs": "",
-      "namePt": ""
+      "challengeType": 1
     },
     {
       "id": "56533eb9ac21ba0edf2244c6",
@@ -2228,12 +2091,7 @@
         "queue(myArr, 10); assert(myArr[4] === 10, 'message: After <code>queue(myArr, 10)</code>, <code>myArr[4]</code> should be <code>10</code>');"
       ],
       "type": "checkpoint",
-      "challengeType": "1",
-      "nameCn": "",
-      "nameFr": "",
-      "nameRu": "",
-      "nameEs": "",
-      "namePt": ""
+      "challengeType": 1
     },
     {
       "id": "cf1111c1c12feddfaeb3bdef",
@@ -2282,7 +2140,7 @@
         "assert(myFunction(6) === \"Yes\", 'message: <code>myFunction(6)</code> should \"Yes\"');"
       ],
       "type": "waypoint",
-      "challengeType": "1"
+      "challengeType": 1
     },
     {
       "id": "56533eb9ac21ba0edf2244d0",
@@ -2320,12 +2178,7 @@
         "assert(code.match(/val\\s*==\\s*\\d+/g).length > 0, 'message: You should use the <code>==</code> operator');"
       ],
       "type": "waypoint",
-      "challengeType": "1",
-      "nameCn": "",
-      "nameFr": "",
-      "nameRu": "",
-      "nameEs": "",
-      "namePt": ""
+      "challengeType": 1
     },
     {
       "id": "56533eb9ac21ba0edf2244d1",
@@ -2361,12 +2214,7 @@
         "assert(code.match(/val\\s*===\\s*\\d+/g).length > 0, 'message: You should use the <code>===</code> operator');"
       ],
       "type": "waypoint",
-      "challengeType": "1",
-      "nameCn": "",
-      "nameFr": "",
-      "nameRu": "",
-      "nameEs": "",
-      "namePt": ""
+      "challengeType": 1
     },
     {
       "id": "56533eb9ac21ba0edf2244d2",
@@ -2403,12 +2251,7 @@
         "assert(code.match(/val\\s*!=\\s*\\d+/g).length > 0, 'message: You should use the <code>!=</code> operator');"
       ],
       "type": "waypoint",
-      "challengeType": "1",
-      "nameCn": "",
-      "nameFr": "",
-      "nameRu": "",
-      "nameEs": "",
-      "namePt": ""
+      "challengeType": 1
     },
     {
       "id": "56533eb9ac21ba0edf2244d3",
@@ -2449,12 +2292,7 @@
         "assert(code.match(/val\\s*!==\\s*\\d+/g).length > 0, 'message: You should use the <code>!==</code> operator');"
       ],
       "type": "waypoint",
-      "challengeType": "1",
-      "nameCn": "",
-      "nameFr": "",
-      "nameRu": "",
-      "nameEs": "",
-      "namePt": ""
+      "challengeType": 1
     },
     {
       "id": "56533eb9ac21ba0edf2244d4",
@@ -2497,12 +2335,7 @@
         "assert(code.match(/val\\s*>\\s*\\d+/g).length > 1, 'message: You should use the <code>&gt;</code> operator at least twice');"
       ],
       "type": "waypoint",
-      "challengeType": "1",
-      "nameCn": "",
-      "nameFr": "",
-      "nameRu": "",
-      "nameEs": "",
-      "namePt": ""
+      "challengeType": 1
     },
     {
       "id": "56533eb9ac21ba0edf2244d5",
@@ -2545,12 +2378,7 @@
         "assert(code.match(/val\\s*>=\\s*\\d+/g).length > 1, 'message: You should use the <code>&gt;=</code> operator at least twice');"
       ],
       "type": "waypoint",
-      "challengeType": "1",
-      "nameCn": "",
-      "nameFr": "",
-      "nameRu": "",
-      "nameEs": "",
-      "namePt": ""
+      "challengeType": 1
     },
     {
       "id": "56533eb9ac21ba0edf2244d6",
@@ -2592,12 +2420,7 @@
         "assert(code.match(/val\\s*<\\s*\\d+/g).length > 1, 'message: You should use the <code>&lt;</code> operator at least twice');"
       ],
       "type": "waypoint",
-      "challengeType": "1",
-      "nameCn": "",
-      "nameFr": "",
-      "nameRu": "",
-      "nameEs": "",
-      "namePt": ""
+      "challengeType": 1
     },
     {
       "id": "56533eb9ac21ba0edf2244d7",
@@ -2641,12 +2464,7 @@
         "assert(code.match(/val\\s*<=\\s*\\d+/g).length > 1, 'message: You should use the <code>&lt;=</code> operator at least twice');"
       ],
       "type": "waypoint",
-      "challengeType": "1",
-      "nameCn": "",
-      "nameFr": "",
-      "nameRu": "",
-      "nameEs": "",
-      "namePt": ""
+      "challengeType": 1
     },
     {
       "id": "56533eb9ac21ba0edf2244d8",
@@ -2694,12 +2512,7 @@
         "assert(myTest(51) === \"No\", 'message: <code>myTest(51)</code> should return \"No\"');"
       ],
       "type": "waypoint",
-      "challengeType": "1",
-      "nameCn": "",
-      "nameFr": "",
-      "nameRu": "",
-      "nameEs": "",
-      "namePt": ""
+      "challengeType": 1
     },
     {
       "id": "56533eb9ac21ba0edf2244d9",
@@ -2749,12 +2562,7 @@
         "assert(myTest(25) === \"Outside\", 'message: <code>myTest(25)</code> should return \"Outside\"');"
       ],
       "type": "waypoint",
-      "challengeType": "1",
-      "nameCn": "",
-      "nameFr": "",
-      "nameRu": "",
-      "nameEs": "",
-      "namePt": ""
+      "challengeType": 1
     },
     {
       "id": "56533eb9ac21ba0edf2244da",
@@ -2800,12 +2608,7 @@
         "assert(/var result = \"\";/.test(code) && /return result;/.test(code), 'message: Do not change the code above or below the lines.');"
       ],
       "type": "waypoint",
-      "challengeType": "1",
-      "nameCn": "",
-      "nameFr": "",
-      "nameRu": "",
-      "nameEs": "",
-      "namePt": ""
+      "challengeType": 1
     },
     {
       "id": "56533eb9ac21ba0edf2244db",
@@ -2847,12 +2650,7 @@
         "assert(myTest(12) === \"Greater than 10\", 'message: <code>myTest(12)</code> should return \"Greater than 10\"');"
       ],
       "type": "waypoint",
-      "challengeType": "1",
-      "nameCn": "",
-      "nameFr": "",
-      "nameRu": "",
-      "nameEs": "",
-      "namePt": ""
+      "challengeType": 1
     },
     {
       "id": "56533eb9ac21ba0edf2244dc",
@@ -2896,12 +2694,7 @@
         "assert(myTest(25) === \"Huge\", 'message: <code>myTest(25)</code> should return \"Huge\"');"
       ],
       "type": "waypoint",
-      "challengeType": "1",
-      "nameCn": "",
-      "nameFr": "",
-      "nameRu": "",
-      "nameEs": "",
-      "namePt": ""
+      "challengeType": 1
     },
     {
       "id": "5664820f61c48e80c9fa476c",
@@ -2942,12 +2735,7 @@
         "assert(golfScore(5, 9) === \"Go Home!\", 'message: <code>golfScore(5, 9)</code> should return \"Go Home!\"');"
       ],
       "type": "checkpoint",
-      "challengeType": "1",
-      "nameCn": "",
-      "nameFr": "",
-      "nameRu": "",
-      "nameEs": "",
-      "namePt": ""
+      "challengeType": 1
     },
     {
       "id": "56533eb9ac21ba0edf2244dd",
@@ -2988,12 +2776,7 @@
         "assert(code.match(/break/g).length > 2, 'message: You should have at least 3 <code>break</code> statements');"
       ],
       "type": "waypoint",
-      "challengeType": "1",
-      "nameCn": "",
-      "nameFr": "",
-      "nameRu": "",
-      "nameEs": "",
-      "namePt": ""
+      "challengeType": 1
     },
     {
       "id": "56533eb9ac21ba0edf2244de",
@@ -3034,12 +2817,7 @@
         "assert(code.match(/break/g).length > 2, 'message: You should have at least 3 <code>break</code> statements');"
       ],
       "type": "waypoint",
-      "challengeType": "1",
-      "nameCn": "",
-      "nameFr": "",
-      "nameRu": "",
-      "nameEs": "",
-      "namePt": ""
+      "challengeType": 1
     },
     {
       "id": "56533eb9ac21ba0edf2244df",
@@ -3086,12 +2864,7 @@
         "assert(code.match(/case/g).length === 9, 'message: You should have nine <code>case</code> statements');"
       ],
       "type": "waypoint",
-      "challengeType": "1",
-      "nameCn": "",
-      "nameFr": "",
-      "nameRu": "",
-      "nameEs": "",
-      "namePt": ""
+      "challengeType": 1
     },
     {
       "id": "56533eb9ac21ba0edf2244e0",
@@ -3146,12 +2919,7 @@
         "assert(myTest(156) === \"\", 'message: <code>myTest(156)</code> should be \"\" (empty string)');"
       ],
       "type": "waypoint",
-      "challengeType": "1",
-      "nameCn": "",
-      "nameFr": "",
-      "nameRu": "",
-      "nameEs": "",
-      "namePt": ""
+      "challengeType": 1
     },
     {
       "id": "5679ceb97cbaa8c51670a16b",
@@ -3191,12 +2959,7 @@
         "assert(!/if|else/g.test(code), 'message: You should not use any <code>if</code> or <code>else</code> statements');"
       ],
       "type": "waypoint",
-      "challengeType": "1",
-      "nameCn": "",
-      "nameFr": "",
-      "nameRu": "",
-      "nameEs": "",
-      "namePt": ""
+      "challengeType": 1
     },
     {
       "id": "56533eb9ac21ba0edf2244c4",
@@ -3240,12 +3003,7 @@
         "assert(abTest(3,3) === 12 , 'message: <code>abTest(3,3)</code> should return <code>12</code>');"
       ],
       "type": "waypoint",
-      "challengeType": "1",
-      "nameCn": "",
-      "nameFr": "",
-      "nameRu": "",
-      "nameEs": "",
-      "namePt": ""
+      "challengeType": 1
     },
     {
       "id": "565bbe00e9cc8ac0725390f4",
@@ -3284,12 +3042,7 @@
         "assert((function(){ count = 0; cc(3);cc(2);cc('A');cc(10);var out = cc('K'); if(out === \"-1 Hold\") {return true;} return false; })(), 'message: Cards Sequence 3, 2, A, 10, K should return <code>\"-1 Hold\"</code>');"
       ],
       "type": "checkpoint",
-      "challengeType": "1",
-      "nameCn": "",
-      "nameFr": "",
-      "nameRu": "",
-      "nameEs": "",
-      "namePt": ""
+      "challengeType": 1
     },
     {
       "id": "bg9998c9c99feddfaeb9bdef",
@@ -3336,7 +3089,7 @@
         "assert((function(z){return Object.keys(z).length === 4;})(myDog), 'message: <code>myDog</code> should only contain all the given properties.');"
       ],
       "type": "waypoint",
-      "challengeType": "1"
+      "challengeType": 1
     },
     {
       "id": "56533eb9ac21ba0edf2244c7",
@@ -3377,12 +3130,7 @@
         "assert(code.match(/testObj\\.\\w+/g).length > 1, 'message: You should use dot notation twice');"
       ],
       "type": "waypoint",
-      "challengeType": "1",
-      "nameCn": "",
-      "nameFr": "",
-      "nameRu": "",
-      "nameEs": "",
-      "namePt": ""
+      "challengeType": 1
     },
     {
       "id": "56533eb9ac21ba0edf2244c8",
@@ -3423,12 +3171,7 @@
         "assert(code.match(/testObj\\s*?\\[('|\")[^'\"]+\\1\\]/g).length > 1, 'message: You should use bracket notation twice');"
       ],
       "type": "waypoint",
-      "challengeType": "1",
-      "nameCn": "",
-      "nameFr": "",
-      "nameRu": "",
-      "nameEs": "",
-      "namePt": ""
+      "challengeType": 1
     },
     {
       "id": "56533eb9ac21ba0edf2244c9",
@@ -3468,12 +3211,7 @@
         "assert(/testObj\\s*?\\[\\s*playerNumber\\s*\\]/.test(code),'message: You should use bracket notation to access <code>testObj</code>');"
       ],
       "type": "waypoint",
-      "challengeType": "1",
-      "nameCn": "",
-      "nameFr": "",
-      "nameRu": "",
-      "nameEs": "",
-      "namePt": ""
+      "challengeType": 1
     },
     {
       "id": "bg9999c9c99feddfaeb9bdef",
@@ -3523,7 +3261,7 @@
         "assert(/\"name\": \"Coder\"/.test(code), 'message: Do not edit the <code>myDog</code> definition');"
       ],
       "type": "waypoint",
-      "challengeType": "1"
+      "challengeType": 1
     },
     {
       "id": "bg9999c9c99feedfaeb9bdef",
@@ -3571,7 +3309,7 @@
         "assert(!/bark[^\\n]:/.test(code), 'message: Do not add <code>\"bark\"</code> to the setup section');"
       ],
       "type": "waypoint",
-      "challengeType": "1"
+      "challengeType": 1
     },
     {
       "id": "bg9999c9c99fdddfaeb9bdef",
@@ -3618,7 +3356,7 @@
         "assert(code.match(/\"tails\": 1/g).length > 1, 'message: Do not modify the <code>myDog</code> setup');"
       ],
       "type": "waypoint",
-      "challengeType": "1"
+      "challengeType": 1
     },
     {
       "id": "56533eb9ac21ba0edf2244ca",
@@ -3678,12 +3416,7 @@
         "assert(!/case|switch|if/g.test(code), 'message: You should not use <code>case</code>, <code>switch</code>, or <code>if</code> statements'); "
       ],
       "type": "waypoint",
-      "challengeType": "1",
-      "nameCn": "",
-      "nameFr": "",
-      "nameRu": "",
-      "nameEs": "",
-      "namePt": ""
+      "challengeType": 1
     },
     {
       "id": "567af2437cbaa8c51670a16c",
@@ -3725,7 +3458,7 @@
         "assert(checkObj(\"house\") === \"Not Found\", 'message: <code>checkObj(\"house\")</code> should return  <code>\"Not Found\"</code>.');"
       ],
       "type": "waypoint",
-      "challengeType": "1"
+      "challengeType": 1
     },
     {
       "id": "56533eb9ac21ba0edf2244cb",
@@ -3773,12 +3506,7 @@
         "assert(myMusic[1].formats.every(function(item) { return (typeof item === \"string\")}) && myMusic[1].formats.length > 1, 'message: <code>formats</code> should be an array of strings with at least two elements');"
       ],
       "type": "waypoint",
-      "challengeType": "1",
-      "nameCn": "",
-      "nameFr": "",
-      "nameRu": "",
-      "nameEs": "",
-      "namePt": ""
+      "challengeType": 1
     },
     {
       "id": "56533eb9ac21ba0edf2244cc",
@@ -3826,12 +3554,7 @@
         "assert(/=\\s*myStorage\\.car\\.inside\\[(\"|')glove box\\1\\]/g.test(code), 'message: Use dot and bracket notation to access <code>myStorage</code>');"
       ],
       "type": "waypoint",
-      "challengeType": "1",
-      "nameCn": "",
-      "nameFr": "",
-      "nameRu": "",
-      "nameEs": "",
-      "namePt": ""
+      "challengeType": 1
     },
     {
       "id": "56533eb9ac21ba0edf2244cd",
@@ -3886,12 +3609,7 @@
         "assert(/=\\s*myPlants\\[1\\].list\\[1\\]/.test(code), 'message: Use dot and bracket notation to access <code>myPlants</code>');"
       ],
       "type": "waypoint",
-      "challengeType": "1",
-      "nameCn": "",
-      "nameFr": "",
-      "nameRu": "",
-      "nameEs": "",
-      "namePt": ""
+      "challengeType": 1
     },
     {
       "id": "56533eb9ac21ba0edf2244cf",
@@ -3960,12 +3678,7 @@
         "update(2548, \"tracks\", \"\"); assert(!collection[2548].hasOwnProperty(\"tracks\"), 'message: After <code>update(2548, \"tracks\", \"\")</code>, <code>tracks</code> should not be set');"
       ],
       "type": "checkpoint",
-      "challengeType": "1",
-      "nameCn": "",
-      "nameFr": "",
-      "nameRu": "",
-      "nameEs": "",
-      "namePt": ""
+      "challengeType": 1
     },
     {
       "id": "cf1111c1c11feddfaeb5bdef",
@@ -4010,7 +3723,7 @@
         "assert.deepEqual(myArray, [1,2,3,4,5], 'message: <code>myArray</code> should equal <code>[1,2,3,4,5]</code>.');"
       ],
       "type": "waypoint",
-      "challengeType": "1"
+      "challengeType": 1
     },
     {
       "id": "56104e9e514f539506016a5c",
@@ -4050,7 +3763,7 @@
         "assert.deepEqual(myArray, [1,3,5,7,9], 'message: <code>myArray</code> should equal <code>[1,3,5,7,9]</code>.');"
       ],
       "type": "waypoint",
-      "challengeType": "1"
+      "challengeType": 1
     },
     {
       "id": "56105e7b514f539506016a5e",
@@ -4090,7 +3803,7 @@
         "assert.deepEqual(myArray, [9,7,5,3,1], 'message: <code>myArray</code> should equal <code>[9,7,5,3,1]</code>.');"
       ],
       "type": "waypoint",
-      "challengeType": "1"
+      "challengeType": 1
     },
     {
       "id": "5675e877dbd60be8ad28edc6",
@@ -4131,12 +3844,7 @@
         "assert(!/20/.test(code), 'message: Do not set <code>total</code> to 20 directly');"
       ],
       "type": "waypoint",
-      "challengeType": "1",
-      "nameCn": "",
-      "nameFr": "",
-      "nameRu": "",
-      "nameEs": "",
-      "namePt": ""
+      "challengeType": 1
     },
     {
       "id": "56533eb9ac21ba0edf2244e1",
@@ -4174,12 +3882,7 @@
         "assert(multiplyAll([[5,1],[0.2, 4, 0.5],[3, 9]]) === 54, 'message: <code>multiplyAll([[5,1],[0.2, 4, 0.5],[3, 9]]);)</code> should return <code>54</code>');"
       ],
       "type": "waypoint",
-      "challengeType": "1",
-      "nameCn": "",
-      "nameFr": "",
-      "nameRu": "",
-      "nameEs": "",
-      "namePt": ""
+      "challengeType": 1
     },
     {
       "id": "cf1111c1c11feddfaeb1bdef",
@@ -4211,7 +3914,7 @@
         "assert.deepEqual(myArray, [0,1,2,3,4], 'message: <code>myArray</code> should equal <code>[0,1,2,3,4]</code>.');"
       ],
       "type": "waypoint",
-      "challengeType": "1"
+      "challengeType": 1
     },
     {
       "id": "cf1111c1c11feddfaeb9bdef",
@@ -4246,7 +3949,7 @@
         "assert(code.match(/Math\\.random/g).length >= 0, 'message: You should be using <code>Math.random</code> to generate the random decimal number.');"
       ],
       "type": "waypoint",
-      "challengeType": "1"
+      "challengeType": 1
     },
     {
       "id": "cf1111c1c12feddfaeb1bdef",
@@ -4282,7 +3985,7 @@
         "assert(code.match(/Math.floor/g).length > 1, 'message: You should use <code>Math.floor</code> to remove the decimal part of the number.');"
       ],
       "type": "waypoint",
-      "challengeType": "1"
+      "challengeType": 1
     },
     {
       "id": "cf1111c1c12feddfaeb2bdef",
@@ -4341,7 +4044,7 @@
         "assert((function(){if(code.match(/myMax/g).length > 1 && code.match(/myMin/g).length > 2 && code.match(/Math.floor/g) && code.match(/Math.random/g)){return true;}else{return false;}})(), 'message: <code>myFunction()</code> should use use both <code>myMax</code> and <code>myMin</code>, and return a random number in your range.');"
       ],
       "type": "waypoint",
-      "challengeType": "1"
+      "challengeType": 1
     },
     {
       "id": "cf1111c1c12feddfaeb6bdef",
@@ -4392,7 +4095,7 @@
         "assert(code.match(/\\/and\\/gi/), 'message: Use <code>regular expressions</code> to find the word <code>and</code> in <code>testString</code>.');"
       ],
       "type": "waypoint",
-      "challengeType": "1"
+      "challengeType": 1
     },
     {
       "id": "cf1111c1c12feddfaeb7bdef",
@@ -4432,7 +4135,7 @@
         "assert(code.match(/\\/\\\\d\\+\\//g), 'message: Use the <code>/\\d+/g</code> regular expression to find the numbers in <code>testString</code>.');"
       ],
       "type": "waypoint",
-      "challengeType": "1"
+      "challengeType": 1
     },
     {
       "id": "cf1111c1c12feddfaeb8bdef",
@@ -4472,7 +4175,7 @@
         "assert(code.match(/\\/\\\\s\\+\\//g), 'message: Use the <code>/\\s+/g</code> regular expression to find the spaces in <code>testString</code>.');"
       ],
       "type": "waypoint",
-      "challengeType": "1"
+      "challengeType": 1
     },
     {
       "id": "cf1111c1c13feddfaeb3bdef",
@@ -4510,7 +4213,7 @@
         "assert(code.match(/\\/\\\\S\\/g/g), 'message: Use the <code>/\\S/g</code> regular expression to find non-space characters in <code>testString</code>.');"
       ],
       "type": "waypoint",
-      "challengeType": "1"
+      "challengeType": 1
     },
     {
       "id": "cf1111c1c12feddfaeb9bdef",
@@ -4667,7 +4370,7 @@
         "assert((function(){if(editor.match(/Math\\.floor\\(\\s?Math\\.random\\(\\)\\s?\\*\\s?\\(\\s?3\\s?\\-\\s?1\\s?\\+\\s?1\\s?\\)\\s?\\)\\s?\\+\\s?1/gi) !== null){return editor.match(/slot.*?=.*?\\(.*?\\).*?/gi).length >= 3;}else{return false;}})(), 'You should have used <code>Math.floor(Math.random() * (3 - 1 + 1)) + 1;</code> three times to generate your random numbers.')"
       ],
       "type": "waypoint",
-      "challengeType": "0",
+      "challengeType": 0,
       "isBeta": "true"
     },
     {
@@ -4830,7 +4533,7 @@
         "assert((function(){var data = runSlots();return data === null || data.toString().length === 1;})(), 'If all three of our random numbers are the same we should return that number. Otherwise we should return <code>null</code>.')"
       ],
       "type": "waypoint",
-      "challengeType": "0",
+      "challengeType": 0,
       "isBeta": "true"
     },
     {
@@ -4999,7 +4702,7 @@
         "assert((editor.match( /\\$\\s*?\\(\\s*?\\$\\s*?\\(\\s*?(?:'|\")\\s*?\\.slot\\s*?(?:'|\")\\s*?\\)\\[\\d\\]\\s*?\\)/gi) && editor.match( /\\$\\s*?\\(\\s*?\\$\\s*?\\(\\s*?(?:'|\")\\s*?\\.slot\\s*?(?:'|\")\\s*?\\)\\[\\d\\]\\s*?\\)/gi ).length >= 3 && editor.match( /\\.html\\(slotOne\\)/gi ) && editor.match( /\\.html\\(slotTwo\\)/gi ) && editor.match( /\\.html\\(slotThree\\)/gi )), 'You should have used the the selector given in the description to select each slot and assign it the value of <code>slotOne</code>&#44; <code>slotTwo</code> and <code>slotThree</code> respectively.')"
       ],
       "type": "waypoint",
-      "challengeType": "0",
+      "challengeType": 0,
       "isBeta": "true"
     },
     {
@@ -5176,7 +4879,7 @@
         "assert(editor.match(/slotThree/gi) && editor.match(/slotThree/gi).length >= 7, 'You should have used the <code>slotThree</code> value at least once.')"
       ],
       "type": "waypoint",
-      "challengeType": "0",
+      "challengeType": 0,
       "isBeta": "true"
     }
   ]
