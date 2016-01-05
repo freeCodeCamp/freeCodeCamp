@@ -1,7 +1,5 @@
 import { Actions } from 'thundercats';
-import debugFactory from 'debug';
 
-const debug = debugFactory('freecc:app:actions');
 
 export default Actions({
   shouldBindMethods: true,
@@ -16,15 +14,14 @@ export default Actions({
       return null;
     }
 
-    debug('fetching user data');
     return this.readService$('user', null, null)
-      .map(function({
+      .map(({
         username,
         picture,
         progressTimestamps = [],
         isFrontEndCert,
         isFullStackCert
-      }) {
+      }) => {
         return {
           username,
           picture,
