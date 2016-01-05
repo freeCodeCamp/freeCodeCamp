@@ -53,6 +53,12 @@ app$({ history, location: appLocation })
       .doOnNext(title => document.title = title)
       .subscribe(() => {});
 
+    appStore$
+      .pluck('err')
+      .filter(err => !!err)
+      .distinctUntilChanged()
+      .subscribe(err => console.error(err));
+
     synchroniseHistory(
       history,
       updateLocation,

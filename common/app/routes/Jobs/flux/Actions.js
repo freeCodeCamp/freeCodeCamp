@@ -1,5 +1,7 @@
 import { Actions } from 'thundercats';
 import store from 'store';
+import { Observable } from 'rx';
+
 import { nameSpacedTransformer } from '../../../../utils';
 
 const assign = Object.assign;
@@ -50,7 +52,7 @@ export default Actions({
           };
         }
       }))
-      .catch(err => ({
+      .catch(err => Observable.just({
         transform(state) {
           return { ...state, err };
         }
@@ -63,7 +65,7 @@ export default Actions({
           return { ...state, currentJob: job };
         })
       }))
-      .catch(err => ({
+      .catch(err => Observable.just({
         transform(state) {
           return { ...state, err };
         }
@@ -76,9 +78,9 @@ export default Actions({
           return { ...state, jobs };
         })
       }))
-      .catch(err => ({
+      .catch(err => Observable.just({
         transform(state) {
-          return { state, err };
+          return { ...state, err };
         }
       }));
   },
@@ -161,7 +163,7 @@ export default Actions({
           }))
         };
       })
-      .catch(err => ({
+      .catch(err => Observable.just({
         transform(state) {
           return { ...state, err };
         }
