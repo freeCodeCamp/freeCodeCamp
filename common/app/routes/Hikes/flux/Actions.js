@@ -80,9 +80,9 @@ export default Actions({
           }
         };
       })
-      .catch(err => {
-        console.error(err);
-      });
+      .catch(err => Observable.just({
+        transform(state) { return { ...state, err }; }
+      }));
   },
 
   toggleQuestions() {
@@ -243,13 +243,8 @@ export default Actions({
       })
       .delay(300)
       .startWith(correctAnswer)
-      .catch(err => {
-        console.error(err);
-        return Observable.just({
-          set: {
-            error: err
-          }
-        });
-      });
+      .catch(err => Observable.just({
+        transform(state) { return { ...state, err }; }
+      }));
   }
 });
