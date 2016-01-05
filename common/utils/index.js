@@ -4,10 +4,13 @@ export function nameSpacedTransformer(ns, transformer) {
   }
   return (state) => {
     const newState = transformer(state[ns]);
+
     // nothing has changed
-    if (newState === state[ns]) {
-      return state;
+    // noop
+    if (!newState || newState === state[ns]) {
+      return null;
     }
+
     return { ...state, [ns]: newState };
   };
 }
