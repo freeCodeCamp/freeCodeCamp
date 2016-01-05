@@ -2049,7 +2049,7 @@
       "title": "Stand in Line",
       "description": [
         "In Computer Science a <dfn>queue</dfn> is an abstract <dfn>Data Structure</dfn> where items are kept in order. New items can be added at the back of the <code>queue</code> and old items are taken off from the front of the <code>queue</code>.",
-        "Write a function <code>queue</code> which takes an \"array\" and an \"item\" as arguments. Add the item onto the end of the array, then remove the first element of the array. The queue function should return the element that was removed."
+        "Write a function <code>queue</code> which takes an array (<code>arr</code>) and a number (<code>item</code>) as arguments. Add the number to the end of the array, then remove the first element of array. The queue function should then return the element that was removed."
       ],
       "releasedOn": "January 1, 2016",
       "head": [
@@ -2069,32 +2069,33 @@
         "capture();"
       ],
       "challengeSeed": [
-        "// Setup",
-        "var myArr = [1,2,3,4,5];",
-        "",
         "function queue(arr, item) {",
         "  // Your code here",
         "  ",
         "  return item;  // Change this line",
         "}",
         "",
+        "// Test Setup",
+        "var testArr = [1,2,3,4,5];",
+        "",
         "// Display Code",
-        "console.log(\"Before: \" + JSON.stringify(myArr));",
-        "console.log(queue(myArr, 6)); // Modify this line to test",
-        "console.log(\"After: \" + JSON.stringify(myArr));"
+        "console.log(\"Before: \" + JSON.stringify(testArr));",
+        "console.log(queue(testArr, 6)); // Modify this line to test",
+        "console.log(\"After: \" + JSON.stringify(testArr));"
       ],
       "tail": [
         "uncapture();",
-        "myArr = [1,2,3,4,5];",
+        "testArr = [1,2,3,4,5];",
         "(function() { return logOutput.join(\"\\n\");})();"
       ],
       "solutions": [
-        "var myArr = [ 1,2,3,4,5];\n\nfunction queue(myArr, item) {\n    myArr.push(item);\n    return myArr.shift();\n}"
+        "var testArr = [ 1,2,3,4,5];\n\nfunction queue(arr, item) {\n    arr.push(item);\n    return arr.shift();\n}"
       ],
       "tests": [
         "assert(queue([],1) === 1, 'message: <code>queue([], 1)</code> should return <code>1</code>');",
         "assert(queue([2],1) === 2, 'message: <code>queue([2], 1)</code> should return <code>2</code>');",
-        "queue(myArr, 10); assert(myArr[4] === 10, 'message: After <code>queue(myArr, 10)</code>, <code>myArr[4]</code> should be <code>10</code>');"
+        "assert(queue([5,6,7,8,9],1) === 5, 'message: <code>queue([5,6,7,8,9], 1)</code> should return <code>5</code>');",
+        "queue(testArr, 10); assert(testArr[4] === 10, 'message: After <code>queue(testArr, 10)</code>, <code>myArr[4]</code> should be <code>10</code>');"
       ],
       "type": "checkpoint",
       "challengeType": 1
