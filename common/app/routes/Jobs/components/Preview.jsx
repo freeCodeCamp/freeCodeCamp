@@ -13,7 +13,7 @@ export default contain(
       'appActions',
       'jobActions'
     ],
-    map({ jobApp: { form: job = {} } }) {
+    map({ jobsApp: { form: job = {} } }) {
       return { job };
     }
   },
