@@ -1,4 +1,5 @@
 import { Actions } from 'thundercats';
+import { Observable } from 'rx';
 
 
 export default Actions({
@@ -9,11 +10,7 @@ export default Actions({
     return { title: title + ' | Free Code Camp' };
   },
 
-  getUser({ isPrimed }) {
-    if (isPrimed) {
-      return null;
-    }
-
+  getUser() {
     return this.readService$('user', null, null)
       .map(({
         username,
@@ -30,9 +27,7 @@ export default Actions({
           isFullStackCert
         };
       })
-      .catch(err => {
-        console.error(err);
-      });
+      .catch(err => Observable.just({ err }));
   },
 
   // routing

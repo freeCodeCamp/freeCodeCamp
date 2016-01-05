@@ -8,6 +8,9 @@ export default contain(
   {
     store: 'appStore',
     fetchAction: 'appActions.getUser',
+    isPrimed({ username }) {
+      return !!username;
+    },
     getPayload(props) {
       return {
         isPrimed: !!props.username
