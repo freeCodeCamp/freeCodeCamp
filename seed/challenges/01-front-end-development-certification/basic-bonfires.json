@@ -329,7 +329,7 @@
       ],
       "type": "bonfire",
       "challengeType": 5,
-      "nameCn": "寻找长度为最长的字符串",
+      "nameCn": "寻找长度最长的字符串",
       "descriptionCn": [
         "返回句子最长的单词的长度。",
         "函数返回结果应当是数字。",
