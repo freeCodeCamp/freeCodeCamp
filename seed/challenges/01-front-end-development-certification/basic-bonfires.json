@@ -3,7 +3,7 @@
   "order": 8,
   "time": "50h",
   "challenges": [
-      {
+    {
       "id": "bd7158d2c442eddfbeb5bd1f",
       "title": "Get Set for Bonfires",
       "challengeSeed": [],
@@ -36,8 +36,33 @@
       "type": "Waypoint",
       "challengeType": 7,
       "tests": [],
-      "nameCn": "",
-      "descriptionCn": [],
+      "nameCn": "了解Bonfires",
+      "descriptionCn": [
+        [
+          "http://i.imgur.com/sJkp30a.png",
+          "An image of our a Bonfire challenge showing directions, tests, and the code editor.",
+          "Bonfires 教你用程序员思维去面对挑战。",
+          ""
+        ],
+        [
+          "http://i.imgur.com/d8LuRNh.png",
+          "A mother bird kicks a baby bird out of her nest.",
+          "Waypoint 挑战向您介绍的编程概念。Bonfire 挑战需要运用你知识来解决问题。",
+          ""
+        ],
+        [
+          "http://i.imgur.com/WBetuBa.jpg",
+          "A programmer punching through his laptop screen in frustration.",
+          "Bonfires 十分困难。通常大多数营员需要几个小时的时间才能解决掉每一个 Bonfires。你会感到沮丧。但是，不要放弃。",
+          ""
+        ],
+        [
+          "http://i.imgur.com/5pAl7TV.jpg",
+          "A beagle winking and pointing his paw at you.",
+          "第当你遇到困难，记得我们教给你的技能 Read-Search-Ask （理解，搜索，不齿下问）。<br>不要担心 - 相信你已经知道如何去运用它。",
+          ""
+        ]
+      ],
       "nameFr": "",
       "descriptionFr": [],
       "nameRu": "",
@@ -77,8 +102,13 @@
       ],
       "type": "bonfire",
       "challengeType": 5,
-      "nameCn": "",
-      "descriptionCn": [],
+      "nameCn": "Bonfire之旅",
+      "descriptionCn": [
+        "你的目标是解决掉失败的测试用例。",
+        "首先，通过点击 \"Run tests\" 或按下Ctrl+回车键运行所有的测试用例。",
+        "失败的测试是红色打叉部分。修复代码，使所有测试用例都通过测试，然后你可以进行下一个Bonfire。",
+        "使该函数返回值为true，不用去管该函数且有什么样的参数或功能。"
+      ],
       "nameFr": "",
       "descriptionFr": [],
       "nameRu": "",
@@ -89,7 +119,7 @@
         "Primero, ejecuta todos las pruebas dando click en \"Run tests\" o presionando Control + Enter.",
         "La prueba que falla está marcada en rojo. Arregla el código de tal forma que todos las pruebas pasen. Luego, puedes continuar con el siguiente Bonfire",
         "Haz que esta función devuelva true (verdadero) bajo cualquier circunstancia."
-        ],
+      ],
       "namePt": "",
       "descriptionPt": []
     },
@@ -126,8 +156,13 @@
       ],
       "type": "bonfire",
       "challengeType": 5,
-      "nameCn": "",
-      "descriptionCn": [],
+      "nameCn": "反转字符串",
+      "descriptionCn": [
+        "反转提供给您的字符串。",
+        "可能您需要把字符串到一个数组，然后才能反转它。",
+        "函数返回结果必须是一个字符串。",
+        "如果遇到困难，使用 <a href=\"//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck\" target=\"_blank\">Read-Search-Ask</a> 方法解决问题。要保证代码是出自您手。"
+      ],
       "nameFr": "",
       "descriptionFr": [],
       "nameRu": "",
@@ -138,7 +173,7 @@
         "Puede que necesites convertir la cadena de texto en un arreglo antes de que puedas invertirla",
         "El resultado debe ser una cadena de texto",
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
-        ],
+      ],
       "namePt": "",
       "descriptionPt": []
     },
@@ -174,8 +209,14 @@
       ],
       "type": "bonfire",
       "challengeType": 5,
-      "nameCn": "",
-      "descriptionCn": [],
+      "nameCn": "阶乘",
+      "descriptionCn": [
+        "返回一个整数的阶乘结果。",
+        "如果用字母n表示一个整数，阶乘把所有正整数小于或等于n的乘积。",
+        "通常使用速记符号 <code>n!</code> 表示阶乘",
+        "例如: <code>5! = 1 * 2 * 3 * 4 * 5 = 120</code>",
+        "如果遇到困难，使用 <a href=\"//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck\" target=\"_blank\">Read-Search-Ask</a> 方法解决问题。要保证代码是出自您手。"
+      ],
       "nameFr": "",
       "descriptionFr": [],
       "nameRu": "",
@@ -187,7 +228,7 @@
         "Los factoriales son comúnmente representados con la notación <code>n!</code>",
         "Por ejemplo: <code>5! = 1 * 2 * 3 * 4 * 5 = 120</code>",
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
-        ],
+      ],
       "namePt": "",
       "descriptionPt": []
     },
@@ -233,8 +274,14 @@
       ],
       "type": "bonfire",
       "challengeType": 5,
-      "nameCn": "",
-      "descriptionCn": [],
+      "nameCn": "检查回文",
+      "descriptionCn": [
+        "如果给定的字符串是一个回文，返回true。否则，返回false。",
+        "把相同的词汇或句子，在下文中调换位置或颠倒过来，产生首尾回环，叫做回文。忽略标点符号，大小写和间距。",
+        "你需要移除所有非字母字符（标点符号，空格和符号），并把它们转换为小写字母，然后检验是否为回文。",
+        "这些字符串将通过我们的测试用例, 如： \"racecar\", \"RaceCar\", 和 \"race CAR\" 等等。",
+        "如果遇到困难，使用 <a href=\"//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck\" target=\"_blank\">Read-Search-Ask</a> 方法解决问题。要保证代码是出自您手。"
+      ],
       "nameFr": "",
       "descriptionFr": [],
       "nameRu": "",
@@ -246,7 +293,7 @@
         "Tendrás que quitar los signos de puntuación y transformar las letras a minúsculas para poder verificar si el texto es palíndromo.",
         "Te proveeremos textos en varios formatos, como \"racecar\", \"RaceCar\", and \"race CAR\" entre otros.",
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
-        ],
+      ],
       "namePt": "",
       "descriptionPt": []
     },
@@ -282,8 +329,12 @@
       ],
       "type": "bonfire",
       "challengeType": 5,
-      "nameCn": "",
-      "descriptionCn": [],
+      "nameCn": "寻找长度为最长的字符串",
+      "descriptionCn": [
+        "返回句子最长的单词的长度。",
+        "函数返回结果应当是数字。",
+        "如果遇到困难，使用 <a href=\"//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck\" target=\"_blank\">Read-Search-Ask</a> 方法解决问题。要保证代码是出自您手。"
+      ],
       "nameFr": "",
       "descriptionFr": [],
       "nameRu": "",
@@ -293,7 +344,7 @@
         "Crea una función que devuelva la longitud de la palabra más larga en una frase dada",
         "El resultado debe ser un número",
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
-        ],
+      ],
       "namePt": "",
       "descriptionPt": []
     },
@@ -337,7 +388,7 @@
         "Crea una función que devuelva la cadena de texto dada con la primera letra de cada palabra en mayúscula. Asegúrate de que el resto de las letras sean minúsculas",
         "Para este ejercicio, también debes poner en mayúscula conectores como \"the\" y \"of\".",
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
-        ],
+      ],
       "namePt": "",
       "descriptionPt": []
     },
@@ -382,7 +433,7 @@
         "Recuerda que puedes iterar a través de un arreglo con un búcle simple, y acceder a cada miembro utilizando la sintaxis arr[i].",
         "Si escribes tu propio test con Chai.js, asegúrate de utilizar un operador de igualdad estricto en lugar de un operador de igualdad cuando compares arreglos. ",
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
-        ],
+      ],
       "namePt": "",
       "descriptionPt": []
     },
@@ -429,7 +480,7 @@
       "descriptionEs": [
         "Verifica si una cadena de texto (primer argumento) termina con una cadena de texto dada (segundo argumento).",
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
-        ],
+      ],
       "namePt": "",
       "descriptionPt": []
     },
@@ -474,7 +525,7 @@
       "descriptionEs": [
         "Repite una cadena de texto dada (primer argumento) n veces (segundo argumento). Devuelve una cadena de texto vacía si n es un número negativo.",
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
-        ],
+      ],
       "namePt": "",
       "descriptionPt": []
     },
@@ -522,7 +573,7 @@
         "Trunca una cadena de texto (primer argumento) si su longitud es mayor que un máximo de caracteres dado (segundo argumento). Devuelve la cadena de texto truncada con una terminación \"...\".",
         "Ten en cuenta que los tres puntos al final también se cuentan dentro de la longitud de la cadena de texto.",
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
-        ],
+      ],
       "namePt": "",
       "descriptionPt": []
     },
@@ -568,7 +619,7 @@
       "descriptionEs": [
         "Escribe una función que parta un arreglo (primer argumento) en fragmentos de una longitud dada (segundo argumento) y los devuelva en forma de un arreglo multidimensional.",
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
-        ],
+      ],
       "namePt": "",
       "descriptionPt": []
     },
@@ -614,7 +665,7 @@
         "Crea una función que devuelva los elementos restantes de un arreglo después de eliminar n elementos de la cabeza.",
         "Por cabeza nos referimos al inicio de un arreglo, comenzando por el índice 0.",
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
-        ],
+      ],
       "namePt": "",
       "descriptionPt": []
     },
@@ -666,7 +717,7 @@
         "En el caso de <code>[\"hello\", \"hey\"]</code> la función debe devolver false porque la cadena de texto \"hello\" no contiene una \"y\".",
         "Finalmente, <code>[\"Alien\", \"line\"]</code>, la función debe devolver true porque todas las letras en \"line\" están presentes en \"Alien\".",
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
-        ],
+      ],
       "namePt": "",
       "descriptionPt": []
     },
@@ -711,7 +762,7 @@
         "Remueve todos los valores falsy de un arreglo dado",
         "En javascript, valores falsy son los siguientes: <code>false</code>, <code>null</code>, <code>0</code>, <code>\"\"</code>, <code>undefined</code>, y <code>NaN</code>.",
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
-        ],
+      ],
       "namePt": "",
       "descriptionPt": []
     },
@@ -756,7 +807,7 @@
       "descriptionEs": [
         "Se te proveerá un arreglo inicial (el primer argumento en la función destroyer), seguido por uno o más argumentos. Elimina todos los elementos del arreglo inicial que tengan el mismo valor que el resto de argumentos.",
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
-        ],
+      ],
       "namePt": "",
       "descriptionPt": []
     },
@@ -805,7 +856,7 @@
         "Devuelve el menor índice en el que un valor (segundo argumento) debe ser insertado en un arreglo ordenado (primer argumento).",
         "Por ejemplo, where([1,2,3,4], 1.5) debe devolver 1 porque el segundo argumento de la función (1.5) es mayor que 1 (con índice 0 en el arreglo), pero menor que 2 (con índice 1).",
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
-        ],
+      ],
       "namePt": "",
       "descriptionPt": []
     },
