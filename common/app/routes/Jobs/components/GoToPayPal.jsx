@@ -16,8 +16,8 @@ export default contain(
       'jobActions',
       'appActions'
     ],
-    map({ jobApp: {
-      job: { id, isHighlighted } = {},
+    map({ jobsApp: {
+      currentJob: { id, isHighlighted } = {},
       buttonId = isHighlighted ?
         paypalIds.highlighted :
         paypalIds.regular,
@@ -25,7 +25,7 @@ export default contain(
       discountAmount = 0,
       promoCode = '',
       promoApplied = false,
-      promoName
+      promoName = ''
     }}) {
       return {
         id,
