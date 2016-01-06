@@ -45,7 +45,7 @@ export default Actions({
           };
           return {
             ...state,
-            jobs: {
+            jobsApp: {
               ...state.jobs,
               currentJob: job
             }
@@ -169,17 +169,19 @@ export default Actions({
         }
       }));
   },
-  clearPromo(foo, undef) {
+  clearPromo() {
     return {
+      /* eslint-disable no-undefined */
       transform: jobsTranformer(state => ({
         ...state,
-        price: undef,
-        buttonId: undef,
-        discountAmount: undef,
-        promoCode: undef,
+        price: undefined,
+        buttonId: undefined,
+        discountAmount: undefined,
+        promoCode: undefined,
         promoApplied: false,
-        promoName: undef
+        promoName: undefined
       }))
+      /* eslint-enable no-undefined */
     };
   },
   init({ instance: jobActions }) {
