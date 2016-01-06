@@ -440,8 +440,7 @@
       "title": "Create Decimal Numbers with JavaScript",
       "description": [
         "We can store decimal numbers in variables too. Decimal numbers are sometimes refered to as <dfn>floating point</dfn> numbers or <dfn>floats</dfn>.",
-        "<strong>Note</strong>",
-        "Not all real numbers can accurately be represented in <dfn>floating point</dfn>. This can lead to rounding errors. <a href=\"https://en.wikipedia.org/wiki/Floating_point#Accuracy_problems\" target=\"_blank\">Details Here</a>.",
+        "<strong>Note</strong><br>Not all real numbers can accurately be represented in <dfn>floating point</dfn>. This can lead to rounding errors. <a href=\"https://en.wikipedia.org/wiki/Floating_point#Accuracy_problems\" target=\"_blank\">Details Here</a>.",
         "<h4>Instructions</h4>",
         "Create a variable <code>myDecimal</code> and give it a decimal value."
       ],
@@ -525,11 +524,9 @@
         "The <dfn>remainder</dfn> operator <code>%</code> gives the remainder of the division of two numbers.",
         "<strong>Example</strong>",
         "<blockquote>5 % 2 = 1 because<br>Math.floor(5 / 2) = 2 (Quotient)<br>2 * 2 = 4<br>5 - 4 = 1 (Remainder)</blockquote>",
-        "<strong>Usage</strong>",
-        "In mathematics, a number can be checked even or odd by checking the remainder of the division of the number by <code>2</code>.",
+        "<strong>Usage</strong><br>In mathematics, a number can be checked even or odd by checking the remainder of the division of the number by <code>2</code>.",
         "<blockquote>17 % 2 = 1 (17 is Odd)<br>48 % 2 = 0 (48 is Even)</blockquote>",
-        "<strong>Note</strong>",
-        "The <dfn>remainder</dfn> operator is sometimes incorrectly refered to as  the \"modulus\" operator. It is very similar to modulus, but does not work properly with negative numbers.",
+        "<strong>Note</strong><br>The <dfn>remainder</dfn> operator is sometimes incorrectly refered to as  the \"modulus\" operator. It is very similar to modulus, but does not work properly with negative numbers.",
         "<h4>Instructions</h4>",
         "Set <code>remainder</code> equal to the remainder of <code>11</code> divided by <code>3</code> using the <dfn>remainder</dfn> (<code>%</code>) operator."
       ],
@@ -1109,8 +1106,7 @@
         "For example, the character at index 0 in the word \"Charles\" is \"C\". So if <code>var firstName = \"Charles\"</code>, you can get the value of the first letter of the string by using <code>firstName[0]</code>.",
         "<h4>Instructions</h4>",
         "Use <dfn>bracket notation</dfn> to find the first character in the <code>lastName</code> variable and assign it to <code>firstLetterOfLastName</code>.",
-        "<strong>Hint</strong>",
-        "<br>Try looking at the <code>firstLetterOfFirstName</code> variable declaration if you get stuck."
+        "<strong>Hint</strong><br>Try looking at the <code>firstLetterOfFirstName</code> variable declaration if you get stuck."
       ],
       "challengeSeed": [
         "// Example",
@@ -1183,8 +1179,7 @@
         "Remember that computers start counting at <code>0</code>, so the first character is actually the zeroth character.",
         "<h4>Instructions</h4>",
         "Let's try to set <code>thirdLetterOfLastName</code> to equal the third letter of the <code>lastName</code> variable.",
-        "<strong>Hint</strong>",
-        "<br>Try looking at the <code>secondLetterOfFirstName</code> variable declaration if you get stuck."
+        "<strong>Hint</strong><br>Try looking at the <code>secondLetterOfFirstName</code> variable declaration if you get stuck."
       ],
       "challengeSeed": [
         "// Example",
@@ -1219,8 +1214,7 @@
         "For example, if <code>var firstName = \"Charles\"</code>, you can get the value of the last letter of the string by using <code>firstName[firstName.length - 1]</code>.",
         "<h4>Instructions</h4>",
         "Use <dfn>bracket notation</dfn> to find the last character in the <code>lastName</code> variable.",
-        "<strong>Hint</strong>",
-        "<br>Try looking at the <code>lastLetterOfFirstName</code> variable declaration if you get stuck."
+        "<strong>Hint</strong><br>Try looking at the <code>lastLetterOfFirstName</code> variable declaration if you get stuck."
       ],
       "challengeSeed": [
         "// Example",
@@ -1256,8 +1250,7 @@
         "For example, you can get the value of the third-to-last letter of the <code>var firstName = \"Charles\"</code> string by using <code>firstName[firstName.length - 3]</code>",
         "<h4>Instructions</h4>",
         "Use <dfn>bracket notation</dfn> to find the second-to-last character in the <code>lastName</code> string.",
-        "  <strong>Hint</strong>",
-        "<br>Try looking at the <code>thirdToLastLetterOfFirstName</code> variable declaration if you get stuck."
+        "  <strong>Hint</strong><br>Try looking at the <code>thirdToLastLetterOfFirstName</code> variable declaration if you get stuck."
       ],
       "challengeSeed": [
         "// Example",
@@ -1331,8 +1324,7 @@
         "You start an array declaration with an opening square bracket, end it with a closing square bracket, and put a comma between each entry, like this:<br><code>var sandwich = [\"peanut butter\", \"jelly\", \"bread\"]</code>.",
         "<h4>Instructions</h4>",
         "Create a new array called <code>myArray</code> that contains both a <code>string</code> and a <code>number</code> (in that order).",
-        "<strong>Hint</strong>",
-        "<br>Refer to the example code in the text editor if you get stuck."
+        "<strong>Hint</strong><br>Refer to the example code in the text editor if you get stuck."
       ],
       "challengeSeed": [
         "// Example",
@@ -2835,8 +2827,7 @@
         "Cases for 1, 2, and 3 will all produce the same result.",
         "<h4>Instructions</h4>",
         "Write a switch statement to set <code>answer</code> for the following ranges:<br><code>1-3</code> - \"Low\"<br><code>4-6</code> - \"Mid\"<br><code>7-9</code> - \"High\"",
-        "<strong>Note</strong>",
-        "You will need to have a <code>case</code> statement for each number in the range."
+        "<strong>Note</strong><br>You will need to have a <code>case</code> statement for each number in the range."
       ],
       "releasedOn": "January 1, 2016",
       "challengeSeed": [
@@ -3929,8 +3920,7 @@
       "description": [
         "Random numbers are useful for creating random behavior.",
         "JavaScript has a <code>Math.random()</code> function that generates a random decimal number between <code>0</code> (inclusive) and not quite up to <code>1</code> (exclusive). Thus <code>Math.random()</code> can return a <code>0</code> but never quite return a <code>1</code>",
-        "<strong>Note</strong>",
-        "Like <a href=\"waypoint-storing-values-with-the-equal-operator\">Storing Values with the Equal Operator</a>, all function calls will be resolved before the <code>return</code> executes, so we can simply <code>return</code> the value of the <code>Math.random()</code> function.",
+        "<strong>Note</strong><br>Like <a href=\"waypoint-storing-values-with-the-equal-operator\">Storing Values with the Equal Operator</a>, all function calls will be resolved before the <code>return</code> executes, so we can simply <code>return</code> the value of the <code>Math.random()</code> function.",
         "<h4>Instructions</h4>",
         "Change <code>myFunction</code> to return a random number instead of returning <code>0</code>."
       ],
