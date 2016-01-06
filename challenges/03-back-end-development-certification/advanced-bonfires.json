@@ -318,14 +318,14 @@
         "  return str;",
         "}",
         "",
-        "friendly(['2015-07-01', '2015-07-04']);"
+        "friendly(['2016-07-01', '2016-07-04']);"
       ],
       "tests": [
-        "assert.deepEqual(friendly(['2015-07-01', '2015-07-04']), ['July 1st','4th'], 'message: <code>friendly([\"2015-07-01\", \"2015-07-04\"])</code> should return <code>[\"July 1st\",\"4th\"]</code>.');",
-        "assert.deepEqual(friendly(['2015-12-01', '2016-02-03']), ['December 1st','February 3rd'], 'message: <code>friendly([\"2015-12-01\", \"2016-02-03\"])</code> should return <code>[\"December 1st\",\"February 3rd\"]</code>.');",
-        "assert.deepEqual(friendly(['2015-12-01', '2017-02-03']), ['December 1st, 2015','February 3rd, 2017'], 'message: <code>friendly([\"2015-12-01\", \"2017-02-03\"])</code> should return <code>[\"December 1st, 2015\",\"February 3rd, 2017\"]</code>.');",
-        "assert.deepEqual(friendly(['2016-03-01', '2016-05-05']), ['March 1st','May 5th'], 'message: <code>friendly([\"2016-03-01\", \"2016-05-05\"])</code> should return <code>[\"March 1st\",\"May 5th\"]</code>');",
-        "assert.deepEqual(friendly(['2017-01-01', '2017-01-01']), ['January 1st, 2017'], 'message: <code>friendly([\"2017-01-01\", \"2017-01-01\"])</code> should return <code>[\"January 1st, 2017\"]</code>.');",
+        "assert.deepEqual(friendly(['2016-07-01', '2016-07-04']), ['July 1st','4th'], 'message: <code>friendly([\"2016-07-01\", \"2016-07-04\"])</code> should return <code>[\"July 1st\",\"4th\"]</code>.');",
+        "assert.deepEqual(friendly(['2016-12-01', '2017-02-03']), ['December 1st','February 3rd'], 'message: <code>friendly([\"2016-12-01\", \"2017-02-03\"])</code> should return <code>[\"December 1st\",\"February 3rd\"]</code>.');",
+        "assert.deepEqual(friendly(['2016-12-01', '2018-02-03']), ['December 1st, 2016','February 3rd, 2018'], 'message: <code>friendly([\"2016-12-01\", \"2018-02-03\"])</code> should return <code>[\"December 1st, 2016\",\"February 3rd, 2018\"]</code>.');",
+        "assert.deepEqual(friendly(['2017-03-01', '2017-05-05']), ['March 1st','May 5th'], 'message: <code>friendly([\"2017-03-01\", \"2017-05-05\"])</code> should return <code>[\"March 1st\",\"May 5th\"]</code>');",
+        "assert.deepEqual(friendly(['2018-01-01', '2018-01-01']), ['January 1st, 2018'], 'message: <code>friendly([\"2018-01-01\", \"2018-01-01\"])</code> should return <code>[\"January 1st, 2018\"]</code>.');",
         "assert.deepEqual(friendly(['2022-09-05', '2023-09-04']), ['September 5th, 2022','September 4th, 2023'], 'message: <code>friendly([\"2022-09-05\", \"2023-09-04\"])</code> should return <code>[\"September 5th, 2022\",\"September 4th, 2023\"]</code>.');"
       ],
       "MDNlinks": [
