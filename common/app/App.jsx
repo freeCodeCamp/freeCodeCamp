@@ -3,7 +3,7 @@ import { Row } from 'react-bootstrap';
 import { ToastMessage, ToastContainer } from 'react-toastr';
 import { contain } from 'thundercats-react';
 
-import { Nav } from './components/Nav';
+import Nav from './components/Nav';
 
 const toastMessageFactory = React.createFactory(ToastMessage.animation);
 

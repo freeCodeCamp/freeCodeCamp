@@ -8,7 +8,7 @@ import { createLocation, createHistory } from 'history';
 import { hydrate } from 'thundercats';
 import { render$ } from 'thundercats-react';
 
-import { app$ } from '../common/app';
+import app$ from '../common/app';
 import historySaga from './history-saga';
 import errSaga from './err-saga';
 

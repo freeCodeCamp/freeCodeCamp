@@ -6,7 +6,7 @@ import debugFactory from 'debug';
 import { dehydrate } from 'thundercats';
 import { renderToString$ } from 'thundercats-react';
 
-import { app$ } from '../../common/app';
+import app$ from '../../common/app';
 
 const debug = debugFactory('freecc:react-server');
 

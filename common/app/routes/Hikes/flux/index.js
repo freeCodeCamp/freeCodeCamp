@@ -1,1 +1,1 @@
-export { default as HikesActions } from './Actions';
+export default from './Actions';
