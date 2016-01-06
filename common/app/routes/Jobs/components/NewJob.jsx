@@ -115,7 +115,7 @@ export default contain({
         logo,
         company,
         isFrontEndCert = true,
-        isFullStackCert,
+        isBackEndCert,
         isHighlighted,
         isRemoteOk,
         howToApply
@@ -132,7 +132,7 @@ export default contain({
         isRemoteOk: formatValue(isRemoteOk, null, 'bool'),
         howToApply: formatValue(howToApply, makeRequired(isAscii)),
         isFrontEndCert,
-        isFullStackCert
+        isBackEndCert
       };
     },
     subscribeOnWillMount() {
@@ -154,7 +154,7 @@ export default contain({
       isHighlighted: PropTypes.object,
       isRemoteOk: PropTypes.object,
       isFrontEndCert: PropTypes.bool,
-      isFullStackCert: PropTypes.bool,
+      isBackEndCert: PropTypes.bool,
       howToApply: PropTypes.object
     },
 
@@ -171,7 +171,11 @@ export default contain({
         }
       });
 
-      if (!valid || !pros.isFrontEndCert && !pros.isFullStackCert ) {
+      if (
+        !valid ||
+        !pros.isFrontEndCert &&
+        !pros.isBackEndCert
+      ) {
         debug('form not valid');
         return;
       }
@@ -188,7 +192,7 @@ export default contain({
         logo,
         company,
         isFrontEndCert,
-        isFullStackCert,
+        isBackEndCert,
         isHighlighted,
         isRemoteOk,
         howToApply
@@ -207,7 +211,7 @@ export default contain({
         isRemoteOk: !!isRemoteOk.value,
         howToApply: inHTMLData(howToApply.value),
         isFrontEndCert,
-        isFullStackCert
+        isBackEndCert
       };
 
       const job = Object.keys(jobValues).reduce((accu, prop) => {
@@ -237,7 +241,7 @@ export default contain({
     handleCertClick(name) {
       const { jobActions: { handleForm } } = this.props;
       const otherButton = name === 'isFrontEndCert' ?
-        'isFullStackCert' :
+        'isBackEndCert' :
         'isFrontEndCert';
 
       handleForm({
@@ -259,7 +263,7 @@ export default contain({
         isRemoteOk,
         howToApply,
         isFrontEndCert,
-        isFullStackCert,
+        isBackEndCert,
         jobActions: { handleForm }
       } = this.props;
 
@@ -306,13 +310,13 @@ export default contain({
                       <div className='button-spacer' />
                       <Row>
                         <Button
-                          className={ isFullStackCert ? 'active' : ''}
+                          className={ isBackEndCert ? 'active' : ''}
                           onClick={ () => {
-                            if (!isFullStackCert) {
-                              this.handleCertClick('isFullStackCert');
+                            if (!isBackEndCert) {
+                              this.handleCertClick('isBackEndCert');
                             }
                           }}>
-                          <h4>Full Stack Development Certified</h4>
+                          <h4>Back End Development Certified</h4>
                           You can expect each applicant to have a code
                           portfolio using the following technologies:
                           HTML5, CSS, jQuery, API integrations, MVC Framework,

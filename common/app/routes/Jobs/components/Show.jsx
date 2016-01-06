@@ -9,25 +9,25 @@ import { isJobValid } from '../utils';
 function shouldShowApply(
   {
     isFrontEndCert: isFrontEndCertReq = false,
-    isFullStackCert: isFullStackCertReq = false
+    isBackEndCert: isBackEndCertReq = false
   }, {
     isFrontEndCert = false,
-    isFullStackCert = false
+    isBackEndCert = false
   }
 ) {
-  return (!isFrontEndCertReq && !isFullStackCertReq) ||
-    (isFullStackCertReq && isFullStackCert) ||
+  return (!isFrontEndCertReq && !isBackEndCertReq) ||
+    (isBackEndCertReq && isBackEndCert) ||
     (isFrontEndCertReq && isFrontEndCert);
 }
 
 function generateMessage(
   {
     isFrontEndCert: isFrontEndCertReq = false,
-    isFullStackCert: isFullStackCertReq = false
+    isBackEndCert: isBackEndCertReq = false
   },
   {
     isFrontEndCert = false,
-    isFullStackCert = false,
+    isBackEndCert = false,
     isSignedIn = false
   }
 ) {
@@ -39,15 +39,15 @@ function generateMessage(
     return 'This employer requires Free Code Camp’s Front ' +
       'End Development Certification in order to apply';
   }
-  if (isFullStackCertReq && !isFullStackCert) {
-    return 'This employer requires Free Code Camp’s Full ' +
-      'Stack Development Certification in order to apply';
+  if (isBackEndCertReq && !isBackEndCert) {
+    return 'This employer requires Free Code Camp’s Back ' +
+      'End Development Certification in order to apply';
   }
   if (isFrontEndCertReq && isFrontEndCertReq) {
     return 'This employer requires the Front End Development Certification. ' +
       "You've earned it, so feel free to apply.";
   }
-  return 'This employer requires the Full Stack Development Certification. ' +
+  return 'This employer requires the Back End Development Certification. ' +
     "You've earned it, so feel free to apply.";
 }
 
@@ -58,14 +58,14 @@ export default contain(
     map({
       username,
       isFrontEndCert,
-      isFullStackCert,
+      isBackEndCert,
       jobsApp: { currentJob }
     }) {
       return {
         username,
         job: currentJob,
         isFrontEndCert,
-        isFullStackCert
+        isBackEndCert
       };
     },
     getPayload({ params: { id } }) {
@@ -85,7 +85,7 @@ export default contain(
 
     propTypes: {
       job: PropTypes.object,
-      isFullStackCert: PropTypes.bool,
+      isBackEndCert: PropTypes.bool,
       isFrontEndCert: PropTypes.bool,
       username: PropTypes.string
     },
@@ -102,7 +102,7 @@ export default contain(
 
     render() {
       const {
-        isFullStackCert,
+        isBackEndCert,
         isFrontEndCert,
         job,
         username
@@ -116,12 +116,12 @@ export default contain(
 
       const showApply = shouldShowApply(
         job,
-        { isFrontEndCert, isFullStackCert }
+        { isFrontEndCert, isBackEndCert }
       );
 
       const message = generateMessage(
         job,
-        { isFrontEndCert, isFullStackCert, isSignedIn }
+        { isFrontEndCert, isBackEndCert, isSignedIn }
       );
 
       return (
