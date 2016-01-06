@@ -175,7 +175,8 @@ export default Actions({
         transform(state) {
           const hikesApp = {
             ...state.hikesApp,
-            mouse: [0, 0]
+            mouse: [0, 0],
+            showInfo: false
           };
           return { ...state, hikesApp };
         }
@@ -250,5 +251,21 @@ export default Actions({
       .catch(err => Observable.just({
         transform(state) { return { ...state, err }; }
       }));
+  },
+  resetHike() {
+    return {
+      transform(state) {
+        return { ...state,
+          hikesApp: {
+            ...state.hikesApp,
+            currentQuestion: 1,
+            showQuestions: false,
+            showInfo: false,
+            mouse: [0, 0],
+            delta: [0, 0]
+          }
+        };
+      }
+    };
   }
 });
