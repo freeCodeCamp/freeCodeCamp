@@ -109,7 +109,6 @@ app.start = _.once(function() {
 });
 
 app.switchLanguage = function (jade) {
-    console.log(jade);
     var langJade = jade;
     if (process.env.LANGUAGE_SUFFIX)
         langJade += process.env.LANGUAGE_SUFFIX;
