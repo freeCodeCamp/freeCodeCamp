@@ -88,7 +88,11 @@ export default Actions({
   toggleQuestions() {
     return {
       transform(state) {
-        const hikesApp = { ...state.hikesApp, showQuestions: true };
+        const hikesApp = {
+          ...state.hikesApp,
+          showQuestions: !state.hikesApp.showQuestions,
+          currentQuestion: 1
+        };
         return { ...state, hikesApp };
       }
     };
