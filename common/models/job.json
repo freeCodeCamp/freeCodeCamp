@@ -74,6 +74,11 @@
       "defaut": false,
       "description": "Camper must be front end certified to apply"
     },
+    "isBackEndCert": {
+      "type": "boolean",
+      "default": false,
+      "description": "Camper must be back end certified to apply"
+    },
     "isFullStackCert": {
       "type": "boolean",
       "default": false,

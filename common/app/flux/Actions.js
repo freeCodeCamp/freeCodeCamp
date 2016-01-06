@@ -17,6 +17,7 @@ export default Actions({
         picture,
         progressTimestamps = [],
         isFrontEndCert,
+        isBackEndCert,
         isFullStackCert
       }) => {
         return {
@@ -24,6 +25,7 @@ export default Actions({
           picture,
           points: progressTimestamps.length,
           isFrontEndCert,
+          isBackEndCert,
           isFullStackCert
         };
       })
