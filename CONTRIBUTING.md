@@ -57,6 +57,9 @@ Edit your `.env` file with the following API keys accordingly. If you only use e
 ```
 MONGOHQ_URL='mongodb://localhost:27017/freecodecamp'
 
+LANGUAGE='en'
+LANGUAGE_SUFFIX=''
+
 FACEBOOK_ID=stuff
 FACEBOOK_SECRET=stuff
 
