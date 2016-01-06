@@ -3618,7 +3618,7 @@
         "You are given a JSON object representing (a small part of) your record collection. Each album is identified by a unique id number and has several properties. Not all albums have complete information.",
         "Write a function which takes an <code>id</code>, a property (<code>prop</code>), and a <code>value</code>.",
         "For the given <code>id</code> in <code>collection</code>:",
-        "If <code>value</code> is non-blank (<code>value !== \"\"</code>), then update or set the <code>value</code> for the <code>prop</code>.",
+        "If <code>value</code> is non-blank (<code>value !== \"\"</code>) and <code>prop</code> is not <code>\"tracks\"</code> then update or set the <code>value</code> for the <code>prop</code>.",
         "If the <code>prop</code> is <code>\"tracks\"</code> and <code>value</code> is non-blank, push the <code>value</code> onto the end of the <code>tracks</code> array.",
         "If <code>value</code> is blank, delete that <code>prop</code>.",
         "Always return the entire collection object."
