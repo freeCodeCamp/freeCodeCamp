@@ -18,7 +18,7 @@ if (typeof DEBUG === 'undefined') { DEBUG = true; }
   // the standard loops - note that recursive is not supported
   var re = /\b(for|while|do)\b/g;
   var reSingle = /\b(for|while|do)\b/;
-  var labelRe = /\b([a-z_]{1}\w+:)/i;
+  var labelRe = /\b(?!default:)([a-z_]{1}\w+:)/i;
   var comments = /(?:\/\*(?:[\s\S]*?)\*\/)|(?:([\s;])+\/\/(?:.*)$)/gm;
   var loopTimeout = 1000;
 
@@ -131,7 +131,7 @@ if (typeof DEBUG === 'undefined') { DEBUG = true; }
       // so that we insert in to the correct location (instead of possibly
       // outside the logic
       return line.slice(0, matchPosition) + ';' + method + '({ line: ' + lineNum + ', reset: true }); ' + line.slice(matchPosition);
-    };
+    }
 
     if (!offset) {
       offset = 0;
