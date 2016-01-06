@@ -92,6 +92,15 @@ PEER=stuff
 DEBUG=true
 ```
 
+Language config:
+
+`zh-CN`
+
+```
+LANGUAGE='zh-CN'
+LANGUAGE_SUFFIX='Cn'
+```
+
 ```bash
 # Start the mongo server in a seperate terminal
 mongod
