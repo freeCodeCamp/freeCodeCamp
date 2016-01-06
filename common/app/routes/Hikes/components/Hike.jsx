@@ -29,14 +29,15 @@ export default React.createClass({
       showQuestions
     } = this.props;
 
-    const videoTitle = <h2>{ title }</h2>;
+    const videoTitle = <h4>{ title }</h4>;
 
     return (
       <Col xs={ 12 }>
         <Row>
           <Panel
             className={ 'text-center' }
-            title={ videoTitle }>
+            header={ videoTitle }
+            title={ title }>
             { this.renderBody(showQuestions) }
           </Panel>
         </Row>
