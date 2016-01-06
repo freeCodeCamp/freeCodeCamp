@@ -69,7 +69,7 @@ export default contain(
           <Row>
             <Vimeo
               onError={ this.handleError }
-              onFinish= { this.handleFinish }
+              onFinish= { () => this.handleFinish(hikesActions) }
               videoId={ id } />
           </Row>
           <Row>

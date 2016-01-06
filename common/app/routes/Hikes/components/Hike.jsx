@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import { contain } from 'thundercats-react';
 import {
   Col,
   Panel,
@@ -8,40 +9,56 @@ import {
 import Lecture from './Lecture.jsx';
 import Questions from './Questions.jsx';
 
-export default React.createClass({
-  displayName: 'Hike',
-
-  propTypes: {
-    currentHike: PropTypes.object,
-    showQuestions: PropTypes.bool
+export default contain(
+  {
+    actions: ['hikesActions']
   },
+  React.createClass({
+    displayName: 'Hike',
 
-  renderBody(showQuestions) {
-    if (showQuestions) {
-      return <Questions />;
+    propTypes: {
+      currentHike: PropTypes.object,
+      hikesActions: PropTypes.object,
+      params: PropTypes.object,
+      showQuestions: PropTypes.bool
+    },
+
+    componentWillReceiveProps({ params: { dashedName }, showQuestions }) {
+      if (
+        showQuestions &&
+        this.props.params.dashedName !== dashedName
+      ) {
+        this.props.hikesActions.toggleQuestions();
+      }
+    },
+
+    renderBody(showQuestions) {
+      if (showQuestions) {
+        return <Questions />;
+      }
+      return <Lecture />;
+    },
+
+    render() {
+      const {
+        currentHike: { title } = {},
+        showQuestions
+      } = this.props;
+
+      const videoTitle = <h4>{ title }</h4>;
+
+      return (
+        <Col xs={ 12 }>
+          <Row>
+            <Panel
+              className={ 'text-center' }
+              header={ videoTitle }
+              title={ title }>
+              { this.renderBody(showQuestions) }
+            </Panel>
+          </Row>
+        </Col>
+      );
     }
-    return <Lecture />;
-  },
-
-  render() {
-    const {
-      currentHike: { title } = {},
-      showQuestions
-    } = this.props;
-
-    const videoTitle = <h4>{ title }</h4>;
-
-    return (
-      <Col xs={ 12 }>
-        <Row>
-          <Panel
-            className={ 'text-center' }
-            header={ videoTitle }
-            title={ title }>
-            { this.renderBody(showQuestions) }
-          </Panel>
-        </Row>
-      </Col>
-    );
-  }
-});
+  })
+);

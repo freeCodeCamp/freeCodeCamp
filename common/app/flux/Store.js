@@ -10,7 +10,7 @@ const initValue = {
     hikes: [],
     // lecture state
     currentHike: {},
-    showQuestion: false
+    showQuestions: false
   },
   jobsApp: {
     showModal: false
