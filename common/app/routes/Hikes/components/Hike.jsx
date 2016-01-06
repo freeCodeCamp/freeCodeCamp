@@ -23,12 +23,13 @@ export default contain(
       showQuestions: PropTypes.bool
     },
 
-    componentWillReceiveProps({ params: { dashedName }, showQuestions }) {
-      if (
-        showQuestions &&
-        this.props.params.dashedName !== dashedName
-      ) {
-        this.props.hikesActions.toggleQuestions();
+    componentWillUnmount() {
+      this.props.hikesActions.resetHike();
+    },
+
+    componentWillReceiveProps({ params: { dashedName } }) {
+      if (this.props.params.dashedName !== dashedName) {
+        this.props.hikesActions.resetHike();
       }
     },
 
