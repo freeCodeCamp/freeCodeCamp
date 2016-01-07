@@ -188,7 +188,8 @@ export default Actions({
             const hikesApp = {
               ...state.hikesApp,
               currentQuestion: currentQuestion + 1,
-              mouse: [ userAnswer ? 1000 : -1000, 0]
+              mouse: [ userAnswer ? 1000 : -1000, 0],
+              isPressed: false
             };
 
             return { ...state, hikesApp };
