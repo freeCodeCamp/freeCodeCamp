@@ -4101,10 +4101,11 @@
       "id": "cf1111c1c12feddfaeb7bdef",
       "title": "Find Numbers with Regular Expressions",
       "description": [
-        "We can use special selectors in <code>Regular Expressions</code> to select a particular type of value.",
-        "One such selector is the digit selector <code>\\d</code> which is used to retrieve the numbers in a string.",
-        "It is used like this: <code>/\\d/g</code>.",
-        "For numbers this is often written as <code>/\\d+/g</code>, where the <code>+</code> following the digit selector allows this regular expression to match one or more numbers.",
+        "We can use special selectors in <dfn>Regular Expressions</dfn> to select a particular type of value.",
+        "One such selector is the digit selector <code>\\d</code> which is used to retrieve one digit (e.g. numbers 0 to 9) in a string.",
+        "In JavaScript, it is used like this: <code>/\\d/g</code>.",
+        "Appending a plus sign (<code>+</code>) after the selector, e.g. <code>/\\d+/g</code>, allows this regular expression to match one or more digits.",
+        "The trailing <code>g</code> is short for 'global', which allows this regular expression to find all matches rather than stop at the first match.",
         "<h4>Instructions</h4>",
         "Use the <code>\\d</code> selector to select the number of numbers in the string, allowing for the possibility of one or more digit."
       ],
