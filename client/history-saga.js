@@ -20,7 +20,7 @@ const emptyLocation = {
 
 let prevKey;
 let isSyncing = false;
-export default function synchroniseHistory(
+export default function historySaga(
   history,
   updateLocation,
   goTo,

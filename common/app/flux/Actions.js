@@ -33,8 +33,24 @@ export default Actions({
   },
 
   // routing
+  // goTo(path: String) => path
   goTo: null,
+
+  // goBack(arg?) => arg?
   goBack: null,
+
+  // toast(args: { type?: String, message: String, title: String }) => args
+  toast(args) {
+    return {
+      transform(state) {
+        const id = state.toast && state.toast.id ? state.toast.id : 0;
+        const toast = { ...args, id: id + 1 };
+        return { ...state, toast };
+      }
+    };
+  },
+
+  // updateLocation(location: { pathname: String }) => location
   updateLocation(location) {
     return {
       transform(state) {

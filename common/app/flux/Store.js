@@ -28,7 +28,8 @@ export default Store({
     const {
       updateLocation,
       getUser,
-      setTitle
+      setTitle,
+      toast
     } = cat.getActions('appActions');
 
     register(
@@ -39,7 +40,8 @@ export default Store({
             setTitle
           )
         ),
-        updateLocation
+        updateLocation,
+        toast
       )
     );
 
