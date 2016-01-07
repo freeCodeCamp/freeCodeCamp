@@ -1,0 +1,35 @@
+{
+  "native": "en",
+  "locals": {
+    "zh": {
+      "suffix": "-CN",
+      "subset": ["zh", "zh-CN", "zh-Hans", "zh-Hans-CN", "zh-Hans-HK", "zh-Hans-MO", "zh-Hans-SG", "zh-Hans-TW"],
+      "views": ["challengeMap/show", "coursewares/showBonfire", "coursewares/showHTML", "coursewares/showJS", "coursewares/showStep", "coursewares/showVideo", "coursewares/showZiplineOrBasejump"]
+    },
+    "zh-Hant": {
+      "suffix": "-CN-HANT",
+      "subset": ["zh-HK", "zh-MO", "zh-SG", "zh-TW", "zh-Hant", "zh-Hant-CN", "zh-Hant-HK", "zh-Hant-MO", "zh-Hant-SG", "zh-Hant-TW"],
+      "views": []
+    },
+    "fr": {
+      "suffix": "-FR",
+      "subset": ["fr", "fr-FR", "fr-CA", "fr-CH"],
+      "views": []
+    },
+    "ru": {
+      "suffix": "-FR",
+      "subset": ["ru"],
+      "views": []
+    },
+    "es": {
+      "suffix": "-FR",
+      "subset": ["es", "es-419"],
+      "views": []
+    },
+    "pt": {
+      "suffix": "-FR",
+      "subset": ["pt", "pt-PT", "pt-BR"],
+      "views": []
+    }
+  }
+}
