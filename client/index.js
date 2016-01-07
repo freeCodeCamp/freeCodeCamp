@@ -6,9 +6,10 @@ import debugFactory from 'debug';
 import { Router } from 'react-router';
 import { createLocation, createHistory } from 'history';
 import { hydrate } from 'thundercats';
-import { Render } from 'thundercats-react';
+import { render$ } from 'thundercats-react';
 
 import { app$ } from '../common/app';
+import synchroniseHistory from './synchronise-history';
 
 const debug = debugFactory('fcc:client');
 const DOMContianer = document.getElementById('fcc');
@@ -23,56 +24,55 @@ const appLocation = createLocation(
   location.pathname + location.search
 );
 
-function location$(history) {
-  return Rx.Observable.create(function(observer) {
-    const dispose = history.listen(function(location) {
-      observer.onNext(location.pathname);
-    });
-
-    return Rx.Disposable.create(() => {
-      dispose();
-    });
-  });
-}
-
 // returns an observable
 app$({ history, location: appLocation })
   .flatMap(
     ({ AppCat }) => {
       // instantiate the cat with service
-      const appCat = AppCat(null, services);
+      const appCat = AppCat(null, services, history);
       // hydrate the stores
-      return hydrate(appCat, catState)
-        .map(() => appCat);
+      return hydrate(appCat, catState).map(() => appCat);
     },
     // not using nextLocation at the moment but will be used for
     // redirects in the future
     ({ nextLocation, props }, appCat) => ({ nextLocation, props, appCat })
   )
   .doOnNext(({ appCat }) => {
-    const appActions = appCat.getActions('appActions');
+    const { updateLocation, goTo, goBack } = appCat.getActions('appActions');
+    const appStore$ = appCat.getStore('appStore');
 
-    location$(history)
-      .pluck('pathname')
+    const routerState$ = appStore$
+      .map(({ location }) => location)
+      .distinctUntilChanged(
+        location => location && location.key ? location.key : location
+      );
+
+    // set page title
+    appStore$
+      .pluck('title')
+      .doOnNext(title => document.title = title)
+      .subscribe(() => {});
+
+    appStore$
+      .pluck('err')
+      .filter(err => !!err)
       .distinctUntilChanged()
-      .doOnNext(route => debug('route change', route))
-      .subscribe(route => appActions.updateRoute(route));
+      .subscribe(err => console.error(err));
 
-    appActions.goBack.subscribe(function() {
-      history.goBack();
-    });
-
-    appActions
-      .updateRoute
-      .pluck('route')
-      .doOnNext(route => debug('update route', route))
-      .subscribe(function(route) {
-        history.pushState(null, route);
-      });
+    synchroniseHistory(
+      history,
+      updateLocation,
+      goTo,
+      goBack,
+      routerState$
+    );
   })
+  // allow store subscribe to subscribe to actions
+  .delay(10)
   .flatMap(({ props, appCat }) => {
     props.history = history;
-    return Render(
+
+    return render$(
       appCat,
       React.createElement(Router, props),
       DOMContianer

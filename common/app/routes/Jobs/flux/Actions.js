@@ -1,51 +1,102 @@
 import { Actions } from 'thundercats';
 import store from 'store';
-import debugFactory from 'debug';
-import { jsonp$ } from '../../../../utils/jsonp$';
-import { postJSON$ } from '../../../../utils/ajax-stream';
+import { Observable } from 'rx';
 
-const debug = debugFactory('freecc:jobs:actions');
+import { nameSpacedTransformer } from '../../../../utils';
+
 const assign = Object.assign;
+const jobsTranformer = nameSpacedTransformer('jobsApp');
+const noOper = { transform: () => {} };
 
 export default Actions({
-  setJobs: null,
+  refs: { displayName: 'JobActions' },
+  shouldBindMethods: true,
   // findJob assumes that the job is already in the list of jobs
   findJob(id) {
-    return oldState => {
-      const { currentJob = {}, jobs = [] } = oldState;
-      // currentJob already set
-      // do nothing
-      if (currentJob.id === id) {
-        return null;
-      }
-      const foundJob = jobs.reduce((newJob, job) => {
-        if (job.id === id) {
-          return job;
+    return {
+      transform: jobsTranformer(oldState => {
+        const { currentJob = {}, jobs = [] } = oldState;
+        // currentJob already set
+        // do nothing
+        if (currentJob.id === id) {
+          return null;
         }
-        return newJob;
-      }, null);
+        const foundJob = jobs.reduce((newJob, job) => {
+          if (job.id === id) {
+            return job;
+          }
+          return newJob;
+        }, null);
 
-      // if no job found this will be null which is a op noop
-      return foundJob ?
-        assign({}, oldState, { currentJob: foundJob }) :
-        null;
+        // if no job found this will be null which is a op noop
+        return foundJob ?
+          assign({}, oldState, { currentJob: foundJob }) :
+          null;
+      })
     };
   },
-  setError: null,
-  getJob: null,
-  saveJobToDb: null,
-  getJobs(params) {
-    return { params };
+  saveJobToDb({ goTo, job }) {
+    return this.createService$('jobs', { job })
+      .map(job => ({
+        transform(state) {
+          state.location = {
+            action: 'PUSH',
+            pathname: goTo
+          };
+          return {
+            ...state,
+            jobsApp: {
+              ...state.jobs,
+              currentJob: job
+            }
+          };
+        }
+      }))
+      .catch(err => Observable.just({
+        transform(state) {
+          return { ...state, err };
+        }
+      }));
+  },
+  getJob(id) {
+    return this.readService$('jobs', { id })
+      .map(job => ({
+        transform: jobsTranformer(state => {
+          return { ...state, currentJob: job };
+        })
+      }))
+      .catch(err => Observable.just({
+        transform(state) {
+          return { ...state, err };
+        }
+      }));
+  },
+  getJobs() {
+    return this.readService$('jobs')
+      .map(jobs => ({
+        transform: jobsTranformer(state => {
+          return { ...state, jobs };
+        })
+      }))
+      .catch(err => Observable.just({
+        transform(state) {
+          return { ...state, err };
+        }
+      }));
   },
   openModal() {
-    return { showModal: true };
+    return {
+      transform: jobsTranformer(state => ({ ...state, showModal: true }))
+    };
   },
   closeModal() {
-    return { showModal: false };
+    return {
+      transform: jobsTranformer(state => ({ ...state, showModal: false }))
+    };
   },
   handleForm(value) {
     return {
-      transform(oldState) {
+      transform: jobsTranformer(oldState => {
         const { form } = oldState;
         const newState = assign({}, oldState);
         newState.form = assign(
@@ -54,142 +105,94 @@ export default Actions({
           value
         );
         return newState;
-      }
+      })
     };
   },
   saveForm: null,
-  getSavedForm: null,
   clearSavedForm: null,
-  setForm(form) {
-    return { form };
-  },
-  getFollowers: null,
-  setFollowersCount(numOfFollowers) {
-    return { numOfFollowers };
+  getSavedForm() {
+    const form = store.get('newJob');
+    if (form && !Array.isArray(form) && typeof form === 'object') {
+      return {
+        transform: jobsTranformer(state => {
+          return { ...state, form };
+        })
+      };
+    }
+    return noOper;
   },
   setPromoCode({ target: { value = '' }} = {}) {
-    return { promoCode: value.replace(/[^\d\w\s]/, '') };
-  },
-  applyCode: null,
-  clearPromo(foo, undef) {
     return {
-      price: undef,
-      buttonId: undef,
-      discountAmount: undef,
-      promoCode: undef,
-      promoApplied: false,
-      promoName: undef
+      transform: jobsTranformer(state => ({
+        ...state,
+        promoCode: value.replace(/[^\d\w\s]/, '')
+      }))
     };
   },
-  applyPromo({
-    fullPrice: price,
-    buttonId,
-    discountAmount,
-    code: promoCode,
-    name: promoName
-  } = {}) {
-    return {
-      price,
-      buttonId,
-      discountAmount,
-      promoCode,
-      promoApplied: true,
-      promoName
+  applyCode({ id, code = '', type = null}) {
+    const body = {
+      id,
+      code: code.replace(/[^\d\w\s]/, '')
     };
-  }
-})
-  .refs({ displayName: 'JobActions' })
-  .init(({ instance: jobActions, args: [cat, services] }) => {
-    jobActions.getJobs.subscribe(() => {
-      services.read('jobs', null, null, (err, jobs) => {
-        if (err) {
-          debug('job services experienced an issue', err);
-          return jobActions.setError({ err });
+    if (type) {
+      body.type = type;
+    }
+    return this.postJSON$('/api/promos/getButton', body)
+      .pluck('response')
+      .map(({ promo }) => {
+        if (!promo || !promo.buttonId) {
+          return noOper;
         }
-        jobActions.setJobs({ jobs });
-      });
-    });
+        const {
+          fullPrice: price,
+          buttonId,
+          discountAmount,
+          code: promoCode,
+          name: promoName
+        } = promo;
 
-    jobActions.getJob.subscribe(({ id, isPrimed }) => {
-      // job is already set, do nothing.
-      if (isPrimed) {
-        debug('job is primed');
-        return;
-      }
-      services.read('jobs', { id }, null, (err, job) => {
-        if (err) {
-          debug('job services experienced an issue', err);
-          return jobActions.setError({ err });
+        return {
+          transform: jobsTranformer(state => ({
+            ...state,
+            price,
+            buttonId,
+            discountAmount,
+            promoCode,
+            promoApplied: true,
+            promoName
+          }))
+        };
+      })
+      .catch(err => Observable.just({
+        transform(state) {
+          return { ...state, err };
         }
-        if (job) {
-          jobActions.setJobs({ currentJob: job });
-        }
-        jobActions.setJobs({});
-      });
-    });
-
+      }));
+  },
+  clearPromo() {
+    return {
+      /* eslint-disable no-undefined */
+      transform: jobsTranformer(state => ({
+        ...state,
+        price: undefined,
+        buttonId: undefined,
+        discountAmount: undefined,
+        promoCode: undefined,
+        promoApplied: false,
+        promoName: undefined
+      }))
+      /* eslint-enable no-undefined */
+    };
+  },
+  init({ instance: jobActions }) {
     jobActions.saveForm.subscribe((form) => {
       store.set('newJob', form);
-    });
-
-    jobActions.getSavedForm.subscribe(() => {
-      const job = store.get('newJob');
-      if (job && !Array.isArray(job) && typeof job === 'object') {
-        jobActions.setForm(job);
-      }
     });
 
     jobActions.clearSavedForm.subscribe(() => {
       store.remove('newJob');
     });
 
-    jobActions.saveJobToDb.subscribe(({ goTo, job }) => {
-      const appActions = cat.getActions('appActions');
-      services.create('jobs', { job }, null, (err, job) => {
-        if (err) {
-          debug('job services experienced an issue', err);
-          return jobActions.setError(err);
-        }
-        jobActions.setJobs({ job });
-        appActions.updateRoute(goTo);
-      });
-    });
-
-    jobActions.getFollowers.subscribe(() => {
-      const url = 'https://cdn.syndication.twimg.com/widgets/followbutton/' +
-        'info.json?lang=en&screen_names=CamperJobs' +
-        '&callback=JSONPCallback';
-
-      jsonp$(url)
-        .map(({ response }) => {
-          return response[0]['followers_count'];
-        })
-        .subscribe(
-          count => jobActions.setFollowersCount(count),
-          err => jobActions.setError(err)
-        );
-    });
-
-    jobActions.applyCode.subscribe(({ id, code = '', type = null}) => {
-      const body = {
-        id,
-        code: code.replace(/[^\d\w\s]/, '')
-      };
-      if (type) {
-        body.type = type;
-      }
-      postJSON$('/api/promos/getButton', body)
-        .pluck('response')
-        .subscribe(
-          ({ promo }) => {
-            if (promo && promo.buttonId) {
-              jobActions.applyPromo(promo);
-            }
-            jobActions.setError(new Error('no promo found'));
-          },
-          jobActions.setError
-        );
-    });
-
     return jobActions;
-    });
+  }
+});

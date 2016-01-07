@@ -5,7 +5,16 @@ const initValue = {
   title: 'Learn To Code | Free Code Camp',
   username: null,
   picture: null,
-  points: 0
+  points: 0,
+  hikesApp: {
+    hikes: [],
+    // lecture state
+    currentHike: {},
+    showQuestions: false
+  },
+  jobsApp: {
+    showModal: false
+  }
 };
 
 export default Store({
@@ -13,12 +22,82 @@ export default Store({
     displayName: 'AppStore',
     value: initValue
   },
-  init({ instance: appStore, args: [cat] }) {
-    const { updateRoute, setUser, setTitle } = cat.getActions('appActions');
-    const register = createRegistrar(appStore);
+  init({ instance: store, args: [cat] }) {
+    const register = createRegistrar(store);
+    // app
+    const {
+      updateLocation,
+      getUser,
+      setTitle
+    } = cat.getActions('appActions');
 
-    register(setter(fromMany(setUser, setTitle, updateRoute)));
+    register(
+      fromMany(
+        setter(
+          fromMany(
+            getUser,
+            setTitle
+          )
+        ),
+        updateLocation
+      )
+    );
 
-    return appStore;
+    // hikes
+    const {
+      toggleQuestions,
+      fetchHikes,
+      hideInfo,
+      resetHike,
+      grabQuestion,
+      releaseQuestion,
+      moveQuestion,
+      answer
+    } = cat.getActions('hikesActions');
+
+    register(
+      fromMany(
+        toggleQuestions,
+        fetchHikes,
+        hideInfo,
+        resetHike,
+        grabQuestion,
+        releaseQuestion,
+        moveQuestion,
+        answer
+      )
+    );
+
+
+    // jobs
+    const {
+      findJob,
+      saveJobToDb,
+      getJob,
+      getJobs,
+      openModal,
+      closeModal,
+      handleForm,
+      getSavedForm,
+      setPromoCode,
+      applyCode,
+      clearPromo
+    } = cat.getActions('JobActions');
+
+    register(
+      fromMany(
+        findJob,
+        saveJobToDb,
+        getJob,
+        getJobs,
+        openModal,
+        closeModal,
+        handleForm,
+        getSavedForm,
+        setPromoCode,
+        applyCode,
+        clearPromo
+      )
+    );
   }
 });

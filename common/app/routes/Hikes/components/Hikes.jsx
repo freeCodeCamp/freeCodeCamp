@@ -9,7 +9,10 @@ import HikesMap from './Map.jsx';
 
 export default contain(
   {
-    store: 'hikesStore',
+    store: 'appStore',
+    map(state) {
+      return state.hikesApp;
+    },
     actions: ['appActions'],
     fetchAction: 'hikesActions.fetchHikes',
     getPayload: ({ hikes, params }) => ({
@@ -27,7 +30,9 @@ export default contain(
       appActions: PropTypes.object,
       children: PropTypes.element,
       currentHike: PropTypes.object,
-      hikes: PropTypes.array
+      hikes: PropTypes.array,
+      params: PropTypes.object,
+      showQuestions: PropTypes.bool
     },
 
     componentWillMount() {
@@ -41,21 +46,26 @@ export default contain(
       );
     },
 
-    renderChild(children, hikes, currentHike) {
+    renderChild({ children, ...props }) {
       if (!children) {
         return null;
       }
-      return React.cloneElement(children, { hikes, currentHike });
+      return React.cloneElement(children, props);
     },
 
     render() {
-      const { hikes, children, currentHike } = this.props;
+      const { hikes } = this.props;
+      const { dashedName } = this.props.params;
       const preventOverflow = { overflow: 'hidden' };
       return (
         <div>
           <Row style={ preventOverflow }>
-            { this.renderChild(children, hikes, currentHike) ||
-              this.renderMap(hikes) }
+            {
+              // render sub-route
+              this.renderChild({ ...this.props, dashedName }) ||
+              // if no sub-route render hikes map
+              this.renderMap(hikes)
+            }
           </Row>
         </div>
       );
