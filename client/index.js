@@ -9,7 +9,8 @@ import { hydrate } from 'thundercats';
 import { render$ } from 'thundercats-react';
 
 import { app$ } from '../common/app';
-import synchroniseHistory from './synchronise-history';
+import historySaga from './history-saga';
+import errSaga from './err-saga';
 
 const debug = debugFactory('fcc:client');
 const DOMContianer = document.getElementById('fcc');
@@ -38,8 +39,15 @@ app$({ history, location: appLocation })
     ({ nextLocation, props }, appCat) => ({ nextLocation, props, appCat })
   )
   .doOnNext(({ appCat }) => {
-    const { updateLocation, goTo, goBack } = appCat.getActions('appActions');
     const appStore$ = appCat.getStore('appStore');
+
+    const {
+      toast,
+      updateLocation,
+      goTo,
+      goBack
+    } = appCat.getActions('appActions');
+
 
     const routerState$ = appStore$
       .map(({ location }) => location)
@@ -50,22 +58,24 @@ app$({ history, location: appLocation })
     // set page title
     appStore$
       .pluck('title')
+      .distinctUntilChanged()
       .doOnNext(title => document.title = title)
       .subscribe(() => {});
 
-    appStore$
-      .pluck('err')
-      .filter(err => !!err)
-      .distinctUntilChanged()
-      .subscribe(err => console.error(err));
-
-    synchroniseHistory(
+    historySaga(
       history,
       updateLocation,
       goTo,
       goBack,
       routerState$
     );
+
+    const err$ = appStore$
+      .pluck('err')
+      .filter(err => !!err)
+      .distinctUntilChanged();
+
+    errSaga(err$, toast);
   })
   // allow store subscribe to subscribe to actions
   .delay(10)

@@ -242,7 +242,13 @@ export default Actions({
           return {
             ...state,
             points: username ? state.points + 1 : state.points,
-            hikesApp
+            hikesApp,
+            toast: {
+              title: 'Congratulations!',
+              message: 'Hike completed',
+              id: state.toast && state.toast.id ? state.toast.id + 1 : 0,
+              type: 'success'
+            }
           };
         },
         optimistic: optimisticSave
