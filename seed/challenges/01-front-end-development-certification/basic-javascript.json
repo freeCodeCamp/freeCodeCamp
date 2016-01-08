@@ -3476,7 +3476,7 @@
         "<blockquote>var ourMusic = [<br>  {<br>    \"artist\": \"Daft Punk\",<br>    \"title\": \"Homework\",<br>    \"release_year\": 1997,<br>    \"formats\": [ <br>      \"CD\", <br>      \"Cassette\", <br>      \"LP\" ],<br>    \"gold\": true<br>  }<br>];</blockquote>",
         "This is an array of objects and the object has various pieces of <dfn>metadata</dfn> about an album. It also has a nested <code>formats</code> array. Additional album records could be added to the top level array.",
         "<h4>Instructions</h4>",
-        "Add a new album to the <code>myMusic</code> JSON object. Add <code>artist</code> and <code>title</code> strings, <code>release_year</code> year, and a <code>formats</code> array of strings."
+        "Add a new album to the <code>myMusic</code> JSON object. Add <code>artist</code> and <code>title</code> strings, <code>release_year</code> number, and a <code>formats</code> array of strings."
       ],
       "releasedOn": "January 1, 2016",
       "challengeSeed": [
