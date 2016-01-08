@@ -36,8 +36,33 @@
       "type": "Waypoint",
       "challengeType": 7,
       "tests": [],
-      "nameCn": "",
-      "descriptionCn": [],
+      "nameCn": "了解 Bonfires",
+      "descriptionCn": [
+        [
+          "http://i.imgur.com/sJkp30a.png",
+          "An image of our a Bonfire challenge showing directions, tests, and the code editor.",
+          "Bonfires 教你用程序员思维去面对挑战。",
+          ""
+        ],
+        [
+          "http://i.imgur.com/d8LuRNh.png",
+          "A mother bird kicks a baby bird out of her nest.",
+          "Waypoint 挑战向您介绍的编程概念。Bonfire 挑战需要运用你知识来解决问题。",
+          ""
+        ],
+        [
+          "http://i.imgur.com/WBetuBa.jpg",
+          "A programmer punching through his laptop screen in frustration.",
+          "Bonfires 十分困难。通常大多数营员需要几个小时的时间才能解决掉每一个 Bonfires。你会感到沮丧。但是，不要放弃。",
+          ""
+        ],
+        [
+          "http://i.imgur.com/5pAl7TV.jpg",
+          "A beagle winking and pointing his paw at you.",
+          "第当你遇到困难，记得我们教给你的技能 Read-Search-Ask （理解，搜索，不齿下问）。<br>不要担心 - 相信你已经知道如何去运用它。",
+          ""
+        ]
+      ],
       "nameFr": "",
       "descriptionFr": [],
       "nameRu": "",
@@ -77,8 +102,13 @@
       ],
       "type": "bonfire",
       "challengeType": 5,
-      "nameCn": "",
-      "descriptionCn": [],
+      "nameCn": "Bonfire 之旅",
+      "descriptionCn": [
+        "你的目标是解决掉失败的测试用例。",
+        "首先，通过点击 \"Run tests\" 或按下Ctrl+回车键运行所有的测试用例。",
+        "失败的测试是红色打叉部分。修复代码，使所有测试用例都通过测试，然后你可以进行下一个Bonfire。",
+        "使该函数返回值为true，不用去管该函数且有什么样的参数或功能。"
+      ],
       "nameFr": "",
       "descriptionFr": [],
       "nameRu": "",
@@ -126,8 +156,13 @@
       ],
       "type": "bonfire",
       "challengeType": 5,
-      "nameCn": "",
-      "descriptionCn": [],
+      "nameCn": "反转字符串",
+      "descriptionCn": [
+        "反转提供给您的字符串。",
+        "可能您需要把字符串到一个数组，然后才能反转它。",
+        "函数返回结果必须是一个字符串。",
+        "如果遇到困难，使用 <a href=\"//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck\" target=\"_blank\">Read-Search-Ask</a> 方法解决问题。要保证代码是出自您手。"
+      ],
       "nameFr": "",
       "descriptionFr": [],
       "nameRu": "",
@@ -174,8 +209,14 @@
       ],
       "type": "bonfire",
       "challengeType": 5,
-      "nameCn": "",
-      "descriptionCn": [],
+      "nameCn": "阶乘",
+      "descriptionCn": [
+        "返回一个整数的阶乘结果。",
+        "如果用字母n表示一个整数，阶乘把所有正整数小于或等于n的乘积。",
+        "通常使用速记符号 <code>n!</code> 表示阶乘",
+        "例如: <code>5! = 1 * 2 * 3 * 4 * 5 = 120</code>",
+        "如果遇到困难，使用 <a href=\"//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck\" target=\"_blank\">Read-Search-Ask</a> 方法解决问题。要保证代码是出自您手。"
+      ],
       "nameFr": "",
       "descriptionFr": [],
       "nameRu": "",
@@ -233,8 +274,14 @@
       ],
       "type": "bonfire",
       "challengeType": 5,
-      "nameCn": "",
-      "descriptionCn": [],
+      "nameCn": "回文检测",
+      "descriptionCn": [
+        "如果给定的字符串是一个回文，返回true。否则，返回false。",
+        "把相同的词汇或句子，在下文中调换位置或颠倒过来，产生首尾回环，叫做回文。忽略标点符号，大小写和间距。",
+        "你需要移除所有非字母字符（标点符号，空格和符号），并把它们转换为小写字母，然后检验是否为回文。",
+        "这些字符串将通过我们的测试用例, 如： \"racecar\", \"RaceCar\", 和 \"race CAR\" 等等。",
+        "如果遇到困难，使用 <a href=\"//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck\" target=\"_blank\">Read-Search-Ask</a> 方法解决问题。要保证代码是出自您手。"
+      ],
       "nameFr": "",
       "descriptionFr": [],
       "nameRu": "",
@@ -282,8 +329,12 @@
       ],
       "type": "bonfire",
       "challengeType": 5,
-      "nameCn": "",
-      "descriptionCn": [],
+      "nameCn": "寻找最长的字符串",
+      "descriptionCn": [
+        "返回句子最长的单词的长度。",
+        "函数返回结果应当是数字。",
+        "如果遇到困难，使用 <a href=\"//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck\" target=\"_blank\">Read-Search-Ask</a> 方法解决问题。要保证代码是出自您手。"
+      ],
       "nameFr": "",
       "descriptionFr": [],
       "nameRu": "",
@@ -326,8 +377,12 @@
       ],
       "type": "bonfire",
       "challengeType": 5,
-      "nameCn": "",
-      "descriptionCn": [],
+      "nameCn": "大写首字母",
+      "descriptionCn": [
+        "大写句中（函数传入的参数）每个单词的第一个字母，将整句做为函数结果返回。确保单词除大写字母外均为小写。",
+        "这个练习的目的, 让你学会利用字符串连接功能。",
+        "如果遇到困难，使用 <a href=\"//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck\" target=\"_blank\">Read-Search-Ask</a> 方法解决问题。要保证代码是出自您手。"
+      ],
       "nameFr": "",
       "descriptionFr": [],
       "nameRu": "",
@@ -370,8 +425,12 @@
       ],
       "type": "bonfire",
       "challengeType": 5,
-      "nameCn": "",
-      "descriptionCn": [],
+      "nameCn": "使用数组返回最大值",
+      "descriptionCn": [
+        "将二维数组的每个数组的最大的数字放在一个数组中做为结果返回。为简单起见，提供的二维数组只包含4个一维数组。",
+        "提醒：你可以通过一个简单的for循环迭代一个数组，用arr[i]方式访问数组的每一个成员。",
+        "如果遇到困难，使用 <a href=\"//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck\" target=\"_blank\">Read-Search-Ask</a> 方法解决问题。要保证代码是出自您手。"
+      ],
       "nameFr": "",
       "descriptionFr": [],
       "nameRu": "",
@@ -419,8 +478,11 @@
       ],
       "type": "bonfire",
       "challengeType": 5,
-      "nameCn": "",
-      "descriptionCn": [],
+      "nameCn": "末位文字匹配",
+      "descriptionCn": [
+        "检查一个字符串（函数第一个参数）以目标字符串（函数第二个参数）结尾。",
+        "如果遇到困难，使用 <a href=\"//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck\" target=\"_blank\">Read-Search-Ask</a> 方法解决问题。要保证代码是出自您手。"
+      ],
       "nameFr": "",
       "descriptionFr": [],
       "nameRu": "",
@@ -464,8 +526,11 @@
       ],
       "type": "bonfire",
       "challengeType": 5,
-      "nameCn": "",
-      "descriptionCn": [],
+      "nameCn": "复制字符串",
+      "descriptionCn": [
+        "重复给定的字符串（函数第一个参数）n次（函数第二个参数）。如果n为负数，返回一个空字符串。",
+        "如果遇到困难，使用 <a href=\"//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck\" target=\"_blank\">Read-Search-Ask</a> 方法解决问题。要保证代码是出自您手。"
+      ],
       "nameFr": "",
       "descriptionFr": [],
       "nameRu": "",
@@ -511,8 +576,13 @@
       ],
       "type": "bonfire",
       "challengeType": 5,
-      "nameCn": "",
-      "descriptionCn": [],
+      "nameCn": "字符串截取",
+      "descriptionCn": [
+        "截取字符串（第一个参数），如果它比超过给定的长度（第二个参数）。返回结果以\"...\"结尾。",
+        "需要注意：\"...\" 长度计入返回结果。",
+        "如果 <code>num</code> 小于或等于3，则 \"...\" 长度不计处返回结果。",
+        "如果遇到困难，使用 <a href=\"//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck\" target=\"_blank\">Read-Search-Ask</a> 方法解决问题。要保证代码是出自您手。"
+      ],
       "nameFr": "",
       "descriptionFr": [],
       "nameRu": "",
@@ -558,8 +628,11 @@
       ],
       "type": "bonfire",
       "challengeType": 5,
-      "nameCn": "",
-      "descriptionCn": [],
+      "nameCn": "切分数组",
+      "descriptionCn": [
+        "写一个方法，简单地将一个数组（第一个参数）切分成 <code>size</code>（第二个参数）个数组，将结果放入二维维数组返回。",
+        "如果遇到困难，使用 <a href=\"//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck\" target=\"_blank\">Read-Search-Ask</a> 方法解决问题。要保证代码是出自您手。"
+      ],
       "nameFr": "",
       "descriptionFr": [],
       "nameRu": "",
@@ -603,8 +676,12 @@
       ],
       "type": "bonfire",
       "challengeType": 5,
-      "nameCn": "",
-      "descriptionCn": [],
+      "nameCn": "数组截取",
+      "descriptionCn": [
+        "返回从数组头部砍掉n个元素后剩余的元素。",
+        "头部意味着数组的开始，或第索引为0的元素。",
+        "如果遇到困难，使用 <a href=\"//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck\" target=\"_blank\">Read-Search-Ask</a> 方法解决问题。要保证代码是出自您手。"
+      ],
       "nameFr": "",
       "descriptionFr": [],
       "nameRu": "",
@@ -653,8 +730,14 @@
       ],
       "type": "bonfire",
       "challengeType": 5,
-      "nameCn": "",
-      "descriptionCn": [],
+      "nameCn": "子集和交集",
+      "descriptionCn": [
+        "如果数组的第二元素是第一元素的子集,返回<code> true </code>。",
+        "例如 <code>[\"hello\", \"Hello\"]</code>, 返回结果为<code> true </code>。 因为第二元素与第一元素是交集（忽略大小写）。",
+        "再如 <code>[\"hello\", \"hey\"]</code>，返回结果为<code> false </code>。 因为字符串 \"hello\" 不包含字符 \"y\"。",
+        "最后 <code>[\"Alien\", \"line\"]</code>, 返回结果为<code> true </code>。 因为 \"line\" 是 \"Alien\" 的子集。",
+        "如果遇到困难，使用 <a href=\"//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck\" target=\"_blank\">Read-Search-Ask</a> 方法解决问题。要保证代码是出自您手。"
+      ],
       "nameFr": "",
       "descriptionFr": [],
       "nameRu": "",
@@ -700,8 +783,12 @@
       ],
       "type": "bonfire",
       "challengeType": 5,
-      "nameCn": "",
-      "descriptionCn": [],
+      "nameCn": "Falsy 概念",
+      "descriptionCn": [
+        "从数组中删除所有 Falsy 值。",
+        "Javascript的Falsy 值包括 <code>false</code>, <code>null</code>, <code>0</code>, <code>\"\"</code>, <code>undefined</code>, and <code>NaN</code>.",
+        "如果遇到困难，使用 <a href=\"//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck\" target=\"_blank\">Read-Search-Ask</a> 方法解决问题。要保证代码是出自您手。"
+      ],
       "nameFr": "",
       "descriptionFr": [],
       "nameRu": "",
@@ -746,8 +833,11 @@
       ],
       "type": "bonfire",
       "challengeType": 5,
-      "nameCn": "",
-      "descriptionCn": [],
+      "nameCn": "数组元素过滤",
+      "descriptionCn": [
+        "从数组(第一个参数)中过滤掉（包含相同元素）给定的值。",
+        "如果遇到困难，使用 <a href=\"//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck\" target=\"_blank\">Read-Search-Ask</a> 方法解决问题。要保证代码是出自您手。"
+      ],
       "nameFr": "",
       "descriptionFr": [],
       "nameRu": "",
@@ -794,8 +884,13 @@
       ],
       "type": "bonfire",
       "challengeType": 5,
-      "nameCn": "",
-      "descriptionCn": [],
+      "nameCn": "找到我的位置",
+      "descriptionCn": [
+        "找出给定的值 (第二个参数) 在数组 (第一个参数) 排序后 的位置。",
+        "例如, <code>where([1,2,3,4], 1.5)</code> 返回 <code>1</code>。 因为它比 <code>1</code> (index 0) 大, 但是它比 <code>2</code> (index 1) 小。",
+        "同样, <code>where([20,3,5], 19)</code> 返回<code>2</code>。 因为一旦该数组已排序它看起来就像 <code>[3,5,20]</code> ， <code>19</code> 比 <code>20</code> (index 2) 小，并且比 <code>5</code> (index 1)大。",
+        "如果遇到困难，使用 <a href=\"//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck\" target=\"_blank\">Read-Search-Ask</a> 方法解决问题。要保证代码是出自您手。"
+      ],
       "nameFr": "",
       "descriptionFr": [],
       "nameRu": "",
@@ -847,7 +942,14 @@
       ],
       "type": "bonfire",
       "challengeType": "5",
-      "nameCn": "",
+      "nameCn": "凯撒密码",
+      "descriptionCn": [
+        "有一种最简单且广泛运用的 <dfn>加密</dfn> 方式被称做 <code>凯撒密码</code>，也被称为 <code>位移加密</code>。 <code>位移加密</code> 的字母被按照固定的步长转换而来.",
+        "<a href=\"https://en.wikipedia.org/wiki/ROT13\">ROT13</a> 是一种常见的加密方式， 其中每个字母被向后推进13位。 因此 'A' &harr; 'N', 'B' &harr;  'O' 等等 。",
+        "写一个方法，它接受一个 <a href=\"https://en.wikipedia.org/wiki/ROT13\">ROT13</a> 编码字符串作为输入，返回解码后的结果.",
+        "所有字符均需大写。 除去所有非字母字符 (如空格，标点)。",
+        "如果遇到困难，使用 <a href=\"//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck\" target=\"_blank\">Read-Search-Ask</a> 方法解决问题。要保证代码是出自您手。"
+      ],
       "nameFr": "",
       "nameRu": "",
       "nameEs": "",

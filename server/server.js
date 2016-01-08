@@ -8,6 +8,7 @@ var _ = require('lodash'),
     loopback = require('loopback'),
     boot = require('loopback-boot'),
     expressState = require('express-state'),
+    localization = require('./localization.json'),
     path = require('path'),
     passportProviders = require('./passport-providers');
 
@@ -31,6 +32,33 @@ app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 app.use(loopback.token());
+
+// This function will route the page to localization
+app.use(function(req, res, next) {
+    var render = res.render;
+    var switchLocal = function(jade) {
+        var langs = req.acceptsLanguages(),
+            locals = localization.locals,
+            userAgent = '';
+        if (langs && (userAgent = langs[0])) {
+            for (var lang in locals) {
+               var obj = locals[lang];
+                if (obj['views'] && obj['views'].indexOf(jade) > -1 && obj['subset'].indexOf(userAgent) > -1) {
+                    var langJade = jade + obj['suffix'];
+                    return langJade;
+                }
+            }
+        }
+        return jade;
+    };
+    res.render = function(view, locals, cb) {
+        view = switchLocal(view);
+        res.locals.messages = req.flash();
+        render.call(res, view, locals, cb);
+    };
+    next();
+});
+
 app.disable('x-powered-by');
 
 // adds passport initialization after session middleware phase is complete
