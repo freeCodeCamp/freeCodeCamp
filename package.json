@@ -109,7 +109,7 @@
     "react-motion": "~0.3.1",
     "react-router": "^1.0.0",
     "react-router-bootstrap": "https://github.com/FreeCodeCamp/react-router-bootstrap.git#freecodecamp",
-    "react-vimeo": "~0.0.3",
+    "react-vimeo": "~0.1.0",
     "request": "^2.65.0",
     "rev-del": "^1.0.5",
     "rx": "^4.0.0",
