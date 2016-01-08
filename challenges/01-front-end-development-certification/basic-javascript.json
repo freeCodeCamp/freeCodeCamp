@@ -2103,7 +2103,7 @@
         "<blockquote>function test(myVal) {<br>  if (myVal > 10) {<br>     return \"Greater Than\";<br>  }<br>  return \"Not Greater Than\";<br>}</blockquote>",
         "If <code>myVal</code> is greater than <code>10</code>, the function will return <code>\"Greater Than\"</code>. If it is not, the function will return <code>\"Not Greater Than\"</code>.",
         "<h4>Instructions</h4>",
-        "Create an <code>if</code> statement inside the function to return <code>\"Yes\"</code> if <code>testMe</code> is greater than <code>5</code>. Return <code>\"No\"</code> if it is less than or equal to <code>5</code>."
+        "Create an <code>if</code> statement inside the function to return <code>\"Yes\"</code> if <code>testMe</code> is greater than <code>5</code> and return <code>\"No\"</code> otherwise."
       ],
       "challengeSeed": [
         "// Example",
