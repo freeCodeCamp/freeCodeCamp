@@ -35,7 +35,7 @@
             .row
                 .form-group
 
-                    button.btn.btn-big.btn-block.btn-primary#story-submit(type='submit') Submit
+                    button.btn.btn-big.btn-block.btn-primary#story-submit(type='submit', onclick="return false;") Submit
     script.
       if (main.storyImage) {
         $('#image-display').removeClass('hidden-element');
