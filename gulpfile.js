@@ -40,7 +40,7 @@ var Rx = require('rx'),
   // lint
   jsonlint = require('gulp-jsonlint'),
   eslint = require('gulp-eslint'),
-  
+
   // unit-tests
   tape = require('gulp-tape'),
   tapSpec = require('tap-spec');
@@ -183,7 +183,7 @@ function delRev(dest, manifestName) {
   });
 }
 
-gulp.task('serve', function(cb) {
+gulp.task('serve', ['build-manifest'], function(cb) {
   var called = false;
   nodemon({
     script: paths.server,
@@ -483,6 +483,10 @@ function buildManifest() {
 
 var buildDependents = ['less', 'js', 'dependents'];
 
+if (__DEV__) {
+  buildDependents.push('pack-watch-manifest');
+}
+
 gulp.task('build-manifest', buildDependents, function() {
   return buildManifest();
 });
@@ -505,9 +509,9 @@ var watchDependents = [
   'dependents',
   'serve',
   'sync',
-  'build-manifest',
   'pack-watch',
-  'pack-watch-manifest'
+  'pack-watch-manifest',
+  'build-manifest'
 ];
 
 gulp.task('reload', function() {
@@ -533,6 +537,7 @@ gulp.task('default', [
   'serve',
   'pack-watch',
   'pack-watch-manifest',
+  'build-manifest-watch',
   'watch',
   'sync'
 ]);

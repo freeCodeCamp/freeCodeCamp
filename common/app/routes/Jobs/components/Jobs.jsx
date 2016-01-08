@@ -6,8 +6,14 @@ import ListJobs from './List.jsx';
 
 export default contain(
   {
-    store: 'jobsStore',
+    store: 'appStore',
+    map({ jobsApp: { jobs, showModal }}) {
+      return { jobs, showModal };
+    },
     fetchAction: 'jobActions.getJobs',
+    isPrimed({ jobs = [] }) {
+      return !!jobs.length;
+    },
     actions: [
       'appActions',
       'jobActions'
@@ -18,16 +24,10 @@ export default contain(
 
     propTypes: {
       children: PropTypes.element,
-      numOfFollowers: PropTypes.number,
       appActions: PropTypes.object,
       jobActions: PropTypes.object,
       jobs: PropTypes.array,
       showModal: PropTypes.bool
-    },
-
-    componentDidMount() {
-      const { jobActions } = this.props;
-      jobActions.getFollowers();
     },
 
     handleJobClick(id) {
@@ -36,7 +36,7 @@ export default contain(
         return null;
       }
       jobActions.findJob(id);
-      appActions.updateRoute(`/jobs/${id}`);
+      appActions.goTo(`/jobs/${id}`);
     },
 
     renderList(handleJobClick, jobs) {
@@ -84,7 +84,7 @@ export default contain(
                   <Button
                     className='signup-btn btn-block btn-cta'
                     onClick={ ()=> {
-                      appActions.updateRoute('/jobs/new');
+                      appActions.goTo('/jobs/new');
                     }}>
                     Post a job: $1,000
                   </Button>

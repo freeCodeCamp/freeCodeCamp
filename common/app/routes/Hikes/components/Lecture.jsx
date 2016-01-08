@@ -1,71 +1,88 @@
 import React, { PropTypes } from 'react';
-import { Button, Col, Row, Panel } from 'react-bootstrap';
+import { contain } from 'thundercats-react';
+import { Button, Col, Row } from 'react-bootstrap';
 import { History } from 'react-router';
 import Vimeo from 'react-vimeo';
 import debugFactory from 'debug';
 
 const debug = debugFactory('freecc:hikes');
 
-export default React.createClass({
-  displayName: 'Lecture',
-  mixins: [History],
+export default contain(
+  {
+    actions: ['hikesActions'],
+    store: 'appStore',
+    map(state) {
+      const {
+        currentHike: {
+          dashedName,
+          description,
+          challengeSeed: [id] = [0]
+        } = {}
+      } = state.hikesApp;
 
-  propTypes: {
-    currentHike: PropTypes.object,
-    params: PropTypes.object
+      return {
+        dashedName,
+        description,
+        id
+      };
+    }
   },
+  React.createClass({
+    displayName: 'Lecture',
+    mixins: [History],
 
-  handleError: debug,
+    propTypes: {
+      dashedName: PropTypes.string,
+      description: PropTypes.array,
+      id: PropTypes.string,
+      hikesActions: PropTypes.object
+    },
 
-  handleFinish() {
-    debug('loading questions');
-    const { dashedName } = this.props.params;
-    this.history.pushState(null, `/hikes/${dashedName}/questions/1`);
-  },
+    shouldComponentUpdate(nextProps) {
+      const { props } = this;
+      return nextProps.id !== props.id;
+    },
 
-  renderTranscript(transcript, dashedName) {
-    return transcript.map((line, index) => (
-      <p key={ dashedName + index }>{ line }</p>
-    ));
-  },
+    handleError: debug,
 
-  render() {
-    const {
-      title,
-      challengeSeed = ['1'],
-      description = []
-    } = this.props.currentHike;
-    const { dashedName } = this.props.params;
+    handleFinish(hikesActions) {
+      debug('loading questions');
+      hikesActions.toggleQuestions();
+    },
 
-    const [ id ] = challengeSeed;
+    renderTranscript(transcript, dashedName) {
+      return transcript.map((line, index) => (
+        <p key={ dashedName + index }>{ line }</p>
+      ));
+    },
 
-    const videoTitle = <h2>{ title }</h2>;
-    return (
-      <Col xs={ 12 }>
-        <Row>
-          <Panel className={ 'text-center' } title={ videoTitle }>
+    render() {
+      const {
+        id = '1',
+        description = [],
+        hikesActions
+      } = this.props;
+      const dashedName = 'foo';
+
+      return (
+        <Col xs={ 12 }>
+          <Row>
             <Vimeo
               onError={ this.handleError }
-              onFinish= { this.handleFinish }
+              onFinish= { () => this.handleFinish(hikesActions) }
               videoId={ id } />
-          </Panel>
-        </Row>
-        <Row>
-          <Col xs={ 12 }>
-            <Panel>
-              { this.renderTranscript(description, dashedName) }
-            </Panel>
-            <Panel>
-              <Button
-                block={ true }
-                bsSize='large'
-                onClick={ this.handleFinish }>
-                Take me to the Questions
-              </Button>
-            </Panel>
-          </Col>
-        </Row>
-      </Col>
-    );
-  }
-});
+          </Row>
+          <Row>
+            { this.renderTranscript(description, dashedName) }
+            <Button
+              block={ true }
+              bsSize='large'
+              onClick={ () => this.handleFinish(hikesActions) }>
+              Take me to the Questions
+            </Button>
+          </Row>
+        </Col>
+      );
+    }
+  })
+);

@@ -8,6 +8,9 @@ export default contain(
   {
     store: 'appStore',
     fetchAction: 'appActions.getUser',
+    isPrimed({ username }) {
+      return !!username;
+    },
     getPayload(props) {
       return {
         isPrimed: !!props.username
@@ -23,22 +26,6 @@ export default contain(
       picture: PropTypes.string,
       title: PropTypes.string,
       username: PropTypes.string
-    },
-
-    componentDidMount() {
-      const title = this.props.title;
-      this.setTitle(title);
-    },
-
-    componentWillReceiveProps(nextProps) {
-      if (nextProps.title !== this.props.title) {
-        this.setTitle(nextProps.title);
-      }
-    },
-
-    setTitle(title) {
-      const doc = typeof document !== 'undefined' ? document : {};
-      doc.title = title;
     },
 
     render() {

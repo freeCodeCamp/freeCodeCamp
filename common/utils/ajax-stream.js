@@ -17,7 +17,7 @@
  */
 
 import debugFactory from 'debug';
-import { AnonymousObservable, helpers } from 'rx';
+import { Observable, AnonymousObservable, helpers } from 'rx';
 
 const debug = debugFactory('freecc:ajax$');
 const root = typeof window !== 'undefined' ? window : {};
@@ -147,8 +147,12 @@ export function ajax$(options) {
     var processResponse = function(xhr, e) {
       var status = xhr.status === 1223 ? 204 : xhr.status;
       if ((status >= 200 && status <= 300) || status === 0 || status === '') {
-        observer.onNext(normalizeSuccess(e, xhr, settings));
-        observer.onCompleted();
+        try {
+          observer.onNext(normalizeSuccess(e, xhr, settings));
+          observer.onCompleted();
+        } catch (err) {
+          observer.onError(err);
+        }
       } else {
         observer.onError(normalizeError(e, xhr, 'error'));
       }
@@ -228,8 +232,8 @@ export function ajax$(options) {
         settings.hasContent && settings.body
       );
       xhr.send(settings.hasContent && settings.body || null);
-    } catch (e) {
-      observer.onError(e);
+    } catch (err) {
+      observer.onError(err);
     }
 
     return function() {
@@ -247,13 +251,25 @@ export function ajax$(options) {
   * from the Ajax POST.
   */
 export function post$(url, body) {
+  try {
+    body = JSON.stringify(body);
+  } catch (e) {
+    return Observable.throw(e);
+  }
+
   return ajax$({ url, body, method: 'POST' });
 }
 
 export function postJSON$(url, body) {
+  try {
+    body = JSON.stringify(body);
+  } catch (e) {
+    return Observable.throw(e);
+  }
+
   return ajax$({
     url,
-    body: JSON.stringify(body),
+    body,
     method: 'POST',
     responseType: 'json',
     headers: { 'Content-Type': 'application/json' }
