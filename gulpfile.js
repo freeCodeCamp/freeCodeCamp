@@ -521,7 +521,7 @@ gulp.task('reload', function() {
 
 gulp.task('watch', watchDependents, function() {
   gulp.watch(paths.lessFiles, ['less']);
-  gulp.watch(paths.js, ['js']);
+  gulp.watch(paths.js.concat(paths.vendorChallenges), ['js']);
   gulp.watch(paths.challenges, ['test-challenges', 'reload']);
   gulp.watch(paths.js, ['js', 'dependents']);
   gulp.watch(
