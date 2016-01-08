@@ -2653,6 +2653,47 @@
       "challengeType": 1
     },
     {
+      "id": "5690307fddb111c6084545d7",
+      "title": "Logical Order in If Else Statements",
+      "description": [
+        "Order is important in <code>if</code>, <code>else if</code> statements.",
+        "The loop is executed from top to bottom so you will want to be careful of what statement comes first.",
+        "Take these two functions as an example.",
+        "Heres the first:",
+        "<blockquote>function foo(x) {<br>  if (x < 1) {<br>    return \"Less than one\";<br>  } else if (num < 2) {<br>    return \"Less than two\";<br>  } else {<br>    return \"Greater than or equal to two\";<br>  }<br>}</blockquote>",
+        "And the second just switches the order of the statements:",
+        "<blockquote>function bar(x) {<br>  if (x < 2) {<br>    return \"Less than two\";<br>  } else if (num < 1) {<br>    return \"Less than one\";<br>  } else {<br>    return \"Greater than or equal to two\";<br>  }<br>}</blockquote>",
+        "While these two functions look nearly identical if we pass a number to both we get different outputs.",
+        "<blockquote>foo(0) // \"Less than one\"<br>bar(0) // \"Less than two\"</blockquote>",
+        "<h4>Instructions</h4>",
+        "Change the order of logic in the function so that it will return the correct statements in all cases."
+      ],
+      "challengeSeed": [
+        "function myTest(val) {",
+        "  if(val < 10) {",
+        "    return \"Less than 10\";",
+        "  } else if(val < 5) {",
+        "    return \"Less than 5\";",
+        "  } else {",
+        "    return \"Greater than or equal to 10\";",
+        "  }",
+        "}",
+        "             ",
+        "// Change this value to test",
+        "myTest(7);"
+      ],
+      "solutions": [
+        "function myTest(val) {\n  if(val < 5) {\n    return \"Less than 5\";            \n  } else if (val < 10) {\n    return \"Less than 10\";\n  } else {\n    return \"Greater than or equal to 10\";\n  }\n}"
+      ],
+      "tests": [
+        "assert(myTest(4) === \"Less than 5\", 'message: <code>myTest(5)</code> should return \"Less than 5\"');",
+        "assert(myTest(6) === \"Less than 10\", 'message: <code>myTest(6)</code> should return \"Less than 10\"');",
+        "assert(myTest(11) === \"Greater than or equal to 10\", 'message: <code>myTest(11)</code> should return \"Greater than or equal to 10\"');"
+      ],
+      "type": "waypoint",
+      "challengeType": 1
+    },
+    {
       "id": "56533eb9ac21ba0edf2244dc",
       "title": "Chaining If Else Statements",
       "description": [
