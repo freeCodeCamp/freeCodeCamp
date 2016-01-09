@@ -2197,7 +2197,7 @@
       "title": "Label Bootstrap Buttons",
       "description": [
         "Just like we labeled our wells, we want to label our buttons.",
-        "Give each of your <code>button</code> elements text that corresponds to their <code>id</code>."
+        "Give each of your <code>button</code> elements text that corresponds to its <code>id</code>'s selector."
       ],
       "tests": [
         "assert(new RegExp(\"#target1\",\"gi\").test($(\"#target1\").text()), 'message: Give your <code>button</code> element with the id <code>target1</code> the text <code>#target1</code>.');",
