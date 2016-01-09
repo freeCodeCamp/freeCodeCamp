@@ -9,7 +9,7 @@ block content
         .col-md-4.col-lg-3
             .scroll-locker(id = "scroll-locker")
               .innerMarginFix(style=' width: 99%')
-                #testCreatePanel.well
+                #testCreatePanel
                     h3.text-center.negative-10= name
                       if (isCompleted)
                           | &nbsp;
@@ -36,13 +36,13 @@ block content
                         | &nbsp; Run tests (ctrl + enter)
                 .button-spacer
                 .btn-group.input-group.btn-group-justified
-                    label.btn.btn-success#trigger-reset-modal
+                    label.btn.btn-primary.btn-primary-ghost#trigger-reset-modal
                         i.fa.fa-refresh
                             | &nbsp; Reset
-                    label.btn.btn-success#challenge-help-btn
+                    label.btn.btn-primary.btn-primary-ghost#challenge-help-btn
                         i.fa.fa-medkit
                             | &nbsp; Help
-                    label.btn.btn-success#trigger-issue-modal
+                    label.btn.btn-primary.btn-primary-ghost#trigger-issue-modal
                         i.fa.fa-bug
                             | &nbsp; Bug
                 if (!user)

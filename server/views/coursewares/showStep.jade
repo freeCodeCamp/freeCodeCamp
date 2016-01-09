@@ -3,9 +3,9 @@ block content
     .row
         .col-md-8.col-md-offset-2
                 for step, index in description
-                    .thumbnail.challenge-step(class=index !== 0 ? 'hidden': '')
+                    .challenge-step(class=index !== 0 ? 'hidden': '')
                         a(href=step[0] data-lightbox='img-enlarge')
-                            img.gif-block.img-center.img-responsive.thumbnail(src='#{step[0]}' alt='#{step[1]}')
+                            img.gif-block.img-center.img-responsive(src='#{step[0]}' alt='#{step[1]}')
                         .caption
                             p.large-p!= step[2]
                         .challenge-button-block
@@ -15,7 +15,7 @@ block content
                             if index === 0
                                 .col-sm-5.hidden-xs &nbsp;
                             else
-                                .btn.btn-warning.col-sm-5.col-xs-12.challenge-step-btn-prev(id='#{index - 1}') Go to my previous step
+                                .btn.btn-primary.btn-primary-ghost.col-sm-5.col-xs-12.challenge-step-btn-prev(id='#{index - 1}') Go to my previous step
                             .challenge-step-counter.large-p.col-sm-2.col-xs-12.text-center (#{index + 1} / #{description.length})
                             if index + 1 === description.length
                                 .btn.btn-primary.col-sm-5.col-xs-12.challenge-step-btn-finish(id='last' class=step[3] && !isCompleted ? 'disabled' : '') Finish challenge

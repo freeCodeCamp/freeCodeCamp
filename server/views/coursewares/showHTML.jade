@@ -8,33 +8,33 @@ block content
         .col-md-3.col-lg-3
             .scroll-locker(id = "scroll-locker")
                 .innerMarginFix(style = "width: 99%;")
-                    .well
-                        .row
-                            .col-xs-12
-                                h3.text-center.negative-10= name
-                                    if (isCompleted)
-                                        | &nbsp;
-                                        i.ion-checkmark-circled.text-primary(title="Completed")
-                                .bonfire-instructions
-                                    for sentence in details
-                                        p.wrappable.negative-10!= sentence
-                                    .negative-bottom-margin-30
+                    .row
+                        .col-xs-12
+                            h3.text-center.negative-10= name
+                                if (isCompleted)
+                                    | &nbsp;
+                                    i.ion-checkmark-circled.text-primary(title="Completed")
+                            hr
+                            .bonfire-instructions
+                                for sentence in details
+                                    p.wrappable.negative-10!= sentence
+                                .negative-bottom-margin-30
                     label.negative-10.btn.btn-primary.btn-lg.btn-block#submitButton
                         i.fa.fa-play
                             | &nbsp; Run tests (ctrl + enter)
                     .button-spacer
                     .btn-group.input-group.btn-group-justified
-                        label.btn.btn-success#trigger-reset-modal
+                        label.btn.btn-primary.btn-primary-ghost#trigger-reset-modal
                             i.fa.fa-refresh
                                 | &nbsp; Reset
-                        label.btn.btn-success.hidden-sm.hidden-md.hidden-lg
+                        label.btn.btn-primary.btn-primary-ghost.hidden-sm.hidden-md.hidden-lg
                             a(href='//gitter.im/freecodecamp/help')
                                 i.fa.fa-medkit
                                     | &nbsp; Help
-                        label.btn.btn-success.hidden-xs#challenge-help-btn
+                        label.btn.btn-primary.btn-primary-ghost.hidden-xs#challenge-help-btn
                             i.fa.fa-medkit
                                 | &nbsp; Help
-                        label.btn.btn-success#trigger-issue-modal
+                        label.btn.btn-primary.btn-primary-ghost#trigger-issue-modal
                             i.fa.fa-bug
                                 | &nbsp; Bug
                     script.

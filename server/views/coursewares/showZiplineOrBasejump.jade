@@ -3,15 +3,15 @@ block content
     .row
         .col-md-4.bonfire-top
             h1.text-center= name
-            .well
-                h4
-                    ol
-                        for step, index in details
-                            .row.checklist-element(id="#{dashedName + index}")
-                                .col-xs-3.col-sm-1.col-md-2.padded-ionic-icon.text-center
-                                    input(type='checkbox' class='challenge-list-checkbox')
-                                .col-xs-9.col-sm-11.col-md-10
-                                    li.step-text.wrappable!= step
+            hr
+            h4
+                ol
+                    for step, index in details
+                        .row.checklist-element(id="#{dashedName + index}")
+                            .col-xs-3.col-sm-1.col-md-2.padded-ionic-icon.text-center
+                                input(type='checkbox' class='challenge-list-checkbox')
+                            .col-xs-9.col-sm-11.col-md-10
+                                li.step-text.wrappable!= step
         .col-md-8
             .embed-responsive.embed-responsive-16by9
                 iframe.embed-responsive-item(src='//player.vimeo.com/video/#{video}')
@@ -24,10 +24,10 @@ block content
                 a.btn.btn-big.btn-primary.btn-block(href='/challenges/next-challenge?id=' + challengeId) Go to my next challenge (ctrl + enter)
             .button-spacer
             .btn-group.input-group.btn-group-justified
-                .btn.btn-success.btn-big#challenge-help-btn
+                .btn.btn-primary.btn-primary-ghost.btn-big#challenge-help-btn
                     i.fa.fa-medkit
                         | &nbsp; Help
-                .btn.btn-success.btn-big#trigger-issue-modal
+                .btn.btn-primary.btn-primary-ghost.btn-big#trigger-issue-modal
                     i.fa.fa-bug
                         | &nbsp; Bug
             if (!user)
