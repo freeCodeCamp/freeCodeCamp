@@ -108,6 +108,12 @@ app.start = _.once(function() {
   });
 });
 
+app.switchLanguage = function (jade) {
+    if (process.env.LANGUAGE_SUFFIX)
+        jade += process.env.LANGUAGE_SUFFIX;
+    return jade;
+};
+
 module.exports = app;
 
 // start the server if `$ node server.js`
