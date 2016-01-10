@@ -9,7 +9,7 @@ import {
   Row
 } from 'react-bootstrap';
 
-const ANSWER_THRESHOLD = 200;
+const answerThreshold = 200;
 
 export default contain(
   {
@@ -35,7 +35,7 @@ export default contain(
         isPressed,
         showInfo,
         shake,
-        username
+        isSignedIn: !!username
       };
     }
   },
@@ -51,56 +51,46 @@ export default contain(
       isPressed: PropTypes.bool,
       showInfo: PropTypes.bool,
       shake: PropTypes.bool,
-      username: PropTypes.string,
+      isSignedIn: PropTypes.bool,
       hikesActions: PropTypes.object
     },
 
-    handleMouseDown({ pageX, pageY, touches }) {
-      if (touches) {
-        ({ pageX, pageY } = touches[0]);
-      }
-      const { mouse: [pressX, pressY], hikesActions } = this.props;
-      hikesActions.grabQuestion({ pressX, pressY, pageX, pageY });
-    },
-
-    handleMouseUp() {
+    handleMouseUp(e, answer) {
+      e.stopPropagation();
       if (!this.props.isPressed) {
         return null;
       }
+
+      const {
+        hike,
+        currentQuestion,
+        isSignedIn,
+        delta
+      } = this.props;
+
       this.props.hikesActions.releaseQuestion();
+      this.props.hikesActions.answer({
+        e,
+        answer,
+        hike,
+        delta,
+        currentQuestion,
+        isSignedIn,
+        threshold: answerThreshold
+      });
     },
 
-    handleMouseMove(answer) {
+    handleMouseMove(e) {
       if (!this.props.isPressed) {
-        return () => {};
+        return null;
       }
+      const { delta, hikesActions } = this.props;
 
-      return (e) => {
-        let { pageX, pageY, touches } = e;
-
-        if (touches) {
-          e.preventDefault();
-          // these re-assigns the values of pageX, pageY from touches
-          ({ pageX, pageY } = touches[0]);
-        }
-
-        const { delta: [dx, dy], hikesActions } = this.props;
-        const mouse = [pageX - dx, pageY - dy];
-
-        if (mouse[0] >= ANSWER_THRESHOLD) {
-          return this.onAnswer(answer, true)();
-        }
-
-        if (mouse[0] <= -ANSWER_THRESHOLD) {
-          return this.onAnswer(answer, false)();
-        }
-
-        return hikesActions.moveQuestion(mouse);
-      };
+      hikesActions.moveQuestion({ e, delta });
     },
 
     onAnswer(answer, userAnswer) {
-      const { hikesActions } = this.props;
+      const { isSignedIn, hike, hikesActions } = this.props;
       return (e) => {
         if (e && e.preventDefault) {
           e.preventDefault();
@@ -109,18 +99,10 @@ export default contain(
         return hikesActions.answer({
           answer,
           userAnswer,
-          props: this.props
+          hike,
+          isSignedIn
         });
       };
-    },
-
-    routerWillLeave(nextState, router, cb) {
-      // TODO(berks): do animated transitions here stuff here
-      this.setState({
-        showInfo: false,
-        isCorrect: false,
-        mouse: [0, 0]
-      }, cb);
     },
 
     renderInfo(showInfo, info, hideInfo) {
@@ -150,6 +132,8 @@ export default contain(
     },
 
     renderQuestion(number, question, answer, shake) {
+      const { hikesActions } = this.props;
+      const mouseUp = e => this.handleMouseUp(e, answer);
       return ({ x }) => {
         const style = {
           WebkitTransform: `translate3d(${ x }px, 0, 0)`,
@@ -160,13 +144,13 @@ export default contain(
           <Panel
             className={ shake ? 'animated swing shake' : '' }
             header={ title }
-            onMouseDown={ this.handleMouseDown }
-            onMouseLeave={ this.handleMouseUp }
-            onMouseMove={ this.handleMouseMove(answer) }
-            onMouseUp={ this.handleMouseUp }
-            onTouchEnd={ this.handleMouseUp }
-            onTouchMove={ this.handleMouseMove(answer) }
-            onTouchStart={ this.handleMouseDown }
+            onMouseDown={ hikesActions.grabQuestion }
+            onMouseLeave={ mouseUp }
+            onMouseMove={ this.handleMouseMove }
+            onMouseUp={ mouseUp }
+            onTouchEnd={ mouseUp }
+            onTouchMove={ this.handleMouseMove }
+            onTouchStart={ hikesActions.grabQuestion }
             style={ style }>
             <p>{ question }</p>
           </Panel>
@@ -175,19 +159,20 @@ export default contain(
     },
 
     render() {
-      const { showInfo, shake } = this.props;
       const {
         hike: { tests = [] } = {},
         mouse: [x],
         currentQuestion,
-        hikesActions
+        hikesActions,
+        showInfo,
+        shake
       } = this.props;
 
       const [ question, answer, info ] = tests[currentQuestion - 1] || [];
 
       return (
         <Col
-          onMouseUp={ this.handleMouseUp }
+          onMouseUp={ e => this.handleMouseUp(e, answer) }
           xs={ 8 }
           xsOffset={ 2 }>
           <Row>
