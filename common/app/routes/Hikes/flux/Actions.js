@@ -108,9 +108,14 @@ export default Actions({
   },
 
   grabQuestion(e) {
-    const { pageX, pageY } = e;
+    let { pageX, pageY, touches } = e;
+    if (touches) {
+      e.preventDefault();
+      // these re-assigns the values of pageX, pageY from touches
+      ({ pageX, pageY } = touches[0]);
+    }
     const delta = [pageX, pageY];
-    const mouse = getMouse(e, delta);
+    const mouse = [0, 0];
 
     return {
       transform(state) {
