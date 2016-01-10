@@ -920,7 +920,8 @@
       ],
       "tests": [
         "assert(myStr === \"This is the start. This is the end.\", 'message: <code>myStr</code> should have a value of <code>This is the start. This is the end.</code>');",
-        "assert(/var\\s+myStr\\s*=\\s*([\"'])This is the start\\. \\1\\s*\\+\\s*([\"'])This is the end\\.([\"'])/.test(code), 'message: Use the <code>+</code> operator to build <code>myStr</code>');"
+        "assert(/([\"'])This is the start\\. \\1\\s*\\+\\s*([\"'])This is the end\\.([\"'])/.test(code), 'message: Use the <code>+</code> operator to build <code>myStr</code>');",
+        "assert(/myStr\\s*\\=\\s*([\"'])This is the start\\. \\1\\s*\\+\\s*([\"'])This is the end\\.([\"'])/.test(code),'message: The string should be assigned to <code>myStr</code>');"
       ],
       "type": "waypoint",
       "challengeType": 1
