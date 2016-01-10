@@ -38,12 +38,13 @@ function findNextHike(hikes, id) {
 
 
 function getMouse(e, [dx, dy]) {
-  let { pageX, pageY, touches } = e;
+  let { pageX, pageY, touches, changedTouches } = e;
 
-  if (touches) {
+  // touches can be empty on touchend
+  if (touches || changedTouches) {
     e.preventDefault();
     // these re-assigns the values of pageX, pageY from touches
-    ({ pageX, pageY } = touches[0]);
+    ({ pageX, pageY } = touches[0] || changedTouches[0]);
   }
 
   return [pageX - dx, pageY - dy];
