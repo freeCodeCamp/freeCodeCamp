@@ -9,7 +9,7 @@ import {
   Row
 } from 'react-bootstrap';
 
-const answerThreshold = 200;
+const answerThreshold = 100;
 
 export default contain(
   {
