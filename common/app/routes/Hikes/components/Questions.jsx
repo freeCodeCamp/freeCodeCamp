@@ -90,7 +90,7 @@ export default contain(
     },
 
     onAnswer(answer, userAnswer) {
-      const { isSignedIn, hike, hikesActions } = this.props;
+      const { isSignedIn, hike, currentQuestion, hikesActions } = this.props;
       return (e) => {
         if (e && e.preventDefault) {
           e.preventDefault();
@@ -99,6 +99,7 @@ export default contain(
         return hikesActions.answer({
           answer,
           userAnswer,
+          currentQuestion,
           hike,
           isSignedIn
         });
