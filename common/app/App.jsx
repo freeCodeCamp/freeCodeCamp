@@ -46,14 +46,9 @@ export default contain(
       toast: PropTypes.object
     },
 
-    componentWillReceiveProps({ toast: nextToast }) {
+    componentWillReceiveProps({ toast: nextToast = {} }) {
       const { toast = {} } = this.props;
-      if (
-        toast &&
-        nextToast &&
-        toast.id !== nextToast.id
-      ) {
-
+      if (toast.id !== nextToast.id) {
         this.refs.toaster[nextToast.type || 'success'](
           nextToast.message,
           nextToast.title,
