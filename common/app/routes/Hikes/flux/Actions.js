@@ -4,6 +4,7 @@ import { Actions } from 'thundercats';
 import debugFactory from 'debug';
 
 const debug = debugFactory('freecc:hikes:actions');
+const noOp = { transform: () => {} };
 
 function getCurrentHike(hikes = [{}], dashedName, currentHike) {
   if (!dashedName) {
@@ -35,18 +36,17 @@ function findNextHike(hikes, id) {
   return hikes[currentIndex + 1] || hikes[0];
 }
 
-function releaseQuestion(state) {
-  const oldHikesApp = state.hikesApp;
-  const hikesApp = {
-    ...oldHikesApp,
-    isPressed: false,
-    delta: [0, 0],
-    mouse: oldHikesApp.isCorrect ?
-      oldHikesApp.mouse :
-      [0, 0]
-  };
 
-  return { ...state, hikesApp };
+function getMouse(e, [dx, dy]) {
+  let { pageX, pageY, touches } = e;
+
+  if (touches) {
+    e.preventDefault();
+    // these re-assigns the values of pageX, pageY from touches
+    ({ pageX, pageY } = touches[0]);
+  }
+
+  return [pageX - dx, pageY - dy];
 }
 
 export default Actions({
@@ -107,64 +107,115 @@ export default Actions({
     };
   },
 
-  grabQuestion({ pressX, pressY, pageX, pageY }) {
-    const dx = pageX - pressX;
-    const dy = pageY - pressY;
-
-    const delta = [dx, dy];
-    const mouse = [pageX - dx, pageY - dy];
+  grabQuestion(e) {
+    const { pageX, pageY } = e;
+    const delta = [pageX, pageY];
+    const mouse = getMouse(e, delta);
 
     return {
       transform(state) {
-        const hikesApp = { ...state.hikesApp, isPressed: true, delta, mouse };
-        return { ...state, hikesApp };
+        return {
+          ...state,
+          hikesApp: {
+            ...state.hikesApp,
+            isPressed: true,
+            delta,
+            mouse
+          }
+        };
       }
     };
   },
 
   releaseQuestion() {
-    return { transform: releaseQuestion };
-  },
-
-  moveQuestion(mouse) {
     return {
       transform(state) {
-        const hikesApp = { ...state.hikesApp, mouse };
-        return { ...state, hikesApp };
+        return {
+          ...state,
+          hikesApp: {
+            ...state.hikesApp,
+            isPressed: false,
+            mouse: [0, 0]
+          }
+        };
+      }
+    };
+  },
+
+  moveQuestion({ e, delta }) {
+    const mouse = getMouse(e, delta);
+
+    return {
+      transform(state) {
+        return {
+          ...state,
+          hikesApp: {
+            ...state.hikesApp,
+            mouse
+          }
+        };
       }
     };
   },
 
   answer({
+    e,
     answer,
     userAnswer,
-    props: {
-      hike: { id, name, tests, challengeType },
-      currentQuestion,
-      username
-    }
+    hike: { id, name, tests, challengeType },
+    currentQuestion,
+    isSignedIn,
+    delta,
+    threshold
   }) {
+    if (typeof userAnswer === 'undefined') {
+      const [positionX] = getMouse(e, delta);
+
+      // question released under threshold
+      if (Math.abs(positionX) < threshold) {
+        return noOp;
+      }
+
+      if (positionX >= threshold) {
+        userAnswer = true;
+      }
+
+      if (positionX <= -threshold) {
+        userAnswer = false;
+      }
+    }
 
     // incorrect question
     if (answer !== userAnswer) {
       const startShake = {
         transform(state) {
-          const hikesApp = { ...state.hikesApp, showInfo: true, shake: true };
-          return { ...state, hikesApp };
+          return {
+            ...state,
+            hikesApp: {
+              ...state.hikesApp,
+              showInfo: true,
+              shake: true
+            }
+          };
         }
       };
 
       const removeShake = {
         transform(state) {
-          const hikesApp = { ...state.hikesApp, shake: false };
-          return { ...state, hikesApp };
+          return {
+            ...state,
+            hikesApp: {
+              ...state.hikesApp,
+              shake: false
+            }
+          };
         }
       };
 
       return Observable
         .just(removeShake)
         .delay(500)
-        .startWith({ transform: releaseQuestion }, startShake);
+        .startWith(startShake);
     }
 
     // move to next question
@@ -198,22 +249,21 @@ export default Actions({
     }
 
     // challenge completed
-    const optimisticSave = username ?
+    const optimisticSave = isSignedIn ?
       this.post$('/completed-challenge', { id, name, challengeType }) :
       Observable.just(true);
 
     const correctAnswer = {
       transform(state) {
-        const hikesApp = {
-          ...state.hikesApp,
-          isCorrect: true,
-          isPressed: false,
-          delta: [0, 0],
-          mouse: [ userAnswer ? 1000 : -1000, 0]
-        };
         return {
           ...state,
-          hikesApp
+          hikesApp: {
+            ...state.hikesApp,
+            isCorrect: true,
+            isPressed: false,
+            delta: [0, 0],
+            mouse: [ userAnswer ? 1000 : -1000, 0]
+          }
         };
       }
     };
@@ -223,26 +273,16 @@ export default Actions({
           const { hikes, currentHike: { id } } = state.hikesApp;
           const currentHike = findNextHike(hikes, id);
 
-          // go to next route
-          state.location = {
-            action: 'PUSH',
-            pathname: currentHike && currentHike.dashedName ?
-              `/hikes/${ currentHike.dashedName }` :
-              '/hikes'
-          };
-
-          const hikesApp = {
-            ...state.hikesApp,
-            currentHike,
-            showQuestions: false,
-            currentQuestion: 1,
-            mouse: [0, 0]
-          };
-
           return {
             ...state,
-            points: username ? state.points + 1 : state.points,
-            hikesApp,
+            points: isSignedIn ? state.points + 1 : state.points,
+            hikesApp: {
+              ...state.hikesApp,
+              currentHike,
+              showQuestions: false,
+              currentQuestion: 1,
+              mouse: [0, 0]
+            },
             toast: {
               title: 'Congratulations!',
               message: 'Hike completed',
@@ -250,6 +290,12 @@ export default Actions({
                 state.toast.id + 1 :
                 0,
               type: 'success'
+            },
+            location: {
+              action: 'PUSH',
+              pathname: currentHike && currentHike.dashedName ?
+                `/hikes/${ currentHike.dashedName }` :
+                '/hikes'
             }
           };
         },
