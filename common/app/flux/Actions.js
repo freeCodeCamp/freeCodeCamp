@@ -43,9 +43,13 @@ export default Actions({
   toast(args) {
     return {
       transform(state) {
-        const id = state.toast && state.toast.id ? state.toast.id : 0;
-        const toast = { ...args, id: id + 1 };
-        return { ...state, toast };
+        return {
+          ...state,
+          toast: {
+            ...args,
+            id: state.toast && state.toast.id ? state.toast.id : 1
+          }
+        };
       }
     };
   },
