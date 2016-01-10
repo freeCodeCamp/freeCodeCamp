@@ -35,7 +35,7 @@ export default function historySaga(
       }
 
       // store location has changed, update history
-      if (location.key !== prevKey) {
+      if (!location.key || location.key !== prevKey) {
         isSyncing = true;
         history.transitionTo({ ...emptyLocation, ...location });
         isSyncing = false;

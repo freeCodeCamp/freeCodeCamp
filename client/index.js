@@ -51,9 +51,7 @@ app$({ history, location: appLocation })
 
     const routerState$ = appStore$
       .map(({ location }) => location)
-      .distinctUntilChanged(
-        location => location && location.key ? location.key : location
-      );
+      .filter(location => !!location);
 
     // set page title
     appStore$
