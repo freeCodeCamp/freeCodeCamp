@@ -1,13 +1,7 @@
 import React, { PropTypes } from 'react';
 import { spring, Motion } from 'react-motion';
 import { contain } from 'thundercats-react';
-import {
-  Button,
-  Col,
-  Modal,
-  Panel,
-  Row
-} from 'react-bootstrap';
+import { Button, Col, Panel, Row } from 'react-bootstrap';
 
 const answerThreshold = 100;
 
@@ -23,7 +17,6 @@ export default contain(
         isCorrect = false,
         delta = [0, 0],
         isPressed = false,
-        showInfo = false,
         shake = false
       } = hikesApp;
       return {
@@ -33,7 +26,6 @@ export default contain(
         isCorrect,
         delta,
         isPressed,
-        showInfo,
         shake,
         isSignedIn: !!username
       };
@@ -49,13 +41,12 @@ export default contain(
       isCorrect: PropTypes.bool,
       delta: PropTypes.array,
       isPressed: PropTypes.bool,
-      showInfo: PropTypes.bool,
       shake: PropTypes.bool,
       isSignedIn: PropTypes.bool,
       hikesActions: PropTypes.object
     },
 
-    handleMouseUp(e, answer) {
+    handleMouseUp(e, answer, info) {
       e.stopPropagation();
       if (!this.props.isPressed) {
         return null;
@@ -76,6 +67,7 @@ export default contain(
         delta,
         currentQuestion,
         isSignedIn,
+        info,
         threshold: answerThreshold
       });
     },
@@ -89,7 +81,7 @@ export default contain(
       hikesActions.moveQuestion({ e, delta });
     },
 
-    onAnswer(answer, userAnswer) {
+    onAnswer(answer, userAnswer, info) {
       const { isSignedIn, hike, currentQuestion, hikesActions } = this.props;
       return (e) => {
         if (e && e.preventDefault) {
@@ -101,40 +93,15 @@ export default contain(
           userAnswer,
           currentQuestion,
           hike,
+          info,
           isSignedIn
         });
       };
     },
 
-    renderInfo(showInfo, info, hideInfo) {
-      if (!info) {
-        return null;
-      }
-      return (
-        <Modal
-          backdrop={ true }
-          onHide={ hideInfo }
-          show={ showInfo }>
-          <Modal.Body>
-            <h3>
-              { info }
-            </h3>
-          </Modal.Body>
-          <Modal.Footer>
-            <Button
-              block={ true }
-              bsSize='large'
-              onClick={ hideInfo }>
-              hide
-            </Button>
-          </Modal.Footer>
-        </Modal>
-      );
-    },
-
-    renderQuestion(number, question, answer, shake) {
+    renderQuestion(number, question, answer, shake, info) {
       const { hikesActions } = this.props;
-      const mouseUp = e => this.handleMouseUp(e, answer);
+      const mouseUp = e => this.handleMouseUp(e, answer, info);
       return ({ x }) => {
         const style = {
           WebkitTransform: `translate3d(${ x }px, 0, 0)`,
@@ -164,34 +131,38 @@ export default contain(
         hike: { tests = [] } = {},
         mouse: [x],
         currentQuestion,
-        hikesActions,
-        showInfo,
         shake
       } = this.props;
 
       const [ question, answer, info ] = tests[currentQuestion - 1] || [];
+      const questionElement = this.renderQuestion(
+        currentQuestion,
+        question,
+        answer,
+        shake,
+        info
+      );
 
       return (
         <Col
-          onMouseUp={ e => this.handleMouseUp(e, answer) }
+          onMouseUp={ e => this.handleMouseUp(e, answer, info) }
           xs={ 8 }
           xsOffset={ 2 }>
           <Row>
             <Motion style={{ x: spring(x, [120, 10]) }}>
-              { this.renderQuestion(currentQuestion, question, answer, shake) }
+              { questionElement }
             </Motion>
-            { this.renderInfo(showInfo, info, hikesActions.hideInfo) }
             <Panel>
               <Button
                 bsSize='large'
                 className='pull-left'
-                onClick={ this.onAnswer(answer, false) }>
+                onClick={ this.onAnswer(answer, false, info) }>
                 false
               </Button>
               <Button
                 bsSize='large'
                 className='pull-right'
-                onClick={ this.onAnswer(answer, true) }>
+                onClick={ this.onAnswer(answer, true, info) }>
                 true
               </Button>
             </Panel>
