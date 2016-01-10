@@ -4,6 +4,7 @@ import moment from 'moment';
 import { Observable, Scheduler } from 'rx';
 import assign from 'object.assign';
 import debugFactory from 'debug';
+import accepts from 'accepts';
 
 import {
   dasherize,
@@ -81,7 +82,8 @@ function updateUserProgress(user, challengeId, completedChallenge) {
         lastUpdated: completedChallenge.completedDate
       }
     );
-  return user;
+
+  return { user, alreadyCompleted };
 }
 
 
@@ -373,6 +375,7 @@ module.exports = function(app) {
   }
 
   function completedChallenge(req, res, next) {
+    const type = accepts(req).type('html', 'json', 'text');
 
     const completedDate = Math.round(+new Date());
     const {
@@ -382,7 +385,7 @@ module.exports = function(app) {
       solution
     } = req.body;
 
-    updateUserProgress(
+    const { alreadyCompleted } = updateUserProgress(
       req.user,
       id,
       {
@@ -395,9 +398,11 @@ module.exports = function(app) {
       }
     );
 
+    let user = req.user;
     saveUser(req.user)
       .subscribe(
         function(user) {
+          user = user;
           debug(
             'user save points %s',
             user && user.progressTimestamps && user.progressTimestamps.length
@@ -405,6 +410,12 @@ module.exports = function(app) {
         },
         next,
         function() {
+          if (type === 'json') {
+            return res.json({
+              points: user.progressTimestamps.length,
+              alreadyCompleted
+            });
+          }
           res.sendStatus(200);
         }
       );
