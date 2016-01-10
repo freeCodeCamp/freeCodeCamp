@@ -3978,12 +3978,7 @@
         "assert(lookUp(\"Akira\", \"address\") === \"No such property\", 'message: <code>\"Akira\", \"address\"</code> should return \"No such property\"');"
       ],
       "type": "checkpoint",
-      "challengeType": 1,
-      "nameCn": "",
-      "nameFr": "",
-      "nameRu": "",
-      "nameEs": "",
-      "namePt": ""
+      "challengeType": 1
     },
     {
       "id": "cf1111c1c11feddfaeb9bdef",
