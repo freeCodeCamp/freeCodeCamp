@@ -49,7 +49,6 @@ export default Store({
     const {
       toggleQuestions,
       fetchHikes,
-      hideInfo,
       resetHike,
       grabQuestion,
       releaseQuestion,
@@ -61,7 +60,6 @@ export default Store({
       fromMany(
         toggleQuestions,
         fetchHikes,
-        hideInfo,
         resetHike,
         grabQuestion,
         releaseQuestion,

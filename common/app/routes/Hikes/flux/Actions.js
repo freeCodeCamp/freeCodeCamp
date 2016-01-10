@@ -99,15 +99,6 @@ export default Actions({
     };
   },
 
-  hideInfo() {
-    return {
-      transform(state) {
-        const hikesApp = { ...state.hikesApp, showInfo: false };
-        return { ...state, hikesApp };
-      }
-    };
-  },
-
   grabQuestion(e) {
     let { pageX, pageY, touches } = e;
     if (touches) {
@@ -172,6 +163,7 @@ export default Actions({
     currentQuestion,
     isSignedIn,
     delta,
+    info,
     threshold
   }) {
     if (typeof userAnswer === 'undefined') {
@@ -195,11 +187,20 @@ export default Actions({
     if (answer !== userAnswer) {
       const startShake = {
         transform(state) {
+          const toast = !info ?
+            state.toast :
+            {
+              id: state.toast && state.toast.id ? state.toast.id + 1 : 1,
+              title: 'Hint',
+              message: info,
+              type: 'info'
+            };
+
           return {
             ...state,
+            toast,
             hikesApp: {
               ...state.hikesApp,
-              showInfo: true,
               shake: true
             }
           };
@@ -232,8 +233,7 @@ export default Actions({
         transform(state) {
           const hikesApp = {
             ...state.hikesApp,
-            mouse: [0, 0],
-            showInfo: false
+            mouse: [0, 0]
           };
           return { ...state, hikesApp };
         }
@@ -351,7 +351,6 @@ export default Actions({
             ...state.hikesApp,
             currentQuestion: 1,
             showQuestions: false,
-            showInfo: false,
             mouse: [0, 0],
             delta: [0, 0]
           }
