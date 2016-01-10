@@ -1,0 +1,75 @@
+extends ../layout
+block content
+    script.
+        var challengeName = 'Nonprofits View';
+    .row
+        .col-xs-12.col-sm-10.col-sm-offset-1
+            .row
+                .col-xs-12
+                    img.img-center.img-responsive(src=imageUrl)
+            .spacer
+            .row
+                .col-xs-12.col-sm-4
+                    img.img-responsive(src=logoUrl)
+                .col-xs-12.col-sm-8
+                    .col-xs-12
+                        h4= whatDoesNonprofitDo
+                        h4
+                            a(href=websiteLink)= websiteLink
+                    .spacer
+                    h3 Project Description:
+                    .col-xs-12
+                        h4.negative-15 #{projectDescription} (About #{estimatedHours} hours per camper)
+                    .spacer
+                    h3 This project involves building:
+                        h4.negative-15.col-xs-12
+                            if (approvedWebsite)
+                                .ion-android-globe &nbsp; Website
+                            if (approvedDonor)
+                                .ion-card &nbsp; Donor Management System
+                            if (approvedInventory)
+                                .ion-ios-box &nbsp; Inventory Management System
+                            if (approvedVolunteer)
+                                .ion-android-calendar &nbsp; Volunteer Management System
+                            if (approvedForm)
+                                .ion-ios-list &nbsp; Webform
+                            if (approvedCommunity)
+                                .ion-ios-people &nbsp; Community Management System
+                            if (approvedELearning)
+                                .ion-university &nbsp; E-learning Platform
+                            if (approvedOther)
+                                .ion-settings &nbsp; Other tools
+                    h3 Project Status: #{currentStatus}
+                    if (moneySaved > 0)
+                        h3.text-primary Estimated Cost Savings for Nonprofit: $#{moneySaved.toString().replace(/000$/, ',000')}
+
+                    if (interestedCampers && interestedCampers.length > 0)
+                        h3 Interested campers:
+                        .col-xs-12.text-left
+                            for interestedCamper in interestedCampers
+                                a(href='/' + interestedCamper.username class="interested-camper-image")
+                                    img.profile-picture.float-right(src=interestedCamper.picture)
+                    if (assignedCampers && assignedCampers.length > 0)
+                        h3 Assigned campers:
+                        .col-xs-12.text-left
+                        for assignedCamper in assignedCampers
+                            a(href='/' + assignedCamper.username class="interested-camper-image")
+                                img.profile-picture.float-right(src=assignedCamper.picture)
+    if (!buttonActive)
+        .col-xs-12.col-sm-8.col-sm-offset-2
+            .text-center
+                if !user
+                    a.btn.btn-cta.signup-btn.btn-block(href="/login") Start learning to code (it's free)
+                    .button-spacer
+                else
+                    a.btn.btn-primary.btn-big.btn-block.disabled(href='/nonprofits/interested-in-nonprofit/#{dashedName}') I'm interested in building this project *
+                    p * Complete all our Bonfires, Ziplines, and Basejumps to unlock this.
+                a.btn.btn-info.btn-big.btn-block(href='/nonprofits/directory') Show all Nonprofit Projects
+                .spacer
+    if (buttonActive)
+        .col-xs-12.col-sm-8.col-sm-offset-2
+            .text-center
+                a.btn.btn-primary.btn-big.btn-block(href='/nonprofits/interested-in-nonprofit/#{dashedName}') I'm interested in building this project
+                .button-spacer
+                a.btn.btn-info.btn-big.btn-block(href='/nonprofits/directory') Show all Nonprofit Projects
+                .spacer
