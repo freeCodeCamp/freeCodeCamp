@@ -403,10 +403,6 @@ module.exports = function(app) {
       .subscribe(
         function(user) {
           user = user;
-          debug(
-            'user save points %s',
-            user && user.progressTimestamps && user.progressTimestamps.length
-          );
         },
         next,
         function() {
