@@ -255,9 +255,71 @@ export default Actions({
     }
 
     // challenge completed
-    const optimisticSave = isSignedIn ?
-      this.post$('/completed-challenge', { id, name, challengeType }) :
-      Observable.just(true);
+    let update$;
+    if (isSignedIn) {
+      const body = { id, name, challengeType };
+      update$ = this.postJSON$('/completed-challenge', body)
+        // if post fails, will retry once
+        .retry(3)
+        .map(({ alreadyCompleted, points }) => ({
+          transform(state) {
+            return {
+              ...state,
+              points,
+              toast: {
+                message:
+                  'Challenge saved.' +
+                  (alreadyCompleted ? '' : ' First time Completed!'),
+                title: 'Saved',
+                type: 'info',
+                id: state.toast && state.toast.id ? state.toast.id + 1 : 1
+              }
+            };
+          }
+        }))
+        .catch((errObj => {
+          const err = new Error(errObj.message);
+          err.stack = errObj.stack;
+          return {
+            transform(state) { return { ...state, err }; }
+          };
+        }));
+    } else {
+      update$ = Observable.just({ transform: (() => {}) });
+    }
+
+    const challengeCompleted$ = Observable.just({
+      transform(state) {
+        const { hikes, currentHike: { id } } = state.hikesApp;
+        const currentHike = findNextHike(hikes, id);
+
+        return {
+          ...state,
+          points: isSignedIn ? state.points + 1 : state.points,
+          hikesApp: {
+            ...state.hikesApp,
+            currentHike,
+            showQuestions: false,
+            currentQuestion: 1,
+            mouse: [0, 0]
+          },
+          toast: {
+            title: 'Congratulations!',
+            message: 'Hike completed.' + (isSignedIn ? ' Saving...' : ''),
+            id: state.toast && state.toast.id ?
+              state.toast.id + 1 :
+              1,
+            type: 'success'
+          },
+          location: {
+            action: 'PUSH',
+            pathname: currentHike && currentHike.dashedName ?
+              `/hikes/${ currentHike.dashedName }` :
+              '/hikes'
+          }
+        };
+      }
+    });
 
     const correctAnswer = {
       transform(state) {
@@ -274,39 +336,7 @@ export default Actions({
       }
     };
 
-    return Observable.just({
-        transform(state) {
-          const { hikes, currentHike: { id } } = state.hikesApp;
-          const currentHike = findNextHike(hikes, id);
-
-          return {
-            ...state,
-            points: isSignedIn ? state.points + 1 : state.points,
-            hikesApp: {
-              ...state.hikesApp,
-              currentHike,
-              showQuestions: false,
-              currentQuestion: 1,
-              mouse: [0, 0]
-            },
-            toast: {
-              title: 'Congratulations!',
-              message: 'Hike completed',
-              id: state.toast && typeof state.toast.id === 'number' ?
-                state.toast.id + 1 :
-                0,
-              type: 'success'
-            },
-            location: {
-              action: 'PUSH',
-              pathname: currentHike && currentHike.dashedName ?
-                `/hikes/${ currentHike.dashedName }` :
-                '/hikes'
-            }
-          };
-        },
-        optimistic: optimisticSave
-      })
+    return Observable.merge(challengeCompleted$, update$)
       .delay(300)
       .startWith(correctAnswer)
       .catch(err => Observable.just({
