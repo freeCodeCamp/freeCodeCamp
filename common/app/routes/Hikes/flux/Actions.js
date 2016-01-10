@@ -4,6 +4,7 @@ import { Actions } from 'thundercats';
 import debugFactory from 'debug';
 
 const debug = debugFactory('freecc:hikes:actions');
+const noOp = { transform: () => {} };
 
 function getCurrentHike(hikes = [{}], dashedName, currentHike) {
   if (!dashedName) {
@@ -35,18 +36,18 @@ function findNextHike(hikes, id) {
   return hikes[currentIndex + 1] || hikes[0];
 }
 
-function releaseQuestion(state) {
-  const oldHikesApp = state.hikesApp;
-  const hikesApp = {
-    ...oldHikesApp,
-    isPressed: false,
-    delta: [0, 0],
-    mouse: oldHikesApp.isCorrect ?
-      oldHikesApp.mouse :
-      [0, 0]
-  };
 
-  return { ...state, hikesApp };
+function getMouse(e, [dx, dy]) {
+  let { pageX, pageY, touches, changedTouches } = e;
+
+  // touches can be empty on touchend
+  if (touches || changedTouches) {
+    e.preventDefault();
+    // these re-assigns the values of pageX, pageY from touches
+    ({ pageX, pageY } = touches[0] || changedTouches[0]);
+  }
+
+  return [pageX - dx, pageY - dy];
 }
 
 export default Actions({
@@ -98,73 +99,130 @@ export default Actions({
     };
   },
 
-  hideInfo() {
-    return {
-      transform(state) {
-        const hikesApp = { ...state.hikesApp, showInfo: false };
-        return { ...state, hikesApp };
-      }
-    };
-  },
-
-  grabQuestion({ pressX, pressY, pageX, pageY }) {
-    const dx = pageX - pressX;
-    const dy = pageY - pressY;
-
-    const delta = [dx, dy];
-    const mouse = [pageX - dx, pageY - dy];
+  grabQuestion(e) {
+    let { pageX, pageY, touches } = e;
+    if (touches) {
+      e.preventDefault();
+      // these re-assigns the values of pageX, pageY from touches
+      ({ pageX, pageY } = touches[0]);
+    }
+    const delta = [pageX, pageY];
+    const mouse = [0, 0];
 
     return {
       transform(state) {
-        const hikesApp = { ...state.hikesApp, isPressed: true, delta, mouse };
-        return { ...state, hikesApp };
+        return {
+          ...state,
+          hikesApp: {
+            ...state.hikesApp,
+            isPressed: true,
+            delta,
+            mouse
+          }
+        };
       }
     };
   },
 
   releaseQuestion() {
-    return { transform: releaseQuestion };
-  },
-
-  moveQuestion(mouse) {
     return {
       transform(state) {
-        const hikesApp = { ...state.hikesApp, mouse };
-        return { ...state, hikesApp };
+        return {
+          ...state,
+          hikesApp: {
+            ...state.hikesApp,
+            isPressed: false,
+            mouse: [0, 0]
+          }
+        };
+      }
+    };
+  },
+
+  moveQuestion({ e, delta }) {
+    const mouse = getMouse(e, delta);
+
+    return {
+      transform(state) {
+        return {
+          ...state,
+          hikesApp: {
+            ...state.hikesApp,
+            mouse
+          }
+        };
       }
     };
   },
 
   answer({
+    e,
     answer,
     userAnswer,
-    props: {
-      hike: { id, name, tests, challengeType },
-      currentQuestion,
-      username
-    }
+    hike: { id, name, tests, challengeType },
+    currentQuestion,
+    isSignedIn,
+    delta,
+    info,
+    threshold
   }) {
+    if (typeof userAnswer === 'undefined') {
+      const [positionX] = getMouse(e, delta);
+
+      // question released under threshold
+      if (Math.abs(positionX) < threshold) {
+        return noOp;
+      }
+
+      if (positionX >= threshold) {
+        userAnswer = true;
+      }
+
+      if (positionX <= -threshold) {
+        userAnswer = false;
+      }
+    }
 
     // incorrect question
     if (answer !== userAnswer) {
       const startShake = {
         transform(state) {
-          const hikesApp = { ...state.hikesApp, showInfo: true, shake: true };
-          return { ...state, hikesApp };
+          const toast = !info ?
+            state.toast :
+            {
+              id: state.toast && state.toast.id ? state.toast.id + 1 : 1,
+              title: 'Hint',
+              message: info,
+              type: 'info'
+            };
+
+          return {
+            ...state,
+            toast,
+            hikesApp: {
+              ...state.hikesApp,
+              shake: true
+            }
+          };
         }
       };
 
       const removeShake = {
         transform(state) {
-          const hikesApp = { ...state.hikesApp, shake: false };
-          return { ...state, hikesApp };
+          return {
+            ...state,
+            hikesApp: {
+              ...state.hikesApp,
+              shake: false
+            }
+          };
         }
       };
 
       return Observable
         .just(removeShake)
         .delay(500)
-        .startWith({ transform: releaseQuestion }, startShake);
+        .startWith(startShake);
     }
 
     // move to next question
@@ -175,8 +233,7 @@ export default Actions({
         transform(state) {
           const hikesApp = {
             ...state.hikesApp,
-            mouse: [0, 0],
-            showInfo: false
+            mouse: [0, 0]
           };
           return { ...state, hikesApp };
         }
@@ -198,55 +255,88 @@ export default Actions({
     }
 
     // challenge completed
-    const optimisticSave = username ?
-      this.post$('/completed-challenge', { id, name, challengeType }) :
-      Observable.just(true);
+    let update$;
+    if (isSignedIn) {
+      const body = { id, name, challengeType };
+      update$ = this.postJSON$('/completed-challenge', body)
+        // if post fails, will retry once
+        .retry(3)
+        .map(({ alreadyCompleted, points }) => ({
+          transform(state) {
+            return {
+              ...state,
+              points,
+              toast: {
+                message:
+                  'Challenge saved.' +
+                  (alreadyCompleted ? '' : ' First time Completed!'),
+                title: 'Saved',
+                type: 'info',
+                id: state.toast && state.toast.id ? state.toast.id + 1 : 1
+              }
+            };
+          }
+        }))
+        .catch((errObj => {
+          const err = new Error(errObj.message);
+          err.stack = errObj.stack;
+          return {
+            transform(state) { return { ...state, err }; }
+          };
+        }));
+    } else {
+      update$ = Observable.just({ transform: (() => {}) });
+    }
 
-    const correctAnswer = {
+    const challengeCompleted$ = Observable.just({
       transform(state) {
-        const hikesApp = {
-          ...state.hikesApp,
-          isCorrect: true,
-          isPressed: false,
-          delta: [0, 0],
-          mouse: [ userAnswer ? 1000 : -1000, 0]
-        };
+        const { hikes, currentHike: { id } } = state.hikesApp;
+        const currentHike = findNextHike(hikes, id);
+
         return {
           ...state,
-          hikesApp
-        };
-      }
-    };
-
-    return Observable.just({
-        transform(state) {
-          const { hikes, currentHike: { id } } = state.hikesApp;
-          const currentHike = findNextHike(hikes, id);
-
-          // go to next route
-          state.location = {
-            action: 'PUSH',
-            pathname: currentHike && currentHike.dashedName ?
-              `/hikes/${ currentHike.dashedName }` :
-              '/hikes'
-          };
-
-          const hikesApp = {
+          points: isSignedIn ? state.points + 1 : state.points,
+          hikesApp: {
             ...state.hikesApp,
             currentHike,
             showQuestions: false,
             currentQuestion: 1,
             mouse: [0, 0]
-          };
+          },
+          toast: {
+            title: 'Congratulations!',
+            message: 'Hike completed.' + (isSignedIn ? ' Saving...' : ''),
+            id: state.toast && state.toast.id ?
+              state.toast.id + 1 :
+              1,
+            type: 'success'
+          },
+          location: {
+            action: 'PUSH',
+            pathname: currentHike && currentHike.dashedName ?
+              `/hikes/${ currentHike.dashedName }` :
+              '/hikes'
+          }
+        };
+      }
+    });
 
-          return {
-            ...state,
-            points: username ? state.points + 1 : state.points,
-            hikesApp
-          };
-        },
-        optimistic: optimisticSave
-      })
+    const correctAnswer = {
+      transform(state) {
+        return {
+          ...state,
+          hikesApp: {
+            ...state.hikesApp,
+            isCorrect: true,
+            isPressed: false,
+            delta: [0, 0],
+            mouse: [ userAnswer ? 1000 : -1000, 0]
+          }
+        };
+      }
+    };
+
+    return Observable.merge(challengeCompleted$, update$)
       .delay(300)
       .startWith(correctAnswer)
       .catch(err => Observable.just({
@@ -261,7 +351,6 @@ export default Actions({
             ...state.hikesApp,
             currentQuestion: 1,
             showQuestions: false,
-            showInfo: false,
             mouse: [0, 0],
             delta: [0, 0]
           }

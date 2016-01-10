@@ -35,7 +35,7 @@ $(document).ready(function() {
       .flatMap(code => {
         return common.detectUnsafeCode$(code)
           .map(() => {
-            const combinedCode = common.head + '\n;;' + code + '\n;;' + common.tail;
+            const combinedCode = common.head + code + common.tail;
 
             return addLoopProtect(combinedCode);
           })

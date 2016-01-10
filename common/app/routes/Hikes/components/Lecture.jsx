@@ -52,7 +52,11 @@ export default contain(
 
     renderTranscript(transcript, dashedName) {
       return transcript.map((line, index) => (
-        <p key={ dashedName + index }>{ line }</p>
+        <p
+          className='lead text-left'
+          key={ dashedName + index }>
+          { line }
+        </p>
       ));
     },
 

@@ -1,15 +1,9 @@
 import React, { PropTypes } from 'react';
 import { spring, Motion } from 'react-motion';
 import { contain } from 'thundercats-react';
-import {
-  Button,
-  Col,
-  Modal,
-  Panel,
-  Row
-} from 'react-bootstrap';
+import { Button, Col, Panel, Row } from 'react-bootstrap';
 
-const ANSWER_THRESHOLD = 200;
+const answerThreshold = 100;
 
 export default contain(
   {
@@ -23,7 +17,6 @@ export default contain(
         isCorrect = false,
         delta = [0, 0],
         isPressed = false,
-        showInfo = false,
         shake = false
       } = hikesApp;
       return {
@@ -33,9 +26,8 @@ export default contain(
         isCorrect,
         delta,
         isPressed,
-        showInfo,
         shake,
-        username
+        isSignedIn: !!username
       };
     }
   },
@@ -49,58 +41,48 @@ export default contain(
       isCorrect: PropTypes.bool,
       delta: PropTypes.array,
       isPressed: PropTypes.bool,
-      showInfo: PropTypes.bool,
       shake: PropTypes.bool,
-      username: PropTypes.string,
+      isSignedIn: PropTypes.bool,
       hikesActions: PropTypes.object
     },
 
-    handleMouseDown({ pageX, pageY, touches }) {
-      if (touches) {
-        ({ pageX, pageY } = touches[0]);
-      }
-      const { mouse: [pressX, pressY], hikesActions } = this.props;
-      hikesActions.grabQuestion({ pressX, pressY, pageX, pageY });
-    },
-
-    handleMouseUp() {
+    handleMouseUp(e, answer, info) {
+      e.stopPropagation();
       if (!this.props.isPressed) {
         return null;
       }
+
+      const {
+        hike,
+        currentQuestion,
+        isSignedIn,
+        delta
+      } = this.props;
+
       this.props.hikesActions.releaseQuestion();
+      this.props.hikesActions.answer({
+        e,
+        answer,
+        hike,
+        delta,
+        currentQuestion,
+        isSignedIn,
+        info,
+        threshold: answerThreshold
+      });
     },
 
-    handleMouseMove(answer) {
+    handleMouseMove(e) {
       if (!this.props.isPressed) {
-        return () => {};
+        return null;
       }
+      const { delta, hikesActions } = this.props;
 
-      return (e) => {
-        let { pageX, pageY, touches } = e;
-
-        if (touches) {
-          e.preventDefault();
-          // these re-assigns the values of pageX, pageY from touches
-          ({ pageX, pageY } = touches[0]);
-        }
-
-        const { delta: [dx, dy], hikesActions } = this.props;
-        const mouse = [pageX - dx, pageY - dy];
-
-        if (mouse[0] >= ANSWER_THRESHOLD) {
-          return this.onAnswer(answer, true)();
-        }
-
-        if (mouse[0] <= -ANSWER_THRESHOLD) {
-          return this.onAnswer(answer, false)();
-        }
-
-        return hikesActions.moveQuestion(mouse);
-      };
+      hikesActions.moveQuestion({ e, delta });
     },
 
-    onAnswer(answer, userAnswer) {
-      const { hikesActions } = this.props;
+    onAnswer(answer, userAnswer, info) {
+      const { isSignedIn, hike, currentQuestion, hikesActions } = this.props;
       return (e) => {
         if (e && e.preventDefault) {
           e.preventDefault();
@@ -109,47 +91,17 @@ export default contain(
         return hikesActions.answer({
           answer,
           userAnswer,
-          props: this.props
+          currentQuestion,
+          hike,
+          info,
+          isSignedIn
         });
       };
     },
 
-    routerWillLeave(nextState, router, cb) {
-      // TODO(berks): do animated transitions here stuff here
-      this.setState({
-        showInfo: false,
-        isCorrect: false,
-        mouse: [0, 0]
-      }, cb);
-    },
-
-    renderInfo(showInfo, info, hideInfo) {
-      if (!info) {
-        return null;
-      }
-      return (
-        <Modal
-          backdrop={ true }
-          onHide={ hideInfo }
-          show={ showInfo }>
-          <Modal.Body>
-            <h3>
-              { info }
-            </h3>
-          </Modal.Body>
-          <Modal.Footer>
-            <Button
-              block={ true }
-              bsSize='large'
-              onClick={ hideInfo }>
-              hide
-            </Button>
-          </Modal.Footer>
-        </Modal>
-      );
-    },
-
-    renderQuestion(number, question, answer, shake) {
+    renderQuestion(number, question, answer, shake, info) {
+      const { hikesActions } = this.props;
+      const mouseUp = e => this.handleMouseUp(e, answer, info);
       return ({ x }) => {
         const style = {
           WebkitTransform: `translate3d(${ x }px, 0, 0)`,
@@ -160,13 +112,13 @@ export default contain(
           <Panel
             className={ shake ? 'animated swing shake' : '' }
             header={ title }
-            onMouseDown={ this.handleMouseDown }
-            onMouseLeave={ this.handleMouseUp }
-            onMouseMove={ this.handleMouseMove(answer) }
-            onMouseUp={ this.handleMouseUp }
-            onTouchEnd={ this.handleMouseUp }
-            onTouchMove={ this.handleMouseMove(answer) }
-            onTouchStart={ this.handleMouseDown }
+            onMouseDown={ hikesActions.grabQuestion }
+            onMouseLeave={ mouseUp }
+            onMouseMove={ this.handleMouseMove }
+            onMouseUp={ mouseUp }
+            onTouchEnd={ mouseUp }
+            onTouchMove={ this.handleMouseMove }
+            onTouchStart={ hikesActions.grabQuestion }
             style={ style }>
             <p>{ question }</p>
           </Panel>
@@ -175,37 +127,42 @@ export default contain(
     },
 
     render() {
-      const { showInfo, shake } = this.props;
       const {
         hike: { tests = [] } = {},
         mouse: [x],
         currentQuestion,
-        hikesActions
+        shake
       } = this.props;
 
       const [ question, answer, info ] = tests[currentQuestion - 1] || [];
+      const questionElement = this.renderQuestion(
+        currentQuestion,
+        question,
+        answer,
+        shake,
+        info
+      );
 
       return (
         <Col
-          onMouseUp={ this.handleMouseUp }
+          onMouseUp={ e => this.handleMouseUp(e, answer, info) }
           xs={ 8 }
           xsOffset={ 2 }>
           <Row>
             <Motion style={{ x: spring(x, [120, 10]) }}>
-              { this.renderQuestion(currentQuestion, question, answer, shake) }
+              { questionElement }
             </Motion>
-            { this.renderInfo(showInfo, info, hikesActions.hideInfo) }
             <Panel>
               <Button
                 bsSize='large'
                 className='pull-left'
-                onClick={ this.onAnswer(answer, false) }>
+                onClick={ this.onAnswer(answer, false, info) }>
                 false
               </Button>
               <Button
                 bsSize='large'
                 className='pull-right'
-                onClick={ this.onAnswer(answer, true) }>
+                onClick={ this.onAnswer(answer, true, info) }>
                 true
               </Button>
             </Panel>

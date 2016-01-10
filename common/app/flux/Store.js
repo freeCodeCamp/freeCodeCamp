@@ -28,7 +28,8 @@ export default Store({
     const {
       updateLocation,
       getUser,
-      setTitle
+      setTitle,
+      toast
     } = cat.getActions('appActions');
 
     register(
@@ -39,7 +40,8 @@ export default Store({
             setTitle
           )
         ),
-        updateLocation
+        updateLocation,
+        toast
       )
     );
 
@@ -47,7 +49,6 @@ export default Store({
     const {
       toggleQuestions,
       fetchHikes,
-      hideInfo,
       resetHike,
       grabQuestion,
       releaseQuestion,
@@ -59,7 +60,6 @@ export default Store({
       fromMany(
         toggleQuestions,
         fetchHikes,
-        hideInfo,
         resetHike,
         grabQuestion,
         releaseQuestion,
