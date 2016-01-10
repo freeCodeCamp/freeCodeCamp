@@ -24,9 +24,8 @@ nav.navbar.navbar-default.navbar-fixed-top.nav-height
             li
                 a(href='/about') About
             if !user
-                li &thinsp; &thinsp; &thinsp;
                 li
-                    a.btn.signup-btn.signup-btn-nav.signin-button-nav(href='/login') Sign in
+                    a(href='/login') Sign in
             else
                 li.brownie-points-nav
                   a(href='/' + user.username) [&thinsp;#{user.progressTimestamps.length}&thinsp;]

@@ -291,6 +291,8 @@ ul {
     margin-right: 10px;
     white-space: nowrap;
   }
+  background-color: #215f1e;
+  text-align: center;
 }
 .navbar {
   white-space: nowrap;
@@ -427,13 +429,6 @@ thead {
   }
 }
 
-.signin-button-nav {
-  @media (min-width: 991px) and (max-width: 1010px) {
-    margin-left: -10px;
-    margin-right: -5px;
-  }
-}
-
 .navbar-nav a {
   color: @gray-lighter;
   font-size: 20px;
@@ -444,16 +439,15 @@ thead {
   color: @gray-lighter;
 }
 
-.navbar-right {
-  background-color: #215f1e;
-  text-align: center;
-}
-
 .signup-btn-nav {
   margin-top: -2px !important;
   padding-top: 10px !important;
   padding-bottom: 10px !important;
   margin-right: -12px;
+  @media (min-width: 991px) and (max-width: 1010px) {
+    margin-left: -10px;
+    margin-right: -5px;
+  }
 }
 
 .public-profile-img {

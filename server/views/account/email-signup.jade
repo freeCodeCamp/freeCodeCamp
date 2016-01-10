@@ -1,9 +1,8 @@
 extends ../layout
 block content
-  script.
-    var challengeName = 'Email Signup'
-  .jumbotron.text-center
-    h2 Sign up with an email address here:
+    script.
+      var challengeName = 'Email Signup'
+    h2.text-center Sign up with an email address here:
     form.form-horizontal(method='POST', action='/api/users', name="signupForm")
         .row
             .col-sm-6.col-sm-offset-3
@@ -13,6 +12,6 @@ block content
               .form-group
                   input.input-lg.form-control(type='password', name='password', id='password', placeholder='password', required, pattern=".{8,50}", title="Must be at least 8 characters and no longer than 50 characters.")
               .form-group
-                  button.btn.btn-lg.btn-success.btn-block(type='submit')
+                  button.btn.btn-lg.btn-primary.btn-block(type='submit')
                     span.ion-person-add
                     | Signup

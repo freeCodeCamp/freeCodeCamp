@@ -1,12 +1,11 @@
 extends ../layout
-
 block content
-    .col-sm-8.col-sm-offset-2.jumbotron
+    .col-sm-6.col-sm-offset-3
       form(method='POST', action="/forgot")
         h2.text-center Forgot Password Reset
         input(type='hidden', name='_csrf', value=_csrf)
         .form-group
-          p Enter your email address. We'll send you password reset instructions.
+          p.large-p Enter your email address. We'll send you password reset instructions.
           input.form-control.input-lg(type='email', name='email', id='email', placeholder='Email', autofocus=true required)
         .form-group
           button.btn.btn-primary.btn-lg.btn-block(type='submit')

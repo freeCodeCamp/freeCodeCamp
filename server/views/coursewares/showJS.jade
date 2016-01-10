@@ -8,11 +8,12 @@ block content
         .col-md-4.col-lg-3
             .scroll-locker(id = "scroll-locker")
                 .innerMarginFix(style = "width: 99%;")
-                    #testCreatePanel.well
+                    #testCreatePanel
                         h3.text-center.negative-10= name
                             if (isCompleted)
                                 | &nbsp;
                                 i.ion-checkmark-circled.text-primary(title="Completed")
+                        hr
                         .row
                             .col-xs-12
                                 .bonfire-instructions
