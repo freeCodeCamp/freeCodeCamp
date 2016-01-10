@@ -38,12 +38,6 @@ urlset(xmlns="http://www.sitemaps.org/schemas/sitemap/0.9")
     priority= 0.9
 
   url
-    loc http://www.freecodecamp.com/twitch
-    changefreq weekly
-    lastmod= now
-    priority= 0.9
-
-  url
     loc http://www.freecodecamp.com/jobs
     changefreq weekly
     lastmod= now
@@ -76,10 +70,3 @@ urlset(xmlns="http://www.sitemaps.org/schemas/sitemap/0.9")
       lastmod= now
       changefreq weekly
       priority= 0.5
-
-  each nonprofit in nonprofits
-    url
-      loc #{appUrl}/nonprofits/#{nonprofit.replace(/\s/g, '-')}
-      lastmod= now
-      changefreq weekly
-      priority= 0.9
