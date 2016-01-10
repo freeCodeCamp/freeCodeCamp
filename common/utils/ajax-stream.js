@@ -276,7 +276,8 @@ export function postJSON$(url, body) {
       'Content-Type': 'application/json',
       'Accept': 'application/json'
     }
-  });
+  })
+    .map(({ response }) => response);
 }
 
 /**
@@ -304,7 +305,5 @@ export function getJSON$(url) {
       'Content-Type': 'application/json',
       'Accept': 'application/json'
     }
-  }).map(function(x) {
-    return x.response;
-  });
+  }).map(({ response }) => response);
 }
