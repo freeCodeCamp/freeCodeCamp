@@ -35,7 +35,8 @@ module.exports = function(app) {
   router.get('/labs', showLabs);
   router.get('/stories', showTestimonials);
   router.get('/all-stories', showAllTestimonials);
-  router.get('/links', showLinks);
+  router.get('/about', showLinks);
+  router.get('/terms-and-privacy', termsAndPrivacy);
   router.get(
     '/the-fastest-web-page-on-the-internet',
     theFastestWebPageOnTheInternet
@@ -197,10 +198,16 @@ module.exports = function(app) {
 
   function showLinks(req, res) {
     res.render('resources/links', {
-      title: 'Links to external Free Code Camp resources and ' +
-      'social media communities'
+      title: 'About our Open Source Community, our social media presence, ' +
+      'and how to contact us'
     });
   }
+
+  function termsAndPrivacy(req, res) {
+        res.render('resources/terms-and-privacy', {
+            title: 'Terms of Service, Privacy Policy, and Code of Conduct'
+        });
+    }
 
   function theFastestWebPageOnTheInternet(req, res) {
     res.render('resources/the-fastest-web-page-on-the-internet', {
