@@ -2573,7 +2573,7 @@
         "When a condition for an <code>if</code> statement is true, the block of code following it is executed. What about when that condition is false?  Normally nothing would happen. With an <code>else</code> statement, an alternate block of code can be executed.",
         "<blockquote>if (num > 10) {<br>  return \"Bigger than 10\";<br>} else {<br>  return \"10 or Less\";<br>}</blockquote>",
         "<h4>Instructions</h4>",
-        "Combine the <code>if</code> statements into a single statement."
+        "Combine the <code>if</code> statements into a single <code>if/else</code> statement."
       ],
       "releasedOn": "January 1, 2016",
       "challengeSeed": [
