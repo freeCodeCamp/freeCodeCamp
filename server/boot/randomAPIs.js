@@ -35,7 +35,7 @@ module.exports = function(app) {
   router.get('/labs', showLabs);
   router.get('/stories', showTestimonials);
   router.get('/all-stories', showAllTestimonials);
-  router.get('/about', showLinks);
+  router.get('/about', showAbout);
   router.get('/terms-and-privacy', termsAndPrivacy);
   router.get(
     '/the-fastest-web-page-on-the-internet',
@@ -196,8 +196,8 @@ module.exports = function(app) {
     });
   }
 
-  function showLinks(req, res) {
-    res.render('resources/links', {
+  function showAbout(req, res) {
+    res.render('resources/about', {
       title: 'About our Open Source Community, our social media presence, ' +
       'and how to contact us'
     });
