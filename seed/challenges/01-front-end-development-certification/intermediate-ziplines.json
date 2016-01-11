@@ -120,7 +120,8 @@
         "<span class='text-info'>User Story:</span> I can search Wikipedia entries in a search box and see the resulting Wikipedia entries.",
         "<span class='text-info'>User Story:</span> I can click a button to see a random Wikipedia entry.",
         "<span class='text-info'>User Story:</span> When I type in the search box, I can see a dropdown menu with autocomplete options for matching Wikipedia entries.",
-        "<span class='text-info'>Hint:</span> Here's an entry on using Wikipedia's API: <code>http://www.mediawiki.org/wiki/API:Main_page</code>.",
+        "<span class='text-info'>Hint #1:</span> Here's an entry on using Wikipedia's API: <code>http://www.mediawiki.org/wiki/API:Main_page</code>.",
+        "<span class='text-info'>Hint #2:</span> Use this <a href='https://en.wikipedia.org/wiki/Special:ApiSandbox#action=query&titles=Main%20Page&prop=revisions&rvprop=content&format=jsonfm' target='_blank'>link</a> to experiment with Wikipedia's API.",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck.",
         "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen.",
         "You can get feedback on your project from fellow campers by sharing it in our <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Code Review Chatroom</a>. You can also share it on Twitter and your city's Campsite (on Facebook)."
