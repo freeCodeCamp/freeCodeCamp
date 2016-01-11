@@ -278,8 +278,8 @@ module.exports = function(app) {
           if (user.isLocked) {
             req.flash('errors', {
               msg: dedent`
-                ${username} has chose to make their profile
-                  private. They will need to make their profile public 
+                ${username} has chosen to make their profile
+                  private. They will need to make their profile public
                   in order for others to be able to view their certificate.
               `
             });
