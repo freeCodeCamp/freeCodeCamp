@@ -89,6 +89,8 @@ block content
       common.dashedName = !{JSON.stringify(dashedName)};
       common.isCompleted = !{JSON.stringify(isCompleted)};
 
+      common.username = !{JSON.stringify(user && user.username || '')};
+
     include ../partials/challenge-footer
     script.
       common.init.push(function() {

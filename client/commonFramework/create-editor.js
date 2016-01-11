@@ -3,6 +3,7 @@ window.common = (function(global) {
     Rx: { Subject, Observable },
     CodeMirror,
     emmetCodeMirror,
+    Clipboard,
     common = { init: [] }
   } = global;
 
@@ -36,6 +37,102 @@ window.common = (function(global) {
     }
   );
 
+  var clipboard = new Clipboard('.demo1', {
+    text: function(trigger) {
+      var type;
+      switch (common.challengeType) {
+        case common.challengeTypes.HTML:
+          type = 'html';
+          break;
+        case common.challengeTypes.JS:
+        case common.challengeTypes.BONFIRE:
+          type = 'javascript';
+          break;
+        default:
+          type = '';
+      }
+
+      var returnValue = '';
+      if (trigger.id === 'markdown') {
+        returnValue = '```' + type + '\n' + editor.getSelection() + '\n```';
+        editor.replaceSelection(editor.getSelection());
+        return returnValue;
+      } else if (trigger.id === 'plain') {
+        returnValue = editor.getSelection();
+        editor.replaceSelection(editor.getSelection());
+        return returnValue;
+      } else if (trigger.id === 'link') {
+        editor.replaceSelection(editor.getSelection());
+        return ('[Challenge - ' + common.challengeName +
+        (common.username ? ' (' + common.username + '\'s solution)' : '')
+        + '](' + window.location + ')')
+        .replace(/\)/g, '%29').replace(/%29\]/g, ')]') + ')';
+      }
+    }
+  });
+
+  common.clipboard = clipboard;
+
+  var copyButton = `<a id="demo" href="/" data-toggle="popover" \
+data-trigger="manual" data-content="<a class='demo1' id='link' href='/' \
+data-toggle='popover' data-trigger='manual' \
+title='Copy the link to this challenge'>Copy Link</a><br><a class='demo1' \
+id='markdown' href='/' data-toggle='popover'\ data-trigger='manual' \
+title='Copy the contents of code editor with Markdown syntax \
+highlighting'>Copy as Pretty Code</a><br><a class='demo1' id='plain' \
+href='/' data-toggle='popover' data-trigger='manual' title='Copy the \
+contents of code editor'>Copy as Plain Code</a>"></a>`;
+
+  var left, top;
+  $(document).mousemove(function(event) {
+    left = event.pageX;
+    top = event.pageY;
+  });
+
+  function showPopover() {
+    setTimeout(function() {
+      if (editor.somethingSelected()) {
+        $('#demo').popover('show');
+        var editorOffset = $('#mainEditorPanel > form.code').offset(),
+        editorHeight = $('#mainEditorPanel > form.code').height(),
+        editorWidth = $('#mainEditorPanel > form.code').width(),
+        theHeight = $('.popover').height(),
+        theWidth = $('.popover').width();
+        if (left < editorOffset.left
+        || left > editorOffset.left + editorWidth - theWidth) {
+          left = (editorOffset.left + editorWidth) / 2;
+        }
+        if (top < editorOffset.top
+        || top > editorOffset.top + editorHeight - theHeight) {
+          top = (editorOffset.top + editorHeight) / 2;
+        }
+        $('.popover').css('left', (left + 10) + 'px');
+        $('.popover').css('top', (top - (theHeight / 2)) + 'px');
+      }
+   }, 100);
+  }
+
+  if (
+    challengeType === challengeTypes.HTML ||
+    challengeType === challengeTypes.JS ||
+    challengeType === challengeTypes.BONFIRE
+  ) {
+
+    $('body').append(copyButton);
+    $('#demo').popover({html: true});
+
+    CodeMirror.on(document, 'mousedown', function() {
+      $('#demo').popover('hide');
+    });
+
+    CodeMirror.on(document, 'mouseup', showPopover);
+
+    $(document).on('click', '.demo1', function(e) {
+      e.preventDefault();
+      $('#demo').popover('hide');
+    });
+  }
+
   editor.setSize('100%', 'auto');
 
   common.editorExecute$ = new Subject();
@@ -68,6 +165,14 @@ window.common = (function(global) {
     'Cmd-Enter': function() {
       common.editorExecute$.onNext();
       return false;
+    },
+    'Ctrl-A': function(cm) {
+      cm.execCommand('selectAll');
+      showPopover();
+    },
+    'Cmd-A': function(cm) {
+      cm.execCommand('selectAll');
+      showPopover();
     }
   });
 
