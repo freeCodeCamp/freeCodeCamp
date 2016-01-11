@@ -20,7 +20,7 @@
     "lint-utils": "jsonlint -q server/utils/*.json",
     "lint-js": "eslint --ext=.js,.jsx server/ common/ config/ client/",
     "lint-json": "npm run lint-server && npm run lint-nonprofits && npm run lint-challenges && npm run lint-resources && npm run lint-utils",
-    "test-challenges": "babel-node seed/test-challenges.js | tnyan",
+    "test-challenges": "babel-node seed/test-challenges.js | tap-spec",
     "pretest": "npm run lint",
     "test": "npm run test-challenges"
   },
@@ -143,7 +143,6 @@
     "loopback-component-explorer": "^2.1.1",
     "loopback-testing": "^1.1.0",
     "mocha": "^2.3.3",
-    "tap-nyan": "0.0.2",
     "tap-spec": "^4.1.1",
     "tape": "^4.2.2"
   }
