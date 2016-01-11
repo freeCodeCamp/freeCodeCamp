@@ -65,7 +65,6 @@ export default contain(
       } = this.props;
 
       return (
-        <Panel>
           <Row>
             <Col
               md={ 10 }
@@ -127,7 +126,6 @@ export default contain(
               </Row>
             </Col>
           </Row>
-        </Panel>
       );
     }
   })
