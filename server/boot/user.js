@@ -262,7 +262,7 @@ module.exports = function(app) {
         (user) => {
           if (!user) {
             req.flash('errors', {
-              msg: `404: We couldn't find the user ${username}`
+              msg: `404: We couldn't find the user with the username ${username}`
             });
             return res.redirect('/');
           }
@@ -270,7 +270,7 @@ module.exports = function(app) {
             req.flash('errors', {
               msg: dedent`
                 This user needs to link GitHub with their account
-                in order to display this certificate to the public.
+                in order for others to be able to view their certificate.
               `
             });
             return res.redirect('back');
@@ -278,9 +278,9 @@ module.exports = function(app) {
           if (user.isLocked) {
             req.flash('errors', {
               msg: dedent`
-                ${username} has chosen to hide their work from the public.
-                They need to unhide their work in order for this certificate to
-                be verifiable.
+                ${username} has chosen to make their profile
+                  private. They will need to make their profile public
+                  in order for others to be able to view their certificate.
               `
             });
             return res.redirect('back');
@@ -288,7 +288,7 @@ module.exports = function(app) {
           if (!user.isHonest) {
             req.flash('errors', {
               msg: dedent`
-                ${username} has not agreed to our Academic Honesty Pledge yet.
+                ${username} has not yet agreed to our Academic Honesty Pledge.
               `
             });
             return res.redirect('back');
