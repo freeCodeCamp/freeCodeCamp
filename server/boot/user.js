@@ -6,14 +6,37 @@ import debugFactory from 'debug';
 
 import {
   frontEndChallengeId,
+  dataVisChallengeId,
   backEndChallengeId
 } from '../utils/constantStrings.json';
+
+import certTypes from '../utils/certTypes.json';
+
 import { ifNoUser401, ifNoUserRedirectTo } from '../utils/middleware';
 import { observeQuery } from '../utils/rx';
 import { calcCurrentStreak, calcLongestStreak } from '../utils/user-stats';
 
 const debug = debugFactory('freecc:boot:user');
 const sendNonUserToMap = ifNoUserRedirectTo('/map');
+const certIds = {
+  [certTypes.frontEnd]: frontEndChallengeId,
+  [certTypes.dataVis]: dataVisChallengeId,
+  [certTypes.backEnd]: backEndChallengeId
+};
+
+const certViews = {
+  [certTypes.frontEnd]: 'certificate/front-end.jade',
+  [certTypes.dataVis]: 'certificate/data-vis.jade',
+  [certTypes.backEnd]: 'certificate/back-end.jade',
+  [certTypes.fullStack]: 'certificate/full-stack.jade'
+};
+
+const certText = {
+  [certTypes.fronEnd]: 'Front End certified',
+  [certTypes.dataVis]: 'Data Vis Certified',
+  [certTypes.backEnd]: 'Back End Certified',
+  [certTypes.fullStack]: 'Full Stack Certified'
+};
 
 function replaceScriptTags(value) {
   return value
@@ -80,17 +103,22 @@ module.exports = function(app) {
   // Ensure these are the last routes!
   router.get(
     '/:username/front-end-certification',
-    showCert
+    showCert.bind(null, certTypes.frontEnd)
+  );
+
+  router.get(
+    '/:username/data-visualization-certification',
+    showCert.bind(null, certTypes.dataVis)
+  );
+
+  router.get(
+    '/:username/back-end-certification',
+    showCert.bind(null, certTypes.backEnd)
   );
 
   router.get(
     '/:username/full-stack-certification',
     (req, res) => res.redirect(req.url.replace('full-stack', 'back-end'))
-  );
-
-  router.get(
-    '/:username/back-end-certification',
-    showCert
   );
 
   router.get('/:username', returnUser);
@@ -207,6 +235,7 @@ module.exports = function(app) {
           pledge: profileUser.pledge,
 
           isFrontEndCert: profileUser.isFrontEndCert,
+          isDataVisCert: profileUser.isDataVisCert,
           isBackEndCert: profileUser.isBackEndCert,
           isFullStackCert: profileUser.isFullStackCert,
           isHonest: profileUser.isHonest,
@@ -237,11 +266,9 @@ module.exports = function(app) {
     );
   }
 
-  function showCert(req, res, next) {
+  function showCert(certType, req, res, next) {
     const username = req.params.username.toLowerCase();
     const { user } = req;
-    const whichCert = req.path.split('/').pop();
-    const showFront = whichCert === 'front-end-certification';
     Observable.just(user)
       .flatMap(user => {
         if (user && user.username === username) {
@@ -250,8 +277,9 @@ module.exports = function(app) {
         return findUserByUsername$(username, {
           isGithubCool: true,
           isFrontEndCert: true,
-          isFullStackCert: true,
+          isDataVisCert: true,
           isBackEndCert: true,
+          isFullStackCert: true,
           isHonest: true,
           completedChallenges: true,
           username: true,
@@ -294,33 +322,29 @@ module.exports = function(app) {
             return res.redirect('back');
           }
 
-          if (
-            showFront && user.isFrontEndCert ||
-            !showFront && user.isBackEndCert
-          ) {
+          if (user[certType]) {
+
+            // find challenge in user profile
+            // if not found supply empty object
+            // if found grab date
+            // if no date use todays date
             var { completedDate = new Date() } =
-              _.find(user.completedChallenges, {
-                id: showFront ?
-                  frontEndChallengeId :
-                  backEndChallengeId
-              }) || {};
+              _.find(
+                user.completedChallenges,
+                { id: certIds[certType] }
+            ) || {};
 
             return res.render(
-              showFront ?
-                'certificate/front-end.jade' :
-                'certificate/back-end.jade',
+              certViews[certType],
               {
                 username: user.username,
-                date: moment(new Date(completedDate))
-                  .format('MMMM, Do YYYY'),
+                date: moment(new Date(completedDate)).format('MMMM, Do YYYY'),
                 name: user.name
               }
             );
           }
           req.flash('errors', {
-            msg: showFront ?
-              `Looks like user ${username} is not Front End certified` :
-              `Looks like user ${username} is not Back End certified`
+            msg: `Looks like user ${username} is not ${certText[certType]}`
           });
           res.redirect('back');
         },
