@@ -1,29 +1,18 @@
 {
   "name": "D3",
   "order": 16,
-  "isComingSoon": true,
+  "isComingSoon": "true",
   "time": "5h",
   "challenges": [
     {
       "id": "bd7158d8c423ede2aab5bdee",
       "title": "Learn D3 Challenges",
+      "description": [],
       "challengeSeed": [],
-      "description": [
-      ],
+      "tests": [],
       "type": "waypoint",
       "challengeType": 3,
-      "tests": [],
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
-      "nameRu": "",
-      "descriptionRu": [],
-      "nameEs": "Crea una aplicación de votaciones",
-      "descriptionEs": [
-        ],
-      "namePt": "",
-      "descriptionPt": []
+      "nameEs": "Crea una aplicación de votaciones"
     }
   ]
 }
