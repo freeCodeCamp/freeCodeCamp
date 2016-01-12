@@ -1,5 +1,5 @@
 .bonfire-instructions h4 {
-  margin-bottom: 0px;
+  margin-bottom: 0;
 }
 
 .bonfire-instructions blockquote {
@@ -22,3 +22,15 @@
   background-color: @code-bg;
   border-radius: @border-radius-base;
 }
+
+.bonfire-instructions a, #MDN-links a {
+  color: #31708f;
+}
+
+.bonfire-instructions a::after, #MDN-links a::after {
+  font-size: 70%;
+  font-family: FontAwesome;
+  content: " \f08e";
+}
+
+
