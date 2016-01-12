@@ -136,6 +136,10 @@
         "// You'll learn about functions soon.",
         "if(typeof(lastNameLength) !== \"undefined\"){(function(){return lastNameLength;})();}"
       ],
+      "solutions": [
+        //comment 1
+        /*comment2*/
+        ],
       "type": "waypoint",
       "challengeType": 1
     },
