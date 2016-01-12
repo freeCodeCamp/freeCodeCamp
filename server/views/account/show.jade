@@ -246,29 +246,29 @@ block content
         h1.text-center Manage your account
         hr
         .col-xs-12
-            a.btn.btn-lg.btn-block.btn-warning.btn-link-social(href='/logout')
+            a.btn.btn-lg.btn-block.btn-primary.btn-primary-ghost.btn-link-social(href='/logout')
                 span.ion-android-exit
                 | Sign me out of Free Code Camp
         .col-xs-12
-            a.btn.btn-lg.btn-block.btn-primary.btn-link-social(href='mailto:team@freecodecamp.com')
+            a.btn.btn-lg.btn-block.btn-primary.btn-primary-ghost.btn-link-social(href='mailto:team@freecodecamp.com')
                 span.ion-email
                 | Email us at team@freecodecamp.com
         if (!user.isLocked)
             .col-xs-12
-                a.btn.btn-lg.btn-block.btn-info.btn-link-social(href='/toggle-lockdown-mode')
+                a.btn.btn-lg.btn-block.btn-primary.btn-primary-ghost.btn-link-social(href='/toggle-lockdown-mode')
                     span.ion-locked
                     | Hide all my solutions from other people
                     br
                     | (this will disable your certificates)
         else
             .col-xs-12
-                a.btn.btn-lg.btn-block.btn-info.btn-link-social(href='/toggle-lockdown-mode')
+                a.btn.btn-lg.btn-block.btn-primary.btn-primary-ghost.btn-link-social(href='/toggle-lockdown-mode')
                     span.ion-unlocked
                     | Let other people see all my solutions
                     br
                     | (this will enable your certificates)
         .col-xs-12
-            a.btn.btn-lg.btn-block.btn-success.btn-link-social(href='/commit')
+            a.btn.btn-lg.btn-block.btn-primary.btn-primary-ghost.btn-link-social(href='/commit')
                 span.ion-edit
                 | Edit my pledge
         .col-xs-12
