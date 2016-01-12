@@ -8,7 +8,13 @@ const debug = debugFactory('freecc:utils/commit');
 export { commitGoals };
 
 export function completeCommitment$(user) {
-  const { isFrontEndCert, isFullStackCert } = user;
+  const {
+    isFrontEndCert,
+    isDataVisCert,
+    isBackEndCert,
+    isFullStackCert
+  } = user;
+
   return Observable.fromNodeCallback(user.pledge, user)()
     .flatMap(pledge => {
       if (!pledge) {
@@ -18,8 +24,10 @@ export function completeCommitment$(user) {
       const { goal } = pledge;
 
       if (
-        isFrontEndCert && goal === commitGoals.frontEndCert ||
-        isFullStackCert && goal === commitGoals.fullStackCert
+        (isFrontEndCert && goal === commitGoals.frontEndCert) ||
+        (isDataVisCert && goal === commitGoals.dataVisCert) ||
+        (isBackEndCert && goal === commitGoals.backEndCert) ||
+        (isFullStackCert && goal === commitGoals.fullStackCert)
       ) {
         debug('marking goal complete');
         pledge.isCompleted = true;
