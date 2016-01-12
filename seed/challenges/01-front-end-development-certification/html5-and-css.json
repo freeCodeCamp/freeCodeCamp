@@ -277,7 +277,7 @@
         "We can do this by changing the <code>style</code> of your <code>h2</code> element.",
         "The style that is responsible for the color of an element's text is the \"color\" style.",
         "Here's how you would set your <code>h2</code> element's text color to blue:",
-        "<code>&#60;h2 style=\"color: blue\"&#62;CatPhotoApp&#60;/h2&#62;</code>",
+        "<blockquote>&#60;h2 style=\"color: blue\"&#62;CatPhotoApp&#60;/h2&#62;</blockquote>",
         "Change your <code>h2</code> element's style so that its text color is red."
       ],
       "challengeSeed": [
@@ -374,7 +374,7 @@
         "<code>&#60;/style&#62;</code>",
         "You can see that we've created a CSS class called <code>blue-text</code> within the <code>&#60;style&#62;</code> tag.",
         "You can apply a class to an HTML element like this:",
-        "<code>&#60;h2 class=\"blue-text\"&#62;CatPhotoApp&#60;/h2&#62;</code>",
+        "<blockquote>&#60;h2 class=\"blue-text\"&#62;CatPhotoApp&#60;/h2&#62;</blockquote>",
         "Note that in your CSS <code>style</code> element, classes should start with a period. In your HTML elements' class declarations, classes shouldn't start with a period.",
         "Inside your <code>style</code> element, change the <code>h2</code> selector to <code>.red-text</code> and update the color's value from <code>blue</code> to <code>red</code>.",
         "Give your <code>h2</code> element the <code>class</code> attribute with a value of <code>'red-text'</code>."
@@ -436,7 +436,7 @@
         "<code>&nbsp;&nbsp;color: blue;</code>",
         "<code>}</code>",
         "But also remember that class declarations don't use a period, like this:",
-        "<code>&#60;h2 class=\"blue-text\"&#62;CatPhotoApp&#60;/h2&#62;</code>",
+        "<blockquote>&#60;h2 class=\"blue-text\"&#62;CatPhotoApp&#60;/h2&#62;</blockquote>",
         "Apply the <code>red-text</code> class to your <code>h2</code> and <code>p</code> elements."
       ],
       "challengeSeed": [
@@ -578,7 +578,7 @@
         "Now, let's import and apply a Google font (note that if Google is blocked in your country, you will need to skip this challenge).",
         "First, you'll need to make a <code>call</code> to Google to grab the <code>Lobster</code> font and load it into your HTML.",
         "Copy the following code snippet and paste it into the top of your code editor:",
-        "<code>&#60;link href=\"http://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\"&#62;</code>",
+        "<blockquote>&#60;link href=\"http://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\"&#62;</blockquote>",
         "Now you can set <code>Lobster</code> as a font-family value on your <code>h2</code> element.",
         "Apply the <code>font-family</code> of <code>Lobster</code> to your <code>h2</code> element."
       ],
@@ -631,9 +631,7 @@
         "There are several default fonts that are available in all browsers. These include <code>Monospace</code>, <code>Serif</code> and <code>Sans-Serif</code>",
         "When one font isn't available, you can tell the browser to \"degrade\" to another font.",
         "For example, if you wanted an element to use the <code>Helvetica</code> font, but also degrade to the <code>Sans-Serif</code> font when <code>Helvetica</code> wasn't available, you could use this CSS style:",
-        "<code>p {</code>",
-        "<code>&nbsp;&nbsp;font-family: Helvetica, Sans-Serif;</code>",
-        "<code>}</code>",
+        "<blockquote>p {<br>&nbsp;&nbsp;font-family: Helvetica, Sans-Serif;<br>}</blockquote>",
         "Now comment out your call to Google Fonts, so that the <code>Lobster</code> font isn't available. Notice how it degrades to the <code>Monospace</code> font."
       ],
       "challengeSeed": [
@@ -691,7 +689,7 @@
       "description": [
         "You can add images to your website by using the <code>img</code> element, and point to a specific image's URL using the <code>src</code> attribute.",
         "An example of this would be:",
-        "<code>&#60img src=\"http://www.your-image-source.com/your-image.jpg\"&#62</code>",
+        "<blockquote>&#60img src=\"http://www.your-image-source.com/your-image.jpg\"&#62</blockquote>",
         "Note that in most cases, <code>img</code> elements are self-closing.",
         "Try it with this image:",
         "<code>https://bit.ly/fcc-relaxing-cat</code>"
@@ -1016,7 +1014,7 @@
         "Here's a diagram of an <code>a</code> element. In this case, the <code>a</code> element is used in the middle of a paragraph element, which means the link will appear in the middle of a sentence.",
         "<a href=\"http://i.imgur.com/hviuZwe.png\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" title=\"Click to enlarge\" alt=\"a diagram of how anchor tags are composed with the same text as on the following line\" src=\"http://i.imgur.com/hviuZwe.png\"></a>",
         "Here's an example:",
-        "<code>&#60;p&#62;Here's a &#60;a href=\"http://freecodecamp.com\"&#62; link to Free Code Camp&#60;/a&#62; for you to follow.&#60;/p&#62;</code>",
+        "<blockquote>&#60;p&#62;Here's a &#60;a href=\"http://freecodecamp.com\"&#62; link to Free Code Camp&#60;/a&#62; for you to follow.&#60;/p&#62;</blockquote>",
         "Create an <code>a</code> element that links to <code>http://freecatphotoapp.com</code> and has \"cat photos\" as its <code>anchor text</code>."
       ],
       "challengeSeed": [
@@ -1085,7 +1083,7 @@
         "Again, here's a diagram of an <code>a</code> element for your reference:",
         "<a href=\"http://i.imgur.com/hviuZwe.png\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" title=\"Click to enlarge\" alt=\"a diagram of how anchor tags are composed with the same text as on the following line\" src=\"http://i.imgur.com/hviuZwe.png\"></a>",
         "Here's an example:",
-        "<code>&#60;p&#62;Here's a &#60;a href=\"http://freecodecamp.com\"&#62; link to Free Code Camp&#60;/a&#62; for you to follow.&#60;/p&#62;</code>",
+        "<blockquote>&#60;p&#62;Here's a &#60;a href=\"http://freecodecamp.com\"&#62; link to Free Code Camp&#60;/a&#62; for you to follow.&#60;/p&#62;</blockquote>",
         "<code>Nesting</code> just means putting one element inside of another element.",
         "Now nest your existing <code>a</code> element within a new <code>p</code> element (just after the existing <code>h2</code> element) so that the surrounding paragraph says \"View more cat photos\", but where only \"cat photos\" is a link, and the rest of the text is plain text."
       ],
@@ -1224,7 +1222,7 @@
       "description": [
         "You can make elements into links by nesting them within an <code>a</code> element.",
         "Nest your image within an <code>a</code> element. Here's an example:",
-        "<code>&#60;a href=\"#\"&#62;&#60;img src=\"http://bit.ly/fcc-running-cats\"&#62;&#60;/a&#62;</code>",
+        "<blockquote>&#60;a href=\"#\"&#62;&#60;img src=\"http://bit.ly/fcc-running-cats\"&#62;&#60;/a&#62;</blockquote>",
         "Remember to use <code>#</code> as your <code>a</code> element's <code>href</code> property in order to turn it into a dead link.",
         "Once you've done this, hover over your image with your cursor. Your cursor's normal pointer should become the link clicking pointer. The photo is now a link."
       ],
@@ -1296,7 +1294,7 @@
         "<code>alt</code> attributes, also known as <code>alt text</code>, are what browsers will display if they fail to load the image. <code>alt</code> attributes are also important for blind or visually impaired users to understand what an image portrays. And search engines also look at <code>alt</code> attributes.",
         "In short, every image should have an <code>alt</code> attribute!",
         "You can add an <code>alt</code> attribute right in the img element like this:",
-        "<code>&#60img src=\"www.your-image-source.com/your-image.jpg\" alt=\"your alt text\"&#62</code>",
+        "<blockquote>&#60img src=\"www.your-image-source.com/your-image.jpg\" alt=\"your alt text\"&#62</blockquote>",
         "Add an <code>alt</code> attribute with the text <code>A cute orange cat lying on its back</code> to our cat photo."
       ],
       "challengeSeed": [
@@ -1609,7 +1607,7 @@
       "description": [
         "Your placeholder text is what appears in your text <code>input</code> before your user has inputed anything.",
         "You can create placeholder text like so:",
-        "<code>&#60;input type=\"text\" placeholder=\"this is placeholder text\"&#62;</code>",
+        "<blockquote>&#60;input type=\"text\" placeholder=\"this is placeholder text\"&#62;</blockquote>",
         "Set the <code>placeholder</code> value of your text <code>input</code> to \"cat photo URL\"."
       ],
       "challengeSeed": [
@@ -1686,7 +1684,7 @@
       "description": [
         "You can build web forms that actually submit data to a server using nothing more than pure HTML. You can do this by specifying an action on your <code>form</code> element.",
         "For example:",
-        "<code>&#60;form action=\"/url-where-you-want-to-submit-form-data\"&#62;&#60;/form&#62;</code>",
+        "<blockquote>&#60;form action=\"/url-where-you-want-to-submit-form-data\"&#62;&#60;/form&#62;</blockquote>",
         "Nest your text field in a <code>form</code> element. Add the <code>action=\"/submit-cat-photo\"</code> attribute to this form element."
       ],
       "challengeSeed": [
@@ -1764,7 +1762,7 @@
       "description": [
         "Let's add a <code>submit</code> button to your form. Clicking this button will send the data from your form to the URL you specified with your form's <code>action</code> attribute.",
         "Here's an example submit button:",
-        "<code>&#60;button type=\"submit\"&#62;this button submits the form&#60;/button&#62;</code>",
+        "<blockquote>&#60;button type=\"submit\"&#62;this button submits the form&#60;/button&#62;</blockquote>",
         "Add a submit button to your <code>form</code> element with type <code>submit</code> and \"Submit\" as its text."
       ],
       "challengeSeed": [
@@ -1928,7 +1926,7 @@
         "Each of your radio buttons should be nested within its own <code>label</code> element.",
         "All related radio buttons should have the same <code>name</code> attribute.",
         "Here's an example of a radio button:",
-        "<code>&#60;label&#62;&#60;input type=\"radio\" name=\"indoor-outdoor\"&#62; Indoor&#60;/label&#62;</code>",
+        "<blockquote>&#60;label&#62;&#60;input type=\"radio\" name=\"indoor-outdoor\"&#62; Indoor&#60;/label&#62;</blockquote>",
         "Add a pair of radio buttons to your form. One should have the option of <code>indoor</code> and the other should have the option of <code>outdoor</code>."
       ],
       "challengeSeed": [
@@ -2021,7 +2019,7 @@
         "Each of your checkboxes should be nested within its own <code>label</code> element.",
         "All related checkbox inputs should have the same <code>name</code> attribute.",
         "Here's an example of a checkbox:",
-        "<code>&#60;label&#62;&#60;input type=\"checkbox\" name=\"personality\"&#62; Loving&#60;/label&#62;</code>",
+        "<blockquote>&#60;label&#62;&#60;input type=\"checkbox\" name=\"personality\"&#62; Loving&#60;/label&#62;</blockquote>",
         "Add to your form a set of three checkboxes. Each checkbox should be nested within its own <code>label</code> element. All three should share the <code>name</code> attribute of <code>personality</code>."
       ],
       "challengeSeed": [
@@ -2108,7 +2106,7 @@
       "description": [
         "You can set a checkbox or radio button to be checked by default using the <code>checked</code> attribute.",
         "To do this, just add the word \"checked\" to the inside of an input element. For example:",
-        "<code>&#60;input type=\"radio\" name=\"test-name\" checked&#62;</code>",
+        "<blockquote>&#60;input type=\"radio\" name=\"test-name\" checked&#62;</blockquote>",
         "Set the first of your <code>radio buttons</code> and the first of your <code>checkboxes</code> to both be checked by default."
       ],
       "challengeSeed": [
