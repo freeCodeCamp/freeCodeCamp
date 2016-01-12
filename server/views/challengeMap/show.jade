@@ -1,6 +1,6 @@
 extends ../layout-wide
 block content
-        .col-xs-12.col-sm-3.col-sm-offset-9
+        .col-xs-12.col-sm-4.col-sm-offset-8
             for superBlock, index in superBlocks
               for challengeBlock in superBlock.blocks
                 h4.bold #{challengeBlock.name} (#{challengeBlock.time})
@@ -11,22 +11,32 @@ block content
                                 = challenge.title
                                 span.sr-only= " Complete"
                     else
-                        p.negative-15
-                            a(name="#{challenge.dashedName}" href="/challenges/#{challenge.dashedName}" class=challenge.isComingSoon ? 'disabled' : '')
-                                span= challenge.title
-                                span.sr-only= " Incomplete"
-                            if challenge.markNew
-                                span.text-success.small &thinsp; &thinsp;
-                                    strong
-                                        em New
-                            if challengeBlock.isComingSoon
-                                span.text-success.small &thinsp; &thinsp;
-                                    strong
-                                        em Coming Soon
-                            if challenge.type === "bonfire"
-                                span.text-info.small &thinsp; &thinsp;
-                                    strong
-                                        em Required
+                        if challenge.type === "bonfire"
+                            p.ion-asterisk.padded-ionic-icon.negative-15(name="#{challenge.dashedName}") &nbsp;
+                                a(name="#{challenge.dashedName}" href="/challenges/#{challenge.dashedName}" class=challenge.isComingSoon ? 'disabled' : '')
+                                    span= challenge.title
+                                    span.sr-only= " Incomplete"
+                                if challenge.markNew
+                                    span.text-success.small &thinsp; &thinsp;
+                                        strong
+                                            em New
+                                if challengeBlock.isComingSoon
+                                    span.text-success.small &thinsp; &thinsp;
+                                        strong
+                                            em Coming Soon
+                        else
+                            p.ion-ios-circle-outline.padded-ionic-icon.negative-15(name="#{challenge.dashedName}") &nbsp;
+                                a(name="#{challenge.dashedName}" href="/challenges/#{challenge.dashedName}" class=challenge.isComingSoon ? 'disabled' : '')
+                                    span= challenge.title
+                                    span.sr-only= " Incomplete"
+                                if challenge.markNew
+                                    span.text-success.small &thinsp; &thinsp;
+                                        strong
+                                            em New
+                                if challengeBlock.isComingSoon
+                                    span.text-success.small &thinsp; &thinsp;
+                                        strong
+                                            em Coming Soon
                   if (index < superBlocks.length)
                     hr
 
