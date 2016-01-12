@@ -59,8 +59,8 @@ export default function certificate(app) {
 
   const certTypeIds = {
     [certTypes.frontEnd]: getIdsForCert$(frontEndChallengeId, Challenge),
-    [certTypes.backEnd]: getIdsForCert$(dataVisChallengeId, Challenge),
-    [certTypes.dataVis]: getIdsForCert$(backEndChallengeId, Challenge)
+    [certTypes.dataVis]: getIdsForCert$(dataVisChallengeId, Challenge),
+    [certTypes.backEnd]: getIdsForCert$(backEndChallengeId, Challenge)
   };
 
   router.post(
