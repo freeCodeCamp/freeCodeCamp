@@ -52,42 +52,6 @@
       "challengeType": 7,
       "tests": [
         {
-          "id": "a2f1d72d9b908d0bd72bb9f6",
-          "title": "Make a Person"
-        },
-        {
-          "id": "af4afb223120f7348cdfc9fd",
-          "title": "Map the Debris"
-        },
-        {
-          "id": "a3f503de51cfab748ff001aa",
-          "title": "Pairwise"
-        },
-        {
-          "id": "aff0395860f5d3034dc0bfc9",
-          "title": "Validate US Telephone Numbers"
-        },
-        {
-          "id": "a3f503de51cf954ede28891d",
-          "title": "Symmetric Difference"
-        },
-        {
-          "id": "aa2e6f85cab2ab736c9a9b24",
-          "title": "Exact Change"
-        },
-        {
-          "id": "a56138aff60341a09ed6c480",
-          "title": "Inventory Update"
-        },
-        {
-          "id": "a7bf700cd123b9a54eef01d5",
-          "title": "No repeats please"
-        },
-        {
-          "id": "a19f0fbe1872186acd434d5a",
-          "title": "Friendly Date Ranges"
-        },
-        {
           "id": "bd7158d8c443edefaeb5bdef",
           "title": "Timestamp Microservice"
         },
