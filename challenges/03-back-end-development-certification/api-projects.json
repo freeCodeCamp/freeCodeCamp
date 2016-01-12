@@ -1,11 +1,11 @@
 {
   "name": "API Projects",
   "order": 26,
-  "time": "100h",
+  "time": "150h",
   "challenges": [
     {
       "id": "bd7158d8c443eddfaeb5bcef",
-      "title": "Get Set for Basejumps",
+      "title": "Get Set for our Back End Development Projects",
       "challengeSeed": [],
       "description": [
         [
@@ -200,8 +200,8 @@
       ],
       "description": [
         "<span class='text-info'>Objective:</span> Build a full stack JavaScript app that is functionally similar to this: <a href='https://timestamp-ms.herokuapp.com/' target='_blank'>https://timestamp-ms.herokuapp.com/</a> and deploy it to Heroku.",
-        "Note that for each Basejump, you should create a new GitHub repository and a new Heroku project. If you can't remember how to do this, revisit <a href='/challenges/get-set-for-basejumps'>http://freecodecamp.com/challenges/get-set-for-basejumps</a>.",
-        "Here are the specific user stories you should implement for this Basejump:",
+        "Note that for each project, you should create a new GitHub repository and a new Heroku project. If you can't remember how to do this, revisit <a href='/challenges/get-set-for-our-back-end-development-projects'>http://freecodecamp.com//challenges/get-set-for-our-back-end-development-projects</a>.",
+        "Here are the specific user stories you should implement for this project:",
         "<span class='text-info'>User Story:</span>  I can pass a string as a parameter, and it will check to see whether that string contains either a unix timestamp or a natural language date (example: January 1, 2016).",
         "<span class='text-info'>User Story:</span> If it does, it returns both the Unix timestamp and the natural language form of that date.",
         "<span class='text-info'>User Story:</span> If it does not contain a date or Unix timestamp, it returns null for those properties.",
@@ -221,7 +221,8 @@
       "descriptionEs": [],
       "namePt": "",
       "descriptionPt": [],
-      "releasedOn": "January 1, 2016"
+      "releasedOn": "January 1, 2016",
+      "isRequired": true
     },
     {
       "id": "bd7158d8c443edefaeb5bdff",
@@ -231,8 +232,8 @@
       ],
       "description": [
         "<span class='text-info'>Objective:</span> Build a full stack JavaScript app that is functionally similar to this: <a href='https://cryptic-ridge-9197.herokuapp.com/api/whoami/' target='_blank'>https://cryptic-ridge-9197.herokuapp.com/api/whoami/</a> and deploy it to Heroku.",
-        "Note that for each Basejump, you should create a new GitHub repository and a new Heroku project. If you can't remember how to do this, revisit <a href='/challenges/get-set-for-basejumps'>http://freecodecamp.com/challenges/get-set-for-basejumps</a>.",
-        "Here's the specific user story you should implement for this Basejump:",
+        "Note that for each project, you should create a new GitHub repository and a new Heroku project. If you can't remember how to do this, revisit <a href='//challenges/get-set-for-our-back-end-development-projects'>http://freecodecamp.com//challenges/get-set-for-our-back-end-development-projects</a>.",
+        "Here's the specific user story you should implement for this project:",
         "<span class='text-info'>User Story:</span> I can get the IP address, language and operating system for my browser.",
         "Once you've finished implementing these user stories, click the \"I've completed this challenge\" button and enter the URLs for both your GitHub repository and your live app running on Heroku.",
         "You can get feedback on your project from fellow campers by sharing it in our <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Code Review Chatroom</a>. You can also share it on Twitter and your city's Campsite (on Facebook)."
@@ -250,7 +251,8 @@
       "descriptionEs": [],
       "namePt": "",
       "descriptionPt": [],
-      "releasedOn": "January 1, 2016"
+      "releasedOn": "January 1, 2016",
+      "isRequired": true
     },
     {
       "id": "bd7158d8c443edefaeb5bd0e",
@@ -260,8 +262,8 @@
       ],
       "description": [
         "<span class='text-info'>Objective:</span> Build a full stack JavaScript app that is functionally similar to this: <a href='https://shurli.herokuapp.com/' target='_blank'>https://shurli.herokuapp.com/</a> and deploy it to Heroku.",
-        "Note that for each Basejump, you should create a new GitHub repository and a new Heroku project. If you can't remember how to do this, revisit <a href='/challenges/get-set-for-basejumps'>http://freecodecamp.com/challenges/get-set-for-basejumps</a>.",
-        "Here are the specific user stories you should implement for this Basejump:",
+        "Note that for each project, you should create a new GitHub repository and a new Heroku project. If you can't remember how to do this, revisit <a href='//challenges/get-set-for-our-back-end-development-projects'>http://freecodecamp.com//challenges/get-set-for-our-back-end-development-projects</a>.",
+        "Here are the specific user stories you should implement for this project:",
         "<span class='text-info'>User Story:</span>  I can pass a URL as a parameter and I will receive a shortened URL in the JSON response.",
         "<span class='text-info'>User Story:</span> If I pass an invalid URL that doesn't follow the valid http://www.example.com format, the JSON response will contain an error instead.",
         "<span class='text-info'>User Story:</span> When I visit that shortened URL, it will redirect me to my original link.",
@@ -281,7 +283,8 @@
       "descriptionEs": [],
       "namePt": "",
       "descriptionPt": [],
-      "releasedOn": "January 1, 2016"
+      "releasedOn": "January 1, 2016",
+      "isRequired": true
     },
     {
       "id": "bd7158d8c443edefaeb5bdee",
@@ -291,8 +294,8 @@
       ],
       "description": [
         "<span class='text-info'>Objective:</span> Build a full stack JavaScript app that allows you to search for images like this: <a href='https://cryptic-ridge-9197.herokuapp.com/api/imagesearch/lolcats%20funny?offset=10' target='_blank'>https://cryptic-ridge-9197.herokuapp.com/api/imagesearch/lolcats%20funny?offset=10</a> and browse recent search queries like this: <a href='https://cryptic-ridge-9197.herokuapp.com/api/latest/imagesearch/' target='_blank'>https://cryptic-ridge-9197.herokuapp.com/api/latest/imagesearch/</a>. Then deploy it to Heroku.",
-        "Note that for each Basejump, you should create a new GitHub repository and a new Heroku project. If you can't remember how to do this, revisit <a href='/challenges/get-set-for-basejumps'>http://freecodecamp.com/challenges/get-set-for-basejumps</a>.",
-        "Here are the specific user stories you should implement for this Basejump:",
+        "Note that for each project, you should create a new GitHub repository and a new Heroku project. If you can't remember how to do this, revisit <a href='//challenges/get-set-for-our-back-end-development-projects'>http://freecodecamp.com//challenges/get-set-for-our-back-end-development-projects</a>.",
+        "Here are the specific user stories you should implement for this project:",
         "<span class='text-info'>User Story:</span> I can get the image URLs, alt text and page urls for a set of images relating to a given search string.",
         "<span class='text-info'>User Story:</span> I can paginate through the responses by adding a ?offset=2 parameter to the URL.",
         "<span class='text-info'>User Story:</span> I can get a list of the most recently submitted search strings.",
@@ -312,7 +315,8 @@
       "descriptionEs": [],
       "namePt": "",
       "descriptionPt": [],
-      "releasedOn": "January 1, 2016"
+      "releasedOn": "January 1, 2016",
+      "isRequired": true
     },
     {
       "id": "bd7158d8c443edefaeb5bd0f",
@@ -322,8 +326,8 @@
       ],
       "description": [
         "<span class='text-info'>Objective:</span> Build a full stack JavaScript app that is functionally similar to this: <a href='https://cryptic-ridge-9197.herokuapp.com/' target='_blank'>https://cryptic-ridge-9197.herokuapp.com/</a> and deploy it to Heroku.",
-        "Note that for each Basejump, you should create a new GitHub repository and a new Heroku project. If you can't remember how to do this, revisit <a href='/challenges/get-set-for-basejumps'>http://freecodecamp.com/challenges/get-set-for-basejumps</a>.",
-        "Here are the specific user stories you should implement for this Basejump:",
+        "Note that for each project, you should create a new GitHub repository and a new Heroku project. If you can't remember how to do this, revisit <a href='//challenges/get-set-for-our-back-end-development-projects'>http://freecodecamp.com//challenges/get-set-for-our-back-end-development-projects</a>.",
+        "Here are the specific user stories you should implement for this project:",
         "<span class='text-info'>User Story:</span> I can submit a FormData object that includes a file upload.",
         "<span class='text-info'>User Story:</span> When I submit something, I will receive the file size in bytes within the JSON response",
         "<span class='text-info'>Hint:</span> You may want to use this package: <a href='https://www.npmjs.com/package/multer' target='_blank'>https://www.npmjs.com/package/multer</a>",
@@ -343,7 +347,8 @@
       "descriptionEs": [],
       "namePt": "",
       "descriptionPt": [],
-      "releasedOn": "January 1, 2016"
+      "releasedOn": "January 1, 2016",
+      "isRequired": true
     }
   ]
 }

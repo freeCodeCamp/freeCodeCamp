@@ -34,7 +34,8 @@
       "descriptionEs": [],
       "namePt": "",
       "descriptionPt": [],
-      "releasedOn": "January 1, 2016"
+      "releasedOn": "January 1, 2016",
+      "isRequired": true
     },
     {
       "id": "bd7178d8c242eddfaeb5bd13",
@@ -67,7 +68,8 @@
       "descriptionEs": [],
       "namePt": "",
       "descriptionPt": [],
-      "releasedOn": "January 1, 2016"
+      "releasedOn": "January 1, 2016",
+      "isRequired": true
     },
     {
       "id": "bd7188d8c242eddfaeb5bd13",
@@ -101,7 +103,8 @@
       "descriptionEs": [],
       "namePt": "",
       "descriptionPt": [],
-      "releasedOn": "January 1, 2016"
+      "releasedOn": "January 1, 2016",
+      "isRequired": true
     },
     {
       "id": "bd7198d8c242eddfaeb5bd13",
@@ -137,7 +140,8 @@
       "descriptionEs": [],
       "namePt": "",
       "descriptionPt": [],
-      "releasedOn": "January 1, 2016"
+      "releasedOn": "January 1, 2016",
+      "isRequired": true
     },
     {
       "id": "bd7108d8c242eddfaeb5bd13",
@@ -171,7 +175,8 @@
       "descriptionEs": [],
       "namePt": "",
       "descriptionPt": [],
-      "releasedOn": "January 1, 2016"
+      "releasedOn": "January 1, 2016",
+      "isRequired": true
     }
   ]
 }
