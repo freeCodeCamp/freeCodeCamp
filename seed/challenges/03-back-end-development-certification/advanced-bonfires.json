@@ -310,7 +310,7 @@
         "Implement a way of converting two dates into a more friendly date range that could be presented to a user.",
         "It must not show any redundant information in the date range.",
         "For example, if the year and month are the same then only the day range should be displayed.",
-        "Secondly, if the starting year is the current year, and the ending year can be inferred by the reader, the year should be omitted.",
+        "Secondly, if the ending year can be inferred by the reader because it is in the same or next year as the starting year, the year should be omitted.",
         "Input date is formatted as YYYY-MM-DD",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
       ],
@@ -325,9 +325,9 @@
         "assert.deepEqual(friendly(['2016-07-01', '2016-07-04']), ['July 1st','4th'], 'message: <code>friendly([\"2016-07-01\", \"2016-07-04\"])</code> should return <code>[\"July 1st\",\"4th\"]</code>.');",
         "assert.deepEqual(friendly(['2016-12-01', '2017-02-03']), ['December 1st','February 3rd'], 'message: <code>friendly([\"2016-12-01\", \"2017-02-03\"])</code> should return <code>[\"December 1st\",\"February 3rd\"]</code>.');",
         "assert.deepEqual(friendly(['2016-12-01', '2018-02-03']), ['December 1st, 2016','February 3rd, 2018'], 'message: <code>friendly([\"2016-12-01\", \"2018-02-03\"])</code> should return <code>[\"December 1st, 2016\",\"February 3rd, 2018\"]</code>.');",
-        "assert.deepEqual(friendly(['2017-03-01', '2017-05-05']), ['March 1st','May 5th'], 'message: <code>friendly([\"2017-03-01\", \"2017-05-05\"])</code> should return <code>[\"March 1st\",\"May 5th\"]</code>');",
+        "assert.deepEqual(friendly(['2017-03-01', '2017-05-05']), ['March 1st, 2017','May 5th'], 'message: <code>friendly([\"2017-03-01\", \"2017-05-05\"])</code> should return <code>[\"March 1st, 2017\",\"May 5th\"]</code>');",
         "assert.deepEqual(friendly(['2018-01-01', '2018-01-01']), ['January 1st, 2018'], 'message: <code>friendly([\"2018-01-01\", \"2018-01-01\"])</code> should return <code>[\"January 1st, 2018\"]</code>.');",
-        "assert.deepEqual(friendly(['2022-09-05', '2023-09-04']), ['September 5th, 2022','September 4th, 2023'], 'message: <code>friendly([\"2022-09-05\", \"2023-09-04\"])</code> should return <code>[\"September 5th, 2022\",\"September 4th, 2023\"]</code>.');"
+        "assert.deepEqual(friendly(['2022-09-05', '2023-09-04']), ['September 5th, 2022','September 4th'], 'message: <code>friendly([\"2022-09-05\", \"2023-09-04\"])</code> should return <code>[\"September 5th, 2022\",\"September 4th\"]</code>.');"
       ],
       "MDNlinks": [
         "String.split()",
