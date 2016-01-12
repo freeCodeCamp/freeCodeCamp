@@ -502,7 +502,7 @@
         "assert($(\"p\").length > 1, 'message: You need 2 <code>p</code> elements with Kitty Ipsum text.');",
         "assert(code.match(/<\\/p>/g) && code.match(/<\\/p>/g).length === code.match(/<p/g).length, 'message: Make sure each of your <code>p</code> elements has a closing tag.');",
         "assert.isTrue((/Purr\\s+jump\\s+eat/gi).test($(\"p\").text()), 'message: Your <code>p</code> element should contain the first few words of the provided additional <code>kitty ipsum text</code>.');",
-        "assert($(\"p:eq(0)\").css(\"font-size\") === \"16px\" && $(\"p:eq(1)\").css(\"font-size\") === \"16px\", 'message: Give elements with the <code>p</code> tag a <code>font-size</code> of <code>16px</code>.')"
+        "assert(Number.parseInt($(\"p:eq(0)\").css(\"font-size\"), 10) > 15 && Number.parseInt($(\"p:eq(1)\").css(\"font-size\"), 10) > 15, 'message: Give elements with the <code>p</code> tag a <code>font-size</code> of <code>16px</code>.')"
       ],
       "type": "waypoint",
       "challengeType": 0,
