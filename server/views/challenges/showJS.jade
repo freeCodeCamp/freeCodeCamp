@@ -17,7 +17,7 @@ block content
                         .row
                             .col-xs-12
                                 .bonfire-instructions
-                                    for sentence in details
+                                    for sentence in description
                                         if (/blockquote|h4|table/.test(sentence))
                                             !=sentence
                                         else
@@ -82,7 +82,7 @@ block content
                         if (user)
                             #submit-challenge.animated.fadeIn.btn.btn-lg.btn-primary.btn-block Submit and go to my next challenge (ctrl + enter)
                         else
-                            a#next-challenge.animated.fadeIn.btn.btn-lg.btn-primary.btn-block(href="/challenges/next-challenge?id="+challengeId) Go to my next challenge (ctrl + enter)
+                            a#next-challenge.animated.fadeIn.btn.btn-lg.btn-primary.btn-block(href="/challenges/next-challenge?id="+id) Go to my next challenge (ctrl + enter)
     include ../partials/challenge-modals
     script(type="text/javascript").
       var common = window.common = { init: [] };
@@ -91,7 +91,7 @@ block content
       common.head = !{JSON.stringify(head)};
       common.tail = !{JSON.stringify(tail)};
 
-      common.challengeId = !{JSON.stringify(challengeId)};
+      common.challengeId = !{JSON.stringify(id)};
       common.challengeName = !{JSON.stringify(name)};
       common.challengeSeed = !{JSON.stringify(challengeSeed)};
       common.challengeType = !{JSON.stringify(challengeType)};

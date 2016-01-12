@@ -16,7 +16,7 @@ block content
                                     i.ion-checkmark-circled.text-primary(title="Completed")
                             hr
                             .bonfire-instructions
-                                for sentence in details
+                                for sentence in description
                                     p.wrappable.negative-10!= sentence
                                 .negative-bottom-margin-30
                     .button-spacer
@@ -74,7 +74,7 @@ block content
                             if(user)
                                 #submit-challenge.animated.fadeIn.btn.btn-lg.btn-primary.btn-block Submit and go to my next challenge (ctrl + enter)
                             else
-                                a#next-challenge.btn.btn-lg.btn-primary.btn-block(href="/challenges/next-challenge?id="+challengeId) Go to my next challenge (ctrl + enter)
+                                a#next-challenge.btn.btn-lg.btn-primary.btn-block(href="/challenges/next-challenge?id="+id) Go to my next challenge (ctrl + enter)
     include ../partials/challenge-modals
     script(type="text/javascript").
       $('#next-courseware-button').attr('disabled', 'disabled');
@@ -84,7 +84,7 @@ block content
       common.head = !{JSON.stringify(head)};
       common.tail = !{JSON.stringify(tail)};
 
-      common.challengeId = !{JSON.stringify(challengeId)};
+      common.challengeId = !{JSON.stringify(id)};
       common.challengeName = !{JSON.stringify(name)};
       common.challengeSeed = !{JSON.stringify(challengeSeed)};
       common.challengeType = !{JSON.stringify(challengeType)};

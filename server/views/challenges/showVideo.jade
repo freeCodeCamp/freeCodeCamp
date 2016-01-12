@@ -6,7 +6,7 @@ block content
             .well
                 h4
                     ol
-                        for step, index in details
+                        for step, index in description
                             .row.checklist-element(id="#{dashedName + index}")
                                 .col-xs-3.col-sm-1.col-md-2.padded-ionic-icon.text-center
                                     input(type='checkbox' class='challenge-list-checkbox')
@@ -19,7 +19,7 @@ block content
             if (user)
                 a.btn.btn-primary.btn-big.btn-block#completed-courseware-editorless I've completed this challenge (ctrl + enter)
             else
-                a.btn.btn-big.btn-primary.btn-block(href='/challenges/next-challenge?id=' + challengeId) I've completed this challenge (ctrl + enter)
+                a.btn.btn-big.btn-primary.btn-block(href='/challenges/next-challenge?id=' + id) I've completed this challenge (ctrl + enter)
                 script.
                     var userLoggedIn = true;
             .button-spacer
@@ -51,13 +51,13 @@ block content
                         if (user)
                             a.btn.btn-lg.btn-primary.btn-block#next-courseware-button(name='_csrf', value=_csrf) I've completed this challenge (ctrl + enter)
                         else
-                            a.animated.fadeIn.btn.btn-lg.btn-primary.btn-block(href='/challenges/next-challenge?id=' + challengeId) I've completed this challenge (ctrl + enter)
+                            a.animated.fadeIn.btn.btn-lg.btn-primary.btn-block(href='/challenges/next-challenge?id=' + id) I've completed this challenge (ctrl + enter)
 
     include ../partials/challenge-modals
     script.
       var common = window.common || { init: [] };
 
-      common.challengeId = !{JSON.stringify(challengeId)};
+      common.challengeId = !{JSON.stringify(id)};
       common.challengeName = !{JSON.stringify(name)};
       common.challengeType = !{JSON.stringify(challengeType)};
       common.dashedName = !{JSON.stringify(dashedName)};

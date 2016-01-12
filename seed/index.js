@@ -31,11 +31,7 @@ destroy()
 
     var challenges = challengeSpec.challenges
       .map(function(challenge, index) {
-        // NOTE(berks): add title for displaying in views
-        challenge.name =
-          _.capitalize(challenge.type) +
-          ': ' +
-          challenge.title.replace(/[^a-zA-Z0-9\s]/g, '');
+        challenge.name = challenge.title.replace(/[^a-zA-Z0-9\s]/g, '');
 
         challenge.dashedName = challenge.name
           .toLowerCase()

@@ -6,7 +6,7 @@ block content
             hr
             h4
                 ol
-                    for step, index in details
+                    for step, index in description
                         .row.checklist-element(id="#{dashedName + index}")
                             .col-xs-3.col-sm-1.col-md-2.padded-ionic-icon.text-center
                                 input(type='checkbox' class='challenge-list-checkbox')
@@ -21,7 +21,7 @@ block content
                 script.
                     var userLoggedIn = true;
             else
-                a.btn.btn-big.btn-primary.btn-block(href='/challenges/next-challenge?id=' + challengeId) Go to my next challenge (ctrl + enter)
+                a.btn.btn-big.btn-primary.btn-block(href='/challenges/next-challenge?id=' + id) Go to my next challenge (ctrl + enter)
             .button-spacer
             .btn-group.input-group.btn-group-justified
                 .btn.btn-primary.btn-primary-ghost.btn-big#challenge-help-btn
@@ -65,12 +65,12 @@ block content
                         a.btn.btn-lg.btn-block.btn-twitter(target="_blank", href="https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20PASTE_YOUR_CODEPEN_URL_HERE_USING_FULL_INSTEAD_OF_PEN%20%0A%20%23LearnToCode%20%23JavaScript", onclick="ga('send', 'event', 'twitter', 'share', 'challenge completion share');")
                           i.fa.fa-twitter &thinsp;Tweet this project
                     else
-                        a.btn.btn-lg.btn-primary.btn-block(href='/challenges/next-challenge?id=' + challengeId) Go to my next challenge
+                        a.btn.btn-lg.btn-primary.btn-block(href='/challenges/next-challenge?id=' + id) Go to my next challenge
 
     include ../partials/challenge-modals
     script.
       var common = window.common || { init: [] };
-      common.challengeId = !{JSON.stringify(challengeId)};
+      common.challengeId = !{JSON.stringify(id)};
       common.challengeName = !{JSON.stringify(name)};
       common.dashedName = !{JSON.stringify(dashedName)};
       common.challengeType = !{JSON.stringify(challengeType)};

@@ -1,4 +1,3 @@
-import _ from 'lodash';
 import path from 'path';
 import { Observable } from 'rx';
 
@@ -22,10 +21,7 @@ export default function getFromDisk$(challenge) {
       challenge.tail = challenge.tail || [];
       challenge.challengeType = '' + challenge.challengeType;
 
-      challenge.name =
-        _.capitalize(challenge.type) +
-        ': ' +
-        challenge.title.replace(/[^a-zA-Z0-9\s]/g, '');
+      challenge.name = challenge.title.replace(/[^a-zA-Z0-9\s]/g, '');
 
       challenge.dashedName = challenge.name
         .toLowerCase()
