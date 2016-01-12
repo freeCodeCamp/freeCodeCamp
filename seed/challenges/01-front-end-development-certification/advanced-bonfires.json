@@ -305,7 +305,6 @@
     {
       "id": "a19f0fbe1872186acd434d5a",
       "title": "Friendly Date Ranges",
-      "dashedName": "bonfire-friendly-date-ranges",
       "description": [
         "Implement a way of converting two dates into a more friendly date range that could be presented to a user.",
         "It must not show any redundant information in the date range.",
@@ -417,7 +416,6 @@
     {
       "id": "af4afb223120f7348cdfc9fd",
       "title": "Map the Debris",
-      "dashedName": "bonfire-map-the-debris",
       "description": [
         "Return a new array that transforms the element's average altitude into their orbital periods.",
         "The array will contain objects in the format <code>{name: 'name', avgAlt: avgAlt}</code>.",

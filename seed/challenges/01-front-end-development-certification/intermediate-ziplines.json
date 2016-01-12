@@ -60,7 +60,8 @@
         "Si quieres retroalimentación inmediata de parte de tus compañeros campistas, pulsa este botón y pega el link de tu proyecto en CodePen. <br><br><a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20PASTE_YOUR_CODEPEN_URL_HERE%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Pulsa aquí y agrega tu link en el texto del tweet</a>"
       ],
       "namePt": "",
-      "descriptionPt": []
+      "descriptionPt": [],
+      "isRequired": true
     },
     {
       "id": "bd7158d8c442eddfaeb5bd18",
@@ -105,7 +106,8 @@
         "Si quieres retroalimentación inmediata de parte de tus compañeros campistas, pulsa este botón y pega el link de tu proyecto en CodePen. <br><br><a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20PASTE_YOUR_CODEPEN_URL_HERE%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Pulsa aquí y agrega tu link en el texto del tweet</a>"
       ],
       "namePt": "",
-      "descriptionPt": []
+      "descriptionPt": [],
+      "isRequired": true
     },
     {
       "id": "bd7158d8c442eddfaeb5bd19",
@@ -151,7 +153,8 @@
         "Si quieres retroalimentación inmediata de parte de tus compañeros campistas, pulsa este botón y pega el link de tu proyecto en CodePen. <br><br><a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20PASTE_YOUR_CODEPEN_URL_HERE%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Pulsa aquí y agrega tu link en el texto del tweet</a>"
       ],
       "namePt": "",
-      "descriptionPt": []
+      "descriptionPt": [],
+      "isRequired": true
     },
     {
       "id": "bd7158d8c442eddfaeb5bd1f",
@@ -220,7 +223,8 @@
         "Si quieres retroalimentación inmediata de parte de tus compañeros campistas, pulsa este botón y pega el link de tu proyecto en CodePen. <br><br><a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20PASTE_YOUR_CODEPEN_URL_HERE%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Pulsa aquí y agrega tu link en el texto del tweet</a>"
       ],
       "namePt": "",
-      "descriptionPt": []
+      "descriptionPt": [],
+      "isRequired": true
     },
     {
       "id": "bd7158d8c442eedfaeb5bd1c",
@@ -265,7 +269,8 @@
         "Si quieres retroalimentación inmediata de parte de tus compañeros campistas, pulsa este botón y pega el link de tu proyecto en CodePen. <br><br><a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20PASTE_YOUR_CODEPEN_URL_HERE%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Pulsa aquí y agrega tu link en el texto del tweet</a>"
       ],
       "namePt": "",
-      "descriptionPt": []
+      "descriptionPt": [],
+      "isRequired": true
     },
     {
       "id": "bd7158d8c442eddfaeb5bd1c",
@@ -322,7 +327,8 @@
         "Si quieres retroalimentación inmediata de parte de tus compañeros campistas, pulsa este botón y pega el link de tu proyecto en CodePen. <br><br><a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20PASTE_YOUR_CODEPEN_URL_HERE%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Pulsa aquí y agrega tu link en el texto del tweet</a>"
       ],
       "namePt": "",
-      "descriptionPt": []
+      "descriptionPt": [],
+      "isRequired": true
     }
   ]
 }
