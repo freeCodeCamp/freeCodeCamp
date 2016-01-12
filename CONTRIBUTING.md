@@ -89,6 +89,13 @@ PEER=stuff
 DEBUG=true
 ```
 
+If it's your first MongoDB run, you'll need to create the `/data/db/` folder and change the owner on that:
+
+```
+sudo mkdir -p /data/db
+sudo chown -R $USER /data/db 
+```
+
 ```bash
 # Start the mongo server in a seperate terminal
 mongod
