@@ -7,6 +7,15 @@ window.common = (function(global) {
 
   const { challengeTypes, challengeType = '0' } = common;
 
+  function convertDisplayValue(displayVal) {
+    if (displayVal instanceof Array) {
+      return `[${displayVal.map(convertDisplayValue).join(', ')}]`;
+    } else if (typeof displayVal === 'string') {
+      return `"${displayVal}"`;
+    }
+    return '' + displayVal;
+  }
+
   if (
     !CodeMirror ||
     challengeType !== challengeTypes.JS &&
@@ -37,14 +46,17 @@ window.common = (function(global) {
 
   codeOutput.setSize('100%', '100%');
 
-  common.updateOutputDisplay = function updateOutputDisplay(str = '') {
-    codeOutput.setValue(str);
-    return str;
+  common.updateOutputDisplay = function updateOutputDisplay(displayVal = '') {
+    const convertedDisplayVal = convertDisplayValue(displayVal);
+    codeOutput.setValue(convertedDisplayVal);
+    return convertedDisplayVal;
   };
 
-  common.appendToOutputDisplay = function appendToOutputDisplay(str = '') {
-    codeOutput.setValue(codeOutput.getValue() + str);
-    return str;
+  common.appendToOutputDisplay =
+    function appendToOutputDisplay(displayVal = '') {
+      const convertedDisplayVal = convertDisplayValue(displayVal);
+      codeOutput.setValue(codeOutput.getValue() + convertedDisplayVal);
+      return convertedDisplayVal;
   };
 
   return common;
