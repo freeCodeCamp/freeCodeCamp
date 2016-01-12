@@ -29,6 +29,7 @@ block content
                                             for link, index in MDNlinks
                                                 .negative-10
                                                     ul: li: a(href="" + link, target="_blank") !{MDNkeys[index]}
+                                    .button-spacer
                     if (user)
                         form.form-horizontal(novalidate='novalidate', name='completedWithForm')
                             .form-group.text-center.negative-10

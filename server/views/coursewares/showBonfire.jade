@@ -23,13 +23,12 @@ block content
                                     else
                                         p.wrappable.negative-10!= sentence
                             if (MDNlinks.length)
-                                .negative-30-bottom
-                                    #MDN-links
-                                        p.negative-10 Here are some helpful links:
-                                        for link, index in MDNlinks
-                                            .negative-10
-                                                ul: li: a(href=""+link, target="_blank") !{MDNkeys[index]}
-
+                                #MDN-links
+                                    p.negative-10 Here are some helpful links:
+                                    for link, index in MDNlinks
+                                        .negative-10
+                                            ul: li: a(href=""+link, target="_blank") !{MDNkeys[index]}
+                            .button-spacer
                 if (user)
                 label.negative-10.btn.btn-primary.btn-block.btn-lg#submitButton
                     i.fa.fa-play
