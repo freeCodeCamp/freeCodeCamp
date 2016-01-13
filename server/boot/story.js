@@ -399,10 +399,13 @@ module.exports = function(app) {
   }
 
   function storySubmission(req, res, next) {
-    var data = req.body.data;
-    if (!req.user) {
-      return next(new Error('Not authorized'));
+    if (req.user.isBanned) {
+      return res.json({
+        isBanned: true
+      });
     }
+    var data = req.body.data;
+
     var storyLink = data.headline
       .replace(/[^a-z0-9\s]/gi, '')
       .replace(/\s+/g, ' ')

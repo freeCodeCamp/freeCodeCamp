@@ -23,6 +23,11 @@
       "type": "array",
       "default": []
     },
+    "isBanned": {
+      "type": "boolean",
+      "default": false,
+      "description": "User is banned from posting to camper news"
+    },
     "isGithubCool": {
       "type": "boolean",
       "default": false
