@@ -189,6 +189,15 @@ function getRenderData$(user, challenge$, origChallengeName, solution) {
     });
 }
 
+function getCompletedChallengeIds(user = {}) {
+  // if user
+  // get the id's of all the users completed challenges
+  return !user.completedChallenges ?
+    [] :
+    _.uniq(user.completedChallenges)
+      .map(({ id, _id }) => id || _id);
+}
+
 // create a stream of an array of all the challenge blocks
 function getSuperBlocks$(challenge$, completedChallenges) {
   return challenge$
@@ -406,7 +415,19 @@ module.exports = function(app) {
 
   function showChallenge(req, res, next) {
     const solution = req.query.solution;
-    getRenderData$(req.user, challenge$, req.params.challengeName, solution)
+    const completedChallenges = getCompletedChallengeIds(req.user);
+
+    Observable.combineLatest(
+      getRenderData$(req.user, challenge$, req.params.challengeName, solution),
+      getSuperBlocks$(challenge$, completedChallenges),
+      ({ data, ...rest }, superBlocks) => ({
+        ...rest,
+        data: {
+          ...data,
+          superBlocks
+        }
+      })
+    )
       .subscribe(
         ({ type, redirectUrl, message, data }) => {
           if (message) {
@@ -552,14 +573,9 @@ module.exports = function(app) {
       );
   }
 
-  function showMap({ user = {} }, res, next) {
-    // if user
-    // get the id's of all the users completed challenges
-    const completedChallenges = !user.completedChallenges ?
-      [] :
-      _.uniq(user.completedChallenges).map(({ id, _id }) => id || _id);
+  function showMap({ user }, res, next) {
 
-    getSuperBlocks$(challenge$, completedChallenges)
+    getSuperBlocks$(challenge$, getCompletedChallengeIds(user))
       .subscribe(
         superBlocks => {
           res.render('map/show', {
