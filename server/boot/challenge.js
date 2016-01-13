@@ -228,6 +228,7 @@ function getSuperBlocks$(challenge$, completedChallenges) {
       return {
         isBeta,
         isComingSoon,
+        isRequired,
         name: blockArray[0].block,
         superBlock: blockArray[0].superBlock,
         dashedName: dasherize(blockArray[0].block),
@@ -317,7 +318,8 @@ module.exports = function(app) {
     completedZiplineOrBasejump
   );
 
-  router.get('/map', showMap);
+  router.get('/map', showMap.bind(null, false));
+  router.get('/map-minimal', showMap.bind(null, true));
   router.get(
     '/challenges/next-challenge',
     returnNextChallenge
@@ -574,14 +576,15 @@ module.exports = function(app) {
       );
   }
 
-  function showMap({ user }, res, next) {
+  function showMap(showMinimal, { user }, res, next) {
 
     getSuperBlocks$(challenge$, getCompletedChallengeIds(user))
       .subscribe(
         superBlocks => {
           res.render('map/show', {
             superBlocks,
-            title: 'A Map to Learn to Code and Become a Software Engineer'
+            title: 'A Map to Learn to Code and Become a Software Engineer',
+            showMinimal
           });
         },
         next
