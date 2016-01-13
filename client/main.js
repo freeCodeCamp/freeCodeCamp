@@ -214,8 +214,12 @@ $(document).ready(function() {
       .fail(function() {
         $('#story-submit').bind('click', storySubmitButtonHandler);
       })
-      .done(function(data) {
-        window.location = '/stories/' + data.storyLink;
+      .done(function({ storyLink, isBanned }) {
+        if (isBanned) {
+          window.location = '/news';
+          return null;
+        }
+        window.location = '/stories/' + storyLink;
       });
   };
 
