@@ -418,19 +418,8 @@ module.exports = function(app) {
 
   function showChallenge(req, res, next) {
     const solution = req.query.solution;
-    const completedChallenges = getCompletedChallengeIds(req.user);
 
-    Observable.combineLatest(
-      getRenderData$(req.user, challenge$, req.params.challengeName, solution),
-      getSuperBlocks$(challenge$, completedChallenges),
-      ({ data, ...rest }, superBlocks) => ({
-        ...rest,
-        data: {
-          ...data,
-          superBlocks
-        }
-      })
-    )
+    getRenderData$(req.user, challenge$, req.params.challengeName, solution)
       .subscribe(
         ({ type, redirectUrl, message, data }) => {
           if (message) {

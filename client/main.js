@@ -262,6 +262,12 @@ $(document).ready(function() {
 
   // map
   $('#nav-map-btn').on('click', () => {
+    if (!main.isMapAsideLoad) {
+      var mapAside = $('<iframe>');
+      mapAside.attr('src', '/map-minimal');
+      $('.map-aside').append(mapAside);
+      main.isMapAsideLoad = true;
+    }
     $('.map-aside').removeClass('is-collapsed');
   });
 
