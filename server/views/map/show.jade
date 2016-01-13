@@ -1,42 +1,137 @@
 extends ../layout-wide
 block content
-        .col-xs-12.col-sm-4.col-sm-offset-8
-            for superBlock, index in superBlocks
-              for challengeBlock in superBlock.blocks
-                h4.bold #{challengeBlock.name} (#{challengeBlock.time})
-                for challenge in challengeBlock.challenges
-                    if challenge.completed
-                        p.text-primary.ion-checkmark-circled.padded-ionic-icon.negative-15(name="#{challenge.dashedName}") &nbsp;
-                            a(href="/challenges/#{challenge.dashedName}")
-                                = challenge.title
-                                span.sr-only= " Complete"
-                    else
-                        if challenge.type === "bonfire"
-                            p.ion-asterisk.padded-ionic-icon.negative-15(name="#{challenge.dashedName}") &nbsp;
-                                a(name="#{challenge.dashedName}" href="/challenges/#{challenge.dashedName}" class=challenge.isComingSoon ? 'disabled' : '')
-                                    span= challenge.title
-                                    span.sr-only= " Incomplete"
-                                if challenge.markNew
-                                    span.text-success.small &thinsp; &thinsp;
-                                        strong
-                                            em New
-                                if challengeBlock.isComingSoon
-                                    span.text-success.small &thinsp; &thinsp;
-                                        strong
-                                            em Coming Soon
-                        else
-                            p.ion-ios-circle-outline.padded-ionic-icon.negative-15(name="#{challenge.dashedName}") &nbsp;
-                                a(name="#{challenge.dashedName}" href="/challenges/#{challenge.dashedName}" class=challenge.isComingSoon ? 'disabled' : '')
-                                    span= challenge.title
-                                    span.sr-only= " Incomplete"
-                                if challenge.markNew
-                                    span.text-success.small &thinsp; &thinsp;
-                                        strong
-                                            em New
-                                if challengeBlock.isComingSoon
-                                    span.text-success.small &thinsp; &thinsp;
-                                        strong
-                                            em Coming Soon
+    .row
+        .col-xs-12.col-md-6.col-md-offset-3
+            ul
+                for superBlock in superBlocks
+                  h2= superBlock.name
+                  for challengeBlock in superBlock.blocks
+                      .row
+                          if (user)
+                              .col-xs-11.col-sm-8.col-md-9
+                                  li.map-p.negative-10
+                                      | &nbsp;&nbsp;
+                                      a(href='#' + challengeBlock.dashedName)= challengeBlock.name
+                                      if challengeBlock.markNew
+                                          span.text-info.small &thinsp; &thinsp;
+                                              strong
+                                                  em NEW
+                                      if challengeBlock.isComingSoon
+                                          span.text-info.small &thinsp; &thinsp;
+                                              strong
+                                                  em Coming Soon
+                          else
+                              .hidden-xs.col-sm-3.col-md-2
+                              .col-xs-10.col-sm-8.col-md-9
+                                  span.map-p.negative-10
+                                      a(href='#' + challengeBlock.dashedName)= challengeBlock.name
+                                      if challengeBlock.markNew
+                                          span.text-info.small &thinsp; &thinsp;
+                                              strong
+                                                  em NEW
+                                      if challengeBlock.isComingSoon
+                                          span.text-info.small &thinsp; &thinsp;
+                                              strong
+                                                  em Coming Soon
+                h2 Full Stack Development Certification
+                .row
+                    .col-xs-12.col-sm-9.col-md-10
+                      li.map-p.negative-10
+                        | &nbsp;&nbsp;
+                        span.ion-locked.padded-ionic-icon 
+                        | Greenfield Nonprofit Project 1
+                    .col-xs-12.col-sm-9.col-md-10
+                      li.map-p.negative-10
+                        | &nbsp;&nbsp;
+                        span.ion-locked.padded-ionic-icon 
+                        | Greenfield Nonprofit Project 2
+                    .col-xs-12.col-sm-9.col-md-10
+                      li.map-p.negative-10
+                        | &nbsp;&nbsp;
+                        span.ion-locked.padded-ionic-icon 
+                        | Legacy Nonprofit Project 1
+                    .col-xs-12.col-sm-9.col-md-10
+                      li.map-p.negative-10
+                        | &nbsp;&nbsp;
+                        span.ion-locked.padded-ionic-icon 
+                        | Legacy Nonprofit Project 2
+                    .col-xs-12.col-sm-9.col-md-10
+                      li.map-p.negative-10
+                        | &nbsp;&nbsp;
+                        span.ion-locked.padded-ionic-icon 
+                        | Claim your Full Stack Development Certification
+
+                h2 Coding Interview Preparation
+                .row
+                    .col-xs-12.col-sm-9.col-md-10
+                      li.map-p.negative-10
+                        | &nbsp;&nbsp;
+                        span.ion-locked.padded-ionic-icon 
+                        | Whiteboard Coding Interview Training
+                    .col-xs-12.col-sm-9.col-md-10
+                      li.map-p.negative-10
+                        | &nbsp;&nbsp;
+                        span.ion-locked.padded-ionic-icon 
+                        | Critical Thinking Interview Training
+                    .col-xs-12.col-sm-9.col-md-10
+                      li.map-p.negative-10
+                        | &nbsp;&nbsp;
+                        span.ion-locked.padded-ionic-icon 
+                        | Mock Interview 1
+                    .col-xs-12.col-sm-9.col-md-10
+                      li.map-p.negative-10
+                        | &nbsp;&nbsp;
+                        span.ion-locked.padded-ionic-icon 
+                        | Mock Interview 2
+                    .col-xs-12.col-sm-9.col-md-10
+                      li.map-p.negative-10
+                        | &nbsp;&nbsp;
+                        span.ion-locked.padded-ionic-icon 
+                        | Mock Interview 3
+                hr
+      .row
+          .col-xs-12.col-md-6.col-md-offset-3
+                for superBlock, index in superBlocks
+                  for challengeBlock in superBlock.blocks
+                    .row
+                      a(href='#' name=challengeBlock.dashedName)
+                      .spacer.negative-55
+                    .row
+                      h4.bold #{challengeBlock.name} (#{challengeBlock.time})
+                      for challenge in challengeBlock.challenges
+
+                        .col-xs-12.col-sm-9.col-md-10
+                          if challenge.completed
+                              p.text-primary.ion-checkmark-circled.padded-ionic-icon.negative-15(name="#{challenge.dashedName}") &nbsp;
+                                  a(href="/challenges/#{challenge.dashedName}")
+                                      = challenge.title
+                                      span.sr-only= " Complete"
+                          else if (challenge.type === "bonfire")
+                              p.ion-asterisk.padded-ionic-icon.negative-15(name="#{challenge.dashedName}") &nbsp;
+                                  a(name="#{challenge.dashedName}" href="/challenges/#{challenge.dashedName}" class=challenge.isComingSoon ? 'disabled' : '')
+                                      span= challenge.title
+                                      span.sr-only= " Incomplete"
+                                  if challenge.markNew
+                                      span.text-success.small &thinsp; &thinsp;
+                                          strong
+                                              em New
+                                  if challengeBlock.isComingSoon
+                                      span.text-success.small &thinsp; &thinsp;
+                                          strong
+                                              em Coming Soon
+                          else
+                              p.ion-ios-circle-outline.padded-ionic-icon.negative-15(name="#{challenge.dashedName}") &nbsp;
+                                  a(name="#{challenge.dashedName}" href="/challenges/#{challenge.dashedName}" class=challenge.isComingSoon ? 'disabled' : '')
+                                      span= challenge.title
+                                      span.sr-only= " Incomplete"
+                                  if challenge.markNew
+                                      span.text-success.small &thinsp; &thinsp;
+                                          strong
+                                              em New
+                                  if challengeBlock.isComingSoon
+                                      span.text-success.small &thinsp; &thinsp;
+                                          strong
+                                              em Coming Soon
                   if (index < superBlocks.length)
                     hr
 
