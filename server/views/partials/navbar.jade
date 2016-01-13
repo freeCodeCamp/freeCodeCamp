@@ -9,7 +9,9 @@ nav.navbar.navbar-default.navbar-fixed-top.nav-height
         ul.nav.navbar-nav.navbar-right.hamburger-dropdown
             li
                 a.learn-btn(href='#') Learn
-            li
+            li.hidden-xs
+                a#nav-map-btn(href='#' onclick='return false') Map
+            li.visible-xs
                 a(href='/map') Map
             li.hidden-xs
                 a#nav-chat-btn(href='#' onclick="return false") Chat

@@ -259,4 +259,13 @@ $(document).ready(function() {
     window.ga('send', 'event', 'FB_LINK', 'SHARE', 'Facebook map share');
     window.location.href = link;
   });
+
+  // map
+  $('#nav-map-btn').on('click', () => {
+    $('.map-aside').removeClass('is-collapsed');
+  });
+
+  $('.map-aside-action-collapse').on('click', () => {
+    $('.map-aside').addClass('is-collapsed');
+  });
 });
