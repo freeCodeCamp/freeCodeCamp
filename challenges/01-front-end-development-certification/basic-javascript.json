@@ -439,7 +439,7 @@
       "id": "cf1391c1c11feddfaeb4bdef",
       "title": "Create Decimal Numbers with JavaScript",
       "description": [
-        "We can store decimal numbers in variables too. Decimal numbers are sometimes refered to as <dfn>floating point</dfn> numbers or <dfn>floats</dfn>.",
+        "We can store decimal numbers in variables too. Decimal numbers are sometimes referred to as <dfn>floating point</dfn> numbers or <dfn>floats</dfn>.",
         "<strong>Note</strong><br>Not all real numbers can accurately be represented in <dfn>floating point</dfn>. This can lead to rounding errors. <a href=\"https://en.wikipedia.org/wiki/Floating_point#Accuracy_problems\" target=\"_blank\">Details Here</a>.",
         "<h4>Instructions</h4>",
         "Create a variable <code>myDecimal</code> and give it a decimal value."
@@ -526,7 +526,7 @@
         "<blockquote>5 % 2 = 1 because<br>Math.floor(5 / 2) = 2 (Quotient)<br>2 * 2 = 4<br>5 - 4 = 1 (Remainder)</blockquote>",
         "<strong>Usage</strong><br>In mathematics, a number can be checked even or odd by checking the remainder of the division of the number by <code>2</code>.",
         "<blockquote>17 % 2 = 1 (17 is Odd)<br>48 % 2 = 0 (48 is Even)</blockquote>",
-        "<strong>Note</strong><br>The <dfn>remainder</dfn> operator is sometimes incorrectly refered to as  the \"modulus\" operator. It is very similar to modulus, but does not work properly with negative numbers.",
+        "<strong>Note</strong><br>The <dfn>remainder</dfn> operator is sometimes incorrectly referred to as  the \"modulus\" operator. It is very similar to modulus, but does not work properly with negative numbers.",
         "<h4>Instructions</h4>",
         "Set <code>remainder</code> equal to the remainder of <code>11</code> divided by <code>3</code> using the <dfn>remainder</dfn> (<code>%</code>) operator."
       ],
@@ -1105,7 +1105,7 @@
       "title": "Use Bracket Notation to Find the First Character in a String",
       "description": [
         "<code>Bracket notation</code> is a way to get a character at a specific <code>index</code> within a string.",
-        "Most modern programming languages, like JavaScript, don't start counting at 1 like humans do. They start at 0. This is refered to as <dfn>Zero-based</dfn> indexing.",
+        "Most modern programming languages, like JavaScript, don't start counting at 1 like humans do. They start at 0. This is referred to as <dfn>Zero-based</dfn> indexing.",
         "For example, the character at index 0 in the word \"Charles\" is \"C\". So if <code>var firstName = \"Charles\"</code>, you can get the value of the first letter of the string by using <code>firstName[0]</code>.",
         "<h4>Instructions</h4>",
         "Use <dfn>bracket notation</dfn> to find the first character in the <code>lastName</code> variable and assign it to <code>firstLetterOfLastName</code>.",
