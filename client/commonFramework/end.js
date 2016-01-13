@@ -69,7 +69,7 @@ $(document).ready(function() {
       ({ err, output, originalCode }) => {
         if (err) {
           console.error(err);
-          return common.updateOutputDisplay(err);
+          return common.updateOutputDisplay('' + err);
         }
         common.codeStorage.updateStorage(challengeName, originalCode);
         common.codeUri.querify(originalCode);
@@ -79,7 +79,7 @@ $(document).ready(function() {
         if (err) {
           console.error(err);
         }
-        common.updateOutputDisplay(err);
+        common.updateOutputDisplay('' + err);
       }
     );
 
@@ -105,7 +105,7 @@ $(document).ready(function() {
               <h1>${err}</h1>
             `).first().subscribe(() => {});
           }
-          return common.updateOutputDisplay(err);
+          return common.updateOutputDisplay('' + err);
         }
         common.updateOutputDisplay(output);
         common.displayTestResults(tests);
@@ -115,7 +115,7 @@ $(document).ready(function() {
       },
       ({ err }) => {
         console.error(err);
-        common.updateOutputDisplay(err);
+        common.updateOutputDisplay('' + err);
       }
     );
 
@@ -135,7 +135,7 @@ $(document).ready(function() {
                 <h1>${err}</h1>
               `).subscribe(() => {});
             }
-            return common.updateOutputDisplay(err);
+            return common.updateOutputDisplay('' + err);
           }
           common.displayTestResults(tests);
         },
@@ -157,14 +157,14 @@ $(document).ready(function() {
         ({ err, originalCode, tests }) => {
           if (err) {
             console.error(err);
-            return common.updateOutputDisplay(err);
+            return common.updateOutputDisplay('' + err);
           }
           common.codeStorage.updateStorage(challengeName, originalCode);
           common.displayTestResults(tests);
         },
         (err) => {
           console.error(err);
-          common.updateOutputDisplay(err);
+          common.updateOutputDisplay('' + err);
         }
       );
   }
