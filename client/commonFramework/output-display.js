@@ -38,11 +38,13 @@ window.common = (function(global) {
   codeOutput.setSize('100%', '100%');
 
   common.updateOutputDisplay = function updateOutputDisplay(str = '') {
+    str = JSON.stringify(str);
     codeOutput.setValue(str);
     return str;
   };
 
   common.appendToOutputDisplay = function appendToOutputDisplay(str = '') {
+    str = JSON.stringify(str);
     codeOutput.setValue(codeOutput.getValue() + str);
     return str;
   };

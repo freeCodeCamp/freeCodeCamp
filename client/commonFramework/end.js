@@ -73,7 +73,7 @@ $(document).ready(function() {
         }
         common.codeStorage.updateStorage(challengeName, originalCode);
         common.codeUri.querify(originalCode);
-        common.updateOutputDisplay('' + output);
+        common.updateOutputDisplay(output);
       },
       (err) => {
         if (err) {
@@ -107,7 +107,7 @@ $(document).ready(function() {
           }
           return common.updateOutputDisplay('' + err);
         }
-        common.updateOutputDisplay('' + output);
+        common.updateOutputDisplay(output);
         common.displayTestResults(tests);
         if (solved) {
           common.showCompletion();

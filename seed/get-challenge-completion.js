@@ -17,6 +17,8 @@ MongoClient.connect(secrets.db, function(err, database) {
   if (err) {
     throw err;
   }
+  var firstTime = true;
+
   var stream = database.collection('user')
         .find({'completedChallenges': { $ne: null },
                'isLocked': { $ne: true } },
@@ -36,7 +38,12 @@ MongoClient.connect(secrets.db, function(err, database) {
         });
       });
       if (dataOut.length) {
-          console.log(JSON.stringify(dataOut) + ',');
+        if (!firstTime) {
+          console.log(',' + JSON.stringify(dataOut));
+        } else {
+          firstTime = false;
+          console.log(JSON.stringify(dataOut));
+        }
       }
     }
   }).on('end', function() {
