@@ -48,7 +48,8 @@
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
         ],
       "namePt": "",
-      "descriptionPt": []
+      "descriptionPt": [],
+      "isRequired": true
     },
     {
       "id": "a5de63ebea8dbee56860f4f2",
@@ -100,7 +101,8 @@
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
         ],
       "namePt": "",
-      "descriptionPt": []
+      "descriptionPt": [],
+      "isRequired": true
     },
     {
       "id": "a7f4d8f2483413a6ce226cac",
@@ -165,7 +167,8 @@
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
         ],
       "namePt": "",
-      "descriptionPt": []
+      "descriptionPt": [],
+      "isRequired": true
     },
     {
       "id": "a8e512fbe388ac2f9198f0fa",
@@ -213,7 +216,8 @@
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
         ],
       "namePt": "",
-      "descriptionPt": []
+      "descriptionPt": [],
+      "isRequired": true
     },
     {
       "id": "a0b5010f579e69b815e7c5d6",
@@ -223,7 +227,8 @@
         "assert.deepEqual(myReplace(\"He is Sleeping on the couch\", \"Sleeping\", \"sitting\"), \"He is Sitting on the couch\", 'message: <code>myReplace(\"He is Sleeping on the couch\", \"Sleeping\", \"sitting\")</code> should return \"He is Sitting on the couch\".');",
         "assert.deepEqual(myReplace(\"This has a spellngi error\", \"spellngi\", \"spelling\"), \"This has a spelling error\", 'message: <code>myReplace(\"This has a spellngi error\", \"spellngi\", \"spelling\")</code> should return \"This has a spelling error\".');",
         "assert.deepEqual(myReplace(\"His name is Tom\", \"Tom\", \"john\"), \"His name is John\", 'message: <code>myReplace(\"His name is Tom\", \"Tom\", \"john\")</code> should return \"His name is John\".');",
-        "assert.deepEqual(myReplace(\"Let us get back to more Coding\", \"Coding\", \"bonfires\"), \"Let us get back to more Bonfires\", 'message: <code>myReplace(\"Let us get back to more Coding\", \"Coding\", \"bonfires\")</code> should return \"Let us get back to more Bonfires\".');"
+        "assert.deepEqual(myReplace(\"Let us get back to more Coding\", \"Coding\", \"algorithms\"), \"Let us get back to more Algorithms\", 'message: <code>myReplace(\"Let us get back to more Coding\", \"Coding\", \"algorithms\")</code> should return \"Let us get back to more Algorithms\".');"
+
       ],
       "description": [
         "Perform a search and replace on the sentence using the arguments provided and return the new sentence.",
@@ -266,7 +271,8 @@
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
         ],
       "namePt": "",
-      "descriptionPt": []
+      "descriptionPt": [],
+      "isRequired": true
     },
     {
       "id": "aa7697ea2477d1316795783b",
@@ -317,7 +323,8 @@
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
         ],
       "namePt": "",
-      "descriptionPt": []
+      "descriptionPt": [],
+      "isRequired": true
     },
     {
       "id": "afd15382cdfb22c9efe8b7de",
@@ -367,7 +374,8 @@
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
         ],
       "namePt": "",
-      "descriptionPt": []
+      "descriptionPt": [],
+      "isRequired": true
     },
     {
       "id": "af7588ade1100bde429baf20",
@@ -412,7 +420,8 @@
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
         ],
       "namePt": "",
-      "descriptionPt": []
+      "descriptionPt": [],
+      "isRequired": true
     },
     {
       "id": "a77dbc43c33f39daa4429b4f",
@@ -463,7 +472,8 @@
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
         ],
       "namePt": "",
-      "descriptionPt": []
+      "descriptionPt": [],
+      "isRequired": true
     },
     {
       "id": "a105e963526e7de52b219be9",
@@ -512,7 +522,8 @@
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
         ],
       "namePt": "",
-      "descriptionPt": []
+      "descriptionPt": [],
+      "isRequired": true
     },
     {
       "id": "a6b0bb188d873cb2c8729495",
@@ -559,7 +570,8 @@
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
         ],
       "namePt": "",
-      "descriptionPt": []
+      "descriptionPt": [],
+      "isRequired": true
     },
     {
       "id": "a103376db3ba46b2d50db289",
@@ -604,7 +616,8 @@
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
         ],
       "namePt": "",
-      "descriptionPt": []
+      "descriptionPt": [],
+      "isRequired": true
     },
     {
       "id": "a5229172f011153519423690",
@@ -652,7 +665,8 @@
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
         ],
       "namePt": "",
-      "descriptionPt": []
+      "descriptionPt": [],
+      "isRequired": true
     },
     {
       "id": "a3bfc1673c0526e06d3ac698",
@@ -698,7 +712,8 @@
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
         ],
       "namePt": "",
-      "descriptionPt": []
+      "descriptionPt": [],
+      "isRequired": true
     },
     {
       "id": "ae9defd7acaf69703ab432ea",
@@ -745,7 +760,8 @@
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
         ],
       "namePt": "",
-      "descriptionPt": []
+      "descriptionPt": [],
+      "isRequired": true
     },
     {
       "id": "a6e40f1041b06c996f7b2406",
@@ -786,7 +802,8 @@
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
         ],
       "namePt": "",
-      "descriptionPt": []
+      "descriptionPt": [],
+      "isRequired": true
     },
     {
       "id": "a5deed1811a43193f9f1c841",
@@ -834,7 +851,8 @@
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
         ],
       "namePt": "",
-      "descriptionPt": []
+      "descriptionPt": [],
+      "isRequired": true
     },
     {
       "id": "ab306dbdcc907c7ddfc30830",
@@ -877,7 +895,8 @@
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
         ],
       "namePt": "",
-      "descriptionPt": []
+      "descriptionPt": [],
+      "isRequired": true
     },
     {
       "id": "a8d97bd4c764e91f9d2bda01",
@@ -920,7 +939,8 @@
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
         ],
       "namePt": "",
-      "descriptionPt": []
+      "descriptionPt": [],
+      "isRequired": true
     },
     {
       "id": "a10d2431ad0c6a099a4b8b52",
@@ -967,7 +987,8 @@
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
         ],
       "namePt": "",
-      "descriptionPt": []
+      "descriptionPt": [],
+      "isRequired": true
     },
     {
       "id": "a97fd23d9b809dac9921074f",
@@ -1021,7 +1042,8 @@
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
         ],
       "namePt": "",
-      "descriptionPt": []
+      "descriptionPt": [],
+      "isRequired": true
     }
   ]
 }

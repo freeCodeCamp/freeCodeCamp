@@ -5,25 +5,25 @@
   "challenges": [
       {
       "id": "bd7158d2c442eddfbeb5bd1f",
-      "title": "Get Set for Bonfires",
+      "title": "Get Set for our Algorithm Challenges",
       "challengeSeed": [],
       "description": [
         [
           "http://i.imgur.com/sJkp30a.png",
-          "An image of our a Bonfire challenge showing directions, tests, and the code editor.",
-          "Bonfires are algorithm challenges that teach you how to think like a programmer.",
+          "An image of a algorithm challenge showing directions, tests, and the code editor.",
+          "Our algorithm challenges will teach you how to think like a programmer.",
           ""
         ],
         [
           "http://i.imgur.com/d8LuRNh.png",
           "A mother bird kicks a baby bird out of her nest.",
-          "Our Waypoint challenges merely introduced you to programming concepts. For our Bonfire challenges, you'll now need to apply what you learned to solve open-ended problems.",
+          "Our previous challenges introduced you to programming concepts. But for these algorithm challenges, you'll now need to apply what you learned to solve open-ended problems.",
           ""
         ],
         [
           "http://i.imgur.com/WBetuBa.jpg",
           "A programmer punching through his laptop screen in frustration.",
-          "Bonfires are hard. It takes most campers several hours to solve each Bonfire. You will get frustrated. But don't quit.",
+          "Our algorithm challenges are hard. Some of them may take you several hours to solve. You will get frustrated. But don't quit.",
           ""
         ],
         [
@@ -45,53 +45,8 @@
       "nameEs": "Prepárate para los Ziplines",
       "descriptionEs": [],
       "namePt": "",
-      "descriptionPt": []
-    },
-    {
-      "id": "ad7123c8c441eddfaeb5bdef",
-      "title": "Meet Bonfire",
-      "description": [
-        "Your goal is to fix the failing test.",
-        "First, run all the tests by clicking \"Run tests\" or by pressing Control + Enter.",
-        "The failing test is in red. Fix the code so that all tests pass. Then you can move on to the next Bonfire.",
-        "Make this function return true no matter what."
-      ],
-      "tests": [
-        "assert(typeof meetBonfire() === \"boolean\", 'message: <code>meetBonfire()</code> should return a boolean value.');",
-        "assert(meetBonfire() === true, 'message: <code>meetBonfire()</code> should return true.');"
-      ],
-      "challengeSeed": [
-        "function meetBonfire(argument) {",
-        "  // Good luck!",
-        "  console.log(\"you can read this function's argument in the developer tools\", argument);",
-        "",
-        "  return false;",
-        "}",
-        "",
-        "",
-        "",
-        "meetBonfire(\"You can do this!\");"
-      ],
-      "solutions": [
-        "function meetBonfire(argument) {\n  // Good luck!\n  console.log(\"you can read this function's argument in the developer tools\", argument);\n\n  return true;\n}\n\n\n\nmeetBonfire(\"You can do this!\");\n"
-      ],
-      "type": "bonfire",
-      "challengeType": 5,
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
-      "nameRu": "",
-      "descriptionRu": [],
-      "nameEs": "¡Bienvenido a los Bonfires!",
-      "descriptionEs": [
-        "Tu objetivo es arreglar la prueba que falla",
-        "Primero, ejecuta todos las pruebas dando click en \"Run tests\" o presionando Control + Enter.",
-        "La prueba que falla está marcada en rojo. Arregla el código de tal forma que todos las pruebas pasen. Luego, puedes continuar con el siguiente Bonfire",
-        "Haz que esta función devuelva true (verdadero) bajo cualquier circunstancia."
-        ],
-      "namePt": "",
-      "descriptionPt": []
+      "descriptionPt": [],
+      "isRequired": true
     },
     {
       "id": "a202eed8fc186c8434cb6d61",
@@ -140,7 +95,8 @@
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
         ],
       "namePt": "",
-      "descriptionPt": []
+      "descriptionPt": [],
+      "isRequired": true
     },
     {
       "id": "a302f7aae1aa3152a5b413bc",
@@ -189,7 +145,8 @@
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
         ],
       "namePt": "",
-      "descriptionPt": []
+      "descriptionPt": [],
+      "isRequired": true
     },
     {
       "id": "aaa48de84e1ecc7c742e1124",
@@ -248,7 +205,8 @@
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
         ],
       "namePt": "",
-      "descriptionPt": []
+      "descriptionPt": [],
+      "isRequired": true
     },
     {
       "id": "a26cbbe9ad8655a977e1ceb5",
@@ -295,7 +253,8 @@
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
         ],
       "namePt": "",
-      "descriptionPt": []
+      "descriptionPt": [],
+      "isRequired": true
     },
     {
       "id": "ab6137d4e35944e21037b769",
@@ -339,7 +298,8 @@
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
         ],
       "namePt": "",
-      "descriptionPt": []
+      "descriptionPt": [],
+      "isRequired": true
     },
     {
       "id": "a789b3483989747d63b0e427",
@@ -384,7 +344,8 @@
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
         ],
       "namePt": "",
-      "descriptionPt": []
+      "descriptionPt": [],
+      "isRequired": true
     },
     {
       "id": "acda2fb1324d9b0fa741e6b5",
@@ -431,7 +392,8 @@
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
         ],
       "namePt": "",
-      "descriptionPt": []
+      "descriptionPt": [],
+      "isRequired": true
     },
     {
       "id": "afcc8d540bea9ea2669306b6",
@@ -476,7 +438,8 @@
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
         ],
       "namePt": "",
-      "descriptionPt": []
+      "descriptionPt": [],
+      "isRequired": true
     },
     {
       "id": "ac6993d51946422351508a41",
@@ -524,7 +487,8 @@
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
         ],
       "namePt": "",
-      "descriptionPt": []
+      "descriptionPt": [],
+      "isRequired": true
     },
     {
       "id": "a9bd25c716030ec90084d8a1",
@@ -570,7 +534,8 @@
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
         ],
       "namePt": "",
-      "descriptionPt": []
+      "descriptionPt": [],
+      "isRequired": true
     },
     {
       "id": "ab31c21b530c0dafa9e241ee",
@@ -616,7 +581,8 @@
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
         ],
       "namePt": "",
-      "descriptionPt": []
+      "descriptionPt": [],
+      "isRequired": true
     },
     {
       "id": "af2170cad53daa0770fabdea",
@@ -668,7 +634,8 @@
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
         ],
       "namePt": "",
-      "descriptionPt": []
+      "descriptionPt": [],
+      "isRequired": true
     },
     {
       "id": "adf08ec01beb4f99fc7a68f2",
@@ -713,7 +680,8 @@
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
         ],
       "namePt": "",
-      "descriptionPt": []
+      "descriptionPt": [],
+      "isRequired": true
     },
     {
       "id": "a39963a4c10bc8b4d4f06d7e",
@@ -758,7 +726,8 @@
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
         ],
       "namePt": "",
-      "descriptionPt": []
+      "descriptionPt": [],
+      "isRequired": true
     },
     {
       "id": "a24c1a4622e3c05097f71d67",
@@ -807,7 +776,8 @@
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
         ],
       "namePt": "",
-      "descriptionPt": []
+      "descriptionPt": [],
+      "isRequired": true
     },
     {
       "id": "56533eb9ac21ba0edf2244e2",
@@ -851,7 +821,8 @@
       "nameFr": "",
       "nameRu": "",
       "nameEs": "",
-      "namePt": ""
+      "namePt": "",
+      "isRequired": true
     }
   ]
 }

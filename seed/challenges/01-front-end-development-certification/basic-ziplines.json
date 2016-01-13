@@ -5,19 +5,19 @@
   "challenges": [
     {
       "id": "bd7158d8c442eddfbeb5bd1f",
-      "title": "Get Set for Ziplines",
+      "title": "Get Set for our Front End Development Projects",
       "challengeSeed": [],
       "description": [
         [
           "http://i.imgur.com/OAD6SJz.png",
-          "An image of a Simon game, one our Zipline projects.",
-          "Ziplines are front end development projects that will give you a chance to apply the front end skills you've developed up to this point. We'll use a popular browser-based code editor called CodePen.",
+          "An image of a Simon game, one our front end projects.",
+          "Our front end development projects will give you a chance to apply the front end skills you've developed up to this point. We'll use a popular browser-based code editor called CodePen.",
           ""
         ],
         [
           "http://i.imgur.com/WBetuBa.jpg",
           "A programmer punching through his laptop screen in frustration.",
-          "Ziplines are hard. It takes most campers several days to build each Zipline. You will get frustrated. But don't quit. This gets easier with practice.",
+          "These projects are hard. It takes most campers several days to build each project. You will get frustrated. But don't quit. This gets easier with practice.",
           ""
         ],
         [
@@ -29,7 +29,7 @@
         [
           "http://i.imgur.com/6WLULsC.gif",
           "A gif showing how to create a Codepen account.",
-          "For our front end Zipline challenges, we'll use a popular browser-based code editor called CodePen. Open CodePen and click \"Sign up\" in the upper right hand corner, then scroll down to the free plan and click \"Sign up\" again. Click the \"Use info from GitHub button\", then add your email address and create a password. Click the \"Sign up\" button. Then in the upper right hand corner, click \"New pen\".",
+          "For our front end project challenges, we'll use a popular browser-based code editor called CodePen. Open CodePen and click \"Sign up\" in the upper right hand corner, then scroll down to the free plan and click \"Sign up\" again. Click the \"Use info from GitHub button\", then add your email address and create a password. Click the \"Sign up\" button. Then in the upper right hand corner, click \"New pen\".",
           "http://codepen.io"
         ],
         [
@@ -100,7 +100,8 @@
         ]
       ],
       "namePt": "",
-      "descriptionPt": []
+      "descriptionPt": [],
+      "isRequired": true
     },
     {
       "id": "bd7158d8c242eddfaeb5bd13",
@@ -169,7 +170,8 @@
         "Si quieres retroalimentación inmediata de parte de tus compañeros campistas, pulsa este botón y pega el link de tu proyecto en CodePen. <br><br><a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20PASTE_YOUR_CODEPEN_URL_HERE%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Pulsa aquí y agrega tu link en el texto del tweet</a>"
       ],
       "namePt": "",
-      "descriptionPt": []
+      "descriptionPt": [],
+      "isRequired": true
     },
     {
       "id": "bd7158d8c442eddfaeb5bd13",
@@ -222,7 +224,8 @@
         "Si quieres retroalimentación inmediata de parte de tus compañeros campistas, pulsa este botón y pega el link de tu proyecto en CodePen. <br><br><a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20PASTE_YOUR_CODEPEN_URL_HERE%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Pulsa aquí y agrega tu link en el texto del tweet</a>"
       ],
       "namePt": "",
-      "descriptionPt": []
+      "descriptionPt": [],
+      "isRequired": true
     },
     {
       "id": "bd7158d8c442eddfaeb5bd17",
@@ -265,7 +268,8 @@
         "Si quieres retroalimentación inmediata de parte de tus compañeros campistas, pulsa este botón y pega el link de tu proyecto en CodePen. <br><br><a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20PASTE_YOUR_CODEPEN_URL_HERE%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Pulsa aquí y agrega tu link en el texto del tweet</a>"
       ],
       "namePt": "",
-      "descriptionPt": []
+      "descriptionPt": [],
+      "isRequired": true
     },
     {
       "id": "bd7158d8c442eddfaeb5bd0f",
@@ -320,7 +324,8 @@
         "Si quieres retroalimentación inmediata de parte de tus compañeros campistas, pulsa este botón y pega el link de tu proyecto en CodePen. <br><br><a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20PASTE_YOUR_CODEPEN_URL_HERE%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Pulsa aquí y agrega tu link en el texto del tweet</a>"
       ],
       "namePt": "",
-      "descriptionPt": []
+      "descriptionPt": [],
+      "isRequired": true
     }
   ]
 }
