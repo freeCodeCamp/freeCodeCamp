@@ -2686,7 +2686,7 @@
         "function myTest(val) {\n  if(val < 5) {\n    return \"Less than 5\";            \n  } else if (val < 10) {\n    return \"Less than 10\";\n  } else {\n    return \"Greater than or equal to 10\";\n  }\n}"
       ],
       "tests": [
-        "assert(myTest(4) === \"Less than 5\", 'message: <code>myTest(5)</code> should return \"Less than 5\"');",
+        "assert(myTest(4) === \"Less than 5\", 'message: <code>myTest(4)</code> should return \"Less than 5\"');",
         "assert(myTest(6) === \"Less than 10\", 'message: <code>myTest(6)</code> should return \"Less than 10\"');",
         "assert(myTest(11) === \"Greater than or equal to 10\", 'message: <code>myTest(11)</code> should return \"Greater than or equal to 10\"');"
       ],
@@ -4019,12 +4019,7 @@
         "assert(lookUp(\"Akira\", \"address\") === \"No such property\", 'message: <code>\"Akira\", \"address\"</code> should return \"No such property\"');"
       ],
       "type": "checkpoint",
-      "challengeType": 1,
-      "nameCn": "",
-      "nameFr": "",
-      "nameRu": "",
-      "nameEs": "",
-      "namePt": ""
+      "challengeType": 1
     },
     {
       "id": "cf1111c1c11feddfaeb9bdef",
