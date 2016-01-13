@@ -223,6 +223,7 @@ function getSuperBlocks$(challenge$, completedChallenges) {
       }, 0);
       const isBeta = _.every(blockArray, 'isBeta');
       const isComingSoon = _.every(blockArray, 'isComingSoon');
+      const isRequired = _.every(blockArray, 'isRequired');
 
       return {
         isBeta,
