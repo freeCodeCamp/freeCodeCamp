@@ -18,6 +18,19 @@
         "For this challenge you will be presented with a string such as <code>800-692-7753</code> or <code>8oo-six427676;laskdjf</code>. Your job is to validate or reject the US phone number based on any combination of the formats provided above. The area code is required. If the country code is provided, you must confirm that the country code is <code>1</code>. Return true if the string is a valid US phone number; otherwise false.",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
       ],
+      "challengeSeed": [
+        "function telephoneCheck(str) {",
+        "  // Good luck!",
+        "  return true;",
+        "}",
+        "",
+        "",
+        "",
+        "telephoneCheck(\"555-555-5555\");"
+      ],
+      "solutions": [
+        "var re = /^(?:(?:\\+?1\\s*(?:[.-]\\s*)?)?(?:\\(\\s*([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9])\\s*\\)|([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9]))\\s*(?:[.-]\\s*)?)?([2-9]1[02-9]|[2-9][02-9]1|[2-9][02-9]{2})\\s*(?:[.-]\\s*)?([0-9]{4})$/;\n\nfunction telephoneCheck(str) {\n  return !!str.match(re);\n}\n\ntelephoneCheck(\"555-555-5555\");"
+      ],
       "tests": [
         "assert(typeof telephoneCheck(\"555-555-5555\") === \"boolean\", 'message: <code>telephoneCheck(\"555-555-5555\")</code> should return a boolean.');",
         "assert(telephoneCheck(\"1 555-555-5555\") === true, 'message: <code>telephoneCheck(\"1 555-555-5555\")</code> should return true.');",
@@ -44,30 +57,11 @@
         "assert(telephoneCheck(\"555)-555-5555\") === false, 'message: <code>telephoneCheck(\"555)-555-5555\")</code> should return false.');",
         "assert(telephoneCheck(\"(555-555-5555\") === false, 'message: <code>telephoneCheck(\"(555-555-5555\")</code> should return false.');"
       ],
-      "challengeSeed": [
-        "function telephoneCheck(str) {",
-        "  // Good luck!",
-        "  return true;",
-        "}",
-        "",
-        "",
-        "",
-        "telephoneCheck(\"555-555-5555\");"
-      ],
+      "type": "bonfire",
       "MDNlinks": [
         "RegExp"
       ],
-      "solutions": [
-        "var re = /^(?:(?:\\+?1\\s*(?:[.-]\\s*)?)?(?:\\(\\s*([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9])\\s*\\)|([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9]))\\s*(?:[.-]\\s*)?)?([2-9]1[02-9]|[2-9][02-9]1|[2-9][02-9]{2})\\s*(?:[.-]\\s*)?([0-9]{4})$/;\n\nfunction telephoneCheck(str) {\n  return !!str.match(re);\n}\n\ntelephoneCheck(\"555-555-5555\");"
-      ],
-      "type": "bonfire",
       "challengeType": 5,
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
-      "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "Valida Números Telefónicos de los EEUU",
       "descriptionEs": [
         "Haz que la función devuelva true (verdadero) si el texto introducido es un número válido en los EEUU.",
@@ -80,9 +74,7 @@
         "<code>1 555 555 5555</code>",
         "Para esta prueba se te presentará una cadena de texto como por ejemplo: <code>800-692-7753</code> o <code>8oo-six427676;laskdjf</code>. Tu trabajo consiste en validar o rechazar el número telefónico tomando como base cualquier combinación de los formatos anteriormente presentados. El código de área es requrido. Si el código de país es provisto, debes confirmar que este es <code>1</code>. La función debe devolver true si la cadena de texto es un número telefónico válido en los EEUU; de lo contrario, debe devolver false.",
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
-        ],
-      "namePt": "",
-      "descriptionPt": []
+      ]
     },
     {
       "id": "a3f503de51cf954ede28891d",
@@ -99,36 +91,28 @@
         "",
         "sym([1, 2, 3], [5, 2, 1, 4]);"
       ],
+      "solutions": [
+        "function sym(args) {\n  var index = -1;\n  var length = arguments.length;\n  var result;\n  while (++index < length) {\n    var array = arguments[index];\n    result = result ? diff(result, array).concat(diff(array, result)) : array;\n  }\n  return result ? uniq(result) : [];\n}\n\nfunction uniq(arr) {\n  var h = Object.create(null);\n  var u = [];\n  arr.forEach(function(v) {\n    if (v in h) return;\n    h[v] = true;\n    u.push(v);\n  });\n  return u;\n}\n\nfunction diff(a, b) {\n  var h = Object.create(null);\n  b.forEach(function(v) {\n    h[v] = true;  \n  });\n  return a.filter(function(v) { return !(v in h);});\n}\nsym([1, 2, 3], [5, 2, 1, 4]);\n"
+      ],
       "tests": [
         "assert.deepEqual(sym([1, 2, 3], [5, 2, 1, 4]).sort(), [3, 4, 5], 'message: <code>sym([1, 2, 3], [5, 2, 1, 4])</code> should return <code>[3, 5, 4]</code>.');",
         "assert.deepEqual(sym([1, 2, 5], [2, 3, 5], [3, 4, 5]).sort(), [1, 4, 5], 'message: <code>sym([1, 2, 5], [2, 3, 5], [3, 4, 5])</code> should return <code>[1, 4, 5]</code>');",
         "assert.deepEqual(sym([1, 1, 2, 5], [2, 2, 3, 5], [3, 4, 5, 5]).sort(), [1, 4, 5], 'message: <code>sym([1, 1, 2, 5], [2, 2, 3, 5], [3, 4, 5, 5])</code> should return <code>[1, 4, 5]</code>.');",
         "assert.deepEqual(sym([3, 3, 3, 2, 5], [2, 1, 5, 7], [3, 4, 6, 6], [1, 2, 3]).sort(), [2, 3, 4, 6, 7], 'message: <code>sym([3, 3, 3, 2, 5], [2, 1, 5, 7], [3, 4, 6, 6], [1, 2, 3])</code> should return <code>[7, 4, 6, 2, 3]</code>.');",
         "assert.deepEqual(sym([3, 3, 3, 2, 5], [2, 1, 5, 7], [3, 4, 6, 6], [1, 2, 3], [5, 3, 9, 8], [1]).sort(), [1, 2, 4, 5, 6, 7, 8, 9], 'message: <code>sym([3, 3, 3, 2, 5], [2, 1, 5, 7], [3, 4, 6, 6], [1, 2, 3], [5, 3, 9, 8], [1])</code> should return <code>[1, 2, 4, 5, 6, 7, 8, 9]</code>')"
-       ],
+      ],
+      "type": "bonfire",
       "MDNlinks": [
         "Array.reduce()",
         "Symmetric Difference"
       ],
-      "solutions": [
-        "function sym(args) {\n  var index = -1;\n  var length = arguments.length;\n  var result;\n  while (++index < length) {\n    var array = arguments[index];\n    result = result ? diff(result, array).concat(diff(array, result)) : array;\n  }\n  return result ? uniq(result) : [];\n}\n\nfunction uniq(arr) {\n  var h = Object.create(null);\n  var u = [];\n  arr.forEach(function(v) {\n    if (v in h) return;\n    h[v] = true;\n    u.push(v);\n  });\n  return u;\n}\n\nfunction diff(a, b) {\n  var h = Object.create(null);\n  b.forEach(function(v) {\n    h[v] = true;  \n  });\n  return a.filter(function(v) { return !(v in h);});\n}\nsym([1, 2, 3], [5, 2, 1, 4]);\n"
-      ],
-      "type": "bonfire",
       "challengeType": 5,
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
-      "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "Diferencia simétrica",
       "descriptionEs": [
         "Crea una función que acepte dos o más arreglos y que devuelva un arreglo conteniendo la diferenia simétrica entre ambos",
         "En Matemáticas, el término 'diferencia simétrica' se refiere a los elementos en dos conjuntos que están en el primer conjunto o en el segundo, pero no en ambos.",
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
-        ],
-      "namePt": "",
-      "descriptionPt": []
+      ]
     },
     {
       "id": "aa2e6f85cab2ab736c9a9b24",
@@ -170,19 +154,11 @@
         "assert.deepEqual(drawer(19.50, 20.00, [[\"PENNY\", 0.01], [\"NICKEL\", 0], [\"DIME\", 0], [\"QUARTER\", 0], [\"ONE\", 1.00], [\"FIVE\", 0], [\"TEN\", 0], [\"TWENTY\", 0], [\"ONE HUNDRED\", 0]]), \"Insufficient Funds\", 'message: <code>drawer(19.50, 20.00, [[\"PENNY\", 0.01], [\"NICKEL\", 0], [\"DIME\", 0], [\"QUARTER\", 0], [\"ONE\", 1.00], [\"FIVE\", 0], [\"TEN\", 0], [\"TWENTY\", 0], [\"ONE HUNDRED\", 0]])</code> should return \"Insufficient Funds\".');",
         "assert.deepEqual(drawer(19.50, 20.00, [[\"PENNY\", 0.50], [\"NICKEL\", 0], [\"DIME\", 0], [\"QUARTER\", 0], [\"ONE\", 0], [\"FIVE\", 0], [\"TEN\", 0], [\"TWENTY\", 0], [\"ONE HUNDRED\", 0]]), \"Closed\", 'message: <code>drawer(19.50, 20.00, [[\"PENNY\", 0.50], [\"NICKEL\", 0], [\"DIME\", 0], [\"QUARTER\", 0], [\"ONE\", 0], [\"FIVE\", 0], [\"TEN\", 0], [\"TWENTY\", 0], [\"ONE HUNDRED\", 0]])</code> should return \"Closed\".');"
       ],
+      "type": "bonfire",
       "MDNlinks": [
         "Global Object"
       ],
-      "solutions": [
-      ],
-      "type": "bonfire",
       "challengeType": 5,
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
-      "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "Cambio exacto",
       "descriptionEs": [
         "Crea una función que simule una caja registradora que acepte el precio de compra como el primer argumento, la cantidad recibida como el segundo argumento, y la cantidad de dinero disponible en la registradora (cid) como tercer argumento",
@@ -190,9 +166,7 @@
         "La función debe devolver la cadena de texto \"Insufficient Funds\" si el cid es menor al cambio requerido. También debe devolver \"Closed\" si el cid es igual al cambio",
         "De no ser el caso, devuelve el cambio en monedas y billetes, ordenados de mayor a menor denominación.",
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
-        ],
-      "namePt": "",
-      "descriptionPt": []
+      ]
     },
     {
       "id": "a56138aff60341a09ed6c480",
@@ -224,6 +198,9 @@
         "",
         "inventory(curInv, newInv);"
       ],
+      "solutions": [
+        "function inventory(arr1, arr2) {\n  arr2.forEach(function(item) {\n    createOrUpdate(arr1, item);\n  });\n  // All inventory must be accounted for or you're fired!\n  return arr1;\n}\n\nfunction createOrUpdate(arr1, item) {\n  var index = -1;\n  while (++index < arr1.length) {\n    if (arr1[index][1] === item[1]) {\n      arr1[index][0] += item[0];\n      return;\n    }\n    if (arr1[index][1] > item[1]) {\n      break;\n    }\n  }\n  arr1.splice(index, 0, item);\n}\n\n// Example inventory lists\nvar curInv = [\n    [21, 'Bowling Ball'],\n    [2, 'Dirty Sock'],\n    [1, 'Hair Pin'],\n    [5, 'Microphone']\n];\n\nvar newInv = [\n    [2, 'Hair Pin'],\n    [3, 'Half-Eaten Apple'],\n    [67, 'Bowling Ball'],\n    [7, 'Toothpaste']\n];\n\ninventory(curInv, newInv);\n"
+      ],
       "tests": [
         "assert.isArray(inventory([[21, \"Bowling Ball\"], [2, \"Dirty Sock\"], [1, \"Hair Pin\"], [5, \"Microphone\"]], [[2, \"Hair Pin\"], [3, \"Half-Eaten Apple\"], [67, \"Bowling Ball\"], [7, \"Toothpaste\"]]), 'message: <code>inventory()</code> should return an array.');",
         "assert.equal(inventory([[21, \"Bowling Ball\"], [2, \"Dirty Sock\"], [1, \"Hair Pin\"], [5, \"Microphone\"]], [[2, \"Hair Pin\"], [3, \"Half-Eaten Apple\"], [67, \"Bowling Ball\"], [7, \"Toothpaste\"]]).length, 6, 'message: <code>inventory([[21, \"Bowling Ball\"], [2, \"Dirty Sock\"], [1, \"Hair Pin\"], [5, \"Microphone\"]], [[2, \"Hair Pin\"], [3, \"Half-Eaten Apple\"], [67, \"Bowling Ball\"], [7, \"Toothpaste\"]]).length</code> should return an array with a length of 6.');",
@@ -232,27 +209,16 @@
         "assert.deepEqual(inventory([], [[2, \"Hair Pin\"], [3, \"Half-Eaten Apple\"], [67, \"Bowling Ball\"], [7, \"Toothpaste\"]]), [[67, \"Bowling Ball\"], [2, \"Hair Pin\"], [3, \"Half-Eaten Apple\"], [7, \"Toothpaste\"]], 'message: <code>inventory([], [[2, \"Hair Pin\"], [3, \"Half-Eaten Apple\"], [67, \"Bowling Ball\"], [7, \"Toothpaste\"]])</code> should return <code>[[67, \"Bowling Ball\"], [2, \"Hair Pin\"], [3, \"Half-Eaten Apple\"], [7, \"Toothpaste\"]]</code>.');",
         "assert.deepEqual(inventory([[0, \"Bowling Ball\"], [0, \"Dirty Sock\"], [0, \"Hair Pin\"], [0, \"Microphone\"]], [[1, \"Hair Pin\"], [1, \"Half-Eaten Apple\"], [1, \"Bowling Ball\"], [1, \"Toothpaste\"]]), [[1, \"Bowling Ball\"], [0, \"Dirty Sock\"], [1, \"Hair Pin\"], [1, \"Half-Eaten Apple\"], [0, \"Microphone\"], [1, \"Toothpaste\"]], 'message: <code>inventory([[0, \"Bowling Ball\"], [0, \"Dirty Sock\"], [0, \"Hair Pin\"], [0, \"Microphone\"]], [[1, \"Hair Pin\"], [1, \"Half-Eaten Apple\"], [1, \"Bowling Ball\"], [1, \"Toothpaste\"]])</code> should return <code>[[1, \"Bowling Ball\"], [0, \"Dirty Sock\"], [1, \"Hair Pin\"], [1, \"Half-Eaten Apple\"], [0, \"Microphone\"], [1, \"Toothpaste\"]]</code>.');"
       ],
+      "type": "bonfire",
       "MDNlinks": [
         "Global Array Object"
       ],
-      "solutions": [
-        "function inventory(arr1, arr2) {\n  arr2.forEach(function(item) {\n    createOrUpdate(arr1, item);\n  });\n  // All inventory must be accounted for or you're fired!\n  return arr1;\n}\n\nfunction createOrUpdate(arr1, item) {\n  var index = -1;\n  while (++index < arr1.length) {\n    if (arr1[index][1] === item[1]) {\n      arr1[index][0] += item[0];\n      return;\n    }\n    if (arr1[index][1] > item[1]) {\n      break;\n    }\n  }\n  arr1.splice(index, 0, item);\n}\n\n// Example inventory lists\nvar curInv = [\n    [21, 'Bowling Ball'],\n    [2, 'Dirty Sock'],\n    [1, 'Hair Pin'],\n    [5, 'Microphone']\n];\n\nvar newInv = [\n    [2, 'Hair Pin'],\n    [3, 'Half-Eaten Apple'],\n    [67, 'Bowling Ball'],\n    [7, 'Toothpaste']\n];\n\ninventory(curInv, newInv);\n"
-      ],
-      "type": "bonfire",
       "challengeType": 5,
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
-      "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "Actualizando el inventario",
       "descriptionEs": [
         "Compara y actualiza el inventario actual, almacenado en un arreglo bidimensional, contra otro arreglo bidimensional de inventario nuevo. Actualiza las cantidades en el inventario actual y, en caso de recibir una nueva mercancía, añade su nombre y la cantidad recibida al arreglo del inventario en orden alfabético.",
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
-        ],
-      "namePt": "",
-      "descriptionPt": []
+      ]
     },
     {
       "id": "a7bf700cd123b9a54eef01d5",
@@ -269,6 +235,9 @@
         "",
         "permAlone('aab');"
       ],
+      "solutions": [
+        "function permAlone(str) {\n  return permutor(str).filter(function(perm) {\n    return !perm.match(/(.)\\1/g);\n  }).length;\n}\n\nfunction permutor(str) {\n  // http://staff.roguecc.edu/JMiller/JavaScript/permute.html\n  //permArr: Global array which holds the list of permutations\n  //usedChars: Global utility array which holds a list of \"currently-in-use\" characters\n  var permArr = [], usedChars = [];\n  function permute(input) {\n    //convert input into a char array (one element for each character)\n    var i, ch, chars = input.split(\"\");\n    for (i = 0; i < chars.length; i++) {\n      //get and remove character at index \"i\" from char array\n      ch = chars.splice(i, 1);\n      //add removed character to the end of used characters\n      usedChars.push(ch);\n      //when there are no more characters left in char array to add, add used chars to list of permutations\n      if (chars.length === 0) permArr[permArr.length] = usedChars.join(\"\");\n      //send characters (minus the removed one from above) from char array to be permuted\n      permute(chars.join(\"\"));\n      //add removed character back into char array in original position\n      chars.splice(i, 0, ch);\n      //remove the last character used off the end of used characters array\n      usedChars.pop();\n    }\n  }\n  permute(str);\n  return permArr;\n}\n\npermAlone('aab');\n"
+      ],
       "tests": [
         "assert.isNumber(permAlone('aab'), 'message: <code>permAlone(\"aab\")</code> should return a number.');",
         "assert.strictEqual(permAlone('aab'), 2, 'message: <code>permAlone(\"aab\")</code> should return 2.');",
@@ -278,39 +247,36 @@
         "assert.strictEqual(permAlone('abfdefa'), 2640, 'message: <code>permAlone(\"abfdefa\")</code> should return 2640.');",
         "assert.strictEqual(permAlone('zzzzzzzz'), 0, 'message: <code>permAlone(\"zzzzzzzz\")</code> should return 0.');"
       ],
+      "type": "bonfire",
       "MDNlinks": [
         "Permutations",
         "RegExp"
       ],
-      "solutions": [
-        "function permAlone(str) {\n  return permutor(str).filter(function(perm) {\n    return !perm.match(/(.)\\1/g);\n  }).length;\n}\n\nfunction permutor(str) {\n  // http://staff.roguecc.edu/JMiller/JavaScript/permute.html\n  //permArr: Global array which holds the list of permutations\n  //usedChars: Global utility array which holds a list of \"currently-in-use\" characters\n  var permArr = [], usedChars = [];\n  function permute(input) {\n    //convert input into a char array (one element for each character)\n    var i, ch, chars = input.split(\"\");\n    for (i = 0; i < chars.length; i++) {\n      //get and remove character at index \"i\" from char array\n      ch = chars.splice(i, 1);\n      //add removed character to the end of used characters\n      usedChars.push(ch);\n      //when there are no more characters left in char array to add, add used chars to list of permutations\n      if (chars.length === 0) permArr[permArr.length] = usedChars.join(\"\");\n      //send characters (minus the removed one from above) from char array to be permuted\n      permute(chars.join(\"\"));\n      //add removed character back into char array in original position\n      chars.splice(i, 0, ch);\n      //remove the last character used off the end of used characters array\n      usedChars.pop();\n    }\n  }\n  permute(str);\n  return permArr;\n}\n\npermAlone('aab');\n"
-      ],
-      "type": "bonfire",
       "challengeType": 5,
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
-      "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "Sin repeticiones, por favor",
       "descriptionEs": [
         "Crea una función que devuelva el número total de permutaciones de las letras en la cadena de texto provista, en las cuales no haya letras consecutivas repetidas",
         "Por ejemplo, 'aab' debe retornar 2 porque, del total de 6 permutaciones posibles, solo 2 de ellas no tienen repetida la misma letra (en este caso 'a').",
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
-        ],
-      "namePt": "",
-      "descriptionPt": []
+      ]
     },
     {
       "id": "a19f0fbe1872186acd434d5a",
       "title": "Friendly Date Ranges",
       "description": [
-        "Implement a way of converting two dates into a more friendly date range that could be presented to a user.",
-        "It must not show any redundant information in the date range.",
-        "For example, if the year and month are the same then only the day range should be displayed.",
-        "Secondly, if the starting year is the current year, and the ending year can be inferred by the reader, the year should be omitted.",
-        "Input date is formatted as YYYY-MM-DD",
+        "Convert a date range consisting of two dates formatted as YYYY-MM-DD into a more readable format.",
+        "",
+        "The friendly display should use month names instead of numbers and ordinal dates instead of cardinal (\"1st\" instead of \"1\").",
+        "",
+        "Do not display information that is redundant or that can be inferred by the user: if the date range ends in less than a year from when it begins, do not display the ending year. If the range ends in the same month that it begins, do not display the ending year or month.",
+        "",
+        "Additionally, if the date range begins in the current year and ends within one year, the year should not be displayed at the beginning of the friendly range.",
+        "",
+        "Examples: ",
+        "<code>friendly([\"2016-07-01\", \"2016-07-04\"])</code> should return <code>[\"July 1st\",\"4th\"]</code>",
+        "",
+        "<code>friendly([\"2016-07-01\", \"2018-07-04\"])</code> should return <code>[\"July 1st, 2016\", \"July 4th, 2018\"]</code>.",
+        "",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "challengeSeed": [
@@ -320,30 +286,25 @@
         "",
         "friendly(['2016-07-01', '2016-07-04']);"
       ],
+      "solutions": [
+        "function friendly(str) {\n  var thisYear = new Date().getFullYear();\n  var dates = str.map(function(s) {return s.split('-').map(Number);});\n  var start = dates[0];\n  var end = dates[1];\n  if (str[0] === str[1]) {\n     return [readable(start)];\n  }\n  if (start[0] !== end[0]) {\n    if (start[0] + 1 === end[0]){\n      if (start[1] > end[1]){\n        end[0] = undefined;\n      }\n      if (start[1] === end[1] && start[2] > end[2]){\n        end[0] = undefined;\n      }\n      if (start[0] === thisYear){\n        start[0] = undefined;\n      }\n    }\n    return dates.map(readable);\n  }\n  end[0] = undefined;\n  if (start[0] === thisYear){\n    start[0] = undefined;\n  }\n  if (start[1] === end[1]) {\n    end[1] = undefined;\n  }\n  return dates.map(readable);\n}\n\nfunction readable(arr) {\n  var ordD = arr[2] + nth(arr[2]);\n  if (!arr[1]) {\n    return ordD;\n  }\n  return MONTH[arr[1]] + \" \" + ordD + (!arr[0] ? \"\" : \", \" + arr[0]);\n}\n\nvar MONTH = {1: \"January\",\n             2: \"February\",\n             3: \"March\",\n             4: \"April\",\n             5: \"May\",\n             6: \"June\",\n             7: \"July\",\n             8: \"August\",\n             9: \"September\",\n             10: \"October\",\n             11: \"November\",\n             12: \"December\"};\n\nfunction nth(d) {\n  if(d>3 && d<21) return 'th';\n  switch (d % 10) {\n    case 1: return \"st\";\n    case 2: return \"nd\";\n    case 3: return \"rd\";\n    default: return \"th\";\n  }\n}"
+      ],
       "tests": [
         "assert.deepEqual(friendly(['2016-07-01', '2016-07-04']), ['July 1st','4th'], 'message: <code>friendly([\"2016-07-01\", \"2016-07-04\"])</code> should return <code>[\"July 1st\",\"4th\"]</code>.');",
         "assert.deepEqual(friendly(['2016-12-01', '2017-02-03']), ['December 1st','February 3rd'], 'message: <code>friendly([\"2016-12-01\", \"2017-02-03\"])</code> should return <code>[\"December 1st\",\"February 3rd\"]</code>.');",
         "assert.deepEqual(friendly(['2016-12-01', '2018-02-03']), ['December 1st, 2016','February 3rd, 2018'], 'message: <code>friendly([\"2016-12-01\", \"2018-02-03\"])</code> should return <code>[\"December 1st, 2016\",\"February 3rd, 2018\"]</code>.');",
-        "assert.deepEqual(friendly(['2017-03-01', '2017-05-05']), ['March 1st','May 5th'], 'message: <code>friendly([\"2017-03-01\", \"2017-05-05\"])</code> should return <code>[\"March 1st\",\"May 5th\"]</code>');",
-        "assert.deepEqual(friendly(['2018-01-01', '2018-01-01']), ['January 1st, 2018'], 'message: <code>friendly([\"2018-01-01\", \"2018-01-01\"])</code> should return <code>[\"January 1st, 2018\"]</code>.');",
-        "assert.deepEqual(friendly(['2022-09-05', '2023-09-04']), ['September 5th, 2022','September 4th, 2023'], 'message: <code>friendly([\"2022-09-05\", \"2023-09-04\"])</code> should return <code>[\"September 5th, 2022\",\"September 4th, 2023\"]</code>.');"
+        "assert.deepEqual(friendly(['2017-03-01', '2017-05-05']), ['March 1st, 2017','May 5th'], 'message: <code>friendly([\"2017-03-01\", \"2017-05-05\"])</code> should return <code>[\"March 1st, 2017\",\"May 5th\"]</code>');",
+        "assert.deepEqual(friendly(['2018-01-13', '2018-01-13']), ['January 13th, 2018'], 'message: <code>friendly([\"2018-01-13\", \"2018-01-13\"])</code> should return <code>[\"January 13th, 2018\"]</code>.');",
+        "assert.deepEqual(friendly(['2022-09-05', '2023-09-04']), ['September 5th, 2022','September 4th'], 'message: <code>friendly([\"2022-09-05\", \"2023-09-04\"])</code> should return <code>[\"September 5th, 2022\",\"September 4th\"]</code>.');",
+        "assert.deepEqual(friendly(['2022-09-05', '2023-09-05']), ['September 5th, 2022','September 5th, 2023'], 'message: <code>friendly([\"2022-09-05\", \"2023-09-05\"])</code> should return <code>[\"September 5th, 2022\",\"September 5th, 2023\"]</code>.');"
       ],
+      "type": "bonfire",
       "MDNlinks": [
         "String.split()",
         "String.substr()",
         "parseInt()"
       ],
-      "solutions": [
-        "function friendly(str) {\n  var dates = str.map(function(s) {return s.split('-').map(Number);});\n  var start = dates[0];\n  var end = dates[1];\n  if (str[0] === str[1]) {\n    return [readable(start)];\n  }\n  if (start[0] !== end[0]) {\n    if (start[0] + 1 === end[0] && start[1] > end[1]) {\n      start[0] = undefined;\n      end[0] = undefined;\n    }\n    return dates.map(readable);\n  }\n  start[0] = undefined;\n  end[0] = undefined;\n  if (start[1] !== end[1]) {\n    return dates.map(readable);\n  }\n  end[1] = undefined;\n  return dates.map(readable);\n}\n\nfunction readable(arr) {\n  var ordD = arr[2] + nth(arr[2]);\n  if (!arr[1]) {\n    return ordD;\n  }\n  return MONTH[arr[1]] +  \" \" + ordD + (!arr[0] ? \"\" : \", \" + arr[0]);\n}\n\nvar MONTH = {1: \"January\",\n             2: \"February\",\n             3: \"March\",\n             4: \"April\",\n             5: \"May\",\n             6: \"June\",\n             7: \"July\",\n             8: \"August\",\n             9: \"September\",\n             10: \"October\",\n             11: \"November\",\n             12: \"December\"};\n\nfunction nth(d) {\n  if(d>3 && d<21) return 'th';\n  switch (d % 10) {\n    case 1:  return \"st\";\n    case 2:  return \"nd\";\n    case 3:  return \"rd\";\n    default: return \"th\";\n  }\n} \n\nfriendly(['2015-07-01', '2015-07-04']);\n"
-      ],
-      "type": "bonfire",
       "challengeType": 5,
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
-      "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "Rangos amigables de fechas",
       "descriptionEs": [
         "Implementa una forma de convertir dos fechas en un rango en formato amigable que pueda ser presentado a un usuario.",
@@ -351,9 +312,7 @@
         "Además, si el año inicial es el actual, y el año de finalización puede ser inferido por el lector, el año debe omitirse.",
         "La fecha que se introduce como argumento tiene el formato YYYY-MM-DD",
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
-        ],
-      "namePt": "",
-      "descriptionPt": []
+      ]
     },
     {
       "id": "a2f1d72d9b908d0bd72bb9f6",
@@ -373,6 +332,9 @@
         "var bob = new Person('Bob Ross');",
         "bob.getFullName();"
       ],
+      "solutions": [
+        "var Person = function(firstAndLast) {\n\n  var firstName, lastName;\n\n  function updateName(str) {    \n    firstName = str.split(\" \")[0];\n    lastName = str.split(\" \")[1];    \n  }\n\n  updateName(firstAndLast);\n\n  this.getFirstName = function(){\n    return firstName;\n  };\n  \n  this.getLastName = function(){\n    return lastName;\n  };\n  \n  this.getFullName = function(){\n    return firstName + \" \" + lastName;\n  };\n  \n  this.setFirstName = function(str){\n    firstName = str;\n  };\n  \n\n  this.setLastName = function(str){\n    lastName = str;\n  };\n  \n  this.setFullName = function(str){\n    updateName(str);\n  };\n};\n\nvar bob = new Person('Bob Ross');\nbob.getFullName();"
+      ],
       "tests": [
         "assert.deepEqual(Object.keys(bob).length, 6, 'message: <code>Object.keys(bob).length</code> should return 6.');",
         "assert.deepEqual(bob instanceof Person, true, 'message: <code>bob instanceof Person</code> should return true.');",
@@ -387,21 +349,12 @@
         "assert.strictEqual((function () { bob.setFullName(\"Haskell Curry\"); return bob.getFirstName(); })(), 'Haskell', 'message: <code>bob.getFirstName()</code> should return \"Haskell\" after <code>bob.setFullName(\"Haskell Curry\")</code>.');",
         "assert.strictEqual((function () { bob.setFullName(\"Haskell Curry\"); return bob.getLastName(); })(), 'Curry', 'message: <code>bob.getLastName()</code> should return \"Curry\" after <code>bob.setFullName(\"Haskell Curry\")</code>.');"
       ],
+      "type": "bonfire",
       "MDNlinks": [
         "Closures",
         "Details of the Object Model"
       ],
-      "solutions": [
-        "var Person = function(firstAndLast) {\n\n  var firstName, lastName;\n\n  function updateName(str) {    \n    firstName = str.split(\" \")[0];\n    lastName = str.split(\" \")[1];    \n  }\n\n  updateName(firstAndLast);\n\n  this.getFirstName = function(){\n    return firstName;\n  };\n  \n  this.getLastName = function(){\n    return lastName;\n  };\n  \n  this.getFullName = function(){\n    return firstName + \" \" + lastName;\n  };\n  \n  this.setFirstName = function(str){\n    firstName = str;\n  };\n  \n\n  this.setLastName = function(str){\n    lastName = str;\n  };\n  \n  this.setFullName = function(str){\n    updateName(str);\n  };\n};\n\nvar bob = new Person('Bob Ross');\nbob.getFullName();"
-      ],
-      "type": "bonfire",
       "challengeType": 5,
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
-      "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "Crea una Persona",
       "descriptionEs": [
         "Completa el constructor de objetos con los métodos especificados en las pruebas.",
@@ -409,9 +362,7 @@
         "Todas las funciones que aceptan un argumento tienen una aridad de 1, y el argumento es una cadena de texto",
         "Estos métodos deben ser el único medio para interactuar con el objeto",
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
-      ],
-      "namePt": "",
-      "descriptionPt": []
+      ]
     },
     {
       "id": "af4afb223120f7348cdfc9fd",
@@ -433,24 +384,18 @@
         "",
         "orbitalPeriod([{name : \"sputnik\", avgAlt : 35873.5553}]);"
       ],
+      "solutions": [
+        "function orbitalPeriod(arr) {\n  var GM = 398600.4418;\n  var earthRadius = 6367.4447;\n  var TAU = 2 * Math.PI; \n  return arr.map(function(obj) {\n    return {\n      name: obj.name,\n      orbitalPeriod: Math.round(TAU * Math.sqrt(Math.pow(obj.avgAlt+earthRadius, 3)/GM))\n    };\n  });\n}\n\norbitalPeriod([{name : \"sputkin\", avgAlt : 35873.5553}]);\n"
+      ],
       "tests": [
         "assert.deepEqual(orbitalPeriod([{name : \"sputnik\", avgAlt : 35873.5553}]), [{name: \"sputnik\", orbitalPeriod: 86400}], 'message: <code>orbitalPeriod([{name : \"sputnik\", avgAlt : 35873.5553}])</code> should return <code>[{name: \"sputnik\", orbitalPeriod: 86400}]</code>.');",
         "assert.deepEqual(orbitalPeriod([{name: \"iss\", avgAlt: 413.6}, {name: \"hubble\", avgAlt: 556.7}, {name: \"moon\", avgAlt: 378632.553}]), [{name : \"iss\", orbitalPeriod: 5557}, {name: \"hubble\", orbitalPeriod: 5734}, {name: \"moon\", orbitalPeriod: 2377399}], 'message: <code>orbitalPeriod([{name: \"iss\", avgAlt: 413.6}, {name: \"hubble\", avgAlt: 556.7}, {name: \"moon\", avgAlt: 378632.553}])</code> should return <code>[{name : \"iss\", orbitalPeriod: 5557}, {name: \"hubble\", orbitalPeriod: 5734}, {name: \"moon\", orbitalPeriod: 2377399}]</code>.');"
       ],
+      "type": "bonfire",
       "MDNlinks": [
         "Math.pow()"
       ],
-      "solutions": [
-        "function orbitalPeriod(arr) {\n  var GM = 398600.4418;\n  var earthRadius = 6367.4447;\n  var TAU = 2 * Math.PI; \n  return arr.map(function(obj) {\n    return {\n      name: obj.name,\n      orbitalPeriod: Math.round(TAU * Math.sqrt(Math.pow(obj.avgAlt+earthRadius, 3)/GM))\n    };\n  });\n}\n\norbitalPeriod([{name : \"sputkin\", avgAlt : 35873.5553}]);\n"
-      ],
-      "type": "bonfire",
       "challengeType": 5,
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
-      "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "Ubica los escombros",
       "descriptionEs": [
         "Crea una función que devuelva un nuevo arreglo que transforme la altitud promedio del elemento en su período orbital.",
@@ -459,9 +404,7 @@
         "Los valores deben estar redondeados al número entero más próximo. El cuerpo orbitado es la Tierra",
         "El radio de la Tierra es 6367.4447 kilómetros, y el valor GM del planeta es de 398600.4418",
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
-      ],
-      "namePt": "",
-      "descriptionPt": []
+      ]
     },
     {
       "id": "a3f503de51cfab748ff001aa",
@@ -479,6 +422,9 @@
         "",
         "pairwise([1,4,2,3,0,5], 7);"
       ],
+      "solutions": [
+        "function pairwise(arr, arg) {\n  var sum = 0;\n  arr.forEach(function(e, i, a) {\n    if (e != null) {      \n      var diff = arg-e;\n      a[i] = null;\n      var dix = a.indexOf(diff);\n      if (dix !== -1) {\n        sum += dix;\n        sum += i;\n        a[dix] = null;\n      }  \n    }\n  });\n  return sum;\n}\n\npairwise([1,4,2,3,0,5], 7);\n"
+      ],
       "tests": [
         "assert.deepEqual(pairwise([1, 4, 2, 3, 0, 5], 7), 11, 'message: <code>pairwise([1, 4, 2, 3, 0, 5], 7)</code> should return 11.');",
         "assert.deepEqual(pairwise([1, 3, 2, 4], 4), 1, 'message: <code>pairwise([1, 3, 2, 4], 4)</code> should return 1.');",
@@ -486,29 +432,18 @@
         "assert.deepEqual(pairwise([0, 0, 0, 0, 1, 1], 1), 10, 'message: <code>pairwise([0, 0, 0, 0, 1, 1], 1)</code> should return 10.');",
         "assert.deepEqual(pairwise([], 100), 0, 'message: <code>pairwise([], 100)</code> should return 0.');"
       ],
+      "type": "bonfire",
       "MDNlinks": [
         "Array.reduce()"
       ],
-      "type": "bonfire",
-      "solutions": [
-        "function pairwise(arr, arg) {\n  var sum = 0;\n  arr.forEach(function(e, i, a) {\n    if (e != null) {      \n      var diff = arg-e;\n      a[i] = null;\n      var dix = a.indexOf(diff);\n      if (dix !== -1) {\n        sum += dix;\n        sum += i;\n        a[dix] = null;\n      }  \n    }\n  });\n  return sum;\n}\n\npairwise([1,4,2,3,0,5], 7);\n"
-      ],
       "challengeType": 5,
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
-      "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "En parejas",
       "descriptionEs": [
         "Crea una función que devuelva la suma de todos los índices de los elementos de 'arr' que pueden ser emparejados con otro elemento de tal forma que la suma de ambos equivalga al valor del segundo argumento, 'arg'. Si varias combinaciones son posibles, devuelve la menor suma de índices. Una vez un elemento ha sido usado, no puede ser usado de nuevo para emparejarlo con otro elemento.",
         "Por ejemplo, pairwise([1, 4, 2, 3, 0, 5], 7) debe devolver 11 porque 4, 2, 3 y 5 pueden ser emparejados para obtener una suma de 7",
         "pairwise([1, 3, 2, 4], 4) devolvería el valor de 1, porque solo los primeros dos elementos pueden ser emparejados para sumar 4. ¡Recuerda que el primer elemento tiene un índice de 0!",
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
-      ],
-      "namePt": "",
-      "descriptionPt": []
+      ]
     }
   ]
 }
