@@ -538,7 +538,7 @@
         ""
       ],
       "tail": [
-        "(function(y){return 'remainder = '+y;})(remainder);"
+        ";(function(y){return 'remainder = '+y;})(remainder);"
       ],
       "solutions": [
         "var remainder =  11 % 3;"
