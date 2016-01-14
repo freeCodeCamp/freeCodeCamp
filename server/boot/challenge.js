@@ -31,7 +31,6 @@ const isDev = process.env.NODE_ENV !== 'production';
 const isBeta = !!process.env.BETA;
 const debug = debugFactory('freecc:challenges');
 const challengesRegex = /^(bonfire|waypoint|zipline|basejump|checkpoint)/i;
-const firstChallenge = 'waypoint-learn-how-free-code-camp-works';
 const challengeView = {
   0: 'challenges/showHTML',
   1: 'challenges/showJS',
@@ -254,6 +253,76 @@ function getSuperBlocks$(challenge$, completedChallenges) {
     .toArray();
 }
 
+function getChallengeById$(challenge$, challengeId) {
+  // return first challenge if no id is given
+  if (!challengeId) {
+    return challenge$
+      .map(challenge => challenge.toJSON())
+      .filter(shouldNotFilterComingSoon)
+      // filter out hikes
+      .filter(({ superBlock }) => !(/hikes/gi).test(superBlock))
+      .first();
+  }
+  return challenge$
+    .map(challenge => challenge.toJSON())
+    // filter out challenges coming soon
+    .filter(shouldNotFilterComingSoon)
+    // filter out hikes
+    .filter(({ superBlock }) => !(/hikes/gi).test(superBlock))
+    .filter(({ id }) => id === challengeId);
+}
+
+function getNextChallenge$(challenge$, blocks$, challengeId) {
+  return getChallengeById$(challenge$, challengeId)
+    // now lets find the block it belongs to
+    .flatMap(challenge => {
+      // find the index of the block this challenge resides in
+      const blockIndex$ = blocks$
+        .findIndex(({ name }) => name === challenge.block);
+
+
+      return blockIndex$
+        .flatMap(blockIndex => {
+          // could not find block?
+          if (blockIndex === -1) {
+            return Observable.throw(
+              'could not find challenge block for ' + challenge.block
+            );
+          }
+          const firstChallengeOfNextBlock$ = blocks$
+            .elementAt(blockIndex + 1, {})
+            .map(({ challenges = [] }) => challenges[0]);
+
+          return blocks$
+            .filter(shouldNotFilterComingSoon)
+            .elementAt(blockIndex)
+            .flatMap(block => {
+              // find where our challenge lies in the block
+              const challengeIndex$ = Observable.from(
+                block.challenges,
+                null,
+                null,
+                Scheduler.default
+              )
+                .findIndex(({ id }) => id === challengeId);
+
+              // grab next challenge in this block
+              return challengeIndex$
+                .map(index => {
+                  return block.challenges[index + 1];
+                })
+                .flatMap(nextChallenge => {
+                  if (!nextChallenge) {
+                    return firstChallengeOfNextBlock$;
+                  }
+                  return Observable.just(nextChallenge);
+                });
+            });
+        });
+    })
+    .first();
+}
+
 module.exports = function(app) {
   const router = app.loopback.Router();
 
@@ -304,6 +373,16 @@ module.exports = function(app) {
     })
     .shareReplay();
 
+  const firstChallenge$ = challenge$
+    .first()
+    .map(challenge => challenge.toJSON())
+    .shareReplay();
+
+  const lastChallenge$ = challenge$
+    .last()
+    .map(challenge => challenge.toJSON())
+    .shareReplay();
+
   const User = app.models.User;
   const send200toNonUser = ifNoUserSend(true);
 
@@ -321,99 +400,72 @@ module.exports = function(app) {
   router.get('/map', showMap.bind(null, false));
   router.get('/map-minimal', showMap.bind(null, true));
   router.get(
+    '/challenges/current-challenge',
+    redirectToCurrentChallenge
+  );
+  router.get(
     '/challenges/next-challenge',
-    returnNextChallenge
+    redirectToNextChallenge
   );
 
   router.get('/challenges/:challengeName', showChallenge);
 
   app.use(router);
 
-  function returnNextChallenge(req, res, next) {
-    let nextChallengeName = firstChallenge;
+  function redirectToCurrentChallenge(req, res, next) {
+    const challengeId = req.query.id || req.cookies.currentChallengeId;
+    getChallengeById$(challenge$, challengeId)
+      .doOnNext(({ dashedName })=> {
+        if (!dashedName) {
+          debug('no challenge found for %s', challengeId);
+          req.flash('info', {
+            msg: `We coudn't find a challenge with the id ${challengeId}`
+          });
+          res.redirect('/map');
+        }
+        res.redirect('/challenges/' + dashedName);
+      })
+      .subscribe(() => {}, next);
+  }
 
-    const challengeId = req.query.id;
+  function redirectToNextChallenge(req, res, next) {
+    const challengeId = req.query.id || req.cookies.currentChallengeId;
 
-    // find challenge
-    return challenge$
-      .map(challenge => challenge.toJSON())
-      // filter out challenges coming soon
-      .filter(shouldNotFilterComingSoon)
-      // filter out hikes
-      .filter(({ superBlock }) => !(/hikes/gi).test(superBlock))
-      .filter(({ id }) => id === challengeId)
-      // now lets find the block it belongs to
-      .flatMap(challenge => {
-        // find the index of the block this challenge resides in
-        const blockIndex$ = blocks$
-          .findIndex(({ name }) => name === challenge.block);
-
-
-        return blockIndex$
-          .flatMap(blockIndex => {
-            // could not find block?
-            if (blockIndex === -1) {
-              return Observable.throw(
-                'could not find challenge block for ' + challenge.block
-              );
-            }
-            const firstChallengeOfNextBlock$ = blocks$
-              .elementAt(blockIndex + 1, {})
-              .map(({ challenges = [] }) => challenges[0]);
-
-            return blocks$
-              .filter(shouldNotFilterComingSoon)
-              .elementAt(blockIndex)
-              .flatMap(block => {
-                // find where our challenge lies in the block
-                const challengeIndex$ = Observable.from(
-                  block.challenges,
-                  null,
-                  null,
-                  Scheduler.default
-                )
-                  .findIndex(({ id }) => id === challengeId);
-
-                // grab next challenge in this block
-                return challengeIndex$
-                  .map(index => {
-                    return block.challenges[index + 1];
-                  })
-                  .flatMap(nextChallenge => {
-                    if (!nextChallenge) {
-                      return firstChallengeOfNextBlock$;
-                    }
-                    return Observable.just(nextChallenge);
-                  });
+    Observable.combineLatest(
+      firstChallenge$,
+      lastChallenge$,
+    )
+      .flatMap(([firstChallenge, { id: lastChallengeId } ]) => {
+        // no id supplied, load first challenge
+        if (!challengeId) {
+          return Observable.just(firstChallenge);
+        }
+        // camper just completed last challenge
+        if (challengeId === lastChallengeId) {
+          return Observable.just()
+            .doOnCompleted(() => {
+              req.flash('info', {
+                msg: dedent`
+                  Once you have completed all of our challenges, you should
+                  join our <a href="https://gitter.im/freecodecamp/HalfWayClub"
+                  target="_blank">Half Way Club</a> and start getting
+                  ready for our nonprofit projects.
+                `.split('\n').join(' ')
               });
+              return res.redirect('/map');
+            });
+        }
+
+        return getNextChallenge$(challenge$, blocks$, challengeId)
+          .doOnNext(({ dashedName } = {}) => {
+            if (!dashedName) {
+              debug('no challenge found for %s', challengeId);
+              res.redirect('/map');
+            }
+            res.redirect('/challenges/' + dashedName);
           });
       })
-      .map(nextChallenge => {
-        if (!nextChallenge) {
-          return null;
-        }
-        nextChallengeName = nextChallenge.dashedName;
-        return nextChallengeName;
-      })
-      .subscribe(
-        function() {},
-        next,
-        function() {
-          debug('next challengeName', nextChallengeName);
-          if (!nextChallengeName || nextChallengeName === firstChallenge) {
-            req.flash('info', {
-              msg: dedent`
-                Once you have completed all of our challenges, you should
-                join our <a href="https://gitter.im/freecodecamp/HalfWayClub"
-                target="_blank">Half Way Club</a> and start getting
-                ready for our nonprofit projects.
-              `.split('\n').join(' ')
-            });
-            return res.redirect('/map');
-          }
-          res.redirect('/challenges/' + nextChallengeName);
-        }
-      );
+      .subscribe(() => {}, next);
   }
 
   function showChallenge(req, res, next) {
@@ -432,6 +484,7 @@ module.exports = function(app) {
             return res.redirect(redirectUrl);
           }
           var view = challengeView[data.challengeType];
+          res.cookie('currentChallengeId', data.id);
           res.render(view, data);
         },
         next,

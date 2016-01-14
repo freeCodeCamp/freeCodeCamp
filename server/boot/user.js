@@ -290,7 +290,7 @@ module.exports = function(app) {
         (user) => {
           if (!user) {
             req.flash('errors', {
-              msg: `404: We couldn't find the user with the username ${username}`
+              msg: `We couldn't find the user with the username ${username}`
             });
             return res.redirect('/');
           }
