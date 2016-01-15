@@ -2,6 +2,7 @@
   "name": "Node.js and Express.js",
   "order" : 24,
   "time": "20h",
+  "helpRoom": "HelpBackEnd",
   "challenges": [
     {
       "id": "bd7153d8c441eddfaeb5bd0f",

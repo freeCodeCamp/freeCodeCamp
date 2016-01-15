@@ -2,6 +2,7 @@
   "name": "Data Visualization Projects",
   "order": 17,
   "time": "200h",
+  "helpRoom": "HelpDataViz",
   "challenges": [
     {
       "id": "bd7168d8c242eddfaeb5bd13",

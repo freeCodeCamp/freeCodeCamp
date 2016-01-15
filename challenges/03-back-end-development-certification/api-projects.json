@@ -2,6 +2,7 @@
   "name": "API Projects",
   "order": 26,
   "time": "150h",
+  "helpRoom": "HelpBackEnd",
   "challenges": [
     {
       "id": "bd7158d8c443eddfaeb5bcef",

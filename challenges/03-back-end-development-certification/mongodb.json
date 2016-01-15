@@ -2,6 +2,7 @@
   "name": "MongoDB",
   "order" : 25,
   "time": "3h",
+  "helpRoom": "HelpBackEnd",
   "challenges": [
     {
       "id": "bd7243d8c341eddeaeb5bd0f",

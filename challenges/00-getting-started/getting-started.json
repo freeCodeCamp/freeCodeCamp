@@ -2,6 +2,7 @@
   "name": "Getting Started",
   "order": 1,
   "time": "15m",
+  "helpRoom": "Help",
   "challenges": [
     {
       "id": "560add10cb82ac38a17513be",

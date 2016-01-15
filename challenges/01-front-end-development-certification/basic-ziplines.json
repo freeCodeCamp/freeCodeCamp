@@ -2,6 +2,7 @@
   "name": "Basic Front End Development Projects",
   "order": 9,
   "time": "100h",
+  "helpRoom": "HelpFrontEnd",
   "challenges": [
     {
       "id": "bd7158d8c442eddfbeb5bd1f",

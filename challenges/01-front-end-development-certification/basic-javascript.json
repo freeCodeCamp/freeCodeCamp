@@ -2,6 +2,7 @@
   "name": "Basic JavaScript",
   "time": "10h",
   "order": 6,
+  "helpRoom": "HelpJavaScript",
   "challenges": [
     {
       "id": "bd7123c9c441eddfaeb4bdef",
