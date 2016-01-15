@@ -125,6 +125,7 @@ function getRenderData$(user, challenge$, origChallengeName, solution) {
   debug('looking for %s', testChallengeName);
 
   return challenge$
+    .map(challenge => challenge.toJSON())
     .filter((challenge) => {
       return testChallengeName.test(challenge.name) &&
         shouldNotFilterComingSoon(challenge);
@@ -164,7 +165,6 @@ function getRenderData$(user, challenge$, origChallengeName, solution) {
         });
       }
 
-      console.log(challenge.helpRoom);
       // save user does nothing if user does not exist
       return Observable.just({
         data: {
@@ -414,7 +414,11 @@ module.exports = function(app) {
   app.use(router);
 
   function redirectToCurrentChallenge(req, res, next) {
-    const challengeId = req.query.id || req.cookies.currentChallengeId;
+    let challengeId = req.query.id || req.cookies.currentChallengeId;
+    // prevent serialized null/undefined from breaking things
+    if (challengeId === 'undefined' || challengeId === 'null') {
+      challengeId = null;
+    }
     getChallengeById$(challenge$, challengeId)
       .doOnNext(({ dashedName })=> {
         if (!dashedName) {
@@ -430,7 +434,10 @@ module.exports = function(app) {
   }
 
   function redirectToNextChallenge(req, res, next) {
-    const challengeId = req.query.id || req.cookies.currentChallengeId;
+    let challengeId = req.query.id || req.cookies.currentChallengeId;
+    if (challengeId === 'undefined' || challengeId === 'null') {
+      challengeId = null;
+    }
 
     Observable.combineLatest(
       firstChallenge$,
@@ -485,8 +492,9 @@ module.exports = function(app) {
             return res.redirect(redirectUrl);
           }
           var view = challengeView[data.challengeType];
-          res.cookie('currentChallengeId', data.id);
-          console.log(data.helpRoom);
+          if (data.id) {
+            res.cookie('currentChallengeId', data.id);
+          }
           res.render(view, data);
         },
         next,

@@ -191,7 +191,7 @@ gulp.task('serve', ['build-manifest'], function(cb) {
     ignore: paths.serverIgnore,
     exec: path.join(__dirname, 'node_modules/.bin/babel-node'),
     env: {
-      'NODE_ENV': 'development',
+      'NODE_ENV': process.env.NODE_ENV || 'development',
       'DEBUG': process.env.DEBUG || 'freecc:*'
     }
   })
