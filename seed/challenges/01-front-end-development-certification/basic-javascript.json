@@ -3875,7 +3875,7 @@
         ""
       ],
       "tail": [
-        "(function(t) { if(typeof t !== 'undefined') { return \"Total = \" + t; } else { return \"Total is undefined\";}})(total);"
+        "(function(){if(typeof total !== 'undefined') { return \"total = \" + total; } else { return \"total is undefined\";}})()"
       ],
       "solutions": [
         "var myArr = [ 2, 3, 4, 5, 6];\nvar total = 0;\n\nfor (var i = 0; i < myArr.length; i++) {\n  total += myArr[i];\n}"
