@@ -1,6 +1,6 @@
 import React, { cloneElement, PropTypes } from 'react';
 import { contain } from 'thundercats-react';
-import { Button, Panel, Row, Col } from 'react-bootstrap';
+import { Button, Row, Col } from 'react-bootstrap';
 
 import ListJobs from './List.jsx';
 
