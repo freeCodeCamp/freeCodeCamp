@@ -146,7 +146,7 @@ function getRenderData$(user, challenge$, origChallengeName, solution) {
           type: 'redirect',
           redirectUrl: '/map',
           message: dedent`
-    404: We couldn\'t find a challenge with the name ${origChallengeName}.
+    We couldn't find a challenge with the name ${origChallengeName}.
     Please double check the name.
           `
         });
@@ -478,8 +478,9 @@ module.exports = function(app) {
 
   function showChallenge(req, res, next) {
     const solution = req.query.solution;
+    const challengeName = req.params.challengeName.replace(challengesRegex, '');
 
-    getRenderData$(req.user, challenge$, req.params.challengeName, solution)
+    getRenderData$(req.user, challenge$, challengeName, solution)
       .subscribe(
         ({ type, redirectUrl, message, data }) => {
           if (message) {
