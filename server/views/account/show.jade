@@ -32,199 +32,199 @@ block content
                             i.fa.fa-google-plus
                             | Add my Google+ to my portfolio
         .spacer
-        h1.text-center #{username}'s code portfolio
-        hr
-        .row
-            .col-xs-12.col-sm-10.col-sm-offset-1.col-md-8.col-md-offset-2.text-center
-                if picture
-                    img.img-center.img-responsive.public-profile-img(src=picture)
-                else
-                    img.img-center.img-responsive.public-profile-img(src='https://s3.amazonaws.com/freecodecamp/camper-image-placeholder.png')
-                h1.text-center.negative-5.profile-social-icons
-                    if (twitter)
-                        a.fa.fa-twitter-square.text-primary(title="@#{username}'s Twitter Profile", href='https://twitter.com/' + twitter, target='_blank')
-                    if (github)
-                        a.fa.fa-github-square.text-primary(title="@#{username}'s GitHub Profile", href=github, target='_blank')
-                    if (linkedin)
-                        a.fa.fa-linkedin-square.text-primary(title="@#{username}'s LinkedIn Profile", href=linkedin, target='_blank')
-                    if (facebook)
-                        a.fa.fa-facebook-square.text-primary(title="@#{username}'s Facebook Profile", href='https://facebook.com/' + facebook, target='_blank')
-                    if (google)
-                        a.fa.fa-google-plus-square.text-primary(title="@#{username}'s Google Profile", href='https://plus.google.com/' + google, target='_blank')
-                h1.flat-top.wrappable= name
-                h1.flat-top.wrappable= location
-                h1.flat-top.text-primary= "[ " + (progressTimestamps.length) + " ]"
-                if pledge
-                    .spacer
-                      h4
-                        | This camper has committed to giving $#{pledge.amount} to
-                        a(href='#{pledge.donateUrl}?ref=freecodecamp.com' target='_blank')  #{pledge.displayName}
-                        |  each month until they have completed their #{pledge.goal}.
-                    .spacer
-                .row
-                    .col-xs-12.col-sm-10.col-sm-offset-1.col-md-8.col-md-offset-2
-                        if isFrontEndCert
-                            a.btn.btn-primary.btn-block(href='/' + username + '/front-end-certification') View My Front End Development Certification
-                        if isDataVisCert
-                            .button-spacer
-                            a.btn.btn-primary.btn-block(href='/' + username + '/data-visualization-certification') View My Data Visualization Certification
-                        if isBackEndCert
-                            .button-spacer
-                            a.btn.btn-primary.btn-block(href='/' + username + '/back-end-certification') View My Back End Development Certification
-
-        .spacer
-        .col-md-12
-            #cal-heatmap.hidden-xs.hidden-sm.d3-centered
-                script.
-                    $(document).ready(function () {
-                        var cal = new CalHeatMap();
-                        var calendar = !{JSON.stringify(calender)};
-                      /*
-                        var estUTCOffset = -5;
-                        // moment returns the utc offset in minutes
-                        var userUTCOffset = moment().utcOffset() / 60;
-                        var secondsToOffset =
-                          (estUTCOffset - userUTCOffset) * 3600;
-                        var offsetCalendar = {};
-                        for (var prop in calendar) {
-                          if (calendar.hasOwnProperty(prop)) {
-                            var offsetProp = prop + secondsToOffset;
-                            offsetCalendar[offsetProp] = calendar[prop];
-                          }
-                        }
-                        */
-                        cal.init({
-                            itemSelector: "#cal-heatmap",
-                            domain: "month",
-                            subDomain: "x_day",
-                            domainGutter: 10,
-                            data: calendar,
-                            cellSize: 15,
-                            align: 'center',
-                            cellRadius: 3,
-                            cellPadding: 2,
-                            tooltip: true,
-                            range: 6,
-                            start: new Date().setDate(new Date().getDate() - 150),
-                            legendColors: ["#cccccc", "#215f1e"],
-                            legend: [1, 2, 3],
-                            label: {
-                                position: "top"
-                            }
-                        });
-                    });
-            .row
-                .hidden-xs.col-sm-12.text-center
-                    .row.text-primary
-                        h4.col-sm-6.text-right Longest Streak: #{longestStreak} #{longestStreak === 1 ? ' day' : ' days'}
-                        h4.col-sm-6.text-left Current Streak: #{currentStreak} #{currentStreak === 1 ? ' day' : ' days'}
-
-
-            if (user && user.username == username || !isLocked)
-                if (baseAndZip.length > 0)
-                    .col-sm-12
-                        table.table.table-striped
-                            thead
-                                tr
-                                    th.col-xs-6 Projects
-                                    th.col-xs-3.hidden-xs Completed
-                                    th.col-xs-3.hidden-xs Link
-                            for challenge in baseAndZip
-                                tr
-                                    td.col-xs-4.hidden-xs
-                                        a(href='/challenges/' + challenge.name, target='_blank')= challenge.name
-                                    td.col-xs-2.hidden-xs= challenge.completedDate ? moment(challenge.completedDate, 'x').format("MMM DD, YYYY") : 'Not Available'
-                                    td.col-xs-6.hidden-xs
-                                        a(href=challenge.solution, target='_blank') View my project
-                                    td.col-xs-12.visible-xs
-                                        a(href=challenge.solution, target='_blank')=challenge.name
-                if (bonfires.length > 0)
-                    .col-sm-12
-                        table.table.table-striped
-                            thead
-                                tr
-                                    th.col-xs-6 Bonfires
-                                    th.col-xs-3.hidden-xs Completed
-                                    th.col-xs-3.hidden-xs Solution
-                            for bonfire in bonfires
-                                tr
-                                    td.col-xs-6.hidden-xs= bonfire.name
-                                    td.col-xs-3.hidden-xs= bonfire.completedDate ? moment(bonfire.completedDate, 'x').format("MMM DD, YYYY") : 'Not Available'
-                                    td.col-xs-3.hidden-xs
-                                        a(href='/challenges/' + bonfire.name + '?solution=' + encodeURIComponent(encodeFcc(bonfire.solution)), target='_blank') View my solution
-                                    td.col-xs-12.visible-xs
-                                        a(href='/challenges/' + bonfire.name + '?solution=' + encodeURIComponent(encodeFcc(bonfire.solution)), target='_blank')= bonfire.name
-                if (waypoints.length > 0)
-                    .col-sm-12
-                        table.table.table-striped
-                            thead
-                                tr
-                                    th.col-xs-6 Waypoints
-                                    th.col-xs-3.hidden-xs Completed
-                                    th.col-xs-3.hidden-xs Solution
-                            for challenge in waypoints
-                                tr
-                                    td.col-xs-6.hidden-xs= challenge.name
-                                    td.col-xs-3.hidden-xs= challenge.completedDate ?moment(challenge.completedDate, 'x').format("MMM DD, YYYY") : 'Not Available'
-                                    td.col-xs-3.hidden-xs
-                                      if (challenge.solution)
-                                          a(href='/challenges/' + challenge.name + '?solution=' + encodeURIComponent(encodeFcc(challenge.solution)), target='_blank') View my solution
-                                      else
-                                          a(href='/challenges/' + challenge.name) View this challenge
-                                    td.col-xs-12.visible-xs
-                                      if (challenge.solution)
-                                          a(href='/challenges/' + challenge.name + '?solution=' + encodeURIComponent(encodeFcc(challenge.solution)), target='_blank')= challenge.name
-                                      else
-                                          a(href='/challenges/' + challenge.name)= challenge.name
-
-        if (user && user.username === username)
-            h1.text-center Manage your account
-            hr
-            .col-xs-12
-                a.btn.btn-lg.btn-block.btn-primary.btn-link-social(href='/logout')
-                    | Sign me out of Free Code Camp
-            .col-xs-12
-                a.btn.btn-lg.btn-block.btn-primary.btn-link-social(href='mailto:team@freecodecamp.com')
-                    | Email us at team@freecodecamp.com
-            if (!user.isLocked)
-                .col-xs-12
-                    a.btn.btn-lg.btn-block.btn-primary.btn-link-social(href='/toggle-lockdown-mode')
-                        | Hide all my solutions from other people
-                        br
-                        | (this will disable your certificates)
+    h1.text-center #{username}'s code portfolio
+    hr
+    .row
+        .col-xs-12.col-sm-10.col-sm-offset-1.col-md-8.col-md-offset-2.text-center
+            if picture
+                img.img-center.img-responsive.public-profile-img(src=picture)
             else
-                .col-xs-12
-                    a.btn.btn-lg.btn-block.btn-primary.btn-link-social(href='/toggle-lockdown-mode')
-                        | Let other people see all my solutions
-                        br
-                        | (this will enable your certificates)
-            .col-xs-12
-                a.btn.btn-lg.btn-block.btn-primary.btn-link-social(href='/commit')
-                    | Edit my pledge
-            .col-xs-12
-                a.btn.btn-lg.btn-block.btn-danger.btn-link-social.confirm-deletion
-                    | Delete my Free Code Camp account
-                script.
-                    $('.confirm-deletion').on("click", function () {
-                        $('#modal-dialog').modal('show');
+                img.img-center.img-responsive.public-profile-img(src='https://s3.amazonaws.com/freecodecamp/camper-image-placeholder.png')
+            h1.text-center.negative-5.profile-social-icons
+                if (twitter)
+                    a.fa.fa-twitter-square.text-primary(title="@#{username}'s Twitter Profile", href='https://twitter.com/' + twitter, target='_blank')
+                if (github)
+                    a.fa.fa-github-square.text-primary(title="@#{username}'s GitHub Profile", href=github, target='_blank')
+                if (linkedin)
+                    a.fa.fa-linkedin-square.text-primary(title="@#{username}'s LinkedIn Profile", href=linkedin, target='_blank')
+                if (facebook)
+                    a.fa.fa-facebook-square.text-primary(title="@#{username}'s Facebook Profile", href='https://facebook.com/' + facebook, target='_blank')
+                if (google)
+                    a.fa.fa-google-plus-square.text-primary(title="@#{username}'s Google Profile", href='https://plus.google.com/' + google, target='_blank')
+            h1.flat-top.wrappable= name
+            h1.flat-top.wrappable= location
+            h1.flat-top.text-primary= "[ " + (progressTimestamps.length) + " ]"
+            if pledge
+                .spacer
+                  h4
+                    | This camper has committed to giving $#{pledge.amount} to
+                    a(href='#{pledge.donateUrl}?ref=freecodecamp.com' target='_blank')  #{pledge.displayName}
+                    |  each month until they have completed their #{pledge.goal}.
+                .spacer
+            .row
+                .col-xs-12.col-sm-10.col-sm-offset-1.col-md-8.col-md-offset-2
+                    if isFrontEndCert
+                        a.btn.btn-primary.btn-block(href='/' + username + '/front-end-certification') View My Front End Development Certification
+                    if isDataVisCert
+                        .button-spacer
+                        a.btn.btn-primary.btn-block(href='/' + username + '/data-visualization-certification') View My Data Visualization Certification
+                    if isBackEndCert
+                        .button-spacer
+                        a.btn.btn-primary.btn-block(href='/' + username + '/back-end-certification') View My Back End Development Certification
+
+    .spacer
+    .col-md-12
+        #cal-heatmap.hidden-xs.hidden-sm.d3-centered
+            script.
+                $(document).ready(function () {
+                    var cal = new CalHeatMap();
+                    var calendar = !{JSON.stringify(calender)};
+                  /*
+                    var estUTCOffset = -5;
+                    // moment returns the utc offset in minutes
+                    var userUTCOffset = moment().utcOffset() / 60;
+                    var secondsToOffset =
+                      (estUTCOffset - userUTCOffset) * 3600;
+                    var offsetCalendar = {};
+                    for (var prop in calendar) {
+                      if (calendar.hasOwnProperty(prop)) {
+                        var offsetProp = prop + secondsToOffset;
+                        offsetCalendar[offsetProp] = calendar[prop];
+                      }
+                    }
+                    */
+                    cal.init({
+                        itemSelector: "#cal-heatmap",
+                        domain: "month",
+                        subDomain: "x_day",
+                        domainGutter: 10,
+                        data: calendar,
+                        cellSize: 15,
+                        align: 'center',
+                        cellRadius: 3,
+                        cellPadding: 2,
+                        tooltip: true,
+                        range: 6,
+                        start: new Date().setDate(new Date().getDate() - 150),
+                        legendColors: ["#cccccc", "#215f1e"],
+                        legend: [1, 2, 3],
+                        label: {
+                            position: "top"
+                        }
                     });
-            #modal-dialog.modal.animated.wobble
-                .modal-dialog
-                    .modal-content
-                        .modal-header
-                            a.close(href='#', data-dismiss='modal', aria-hidden='true') ×
-                            h3 You don't really want to delete your account, do you?
-                        .modal-body
-                            p This will really delete all your data, including all your progress, news stories and brownie points.
-                            p We won't be able to recover any of it for you later, even if you change your mind.
-                            p If there's something we could do better, send us an email instead and we'll do our best: &thinsp;
-                                a(href="mailto:team@freecodecamp.com") team@freecodecamp.com
-                                | .
-                        .modal-footer
-                            a.btn.btn-success.btn-block(href='#', data-dismiss='modal', aria-hidden='true')
-                                | Nevermind, I don't want to delete all of my progress
-                            .spacer
-                            form(action='/account/delete', method='POST')
-                                input(type='hidden', name='_csrf', value=_csrf)
-                                button.btn.btn-danger.btn-block(type='submit')
-                                    | I am 100% sure I want to delete my account and all of my progress
+                });
+        .row
+            .hidden-xs.col-sm-12.text-center
+                .row.text-primary
+                    h4.col-sm-6.text-right Longest Streak: #{longestStreak} #{longestStreak === 1 ? ' day' : ' days'}
+                    h4.col-sm-6.text-left Current Streak: #{currentStreak} #{currentStreak === 1 ? ' day' : ' days'}
+
+
+          if (user && user.username == username || !isLocked)
+              if (baseAndZip.length > 0)
+                  .col-sm-12
+                      table.table.table-striped
+                          thead
+                              tr
+                                  th.col-xs-6 Projects
+                                  th.col-xs-3.hidden-xs Completed
+                                  th.col-xs-3.hidden-xs Link
+                          for challenge in baseAndZip
+                              tr
+                                  td.col-xs-4.hidden-xs
+                                      a(href='/challenges/' + challenge.name, target='_blank')= challenge.name
+                                  td.col-xs-2.hidden-xs= challenge.completedDate ? moment(challenge.completedDate, 'x').format("MMM DD, YYYY") : 'Not Available'
+                                  td.col-xs-6.hidden-xs
+                                      a(href=challenge.solution, target='_blank') View my project
+                                  td.col-xs-12.visible-xs
+                                      a(href=challenge.solution, target='_blank')=challenge.name
+              if (bonfires.length > 0)
+                  .col-sm-12
+                      table.table.table-striped
+                          thead
+                              tr
+                                  th.col-xs-6 Bonfires
+                                  th.col-xs-3.hidden-xs Completed
+                                  th.col-xs-3.hidden-xs Solution
+                          for bonfire in bonfires
+                              tr
+                                  td.col-xs-6.hidden-xs= bonfire.name
+                                  td.col-xs-3.hidden-xs= bonfire.completedDate ? moment(bonfire.completedDate, 'x').format("MMM DD, YYYY") : 'Not Available'
+                                  td.col-xs-3.hidden-xs
+                                      a(href='/challenges/' + bonfire.name + '?solution=' + encodeURIComponent(encodeFcc(bonfire.solution)), target='_blank') View my solution
+                                  td.col-xs-12.visible-xs
+                                      a(href='/challenges/' + bonfire.name + '?solution=' + encodeURIComponent(encodeFcc(bonfire.solution)), target='_blank')= bonfire.name
+              if (waypoints.length > 0)
+                  .col-sm-12
+                      table.table.table-striped
+                          thead
+                              tr
+                                  th.col-xs-6 Waypoints
+                                  th.col-xs-3.hidden-xs Completed
+                                  th.col-xs-3.hidden-xs Solution
+                          for challenge in waypoints
+                              tr
+                                  td.col-xs-6.hidden-xs= challenge.name
+                                  td.col-xs-3.hidden-xs= challenge.completedDate ?moment(challenge.completedDate, 'x').format("MMM DD, YYYY") : 'Not Available'
+                                  td.col-xs-3.hidden-xs
+                                    if (challenge.solution)
+                                        a(href='/challenges/' + challenge.name + '?solution=' + encodeURIComponent(encodeFcc(challenge.solution)), target='_blank') View my solution
+                                    else
+                                        a(href='/challenges/' + challenge.name) View this challenge
+                                  td.col-xs-12.visible-xs
+                                    if (challenge.solution)
+                                        a(href='/challenges/' + challenge.name + '?solution=' + encodeURIComponent(encodeFcc(challenge.solution)), target='_blank')= challenge.name
+                                    else
+                                        a(href='/challenges/' + challenge.name)= challenge.name
+
+    if (user && user.username === username)
+        h1.text-center Manage your account
+        hr
+        .col-xs-12
+            a.btn.btn-lg.btn-block.btn-primary.btn-link-social(href='/logout')
+                | Sign me out of Free Code Camp
+        .col-xs-12
+            a.btn.btn-lg.btn-block.btn-primary.btn-link-social(href='mailto:team@freecodecamp.com')
+                | Email us at team@freecodecamp.com
+        if (!user.isLocked)
+            .col-xs-12
+                a.btn.btn-lg.btn-block.btn-primary.btn-link-social(href='/toggle-lockdown-mode')
+                    | Hide all my solutions from other people
+                    br
+                    | (this will disable your certificates)
+        else
+            .col-xs-12
+                a.btn.btn-lg.btn-block.btn-primary.btn-link-social(href='/toggle-lockdown-mode')
+                    | Let other people see all my solutions
+                    br
+                    | (this will enable your certificates)
+        .col-xs-12
+            a.btn.btn-lg.btn-block.btn-primary.btn-link-social(href='/commit')
+                | Edit my pledge
+        .col-xs-12
+            a.btn.btn-lg.btn-block.btn-danger.btn-link-social.confirm-deletion
+                | Delete my Free Code Camp account
+            script.
+                $('.confirm-deletion').on("click", function () {
+                    $('#modal-dialog').modal('show');
+                });
+        #modal-dialog.modal.animated.wobble
+            .modal-dialog
+                .modal-content
+                    .modal-header
+                        a.close(href='#', data-dismiss='modal', aria-hidden='true') ×
+                        h3 You don't really want to delete your account, do you?
+                    .modal-body
+                        p This will really delete all your data, including all your progress, news stories and brownie points.
+                        p We won't be able to recover any of it for you later, even if you change your mind.
+                        p If there's something we could do better, send us an email instead and we'll do our best: &thinsp;
+                            a(href="mailto:team@freecodecamp.com") team@freecodecamp.com
+                            | .
+                    .modal-footer
+                        a.btn.btn-success.btn-block(href='#', data-dismiss='modal', aria-hidden='true')
+                            | Nevermind, I don't want to delete all of my progress
+                        .spacer
+                        form(action='/account/delete', method='POST')
+                            input(type='hidden', name='_csrf', value=_csrf)
+                            button.btn.btn-danger.btn-block(type='submit')
+                                | I am 100% sure I want to delete my account and all of my progress
