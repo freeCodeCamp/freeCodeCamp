@@ -15,12 +15,15 @@ import {
 
 import {
   frontEndChallengeId,
+  dataVisChallengeId,
   backEndChallengeId
 } from '../utils/constantStrings.json';
 
 import {
   completeCommitment$
 } from '../utils/commit';
+
+import certTypes from '../utils/certTypes.json';
 
 const debug = debugFactory('freecc:certification');
 const sendMessageToNonUser = ifNoUserSend(
@@ -35,46 +38,47 @@ function isCertified(ids, { completedChallenges }) {
   });
 }
 
+function getIdsForCert$(id, Challenge) {
+  return observeQuery(
+    Challenge,
+    'findById',
+    id,
+    {
+      id: true,
+      tests: true,
+      name: true,
+      challengeType: true
+    }
+  )
+    .shareReplay();
+}
+
 export default function certificate(app) {
   const router = app.loopback.Router();
   const { Challenge } = app.models;
 
-  const frontEndChallengeIds$ = observeQuery(
-    Challenge,
-    'findById',
-    frontEndChallengeId,
-    {
-      id: true,
-      tests: true,
-      name: true,
-      challengeType: true
-    }
-  )
-    .shareReplay();
-
-  const backEndChallengeIds$ = observeQuery(
-    Challenge,
-    'findById',
-    backEndChallengeId,
-    {
-      id: true,
-      tests: true,
-      name: true,
-      challengeType: true
-    }
-  )
-    .shareReplay();
+  const certTypeIds = {
+    [certTypes.frontEnd]: getIdsForCert$(frontEndChallengeId, Challenge),
+    [certTypes.dataVis]: getIdsForCert$(dataVisChallengeId, Challenge),
+    [certTypes.backEnd]: getIdsForCert$(backEndChallengeId, Challenge)
+  };
 
   router.post(
     '/certificate/verify/front-end',
     ifNoUser401,
-    verifyCert
+    verifyCert.bind(null, certTypes.frontEnd)
   );
 
   router.post(
     '/certificate/verify/back-end',
     ifNoUser401,
-    verifyCert
+    verifyCert.bind(null, certTypes.backEnd)
+  );
+
+  router.post(
+    '/certificate/verify/data-visualization',
+    ifNoUser401,
+    verifyCert.bind(null, certTypes.dataVis)
   );
 
   router.post(
@@ -85,14 +89,10 @@ export default function certificate(app) {
 
   app.use(router);
 
-  function verifyCert(req, res, next) {
-    const isFront = req.path.split('/').pop() === 'front-end';
+  function verifyCert(certType, req, res, next) {
     Observable.just({})
       .flatMap(() => {
-        if (isFront) {
-          return frontEndChallengeIds$;
-        }
-        return backEndChallengeIds$;
+        return certTypeIds[certType];
       })
       .flatMap(challenge => {
         const { user } = req;
@@ -103,29 +103,17 @@ export default function certificate(app) {
           challengeType
         } = challenge;
         if (
-
-          isFront &&
-          !user.isFrontEndCert &&
-          isCertified(tests, user) ||
-
-          !isFront &&
-          !user.isBackEndCert &&
+          !user[certType] &&
           isCertified(tests, user)
-
         ) {
-          debug('certified');
-          if (isFront) {
-            user.isFrontEndCert = true;
-          } else {
-            user.isBackEndCert = true;
-          }
-
+          user[certType] = true;
           user.completedChallenges.push({
             id,
             name,
             completedDate: new Date(),
             challengeType
           });
+
           return saveUser(user)
             // If user has commited to nonprofit,
             // this will complete his pledge
@@ -146,8 +134,7 @@ export default function certificate(app) {
       .subscribe(
         user => {
           if (
-            isFront && user.isFrontEndCert ||
-            !isFront && user.isBackEndCert
+            user[certType]
           ) {
             return res.status(200).send(true);
           }

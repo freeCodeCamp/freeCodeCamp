@@ -272,8 +272,12 @@ export function postJSON$(url, body) {
     body,
     method: 'POST',
     responseType: 'json',
-    headers: { 'Content-Type': 'application/json' }
-  });
+    headers: {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+    }
+  })
+    .map(({ response }) => response);
 }
 
 /**
@@ -294,7 +298,12 @@ export function get$(url) {
   * @returns {Observable} The observable sequence which contains the parsed JSON
   */
 export function getJSON$(url) {
-  return ajax$({ url: url, responseType: 'json' }).map(function(x) {
-    return x.response;
-  });
+  return ajax$({
+    url: url,
+    responseType: 'json',
+    headers: {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+    }
+  }).map(({ response }) => response);
 }

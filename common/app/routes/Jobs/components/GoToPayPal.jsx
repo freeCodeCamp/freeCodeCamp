@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import { Button, Input, Col, Panel, Row, Well } from 'react-bootstrap';
+import { Button, Input, Col, Row, Well } from 'react-bootstrap';
 import { contain } from 'thundercats-react';
 
 // real paypal buttons
@@ -177,7 +177,7 @@ export default contain(
               sm={ 8 }
               smOffset={ 2 }
               xs={ 12 }>
-              <Panel>
+              <div>
                 <Row>
                   <Col
                     md={ 6 }
@@ -262,7 +262,7 @@ export default contain(
                   </Col>
                 </Row>
                 <div className='spacer' />
-              </Panel>
+              </div>
             </Col>
           </Row>
         </div>

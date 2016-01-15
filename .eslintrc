@@ -227,7 +227,7 @@
     "react/jsx-boolean-value": [1, "always"],
     "jsx-quotes": [1, "prefer-single"],
     "react/jsx-no-undef": 1,
-    "react/jsx-sort-props": 1,
+    "react/jsx-sort-props": [1, { "ignoreCase": true }],
     "react/jsx-uses-react": 1,
     "react/jsx-uses-vars": 1,
     "react/no-did-mount-set-state": 2,

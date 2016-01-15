@@ -3,9 +3,14 @@ html(lang='en')
   head
     include partials/meta
     include partials/stylesheets
-  body.no-top-and-bottom-margins.full-screen-body-background
-    include partials/scripts
-    include partials/navbar
-    include partials/flash
-    block content
-    include partials/footer
+  if showAside
+      body.map-aside-body
+          include partials/scripts
+          block content
+  else
+      body.no-top-and-bottom-margins.full-screen-body-background
+        include partials/scripts
+        include partials/navbar
+        include partials/flash
+        block content
+        include partials/footer

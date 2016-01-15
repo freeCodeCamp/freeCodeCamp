@@ -131,7 +131,7 @@ var paths = {
   ],
 
   less: './client/less/main.less',
-  lessFiles: './client/less/*.less',
+  lessFiles: './client/less/**/*.less',
 
   manifest: 'server/manifests/',
 
@@ -191,7 +191,7 @@ gulp.task('serve', ['build-manifest'], function(cb) {
     ignore: paths.serverIgnore,
     exec: path.join(__dirname, 'node_modules/.bin/babel-node'),
     env: {
-      'NODE_ENV': 'development',
+      'NODE_ENV': process.env.NODE_ENV || 'development',
       'DEBUG': process.env.DEBUG || 'freecc:*'
     }
   })
@@ -357,10 +357,15 @@ gulp.task('less', function() {
   var dest = paths.css;
   return gulp.src(paths.less)
     .pipe(plumber({ errorHandler: errorHandler }))
+    .pipe(__DEV__ ? sourcemaps.init() : gutil.noop())
     // compile
     .pipe(less({
       paths: [ path.join(__dirname, 'less', 'includes') ]
     }))
+    .pipe(__DEV__ ?
+      sourcemaps.write({ sourceRoot: '/less' }) :
+      gutil.noop()
+    )
     .pipe(gulp.dest(dest))
     // add revision
     .pipe(rev())

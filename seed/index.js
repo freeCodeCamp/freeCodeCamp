@@ -22,6 +22,8 @@ destroy()
     var isBeta = !!challengeSpec.isBeta;
     var isComingSoon = !!challengeSpec.isComingSoon;
     var fileName = challengeSpec.fileName;
+    var helpRoom = challengeSpec.helpRoom || 'Help';
+
     console.log('parsed %s successfully', block);
 
     // challenge file has no challenges...
@@ -31,11 +33,7 @@ destroy()
 
     var challenges = challengeSpec.challenges
       .map(function(challenge, index) {
-        // NOTE(berks): add title for displaying in views
-        challenge.name =
-          _.capitalize(challenge.type) +
-          ': ' +
-          challenge.title.replace(/[^a-zA-Z0-9\s]/g, '');
+        challenge.name = challenge.title.replace(/[^a-zA-Z0-9\s]/g, '');
 
         challenge.dashedName = challenge.name
           .toLowerCase()
@@ -43,6 +41,7 @@ destroy()
           .replace(/\s/g, '-');
 
         challenge.fileName = fileName;
+        challenge.helpRoom = helpRoom;
         challenge.order = order;
         challenge.suborder = index + 1;
         challenge.block = block;

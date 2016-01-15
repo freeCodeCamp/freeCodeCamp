@@ -2,16 +2,15 @@ extends ../layout-wide
 block content
     .row
         .col-xs-12.col-sm-12.col-md-4.bonfire-top
-            h1.text-center= name
-            .well
-                h4
-                    ol
-                        for step, index in details
-                            .row.checklist-element(id="#{dashedName + index}")
-                                .col-xs-3.col-sm-1.col-md-2.padded-ionic-icon.text-center
-                                    input(type='checkbox' class='challenge-list-checkbox')
-                                .col-xs-9.col-sm-11.col-md-10
-                                    li.step-text.wrappable!= step
+            h4.text-center= name
+            hr
+            ol
+                for step, index in description
+                    .row.checklist-element(id="#{dashedName + index}")
+                        .col-xs-3.col-sm-1.col-md-2.padded-ionic-icon.text-center
+                            input(type='checkbox' class='challenge-list-checkbox')
+                        .col-xs-9.col-sm-11.col-md-10
+                            li.step-text.wrappable!= step
         .col-xs-12.col-sm-12.col-md-8
             .embed-responsive.embed-responsive-16by9
                 iframe.embed-responsive-item(src='//player.vimeo.com/video/#{video}')
@@ -19,17 +18,13 @@ block content
             if (user)
                 a.btn.btn-primary.btn-big.btn-block#completed-courseware-editorless I've completed this challenge (ctrl + enter)
             else
-                a.btn.btn-big.btn-primary.btn-block(href='/challenges/next-challenge?id=' + challengeId) I've completed this challenge (ctrl + enter)
+                a.btn.btn-big.btn-primary.btn-block(href='/challenges/next-challenge?id=' + id) I've completed this challenge (ctrl + enter)
                 script.
                     var userLoggedIn = true;
             .button-spacer
             .btn-group.input-group.btn-group-justified
-                .btn.btn-success.btn-big#challenge-help-btn
-                    i.fa.fa-medkit
-                        | &nbsp; Get help
-                .btn.btn-success.btn-big#trigger-issue-modal
-                    i.fa.fa-bug
-                        | &nbsp; Report a bug
+                .btn.btn-primary.btn-big#challenge-help-btn Get help
+                .btn.btn-primary.btn-big#trigger-issue-modal Report a bug
             if (!user)
                 .button-spacer
                 a.btn.btn-big.signup-btn.btn-block(href='/login') Sign in so you can save your progress
@@ -51,13 +46,13 @@ block content
                         if (user)
                             a.btn.btn-lg.btn-primary.btn-block#next-courseware-button(name='_csrf', value=_csrf) I've completed this challenge (ctrl + enter)
                         else
-                            a.animated.fadeIn.btn.btn-lg.btn-primary.btn-block(href='/challenges/next-challenge?id=' + challengeId) I've completed this challenge (ctrl + enter)
+                            a.animated.fadeIn.btn.btn-lg.btn-primary.btn-block(href='/challenges/next-challenge?id=' + id) I've completed this challenge (ctrl + enter)
 
     include ../partials/challenge-modals
     script.
       var common = window.common || { init: [] };
 
-      common.challengeId = !{JSON.stringify(challengeId)};
+      common.challengeId = !{JSON.stringify(id)};
       common.challengeName = !{JSON.stringify(name)};
       common.challengeType = !{JSON.stringify(challengeType)};
       common.dashedName = !{JSON.stringify(dashedName)};
@@ -91,9 +86,4 @@ block content
         });
       });
 
-      document.addEventListener('gitter-sidecar-ready', function(e) {
-        if (window.main) {
-          window.main.chat.createHelpChat('freecodecamp/help', '#challenge-help-btn');
-        }
-      });
     include ../partials/challenge-footer

@@ -1,8 +1,9 @@
 {
   "name": "Sass",
-  "order": 13,
+  "order": 13.5,
   "isComingSoon": true,
-  "time": "5h",
+  "time": "5 hours",
+  "helpRoom": "HelpDataViz",
   "challenges": [
     {
       "id": "bd7158d8c423ede2aeb5bdee",

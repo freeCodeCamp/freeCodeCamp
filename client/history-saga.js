@@ -20,7 +20,7 @@ const emptyLocation = {
 
 let prevKey;
 let isSyncing = false;
-export default function synchroniseHistory(
+export default function historySaga(
   history,
   updateLocation,
   goTo,
@@ -35,7 +35,7 @@ export default function synchroniseHistory(
       }
 
       // store location has changed, update history
-      if (location.key !== prevKey) {
+      if (!location.key || location.key !== prevKey) {
         isSyncing = true;
         history.transitionTo({ ...emptyLocation, ...location });
         isSyncing = false;

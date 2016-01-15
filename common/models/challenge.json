@@ -70,6 +70,11 @@
       "default": [],
       "description": "prepended to user code"
     },
+    "helpRoom": {
+      "type": "string",
+      "default": "Help",
+      "description": "Gitter help chatroom this challenge belongs too. Must be PascalCase"
+    },
     "fileName": {
       "type": "string",
       "description": "filename challenge comes from. Used in dev mode"

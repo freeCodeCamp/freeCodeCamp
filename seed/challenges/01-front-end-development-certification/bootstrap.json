@@ -1,7 +1,8 @@
 {
   "name": "Responsive Design with Bootstrap",
   "order": 3,
-  "time": "5h",
+  "time": "5 hours",
+  "helpRoom": "Help",
   "challenges": [
     {
       "id": "bad87fee1348bd9acde08712",
@@ -2197,7 +2198,7 @@
       "title": "Label Bootstrap Buttons",
       "description": [
         "Just like we labeled our wells, we want to label our buttons.",
-        "Give each of your <code>button</code> elements text that corresponds to their <code>id</code>."
+        "Give each of your <code>button</code> elements text that corresponds to its <code>id</code>'s selector."
       ],
       "tests": [
         "assert(new RegExp(\"#target1\",\"gi\").test($(\"#target1\").text()), 'message: Give your <code>button</code> element with the id <code>target1</code> the text <code>#target1</code>.');",
@@ -2256,7 +2257,7 @@
         "Add a comment at the top of your HTML that says <code>Only change code above this line.</code>"
       ],
       "tests": [
-        "assert(code.match(/^<!--/) && code.match(/^<!--/g).length > 0, 'message: Start a comment with <code>&#60;!--</code> at the top of your HTML.');",
+        "assert(code.match(/^\\s*<!--/), 'message: Start a comment with <code>&#60;!--</code> at the top of your HTML.');",
         "assert(code.match(/<!--(?!(>|->|.*-->.*this line)).*this line.*-->/gi), 'message: Your comment should have the text <code>Only change code above this line</code>.');",
         "assert(code.match(/-->.*\\n+.+/g), 'message: Be sure to close your comment with <code>--&#62;</code>.');",
         "assert(code.match(/<!--/g).length === code.match(/-->/g).length, 'message: You should have the same number of comment openers and closers.');"

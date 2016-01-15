@@ -1,7 +1,8 @@
 {
   "name": "jQuery",
   "order": 5,
-  "time": "3h",
+  "time": "3 hours",
+  "helpRoom": "Help",
   "challenges": [
     {
       "id": "bad87fee1348bd9acdd08826",

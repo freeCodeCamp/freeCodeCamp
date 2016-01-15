@@ -23,6 +23,11 @@
       "type": "array",
       "default": []
     },
+    "isBanned": {
+      "type": "boolean",
+      "default": false,
+      "description": "User is banned from posting to camper news"
+    },
     "isGithubCool": {
       "type": "boolean",
       "default": false
@@ -122,6 +127,11 @@
       "type": "boolean",
       "defaut": false,
       "description": "Camper is front end certified"
+    },
+    "isDataVisCert": {
+      "type": "boolean",
+      "defaut": false,
+      "description": "Camper is data visualization certified"
     },
     "isBackEndCert": {
       "type": "boolean",

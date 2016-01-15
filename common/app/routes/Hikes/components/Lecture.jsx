@@ -52,7 +52,11 @@ export default contain(
 
     renderTranscript(transcript, dashedName) {
       return transcript.map((line, index) => (
-        <p key={ dashedName + index }>{ line }</p>
+        <p
+          className='lead text-left'
+          key={ dashedName + index }>
+          { line }
+        </p>
       ));
     },
 
@@ -73,10 +77,13 @@ export default contain(
               videoId={ id } />
           </Row>
           <Row>
-            { this.renderTranscript(description, dashedName) }
+            <article>
+              { this.renderTranscript(description, dashedName) }
+            </article>
             <Button
               block={ true }
               bsSize='large'
+              bsStyle='primary'
               onClick={ () => this.handleFinish(hikesActions) }>
               Take me to the Questions
             </Button>

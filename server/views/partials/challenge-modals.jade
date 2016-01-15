@@ -5,10 +5,10 @@
                 a.close.closing-x(href='#', data-dismiss='modal', aria-hidden='true') ×
             .modal-body.text-center
                 h3 Before you submit a new issue, read "Help I've Found a Bug" and browse other issues with this challenge.
-                a.btn.btn-lg.btn-success.btn-block#help-ive-found-a-bug-wiki-article(name='_csrf', value=_csrf) Read "Help I've Found a Bug"
-                a.btn.btn-lg.btn-success.btn-block#search-issue(name='_csrf', value=_csrf) Browse other issues with this challenge
+                a.btn.btn-lg.btn-primary.btn-block#help-ive-found-a-bug-wiki-article(name='_csrf', value=_csrf) Read "Help I've Found a Bug"
+                a.btn.btn-lg.btn-primary.btn-block#search-issue(name='_csrf', value=_csrf) Browse other issues with this challenge
                 a.btn.btn-lg.btn-primary.btn-block#report-issue(name='_csrf', value=_csrf) Create my GitHub issue
-                a.btn.btn-lg.btn-info.btn-block(href='#', data-dismiss='modal', aria-hidden='true') Cancel
+                a.btn.btn-lg.btn-primary.btn-block(href='#', data-dismiss='modal', aria-hidden='true') Cancel
 
 #reset-modal.modal(tabindex='-1')
     .modal-dialog.animated.fadeInUp.fast-animation
@@ -17,5 +17,5 @@
                 a.close.closing-x(href='#', data-dismiss='modal', aria-hidden='true') ×
             .modal-body
                 h3 This will restore your code editor to its original state.
-                a.btn.btn-lg.btn-info.btn-block#reset-button(href='#', data-dismiss='modal', aria-hidden='true') Clear my code
+                a.btn.btn-lg.btn-warning.btn-block#reset-button(href='#', data-dismiss='modal', aria-hidden='true') Clear my code
                 a.btn.btn-lg.btn-primary.btn-block(href='#', data-dismiss='modal', aria-hidden='true') Cancel

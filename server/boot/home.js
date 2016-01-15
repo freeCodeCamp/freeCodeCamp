@@ -22,7 +22,7 @@ module.exports = function(app) {
 
   function index(req, res) {
     if (req.user) {
-      return res.redirect('/map');
+      return res.redirect('/challenges/current-challenge');
     }
     res.render('home', { title: message });
   }

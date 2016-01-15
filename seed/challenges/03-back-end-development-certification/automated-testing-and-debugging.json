@@ -1,7 +1,8 @@
 {
   "name": "Automated Testing and Debugging",
   "order": 20,
-  "time": "15m",
+  "time": "15 minutes",
+  "helpRoom": "HelpBackEnd",
   "challenges": [
     {
       "id":"cf1111c1c16feddfaeb6bdef",

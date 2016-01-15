@@ -6,7 +6,7 @@
     "url": "https://github.com/freecodecamp/freecodecamp.git"
   },
   "scripts": {
-    "only-once": "npm run create-rev && echo '\n\nseeding database\n\n' && node seed && node seed/nonprofits && echo",
+    "only-once": "npm run create-rev && echo '\n\nseeding database\n\n' && node seed && echo '\n\nSeeding Completed\n\n'",
     "create-rev": "node -e \"console.log('\\n\\ncreating manifest\\n\\n'); require('fs').writeFileSync('server/rev-manifest.json', '{}');\"",
     "build": "NODE_ENV=production gulp build -p",
     "start": "babel-node server/server.js",
@@ -14,13 +14,12 @@
     "start-production": "node pm2Start",
     "lint": "npm run lint-js && npm run lint-json",
     "lint-challenges": "jsonlint -q seed/challenges/**/*.json",
-    "lint-nonprofits": "jsonlint -q seed/nonprofits.json",
     "lint-server": "jsonlint -q server/*.json",
     "lint-resources": "jsonlint -q server/resources/*.json",
     "lint-utils": "jsonlint -q server/utils/*.json",
     "lint-js": "eslint --ext=.js,.jsx server/ common/ config/ client/",
-    "lint-json": "npm run lint-server && npm run lint-nonprofits && npm run lint-challenges && npm run lint-resources && npm run lint-utils",
-    "test-challenges": "babel-node seed/test-challenges.js | tnyan",
+    "lint-json": "npm run lint-server && npm run && npm run lint-challenges && npm run lint-resources && npm run lint-utils",
+    "test-challenges": "babel-node seed/test-challenges.js | tap-spec",
     "pretest": "npm run lint",
     "test": "npm run test-challenges"
   },
@@ -54,6 +53,7 @@
     "express-session": "^1.12.1",
     "express-state": "^1.2.0",
     "express-validator": "^2.18.0",
+    "fbjs": "^0.6.0",
     "fetchr": "~0.5.12",
     "forever": "~0.15.1",
     "frameguard": "~0.2.2",
@@ -109,7 +109,8 @@
     "react-motion": "~0.3.1",
     "react-router": "^1.0.0",
     "react-router-bootstrap": "https://github.com/FreeCodeCamp/react-router-bootstrap.git#freecodecamp",
-    "react-vimeo": "~0.0.3",
+    "react-toastr": "^2.3.0",
+    "react-vimeo": "~0.1.0",
     "request": "^2.65.0",
     "rev-del": "^1.0.5",
     "rx": "^4.0.0",
@@ -141,7 +142,6 @@
     "loopback-component-explorer": "^2.1.1",
     "loopback-testing": "^1.1.0",
     "mocha": "^2.3.3",
-    "tap-nyan": "0.0.2",
     "tap-spec": "^4.1.1",
     "tape": "^4.2.2"
   }

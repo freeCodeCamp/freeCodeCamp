@@ -1,7 +1,8 @@
 {
   "name": "Basic JavaScript",
-  "time": "10h",
+  "time": "10 hours",
   "order": 6,
+  "helpRoom": "HelpJavaScript",
   "challenges": [
     {
       "id": "bd7123c9c441eddfaeb4bdef",
@@ -107,7 +108,7 @@
         "<code>myNum = myVar;</code>",
         "Assigns <code>5</code> to <code>myVar</code> and then resolves <code>myVar</code> to <code>5</code>  again and assigns it to <code>myNum</code>.",
         "<h4>Instructions</h4>",
-        "Assign the value <code>7</code> to variable <code>a</code>",
+        "Assign the value <code>7</code> to variable <code>a</code>.",
         "Assign the contents of <code>a</code> to variable <code>b</code>."
       ],
       "releasedOn": "January 1, 2016",
@@ -439,9 +440,8 @@
       "id": "cf1391c1c11feddfaeb4bdef",
       "title": "Create Decimal Numbers with JavaScript",
       "description": [
-        "We can store decimal numbers in variables too. Decimal numbers are sometimes refered to as <dfn>floating point</dfn> numbers or <dfn>floats</dfn>.",
-        "<strong>Note</strong>",
-        "Not all real numbers can accurately be represented in <dfn>floating point</dfn>. This can lead to rounding errors. <a href=\"https://en.wikipedia.org/wiki/Floating_point#Accuracy_problems\" target=\"_blank\">Details Here</a>.",
+        "We can store decimal numbers in variables too. Decimal numbers are sometimes referred to as <dfn>floating point</dfn> numbers or <dfn>floats</dfn>.",
+        "<strong>Note</strong><br>Not all real numbers can accurately be represented in <dfn>floating point</dfn>. This can lead to rounding errors. <a href=\"https://en.wikipedia.org/wiki/Floating_point#Accuracy_problems\" target=\"_blank\">Details Here</a>.",
         "<h4>Instructions</h4>",
         "Create a variable <code>myDecimal</code> and give it a decimal value."
       ],
@@ -525,11 +525,9 @@
         "The <dfn>remainder</dfn> operator <code>%</code> gives the remainder of the division of two numbers.",
         "<strong>Example</strong>",
         "<blockquote>5 % 2 = 1 because<br>Math.floor(5 / 2) = 2 (Quotient)<br>2 * 2 = 4<br>5 - 4 = 1 (Remainder)</blockquote>",
-        "<strong>Usage</strong>",
-        "In mathematics, a number can be checked even or odd by checking the remainder of the division of the number by <code>2</code>.",
+        "<strong>Usage</strong><br>In mathematics, a number can be checked even or odd by checking the remainder of the division of the number by <code>2</code>.",
         "<blockquote>17 % 2 = 1 (17 is Odd)<br>48 % 2 = 0 (48 is Even)</blockquote>",
-        "<strong>Note</strong>",
-        "The <dfn>remainder</dfn> operator is sometimes incorrectly refered to as  the \"modulus\" operator. It is very similar to modulus, but does not work properly with negative numbers.",
+        "<strong>Note</strong><br>The <dfn>remainder</dfn> operator is sometimes incorrectly referred to as  the \"modulus\" operator. It is very similar to modulus, but does not work properly with negative numbers.",
         "<h4>Instructions</h4>",
         "Set <code>remainder</code> equal to the remainder of <code>11</code> divided by <code>3</code> using the <dfn>remainder</dfn> (<code>%</code>) operator."
       ],
@@ -579,7 +577,7 @@
         ""
       ],
       "tail": [
-        "(function(a,b,c){ return \"a = \" + a + \", b = \" + b + \", c = '\" + c + \"'\"; })(a,b,c);"
+        "(function(a,b,c){ return \"a = \" + a + \", b = \" + b + \", c = \" + c; })(a,b,c);"
       ],
       "solutions": [
         "var a = 3;\nvar b = 17;\nvar c = 12;\n\na += 12;\nb += 9;\nc += 7;"
@@ -620,7 +618,7 @@
         ""
       ],
       "tail": [
-        "(function(a,b,c){ return \"a = \" + a + \", b = \" + b + \", c = '\" + c + \"'\"; })(a,b,c);"
+        "(function(a,b,c){ return \"a = \" + a + \", b = \" + b + \", c = \" + c; })(a,b,c);"
       ],
       "solutions": [
         "var a = 11;\nvar b = 9;\nvar c = 3;\n\na -= 6;\nb -= 15;\nc -= 1;\n\n"
@@ -661,7 +659,7 @@
         ""
       ],
       "tail": [
-        "(function(a,b,c){ return \"a = \" + a + \", b = \" + b + \", c = '\" + c + \"'\"; })(a,b,c);"
+        "(function(a,b,c){ return \"a = \" + a + \", b = \" + b + \", c = \" + c; })(a,b,c);"
       ],
       "solutions": [
         "var a = 5;\nvar b = 12;\nvar c = 4.6;\n\na *= 5;\nb *= 3;\nc *= 10;"
@@ -760,7 +758,7 @@
       "title": "Declare String Variables",
       "description": [
         "Previously we have used the code",
-        "<code>var myName = \"your name\"</code>",
+        "<code>var myName = \"your name\";</code>",
         "<code>\"your name\"</code> is called a <dfn>string</dfn> <dfn>literal</dfn>. It is a string because it is a series of zero or more characters enclosed in single or double quotes.",
         "<h4>Instructions</h4>",
         "Create two new <code>string</code> variables: <code>myFirstName</code> and <code>myLastName</code> and assign them the values of your first and last name, respectively."
@@ -873,10 +871,10 @@
         ""
       ],
       "tail": [
-      "(function(){",
-      "if (myStr !== undefined){",
-      "return 'myStr = '+ JSON.stringify(myStr);}",
-      "else{return null;}})();"
+        "(function(){",
+        "if (myStr !== undefined){",
+        "return 'myStr = '+ JSON.stringify(myStr);}",
+        "else{return null;}})();"
       ],
       "solutions": [
         "var myStr = \"\\\\ \\t \\t \\r \\n\";"
@@ -923,7 +921,9 @@
       ],
       "tests": [
         "assert(myStr === \"This is the start. This is the end.\", 'message: <code>myStr</code> should have a value of <code>This is the start. This is the end.</code>');",
-        "assert(/var\\s+myStr\\s*=\\s*([\"'])This is the start\\. \\1\\s*\\+\\s*([\"'])This is the end\\.([\"'])/.test(code), 'message: Use the <code>+</code> operator to build <code>myStr</code>');"
+        "assert(code.match(/([\"']).*([\"'])\\s*\\+\\s*([\"']).*([\"'])/g).length > 1, 'message: Use the <code>+</code> operator to build <code>myStr</code>');",
+        "assert(/var\\s+myStr/.test(code), 'message: <code>myStr</code> should be created using the <code>var</code> keyword.');",
+        "assert(/myStr\\s*=/.test(code), 'message: Make sure to assign the result to the <code>myStr</code> variable.');"
       ],
       "type": "waypoint",
       "challengeType": 1
@@ -1106,12 +1106,11 @@
       "title": "Use Bracket Notation to Find the First Character in a String",
       "description": [
         "<code>Bracket notation</code> is a way to get a character at a specific <code>index</code> within a string.",
-        "Most modern programming languages, like JavaScript, don't start counting at 1 like humans do. They start at 0. This is refered to as <dfn>Zero-based</dfn> indexing.",
+        "Most modern programming languages, like JavaScript, don't start counting at 1 like humans do. They start at 0. This is referred to as <dfn>Zero-based</dfn> indexing.",
         "For example, the character at index 0 in the word \"Charles\" is \"C\". So if <code>var firstName = \"Charles\"</code>, you can get the value of the first letter of the string by using <code>firstName[0]</code>.",
         "<h4>Instructions</h4>",
         "Use <dfn>bracket notation</dfn> to find the first character in the <code>lastName</code> variable and assign it to <code>firstLetterOfLastName</code>.",
-        "<strong>Hint</strong>",
-        "<br>Try looking at the <code>firstLetterOfFirstName</code> variable declaration if you get stuck."
+        "<strong>Hint</strong><br>Try looking at the <code>firstLetterOfFirstName</code> variable declaration if you get stuck."
       ],
       "challengeSeed": [
         "// Example",
@@ -1184,8 +1183,7 @@
         "Remember that computers start counting at <code>0</code>, so the first character is actually the zeroth character.",
         "<h4>Instructions</h4>",
         "Let's try to set <code>thirdLetterOfLastName</code> to equal the third letter of the <code>lastName</code> variable.",
-        "<strong>Hint</strong>",
-        "<br>Try looking at the <code>secondLetterOfFirstName</code> variable declaration if you get stuck."
+        "<strong>Hint</strong><br>Try looking at the <code>secondLetterOfFirstName</code> variable declaration if you get stuck."
       ],
       "challengeSeed": [
         "// Example",
@@ -1220,8 +1218,7 @@
         "For example, if <code>var firstName = \"Charles\"</code>, you can get the value of the last letter of the string by using <code>firstName[firstName.length - 1]</code>.",
         "<h4>Instructions</h4>",
         "Use <dfn>bracket notation</dfn> to find the last character in the <code>lastName</code> variable.",
-        "<strong>Hint</strong>",
-        "<br>Try looking at the <code>lastLetterOfFirstName</code> variable declaration if you get stuck."
+        "<strong>Hint</strong><br>Try looking at the <code>lastLetterOfFirstName</code> variable declaration if you get stuck."
       ],
       "challengeSeed": [
         "// Example",
@@ -1257,8 +1254,7 @@
         "For example, you can get the value of the third-to-last letter of the <code>var firstName = \"Charles\"</code> string by using <code>firstName[firstName.length - 3]</code>",
         "<h4>Instructions</h4>",
         "Use <dfn>bracket notation</dfn> to find the second-to-last character in the <code>lastName</code> string.",
-        "  <strong>Hint</strong>",
-        "<br>Try looking at the <code>thirdToLastLetterOfFirstName</code> variable declaration if you get stuck."
+        "  <strong>Hint</strong><br>Try looking at the <code>thirdToLastLetterOfFirstName</code> variable declaration if you get stuck."
       ],
       "challengeSeed": [
         "// Example",
@@ -1332,8 +1328,7 @@
         "You start an array declaration with an opening square bracket, end it with a closing square bracket, and put a comma between each entry, like this:<br><code>var sandwich = [\"peanut butter\", \"jelly\", \"bread\"]</code>.",
         "<h4>Instructions</h4>",
         "Create a new array called <code>myArray</code> that contains both a <code>string</code> and a <code>number</code> (in that order).",
-        "<strong>Hint</strong>",
-        "<br>Refer to the example code in the text editor if you get stuck."
+        "<strong>Hint</strong><br>Refer to the example code in the text editor if you get stuck."
       ],
       "challengeSeed": [
         "// Example",
@@ -2014,7 +2009,7 @@
       "description": [
         "If you'll recall from our discussion of <a href=\"waypoint-storing-values-with-the-equal-operator\" target=\"_blank\">Storing Values with the Equal Operator</a>, everything to the right of the equal sign is resolved before the value is assigned. This means we can take the return value of a function and assign it to a variable.",
         "Assume we have pre-defined a function <code>sum</code> which adds two numbers together, then: ",
-        "<code>var ourSum = sum(5, 12);</code>",
+        "<code>ourSum = sum(5, 12);</code>",
         "will call <code>sum</code> function, which returns a value of <code>17</code> and assigns it to <code>ourSum</code> variable.",
         "<h4>Instructions</h4>",
         "Call the <code>process</code> function with an argument of <code>7</code> and assign its return value to the variable <code>processed</code>."
@@ -2050,7 +2045,7 @@
       "title": "Stand in Line",
       "description": [
         "In Computer Science a <dfn>queue</dfn> is an abstract <dfn>Data Structure</dfn> where items are kept in order. New items can be added at the back of the <code>queue</code> and old items are taken off from the front of the <code>queue</code>.",
-        "Write a function <code>queue</code> which takes an \"array\" and an \"item\" as arguments. Add the item onto the end of the array, then remove the first element of the array. The queue function should return the element that was removed."
+        "Write a function <code>queue</code> which takes an array (<code>arr</code>) and a number (<code>item</code>) as arguments. Add the number to the end of the array, then remove the first element of array. The queue function should then return the element that was removed."
       ],
       "releasedOn": "January 1, 2016",
       "head": [
@@ -2070,32 +2065,33 @@
         "capture();"
       ],
       "challengeSeed": [
-        "// Setup",
-        "var myArr = [1,2,3,4,5];",
-        "",
         "function queue(arr, item) {",
         "  // Your code here",
         "  ",
         "  return item;  // Change this line",
         "}",
         "",
+        "// Test Setup",
+        "var testArr = [1,2,3,4,5];",
+        "",
         "// Display Code",
-        "console.log(\"Before: \" + JSON.stringify(myArr));",
-        "console.log(queue(myArr, 6)); // Modify this line to test",
-        "console.log(\"After: \" + JSON.stringify(myArr));"
+        "console.log(\"Before: \" + JSON.stringify(testArr));",
+        "console.log(queue(testArr, 6)); // Modify this line to test",
+        "console.log(\"After: \" + JSON.stringify(testArr));"
       ],
       "tail": [
         "uncapture();",
-        "myArr = [1,2,3,4,5];",
+        "testArr = [1,2,3,4,5];",
         "(function() { return logOutput.join(\"\\n\");})();"
       ],
       "solutions": [
-        "var myArr = [ 1,2,3,4,5];\n\nfunction queue(myArr, item) {\n    myArr.push(item);\n    return myArr.shift();\n}"
+        "var testArr = [ 1,2,3,4,5];\n\nfunction queue(arr, item) {\n    arr.push(item);\n    return arr.shift();\n}"
       ],
       "tests": [
         "assert(queue([],1) === 1, 'message: <code>queue([], 1)</code> should return <code>1</code>');",
         "assert(queue([2],1) === 2, 'message: <code>queue([2], 1)</code> should return <code>2</code>');",
-        "queue(myArr, 10); assert(myArr[4] === 10, 'message: After <code>queue(myArr, 10)</code>, <code>myArr[4]</code> should be <code>10</code>');"
+        "assert(queue([5,6,7,8,9],1) === 5, 'message: <code>queue([5,6,7,8,9], 1)</code> should return <code>5</code>');",
+        "queue(testArr, 10); assert(testArr[4] === 10, 'message: After <code>queue(testArr, 10)</code>, <code>myArr[4]</code> should be <code>10</code>');"
       ],
       "type": "checkpoint",
       "challengeType": 1
@@ -2578,7 +2574,7 @@
         "When a condition for an <code>if</code> statement is true, the block of code following it is executed. What about when that condition is false?  Normally nothing would happen. With an <code>else</code> statement, an alternate block of code can be executed.",
         "<blockquote>if (num > 10) {<br>  return \"Bigger than 10\";<br>} else {<br>  return \"10 or Less\";<br>}</blockquote>",
         "<h4>Instructions</h4>",
-        "Combine the <code>if</code> statements into a single statement."
+        "Combine the <code>if</code> statements into a single <code>if/else</code> statement."
       ],
       "releasedOn": "January 1, 2016",
       "challengeSeed": [
@@ -2655,6 +2651,47 @@
         "assert(myTest(7) === \"Between 5 and 10\", 'message: <code>myTest(7)</code> should return \"Between 5 and 10\"');",
         "assert(myTest(10) === \"Between 5 and 10\", 'message: <code>myTest(10)</code> should return \"Between 5 and 10\"');",
         "assert(myTest(12) === \"Greater than 10\", 'message: <code>myTest(12)</code> should return \"Greater than 10\"');"
+      ],
+      "type": "waypoint",
+      "challengeType": 1
+    },
+    {
+      "id": "5690307fddb111c6084545d7",
+      "title": "Logical Order in If Else Statements",
+      "description": [
+        "Order is important in <code>if</code>, <code>else if</code> statements.",
+        "The loop is executed from top to bottom so you will want to be careful of what statement comes first.",
+        "Take these two functions as an example.",
+        "Heres the first:",
+        "<blockquote>function foo(x) {<br>  if (x < 1) {<br>    return \"Less than one\";<br>  } else if (x < 2) {<br>    return \"Less than two\";<br>  } else {<br>    return \"Greater than or equal to two\";<br>  }<br>}</blockquote>",
+        "And the second just switches the order of the statements:",
+        "<blockquote>function bar(x) {<br>  if (x < 2) {<br>    return \"Less than two\";<br>  } else if (x < 1) {<br>    return \"Less than one\";<br>  } else {<br>    return \"Greater than or equal to two\";<br>  }<br>}</blockquote>",
+        "While these two functions look nearly identical if we pass a number to both we get different outputs.",
+        "<blockquote>foo(0) // \"Less than one\"<br>bar(0) // \"Less than two\"</blockquote>",
+        "<h4>Instructions</h4>",
+        "Change the order of logic in the function so that it will return the correct statements in all cases."
+      ],
+      "challengeSeed": [
+        "function myTest(val) {",
+        "  if(val < 10) {",
+        "    return \"Less than 10\";",
+        "  } else if(val < 5) {",
+        "    return \"Less than 5\";",
+        "  } else {",
+        "    return \"Greater than or equal to 10\";",
+        "  }",
+        "}",
+        "             ",
+        "// Change this value to test",
+        "myTest(7);"
+      ],
+      "solutions": [
+        "function myTest(val) {\n  if(val < 5) {\n    return \"Less than 5\";            \n  } else if (val < 10) {\n    return \"Less than 10\";\n  } else {\n    return \"Greater than or equal to 10\";\n  }\n}"
+      ],
+      "tests": [
+        "assert(myTest(4) === \"Less than 5\", 'message: <code>myTest(4)</code> should return \"Less than 5\"');",
+        "assert(myTest(6) === \"Less than 10\", 'message: <code>myTest(6)</code> should return \"Less than 10\"');",
+        "assert(myTest(11) === \"Greater than or equal to 10\", 'message: <code>myTest(11)</code> should return \"Greater than or equal to 10\"');"
       ],
       "type": "waypoint",
       "challengeType": 1
@@ -2835,8 +2872,7 @@
         "Cases for 1, 2, and 3 will all produce the same result.",
         "<h4>Instructions</h4>",
         "Write a switch statement to set <code>answer</code> for the following ranges:<br><code>1-3</code> - \"Low\"<br><code>4-6</code> - \"Mid\"<br><code>7-9</code> - \"High\"",
-        "<strong>Note</strong>",
-        "You will need to have a <code>case</code> statement for each number in the range."
+        "<strong>Note</strong><br>You will need to have a <code>case</code> statement for each number in the range."
       ],
       "releasedOn": "January 1, 2016",
       "challengeSeed": [
@@ -3019,9 +3055,8 @@
         "In the casino game Blackjack, a player can gain an advantage over the house by keeping track of the relative number of high and low cards remaining in the deck. This is called <a href=\"https://en.wikipedia.org/wiki/Card_counting\">Card Counting</a>.",
         "Having more high cards remaining in the deck favors the player. Each card is assigned a value according to the table below. When the count is positive, the player should bet high. When the count is zero or negative, the player should bet low.",
         "<table class=\"table table-striped\"><thead><tr><th>Value</th><th>Cards</th></tr></thead><tbody><tr><td>+1</td><td>2, 3, 4, 5, 6</td></tr><tr><td>0</td><td>7, 8, 9</td></tr><tr><td>-1</td><td>10, 'J', 'Q', 'K','A'</td></tr></tbody></table>",
-        "You will write a card counting function. It will receive a <code>card</code> parameter and increment or decrement the global <code>count</code> variable according to the card's value (see table). The function will then return the current count and the string <code>\"Bet\"</code> if the count is positive, or <code>\"Hold\"</code> if the count is zero or negative.",
-        "<strong>Example Output</strong>",
-        "<code>-3 Hold</code><br><code>5 Bet</code>"
+        "You will write a card counting function. It will receive a <code>card</code> parameter and increment or decrement the global <code>count</code> variable according to the card's value (see table). The function will then return a string with the current count and the string <code>\"Bet\"</code> if the count is positive, or <code>\"Hold\"</code> if the count is zero or negative. The current count and the player's decision (<code>\"Bet\"</code> or <code>\"Hold\"</code>) should be separated by a single space.<br><br>",
+        "<strong>Example Output</strong><br><code>\"-3 Hold\"<br>\"5 Bet\"</code>"
       ],
       "releasedOn": "January 1, 2016",
       "challengeSeed": [
@@ -3429,7 +3464,7 @@
       "id": "567af2437cbaa8c51670a16c",
       "title": "Testing Objects for Properties",
       "description": [
-        "Sometimes it is useful to check if the property of a given object exists or not. We can use the <code>.hasOwnProperty([propname])</code> method of objects to determine if that object has the given property name. <code>.hasOwnProperty()</code> returns <code>true</code> or <code>false</code> if the property is found or not.",
+        "Sometimes it is useful to check if the property of a given object exists or not. We can use the <code>.hasOwnProperty(propname)</code> method of objects to determine if that object has the given property name. <code>.hasOwnProperty()</code> returns <code>true</code> or <code>false</code> if the property is found or not.",
         "<strong>Example</strong>",
         "<blockquote>var myObj = {<br>  top: \"hat\",<br>  bottom: \"pants\"<br>};<br>myObj.hasOwnProperty(\"top\");    // true<br>myObj.hasOwnProperty(\"middle\"); // false</blockquote>",
         "<h4>Instructions</h4>",
@@ -3475,8 +3510,9 @@
         "Here is an example of a JSON object:",
         "<blockquote>var ourMusic = [<br>  {<br>    \"artist\": \"Daft Punk\",<br>    \"title\": \"Homework\",<br>    \"release_year\": 1997,<br>    \"formats\": [ <br>      \"CD\", <br>      \"Cassette\", <br>      \"LP\" ],<br>    \"gold\": true<br>  }<br>];</blockquote>",
         "This is an array of objects and the object has various pieces of <dfn>metadata</dfn> about an album. It also has a nested <code>formats</code> array. Additional album records could be added to the top level array.",
+        "<strong>Note</strong><br>You will need a comma in between objects in JSON objects with more than one object in the array.",
         "<h4>Instructions</h4>",
-        "Add a new album to the <code>myMusic</code> JSON object. Add <code>artist</code> and <code>title</code> strings, <code>release_year</code> year, and a <code>formats</code> array of strings."
+        "Add a new album to the <code>myMusic</code> JSON object. Add <code>artist</code> and <code>title</code> strings, <code>release_year</code> number, and a <code>formats</code> array of strings."
       ],
       "releasedOn": "January 1, 2016",
       "challengeSeed": [
@@ -3693,7 +3729,7 @@
       "description": [
         "You can run the same code multiple times by using a loop.",
         "The most common type of JavaScript loop is called a \"<code>for loop</code>\" because it runs \"for\" a specific number of times.",
-        "For loops are declared with three optional expressions seperated by semicolons:",
+        "For loops are declared with three optional expressions separated by semicolons:",
         "<code>for ([initialization]; [condition]; [final-expression])</code>",
         "The <code>initialization</code> statement is executed one time only before the loop starts. It is typically used to define and setup your loop variable.",
         "The <code>condition</code> statement is evaluated at the beginning of every loop iteration and will continue as long as it evalutes to <code>true</code>. When <code>condition</code> is <code>false</code> at the start of the iteration, the loop will stop executing. This means if <code>condition</code> starts as <code>false</code>, your loop will never execute.",
@@ -3840,7 +3876,7 @@
         ""
       ],
       "tail": [
-        "(function(t) { if(typeof t !== 'undefined') { return \"Total = \" + t; } else { return \"Total is undefined\";}})(total);"
+        "(function(){if(typeof total !== 'undefined') { return \"total = \" + total; } else { return \"total is undefined\";}})()"
       ],
       "solutions": [
         "var myArr = [ 2, 3, 4, 5, 6];\nvar total = 0;\n\nfor (var i = 0; i < myArr.length; i++) {\n  total += myArr[i];\n}"
@@ -3955,7 +3991,7 @@
         "        \"firstName\": \"Sherlock\",",
         "        \"lastName\": \"Holmes\",",
         "        \"number\": \"0487345643\",",
-        "        \"likes\": [\"Intruiging Cases\", \"Violin\"]",
+        "        \"likes\": [\"Intriguing Cases\", \"Violin\"]",
         "    },",
         "    {",
         "        \"firstName\": \"Kristian\",",
@@ -3976,11 +4012,11 @@
         "lookUp(\"Akira\", \"likes\");"
       ],
       "solutions": [
-        "var contacts = [\n    {\n        \"firstName\": \"Akira\",\n        \"lastName\": \"Laine\",\n        \"number\": \"0543236543\",\n        \"likes\": [\"Pizza\", \"Coding\", \"Brownie Points\"]\n    },\n    {\n        \"firstName\": \"Harry\",\n        \"lastName\": \"Potter\",\n        \"number\": \"0994372684\",\n        \"likes\": [\"Hogwarts\", \"Magic\", \"Hagrid\"]\n    },\n    {\n        \"firstName\": \"Sherlock\",\n        \"lastName\": \"Holmes\",\n        \"number\": \"0487345643\",\n        \"likes\": [\"Intruiging Cases\", \"Violin\"]\n    },\n    {\n        \"firstName\": \"Kristian\",\n        \"lastName\": \"Vos\",\n        \"number\": \"unknown\",\n        \"likes\": [\"Javascript\", \"Gaming\", \"Foxes\"]\n    },\n];\n\n\n//Write your function in between these comments\nfunction lookUp(name, prop){\n    for(var i in contacts){\n      if(contacts[i].firstName === name) {\n        return contacts[i][prop] || \"No such property\";\n      }\n    }\n   return \"No such contact\";\n}\n//Write your function in between these comments\n\nlookUp(\"Akira\", \"likes\");"
+        "var contacts = [\n    {\n        \"firstName\": \"Akira\",\n        \"lastName\": \"Laine\",\n        \"number\": \"0543236543\",\n        \"likes\": [\"Pizza\", \"Coding\", \"Brownie Points\"]\n    },\n    {\n        \"firstName\": \"Harry\",\n        \"lastName\": \"Potter\",\n        \"number\": \"0994372684\",\n        \"likes\": [\"Hogwarts\", \"Magic\", \"Hagrid\"]\n    },\n    {\n        \"firstName\": \"Sherlock\",\n        \"lastName\": \"Holmes\",\n        \"number\": \"0487345643\",\n        \"likes\": [\"Intriguing Cases\", \"Violin\"]\n    },\n    {\n        \"firstName\": \"Kristian\",\n        \"lastName\": \"Vos\",\n        \"number\": \"unknown\",\n        \"likes\": [\"Javascript\", \"Gaming\", \"Foxes\"]\n    },\n];\n\n\n//Write your function in between these comments\nfunction lookUp(name, prop){\n    for(var i in contacts){\n      if(contacts[i].firstName === name) {\n        return contacts[i][prop] || \"No such property\";\n      }\n    }\n   return \"No such contact\";\n}\n//Write your function in between these comments\n\nlookUp(\"Akira\", \"likes\");"
       ],
       "tests": [
         "assert(lookUp('Kristian','lastName') === \"Vos\", 'message: <code>\"Kristian\", \"lastName\"</code> should return <code>\"Vos\"</code>');",
-        "assert.deepEqual(lookUp(\"Sherlock\", \"likes\"), [\"Intruiging Cases\", \"Violin\"], 'message: <code>\"Sherlock\", \"likes\"</code> should return <code>[\"Intruiging Cases\", \"Violin\"]</code>');",
+        "assert.deepEqual(lookUp(\"Sherlock\", \"likes\"), [\"Intriguing Cases\", \"Violin\"], 'message: <code>\"Sherlock\", \"likes\"</code> should return <code>[\"Intriguing Cases\", \"Violin\"]</code>');",
         "assert(typeof lookUp(\"Harry\", \"likes\") === \"object\", 'message: <code>\"Harry\",\"likes\"</code> should return an array');",
         "assert(lookUp(\"Bob\", \"number\") === \"No such contact\", 'message: <code>\"Bob\", \"number\"</code> should return \"No such contact\"');",
         "assert(lookUp(\"Akira\", \"address\") === \"No such property\", 'message: <code>\"Akira\", \"address\"</code> should return \"No such property\"');"
@@ -3999,8 +4035,7 @@
       "description": [
         "Random numbers are useful for creating random behavior.",
         "JavaScript has a <code>Math.random()</code> function that generates a random decimal number between <code>0</code> (inclusive) and not quite up to <code>1</code> (exclusive). Thus <code>Math.random()</code> can return a <code>0</code> but never quite return a <code>1</code>",
-        "<strong>Note</strong>",
-        "Like <a href=\"waypoint-storing-values-with-the-equal-operator\">Storing Values with the Equal Operator</a>, all function calls will be resolved before the <code>return</code> executes, so we can simply <code>return</code> the value of the <code>Math.random()</code> function.",
+        "<strong>Note</strong><br>Like <a href=\"waypoint-storing-values-with-the-equal-operator\">Storing Values with the Equal Operator</a>, all function calls will be resolved before the <code>return</code> executes, so we can simply <code>return</code> the value of the <code>Math.random()</code> function.",
         "<h4>Instructions</h4>",
         "Change <code>myFunction</code> to return a random number instead of returning <code>0</code>."
       ],
@@ -4115,10 +4150,10 @@
         "function randomRange(myMin, myMax) {\n  return Math.floor(Math.random() * (myMax - myMin + 1)) + myMin;\n}"
       ],
       "tests": [
-        "assert(calcMin === 5, 'message: The random number generated by <code>myFunction</code> should be greater than or equal to your minimum number, <code>myMin</code>.');",
-        "assert(calcMax === 15, 'message: The random number generated by <code>myFunction</code> should be less than or equal to your maximum number, <code>myMax</code>.');",
-        "assert(randomRange(0,1) % 1 === 0 , 'message: The random number generated by <code>myFunction</code> should be an integer, not a decimal.');",
-        "assert((function(){if(code.match(/myMax/g).length > 1 && code.match(/myMin/g).length > 2 && code.match(/Math.floor/g) && code.match(/Math.random/g)){return true;}else{return false;}})(), 'message: <code>myFunction()</code> should use use both <code>myMax</code> and <code>myMin</code>, and return a random number in your range.');"
+        "assert(calcMin === 5, 'message: The random number generated by <code>randomRange</code> should be greater than or equal to your minimum number, <code>myMin</code>.');",
+        "assert(calcMax === 15, 'message: The random number generated by <code>randomRange</code> should be less than or equal to your maximum number, <code>myMax</code>.');",
+        "assert(randomRange(0,1) % 1 === 0 , 'message: The random number generated by <code>randomRange</code> should be an integer, not a decimal.');",
+        "assert((function(){if(code.match(/myMax/g).length > 1 && code.match(/myMin/g).length > 2 && code.match(/Math.floor/g) && code.match(/Math.random/g)){return true;}else{return false;}})(), 'message: <code>randomRange</code> should use use both <code>myMax</code> and <code>myMin</code>, and return a random number in your range.');"
       ],
       "type": "waypoint",
       "challengeType": 1
