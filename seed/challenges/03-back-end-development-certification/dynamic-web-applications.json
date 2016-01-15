@@ -2,6 +2,7 @@
   "name": "Dynamic Web Application Projects",
   "order": 27,
   "time": "250h",
+  "helpRoom": "HelpBackEnd",
   "challenges": [
     {
       "id": "bd7158d8c443eddfaeb5bdef",

@@ -2,6 +2,7 @@
   "name": "JSON APIs and Ajax",
   "order": 10.5,
   "time": "2h",
+  "helpRoom": "Help",
   "challenges": [
     {
       "id": "bb000000000000000000001",

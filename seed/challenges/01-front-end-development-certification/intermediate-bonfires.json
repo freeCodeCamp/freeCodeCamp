@@ -2,6 +2,7 @@
   "name": "Intermediate Algorithm Scripting",
   "order": 10,
   "time": "50h",
+  "helpRoom": "HelpJavaScript",
   "challenges": [
     {
       "id": "a3566b1109230028080c9345",

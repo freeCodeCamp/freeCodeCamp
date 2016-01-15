@@ -2,6 +2,7 @@
   "name": "Object Oriented and Functional Programming",
   "order": 7,
   "time": "2h",
+  "helpRoom": "HelpJavaScript",
   "note": [
     "Methods",
     "Closures",

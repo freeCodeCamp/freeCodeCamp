@@ -2,6 +2,7 @@
   "name": "Git",
   "order" : 24,
   "time": "3h",
+  "helpRoom": "HelpBackEnd",
   "challenges": [
     {
       "id": "bd7353d8c341eddeaeb5bd0f",
