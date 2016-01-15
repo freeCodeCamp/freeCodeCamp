@@ -3,25 +3,27 @@ block content
     .row
         .col-md-8.col-md-offset-2
                 for step, index in description
-                    .thumbnail.challenge-step(class=index !== 0 ? 'hidden': '')
+                    .challenge-step(class=index !== 0 ? 'hidden': '')
                         a(href=step[0] data-lightbox='img-enlarge')
-                            img.gif-block.img-center.img-responsive.thumbnail(src='#{step[0]}' alt='#{step[1]}')
-                        .caption
-                            p.large-p!= step[2]
+                            img.gif-block.img-center.img-responsive(src='#{step[0]}' alt='#{step[1]}')
+                        .row
+                            .col-xs-12.col-sm-10.col-sm-offset-1.col-md-8.col-md-offset-2
+                                p!= step[2]
                         .challenge-button-block
                             if step[3]
-                                a.btn.btn-block.btn-primary.challenge-step-btn-action(id='#{index}' href='#{step[3]}' target='_blank') Open link in new tab (this unlocks the next step)
+                                a.btn.btn-block.btn-primary.challenge-step-btn-action.btn-lg(id='#{index}' href='#{step[3]}' target='_blank') Open link in new tab (this unlocks the next step)
                                 .button-spacer
                             if index === 0
                                 .col-sm-5.hidden-xs &nbsp;
                             else
-                                .btn.btn-warning.col-sm-5.col-xs-12.challenge-step-btn-prev(id='#{index - 1}') Go to my previous step
+                                .btn.btn-primary.btn-primary-ghost.col-sm-5.col-xs-12.challenge-step-btn-prev.btn-lg(id='#{index - 1}') Go to my previous step
                             .challenge-step-counter.large-p.col-sm-2.col-xs-12.text-center (#{index + 1} / #{description.length})
                             if index + 1 === description.length
-                                .btn.btn-primary.col-sm-5.col-xs-12.challenge-step-btn-finish(id='last' class=step[3] && !isCompleted ? 'disabled' : '') Finish challenge
+                                .btn.btn-primary.col-sm-5.col-xs-12.challenge-step-btn-finish.btn-lg(id='last' class=step[3] && !isCompleted ? 'disabled' : '') Finish challenge
                             else
-                                .btn.btn-primary.col-sm-5.col-xs-12.challenge-step-btn-next(id='#{index}' class=step[3] && !isCompleted ? 'disabled' : '') Go to my next step
+                                .btn.btn-primary.col-sm-5.col-xs-12.challenge-step-btn-next.btn-lg(id='#{index}' class=step[3] && !isCompleted ? 'disabled' : '') Go to my next step
                         .clearfix
+    .spacer
     #challenge-step-modal.modal(tabindex='-1')
         .modal-dialog.animated.fadeIn.fast-animation
             .modal-content
@@ -37,11 +39,11 @@ block content
                       if (user)
                           #challenge-step-btn-submit.animated.fadeIn.btn.btn-lg.btn-primary.btn-block Submit and go to my next challenge
                       else
-                          a.btn.btn-lg.btn-primary.btn-block(href='/challenges/next-challenge?id=' + challengeId) Go to my next challenge
+                          a.btn.btn-lg.btn-primary.btn-block(href='/challenges/next-challenge?id=' + id) Go to my next challenge
     script.
       var common = window.common || { init: [] };
 
-      common.challengeId = !{JSON.stringify(challengeId)};
+      common.challengeId = !{JSON.stringify(id)};
       common.challengeName = !{JSON.stringify(name)};
       common.challengeType = !{JSON.stringify(challengeType)};
       common.dashedName = !{JSON.stringify(dashedName || '')};

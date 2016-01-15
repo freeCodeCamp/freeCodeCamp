@@ -8,45 +8,38 @@ block content
         .col-md-4.col-lg-3
             .scroll-locker(id = "scroll-locker")
                 .innerMarginFix(style = "width: 99%;")
-                    #testCreatePanel.well
-                        h3.text-center.negative-10= name
+                    #testCreatePanel
+                        h4.text-center= name
                             if (isCompleted)
                                 | &nbsp;
                                 i.ion-checkmark-circled.text-primary(title="Completed")
+                        hr
                         .row
                             .col-xs-12
                                 .bonfire-instructions
-                                    for sentence in details
+                                    for sentence in description
                                         if (/blockquote|h4|table/.test(sentence))
                                             !=sentence
                                         else
-                                            p.wrappable.negative-10!= sentence
+                                            p.wrappable!= sentence
                                 if (MDNlinks.length)
                                     .negative-bottom-margin-30
                                         #MDN-links
-                                            p.negative-10 Here are some helpful links:
+                                            p Here are some helpful links:
                                             for link, index in MDNlinks
-                                                .negative-10
-                                                    ul: li: a(href="" + link, target="_blank") !{MDNkeys[index]}
+                                                ul: li: a(href="" + link, target="_blank") !{MDNkeys[index]}
+                                    .button-spacer
                     if (user)
                         form.form-horizontal(novalidate='novalidate', name='completedWithForm')
-                            .form-group.text-center.negative-10
+                            .form-group.text-center
                                 .col-xs-12
                                     // extra field to distract password tools like lastpass from injecting css into our username field
-                    label.negative-10.btn.btn-primary.btn-lg.btn-block#submitButton
-                        i.fa.fa-play
-                            | &nbsp; Run tests (ctrl + enter)
+                    label.btn.btn-primary.btn-big.btn-block#submitButton Run tests (ctrl + enter)
                     .button-spacer
                     .btn-group.input-group.btn-group-justified
-                        label.btn.btn-success#trigger-reset-modal
-                            i.fa.fa-refresh
-                                | &nbsp; Reset
-                        label.btn.btn-success#challenge-help-btn
-                            i.fa.fa-medkit
-                                | &nbsp; Help
-                        label.btn.btn-success#trigger-issue-modal
-                            i.fa.fa-bug
-                                | &nbsp; Bug
+                        label.btn.btn-primary.btn-lg#trigger-reset-modal Reset
+                        label.btn.btn-primary.btn-lg#challenge-help-btn Help
+                        label.btn.btn-primary.btn-lg#trigger-issue-modal Bug
                     if (!user)
                         .button-spacer
                         a.btn.signup-btn.btn-block.btn-block(href='/login') Sign in so you can save your progress
@@ -57,7 +50,7 @@ block content
                         .form-group.codeMirrorView
                             textarea#codeOutput(style='display: none;')
                     br
-                    #testSuite.negative-10
+                    #testSuite
                     br
         .col-md-8.col-lg-9
             .editorScrollDiv(style = "overflow-y: auto; overflow-x: hidden;")
@@ -80,7 +73,7 @@ block content
                         if (user)
                             #submit-challenge.animated.fadeIn.btn.btn-lg.btn-primary.btn-block Submit and go to my next challenge (ctrl + enter)
                         else
-                            a#next-challenge.animated.fadeIn.btn.btn-lg.btn-primary.btn-block(href="/challenges/next-challenge?id="+challengeId) Go to my next challenge (ctrl + enter)
+                            a#next-challenge.animated.fadeIn.btn.btn-lg.btn-primary.btn-block(href="/challenges/next-challenge?id="+id) Go to my next challenge (ctrl + enter)
     include ../partials/challenge-modals
     script(type="text/javascript").
       var common = window.common = { init: [] };
@@ -89,7 +82,7 @@ block content
       common.head = !{JSON.stringify(head)};
       common.tail = !{JSON.stringify(tail)};
 
-      common.challengeId = !{JSON.stringify(challengeId)};
+      common.challengeId = !{JSON.stringify(id)};
       common.challengeName = !{JSON.stringify(name)};
       common.challengeSeed = !{JSON.stringify(challengeSeed)};
       common.challengeType = !{JSON.stringify(challengeType)};
@@ -98,11 +91,9 @@ block content
 
     include ../partials/challenge-footer
     script.
-      document.addEventListener('gitter-sidecar-ready', function(e) {
-        if (window.main) {
-          window.main.chat.createHelpChat('freecodecamp/help', '#challenge-help-btn');
-        }
-      });
+      if (!!{JSON.stringify(MDNlinks.length)}) {
+          $('#MDN-links').addClass('collapse');
+      }
 
       common.init.push(function() {
         common.editor.setOption('mode', 'javascript');

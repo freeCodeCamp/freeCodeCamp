@@ -1,27 +1,25 @@
 extends ../layout
 block content
-    .panel.panel-info
-        .panel-heading.text-center Stories from happy campers
-        .panel-body.text-left
+    h1.text-center Stories from happy campers
+    hr
+    .row
+        .col-xs-12.col-sm-10.col-sm-offset-1
             .row
-                .col-xs-12.col-sm-10.col-sm-offset-1
-                    .row
-                        for story in stories
-                            .col-xs-12.col-sm-6.col-md-4
-                                .height-500
-                                    a(href=story.linkedin target='_blank')
-                                        img.testimonial-image.img-responsive.img-center(src=story.image)
-                                    h3.text-center= story.camper
-                                        | &nbsp;
-                                        a.fa.fa-linkedin-square.text-primary(alt="#{story.camper}'s LinkedIn Profile", href=story.linkedin, target='_blank')
-                                    p.text-justify= story.quote
-                    .col-xs-12.col-sm-10.col-sm-offset-1
-                            if moreStories
-                                .text-center
-                                    a.btn.btn-lg.btn-primary.btn-primary-ghost.btn-block(href="/all-stories") Show more stories
-                            .spacer
+                for story in stories
+                    .col-xs-12.col-sm-6.col-md-4
+                        .height-500
+                            a(href=story.linkedin target='_blank')
+                                img.testimonial-image.img-responsive.img-center(src=story.image)
+                            h3.text-center= story.camper
+                                | &nbsp;
+                                a.fa.fa-linkedin-square.text-primary(alt="#{story.camper}'s LinkedIn Profile", href=story.linkedin, target='_blank')
+                            p.small-p.text-justify= story.quote
+            .col-xs-12.col-sm-10.col-sm-offset-1
+                    if moreStories
+                        .text-center
+                            a.btn.btn-lg.btn-primary.btn-primary-ghost.btn-block(href="/all-stories") Show more stories
+                    .spacer
 
-                            if !user
-                                .text-center
-                                    a.btn.btn-cta.signup-btn.btn-block(href="/login") Start learning to code (it's free)
-                            .spacer
+                    if !user
+                        .text-center
+                            a.btn.btn-cta.signup-btn.btn-block(href="/login") Start learning to code (it's free)

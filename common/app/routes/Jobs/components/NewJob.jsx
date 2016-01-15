@@ -17,9 +17,7 @@ import {
   Button,
   Col,
   Input,
-  Row,
-  Panel,
-  Well
+  Row
 } from 'react-bootstrap';
 
 import {
@@ -277,7 +275,7 @@ export default contain({
             <Col
               md={ 10 }
               mdOffset={ 1 }>
-              <Panel className='text-center'>
+              <div className='text-center'>
                 <form
                   className='form-horizontal'
                   onSubmit={ this.handleSubmit }>
@@ -292,6 +290,7 @@ export default contain({
                       xsOffset={ 3 }>
                       <Row>
                         <Button
+                          bsStyle='primary'
                           className={ isFrontEndCert ? 'active' : '' }
                           onClick={ () => {
                             if (!isFrontEndCert) {
@@ -310,6 +309,7 @@ export default contain({
                       <div className='button-spacer' />
                       <Row>
                         <Button
+                          bsStyle='primary'
                           className={ isBackEndCert ? 'active' : ''}
                           onClick={ () => {
                             if (!isBackEndCert) {
@@ -330,6 +330,7 @@ export default contain({
                   <div className='spacer'>
                     <h2>Tell us about the position</h2>
                   </div>
+                  <hr />
                   <Input
                     bsStyle={ position.bsStyle }
                     label='Job Title'
@@ -373,6 +374,8 @@ export default contain({
                     type='checkbox'
                     wrapperClassName={ checkboxClass } />
                   <div className='spacer' />
+
+                  <hr />
                   <Row>
                     <div>
                       <h2>How should they apply?</h2>
@@ -391,6 +394,7 @@ export default contain({
                   </Row>
 
                   <div className='spacer' />
+                  <hr />
                   <div>
                     <h2>Tell us about your organization</h2>
                   </div>
@@ -432,7 +436,8 @@ export default contain({
                     wrapperClassName={ inputClass } />
 
                   <div className='spacer' />
-                  <Well>
+                  <hr />
+                  <div>
                     <div>
                       <h2>Make it stand out</h2>
                     </div>
@@ -463,7 +468,7 @@ export default contain({
                           checkboxClass.replace('text-left', '')
                         } />
                     </Row>
-                  </Well>
+                  </div>
 
                   <Row>
                     <Col
@@ -480,7 +485,7 @@ export default contain({
                     </Col>
                   </Row>
                 </form>
-              </Panel>
+              </div>
             </Col>
           </Row>
         </div>

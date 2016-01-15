@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 import { Lifecycle } from 'react-router';
-import { Panel, Button, Row, Col } from 'react-bootstrap';
+import { Button, Row, Col } from 'react-bootstrap';
 import { contain } from 'thundercats-react';
 
 import ShowJob from './ShowJob.jsx';
@@ -51,12 +51,14 @@ export default contain(
       return (
         <div>
           <ShowJob job={ job } />
+          <div className='spacer'></div>
+          <hr />
           <Row>
             <Col
               md={ 10 }
               mdOffset={ 1 }
               xs={ 12 }>
-              <Panel>
+              <div>
                 <Button
                   block={ true }
                   className='signup-btn'
@@ -75,7 +77,7 @@ export default contain(
                   onClick={ () => appActions.goBack() } >
                   Head back and make edits
                 </Button>
-              </Panel>
+              </div>
             </Col>
           </Row>
         </div>

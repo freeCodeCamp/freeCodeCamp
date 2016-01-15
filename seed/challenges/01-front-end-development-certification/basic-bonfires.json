@@ -1,7 +1,8 @@
 {
   "name": "Basic Algorithm Scripting",
   "order": 8,
-  "time": "50h",
+  "time": "50 hours",
+  "helpRoom": "HelpJavaScript",
   "challenges": [
       {
       "id": "bd7158d2c442eddfbeb5bd1f",

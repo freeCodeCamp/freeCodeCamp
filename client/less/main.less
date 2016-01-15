@@ -6,7 +6,6 @@
 
 html,body,div,span,a,li,td,th {
   font-family: 'Lato', sans-serif;
-  font-weight: 300;
 }
 
 bold {
@@ -42,17 +41,21 @@ html {
   overflow-x: hidden;
 }
 
-input[type=checkbox] {
-  /* Double-sized Checkboxes */
-  -ms-transform: scale(2); /* IE */
-  -moz-transform: scale(2); /* FF */
-  -webkit-transform: scale(2); /* Safari and Chrome */
-  -o-transform: scale(2); /* Opera */
-  padding: 10px;
+//input[type=checkbox] {
+//  /* Double-sized Checkboxes */
+//  -ms-transform: scale(2); /* IE */
+//  -moz-transform: scale(2); /* FF */
+//  -webkit-transform: scale(2); /* Safari and Chrome */
+//  -o-transform: scale(2); /* Opera */
+//  padding: 10px;
+//}
+
+.btn-group {
+  border-color: @brand-primary;
 }
 
 body.full-screen-body-background {
-  background-color: @gray-lighter;
+  background-color: @body-bg;
 }
 
 
@@ -69,9 +72,6 @@ h1, h2 {
   font-weight: 400;
 }
 
-.btn {
-  font-weight: 400;
-}
 
 h1, h2, h3, h4, h5, h6, p, li {
   padding-top: 5px;
@@ -113,14 +113,7 @@ h1, h2, h3, h4, h5, h6, p, li {
   font-size: 40px;
 }
 
-.btn, .shadow {
-  white-space: normal;
-  -webkit-box-shadow: 2px 4px 1px rgba(0, 0, 0, 0.3);
-  -moz-box-shadow:    2px 4px 1px rgba(0, 0, 0, 0.3);
-  box-shadow:         2px 4px 1px rgba(0, 0, 0, 0.3);
-}
-
-.btn, .shadow {
+.shadow {
   white-space: normal;
   -webkit-box-shadow: 2px 4px 1px rgba(0, 0, 0, 0.3);
   -moz-box-shadow:    2px 4px 1px rgba(0, 0, 0, 0.3);
@@ -226,6 +219,10 @@ ul {
   font-size: 24px;
 }
 
+.small-p {
+  font-size: 14px;
+}
+
 .map-p {
   font-size: 20px;
 }
@@ -242,7 +239,6 @@ ul {
   @media (min-width: 767px) {
     font-size: 24px;
   }
-
 }
 
 .capitalize {
@@ -250,7 +246,7 @@ ul {
 }
 
 .text-success {
-  color: @brand-success;
+  color: @brand-primary;
 }
 
 .fast-animation {
@@ -287,6 +283,8 @@ ul {
     margin-right: 10px;
     white-space: nowrap;
   }
+  background-color: @brand-primary;
+  text-align: center;
 }
 .navbar {
   white-space: nowrap;
@@ -327,13 +325,25 @@ ul {
 }
 
 .navbar {
-  background-color: #4a2b0f;
+  background-color: @brand-primary;
+}
+
+a {
+  font-weight: bold;
+}
+
+p {
+  font-size: 20px;
+}
+
+.map-aside-body p {
+  line-height: 1.8;
 }
 
 .navbar-nav > li > a {
-  color: @gray-lighter;
+  color: @body-bg;
   &:hover {
-    color: #4a2b0f;
+    color: @brand-primary;
   }
 }
 
@@ -376,12 +386,21 @@ ul {
 }
 
 .btn-big {
+  font-size: 20px;
+  border-radius: 6px;
+}
+
+.btn-bigger {
   font-size: 30px;
 }
 
 .big-text-field {
   font-size: 30px;
   height: 57px;
+}
+
+h4 {
+  font-size: 26px;
 }
 
 .btn-responsive {
@@ -423,26 +442,14 @@ thead {
   }
 }
 
-.signin-button-nav {
-  @media (min-width: 991px) and (max-width: 1010px) {
-    margin-left: -10px;
-    margin-right: -5px;
-  }
-}
-
 .navbar-nav a {
-  color: @gray-lighter;
+  color: @body-bg;
   font-size: 20px;
   margin-top: -5px;
   margin-bottom: -5px;
 }
 .navbar-toggle {
-  color: @gray-lighter;
-}
-
-.navbar-right {
-  background-color: #4a2b0f;
-  text-align: center;
+  color: @body-bg;
 }
 
 .signup-btn-nav {
@@ -450,6 +457,10 @@ thead {
   padding-top: 10px !important;
   padding-bottom: 10px !important;
   margin-right: -12px;
+  @media (min-width: 991px) and (max-width: 1010px) {
+    margin-left: -10px;
+    margin-right: -5px;
+  }
 }
 
 .public-profile-img {
@@ -478,7 +489,7 @@ thead {
 }
 
 .points-on-top {
-  color: @gray-lighter;
+  color: @body-bg;
   font-size: 35px;
   z-index: 2;
   width: 60%;
@@ -490,7 +501,7 @@ thead {
 }
 
 .landing-skill-icon {
-  color: #215f1e;
+  color: @brand-primary;
   font-size: 150px;
 }
 
@@ -567,7 +578,7 @@ thead {
 }
 
 .challenge-list-header {
-  background-color: #215f1e;
+  background-color: @brand-primary;
   color: @gray-lighter;
   font-size: 36px;
   text-align: center;
@@ -586,7 +597,7 @@ thead {
   width: 100%;
   height: 50px;
   text-align: center;
-  background-color: #4a2b0f;
+  background-color: @brand-primary;
   padding: 12px;
   bottom: 0;
   left: 0;
@@ -601,7 +612,7 @@ thead {
     padding-top: 14px;
     padding-bottom: 12px;
     &:hover {
-      color: #4a2b0f;
+      color: @brand-primary;
       background-color: @gray-lighter;
       text-decoration: none;
     }
@@ -727,23 +738,11 @@ iframe.iphone {
   min-height: 650px;
 }
 
-.btn-primary-ghost {
+.btn {
+  font-weight: 400;
+  white-space: normal;
   background: transparent;
-  color: @brand-primary;
 
-  /* CSS Transition */
-  -webkit-transition: background .2s ease-in-out, border .2s ease-in-out;
-  -moz-transition: background .2s ease-in-out, border .2s ease-in-out;
-  -ms-transition: background .2s ease-in-out, border .2s ease-in-out;
-  -o-transition: background .2s ease-in-out, border .2s ease-in-out;
-  transition: background .2s ease-in-out, border .2s ease-in-out;
-}
-
-.btn-warning-ghost {
-  background: transparent;
-  color: @brand-warning;
-
-  /* CSS Transition */
   -webkit-transition: background .2s ease-in-out, border .2s ease-in-out;
   -moz-transition: background .2s ease-in-out, border .2s ease-in-out;
   -ms-transition: background .2s ease-in-out, border .2s ease-in-out;
@@ -926,7 +925,7 @@ hr {
 }
 
 .cal-heatmap-container {
-  background-color: @gray-lighter;
+  background-color: @body-bg;
 }
 
 .interested-camper-image {
@@ -1012,10 +1011,6 @@ code {
   stroke: #121401;
   stroke-width: 2px;
   shape-rendering: crispEdges;
-}
-
-#submitButton {
-  font: normal normal normal 14px/1 FontAwesome !important;
 }
 
 #testSuite > div >.row {
@@ -1139,3 +1134,4 @@ code {
 @import "jobs.less";
 @import "challenge.less";
 @import "toastr.less";
+@import "map.less";

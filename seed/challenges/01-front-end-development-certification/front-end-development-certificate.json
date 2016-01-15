@@ -1,7 +1,7 @@
 {
   "name": "Claim Your Front End Development Certificate",
   "order": 13,
-  "time": "5m",
+  "time": "5 minutes",
   "challenges": [
     {
       "id": "561add10cb82ac38a17513be",
@@ -42,10 +42,6 @@
       "type": "Waypoint",
       "challengeType": 7,
       "tests": [
-        {
-          "id": "ad7123c8c441eddfaeb5bdef",
-          "title": "Meet Bonfire"
-        },
         {
           "id": "a202eed8fc186c8434cb6d61",
           "title": "Reverse a String"

@@ -1,4 +1,3 @@
-import _ from 'lodash';
 import path from 'path';
 import { Observable } from 'rx';
 
@@ -16,16 +15,17 @@ export default function getFromDisk$(challenge) {
   )];
 
   return Observable.just(require(path.join(basePath, challenge.fileName)))
-    .map(challengeSpec => challengeSpec.challenges[challenge.suborder - 1])
+    .map(challengeSpec => {
+      const _challenge = challengeSpec.challenges[challenge.suborder - 1];
+      _challenge.helpRoom = challengeSpec.helpRoom || 'Help';
+      return _challenge;
+    })
     .map(challenge => {
       challenge.head = challenge.head || [];
       challenge.tail = challenge.tail || [];
       challenge.challengeType = '' + challenge.challengeType;
 
-      challenge.name =
-        _.capitalize(challenge.type) +
-        ': ' +
-        challenge.title.replace(/[^a-zA-Z0-9\s]/g, '');
+      challenge.name = challenge.title.replace(/[^a-zA-Z0-9\s]/g, '');
 
       challenge.dashedName = challenge.name
         .toLowerCase()

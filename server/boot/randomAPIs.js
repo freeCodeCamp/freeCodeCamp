@@ -35,8 +35,9 @@ module.exports = function(app) {
   router.get('/labs', showLabs);
   router.get('/stories', showTestimonials);
   router.get('/all-stories', showAllTestimonials);
-  router.get('/about', showAbout);
-  router.get('/terms-and-privacy', termsAndPrivacy);
+  router.get('/terms', terms);
+  router.get('/privacy', privacy);
+  router.get('/code-of-conduct', codeOfConduct);
   router.get(
     '/the-fastest-web-page-on-the-internet',
     theFastestWebPageOnTheInternet
@@ -196,18 +197,23 @@ module.exports = function(app) {
     });
   }
 
-  function showAbout(req, res) {
-    res.render('resources/about', {
-      title: 'About our Open Source Community, our social media presence, ' +
-      'and how to contact us'
-    });
+  function terms(req, res) {
+      res.render('resources/terms-of-service', {
+            title: 'Terms of Service'
+      });
   }
 
-  function termsAndPrivacy(req, res) {
-        res.render('resources/terms-and-privacy', {
-            title: 'Terms of Service, Privacy Policy, and Code of Conduct'
-        });
-    }
+  function privacy(req, res) {
+      res.render('resources/privacy', {
+          title: 'Privacy'
+      });
+  }
+
+  function codeOfConduct(req, res) {
+      res.render('resources/code-of-conduct', {
+          title: 'Code of Conduct'
+      });
+  }
 
   function theFastestWebPageOnTheInternet(req, res) {
     res.render('resources/the-fastest-web-page-on-the-internet', {

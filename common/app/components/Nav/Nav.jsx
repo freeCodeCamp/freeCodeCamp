@@ -11,7 +11,6 @@ import {
 import navLinks from './links.json';
 import FCCNavItem from './NavItem.jsx';
 
-const win = typeof window !== 'undefined' ? window : {};
 const fCClogo = 'https://s3.amazonaws.com/freecodecamp/freecodecamp_logo.svg';
 
 const logoElement = (
@@ -28,16 +27,6 @@ const toggleButtonChild = (
       <span className='hamburger-text'>Menu</span>
     </Col>
 );
-
-function getDashedName() {
-  let challengeDashedName;
-  if (typeof win.localStorage !== 'undefined') {
-    challengeDashedName = win.localStorage.getItem('currentDashedName');
-  }
-  return challengeDashedName && challengeDashedName !== 'undefined' ?
-    challengeDashedName :
-    '';
-}
 
 export default React.createClass({
   displayName: 'Nav',
@@ -76,22 +65,6 @@ export default React.createClass({
     });
   },
 
-  renderLearnBtn() {
-    return (
-      <NavItem
-        href='#'
-        onClick={ () => {
-          const challengeDashedName = getDashedName();
-          const goTo = challengeDashedName ?
-          '/challenges/' + challengeDashedName :
-          '/map';
-          win.location = goTo;
-        }}>
-        Learn
-      </NavItem>
-    );
-  },
-
   renderPoints(username, points) {
     if (!username) {
       return null;
@@ -120,12 +93,11 @@ export default React.createClass({
       );
     } else {
       return (
-        <FCCNavItem
-          className='btn signup-btn signup-btn-nav signin-button-nav'
+        <NavItem
           eventKey={ 2 }
           href='/login'>
           Sign In
-        </FCCNavItem>
+        </NavItem>
       );
     }
   },
@@ -144,7 +116,6 @@ export default React.createClass({
             className='hamburger-dropdown'
             navbar={ true }
             pullRight={ true }>
-            { this.renderLearnBtn() }
             { this.renderLinks() }
             { this.renderPoints(username, points) }
             { this.renderSignin(username, picture) }

@@ -178,6 +178,7 @@ module.exports = function(app) {
           req.flash('errors', {
             msg: `404: We couldn't find path ${ path }`
           });
+          console.log('404');
           return res.redirect('/');
         }
         profileUser = profileUser.toJSON();
@@ -290,7 +291,7 @@ module.exports = function(app) {
         (user) => {
           if (!user) {
             req.flash('errors', {
-              msg: `404: We couldn't find the user with the username ${username}`
+              msg: `We couldn't find the user with the username ${username}`
             });
             return res.redirect('/');
           }

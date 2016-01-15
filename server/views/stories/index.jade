@@ -11,22 +11,22 @@ block content
     script.
         var challengeName = 'Camper News';
         var page = !{JSON.stringify(page)};
-    .panel.panel-info
-        .panel-heading.text-center Camper News
-        .panel-body
-            include news-nav
+    h1.text-center Camper News
+    hr
+    .spacer
+    include news-nav
+    .spacer
+    if (page === 'hot')
+        include hot-stories
+    if (page === 'submit')
+        if (user)
+            include preliminary-submit
+        else
             .spacer
-            if (page === 'hot')
-                include hot-stories
-            if (page === 'submit')
-                if (user)
-                    include preliminary-submit
-                else
-                    .spacer
-                    .text-center
-                        a.btn.btn-cta.signup-btn.btn-primary(href="/login") Sign in to post your story (it's free)
-                    .spacer
-            if (page === 'storySubmission')
-                include submit-story
-            if (page === 'show')
-                include show
+            .text-center
+                a.btn.btn-cta.signup-btn.btn-primary(href="/login") Sign in to post your story (it's free)
+            .spacer
+    if (page === 'storySubmission')
+        include submit-story
+    if (page === 'show')
+        include show

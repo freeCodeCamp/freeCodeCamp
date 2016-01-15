@@ -7,9 +7,9 @@ nav.navbar.navbar-default.navbar-fixed-top.nav-height
             img.img-responsive.nav-logo(src='https://s3.amazonaws.com/freecodecamp/freecodecamp_logo.svg', alt='learn to code javascript at Free Code Camp logo')
     .collapse.navbar-collapse
         ul.nav.navbar-nav.navbar-right.hamburger-dropdown
-            li
-                a.learn-btn(href='#') Learn
-            li
+            li.hidden-xs
+                a#nav-map-btn(href='#' onclick='return false') Map
+            li.visible-xs
                 a(href='/map') Map
             li.hidden-xs
                 a#nav-chat-btn(href='#' onclick="return false") Chat
@@ -24,28 +24,11 @@ nav.navbar.navbar-default.navbar-fixed-top.nav-height
             li
                 a(href='/about') About
             if !user
-                li &thinsp; &thinsp; &thinsp;
                 li
-                    a.btn.signup-btn.signup-btn-nav.signin-button-nav(href='/login') Sign in
+                    a(href='/login') Sign in
             else
                 li.brownie-points-nav
                   a(href='/' + user.username) [&thinsp;#{user.progressTimestamps.length}&thinsp;]
                 .hidden-xs.hidden-sm
                     a(href='/' + user.username)
                         img.profile-picture.float-right(src='#{user.picture}')
-script.
-    $(document).ready(function() {
-        $('.learn-btn').click(function(e) {
-            var challengeDashedName = null;
-            e.preventDefault();
-            if (typeof dashedName === "string") {
-                return location.reload();
-            }
-            if (typeof localStorage !== 'undefined') {
-                challengeDashedName = localStorage.getItem('currentDashedName');
-            }
-            window.location = challengeDashedName ?
-            '/challenges/' + challengeDashedName :
-                    '/map';
-        });
-    });

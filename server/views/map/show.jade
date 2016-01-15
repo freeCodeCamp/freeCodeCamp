@@ -1,0 +1,69 @@
+extends ../layout-wide
+block content
+    .row
+        .col-xs-12.col-md-6.col-md-offset-3
+            for superBlock, index in superBlocks
+                if index > 0
+                    .row
+                        h2.text-center #{superBlock.name}
+                        .text-center.small Requires completion of the below challenges marked with a *
+                        hr
+                for challengeBlock in superBlock.blocks
+                    .row
+                        a(href='#' name=challengeBlock.dashedName)
+                        .spacer.negative-55
+                    .row
+                        h3.bold #{challengeBlock.name} (#{challengeBlock.time})
+                        for challenge in challengeBlock.challenges
+                            .col-xs-12.col-sm-9.col-md-10
+                                if challenge.completed
+                                    p.text-primary.ion-checkmark-circled.padded-ionic-icon.negative-15(name="#{challenge.dashedName}") &nbsp;
+                                        a(href="/challenges/#{challenge.dashedName}" target='_parent')
+                                            = challenge.title
+                                            span.sr-only= " Complete"
+                                else if challenge.isRequired
+                                    p.ion-ios-circle-outline.padded-ionic-icon.negative-15(name="#{challenge.dashedName}") &nbsp;
+                                        a(name="#{challenge.dashedName}" target='_parent' href="/challenges/#{challenge.dashedName}" class=challenge.isComingSoon ? 'disabled' : '')
+                                            span= challenge.title
+                                            span.sr-only= " Incomplete"
+                                        if challenge.markNew
+                                            span.text-success.small &thinsp; &thinsp;
+                                                strong
+                                                    em New
+                                        if challengeBlock.isComingSoon
+                                            span.text-success.small &thinsp; &thinsp;
+                                                strong
+                                                    em Coming Soon
+                                        span.text-primary &thinsp; &thinsp;
+                                            strong *
+                                else
+                                    p.ion-ios-circle-outline.padded-ionic-icon.negative-15(name="#{challenge.dashedName}") &nbsp;
+                                        a(name="#{challenge.dashedName}" target='_parent' href="/challenges/#{challenge.dashedName}" class=challenge.isComingSoon ? 'disabled' : '')
+                                            span= challenge.title
+                                            span.sr-only= " Incomplete"
+                                        if challenge.markNew
+                                            span.text-success.small &thinsp; &thinsp;
+                                                strong
+                                                    em New
+                                        if challengeBlock.isComingSoon
+                                            span.text-success.small &thinsp; &thinsp;
+                                                strong
+                                                    em Coming Soon
+            .row
+                h2.text-center Full Stack Development Certification
+                hr
+                p.ion-locked.padded-ionic-icon.negative-15 &nbsp; Greenfield Nonprofit Project 1
+                p.ion-locked.padded-ionic-icon.negative-15 &nbsp; Greenfield Nonprofit Project 2
+                p.ion-locked.padded-ionic-icon.negative-15 &nbsp; Legacy Nonprofit Project 1
+                p.ion-locked.padded-ionic-icon.negative-15 &nbsp; Legacy Nonprofit Project 2
+                p.ion-locked.padded-ionic-icon.negative-15 &nbsp; Claim your Full Stack Development Certification
+
+            .row
+                h2.text-center Coding Interview Preparation
+                hr
+                p.ion-locked.padded-ionic-icon.negative-15 &nbsp; Whiteboard Coding Interview Training
+                p.ion-locked.padded-ionic-icon.negative-15 &nbsp; Critical Thinking Interview Training
+                p.ion-locked.padded-ionic-icon.negative-15 &nbsp; Mock Interview 1
+                p.ion-locked.padded-ionic-icon.negative-15 &nbsp; Mock Interview 2
+                p.ion-locked.padded-ionic-icon.negative-15 &nbsp; Mock Interview 3
+            .spacer

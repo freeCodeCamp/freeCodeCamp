@@ -6,7 +6,7 @@
     "url": "https://github.com/freecodecamp/freecodecamp.git"
   },
   "scripts": {
-    "only-once": "npm run create-rev && echo '\n\nseeding database\n\n' && node seed && node seed/nonprofits && echo",
+    "only-once": "npm run create-rev && echo '\n\nseeding database\n\n' && node seed && echo '\n\nSeeding Completed\n\n'",
     "create-rev": "node -e \"console.log('\\n\\ncreating manifest\\n\\n'); require('fs').writeFileSync('server/rev-manifest.json', '{}');\"",
     "build": "NODE_ENV=production gulp build -p",
     "start": "babel-node server/server.js",
@@ -14,12 +14,11 @@
     "start-production": "node pm2Start",
     "lint": "npm run lint-js && npm run lint-json",
     "lint-challenges": "jsonlint -q seed/challenges/**/*.json",
-    "lint-nonprofits": "jsonlint -q seed/nonprofits.json",
     "lint-server": "jsonlint -q server/*.json",
     "lint-resources": "jsonlint -q server/resources/*.json",
     "lint-utils": "jsonlint -q server/utils/*.json",
     "lint-js": "eslint --ext=.js,.jsx server/ common/ config/ client/",
-    "lint-json": "npm run lint-server && npm run lint-nonprofits && npm run lint-challenges && npm run lint-resources && npm run lint-utils",
+    "lint-json": "npm run lint-server && npm run && npm run lint-challenges && npm run lint-resources && npm run lint-utils",
     "test-challenges": "babel-node seed/test-challenges.js | tap-spec",
     "pretest": "npm run lint",
     "test": "npm run test-challenges"

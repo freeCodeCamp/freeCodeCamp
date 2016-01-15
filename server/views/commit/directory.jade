@@ -1,15 +1,14 @@
 extends ../layout
 block content
-    .panel.panel-info
-        .panel-heading.text-center Commit to one of these nonprofits
-        .panel-body
-            .row
-                .col-xs-12.col-sm-10.col-sm-offset-1
-                    for nonprofit in nonprofits
-                        .col-xs-12.col-sm-6.col-md-4.height-400
-                            .text-center
-                                h2= nonprofit.displayName
-                                img.testimonial-image.img-responsive.img-center(src=nonprofit.imgUrl)
-                                .button-spacer
-                                a.text-center(href='/commit?nonprofit=#{nonprofit.name}') Commit to #{nonprofit.displayName}
-                                p= nonprofit.description
+        h1.text-center Commit to one of these nonprofits
+        hr
+        .row
+            .col-xs-12.col-sm-10.col-sm-offset-1
+                for nonprofit in nonprofits
+                    .col-xs-12.col-sm-6.col-md-4.height-400
+                        .text-center
+                            h2= nonprofit.displayName
+                            img.testimonial-image.img-responsive.img-center(src=nonprofit.imgUrl)
+                            .button-spacer
+                            a.text-center(href='/commit?nonprofit=#{nonprofit.name}') Commit to #{nonprofit.displayName}
+                            p= nonprofit.description

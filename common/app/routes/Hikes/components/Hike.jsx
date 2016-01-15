@@ -1,10 +1,6 @@
 import React, { PropTypes } from 'react';
 import { contain } from 'thundercats-react';
-import {
-  Col,
-  Panel,
-  Row
-} from 'react-bootstrap';
+import { Col, Row } from 'react-bootstrap';
 
 import Lecture from './Lecture.jsx';
 import Questions from './Questions.jsx';
@@ -46,17 +42,19 @@ export default contain(
         showQuestions
       } = this.props;
 
-      const videoTitle = <h4>{ title }</h4>;
-
       return (
         <Col xs={ 12 }>
           <Row>
-            <Panel
+            <header className='text-center'>
+              <h4>{ title }</h4>
+            </header>
+            <hr />
+            <div className='spacer' />
+            <section
               className={ 'text-center' }
-              header={ videoTitle }
               title={ title }>
               { this.renderBody(showQuestions) }
-            </Panel>
+            </section>
           </Row>
         </Col>
       );

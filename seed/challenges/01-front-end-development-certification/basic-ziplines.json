@@ -1,7 +1,8 @@
 {
   "name": "Basic Front End Development Projects",
   "order": 9,
-  "time": "100h",
+  "time": "100 hours",
+  "helpRoom": "HelpFrontEnd",
   "challenges": [
     {
       "id": "bd7158d8c442eddfbeb5bd1f",
@@ -110,13 +111,13 @@
         "133315782"
       ],
       "description": [
-        "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='http://codepen.io/FreeCodeCamp/full/VemmoX/' target='_blank'>http://codepen.io/FreeCodeCamp/full/VemmoX/</a>.",
-        "<span class='text-info'>Rule #1:</span> Don't look at the example project's code. Figure it out for yourself.",
-        "<span class='text-info'>Rule #2:</span> Fulfill the below <a href='http://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
-        "<span class='text-info'>User Story:</span> I can access all of the portfolio webpage's content just by scrolling.",
-        "<span class='text-info'>User Story:</span> I can click different buttons that will take me to the portfolio creator's different social media pages.",
-        "<span class='text-info'>User Story:</span> I can see thumbnail images of different projects the portfolio creator has built (if you haven't built any websites before, use placeholders.)",
-        "<span class='text-info'>User Story:</span> I navigate to different sections of the webpage by clicking buttons in the navigation.",
+        "<strong>Objective:</strong> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='http://codepen.io/FreeCodeCamp/full/VemmoX/' target='_blank'>http://codepen.io/FreeCodeCamp/full/VemmoX/</a>.",
+        "<strong>Rule #1:</strong> Don't look at the example project's code. Figure it out for yourself.",
+        "<strong>Rule #2:</strong> Fulfill the below <a href='http://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
+        "<strong>User Story:</strong> I can access all of the portfolio webpage's content just by scrolling.",
+        "<strong>User Story:</strong> I can click different buttons that will take me to the portfolio creator's different social media pages.",
+        "<strong>User Story:</strong> I can see thumbnail images of different projects the portfolio creator has built (if you haven't built any websites before, use placeholders.)",
+        "<strong>User Story:</strong> I navigate to different sections of the webpage by clicking buttons in the navigation.",
         "Don't worry if you don't have anything to showcase on your portfolio yet - you will build several apps on the next few CodePen challenges, and can come back and update your portfolio later.",
         "There are many great portfolio templates out there, but for this challenge, you'll need to build a portfolio page yourself. Using Bootstrap will make this much easier for you.",
         "Note that CodePen.io overrides the Window.open() function, so if you want to open windows using jQuery, you will need to target invisible anchor elements like this one: <code>&lt;a target='_blank'&gt;</a></code>.",
@@ -180,11 +181,11 @@
         "126415122"
       ],
       "description": [
-        "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='http://codepen.io/FreeCodeCamp/full/yeVgBY' target='_blank'>http://codepen.io/FreeCodeCamp/full/yeVgBY</a>.",
-        "<span class='text-info'>Rule #1:</span> Don't look at the example project's code. Figure it out for yourself.",
-        "<span class='text-info'>Rule #2:</span> Fulfill the below <a href='http://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
-        "<span class='text-info'>User Story:</span> I can click a button to show me a new random quote.",
-        "<span class='text-info'>User Story:</span> I can press a button to tweet out a quote.",
+        "<strong>Objective:</strong> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='http://codepen.io/FreeCodeCamp/full/yeVgBY' target='_blank'>http://codepen.io/FreeCodeCamp/full/yeVgBY</a>.",
+        "<strong>Rule #1:</strong> Don't look at the example project's code. Figure it out for yourself.",
+        "<strong>Rule #2:</strong> Fulfill the below <a href='http://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
+        "<strong>User Story:</strong> I can click a button to show me a new random quote.",
+        "<strong>User Story:</strong> I can press a button to tweet out a quote.",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck.",
         "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen. ",
         "You can get feedback on your project from fellow campers by sharing it in our <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Code Review Chatroom</a>. You can also share it on Twitter and your city's Campsite (on Facebook)."
@@ -234,12 +235,12 @@
         "126411565"
       ],
       "description": [
-        "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='http://codepen.io/FreeCodeCamp/full/EPNZYW' target='_blank'>http://codepen.io/FreeCodeCamp/full/EPNZYW</a>.",
-        "<span class='text-info'>Rule #1:</span> Don't look at the example project's code. Figure it out for yourself.",
-        "<span class='text-info'>Rule #2:</span> Fulfill the below <a href='http://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
-        "<span class='text-info'>User Story:</span> I can add, subtract, multiply and divide two numbers.",
-        "<span class='text-info'>User Story:</span> I can clear the input field with a clear button.",
-        "<span class='text-info'>User Story:</span> I can keep chaining mathematical operations together until I hit the equal button, and the calculator will tell me the correct output.",
+        "<strong>Objective:</strong> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='http://codepen.io/FreeCodeCamp/full/EPNZYW' target='_blank'>http://codepen.io/FreeCodeCamp/full/EPNZYW</a>.",
+        "<strong>Rule #1:</strong> Don't look at the example project's code. Figure it out for yourself.",
+        "<strong>Rule #2:</strong> Fulfill the below <a href='http://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
+        "<strong>User Story:</strong> I can add, subtract, multiply and divide two numbers.",
+        "<strong>User Story:</strong> I can clear the input field with a clear button.",
+        "<strong>User Story:</strong> I can keep chaining mathematical operations together until I hit the equal button, and the calculator will tell me the correct output.",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck.",
         "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen. ",
         "You can get feedback on your project from fellow campers by sharing it in our <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Code Review Chatroom</a>. You can also share it on Twitter and your city's Campsite (on Facebook)."
@@ -278,12 +279,12 @@
         "126411567"
       ],
       "description": [
-        "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='http://codepen.io/FreeCodeCamp/full/VemPZX' target='_blank'>http://codepen.io/FreeCodeCamp/full/VemPZX</a>.",
-        "<span class='text-info'>Rule #1:</span> Don't look at the example project's code. Figure it out for yourself.",
-        "<span class='text-info'>Rule #2:</span> Fulfill the below <a href='http://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
-        "<span class='text-info'>User Story:</span> I can start a 25 minute pomodoro, and the timer will go off once 25 minutes has elapsed.",
-        "<span class='text-info'>User Story:</span> I can reset the clock for my next pomodoro.",
-        "<span class='text-info'>User Story:</span> I can customize the length of each pomodoro.",
+        "<strong>Objective:</strong> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='http://codepen.io/FreeCodeCamp/full/VemPZX' target='_blank'>http://codepen.io/FreeCodeCamp/full/VemPZX</a>.",
+        "<strong>Rule #1:</strong> Don't look at the example project's code. Figure it out for yourself.",
+        "<strong>Rule #2:</strong> Fulfill the below <a href='http://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
+        "<strong>User Story:</strong> I can start a 25 minute pomodoro, and the timer will go off once 25 minutes has elapsed.",
+        "<strong>User Story:</strong> I can reset the clock for my next pomodoro.",
+        "<strong>User Story:</strong> I can customize the length of each pomodoro.",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck.",
         "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen. ",
         "You can get feedback on your project from fellow campers by sharing it in our <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Code Review Chatroom</a>. You can also share it on Twitter and your city's Campsite (on Facebook)."

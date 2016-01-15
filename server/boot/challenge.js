@@ -31,15 +31,14 @@ const isDev = process.env.NODE_ENV !== 'production';
 const isBeta = !!process.env.BETA;
 const debug = debugFactory('freecc:challenges');
 const challengesRegex = /^(bonfire|waypoint|zipline|basejump|checkpoint)/i;
-const firstChallenge = 'waypoint-learn-how-free-code-camp-works';
 const challengeView = {
-  0: 'coursewares/showHTML',
-  1: 'coursewares/showJS',
-  2: 'coursewares/showVideo',
-  3: 'coursewares/showZiplineOrBasejump',
-  4: 'coursewares/showZiplineOrBasejump',
-  5: 'coursewares/showBonfire',
-  7: 'coursewares/showStep'
+  0: 'challenges/showHTML',
+  1: 'challenges/showJS',
+  2: 'challenges/showVideo',
+  3: 'challenges/showZiplineOrBasejump',
+  4: 'challenges/showZiplineOrBasejump',
+  5: 'challenges/showBonfire',
+  7: 'challenges/showStep'
 };
 
 function isChallengeCompleted(user, challengeId) {
@@ -50,9 +49,11 @@ function isChallengeCompleted(user, challengeId) {
     challenge.id === challengeId );
 }
 
+/*
 function numberWithCommas(x) {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 }
+*/
 
 function updateUserProgress(user, challengeId, completedChallenge) {
   let { completedChallenges } = user;
@@ -116,6 +117,213 @@ function shouldNotFilterComingSoon({ isComingSoon, isBeta: challengeIsBeta }) {
     (isBeta && challengeIsBeta);
 }
 
+function getRenderData$(user, challenge$, origChallengeName, solution) {
+  const challengeName = unDasherize(origChallengeName)
+    .replace(challengesRegex, '');
+
+  const testChallengeName = new RegExp(challengeName, 'i');
+  debug('looking for %s', testChallengeName);
+
+  return challenge$
+    .map(challenge => challenge.toJSON())
+    .filter((challenge) => {
+      return testChallengeName.test(challenge.name) &&
+        shouldNotFilterComingSoon(challenge);
+    })
+    .last({ defaultValue: null })
+    .flatMap(challenge => {
+      if (challenge && isDev) {
+        return getFromDisk$(challenge);
+      }
+      return Observable.just(challenge);
+    })
+    .flatMap(challenge => {
+
+      // Handle not found
+      if (!challenge) {
+        debug('did not find challenge for ' + origChallengeName);
+        return Observable.just({
+          type: 'redirect',
+          redirectUrl: '/map',
+          message: dedent`
+    404: We couldn\'t find a challenge with the name ${origChallengeName}.
+    Please double check the name.
+          `
+        });
+      }
+
+      if (dasherize(challenge.name) !== origChallengeName) {
+        let redirectUrl = `/challenges/${dasherize(challenge.name)}`;
+
+        if (solution) {
+          redirectUrl += `?solution=${encodeURIComponent(solution)}`;
+        }
+
+        return Observable.just({
+          type: 'redirect',
+          redirectUrl
+        });
+      }
+
+      // save user does nothing if user does not exist
+      return Observable.just({
+        data: {
+          ...challenge,
+          // identifies if a challenge is completed
+          isCompleted: isChallengeCompleted(user, challenge.id),
+
+          // video challenges
+          video: challenge.challengeSeed[0],
+
+          // bonfires specific
+          bonfires: challenge,
+          MDNkeys: challenge.MDNlinks,
+          MDNlinks: getMDNLinks(challenge.MDNlinks),
+
+          // htmls specific
+          verb: randomVerb(),
+          phrase: randomPhrase(),
+          compliment: randomCompliment()
+        }
+      });
+    });
+}
+
+function getCompletedChallengeIds(user = {}) {
+  // if user
+  // get the id's of all the users completed challenges
+  return !user.completedChallenges ?
+    [] :
+    _.uniq(user.completedChallenges)
+      .map(({ id, _id }) => id || _id);
+}
+
+// create a stream of an array of all the challenge blocks
+function getSuperBlocks$(challenge$, completedChallenges) {
+  return challenge$
+    // mark challenge completed
+    .map(challengeModel => {
+      const challenge = challengeModel.toJSON();
+      if (completedChallenges.indexOf(challenge.id) !== -1) {
+        challenge.completed = true;
+      }
+      challenge.markNew = shouldShowNew(challenge);
+      return challenge;
+    })
+    // group challenges by block | returns a stream of observables
+    .groupBy(challenge => challenge.block)
+    // turn block group stream into an array
+    .flatMap(block$ => block$.toArray())
+    .map(blockArray => {
+      const completedCount = blockArray.reduce((sum, { completed }) => {
+        if (completed) {
+          return sum + 1;
+        }
+        return sum;
+      }, 0);
+      const isBeta = _.every(blockArray, 'isBeta');
+      const isComingSoon = _.every(blockArray, 'isComingSoon');
+      const isRequired = _.every(blockArray, 'isRequired');
+
+      return {
+        isBeta,
+        isComingSoon,
+        isRequired,
+        name: blockArray[0].block,
+        superBlock: blockArray[0].superBlock,
+        dashedName: dasherize(blockArray[0].block),
+        markNew: shouldShowNew(null, blockArray),
+        challenges: blockArray,
+        completed: completedCount / blockArray.length * 100,
+        time: blockArray[0] && blockArray[0].time || '???'
+      };
+    })
+    // filter out hikes
+    .filter(({ superBlock }) => {
+      return !(/hikes/i).test(superBlock);
+    })
+    // turn stream of blocks into a stream of an array
+    .toArray()
+    .flatMap(blocks => Observable.from(blocks, null, null, Scheduler.default))
+    .groupBy(block => block.superBlock)
+    .flatMap(blocks$ => blocks$.toArray())
+    .map(superBlockArray => ({
+      name: superBlockArray[0].superBlock,
+      blocks: superBlockArray
+    }))
+    .toArray();
+}
+
+function getChallengeById$(challenge$, challengeId) {
+  // return first challenge if no id is given
+  if (!challengeId) {
+    return challenge$
+      .map(challenge => challenge.toJSON())
+      .filter(shouldNotFilterComingSoon)
+      // filter out hikes
+      .filter(({ superBlock }) => !(/hikes/gi).test(superBlock))
+      .first();
+  }
+  return challenge$
+    .map(challenge => challenge.toJSON())
+    // filter out challenges coming soon
+    .filter(shouldNotFilterComingSoon)
+    // filter out hikes
+    .filter(({ superBlock }) => !(/hikes/gi).test(superBlock))
+    .filter(({ id }) => id === challengeId);
+}
+
+function getNextChallenge$(challenge$, blocks$, challengeId) {
+  return getChallengeById$(challenge$, challengeId)
+    // now lets find the block it belongs to
+    .flatMap(challenge => {
+      // find the index of the block this challenge resides in
+      const blockIndex$ = blocks$
+        .findIndex(({ name }) => name === challenge.block);
+
+
+      return blockIndex$
+        .flatMap(blockIndex => {
+          // could not find block?
+          if (blockIndex === -1) {
+            return Observable.throw(
+              'could not find challenge block for ' + challenge.block
+            );
+          }
+          const firstChallengeOfNextBlock$ = blocks$
+            .elementAt(blockIndex + 1, {})
+            .map(({ challenges = [] }) => challenges[0]);
+
+          return blocks$
+            .filter(shouldNotFilterComingSoon)
+            .elementAt(blockIndex)
+            .flatMap(block => {
+              // find where our challenge lies in the block
+              const challengeIndex$ = Observable.from(
+                block.challenges,
+                null,
+                null,
+                Scheduler.default
+              )
+                .findIndex(({ id }) => id === challengeId);
+
+              // grab next challenge in this block
+              return challengeIndex$
+                .map(index => {
+                  return block.challenges[index + 1];
+                })
+                .flatMap(nextChallenge => {
+                  if (!nextChallenge) {
+                    return firstChallengeOfNextBlock$;
+                  }
+                  return Observable.just(nextChallenge);
+                });
+            });
+        });
+    })
+    .first();
+}
+
 module.exports = function(app) {
   const router = app.loopback.Router();
 
@@ -166,9 +374,17 @@ module.exports = function(app) {
     })
     .shareReplay();
 
-  const User = app.models.User;
-  const userCount$ = observeMethod(User, 'count');
+  const firstChallenge$ = challenge$
+    .first()
+    .map(challenge => challenge.toJSON())
+    .shareReplay();
 
+  const lastChallenge$ = challenge$
+    .last()
+    .map(challenge => challenge.toJSON())
+    .shareReplay();
+
+  const User = app.models.User;
   const send200toNonUser = ifNoUserSend(true);
 
   router.post(
@@ -182,191 +398,103 @@ module.exports = function(app) {
     completedZiplineOrBasejump
   );
 
-  router.get('/map', challengeMap);
+  router.get('/map', showMap.bind(null, false));
+  router.get('/map-aside', showMap.bind(null, true));
+  router.get(
+    '/challenges/current-challenge',
+    redirectToCurrentChallenge
+  );
   router.get(
     '/challenges/next-challenge',
-    returnNextChallenge
+    redirectToNextChallenge
   );
 
-  router.get('/challenges/:challengeName', returnIndividualChallenge);
+  router.get('/challenges/:challengeName', showChallenge);
 
   app.use(router);
 
-  function returnNextChallenge(req, res, next) {
-    let nextChallengeName = firstChallenge;
-
-    const challengeId = req.query.id;
-
-    // find challenge
-    return challenge$
-      .map(challenge => challenge.toJSON())
-      // filter out challenges coming soon
-      .filter(shouldNotFilterComingSoon)
-      // filter out hikes
-      .filter(({ superBlock }) => !(/hikes/gi).test(superBlock))
-      .filter(({ id }) => id === challengeId)
-      // now lets find the block it belongs to
-      .flatMap(challenge => {
-        // find the index of the block this challenge resides in
-        const blockIndex$ = blocks$
-          .findIndex(({ name }) => name === challenge.block);
-
-
-        return blockIndex$
-          .flatMap(blockIndex => {
-            // could not find block?
-            if (blockIndex === -1) {
-              return Observable.throw(
-                'could not find challenge block for ' + challenge.block
-              );
-            }
-            const firstChallengeOfNextBlock$ = blocks$
-              .elementAt(blockIndex + 1, {})
-              .map(({ challenges = [] }) => challenges[0]);
-
-            return blocks$
-              .filter(shouldNotFilterComingSoon)
-              .elementAt(blockIndex)
-              .flatMap(block => {
-                // find where our challenge lies in the block
-                const challengeIndex$ = Observable.from(
-                  block.challenges,
-                  null,
-                  null,
-                  Scheduler.default
-                )
-                  .findIndex(({ id }) => id === challengeId);
-
-                // grab next challenge in this block
-                return challengeIndex$
-                  .map(index => {
-                    return block.challenges[index + 1];
-                  })
-                  .flatMap(nextChallenge => {
-                    if (!nextChallenge) {
-                      return firstChallengeOfNextBlock$;
-                    }
-                    return Observable.just(nextChallenge);
-                  });
-              });
+  function redirectToCurrentChallenge(req, res, next) {
+    let challengeId = req.query.id || req.cookies.currentChallengeId;
+    // prevent serialized null/undefined from breaking things
+    if (challengeId === 'undefined' || challengeId === 'null') {
+      challengeId = null;
+    }
+    getChallengeById$(challenge$, challengeId)
+      .doOnNext(({ dashedName })=> {
+        if (!dashedName) {
+          debug('no challenge found for %s', challengeId);
+          req.flash('info', {
+            msg: `We coudn't find a challenge with the id ${challengeId}`
           });
-      })
-      .map(nextChallenge => {
-        if (!nextChallenge) {
-          return null;
+          res.redirect('/map');
         }
-        nextChallengeName = nextChallenge.dashedName;
-        return nextChallengeName;
+        res.redirect('/challenges/' + dashedName);
       })
-      .subscribe(
-        function() {},
-        next,
-        function() {
-          debug('next challengeName', nextChallengeName);
-          if (!nextChallengeName || nextChallengeName === firstChallenge) {
-            req.flash('info', {
-              msg: dedent`
-                Once you have completed all of our challenges, you should
-                join our <a href="https://gitter.im/freecodecamp/HalfWayClub"
-                target="_blank">Half Way Club</a> and start getting
-                ready for our nonprofit projects.
-              `.split('\n').join(' ')
-            });
-            return res.redirect('/map');
-          }
-          res.redirect('/challenges/' + nextChallengeName);
-        }
-      );
+      .subscribe(() => {}, next);
   }
 
-  function returnIndividualChallenge(req, res, next) {
-    const origChallengeName = req.params.challengeName;
-    const solutionCode = req.query.solution;
-    const unDashedName = unDasherize(origChallengeName);
+  function redirectToNextChallenge(req, res, next) {
+    let challengeId = req.query.id || req.cookies.currentChallengeId;
+    if (challengeId === 'undefined' || challengeId === 'null') {
+      challengeId = null;
+    }
 
-    const challengeName = challengesRegex.test(unDashedName) ?
-      // remove first word if matches
-      unDashedName.split(' ').slice(1).join(' ') :
-      unDashedName;
-
-    const testChallengeName = new RegExp(challengeName, 'i');
-    debug('looking for %s', testChallengeName);
-    challenge$
-      .filter((challenge) => {
-        return testChallengeName.test(challenge.name) &&
-          shouldNotFilterComingSoon(challenge);
-      })
-      .last({ defaultValue: null })
-      .flatMap(challenge => {
-        if (challenge && isDev) {
-          return getFromDisk$(challenge);
+    Observable.combineLatest(
+      firstChallenge$,
+      lastChallenge$
+    )
+      .flatMap(([firstChallenge, { id: lastChallengeId } ]) => {
+        // no id supplied, load first challenge
+        if (!challengeId) {
+          return Observable.just(firstChallenge);
         }
-        return Observable.just(challenge);
-      })
-      .flatMap(challenge => {
+        // camper just completed last challenge
+        if (challengeId === lastChallengeId) {
+          return Observable.just()
+            .doOnCompleted(() => {
+              req.flash('info', {
+                msg: dedent`
+                  Once you have completed all of our challenges, you should
+                  join our <a href="https://gitter.im/freecodecamp/HalfWayClub"
+                  target="_blank">Half Way Club</a> and start getting
+                  ready for our nonprofit projects.
+                `.split('\n').join(' ')
+              });
+              return res.redirect('/map');
+            });
+        }
 
-        // Handle not found
-        if (!challenge) {
-          debug('did not find challenge for ' + origChallengeName);
-          req.flash('errors', {
-            msg:
-              '404: We couldn\'t find a challenge with the name `' +
-              origChallengeName +
-              '` Please double check the name.'
+        return getNextChallenge$(challenge$, blocks$, challengeId)
+          .doOnNext(({ dashedName } = {}) => {
+            if (!dashedName) {
+              debug('no challenge found for %s', challengeId);
+              res.redirect('/map');
+            }
+            res.redirect('/challenges/' + dashedName);
           });
-          return Observable.just('/map');
-        }
-
-        if (dasherize(challenge.name) !== origChallengeName) {
-          let redirectUrl = `/challenges/${dasherize(challenge.name)}`;
-
-          if (solutionCode) {
-            redirectUrl += `?solution=${encodeURIComponent(solutionCode)}`;
-          }
-
-          return Observable.just(redirectUrl);
-        }
-
-        // save user does nothing if user does not exist
-        return Observable.just({
-
-          title: challenge.name,
-          name: challenge.name,
-          details: challenge.description,
-          description: challenge.description,
-          challengeId: challenge.id,
-          challengeType: challenge.challengeType,
-          dashedName: origChallengeName,
-
-          challengeSeed: challenge.challengeSeed,
-          head: challenge.head,
-          tail: challenge.tail,
-          tests: challenge.tests,
-
-          // identifies if a challenge is completed
-          isCompleted: isChallengeCompleted(req.user, challenge.id),
-
-          // video challenges
-          video: challenge.challengeSeed[0],
-
-          // bonfires specific
-          bonfires: challenge,
-          MDNkeys: challenge.MDNlinks,
-          MDNlinks: getMDNLinks(challenge.MDNlinks),
-
-          // htmls specific
-          verb: randomVerb(),
-          phrase: randomPhrase(),
-          compliment: randomCompliment()
-        });
       })
+      .subscribe(() => {}, next);
+  }
+
+  function showChallenge(req, res, next) {
+    const solution = req.query.solution;
+
+    getRenderData$(req.user, challenge$, req.params.challengeName, solution)
       .subscribe(
-        function(data) {
-          if (typeof data === 'string') {
-            debug('redirecting to %s', data);
-            return res.redirect(data);
+        ({ type, redirectUrl, message, data }) => {
+          if (message) {
+            req.flash('info', {
+              msg: message
+            });
+          }
+          if (type === 'redirect') {
+            debug('redirecting to %s', redirectUrl);
+            return res.redirect(redirectUrl);
           }
           var view = challengeView[data.challengeType];
+          if (data.id) {
+            res.cookie('currentChallengeId', data.id);
+          }
           res.render(view, data);
         },
         next,
@@ -500,94 +628,15 @@ module.exports = function(app) {
       );
   }
 
-  function challengeMap({ user = {} }, res, next) {
+  function showMap(showAside, { user }, res, next) {
 
-    let lastCompleted;
-    const daysRunning = moment().diff(new Date('10/15/2014'), 'days');
-
-    // if user
-    // get the id's of all the users completed challenges
-    const completedChallenges = !user.completedChallenges ?
-      [] :
-      _.uniq(user.completedChallenges).map(({ id, _id }) => id || _id);
-
-    const camperCount$ = userCount$()
-      .map(camperCount => numberWithCommas(camperCount));
-
-    // create a stream of an array of all the challenge blocks
-    const superBlocks$ = challenge$
-      // mark challenge completed
-      .map(challengeModel => {
-        const challenge = challengeModel.toJSON();
-        if (completedChallenges.indexOf(challenge.id) !== -1) {
-          challenge.completed = true;
-        }
-        challenge.markNew = shouldShowNew(challenge);
-        return challenge;
-      })
-      // group challenges by block | returns a stream of observables
-      .groupBy(challenge => challenge.block)
-      // turn block group stream into an array
-      .flatMap(block$ => block$.toArray())
-      .map(blockArray => {
-        const completedCount = blockArray.reduce((sum, { completed }) => {
-          if (completed) {
-            return sum + 1;
-          }
-          return sum;
-        }, 0);
-        const isBeta = _.every(blockArray, 'isBeta');
-        const isComingSoon = _.every(blockArray, 'isComingSoon');
-
-        return {
-          isBeta,
-          isComingSoon,
-          name: blockArray[0].block,
-          superBlock: blockArray[0].superBlock,
-          dashedName: dasherize(blockArray[0].block),
-          markNew: shouldShowNew(null, blockArray),
-          challenges: blockArray,
-          completed: completedCount / blockArray.length * 100,
-          time: blockArray[0] && blockArray[0].time || '???'
-        };
-      })
-      // filter out hikes
-      .filter(({ superBlock }) => {
-        return !(/hikes/i).test(superBlock);
-      })
-      // turn stream of blocks into a stream of an array
-      .toArray()
-      .doOnNext(blocks => {
-        const lastCompletedBlock = _.findLast(blocks, (block) => {
-          return block.completed === 100;
-        });
-        lastCompleted = lastCompletedBlock && lastCompletedBlock.name || null;
-      })
-      .flatMap(blocks => Observable.from(blocks, null, null, Scheduler.default))
-      .groupBy(block => block.superBlock)
-      .flatMap(blocks$ => blocks$.toArray())
-      .map(superBlockArray => ({
-        name: superBlockArray[0].superBlock,
-        blocks: superBlockArray
-      }))
-      .toArray();
-
-    Observable.combineLatest(
-      camperCount$,
-      superBlocks$,
-      (camperCount, superBlocks) => ({ camperCount, superBlocks })
-    )
+    getSuperBlocks$(challenge$, getCompletedChallengeIds(user))
       .subscribe(
-        ({ camperCount, superBlocks }) => {
-          res.render('challengeMap/show', {
+        superBlocks => {
+          res.render('map/show', {
             superBlocks,
-            daysRunning,
-            globalCompletedCount: numberWithCommas(
-              5612952 + (Math.floor((Date.now() - 1446268581061) / 2000))
-            ),
-            camperCount,
-            lastCompleted,
-            title: 'A Map to Learn to Code and Become a Software Engineer'
+            title: 'A Map to Learn to Code and Become a Software Engineer',
+            showAside
           });
         },
         next
