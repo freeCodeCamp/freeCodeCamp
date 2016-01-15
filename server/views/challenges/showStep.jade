@@ -7,8 +7,10 @@ block content
                         a(href=step[0] data-lightbox='img-enlarge')
                             img.gif-block.img-center.img-responsive(src='#{step[0]}' alt='#{step[1]}')
                         .row
+                            .spacer
                             .col-xs-12.col-sm-10.col-sm-offset-1.col-md-8.col-md-offset-2
                                 p!= step[2]
+                        .spacer
                         .challenge-button-block
                             if step[3]
                                 a.btn.btn-block.btn-primary.challenge-step-btn-action.btn-lg(id='#{index}' href='#{step[3]}' target='_blank') Open link in new tab (this unlocks the next step)
