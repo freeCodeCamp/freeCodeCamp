@@ -264,7 +264,7 @@ $(document).ready(function() {
   $('#nav-map-btn').on('click', () => {
     if (!main.isMapAsideLoad) {
       var mapAside = $('<iframe>');
-      mapAside.attr('src', '/map-minimal');
+      mapAside.attr('src', '/map-aside');
       $('.map-aside').append(mapAside);
       main.isMapAsideLoad = true;
     }

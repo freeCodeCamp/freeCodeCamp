@@ -398,7 +398,7 @@ module.exports = function(app) {
   );
 
   router.get('/map', showMap.bind(null, false));
-  router.get('/map-minimal', showMap.bind(null, true));
+  router.get('/map-aside', showMap.bind(null, true));
   router.get(
     '/challenges/current-challenge',
     redirectToCurrentChallenge
@@ -618,15 +618,15 @@ module.exports = function(app) {
       );
   }
 
-  function showMap(showMinimal, { user }, res, next) {
+  function showMap(showAside, { user }, res, next) {
 
     getSuperBlocks$(challenge$, getCompletedChallengeIds(user))
       .subscribe(
         superBlocks => {
-          res.render('map/show', {
+          const view = showAside ? 'map/showAside' : 'map/show';
+          res.render(view, {
             superBlocks,
-            title: 'A Map to Learn to Code and Become a Software Engineer',
-            showMinimal
+            title: 'A Map to Learn to Code and Become a Software Engineer'
           });
         },
         next
