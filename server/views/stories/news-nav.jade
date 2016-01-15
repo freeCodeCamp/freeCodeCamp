@@ -1,16 +1,16 @@
 .row
     .col-xs-12.col-sm-3
         span
-            a.btn.btn-primary.btn-big.btn-block.btn-responsive(href='/stories/submit' class="#{ page === 'hot' ? '' : 'hidden' }") Submit a link
+            a.btn.btn-primary.btn-bigger.btn-block.btn-responsive(href='/stories/submit' class="#{ page === 'hot' ? '' : 'hidden' }") Submit a link
         span
-            a.btn.btn-success.btn-big.btn-block.btn-responsive(href='/news/' class="#{ (page !== 'hot') ? '' : 'hidden' }") All
+            a.btn.btn-success.btn-bigger.btn-block.btn-responsive(href='/news/' class="#{ (page !== 'hot') ? '' : 'hidden' }") All
         .visible-xs
             .button-spacer
     .col-xs-12.col-sm-9
         .input-group
             input#searchArea.big-text-field.field-responsive.form-control(type='text', placeholder='Search our links')
             span.input-group-btn
-                button#searchbutton.btn.btn-big.btn-primary.btn-responsive(type='button') Search
+                button#searchbutton.btn.btn-bigger.btn-primary.btn-responsive(type='button') Search
         .spacer
 
 #search-results
