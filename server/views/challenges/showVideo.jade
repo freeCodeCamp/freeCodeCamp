@@ -24,12 +24,8 @@ block content
                     var userLoggedIn = true;
             .button-spacer
             .btn-group.input-group.btn-group-justified
-                .btn.btn-success.btn-big#challenge-help-btn
-                    i.fa.fa-medkit
-                        | &nbsp; Get help
-                .btn.btn-success.btn-big#trigger-issue-modal
-                    i.fa.fa-bug
-                        | &nbsp; Report a bug
+                .btn.btn-success.btn-big#challenge-help-btn Get help
+                .btn.btn-success.btn-big#trigger-issue-modal Report a bug
             if (!user)
                 .button-spacer
                 a.btn.btn-big.signup-btn.btn-block(href='/login') Sign in so you can save your progress

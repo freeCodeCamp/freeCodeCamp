@@ -10,34 +10,25 @@ block content
                 .innerMarginFix(style = "width: 99%;")
                     .row
                         .col-xs-12
-                            h3.text-center.negative-10= name
+                            h3.text-center= name
                                 if (isCompleted)
                                     | &nbsp;
                                     i.ion-checkmark-circled.text-primary(title="Completed")
                             hr
                             .bonfire-instructions
                                 for sentence in description
-                                    p.wrappable.negative-10!= sentence
+                                    p.wrappable!= sentence
                                 .negative-bottom-margin-30
                     .button-spacer
-                    label.negative-10.btn.btn-primary.btn-lg.btn-block#submitButton
-                        i.fa.fa-play
-                            | &nbsp; Run tests (ctrl + enter)
+                    .btn-big.btn.btn-primary.btn-block#submitButton
+                        | Run tests (ctrl + enter)
                     .button-spacer
                     .btn-group.input-group.btn-group-justified
-                        label.btn.btn-primary.btn-primary-ghost#trigger-reset-modal
-                            i.fa.fa-refresh
-                                | &nbsp; Reset
+                        label.btn.btn-primary.btn-primary-ghost.btn-lg#trigger-reset-modal Reset
                         label.btn.btn-primary.btn-primary-ghost.hidden-sm.hidden-md.hidden-lg
-                            a(href='//gitter.im/freecodecamp/help')
-                                i.fa.fa-medkit
-                                    | &nbsp; Help
-                        label.btn.btn-primary.btn-primary-ghost.hidden-xs#challenge-help-btn
-                            i.fa.fa-medkit
-                                | &nbsp; Help
-                        label.btn.btn-primary.btn-primary-ghost#trigger-issue-modal
-                            i.fa.fa-bug
-                                | &nbsp; Bug
+                            a(href='//gitter.im/freecodecamp/help') Help
+                        label.btn.btn-primary.btn-primary-ghost.hidden-xs.btn-lg#challenge-help-btn Help
+                        label.btn.btn-primary.btn-primary-ghost.btn-lg#trigger-issue-modal Bug
                     script.
                         var userLoggedIn = true;
                     if (!user)

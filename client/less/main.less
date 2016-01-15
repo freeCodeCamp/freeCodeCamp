@@ -6,7 +6,6 @@
 
 html,body,div,span,a,li,td,th {
   font-family: 'Lato', sans-serif;
-  font-weight: 300;
 }
 
 bold {
@@ -246,7 +245,7 @@ ul {
 }
 
 .text-success {
-  color: @brand-success;
+  color: @brand-primary;
 }
 
 .fast-animation {
@@ -328,6 +327,18 @@ ul {
   background-color: @brand-primary;
 }
 
+a {
+  font-weight: bold;
+}
+
+p {
+  font-size: 20px;
+}
+
+.map-aside-body p {
+  line-height: 1.8;
+}
+
 .navbar-nav > li > a {
   color: @body-bg;
   &:hover {
@@ -375,11 +386,16 @@ ul {
 
 .btn-big {
   font-size: 30px;
+  border-radius: 6px;
 }
 
 .big-text-field {
   font-size: 30px;
   height: 57px;
+}
+
+h4 {
+  font-size: 26px;
 }
 
 .btn-responsive {
@@ -993,10 +1009,6 @@ code {
   stroke: #121401;
   stroke-width: 2px;
   shape-rendering: crispEdges;
-}
-
-#submitButton {
-  font: normal normal normal 14px/1 FontAwesome !important;
 }
 
 #testSuite > div >.row {

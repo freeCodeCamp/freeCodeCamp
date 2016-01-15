@@ -433,7 +433,7 @@ module.exports = function(app) {
 
     Observable.combineLatest(
       firstChallenge$,
-      lastChallenge$,
+      lastChallenge$
     )
       .flatMap(([firstChallenge, { id: lastChallengeId } ]) => {
         // no id supplied, load first challenge
@@ -623,10 +623,10 @@ module.exports = function(app) {
     getSuperBlocks$(challenge$, getCompletedChallengeIds(user))
       .subscribe(
         superBlocks => {
-          const view = showAside ? 'map/showAside' : 'map/show';
-          res.render(view, {
+          res.render('map/show', {
             superBlocks,
-            title: 'A Map to Learn to Code and Become a Software Engineer'
+            title: 'A Map to Learn to Code and Become a Software Engineer',
+            showAside
           });
         },
         next

@@ -177,63 +177,56 @@ block content
                                           a(href='/challenges/' + challenge.name + '?solution=' + encodeURIComponent(encodeFcc(challenge.solution)), target='_blank')= challenge.name
                                       else
                                           a(href='/challenges/' + challenge.name)= challenge.name
-    if (user && user.username === username)
-        .panel.panel-info
-            .panel-heading.text-center Manage your account
-            .panel-body
+
+        if (user && user.username === username)
+            h1.text-center Manage your account
+            hr
+            .col-xs-12
+                a.btn.btn-lg.btn-block.btn-primary.btn-link-social(href='/logout')
+                    | Sign me out of Free Code Camp
+            .col-xs-12
+                a.btn.btn-lg.btn-block.btn-primary.btn-link-social(href='mailto:team@freecodecamp.com')
+                    | Email us at team@freecodecamp.com
+            if (!user.isLocked)
                 .col-xs-12
-                    a.btn.btn-lg.btn-block.btn-warning.btn-link-social(href='/logout')
-                        span.ion-android-exit
-                        | Sign me out of Free Code Camp
+                    a.btn.btn-lg.btn-block.btn-primary.btn-link-social(href='/toggle-lockdown-mode')
+                        | Hide all my solutions from other people
+                        br
+                        | (this will disable your certificates)
+            else
                 .col-xs-12
-                    a.btn.btn-lg.btn-block.btn-primary.btn-link-social(href='mailto:team@freecodecamp.com')
-                        span.ion-email
-                        | Email us at team@freecodecamp.com
-                if (!user.isLocked)
-                    .col-xs-12
-                        a.btn.btn-lg.btn-block.btn-info.btn-link-social(href='/toggle-lockdown-mode')
-                            span.ion-locked
-                            | Hide all my solutions from other people
-                            br
-                            | (this will disable your certificates)
-                else
-                    .col-xs-12
-                        a.btn.btn-lg.btn-block.btn-info.btn-link-social(href='/toggle-lockdown-mode')
-                            span.ion-unlocked
-                            | Let other people see all my solutions
-                            br
-                            | (this will enable your certificates)
-                .col-xs-12
-                    a.btn.btn-lg.btn-block.btn-success.btn-link-social(href='/commit')
-                        span.ion-edit
-                        | Edit my pledge
-                .col-xs-12
-                    a.btn.btn-lg.btn-block.btn-danger.btn-link-social.confirm-deletion
-                        span.ion-trash-b
-                        | Delete my Free Code Camp account
-                    script.
-                        $('.confirm-deletion').on("click", function () {
-                            $('#modal-dialog').modal('show');
-                        });
-                #modal-dialog.modal.animated.wobble
-                    .modal-dialog
-                        .modal-content
-                            .modal-header
-                                a.close(href='#', data-dismiss='modal', aria-hidden='true') ×
-                                h3 You don't really want to delete your account, do you?
-                            .modal-body
-                                p This will really delete all your data, including all your progress, news stories and brownie points.
-                                p We won't be able to recover any of it for you later, even if you change your mind.
-                                p If there's something we could do better, send us an email instead and we'll do our best: &thinsp;
-                                    a(href="mailto:team@freecodecamp.com") team@freecodecamp.com
-                                    | .
-                            .modal-footer
-                                a.btn.btn-success.btn-block(href='#', data-dismiss='modal', aria-hidden='true')
-                                    span.ion-happy
-                                    | Nevermind, I don't want to delete all of my progress
-                                .spacer
-                                form(action='/account/delete', method='POST')
-                                    input(type='hidden', name='_csrf', value=_csrf)
-                                    button.btn.btn-danger.btn-block(type='submit')
-                                        span.ion-trash-b
-                                        | I am 100% sure I want to delete my account and all of my progress
+                    a.btn.btn-lg.btn-block.btn-primary.btn-link-social(href='/toggle-lockdown-mode')
+                        | Let other people see all my solutions
+                        br
+                        | (this will enable your certificates)
+            .col-xs-12
+                a.btn.btn-lg.btn-block.btn-primary.btn-link-social(href='/commit')
+                    | Edit my pledge
+            .col-xs-12
+                a.btn.btn-lg.btn-block.btn-danger.btn-link-social.confirm-deletion
+                    | Delete my Free Code Camp account
+                script.
+                    $('.confirm-deletion').on("click", function () {
+                        $('#modal-dialog').modal('show');
+                    });
+            #modal-dialog.modal.animated.wobble
+                .modal-dialog
+                    .modal-content
+                        .modal-header
+                            a.close(href='#', data-dismiss='modal', aria-hidden='true') ×
+                            h3 You don't really want to delete your account, do you?
+                        .modal-body
+                            p This will really delete all your data, including all your progress, news stories and brownie points.
+                            p We won't be able to recover any of it for you later, even if you change your mind.
+                            p If there's something we could do better, send us an email instead and we'll do our best: &thinsp;
+                                a(href="mailto:team@freecodecamp.com") team@freecodecamp.com
+                                | .
+                        .modal-footer
+                            a.btn.btn-success.btn-block(href='#', data-dismiss='modal', aria-hidden='true')
+                                | Nevermind, I don't want to delete all of my progress
+                            .spacer
+                            form(action='/account/delete', method='POST')
+                                input(type='hidden', name='_csrf', value=_csrf)
+                                button.btn.btn-danger.btn-block(type='submit')
+                                    | I am 100% sure I want to delete my account and all of my progress
+>>>>>>> refactor map view and make buttons and text bigger
