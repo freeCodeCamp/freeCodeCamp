@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import { Well, Row, Col, Thumbnail, Panel } from 'react-bootstrap';
+import { Row, Col, Thumbnail } from 'react-bootstrap';
 import urlRegexFactory from 'url-regex';
 
 const urlRegex = urlRegexFactory();
@@ -56,17 +56,18 @@ export default React.createClass({
 
     return (
         <Row>
+          <hr />
           <Col
             md={ 6 }
             mdOffset={ 3 }>
-            <Well>
+            <div>
               <bold>{ preview ? 'How do I apply?' : message }</bold>
               <br />
               <br />
               <span dangerouslySetInnerHTML={{
                 __html: addATags(howToApply)
               }} />
-            </Well>
+            </div>
           </Col>
         </Row>
     );
@@ -98,7 +99,7 @@ export default React.createClass({
             md={ 10 }
             mdOffset={ 1 }
             xs={ 12 }>
-            <Panel>
+            <div>
               <Row>
                 <h2 className='text-center'>
                   { company }
@@ -123,6 +124,7 @@ export default React.createClass({
                   { locale ? locale : `${city}, ${state}` }
                 </Col>
               </Row>
+              <hr />
               <div className='spacer' />
               <Row>
                 <Col
@@ -134,7 +136,7 @@ export default React.createClass({
                 </Col>
               </Row>
               { this.renderHowToApply(showApply, preview, message, howToApply) }
-            </Panel>
+            </div>
           </Col>
         </Row>
       </div>
