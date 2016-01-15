@@ -164,6 +164,7 @@ function getRenderData$(user, challenge$, origChallengeName, solution) {
         });
       }
 
+      console.log(challenge.helpRoom);
       // save user does nothing if user does not exist
       return Observable.just({
         data: {
@@ -485,6 +486,7 @@ module.exports = function(app) {
           }
           var view = challengeView[data.challengeType];
           res.cookie('currentChallengeId', data.id);
+          console.log(data.helpRoom);
           res.render(view, data);
         },
         next,

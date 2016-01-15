@@ -91,11 +91,9 @@ block content
 
     include ../partials/challenge-footer
     script.
-      document.addEventListener('gitter-sidecar-ready', function(e) {
-        if (window.main) {
-          window.main.chat.createHelpChat('freecodecamp/help', '#challenge-help-btn');
-        }
-      });
+      if (!!{JSON.stringify(MDNlinks.length)}) {
+          $('#MDN-links').addClass('collapse');
+      }
 
       common.init.push(function() {
         common.editor.setOption('mode', 'javascript');

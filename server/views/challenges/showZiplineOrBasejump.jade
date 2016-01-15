@@ -106,25 +106,4 @@ block content
           $('#complete-zipline-or-basejump-dialog').modal('show');
         });
       });
-
-
-
-      document.addEventListener('gitter-sidecar-ready', function(e) {
-        var room = 'freecodecamp/help';
-        var title;
-
-        if (common.challengeType === '4') {
-          room = 'freecodecamp/helpBasejumps';
-          title = 'Basejump Help';
-        }
-
-        if (common.challengeType === '3') {
-          room = 'freecodecamp/helpZiplines';
-          title = 'Zipline Help';
-        }
-
-        if (window.main) {
-          window.main.chat.createHelpChat(room, '#challenge-help-btn', title);
-        }
-      });
     include ../partials/challenge-footer

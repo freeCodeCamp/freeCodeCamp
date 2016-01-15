@@ -99,8 +99,6 @@ block content
 
     include ../partials/challenge-footer
     script.
-      document.addEventListener('gitter-sidecar-ready', function(e) {
-        if (window.main) {
-          window.main.chat.createHelpChat('freecodecamp/helpbonfires', '#challenge-help-btn', 'Bonfires Help');
-        }
-      });
+      if (!!{JSON.stringify(MDNlinks.length)}) {
+          $('#MDN-links').addClass('collapse');
+      }

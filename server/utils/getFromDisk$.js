@@ -15,7 +15,11 @@ export default function getFromDisk$(challenge) {
   )];
 
   return Observable.just(require(path.join(basePath, challenge.fileName)))
-    .map(challengeSpec => challengeSpec.challenges[challenge.suborder - 1])
+    .map(challengeSpec => {
+      const _challenge = challengeSpec.challenges[challenge.suborder - 1];
+      _challenge.helpRoom = challengeSpec.helpRoom || 'Help';
+      return _challenge;
+    })
     .map(challenge => {
       challenge.head = challenge.head || [];
       challenge.tail = challenge.tail || [];

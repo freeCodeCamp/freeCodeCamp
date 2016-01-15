@@ -22,14 +22,17 @@ main = (function(main) {
     main.chat.GitterChat = e.detail.Chat;
 
     main.chat.createHelpChat = function(room, helpChatBtnClass, roomTitle) {
-      roomTitle = roomTitle || 'Waypoint Help';
+      // room is always in PascalCase
+      roomTitle = room
+        .replace(/([A-Z])/g, ' $1')
+        .replace('Java Script', 'JavaScript');
 
       $('body').append(
         '<aside id="chat-embed-help" class="gitter-chat-embed is-collapsed" />'
       );
 
       main.chat.helpChat = new main.chat.GitterChat({
-        room: room,
+        room: `freecodecamp/${room}`,
         activationElement: false,
         targetElement: $('#chat-embed-help')
       });
