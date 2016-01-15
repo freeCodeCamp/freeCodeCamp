@@ -1,7 +1,7 @@
 {
   "name": "Data Visualization Projects",
   "order": 17,
-  "time": "200h",
+  "time": "200 hours",
   "helpRoom": "HelpDataViz",
   "challenges": [
     {
@@ -11,13 +11,13 @@
         "150324699"
       ],
       "description": [
-        "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='http://codepen.io/FreeCodeCamp/full/adBBWd' target='_blank'>http://codepen.io/FreeCodeCamp/full/adBBWd</a>.",
-        "<span class='text-info'>Rule #1:</span> Don't look at the example project's code. Figure it out for yourself.",
-        "<span class='text-info'>Rule #2:</span> Fulfill the below <a href='http://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
-        "<span class='text-info'>Rule #3:</span> You must use D3.js to build this project.",
-        "<span class='text-info'>User Story:</span> I can see US Gross Domestic Product by quarter, over time.",
-        "<span class='text-info'>User Story:</span> I can mouse over a bar and see a tooltip with the GDP amount and exact year and month that bar represents.",
-        "<span class='text-info'>Hint:</span> Here's a dataset you can use to build this: <a href='https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/master/GDP-data.json' target='_blank'>https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/master/GDP-data.json</a>",
+        "<strong>Objective:</strong> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='http://codepen.io/FreeCodeCamp/full/adBBWd' target='_blank'>http://codepen.io/FreeCodeCamp/full/adBBWd</a>.",
+        "<strong>Rule #1:</strong> Don't look at the example project's code. Figure it out for yourself.",
+        "<strong>Rule #2:</strong> Fulfill the below <a href='http://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
+        "<strong>Rule #3:</strong> You must use D3.js to build this project.",
+        "<strong>User Story:</strong> I can see US Gross Domestic Product by quarter, over time.",
+        "<strong>User Story:</strong> I can mouse over a bar and see a tooltip with the GDP amount and exact year and month that bar represents.",
+        "<strong>Hint:</strong> Here's a dataset you can use to build this: <a href='https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/master/GDP-data.json' target='_blank'>https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/master/GDP-data.json</a>",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck.",
         "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen. ",
         "You can get feedback on your project from fellow campers by sharing it in our <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Code Review Chatroom</a>. You can also share it on Twitter and your city's Campsite (on Facebook)."
@@ -45,13 +45,13 @@
         "150324700"
       ],
       "description": [
-        "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='http://codepen.io/FreeCodeCamp/full/GoNNEy' target='_blank'>http://codepen.io/FreeCodeCamp/full/GoNNEy</a>.",
-        "<span class='text-info'>Rule #1:</span> Don't look at the example project's code. Figure it out for yourself.",
-        "<span class='text-info'>Rule #2:</span> Fulfill the below <a href='http://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
-        "<span class='text-info'>Rule #3:</span> You must use D3.js to build this project.",
-        "<span class='text-info'>User Story:</span> I can see performance time visualized in a scatterplot graph.",
-        "<span class='text-info'>User Story:</span> I can mouse over a plot to see a tooltip with additional details.",
-        "<span class='text-info'>Hint:</span> Here's a dataset you can use to build this: <a href='https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/master/cyclist-data.json' target='_blank'>https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/master/cyclist-data.json</a>",
+        "<strong>Objective:</strong> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='http://codepen.io/FreeCodeCamp/full/GoNNEy' target='_blank'>http://codepen.io/FreeCodeCamp/full/GoNNEy</a>.",
+        "<strong>Rule #1:</strong> Don't look at the example project's code. Figure it out for yourself.",
+        "<strong>Rule #2:</strong> Fulfill the below <a href='http://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
+        "<strong>Rule #3:</strong> You must use D3.js to build this project.",
+        "<strong>User Story:</strong> I can see performance time visualized in a scatterplot graph.",
+        "<strong>User Story:</strong> I can mouse over a plot to see a tooltip with additional details.",
+        "<strong>Hint:</strong> Here's a dataset you can use to build this: <a href='https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/master/cyclist-data.json' target='_blank'>https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/master/cyclist-data.json</a>",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck.",
         "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen. ",
         "You can get feedback on your project from fellow campers by sharing it in our <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Code Review Chatroom</a>. You can also share it on Twitter and your city's Campsite (on Facebook)."
@@ -79,14 +79,14 @@
         "150324701"
       ],
       "description": [
-        "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='http://codepen.io/FreeCodeCamp/full/rxWWGa' target='_blank'>http://codepen.io/FreeCodeCamp/full/rxWWGa</a>.",
-        "<span class='text-info'>Rule #1:</span> Don't look at the example project's code. Figure it out for yourself.",
-        "<span class='text-info'>Rule #2:</span> Fulfill the below <a href='http://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
-        "<span class='text-info'>Rule #3:</span> You must use D3.js to build this project.",
-        "<span class='text-info'>User Story:</span> I can view a heat map with data represented both on the Y and X axis.",
-        "<span class='text-info'>User Story:</span> Each cell is colored based its relationship to other data.",
-        "<span class='text-info'>User Story:</span> I can mouse over a cell in the heat map to get more exact information.",
-        "<span class='text-info'>Hint:</span> Here's a dataset you can use to build this: <a href='https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/master/global-temperature.json' target='_blank'>https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/master/global-temperature.json</a>",
+        "<strong>Objective:</strong> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='http://codepen.io/FreeCodeCamp/full/rxWWGa' target='_blank'>http://codepen.io/FreeCodeCamp/full/rxWWGa</a>.",
+        "<strong>Rule #1:</strong> Don't look at the example project's code. Figure it out for yourself.",
+        "<strong>Rule #2:</strong> Fulfill the below <a href='http://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
+        "<strong>Rule #3:</strong> You must use D3.js to build this project.",
+        "<strong>User Story:</strong> I can view a heat map with data represented both on the Y and X axis.",
+        "<strong>User Story:</strong> Each cell is colored based its relationship to other data.",
+        "<strong>User Story:</strong> I can mouse over a cell in the heat map to get more exact information.",
+        "<strong>Hint:</strong> Here's a dataset you can use to build this: <a href='https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/master/global-temperature.json' target='_blank'>https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/master/global-temperature.json</a>",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck.",
         "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen. ",
         "You can get feedback on your project from fellow campers by sharing it in our <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Code Review Chatroom</a>. You can also share it on Twitter and your city's Campsite (on Facebook)."
@@ -114,16 +114,16 @@
         "150324458"
       ],
       "description": [
-        "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='http://codepen.io/FreeCodeCamp/full/KVNNXY' target='_blank'>http://codepen.io/FreeCodeCamp/full/KVNNXY</a>.",
-        "<span class='text-info'>Rule #1:</span> Don't look at the example project's code. Figure it out for yourself.",
-        "<span class='text-info'>Rule #2:</span> Fulfill the below <a href='http://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
-        "<span class='text-info'>Rule #3:</span> You must use D3.js to build this project.",
-        "<span class='text-info'>User Story:</span> I can see a Force-directed Graph that shows which campers are posting links on Camper News to which domains.",
-        "<span class='text-info'>User Story:</span> I can see each camper's icon on their node.",
-        "<span class='text-info'>User Story:</span> I can see the relationship between the campers and the domains they're posting.",
-        "<span class='text-info'>User Story:</span> I can tell approximately many times campers have linked to a specific domain from it's node size.",
-        "<span class='text-info'>User Story:</span> I can tell approximately how many times a specific camper has posted a link from their node's size.",
-        "<span class='text-info'>Hint:</span> Here's the Camper News Hot Stories API endpoint: <code>http://www.freecodecamp.com/news/hot</code>.",
+        "<strong>Objective:</strong> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='http://codepen.io/FreeCodeCamp/full/KVNNXY' target='_blank'>http://codepen.io/FreeCodeCamp/full/KVNNXY</a>.",
+        "<strong>Rule #1:</strong> Don't look at the example project's code. Figure it out for yourself.",
+        "<strong>Rule #2:</strong> Fulfill the below <a href='http://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
+        "<strong>Rule #3:</strong> You must use D3.js to build this project.",
+        "<strong>User Story:</strong> I can see a Force-directed Graph that shows which campers are posting links on Camper News to which domains.",
+        "<strong>User Story:</strong> I can see each camper's icon on their node.",
+        "<strong>User Story:</strong> I can see the relationship between the campers and the domains they're posting.",
+        "<strong>User Story:</strong> I can tell approximately many times campers have linked to a specific domain from it's node size.",
+        "<strong>User Story:</strong> I can tell approximately how many times a specific camper has posted a link from their node's size.",
+        "<strong>Hint:</strong> Here's the Camper News Hot Stories API endpoint: <code>http://www.freecodecamp.com/news/hot</code>.",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck.",
         "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen. ",
         "You can get feedback on your project from fellow campers by sharing it in our <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Code Review Chatroom</a>. You can also share it on Twitter and your city's Campsite (on Facebook)."
@@ -151,14 +151,14 @@
         "150324698"
       ],
       "description": [
-        "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='http://codepen.io/FreeCodeCamp/full/mVEJag' target='_blank'>http://codepen.io/FreeCodeCamp/full/mVEJag</a>.",
-        "<span class='text-info'>Rule #1:</span> Don't look at the example project's code. Figure it out for yourself.",
-        "<span class='text-info'>Rule #2:</span> Fulfill the below <a href='http://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
-        "<span class='text-info'>Rule #3:</span> You must use D3.js to build this project.",
-        "<span class='text-info'>User Story:</span> I can see where all Meteorites landed on a world map.",
-        "<span class='text-info'>User Story:</span> I can tell the relative size of the meteorite, just by looking at the way it's represented on the map.",
-        "<span class='text-info'>User Story:</span> I can mouse over the meteorite's data point for additional data.",
-        "<span class='text-info'>Hint:</span> Here's a dataset you can use to build this: <a href='https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/master/meteorite-strike-data.json' target='_blank'>https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/master/meteorite-strike-data.json</a>",
+        "<strong>Objective:</strong> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='http://codepen.io/FreeCodeCamp/full/mVEJag' target='_blank'>http://codepen.io/FreeCodeCamp/full/mVEJag</a>.",
+        "<strong>Rule #1:</strong> Don't look at the example project's code. Figure it out for yourself.",
+        "<strong>Rule #2:</strong> Fulfill the below <a href='http://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
+        "<strong>Rule #3:</strong> You must use D3.js to build this project.",
+        "<strong>User Story:</strong> I can see where all Meteorites landed on a world map.",
+        "<strong>User Story:</strong> I can tell the relative size of the meteorite, just by looking at the way it's represented on the map.",
+        "<strong>User Story:</strong> I can mouse over the meteorite's data point for additional data.",
+        "<strong>Hint:</strong> Here's a dataset you can use to build this: <a href='https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/master/meteorite-strike-data.json' target='_blank'>https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/master/meteorite-strike-data.json</a>",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck.",
         "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen. ",
         "You can get feedback on your project from fellow campers by sharing it in our <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Code Review Chatroom</a>. You can also share it on Twitter and your city's Campsite (on Facebook)."
