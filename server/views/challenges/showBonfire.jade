@@ -9,7 +9,7 @@ block content
             .scroll-locker(id = "scroll-locker")
               .innerMarginFix(style=' width: 99%')
                 #testCreatePanel
-                    h3.text-center.negative-10= name
+                    h4.text-center= name
                       if (isCompleted)
                           | &nbsp;
                           i.ion-checkmark-circled.text-primary(title="Completed")
@@ -21,24 +21,23 @@ block content
                                     if (/blockquote|h4|table/.test(sentence))
                                         !=sentence
                                     else
-                                        p.wrappable.negative-10!= sentence
+                                        p.wrappable!= sentence
                             if (MDNlinks.length)
                                 #MDN-links
-                                    p.negative-10 Here are some helpful links:
+                                    p Here are some helpful links:
                                     for link, index in MDNlinks
-                                        .negative-10
-                                            ul: li: a(href=""+link, target="_blank") !{MDNkeys[index]}
+                                        ul: li: a(href=""+link, target="_blank") !{MDNkeys[index]}
                             .button-spacer
                 if (user)
-                label.negative-10.btn.btn-primary.btn-block.btn-lg#submitButton
+                label.btn.btn-primary.btn-block.btn-lg#submitButton
                         | Run tests (ctrl + enter)
                 .button-spacer
                 .btn-group.input-group.btn-group-justified
-                    label.btn.btn-primary.btn-primary-ghost#trigger-reset-modal
+                    label.btn.btn-primary.btn-primary-ghost.btn-lg#trigger-reset-modal
                             | &nbsp; Reset
-                    label.btn.btn-primary.btn-primary-ghost#challenge-help-btn
+                    label.btn.btn-primary.btn-primary-ghost.btn-lg#challenge-help-btn
                             | &nbsp; Help
-                    label.btn.btn-primary.btn-primary-ghost#trigger-issue-modal
+                    label.btn.btn-primary.btn-primary-ghost.btn-lg#trigger-issue-modal
                             | &nbsp; Bug
                 if (!user)
                     .button-spacer
@@ -50,7 +49,7 @@ block content
                     .form-group.codeMirrorView
                         textarea#codeOutput(style='display: none;')
                 br
-                #testSuite.negative-10
+                #testSuite
                 br
 
         .col-md-8.col-lg-9
