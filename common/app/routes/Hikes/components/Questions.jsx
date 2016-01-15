@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 import { spring, Motion } from 'react-motion';
 import { contain } from 'thundercats-react';
-import { Button, Col, Panel, Row } from 'react-bootstrap';
+import { Button, Col, Row } from 'react-bootstrap';
 
 const answerThreshold = 100;
 
@@ -107,11 +107,9 @@ export default contain(
           WebkitTransform: `translate3d(${ x }px, 0, 0)`,
           transform: `translate3d(${ x }px, 0, 0)`
         };
-        const title = <h4>Question { number }</h4>;
         return (
-          <Panel
+          <article
             className={ shake ? 'animated swing shake' : '' }
-            header={ title }
             onMouseDown={ hikesActions.grabQuestion }
             onMouseLeave={ mouseUp }
             onMouseMove={ this.handleMouseMove }
@@ -120,8 +118,9 @@ export default contain(
             onTouchMove={ this.handleMouseMove }
             onTouchStart={ hikesActions.grabQuestion }
             style={ style }>
+            <h4>Question { number }</h4>
             <p>{ question }</p>
-          </Panel>
+          </article>
         );
       };
     },
@@ -152,20 +151,24 @@ export default contain(
             <Motion style={{ x: spring(x, [120, 10]) }}>
               { questionElement }
             </Motion>
-            <Panel>
+            <div className='spacer' />
+            <hr />
+            <div>
               <Button
                 bsSize='large'
+                bsStyle='primary'
                 className='pull-left'
                 onClick={ this.onAnswer(answer, false, info) }>
                 false
               </Button>
               <Button
                 bsSize='large'
+                bsStyle='primary'
                 className='pull-right'
                 onClick={ this.onAnswer(answer, true, info) }>
                 true
               </Button>
-            </Panel>
+            </div>
           </Row>
         </Col>
       );

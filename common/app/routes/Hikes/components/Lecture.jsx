@@ -77,10 +77,13 @@ export default contain(
               videoId={ id } />
           </Row>
           <Row>
-            { this.renderTranscript(description, dashedName) }
+            <article>
+              { this.renderTranscript(description, dashedName) }
+            </article>
             <Button
               block={ true }
               bsSize='large'
+              bsStyle='primary'
               onClick={ () => this.handleFinish(hikesActions) }>
               Take me to the Questions
             </Button>
