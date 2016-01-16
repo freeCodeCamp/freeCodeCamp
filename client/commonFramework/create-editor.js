@@ -46,27 +46,27 @@ window.common = (function(global) {
           break;
         case common.challengeTypes.JS:
         case common.challengeTypes.BONFIRE:
-          type = 'javascript';
+          type = 'js';
           break;
         default:
           type = '';
       }
 
       var returnValue = '';
-      if (trigger.id === 'markdown') {
-        returnValue = '```' + type + '\n' + editor.getSelection() + '\n```';
-        editor.replaceSelection(editor.getSelection());
-        return returnValue;
-      } else if (trigger.id === 'plain') {
-        returnValue = editor.getSelection();
-        editor.replaceSelection(editor.getSelection());
-        return returnValue;
-      } else if (trigger.id === 'link') {
-        editor.replaceSelection(editor.getSelection());
-        return ('[Challenge - ' + common.challengeName +
-        (common.username ? ' (' + common.username + '\'s solution)' : '')
-        + '](' + window.location + ')')
-        .replace(/\)/g, '%29').replace(/%29\]/g, ')]') + ')';
+      switch (trigger.id) {
+        case 'markdown':
+          returnValue = '```' + type + '\n' + editor.getSelection() + '\n```';
+          editor.replaceSelection(editor.getSelection());
+          return returnValue;
+        case 'plain':
+          returnValue = editor.getSelection();
+          editor.replaceSelection(editor.getSelection());
+          return returnValue;
+        case 'link':
+          editor.replaceSelection(editor.getSelection());
+          return '[Challenge - ' + common.challengeName +
+          (common.username ? ' (' + common.username + '\'s solution)' : '')
+          + '](' + String(window.location).replace(/\)/g, '%29') + ')';
       }
     }
   });
