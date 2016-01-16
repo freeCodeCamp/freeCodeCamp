@@ -5,28 +5,26 @@ block content
           p Required challenges are marked with a *
           .row
               .col-xs-10.col-xs-offset-1.col-sm-6.col-sm-offset-3.col-md-4.col-md-offset-4
-                  a.btn.btn-primary.btn-block(href='/map' target='_blank') View this map in full screen
-                  .btn.btn-primary.btn-block#showAll Expand all challenges
-
+                  .btn.btn-primary.btn-block.active#showAll Collapse all challenges
       hr
       #accordion
         for superBlock, index in superBlocks
             h2
-              i.fa.fa-caret-right
+              i.fa.fa-caret-down
               | &thinsp;          
-              a.collapsed(data-toggle='collapse', data-parent='#accordion', href='#collapse'+superBlock.name.split(' ').join('-'))
+              a(data-toggle='collapse', data-parent='#accordion', href='#collapse'+superBlock.name.split(' ').join('-'))
                 | #{superBlock.name}
-            div.margin-left-10(id = 'collapse'+superBlock.name.split(' ').join('-') class = "collapse map-collapse no-transition")
+            div.margin-left-10(id = 'collapse'+superBlock.name.split(' ').join('-') class = "collapse in map-collapse no-transition")
                 #nested
                     for challengeBlock in superBlock.blocks
                         h3
-                          i.fa.fa-caret-right
+                          i.fa.fa-caret-down
                           | &thinsp;
                           a(data-toggle='collapse', data-parent='#nested', href='#nested-collapse'+challengeBlock.name.replace(/(\W)/gi, '').split(' ').join('-'))
 
                             | &thinsp;
                             | #{challengeBlock.name} (#{challengeBlock.time})
-                        div.margin-left-10(id = "nested-collapse"+challengeBlock.name.replace(/\W/gi, '').split(' ').join('-') class = "collapse map-collapse no-transition")
+                        div.margin-left-10(id = "nested-collapse"+challengeBlock.name.replace(/\W/gi, '').split(' ').join('-') class = "collapse in map-collapse no-transition")
                             .button-spacer
                             for challenge in challengeBlock.challenges
                                 if challenge.completed
@@ -63,13 +61,3 @@ block content
                                                 strong
                                                     em Coming Soon
         .spacer
-script.
-    $(document).ready(function(){    
-        $('#accordProfile').on('shown', function () {
-           $(".fa-caret-right").removeClass("icon-chevron-down").addClass("icon-chevron-up");
-        });
-
-        $('#accordProfile').on('hidden', function () {
-           $(".icon-chevron-up").removeClass("icon-chevron-up").addClass("icon-chevron-down");
-        });
-    });

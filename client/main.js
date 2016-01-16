@@ -278,23 +278,34 @@ $(document).ready(function() {
     $('.map-aside').addClass('is-collapsed');
   });
 
-  // I am going crazy trying to get this to work. Any takers?
-  // $('.collapse').on('show.bs.collapse', function(){
-  //   console.log(this);
-  //     $(this).sibling().eq(0).find(".fa-caret-right").removeClass("fa-caret-right").addClass("fa-caret-down");
-  // }).on('hide.bs.collapse', function(){
-  //     $(this).sibling().eq(0).find(".fa-caret-down").removeClass("fa-caret-down").addClass("fa-caret-right");
-  // });
-
-  $('#showAll').on('click', () => { 
-      var mapExpanded = $('#showAll').hasClass('active');
-      if (!mapExpanded) {
-        $('.map-collapse').addClass('in');
+  $('#accordion').on('show.bs.collapse', function(e) {
+      $(e.target)
+        .prev().find('.fa-caret-right')
+        .removeClass('fa-caret-right').addClass('fa-caret-down');
+      if ($('a[data-toggle=collapse]').length === $('.fa-caret-down').length) {
         $('#showAll').text('Collapse all challenges');
-        return $('#showAll').addClass('active');
-      };
-      $('.map-collapse').removeClass('in');
+        $('#showAll').addClass('active');
+      }
+  }).on('hide.bs.collapse', function(e) {
+      $(e.target)
+        .prev().find('.fa-caret-down')
+        .removeClass('fa-caret-down').addClass('fa-caret-right');
+      if ($('a[data-toggle=collapse]').length === $('.fa-caret-right').length) {
+        $('#showAll').text('Expand all challenges');
+        $('#showAll').removeClass('active');
+      }
+  });
+
+  $('#showAll').on('click', () => {
+    var mapExpanded = $('#showAll').hasClass('active');
+    if (!mapExpanded) {
+      $('.map-collapse').collapse('show');
+      $('#showAll').text('Collapse all challenges');
+      return $('#showAll').addClass('active');
+    } else {
+      $('.map-collapse').collapse('hide');
       $('#showAll').text('Expand all challenges');
       return $('#showAll').removeClass('active');
+    }
   });
 });
