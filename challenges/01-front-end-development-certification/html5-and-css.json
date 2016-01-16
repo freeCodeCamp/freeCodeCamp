@@ -3573,7 +3573,7 @@
       ],
       "tests": [
         "assert($(\"body\").css(\"background-color\") === \"rgb(255, 0, 0)\", 'message: Give your <code>body</code> element the <code>background-color</code> of red.');",
-        "assert(code.match(/body\\s*{(([\\s\\S]*;\\s*?)|\\s*?)background.*\\s*:\\s*?#F00((\\s*})|(;[\\s\\S]*?}))/gi), 'message: Use <code>abbreviated hex code</code> instead of a six-character <code>hex code</code>. For example <code>body { color&#58; #F00; }</code>');"
+        "assert(code.match(/body\\s*{(([\\s\\S]*;\\s*?)|\\s*?)background.*\\s*:\\s*?#F00((\\s*})|(\\s*;[\\s\\S]*?}))/gi), 'message: Use <code>abbreviated hex code</code> instead of a six-character <code>hex code</code>. For example <code>body { color&#58; #F00; }</code>');"
       ],
       "type": "waypoint",
       "challengeType": 0,
