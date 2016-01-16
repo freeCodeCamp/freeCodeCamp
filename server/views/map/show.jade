@@ -6,7 +6,8 @@ block content
           .row
               .col-xs-10.col-xs-offset-1.col-sm-6.col-sm-offset-3.col-md-4.col-md-offset-4
                   a.btn.btn-primary.btn-block(href='/map' target='_blank') View this map in full screen
-                  // .btn.btn-primary.btn-block#showAll Expand 
+                  .btn.btn-primary.btn-block#showAll Expand all challenges
+
       hr
       #accordion
         for superBlock, index in superBlocks
@@ -15,23 +16,25 @@ block content
               | &thinsp;          
               a.collapsed(data-toggle='collapse', data-parent='#accordion', href='#collapse'+superBlock.name.split(' ').join('-'))
                 | #{superBlock.name}
-            div.margin-left-10(id = 'collapse'+superBlock.name.split(' ').join('-') class = "panel-collapse collapse no-transition")
-                #nested.panel-group
+            div.margin-left-10(id = 'collapse'+superBlock.name.split(' ').join('-') class = "collapse map-collapse no-transition")
+                #nested
                     for challengeBlock in superBlock.blocks
                         h3
-                          i.fa.fa-caret-right
-                          | &thinsp;
                           a(data-toggle='collapse', data-parent='#nested', href='#nested-collapse'+challengeBlock.name.replace(/(\W)/gi, '').split(' ').join('-'))
+                            i.fa.fa-caret-right
+                            | &thinsp;
+                            | &thinsp;
                             | #{challengeBlock.name} (#{challengeBlock.time})
-                        div.margin-left-10(id = "nested-collapse"+challengeBlock.name.replace(/\W/gi, '').split(' ').join('-') class = "panel-collapse collapse no-transition")
+                        div.margin-left-10(id = "nested-collapse"+challengeBlock.name.replace(/\W/gi, '').split(' ').join('-') class = "collapse map-collapse no-transition")
+                            .button-spacer
                             for challenge in challengeBlock.challenges
                                 if challenge.completed
                                     p.text-primary.ion-checkmark-circled.padded-ionic-icon.negative-15(name="#{challenge.dashedName}") &nbsp;&nbsp;&nbsp;
-                                        a.faded(href="/challenges/#{challenge.dashedName}" target='_parent')
+                                        a(href="/challenges/#{challenge.dashedName}" target='_parent')
                                             = challenge.title
                                             span.sr-only= " Complete"
                                 else if challenge.isRequired
-                                    p.ion-ios-circle-outline.padded-ionic-icon.negative-15(name="#{challenge.dashedName}") &nbsp;&nbsp;&nbsp;
+                                    p.slightly-faded.ion-ios-circle-outline.padded-ionic-icon.negative-15(name="#{challenge.dashedName}") &nbsp;&nbsp;&nbsp;
                                         a(name="#{challenge.dashedName}" target='_parent' href="/challenges/#{challenge.dashedName}" class=challenge.isComingSoon ? 'disabled' : '')
                                             span= challenge.title
                                             span.sr-only= " Incomplete"
@@ -46,7 +49,7 @@ block content
                                         span.text-primary &thinsp; &thinsp;
                                             strong *
                                 else
-                                    p.ion-ios-circle-outline.padded-ionic-icon.negative-15(name="#{challenge.dashedName}") &nbsp;&nbsp;&nbsp;
+                                    p.slightly-faded.ion-ios-circle-outline.padded-ionic-icon.negative-15(name="#{challenge.dashedName}") &nbsp;&nbsp;&nbsp;
                                         a(name="#{challenge.dashedName}" target='_parent' href="/challenges/#{challenge.dashedName}" class=challenge.isComingSoon ? 'disabled' : '')
                                             span= challenge.title
                                             span.sr-only= " Incomplete"

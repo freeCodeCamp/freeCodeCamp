@@ -277,4 +277,23 @@ $(document).ready(function() {
   $('.map-aside-action-collapse').on('click', () => {
     $('.map-aside').addClass('is-collapsed');
   });
+
+  $('.collapse').on('show.bs.collapse', function(){
+    console.log(this);
+      $(this).siblings().find(".fa-caret-right").removeClass("fa-caret-right").addClass("fa-caret-down");
+  }).on('hide.bs.collapse', function(){
+      $(this).siblings().find(".fa-caret-down").removeClass("fa-caret-down").addClass("fa-caret-right");
+  });
+
+  $('#showAll').on('click', () => { 
+      var mapExpanded = $('#showAll').hasClass('active');
+      if (!mapExpanded) {
+        $('.map-collapse').addClass('in');
+        $('#showAll').text('Collapse all challenges');
+        return $('#showAll').addClass('active');
+      };
+      $('.map-collapse').removeClass('in');
+      $('#showAll').text('Expand all challenges');
+      return $('#showAll').removeClass('active');
+  });
 });
