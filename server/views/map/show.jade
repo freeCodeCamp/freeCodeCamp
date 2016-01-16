@@ -20,9 +20,10 @@ block content
                 #nested
                     for challengeBlock in superBlock.blocks
                         h3
+                          i.fa.fa-caret-right
+                          | &thinsp;
                           a(data-toggle='collapse', data-parent='#nested', href='#nested-collapse'+challengeBlock.name.replace(/(\W)/gi, '').split(' ').join('-'))
-                            i.fa.fa-caret-right
-                            | &thinsp;
+
                             | &thinsp;
                             | #{challengeBlock.name} (#{challengeBlock.time})
                         div.margin-left-10(id = "nested-collapse"+challengeBlock.name.replace(/\W/gi, '').split(' ').join('-') class = "collapse map-collapse no-transition")

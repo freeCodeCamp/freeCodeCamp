@@ -278,12 +278,13 @@ $(document).ready(function() {
     $('.map-aside').addClass('is-collapsed');
   });
 
-  $('.collapse').on('show.bs.collapse', function(){
-    console.log(this);
-      $(this).siblings().find(".fa-caret-right").removeClass("fa-caret-right").addClass("fa-caret-down");
-  }).on('hide.bs.collapse', function(){
-      $(this).siblings().find(".fa-caret-down").removeClass("fa-caret-down").addClass("fa-caret-right");
-  });
+  // I am going crazy trying to get this to work. Any takers?
+  // $('.collapse').on('show.bs.collapse', function(){
+  //   console.log(this);
+  //     $(this).sibling().eq(0).find(".fa-caret-right").removeClass("fa-caret-right").addClass("fa-caret-down");
+  // }).on('hide.bs.collapse', function(){
+  //     $(this).sibling().eq(0).find(".fa-caret-down").removeClass("fa-caret-down").addClass("fa-caret-right");
+  // });
 
   $('#showAll').on('click', () => { 
       var mapExpanded = $('#showAll').hasClass('active');
