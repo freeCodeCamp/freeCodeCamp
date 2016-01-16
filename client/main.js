@@ -267,9 +267,11 @@ $(document).ready(function() {
     var lastChallenge = $('.sr-only').filter(function() {
       return $(this).text() === ' Complete';
     });
-    lastChallenge = lastChallenge[lastChallenge.length - 1];
-    var scrollTo = $(lastChallenge).offset().top - 250;
-    $('html, body').scrollTop(scrollTo);
+    if (lastChallenge.length) {
+      lastChallenge = lastChallenge[lastChallenge.length - 1];
+      var scrollTo = $(lastChallenge).offset().top - 250;
+      $('html, body').scrollTop(scrollTo);
+    }
   }
 
   // map
