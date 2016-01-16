@@ -315,12 +315,9 @@
         "When you entered <code>&#60;h2 style=\"color: red\"&#62;CatPhotoApp&#60;/h2&#62;</code>, you were giving that individual <code>h2</code> element an <code>inline style</code>.",
         "That's one way to add style to an element, but a better way is by using <code>CSS</code>, which stands for <code>Cascading Style Sheets</code>.",
         "At the top of your code, create a <code>style</code> element like this:",
-        "<code>&#60;style&#62;</code>",
-        "<code>&#60;/style&#62;</code>",
+        "<blockquote>&#60;style&#62;<br>&#60;/style&#62;</blockquote>",
         "Inside that style element, you can create a <code>CSS selector</code> for all <code>h2</code> elements. For example, if you wanted all <code>h2</code> elements to be red, your style element would look like this:",
-        "<code>&#60;style&#62;</code>",
-        "&nbsp;&nbsp;<code>h2 {color: red;}</code>",
-        "<code>&#60;/style&#62;</code>",
+        "<blockquote>&#60;style&#62;<br>&nbsp;&nbsp;h2 {color: red;}<br>&#60;/style&#62;</blockquote>",
         "Note that it's important to have both opening and closing curly braces (<code>{</code> and <code>}</code>) around each element's style. You also need to make sure your element's style is between the opening and closing style tags. Finally, be sure to add the semicolon to the end of each of your element's styles.",
         "Delete your <code>h2</code> element's style attribute and instead create a CSS <code>style</code> element. Add the necessary CSS to turn all <code>h2</code> elements blue."
       ],
@@ -368,11 +365,7 @@
       "description": [
         "Classes are reusable styles that can be added to HTML elements.",
         "Here's an example CSS class declaration:",
-        "<code>&#60;style&#62;</code>",
-        "<code>&nbsp;&nbsp;.blue-text {</code>",
-        "<code>&nbsp;&nbsp;&nbsp;&nbsp;color: blue;</code>",
-        "<code>&nbsp;&nbsp;}</code>",
-        "<code>&#60;/style&#62;</code>",
+        "<blockquote>&#60;style&#62;<br>&nbsp;&nbsp;.blue-text {<br>&nbsp;&nbsp;&nbsp;&nbsp;color: blue;<br>&nbsp;&nbsp;}<br>&#60;/style&#62;</blockquote>",
         "You can see that we've created a CSS class called <code>blue-text</code> within the <code>&#60;style&#62;</code> tag.",
         "You can apply a class to an HTML element like this:",
         "<code>&#60;h2 class=\"blue-text\"&#62;CatPhotoApp&#60;/h2&#62;</code>",
@@ -433,9 +426,7 @@
       "description": [
         "Remember that you can attach classes to HTML elements by using <code>class=\"your-class-here\"</code> within the relevant element's opening tag.",
         "Remember that CSS class selectors require a period at the beginning like this:",
-        "<code>.blue-text {</code>",
-        "<code>&nbsp;&nbsp;color: blue;</code>",
-        "<code>}</code>",
+        "<blockquote>.blue-text {<br>&nbsp;&nbsp;color: blue;<br>}</blockquote>",
         "But also remember that class declarations don't use a period, like this:",
         "<code>&#60;h2 class=\"blue-text\"&#62;CatPhotoApp&#60;/h2&#62;</code>",
         "Apply the <code>red-text</code> class to your <code>h2</code> and <code>p</code> elements."
@@ -482,9 +473,7 @@
       "id": "bad87fee1348bd9aedf08806",
       "description": [
         "Font size is controlled by the <code>font-size</code> CSS property, like this:",
-        "<code>h1 {</code>",
-        "<code>&nbsp;&nbsp;font-size: 30px;</code>",
-        "<code>}</code>",
+        "<blockquote>h1 {<br>&nbsp;&nbsp;font-size: 30px;<br>}</blockquote>",
         "Create a second <code>p</code> element with the following kitty ipsum text: <code>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</code>",
         "Inside the same <code>&#60;style&#62;</code> tag that we created for your <code>red-text</code> class, set the <code>font-size</code> of all <code>p</code> elements to 16 pixels (<code>16px</code>)."
       ],
@@ -530,9 +519,7 @@
       "description": [
         "You can set an element's font by using the <code>font-family</code> property.",
         "For example, if you wanted to set your <code>h2</code> element's font to <code>Sans-serif</code>, you would use the following CSS:",
-        "<code>h2 {</code>",
-        "<code>&nbsp;&nbsp;font-family: Sans-serif;</code>",
-        "<code>}</code>",
+        "<blockquote>h2 {<br>&nbsp;&nbsp;font-family: Sans-serif;<br>}</blockquote>",
         "Make all of your <code>p</code> elements use the <code>Monospace</code> font."
       ],
       "challengeSeed": [
@@ -632,9 +619,7 @@
         "There are several default fonts that are available in all browsers. These include <code>Monospace</code>, <code>Serif</code> and <code>Sans-Serif</code>",
         "When one font isn't available, you can tell the browser to \"degrade\" to another font.",
         "For example, if you wanted an element to use the <code>Helvetica</code> font, but also degrade to the <code>Sans-Serif</code> font when <code>Helvetica</code> wasn't available, you could use this CSS style:",
-        "<code>p {</code>",
-        "<code>&nbsp;&nbsp;font-family: Helvetica, Sans-Serif;</code>",
-        "<code>}</code>",
+        "<blockquote>p {<br>&nbsp;&nbsp;font-family: Helvetica, Sans-Serif;<br>}</blockquote>",
         "Now comment out your call to Google Fonts, so that the <code>Lobster</code> font isn't available. Notice how it degrades to the <code>Monospace</code> font."
       ],
       "challengeSeed": [
@@ -748,11 +733,7 @@
       "description": [
         "CSS has a property called <code>width</code> that controls an element's width. Just like with fonts, we'll use <code>px</code> (pixels) to specify the image's width.",
         "For example, if we wanted to create a CSS class called <code>larger-image</code> that gave HTML elements a width of 500 pixels, we'd use:",
-        "<code>&#60;style&#62;</code>",
-        "<code>&nbsp;&nbsp;.larger-image {</code>",
-        "<code>&nbsp;&nbsp;&nbsp;&nbsp;width: 500px;</code>",
-        "<code>&nbsp;&nbsp;}</code>",
-        "<code>&#60;/style&#62;</code>",
+        "<blockquote>&#60;style&#62;<br>&nbsp;&nbsp;.larger-image {<br>&nbsp;&nbsp;&nbsp;&nbsp;width: 500px;<br>&nbsp;&nbsp;}<br>&#60;/style&#62;</blockquote>",
         "Create a class called <code>smaller-image</code> and use it to resize the image so that it's only 100 pixels wide."
       ],
       "challengeSeed": [
@@ -809,13 +790,7 @@
       "description": [
         "CSS borders have properties like <code>style</code>, <code>color</code> and <code>width</code>",
         "For example, if we wanted to create a red, 5 pixel border around an HTML element, we could use this class:",
-        "<code>&#60;style&#62;</code>",
-        "<code>&nbsp;&nbsp;.thin-red-border {</code>",
-        "<code>&nbsp;&nbsp;&nbsp;&nbsp;border-color: red;</code>",
-        "<code>&nbsp;&nbsp;&nbsp;&nbsp;border-width: 5px;</code>",
-        "<code>&nbsp;&nbsp;&nbsp;&nbsp;border-style: solid;</code>",
-        "<code>&nbsp;&nbsp;}</code>",
-        "<code>&#60;/style&#62;</code>",
+        "<blockquote>&#60;style&#62;<br>&nbsp;&nbsp;.thin-red-border {<br>&nbsp;&nbsp;&nbsp;&nbsp;border-color: red;<br>&nbsp;&nbsp;&nbsp;&nbsp;border-width: 5px;<br>&nbsp;&nbsp;&nbsp;&nbsp;border-style: solid;<br>&nbsp;&nbsp;}<br>&#60;/style&#62;</blockquote>",
         "Create a class called <code>thick-green-border</code> that puts a 10-pixel-wide green border with a style of <code>solid</code> around an HTML element, and apply that class to your cat photo.",
         "Remember that you can apply multiple classes to an element by separating each class with a space within its <code>class</code> attribute. For example:",
         "<code>&lt;img class=\"class1 class2\"&gt;</code>"
@@ -1366,10 +1341,7 @@
         "HTML has a special element for creating <code>unordered lists</code>, or bullet point-style lists.",
         "Unordered lists start with a <code>&#60;ul&#62;</code> element. Then they contain some number of <code>&#60;li&#62;</code> elements.",
         "For example: ",
-        "<code>&#60;ul&#62;</code>",
-        "&nbsp;&nbsp;<code>&#60;li&#62;milk&#60;/li&#62;</code>",
-        "&nbsp;&nbsp;<code>&#60;li&#62;cheese&#60;/li&#62;</code>",
-        "<code>&#60;/ul&#62;</code>",
+        "<blockquote>&#60;ul&#62;<br>&nbsp;&nbsp;&#60;li&#62;milk&#60;/li&#62;<br>&nbsp;&nbsp;&#60;li&#62;cheese&#60;/li&#62;<br>&#60;/ul&#62;</blockquote>",
         "would create a bullet point-style list of \"milk\" and \"cheese\".",
         "Remove the last two <code>p</code> elements and create an unordered list of three things that cats love at the bottom of the page."
       ],
@@ -1445,10 +1417,7 @@
         "HTML has a special element for creating <code>ordered lists</code>, or numbered-style lists.",
         "Ordered lists start with a <code>&#60;ol&#62;</code> element. Then they contain some number of <code>&#60;li&#62;</code> elements.",
         "For example:",
-        "<code>&#60;ol&#62;</code>",
-        "&nbsp;&nbsp;<code>&#60;li&#62;Garfield&#60;/li&#62;</code>",
-        "&nbsp;&nbsp;<code>&#60;li&#62;Sylvester&#60;/li&#62;</code>",
-        "<code>&#60;/ol&#62;</code>",
+        "<blockquote>&#60;ol&#62;<br>&nbsp;&nbsp;&#60;li&#62;Garfield&#60;/li&#62;<br>&nbsp;&nbsp;&#60;li&#62;Sylvester&#60;/li&#62;<br>&#60;/ol&#62;</blockquote>",
         "would create a numbered list of \"Garfield\" and \"Sylvester\".",
         "Create an ordered list of the top 3 things cats hate the most."
       ],
@@ -2287,9 +2256,7 @@
       "description": [
         "You can set an element's background color with the <code>background-color</code> property.",
         "For example, if you wanted an element's background color to be <code>green</code>, you'd put this within your <code>style</code> element:",
-        "<code>.green-background {</code>",
-        "<code>&nbsp;&nbsp;background-color: green;</code>",
-        "<code>}</code>",
+        "<blockquote>.green-background {<br>&nbsp;&nbsp;background-color: green;<br>}</blockquote>",
         "Create a class called <code>gray-background</code> with the <code>background-color</code> of gray. Assign this class to your <code>div</code> element."
       ],
       "challengeSeed": [
@@ -2461,9 +2428,7 @@
       "description": [
         "One cool thing about <code>id</code> attributes is that, like classes, you can style them using CSS.",
         "Here's an example of how you can take your element with the <code>id</code> attribute of <code>cat-photo-element</code> and give it the background color of green. In your <code>style</code> element:",
-        "<code>#cat-photo-element {</code>",
-        "<code>&nbsp;&nbsp;background-color: green;</code>",
-        "<code>}</code>",
+        "<blockquote>#cat-photo-element {<br>&nbsp;&nbsp;background-color: green;<br>}</blockquote>",
         "Note that inside your <code>style</code> element, you always reference classes by putting a <code>.</code> in front of their names. You always reference ids by putting a <code>#</code> in front of their names.",
         "Try giving your form, which now has the <code>id</code> attribute of <code>cat-photo-form</code>, a green background."
       ],
@@ -3028,9 +2993,7 @@
         "Every HTML page has a <code>body</code> element.",
         "We can prove that the <code>body</code> element exists here by giving it a <code>background-color</code> of black.",
         "We can do this by adding the following to our <code>style</code> element:",
-        "<code>body {</code>",
-        "<code>&nbsp;&nbsp;background-color: black;</code>",
-        "<code>}</code>"
+        "<blockquote>body {<br>&nbsp;&nbsp;background-color: black;<br>}</blockquote>"
       ],
       "challengeSeed": [
         "<style>",
@@ -3182,9 +3145,7 @@
         "<code>&#60;h1 id=\"orange-text\"&#62;</code>",
         "Leave the <code>blue-text</code> and <code>pink-text</code> classes on your <code>h1</code> element.",
         "Create a CSS declaration for your <code>orange-text</code> id in your <code>style</code> element. Here's an example of what this looks like:",
-        "<code>#brown-text {</code>",
-        "<code>&nbsp;&nbsp;color: brown;</code>",
-        "<code>}</code>",
+        "<blockquote>#brown-text {<br>&nbsp;&nbsp;color: brown;<br>}</blockquote>",
         "Note: It doesn't matter whether you declare this css above or below pink-text class, since id attribute will always take precedence."
       ],
       "challengeSeed": [
