@@ -263,6 +263,15 @@ $(document).ready(function() {
     window.location.href = link;
   });
 
+  if ($('.sr-only').length) {
+    var lastChallenge = $('.sr-only').filter(function() {
+      return $(this).text() === ' Complete';
+    });
+    lastChallenge = lastChallenge[lastChallenge.length - 1];
+    var scrollTo = $(lastChallenge).offset().top - 250;
+    $('html, body').scrollTop(scrollTo);
+  }
+
   // map
   $('#nav-map-btn').on('click', () => {
     if (!main.isMapAsideLoad) {
