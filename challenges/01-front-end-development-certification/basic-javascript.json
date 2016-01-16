@@ -104,8 +104,7 @@
         "<code>myVariable = 5;</code>",
         "Assigns the <code>Number</code> value <code>5</code> to <code>myVariable</code>.",
         "Assignment always goes from right to left. Everything to the right of the <code>=</code> operator is resolved before the value is assigned to the variable to the left of the operator.",
-        "<code>myVar = 5;</code>",
-        "<code>myNum = myVar;</code>",
+        "<blockquote>myVar = 5;<br>myNum = myVar;</blockquote>",
         "Assigns <code>5</code> to <code>myVar</code> and then resolves <code>myVar</code> to <code>5</code>  again and assigns it to <code>myNum</code>.",
         "<h4>Instructions</h4>",
         "Assign the value <code>7</code> to variable <code>a</code>.",
@@ -1487,9 +1486,7 @@
       "description": [
         "An easy way to append data to the end of an array is via the <code>push()</code> function.",
         "<code>.push()</code> takes one or more <dfn>parameter</dfn> and \"pushes\" it onto the end of the array.",
-        "<code>var arr = [1,2,3];</code>",
-        "<code>arr.push(4);</code>",
-        "<code>// arr is now [1,2,3,4]</code>",
+        "<blockquote>var arr = [1,2,3];<br>arr.push(4);<br>// arr is now [1,2,3,4]</blockquote>",
         "<h4>Instructions</h4>",
         "Push <code>[\"dog\", 3]</code> onto the end of the <code>myArray</code> variable."
       ],
