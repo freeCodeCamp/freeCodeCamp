@@ -1,28 +1,37 @@
 extends ../layout-wide
 block content
-    .row
-        .col-xs-12.col-md-6.col-md-offset-3
-            for superBlock, index in superBlocks
-                if index > 0
-                    .row
-                        h2.text-center #{superBlock.name}
-                        .text-center.small Requires completion of the below challenges marked with a *
-                        hr
-                for challengeBlock in superBlock.blocks
-                    .row
-                        a(href='#' name=challengeBlock.dashedName)
-                        .spacer.negative-55
-                    .row
-                        h3.bold #{challengeBlock.name} (#{challengeBlock.time})
-                        for challenge in challengeBlock.challenges
-                            .col-xs-12.col-sm-9.col-md-10
+      .text-center
+          h1 Challenge Map
+          p Required challenges are marked with a *
+          .row
+              .col-xs-10.col-xs-offset-1.col-sm-6.col-sm-offset-3.col-md-4.col-md-offset-4
+                  a.btn.btn-primary.btn-block(href='/map' target='_blank') View this map in full screen
+                  // .btn.btn-primary.btn-block#showAll Expand 
+      hr
+      #accordion
+        for superBlock, index in superBlocks
+            h2
+              i.fa.fa-caret-right
+              | &thinsp;          
+              a.collapsed(data-toggle='collapse', data-parent='#accordion', href='#collapse'+superBlock.name.split(' ').join('-'))
+                | #{superBlock.name}
+            div.margin-left-10(id = 'collapse'+superBlock.name.split(' ').join('-') class = "panel-collapse collapse no-transition")
+                #nested.panel-group
+                    for challengeBlock in superBlock.blocks
+                        h3
+                          i.fa.fa-caret-right
+                          | &thinsp;
+                          a(data-toggle='collapse', data-parent='#nested', href='#nested-collapse'+challengeBlock.name.replace(/(\W)/gi, '').split(' ').join('-'))
+                            | #{challengeBlock.name} (#{challengeBlock.time})
+                        div.margin-left-10(id = "nested-collapse"+challengeBlock.name.replace(/\W/gi, '').split(' ').join('-') class = "panel-collapse collapse no-transition")
+                            for challenge in challengeBlock.challenges
                                 if challenge.completed
-                                    p.text-primary.ion-checkmark-circled.padded-ionic-icon.negative-15(name="#{challenge.dashedName}") &nbsp;
-                                        a(href="/challenges/#{challenge.dashedName}" target='_parent')
+                                    p.text-primary.ion-checkmark-circled.padded-ionic-icon.negative-15(name="#{challenge.dashedName}") &nbsp;&nbsp;&nbsp;
+                                        a.faded(href="/challenges/#{challenge.dashedName}" target='_parent')
                                             = challenge.title
                                             span.sr-only= " Complete"
                                 else if challenge.isRequired
-                                    p.ion-ios-circle-outline.padded-ionic-icon.negative-15(name="#{challenge.dashedName}") &nbsp;
+                                    p.ion-ios-circle-outline.padded-ionic-icon.negative-15(name="#{challenge.dashedName}") &nbsp;&nbsp;&nbsp;
                                         a(name="#{challenge.dashedName}" target='_parent' href="/challenges/#{challenge.dashedName}" class=challenge.isComingSoon ? 'disabled' : '')
                                             span= challenge.title
                                             span.sr-only= " Incomplete"
@@ -37,7 +46,7 @@ block content
                                         span.text-primary &thinsp; &thinsp;
                                             strong *
                                 else
-                                    p.ion-ios-circle-outline.padded-ionic-icon.negative-15(name="#{challenge.dashedName}") &nbsp;
+                                    p.ion-ios-circle-outline.padded-ionic-icon.negative-15(name="#{challenge.dashedName}") &nbsp;&nbsp;&nbsp;
                                         a(name="#{challenge.dashedName}" target='_parent' href="/challenges/#{challenge.dashedName}" class=challenge.isComingSoon ? 'disabled' : '')
                                             span= challenge.title
                                             span.sr-only= " Incomplete"
@@ -49,21 +58,14 @@ block content
                                             span.text-success.small &thinsp; &thinsp;
                                                 strong
                                                     em Coming Soon
-            .row
-                h2.text-center Full Stack Development Certification
-                hr
-                p.ion-locked.padded-ionic-icon.negative-15 &nbsp; Greenfield Nonprofit Project 1
-                p.ion-locked.padded-ionic-icon.negative-15 &nbsp; Greenfield Nonprofit Project 2
-                p.ion-locked.padded-ionic-icon.negative-15 &nbsp; Legacy Nonprofit Project 1
-                p.ion-locked.padded-ionic-icon.negative-15 &nbsp; Legacy Nonprofit Project 2
-                p.ion-locked.padded-ionic-icon.negative-15 &nbsp; Claim your Full Stack Development Certification
+        .spacer
+script.
+    $(document).ready(function(){    
+        $('#accordProfile').on('shown', function () {
+           $(".fa-caret-right").removeClass("icon-chevron-down").addClass("icon-chevron-up");
+        });
 
-            .row
-                h2.text-center Coding Interview Preparation
-                hr
-                p.ion-locked.padded-ionic-icon.negative-15 &nbsp; Whiteboard Coding Interview Training
-                p.ion-locked.padded-ionic-icon.negative-15 &nbsp; Critical Thinking Interview Training
-                p.ion-locked.padded-ionic-icon.negative-15 &nbsp; Mock Interview 1
-                p.ion-locked.padded-ionic-icon.negative-15 &nbsp; Mock Interview 2
-                p.ion-locked.padded-ionic-icon.negative-15 &nbsp; Mock Interview 3
-            .spacer
+        $('#accordProfile').on('hidden', function () {
+           $(".icon-chevron-up").removeClass("icon-chevron-up").addClass("icon-chevron-down");
+        });
+    });
