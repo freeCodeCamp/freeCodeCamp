@@ -37,7 +37,7 @@ window.common = (function(global) {
     }
   );
 
-  var clipboard = new Clipboard('.demo1', {
+  var clipboard = new Clipboard('.copy-btn', {
     text: function(trigger) {
       var type;
       switch (common.challengeType) {
@@ -63,6 +63,7 @@ window.common = (function(global) {
           editor.replaceSelection(editor.getSelection());
           return returnValue;
         case 'link':
+        default:
           editor.replaceSelection(editor.getSelection());
           return '[Challenge - ' + common.challengeName +
           (common.username ? ' (' + common.username + '\'s solution)' : '')
@@ -73,44 +74,61 @@ window.common = (function(global) {
 
   common.clipboard = clipboard;
 
-  var copyButton = `<a id="demo" href="/" data-toggle="popover" \
-data-trigger="manual" data-content="<a class='demo1' id='link' href='/' \
+  var copyButton = `<a id="copy-btn-parent" href="/" data-toggle="popover" \
+data-trigger="manual" data-content="<a class='copy-btn' id='link' href='/' \
 data-toggle='popover' data-trigger='manual' \
-title='Copy the link to this challenge'>Copy Link</a><br><a class='demo1' \
+title='Copy the link to this challenge'>Copy Link</a><br><a class='copy-btn' \
 id='markdown' href='/' data-toggle='popover'\ data-trigger='manual' \
 title='Copy the contents of code editor with Markdown syntax \
-highlighting'>Copy as Pretty Code</a><br><a class='demo1' id='plain' \
+highlighting'>Copy as Pretty Code</a><br><a class='copy-btn' id='plain' \
 href='/' data-toggle='popover' data-trigger='manual' title='Copy the \
 contents of code editor'>Copy as Plain Code</a>"></a>`;
 
-  var left, top;
+  var left = -5, top = -5;
   $(document).mousemove(function(event) {
     left = event.pageX;
     top = event.pageY;
   });
 
-  function showPopover() {
-    setTimeout(function() {
-      if (editor.somethingSelected()) {
-        $('#demo').popover('show');
-        var editorOffset = $('#mainEditorPanel > form.code').offset(),
-        editorHeight = $('#mainEditorPanel > form.code').height(),
-        editorWidth = $('#mainEditorPanel > form.code').width(),
-        theHeight = $('.popover').height(),
-        theWidth = $('.popover').width();
-        if (left < editorOffset.left
-        || left > editorOffset.left + editorWidth - theWidth) {
-          left = (editorOffset.left + editorWidth) / 2;
+  function debounce(func, wait, immediate) {
+    var timeout;
+    return function() {
+      var context = this, args = arguments;
+      var later = function() {
+        timeout = null;
+        if (!immediate) {
+          func.apply(context, args);
         }
-        if (top < editorOffset.top
-        || top > editorOffset.top + editorHeight - theHeight) {
-          top = (editorOffset.top + editorHeight) / 2;
-        }
-        $('.popover').css('left', (left + 10) + 'px');
-        $('.popover').css('top', (top - (theHeight / 2)) + 'px');
+      };
+      var callNow = immediate && !timeout;
+      clearTimeout(timeout);
+      timeout = setTimeout(later, wait);
+      if (callNow) {
+        func.apply(context, args);
       }
-   }, 100);
+    };
   }
+
+  var showPopover = debounce(function() {
+    if (editor.somethingSelected()) {
+      $('#copy-btn-parent').popover('show');
+      var editorOffset = $('#mainEditorPanel > form.code').offset(),
+      editorHeight = $('#mainEditorPanel > form.code').height(),
+      editorWidth = $('#mainEditorPanel > form.code').width(),
+      theHeight = $('.popover').height(),
+      theWidth = $('.popover').width();
+      if ((left < editorOffset.left
+      || left > editorOffset.left + editorWidth - theWidth) || left === -5) {
+        left = (editorOffset.left + editorWidth) / 2;
+      }
+      if ((top < editorOffset.top
+      || top > editorOffset.top + editorHeight - theHeight) || top === -5) {
+        top = (editorOffset.top + editorHeight) / 2;
+      }
+      $('.popover').css('left', (left + 10) + 'px');
+      $('.popover').css('top', (top - (theHeight / 2) - 7) + 'px');
+    }
+  }, 250);
 
   if (
     challengeType === challengeTypes.HTML ||
@@ -119,17 +137,17 @@ contents of code editor'>Copy as Plain Code</a>"></a>`;
   ) {
 
     $('body').append(copyButton);
-    $('#demo').popover({html: true});
+    $('#copy-btn-parent').popover({html: true});
 
     CodeMirror.on(document, 'mousedown', function() {
-      $('#demo').popover('hide');
+      $('#copy-btn-parent').popover('hide');
     });
 
     CodeMirror.on(document, 'mouseup', showPopover);
 
-    $(document).on('click', '.demo1', function(e) {
+    $(document).on('click', '.copy-btn', function(e) {
       e.preventDefault();
-      $('#demo').popover('hide');
+      $('#copy-btn-parent').popover('hide');
     });
   }
 
