@@ -11,18 +11,19 @@ block content
       #accordion
         for superBlock, index in superBlocks
             h2
-              i.fa.fa-caret-right
-              | &thinsp;          
-              a.collapsed(data-toggle='collapse', data-parent='#accordion', href='#collapse'+superBlock.name.split(' ').join('-'))
-                | #{superBlock.name}
+              a.collapsed(data-toggle='collapse', aria-expanded="false", data-parent='#accordion', href='#collapse'+superBlock.name.split(' ').join('-'))
+                i.fa.fa-caret-right|&thinsp;
+                i.fa.fa-caret-down|&thinsp;
+                |#{superBlock.name}
             div.margin-left-10(id = 'collapse'+superBlock.name.split(' ').join('-') class = "panel-collapse collapse no-transition")
                 #nested.panel-group
                     for challengeBlock in superBlock.blocks
                         h3
-                          i.fa.fa-caret-right
-                          | &thinsp;
-                          a(data-toggle='collapse', data-parent='#nested', href='#nested-collapse'+challengeBlock.name.replace(/(\W)/gi, '').split(' ').join('-'))
-                            | #{challengeBlock.name} (#{challengeBlock.time})
+                          a(data-toggle='collapse', aria-expanded="false", data-parent='#nested', href='#nested-collapse'+challengeBlock.name.replace(/(\W)/gi, '').split(' ').join('-'))
+                            i.fa.fa-caret-right|&thinsp;
+                            i.fa.fa-caret-down|&thinsp;
+                            |#{challengeBlock.name} (#{challengeBlock.time})
+                            
                         div.margin-left-10(id = "nested-collapse"+challengeBlock.name.replace(/\W/gi, '').split(' ').join('-') class = "panel-collapse collapse no-transition")
                             for challenge in challengeBlock.challenges
                                 if challenge.completed

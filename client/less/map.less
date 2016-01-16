@@ -64,6 +64,15 @@
     }
 }
 
+#accordion {
+  a[aria-expanded=true] .fa-caret-right {
+    display: none;
+  }
+  a[aria-expanded=false] .fa-caret-down {
+    display: none;
+  }  
+}
+
 .map-aside-action-bar {
     position: absolute;
     top: 0;
