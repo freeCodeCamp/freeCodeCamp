@@ -1,5 +1,61 @@
 extends ../layout-wide
 block content
+      #accordion.panel-group
+        for superBlock, index in superBlocks
+            .panel.panel-default
+              .panel-heading
+                h4.panel-title
+                  a.collapsed(data-toggle='collapse', data-parent='#accordion', href='#collapse'+superBlock.name.split(' ').join('-'))
+                    | #{superBlock.name}
+              div(id = 'collapse'+superBlock.name.split(' ').join('-') class = "panel-collapse collapse")
+                .panel-body
+                  #nested.panel-group
+                    for challengeBlock in superBlock.blocks
+                            .panel.panel-default
+                              .panel-heading
+                                h4.panel-title
+                                  a(data-toggle='collapse', data-parent='#nested', href='#nested-collapse'+challengeBlock.name.split(' ').join('-'))
+                                    | #{challengeBlock.name}
+                              div(id = "nested-collapse"+challengeBlock.name.split(' ').join('-') class = "panel-collapse collapse")
+                                .panel-body                        
+                                    for challenge in challengeBlock.challenges
+                                        if challenge.completed
+                                            p.text-primary.ion-checkmark-circled.padded-ionic-icon.negative-15(name="#{challenge.dashedName}") &nbsp;
+                                                a.faded(href="/challenges/#{challenge.dashedName}" target='_parent')
+                                                    = challenge.title
+                                                    span.sr-only= " Complete"
+                                        else if challenge.isRequired
+                                            p.ion-ios-circle-outline.padded-ionic-icon.negative-15(name="#{challenge.dashedName}") &nbsp;
+                                                a(name="#{challenge.dashedName}" target='_parent' href="/challenges/#{challenge.dashedName}" class=challenge.isComingSoon ? 'disabled' : '')
+                                                    span= challenge.title
+                                                    span.sr-only= " Incomplete"
+                                                if challenge.markNew
+                                                    span.text-success.small &thinsp; &thinsp;
+                                                        strong
+                                                            em New
+                                                if challengeBlock.isComingSoon
+                                                    span.text-success.small &thinsp; &thinsp;
+                                                        strong
+                                                            em Coming Soon
+                                                span.text-primary &thinsp; &thinsp;
+                                                    strong *
+                                        else
+                                            p.ion-ios-circle-outline.padded-ionic-icon.negative-15(name="#{challenge.dashedName}") &nbsp;
+                                                a(name="#{challenge.dashedName}" target='_parent' href="/challenges/#{challenge.dashedName}" class=challenge.isComingSoon ? 'disabled' : '')
+                                                    span= challenge.title
+                                                    span.sr-only= " Incomplete"
+                                                if challenge.markNew
+                                                    span.text-success.small &thinsp; &thinsp;
+                                                        strong
+                                                            em New
+                                                if challengeBlock.isComingSoon
+                                                    span.text-success.small &thinsp; &thinsp;
+                                                        strong
+                                                            em Coming Soon
+
+
+    
+
     .row
         .col-xs-12.col-md-6.col-md-offset-3
             for superBlock, index in superBlocks
@@ -18,7 +74,7 @@ block content
                             .col-xs-12.col-sm-9.col-md-10
                                 if challenge.completed
                                     p.text-primary.ion-checkmark-circled.padded-ionic-icon.negative-15(name="#{challenge.dashedName}") &nbsp;
-                                        a(href="/challenges/#{challenge.dashedName}" target='_parent')
+                                        a.faded(href="/challenges/#{challenge.dashedName}" target='_parent')
                                             = challenge.title
                                             span.sr-only= " Complete"
                                 else if challenge.isRequired
