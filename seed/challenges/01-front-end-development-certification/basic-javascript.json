@@ -8,12 +8,13 @@
       "id": "bd7123c9c441eddfaeb4bdef",
       "title": "Comment your JavaScript Code",
       "description": [
-        "Comments are lines of code that your computer will intentionally ignore. Comments are a great way to leave notes to yourself and to other people who will later need to figure out what that code does.",
-        "Let's take a look at the two ways you can write comments in JavaScript.",
-        "The double-slash comment will comment out the remainder of the text on the current line:",
-        "<code>// This is a comment.</code>",
-        "The slash-star-star-slash comment will comment out everything between the <code>/*</code> and the <code>*/</code> characters:",
-        "<code>/* This is also a comment */</code>",
+        "Comments are lines of code that JavaScript will intentionally ignore. Comments are a great way to leave notes to yourself and to other people who will later need to figure out what that code does.",
+        "There are two ways to write comments in JavaScript:",
+        "Using <code>//</code> will tell JavaScript to ignore the remainder of the text on the current line:",
+        "<blockquote>// This is an in-line comment.</blockquote>",
+        "You can make a multi-line comment beginning with <code>/*</code> and ending with <code>*/</code>:",
+        "<blockquote>/* This is a <br>   multi-line comment */</blockquote>",
+        "<strong>Best Practice</strong><br>As you write code, you should regularly add comments to clarify the function of parts of your code. Good commenting can help communicate the intent of your code&mdash;both for others <em>and</em> for your future self.",
         "<h4>Instructions</h4>",
         "Try creating one of each type of comment."
       ],
@@ -32,66 +33,36 @@
       "challengeType": 1
     },
     {
-      "id": "bd7123c9c441eddfaeb5bdef",
-      "title": "Understand Boolean Values",
-      "description": [
-        "Computers are not inherently smart. Hence, javascript developers made it easy for us to represent data to computer. <code>Data</code> is anything that is meaningful to the computer.",
-        "In computer science, <code>Data types</code> are things that represent various types of data. JavaScript has seven data types which are <code>Undefined</code>, <code>Null</code>, <code>Boolean</code>, <code>String</code>, <code>Symbol</code>, <code>Number</code>, and <code>Object</code>. For example, the <code>Number</code> data type represents numbers.",
-        "Now let's learn about the most basic one: the <code>Boolean</code> data type. Booleans represent a <code>true</code> or <code>false</code> value. They are basically little on-off switches.",
-        "<h4>Instructions</h4>",
-        "Modify the <code>welcomeToBooleans</code> function so that it returns <code>true</code> instead of <code>false</code> when the run button is clicked."
-      ],
-      "challengeSeed": [
-        "function welcomeToBooleans() {",
-        "",
-        "// Only change code below this line.",
-        "",
-        "return false; // Change this line",
-        "",
-        "// Only change code above this line.",
-        "}"
-      ],
-      "tail": [
-        "welcomeToBooleans();"
-      ],
-      "solutions": [
-        "function welcomeToBooleans() {\n  return true; // Change this line\n}"
-      ],
-      "tests": [
-        "assert(typeof(welcomeToBooleans()) === 'boolean', 'message: The <code>welcomeToBooleans()</code> function should return a boolean &#40;true/false&#41; value.');",
-        "assert(welcomeToBooleans() === true, 'message: <code>welcomeToBooleans()</code> should return true.');"
-      ],
-      "type": "waypoint",
-      "challengeType": 1
-    },
-    {
       "id": "bd7123c9c443eddfaeb5bdef",
       "title": "Declare JavaScript Variables",
       "description": [
-        "It's nice to have seven different ways of representing data. But to use them in other parts of code, we must store the data somewhere. In computer science, the placeholder where data is stored for further use is known as a <code>variable</code>.",
-        "These variables are no different from the x and y variables you use in Maths. Which means they're just a simple name to represent the data we want to refer to.",
-        "Now let's create our first variable and call it \"myName\".",
-        "You'll notice that in <code>myName</code>, we didn't use a space, and that the \"N\" is capitalized. In JavaScript, we write variable names in \"camelCase\".",
+        "In computer science, <code>data</code> is anything that is meaningful to the computer. JavaScript provides seven different <dfn>data types</dfn> which are <code>undefined</code>, <code>null</code>, <code>Boolean</code>, <code>string</code>, <code>symbol</code>, <code>number</code>, and <code>object</code>.",
+        "For example, computers distinguish between numbers, such as the number <code>12</code>, and <code>strings</code>, such as <code>\"12\"</code>, <code>\"dog\"</code>, or <code>\"123 cats\"</code>, which are collections of characters. Computers can perform mathematical operations on a number, but not on a string.",
+        "<code>Variables</code> allow computers to store data in a dynamic fashion, rather than updating a formula every time the data changes. Any of the seven different data types may be stored in a variable.",
+        "<code>Variables</code> are similar to the x and y variables you use in mathematics, which means they're a simple name to represent the data we want to refer to. Computer <code>variables</code> differ from mathematical variables in that they can store different values at different times.",
+        "We tell JavaScript to create or <dfn>declare</dfn> a variable by putting the keyword <code>var</code> in front of it, like so:",
+        "<blockquote>var ourName;</blockquote>",
+        "creates a <code>variable</code> called <code>ourName</code>. In JavaScript we end statements with semicolons.",
+        "<code>Variable</code> names can be made up of numbers, letters, and <code>$</code> or <code>_</code>, but may not contain spaces or start with a number.",
         "<h4>Instructions</h4>",
         "Use the <code>var</code> keyword to create a variable called <code>myName</code>. Set its value to your name, wrapped in double quotes.",
-        "<strong>Hint</strong>",
-        "Look at the <code>ourName</code> example if you get stuck."
+        "<strong>Hint</strong><br>Look at the <code>ourName</code> example if you get stuck."
       ],
       "challengeSeed": [
         "// Example",
-        "var ourName = \"Free Code Camp\";",
+        "var ourName;",
         "",
-        "// Only change code below this line",
+        "// Define myName below this line",
         ""
       ],
       "tail": [
         "if(typeof(myName) !== \"undefined\"){(function(v){return v;})(myName);}"
       ],
       "solutions": [
-        "var myName = \"Test Testerson\";"
+        "var myName;"
       ],
       "tests": [
-        "assert((function(){if(typeof(myName) !== \"undefined\" && typeof(myName) === \"string\" && myName.length > 0){return true;}else{return false;}})(), 'message: <code>myName</code> should be a string that contains at least one character in it.');"
+        "assert(/var\\s+myName\\s*;/.test(code), 'message: You should declare <code>myName</code> with the <code>var</code> keyword, ending with a semicolon');"
       ],
       "type": "waypoint",
       "challengeType": 1
@@ -246,7 +217,7 @@
       "id": "cf1111c1c11feddfaeb3bdef",
       "title": "Add Two Numbers with JavaScript",
       "description": [
-        "<code>Number</code> is another data type in JavaScript which represents numeric data.",
+        "<code>Number</code> is a data type in JavaScript which represents numeric data.",
         "Now let's try to add two numbers using JavaScript.",
         "JavaScript uses the <code>+</code> symbol as addition operation when placed between two numbers.",
         "",
@@ -2094,28 +2065,62 @@
       "challengeType": 1
     },
     {
+      "id": "bd7123c9c441eddfaeb5bdef",
+      "title": "Understanding Boolean Values",
+      "description": [
+        "Another data type is the <dfn>Boolean</dfn>. <code>Booleans</code> may only be one of two values: <code>true</code> or <code>false</code>. They are basically little on-off switches, where <code>true</code> is \"on\" and <code>false</code> is \"off.\"  These two states are mutually exclusive.",
+        "<strong>Note</strong><br><code>Boolean</code> values are never written with quotes. The <code>strings</code> <code>\"true\"</code> and <code>\"false\"</code> are not <code>Boolean</code> and have no special meaning in JavaScript.",
+        "<h4>Instructions</h4>",
+        "Modify the <code>welcomeToBooleans</code> function so that it returns <code>true</code> instead of <code>false</code> when the run button is clicked."
+      ],
+      "challengeSeed": [
+        "function welcomeToBooleans() {",
+        "",
+        "// Only change code below this line.",
+        "",
+        "return false; // Change this line",
+        "",
+        "// Only change code above this line.",
+        "}"
+      ],
+      "tail": [
+        "welcomeToBooleans();"
+      ],
+      "solutions": [
+        "function welcomeToBooleans() {\n  return true; // Change this line\n}"
+      ],
+      "tests": [
+        "assert(typeof(welcomeToBooleans()) === 'boolean', 'message: The <code>welcomeToBooleans()</code> function should return a boolean &#40;true/false&#41; value.');",
+        "assert(welcomeToBooleans() === true, 'message: <code>welcomeToBooleans()</code> should return true.');"
+      ],
+      "type": "waypoint",
+      "challengeType": 1
+    },
+    {
       "id": "cf1111c1c12feddfaeb3bdef",
       "title": "Use Conditional Logic with If Statements",
       "description": [
-        "We can use <code>if</code> statements in JavaScript to execute code only if the specified condition is met.",
-        "Each <code>if</code> statement requires a <dfn>boolean</dfn> condition to evaluate. If the boolean evaluates to <code>true</code>, the statements inside the curly braces will execute. Otherwise, if it evaluates to <code>false</code>, the code will not execute.",
+        "<code>If</code> statements are used to make decisions in code. The keyword <code>if</code> tells JavaScript to execute the code in the curly braces under certain conditions, defined in the parentheses. These conditions are known as <code>Boolean</code> conditions because they may only be <code>true</code> or <code>false</code>.",
+        "When the condition evaluates to <code>true</code>, the program executes the statement inside the curly braces. When the Boolean condition evaluates to <code>false</code>, the statement inside the curly braces will not execute.",
+        "<strong>Pseudocode</strong>",
+        "<blockquote>if(<i>condition is true</i>) {<br>  <i>statement is executed</i><br>}</blockquote>",
         "<strong>Example</strong>",
-        "<blockquote>function test(myVal) {<br>  if (myVal > 10) {<br>     return \"Greater Than\";<br>  }<br>  return \"Not Greater Than\";<br>}</blockquote>",
-        "If <code>myVal</code> is greater than <code>10</code>, the function will return <code>\"Greater Than\"</code>. If it is not, the function will return <code>\"Not Greater Than\"</code>.",
+        "<blockquote>function test (myCondition) {<br>  if (myCondition) {<br>     return \"It was true\";<br>  }<br> return \"It was false\";<br>}<br>test(true);  // returns \"It was true\"<br>test(false); // returns \"It was false\"</blockquote>",
+        "When <code>test</code> is called with a value of <code>true</code>, the <code>if</code> statement evaluates <code>myCondition</code> to see if it is <code>true</code> or not. Since it is <code>true</code>, the function returns <code>\"It was true\"</code>. When we call <code>test</code> with a value of <code>false</code>, <code>myCondition</code> is <em>not</em> <code>true</code> and the statement in the curly braces is not executed and the function returns <code>\"It was false\"</code>.",
         "<h4>Instructions</h4>",
-        "Create an <code>if</code> statement inside the function to return <code>\"Yes\"</code> if <code>testMe</code> is greater than <code>5</code> and return <code>\"No\"</code> otherwise."
+        "Create an <code>if</code> statement inside the function to return <code>\"That was true\"</code> if the parameter <code>wasThatTrue</code> is <code>true</code> and return <code>\"That was false\"</code> otherwise."
       ],
       "challengeSeed": [
         "// Example",
-        "function ourFunction(testMe) {",
-        "  if (testMe > 10) { ",
-        "    return \"Yes\";",
+        "function ourFunction(isItTrue) {",
+        "  if (isItTrue) { ",
+        "    return \"Yes, it's true\";",
         "  }",
-        "  return \"No\";",
+        "  return \"No, it's false\";",
         "}",
         "",
         "// Setup",
-        "function myFunction(testMe) {",
+        "function myFunction(wasThatTrue) {",
         "",
         "  // Only change code below this line.",
         "  ",
@@ -2126,18 +2131,17 @@
         "}",
         "",
         "// Change this value to test",
-        "myFunction(10);"
+        "myFunction(true);"
       ],
       "solutions": [
-        "function myFunction(testMe) {\n  if (testMe > 5) {\n    return 'Yes';\n  }\n  return 'No';\n}"
+        "function myFunction(wasThatTrue) {\n  if (wasThatTrue) {\n    return \"That was true\";\n  }\n  return \"That was false\";\n}"
       ],
       "tests": [
         "assert(typeof myFunction === \"function\", 'message: <code>myFunction</code> should be a function');",
-        "assert(typeof myFunction(4) === \"string\", 'message: <code>myFunction(4)</code> should return a string');",
-        "assert(typeof myFunction(6) === \"string\", 'message: <code>myFunction(6)</code> should return a string');",
-        "assert(myFunction(4) === \"No\", 'message: <code>myFunction(4)</code> should \"No\"');",
-        "assert(myFunction(5) === \"No\", 'message: <code>myFunction(5)</code> should \"No\"');",
-        "assert(myFunction(6) === \"Yes\", 'message: <code>myFunction(6)</code> should \"Yes\"');"
+        "assert(typeof myFunction(true) === \"string\", 'message: <code>myFunction(true)</code> should return a string');",
+        "assert(typeof myFunction(false) === \"string\", 'message: <code>myFunction(false)</code> should return a string');",
+        "assert(myFunction(true) === \"That was true\", 'message: <code>myFunction(true)</code> should return \"That was true\"');",
+        "assert(myFunction(false) === \"That was false\", 'message: <code>myFunction(false)</code> should return \"That was false\"');"
       ],
       "type": "waypoint",
       "challengeType": 1
@@ -2149,9 +2153,9 @@
         "There are many <dfn>Comparison Operators</dfn> in JavaScript. All of these operators return a boolean <code>true</code> or <code>false</code> value.",
         "The most basic operator is the equality operator <code>==</code>. The equality operator compares two values and returns <code>true</code> if they're equivalent or <code>false</code> if they are not. Note that equality is different from assignment (<code>=</code>), which assigns the value at the right of the operator to a variable in the left.",
         "<blockquote>function equalityTest(myVal) {<br>  if (myVal == 10) {<br>     return \"Equal\";<br>  }<br>  return \"Not Equal\";<br>}</blockquote>",
-        "If <code>myVal</code> is equal to <code>10</code>, the function will return \"Equal\". If it is not, the function will return \"Not Equal\".",
-        "The equality operator will do its best to convert values for comparison, for example:",
-        "<blockquote>   1   ==  1        // true<br>  \"1\"  ==  1        // true<br>   1   == '1'       // true<br>   0   == false     // true<br>   0   == null      // false<br>   0   == undefined // false<br> null  == undefined // true</blockquote>",
+        "If <code>myVal</code> is equal to <code>10</code>, the equality operator returns <code>true</code>, so the code in the curly braces will execute, and the function will return <code>\"Equal\"</code>. Otherwise, the function will return <code>\"Not Equal\"</code>.",
+        "In order for the JavaScript to compare two different <code>data types</code> (for example, <code>numbers</code> and <code>strings</code>), it must convert one type to another. Once it does, however, it can compare terms as follows:",
+        "<blockquote>   1   ==  1    // true<br>   1   ==  2    // false<br>   1   == '1'   // true<br>  \"3\"  ==  3    // true</blockquote>",
         "<h4>Instructions</h4>",
         "Add the <code>equality operator</code> to the indicated line so that the function will return \"Equal\" when <code>val</code> is equivalent to <code>12</code>"
       ],
@@ -2184,10 +2188,10 @@
       "id": "56533eb9ac21ba0edf2244d1",
       "title": "Comparison with the Strict Equality Operator",
       "description": [
-        "Strict equality (<code>===</code>) is the counterpart to the equality operator (<code>==</code>). Unlike the equality operator, strict equality tests both the <dfn>type</dfn> and <dfn>value</dfn> of the compared elements.",
+        "Strict equality (<code>===</code>) is the counterpart to the equality operator (<code>==</code>). Unlike the equality operator, strict equality tests both the <code>data type</code> and value of the compared elements.",
         "<strong>Examples</strong>",
         "<blockquote>3 === 3   // true<br>3 === '3' // false</blockquote>",
-        "<em>In the second example, <code>3</code> is a <code>Number</code> type and <code>'3'</code> is a <code>String</code> type.</em>",
+        "In the second example, <code>3</code> is a <code>Number</code> type and <code>'3'</code> is a <code>String</code> type.",
         "<h4>Instructions</h4>",
         "Use strict equality operator in <code>if</code> statement so the function will return \"Equal\" when <code>val</code> is strictly equal to <code>7</code>"
       ],
@@ -4019,12 +4023,7 @@
         "assert(lookUp(\"Akira\", \"address\") === \"No such property\", 'message: <code>\"Akira\", \"address\"</code> should return \"No such property\"');"
       ],
       "type": "checkpoint",
-      "challengeType": 1,
-      "nameCn": "",
-      "nameFr": "",
-      "nameRu": "",
-      "nameEs": "",
-      "namePt": ""
+      "challengeType": 1
     },
     {
       "id": "cf1111c1c11feddfaeb9bdef",
