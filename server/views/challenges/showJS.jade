@@ -91,10 +91,6 @@ block content
 
     include ../partials/challenge-footer
     script.
-      if (!!{JSON.stringify(MDNlinks.length)}) {
-          $('#MDN-links').addClass('collapse');
-      }
-
       common.init.push(function() {
         common.editor.setOption('mode', 'javascript');
       });

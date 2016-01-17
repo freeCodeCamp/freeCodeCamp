@@ -97,7 +97,3 @@ block content
       common.username = !{JSON.stringify(user && user.username || '')};
 
     include ../partials/challenge-footer
-    script.
-      if (!!{JSON.stringify(MDNlinks.length)}) {
-          $('#MDN-links').addClass('collapse');
-      }
