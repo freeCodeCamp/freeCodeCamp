@@ -201,7 +201,7 @@
       ],
       "description": [
         "<strong>Objective:</strong> Build a full stack JavaScript app that is functionally similar to this: <a href='https://timestamp-ms.herokuapp.com/' target='_blank'>https://timestamp-ms.herokuapp.com/</a> and deploy it to Heroku.",
-        "Note that for each project, you should create a new GitHub repository and a new Heroku project. If you can't remember how to do this, revisit <a href='/challenges/get-set-for-our-back-end-development-projects'>http://freecodecamp.com//challenges/get-set-for-our-back-end-development-projects</a>.",
+        "Note that for each project, you should create a new GitHub repository and a new Heroku project. If you can't remember how to do this, revisit <a href='/challenges/get-set-for-our-back-end-development-projects'>http://freecodecamp.com/challenges/get-set-for-our-back-end-development-projects</a>.",
         "Here are the specific user stories you should implement for this project:",
         "<strong>User Story:</strong> I can pass a string as a parameter, and it will check to see whether that string contains either a unix timestamp or a natural language date (example: January 1, 2016).",
         "<strong>User Story:</strong> If it does, it returns both the Unix timestamp and the natural language form of that date.",
@@ -233,7 +233,7 @@
       ],
       "description": [
         "<strong>Objective:</strong> Build a full stack JavaScript app that is functionally similar to this: <a href='https://cryptic-ridge-9197.herokuapp.com/api/whoami/' target='_blank'>https://cryptic-ridge-9197.herokuapp.com/api/whoami/</a> and deploy it to Heroku.",
-        "Note that for each project, you should create a new GitHub repository and a new Heroku project. If you can't remember how to do this, revisit <a href='//challenges/get-set-for-our-back-end-development-projects'>http://freecodecamp.com//challenges/get-set-for-our-back-end-development-projects</a>.",
+        "Note that for each project, you should create a new GitHub repository and a new Heroku project. If you can't remember how to do this, revisit <a href='/challenges/get-set-for-our-back-end-development-projects'>http://freecodecamp.com/challenges/get-set-for-our-back-end-development-projects</a>.",
         "Here's the specific user story you should implement for this project:",
         "<strong>User Story:</strong> I can get the IP address, language and operating system for my browser.",
         "Once you've finished implementing these user stories, click the \"I've completed this challenge\" button and enter the URLs for both your GitHub repository and your live app running on Heroku.",
@@ -263,7 +263,7 @@
       ],
       "description": [
         "<strong>Objective:</strong> Build a full stack JavaScript app that is functionally similar to this: <a href='https://shurli.herokuapp.com/' target='_blank'>https://shurli.herokuapp.com/</a> and deploy it to Heroku.",
-        "Note that for each project, you should create a new GitHub repository and a new Heroku project. If you can't remember how to do this, revisit <a href='//challenges/get-set-for-our-back-end-development-projects'>http://freecodecamp.com//challenges/get-set-for-our-back-end-development-projects</a>.",
+        "Note that for each project, you should create a new GitHub repository and a new Heroku project. If you can't remember how to do this, revisit <a href='/challenges/get-set-for-our-back-end-development-projects'>http://freecodecamp.com/challenges/get-set-for-our-back-end-development-projects</a>.",
         "Here are the specific user stories you should implement for this project:",
         "<strong>User Story:</strong>  I can pass a URL as a parameter and I will receive a shortened URL in the JSON response.",
         "<strong>User Story:</strong> If I pass an invalid URL that doesn't follow the valid http://www.example.com format, the JSON response will contain an error instead.",
@@ -295,7 +295,7 @@
       ],
       "description": [
         "<strong>Objective:</strong> Build a full stack JavaScript app that allows you to search for images like this: <a href='https://cryptic-ridge-9197.herokuapp.com/api/imagesearch/lolcats%20funny?offset=10' target='_blank'>https://cryptic-ridge-9197.herokuapp.com/api/imagesearch/lolcats%20funny?offset=10</a> and browse recent search queries like this: <a href='https://cryptic-ridge-9197.herokuapp.com/api/latest/imagesearch/' target='_blank'>https://cryptic-ridge-9197.herokuapp.com/api/latest/imagesearch/</a>. Then deploy it to Heroku.",
-        "Note that for each project, you should create a new GitHub repository and a new Heroku project. If you can't remember how to do this, revisit <a href='//challenges/get-set-for-our-back-end-development-projects'>http://freecodecamp.com//challenges/get-set-for-our-back-end-development-projects</a>.",
+        "Note that for each project, you should create a new GitHub repository and a new Heroku project. If you can't remember how to do this, revisit <a href='/challenges/get-set-for-our-back-end-development-projects'>http://freecodecamp.com/challenges/get-set-for-our-back-end-development-projects</a>.",
         "Here are the specific user stories you should implement for this project:",
         "<strong>User Story:</strong> I can get the image URLs, alt text and page urls for a set of images relating to a given search string.",
         "<strong>User Story:</strong> I can paginate through the responses by adding a ?offset=2 parameter to the URL.",
@@ -327,7 +327,7 @@
       ],
       "description": [
         "<strong>Objective:</strong> Build a full stack JavaScript app that is functionally similar to this: <a href='https://cryptic-ridge-9197.herokuapp.com/' target='_blank'>https://cryptic-ridge-9197.herokuapp.com/</a> and deploy it to Heroku.",
-        "Note that for each project, you should create a new GitHub repository and a new Heroku project. If you can't remember how to do this, revisit <a href='//challenges/get-set-for-our-back-end-development-projects'>http://freecodecamp.com//challenges/get-set-for-our-back-end-development-projects</a>.",
+        "Note that for each project, you should create a new GitHub repository and a new Heroku project. If you can't remember how to do this, revisit <a href='/challenges/get-set-for-our-back-end-development-projects'>http://freecodecamp.com/challenges/get-set-for-our-back-end-development-projects</a>.",
         "Here are the specific user stories you should implement for this project:",
         "<strong>User Story:</strong> I can submit a FormData object that includes a file upload.",
         "<strong>User Story:</strong> When I submit something, I will receive the file size in bytes within the JSON response",
