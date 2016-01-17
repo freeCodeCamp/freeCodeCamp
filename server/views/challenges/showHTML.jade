@@ -17,7 +17,10 @@ block content
                             hr
                             .bonfire-instructions
                                 for sentence in description
-                                    p.wrappable!= sentence
+                                    if (/blockquote|h4|table/.test(sentence))
+                                        !=sentence
+                                    else
+                                        p.wrappable!= sentence
                                 .negative-bottom-margin-30
                     .button-spacer
                     .btn-big.btn.btn-primary.btn-block#submitButton
