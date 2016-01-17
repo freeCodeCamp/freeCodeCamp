@@ -45,7 +45,7 @@
         "creates a <code>variable</code> called <code>ourName</code>. In JavaScript we end statements with semicolons.",
         "<code>Variable</code> names can be made up of numbers, letters, and <code>$</code> or <code>_</code>, but may not contain spaces or start with a number.",
         "<h4>Instructions</h4>",
-        "Use the <code>var</code> keyword to create a variable called <code>myName</code>. Set its value to your name, wrapped in double quotes.",
+        "Use the <code>var</code> keyword to create a variable called <code>myName</code>.",
         "<strong>Hint</strong><br>Look at the <code>ourName</code> example if you get stuck."
       ],
       "challengeSeed": [
