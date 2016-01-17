@@ -5,6 +5,14 @@ window.common = (function(global) {
     common = { init: [] }
   } = global;
 
+  var challengePrefix = [
+    'Bonfire: ',
+    'Waypoint: ',
+    'Zipline: ',
+    'Basejump: ',
+    'Checkpoint: '],
+  item;
+
   var codeStorage = {
     getStoredValue(key) {
       if (
@@ -16,7 +24,16 @@ window.common = (function(global) {
         console.log('unable to read from storage');
         return '';
       }
-      return '' + localStorage.getItem(key + 'Val');
+      if (localStorage.getItem(key + 'Val')) {
+        return '' + localStorage.getItem(key + 'Val');
+      } else {
+        for (var i = 0; i <= challengePrefix.length; i++) {
+          item = localStorage.getItem(challengePrefix[i] + key + 'Val');
+          if (item) {
+            return '' + item;
+          }
+        }
+      }
     },
 
     isAlive: function(key) {
