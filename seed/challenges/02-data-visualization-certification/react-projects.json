@@ -17,7 +17,7 @@
         "<strong>Rule #3:</strong> You must use both Sass and React to build this project.",
         "<strong>User Story:</strong> I can type GitHub-flavored Markdown into a text area.",
         "<strong>User Story:</strong> I can see a preview of the output of my markdown that is updated as I type.",
-        "<strong>Hint:</strong> You don't need to interperate Markdown yourself - you can import the Marked library for this: <a href='https://cdnjs.com/libraries/marked'>https://cdnjs.com/libraries/marked</a>",
+        "<strong>Hint:</strong> You don't need to interpret Markdown yourself - you can import the Marked library for this: <a href='https://cdnjs.com/libraries/marked'>https://cdnjs.com/libraries/marked</a>",
         "<strong>Note:</strong> If you want to use the React JSX syntax, you need to enable 'Babel' as a preprocessor",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck.",
         "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen. ",
