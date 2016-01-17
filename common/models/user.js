@@ -178,7 +178,11 @@ module.exports = function(User) {
       debug('user logged in');
 
       if (req.session && req.session.returnTo) {
-        return res.redirect(req.session.returnTo);
+        var redirectTo = req.session.returnTo;
+        if (redirectTo === '/map-aside') {
+          redirectTo = '/map';
+        }
+        return res.redirect(redirectTo);
       }
 
       req.flash('success', { msg: 'Success! You are logged in.' });
