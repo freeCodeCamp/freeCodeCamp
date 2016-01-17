@@ -263,6 +263,17 @@ $(document).ready(function() {
     window.location.href = link;
   });
 
+  if ($('.sr-only').length) {
+    var lastChallenge = $('.sr-only').filter(function() {
+      return $(this).text() === ' Complete';
+    });
+    if (lastChallenge.length) {
+      lastChallenge = lastChallenge[lastChallenge.length - 1];
+      var scrollTo = $(lastChallenge).offset().top - 250;
+      $('html, body').scrollTop(scrollTo);
+    }
+  }
+
   // map
   $('#nav-map-btn').on('click', () => {
     if (!main.isMapAsideLoad) {
@@ -276,5 +287,36 @@ $(document).ready(function() {
 
   $('.map-aside-action-collapse').on('click', () => {
     $('.map-aside').addClass('is-collapsed');
+  });
+
+  $('#accordion').on('show.bs.collapse', function(e) {
+      $(e.target)
+        .prev().find('.fa-caret-right')
+        .removeClass('fa-caret-right').addClass('fa-caret-down');
+      if ($('a[data-toggle=collapse]').length === $('.fa-caret-down').length) {
+        $('#showAll').text('Collapse all challenges');
+        $('#showAll').addClass('active');
+      }
+  }).on('hide.bs.collapse', function(e) {
+      $(e.target)
+        .prev().find('.fa-caret-down')
+        .removeClass('fa-caret-down').addClass('fa-caret-right');
+      if ($('a[data-toggle=collapse]').length === $('.fa-caret-right').length) {
+        $('#showAll').text('Expand all challenges');
+        $('#showAll').removeClass('active');
+      }
+  });
+
+  $('#showAll').on('click', () => {
+    var mapExpanded = $('#showAll').hasClass('active');
+    if (!mapExpanded) {
+      $('.map-collapse').collapse('show');
+      $('#showAll').text('Collapse all challenges');
+      return $('#showAll').addClass('active');
+    } else {
+      $('.map-collapse').collapse('hide');
+      $('#showAll').text('Expand all challenges');
+      return $('#showAll').removeClass('active');
+    }
   });
 });
