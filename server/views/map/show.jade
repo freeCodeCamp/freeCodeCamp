@@ -1,61 +1,62 @@
 extends ../layout-wide
 block content
-      .text-center
-          h1 Challenge Map
-          p Required challenges are marked with a *
-          .row
-              .col-xs-10.col-xs-offset-1.col-sm-6.col-sm-offset-3.col-md-4.col-md-offset-4
-                  .btn.btn-primary.btn-block.active#showAll Collapse all challenges
-      hr
-      #accordion
-        for superBlock, index in superBlocks
-            h2
-              i.fa.fa-caret-down
-              | &thinsp;          
-              a(data-toggle='collapse', data-parent='#accordion', href='#collapse'+superBlock.name.split(' ').join('-'))
-                | #{superBlock.name}
-            div.margin-left-10(id = 'collapse'+superBlock.name.split(' ').join('-') class = "collapse in map-collapse no-transition")
-                #nested
-                    for challengeBlock in superBlock.blocks
-                        h3
-                          i.fa.fa-caret-down
-                          | &thinsp;
-                          a(data-toggle='collapse', data-parent='#nested', href='#nested-collapse'+challengeBlock.name.replace(/(\W)/gi, '').split(' ').join('-'))
-                            | #{challengeBlock.name} (#{challengeBlock.time})
-                        div.margin-left-10(id = "nested-collapse"+challengeBlock.name.replace(/\W/gi, '').split(' ').join('-') class = "collapse in map-collapse no-transition")
-                            .button-spacer
-                            for challenge in challengeBlock.challenges
-                                if challenge.completed
-                                    p.text-primary.ion-checkmark-circled.padded-ionic-icon.negative-15(name="#{challenge.dashedName}") &nbsp;&nbsp;&nbsp;
-                                        a(href="/challenges/#{challenge.dashedName}" target='_parent')
-                                            = challenge.title
-                                            span.sr-only= " Complete"
-                                else if challenge.isRequired
-                                    p.slightly-faded.ion-ios-circle-outline.padded-ionic-icon.negative-15(name="#{challenge.dashedName}") &nbsp;&nbsp;&nbsp;
-                                        a(name="#{challenge.dashedName}" target='_parent' href="/challenges/#{challenge.dashedName}" class=challenge.isComingSoon ? 'disabled' : '')
-                                            span= challenge.title
-                                            span.sr-only= " Incomplete"
-                                        if challenge.markNew
-                                            span.text-success.small &thinsp; &thinsp;
-                                                strong
-                                                    em New
-                                        if challengeBlock.isComingSoon
-                                            span.text-success.small &thinsp; &thinsp;
-                                                strong
-                                                    em Coming Soon
-                                        span.text-primary &thinsp; &thinsp;
-                                            strong *
-                                else
-                                    p.slightly-faded.ion-ios-circle-outline.padded-ionic-icon.negative-15(name="#{challenge.dashedName}") &nbsp;&nbsp;&nbsp;
-                                        a(name="#{challenge.dashedName}" target='_parent' href="/challenges/#{challenge.dashedName}" class=challenge.isComingSoon ? 'disabled' : '')
-                                            span= challenge.title
-                                            span.sr-only= " Incomplete"
-                                        if challenge.markNew
-                                            span.text-success.small &thinsp; &thinsp;
-                                                strong
-                                                    em New
-                                        if challengeBlock.isComingSoon
-                                            span.text-success.small &thinsp; &thinsp;
-                                                strong
-                                                    em Coming Soon
-        .spacer
+      .map
+        .map-fixed-header.text-center
+            h1 Challenge Map
+            p Required challenges are marked with a *
+            .row
+                .col-xs-10.col-xs-offset-1.col-sm-6.col-sm-offset-3.col-md-4.col-md-offset-4
+                    .btn.btn-primary.btn-block.active#showAll Collapse all challenges
+            hr
+        #accordion.map-accordion
+          for superBlock, index in superBlocks
+              h2
+                i.fa.fa-caret-down
+                | &thinsp;          
+                a(data-toggle='collapse', data-parent='#accordion', href='#collapse'+superBlock.name.split(' ').join('-'))
+                  | #{superBlock.name}
+              div.margin-left-10(id = 'collapse'+superBlock.name.split(' ').join('-') class = "collapse in map-collapse no-transition")
+                  #nested
+                      for challengeBlock in superBlock.blocks
+                          h3
+                            i.fa.fa-caret-down
+                            | &thinsp;
+                            a(data-toggle='collapse', data-parent='#nested', href='#nested-collapse'+challengeBlock.name.replace(/(\W)/gi, '').split(' ').join('-'))
+                              | #{challengeBlock.name} (#{challengeBlock.time})
+                          div.margin-left-10(id = "nested-collapse"+challengeBlock.name.replace(/\W/gi, '').split(' ').join('-') class = "collapse in map-collapse no-transition")
+                              .button-spacer
+                              for challenge in challengeBlock.challenges
+                                  if challenge.completed
+                                      p.text-primary.ion-checkmark-circled.padded-ionic-icon.negative-15(name="#{challenge.dashedName}") &nbsp;&nbsp;&nbsp;
+                                          a(href="/challenges/#{challenge.dashedName}" target='_parent')
+                                              = challenge.title
+                                              span.sr-only= " Complete"
+                                  else if challenge.isRequired
+                                      p.slightly-faded.ion-ios-circle-outline.padded-ionic-icon.negative-15(name="#{challenge.dashedName}") &nbsp;&nbsp;&nbsp;
+                                          a(name="#{challenge.dashedName}" target='_parent' href="/challenges/#{challenge.dashedName}" class=challenge.isComingSoon ? 'disabled' : '')
+                                              span= challenge.title
+                                              span.sr-only= " Incomplete"
+                                          if challenge.markNew
+                                              span.text-success.small &thinsp; &thinsp;
+                                                  strong
+                                                      em New
+                                          if challengeBlock.isComingSoon
+                                              span.text-success.small &thinsp; &thinsp;
+                                                  strong
+                                                      em Coming Soon
+                                          span.text-primary &thinsp; &thinsp;
+                                              strong *
+                                  else
+                                      p.slightly-faded.ion-ios-circle-outline.padded-ionic-icon.negative-15(name="#{challenge.dashedName}") &nbsp;&nbsp;&nbsp;
+                                          a(name="#{challenge.dashedName}" target='_parent' href="/challenges/#{challenge.dashedName}" class=challenge.isComingSoon ? 'disabled' : '')
+                                              span= challenge.title
+                                              span.sr-only= " Incomplete"
+                                          if challenge.markNew
+                                              span.text-success.small &thinsp; &thinsp;
+                                                  strong
+                                                      em New
+                                          if challengeBlock.isComingSoon
+                                              span.text-success.small &thinsp; &thinsp;
+                                                  strong
+                                                      em Coming Soon
+          .spacer
