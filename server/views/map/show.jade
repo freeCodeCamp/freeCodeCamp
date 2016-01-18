@@ -21,8 +21,6 @@ block content
                           i.fa.fa-caret-down
                           | &thinsp;
                           a(data-toggle='collapse', data-parent='#nested', href='#nested-collapse'+challengeBlock.name.replace(/(\W)/gi, '').split(' ').join('-'))
-
-                            | &thinsp;
                             | #{challengeBlock.name} (#{challengeBlock.time})
                         div.margin-left-10(id = "nested-collapse"+challengeBlock.name.replace(/\W/gi, '').split(' ').join('-') class = "collapse in map-collapse no-transition")
                             .button-spacer
