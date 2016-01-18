@@ -269,9 +269,13 @@ $(document).ready(function() {
     });
     if (lastChallenge.length) {
       lastChallenge = lastChallenge[lastChallenge.length - 1];
-      var scrollTo = $(lastChallenge).offset().top - 400;
-      $('.map-accordion').scrollTop(scrollTo);
+      var scrollTo = $(lastChallenge).offset().top - 380;
+      $('html, body, .map-accordion').scrollTop(scrollTo);
     }
+  }
+
+  if (String(window.location).match(/\/map$/ig)) {
+    $('.text-center').css('top', '50px');
   }
 
   // map
