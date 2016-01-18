@@ -2,12 +2,6 @@
  * based off of https://github.com/gitterHQ/sidecar
  * license: MIT
  */
-.map {
-  display: flex;
-  flex-direction: column;
-  max-height: 90vh;
-}
-
 .map-aside {
 
     z-index: 20000;
@@ -87,14 +81,17 @@
 }
 
 .map-fixed-header {
+  position: fixed;
   background: white;
+  width: 100%;
   z-index: 1;
-  flex: 1;
-  padding-bottom: 25px;
+  left: 0;
+  top: 0;
 }
 
 .map-accordion {
-  flex: 9;
+  position: absolute;
+  margin-top: 180px;
   overflow-y: auto;
 }
 
