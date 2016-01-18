@@ -269,8 +269,8 @@ $(document).ready(function() {
     });
     if (lastChallenge.length) {
       lastChallenge = lastChallenge[lastChallenge.length - 1];
-      var scrollTo = $(lastChallenge).offset().top - 250;
-      $('html, body').scrollTop(scrollTo);
+      var scrollTo = $(lastChallenge).offset().top - 400;
+      $('.map-accordion').scrollTop(scrollTo);
     }
   }
 
