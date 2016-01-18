@@ -85,6 +85,8 @@ block content
       common.dashedName = !{JSON.stringify(dashedName)};
       common.isCompleted = !{JSON.stringify(isCompleted)};
 
+      common.username = !{JSON.stringify(user && user.username || '')};
+
       common.init.push(function() {
         common.editor.setOption('lint', false);
         common.editor.setOption('mode', 'text/html');
