@@ -310,11 +310,23 @@ $(document).ready(function() {
   $('#showAll').on('click', () => {
     var mapExpanded = $('#showAll').hasClass('active');
     if (!mapExpanded) {
-      $('.map-collapse').collapse('show');
+      $.each($('.map-collapse:not(".in")'), function(i, item) {
+        $(item).css('height', '100%');
+        $(item).addClass('in');
+        $(item)
+          .prev().find('.fa-caret-right')
+          .removeClass('fa-caret-right').addClass('fa-caret-down');
+      });
       $('#showAll').text('Collapse all challenges');
       return $('#showAll').addClass('active');
     } else {
-      $('.map-collapse').collapse('hide');
+      $.each($('.map-collapse.in'), function(i, item) {
+        $(item).css('height', '100%');
+        $(item).removeClass('in');
+        $(item)
+          .prev().find('.fa-caret-down')
+          .removeClass('fa-caret-down').addClass('fa-caret-right');
+      });
       $('#showAll').text('Expand all challenges');
       return $('#showAll').removeClass('active');
     }
