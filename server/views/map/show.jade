@@ -4,9 +4,12 @@ block content
             p Required challenges are marked with a *
             .row
                 .col-xs-10.col-xs-offset-1.col-sm-6.col-sm-offset-3.col-md-4.col-md-offset-4
-                    .btn.btn-primary.btn-block.active#showAll Collapse all challenges
+                  .row
+                    .col-xs-12.col-sm-8.col-sm-offset-2.col-md-6.col-md-offset-3
+                      .btn.btn-sm.btn-block.btn-primary.active#manipAll Show incomplete challenges
+                      .btn.btn-sm.btn-block.btn-primary.active#showAll Collapse all
             hr
-        #accordion
+        #accordion.map-accordion
           .button-spacer
           for superBlock, index in superBlocks
               h2
