@@ -1,5 +1,4 @@
 import React, { PropTypes } from 'react';
-import { Lifecycle } from 'react-router';
 import { Button, Row, Col } from 'react-bootstrap';
 import { contain } from 'thundercats-react';
 
@@ -26,19 +25,12 @@ export default contain(
       jobActions: PropTypes.object
     },
 
-    mixins: [Lifecycle],
-
     componentDidMount() {
       const { appActions, job } = this.props;
       // redirect user in client
       if (!job || !job.position || !job.description) {
         appActions.goTo('/jobs/new');
       }
-    },
-
-    routerWillLeave() {
-      const { jobActions } = this.props;
-      jobActions.clearPromo();
     },
 
     render() {

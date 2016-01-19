@@ -138,7 +138,6 @@ export default Actions({
       body.type = type;
     }
     return this.postJSON$('/api/promos/getButton', body)
-      .pluck('response')
       .map(({ promo }) => {
         if (!promo || !promo.buttonId) {
           return noOper;
