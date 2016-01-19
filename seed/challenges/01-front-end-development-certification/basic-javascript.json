@@ -56,7 +56,7 @@
         ""
       ],
       "tail": [
-        "if(typeof(myName) !== \"undefined\"){(function(v){return v;})(myName);}"
+        "if(typeof myName !== \"undefined\"){(function(v){return v;})(myName);}"
       ],
       "solutions": [
         "var myName;"
@@ -744,14 +744,14 @@
         ""
       ],
       "tail": [
-        "if(typeof(myFirstName) !== \"undefined\" && typeof(myLastName) !== \"undefined\"){(function(){return myFirstName + ', ' + myLastName;})();}"
+        "if(typeof myFirstName !== \"undefined\" && typeof myLastName !== \"undefined\"){(function(){return myFirstName + ', ' + myLastName;})();}"
       ],
       "solutions": [
         "var myFirstName = \"Alan\";\nvar myLastName = \"Turing\";"
       ],
       "tests": [
-        "assert((function(){if(typeof(myFirstName) !== \"undefined\" && typeof(myFirstName) === \"string\" && myFirstName.length > 0){return true;}else{return false;}})(), 'message: <code>myFirstName</code> should be a string with at least one character in it.');",
-        "assert((function(){if(typeof(myLastName) !== \"undefined\" && typeof(myLastName) === \"string\" && myLastName.length > 0){return true;}else{return false;}})(), 'message: <code>myLastName</code> should be a string with at least one character in it.');"
+        "assert((function(){if(typeof myFirstName !== \"undefined\" && typeof myFirstName === \"string\" && myFirstName.length > 0){return true;}else{return false;}})(), 'message: <code>myFirstName</code> should be a string with at least one character in it.');",
+        "assert((function(){if(typeof myLastName !== \"undefined\" && typeof myLastName === \"string\" && myLastName.length > 0){return true;}else{return false;}})(), 'message: <code>myLastName</code> should be a string with at least one character in it.');"
       ],
       "type": "waypoint",
       "challengeType": 1
@@ -1059,13 +1059,13 @@
         ""
       ],
       "tail": [
-        "if(typeof(lastNameLength) !== \"undefined\"){(function(){return lastNameLength;})();}"
+        "if(typeof lastNameLength !== \"undefined\"){(function(){return lastNameLength;})();}"
       ],
       "solutions": [
         "var firstNameLength = 0;\nvar firstName = \"Ada\";\nfirstNameLength = firstName.length;\n\nvar lastNameLength = 0;\nvar lastName = \"Lovelace\";\nlastNameLength = lastName.length;"
       ],
       "tests": [
-        "assert((function(){if(typeof(lastNameLength) !== \"undefined\" && typeof(lastNameLength) === \"number\" && lastNameLength === 8){return true;}else{return false;}})(), 'message: <code>lastNameLength</code> should be equal to eight.');",
+        "assert((function(){if(typeof lastNameLength !== \"undefined\" && typeof lastNameLength === \"number\" && lastNameLength === 8){return true;}else{return false;}})(), 'message: <code>lastNameLength</code> should be equal to eight.');",
         "assert((function(){if(code.match(/\\.length/gi) && code.match(/\\.length/gi).length >= 2 && code.match(/var lastNameLength \\= 0;/gi) && code.match(/var lastNameLength \\= 0;/gi).length >= 1){return true;}else{return false;}})(), 'message: You should be getting the length of <code>lastName</code> by using <code>.length</code> like this: <code>lastName.length</code>.');"
       ],
       "type": "waypoint",
@@ -1104,7 +1104,7 @@
         "var firstLetterOfLastName = \"\";\nvar lastName = \"Lovelace\";\n\n// Only change code below this line\nfirstLetterOfLastName = lastName[0];"
       ],
       "tests": [
-        "assert((function(){if(typeof(firstLetterOfLastName) !== \"undefined\" && code.match(/\\[0\\]/gi) && typeof(firstLetterOfLastName) === \"string\" && firstLetterOfLastName === \"L\"){return true;}else{return false;}})(), 'message: The <code>firstLetterOfLastName</code> variable should have the value of <code>L</code>.');"
+        "assert((function(){if(typeof firstLetterOfLastName !== \"undefined\" && code.match(/\\[0\\]/gi) && typeof firstLetterOfLastName === \"string\" && firstLetterOfLastName === \"L\"){return true;}else{return false;}})(), 'message: The <code>firstLetterOfLastName</code> variable should have the value of <code>L</code>.');"
       ],
       "type": "waypoint",
       "challengeType": 1
@@ -1315,9 +1315,9 @@
         "var myArray = [\"The Answer\", 42];"
       ],
       "tests": [
-        "assert(typeof(myArray) == 'object', 'message: <code>myArray</code> should be an <code>array</code>.');",
-        "assert(typeof(myArray[0]) !== 'undefined' && typeof(myArray[0]) == 'string', 'message: The first item in <code>myArray</code> should be a <code>string</code>.');",
-        "assert(typeof(myArray[1]) !== 'undefined' && typeof(myArray[1]) == 'number', 'message: The second item in <code>myArray</code> should be a <code>number</code>.');"
+        "assert(typeof myArray == 'object', 'message: <code>myArray</code> should be an <code>array</code>.');",
+        "assert(typeof myArray[0] !== 'undefined' && typeof myArray[0] == 'string', 'message: The first item in <code>myArray</code> should be a <code>string</code>.');",
+        "assert(typeof myArray[1] !== 'undefined' && typeof myArray[1] == 'number', 'message: The second item in <code>myArray</code> should be a <code>number</code>.');"
       ],
       "type": "waypoint",
       "challengeType": 1
@@ -1339,7 +1339,7 @@
         ""
       ],
       "tail": [
-        "if(typeof(myArray) !== \"undefined\"){(function(){return myArray;})();}"
+        "if(typeof myArray !== \"undefined\"){(function(){return myArray;})();}"
       ],
       "solutions": [
         "var myArray = [[1,2,3]];"
@@ -1373,13 +1373,13 @@
         ""
       ],
       "tail": [
-        "if(typeof(myArray) !== \"undefined\" && typeof(myData) !== \"undefined\"){(function(y,z){return 'myArray = ' + JSON.stringify(y) + ', myData = ' + JSON.stringify(z);})(myArray, myData);}"
+        "if(typeof myArray !== \"undefined\" && typeof myData !== \"undefined\"){(function(y,z){return 'myArray = ' + JSON.stringify(y) + ', myData = ' + JSON.stringify(z);})(myArray, myData);}"
       ],
       "solutions": [
         "var myArray = [1,2,3];\nvar myData = myArray[0];"
       ],
       "tests": [
-        "assert((function(){if(typeof(myArray) != 'undefined' && typeof(myData) != 'undefined' && myArray[0] == myData){return true;}else{return false;}})(), 'message: The variable <code>myData</code> should equal the first value of <code>myArray</code>.');"
+        "assert((function(){if(typeof myArray != 'undefined' && typeof myData != 'undefined' && myArray[0] == myData){return true;}else{return false;}})(), 'message: The variable <code>myData</code> should equal the first value of <code>myArray</code>.');"
       ],
       "type": "waypoint",
       "challengeType": 1
@@ -1407,13 +1407,13 @@
         ""
       ],
       "tail": [
-        "if(typeof(myArray) !== \"undefined\"){(function(){return myArray;})();}"
+        "if(typeof myArray !== \"undefined\"){(function(){return myArray;})();}"
       ],
       "solutions": [
         "var myArray = [1,2,3];\nmyArray[0] = 3;"
       ],
       "tests": [
-        "assert((function(){if(typeof(myArray) != 'undefined' && myArray[0] == 3 && myArray[1] == 2 && myArray[2] == 3){return true;}else{return false;}})(), 'message: <code>myArray</code> should now be [3,2,3].');",
+        "assert((function(){if(typeof myArray != 'undefined' && myArray[0] == 3 && myArray[1] == 2 && myArray[2] == 3){return true;}else{return false;}})(), 'message: <code>myArray</code> should now be [3,2,3].');",
         "assert((function(){if(code.match(/myArray\\[0\\]\\s?=\\s?/g)){return true;}else{return false;}})(), 'message: You should be using correct index to modify the value in <code>myArray</code>.');"
       ],
       "type": "waypoint",
@@ -1439,7 +1439,7 @@
         ""
       ],
       "tail": [
-        "if(typeof(myArray) !== \"undefined\"){(function(){return \"myData: \" + myData + \" myArray: \" + JSON.stringify(myArray);})();}"
+        "if(typeof myArray !== \"undefined\"){(function(){return \"myData: \" + myData + \" myArray: \" + JSON.stringify(myArray);})();}"
       ],
       "solutions": [
         "var myArray = [[1,2,3],[4,5,6], [7,8,9], [[10,11,12], 13, 14]];\nvar myData = myArray[2][1];"
@@ -1555,7 +1555,7 @@
       ],
       "tests": [
         "assert((function(d){if(d[0][0] == 'dog' && d[0][1] == 3 && d[1] == undefined){return true;}else{return false;}})(myArray), 'message: <code>myArray</code> should now equal <code>[[\"dog\", 3]]</code>.');",
-        "assert((function(d){if(d[0] === 'John' && d[1] === 23 && typeof(removedFromMyArray) === 'object'){return true;}else{return false;}})(removedFromMyArray), 'message: <code>removedFromMyArray</code> should contain <code>[\"John\", 23]</code>.');"
+        "assert((function(d){if(d[0] === 'John' && d[1] === 23 && typeof removedFromMyArray === 'object'){return true;}else{return false;}})(removedFromMyArray), 'message: <code>removedFromMyArray</code> should contain <code>[\"John\", 23]</code>.');"
       ],
       "type": "waypoint",
       "challengeType": 1
@@ -1591,7 +1591,7 @@
         "var myArray = [[\"John\", 23], [\"dog\", 3]];\nmyArray.shift();\nmyArray.unshift([\"Paul\", 35]);"
       ],
       "tests": [
-        "assert((function(d){if(typeof(d[0]) === \"object\" && d[0][0].toLowerCase() == 'paul' && d[0][1] == 35 && d[1][0] != undefined && d[1][0] == 'dog' && d[1][1] != undefined && d[1][1] == 3){return true;}else{return false;}})(myArray), 'message: <code>myArray</code> should now have [[\"Paul\", 35], [\"dog\", 3]]).');"
+        "assert((function(d){if(typeof d[0] === \"object\" && d[0][0].toLowerCase() == 'paul' && d[0][1] == 35 && d[1][0] != undefined && d[1][0] == 'dog' && d[1][1] != undefined && d[1][1] == 3){return true;}else{return false;}})(myArray), 'message: <code>myArray</code> should now have [[\"Paul\", 35], [\"dog\", 3]]).');"
       ],
       "type": "waypoint",
       "challengeType": 1
@@ -2090,7 +2090,7 @@
         "function welcomeToBooleans() {\n  return true; // Change this line\n}"
       ],
       "tests": [
-        "assert(typeof(welcomeToBooleans()) === 'boolean', 'message: The <code>welcomeToBooleans()</code> function should return a boolean &#40;true/false&#41; value.');",
+        "assert(typeof welcomeToBooleans() === 'boolean', 'message: The <code>welcomeToBooleans()</code> function should return a boolean &#40;true/false&#41; value.');",
         "assert(welcomeToBooleans() === true, 'message: <code>welcomeToBooleans()</code> should return true.');"
       ],
       "type": "waypoint",
@@ -3125,9 +3125,9 @@
         "var myDog = {\n  \"name\": \"Camper\",\n  \"legs\": 4,\n  \"tails\": 1,\n  \"friends\": [\"everything!\"]  \n};"
       ],
       "tests": [
-        "assert((function(z){if(z.hasOwnProperty(\"name\") && z.name !== undefined && typeof(z.name) === \"string\"){return true;}else{return false;}})(myDog), 'message: <code>myDog</code> should contain the property <code>name</code> and it should be a <code>string</code>.');",
-        "assert((function(z){if(z.hasOwnProperty(\"legs\") && z.legs !== undefined && typeof(z.legs) === \"number\"){return true;}else{return false;}})(myDog), 'message: <code>myDog</code> should contain the property <code>legs</code> and it should be a <code>number</code>.');",
-        "assert((function(z){if(z.hasOwnProperty(\"tails\") && z.tails !== undefined && typeof(z.tails) === \"number\"){return true;}else{return false;}})(myDog), 'message: <code>myDog</code> should contain the property <code>tails</code> and it should be a <code>number</code>.');",
+        "assert((function(z){if(z.hasOwnProperty(\"name\") && z.name !== undefined && typeof z.name === \"string\"){return true;}else{return false;}})(myDog), 'message: <code>myDog</code> should contain the property <code>name</code> and it should be a <code>string</code>.');",
+        "assert((function(z){if(z.hasOwnProperty(\"legs\") && z.legs !== undefined && typeof z.legs === \"number\"){return true;}else{return false;}})(myDog), 'message: <code>myDog</code> should contain the property <code>legs</code> and it should be a <code>number</code>.');",
+        "assert((function(z){if(z.hasOwnProperty(\"tails\") && z.tails !== undefined && typeof z.tails === \"number\"){return true;}else{return false;}})(myDog), 'message: <code>myDog</code> should contain the property <code>tails</code> and it should be a <code>number</code>.');",
         "assert((function(z){if(z.hasOwnProperty(\"friends\") && z.friends !== undefined && Array.isArray(z.friends)){return true;}else{return false;}})(myDog), 'message: <code>myDog</code> should contain the property <code>friends</code> and it should be an <code>array</code>.');",
         "assert((function(z){return Object.keys(z).length === 4;})(myDog), 'message: <code>myDog</code> should only contain all the given properties.');"
       ],
@@ -3759,7 +3759,7 @@
         ""
       ],
       "tail": [
-        "if (typeof(myArray) !== \"undefined\"){(function(){return myArray;})();}"
+        "if (typeof myArray !== \"undefined\"){(function(){return myArray;})();}"
       ],
       "solutions": [
         "var ourArray = [];\nfor (var i = 0; i < 5; i++) {\n  ourArray.push(i);\n}\nvar myArray = [];\nfor (var i = 1; i < 6; i++) {\n  myArray.push(i);\n}"
@@ -3799,7 +3799,7 @@
         ""
       ],
       "tail": [
-        "if(typeof(myArray) !== \"undefined\"){(function(){return myArray;})();}"
+        "if(typeof myArray !== \"undefined\"){(function(){return myArray;})();}"
       ],
       "solutions": [
         "var ourArray = [];\nfor (var i = 0; i < 10; i += 2) {\n  ourArray.push(i);\n}\nvar myArray = [];\nfor (var i = 1; i < 10; i += 2) {\n  myArray.push(i);\n}"
@@ -3839,7 +3839,7 @@
         ""
       ],
       "tail": [
-        "if(typeof(myArray) !== \"undefined\"){(function(){return myArray;})();}"
+        "if(typeof myArray !== \"undefined\"){(function(){return myArray;})();}"
       ],
       "solutions": [
         "var ourArray = [];\nfor (var i = 10; i > 0; i -= 2) {\n  ourArray.push(i);\n}\nvar myArray = [];\nfor (var i = 9; i > 0; i -= 2) {\n  myArray.push(i);\n}"
@@ -3950,7 +3950,7 @@
         ""
       ],
       "tail": [
-        "if(typeof(myArray) !== \"undefined\"){(function(){return myArray;})();}"
+        "if(typeof myArray !== \"undefined\"){(function(){return myArray;})();}"
       ],
       "solutions": [
         "var myArray = [];\nvar i = 0;\nwhile(i < 5) {\n  myArray.push(i);\n  i++;\n}"
@@ -4054,7 +4054,7 @@
         "function myFunction() {\n  return Math.random();\n}"
       ],
       "tests": [
-        "assert(typeof(myFunction()) === \"number\", 'message: <code>myFunction</code> should return a random number.');",
+        "assert(typeof myFunction() === \"number\", 'message: <code>myFunction</code> should return a random number.');",
         "assert((myFunction()+''). match(/\\./g), 'message: The number returned by <code>myFunction</code> should be a decimal.');",
         "assert(code.match(/Math\\.random/g).length >= 0, 'message: You should be using <code>Math.random</code> to generate the random decimal number.');"
       ],
@@ -4091,7 +4091,7 @@
         "var randomNumberBetween0and19 = Math.floor(Math.random() * 20);\n\nfunction myFunction() {\n  return Math.floor(Math.random() * 10);\n}"
       ],
       "tests": [
-        "assert(typeof(myFunction()) === \"number\" && (function(){var r = myFunction();return Math.floor(r) === r;})(), 'message: The result of <code>myFunction</code> should be a whole number.');",
+        "assert(typeof myFunction() === \"number\" && (function(){var r = myFunction();return Math.floor(r) === r;})(), 'message: The result of <code>myFunction</code> should be a whole number.');",
         "assert(code.match(/Math.random/g).length > 1, 'message: You should be using <code>Math.random</code> to generate a random number.');",
         "assert(code.match(/\\(\\s*?Math.random\\s*?\\(\\s*?\\)\\s*?\\*\\s*?10\\s*?\\)/g) || code.match(/\\(\\s*?10\\s*?\\*\\s*?Math.random\\s*?\\(\\s*?\\)\\s*?\\)/g), 'message: You should have multiplied the result of <code>Math.random</code> by 10 to make it a number that is between zero and nine.');",
         "assert(code.match(/Math.floor/g).length > 1, 'message: You should use <code>Math.floor</code> to remove the decimal part of the number.');"
