@@ -1115,9 +1115,9 @@
       "description": [
         "In Javascript, <code>String</code> values are <dfn>immutable</dfn>, which means that they cannot be altered once created.",
         "For example, the following code:",
-        "<blockquote><code>var myStr = \"Bob\";<br>myStr[0] = \"J\";</code></blockquote>",
+        "<blockquote>var myStr = \"Bob\";<br>myStr[0] = \"J\";</blockquote>",
         "cannot change the value of <code>myStr</code> to \"Job\", because the contents of <code>myStr</code> cannot be altered. Note that this does <em>not</em> mean that <code>myStr</code> cannot be changed, just that the individual characters of a <dfn>string literal</dfn> cannot be changed. The only way to change <code>myStr</code> would be to assign it with a new string, like this:",
-        "<blockquote><code>var myStr = \"Bob\";<br>myStr = \"Job\";</code></blockquote>",
+        "<blockquote>var myStr = \"Bob\";<br>myStr = \"Job\";</blockquote>",
         "<h4>Instructions</h4>",
         "Correct the assignment to <code>myStr</code> to achieve the desired effect."
       ],
@@ -1425,7 +1425,7 @@
       "description": [
         "One way to think of a <dfn>multi-dimensional</dfn> array, is as an <em>array of arrays</em>. When you use brackets to access your array, the first set of bracket refers to the entries in the outer-most array, and each subsequent level of brackets refers to the next level of entries inside.",
         "<strong>Example</strong>",
-        "<blockquote>var arr = [<br>    [1,2,3],<br>    [4,5,6],<br>    [7,8,9],<br>    [[10,11,12], 13, 14]<br>];<br><code>arr[0]; // equals [1,2,3]</code><br><code>arr[1][2]; // equals 6</code><br><code>arr[3][0][1]; // equals 11</code></blockquote>",
+        "<blockquote>var arr = [<br>    [1,2,3],<br>    [4,5,6],<br>    [7,8,9],<br>    [[10,11,12], 13, 14]<br>];<br>arr[0]; // equals [1,2,3]<br>arr[1][2]; // equals 6<br>arr[3][0][1]; // equals 11</blockquote>",
         "<h4>Instructions</h4>",
         "Read from <code>myArray</code> using bracket notation so that myData is equal to <code>8</code>"
       ],
