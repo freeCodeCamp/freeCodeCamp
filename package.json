@@ -79,7 +79,7 @@
     "gulp-uglify": "^1.5.1",
     "gulp-util": "^3.0.6",
     "gulp-webpack": "^1.5.0",
-    "helmet": "~0.15.0",
+    "helmet": "~1.1.0",
     "helmet-csp": "~0.3.0",
     "history": "^1.17.0",
     "jade": "^1.11.0",
