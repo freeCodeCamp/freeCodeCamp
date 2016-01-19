@@ -1,1 +1,1 @@
-export { default as JobActions } from './Actions';
+export default from './Actions';

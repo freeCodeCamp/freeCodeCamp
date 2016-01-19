@@ -4,8 +4,8 @@ import { Disposable, Observable } from 'rx';
 
 import { post$, postJSON$ } from '../utils/ajax-stream.js';
 import { AppActions, AppStore } from './flux';
-import { HikesActions } from './routes/Hikes/flux';
-import { JobActions } from './routes/Jobs/flux';
+import HikesActions from './routes/Hikes/flux';
+import JobActions from './routes/Jobs/flux';
 
 const ajaxStamp = stamp({
   methods: {
