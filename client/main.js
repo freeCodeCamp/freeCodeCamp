@@ -263,15 +263,23 @@ $(document).ready(function() {
     window.location.href = link;
   });
 
-  if ($('.sr-only').length) {
-    var lastChallenge = $('.sr-only').filter(function() {
-      return $(this).text() === ' Complete';
-    });
-    if (lastChallenge.length) {
-      lastChallenge = lastChallenge[lastChallenge.length - 1];
-      var scrollTo = $(lastChallenge).offset().top - 380;
-      $('html, body, .map-accordion').scrollTop(scrollTo);
+  var scrollTo, dashedName = localStorage.getItem('currentDashedName'),
+    elemsToSearch = $('p.padded-ionic-icon a'), currOrLastChallenge;
+  if (!dashedName && $('.sr-only').length) {
+    elemsToSearch = $('.sr-only');
+  }
+
+  currOrLastChallenge = elemsToSearch.filter(function() {
+    if (dashedName) {
+      return $(this).attr('href').match(dashedName);
     }
+    return $(this).text() === ' Complete';
+  });
+
+  if (currOrLastChallenge.length) {
+    currOrLastChallenge = currOrLastChallenge[currOrLastChallenge.length - 1];
+    scrollTo = $(currOrLastChallenge).offset().top - 380;
+    $('html, body, .map-accordion').scrollTop(scrollTo);
   }
 
   if (String(window.location).match(/\/map$/ig)) {
