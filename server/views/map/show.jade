@@ -11,7 +11,7 @@ block content
           for superBlock, index in superBlocks
               h2
                 i.fa.fa-caret-down
-                | &thinsp;          
+                | &thinsp;
                 a(data-toggle='collapse', data-parent='#accordion', href='#collapse'+superBlock.name.split(' ').join('-'))
                   | #{superBlock.name}
               div.margin-left-10(id = 'collapse'+superBlock.name.split(' ').join('-') class = "collapse in map-collapse no-transition")
@@ -36,11 +36,11 @@ block content
                                               span= challenge.title
                                               span.sr-only= " Incomplete"
                                           if challenge.markNew
-                                              span.text-success.small &thinsp; &thinsp;
+                                              span.text-info.small &thinsp; &thinsp;
                                                   strong
                                                       em New
                                           if challengeBlock.isComingSoon
-                                              span.text-success.small &thinsp; &thinsp;
+                                              span.text-info.small &thinsp; &thinsp;
                                                   strong
                                                       em Coming Soon
                                           span.text-primary &thinsp; &thinsp;
@@ -51,11 +51,11 @@ block content
                                               span= challenge.title
                                               span.sr-only= " Incomplete"
                                           if challenge.markNew
-                                              span.text-success.small &thinsp; &thinsp;
+                                              span.text-info.small &thinsp; &thinsp;
                                                   strong
                                                       em New
                                           if challengeBlock.isComingSoon
-                                              span.text-success.small &thinsp; &thinsp;
+                                              span.text-info.small &thinsp; &thinsp;
                                                   strong
                                                       em Coming Soon
           .spacer
