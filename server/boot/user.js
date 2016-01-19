@@ -210,19 +210,30 @@ module.exports = function(app) {
             return data;
           }, {});
 
-        const baseAndZip = profileUser.completedChallenges.filter(
-          function(obj) {
-          return obj.challengeType === 3 || obj.challengeType === 4;
-          }
+        function filterAlgos(challenge) {
+          // test if name starts with hike/waypoint/basejump/zipline
+          // fix for bug that saved different challenges with incorrect
+          // challenge types
+          return !(/^(waypoint|hike|zipline|basejump)/i).test(challenge.name) &&
+            +challenge.challengeType === 5;
+        }
+
+        function filterProjects(challenge) {
+          return +challenge.challengeType === 3 ||
+            +challenge.challengeType === 4;
+        }
+
+        const completedChallenges = profileUser.completedChallenges.filter(
+          ({ name }) => typeof name === 'string'
         );
 
-        const bonfires = profileUser.completedChallenges.filter(function(obj) {
-          return (obj.name || '').match(/^Bonfire/g);
-        });
+        const projects = completedChallenges.filter(filterProjects);
 
-        const waypoints = profileUser.completedChallenges.filter(function(obj) {
-          return (obj.name || '').match(/^Waypoint|^Checkpoint/i);
-        });
+        const algos = completedChallenges.filter(filterAlgos);
+
+        const challenges = completedChallenges
+          .filter(challenge => !filterAlgos(challenge))
+          .filter(challenge => !filterProjects(challenge));
 
         res.render('account/show', {
           title: 'Camper ' + profileUser.username + '\'s Code Portfolio',
@@ -253,9 +264,9 @@ module.exports = function(app) {
 
           progressTimestamps: profileUser.progressTimestamps,
 
-          baseAndZip,
-          bonfires,
-          waypoints,
+          projects,
+          algos,
+          challenges,
           moment,
 
           longestStreak: profileUser.longestStreak,
