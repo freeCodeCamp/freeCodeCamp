@@ -1,6 +1,6 @@
 {
   "name": "JSON APIs and Ajax",
-  "order": 10.5,
+  "order": 10,
   "time": "2 hours",
   "helpRoom": "Help",
   "challenges": [
@@ -16,10 +16,6 @@
         "<code>$(\"#getMessage\").on(\"click\", function(){</code>",
         "",
         "<code>});</code>"
-      ],
-      "tests": [
-        "assert(code.match(/\\$\\s*?\\(\\s*?(?:'|\")\\#getMessage(?:'|\")\\s*?\\)\\s*?\\.on\\s*?\\(\\s*?(?:'|\")click(?:'|\")\\s*?\\,\\s*?function\\s*?\\(\\s*?\\)\\s*?\\{/gi), 'message: Bind the click event to the button with the ID of <code>getMessage</code>');",
-        "assert(code.match(/\\n*?\\s*?\\}\\n*?\\s*?\\);/gi) && code.match(/\\n*?\\s*?\\}\\);/gi).length >= 2, 'message: Be sure to close your functions with <code>}&#41;;</code>');"
       ],
       "challengeSeed": [
         "fccss",
@@ -49,8 +45,12 @@
         "  </div>",
         "</div>"
       ],
-      "challengeType": 0,
+      "tests": [
+        "assert(code.match(/\\$\\s*?\\(\\s*?(?:'|\")\\#getMessage(?:'|\")\\s*?\\)\\s*?\\.on\\s*?\\(\\s*?(?:'|\")click(?:'|\")\\s*?\\,\\s*?function\\s*?\\(\\s*?\\)\\s*?\\{/gi), 'message: Bind the click event to the button with the ID of <code>getMessage</code>');",
+        "assert(code.match(/\\n*?\\s*?\\}\\n*?\\s*?\\);/gi) && code.match(/\\n*?\\s*?\\}\\);/gi).length >= 2, 'message: Be sure to close your functions with <code>}&#41;;</code>');"
+      ],
       "type": "waypoint",
+      "challengeType": 0,
       "nameEs": "Activa eventos de pulsación con jQuery",
       "descriptionEs": [
         "En esta sección, vamos a aprender cómo obtener datos de las APIs. Las APIs - o interfaces de programación de aplicaciones - son herramientas que utilizan los computadores para comunicarse entre sí.",
@@ -71,9 +71,6 @@
         "Let's make it so that when a user clicks the \"Get Message\" button, we change the text of the element with the class <code>message</code> to say \"Here is the message\".",
         "We can do this by adding the following code within our click event:",
         "<code>&nbsp;&nbsp;$(\".message\").html(\"Here is the message\");</code>"
-      ],
-      "tests": [
-        "assert(code.match(/\\$\\s*?\\(\\s*?(?:'|\")\\.message(?:'|\")\\s*?\\)\\s*?\\.html\\s*?\\(\\s*?(?:'|\")Here\\sis\\sthe\\smessage(?:'|\")\\s*?\\);/gi), 'message: Clicking the \"Get Message\" button should give the element with the class <code>message</code> the text \"Here is the message\".');"
       ],
       "challengeSeed": [
         "fccss",
@@ -105,8 +102,11 @@
         "  </div>",
         "</div>"
       ],
-      "challengeType": 0,
+      "tests": [
+        "assert(code.match(/\\$\\s*?\\(\\s*?(?:'|\")\\.message(?:'|\")\\s*?\\)\\s*?\\.html\\s*?\\(\\s*?(?:'|\")Here\\sis\\sthe\\smessage(?:'|\")\\s*?\\);/gi), 'message: Clicking the \"Get Message\" button should give the element with the class <code>message</code> the text \"Here is the message\".');"
+      ],
       "type": "waypoint",
+      "challengeType": 0,
       "nameEs": "Cambia texto con eventos de pulsación",
       "descriptionEs": [
         "Cuando nuestro evento de pulsación ocurre, podemos utilizar Ajax para actualizar un elemento HTML.",
@@ -131,13 +131,6 @@
         "<code>&nbsp;&nbsp;});</code>",
         "Once you've added this, click the \"Get Message\" button. Your Ajax function will replace the \"The message will go here\" text with the raw JSON output from the Free Code Camp Cat Photo API."
       ],
-      "tests": [
-        "assert(code.match(/\\$\\s*?\\(\\s*?(\\\"|\\')\\#getMessage(\\\"|\\')\\s*?\\)\\s*?\\.\\s*?on\\s*?\\(\\s*?(\\\"|\\')click(\\\"|\\')\\s*?\\,\\s*?function\\s*?\\(\\s*?\\)\\s*?\\{/gi), 'message: You should have a click handler on the getMessage button to trigger the AJAX request.');",
-        "assert(code.match(/\\s*?\\}\\s*?\\)\\s*?\\;/gi), 'message: You should have at least one closing set of brackets and parenthesis.');",
-        "assert(code.match(/\\s*?\\}\\s*?\\)\\s*?\\;/gi) && code.match(/\\,\\s*?function\\s*?\\(\\s*?\\w*?\\s*?\\)\\s*?\\{/gi) && code.match(/\\s*?\\}\\s*?\\)\\s*?\\;/gi).length === code.match(/\\s*?function\\s*?\\(\\s*?\\w*?\\s*?\\)\\s*?\\{/gi).length, 'message: Each callback function should have a closing set of brackets and parenthesis.');",
-        "assert(code.match(/\\$\\s*?\\.\\s*?getJSON\\s*?\\(\\s*?(\\\"|\\')\\\/json\\\/cats\\.json(\\\"|\\')\\s*?\\,\\s*?function\\s*?\\(\\s*?json\\s*?\\)\\s*?\\{/gi), 'message: You should be making use of the getJSON method given in the description to load data from the json file.');",
-        "assert(code.match(/\\$\\s*?\\(\\s*?(\\\"|\\')\\.message(\\\"|\\')\\s*?\\)\\s*?\\.\\s*?html\\s*?\\(\\s*?JSON\\s*?\\.\\s*?stringify\\s*?\\(\\s*?json\\s*?\\)\\s*?\\)/gi), 'message: Don&apos;t forget to make the <code>.html</code> change the contents of the message box so that it contains the result of the getJSON.');"
-      ],
       "challengeSeed": [
         "fccss",
         "  $(document).ready(function() {",
@@ -171,8 +164,15 @@
         "  </div>",
         "</div>"
       ],
-      "challengeType": 0,
+      "tests": [
+        "assert(code.match(/\\$\\s*?\\(\\s*?(\\\"|\\')\\#getMessage(\\\"|\\')\\s*?\\)\\s*?\\.\\s*?on\\s*?\\(\\s*?(\\\"|\\')click(\\\"|\\')\\s*?\\,\\s*?function\\s*?\\(\\s*?\\)\\s*?\\{/gi), 'message: You should have a click handler on the getMessage button to trigger the AJAX request.');",
+        "assert(code.match(/\\s*?\\}\\s*?\\)\\s*?\\;/gi), 'message: You should have at least one closing set of brackets and parenthesis.');",
+        "assert(code.match(/\\s*?\\}\\s*?\\)\\s*?\\;/gi) && code.match(/\\,\\s*?function\\s*?\\(\\s*?\\w*?\\s*?\\)\\s*?\\{/gi) && code.match(/\\s*?\\}\\s*?\\)\\s*?\\;/gi).length === code.match(/\\s*?function\\s*?\\(\\s*?\\w*?\\s*?\\)\\s*?\\{/gi).length, 'message: Each callback function should have a closing set of brackets and parenthesis.');",
+        "assert(code.match(/\\$\\s*?\\.\\s*?getJSON\\s*?\\(\\s*?(\\\"|\\')\\/json\\/cats\\.json(\\\"|\\')\\s*?\\,\\s*?function\\s*?\\(\\s*?json\\s*?\\)\\s*?\\{/gi), 'message: You should be making use of the getJSON method given in the description to load data from the json file.');",
+        "assert(code.match(/\\$\\s*?\\(\\s*?(\\\"|\\')\\.message(\\\"|\\')\\s*?\\)\\s*?\\.\\s*?html\\s*?\\(\\s*?JSON\\s*?\\.\\s*?stringify\\s*?\\(\\s*?json\\s*?\\)\\s*?\\)/gi), 'message: Don&apos;t forget to make the <code>.html</code> change the contents of the message box so that it contains the result of the getJSON.');"
+      ],
       "type": "waypoint",
+      "challengeType": 0,
       "nameEs": "Obtén JSON con el método getJSON de jQuery",
       "descriptionEs": [
         "También puedes solicitar los datos de una fuente externa. Aquí es donde entran en juego las API. ",
@@ -205,9 +205,6 @@
         "<code>&nbsp;&nbsp;});</code>",
         "<code>&nbsp;&nbsp;html += \"&lt;/div&gt;&lt;br&gt;\";</code>",
         "<code>});</code>"
-      ],
-      "tests": [
-        "assert(code.match(/json\\.forEach/gi), 'message: The message box should have something in it.');"
       ],
       "challengeSeed": [
         "fccss",
@@ -248,8 +245,11 @@
         "  </div>",
         "</div>"
       ],
-      "challengeType": 0,
+      "tests": [
+        "assert(code.match(/json\\.forEach/gi), 'message: The message box should have something in it.');"
+      ],
       "type": "waypoint",
+      "challengeType": 0,
       "nameEs": "Convierte datos JSON a datos HTML",
       "descriptionEs": [
         "Ahora que estamos obteniendo datos de una API JSON, mostremóslos en nuestro HTML.",
@@ -275,9 +275,6 @@
         "When we're looping through these objects, let's use this <code>imageLink</code> property to display this image in an <code>img</code> element.",
         "Here's the code that does this:",
         "<code>&nbsp;&nbsp;html += \"&lt;img src = '\" + val.imageLink + \"'&gt;\";</code>"
-      ],
-      "tests": [
-        "assert(code.match(/val.imageLink/gi), 'message: You should have used the <code>imageLink</code> property to display the images.');"
       ],
       "challengeSeed": [
         "fccss",
@@ -327,8 +324,11 @@
         "  </div>",
         "</div>"
       ],
-      "challengeType": 0,
+      "tests": [
+        "assert(code.match(/val.imageLink/gi), 'message: You should have used the <code>imageLink</code> property to display the images.');"
+      ],
       "type": "waypoint",
+      "challengeType": 0,
       "nameEs": "Presenta imágenes de fuentes de datos",
       "descriptionEs": [
         "Tanto en el JSON que recibimos de la API de fotos de gato de Free Code Camp, como en ",
@@ -348,9 +348,6 @@
         "<code>json = json.filter(function(val) {</code>",
         "<code>&nbsp;&nbsp;return(val.id !== 1);</code>",
         "<code>});</code>"
-      ],
-      "tests": [
-        "assert(code.match(/filter/gi), 'message: You should be making use of the .filter method.');"
       ],
       "challengeSeed": [
         "fccss",
@@ -402,8 +399,11 @@
         "  </div>",
         "</div>"
       ],
-      "challengeType": 0,
+      "tests": [
+        "assert(code.match(/filter/gi), 'message: You should be making use of the .filter method.');"
+      ],
       "type": "waypoint",
+      "challengeType": 0,
       "nameEs": "Pre-filtra JSON",
       "descriptionEs": [
         "Si no queremos presentar cada foto de gato que obtengamos de la API JSON de fotos de gato de Free Code Camp, podemos pre-filtrar el json antes de iterar a través de este.",
@@ -429,9 +429,6 @@
         "<code>&nbsp;&nbsp;});</code>",
         "<code>}</code>"
       ],
-      "tests": [
-        "assert(code.match(/navigator\\.geolocation\\.getCurrentPosition/gi), 'message: You should make use of the <code>navigator.geolocation</code> to access the users current location.');"
-      ],
       "challengeSeed": [
         "fccss",
         "  // Only change code below this line.",
@@ -445,8 +442,11 @@
         "  ",
         "</div>"
       ],
-      "challengeType": 0,
+      "tests": [
+        "assert(code.match(/navigator\\.geolocation\\.getCurrentPosition/gi), 'message: You should make use of the <code>navigator.geolocation</code> to access the users current location.');"
+      ],
       "type": "waypoint",
+      "challengeType": 0,
       "nameEs": "Recibir datos de Geo-localización",
       "descriptionEs": [
         "Otra cosa interesante que podemos hacer es acceder a la ubicación actual de nuestros usuarios. Todos los navegadores han incorporado un geo-localizador que nos puede dar esta información. ",

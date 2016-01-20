@@ -1,14 +1,11 @@
 {
   "name": "Programming",
-  "order": 0.050,
+  "order": 0,
   "time": "3 hours",
   "challenges": [
     {
       "id": "bd712bd8c441eddfbeb5bddf",
       "title": "What Do Programmers Do?",
-      "challengeSeed": [
-        "133166912"
-      ],
       "description": [
         "Programmers (a.k.a. coders, developers, or software engineers) solve problems by turning big ideas into tiny steps that a computer can understand.",
         "In this video, we'll discuss what programmers do.",
@@ -21,30 +18,30 @@
         "Computers just read straight down like you would read a book.",
         "Programmers are the ones responsible for breaking their ideas down into the little tiny steps and writing them in a way that computers can understand them."
       ],
-      "type": "hike",
-      "challengeType": 6,
-      "tests": [
-        ["Computers look at code one line at a time", true],
-        ["Programmers and developers are totally different professions with very little in common.", false, "Those titles are so similar they could even describe the same job position."],
-        ["Programmers take ideas and break them down into little tiny steps the computer can understand", true]
+      "challengeSeed": [
+        "133166912"
       ],
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
-      "nameRu": "",
-      "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
-      "namePt": "",
-      "descriptionPt": []
+      "tests": [
+        [
+          "Computers look at code one line at a time",
+          "true"
+        ],
+        [
+          "Programmers and developers are totally different professions with very little in common.",
+          "false",
+          "Those titles are so similar they could even describe the same job position."
+        ],
+        [
+          "Programmers take ideas and break them down into little tiny steps the computer can understand",
+          "true"
+        ]
+      ],
+      "type": "hike",
+      "challengeType": 6
     },
     {
       "id": "bd712ad8c441eddfbeb5bddf",
       "title": "Console and Logging",
-      "challengeSeed": [
-        "133170880"
-      ],
       "description": [
         "We discuss what (and where) the console is, why it's useful, and show a little of how it works.",
         "The console: what it is, where you can find it, and what you use it for.",
@@ -58,29 +55,26 @@
         "This will also work with numbers and booleans, which are true/false statements.",
         "When consoling words, it's important to put it inside of quotations so it recognizes it's a string."
       ],
-      "type": "hike",
-      "challengeType": 6,
-      "tests": [
-        ["The console serves only small, unnecessary purposes.", false, "The console's main purpose is to debug, which is a vital step in creating code."],
-        ["You can console strings (sets of words), numbers, and booleans (true/false statements)", true]
+      "challengeSeed": [
+        "133170880"
       ],
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
-      "nameRu": "",
-      "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
-      "namePt": "",
-      "descriptionPt": []
+      "tests": [
+        [
+          "The console serves only small, unnecessary purposes.",
+          "false",
+          "The console's main purpose is to debug, which is a vital step in creating code."
+        ],
+        [
+          "You can console strings (sets of words), numbers, and booleans (true/false statements)",
+          "true"
+        ]
+      ],
+      "type": "hike",
+      "challengeType": 6
     },
     {
       "id": "bd7119d8c441eddfbeb5bddf",
       "title": "Variables In Code",
-      "challengeSeed": [
-        "133172920"
-      ],
       "description": [
         "Variables are used frequently in Javascript and many other coding languages.",
         "In this video, we're going to talk about variables in code.",
@@ -90,29 +84,26 @@
         "But be careful - if we put console.log(\"x\"), with the x in quotation marks, it will output the letter \"x\".",
         "What I want you to take away from this video is that variables exist in code, and you can store everything from a simple string all the way up to a function, all within a simple name."
       ],
-      "type": "hike",
-      "challengeType": 6,
-      "tests": [
-        ["Variables are useful in coding languages like JavaScript.", true],
-        ["Variables can't stand for anything that isn't a string, number, or boolean.", false, "Variables can stand for things ranging from simple to very complex"]
+      "challengeSeed": [
+        "133172920"
       ],
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
-      "nameRu": "",
-      "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
-      "namePt": "",
-      "descriptionPt": []
+      "tests": [
+        [
+          "Variables are useful in coding languages like JavaScript.",
+          "true"
+        ],
+        [
+          "Variables can't stand for anything that isn't a string, number, or boolean.",
+          "false",
+          "Variables can stand for things ranging from simple to very complex"
+        ]
+      ],
+      "type": "hike",
+      "challengeType": 6
     },
     {
       "id": "bd7029d8c441eddfbeb5bddf",
       "title": "Source Code",
-      "challengeSeed": [
-        "133177129"
-      ],
       "description": [
         "In this video we discuss what source code is, interpreters and compilers, and what open source means.",
         "Let's talk about source code: what source code is, where you'll see it, and how the computer makes sense of it.",
@@ -133,30 +124,30 @@
         "It's a great way for websites and software to grow in a strong and fast way because of the community working together to improve it.",
         "One unwritten rule of contributing to open source projects is that you should generally submit your improvements to also be open source, and by giving that improvement back to the public, you let others use your improvement as well."
       ],
-      "type": "hike",
-      "challengeType": 6,
-      "tests": [
-        ["Source code is a text document.", true],
-        ["Javascript is a compiler language.", false, "Javascript is an interpreter language"],
-        ["Free Code Camp is open source.", true]
+      "challengeSeed": [
+        "133177129"
       ],
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
-      "nameRu": "",
-      "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
-      "namePt": "",
-      "descriptionPt": []
+      "tests": [
+        [
+          "Source code is a text document.",
+          "true"
+        ],
+        [
+          "Javascript is a compiler language.",
+          "false",
+          "Javascript is an interpreter language"
+        ],
+        [
+          "Free Code Camp is open source.",
+          "true"
+        ]
+      ],
+      "type": "hike",
+      "challengeType": 6
     },
     {
       "id": "bd7129d8b441eddfbeb5bddf",
       "title": "Routers and Packets",
-      "challengeSeed": [
-        "133181251"
-      ],
       "description": [
         "In this video, we go into a little more detail about routers and packets, important concepts to understand about how the internet works.",
         "Let's talk more about routers and how they relate to networking.",
@@ -183,30 +174,31 @@
         "They can take whichever route is open, whichever is fastest, and since they have the end IP address, all of the routers know where to send them.",
         "Once they get to the end destination, that computer knows how to put all of the information back together."
       ],
-      "type": "hike",
-      "challengeType": 6,
-      "tests": [
-        ["Routers have to know the whole internet.", false, "Routers just have to know the stops around them to send information in the right direction."],
-        ["Packets are little peices of binary code.", true],
-        ["Packets have to be sent in one piece.", false, "packets can be broken up into frames."]
+      "challengeSeed": [
+        "133181251"
       ],
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
-      "nameRu": "",
-      "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
-      "namePt": "",
-      "descriptionPt": []
+      "tests": [
+        [
+          "Routers have to know the whole internet.",
+          "false",
+          "Routers just have to know the stops around them to send information in the right direction."
+        ],
+        [
+          "Packets are little peices of binary code.",
+          "true"
+        ],
+        [
+          "Packets have to be sent in one piece.",
+          "false",
+          "packets can be broken up into frames."
+        ]
+      ],
+      "type": "hike",
+      "challengeType": 6
     },
     {
       "id": "bd7129d8a441eddfbeb5bddf",
       "title": "Hardware: Chips and Moore's Law",
-      "challengeSeed": [
-        "133182057"
-      ],
       "description": [
         "We discuss what constitutes a chip and why technology gets cheaper every year.",
         "In this video we are going to be talking about chips and something called Moore's Law.",
@@ -219,30 +211,31 @@
         "Moore's Law is the observation that the amount of transistors fit on each chip has doubled every two years since 1965.",
         "This is important because it's making technology more affordable and accessible."
       ],
-      "type": "hike",
-      "challengeType": 6,
-      "tests": [
-        ["Chips have transistors, little switches that can store a 1 or a 0.", true],
-        ["Moore's Law is the observation that technology doubles in speed every year.", false, "Moore's Law is the observation that the number of transistors per chip doubles every 2 years)."],
-        ["Moore's Law has slowed down in recent years.", false, "Somehow this continues to be true."]
+      "challengeSeed": [
+        "133182057"
       ],
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
-      "nameRu": "",
-      "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
-      "namePt": "",
-      "descriptionPt": []
+      "tests": [
+        [
+          "Chips have transistors, little switches that can store a 1 or a 0.",
+          "true"
+        ],
+        [
+          "Moore's Law is the observation that technology doubles in speed every year.",
+          "false",
+          "Moore's Law is the observation that the number of transistors per chip doubles every 2 years)."
+        ],
+        [
+          "Moore's Law has slowed down in recent years.",
+          "false",
+          "Somehow this continues to be true."
+        ]
+      ],
+      "type": "hike",
+      "challengeType": 6
     },
     {
       "id": "bd7129d80441eddfbeb5bddf",
       "title": "Analog vs Digital and File Compression",
-      "challengeSeed": [
-        "133182587"
-      ],
       "description": [
         "How computers turn analog sound into digital files, and the pros and cons of data compression.",
         "Let's discuss analog vs digital on a very basic level.",
@@ -258,29 +251,26 @@
         "In images, it's done by measuring groups of pixels by 16 instead of individually.",
         "The takeaway from this video is that you'll want to use digital files as they're a higher quality, and when you're looking at compression, you want to decide how far you are willing to go to ensure the user still has the best possible experience."
       ],
-      "type": "hike",
-      "challengeType": 6,
-      "tests": [
-        ["Digital files can be made from analog sounds and analog sounds can be made from digital files.", true],
-        ["Compression is not worth it, because it lessens quality.", false, "Sometimes compression is a great idea. It depends on what you're trying to do and what your end goal for the product is."]
+      "challengeSeed": [
+        "133182587"
       ],
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
-      "nameRu": "",
-      "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
-      "namePt": "",
-      "descriptionPt": []
+      "tests": [
+        [
+          "Digital files can be made from analog sounds and analog sounds can be made from digital files.",
+          "true"
+        ],
+        [
+          "Compression is not worth it, because it lessens quality.",
+          "false",
+          "Sometimes compression is a great idea. It depends on what you're trying to do and what your end goal for the product is."
+        ]
+      ],
+      "type": "hike",
+      "challengeType": 6
     },
     {
       "id": "bd7129d89441eddfbeb5bddf",
       "title": "Computer Security",
-      "challengeSeed": [
-        "133186284"
-      ],
       "description": [
         "The basics of computer security, and how to make sure you protect your information.",
         "Let's cover computer security.",
@@ -310,23 +300,26 @@
         "Those bugs have been patched in newer versions, so if you keep everything updated, you'll avoid lots of problems.",
         "These are all very basic things you should know about how to keep your information safe on your computer."
       ],
-      "type": "hike",
-      "challengeType": 6,
-      "tests": [
-        ["Passwords should be shared with all of your accounts.", false, "Don't reuse important passwords"],
-        ["If you don't trust a site or an email, open a new browser and re-enter the intended location.", true],
-        ["Keeping software updated will help protect your computer and your information.", true]
+      "challengeSeed": [
+        "133186284"
       ],
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
-      "nameRu": "",
-      "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
-      "namePt": "",
-      "descriptionPt": []
+      "tests": [
+        [
+          "Passwords should be shared with all of your accounts.",
+          "false",
+          "Don't reuse important passwords"
+        ],
+        [
+          "If you don't trust a site or an email, open a new browser and re-enter the intended location.",
+          "true"
+        ],
+        [
+          "Keeping software updated will help protect your computer and your information.",
+          "true"
+        ]
+      ],
+      "type": "hike",
+      "challengeType": 6
     }
   ]
 }

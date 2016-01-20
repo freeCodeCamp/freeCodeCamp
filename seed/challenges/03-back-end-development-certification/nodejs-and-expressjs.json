@@ -1,13 +1,12 @@
 {
   "name": "Node.js and Express.js",
-  "order" : 24,
+  "order": 24,
   "time": "20 hours",
   "helpRoom": "HelpBackEnd",
   "challenges": [
     {
       "id": "bd7153d8c441eddfaeb5bd0f",
       "title": "Manage Packages with NPM",
-      "challengeSeed": ["126433450"],
       "description": [
         "We'll build this Waypoint on Cloud 9, a powerful online code editor with a full Ubuntu Linux workspace, all running in the cloud.",
         "If you don't already have Cloud 9 account, create one now at <a href='http://c9.io' target='_blank'>http://c9.io</a>.",
@@ -37,15 +36,12 @@
         "Complete \"Publish Again\"",
         "Note Once you've completed these steps, you can skip the rest (which are currently buggy) and move on to our next challenge."
       ],
+      "challengeSeed": [
+        "126433450"
+      ],
+      "tests": [],
       "type": "waypoint",
       "challengeType": 2,
-      "tests": [],
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
-      "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "Administrando paquetes con NPM",
       "descriptionEs": [
         "Haremos este Waypoint en Cloud 9, un poderoso editor en línea con un ambiente de trabajo Ubuntu Linux completo, corriendo totalmente en la nube.",
@@ -75,14 +71,11 @@
         "Completa \"Version\"",
         "Completa \"Publish Again\"",
         "Una vez hayas completado estas lecciones, puedes saltarte el resto (que todavía requieren algunas correcciones), y continuar con el siguiente desafío."
-        ],
-      "namePt": "",
-      "descriptionPt": []
+      ]
     },
     {
       "id": "bd7153d8c441eddfaeb5bdff",
       "title": "Start a Node.js Server",
-      "challengeSeed": ["126411561"],
       "description": [
         "We'll build this Waypoint on Cloud 9, a powerful online code editor with a full Ubuntu Linux workspace, all running in the cloud. We'll do the first 7 steps of Node School's LearnYouNode challenges.",
         "If you don't already have Cloud 9 account, create one now at <a href='http://c9.io' target='_blank'>http://c9.io</a>.",
@@ -106,15 +99,12 @@
         "Complete \"HTTP Client\"",
         "Once you've completed these first 7 steps, move on to our next challenge."
       ],
+      "challengeSeed": [
+        "126411561"
+      ],
+      "tests": [],
       "type": "waypoint",
       "challengeType": 2,
-      "tests": [],
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
-      "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "Inicia un servidor en Node.js",
       "descriptionEs": [
         "Haremos este Waypoint en Cloud 9, un poderoso editor en línea con un ambiente de trabajo Ubuntu Linux completo, corriendo totalmente en la nube.",
@@ -138,14 +128,11 @@
         "Completa \"Make it Modular\"",
         "Completa \"HTTP Client\"",
         "Una vez hayas completado estas primeras siete lecciones, continúa con el siguiente desafío."
-        ],
-      "namePt": "",
-      "descriptionPt": []
+      ]
     },
     {
       "id": "bd7153d8c441eddfaeb5bdfe",
       "title": "Continue working with Node.js Servers",
-      "challengeSeed": ["128836506"],
       "description": [
         "Let's continue the LearnYouNode Node School challenge. For this Waypoint, we'll do challenges 8 through 10.",
         "Make sure that you are always in your project's \"workspace\" directory. You can always navigate back to this directory by running this command: <code>cd ~/workspace</code>.",
@@ -156,15 +143,12 @@
         "Complete \"Time Server\"",
         "Once you've completed these 3 steps, move on to our next challenge."
       ],
+      "challengeSeed": [
+        "128836506"
+      ],
+      "tests": [],
       "type": "waypoint",
       "challengeType": 2,
-      "tests": [],
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
-      "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "Continuemos trabajando con servidores en Node.js",
       "descriptionEs": [
         "Sigamos con el desafío de LearnYouNode de Node School. Para este Waypoint, trabajaremos con las lecciones 11 a 13.",
@@ -175,14 +159,11 @@
         "Completa \"Juggling Async\"",
         "Completa \"Time Server\"",
         "Una vez hayas completado estas tres lecciones, continúa con el siguiente desafío."
-        ],
-      "namePt": "",
-      "descriptionPt": []
+      ]
     },
     {
       "id": "bd7153d8c441eddfaeb5bdfd",
       "title": "Finish working with Node.js Servers",
-      "challengeSeed": ["128836507"],
       "description": [
         "Let's continue the LearnYouNode Node School challenge. For this Waypoint, we'll do challenges 11 through 13.",
         "Make sure that you are always in your project's \"workspace\" directory. You can always navigate back to this directory by running this command: <code>cd ~/workspace</code>.",
@@ -193,15 +174,12 @@
         "Complete \"HTTP JSON API Server\"",
         "Once you've completed these final 3 steps, move on to our next challenge."
       ],
+      "challengeSeed": [
+        "128836507"
+      ],
+      "tests": [],
       "type": "waypoint",
       "challengeType": 2,
-      "tests": [],
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
-      "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "Terminemos de trabajar con servidores en Node.js",
       "descriptionEs": [
         "Sigamos con el desafío de LearnYouNode de Node School. Para este Waypoint, trabajaremos con las lecciones 11 a 13.",
@@ -212,16 +190,11 @@
         "Completa \"HTTP Uppercaserer\"",
         "Completa \"HTTP JSON API Server\"",
         "Una vez hayas completado estas tres lecciones, continúa con el último desafío."
-        ],
-      "namePt": "",
-      "descriptionPt": []
+      ]
     },
     {
       "id": "bd7153d8c441eddfaeb5bd1f",
       "title": "Build Web Apps with Express.js",
-      "challengeSeed": [
-        "126411559"
-      ],
       "description": [
         "We'll build this Waypoint on Cloud 9, a powerful online code editor with a full Ubuntu Linux workspace, all running in the cloud.",
         "If you don't already have Cloud 9 account, create one now at <a href='http://c9.io' target='_blank'>http://c9.io</a>.",
@@ -246,15 +219,12 @@
         "Complete \"JSON Me\"",
         "Once you've completed these steps, move on to our next challenge."
       ],
+      "challengeSeed": [
+        "126411559"
+      ],
+      "tests": [],
       "type": "waypoint",
       "challengeType": 2,
-      "tests": [],
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
-      "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "Creando Web Apps con Express.js",
       "descriptionEs": [
         "Haremos este Waypoint en Cloud 9, un poderoso editor en línea con un ambiente de trabajo Ubuntu Linux completo, corriendo totalmente en la nube.",
@@ -279,9 +249,7 @@
         "Completa \"What's In Query\"",
         "Completa \"JSON Me\"",
         "Una vez hayas completado estas lecciones, continúa con el último desafío."
-        ],
-      "namePt": "",
-      "descriptionPt": []
+      ]
     }
   ]
 }

@@ -7,9 +7,6 @@
     {
       "id": "bd7168d8c242eddfaeb5bd13",
       "title": "Visualize Data with a Bar Chart",
-      "challengeSeed": [
-        "150324699"
-      ],
       "description": [
         "<strong>Objective:</strong> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='http://codepen.io/FreeCodeCamp/full/adBBWd' target='_blank'>http://codepen.io/FreeCodeCamp/full/adBBWd</a>.",
         "<strong>Rule #1:</strong> Don't look at the example project's code. Figure it out for yourself.",
@@ -22,28 +19,18 @@
         "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen. ",
         "You can get feedback on your project from fellow campers by sharing it in our <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Code Review Chatroom</a>. You can also share it on Twitter and your city's Campsite (on Facebook)."
       ],
+      "releasedOn": "January 1, 2016",
+      "challengeSeed": [
+        "150324699"
+      ],
+      "tests": [],
       "type": "zipline",
       "challengeType": 3,
-      "tests": [],
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
-      "nameRu": "",
-      "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
-      "namePt": "",
-      "descriptionPt": [],
-      "releasedOn": "January 1, 2016",
       "isRequired": true
     },
     {
       "id": "bd7178d8c242eddfaeb5bd13",
       "title": "Visualize Data with a Scatterplot Graph",
-      "challengeSeed": [
-        "150324700"
-      ],
       "description": [
         "<strong>Objective:</strong> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='http://codepen.io/FreeCodeCamp/full/GoNNEy' target='_blank'>http://codepen.io/FreeCodeCamp/full/GoNNEy</a>.",
         "<strong>Rule #1:</strong> Don't look at the example project's code. Figure it out for yourself.",
@@ -56,28 +43,18 @@
         "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen. ",
         "You can get feedback on your project from fellow campers by sharing it in our <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Code Review Chatroom</a>. You can also share it on Twitter and your city's Campsite (on Facebook)."
       ],
+      "releasedOn": "January 1, 2016",
+      "challengeSeed": [
+        "150324700"
+      ],
+      "tests": [],
       "type": "zipline",
       "challengeType": 3,
-      "tests": [],
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
-      "nameRu": "",
-      "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
-      "namePt": "",
-      "descriptionPt": [],
-      "releasedOn": "January 1, 2016",
       "isRequired": true
     },
     {
       "id": "bd7188d8c242eddfaeb5bd13",
       "title": "Visualize Data with a Heat Map",
-      "challengeSeed": [
-        "150324701"
-      ],
       "description": [
         "<strong>Objective:</strong> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='http://codepen.io/FreeCodeCamp/full/rxWWGa' target='_blank'>http://codepen.io/FreeCodeCamp/full/rxWWGa</a>.",
         "<strong>Rule #1:</strong> Don't look at the example project's code. Figure it out for yourself.",
@@ -91,28 +68,18 @@
         "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen. ",
         "You can get feedback on your project from fellow campers by sharing it in our <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Code Review Chatroom</a>. You can also share it on Twitter and your city's Campsite (on Facebook)."
       ],
+      "releasedOn": "January 1, 2016",
+      "challengeSeed": [
+        "150324701"
+      ],
+      "tests": [],
       "type": "zipline",
       "challengeType": 3,
-      "tests": [],
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
-      "nameRu": "",
-      "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
-      "namePt": "",
-      "descriptionPt": [],
-      "releasedOn": "January 1, 2016",
       "isRequired": true
     },
     {
       "id": "bd7198d8c242eddfaeb5bd13",
       "title": "Show Relationships with a Force Directed Graph",
-      "challengeSeed": [
-        "150324458"
-      ],
       "description": [
         "<strong>Objective:</strong> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='http://codepen.io/FreeCodeCamp/full/KVNNXY' target='_blank'>http://codepen.io/FreeCodeCamp/full/KVNNXY</a>.",
         "<strong>Rule #1:</strong> Don't look at the example project's code. Figure it out for yourself.",
@@ -128,28 +95,18 @@
         "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen. ",
         "You can get feedback on your project from fellow campers by sharing it in our <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Code Review Chatroom</a>. You can also share it on Twitter and your city's Campsite (on Facebook)."
       ],
+      "releasedOn": "January 1, 2016",
+      "challengeSeed": [
+        "150324458"
+      ],
+      "tests": [],
       "type": "zipline",
       "challengeType": 3,
-      "tests": [],
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
-      "nameRu": "",
-      "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
-      "namePt": "",
-      "descriptionPt": [],
-      "releasedOn": "January 1, 2016",
       "isRequired": true
     },
     {
       "id": "bd7108d8c242eddfaeb5bd13",
       "title": "Map Data Across the Globe",
-      "challengeSeed": [
-        "150324698"
-      ],
       "description": [
         "<strong>Objective:</strong> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='http://codepen.io/FreeCodeCamp/full/mVEJag' target='_blank'>http://codepen.io/FreeCodeCamp/full/mVEJag</a>.",
         "<strong>Rule #1:</strong> Don't look at the example project's code. Figure it out for yourself.",
@@ -163,20 +120,13 @@
         "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen. ",
         "You can get feedback on your project from fellow campers by sharing it in our <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Code Review Chatroom</a>. You can also share it on Twitter and your city's Campsite (on Facebook)."
       ],
+      "releasedOn": "January 1, 2016",
+      "challengeSeed": [
+        "150324698"
+      ],
+      "tests": [],
       "type": "zipline",
       "challengeType": 3,
-      "tests": [],
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
-      "nameRu": "",
-      "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
-      "namePt": "",
-      "descriptionPt": [],
-      "releasedOn": "January 1, 2016",
       "isRequired": true
     }
   ]

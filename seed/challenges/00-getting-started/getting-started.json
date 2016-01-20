@@ -7,7 +7,6 @@
     {
       "id": "560add10cb82ac38a17513be",
       "title": "Learn how Free Code Camp Works",
-      "challengeSeed": [],
       "description": [
         [
           "http://i.imgur.com/4HK5ZFP.jpg",
@@ -82,15 +81,10 @@
           ""
         ]
       ],
+      "challengeSeed": [],
+      "tests": [],
       "type": "Waypoint",
       "challengeType": 7,
-      "tests": [],
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
-      "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "Aprende como funciona Free Code Camp",
       "descriptionEs": [
         [
@@ -141,14 +135,11 @@
           "Entonces construirás varios proyectos reales para organizaciones sin ánimo de lucro. Para cuando termines, tendrás un portafolio de aplicaciones reales que las personas usan a diario.",
           ""
         ]
-      ],
-      "namePt": "",
-      "descriptionPt": []
+      ]
     },
     {
       "id": "560add37cb82ac38a17513bf",
       "title": "Create a GitHub Account and Join our Chat Rooms",
-      "challengeSeed": [],
       "description": [
         [
           "http://i.imgur.com/EAR7Lvh.jpg",
@@ -205,15 +196,10 @@
           "https://gitter.im/apps"
         ]
       ],
+      "challengeSeed": [],
+      "tests": [],
       "type": "Waypoint",
       "challengeType": 7,
-      "tests": [],
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
-      "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "Crea una Cuenta de GitHub y Únete a nuestras Salas de Chat",
       "descriptionEs": [
         [
@@ -270,14 +256,11 @@
           "También puedes descargar la aplicación de chat para tu computadora o teléfono móvil.",
           "https://gitter.im/apps"
         ]
-      ],
-      "namePt": "",
-      "descriptionPt": []
+      ]
     },
     {
       "id": "560add56cb82ac38a17513c0",
       "title": "Configure your Code Portfolio",
-      "challengeSeed": [],
       "description": [
         [
           "http://i.imgur.com/tP2ccTE.gif",
@@ -286,15 +269,10 @@
           ""
         ]
       ],
+      "challengeSeed": [],
+      "tests": [],
       "type": "Waypoint",
       "challengeType": 7,
-      "tests": [],
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
-      "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "Configura tu portafolio de código",
       "descriptionEs": [
         [
@@ -303,14 +281,11 @@
           "Dale un vistazo de tu portafolio de código. Da click en tu imagen en la esquina superior derecha. Para activar tu portafolio de código, necesitaras conectar tu cuenta de GitHub con Free Code Camp. Tu portafolio de código muestra tu progreso y cuantos Brownie Points tienes. Puedes obtener Brownie Points completando desafíos y ayudando a otros campistas en nuestras salas de chat. Si obtienes Brownie Points varios días consecutivos, obtendrás una racha.",
           ""
         ]
-      ],
-      "namePt": "",
-      "descriptionPt": []
+      ]
     },
     {
       "id": "560add71cb82ac38a17513c2",
       "title": "Join a Campsite in Your City",
-      "challengeSeed": [],
       "description": [
         [
           "http://i.imgur.com/NAOFJWN.jpg",
@@ -325,15 +300,10 @@
           "https://github.com/FreeCodeCamp/freecodecamp/wiki/List-of-Free-Code-Camp-city-based-Campsites"
         ]
       ],
+      "challengeSeed": [],
+      "tests": [],
       "type": "Waypoint",
       "challengeType": 7,
-      "tests": [],
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
-      "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "Únete a un Campamento en Tu Ciudad",
       "descriptionEs": [
         [
@@ -348,14 +318,11 @@
           "Encuentra tu ciudad en esta lista y haz clic en esta. Esto te llevara al grupo de Facebook del Campamento de tu ciudad. Da clic en el botón de \"Unirse al grupo\" para unirte a el grupo. Alguien del mismo campamento debería aprobarte en breve. Si tu ciudad no esta en esta lista, ve al final del articulo de la wiki para ver instrucciones de como crear un campamento para tu ciudad.",
           "https://github.com/FreeCodeCamp/freecodecamp/wiki/List-of-Free-Code-Camp-city-based-Campsites"
         ]
-      ],
-      "namePt": "",
-      "descriptionPt": []
+      ]
     },
     {
       "id": "560add8ccb82ac38a17513c4",
       "title": "Learn What to Do If You Get Stuck",
-      "challengeSeed": [],
       "description": [
         [
           "http://i.imgur.com/lzKvwU2.jpg",
@@ -406,15 +373,10 @@
           ""
         ]
       ],
+      "challengeSeed": [],
+      "tests": [],
       "type": "Waypoint",
       "challengeType": 7,
-      "tests": [],
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
-      "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "Aprende que hacer si te quedas atascado",
       "descriptionEs": [
         [
@@ -465,9 +427,7 @@
           "Ahora estas listo para empezar a programar. El botón de  \"Mapa\" en tu esquina superior derecha te mostrará nuestro mapa de desafíos. Te recomendaos que completes los desafíos de arriba hacía abajo, a un ritmo sostenible. Nuestra comunidad de código abierto esta constantemente mejorando nuestros desafíos, así que no te sorprendas si cambian o se mueven alrededor. No te preocupes por volver hacia atrás - solo continúa avanzando. Siempre puedes ir a tu desafío más reciente pulsando el botón de \"Aprender\".",
           ""
         ]
-      ],
-      "namePt": "",
-      "descriptionPt": []
+      ]
     }
   ]
 }

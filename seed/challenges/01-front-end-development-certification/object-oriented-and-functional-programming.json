@@ -20,11 +20,6 @@
         "Before we dive into Object Oriented Programming, let's revisit JavaScript objects.",
         "Give your <code>motorBike</code> object a <code>wheels</code>, <code>engines</code> and <code>seats</code> attribute and set them to numbers."
       ],
-      "tests": [
-        "assert(typeof motorBike.engines === 'number', 'message: <code>motorBike</code> should have a <code>engines</code> attribute set to a number.');",
-        "assert(typeof motorBike.wheels === 'number', 'message: <code>motorBike</code> should have a <code>wheels</code> attribute set to a number.');",
-        "assert(typeof motorBike.seats === 'number', 'message: <code>motorBike</code> should have a <code>seats</code> attribute set to a number.');"
-      ],
       "challengeSeed": [
         "var car = {",
         "  \"wheels\":4,",
@@ -44,8 +39,13 @@
       "solutions": [
         "var car = {\n  \"wheels\":4,\n  \"engines\":1,\n  \"seats\":5\n};\n\nvar motorBike = {\n  \"wheels\": 4,\n  \"engines\": 1,\n  \"seats\": 2\n};"
       ],
-      "challengeType": 1,
+      "tests": [
+        "assert(typeof motorBike.engines === 'number', 'message: <code>motorBike</code> should have a <code>engines</code> attribute set to a number.');",
+        "assert(typeof motorBike.wheels === 'number', 'message: <code>motorBike</code> should have a <code>wheels</code> attribute set to a number.');",
+        "assert(typeof motorBike.seats === 'number', 'message: <code>motorBike</code> should have a <code>seats</code> attribute set to a number.');"
+      ],
       "type": "waypoint",
+      "challengeType": 1,
       "nameEs": "Declara objetos de JavaScript como variables",
       "descriptionEs": [
         "Antes de sumergirnos en Programación Orientada a Objetos, vamos a revisar los objetos de JavaScript.",
@@ -66,11 +66,6 @@
         "You can think of a <code>constructor</code> as a description for the object it will create.",
         "Have your <code>MotorBike</code> <code>constructor</code> describe an object with <code>wheels</code>, <code>engines</code> and <code>seats</code> properties and set them to numbers."
       ],
-      "tests": [
-        "assert(typeof (new MotorBike()).engines === 'number', 'message: <code>MotorBike</code> should have a <code>engines</code> attribute set to a number.');",
-        "assert(typeof (new MotorBike()).wheels === 'number', 'message: <code>MotorBike</code> should have a <code>wheels</code> attribute set to a number.');",
-        "assert(typeof (new MotorBike()).seats === 'number', 'message: <code>MotorBike</code> should have a <code>seats</code> attribute set to a number.');"
-      ],
       "challengeSeed": [
         "var Car = function() {",
         "  this.wheels = 4;",
@@ -90,8 +85,13 @@
       "solutions": [
         "var Car = function() {\n  this.wheels = 4;\n  this.engines = 1;\n  this.seats = 1;\n};\n\nvar myCar = new Car();\n\nvar MotorBike = function() {\n  this.engines = 1;\n  this.seats = 1;\n  this.wheels = 4;\n};\n\nvar myMotorBike = new MotorBike();"
       ],
-      "challengeType": 1,
+      "tests": [
+        "assert(typeof (new MotorBike()).engines === 'number', 'message: <code>MotorBike</code> should have a <code>engines</code> attribute set to a number.');",
+        "assert(typeof (new MotorBike()).wheels === 'number', 'message: <code>MotorBike</code> should have a <code>wheels</code> attribute set to a number.');",
+        "assert(typeof (new MotorBike()).seats === 'number', 'message: <code>MotorBike</code> should have a <code>seats</code> attribute set to a number.');"
+      ],
       "type": "waypoint",
+      "challengeType": 1,
       "nameEs": "Construye objetos de JavaScript con funciones",
       "descriptionEs": [
         "También podemos crear objetos utilizando funciones <code>constructoras</code>.",
@@ -125,12 +125,6 @@
         "In the editor, use the <code>Car</code> <code>constructor</code> to create a new <code>instance</code> and assign it to <code>myCar</code>.",
         "Then give <code>myCar</code> a <code>nickname</code> property with a string value."
       ],
-      "tests": [
-        "assert((new Car()).wheels === 4, 'message: The property <code>wheels</code> should still be <code>4</code> in the object <code>constructor</code>.');",
-        "assert(typeof (new Car()).nickname === 'undefined', 'message: There should not be a property <code>nickname</code> in the object <code>constructor</code>.');",
-        "assert(myCar.wheels === 4, 'message: The property <code>wheels</code> of <code>myCar</code> should equal <code>4</code>.');",
-        "assert(typeof myCar.nickname === 'string', 'message: The property <code>nickname</code> of <code>myCar</code> should be a string.');"
-      ],
       "challengeSeed": [
         "var Car = function() {",
         "  this.wheels = 4;",
@@ -148,8 +142,14 @@
       "solutions": [
         "var Car = function() {\n  this.wheels = 4;\n  this.engines = 1;\n  this.seats = 1;\n};\n\nvar myCar = new Car();\n\nmyCar.nickname = \"Lucy\";"
       ],
-      "challengeType": 1,
+      "tests": [
+        "assert((new Car()).wheels === 4, 'message: The property <code>wheels</code> should still be <code>4</code> in the object <code>constructor</code>.');",
+        "assert(typeof (new Car()).nickname === 'undefined', 'message: There should not be a property <code>nickname</code> in the object <code>constructor</code>.');",
+        "assert(myCar.wheels === 4, 'message: The property <code>wheels</code> of <code>myCar</code> should equal <code>4</code>.');",
+        "assert(typeof myCar.nickname === 'string', 'message: The property <code>nickname</code> of <code>myCar</code> should be a string.');"
+      ],
       "type": "waypoint",
+      "challengeType": 1,
       "nameEs": "Crea instancias de objetos con funciones constructoras",
       "descriptionEs": [
         "¡Ahora usemos esa gran <code>constructora</code> que hicimos en la última lección!",
@@ -183,12 +183,6 @@
         "Now give it a try yourself! Alter the <code>Car</code> <code>constructor</code> to use <code>parameters</code> to assign values to the <code>wheels</code>, <code>seats</code>, and <code>engines</code> properties.",
         "Then call your new <code>constructor</code> with three number <code>arguments</code> and assign it to <code>myCar</code> to see it in action."
       ],
-      "tests": [
-        "assert((function(){var testCar = new Car(3,1,2); return testCar.wheels === 3 && testCar.seats === 1 && testCar.engines === 2;})(), 'message: Calling <code>new Car(3,1,2)</code> should produce an object with a <code>wheels</code> property of <code>3</code>, a <code>seats</code> property of <code>1</code>, and an <code>engines</code> property of <code>2</code>.');",
-        "assert((function(){var testCar = new Car(4,4,2); return testCar.wheels === 4 && testCar.seats === 4 && testCar.engines === 2;})(), 'message: Calling <code>new Car(4,4,2)</code> should produce an object with a <code>wheels</code> property of <code>4</code>, a <code>seats</code> property of <code>4</code>, and an <code>engines</code> property of <code>2</code>.');",
-        "assert((function(){var testCar = new Car(2,6,3); return testCar.wheels === 2 && testCar.seats === 6 && testCar.engines === 3;})(), 'message: Calling <code>new Car(2,6,3)</code> should produce an object with a <code>wheels</code> property of <code>2</code>, a <code>seats</code> property of <code>6</code>, and an <code>engines</code> property of <code>3</code>.');",
-        "assert(typeof myCar.wheels === 'number' && typeof myCar.seats === 'number' && typeof myCar.engines === 'number', 'message: <code>myCar</code> should have number values for the <code>wheels</code>, <code>seats</code>, and <code>engines</code> properties.');"
-      ],
       "challengeSeed": [
         "var Car = function() {",
         "  //Change this constructor",
@@ -206,8 +200,14 @@
       "solutions": [
         "var Car = function(wheels,seats,engines) {\n  this.wheels = wheels;\n  this.seats = seats;\n  this.engines = engines;\n};\n\nvar myCar = new Car(4,1,1);"
       ],
-      "challengeType": 1,
+      "tests": [
+        "assert((function(){var testCar = new Car(3,1,2); return testCar.wheels === 3 && testCar.seats === 1 && testCar.engines === 2;})(), 'message: Calling <code>new Car(3,1,2)</code> should produce an object with a <code>wheels</code> property of <code>3</code>, a <code>seats</code> property of <code>1</code>, and an <code>engines</code> property of <code>2</code>.');",
+        "assert((function(){var testCar = new Car(4,4,2); return testCar.wheels === 4 && testCar.seats === 4 && testCar.engines === 2;})(), 'message: Calling <code>new Car(4,4,2)</code> should produce an object with a <code>wheels</code> property of <code>4</code>, a <code>seats</code> property of <code>4</code>, and an <code>engines</code> property of <code>2</code>.');",
+        "assert((function(){var testCar = new Car(2,6,3); return testCar.wheels === 2 && testCar.seats === 6 && testCar.engines === 3;})(), 'message: Calling <code>new Car(2,6,3)</code> should produce an object with a <code>wheels</code> property of <code>2</code>, a <code>seats</code> property of <code>6</code>, and an <code>engines</code> property of <code>3</code>.');",
+        "assert(typeof myCar.wheels === 'number' && typeof myCar.seats === 'number' && typeof myCar.engines === 'number', 'message: <code>myCar</code> should have number values for the <code>wheels</code>, <code>seats</code>, and <code>engines</code> properties.');"
+      ],
       "type": "waypoint",
+      "challengeType": 1,
       "nameEs": "Crea objetos únicos pasando parámetros a la constructora",
       "descriptionEs": [
         "La <code>constructora</code> que tenemos es fabulosa, pero ¿qué hacer si no queremos crear siempre el mismo objeto?",
@@ -241,12 +241,6 @@
         "For example, what if we want to store the <code>speed</code> our car is traveling at but we only want outside code to be able to modify it by accelerating or decelerating, so the speed changes in a controlled way?",
         "In the editor you can see an example of a <code>Car</code> <code>constructor</code> that implements this pattern.",
         "Now try it yourself! Modify the <code>Bike</code> <code>constructor</code> to have a <code>private property</code> called <code>gear</code> and two <code>public methods</code> called <code>getGear</code> and <code>setGear</code> to get and set that value."
-      ],
-      "tests": [
-        "assert(typeof myBike.getGear !== 'undefined' && typeof myBike.getGear === 'function', 'message: The method <code>getGear</code> of <code>myBike</code> should be accessible outside the object.');",
-        "assert(typeof myBike.setGear !== 'undefined' && typeof myBike.setGear === 'function', 'message: The method <code>setGear</code> of <code>myBike</code> should be accessible outside the object.');",
-        "assert(typeof myBike.gear === 'undefined', 'message: <code>myBike.gear</code> should remain undefined.');",
-        "assert.strictEqual((function () { myBike.setGear(4); return myBike.getGear(); })(), 4, 'message: <code>myBike.getGear()</code> should return <code>4</code> after <code>myBike.setGear(4)</code>.');"
       ],
       "challengeSeed": [
         "var Car = function() {",
@@ -283,8 +277,14 @@
       "solutions": [
         "var Car = function() {\n  var speed = 10;\n\n  this.accelerate = function(change) {\n    speed += change;\n  };\n\n  this.decelerate = function() {\n    speed -= 5;\n  };\n\n  this.getSpeed = function() {\n    return speed;\n  };\n};\n\nvar Bike = function() {\n  var gear = 1;\n  \n  this.getGear = function() {\n    return gear;\n  };\n  \n  this.setGear = function(newGear) {\n    gear = newGear;\n  };\n};\n\nvar myCar = new Car();\n\nvar myBike = new Bike();"
       ],
-      "challengeType": 1,
+      "tests": [
+        "assert(typeof myBike.getGear !== 'undefined' && typeof myBike.getGear === 'function', 'message: The method <code>getGear</code> of <code>myBike</code> should be accessible outside the object.');",
+        "assert(typeof myBike.setGear !== 'undefined' && typeof myBike.setGear === 'function', 'message: The method <code>setGear</code> of <code>myBike</code> should be accessible outside the object.');",
+        "assert(typeof myBike.gear === 'undefined', 'message: <code>myBike.gear</code> should remain undefined.');",
+        "assert.strictEqual((function () { myBike.setGear(4); return myBike.getGear(); })(), 4, 'message: <code>myBike.getGear()</code> should return <code>4</code> after <code>myBike.setGear(4)</code>.');"
+      ],
       "type": "waypoint",
+      "challengeType": 1,
       "nameEs": "Crea propiedades privadas de un objeto",
       "descriptionEs": [
         "Los objetos tienen sus propios atributos, llamados <code>propiedades</code>, y sus propias funciones, llamadas<code>métodos</code>.",
@@ -308,11 +308,6 @@
         "In our example the callback only uses the value of the array element (the <code>val</code> argument) but your callback can also include arguments for the <code>index</code> and <code>array</code> being acted on.",
         "Use the map function to add 3 to every value in the variable <code>oldArray</code>."
       ],
-      "tests": [
-        "assert.deepEqual(newArray, [4,5,6,7,8], 'message: You should add three to each value in the array.');",
-        "assert(editor.getValue().match(/\\.map\\s*\\(/gi), 'message: You should be making use of the <code>map</code> method.');",
-        "assert(editor.getValue().match(/\\[1\\,2\\,3\\,4\\,5\\]/gi), 'message: You should only modify the array with <code>map</code>.');"
-      ],
       "challengeSeed": [
         "var oldArray = [1,2,3,4,5];",
         "var newArray = [];",
@@ -324,8 +319,13 @@
       "tail": [
         "(function() {return newArray;})();"
       ],
-      "challengeType": 1,
+      "tests": [
+        "assert.deepEqual(newArray, [4,5,6,7,8], 'message: You should add three to each value in the array.');",
+        "assert(editor.getValue().match(/\\.map\\s*\\(/gi), 'message: You should be making use of the <code>map</code> method.');",
+        "assert(editor.getValue().match(/\\[1\\,2\\,3\\,4\\,5\\]/gi), 'message: You should only modify the array with <code>map</code>.');"
+      ],
       "type": "waypoint",
+      "challengeType": 1,
       "nameEs": "Iterar sobre vectores con .map",
       "descriptionEs": [
         "El método <code>map</code> es una manera conveniente de iterar sobre vectores. He aquí un ejemplo de uso: ",
@@ -349,10 +349,6 @@
         "<blockquote>var singleVal = array.reduce(function(previousVal, currentVal) {<br>&nbsp;&nbsp;return previousVal - currentVal;<br>}, 0);</blockquote>",
         "Use the <code>reduce</code> method to sum all the values in <code>array</code> and assign it to <code>singleVal</code>."
       ],
-      "tests": [
-        "assert(singleVal == 30, 'message: <code>singleVal</code> should be equal to the sum of all items in the <code>array</code> variable.');",
-        "assert(editor.getValue().match(/\\.reduce\\s*\\(/gi), 'message: You should have made use of the <code>reduce</code> method.');"
-      ],
       "challengeSeed": [
         "var array = [4,5,6,7,8];",
         "var singleVal = 0;",
@@ -364,8 +360,12 @@
       "tail": [
         "(function() {return singleVal;})();"
       ],
-      "challengeType": 1,
+      "tests": [
+        "assert(singleVal == 30, 'message: <code>singleVal</code> should be equal to the sum of all items in the <code>array</code> variable.');",
+        "assert(editor.getValue().match(/\\.reduce\\s*\\(/gi), 'message: You should have made use of the <code>reduce</code> method.');"
+      ],
       "type": "waypoint",
+      "challengeType": 1,
       "nameEs": "Condensa vectores con .reduce",
       "descriptionEs": [
         "El método <code>reduce</code> de un vector, se utiliza para iterar a través del vector y condensarlo en un valor.",
@@ -390,11 +390,6 @@
         "<blockquote>array = array.filter(function(val) {<br>&nbsp;&nbsp;return val !== 5;<br>});</blockquote>",
         "Use <code>filter</code> to remove all elements from <code>oldArray</code> that are greater than 5."
       ],
-      "tests": [
-        "assert.deepEqual(newArray, [1,2,3,4,5], 'message: You should have removed all the values from the array that are greater than 5.');",
-        "assert(editor.getValue().match(/array\\.filter\\s*\\(/gi), 'message: You should be using the <code>filter</code> method to remove the values from the array.');",
-        "assert(editor.getValue().match(/\\[1\\,2\\,3\\,4\\,5\\,6\\,7\\,8\\,9\\,10\\]/gi), 'message: You should only be using <code>filter</code> to modify the contents of the array.');"
-      ],
       "challengeSeed": [
         "var oldArray = [1,2,3,4,5,6,7,8,9,10];",
         "var newArray = [];",
@@ -406,8 +401,13 @@
       "tail": [
         "(function() {return newArray;})();"
       ],
-      "challengeType": 1,
+      "tests": [
+        "assert.deepEqual(newArray, [1,2,3,4,5], 'message: You should have removed all the values from the array that are greater than 5.');",
+        "assert(editor.getValue().match(/array\\.filter\\s*\\(/gi), 'message: You should be using the <code>filter</code> method to remove the values from the array.');",
+        "assert(editor.getValue().match(/\\[1\\,2\\,3\\,4\\,5\\,6\\,7\\,8\\,9\\,10\\]/gi), 'message: You should only be using <code>filter</code> to modify the contents of the array.');"
+      ],
       "type": "waypoint",
+      "challengeType": 1,
       "nameEs": "Filtrar vectores con .filter",
       "descriptionEs": [
         "El método <code>filter</code> se utiliza para iterar a través de un vector y filtrar los elementos que hagan falsa un condición determinada.",
@@ -432,11 +432,6 @@
         "<blockquote>var array = [1, 12, 21, 2];<br>array.sort(function(a, b) {<br>&nbsp;&nbsp;return a - b;<br>});</blockquote>",
         "Use <code>sort</code> to sort <code>array</code> from largest to smallest."
       ],
-      "tests": [
-        "assert.deepEqual(array, [21, 12, 2, 1], 'message: You should have sorted the array from largest to smallest.');",
-        "assert(editor.getValue().match(/\\[1,\\s*12,\\s*21,\\s*2\\];/gi), 'message: You should only be using <code>sort</code> to modify the array.');",
-        "assert(editor.getValue().match(/\\.sort\\s*\\(/g), 'message: You should have made use of the <code>sort</code> method.');"
-      ],
       "challengeSeed": [
         "var array = [1, 12, 21, 2];",
         "",
@@ -447,8 +442,13 @@
       "tail": [
         "(function() {return array;})();"
       ],
-      "challengeType": 1,
+      "tests": [
+        "assert.deepEqual(array, [21, 12, 2, 1], 'message: You should have sorted the array from largest to smallest.');",
+        "assert(editor.getValue().match(/\\[1,\\s*12,\\s*21,\\s*2\\];/gi), 'message: You should only be using <code>sort</code> to modify the array.');",
+        "assert(editor.getValue().match(/\\.sort\\s*\\(/g), 'message: You should have made use of the <code>sort</code> method.');"
+      ],
       "type": "waypoint",
+      "challengeType": 1,
       "nameEs": "Ordena vectores con .sort",
       "descriptionEs": [
         "Puedes utilizar el método <code>sort</code> para ordenar alfabética o numéricamente los valores de un vector.",
@@ -472,11 +472,6 @@
         "<em>returns [3, 2, 1]</em>",
         "Use <code>reverse</code> to reverse the <code>array</code> variable and assign it to <code>newArray</code>."
       ],
-      "tests": [
-        "assert.deepEqual(newArray, [7,6,5,4,3,2,1], 'message: You should reverse the array.');",
-        "assert(editor.getValue().match(/\\.reverse\\s*\\(\\)/gi), 'message: You should use the <code>reverse</code> method.');",
-        "assert(editor.getValue().match(/\\[1\\,2\\,3\\,4\\,5\\,6\\,7/gi), 'message: You should only be using <code>reverse</code> to modify <code>array</code>.');"
-      ],
       "challengeSeed": [
         "var array = [1,2,3,4,5,6,7];",
         "var newArray = [];",
@@ -488,8 +483,13 @@
       "tail": [
         "(function() {return newArray;})();"
       ],
-      "challengeType": 1,
+      "tests": [
+        "assert.deepEqual(newArray, [7,6,5,4,3,2,1], 'message: You should reverse the array.');",
+        "assert(editor.getValue().match(/\\.reverse\\s*\\(\\)/gi), 'message: You should use the <code>reverse</code> method.');",
+        "assert(editor.getValue().match(/\\[1\\,2\\,3\\,4\\,5\\,6\\,7/gi), 'message: You should only be using <code>reverse</code> to modify <code>array</code>.');"
+      ],
       "type": "waypoint",
+      "challengeType": 1,
       "nameEs": "Invierte vectores con .reverse",
       "descriptionEs": [
         "Puedes utilizar el método <code>reverse</code> para invertir los elementos en un vector.",
@@ -507,11 +507,6 @@
         "<code>newArray = oldArray.concat(otherArray);</code>",
         "Use <code>.concat()</code> to concatenate <code>concatMe</code> onto the end of <code>oldArray</code> and assign it to <code>newArray</code>."
       ],
-      "tests": [
-        "assert.deepEqual(newArray, [1,2,3,4,5,6], 'message: You should concatenate the two arrays together.');",
-        "assert(editor.getValue().match(/\\.concat\\s*\\(/gi), 'message: You should be using the <code>concat</code> method to merge the two arrays.');",
-        "assert(editor.getValue().match(/\\[1\\,2\\,3\\]/gi) && editor.getValue().match(/\\[4\\,5\\,6\\]/gi), 'message: You should only be using <code>concat</code> to modify the arrays.');"
-      ],
       "challengeSeed": [
         "var oldArray = [1,2,3];",
         "var newArray = [];",
@@ -525,8 +520,13 @@
       "tail": [
         "(function() {return newArray;})();"
       ],
-      "challengeType": 1,
+      "tests": [
+        "assert.deepEqual(newArray, [1,2,3,4,5,6], 'message: You should concatenate the two arrays together.');",
+        "assert(editor.getValue().match(/\\.concat\\s*\\(/gi), 'message: You should be using the <code>concat</code> method to merge the two arrays.');",
+        "assert(editor.getValue().match(/\\[1\\,2\\,3\\]/gi) && editor.getValue().match(/\\[4\\,5\\,6\\]/gi), 'message: You should only be using <code>concat</code> to modify the arrays.');"
+      ],
       "type": "waypoint",
+      "challengeType": 1,
       "nameEs": "Concatena vectores con .concat",
       "descriptionEs": [
         "<code>concat</code> se puede utilizar para combinar el contenido de dos vectores en uno solo.",
@@ -546,10 +546,6 @@
         "<code>var array = string.split('s');</code>",
         "Use <code>split</code> to create an array of words from <code>string</code> and assign it to <code>array</code>."
       ],
-      "tests": [
-        "assert(/\\.split\\(/gi, 'message: You should use the <code>split</code> method on the string.');",
-        "assert(typeof array === 'object' && array.length === 5, 'message: You should split the string by its spaces.');"
-      ],
       "challengeSeed": [
         "var string = \"Split me into an array\";",
         "var array = [];",
@@ -561,8 +557,12 @@
       "tail": [
         "(function() {return array;})();"
       ],
-      "challengeType": 1,
+      "tests": [
+        "assert(/\\.split\\(/gi, 'message: You should use the <code>split</code> method on the string.');",
+        "assert(typeof array === 'object' && array.length === 5, 'message: You should split the string by its spaces.');"
+      ],
       "type": "waypoint",
+      "challengeType": 1,
       "nameEs": "Divide cadenas con .split",
       "descriptionEs": [
         "Puedes utilizar el método <code>split</code> para dividir una cadena en un vector.",
@@ -581,10 +581,6 @@
         "<blockquote>var joinMe = [\"Na \", \"Na \", \"Na \", \"Na \", \"Batman!\"];<br>var joinedString = joinMe.join(\"Na \");<br>console.log(joinedString);</blockquote>",
         "Use the <code>join</code> method to create a string from <code>joinMe</code> with spaces in between each element and assign it to <code>joinedString</code>."
       ],
-      "tests": [
-        "assert(typeof joinedString === 'string' && joinedString === \"Split me into an array\", 'message: You should join the elements of the array with spaces.');",
-        "assert(/\\.join\\(/gi, 'message: You should use of the <code>join</code> method on the array.');"
-      ],
       "challengeSeed": [
         "var joinMe = [\"Split\",\"me\",\"into\",\"an\",\"array\"];",
         "var joinedString = '';",
@@ -596,8 +592,12 @@
       "tail": [
         "(function() {return joinedString;})();"
       ],
-      "challengeType": 1,
+      "tests": [
+        "assert(typeof joinedString === 'string' && joinedString === \"Split me into an array\", 'message: You should join the elements of the array with spaces.');",
+        "assert(/\\.join\\(/gi, 'message: You should use of the <code>join</code> method on the array.');"
+      ],
       "type": "waypoint",
+      "challengeType": 1,
       "nameEs": "Une cadenas con .join",
       "descriptionEs": [
         "Podemos usar el método <code>join</code> para unir los elementos de un vector en una cadena, separandolos con el delimitador que proporciones como argumento.",

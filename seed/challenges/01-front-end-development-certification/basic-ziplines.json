@@ -7,7 +7,6 @@
     {
       "id": "bd7158d8c442eddfbeb5bd1f",
       "title": "Get Set for our Front End Development Projects",
-      "challengeSeed": [],
       "description": [
         [
           "http://i.imgur.com/OAD6SJz.png",
@@ -58,15 +57,10 @@
           ""
         ]
       ],
+      "challengeSeed": [],
+      "tests": [],
       "type": "Waypoint",
       "challengeType": 7,
-      "tests": [],
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
-      "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "Prepárate para los Ziplines",
       "descriptionEs": [
         [
@@ -100,16 +94,11 @@
           ""
         ]
       ],
-      "namePt": "",
-      "descriptionPt": [],
       "isRequired": true
     },
     {
       "id": "bd7158d8c242eddfaeb5bd13",
       "title": "Build a Personal Portfolio Webpage",
-      "challengeSeed": [
-        "133315782"
-      ],
       "description": [
         "<strong>Objective:</strong> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='http://codepen.io/FreeCodeCamp/full/VemmoX/' target='_blank'>http://codepen.io/FreeCodeCamp/full/VemmoX/</a>.",
         "<strong>Rule #1:</strong> Don't look at the example project's code. Figure it out for yourself.",
@@ -125,13 +114,11 @@
         "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen. ",
         "You can get feedback on your project from fellow campers by sharing it in our <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Code Review Chatroom</a>. You can also share it on Twitter and your city's Campsite (on Facebook)."
       ],
-      "type": "zipline",
-      "challengeType": 3,
+      "challengeSeed": [
+        "133315782"
+      ],
       "tests": [],
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
+      "type": "zipline",
       "nameRu": "Создайте сайт-портфолио",
       "descriptionRu": [
         "<span class='text-info'>Задание:</span> Создайте <a href='http://codepen.io' target='_blank'>CodePen.io</a> который успешно копирует вот этот: <a href='http://codepen.io/FreeCodeCamp/full/VemmoX/' target='_blank'>http://codepen.io/FreeCodeCamp/full/VemmoX/</a>.",
@@ -170,16 +157,12 @@
         "Cuando hayas terminado, pulsa el botón de \"I've completed this challenge\" e incluye un link a tu CodePen. Si programaste en pareja, debes incluir también el nombre de usuario de Free Code Camp de tu compañero.",
         "Si quieres retroalimentación inmediata de parte de tus compañeros campistas, pulsa este botón y pega el link de tu proyecto en CodePen. <br><br><a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20PASTE_YOUR_CODEPEN_URL_HERE%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Pulsa aquí y agrega tu link en el texto del tweet</a>"
       ],
-      "namePt": "",
-      "descriptionPt": [],
-      "isRequired": true
+      "isRequired": true,
+      "challengeType": 3
     },
     {
       "id": "bd7158d8c442eddfaeb5bd13",
       "title": "Build a Random Quote Machine",
-      "challengeSeed": [
-        "126415122"
-      ],
       "description": [
         "<strong>Objective:</strong> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='http://codepen.io/FreeCodeCamp/full/yeVgBY' target='_blank'>http://codepen.io/FreeCodeCamp/full/yeVgBY</a>.",
         "<strong>Rule #1:</strong> Don't look at the example project's code. Figure it out for yourself.",
@@ -190,13 +173,11 @@
         "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen. ",
         "You can get feedback on your project from fellow campers by sharing it in our <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Code Review Chatroom</a>. You can also share it on Twitter and your city's Campsite (on Facebook)."
       ],
-      "type": "zipline",
-      "challengeType": 3,
+      "challengeSeed": [
+        "126415122"
+      ],
       "tests": [],
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
+      "type": "zipline",
       "nameRu": "Создайте генератор случайных цитат",
       "descriptionRu": [
         "<span class='text-info'>Задание:</span> Создайте <a href='http://codepen.io' target='_blank'>CodePen.io</a> который успешно копирует вот этот: <a href='http://codepen.io/FreeCodeCamp/full/yeVgBY' target='_blank'>http://codepen.io/FreeCodeCamp/full/yeVgBY</a>.",
@@ -224,16 +205,12 @@
         "Cuando hayas terminado, pulsa el botón de \"I've completed this challenge\" e incluye un link a tu CodePen. Si programaste en pareja, debes incluir también el nombre de usuario de Free Code Camp de tu compañero.",
         "Si quieres retroalimentación inmediata de parte de tus compañeros campistas, pulsa este botón y pega el link de tu proyecto en CodePen. <br><br><a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20PASTE_YOUR_CODEPEN_URL_HERE%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Pulsa aquí y agrega tu link en el texto del tweet</a>"
       ],
-      "namePt": "",
-      "descriptionPt": [],
-      "isRequired": true
+      "isRequired": true,
+      "challengeType": 3
     },
     {
       "id": "bd7158d8c442eddfaeb5bd17",
       "title": "Build a JavaScript Calculator",
-      "challengeSeed": [
-        "126411565"
-      ],
       "description": [
         "<strong>Objective:</strong> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='http://codepen.io/FreeCodeCamp/full/EPNZYW' target='_blank'>http://codepen.io/FreeCodeCamp/full/EPNZYW</a>.",
         "<strong>Rule #1:</strong> Don't look at the example project's code. Figure it out for yourself.",
@@ -245,15 +222,12 @@
         "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen. ",
         "You can get feedback on your project from fellow campers by sharing it in our <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Code Review Chatroom</a>. You can also share it on Twitter and your city's Campsite (on Facebook)."
       ],
+      "challengeSeed": [
+        "126411565"
+      ],
+      "tests": [],
       "type": "zipline",
       "challengeType": 3,
-      "tests": [],
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
-      "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "Crea una calculadora JavaScript",
       "descriptionEs": [
         "<span class='text-info'>Objetivo:</span> Crea una aplicación con <a href='http://codepen.io' target='_blank'>CodePen.io</a> que reproduzca efectivamente mediante ingeniería inversa este app: <a href='http://codepen.io/FreeCodeCamp/full/EPNZYW' target='_blank'>http://codepen.io/FreeCodeCamp/full/EPNZYW</a>.",
@@ -268,16 +242,11 @@
         "Cuando hayas terminado, pulsa el botón de \"I've completed this challenge\" e incluye un link a tu CodePen. Si programaste en pareja, debes incluir también el nombre de usuario de Free Code Camp de tu compañero.",
         "Si quieres retroalimentación inmediata de parte de tus compañeros campistas, pulsa este botón y pega el link de tu proyecto en CodePen. <br><br><a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20PASTE_YOUR_CODEPEN_URL_HERE%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Pulsa aquí y agrega tu link en el texto del tweet</a>"
       ],
-      "namePt": "",
-      "descriptionPt": [],
       "isRequired": true
     },
     {
       "id": "bd7158d8c442eddfaeb5bd0f",
       "title": "Build a Pomodoro Clock",
-      "challengeSeed": [
-        "126411567"
-      ],
       "description": [
         "<strong>Objective:</strong> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='http://codepen.io/FreeCodeCamp/full/VemPZX' target='_blank'>http://codepen.io/FreeCodeCamp/full/VemPZX</a>.",
         "<strong>Rule #1:</strong> Don't look at the example project's code. Figure it out for yourself.",
@@ -289,13 +258,11 @@
         "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen. ",
         "You can get feedback on your project from fellow campers by sharing it in our <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Code Review Chatroom</a>. You can also share it on Twitter and your city's Campsite (on Facebook)."
       ],
-      "type": "zipline",
-      "challengeType": 3,
+      "challengeSeed": [
+        "126411567"
+      ],
       "tests": [],
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
+      "type": "zipline",
       "nameRu": "Создайте таймер Pomodoro",
       "descriptionRu": [
         "<span class='text-info'>Задание:</span> Создайте <a href='http://codepen.io' target='_blank'>CodePen.io</a> который успешно копирует вот этот: <a href='http://codepen.io/FreeCodeCamp/full/VemPZX' target='_blank'>http://codepen.io/FreeCodeCamp/full/VemPZX</a>.",
@@ -324,9 +291,8 @@
         "Cuando hayas terminado, pulsa el botón de \"I've completed this challenge\" e incluye un link a tu CodePen. Si programaste en pareja, debes incluir también el nombre de usuario de Free Code Camp de tu compañero.",
         "Si quieres retroalimentación inmediata de parte de tus compañeros campistas, pulsa este botón y pega el link de tu proyecto en CodePen. <br><br><a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20PASTE_YOUR_CODEPEN_URL_HERE%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Pulsa aquí y agrega tu link en el texto del tweet</a>"
       ],
-      "namePt": "",
-      "descriptionPt": [],
-      "isRequired": true
+      "isRequired": true,
+      "challengeType": 3
     }
   ]
 }

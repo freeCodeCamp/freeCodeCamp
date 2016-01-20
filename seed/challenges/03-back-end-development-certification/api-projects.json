@@ -7,7 +7,6 @@
     {
       "id": "bd7158d8c443eddfaeb5bcef",
       "title": "Get Set for our Back End Development Projects",
-      "challengeSeed": [],
       "description": [
         [
           "http://i.imgur.com/4IZjWZ3.gif",
@@ -94,15 +93,10 @@
           ""
         ]
       ],
+      "challengeSeed": [],
+      "tests": [],
       "type": "Waypoint",
       "challengeType": 7,
-      "tests": [],
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
-      "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "Prepárate para los Basejumps",
       "descriptionEs": [
         [
@@ -189,16 +183,11 @@
           "Pronto agregaremos instrucciones para hacer que Clementine corra en Heroku. Por ahora, desarrolla tus Basejumps en c9.io.",
           ""
         ]
-      ],
-      "namePt": "",
-      "descriptionPt": []
+      ]
     },
     {
       "id": "bd7158d8c443edefaeb5bdef",
       "title": "Timestamp Microservice",
-      "challengeSeed": [
-        "150324691"
-      ],
       "description": [
         "<strong>Objective:</strong> Build a full stack JavaScript app that is functionally similar to this: <a href='https://timestamp-ms.herokuapp.com/' target='_blank'>https://timestamp-ms.herokuapp.com/</a> and deploy it to Heroku.",
         "Note that for each project, you should create a new GitHub repository and a new Heroku project. If you can't remember how to do this, revisit <a href='/challenges/get-set-for-our-back-end-development-projects'>http://freecodecamp.com/challenges/get-set-for-our-back-end-development-projects</a>.",
@@ -209,28 +198,18 @@
         "Once you've finished implementing these user stories, click the \"I've completed this challenge\" button and enter the URLs for both your GitHub repository and your live app running on Heroku.",
         "You can get feedback on your project from fellow campers by sharing it in our <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Code Review Chatroom</a>. You can also share it on Twitter and your city's Campsite (on Facebook)."
       ],
+      "releasedOn": "January 1, 2016",
+      "challengeSeed": [
+        "150324691"
+      ],
+      "tests": [],
       "type": "basejump",
       "challengeType": 4,
-      "tests": [],
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
-      "nameRu": "",
-      "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
-      "namePt": "",
-      "descriptionPt": [],
-      "releasedOn": "January 1, 2016",
       "isRequired": true
     },
     {
       "id": "bd7158d8c443edefaeb5bdff",
       "title": "Request Header Parser Microservice",
-      "challengeSeed": [
-        "150324460"
-      ],
       "description": [
         "<strong>Objective:</strong> Build a full stack JavaScript app that is functionally similar to this: <a href='https://cryptic-ridge-9197.herokuapp.com/api/whoami/' target='_blank'>https://cryptic-ridge-9197.herokuapp.com/api/whoami/</a> and deploy it to Heroku.",
         "Note that for each project, you should create a new GitHub repository and a new Heroku project. If you can't remember how to do this, revisit <a href='/challenges/get-set-for-our-back-end-development-projects'>http://freecodecamp.com/challenges/get-set-for-our-back-end-development-projects</a>.",
@@ -239,28 +218,18 @@
         "Once you've finished implementing these user stories, click the \"I've completed this challenge\" button and enter the URLs for both your GitHub repository and your live app running on Heroku.",
         "You can get feedback on your project from fellow campers by sharing it in our <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Code Review Chatroom</a>. You can also share it on Twitter and your city's Campsite (on Facebook)."
       ],
+      "releasedOn": "January 1, 2016",
+      "challengeSeed": [
+        "150324460"
+      ],
+      "tests": [],
       "type": "basejump",
       "challengeType": 4,
-      "tests": [],
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
-      "nameRu": "",
-      "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
-      "namePt": "",
-      "descriptionPt": [],
-      "releasedOn": "January 1, 2016",
       "isRequired": true
     },
     {
       "id": "bd7158d8c443edefaeb5bd0e",
       "title": "URL Shortener Microservice",
-      "challengeSeed": [
-        "150324692"
-      ],
       "description": [
         "<strong>Objective:</strong> Build a full stack JavaScript app that is functionally similar to this: <a href='https://shurli.herokuapp.com/' target='_blank'>https://shurli.herokuapp.com/</a> and deploy it to Heroku.",
         "Note that for each project, you should create a new GitHub repository and a new Heroku project. If you can't remember how to do this, revisit <a href='/challenges/get-set-for-our-back-end-development-projects'>http://freecodecamp.com/challenges/get-set-for-our-back-end-development-projects</a>.",
@@ -271,28 +240,18 @@
         "Once you've finished implementing these user stories, click the \"I've completed this challenge\" button and enter the URLs for both your GitHub repository and your live app running on Heroku.",
         "You can get feedback on your project from fellow campers by sharing it in our <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Code Review Chatroom</a>. You can also share it on Twitter and your city's Campsite (on Facebook)."
       ],
+      "releasedOn": "January 1, 2016",
+      "challengeSeed": [
+        "150324692"
+      ],
+      "tests": [],
       "type": "basejump",
       "challengeType": 4,
-      "tests": [],
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
-      "nameRu": "",
-      "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
-      "namePt": "",
-      "descriptionPt": [],
-      "releasedOn": "January 1, 2016",
       "isRequired": true
     },
     {
       "id": "bd7158d8c443edefaeb5bdee",
       "title": "Image Search Abstraction Layer",
-      "challengeSeed": [
-        "150324461"
-      ],
       "description": [
         "<strong>Objective:</strong> Build a full stack JavaScript app that allows you to search for images like this: <a href='https://cryptic-ridge-9197.herokuapp.com/api/imagesearch/lolcats%20funny?offset=10' target='_blank'>https://cryptic-ridge-9197.herokuapp.com/api/imagesearch/lolcats%20funny?offset=10</a> and browse recent search queries like this: <a href='https://cryptic-ridge-9197.herokuapp.com/api/latest/imagesearch/' target='_blank'>https://cryptic-ridge-9197.herokuapp.com/api/latest/imagesearch/</a>. Then deploy it to Heroku.",
         "Note that for each project, you should create a new GitHub repository and a new Heroku project. If you can't remember how to do this, revisit <a href='/challenges/get-set-for-our-back-end-development-projects'>http://freecodecamp.com/challenges/get-set-for-our-back-end-development-projects</a>.",
@@ -303,28 +262,18 @@
         "Once you've finished implementing these user stories, click the \"I've completed this challenge\" button and enter the URLs for both your GitHub repository and your live app running on Heroku.",
         "You can get feedback on your project from fellow campers by sharing it in our <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Code Review Chatroom</a>. You can also share it on Twitter and your city's Campsite (on Facebook)."
       ],
+      "releasedOn": "January 1, 2016",
+      "challengeSeed": [
+        "150324461"
+      ],
+      "tests": [],
       "type": "basejump",
       "challengeType": 4,
-      "tests": [],
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
-      "nameRu": "",
-      "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
-      "namePt": "",
-      "descriptionPt": [],
-      "releasedOn": "January 1, 2016",
       "isRequired": true
     },
     {
       "id": "bd7158d8c443edefaeb5bd0f",
       "title": "File Metadata Microservice",
-      "challengeSeed": [
-        "150324457"
-      ],
       "description": [
         "<strong>Objective:</strong> Build a full stack JavaScript app that is functionally similar to this: <a href='https://cryptic-ridge-9197.herokuapp.com/' target='_blank'>https://cryptic-ridge-9197.herokuapp.com/</a> and deploy it to Heroku.",
         "Note that for each project, you should create a new GitHub repository and a new Heroku project. If you can't remember how to do this, revisit <a href='/challenges/get-set-for-our-back-end-development-projects'>http://freecodecamp.com/challenges/get-set-for-our-back-end-development-projects</a>.",
@@ -335,20 +284,13 @@
         "Once you've finished implementing these user stories, click the \"I've completed this challenge\" button and enter the URLs for both your GitHub repository and your live app running on Heroku.",
         "You can get feedback on your project from fellow campers by sharing it in our <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Code Review Chatroom</a>. You can also share it on Twitter and your city's Campsite (on Facebook)."
       ],
+      "releasedOn": "January 1, 2016",
+      "challengeSeed": [
+        "150324457"
+      ],
+      "tests": [],
       "type": "basejump",
       "challengeType": 4,
-      "tests": [],
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
-      "nameRu": "",
-      "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
-      "namePt": "",
-      "descriptionPt": [],
-      "releasedOn": "January 1, 2016",
       "isRequired": true
     }
   ]
