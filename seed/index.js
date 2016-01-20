@@ -1,5 +1,5 @@
 /* eslint-disable no-process-exit */
-require('babel/register');
+require('babel-register');
 require('dotenv').load();
 
 var Rx = require('rx'),
