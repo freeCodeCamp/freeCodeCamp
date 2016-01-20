@@ -7,7 +7,6 @@
     {
       "id": "bd7158d8c443eddfaeb5bdef",
       "title": "Build a Voting App",
-      "challengeSeed": ["133315786"],
       "description": [
         "<strong>Objective:</strong> Build a full stack JavaScript app that is functionally similar to this: <a href='http://votingapp.herokuapp.com/' target='_blank'>http://votingapp.herokuapp.com/</a> and deploy it to Heroku.",
         "Note that for each project, you should create a new GitHub repository and a new Heroku project. If you can't remember how to do this, revisit <a href='/challenges/get-set-for-our-back-end-development-projects'>http://freecodecamp.com/challenges/get-set-for-our-back-end-development-projects</a>.",
@@ -23,15 +22,12 @@
         "Once you've finished implementing these user stories, click the \"I've completed this challenge\" button and enter the URLs for both your GitHub repository and your live app running on Heroku.",
         "You can get feedback on your project from fellow campers by sharing it in our <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Code Review Chatroom</a>. You can also share it on Twitter and your city's Campsite (on Facebook)."
       ],
+      "challengeSeed": [
+        "133315786"
+      ],
+      "tests": [],
       "type": "basejump",
       "challengeType": 4,
-      "tests": [],
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
-      "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "Crea una aplicación de votaciones",
       "descriptionEs": [
         "<span class='text-info'>Objetivo:</span> Construye una aplicación de pila completa (full stack) en JavaScript que mediante ingeniería inversa replique el siguiente proyecto: <a href='http://votingapp.herokuapp.com/' target='_blank'>http://votingapp.herokuapp.com/</a> y despliégala en Heroku.",
@@ -49,15 +45,12 @@
         "<span class='text-info'>Historia de usuario opcional:</span> Como un usuario autenticado, si no me gustan las opciones en una votación, puedo crear una nueva opción.",
         "Una vez hayas terminado de implementar estas historias de usuario, pulsa el botón de \"I've completed this challenge\" e incluye las URLs de tu repositorio GitHub y de tu aplicación corriendo en Heroku. Si programaste en pareja, agrega su nombre de usuario de Free Code Camp también para que ambos reciban el crédito por completarlo.",
         "Si quieres retroalimentación inmediata de parte de tus compañeros campistas, pulsa este botón y pega el enlace de tu proyecto. <br><br><a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20PASTE_YOUR_CODEPEN_URL_HERE%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Pulsa aquí y agrega tu link en el texto de tu tweet</a>"
-        ],
-      "namePt": "",
-      "descriptionPt": [],
+      ],
       "isRequired": true
     },
     {
       "id": "bd7158d8c443eddfaeb5bdff",
       "title": "Build a Nightlife Coordination App",
-      "challengeSeed": ["133315781"],
       "description": [
         "<strong>Objective:</strong> Build a full stack JavaScript app that is functionally similar to this: <a href='http://whatsgoinontonight.herokuapp.com/' target='_blank'>http://whatsgoinontonight.herokuapp.com/</a> and deploy it to Heroku.",
         "Note that for each project, you should create a new GitHub repository and a new Heroku project. If you can't remember how to do this, revisit <a href='/challenges/get-set-for-our-back-end-development-projects'>http://freecodecamp.com/challenges/get-set-for-our-back-end-development-projects</a>.",
@@ -70,15 +63,12 @@
         "Once you've finished implementing these user stories, click the \"I've completed this challenge\" button and enter the URLs for both your GitHub repository and your live app running on Heroku.",
         "You can get feedback on your project from fellow campers by sharing it in our <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Code Review Chatroom</a>. You can also share it on Twitter and your city's Campsite (on Facebook)."
       ],
+      "challengeSeed": [
+        "133315781"
+      ],
+      "tests": [],
       "type": "basejump",
       "challengeType": 4,
-      "tests": [],
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
-      "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "Crea una aplicación de coordinación de vida nocturna",
       "descriptionEs": [
         "<span class='text-info'>Objetivo:</span> Construye una aplicación de pila completa (full stack) en JavaScript que mediante ingeniería inversa replique el siguiente proyecto: <a href='http://whatsgoinontonight.herokuapp.com/' target='_blank'>http://whatsgoinontonight.herokuapp.com/</a> y despliégala en Heroku.",
@@ -93,15 +83,12 @@
         "<span class='text-info'>Pista:</span> Prueba utilizar el <a href='https://www.yelp.com/developers/documentation/v2/overview' target='_blank'>API de Yelp</a> para encontrar lugares en las ciudades donde tus usuarios buscan. Si utilizas el API de Yelp, asegúrate de mencionarlo en tu aplicación.",
         "Una vez hayas terminado de implementar estas historias de usuario, pulsa el botón de \"I've completed this challenge\" e incluye las URLs de tu repositorio GitHub y de tu aplicación corriendo en Heroku. Si programaste en pareja, agrega su nombre de usuario de Free Code Camp también para que ambos reciban el crédito por completarlo.",
         "Si quieres retroalimentación inmediata de parte de tus compañeros campistas, pulsa este botón y pega el enlace de tu proyecto. <br><br><a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20PASTE_YOUR_CODEPEN_URL_HERE%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Pulsa aquí y agrega tu link en el texto de tu tweet</a>"
-        ],
-      "namePt": "",
-      "descriptionPt": [],
+      ],
       "isRequired": true
     },
     {
       "id": "bd7158d8c443eddfaeb5bd0e",
       "title": "Chart the Stock Market",
-      "challengeSeed": ["133315787"],
       "description": [
         "<strong>Objective:</strong> Build a full stack JavaScript app that is functionally similar to this: <a href='http://stockstream.herokuapp.com/' target='_blank'>http://stockstream.herokuapp.com/</a> and deploy it to Heroku.",
         "Note that for each project, you should create a new GitHub repository and a new Heroku project. If you can't remember how to do this, revisit <a href='/challenges/get-set-for-our-back-end-development-projects'>http://freecodecamp.com/challenges/get-set-for-our-back-end-development-projects</a>.",
@@ -113,15 +100,12 @@
         "Once you've finished implementing these user stories, click the \"I've completed this challenge\" button and enter the URLs for both your GitHub repository and your live app running on Heroku.",
         "You can get feedback on your project from fellow campers by sharing it in our <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Code Review Chatroom</a>. You can also share it on Twitter and your city's Campsite (on Facebook)."
       ],
+      "challengeSeed": [
+        "133315787"
+      ],
+      "tests": [],
       "type": "basejump",
       "challengeType": 4,
-      "tests": [],
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
-      "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "Grafica el mercado de acciones",
       "descriptionEs": [
         "<span class='text-info'>Objetivo:</span> Crea una aplicación de pila completa (full stack) en JavaScript que mediante ingeniería inversa replique el siguiente proyecto: <a href='http://stockstream.herokuapp.com/' target='_blank'>http://stockstream.herokuapp.com/</a> y despliégalo en Heroku.",
@@ -135,15 +119,12 @@
         "<span class='text-info'>Historia de usuario opcional:</span> Como usuario, puedo ver cambios en tiempo real cuando algún otro usuario agrega o remueve una acción.",
         "Una vez hayas terminado de implementar estas historias de usuario, pulsa el botón de \"I've completed this challenge\" e incluye las URLs de tu repositorio GitHub y de tu aplicación corriendo en Heroku. Si programaste en pareja, agrega su nombre de usuario de Free Code Camp también para que ambos reciban el crédito por completarlo.",
         "Si quieres retroalimentación inmediata de parte de tus compañeros campistas, pulsa este botón y pega el enlace de tu proyecto. <br><br><a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20PASTE_YOUR_CODEPEN_URL_HERE%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Pulsa aquí y agrega tu link en el texto de tu tweet</a>"
-        ],
-      "namePt": "",
-      "descriptionPt": [],
+      ],
       "isRequired": true
     },
     {
       "id": "bd7158d8c443eddfaeb5bd0f",
       "title": "Manage a Book Trading Club",
-      "challengeSeed": ["133316032"],
       "description": [
         "<strong>Objective:</strong> Build a full stack JavaScript app that is functionally similar to this: <a href='http://bookjump.herokuapp.com/' target='_blank'>http://bookjump.herokuapp.com/</a> and deploy it to Heroku.",
         "Note that for each project, you should create a new GitHub repository and a new Heroku project. If you can't remember how to do this, revisit <a href='/challenges/get-set-for-our-back-end-development-projects'>http://freecodecamp.com/challenges/get-set-for-our-back-end-development-projects</a>.",
@@ -155,15 +136,12 @@
         "Once you've finished implementing these user stories, click the \"I've completed this challenge\" button and enter the URLs for both your GitHub repository and your live app running on Heroku.",
         "You can get feedback on your project from fellow campers by sharing it in our <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Code Review Chatroom</a>. You can also share it on Twitter and your city's Campsite (on Facebook)."
       ],
+      "challengeSeed": [
+        "133316032"
+      ],
+      "tests": [],
       "type": "basejump",
       "challengeType": 4,
-      "tests": [],
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
-      "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "Administra un club de intercambio de libros",
       "descriptionEs": [
         "<span class='text-info'>Objetivo:</span> Crea una aplicación de pila completa (full stack) en JavaScript que mediante ingeniería inversa replique el siguiente proyecto: <a href='http://bookjump.herokuapp.com/' target='_blank'>http://bookjump.herokuapp.com/</a> y despliégalo en Heroku.",
@@ -177,15 +155,12 @@
         "<span class='text-info'>Historia de usuario opcional:</span> Como un usuario autenticado, puedo proponer un intercambio y esperar a que algún otro usuario acepte el trato.",
         "Una vez hayas terminado de implementar estas historias de usuario, pulsa el botón de \"I've completed this challenge\" e incluye las URLs de tu repositorio GitHub y de tu aplicación corriendo en Heroku. Si programaste en pareja, agrega su nombre de usuario de Free Code Camp también para que ambos reciban el crédito por completarlo.",
         "Si quieres retroalimentación inmediata de parte de tus compañeros campistas, pulsa este botón y pega el enlace de tu proyecto. <br><br><a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20PASTE_YOUR_CODEPEN_URL_HERE%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Pulsa aquí y agrega tu link en el texto de tu tweet</a>"
-        ],
-      "namePt": "",
-      "descriptionPt": [],
+      ],
       "isRequired": true
     },
     {
       "id": "bd7158d8c443eddfaeb5bdee",
       "title": "Build a Pinterest Clone",
-      "challengeSeed": ["133315784"],
       "description": [
         "<strong>Objective:</strong> Build a full stack JavaScript app that is functionally similar to this: <a href='http://stark-lowlands-3680.herokuapp.com/' target='_blank'>http://stark-lowlands-3680.herokuapp.com/</a> and deploy it to Heroku.",
         "Note that for each project, you should create a new GitHub repository and a new Heroku project. If you can't remember how to do this, revisit <a href='/challenges/get-set-for-our-back-end-development-projects'>http://freecodecamp.com/challenges/get-set-for-our-back-end-development-projects</a>.",
@@ -200,15 +175,12 @@
         "Once you've finished implementing these user stories, click the \"I've completed this challenge\" button and enter the URLs for both your GitHub repository and your live app running on Heroku.",
         "You can get feedback on your project from fellow campers by sharing it in our <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Code Review Chatroom</a>. You can also share it on Twitter and your city's Campsite (on Facebook)."
       ],
+      "challengeSeed": [
+        "133315784"
+      ],
+      "tests": [],
       "type": "basejump",
       "challengeType": 4,
-      "tests": [],
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
-      "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "Crea un clon de Pinterest",
       "descriptionEs": [
         "<span class='text-info'>Objetivo:</span> Crea una aplicación de pila completa (full stack) en JavaScript que mediante ingeniería inversa replique el siguiente proyecto: <a href='http://stark-lowlands-3680.herokuapp.com/' target='_blank'>http://stark-lowlands-3680.herokuapp.com/</a> y despliégalo en Heroku.",
@@ -225,9 +197,7 @@
         "<span class='text-info'>Pista:</span> <a href='http://masonry.desandro.com/' target='_blank'>Masonry.js</a> es una librería que permite crear cuadrículas de imágenes al estilo de Pinterest.",
         "Una vez hayas terminado de implementar estas historias de usuario, pulsa el botón de \"I've completed this challenge\" e incluye las URLs de tu repositorio GitHub y de tu aplicación corriendo en Heroku. Si programaste en pareja, agrega su nombre de usuario de Free Code Camp también para que ambos reciban el crédito por completarlo.",
         "Si quieres retroalimentación inmediata de parte de tus compañeros campistas, pulsa este botón y pega el enlace de tu proyecto. <br><br><a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20PASTE_YOUR_CODEPEN_URL_HERE%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Pulsa aquí y agrega tu link en el texto de tu tweet</a>"
-        ],
-      "namePt": "",
-      "descriptionPt": [],
+      ],
       "isRequired": true
     }
   ]

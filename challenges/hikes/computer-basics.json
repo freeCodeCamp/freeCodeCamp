@@ -6,9 +6,6 @@
     {
       "id": "bd7128d8c441eddfbeb5bddf",
       "title": "Computer Basics 1: The 4 Basic Parts of a Computer",
-      "challengeSeed": [
-        "132542064"
-      ],
       "description": [
         "At the very least, a machine needs these four basic parts to be considered a computer.",
         "Today we're going to talk about the basics of computer hardware.",
@@ -24,30 +21,31 @@
         "You can't get to the memory from the input or the output without the use of the CPU.",
         "So, just to review, we've got 4 basic parts of the computer: the input, the output, CPU, and memory."
       ],
-      "type": "hike",
-      "challengeType": 6,
-      "tests": [
-        ["The computer has 3 basic parts.", false, "The computer has 4 basic parts: input, output, CPU, and memory"],
-        ["CPU stands for Central Processing Unit.", true],
-        ["All parts can access the memory", false, "Only the CPU has access to the memory"]
+      "challengeSeed": [
+        "132542064"
       ],
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
-      "nameRu": "",
-      "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
-      "namePt": "",
-      "descriptionPt": []
+      "tests": [
+        [
+          "The computer has 3 basic parts.",
+          "false",
+          "The computer has 4 basic parts: input, output, CPU, and memory"
+        ],
+        [
+          "CPU stands for Central Processing Unit.",
+          "true"
+        ],
+        [
+          "All parts can access the memory",
+          "false",
+          "Only the CPU has access to the memory"
+        ]
+      ],
+      "type": "hike",
+      "challengeType": 6
     },
     {
       "id": "bd7127d8c441eddfbeb5bddf",
       "title": "Computer Basics 2: More Computer Hardware",
-      "challengeSeed": [
-        "132542458"
-      ],
       "description": [
         "In this video we cover the basic functions of a motherboard, expansion slots, and power supply.",
         "Let's quickly review - the 4 basic parts of a computer are the input, like the mouse or the keyboard, the output, which is seen on the monitor or heard on the speakers, the CPU, the central processing unit, and the memory.",
@@ -62,30 +60,31 @@
         "So let's do a quick review.",
         "In addition to the four basic parts of input, output, CPU, and memory, we also usually have a motherboard, expansion cards, and a power supply."
       ],
-      "type": "hike",
-      "challengeType": 6,
-      "tests": [
-        ["The power supply isn't a necessary part of a computer since it's not one of the 4 main parts.", false, "The computer needs power!"],
-        ["A motherboard connects all of the working parts in a computer.", true],
-        ["Memory is usually categorized into 3 parts.", false, "Only 2 parts, RAM and long term memory such as a hard drive"]
+      "challengeSeed": [
+        "132542458"
       ],
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
-      "nameRu": "",
-      "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
-      "namePt": "",
-      "descriptionPt": []
+      "tests": [
+        [
+          "The power supply isn't a necessary part of a computer since it's not one of the 4 main parts.",
+          "false",
+          "The computer needs power!"
+        ],
+        [
+          "A motherboard connects all of the working parts in a computer.",
+          "true"
+        ],
+        [
+          "Memory is usually categorized into 3 parts.",
+          "false",
+          "Only 2 parts, RAM and long term memory such as a hard drive"
+        ]
+      ],
+      "type": "hike",
+      "challengeType": 6
     },
     {
       "id": "bd7126d8c441eddfbeb5bddf",
       "title": "Computer Basics 3: Intro to Binary Code",
-      "challengeSeed": [
-        "132542757"
-      ],
       "description": [
         "What binary looks like, and what it can mean.",
         "0's and 1's can turn be interpreted into far more complex data.",
@@ -95,30 +94,30 @@
         "We're going to go into how you decode a number in binary, but as you can probably guess, translating binary can be done with a quick google search.",
         "The most important part of this is you undrestand the concept that even simple things like 1's and 0's can translate into something really complex that is the basis for all of the computer languages that exist today."
       ],
-      "type": "hike",
-      "challengeType": 6,
-      "tests": [
-        ["1's and 0's are how we talk about little switches being on and off.", true],
-        ["1 means on, and 0 means off.", true],
-        ["There are some things which cannot be translated into binary.", false, "everything can be expressed through binary code!"]
+      "challengeSeed": [
+        "132542757"
       ],
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
-      "nameRu": "",
-      "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
-      "namePt": "",
-      "descriptionPt": []
+      "tests": [
+        [
+          "1's and 0's are how we talk about little switches being on and off.",
+          "true"
+        ],
+        [
+          "1 means on, and 0 means off.",
+          "true"
+        ],
+        [
+          "There are some things which cannot be translated into binary.",
+          "false",
+          "everything can be expressed through binary code!"
+        ]
+      ],
+      "type": "hike",
+      "challengeType": 6
     },
     {
       "id": "bd7125d8c441eddfbeb5bddf",
       "title": "Computer Basics 4: Decoding a Binary Number",
-      "challengeSeed": [
-        "132543332"
-      ],
       "description": [
         "In this video, we decode a number written in binary notation.",
         "Let's talk about the binary numeral system, also known as a bunch of 1's and 0's over and over again.",
@@ -130,30 +129,30 @@
         "If it's a 0, we disregard it.",
         "In this video, our number adds up to 75."
       ],
-      "type": "hike",
-      "challengeType": 6,
-      "tests": [
-        ["1 === on and 0 ===off", true],
-        ["Not all numbers can be expressed through binary numeral notation.", false, "All numbers can!"],
-        ["If we have the opportunity to include base 2 to every given power, we can create any number.", true]
+      "challengeSeed": [
+        "132543332"
       ],
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
-      "nameRu": "",
-      "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
-      "namePt": "",
-      "descriptionPt": []
+      "tests": [
+        [
+          "1 === on and 0 ===off",
+          "true"
+        ],
+        [
+          "Not all numbers can be expressed through binary numeral notation.",
+          "false",
+          "All numbers can!"
+        ],
+        [
+          "If we have the opportunity to include base 2 to every given power, we can create any number.",
+          "true"
+        ]
+      ],
+      "type": "hike",
+      "challengeType": 6
     },
     {
       "id": "bd7124d8c441eddfbeb5bddf",
       "title": "Computer Basics 5: How To Measure Data Size",
-      "challengeSeed": [
-        "132543959"
-      ],
       "description": [
         "How the size/amount of data is measured, starting from a bit and going all the way up to a petabyte.",
         "Today we're going to be talking about Data Size.",
@@ -168,30 +167,30 @@
         "Then it's Gigabyte, 1024 Bytes to the power of three; Terabyte, 1024 Bytes to the power of 4, and Petabyte, 1024 to the power of 5.",
         "These get much bigger really quickly!"
       ],
-      "type": "hike",
-      "challengeType": 6,
-      "tests": [
-        ["A Byte is the smallest possible amount of data.", false, "A Byte is 8 bits."],
-        ["A bit is the smallest possible amount of data.", true],
-        ["A Kilobyte is 1024 Bytes.", true]
+      "challengeSeed": [
+        "132543959"
       ],
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
-      "nameRu": "",
-      "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
-      "namePt": "",
-      "descriptionPt": []
+      "tests": [
+        [
+          "A Byte is the smallest possible amount of data.",
+          "false",
+          "A Byte is 8 bits."
+        ],
+        [
+          "A bit is the smallest possible amount of data.",
+          "true"
+        ],
+        [
+          "A Kilobyte is 1024 Bytes.",
+          "true"
+        ]
+      ],
+      "type": "hike",
+      "challengeType": 6
     },
     {
       "id": "bd7123d8c441eddfbeb5bddf",
       "title": "Computer Basics 6: Measuring Data Speed",
-      "challengeSeed": [
-        "132545171"
-      ],
       "description": [
         "Data speed and data size are measured differently.",
         "In this video, we cover how data speed is measured.",
@@ -205,29 +204,26 @@
         "The main takeaway here is that speed is usually measured in bits and size is measured in Bytes.",
         "Additionally, if you have an internet speed that says however many bits per second, keep in mind they are talking about something 8 times less than Bytes, how you are thinking about data."
       ],
-      "type": "hike",
-      "challengeType": 6,
-      "tests": [
-        ["Data speed is measured in bits.", true],
-        ["Data size is measured in bits.", false, "Size is Bytes and speed is bits."]
+      "challengeSeed": [
+        "132545171"
       ],
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
-      "nameRu": "",
-      "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
-      "namePt": "",
-      "descriptionPt": []
+      "tests": [
+        [
+          "Data speed is measured in bits.",
+          "true"
+        ],
+        [
+          "Data size is measured in bits.",
+          "false",
+          "Size is Bytes and speed is bits."
+        ]
+      ],
+      "type": "hike",
+      "challengeType": 6
     },
     {
       "id": "bd7122d8c441eddfbeb5bddf",
       "title": "Computer Basics 7: Binary Bytes",
-      "challengeSeed": [
-        "132545417"
-      ],
       "description": [
         "Binary does more than express numbers - through bytes, it can symbolize all alphanumeric symbols, which can then be interpreted into more complex code.",
         "Let's talk about the most basic level that computer can understand other languages, like javascript.",
@@ -237,30 +233,30 @@
         "So, all of the numbers, letters, and symbols in your javascript can be translated.",
         "There are a lot of languages that computers can work with, and what I want you to get away from this video is that all data in your computer boils down to binary Bytes."
       ],
-      "type": "hike",
-      "challengeType": 6,
-      "tests": [
-        ["All digits, letters, and symbols have a binary Byte translation.", true],
-        ["It's good practice to memorize these.", false, "You can just look these up as needed."],
-        ["Everything can be expressed binarily, even pictures, sound, and video", true]
+      "challengeSeed": [
+        "132545417"
       ],
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
-      "nameRu": "",
-      "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
-      "namePt": "",
-      "descriptionPt": []
+      "tests": [
+        [
+          "All digits, letters, and symbols have a binary Byte translation.",
+          "true"
+        ],
+        [
+          "It's good practice to memorize these.",
+          "false",
+          "You can just look these up as needed."
+        ],
+        [
+          "Everything can be expressed binarily, even pictures, sound, and video",
+          "true"
+        ]
+      ],
+      "type": "hike",
+      "challengeType": 6
     },
     {
       "id": "bd7121d8c441eddfbeb5bddf",
       "title": "Computer Basics 8: Types of Computers",
-      "challengeSeed": [
-        "132546182"
-      ],
       "description": [
         "This video covers the basics of supercomputers, servers, workstations, PCs, and microcontrollers.",
         "Let's discuss the different types of computers.",
@@ -275,30 +271,30 @@
         "It's both a Mac and a PC.",
         "The last type of computer we'll talk about is a microcontroller, the type of computer you might have in your car that is really good at a small specialized task, but wouldn't be used the same way a PC would be."
       ],
-      "type": "hike",
-      "challengeType": 6,
-      "tests": [
-        ["The most common type of computer is a Personal Computer, a PC.", true],
-        ["What makes Supercomputers 'super' is when multiple CPUs work on one problem, called parallel processing.", true],
-        ["Microcontrollers and workstation computers can perform roughly the same tasks.", false, "A microcontroller can only perform a small specialized task while a workstation computer has a lot of power, though also specialized."]
+      "challengeSeed": [
+        "132546182"
       ],
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
-      "nameRu": "",
-      "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
-      "namePt": "",
-      "descriptionPt": []
+      "tests": [
+        [
+          "The most common type of computer is a Personal Computer, a PC.",
+          "true"
+        ],
+        [
+          "What makes Supercomputers 'super' is when multiple CPUs work on one problem, called parallel processing.",
+          "true"
+        ],
+        [
+          "Microcontrollers and workstation computers can perform roughly the same tasks.",
+          "false",
+          "A microcontroller can only perform a small specialized task while a workstation computer has a lot of power, though also specialized."
+        ]
+      ],
+      "type": "hike",
+      "challengeType": 6
     },
     {
       "id": "bd7120d8c441eddfbeb5bddf",
       "title": "Computer Basics 9: More on the Motherboard",
-      "challengeSeed": [
-        "132547285"
-      ],
       "description": [
         "A little more detail on what constitutes a motherboard and what functionalities are standard in PCs.",
         "Today we're going to be talking more about the motherboard.",
@@ -315,30 +311,30 @@
         "On your computer, you probably know there's a place to connect USB, firewire, SD card, ethernet, even an audio plug-in to listen through headphones.",
         "These are all considered ports, a place on the motherboard where you can connect the CPU to some outside source to either get or give information."
       ],
-      "type": "hike",
-      "challengeType": 6,
-      "tests": [
-        ["A motherboard must connect the CPU, the memory, and the network.", false, "A motherboard is a motherboard as long as it connects the CPU and the memory."],
-        ["Expansion slots allow users to add capabilities to a computer.", true],
-        ["Ports help the computer access information.", true]
+      "challengeSeed": [
+        "132547285"
       ],
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
-      "nameRu": "",
-      "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
-      "namePt": "",
-      "descriptionPt": []
+      "tests": [
+        [
+          "A motherboard must connect the CPU, the memory, and the network.",
+          "false",
+          "A motherboard is a motherboard as long as it connects the CPU and the memory."
+        ],
+        [
+          "Expansion slots allow users to add capabilities to a computer.",
+          "true"
+        ],
+        [
+          "Ports help the computer access information.",
+          "true"
+        ]
+      ],
+      "type": "hike",
+      "challengeType": 6
     },
     {
       "id": "bd712fd8c441eddfbeb5bddf",
       "title": "Computer Basics 10: Data Networks",
-      "challengeSeed": [
-        "132547590"
-      ],
       "description": [
         "This video covers the basics of local area networks, wide area networks, and virtual private networks.",
         "In this video we talk about Data Networks.",
@@ -354,30 +350,31 @@
         "You might think that these are connected over the internet, and in the case of a VPN (Virtual Private Network, which is basically the same conceptionally as a WAN), you're right.",
         "However, a WAN usually rents a cable from an internet company to creat the connection."
       ],
-      "type": "hike",
-      "challengeType": 6,
-      "tests": [
-        ["You can connect to a LAN from far away.", false, "To connect to a LAN you must be physically near to it."],
-        ["VPNs (Virtual Private Networks) and WANs (Wide Area Networks) do just about the same thing.", true],
-        ["VPNs and WANs both use the internet to connect LANs.", false, "While both connect LANs, VPNs use the internet and WANs use a rented cable."]
+      "challengeSeed": [
+        "132547590"
       ],
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
-      "nameRu": "",
-      "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
-      "namePt": "",
-      "descriptionPt": []
+      "tests": [
+        [
+          "You can connect to a LAN from far away.",
+          "false",
+          "To connect to a LAN you must be physically near to it."
+        ],
+        [
+          "VPNs (Virtual Private Networks) and WANs (Wide Area Networks) do just about the same thing.",
+          "true"
+        ],
+        [
+          "VPNs and WANs both use the internet to connect LANs.",
+          "false",
+          "While both connect LANs, VPNs use the internet and WANs use a rented cable."
+        ]
+      ],
+      "type": "hike",
+      "challengeType": 6
     },
     {
       "id": "bd712ed8c441eddfbeb5bddf",
       "title": "Computer Basics 11: IP Addresses",
-      "challengeSeed": [
-        "132548071"
-      ],
       "description": [
         "The Internet, part 1: IP Addresses.",
         "Every device has an IP address.",
@@ -393,29 +390,25 @@
         "However, it is specific enough that you could google \"Where's the best ice cream near me\" and google could give you information close to your location.",
         "This is done using your IP address."
       ],
-      "type": "hike",
-      "challengeType": 6,
-      "tests": [
-        ["IP addresses are necessary to use and participate in the internet.", true],
-        ["IP addresses are determined and assigned based on location.", true]
+      "challengeSeed": [
+        "132548071"
       ],
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
-      "nameRu": "",
-      "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
-      "namePt": "",
-      "descriptionPt": []
+      "tests": [
+        [
+          "IP addresses are necessary to use and participate in the internet.",
+          "true"
+        ],
+        [
+          "IP addresses are determined and assigned based on location.",
+          "true"
+        ]
+      ],
+      "type": "hike",
+      "challengeType": 6
     },
     {
       "id": "bd712dd8c441eddfbeb5bddf",
       "title": "Computer Basics 12: How the Internet Works",
-      "challengeSeed": [
-        "132548579"
-      ],
       "description": [
         "This is a brief and basic overview of how the internet works.",
         "For a more in-depth explanation, check out web.stanford.edu/class/msande91si/www-spr04/readings/week1/InternetWhitepaper.htm",
@@ -431,29 +424,26 @@
         "Now, this explaination is really quite basic.",
         "For more information, check out web.stanford.edu/class/msande91si/www-spr04/readings/week1/InternetWhitepaper.htm."
       ],
-      "type": "hike",
-      "challengeType": 6,
-      "tests": [
-        ["Your computer sends a request for information.", true],
-        ["The Internet can be broken by a large chunk of routers and servers going down.", false, "There are so many connections that even a large amount of routers and servers can stop functioning and your experience will still not be affected."]
+      "challengeSeed": [
+        "132548579"
       ],
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
-      "nameRu": "",
-      "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
-      "namePt": "",
-      "descriptionPt": []
+      "tests": [
+        [
+          "Your computer sends a request for information.",
+          "true"
+        ],
+        [
+          "The Internet can be broken by a large chunk of routers and servers going down.",
+          "false",
+          "There are so many connections that even a large amount of routers and servers can stop functioning and your experience will still not be affected."
+        ]
+      ],
+      "type": "hike",
+      "challengeType": 6
     },
     {
       "id": "bd712cd8c441eddfbeb5bddf",
       "title": "Computer Basics 13: Software",
-      "challengeSeed": [
-        "132548908"
-      ],
       "description": [
         "We discriminate between hardware and software, and also discuss the differences between an operating system and application software.",
         "In this video, we'll discuss the basics of software.",
@@ -464,21 +454,17 @@
         "There are three main operating systems: Windows, Mac, and Linux.",
         "Applications comprise all other software, like your web browser, games, things like Photoshop, how you view your mail, editing documents, etc."
       ],
-      "type": "hike",
-      "challengeType": 6,
-      "tests": [
-        ["Safari, Chrome, and Firefox are all examples of application software.", true]
+      "challengeSeed": [
+        "132548908"
       ],
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
-      "nameRu": "",
-      "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
-      "namePt": "",
-      "descriptionPt": []
+      "tests": [
+        [
+          "Safari, Chrome, and Firefox are all examples of application software.",
+          "true"
+        ]
+      ],
+      "type": "hike",
+      "challengeType": 6
     }
   ]
 }

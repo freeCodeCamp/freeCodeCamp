@@ -1,13 +1,12 @@
 {
   "name": "MongoDB",
-  "order" : 25,
+  "order": 25,
   "time": "3 hours",
   "helpRoom": "HelpBackEnd",
   "challenges": [
     {
       "id": "bd7243d8c341eddeaeb5bd0f",
       "title": "Store Data in MongoDB",
-      "challengeSeed": ["133316035"],
       "description": [
         "We'll build this Waypoint on Cloud 9, a powerful online code editor with a full Ubuntu Linux workspace, all running in the cloud.",
         "If you don't already have Cloud 9 account, create one now at <a href='http://c9.io' target='_blank'>http://c9.io</a>.",
@@ -34,15 +33,12 @@
         "Complete \"Aggregate\"",
         "Once you've completed these steps, move on to our next challenge."
       ],
+      "challengeSeed": [
+        "133316035"
+      ],
+      "tests": [],
       "type": "waypoint",
       "challengeType": 2,
-      "tests": [],
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
-      "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "Guarda tus datos en MongoDB",
       "descriptionEs": [
         "Haremos este Waypoint en Cloud 9, un poderoso editor en línea con un ambiente de trabajo Ubuntu Linux completo, corriendo totalmente en la nube.",
@@ -69,9 +65,7 @@
         "Completa \"Count\"",
         "Completa \"Aggregate\"",
         "Una vez hayas terminado con este tutorial, puedes continuar con la siguiente prueba."
-        ],
-      "namePt": "",
-      "descriptionPt": []
+      ]
     }
   ]
 }

@@ -4484,7 +4484,7 @@
       ],
       "type": "waypoint",
       "challengeType": 0,
-      "isBeta": "true"
+      "isBeta": true
     },
     {
       "id": "cf1111c1c13feddfaeb1bdef",
@@ -4647,7 +4647,7 @@
       ],
       "type": "waypoint",
       "challengeType": 0,
-      "isBeta": "true"
+      "isBeta": true
     },
     {
       "id": "cf1111c1c13feddfaeb2bdef",
@@ -4816,7 +4816,7 @@
       ],
       "type": "waypoint",
       "challengeType": 0,
-      "isBeta": "true"
+      "isBeta": true
     },
     {
       "id": "cf1111c1c11feddfaeb1bdff",
@@ -4993,7 +4993,7 @@
       ],
       "type": "waypoint",
       "challengeType": 0,
-      "isBeta": "true"
+      "isBeta": true
     }
   ]
 }
