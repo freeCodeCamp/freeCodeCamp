@@ -31,6 +31,7 @@
     "babel-core": "^6.3.26",
     "babel-eslint": "^4.1.4",
     "babel-loader": "^6.2.1",
+    "babel-register": "^6.3.0",
     "babel-plugin-add-module-exports": "^0.1.2",
     "babel-preset-es2015": "^6.3.13",
     "babel-preset-react": "^6.3.13",
