@@ -2144,7 +2144,8 @@
       "title": "Give Each Element a Unique ID",
       "description": [
         "We will also want to be able to use jQuery to target each button by its unique id.",
-        "Give each of your buttons a unique id like, starting with <code>target1</code> and ending with <code>target6</code>."
+        "Give each of your buttons a unique id, starting with <code>target1</code> and ending with <code>target6</code>.",
+        "Make sure that <code>target1</code> to <code>target3</code> are in <code>#left-well</code>, and <code>target4</code> to <code>target6</code> are in <code>#right-well</code>."
       ],
       "tests": [
         "assert($(\"#left-well\").children(\"#target1\") && $(\"#left-well\").children(\"#target1\").length > 0, 'message: One <code>button</code> element should have the id <code>target1</code>.');",
