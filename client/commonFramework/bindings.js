@@ -74,14 +74,14 @@ window.common = (function(global) {
       $('#next-courseware-button').unbind('click');
       if ($('.signup-btn-nav').length < 1) {
         var data;
-        var completedWith = $('#completed-with').val() || null;
-        var publicURL = $('#public-url').val() || null;
-        var githubURL = $('#github-url').val() || null;
+        var solution = $('#public-url').val() || null;
+        var githubLink = $('#github-url').val() || null;
         switch (common.challengeType) {
           case common.challengeTypes.VIDEO:
             data = {
               id: common.challengeId,
-              name: common.challengeName
+              name: common.challengeName,
+              challengeType: common.challengeType
             };
             $.post('/completed-challenge/', data)
               .success(function(res) {
@@ -99,15 +99,11 @@ window.common = (function(global) {
           case common.challengeTypes.BASEJUMP:
           case common.challengeTypes.ZIPLINE:
             data = {
-              challengeInfo: {
-                challengeId: common.challengeId,
-                challengeName: common.challengeName,
-                completedWith: completedWith,
-                publicURL: publicURL,
-                githubURL: githubURL,
-                challengeType: common.challengeType,
-                verified: false
-              }
+              id: common.challengeId,
+              name: common.challengeName,
+              challengeType: +common.challengeType,
+              solution,
+              githubLink
             };
 
             $.post('/completed-zipline-or-basejump/', data)

@@ -126,15 +126,17 @@ block content
                       table.table.table-striped
                           thead
                               tr
-                                  th.col-xs-6 Projects
-                                  th.col-xs-3.hidden-xs Completed
-                                  th.col-xs-3.hidden-xs Link
+                                  th.col-xs-5 Projects
+                                  th.col-xs-2.hidden-xs Completed
+                                  th.col-xs-2.hidden-xs Last Updated
+                                  th.col-xs-2.hidden-xs Link
                           for challenge in projects
                               tr
-                                  td.col-xs-4.hidden-xs
+                                  td.col-xs-5.hidden-xs
                                       a(href='/challenges/' + removeOldTerms(challenge.name), target='_blank')= removeOldTerms(challenge.name)
                                   td.col-xs-2.hidden-xs= challenge.completedDate ? moment(challenge.completedDate, 'x').format("MMM DD, YYYY") : 'Not Available'
-                                  td.col-xs-6.hidden-xs
+                                  td.col-xs-2.hidden-xs= challenge.lastUpdated ? moment(challenge.lastUpdated, 'x').format("MMM DD, YYYY") : ''
+                                  td.col-xs-2.hidden-xs
                                       a(href=challenge.solution, target='_blank') View my project
                                   td.col-xs-12.visible-xs
                                       a(href=challenge.solution, target='_blank')= removeOldTerms(challenge.name)
