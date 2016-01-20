@@ -173,6 +173,9 @@
     },
     "tshirtVote": {
       "type": "number"
+    },
+    "timezone": {
+      "type": "string"
     }
   },
   "validations": [],
