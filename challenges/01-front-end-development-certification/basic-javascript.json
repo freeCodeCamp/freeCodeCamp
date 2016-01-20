@@ -3667,7 +3667,8 @@
         "If <code>value</code> is non-blank (<code>value !== \"\"</code>) and <code>prop</code> is not <code>\"tracks\"</code> then update or set the <code>value</code> for the <code>prop</code>.",
         "If the <code>prop</code> is <code>\"tracks\"</code> and <code>value</code> is non-blank, push the <code>value</code> onto the end of the <code>tracks</code> array.",
         "If <code>value</code> is blank, delete that <code>prop</code>.",
-        "Always return the entire collection object."
+        "Always return the entire collection object.",
+        "<strong>Note</strong><br>Don't forget to use <code>bracket notation</code> when <a href=\"accessing-objects-properties-with-variables\" target=\"_blank\">accessing object properties with variables</a>."
       ],
       "releasedOn": "January 1, 2016",
       "challengeSeed": [
