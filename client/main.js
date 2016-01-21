@@ -283,7 +283,7 @@ $(document).ready(function() {
   }
 
   if (String(window.location).match(/\/map$/ig)) {
-    $('.text-center').css('top', '50px');
+    $('.map-fixed-header').css('top', '50px');
   }
 
   // map
@@ -317,6 +317,27 @@ $(document).ready(function() {
         $('#showAll').text('Expand all challenges');
         $('#showAll').removeClass('active');
       }
+  });
+
+  $('#manipAll').on('click', () => {
+    var showAll = $('#manipAll').hasClass('active');
+    if (showAll) {
+      $.each($('.sr-only'), function(i, item) {
+        if ($(item).text() === ' Complete') {
+          $(item).parents('p').css('display', 'none');
+          $(item).parents('p').addClass('manip-hidden');
+        }
+      });
+      $('#manipAll').text('Show all challenges');
+      return $('#manipAll').removeClass('active');
+    } else {
+      $.each($('.manip-hidden'), function(i, item) {
+        $(item).css('display', 'block');
+        $(item).removeClass('manip-hidden');
+      });
+      $('#manipAll').text('Show incomplete challenges');
+      return $('#manipAll').addClass('active');
+    }
   });
 
   $('#showAll').on('click', () => {
