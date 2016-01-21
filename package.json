@@ -47,7 +47,7 @@
     "dateformat": "^1.0.11",
     "debug": "^2.2.0",
     "dedent": "~0.6.0",
-    "dotenv": "^1.2.0",
+    "dotenv": "^2.0.0",
     "emmet-codemirror": "^1.2.5",
     "errorhandler": "^1.4.2",
     "es6-map": "~0.1.1",
