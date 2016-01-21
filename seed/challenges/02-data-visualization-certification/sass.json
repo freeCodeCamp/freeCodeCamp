@@ -1,6 +1,6 @@
 {
   "name": "Sass",
-  "order": 13.5,
+  "order": 13,
   "isComingSoon": true,
   "time": "5 hours",
   "helpRoom": "HelpDataViz",
@@ -8,23 +8,12 @@
     {
       "id": "bd7158d8c423ede2aeb5bdee",
       "title": "Learn Sass Challenges",
+      "description": [],
       "challengeSeed": [],
-      "description": [
-      ],
+      "tests": [],
       "type": "waypoint",
       "challengeType": 3,
-      "tests": [],
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
-      "nameRu": "",
-      "descriptionRu": [],
-      "nameEs": "Crea una aplicación de votaciones",
-      "descriptionEs": [
-        ],
-      "namePt": "",
-      "descriptionPt": []
+      "nameEs": "Crea una aplicación de votaciones"
     }
   ]
 }

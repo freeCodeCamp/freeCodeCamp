@@ -6,6 +6,7 @@
   "challenges": [
     {
       "id": "bd7123c8c441eddfaeb5bdef",
+      "title": "Say Hello to HTML Elements",
       "description": [
         "Welcome to Free Code Camp's first coding challenge.",
         "You can edit <code>code</code> in your <code>text editor</code>, which we've embedded into this web page.",
@@ -25,7 +26,6 @@
       "tests": [
         "assert.isTrue((/hello(\\s)+world/gi).test($('h1').text()), 'message: Your <code>h1</code> element should have the text \"Hello World\".');"
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "nameEs": "Saluda a los Elementos HTML",
       "descriptionEs": [
@@ -37,7 +37,6 @@
         "Para pasar la prueba en este desafio, cambia tu texto de la etiqueta <code>h1</code> para que diga \"Hello World\" en lugar de \"Hello\". Entonces presiona el botón \"Ejecutar pruebas\"."
       ],
       "nameDe": "Waypoint: Begrüße die HTML Elemente",
-      "title": "Say Hello to HTML Elements",
       "descriptionDe": [
         "Willkommen bei der ersten Programmier-Challenge von Free Code Camp! Klicke auf den folgenden Button für weitere Instruktionen.",
         "Sehr gut. Jetzt kannst du den Rest der Instruktionen für diese Challenge lesen.",
@@ -46,10 +45,12 @@
         "Die meisten HTML Elemente haben eine <code>öffnende Auszeichnung (Tag)</code> und eine <code>sich schließende</code>. Öffnende Tags sehen so aus: <code>&#60;h1&#62;</code>. Schließende Tags so: <code>&#60;/h1&#62;</code>. Beachte, dass der einzige Unterschied zwischen öffnenden und schließenden Tags in dem Slash besteht, das bei schließenden Tags auf die sich öffnende spitze Klammer folgt.",
         "Sobald du eine Challenge abgeschlossen hast und alle Tests erfolgreich sind, wird der Button \"Go to my next challenge\" aktiv. Klicke auf diesen – oder drücke Steuerung (Control) und gleichzeitig Enter – um zur nächsten Challenge zu gehen.",
         "Um den Button \"Go to my next challenge\" dieser Lektion zu aktivieren, ändere den Inhalt des <code>h1</code> Tags von \"Hello\" zu \"Hello World\"."
-      ]
+      ],
+      "type": "waypoint"
     },
     {
       "id": "bad87fee1348bd9aedf0887a",
+      "title": "Headline with the h2 Element",
       "description": [
         "Over the next few challenges, we'll build an HTML5 app that will look something like this:",
         "<a href=\"http://i.imgur.com/jOc1JF1.png\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" src=\"http://i.imgur.com/jOc1JF1.png\" title=\"Click to enlarge\" alt=\"A screen shot of our finished Cat Photo App\"></a>",
@@ -67,7 +68,6 @@
         "assert.isTrue((/cat(\\s)?photo(\\s)?app/gi).test($(\"h2\").text()), 'message: Your <code>h2</code> element should have the text \"CatPhotoApp\".');",
         "assert.isTrue((/hello(\\s)+world/gi).test($(\"h1\").text()), 'message: Your <code>h1</code> element should have the text \"Hello World\".');"
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "nameEs": "Encabezado con el elemento h2",
       "descriptionEs": [
@@ -79,16 +79,17 @@
         "Agrega una etiqueta <code>h2</code> que diga \"CatPhotoApp\" para crear un segundo <code>elemento</code> HTML debajo de tu elemento <code>h1</code> \"Hello World\"."
       ],
       "nameDe": "Waypoint: Überschrift mit dem h2 Element",
-      "title": "Headline with the h2 Element",
       "descriptionDe": [
         "Füge unter <code>h1</code> \"Hello World\" ein zweites HTML Element <code>h2</code> hinzu, in dem \"CatPhotoApp\" steht.",
         "Das eingetragene <code>h2</code> Element wird ein <code>h2</code> Element auf der Website erzeugen.",
         "Dieses Element sagt dem Browser, wie der darin enthaltene Text gerendert wird.",
         "<code>h2</code> Elemente sind ein wenig kleiner als <code>h2</code> Elemente. Es gibt auch <code>h3</code>, <code>h4</code>, <code>h5</code> und <code>h6</code> Elemente."
-      ]
+      ],
+      "type": "waypoint"
     },
     {
       "id": "bad87fee1348bd9aedf08801",
+      "title": "Inform with the Paragraph Element",
       "description": [
         "<code>p</code> elements are the preferred element for normal-sized paragraph text on websites. P is short for \"paragraph\".",
         "You can create a <code>p</code> element like this:",
@@ -104,7 +105,6 @@
         "assert.isTrue((/hello(\\s)+paragraph/gi).test($(\"p\").text()), 'message: Your <code>p</code> element should have the text \"Hello Paragraph\".');",
         "assert(code.match(/<\\/p>/g) && code.match(/<\\/p>/g).length === code.match(/<p/g).length, 'message: Make sure your <code>p</code> element has a closing tag.');"
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "nameEs": "Informa con el Elemento Párrafo",
       "descriptionEs": [
@@ -113,15 +113,16 @@
         "Crea un elemento <code>p</code> debajo de tu elemento <code>h2</code>, y ponle el texto \"Hello Paragraph\"."
       ],
       "nameDe": "Waypoint: Informiere mit dem Paragraph Element",
-      "title": "Inform with the Paragraph Element",
       "descriptionDe": [
         "Erstelle ein <code>p</code> Element unter deinem <code>h2</code> Element und füge den Text \"Hello Paragraph\" ein.",
         "<code>p</code> Elemente sind das bevorzugte Element für normalen Paragraphen-Text auf einer Website. P ist die Abkürzung für \"Paragraph\".",
         "Du kannst ein <code>p</code> Element so erzeugen: <code>&#60;p&#62;Ich bin ein p Element!&#60;/p&#62;</code>"
-      ]
+      ],
+      "type": "waypoint"
     },
     {
       "id": "bad87fee1348bd9aedf08802",
+      "title": "Uncomment HTML",
       "description": [
         "Commenting is a way that you can leave comments within your code without affecting the code itself.",
         "Commenting is also a convenient way to make code inactive without having to delete it entirely.",
@@ -143,7 +144,6 @@
         "assert($(\"p\").length > 0, 'message: Make your <code>p</code> element visible on your page by uncommenting it.');",
         "assert(!/-->/gi.test(code), 'message: Be sure to delete all trailing comment tags&#44; i.e. <code>--&#62;</code>.');"
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "nameEs": "Quita comentarios HTML",
       "descriptionEs": [
@@ -153,16 +153,17 @@
         "Quita el comentario a los elementos <code>h1</code>, <code>h2</code> y <code>p</code>"
       ],
       "nameDe": "Waypoint: HTML entkommentieren",
-      "title": "Uncomment HTML",
       "descriptionDe": [
         "Entkommentiere deine <code>h1</code>, <code>h2</code> und <code>p</code> Elemente.",
         "Kommentieren erlaubt dir Kommentare innerhalb des Codes zu hinterlassen, ohne diesen selbst zu beeinflussen.",
         "Dies ist auch ein guter Weg, um Code inaktiv zu machen ohne diesen komplett löschen zu müssen.",
         "Du kannst einen Kommentar mit <code>&#60;!--</code> starten und ihn mit <code>--&#62;</code> wieder beenden."
-      ]
+      ],
+      "type": "waypoint"
     },
     {
       "id": "bad87fee1348bd9aedf08804",
+      "title": "Comment out HTML",
       "description": [
         "Remember that in order to start a comment, you need to use <code>&#60;!--</code> and to end a comment, you need to use <code>--&#62;</code>",
         "Here you'll need to end the comment before your <code>h2</code> element begins.",
@@ -183,7 +184,6 @@
         "assert(($(\"p\").length === 0), 'message: Comment out your <code>p</code> element so that it is not visible on your page.');",
         "assert(code.match(/-->/g).length > 1, 'message: Be sure to close each of your comments with <code>--&#62;</code>.');"
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "nameEs": "Comenta en HTML",
       "descriptionEs": [
@@ -192,15 +192,16 @@
         "Comenta el elemento <code>h1</code> y el elemento <code>p</code>, pero deja sin comentar el elemento <code>h2</code>"
       ],
       "nameDe": "Waypoint: HTML auskommentieren",
-      "title": "Comment out HTML",
       "descriptionDe": [
         "Kommentiere die Elemente <code>h1</code> und <code>p</code> aus, aber lasse dein <code>h2</code> Element unkommentiert.",
         "Denk daran, dass du einen Kommentar mit <code>&#60;!--</code> anfangen und mit <code>--&#62;</code> wieder beenden kannst.",
         "Hier wirst du deinen Kommentar vor dem <code>h2</code> Element beenden müssen."
-      ]
+      ],
+      "type": "waypoint"
     },
     {
       "id": "bad87fee1348bd9aedf08833",
+      "title": "Fill in the Blank with Placeholder Text",
       "description": [
         "Web developers traditionally use <code>lorem ipsum text</code> as placeholder text. It's called lorem ipsum text because those are the first two words of a famous passage by Cicero of Ancient Rome.",
         "Lorem ipsum text has been used as placeholder text by typesetters since the 16th century, and this tradition continues on the web.",
@@ -217,7 +218,6 @@
       "tests": [
         "assert.isTrue((/Kitty(\\s)+ipsum(\\s)+dolor/gi).test($(\"p\").text()), 'message: Your <code>p</code> element should contain the first few words of the provided <code>kitty ipsum text</code>.');"
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "nameEs": "Llena espacios con texto de relleno",
       "descriptionEs": [
@@ -227,17 +227,18 @@
         "Remplaza el texto dentro de tu elemento <code>p</code> con las primeras palabras de este texto kitty ipsum: <code>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</code>"
       ],
       "nameDe": "Waypoint: Fülle die Lücken mit Platzhalter-Text",
-      "title": "Fill in the Blank with Placeholder Text",
       "descriptionDe": [
         "Ersetze den Text in deinem <code>p</code> Element mit den ersten Wörtern des zur Verfügung gestellten \"Kitty Ipsum\" Textes.",
         "Webentwickler nutzen für gewöhnlich \"Lorem Ipsum\" Text als Platzhalter. Es heißt \"Lorem Ipsum\", weil es die ersten zwei Wörter aus einer bekannten Passage von Cicero des alten Roms sind.",
         "\"Lorem Ipsum\" Text wurde seit dem 16. Jahrhundert von Schriftsetzern als Platzhalter verwendet. Und diese Tradition setzt sich im Web fort.",
         "Nun gut, fünf Jahrhunderte sind lange genug. Da wir eine CatPhotoApp entwickeln, lass uns stattdessen lieber \"Kitty Ipsum\" nutzen!",
         "Hier sind die ersten paar Wörter von \"Kitty Ipsum\", die du kopieren und an die richtige Stelle einfügen kannst: <code>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</code>"
-      ]
+      ],
+      "type": "waypoint"
     },
     {
       "id": "bad87fed1348bd9aedf08833",
+      "title": "Delete HTML Elements",
       "description": [
         "Our phone doesn't have much vertical space.",
         "Let's remove the unnecessary elements so we can start building our CatPhotoApp.",
@@ -255,7 +256,6 @@
         "assert(($(\"h2\").length > 0), 'message: Leave your <code>h2</code> element on the page.');",
         "assert(($(\"p\").length > 0), 'message: Leave your <code>p</code> element on the page.');"
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "nameEs": "Borra elementos HTML",
       "descriptionEs": [
@@ -264,15 +264,16 @@
         "Borra el elemento <code>h1</code> para simplificar nuestra vista."
       ],
       "nameDe": "Waypoint: Entferne HTML Elemente",
-      "title": "Delete HTML Elements",
       "descriptionDe": [
         "Lösche die Elemente <code>h1</code>, damit wir etwas Ordnung schaffen.",
         "Unser Smartphone hat nicht sehr viel vertikalen Raum.",
         "Lass uns die unwichtigen Elemente entfernen, damit wir unsere CatPhotoApp bauen können."
-      ]
+      ],
+      "type": "waypoint"
     },
     {
       "id": "bad87fee1348bd9aedf08803",
+      "title": "Change the Color of Text",
       "description": [
         "Now let's change the color of some of our text.",
         "We can do this by changing the <code>style</code> of your <code>h2</code> element.",
@@ -289,7 +290,6 @@
       "tests": [
         "assert($(\"h2\").css(\"color\") === \"rgb(255, 0, 0)\", 'message: Your <code>h2</code> element should be red.');"
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "nameEs": "Cambia el color del texto",
       "descriptionEs": [
@@ -301,15 +301,16 @@
         "Cambia el estilo del elemento <code>h2</code> de manera que el color de su texto sea rojo."
       ],
       "nameDe": "Waypoint: Ändere die Farbe des Textes",
-      "title": "Change the Color of Text",
       "descriptionDe": [
         "Ändere den Style des <code>h2</code> Elements, damit die Textfarbe Rot ist.",
         "Wir können das bewerkstelligen, indem wir den \"style\" des <code>h2</code> Elements ändern.",
         "So könntest du die Textfarbe des <code>h2</code> Elements in Blau ändern: <code>&#60;h2 style=\"color: blue\"&#62;CatPhotoApp&#60;/h2&#62;</code>"
-      ]
+      ],
+      "type": "waypoint"
     },
     {
       "id": "bad87fee1348bd9aedf08805",
+      "title": "Use CSS Selectors to Style Elements",
       "description": [
         "With CSS, there are hundreds of CSS <code>properties</code> that you can use to change the way an element looks on your page.",
         "When you entered <code>&#60;h2 style=\"color: red\"&#62;CatPhotoApp&#60;/h2&#62;</code>, you were giving that individual <code>h2</code> element an <code>inline style</code>.",
@@ -333,7 +334,6 @@
         "assert(code.match(/h2\\s*\\{\\s*color\\s*:.*;\\s*\\}/g), 'message: Ensure that your stylesheet <code>h2</code> declaration is valid with a semicolon and closing brace.');",
         "assert(code.match(/<\\/style>/g) && code.match(/<\\/style>/g).length === (code.match(/<style((\\s)*((type|media|scoped|title|disabled)=\"[^\"]*\")?(\\s)*)*>/g) || []).length, 'message: Make sure all your <code>style</code> elements are valid and have a closing tag.');"
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "nameEs": "Usa selectores CSS para dar estilo a los elementos",
       "descriptionEs": [
@@ -349,7 +349,6 @@
         "Borra el atributo <code>style</code> de tu elemento <code>h2</code> y a cambio escribe un elemento <code>style</code> CSS.  Agrea el CSS necesario para hacer todos los elementos <code>h2</code> de color azul."
       ],
       "nameDe": "Waypoint: Nutze CSS Selektoren um Elemente zu gestalten",
-      "title": "Use CSS Selectors to Style Elements",
       "descriptionDe": [
         "Lösche das Style Attribute deines <code>h2</code> Elements und erstelle stattdessen ein CSS <code>style</code> Element. Füge das notwendige CSS hinzu, um alle <code>h2</code> Elemente Blau zu färben.",
         "CSS liefert dir hunderte Attribute oder \"attributes\" um HTML Elemente auf deiner Seite zu gestalten.",
@@ -358,10 +357,12 @@
         "Erstelle über deinem Code ein <code>style</code> Element: <code>&#60;style&#62;&#60;/style&#62;</code>",
         "Innerhalb des Style Elements kannst du einen CSS Selektor oder \"selector\" für alle <code>h2</code> Elemente erstellen. Wenn du zum Beispiel alle <code>h2</code> Elemente Rot färben willst, schreibst du: <code>&#60;style&#62;h2 {color: red;}&#60;/style&#62;</code>",
         "Beachte, dass du öffnende und schließende geschwungene Klammern (<code>{</code> und <code>}</code>) um jeden Style setzen solltest. Außerdem sollten deine Styles innerhalb dieser Klammern stehen. Zum Schluss benötigst du am Ende jedes Styles ein Semikolon."
-      ]
+      ],
+      "type": "waypoint"
     },
     {
       "id": "bad87fee1348bd9aecf08806",
+      "title": "Use a CSS Class to Style an Element",
       "description": [
         "Classes are reusable styles that can be added to HTML elements.",
         "Here's an example CSS class declaration:",
@@ -390,7 +391,6 @@
         "assert(code.match(/\\.red-text\\s*\\{\\s*color:\\s*red;\\s*\\}/g), 'message: Your stylesheet should declare a <code>red-text</code> class and have its color set to red.');",
         "assert($(\"h2\").attr(\"style\") === undefined, 'message: Do not use inline style declarations like <code>style=\"color&#58; red\"</code> in your <code>h2</code> element.');"
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "nameEs": "Utiliza una clase CSS para darle estilo a un elemento",
       "descriptionEs": [
@@ -409,7 +409,6 @@
         "Crea una clase CSS llamada <code>red-text</code> y aplicala a tu elemento <code>h2</code>"
       ],
       "nameDe": "Waypoint: Nutze eine CSS Klasse um ein Element zu gestalten",
-      "title": "Use a CSS Class to Style an Element",
       "descriptionDe": [
         "Erstelle eine CSS Klasse namens \"red-text\" und füge sie zu deinem <code>h2</code> Element hinzu.",
         "Klassen sind wiederverwendbare Styles, die HTML Elementen zugewiesen werden können.",
@@ -419,10 +418,12 @@
         "Du kannst eine Klasse folgendermaßen einem HTML Element beifügen: <code>&#60;h2 class=\"blue-text\"&#62;CatPhotoApp&#60;/h2&#62;</code>",
         "Beachte, dass Klassen in deinem CSS <code>style</code> Element mit einem Punkt beginngen sollten. In deinen Klassen-Deklarationen von HTML Elementen sollten diese nicht mit einem Punkt beginnen.",
         "Anstatt ein neues <code>style</code> Element zu erstellen, versuche die <code>h2</code> Style-Deklaration von deinem bereits bestehenden Style Element zu entfernen und sie mit der Klassen-Deklaration \".red-text\" zu ersetzen."
-      ]
+      ],
+      "type": "waypoint"
     },
     {
       "id": "bad87fee1348bd9aefe08806",
+      "title": "Style Multiple Elements with a CSS Class",
       "description": [
         "Remember that you can attach classes to HTML elements by using <code>class=\"your-class-here\"</code> within the relevant element's opening tag.",
         "Remember that CSS class selectors require a period at the beginning like this:",
@@ -448,7 +449,6 @@
         "assert($(\"p\").css(\"color\") === \"rgb(255, 0, 0)\", 'message: Your <code>p</code> element should be red.');",
         "assert($(\"p\").hasClass(\"red-text\"), 'message: Your <code>p</code> element should have the class <code>red-text</code>.');"
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "nameEs": "Da estilo a múltiples elementos con una clase CSS",
       "descriptionEs": [
@@ -462,15 +462,16 @@
         "Aplica la clase <code>red-text</code> a tus elementos <code>h2</code> y <code>p</code>"
       ],
       "nameDe": "Waypoint: Gestalte mehrere Elemente mit einer CSS Klasse",
-      "title": "Style Multiple Elements with a CSS Class",
       "descriptionDe": [
         "Füge den <code>h2</code> und <code>p</code> Elementen die Klasse \"red-text\" hinzu.",
         "Du kannst Klassen zu HTML Elementen hinzufügen, indem du zum Beispiel <code>class=\"deine-klasse\"</code> innerhalb des öffnenden Tags schreibst.",
         "Du weißt, es gehört ein Punkt vor CSS Klassen: <code>.red-text { color: blue; }</code>. Aber diese Klassen-Deklarationen brauchen keinen Punkt: <code>&#60;h2 class=\"blue-text\"&#62;CatPhotoApp&#60;h2&#62;</code>"
-      ]
+      ],
+      "type": "waypoint"
     },
     {
       "id": "bad87fee1348bd9aedf08806",
+      "title": "Change the Font Size of an Element",
       "description": [
         "Font size is controlled by the <code>font-size</code> CSS property, like this:",
         "<blockquote>h1 {<br>&nbsp;&nbsp;font-size: 30px;<br>}</blockquote>",
@@ -494,7 +495,6 @@
         "assert.isTrue((/Purr\\s+jump\\s+eat/gi).test($(\"p\").text()), 'message: Your <code>p</code> element should contain the first few words of the provided additional <code>kitty ipsum text</code>.');",
         "assert(Number.parseInt($(\"p:eq(0)\").css(\"font-size\"), 10) > 15 && Number.parseInt($(\"p:eq(1)\").css(\"font-size\"), 10) > 15, 'message: Give elements with the <code>p</code> tag a <code>font-size</code> of <code>16px</code>.')"
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "nameEs": "Cambia el tamaño de fuente de un elemento.",
       "descriptionEs": [
@@ -506,16 +506,17 @@
         "Dentro de la misma etiqueta <code>&#60;style&#62;</code> que creamos para tu clase <code>red-text</code>, pon el <code>font-size</code> de los elementos <code>p</code> a 16 pixeles (<code>16px</code>)."
       ],
       "nameDe": "Waypoint: Ändere die Schriftgröße eines Elements",
-      "title": "Change the Font Size of an Element",
       "descriptionDe": [
         "Erstelle ein zweites <code>p</code> Element. Ändere dann innerhalb deines <code>&#60;style&#62;</code> Elements die Schriftgröße oder \"font-size\" von allen <code>p</code> Elementen auf 16 Pixel.",
         "Schriftgröße wird von dem CSS Attribut \"font-size\" kontrolliert: <code>h1 { font-size: 30px; }</code>",
         "Zuerst erstellst du ein zweites <code>p</code> Element mit dem folgenden Kitty Ipsum Text: <code>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</code>",
         "Versuche nun beiden <code>p</code> Elementen die Schriftgröße von 16 Pixeln (<code>16px</code>) zu geben. Du kannst das innerhalb des selben <code>&#60;style&#62;</code> Tags machen, welches wir für deine \"red-text\" Klasse erstellt haben."
-      ]
+      ],
+      "type": "waypoint"
     },
     {
       "id": "bad87fee1348bd9aede08807",
+      "title": "Set the Font Family of an Element",
       "description": [
         "You can set an element's font by using the <code>font-family</code> property.",
         "For example, if you wanted to set your <code>h2</code> element's font to <code>Sans-serif</code>, you would use the following CSS:",
@@ -541,7 +542,6 @@
       "tests": [
         "assert($(\"p\").css(\"font-family\").match(/monospace/i), 'message: Your <code>p</code> elements should use the font <code>Monospace</code>.');"
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "nameEs": "Establecer la familia del tipo de letra de un elemento",
       "descriptionEs": [
@@ -553,15 +553,16 @@
         "Haga que todos sus elementos <code>p</code> utilicen el tipo de letra <code>Monospace</code>."
       ],
       "nameDe": "Waypoint: Definiere die Schriftart eines Elements",
-      "title": "Set the Font Family of an Element",
       "descriptionDe": [
         "Definiere für alle <code>p</code> Elemente die Schriftart \"Monospace\".",
         "Du kannst einem Element mit \"font-family\" eine Schriftart zuweisen.",
         "Wenn du zum Beispiel deinem <code>h2</code> Element die Schriftart \"Sans-serif\" zuweisen willst, kannst du das mit dem folgenden CSS tun: <code>h2 { font-family: Sans-serif; }</code>"
-      ]
+      ],
+      "type": "waypoint"
     },
     {
       "id": "bad87fee1348bd9aedf08807",
+      "title": "Import a Google Font",
       "description": [
         "Now, let's import and apply a Google font (note that if Google is blocked in your country, you will need to skip this challenge).",
         "First, you'll need to make a <code>call</code> to Google to grab the <code>Lobster</code> font and load it into your HTML.",
@@ -592,7 +593,6 @@
         "assert($(\"h2\").css(\"font-family\").match(/lobster/i), 'message: Your <code>h2</code> element should use the font <code>Lobster</code>.');",
         "assert($(\"p\").css(\"font-family\").match(/monospace/i), 'message: Your <code>p</code> element should still use the font <code>Monospace</code>.');"
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "nameEs": "Importar un tipo de letra de Google",
       "descriptionEs": [
@@ -604,17 +604,18 @@
         "Aplique la familia de fuente (<code>font-family</code>) <code>Lobster</code> a su elemento <code>h2</code>."
       ],
       "nameDe": "Waypoint: Importiere eine Google Font",
-      "title": "Import a Google Font",
       "descriptionDe": [
         "Füge dem <code>h2</code> Element die Schriftart oder <code>font-family</code> \"Lobster\" hinzu.",
         "Zuerst musst du Google Fonts in dein HTML einbinden, um auf \"Lobster\" zugreifen zu können.",
         "Kopiere den folgenden Code und füge diesen in deinen Editor über dem <code>style</code> Element ein:",
         "<code>&#60;link href=\"http://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\"&#62;</code>",
         "Jetzt kannst du \"Lobster\" als font-family Attribut zu deinem <code>h2</code> Element hinzufügen."
-      ]
+      ],
+      "type": "waypoint"
     },
     {
       "id": "bad87fee1348bd9aedf08808",
+      "title": "Specify How Fonts Should Degrade",
       "description": [
         "There are several default fonts that are available in all browsers. These include <code>Monospace</code>, <code>Serif</code> and <code>Sans-Serif</code>",
         "When one font isn't available, you can tell the browser to \"degrade\" to another font.",
@@ -650,7 +651,6 @@
         "assert(new RegExp(\"<!--\", \"gi\").test(code), 'message: Comment out your call to Google for the <code>Lobster</code> font by putting <code>&#60!--</code> in front of it.');",
         "assert(new RegExp(\"-->\", \"gi\").test(code), 'message: Be sure to close your comment by adding <code>--&#62;</code>.');"
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "nameEs": "Especifique como deben degradarse los tipos de letra",
       "descriptionEs": [
@@ -663,17 +663,18 @@
         "Ahora ponga como comentarios sus llamadas a tipos de letra de Google, de forma que el tipo <code>Lobster</code> no esté disponible. Note como se degrada al tipo <code>Monospace</code>."
       ],
       "nameDe": "Waypoint: Spezifiziere die Rangfolge von Schriftarten",
-      "title": "Specify How Fonts Should Degrade",
       "descriptionDe": [
         "Füge allen <code>h2</code> Elementen die Schriftart \"Lobster\" hinzu und definiere \"Monospace\" als Ersatzschrift, wenn \"Lobster\" nicht verfügbar ist.",
         "Du kannst \"Lobster\" als Schriftart deines <code>h2</code> Elements belassen, aber gleichzeitig dafür sorgen, dass eine alternative Schrift geladen wird, wenn \"Lobster\" nicht zur Verfügung steht.",
         "Wenn du zum Beispiel einem Element die Schriftart \"Helvetica\" geben möchtest, aber gleichzeitig die alternative Schrift \"Sans-Serif\" laden willst, wenn \"Helvetica\" nicht verfügbar ist, kannst du diesen CSS Style verwenden: <code>p { font-family: Helvetica, Sans-Serif; }</code>",
         "Es gibt verschiedene Schriftarten, die jedem Browser standardmäßig zur Verfügung stehen. Das sind unter anderem \"Monospace\", \"Serif\" und \"Sans-Serif\". Probiere deinem <code>h2</code> Element gleichzeitig die Schriftart \"Lobster\" und als Alternative \"Monospace\" zu geben.",
         "Jetzt versuche den Aufruf von Google Fonts in deinem HTML auszukommentieren, sodass \"Lobster\" nicht zur Verfügung steht. Beachte, wie nun die Schriftart \"Monospace\" geladen wird."
-      ]
+      ],
+      "type": "waypoint"
     },
     {
       "id": "bad87fee1348bd9aedf08812",
+      "title": "Add Images to your Website",
       "description": [
         "You can add images to your website by using the <code>img</code> element, and point to a specific image's URL using the <code>src</code> attribute.",
         "An example of this would be:",
@@ -708,7 +709,6 @@
         "assert($(\"img\").length > 0, 'message: Your page should have an image element.');",
         "assert(new RegExp(\"\\/\\/bit.ly\\/fcc-relaxing-cat\", \"gi\").test($(\"img\").attr(\"src\")), 'message: Your image should have a <code>src</code> attribute that points to the kitten image.');"
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "nameEs": "Añade imágenes a tu sitio web",
       "descriptionEs": [
@@ -720,16 +720,17 @@
         "<code>https://bit.ly/fcc-relaxing-cat</code>"
       ],
       "nameDe": "Waypoint: Füge Bilder zu deiner Website hinzu",
-      "title": "Add Images to your Website",
       "descriptionDe": [
         "Nutze ein <code>img</code> Element um das Bild <code>https://bit.ly/fcc-relaxing-cat</code> einzufügen.",
         "Du kannst <code>img</code> Elemente verwenden, um Bilder in deine Website einzubauen. Um zur URL des Bildes zu verweisen, benutzt du das <code>src</code> Attribut.",
         "Ein Beispiel dafür wäre <code>&#60img src=\"www.bild-quelle.com/bild.jpg\"/&#62</code>. Beachte, dass <code>img</code> Elemente in den meisten Fällen selbstschließend sind.",
         "Versuche es mit diesem Bild: <code>https://bit.ly/fcc-relaxing-cat</code>"
-      ]
+      ],
+      "type": "waypoint"
     },
     {
       "id": "bad87fee1348bd9acdf08812",
+      "title": "Size your Images",
       "description": [
         "CSS has a property called <code>width</code> that controls an element's width. Just like with fonts, we'll use <code>px</code> (pixels) to specify the image's width.",
         "For example, if we wanted to create a CSS class called <code>larger-image</code> that gave HTML elements a width of 500 pixels, we'd use:",
@@ -764,7 +765,6 @@
         "assert($(\"img\").hasClass(\"smaller-image\"), 'message: Your <code>img</code> element should have the class <code>smaller-image</code>.');",
         "assert($(\"img\").width() === 100, 'message: Your image should be 100 pixels wide.');"
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "nameEs": "Da tamaño a tus imágenes",
       "descriptionEs": [
@@ -778,15 +778,16 @@
         "Crea una clase llamada <code>smaller-image</code> y utilízala para cambiar el tamaño de la imagen de modo que sea de sólo 100 píxeles de ancho."
       ],
       "nameDe": "Waypoint: Skaliere deine Bilder",
-      "title": "Size your Images",
       "descriptionDe": [
         "Erstelle eine Klasse mit dem Namen <code>smaller-image</code> und verwende sie, um dein Bild auf 100 Pixel zu skalieren.",
         "Die Breite eines Elements wird mit dem CSS Attribut <code>width</code> kontrolliert. Wie bei Schriftarten verwenden wir Pixel (px) um die Größe zu definieren.",
         "Wenn wir also die CSS Klasse \"larger-image\" erstellen wollen, um HTML Elementen eine Breite von 500 Pixeln zu verleihen, verwenden wir: <code>&#60;style&#62; .larger-image { width: 500px; } &#60;/style&#62;</code>"
-      ]
+      ],
+      "type": "waypoint"
     },
     {
       "id": "bad87fee1348bd9bedf08813",
+      "title": "Add Borders Around your Elements",
       "description": [
         "CSS borders have properties like <code>style</code>, <code>color</code> and <code>width</code>",
         "For example, if we wanted to create a red, 5 pixel border around an HTML element, we could use this class:",
@@ -830,7 +831,6 @@
         "assert($(\"img\").css(\"border-right-style\") === \"solid\", 'message: Give your image a border style of <code>solid</code>.');",
         "assert($(\"img\").css(\"border-left-color\") === \"rgb(0, 128, 0)\", 'message: The border around your <code>img</code> element should be green.');"
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "nameEs": "Añade bordes alrededor de tus elementos",
       "descriptionEs": [
@@ -848,15 +848,16 @@
         "<code>&lt;img class=\"clase1 clase2\"&gt;</code>"
       ],
       "nameDe": "Waypoint: Füge Rahmen zu deinen Elementen hinzu",
-      "title": "Add Borders Around your Elements",
       "descriptionDe": [
         "Erstelle die Klasse \"thick-green-border\", welche einen 10 Pixel dicken, grünen Rahmen mit dem Style \"solid\" um ein HTML Element setzt. Füge diese Klasse zu deinem Katzenfoto hinzu.",
         "CSS Rahmen haben Attribute wie Style, Color und Width.",
         "Wenn wir nun einen roten, 5 Pixel dicken Rahmen um ein HTML Element setzen wollen, würden wir so vorgehen: <code>&#60;style&#62; .thin-red-border { border-color: red; border-width: 5px; border-style: solid; } &#60;/style&#62;</code>"
-      ]
+      ],
+      "type": "waypoint"
     },
     {
       "id": "bad87fee1348bd9aedf08814",
+      "title": "Add Rounded Corners with a Border Radius",
       "description": [
         "Your cat photo currently has sharp corners. We can round out those corners with a CSS property called <code>border-radius</code>.",
         "You can specify a <code>border-radius</code> with pixels. Give your cat photo a <code>border-radius</code> of <code>10px</code>.",
@@ -900,7 +901,6 @@
         "assert($(\"img\").hasClass(\"thick-green-border\"), 'message: Your image element should have the class \"thick-green-border\".');",
         "assert(parseInt($(\"img\").css(\"border-top-left-radius\")) > 8, 'message: Your image should have a border radius of <code>10px</code>');"
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "nameEs": "Añade bordes alrededor de tus elementos",
       "descriptionEs": [
@@ -918,15 +918,16 @@
         "<code>&lt;img class=\"class1 class2\"&gt;</code>"
       ],
       "nameDe": "Waypoint: Füge abgerundete Ecken mit Border Radius hinzu",
-      "title": "Add Rounded Corners with a Border Radius",
       "descriptionDe": [
         "Gib deinem Katzenbild einen <code>border-radius</code> von 10 Pixeln.",
         "Das Bild hat nun spitze Ecken. Wir können diese Ecken mit dem CSS Attribut <code>border-radius</code> abrunden.",
         "Du kannst einen <code>border-radius</code> mit Pixeln deklarieren. Das beeinflusst die Rundung der Ecken. Füge dieses Attribut zu deiner <code>thick-green-border</code> Klasse hinzu und setze es auf 10 Pixel."
-      ]
+      ],
+      "type": "waypoint"
     },
     {
       "id": "bad87fee1348bd9aedf08815",
+      "title": "Make Circular Images with a Border Radius",
       "description": [
         "In addition to pixels, you can also specify a <code>border-radius</code> using a percentage.",
         "Give your cat photo a <code>border-radius</code> of <code>50%</code>."
@@ -970,7 +971,6 @@
         "assert(parseInt($(\"img\").css(\"border-top-left-radius\")) > 48, 'message: Your image should have a border radius of <code>50&#37;</code>&#44; making it perfectly circular.');",
         "assert(code.match(/50%/g), 'message: Be sure to use a percentage instead of a pixel value.');"
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "nameEs": "Añade esquinas redondeadas con un radio de borde",
       "descriptionEs": [
@@ -979,14 +979,15 @@
         "Dale a tu foto del gato un <code>border-radius</code> de <code>10px</code>."
       ],
       "nameDe": "Waypoint: Erstelle runde Bilder mit einem Border Radius",
-      "title": "Make Circular Images with a Border Radius",
       "descriptionDe": [
         "Gib deinem Katzenfoto einen <code>border-radius</code> von 50 %.",
         "Du kannst einem <code>border-radius</code> neben Pixeln auch Prozentwerte zuweisen."
-      ]
+      ],
+      "type": "waypoint"
     },
     {
       "id": "bad87fee1348bd9aedf08816",
+      "title": "Link to External Pages with Anchor Elements",
       "description": [
         "<code>a</code> elements, also known as <code>anchor</code> elements, are used to link to content outside of the current page.",
         "Here's a diagram of an <code>a</code> element. In this case, the <code>a</code> element is used in the middle of a paragraph element, which means the link will appear in the middle of a sentence.",
@@ -1035,7 +1036,6 @@
         "assert(/http:\\/\\/freecatphotoapp\\.com/gi.test($(\"a\").attr(\"href\")), 'message: You need an <code>a</code> element that links to <code>http&#58;//freecatphotoapp.com</code>');",
         "assert(code.match(/<\\/a>/g) && code.match(/<\\/a>/g).length === code.match(/<a/g).length, 'message: Make sure your <code>a</code> element has a closing tag.');"
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "nameEs": "Enlaza páginas externas con elementos ancla",
       "descriptionEs": [
@@ -1047,16 +1047,17 @@
         "Crea un elemento <code>a</code> que se vincule a <code>http://freecatphotoapp.com</code> y tenga como <code>texto de anclaje</code> \"fotos de gatos\"."
       ],
       "nameDe": "Waypoint: Verlinke externe Seiten mit Anker Elementen",
-      "title": "Link to External Pages with Anchor Elements",
       "descriptionDe": [
         "Erstelle ein <code>a</code> Element oder \"Anker Element\", das auf http://freecatphotoapp.com verlinkt und den Link-Text \"cat photos\" oder \"anchor text\" beinhaltet.",
         "So sieht ein <code>a</code> Element aus. In diesem Fall wird es innerhalb eines Paragraphen Elements verwendet. Das bedeutet dein Link wird innerhalb des Satzes erscheinen.",
         "<img class=\"img-responsive\" alt=\"Ein Beispiel wie Anker Tags geschrieben werden.\" src=\"https://www.evernote.com/l/AHSaNaepx_lG9LhhPkVYmagcedpmAeITDsQB/image.png\">",
         "Hier ist ein Beispiel: <code>&#60;p&#62;Hier ist ein &#60;a href=\"http://freecodecamp.com\"&#62; Link zum Free Code Camp&#60;/a&#62; für dich zum Folgen.&#60;/p&#62;</code>"
-      ]
+      ],
+      "type": "waypoint"
     },
     {
       "id": "bad87fee1348bd9aede08817",
+      "title": "Nest an Anchor Element within a Paragraph",
       "description": [
         "Again, here's a diagram of an <code>a</code> element for your reference:",
         "<a href=\"http://i.imgur.com/hviuZwe.png\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" title=\"Click to enlarge\" alt=\"a diagram of how anchor tags are composed with the same text as on the following line\" src=\"http://i.imgur.com/hviuZwe.png\"></a>",
@@ -1112,7 +1113,6 @@
         "assert(code.match(/<\\/p>/g) && code.match(/<p/g) && code.match(/<\\/p>/g).length === code.match(/<p/g).length, 'message: Make sure each of your <code>p</code> elements has a closing tag.');",
         "assert(code.match(/<\\/a>/g) && code.match(/<a/g) && code.match(/<\\/a>/g).length === code.match(/<a/g).length, 'message: Make sure each of your <code>a</code> elements has a closing tag.');"
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "nameEs": "Anida un elemento de anclaje dentro de un párrafo",
       "descriptionEs": [
@@ -1124,15 +1124,16 @@
         "Ahora anida el elemento <code>a</code> existente dentro de un nuevo elemento <code>p</code> para que el párrafo que lo rodee diga \"View more cat photos\", pero donde sólo \"cat photos\" sea un enlace, y el resto sea texto plano ."
       ],
       "nameDe": "Waypoint Umschließe ein Anker Element mit einem Paragraphen",
-      "title": "Nest an Anchor Element within a Paragraph",
       "descriptionDe": [
         "Jetzt umschließe dein <code>a</code> Element mit einem <code>p</code> Element und dem Text \"click here for cat photos\". Nur \"cat photos\" soll ein Link ein – der Rest normaler Text.",
         "Hier ist nochmal ein Beispiel für ein <code>a</code> Element: <img class=\"img-responsive\" alt=\"Ein Beispiel wie Anker Tags geschrieben werden.\" src=\"https://www.evernote.com/l/AHSaNaepx_lG9LhhPkVYmagcedpmAeITDsQB/image.png\">",
         "So könnte es aussehen: <code>&#60;p&#62;Hier ist ein &#60;a href=\"http://freecodecamp.com\"&#62; Link zum Free Code Camp&#60;/a&#62; für dich zum Folgen.&#60;/p&#62;</code>"
-      ]
+      ],
+      "type": "waypoint"
     },
     {
       "id": "bad87fee1348bd9aedf08817",
+      "title": "Make Dead Links using the Hash Symbol",
       "description": [
         "Sometimes you want to add <code>a</code> elements to your website before you know where they will link.",
         "This is also handy when you're changing the behavior of a link using <code>jQuery</code>, which we'll learn about later.",
@@ -1178,7 +1179,6 @@
       "tests": [
         "assert($(\"a\").attr(\"href\") === \"#\", 'message: Your <code>a</code> element should be a dead link with a <code>href</code> attribute set to \"#\".');"
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "nameEs": "Haz vínculos muertos utilizando el símbolo de numero",
       "descriptionEs": [
@@ -1187,16 +1187,17 @@
         "Reemplaza el atributo <code>href</code> de tu elemento <code>a</code> con un <code>#</code>, también conocido como un símbolo de número o de <em>hash</em>, para convertirlo en un vínculo muerto."
       ],
       "nameDe": "Waypoint: Erstelle tote Links mit dem Hash Symbol",
-      "title": "Make Dead Links using the Hash Symbol",
       "descriptionDe": [
         "Nutze das Hash Symbol (#) um deine <code>a</code> Elemente zu toten Links zu machen.",
         "Manchmal wirst du <code>a</code> Elemente zu deiner Website hinzufügen möchten, ohne dass du das Ziel des Links kennst.",
         "Das ist auch nützlich, wenn du die Funktion eines Links mit <code>jQuery</code> verändern willst. Das werden wir noch behandeln.",
         "Ersetze den Inhalt des <code>href</code> Attributs deines <code>a</code> Elements mit einem Hash Symbol um einen toten Link zu erzeugen."
-      ]
+      ],
+      "type": "waypoint"
     },
     {
       "id": "bad87fee1348bd9aedf08820",
+      "title": "Turn an Image into a Link",
       "description": [
         "You can make elements into links by nesting them within an <code>a</code> element.",
         "Nest your image within an <code>a</code> element. Here's an example:",
@@ -1246,7 +1247,6 @@
         "assert(new RegExp(\"#\").test($(\"a\").children(\"img\").parent().attr(\"href\")), 'message: Your <code>a</code> element should be a dead link with a <code>href</code> attribute set to <code>#</code>.');",
         "assert(code.match(/<\\/a>/g) && code.match(/<a/g) && code.match(/<\\/a>/g).length === code.match(/<a/g).length, 'message: Make sure each of your <code>a</code> elements has a closing tag.');"
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "nameEs": "Convierte una imagen en un vínculo",
       "descriptionEs": [
@@ -1257,17 +1257,18 @@
         "Una vez hayas hecho esto, coloca el cursor sobre tu imagen. El puntero normal de tu cursor debería convertirse en el puntero de enlace. La foto es ahora un vínculo ."
       ],
       "nameDe": "Waypoint: Verlinke ein Bild",
-      "title": "Turn an Image into a Link",
       "descriptionDe": [
         "Umschließe dein <code>img</code> Element mit einem <code>a</code> Element als toten Link.",
         "Du kannst jedes Element in einen Link verwandeln, indem du es mit einem <code>a</code> Element umschließt.",
         "Umschließe nun dein Bild mit einem <code>a</code> Element. Hier ist ein Beispiel: <code>&#60;a href=\"#\"&#62;&#60;img src=\"http://bit.ly/fcc-running-cats\"/&#62;&#60;/a&#62;</code>",
         "Vergewissere dich, dass du ein Hash Symbol (#) innerhalb des <code>href</code> Attributs des <code>a</code> Elements nutzt, um daraus einen toten Link zu machen.",
         "Sobald du das gemacht hast, kannst du mit der Maus über dein Bild fahren. Der normale Mauszeiger sollte nun zu einer Hand für Links werden. Das Bild ist jetzt ein Link."
-      ]
+      ],
+      "type": "waypoint"
     },
     {
       "id": "bad87fee1348bd9aedf08818",
+      "title": "Add Alt Text to an Image for Accessibility",
       "description": [
         "<code>alt</code> attributes, also known as <code>alt text</code>, are what browsers will display if they fail to load the image. <code>alt</code> attributes are also important for blind or visually impaired users to understand what an image portrays. And search engines also look at <code>alt</code> attributes.",
         "In short, every image should have an <code>alt</code> attribute!",
@@ -1315,7 +1316,6 @@
       "tests": [
         "assert($(\"img\").filter(function(){ return /cat/gi.test(this.alt) }).length > 0, 'message: Your image element should have an <code>alt</code> attribute set to <code>A cute orange cat lying on its back</code>');"
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "nameEs": "Agrega texto alternativo a una imagen para dar Accesibilidad",
       "descriptionEs": [
@@ -1326,17 +1326,18 @@
         "Añade un atributo <code>alt</code> con el texto <code>A cute orange cat lying on its back</code> a nuestra foto del gato."
       ],
       "nameDe": "Waypoint: Füge Alt Text für mehr Barrierefreiheit hinzu",
-      "title": "Add Alt Text to an Image for Accessibility",
       "descriptionDe": [
         "Füge zu unserem Katzen-Bild ein <code>alt</code> Attribut mit dem Text \"A cute orange cat lying on its back\" hinzu.",
         "<code>alt</code> Attribute – auch \"Alt Text\" genannt – werden vom Browser angezeigt, wenn sie ein Bild nicht laden können. Für blinde oder visuell eingeschränkte Menschen sind sie ebenfalls wichtig um zu verstehen, was ein Bild darstellt. Zudem werden diese Texte von Suchmaschinen genutzt.",
         "Kurz gesagt: Jedes Bild sollte ein <code>alt</code> Attribut beinhalten!",
         "<code>alt</code> Attribute sind nützlich um Personen – und Web Crawlers wie Google – zu sagen was in einem Foto abgebildet wird. Das ist extrem wichtig, damit blinde oder visuell eingeschränkte Menschen den Inhalt der Website verstehen.",
         "Du kannst das <code>alt</code> Attribut direkt in das Img Element einfügen: <code>&#60img src=\"www.bild-quelle.com/bild.jpg\" alt=\"Dein Alt Text.\"/&#62</code>"
-      ]
+      ],
+      "type": "waypoint"
     },
     {
       "id": "bad87fee1348bd9aedf08827",
+      "title": "Create a Bulleted Unordered List",
       "description": [
         "HTML has a special element for creating <code>unordered lists</code>, or bullet point-style lists.",
         "Unordered lists start with a <code>&#60;ul&#62;</code> element. Then they contain some number of <code>&#60;li&#62;</code> elements.",
@@ -1388,7 +1389,6 @@
         "assert(code.match(/<\\/ul>/gi) && code.match(/<ul/gi) && code.match(/<\\/ul>/gi).length === code.match(/<ul/gi).length, 'message: Make sure your <code>ul</code> element has a closing tag.');",
         "assert(code.match(/<\\/li>/gi) && code.match(/<li[\\s>]/gi) && code.match(/<\\/li>/gi).length === code.match(/<li[\\s>]/gi).length, 'message: Make sure your <code>li</code> elements have closing tags.');"
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "nameEs": "Crea una lista no ordenada con viñetas",
       "descriptionEs": [
@@ -1403,16 +1403,17 @@
         "Elimina los dos últimos elementos <code>p</code> y en la parte inferior de la página crea una lista no ordenada de tres cosas que los gatos aman."
       ],
       "nameDe": "Waypoint: Erstelle eine ungeordnete Liste",
-      "title": "Create a Bulleted Unordered List",
       "descriptionDe": [
         "Ersetze deine <code>p</code> Elemente mit drei Dingen, die Katzen lieben – in einer ungeordneten Liste.",
         "HTML hat ein spezielles Element zum Erstellen von ungeordneten Listen.",
         "ungeordnete Listen starten mit einem <code>&#60;ul&#62;</code> Element. Dann beinhalten sie eine gewisse Anzahl an <code>&#60;li&#62;</code> Elementen.",
         "Als Beispiel: <code>&#60;ul&#62;&#60;li&#62;Milch&#60;/li&#62;&#60;li&#62;Käse&#60;/li&#62;&#60;/ul&#62;</code> würde eine ungeordnete Liste für \"Milch\" und \"Käse\" erstellen."
-      ]
+      ],
+      "type": "waypoint"
     },
     {
       "id": "bad87fee1348bd9aedf08828",
+      "title": "Create an Ordered List",
       "description": [
         "HTML has a special element for creating <code>ordered lists</code>, or numbered-style lists.",
         "Ordered lists start with a <code>&#60;ol&#62;</code> element. Then they contain some number of <code>&#60;li&#62;</code> elements.",
@@ -1472,7 +1473,6 @@
         "assert(code.match(/<\\/ol>/g) && code.match(/<\\/ol>/g).length === code.match(/<ol>/g).length, 'message: Make sure your <code>ol</code> element has a closing tag.');",
         "assert(code.match(/<\\/li>/g) && code.match(/<li>/g) && code.match(/<\\/li>/g).length === code.match(/<li>/g).length, 'message: Make sure your <code>li</code> element has a closing tag.');"
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "nameEs": "Crear una lista ordenada",
       "descriptionEs": [
@@ -1487,16 +1487,17 @@
         "Crea una lista ordenada de los 3 cosas que más odian los gatos."
       ],
       "nameDe": "Waypoint: Erstelle eine geordnete Liste",
-      "title": "Create an Ordered List",
       "descriptionDe": [
         "Erstelle eine geordnete Liste von den drei Dingen, die Katzen am meisten hassen.",
         "HTML beinhaltet ein spezielles Element für geordnete Listen.",
         "Geordnete Listen starten mit einem <code>&#60;ol&#62;</code> Element. Dann enthalten sie eine gewisse Anzahl an <code>&#60;li&#62;</code> Elementen.",
         "Als beispiel: <code>&#60;ol&#62;&#60;li&#62;hydrogen&#60;/li&#62;&#60;li&#62;Helium&#60;/li&#62;&#60;/ol&#62;</code> würde eine nummerierte Liste aus \"Hydrogen\" und \"Helium\" erstellen."
-      ]
+      ],
+      "type": "waypoint"
     },
     {
       "id": "bad87fee1348bd9aedf08829",
+      "title": "Create a Text Field",
       "description": [
         "Now let's create a web form.",
         "Text inputs are a convenient way to get input from your user.",
@@ -1555,7 +1556,6 @@
       "tests": [
         "assert($(\"input[type=text]\").length > 0, 'message: Your app should have an <code>input</code> element of type <code>text</code>.');"
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "nameEs": "Crea un campo de texto",
       "descriptionEs": [
@@ -1567,15 +1567,16 @@
         "Crea un elemento <code>input</code> de tipo <code>text</code> debajo de tus listas."
       ],
       "nameDe": "Waypoint: Erstelle ein Textfeld",
-      "title": "Create a Text Field",
       "descriptionDe": [
         "Nun erstellen wir ein Web Formular. Erstelle ein Textfeld unter deinen Listen.",
         "Eingabefelder sind ein guter Weg, um Daten von Nutzern zu erhalten.",
         "So kannst du eines erstellen: <code>&#60;input type=\"text\"&#62;</code>. Beachte, dass <code>input</code> Elemente selbstschließend sind."
-      ]
+      ],
+      "type": "waypoint"
     },
     {
       "id": "bad87fee1348bd9aedf08830",
+      "title": "Add Placeholder Text to a Text Field",
       "description": [
         "Your placeholder text is what appears in your text <code>input</code> before your user has inputed anything.",
         "You can create placeholder text like so:",
@@ -1634,7 +1635,6 @@
         "assert($(\"input[placeholder]\").length > 0, 'message: Add a <code>placeholder</code> attribute text <code>input</code> element.');",
         "assert($(\"input\") && $(\"input\").attr(\"placeholder\") && $(\"input\").attr(\"placeholder\").match(/cat\\s+photo\\s+URL/gi), 'message: Set the value of your placeholder attribute to \"cat photo URL\".');"
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "nameEs": "Agrega un texto de relleno a un campo de texto",
       "descriptionEs": [
@@ -1644,15 +1644,16 @@
         "Establece el valor del <code>texto de relleno</code> de tu campo de texto como \"cat photo URL\"."
       ],
       "nameDe": "Waypoint: Füge Platzhalter zu einem Textfeld hinzu",
-      "title": "Add Placeholder Text to a Text Field",
       "descriptionDe": [
         "Setze bei deinem <code>input</code> Element den Wert für <code>placeholder</code> auf \"cat photo URL\".",
         "Platzhalter erscheinen in <code>input</code> Feldern, bevor der Nutzer etwas eingibt.",
         "Du kannst Platzhalter auf folgende Weise erstellen: <code>&#60;input type=\"text\" placeholder=\"Das ist ein Platzhalter.\"&#62;</code>"
-      ]
+      ],
+      "type": "waypoint"
     },
     {
       "id": "bad87fee1348bd9aede08830",
+      "title": "Create a Form Element",
       "description": [
         "You can build web forms that actually submit data to a server using nothing more than pure HTML. You can do this by specifying an action on your <code>form</code> element.",
         "For example:",
@@ -1712,7 +1713,6 @@
         "assert($(\"form\").attr(\"action\") === \"/submit-cat-photo\", 'message: Make sure your <code>form</code> has an <code>action</code> attribute which is set to <code>/submit-cat-photo</code>');",
         "assert(code.match(/<\\/form>/g) && code.match(/<form/g) && code.match(/<\\/form>/g).length === code.match(/<form/g).length, 'message: Make sure your <code>form</code> element has a closing tag.');"
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "nameEs": "Crea un elemento de formulario",
       "descriptionEs": [
@@ -1722,15 +1722,16 @@
         "Anida tu campo de texto en un elemento <code>form</code>. Agrega el atributo <code>action=\"/submit-cat-photo\"</code> a este elemento de formulario."
       ],
       "nameDe": "Waypoint: Erstelle ein Formular",
-      "title": "Create a Form Element",
       "descriptionDe": [
         "Umschließe dein Textfeld mit einem <code>form</code> Element. Füge anschließend das Attribut <code>action=\"/submit-cat-photo\"</code> hinzu.",
         "Du kannst Web Formulare bauen, die Daten zu einem Server übertragen – und das nur mit HTML. Das wird möglich, indem du eine Aktion für dein <code>form</code> Element bestimmst.",
         "Zum Beispiel: <code>&#60;form action=\"/url-wohin-du-deine-formular-daten-senden-willst\"&#62;&#60;/form&#62;</code>"
-      ]
+      ],
+      "type": "waypoint"
     },
     {
       "id": "bad87fee1348bd9aedd08830",
+      "title": "Add a Submit Button to a Form",
       "description": [
         "Let's add a <code>submit</code> button to your form. Clicking this button will send the data from your form to the URL you specified with your form's <code>action</code> attribute.",
         "Here's an example submit button:",
@@ -1793,7 +1794,6 @@
         "assert($(\"button\").text().match(/submit/gi), 'message: Your submit button should have the text \"Submit\".');",
         "assert(code.match(/<\\/button>/g) && code.match(/<button/g) && code.match(/<\\/button>/g).length === code.match(/<button/g).length, 'message: Make sure your <code>button</code> element has a closing tag.');"
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "nameEs": "Agrega un botón Enviar a un formulario",
       "descriptionEs": [
@@ -1803,15 +1803,16 @@
         "Agrega un botón de enviar a tu elemento <code>form</code> con el tipo <code>submit</code> y con el texto \"Submit\"."
       ],
       "nameDe": "Waypoint: Füge eine Schaltfläche zum Senden hinzu",
-      "title": "Add a Submit Button to a Form",
       "descriptionDe": [
         "Füge eine Schaltfläche zum Senden mit dem Typ \"submit\" und \"Submit\" als Text zu deinem <code>form</code> Element hinzu.",
         "Lass uns nun eine Schaltfläche zum Senden zu deinem Formlar hinzufügen. Durch einen Klick auf diese Schaltfläche werden die Daten des Formulars an die URL gesendet, welche du in dem <code>action</code> Attribut deines Formulars angegeben hast.",
         "Hier ist ein Beispiel einer solchen Schaltfläche: <code>&#60;button type=\"submit\"&#62;Diese Schaltfläche überträgt die Daten des Formulars.&#60;/button&#62;</code>"
-      ]
+      ],
+      "type": "waypoint"
     },
     {
       "id": "bad87fee1348bd9aedc08830",
+      "title": "Use HTML5 to Require a Field",
       "description": [
         "You can require specific form fields so that your user will not be able to submit your form until he or she has filled them out.",
         "For example, if you wanted to make a text input field required, you can just add the word <code>required</code> within your <code>input</code> element, you would use: <code>&#60;input type=\"text\" required&#62;</code>",
@@ -1873,7 +1874,6 @@
       "tests": [
         "assert($(\"input\").prop(\"required\"), 'message: Your text <code>input</code> element should have the <code>required</code> attribute.');"
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "nameEs": "Utiliza HTML5 para especificar campos obligatorios",
       "descriptionEs": [
@@ -1883,15 +1883,16 @@
         "A continuación, intenta enviar el formulario sin ingresar texto alguno. ¿Ves cómo tu formulario HTML5 te notifica que el campo es obligatorio?"
       ],
       "nameDe": "Waypoint: Nutze HTML5 um ein Pflichtfeld zu erstellen",
-      "title": "Use HTML5 to Require a Field",
       "descriptionDe": [
         "Mache aus deinem <code>input</code> Feld ein Pflichtfeld – \"required\" – damit deine Nutzer das Formular nicht abschicken können, ohne dieses Feld auszufüllen.",
         "Du kannst bestimmte Felder eines Formulars als Pflichtfelder deklarieren. Damit ist es deinen Nutzern nicht mehr möglich, das Formular abzuschicken, ohne die Pflichtfelder auszufüllen.",
         "Um zum Beispiel ein Textfeld als Pflichtfeld zu deklarieren, kannst du einfach ein \"required\" innerhalb deines <code>input</code> Elements hinzufügen: <code>&#60;input type=\"text\" required&#62;</code>"
-      ]
+      ],
+      "type": "waypoint"
     },
     {
       "id": "bad87fee1348bd9aedf08834",
+      "title": "Create a Set of Radio Buttons",
       "description": [
         "You can use <code>radio buttons</code> for questions where you want the user to only give you one answer.",
         "Radio buttons are a type of <code>input</code>",
@@ -1960,7 +1961,6 @@
         "assert($(\"label\").text().match(/indoor/gi), 'message: One of your radio buttons should have the label <code>indoor</code>.');",
         "assert($(\"label\").text().match(/outdoor/gi), 'message: One of your radio buttons should have the label <code>outdoor</code>.');"
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "nameEs": "Crea un Conjunto de botones de radio",
       "descriptionEs": [
@@ -1973,7 +1973,6 @@
         "Agrega un par de botones de radio a tu formulario. Uno debe tener la opción de <code>indoor</code> y el otro debe tener la opción <code>outdoor</code>. "
       ],
       "nameDe": "Waypoint: Erstelle ein paar Optionsfelder",
-      "title": "Create a Set of Radio Buttons",
       "descriptionDe": [
         "Füge ein paar Optionsfelder zu deinem Formular hinzu. Jedes Optionsfeld sollte innerhalb seines eigenen <code>label</code> Elements liegen. Sie sollten außerdem ein <code>name</code> Attribut teilen. Eines davon sollte die Option \"indoor\" und das andere die Option \"outdoor\" haben.",
         "Du kannst Optionsfelder für Fragen verwenden, auf die der Nutzer nur eine Antwort geben soll.",
@@ -1981,10 +1980,12 @@
         "Jedes deiner Optionsfelder sollte innerhalb des eigenen <code>label</code> Elements liegen.",
         "Alle Optionsfelder mit Bezug zueinander sollten das gleiche <code>name</code> Attribut teilen.",
         "Ein Beispiel eines Optionsfeldes: <code>&#60;label&#62;&#60;input type=\"radio\" name=\"indoor-outdoor\"&#62; Indoor&#60;/label&#62;</code>"
-      ]
+      ],
+      "type": "waypoint"
     },
     {
       "id": "bad87fee1348bd9aedf08835",
+      "title": "Create a Set of Checkboxes",
       "description": [
         "Forms commonly use <code>checkboxes</code> for questions that may have more than one answer.",
         "Checkboxes are a type of <code>input</code>",
@@ -2053,7 +2054,6 @@
         "assert(code.match(/<\\/label>/g) && code.match(/<label/g) && code.match(/<\\/label>/g).length === code.match(/<label/g).length, 'message: Make sure each of your <code>label</code> elements has a closing tag.');",
         "assert($('label > input[type=\"checkbox\"]').filter(\"[name='personality']\").length > 2, 'message: Give your checkboxes the <code>name</code> attribute of <code>personality</code>.');"
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "nameEs": "Crea un conjunto de casillas de verificación",
       "descriptionEs": [
@@ -2066,15 +2066,16 @@
         "Añade a tu formulario un conjunto de tres casillas de verificación. Cada casilla de verificación debe estar anidada dentro de su propio elemento <code>label</code>. Las tres deben compartir el atributo <code>name</code>."
       ],
       "nameDe": "Waypoint: Erstelle ein paar Kontrollkästchen",
-      "title": "Create a Set of Checkboxes",
       "descriptionDe": [
         "Füge deinem Formular drei Kontrollkästchen hinzu. Jedes dieser Elemente sollte innerhalb seines eigenen <code>label</code> Elements stehen. Alle sollten das gleiche <code>name</code> Attribut \"personality\" teilen.",
         "Formulare nutzen Kontrollkästchen meistens für Fragen, die mehrerer Antworten bedürfen.",
         "Als Beispiel: <code>&#60;label&#62;&#60;input type=\"checkbox\" name=\"personality\"&#62; liebevoll&#60;/label&#62;</code>"
-      ]
+      ],
+      "type": "waypoint"
     },
     {
       "id": "bad87fee1348bd9aedd08835",
+      "title": "Check Radio Buttons and Checkboxes by Default",
       "description": [
         "You can set a checkbox or radio button to be checked by default using the <code>checked</code> attribute.",
         "To do this, just add the word \"checked\" to the inside of an input element. For example:",
@@ -2141,7 +2142,6 @@
         "assert($('input[type=\"radio\"]').prop(\"checked\"), 'message: Your first radio button on your form should be checked by default.');",
         "assert($('input[type=\"checkbox\"]').prop(\"checked\"), 'message: Your first checkbox on your form should be checked by default.');"
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "nameEs": "Marca botones de radio y casillas de verificación por omisión",
       "descriptionEs": [
@@ -2151,15 +2151,16 @@
         "Establece como marcados por omisión el primero de tus <code>botones de radio</code> y la primera <code>casilla de verificación</code>."
       ],
       "nameDe": "Waypoint: Standardmäßig ausgewählte Optionsfelder und Kontrollkästchen",
-      "title": "Check Radio Buttons and Checkboxes by Default",
       "descriptionDe": [
         "Stelle sicher, dass jeweilse dein erstes Optionsfeld und Kontrollkästchen standardmäßig markiert sind.",
         "Das kannst du erreichen, indem beiden das Attribut <code>checked</code> beigefügt wird.",
         "Um das zu bewerkstelligen, füge einfach \"checked\" innerhalb eines Eingabefeldes hinzu. Als Beispiel: <code>&#60;input type=\"radio\" name=\"test-name\" checked&#62;</code>"
-      ]
+      ],
+      "type": "waypoint"
     },
     {
       "id": "bad87fee1348bd9aede08835",
+      "title": "Nest Many Elements within a Single Div Element",
       "description": [
         "The <code>div</code> element, also known as a division element, is a general purpose container for other elements.",
         "The <code>div</code> element is probably the most commonly used HTML element of all. It's useful for passing the CSS of its own class declarations down to all the elements that it contains.",
@@ -2230,7 +2231,6 @@
         "assert($(\"div\").children(\"ol\").length > 0, 'message: Nest your <code>ol</code> element inside your <code>div</code> element.');",
         "assert(code.match(/<\\/div>/g) && code.match(/<\\/div>/g).length === code.match(/<div>/g).length, 'message: Make sure your <code>div</code> element has a closing tag.');"
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "nameEs": "Anida muchos elementos dentro de una sólo elemento Div",
       "descriptionEs": [
@@ -2241,14 +2241,14 @@
         "Anida tus listas \"Things cats love\" y \"Things cats hate\" dentro de un solo elemento <code>div</code>."
       ],
       "nameDe": "Waypoint: Umschließe viele Elemente mit einem einzigen Div Element",
-      "title": "Nest Many Elements within a Single Div Element",
       "descriptionDe": [
         "Umschließe deine \"Thins cats love\" und \"Things cats hate\" Listen mit einem <code>div</code> Element.",
         "Das <code>div</code> Element oder \"Division\" ist ein allgemeiner Container für andere Elemente.",
         "Dieses Element wird von allen HTML Elementen wahrscheinlich am häufigsten verwendet. Es ist nützlich um die CSS Stile der eigenen Klasse an die enthaltenen Elemente zu vererben.",
         "Wie jedes andere Element – das sich nicht selbst schließt –  kannst du ein <code>div</code> Element mit <code>&#60;div&#62;</code> öffnen und mit <code>&#60;/div&#62;</code> wieder schließen.",
         "Versuche deine öffnende <code>div</code> Auszeichnung überhalb des <code>p</code> Elements von  \"Things cats love\" und das schließende <code>div</code> unterhalb der schließenden <code>ol</code> Auszeichnung zu platzieren. Damit befinden sich beide Listen innerhalb eines <code>div</code>"
-      ]
+      ],
+      "type": "waypoint"
     },
     {
       "id": "bad87fed1348bd9aede07836",
@@ -2516,6 +2516,7 @@
     },
     {
       "id": "bad88fee1348bd9aedf08825",
+      "title": "Adjusting the Padding of an Element",
       "description": [
         "Now let's put our Cat Photo App away for a little while and learn more about styling HTML.",
         "You may have already noticed this, but all HTML elements are essentially little rectangles.",
@@ -2564,7 +2565,6 @@
       "tests": [
         "assert($(\".green-box\").css(\"padding-top\") === \"20px\", 'message: Your <code>green-box</code> class should give elements <code>20px</code> of <code>padding</code>.');"
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "nameEs": "Ajusta el relleno de un elemento",
       "descriptionEs": [
@@ -2577,16 +2577,17 @@
         "Cambia el relleno (<code>padding</code>) de la caja verde para que coincida con la de tu cuadro rojo."
       ],
       "nameDe": "Wegpunkt: Justiere den Innenabstand eines Elements",
-      "title": "Adjusting the Padding of an Element",
       "descriptionDe": [
         "Die nächsten Wegpunkte werden dir drei wichtige Aspekte von Raum – und Zeit! – bei HTML Elementen näher bringen: <code>padding</code>, <code>margin</code> und <code>border</code>. Das mit der Zeit war ein Scherz. Gleiche nun den Innenabstand – <code>padding</code> – deiner grünen Box dem der roten Box an.",
         "<code>padding</code> kontrolliert den Raum oder Abstand zwischen dem Inhalt eines Elements und dessen Rahmen – <code>border</code>",
         "Wir sehen in diesem Beispiel, dass sich die grüne Box und die rote Box innerhalb der gelben Box befinden. Beachte, dass die rote Box mehr <code>padding</code> hat als die grüne Box.",
         "Wenn du den Innenabstand der grünen Box – also <code>padding</code> – erhöhst, wird sich die Entfernung zwischen dem Text \"padding\" und dem Rahmen darum erhöhen."
-      ]
+      ],
+      "type": "waypoint"
     },
     {
       "id": "bad87fee1348bd9aedf08822",
+      "title": "Adjust the Margin of an Element",
       "description": [
         "An element's <code>margin</code> controls the amount of space between an element's <code>border</code> and surrounding elements.",
         "Here, we can see that the green box and the red box are nested within the yellow box. Note that the red box has more <code>margin</code> than the green box, making it appear smaller.",
@@ -2634,7 +2635,6 @@
       "tests": [
         "assert($(\".green-box\").css(\"margin-top\") === \"20px\", 'message: Your <code>green-box</code> class should give elements <code>20px</code> of <code>margin</code>.');"
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "nameEs": "Ajusta el margen de un elemento",
       "descriptionEs": [
@@ -2644,16 +2644,17 @@
         "Cambia el margen (<code>margin</code>) de la caja verde para que coincida con el de la caja roja."
       ],
       "nameDe": "Waypoint: Passe den Außenabstand eines Elements an",
-      "title": "Adjust the Margin of an Element",
       "descriptionDe": [
         "Gleiche den Außenabstand – <code>margin</code> der grünen Box dem der roten Box an.",
         "<code>margin</code> kontrolliert den Abstand zwischen dem Rahmen eines Elements und den benachbarten Elementen.",
         "Die grüne und die rote Box befinden sich beide erneut innerhalb der gelben Box. Beachte, dass die rote Box mehr <code>margin</code> aufweist als ihr Erzfeind – die grüne Box.",
         "Wenn du den Außenabstand – <code>margin</code> – der grünen Box erhöhst, wird sich der Abstand zwischen ihrem Rahmen und den benachbarten Elementen vergrößern."
-      ]
+      ],
+      "type": "waypoint"
     },
     {
       "id": "bad87fee1348bd9aedf08823",
+      "title": "Add a Negative Margin to an Element",
       "description": [
         "An element's <code>margin</code> controls the amount of space between an element's <code>border</code> and surrounding elements.",
         "If you set an element's <code>margin</code> to a negative value, the element will grow larger.",
@@ -2700,7 +2701,6 @@
       "tests": [
         "assert($(\".green-box\").css(\"margin-top\") === \"-15px\", 'message: Your <code>green-box</code> class should give elements <code>-15px</code> of <code>margin</code>.');"
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "nameEs": "Agregar un margen negativo a un elemento",
       "descriptionEs": [
@@ -2710,16 +2710,17 @@
         "Cambia el margen (<code>margin</code>) de la caja verde a <code>-15px</code>, de forma que ocupe todo el ancho horizontal de la caja amarilla que lo rodea."
       ],
       "nameDe": "Waypoint: Füge einem Element negativen Außenabstand hinzu",
-      "title": "Add a Negative Margin to an Element",
       "descriptionDe": [
         "Passe den Außenabstand – <code>margin</code> – der grünen Box mit einem negativen Wert an, damit sie die gelbe Box horizontal ausfüllt.",
         "<code>margin</code> kontrolliert den Abstand zwischen dem Rahmen eines Elements und den benachbarten Elementen.",
         "Wenn du dem Außenabstand eines Elements einen negativen Wert zuweist, wird das Element größer.",
         "Versuche den Außenabstand auf einen negativen Wert wie bei der roten Box zu setzen."
-      ]
+      ],
+      "type": "waypoint"
     },
     {
       "id": "bad87fee1348bd9aedf08824",
+      "title": "Add Different Padding to Each Side of an Element",
       "description": [
         "Sometimes you will want to customize an element so that it has different <code>padding</code> on each of its sides.",
         "CSS allows you to control the <code>padding</code> of an element on all four sides with <code>padding-top</code>, <code>padding-right</code>, <code>padding-bottom</code>, and <code>padding-left</code> properties.",
@@ -2769,7 +2770,6 @@
         "assert($(\".green-box\").css(\"padding-right\") === \"20px\", 'message: Your <code>green-box</code> class should give the right of the elements <code>20px</code> of <code>padding</code>.');",
         "assert($(\".green-box\").css(\"padding-bottom\") === \"20px\", 'message: Your <code>green-box</code> class should give the bottom of the elements <code>20px</code> of <code>padding</code>.');"
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "nameEs": "Añade relleno diferente a cada lado de un elemento",
       "descriptionEs": [
@@ -2778,15 +2778,16 @@
         "Da a la caja verde un relleno (<code>padding</code>) de <code>40px</code> en las partes superior e izquierda, pero sólo <code>20px</code> en sus partes inferior y derecha."
       ],
       "nameDe": "Wegpunkt: Gib jeder Seite eines Elements unterschiedlichen Innenabstand",
-      "title": "Add Different Padding to Each Side of an Element",
       "descriptionDe": [
         "Verleihe der grünen Box einen Innenabstand – <code>padding</code> – von 40 Pixeln auf der oberen und linken Seite, aber nur 20 Pixel auf der unteren und rechten Seite.",
         "Manchmal wirst du einem Element unterschiedlichen Innenabstand – also <code>padding</code> – auf jeder Seite geben wollen.",
         "CSS erlaubt dir den Innenabstand eines Elements auf allen Seiten einzeln mit den Eigenschaften <code>padding-top</code>, <code>padding-right</code>, <code>padding-bottom</code> und <code>padding-left</code> zu steuern."
-      ]
+      ],
+      "type": "waypoint"
     },
     {
       "id": "bad87fee1248bd9aedf08824",
+      "title": "Add Different Margins to Each Side of an Element",
       "description": [
         "Sometimes you will want to customize an element so that it has a different <code>margin</code> on each of its sides.",
         "CSS allows you to control the <code>margin</code> of an element on all four sides with <code>margin-top</code>, <code>margin-right</code>, <code>margin-bottom</code>, and <code>margin-left</code> properties.",
@@ -2836,7 +2837,6 @@
         "assert($(\".green-box\").css(\"margin-right\") === \"20px\", 'message: Your <code>green-box</code> class should give the right of elements <code>20px</code> of <code>margin</code>.');",
         "assert($(\".green-box\").css(\"margin-bottom\") === \"20px\", 'message: Your <code>green-box</code> class should give the bottom of elements <code>20px</code> of <code>margin</code>.');"
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "nameEs": "Añade márgenes diferentes a cada lado de un elemento",
       "descriptionEs": [
@@ -2845,14 +2845,15 @@
         "Da a la caja verde un margen (<code>margin</code>) de <code>40px</code> en las partes superior e izquierda, pero sólo <code>20px</code> en su parte inferior y al lado derecho."
       ],
       "nameDe": "Wegpunkt: Füge jeder Seite eines Elements unterschiedlichen Außenabstand hinzu",
-      "title": "Add Different Margins to Each Side of an Element",
       "descriptionDe": [
         "Gib der grünen Box einen Außenabstand – also <code>margin</code> – von 40 Pixeln auf der oberen und linken Seite, aber nur 20 Pixel auf der unteren und rechten Seite.",
         "CSS erlaubt dir ebenfalls den Außenabstand auf jeder Seite einzeln mit den Eigenschaften <code>margin-top</code>, <code>margin-right</code>, <code>margin-bottom</code> und <code>margin-left</code> zu steuern."
-      ]
+      ],
+      "type": "waypoint"
     },
     {
       "id": "bad87fee1348bd9aedf08826",
+      "title": "Use Clockwise Notation to Specify the Padding of an Element",
       "description": [
         "Instead of specifying an element's <code>padding-top</code>, <code>padding-right</code>, <code>padding-bottom</code>, and <code>padding-left</code> properties, you can specify them all in one line, like this:",
         "<code>padding: 10px 20px 10px 20px;</code>",
@@ -2900,7 +2901,6 @@
         "assert($(\".green-box\").css(\"padding-bottom\") === \"20px\", 'message: Your <code>green-box</code> class should give the bottom of elements <code>20px</code> of <code>padding</code>.');",
         "assert($(\".green-box\").css(\"padding-left\") === \"40px\", 'message: Your <code>green-box</code> class should give the left of elements <code>40px</code> of <code>padding</code>.');"
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "nameEs": "Utiliza notación en sentido horario para especificar el relleno de un elemento",
       "descriptionEs": [
@@ -2910,15 +2910,16 @@
         "Usa la notación en sentido horario para dar a la clase \"<code>.green-box</code>\" un relleno de <code>40px</code> en las partes superior e izquierda, pero sólo <code>20px</code> en su parte inferior y al lado derecho ."
       ],
       "nameDe": "Wegpunkt: Nutze die Notation im Uhrzeigersinn um den Innenabstand eines Elements zu bestimmen",
-      "title": "Use Clockwise Notation to Specify the Padding of an Element",
       "descriptionDe": [
         "Gib der Klasse \".green-box\" mit einer Notation im Uhrzeigersinn einen Innenabstand – <code>padding</code> – von 40 Pixeln auf der oberen und linken Seite, aber nur 20 Pixel auf der unteren und rechten Seite.",
         "Anstatt die Eigenschaften <code>padding-top</code>, <code>padding-right</code>, <code>padding-bottom</code> und <code>padding-left</code> zu verwenden, kannst du sie alle in einer Zeile schreiben: <code>padding: 10px 20px 10px 20px;</code>",
         "Diese vier Werte funktionieren wie eine Uhr: oben, rechts, unten und links. Sie bedeuten exakt das selbe wie die seitenspezifischen Anweisungen."
-      ]
+      ],
+      "type": "waypoint"
     },
     {
       "id": "bad87fee1348bd9afdf08726",
+      "title": "Use Clockwise Notation to Specify the Margin of an Element",
       "description": [
         "Let's try this again, but with <code>margin</code> this time.",
         "Instead of specifying an element's <code>margin-top</code>, <code>margin-right</code>, <code>margin-bottom</code>, and <code>margin-left</code> properties, you can specify them all in one line, like this:",
@@ -2967,7 +2968,6 @@
         "assert($(\".green-box\").css(\"margin-bottom\") === \"20px\", 'message: Your <code>green-box</code> class should give the bottom of elements <code>20px</code> of <code>margin</code>.');",
         "assert($(\".green-box\").css(\"margin-left\") === \"40px\", 'message: Your <code>green-box</code> class should give the left of elements <code>40px</code> of <code>margin</code>.');"
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "nameEs": "Utiliza notación en sentido horario para especificar el margen de un elemento",
       "descriptionEs": [
@@ -2978,12 +2978,12 @@
         "Usa <code>notación en sentido horario</code> para dar al elemento con la clase <code>green-box</code> un margen de <code>40px</code> en las partes superior e izquierda, pero sólo <code>20px</code> en su parte inferior y al lado derecho ."
       ],
       "nameDe": "Wegpunkt: Nutze die Notation im Uhrzeigersinn um den Außenabstand eines Elements zu bestimmen",
-      "title": "Use Clockwise Notation to Specify the Margin of an Element",
       "descriptionDe": [
         "Versuchen wir das noch einmal, aber diesmal mit dem Außenabstand – also <code>margin</code>. Nutze die Notation im Uhrzeigersinn – auch <code>Clockwise Notation</code> genannt – um einem Element 40 Pixel Außenabstand auf der oberen und linken Seite, aber nur 20 Pixel auf der unteren und rechten Seite zu verleihen.",
         "Anstatt die Eigenschaften <code>margin-top</code>, <code>margin-right</code>, <code>margin-bottom</code> und <code>margin-left</code> zu verwenden, kannst du alle in eine Zeile schreiben: <code>margin: 10px 20px 10px 20px;</code>",
         "Diese vier Werte funktionieren wieder wie eine Uhr: oben, rechts, unten und links. Sie meinen exakt das gleiche wie die seitenspezifischen Anweisungen."
-      ]
+      ],
+      "type": "waypoint"
     },
     {
       "id": "bad87fee1348bd9aedf08736",

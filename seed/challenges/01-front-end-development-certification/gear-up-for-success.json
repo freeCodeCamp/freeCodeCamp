@@ -6,7 +6,6 @@
     {
       "id": "560add65cb82ac38a17513c2",
       "title": "Browse Camper News",
-      "challengeSeed": [],
       "description": [
         [
           "http://i.imgur.com/YNwsMXM.gif",
@@ -15,15 +14,10 @@
           ""
         ]
       ],
+      "challengeSeed": [],
+      "tests": [],
       "type": "Waypoint",
       "challengeType": 7,
-      "tests": [],
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
-      "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "Navega por las Noticias Campistas",
       "descriptionEs": [
         [
@@ -32,14 +26,11 @@
           "Pulsa el botón de \"Noticias\" en tu esquina superior derecha. <br>Puedes navegar mediante los enlaces en Noticias Campistas y votar por aquellas que disfrutes.",
           ""
         ]
-      ],
-      "namePt": "",
-      "descriptionPt": []
+      ]
     },
     {
       "id": "560add65cb82ac38a17513c1",
       "title": "Reference our Wiki",
-      "challengeSeed": [],
       "description": [
         [
           "http://i.imgur.com/4GO4zcI.gif",
@@ -48,15 +39,10 @@
           ""
         ]
       ],
+      "challengeSeed": [],
+      "tests": [],
       "type": "Waypoint",
       "challengeType": 7,
-      "tests": [],
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
-      "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "Referencía nuestra Wiki",
       "descriptionEs": [
         [
@@ -65,14 +51,11 @@
           "Pulsa el botón de \"Wiki\" en tu esquina superior derecha. <br>Nuestra comunidad ha contribuido información bastante útil en esta wiki.",
           ""
         ]
-      ],
-      "namePt": "",
-      "descriptionPt": []
+      ]
     },
     {
       "id": "570add8ccb82ac38a17513c3",
       "title": "Join our LinkedIn Alumni Network",
-      "challengeSeed": [],
       "description": [
         [
           "http://i.imgur.com/vJyiXzU.gif",
@@ -81,15 +64,10 @@
           "https://www.linkedin.com/profile/edit-education?school=Free+Code+Camp"
         ]
       ],
+      "challengeSeed": [],
+      "tests": [],
       "type": "Waypoint",
       "challengeType": 7,
-      "tests": [],
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
-      "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "Únete a nuestra red de alumnos en LinkedIn",
       "descriptionEs": [
         [
@@ -98,14 +76,11 @@
           "LinkedIn reconoce a Free Code Camp como una universidad. Puedes obtener acceso a nuestra larga red de alumnos agregando Free Code Camp a la sección de educación de tu LinkedIn. <br>Define tu fecha de graduación para el siguiente año. <br> En el campo \"Grado\", escribe \"Certificación de Desarrollo Web Full Stack\". <br> En \"Campo de estudio\", escribe \"Ingeniería de Software\". <br>Después pulsa \"Guardar Cambios\".",
           "https://www.linkedin.com/profile/edit-education?school=Free+Code+Camp"
         ]
-      ],
-      "namePt": "",
-      "descriptionPt": []
+      ]
     },
     {
       "id": "560add8ccb81ac38a17513c4",
       "title": "Commit to a Goal and a Nonprofit",
-      "challengeSeed": [],
       "description": [
         [
           "http://i.imgur.com/Og1ifsn.gif",
@@ -114,15 +89,10 @@
           "/commit"
         ]
       ],
+      "challengeSeed": [],
+      "tests": [],
       "type": "Waypoint",
       "challengeType": 7,
-      "tests": [],
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
-      "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "Comprométete con una meta y con una organización sin fines de lucro",
       "descriptionEs": [
         [
@@ -131,9 +101,7 @@
           "Puedes poner una meta y prometer donar mensualmente a una organización sin fines de lucro hasta que alcances tu meta. <br>Esto te dará motivación externa en tu aventura de aprender a programar, así como una oportunidad para ayudar inmediatamente a organizaciones sin fines de lucro. <br>Elige tu meta, después elige tu donativo mensual. Cuando pulses en \"comprometerse\", la página de donación de la organización sin fines de lucro se abrirá en una nueva pestaña. <br>Esto es completamente opcional, y puedes cambiar tu compromiso o detenerlo en cualquier momento.",
           "/comprometerse"
         ]
-      ],
-      "namePt": "",
-      "descriptionPt": []
+      ]
     }
   ]
 }

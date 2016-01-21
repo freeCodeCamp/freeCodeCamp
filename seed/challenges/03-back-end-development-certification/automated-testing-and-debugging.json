@@ -5,46 +5,36 @@
   "helpRoom": "HelpBackEnd",
   "challenges": [
     {
-      "id":"cf1111c1c16feddfaeb6bdef",
-      "title":"Use the Javascript Console",
-      "difficulty":0,
-      "description":[
+      "id": "cf1111c1c16feddfaeb6bdef",
+      "title": "Use the Javascript Console",
+      "description": [
         "Both Chrome and Firefox have excellent JavaScript consoles, also known as DevTools, for debugging your JavaScript.",
         "You can find <code>Developer tools</code> in your Chrome's menu or <code>Web Console</code> in FireFox's menu. If you're using a different browser, or a mobile phone, we strongly recommend switching to desktop Firefox or Chrome.",
         "Let's print to this console using the <code>console.log</code> method.",
         "<code>console.log('Hello world!')</code>"
       ],
-      "tests":[
-        "assert(editor.getValue().match(/console\\.log\\(/gi), 'message: You should use the console.log method to log \"Hello world!\" to your JavaScript console.');"
-      ],
-      "challengeSeed":[
+      "challengeSeed": [
         "",
         "",
         ""
       ],
-      "challengeType":1,
+      "tests": [
+        "assert(editor.getValue().match(/console\\.log\\(/gi), 'message: You should use the console.log method to log \"Hello world!\" to your JavaScript console.');"
+      ],
       "type": "waypoint",
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
-      "nameRu": "",
-      "descriptionRu": [],
+      "challengeType": 1,
       "nameEs": "Utiliza la consola de JavaScript",
       "descriptionEs": [
         "Tanto Chrome como Firefox tienen excelentes consolas JavaScript, también conocidas como DevTools, para depurar tu código JavaScript.",
         "Puedes encontrar las Herramientas para desarrolladores (<code>Developer tools</code>) en el menú de Chrome o la Consola web (<code>Web Console</code>) en el menú de FireFox. Si estás utilizando un navegador diferente, o un dispositivo móvil, nuestra recomendación es que cambies a la versión de escritorio de Firefox o Chrome.",
         "Vamos a imprimir en esta consola utilizando el método <code>console.log</code>.",
         "<code>console.log('Hello world!')</code>"
-        ],
-      "namePt": "",
-      "descriptionPt": []
+      ]
     },
     {
-      "id":"cf1111c1c16feddfaeb7bdef",
-      "title":"Using typeof",
-      "difficulty":0,
-      "description":[
+      "id": "cf1111c1c16feddfaeb7bdef",
+      "title": "Using typeof",
+      "description": [
         "You can use <code>typeof</code> to check the <code>data structure</code>, or type, of a variable.",
         "Note that in JavaScript, arrays are technically a type of object.",
         "Try using <code>typeof</code> on each of the following to see which types they have.",
@@ -53,25 +43,19 @@
         "<code>console.log(typeof []);</code>",
         "<code>console.log(typeof {});</code>"
       ],
-      "tests":[
+      "challengeSeed": [
+        "",
+        "",
+        ""
+      ],
+      "tests": [
         "assert(code.match(/console\\.log\\(typeof[\\( ][\"'].*[\"']\\)?\\);/), 'message: You should <code>console.log</code> the <code>typeof</code> a string.');",
         "assert(code.match(/console\\.log\\(typeof[\\( ]\\d+\\.?\\d*\\)?\\);/), 'message: You should <code>console.log</code> the <code>typeof</code> a number.');",
         "assert(code.match(/console\\.log\\(typeof[\\( ]\\[\\]\\)?\\);/), 'message: You should <code>console.log</code> the <code>typeof</code> an array.');",
         "assert(code.match(/console\\.log\\(typeof[\\( ]\\{\\}\\)?\\);/), 'message: You should <code>console.log</code> the <code>typeof</code> a object.');"
       ],
-      "challengeSeed":[
-        "",
-        "",
-        ""
-      ],
-      "challengeType":1,
       "type": "waypoint",
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
-      "nameRu": "",
-      "descriptionRu": [],
+      "challengeType": 1,
       "nameEs": "Usando typeof",
       "descriptionEs": [
         "Puedes usar <code>typeof</code> para verificar la <code>estructura de datos</code>, o el tipo, de una variable.",
@@ -81,9 +65,7 @@
         "<code>console.log(typeof(0));</code>",
         "<code>console.log(typeof([]));</code>",
         "<code>console.log(typeof({}));</code>"
-        ],
-      "namePt": "",
-      "descriptionPt": []
+      ]
     }
   ]
 }

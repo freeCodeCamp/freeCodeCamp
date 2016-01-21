@@ -6,22 +6,6 @@
     {
       "id": "561add10cb82ac38a17513b3",
       "title": "Claim Your Data Visualization Certificate",
-      "challengeSeed": [
-        {
-          "properties": [
-            "isHonest",
-            "isDataVisualizationCert"
-          ],
-          "apis": [
-            "/certificate/honest",
-            "/certificate/verify/data-visualization"
-          ],
-          "stepIndex": [
-            1,
-            2
-          ]
-        }
-      ],
       "description": [
         [
           "http://i.imgur.com/syJxavV.jpg",
@@ -48,8 +32,22 @@
           ""
         ]
       ],
-      "type": "Waypoint",
-      "challengeType": 7,
+      "challengeSeed": [
+        {
+          "properties": [
+            "isHonest",
+            "isDataVisualizationCert"
+          ],
+          "apis": [
+            "/certificate/honest",
+            "/certificate/verify/data-visualization"
+          ],
+          "stepIndex": [
+            "1",
+            "2"
+          ]
+        }
+      ],
       "tests": [
         {
           "id": "bd7157d8c242eddfaeb5bd13",
@@ -92,12 +90,8 @@
           "title": "Map Data Across the Globe"
         }
       ],
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
-      "nameRu": "",
-      "descriptionRu": [],
+      "type": "Waypoint",
+      "challengeType": 7,
       "nameEs": "Reclama tu certificado de desarrollo Front End",
       "descriptionEs": [
         [
@@ -124,9 +118,7 @@
           "¡Felicitaciones! Hemos agregado tu Certificado de desarrollo Front End a tu portafolio. A menos que elijas no mostrar tus soluciones, este certificado será públicamente visible y verificable.",
           ""
         ]
-      ],
-      "namePt": "",
-      "descriptionPt": []
+      ]
     }
   ]
 }

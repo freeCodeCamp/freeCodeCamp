@@ -16,11 +16,6 @@
         "In this case, we've already added it for you to this page behind the scenes.",
         "To get started, we should nest all of our HTML in a <code>div</code> element with the class <code>container-fluid</code>."
       ],
-      "tests": [
-        "assert($(\"div\").hasClass(\"container-fluid\"), 'message: Your <code>div</code> element should have the class <code>container-fluid</code>.');",
-        "assert(code.match(/<\\/div>/g) && code.match(/<div/g) && code.match(/<\\/div>/g).length === code.match(/<div/g).length, 'message: Make sure each of your <code>div</code> elements has a closing tag.');",
-        "assert($(\".container-fluid\").children().length >= 8, 'message: Make sure you have nested all HTML elements in <code>.container-fluid</code>.');"
-      ],
       "challengeSeed": [
         "<link href=\"http://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
         "<style>",
@@ -77,14 +72,13 @@
         "  <button type=\"submit\">Submit</button>",
         "</form>"
       ],
+      "tests": [
+        "assert($(\"div\").hasClass(\"container-fluid\"), 'message: Your <code>div</code> element should have the class <code>container-fluid</code>.');",
+        "assert(code.match(/<\\/div>/g) && code.match(/<div/g) && code.match(/<\\/div>/g).length === code.match(/<div/g).length, 'message: Make sure each of your <code>div</code> elements has a closing tag.');",
+        "assert($(\".container-fluid\").children().length >= 8, 'message: Make sure you have nested all HTML elements in <code>.container-fluid</code>.');"
+      ],
       "type": "waypoint",
       "challengeType": 0,
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
-      "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "Usa diseño adaptativo con los contenedores fluidos de Bootstrap",
       "descriptionEs": [
         "Ahora vamos de vuelta a nuestra aplicación de fotos de gatos. Esta vez, vamos a darle estilo utilizando la infraestructura CSS del popular Bootstrap.",
@@ -94,9 +88,7 @@
         "<code>&#60;link rel=\"stylesheet\" href=\"//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css\"/&#62;</code>",
         "En este caso, lo hemos agregado a esta página por ti.",
         "Para iniciar, debemos anidar todo nuestro HTML en un elemento <code>div</code> con la clase <code>container-fluid</code>."
-        ],
-      "namePt": "",
-      "descriptionPt": []
+      ]
     },
     {
       "id": "bad87fee1348bd9acde08812",
@@ -105,13 +97,6 @@
         "First, add a new image below the existing one. Set its <code>src</code> attribute to <code>http://bit.ly/fcc-running-cats</code>.",
         "It would be great if this image could be exactly the width of our phone's screen.",
         "Fortunately, with Bootstrap, all we need to do is add the <code>img-responsive</code> class to your image. Do this, and the image should perfectly fit the width of your page."
-      ],
-      "tests": [
-        "assert($(\"img\").length === 2, 'message: You should have a total of two images.');",
-        "assert($(\"img:eq(1)\").hasClass(\"img-responsive\"), 'message: Your new image should be below your old one and have the class <code>img-responsive</code>.');",
-        "assert(!$(\"img:eq(1)\").hasClass(\"smaller-image\"), 'message: Your new image should not have the class <code>smaller-image</code>.');",
-        "assert($(\"img:eq(1)\").attr(\"src\") === \"http://bit.ly/fcc-running-cats\", 'message: Your new image should have a <code>src</code> of <code>http&#58;//bit.ly/fcc-running-cats</code>.');",
-        "assert(code.match(/<img/g) && code.match(/<img[^<]*>/g).length === 2 && code.match(/<img/g).length === 2, 'message: Make sure your new <code>img</code> element has a closing angle bracket.');"
       ],
       "challengeSeed": [
         "<link href=\"http://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
@@ -171,22 +156,21 @@
         "  </form>",
         "</div>"
       ],
+      "tests": [
+        "assert($(\"img\").length === 2, 'message: You should have a total of two images.');",
+        "assert($(\"img:eq(1)\").hasClass(\"img-responsive\"), 'message: Your new image should be below your old one and have the class <code>img-responsive</code>.');",
+        "assert(!$(\"img:eq(1)\").hasClass(\"smaller-image\"), 'message: Your new image should not have the class <code>smaller-image</code>.');",
+        "assert($(\"img:eq(1)\").attr(\"src\") === \"http://bit.ly/fcc-running-cats\", 'message: Your new image should have a <code>src</code> of <code>http&#58;//bit.ly/fcc-running-cats</code>.');",
+        "assert(code.match(/<img/g) && code.match(/<img[^<]*>/g).length === 2 && code.match(/<img/g).length === 2, 'message: Make sure your new <code>img</code> element has a closing angle bracket.');"
+      ],
       "type": "waypoint",
       "challengeType": 0,
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
-      "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "Haz que las imágenes sean adaptativas en dispositivos móviles",
       "descriptionEs": [
         "Primero, agrega una nueva imagen debajo que la que ya existe. Haz que su atributo <code>src</code> sea <code>http://bit.ly/fcc-running-cats</code>.",
         "Sería genial si esta imagen fuera exactamente del tamaño de la pantalla de nuestro teléfono.",
         "Afortunadamente, con Bootstrap, todo lo que tenemos que hacer es agregar la clase <code>img-responsive</code> a tu imagen. Hazlo, y verás que la imagen se ajustará perfectamente al ancho de tu página."
-        ],
-      "namePt": "",
-      "descriptionPt": []
+      ]
     },
     {
       "id": "bad87fee1348bd8acde08812",
@@ -195,10 +179,6 @@
         "Now that we're using Bootstrap, we can center our heading element to make it look better. All we need to do is add the class <code>text-center</code> to our <code>h2</code> element.",
         "Remember that you can add several classes to the same element by separating each of them with a space, like this:",
         "<code>&#60h2 class=\"red-text text-center\"&#62your text&#60/h2&#62</code>"
-      ],
-      "tests": [
-        "assert($(\"h2\").hasClass(\"text-center\"), 'message: Your <code>h2</code> element should be centered by applying the class <code>text-center</code>');",
-        "assert($(\"h2\").hasClass(\"red-text\"), 'message: Your <code>h2</code> element should still have the class <code>red-text</code>');"
       ],
       "challengeSeed": [
         "<link href=\"http://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
@@ -259,22 +239,18 @@
         "  </form>",
         "</div>"
       ],
+      "tests": [
+        "assert($(\"h2\").hasClass(\"text-center\"), 'message: Your <code>h2</code> element should be centered by applying the class <code>text-center</code>');",
+        "assert($(\"h2\").hasClass(\"red-text\"), 'message: Your <code>h2</code> element should still have the class <code>red-text</code>');"
+      ],
       "type": "waypoint",
       "challengeType": 0,
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
-      "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "Centra el texto con Bootstrap",
       "descriptionEs": [
         "Ahora que estamos usando Bootstrap, podemos centrar nuestro elemento de encabezado para hacerlo verse mejor. Todo lo que necesitamos hacer es agregar la clase <code>text-center</code> a nuestro elemento <code>h2</code>.",
         "Recuerda que puedes agregar varias clases a un mismo elemento separando cada una de ellas con un espacio, de esta forma:",
         "<code>&#60h2 class=\"red-text text-center\"&#62your text&#60/h2&#62</code>"
-        ],
-      "namePt": "",
-      "descriptionPt": []
+      ]
     },
     {
       "id": "bad87fee1348cd8acdf08812",
@@ -282,11 +258,6 @@
       "description": [
         "Bootstrap has its own styles for <code>button</code> elements, which look much better than the plain HTML ones.",
         "Create a new <code>button</code> element below your large kitten photo. Give it the class <code>btn</code> and the text of \"Like\"."
-      ],
-      "tests": [
-        "assert(new RegExp(\"like\",\"gi\").test($(\"button\").text()), 'message: Create a new <code>button</code> element with the text \"Like\".');",
-        "assert($(\"button\").hasClass(\"btn\"), 'message: Your new button should have the class <code>btn</code>.');",
-        "assert(code.match(/<\\/button>/g) && code.match(/<button/g) && code.match(/<\\/button>/g).length === code.match(/<button/g).length, 'message: Make sure all your <code>button</code> elements have a closing tag.');"
       ],
       "challengeSeed": [
         "<link href=\"http://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
@@ -348,21 +319,18 @@
         "  </form>",
         "</div>"
       ],
+      "tests": [
+        "assert(new RegExp(\"like\",\"gi\").test($(\"button\").text()), 'message: Create a new <code>button</code> element with the text \"Like\".');",
+        "assert($(\"button\").hasClass(\"btn\"), 'message: Your new button should have the class <code>btn</code>.');",
+        "assert(code.match(/<\\/button>/g) && code.match(/<button/g) && code.match(/<\\/button>/g).length === code.match(/<button/g).length, 'message: Make sure all your <code>button</code> elements have a closing tag.');"
+      ],
       "type": "waypoint",
       "challengeType": 0,
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
-      "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "Crea un botón con Bootstrap",
       "descriptionEs": [
         "Bootstrap tiene sus propios estilos para elementos <code>button</code>, los cuales se ven mejor que los estilos simples de HTML.",
         "Crea un nuevo elemento <code>button</code> debajo de tu foto grande del gatito. Dale la clase <code>btn</code> y el texto \"Like\"."
-        ],
-      "namePt": "",
-      "descriptionPt": []
+      ]
     },
     {
       "id": "bad87fee1348cd8acef08812",
@@ -373,11 +341,6 @@
         "<a href=\"http://i.imgur.com/O32cDWE.png\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" src=\"http://i.imgur.com/O32cDWE.png\" title=\"Click to enlarge\" alt=\"An \"inline\" button is as small as the text it contains. In this image, it's centered. Below it is a \"block-level\" button, which stretches to fill the entire horizontal space.'></a>",
         "Note that these buttons still need the <code>btn</code> class.",
         "Add Bootstrap's <code>btn-block</code> class to your Bootstrap button."
-      ],
-      "tests": [
-        "assert($(\"button\").hasClass(\"btn\"), 'message: Your button should still have the class <code>btn</code>.');",
-        "assert($(\"button\").hasClass(\"btn-block\"), 'message: Your button should have the class <code>btn-block</code>.');",
-        "assert(code.match(/<\\/button>/g) && code.match(/<button/g) && code.match(/<\\/button>/g).length === code.match(/<button/g).length, 'message: Make sure all your <code>button</code> elements have a closing tag.');"
       ],
       "challengeSeed": [
         "<link href=\"http://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
@@ -439,14 +402,13 @@
         "  </form>",
         "</div>"
       ],
+      "tests": [
+        "assert($(\"button\").hasClass(\"btn\"), 'message: Your button should still have the class <code>btn</code>.');",
+        "assert($(\"button\").hasClass(\"btn-block\"), 'message: Your button should have the class <code>btn-block</code>.');",
+        "assert(code.match(/<\\/button>/g) && code.match(/<button/g) && code.match(/<\\/button>/g).length === code.match(/<button/g).length, 'message: Make sure all your <code>button</code> elements have a closing tag.');"
+      ],
       "type": "waypoint",
       "challengeType": 0,
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
-      "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "Crea un elemento botón de bloque con Bootstrap",
       "descriptionEs": [
         "Normalmente, tus elementos <code>button</code> son sólo tan anchos como el texto que contienen. Al convertir un botón en elemento a nivel de bloque, este se estirará para llenar todo el espacio horizontal y cualquier elemento que lo siga se desplazará a una \"nueva línea\" debajo del bloque.",
@@ -454,9 +416,7 @@
         "<a href=\"http://i.imgur.com/O32cDWE.png\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" src=\"http://i.imgur.com/O32cDWE.png\" title=\"Pulsa para agrandar\" alt=\"Un botón \"en línea\" es tan pequeño como el texto que contiene. En esta imagen, está centrado. Debajo de este hay un botón \"a nivel de bloque\", que se estira hasta llenar todo el espacio horizontal.'></a>",
         "Ten en cuenta que estos botones todavía necesitan la clase <code>btn</code>.",
         "Agrega la clase de Bootstrap <code>btn-block</code> a tu botón Bootstrap."
-        ],
-      "namePt": "",
-      "descriptionPt": []
+      ]
     },
     {
       "id": "bad87fee1348cd8acef08811",
@@ -465,11 +425,6 @@
         "The <code>btn-primary</code> class is the main color you'll use in your app. It is useful for highlighting actions you want your user to take.",
         "Add Bootstrap's <code>btn-primary</code> class to your button.",
         "Note that this button will still need the <code>btn</code> and <code>btn-block</code> classes."
-      ],
-      "tests": [
-        "assert($(\"button\").hasClass(\"btn-primary\"), 'message: Your button should have the class <code>btn-primary</code>.');",
-        "assert($(\"button\").hasClass(\"btn-block\") && $(\"button\").hasClass(\"btn\"), 'message: Your button should still have the <code>btn</code> and <code>btn-block</code> classes.');",
-        "assert(code.match(/<\\/button>/g) && code.match(/<button/g) && code.match(/<\\/button>/g).length === code.match(/<button/g).length, 'message: Make sure all your <code>button</code> elements have a closing tag.');"
       ],
       "challengeSeed": [
         "<link href=\"http://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
@@ -531,22 +486,19 @@
         "  </form>",
         "</div>"
       ],
+      "tests": [
+        "assert($(\"button\").hasClass(\"btn-primary\"), 'message: Your button should have the class <code>btn-primary</code>.');",
+        "assert($(\"button\").hasClass(\"btn-block\") && $(\"button\").hasClass(\"btn\"), 'message: Your button should still have the <code>btn</code> and <code>btn-block</code> classes.');",
+        "assert(code.match(/<\\/button>/g) && code.match(/<button/g) && code.match(/<\\/button>/g).length === code.match(/<button/g).length, 'message: Make sure all your <code>button</code> elements have a closing tag.');"
+      ],
       "type": "waypoint",
       "challengeType": 0,
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
-      "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "Prueba el arcoíris de colores para botones que te ofrece Bootstrap",
       "descriptionEs": [
         "La clase <code>btn-primary</code> es el color principal que utilizarás en tu aplicación. Es útil resaltar las acciones que quieres que tu usuario ejecute.",
         "Agrega la clase <code>btn-primary</code> de Bootstrap a tu botón.",
         "Ten en mente que este botón todavía necesita las clases <code>btn</code> y <code>btn-block</code>."
-        ],
-      "namePt": "",
-      "descriptionPt": []
+      ]
     },
     {
       "id": "bad87fee1348cd8acef08813",
@@ -555,12 +507,6 @@
         "Bootstrap comes with several pre-defined colors for buttons. The <code>btn-info</code> class is used to call attention to optional actions that the user can take.",
         "Create a new block-level Bootstrap button below your \"Like\" button with the text \"Info\", and add Bootstrap's <code>btn-info</code> and <code>btn-block</code> classes to it.",
         "Note that these buttons still need the <code>btn</code> and <code>btn-block</code> classes."
-      ],
-      "tests": [
-        "assert(new RegExp(\"info\",\"gi\").test($(\"button\").text()), 'message: Create a new <code>button</code> element with the text \"Info\".');",
-        "assert($(\"button.btn-block.btn\").length > 1, 'message: Both of your Bootstrap buttons should have the <code>btn</code> and <code>btn-block</code> classes.');",
-        "assert($(\"button\").hasClass(\"btn-info\"), 'message: Your new button should have the class <code>btn-info</code>.');",
-        "assert(code.match(/<\\/button>/g) && code.match(/<button/g) && code.match(/<\\/button>/g).length === code.match(/<button/g).length, 'message: Make sure all your <code>button</code> elements have a closing tag.');"
       ],
       "challengeSeed": [
         "<link href=\"http://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
@@ -622,22 +568,20 @@
         "  </form>",
         "</div>"
       ],
+      "tests": [
+        "assert(new RegExp(\"info\",\"gi\").test($(\"button\").text()), 'message: Create a new <code>button</code> element with the text \"Info\".');",
+        "assert($(\"button.btn-block.btn\").length > 1, 'message: Both of your Bootstrap buttons should have the <code>btn</code> and <code>btn-block</code> classes.');",
+        "assert($(\"button\").hasClass(\"btn-info\"), 'message: Your new button should have the class <code>btn-info</code>.');",
+        "assert(code.match(/<\\/button>/g) && code.match(/<button/g) && code.match(/<\\/button>/g).length === code.match(/<button/g).length, 'message: Make sure all your <code>button</code> elements have a closing tag.');"
+      ],
       "type": "waypoint",
       "challengeType": 0,
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
-      "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "Señala acciones opcionales con botones informativos",
       "descriptionEs": [
         "Bootstrap incluye varios colores pre-definidos para botones. La clase <code>btn-info</code> se utiliza para llamar la atención a acciones opcionales que el usuario puede tomar.",
         "Crea un nuevo botón a nivel de bloque de Bootstrap debajo de tu botón de \"Like\" con el texto \"Info\", y agrégale las clases de Bootstrap <code>btn-info</code> y <code>btn-block</code>.",
         "Ten en mente que estos botones todavía necesitan las clases <code>btn</code> y <code>btn-block</code>."
-        ],
-      "namePt": "",
-      "descriptionPt": []
+      ]
     },
     {
       "id": "bad87fee1348ce8acef08814",
@@ -646,12 +590,6 @@
         "Bootstrap comes with several pre-defined colors for buttons. The <code>btn-danger</code> class is the button color you'll use to notify users that the button performs a destructive action, such as deleting a cat photo.",
         "Create a button with the text \"Delete\" and give it the class <code>btn-danger</code>.",
         "Note that these buttons still need the <code>btn</code> and <code>btn-block</code> classes."
-      ],
-      "tests": [
-        "assert(new RegExp(\"Delete\",\"gi\").test($(\"button\").text()), 'message: Create a new <code>button</code> element with the text \"Delete\".');",
-        "assert($(\"button.btn-block.btn\").length > 2, 'message: All of your Bootstrap buttons should have the <code>btn</code> and <code>btn-block</code> classes.');",
-        "assert($(\"button\").hasClass(\"btn-danger\"), 'message: Your new button should have the class <code>btn-danger</code>.');",
-        "assert(code.match(/<\\/button>/g) && code.match(/<button/g) && code.match(/<\\/button>/g).length === code.match(/<button/g).length, 'message: Make sure all your <code>button</code> elements have a closing tag.');"
       ],
       "challengeSeed": [
         "<link href=\"http://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
@@ -714,22 +652,20 @@
         "  </form>",
         "</div>"
       ],
+      "tests": [
+        "assert(new RegExp(\"Delete\",\"gi\").test($(\"button\").text()), 'message: Create a new <code>button</code> element with the text \"Delete\".');",
+        "assert($(\"button.btn-block.btn\").length > 2, 'message: All of your Bootstrap buttons should have the <code>btn</code> and <code>btn-block</code> classes.');",
+        "assert($(\"button\").hasClass(\"btn-danger\"), 'message: Your new button should have the class <code>btn-danger</code>.');",
+        "assert(code.match(/<\\/button>/g) && code.match(/<button/g) && code.match(/<\\/button>/g).length === code.match(/<button/g).length, 'message: Make sure all your <code>button</code> elements have a closing tag.');"
+      ],
       "type": "waypoint",
       "challengeType": 0,
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
-      "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "Advierte a tus usuarios sobre acciones peligrosas",
       "descriptionEs": [
         "Bootstrap incluye varios colores pre-definidos para botones. La clase <code>btn-danger</code> es el color de botón que usarías para notificar a los usuarios que el botón ejecuta una acción destructiva, como por ejemplo eliminar la foto de un gato.",
         "Crea un botón con el texto \"Delete\" y dale la clase <code>btn-danger</code>.",
         "Recuerda que estos botones todavía requieren las clases <code>btn</codez> y <code>btn-block</code>."
-        ],
-      "namePt": "",
-      "descriptionPt": []
+      ]
     },
     {
       "id": "bad88fee1348ce8acef08815",
@@ -742,12 +678,6 @@
         "In the Cat Photo App that we're building, we'll use <code>col-xs-*</code>, where <code>xs</code> means extra small (like an extra-small mobile phone screen), and <code>*</code> is the number of columns specifying how many columns wide the element should be.",
         "Put the <code>Like</code>, <code>Info</code> and <code>Delete</code> buttons side-by-side by nesting all three of them within one <code>&#60;div class=\"row\"&#62;</code> element, then each of them within a <code>&#60;div class=\"col-xs-4\"&#62;</code> element.",
         "The <code>row</code> class is applied to a <code>div</code>, and the buttons themselves can be nested within it."
-      ],
-      "tests": [
-        "assert($(\"div.row:has(button)\").length > 0, 'message: Your buttons should all be nested within the same <code>div</code> element with the class <code>row</code>.');",
-        "assert($(\"div.col-xs-4:has(button)\").length > 2, 'message: Each of your Bootstrap buttons should be nested within its own <code>div</code> element with the class <code>col-xs-4</code>.');",
-        "assert(code.match(/<\\/button>/g) && code.match(/<button/g) && code.match(/<\\/button>/g).length === code.match(/<button/g).length, 'message: Make sure each of your <code>button</code> elements has a closing tag.');",
-        "assert(code.match(/<\\/div>/g) && code.match(/<div/g) && code.match(/<\\/div>/g).length === code.match(/<div/g).length, 'message: Make sure each of your <code>div</code> elements has a closing tag.');"
       ],
       "challengeSeed": [
         "<link href=\"http://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
@@ -811,14 +741,14 @@
         "  </form>",
         "</div>"
       ],
+      "tests": [
+        "assert($(\"div.row:has(button)\").length > 0, 'message: Your buttons should all be nested within the same <code>div</code> element with the class <code>row</code>.');",
+        "assert($(\"div.col-xs-4:has(button)\").length > 2, 'message: Each of your Bootstrap buttons should be nested within its own <code>div</code> element with the class <code>col-xs-4</code>.');",
+        "assert(code.match(/<\\/button>/g) && code.match(/<button/g) && code.match(/<\\/button>/g).length === code.match(/<button/g).length, 'message: Make sure each of your <code>button</code> elements has a closing tag.');",
+        "assert(code.match(/<\\/div>/g) && code.match(/<div/g) && code.match(/<\\/div>/g).length === code.match(/<div/g).length, 'message: Make sure each of your <code>div</code> elements has a closing tag.');"
+      ],
       "type": "waypoint",
       "challengeType": 0,
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
-      "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "Usa la cuadrícula de Bootstrap para poner elementos lado a lado",
       "descriptionEs": [
         "Bootstrap utiliza un sistema de cuadrícula adaptativa que facilita el poner elementos en fila y especificar la anchura relativa de cada elemento. La mayoría de las clases de Bootstrap pueden ser aplicadas a un elemento <code>div</code>.",
@@ -828,9 +758,7 @@
         "En la aplicación de fotos de gatos que estamos construyendo, usaremos <code>col-xs-*</code>, donde <code>xs</code> significa extra pequeño (como una pantalla extra-pequeña de un teléfono), y <code>*</code> especifica el número de columnas que debe tomar el ancho del elemento.",
         "Pon los botones de <code>Like</code>, <code>Info</code> y <code>Delete</code> lado a lado. Esto se hace anidando los tres botones dentro de un elemento <code>&#60;div class=\"row\"&#62;</code>, y luego cada uno de ellos dentro de un elemento <code>&#60;div class=\"col-xs-4\"&#62;</code>.",
         "La clase <code>row</code> se aplica al elemento <code>div</code>, dentro del cual van anidados los botones."
-        ],
-      "namePt": "",
-      "descriptionPt": []
+      ]
     },
     {
       "id": "bad87fee1347bd9aedf08845",
@@ -841,13 +769,6 @@
         "Delete the <code>.red-text</code>, <code>p</code>, and <code>.smaller-image</code> CSS declarations from your <code>style</code> element so that the only declarations left in your <code>style</code> element are <code>h2</code> and <code>thick-green-border</code>.",
         "Then delete the <code>p</code> element that contains a dead link. Then remove the <code>red-text</code> class from your <code>h2</code> element and replace it with the <code>text-primary</code> Bootstrap class.",
         "Finally, remove the \"smaller-image\" class from your first <code>img</code> element and replace it with the <code>img-responsive</code> class."
-      ],
-      "tests": [
-        "assert(!$(\"h2\").hasClass(\"red-text\"), 'message: Your h2 element should no longer have the class <code>red-text</code>.');",
-        "assert($(\"h2\").hasClass(\"text-primary\"), 'message: Your h2 element should now have the class <code>text-primary</code>.');",
-        "assert(!$(\"p\").css(\"font-family\").match(/monospace/i), 'message: Your paragraph elements should no longer use the font <code>Monospace</code>.');",
-        "assert(!$(\"img\").hasClass(\"smaller-image\"), 'message: Remove the <code>smaller-image</code> class from your top image.');",
-        "assert($(\".img-responsive\").length > 1, 'message: Add the <code>img-responsive</code> class to your top image.');"
       ],
       "challengeSeed": [
         "<link href=\"http://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
@@ -919,14 +840,15 @@
         "  </form>",
         "</div>"
       ],
+      "tests": [
+        "assert(!$(\"h2\").hasClass(\"red-text\"), 'message: Your h2 element should no longer have the class <code>red-text</code>.');",
+        "assert($(\"h2\").hasClass(\"text-primary\"), 'message: Your h2 element should now have the class <code>text-primary</code>.');",
+        "assert(!$(\"p\").css(\"font-family\").match(/monospace/i), 'message: Your paragraph elements should no longer use the font <code>Monospace</code>.');",
+        "assert(!$(\"img\").hasClass(\"smaller-image\"), 'message: Remove the <code>smaller-image</code> class from your top image.');",
+        "assert($(\".img-responsive\").length > 1, 'message: Add the <code>img-responsive</code> class to your top image.');"
+      ],
       "type": "waypoint",
       "challengeType": 0,
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
-      "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "Reemplaza el CSS personalizado por Bootstrap",
       "descriptionEs": [
         "Podemos limpiar nuestro código y hacer que nuestra aplicación de fotos de gatos se vea más convencional, usando los estilos pre-construidos de Bootstrap, en lugar de los estilos personalizados que creamos antes.",
@@ -934,9 +856,7 @@
         "Elimina las declaraciones CSS <code>.red-text</code>, <code>p</code>, y <code>.smaller-image</code> de tu elemento <code>style</code>, de forma que las únicas declaraciones que queden en tu elemento <code>style</code> sean <code>h2</code> y <code>thick-green-border</code>.",
         "Luego elimina el elemento <code>p</code> que contiene un enlace nulo. Después, elimina la clase <code>red-text</code> de tu elemento <code>h2</code> y reemplázalo con la clase <code>text-primary</code> de Bootstrap.",
         "Por último, elimina la clase \"smaller-image\" de tu primer elemento <code>img</code> y reemplázalo con la clase <code>img-responsive</code>."
-        ],
-      "namePt": "",
-      "descriptionPt": []
+      ]
     },
     {
       "id": "bad87fee1348bd9aedf08845",
@@ -949,12 +869,6 @@
         "Nest the word \"love\" in your \"Things cats love\" element below within a <code>span</code> element. Then give that <code>span</code> the class <code>text-danger</code> to make the text red.",
         "Here's how you would do this with the \"Top 3 things cats hate\" element:",
         "<code>&#60;p&#62;Top 3 things cats &#60;span class = \"text-danger\"&#62;hate&#60;/span&#62;&#60;/p&#62;</code>"
-      ],
-      "tests": [
-        "assert($(\"p span\") && $(\"p span\").length > 0, 'message: Your <code>span</code> element should be inside your <code>p</code> element.');",
-        "assert($(\"p span\") && $(\"p span\").text().match(/love/i), 'message: Your <code>span</code> element should have the text <code>love</code>.');",
-        "assert($(\"span\").hasClass(\"text-danger\"), 'message: Your <code>span</code> element should have class <code>text-danger</code>.');",
-        "assert(code.match(/<\\/span>/g) && code.match(/<span/g) && code.match(/<\\/span>/g).length === code.match(/<span/g).length, 'message: Make sure your <code>span</code> element has a closing tag.');"
       ],
       "challengeSeed": [
         "<link href=\"http://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
@@ -1013,14 +927,14 @@
         "  </form>",
         "</div>"
       ],
+      "tests": [
+        "assert($(\"p span\") && $(\"p span\").length > 0, 'message: Your <code>span</code> element should be inside your <code>p</code> element.');",
+        "assert($(\"p span\") && $(\"p span\").text().match(/love/i), 'message: Your <code>span</code> element should have the text <code>love</code>.');",
+        "assert($(\"span\").hasClass(\"text-danger\"), 'message: Your <code>span</code> element should have class <code>text-danger</code>.');",
+        "assert(code.match(/<\\/span>/g) && code.match(/<span/g) && code.match(/<\\/span>/g).length === code.match(/<span/g).length, 'message: Make sure your <code>span</code> element has a closing tag.');"
+      ],
       "type": "waypoint",
       "challengeType": 0,
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
-      "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "Usa span para elementos en línea",
       "descriptionEs": [
         "Puedes utilizar span para crear elementos en línea. ¿Recuerdas cuando usamos la clase <code>btn-block</code> para hacer que el botón llenara toda la línea?",
@@ -1030,9 +944,7 @@
         "Anida la palabra \"love\" en tu elemento \"Things cats love\" dentro de un elemento <code>span</code>. Luego, asigna a ese elemento <code>span</code> la clase <code>text-danger</code> para hacer que el texto sea rojo.",
         "Así es como lo harías con el elemento \"Top 3 things cats hate\":",
         "<code>&#60;p&#62;Top 3 things cats &#60;span class = \"text-danger\"&#62;hate&#60;/span&#62;&#60;/p&#62;</code>"
-        ],
-      "namePt": "",
-      "descriptionPt": []
+      ]
     },
     {
       "id": "bad87fee1348bd9aede08845",
@@ -1046,12 +958,6 @@
         "In the Cat Photo App that we're building, we'll use <code>col-xs-*</code>, where <code>xs</code> means extra small (like an extra-small mobile phone screen), and <code>*</code> is the number of columns specifying how many columns wide the element should be.",
         "Nest your first image and your <code>h2</code> element within a single <code>&#60;div class=\"row\"&#62;</code> element. Nest your <code>h2</code> element within a <code>&#60;div class=\"col-xs-8\"&#62;</code> and your image in a <code>&#60;div class=\"col-xs-4\"&#62;</code> so that they are on the same line.",
         "Notice how the image is now just the right size to fit along the text?"
-      ],
-      "tests": [
-        "assert($(\"div.row:has(h2)\").length > 0 && $(\"div.row:has(img)\").length > 0, 'message: Your <code>h2</code> element and topmost <code>img</code> element should both be nested together within a <code>div</code> element with the class <code>row</code>.');",
-        "assert($(\"div.col-xs-4:has(img)\").length > 0, 'message: Nest your topmost <code>img</code> element within a <code>div</code> with the class <code>col-xs-4</code>.');",
-        "assert($(\"div.col-xs-8:has(h2)\").length > 0, 'message: Nest your <code>h2</code> element within a <code>div</code> with the class <code>col-xs-8</code>.');",
-        "assert(code.match(/<\\/div>/g) && code.match(/<div/g) && code.match(/<\\/div>/g).length === code.match(/<div/g).length, 'message: Make sure each of your <code>div</code> elements has a closing tag.');"
       ],
       "challengeSeed": [
         "<link href=\"http://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
@@ -1109,14 +1015,14 @@
         "  </form>",
         "</div>"
       ],
+      "tests": [
+        "assert($(\"div.row:has(h2)\").length > 0 && $(\"div.row:has(img)\").length > 0, 'message: Your <code>h2</code> element and topmost <code>img</code> element should both be nested together within a <code>div</code> element with the class <code>row</code>.');",
+        "assert($(\"div.col-xs-4:has(img)\").length > 0, 'message: Nest your topmost <code>img</code> element within a <code>div</code> with the class <code>col-xs-4</code>.');",
+        "assert($(\"div.col-xs-8:has(h2)\").length > 0, 'message: Nest your <code>h2</code> element within a <code>div</code> with the class <code>col-xs-8</code>.');",
+        "assert(code.match(/<\\/div>/g) && code.match(/<div/g) && code.match(/<\\/div>/g).length === code.match(/<div/g).length, 'message: Make sure each of your <code>div</code> elements has a closing tag.');"
+      ],
       "type": "waypoint",
       "challengeType": 0,
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
-      "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "Crea un encabezado personalizado",
       "descriptionEs": [
         "Crearemos un encabezado simple para nuestra aplicación de fotos de gatos poniéndolos en la misma línea.",
@@ -1127,9 +1033,7 @@
         "En la aplicación de fotos de gatos que estamos construyendo, usaremos <code>col-xs-*</code>, donde <code>xs</code> significa extra pequeño (como una pantalla extra-pequeña de un teléfono), y <code>*</code> especifica el número de columnas que debe tomar el ancho del elemento.",
         "Anida tu primera imagen y tu elemento <code>h2</code> dentro de un solo elemento <code>&#60;div class=\"row\"&#62;</code>. Anida tu texto <code>h2</code> dentro de un <code>&#60;div class=\"col-xs-8\"&#62;</code> y tu imagen en un <code>&#60;div class=\"col-xs-4\"&#62;</code> de tal forma que estén en la misma línea.",
         "¿Te diste cuenta de que la imagen es ahora justamente del tamaño apropiado para el texto?"
-        ],
-      "namePt": "",
-      "descriptionPt": []
+      ]
     },
     {
       "id": "bad87fee1348bd9aedd08845",
@@ -1142,12 +1046,6 @@
         "The <code>i</code> element was originally used to make other elements italic, but is now commonly used for icons. You add the Font Awesome classes to the <code>i</code> element to turn it into an icon, for example:",
         "<code>&lt;i class=\"fa fa-info-circle\"&gt;&lt;/i&gt;</code>",
         "Use Font Awesome to add a <code>thumbs-up</code> icon to your like button by giving it an <code>i</code> element with the classes <code>fa</code> and <code>fa-thumbs-up</code>."
-      ],
-      "tests": [
-        "assert($(\"i\").hasClass(\"fa fa-thumbs-up\"), 'message: Add an <code>i</code> element with the classes <code>fa</code> and <code>fa-thumbs-up</code>.');",
-        "assert($(\"i.fa-thumbs-up\").parent().text().match(/Like/gi) && $(\".btn-primary > i\").hasClass(\"fa fa-thumbs-up\"), 'message: Your <code>fa-thumbs-up</code> icon should be located within the Like button.');",
-        "assert($(\"button\").children(\"i\").length > 0, 'message: Nest your <code>i</code> element within your <code>button</code> element.');",
-        "assert(code.match(/<\\/i>/g), 'message: Make sure your <code>i</code> element has a closing tag.');"
       ],
       "challengeSeed": [
         "<link href=\"http://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
@@ -1208,21 +1106,19 @@
         "  </form>",
         "</div>"
       ],
+      "tests": [
+        "assert($(\"i\").hasClass(\"fa fa-thumbs-up\"), 'message: Add an <code>i</code> element with the classes <code>fa</code> and <code>fa-thumbs-up</code>.');",
+        "assert($(\"i.fa-thumbs-up\").parent().text().match(/Like/gi) && $(\".btn-primary > i\").hasClass(\"fa fa-thumbs-up\"), 'message: Your <code>fa-thumbs-up</code> icon should be located within the Like button.');",
+        "assert($(\"button\").children(\"i\").length > 0, 'message: Nest your <code>i</code> element within your <code>button</code> element.');",
+        "assert(code.match(/<\\/i>/g), 'message: Make sure your <code>i</code> element has a closing tag.');"
+      ],
       "type": "waypoint",
       "challengeType": 0,
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
-      "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "Agrega iconos de Font Awesome a los botones",
       "descriptionEs": [
         "Font Awesome es una librería de iconos muy conveniente. Estos iconos son imágenes vectoriales, almacenadas en formato <code>.svg</code>, y son tratados como si fueran fuentes. Puedes especificar su tamaño usando pixeles, y tomarán el tamaño de fuente de su elemento HTML padre.",
         "Usa Font Awesome para agregar un icono de \"pulgar arriba\" <code>thumbs-up</code> a tu botón de like dándole un elemento <code>i</code> con las clases <code>fa</code> y <code>fa-thumbs-up</code>."
-        ],
-      "namePt": "",
-      "descriptionPt": []
+      ]
     },
     {
       "id": "bad87fee1348bd9aedc08845",
@@ -1230,11 +1126,6 @@
       "description": [
         "Font Awesome is a convenient library of icons. These icons are vector graphics, stored in the <code>.svg</code> file format. These icons are treated just like fonts. You can specify their size using pixels, and they will assume the font size of their parent HTML elements.",
         "Use Font Awesome to add a <code>info-circle</code> icon to your info button and a <code>trash</code> icon to your delete button."
-      ],
-      "tests": [
-        "assert($(\".btn-danger > i\").hasClass(\"fa fa-trash\"), 'message: You should add a <code>&#60;i class=\"fa fa-trash\"&#62;&#60;/i&#62;</code> within your delete button element.');",
-        "assert($(\".btn-info > i\").hasClass(\"fa fa-info-circle\"), 'message: You should add a <code>&#60;i class=\"fa fa-info-circle\"&#62;&#60;/i&#62;</code> within your info button element.');",
-        "assert(code.match(/<\\/i>/g) && code.match(/<\\/i>/g).length > 2 && $(\".btn-primary > i\").hasClass(\"fa fa-thumbs-up\"), 'message: Make sure each of your <code>i</code> elements has a closing tag and <code>&#60;i class=\"fa fa-thumbs-up\"&#62;&#60;/i&#62;</code> is in your like button element.');"
       ],
       "challengeSeed": [
         "<link href=\"http://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
@@ -1295,21 +1186,18 @@
         "  </form>",
         "</div>"
       ],
+      "tests": [
+        "assert($(\".btn-danger > i\").hasClass(\"fa fa-trash\"), 'message: You should add a <code>&#60;i class=\"fa fa-trash\"&#62;&#60;/i&#62;</code> within your delete button element.');",
+        "assert($(\".btn-info > i\").hasClass(\"fa fa-info-circle\"), 'message: You should add a <code>&#60;i class=\"fa fa-info-circle\"&#62;&#60;/i&#62;</code> within your info button element.');",
+        "assert(code.match(/<\\/i>/g) && code.match(/<\\/i>/g).length > 2 && $(\".btn-primary > i\").hasClass(\"fa fa-thumbs-up\"), 'message: Make sure each of your <code>i</code> elements has a closing tag and <code>&#60;i class=\"fa fa-thumbs-up\"&#62;&#60;/i&#62;</code> is in your like button element.');"
+      ],
       "type": "waypoint",
       "challengeType": 0,
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
-      "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "Agrega Font Awesome a todos los botones",
       "descriptionEs": [
         "Font Awesome es una librería de iconos muy conveniente. Estos iconos son imágenes vectoriales, almacenadas en formato <code>.svg</code>, y son tratados como si fueran fuentes. Puedes especificar su tamaño usando pixeles, y tomarán el tamaño de fuente de su elemento HTML padre.",
         "Utiliza Font Awesome para agregar un icono <code>info-circle</code> a tu botón informativo y un icono <code>trash</code> a tu botón de eliminar."
-        ],
-      "namePt": "",
-      "descriptionPt": []
+      ]
     },
     {
       "id": "bad87fee1348bd9aedb08845",
@@ -1317,11 +1205,6 @@
       "description": [
         "You can use Bootstrap's <code>col-xs-*</code> classes on <code>form</code> elements, too! This way, our radio buttons will be evenly spread out across the page, regardless of how wide the screen resolution is.",
         "Nest all of your radio buttons within a <code>&#60;div class=\"row\"&#62;</code> element. Then nest each of them within a <code>&#60;div class=\"col-xs-6\"&#62;</code> element."
-      ],
-      "tests": [
-        "assert($(\"div.row:has(input[type=\\\"radio\\\"])\").length > 0, 'message: Nest all of your radio buttons inside one <code>div</code> with the class <code>row</code>.');",
-        "assert($(\"div.col-xs-6:has(input[type=\\\"radio\\\"])\").length > 1, 'message: Nest each of your radio buttons inside its own <code>div</code> with the class <code>col-xs-6</code>.');",
-        "assert(code.match(/<\\/div>/g) && code.match(/<div/g) && code.match(/<\\/div>/g).length === code.match(/<div/g).length, 'message: Make sure each of your <code>div</code> elements has a closing tag.');"
       ],
       "challengeSeed": [
         "<link href=\"http://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
@@ -1382,21 +1265,18 @@
         "  </form>",
         "</div>"
       ],
+      "tests": [
+        "assert($(\"div.row:has(input[type=\\\"radio\\\"])\").length > 0, 'message: Nest all of your radio buttons inside one <code>div</code> with the class <code>row</code>.');",
+        "assert($(\"div.col-xs-6:has(input[type=\\\"radio\\\"])\").length > 1, 'message: Nest each of your radio buttons inside its own <code>div</code> with the class <code>col-xs-6</code>.');",
+        "assert(code.match(/<\\/div>/g) && code.match(/<div/g) && code.match(/<\\/div>/g).length === code.match(/<div/g).length, 'message: Make sure each of your <code>div</code> elements has a closing tag.');"
+      ],
       "type": "waypoint",
       "challengeType": 0,
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
-      "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "Crea botones de opción con estilo adaptativo",
       "descriptionEs": [
         "¡Puedes utilizar las clases <code>col-xs-*</code> de Bootstrap en elementos <code>form</code> también! De esta forma, nuestros botones de opción estarán igualmente distribuidos en la página, sin importar qué tan ancha es la resolución de la pantalla.",
         "Anida todos los botones de opción dentro de un elemento <code>&#60;div class=\"row\"&#62;</code>. Luego, anida cada uno de ellos dentro de un elemento <code>&#60;div class=\"col-xs-6\"&#62;</code>."
-        ],
-      "namePt": "",
-      "descriptionPt": []
+      ]
     },
     {
       "id": "bad87fee1348bd9aeda08845",
@@ -1404,11 +1284,6 @@
       "description": [
         "You can use Bootstrap's <code>col-xs-*</code> classes on <code>form</code> elements, too! This way, our checkboxes will be evenly spread out across the page, regardless of how wide the screen resolution is.",
         "Nest all your checkboxes in a <code>&#60;div class=\"row\"&#62;</code> element. Then nest each of them in a <code>&#60;div class=\"col-xs-4\"&#62;</code> element."
-      ],
-      "tests": [
-        "assert($(\"div.row:has(input[type=\\\"checkbox\\\"])\").length > 0, 'message: Nest all of your checkboxes inside one <code>div</code> with the class <code>row</code>.');",
-        "assert($(\"div.col-xs-4:has(input[type=\\\"checkbox\\\"])\").length > 2, 'message: Nest each of your checkboxes inside its own <code>div</code> with the class <code>col-xs-4</code>.');",
-        "assert(code.match(/<\\/div>/g) && code.match(/<div/g) && code.match(/<\\/div>/g).length === code.match(/<div/g).length, 'message: Make sure each of your <code>div</code> elements has a closing tag.');"
       ],
       "challengeSeed": [
         "<link href=\"http://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
@@ -1476,21 +1351,18 @@
         "  </form>",
         "</div>"
       ],
+      "tests": [
+        "assert($(\"div.row:has(input[type=\\\"checkbox\\\"])\").length > 0, 'message: Nest all of your checkboxes inside one <code>div</code> with the class <code>row</code>.');",
+        "assert($(\"div.col-xs-4:has(input[type=\\\"checkbox\\\"])\").length > 2, 'message: Nest each of your checkboxes inside its own <code>div</code> with the class <code>col-xs-4</code>.');",
+        "assert(code.match(/<\\/div>/g) && code.match(/<div/g) && code.match(/<\\/div>/g).length === code.match(/<div/g).length, 'message: Make sure each of your <code>div</code> elements has a closing tag.');"
+      ],
       "type": "waypoint",
       "challengeType": 0,
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
-      "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "Crea casillas de selección con estilo adaptativo",
       "descriptionEs": [
         "¡Puedes utilizar las clases <code>col-xs-*</code> de Bootstrap en elementos <code>form</code> también! De esta forma, nuestros botones de opción estarán igualmente distribuidos en la página, sin importar qué tan ancha es la resolución de la pantalla.",
         "Anida todas las casillas de selección en un elemento <code>&#60;div class=\"row\"&#62;</code>. Luego, anida cada una de ellas en un elemento <code>&#60;div class=\"col-xs-4\"&#62;</code>."
-        ],
-      "namePt": "",
-      "descriptionPt": []
+      ]
     },
     {
       "id": "bad87fee1348bd9aed908845",
@@ -1498,12 +1370,6 @@
       "description": [
         "You can add the <code>fa-paper-plane</code> Font Awesome icon by adding <code>&#60;i class=\"fa fa-paper-plane\"&#62;&#60;/i&#62;</code> within your submit <code>button</code> element.",
         "Give your form's text input field a class of <code>form-control</code>. Give your form's submit button the classes <code>btn btn-primary</code>. Also give this button the Font Awesome icon of <code>fa-paper-plane</code>."
-      ],
-      "tests": [
-        "assert($(\"button[type=\\\"submit\\\"]\").hasClass(\"btn btn-primary\"), 'message: Give the submit button in your form the classes <code>btn btn-primary</code>.');",
-        "assert($(\"button[type=\\\"submit\\\"]:has(i.fa.fa-paper-plane)\").length > 0, 'message: Add a <code>&#60;i class=\"fa fa-paper-plane\"&#62;&#60;/i&#62;</code> within your submit <code>button</code> element.');",
-        "assert($(\"input[type=\\\"text\\\"]\").hasClass(\"form-control\"), 'message: Give the text <code>input</code> in your form the class <code>form-control</code>.');",
-        "assert(code.match(/<\\/i>/g) && code.match(/<\\/i/g).length > 3, 'message: Make sure each of your <code>i</code> elements has a closing tag.');"
       ],
       "challengeSeed": [
         "<link href=\"http://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
@@ -1579,21 +1445,19 @@
         "  </form>",
         "</div>"
       ],
+      "tests": [
+        "assert($(\"button[type=\\\"submit\\\"]\").hasClass(\"btn btn-primary\"), 'message: Give the submit button in your form the classes <code>btn btn-primary</code>.');",
+        "assert($(\"button[type=\\\"submit\\\"]:has(i.fa.fa-paper-plane)\").length > 0, 'message: Add a <code>&#60;i class=\"fa fa-paper-plane\"&#62;&#60;/i&#62;</code> within your submit <code>button</code> element.');",
+        "assert($(\"input[type=\\\"text\\\"]\").hasClass(\"form-control\"), 'message: Give the text <code>input</code> in your form the class <code>form-control</code>.');",
+        "assert(code.match(/<\\/i>/g) && code.match(/<\\/i/g).length > 3, 'message: Make sure each of your <code>i</code> elements has a closing tag.');"
+      ],
       "type": "waypoint",
       "challengeType": 0,
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
-      "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "Estiliza cajas de texto como controles de formulario",
       "descriptionEs": [
         "Puedes agregar el icono <code>fa-paper-plane</code> de Font Awesome incluyendo <code>&#60;i class=\"fa fa-paper-plane\"&#62;&#60;/i&#62;</code> dentro de tu elemento <code>button</code> de envío.",
         "Dale a la entrada de texto de tu formulario la clase <code>form-control</code>. Dale al botón de envío de tu formulario las clases <code>btn btn-primary</code>. También, incluye en ese botón el icono <code>fa-paper-plane</code> de Font Awesome."
-        ],
-      "namePt": "",
-      "descriptionPt": []
+      ]
     },
     {
       "id": "bad87fee1348bd9aec908845",
@@ -1602,12 +1466,6 @@
         "Now let's get your form <code>input</code> and your submission <code>button</code> on the same line. We'll do this the same way we have previously: by using a <code>div</code> element with the class <code>row</code>, and other <code>div</code> elements within it using the <code>col-xs-*</code> class.",
         "Nest both your form's text <code>input</code> and submit <code>button</code> within a <code>div</code> with the class <code>row</code>. Nest your form's text <code>input</code> within a div with the class of <code>col-xs-7</code>. Nest your form's submit <code>button</code> in a <code>div</code> with the class <code>col-xs-5</code>.",
         "This is the last challenge we'll do for our Cat Photo App for now. We hope you've enjoyed learning Font Awesome, Bootstrap, and responsive design!"
-      ],
-      "tests": [
-        "assert($(\"div.row:has(input[type=\\\"text\\\"])\").length > 0 &&  $(\"div.row:has(button[type=\\\"submit\\\"])\").length > 0, 'message: Nest your form submission button and text input in a div with class <code>row</code>.');",
-        "assert($(\"div.col-xs-7:has(input[type=\\\"text\\\"])\").length > 0, 'message: Nest your form text input in a div with the class <code>col-xs-7</code>.');",
-        "assert($(\"div.col-xs-5:has(button[type=\\\"submit\\\"])\").length > 0, 'message: Nest your form submission button in a div with the class <code>col-xs-5</code>.');",
-        "assert(code.match(/<\\/div>/g) && code.match(/<div/g) && code.match(/<\\/div>/g).length === code.match(/<div/g).length, 'message: Make sure each of your <code>div</code> elements has a closing tag.');"
       ],
       "challengeSeed": [
         "<link href=\"http://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
@@ -1683,22 +1541,20 @@
         "  </form>",
         "</div>"
       ],
+      "tests": [
+        "assert($(\"div.row:has(input[type=\\\"text\\\"])\").length > 0 &&  $(\"div.row:has(button[type=\\\"submit\\\"])\").length > 0, 'message: Nest your form submission button and text input in a div with class <code>row</code>.');",
+        "assert($(\"div.col-xs-7:has(input[type=\\\"text\\\"])\").length > 0, 'message: Nest your form text input in a div with the class <code>col-xs-7</code>.');",
+        "assert($(\"div.col-xs-5:has(button[type=\\\"submit\\\"])\").length > 0, 'message: Nest your form submission button in a div with the class <code>col-xs-5</code>.');",
+        "assert(code.match(/<\\/div>/g) && code.match(/<div/g) && code.match(/<\\/div>/g).length === code.match(/<div/g).length, 'message: Make sure each of your <code>div</code> elements has a closing tag.');"
+      ],
       "type": "waypoint",
       "challengeType": 0,
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
-      "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "Alínea elementos de formulario de forma adaptativa con Bootstrap",
       "descriptionEs": [
         "Ahora vamos a poner el elemento <code>input</code> y el elemento <code>button</code> que dice submit de tu formulario en la misma línea. Lo haremos de la misma forma que lo hicimos anteriormente: usando un elemento <code>div</code> con la clase <code>row</code>, y otros elementos <code>div</code> dentro de ese, usando la clase <code>col-xs-*</code>.",
         "Anida ambos, el elemento <code>input</code> y el elemento <code>button</code> que dice submit de tu formulario dentro de un <code>div</code> con la clase <code>row</code>. Anida el elemento <code>input</code> de tu formulario dentro de un div con cla clase <code>col-xs-7</code>. Anida el elemento <code>button</code> que dice submit de tu formulario en un elemento <code>div</code> con la clase <code>col-xs-5</code>.",
         "¡Este es el último desafío que haremos con nuestra aplicación de fotos de gato por ahora. Esperamos que hayas disfrutado aprender acerca de Font Awesome, Bootstrap y diseño adaptativo!"
-        ],
-      "namePt": "",
-      "descriptionPt": []
+      ]
     },
     {
       "id": "bad87fee1348bd9aec908846",
@@ -1709,6 +1565,11 @@
         "To start with, create an <code>h3</code> element, with the text <code>jQuery Playground</code>.",
         "Color your <code>h3</code> element with the <code>text-primary</code> Bootstrap class, and center it with the <code>text-center</code> Bootstrap class."
       ],
+      "challengeSeed": [
+        "",
+        "",
+        ""
+      ],
       "tests": [
         "assert($(\"h3\") && $(\"h3\").length > 0, 'message: Add a <code>h3</code> element to your page.');",
         "assert(code.match(/<\\/h3>/g) && code.match(/<h3/g) && code.match(/<\\/h3>/g).length === code.match(/<h3/g).length, 'message: Make sure your <code>h3</code> element has a closing tag.');",
@@ -1716,28 +1577,15 @@
         "assert($(\"h3\").hasClass(\"text-center\"), 'message: Your <code>h3</code> element should be centered by applying the class <code>text-center</code>');",
         "assert.isTrue((/jquery(\\s)+playground/gi).test($(\"h3\").text()), 'message: Your <code>h3</code> element should have the text <code>jQuery Playground</code>.');"
       ],
-      "challengeSeed": [
-        "",
-        "",
-        ""
-      ],
       "type": "waypoint",
       "challengeType": 0,
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
-      "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "Crea un encabezado con Bootstrap",
       "descriptionEs": [
         "Ahora vamos a comenzar un proyecto desde cero para practicar nuestras habilidades con HTML, CSS y Bootstrap.",
         "Crearemos un área de juego con jQuery, el cual utilizaremos en nuestros desafíos con jQuery.",
         "Para empezar, crea un elemento <code>h3</code>, con el texto <code>jQuery Playground</code>.",
         "Ponle color a tu elemento <code>h3</code> con la clase <code>text-primary</code> de Bootstrap, y céntrala con la clase <code>text-center</code> de Bootstrap."
-        ],
-      "namePt": "",
-      "descriptionPt": []
+      ]
     },
     {
       "id": "bad87fee1348bd9aec908746",
@@ -1746,31 +1594,23 @@
         "Now let's make sure all the content on your page is mobile-responsive.",
         "Let's nest your <code>h3</code> element within a <code>div</code> element with the class <code>container-fluid</code>."
       ],
-      "tests": [
-        "assert($(\"div\").hasClass(\"container-fluid\"), 'message: Your <code>div</code> element should have the class <code>container-fluid</code>.');",
-        "assert(code.match(/<\\/div>/g) && code.match(/<div/g) && code.match(/<\\/div>/g).length === code.match(/<div/g).length, 'message: Make sure each of your <code>div</code> elements has a closing tag.');",
-	"assert($(\"div\").children(\"h3\").length >0, 'message: Nest your <code>h3</code> element inside a <code>div</code> element.');"
-      ],
       "challengeSeed": [
         "<h3 class=\"text-primary text-center\">jQuery Playground</h3>",
         "",
         ""
       ],
+      "tests": [
+        "assert($(\"div\").hasClass(\"container-fluid\"), 'message: Your <code>div</code> element should have the class <code>container-fluid</code>.');",
+        "assert(code.match(/<\\/div>/g) && code.match(/<div/g) && code.match(/<\\/div>/g).length === code.match(/<div/g).length, 'message: Make sure each of your <code>div</code> elements has a closing tag.');",
+        "assert($(\"div\").children(\"h3\").length >0, 'message: Nest your <code>h3</code> element inside a <code>div</code> element.');"
+      ],
       "type": "waypoint",
       "challengeType": 0,
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
-      "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "Aloja la página dentro de un elemento Div contenedor fluido de Bootstrap",
       "descriptionEs": [
         "Ahora asegurémonos de que todo el contenido en nuestra página pueda adaptarse a dispositivos móviles.",
         "Anida tu elemento <code>h3</code> dentro de un elemento <code>div</code> con la clase <code>container-fluid</code>."
-        ],
-      "namePt": "",
-      "descriptionPt": []
+      ]
     },
     {
       "id": "bad87fee1348bd9bec908846",
@@ -1779,12 +1619,6 @@
         "Now we'll create a Bootstrap row for our inline elements.",
         "Create a <code>div</code> element below the <code>h3</code> tag, with a class of <code>row</code>."
       ],
-      "tests": [
-        "assert($(\"div\").length > 1, 'message: Add a <code>div</code> element below your <code>h3</code> element.');",
-        "assert($(\"div\").hasClass(\"row\"), 'message: Your <code>div</code> element should have the class <code>row</code>');",
-        "assert($(\"div.container-fluid div.row\").length > 0, 'message: Your <code>row div</code> should be nested inside the <code>container-fluid div</code>');",
-        "assert(code.match(/<\\/div>/g) && code.match(/<div/g) && code.match(/<\\/div>/g).length === code.match(/<div/g).length, 'message: Make sure your <code>div</code> element has a closing tag.');"
-      ],
       "challengeSeed": [
         "<div class=\"container-fluid\">",
         "  <h3 class=\"text-primary text-center\">jQuery Playground</h3>",
@@ -1792,21 +1626,19 @@
         "</div>",
         ""
       ],
+      "tests": [
+        "assert($(\"div\").length > 1, 'message: Add a <code>div</code> element below your <code>h3</code> element.');",
+        "assert($(\"div\").hasClass(\"row\"), 'message: Your <code>div</code> element should have the class <code>row</code>');",
+        "assert($(\"div.container-fluid div.row\").length > 0, 'message: Your <code>row div</code> should be nested inside the <code>container-fluid div</code>');",
+        "assert(code.match(/<\\/div>/g) && code.match(/<div/g) && code.match(/<\\/div>/g).length === code.match(/<div/g).length, 'message: Make sure your <code>div</code> element has a closing tag.');"
+      ],
       "type": "waypoint",
       "challengeType": 0,
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
-      "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "Crea una fila en Bootstrap",
       "descriptionEs": [
         "Ahora crearemos una fila de Bootstrap con nuestros elementos en línea.",
         "Crea un elemento <code>div</code> debajo de la etiqueta <code>h3</code>, con la clase <code>row</code>."
-        ],
-      "namePt": "",
-      "descriptionPt": []
+      ]
     },
     {
       "id": "bad87fee1348bd9aec908847",
@@ -1815,10 +1647,6 @@
         "Now that we have a Bootstrap Row, let's split it into two columns to house our elements.",
         "Create two <code>div</code> elements within your row, both with the class <code>col-xs-6</code>."
       ],
-      "tests": [
-        "assert($(\"div.row > div.col-xs-6\").length > 1, 'message: Nest two <code>div class=\"col-xs-6\"</code> elements within your <code>div class=\"row\"</code> element.');",
-        "assert(code.match(/<\\/div>/g) && code.match(/<div/g) && code.match(/<\\/div>/g).length === code.match(/<div/g).length, 'message: Make sure all your <code>div</code> elements have closing tags.');"
-      ],
       "challengeSeed": [
         "<div class=\"container-fluid\">",
         "  <h3 class=\"text-primary text-center\">jQuery Playground</h3>",
@@ -1828,21 +1656,17 @@
         "  </div>",
         "</div>"
       ],
+      "tests": [
+        "assert($(\"div.row > div.col-xs-6\").length > 1, 'message: Nest two <code>div class=\"col-xs-6\"</code> elements within your <code>div class=\"row\"</code> element.');",
+        "assert(code.match(/<\\/div>/g) && code.match(/<div/g) && code.match(/<\\/div>/g).length === code.match(/<div/g).length, 'message: Make sure all your <code>div</code> elements have closing tags.');"
+      ],
       "type": "waypoint",
       "challengeType": 0,
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
-      "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "Parte tu fila en Bootstrap",
       "descriptionEs": [
         "Ahora que tenemos una fila en Bootstrap, vamos a partirla en dos columnas para alojar nuestros elementos.",
         "Crea dos elementos <code>div</code> dentro de tu fila, ambos con la clase <code>col-xs-6</code>."
-        ],
-      "namePt": "",
-      "descriptionPt": []
+      ]
     },
     {
       "id": "bad87fee1348bd9aec908848",
@@ -1851,11 +1675,6 @@
         "Bootstrap has a class called <code>well</code> that can create a visual sense of depth for your columns.",
         "Nest one <code>div</code> element with the class <code>well</code> within each of your <code>col-xs-6</code> <code>div</code> elements."
       ],
-      "tests": [
-        "assert($(\"div.col-xs-6\").not(\":has(>div.well)\").length < 1, 'message: Add a <code>div</code> element with the class <code>well</code> inside each of your <code>div</code> elements with the class <code>\"col-xs-6\"</code>');",
-        "assert($(\"div.row > div.col-xs-6\").length > 1, 'message: Nest both of your <code>div</code> elements with the class <code>\"col-xs-6\"</code> within your <code>div</code> element with the class <code>\"row\"</code>.');",
-        "assert(code.match(/<\\/div>/g) && code.match(/<div/g) && code.match(/<\\/div>/g).length === code.match(/<div/g).length, 'message: Make sure all your <code>div</code> elements have closing tags.');"
-      ],
       "challengeSeed": [
         "<div class=\"container-fluid\">",
         "  <h3 class=\"text-primary text-center\">jQuery Playground</h3>",
@@ -1869,21 +1688,18 @@
         "  </div>",
         "</div>"
       ],
+      "tests": [
+        "assert($(\"div.col-xs-6\").not(\":has(>div.well)\").length < 1, 'message: Add a <code>div</code> element with the class <code>well</code> inside each of your <code>div</code> elements with the class <code>\"col-xs-6\"</code>');",
+        "assert($(\"div.row > div.col-xs-6\").length > 1, 'message: Nest both of your <code>div</code> elements with the class <code>\"col-xs-6\"</code> within your <code>div</code> element with the class <code>\"row\"</code>.');",
+        "assert(code.match(/<\\/div>/g) && code.match(/<div/g) && code.match(/<\\/div>/g).length === code.match(/<div/g).length, 'message: Make sure all your <code>div</code> elements have closing tags.');"
+      ],
       "type": "waypoint",
       "challengeType": 0,
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
-      "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "Crea pozos en Bootstrap",
       "descriptionEs": [
         "Bootstrap tiene una clase llamada <code>well</code> que crea una sensación visual de profundidad para tus columnas.",
         "Anida un elemento <code>div</code> con la clase <code>well</code> dentro de cada uno de tus elementos <code>div</code> que tienen la clase <code>col-xs-6</code>."
-        ],
-      "namePt": "",
-      "descriptionPt": []
+      ]
     },
     {
       "id": "bad87fee1348bd9aec908849",
@@ -1892,11 +1708,6 @@
         "Now we're several <code>div</code> elements deep on each column of our row. This is as deep as we'll need to go. Now we can add our <code>button</code> elements.",
         "Nest three <code>button</code> elements within each of your <code>well</code> <code>div</code> elements."
       ],
-      "tests": [
-        "assert($(\"div.well\").children(\"button\").length > 5, 'message: Nest three <code>button</code> elements within each of your <code>div</code> elements with class <code>well</code>.');",
-        "assert($(\"button\") && $(\"button\").length > 5, 'message: You should have a total of 6 <code>button</code> elements.');",
-        "assert(code.match(/<\\/button>/g) && code.match(/<button/g) && code.match(/<\\/button>/g).length === code.match(/<button/g).length, 'message: Make sure all your <code>button</code> elements have closing tags.');"
-      ],
       "challengeSeed": [
         "<div class=\"container-fluid\">",
         "  <h3 class=\"text-primary text-center\">jQuery Playground</h3>",
@@ -1918,21 +1729,18 @@
         "  </div>",
         "</div>"
       ],
+      "tests": [
+        "assert($(\"div.well\").children(\"button\").length > 5, 'message: Nest three <code>button</code> elements within each of your <code>div</code> elements with class <code>well</code>.');",
+        "assert($(\"button\") && $(\"button\").length > 5, 'message: You should have a total of 6 <code>button</code> elements.');",
+        "assert(code.match(/<\\/button>/g) && code.match(/<button/g) && code.match(/<\\/button>/g).length === code.match(/<button/g).length, 'message: Make sure all your <code>button</code> elements have closing tags.');"
+      ],
       "type": "waypoint",
       "challengeType": 0,
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
-      "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "Agrega elementos dentro de los pozos de Bootstrap",
       "descriptionEs": [
         "Ahora estamos a una profundidad de varios elementos <code>div</code> dentro de cada columna de nuestra fila. No iremos más profundo que esto. Ahora podemos agregar nuestros elementos <code>button</code>.",
         "Anida tres elementos <code>button</code> dentro de cada uno de tus elementos <code>div</code> que tienen la clase <code>well</code>."
-        ],
-      "namePt": "",
-      "descriptionPt": []
+      ]
     },
     {
       "id": "bad87fee1348bd9aec908850",
@@ -1941,10 +1749,6 @@
         "Bootstrap has another button class called <code>btn-default</code>.",
         "Apply both the <code>btn</code> and <code>btn-default</code> classes to each of your <code>button</code> elements."
       ],
-      "tests": [
-        "assert($(\".btn\").length > 5, 'message: Apply the <code>btn</code> class to each of your <code>button</code> elements.');",
-        "assert($(\".btn-default\").length > 5, 'message: Apply the <code>btn-default</code> class to each of your <code>button</code> elements.');"
-      ],
       "challengeSeed": [
         "<div class=\"container-fluid\">",
         "  <h3 class=\"text-primary text-center\">jQuery Playground</h3>",
@@ -1966,21 +1770,17 @@
         "  </div>",
         "</div>"
       ],
+      "tests": [
+        "assert($(\".btn\").length > 5, 'message: Apply the <code>btn</code> class to each of your <code>button</code> elements.');",
+        "assert($(\".btn-default\").length > 5, 'message: Apply the <code>btn-default</code> class to each of your <code>button</code> elements.');"
+      ],
       "type": "waypoint",
       "challengeType": 0,
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
-      "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "Aplica el estilo de botón predeterminado de Bootstrap",
       "descriptionEs": [
         "Bootstrap tiene otra clase de botón llamada <code>btn-default</code>.",
         "Aplica las clases <code>btn</code> y <code>btn-default</code> a cada uno de tus elementos <code>button</code>."
-        ],
-      "namePt": "",
-      "descriptionPt": []
+      ]
     },
     {
       "id": "bad87fee1348bd9aec908852",
@@ -1989,9 +1789,6 @@
         "Not every class needs to have corresponding CSS. Sometimes we create classes just for the purpose of selecting these elements more easily using jQuery.",
         "Give each of your <code>button</code> elements the class <code>target</code>."
       ],
-      "tests": [
-        "assert($(\".target\").length > 5, 'message: Apply the <code>target</code> class to each of your <code>button</code> elements.');"
-      ],
       "challengeSeed": [
         "<div class=\"container-fluid\">",
         "  <h3 class=\"text-primary text-center\">jQuery Playground</h3>",
@@ -2013,21 +1810,16 @@
         "  </div>",
         "</div>"
       ],
+      "tests": [
+        "assert($(\".target\").length > 5, 'message: Apply the <code>target</code> class to each of your <code>button</code> elements.');"
+      ],
       "type": "waypoint",
       "challengeType": 0,
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
-      "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "Crea una clase para usar con selectores de jQuery",
       "descriptionEs": [
         "No todas las clases necesitan tener un código CSS correspondiente. A veces creamos clases sólo con el propósito de seleccionar esos elementos más fácilmente usando jQuery.",
         "Dale a cada uno de tus elementos <code>button</code> la clase <code>target</code>."
-        ],
-      "namePt": "",
-      "descriptionPt": []
+      ]
     },
     {
       "id": "bad87fee1348bd9aec908853",
@@ -2037,12 +1829,8 @@
         "Each id must be unique to a specific element and used only once per page.",
         "Let's give a unique id to each of our <code>div</code> elements of class <code>well</code>.",
         "Remember that you can give an element an id like this:",
-         "<code>&#60;div class=\"well\" id=\"center-well\"&#62;</code>",
+        "<code>&#60;div class=\"well\" id=\"center-well\"&#62;</code>",
         "Give the well on the left the id of <code>left-well</code>. Give the well on the right the <code>id</code> of <code>right-well</code>."
-      ],
-      "tests": [
-        "assert($(\".col-xs-6\").children(\"#left-well\") && $(\".col-xs-6\").children(\"#left-well\").length > 0, 'message: Give your left <code>well</code> the id of <code>left-well</code>.');",
-        "assert($(\".col-xs-6\").children(\"#right-well\") && $(\".col-xs-6\").children(\"#right-well\").length > 0, 'message: Give your right <code>well</code> the id of <code>right-well</code>.');"
       ],
       "challengeSeed": [
         "<div class=\"container-fluid\">",
@@ -2065,25 +1853,21 @@
         "  </div>",
         "</div>"
       ],
+      "tests": [
+        "assert($(\".col-xs-6\").children(\"#left-well\") && $(\".col-xs-6\").children(\"#left-well\").length > 0, 'message: Give your left <code>well</code> the id of <code>left-well</code>.');",
+        "assert($(\".col-xs-6\").children(\"#right-well\") && $(\".col-xs-6\").children(\"#right-well\").length > 0, 'message: Give your right <code>well</code> the id of <code>right-well</code>.');"
+      ],
       "type": "waypoint",
       "challengeType": 0,
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
-      "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "Asígnales atributos de identificación (id) a tus elementos de Bootstrap",
       "descriptionEs": [
         "Recuerda que, además de los atributos de clase, también puedes darle a cada uno de tus elementos un atributo <code>id</code>.",
         "Cada id debe ser único para un elemento específico y ser usado solamente una vez por página.",
         "Vamos a darle un id único a cada uno de nuestros elementos <code>div</code> que tienen la clase <code>well</code>.",
         "Recuerda que puedes darle a un elemento un id como el siguiente:",
-         "<code>&#60;div class=\"well\" id=\"center-well\"&#62;</code>",
+        "<code>&#60;div class=\"well\" id=\"center-well\"&#62;</code>",
         "Dale al pozo de la izquireda el id <code>left-well</code>. Al pozo de la derecha, dale un <code>id</code> de <code>right-well</code>."
-        ],
-      "namePt": "",
-      "descriptionPt": []
+      ]
     },
     {
       "id": "bad87fee1348bd9aec908854",
@@ -2092,12 +1876,6 @@
         "For the sake of clarity, let's label both of our wells with their ids.",
         "Above your left-well, inside its <code>col-xs-6</code> <code>div</code> element, add a <code>h4</code> element with the text <code>#left-well</code>.",
         "Above your right-well, inside its <code>col-xs-6</code> <code>div</code> element, add a <code>h4</code> element with the text <code>#right-well</code>."
-      ],
-      "tests": [
-        "assert($(\".col-xs-6\").children(\"h4\") && $(\".col-xs-6\").children(\"h4\").length > 1, 'message: Add an <code>h4</code> element to each of your <code>&#60;div class=\"col-xs-6\"&#62;</code> elements.');",
-        "assert(new RegExp(\"#left-well\",\"gi\").test($(\"h4\").text()), 'message: One <code>h4</code> element should have the text <code>#left-well</code>.');",
-        "assert(new RegExp(\"#right-well\",\"gi\").test($(\"h4\").text()), 'message: One <code>h4</code> element should have the text <code>#right-well</code>.');",
-        "assert(code.match(/<\\/h4>/g) && code.match(/<h4/g) && code.match(/<\\/h4>/g).length === code.match(/<h4/g).length, 'message: Make sure all your <code>h4</code> elements have closing tags.');"
       ],
       "challengeSeed": [
         "<div class=\"container-fluid\">",
@@ -2122,22 +1900,20 @@
         "  </div>",
         "</div>"
       ],
+      "tests": [
+        "assert($(\".col-xs-6\").children(\"h4\") && $(\".col-xs-6\").children(\"h4\").length > 1, 'message: Add an <code>h4</code> element to each of your <code>&#60;div class=\"col-xs-6\"&#62;</code> elements.');",
+        "assert(new RegExp(\"#left-well\",\"gi\").test($(\"h4\").text()), 'message: One <code>h4</code> element should have the text <code>#left-well</code>.');",
+        "assert(new RegExp(\"#right-well\",\"gi\").test($(\"h4\").text()), 'message: One <code>h4</code> element should have the text <code>#right-well</code>.');",
+        "assert(code.match(/<\\/h4>/g) && code.match(/<h4/g) && code.match(/<\\/h4>/g).length === code.match(/<h4/g).length, 'message: Make sure all your <code>h4</code> elements have closing tags.');"
+      ],
       "type": "waypoint",
       "challengeType": 0,
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
-      "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "Etiqueta tus pozos de Bootstrap",
       "descriptionEs": [
         "Para que todo esté más claro, vamos a ponerle a todos nuestros pozos una etiqueta que sea igual a su id.",
         "Sobre tu pozo de la izquierda, dentro de su elemento <code>div</code> que tiene la clase <code>col-xs-6</code>, agrega un elemento <code>h4</code> con el texto <code>#left-well</code>.",
         "Ahora, sobre tu pozo de la derecha, dentro de su elemento <code>div</code> que tiene la clase <code>col-xs-6</code>, agrega un elemento <code>h4</code> con el texto <code>#right-well</code>."
-        ],
-      "namePt": "",
-      "descriptionPt": []
+      ]
     },
     {
       "id": "bad87fee1348bd9aec908855",
@@ -2146,14 +1922,6 @@
         "We will also want to be able to use jQuery to target each button by its unique id.",
         "Give each of your buttons a unique id, starting with <code>target1</code> and ending with <code>target6</code>.",
         "Make sure that <code>target1</code> to <code>target3</code> are in <code>#left-well</code>, and <code>target4</code> to <code>target6</code> are in <code>#right-well</code>."
-      ],
-      "tests": [
-        "assert($(\"#left-well\").children(\"#target1\") && $(\"#left-well\").children(\"#target1\").length > 0, 'message: One <code>button</code> element should have the id <code>target1</code>.');",
-        "assert($(\"#left-well\").children(\"#target2\") && $(\"#left-well\").children(\"#target2\").length > 0, 'message: One <code>button</code> element should have the id <code>target2</code>.');",
-        "assert($(\"#left-well\").children(\"#target3\") && $(\"#left-well\").children(\"#target3\").length > 0, 'message: One <code>button</code> element should have the id <code>target3</code>.');",
-        "assert($(\"#right-well\").children(\"#target4\") && $(\"#right-well\").children(\"#target4\").length > 0, 'message: One <code>button</code> element should have the id <code>target4</code>.');",
-        "assert($(\"#right-well\").children(\"#target5\") && $(\"#right-well\").children(\"#target5\").length > 0, 'message: One <code>button</code> element should have the id <code>target5</code>.');",
-        "assert($(\"#right-well\").children(\"#target6\") && $(\"#right-well\").children(\"#target6\").length > 0, 'message: One <code>button</code> element should have the id <code>target6</code>.');"
       ],
       "challengeSeed": [
         "<div class=\"container-fluid\">",
@@ -2178,21 +1946,21 @@
         "  </div>",
         "</div>"
       ],
+      "tests": [
+        "assert($(\"#left-well\").children(\"#target1\") && $(\"#left-well\").children(\"#target1\").length > 0, 'message: One <code>button</code> element should have the id <code>target1</code>.');",
+        "assert($(\"#left-well\").children(\"#target2\") && $(\"#left-well\").children(\"#target2\").length > 0, 'message: One <code>button</code> element should have the id <code>target2</code>.');",
+        "assert($(\"#left-well\").children(\"#target3\") && $(\"#left-well\").children(\"#target3\").length > 0, 'message: One <code>button</code> element should have the id <code>target3</code>.');",
+        "assert($(\"#right-well\").children(\"#target4\") && $(\"#right-well\").children(\"#target4\").length > 0, 'message: One <code>button</code> element should have the id <code>target4</code>.');",
+        "assert($(\"#right-well\").children(\"#target5\") && $(\"#right-well\").children(\"#target5\").length > 0, 'message: One <code>button</code> element should have the id <code>target5</code>.');",
+        "assert($(\"#right-well\").children(\"#target6\") && $(\"#right-well\").children(\"#target6\").length > 0, 'message: One <code>button</code> element should have the id <code>target6</code>.');"
+      ],
       "type": "waypoint",
       "challengeType": 0,
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
-      "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "Dale a cada elemento un ID único",
       "descriptionEs": [
         "También quisiéramos referirnos a cada botón por su id utilizando jQuery.",
         "Dale a cada uno de tus botones un id único, comenzando con <code>target1</code> y terminando con <code>target6</code>."
-        ],
-      "namePt": "",
-      "descriptionPt": []
+      ]
     },
     {
       "id": "bad87fee1348bd9aec908856",
@@ -2200,14 +1968,6 @@
       "description": [
         "Just like we labeled our wells, we want to label our buttons.",
         "Give each of your <code>button</code> elements text that corresponds to its <code>id</code>'s selector."
-      ],
-      "tests": [
-        "assert(new RegExp(\"#target1\",\"gi\").test($(\"#target1\").text()), 'message: Give your <code>button</code> element with the id <code>target1</code> the text <code>#target1</code>.');",
-        "assert(new RegExp(\"#target2\",\"gi\").test($(\"#target2\").text()), 'message: Give your <code>button</code> element with the id <code>target2</code> the text <code>#target2</code>.');",
-        "assert(new RegExp(\"#target3\",\"gi\").test($(\"#target3\").text()), 'message: Give your <code>button</code> element with the id <code>target3</code> the text <code>#target3</code>.');",
-        "assert(new RegExp(\"#target4\",\"gi\").test($(\"#target4\").text()), 'message: Give your <code>button</code> element with the id <code>target4</code> the text <code>#target4</code>.');",
-        "assert(new RegExp(\"#target5\",\"gi\").test($(\"#target5\").text()), 'message: Give your <code>button</code> element with the id <code>target5</code> the text <code>#target5</code>.');",
-        "assert(new RegExp(\"#target6\",\"gi\").test($(\"#target6\").text()), 'message: Give your <code>button</code> element with the id <code>target6</code> the text <code>#target6</code>.');"
       ],
       "challengeSeed": [
         "<div class=\"container-fluid\">",
@@ -2232,21 +1992,21 @@
         "  </div>",
         "</div>"
       ],
+      "tests": [
+        "assert(new RegExp(\"#target1\",\"gi\").test($(\"#target1\").text()), 'message: Give your <code>button</code> element with the id <code>target1</code> the text <code>#target1</code>.');",
+        "assert(new RegExp(\"#target2\",\"gi\").test($(\"#target2\").text()), 'message: Give your <code>button</code> element with the id <code>target2</code> the text <code>#target2</code>.');",
+        "assert(new RegExp(\"#target3\",\"gi\").test($(\"#target3\").text()), 'message: Give your <code>button</code> element with the id <code>target3</code> the text <code>#target3</code>.');",
+        "assert(new RegExp(\"#target4\",\"gi\").test($(\"#target4\").text()), 'message: Give your <code>button</code> element with the id <code>target4</code> the text <code>#target4</code>.');",
+        "assert(new RegExp(\"#target5\",\"gi\").test($(\"#target5\").text()), 'message: Give your <code>button</code> element with the id <code>target5</code> the text <code>#target5</code>.');",
+        "assert(new RegExp(\"#target6\",\"gi\").test($(\"#target6\").text()), 'message: Give your <code>button</code> element with the id <code>target6</code> the text <code>#target6</code>.');"
+      ],
       "type": "waypoint",
       "challengeType": 0,
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
-      "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "Etiqueta los botones con Bootstrap",
       "descriptionEs": [
         "De la misma forma en que etiquetamos nuestros pozos, ahora vamos a etiquetar nuestros botones.",
         "Dale a cada uno de tus elementos <code>button</code> un texto que corresponda con su <code>id</code>."
-        ],
-      "namePt": "",
-      "descriptionPt": []
+      ]
     },
     {
       "id": "bad87fee1348bd9aec908857",
@@ -2256,12 +2016,6 @@
         "Let's make sure that everyone knows they shouldn't actually modify any of this code directly.",
         "Remember that you can start a comment with <code>&#60;!--</code> and end a comment with <code>--&#62;</code>",
         "Add a comment at the top of your HTML that says <code>Only change code above this line.</code>"
-      ],
-      "tests": [
-        "assert(code.match(/^\\s*<!--/), 'message: Start a comment with <code>&#60;!--</code> at the top of your HTML.');",
-        "assert(code.match(/<!--(?!(>|->|.*-->.*this line)).*this line.*-->/gi), 'message: Your comment should have the text <code>Only change code above this line</code>.');",
-        "assert(code.match(/-->.*\\n+.+/g), 'message: Be sure to close your comment with <code>--&#62;</code>.');",
-        "assert(code.match(/<!--/g).length === code.match(/-->/g).length, 'message: You should have the same number of comment openers and closers.');"
       ],
       "challengeSeed": [
         "<div class=\"container-fluid\">",
@@ -2286,23 +2040,21 @@
         "  </div>",
         "</div>"
       ],
+      "tests": [
+        "assert(code.match(/^\\s*<!--/), 'message: Start a comment with <code>&#60;!--</code> at the top of your HTML.');",
+        "assert(code.match(/<!--(?!(>|->|.*-->.*this line)).*this line.*-->/gi), 'message: Your comment should have the text <code>Only change code above this line</code>.');",
+        "assert(code.match(/-->.*\\n+.+/g), 'message: Be sure to close your comment with <code>--&#62;</code>.');",
+        "assert(code.match(/<!--/g).length === code.match(/-->/g).length, 'message: You should have the same number of comment openers and closers.');"
+      ],
       "type": "waypoint",
       "challengeType": 0,
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
-      "nameRu": "",
-      "descriptionRu": [],
       "nameEs": "Usa elementos para explicar tu código",
       "descriptionEs": [
         "Cuando comencemos a usar jQuery, modificarmemos los elementos HTML sin necesidad de hacer cambios reales en el código HTML.",
         "Vamos a asegurar que cualquier persona sepa que no debe modificar nada en este código directamente.",
         "Recuerda que puedes iniciar un comentario usando <code>&#60;!--</code> y terminarlo usando <code>--&#62;</code>",
         "Agrega un comentario al inicio de tu código HTML que diga <code>Only change code above this line.</code>"
-        ],
-      "namePt": "",
-      "descriptionPt": []
+      ]
     }
   ]
 }
