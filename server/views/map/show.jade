@@ -1,12 +1,13 @@
 extends ../layout-wide
 block content
-        .text-center
+        .text-center.map-fixed-header
             p Required challenges are marked with a *
             .row
                 .col-xs-10.col-xs-offset-1.col-sm-6.col-sm-offset-3.col-md-4.col-md-offset-4
                     .btn.btn-primary.btn-block.active#showAll Collapse all challenges
             hr
         #accordion
+          .button-spacer
           for superBlock, index in superBlocks
               h2
                 a(data-toggle='collapse', data-parent='#accordion', href='#collapse'+superBlock.name.split(' ').join('-'))
