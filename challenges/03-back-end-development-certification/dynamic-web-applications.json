@@ -8,7 +8,7 @@
       "id": "bd7158d8c443eddfaeb5bdef",
       "title": "Build a Voting App",
       "description": [
-        "<strong>Objective:</strong> Build a full stack JavaScript app that is functionally similar to this: <a href='http://votingapp.herokuapp.com/' target='_blank'>http://votingapp.herokuapp.com/</a> and deploy it to Heroku.",
+        "<strong>Objective:</strong> Build a full stack JavaScript app that is functionally similar to this: <a href='https://fcc-voting-arthow4n.herokuapp.com/' target='_blank'>https://fcc-voting-arthow4n.herokuapp.com/</a> and deploy it to Heroku.",
         "Note that for each project, you should create a new GitHub repository and a new Heroku project. If you can't remember how to do this, revisit <a href='/challenges/get-set-for-our-back-end-development-projects'>http://freecodecamp.com/challenges/get-set-for-our-back-end-development-projects</a>.",
         "Here are the specific user stories you should implement for this project:",
         "<strong>User Story:</strong> As an authenticated user, I can keep my polls and come back later to access them.",
@@ -30,7 +30,7 @@
       "challengeType": 4,
       "nameEs": "Crea una aplicación de votaciones",
       "descriptionEs": [
-        "<span class='text-info'>Objetivo:</span> Construye una aplicación de pila completa (full stack) en JavaScript que mediante ingeniería inversa replique el siguiente proyecto: <a href='http://votingapp.herokuapp.com/' target='_blank'>http://votingapp.herokuapp.com/</a> y despliégala en Heroku.",
+        "<span class='text-info'>Objetivo:</span> Construye una aplicación de pila completa (full stack) en JavaScript que mediante ingeniería inversa replique el siguiente proyecto: <a href='https://fcc-voting-arthow4n.herokuapp.com/' target='_blank'>https://fcc-voting-arthow4n.herokuapp.com/</a> y despliégala en Heroku.",
         "Ten en cuenta que para cada Basejump, debes crear un nuevo repositorio en GitHub y un nuevo proyecto en Heroku. Si no puedes recordar cómo hacerlo, visita de nuevo <a href='/challenges/get-set-for-our-back-end-development-projects'>http://freecodecamp.com/challenges/get-set-for-our-back-end-development-projects</a>.",
         "Mientras construyes tu aplicación, debes consignar frecuentemente los cambios a tu código. Puedes hacerlo ejecutando <code>git commit -am \"un mensaje\"</code>. Ten en cuenta que debes reemplazar \"tu mensaje\" con un breve recuento de los cambios que le hiciste a tu código.",
         "Puedes empujar estos nuevos cambios consignados a GitHub ejecutando <code>git push origin master</code>, y a Heroku ejecutando <code>grunt --force && grunt buildcontrol:heroku</code>.",
@@ -90,7 +90,7 @@
       "id": "bd7158d8c443eddfaeb5bd0e",
       "title": "Chart the Stock Market",
       "description": [
-        "<strong>Objective:</strong> Build a full stack JavaScript app that is functionally similar to this: <a href='http://stockstream.herokuapp.com/' target='_blank'>http://stockstream.herokuapp.com/</a> and deploy it to Heroku.",
+        "<strong>Objective:</strong> Build a full stack JavaScript app that is functionally similar to this: <a href='http://watchstocks.herokuapp.com/' target='_blank'>http://watchstocks.herokuapp.com/</a> and deploy it to Heroku.",
         "Note that for each project, you should create a new GitHub repository and a new Heroku project. If you can't remember how to do this, revisit <a href='/challenges/get-set-for-our-back-end-development-projects'>http://freecodecamp.com/challenges/get-set-for-our-back-end-development-projects</a>.",
         "Here are the specific user stories you should implement for this project:",
         "<strong>User Story:</strong> I can view a graph displaying the recent trend lines for each added stock.",
@@ -108,7 +108,7 @@
       "challengeType": 4,
       "nameEs": "Grafica el mercado de acciones",
       "descriptionEs": [
-        "<span class='text-info'>Objetivo:</span> Crea una aplicación de pila completa (full stack) en JavaScript que mediante ingeniería inversa replique el siguiente proyecto: <a href='http://stockstream.herokuapp.com/' target='_blank'>http://stockstream.herokuapp.com/</a> y despliégalo en Heroku.",
+        "<span class='text-info'>Objetivo:</span> Crea una aplicación de pila completa (full stack) en JavaScript que mediante ingeniería inversa replique el siguiente proyecto: <a href='http://watchstocks.herokuapp.com/' target='_blank'>http://watchstocks.herokuapp.com/</a> y despliégalo en Heroku.",
         "Ten en cuenta que para cada Basejump, debes crear un nuevo repositorio en GitHub y un nuevo proyecto en Heroku. Si no puedes recordar cómo hacerlo, visita de nuevo <a href='/challenges/get-set-for-our-back-end-development-projects'>http://freecodecamp.com/challenges/get-set-for-our-back-end-development-projects</a>.",
         "Mientras construyes tu aplicación, debes consignar frecuentemente los cambios a tu código. Puedes hacerlo ejecutando <code>git commit -am \"un mensaje\"</code>. Ten en cuenta que debes reemplazar \"tu mensaje\" con un breve recuento de los cambios que le hiciste a tu código.",
         "Puedes empujar estos nuevos cambios consignados a GitHub ejecutando <code>git push origin master</code>, y a Heroku ejecutando <code>grunt --force && grunt buildcontrol:heroku</code>.",
@@ -162,7 +162,7 @@
       "id": "bd7158d8c443eddfaeb5bdee",
       "title": "Build a Pinterest Clone",
       "description": [
-        "<strong>Objective:</strong> Build a full stack JavaScript app that is functionally similar to this: <a href='http://stark-lowlands-3680.herokuapp.com/' target='_blank'>http://stark-lowlands-3680.herokuapp.com/</a> and deploy it to Heroku.",
+        "<strong>Objective:</strong> Build a full stack JavaScript app that is functionally similar to this: <a href='http://pintech.herokuapp.com/' target='_blank'>http://pintech.herokuapp.com/</a> and deploy it to Heroku.",
         "Note that for each project, you should create a new GitHub repository and a new Heroku project. If you can't remember how to do this, revisit <a href='/challenges/get-set-for-our-back-end-development-projects'>http://freecodecamp.com/challenges/get-set-for-our-back-end-development-projects</a>.",
         "Here are the specific user stories you should implement for this project:",
         "<strong>User Story:</strong> As an unauthenticated user, I can login with Twitter.",
@@ -183,7 +183,7 @@
       "challengeType": 4,
       "nameEs": "Crea un clon de Pinterest",
       "descriptionEs": [
-        "<span class='text-info'>Objetivo:</span> Crea una aplicación de pila completa (full stack) en JavaScript que mediante ingeniería inversa replique el siguiente proyecto: <a href='http://stark-lowlands-3680.herokuapp.com/' target='_blank'>http://stark-lowlands-3680.herokuapp.com/</a> y despliégalo en Heroku.",
+        "<span class='text-info'>Objetivo:</span> Crea una aplicación de pila completa (full stack) en JavaScript que mediante ingeniería inversa replique el siguiente proyecto: <a href='http://pintech.herokuapp.com/' target='_blank'>http://pintech.herokuapp.com/</a> y despliégalo en Heroku.",
         "Ten en cuenta que para cada Basejump, debes crear un nuevo repositorio en GitHub y un nuevo proyecto en Heroku. Si no puedes recordar cómo hacerlo, visita de nuevo <a href='/challenges/get-set-for-our-back-end-development-projects'>http://freecodecamp.com/challenges/get-set-for-our-back-end-development-projects</a>.",
         "Mientras construyes tu aplicación, debes consignar frecuentemente los cambios a tu código. Puedes hacerlo ejecutando <code>git commit -am \"un mensaje\"</code>. Ten en cuenta que debes reemplazar \"tu mensaje\" con un breve recuento de los cambios que le hiciste a tu código.",
         "Puedes empujar estos nuevos cambios consignados a GitHub ejecutando <code>git push origin master</code>, y a Heroku ejecutando <code>grunt --force && grunt buildcontrol:heroku</code>.",
