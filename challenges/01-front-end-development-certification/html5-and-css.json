@@ -476,7 +476,8 @@
         "Font size is controlled by the <code>font-size</code> CSS property, like this:",
         "<blockquote>h1 {<br>&nbsp;&nbsp;font-size: 30px;<br>}</blockquote>",
         "Create a second <code>p</code> element with the following kitty ipsum text: <code>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</code>",
-        "Inside the same <code>&#60;style&#62;</code> tag that we created for your <code>red-text</code> class, set the <code>font-size</code> of all <code>p</code> elements to 16 pixels (<code>16px</code>)."
+        "Inside the same <code>&#60;style&#62;</code> tag that we created for your <code>red-text</code> class, set the <code>font-size</code> of all <code>p</code> elements to 16 pixels (<code>16px</code>).",
+        "<strong>Note</strong><br>Due to browser implementation differences, you may need to be at 100% zoom to pass the tests on this challenge."
       ],
       "challengeSeed": [
         "<style>",
@@ -493,7 +494,7 @@
         "assert($(\"p\").length > 1, 'message: You need 2 <code>p</code> elements with Kitty Ipsum text.');",
         "assert(code.match(/<\\/p>/g) && code.match(/<\\/p>/g).length === code.match(/<p/g).length, 'message: Make sure each of your <code>p</code> elements has a closing tag.');",
         "assert.isTrue((/Purr\\s+jump\\s+eat/gi).test($(\"p\").text()), 'message: Your <code>p</code> element should contain the first few words of the provided additional <code>kitty ipsum text</code>.');",
-        "assert(Number.parseInt($(\"p:eq(0)\").css(\"font-size\"), 10) > 15 && Number.parseInt($(\"p:eq(1)\").css(\"font-size\"), 10) > 15, 'message: Give elements with the <code>p</code> tag a <code>font-size</code> of <code>16px</code>.')"
+        "assert(Number.parseInt($(\"p:eq(0)\").css(\"font-size\"), 10) > 15 && Number.parseInt($(\"p:eq(1)\").css(\"font-size\"), 10) > 15, 'message: Give elements with the <code>p</code> tag a <code>font-size</code> of <code>16px</code>. Browser and Text zoom should be at 100%.');"
       ],
       "challengeType": 0,
       "nameEs": "Cambia el tamaño de fuente de un elemento.",
@@ -735,7 +736,8 @@
         "CSS has a property called <code>width</code> that controls an element's width. Just like with fonts, we'll use <code>px</code> (pixels) to specify the image's width.",
         "For example, if we wanted to create a CSS class called <code>larger-image</code> that gave HTML elements a width of 500 pixels, we'd use:",
         "<blockquote>&#60;style&#62;<br>&nbsp;&nbsp;.larger-image {<br>&nbsp;&nbsp;&nbsp;&nbsp;width: 500px;<br>&nbsp;&nbsp;}<br>&#60;/style&#62;</blockquote>",
-        "Create a class called <code>smaller-image</code> and use it to resize the image so that it's only 100 pixels wide."
+        "Create a class called <code>smaller-image</code> and use it to resize the image so that it's only 100 pixels wide.",
+        "<strong>Note</strong><br>Due to browser implementation differences, you may need to be at 100% zoom to pass the tests on this challenge."
       ],
       "challengeSeed": [
         "<link href=\"http://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
@@ -763,7 +765,7 @@
       ],
       "tests": [
         "assert($(\"img\").hasClass(\"smaller-image\"), 'message: Your <code>img</code> element should have the class <code>smaller-image</code>.');",
-        "assert($(\"img\").width() === 100, 'message: Your image should be 100 pixels wide.');"
+        "assert($(\"img\").width() === 100, 'message: Your image should be 100 pixels wide. Browser zoom should be at 100%.');"
       ],
       "challengeType": 0,
       "nameEs": "Da tamaño a tus imágenes",
