@@ -1,16 +1,12 @@
 extends ../layout-wide
 block content
         .text-center.map-fixed-header
-            p Required challenges are marked with a *
-            .row
-                .col-xs-10.col-xs-offset-1.col-sm-6.col-sm-offset-3.col-md-4.col-md-offset-4
-                  .row
-                    .col-xs-12.col-sm-8.col-sm-offset-2.col-md-6.col-md-offset-3
-                      .btn.btn-sm.btn-block.btn-primary.active#manipAll Show incomplete challenges
-                      .btn.btn-sm.btn-block.btn-primary.active#showAll Collapse all
+            p Challenges marked with * are required for certification
+            .row.map-buttons
+                button.center-block.btn.btn-sm.btn-block.btn-primary.active#manipAll Show incomplete challenges
+                button.center-block.btn.btn-sm.btn-block.btn-primary.active#showAll Collapse all
             hr
         #accordion.map-accordion
-          .button-spacer
           for superBlock, index in superBlocks
               h2
                 a(data-toggle='collapse', data-parent='#accordion', href='#collapse'+superBlock.name.split(' ').join('-'))
@@ -24,17 +20,17 @@ block content
                             a(data-toggle='collapse', data-parent='#nested', href='#nested-collapse'+challengeBlock.name.replace(/(\W)/gi, '').split(' ').join('-'))
                               span.no-link-underline
                                 i.fa.fa-caret-down &thinsp; 
-                              | #{challengeBlock.name} (#{challengeBlock.time})
+                              | #{challengeBlock.name}
+                              span.challengeBlockTime (#{challengeBlock.time})
                           div.margin-left-10(id = "nested-collapse"+challengeBlock.name.replace(/\W/gi, '').split(' ').join('-') class = "collapse in map-collapse no-transition")
-                              .button-spacer
                               for challenge in challengeBlock.challenges
                                   if challenge.completed
-                                      p.slightly-faded.text-primary.ion-checkmark-circled.padded-ionic-icon.negative-15(name="#{challenge.dashedName}") &nbsp;&nbsp;&nbsp;
+                                      p.slightly-faded.text-primary.ion-checkmark-circled.padded-ionic-icon.negative-15(name="#{challenge.dashedName}")
                                           a(href="/challenges/#{challenge.dashedName}" target='_parent')
                                               = challenge.title
                                               span.sr-only= " Complete"
                                   else if challenge.isRequired
-                                      p.ion-ios-circle-outline.padded-ionic-icon.negative-15(name="#{challenge.dashedName}") &nbsp;&nbsp;&nbsp;
+                                      p.ion-ios-circle-outline.padded-ionic-icon.negative-15(name="#{challenge.dashedName}")
                                           a(name="#{challenge.dashedName}" target='_parent' href="/challenges/#{challenge.dashedName}" class=challenge.isComingSoon ? 'disabled' : '')
                                               span= challenge.title
                                               span.sr-only= " Incomplete"
@@ -49,7 +45,7 @@ block content
                                           span.text-primary &thinsp; &thinsp;
                                               strong *
                                   else
-                                      p.ion-ios-circle-outline.padded-ionic-icon.negative-15(name="#{challenge.dashedName}") &nbsp;&nbsp;&nbsp;
+                                      p.ion-ios-circle-outline.padded-ionic-icon.negative-15(name="#{challenge.dashedName}")
                                           a(name="#{challenge.dashedName}" target='_parent' href="/challenges/#{challenge.dashedName}" class=challenge.isComingSoon ? 'disabled' : '')
                                               span= challenge.title
                                               span.sr-only= " Incomplete"
@@ -72,24 +68,23 @@ block content
                   a(data-toggle='collapse', data-parent='#nested', href='#nested-collapse-nonprofit-projects')
                     span.no-link-underline
                       i.fa.fa-caret-down &thinsp;
-                    | Nonprofit Projects (800 hours)
+                    | Nonprofit Projects 
+                    span.challengeBlockTime (800 hours)
                 div.margin-left-10(id = "nested-collapse-nonprofit-projects" class = "collapse in map-collapse no-transition")
-                    .button-spacer
-                      p To qualify for these nonprofit projects, you must first earn all three foundational certifications: Front End, Data Visualization, and Back End
-                      .button-spacer
-                      p.disabled.text-primary.ion-locked.padded-ionic-icon.negative-15(name="Greenfield Nonprofit Project #1") &nbsp;&nbsp;&nbsp; Greenfield Nonprofit Project #1
+                      p.challengeBlockDescription To qualify for these nonprofit projects, you must first earn all three foundational certifications: Front End, Data Visualization, and Back End
+                      p.disabled.text-primary.ion-locked.padded-ionic-icon.negative-15(name="Greenfield Nonprofit Project #1") Greenfield Nonprofit Project #1
                         span.text-primary &thinsp; &thinsp;
                           strong *
-                      p.disabled.text-primary.ion-locked.padded-ionic-icon.negative-15(name="Greenfield Nonprofit Project #2") &nbsp;&nbsp;&nbsp; Greenfield Nonprofit Project #2
+                      p.disabled.text-primary.ion-locked.padded-ionic-icon.negative-15(name="Greenfield Nonprofit Project #2") Greenfield Nonprofit Project #2
                         span.text-primary &thinsp; &thinsp;
                           strong *  
-                      p.disabled.text-primary.ion-locked.padded-ionic-icon.negative-15(name="Legacy Code Nonprofit Project #1") &nbsp;&nbsp;&nbsp; Legacy Code Nonprofit Project #1
+                      p.disabled.text-primary.ion-locked.padded-ionic-icon.negative-15(name="Legacy Code Nonprofit Project #1") Legacy Code Nonprofit Project #1
                         span.text-primary &thinsp; &thinsp;
                           strong *
-                      p.disabled.text-primary.ion-locked.padded-ionic-icon.negative-15(name="Legacy Code Nonprofit Project #2") &nbsp;&nbsp;&nbsp; Legacy Code Nonprofit Project #2
+                      p.disabled.text-primary.ion-locked.padded-ionic-icon.negative-15(name="Legacy Code Nonprofit Project #2") Legacy Code Nonprofit Project #2
                         span.text-primary &thinsp; &thinsp;
                           strong *
-                      p.disabled.text-primary.ion-locked.padded-ionic-icon.negative-15(name="Claim your Full Stack Development Certification") &nbsp;&nbsp;&nbsp; Claim your Full Stack Development Certification
+                      p.disabled.text-primary.ion-locked.padded-ionic-icon.negative-15(name="Claim your Full Stack Development Certification") Claim your Full Stack Development Certification
           h2
             a(data-toggle='collapse', data-parent='#accordion', href='#collapse-coding-interview-preparation')
               span.no-link-underline
@@ -101,24 +96,22 @@ block content
                   a(data-toggle='collapse', data-parent='#nested', href='#nested-collapse-coding-interview-training')
                     span.no-link-underline
                       i.fa.fa-caret-down &thinsp;
-                    | Coding Interview Training (70 hours)
+                    | Coding Interview Training 
+                    span.challengeBlockTime (70 hours)
                 div.margin-left-10(id = "nested-collapse-coding-interview-training" class = "collapse in map-collapse no-transition")
-                    .button-spacer
-                      p To qualify for this coding interview training, you must first earn all four certifications: Front End, Data Visualization, Back End, and Full Stack
-                      .button-spacer
-                      p.disabled.text-primary.ion-locked.padded-ionic-icon.negative-15(name="Soft Skill Training") &nbsp;&nbsp;&nbsp; Soft Skill Training
-                      p.disabled.text-primary.ion-locked.padded-ionic-icon.negative-15(name="Critical Thinking Training") &nbsp;&nbsp;&nbsp; Critical Thinking Training
-                      p.disabled.text-primary.ion-locked.padded-ionic-icon.negative-15(name="Whiteboard Coding Training") &nbsp;&nbsp;&nbsp; Whiteboard Coding Training
+                      p.challengeBlockDescription To qualify for this coding interview training, you must first earn all four certifications: Front End, Data Visualization, Back End, and Full Stack
+                      p.disabled.text-primary.ion-locked.padded-ionic-icon.negative-15(name="Soft Skill Training") Soft Skill Training
+                      p.disabled.text-primary.ion-locked.padded-ionic-icon.negative-15(name="Critical Thinking Training") Critical Thinking Training
+                      p.disabled.text-primary.ion-locked.padded-ionic-icon.negative-15(name="Whiteboard Coding Training") Whiteboard Coding Training
                   h3
                     a(data-toggle='collapse', data-parent='#nested', href='#nested-collapse-mock-interviews')
                       span.no-link-underline
                         i.fa.fa-caret-down &thinsp;
-                      | Mock Interviews (10 hours)
+                      | Mock Interviews 
+                      span.challengeBlockTime (10 hours)
                   div.margin-left-10(id = "nested-collapse-mock-interviews" class = "collapse in map-collapse no-transition")
-                      .button-spacer
-                        p To qualify for these mock interviews, you must first earn all four certifications: Front End, Data Visualization, Back End, and Full Stack
-                        .button-spacer
-                        p.disabled.text-primary.ion-locked.padded-ionic-icon.negative-15(name="Mock Interview #1") &nbsp;&nbsp;&nbsp; Mock Interview #1
-                        p.disabled.text-primary.ion-locked.padded-ionic-icon.negative-15(name="Mock Interview #2") &nbsp;&nbsp;&nbsp; Mock Interview #2
-                        p.disabled.text-primary.ion-locked.padded-ionic-icon.negative-15(name="Mock Interview #3") &nbsp;&nbsp;&nbsp; Mock Interview #3
+                        p.challengeBlockDescription To qualify for these mock interviews, you must first earn all four certifications: Front End, Data Visualization, Back End, and Full Stack
+                        p.disabled.text-primary.ion-locked.padded-ionic-icon.negative-15(name="Mock Interview #1") Mock Interview #1
+                        p.disabled.text-primary.ion-locked.padded-ionic-icon.negative-15(name="Mock Interview #2") Mock Interview #2
+                        p.disabled.text-primary.ion-locked.padded-ionic-icon.negative-15(name="Mock Interview #3") Mock Interview #3
           .spacer
