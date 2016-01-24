@@ -23,6 +23,7 @@
     "rxjs": "~4.0.6",
     "CodeMirror": "~5.8.0",
     "chai": "~3.4.1",
-    "clipboard": "~1.5.5"
+    "clipboard": "~1.5.5",
+    "mousetrap": "~1.5.3"
   }
 }
