@@ -2745,7 +2745,7 @@
       "id": "5664820f61c48e80c9fa476c",
       "title": "Golf Code",
       "description": [
-        "In the game of <a href=\"https://en.wikipedia.org/wiki/Golf\">golf</a> each hole has a <dfn>par</dfn> for the average number of <dfn>strokes</dfn> needed to sink the ball. Depending on how far above or below <code>par</code> your <code>strokes</code> are, there is a different nickname.",
+        "In the game of <a href='https://en.wikipedia.org/wiki/Golf' target='_blank'>golf</a> each hole has a <dfn>par</dfn> for the average number of <dfn>strokes</dfn> needed to sink the ball. Depending on how far above or below <code>par</code> your <code>strokes</code> are, there is a different nickname.",
         "Your function will be passed a <code>par</code> and <code>strokes</code>. Return strings according to this table (based on order of priority - top (highest) to bottom (lowest)):",
         "<table class=\"table table-striped\"><thead><tr><th>Strokes</th><th>Return</th></tr></thead><tbody><tr><td>1</td><td>\"Hole-in-one!\"</td></tr><tr><td>&lt;= par - 2</td><td>\"Eagle\"</td></tr><tr><td>par - 1</td><td>\"Birdie\"</td></tr><tr><td>par</td><td>\"Par\"</td></tr><tr><td>par + 1</td><td>\"Bogey\"</td></tr><tr><td>par + 2</td><td>\"Double Bogey\"</td></tr><tr><td>&gt;= par + 3</td><td>\"Go Home!\"</td></tr></tbody></table>",
         "<code>par</code> and <code>strokes</code> will always be numeric and positive."
@@ -3053,7 +3053,7 @@
       "id": "565bbe00e9cc8ac0725390f4",
       "title": "Counting Cards",
       "description": [
-        "In the casino game Blackjack, a player can gain an advantage over the house by keeping track of the relative number of high and low cards remaining in the deck. This is called <a href=\"https://en.wikipedia.org/wiki/Card_counting\">Card Counting</a>.",
+        "In the casino game Blackjack, a player can gain an advantage over the house by keeping track of the relative number of high and low cards remaining in the deck. This is called <a href='https://en.wikipedia.org/wiki/Card_counting' target='_blank'>Card Counting</a>.",
         "Having more high cards remaining in the deck favors the player. Each card is assigned a value according to the table below. When the count is positive, the player should bet high. When the count is zero or negative, the player should bet low.",
         "<table class=\"table table-striped\"><thead><tr><th>Value</th><th>Cards</th></tr></thead><tbody><tr><td>+1</td><td>2, 3, 4, 5, 6</td></tr><tr><td>0</td><td>7, 8, 9</td></tr><tr><td>-1</td><td>10, 'J', 'Q', 'K','A'</td></tr></tbody></table>",
         "You will write a card counting function. It will receive a <code>card</code> parameter and increment or decrement the global <code>count</code> variable according to the card's value (see table). The function will then return a string with the current count and the string <code>\"Bet\"</code> if the count is positive, or <code>\"Hold\"</code> if the count is zero or negative. The current count and the player's decision (<code>\"Bet\"</code> or <code>\"Hold\"</code>) should be separated by a single space.<br><br>",
@@ -4034,7 +4034,7 @@
       "description": [
         "Random numbers are useful for creating random behavior.",
         "JavaScript has a <code>Math.random()</code> function that generates a random decimal number between <code>0</code> (inclusive) and not quite up to <code>1</code> (exclusive). Thus <code>Math.random()</code> can return a <code>0</code> but never quite return a <code>1</code>",
-        "<strong>Note</strong><br>Like <a href=\"waypoint-storing-values-with-the-equal-operator\">Storing Values with the Equal Operator</a>, all function calls will be resolved before the <code>return</code> executes, so we can simply <code>return</code> the value of the <code>Math.random()</code> function.",
+        "<strong>Note</strong><br>Like <a href='waypoint-storing-values-with-the-equal-operator' target='_blank'>Storing Values with the Equal Operator</a>, all function calls will be resolved before the <code>return</code> executes, so we can simply <code>return</code> the value of the <code>Math.random()</code> function.",
         "<h4>Instructions</h4>",
         "Change <code>myFunction</code> to return a random number instead of returning <code>0</code>."
       ],
@@ -4336,7 +4336,7 @@
         "We are now going to try and combine some of the stuff we've just learned and create the logic for a slot machine game.",
         "For this we will need to generate three random numbers between <code>1</code> and <code>3</code> to represent the possible values of each individual slot.",
         "Store the three random numbers in <code>slotOne</code>, <code>slotTwo</code> and <code>slotThree</code>.",
-        "Generate the random numbers by using the system we used earlier (an explanation of the formula can be found <a href=\"https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/Waypoint-Generate-Random-Whole-Numbers-within-a-Range#explanation\">here</a>):",
+        "Generate the random numbers by using the system we used earlier (an explanation of the formula can be found <a href='https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/Waypoint-Generate-Random-Whole-Numbers-within-a-Range#explanation' target='_blank'>here</a>):",
         "<code>Math.floor(Math.random() * (3 - 1 + 1)) + 1;</code>"
       ],
       "challengeSeed": [
