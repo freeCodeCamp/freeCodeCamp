@@ -2343,13 +2343,13 @@
     },
     {
       "id": "56533eb9ac21ba0edf2244d5",
-      "title": "Comparison with the Greater Than Equal To Operator",
+      "title": "Comparison with the Greater Than Or Equal To Operator",
       "description": [
-        "The greater than equal to operator (<code>&gt;=</code>) compares the values of two numbers. If the number to the left is greater than or equal to the number to the right, it returns <code>true</code>. Otherwise, it returns <code>false</code>.<br>Like the equality operator, greater than equal to operator will convert data types while comparing.",
+        "The <code>greater than or equal to</code> operator (<code>&gt;=</code>) compares the values of two numbers. If the number to the left is greater than or equal to the number to the right, it returns <code>true</code>. Otherwise, it returns <code>false</code>.<br>Like the equality operator, <code>greater than or equal to</code> operator will convert data types while comparing.",
         "<strong>Examples</strong>",
         "<blockquote> 6  >=  6  // true<br> 7  >= '3' // true<br> 2  >=  3  // false<br>'7' >=  9  // false</blockquote>",
         "<h4>Instructions</h4>",
-        "Add the <code>greater than equal to</code> operator to the indicated lines so that the return statements make sense."
+        "Add the <code>greater than or equal to</code> operator to the indicated lines so that the return statements make sense."
       ],
       "releasedOn": "January 1, 2016",
       "challengeSeed": [
@@ -2428,13 +2428,13 @@
     },
     {
       "id": "56533eb9ac21ba0edf2244d7",
-      "title": "Comparison with the Less Than Equal To Operator",
+      "title": "Comparison with the Less Than Or Equal To Operator",
       "description": [
-        "The <code>less than equal to</code> operator (<code>&lt;=</code>) compares the values of two numbers. If the number to the left is less than or equal the number to the right, it returns <code>true</code>. If the number on the left is greater than the number on the right, it returns <code>false</code>. Like the equality operator, <code>less than equal to</code> converts data types.",
+        "The <code>less than or equal to</code> operator (<code>&lt;=</code>) compares the values of two numbers. If the number to the left is less than or equal the number to the right, it returns <code>true</code>. If the number on the left is greater than the number on the right, it returns <code>false</code>. Like the equality operator, <code>less than or equal to</code> converts data types.",
         "<strong>Examples</strong>",
         "<blockquote>  4 &lt;= 5  // true<br>'7' &lt;= 7  // true<br>  5 &lt;= 5  // true<br>  3 &lt;= 2  // false<br>'8' &lt;= 4  // false</blockquote>",
         "<h4>Instructions</h4>",
-        "Add the <code>less than equal to</code> operator to the indicated lines so that the return statements make sense."
+        "Add the <code>less than or equal to</code> operator to the indicated lines so that the return statements make sense."
       ],
       "releasedOn": "January 1, 2016",
       "challengeSeed": [
