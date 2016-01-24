@@ -164,7 +164,7 @@
       "id": "bd7158d8c442eddfaeb5bd13",
       "title": "Build a Random Quote Machine",
       "description": [
-        "<strong>Objective:</strong> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='http://codepen.io/FreeCodeCamp/full/yeVgBY' target='_blank'>http://codepen.io/FreeCodeCamp/full/yeVgBY</a>.",
+        "<strong>Objective:</strong> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='http://codepen.io/FreeCodeCamp/full/bELoPJ' target='_blank'>http://codepen.io/FreeCodeCamp/full/bELoPJ</a>.",
         "<strong>Rule #1:</strong> Don't look at the example project's code. Figure it out for yourself.",
         "<strong>Rule #2:</strong> Fulfill the below <a href='http://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
         "<strong>User Story:</strong> I can click a button to show me a new random quote.",
@@ -180,7 +180,7 @@
       "type": "zipline",
       "nameRu": "Создайте генератор случайных цитат",
       "descriptionRu": [
-        "<span class='text-info'>Задание:</span> Создайте <a href='http://codepen.io' target='_blank'>CodePen.io</a> который успешно копирует вот этот: <a href='http://codepen.io/FreeCodeCamp/full/yeVgBY' target='_blank'>http://codepen.io/FreeCodeCamp/full/yeVgBY</a>.",
+        "<span class='text-info'>Задание:</span> Создайте <a href='http://codepen.io' target='_blank'>CodePen.io</a> который успешно копирует вот этот: <a href='http://codepen.io/FreeCodeCamp/full/bELoPJ' target='_blank'>http://codepen.io/FreeCodeCamp/full/bELoPJ</a>.",
         "<span class='text-info'>Правило #1:</span> Не подсматривайте код приведенного на CodePen примера. Напишите его самостоятельно.",
         "<span class='text-info'>Правило #2:</span> Можете использовать любые библиотеки или API, которые потребуются.",
         "<span class='text-info'>Правило #3:</span> Воссоздайте функционал приведенного примера и не стесняйтесь добавить что-нибудь от себя.",
@@ -194,7 +194,7 @@
       ],
       "nameEs": "Crea una máquina de frases aleatorias",
       "descriptionEs": [
-        "<span class='text-info'>Objetivo:</span> Crea una aplicación con <a href='http://codepen.io' target='_blank'>CodePen.io</a> que reproduzca efectivamente mediante ingeniería inversa este app: <a href='http://codepen.io/FreeCodeCamp/full/yeVgBY' target='_blank'>http://codepen.io/FreeCodeCamp/full/yeVgBY</a>.",
+        "<span class='text-info'>Objetivo:</span> Crea una aplicación con <a href='http://codepen.io' target='_blank'>CodePen.io</a> que reproduzca efectivamente mediante ingeniería inversa este app: <a href='http://codepen.io/FreeCodeCamp/full/bELoPJ' target='_blank'>http://codepen.io/FreeCodeCamp/full/bELoPJ</a>.",
         "<span class='text-info'>Regla #1:</span> No veas el código del proyecto de ejemplo en CodePen. Encuentra la forma de hacerlo por tu cuenta.",
         "<span class='text-info'>Regla #2:</span> Puedes usar cualquier librería o APIs que necesites.",
         "<span class='text-info'>Regla #3:</span> Usa ingeniería inversa para reproducir la funcionalidad del proyecto de ejemplo, pero también siéntete en la libertad de personalizarlo.",
@@ -212,7 +212,7 @@
       "id": "bd7158d8c442eddfaeb5bd17",
       "title": "Build a JavaScript Calculator",
       "description": [
-        "<strong>Objective:</strong> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='http://codepen.io/FreeCodeCamp/full/EPNZYW' target='_blank'>http://codepen.io/FreeCodeCamp/full/EPNZYW</a>.",
+        "<strong>Objective:</strong> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='http://codepen.io/FreeCodeCamp/full/zrRzMR' target='_blank'>http://codepen.io/FreeCodeCamp/full/zrRzMR</a>.",
         "<strong>Rule #1:</strong> Don't look at the example project's code. Figure it out for yourself.",
         "<strong>Rule #2:</strong> Fulfill the below <a href='http://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
         "<strong>User Story:</strong> I can add, subtract, multiply and divide two numbers.",
@@ -230,7 +230,7 @@
       "challengeType": 3,
       "nameEs": "Crea una calculadora JavaScript",
       "descriptionEs": [
-        "<span class='text-info'>Objetivo:</span> Crea una aplicación con <a href='http://codepen.io' target='_blank'>CodePen.io</a> que reproduzca efectivamente mediante ingeniería inversa este app: <a href='http://codepen.io/FreeCodeCamp/full/EPNZYW' target='_blank'>http://codepen.io/FreeCodeCamp/full/EPNZYW</a>.",
+        "<span class='text-info'>Objetivo:</span> Crea una aplicación con <a href='http://codepen.io' target='_blank'>CodePen.io</a> que reproduzca efectivamente mediante ingeniería inversa este app: <a href='http://codepen.io/FreeCodeCamp/full/zrRzMR' target='_blank'>http://codepen.io/FreeCodeCamp/full/zrRzMR</a>.",
         "<span class='text-info'>Regla #1:</span> No veas el código del proyecto de ejemplo en CodePen. Encuentra la forma de hacerlo por tu cuenta.",
         "<span class='text-info'>Regla #2:</span> Puedes usar cualquier librería o APIs que necesites.",
         "<span class='text-info'>Regla #3:</span> Usa ingeniería inversa para reproducir la funcionalidad del proyecto de ejemplo, pero también siéntete en la libertad de personalizarlo.",
