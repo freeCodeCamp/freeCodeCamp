@@ -55,9 +55,14 @@ export default contain(
       jobActions: PropTypes.object
     },
 
+    componentDidMount() {
+      const { jobActions } = this.props;
+      jobActions.clearPromo();
+    },
+
     goToJobBoard() {
       const { appActions } = this.props;
-      appActions.goTo('/jobs');
+      setTimeout(() => appActions.goTo('/jobs'), 0);
     },
 
     renderDiscount(discountAmount) {
