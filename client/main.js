@@ -95,10 +95,26 @@ main = (function(main) {
     });
 
 
-    $('#nav-chat-btn').on('click', function() {
-      if (!main.chat.isOpen) {
+    $('#nav-chat-btn').on('click', showMainChat);
 
+    function showMainChat() {
+      if (!main.chat.isOpen) {
         main.chat.mainChat.toggleChat(true);
+      }
+    }
+
+    function collapseMainChat() {
+      $('#chat-embed-main').addClass('is-collapsed');
+    }
+
+    // keyboard shortcuts: open main chat
+    Mousetrap.bind('g c', function() {
+      var isCollapsed = $('#chat-embed-main').hasClass('is-collapsed');
+
+      if (isCollapsed) {
+        showMainChat();
+      } else {
+        collapseMainChat();
       }
     });
   });
@@ -287,7 +303,11 @@ $(document).ready(function() {
   }
 
   // map
-  $('#nav-map-btn').on('click', () => {
+  $('#nav-map-btn').on('click', showMap);
+
+  $('.map-aside-action-collapse').on('click', collapseMap);
+
+  function showMap() {
     if (!main.isMapAsideLoad) {
       var mapAside = $('<iframe>');
       mapAside.attr('src', '/map-aside');
@@ -295,11 +315,11 @@ $(document).ready(function() {
       main.isMapAsideLoad = true;
     }
     $('.map-aside').removeClass('is-collapsed');
-  });
+  }
 
-  $('.map-aside-action-collapse').on('click', () => {
+  function collapseMap() {
     $('.map-aside').addClass('is-collapsed');
-  });
+  }
 
   $('#accordion').on('show.bs.collapse', function(e) {
       $(e.target)
@@ -362,6 +382,17 @@ $(document).ready(function() {
       });
       $('#showAll').text('Expand all challenges');
       return $('#showAll').removeClass('active');
+    }
+  });
+
+  // keyboard shortcuts: open map
+  Mousetrap.bind('g m', function() {
+    var isCollapsed = $('.map-aside').hasClass('is-collapsed');
+
+    if (isCollapsed) {
+      showMap();
+    } else {
+      collapseMap();
     }
   });
 });
