@@ -81,15 +81,15 @@ export default React.createClass({
   renderSignin(username, picture) {
     if (username) {
       return (
-        <div
-          className='hidden-xs hidden-sm'
+        <li
+          className='hidden-xs hidden-sm avatar'
           eventKey={ 2 }>
           <a href={ '/' + username }>
             <img
               className='profile-picture float-right'
               src={ picture } />
           </a>
-        </div>
+        </li>
       );
     } else {
       return (
