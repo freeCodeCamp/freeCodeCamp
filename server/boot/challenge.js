@@ -2,7 +2,6 @@ import _ from 'lodash';
 import dedent from 'dedent';
 import moment from 'moment';
 import { Observable, Scheduler } from 'rx';
-import assign from 'object.assign';
 import debugFactory from 'debug';
 import accepts from 'accepts';
 
@@ -15,11 +14,7 @@ import {
   randomCompliment
 } from '../utils';
 
-import {
-  saveUser,
-  observeMethod,
-  observeQuery
-} from '../utils/rx';
+import { saveUser, observeMethod } from '../utils/rx';
 
 import {
   ifNoUserSend
@@ -384,7 +379,6 @@ module.exports = function(app) {
     .map(challenge => challenge.toJSON())
     .shareReplay();
 
-  const User = app.models.User;
   const send200toNonUser = ifNoUserSend(true);
 
   router.post(
@@ -506,7 +500,7 @@ module.exports = function(app) {
   function completedChallenge(req, res, next) {
     const type = accepts(req).type('html', 'json', 'text');
 
-    const completedDate = Math.round(+new Date());
+    const completedDate = Date.now();
     const {
       id,
       name,
@@ -547,21 +541,46 @@ module.exports = function(app) {
   }
 
   function completedZiplineOrBasejump(req, res, next) {
+    const { body = {} } = req;
 
-    var completedWith = req.body.challengeInfo.completedWith || '';
-    var completedDate = Math.round(+new Date());
-    var challengeId = req.body.challengeInfo.challengeId;
-    var solutionLink = req.body.challengeInfo.publicURL;
+    let completedChallenge;
+    // backwards compatibility
+    // please remove once in production
+    // to allow users to transition to new client code
+    if (body.challengeInfo) {
 
-    var githubLink = req.body.challengeInfo.challengeType === '4' ?
-      req.body.challengeInfo.githubURL :
-      true;
+      if (!body.challengeInfo.challengeId) {
+        req.flash('error', { msg: 'No id returned during save' });
+        return res.sendStatus(403);
+      }
 
-    var challengeType = req.body.challengeInfo.challengeType === '4' ?
-      4 :
-      3;
+      completedChallenge = {
+        id: body.challengeInfo.challengeId,
+        name: body.challengeInfo.challengeName || '',
+        completedDate: Date.now(),
 
-    if (!solutionLink || !githubLink) {
+        challengeType: +body.challengeInfo.challengeType === 4 ? 4 : 3,
+
+        solution: body.challengeInfo.publicURL,
+        githubLink: body.challengeInfo.githubURL
+      };
+    } else {
+      completedChallenge = _.pick(
+        body,
+        [ 'id', 'name', 'solution', 'githubLink', 'challengeType' ]
+      );
+      completedChallenge.challengeType = +completedChallenge.challengeType;
+      completedChallenge.completedDate = Date.now();
+    }
+
+    if (
+      !completedChallenge.solution ||
+      // only basejumps require github links
+      (
+        completedChallenge.challengeType === 4 &&
+        !completedChallenge.githubLink
+      )
+    ) {
       req.flash('errors', {
         msg: 'You haven\'t supplied the necessary URLs for us to inspect ' +
         'your work.'
@@ -569,64 +588,12 @@ module.exports = function(app) {
       return res.sendStatus(403);
     }
 
-    var challengeData = {
-      id: challengeId,
-      name: req.body.challengeInfo.challengeName || '',
-      completedDate: completedDate,
-      solution: solutionLink,
-      githubLink: githubLink,
-      challengeType: challengeType,
-      verified: false
-    };
 
-    observeQuery(
-        User,
-        'findOne',
-        { where: { username: completedWith.toLowerCase() } }
-      )
-      .doOnNext(function(pairedWith) {
-        if (pairedWith) {
-          updateUserProgress(
-            pairedWith,
-            challengeId,
-            assign({ completedWith: req.user.id }, challengeData)
-          );
-        }
-      })
-      .withLatestFrom(Observable.just(req.user), function(pairedWith, user) {
-        return {
-          user: user,
-          pairedWith: pairedWith
-        };
-      })
-      .doOnNext(function({ user, pairedWith }) {
-        updateUserProgress(
-          user,
-          challengeId,
-          pairedWith ?
-            assign({ completedWith: pairedWith.id }, challengeData) :
-            challengeData
-        );
-      })
-      .flatMap(function({ user, pairedWith }) {
-        return Observable.from([user, pairedWith]);
-      })
-      // save users
-      .flatMap(function(user) {
-        // save user will do nothing if user is falsey
-        return saveUser(user);
-      })
-      .subscribe(
-        function(user) {
-          if (user) {
-            debug('user %s saved', user.username);
-          }
-        },
-        next,
-        function() {
-          return res.status(200).send(true);
-        }
-      );
+    updateUserProgress(req.user, completedChallenge.id, completedChallenge);
+
+    return saveUser(req.user)
+      .doOnNext(() => res.status(200).send(true))
+      .subscribe(() => {}, next);
   }
 
   function showMap(showAside, { user }, res, next) {
