@@ -540,7 +540,7 @@
         "<p>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
       ],
       "tests": [
-        "assert($(\"p\").css(\"font-family\").match(/monospace/i), 'message: Your <code>p</code> elements should use the font <code>Monospace</code>.');"
+        "assert($(\"p\").not(\".red-text\").css(\"font-family\").match(/monospace/i), 'message: Your <code>p</code> elements should use the font <code>Monospace</code>.');"
       ],
       "challengeType": 0,
       "nameEs": "Establecer la familia del tipo de letra de un elemento",
