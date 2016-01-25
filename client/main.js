@@ -4,7 +4,8 @@ main.mapShareKey = 'map-shares';
 
 main.ga = window.ga || function() {};
 
-main = (function(main) {
+main = (function(main, global) {
+  const { Mousetrap } = global;
 
   // should be set before gitter script loads
   ((window.gitter = {}).chat = {}).options = {
@@ -120,7 +121,7 @@ main = (function(main) {
   });
 
   return main;
-}(main));
+}(main, window));
 
 var lastCompleted = typeof lastCompleted !== 'undefined' ?
   lastCompleted :
@@ -386,7 +387,7 @@ $(document).ready(function() {
   });
 
   // keyboard shortcuts: open map
-  Mousetrap.bind('g m', function() {
+  window.Mousetrap.bind('g m', function() {
     var isCollapsed = $('.map-aside').hasClass('is-collapsed');
 
     if (isCollapsed) {
