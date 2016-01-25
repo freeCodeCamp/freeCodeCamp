@@ -766,7 +766,7 @@
         "This signals JavaScript that the following quote is not the end of the string, but should instead appear inside the string.",
         "<h4>Instruction</h4>",
         "Use <dfn>backslashes</dfn> to assign the following to <code>myStr</code> variable:",
-        "<code>\"I am a \"double quoted\" string inside \"double quotes\"\"</code>"
+        "<code>I am a \"double quoted\" string inside \"double quotes\"</code>"
       ],
       "releasedOn": "January 1, 2016",
       "challengeSeed": [
