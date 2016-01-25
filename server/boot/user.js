@@ -315,6 +315,18 @@ module.exports = function(app) {
             });
             return res.redirect('back');
           }
+
+          if (user.isCheater) {
+            req.flash('errors', {
+              msg: dedent`
+                Upon review, this account has been flagged for academic
+                dishonesty. If you’re the owner of this account contact
+                team@freecodecamp.com for details.
+              `
+            });
+            return res.redirect(`/${user.username}`);
+          }
+
           if (user.isLocked) {
             req.flash('errors', {
               msg: dedent`

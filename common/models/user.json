@@ -28,6 +28,11 @@
       "default": false,
       "description": "User is banned from posting to camper news"
     },
+    "isCheater": {
+      "type": "boolean",
+      "default": false,
+      "description": "Users who are confirmed to break academic honesty policy are marked as cheaters"
+    },
     "isGithubCool": {
       "type": "boolean",
       "default": false
