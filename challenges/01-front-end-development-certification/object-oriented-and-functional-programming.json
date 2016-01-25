@@ -281,7 +281,9 @@
         "assert(typeof myBike.getGear !== 'undefined' && typeof myBike.getGear === 'function', 'message: The method <code>getGear</code> of <code>myBike</code> should be accessible outside the object.');",
         "assert(typeof myBike.setGear !== 'undefined' && typeof myBike.setGear === 'function', 'message: The method <code>setGear</code> of <code>myBike</code> should be accessible outside the object.');",
         "assert(typeof myBike.gear === 'undefined', 'message: <code>myBike.gear</code> should remain undefined.');",
-        "assert.strictEqual((function () { myBike.setGear(4); return myBike.getGear(); })(), 4, 'message: <code>myBike.getGear()</code> should return <code>4</code> after <code>myBike.setGear(4)</code>.');"
+        "assert.strictEqual((function () { myBike.setGear(4); return myBike.getGear(); })(), 4, 'message: <code>myBike.getGear()</code> should return <code>4</code> after calling <code>myBike.setGear(4)</code>.');",
+        "assert.strictEqual((function () { myBike.setGear(3); return myBike.getGear(); })(), 3, 'message: <code>myBike.getGear()</code> should return <code>3</code> after calling <code>myBike.setGear(3)</code>.');",
+        "assert.strictEqual((function () { myBike.setGear(1); return myBike.getGear(); })(), 1, 'message: <code>myBike.getGear()</code> should return <code>1</code> after calling <code>myBike.setGear(1)</code>.');"
       ],
       "type": "waypoint",
       "challengeType": 1,
