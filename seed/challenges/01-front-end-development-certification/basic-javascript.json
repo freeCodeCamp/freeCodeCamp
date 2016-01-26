@@ -2300,7 +2300,8 @@
       "id": "56533eb9ac21ba0edf2244d4",
       "title": "Comparison with the Greater Than Operator",
       "description": [
-        "The greater than operator (<code>&gt;</code>) compares the values of two numbers. If the number to the left is greater than the number to the right, it returns <code>true</code>. Otherwise, it returns <code>false</code>.<br>Like the equality operator, greater than operator will convert data types of values while comparing.",
+        "The greater than operator (<code>&gt;</code>) compares the values of two numbers. If the number to the left is greater than the number to the right, it returns <code>true</code>. Otherwise, it returns <code>false</code>.",
+        "Like the equality operator, greater than operator will convert data types of values while comparing.",
         "<strong>Examples</strong>",
         "<blockquote> 5 > 3   // true<br> 7 > '3' // true<br> 2 > 3   // false<br>'1' > 9  // false</blockquote>",
         "<h4>Instructions</h4>",
@@ -2343,7 +2344,8 @@
       "id": "56533eb9ac21ba0edf2244d5",
       "title": "Comparison with the Greater Than Or Equal To Operator",
       "description": [
-        "The <code>greater than or equal to</code> operator (<code>&gt;=</code>) compares the values of two numbers. If the number to the left is greater than or equal to the number to the right, it returns <code>true</code>. Otherwise, it returns <code>false</code>.<br>Like the equality operator, <code>greater than or equal to</code> operator will convert data types while comparing.",
+        "The <code>greater than or equal to</code> operator (<code>&gt;=</code>) compares the values of two numbers. If the number to the left is greater than or equal to the number to the right, it returns <code>true</code>. Otherwise, it returns <code>false</code>.",
+        "Like the equality operator, <code>greater than or equal to</code> operator will convert data types while comparing.",
         "<strong>Examples</strong>",
         "<blockquote> 6  >=  6  // true<br> 7  >= '3' // true<br> 2  >=  3  // false<br>'7' >=  9  // false</blockquote>",
         "<h4>Instructions</h4>",
