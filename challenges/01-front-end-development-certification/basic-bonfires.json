@@ -413,7 +413,7 @@
     {
       "id": "a9bd25c716030ec90084d8a1",
       "description": [
-        "Write a function that splits an array (first argument) into groups the length of <code>size</code> (second argument) and returns them as a multidimensional array.",
+        "Write a function that splits an array (first argument) into groups the length of <code>size</code> (second argument) and returns them as a two-dimensional array.",
         "Remember to use <a href=\"//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck\" target=\"_blank\">Read-Search-Ask</a> if you get stuck. Write your own code."
       ],
       "challengeSeed": [
@@ -445,7 +445,7 @@
       "challengeType": 5,
       "nameEs": "En mil pedazos",
       "descriptionEs": [
-        "Escribe una función que parta un arreglo (primer argumento) en fragmentos de una longitud dada (segundo argumento) y los devuelva en forma de un arreglo multidimensional.",
+        "Escribe una función que parta un arreglo (primer argumento) en fragmentos de una longitud dada (segundo argumento) y los devuelva en forma de un arreglo bidimensional.",
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
       ]
     },
