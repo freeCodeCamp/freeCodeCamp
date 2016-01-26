@@ -3,8 +3,7 @@ block content
         .text-center.map-fixed-header
             p Challenges marked with * are required for certification
             .row.map-buttons
-                button.center-block.btn.btn-sm.btn-block.btn-primary.active#manipAll Show incomplete challenges
-                button.center-block.btn.btn-sm.btn-block.btn-primary.active#showAll Collapse all
+                button.center-block.btn.btn-sm.btn-block.btn-primary.active#showAll Collapse all challenges
             hr
         #accordion.map-accordion
           for superBlock, index in superBlocks
@@ -25,7 +24,7 @@ block content
                           div.margin-left-10(id = "nested-collapse"+challengeBlock.name.replace(/\W/gi, '').split(' ').join('-') class = "collapse in map-collapse no-transition")
                               for challenge in challengeBlock.challenges
                                   if challenge.completed
-                                      p.slightly-faded.text-primary.ion-checkmark-circled.padded-ionic-icon.negative-15(name="#{challenge.dashedName}")
+                                      p.faded.text-primary.ion-checkmark-circled.padded-ionic-icon.negative-15(name="#{challenge.dashedName}")
                                           a(href="/challenges/#{challenge.dashedName}" target='_parent')
                                               = challenge.title
                                               span.sr-only= " Complete"
