@@ -18,7 +18,7 @@
     "lint-resources": "jsonlint -q server/resources/*.json",
     "lint-utils": "jsonlint -q server/utils/*.json",
     "lint-js": "eslint --ext=.js,.jsx server/ common/ config/ client/",
-    "lint-json": "npm run lint-server && npm run && npm run lint-challenges && npm run lint-resources && npm run lint-utils",
+    "lint-json": "npm run lint-server && npm run lint-challenges && npm run lint-resources && npm run lint-utils",
     "test-challenges": "babel-node seed/test-challenges.js | tap-spec",
     "pretest": "npm run lint",
     "test": "npm run test-challenges"
