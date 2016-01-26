@@ -1104,7 +1104,8 @@
         "var firstLetterOfLastName = \"\";\nvar lastName = \"Lovelace\";\n\n// Only change code below this line\nfirstLetterOfLastName = lastName[0];"
       ],
       "tests": [
-        "assert((function(){if(typeof firstLetterOfLastName !== \"undefined\" && code.match(/\\[0\\]/gi) && typeof firstLetterOfLastName === \"string\" && firstLetterOfLastName === \"L\"){return true;}else{return false;}})(), 'message: The <code>firstLetterOfLastName</code> variable should have the value of <code>L</code>.');"
+        "assert(firstLetterOfLastName === 'L', 'message: The <code>firstLetterOfLastName</code> variable should have the value of <code>L</code>.');",
+        "assert(code.match(/firstLetterOfLastName\\s*=\\s*lastName\\s*\\[\\s*\\d+\\s*\\]/), 'message: You should use bracket notation.');"
       ],
       "type": "waypoint",
       "challengeType": 1
@@ -1152,7 +1153,7 @@
         "You can also use <dfn>bracket notation</dfn> to get the character at other positions within a string.",
         "Remember that computers start counting at <code>0</code>, so the first character is actually the zeroth character.",
         "<h4>Instructions</h4>",
-        "Let's try to set <code>thirdLetterOfLastName</code> to equal the third letter of the <code>lastName</code> variable.",
+        "Let's try to set <code>thirdLetterOfLastName</code> to equal the third letter of the <code>lastName</code> variable using bracket notation.",
         "<strong>Hint</strong><br>Try looking at the <code>secondLetterOfFirstName</code> variable declaration if you get stuck."
       ],
       "challengeSeed": [
@@ -1175,7 +1176,8 @@
         "var lastName = \"Lovelace\";\nvar thirdLetterOfLastName = lastName[2];"
       ],
       "tests": [
-        "assert(thirdLetterOfLastName === 'v', 'message: The <code>thirdLetterOfLastName</code> variable should have the value of <code>v</code>.');"
+        "assert(thirdLetterOfLastName === 'v', 'message: The <code>thirdLetterOfLastName</code> variable should have the value of <code>v</code>.');",
+        "assert(code.match(/thirdLetterOfLastName\\s*=\\s*lastName\\s*\\[\\s*\\d+\\s*\\]/), 'message: You should use bracket notation.');"
       ],
       "type": "waypoint",
       "challengeType": 1
@@ -3886,9 +3888,10 @@
         "var myArr = [ 2, 3, 4, 5, 6];\nvar total = 0;\n\nfor (var i = 0; i < myArr.length; i++) {\n  total += myArr[i];\n}"
       ],
       "tests": [
-        "assert(total !== 'undefined', 'message: <code>total</code> should be defined');",
+        "assert(code.match(/var\\s*total\\s*=\\s*0\\s*;/), 'message: <code>total</code> should be declared and initialized to 0');",
         "assert(total === 20, 'message: <code>total</code> should equal 20');",
-        "assert(!/20/.test(code), 'message: Do not set <code>total</code> to 20 directly');"
+        "assert(code.match(/for\\s*\\((.*?)myArr\\.length/), 'message: You should use a <code>for</code> loop to iterate through <code>myArr</code>.');",
+        "assert(!code.match(/total[\\s\\+\\-]*=\\s*(\\d(?!\\s*;)|[1-9])/g), 'message: Do not set <code>total</code> to 20 directly');"
       ],
       "type": "waypoint",
       "challengeType": 1
