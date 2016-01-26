@@ -110,10 +110,8 @@
       "title": "Initializing Variables with the Equal Operator",
       "description": [
         "It is common to <dfn>initialize</dfn> a variable to an initial value in the same line as it is declared.",
-        "",
         "<code>var myVar = 0;</code>",
         "Creates a new variable called <code>myVar</code> and assigns it an initial value of <code>0</code>.",
-        "",
         "<h4>Instructions</h4>",
         "Define a variable <code>a</code> with <code>var</code> and initialize it to a value of <code>9</code>."
       ],
