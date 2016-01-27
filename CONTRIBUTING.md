@@ -90,7 +90,7 @@ DEBUG=true
 ```
 
 ```bash
-# Start the mongo server in a seperate terminal
+# Start the mongo server in a separate terminal
 mongod
 
 # Initialize Free Code Camp
@@ -151,7 +151,7 @@ nothing to commit, working directory clean
 **Note:** Branch naming is important. Use a name like `fix/short-fix-description` or `feature/short-feature-description`. Review the [Contribution Guidelines](#contribution-guidelines) for more detail.
 5. Edit your file(s) locally with the editor of your choice
 6. Check your `git status` to see unstaged files.
-7. Add your edited files: `git add path/to/filename.ext` You can also do: `git add .` to add all unstaged files. Take care, though, because you can accidentially add files you don't want added. Review your `git status` first.
+7. Add your edited files: `git add path/to/filename.ext` You can also do: `git add .` to add all unstaged files. Take care, though, because you can accidentally add files you don't want added. Review your `git status` first.
 8. Commit your edits: `git commit -m "Brief Description of Commit"`
 9. Squash your commits, if there are more than one.
 10. Push your commits to your GitHub Fork: `git push -u origin branch/name-here`
