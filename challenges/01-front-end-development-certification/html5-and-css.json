@@ -216,7 +216,7 @@
         "<p>Hello Paragraph</p>"
       ],
       "tests": [
-        "assert.isTrue((/Kitty(\\s)+ipsum(\\s)+dolor/gi).test($(\"p\").text()), 'message: Your <code>p</code> element should contain the first few words of the provided <code>kitty ipsum text</code>.');"
+        "assert.isTrue((/Kitty(\\s)+ipsum/gi).test($(\"p\").text()), 'message: Your <code>p</code> element should contain the first few words of the provided <code>kitty ipsum text</code>.');"
       ],
       "challengeType": 0,
       "nameEs": "Llena espacios con texto de relleno",
