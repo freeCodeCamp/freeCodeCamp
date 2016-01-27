@@ -1,7 +1,7 @@
 import { Observable } from 'rx';
 import debugFactory from 'debug';
 
-const debug = debugFactory('freecc:user:remote');
+const debug = debugFactory('fcc:user:remote');
 
 function destroyAllRelated(id, Model) {
   return Observable.fromNodeCallback(

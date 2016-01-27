@@ -2,7 +2,7 @@ import debugFactory from 'debug';
 import assign from 'object.assign';
 
 const censor = '**********************:P********';
-const debug = debugFactory('freecc:services:user');
+const debug = debugFactory('fcc:services:user');
 const protectedUserFields = {
   id: censor,
   password: censor,

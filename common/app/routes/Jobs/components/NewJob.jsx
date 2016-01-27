@@ -26,7 +26,7 @@ import {
   isURL
 } from 'validator';
 
-const debug = debugFactory('freecc:jobs:newForm');
+const debug = debugFactory('fcc:jobs:newForm');
 
 const checkValidity = [
   'position',

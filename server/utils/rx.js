@@ -1,7 +1,7 @@
 import Rx from 'rx';
 import debugFactory from 'debug';
 
-const debug = debugFactory('freecc:rxUtils');
+const debug = debugFactory('fcc:rxUtils');
 
 export function saveInstance(instance) {
   return new Rx.Observable.create(function(observer) {

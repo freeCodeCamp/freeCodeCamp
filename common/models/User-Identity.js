@@ -10,7 +10,7 @@ import {
 
 const { defaultProfileImage } = require('../utils/constantStrings.json');
 const githubRegex = (/github/i);
-const debug = debugFactory('freecc:models:userIdent');
+const debug = debugFactory('fcc:models:userIdent');
 
 function createAccessToken(user, ttl, cb) {
   if (arguments.length === 2 && typeof ttl === 'function') {

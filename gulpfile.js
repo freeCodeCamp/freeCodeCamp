@@ -1,5 +1,5 @@
 // enable debug for gulp
-process.env.DEBUG = process.env.DEBUG || 'freecc:*';
+process.env.DEBUG = process.env.DEBUG || 'fcc:*';
 
 require('babel-core/register');
 var Rx = require('rx'),
@@ -12,7 +12,7 @@ var Rx = require('rx'),
   gutil = require('gulp-util'),
   reduce = require('gulp-reduce-file'),
   sortKeys = require('sort-keys'),
-  debug = require('debug')('freecc:gulp'),
+  debug = require('debug')('fcc:gulp'),
   yargs = require('yargs'),
   concat = require('gulp-concat'),
   uglify = require('gulp-uglify'),
@@ -98,7 +98,10 @@ var paths = {
     'public/bower_components/bootstrap/dist/js/bootstrap.min.js',
     'public/bower_components/d3/d3.min.js',
     'public/bower_components/moment/min/moment.min.js',
-    'public/bower_components/moment-timezone/builds/moment-timezone-with-data.min.js',
+
+    'public/bower_components/' +
+      'moment-timezone/builds/moment-timezone-with-data.min.js',
+
     'public/bower_components/mousetrap/mousetrap.min.js',
     'public/bower_components/lightbox2/dist/js/lightbox.min.js',
     'public/bower_components/rxjs/dist/rx.all.min.js'
@@ -194,7 +197,7 @@ gulp.task('serve', ['build-manifest'], function(cb) {
     exec: path.join(__dirname, 'node_modules/.bin/babel-node'),
     env: {
       'NODE_ENV': process.env.NODE_ENV || 'development',
-      'DEBUG': process.env.DEBUG || 'freecc:*'
+      'DEBUG': process.env.DEBUG || 'fcc:*'
     }
   })
     .on('start', function() {

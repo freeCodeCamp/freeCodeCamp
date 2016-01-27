@@ -7,7 +7,7 @@ import debugFactory from 'debug';
 import { saveUser, observeMethod } from '../../server/utils/rx';
 import { blacklistedUsernames } from '../../server/utils/constants';
 
-const debug = debugFactory('freecc:user:remote');
+const debug = debugFactory('fcc:user:remote');
 const BROWNIEPOINTS_TIMEOUT = [1, 'hour'];
 
 function getAboutProfile({

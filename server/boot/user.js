@@ -19,7 +19,7 @@ import {
   calcLongestStreak
 } from '../utils/user-stats';
 
-const debug = debugFactory('freecc:boot:user');
+const debug = debugFactory('fcc:boot:user');
 const sendNonUserToMap = ifNoUserRedirectTo('/map');
 const certIds = {
   [certTypes.frontEnd]: frontEndChallengeId,

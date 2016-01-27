@@ -34,7 +34,7 @@ const sendNonUserToCommit = ifNoUserRedirectTo(
   'info'
 );
 
-const debug = debugFactory('freecc:commit');
+const debug = debugFactory('fcc:commit');
 
 function findNonprofit(name) {
   let nonprofit;
