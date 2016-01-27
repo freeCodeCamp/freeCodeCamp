@@ -2335,7 +2335,7 @@
         "assert(myTest(100) === \"Over 10\", 'message: <code>myTest(100)</code> should return \"Over 10\"');",
         "assert(myTest(101) === \"Over 100\", 'message: <code>myTest(101)</code> should return \"Over 100\"');",
         "assert(myTest(150) === \"Over 100\", 'message: <code>myTest(150)</code> should return \"Over 100\"');",
-        "assert(code.match(/val\\s*>\\s*\\d+/g).length > 1, 'message: You should use the <code>&gt;</code> operator at least twice');"
+        "assert(code.match(/val\\s*>\\s*('|\")*\\d+('|\")*/g).length > 1, 'message: You should use the <code>&gt;</code> operator at least twice');"
       ],
       "type": "waypoint",
       "challengeType": 1
@@ -2379,7 +2379,7 @@
         "assert(myTest(19) === \"10 or Over\", 'message: <code>myTest(19)</code> should return \"10 or Over\"');",
         "assert(myTest(20) === \"20 or Over\", 'message: <code>myTest(100)</code> should return \"20 or Over\"');",
         "assert(myTest(21) === \"20 or Over\", 'message: <code>myTest(101)</code> should return \"20 or Over\"');",
-        "assert(code.match(/val\\s*>=\\s*\\d+/g).length > 1, 'message: You should use the <code>&gt;=</code> operator at least twice');"
+        "assert(code.match(/val\\s*>=\\s*('|\")*\\d+('|\")*/g).length > 1, 'message: You should use the <code>&gt;=</code> operator at least twice');"
       ],
       "type": "waypoint",
       "challengeType": 1
@@ -2421,7 +2421,7 @@
         "assert(myTest(54) === \"Under 55\", 'message: <code>myTest(54)</code> should return \"Under 55\"');",
         "assert(myTest(55) === \"55 or Over\", 'message: <code>myTest(55)</code> should return \"55 or Over\"');",
         "assert(myTest(99) === \"55 or Over\", 'message: <code>myTest(99)</code> should return \"55 or Over\"');",
-        "assert(code.match(/val\\s*<\\s*\\d+/g).length > 1, 'message: You should use the <code>&lt;</code> operator at least twice');"
+        "assert(code.match(/val\\s*<\\s*('|\")*\\d+('|\")*/g).length > 1, 'message: You should use the <code>&lt;</code> operator at least twice');"
       ],
       "type": "waypoint",
       "challengeType": 1
@@ -2465,7 +2465,7 @@
         "assert(myTest(24) === \"Smaller Than or Equal to 24\", 'message: <code>myTest(24)</code> should return \"Smaller Than or Equal to 24\"');",
         "assert(myTest(25) === \"25 or More\", 'message: <code>myTest(25)</code> should return \"25 or More\"');",
         "assert(myTest(55) === \"25 or More\", 'message: <code>myTest(55)</code> should return \"25 or More\"');",
-        "assert(code.match(/val\\s*<=\\s*\\d+/g).length > 1, 'message: You should use the <code>&lt;=</code> operator at least twice');"
+        "assert(code.match(/val\\s*<=\\s*('|\")*\\d+('|\")*/g).length > 1, 'message: You should use the <code>&lt;=</code> operator at least twice');"
       ],
       "type": "waypoint",
       "challengeType": 1
