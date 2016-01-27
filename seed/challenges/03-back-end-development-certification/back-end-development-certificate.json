@@ -43,8 +43,8 @@
             "/certificate/verify/back-end"
           ],
           "stepIndex": [
-            "1",
-            "2"
+            1,
+            2
           ]
         }
       ],
