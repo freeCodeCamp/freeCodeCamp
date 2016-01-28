@@ -189,7 +189,7 @@ module.exports = function(app) {
         // to show all date related components
         // using signed-in account's timezone
         // not of the profile she is viewing
-        const timezone = req.user.timezone || 'UTC';
+        const timezone = req.user && req.user.timezone ? req.user.timezone : 'UTC';
 
         var cals = profileUser
           .progressTimestamps
