@@ -13,9 +13,7 @@
         "First, let's review what the <code>$(document).ready()</code> function does. This function makes it so all code inside of it only runs  once our page loads.",
         "Let's make our \"Get Message\" button change the text of the element with the class <code>message</code>.",
         "Before we can do this, we need to implement a <code>click event</code> inside of our <code>$(document).ready()</code> function by adding this code:",
-        "<code>$(\"#getMessage\").on(\"click\", function(){</code>",
-        "",
-        "<code>});</code>"
+        "<blockquote>$(\"#getMessage\").on(\"click\", function(){</br></br>});</blockquote>"
       ],
       "challengeSeed": [
         "fccss",
@@ -58,9 +56,7 @@
         "En primer lugar, vamos a revisar lo que hace la función <code>$(document).ready()</code>. Esta función hace que todo el código dentro de ella se ejecute sólo hasta que nuestra página ha sido cargada.",
         "Hagamos que nuestro botón \"Get message\" cambie el texto del elemento con clase <code>message</code>.",
         "Antes de poder hacer esto, tenemos que implementar un <code>evento de pulsación</code> dentro de nuestra función <code>$(document).ready()</code>, añadiendo este código:",
-        "<code>$(\"#getMessage\").on(\"click\", function(){</code>",
-        "",
-        "<code>});</code>"
+        "<blockquote>$(\"#getMessage\").on(\"click\", function(){</br></br>});</blockquote>"
       ]
     },
     {
@@ -70,7 +66,7 @@
         "When our click event happens, we can use Ajax to update an HTML element.",
         "Let's make it so that when a user clicks the \"Get Message\" button, we change the text of the element with the class <code>message</code> to say \"Here is the message\".",
         "We can do this by adding the following code within our click event:",
-        "<code>&nbsp;&nbsp;$(\".message\").html(\"Here is the message\");</code>"
+        "<code>$(\".message\").html(\"Here is the message\");</code>"
       ],
       "challengeSeed": [
         "fccss",
@@ -112,7 +108,7 @@
         "Cuando nuestro evento de pulsación ocurre, podemos utilizar Ajax para actualizar un elemento HTML.",
         "Hagamos que cuando un usuario pulse el botón \"Get Message\", el texto del elemento con la clase <code>message</code> cambie para decir \"Here is the message\".",
         "Podemos hacerlo añadiendo el siguiente código dentro de nuestro evento de pulsación:",
-        "<code>&nbsp;&nbsp;$(\".message\").html(\"Here is the message\");</code>"
+        "<code>$(\".message\").html(\"Here is the message\");</code>"
       ]
     },
     {
@@ -126,9 +122,7 @@
         "These properties and their values are often referred to as \"key-value pairs\".",
         "Let's get the JSON from Free Code Camp's Cat Photo API.",
         "Here's the code you can put in your click event to do this:",
-        "<code>&nbsp;&nbsp;$.getJSON(\"/json/cats.json\", function(json) {</code>",
-        "<code>&nbsp;&nbsp;&nbsp;&nbsp;$(\".message\").html(JSON.stringify(json));</code>",
-        "<code>&nbsp;&nbsp;});</code>",
+        "<blockquote>$.getJSON(\"/json/cats.json\", function(json) {</code></br>  $(\".message\").html(JSON.stringify(json));</br>});</blockquote>",
         "Once you've added this, click the \"Get Message\" button. Your Ajax function will replace the \"The message will go here\" text with the raw JSON output from the Free Code Camp Cat Photo API."
       ],
       "challengeSeed": [
@@ -182,9 +176,7 @@
         "Estas propiedades y sus valores a menudo se denominan \" pares llave-valor\".",
         "Vamos a obtener el JSON de la API de fotos de gato de Free Code Camp.",
         "Aquí está el código que puedes poner en tu evento de pulsación para lograrlo:",
-        "<code>&nbsp;&nbsp;$.getJSON(\"/json/cats.json\", function(json) {</code>",
-        "<code>&nbsp;&nbsp;&nbsp;&nbsp;$(\".message\").html(JSON.stringify(json));</code>",
-        "<code>&nbsp;&nbsp;});</code>",
+        "<blockquote>$.getJSON(\"/json/cats.json\", function(json) {</code></br>  $(\".message\").html(JSON.stringify(json));</br>});</blockquote>",
         "Una vez lo añadas, pulsa el botón \"Get Message\". Su función Ajax sustituirá el texto \"The message will go here\" con la salida JSON en bruto de la API de fotos de gato de Free Code Camp."
       ]
     },
@@ -197,14 +189,7 @@
         "First, let's declare an html variable with <code>var html = \"\";</code>.",
         "Then, let's loop through our JSON, adding more HTML to that variable. When the loop is finished, we'll render it.",
         "Here's the code that does this:",
-        "<code>json.forEach(function(val) {</code>",
-        "<code>&nbsp;&nbsp;var keys = Object.keys(val);</code>",
-        "<code>&nbsp;&nbsp;html += \"&lt;div class = 'cat'&gt;\";</code>",
-        "<code>&nbsp;&nbsp;keys.forEach(function(key) {</code>",
-        "<code>&nbsp;&nbsp;&nbsp;&nbsp;html += \"&lt;b&gt;\" + key + \"&lt;/b&gt;: \" + val[key] + \"&lt;br&gt;\";</code>",
-        "<code>&nbsp;&nbsp;});</code>",
-        "<code>&nbsp;&nbsp;html += \"&lt;/div&gt;&lt;br&gt;\";</code>",
-        "<code>});</code>"
+        "<blockquote>json.forEach(function(val) {</br>  var keys = Object.keys(val);</br>  html += \"&lt;div class = 'cat'&gt;\";</br>  keys.forEach(function(key) {</br>    html += \"&lt;b&gt;\" + key + \"&lt;/b&gt;: \" + val[key] + \"&lt;br&gt;\";</br>  });</br>  html += \"&lt;/div&gt;&lt;br&gt;\";</br>});</blockquote>"
       ],
       "challengeSeed": [
         "fccss",
@@ -257,14 +242,7 @@
         "En primer lugar, vamos a declarar una variable llamada <code>html</code> con <code>var html = \"\";</code>.",
         "Después, iteremos a traveś de nuestro JSON, añadiendo más HTML a esa variable. Cuando se termina el ciclo, vamos a presentarla. ",
         "Aquí está el código que hace esto:",
-        "<code>json.forEach(function(val) {</code>",
-        "<code>&nbsp;&nbsp;var keys = Object.keys(val);</code>",
-        "<code>&nbsp;&nbsp;html += \"&lt;div class = 'cat'&gt;\";</code>",
-        "<code>&nbsp;&nbsp;keys.forEach(function(key) {</code>",
-        "<code>&nbsp;&nbsp;&nbsp;&nbsp;html += \"&lt;b&gt;\" + key + \"&lt;/b&gt;: \" + val[key] + \"&lt;br&gt;\";</code>",
-        "<code>&nbsp;&nbsp;});</code>",
-        "<code>&nbsp;&nbsp;html += \"&lt;/div&gt;&lt;br&gt;\";</code>",
-        "<code>});</code>"
+        "<blockquote>json.forEach(function(val) {</br>  var keys = Object.keys(val);</br>  html += \"&lt;div class = 'cat'&gt;\";</br>  keys.forEach(function(key) {</br>    html += \"&lt;b&gt;\" + key + \"&lt;/b&gt;: \" + val[key] + \"&lt;br&gt;\";</br>  });</br>  html += \"&lt;/div&gt;&lt;br&gt;\";</br>});</blockquote>"
       ]
     },
     {
@@ -274,7 +252,7 @@
         "We've seen from the last two lessons that each object in our JSON array contains an <code>imageLink</code> key with a value that is the url of a cat's image.",
         "When we're looping through these objects, let's use this <code>imageLink</code> property to display this image in an <code>img</code> element.",
         "Here's the code that does this:",
-        "<code>&nbsp;&nbsp;html += \"&lt;img src = '\" + val.imageLink + \"'&gt;\";</code>"
+        "<code>html += \"&lt;img src = '\" + val.imageLink + \"'&gt;\";</code>"
       ],
       "challengeSeed": [
         "fccss",
@@ -335,7 +313,7 @@
         "lo que hemos visto en las dos últimas lecciones, cada objeto en nuestro vector JSON contiene una llave <code>imageLink</code> con un valor que corresponde a la url de la imagen de un gato.",
         "Cuando estamos recorriendo estos objetos, usemos esta propiedad <code>imageLink</code> para visualizar la imagen en un elemento <code>img</code>.",
         "Aquí está el código que hace esto:",
-        "<code>&nbsp;&nbsp;html += \"&lt;img src = '\" + val.imageLink + \"'&gt;\";</code>"
+        "<code>html += \"&lt;img src = '\" + val.imageLink + \"'&gt;\";</code>"
       ]
     },
     {
@@ -345,9 +323,7 @@
         "If we don't want to render every cat photo we get from our Free Code Camp's Cat Photo JSON API, we can pre-filter the json before we loop through it.",
         "Let's filter out the cat whose \"id\" key has a value of 1.",
         "Here's the code to do this:",
-        "<code>json = json.filter(function(val) {</code>",
-        "<code>&nbsp;&nbsp;return(val.id !== 1);</code>",
-        "<code>});</code>"
+        "<blockquote>json = json.filter(function(val) {</br>  return (val.id !== 1);</br>});</blockquote>"
       ],
       "challengeSeed": [
         "fccss",
@@ -409,9 +385,7 @@
         "Si no queremos presentar cada foto de gato que obtengamos de la API JSON de fotos de gato de Free Code Camp, podemos pre-filtrar el json antes de iterar a través de este.",
         "Vamos a filtrar el gato cuya llave \"id\" tiene un valor de 1.",
         "Aquí está el código para hacer esto:",
-        "<code>json = json.filter(function(val) {</code>",
-        "<code>&nbsp;&nbsp;return(val.id !== 1);</code>",
-        "<code>});</code>"
+        "<blockquote>json = json.filter(function(val) {</br>  return (val.id !== 1);</br>});</blockquote>"
       ]
     },
     {
@@ -423,11 +397,7 @@
         "You will see a prompt to allow or block this site from knowing your current location. The challenge can be completed either way, as long as the code is correct.",
         "By selecting allow you will see the text on the output phone change to your latitude and longitude",
         "Here's some code that does this:",
-        "<code>if (navigator.geolocation) {</code>",
-        "<code>&nbsp;&nbsp;navigator.geolocation.getCurrentPosition(function(position) {</code>",
-        "<code>&nbsp;&nbsp;&nbsp;&nbsp;$(\"#data\").html(\"latitude: \" + position.coords.latitude + \"&lt;br&gt;longitude: \" + position.coords.longitude);</code>",
-        "<code>&nbsp;&nbsp;});</code>",
-        "<code>}</code>"
+        "<blockquote>if (navigator.geolocation) {</br>  navigator.geolocation.getCurrentPosition(function(position) {</br>    $(\"#data\").html(\"latitude: \" + position.coords.latitude + \"&lt;br&gt;longitude: \" + position.coords.longitude);</br>  });</br>}</blockquote>"
       ],
       "challengeSeed": [
         "fccss",
@@ -454,11 +424,7 @@
         "Como usuario verás un mensaje para permitir o evitar que el sitio conozca tu ubicación actual. El desafío se puede completar de cualquier manera, siempre y cuando el código sea correcto. ",
         "Si lo permites, verás que el texto en el teléfono de la derecha cambiará con tu latitud y longitud",
         "Aquí hay un código que hace esto:",
-        "<code>if (navigator.geolocation) {</code>",
-        "<code>&nbsp;&nbsp;navigator.geolocation.getCurrentPosition(function(position) {</code>",
-        "<code>&nbsp;&nbsp;&nbsp;&nbsp;$(\"#data\").html(\"latitude: \" + position.coords.latitude + \"&lt;br&gt;longitude: \" + position.coords.longitude);</code>",
-        "<code>&nbsp;&nbsp;});</code>",
-        "<code>}</code>"
+        "<blockquote>if (navigator.geolocation) {</br>  navigator.geolocation.getCurrentPosition(function(position) {</br>    $(\"#data\").html(\"latitude: \" + position.coords.latitude + \"&lt;br&gt;longitude: \" + position.coords.longitude);</br>  });</br>}</blockquote>"
       ]
     }
   ]
