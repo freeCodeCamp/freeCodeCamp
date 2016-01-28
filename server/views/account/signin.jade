@@ -2,19 +2,19 @@ extends ../layout
 block content
     .text-center
         h2 Sign in with one of these options:
-        a.btn.btn-lg.btn-block.btn-github.btn-social(href='/auth/github')
+        a.btn.btn-lg.btn-block.btn-social.btn-github(href='/auth/github')
             i.fa.fa-github
             | Sign in with Github
-        a.btn.btn-lg.btn-block.btn-facebook.btn-social(href='/auth/facebook')
+        a.btn.btn-lg.btn-block.btn-social.btn-facebook(href='/auth/facebook')
             i.fa.fa-facebook
             | Sign in with Facebook
-        a.btn.btn-lg.btn-block.btn-google-plus.btn-social(href='/auth/google')
+        a.btn.btn-lg.btn-block.btn-social.btn-google-plus(href='/auth/google')
             i.fa.fa-google-plus
             | Sign in with Google
-        a.btn.btn-lg.btn-block.btn-linkedin.btn-social(href='/auth/linkedin')
+        a.btn.btn-lg.btn-block.btn-social.btn-linkedin(href='/auth/linkedin')
             i.fa.fa-linkedin
             | Sign in with LinkedIn
-        a.btn.btn-lg.btn-block.btn-twitter.btn-social(href='/auth/twitter')
+        a.btn.btn-lg.btn-block.btn-social.btn-twitter(href='/auth/twitter')
             i.fa.fa-twitter
             | Sign in with Twitter
         br
@@ -23,3 +23,34 @@ block content
         p
             a(href="/email-signin") If you originally signed up using your email address, you can sign in here.
 
+    script.
+      $(document).ready(function() {
+        var method = localStorage.getItem('lastSigninMethod'),
+          btnSelector = 'a.btn.btn-lg.btn-block.btn-social';
+        if (method) {
+          try {
+            var obj = JSON.parse(method);
+          } catch(e) {
+            console.error('Invalid sign in object stored', method);
+            return;
+          }
+          $.each($(btnSelector), function(i, item) {
+            if (
+              $(item).attr('href') === obj.methodLink &&
+              $(item).hasClass(obj.methodClass)
+            ) {
+              $(item).addClass('active');
+              $(item).attr('title', 'This is your last signin method');
+              return false;
+            }
+          });
+        }
+
+        $(btnSelector).click(function() {
+          var obj = {};
+          $(this).removeClass('active');
+          obj.methodClass = $(this).attr('class').split(' ').pop();
+          obj.methodLink = $(this).attr('href');
+          localStorage.setItem('lastSigninMethod', JSON.stringify(obj));
+        });
+      });
