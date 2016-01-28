@@ -2188,7 +2188,7 @@
         "assert(myTest(10) === \"Not Equal\", 'message: <code>myTest(10)</code> should return \"Not Equal\"');",
         "assert(myTest(12) === \"Equal\", 'message: <code>myTest(12)</code> should return \"Equal\"');",
         "assert(myTest(\"12\") === \"Equal\", 'message: <code>myTest(\"12\")</code> should return \"Equal\"');",
-        "assert(code.match(/val\\s*==\\s*\\d+/g).length > 0, 'message: You should use the <code>==</code> operator');"
+        "assert(code.match(/val\\s*==[\\s'\"\\d]+/g).length > 0, 'message: You should use the <code>==</code> operator');"
       ],
       "type": "waypoint",
       "challengeType": 1
