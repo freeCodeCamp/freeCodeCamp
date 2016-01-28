@@ -6,25 +6,22 @@ block content
             | who learn to code and help nonprofits.
         .spacer
         .row
-            .col-xs-12.col-sm-10.col-sm-offset-1.col-md-6.col-md-offset-3
-                h2
-                    table.population-table.img-center
-                        tr
-                            td Established:&thinsp;
-                            td
-                                span.text-primary #{daysRunning}&thinsp;
-                                | days ago
-                        tr
-                            td Population:&thinsp;&thinsp;&thinsp;
-                            td
-                                span.text-primary #{camperCount}&thinsp;
-                                | campers
-                        tr
-                            td Completed:&thinsp;&thinsp;&thinsp;
-                            td
-                                span.text-primary #{globalCompletedCount}&thinsp;
-                                | challenges
-
+            .col-xs-12.col-sm-10.col-sm-offset-1.col-md-6.col-md-offset-3                                
+                ul.population-table
+                    li 
+                        span.tag Established:&#9;
+                        span.text-primary #{daysRunning}
+                        | days ago
+                    li 
+                        span.tag Population:&#9;
+                        span.text-primary #{camperCount}
+                        | campers
+                    li
+                        span.tag Completed:&#9;
+                        span.text-primary #{globalCompletedCount}
+                        | challenges
+                        
+        .spacer
         .row
             .col-xs-12.col-sm-10.col-sm-offset-1.col-md-6.col-md-offset-3
                 h2 Free Code Camp around the web:
