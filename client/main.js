@@ -280,6 +280,43 @@ $(document).ready(function() {
     window.location.href = link;
   });
 
+  function expandCaret(item) {
+    $(item)
+      .prev().find('.fa-caret-right')
+      .removeClass('fa-caret-right').addClass('fa-caret-down');
+  }
+
+  function collapseCaret(item) {
+    $(item)
+      .prev().find('.fa-caret-down')
+      .removeClass('fa-caret-down').addClass('fa-caret-right');
+  }
+
+  function expandBlock(item) {
+    $(item).addClass('in').css('height', '100%');
+    expandCaret(item);
+  }
+
+  function collapseBlock(item) {
+    $(item).removeClass('in').css('height', '100%');
+    collapseCaret(item);
+  }
+
+  $.each($('.sr-only'), function(i, span) {
+    if ($(span).text() === ' Complete') {
+      $(span).parents('p').addClass('manip-hidden');
+    }
+  });
+
+  $.each($('.map-collapse'), function(i, div) {
+    if ($(div).find('.manip-hidden').length ===
+        $(div).find('p').length) {
+      collapseBlock(div);
+      $(div).find('h3 > a').addClass('faded');
+      $(div).prev('h2').addClass('faded');
+    }
+  });
+
   var scrollTo, dashedName = localStorage.getItem('currentDashedName'),
     elemsToSearch = $('p.padded-ionic-icon a'), currOrLastChallenge;
   if (!dashedName && $('.sr-only').length) {
@@ -323,63 +360,31 @@ $(document).ready(function() {
   }
 
   $('#accordion').on('show.bs.collapse', function(e) {
-      $(e.target)
-        .prev().find('.fa-caret-right')
-        .removeClass('fa-caret-right').addClass('fa-caret-down');
+      expandCaret(e.target);
       if ($('a[data-toggle=collapse]').length === $('.fa-caret-down').length) {
         $('#showAll').text('Collapse all challenges');
         $('#showAll').addClass('active');
       }
   }).on('hide.bs.collapse', function(e) {
-      $(e.target)
-        .prev().find('.fa-caret-down')
-        .removeClass('fa-caret-down').addClass('fa-caret-right');
+      collapseCaret(e.target);
       if ($('a[data-toggle=collapse]').length === $('.fa-caret-right').length) {
         $('#showAll').text('Expand all challenges');
         $('#showAll').removeClass('active');
       }
   });
 
-  $('#manipAll').on('click', () => {
-    var showAll = $('#manipAll').hasClass('active');
-    if (showAll) {
-      $.each($('.sr-only'), function(i, item) {
-        if ($(item).text() === ' Complete') {
-          $(item).parents('p').css('display', 'none');
-          $(item).parents('p').addClass('manip-hidden');
-        }
-      });
-      $('#manipAll').text('Show all challenges');
-      return $('#manipAll').removeClass('active');
-    } else {
-      $.each($('.manip-hidden'), function(i, item) {
-        $(item).css('display', 'block');
-        $(item).removeClass('manip-hidden');
-      });
-      $('#manipAll').text('Show incomplete challenges');
-      return $('#manipAll').addClass('active');
-    }
-  });
-
   $('#showAll').on('click', () => {
     var mapExpanded = $('#showAll').hasClass('active');
     if (!mapExpanded) {
-      $.each($('.map-collapse:not(".in")'), function(i, item) {
-        $(item).css('height', '100%');
-        $(item).addClass('in');
-        $(item)
-          .prev().find('.fa-caret-right')
-          .removeClass('fa-caret-right').addClass('fa-caret-down');
+      $.each($('.map-collapse:not(".in")'),
+      function(i, div) {
+        expandBlock(div);
       });
       $('#showAll').text('Collapse all challenges');
       return $('#showAll').addClass('active');
     } else {
-      $.each($('.map-collapse.in'), function(i, item) {
-        $(item).css('height', '100%');
-        $(item).removeClass('in');
-        $(item)
-          .prev().find('.fa-caret-down')
-          .removeClass('fa-caret-down').addClass('fa-caret-right');
+      $.each($('.map-collapse.in'), function(i, div) {
+        collapseBlock(div);
       });
       $('#showAll').text('Expand all challenges');
       return $('#showAll').removeClass('active');
