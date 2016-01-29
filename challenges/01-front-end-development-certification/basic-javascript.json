@@ -3534,7 +3534,7 @@
         "  {",
         "    \"artist\": \"Billy Joel\",",
         "    \"title\": \"Piano Man\",",
-        "    \"release_year\": 1993,",
+        "    \"release_year\": 1973,",
         "    \"formats\": [ ",
         "      \"CS\", ",
         "      \"8T\", ",
@@ -3549,7 +3549,7 @@
         "(function(x){ if (Array.isArray(x)) { return JSON.stringify(x); } return \"myMusic is not an array\"})(myMusic);"
       ],
       "solutions": [
-        "var myMusic = [\n  {\n    \"artist\": \"Billy Joel\",\n    \"title\": \"Piano Man\",\n    \"release_year\": 1993,\n    \"formats\": [ \n      \"CS\", \n      \"8T\", \n      \"LP\" ],\n    \"gold\": true\n  }, \n  {\n    \"artist\": \"ABBA\",\n    \"title\": \"Ring Ring\",\n    \"release_year\": 1973,\n    \"formats\": [ \n      \"CS\", \n      \"8T\", \n      \"LP\",\n    \"CD\",\n  ]\n  }\n];"
+        "var myMusic = [\n  {\n    \"artist\": \"Billy Joel\",\n    \"title\": \"Piano Man\",\n    \"release_year\": 1973,\n    \"formats\": [ \n      \"CS\", \n      \"8T\", \n      \"LP\" ],\n    \"gold\": true\n  }, \n  {\n    \"artist\": \"ABBA\",\n    \"title\": \"Ring Ring\",\n    \"release_year\": 1973,\n    \"formats\": [ \n      \"CS\", \n      \"8T\", \n      \"LP\",\n    \"CD\",\n  ]\n  }\n];"
       ],
       "tests": [
         "assert(Array.isArray(myMusic), 'message: <code>myMusic</code> should be an array');",
