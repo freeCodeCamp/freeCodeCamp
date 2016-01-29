@@ -2386,10 +2386,10 @@
         "assert(myTest(0) === \"9 or Under\", 'message: <code>myTest(0)</code> should return \"9 or Under\"');",
         "assert(myTest(9) === \"9 or Under\", 'message: <code>myTest(9)</code> should return \"9 or Under\"');",
         "assert(myTest(10) === \"10 or Over\", 'message: <code>myTest(10)</code> should return \"10 or Over\"');",
-        "assert(myTest(11) === \"10 or Over\", 'message: <code>myTest(10)</code> should return \"10 or Over\"');",
+        "assert(myTest(11) === \"10 or Over\", 'message: <code>myTest(11)</code> should return \"10 or Over\"');",
         "assert(myTest(19) === \"10 or Over\", 'message: <code>myTest(19)</code> should return \"10 or Over\"');",
-        "assert(myTest(20) === \"20 or Over\", 'message: <code>myTest(100)</code> should return \"20 or Over\"');",
-        "assert(myTest(21) === \"20 or Over\", 'message: <code>myTest(101)</code> should return \"20 or Over\"');",
+        "assert(myTest(100) === \"20 or Over\", 'message: <code>myTest(100)</code> should return \"20 or Over\"');",
+        "assert(myTest(21) === \"20 or Over\", 'message: <code>myTest(21)</code> should return \"20 or Over\"');",
         "assert(code.match(/val\\s*>=\\s*('|\")*\\d+('|\")*/g).length > 1, 'message: You should use the <code>&gt;=</code> operator at least twice');"
       ],
       "type": "waypoint",
