@@ -15,8 +15,8 @@
     flex-direction: row;
 
     background-color: @body-bg;
-    border-left: 1px solid #333;
-    box-shadow: -12px 0 18px 0 rgba(50, 50, 50, 0.3);
+    border-left: 1px solid #ddd;
+    box-shadow: -12px 0 18px 0 rgba(50, 50, 50, 0.1);
 
     transition: transform 0.3s cubic-bezier(0.16, 0.22, 0.22, 1.7);
 
@@ -60,7 +60,12 @@
 
       border: 0;
       overflow: auto;
-      margin-top: 40px;
+    }
+}
+
+.map-aside-body {
+    #nested {
+      margin:0 20px;
     }
 }
 
@@ -73,27 +78,121 @@
     display: flex;
     justify-content: flex-end;
 
-    padding-bottom: 0.7em;
-
-    background: linear-gradient(to bottom, #ffffff 0%, #ffffff 50%, rgba(255, 255, 255, 0) 100%);
-
+    padding-bottom: 5px;
+    padding-right:10px;
+    padding-top:5px;
     z-index: 100;
 }
 
 .map-fixed-header {
   position: fixed;
   background: white;
-  padding-top:15px;
+  padding-top: 15px;
   width: 100%;
   z-index: 1;
   left: 0;
   top: 0;
 }
+.map-fixed-header p {
+  margin: 10px 0 20px;
+}
+.map-fixed-header hr {
+  margin:30px 0;
+}
+.map-buttons button {
+  width:300px;
+}
 
 .map-accordion {
-  position: absolute;
-  margin-top: 135px;
+  margin: 155px auto 0;
+  width:700px;
   overflow-y: auto;
+  position:relative;
+  h2 > a {
+      width:100%;
+      display:block;
+      background:#efefef;
+      padding:10px 0;
+      padding-left:50px;
+      padding-right:20px;
+    }
+
+  h3 {
+    margin:15px 0;
+    padding:0;
+    &:first-child {
+      margin-top:25px      
+    }
+    > a {
+      padding-left: 40px;
+      padding-bottom: 10px;
+      display:block;
+    }
+  }
+
+  #nested div :before {
+    margin-right: 15px;
+  }
+
+  #nested div p {
+      text-indent: -15px;
+      margin-left: 60px;
+      padding-right: 20px
+    }
+
+  .challengeBlockDescription {
+      margin:0;
+      margin-top:-10px;
+      padding:0 15px 23px 30px;
+    }
+
+  span.no-link-underline {
+    position:absolute;
+    margin-left:-30px;
+    color: #666;
+  }
+
+  div > div:last-child {
+    margin-bottom:30px
+  }
+}
+.challengeBlockTime {
+  margin-right: 20px;
+  margin-top:5px;
+  float:right;
+  font-size: 18px;
+  color: #BBBBBB;
+}
+
+@media (max-width: 720px) {
+  .map-accordion {
+    left:0;
+    right:0;
+    width:100%;
+    margin-top:194px;
+    h2 {
+      margin:15px 0;
+      padding:0;
+      > a {
+        padding:10px 0;
+        padding-left:50px;
+        padding-right:20px;
+        font-size:20px;
+      }
+    }  
+    h3 {
+      margin:10px 0;
+      padding:0;
+      > a {
+        clear:both;
+        font-size:20px;
+      }
+    }
+  }    
+  .challengeBlockTime {
+    float:none;
+    display:block;
+  }
 }
 
 .map-aside-action-item {
@@ -130,10 +229,6 @@
     &:active {
       filter: hue-rotate(80deg) saturate(150);
     }
-}
-
-.map-aside-body {
-    margin: 0 20px 40px 60px
 }
 
 .map-aside-action-pop-out {
