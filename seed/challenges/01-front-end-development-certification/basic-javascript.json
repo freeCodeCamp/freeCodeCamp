@@ -2520,7 +2520,7 @@
         "assert(myTest(0) === \"No\", 'message: <code>myTest(0)</code> should return \"No\"');",
         "assert(myTest(24) === \"No\", 'message: <code>myTest(24)</code> should return \"No\"');",
         "assert(myTest(25) === \"Yes\", 'message: <code>myTest(25)</code> should return \"Yes\"');",
-        "assert(myTest(49) === \"Yes\", 'message: <code>myTest(30)</code> should return \"Yes\"');",
+        "assert(myTest(30) === \"Yes\", 'message: <code>myTest(30)</code> should return \"Yes\"');",
         "assert(myTest(50) === \"Yes\", 'message: <code>myTest(50)</code> should return \"Yes\"');",
         "assert(myTest(51) === \"No\", 'message: <code>myTest(51)</code> should return \"No\"');",
         "assert(myTest(75) === \"No\", 'message: <code>myTest(75)</code> should return \"No\"');",
