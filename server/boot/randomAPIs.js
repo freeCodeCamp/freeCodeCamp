@@ -1,5 +1,4 @@
 var Rx = require('rx'),
-    Twit = require('twit'),
     async = require('async'),
     moment = require('moment'),
     request = require('request'),
@@ -19,7 +18,6 @@ module.exports = function(app) {
   router.get('/api/github', githubCalls);
   router.get('/api/blogger', bloggerCalls);
   router.get('/api/trello', trelloCalls);
-  router.get('/api/codepen/twitter/:screenName', twitter);
   router.get('/sitemap.xml', sitemap);
   router.get('/chat', chat);
   router.get('/coding-bootcamp-cost-calculator', bootcampCalculator);
@@ -44,35 +42,6 @@ module.exports = function(app) {
   );
 
   app.use(router);
-
-  function twitter(req, res, next) {
-    // sends out random tweets about javascript
-    var T = new Twit({
-      'consumer_key': secrets.twitter.consumerKey,
-      'consumer_secret': secrets.twitter.consumerSecret,
-      'access_token': secrets.twitter.token,
-      'access_token_secret': secrets.twitter.tokenSecret
-    });
-
-    var screenName;
-    if (req.params.screenName) {
-      screenName = req.params.screenName;
-    } else {
-      screenName = 'freecodecamp';
-    }
-
-    T.get(
-      'statuses/user_timeline',
-      {
-        'screen_name': screenName,
-        count: 10
-      },
-      function(err, data) {
-        if (err) { return next(err); }
-        return res.json(data);
-      }
-    );
-  }
 
   function sitemap(req, res, next) {
     var appUrl = 'http://www.freecodecamp.com';

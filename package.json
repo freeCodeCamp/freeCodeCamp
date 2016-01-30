@@ -125,7 +125,6 @@
     "store": "https://github.com/berkeleytrue/store.js.git#feature/noop-server",
     "thundercats": "^3.1.0",
     "thundercats-react": "~0.5.1",
-    "twit": "^2.1.1",
     "uglify-js": "^2.5.0",
     "url-regex": "^3.0.0",
     "validator": "^4.2.1",
