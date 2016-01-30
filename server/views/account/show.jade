@@ -156,7 +156,7 @@ block content
                                   td.col-xs-2.hidden-xs= challenge.lastUpdated ? moment(challenge.lastUpdated, 'x').format("MMM DD, YYYY") : ''
                                   td.col-xs-2.hidden-xs
                                     if (challenge.solution)
-                                        a(href='/challenges/' + removeOldTerms(challenge.name) + '?solution=' + encodeURIComponent(encodeFcc(challenge.solution)), target='_blank') View my solution
+                                        a(href='/challenges/' + removeOldTerms(challenge.name) + '?solution=' + encodeURIComponent(encodeFcc(challenge.solution)), target='_blank') View solution
                                     else
                                         a(href='/challenges/' + removeOldTerms(challenge.name)) View this challenge
                                   td.col-xs-12.visible-xs
@@ -180,7 +180,7 @@ block content
                                   td.col-xs-2.hidden-xs= challenge.lastUpdated ? moment(challenge.lastUpdated, 'x').format("MMM DD, YYYY") : ''
                                   td.col-xs-2.hidden-xs
                                     if (challenge.solution)
-                                        a(href='/challenges/' + removeOldTerms(challenge.name) + '?solution=' + encodeURIComponent(encodeFcc(challenge.solution)), target='_blank') View my solution
+                                        a(href='/challenges/' + removeOldTerms(challenge.name) + '?solution=' + encodeURIComponent(encodeFcc(challenge.solution)), target='_blank') View solution
                                     else
                                         a(href='/challenges/' + removeOldTerms(challenge.name)) View this challenge
                                   td.col-xs-12.visible-xs
