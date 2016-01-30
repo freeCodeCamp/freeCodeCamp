@@ -86,7 +86,7 @@
     "jade": "^1.11.0",
     "json-loader": "~0.5.2",
     "less": "^2.5.1",
-    "lodash": "^3.9.3",
+    "lodash": "^4.1.0",
     "loopback": "^2.22.0",
     "loopback-boot": "^2.13.0",
     "loopback-component-passport": "^1.6.0",
