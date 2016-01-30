@@ -99,6 +99,7 @@ var paths = {
     'public/bower_components/bootstrap/dist/js/bootstrap.min.js',
     'public/bower_components/d3/d3.min.js',
     'public/bower_components/moment/min/moment.min.js',
+    'public/bower_components/moment-timezone/builds/moment-timezone-with-data.min.js',
     'public/bower_components/mousetrap/mousetrap.min.js',
     'public/bower_components/lightbox2/dist/js/lightbox.min.js',
     'public/bower_components/rxjs/dist/rx.all.min.js'

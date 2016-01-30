@@ -94,6 +94,7 @@
     "merge-stream": "^1.0.0",
     "method-override": "^2.3.0",
     "moment": "^2.10.2",
+    "moment-timezone": "^0.5.0",
     "mongodb": "^2.0.33",
     "morgan": "^1.6.1",
     "node-uuid": "^1.4.3",

@@ -1,6 +1,7 @@
 window.common = (function(global) {
   const {
     $,
+    moment,
     ga = (() => {}),
       common = { init: [] }
   } = global;
@@ -51,7 +52,8 @@ window.common = (function(global) {
         name: common.challengeName,
         completedWith: didCompleteWith,
         challengeType: common.challengeType,
-        solution
+        solution,
+        timezone: moment.tz.guess()
       };
 
       $.post('/completed-challenge/', data, function(res) {

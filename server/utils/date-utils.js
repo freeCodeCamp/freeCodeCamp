@@ -1,10 +1,10 @@
-import moment from 'moment';
+import moment from 'moment-timezone';
 
 // day count between two epochs (inclusive)
-export function dayCount([head, tail]) {
+export function dayCount([head, tail], timezone = 'UTC') {
   return Math.ceil(
-    moment(moment(head).endOf('day')).diff(
-      moment(tail).startOf('day'),
+    moment(moment(head).tz(timezone).endOf('day')).tz(timezone).diff(
+      moment(tail).tz(timezone).startOf('day'),
       'days',
       true)
     );

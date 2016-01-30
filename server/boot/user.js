@@ -1,6 +1,6 @@
 import _ from 'lodash';
 import dedent from 'dedent';
-import moment from 'moment';
+import moment from 'moment-timezone';
 import { Observable } from 'rx';
 import debugFactory from 'debug';
 
@@ -37,6 +37,8 @@ const certText = {
   [certTypes.backEnd]: 'Back End Certified',
   [certTypes.fullStack]: 'Full Stack Certified'
 };
+
+const dateFormat = 'MMM DD, YYYY';
 
 function replaceScriptTags(value) {
   return value
@@ -183,6 +185,12 @@ module.exports = function(app) {
         }
         profileUser = profileUser.toJSON();
 
+        // timezone of signed-in account
+        // to show all date related components
+        // using signed-in account's timezone
+        // not of the profile she is viewing
+        const timezone = req.user && req.user.timezone ? req.user.timezone : 'UTC';
+
         var cals = profileUser
           .progressTimestamps
           .map(objOrNum => {
@@ -192,8 +200,8 @@ module.exports = function(app) {
           })
           .sort();
 
-        profileUser.currentStreak = calcCurrentStreak(cals);
-        profileUser.longestStreak = calcLongestStreak(cals);
+        profileUser.currentStreak = calcCurrentStreak(cals, timezone);
+        profileUser.longestStreak = calcLongestStreak(cals, timezone);
 
         const data = profileUser
           .progressTimestamps
@@ -223,9 +231,20 @@ module.exports = function(app) {
             +challenge.challengeType === 4;
         }
 
-        const completedChallenges = profileUser.completedChallenges.filter(
-          ({ name }) => typeof name === 'string'
-        );
+        const completedChallenges = profileUser.completedChallenges
+          .filter(({ name }) => typeof name === 'string')
+          .map(challenge => {
+              challenge = { ...challenge };
+              if (challenge.completedDate) {
+                challenge.completedDate = 
+                  moment.tz(challenge.completedDate, timezone).format(dateFormat);
+              }
+              if (challenge.lastUpdated) {
+                challenge.lastUpdated = 
+                  moment.tz(challenge.lastUpdated, timezone).format(dateFormat);
+              }
+              return challenge;
+          });
 
         const projects = completedChallenges.filter(filterProjects);
 
