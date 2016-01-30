@@ -1,5 +1,6 @@
 import path from 'path';
 import { Observable } from 'rx';
+import adler32 from 'adler32';
 
 const basePath = process.cwd() + '/seed/challenges/';
 
@@ -21,6 +22,12 @@ export default function getFromDisk$(challenge) {
       return _challenge;
     })
     .map(challenge => {
+      challenge.checksum = adler32.sum(
+        Buffer(challenge.title +
+          JSON.stringify(challenge.description) +
+          JSON.stringify(challenge.challengeSeed) +
+          JSON.stringify(challenge.tests)));
+
       challenge.head = challenge.head || [];
       challenge.tail = challenge.tail || [];
       challenge.challengeType = '' + challenge.challengeType;

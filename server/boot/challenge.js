@@ -178,7 +178,10 @@ function getRenderData$(user, challenge$, origChallengeName, solution) {
           // htmls specific
           verb: randomVerb(),
           phrase: randomPhrase(),
-          compliment: randomCompliment()
+          compliment: randomCompliment(),
+
+          // Google Analytics
+          gaName: challenge.title + '~' + challenge.checksum
         }
       });
     });
