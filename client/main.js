@@ -391,6 +391,36 @@ $(document).ready(function() {
     }
   });
 
+  // live filter
+  $('#map-filter').on('keyup', () => {
+    if($('#map-filter').val().length > 1) {
+      var regex = new RegExp($('#map-filter').val().replace(/ /g, '-'), "gi");
+      $('.challenge-title').each((index, title) => {
+        //console.log("title:", JSON.stringify(title));
+        if(regex.test($(title).attr('name'))) {
+          $(title).removeClass('hidden');
+        } else {
+          $(title).addClass('hidden');
+        }
+
+      });
+      $.each($('.map-collapse'), function(i, div) {
+        console.log("bing");
+        if ($(div).find('.hidden').length ===
+          $(div).find('p').length) {
+          console.log("hiding parents");
+          $(div).addClass('hidden');
+          $(div).find('h3').addClass('hidden');
+          $(div).prev('h2').addClass('hidden');
+        }
+      });
+    } else {
+      $('.challenge-title').each((title) => {
+        $(title).removeClass('hidden');
+      });
+    }
+  });
+
   // keyboard shortcuts: open map
   window.Mousetrap.bind('g m', function() {
     var isCollapsed = $('.map-aside').hasClass('is-collapsed');
