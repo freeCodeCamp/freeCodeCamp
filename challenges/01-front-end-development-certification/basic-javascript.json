@@ -2879,7 +2879,7 @@
       "id": "56533eb9ac21ba0edf2244df",
       "title": "Multiple Identical Options in Switch Statements",
       "description": [
-        "If the <code>break</code> statement is ommitted from a <code>switch</code> statement's <code>case</code>, the following <code>case</code> statement(s) are executed until a <code>break</code> is encountered. If you have multiple inputs with the same output, you can represent them in a <code>switch</code> statement like this:",
+        "If the <code>break</code> statement is omitted from a <code>switch</code> statement's <code>case</code>, the following <code>case</code> statement(s) are executed until a <code>break</code> is encountered. If you have multiple inputs with the same output, you can represent them in a <code>switch</code> statement like this:",
         "<blockquote>switch(val) {<br>  case 1:<br>  case 2:<br>  case 3:<br>    result = \"1, 2, or 3\";<br>    break;<br>  case 4:<br>    result = \"4 alone\";<br>}</blockquote>",
         "Cases for 1, 2, and 3 will all produce the same result.",
         "<h4>Instructions</h4>",
