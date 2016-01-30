@@ -1,6 +1,7 @@
 /* eslint-disable no-process-exit */
 require('babel-register');
 require('dotenv').load();
+var adler32 = require('adler32');
 
 var Rx = require('rx'),
     _ = require('lodash'),
@@ -39,6 +40,12 @@ destroy()
           .toLowerCase()
           .replace(/\:/g, '')
           .replace(/\s/g, '-');
+
+        challenge.checksum = adler32.sum(
+          Buffer(challenge.title +
+            JSON.stringify(challenge.description) +
+            JSON.stringify(challenge.challengeSeed) +
+            JSON.stringify(challenge.tests)));
 
         challenge.fileName = fileName;
         challenge.helpRoom = helpRoom;
