@@ -271,9 +271,14 @@ ul {
 .nav-logo {
   height: 40px;
   margin-top: -10px;
-  @media (max-width: 381px) {
+
+  @media (max-width: 397px) {
     height: 30px;
     margin-top: -5px;
+  }
+  @media (max-width: 335px) {
+    height: 25px;
+    margin-top: -2px;
   }
 }
 
@@ -281,10 +286,11 @@ ul {
   @media (min-width: 767px) {
     margin-right:0;
   }
-  @media (max-width: 991px) and (min-width: 768px) {
+  @media (max-width: 991px) and (min-width: 767px) {
     position: absolute;
+    left: 0;
     right: 0;
-    margin-right: 10px;
+    margin-right: 0px;
     white-space: nowrap;
   }
   background-color: @brand-primary;
@@ -418,8 +424,8 @@ h4 {
   transition: height 0.001s;
 }
 
-.margin-left-10 { 
-  margin-left: 10px; 
+.margin-left-10 {
+  margin-left: 10px;
 }
 
 .btn-responsive {
@@ -467,9 +473,16 @@ thead {
   margin-top: -5px;
   margin-bottom: -5px;
 }
+
 .navbar-toggle {
   color: @body-bg;
+
+  &:hover,
+  &:focus {
+    color: #4a2b0f;
+  }
 }
+
 
 .signup-btn-nav {
   margin-top: -2px !important;
@@ -587,13 +600,8 @@ thead {
   }
 }
 
-.hamburger-dropdown {
-  @media (max-width: 991px) {
-    margin-top: -5px !important;
-  }
-  @media (min-width: 768px) and (max-width: 991px) {
-    width: 105%;
-  }
+.navbar-collapse {
+  border-top: 0;
 }
 
 .challenge-list-header {
@@ -808,8 +816,7 @@ iframe.iphone {
   }
 
   .navbar-nav {
-    float: none !important;
-    margin: 7.5px -15px;
+    margin-top: 0;
   }
 
   .navbar-nav > li {
@@ -833,15 +840,17 @@ iframe.iphone {
 
   .collapsing {
     overflow: hidden !important;
+    position: absolute;
+    left: 0;
+    right: 0;
   }
 }
 
 .navbar-toggle {
   width: 80px;
-  padding-left: 0px;
+  padding-left: 0;
   padding-right: 8px;
-  margin-left: 0px;
-  margin-right: 2px;
+  margin: 7px 2px 7px 0;
   text-align: left;
   font-size: 10px;
 }
