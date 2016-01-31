@@ -392,34 +392,68 @@ $(document).ready(function() {
   });
 
   // live filter
-  $('#map-filter').on('keyup', () => {
+  
+  function clearMapFilter(){ 
+    $('#map-filter').val('');
+    $('#map-filter').next().children().removeClass('fa-times').addClass('fa-search');
+    $('#map-filter').next().removeClass('filled');
+    $('.map-accordion').find('.hidden').removeClass('hidden');
+    $('#noneFound').hide(); 
+  }
+  
+  $('#map-filter').on('keyup', () => { 
     if($('#map-filter').val().length > 1) {
       var regex = new RegExp($('#map-filter').val().replace(/ /g, '-'), "gi");
+      
       $('.challenge-title').each((index, title) => {
-        //console.log("title:", JSON.stringify(title));
         if(regex.test($(title).attr('name'))) {
-          $(title).removeClass('hidden');
+          expandBlock($(title).closest('.chapterBlock'));  
+          expandBlock($(title).closest('.chapterBlock').prev('h3'));
+          expandBlock($(title).closest('.certBlock'));
+          expandBlock($(title).closest('.certBlock').prev('h2'));       
+          $(title).removeClass('hidden');  
         } else {
           $(title).addClass('hidden');
         }
-
       });
-      $.each($('.map-collapse'), function(i, div) {
-        console.log("bing");
+      
+      $.each($('.chapterBlock'), function(i, div) {
         if ($(div).find('.hidden').length ===
-          $(div).find('p').length) {
-          console.log("hiding parents");
-          $(div).addClass('hidden');
-          $(div).find('h3').addClass('hidden');
-          $(div).prev('h2').addClass('hidden');
+            $(div).find('p').length) {
+                $(div).addClass('hidden');
+                $(div).prev('h3').addClass('hidden');
+        } else {
+                $(div).removeClass('hidden');     
+                $(div).prev('h3').removeClass('hidden');   
         }
       });
-    } else {
-      $('.challenge-title').each((title) => {
-        $(title).removeClass('hidden');
+      
+      $.each($('.certBlock'), function(i, div) {
+        if ($(div).children('#nested').children('h3.hidden').length ===
+            $(div).children('#nested').children('h3').length) {
+                $(div).prev('h2').addClass('hidden');
+        } else {
+                $(div).prev('h2').removeClass('hidden');
+        }
       });
+    } else if ($('#map-filter').val().length === 0) {
+            clearMapFilter();
+    } else {
+        $('#map-filter').next()
+                        .children()
+                        .removeClass('fa-search')
+                        .addClass('fa-times');
+        $('#map-filter').next().addClass('filled');
+    }
+    if ($.find('.certBlock').length===$('.map-accordion').children('.hidden').length) {
+        console.log("yass");
+        $('#noneFound').show();
+    } else { 
+        $('#noneFound').hide();
     }
   });
+  
+  $('.map-buttons .input-group-addon').on('click', clearMapFilter);
 
   // keyboard shortcuts: open map
   window.Mousetrap.bind('g m', function() {

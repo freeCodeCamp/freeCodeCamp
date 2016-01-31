@@ -43,15 +43,9 @@
       flex: 1;
       width: 100%;
       height: 100%;
-
       border: 0;
-      overflow: auto;
-    }
-}
-
-.map-aside-body {
-    #nested {
-      margin:0 20px;
+      overflow: scroll;
+      -webkit-overflow-scrolling: touch;
     }
 }
 
@@ -73,43 +67,69 @@
 .map-fixed-header {
   position: fixed;
   background: white;
-  padding-top: 20px;
+  padding-top: 13px;
   width: 100%;
   z-index: 1;
   left: 0;
   top: 0;
   @media (max-width: 720px) {
-    padding-top:35px;
+    padding-top:30px;
   }
-}
-.map-fixed-header p {
+  p {
   margin: 10px 0 20px;
-  @media (max-width: 720px) {
-    margin-bottom:15px;
+    @media (max-width: 720px) {
+      margin-bottom:10px;
+    }
   }
-}
-.map-fixed-header hr {
-  margin:35px 0;
-  @media (max-width: 720px) {
-    margin:25px 0;
+  hr {
+    margin:30px 0;
+    @media (max-width: 720px) {
+      margin:25px 0;
+    }
   }
-}
+ } 
 .map-buttons button,
 .map-buttons .input-group{
   width:300px;
 }
 
 .map-buttons .input-group{
-  margin-top: 10px;
+  margin-top: 15px;
   margin-left: auto;
   margin-right: auto;
 }
 
+#map-filter {
+    background:#fff;
+    border-color: darkgreen;
+}
+.input-group-addon {
+  width:40px;
+  color: darkgreen;
+  background: #fff;
+  border-color: darkgreen; 
+  &.filled{     
+    background: darkgreen;
+    border-color: #000d00;
+    color: #fff;
+    cursor: pointer;
+  }
+  .fa {
+    position:absolute;
+    top:50%;
+    transform: translateY(-50%);
+    right:10px;
+  }
+}
+
 .map-accordion {
-  margin: 140px auto 0;
+  margin: 170px auto 0;
   width:700px;
   overflow-y: auto;
   position:relative;
+  #nested {
+    margin:0 15px;
+  }
   h2 > a {
       width:100%;
       display:block;
@@ -132,11 +152,11 @@
     }
   }
 
-  #nested div :before {
+  div.chapterBlock :before {
     margin-right: 15px;
   }
 
-  #nested div p {
+  div.chapterBlock p {
       text-indent: -15px;
       margin-left: 60px;
       padding-right: 20px
@@ -176,7 +196,7 @@
     left:0;
     right:0;
     width:100%;
-    margin-top:165px;
+    margin-top:205px;
     h2 {
       margin:15px 0;
       padding:0;
@@ -231,6 +251,18 @@
 
     &:active {
       filter: hue-rotate(80deg) saturate(150);
+    }
+}
+
+#noneFound {
+    display:none;
+    margin:60px 30px 0;
+    font-size:60px;
+    text-align: center;
+    color:darkgreen;
+    .fa {
+      display:block;
+      font-size:300px;
     }
 }
 
