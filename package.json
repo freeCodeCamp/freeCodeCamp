@@ -112,7 +112,7 @@
     "react": "~0.14.3",
     "react-bootstrap": "~0.28.1",
     "react-dom": "~0.14.3",
-    "react-motion": "~0.3.1",
+    "react-motion": "~0.4.2",
     "react-router": "^1.0.0",
     "react-router-bootstrap": "https://github.com/FreeCodeCamp/react-router-bootstrap.git#freecodecamp",
     "react-toastr": "^2.3.0",
