@@ -28,3 +28,14 @@ export function ifNoUser401(req, res, next) {
   }
   return res.status(401).end();
 }
+
+export function blockSignIn(req, res) {
+  req.flash('info', {
+    msg: `
+    Free Code Camp is currently doing Data Base maintenance.
+    Dynamic routes are currently disabled
+    `
+  });
+
+  return res.redirect('/challenges/current-challenge');
+}

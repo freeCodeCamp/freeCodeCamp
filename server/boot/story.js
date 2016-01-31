@@ -11,7 +11,8 @@ var Rx = require('rx'),
 
 import {
   ifNoUser401,
-  ifNoUserRedirectTo
+  ifNoUserRedirectTo,
+  blockSignIn
 } from '../utils/middleware';
 
 const foundationDate = 1413298800000;
@@ -62,6 +63,7 @@ module.exports = function(app) {
   var findStoryById = observeMethod(Story, 'findById');
   var countStories = observeMethod(Story, 'count');
 
+  /*
   router.post('/news/userstories', userStories);
   router.get('/news/hot', hotJSON);
   router.get('/news/feed', RSSFeed);
@@ -83,6 +85,7 @@ module.exports = function(app) {
   router.get('/news/:storyName', returnIndividualStory);
   router.post('/stories/upvote/', ifNoUser401, upvote);
   router.get('/stories/:storyName', redirectToNews);
+  */
 
   app.use(router);
 

@@ -7,6 +7,7 @@ import { dehydrate } from 'thundercats';
 import { renderToString$ } from 'thundercats-react';
 
 import app$ from '../../common/app';
+import { blockSignIn } from '../utils/middleware';
 
 const debug = debugFactory('freecc:react-server');
 
@@ -26,7 +27,7 @@ export default function reactSubRouter(app) {
 
   // These routes are in production
   routes.forEach((route) => {
-    router.get(route, serveReactApp);
+    router.get(route, blockSignIn, serveReactApp);
   });
 
   if (process.env.NODE_ENV === 'development') {

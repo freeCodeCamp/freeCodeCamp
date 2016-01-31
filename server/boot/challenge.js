@@ -384,12 +384,12 @@ module.exports = function(app) {
   router.post(
     '/completed-challenge/',
     send200toNonUser,
-    completedChallenge
+    (req, res) => res.sendStatus(500)
   );
   router.post(
     '/completed-zipline-or-basejump',
     send200toNonUser,
-    completedZiplineOrBasejump
+    (req, res) => res.sendStatus(500)
   );
 
   router.get('/map', showMap.bind(null, false));

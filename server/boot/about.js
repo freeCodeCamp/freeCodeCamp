@@ -2,6 +2,7 @@ import dedent from 'dedent';
 import moment from 'moment';
 
 import { observeMethod } from '../utils/rx';
+import { blockSignIn } from '../utils/middleware';
 
 function numberWithCommas(x) {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
@@ -32,6 +33,6 @@ export default function about(app) {
       .subscribe(() => {}, next);
   }
 
-  router.get('/about', showAbout);
+  router.get('/about', blockSignIn, showAbout);
   app.use(router);
 }

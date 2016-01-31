@@ -5,7 +5,8 @@ import debugFactory from 'debug';
 
 import {
   ifNoUser401,
-  ifNoUserSend
+  ifNoUserSend,
+  blockSignIn
 } from '../utils/middleware';
 
 import {
@@ -65,24 +66,28 @@ export default function certificate(app) {
 
   router.post(
     '/certificate/verify/front-end',
+    blockSignIn,
     ifNoUser401,
     verifyCert.bind(null, certTypes.frontEnd)
   );
 
   router.post(
     '/certificate/verify/back-end',
+    blockSignIn,
     ifNoUser401,
     verifyCert.bind(null, certTypes.backEnd)
   );
 
   router.post(
     '/certificate/verify/data-visualization',
+    blockSignIn,
     ifNoUser401,
     verifyCert.bind(null, certTypes.dataVis)
   );
 
   router.post(
     '/certificate/honest',
+    blockSignIn,
     sendMessageToNonUser,
     postHonest
   );

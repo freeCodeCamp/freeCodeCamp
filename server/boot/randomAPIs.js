@@ -8,6 +8,8 @@ var Rx = require('rx'),
     testimonials = require('../resources/testimonials.json'),
     secrets = require('../../config/secrets');
 
+import { blockSignIn } from '../utils/middleware';
+
 module.exports = function(app) {
   var router = app.loopback.Router();
   var User = app.models.User;
@@ -15,6 +17,7 @@ module.exports = function(app) {
   var Story = app.models.Story;
   var Nonprofit = app.models.Nonprofit;
 
+  /*
   router.get('/api/github', githubCalls);
   router.get('/api/blogger', bloggerCalls);
   router.get('/api/trello', trelloCalls);
@@ -40,6 +43,7 @@ module.exports = function(app) {
     '/the-fastest-web-page-on-the-internet',
     theFastestWebPageOnTheInternet
   );
+  */
 
   app.use(router);
 

@@ -19,6 +19,7 @@ import {
 } from '../utils/rx';
 
 import {
+  blockSignIn,
   ifNoUserRedirectTo
 } from '../utils/middleware';
 
@@ -54,28 +55,33 @@ export default function commit(app) {
 
   router.get(
     '/commit',
+    blockSignIn,
     commitToNonprofit
   );
 
   router.get(
     '/commit/pledge',
+    blockSignIn,
     sendNonUserToSignIn,
     pledge
   );
 
   router.get(
     '/commit/directory',
+    blockSignIn,
     renderDirectory
   );
 
   router.post(
     '/commit/stop-commitment',
+    blockSignIn,
     sendNonUserToCommit,
     stopCommit
   );
 
   router.post(
     '/commit/complete-goal',
+    blockSignIn,
     sendNonUserToCommit,
     completeCommitment
   );

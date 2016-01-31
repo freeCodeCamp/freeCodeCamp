@@ -12,7 +12,12 @@ import {
 
 import certTypes from '../utils/certTypes.json';
 
-import { ifNoUser401, ifNoUserRedirectTo } from '../utils/middleware';
+import {
+  ifNoUser401,
+  ifNoUserRedirectTo,
+  blockSignIn
+} from '../utils/middleware';
+
 import { observeQuery } from '../utils/rx';
 import { calcCurrentStreak, calcLongestStreak } from '../utils/user-stats';
 
@@ -70,6 +75,7 @@ module.exports = function(app) {
     );
   }
 
+  /*
   router.get('/login', function(req, res) {
     res.redirect(301, '/signin');
   });
@@ -124,7 +130,9 @@ module.exports = function(app) {
   );
 
   router.get('/:username', returnUser);
+  */
 
+  app.use(blockSignIn);
   app.use(router);
 
   function getSignin(req, res) {

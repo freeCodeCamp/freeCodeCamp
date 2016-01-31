@@ -42,6 +42,7 @@ boot(app, {
 });
 
 
+/*
 passportConfigurator.setupModels({
   userModel: app.models.user,
   userIdentityModel: app.models.userIdentity,
@@ -93,6 +94,7 @@ Object.keys(passportProviders).map(function(strategy) {
     assign(config, passportOptions)
   );
 });
+*/
 
 app.start = _.once(function() {
   app.listen(app.get('port'), function() {
