@@ -105,6 +105,9 @@
         "convert(36);"
       ],
       "tests": [
+        "assert.deepEqual(convert(2), \"II\", 'message: <code>convert(2)</code> should return \"II\".');",
+        "assert.deepEqual(convert(3), \"III\", 'message: <code>convert(3)</code> should return \"III\".');",
+        "assert.deepEqual(convert(4), \"IV\", 'message: <code>convert(4)</code> should return \"IV\".');",
         "assert.deepEqual(convert(5), \"V\", 'message: <code>convert(5)</code> should return \"V\".');",
         "assert.deepEqual(convert(9), \"IX\", 'message: <code>convert(9)</code> should return \"IX\".');",
         "assert.deepEqual(convert(12), \"XII\", 'message: <code>convert(12)</code> should return \"XII\".');",
