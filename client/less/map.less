@@ -3,11 +3,11 @@
  * license: MIT
  */
 .map-aside {
+    width:500px;
 
     z-index: 20000;
     position: fixed;
     top: 0;
-    left: 60%;
     bottom: 0;
     right: 0;
 
@@ -37,20 +37,6 @@
       right: -100%;
 
       background-color: @body-bg;
-    }
-
-    @media (max-width: 1150px) {
-      left: 45%;
-    }
-    @media (max-width: 944px) {
-      left: 30%;
-    }
-    @media (max-width: 600px) {
-      left: 15%;
-    }
-    @media (max-width: 500px) {
-      left: 0;
-      border-left: none;
     }
 
     & > iframe {
@@ -87,24 +73,33 @@
 .map-fixed-header {
   position: fixed;
   background: white;
-  padding-top: 15px;
+  padding-top: 20px;
   width: 100%;
   z-index: 1;
   left: 0;
   top: 0;
+  @media (max-width: 720px) {
+    padding-top:35px;
+  }
 }
 .map-fixed-header p {
   margin: 10px 0 20px;
+  @media (max-width: 720px) {
+    margin-bottom:15px;
+  }
 }
 .map-fixed-header hr {
-  margin:30px 0;
+  margin:35px 0;
+  @media (max-width: 720px) {
+    margin:25px 0;
+  }
 }
 .map-buttons button {
   width:300px;
 }
 
 .map-accordion {
-  margin: 155px auto 0;
+  margin: 140px auto 0;
   width:700px;
   overflow-y: auto;
   position:relative;
@@ -157,11 +152,16 @@
   }
 }
 .challengeBlockTime {
-  margin-right: 20px;
-  margin-top:5px;
-  float:right;
   font-size: 18px;
   color: #BBBBBB;
+  display:block;
+  margin-left: 40px;
+  margin-bottom: 20px;
+  @media (min-width: 721px) {
+    margin-right: 20px;
+    margin-top:-30px;
+    float:right;
+  }
 }
 
 @media (max-width: 720px) {
@@ -169,7 +169,7 @@
     left:0;
     right:0;
     width:100%;
-    margin-top:194px;
+    margin-top:165px;
     h2 {
       margin:15px 0;
       padding:0;
@@ -189,10 +189,6 @@
       }
     }
   }    
-  .challengeBlockTime {
-    float:none;
-    display:block;
-  }
 }
 
 .map-aside-action-item {

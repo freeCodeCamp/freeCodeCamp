@@ -1,10 +1,9 @@
 extends ../layout-wide
 block content
-        .text-center.map-fixed-header
-            p Challenges marked with * are required for certification
+        .text-center.map-fixed-header.asterisk-explanation
+            p Challenges required for certifications are marked with a *
             .row.map-buttons
-                button.center-block.btn.btn-sm.btn-block.btn-primary.active#manipAll Show incomplete challenges
-                button.center-block.btn.btn-sm.btn-block.btn-primary.active#showAll Collapse all
+                button.center-block.btn.btn-sm.btn-block.btn-primary.active#showAll Collapse all challenges
             hr
         #accordion.map-accordion
           for superBlock, index in superBlocks
@@ -21,11 +20,11 @@ block content
                               span.no-link-underline
                                 i.fa.fa-caret-down &thinsp; 
                               | #{challengeBlock.name}
-                              span.challengeBlockTime (#{challengeBlock.time})
+                            span.challengeBlockTime (#{challengeBlock.time})
                           div.margin-left-10(id = "nested-collapse"+challengeBlock.name.replace(/\W/gi, '').split(' ').join('-') class = "collapse in map-collapse no-transition")
                               for challenge in challengeBlock.challenges
                                   if challenge.completed
-                                      p.slightly-faded.text-primary.ion-checkmark-circled.padded-ionic-icon.negative-15(name="#{challenge.dashedName}")
+                                      p.faded.text-primary.ion-checkmark-circled.padded-ionic-icon.negative-15(name="#{challenge.dashedName}")
                                           a(href="/challenges/#{challenge.dashedName}" target='_parent')
                                               = challenge.title
                                               span.sr-only= " Complete"
@@ -69,7 +68,7 @@ block content
                     span.no-link-underline
                       i.fa.fa-caret-down &thinsp;
                     | Nonprofit Projects 
-                    span.challengeBlockTime (800 hours)
+                  span.challengeBlockTime (800 hours)
                 div.margin-left-10(id = "nested-collapse-nonprofit-projects" class = "collapse in map-collapse no-transition")
                       p.challengeBlockDescription To qualify for these nonprofit projects, you must first earn all three foundational certifications: Front End, Data Visualization, and Back End
                       p.disabled.text-primary.ion-locked.padded-ionic-icon.negative-15(name="Greenfield Nonprofit Project #1") Greenfield Nonprofit Project #1
@@ -97,7 +96,7 @@ block content
                     span.no-link-underline
                       i.fa.fa-caret-down &thinsp;
                     | Coding Interview Training 
-                    span.challengeBlockTime (70 hours)
+                  span.challengeBlockTime (70 hours)
                 div.margin-left-10(id = "nested-collapse-coding-interview-training" class = "collapse in map-collapse no-transition")
                       p.challengeBlockDescription To qualify for this coding interview training, you must first earn all four certifications: Front End, Data Visualization, Back End, and Full Stack
                       p.disabled.text-primary.ion-locked.padded-ionic-icon.negative-15(name="Soft Skill Training") Soft Skill Training
@@ -108,7 +107,7 @@ block content
                       span.no-link-underline
                         i.fa.fa-caret-down &thinsp;
                       | Mock Interviews 
-                      span.challengeBlockTime (10 hours)
+                    span.challengeBlockTime (10 hours)
                   div.margin-left-10(id = "nested-collapse-mock-interviews" class = "collapse in map-collapse no-transition")
                         p.challengeBlockDescription To qualify for these mock interviews, you must first earn all four certifications: Front End, Data Visualization, Back End, and Full Stack
                         p.disabled.text-primary.ion-locked.padded-ionic-icon.negative-15(name="Mock Interview #1") Mock Interview #1
