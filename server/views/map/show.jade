@@ -1,23 +1,22 @@
 extends ../layout-wide
 block content
-        .text-center.map-fixed-header.asterisk-explanation
+        .text-center.map-fixed-header
             p Challenges required for certifications are marked with a *
             .row.map-buttons
                 button.center-block.btn.btn-sm.btn-block.btn-primary.active#showAll Collapse all challenges
             .row.map-buttons
                 .input-group
-                    input#map-filter.form-control(type="text" placeholder="challenge name")
+                    input#map-filter.form-control(type="text" placeholder="Type a challenge name" autocomplete="off" value="")
                     span.input-group-addon
                        i.fa.fa-search
             hr
         #accordion.map-accordion
-          #noneFound Nope! Your search has produced no results
-            i.fa.fa-hand-spock-o
+          #noneFound No results found. Happy Coding!
           for superBlock, index in superBlocks
               h2
                 a(data-toggle='collapse', data-parent='#accordion', href='#collapse'+superBlock.name.split(' ').join('-'))
                   span.no-link-underline
-                    i.fa.fa-caret-down 
+                    i.fa.fa-caret-down
                   | #{superBlock.name}
               div.margin-left-10(id = 'collapse'+superBlock.name.split(' ').join('-') class = "collapse in map-collapse no-transition certBlock")
                   #nested
