@@ -99,7 +99,7 @@
     "mongodb": "^2.0.33",
     "morgan": "^1.6.1",
     "node-uuid": "^1.4.3",
-    "nodemailer": "^1.9.0",
+    "nodemailer": "^2.1.0",
     "normalize-url": "^1.3.1",
     "object.assign": "^4.0.3",
     "passport-facebook": "^2.0.0",
