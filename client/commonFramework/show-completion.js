@@ -13,7 +13,7 @@ window.common = (function(global) {
       'event',
       'Challenge',
       'solved',
-      common.challengeName,
+      common.gaName,
       true
     );
 
