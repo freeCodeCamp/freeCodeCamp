@@ -307,6 +307,8 @@ module.exports = function(app) {
         }
         return findUserByUsername$(username, {
           isGithubCool: true,
+          isCheater: true,
+          isLocked: true,
           isFrontEndCert: true,
           isDataVisCert: true,
           isBackEndCert: true,
