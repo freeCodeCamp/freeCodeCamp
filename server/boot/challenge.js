@@ -525,7 +525,7 @@ module.exports = function(app) {
       }
     );
 
-    if (timezone && (!req.user.timezone || req.user.timezone != timezone)) {
+    if (timezone && (!req.user.timezone || req.user.timezone !== timezone)) {
       req.user.timezone = timezone;
     }
 
