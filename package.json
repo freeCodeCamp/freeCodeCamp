@@ -59,7 +59,7 @@
     "express-session": "^1.12.1",
     "express-state": "^1.2.0",
     "express-validator": "^2.18.0",
-    "fbjs": "^0.6.0",
+    "fbjs": "^0.7.1",
     "fetchr": "~0.5.12",
     "forever": "~0.15.1",
     "frameguard": "~0.2.2",
