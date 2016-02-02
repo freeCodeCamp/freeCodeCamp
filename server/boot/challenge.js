@@ -223,6 +223,15 @@ function getSuperBlocks$(challenge$, completedChallenges) {
       const isComingSoon = _.every(blockArray, 'isComingSoon');
       const isRequired = _.every(blockArray, 'isRequired');
 
+      blockArray = blockArray.map(challenge => {
+        if (challenge.challengeType == 6 && challenge.type === 'hike') {
+          challenge.url = '/videos/' + challenge.dashedName;
+        } else {
+          challenge.url = '/challenges/' + challenge.dashedName;
+        }
+        return challenge;
+      });
+
       return {
         isBeta,
         isComingSoon,

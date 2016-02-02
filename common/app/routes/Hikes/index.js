@@ -7,7 +7,7 @@ import Hike from './components/Hike.jsx';
  */
 
 export default {
-  path: 'hikes',
+  path: 'videos',
   component: Hikes,
   childRoutes: [{
     path: ':dashedName',

@@ -15,8 +15,8 @@ const debug = debugFactory('freecc:react-server');
 const routes = [
   '/jobs',
   '/jobs/*',
-  '/hikes',
-  '/hikes/*'
+  '/videos',
+  '/videos/*'
 ];
 
 const devRoutes = [];

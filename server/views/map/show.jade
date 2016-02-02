@@ -31,12 +31,12 @@ block content
                               for challenge in challengeBlock.challenges
                                   if challenge.completed
                                       p.challenge-title.faded.text-primary.ion-checkmark-circled.padded-ionic-icon.negative-15(name="#{challenge.dashedName}")
-                                          a(href="/challenges/#{challenge.dashedName}" target='_parent')
+                                          a(href="#{challenge.url}" target='_parent')
                                               = challenge.title
                                               span.sr-only= " Complete"
                                   else if challenge.isRequired
                                       p.challenge-title.ion-ios-circle-outline.padded-ionic-icon.negative-15(name="#{challenge.dashedName}")
-                                          a(name="#{challenge.dashedName}" target='_parent' href="/challenges/#{challenge.dashedName}" class=challenge.isComingSoon ? 'disabled' : '')
+                                          a(name="#{challenge.dashedName}" target='_parent' href="#{challenge.url}" class=challenge.isComingSoon ? 'disabled' : '')
                                               span= challenge.title
                                               span.sr-only= " Incomplete"
                                           if challenge.markNew
@@ -51,7 +51,7 @@ block content
                                               strong *
                                   else
                                       p.challenge-title.ion-ios-circle-outline.padded-ionic-icon.negative-15(name="#{challenge.dashedName}")
-                                          a(name="#{challenge.dashedName}" target='_parent' href="/challenges/#{challenge.dashedName}" class=challenge.isComingSoon ? 'disabled' : '')
+                                          a(name="#{challenge.dashedName}" target='_parent' href="#{challenge.url}" class=challenge.isComingSoon ? 'disabled' : '')
                                               span= challenge.title
                                               span.sr-only= " Incomplete"
                                           if challenge.markNew
