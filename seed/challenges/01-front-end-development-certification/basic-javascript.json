@@ -3424,7 +3424,7 @@
         "Here is an example of a simple reverse alphabet lookup:",
         "<blockquote>var alpha = {<br>  1:\"Z\",<br>  2:\"Y\",<br>  3:\"X\",<br>  4:\"W\",<br>  ...<br>  24:\"C\",<br>  25:\"B\",<br>  26:\"A\"<br>};<br>alpha[2]; // \"Y\"<br>alpha[24]; // \"C\"<br><br>var value = 2;<br>alpha[value]; // \"Y\"</blockquote>",
         "<h4>Instructions</h4>",
-        "Convert the switch statement into a lookup table called <code>lookup</code>. Use it to lookup <code>val</code> and return the associated string."
+        "Convert the switch statement into a lookup table called <code>lookup</code>. Use it to lookup <code>val</code> and assign the associated string to the <code>result</code> variable."
       ],
       "releasedOn": "January 1, 2016",
       "challengeSeed": [
