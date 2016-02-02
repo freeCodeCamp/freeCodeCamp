@@ -312,7 +312,7 @@ $(document).ready(function() {
     if ($(div).find('.manip-hidden').length ===
         $(div).find('p').length) {
       collapseBlock(div);
-      $(div).find('h3 > a').addClass('faded');
+      $(div).prev('h3').addClass('faded');
       $(div).prev('h2').addClass('faded');
     }
   });

@@ -91,16 +91,15 @@
 
 .map-buttons {
   margin-top: -10px;
-}
-.map-buttons button,
-.map-buttons .input-group{
-  width:300px;
-}
-
-.map-buttons .input-group{
-  margin-top: 15px;
-  margin-left: auto;
-  margin-right: auto;
+  & button,
+  & .input-group{
+    width:300px;
+  }
+  .input-group{
+    margin-top: 15px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 #map-filter {
@@ -134,6 +133,14 @@
   #nested {
     margin:0 15px;
   }
+  a:focus {
+      text-decoration: none;
+      color:darkgreen;
+  }
+  a:focus:hover {
+      text-decoration: underline;
+      color:#001800;
+  }
   h2 > a {
       width:100%;
       display:block;
@@ -156,15 +163,16 @@
     }
   }
 
-  div.chapterBlock :before {
-    margin-right: 15px;
-  }
-
-  div.chapterBlock p {
+  div.chapterBlock {
+    :before {
+      margin-right: 15px;
+    }
+    p {
       text-indent: -15px;
       margin-left: 60px;
       padding-right: 20px
     }
+  }  
 
   .challengeBlockDescription {
       margin:0;
