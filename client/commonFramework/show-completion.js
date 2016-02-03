@@ -3,7 +3,7 @@ window.common = (function(global) {
     $,
     moment,
     ga = (() => {}),
-      common = { init: [] }
+    common = { init: [] }
   } = global;
 
   common.showCompletion = function showCompletion() {
@@ -47,13 +47,23 @@ window.common = (function(global) {
           next();
         });
 
+      let timezone = 'UTC';
+      try {
+        timezone = moment.tz.guess();
+      } catch (err) {
+        err.message = `
+          known bug, see: https://github.com/moment/moment-timezone/issues/294:
+          ${err.message}
+        `;
+        console.error(err);
+      }
       const data = {
         id: common.challengeId,
         name: common.challengeName,
         completedWith: didCompleteWith,
         challengeType: common.challengeType,
         solution,
-        timezone: moment.tz.guess()
+        timezone
       };
 
       $.post('/completed-challenge/', data, function(res) {
