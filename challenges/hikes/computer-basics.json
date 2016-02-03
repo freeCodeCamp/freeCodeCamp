@@ -27,16 +27,16 @@
       "tests": [
         [
           "The computer has 3 basic parts.",
-          "false",
+          false,
           "The computer has 4 basic parts: input, output, CPU, and memory"
         ],
         [
           "CPU stands for Central Processing Unit.",
-          "true"
+          true
         ],
         [
           "All parts can access the memory",
-          "false",
+          false,
           "Only the CPU has access to the memory"
         ]
       ],
@@ -66,16 +66,16 @@
       "tests": [
         [
           "The power supply isn't a necessary part of a computer since it's not one of the 4 main parts.",
-          "false",
+          false,
           "The computer needs power!"
         ],
         [
           "A motherboard connects all of the working parts in a computer.",
-          "true"
+          true
         ],
         [
           "Memory is usually categorized into 3 parts.",
-          "false",
+          false,
           "Only 2 parts, RAM and long term memory such as a hard drive"
         ]
       ],
@@ -100,15 +100,15 @@
       "tests": [
         [
           "1's and 0's are how we talk about little switches being on and off.",
-          "true"
+          true
         ],
         [
           "1 means on, and 0 means off.",
-          "true"
+          true
         ],
         [
           "There are some things which cannot be translated into binary.",
-          "false",
+          false,
           "everything can be expressed through binary code!"
         ]
       ],
@@ -135,16 +135,16 @@
       "tests": [
         [
           "1 === on and 0 ===off",
-          "true"
+          true
         ],
         [
           "Not all numbers can be expressed through binary numeral notation.",
-          "false",
+          false,
           "All numbers can!"
         ],
         [
           "If we have the opportunity to include base 2 to every given power, we can create any number.",
-          "true"
+          true
         ]
       ],
       "type": "hike",
@@ -173,16 +173,16 @@
       "tests": [
         [
           "A Byte is the smallest possible amount of data.",
-          "false",
+          false,
           "A Byte is 8 bits."
         ],
         [
           "A bit is the smallest possible amount of data.",
-          "true"
+          true
         ],
         [
           "A Kilobyte is 1024 Bytes.",
-          "true"
+          true
         ]
       ],
       "type": "hike",
@@ -210,11 +210,11 @@
       "tests": [
         [
           "Data speed is measured in bits.",
-          "true"
+          true
         ],
         [
           "Data size is measured in bits.",
-          "false",
+          false,
           "Size is Bytes and speed is bits."
         ]
       ],
@@ -239,16 +239,16 @@
       "tests": [
         [
           "All digits, letters, and symbols have a binary Byte translation.",
-          "true"
+          true
         ],
         [
           "It's good practice to memorize these.",
-          "false",
+          false,
           "You can just look these up as needed."
         ],
         [
           "Everything can be expressed binarily, even pictures, sound, and video",
-          "true"
+          true
         ]
       ],
       "type": "hike",
@@ -277,15 +277,15 @@
       "tests": [
         [
           "The most common type of computer is a Personal Computer, a PC.",
-          "true"
+          true
         ],
         [
           "What makes Supercomputers 'super' is when multiple CPUs work on one problem, called parallel processing.",
-          "true"
+          true
         ],
         [
           "Microcontrollers and workstation computers can perform roughly the same tasks.",
-          "false",
+          false,
           "A microcontroller can only perform a small specialized task while a workstation computer has a lot of power, though also specialized."
         ]
       ],
@@ -317,16 +317,16 @@
       "tests": [
         [
           "A motherboard must connect the CPU, the memory, and the network.",
-          "false",
+          false,
           "A motherboard is a motherboard as long as it connects the CPU and the memory."
         ],
         [
           "Expansion slots allow users to add capabilities to a computer.",
-          "true"
+          true
         ],
         [
           "Ports help the computer access information.",
-          "true"
+          true
         ]
       ],
       "type": "hike",
@@ -356,16 +356,16 @@
       "tests": [
         [
           "You can connect to a LAN from far away.",
-          "false",
+          false,
           "To connect to a LAN you must be physically near to it."
         ],
         [
           "VPNs (Virtual Private Networks) and WANs (Wide Area Networks) do just about the same thing.",
-          "true"
+          true
         ],
         [
           "VPNs and WANs both use the internet to connect LANs.",
-          "false",
+          false,
           "While both connect LANs, VPNs use the internet and WANs use a rented cable."
         ]
       ],
@@ -396,11 +396,11 @@
       "tests": [
         [
           "IP addresses are necessary to use and participate in the internet.",
-          "true"
+          true
         ],
         [
           "IP addresses are determined and assigned based on location.",
-          "true"
+          true
         ]
       ],
       "type": "hike",
@@ -430,11 +430,11 @@
       "tests": [
         [
           "Your computer sends a request for information.",
-          "true"
+          true
         ],
         [
           "The Internet can be broken by a large chunk of routers and servers going down.",
-          "false",
+          false,
           "There are so many connections that even a large amount of routers and servers can stop functioning and your experience will still not be affected."
         ]
       ],
@@ -460,7 +460,7 @@
       "tests": [
         [
           "Safari, Chrome, and Firefox are all examples of application software.",
-          "true"
+          true
         ]
       ],
       "type": "hike",
