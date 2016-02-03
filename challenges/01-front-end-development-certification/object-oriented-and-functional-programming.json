@@ -306,22 +306,22 @@
         "The <code>map</code> method is a convenient way to iterate through arrays. Here's an example usage:",
         "<blockquote>var timesFour = oldArray.map(function(val){<br>&nbsp;&nbsp;return val * 4;<br>});</blockquote>",
         "",
-        "The <code>map</code> method will iterate through every element of the array, creating a new array with values that have been modified by the callback function, and return it.",
+        "The <code>map</code> method will iterate through every element of the array, creating a new array with values that have been modified by the callback function, and return it.  Note that it does not modify the original array.",
         "In our example the callback only uses the value of the array element (the <code>val</code> argument) but your callback can also include arguments for the <code>index</code> and <code>array</code> being acted on.",
-        "Use the map function to add 3 to every value in the variable <code>oldArray</code>."
+        "Use the map function to add 3 to every value in the variable <code>oldArray</code>, and save the results into variable <code>newArray</code>. oldArray should not change."
       ],
       "challengeSeed": [
         "var oldArray = [1,2,3,4,5];",
-        "var newArray = [];",
         "",
         "// Only change code below this line.",
         "",
-        "newArray = oldArray;"
+        "var newArray = oldArray;"
       ],
       "tail": [
         "(function() {return newArray;})();"
       ],
       "tests": [
+        "assert.deepEqual(oldArray, [1,2,3,4,5], 'message: You should not change the original array.');",
         "assert.deepEqual(newArray, [4,5,6,7,8], 'message: You should add three to each value in the array.');",
         "assert(editor.getValue().match(/\\.map\\s*\\(/gi), 'message: You should be making use of the <code>map</code> method.');",
         "assert(editor.getValue().match(/\\[1\\,2\\,3\\,4\\,5\\]/gi), 'message: You should only modify the array with <code>map</code>.');"
@@ -390,21 +390,21 @@
         "The following code is an example of using <code>filter</code> to remove array elements that are equal to five:",
         "Note: We omit the second and third arguments since we only need the value",
         "<blockquote>array = array.filter(function(val) {<br>&nbsp;&nbsp;return val !== 5;<br>});</blockquote>",
-        "Use <code>filter</code> to remove all elements from <code>oldArray</code> that are greater than 5."
+        "Use <code>filter</code> to filter out all elements from <code>oldArray</code> that are greater than 5 and store the results into <code>newArray</code>.  <code>oldArray</code> should not change."
       ],
       "challengeSeed": [
         "var oldArray = [1,2,3,4,5,6,7,8,9,10];",
-        "var newArray = [];",
         "",
         "// Only change code below this line.",
         "",
-        "newArray = oldArray;"
+        "var newArray = oldArray;"
       ],
       "tail": [
         "(function() {return newArray;})();"
       ],
       "tests": [
-        "assert.deepEqual(newArray, [1,2,3,4,5], 'message: You should have removed all the values from the array that are greater than 5.');",
+        "assert.deepEqual(oldArray, [1,2,3,4,5,6,7,8,9,10], 'message: You should not change the original array.');",
+        "assert.deepEqual(newArray, [1,2,3,4,5], 'message: You should have filtered out all values from the array that are greater than 5.');",
         "assert(editor.getValue().match(/array\\.filter\\s*\\(/gi), 'message: You should be using the <code>filter</code> method to remove the values from the array.');",
         "assert(editor.getValue().match(/\\[1\\,2\\,3\\,4\\,5\\,6\\,7\\,8\\,9\\,10\\]/gi), 'message: You should only be using <code>filter</code> to modify the contents of the array.');"
       ],
