@@ -109,7 +109,7 @@
     "passport-local": "^1.0.0",
     "passport-oauth": "^1.0.0",
     "passport-twitter": "^1.0.3",
-    "pmx": "~0.5.5",
+    "pmx": "~0.6.0",
     "react": "~0.14.3",
     "react-bootstrap": "~0.28.1",
     "react-dom": "~0.14.3",
