@@ -27,6 +27,20 @@
       "tests": [],
       "type": "zipline",
       "challengeType": 3,
+      "nameEs": "Crea un visualizador de lenguaje de marcado (Markdown)",
+      "descriptionEs": [
+        "<strong>Objetivo:</strong> Construye una aplicación en <a href='http://codepen.io' target='_blank'>CodePen.io</a> que funcione de forma similar al siguiente ejemplo: <a href='http://codepen.io/FreeCodeCamp/full/obYYqW' target='_blank'>http://codepen.io/FreeCodeCamp/full/obYYqW</a>.",
+        "<strong>Regla #1:</strong> No veas el código del proyecto de ejemplo. Encuentra la forma de hacerlo por tu cuenta.",
+        "<strong>Regla #2:</strong> Satisface las siguientes <a href='http://en.wikipedia.org/wiki/User_story' target='_blank'>historias de usuario</a>. Usa cualquier librería o API que sea necesaria. ¡Ponle un toque personal!.",
+        "<strong>Rule #3:</strong> Debes utilizar ambos Sass y React para construir este proyecto.",
+        "<strong>Historia de usuario:</strong> Puedo escribir lenguaje de marcado al estilo GitHub en un área de texto.",
+        "<strong>Historia de usuario:</strong> Puedo tener una vista preliminar del resultado de mi marcado que se actualiza mientras escribo.",
+        "<strong>Pista:</strong> No necesitas interpretar el lenguaje de marcado por tu cuenta - puedes importar la librería de marcado en el enlace siguiente: <a href='https://cdnjs.com/libraries/marked'>https://cdnjs.com/libraries/marked</a>",
+        "<strong>Nota:</strong> Si quieres utilizar la sintaxis de React JSX, necesitarás habilitar 'Babel' como un preprocesador",
+        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado.",
+        "Cuando termines, haz clic en el botón de \"I've completed this challenge\" e incluye el vínculo de tu proyecto en CodePen. ",
+        "Puedes obtener retroalimentación acerca de tu proyecto de parte de tus compañeros campistas compartiéndolo en nuestro <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Cuarto de revisión de código</a>. También puedes compartirlo en Twitter y en el campamento de tu ciudad (en Facebook)."
+      ],
       "isRequired": true
     },
     {
@@ -53,6 +67,21 @@
       "tests": [],
       "type": "zipline",
       "challengeType": 3,
+      "nameEs": "Crea un marcador para los campistas",
+      "descriptionEs": [
+        "<strong>Objetivo:</strong> Construye una aplicación en <a href='http://codepen.io' target='_blank'>CodePen.io</a> que funcione de forma similar al siguiente ejemplo: <a href='http://codepen.io/FreeCodeCamp/full/qbqqJm/' target='_blank'>http://codepen.io/FreeCodeCamp/full/qbqqJm/</a>.",
+        "<strong>Regla #1:</strong> No veas el código del proyecto de ejemplo. Encuentra la forma de hacerlo por tu cuenta.",
+        "<strong>Regla #2:</strong> Satisface las siguientes <a href='http://en.wikipedia.org/wiki/User_story' target='_blank'>historias de usuario</a>. Usa cualquier librería o API que sea necesaria. ¡Ponle un toque personal!.",
+        "<strong>Rule #3:</strong> Debes utilizar ambos Sass y React para construir este proyecto.",
+        "<strong>Historia de usuario:</strong> Puedo ver un tablero con los campistas de Free Code Camp que han ganado más puntos de brownie en los últimos 30 días.",
+        "<strong>Historia de usuario:</strong> Puedo ver cuántos puntos de brownie han ganado en los últimos 30 días, y cuántos han ganado en total.",
+        "<strong>Historia de usuario:</strong> Puedo elegir entre dos formas de organizar la lista: 1) En base a cuántos puntos de brownie se han ganado en los últimos 30 días. 2) En base al número de puntos de brownie que han ganado en total.",
+        "<strong>Pista:</strong> Para obtener los 100 mejores campistas para los últimos 30 días: <a href='http://fcctop100.herokuapp.com/api/fccusers/top/recent' target='_blank'>http://fcctop100.herokuapp.com/api/fccusers/top/recent</a>.",
+        "<strong>Pista:</strong> Para obtener los 100 mejores campistas de toda la historia: <a href='http://fcctop100.herokuapp.com/api/fccusers/top/alltime' target='_blank'>http://fcctop100.herokuapp.com/api/fccusers/top/alltime</a>.",
+        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado.",
+        "Cuando termines, haz clic en el botón de \"I've completed this challenge\" e incluye el vínculo de tu proyecto en CodePen. ",
+        "Puedes obtener retroalimentación acerca de tu proyecto de parte de tus compañeros campistas compartiéndolo en nuestro <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Cuarto de revisión de código</a>. También puedes compartirlo en Twitter y en el campamento de tu ciudad (en Facebook)."
+      ],
       "isRequired": true
     },
     {
@@ -80,6 +109,22 @@
       "tests": [],
       "type": "zipline",
       "challengeType": 3,
+      "nameEs": "Crea una caja de recetas",
+      "descriptionEs": [
+        "<strong>Objetivo:</strong> Construye una aplicación en <a href='http://codepen.io' target='_blank'>CodePen.io</a> que funcione de forma similar al siguiente ejemplo: <a href='http://codepen.io/FreeCodeCamp/full/LGbbqj' target='_blank'>http://codepen.io/FreeCodeCamp/full/LGbbqj</a>.",
+        "<strong>Regla #1:</strong> No veas el código del proyecto de ejemplo. Encuentra la forma de hacerlo por tu cuenta.",
+        "<strong>Regla #2:</strong> Satisface las siguientes <a href='http://en.wikipedia.org/wiki/User_story' target='_blank'>historias de usuario</a>. Usa cualquier librería o API que sea necesaria. ¡Ponle un toque personal!.",
+        "<strong>Rule #3:</strong> Debes utilizar ambos Sass y React para construir este proyecto.",
+        "<strong>Historia de usuario:</strong> Puedo crear recetas a las que les puedo poner un nombre y los ingredientes necesarios.",
+        "<strong>Historia de usuario:</strong> Puedo ver un índice que contenga los nombres de todas las recetas.",
+        "<strong>Historia de usuario:</strong> Puedo pulsar cualquiera de las recetas para verla.",
+        "<strong>Historia de usuario:</strong> Puedo editar las recetas.",
+        "<strong>Historia de usuario:</strong> Puedo eliminar las recetas.",
+        "<strong>Historia de usuario:</strong> Las recetas que voy agregando deben guardarse en el almacenamiento local de mi navegador. Las recetas deben seguir allí si refresco la página.",
+        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado.",
+        "Cuando termines, haz clic en el botón de \"I've completed this challenge\" e incluye el vínculo de tu proyecto en CodePen. ",
+        "Puedes obtener retroalimentación acerca de tu proyecto de parte de tus compañeros campistas compartiéndolo en nuestro <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Cuarto de revisión de código</a>. También puedes compartirlo en Twitter y en el campamento de tu ciudad (en Facebook)."
+      ],
       "isRequired": true
     },
     {
@@ -109,6 +154,24 @@
       "tests": [],
       "type": "zipline",
       "challengeType": 3,
+      "nameEs": "Crea un Juego de la vida",
+      "descriptionEs": [
+        "<strong>Objetivo:</strong> Construye una aplicación en <a href='http://codepen.io' target='_blank'>CodePen.io</a> que funcione de forma similar al siguiente ejemplo: <a href='http://codepen.io/FreeCodeCamp/full/dGOOrZ' target='_blank'>http://codepen.io/FreeCodeCamp/full/dGOOrZ</a>.",
+        "<strong>Regla #1:</strong> No veas el código del proyecto de ejemplo. Encuentra la forma de hacerlo por tu cuenta.",
+        "<strong>Regla #2:</strong> Satisface las siguientes <a href='http://en.wikipedia.org/wiki/User_story' target='_blank'>historias de usuario</a>. Usa cualquier librería o API que sea necesaria. ¡Ponle un toque personal!.",
+        "<strong>Rule #3:</strong> Debes utilizar ambos Sass y React para construir este proyecto.",
+        "<strong>Historia de usuario:</strong> La aplicación debe generar aleatoriamente un tablero y comenzar a jugar cuando entro al juego por primera vez.",
+        "<strong>Historia de usuario:</strong> Puedo iniciar y detener el tablero.",
+        "<strong>Historia de usuario:</strong> Puedo preparar el tablero.",
+        "<strong>Historia de usuario:</strong> Puedo limpiar el tablero.",
+        "<strong>Historia de usuario:</strong> El juego inicia cuando presiono un botón de inicio.",
+        "<strong>Historia de usuario:</strong> Puedo ver cuántas generaciones han pasado cada vez que el tablero cambia.",
+        "<strong>Pista:</strong> Puedes encontrar una explicación del Juego de la vida de Conway de parte del mismísimo John Conway aquí: <a href='https://www.youtube.com/watch?v=E8kUJL04ELA' target='_blank'>https://www.youtube.com/watch?v=E8kUJL04ELA</a>",
+        "<strong>Pista:</strong> Puedes referirte al siguiente enlace para obtener información general acerca del Juego de la vida de Conway incluyendo las reglas del juego: <a href='https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life' target='_blank'>https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life</a>",
+        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado.",
+        "Cuando termines, haz clic en el botón de \"I've completed this challenge\" e incluye el vínculo de tu proyecto en CodePen. ",
+        "Puedes obtener retroalimentación acerca de tu proyecto de parte de tus compañeros campistas compartiéndolo en nuestro <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Cuarto de revisión de código</a>. También puedes compartirlo en Twitter y en el campamento de tu ciudad (en Facebook)."
+      ],
       "isRequired": true
     },
     {
@@ -139,6 +202,25 @@
       "tests": [],
       "type": "zipline",
       "challengeType": 3,
+      "nameEs": "Crea un juego de dragones al estilo Rogue",
+      "descriptionEs": [
+        "<strong>Objetivo:</strong> Construye una aplicación en <a href='http://codepen.io' target='_blank'>CodePen.io</a> que funcione de forma similar al siguiente ejemplo: <a href='http://codepen.io/FreeCodeCamp/full/dGOOEJ/' target='_blank'>http://codepen.io/FreeCodeCamp/full/dGOOEJ/</a>.",
+        "<strong>Regla #1:</strong> No veas el código del proyecto de ejemplo. Encuentra la forma de hacerlo por tu cuenta.",
+        "<strong>Regla #2:</strong> Satisface las siguientes <a href='http://en.wikipedia.org/wiki/User_story' target='_blank'>historias de usuario</a>. Usa cualquier librería o API que sea necesaria. ¡Ponle un toque personal!.",
+        "<strong>Rule #3:</strong> Debes utilizar ambos Sass y React para construir este proyecto.",
+        "<strong>Historia de usuario:</strong> Tengo energía, nivel de habilidad y un arma. Puedo recoger un arma mejor. Puedo recoger ítems que recuperan mi energía.",
+        "<strong>Historia de usuario:</strong> Todos los ítems y los enemigos en el mapa están colocados aleatoriamente.",
+        "<strong>Historia de usuario:</strong> Puedo moverme a lo largo de un mapa y descubrir ítems.",
+        "<strong>Historia de usuario:</strong> Puedo moverme hacia cualquier parte dentro de los límites del mapa, pero no puedo moverme sobre un enemigo hasta que lo haya vencido.",
+        "<strong>Historia de usuario:</strong> Gran parte del mapa está escondido. Cuando doy un paso, todos los espacios que están a cierto número de espacios de distancia de mi son revelados.",
+        "<strong>Historia de usuario:</strong> Cuando venzo un enemigo, este desaparece y yo gano puntos de experiencia (XP), lo que eventualmente me permite aumentar de nivel.",
+        "<strong>Historia de usuario:</strong> Cuando peleo con un enemigo, tomamos turnos haciéndonos daño hasta que uno de los dos pierde. El daño que hago está basado en mi nivel de experiencia y en el arma que estoy utilizando. El enemigo hace daño basado en su nivel. El daño es aleatorio dentro de cierto márgen.",
+        "<strong>Historia de usuario:</strong> Gano el juego cuando encuentre y venza al jefe.",
+        "<strong>Historia de usuario:</strong> El juego debe representar un reto, pero ganar debe ser teóricamente posible.",
+        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado.",
+        "Cuando termines, haz clic en el botón de \"I've completed this challenge\" e incluye el vínculo de tu proyecto en CodePen. ",
+        "Puedes obtener retroalimentación acerca de tu proyecto de parte de tus compañeros campistas compartiéndolo en nuestro <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Cuarto de revisión de código</a>. También puedes compartirlo en Twitter y en el campamento de tu ciudad (en Facebook)."
+      ],
       "isRequired": true
     }
   ]
