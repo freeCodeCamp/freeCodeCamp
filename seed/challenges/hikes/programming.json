@@ -24,16 +24,16 @@
       "tests": [
         [
           "Computers look at code one line at a time",
-          "true"
+          true
         ],
         [
           "Programmers and developers are totally different professions with very little in common.",
-          "false",
+          false,
           "Those titles are so similar they could even describe the same job position."
         ],
         [
           "Programmers take ideas and break them down into little tiny steps the computer can understand",
-          "true"
+          true
         ]
       ],
       "type": "hike",
@@ -61,12 +61,12 @@
       "tests": [
         [
           "The console serves only small, unnecessary purposes.",
-          "false",
+          false,
           "The console's main purpose is to debug, which is a vital step in creating code."
         ],
         [
           "You can console strings (sets of words), numbers, and booleans (true/false statements)",
-          "true"
+          true
         ]
       ],
       "type": "hike",
@@ -90,11 +90,11 @@
       "tests": [
         [
           "Variables are useful in coding languages like JavaScript.",
-          "true"
+          true
         ],
         [
           "Variables can't stand for anything that isn't a string, number, or boolean.",
-          "false",
+          false,
           "Variables can stand for things ranging from simple to very complex"
         ]
       ],
@@ -130,16 +130,16 @@
       "tests": [
         [
           "Source code is a text document.",
-          "true"
+          true
         ],
         [
           "Javascript is a compiler language.",
-          "false",
+          false,
           "Javascript is an interpreter language"
         ],
         [
           "Free Code Camp is open source.",
-          "true"
+          true
         ]
       ],
       "type": "hike",
@@ -180,16 +180,16 @@
       "tests": [
         [
           "Routers have to know the whole internet.",
-          "false",
+          false,
           "Routers just have to know the stops around them to send information in the right direction."
         ],
         [
           "Packets are little peices of binary code.",
-          "true"
+          true
         ],
         [
           "Packets have to be sent in one piece.",
-          "false",
+          false,
           "packets can be broken up into frames."
         ]
       ],
@@ -217,16 +217,16 @@
       "tests": [
         [
           "Chips have transistors, little switches that can store a 1 or a 0.",
-          "true"
+          true
         ],
         [
           "Moore's Law is the observation that technology doubles in speed every year.",
-          "false",
+          false,
           "Moore's Law is the observation that the number of transistors per chip doubles every 2 years)."
         ],
         [
           "Moore's Law has slowed down in recent years.",
-          "false",
+          false,
           "Somehow this continues to be true."
         ]
       ],
@@ -257,11 +257,11 @@
       "tests": [
         [
           "Digital files can be made from analog sounds and analog sounds can be made from digital files.",
-          "true"
+          true
         ],
         [
           "Compression is not worth it, because it lessens quality.",
-          "false",
+          false,
           "Sometimes compression is a great idea. It depends on what you're trying to do and what your end goal for the product is."
         ]
       ],
@@ -306,16 +306,16 @@
       "tests": [
         [
           "Passwords should be shared with all of your accounts.",
-          "false",
+          false,
           "Don't reuse important passwords"
         ],
         [
           "If you don't trust a site or an email, open a new browser and re-enter the intended location.",
-          "true"
+          true
         ],
         [
           "Keeping software updated will help protect your computer and your information.",
-          "true"
+          true
         ]
       ],
       "type": "hike",
