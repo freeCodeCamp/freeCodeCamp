@@ -104,13 +104,18 @@ gulp
 Now navigate to your browser and open http://localhost:3001
 If the app loads, congratulations - you're all set. Otherwise, let us know by opening a GitHub issue and with your error.
 
+### <a name="common-issues"></a> Common Issues
+
+#### <a name="issue-macports-npm"></a> `npm run only-once` fails on MacOS X.
+Generally this is caused by using a version of npm that is too old; at least version 3 is required.  If you are using macports, do `port install npm-devel` to install the latest version.
 
 ## Found a bug?
 Do not file an issue until you have followed these steps:
 
-1. Read [Help I've Found a Bug](https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/Help-I've-Found-a-Bug) wiki page and follow the instructions there.
-2. Asked for confirmation in the appropriate [Help Room](https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/Help-Rooms)
-3. Please *do not* open an issue without a 3rd party confirmation of your problem.
+1. Check whether your issue is already covered in [Common Issues](#common-issues).
+2. Read [Help I've Found a Bug](https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/Help-I've-Found-a-Bug) wiki page and follow the instructions there.
+3. Asked for confirmation in the appropriate [Help Room](https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/Help-Rooms)
+4. Please *do not* open an issue without a 3rd party confirmation of your problem.
 
 
 ## Creating Pull Requests
