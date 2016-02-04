@@ -579,8 +579,8 @@
       "title": "Join Strings with .join",
       "description": [
         "We can use the <code>join</code> method to join each element of an array into a string separated by whatever delimiter you provide as an argument.",
-        "The following is an example of using <code>join</code> to join all of the elements of an array into a string with all the elements separated by word `Na`:",
-        "<blockquote>var joinMe = [\"Na \", \"Na \", \"Na \", \"Na \", \"Batman!\"];<br>var joinedString = joinMe.join(\"Na \");<br>console.log(joinedString);</blockquote>",
+        "The following is an example of using <code>join</code> to join all of the elements of an array into a string with all the elements separated by word ` and `:",
+        "<blockquote>var veggies = [\"Celery\", \"Radish\", \"Carrot\", \"Potato\", \"Aubergine\"];<br>var salad = veggies.join(\" and \");<br>console.log(salad);</blockquote>",
         "Use the <code>join</code> method to create a string from <code>joinMe</code> with spaces in between each element and assign it to <code>joinedString</code>."
       ],
       "challengeSeed": [
@@ -604,9 +604,9 @@
       "descriptionEs": [
         "Podemos usar el método <code>join</code> para unir los elementos de un vector en una cadena, separandolos con el delimitador que proporciones como argumento.",
         "El siguiente es un ejemplo del uso de <code>join</code> para unir todos los elementos de un vector en una cadena con todos los elementos separados entre si por palabra` Na`: ",
-        "<code>var uneme = [\"Na \", \"Na \", \"Na \", \"Na \", \"Batman!\"];</code>",
-        "<code>var cadenaUnida = uneme.join(\"Na \");</code>",
-        "<code>console.log(cadenaUnida);</code>",
+        "<code>var veggies = [\"Celery\", \"Radish\", \"Carrot\", \"Potato\", \"Aubergine\"];</code>",
+        "<code>var salad = veggies.join(\" and \");</code>",
+        "<code>console.log(salad);</code>",
         "Usa el método <code>join</code> para crear una cadena a partir <code>joinMe</code> con espacios entre cada par de elementos y asignarla a <code>joinedString </code>."
       ]
     }
