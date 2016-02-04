@@ -17,7 +17,7 @@ export default React.createClass({
     const vidElements = hikes.map(({ title, dashedName}) => {
       return (
         <ListGroupItem key={ dashedName }>
-          <Link to={ `/hikes/${dashedName}` }>
+          <Link to={ `/videos/${dashedName}` }>
             <h3>{ title }</h3>
           </Link>
         </ListGroupItem>

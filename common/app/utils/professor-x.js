@@ -1,5 +1,6 @@
 import React, { PropTypes, createElement } from 'react';
 import { Observable, CompositeDisposable } from 'rx';
+import shouldComponentUpdate from 'react-pure-render/function';
 import debug from 'debug';
 
 // interface contain {
@@ -179,10 +180,7 @@ export default function contain(options = {}, Component) {
       }
     }
 
-    shouldComponentUpdate() {
-      // props should be immutable
-      return false;
-    }
+    shouldComponentUpdate = shouldComponentUpdate;
 
     render() {
       const { props } = this;

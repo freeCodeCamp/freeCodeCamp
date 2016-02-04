@@ -32,7 +32,6 @@ export default ({ services }) => ({ dispatch }) => next => {
 
         const currentHike = getCurrentHike(hikes, dashedName);
 
-        console.log('foo', currentHike);
         return fetchHikesCompleted(hikes, currentHike);
       })
       .catch(error => {

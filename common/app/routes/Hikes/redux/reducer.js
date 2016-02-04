@@ -7,16 +7,27 @@ const initialState = {
     results: [],
     entities: {}
   },
-  // lecture state
+  // ui
+  // hike dashedName
   currentHike: '',
-  showQuestions: false
+  // 1 indexed
+  currentQuestion: 1,
+  // [ xPosition, yPosition ]
+  mouse: [ 0, 0 ],
+  // change in mouse position since pressed
+  // [ xDelta, yDelta ]
+  delta: [ 0, 0 ],
+  isPressed: false,
+  isCorrect: false,
+  shouldShakeQuestion: false,
+  shouldShowQuestions: false
 };
 
 export default handleActions(
   {
     [types.toggleQuestion]: state => ({
       ...state,
-      showQuestions: !state.showQuestions,
+      shouldShowQuestions: !state.shouldShowQuestions,
       currentQuestion: 1
     }),
 
@@ -38,13 +49,13 @@ export default handleActions(
     [types.resetHike]: state => ({
       ...state,
       currentQuestion: 1,
-      showQuestions: false,
+      shouldShowQuestions: false,
       mouse: [0, 0],
       delta: [0, 0]
     }),
 
-    [types.startShake]: state => ({ ...state, shake: true }),
-    [types.endShake]: state => ({ ...state, shake: false }),
+    [types.startShake]: state => ({ ...state, shouldShakeQuestion: true }),
+    [types.endShake]: state => ({ ...state, shouldShakeQuestion: false }),
 
     [types.primeNextQuestion]: (state, { payload: userAnswer }) => ({
       ...state,
@@ -68,7 +79,7 @@ export default handleActions(
 
     [types.goToNextHike]: state => ({
       ...state,
-      currentHike: findNextHike(state.hikes, state.currentHike.id),
+      currentHike: findNextHike(state.hikes, state.currentHike),
       showQuestions: false,
       currentQuestion: 1,
       mouse: [ 0, 0 ]

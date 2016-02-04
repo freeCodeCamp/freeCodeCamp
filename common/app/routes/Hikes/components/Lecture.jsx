@@ -90,4 +90,4 @@ export class Lecture extends React.Component {
   }
 }
 
-export default connect(mapStateToProps, { })(Lecture);
+export default connect(mapStateToProps)(Lecture);

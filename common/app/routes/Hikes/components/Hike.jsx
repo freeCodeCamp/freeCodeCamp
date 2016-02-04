@@ -17,6 +17,7 @@ const mapStateToProps = createSelector(
     };
   }
 );
+
 // export plain component for testing
 export class Hike extends React.Component {
   static displayName = 'Hike';
@@ -71,4 +72,4 @@ export class Hike extends React.Component {
 }
 
 // export redux aware component
-export default connect(mapStateToProps, { resetHike });
+export default connect(mapStateToProps, { resetHike })(Hike);

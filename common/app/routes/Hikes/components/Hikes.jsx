@@ -21,10 +21,11 @@ const mapStateToProps = createSelector(
       return { hikes: [] };
     }
     return {
-      hikes: hikes.results.map(dashedName => hikes.enitites[dashedName])
+      hikes: hikes.results.map(dashedName => hikes.entities[dashedName])
     };
   }
 );
+
 const fetchOptions = {
   fetchAction: 'fetchHikes',
 
@@ -49,8 +50,6 @@ export class Hikes extends React.Component {
     const { updateTitle } = this.props;
     updateTitle('Hikes');
   }
-
-  shouldComponentUpdate = shouldComponentUpdate;
 
   renderMap(hikes) {
     return (

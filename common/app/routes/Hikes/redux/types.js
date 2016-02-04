@@ -7,7 +7,7 @@ const types = [
   'releaseQuestion',
   'moveQuestion',
 
-  'answer',
+  'answerQuestion',
 
   'startShake',
   'endShake',

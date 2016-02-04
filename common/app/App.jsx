@@ -63,6 +63,7 @@ export class FreeCodeCamp extends React.Component {
   render() {
     const { username, points, picture } = this.props;
     const navProps = { username, points, picture };
+    console.log('app', this.props.children);
 
     return (
       <div>

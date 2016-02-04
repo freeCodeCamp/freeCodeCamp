@@ -43,7 +43,7 @@ export const moveQuestion = createAction(
 //   info: String,
 //   threshold: Number
 // }) => Action
-export const answer = createAction(types.answer);
+export const answerQuestion = createAction(types.answerQuestion);
 
 export const startShake = createAction(types.startShake);
 export const endShake = createAction(types.primeNextQuestion);

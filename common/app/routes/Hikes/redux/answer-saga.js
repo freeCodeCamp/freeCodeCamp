@@ -10,7 +10,7 @@ import { postJSON$ } from '../../../../utils/ajax-stream';
 
 export default () => ({ getState, dispatch }) => next => {
   return function answerSaga(action) {
-    if (types.answer !== action.type) {
+    if (types.answerQuestion !== action.type) {
       return next(action);
     }
 
@@ -56,14 +56,11 @@ export default () => ({ getState, dispatch }) => next => {
     // incorrect question
     if (answer !== finalAnswer) {
       if (info) {
-        dispatch({
-          type: 'makeToast',
-          payload: {
-            title: 'Hint',
-            message: info,
-            type: 'info'
-          }
-        });
+        dispatch(makeToast({
+          title: 'Hint',
+          message: info,
+          type: 'info'
+        }));
       }
 
       return Observable
@@ -100,7 +97,7 @@ export default () => ({ getState, dispatch }) => next => {
         })
         .catch(error => {
           return Observable.just({
-            type: 'error',
+            type: 'app.error',
             error
           });
         });
