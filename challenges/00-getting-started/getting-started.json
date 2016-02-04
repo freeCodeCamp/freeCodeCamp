@@ -88,7 +88,7 @@
       "nameEs": "Aprende como funciona Free Code Camp",
       "descriptionEs": [
         [
-          "http://i.imgur.com/RlEk2IF.jpg",
+          "http://i.imgur.com/6ibIavQ.jpg",
           "Una imagen de los 4 beneficios de Free Code Camp: Conéctate, Aprende JavaScript, Construye tu  Portafolio, Ayuda organizaciones sin ánimo de lucro",
           "Bienvenido a Free Code Camp. Somos una comunidad de código abierto formada por personas ocupadas quienes aprenden a programar y ayudan a organizaciones sin ánimo de lucro.",
           ""
@@ -112,27 +112,52 @@
           ""
         ],
         [
-          "http://i.imgur.com/dLx8nrg.jpg",
-          "Una ilustración mostrando que aprenderás HTML5, CSS3, JavaScript, Bases de Datos, Git, Node.js, Angular.js y Agile.",
-          "Durante la primera mitad de Free Code Camp, aprenderás tecnologías como HTML5, Node.js y Bases de Datos.",
+          "http://i.imgur.com/vLNso6h.jpg",
+          "Una ilustración mostrando que aprenderás HTML5, CSS3, JavaScript, Bases de Datos, Git, Node.js, react y D3.",
+          "Tenemos cientos de desafíos de programación opcionales que te enseñarán las tecnologías fundamentales para el desarrollo web como HTML5, Node.js y bases de datos.",
           ""
         ],
+        [
+          "http://i.imgur.com/UVB9hxp.jpg",
+          "Una foto de un campista en un café construyendo proyectos con Free Code Camp.",
+          "Creemos que los humanos aprender mejor haciendo.  Así que en realidad emplearás la mayoría de tu tiempo construyendo proyectos.  Te daremos una lista de especificaciones (historias de usuario ágiles), y te las ingeniarás para construir aplicaciones que cumplan esas especificaciones.",
+          ""
+        ],
+         [
+          "http://i.imgur.com/pbW7K5S.jpgk",
+          "Una imagen de los tiempos de nuestras certificaciones para desarrollo de interfaces, desarrollo al lado del servidor y visualización de datos (400 horas cada uno), para nuestros proyectos sin ánimo de lucro (800 horas) y preparación para entrevistas (80 horas) que dan un total de 2,080 horas e experiencia programando.",
+          "Nuestro currículo se divide en 4 certificaciones.  Estas certificaciones están estandarizadas, y son verificables al instante por sus clientes como trabajador independiente y por sus futuros empleadores.  Tal como todo lo demás en Free Code Camp, estas certificaciones son gratuitas.  Recomendamos hacerlas en orden, pero usted es libre de saltar de una a otra.  Las primeras tres certificaciones requieren 400 horas cada una, y la certificación final requiere 800 horas, e involucra construir proyectos de la vida real para organizaciones sin ánimo de lucro.",
+          ""
+        ],
+        [
+          "http://i.imgur.com/k8btNUB.jpg",
+          "Una imagen de nuestro Certificado de Desarrollo de Interfaces",
+          "Para obtener nuestra certificación verificada de Desarrollo de Interfaces, construirás 10 proyectos usando HTML, CSS, jQuery y JavaScript.",
+          ""
+        ],
+ 
         [
           "http://i.imgur.com/Et3iD74.jpg",
-          "Una imagen de nuestro Certificado de Desarrollo Front End",
-          "Tras unas 400 horas en Free Code Camp, obtendrás tu Certificación de Desarrollo Front End verificada.",
+          "Una imagen de nuestro Certificado de Visualización de Datos",
+          "Para obtener nuestra certificación en Visualización de Datos, construirás 10 proyectos usando React, Sass y D3.js.",
           ""
         ],
         [
-          "http://i.imgur.com/sKYQhdG.jpg",
-          "Una imagen de nuestro Certificado de Desarrollo Full Stack",
-          "Tras unas 400 horas en Free Code Camp, obtendrás tu Certificación de Desarrollo Full Stack verificada.",
+          "http://i.imgur.com/8v3t84p.jpg",
+          "Una imagen de nuestro Certificado de Desarrollo al Lado del Servidor",
+          "Para obtener nuestro Certificado de Desarrollo al Lado del Servidor, construirás 10 proyectos empleando Node.js, Express y MongoDB. Usarás Git y Heroku para desplegarlos en la nube.",
           ""
         ],
         [
           "http://i.imgur.com/yXyxbDd.jpg",
           "Una imagen de nuestro directorio de organizaciones sin ánimo de lucro.",
-          "Entonces construirás varios proyectos reales para organizaciones sin ánimo de lucro. Para cuando termines, tendrás un portafolio de aplicaciones reales que las personas usan a diario.",
+          "Después de completar todos los tres certificados, harás equipo con otro campista y usarás metodologías de desarrollo ágil para construir dos proyectos de la vida real para organizaciones sin ánimo de lucro. También añadirás funcionalidad a dos proyectos de fuentes legadas de organizaciones sin ánimo de lucro.  Cuando termines esto, tendrás un portafolio de aplicaciones reales que la gente usa a diario. ",
+          ""
+        ],
+        [
+          "http://i.imgur.com/PDGQ9ZM.jpg",
+          "Una imagen de nuestros campistas construyendo proyectos juntos en un café en Seoul.",
+          "Si completas todas las 2,080 horas de desafíos y proyectos, obtendrás un Certificado de Desarrollo de Pila Completa.  Te ofreceremos gratuitamente una práctica en entrevistas para desarrolladores. Incluso ofrecemos un directorio de trabajos donde los empleadores contratan específicamente campistas que han recibido certificaciones de Free Code Camp.",
           ""
         ]
       ]
@@ -210,49 +235,49 @@
         ],
         [
           "http://i.imgur.com/FEImaEN.gif",
-          "Una imagen mostrandote como pulsar en el enlace inferior para ir a GitHub, llenar los campos necesarios y enviarlos.",
+          "Una imagen mostrándote como pulsar en el enlace inferior para ir a GitHub, llenar los campos necesarios y enviarlos.",
           "Crea una cuenta en GitHub. Asegúrate de usar tu dirección de correo real - GitHub mantendrá esto en privado.",
           "https://github.com/join"
         ],
         [
           "http://i.imgur.com/ALN6zPK.gif",
-          "Un gif mostrandote como pulsar en la imagen de perfil en la esquina superior derecha de GitHub. Sube una foto tuya o continuaras usando la imagen de pixeles generada automáticamente. Entonces llena los campos restantes y haz clic en envíar.",
-          "En la esquina superior derecha pulsa sobre la imagen de pixeles, entonces selecciona configuraciones. Sube una imagen tuya. Una foto de tu cara es mejor. Así es como tus compañeros campistas te verán en nuestras salas de chat, así que toma tu mejor ángulo. Puedes añadir tu ciudad y tu nombre si lo deseas.",
+          "Un gif mostrándote como pulsar en la imagen de perfil en la esquina superior derecha de GitHub. Sube una foto tuya o continuaras usando la imagen de píxeles generada automáticamente. Entonces llena los campos restantes y haz clic en enviar.",
+          "En la esquina superior derecha pulsa sobre la imagen de píxeles, entonces selecciona configuraciones. Sube una imagen tuya. Una foto de tu cara es mejor. Así es como tus compañeros campistas te verán en nuestras salas de chat, así que toma tu mejor ángulo. Puedes añadir tu ciudad y tu nombre si lo deseas.",
           "https://github.com/settings/profile"
         ],
         [
           "http://i.imgur.com/pYk0wOk.gif",
-          "Un gif mostrandote como puedes dar una estrella a un repositorio de GitHub.",
+          "Un gif mostrándote como puedes dar una estrella a un repositorio de GitHub.",
           "Ve al repositorio de código libre de Free Code Camp y dale una \"estrella\". Las \"estrellas\" son el equivalente en GitHub de los \"me gusta\".",
           "https://github.com/freecodecamp/freecodecamp"
         ],
         [
           "http://i.imgur.com/zwYPeQT.gif",
-          "Un gif mostrandote como pulsar en el enlace inferior para ir a nuestra sala de chat y pulsar en el botón de \"iniciar sesión con GitHub\". Entonces puedes pulsar en el próximo campo de texto y escribir un mensaje a tus compañeros campistas.",
-          "Ahora que tienes una cuenta de GitHub, puedes unirte a nuestro chat principal al iniciar sesión con GitHub. Presentate diciendo \"Hello world!\". Cuéntales a los tus compañeros campistas como encontraste Free Code Camp. Además cuéntanos porque deseas aprender a programar.",
+          "Un gif mostrándote como pulsar en el enlace inferior para ir a nuestra sala de chat y pulsar en el botón de \"iniciar sesión con GitHub\". Entonces puedes pulsar en el próximo campo de texto y escribir un mensaje a tus compañeros campistas.",
+          "Ahora que tienes una cuenta de GitHub, puedes unirte a nuestro chat principal al iniciar sesión con GitHub. Preséntate diciendo \"Hello world!\". Cuéntales a los tus compañeros campistas como encontraste Free Code Camp. Además cuéntanos porque deseas aprender a programar.",
           "https://gitter.im/FreeCodeCamp/FreeCodeCamp"
         ],
         [
           "http://i.imgur.com/Ecs5XAd.gif",
-          "Un gif mostrandote como puedes pulsar en el botón de configuraciones en la esquina superior derecha y modificar tus configuraciones de notificaciones.",
+          "Un gif mostrándote como puedes pulsar en el botón de configuraciones en la esquina superior derecha y modificar tus configuraciones de notificaciones.",
           "Nuestras salas de chat son extremadamente activas. Deberías cambiar tus configuraciones para ser notificado únicamente si alguien te menciona.",
           ""
         ],
         [
           "http://i.imgur.com/T0bGJPe.gif",
-          "Un gif mostrandote como puedes pulsar en la imagen de perfil de un usuario para iniciar una conversación privada con ese usuario.",
+          "Un gif mostrándote como puedes pulsar en la imagen de perfil de un usuario para iniciar una conversación privada con ese usuario.",
           "Por favor nota que todas nuestras salas de chat son visibles para el público. Si necesitas compartir información privada, como una dirección de correo o un número de teléfono, hazlo en un mensaje privado.",
           ""
         ],
         [
           "http://i.imgur.com/vDTMJSh.gif",
-          "Un gif mostrandote que puedes cambiar entre desafíos y nuestras salas de chat.",
+          "Un gif mostrándote que puedes cambiar entre desafíos y nuestras salas de chat.",
           "Mantén nuestra sala de chat abierta mientras trabajas en nuestros desafíos. De esta manera, puedes pedir ayuda si quedas atascado. Además puedes socializar con otros campistas cuando quieras tomar un descanso.",
           ""
         ],
         [
           "http://i.imgur.com/WvQvNGN.gif",
-          "Un gif mostrandote como puedes pulsar abajo para descargar una aplicación de chat nativa para tu computadora.",
+          "Un gif mostrándote como puedes pulsar abajo para descargar una aplicación de chat nativa para tu computadora.",
           "También puedes descargar la aplicación de chat para tu computadora o teléfono móvil.",
           "https://gitter.im/apps"
         ]
@@ -277,8 +302,8 @@
       "descriptionEs": [
         [
           "http://i.imgur.com/tP2ccTE.gif",
-          "Un gif mostrandore como puedes pulsar en tu imagen de perfil en la esquina superior derecha conectar tu portafolio y GitHub.",
-          "Dale un vistazo de tu portafolio de código. Da click en tu imagen en la esquina superior derecha. Para activar tu portafolio de código, necesitaras conectar tu cuenta de GitHub con Free Code Camp. Tu portafolio de código muestra tu progreso y cuantos Brownie Points tienes. Puedes obtener Brownie Points completando desafíos y ayudando a otros campistas en nuestras salas de chat. Si obtienes Brownie Points varios días consecutivos, obtendrás una racha.",
+          "Un gif mostrándote como puedes pulsar en tu imagen de perfil en la esquina superior derecha conectar tu portafolio y GitHub.",
+          "Dale un vistazo de tu portafolio de código. Pulsa en tu imagen en la esquina superior derecha. Para activar tu portafolio de código, necesitaras conectar tu cuenta de GitHub con Free Code Camp. Tu portafolio de código muestra tu progreso y cuantos Puntos Cafés tienes. Puedes obtener Puntos Cafés completando desafíos y ayudando a otros campistas en nuestras salas de chat. Si obtienes Puntos Cafés varios días consecutivos, obtendrás una racha.",
           ""
         ]
       ]
@@ -308,13 +333,13 @@
       "descriptionEs": [
         [
           "http://i.imgur.com/NAOFJWN.jpg",
-          "Una imagen de algunos de nuestros campistas compartiendo en un café local. 3 hombres y 3 mujeres estan sentados alrededor de una mesa con portátiles afuera, y estan sonriendo y programando.",
+          "Una imagen de algunos de nuestros campistas compartiendo en un café local. 3 hombres y 3 mujeres están sentados alrededor de una mesa con portátiles afuera, y están sonriendo y programando.",
           "Nuestros Campamentos te ayudan a programar con otros campistas en tu ciudad. Puedes coordinar grupos de estudio o atender eventos de programación locales juntos.",
           ""
         ],
         [
           "http://i.imgur.com/fTFMjwf.gif",
-          "Un gif mostrandote como puedes pulsar en el enlace inferior, encontrar tu ciudad en la lista de Campamentos, entonces haz clic en el enlace de Facebook para tu ciudad y unirte al grupo de Facebook de tu ciudad.",
+          "Un gif mostrándote como puedes pulsar en el enlace inferior, encontrar tu ciudad en la lista de Campamentos, entonces haz clic en el enlace de Facebook para tu ciudad y unirte al grupo de Facebook de tu ciudad.",
           "Encuentra tu ciudad en esta lista y haz clic en esta. Esto te llevara al grupo de Facebook del Campamento de tu ciudad. Da clic en el botón de \"Unirse al grupo\" para unirte a el grupo. Alguien del mismo campamento debería aprobarte en breve. Si tu ciudad no esta en esta lista, ve al final del articulo de la wiki para ver instrucciones de como crear un campamento para tu ciudad.",
           "https://github.com/FreeCodeCamp/freecodecamp/wiki/List-of-Free-Code-Camp-city-based-Campsites"
         ]
@@ -387,7 +412,7 @@
         ],
         [
           "http://i.imgur.com/sfsidp6.jpg",
-          "El texto \"Volverse bueno programa requiere tiempo.\"",
+          "El texto \"Volverse bueno programando requiere tiempo.\"",
           "Volverse bueno programando requiere tiempo. No esperarías derrotar a un maestro del ajedrez después de jugar por 3 meses. No esperes crear el próximo Facebook después de programar 3 meses.",
           ""
         ],
@@ -411,19 +436,19 @@
         ],
         [
           "http://i.imgur.com/GxvrsFb.gif",
-          "Un gif mostrandote como hacer una búsqueda avanzada en Google. Primero, escribimos la consulta \"jquery no corre cuando mi página carga\". Entonces damos clic en el botón de herramientas y cambiamos la selección de \"En cualquier momento\" a \"en el último año\". Entonces hacemos clic en un resultado o leemos a través del artículo y encontramos nuestra respuesta.",
-          "Si eso no ayudo, busca en Google. Buenas búsquedas en Google toman mucha práctica. Cuando buscas en Google, usualmente querrás incluir el lenguaje o framework que estás usando. También querrás limitar los resultados a un período reciente.",
+          "Un gif mostrándote como hacer una búsqueda avanzada en Google. Primero, escribimos la consulta \"jquery no corre cuando mi página carga\". Entonces damos clic en el botón de herramientas y cambiamos la selección de \"En cualquier momento\" a \"en el último año\". Entonces hacemos clic en un resultado o leemos a través del artículo y encontramos nuestra respuesta.",
+          "Si eso no ayudo, busca en Google. Realizar buenas búsquedas en Google requiere mucha práctica. Cuando buscas en Google, usualmente querrás incluir el lenguaje o entorno (framework) que estás usando. También querrás limitar los resultados a un período reciente.",
           ""
         ],
         [
           "http://i.imgur.com/LZYU7p2.gif",
-          "Un gif mostrandonos como seguir el enlace inferior para ir a nuestra sala de chat de ayuda y preguntar \"jquery no corre cuando mi página carga\".",
-          "Si eso no te ayudó, preguntale a tus amigos. Si tienes problemas, puedes preguntar a tus compañeros campistas en nuestra sala de chat.",
+          "Un gif mostrándonos como seguir el enlace inferior para ir a nuestra sala de chat de ayuda y preguntar \"jquery no corre cuando mi página carga\".",
+          "Si eso no te ayudó, pregúntale a tus amigos. Si tienes problemas, puedes preguntar a tus compañeros campistas en nuestra sala de chat.",
           "https://gitter.im/FreeCodeCamp/Help"
         ],
         [
           "http://i.imgur.com/ZRgXraT.gif",
-          "Un gif mostrandonos nuestro mapa de desafíos.",
+          "Un gif mostrándonos nuestro mapa de desafíos.",
           "Ahora estas listo para empezar a programar. El botón de  \"Mapa\" en tu esquina superior derecha te mostrará nuestro mapa de desafíos. Te recomendaos que completes los desafíos de arriba hacía abajo, a un ritmo sostenible. Nuestra comunidad de código abierto esta constantemente mejorando nuestros desafíos, así que no te sorprendas si cambian o se mueven alrededor. No te preocupes por volver hacia atrás - solo continúa avanzando. Siempre puedes ir a tu desafío más reciente pulsando el botón de \"Aprender\".",
           ""
         ]
