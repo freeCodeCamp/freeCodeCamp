@@ -197,7 +197,8 @@ module.exports = function(app) {
         // to show all date related components
         // using signed-in account's timezone
         // not of the profile she is viewing
-        const timezone = req.user && req.user.timezone ? req.user.timezone : 'UTC';
+        const timezone = req.user &&
+          req.user.timezone ? req.user.timezone : 'UTC';
 
         var cals = profileUser
           .progressTimestamps
@@ -244,11 +245,12 @@ module.exports = function(app) {
           .map(challenge => {
               challenge = { ...challenge };
               if (challenge.completedDate) {
-                challenge.completedDate = 
-                  moment.tz(challenge.completedDate, timezone).format(dateFormat);
+                challenge.completedDate =
+                  moment.tz(challenge.completedDate, timezone)
+                    .format(dateFormat);
               }
               if (challenge.lastUpdated) {
-                challenge.lastUpdated = 
+                challenge.lastUpdated =
                   moment.tz(challenge.lastUpdated, timezone).format(dateFormat);
               }
               return challenge;
@@ -315,6 +317,8 @@ module.exports = function(app) {
         }
         return findUserByUsername$(username, {
           isGithubCool: true,
+          isCheater: true,
+          isLocked: true,
           isFrontEndCert: true,
           isDataVisCert: true,
           isBackEndCert: true,

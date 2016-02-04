@@ -29,6 +29,9 @@
     "suborder": {
       "type": "number"
     },
+    "checksum": {
+      "type": "number"
+    },
     "isBeta": {
       "type": "boolean",
       "description": "Show only during dev or on beta site. Completely omitted otherwise"

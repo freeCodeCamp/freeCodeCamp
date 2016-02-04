@@ -80,7 +80,6 @@ var paths = {
   vendorChallenges: [
     'public/bower_components/jshint/dist/jshint.js',
     'public/bower_components/chai/chai.js',
-    'public/bower_components/clipboard/dist/clipboard.min.js',
     'public/bower_components/CodeMirror/lib/codemirror.js',
     'public/bower_components/CodeMirror/addon/edit/closebrackets.js',
     'public/bower_components/CodeMirror/addon/edit/matchbrackets.js',
