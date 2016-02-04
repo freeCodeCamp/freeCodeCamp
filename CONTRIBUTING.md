@@ -1,21 +1,24 @@
-# Contributors Guide
+# Contributor's Guide
 
 ## I want to help!
 We welcome pull requests from Free Code Camp campers (our students) and seasoned JavaScript developers alike! Follow these steps to contribute:
 
-1.  Check our [public Waffle Board](https://waffle.io/freecodecamp/freecodecamp).
-2.  Pick an issue, let us know you're working on it, and start working on it. If you've found a bug that is not on the board, [follow these steps](#found-a-bug).
-3.  You can find issues we are seeking assistance on by searching for the [Help Wanted](https://github.com/FreeCodeCamp/FreeCodeCamp/labels/help%20wanted) tag.
-4.  Feel free to ask for help in our [Help Contributors](https://gitter.im/FreeCodeCamp/HelpContributors) Gitter room.
+
+1.  Find an issue that needs assistance by searching for the [Help Wanted](https://github.com/FreeCodeCamp/FreeCodeCamp/labels/help%20wanted) tag.
+2.  Let us know you are working on it, by posting a comment on the issue.
+3.  Feel free to ask for help in our [Help Contributors](https://gitter.im/FreeCodeCamp/HelpContributors) Gitter room.
+
+If you've found a bug that is not on the board, [follow these steps](#found-a-bug).
 
 ## Contribution Guidelines
 
 1.  Fork the project: [How To Fork And Maintain a Local Instance of Free Code Camp](https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/How-To-Fork-And-Maintain-a-Local-Instance-of-Free-Code-Camp)
 2.  Create a branch specific to the issue or feature you are working on. Push your work to that branch. ([Need help with branching?](https://github.com/Kunena/Kunena-Forum/wiki/Create-a-new-branch-with-git-and-manage-branches))
 3.  Name the branch something like `fix/xxx` or `feature/xxx` where `xxx` is a short description of the changes or feature you are attempting to add. For example `fix/email-login` would be a branch where I fix something specific to email login.
-4.  You should have [ESLint running in your editor](http://eslint.org/docs/user-guide/integrations.html), and it will highlight anything doesn't conform to [Free Code Camp's JavaScript Style Guide](https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/Free-Code-Camp-JavaScript-Style-Guide) (you can find a summary of those rules [here](https://github.com/FreeCodeCamp/FreeCodeCamp/blob/staging/.eslintrc). Please do not ignore any linting errors, as they are meant to **help** you and to ensure a clean and simple code base. Make sure none of your JavaScript is longer than 80 characters per line.
+4. [Set up Linting](#linting-setup) to run as you make changes.
+5. When you are ready to share your code, run the test suite `npm test` and ensure all tests pass.  For Windows contributors, skip the jsonlint pretest run by using `npm run test-challenges`, as jsonlint will always fail on Windows, given the wildcard parameters.
 5.  Squash your Commits. Ref: [rebasing](https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/git-rebase)
-6.  Once your code is ready, submit a [pull request](https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/Pull-Request-Contribute) from your branch to Free Code Camp's `staging` branch. We'll do a quick code review and give you feedback, then iterate from there.
+6.  Submit a [pull request](https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/Pull-Request-Contribute) from your branch to Free Code Camp's `staging` branch.  [Travis CI](https://travis-ci.org/FreeCodeCamp/FreeCodeCamp) will then take your code and run `npm test`.  Make sure this passes, then we'll do a quick code review and give you feedback, then iterate from there.
 
 
 Prerequisites
@@ -26,6 +29,7 @@ Prerequisites
 
 Getting Started
 ---------------
+Note: If this is your first time working with a node-gyp dependent module, please follow the [node-gyp installation guide](https://github.com/nodejs/node-gyp#installation) to ensure a working npm build.
 
 The easiest way to get started is to clone the repository:
 
@@ -104,6 +108,8 @@ gulp
 Now navigate to your browser and open http://localhost:3001
 If the app loads, congratulations - you're all set. Otherwise, let us know by opening a GitHub issue and with your error.
 
+## Linting Setup
+You should have [ESLint running in your editor](http://eslint.org/docs/user-guide/integrations.html), and it will highlight anything doesn't conform to [Free Code Camp's JavaScript Style Guide](https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/Free-Code-Camp-JavaScript-Style-Guide) (you can find a summary of those rules [here](https://github.com/FreeCodeCamp/FreeCodeCamp/blob/staging/.eslintrc). Please do not ignore any linting errors, as they are meant to **help** you and to ensure a clean and simple code base. Make sure none of your JavaScript is longer than 80 characters per line.  The reason we enforce this is because one of our dependent NPM modules, [jsonlint](https://github.com/zaach/jsonlint), does not fully support wildcard paths in Windows.
 
 ## Found a bug?
 Do not file an issue until you have followed these steps:
