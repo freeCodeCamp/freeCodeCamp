@@ -14,8 +14,9 @@ export const fetchHikesCompleted = createAction(
   types.fetchHikesCompleted,
   (hikes, currentHike) => ({ hikes, currentHike })
 );
+export const resetHike = createAction(types.resetHike);
 
-export const toggleQuestion = createAction(types.toggleQuestion);
+export const toggleQuestionView = createAction(types.toggleQuestionView);
 
 export const grabQuestions = createAction(types.grabQuestions, e => {
   let { pageX, pageY, touches } = e;

@@ -25,7 +25,7 @@ const initialState = {
 
 export default handleActions(
   {
-    [types.toggleQuestion]: state => ({
+    [types.toggleQuestionView]: state => ({
       ...state,
       shouldShowQuestions: !state.shouldShowQuestions,
       currentQuestion: 1

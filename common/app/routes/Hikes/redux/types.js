@@ -1,6 +1,7 @@
 const types = [
   'fetchHikes',
   'fetchHikesCompleted',
+  'resetHike',
 
   'toggleQuestionView',
   'grabQuestion',

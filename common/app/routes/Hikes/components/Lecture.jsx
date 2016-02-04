@@ -5,6 +5,8 @@ import Vimeo from 'react-vimeo';
 import { createSelector } from 'reselect';
 import debug from 'debug';
 
+import { toggleQuestionView } from '../redux/actions';
+
 const log = debug('fcc:hikes');
 
 const mapStateToProps = createSelector(
@@ -29,10 +31,12 @@ export class Lecture extends React.Component {
   static displayName = 'Lecture';
 
   static propTypes = {
-    dashedName: PropTypes.string,
-    description: PropTypes.array,
+    // actions
+    toggleQuestionView: PropTypes.func,
+    // ui
     id: PropTypes.string,
-    hikesActions: PropTypes.object
+    description: PropTypes.array,
+    dashedName: PropTypes.string
   };
 
   shouldComponentUpdate(nextProps) {
@@ -41,11 +45,6 @@ export class Lecture extends React.Component {
   }
 
   handleError: log;
-
-  handleFinish(hikesActions) {
-    debug('loading questions');
-    hikesActions.toggleQuestions();
-  }
 
   renderTranscript(transcript, dashedName) {
     return transcript.map((line, index) => (
@@ -61,8 +60,9 @@ export class Lecture extends React.Component {
     const {
       id = '1',
       description = [],
-      hikesActions
+      toggleQuestionView
     } = this.props;
+
     const dashedName = 'foo';
 
     return (
@@ -70,7 +70,7 @@ export class Lecture extends React.Component {
         <Row>
           <Vimeo
             onError={ this.handleError }
-            onFinish= { () => this.handleFinish(hikesActions) }
+            onFinish= { toggleQuestionView }
             videoId={ id } />
         </Row>
         <Row>
@@ -81,7 +81,7 @@ export class Lecture extends React.Component {
             block={ true }
             bsSize='large'
             bsStyle='primary'
-            onClick={ () => this.handleFinish(hikesActions) }>
+            onClick={ toggleQuestionView }>
             Take me to the Questions
           </Button>
         </Row>
@@ -90,4 +90,4 @@ export class Lecture extends React.Component {
   }
 }
 
-export default connect(mapStateToProps)(Lecture);
+export default connect(mapStateToProps, { toggleQuestionView })(Lecture);

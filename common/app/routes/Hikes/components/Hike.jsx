@@ -10,10 +10,12 @@ import { resetHike } from '../redux/actions';
 const mapStateToProps = createSelector(
   state => state.hikesApp.hikes.entities,
   state => state.hikesApp.currentHike,
-  (hikes, currentHikeDashedName) => {
+  state => state.hikesApp,
+  (hikes, currentHikeDashedName, { shouldShowQuestions }) => {
     const currentHike = hikes[currentHikeDashedName];
     return {
-      title: currentHike.title
+      title: currentHike ? currentHike.title : '',
+      shouldShowQuestions
     };
   }
 );
@@ -23,10 +25,12 @@ export class Hike extends React.Component {
   static displayName = 'Hike';
 
   static propTypes = {
-    title: PropTypes.object,
-    params: PropTypes.object,
+    // actions
     resetHike: PropTypes.func,
-    showQuestions: PropTypes.bool
+    // ui
+    title: PropTypes.string,
+    params: PropTypes.object,
+    shouldShowQuestions: PropTypes.bool
   };
 
   componentWillUnmount() {
@@ -49,7 +53,7 @@ export class Hike extends React.Component {
   render() {
     const {
       title,
-      showQuestions
+      shouldShowQuestions
     } = this.props;
 
     return (
@@ -63,7 +67,7 @@ export class Hike extends React.Component {
           <section
             className={ 'text-center' }
             title={ title }>
-            { this.renderBody(showQuestions) }
+            { this.renderBody(shouldShowQuestions) }
           </section>
         </Row>
       </Col>

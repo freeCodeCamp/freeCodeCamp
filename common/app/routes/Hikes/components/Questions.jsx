@@ -22,7 +22,7 @@ const actionsToBind = {
 const mapStateToProps = createSelector(
   state => state.hikesApp.hikes.entities,
   state => state.hikesApp.hikes.results,
-  state => state.hikesApp.ui,
+  state => state.hikesApp,
   state => state.app.isSignedIn,
   (hikesMap, hikesByDashname, ui, isSignedIn) => {
     const {
