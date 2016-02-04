@@ -1,0 +1,65 @@
+{
+  "name": "Big O Notation",
+  "order": 2,
+  "time": "3 hours",
+  "challenges": [
+    {
+      "id": "56b15f15632298c12f31517b",
+      "title": "Title Here",
+      "description": [
+        "Content Here"
+      ],
+      "challengeSeed": [
+        "Video Number Here"
+      ],
+      "tests": [
+        [
+          "Question 1",
+          true,
+          "Hint 1 - Optional"
+        ],
+        [
+          "Question 2",
+          false,
+          "Hint 2 - Optional"
+        ],
+        [
+          "Question 3",
+          true,
+          "Hint 3 - Optional"
+        ]
+      ],
+      "type": "hike",
+      "challengeType": 6
+    },
+    {
+      "id": "56b15f15632298c12f31517a",
+      "title": "Title Here",
+      "description": [
+        "Content Here"
+      ],
+      "challengeSeed": [
+        "Video Number Here"
+      ],
+      "tests": [
+        [
+          "Question 1",
+          true,
+          "Hint 1 - Optional"
+        ],
+        [
+          "Question 2",
+          false,
+          "Hint 2 - Optional"
+        ],
+        [
+          "Question 3",
+          true,
+          "Hint 3 - Optional"
+        ]
+      ],
+      "type": "hike",
+      "challengeType": 6
+    }
+  ]
+}
