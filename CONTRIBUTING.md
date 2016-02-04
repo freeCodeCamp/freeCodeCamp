@@ -106,7 +106,8 @@ If the app loads, congratulations - you're all set. Otherwise, let us know by op
 
 ### <a name="common-issues"></a> Common Issues
 
-#### <a name="issue-macports-npm"></a> `npm run only-once` fails on MacOS X.
+<a name="issue-macports-npm"></a> 
+** `npm run only-once` fails on MacOS X. **
 Generally this is caused by using a version of npm that is too old; at least version 3 is required.  If you are using macports, do `port install npm-devel` to install the latest version.
 
 ## Found a bug?
