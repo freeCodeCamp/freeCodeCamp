@@ -26,6 +26,19 @@
       "tests": [],
       "type": "zipline",
       "challengeType": 3,
+      "nameEs": "Visualiza datos utilizando un gráfico de barras",
+      "descriptionEs": [
+        "<strong>Objetivo:</strong> Construye una aplicación en <a href='http://codepen.io' target='_blank'>CodePen.io</a> que funcione de forma similar al siguiente ejemplo: <a href='http://codepen.io/FreeCodeCamp/full/adBBWd' target='_blank'>http://codepen.io/FreeCodeCamp/full/adBBWd</a>.",
+        "<strong>Regla #1:</strong> No veas el código del proyecto de ejemplo. Encuentra la forma de hacerlo por tu cuenta.",
+        "<strong>Regla #2:</strong> Satisface las siguientes <a href='http://en.wikipedia.org/wiki/User_story' target='_blank'>historias de usuario</a>. Usa cualquier librería o API que sea necesaria. ¡Ponle un toque personal!.",
+        "<strong>Regla #3:</strong> Debes utilizar D3.js para construir este proyecto.",
+        "<strong>Historia de usuario:</strong> Puedo ver el Producto Interno Bruto (PIB) de los EEUU por trimestre, a través del tiempo.",
+        "<strong>Historia de usuario:</strong> Puedo ver una descripción emergente con el monto de PIB y el mes y año que representa cada barra al mover el ratón sobre ellas.",
+        "<strong>Pista:</strong> Puedes utilizar el siguiente conjunto de datos para construir tu proyecto: <a href='https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/master/GDP-data.json' target='_blank'>https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/master/GDP-data.json</a>",
+        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado.",
+        "Cuando termines, haz clic en el botón de \"I've completed this challenge\" e incluye el vínculo de tu proyecto en CodePen. ",
+        "Puedes obtener retroalimentación acerca de tu proyecto de parte de tus compañeros campistas compartiéndolo en nuestro <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Cuarto de revisión de código</a>. También puedes compartirlo en Twitter y en el campamento de tu ciudad (en Facebook)."
+      ],
       "isRequired": true
     },
     {
@@ -50,6 +63,19 @@
       "tests": [],
       "type": "zipline",
       "challengeType": 3,
+      "nameEs": "Visualiza datos utilizando un gráfico de dispersión",
+      "descriptionEs": [
+        "<strong>Objetivo:</strong> Construye una aplicación en <a href='http://codepen.io' target='_blank'>CodePen.io</a> que funcione de forma similar al siguiente ejemplo: <a href='http://codepen.io/FreeCodeCamp/full/GoNNEy' target='_blank'>http://codepen.io/FreeCodeCamp/full/GoNNEy</a>.",
+        "<strong>Regla #1:</strong> No veas el código del proyecto de ejemplo. Encuentra la forma de hacerlo por tu cuenta.",
+        "<strong>Regla #2:</strong> Satisface las siguientes <a href='http://en.wikipedia.org/wiki/User_story' target='_blank'>historias de usuario</a>. Usa cualquier librería o API que sea necesaria. ¡Ponle un toque personal!.",
+        "<strong>Regla #3:</strong> Debes utilizar D3.js para construir este proyecto.",
+        "<strong>Historia de usuario:</strong> Puedo ver el tiempo de recorrido en el diagrama de dispersión.",
+        "<strong>Historia de usuario:</strong> Puedo ver una descripción emergente con información adicional al mover el ratón sobre el gráfico.",
+        "<strong>Pista:</strong> Puedes utilizar el siguiente conjunto de datos para construir tu proyecto: <a href='https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/master/cyclist-data.json' target='_blank'>https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/master/cyclist-data.json</a>",
+        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado.",
+        "Cuando termines, haz clic en el botón de \"I've completed this challenge\" e incluye el vínculo de tu proyecto en CodePen. ",
+        "Puedes obtener retroalimentación acerca de tu proyecto de parte de tus compañeros campistas compartiéndolo en nuestro <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Cuarto de revisión de código</a>. También puedes compartirlo en Twitter y en el campamento de tu ciudad (en Facebook)."
+      ],
       "isRequired": true
     },
     {
@@ -75,6 +101,20 @@
       "tests": [],
       "type": "zipline",
       "challengeType": 3,
+      "nameEs": "Visualiza datos utilizando un mapa de calor",
+      "descriptionEs": [
+        "<strong>Objetivo:</strong> Construye una aplicación en <a href='http://codepen.io' target='_blank'>CodePen.io</a> que funcione de forma similar al siguiente ejemplo: <a href='http://codepen.io/FreeCodeCamp/full/rxWWGa' target='_blank'>http://codepen.io/FreeCodeCamp/full/rxWWGa</a>.",
+        "<strong>Regla #1:</strong> No veas el código del proyecto de ejemplo. Encuentra la forma de hacerlo por tu cuenta.",
+        "<strong>Regla #2:</strong> Satisface las siguientes <a href='http://en.wikipedia.org/wiki/User_story' target='_blank'>historias de usuario</a>. Usa cualquier librería o API que sea necesaria. ¡Ponle un toque personal!.",
+        "<strong>Regla #3:</strong> Debes utilizar D3.js para construir este proyecto.",
+        "<strong>Historia de usuario:</strong> Puedo ver un mapa de calor con datos representados en los ejes x, y.",
+        "<strong>Historia de usuario:</strong> El color de cada celda debe estar basado en su relación con otros datos.",
+        "<strong>Historia de usuario:</strong> Puedo mover el ratón sobre una celda en el mapa de calor para obtener información más detallada.",
+        "<strong>Pista:</strong> Puedes utilizar el siguiente conjunto de datos para construir tu proyecto: <a href='https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/master/global-temperature.json' target='_blank'>https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/master/global-temperature.json</a>",
+        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado.",
+        "Cuando termines, haz clic en el botón de \"I've completed this challenge\" e incluye el vínculo de tu proyecto en CodePen. ",
+        "Puedes obtener retroalimentación acerca de tu proyecto de parte de tus compañeros campistas compartiéndolo en nuestro <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Cuarto de revisión de código</a>. También puedes compartirlo en Twitter y en el campamento de tu ciudad (en Facebook)."
+      ],
       "isRequired": true
     },
     {
@@ -102,6 +142,22 @@
       "tests": [],
       "type": "zipline",
       "challengeType": 3,
+      "nameEs": "Muestra asociaciones utilizando un gráfico de fuerzas dirigidas",
+      "descriptionEs": [
+        "<strong>Objetivo:</strong> Construye una aplicación en <a href='http://codepen.io' target='_blank'>CodePen.io</a> que funcione de forma similar al siguiente ejemplo: <a href='http://codepen.io/FreeCodeCamp/full/KVNNXY' target='_blank'>http://codepen.io/FreeCodeCamp/full/KVNNXY</a>.",
+        "<strong>Regla #1:</strong> No veas el código del proyecto de ejemplo. Encuentra la forma de hacerlo por tu cuenta.",
+        "<strong>Regla #2:</strong> Satisface las siguientes <a href='http://en.wikipedia.org/wiki/User_story' target='_blank'>historias de usuario</a>. Usa cualquier librería o API que sea necesaria. ¡Ponle un toque personal!.",
+        "<strong>Regla #3:</strong> Debes utilizar D3.js para construir este proyecto.",
+        "<strong>Historia de usuario:</strong> Puedo ver un gráfico de fuerza dirigida que muestra qué campistas están publicando enlaces en Camper News hacia qué dominios.",
+        "<strong>Historia de usuario:</strong> Puedo ver el icono de cada campista en su nodo respectivo.",
+        "<strong>Historia de usuario:</strong> Puedo ver la relación entre los campistas y los dominios que publican.",
+        "<strong>Historia de usuario:</strong> Puedo conocer aproximadamente cuántas veces los campistas han enlazado un dominio en particular a partir del tamaño del nodo respectivo.",
+        "<strong>Historia de usuario:</strong> Puedo conocer aproximadamente cuántas veces un campista específico ha publicado un enlace a partir del tamaño de su nodo.",
+        "<strong>Pista:</strong> La siguiente es la ruta del API de noticias de Camper News: <code>http://www.freecodecamp.com/news/hot</code>.",
+        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado.",
+        "Cuando termines, haz clic en el botón de \"I've completed this challenge\" e incluye el vínculo de tu proyecto en CodePen. ",
+        "Puedes obtener retroalimentación acerca de tu proyecto de parte de tus compañeros campistas compartiéndolo en nuestro <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Cuarto de revisión de código</a>. También puedes compartirlo en Twitter y en el campamento de tu ciudad (en Facebook)."
+      ],
       "isRequired": true
     },
     {
@@ -127,6 +183,20 @@
       "tests": [],
       "type": "zipline",
       "challengeType": 3,
+      "nameEs": "Mapea datos a lo largo del Globo",
+      "descriptionEs": [
+        "<strong>Objetivo:</strong> Construye una aplicación en <a href='http://codepen.io' target='_blank'>CodePen.io</a> que funcione de forma similar al siguiente ejemplo: <a href='http://codepen.io/FreeCodeCamp/full/mVEJag' target='_blank'>http://codepen.io/FreeCodeCamp/full/mVEJag</a>.",
+        "<strong>Regla #1:</strong> No veas el código del proyecto de ejemplo. Encuentra la forma de hacerlo por tu cuenta.",
+        "<strong>Regla #2:</strong> Satisface las siguientes <a href='http://en.wikipedia.org/wiki/User_story' target='_blank'>historias de usuario</a>. Usa cualquier librería o API que sea necesaria. ¡Ponle un toque personal!.",
+        "<strong>Regla #3:</strong> Debes utilizar D3.js para construir este proyecto.",
+        "<strong>Historia de usuario:</strong> Puedo ver a dónde cayeron todos los meteoritos en un mapa mundi.",
+        "<strong>Historia de usuario:</strong> Puedo distinguir el tamaño relativo de cada meteorito simplemente viendo la forma en que está representado en el mapa.",
+        "<strong>Historia de usuario:</strong> Puedo mover el ratón sobre el dato de cada meteorito para obtener información adicional.",
+        "<strong>Pista:</strong> Puedes utilizar el siguiente conjunto de datos para construir tu proyecto: <a href='https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/master/meteorite-strike-data.json' target='_blank'>https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/master/meteorite-strike-data.json</a>",
+        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado.",
+        "Cuando termines, haz clic en el botón de \"I've completed this challenge\" e incluye el vínculo de tu proyecto en CodePen. ",
+        "Puedes obtener retroalimentación acerca de tu proyecto de parte de tus compañeros campistas compartiéndolo en nuestro <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Cuarto de revisión de código</a>. También puedes compartirlo en Twitter y en el campamento de tu ciudad (en Facebook)."
+      ],
       "isRequired": true
     }
   ]
