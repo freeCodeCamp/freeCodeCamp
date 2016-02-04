@@ -4,10 +4,18 @@ import types from './types';
 // updateTitle(title: String) => Action
 export const updateTitle = createAction(types.updateTitle);
 
+let id = 0;
 // makeToast({ type?: String, message: String, title: String }) => Action
 export const makeToast = createAction(
   types.makeToast,
-  toast => toast.type ? toast : (toast.type = 'info', toast)
+  toast => {
+    id += 1;
+    return {
+      ...toast,
+      id,
+      type: toast.type || 'info'
+    };
+  }
 );
 
 // fetchUser() => Action

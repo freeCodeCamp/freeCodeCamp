@@ -6,19 +6,18 @@ import { createSelector } from 'reselect';
 import debug from 'debug';
 
 import { toggleQuestionView } from '../redux/actions';
+import { getCurrentHike } from '../redux/selectors';
 
 const log = debug('fcc:hikes');
 
 const mapStateToProps = createSelector(
-  state => state.hikesApp.hikes.entities,
-  state => state.hikesApp.currentHike,
-  (hikes, currentHikeDashedName) => {
-    const currentHike = hikes[currentHikeDashedName];
+  getCurrentHike,
+  (currentHike) => {
     const {
       dashedName,
       description,
       challengeSeed: [id] = [0]
-    } = currentHike || {};
+    } = currentHike;
     return {
       id,
       dashedName,

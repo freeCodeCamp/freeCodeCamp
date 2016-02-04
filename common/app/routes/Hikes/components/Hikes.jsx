@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
 import { Row } from 'react-bootstrap';
-import shouldComponentUpdate from 'react-pure-render/function';
+import PureComponent from 'react-pure-render/component';
 import { createSelector } from 'reselect';
 // import debug from 'debug';
 
@@ -15,13 +15,14 @@ import contain from '../../../utils/professor-x';
 // const log = debug('fcc:hikes');
 
 const mapStateToProps = createSelector(
-  state => state.hikesApp.hikes,
-  hikes => {
-    if (!hikes || !hikes.entities || !hikes.results) {
+  state => state.hikesApp.hikes.entities,
+  state => state.hikesApp.hikes.results,
+  (hikesMap, hikesByDashedName)=> {
+    if (!hikesMap || !hikesByDashedName) {
       return { hikes: [] };
     }
     return {
-      hikes: hikes.results.map(dashedName => hikes.entities[dashedName])
+      hikes: hikesByDashedName.map(dashedName => hikesMap[dashedName])
     };
   }
 );
@@ -36,7 +37,7 @@ const fetchOptions = {
   }
 };
 
-export class Hikes extends React.Component {
+export class Hikes extends PureComponent {
   static displayName = 'Hikes';
 
   static propTypes = {

@@ -10,10 +10,7 @@ export default handleActions(
 
     [types.makeToast]: (state, { payload: toast }) => ({
       ...state,
-      toast: {
-        ...toast,
-        id: state.toast && state.toast.id ? state.toast.id : 1
-      }
+      toast
     }),
 
     [types.setUser]: (state, { payload: user }) => ({ ...state, ...user }),

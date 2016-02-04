@@ -6,18 +6,15 @@ import { createSelector } from 'reselect';
 import Lecture from './Lecture.jsx';
 import Questions from './Questions.jsx';
 import { resetHike } from '../redux/actions';
+import { getCurrentHike } from '../redux/selectors';
 
 const mapStateToProps = createSelector(
-  state => state.hikesApp.hikes.entities,
-  state => state.hikesApp.currentHike,
-  state => state.hikesApp,
-  (hikes, currentHikeDashedName, { shouldShowQuestions }) => {
-    const currentHike = hikes[currentHikeDashedName];
-    return {
-      title: currentHike ? currentHike.title : '',
-      shouldShowQuestions
-    };
-  }
+  getCurrentHike,
+  state => state.hikesApp.shouldShowQuestions,
+  (currentHike, shouldShowQuestions) => ({
+    title: currentHike ? currentHike.title : '',
+    shouldShowQuestions
+  })
 );
 
 // export plain component for testing
