@@ -1,0 +1,268 @@
+{
+  "name": "JavaScript Lingo",
+  "order": 2,
+  "time": "3 hours",
+  "challenges": [
+    {
+      "id": "56b15f15632298c12f31518d",
+      "title": "Title Here",
+      "description": [
+        "Content Here"
+      ],
+      "challengeSeed": [
+        "Video Number Here"
+      ],
+      "tests": [
+        [
+          "Question 1",
+          true,
+          "Hint 1 - Optional"
+        ],
+        [
+          "Question 2",
+          false,
+          "Hint 2 - Optional"
+        ],
+        [
+          "Question 3",
+          true,
+          "Hint 3 - Optional"
+        ]
+      ],
+      "type": "hike",
+      "challengeType": 6
+    },
+    {
+      "id": "56b15f15632298c12f31518c",
+      "title": "Title Here",
+      "description": [
+        "Content Here"
+      ],
+      "challengeSeed": [
+        "Video Number Here"
+      ],
+      "tests": [
+        [
+          "Question 1",
+          true,
+          "Hint 1 - Optional"
+        ],
+        [
+          "Question 2",
+          false,
+          "Hint 2 - Optional"
+        ],
+        [
+          "Question 3",
+          true,
+          "Hint 3 - Optional"
+        ]
+      ],
+      "type": "hike",
+      "challengeType": 6
+    },
+    {
+      "id": "56b15f15632298c12f31518b",
+      "title": "Title Here",
+      "description": [
+        "Content Here"
+      ],
+      "challengeSeed": [
+        "Video Number Here"
+      ],
+      "tests": [
+        [
+          "Question 1",
+          true,
+          "Hint 1 - Optional"
+        ],
+        [
+          "Question 2",
+          false,
+          "Hint 2 - Optional"
+        ],
+        [
+          "Question 3",
+          true,
+          "Hint 3 - Optional"
+        ]
+      ],
+      "type": "hike",
+      "challengeType": 6
+    },
+    {
+      "id": "56b15f15632298c12f31518a",
+      "title": "Title Here",
+      "description": [
+        "Content Here"
+      ],
+      "challengeSeed": [
+        "Video Number Here"
+      ],
+      "tests": [
+        [
+          "Question 1",
+          true,
+          "Hint 1 - Optional"
+        ],
+        [
+          "Question 2",
+          false,
+          "Hint 2 - Optional"
+        ],
+        [
+          "Question 3",
+          true,
+          "Hint 3 - Optional"
+        ]
+      ],
+      "type": "hike",
+      "challengeType": 6
+    },
+    {
+      "id": "56b15f15632298c12f315189",
+      "title": "Title Here",
+      "description": [
+        "Content Here"
+      ],
+      "challengeSeed": [
+        "Video Number Here"
+      ],
+      "tests": [
+        [
+          "Question 1",
+          true,
+          "Hint 1 - Optional"
+        ],
+        [
+          "Question 2",
+          false,
+          "Hint 2 - Optional"
+        ],
+        [
+          "Question 3",
+          true,
+          "Hint 3 - Optional"
+        ]
+      ],
+      "type": "hike",
+      "challengeType": 6
+    },
+    {
+      "id": "56b15f15632298c12f315188",
+      "title": "Title Here",
+      "description": [
+        "Content Here"
+      ],
+      "challengeSeed": [
+        "Video Number Here"
+      ],
+      "tests": [
+        [
+          "Question 1",
+          true,
+          "Hint 1 - Optional"
+        ],
+        [
+          "Question 2",
+          false,
+          "Hint 2 - Optional"
+        ],
+        [
+          "Question 3",
+          true,
+          "Hint 3 - Optional"
+        ]
+      ],
+      "type": "hike",
+      "challengeType": 6
+    },
+    {
+      "id": "56b15f15632298c12f315187",
+      "title": "Title Here",
+      "description": [
+        "Content Here"
+      ],
+      "challengeSeed": [
+        "Video Number Here"
+      ],
+      "tests": [
+        [
+          "Question 1",
+          true,
+          "Hint 1 - Optional"
+        ],
+        [
+          "Question 2",
+          false,
+          "Hint 2 - Optional"
+        ],
+        [
+          "Question 3",
+          true,
+          "Hint 3 - Optional"
+        ]
+      ],
+      "type": "hike",
+      "challengeType": 6
+    },
+    {
+      "id": "56b15f15632298c12f315186",
+      "title": "Title Here",
+      "description": [
+        "Content Here"
+      ],
+      "challengeSeed": [
+        "Video Number Here"
+      ],
+      "tests": [
+        [
+          "Question 1",
+          true,
+          "Hint 1 - Optional"
+        ],
+        [
+          "Question 2",
+          false,
+          "Hint 2 - Optional"
+        ],
+        [
+          "Question 3",
+          true,
+          "Hint 3 - Optional"
+        ]
+      ],
+      "type": "hike",
+      "challengeType": 6
+    },
+    {
+      "id": "56b15f15632298c12f315185",
+      "title": "Title Here",
+      "description": [
+        "Content Here"
+      ],
+      "challengeSeed": [
+        "Video Number Here"
+      ],
+      "tests": [
+        [
+          "Question 1",
+          true,
+          "Hint 1 - Optional"
+        ],
+        [
+          "Question 2",
+          false,
+          "Hint 2 - Optional"
+        ],
+        [
+          "Question 3",
+          true,
+          "Hint 3 - Optional"
+        ]
+      ],
+      "type": "hike",
+      "challengeType": 6
+    }
+  ]
+}
