@@ -1,11 +1,11 @@
 {
   "name": "Computer Basics",
   "order": 0,
-  "time": "3 hours",
+  "time": "2 hours",
   "challenges": [
     {
       "id": "bd7128d8c441eddfbeb5bddf",
-      "title": "Computer Basics 1: The 4 Basic Parts of a Computer",
+      "title": "Computer Basics: The 4 Basic Parts of a Computer",
       "description": [
         "At the very least, a machine needs these four basic parts to be considered a computer.",
         "Today we're going to talk about the basics of computer hardware.",
@@ -45,7 +45,7 @@
     },
     {
       "id": "bd7127d8c441eddfbeb5bddf",
-      "title": "Computer Basics 2: More Computer Hardware",
+      "title": "Computer Basics: More Computer Hardware",
       "description": [
         "In this video we cover the basic functions of a motherboard, expansion slots, and power supply.",
         "Let's quickly review - the 4 basic parts of a computer are the input, like the mouse or the keyboard, the output, which is seen on the monitor or heard on the speakers, the CPU, the central processing unit, and the memory.",
@@ -83,8 +83,45 @@
       "challengeType": 6
     },
     {
+      "id": "bd7129d8a441eddfbeb5bddf",
+      "title": "Computer Basics: Chips and Moore's Law",
+      "description": [
+        "We discuss what constitutes a chip and why technology gets cheaper every year.",
+        "In this video we are going to be talking about chips and something called Moore's Law.",
+        "You've probably noticed over the last 10 or so years, if you're going to go buy an MP3 player, you can get a lot more storage for a lot lower price.",
+        "You probably have even done the thing where you're at the store and you think, \"Well, I can get one now, or I could wait 6 months and see how far the price has dropped\", which might sound ridiculous but this is actually a trend that's been happening for a long time.",
+        "Let's talk about what makes a chip.",
+        "A chip is full of these little things called transistors, which are switches that can either be a 1 or a 0 (noticing a theme here?).",
+        "All of these transistors fit onto a chip, and that's how it stores information.",
+        "What makes these chips larger/faster is the amount of transistors on a single chip.",
+        "Moore's Law is the observation that the amount of transistors fit on each chip has doubled every two years since 1965.",
+        "This is important because it's making technology more affordable and accessible."
+      ],
+      "challengeSeed": [
+        "133182057"
+      ],
+      "tests": [
+        [
+          "Chips have transistors, little switches that can store a 1 or a 0.",
+          true
+        ],
+        [
+          "Moore's Law is the observation that technology doubles in speed every year.",
+          false,
+          "Moore's Law is the observation that the number of transistors per chip doubles every 2 years)."
+        ],
+        [
+          "Moore's Law has slowed down in recent years.",
+          false,
+          "Somehow this continues to be true."
+        ]
+      ],
+      "type": "hike",
+      "challengeType": 6
+    },
+    {
       "id": "bd7126d8c441eddfbeb5bddf",
-      "title": "Computer Basics 3: Intro to Binary Code",
+      "title": "Computer Basics: Intro to Binary Code",
       "description": [
         "What binary looks like, and what it can mean.",
         "0's and 1's can turn be interpreted into far more complex data.",
@@ -117,7 +154,7 @@
     },
     {
       "id": "bd7125d8c441eddfbeb5bddf",
-      "title": "Computer Basics 4: Decoding a Binary Number",
+      "title": "Computer Basics: Decoding a Binary Number",
       "description": [
         "In this video, we decode a number written in binary notation.",
         "Let's talk about the binary numeral system, also known as a bunch of 1's and 0's over and over again.",
@@ -152,7 +189,7 @@
     },
     {
       "id": "bd7124d8c441eddfbeb5bddf",
-      "title": "Computer Basics 5: How To Measure Data Size",
+      "title": "Computer Basics: How To Measure Data Size",
       "description": [
         "How the size/amount of data is measured, starting from a bit and going all the way up to a petabyte.",
         "Today we're going to be talking about Data Size.",
@@ -190,7 +227,7 @@
     },
     {
       "id": "bd7123d8c441eddfbeb5bddf",
-      "title": "Computer Basics 6: Measuring Data Speed",
+      "title": "Computer Basics: Measuring Data Speed",
       "description": [
         "Data speed and data size are measured differently.",
         "In this video, we cover how data speed is measured.",
@@ -223,7 +260,7 @@
     },
     {
       "id": "bd7122d8c441eddfbeb5bddf",
-      "title": "Computer Basics 7: Binary Bytes",
+      "title": "Computer Basics: Binary Bytes",
       "description": [
         "Binary does more than express numbers - through bytes, it can symbolize all alphanumeric symbols, which can then be interpreted into more complex code.",
         "Let's talk about the most basic level that computer can understand other languages, like javascript.",
@@ -256,7 +293,7 @@
     },
     {
       "id": "bd7121d8c441eddfbeb5bddf",
-      "title": "Computer Basics 8: Types of Computers",
+      "title": "Computer Basics: Types of Computers",
       "description": [
         "This video covers the basics of supercomputers, servers, workstations, PCs, and microcontrollers.",
         "Let's discuss the different types of computers.",
@@ -294,7 +331,7 @@
     },
     {
       "id": "bd7120d8c441eddfbeb5bddf",
-      "title": "Computer Basics 9: More on the Motherboard",
+      "title": "Computer Basics: More on the Motherboard",
       "description": [
         "A little more detail on what constitutes a motherboard and what functionalities are standard in PCs.",
         "Today we're going to be talking more about the motherboard.",
@@ -334,7 +371,7 @@
     },
     {
       "id": "bd712fd8c441eddfbeb5bddf",
-      "title": "Computer Basics 10: Data Networks",
+      "title": "Computer Basics: Data Networks",
       "description": [
         "This video covers the basics of local area networks, wide area networks, and virtual private networks.",
         "In this video we talk about Data Networks.",
@@ -374,9 +411,8 @@
     },
     {
       "id": "bd712ed8c441eddfbeb5bddf",
-      "title": "Computer Basics 11: IP Addresses",
+      "title": "Computer Basics: IP Addresses",
       "description": [
-        "The Internet, part 1: IP Addresses.",
         "Every device has an IP address.",
         "IP addresses are assigned based on location, and are vital for the internet to work.",
         "We're going to talk about the Internet: Part 1, How the Internet Works.",
@@ -408,7 +444,7 @@
     },
     {
       "id": "bd712dd8c441eddfbeb5bddf",
-      "title": "Computer Basics 12: How the Internet Works",
+      "title": "Computer Basics: How the Internet Works",
       "description": [
         "This is a brief and basic overview of how the internet works.",
         "For a more in-depth explanation, check out web.stanford.edu/class/msande91si/www-spr04/readings/week1/InternetWhitepaper.htm",
@@ -443,7 +479,7 @@
     },
     {
       "id": "bd712cd8c441eddfbeb5bddf",
-      "title": "Computer Basics 13: Software",
+      "title": "Computer Basics: Software",
       "description": [
         "We discriminate between hardware and software, and also discuss the differences between an operating system and application software.",
         "In this video, we'll discuss the basics of software.",
@@ -461,6 +497,198 @@
         [
           "Safari, Chrome, and Firefox are all examples of application software.",
           true
+        ]
+      ],
+      "type": "hike",
+      "challengeType": 6
+    },
+    {
+      "id": "56b15f15632298c12f31510f",
+      "title": "Computer Basics: Content Delivery Networks",
+      "description": [
+        "A Content Delivery Network is a system of distributed servers (network) that deliver webpages and other Web content to a user based on the geographic locations of the user, the origin of the webpage and a content delivery server.",
+        "The goal of a CDN is to establish higher quality network connections.",
+        "CDNs accomplish this by providing effective routes between their own servers that can fast-track users to their destination, or if its faster and/or cheaper, another copy of that website destination that is being hosted on another server.",
+        "This concept and type of service is not new, but is becoming more popular as the internet grows.",
+        "Websites contract and pay a CDN service, who in turn pays an internet provider to use their servers for their data.",
+        "An example of CDNs are Google's Hosted Libraries. -- developers.google.com/speed/libraries/#jquery",
+        "Google hosts these libraries so that your users can load them into your own site much more quickly than if you host them yourself.",
+        "There's a chance the user's browser is even storing a cached version from visiting a previous page, making the process even quicker. If you aren't familliar with the term 'cache', don't worry, we'll cover that in future videos.",
+        "As a user, you probably use CDNs all the time without realizing it.",
+        "As a developer, you may want to use CDNs like google libraries to help your page load more quickly.",
+        "As a company, a CDN would be useful if you want your product or site to reach users more efficiently in the larger scheme of their network and the internet as a whole."
+      ],
+      "challengeSeed": [
+        "139880437"
+      ],
+      "tests": [
+        [
+          "Content Delivery Networks are a service you can buy through your internet service provider to increase your network connectivity.",
+          false,
+          "CDNs are not provided through ISPs, but are clients of websites that in turn use servers from an ISP to better deliver the content of the original website to the user."
+        ],
+        [
+          "CDNs are popular and wide-reaching, and you've probably used one as a website user many times without even knowing it. The end result is that your experience was faster than it could have been without the CDNs services.",
+          true
+        ]
+      ],
+      "type": "hike",
+      "challengeType": 6
+    },
+    {
+      "id": "bd7129d80441eddfbeb5bddf",
+      "title": "Analog vs Digital and File Compression",
+      "description": [
+        "How computers turn analog sound into digital files, and the pros and cons of data compression.",
+        "Let's discuss analog vs digital on a very basic level.",
+        "Most specifically, we'll talk about how computers interpret analog sound and turn it into a digital file.",
+        "An analog sound wave could look like anything, but for this example it's a wavy line.",
+        "The computer takes it and measures at lots of different points, turning them into numbers.",
+        "This is called sampling.",
+        "Later, the computer can take those numbers and turn them into sound again.",
+        "Let's also discuss data compression.",
+        "The benefit of compression is that it's a smaller file: it's easier to store, it's easier to send to someone else, and it just takes up less space.",
+        "One of the ways this is done in sound is that the sampling is taken less often.",
+        "Another way is that it takes the measurement from a median point instead of from 0, so the numbers recorded are smaller.",
+        "In images, it's done by measuring groups of pixels by 16 instead of individually.",
+        "The takeaway from this video is that you'll want to use digital files as they're a higher quality, and when you're looking at compression, you want to decide how far you are willing to go to ensure the user still has the best possible experience."
+      ],
+      "challengeSeed": [
+        "133182587"
+      ],
+      "tests": [
+        [
+          "Digital files can be made from analog sounds and analog sounds can be made from digital files.",
+          true
+        ],
+        [
+          "Compression is not worth it, because it lessens quality.",
+          false,
+          "Sometimes compression is a great idea. It depends on what you're trying to do and what your end goal for the product is."
+        ]
+      ],
+      "type": "hike",
+      "challengeType": 6
+    },
+    {
+      "id": "bd7129d8b441eddfbeb5bddf",
+      "title": "Routers and Packets",
+      "description": [
+        "In this video, we go into a little more detail about routers and packets, important concepts to understand about how the internet works.",
+        "Let's talk more about routers and how they relate to networking.",
+        "Routers are the things that connect different small area networks.",
+        "I want to give a metaphor for this: I'm a teacher and I work at a school.",
+        "Say I have a package that I need to get to someone who works in the district offices.",
+        "I don't know where she is, I don't know where her office is located, but I know her name.",
+        "I go to my secretary, like my first router, and I say \"Hey, I need to get this to so-and-so at the district office, can you please help me?\", and she'll say \"Sure, I don't know exactly where her office is either, but I know the next step, I can get it to the district\".",
+        "So she goes on and sends it to the secretary at the district office, the next router.",
+        "That secretary has no idea who I am or where I am, but she sees the name on the package and knows the end location.",
+        "What I'm trying to get across here is that each router only has to know its own little network, the stops right next to it.",
+        "It doesn't have to know the whole internet, but just its own connections.",
+        "It can take information and say, alright, I don't know exactly where that's going, but I'll pass it along in the right direction.",
+        "That's really all it takes.",
+        "Routers can be different sizes, different capacities, but what they do is know their own neighborhood, take the information, and pass it in the right direction.",
+        "Another thing we'll get into a little later is that the routers don't even have to have the full package of information.",
+        "If one comptuer is trying to send information to another, the data might get split up between different routers and that's okay.",
+        "The computers still know how to put the information back together correctly.",
+        "The little pieces of information that are sent are called packets.",
+        "Packets are actually little pieces of binary code (drawn on board).",
+        "This is an example of what packets might look like, a visual representation of the electrical current that the computer can translate into 1's and 0's, which we all know is binary that can represent literally any digital data.",
+        "These little packets are sent across through routers, and if a file is too large for one packet, it can be broken up into frames (smaller little packets).",
+        "The frames don't have to take the same route to the end destination.",
+        "They can take whichever route is open, whichever is fastest, and since they have the end IP address, all of the routers know where to send them.",
+        "Once they get to the end destination, that computer knows how to put all of the information back together."
+      ],
+      "challengeSeed": [
+        "133181251"
+      ],
+      "tests": [
+        [
+          "Routers have to know the whole internet.",
+          false,
+          "Routers just have to know the stops around them to send information in the right direction."
+        ],
+        [
+          "Packets are little peices of binary code.",
+          true
+        ],
+        [
+          "Packets have to be sent in one piece.",
+          false,
+          "packets can be broken up into frames."
+        ]
+      ],
+      "type": "hike",
+      "challengeType": 6
+    },
+    {
+      "id": "bd7029d8c441eddfbeb5bddf",
+      "title": "Source Code",
+      "description": [
+        "In this video we discuss what source code is, interpreters and compilers, and what open source means.",
+        "Let's talk about source code: what source code is, where you'll see it, and how the computer makes sense of it.",
+        "Source code itself is the actual text document that the programmer creates: they type it up, it's letters, numbers, and symbols.",
+        "If you give that to somebody and have them look at that document on their computer, that's not going to help them view their email, it's not going to be a browser, it's just a text document.",
+        "The computer has to have a way of interpreting that and making something really powerful run from it.",
+        "There are two main ways this is done: either by an interpreter or a compiler.",
+        "Every browser has an interpreter, and that's how javascript is processed.",
+        "Other languages, like C++, are used with a compiler.",
+        "Unlike an interpreter, the compiler does all of its work on the programmer's end.",
+        "They send out their package, their product, and it's already been compiled, it can already run on a machine.",
+        "Javascript, however, and other interpreter languages, you just write the javascript and the browser on the user's end has the capability to interpret it so you don't need a compiler.",
+        "Everyone has an opinion to which is better (interpreter or compiler), but really each has their pros and cons, and it goes on a case by case basis.",
+        "They're better at different things.",
+        "Now, let's focus on what open source means.",
+        "Free Code Camp is open source, meaning that all of the documentation and source code is open and accessable.",
+        "You may be thinking, \"so what?\", but what's awesome is that if you want to change or improve Free Code Camp, you can write that improvement and maybe get it implemented.",
+        "It's a great way for websites and software to grow in a strong and fast way because of the community working together to improve it.",
+        "One unwritten rule of contributing to open source projects is that you should generally submit your improvements to also be open source, and by giving that improvement back to the public, you let others use your improvement as well."
+      ],
+      "challengeSeed": [
+        "133177129"
+      ],
+      "tests": [
+        [
+          "Source code is a text document.",
+          true
+        ],
+        [
+          "Javascript is a compiler language.",
+          false,
+          "Javascript is an interpreter language"
+        ],
+        [
+          "Free Code Camp is open source.",
+          true
+        ]
+      ],
+      "type": "hike",
+      "challengeType": 6
+    },
+    {
+      "id": "bd7119d8c441eddfbeb5bddf",
+      "title": "Variables In Code",
+      "description": [
+        "Variables are used frequently in Javascript and many other coding languages.",
+        "In this video, we're going to talk about variables in code.",
+        "Variables, just like in Algebra, are when you have a letter or a word and it represents something else.",
+        "Here we're doing var x = \"Briana\". When we reference \"x\" later on, it's going to know that's Briana.",
+        "When we console.log(x), it's going to output \"Briana\".",
+        "But be careful - if we put console.log(\"x\"), with the x in quotation marks, it will output the letter \"x\".",
+        "What I want you to take away from this video is that variables exist in code, and you can store everything from a simple string all the way up to a function, all within a simple name."
+      ],
+      "challengeSeed": [
+        "133172920"
+      ],
+      "tests": [
+        [
+          "Variables are useful in coding languages like JavaScript.",
+          true
+        ],
+        [
+          "Variables can't stand for anything that isn't a string, number, or boolean.",
+          false,
+          "Variables can stand for things ranging from simple to very complex"
         ]
       ],
       "type": "hike",
@@ -530,202 +758,6 @@
         [
           "You can console strings (sets of words), numbers, and booleans (true/false statements)",
           true
-        ]
-      ],
-      "type": "hike",
-      "challengeType": 6
-    },
-    {
-      "id": "bd7119d8c441eddfbeb5bddf",
-      "title": "Variables In Code",
-      "description": [
-        "Variables are used frequently in Javascript and many other coding languages.",
-        "In this video, we're going to talk about variables in code.",
-        "Variables, just like in Algebra, are when you have a letter or a word and it represents something else.",
-        "Here we're doing var x = \"Briana\". When we reference \"x\" later on, it's going to know that's Briana.",
-        "When we console.log(x), it's going to output \"Briana\".",
-        "But be careful - if we put console.log(\"x\"), with the x in quotation marks, it will output the letter \"x\".",
-        "What I want you to take away from this video is that variables exist in code, and you can store everything from a simple string all the way up to a function, all within a simple name."
-      ],
-      "challengeSeed": [
-        "133172920"
-      ],
-      "tests": [
-        [
-          "Variables are useful in coding languages like JavaScript.",
-          true
-        ],
-        [
-          "Variables can't stand for anything that isn't a string, number, or boolean.",
-          false,
-          "Variables can stand for things ranging from simple to very complex"
-        ]
-      ],
-      "type": "hike",
-      "challengeType": 6
-    },
-    {
-      "id": "bd7029d8c441eddfbeb5bddf",
-      "title": "Source Code",
-      "description": [
-        "In this video we discuss what source code is, interpreters and compilers, and what open source means.",
-        "Let's talk about source code: what source code is, where you'll see it, and how the computer makes sense of it.",
-        "Source code itself is the actual text document that the programmer creates: they type it up, it's letters, numbers, and symbols.",
-        "If you give that to somebody and have them look at that document on their computer, that's not going to help them view their email, it's not going to be a browser, it's just a text document.",
-        "The computer has to have a way of interpreting that and making something really powerful run from it.",
-        "There are two main ways this is done: either by an interpreter or a compiler.",
-        "Every browser has an interpreter, and that's how javascript is processed.",
-        "Other languages, like C++, are used with a compiler.",
-        "Unlike an interpreter, the compiler does all of its work on the programmer's end.",
-        "They send out their package, their product, and it's already been compiled, it can already run on a machine.",
-        "Javascript, however, and other interpreter languages, you just write the javascript and the browser on the user's end has the capability to interpret it so you don't need a compiler.",
-        "Everyone has an opinion to which is better (interpreter or compiler), but really each has their pros and cons, and it goes on a case by case basis.",
-        "They're better at different things.",
-        "Now, let's focus on what open source means.",
-        "Free Code Camp is open source, meaning that all of the documentation and source code is open and accessable.",
-        "You may be thinking, \"so what?\", but what's awesome is that if you want to change or improve Free Code Camp, you can write that improvement and maybe get it implemented.",
-        "It's a great way for websites and software to grow in a strong and fast way because of the community working together to improve it.",
-        "One unwritten rule of contributing to open source projects is that you should generally submit your improvements to also be open source, and by giving that improvement back to the public, you let others use your improvement as well."
-      ],
-      "challengeSeed": [
-        "133177129"
-      ],
-      "tests": [
-        [
-          "Source code is a text document.",
-          true
-        ],
-        [
-          "Javascript is a compiler language.",
-          false,
-          "Javascript is an interpreter language"
-        ],
-        [
-          "Free Code Camp is open source.",
-          true
-        ]
-      ],
-      "type": "hike",
-      "challengeType": 6
-    },
-    {
-      "id": "bd7129d8b441eddfbeb5bddf",
-      "title": "Routers and Packets",
-      "description": [
-        "In this video, we go into a little more detail about routers and packets, important concepts to understand about how the internet works.",
-        "Let's talk more about routers and how they relate to networking.",
-        "Routers are the things that connect different small area networks.",
-        "I want to give a metaphor for this: I'm a teacher and I work at a school.",
-        "Say I have a package that I need to get to someone who works in the district offices.",
-        "I don't know where she is, I don't know where her office is located, but I know her name.",
-        "I go to my secretary, like my first router, and I say \"Hey, I need to get this to so-and-so at the district office, can you please help me?\", and she'll say \"Sure, I don't know exactly where her office is either, but I know the next step, I can get it to the district\".",
-        "So she goes on and sends it to the secretary at the district office, the next router.",
-        "That secretary has no idea who I am or where I am, but she sees the name on the package and knows the end location.",
-        "What I'm trying to get across here is that each router only has to know its own little network, the stops right next to it.",
-        "It doesn't have to know the whole internet, but just its own connections.",
-        "It can take information and say, alright, I don't know exactly where that's going, but I'll pass it along in the right direction.",
-        "That's really all it takes.",
-        "Routers can be different sizes, different capacities, but what they do is know their own neighborhood, take the information, and pass it in the right direction.",
-        "Another thing we'll get into a little later is that the routers don't even have to have the full package of information.",
-        "If one comptuer is trying to send information to another, the data might get split up between different routers and that's okay.",
-        "The computers still know how to put the information back together correctly.",
-        "The little pieces of information that are sent are called packets.",
-        "Packets are actually little pieces of binary code (drawn on board).",
-        "This is an example of what packets might look like, a visual representation of the electrical current that the computer can translate into 1's and 0's, which we all know is binary that can represent literally any digital data.",
-        "These little packets are sent across through routers, and if a file is too large for one packet, it can be broken up into frames (smaller little packets).",
-        "The frames don't have to take the same route to the end destination.",
-        "They can take whichever route is open, whichever is fastest, and since they have the end IP address, all of the routers know where to send them.",
-        "Once they get to the end destination, that computer knows how to put all of the information back together."
-      ],
-      "challengeSeed": [
-        "133181251"
-      ],
-      "tests": [
-        [
-          "Routers have to know the whole internet.",
-          false,
-          "Routers just have to know the stops around them to send information in the right direction."
-        ],
-        [
-          "Packets are little peices of binary code.",
-          true
-        ],
-        [
-          "Packets have to be sent in one piece.",
-          false,
-          "packets can be broken up into frames."
-        ]
-      ],
-      "type": "hike",
-      "challengeType": 6
-    },
-    {
-      "id": "bd7129d8a441eddfbeb5bddf",
-      "title": "Hardware: Chips and Moore's Law",
-      "description": [
-        "We discuss what constitutes a chip and why technology gets cheaper every year.",
-        "In this video we are going to be talking about chips and something called Moore's Law.",
-        "You've probably noticed over the last 10 or so years, if you're going to go buy an MP3 player, you can get a lot more storage for a lot lower price.",
-        "You probably have even done the thing where you're at the store and you think, \"Well, I can get one now, or I could wait 6 months and see how far the price has dropped\", which might sound ridiculous but this is actually a trend that's been happening for a long time.",
-        "Let's talk about what makes a chip.",
-        "A chip is full of these little things called transistors, which are switches that can either be a 1 or a 0 (noticing a theme here?).",
-        "All of these transistors fit onto a chip, and that's how it stores information.",
-        "What makes these chips larger/faster is the amount of transistors on a single chip.",
-        "Moore's Law is the observation that the amount of transistors fit on each chip has doubled every two years since 1965.",
-        "This is important because it's making technology more affordable and accessible."
-      ],
-      "challengeSeed": [
-        "133182057"
-      ],
-      "tests": [
-        [
-          "Chips have transistors, little switches that can store a 1 or a 0.",
-          true
-        ],
-        [
-          "Moore's Law is the observation that technology doubles in speed every year.",
-          false,
-          "Moore's Law is the observation that the number of transistors per chip doubles every 2 years)."
-        ],
-        [
-          "Moore's Law has slowed down in recent years.",
-          false,
-          "Somehow this continues to be true."
-        ]
-      ],
-      "type": "hike",
-      "challengeType": 6
-    },
-    {
-      "id": "bd7129d80441eddfbeb5bddf",
-      "title": "Analog vs Digital and File Compression",
-      "description": [
-        "How computers turn analog sound into digital files, and the pros and cons of data compression.",
-        "Let's discuss analog vs digital on a very basic level.",
-        "Most specifically, we'll talk about how computers interpret analog sound and turn it into a digital file.",
-        "An analog sound wave could look like anything, but for this example it's a wavy line.",
-        "The computer takes it and measures at lots of different points, turning them into numbers.",
-        "This is called sampling.",
-        "Later, the computer can take those numbers and turn them into sound again.",
-        "Let's also discuss data compression.",
-        "The benefit of compression is that it's a smaller file: it's easier to store, it's easier to send to someone else, and it just takes up less space.",
-        "One of the ways this is done in sound is that the sampling is taken less often.",
-        "Another way is that it takes the measurement from a median point instead of from 0, so the numbers recorded are smaller.",
-        "In images, it's done by measuring groups of pixels by 16 instead of individually.",
-        "The takeaway from this video is that you'll want to use digital files as they're a higher quality, and when you're looking at compression, you want to decide how far you are willing to go to ensure the user still has the best possible experience."
-      ],
-      "challengeSeed": [
-        "133182587"
-      ],
-      "tests": [
-        [
-          "Digital files can be made from analog sounds and analog sounds can be made from digital files.",
-          true
-        ],
-        [
-          "Compression is not worth it, because it lessens quality.",
-          false,
-          "Sometimes compression is a great idea. It depends on what you're trying to do and what your end goal for the product is."
         ]
       ],
       "type": "hike",
