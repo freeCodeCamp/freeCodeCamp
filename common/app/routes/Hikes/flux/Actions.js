@@ -314,8 +314,8 @@ export default Actions({
           location: {
             action: 'PUSH',
             pathname: currentHike && currentHike.dashedName ?
-              `/hikes/${ currentHike.dashedName }` :
-              '/hikes'
+              `/videos/${ currentHike.dashedName }` :
+              '/videos'
           }
         };
       }

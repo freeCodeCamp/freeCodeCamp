@@ -37,7 +37,7 @@ export default contain(
 
     componentWillMount() {
       const { appActions } = this.props;
-      appActions.setTitle('Hikes');
+      appActions.setTitle('Videos');
     },
 
     renderMap(hikes) {
