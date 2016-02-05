@@ -1,32 +1,31 @@
 {
   "name": "The DOM",
-  "order": 2,
-  "time": "3 hours",
+  "order": 1,
+  "time": "30 minutes",
   "challenges": [
     {
       "id": "56b15f15632298c12f31518f",
-      "title": "Title Here",
+      "title": "The DOM: What's the Document Object Model?",
       "description": [
-        "Content Here"
+        "The DOM is the browser's internal, progrematic representation of a webpage. Languages like javascript allow you to modify the DOM, and thus the website without editing the HTML of the page.",
+        "Technically, the DOM is an API (application programming interface). There are many types of APIs, but this particular API interacts with XML and HTML documents. It's in charge of how those documents are accessed and manipulated.",
+        "Really, you can do a lot with the dom, and if you're already scripting in JS and jQuery, you're already doing it.",
+        "You can insert new things, elements, or alter style or content for elements that already exist.",
+        "This can be done with pure javascript, like: document.getElementById(id), element.getElementsByTagName(name), or document.createElement(name).",
+        "You can also use libraries like jQuery to simplify, standardize and automate manipulating the DOM, like: $('#box2').append('This will be added to box2!')"
       ],
       "challengeSeed": [
-        "Video Number Here"
+        "139879431"
       ],
       "tests": [
         [
-          "Question 1",
-          true,
-          "Hint 1 - Optional"
-        ],
-        [
-          "Question 2",
+          "The DOM is complex and difficult to access.",
           false,
-          "Hint 2 - Optional"
+          "The DOM is easily accessed and manipulated with JavaScript and jQuery."
         ],
         [
-          "Question 3",
-          true,
-          "Hint 3 - Optional"
+          "The DOM is an API that is a part of the browser.",
+          true
         ]
       ],
       "type": "hike",
@@ -34,28 +33,26 @@
     },
     {
       "id": "56b15f15632298c12f31518e",
-      "title": "Title Here",
+      "title": "The DOM: Style in the Header, Script in the Footer",
       "description": [
-        "Content Here"
+        "Maybe you've been told that links to style sheets (CSS) should be included in the header and that links to script (JS) should be included in the footer. Ever asked yourself why?",
+        "If you've ever seen a webpage that loads the text first, then after a bit loads the formatting and style, you've seen a page that didn't have the links to style and script in the correct places.",
+        "This all has to do with how the browser decides it's loaded enough information to display. There's an event called 'DOMContentLoaded', and once that event happens, whatever is loaded will be displayed.",
+        "The DOM will tell the browser it's ready once the HTML is loaded, and sometimes the CSS and JS hasn't caught up. However, if you place the CSS in the header and the JS in the footer, you can ensure that all content will be loaded before the DOM triggers the 'DOMContentLoaded' event, the event that shows the user your content.",
+        "This is a simple explaination, as most of these videos are. For more information, I really liked this resource: ablogaboutcode.com/2011/06/14/how-javascript-loading-works-domcontentloaded-and-onload/"
       ],
       "challengeSeed": [
-        "Video Number Here"
+        "139879984"
       ],
       "tests": [
         [
-          "Question 1",
-          true,
-          "Hint 1 - Optional"
+          "Placing the style in the header and the script in the footer ensures the page is loaded for the user as you want it to appear.",
+          true
         ],
         [
-          "Question 2",
+          "The CSS link should go in the header and the JS link should go in the footer. If you don't do it just that way, the webpage will crash.",
           false,
-          "Hint 2 - Optional"
-        ],
-        [
-          "Question 3",
-          true,
-          "Hint 3 - Optional"
+          "The webpage won't necessarily crash, but it might load in an unattractive or disfunctional way."
         ]
       ],
       "type": "hike",

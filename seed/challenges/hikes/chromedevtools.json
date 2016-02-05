@@ -1,32 +1,33 @@
 {
   "name": "Chrome Developer Tools",
-  "order": 2,
-  "time": "3 hours",
+  "order": 3,
+  "time": "1 hour",
   "challenges": [
     {
       "id": "56b15f15632298c12f315184",
-      "title": "Title Here",
+      "title": "Chrome Dev Tools: Elements",
       "description": [
-        "Content Here"
+        "This is basic info and a mini-lesson on the Elements tab of Chrome Dev Tools. Check out more in-depth documentation here: developers.google.com/web/tools/iterate/inspect-styles/basics",
+        "We will be using the webpage mckellen.com/ per suggestion of Free Code Camp user kmiasko.",
+        "If you right click and select 'Inspect element', you can have access to the elements tab. You can change text, background color, text color, and any other CSS or HTML you'd like!",
+        "These changes don't set up automatically, so don't use this as an IDE or a place to create or edit anything you want to save. You can set up something called 'persistant authoring' to save.",
+        "Cascade, inherit, and other css rules still apply, so keep that in mind as you play around. Additionally, overridden styles will be shown as having a strike through them.",
+        "It should also be noted that all of the code you're seeing in this 'tree' is current HTML, not original onload. If you use javascript or jquery to change something, it will be updated on this tree.",
+        "Padding, border, and margins are easily inspected and edited using the colorful box on the right or bottom side.",
+        "Please check out the Chrome Dev Tools documentation at developers.google.com/web/tools/chrome-devtools/"
       ],
       "challengeSeed": [
-        "Video Number Here"
+        "137186237"
       ],
       "tests": [
         [
-          "Question 1",
-          true,
-          "Hint 1 - Optional"
+          "The elements tab is where you should go if you want to edit HTML and CSS of an existing web page.",
+          true
         ],
         [
-          "Question 2",
+          "Any changes you make are saved, so it's safe to use as an editing tool.",
           false,
-          "Hint 2 - Optional"
-        ],
-        [
-          "Question 3",
-          true,
-          "Hint 3 - Optional"
+          "These changes are temporary, so if you find a great fix or idea, put it into your own documents so you don't lose your progress!"
         ]
       ],
       "type": "hike",
@@ -34,28 +35,27 @@
     },
     {
       "id": "56b15f15632298c12f315183",
-      "title": "Title Here",
+      "title": "Chrome Dev Tools: Network",
       "description": [
-        "Content Here"
+        "The network tab helps answer questions like 'Which element or part of the page took the longest?' or 'What initiated a request?'.",
+        "The network panel records detailed information about how long each element of your page or app takes to load.",
+        "Every request is recorded in the log, which can be found lower in the network panel.",
+        "If you look at the line on the side, you'll notice a pattern of colors. Those colors each represent a different type of content in the request.",
+        "The longer the line is a certain color, the longer that type of content took in that request. Ultimately, you want short lines, and if any request has long lines, you know what may be slowing down the web page.",
+        "If you click a request in the log, you can get even more detailed information.",
+        "Check out more in-depth documentation here: developers.google.com/web/tools/profile-performance/network-performance/resource-loading"
       ],
       "challengeSeed": [
-        "Video Number Here"
+        "137187539"
       ],
       "tests": [
         [
-          "Question 1",
-          true,
-          "Hint 1 - Optional"
+          "The Network tab is a good place to look to determine what requests are being made and how long they're taking.",
+          true
         ],
         [
-          "Question 2",
-          false,
-          "Hint 2 - Optional"
-        ],
-        [
-          "Question 3",
-          true,
-          "Hint 3 - Optional"
+          "Like all of the tabs in Chrome Developer tools, there are many ways to view and utilize the information it offers.",
+          true
         ]
       ],
       "type": "hike",
@@ -63,28 +63,29 @@
     },
     {
       "id": "56b15f15632298c12f315182",
-      "title": "Title Here",
+      "title": "Chrome Dev Tools: Sources",
       "description": [
-        "Content Here"
+        "The 'Sources' tab is most useful for debugging JavaScript. The bigger your project is, the harder it can be to find exactly where a problem occurs.",
+        "You can select different parts of the code to be 'breakpoints', checkpoints that will stop the code at that exact moment.",
+        "There are different breakpoints you can watch for, like for a specific line of code, on a DOM event, a server request called XMLHTTP request, or a JavaScript event.",
+        "When you set a breakpoint, the browser pauses everything when it interprets that line of code or event.",
+        "By slowing everything down and giving yourself a chance to examine what's happening at every spot you've set, you can keep track of exactly what's happening in the page or app.",
+        "Once all of the breakpoints are set, you can step through the code and examine the state of your page or app at every breakpoint.",
+        "Just like with elements, you can live-edit through dev tools, but remember to save those changes however you can so your progress isn't lost.",
+        "Check out more in-depth documentation here: developers.google.com/web/tools/javascript/breakpoints/"
       ],
       "challengeSeed": [
-        "Video Number Here"
+        "137188025"
       ],
       "tests": [
         [
-          "Question 1",
-          true,
-          "Hint 1 - Optional"
+          "Debugging can be done easily in the 'Sources' tab of Chrome Dev Tools.",
+          true
         ],
         [
-          "Question 2",
+          "These breakpoints are already established, but you can edit where they are in the code.",
           false,
-          "Hint 2 - Optional"
-        ],
-        [
-          "Question 3",
-          true,
-          "Hint 3 - Optional"
+          "You set up all of the breakpoints in the debugger."
         ]
       ],
       "type": "hike",
@@ -92,28 +93,29 @@
     },
     {
       "id": "56b15f15632298c12f315181",
-      "title": "Title Here",
+      "title": "Chrome Dev Tools: Timeline",
       "description": [
-        "Content Here"
+        "The Timeline panel lets you record and analyze all the activity in your application as it runs. It's the best place to start investigating perceived performance issues in your application.",
+        "Just like you use network to find out how long things take to communicate with the internet and you use sources to find out where something's broken, you can use timeline to figure out what's going on and how long it takes in even more detail.",
+        "With the timeline you record events using the small circle button. You can record (or capture) stacks, profile js, memory, and paint (css).",
+        "When you record (capture) these, it sets them up in small, detailed logs that you can organize many ways to fit you.",
+        "All of this will help you to better understand what's happening in the browser, particularly which events require more browser memory than others.",
+        "When you're using timeline, remember to use this 'clear' button and to start recording before you load the page, depending on what you want to capture.",
+        "You'll notice that when you record JS events, clicking on the title or 'function call' on the left will take you to the document and line of that function using the resource panel.",
+        "Check out more in-depth documentation here: developers.google.com/web/tools/profile-performance/evaluate-performance/timeline-tool"
       ],
       "challengeSeed": [
-        "Video Number Here"
+        "137188786"
       ],
       "tests": [
         [
-          "Question 1",
-          true,
-          "Hint 1 - Optional"
-        ],
-        [
-          "Question 2",
+          "The 'Timeline' tab records how long it takes APIs to return information.",
           false,
-          "Hint 2 - Optional"
+          "The 'Timeline' tab is best utilized as a starting place for performance issues that relate to speed and memory usage"
         ],
         [
-          "Question 3",
-          true,
-          "Hint 3 - Optional"
+          "You need to press 'record' to start capturing information when using the 'Timeline' tab.",
+          true
         ]
       ],
       "type": "hike",
@@ -121,28 +123,26 @@
     },
     {
       "id": "56b15f15632298c12f315180",
-      "title": "Title Here",
+      "title": "Chrome Dev Tools: Profiles",
       "description": [
-        "Content Here"
+        "The Profiles panel lets you profile the execution time and memory usage of a web app or page. This primarily applies to the JavaScript running on your page or app.",
+        "There are three types of profiles you can collect: CPU profile, HEAP snapshot, and HEAP profile. HEAP profiles have more to do with memory usage, while a CPU profile has more to do with JavaScript performance.",
+        "A profiler called V8 is used while your code runs to pinpoint what in the JavaScript takes the most time, making it easy to optimize your code.",
+        "Each of these profiles can be viewed on the left, and you can take multiple profiles of each. Overall, the profiles tab is helpful when optimizing code.",
+        "Check out more in-depth documentation here: developers.google.com/web/tools/profile-performance/rendering-tools/js-execution"
       ],
       "challengeSeed": [
-        "Video Number Here"
+        "137189330"
       ],
       "tests": [
         [
-          "Question 1",
-          true,
-          "Hint 1 - Optional"
-        ],
-        [
-          "Question 2",
+          "When you take a profile or a snapshot, the information that's collected will be viewable in only one format.",
           false,
-          "Hint 2 - Optional"
+          "Like all of the tabs in Chrome Dev Tools, there are multiple ways to view and interpret information."
         ],
         [
-          "Question 3",
-          true,
-          "Hint 3 - Optional"
+          "After hitting 'record', consider refreshing the page depending on what data you are trying to capture. ",
+          true
         ]
       ],
       "type": "hike",
@@ -150,28 +150,20 @@
     },
     {
       "id": "56b15f15632298c12f31517f",
-      "title": "Title Here",
+      "title": "Chrome Dev Tools: Resources",
       "description": [
-        "Content Here"
+        "The Resources panel lets you inspect resources that are loaded in the inspected page including IndexedDB or Web SQL databases, local and session storage, cookies, Application Cache, images, fonts, and style sheets.",
+        "You can view and edit all of this information within the browser.",
+        "As you get into more advanced web building, play around with the resources panel and see how it can help you understand the requirements of your app and page in real time.",
+        "Check out more in-depth documentation here: developers.google.com/web/tools/iterate/manage-data/index"
       ],
       "challengeSeed": [
-        "Video Number Here"
+        "137193676"
       ],
       "tests": [
         [
-          "Question 1",
-          true,
-          "Hint 1 - Optional"
-        ],
-        [
-          "Question 2",
-          false,
-          "Hint 2 - Optional"
-        ],
-        [
-          "Question 3",
-          true,
-          "Hint 3 - Optional"
+          "The 'Resources' tab helps you view external resources such as SQL and cookies.",
+          true
         ]
       ],
       "type": "hike",
@@ -179,28 +171,27 @@
     },
     {
       "id": "56b15f15632298c12f31517e",
-      "title": "Title Here",
+      "title": "Chrome Dev Tools: Audits",
       "description": [
-        "Content Here"
+        "The Audit tool walks you through how to improve your page step by step.",
+        "In this video, we use this tool on the quote generator that I made as a front end development project.",
+        "The suggestions you'd get using the Audit tool are generated automatically.",
+        "This is important to keep in mind so you can contextualize them with your other knowledge of your site.",
+        "Sometimes, it might be right, but sometimes, for your situation it might be wrong.",
+        "Use this tool when you want to improve your site or app, but you aren't sure where to start."
       ],
       "challengeSeed": [
-        "Video Number Here"
+        "137194227"
       ],
       "tests": [
         [
-          "Question 1",
-          true,
-          "Hint 1 - Optional"
+          "The Audit tab will suggest ways to improve a webpage.",
+          true
         ],
         [
-          "Question 2",
+          "While you don't NEED to do everything suggested, you probably should.",
           false,
-          "Hint 2 - Optional"
-        ],
-        [
-          "Question 3",
-          true,
-          "Hint 3 - Optional"
+          "If you don't understand an error or suggestion, do more research before making major changes."
         ]
       ],
       "type": "hike",
@@ -208,28 +199,28 @@
     },
     {
       "id": "56b15f15632298c12f31517d",
-      "title": "Title Here",
+      "title": "Chrome Dev Tools: Console",
       "description": [
-        "Content Here"
+        "The Console panel provides two primary functions: logging diagnostic information in the development process and providing a shell prompt which can be used to interact with the document and DevTools.",
+        "When using the console, you can view raw or structured data by using standard JS statements and console-specific commands.",
+        "An example of structured data would be the information returned from an API in JSON. I used this a lot when I was building my first front end development projects for Free Code Camp.",
+        "You should know that messages stack up, and you can clear them by typing and entering 'clear()'. You can also save the log by selecting 'Preserve Log'.",
+        "There are different commands that will log differently, like console.log() for basic logging, console.error() & console.warn() for 'eye catching stuff'.",
+        "The console can track exceptions, which basically means when something goes wrong. It can even pause the code during those exceptions, a function that you might remember from the 'Source' tab.",
+        "Check out more in-depth documentation here: developers.google.com/web/tools/javascript/console/"
       ],
       "challengeSeed": [
-        "Video Number Here"
+        "137194773"
       ],
       "tests": [
         [
-          "Question 1",
-          true,
-          "Hint 1 - Optional"
+          "The console in Chrome Dev Tools has many similarities to the console of a computer.",
+          true
         ],
         [
-          "Question 2",
+          "This video is in-depth and covers everything you need to know.",
           false,
-          "Hint 2 - Optional"
-        ],
-        [
-          "Question 3",
-          true,
-          "Hint 3 - Optional"
+          "Please review the documentation linked in the description."
         ]
       ],
       "type": "hike",
@@ -237,28 +228,19 @@
     },
     {
       "id": "56b15f15632298c12f31517c",
-      "title": "Title Here",
+      "title": "Chrome Dev Tools: Summary",
       "description": [
-        "Content Here"
+        "1.) Chrome Dev Tools are awesome, and the more you can dive in and try to use them, the faster your skill level will grow.",
+        "2.) Use the documentation, even if you've never read documentation before. developers.google.com/web/tools/chrome-devtools/",
+        "3.) Once you start to get comfortable in one tab, stretch yourself. Working effectively with all of the tabs will serve you exponentially more than sticking in your comfort zone."
       ],
       "challengeSeed": [
-        "Video Number Here"
+        "137196041"
       ],
       "tests": [
         [
-          "Question 1",
-          true,
-          "Hint 1 - Optional"
-        ],
-        [
-          "Question 2",
-          false,
-          "Hint 2 - Optional"
-        ],
-        [
-          "Question 3",
-          true,
-          "Hint 3 - Optional"
+          "Device mode allows you to view your page in different sizes of screens with different network connections.",
+          true
         ]
       ],
       "type": "hike",

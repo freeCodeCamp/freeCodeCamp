@@ -1,32 +1,33 @@
 {
   "name": "Big O Notation",
-  "order": 2,
-  "time": "3 hours",
+  "order": 4,
+  "time": "30 minutes",
   "challenges": [
     {
       "id": "56b15f15632298c12f31517b",
-      "title": "Title Here",
+      "title": "Big O Notation: What It Is and Why You Should Care",
       "description": [
-        "Content Here"
+        "Time complexity is a way of discussing how long specific algorithms take. This is useful in streamlining software so it works as fast as possible.",
+        "When you're writing code, you should be aware of how long it's going to take to execute. Nobody wants to create a product that users find frustrating due to slow use.",
+        "Time complexity is talked about in relation to an algorithm, a collection of one or more functions.",
+        "Big O Notation specifically helps you identify when an algorithm wouldn't 'scale' well, or work well with varying amounts of users, information, or other inputs.",
+        "This does NOT correspond with Moore's law - no matter how big and fast your computer is, if the algorithm is exponentially inefficient, it's realistically unusable.",
+        "Additionally, questions about Big O Notation and time complexity can be used as interview questions.",
+        "Your employers will want to know that the code you write will not take too long to load on the page for the users, and knowledge of Big O Notation shows that you're cognizant of that while writing your code.",
+        "The take-away from this video is that Big O Notation helps you identify where there could be problems (sometimes BIG problems) in speed and memory when your site or app grows."
       ],
       "challengeSeed": [
-        "Video Number Here"
+        "139874123"
       ],
       "tests": [
         [
-          "Question 1",
-          true,
-          "Hint 1 - Optional"
-        ],
-        [
-          "Question 2",
+          "If an algorithm is effecient for small amounts of data, it will be equally efficient for large amounts of data.",
           false,
-          "Hint 2 - Optional"
+          "It depends on the algorithm and the data it's processing."
         ],
         [
-          "Question 3",
-          true,
-          "Hint 3 - Optional"
+          "Big O Notation reflects the speed of an algorithm in terms of the expected input.",
+          true
         ]
       ],
       "type": "hike",
@@ -34,28 +35,40 @@
     },
     {
       "id": "56b15f15632298c12f31517a",
-      "title": "Title Here",
+      "title": "Big O Notation: A Few Examples",
       "description": [
-        "Content Here"
+        "Time complexity is commonly estimated by counting the number of elementary operations (elementary operation = an operation that takes a fixed amount of time to preform) performed in the algorithm.",
+        "Time complexity is classified by the nature of the function T(n). O represents the function, and (n) represents the number of elements to be acted on.",
+        "Worst-case time complexity, the longest it could possibly take with any valid input, is the most common way to express time complexity.",
+        "When you discuss Big-O notation, that is generally referring to the worst case scenario.",
+        "For example, if we have to search two lists for common entries, we will calculate as if both entries would be at the very end of each list, just to be safe that we don't underestimate how long it could take.",
+        "O(1) - determining if a number is odd or even. O(1) is a static amount of time, the same no matter how much information is there or how many users there are.",
+        "O(log N) - finding a word in the dictionary (using binary search). Binary search is an example of a type of 'divide and conquor' algorithm.",
+        "O(N) - reading a book",
+        "O(N log N) - sorting a deck of playing cards (using merge sort)",
+        "O(N^2) - checking if you have everything on your shopping list in your cart",
+        "O(infinity) - tossing a coin until it lands on heads",
+        "As a rule of thumb, anything with N^2 or any other exponent is NOT a good algorithm for a site with multiple users.",
+        "If your algorithm slows down exponentially with the input, you're going to want to look for a more efficient way to solve that problem.",
+        "Whenever you’re coding loops within loops, you want to be especially mindful of time complexity.",
+        "Big O Cheat Sheet is the place to look once you can classify your algorithm, like as a 'merge-sort' or a 'quick-sort'.",
+        "bigocheatsheet.com/",
+        "Princeton Coursera course is NOT for the faint of heart. With examples and practice in Java, this course will cover iterating over data specifically with Java, sorting, and searching algorithms.",
+        "coursera.org/course/algs4partI"
       ],
       "challengeSeed": [
-        "Video Number Here"
+        "139877627"
       ],
       "tests": [
         [
-          "Question 1",
-          true,
-          "Hint 1 - Optional"
-        ],
-        [
-          "Question 2",
+          "Algorithms expressed exponentially like O(N^2) can work well in certain situations, so you shouldn't avoid them completely.",
           false,
-          "Hint 2 - Optional"
+          "While they can work in certain small scale situations, they aren't good practice because they will not work larger scale."
         ],
         [
-          "Question 3",
-          true,
-          "Hint 3 - Optional"
+          "All algorithms can be broken down to complete in a static amount of time if you do it effectively.",
+          false,
+          "Not all algorithms can be simplified to that extent, but you should always try to find the simplest way to solve your problem."
         ]
       ],
       "type": "hike",
