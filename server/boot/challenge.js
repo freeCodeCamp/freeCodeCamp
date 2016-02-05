@@ -224,7 +224,7 @@ function getSuperBlocks$(challenge$, completedChallenges) {
       const isRequired = _.every(blockArray, 'isRequired');
 
       blockArray = blockArray.map(challenge => {
-        if (challenge.challengeType == 6 && challenge.type === 'hike') {
+        if (challenge.challengeType === 6 && challenge.type === 'hike') {
           challenge.url = '/videos/' + challenge.dashedName;
         } else {
           challenge.url = '/challenges/' + challenge.dashedName;
