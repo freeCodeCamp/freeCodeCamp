@@ -689,7 +689,15 @@
         "String.charCodeAt()",
         "String.fromCharCode()"
       ],
-      "challengeType": 5
+      "challengeType": 5,
+       "nameEs": "Cifrado César",
+      "descriptionEs": [
+        "Uno de los <dfn>cifrados</dfn> más simples y ampliamente conocidos es el <code>cifrado César</code>, también llamado <code>cifrado por desplazamiento</code>. En un <code>cifrado por desplazamiento</code> los significados de las letras se desplazan por una cierta cantidad.",
+        "Un uso moderno común es el cifrado <a href=\"https://en.wikipedia.org/wiki/ROT13\" target='_blank'>ROT13</a> , donde los valores de las letras se desplazan 13 espacios. De esta forma 'A' &harr; 'N', 'B' &harr;  'O' y así.",
+        "Crea una función que tome una cadena de texto cifrada en <a href=\"https://en.wikipedia.org/wiki/ROT13\" target='_blank'>ROT13</a> como argumento y que devuelva la cadena de texto decodificada.",
+        "Todas las letras que se te pasen van a estar en mayúsculas. No transformes ningún caracter no-alfabético (por ejemplo: espacios, puntuación). Simplemente pásalos intactos.",
+        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+      ]
     }
   ]
 }
