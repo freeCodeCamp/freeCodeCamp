@@ -1,14 +1,15 @@
 import React, { PropTypes } from 'react';
 import classnames from 'classnames';
 import { ListGroup, ListGroupItem } from 'react-bootstrap';
+import PureComponent from 'react-pure-render/component';
 
-export default React.createClass({
-  displayName: 'ListJobs',
+export default class ListJobs extends PureComponent {
+  static displayName = 'ListJobs';
 
-  propTypes: {
+  static propTypes = {
     handleClick: PropTypes.func,
     jobs: PropTypes.array
-  },
+  };
 
   addLocation(locale) {
     if (!locale) {
@@ -19,50 +20,50 @@ export default React.createClass({
         { locale }
       </span>
     );
-  },
+  }
 
   renderJobs(handleClick, jobs = []) {
     return jobs
-      .filter(({ isPaid, isApproved, isFilled }) => {
-        return isPaid && isApproved && !isFilled;
-      })
-      .map(({
-        id,
-        company,
-        position,
-        isHighlighted,
-        locale
-      }) => {
+    .filter(({ isPaid, isApproved, isFilled }) => {
+      return isPaid && isApproved && !isFilled;
+    })
+    .map(({
+      id,
+      company,
+      position,
+      isHighlighted,
+      locale
+    }) => {
 
-        const className = classnames({
-          'jobs-list': true,
-          'col-xs-12': true,
-          'jobs-list-highlight': isHighlighted
-        });
-
-        return (
-          <ListGroupItem
-            className={ className }
-            key={ id }
-            onClick={ () => handleClick(id) }>
-            <div>
-              <h4 className='pull-left' style={{ display: 'inline-block' }}>
-                <bold>{ company }</bold>
-                {' '}
-                <span className='hidden-xs hidden-sm'>
-                  - { position }
-                </span>
-              </h4>
-              <h4
-                className='pull-right'
-                style={{ display: 'inline-block' }}>
-                { this.addLocation(locale) }
-              </h4>
-            </div>
-          </ListGroupItem>
-        );
+      const className = classnames({
+        'jobs-list': true,
+        'col-xs-12': true,
+        'jobs-list-highlight': isHighlighted
       });
-  },
+
+      return (
+        <ListGroupItem
+          className={ className }
+          key={ id }
+          onClick={ () => handleClick(id) }>
+          <div>
+            <h4 className='pull-left' style={{ display: 'inline-block' }}>
+              <bold>{ company }</bold>
+              {' '}
+              <span className='hidden-xs hidden-sm'>
+                - { position }
+              </span>
+            </h4>
+            <h4
+              className='pull-right'
+              style={{ display: 'inline-block' }}>
+              { this.addLocation(locale) }
+            </h4>
+          </div>
+        </ListGroupItem>
+      );
+    });
+  }
 
   render() {
     const {
@@ -76,4 +77,4 @@ export default React.createClass({
       </ListGroup>
     );
   }
-});
+}
