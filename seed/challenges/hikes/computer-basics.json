@@ -511,7 +511,7 @@
         "CDNs accomplish this by providing effective routes between their own servers that can fast-track users to their destination, or if its faster and/or cheaper, another copy of that website destination that is being hosted on another server.",
         "This concept and type of service is not new, but is becoming more popular as the internet grows.",
         "Websites contract and pay a CDN service, who in turn pays an internet provider to use their servers for their data.",
-        "An example of CDNs are <a href='developers.google.com/speed/libraries/#jquery'>Google's Hosted Libraries.</a>",
+        "An example of CDNs are <a href='http://developers.google.com/speed/libraries/#jquery' target='_blank'>Google's Hosted Libraries.</a>",
         "Google hosts these libraries so that your users can load them into your own site much more quickly than if you host them yourself.",
         "There's a chance the user's browser is even storing a cached version from visiting a previous page, making the process even quicker. If you aren't familliar with the term 'cache', don't worry, we'll cover that in future videos.",
         "As a user, you probably use CDNs all the time without realizing it.",
