@@ -1432,13 +1432,13 @@
       "id": "cf1111c1c11feddfaeb7bdef",
       "title": "Nest one Array within Another Array",
       "description": [
-        "You can also nest arrays within other arrays, like this: <code>[[\"Bulls\", 23]]</code>. This is also called a <dfn>Multi-dimensional Array<dfn>.",
+        "You can also nest arrays within other arrays, like this: <code>[[\"Bulls\", 23], [\"White Sox\", 45]]</code>. This is also called a <dfn>Multi-dimensional Array<dfn>.",
         "<h4>Instructions</h4>",
         "Create a nested array called <code>myArray</code>."
       ],
       "challengeSeed": [
         "// Example",
-        "var ourArray = [[\"the universe\", \"everything\", 42]];",
+        "var ourArray = [[\"the universe\", 42], [\"everything\", 101010]];",
         "",
         "// Only change code below this line.",
         "var myArray = [];",
@@ -1457,7 +1457,7 @@
       "challengeType": 1,
       "nameEs": "Anida un vector dentro de otro vector",
       "descriptionEs": [
-        "También puedes anidar vectores dentro de otros vectores, como este: <code>[[\"Bulls\", 23]]</code>.",
+        "También puedes anidar vectores dentro de otros vectores, como este: <code>[[\"Bulls\", 23], [\"White Sox\", 45]]</code>.",
         "Ahora vamos a crear un vector anidado llamado <code>myArray</code>."
       ]
     },
