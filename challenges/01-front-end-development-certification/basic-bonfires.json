@@ -42,6 +42,7 @@
     },
     {
       "id": "a202eed8fc186c8434cb6d61",
+      "title": "Reverse a String",
       "description": [
         "Reverse the provided string.",
         "You may need to turn the string into an array before you can reverse it.",
@@ -56,7 +57,6 @@
         "reverseString(\"hello\");"
       ],
       "isRequired": true,
-      "title": "Reverse a String",
       "solutions": [
         "function reverseString(str) {\n  return str.split('').reverse().join(\"\");\n}\n\nreverseString('hello');\n"
       ],
@@ -84,6 +84,7 @@
     },
     {
       "id": "a302f7aae1aa3152a5b413bc",
+      "title": "Factorialize a Number",
       "description": [
         "Return the factorial of the provided integer.",
         "If the integer is represented with the letter n, a factorial is the product of all positive integers less than or equal to n.",
@@ -99,7 +100,6 @@
         "factorialize(5);"
       ],
       "isRequired": true,
-      "title": "Factorialize a Number",
       "solutions": [
         "function factorialize(num) {\n  return num < 1 ? 1 : num * factorialize(num-1);\n}\n\nfactorialize(5);\n"
       ],
@@ -126,6 +126,7 @@
     },
     {
       "id": "aaa48de84e1ecc7c742e1124",
+      "title": "Check for Palindromes",
       "description": [
         "Return true if the given string is a palindrome. Otherwise, return false.",
         "A palindrome is a word or sentence that's spelled the same way both forward and backward, ignoring punctuation, case, and spacing.",
@@ -144,7 +145,6 @@
         "palindrome(\"eye\");"
       ],
       "isRequired": true,
-      "title": "Check for Palindromes",
       "solutions": [
         "function palindrome(str) {\n  var string = str.toLowerCase().split(/[^A-Za-z0-9]/gi).join('');\n  var aux = string.split('');\n  if (aux.join('') === aux.reverse().join('')){\n    return true;\n  }\n\n  return false;\n}"
       ],
@@ -178,6 +178,7 @@
     },
     {
       "id": "a26cbbe9ad8655a977e1ceb5",
+      "title": "Find the Longest Word in a String",
       "description": [
         "Return the length of the longest word in the provided sentence.",
         "Your response should be a number.",
@@ -191,7 +192,6 @@
         "findLongestWord(\"The quick brown fox jumped over the lazy dog\");"
       ],
       "isRequired": true,
-      "title": "Find the Longest Word in a String",
       "solutions": [
         "function findLongestWord(str) {\n  return str.split(' ').sort(function(a, b) { return b.length - a.length;})[0].length;\n}\n\nfindLongestWord('The quick brown fox jumped over the lazy dog');\n"
       ],
@@ -218,6 +218,7 @@
     },
     {
       "id": "ab6137d4e35944e21037b769",
+      "title": "Title Case a Sentence",
       "description": [
         "Return the provided string with the first letter of each word capitalized. Make sure the rest of the word is in lower case.",
         "For the purpose of this exercise, you should also capitalize connecting words like \"the\" and \"of\".",
@@ -231,7 +232,6 @@
         "titleCase(\"I'm a little tea pot\");"
       ],
       "isRequired": true,
-      "title": "Title Case a Sentence",
       "solutions": [
         "function titleCase(str) {\n  return str.split(' ').map(function(word) {\n    return word.charAt(0).toUpperCase() + word.substring(1).toLowerCase();\n  }).join(' ');\n}\n\ntitleCase(\"I'm a little tea pot\");\n"
       ],
@@ -255,9 +255,10 @@
     },
     {
       "id": "a789b3483989747d63b0e427",
+      "title": "Return Largest Numbers in Arrays",
       "description": [
         "Return an array consisting of the largest number from each provided sub-array. For simplicity, the provided array will contain exactly 4 sub-arrays.",
-        "Remember, you can iterate through an array with a simple for loop, and access each member with array syntax arr[i] .",
+        "Remember, you can iterate through an array with a simple for loop, and access each member with array syntax <code>arr[i]</code>.",
         "Remember to use <a href=\"//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck\" target=\"_blank\">Read-Search-Ask</a> if you get stuck. Write your own code."
       ],
       "challengeSeed": [
@@ -269,7 +270,6 @@
         "largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]);"
       ],
       "isRequired": true,
-      "title": "Return Largest Numbers in Arrays",
       "solutions": [
         "function largestOfFour(arr) {\n  return arr.map(function(subArr) {\n    return Math.max.apply(null, subArr);\n  });\n}\n\nlargestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]);\n"
       ],
@@ -293,6 +293,7 @@
     },
     {
       "id": "acda2fb1324d9b0fa741e6b5",
+      "title": "Confirm the Ending",
       "description": [
         "Check if a string (first argument) ends with the given target string (second argument).",
         "Remember to use <a href=\"//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck\" target=\"_blank\">Read-Search-Ask</a> if you get stuck. Write your own code."
@@ -307,7 +308,6 @@
         "end(\"Bastian\", \"n\");"
       ],
       "isRequired": true,
-      "title": "Confirm the Ending",
       "solutions": [
         "function end(str, target) {\n  return str.substring(str.length-target.length) === target;\n};\n"
       ],
@@ -333,8 +333,9 @@
     },
     {
       "id": "afcc8d540bea9ea2669306b6",
+      "title": "Repeat a string repeat a string",
       "description": [
-        "Repeat a given string (first argument) n times (second argument). Return an empty string if n is a negative number.",
+        "Repeat a given string (first argument) <code>num</code> times (second argument). Return an empty string if <code>num</code> is a negative number.",
         "Remember to use <a href=\"//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck\" target=\"_blank\">Read-Search-Ask</a> if you get stuck. Write your own code."
       ],
       "challengeSeed": [
@@ -346,7 +347,6 @@
         "repeat(\"abc\", 3);"
       ],
       "isRequired": true,
-      "title": "Repeat a string repeat a string",
       "solutions": [
         "function repeat(str, num) {\n  if (num < 0) return '';\n  return num === 1 ? str : str + repeat(str, num-1);\n}\n\nrepeat('abc', 3);\n"
       ],
@@ -371,6 +371,7 @@
     },
     {
       "id": "ac6993d51946422351508a41",
+      "title": "Truncate a string",
       "description": [
         "Truncate a string (first argument) if it is longer than the given maximum string length (second argument). Return the truncated string with a \"...\" ending.",
         "Note that the three dots at the end add to the string length.",
@@ -386,7 +387,6 @@
         "truncate(\"A-tisket a-tasket A green and yellow basket\", 11);"
       ],
       "isRequired": true,
-      "title": "Truncate a string",
       "solutions": [
         "function truncate(str, num) {\n  if(str.length > num ) {\n    if(num > 3) {\n      return str.slice(0, num - 3) + '...';\n    } else {\n      return str.slice(0,num) + '...';\n    }\n  } \n  return str;\n}"
       ],
@@ -412,6 +412,7 @@
     },
     {
       "id": "a9bd25c716030ec90084d8a1",
+      "title": "Chunky Monkey",
       "description": [
         "Write a function that splits an array (first argument) into groups the length of <code>size</code> (second argument) and returns them as a two-dimensional array.",
         "Remember to use <a href=\"//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck\" target=\"_blank\">Read-Search-Ask</a> if you get stuck. Write your own code."
@@ -425,7 +426,6 @@
         "chunk([\"a\", \"b\", \"c\", \"d\"], 2);"
       ],
       "isRequired": true,
-      "title": "Chunky Monkey",
       "solutions": [
         "function chunk(arr, size) {\n  var out = [];\n  for (var i = 0; i < arr.length; i+=size) {\n    out.push(arr.slice(i,i+size));\n  }\n  return out;\n}\n\nchunk(['a', 'b', 'c', 'd'], 2);\n"
       ],
@@ -451,6 +451,7 @@
     },
     {
       "id": "ab31c21b530c0dafa9e241ee",
+      "title": "Slasher Flick",
       "description": [
         "Return the remaining elements of an array after chopping off <code>n</code> elements from the head.",
         "The head means the beginning of the array, or the zeroth index.",
@@ -465,7 +466,6 @@
         "slasher([1, 2, 3], 2);"
       ],
       "isRequired": true,
-      "title": "Slasher Flick",
       "solutions": [
         "function slasher(arr, howMany) {\n  // it doesn't always pay to be first\n  return arr.slice(howMany);\n}\n\nslasher([1, 2, 3], 2);\n"
       ],
@@ -492,6 +492,7 @@
     },
     {
       "id": "af2170cad53daa0770fabdea",
+      "title": "Mutations",
       "description": [
         "Return true if the string in the first element of the array contains all of the letters of the string in the second element of the array.",
         "For example, <code>[\"hello\", \"Hello\"]</code>, should return true because all of the letters in the second string are present in the first, ignoring case.",
@@ -507,7 +508,6 @@
         "mutation([\"hello\", \"hey\"]);"
       ],
       "isRequired": true,
-      "title": "Mutations",
       "solutions": [
         "function mutation(arr) {\n  var hash = Object.create(null);\n  arr[0].toLowerCase().split('').forEach(function(c) {\n    hash[c] = true;\n  });\n  return !arr[1].toLowerCase().split('').filter(function(c) {\n    return !hash[c];\n  }).length;\n}\n\nmutation(['hello', 'hey']);\n"
       ],
@@ -537,9 +537,10 @@
     },
     {
       "id": "adf08ec01beb4f99fc7a68f2",
+      "title": "Falsy Bouncer",
       "description": [
         "Remove all falsy values from an array.",
-        "Falsy values in javascript are <code>false</code>, <code>null</code>, <code>0</code>, <code>\"\"</code>, <code>undefined</code>, and <code>NaN</code>.",
+        "Falsy values in JavaScript are <code>false</code>, <code>null</code>, <code>0</code>, <code>\"\"</code>, <code>undefined</code>, and <code>NaN</code>.",
         "Remember to use <a href=\"//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck\" target=\"_blank\">Read-Search-Ask</a> if you get stuck. Write your own code."
       ],
       "challengeSeed": [
@@ -551,7 +552,6 @@
         "bouncer([7, \"ate\", \"\", false, 9]);"
       ],
       "isRequired": true,
-      "title": "Falsy Bouncer",
       "solutions": [
         "function bouncer(arr) {\n  // Don't show a false ID to this bouncer.\n  return arr.filter(function(e) {return e;});\n}\n\nbouncer([7, 'ate', '', false, 9]);\n"
       ],
@@ -575,6 +575,7 @@
     },
     {
       "id": "a39963a4c10bc8b4d4f06d7e",
+      "title": "Seek and Destroy",
       "description": [
         "You will be provided with an initial array (the first argument in the destroyer function), followed by one or more arguments. Remove all elements from the initial array that are of the same value as these arguments.",
         "Remember to use <a href=\"//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck\" target=\"_blank\">Read-Search-Ask</a> if you get stuck. Write your own code."
@@ -588,7 +589,6 @@
         "destroyer([1, 2, 3, 1, 2, 3], 2, 3);"
       ],
       "isRequired": true,
-      "title": "Seek and Destroy",
       "solutions": [
         "function destroyer(arr) {\n  var hash = Object.create(null);\n  [].slice.call(arguments, 1).forEach(function(e) {\n    hash[e] = true;\n  });\n  // Remove all the values\n  return arr.filter(function(e) { return !(e in hash);});\n}\n\ndestroyer([1, 2, 3, 1, 2, 3], 2, 3);\n"
       ],
@@ -613,6 +613,7 @@
     },
     {
       "id": "a24c1a4622e3c05097f71d67",
+      "title": "Where do I belong",
       "description": [
         "Return the lowest index at which a value (second argument) should be inserted into an array (first argument) once it has been sorted.",
         "For example, <code>where([1,2,3,4], 1.5)</code> should return <code>1</code> because it is greater than <code>1</code> (index 0), but less than <code>2</code> (index 1).",
@@ -628,7 +629,6 @@
         "where([40, 60], 50);"
       ],
       "isRequired": true,
-      "title": "Where do I belong",
       "solutions": [
         "function where(arr, num) {\n  arr = arr.sort(function(a, b){return a-b;});\n  for (var i = 0; i < arr.length; i++) {\n    if (arr[i] >= num)\n      {\n        return i;\n      }\n  }\n  return arr.length;\n}"
       ],
@@ -655,6 +655,7 @@
     },
     {
       "id": "56533eb9ac21ba0edf2244e2",
+      "title": "Caesars Cipher",
       "description": [
         "One of the simplest and most widely known <dfn>ciphers</dfn> is a <code>Caesar cipher</code>, also known as a <code>shift cipher</code>. In a <code>shift cipher</code> the meanings of the letters are shifted by some set amount.",
         "A common modern use is the <a href=\"https://en.wikipedia.org/wiki/ROT13\" target='_blank'>ROT13</a> cipher, where the values of the letters are shifted by 13 places. Thus 'A' &harr; 'N', 'B' &harr;  'O' and so on.",
@@ -663,11 +664,10 @@
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "isRequired": true,
-      "title": "Caesar's Cipher",
       "releasedOn": "January 1, 2016",
       "challengeSeed": [
         "function rot13(str) { // LBH QVQ VG!",
-        " ",
+        "  ",
         "  return str;",
         "}",
         "",
