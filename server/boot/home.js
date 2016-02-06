@@ -20,11 +20,16 @@ module.exports = function(app) {
     });
   }
 
-  function index(req, res) {
+  function index(req, res, next) {
+    if (!req.lang) {
+      return next();
+    }
+
     if (req.user) {
       // TODO: make language aware
-      return res.redirect('/en/challenges/current-challenge');
+      return res.redirect(`/${req.lang}/challenges/current-challenge`);
     }
+
     res.render('home', { title: message });
   }
 };
