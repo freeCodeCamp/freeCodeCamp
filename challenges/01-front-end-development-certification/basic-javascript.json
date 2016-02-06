@@ -4195,12 +4195,12 @@
         "(function(){if(typeof total !== 'undefined') { return \"total = \" + total; } else { return \"total is undefined\";}})()"
       ],
       "solutions": [
-        "var myArr = [ 2, 3, 4, 5, 6];\nvar total = 0;\n\nfor (var i = 0; i < myArr.length; i++) {\n  total += myArr[i];\n}"
+        "var ourArr = [ 9, 10, 11, 12];\nvar ourTotal = 0;\n\nfor (var i = 0; i < ourArr.length; i++) {\n  ourTotal += ourArr[i];\n}\n\nvar myArr = [ 2, 3, 4, 5, 6];\nvar total = 0;\n\nfor (var i = 0; i < myArr.length; i++) {\n  total += myArr[i];\n}"
       ],
       "tests": [
         "assert(code.match(/var\\s*total\\s*=\\s*0\\s*;/), 'message: <code>total</code> should be declared and initialized to 0');",
         "assert(total === 20, 'message: <code>total</code> should equal 20');",
-        "assert(code.match(/for\\s*\\((.*?)myArr\\.length/), 'message: You should use a <code>for</code> loop to iterate through <code>myArr</code>.');",
+        "assert(code.match(/for\\s*\\(/g).length > 1 && code.match(/\\+=\\s*myArr/), 'message: You should use a <code>for</code> loop to iterate through <code>myArr</code>');",
         "assert(!code.match(/total[\\s\\+\\-]*=\\s*(\\d(?!\\s*;)|[1-9])/g), 'message: Do not set <code>total</code> to 20 directly');"
       ],
       "type": "waypoint",
