@@ -1,39 +1,114 @@
-.bonfire-instructions h4 {
-  margin-bottom: 0;
+.challenge-step-description {
+  font-size: 1.5em;
+  text-align: center;
+}
+.challenge-step-counter {
+  font-size: 20px;
+  line-height: 44px;
 }
 
-.bonfire-instructions blockquote {
-  font-size: 90%;
-  font-family: @font-family-monospace;
-  color: @code-color;
-  background-color: #fffbe5;
-  border-radius: @border-radius-base;
-  border: 1px solid @pre-border-color;
-  white-space: pre;
-  padding: 5px 10px;
-  margin-bottom: 10px;
-  margin-top: -10px;
-  overflow: auto;
+.challenge-instructions-title {
+  margin-top: 0;
+  i {
+    margin-left: 5px;
+    line-height: 20px;
+  }
 }
 
-.bonfire-instructions dfn {
-  font-family: @font-family-monospace;
-  color: @code-color;
-  background-color: @code-bg;
-  border-radius: @border-radius-base;
+.challenge-instructions {
+  margin-bottom: 5px;
+  h4 {
+    margin-bottom: 0;
+  }
+  blockquote {
+    font-size: 90%;
+    font-family: @font-family-monospace;
+    color: @code-color;
+    background-color: #fffbe5;
+    border-radius: @border-radius-base;
+    border: 1px solid @pre-border-color;
+    white-space: pre;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+    margin-top: -10px;
+    overflow: auto;
+  }
+  dfn {
+    font-family: @font-family-monospace;
+    color: @code-color;
+    background-color: @code-bg;
+    border-radius: @border-radius-base;
+  }
+  & a, #MDN-links a {
+    color: #31708f;
+  }
+  & a::after, #MDN-links a::after {
+    font-size: 70%;
+    font-family: FontAwesome;
+    content: " \f08e";
+  }
+  ol {
+    font-size: 16px;
+  }
 }
 
-.bonfire-instructions a, #MDN-links a {
-  color: #31708f;
+#testSuite {
+  margin-top: 10px;
+  > div >.row {
+    margin: 0!important;
+  }
 }
 
-.bonfire-instructions a::after, #MDN-links a::after {
-  font-size: 70%;
-  font-family: FontAwesome;
-  content: " \f08e";
+.test-output {
+  font-size: 15px;
+  font-family: "Ubuntu Mono";
+  margin-top: 8px;
+  line-height:20px;
 }
 
-.bonfire-instructions ol {
-  font-size: 16px;
+.grayed-out-test-output {
+  color: @gray-light;
 }
 
+.big-error-icon {
+  font-size: 30px;
+  color: @brand-danger;
+  top:50%;
+}
+
+.big-success-icon {
+  font-size: 30px;
+  color: @brand-primary;
+}
+
+iframe.iphone {
+  border: none;
+  @media(min-width: 992px) {
+    width: 280px;
+    height: 500px;
+    position: absolute;
+    top: 70px;
+    right: 35px;
+    overflow-y: scroll;
+  }
+  @media(max-width: 991px) {
+    width: 100%;
+    border-radius: 5px;
+    overflow-y: visible;
+    height: 500px;
+  }
+  @media (min-width: 1200px) and (max-width: 1250px){
+    right: 22px;      
+  }
+}
+
+// To adjust right margin, negative values bring the image closer to the edge of the screen
+.iphone-position {
+  position: absolute;
+  top: -50px;
+  z-index: -1;
+  right: -195px;
+  @media (min-width: 1200px) and (max-width: 1250px){
+    right: -207px;      
+  }
+}

@@ -2,14 +2,14 @@ extends ../layout-wide
 block content
     .row
         .col-md-4
-            h4.text-center= name
+            h4.text-center.challenge-instructions-title= name
             hr
             ol
                 for step, index in description
                     .row.checklist-element(id="#{dashedName + index}")
-                        .col-xs-2.col-sm-1.col-md-2.padded-ionic-icon.text-right
+                        .col-xs-3.col-sm-1.col-md-2.padded-ionic-icon.text-center
                             input(type='checkbox' class='challenge-list-checkbox')
-                        .col-xs-10.col-sm-11.col-md-10
+                        .col-xs-9.col-sm-11.col-md-10
                             li.step-text.wrappable!= step
         .col-xs-12.col-sm-12.col-md-8
             .embed-responsive.embed-responsive-16by9

@@ -9,14 +9,14 @@ block content
             .scroll-locker(id = "scroll-locker")
               .innerMarginFix(style=' width: 99%')
                 #testCreatePanel
-                    h4.text-center= name
+                    h4.text-center.challenge-instructions-title= name
                       if (isCompleted)
                           | &nbsp;
                           i.ion-checkmark-circled.text-primary(title="Completed")
                     hr
                     .row
                         .col-xs-12
-                            .bonfire-instructions
+                            .challenge-instructions
                                 for sentence in description
                                     if (/blockquote|h4|table/.test(sentence))
                                         !=sentence
