@@ -20,7 +20,7 @@ export const resetHike = createAction(types.resetHike);
 
 export const toggleQuestionView = createAction(types.toggleQuestionView);
 
-export const grabQuestions = createAction(types.grabQuestions, e => {
+export const grabQuestion = createAction(types.grabQuestion, e => {
   let { pageX, pageY, touches } = e;
   if (touches) {
     e.preventDefault();
@@ -33,7 +33,7 @@ export const grabQuestions = createAction(types.grabQuestions, e => {
   return { delta, mouse };
 });
 
-export const releaseQuestion = createAction(types.releaseQuestions);
+export const releaseQuestion = createAction(types.releaseQuestion);
 export const moveQuestion = createAction(
   types.moveQuestion,
   ({ e, delta }) => getMouse(e, delta)
