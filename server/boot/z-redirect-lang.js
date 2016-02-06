@@ -1,11 +1,5 @@
 import supportedLanguages from '../utils/supported-languages';
-
-const passThroughs = [
-  'auth'
-].reduce((passThroughs, subroute) => {
-  passThroughs[subroute] = true;
-  return passThroughs;
-}, {});
+import passThroughs from '../utils/passthrough-urls';
 
 const toLowerCase = String.prototype.toLowerCase;
 export default function redirectLang(app) {
