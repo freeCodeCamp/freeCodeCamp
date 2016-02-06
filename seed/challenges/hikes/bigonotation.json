@@ -51,8 +51,7 @@
         "As a rule of thumb, anything with N^2 or any other exponent is NOT a good algorithm for a site with multiple users.",
         "If your algorithm slows down exponentially with the input, you're going to want to look for a more efficient way to solve that problem.",
         "Whenever you’re coding loops within loops, you want to be especially mindful of time complexity.",
-        "Big O Cheat Sheet is the place to look once you can classify your algorithm, like as a 'merge-sort' or a 'quick-sort'.",
-        "bigocheatsheet.com/",
+        "<a href='bigocheatsheet.com/'>Big O Cheat Sheet</a> is the place to look once you can classify your algorithm, like as a 'merge-sort' or a 'quick-sort'.",
         "Princeton Coursera course is NOT for the faint of heart. With examples and practice in Java, this course will cover iterating over data specifically with Java, sorting, and searching algorithms.",
         "coursera.org/course/algs4partI"
       ],
