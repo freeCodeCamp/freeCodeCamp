@@ -31,7 +31,7 @@ const fetchOptions = {
   fetchAction: 'fetchHikes',
 
   isPrimed: ({ hikes }) => hikes && !!hikes.length,
-  getPayload: ({ params: { dashedName } }) => dashedName,
+  getActionArgs: ({ params: { dashedName } }) => [ dashedName ],
   shouldContainerFetch(props, nextProps) {
     return props.params.dashedName !== nextProps.params.dashedName;
   }

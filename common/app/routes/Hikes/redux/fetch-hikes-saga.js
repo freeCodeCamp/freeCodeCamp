@@ -6,7 +6,7 @@ import types from './types';
 import { fetchHikesCompleted } from './actions';
 import { handleError } from '../../../redux/types';
 
-import { getCurrentHike } from './utils';
+import { findCurrentHike } from './utils';
 
 // const log = debug('fcc:fetch-hikes-saga');
 const hike = new Schema('hike', { idAttribute: 'dashedName' });
@@ -30,7 +30,7 @@ export default ({ services }) => ({ dispatch }) => next => {
           results: result.hikes
         };
 
-        const currentHike = getCurrentHike(hikes, dashedName);
+        const currentHike = findCurrentHike(hikes, dashedName);
 
         return fetchHikesCompleted(hikes, currentHike);
       })

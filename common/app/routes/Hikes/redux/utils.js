@@ -18,7 +18,7 @@ function getFirstHike(hikes) {
 //   hikes: Hikes,
 //   dashedName: String
 // }) => String
-export function findCurrentHike(hikes = {}, dashedName) {
+export function findCurrentHike(hikes, dashedName) {
   if (!dashedName) {
     return getFirstHike(hikes) || {};
   }
@@ -32,7 +32,7 @@ export function findCurrentHike(hikes = {}, dashedName) {
     })
     .reduce((throwAway, hike) => {
       return hike;
-    }, {});
+    }, '');
 }
 
 export function getCurrentHike(hikes = {}, dashedName) {
