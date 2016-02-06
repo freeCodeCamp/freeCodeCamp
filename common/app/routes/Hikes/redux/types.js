@@ -15,6 +15,7 @@ const types = [
 
   'primeNextQuestion',
   'goToNextQuestion',
+  'transitionHike',
 
   'hikeCompleted',
   'goToNextHike'

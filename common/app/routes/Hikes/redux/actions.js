@@ -7,6 +7,7 @@ import { getMouse } from './utils';
 // fetchHikes(dashedName?: String) => Action
 // used with fetchHikesSaga
 export const fetchHikes = createAction(types.fetchHikes);
+
 // fetchHikesCompleted(hikes: Object) => Action
 // hikes is a normalized response from server
 // called within fetchHikesSaga
@@ -14,6 +15,7 @@ export const fetchHikesCompleted = createAction(
   types.fetchHikesCompleted,
   (hikes, currentHike) => ({ hikes, currentHike })
 );
+
 export const resetHike = createAction(types.resetHike);
 
 export const toggleQuestionView = createAction(types.toggleQuestionView);

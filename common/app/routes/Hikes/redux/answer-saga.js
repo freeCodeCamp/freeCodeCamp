@@ -118,6 +118,8 @@ function handleAnswer(getState, dispatch, next, action) {
       type: 'error',
       error
     }))
+    // end with action so we know it is ok to transition
+    .doOnCompleted(() => dispatch({ type: types.transitionHike }))
     .doOnNext(dispatch);
 }
 
@@ -129,7 +131,7 @@ export default () => ({ getState, dispatch }) => next => {
 
     // let goToNextQuestion hit reducers first
     const result = next(action);
-    if (action.type === types.goToNextHike) {
+    if (action.type === types.transitionHike) {
       const { hikesApp: { currentHike } } = getState();
       // if no next hike currentHike will equal '' which is falsy
       if (currentHike) {
