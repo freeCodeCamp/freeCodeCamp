@@ -1580,7 +1580,7 @@
       "id": "bad87fee1348bd9aedf08830",
       "title": "Add Placeholder Text to a Text Field",
       "description": [
-        "Your placeholder text is what appears in your text <code>input</code> before your user has inputed anything.",
+        "Your placeholder text is what appears in your text <code>input</code> before your user has input anything.",
         "You can create placeholder text like so:",
         "<code>&#60;input type=\"text\" placeholder=\"this is placeholder text\"&#62;</code>",
         "Set the <code>placeholder</code> value of your text <code>input</code> to \"cat photo URL\"."
