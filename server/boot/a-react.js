@@ -35,7 +35,7 @@ export default function reactSubRouter(app) {
     });
   }
 
-  app.use(router);
+  app.use('/:lang', router);
 
   function serveReactApp(req, res, next) {
     const services = new Fetchr({ req });

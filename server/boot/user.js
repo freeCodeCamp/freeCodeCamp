@@ -189,7 +189,7 @@ module.exports = function(app) {
 
   router.get('/:username', returnUser);
 
-  app.use(router);
+  app.use('/:lang', router);
 
   function getSignin(req, res) {
     if (req.user) {

@@ -48,7 +48,8 @@
     "./middlewares/jade-helpers": {},
     "./middlewares/global-locals": {},
     "./middlewares/revision-helpers": {},
-    "./middlewares/migrate-completed-challenges": {}
+    "./middlewares/migrate-completed-challenges": {},
+    "./middlewares/add-lang": {}
   },
   "routes": {
   },

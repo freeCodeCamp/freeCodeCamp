@@ -7,7 +7,7 @@ module.exports = function(app) {
   var router = app.loopback.Router();
   router.get('/', addDefaultImage, index);
 
-  app.use(router);
+  app.use('/:lang', router);
 
   function addDefaultImage(req, res, next) {
     if (!req.user || req.user.picture) {
@@ -22,7 +22,8 @@ module.exports = function(app) {
 
   function index(req, res) {
     if (req.user) {
-      return res.redirect('/challenges/current-challenge');
+      // TODO: make language aware
+      return res.redirect('/en/challenges/current-challenge');
     }
     res.render('home', { title: message });
   }
