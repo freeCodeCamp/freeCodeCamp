@@ -1,6 +1,6 @@
 import { handleActions } from 'redux-actions';
 import types from './types';
-import { findNextHike } from './utils';
+import { findNextHikeName } from './utils';
 
 const initialState = {
   hikes: {
@@ -79,7 +79,7 @@ export default handleActions(
 
     [types.goToNextHike]: state => ({
       ...state,
-      currentHike: findNextHike(state.hikes, state.currentHike),
+      currentHike: findNextHikeName(state.hikes, state.currentHike),
       showQuestions: false,
       currentQuestion: 1,
       mouse: [ 0, 0 ]

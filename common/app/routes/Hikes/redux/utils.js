@@ -42,21 +42,24 @@ export function getCurrentHike(hikes = {}, dashedName) {
   return hikes.entities[dashedName];
 }
 
-export function findNextHike({ entities, results }, dashedName) {
+// findNextHikeName(
+//   hikes: { results: String[] },
+//   dashedName: String
+// ) => String
+export function findNextHikeName({ results }, dashedName) {
   if (!dashedName) {
     log('find next hike no id provided');
-    return entities[results[0]];
+    return results[0];
   }
   const currentIndex = _.findIndex(
     results,
-    ({ dashedName: _dashedName }) => _dashedName === dashedName
+    _dashedName => _dashedName === dashedName
   );
 
   if (currentIndex >= results.length) {
     return '';
   }
-
-  return entities[results[currentIndex + 1]];
+  return results[currentIndex + 1];
 }
 
 

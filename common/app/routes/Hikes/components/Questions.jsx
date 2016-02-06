@@ -2,6 +2,7 @@ import React, { PropTypes } from 'react';
 import { spring, Motion } from 'react-motion';
 import { connect } from 'react-redux';
 import { Button, Col, Row } from 'react-bootstrap';
+import { CompositeDisposable } from 'rx';
 import { createSelector } from 'reselect';
 
 import {
@@ -53,6 +54,11 @@ const mapStateToProps = createSelector(
 );
 
 class Question extends React.Component {
+  constructor(...args) {
+    super(...args);
+    this._subscriptions = new CompositeDisposable();
+  }
+
   static displayName = 'Questions';
 
   static propTypes = {
@@ -72,6 +78,10 @@ class Question extends React.Component {
     shouldShakeQuestion: PropTypes.bool
   };
 
+  componentWillUnmount() {
+    this._subscriptions.dispose();
+  }
+
   handleMouseUp(e, answer, info) {
     e.stopPropagation();
     if (!this.props.isPressed) {
@@ -84,12 +94,15 @@ class Question extends React.Component {
     } = this.props;
 
     releaseQuestion();
-    answerQuestion({
+    const subscription = answerQuestion({
       e,
       answer,
       info,
       threshold: answerThreshold
-    });
+    })
+      .subscribe();
+
+    this._subscriptions.add(subscription);
   }
 
   handleMouseMove(isPressed, { delta, moveQuestion }) {
@@ -101,17 +114,21 @@ class Question extends React.Component {
 
   onAnswer(answer, userAnswer, info) {
     const { isSignedIn, answerQuestion } = this.props;
+    const subscriptions = this._subscriptions;
     return e => {
       if (e && e.preventDefault) {
         e.preventDefault();
       }
 
-      return answerQuestion({
+      const subscription = answerQuestion({
         answer,
         userAnswer,
         info,
         isSignedIn
-      });
+      })
+        .subscribe();
+
+      subscriptions.add(subscription);
     };
   }
 
