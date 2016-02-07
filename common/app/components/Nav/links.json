@@ -18,6 +18,10 @@
   "link": "/jobs",
   "react": true
 },{
+  "content": "Shop",
+  "link": "/shop",
+  "target": "_blank"
+},{
   "content": "About",
   "link": "/about"
 }]
