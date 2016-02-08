@@ -121,7 +121,19 @@
         "assert(/b\\s*=\\s*a\\s*;/g.test(code), 'message: <code>a</code> should be assigned to <code>b</code> with <code>=</code>');"
       ],
       "type": "waypoint",
-      "challengeType": 1
+      "challengeType": 1,
+      "nameEs": "Almacenando Valores con el Operador de Igualdad",
+      "descriptionEs": [
+        "En JavaScript, puedes almacenar un valor en una variable con la <dfn>asignación</dfn> o el operador <code>igual</code> (<code>=</code>).",
+        "<code>miVariable = 5;</code>",
+        "Asigna el valor del <code>Número</code> <code>5</code> a <code>miVariable</code>.",
+        "La asignación siempre va de derecha a izquierda. Todo lo que está a la derecha del operador <code>=</code> es resuelto antes que el valor sea asignado a la variable a la izquierda del operador.",
+        "<blockquote>miVar = 5;<br>miNum = miVar;</blockquote>",
+        "Asigna <code>5</code> a <code>miVar</code> y a continuación resuelve <code>miVar</code> a <code>5</code>  de nuevo y asigna esta a <code>miNum</code>.",
+        "<h4>Instrucciones</h4>",
+        "Asigna el valor <code>7</code> a la variable <code>a</code>.",
+        "Asigna el contenido de <code>a</code> a la variable <code>b</code>."
+      ]
     },
     {
       "id": "56533eb9ac21ba0edf2244a9",
@@ -151,7 +163,15 @@
         "assert(/var\\s+a\\s*=\\s*9\\s*/.test(code), 'message: Initialize <code>a</code> to a value of <code>9</code>');"
       ],
       "type": "waypoint",
-      "challengeType": 1
+      "challengeType": 1,
+      "nameEs": "Inicializando Variables con el Operador Igual",
+      "descriptionEs": [
+        "Es común <dfn>inicializar</dfn> una variable a un valor inicial en la misma línea en la que ha sido declarada.",
+        "<code>var miVar = 0;</code>",
+        "Crea una nueva variable llamada <code>miVar</code> y esta es asignada con un valor inicial de <code>0</code>.",
+        "<h4>Instrucciones</h4>",
+        "Define una variable <code>a</code> con <code>var</code> e inicializa ésta con un valor de <code>9</code>."
+      ]
     },
     {
       "id": "56533eb9ac21ba0edf2244aa",
@@ -188,7 +208,13 @@
         "assert(/a = a \\+ 1;/.test(code) && /b = b \\+ 5;/.test(code) && /c = c \\+ \" String!\";/.test(code), 'message: Do not change code below the line');"
       ],
       "type": "waypoint",
-      "challengeType": 1
+      "challengeType": 1,
+      "nameEs": "Entendiendo Variables Sin Inicializar",
+      "descriptionEs": [
+        "Cuando las variables de JavaScript son declaradas, ellas tienen un valor inicial de <code>undefined</code>. Si tu haces una operación matematica sobre una variable <code>undefined</code> tu resultado sera <code>NaN</code> el cual significa <dfn>\"Not a Number\"</dfn>. Si tu concatenas una cadena con una variable <code>undefined</code>, vas a obtener una <dfn>cadena</dfn> literal de <code>\"undefined\"</code>.",
+        "<h4>Instrucciones</h4>",
+        "Inicializa las tres variables <code>a</code>, <code>b</code>, y <code>c</code> con <code>5</code>, <code>10</code>, y <code>\"I am a\"</code> respectivamente de manera que no sea <code>undefined</code>."
+      ]
     },
     {
       "id": "56533eb9ac21ba0edf2244ab",
@@ -227,7 +253,18 @@
         "assert(code.match(/titleCaseOver/g).length === 2, 'message: <code>titleCaseOver</code> should use camelCase in both declaration and assignment sections.');"
       ],
       "type": "waypoint",
-      "challengeType": 1
+      "challengeType": 1,
+      "nameEs": "Entendiendo la Distinción en Variables",
+      "descriptionEs": [
+        "En JavaScript todas las variables y nombres de funciones distinguen entre mayúsculas y minúsculas. Esto significa que la capitalización importa.",
+        "<code>MIVAR</code> no es lo mismo que <code>MiVar</code> o <code>mivar</code>. Esto hace posible tener múltiples variables distintas con el mismo nombre pero de diferente manera. Es fuertemente recomendado por el bien de la claridad, que tu <em>no</em> uses esta característica del lenguaje.",
+        "<h4>Mejor Práctica</h4>",
+        "Escribe nombres de variables en Javascript en <dfn>camelCase</dfn>. En <dfn>camelCase</dfn>, los nombres de variables con múltiples palabras tienen la primer palabra en minúsculas y la primera letra de cada palabra subsecuente es capitalizada.",
+        "<strong>Ejemplos:</strong>",
+        "<blockquote>var algunaVariable;<br>var otraVariable;<br>var esteNombreDeVariableEsMuyLargo;</blockquote>",
+        "<h4>Instrucciones</h4>",
+        "Repara las declaraciones y asignaciones de variables de manera que sus nombres usen <dfn>camelCase</dfn>."
+      ]
     },
     {
       "id": "cf1111c1c11feddfaeb3bdef",
@@ -410,7 +447,17 @@
         "assert(/var myVar = 87;/.test(code), 'message: Do not change code above the line');"
       ],
       "type": "waypoint",
-      "challengeType": 1
+      "challengeType": 1,
+      "nameEs": "Incrementa un Número con Javascript",
+      "descriptionEs": [
+        "Tu puedes fácilmente <dfn>incrementar</dfn> o agregar uno a una variable con el operador <code>++</code>.",
+        "<code>i++</code>",
+        "es el equivalente de",
+        "<code>i = i + 1;</code>",
+        "<strong>Nota</strong><br>Toda la línea se convierte a <code>i++</code>, sin necesidad del signo igual.",
+        "<h4>Instrucciones</h4>",
+        "Cambia el código para usar el operador <code>++</code> sobre <code>myVar</code>."
+      ]
     },
     {
       "id": "56533eb9ac21ba0edf2244ad",
@@ -444,7 +491,17 @@
         "assert(/var myVar = 11;/.test(code), 'message: Do not change code above the line');"
       ],
       "type": "waypoint",
-      "challengeType": 1
+      "challengeType": 1,
+      "nameEs": "Decrementa un Número con Javascript",
+      "descriptionEs": [
+        "Tu puedes fácilmente <dfn>decrementar</dfn> o decrecer una variable por uno con el operador <code>--</code>.",
+        "<code>i--;</code>",
+        "es el equivalente de",
+        "<code>i = i - 1;</code>",
+        "<strong>Nota</strong><br>Toda la línea se convierte con <code>i--;</code> sin necesidad del signo igual.",
+        "<h4>Instrucciones</h4>",
+        "Cambia el código para usar el operador <code>--</code> sobre <code>myVar</code>."
+      ]
     },
     {
       "id": "cf1391c1c11feddfaeb4bdef",
@@ -575,7 +632,18 @@
         "assert(/\\d+\\s*%\\s*\\d+/.test(code), 'message: You should use the <code>%</code> operator');"
       ],
       "type": "waypoint",
-      "challengeType": 1
+      "challengeType": 1,
+      "nameEs": "Encontrando un Residuo en Javascript",
+      "descriptionEs": [
+        "El operador <dfn>residuo</dfn> <code>%</code> da el residuo de la división de dos números.",
+        "<strong>Ejemplo</strong>",
+        "<blockquote>5 % 2 = 1 porque<br>Math.floor(5 / 2) = 2 (Cociente)<br>2 * 2 = 4<br>5 - 4 = 1 (Residuo)</blockquote>",
+        "<strong>Uso</strong><br>En matemáticas, un número se puede comprobar par o impar revisando el residuo de la división del número por <code>2</code>.",
+        "<blockquote>17 % 2 = 1 (17 es Impar)<br>48 % 2 = 0 (48 es Par)</blockquote>",
+        "<strong>Nota</strong><br>El operador <dfn>residuo</dfn> en ocasiones es incorrectamente referido como el operador \"módulo\". Es muy similar a módulo pero no funciona adecuadamente con números negativos.",
+        "<h4>Instrucciones</h4>",
+        "Establece <code>residuo</code> igual al residuo de <code>11</code> dividido por <code>3</code> usando el operador <dfn>residuo</dfn> (<code>%</code>)."
+      ]
     },
     {
       "id": "56533eb9ac21ba0edf2244af",
@@ -616,7 +684,17 @@
         "assert(/var a = 3;/.test(code) && /var b = 17;/.test(code) && /var c = 12;/.test(code), 'message: Do not modify the code above the line');"
       ],
       "type": "waypoint",
-      "challengeType": 1
+      "challengeType": 1,
+      "nameEs": "Asignación con Más",
+      "descriptionEs": [
+        "En programación, es común usar asignaciones para modificar el contenido de una variable. Recuerda que todo lo de la derecha del signo igual es evaluado primero, así podemos decir que:",
+        "<code>miVar = miVar + 5;</code>",
+        "para agregar <code>5</code> a <code>miVar</code>. Dado que este es un patrón común, hay operadores que realizan tanto una operación matemática como una asignación en un paso.",
+        "Uno de tales operadores es el operador <code>+=</code>.",
+        "<code>miVar += 5;</code> añadirá <code>5</code> a <code>miVar</code>.",
+        "<h4>Instrucciones</h4>",
+        "Convierte las asignaciones para <code>a</code>, <code>b</code> y <code>c</code> para usar el operador <code>+=</code>."
+      ]
     },
     {
       "id": "56533eb9ac21ba0edf2244b0",
@@ -657,7 +735,16 @@
         "assert(/var a = 11;/.test(code) && /var b = 9;/.test(code) && /var c = 3;/.test(code), 'message: Do not modify the code above the line');"
       ],
       "type": "waypoint",
-      "challengeType": 1
+      "challengeType": 1,
+      "nameEs": "Asignación con Menor Igual",
+      "descriptionEs": [
+        "Como el operador <code>+=</code>, <code>-=</code> substrae un número de una variable.",
+        "<code>miVar = miVar - 5;</code>",
+        "substraerá <code>5</code> de <code>miVar</code>. Este puede ser reescrito como: ",
+        "<code>miVar -= 5;</code>",
+        "<h4>Instrucciones</h4>",
+        "Convierte las asignaciones de <code>a</code>, <code>b</code> y <code>c</code> para usar el operador <code>-=</code>."
+      ]
     },
     {
       "id": "56533eb9ac21ba0edf2244b1",
@@ -698,7 +785,16 @@
         "assert(/var a = 5;/.test(code) && /var b = 12;/.test(code) && /var c = 4\\.6;/.test(code), 'message: Do not modify the code above the line');"
       ],
       "type": "waypoint",
-      "challengeType": 1
+      "challengeType": 1,
+      "nameEs": "Asignación con Veces Igual",
+      "descriptionEs": [
+        "El operador <code>*=</code> multiplica una variable por un número.",
+        "<code>miVar = miVar * 5;</code>",
+        "multiplicará <code>miVar</code> por <code>5</code>. Esto puede ser reescrito como: ",
+        "<code>miVar *= 5;</code>",
+        "<h4>Instrucciones</h4>",
+        "Convierte las asignaciones para <code>a</code>, <code>b</code> y <code>c</code> para usar el operador <code>*=</code>."
+      ]
     },
     {
       "id": "56533eb9ac21ba0edf2244b2",
@@ -738,7 +834,16 @@
         "assert(/var a = 48;/.test(code) && /var b = 108;/.test(code) && /var c = 33;/.test(code), 'message: Do not modify the code above the line');"
       ],
       "type": "waypoint",
-      "challengeType": 1
+      "challengeType": 1,
+      "nameEs": "Asignación con Dividido por Igual",
+      "descriptionEs": [
+        "El operador <code>/=</code> divide una variable por otro número.",
+        "<code>miVar = miVar / 5;</code>",
+        "Dividirá <code>miVar</code> por <code>5</code>. Esto puede ser reescrito como: ",
+        "<code>miVar =/ 5;</code>",
+        "<h4>Instrucciones</h4>",
+        "Convierte las asignaciones de <code>a</code>, <code>b</code> y <code>c</code> para usar el operador <code>/=</code>."
+      ]
     },
     {
       "id": "56533eb9ac21ba0edf2244b3",
@@ -777,7 +882,13 @@
         "assert(convert(30) === 86, 'message: <code>convert(30)</code> should return a value of <code>86</code>');"
       ],
       "type": "checkpoint",
-      "challengeType": 1
+      "challengeType": 1,
+      "nameEs": "Convierte Celsius a Fahrenheit",
+      "descriptionEs": [
+        "Para probar tu aprendizaje, crearás una solucion \"desde cero\". Coloca tu código entre las líneas indicadas y este será probado contra multiples casos de prueba.",
+        "El algoritmo para convertir de Celsius a Fahrenheit es la temperatura en grados Celsius 9/5 veces, más 32.",
+        "Se te da una variable <code>celsius</code> representando una temperatura en Celsius. Crea una variable <code>fahrenheit</code> y aplica el algoritmo para asignar la correspondiente temperatura en Fahrenheit."
+      ]
     },
     {
       "id": "bd7123c9c444eddfaeb5bdef",
