@@ -2,15 +2,12 @@ var Rx = require('rx'),
     assign = require('object.assign'),
     sanitizeHtml = require('sanitize-html'),
     moment = require('moment'),
-    mongodb = require('mongodb'),
     debug = require('debug')('freecc:cntr:story'),
     utils = require('../utils'),
     observeMethod = require('../utils/rx').observeMethod,
     saveUser = require('../utils/rx').saveUser,
     saveInstance = require('../utils/rx').saveInstance,
-    MongoClient = mongodb.MongoClient,
-    validator = require('validator'),
-    secrets = require('../../config/secrets');
+    validator = require('validator');
 
 import {
   ifNoUser401,
@@ -65,7 +62,9 @@ module.exports = function(app) {
   var findStoryById = observeMethod(Story, 'findById');
   var countStories = observeMethod(Story, 'count');
 
+  router.post('/news/userstories', userStories);
   router.get('/news/hot', hotJSON);
+  router.get('/news/feed', RSSFeed);
   router.get('/stories/hotStories', hotJSON);
   router.get(
     '/stories/submit',
@@ -107,9 +106,30 @@ module.exports = function(app) {
     );
   }
 
+  function RSSFeed(req, res, next) {
+    var query = {
+      order: 'timePosted DESC',
+      limit: 1000
+    };
+    findStory(query).subscribe(
+      function(stories) {
+        var sliceVal = stories.length >= 100 ? 100 : stories.length;
+        var data = stories.sort(sortByRank).slice(0, sliceVal);
+        res.set('Content-Type', 'text/xml');
+        res.render('feed', {
+          title: 'FreeCodeCamp Camper News RSS Feed',
+          description: 'RSS Feed for FreeCodeCamp Top 100 Hot Camper News',
+          url: 'http://www.freecodecamp.com/news',
+          FeedPosts: data
+        });
+      },
+      next
+    );
+  }
+
   function hot(req, res) {
     return res.render('stories/index', {
-      title: 'Hot stories currently trending on Camper News',
+      title: 'Top Stories on Camper News',
       page: 'hot'
     });
   }
@@ -206,45 +226,75 @@ module.exports = function(app) {
     );
   }
 
-  function getStories(req, res, next) {
-    MongoClient.connect(secrets.db, function(err, database) {
-      if (err) {
-        return next(err);
-      }
-      database.collection('stories').find({
-        '$text': {
-          '$search': req.body.data ? req.body.data.searchValue : ''
-        }
-      }, {
-        headline: 1,
-        timePosted: 1,
-        link: 1,
-        description: 1,
-        rank: 1,
-        upVotes: 1,
-        author: 1,
-        image: 1,
-        storyLink: 1,
-        metaDescription: 1,
-        textScore: {
-          $meta: 'textScore'
-        }
-      }, {
-        sort: {
-          textScore: {
-            $meta: 'textScore'
-          }
-        }
-      }).toArray(function(err, items) {
+  function userStories({ body: { search = '' } = {} }, res, next) {
+    if (!search || typeof search !== 'string') {
+      return res.sendStatus(404);
+    }
+
+    return app.dataSources.db.connector
+      .collection('story')
+      .find({
+        'author.username': search.toLowerCase().replace('$', '')
+      })
+      .toArray(function(err, items) {
         if (err) {
           return next(err);
         }
-        if (items !== null && items.length !== 0) {
+        if (items && items.length !== 0) {
+          return res.json(items.sort(sortByRank));
+        }
+        return res.sendStatus(404);
+      });
+  }
+
+  function getStories({ body: { search = '' } = {} }, res, next) {
+    if (!search || typeof search !== 'string') {
+      return res.sendStatus(404);
+    }
+
+    const query = {
+      '$text': {
+        // protect against NoSQL injection
+        '$search': search.replace('$', '')
+      }
+    };
+
+    const fields = {
+      headline: 1,
+      timePosted: 1,
+      link: 1,
+      description: 1,
+      rank: 1,
+      upVotes: 1,
+      author: 1,
+      image: 1,
+      storyLink: 1,
+      metaDescription: 1,
+      textScore: {
+        $meta: 'textScore'
+      }
+    };
+
+    const options = {
+      sort: {
+        textScore: {
+          $meta: 'textScore'
+        }
+      }
+    };
+
+    return app.dataSources.db.connector
+      .collection('story')
+      .find(query, fields, options)
+      .toArray(function(err, items) {
+        if (err) {
+          return next(err);
+        }
+        if (items && items.length !== 0) {
           return res.json(items);
         }
         return res.sendStatus(404);
       });
-    });
   }
 
   function upvote(req, res, next) {
@@ -349,10 +399,13 @@ module.exports = function(app) {
   }
 
   function storySubmission(req, res, next) {
-    var data = req.body.data;
-    if (!req.user) {
-      return next(new Error('Not authorized'));
+    if (req.user.isBanned) {
+      return res.json({
+        isBanned: true
+      });
     }
+    var data = req.body.data;
+
     var storyLink = data.headline
       .replace(/[^a-z0-9\s]/gi, '')
       .replace(/\s+/g, ' ')

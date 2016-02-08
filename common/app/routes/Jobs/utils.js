@@ -20,3 +20,10 @@ export function getDefaults(type, value) {
   }
   return Object.assign({}, defaults[type]);
 }
+
+export function isJobValid(job) {
+  return job &&
+    !job.isFilled &&
+    job.isApproved &&
+    job.isPaid;
+}

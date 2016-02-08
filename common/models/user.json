@@ -23,6 +23,16 @@
       "type": "array",
       "default": []
     },
+    "isBanned": {
+      "type": "boolean",
+      "default": false,
+      "description": "User is banned from posting to camper news"
+    },
+    "isCheater": {
+      "type": "boolean",
+      "default": false,
+      "description": "Users who are confirmed to break academic honesty policy are marked as cheaters"
+    },
     "isGithubCool": {
       "type": "boolean",
       "default": false
@@ -123,6 +133,16 @@
       "defaut": false,
       "description": "Camper is front end certified"
     },
+    "isDataVisCert": {
+      "type": "boolean",
+      "defaut": false,
+      "description": "Camper is data visualization certified"
+    },
+    "isBackEndCert": {
+      "type": "boolean",
+      "default": false,
+      "description": "Campers is back end certified"
+    },
     "isFullStackCert": {
       "type": "boolean",
       "default": false,
@@ -153,6 +173,9 @@
     },
     "tshirtVote": {
       "type": "number"
+    },
+    "timezone": {
+      "type": "string"
     }
   },
   "validations": [],

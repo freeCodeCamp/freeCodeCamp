@@ -1,6 +1,5 @@
 import Hikes from './components/Hikes.jsx';
-import Lecture from './components/Lecture.jsx';
-import Question from './components/Question.jsx';
+import Hike from './components/Hike.jsx';
 
 /*
  * show video /hikes/someVideo
@@ -8,13 +7,10 @@ import Question from './components/Question.jsx';
  */
 
 export default {
-  path: 'hikes',
+  path: 'videos',
   component: Hikes,
   childRoutes: [{
     path: ':dashedName',
-    component: Lecture
-  }, {
-    path: ':dashedName/questions/:number',
-    component: Question
+    component: Hike
   }]
 };

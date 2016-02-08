@@ -1,0 +1,262 @@
+{
+  "name": "JavaScript Lingo",
+  "order": 2,
+  "time": "1 hour",
+  "challenges": [
+    {
+      "id": "56b15f15632298c12f31518c",
+      "title": "JavaScript Lingo: MDN and Documentation",
+      "description": [
+        "This is a basic intro to MDN and the concept of documentation.",
+        "MDN, Mozilla Developer Network, is a fanastic open source collaboration that documents not only JavaScript, but many other langauges and topics. If you haven't heard of them, you should check them out now. I get lots of information from developer.mozilla.org/en-US/docs/Web/JavaScript",
+        "When I say documentation, I am talking about information that is provided about the product to its users. The documentation at MDN isn't necessarily written by the people behind JS. Brendan Eich created JS in 1995, but it's now a community driven project that continues to grow.",
+        "As you continue to learn javascript, jQuery, and pretty much any languages or services for development or programming, documentation is your friend. ",
+        "The faster you get comfortable reading and refrencing documentation, the faster you will grow as a developer.",
+        "These videos aren't going to teach you javascript - you will be introduced to terms and concepts that will be valuable as you continue to practice and learn."
+      ],
+      "challengeSeed": [
+        "137072373"
+      ],
+      "tests": [
+        [
+          "Documentation is not a good way to learn a programming language.",
+          false,
+          "Documentation can be your best friend once you learn how to get the most from it."
+        ],
+        [
+          "Mozilla Developer Network is a great resource that should be referenced regularly.",
+          true
+        ],
+        [
+          "Question 3",
+          true,
+          "Hint 3 - Optional"
+        ]
+      ],
+      "type": "hike",
+      "challengeType": 6
+    },
+    {
+      "id": "56b15f15632298c12f31518d",
+      "title": "JavaScript Lingo: Value Types",
+      "description": [
+        "Learn about the three most basic types of values: booleans, strings, and numbers.",
+        "A boolean is a true or false value. These words are special and reserved. You can't name a variable 'true', because that word is already universal as a boolean (as is 'false').",
+        "A string is a set of characters that is set between either single (') or double (\") quotation marks. This string can be named 'true', as long as it's between those quotation marks.",
+        "Numbers are pretty self-explanatory - a number is a value that consists only of digits, though it can also contain a decimal or a negative sign."
+      ],
+      "challengeSeed": [
+        "137072769"
+      ],
+      "tests": [
+        [
+          "Numbers can include decimals.",
+          true
+        ],
+        [
+          "If a value is text that isn't the word true or false, it's a string. ",
+          false,
+          "To be a string, the content must be wrapped in either single or double quotations."
+        ]
+      ],
+      "type": "hike",
+      "challengeType": 6
+    },
+    {
+      "id": "56b15f15632298c12f31518b",
+      "title": "JavaScript Lingo: Variables & camelCase",
+      "description": [
+        "We are going to cover what constitutes a variable, and the reasoning behind camelCase.",
+        "A variable, also referred to as 'var', is the name or placeholder for a boolean, string, number, or other piece of static information.",
+        "You can use google dev tools to inspect the Free Code Camp home page and look for some variables.",
+        "You 'declare' variables the first time with 'var' in front of it, but those can be referenced later in your script.",
+        "camelCase is the way that JavaScript pushes words together and still keeps them legible. The first letter of the first word is lowercase, along with the remainder of the word, but the first letter of every consecutive word is capitalized. There are no spaces. Examples: brianaLovesHerPets, bestFoodIsCheese, and codeIsWorthLearning.",
+        "When you name variables, utilize camelCase. Also try to keep the names descriptive and short so that others (and yourself!) can tell what that variable is referring to just by the name."
+      ],
+      "challengeSeed": [
+        "137078492"
+      ],
+      "tests": [
+        [
+          "camelCase is manditory in JavaScript.",
+          false,
+          "Though camelCase is widely used, it isn't manditory. It's not a bad idea to get used to using it sooner rather than later."
+        ],
+        [
+          "Variables can only hold information that is a boolean, string, or number.",
+          false,
+          "Variables can hold all kinds of static information including arrays and objects."
+        ]
+      ],
+      "type": "hike",
+      "challengeType": 6
+    },
+    {
+      "id": "56b15f15632298c12f31518a",
+      "title": "JavaScript Lingo: Arrays & Objects",
+      "description": [
+        "If you want to store more than one piece of information to a variable, you can do so by creating an array or an object.",
+        "**Disclaimer: Objects in JS are not exactly the same as objects in other languages. We will discuss objects here as they pertain to JS.",
+        "Arrays are sets of data between [square, brackets]. Data is separated by commas. That data can be in the form of a boolean, string, number, or even another array. We call that a nested array.",
+        "Objects are a type of data that can look or behave similar to an array in the way that it's more data stored in one variable in an organized way. You'll hear it referred to as JSON, and when you make API calls to other sites (getting information to display on your own page) it will frequently be returned in JSON.",
+        "An example of object notation is: var obj = {'name' : 'Briana', 'food' : 'cheese', 'dog' : 'Maurice'};",
+        "Notice the curly brackets, the 'keys' with values like name or food,, and the value called a 'property' that is tied to the 'key', like Briana or cheese. These are ALL stored as strings, although booleans, numbers, and other types of data are also valid."
+      ],
+      "challengeSeed": [
+        "137080554"
+      ],
+      "tests": [
+        [
+          "Arrays are easy to spot because of their [square brackets]. ",
+          true
+        ],
+        [
+          "Objects in JavaScript are the same as objects in every other language.",
+          false,
+          "Objects in JS are slightly different, but as long as you understand the context for JS, you'll be fine until you decide to learn one of those other languages."
+        ]
+      ],
+      "type": "hike",
+      "challengeType": 6
+    },
+    {
+      "id": "56b15f15632298c12f315189",
+      "title": "JavaScript Lingo: Finding and Indexing Data in Arays",
+      "description": [
+        "There are many reasons you might need to access a certain piece of data from within a larger set, and you do that by referencing it's index.",
+        "We won't get into syntax now, but you should know that the first thing in an array is actually index 0.",
+        "This goes for strings and objects, too. All of these indices start at 0, so if you're looking asking the code to find indexArr[2], you're really going to get the third piece of information in that array."
+      ],
+      "challengeSeed": [
+        "137081193"
+      ],
+      "tests": [
+        [
+          "The first entry in array has the index of 1.",
+          false,
+          "The first entry in an array has an index of 0."
+        ],
+        [
+          "Arrays must contain all of the same type of information, like booleans.",
+          false,
+          "Arrays can contain any mix of data types."
+        ]
+      ],
+      "type": "hike",
+      "challengeType": 6
+    },
+    {
+      "id": "56b15f15632298c12f315188",
+      "title": "JavaScript Lingo: Manipulating Data",
+      "description": [
+        "Methods and functions are ways you can manipulate variables or other sets of information.",
+        "Methods are built in to JavaScript, and you will become more familliar with these as you write functions for the bonfires.",
+        "I'd suggest looking through the MDN (Mozilla Developer Network that we discussed in the first video) to familliarize yourself with the sheer amount and general potential for the methods that exist. developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Methods_Index",
+        "Examples include '.split(' ')', which will turn a string into an array and can do so in many different ways. Methods are powerful - many times when you want your script to do something, there's a method for that.",
+        "Functions, like variables, are something you define and create.",
+        "During your algorithm practice at Free Code Camp, you will create functions that take a certain piece of information and manipulate it in whatever way you choose.",
+        "You'll become more familliar with syntax there, but for now, just remember that with methods and functions you can do almost anything with your code."
+      ],
+      "challengeSeed": [
+        "137081423"
+      ],
+      "tests": [
+        [
+          "Whenever there's a specific manipulation you want to apply, you should check the methods before writing your own code.",
+          true
+        ],
+        [
+          "When writing your own functions, you should keep your code clean by only using minimal amounts of methods. ",
+          false,
+          "Methods are there to help you! Use them in your own functions as well as on their own."
+        ]
+      ],
+      "type": "hike",
+      "challengeType": 6
+    },
+    {
+      "id": "56b15f15632298c12f315187",
+      "title": "JavaScript Lingo: Math",
+      "description": [
+        "There is a static object named 'Math' in JS with many built in properties and methods.",
+        "You'll want to investigate this further whenever you're manipulating numbers. Check MDN documentation before writing your own functions, because they may already be defined there.",
+        "Examples include Math.random() which will return a random number in a given range and Math.round() which will round the input to the nearest integer.",
+        "I used Math.random() when I built the random quote generator for the Free Code Camp front end development project.",
+        "When you're working with numbers, you should also be aware that JS has an interesting attribute called 'floating-point format'.",
+        "Depending on the amount of numbers, the size of those numbers, and the number of computations, JS may return something that is inaccurate by .00004.",
+        "There are ways around this, and in general it doesn't pose issues, but it's something you should be aware of in the event you run into some problems that aren't making sense."
+      ],
+      "challengeSeed": [
+        "137081785"
+      ],
+      "tests": [
+        [
+          "When talking about Math in JavaScript, all of the methods and functions work like they would on any calculator.",
+          false,
+          "Remember 'floating-point format'."
+        ],
+        [
+          "There are special methods and functions specific for the 'Math' object.",
+          true
+        ]
+      ],
+      "type": "hike",
+      "challengeType": 6
+    },
+    {
+      "id": "56b15f15632298c12f315186",
+      "title": "JavaScript Lingo: Loops",
+      "description": [
+        "If there's a set of data, (we'll use an array for this example, but it doesn't have to be,) and you want to perform the same manipulation to every piece in that set of data, you can use something called a loop.",
+        "Loops have some complex syntax to get used to at first, but once you have it, they're extremely useful. I used loops in many of my algorithm solutions.",
+        "You don't need to understand everything here - just know that loops exist when you need to traverse a set of data and they can cut down on the amount of code you need to write."
+      ],
+      "challengeSeed": [
+        "137082032"
+      ],
+      "tests": [
+        [
+          "There's only one type of loop.",
+          false,
+          "There are many types of loops that fit many different needs."
+        ],
+        [
+          "Loops can only traverse arrays.",
+          false,
+          "Loops can be built to fit many different situations."
+        ]
+      ],
+      "type": "hike",
+      "challengeType": 6
+    },
+    {
+      "id": "56b15f15632298c12f315185",
+      "title": "JavaScript Lingo: Regular Expressions",
+      "description": [
+        "RegExp is not formatted like anything else in JS, and can have a steep learning curve.",
+        "RegExp can also be an incredibly useful and efficient tool.",
+        "Using RegExp, you can match, replace, search, and split a string, one of the more difficult types of values to manipulate.",
+        "Like with all of the other videos, we won't get into the nitty gritty, but I want to show you a few examples of where RegExp is useful.",
+        "If you wanted to create a registration page that verified passwords contained at least a number and a capital letter, you could use RegExp.",
+        "If you wanted to ensure that dates entered in a page were all valid dates in the future, you could use RegExp.",
+        "While there are limitless ways to use RegExp, many of them include validating or automatically editing information."
+      ],
+      "challengeSeed": [
+        "137082304"
+      ],
+      "tests": [
+        [
+          "RegExp can be a useful tool when working with strings. ",
+          true
+        ],
+        [
+          "RegExp can be intimidating, and if you don't like it, you can probably just avoid using it.",
+          false,
+          "Be patient with RegExp and with yourself. It can be a great tool that saves you from writing too much or inefficient code."
+        ]
+      ],
+      "type": "hike",
+      "challengeType": 6
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+doctype xml
+rss(version="2.0", xmlns:atom="http://www.w3.org/2005/Atom")
+  channel  
+    title= title
+    link= url
+    description= description
+    atom:link(href="http://www.freecodecamp.com/news/feed", rel="self", type="application/rss+xml")
+    for post in FeedPosts
+      if (post.link).match(/https*:\/\/\w+(\.\w+)*/)
+        item
+          title #{ post.headline.replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"') }
+          description <![CDATA[!{ post.metaDescription }]]>
+          pubDate= (new Date(post.timePosted)).toUTCString()
+          link= post.link
+          guid(isPermaLink="false")= post.link

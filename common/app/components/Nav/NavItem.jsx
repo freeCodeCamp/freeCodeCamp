@@ -1,14 +1,14 @@
 import React from 'react';
 import classNames from 'classnames';
-import BootstrapMixin from 'react-bootstrap/lib/BootstrapMixin';
 
 export default React.createClass({
   displayName: 'FCCNavItem',
-  mixins: [BootstrapMixin],
 
   propTypes: {
     active: React.PropTypes.bool,
     'aria-controls': React.PropTypes.string,
+    children: React.PropTypes.node,
+    className: React.PropTypes.string,
     disabled: React.PropTypes.bool,
     eventKey: React.PropTypes.any,
     href: React.PropTypes.string,
@@ -30,7 +30,11 @@ export default React.createClass({
       e.preventDefault();
 
       if (!this.props.disabled) {
-        this.props.onSelect(this.props.eventKey, this.props.href, this.props.target);
+        this.props.onSelect(
+          this.props.eventKey,
+          this.props.href,
+          this.props.target
+        );
       }
     }
   },
@@ -50,10 +54,11 @@ export default React.createClass({
       ...props
     } = this.props;
 
-    let classes = {
-      active,
-      disabled
-    };
+    const linkClassName = classNames(className, {
+      // 'active': active, we don't actually use the active class
+      // but it is used for a11y below
+      'disabled': disabled
+    });
 
     let linkProps = {
       role,
@@ -75,9 +80,9 @@ export default React.createClass({
         role='presentation'>
         <a
           { ...linkProps }
-          aria-selected={ active }
           aria-controls={ ariaControls }
-          className={ className }>
+          aria-selected={ active }
+          className={ linkClassName }>
           { children }
         </a>
       </li>

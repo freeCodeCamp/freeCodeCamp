@@ -1,30 +1,31 @@
 /* eslint-disable no-process-exit */
-require('babel/register');
+require('babel-register');
 require('dotenv').load();
+var adler32 = require('adler32');
 
-var fs = require('fs'),
-    Rx = require('rx'),
+var Rx = require('rx'),
     _ = require('lodash'),
-    path = require('path'),
+    getChallenges = require('./getChallenges'),
     app = require('../server/server');
 
-function getFilesFor(dir) {
-  return fs.readdirSync(path.join(__dirname, '/' + dir));
-}
 
 var Challenge = app.models.Challenge;
-var challenges = getFilesFor('challenges');
 var destroy = Rx.Observable.fromNodeCallback(Challenge.destroyAll, Challenge);
 var create = Rx.Observable.fromNodeCallback(Challenge.create, Challenge);
 
 destroy()
-  .flatMap(function() { return Rx.Observable.from(challenges); })
-  .flatMap(function(file) {
-    var challengeSpec = require('./challenges/' + file);
+  .flatMap(function() { return Rx.Observable.from(getChallenges()); })
+  .flatMap(function(challengeSpec) {
     var order = challengeSpec.order;
     var block = challengeSpec.name;
+    var superBlock = challengeSpec.superBlock;
+    var superOrder = challengeSpec.superOrder;
     var isBeta = !!challengeSpec.isBeta;
-    console.log('parsed %s successfully', file);
+    var isComingSoon = !!challengeSpec.isComingSoon;
+    var fileName = challengeSpec.fileName;
+    var helpRoom = challengeSpec.helpRoom || 'Help';
+
+    console.log('parsed %s successfully', block);
 
     // challenge file has no challenges...
     if (challengeSpec.challenges.length === 0) {
@@ -33,21 +34,34 @@ destroy()
 
     var challenges = challengeSpec.challenges
       .map(function(challenge, index) {
-        // NOTE(berks): add title for displaying in views
-        challenge.name =
-          _.capitalize(challenge.type) +
-          ': ' +
-          challenge.title.replace(/[^a-zA-Z0-9\s]/g, '');
+        challenge.name = challenge.title.replace(/[^a-zA-Z0-9\s]/g, '');
 
         challenge.dashedName = challenge.name
           .toLowerCase()
           .replace(/\:/g, '')
           .replace(/\s/g, '-');
+
+        challenge.checksum = adler32.sum(
+          Buffer(challenge.title +
+            JSON.stringify(challenge.description) +
+            JSON.stringify(challenge.challengeSeed) +
+            JSON.stringify(challenge.tests)));
+
+        challenge.fileName = fileName;
+        challenge.helpRoom = helpRoom;
         challenge.order = order;
         challenge.suborder = index + 1;
         challenge.block = block;
         challenge.isBeta = challenge.isBeta || isBeta;
+        challenge.isComingSoon = challenge.isComingSoon || isComingSoon;
         challenge.time = challengeSpec.time;
+        challenge.superOrder = superOrder;
+        challenge.superBlock = superBlock
+          .split('-')
+          .map(function(word) {
+            return _.capitalize(word);
+          })
+          .join(' ');
 
         return challenge;
       });

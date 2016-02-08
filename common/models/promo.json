@@ -1,0 +1,59 @@
+{
+  "name": "promo",
+  "base": "PersistedModel",
+  "strict": true,
+  "idInjection": true,
+  "trackChanges": false,
+  "properties": {
+    "code": {
+      "type": "string",
+      "required": true,
+      "description": "The code to unlock the promotional discount"
+    },
+    "name": {
+      "type": "string",
+      "required": true,
+      "description": "The name of the discount"
+    },
+    "buttonId": {
+      "type": "string",
+      "required": true,
+      "description": "The id of paypal button"
+    },
+    "type": {
+      "type": "string",
+      "description": "A selector of different types of buttons for the same discount"
+    },
+    "fullPrice": {
+      "type": "number",
+      "required": true,
+      "description": "The original amount"
+    },
+    "discountAmount": {
+      "type": "number",
+      "description": "The amount of the discount if applicable"
+    },
+    "discountPercent": {
+      "type": "number",
+      "description": "The amount of discount as a percentage if applicable"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "getButton"
+    }
+  ],
+  "methods": []
+}

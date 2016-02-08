@@ -1,14 +1,33 @@
 import React, { PropTypes } from 'react';
-import { contain } from 'thundercats-react';
 import { Row } from 'react-bootstrap';
+import { ToastMessage, ToastContainer } from 'react-toastr';
+import { contain } from 'thundercats-react';
 
-import { Nav } from './components/Nav';
-import { Footer } from './components/Footer';
+import Nav from './components/Nav';
+
+const toastMessageFactory = React.createFactory(ToastMessage.animation);
 
 export default contain(
   {
+    actions: ['appActions'],
     store: 'appStore',
     fetchAction: 'appActions.getUser',
+    isPrimed({ username }) {
+      return !!username;
+    },
+    map({
+      username,
+      points,
+      picture,
+      toast
+    }) {
+      return {
+        username,
+        points,
+        picture,
+        toast
+      };
+    },
     getPayload(props) {
       return {
         isPrimed: !!props.username
@@ -19,27 +38,26 @@ export default contain(
     displayName: 'FreeCodeCamp',
 
     propTypes: {
+      appActions: PropTypes.object,
       children: PropTypes.node,
+      username: PropTypes.string,
       points: PropTypes.number,
       picture: PropTypes.string,
-      title: PropTypes.string,
-      username: PropTypes.string
+      toast: PropTypes.object
     },
 
-    componentDidMount() {
-      const title = this.props.title;
-      this.setTitle(title);
-    },
-
-    componentWillReceiveProps(nextProps) {
-      if (nextProps.title !== this.props.title) {
-        this.setTitle(nextProps.title);
+    componentWillReceiveProps({ toast: nextToast = {} }) {
+      const { toast = {} } = this.props;
+      if (toast.id !== nextToast.id) {
+        this.refs.toaster[nextToast.type || 'success'](
+          nextToast.message,
+          nextToast.title,
+          {
+            closeButton: true,
+            timeOut: 10000
+          }
+        );
       }
-    },
-
-    setTitle(title) {
-      const doc = typeof document !== 'undefined' ? document : {};
-      doc.title = title;
     },
 
     render() {
@@ -52,7 +70,10 @@ export default contain(
           <Row>
             { this.props.children }
           </Row>
-          <Footer />
+          <ToastContainer
+            className='toast-bottom-right'
+            ref='toaster'
+            toastMessageFactory={ toastMessageFactory } />
         </div>
       );
     }

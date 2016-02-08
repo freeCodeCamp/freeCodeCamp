@@ -3,25 +3,34 @@ import { RoutingContext } from 'react-router';
 import Fetchr from 'fetchr';
 import { createLocation } from 'history';
 import debugFactory from 'debug';
-import { app$ } from '../../common/app';
-import { RenderToString } from 'thundercats-react';
+import { dehydrate } from 'thundercats';
+import { renderToString$ } from 'thundercats-react';
+
+import app$ from '../../common/app';
 
 const debug = debugFactory('freecc:react-server');
 
 // add routes here as they slowly get reactified
 // remove their individual controllers
 const routes = [
-  '/hikes',
-  '/hikes/*',
   '/jobs',
-  '/jobs/*'
+  '/jobs/*',
+  '/videos',
+  '/videos/*'
 ];
+
+const devRoutes = [];
 
 export default function reactSubRouter(app) {
   var router = app.loopback.Router();
 
+  // These routes are in production
+  routes.forEach((route) => {
+    router.get(route, serveReactApp);
+  });
+
   if (process.env.NODE_ENV === 'development') {
-    routes.forEach(function(route) {
+    devRoutes.forEach(function(route) {
       router.get(route, serveReactApp);
     });
   }
@@ -35,7 +44,7 @@ export default function reactSubRouter(app) {
     // returns a router wrapped app
     app$({ location })
       // if react-router does not find a route send down the chain
-      .filter(function({ props}) {
+      .filter(function({ props }) {
         if (!props) {
           debug('react tried to find %s but got 404', location.pathname);
           return next();
@@ -43,20 +52,28 @@ export default function reactSubRouter(app) {
         return !!props;
       })
       .flatMap(function({ props, AppCat }) {
-        // call thundercats renderToString
-        // prefetches data and sets up it up for current state
-        debug('rendering to string');
-        return RenderToString(
-          AppCat(null, services),
+        const cat = AppCat(null, services);
+        debug('render react markup and pre-fetch data');
+        const store = cat.getStore('appStore');
+
+        // primes store to observe action changes
+        // cleaned up by cat.dispose further down
+        store.subscribe(() => {});
+
+        return renderToString$(
+          cat,
           React.createElement(RoutingContext, props)
-        );
+        )
+          .flatMap(
+            dehydrate(cat),
+            ({ markup }, data) => ({ markup, data, cat })
+          );
       })
-      // makes sure we only get one onNext and closes subscription
-      .flatMap(function({ data, markup }) {
-        debug('react rendered');
+      .flatMap(function({ data, markup, cat }) {
+        debug('react markup rendered, data fetched');
+        cat.dispose();
         const { title } = data.AppStore;
         res.expose(data, 'data');
-        // now render jade file with markup injected from react
         return res.render$(
           'layout-react',
           { markup, title }
@@ -64,7 +81,7 @@ export default function reactSubRouter(app) {
       })
       .subscribe(
         function(markup) {
-          debug('jade rendered');
+          debug('html rendered and ready to send');
           res.send(markup);
         },
         next

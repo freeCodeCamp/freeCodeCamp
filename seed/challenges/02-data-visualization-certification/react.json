@@ -1,0 +1,19 @@
+{
+  "name": "React",
+  "order": 14,
+  "isComingSoon": true,
+  "time": "5 hours",
+  "helpRoom": "HelpDataViz",
+  "challenges": [
+    {
+      "id": "bd7158d8c423ede3aeb5bdee",
+      "title": "Learn React Challenges",
+      "description": [],
+      "challengeSeed": [],
+      "tests": [],
+      "type": "waypoint",
+      "challengeType": 3,
+      "nameEs": "Crea una aplicación de votaciones"
+    }
+  ]
+}

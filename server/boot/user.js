@@ -1,19 +1,44 @@
 import _ from 'lodash';
 import dedent from 'dedent';
-import moment from 'moment';
+import moment from 'moment-timezone';
 import { Observable } from 'rx';
 import debugFactory from 'debug';
 
 import {
-  frontEndChallangeId,
-  fullStackChallangeId
+  frontEndChallengeId,
+  dataVisChallengeId,
+  backEndChallengeId
 } from '../utils/constantStrings.json';
+
+import certTypes from '../utils/certTypes.json';
+
 import { ifNoUser401, ifNoUserRedirectTo } from '../utils/middleware';
 import { observeQuery } from '../utils/rx';
+import { calcCurrentStreak, calcLongestStreak } from '../utils/user-stats';
 
 const debug = debugFactory('freecc:boot:user');
-const daysBetween = 1.5;
 const sendNonUserToMap = ifNoUserRedirectTo('/map');
+const certIds = {
+  [certTypes.frontEnd]: frontEndChallengeId,
+  [certTypes.dataVis]: dataVisChallengeId,
+  [certTypes.backEnd]: backEndChallengeId
+};
+
+const certViews = {
+  [certTypes.frontEnd]: 'certificate/front-end.jade',
+  [certTypes.dataVis]: 'certificate/data-vis.jade',
+  [certTypes.backEnd]: 'certificate/back-end.jade',
+  [certTypes.fullStack]: 'certificate/full-stack.jade'
+};
+
+const certText = {
+  [certTypes.fronEnd]: 'Front End certified',
+  [certTypes.dataVis]: 'Data Vis Certified',
+  [certTypes.backEnd]: 'Back End Certified',
+  [certTypes.fullStack]: 'Full Stack Certified'
+};
+
+const dateFormat = 'MMM DD, YYYY';
 
 function replaceScriptTags(value) {
   return value
@@ -21,45 +46,14 @@ function replaceScriptTags(value) {
     .replace(/<\/script>/gi, 'fcces');
 }
 
-function calcCurrentStreak(cals) {
-  const revCals = cals.concat([Date.now()]).slice().reverse();
-  let streakBroken = false;
-  const lastDayInStreak = revCals
-    .reduce((current, cal, index) => {
-      const before = revCals[index === 0 ? 0 : index - 1];
-      if (
-        !streakBroken &&
-        moment(before).diff(cal, 'days', true) < daysBetween
-      ) {
-        return index;
-      }
-      streakBroken = true;
-      return current;
-    }, 0);
-
-  const lastTimestamp = revCals[lastDayInStreak];
-  return Math.ceil(moment().diff(lastTimestamp, 'days', true));
+function replaceFormAction(value) {
+  return value.replace(/<form[^>]*>/, function(val) {
+    return val.replace(/action(\s*?)=/, 'fccfaa$1=');
+  });
 }
 
-function calcLongestStreak(cals) {
-  let tail = cals[0];
-  const longest = cals.reduce((longest, head, index) => {
-    const last = cals[index === 0 ? 0 : index - 1];
-    // is streak broken
-    if (moment(head).diff(last, 'days', true) > daysBetween) {
-      tail = head;
-    }
-    if (dayDiff(longest) < dayDiff([head, tail])) {
-      return [head, tail];
-    }
-    return longest;
-  }, [cals[0], cals[0]]);
-
-  return Math.ceil(dayDiff(longest));
-}
-
-function dayDiff([head, tail]) {
-  return moment(head).diff(tail, 'days', true);
+function encodeFcc(value = '') {
+  return replaceScriptTags(replaceFormAction(value));
 }
 
 module.exports = function(app) {
@@ -111,12 +105,22 @@ module.exports = function(app) {
   // Ensure these are the last routes!
   router.get(
     '/:username/front-end-certification',
-    showCert
+    showCert.bind(null, certTypes.frontEnd)
+  );
+
+  router.get(
+    '/:username/data-visualization-certification',
+    showCert.bind(null, certTypes.dataVis)
+  );
+
+  router.get(
+    '/:username/back-end-certification',
+    showCert.bind(null, certTypes.backEnd)
   );
 
   router.get(
     '/:username/full-stack-certification',
-    showCert
+    (req, res) => res.redirect(req.url.replace('full-stack', 'back-end'))
   );
 
   router.get('/:username', returnUser);
@@ -128,7 +132,7 @@ module.exports = function(app) {
       return res.redirect('/');
     }
     res.render('account/signin', {
-      title: 'Free Code Camp Login'
+      title: 'Sign in to Free Code Camp using a Social Media Account'
     });
   }
 
@@ -142,7 +146,7 @@ module.exports = function(app) {
       return res.redirect('/');
     }
     res.render('account/email-signin', {
-      title: 'Sign in to your Free Code Camp Account'
+      title: 'Sign in to Free Code Camp using your Email Address'
     });
   }
 
@@ -151,7 +155,7 @@ module.exports = function(app) {
       return res.redirect('/');
     }
     res.render('account/email-signup', {
-      title: 'Create Your Free Code Camp Account'
+      title: 'Sign up for Free Code Camp using your Email Address'
     });
   }
 
@@ -176,9 +180,17 @@ module.exports = function(app) {
           req.flash('errors', {
             msg: `404: We couldn't find path ${ path }`
           });
+          console.log('404');
           return res.redirect('/');
         }
         profileUser = profileUser.toJSON();
+
+        // timezone of signed-in account
+        // to show all date related components
+        // using signed-in account's timezone
+        // not of the profile she is viewing
+        const timezone = req.user &&
+          req.user.timezone ? req.user.timezone : 'UTC';
 
         var cals = profileUser
           .progressTimestamps
@@ -189,8 +201,8 @@ module.exports = function(app) {
           })
           .sort();
 
-        profileUser.currentStreak = calcCurrentStreak(cals);
-        profileUser.longestStreak = calcLongestStreak(cals);
+        profileUser.currentStreak = calcCurrentStreak(cals, timezone);
+        profileUser.longestStreak = calcLongestStreak(cals, timezone);
 
         const data = profileUser
           .progressTimestamps
@@ -207,22 +219,45 @@ module.exports = function(app) {
             return data;
           }, {});
 
-        const baseAndZip = profileUser.completedChallenges.filter(
-          function(obj) {
-          return obj.challengeType === 3 || obj.challengeType === 4;
-          }
-        );
+        function filterAlgos(challenge) {
+          // test if name starts with hike/waypoint/basejump/zipline
+          // fix for bug that saved different challenges with incorrect
+          // challenge types
+          return !(/^(waypoint|hike|zipline|basejump)/i).test(challenge.name) &&
+            +challenge.challengeType === 5;
+        }
 
-        const bonfires = profileUser.completedChallenges.filter(function(obj) {
-          return obj.challengeType === 5 && (obj.name || '').match(/Bonfire/g);
-        });
+        function filterProjects(challenge) {
+          return +challenge.challengeType === 3 ||
+            +challenge.challengeType === 4;
+        }
 
-        const waypoints = profileUser.completedChallenges.filter(function(obj) {
-          return (obj.name || '').match(/^Waypoint/i);
-        });
+        const completedChallenges = profileUser.completedChallenges
+          .filter(({ name }) => typeof name === 'string')
+          .map(challenge => {
+              challenge = { ...challenge };
+              if (challenge.completedDate) {
+                challenge.completedDate =
+                  moment.tz(challenge.completedDate, timezone)
+                    .format(dateFormat);
+              }
+              if (challenge.lastUpdated) {
+                challenge.lastUpdated =
+                  moment.tz(challenge.lastUpdated, timezone).format(dateFormat);
+              }
+              return challenge;
+          });
+
+        const projects = completedChallenges.filter(filterProjects);
+
+        const algos = completedChallenges.filter(filterAlgos);
+
+        const challenges = completedChallenges
+          .filter(challenge => !filterAlgos(challenge))
+          .filter(challenge => !filterProjects(challenge));
 
         res.render('account/show', {
-          title: 'Camper ' + profileUser.username + '\'s portfolio',
+          title: 'Camper ' + profileUser.username + '\'s Code Portfolio',
           username: profileUser.username,
           name: profileUser.name,
 
@@ -233,6 +268,8 @@ module.exports = function(app) {
           pledge: profileUser.pledge,
 
           isFrontEndCert: profileUser.isFrontEndCert,
+          isDataVisCert: profileUser.isDataVisCert,
+          isBackEndCert: profileUser.isBackEndCert,
           isFullStackCert: profileUser.isFullStackCert,
           isHonest: profileUser.isHonest,
 
@@ -248,24 +285,23 @@ module.exports = function(app) {
 
           progressTimestamps: profileUser.progressTimestamps,
 
-          baseAndZip,
-          bonfires,
-          waypoints,
+          projects,
+          algos,
+          challenges,
           moment,
 
           longestStreak: profileUser.longestStreak,
           currentStreak: profileUser.currentStreak,
 
-          replaceScriptTags
+          encodeFcc
         });
       }
     );
   }
 
-  function showCert(req, res, next) {
+  function showCert(certType, req, res, next) {
     const username = req.params.username.toLowerCase();
     const { user } = req;
-    const showFront = req.path.split('/').pop() === 'front-end-certification';
     Observable.just(user)
       .flatMap(user => {
         if (user && user.username === username) {
@@ -273,7 +309,11 @@ module.exports = function(app) {
         }
         return findUserByUsername$(username, {
           isGithubCool: true,
+          isCheater: true,
+          isLocked: true,
           isFrontEndCert: true,
+          isDataVisCert: true,
+          isBackEndCert: true,
           isFullStackCert: true,
           isHonest: true,
           completedChallenges: true,
@@ -285,7 +325,7 @@ module.exports = function(app) {
         (user) => {
           if (!user) {
             req.flash('errors', {
-              msg: `404: We couldn't find the user ${username}`
+              msg: `We couldn't find the user with the username ${username}`
             });
             return res.redirect('/');
           }
@@ -293,17 +333,29 @@ module.exports = function(app) {
             req.flash('errors', {
               msg: dedent`
                 This user needs to link GitHub with their account
-                in order to display this certificate to the public.
+                in order for others to be able to view their certificate.
               `
             });
             return res.redirect('back');
           }
+
+          if (user.isCheater) {
+            req.flash('errors', {
+              msg: dedent`
+                Upon review, this account has been flagged for academic
+                dishonesty. If you’re the owner of this account contact
+                team@freecodecamp.com for details.
+              `
+            });
+            return res.redirect(`/${user.username}`);
+          }
+
           if (user.isLocked) {
             req.flash('errors', {
               msg: dedent`
-                ${username} has chosen to hide their work from the public.
-                They need to unhide their work in order for this certificate to
-                be verifiable.
+                ${username} has chosen to make their profile
+                  private. They will need to make their profile public
+                  in order for others to be able to view their certificate.
               `
             });
             return res.redirect('back');
@@ -311,39 +363,35 @@ module.exports = function(app) {
           if (!user.isHonest) {
             req.flash('errors', {
               msg: dedent`
-                ${username} has not agreed to our Academic Honesty Pledge yet.
+                ${username} has not yet agreed to our Academic Honesty Pledge.
               `
             });
             return res.redirect('back');
           }
 
-          if (
-            showFront && user.isFrontEndCert ||
-            !showFront && user.isFullStackCert
-          ) {
+          if (user[certType]) {
+
+            // find challenge in user profile
+            // if not found supply empty object
+            // if found grab date
+            // if no date use todays date
             var { completedDate = new Date() } =
-              _.find(user.completedChallenges, {
-                id: showFront ?
-                  frontEndChallangeId :
-                  fullStackChallangeId
-              }) || {};
+              _.find(
+                user.completedChallenges,
+                { id: certIds[certType] }
+            ) || {};
 
             return res.render(
-              showFront ?
-                'certificate/front-end.jade' :
-                'certificate/full-stack.jade',
+              certViews[certType],
               {
                 username: user.username,
-                date: moment(new Date(completedDate))
-                  .format('MMMM, Do YYYY'),
+                date: moment(new Date(completedDate)).format('MMMM, Do YYYY'),
                 name: user.name
               }
             );
           }
           req.flash('errors', {
-            msg: showFront ?
-              `Looks like user ${username} is not Front End certified` :
-              `Looks like user ${username} is not Full Stack certified`
+            msg: `Looks like user ${username} is not ${certText[certType]}`
           });
           res.redirect('back');
         },
@@ -397,7 +445,7 @@ module.exports = function(app) {
       return res.render('account/forgot');
     }
     res.render('account/reset', {
-      title: 'Password Reset',
+      title: 'Reset your Password',
       accessToken: req.accessToken.id
     });
   }
@@ -445,7 +493,7 @@ module.exports = function(app) {
       email: email
     }, function(err) {
       if (err) {
-        req.flash('errors', err);
+        req.flash('errors', err.message);
         return res.redirect('/forgot');
       }
 

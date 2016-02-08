@@ -1,7 +1,7 @@
 import { defaultProfileImage } from '../../common/utils/constantStrings.json';
 
 const message =
-  'Learn to Code and Build Projects for Nonprofits';
+  'Learn to Code and Help Nonprofits';
 
 module.exports = function(app) {
   var router = app.loopback.Router();
@@ -22,7 +22,7 @@ module.exports = function(app) {
 
   function index(req, res) {
     if (req.user) {
-      return res.redirect('/map');
+      return res.redirect('/challenges/current-challenge');
     }
     res.render('home', { title: message });
   }

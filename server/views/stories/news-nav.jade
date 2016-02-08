@@ -1,17 +1,17 @@
 .row
-    .col-xs-12.col-sm-9
-        .input-group
-            input#searchArea.big-text-field.field-responsive.form-control(type='text', placeholder='Search our links')
-            span.input-group-btn
-                button#searchbutton.btn.btn-big.btn-primary.btn-responsive(type='button') Search
-        .spacer
     .col-xs-12.col-sm-3
         span
-            a.btn.btn-primary.btn-big.btn-block.btn-responsive(href='/stories/submit' class="#{ page === 'hot' ? '' : 'hidden' }") Submit
+            a.btn.btn-primary.btn-bigger.btn-block.btn-responsive(href='/stories/submit' class="#{ page === 'hot' ? '' : 'hidden' }") Submit a link
         span
-            a.btn.btn-success.btn-big.btn-block.btn-responsive(href='/news/' class="#{ (page !== 'hot') ? '' : 'hidden' }") All
+            a.btn.btn-success.btn-bigger.btn-block.btn-responsive(href='/news/' class="#{ (page !== 'hot') ? '' : 'hidden' }") All
         .visible-xs
             .button-spacer
+    .col-xs-12.col-sm-9
+        .input-group
+            input#searchArea.big-text-field.field-responsive.form-control(type='text', placeholder='Search term or @username')
+            span.input-group-btn
+                button#searchbutton.btn.btn-bigger.btn-primary.btn-responsive(type='button') Search
+        .spacer
 
 #search-results
 
@@ -31,23 +31,23 @@ script.
     });
     function executeSearch() {
         $('#stories').empty();
-        var searchTerm = $('#searchArea').val();
+        var searchTerm = $('#searchArea').val(),
+        url = '/stories/search';
+        if (searchTerm.match(/^\@\w+$/)) {
+            url = '/news/userstories';
+            searchTerm = searchTerm.match(/^\@\w+$/)[0].split('@')[1];
+        }
         var getLinkedName = function getLinkedName(name) {
             return name.toLowerCase().replace(/\s/g, '-');
         }
-        $.post('/stories/search',
-                {
-                    data: {
-                        searchValue: searchTerm
-                    }
-                })
-                .fail(function (xhr, textStatus, errorThrown) {
+        $.post(url, { search: searchTerm })
+                .fail(function(xhr, textStatus, errorThrown) {
                     $('#search-results').empty();
                     var div = document.createElement("div");
                     $(div).html("<h3 class='text-center text-warning dotted-underline'><em>No Results Found</em></h3>");
                     $(div).appendTo($('#search-results'));
                 })
-                .done(function (data, textStatus, xhr) {
+                .done(function(data, textStatus, xhr) {
                     $('#search-results').empty();
                     var spacer = document.createElement('div');
                     $(spacer).html("<div class='spacer'></div>");

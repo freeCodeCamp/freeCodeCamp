@@ -1,5 +1,4 @@
 var Rx = require('rx'),
-    Twit = require('twit'),
     async = require('async'),
     moment = require('moment'),
     request = require('request'),
@@ -19,7 +18,6 @@ module.exports = function(app) {
   router.get('/api/github', githubCalls);
   router.get('/api/blogger', bloggerCalls);
   router.get('/api/trello', trelloCalls);
-  router.get('/api/codepen/twitter/:screenName', twitter);
   router.get('/sitemap.xml', sitemap);
   router.get('/chat', chat);
   router.get('/coding-bootcamp-cost-calculator', bootcampCalculator);
@@ -28,44 +26,23 @@ module.exports = function(app) {
   router.get('/pmi-acp-agile-project-managers-form', agileProjectManagersForm);
   router.get('/nonprofits', nonprofits);
   router.get('/nonprofits-form', nonprofitsForm);
-  router.get('/our-sponsors', sponsors);
   router.get('/unsubscribe/:email', unsubscribe);
   router.get('/unsubscribed', unsubscribed);
   router.get('/get-started', getStarted);
   router.get('/submit-cat-photo', submitCatPhoto);
   router.get('/labs', showLabs);
   router.get('/stories', showTestimonials);
+  router.get('/shop', showShop);
+  router.get('/all-stories', showAllTestimonials);
+  router.get('/terms', terms);
+  router.get('/privacy', privacy);
+  router.get('/code-of-conduct', codeOfConduct);
+  router.get(
+    '/the-fastest-web-page-on-the-internet',
+    theFastestWebPageOnTheInternet
+  );
 
   app.use(router);
-
-  function twitter(req, res, next) {
-    // sends out random tweets about javascript
-    var T = new Twit({
-      'consumer_key': secrets.twitter.consumerKey,
-      'consumer_secret': secrets.twitter.consumerSecret,
-      'access_token': secrets.twitter.token,
-      'access_token_secret': secrets.twitter.tokenSecret
-    });
-
-    var screenName;
-    if (req.params.screenName) {
-      screenName = req.params.screenName;
-    } else {
-      screenName = 'freecodecamp';
-    }
-
-    T.get(
-      'statuses/user_timeline',
-      {
-        'screen_name': screenName,
-        count: 10
-      },
-      function(err, data) {
-        if (err) { return next(err); }
-        return res.json(data);
-      }
-    );
-  }
 
   function sitemap(req, res, next) {
     var appUrl = 'http://www.freecodecamp.com';
@@ -185,15 +162,57 @@ module.exports = function(app) {
 
   function showLabs(req, res) {
     res.render('resources/labs', {
-      title: 'Projects Built by Free Code Camp Students',
+      title: 'Projects Built by Free Code Camp Software Engineers',
       projects: labs
+    });
+  }
+
+  function terms(req, res) {
+      res.render('resources/terms-of-service', {
+            title: 'Terms of Service'
+      });
+  }
+
+  function privacy(req, res) {
+      res.render('resources/privacy', {
+          title: 'Privacy'
+      });
+  }
+
+  function codeOfConduct(req, res) {
+      res.render('resources/code-of-conduct', {
+          title: 'Code of Conduct'
+      });
+  }
+
+  function theFastestWebPageOnTheInternet(req, res) {
+    res.render('resources/the-fastest-web-page-on-the-internet', {
+      title: 'This is the fastest web page on the internet'
     });
   }
 
   function showTestimonials(req, res) {
     res.render('resources/stories', {
-      title: 'Stories from Happy Free Code Camp Campers',
-      stories: testimonials
+      title: 'Testimonials from Happy Free Code Camp Students ' +
+        'who got Software Engineer Jobs',
+      stories: testimonials.slice(0, 72),
+      moreStories: true
+    });
+  }
+
+  function showAllTestimonials(req, res) {
+    res.render('resources/stories', {
+      title: 'Testimonials from Happy Free Code Camp Students ' +
+        'who got Software Engineer Jobs',
+      stories: testimonials,
+      moreStories: false
+    });
+  }
+
+  function showShop(req, res) {
+    res.render('resources/shop', {
+      title: 'Support Free Code Camp by Buying t-shirts, ' +
+        'stickers, and other goodies'
     });
   }
 
@@ -207,15 +226,9 @@ module.exports = function(app) {
     });
   }
 
-  function sponsors(req, res) {
-    res.render('sponsors/sponsors', {
-      title: 'The Sponsors who make Free Code Camp Possible'
-    });
-  }
-
   function nonprofits(req, res) {
     res.render('resources/nonprofits', {
-      title: 'A guide to our Nonprofit Projects'
+      title: 'Your Nonprofit Can Get Pro Bono Code'
     });
   }
 

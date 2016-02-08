@@ -1,7 +1,9 @@
 import{ Observable } from 'rx';
+import debugFactory from 'debug';
+import dedent from 'dedent';
+
 import { observeMethod, observeQuery } from '../utils/rx';
 import { getSocialProvider } from '../utils/auth';
-import debugFactory from 'debug';
 
 const debug = debugFactory('fcc:userIdent');
 
@@ -49,7 +51,14 @@ export default function({ models }) {
         }
         if (identity.userId.toString() !== userId.toString()) {
           return Observable.throw(
-            new Error("It looks like you already have an account associated with that sign in method. Here's what you can do: 1) Sign out of this account. 2) Use that sign in method to sign into your other account. 3) Delete that account. 4) Then sign back into this account and you'll be able to link it here. If you need help, send us an email at team@freecodecamp.com.")
+            new Error(
+              dedent`
+Your GitHub is already associated with another account.
+You may have accidentally created a duplicate account.
+No worries, though. We can fix this real quick.
+Please email us with your GitHub username: team@freecodecamp.com.
+              `.split('/n').join(' ')
+            )
           );
         }
         identity.credentials = credentials;

@@ -45,6 +45,7 @@
     "./middlewares/constant-headers": {},
     "./middlewares/csp": {},
     "./middlewares/express-rx": {},
+    "./middlewares/jade-helpers": {},
     "./middlewares/global-locals": {},
     "./middlewares/revision-helpers": {}
   },
