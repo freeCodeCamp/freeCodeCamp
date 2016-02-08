@@ -96,7 +96,7 @@ main = (function(main, global) {
     });
 
 
-    $('#nav-chat-btn').on('click', showMainChat);
+    $('#nav-chat-btn').on('click', toggleMainChat);
 
     function showMainChat() {
       if (!main.chat.isOpen) {
@@ -106,10 +106,10 @@ main = (function(main, global) {
 
     function collapseMainChat() {
       $('#chat-embed-main').addClass('is-collapsed');
+      document.activeElement.blur();
     }
 
-    // keyboard shortcuts: open main chat
-    Mousetrap.bind('g c', function() {
+    function toggleMainChat() {
       var isCollapsed = $('#chat-embed-main').hasClass('is-collapsed');
 
       if (isCollapsed) {
@@ -117,7 +117,10 @@ main = (function(main, global) {
       } else {
         collapseMainChat();
       }
-    });
+    }
+
+    // keyboard shortcuts: open main chat
+    Mousetrap.bind('g c', toggleMainChat);
   });
 
   return main;
@@ -344,7 +347,7 @@ $(document).ready(function() {
   var mapFilter = $('#map-filter');
   var mapShowAll = $('#showAll');
 
-  $('#nav-map-btn').on('click', showMap);
+  $('#nav-map-btn').on('click', toggleMap);
 
   $('.map-aside-action-collapse').on('click', collapseMap);
 
@@ -360,6 +363,17 @@ $(document).ready(function() {
 
   function collapseMap() {
     $('.map-aside').addClass('is-collapsed');
+    document.activeElement.blur();
+  }
+
+  function toggleMap() {
+    var isCollapsed = $('.map-aside').hasClass('is-collapsed');
+
+    if (isCollapsed) {
+      showMap();
+    } else {
+      collapseMap();
+    }
   }
 
   $('#accordion').on('show.bs.collapse', function(e) {
@@ -480,13 +494,5 @@ $(document).ready(function() {
   window.Mousetrap.bind('esc', clearMapFilter);
 
   // keyboard shortcuts: open map
-  window.Mousetrap.bind('g m', function() {
-    var isCollapsed = $('.map-aside').hasClass('is-collapsed');
-
-    if (isCollapsed) {
-      showMap();
-    } else {
-      collapseMap();
-    }
-  });
+  window.Mousetrap.bind('g m', toggleMap);
 });
