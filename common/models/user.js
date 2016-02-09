@@ -52,6 +52,12 @@ module.exports = function(User) {
   User.validatesUniquenessOf('username');
   User.settings.emailVerificationRequired = false;
 
+  User.on('dataSourceAttached', () => {
+    User.findOne$ = Observable.fromNodeCallback(User.findOne, User);
+    User.update$ = Observable.fromNodeCallback(User.updateAll, User);
+    User.count$ = Observable.fromNodeCallback(User.count, User);
+  });
+
   User.observe('before save', function({ instance: user }, next) {
     if (user) {
       user.username = user.username.trim().toLowerCase();
@@ -416,4 +422,21 @@ module.exports = function(User) {
       }
     }
   );
+
+  // user.updateTo$(updateData: Object) => Observable[Number]
+  User.prototype.update$ = function update$(updateData) {
+    const id = this.getId();
+    const updateOptions = { allowExtendedOperators: true };
+    if (
+        !updateData ||
+        typeof updateData !== 'object' ||
+        Object.keys(updateData).length > 0
+    ) {
+      return Observable.throw(new Error(
+        `updateData must be an object with at least on key,
+        but got ${updateData}`.split('\n').join(' ')
+      ));
+    }
+    return this.constructor.update$({ id }, updateData, updateOptions);
+  };
 };

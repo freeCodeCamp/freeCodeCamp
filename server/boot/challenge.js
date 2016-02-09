@@ -2,7 +2,7 @@ import _ from 'lodash';
 import dedent from 'dedent';
 import moment from 'moment';
 import { Observable, Scheduler } from 'rx';
-import debugFactory from 'debug';
+import debug from 'debug';
 import accepts from 'accepts';
 
 import {
@@ -14,7 +14,7 @@ import {
   randomCompliment
 } from '../utils';
 
-import { saveUser, observeMethod } from '../utils/rx';
+import { observeMethod } from '../utils/rx';
 
 import {
   ifNoUserSend
@@ -24,7 +24,7 @@ import getFromDisk$ from '../utils/getFromDisk$';
 
 const isDev = process.env.NODE_ENV !== 'production';
 const isBeta = !!process.env.BETA;
-const debug = debugFactory('freecc:challenges');
+const log = debug('freecc:challenges');
 const challengesRegex = /^(bonfire|waypoint|zipline|basejump|checkpoint)/i;
 const challengeView = {
   0: 'challenges/showHTML',
@@ -40,8 +40,7 @@ function isChallengeCompleted(user, challengeId) {
   if (!user) {
     return false;
   }
-  return user.completedChallenges.some(challenge =>
-    challenge.id === challengeId );
+  return user.challengeMap[challengeId];
 }
 
 /*
@@ -50,36 +49,53 @@ function numberWithCommas(x) {
 }
 */
 
-function updateUserProgress(user, challengeId, completedChallenge) {
-  let { completedChallenges } = user;
+function buildUserUpdate(
+  user,
+  challengeId,
+  completedChallenge,
+  timezone
+) {
+  const updateData = { $set: {} };
+  let finalChallenge;
+  const { timezone: userTimezone, challengeMap = {} } = user;
 
-  const indexOfChallenge = _.findIndex(completedChallenges, {
-    id: challengeId
-  });
+  const oldChallenge = challengeMap[challengeId];
+  const alreadyCompleted = !!oldChallenge;
 
-  const alreadyCompleted = indexOfChallenge !== -1;
 
-  if (!alreadyCompleted) {
-    user.progressTimestamps.push({
+  if (alreadyCompleted) {
+    // add data from old challenge
+    finalChallenge = {
+      ...completedChallenge,
+      completedDate: oldChallenge.completedDate,
+      lastUpdated: completedChallenge.completedDate
+    };
+
+    updateData.$push = {
       timestamp: Date.now(),
       completedChallenge: challengeId
-    });
-    user.completedChallenges.push(completedChallenge);
-    return user;
+    };
+  } else {
+    finalChallenge = completedChallenge;
   }
 
-  const oldCompletedChallenge = completedChallenges[indexOfChallenge];
-  user.completedChallenges[indexOfChallenge] =
-    Object.assign(
-      {},
-      completedChallenge,
-      {
-        completedDate: oldCompletedChallenge.completedDate,
-        lastUpdated: completedChallenge.completedDate
-      }
-    );
+  updateData.$set = {
+    [`challengeMap.${challengeId}`]: finalChallenge
+  };
 
-  return { user, alreadyCompleted };
+  if (
+    timezone !== 'UTC' &&
+    (!userTimezone || userTimezone === 'UTC')
+  ) {
+    updateData.$set = {
+      ...updateData.$set,
+      timezone: userTimezone
+    };
+  }
+
+  log('user update data', updateData);
+
+  return { alreadyCompleted, updateData };
 }
 
 
@@ -117,7 +133,7 @@ function getRenderData$(user, challenge$, origChallengeName, solution) {
     .replace(challengesRegex, '');
 
   const testChallengeName = new RegExp(challengeName, 'i');
-  debug('looking for %s', testChallengeName);
+  log('looking for %s', testChallengeName);
 
   return challenge$
     .map(challenge => challenge.toJSON())
@@ -136,7 +152,7 @@ function getRenderData$(user, challenge$, origChallengeName, solution) {
 
       // Handle not found
       if (!challenge) {
-        debug('did not find challenge for ' + origChallengeName);
+        log('did not find challenge for ' + origChallengeName);
         return Observable.just({
           type: 'redirect',
           redirectUrl: '/map',
@@ -187,25 +203,21 @@ function getRenderData$(user, challenge$, origChallengeName, solution) {
     });
 }
 
-function getCompletedChallengeIds(user = {}) {
-  // if user
-  // get the id's of all the users completed challenges
-  return !user.completedChallenges ?
-    [] :
-    _.uniq(user.completedChallenges)
-      .map(({ id, _id }) => id || _id);
-}
-
 // create a stream of an array of all the challenge blocks
-function getSuperBlocks$(challenge$, completedChallenges) {
+function getSuperBlocks$(challenge$, challengeMap) {
   return challenge$
     // mark challenge completed
     .map(challengeModel => {
       const challenge = challengeModel.toJSON();
-      if (completedChallenges.indexOf(challenge.id) !== -1) {
-        challenge.completed = true;
-      }
+      challenge.completed = !!challengeMap[challenge.id];
       challenge.markNew = shouldShowNew(challenge);
+
+      if (challenge.type === 'hike') {
+        challenge.url = '/videos/' + challenge.dashedName;
+      } else {
+        challenge.url = '/challenges/' + challenge.dashedName;
+      }
+
       return challenge;
     })
     // group challenges by block | returns a stream of observables
@@ -222,15 +234,6 @@ function getSuperBlocks$(challenge$, completedChallenges) {
       const isBeta = _.every(blockArray, 'isBeta');
       const isComingSoon = _.every(blockArray, 'isComingSoon');
       const isRequired = _.every(blockArray, 'isRequired');
-
-      blockArray = blockArray.map(challenge => {
-        if (challenge.challengeType == 6 && challenge.type === 'hike') {
-          challenge.url = '/videos/' + challenge.dashedName;
-        } else {
-          challenge.url = '/challenges/' + challenge.dashedName;
-        }
-        return challenge;
-      });
 
       return {
         isBeta,
@@ -428,7 +431,7 @@ module.exports = function(app) {
     getChallengeById$(challenge$, challengeId)
       .doOnNext(({ dashedName })=> {
         if (!dashedName) {
-          debug('no challenge found for %s', challengeId);
+          log('no challenge found for %s', challengeId);
           req.flash('info', {
             msg: `We coudn't find a challenge with the id ${challengeId}`
           });
@@ -473,7 +476,7 @@ module.exports = function(app) {
         return getNextChallenge$(challenge$, blocks$, challengeId)
           .doOnNext(({ dashedName } = {}) => {
             if (!dashedName) {
-              debug('no challenge found for %s', challengeId);
+              log('no challenge found for %s', challengeId);
               res.redirect('/map');
             }
             res.redirect('/challenges/' + dashedName);
@@ -495,7 +498,7 @@ module.exports = function(app) {
             });
           }
           if (type === 'redirect') {
-            debug('redirecting to %s', redirectUrl);
+            log('redirecting to %s', redirectUrl);
             return res.redirect(redirectUrl);
           }
           var view = challengeView[data.challengeType];
@@ -521,7 +524,7 @@ module.exports = function(app) {
       timezone
     } = req.body;
 
-    const { alreadyCompleted } = updateUserProgress(
+    const { alreadyCompleted, updateData } = buildUserUpdate(
       req.user,
       id,
       {
@@ -529,20 +532,16 @@ module.exports = function(app) {
         challengeType,
         solution,
         name,
-        completedDate,
-        verified: true
-      }
+        completedDate
+      },
+      timezone
     );
 
-    if (timezone && (!req.user.timezone || req.user.timezone !== timezone)) {
-      req.user.timezone = timezone;
-    }
-
-    let user = req.user;
-    saveUser(req.user)
+    const user = req.user;
+    return user.updateTo$(updateData)
+      .doOnNext(count => log('%s documents updated', count))
       .subscribe(
-        function(user) {
-          user = user;
+        function() {
         },
         next,
         function() {
@@ -558,7 +557,7 @@ module.exports = function(app) {
   }
 
   function completedZiplineOrBasejump(req, res, next) {
-    const { body = {} } = req;
+    const { user, body = {} } = req;
 
     let completedChallenge;
     // backwards compatibility
@@ -606,16 +605,19 @@ module.exports = function(app) {
     }
 
 
-    updateUserProgress(req.user, completedChallenge.id, completedChallenge);
+    const {
+      updateData
+    } = buildUserUpdate(req.user, completedChallenge.id, completedChallenge);
 
-    return saveUser(req.user)
+    return user.updateTo$(updateData)
       .doOnNext(() => res.status(200).send(true))
       .subscribe(() => {}, next);
   }
 
-  function showMap(showAside, { user }, res, next) {
+  function showMap(showAside, { user = {} }, res, next) {
+    const { challengeMap = {} } = user;
 
-    getSuperBlocks$(challenge$, getCompletedChallengeIds(user))
+    return getSuperBlocks$(challenge$, challengeMap)
       .subscribe(
         superBlocks => {
           res.render('map/show', {
