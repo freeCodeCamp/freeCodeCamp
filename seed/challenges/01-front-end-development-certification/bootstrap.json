@@ -950,7 +950,7 @@
       "id": "bad87fee1348bd9aede08845",
       "title": "Create a Custom Heading",
       "description": [
-        "We will make a simple heading for our Cat Photo App by putting them in the same row.",
+        "We will make a simple heading for our Cat Photo App by putting the title and relaxing cat image in the same row.",
         "Remember, Bootstrap uses a responsive grid system, which makes it easy to put elements into rows and specify each element's relative width. Most of Bootstrap's classes can be applied to a <code>div</code> element.",
         "Here's a diagram of how Bootstrap's 12-column grid layout works:",
         "<a href=\"http://i.imgur.com/FaYuui8.png\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" src=\"http://i.imgur.com/FaYuui8.png\" title=\"Click to enlarge\" alt=\"an image illustrating Bootstrap's grid system\"></a>",
