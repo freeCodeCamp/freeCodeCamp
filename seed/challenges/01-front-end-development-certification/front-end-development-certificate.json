@@ -1,34 +1,35 @@
 {
-  "name": "Claim Your Front End Development Certificate",
+  "name": "Pegue o seu Certificado Front End",
   "order": 13,
   "time": "5 minutes",
   "challenges": [
     {
       "id": "561add10cb82ac38a17513be",
-      "title": "Claim Your Front End Development Certificate",
+      "title": "Pegue o seu Certificado Front End",
       "description": [
         [
           "http://i.imgur.com/k8btNUB.jpg",
-          "An image of our Front End Development Certificate",
-          "This challenge will give you your verified Front End Development Certificate. Before we issue your certificate, we must verify that you have completed all of our basic and intermediate algorithm scripting challenges, and all our basic and intermediate front end development projects. You must also accept our Academic Honesty Pledge. Click the button below to start this process.",
+          "Uma foto do nosso certificado Front End",
+          "Esse desafío irá lhe dar esse certificado Front End Development. Antes de emitir o seu certificado, é preciso verificar se você completou todos os nosso desafios básicos e intermediários de desenvolvimento front-end. Você também deve aceitar nossa Academic Honesty Pledge. Clique no butão abaixo para iniciar este proceso.",
           ""
         ],
         [
           "http://i.imgur.com/HArFfMN.jpg",
-          "The definition of plagiarism: Plagiarism (noun) - copying someone else’s work and presenting it as your own without crediting them",
-          "By clicking below, you pledge that all of your submitted code A) is code you or your pair personally wrote, or B) comes from open source libraries like jQuery, or C) has been clearly attributed to its original authors. You also give us permission to audit your challenge solutions and revoke your certificate if we discover evidence of plagiarism.",
+          "A denifição de Plágio: Plágio (substantivo) - copiar o trabalho de outra pessoa e apresentá-lo como seu sem creditá-lo",
+          "Clicando abaixo, você promete que todo o seu código apresentado A) é o código que você ou seu par escreveu pessoalmente, ou B) veio de uma biblioteca open source como jQuery, ou C) tem sido claramente atribuídas aos seus autores originais. Você também nos permite auditar e revogar o seu certificado caso indetifiquemos evidencias de plágio.",
+		  
           "#"
         ],
         [
           "http://i.imgur.com/14F2Van.jpg",
-          "An image of the text \"Front End Development Certificate requirements\"",
-          "Let's confirm that you have completed all of our basic and intermediate algorithm scripting challenges, and all our basic and intermediate front end development projects. Click the button below to verify this.",
+          "Uma imagem do texo\" Requisitos do certificado Front-end\"",
+          "Vamos confirmar que você concluiu todos os desafios básicos e intermediários do algoritmo, e todos os desafios básicos e intermediários dos projetos front-end. Clique no botão abaixo para verificar.",
           "#"
         ],
         [
           "http://i.imgur.com/16SIhHO.jpg",
-          "An image of the word \"Congratulations\"",
-          "Congratulations! We've added your Front End Development Certificate to your portfolio page. Unless you choose to hide your solutions, this certificate will remain publicly visible and verifiable.",
+          "Uma imagem da palavra\"Parabéns\"",
+          "Parabéns! Nos  Nós adicionamos o seu certificado de desenvolvimento Front-end ao seu portafolio. A menos que você opte por esconder suas soluções, esse certificado permanecerá visivelmente publicaddo e verificável.",
           ""
         ]
       ],
@@ -51,39 +52,39 @@
       "tests": [
         {
           "id": "a202eed8fc186c8434cb6d61",
-          "title": "Reverse a String"
+          "title": "Reverter uma String"
         },
         {
           "id": "a302f7aae1aa3152a5b413bc",
-          "title": "Factorialize a Number"
+          "title": "Fatorize um Número"
         },
         {
           "id": "aaa48de84e1ecc7c742e1124",
-          "title": "Check for Palindromes"
+          "title": "Verifique se há Palindromes"
         },
         {
           "id": "a26cbbe9ad8655a977e1ceb5",
-          "title": "Find the Longest Word in a String"
+          "title": "Ache a palavra mais longa em uma String"
         },
         {
           "id": "ab6137d4e35944e21037b769",
-          "title": "Title Case a Sentence"
+          "title": "Deixe o título de uma frase em maiúsculas"
         },
         {
           "id": "a789b3483989747d63b0e427",
-          "title": "Return Largest Numbers in Arrays"
+          "title": "Retorne os maiores números em uma Arrays"
         },
         {
           "id": "acda2fb1324d9b0fa741e6b5",
-          "title": "Confirm the Ending"
+          "title": "Confirme o Final"
         },
         {
           "id": "afcc8d540bea9ea2669306b6",
-          "title": "Repeat a string repeat a string"
+          "title": "Repita uma string repita uma string"
         },
         {
           "id": "ac6993d51946422351508a41",
-          "title": "Truncate a string"
+          "title": "Trunque uma String"
         },
         {
           "id": "a9bd25c716030ec90084d8a1",
@@ -95,23 +96,23 @@
         },
         {
           "id": "af2170cad53daa0770fabdea",
-          "title": "Mutations"
+          "title": "Mutações"
         },
         {
           "id": "adf08ec01beb4f99fc7a68f2",
-          "title": "Falsy Bouncer"
+          "title": "Falsas Bouncer"
         },
         {
           "id": "a39963a4c10bc8b4d4f06d7e",
-          "title": "Seek and Destroy"
+          "title": "Procurar e Destroir"
         },
         {
           "id": "a24c1a4622e3c05097f71d67",
-          "title": "Where do I belong"
+          "title": "Onde eu Pertenço"
         },
         {
           "id": "a3566b1109230028080c9345",
-          "title": "Sum All Numbers in a Range"
+          "title": "Some todos os números em uma intervalo"
         },
         {
           "id": "a5de63ebea8dbee56860f4f2",
@@ -119,27 +120,27 @@
         },
         {
           "id": "a7f4d8f2483413a6ce226cac",
-          "title": "Roman Numeral Converter"
+          "title": "Converta os Números Romanos"
         },
         {
           "id": "a8e512fbe388ac2f9198f0fa",
-          "title": "Where art thou"
+          "title": "Onde estás"
         },
         {
           "id": "a0b5010f579e69b815e7c5d6",
-          "title": "Search and Replace"
+          "title": "Procure e Substitua"
         },
         {
           "id": "aa7697ea2477d1316795783b",
-          "title": "Pig Latin"
+          "title": "Porquinho Latino"
         },
         {
           "id": "afd15382cdfb22c9efe8b7de",
-          "title": "DNA Pairing"
+          "title": "Emparelhe o DNA"
         },
         {
           "id": "af7588ade1100bde429baf20",
-          "title": "Missing letters"
+          "title": "Letras Perdidas"
         },
         {
           "id": "a77dbc43c33f39daa4429b4f",
@@ -147,35 +148,35 @@
         },
         {
           "id": "a105e963526e7de52b219be9",
-          "title": "Sorted Union"
+          "title": "União ordenada"
         },
         {
           "id": "a6b0bb188d873cb2c8729495",
-          "title": "Convert HTML Entities"
+          "title": "Converta Entidades HTML"
         },
         {
           "id": "a103376db3ba46b2d50db289",
-          "title": "Spinal Tap Case"
+          "title": "Caso Spinal Tap"
         },
         {
           "id": "a5229172f011153519423690",
-          "title": "Sum All Odd Fibonacci Numbers"
+          "title": "Some todos números ímpares de Fibonacci"
         },
         {
           "id": "a3bfc1673c0526e06d3ac698",
-          "title": "Sum All Primes"
+          "title": "Some Todos os Primos"
         },
         {
           "id": "ae9defd7acaf69703ab432ea",
-          "title": "Smallest Common Multiple"
+          "title": "Menor Múltiplo Comum"
         },
         {
           "id": "a6e40f1041b06c996f7b2406",
-          "title": "Finders Keepers"
+          "title": "Achado Não É Roubado"
         },
         {
           "id": "a5deed1811a43193f9f1c841",
-          "title": "Drop it"
+          "title": "Largue"
         },
         {
           "id": "ab306dbdcc907c7ddfc30830",
@@ -183,59 +184,59 @@
         },
         {
           "id": "a8d97bd4c764e91f9d2bda01",
-          "title": "Binary Agents"
+          "title": "Agentes Binários"
         },
         {
           "id": "a10d2431ad0c6a099a4b8b52",
-          "title": "Everything Be True"
+          "title": "Tudo Vai Ficar Bem"
         },
         {
           "id": "a97fd23d9b809dac9921074f",
-          "title": "Arguments Optional"
+          "title": "Argumentos Opcionais"
         },
         {
           "id": "bd7158d8c442eddfbeb5bd1f",
-          "title": "Get Set for Ziplines"
+          "title": "Prepare-se para Ziplines"
         },
         {
           "id": "bd7158d8c242eddfaeb5bd13",
-          "title": "Build a Personal Portfolio Webpage"
+          "title": "Construa uma página web de portfolio"
         },
         {
           "id": "bd7158d8c442eddfaeb5bd13",
-          "title": "Build a Random Quote Machine"
+          "title": "Construa uma máquina de frases aleatórias"
         },
         {
           "id": "bd7158d8c442eddfaeb5bd0f",
-          "title": "Build a Pomodoro Clock"
+          "title": "Construa um relógio de Pomodoro"
         },
         {
           "id": "bd7158d8c442eddfaeb5bd17",
-          "title": "Build a JavaScript Calculator"
+          "title": "Construa uma calculadora JavaScript"
         },
         {
           "id": "bd7158d8c442eddfaeb5bd10",
-          "title": "Show the Local Weather"
+          "title": "Mostre o clima local"
         },
         {
           "id": "bd7158d8c442eddfaeb5bd1f",
-          "title": "Use the Twitch.tv JSON API"
+          "title": "Use a Twitch.tv JSON API"
         },
         {
           "id": "bd7158d8c442eddfaeb5bd18",
-          "title": "Stylize Stories on Camper News"
+          "title": "Faça os estilos das Histórias sobre o Camper News"
         },
         {
           "id": "bd7158d8c442eddfaeb5bd19",
-          "title": "Build a Wikipedia Viewer"
+          "title": "Construa um visualizador do Wikipedia"
         },
         {
           "id": "bd7158d8c442eedfaeb5bd1c",
-          "title": "Build a Tic Tac Toe Game"
+          "title": "Construa um jogo do Tic Tac Toe "
         },
         {
           "id": "bd7158d8c442eddfaeb5bd1c",
-          "title": "Build a Simon Game"
+          "title": "Construa um Simon Game"
         }
       ],
       "type": "Waypoint",
