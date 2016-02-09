@@ -1,46 +1,54 @@
+import _ from 'lodash';
 import moment from 'moment-timezone';
 import { dayCount } from '../utils/date-utils';
 
 const daysBetween = 1.5;
 
-export function calcCurrentStreak(cals, timezone = 'UTC') {
-  const revCals = cals.slice().reverse();
+export function prepUniqueDays(cals, tz = 'UTC') {
 
-  if (dayCount([moment().tz(timezone), revCals[0]], timezone) > daysBetween) {
-    return 0;
-  }
-
-  let streakBroken = false;
-  const lastDayInStreak = revCals
-    .reduce((current, cal, index) => {
-      const before = revCals[index === 0 ? 0 : index - 1];
-      if (
-        !streakBroken &&
-        moment(before).tz(timezone).diff(cal, 'days', true) < daysBetween
-        ) {
-        return index;
-      }
-      streakBroken = true;
-      return current;
-    }, 0);
-
-  const lastTimestamp = revCals[lastDayInStreak];
-  return dayCount([moment().tz(timezone), lastTimestamp], timezone);
+  return _(cals)
+    .map(ts => moment(ts).tz(tz).startOf('day').valueOf())
+    .uniq()
+    .sort()
+    .value();
 }
 
-export function calcLongestStreak(cals, timezone = 'UTC') {
+export function calcCurrentStreak(cals, tz = 'UTC') {
+
+  let prev = _.last(cals);
+  if (moment().tz(tz).startOf('day').diff(prev, 'days') > daysBetween) {
+    return 0;
+  }
+  let currentStreak = 0;
+  let streakContinues = true;
+  _.forEachRight(cals, cur => {
+    if (moment(prev).diff(cur, 'days') < daysBetween) {
+      prev = cur;
+      currentStreak++;
+    } else {
+      // current streak found
+      streakContinues = false;
+    }
+    return streakContinues;
+  });
+
+  return currentStreak;
+}
+
+export function calcLongestStreak(cals, tz = 'UTC') {
+
   let tail = cals[0];
   const longest = cals.reduce((longest, head, index) => {
     const last = cals[index === 0 ? 0 : index - 1];
     // is streak broken
-    if (moment(head).tz(timezone).diff(last, 'days', true) > daysBetween) {
+    if (moment(head).tz(tz).diff(moment(last).tz(tz), 'days') > daysBetween) {
       tail = head;
     }
-    if (dayCount(longest, timezone) < dayCount([head, tail], timezone)) {
+    if (dayCount(longest, tz) < dayCount([head, tail], tz)) {
       return [head, tail];
     }
     return longest;
   }, [cals[0], cals[0]]);
 
-  return dayCount(longest, timezone);
+  return dayCount(longest, tz);
 }
