@@ -14,7 +14,11 @@ import certTypes from '../utils/certTypes.json';
 
 import { ifNoUser401, ifNoUserRedirectTo } from '../utils/middleware';
 import { observeQuery } from '../utils/rx';
-import { calcCurrentStreak, calcLongestStreak } from '../utils/user-stats';
+import {
+  prepUniqueDays,
+  calcCurrentStreak,
+  calcLongestStreak
+} from '../utils/user-stats';
 
 const debug = debugFactory('freecc:boot:user');
 const sendNonUserToMap = ifNoUserRedirectTo('/map');
@@ -192,17 +196,18 @@ module.exports = function(app) {
         const timezone = req.user &&
           req.user.timezone ? req.user.timezone : 'UTC';
 
-        var cals = profileUser
+        const timestamps = profileUser
           .progressTimestamps
           .map(objOrNum => {
             return typeof objOrNum === 'number' ?
               objOrNum :
               objOrNum.timestamp;
-          })
-          .sort();
+          });
 
-        profileUser.currentStreak = calcCurrentStreak(cals, timezone);
-        profileUser.longestStreak = calcLongestStreak(cals, timezone);
+        const uniqueDays = prepUniqueDays(timestamps, timezone);
+
+        profileUser.currentStreak = calcCurrentStreak(uniqueDays, timezone);
+        profileUser.longestStreak = calcLongestStreak(uniqueDays, timezone);
 
         const data = profileUser
           .progressTimestamps

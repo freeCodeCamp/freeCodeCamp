@@ -148,6 +148,7 @@
     "loopback-component-explorer": "^2.1.1",
     "loopback-testing": "^1.1.0",
     "mocha": "^2.3.3",
+    "sinon": "^1.17.3",
     "tap-spec": "^4.1.1",
     "tape": "^4.2.2"
   }
