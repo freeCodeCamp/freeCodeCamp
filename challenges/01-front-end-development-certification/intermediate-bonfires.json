@@ -48,7 +48,7 @@
       "id": "a5de63ebea8dbee56860f4f2",
       "title": "Diff Two Arrays",
       "description": [
-        "Compare two arrays and return a new array with any items only found in one of the original arrays.",
+        "Compare two arrays and return a new array with any items only found in one of the two given arrays, but not both. In other words, return the symmetric difference of the two arrays.",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "challengeSeed": [
