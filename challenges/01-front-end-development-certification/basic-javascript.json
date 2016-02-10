@@ -1462,7 +1462,7 @@
       ]
     },
     {
-      "id": "bg9997c9c79feddfaeb9bdef",
+      "id": "56bbb991ad1ed5201cd392ca",
       "title": "Access Array Data with Indexes",
       "description": [
         "We can access the data inside arrays using <code>indexes</code>.",
@@ -1581,7 +1581,7 @@
       "challengeType": 1
     },
     {
-      "id": "bg9995c9c69feddfaeb9bdef",
+      "id": "56bbb991ad1ed5201cd392cb",
       "title": "Manipulate Arrays With push()",
       "description": [
         "An easy way to append data to the end of an array is via the <code>push()</code> function.",
@@ -1621,7 +1621,7 @@
       ]
     },
     {
-      "id": "bg9994c9c69feddfaeb9bdef",
+      "id": "56bbb991ad1ed5201cd392cc",
       "title": "Manipulate Arrays With pop()",
       "description": [
         "Another way to change the data in an array is with the <code>.pop()</code> function.",
@@ -1666,7 +1666,7 @@
       ]
     },
     {
-      "id": "bg9996c9c69feddfaeb9bdef",
+      "id": "56bbb991ad1ed5201cd392cd",
       "title": "Manipulate Arrays With shift()",
       "description": [
         "<code>pop()</code> always removes the last element of an array. What if you want to remove the first?",
@@ -1708,7 +1708,7 @@
       ]
     },
     {
-      "id": "bg9997c9c69feddfaeb9bdef",
+      "id": "56bbb991ad1ed5201cd392ce",
       "title": "Manipulate Arrays With unshift()",
       "description": [
         "Not only can you <code>shift</code> elements off of the beginning of an array, you can also <code>unshift</code> elements to the beginning of an array i.e. add elements in front of the array.",
@@ -1805,7 +1805,7 @@
       "challengeType": 1
     },
     {
-      "id": "bg9997c9c89feddfaeb9bdef",
+      "id": "56bbb991ad1ed5201cd392cf",
       "title": "Write Reusable JavaScript with Functions",
       "description": [
         "In JavaScript, we can divide up our code into reusable parts called <dfn>functions</dfn>.",
@@ -3314,7 +3314,7 @@
       "challengeType": 1
     },
     {
-      "id": "bg9998c9c99feddfaeb9bdef",
+      "id": "56bbb991ad1ed5201cd392d0",
       "title": "Build JavaScript Objects",
       "description": [
         "You may have heard the term <code>object</code> before.",
@@ -3500,7 +3500,7 @@
       "challengeType": 1
     },
     {
-      "id": "bg9999c9c99feddfaeb9bdef",
+      "id": "56bbb991ad1ed5201cd392d1",
       "title": "Updating Object Properties",
       "description": [
         "After you've created a JavaScript object, you can update its properties at any time just like you would update any other variable. You can use either dot or bracket notation to update.",
@@ -3565,7 +3565,7 @@
       ]
     },
     {
-      "id": "bg9999c9c99feedfaeb9bdef",
+      "id": "56bbb991ad1ed5201cd392d2",
       "title": "Add New Properties to a JavaScript Object",
       "description": [
         "You can add new properties to existing JavaScript objects the same way you would modify them.",
@@ -3621,7 +3621,7 @@
       ]
     },
     {
-      "id": "bg9999c9c99fdddfaeb9bdef",
+      "id": "56bbb991ad1ed5201cd392d3",
       "title": "Delete Properties from a JavaScript Object",
       "description": [
         "We can also delete properties from objects like this:",
