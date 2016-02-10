@@ -65,7 +65,9 @@ export default function csp() {
         '*.vimeo.com',
         '*.twitter.com',
         '*.ghbtns.com',
-        '*.freecatphotoapp.com'
+        '*.freecatphotoapp.com',
+        'freecodecamp.github.io',
+        'localhost:8000'        
       ].concat(trusted)
     },
     // set to true if you only want to report errors

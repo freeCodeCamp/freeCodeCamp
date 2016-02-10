@@ -2,6 +2,16 @@
  * based off of https://github.com/gitterHQ/sidecar
  * license: MIT
  */
+ 
+#wikiFrame {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    position: absolute;
+    overflow: hidden;
+}
+
 .wiki-aside {
     width:500px;
 
@@ -47,6 +57,18 @@
       overflow: scroll;
       -webkit-overflow-scrolling: touch;
     }
+}
+
+.wiki-aside .wiki-header {
+  display: none;
+}
+
+.wiki-aside .wiki-container {
+  padding-top: 10px;
+}
+
+.wiki-aside .wikiSelector {
+  top: 50px;
 }
 
 .wiki-aside-action-bar {
@@ -107,7 +129,7 @@
     border-color: darkgreen;
 }
 
-
+wiki
 
 .wiki-aside-action-item {
     display: flex;
