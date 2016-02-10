@@ -40,7 +40,7 @@ function isChallengeCompleted(user, challengeId) {
   if (!user) {
     return false;
   }
-  return user.challengeMap[challengeId];
+  return !!user.challengeMap[challengeId];
 }
 
 /*
