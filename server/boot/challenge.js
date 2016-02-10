@@ -84,6 +84,7 @@ function buildUserUpdate(
   };
 
   if (
+    timezone &&
     timezone !== 'UTC' &&
     (!userTimezone || userTimezone === 'UTC')
   ) {
@@ -538,16 +539,18 @@ module.exports = function(app) {
     );
 
     const user = req.user;
-    return user.updateTo$(updateData)
-      .doOnNext(count => log('%s documents updated', count))
+    const points = alreadyCompleted ?
+      user.progressTimestamps.length :
+      user.progressTimestamps.length + 1;
+    return user.update$(updateData)
+      .doOnNext(({ count }) => log('%s documents updated', count))
       .subscribe(
-        function() {
-        },
+        () => {},
         next,
         function() {
           if (type === 'json') {
             return res.json({
-              points: user.progressTimestamps.length,
+              points,
               alreadyCompleted
             });
           }

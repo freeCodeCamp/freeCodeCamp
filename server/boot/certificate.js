@@ -84,7 +84,7 @@ export default function certificate(app) {
 
   function verifyCert(certType, req, res, next) {
     const { user } = req;
-    return certTypeIds[certType]()
+    return certTypeIds[certType]
       .flatMap(challenge => {
         const {
           id,
@@ -108,7 +108,7 @@ export default function certificate(app) {
             }
           };
 
-          return req.user.udate$(updateData)
+          return req.user.update$(updateData)
             // If user has commited to nonprofit,
             // this will complete his pledge
             .flatMap(

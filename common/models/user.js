@@ -430,11 +430,13 @@ module.exports = function(User) {
     if (
         !updateData ||
         typeof updateData !== 'object' ||
-        Object.keys(updateData).length > 0
+        !Object.keys(updateData).length
     ) {
       return Observable.throw(new Error(
-        `updateData must be an object with at least on key,
-        but got ${updateData}`.split('\n').join(' ')
+        dedent`
+          updateData must be an object with at least one key,
+          but got ${updateData} with ${Object.keys(updateData).length}
+        `.split('\n').join(' ')
       ));
     }
     return this.constructor.update$({ id }, updateData, updateOptions);
