@@ -148,7 +148,7 @@ export default contain(
           xs={ 8 }
           xsOffset={ 2 }>
           <Row>
-            <Motion style={{ x: spring(x, [120, 10]) }}>
+            <Motion style={{ x: spring(x, { stiffness: 120, damping: 10 }) }}>
               { questionElement }
             </Motion>
             <div className='spacer' />
