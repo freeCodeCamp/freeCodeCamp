@@ -964,7 +964,18 @@
         "assert(myStr === \"I am a \\\"double quoted\\\" string inside \\\"double quotes\\\"\", 'message: Variable myStr should equal to (<code>\"I am a \"double quoted\" string inside \"double quotes\"\"</code>).');"
       ],
       "type": "waypoint",
-      "challengeType": 1
+      "challengeType": 1,
+      "nameEs": "Escapando Citas Literales en Cadenas",
+      "descriptionEs": [
+        "Cuando estas definiendo una cadena debes iniciar y terminar con comillas simples o dobles. ¿Qué pasa cuando necesitas una cita literal: <code>\"</code> o <code>'</code> dentro de tu cadena?",
+        "En JavaScript, tu puedes <dfn>escapar</dfn> una cita de considerarlo como un fin de la cita de cadena colocando una <dfn>barra invertida</dfn> (<code>\\</code>) antes de la cita.",
+        "<code>var cadenaEjem = \"Alan dijo, \\\"Pedro esta aprendiendo JavaScript\\\".\";</code>",
+        "Esto le indiga a JavaScript que la cita siguiente no es el fin de la cadena, sino que debe aparecer dentro de la cadena. Así que si fueras a imprimir esto en la consola, tu obtendrías:",
+        "<code>Alan dijo, \"Pedro esta aprendiendo JavaScript\".<code>",
+        "<h4>Instructiones</h4>",
+        "Usa <dfn>barras invertidas</dfn>para asigar una cadena a la variable <code>myStr</code> de modo que <em>si</em> tu fueras a imprimirla en la consola, tu verías:",
+        "<code>I am a \"double quoted\" string inside \"double quotes\"</code>"
+      ]    
     },
     {
       "id": "56533eb9ac21ba0edf2244b4",
@@ -995,7 +1006,16 @@
         "assert(myStr === '<a href=\"http://www.example.com\" target=\"_blank\">Link</a>', 'message: Only remove the backslashes <code>\\</code> used to escape quotes.');"
       ],
       "type": "waypoint",
-      "challengeType": 1
+      "challengeType": 1,
+      "nameEs": "Citando Cadenas con Comillas Simples",
+      "descriptionEs": [
+        "Los valores de <dfn>Cadenas</dfn> en JavaScript pueden ser escritos con comillas simples o dobles, siempre y cuando inicie y termine con el mismo tipo de cita. A diferencia de algunos lenguajes, comillas simples y dobles son funcionalmente identicas en Javascript.",
+        "<code>\"Esta cadena tiene \\\"comillas dobles\\\" en esta\"</code>",
+        "El valor de usar una o la otra tiene que ver con la necesidad de <code>escapar</code> citas del mismo tipo. Si tu tienes una cadena con algunas citas dobles, esta puede ser difícil de leer y escribir. En su lugar, usar comillas simples:",
+        "<code>'Esta cadena tiene \"comillas dobles\" en esta. Y \"probablemente\" muchas de ellas.'</code>",
+        "<h4>Instrucciones</h4>",
+        "Cambia la cadena dada de comillas dobles a simples y quita el escape."
+      ]
     },
     {
       "id": "56533eb9ac21ba0edf2244b6",
@@ -1026,7 +1046,15 @@
         "assert(myStr === \"\\\\ \\t \\t \\r \\n\", 'message: <code>myStr</code> should have the escape sequences for <code>backslash tab tab carriage-return new-line</code> separated by spaces');"
       ],
       "type": "waypoint",
-      "challengeType": 1
+      "challengeType": 1,
+      "nameEs": "Secuencias de Escape en Cadenas",
+      "descriptionEs": [
+        "Las comillas no son el único caracter que puede ser <dfn>escapado</dfn> dentro de una cadena. Aquí ahí una tabla de comunes secuencias de escape:",
+        "<table class=\"table table-striped\"><thead><tr><th>Código</th><th>Salida</th></tr></thead><tbody><tr><td>\\'</td><td>comilla simple</td></tr><tr><td>\\\"</td><td>comilla doble</td></tr><tr><td>\\\\</td><td>barra invertida</td></tr><tr><td>\\n</td><td>nueva línea</td></tr><tr><td>\\r</td><td>retorno de carro</td></tr><tr><td>\\t</td><td>tabulación</td></tr><tr><td>\\b</td><td>retroceso</td></tr><tr><td>\\f</td><td>salto de página</td></tr></tbody></table>",
+        "<em>Nota que la barra invertida por si misma tiene que ser escapada con el fin de mostrarse como una barra invertida.</em>",
+        "<h4>Instrucciones</h4>",
+        "Codifica la siguiente secuencia, separada por espacios:<br><code>barra invertida tabulación tabulación retorno de carro nueva línea</code> y asignala a <code>myStr</code>"
+      ]
     },
     {
       "id": "56533eb9ac21ba0edf2244b7",
@@ -1069,7 +1097,16 @@
         "assert(/myStr\\s*=/.test(code), 'message: Make sure to assign the result to the <code>myStr</code> variable.');"
       ],
       "type": "waypoint",
-      "challengeType": 1
+      "challengeType": 1,
+      "nameEs": "Concatenando Cadenas con el Operador Más",
+      "descriptionEs": [
+        "En JavaScript, cuando el operador <code>+</code> es usado con un valor de <code>Cadena</code>, este es llamado el operador <dfn>concatenación</dfn>. Tu puedes construir una nueva cadena de otras cadenas <dfn>concatenandolas</dfn> juntas.",
+        "<strong>Ejemplo</strong>",
+        "<blockquote>'Mi nombre es Alan,' + ' Yo concateno.'<blockquote>",
+        "<strong>Nota</strong><br>Cuidado con los espacios. La concatenación no agrega espacios entre cadenas concatenadas, así que necesitarás agregarlos tu mismo.",
+        "<h4>Instrucciones</h4>",
+        "Construye <code>myStr</code> con las cadenas <code>\"This is the start. \"</code> y <code>\"This is the end.\"</code> usando el operador<code>+</code>."
+      ]
     },
     {
       "id": "56533eb9ac21ba0edf2244b8",
@@ -1109,7 +1146,14 @@
         "assert(code.match(/\\w\\s*\\+=\\s*[\"']/g).length > 1 && code.match(/\\w\\s*\\=\\s*[\"']/g).length > 1, 'message: Use the <code>+=</code> operator to build <code>myStr</code>');"
       ],
       "type": "waypoint",
-      "challengeType": 1
+      "challengeType": 1,
+      "nameEs": "Concatenando Cadenas con el Operador Mas Igual",
+      "descriptionEs": [
+        "Nosotros también podemos usar el operador <code>+=</code> para <dfn>concatenar</dfn> una cadena en el extremo de una variable de cadena existente. Esto puede ser muy útil para romper una cadena larga sobre varias líneas.",
+        "<strong>Nota</strong><br>Cuidado con los espacios. La concatenación no agrega espacios entre cadenas concatenadas, así que necesitarás añadirlos tu mismo.",
+        "<h4>Instrucciones</h4>",
+        "Construye <code>myStr</code> sobre varias líneas concatenando estas dos cadenas:<br><code>\"This is the first sentence. \"</code> y <code>\"This is the second sentence.\"</code> usando el operador <code>+=</code>."
+      ]
     },
     {
       "id": "56533eb9ac21ba0edf2244b9",
@@ -1155,7 +1199,13 @@
         "assert(code.match(/[\"']\\s*\\+\\s*myName\\s*\\+\\s*[\"']/g).length > 0, 'message: Use two <code>+</code> operators to build <code>myStr</code> with <code>myName</code> inside it');"
       ],
       "type": "waypoint",
-      "challengeType": 1
+      "challengeType": 1,
+      "nameEs": "Construyendo Cadenas con Variables",
+      "descriptionEs": [
+        "A veces necesitarás construir una cadena, al estilo <a href=\"https://en.wikipedia.org/wiki/Mad_Libs\" target=\"_blank\">Mad Libs</a>. Mediante el uso del operador concatenación (<code>+</code>), puedes insertar una o más variables dentro de una cadena que estés construyendo.",
+        "<h4>Instrucciones</h4>",
+        "Asigna <code>myName</code> a una cadena igual a tu nombre y construye <code>myStr</code> con <code>myName</code> entre las cadenas <code>\"My name is \"</code> and <code>\" and I am swell!\"</code>"
+      ]
     },
     {
       "id": "56533eb9ac21ba0edf2244ed",
@@ -1202,7 +1252,13 @@
         "assert(code.match(/\\w\\s*\\+=\\s*someAdjective\\s*;/).length > 0, 'message: Append <code>someAdjective</code> to <code>myStr</code> using the <code>+=</code> operator');"
       ],
       "type": "waypoint",
-      "challengeType": 1
+      "challengeType": 1,
+      "nameEs": "Anexando Variables a Cadenas",
+      "descriptionEs": [
+        "Al igual que podemos construir una cadena sobre múltipes líneas fuera de las cadenas <dfn>literales</dfn>, nosotros podemos ademas anexar variables a una cadena usando el operador más igual (<code>+=</code>).",
+        "<h4>Instructiones</h4>",
+        "Asigna <code>someAdjective</code> y anexalo a <code>myStr</code> usando el operador <code>+=</code>."
+      ]
     },
     {
       "id": "bd7123c9c448eddfaeb5bdef",
@@ -1331,7 +1387,17 @@
         "assert(/myStr = \"Jello World\"/.test(code), 'message: Do not change the code above the line');"
       ],
       "type": "waypoint",
-      "challengeType": 1
+      "challengeType": 1,
+      "nameEs": "Comprendiendo la Inmutabilidad de Cadenas",
+      "descriptionEs": [
+        "En JavaScript, los valores de las <code>Cadenas</code> son <dfn>inmutables</dfn>, lo cual significa que ellos no pueden ser alterados una vez creados.",
+        "Por ejemplo, el siguiente código:",
+        "<blockquote>var miCad = \"Bob\";<br>myCad[0] = \"J\";</blockquote>",
+        "no puede cambiar el valor de <code>miCad</code> a \"Job\" porque el contenido de <code>miCad</code> no puede ser alterado. Nota que esto <em>no</em> significa que <code>miCad</code> no puede ser cambiado, solo que los valores individuales de una <dfn>cadena literal</dfn> no pueden ser cambiados. La única manera de cambiar <code>miCad</code> sería asignandola a una nueva cadena, como esta:",
+        "<blockquote>var miCad = \"Bob\";<br>miCad = \"Job\";</blockquote>",
+        "<h4>Instrucciones</h4>",
+        "Corrige la asignación de <code>myStr</code> para lograr el efecto deseado."
+      ]
     },
     {
       "id": "bd7123c9c450eddfaeb5bdef",
@@ -1498,7 +1564,13 @@
         "assert(/\\bcat\\b/.test(test2) && /\\blittle\\b/.test(test2) && /\\bhit\\b/.test(test2) && /\\bslowly\\b/.test(test2),'message: <code>wordBlanks(\"cat\", \"little\", \"hit\", \"slowly\")</code> should contain all of the passed words separated by non-word characters (and any additional words in your madlib).');"
       ],
       "type": "checkpoint",
-      "challengeType": 1
+      "challengeType": 1,
+      "nameEs": "Espacios en Blanco de Palabras",
+      "descriptionEs": [
+        "Ahora usaremos nuestro conocimiento de cadenas para construir una \"<a href='https://en.wikipedia.org/wiki/Mad_Libs' target='_blank'>Mad Libs</a>\" estilo juego de palabras que llamaremos \"Espacios en Blanco de Palabras\". Vas a crear unas oraciones estilo (opcionalmente graciosa) \"Llena los espacios en blanco\".",
+        "Además, necesitarás proporcionar cadenas adicionales, las cuales no cambiarán entre las palabras proporcionadas.",
+        "Nosotros hemos proporcionado un marco de referencia para probar tus resultados con diferentes palabras. La prueba correrá tu función con varias palabras diferentes para asegurarse  que todas las palabras proporcionadas aparezcan en la salida, así como en tus cadenas adicionales."
+      ]
     },
     {
       "id": "bd7993c9c69feddfaeb8bdef",
@@ -1689,7 +1761,15 @@
         "assert(/myArray\\[2\\]\\[1\\]/g.test(code), 'message: You should be using bracket notation to read the value from <code>myArray</code>.');"
       ],
       "type": "waypoint",
-      "challengeType": 1
+      "challengeType": 1,
+      "nameEs": "Accediendo a Vectores Multi-Dimensionales con Indices",
+      "descriptionEs": [
+        "Una manera de pensar un vector <dfn>multi-dimensional</dfn>, es como un <em>vector de vectores</em>. Cuando usas brackets para accesar a tu vector, el primer conjunto de brackets se refiere a las entradas en el más exterior vector y cada nivel subsecuente de brackets se refiere al siguiente nivel de entradas dentro.",
+        "<strong>Ejemplo</strong>",
+        "<blockquote>var vec = [<br>    [1,2,3],<br>    [4,5,6],<br>    [7,8,9],<br>    [[10,11,12], 13, 14]<br>];<br>vec[0]; // es igual [1,2,3]<br>vec[1][2]; // es igual 6<br>vec[3][0][1]; // es igual 11</blockquote>",
+        "<h4>Instrucciones</h4>",
+        "Lee de <code>myArray</code> usando la notación bracket de modo que myData sea igual a <code>8</code>"
+      ]
     },
     {
       "id": "bg9995c9c69feddfaeb9bdef",
