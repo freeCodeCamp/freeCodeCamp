@@ -90,7 +90,7 @@
     "lodash": "^4.1.0",
     "loopback": "^2.22.0",
     "loopback-boot": "^2.13.0",
-    "loopback-component-passport": "^1.6.0",
+    "loopback-component-passport": "^2.0.0",
     "loopback-connector-mongodb": "1.13.0",
     "merge-stream": "^1.0.0",
     "method-override": "^2.3.0",
