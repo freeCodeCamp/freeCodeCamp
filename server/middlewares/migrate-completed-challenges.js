@@ -1,4 +1,5 @@
 import { Observable, Scheduler } from 'rx';
+import { ObjectID } from 'mongodb';
 import debug from 'debug';
 
 const log = debug('freecc:migrate');
@@ -62,6 +63,7 @@ function buildChallengeMap(userId, completedChallenges = [], User) {
     null,
     Scheduler.default
   )
+    .filter(({ id, _id }) => ObjectID.isValid(id || _id))
     .map(updateName)
     .reduce((challengeMap, challenge) => {
       const id = challenge.id || challenge._id;
