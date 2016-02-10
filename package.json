@@ -76,7 +76,7 @@
     "gulp-order": "^1.1.1",
     "gulp-plumber": "^1.0.1",
     "gulp-reduce-file": "0.0.1",
-    "gulp-rev": "^6.0.1",
+    "gulp-rev": "^7.0.0",
     "gulp-rev-replace": "~0.4.2",
     "gulp-uglify": "^1.5.1",
     "gulp-util": "^3.0.6",
