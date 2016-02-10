@@ -383,7 +383,7 @@ $(document).ready(function() {
   function showWiki() {
     if (!main.isWikiAsideLoad) {
       var wikiAside = $('<iframe>');
-      wikiAside.attr('src', 'http://beta.freecodecamp.com/wiki');
+      wikiAside.attr('src', 'http://freecodecamp.github.io/wiki'); /*  <-----------------------------------------  here */
       $('.wiki-aside').append(wikiAside);
       main.isWikiAsideLoad = true;
     }
