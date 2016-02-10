@@ -382,8 +382,11 @@ $(document).ready(function() {
 
   function showWiki() {
     if (!main.isWikiAsideLoad) {
+      var lang = window.location.toString().match(/\/\w{2}\//);
+      lang = (lang) ? lang[0] : '/en/';
+      var wikiURL = 'http://freecodecamp.github.io/wiki' + lang;
       var wikiAside = $('<iframe>');
-      wikiAside.attr('src', 'http://freecodecamp.github.io/wiki'); /*  <-----------------------------------------  here */
+      wikiAside.attr('src', wikiURL);
       $('.wiki-aside').append(wikiAside);
       main.isWikiAsideLoad = true;
     }

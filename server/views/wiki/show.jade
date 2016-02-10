@@ -1,3 +1,7 @@
 extends ../layout-wide
 block content
-            iframe#wikiFrame(frameborder='no', src='http://freecodecamp.github.io/wiki')
+    iframe#wikiFrame(frameborder='no')
+    script.
+        var lang = window.location.toString().match(/\/\w{2}\//);
+        lang = (lang) ? lang[0] : '/en/';
+        $('#wikiFrame').attr('src','http://freecodecamp.github.io/wiki' + lang);

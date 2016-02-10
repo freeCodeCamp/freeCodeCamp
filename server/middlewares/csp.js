@@ -66,8 +66,7 @@ export default function csp() {
         '*.twitter.com',
         '*.ghbtns.com',
         '*.freecatphotoapp.com',
-        'freecodecamp.github.io',
-        'localhost:8000'        
+        'freecodecamp.github.io'        
       ].concat(trusted)
     },
     // set to true if you only want to report errors

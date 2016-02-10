@@ -1,5 +1,6 @@
 module.exports = function(app) {
   var router = app.loopback.Router();
+  router.get('/wiki/*', showWiki);
   router.get('/wiki', showWiki);
 
   app.use(router);
