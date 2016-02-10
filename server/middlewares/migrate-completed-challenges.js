@@ -2,6 +2,53 @@ import { Observable, Scheduler } from 'rx';
 import debug from 'debug';
 
 const log = debug('freecc:migrate');
+const challengeTypes = {
+  html: 0,
+  js: 1,
+  video: 2,
+  zipline: 3,
+  basejump: 4,
+  bonfire: 5,
+  hikes: 6,
+  step: 7,
+  waypoint: 0
+};
+
+const challengeTypeReg = /^(waypoint|hike|zipline|basejump)/i;
+const challengeTypeRegWithColon =
+  /^(bonfire|checkpoint|waypoint|hike|zipline|basejump):\s+/i;
+
+function updateName(challenge) {
+  challenge = challenge && typeof challenge.toJSON === 'function' ?
+    challenge.toJSON() :
+    challenge;
+
+  if (
+    challenge.name &&
+    challenge.challengeType === 5 &&
+    challengeTypeReg.test(challenge.name)
+  ) {
+
+    challenge.name.replace(challengeTypeReg, match => {
+      // find the correct type
+      const type = challengeTypes[''.toLowerCase.call(match)];
+      // if type found, replace current type
+      //
+      if (type) {
+        challenge.challengeType = type;
+      }
+
+      return match;
+    });
+
+  }
+
+  if (challenge.name) {
+    challenge.oldName = challenge.name;
+    challenge.name = challenge.name.replace(challengeTypeRegWithColon, '');
+  }
+  return challenge;
+}
 
 // buildChallengeMap(
 //  userId: String,
@@ -15,11 +62,9 @@ function buildChallengeMap(userId, completedChallenges = [], User) {
     null,
     Scheduler.default
   )
+    .map(updateName)
     .reduce((challengeMap, challenge) => {
       const id = challenge.id || challenge._id;
-      challenge = challenge && typeof challenge.toJSON === 'function' ?
-        challenge.toJSON() :
-        challenge;
 
       challengeMap[id] = challenge;
       return challengeMap;
