@@ -70,12 +70,13 @@ function buildUserUpdate(
       completedDate: oldChallenge.completedDate,
       lastUpdated: completedChallenge.completedDate
     };
-
-    updateData.$push = {
-      timestamp: Date.now(),
-      completedChallenge: challengeId
-    };
   } else {
+    updateData.$push = {
+      progressTimestamps: {
+        timestamp: Date.now(),
+        completedChallenge: challengeId
+      }
+    };
     finalChallenge = completedChallenge;
   }
 
