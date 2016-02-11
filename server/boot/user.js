@@ -111,7 +111,12 @@ function buildDisplayChallenges(challengeMap = {}, timezone) {
         [getChallengeGroup(challenges[0])]: challenges
       }));
     })
-    .reduce((output, group) => ({ ...output, ...group}), {});
+    .reduce((output, group) => ({ ...output, ...group}), {})
+    .map(groups => ({
+      algorithms: groups.algorithms || [],
+      projects: groups.projects || [],
+      challenges: groups.challenges || []
+    }));
 }
 
 module.exports = function(app) {
