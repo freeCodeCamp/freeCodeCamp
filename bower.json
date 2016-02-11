@@ -16,7 +16,7 @@
     "jquery": "~2.1.4",
     "cal-heatmap": "~3.5.2",
     "bootstrap": "~3.3.4",
-    "font-awesome": "~4.3.0",
+    "font-awesome": "~4.5.0",
     "moment": "~2.10.2",
     "moment-timezone": "~0.5.0",
     "jshint": "~2.9.0",
