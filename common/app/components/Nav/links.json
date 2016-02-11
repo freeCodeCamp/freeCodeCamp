@@ -6,22 +6,14 @@
   "link": "//gitter.im/FreeCodeCamp/FreeCodeCamp",
   "target": "_blank"
 },{
-  "content": "News",
-  "link": "/news",
-  "target": "_blank"
-},{
   "content": "Wiki",
   "link": "/wiki",
   "target": "_blank"
 },{
-  "content": "Jobs",
-  "link": "/jobs",
-  "react": true
+  "content": "About",
+  "link": "/about"
 },{
   "content": "Shop",
   "link": "/shop",
   "target": "_blank"
-},{
-  "content": "About",
-  "link": "/about"
 }]
