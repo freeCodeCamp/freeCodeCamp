@@ -22,10 +22,6 @@ const challengeTypeRegWithColon =
   /^(bonfire|checkpoint|waypoint|hike|zipline|basejump):\s+/i;
 
 function updateName(challenge) {
-  challenge = challenge && typeof challenge.toJSON === 'function' ?
-    challenge.toJSON() :
-    challenge;
-
   if (
     challenge.name &&
     challenge.challengeType === 5 &&
@@ -57,6 +53,7 @@ function updateId(challenge) {
   if (idMap.hasOwnProperty(challenge.id)) {
     challenge.id = idMap[challenge.id];
   }
+
   return challenge;
 }
 
@@ -72,6 +69,11 @@ function buildChallengeMap(userId, completedChallenges = [], User) {
     null,
     Scheduler.default
   )
+    .map(challenge => {
+      return challenge && typeof challenge.toJSON === 'function' ?
+        challenge.toJSON() :
+        challenge;
+    })
     .map(updateId)
     .filter(({ id, _id }) => ObjectID.isValid(id || _id))
     .map(updateName)
