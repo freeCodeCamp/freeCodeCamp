@@ -515,7 +515,27 @@ module.exports = function(app) {
   }
 
   function completedChallenge(req, res, next) {
+    req.checkBody('id', 'id must be a ObjectId').isMongoId();
+
+    req.checkBody('name', 'name must be at least 3 characters')
+      .isString()
+      .isLength({ min: 3 });
+
+    req.checkBody('challengeType', 'challengeType must be an integer')
+      .isNumber()
+      .isInt();
     const type = accepts(req).type('html', 'json', 'text');
+
+    const errors = req.validationErrors(true);
+
+    if (errors) {
+      if (type === 'json') {
+        return res.status(403).send({ errors });
+      }
+
+      log('errors', errors);
+      return res.sendStatus(403);
+    }
 
     const completedDate = Date.now();
     const {
@@ -543,6 +563,7 @@ module.exports = function(app) {
     const points = alreadyCompleted ?
       user.progressTimestamps.length :
       user.progressTimestamps.length + 1;
+
     return user.update$(updateData)
       .doOnNext(({ count }) => log('%s documents updated', count))
       .subscribe(
@@ -561,37 +582,34 @@ module.exports = function(app) {
   }
 
   function completedZiplineOrBasejump(req, res, next) {
+    const type = accepts(req).type('html', 'json', 'text');
+    req.checkBody('id', 'id must be an ObjectId').isMongoId();
+    req.checkBody('name', 'Name must be at least 3 characters')
+      .isString()
+      .isLength({ min: 3 });
+    req.checkBody('challengeType', 'must be a number')
+      .isNumber()
+      .isInt();
+    req.checkBody('solution', 'solution must be a url').isURL();
+
+    const errors = req.validationErrors(true);
+
+    if (errors) {
+      if (type === 'json') {
+        return res.status(403).send({ errors });
+      }
+      log('errors', errors);
+      return res.sendStatus(403);
+    }
+
     const { user, body = {} } = req;
 
-    let completedChallenge;
-    // backwards compatibility
-    // please remove once in production
-    // to allow users to transition to new client code
-    if (body.challengeInfo) {
-
-      if (!body.challengeInfo.challengeId) {
-        req.flash('error', { msg: 'No id returned during save' });
-        return res.sendStatus(403);
-      }
-
-      completedChallenge = {
-        id: body.challengeInfo.challengeId,
-        name: body.challengeInfo.challengeName || '',
-        completedDate: Date.now(),
-
-        challengeType: +body.challengeInfo.challengeType === 4 ? 4 : 3,
-
-        solution: body.challengeInfo.publicURL,
-        githubLink: body.challengeInfo.githubURL
-      };
-    } else {
-      completedChallenge = _.pick(
-        body,
-        [ 'id', 'name', 'solution', 'githubLink', 'challengeType' ]
-      );
-      completedChallenge.challengeType = +completedChallenge.challengeType;
-      completedChallenge.completedDate = Date.now();
-    }
+    const completedChallenge = _.pick(
+      body,
+      [ 'id', 'name', 'solution', 'githubLink', 'challengeType' ]
+    );
+    completedChallenge.challengeType = +completedChallenge.challengeType;
+    completedChallenge.completedDate = Date.now();
 
     if (
       !completedChallenge.solution ||
@@ -603,18 +621,30 @@ module.exports = function(app) {
     ) {
       req.flash('errors', {
         msg: 'You haven\'t supplied the necessary URLs for us to inspect ' +
-        'your work.'
+          'your work.'
       });
       return res.sendStatus(403);
     }
 
 
     const {
+      alreadyCompleted,
       updateData
     } = buildUserUpdate(req.user, completedChallenge.id, completedChallenge);
 
-    return user.updateTo$(updateData)
-      .doOnNext(() => res.status(200).send(true))
+    return user.update$(updateData)
+      .doOnNext(({ count }) => log('%s documents updated', count))
+      .doOnNext(() => {
+        if (type === 'json') {
+          return res.send({
+            alreadyCompleted,
+            points: alreadyCompleted ?
+              user.progressTimestamps.length :
+              user.progressTimestamps.length + 1
+          });
+        }
+        res.status(200).send(true);
+      })
       .subscribe(() => {}, next);
   }
 
