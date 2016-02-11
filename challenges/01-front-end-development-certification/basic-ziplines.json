@@ -94,7 +94,7 @@
           ""
         ]
       ],
-      "isRequired": true
+      "isRequired": false
     },
     {
       "id": "bd7158d8c242eddfaeb5bd13",

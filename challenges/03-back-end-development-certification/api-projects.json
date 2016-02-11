@@ -97,6 +97,7 @@
       "tests": [],
       "type": "Waypoint",
       "challengeType": 7,
+      "isRequired": false,
       "nameEs": "Prepárate para los Basejumps",
       "descriptionEs": [
         [
