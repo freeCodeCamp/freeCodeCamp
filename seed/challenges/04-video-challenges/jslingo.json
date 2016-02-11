@@ -26,11 +26,6 @@
         [
           "Mozilla Developer Network is a great resource that should be referenced regularly.",
           true
-        ],
-        [
-          "Question 3",
-          true,
-          "Hint 3 - Optional"
         ]
       ],
       "type": "hike",
