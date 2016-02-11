@@ -307,14 +307,8 @@ module.exports = function(app) {
 
   function showCert(certType, req, res, next) {
     const username = req.params.username.toLowerCase();
-    const { user } = req;
     const certId = certIds[certType];
-    Observable.just(user)
-      .flatMap(user => {
-        if (user && user.username === username) {
-          return Observable.just(user);
-        }
-        return findUserByUsername$(username, {
+    return findUserByUsername$(username, {
           isGithubCool: true,
           isCheater: true,
           isLocked: true,
@@ -325,11 +319,10 @@ module.exports = function(app) {
           isHonest: true,
           username: true,
           name: true,
-          [ `challengesMap.${certId}` ]: true
-        });
+          challengeMap: true
       })
       .subscribe(
-        (user) => {
+        user => {
           if (!user) {
             req.flash('errors', {
               msg: `We couldn't find the user with the username ${username}`
@@ -378,8 +371,8 @@ module.exports = function(app) {
 
           if (user[certType]) {
 
-            const { completedDate = new Date() } =
-              user.challengeMap[certId] || {};
+            const { challengeMap = {} } = user;
+            const { completedDate = new Date() } = challengeMap[certId] || {};
 
             return res.render(
               certViews[certType],
