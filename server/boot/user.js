@@ -1,4 +1,3 @@
-import _ from 'lodash';
 import dedent from 'dedent';
 import moment from 'moment-timezone';
 import { Observable } from 'rx';
@@ -58,6 +57,66 @@ function replaceFormAction(value) {
 
 function encodeFcc(value = '') {
   return replaceScriptTags(replaceFormAction(value));
+}
+
+function isAlgorithm(challenge) {
+  // test if name starts with hike/waypoint/basejump/zipline
+  // fix for bug that saved different challenges with incorrect
+  // challenge types
+  return !(/^(waypoint|hike|zipline|basejump)/i).test(challenge.name) &&
+    +challenge.challengeType === 5;
+}
+
+function isProject(challenge) {
+  return +challenge.challengeType === 3 ||
+    +challenge.challengeType === 4;
+}
+
+function getChallengeGroup(challenge) {
+  if (isProject(challenge)) {
+    return 'projects';
+  } else if (isAlgorithm(challenge)) {
+    return 'algorithms';
+  }
+  return 'challenges';
+}
+
+// buildDisplayChallenges(challengeMap: Object, tz: String) => Observable[{
+//   algorithms: Array,
+//   projects: Array,
+//   challenges: Array
+// }]
+function buildDisplayChallenges(challengeMap = {}, timezone) {
+  return Observable.from(Object.keys(challengeMap))
+    .map(challengeId => challengeMap[challengeId])
+    .map(challenge => {
+      let finalChallenge = { ...challenge };
+      if (challenge.completedDate) {
+        finalChallenge.completedDate = moment
+          .tz(challenge.completedDate, timezone)
+          .format(dateFormat);
+      }
+
+      if (challenge.lastUpdated) {
+        finalChallenge.lastUpdated = moment
+          .tz(challenge.lastUpdated, timezone)
+          .format(dateFormat);
+      }
+
+      return finalChallenge;
+    })
+    .groupBy(getChallengeGroup)
+    .flatMap(group$ => {
+      return group$.toArray().map(challenges => ({
+        [getChallengeGroup(challenges[0])]: challenges
+      }));
+    })
+    .reduce((output, group) => ({ ...output, ...group}), {})
+    .map(groups => ({
+      algorithms: groups.algorithms || [],
+      projects: groups.projects || [],
+      challenges: groups.challenges || []
+    }));
 }
 
 module.exports = function(app) {
@@ -170,33 +229,35 @@ module.exports = function(app) {
 
   function returnUser(req, res, next) {
     const username = req.params.username.toLowerCase();
-    const { path } = req;
-    User.findOne(
-      {
-        where: { username },
-        include: 'pledge'
-      },
-      function(err, profileUser) {
-        if (err) {
-          return next(err);
-        }
-        if (!profileUser) {
+    const { user, path } = req;
+
+    // timezone of signed-in account
+    // to show all date related components
+    // using signed-in account's timezone
+    // not of the profile she is viewing
+    const timezone = user && user.timezone ?
+      user.timezone :
+      'UTC';
+
+    const query = {
+      where: { username },
+      include: 'pledge'
+    };
+
+    return User.findOne$(query)
+      .filter(userPortfolio => {
+        if (!userPortfolio) {
           req.flash('errors', {
-            msg: `404: We couldn't find path ${ path }`
+            msg: `We couldn't find a page for ${ path }`
           });
-          console.log('404');
-          return res.redirect('/');
+          res.redirect('/');
         }
-        profileUser = profileUser.toJSON();
+        return !!userPortfolio;
+      })
+      .flatMap(userPortfolio => {
+        userPortfolio = userPortfolio.toJSON();
 
-        // timezone of signed-in account
-        // to show all date related components
-        // using signed-in account's timezone
-        // not of the profile she is viewing
-        const timezone = req.user &&
-          req.user.timezone ? req.user.timezone : 'UTC';
-
-        const timestamps = profileUser
+        const timestamps = userPortfolio
           .progressTimestamps
           .map(objOrNum => {
             return typeof objOrNum === 'number' ?
@@ -206,10 +267,10 @@ module.exports = function(app) {
 
         const uniqueDays = prepUniqueDays(timestamps, timezone);
 
-        profileUser.currentStreak = calcCurrentStreak(uniqueDays, timezone);
-        profileUser.longestStreak = calcLongestStreak(uniqueDays, timezone);
+        userPortfolio.currentStreak = calcCurrentStreak(uniqueDays, timezone);
+        userPortfolio.longestStreak = calcLongestStreak(uniqueDays, timezone);
 
-        const data = profileUser
+        const calender = userPortfolio
           .progressTimestamps
           .map((objOrNum) => {
             return typeof objOrNum === 'number' ?
@@ -224,89 +285,30 @@ module.exports = function(app) {
             return data;
           }, {});
 
-        function filterAlgos(challenge) {
-          // test if name starts with hike/waypoint/basejump/zipline
-          // fix for bug that saved different challenges with incorrect
-          // challenge types
-          return !(/^(waypoint|hike|zipline|basejump)/i).test(challenge.name) &&
-            +challenge.challengeType === 5;
-        }
-
-        function filterProjects(challenge) {
-          return +challenge.challengeType === 3 ||
-            +challenge.challengeType === 4;
-        }
-
-        const completedChallenges = profileUser.completedChallenges
-          .filter(({ name }) => typeof name === 'string')
-          .map(challenge => {
-              challenge = { ...challenge };
-              if (challenge.completedDate) {
-                challenge.completedDate =
-                  moment.tz(challenge.completedDate, timezone)
-                    .format(dateFormat);
-              }
-              if (challenge.lastUpdated) {
-                challenge.lastUpdated =
-                  moment.tz(challenge.lastUpdated, timezone).format(dateFormat);
-              }
-              return challenge;
-          });
-
-        const projects = completedChallenges.filter(filterProjects);
-
-        const algos = completedChallenges.filter(filterAlgos);
-
-        const challenges = completedChallenges
-          .filter(challenge => !filterAlgos(challenge))
-          .filter(challenge => !filterProjects(challenge));
-
-        res.render('account/show', {
-          title: 'Camper ' + profileUser.username + '\'s Code Portfolio',
-          username: profileUser.username,
-          name: profileUser.name,
-
-          isMigrationGrandfathered: profileUser.isMigrationGrandfathered,
-          isGithubCool: profileUser.isGithubCool,
-          isLocked: !!profileUser.isLocked,
-
-          pledge: profileUser.pledge,
-
-          isFrontEndCert: profileUser.isFrontEndCert,
-          isDataVisCert: profileUser.isDataVisCert,
-          isBackEndCert: profileUser.isBackEndCert,
-          isFullStackCert: profileUser.isFullStackCert,
-          isHonest: profileUser.isHonest,
-
-          location: profileUser.location,
-          calender: data,
-
-          github: profileUser.githubURL,
-          linkedin: profileUser.linkedin,
-          google: profileUser.google,
-          facebook: profileUser.facebook,
-          twitter: profileUser.twitter,
-          picture: profileUser.picture,
-
-          progressTimestamps: profileUser.progressTimestamps,
-
-          projects,
-          algos,
-          challenges,
-          moment,
-
-          longestStreak: profileUser.longestStreak,
-          currentStreak: profileUser.currentStreak,
-
-          encodeFcc
-        });
-      }
-    );
+        return buildDisplayChallenges(userPortfolio.challengeMap, timezone)
+          .map(displayChallenges => ({
+            ...userPortfolio,
+            ...displayChallenges,
+            title: 'Camper ' + userPortfolio.username + '\'s Code Portfolio',
+            calender,
+            github: userPortfolio.githubURL,
+            moment,
+            encodeFcc
+          }));
+      })
+      .doOnNext(data => {
+        return res.render('account/show', data);
+      })
+      .subscribe(
+        () => {},
+        next
+      );
   }
 
   function showCert(certType, req, res, next) {
     const username = req.params.username.toLowerCase();
     const { user } = req;
+    const certId = certIds[certType];
     Observable.just(user)
       .flatMap(user => {
         if (user && user.username === username) {
@@ -321,9 +323,9 @@ module.exports = function(app) {
           isBackEndCert: true,
           isFullStackCert: true,
           isHonest: true,
-          completedChallenges: true,
           username: true,
-          name: true
+          name: true,
+          [ `challengesMap.${certId}` ]: true
         });
       })
       .subscribe(
@@ -376,15 +378,8 @@ module.exports = function(app) {
 
           if (user[certType]) {
 
-            // find challenge in user profile
-            // if not found supply empty object
-            // if found grab date
-            // if no date use todays date
-            var { completedDate = new Date() } =
-              _.find(
-                user.completedChallenges,
-                { id: certIds[certType] }
-            ) || {};
+            const { completedDate = new Date() } =
+              user.challengeMap[certId] || {};
 
             return res.render(
               certViews[certType],
@@ -510,29 +505,6 @@ module.exports = function(app) {
       res.render('account/forgot');
     });
   }
-
-  /*
-  function updateUserStoryPictures(userId, picture, username, cb) {
-    Story.find({ 'author.userId': userId }, function(err, stories) {
-      if (err) { return cb(err); }
-
-      const tasks = [];
-      stories.forEach(function(story) {
-        story.author.picture = picture;
-        story.author.username = username;
-        tasks.push(function(cb) {
-          story.save(cb);
-        });
-      });
-      async.parallel(tasks, function(err) {
-        if (err) {
-          return cb(err);
-        }
-        cb();
-      });
-    });
-  }
-  */
 
   function vote1(req, res, next) {
     if (req.user) {

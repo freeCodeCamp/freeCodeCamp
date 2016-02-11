@@ -81,9 +81,15 @@ window.common = (function(global) {
             data = {
               id: common.challengeId,
               name: common.challengeName,
-              challengeType: common.challengeType
+              challengeType: +common.challengeType
             };
-            $.post('/completed-challenge/', data)
+            $.ajax({
+              url: '/completed-challenge/',
+              type: 'POST',
+              data: JSON.stringify(data),
+              contentType: 'application/json',
+              dataType: 'json'
+            })
               .success(function(res) {
                 if (!res) {
                   return;
@@ -92,7 +98,7 @@ window.common = (function(global) {
                   common.challengeId;
               })
               .fail(function() {
-                window.location.href = '/challenges';
+                window.location.replace(window.location.href);
               });
 
             break;
@@ -106,7 +112,13 @@ window.common = (function(global) {
               githubLink
             };
 
-            $.post('/completed-zipline-or-basejump/', data)
+            $.ajax({
+              url: '/completed-zipline-or-basejump/',
+              type: 'POST',
+              data: JSON.stringify(data),
+              contentType: 'application/json',
+              dataType: 'json'
+            })
               .success(function() {
                 window.location.href = '/challenges/next-challenge?id=' +
                   common.challengeId;

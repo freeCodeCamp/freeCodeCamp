@@ -47,7 +47,8 @@
     "./middlewares/express-rx": {},
     "./middlewares/jade-helpers": {},
     "./middlewares/global-locals": {},
-    "./middlewares/revision-helpers": {}
+    "./middlewares/revision-helpers": {},
+    "./middlewares/migrate-completed-challenges": {}
   },
   "routes": {
   },

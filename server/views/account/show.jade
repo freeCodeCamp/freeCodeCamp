@@ -140,7 +140,7 @@ block content
                                       a(href=challenge.solution, target='_blank') View my project
                                   td.col-xs-12.visible-xs
                                       a(href=challenge.solution, target='_blank')= removeOldTerms(challenge.name)
-              if (algos.length > 0)
+              if (algorithms.length > 0)
                   .col-sm-12
                       table.table.table-striped
                           thead
@@ -149,7 +149,7 @@ block content
                                   th.col-xs-2.hidden-xs Completed
                                   th.col-xs-2.hidden-xs Last Updated
                                   th.col-xs-2.hidden-xs Solution
-                          for challenge in algos
+                          for challenge in algorithms
                               tr
                                   td.col-xs-5.hidden-xs= removeOldTerms(challenge.name)
                                   td.col-xs-2.hidden-xs= challenge.completedDate ? challenge.completedDate : 'Not Available'

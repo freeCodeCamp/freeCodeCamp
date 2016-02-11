@@ -57,21 +57,31 @@ window.common = (function(global) {
         `;
         console.error(err);
       }
-      const data = {
+      const data = JSON.stringify({
         id: common.challengeId,
         name: common.challengeName,
         completedWith: didCompleteWith,
-        challengeType: common.challengeType,
+        challengeType: +common.challengeType,
         solution,
         timezone
-      };
-
-      $.post('/completed-challenge/', data, function(res) {
-        if (res) {
-          window.location =
-            '/challenges/next-challenge?id=' + common.challengeId;
-        }
       });
+
+      $.ajax({
+        url: '/completed-challenge/',
+        type: 'POST',
+        data,
+        contentType: 'application/json',
+        dataType: 'json'
+      })
+        .success(function(res) {
+          if (res) {
+            window.location =
+              '/challenges/next-challenge?id=' + common.challengeId;
+          }
+        })
+        .fail(function() {
+          window.location.replace(window.location.href);
+        });
     });
   };
 

@@ -5,7 +5,7 @@
   "helpRoom": "Help",
   "challenges": [
     {
-      "id": "bb000000000000000000001",
+      "id": "56bbb991ad1ed5201cd392d4",
       "title": "Trigger Click Events with jQuery",
       "description": [
         "In this section, we'll learn how to get data from APIs. APIs - or Application Programming Interfaces - are tools that computers use to communicate with one another.",
@@ -63,13 +63,13 @@
         "Nesta sessão, vamos aprender como obter dados de uma API. As APIS - Interface de Programação de Aplicativos - são ferramentas usadas pelos computadores  para se comunicarem entre si.",
         "Também aprenderemos como utilizar o HTML com os dados obtidos de uma API usando uma tecnologia chamada Ajax",
         "Em primeiro lugar, vamos revir o que faz a função <code>$(document).ready()</code>. Esta função faz com que todo o codigo que esteja dentro de seu escopo execute somente quando a nossa página tenha sido carregada.",
-        "Vamos fazer nosso butão \"Get message\" mudar o texto do elemento com a classe <code>message</code>.", 
+        "Vamos fazer nosso butão \"Get message\" mudar o texto do elemento com a classe <code>message</code>.",
         "Antes de poder fazer isso, temos que implementar um <code>evento de clique</code> dentro da nossa função <code>$(document).ready()</code>, adicionando este código:",
         "<blockquote>$(\"#getMessage\").on(\"click\", function(){</br></br>});</blockquote>"
       ]
     },
     {
-      "id": "bc000000000000000000001",
+      "id": "56bbb991ad1ed5201cd392d5",
       "title": "Change Text with Click Events",
       "description": [
         "When our click event happens, we can use Ajax to update an HTML element.",
@@ -128,7 +128,7 @@
       ]
     },
     {
-      "id": "bb000000000000000000002",
+      "id": "56bbb991ad1ed5201cd392d6",
       "title": "Get JSON with the jQuery getJSON Method",
       "description": [
         "You can also request data from an external source. This is where APIs come into play.",
@@ -209,7 +209,7 @@
       ]
     },
     {
-      "id": "bb000000000000000000003",
+      "id": "56bbb991ad1ed5201cd392d7",
       "title": "Convert JSON Data to HTML",
       "description": [
         "Now that we're getting data from a JSON API, let's display it in our HTML.",
@@ -283,7 +283,7 @@
       ]
     },
     {
-      "id": "bb000000000000000000004",
+      "id": "56bbb991ad1ed5201cd392d8",
       "title": "Render Images from Data Sources",
       "description": [
         "We've seen from the last two lessons that each object in our JSON array contains an <code>imageLink</code> key with a value that is the url of a cat's image.",
@@ -361,7 +361,7 @@
       ]
     },
     {
-      "id": "bb000000000000000000005",
+      "id": "56bbb991ad1ed5201cd392d9",
       "title": "Prefilter JSON",
       "description": [
         "If we don't want to render every cat photo we get from our Free Code Camp's Cat Photo JSON API, we can pre-filter the json before we loop through it.",
@@ -440,7 +440,7 @@
       ]
     },
     {
-      "id": "bb000000000000000000006",
+      "id": "56bbb991ad1ed5201cd392da",
       "title": "Get Geo-location Data",
       "description": [
         "Another cool thing we can do is access our user's current location. Every browser has a built in navigator that can give us this information.",

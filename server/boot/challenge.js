@@ -2,7 +2,7 @@ import _ from 'lodash';
 import dedent from 'dedent';
 import moment from 'moment';
 import { Observable, Scheduler } from 'rx';
-import debugFactory from 'debug';
+import debug from 'debug';
 import accepts from 'accepts';
 
 import {
@@ -14,7 +14,7 @@ import {
   randomCompliment
 } from '../utils';
 
-import { saveUser, observeMethod } from '../utils/rx';
+import { observeMethod } from '../utils/rx';
 
 import {
   ifNoUserSend
@@ -24,7 +24,7 @@ import getFromDisk$ from '../utils/getFromDisk$';
 
 const isDev = process.env.NODE_ENV !== 'production';
 const isBeta = !!process.env.BETA;
-const debug = debugFactory('freecc:challenges');
+const log = debug('freecc:challenges');
 const challengesRegex = /^(bonfire|waypoint|zipline|basejump|checkpoint)/i;
 const challengeView = {
   0: 'challenges/showHTML',
@@ -40,8 +40,7 @@ function isChallengeCompleted(user, challengeId) {
   if (!user) {
     return false;
   }
-  return user.completedChallenges.some(challenge =>
-    challenge.id === challengeId );
+  return !!user.challengeMap[challengeId];
 }
 
 /*
@@ -50,36 +49,55 @@ function numberWithCommas(x) {
 }
 */
 
-function updateUserProgress(user, challengeId, completedChallenge) {
-  let { completedChallenges } = user;
+function buildUserUpdate(
+  user,
+  challengeId,
+  completedChallenge,
+  timezone
+) {
+  const updateData = { $set: {} };
+  let finalChallenge;
+  const { timezone: userTimezone, challengeMap = {} } = user;
 
-  const indexOfChallenge = _.findIndex(completedChallenges, {
-    id: challengeId
-  });
+  const oldChallenge = challengeMap[challengeId];
+  const alreadyCompleted = !!oldChallenge;
 
-  const alreadyCompleted = indexOfChallenge !== -1;
 
-  if (!alreadyCompleted) {
-    user.progressTimestamps.push({
-      timestamp: Date.now(),
-      completedChallenge: challengeId
-    });
-    user.completedChallenges.push(completedChallenge);
-    return user;
+  if (alreadyCompleted) {
+    // add data from old challenge
+    finalChallenge = {
+      ...completedChallenge,
+      completedDate: oldChallenge.completedDate,
+      lastUpdated: completedChallenge.completedDate
+    };
+  } else {
+    updateData.$push = {
+      progressTimestamps: {
+        timestamp: Date.now(),
+        completedChallenge: challengeId
+      }
+    };
+    finalChallenge = completedChallenge;
   }
 
-  const oldCompletedChallenge = completedChallenges[indexOfChallenge];
-  user.completedChallenges[indexOfChallenge] =
-    Object.assign(
-      {},
-      completedChallenge,
-      {
-        completedDate: oldCompletedChallenge.completedDate,
-        lastUpdated: completedChallenge.completedDate
-      }
-    );
+  updateData.$set = {
+    [`challengeMap.${challengeId}`]: finalChallenge
+  };
 
-  return { user, alreadyCompleted };
+  if (
+    timezone &&
+    timezone !== 'UTC' &&
+    (!userTimezone || userTimezone === 'UTC')
+  ) {
+    updateData.$set = {
+      ...updateData.$set,
+      timezone: userTimezone
+    };
+  }
+
+  log('user update data', updateData);
+
+  return { alreadyCompleted, updateData };
 }
 
 
@@ -117,7 +135,7 @@ function getRenderData$(user, challenge$, origChallengeName, solution) {
     .replace(challengesRegex, '');
 
   const testChallengeName = new RegExp(challengeName, 'i');
-  debug('looking for %s', testChallengeName);
+  log('looking for %s', testChallengeName);
 
   return challenge$
     .map(challenge => challenge.toJSON())
@@ -136,7 +154,7 @@ function getRenderData$(user, challenge$, origChallengeName, solution) {
 
       // Handle not found
       if (!challenge) {
-        debug('did not find challenge for ' + origChallengeName);
+        log('did not find challenge for ' + origChallengeName);
         return Observable.just({
           type: 'redirect',
           redirectUrl: '/map',
@@ -187,25 +205,21 @@ function getRenderData$(user, challenge$, origChallengeName, solution) {
     });
 }
 
-function getCompletedChallengeIds(user = {}) {
-  // if user
-  // get the id's of all the users completed challenges
-  return !user.completedChallenges ?
-    [] :
-    _.uniq(user.completedChallenges)
-      .map(({ id, _id }) => id || _id);
-}
-
 // create a stream of an array of all the challenge blocks
-function getSuperBlocks$(challenge$, completedChallenges) {
+function getSuperBlocks$(challenge$, challengeMap) {
   return challenge$
     // mark challenge completed
     .map(challengeModel => {
       const challenge = challengeModel.toJSON();
-      if (completedChallenges.indexOf(challenge.id) !== -1) {
-        challenge.completed = true;
-      }
+      challenge.completed = !!challengeMap[challenge.id];
       challenge.markNew = shouldShowNew(challenge);
+
+      if (challenge.type === 'hike') {
+        challenge.url = '/videos/' + challenge.dashedName;
+      } else {
+        challenge.url = '/challenges/' + challenge.dashedName;
+      }
+
       return challenge;
     })
     // group challenges by block | returns a stream of observables
@@ -222,15 +236,6 @@ function getSuperBlocks$(challenge$, completedChallenges) {
       const isBeta = _.every(blockArray, 'isBeta');
       const isComingSoon = _.every(blockArray, 'isComingSoon');
       const isRequired = _.every(blockArray, 'isRequired');
-
-      blockArray = blockArray.map(challenge => {
-        if (challenge.challengeType == 6 && challenge.type === 'hike') {
-          challenge.url = '/videos/' + challenge.dashedName;
-        } else {
-          challenge.url = '/challenges/' + challenge.dashedName;
-        }
-        return challenge;
-      });
 
       return {
         isBeta,
@@ -428,7 +433,7 @@ module.exports = function(app) {
     getChallengeById$(challenge$, challengeId)
       .doOnNext(({ dashedName })=> {
         if (!dashedName) {
-          debug('no challenge found for %s', challengeId);
+          log('no challenge found for %s', challengeId);
           req.flash('info', {
             msg: `We coudn't find a challenge with the id ${challengeId}`
           });
@@ -473,7 +478,7 @@ module.exports = function(app) {
         return getNextChallenge$(challenge$, blocks$, challengeId)
           .doOnNext(({ dashedName } = {}) => {
             if (!dashedName) {
-              debug('no challenge found for %s', challengeId);
+              log('no challenge found for %s', challengeId);
               res.redirect('/map');
             }
             res.redirect('/challenges/' + dashedName);
@@ -495,7 +500,7 @@ module.exports = function(app) {
             });
           }
           if (type === 'redirect') {
-            debug('redirecting to %s', redirectUrl);
+            log('redirecting to %s', redirectUrl);
             return res.redirect(redirectUrl);
           }
           var view = challengeView[data.challengeType];
@@ -510,7 +515,27 @@ module.exports = function(app) {
   }
 
   function completedChallenge(req, res, next) {
+    req.checkBody('id', 'id must be a ObjectId').isMongoId();
+
+    req.checkBody('name', 'name must be at least 3 characters')
+      .isString()
+      .isLength({ min: 3 });
+
+    req.checkBody('challengeType', 'challengeType must be an integer')
+      .isNumber()
+      .isInt();
     const type = accepts(req).type('html', 'json', 'text');
+
+    const errors = req.validationErrors(true);
+
+    if (errors) {
+      if (type === 'json') {
+        return res.status(403).send({ errors });
+      }
+
+      log('errors', errors);
+      return res.sendStatus(403);
+    }
 
     const completedDate = Date.now();
     const {
@@ -521,7 +546,7 @@ module.exports = function(app) {
       timezone
     } = req.body;
 
-    const { alreadyCompleted } = updateUserProgress(
+    const { alreadyCompleted, updateData } = buildUserUpdate(
       req.user,
       id,
       {
@@ -529,26 +554,25 @@ module.exports = function(app) {
         challengeType,
         solution,
         name,
-        completedDate,
-        verified: true
-      }
+        completedDate
+      },
+      timezone
     );
 
-    if (timezone && (!req.user.timezone || req.user.timezone !== timezone)) {
-      req.user.timezone = timezone;
-    }
+    const user = req.user;
+    const points = alreadyCompleted ?
+      user.progressTimestamps.length :
+      user.progressTimestamps.length + 1;
 
-    let user = req.user;
-    saveUser(req.user)
+    return user.update$(updateData)
+      .doOnNext(({ count }) => log('%s documents updated', count))
       .subscribe(
-        function(user) {
-          user = user;
-        },
+        () => {},
         next,
         function() {
           if (type === 'json') {
             return res.json({
-              points: user.progressTimestamps.length,
+              points,
               alreadyCompleted
             });
           }
@@ -558,37 +582,34 @@ module.exports = function(app) {
   }
 
   function completedZiplineOrBasejump(req, res, next) {
-    const { body = {} } = req;
+    const type = accepts(req).type('html', 'json', 'text');
+    req.checkBody('id', 'id must be an ObjectId').isMongoId();
+    req.checkBody('name', 'Name must be at least 3 characters')
+      .isString()
+      .isLength({ min: 3 });
+    req.checkBody('challengeType', 'must be a number')
+      .isNumber()
+      .isInt();
+    req.checkBody('solution', 'solution must be a url').isURL();
 
-    let completedChallenge;
-    // backwards compatibility
-    // please remove once in production
-    // to allow users to transition to new client code
-    if (body.challengeInfo) {
+    const errors = req.validationErrors(true);
 
-      if (!body.challengeInfo.challengeId) {
-        req.flash('error', { msg: 'No id returned during save' });
-        return res.sendStatus(403);
+    if (errors) {
+      if (type === 'json') {
+        return res.status(403).send({ errors });
       }
-
-      completedChallenge = {
-        id: body.challengeInfo.challengeId,
-        name: body.challengeInfo.challengeName || '',
-        completedDate: Date.now(),
-
-        challengeType: +body.challengeInfo.challengeType === 4 ? 4 : 3,
-
-        solution: body.challengeInfo.publicURL,
-        githubLink: body.challengeInfo.githubURL
-      };
-    } else {
-      completedChallenge = _.pick(
-        body,
-        [ 'id', 'name', 'solution', 'githubLink', 'challengeType' ]
-      );
-      completedChallenge.challengeType = +completedChallenge.challengeType;
-      completedChallenge.completedDate = Date.now();
+      log('errors', errors);
+      return res.sendStatus(403);
     }
+
+    const { user, body = {} } = req;
+
+    const completedChallenge = _.pick(
+      body,
+      [ 'id', 'name', 'solution', 'githubLink', 'challengeType' ]
+    );
+    completedChallenge.challengeType = +completedChallenge.challengeType;
+    completedChallenge.completedDate = Date.now();
 
     if (
       !completedChallenge.solution ||
@@ -600,22 +621,37 @@ module.exports = function(app) {
     ) {
       req.flash('errors', {
         msg: 'You haven\'t supplied the necessary URLs for us to inspect ' +
-        'your work.'
+          'your work.'
       });
       return res.sendStatus(403);
     }
 
 
-    updateUserProgress(req.user, completedChallenge.id, completedChallenge);
+    const {
+      alreadyCompleted,
+      updateData
+    } = buildUserUpdate(req.user, completedChallenge.id, completedChallenge);
 
-    return saveUser(req.user)
-      .doOnNext(() => res.status(200).send(true))
+    return user.update$(updateData)
+      .doOnNext(({ count }) => log('%s documents updated', count))
+      .doOnNext(() => {
+        if (type === 'json') {
+          return res.send({
+            alreadyCompleted,
+            points: alreadyCompleted ?
+              user.progressTimestamps.length :
+              user.progressTimestamps.length + 1
+          });
+        }
+        res.status(200).send(true);
+      })
       .subscribe(() => {}, next);
   }
 
-  function showMap(showAside, { user }, res, next) {
+  function showMap(showAside, { user = {} }, res, next) {
+    const { challengeMap = {} } = user;
 
-    getSuperBlocks$(challenge$, getCompletedChallengeIds(user))
+    return getSuperBlocks$(challenge$, challengeMap)
       .subscribe(
         superBlocks => {
           res.render('map/show', {

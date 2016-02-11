@@ -1,17 +1,14 @@
 import _ from 'lodash';
 import dedent from 'dedent';
 import { Observable } from 'rx';
-import debugFactory from 'debug';
+import debug from 'debug';
 
 import {
   ifNoUser401,
   ifNoUserSend
 } from '../utils/middleware';
 
-import {
-  saveUser,
-  observeQuery
-} from '../utils/rx';
+import { observeQuery } from '../utils/rx';
 
 import {
   frontEndChallengeId,
@@ -25,17 +22,13 @@ import {
 
 import certTypes from '../utils/certTypes.json';
 
-const debug = debugFactory('freecc:certification');
+const log = debug('freecc:certification');
 const sendMessageToNonUser = ifNoUserSend(
   'must be logged in to complete.'
 );
 
-function isCertified(ids, { completedChallenges }) {
-  return _.every(ids, ({ id }) => {
-    return _.some(completedChallenges, (challenge) => {
-      return challenge.id === id || challenge._id === id;
-    });
-  });
+function isCertified(ids, challengeMap = {}) {
+  return _.every(ids, ({ id }) => challengeMap[id]);
 }
 
 function getIdsForCert$(id, Challenge) {
@@ -90,12 +83,9 @@ export default function certificate(app) {
   app.use(router);
 
   function verifyCert(certType, req, res, next) {
-    Observable.just({})
-      .flatMap(() => {
-        return certTypeIds[certType];
-      })
+    const { user } = req;
+    return certTypeIds[certType]
       .flatMap(challenge => {
-        const { user } = req;
         const {
           id,
           tests,
@@ -104,38 +94,39 @@ export default function certificate(app) {
         } = challenge;
         if (
           !user[certType] &&
-          isCertified(tests, user)
+          isCertified(tests, user.challengeMap)
         ) {
-          user[certType] = true;
-          user.completedChallenges.push({
-            id,
-            name,
-            completedDate: new Date(),
-            challengeType
-          });
+          const updateData = {
+            $set: {
+              [`challengeMap.${id}`]: {
+                id,
+                name,
+                completedDate: new Date(),
+                challengeType
+              },
+              [certType]: true
+            }
+          };
 
-          return saveUser(user)
+          return req.user.update$(updateData)
             // If user has commited to nonprofit,
             // this will complete his pledge
             .flatMap(
-              user => completeCommitment$(user),
-              (user, pledgeOrMessage) => {
+              () => completeCommitment$(user),
+              ({ count }, pledgeOrMessage) => {
                 if (typeof pledgeOrMessage === 'string') {
-                  debug(pledgeOrMessage);
+                  log(pledgeOrMessage);
                 }
-                // we are only interested in the user object
-                // so we ignore return from completeCommitment$
-                return user;
+                log(`${count} documents updated`);
+                return true;
               }
             );
         }
-        return Observable.just(user);
+        return Observable.just(false);
       })
       .subscribe(
-        user => {
-          if (
-            user[certType]
-          ) {
+        (didCertify) => {
+          if (didCertify) {
             return res.status(200).send(true);
           }
           return res.status(200).send(
@@ -150,14 +141,9 @@ export default function certificate(app) {
   }
 
   function postHonest(req, res, next) {
-    const { user } = req;
-    user.isHonest = true;
-    saveUser(user)
-      .subscribe(
-        (user) => {
-          res.status(200).send(!!user.isHonest);
-        },
-        next
-      );
+    return req.user.update$({ $set: { isHonest: true } }).subscribe(
+      () => res.status(200).send(true),
+      next
+    );
   }
 }

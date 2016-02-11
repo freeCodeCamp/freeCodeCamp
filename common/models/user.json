@@ -148,6 +148,16 @@
       "default": false,
       "description": "Campers is full stack certified"
     },
+    "isChallengeMapMigrated": {
+      "type": "boolean",
+      "default": false,
+      "description": "Migrate completedChallenges array to challenge map"
+    },
+    "challengeMap": {
+      "type": "object",
+      "default": {},
+      "description": "A map by id of all the user completed challenges"
+    },
     "completedChallenges": {
       "type": [
         {

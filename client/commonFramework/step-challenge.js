@@ -149,38 +149,45 @@ window.common = (function({ $, common = { init: [] }}) {
     e.preventDefault();
 
     $('#submit-challenge')
-    .attr('disabled', 'true')
-    .removeClass('btn-primary')
-    .addClass('btn-warning disabled');
+      .attr('disabled', 'true')
+      .removeClass('btn-primary')
+      .addClass('btn-warning disabled');
 
     var $checkmarkContainer = $('#checkmark-container');
     $checkmarkContainer.css({ height: $checkmarkContainer.innerHeight() });
 
     $('#challenge-checkmark')
-    .addClass('zoomOutUp')
-    .delay(1000)
-    .queue(function(next) {
-      $(this).replaceWith(
-        '<div id="challenge-spinner" ' +
-          'class="animated zoomInUp inner-circles-loader">' +
-          'submitting...</div>'
-      );
-      next();
-    });
+      .addClass('zoomOutUp')
+      .delay(1000)
+      .queue(function(next) {
+        $(this).replaceWith(
+          '<div id="challenge-spinner" ' +
+            'class="animated zoomInUp inner-circles-loader">' +
+            'submitting...</div>'
+        );
+        next();
+      });
 
-    $.post(
-      '/completed-challenge/', {
+    $.ajax({
+      url: '/completed-challenge/',
+      type: 'POST',
+      data: JSON.stringify({
         id: common.challengeId,
         name: common.challengeName,
-        challengeType: common.challengeType
-      },
-      function(res) {
+        challengeType: +common.challengeType
+      }),
+      contentType: 'application/json',
+      dataType: 'json'
+    })
+      .success(function(res) {
         if (res) {
           window.location =
             '/challenges/next-challenge?id=' + common.challengeId;
         }
-      }
-    );
+      })
+      .fail(function() {
+        window.location.replace(window.location.href);
+      });
   }
 
   common.init.push(function($) {
