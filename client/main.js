@@ -340,6 +340,7 @@ $(document).ready(function() {
   }
 
   if (String(window.location).match(/\/map$/ig)) {
+    $('body>.flashMessage').find('.alert').css('display', 'none');
     $('.map-fixed-header').css('top', '50px');
   }
 
