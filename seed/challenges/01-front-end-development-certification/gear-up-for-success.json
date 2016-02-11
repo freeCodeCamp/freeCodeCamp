@@ -4,31 +4,6 @@
   "time": "20 minutes",
   "challenges": [
     {
-      "id": "560add65cb82ac38a17513c2",
-      "title": "Browse Camper News",
-      "description": [
-        [
-          "http://i.imgur.com/YNwsMXM.gif",
-          "A gif showing how you can access our Camper News page and click the \"upvote\" button to upvote a story.",
-          "Click the \"News\" button in your upper right hand corner. <br>You can browse links on Camper News and upvote the ones that you enjoy.",
-          ""
-        ]
-      ],
-      "challengeSeed": [],
-      "tests": [],
-      "type": "Waypoint",
-      "challengeType": 7,
-      "nameEs": "Navega por las Noticias Campistas",
-      "descriptionEs": [
-        [
-          "http://i.imgur.com/YNwsMXM.gif",
-          "Un gif mostrando como acceder a nuestra página de Noticias Campistas y pulsar el botón \"voto a favor\" para votar por una historia.",
-          "Pulsa el botón de \"Noticias\" en tu esquina superior derecha. <br>Puedes navegar mediante los enlaces en Noticias Campistas y votar por aquellas que disfrutes.",
-          ""
-        ]
-      ]
-    },
-    {
       "id": "560add65cb82ac38a17513c1",
       "title": "Reference our Wiki",
       "description": [
@@ -75,6 +50,96 @@
           "Un gif mostrando como puedes pulsar el enlace que está más adelante y llenar todos los campos necesarios para agregar los estudios de Free Code Camp a tu perfil de LinkedIn",
           "LinkedIn reconoce a Free Code Camp como una universidad. Puedes obtener acceso a nuestra larga red de alumnos agregando Free Code Camp a la sección de educación de tu LinkedIn. <br>Define tu fecha de graduación para el siguiente año. <br> En el campo \"Grado\", escribe \"Certificación de Desarrollo Web Full Stack\". <br> En \"Campo de estudio\", escribe \"Ingeniería de Software\". <br>Después pulsa \"Guardar Cambios\".",
           "https://www.linkedin.com/profile/edit-education?school=Free+Code+Camp"
+        ]
+      ]
+    },
+    {
+      "id": "560adc65cb82ac38a17513c2",
+      "title": "Join our Subreddit",
+      "description": [
+        [
+          "http://i.imgur.com/DYjJuCG.gif",
+          "A gif showing how you can create a Reddit account and join Free Code Camp's subreddit.",
+          "Our community has its own subreddit on Reddit. This is a convenient way to ask questions and share links with our entire community. If you don't already have a Reddit account, you can create one in a few seconds - you don't even need an email address. Then you can click the \"subscribe\" button to join our subreddit. You may also want to subscribe to some of the other subreddits listed in our sidebar.",
+          "https://reddit.com/r/freecodecamp"
+        ]
+      ],
+      "challengeSeed": [],
+      "tests": [],
+      "releasedOn": "February 10, 2016",
+      "type": "Waypoint",
+      "challengeType": 7,
+      "nameEs": "Translate",
+      "descriptionEs": [
+        [
+          "http://i.imgur.com/DYjJuCG.gif",
+          "",
+          "",
+          ""
+        ]
+      ]
+    },
+    {
+      "id": "560adf65cb82ac38a17513c2",
+      "title": "Read Coding News on our Medium Publication",
+      "description": [
+        [
+          "http://i.imgur.com/FxSOL4a.gif",
+          "A gif showing how you can create a Medium account.",
+          "Our community has a Medium publication where we write lots of articles about software development. If you don't already have a Medium account, you can follow the link and either sign in using social network, or by entering an email (they'll send you an email that you can click-through to create your account.) Once you select a topic of interest, you can continue through the steps.",
+          "https://www.medium.com"
+        ],
+        [
+          "http://i.imgur.com/zhhywSX.gif",
+          "A gif showing how you can click the \"follow\" button to follow Free Code Camp's publication.",
+          "Once you're logged in, you can go to Free Code Camp's Medium publication and click \"follow\". Our campers publish several articles each week.",
+          "https://medium.freecodecamp.com"
+        ]
+      ],
+      "challengeSeed": [],
+      "tests": [],
+      "type": "Waypoint",
+      "challengeType": 7,
+      "releasedOn": "February 10, 2016",      
+      "nameEs": "Translate",
+      "descriptionEs": [
+        [
+          "http://i.imgur.com/FxSOL4a.gif",
+          "",
+          "",
+          ""
+        ],
+        [
+          "http://i.imgur.com/zhhywSX.gif",
+          "",
+          "",
+          ""
+        ]
+      ]
+    },
+    {
+      "id": "560ade65cb82ac38a17513c2",
+      "title": "Watch us Code Live on Twitch.tv",
+      "description": [
+        [
+          "http://i.imgur.com/8rtyRY1.gif",
+          "A gif showing how you can sign up for Twitch.tv and follow our channel.",
+          "Our campers frequently code live on Twitch.tv, a popular streaming website. You can create an account in less than a minute, then follow Free Code Camp's channel. When you follow, you'll get the option of receiving an email notification each time one of our campers goes live. You can then join dozens of other campers and watch them code, and interact in a chat room. This is a fun, casual way to learn by watching people build projects.",
+          "https://twitch.tv/freecodecamp"
+        ]
+      ],
+      "challengeSeed": [],
+      "tests": [],
+      "type": "Waypoint",
+      "challengeType": 7,
+      "releasedOn": "February 10, 2016",      
+      "nameEs": "Translate",
+      "descriptionEs": [
+        [
+          "http://i.imgur.com/8rtyRY1.gif",
+          "",
+          "",
+          "https://twitch.tv/freecodecamp"
         ]
       ]
     },
