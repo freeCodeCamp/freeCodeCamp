@@ -390,7 +390,7 @@
         "The following code is an example of using <code>filter</code> to remove array elements that are equal to five:",
         "Note: We omit the second and third arguments since we only need the value",
         "<blockquote>array = array.filter(function(val) {<br>&nbsp;&nbsp;return val !== 5;<br>});</blockquote>",
-        "Use <code>filter</code> to filter out all elements from <code>oldArray</code> that are greater than 5 and store the results into <code>newArray</code>.  <code>oldArray</code> should not change."
+        "Use <code>filter</code> to create a new array with all the values from <code>oldArray</code> which are less than 6.<br><code>oldArray</code> should not change."
       ],
       "challengeSeed": [
         "var oldArray = [1,2,3,4,5,6,7,8,9,10];",
