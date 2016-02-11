@@ -6,7 +6,7 @@
   "challenges": [
     {
       "id": "cf1111c1c16feddfaeb6bdef",
-      "title": "Use the Javascript Console",
+      "title": "Use the JavaScript Console",
       "description": [
         "Both Chrome and Firefox have excellent JavaScript consoles, also known as DevTools, for debugging your JavaScript.",
         "You can find <code>Developer tools</code> in your Chrome's menu or <code>Web Console</code> in FireFox's menu. If you're using a different browser, or a mobile phone, we strongly recommend switching to desktop Firefox or Chrome.",
