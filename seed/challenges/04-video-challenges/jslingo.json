@@ -121,7 +121,7 @@
     },
     {
       "id": "56b15f15632298c12f315189",
-      "title": "JavaScript Lingo: Finding and Indexing Data in Arays",
+      "title": "JavaScript Lingo: Finding and Indexing Data in Arrays",
       "description": [
         "There are many reasons you might need to access a certain piece of data from within a larger set, and you do that by referencing it's index.",
         "We won't get into syntax now, but you should know that the first thing in an array is actually index 0.",
