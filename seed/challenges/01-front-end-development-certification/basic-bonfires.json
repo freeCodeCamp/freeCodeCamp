@@ -64,8 +64,7 @@
           ""
         ]
       ],
-
-      "isRequired": true
+      "isRequired": false
     },
     {
       "id": "a202eed8fc186c8434cb6d61",

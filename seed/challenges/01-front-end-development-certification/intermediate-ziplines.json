@@ -1,9 +1,57 @@
 {
   "name": "Intermediate Front End Development Projects",
   "order": 11,
-  "time": "200 hours",
+  "time": "100 hours",
   "helpRoom": "HelpFrontEnd",
   "challenges": [
+    {
+      "id": "bd7158d8c442eddfaeb5bd13",
+      "title": "Build a Random Quote Machine",
+      "description": [
+        "<strong>Objective:</strong> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='http://codepen.io/FreeCodeCamp/full/bELoPJ' target='_blank'>http://codepen.io/FreeCodeCamp/full/bELoPJ</a>.",
+        "<strong>Rule #1:</strong> Don't look at the example project's code. Figure it out for yourself.",
+        "<strong>Rule #2:</strong> Fulfill the below <a href='http://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
+        "<strong>User Story:</strong> I can click a button to show me a new random quote.",
+        "<strong>User Story:</strong> I can press a button to tweet out a quote.",
+        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck.",
+        "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen. ",
+        "You can get feedback on your project from fellow campers by sharing it in our <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Code Review Chatroom</a>. You can also share it on Twitter and your city's Campsite (on Facebook)."
+      ],
+      "challengeSeed": [
+        "126415122"
+      ],
+      "tests": [],
+      "type": "zipline",
+      "nameRu": "Создайте генератор случайных цитат",
+      "descriptionRu": [
+        "<span class='text-info'>Задание:</span> Создайте <a href='http://codepen.io' target='_blank'>CodePen.io</a> который успешно копирует вот этот: <a href='http://codepen.io/FreeCodeCamp/full/bELoPJ' target='_blank'>http://codepen.io/FreeCodeCamp/full/bELoPJ</a>.",
+        "<span class='text-info'>Правило #1:</span> Не подсматривайте код приведенного на CodePen примера. Напишите его самостоятельно.",
+        "<span class='text-info'>Правило #2:</span> Можете использовать любые библиотеки или API, которые потребуются.",
+        "<span class='text-info'>Правило #3:</span> Воссоздайте функционал приведенного примера и не стесняйтесь добавить что-нибудь от себя.",
+        "Реализуйте следующие <a href='http://en.wikipedia.org/wiki/User_story' target='_blank'>пользовательские истории</a>, сделайте также бонусные по желанию:",
+        "<span class='text-info'>Пользовательская история:</span> В качестве пользователя, я могу нажать на кнопку и получить случайную цитату.",
+        "<span class='text-info'>Бонусная пользовательская история:</span> В качестве пользователя, я могу нажать на кнопку и опубликовать цитату в Twitter'e.",
+        "Цитаты можно добавить в массив и случайным образом выводить одну из них, либо можно воспользоваться соответствующим API, например <a href='http://forismatic.com/en/api/'>http://forismatic.com/en/api/</a>.",
+        "Если что-то не получается, воспользуйтесь <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a>.",
+        "Когда выполните задание кликните кнопку \"I've completed this challenge\" и добавьте ссылку на ваш CodePen. Если вы программировали с кем-то в паре, также добавьте имя вашего напарника.",
+        "Если вы хотите получить немедленную оценку вашего проекта, нажмите эту кнопку и добавьте ссылку на ваш CodePen. В противном случае мы проверим его перед тем как вы приступите к проектам для некоммерческих организаций.<br><br><a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Click here then add your link to your tweet's text</a>"
+      ],
+      "nameEs": "Crea una máquina de frases aleatorias",
+      "descriptionEs": [
+        "<span class='text-info'>Objetivo:</span> Crea una aplicación con <a href='http://codepen.io' target='_blank'>CodePen.io</a> que reproduzca efectivamente mediante ingeniería inversa este app: <a href='http://codepen.io/FreeCodeCamp/full/bELoPJ' target='_blank'>http://codepen.io/FreeCodeCamp/full/bELoPJ</a>.",
+        "<span class='text-info'>Regla #1:</span> No veas el código del proyecto de ejemplo en CodePen. Encuentra la forma de hacerlo por tu cuenta.",
+        "<span class='text-info'>Regla #2:</span> Puedes usar cualquier librería o APIs que necesites.",
+        "<span class='text-info'>Regla #3:</span> Usa ingeniería inversa para reproducir la funcionalidad del proyecto de ejemplo, pero también siéntete en la libertad de personalizarlo.",
+        "Las siguientes son las <a href='http://en.wikipedia.org/wiki/User_story' target='_blank'>historias de usuario</a> que debes satisfacer, incluyendo las historias opcionales:",
+        "<span class='text-info'>Historia de usuario:</span> Como usuario, puedo pulsar un botón que me mostrará una nueva frase aleatoria.",
+        "<span class='text-info'>Bonus User Story:</span> Como usuario, puedo presionar un botón para twitear una frase.",
+        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado.",
+        "Cuando hayas terminado, pulsa el botón de \"I've completed this challenge\" e incluye un link a tu CodePen. Si programaste en pareja, debes incluir también el nombre de usuario de Free Code Camp de tu compañero.",
+        "Si quieres retroalimentación inmediata de parte de tus compañeros campistas, pulsa este botón y pega el link de tu proyecto en CodePen. <br><br><a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20PASTE_YOUR_CODEPEN_URL_HERE%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Pulsa aquí y agrega tu link en el texto del tweet</a>"
+      ],
+      "isRequired": true,
+      "challengeType": 3
+    },
     {
       "id": "bd7158d8c442eddfaeb5bd10",
       "title": "Show the Local Weather",
@@ -52,44 +100,6 @@
         "<span class='text-info'>Historia de usuario opcional:</span> Como usuario, puedo ver una imagen de fondo diferente (ej. montaña nevada, desierto ardiente) dependiendo del clima.",
         "<span class='text-info'>Historia de usuario opcional:</span> Como usuario, puedo pulsar un botón para cambiar la unidad de temperatura de grados Fahrenheit a Celsius y viceversa.",
         "Recomendamos utilizar <a href='http://openweathermap.org/current#geo' target='_blank'>Open Weather API</a>. Al utilizarlo tendrás que crear una llave API gratuita. Normalmente debes evitar mostrar llaves de API en CodePen, pero por el momento no hemos encontrado un API de clima que no requiera llave.",
-        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado.",
-        "Cuando hayas terminado, pulsa el botón de \"I've completed this challenge\" e incluye un link a tu CodePen. Si programaste en pareja, debes incluir también el nombre de usuario de Free Code Camp de tu compañero.",
-        "Si quieres retroalimentación inmediata de parte de tus compañeros campistas, pulsa este botón y pega el link de tu proyecto en CodePen. <br><br><a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20PASTE_YOUR_CODEPEN_URL_HERE%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Pulsa aquí y agrega tu link en el texto del tweet</a>"
-      ],
-      "isRequired": true
-    },
-    {
-      "id": "bd7158d8c442eddfaeb5bd18",
-      "title": "Stylize Stories on Camper News",
-      "description": [
-        "<strong>Objective:</strong> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='http://codepen.io/FreeCodeCamp/full/pgNRoJ' target='_blank'>http://codepen.io/FreeCodeCamp/full/pgNRoJ</a>.",
-        "<strong>Rule #1:</strong> Don't look at the example project's code. Figure it out for yourself.",
-        "<strong>Rule #2:</strong> Fulfill the below <a href='http://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
-        "<strong>User Story:</strong> I can browse recent posts from Camper News.",
-        "<strong>User Story:</strong> I can click on a post to be taken to the story's original URL.",
-        "<strong>User Story:</strong> I can see how many upvotes each story has.",
-        "<strong>Hint:</strong> Here's the Camper News Hot Stories API endpoint: <code>http://www.freecodecamp.com/news/hot</code>.",
-        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck.",
-        "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen.",
-        "You can get feedback on your project from fellow campers by sharing it in our <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Code Review Chatroom</a>. You can also share it on Twitter and your city's Campsite (on Facebook)."
-      ],
-      "challengeSeed": [
-        "126415129"
-      ],
-      "tests": [],
-      "type": "zipline",
-      "challengeType": 3,
-      "nameEs": "Adorna las noticias de Camper News",
-      "descriptionEs": [
-        "<span class='text-info'>Objetivo:</span> Crea una aplicación con <a href='http://codepen.io' target='_blank'>CodePen.io</a> que reproduzca efectivamente mediante ingeniería inversa este app: <a href='http://codepen.io/FreeCodeCamp/full/pgNRoJ' target='_blank'>http://codepen.io/FreeCodeCamp/full/pgNRoJ</a>.",
-        "<span class='text-info'>Regla #1:</span> No veas el código del proyecto de ejemplo en CodePen. Encuentra la forma de hacerlo por tu cuenta.",
-        "<span class='text-info'>Regla #2:</span> Puedes usar cualquier librería o APIs que necesites.",
-        "<span class='text-info'>Regla #3:</span> Usa ingeniería inversa para reproducir la funcionalidad del proyecto de ejemplo, pero también siéntete en la libertad de personalizarlo.",
-        "Las siguientes son las <a href='http://en.wikipedia.org/wiki/User_story' target='_blank'>historias de usuario</a> que debes satisfacer, incluyendo las historias opcionales:",
-        "<span class='text-info'>Historia de usuario:</span> Como usuario, puedo navegar las publicaciones recientes de Camper News.",
-        "<span class='text-info'>Historia de usuario:</span> Como usuario, puedo pulsar en una publicación y ser llevado al URL original de la historia.",
-        "<span class='text-info'>Historia de usuario opcional:</span> Como usuario, puedo ver cuántos votos tiene cada historia.",
-        "<span class='text-info'>Pista:</span> Este es el endpoint del API de Noticias calientes de Camper News: <code>http://www.freecodecamp.com/news/hot</code>.",
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado.",
         "Cuando hayas terminado, pulsa el botón de \"I've completed this challenge\" e incluye un link a tu CodePen. Si programaste en pareja, debes incluir también el nombre de usuario de Free Code Camp de tu compañero.",
         "Si quieres retroalimentación inmediata de parte de tus compañeros campistas, pulsa este botón y pega el link de tu proyecto en CodePen. <br><br><a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20PASTE_YOUR_CODEPEN_URL_HERE%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Pulsa aquí y agrega tu link en el texto del tweet</a>"
@@ -193,93 +203,6 @@
         "<span class='text-info'>Pista:</span> Puedes ver un ejemplo de una llamada al API JSONP de Twitch.tv en <code>https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/Zipline-Use-the-Twitchtv-JSON-API</code>.",
         "<span class='text-info'>Pista:</span> La documentación relevante para esta llamada al API se encuentra aquí: <a href='https://github.com/justintv/Twitch-API/blob/master/v3_resources/streams.md#get-streamschannel' target='_blank'>https://github.com/justintv/Twitch-API/blob/master/v3_resources/streams.md#get-streamschannel</a>.",
         "<span class='text-info'>Pista:</span> Aquí te mostramos un vector de usuarios de Twitch.tv de gente que transmite programación a menudo: <code>[\"freecodecamp\", \"storbeck\", \"terakilobyte\", \"habathcx\",\"RobotCaleb\",\"thomasballinger\",\"noobs2ninjas\",\"beohoff\"]</code>",
-        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado.",
-        "Cuando hayas terminado, pulsa el botón de \"I've completed this challenge\" e incluye un link a tu CodePen. Si programaste en pareja, debes incluir también el nombre de usuario de Free Code Camp de tu compañero.",
-        "Si quieres retroalimentación inmediata de parte de tus compañeros campistas, pulsa este botón y pega el link de tu proyecto en CodePen. <br><br><a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20PASTE_YOUR_CODEPEN_URL_HERE%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Pulsa aquí y agrega tu link en el texto del tweet</a>"
-      ],
-      "isRequired": true
-    },
-    {
-      "id": "bd7158d8c442eedfaeb5bd1c",
-      "title": "Build a Tic Tac Toe Game",
-      "description": [
-        "<strong>Objective:</strong> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='http://codepen.io/FreeCodeCamp/full/adBpvw' target='_blank'>http://codepen.io/FreeCodeCamp/full/adBpvw</a>.",
-        "<strong>Rule #1:</strong> Don't look at the example project's code. Figure it out for yourself.",
-        "<strong>Rule #2:</strong> Fulfill the below <a href='http://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
-        "<strong>User Story:</strong> I can play a game of Tic Tac Toe with the computer.",
-        "<strong>User Story:</strong> I can never actually win against the computer - at best I can tie.",
-        "<strong>User Story:</strong> My game will reset as soon as it's over so I can play again.",
-        "<strong>User Story:</strong> I can choose whether I want to play as X or O.",
-        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck.",
-        "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen.",
-        "You can get feedback on your project from fellow campers by sharing it in our <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Code Review Chatroom</a>. You can also share it on Twitter and your city's Campsite (on Facebook)."
-      ],
-      "challengeSeed": [
-        "126415123"
-      ],
-      "tests": [],
-      "type": "zipline",
-      "challengeType": 3,
-      "nameEs": "Crea un juego de Tic Tac Toe",
-      "descriptionEs": [
-        "<span class='text-info'>Objetivo:</span> Crea una aplicación con <a href='http://codepen.io' target='_blank'>CodePen.io</a> que reproduzca efectivamente mediante ingeniería inversa este app: <a href='http://codepen.io/FreeCodeCamp/full/adBpvw' target='_blank'>http://codepen.io/FreeCodeCamp/full/adBpvw</a>.",
-        "<span class='text-info'>Regla #1:</span> No veas el código del proyecto de ejemplo en CodePen. Encuentra la forma de hacerlo por tu cuenta.",
-        "<span class='text-info'>Regla #2:</span> Puedes usar cualquier librería o APIs que necesites.",
-        "<span class='text-info'>Regla #3:</span> Usa ingeniería inversa para reproducir la funcionalidad del proyecto de ejemplo, pero también siéntete en la libertad de personalizarlo.",
-        "Las siguientes son las <a href='http://en.wikipedia.org/wiki/User_story' target='_blank'>historias de usuario</a> que debes satisfacer, incluyendo las historias opcionales:",
-        "<span class='text-info'>Historia de usuario:</span> Como usuario, puedo iniciar un juego de Tic Tac Toe con la computadora.",
-        "<span class='text-info'>Historia de usuario opcional:</span> Como usuario, nunca puedo ganar contra la computadora - en el mejor de los casos puedo empatar.",
-        "<span class='text-info'>Historia de usuario opcional:</span> Como usuario, mi juego se reiniciará tan pronto como se termine, de tal forma que pueda jugar de nuevo.",
-        "<span class='text-info'>Historia de usuario opcional:</span> Como usuario, puedo elegir si quiero jugar como X o como O.",
-        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado.",
-        "Cuando hayas terminado, pulsa el botón de \"I've completed this challenge\" e incluye un link a tu CodePen. Si programaste en pareja, debes incluir también el nombre de usuario de Free Code Camp de tu compañero.",
-        "Si quieres retroalimentación inmediata de parte de tus compañeros campistas, pulsa este botón y pega el link de tu proyecto en CodePen. <br><br><a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20PASTE_YOUR_CODEPEN_URL_HERE%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Pulsa aquí y agrega tu link en el texto del tweet</a>"
-      ],
-      "isRequired": true
-    },
-    {
-      "id": "bd7158d8c442eddfaeb5bd1c",
-      "title": "Build a Simon Game",
-      "description": [
-        "<strong>Objective:</strong> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='http://codepen.io/Em-Ant/full/QbRyqq/' target='_blank'>http://codepen.io/FreeCodeCamp/full/obYBjE</a>.",
-        "<strong>Rule #1:</strong> Don't look at the example project's code. Figure it out for yourself.",
-        "<strong>Rule #2:</strong> Fulfill the below <a href='http://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
-        "<strong>User Story:</strong> I am presented with a random series of button presses.",
-        "<strong>User Story:</strong> Each time I input a series of button presses correctly, I see the same series of button presses but with an additional step.",
-        "<strong>User Story:</strong> I hear a sound that corresponds to each button both when the series of button presses plays, and when I personally press a button.",
-        "<strong>User Story:</strong> If I press the wrong button, I am notified that I have done so, and that series of button presses starts again to remind me of the pattern so I can try again.",
-        "<strong>User Story:</strong> I can see how many steps are in the current series of button presses.",
-        "<strong>User Story:</strong> If I want to restart, I can hit a button to do so, and the game will return to a single step.",
-        "<strong>User Story:</strong> I can play in strict mode where if I get a button press wrong, it notifies me that I have done so, and the game restarts at a new random series of button presses.",
-        "<strong>User Story:</strong> I can win the game by getting a series of 20 steps correct. I am notified of my victory, then the game starts over.",
-        "<strong>Hint:</strong> Here are mp3s you can use for each button: <code>https://s3.amazonaws.com/freecodecamp/simonSound1.mp3</code>, <code>https://s3.amazonaws.com/freecodecamp/simonSound2.mp3</code>, <code>https://s3.amazonaws.com/freecodecamp/simonSound3.mp3</code>, <code>https://s3.amazonaws.com/freecodecamp/simonSound4.mp3</code>.",
-        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck.",
-        "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen.",
-        "You can get feedback on your project from fellow campers by sharing it in our <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Code Review Chatroom</a>. You can also share it on Twitter and your city's Campsite (on Facebook)."
-      ],
-      "challengeSeed": [
-        "137213633"
-      ],
-      "tests": [],
-      "type": "zipline",
-      "challengeType": 3,
-      "nameEs": "Construye un juego de Simon",
-      "descriptionEs": [
-        "<span class='text-info'>Objetivo:</span> Crea una aplicación con <a href='http://codepen.io' target='_blank'>CodePen.io</a> que reproduzca efectivamente mediante ingeniería inversa este app: <a href='http://codepen.io/Em-Ant/full/QbRyqq/' target='_blank'>http://codepen.io/FreeCodeCamp/full/obYBjE</a>.",
-        "<span class='text-info'>Regla #1:</span> No veas el código del proyecto de ejemplo en CodePen. Encuentra la forma de hacerlo por tu cuenta.",
-        "<span class='text-info'>Regla #2:</span> Puedes usar cualquier librería o APIs que necesites.",
-        "<span class='text-info'>Regla #3:</span> Usa ingeniería inversa para reproducir la funcionalidad del proyecto de ejemplo, pero también siéntete en la libertad de personalizarlo.",
-        "Las siguientes son las <a href='http://en.wikipedia.org/wiki/User_story' target='_blank'>historias de usuario</a> que debes satisfacer, incluyendo las historias opcionales:",
-        "<span class='text-info'>Historia de usuario:</span> Como usuario, se me presenta una serie de colores aleatoria.",
-        "<span class='text-info'>Historia de usuario:</span> Como usuario, cada vez que presiono una secuencia de colores correctamente, veo la misma serie de colores con un paso adicional.",
-        "<span class='text-info'>Historia de usuario:</span> Como usuario, escucho un sonido que corresponde a cada botón cuando una sequencia se me presenta, así como cuando yo presiono un botón.",
-        "<span class='text-info'>Historia de usuario:</span> Como usuario, si presiono el botón equivocado, se me notifica sobre mi error, y la serie correcta de colores se muestra de nuevo para recordarme cuál es la secuencia correcta, tras lo cual puedo probar de nuevo.",
-        "<span class='text-info'>Historia de usuario:</span> Como usuario, puedo ver cuántos pasos hay en la serie de botones actual.",
-        "<span class='text-info'>Historia de usuario opcional:</span> Como usuario, si deseo reiniciar, puedo pulsar un botón para hacerlo, y el juego comenzará desde una secuencia con un solo paso.",
-        "<span class='text-info'>Historia de usuario opcional:</span> Como usuario, puedo jugar en modo estricto donde si presiono el botón equivocado, se me notifica de mi error, y el juego vuelve a comenzar con una nueva serie aleatoria de colores.",
-        "<span class='text-info'>Historia de usuario opcional:</span> Como usuario, la velocidad del juego se incrementa en el quinto, noveno y decimotercer paso.",
-        "<span class='text-info'>Historia de usuario opcional:</span> Como usuario, puedo ganar el juego si completo 20 pasos correctos. Se me notifica sobre mi victoria, tras lo cual el juego se reinicia.",
-        "<span class='text-info'>Pista:</span> Aquí hay algunos mp3s que puedes utilizar para tus botones: <code>https://s3.amazonaws.com/freecodecamp/simonSound1.mp3</code>, <code>https://s3.amazonaws.com/freecodecamp/simonSound2.mp3</code>, <code>https://s3.amazonaws.com/freecodecamp/simonSound3.mp3</code>, <code>https://s3.amazonaws.com/freecodecamp/simonSound4.mp3</code>.",
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado.",
         "Cuando hayas terminado, pulsa el botón de \"I've completed this challenge\" e incluye un link a tu CodePen. Si programaste en pareja, debes incluir también el nombre de usuario de Free Code Camp de tu compañero.",
         "Si quieres retroalimentación inmediata de parte de tus compañeros campistas, pulsa este botón y pega el link de tu proyecto en CodePen. <br><br><a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20PASTE_YOUR_CODEPEN_URL_HERE%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Pulsa aquí y agrega tu link en el texto del tweet</a>"
