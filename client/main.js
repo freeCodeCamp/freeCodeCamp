@@ -377,6 +377,37 @@ $(document).ready(function() {
     }
   }
 
+  $('#nav-wiki-btn').on('click', toggleWiki);
+
+  $('.wiki-aside-action-collapse').on('click', collapseWiki);
+
+  function showWiki() {
+    if (!main.isWikiAsideLoad) {
+      var lang = window.location.toString().match(/\/\w{2}\//);
+      lang = (lang) ? lang[0] : '/en/';
+      var wikiURL = 'http://freecodecamp.github.io/wiki' + lang;
+      var wikiAside = $('<iframe>');
+      wikiAside.attr('src', wikiURL);
+      $('.wiki-aside').append(wikiAside);
+      main.isWikiAsideLoad = true;
+    }
+    $('.wiki-aside').removeClass('is-collapsed');
+  }
+
+  function collapseWiki() {
+    $('.wiki-aside').addClass('is-collapsed');
+    document.activeElement.blur();
+  }
+
+  function toggleWiki() {
+    var isCollapsed = $('.wiki-aside').hasClass('is-collapsed');
+    if (isCollapsed) {
+      showWiki();
+    } else {
+      collapseWiki();
+    }
+  }
+
   $('#accordion').on('show.bs.collapse', function(e) {
     expandCaret(e.target);
     if ($('a[data-toggle=collapse]').length === $('.fa-caret-down').length) {

@@ -17,8 +17,10 @@ nav.navbar.navbar-default.navbar-fixed-top.nav-height
                 a(href="//gitter.im/freecodecamp/freecodecamp" target="_blank") Chat
             li
                 a(href='/news', target='_blank') News
-            li
-                a(href='//github.com/FreeCodeCamp/freecodecamp/wiki/Home', target='_blank') Wiki
+            li.hidden-xs
+                a#nav-wiki-btn(href='#' onclick='return false') Wiki
+            li.visible-xs
+                a(href='/wiki', target='_blank') Wiki
             li
                 a(href='/jobs') Jobs
             li
@@ -32,5 +34,5 @@ nav.navbar.navbar-default.navbar-fixed-top.nav-height
                 li.brownie-points-nav
                   a(href='/' + user.username) [&thinsp;#{user.progressTimestamps.length}&thinsp;]
                 li.hidden-xs.hidden-sm.avatar
-                  a(href='/' + user.username) 
+                  a(href='/' + user.username)
                         img.profile-picture.float-right(src='#{user.picture}')
