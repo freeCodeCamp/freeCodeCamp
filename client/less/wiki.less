@@ -2,7 +2,7 @@
  * based off of https://github.com/gitterHQ/sidecar
  * license: MIT
  */
- 
+
 #wikiFrame {
     width: 100%;
     height: 100%;
@@ -22,7 +22,9 @@
     bottom: 0;
     right: 0;
 
+    display: -webkit-flex;
     display: flex;
+    -webkit-flex-direction: row;
     flex-direction: row;
 
     background-color: @body-bg;
@@ -31,7 +33,8 @@
 
     transition: transform 0.3s cubic-bezier(0.16, 0.22, 0.22, 1.7);
 
-    &.is-collapsed {
+    &.is-collapsed:not(.is-loading) {
+      -webkit-transform: translateX(110%);
       transform: translateX(110%);
     }
 
@@ -80,9 +83,9 @@
 .wiki-aside-action-bar {
     position: absolute;
     top: 0;
-    left: 0;
     right: 0;
 
+    display: -webkit-flex;
     display: flex;
     justify-content: flex-end;
 
@@ -136,6 +139,7 @@
 }
 
 .wiki-aside-action-item {
+    display: -webkit-flex;
     display: flex;
     /* main axis */
     justify-content: center;
