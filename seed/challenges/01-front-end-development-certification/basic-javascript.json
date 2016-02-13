@@ -211,9 +211,9 @@
       "challengeType": 1,
       "nameEs": "Entendiendo Variables Sin Inicializar",
       "descriptionEs": [
-        "Cuando las variables de JavaScript son declaradas, ellas tienen un valor inicial de <code>undefined</code>. Si tu haces una operación matematica sobre una variable <code>undefined</code> tu resultado sera <code>NaN</code> el cual significa <dfn>\"Not a Number\"</dfn>. Si tu concatenas una cadena con una variable <code>undefined</code>, vas a obtener una <dfn>cadena</dfn> literal de <code>\"undefined\"</code>.",
+        "Cuando las variables de JavaScript son declaradas, ellas tienen un valor inicial de <code>undefined</code>. Si tu haces una operación matematica sobre una variable <code>undefined</code> tu resultado sera <code>NaN</code> el cual significa <dfn>\"Not a Number\"</dfn> es decir \"No es un número\". Si tu concatenas una cadena con una variable <code>undefined</code>, vas a obtener una <dfn>cadena</dfn> literal de <code>\"undefined\"</code>.",
         "<h4>Instrucciones</h4>",
-        "Inicializa las tres variables <code>a</code>, <code>b</code>, y <code>c</code> con <code>5</code>, <code>10</code>, y <code>\"I am a\"</code> respectivamente de manera que no sea <code>undefined</code>."
+        "Inicializa las tres variables <code>a</code>, <code>b</code>, y <code>c</code> con <code>5</code>, <code>10</code>, y <code>\"I am a\"</code> respectivamente de manera que no sean <code>undefined</code>."
       ]
     },
     {
@@ -259,11 +259,11 @@
         "En JavaScript todas las variables y nombres de funciones distinguen entre mayúsculas y minúsculas. Esto significa que la capitalización importa.",
         "<code>MIVAR</code> no es lo mismo que <code>MiVar</code> o <code>mivar</code>. Esto hace posible tener múltiples variables distintas con el mismo nombre pero de diferente manera. Es fuertemente recomendado por el bien de la claridad, que tu <em>no</em> uses esta característica del lenguaje.",
         "<h4>Mejor Práctica</h4>",
-        "Escribe nombres de variables en Javascript en <dfn>camelCase</dfn>. En <dfn>camelCase</dfn>, los nombres de variables con múltiples palabras tienen la primer palabra en minúsculas y la primera letra de cada palabra subsecuente es capitalizada.",
+        "Escribe nombres de variables en Javascript en <dfn>capitalizaciónCamello (camelCase)</dfn>. En <dfn>capitalizaciónCamello</dfn>, los nombres de variables con múltiples palabras tienen la primera palabra en minúsculas y la primera letra de cada palabra subsecuente es capitalizada.",
         "<strong>Ejemplos:</strong>",
         "<blockquote>var algunaVariable;<br>var otraVariable;<br>var esteNombreDeVariableEsMuyLargo;</blockquote>",
         "<h4>Instrucciones</h4>",
-        "Repara las declaraciones y asignaciones de variables de manera que sus nombres usen <dfn>camelCase</dfn>."
+        "Repara las declaraciones y asignaciones de variables de manera que sus nombres usen <dfn>capitalizaciónCamello</dfn>."
       ]
     },
     {
@@ -454,7 +454,7 @@
         "<code>i++</code>",
         "es el equivalente de",
         "<code>i = i + 1;</code>",
-        "<strong>Nota</strong><br>Toda la línea se convierte a <code>i++</code>, sin necesidad del signo igual.",
+        "<strong>Nota</strong><br>Toda la línea se equivale a <code>i++</code>, sin necesidad del signo igual.",
         "<h4>Instrucciones</h4>",
         "Cambia el código para usar el operador <code>++</code> sobre <code>myVar</code>."
       ]
