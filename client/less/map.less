@@ -11,23 +11,18 @@
     bottom: 0;
     right: 0;
 
-    overflow-x: hidden;
-    overflow-y: scroll;
-    -webkit-overflow-scrolling: touch;
-
     display: -webkit-flex;
     display: flex;
     -webkit-flex-direction: row;
     flex-direction: row;
-
     background-color: @body-bg;
     border-left: 1px solid #ddd;
     box-shadow: -12px 0 18px 0 rgba(50, 50, 50, 0.1);
 
     transition: transform 0.3s cubic-bezier(0.16, 0.22, 0.22, 1.7);
 
-    &.is-collapsed {
-      -webkit-transform: translateY(110%);
+    &.is-collapsed:not(.is-loading) {
+      -webkit-transform: translateX(110%);
       transform: translateX(110%);
     }
 
@@ -45,14 +40,18 @@
 
       background-color: @body-bg;
     }
-
-    & > iframe {
-      flex: 1;
-      width: 100%;
-      height: 100%;
-      border: 0;
-      overflow: scroll;
+    .iframeWrapper {
+      height:100%;
+      width:100%;
+      overflow-x: hidden;
+      overflow-y: scroll;
       -webkit-overflow-scrolling: touch;
+      iframe {
+        flex: 1;
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
     }
 }
 
