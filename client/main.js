@@ -355,8 +355,11 @@ $(document).ready(function() {
   function showMap() {
     if (!main.isMapAsideLoad) {
       var mapAside = $('<iframe>');
-      mapAside.attr('src', '/map-aside');
-      $('.map-aside').append(mapAside);
+      mapAside.attr({
+        src: '/map-aside',
+        scrolling: 'yes'
+      });   
+      $('.map-aside .iframeWrapper').append(mapAside);
       main.isMapAsideLoad = true;
     }
     $('.map-aside').removeClass('is-collapsed');
@@ -369,7 +372,6 @@ $(document).ready(function() {
 
   function toggleMap() {
     var isCollapsed = $('.map-aside').hasClass('is-collapsed');
-
     if (isCollapsed) {
       showMap();
     } else {
@@ -387,8 +389,11 @@ $(document).ready(function() {
       lang = (lang) ? lang[0] : '/en/';
       var wikiURL = 'http://freecodecamp.github.io/wiki' + lang;
       var wikiAside = $('<iframe>');
-      wikiAside.attr('src', wikiURL);
-      $('.wiki-aside').append(wikiAside);
+      wikiAside.attr({
+        src: wikiURL,
+        scrolling: 'yes'
+      });
+      $('.wiki-aside .iframeWrapper').append(wikiAside);
       main.isWikiAsideLoad = true;
     }
     $('.wiki-aside').removeClass('is-collapsed');
