@@ -3991,7 +3991,7 @@
       "tests": [
         "collection = collectionCopy; assert(update(5439, \"artist\", \"ABBA\")[5439][\"artist\"] === \"ABBA\", 'message: After <code>update(5439, \"artist\", \"ABBA\")</code>, <code>artist</code> should be <code>\"ABBA\"</code>');",
         "update(2548, \"artist\", \"\"); assert(!collection[2548].hasOwnProperty(\"artist\"), 'message: After <code>update(2548, \"artist\", \"\")</code>, <code>artist</code> should not be set');",
-        "assert(update(1245, \"tracks\", \"Addicted to Love\")[1245][\"tracks\"].length === 1, 'message: After <code>update(1245, \"tracks\", \"Addicted to Love\")</code>, <code>tracks</code> should have a length of <code>1</code>');",
+        "assert(update(1245, \"tracks\", \"Addicted to Love\")[1245][\"tracks\"].pop() === \"Addicted to Love\", 'message: After <code>update(1245, \"tracks\", \"Addicted to Love\")</code>, <code>tracks</code> should have <code>\"Addicted to Love\"</code> as the last element.');",
         "update(2548, \"tracks\", \"\"); assert(!collection[2548].hasOwnProperty(\"tracks\"), 'message: After <code>update(2548, \"tracks\", \"\")</code>, <code>tracks</code> should not be set');"
       ],
       "type": "checkpoint",
