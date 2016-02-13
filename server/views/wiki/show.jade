@@ -1,5 +1,6 @@
 extends ../layout-wide
 block content
+  .iframeWrapper
     iframe#wikiFrame(frameborder='no')
     script.
         var lang = window.location.toString().match(/\/\w{2}\//);
