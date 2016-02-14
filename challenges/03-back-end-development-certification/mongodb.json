@@ -41,10 +41,10 @@
       "challengeType": 2,
       "nameEs": "Guarda tus datos en MongoDB",
       "descriptionEs": [
-        "Haremos este Waypoint en Cloud 9, un poderoso editor en línea con un ambiente de trabajo Ubuntu Linux completo, corriendo totalmente en la nube.",
+        "Haremos este desafío en Cloud 9, un poderoso editor en línea con un ambiente de trabajo Ubuntu Linux completo, corriendo totalmente en la nube.",
         "Si todavía no tienes una cuenta en Cloud 9, crea una ahora en <a href='http://c9.io' target='_blank'>http://c9.io</a>.",
         "Abre <a href='http://c9.io' target='_blank'>http://c9.io</a> y accede a tu cuenta.",
-        "Haz click en el icono \"+\" en la parte superior derecha de la página de c9.io para crear un nuevo espacio de trabajo.",
+        "Pulsa el icono \"+\" en la parte superior derecha de la página de c9.io para crear un nuevo espacio de trabajo.",
         "Dale un nombre a tu espacio de trabajo. Opcionalmente también puedes escribir una descripción.",
         "Elige Node.js entre las opciones en el área debajo del campo donde escribiste el nombre.",
         "Haz click en el botón que dice \"Create workspace\".",
@@ -64,7 +64,7 @@
         "Completa \"Remove\"",
         "Completa \"Count\"",
         "Completa \"Aggregate\"",
-        "Una vez hayas terminado con este tutorial, puedes continuar con la siguiente prueba."
+        "Una vez hayas terminado con este tutorial, puedes continuar con el siguiente desafío."
       ]
     }
   ]
