@@ -17,9 +17,7 @@ import {
   Button,
   Col,
   Input,
-  Row,
-  Panel,
-  Well
+  Row
 } from 'react-bootstrap';
 
 import {
@@ -42,7 +40,7 @@ const checkValidity = [
   'howToApply'
 ];
 const hightlightCopy = `
-Highlight my post to make it stand out. (+$50)
+Highlight my post to make it stand out. (+$250)
 `;
 
 
@@ -103,9 +101,9 @@ function makeRequired(validator) {
 }
 
 export default contain({
+    store: 'appStore',
     actions: 'jobActions',
-    store: 'jobsStore',
-    map({ form = {} }) {
+    map({ jobsApp: { form = {} } }) {
       const {
         position,
         locale,
@@ -115,7 +113,7 @@ export default contain({
         logo,
         company,
         isFrontEndCert = true,
-        isFullStackCert,
+        isBackEndCert,
         isHighlighted,
         isRemoteOk,
         howToApply
@@ -132,7 +130,7 @@ export default contain({
         isRemoteOk: formatValue(isRemoteOk, null, 'bool'),
         howToApply: formatValue(howToApply, makeRequired(isAscii)),
         isFrontEndCert,
-        isFullStackCert
+        isBackEndCert
       };
     },
     subscribeOnWillMount() {
@@ -154,7 +152,7 @@ export default contain({
       isHighlighted: PropTypes.object,
       isRemoteOk: PropTypes.object,
       isFrontEndCert: PropTypes.bool,
-      isFullStackCert: PropTypes.bool,
+      isBackEndCert: PropTypes.bool,
       howToApply: PropTypes.object
     },
 
@@ -171,7 +169,11 @@ export default contain({
         }
       });
 
-      if (!valid || !pros.isFrontEndCert && !pros.isFullStackCert ) {
+      if (
+        !valid ||
+        !pros.isFrontEndCert &&
+        !pros.isBackEndCert
+      ) {
         debug('form not valid');
         return;
       }
@@ -188,7 +190,7 @@ export default contain({
         logo,
         company,
         isFrontEndCert,
-        isFullStackCert,
+        isBackEndCert,
         isHighlighted,
         isRemoteOk,
         howToApply
@@ -207,7 +209,7 @@ export default contain({
         isRemoteOk: !!isRemoteOk.value,
         howToApply: inHTMLData(howToApply.value),
         isFrontEndCert,
-        isFullStackCert
+        isBackEndCert
       };
 
       const job = Object.keys(jobValues).reduce((accu, prop) => {
@@ -237,7 +239,7 @@ export default contain({
     handleCertClick(name) {
       const { jobActions: { handleForm } } = this.props;
       const otherButton = name === 'isFrontEndCert' ?
-        'isFullStackCert' :
+        'isBackEndCert' :
         'isFrontEndCert';
 
       handleForm({
@@ -259,7 +261,7 @@ export default contain({
         isRemoteOk,
         howToApply,
         isFrontEndCert,
-        isFullStackCert,
+        isBackEndCert,
         jobActions: { handleForm }
       } = this.props;
 
@@ -273,7 +275,7 @@ export default contain({
             <Col
               md={ 10 }
               mdOffset={ 1 }>
-              <Panel className='text-center'>
+              <div className='text-center'>
                 <form
                   className='form-horizontal'
                   onSubmit={ this.handleSubmit }>
@@ -288,6 +290,7 @@ export default contain({
                       xsOffset={ 3 }>
                       <Row>
                         <Button
+                          bsStyle='primary'
                           className={ isFrontEndCert ? 'active' : '' }
                           onClick={ () => {
                             if (!isFrontEndCert) {
@@ -306,13 +309,14 @@ export default contain({
                       <div className='button-spacer' />
                       <Row>
                         <Button
-                          className={ isFullStackCert ? 'active' : ''}
+                          bsStyle='primary'
+                          className={ isBackEndCert ? 'active' : ''}
                           onClick={ () => {
-                            if (!isFullStackCert) {
-                              this.handleCertClick('isFullStackCert');
+                            if (!isBackEndCert) {
+                              this.handleCertClick('isBackEndCert');
                             }
                           }}>
-                          <h4>Full Stack Development Certified</h4>
+                          <h4>Back End Development Certified</h4>
                           You can expect each applicant to have a code
                           portfolio using the following technologies:
                           HTML5, CSS, jQuery, API integrations, MVC Framework,
@@ -326,6 +330,7 @@ export default contain({
                   <div className='spacer'>
                     <h2>Tell us about the position</h2>
                   </div>
+                  <hr />
                   <Input
                     bsStyle={ position.bsStyle }
                     label='Job Title'
@@ -369,6 +374,8 @@ export default contain({
                     type='checkbox'
                     wrapperClassName={ checkboxClass } />
                   <div className='spacer' />
+
+                  <hr />
                   <Row>
                     <div>
                       <h2>How should they apply?</h2>
@@ -387,6 +394,7 @@ export default contain({
                   </Row>
 
                   <div className='spacer' />
+                  <hr />
                   <div>
                     <h2>Tell us about your organization</h2>
                   </div>
@@ -428,7 +436,8 @@ export default contain({
                     wrapperClassName={ inputClass } />
 
                   <div className='spacer' />
-                  <Well>
+                  <hr />
+                  <div>
                     <div>
                       <h2>Make it stand out</h2>
                     </div>
@@ -459,7 +468,7 @@ export default contain({
                           checkboxClass.replace('text-left', '')
                         } />
                     </Row>
-                  </Well>
+                  </div>
 
                   <Row>
                     <Col
@@ -476,7 +485,7 @@ export default contain({
                     </Col>
                   </Row>
                 </form>
-              </Panel>
+              </div>
             </Col>
           </Row>
         </div>

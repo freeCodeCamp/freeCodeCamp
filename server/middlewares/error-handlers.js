@@ -29,7 +29,7 @@ export default function prodErrorHandler() {
           msg: message
         });
       }
-      return res.redirect('/');
+      return res.redirect('/map');
       // json
     } else if (type === 'json') {
       res.setHeader('Content-Type', 'application/json');

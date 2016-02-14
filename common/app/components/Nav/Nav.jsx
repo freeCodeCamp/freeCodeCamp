@@ -2,9 +2,8 @@ import React, { PropTypes } from 'react';
 import { LinkContainer } from 'react-router-bootstrap';
 import {
   Col,
-  CollapsibleNav,
   Nav,
-  NavBrand,
+  NavbarBrand,
   Navbar,
   NavItem
 } from 'react-bootstrap';
@@ -23,12 +22,10 @@ const logoElement = (
   </a>
 );
 
-const toggleButton = (
-  <button className='hamburger'>
+const toggleButtonChild = (
     <Col xs={ 12 }>
       <span className='hamburger-text'>Menu</span>
     </Col>
-  </button>
 );
 
 export default React.createClass({
@@ -50,7 +47,7 @@ export default React.createClass({
             key={ content }
             to={ link }>
             <NavItem
-              target={ target || null } >
+              target={ target || null }>
               { content }
             </NavItem>
           </LinkContainer>
@@ -73,57 +70,57 @@ export default React.createClass({
       return null;
     }
     return (
-      <NavItem
+      <FCCNavItem
+        className='brownie-points-nav'
         href={ '/' + username }>
         [ { points } ]
-      </NavItem>
+      </FCCNavItem>
     );
   },
 
   renderSignin(username, picture) {
     if (username) {
       return (
-        <div
-          className='hidden-xs hidden-sm'
+        <li
+          className='hidden-xs hidden-sm avatar'
           eventKey={ 2 }>
           <a href={ '/' + username }>
             <img
               className='profile-picture float-right'
               src={ picture } />
           </a>
-        </div>
+        </li>
       );
     } else {
       return (
-        <FCCNavItem
-          className='btn signup-btn signup-btn-nav'
+        <NavItem
           eventKey={ 2 }
           href='/login'>
           Sign In
-        </FCCNavItem>
+        </NavItem>
       );
     }
   },
 
   render() {
     const { username, points, picture } = this.props;
+
     return (
       <Navbar
         className='nav-height'
-        fixedTop={ true }
-        toggleButton={ toggleButton }
-        toggleNavKey={ 0 }>
-        <NavBrand>{ logoElement }</NavBrand>
-        <CollapsibleNav eventKey={ 0 }>
+        fixedTop={ true }>
+        <NavbarBrand>{ logoElement }</NavbarBrand>
+        <Navbar.Toggle children={ toggleButtonChild } />
+        <Navbar.Collapse eventKey={ 0 }>
           <Nav
             className='hamburger-dropdown'
             navbar={ true }
-            right={ true }>
+            pullRight={ true }>
             { this.renderLinks() }
             { this.renderPoints(username, points) }
             { this.renderSignin(username, picture) }
           </Nav>
-        </CollapsibleNav>
+        </Navbar.Collapse>
       </Navbar>
     );
   }

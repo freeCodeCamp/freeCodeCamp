@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import { Button, Input, Col, Panel, Row, Well } from 'react-bootstrap';
+import { Button, Input, Col, Row, Well } from 'react-bootstrap';
 import { contain } from 'thundercats-react';
 
 // real paypal buttons
@@ -11,22 +11,22 @@ const paypalIds = {
 
 export default contain(
   {
-    store: 'JobsStore',
+    store: 'appStore',
     actions: [
       'jobActions',
       'appActions'
     ],
-    map({
-      job: { id, isHighlighted } = {},
+    map({ jobsApp: {
+      currentJob: { id, isHighlighted } = {},
       buttonId = isHighlighted ?
         paypalIds.highlighted :
         paypalIds.regular,
-      price = 200,
+      price = 1000,
       discountAmount = 0,
       promoCode = '',
       promoApplied = false,
-      promoName
-    }) {
+      promoName = ''
+    }}) {
       return {
         id,
         isHighlighted,
@@ -55,9 +55,14 @@ export default contain(
       jobActions: PropTypes.object
     },
 
+    componentDidMount() {
+      const { jobActions } = this.props;
+      jobActions.clearPromo();
+    },
+
     goToJobBoard() {
       const { appActions } = this.props;
-      appActions.updateRoute('/jobs');
+      setTimeout(() => appActions.goTo('/jobs'), 0);
     },
 
     renderDiscount(discountAmount) {
@@ -92,7 +97,7 @@ export default contain(
           </Col>
           <Col
             md={ 3 }>
-            <h4>+ 50</h4>
+            <h4>+ 250</h4>
           </Col>
         </Row>
       );
@@ -100,6 +105,7 @@ export default contain(
 
     renderPromo() {
       const {
+        id,
         promoApplied,
         promoCode,
         promoName,
@@ -145,6 +151,7 @@ export default contain(
                 block={ true }
                 onClick={ () => {
                   jobActions.applyCode({
+                    id,
                     code: promoCode,
                     type: isHighlighted ? 'isHighlighted' : null
                   });
@@ -175,7 +182,7 @@ export default contain(
               sm={ 8 }
               smOffset={ 2 }
               xs={ 12 }>
-              <Panel>
+              <div>
                 <Row>
                   <Col
                     md={ 6 }
@@ -212,7 +219,7 @@ export default contain(
                     <Col
                       md={ 6 }>
                       <h4>${
-                        price - discountAmount + (isHighlighted ? 50 : 0)
+                        price - discountAmount + (isHighlighted ? 250 : 0)
                       }</h4>
                     </Col>
                   </Row>
@@ -260,7 +267,7 @@ export default contain(
                   </Col>
                 </Row>
                 <div className='spacer' />
-              </Panel>
+              </div>
             </Col>
           </Row>
         </div>

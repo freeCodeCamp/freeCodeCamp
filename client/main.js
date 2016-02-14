@@ -4,16 +4,8 @@ main.mapShareKey = 'map-shares';
 
 main.ga = window.ga || function() {};
 
-main.challengeTypes = {
-  'HTML_CSS_JQ': '0',
-  'JAVASCRIPT': '1',
-  'VIDEO': '2',
-  'ZIPLINE': '3',
-  'BASEJUMP': '4',
-  'BONFIRE': '5'
-};
-
-main = (function(main) {
+main = (function(main, global) {
+  const { Mousetrap } = global;
 
   // should be set before gitter script loads
   ((window.gitter = {}).chat = {}).options = {
@@ -31,14 +23,17 @@ main = (function(main) {
     main.chat.GitterChat = e.detail.Chat;
 
     main.chat.createHelpChat = function(room, helpChatBtnClass, roomTitle) {
-      roomTitle = roomTitle || 'Waypoint Help';
+      // room is always in PascalCase
+      roomTitle = room
+        .replace(/([A-Z])/g, ' $1')
+        .replace('Java Script', 'JavaScript');
 
       $('body').append(
         '<aside id="chat-embed-help" class="gitter-chat-embed is-collapsed" />'
       );
 
       main.chat.helpChat = new main.chat.GitterChat({
-        room: room,
+        room: `freecodecamp/${room}`,
         activationElement: false,
         targetElement: $('#chat-embed-help')
       });
@@ -101,60 +96,41 @@ main = (function(main) {
     });
 
 
-    $('#nav-chat-btn').on('click', function() {
-      if (!main.chat.isOpen) {
+    $('#nav-chat-btn').on('click', toggleMainChat);
 
+    function showMainChat() {
+      if (!main.chat.isOpen) {
         main.chat.mainChat.toggleChat(true);
       }
-    });
+    }
+
+    function collapseMainChat() {
+      $('#chat-embed-main').addClass('is-collapsed');
+      document.activeElement.blur();
+    }
+
+    function toggleMainChat() {
+      var isCollapsed = $('#chat-embed-main').hasClass('is-collapsed');
+
+      if (isCollapsed) {
+        showMainChat();
+      } else {
+        collapseMainChat();
+      }
+    }
+
+    // keyboard shortcuts: open main chat
+    Mousetrap.bind('g c', toggleMainChat);
   });
 
   return main;
-}(main));
-
-main.lockTop = function lockTop() {
-  var magiVal;
-
-  if ($(window).width() >= 990) {
-    if ($('.editorScrollDiv').html()) {
-
-      magiVal = $(window).height() -
-        $('.navbar').height() +
-        $('.footer').height();
-
-      if (magiVal < 0) {
-        magiVal = 0;
-      }
-      $('.editorScrollDiv').css('height', magiVal - 85 + 'px');
-    }
-
-    magiVal = $(window).height() -
-      $('.navbar').height() +
-      $('.footer').height();
-
-    if (magiVal < 0) {
-      magiVal = 0;
-    }
-
-    $('.scroll-locker')
-      .css('min-height', $('.editorScrollDiv').height())
-      .css('height', magiVal - 185);
-  } else {
-    $('.editorScrollDiv').css('max-height', 500 + 'px');
-
-    $('.scroll-locker')
-      .css('position', 'inherit')
-      .css('top', 'inherit')
-      .css('width', '100%')
-      .css('max-height', '85%');
-  }
-};
+}(main, window));
 
 var lastCompleted = typeof lastCompleted !== 'undefined' ?
   lastCompleted :
   '';
 
-function getMapShares() {
+main.getMapShares = function getMapShares() {
   var alreadyShared = JSON.parse(
     localStorage.getItem(main.mapShareKey) ||
     '[]'
@@ -165,10 +141,10 @@ function getMapShares() {
     alreadyShared = [];
   }
   return alreadyShared;
-}
+};
 
-function setMapShare(id) {
-  var alreadyShared = getMapShares();
+main.setMapShare = function setMapShare(id) {
+  var alreadyShared = main.getMapShares();
   var found = false;
   alreadyShared.forEach(function(_id) {
     if (_id === id) {
@@ -180,22 +156,9 @@ function setMapShare(id) {
   }
   localStorage.setItem(main.mapShareKey, JSON.stringify(alreadyShared));
   return alreadyShared;
-}
+};
 
 $(document).ready(function() {
-
-
-  var challengeName = typeof challengeName !== 'undefined' ?
-    challengeName :
-    '';
-
-  if (challengeName) {
-    ga('send', 'event', 'Challenge', 'load', challengeName);
-  }
-
-  if (typeof editor !== 'undefined') {
-    $('#reset-button').on('click', window.resetEditor);
-  }
 
   var CSRF_HEADER = 'X-CSRF-Token';
 
@@ -209,38 +172,6 @@ $(document).ready(function() {
 
   setCSRFToken($('meta[name="csrf-token"]').attr('content'));
 
-  $('.checklist-element').each(function() {
-    var checklistElementId = $(this).attr('id');
-    if (localStorage[checklistElementId]) {
-      $(this).children().children('li').addClass('faded');
-      $(this).children().children('input').trigger('click');
-    }
-  });
-
-  $('.start-challenge').on('click', function() {
-    $(this).parent().remove();
-    $('.challenge-content')
-      .removeClass('hidden-element')
-      .addClass('animated fadeInDown');
-  });
-
-  $('.challenge-list-checkbox').on('change', function() {
-    var checkboxId = $(this).parent().parent().attr('id');
-    if ($(this).is(':checked')) {
-      $(this).parent().siblings().children().addClass('faded');
-      if (!localStorage || !localStorage[checkboxId]) {
-        localStorage[checkboxId] = true;
-      }
-    }
-
-    if (!$(this).is(':checked')) {
-      $(this).parent().siblings().children().removeClass('faded');
-      if (localStorage[checkboxId]) {
-        localStorage.removeItem(checkboxId);
-      }
-    }
-  });
-
   $('img').error(function() {
     $(this)
       .unbind('error')
@@ -249,301 +180,6 @@ $(document).ready(function() {
         'https://s3.amazonaws.com/freecodecamp/camper-image-placeholder.png'
       );
   });
-
-  function reBindModals() {
-    if (!window.common) {
-      return;
-    }
-    var common = window.common;
-
-    $('.close-modal').unbind('click');
-    $('.close-modal').on('click', function() {
-      setTimeout(function() {
-          $('.close-modal').parent().parent().parent().parent().modal('hide');
-      }, 200);
-    });
-
-    $('#search-issue').unbind('click');
-    $('#search-issue').on('click', function() {
-      var queryIssue = window.location.href.toString();
-      window.open(
-        'https://github.com/FreeCodeCamp/FreeCodeCamp/issues?q=' +
-        'is:issue is:all ' +
-        (common.challengeName) +
-        ' OR ' +
-        queryIssue
-          .substr(queryIssue.lastIndexOf('challenges/') + 11)
-          .replace('/', ''), '_blank');
-    });
-
-    $('#gist-share').unbind('click');
-    $('#gist-share').on('click', function() {
-      var gistWindow = window.open('', '_blank');
-
-      $('#gist-share')
-        .attr('disabled', 'true')
-        .removeClass('btn-danger')
-        .addClass('btn-warning disabled');
-
-      function createCORSRequest(method, url) {
-        var xhr = new XMLHttpRequest();
-        if ('withCredentials' in xhr) {
-          xhr.open(method, url, true);
-        } else if (typeof XDomainRequest !== 'undefined') {
-          xhr = new XDomainRequest();
-          xhr.open(method, url);
-        } else {
-          xhr = null;
-        }
-        xhr.setRequestHeader('Content-type', 'application/json; charset=utf-8');
-        return xhr;
-      }
-
-      var request = createCORSRequest('post', 'https://api.github.com/gists');
-      if (!request) {
-        return null;
-      }
-
-      request.onload = function() {
-        if (
-          request.readyState === 4 &&
-          request.status === 201 &&
-          request.statusText === 'Created'
-        ) {
-          gistWindow.location.href =
-            JSON.parse(request.responseText)['html_url'];
-        }
-      };
-
-      var description = common.username ?
-        'http://www.freecodecamp.com/' + common.username + ' \'s s' :
-        'S';
-
-      var data = {
-        description: description + 'olution for ' + common.challengeName,
-        public: true,
-        files: {}
-      };
-      var queryIssue = window.location.href.toString().split('#?')[0];
-      var filename = queryIssue
-        .substr(queryIssue.lastIndexOf('challenges/') + 11)
-        .replace('/', '') + '.js';
-
-      data.files[filename] = {
-        content: '// ' +
-          common.challengeName +
-          '\n' +
-          (common.username ? '// Author: @' + common.username + '\n' : '') +
-          '// Challenge: ' +
-          queryIssue +
-          '\n' +
-          '// Learn to Code at Free Code Camp (www.freecodecamp.com)' +
-          '\n\n' +
-          window.editor.getValue().trim()
-      };
-
-      request.send(JSON.stringify(data));
-    });
-
-    $('#help-ive-found-a-bug-wiki-article').unbind('click');
-    $('#help-ive-found-a-bug-wiki-article').on('click', function() {
-      window.open(
-        'https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/' +
-          "Help-I've-Found-a-Bug",
-        '_blank'
-      );
-    });
-
-    $('#report-issue').unbind('click');
-    $('#report-issue').on('click', function() {
-      var textMessage = [
-        'Challenge [',
-        (common.challengeName || window.location.href),
-        '](',
-        window.location.href,
-        ') has an issue.\n',
-        'User Agent is: <code>',
-        navigator.userAgent,
-        '</code>.\n',
-        'Please describe how to reproduce this issue, and include ',
-        'links to screenshots if possible.\n\n'
-      ].join('');
-
-      if (
-        window.editor &&
-        typeof window.editor.getValue === 'function' &&
-        window.editor.getValue().trim()
-      ) {
-        var type;
-        switch (common.challengeType) {
-          case main.challengeTypes.HTML_CSS_JQ:
-            type = 'html';
-            break;
-          case main.challengeTypes.JAVASCRIPT:
-          case main.challengeTypes.BONFIRE:
-            type = 'javascript';
-            break;
-          default:
-            type = '';
-        }
-
-        textMessage += [
-          'My code:\n```',
-          type,
-          '\n',
-          window.editor.getValue(),
-          '\n```\n\n'
-        ].join('');
-      }
-
-      textMessage = encodeURIComponent(textMessage);
-
-      $('#issue-modal').modal('hide');
-      window.open(
-        'https://github.com/freecodecamp/freecodecamp/issues/new?&body=' +
-        textMessage, '_blank'
-      );
-    });
-
-    $('#completed-courseware').unbind('click');
-    $('#completed-courseware').on('click', function() {
-        $('#complete-courseware-dialog').modal('show');
-    });
-
-    $('#completed-courseware-editorless').unbind('click');
-    $('#completed-courseware-editorless').on('click', function() {
-        $('#complete-courseware-editorless-dialog').modal('show');
-    });
-
-    $('#trigger-pair-modal').unbind('click');
-    $('#trigger-pair-modal').on('click', function() {
-        $('#pair-modal').modal('show');
-    });
-
-    $('#trigger-reset-modal').unbind('click');
-    $('#trigger-reset-modal').on('click', function() {
-        $('#reset-modal').modal('show');
-    });
-
-    $('#trigger-help-modal').unbind('click');
-    $('#trigger-help-modal').on('click', function() {
-        $('#help-modal').modal('show');
-    });
-
-    $('#trigger-issue-modal').unbind('click');
-    $('#trigger-issue-modal').on('click', function() {
-        $('#issue-modal').modal('show');
-    });
-
-    $('#completed-zipline-or-basejump').unbind('click');
-    $('#completed-zipline-or-basejump').on('click', function() {
-        $('#complete-zipline-or-basejump-dialog').modal('show');
-    });
-
-    $('#next-courseware-button').unbind('click');
-    $('#next-courseware-button').on('click', function() {
-      $('#next-courseware-button').unbind('click');
-      if ($('.signup-btn-nav').length < 1) {
-        var data;
-        var completedWith;
-        var publicURL;
-        switch (common.challengeType) {
-          case main.challengeTypes.HTML_CSS_JQ:
-          case main.challengeTypes.JAVASCRIPT:
-          case main.challengeTypes.VIDEO:
-            data = {
-              challengeInfo: {
-                challengeId: common.challengeId,
-                challengeName: common.challengeName
-              }
-            };
-            $.post('/completed-challenge/', data)
-              .success(function(res) {
-                if (!res) {
-                  return;
-                }
-                window.location.href = '/challenges/next-challenge?id=' +
-                  common.challengeId;
-              })
-              .fail(function() {
-                window.location.href = '/challenges';
-              });
-
-            break;
-          case main.challengeTypes.ZIPLINE:
-            completedWith = $('#completed-with').val() || null;
-            publicURL = $('#public-url').val() || null;
-            data = {
-              challengeInfo: {
-                challengeId: common.challengeId,
-                challengeName: common.challengeName,
-                completedWith: completedWith,
-                publicURL: publicURL,
-                challengeType: common.challengeType
-              }
-            };
-
-            $.post('/completed-zipline-or-basejump/', data)
-              .success(function() {
-                window.location.href = '/challenges/next-challenge?id=' +
-                  common.challengeId;
-              })
-              .fail(function() {
-                window.location.href = '/challenges';
-              });
-            break;
-
-          case main.challengeTypes.BASEJUMP:
-            completedWith = $('#completed-with').val() || null;
-            publicURL = $('#public-url').val() || null;
-            var githubURL = $('#github-url').val() || null;
-            data = {
-              challengeInfo: {
-                challengeId: common.challengeId,
-                challengeName: common.challengeName,
-                completedWith: completedWith,
-                publicURL: publicURL,
-                githubURL: githubURL,
-                challengeType: common.challengeType,
-                verified: false
-              }
-            };
-            $.post('/completed-zipline-or-basejump/', data)
-              .success(function() {
-                window.location.href = '/challenges/next-challenge?id=' +
-                  common.challengeId;
-              })
-              .fail(function() {
-                window.location.replace(window.location.href);
-              });
-            break;
-
-          case main.challengeTypes.BONFIRE:
-            window.location.href = '/challenges/next-challenge?id=' +
-              common.challengeId;
-            break;
-
-          default:
-            console.log('Happy Coding!');
-            break;
-          }
-      }
-    });
-
-    $('#complete-courseware-dialog').on('hidden.bs.modal', function() {
-      window.editor.focus();
-    });
-
-    $('#complete-zipline-or-basejump').on('hidden.bs.modal', function() {
-      window.editor.focus();
-    });
-  }
-
-  $(window).resize(function() {
-    reBindModals();
-  });
-
-  reBindModals();
 
   function upvoteHandler(e) {
     e.preventDefault();
@@ -577,6 +213,10 @@ $(document).ready(function() {
 
   var storySubmitButtonHandler = function storySubmitButtonHandler() {
 
+    if (!$('#story-submission-form')[0].checkValidity()) {
+      return null;
+    }
+
     var link = $('#story-url').val();
     var headline = $('#story-title').val();
     var description = $('#description-box').val();
@@ -597,108 +237,20 @@ $(document).ready(function() {
       .fail(function() {
         $('#story-submit').bind('click', storySubmitButtonHandler);
       })
-      .done(function(data) {
-        window.location = '/stories/' + data.storyLink;
+      .done(function({ storyLink, isBanned }) {
+        if (isBanned) {
+          window.location = '/news';
+          return null;
+        }
+        window.location = '/stories/' + storyLink;
       });
   };
 
   $('#story-submit').on('click', storySubmitButtonHandler);
 
-  // fakeiphone positioning hotfix
-  if (
-    $('.iphone-position').html() ||
-    $('.iphone').html()
-  ) {
-    var startIphonePosition = parseInt(
-      $('.iphone-position')
-        .css('top')
-        .replace('px', ''),
-      10
-    );
-
-    var startIphone = parseInt(
-      $('.iphone')
-        .css('top')
-        .replace('px', ''),
-      10
-    );
-
-    $(window).on('scroll', function() {
-      var courseHeight = $('.courseware-height').height();
-      var courseTop = $('.courseware-height').offset().top;
-      var windowScrollTop = $(window).scrollTop();
-      var phoneHeight = $('.iphone-position').height();
-
-      if (courseHeight + courseTop - windowScrollTop - phoneHeight <= 0) {
-        $('.iphone-position').css(
-          'top',
-          startIphonePosition +
-            courseHeight +
-            courseTop -
-            windowScrollTop -
-            phoneHeight
-        );
-
-        $('.iphone').css(
-          'top',
-          startIphonePosition +
-            courseHeight +
-            courseTop -
-            windowScrollTop -
-            phoneHeight +
-            120
-        );
-      } else {
-        $('.iphone-position').css('top', startIphonePosition);
-        $('.iphone').css('top', startIphone);
-      }
-    });
-  }
-
-  if ($('.scroll-locker').html()) {
-
-    if ($('.scroll-locker').html()) {
-      main.lockTop();
-      $(window).on('resize', function() {
-        main.lockTop();
-      });
-      $(window).on('scroll', function() {
-        main.lockTop();
-      });
-    }
-
-    var execInProgress = false;
-
-    // why is this not $???
-    document
-      .getElementById('scroll-locker')
-      .addEventListener(
-        'previewUpdateSpy',
-        function(e) {
-          if (execInProgress) {
-            return null;
-          }
-          execInProgress = true;
-          setTimeout(function() {
-            if (
-              $($('.scroll-locker').children()[0]).height() - 800 > e.detail
-            ) {
-              $('.scroll-locker').scrollTop(e.detail);
-            } else {
-              var scrollTop = $($('.scroll-locker').children()[0]).height();
-
-              $('.scroll-locker').animate({ scrollTop: scrollTop }, 175);
-            }
-            execInProgress = false;
-          }, 750);
-        },
-        false
-      );
-  }
-
 
   // map sharing
-  var alreadyShared = getMapShares();
+  var alreadyShared = main.getMapShares();
 
   if (lastCompleted && alreadyShared.indexOf(lastCompleted) === -1) {
     $('div[id="' + lastCompleted + '"]')
@@ -726,159 +278,222 @@ $(document).ready(function() {
       username +
       '&redirect_uri=http%3A%2F%2Ffreecodecamp%2Ecom%2Fmap';
 
-    setMapShare(challengeBlockName);
-    main.ga('send', 'event', 'FB_LINK', 'SHARE', 'Facebook map share');
+    main.setMapShare(challengeBlockName);
+    window.ga('send', 'event', 'FB_LINK', 'SHARE', 'Facebook map share');
     window.location.href = link;
   });
-});
 
-var profileValidation =
-  window.angular.module('profileValidation', ['ui.bootstrap']);
+  function expandCaret(item) {
+    $(item)
+      .prev().find('.fa-caret-right')
+      .removeClass('fa-caret-right').addClass('fa-caret-down');
+  }
 
-profileValidation.controller(
-  'profileValidationController',
-  [
-    '$scope',
-    '$http',
-    function($scope, $http) {
-      $http.get('/account/api').success(function(data) {
-        $scope.user = data.user;
+  function collapseCaret(item) {
+    $(item)
+      .prev().find('.fa-caret-down')
+      .removeClass('fa-caret-down').addClass('fa-caret-right');
+  }
 
-        $scope.user.username = $scope.user.username ?
-          $scope.user.username.toLowerCase() :
-          null;
+  function expandBlock(item) {
+    $(item).addClass('in').css('height', '100%');
+    expandCaret(item);
+  }
 
-        $scope.storedUsername = data.user.username;
-        $scope.storedEmail = data.user.email;
-        $scope.user.email = $scope.user.email ?
-          $scope.user.email.toLowerCase() :
-          null;
+  function collapseBlock(item) {
+    $(item).removeClass('in').css('height', '100%');
+    collapseCaret(item);
+  }
 
-        $scope.user.twitterHandle = $scope.user.twitterHandle ?
-          $scope.user.twitterHandle.toLowerCase() :
-          null;
+  $.each($('.sr-only'), function(i, span) {
+    if ($(span).text() === ' Complete') {
+      $(span).parents('p').addClass('manip-hidden');
+    }
+  });
 
-        $scope.asyncComplete = true;
+  $.each($('.map-collapse'), function(i, div) {
+    if ($(div).find('.manip-hidden').length ===
+        $(div).find('p').length) {
+      collapseBlock(div);
+      $(div).prev('h3').addClass('faded');
+      $(div).prev('h2').addClass('faded');
+    }
+  });
+
+  var scrollTo, dashedName = localStorage.getItem('currentDashedName'),
+    elemsToSearch = $('p.padded-ionic-icon a'), currOrLastChallenge;
+  if (!dashedName && $('.sr-only').length) {
+    elemsToSearch = $('.sr-only');
+  }
+
+  currOrLastChallenge = elemsToSearch.filter(function() {
+    if (dashedName) {
+      return $(this).attr('href').match(dashedName);
+    }
+    return $(this).text() === ' Complete';
+  });
+
+  if (currOrLastChallenge.length) {
+    currOrLastChallenge = currOrLastChallenge[currOrLastChallenge.length - 1];
+    scrollTo = $(currOrLastChallenge).offset().top - 380;
+    $('html, body, .map-accordion').scrollTop(scrollTo);
+  }
+
+  if (String(window.location).match(/\/map$/ig)) {
+    $('body>.flashMessage').find('.alert').css('display', 'none');
+    $('.map-fixed-header').css('top', '50px');
+  }
+
+  // map global selectors
+  var mapFilter = $('#map-filter');
+  var mapShowAll = $('#showAll');
+
+  $('#nav-map-btn').on('click', toggleMap);
+
+  $('.map-aside-action-collapse').on('click', collapseMap);
+
+  function showMap() {
+    if (!main.isMapAsideLoad) {
+      var mapAside = $('<iframe>');
+      mapAside.attr('src', '/map-aside');
+      $('.map-aside').append(mapAside);
+      main.isMapAsideLoad = true;
+    }
+    $('.map-aside').removeClass('is-collapsed');
+  }
+
+  function collapseMap() {
+    $('.map-aside').addClass('is-collapsed');
+    document.activeElement.blur();
+  }
+
+  function toggleMap() {
+    var isCollapsed = $('.map-aside').hasClass('is-collapsed');
+
+    if (isCollapsed) {
+      showMap();
+    } else {
+      collapseMap();
+    }
+  }
+
+  $('#accordion').on('show.bs.collapse', function(e) {
+    expandCaret(e.target);
+    if ($('a[data-toggle=collapse]').length === $('.fa-caret-down').length) {
+      mapShowAll.text('Collapse all challenges');
+      mapShowAll.addClass('active');
+    }
+  }).on('hide.bs.collapse', function(e) {
+    collapseCaret(e.target);
+    if ($('a[data-toggle=collapse]').length === $('.fa-caret-right').length) {
+      mapShowAll.text('Expand all challenges');
+      mapShowAll.removeClass('active');
+    }
+  });
+
+  mapShowAll.on('click', () => {
+    var mapExpanded = mapShowAll.hasClass('active');
+    if (!mapExpanded) {
+      $.each($('.map-collapse:not(".in")'),
+      function(i, div) {
+        expandBlock(div);
       });
+      mapShowAll.text('Collapse all challenges');
+      return mapShowAll.addClass('active');
+    } else {
+      $.each($('.map-collapse.in'), function(i, div) {
+        collapseBlock(div);
+      });
+      mapShowAll.text('Expand all challenges');
+      return mapShowAll.removeClass('active');
     }
-  ]
-);
+  });
 
-profileValidation.controller(
-  'pairedWithController',
-  [
-    '$scope',
-    function($scope) { $scope.existingUser = null; }
-  ]
-);
+  // Map live filter
+  mapFilter.on('keyup', () => {
+    if (mapFilter.val().length > 0) {
+      var regex = new RegExp(mapFilter.val().replace(/ /g, '.'), 'i');
 
-profileValidation.controller('emailSignUpController', function() {});
-
-profileValidation.controller('emailSignInController', function() {});
-
-profileValidation.controller('URLSubmitController', function() {});
-
-profileValidation.controller('nonprofitFormController', function() {});
-
-profileValidation.controller(
-  'doneWithFirst100HoursFormController',
-  function() {}
-);
-
-profileValidation.controller('submitStoryController', function() {});
-
-profileValidation.directive(
-  'uniqueUsername',
-  [
-    '$http',
-    function($http) {
-      return {
-        restrict: 'A',
-        require: 'ngModel',
-        link: function(scope, element, attrs, ngModel) {
-
-          element.bind('keyup', function() {
-
-            ngModel.$setValidity('unique', true);
-            var username = element.val();
-            if (username) {
-              var config = { params: { username: username } };
-              $http
-                .get('/api/users/exists', config)
-                .success(function(result) {
-                  if (username === scope.storedUsername) {
-                    ngModel.$setValidity('unique', true);
-                  } else if (result.exists) {
-                    ngModel.$setValidity('unique', false);
-                  }
-                });
-            }
-          });
+      // Hide/unhide challenges that match the regex
+      $('.challenge-title').each((index, title) => {
+        if (regex.test($(title).attr('name'))) {
+          expandBlock($(title).closest('.chapterBlock'));
+          expandBlock($(title).closest('.certBlock'));
+          $(title).removeClass('hidden');
+        } else {
+          $(title).addClass('hidden');
         }
-      };
+      });
+
+      // Hide/unhide blocks with no matches
+      $.each($('.chapterBlock'), function(i, div) {
+        if ($(div).find('.hidden').length ===
+          $(div).find('p').length) {
+          $(div).addClass('hidden');
+          $(div).prev('h3').addClass('hidden');
+        } else {
+          $(div).removeClass('hidden');
+          $(div).prev('h3').removeClass('hidden');
+        }
+      });
+
+      // Hide/unhide superblocks with no matches
+      $.each($('.certBlock'), function(i, div) {
+        if ($(div).children('#nested').children('h3.hidden').length ===
+          $(div).children('#nested').children('h3').length) {
+          $(div).prev('h2').addClass('hidden');
+        } else {
+          $(div).prev('h2').removeClass('hidden');
+        }
+      });
+
+      // Display "Clear Filter" element
+      if (mapFilter.next().children().hasClass('fa-search')) {
+        mapFilter.next()
+          .children()
+          .removeClass('fa-search')
+          .addClass('fa-times');
+        mapFilter.next().addClass('filled');
+        // Scroll to the top of the page
+        $('html, body, .map-accordion').scrollTop(0);
+      }
+    } else {
+      clearMapFilter();
     }
-  ]
-);
 
-profileValidation.directive('existingUsername',
-  [
-    '$http',
-    function($http) {
-      return {
-        restrict: 'A',
-        require: 'ngModel',
-        link: function(scope, element, attrs, ngModel) {
-
-          element.bind('keyup', function() {
-
-            if (element.val().length > 0) {
-              ngModel.$setValidity('exists', false);
-            } else {
-              element.removeClass('ng-dirty');
-              ngModel.$setPristine();
-            }
-
-            var username = element.val();
-            if (username) {
-              var config = { params: { username: username } };
-              $http
-                .get('/api/users/exists', config)
-                .success(function(result) {
-                  ngModel.$setValidity('exists', result.exists);
-                });
-            }
-          });
-        }
-      };
-  }]);
-
-profileValidation.directive(
-  'uniqueEmail',
-  [
-    '$http',
-    function($http) {
-      return {
-        restrict: 'A',
-        require: 'ngModel',
-        link: function getUnique(scope, element, attrs, ngModel) {
-          element.bind('keyup', function() {
-            ngModel.$setValidity('unique', true);
-            var email = element.val();
-            if (email) {
-              var config = { params: { email: email } };
-              $http
-                .get('/api/users/exists', config)
-                .success(function(result) {
-                  if (email === scope.storedEmail) {
-                    ngModel.$setValidity('unique', true);
-                  } else if (result.exists) {
-                    ngModel.$setValidity('unique', false);
-                  }
-                });
-            }
-          });
-        }
-      };
+    // Display not found if everything is hidden
+    if ($.find('.certBlock').length ===
+        $('.map-accordion').children('.hidden').length) {
+      $('#noneFound').show();
+    } else {
+      $('#noneFound').hide();
     }
-  ]
-);
+  });
+
+  // Give focus to the search box by default
+  mapFilter.focus();
+
+  // Clicking the search button or x clears the map
+  $('.map-buttons .input-group-addon').on('click', clearMapFilter);
+
+  function clearMapFilter() {
+    mapFilter.val('');
+    mapFilter.next().children().removeClass('fa-times').addClass('fa-search');
+    mapFilter.next().removeClass('filled');
+    $('.map-accordion').find('.hidden').removeClass('hidden');
+    $('#noneFound').hide();
+  }
+
+  // Clear the search on escape key
+  mapFilter.on('keydown', (e) => {
+    if (e.keyCode === 27) {
+      e.preventDefault();
+      clearMapFilter();
+    }
+  });
+
+  window.Mousetrap.bind('esc', clearMapFilter);
+
+  // keyboard shortcuts: open map
+  window.Mousetrap.bind('g m', toggleMap);
+});

@@ -4,7 +4,7 @@ import { Col, Row, Grid } from 'react-bootstrap';
 import links from './links.json';
 
 export default class extends React.Component {
-  static displayName = 'Footer'
+  static displayName = 'Footer';
   renderLinks(mobile) {
     return links.map(link => {
       return (

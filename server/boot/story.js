@@ -115,6 +115,7 @@ module.exports = function(app) {
       function(stories) {
         var sliceVal = stories.length >= 100 ? 100 : stories.length;
         var data = stories.sort(sortByRank).slice(0, sliceVal);
+        res.set('Content-Type', 'text/xml');
         res.render('feed', {
           title: 'FreeCodeCamp Camper News RSS Feed',
           description: 'RSS Feed for FreeCodeCamp Top 100 Hot Camper News',
@@ -398,10 +399,13 @@ module.exports = function(app) {
   }
 
   function storySubmission(req, res, next) {
-    var data = req.body.data;
-    if (!req.user) {
-      return next(new Error('Not authorized'));
+    if (req.user.isBanned) {
+      return res.json({
+        isBanned: true
+      });
     }
+    var data = req.body.data;
+
     var storyLink = data.headline
       .replace(/[^a-z0-9\s]/gi, '')
       .replace(/\s+/g, ' ')

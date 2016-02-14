@@ -1,6 +1,7 @@
 import { Observable } from 'rx';
 import uuid from 'node-uuid';
 import moment from 'moment';
+import dedent from 'dedent';
 import debugFactory from 'debug';
 
 import { saveUser, observeMethod } from '../../server/utils/rx';
@@ -51,6 +52,12 @@ module.exports = function(User) {
   User.validatesUniquenessOf('username');
   User.settings.emailVerificationRequired = false;
 
+  User.on('dataSourceAttached', () => {
+    User.findOne$ = Observable.fromNodeCallback(User.findOne, User);
+    User.update$ = Observable.fromNodeCallback(User.updateAll, User);
+    User.count$ = Observable.fromNodeCallback(User.count, User);
+  });
+
   User.observe('before save', function({ instance: user }, next) {
     if (user) {
       user.username = user.username.trim().toLowerCase();
@@ -79,9 +86,33 @@ module.exports = function(User) {
     ctx.res.redirect('/email-signin');
   });
 
-  User.beforeRemote('create', function({ req }, notUsed, next) {
+  User.beforeRemote('create', function({ req, res }, _, next) {
     req.body.username = 'fcc' + uuid.v4().slice(0, 8);
-    next();
+    if (!req.body.email) {
+      return next();
+    }
+    return User.doesExist(null, req.body.email)
+      .then(exists => {
+        if (!exists) {
+          return next();
+        }
+
+        req.flash('error', {
+          msg: dedent`
+      The ${req.body.email} email address is already associated with an account.
+      Try signing in with it here instead.
+          `
+        });
+
+        return res.redirect('/email-signin');
+      })
+      .catch(err => {
+        console.error(err);
+        req.flash('error', {
+          msg: 'Oops, something went wrong, please try again later'
+        });
+        return res.redirect('/email-signup');
+      });
   });
 
   User.on('resetPasswordRequest', function(info) {
@@ -148,10 +179,18 @@ module.exports = function(User) {
     }
 
     return req.logIn({ id: accessToken.userId.toString() }, function(err) {
-      if (err) {
-        return next(err);
-      }
+      if (err) { return next(err); }
+
       debug('user logged in');
+
+      if (req.session && req.session.returnTo) {
+        var redirectTo = req.session.returnTo;
+        if (redirectTo === '/map-aside') {
+          redirectTo = '/map';
+        }
+        return res.redirect(redirectTo);
+      }
+
       req.flash('success', { msg: 'Success! You are logged in.' });
       return res.redirect('/');
     });
@@ -164,7 +203,7 @@ module.exports = function(User) {
     req.flash('errors', {
       msg: 'Invalid username or password.'
     });
-    return res.redirect('/');
+    return res.redirect('/email-signin');
   });
 
   User.afterRemote('logout', function(ctx, result, next) {
@@ -174,17 +213,15 @@ module.exports = function(User) {
     next();
   });
 
-  User.doesExist = function doesExist(username, email, cb) {
+  User.doesExist = function doesExist(username, email) {
     if (!username && !email) {
-      return nextTick(function() {
-        cb(null, false);
-      });
+      return Promise.resolve(false);
     }
     debug('checking existence');
 
     // check to see if username is on blacklist
     if (username && blacklistedUsernames.indexOf(username) !== -1) {
-      return cb(null, true);
+      return Promise.resolve(true);
     }
 
     var where = {};
@@ -194,19 +231,8 @@ module.exports = function(User) {
       where.email = email ? email.toLowerCase() : email;
     }
     debug('where', where);
-    User.count(
-      where,
-      function(err, count) {
-        if (err) {
-          debug('err checking existance: ', err);
-          return cb(err);
-        }
-        if (count > 0) {
-          return cb(null, true);
-        }
-        return cb(null, false);
-      }
-    );
+    return User.count(where)
+    .then(count => count > 0);
   };
 
   User.remoteMethod(
@@ -396,4 +422,23 @@ module.exports = function(User) {
       }
     }
   );
+
+  // user.updateTo$(updateData: Object) => Observable[Number]
+  User.prototype.update$ = function update$(updateData) {
+    const id = this.getId();
+    const updateOptions = { allowExtendedOperators: true };
+    if (
+        !updateData ||
+        typeof updateData !== 'object' ||
+        !Object.keys(updateData).length
+    ) {
+      return Observable.throw(new Error(
+        dedent`
+          updateData must be an object with at least one key,
+          but got ${updateData} with ${Object.keys(updateData).length}
+        `.split('\n').join(' ')
+      ));
+    }
+    return this.constructor.update$({ id }, updateData, updateOptions);
+  };
 };

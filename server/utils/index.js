@@ -1,13 +1,11 @@
 var cheerio = require('cheerio'),
     request = require('request'),
     MDNlinks = require('../../seed/bonfireMDNlinks'),
-    resources = require('./resources.json'),
-    nonprofits = require('../../seed/nonprofits.json');
+    resources = require('./resources.json');
 
 /**
  * Cached values
  */
-var allNonprofitNames;
 
 module.exports = {
   dasherize: function dasherize(name) {
@@ -42,17 +40,6 @@ module.exports = {
     return resources.compliments[
       Math.floor(Math.random() * resources.compliments.length)
       ];
-  },
-
-  allNonprofitNames: function() {
-    if (allNonprofitNames) {
-      return allNonprofitNames;
-    } else {
-      allNonprofitNames = nonprofits.map(function(elem) {
-        return {name: elem.name};
-      });
-      return allNonprofitNames;
-    }
   },
 
   whichEnvironment: function() {

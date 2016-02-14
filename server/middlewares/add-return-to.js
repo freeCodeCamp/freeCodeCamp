@@ -16,7 +16,8 @@ const pathsWhiteList = [
   'news',
   'challenges',
   'map',
-  'news'
+  'news',
+  'commit'
 ];
 
 const pathsOfNoReturnRegex = new RegExp(pathsOfNoReturn.join('|'), 'i');
@@ -35,7 +36,8 @@ export default function addReturnToUrl() {
     ) {
       return next();
     }
-    req.session.returnTo = req.path;
+    req.session.returnTo = req.originalUrl === '/map-aside'
+    ? '/map' : req.originalUrl;
     next();
   };
 }

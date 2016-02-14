@@ -1,5 +1,4 @@
 var Rx = require('rx'),
-    Twit = require('twit'),
     async = require('async'),
     moment = require('moment'),
     request = require('request'),
@@ -19,7 +18,6 @@ module.exports = function(app) {
   router.get('/api/github', githubCalls);
   router.get('/api/blogger', bloggerCalls);
   router.get('/api/trello', trelloCalls);
-  router.get('/api/codepen/twitter/:screenName', twitter);
   router.get('/sitemap.xml', sitemap);
   router.get('/chat', chat);
   router.get('/coding-bootcamp-cost-calculator', bootcampCalculator);
@@ -34,38 +32,17 @@ module.exports = function(app) {
   router.get('/submit-cat-photo', submitCatPhoto);
   router.get('/labs', showLabs);
   router.get('/stories', showTestimonials);
+  router.get('/shop', showShop);
   router.get('/all-stories', showAllTestimonials);
+  router.get('/terms', terms);
+  router.get('/privacy', privacy);
+  router.get('/code-of-conduct', codeOfConduct);
+  router.get(
+    '/the-fastest-web-page-on-the-internet',
+    theFastestWebPageOnTheInternet
+  );
 
   app.use(router);
-
-  function twitter(req, res, next) {
-    // sends out random tweets about javascript
-    var T = new Twit({
-      'consumer_key': secrets.twitter.consumerKey,
-      'consumer_secret': secrets.twitter.consumerSecret,
-      'access_token': secrets.twitter.token,
-      'access_token_secret': secrets.twitter.tokenSecret
-    });
-
-    var screenName;
-    if (req.params.screenName) {
-      screenName = req.params.screenName;
-    } else {
-      screenName = 'freecodecamp';
-    }
-
-    T.get(
-      'statuses/user_timeline',
-      {
-        'screen_name': screenName,
-        count: 10
-      },
-      function(err, data) {
-        if (err) { return next(err); }
-        return res.json(data);
-      }
-    );
-  }
 
   function sitemap(req, res, next) {
     var appUrl = 'http://www.freecodecamp.com';
@@ -190,6 +167,30 @@ module.exports = function(app) {
     });
   }
 
+  function terms(req, res) {
+      res.render('resources/terms-of-service', {
+            title: 'Terms of Service'
+      });
+  }
+
+  function privacy(req, res) {
+      res.render('resources/privacy', {
+          title: 'Privacy'
+      });
+  }
+
+  function codeOfConduct(req, res) {
+      res.render('resources/code-of-conduct', {
+          title: 'Code of Conduct'
+      });
+  }
+
+  function theFastestWebPageOnTheInternet(req, res) {
+    res.render('resources/the-fastest-web-page-on-the-internet', {
+      title: 'This is the fastest web page on the internet'
+    });
+  }
+
   function showTestimonials(req, res) {
     res.render('resources/stories', {
       title: 'Testimonials from Happy Free Code Camp Students ' +
@@ -205,6 +206,13 @@ module.exports = function(app) {
         'who got Software Engineer Jobs',
       stories: testimonials,
       moreStories: false
+    });
+  }
+
+  function showShop(req, res) {
+    res.render('resources/shop', {
+      title: 'Support Free Code Camp by Buying t-shirts, ' +
+        'stickers, and other goodies'
     });
   }
 

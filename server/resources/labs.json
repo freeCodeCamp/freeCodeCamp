@@ -28,6 +28,13 @@
     "image": "http://i.imgur.com/Y4D4MPL.png"
   },
   {
+    "camper": "bighitbiker3",
+    "name": "Queue That",
+    "url": "http://queuethat.com/",
+    "description": "An app that uses the SoundCloud API in order to make temporary, running playlists.",
+    "image": "https://www.evernote.com/l/AqSy_bYAZ0dOiJnn4CfNgo09DOSTUX1IADIB/image.png"
+  },
+  {
     "camper": "storbeck",
     "name": "Free Code Camp Event Zipline: Recipe Box",
     "url": "http://codepen.io/GeoffStorbeck/full/bVKyzd/",

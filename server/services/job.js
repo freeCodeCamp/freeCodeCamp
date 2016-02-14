@@ -3,7 +3,8 @@ const whereFilt = {
     isFilled: false,
     isPaid: true,
     isApproved: true
-  }
+  },
+  order: 'postedOn DESC'
 };
 
 export default function getJobServices(app) {

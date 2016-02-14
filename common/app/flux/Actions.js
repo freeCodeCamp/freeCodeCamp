@@ -1,49 +1,65 @@
 import { Actions } from 'thundercats';
-import debugFactory from 'debug';
+import { Observable } from 'rx';
 
-const debug = debugFactory('freecc:app:actions');
 
 export default Actions({
+  shouldBindMethods: true,
+  refs: { displayName: 'AppActions' },
+
   setTitle(title = 'Learn To Code') {
-    return { title: title + '| Free Code Camp' };
+    return { title: title + ' | Free Code Camp' };
   },
 
-  setUser({
-    username,
-    picture,
-    progressTimestamps = [],
-    isFrontEndCert,
-    isFullStackCert
-  }) {
+  getUser() {
+    return this.readService$('user', null, null)
+      .map(({
+        username,
+        picture,
+        progressTimestamps = [],
+        isFrontEndCert,
+        isBackEndCert,
+        isFullStackCert
+      }) => {
+        return {
+          username,
+          picture,
+          points: progressTimestamps.length,
+          isFrontEndCert,
+          isBackEndCert,
+          isFullStackCert
+        };
+      })
+      .catch(err => Observable.just({ err }));
+  },
+
+  // routing
+  // goTo(path: String) => path
+  goTo: null,
+
+  // goBack(arg?) => arg?
+  goBack: null,
+
+  // toast(args: { type?: String, message: String, title: String }) => args
+  toast(args) {
     return {
-      username,
-      picture,
-      points: progressTimestamps.length,
-      isFrontEndCert,
-      isFullStackCert
+      transform(state) {
+        return {
+          ...state,
+          toast: {
+            ...args,
+            id: state.toast && state.toast.id ? state.toast.id : 1
+          }
+        };
+      }
     };
   },
 
-  getUser: null,
-  updateRoute(route) {
-    return { route };
-  },
-  goBack: null
-})
-  .refs({ displayName: 'AppActions' })
-  .init(({ instance: appActions, args: [services] }) => {
-    appActions.getUser.subscribe(({ isPrimed }) => {
-      if (isPrimed) {
-        debug('isPrimed');
-        return;
+  // updateLocation(location: { pathname: String }) => location
+  updateLocation(location) {
+    return {
+      transform(state) {
+        return { ...state, location };
       }
-      services.read('user', null, null, (err, user) => {
-        if (err) {
-          return debug('user service error');
-        }
-        debug('user service returned successful');
-        return appActions.setUser(user);
-      });
-    });
-    return appActions;
-  });
+    };
+  }
+});

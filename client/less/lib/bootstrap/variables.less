@@ -14,7 +14,7 @@
 @gray-light:             lighten(@gray-base, 46.7%); // #777
 @gray-lighter:           lighten(@gray-base, 93.5%); // #eee
 
-@brand-primary:         #215f1e;
+@brand-primary:         darkgreen;
 @brand-success:         #457E86;
 @brand-info:            #4A2B0F;
 @brand-warning:         #f0ad4e;
@@ -26,12 +26,12 @@
 //## Settings for some of the most global styles.
 
 //** Background color for `<body>`.
-@body-bg:               #457E86;
+@body-bg:               #ffffff;
 //** Global text color on `<body>`.
 @text-color:            @gray-dark;
 
 //** Global textual link color.
-@link-color:            #215f1e;
+@link-color:            @brand-primary;
 //** Link hover color set via `darken()` function.
 @link-hover-color:      darken(@link-color, 15%);
 //** Link hover decoration.
@@ -144,27 +144,27 @@
 
 @btn-font-weight:                normal;
 
-@btn-default-color:              #333;
-@btn-default-bg:                 @gray-lighter;
-@btn-default-border:             #ccc;
+@btn-default-color:              #000000;
+@btn-default-bg:                 @body-bg;
+@btn-default-border:             #000000;
 
-@btn-primary-color:              @gray-lighter;
+@btn-primary-color:              @brand-primary;
 @btn-primary-bg:                 @brand-primary;
 @btn-primary-border:             darken(@btn-primary-bg, 5%);
 
-@btn-success-color:              @gray-lighter;
+@btn-success-color:              @brand-success;
 @btn-success-bg:                 @brand-success;
 @btn-success-border:             darken(@btn-success-bg, 5%);
 
-@btn-info-color:                 @gray-lighter;
+@btn-info-color:                 @brand-info;
 @btn-info-bg:                    @brand-info;
 @btn-info-border:                darken(@btn-info-bg, 5%);
 
-@btn-warning-color:              @gray-lighter;
+@btn-warning-color:              @brand-warning;
 @btn-warning-bg:                 @brand-warning;
 @btn-warning-border:             darken(@btn-warning-bg, 5%);
 
-@btn-danger-color:               @gray-lighter;
+@btn-danger-color:               @brand-danger;
 @btn-danger-bg:                  @brand-danger;
 @btn-danger-border:              darken(@btn-danger-bg, 5%);
 
@@ -289,7 +289,7 @@
 
 // Medium screen / desktop
 //** Deprecated `@screen-md` as of v3.0.1
-@screen-md:                  992px;
+@screen-md:                  1031px;
 @screen-md-min:              @screen-md;
 //** Deprecated `@screen-desktop` as of v3.0.1
 @screen-desktop:             @screen-md-min;
@@ -348,7 +348,7 @@
 
 // Basics of a navbar
 @navbar-height:                    50px;
-@navbar-margin-bottom:             @line-height-computed;
+@navbar-margin-bottom:             @line-height-computed+10px;
 @navbar-border-radius:             @border-radius-base;
 @navbar-padding-horizontal:        floor((@grid-gutter-width / 2));
 @navbar-padding-vertical:          ((@navbar-height - @line-height-computed) / 2);
@@ -360,7 +360,7 @@
 
 // Navbar links
 @navbar-default-link-color:                @gray-lighter;
-@navbar-default-link-hover-color:          #4a2b0f;
+@navbar-default-link-hover-color:          darkgreen;
 @navbar-default-link-hover-bg:             @gray-lighter;
 @navbar-default-link-active-color:         @gray-lighter;
 @navbar-default-link-active-bg:            darken(@navbar-default-bg, 6.5%);
@@ -662,7 +662,7 @@
 //##
 
 //** Background color on `.list-group-item`
-@list-group-bg:                 @gray-lighter;
+@list-group-bg:                 @body-bg;
 //** `.list-group-item` border color
 @list-group-border:             #ddd;
 //** List group border radius
