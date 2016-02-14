@@ -169,6 +169,7 @@
         "String.toLowerCase()"
       ],
       "solutions": [
+        "function palindrome(str) {\n  var string = str.toLowerCase().split(/[^A-Za-z0-9]/gi).join('');\n  var aux = string.split('');\n  if (aux.join('') === aux.reverse().join('')){\n    return true;\n  }\n\n  return false;\n}"
       ],
       "type": "bonfire",
       "challengeType": 5,
