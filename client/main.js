@@ -358,7 +358,7 @@ $(document).ready(function() {
       mapAside.attr({
         src: '/map-aside',
         scrolling: 'yes'
-      });   
+      });
       $('.map-aside .iframeWrapper').append(mapAside);
       main.isMapAsideLoad = true;
     }
