@@ -206,6 +206,27 @@
       "tests": [],
       "type": "basejump",
       "challengeType": 4,
+      "tests": [],
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "Microservicio de Marca de Tiempo",
+      "descriptionEs": [
+        "<strong>Objetivo:</strong> Arma un aplicación de Full-Stack JavaScript que es funcionalmente similar a este: <a href='https://timestamp-ms.herokuapp.com/' target='_blank'>https://timestamp-ms.herokuapp.com/</a> y despliegue lo a Heroku.",
+        "Tenga en cuenta que para cada proyecto, debería crear un nuevo repositorio en GitHub y un nuevo proyecto en Heroku. Si no recuerda como hacer esto, vuelva a visitar <a href='/challenges/get-set-for-our-back-end-development-projects'>http://freecodecamp.com//challenges/get-set-for-our-back-end-development-projects</a>.",
+        "Aquí están las historias de usuario especificas que debe implementar para este proyecto:",
+        "<strong>Historia de Usuario:</strong> Yo puedo pasar una cadena como un parámetro, y se comprobara para ver si es o no es una cadena que contiene una marca de tiempo de Unix o una fecha de lenguaje natural (ejemplo: Enero 1, 2016).",
+        "<strong>Historia de Usuario:</strong> Si lo hace, devuelve tanto la marca de tiempo de Unix y la fecha de lenguaje natural.",
+        "<strong>Historia de Usuario:</strong> Si no contiene una fecha o marca de tiempo de Unix, devolverá nula para esas propiedades.",
+        "Una vez que haya terminado de implementar estas historias de usuarios, pulsa el botón \"He Realizado este Reto\" y introduce los URLs para tu repositorio de GitHub y tu aplicación en vivo en Heroku.",
+        "Puede conseguir información en su proyecto de compañeros campistas compartiéndolo en nuestro <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Revisión de Código sala de chat</a>. También puede compartirlo en Twitter y el campamento de su ciudad (en Facebook)."
+      ],
+      "namePt": "",
+      "descriptionPt": [],
+      "releasedOn": "January 1, 2016",
       "isRequired": true
     },
     {
