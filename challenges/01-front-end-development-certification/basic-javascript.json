@@ -3384,7 +3384,7 @@
         "Here is a sample of using the dot operator (<code>.</code>) to read an object property:",
         "<blockquote>var myObj = {<br>  prop1: \"val1\",<br>  prop2: \"val2\"<br>};<br>var prop1val = myObj.prop1; // val1<br>var prop2val = myObj.prop2; // val2</blockquote>",
         "<h4>Instructions</h4>",
-        "Read in the property values of <code>testObj</code> using dot notation. Set the property <code>hat</code> to the variable <code>hatValue</code> and the property <code>shirt</code> to <code>shirtValue</code>."
+        "Read in the property values of <code>testObj</code> using dot notation. Set the variable <code>hatValue</code> equal to the object property <code>hat</code> and set the variable <code>shirtValue</code> equal to the object property <code>shirt</code>."
       ],
       "releasedOn": "January 1, 2016",
       "challengeSeed": [
