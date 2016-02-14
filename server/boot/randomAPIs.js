@@ -37,6 +37,8 @@ module.exports = function(app) {
   router.get('/terms', terms);
   router.get('/privacy', privacy);
   router.get('/code-of-conduct', codeOfConduct);
+  router.get('/academic-honesty', academicHonesty);
+
   router.get(
     '/the-fastest-web-page-on-the-internet',
     theFastestWebPageOnTheInternet
@@ -175,13 +177,19 @@ module.exports = function(app) {
 
   function privacy(req, res) {
       res.render('resources/privacy', {
-          title: 'Privacy'
+          title: "Privacy policy"
       });
   }
 
   function codeOfConduct(req, res) {
       res.render('resources/code-of-conduct', {
           title: 'Code of Conduct'
+      });
+  }
+
+  function academicHonesty(req, res) {
+      res.render('resources/academic-honesty', {
+          title: 'Academic Honesty policy'
       });
   }
 
