@@ -215,7 +215,7 @@
       "descriptionRu": [],
       "nameEs": "Microservicio de Marca de Tiempo",
       "descriptionEs": [
-        "<strong>Objetivo:</strong> Arma un aplicación de Full-Stack JavaScript que es funcionalmente similar a este: <a href='https://timestamp-ms.herokuapp.com/' target='_blank'>https://timestamp-ms.herokuapp.com/</a> y despliegue lo a Heroku.",
+        "<strong>Objetivo:</strong> Arma un aplicación de Desarollo de Pila Complete de JavaScript que es funcionalmente similar a este: <a href='https://timestamp-ms.herokuapp.com/' target='_blank'>https://timestamp-ms.herokuapp.com/</a> y despliegue lo a Heroku.",
         "Tenga en cuenta que para cada proyecto, debería crear un nuevo repositorio en GitHub y un nuevo proyecto en Heroku. Si no recuerda como hacer esto, vuelva a visitar <a href='/challenges/get-set-for-our-back-end-development-projects'>http://freecodecamp.com//challenges/get-set-for-our-back-end-development-projects</a>.",
         "Aquí están las historias de usuario especificas que debe implementar para este proyecto:",
         "<strong>Historia de Usuario:</strong> Yo puedo pasar una cadena como un parámetro, y se comprobara para ver si es o no es una cadena que contiene una marca de tiempo de Unix o una fecha de lenguaje natural (ejemplo: Enero 1, 2016).",
