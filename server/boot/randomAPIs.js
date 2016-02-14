@@ -177,7 +177,7 @@ module.exports = function(app) {
 
   function privacy(req, res) {
       res.render('resources/privacy', {
-          title: "Privacy policy"
+          title: 'Privacy policy'
       });
   }
 
