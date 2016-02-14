@@ -306,13 +306,13 @@
         "parseInt()"
       ],
       "challengeType": 5,
-      "nameEs": "Rangos amigables de fechas",
+      "nameEs": "Rangos de fechas amigables",
       "descriptionEs": [
-        "Implementa una forma de convertir dos fechas en un rango en formato amigable que pueda ser presentado a un usuario.",
-        "Ninguna información redundante debe ser mostrada en el rango de fechas.",
-        "Además, si el año inicial es el actual, y el año de finalización puede ser inferido por el lector, el año debe omitirse.",
-        "La fecha que se introduce como argumento tiene el formato YYYY-MM-DD",
-        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+        "Convierte un rango de fecha que conste de dos fechas en formato AAAA-MM-DD a un formato más legible",
+        "",
+        "La presentación amigable debería usar nombres de meses en inglés en lugar de números y fechas ordinales en lugar de cardinales (\"1st\" en lugar de \"1\").",
+        "No presentes información redundante o que pueda ser inferida por el usuario: si el rango de fechas termina en menos de un año desde la fecha incial, no presentes el año final.  Si el rango termina en el mismo mes de la fecha inicial, no presentes ni el mes ni el año final.",
+        "Además, si el rango de fechas comienza en el año actual y termina en un año o menos, no debes presentar el año al comienzo del rango amigable."
       ]
     },
     {
