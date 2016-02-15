@@ -693,7 +693,7 @@
         "Uno de tales operadores es el operador <code>+=</code>.",
         "<code>miVar += 5;</code> añadirá <code>5</code> a <code>miVar</code>.",
         "<h4>Instrucciones</h4>",
-        "Convierte las asignaciones para <code>a</code>, <code>b</code> y <code>c</code> para usar el operador <code>+=</code>."
+        "Convierte las asignaciones para <code>a</code>, <code>b</code> y <code>c</code> usando el operador <code>+=</code>."
       ]
     },
     {
@@ -793,7 +793,7 @@
         "multiplicará <code>miVar</code> por <code>5</code>. Esto puede ser reescrito como: ",
         "<code>miVar *= 5;</code>",
         "<h4>Instrucciones</h4>",
-        "Convierte las asignaciones para <code>a</code>, <code>b</code> y <code>c</code> para usar el operador <code>*=</code>."
+        "Convierte las asignaciones para <code>a</code>, <code>b</code> y <code>c</code> usando el operador <code>*=</code>."
       ]
     },
     {
@@ -886,7 +886,7 @@
       "nameEs": "Convierte Celsius a Fahrenheit",
       "descriptionEs": [
         "Para probar tu aprendizaje, crearás una solucion \"desde cero\". Coloca tu código entre las líneas indicadas y este será probado contra multiples casos de prueba.",
-        "El algoritmo para convertir de Celsius a Fahrenheit es la temperatura en grados Celsius 9/5 veces, más 32.",
+        "El algoritmo para convertir de Celsius a Fahrenheit consiste en multiplicar la temperatura en grados Celsius por 9/5 y al resultado agregarle 32.",
         "Se te da una variable <code>celsius</code> representando una temperatura en Celsius. Crea una variable <code>fahrenheit</code> y aplica el algoritmo para asignar la correspondiente temperatura en Fahrenheit."
       ]
     },
@@ -965,12 +965,12 @@
       ],
       "type": "waypoint",
       "challengeType": 1,
-      "nameEs": "Escapando Citas Literales en Cadenas",
+      "nameEs": "Escapar Comillas en Cadenas de Texto",
       "descriptionEs": [
-        "Cuando estas definiendo una cadena debes iniciar y terminar con comillas simples o dobles. ¿Qué pasa cuando necesitas una cita literal: <code>\"</code> o <code>'</code> dentro de tu cadena?",
-        "En JavaScript, tu puedes <dfn>escapar</dfn> una cita de considerarlo como un fin de la cita de cadena colocando una <dfn>barra invertida</dfn> (<code>\\</code>) antes de la cita.",
+        "Cuando estas definiendo una cadena debes iniciar y terminar con apostrofes o comillas. ¿Qué pasa cuando necesitas una comilla: <code>\"</code> o <code>'</code> dentro de tu cadena?",
+        "En JavaScript, tu puedes <dfn>escapar</dfn> unas comillas para diferenciarlas de las comillas del final de la cadena colocando una <dfn>barra invertida</dfn> (<code>\\</code>) antes de la cita.",
         "<code>var cadenaEjem = \"Alan dijo, \\\"Pedro esta aprendiendo JavaScript\\\".\";</code>",
-        "Esto le indiga a JavaScript que la cita siguiente no es el fin de la cadena, sino que debe aparecer dentro de la cadena. Así que si fueras a imprimir esto en la consola, tu obtendrías:",
+        "Esto le indica a JavaScript que la comilla siguiente no es el fin de la cadena, sino que debe aparecer dentro de la cadena. Así que si fueras a imprimir esto en la consola, tu obtendrías:",
         "<code>Alan dijo, \"Pedro esta aprendiendo JavaScript\".<code>",
         "<h4>Instructiones</h4>",
         "Usa <dfn>barras invertidas</dfn>para asigar una cadena a la variable <code>myStr</code> de modo que <em>si</em> tu fueras a imprimirla en la consola, tu verías:",
@@ -1009,12 +1009,12 @@
       "challengeType": 1,
       "nameEs": "Citando Cadenas con Comillas Simples",
       "descriptionEs": [
-        "Los valores de <dfn>Cadenas</dfn> en JavaScript pueden ser escritos con comillas simples o dobles, siempre y cuando inicie y termine con el mismo tipo de cita. A diferencia de algunos lenguajes, comillas simples y dobles son funcionalmente identicas en Javascript.",
-        "<code>\"Esta cadena tiene \\\"comillas dobles\\\" en esta\"</code>",
-        "El valor de usar una o la otra tiene que ver con la necesidad de <code>escapar</code> citas del mismo tipo. Si tu tienes una cadena con algunas citas dobles, esta puede ser difícil de leer y escribir. En su lugar, usar comillas simples:",
-        "<code>'Esta cadena tiene \"comillas dobles\" en esta. Y \"probablemente\" muchas de ellas.'</code>",
+        "Los valores de <dfn>Cadenas</dfn> en JavaScript pueden ser escritos con comillas o apostrofes, siempre y cuando inicien y terminen con el mismo tipo de cita. A diferencia de algunos lenguajes, apostrofes y comillas son funcionalmente identicas en Javascript.",
+        "<code>\"Esta cadena tiene \\\"comillas\\\" en esta\"</code>",
+        "La ventaja de usar una o la otra tiene que ver con la necesidad de <code>escapar</code> comillas. Si tu tienes una cadena con algunas comillas, esta puede ser difícil de leer y escribir. En su lugar, usa apostrofes:",
+        "<code>'Esta cadena tiene \"comillas\" en esta. Y \"probablemente\" muchas de ellas.'</code>",
         "<h4>Instrucciones</h4>",
-        "Cambia la cadena dada de comillas dobles a simples y quita el escape."
+        "Cambia la cadena dada de comillas a apostrofes y quita el escape."
       ]
     },
     {
@@ -1049,8 +1049,8 @@
       "challengeType": 1,
       "nameEs": "Secuencias de Escape en Cadenas",
       "descriptionEs": [
-        "Las comillas no son el único caracter que puede ser <dfn>escapado</dfn> dentro de una cadena. Aquí ahí una tabla de comunes secuencias de escape:",
-        "<table class=\"table table-striped\"><thead><tr><th>Código</th><th>Salida</th></tr></thead><tbody><tr><td>\\'</td><td>comilla simple</td></tr><tr><td>\\\"</td><td>comilla doble</td></tr><tr><td>\\\\</td><td>barra invertida</td></tr><tr><td>\\n</td><td>nueva línea</td></tr><tr><td>\\r</td><td>retorno de carro</td></tr><tr><td>\\t</td><td>tabulación</td></tr><tr><td>\\b</td><td>retroceso</td></tr><tr><td>\\f</td><td>salto de página</td></tr></tbody></table>",
+        "Las comillas no son el único caracter que puede ser <dfn>escapado</dfn> dentro de una cadena. Aquí ahí una tabla de secuencias de escape comunes:",
+        "<table class=\"table table-striped\"><thead><tr><th>Código</th><th>Salida</th></tr></thead><tbody><tr><td>\\'</td><td>apostrofe</td></tr><tr><td>\\\"</td><td>comilla</td></tr><tr><td>\\\\</td><td>barra invertida</td></tr><tr><td>\\n</td><td>nueva línea</td></tr><tr><td>\\r</td><td>retorno de carro</td></tr><tr><td>\\t</td><td>tabulación</td></tr><tr><td>\\b</td><td>retroceso</td></tr><tr><td>\\f</td><td>salto de página</td></tr></tbody></table>",
         "<em>Nota que la barra invertida por si misma tiene que ser escapada con el fin de mostrarse como una barra invertida.</em>",
         "<h4>Instrucciones</h4>",
         "Codifica la siguiente secuencia, separada por espacios:<br><code>barra invertida tabulación tabulación retorno de carro nueva línea</code> y asignala a <code>myStr</code>"
@@ -1098,7 +1098,7 @@
       ],
       "type": "waypoint",
       "challengeType": 1,
-      "nameEs": "Concatenando Cadenas con el Operador Más",
+      "nameEs": "Concatenar Cadenas con el Operador Más",
       "descriptionEs": [
         "En JavaScript, cuando el operador <code>+</code> es usado con un valor de <code>Cadena</code>, este es llamado el operador <dfn>concatenación</dfn>. Tu puedes construir una nueva cadena de otras cadenas <dfn>concatenandolas</dfn> juntas.",
         "<strong>Ejemplo</strong>",
@@ -1147,9 +1147,9 @@
       ],
       "type": "waypoint",
       "challengeType": 1,
-      "nameEs": "Concatenando Cadenas con el Operador Mas Igual",
+      "nameEs": "Concatenar Cadenas con el Operador Mas Igual",
       "descriptionEs": [
-        "Nosotros también podemos usar el operador <code>+=</code> para <dfn>concatenar</dfn> una cadena en el extremo de una variable de cadena existente. Esto puede ser muy útil para romper una cadena larga sobre varias líneas.",
+        "Nosotros también podemos usar el operador <code>+=</code> para <dfn>concatenar</dfn> una cadena al final de una variable de cadena existente. Esto puede ser muy útil para romper una cadena larga sobre varias líneas.",
         "<strong>Nota</strong><br>Cuidado con los espacios. La concatenación no agrega espacios entre cadenas concatenadas, así que necesitarás añadirlos tu mismo.",
         "<h4>Instrucciones</h4>",
         "Construye <code>myStr</code> sobre varias líneas concatenando estas dos cadenas:<br><code>\"This is the first sentence. \"</code> y <code>\"This is the second sentence.\"</code> usando el operador <code>+=</code>."
@@ -1200,7 +1200,7 @@
       ],
       "type": "waypoint",
       "challengeType": 1,
-      "nameEs": "Construyendo Cadenas con Variables",
+      "nameEs": "Construir Cadenas con Variables",
       "descriptionEs": [
         "A veces necesitarás construir una cadena, al estilo <a href=\"https://en.wikipedia.org/wiki/Mad_Libs\" target=\"_blank\">Mad Libs</a>. Mediante el uso del operador concatenación (<code>+</code>), puedes insertar una o más variables dentro de una cadena que estés construyendo.",
         "<h4>Instrucciones</h4>",
@@ -1255,7 +1255,7 @@
       "challengeType": 1,
       "nameEs": "Anexando Variables a Cadenas",
       "descriptionEs": [
-        "Al igual que podemos construir una cadena sobre múltipes líneas fuera de las cadenas <dfn>literales</dfn>, nosotros podemos ademas anexar variables a una cadena usando el operador más igual (<code>+=</code>).",
+        "Al igual que podemos construir una cadena en múltiples líneas a partir de cadenas <dfn>literales</dfn>, nosotros podemos ademas anexar variables a una cadena usando el operador más igual (<code>+=</code>).",
         "<h4>Instructiones</h4>",
         "Asigna <code>someAdjective</code> y anexalo a <code>myStr</code> usando el operador <code>+=</code>."
       ]
@@ -1388,7 +1388,7 @@
       ],
       "type": "waypoint",
       "challengeType": 1,
-      "nameEs": "Comprendiendo la Inmutabilidad de Cadenas",
+      "nameEs": "Comprender la Inmutabilidad de Cadenas",
       "descriptionEs": [
         "En JavaScript, los valores de las <code>Cadenas</code> son <dfn>inmutables</dfn>, lo cual significa que ellos no pueden ser alterados una vez creados.",
         "Por ejemplo, el siguiente código:",
@@ -1567,7 +1567,8 @@
       "challengeType": 1,
       "nameEs": "Espacios en Blanco de Palabras",
       "descriptionEs": [
-        "Ahora usaremos nuestro conocimiento de cadenas para construir una \"<a href='https://en.wikipedia.org/wiki/Mad_Libs' target='_blank'>Mad Libs</a>\" estilo juego de palabras que llamaremos \"Espacios en Blanco de Palabras\". Vas a crear unas oraciones estilo (opcionalmente graciosa) \"Llena los espacios en blanco\".",
+        "Ahora usaremos nuestro conocimiento de cadenas para construir un juego de palabras estilo \"<a href='https://en.wikipedia.org/wiki/Mad_Libs' target='_blank'>Mad Libs</a>\" que llamaremos \"Espacios en Blanco de Palabras\". Vas a crear unas oraciones estilo (opcionalmente graciosa) \"Llena los espacios en blanco\".",
+        "Necesitarás usar operadores de cadenas para construir una nueva cadena <code>result</code>, usando las variables previstas: <code>myNoun</code>, <code>myAdjective</code>, <code>myVerb</code> y <code>myAdverb</code>.",
         "Además, necesitarás proporcionar cadenas adicionales, las cuales no cambiarán entre las palabras proporcionadas.",
         "Nosotros hemos proporcionado un marco de referencia para probar tus resultados con diferentes palabras. La prueba correrá tu función con varias palabras diferentes para asegurarse  que todas las palabras proporcionadas aparezcan en la salida, así como en tus cadenas adicionales."
       ]
@@ -1762,13 +1763,13 @@
       ],
       "type": "waypoint",
       "challengeType": 1,
-      "nameEs": "Accediendo a Vectores Multi-Dimensionales con Indices",
+      "nameEs": "Acceder a Vectores Multi-Dimensionales con Indices",
       "descriptionEs": [
-        "Una manera de pensar un vector <dfn>multi-dimensional</dfn>, es como un <em>vector de vectores</em>. Cuando usas brackets para accesar a tu vector, el primer conjunto de brackets se refiere a las entradas en el más exterior vector y cada nivel subsecuente de brackets se refiere al siguiente nivel de entradas dentro.",
+        "Una manera de pensar un vector <dfn>multi-dimensional</dfn>, es como un <em>vector de vectores</em>. Cuando usas corchetes para acceder a tu vector, el primer conjunto de brackets se refiere a las entradas en el vector más externo y cada nivel subsecuente de brackets se refiere al siguiente nivel de vectores internos.",
         "<strong>Ejemplo</strong>",
         "<blockquote>var vec = [<br>    [1,2,3],<br>    [4,5,6],<br>    [7,8,9],<br>    [[10,11,12], 13, 14]<br>];<br>vec[0]; // es igual [1,2,3]<br>vec[1][2]; // es igual 6<br>vec[3][0][1]; // es igual 11</blockquote>",
         "<h4>Instrucciones</h4>",
-        "Lee de <code>myArray</code> usando la notación bracket de modo que myData sea igual a <code>8</code>"
+        "Lee de <code>myArray</code> usando la notación corchete de modo que myData sea igual a <code>8</code>"
       ]
     },
     {
@@ -1993,7 +1994,14 @@
         "assert(count > 4, 'message: You must have at least 5 items in your list');"
       ],
       "type": "checkpoint",
-      "challengeType": 1
+      "challengeType": 1,
+      "nameEs": "Lista de Compras",
+      "descriptionEs": [
+        "Crea una lista de compras en la variable <code>myList</code>. La lista tiene que ser un vector multidimensional conteniendo varios sub-vectores.",
+        "El primer elemento en cada sub-vector debe contener una cadena con el nombre del elemento. El segundo elemento debe ser un número representando la cantidad i. e.",
+        "<code>[\"Barra de Chocolate\", 15]</code>",
+        "Tiene que haber por lo menos 5 sub-vectores en la lista."
+      ]
     },
     {
       "id": "bg9997c9c89feddfaeb9bdef",
@@ -2138,7 +2146,18 @@
         "assert(/^\\s*myFunction\\s*\\([\\w\\W]+\\)\\s*;/m.test(code), 'message: Call <code>myFunction</code> after you define it.');"
       ],
       "type": "waypoint",
-      "challengeType": 1
+      "challengeType": 1,
+      "nameEs": "Pasando Valores a Funciones con Argumentos",
+      "descriptionEs": [
+        "Los <dfn>parámetros</dfn> son variables que actúan como marcadores de lugar para los valores que han de ser entrada para una función cuando esta es llamada. Cuando una función es definida, es típicamente definida con uno o más parámetros. Los valores actuales que son entrada (or <dfn>\"pasados\"</dfn>) dentro de una función cuando esta es llamada son concidos como <dfn>argumentos</dfn>.",
+        "Aquí hay una función con dos parámetros, <code>param1</code> y <code>param2</code>:",
+        "<blockquote>function testFun(param1, param2) {<br>  console.log(param1, param2);<br>}</blockquote>",
+        "Entonces nosotros podemos llamar <code>testFun</code>:",
+        "<code>testFun(\"Hello\", \"World\");</code>",
+        "Nosotros hemos pasado dos argumentos, <code>\"Hello\"</code> y <code>\"World\"</code>. Dentro de la función, <code>param1</code> será igual a \"Hello\" y <code>param2</code> será igual a \"World\". Nota que puedes llamar <code>testFun</code> otra vez con argumentos diferentes y los parámetros asumirían el valor de los nuevos argumentos.",
+        "<h4>Instrucciones</h4>",
+        "<ol><li>Crea una función llamada <code>myFunction</code> que acepte dos argumentos y da salida a su suma en la consola.</li><li>Llama la función.</li></ol>"
+      ]
     },
     {
       "id": "56533eb9ac21ba0edf2244be",
@@ -2211,7 +2230,15 @@
         "assert(!/var\\s+oopsGlobal/.test(code), 'message: Do not declare <code>oopsGlobal</code> using the <code>var</code> keyword');"
       ],
       "type": "waypoint",
-      "challengeType": 1
+      "challengeType": 1,
+      "nameEs": "Alcance Global y Funciones",
+      "descriptionEs": [
+         "En JavaScript, <dfn>alcance</dfn> se referiere a la visibilidad de variables. Las variables que definidas fuera de un bloque de una función tienen alcance <dfn>Global</dfn>. Esto significa que ellas pueden ser vistas en todas partes en tu código JavaScript.",
+        "Las variables que pueden ser usadas sin la palabra clave <code>var</code> son automáticamente creadas en el alcance <code>global</code>. Esto puede tener consecuencias no deseadas en otras partes de tu código o cuando se ejecuta una función de nuevo. Tu siempre deberías declarar tus variables con <code>var</code>.",
+        "<h4>Instrucciones</h4>",
+        "Declara a variable <code>global</code> <code>myGlobal</code> fuera de cualquier función. Inicializala para tener un valor de <code>10</code> ",
+        "Dentro de la función <code>fun1</code>, asigna <code>5</code> a <code>oopsGlobal</code> <strong><em>sin</em></strong> usar la palabra clave <code>var</code>."
+      ]
     },
     {
       "id": "56533eb9ac21ba0edf2244bf",
@@ -2274,7 +2301,16 @@
         "assert(/var\\s+myVar/.test(code), 'message: Add a local <code>myVar</code> variable');"
       ],
       "type": "waypoint",
-      "challengeType": 1
+      "challengeType": 1,
+      "nameEs": "Alcance Local y Funciones",
+      "descriptionEs": [
+        "Las variables que son declaradas dentro de una función, así como los parámetros de la función tienen alcance <dfn>local</dfn>. Eso significa que solo son visibles dentro de esa función.",
+        "Aquí esta una función <code>myTest</code> con una variable local llamada <code>loc</code>.",
+        "<blockquote>function myTest() {<br>  var loc = \"foo\";<br>  console.log(loc);<br>}<br>myTest(); // \"foo\"<br>console.log(loc); // \"undefined\"</blockquote>",
+        "<code>loc</code> no está definida fuera de la función.",
+        "<h4>Instrucciones</h4>",
+        "Declara una variable local <code>myVar</code> dentro de <code>myFunction</code>"
+      ]
     },
     {
       "id": "56533eb9ac21ba0edf2244c0",
@@ -2312,7 +2348,16 @@
         "assert(/return outerWear/.test(code), 'message: Do not change the return statement');"
       ],
       "type": "waypoint",
-      "challengeType": 1
+      "challengeType": 1,
+      "nameEs": "Alcance Global vs. Local en Funciones",
+      "descriptionEs": [
+        "Es posible tener variables <dfn>locales</dfn> y <dfn>globales</dfn> con el mismo nombre. Cuando tu haces esto, la variable <code>local</code> toma precedencia sobre las variables <code>globales</code>.",
+        "In this example:",
+        "<blockquote>var someVar = \"Hat\";<br>function myFun() {<br>  var someVar = \"Head\";<br>  return someVar;<br>}</blockquote>",
+        "La función <code>myFun</code> regresará <code>\"Head\"</code> porque la versión <code>local</code> de la variable es presente.",
+        "<h4>Instrucciones</h4>",
+        "Agrega una variable local a <code>myFunction</code> para sobreescribir el valor de <code>outerWear</code> con <code>\"sweater\"</code>."
+      ]
     },
     {
       "id": "56533eb9ac21ba0edf2244c2",
@@ -2349,7 +2394,16 @@
         "assert(timesFive(0) === 0, 'message: <code>timesFive(0)</code> should return <code>0</code>');"
       ],
       "type": "waypoint",
-      "challengeType": 1
+      "challengeType": 1,
+      "nameEs": "Retorna un Valor desde una Función con Return",
+      "descriptionEs": [
+        "Nosotros podemos pasar valores dentro de una función con <dfn>argumentos</dfn>. Tu puedes usar una sentencia <code>return</code> para enviar un valor de vuelta de una función.",
+        "<strong>Ejemplo</strong>",
+        "<blockquote>function plusThree(num) {<br>  return num + 3;<br>}<br>var answer = plusThree(5); // 8</blockquote>",
+        "<code>plusThree</code> toma un <dfn>argumento</dfn> para <code>num</code> y retorna un valor igual a <code>num + 3</code>.",
+        "<h4>Instrucciones</h4>",
+        "Crea una función <code>timesFive</code> que acepte un argumento, multiplicalo por <code>5</code> y retorna el nuevo valor."
+      ]
     },
     {
       "id": "56533eb9ac21ba0edf2244c3",
@@ -2395,7 +2449,16 @@
         "assert(/processed\\s*=\\s*process\\(\\s*7\\s*\\)\\s*;/.test(code), 'message: You should assign <code>process</code> to <code>processed</code>');"
       ],
       "type": "waypoint",
-      "challengeType": 1
+      "challengeType": 1,
+      "nameEs": "Asignación con un Valor Retornado",
+      "descriptionEs": [
+        "Si recuerdas de nuestra discusión de <a href=\"waypoint-storing-values-with-the-equal-operator\" target=\"_blank\">Almacenar Valores con el Operador Igual</a>, todo a la derecha del signo igual es resuelto antes que el valor sea asignado. Esto significa que nosotros podemos tomar el valor de retorno de una función y asignarlo a una variable.",
+        "Supongamos que tenemos una función pre-definida <code>sum</code> la cual agrega dos números, entonces: ",
+        "<code>ourSum = sum(5, 12);</code>",
+        "llamará la función <code>sum</code>, la cual retornará un valor de <code>17</code> y lo asignará a la variable <code>ourSum</code>.",
+        "<h4>Instrucciones</h4>",
+        "Llama la función <code>process</code> con un argumento de <code>7</code> y asigna su valor de retorno a la variable <code>processed</code>."
+      ]
     },
     {
       "id": "56533eb9ac21ba0edf2244c6",
@@ -2457,7 +2520,12 @@
         "queue(testArr, 10); assert(testArr[4] === 10, 'message: After <code>queue(testArr, 10)</code>, <code>myArr[4]</code> should be <code>10</code>');"
       ],
       "type": "checkpoint",
-      "challengeType": 1
+      "challengeType": 1,
+      "nameEs": "Hacer Cola",
+      "descriptionEs": [
+        "En Ciencias de la Computación una <dfn>cola</dfn> es una <dfn>Estructura de Datos</dfn> abstracta donde los elementos son mantenidos en orden. Nuevos elementos pueden ser agregados en la parte trasera de la <code>cola</code> y los elementos viejos son quitados desde el frente de la <code>cola</code>.",
+        "Escribe una función <code>queue</code> la cual toma un vector (<code>arr</code>) y un número (<code>item</code>) como argumentos. Agrega el número al final del vector, entonces retira el primer elemento del vector. La función queue debe entonces devolver el elemento que se ha eliminado."
+      ]
     },
     {
       "id": "bd7123c9c441eddfaeb5bdef",
@@ -2596,7 +2664,18 @@
         "assert(code.match(/val\\s*==[\\s'\"\\d]+/g).length > 0, 'message: You should use the <code>==</code> operator');"
       ],
       "type": "waypoint",
-      "challengeType": 1
+      "challengeType": 1,
+      "nameEs": "La comparación con el Operador de Igualdad",
+      "descriptionEs": [
+        "Hay muchos <dfn>Operadores de Comparación</dfn> en JavaScript. Todos estos operadores retornan un valor booleano <code>true</code>(verdadero) o <code>falso</code>(false).",
+        "El operador más básico es el operador de igualdad <code>==</code>. El operador de igualdad compara dos valores y retorna <code>true</code> si son equivalentes o <code>false</code> si no lo son. Nota que la igualdad es diferente de la asignación (<code>=</code>), la cual asigna el valor a la derecha del operador a la variable en la izquierda.",
+        "<blockquote>function equalityTest(myVal) {<br>  if (myVal == 10) {<br>     return \"Equal\";<br>  }<br>  return \"Not Equal\";<br>}</blockquote>",
+        "Si <code>myVal</code> es igual a <code>10</code>, el operador de igualdad retornará <code>true</code>(verdadero), así el código entre llaves será ejecutado y la función retornará <code>\"Equal\"</code>. De otra manera, la función retornará <code>\"Not Equal\"</code>.",
+        "Con el fin de JavaScript para comparar dos diferentes <code>tipos de datos</code> (por ejemplo, <code>números</code> y <code>cadenas de texto</code>), éste debe convertir un tipo a otro. Una vez que lo hace, sin embargo, puede comparar términos de la siguiente manera:",
+        "<blockquote>   1   ==  1    // true<br>   1   ==  2    // false<br>   1   == '1'   // true<br>  \"3\"  ==  3    // true</blockquote>",
+        "<h4>Instrucciones</h4>",
+        "Agrega el <code>operador de igualdad</code> a la línea indicada de manera que la función retornará \"Equal\" cuando <code>val</code> sea equivalente a <code>12</code>"
+      ]
     },
     {
       "id": "56533eb9ac21ba0edf2244d1",
@@ -2632,7 +2711,16 @@
         "assert(code.match(/val\\s*===\\s*\\d+/g).length > 0, 'message: You should use the <code>===</code> operator');"
       ],
       "type": "waypoint",
-      "challengeType": 1
+      "challengeType": 1,
+      "nameEs": "La Comparación con el Operador de Estricta Igualdad",
+      "descriptionEs": [
+        "Igualdad estricta (<code>===</code>) es la contraparte del operador de igualdad (<code>==</code>). Diferente al operador de igualdad, igualdad estricta prueba los <code>tipos de datos</code> y el valor de los elementos comparados.",
+        "<strong>Ejemplos</strong>",
+        "<blockquote>3 === 3   // true<br>3 === '3' // falso</blockquote>",
+        "En el segundo ejemplo, <code>3</code> es de tipo <code>Número</code> y <code>'3'</code> es de tipo <code>Cadena</code>.",
+        "<h4>Instrucciones</h4>",
+        "Usa el operador de igualdad estricta en la sentencia <code>if</code> de manera que la función retorne \"Equal\" cuando <code>val</code> es estrictamente igual a <code>7</code>"
+      ]
     },
     {
       "id": "56533eb9ac21ba0edf2244d2",
@@ -2669,7 +2757,15 @@
         "assert(code.match(/val\\s*!=\\s*\\d+/g).length > 0, 'message: You should use the <code>!=</code> operator');"
       ],
       "type": "waypoint",
-      "challengeType": 1
+      "challengeType": 1,
+      "nameEs": "La Comparación con el Operador de Desigualdad",
+      "descriptionEs": [
+        "El operador de desigualdad (<code>!=</code>) es el opuesto al operador de igualdad. Esto significa \"No Igual a\" y retorna <code>false</code> cuando igualdad retornaría <code>true</code> y <em>viceversa</em>. Como el operador de igualdad, el operador de desigualdad convertirá tipos de datos mientras compara.",
+        "<strong>Ejemplos</strong>",
+        "<blockquote>1 != 2      // true<br>1 != \"1\"    // false<br>1 != '1'    // false<br>1 != true   // false<br>0 != false  // false</blockquote>",
+        "<h4>Instrucciones</h4>",
+        "Agrega el operador de desigualdad <code>!=</code> en la sentencia <code>if</code> de manera que la función retorne \"Not Equal\" (No igual a) cuando <code>val</code> no es equivalente a <code>99</code>"
+      ]
     },
     {
       "id": "56533eb9ac21ba0edf2244d3",
