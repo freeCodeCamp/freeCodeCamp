@@ -246,11 +246,11 @@
       ],
       "tests": [
         [
-          "Data speed is measured in bits.",
+          "Data speed is measured in bits per second.",
           true
         ],
         [
-          "Data size is measured in bits.",
+          "Data size is usually measured in bits.",
           false,
           "Size is Bytes and speed is bits."
         ]
