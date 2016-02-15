@@ -53,7 +53,7 @@
         [
           "http://i.imgur.com/qCUVRFb.gif",
           "A gif showing you how to transfer GitHub's key and secret over to your .env file, as well as your c9.io URL.",
-          "GitHub will create an app and present you with a Client ID and a Client Secret. Set your .env file's GITHUB_KEY equal to the Client ID, and set your .env file's GITHUB_SECRET equal to the Client Secret. Copy the URL from the your preview tab and paste it into your .env file as your APP_URL.",
+          "GitHub will create an app and present you with a Client ID and a Client Secret. Set your .env file's GITHUB_KEY equal to the Client ID, and set your .env file's GITHUB_SECRET equal to the Client Secret. Copy the URL from your preview tab and paste it into your .env file as your APP_URL.",
           ""
         ],
         [
