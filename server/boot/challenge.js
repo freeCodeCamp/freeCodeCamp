@@ -266,7 +266,6 @@ function getSuperBlocks$(challenge$, challengeMap) {
 
 function getChallengeById$(challenge$, challengeId) {
   // return first challenge if no id is given
-  console.log('id', challengeId);
   if (!challengeId) {
     return challenge$
       .map(challenge => challenge.toJSON())
