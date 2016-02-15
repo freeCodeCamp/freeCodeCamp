@@ -112,8 +112,8 @@
         ],
         [
           "Moore's Law has slowed down in recent years.",
-          false,
-          "Somehow this continues to be true."
+          true,
+          "As of 2015, the pace of Moore's law has indeed slowed. Brian Krzanich, CEO of Intel, announced that 'our cadence today is closer to two and a half years than two.'"
         ]
       ],
       "type": "hike",
