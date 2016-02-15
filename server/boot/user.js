@@ -105,6 +105,7 @@ function buildDisplayChallenges(challengeMap = {}, timezone) {
 
       return finalChallenge;
     })
+    .filter(({ challengeType }) => challengeType !== 6)
     .groupBy(getChallengeGroup)
     .flatMap(group$ => {
       return group$.toArray().map(challenges => ({

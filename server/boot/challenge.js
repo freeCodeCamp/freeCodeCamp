@@ -4,6 +4,7 @@ import moment from 'moment';
 import { Observable, Scheduler } from 'rx';
 import debug from 'debug';
 import accepts from 'accepts';
+import { isMongoId } from 'validator';
 
 import {
   dasherize,
@@ -21,6 +22,7 @@ import {
 } from '../utils/middleware';
 
 import getFromDisk$ from '../utils/getFromDisk$';
+import badIdMap from '../utils/bad-id-map';
 
 const isDev = process.env.NODE_ENV !== 'production';
 const isBeta = !!process.env.BETA;
@@ -140,8 +142,9 @@ function getRenderData$(user, challenge$, origChallengeName, solution) {
   return challenge$
     .map(challenge => challenge.toJSON())
     .filter((challenge) => {
-      return testChallengeName.test(challenge.name) &&
-        shouldNotFilterComingSoon(challenge);
+      return shouldNotFilterComingSoon(challenge) &&
+        challenge.type !== 'hike' &&
+        testChallengeName.test(challenge.name);
     })
     .last({ defaultValue: null })
     .flatMap(challenge => {
@@ -250,11 +253,6 @@ function getSuperBlocks$(challenge$, challengeMap) {
         time: blockArray[0] && blockArray[0].time || '???'
       };
     })
-    // filter out hikes
-    .filter(({ superBlock }) => {
-      return !(/hikes/i).test(superBlock);
-    })
-    // turn stream of blocks into a stream of an array
     .toArray()
     .flatMap(blocks => Observable.from(blocks, null, null, Scheduler.default))
     .groupBy(block => block.superBlock)
@@ -268,12 +266,13 @@ function getSuperBlocks$(challenge$, challengeMap) {
 
 function getChallengeById$(challenge$, challengeId) {
   // return first challenge if no id is given
+  console.log('id', challengeId);
   if (!challengeId) {
     return challenge$
       .map(challenge => challenge.toJSON())
       .filter(shouldNotFilterComingSoon)
       // filter out hikes
-      .filter(({ superBlock }) => !(/hikes/gi).test(superBlock))
+      .filter(({ superBlock }) => !(/^videos/gi).test(superBlock))
       .first();
   }
   return challenge$
@@ -281,7 +280,7 @@ function getChallengeById$(challenge$, challengeId) {
     // filter out challenges coming soon
     .filter(shouldNotFilterComingSoon)
     // filter out hikes
-    .filter(({ superBlock }) => !(/hikes/gi).test(superBlock))
+    .filter(({ superBlock }) => !(/^videos/gi).test(superBlock))
     .filter(({ id }) => id === challengeId);
 }
 
@@ -382,7 +381,7 @@ module.exports = function(app) {
     }))
     // filter out hikes
     .filter(({ superBlock }) => {
-      return !(/hikes/gi).test(superBlock);
+      return !(/^videos/gi).test(superBlock);
     })
     .shareReplay();
 
@@ -427,9 +426,15 @@ module.exports = function(app) {
   function redirectToCurrentChallenge(req, res, next) {
     let challengeId = req.query.id || req.cookies.currentChallengeId;
     // prevent serialized null/undefined from breaking things
-    if (challengeId === 'undefined' || challengeId === 'null') {
+
+    if (badIdMap[challengeId]) {
+      challengeId = badIdMap[challengeId];
+    }
+
+    if (!isMongoId(challengeId)) {
       challengeId = null;
     }
+
     getChallengeById$(challenge$, challengeId)
       .doOnNext(({ dashedName })=> {
         if (!dashedName) {
@@ -446,7 +451,12 @@ module.exports = function(app) {
 
   function redirectToNextChallenge(req, res, next) {
     let challengeId = req.query.id || req.cookies.currentChallengeId;
-    if (challengeId === 'undefined' || challengeId === 'null') {
+
+    if (badIdMap[challengeId]) {
+      challengeId = badIdMap[challengeId];
+    }
+
+    if (!isMongoId(challengeId)) {
       challengeId = null;
     }
 
@@ -475,14 +485,14 @@ module.exports = function(app) {
             });
         }
 
-        return getNextChallenge$(challenge$, blocks$, challengeId)
-          .doOnNext(({ dashedName } = {}) => {
-            if (!dashedName) {
-              log('no challenge found for %s', challengeId);
-              res.redirect('/map');
-            }
-            res.redirect('/challenges/' + dashedName);
-          });
+        return getNextChallenge$(challenge$, blocks$, challengeId);
+      })
+      .doOnNext(({ dashedName } = {}) => {
+        if (!dashedName) {
+          log('no challenge found for %s', challengeId);
+          res.redirect('/map');
+        }
+        res.redirect('/challenges/' + dashedName);
       })
       .subscribe(() => {}, next);
   }
