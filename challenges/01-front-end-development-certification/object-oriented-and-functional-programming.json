@@ -579,8 +579,8 @@
       "title": "Join Strings with .join",
       "description": [
         "We can use the <code>join</code> method to join each element of an array into a string separated by whatever delimiter you provide as an argument.",
-        "The following is an example of using <code>join</code> to join all of the elements of an array into a string with all the elements separated by word `Na`:",
-        "<blockquote>var joinMe = [\"Na \", \"Na \", \"Na \", \"Na \", \"Batman!\"];<br>var joinedString = joinMe.join(\"Na \");<br>console.log(joinedString);</blockquote>",
+        "The following is an example of using <code>join</code> to join all of the elements of an array into a string with all the elements separated by word <code>and</code>:",
+        "<blockquote>var veggies = [\"Celery\", \"Radish\", \"Carrot\", \"Potato\"];<br>var salad = veggies.join(\" and \");<br>console.log(salad); // \"Celery and Radish and Carrot and Potato\" </blockquote>",
         "Use the <code>join</code> method to create a string from <code>joinMe</code> with spaces in between each element and assign it to <code>joinedString</code>."
       ],
       "challengeSeed": [
