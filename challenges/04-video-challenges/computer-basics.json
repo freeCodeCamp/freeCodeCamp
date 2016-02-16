@@ -232,14 +232,14 @@
         "Data speed and data size are measured differently.",
         "In this video, we cover how data speed is measured.",
         "Let's talk about data speed.",
-        "Data speed, unlike data size, is usually measured in bits per second, whereas size is usually measured in Bits.",
+        "Data speed, unlike data size, is usually measured in bits per second, whereas size is usually measured in bits.",
         "Once we start talking exponentially, that makes a really big difference.",
         "How we talk about speed really depends on what we're talking about.",
         "In audio download, we talk about kilobits per second.",
         "In internet, we use megabits per second.",
-        "In network speed, we talk about Gigabits per second (one billion bits per second!).",
-        "The main takeaway here is that speed is usually measured in bits and size is measured in Bytes.",
-        "Additionally, if you have an internet speed that says however many bits per second, keep in mind they are talking about something 8 times less than Bytes, how you are thinking about data."
+        "In network speed, we talk about gigabits per second (one billion bits per second!).",
+        "The main takeaway here is that speed is usually measured in bits and size is measured in bytes.",
+        "Additionally, if you have an internet speed that says however many bits per second, keep in mind they are talking about something 8 times less than bytes, how you are thinking about data."
       ],
       "challengeSeed": [
         "132545171"
@@ -252,7 +252,7 @@
         [
           "Data size is measured in bits.",
           false,
-          "Size is Bytes and speed is bits."
+          "Size is bytes and speed is bits."
         ]
       ],
       "type": "hike",
@@ -263,19 +263,19 @@
       "title": "Computer Basics: Binary Bytes",
       "description": [
         "Binary does more than express numbers - through bytes, it can symbolize all alphanumeric symbols, which can then be interpreted into more complex code.",
-        "Let's talk about the most basic level that computer can understand other languages, like javascript.",
-        "THe most basic thing is a bit, up or down, 1 or 0.",
-        "After that ther'es a Byte, 8 bits.",
-        "All numbers (255 and less), letters, and symbols can be translated into Bytes that the computer can understand.",
-        "So, all of the numbers, letters, and symbols in your javascript can be translated.",
-        "There are a lot of languages that computers can work with, and what I want you to get away from this video is that all data in your computer boils down to binary Bytes."
+        "Let's talk about the most basic level that a computer can understand other languages like JavaScript.",
+        "The most basic thing is a bit, up or down, 1 or 0.",
+        "After that there's a byte, 8 bits.",
+        "All numbers (255 and less), letters, and symbols can be translated into bytes that the computer can understand.",
+        "So, all of the numbers, letters, and symbols in your JavaScript can be translated.",
+        "There are a lot of languages that computers can work with, and what I want you to get away from this video is that all data in your computer boils down to binary bytes."
       ],
       "challengeSeed": [
         "132545417"
       ],
       "tests": [
         [
-          "All digits, letters, and symbols have a binary Byte translation.",
+          "All digits, letters, and symbols have a binary byte translation.",
           true
         ],
         [
@@ -297,7 +297,7 @@
       "description": [
         "This video covers the basics of supercomputers, servers, workstations, PCs, and microcontrollers.",
         "Let's discuss the different types of computers.",
-        "The biggest type is called a super computer, a computer with lots of CPUS that work on the same problem at the same time using a technique called parallel processing.",
+        "The biggest type is called a super computer, a computer with lots of CPUs that work on the same problem at the same time using a technique called parallel processing.",
         "The next type is called a server.",
         "A server holds and accesses lots of data or programs.",
         "Free Code Camp is hosted on a server which stores all of that information.",
