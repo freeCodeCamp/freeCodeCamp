@@ -128,8 +128,8 @@
         "Today we're going to talk a little bit about binary code.",
         "Binary code is a really simple computer language where there are only 1's and 0's, that are either on or off, 1 being on and 0 being off.",
         "Those 1's and 0's can be pretty much anything, but generally they are just numbers, letters, and symbols.",
-        "We're going to go into how you decode a number in binary, but as you can probably guess, translating binary can be done with a quick google search.",
-        "The most important part of this is you undrestand the concept that even simple things like 1's and 0's can translate into something really complex that is the basis for all of the computer languages that exist today."
+        "We're going to go into how you decode a number in binary, but as you can probably guess, translating binary can be done with a quick Google search.",
+        "The most important part of this is you understand the concept that even simple things like 1's and 0's can translate into something really complex that is the basis for all of the computer languages that exist today."
       ],
       "challengeSeed": [
         "132542757"
@@ -161,7 +161,7 @@
         "We're going to start by labeling, staring backwards, how many numbers there are.",
         "(In this video there are 7, but we start at 0, so we only get up to 6.) Pretty straightforward.",
         "The next step is to take 2 to the power of whatever place it is, a 2 to the 0, 2 to the 1, all the way up to the largest placeholder.",
-        "Then, all we have to do is fill in some mathamatical blanks by completing the exponential 2 problems.",
+        "Then, all we have to do is fill in some mathematical blanks by completing the exponential 2 problems.",
         "If there is a 1, we keep that number (the two to the exponent solution) and add it to other \"1\" or \"on\" numbers.",
         "If it's a 0, we disregard it.",
         "In this video, our number adds up to 75."
@@ -284,7 +284,7 @@
           "You can just look these up as needed."
         ],
         [
-          "Everything can be expressed binarily, even pictures, sound, and video",
+          "Everything can be expressed in binary, even pictures, sound, and video",
           true
         ]
       ],
@@ -304,7 +304,7 @@
         "Let's talk now about a workstation computer - a computer that may look similar to a personal computer, but has a lot more power and is a lot pricier.",
         "Toy Story was built on workstation computers.",
         "Now, personal computers are by far the most common.",
-        "Maybe you've heard \"I'm a Mac!\" or \"I'm a PC!\", something indicating they're different, but really my own personal MacBook is still a PC, a personal compter.",
+        "Maybe you've heard \"I'm a Mac!\" or \"I'm a PC!\", something indicating they're different, but really my own personal MacBook is still a PC, a personal computer.",
         "It's both a Mac and a PC.",
         "The last type of computer we'll talk about is a microcontroller, the type of computer you might have in your car that is really good at a small specialized task, but wouldn't be used the same way a PC would be."
       ],
@@ -342,10 +342,10 @@
         "Expansion slots are where you put anything that can increase the performance of a computer without putting more load on the CPU.",
         "For example, a graphics or a sound card would up the user experience by giving better sound or video quality, but it wouldn't slow down the computer.",
         "A Network Interface Card could also go in an expansion slot.",
-        "This would help your computer conncet with the networks around it, something we'll talk about more in upcoming videos.",
+        "This would help your computer connect with the networks around it, something we'll talk about more in upcoming videos.",
         "PC and Express cards are primarily found in laptops, and Express cards are taking over due to their smaller size.",
         "In addition to expansion slots, motherboards have ports.",
-        "On your computer, you probably know there's a place to connect USB, firewire, SD card, ethernet, even an audio plug-in to listen through headphones.",
+        "On your computer, you probably know there's a place to connect USB, FireWire, SD card, Ethernet, even an audio plug-in to listen through headphones.",
         "These are all considered ports, a place on the motherboard where you can connect the CPU to some outside source to either get or give information."
       ],
       "challengeSeed": [
@@ -380,12 +380,12 @@
         "The three types we'll cover are the Local Area Network (LAN), the Wide Area Network (WAN), and the Virtual Private Network (VPN).",
         "A LAN is just a small group of computers that are connected together.",
         "The most important thing about a LAN is that those computers are close together.",
-        "So, if you're using wifi at Starbucks or at your school, you're probably using a LAN that you can only connect to if you are physically close to it.",
+        "So, if you're using WiFi at Starbucks or at your school, you're probably using a LAN that you can only connect to if you are physically close to it.",
         "A WAN (Wide Area Network) is two or more LANs that are connected over long distances.",
         "So, maybe a school in Colorado wants to connect to a school in Missouri.",
         "They could use a WAN.",
         "You might think that these are connected over the internet, and in the case of a VPN (Virtual Private Network, which is basically the same conceptionally as a WAN), you're right.",
-        "However, a WAN usually rents a cable from an internet company to creat the connection."
+        "However, a WAN usually rents a cable from an internet company to create the connection."
       ],
       "challengeSeed": [
         "132547590"
@@ -417,13 +417,13 @@
         "IP addresses are assigned based on location, and are vital for the internet to work.",
         "We're going to talk about the Internet: Part 1, How the Internet Works.",
         "To know how the internet works, we're going to talk first about IP addresses.",
-        "You may be familliar with the fact that each of your devices has its own IP address, just like a house or an apartment has its own address.",
+        "You may be familiar with the fact that each of your devices has its own IP address, just like a house or an apartment has its own address.",
         "The internet can't deliver data to a device unless it has an IP address.",
         "Not only does your device have one, but so does the modem, the router, and every step along the way, which we'll get to later.",
         "IP addresses are determined based on location, starting with 5 big international regions.",
         "Moving from left to right, the numbers mean something specific about your location.",
         "This number isn't specific enough that you could call 911, give them your IP address, and have them know where you live.",
-        "However, it is specific enough that you could google \"Where's the best ice cream near me\" and google could give you information close to your location.",
+        "However, it is specific enough that you could Google \"Where's the best ice cream near me\" and Google could give you information close to your location.",
         "This is done using your IP address."
       ],
       "challengeSeed": [
@@ -449,15 +449,15 @@
         "This is a brief and basic overview of how the internet works.",
         "For a more in-depth explanation, check out web.stanford.edu/class/msande91si/www-spr04/readings/week1/InternetWhitepaper.htm",
         "Let's talk a little more about how the internet works.",
-        "We've already estabilished that every device and router on the intenet has its own IP address, which is assigned based on location.",
+        "We've already established that every device and router on the internet has its own IP address, which is assigned based on location.",
         "Using these IP addresses, your device can talk to your modem, then to a router, which is set up by a web service.",
         "The router would go to the domain name server, still just sending a request.",
         "That server would send back the information that was requested, and it would go back to your device.",
-        "You might think this is fallable; if one step goes out, then the whole process is done.",
+        "You might think this is fallible; if one step goes out, then the whole process is done.",
         "But really, there are so many routers and so many routes that if even a big chunk goes out, that still won't really affect the functionality.",
         "It's really amazing.",
-        "What I want you take away from this video is that your device, since it has an IP address, can send out a request for informatoin, and that information will get back to your device via servers and routers that comprise the internet.",
-        "Now, this explaination is really quite basic.",
+        "What I want you take away from this video is that your device, since it has an IP address, can send out a request for information, and that information will get back to your device via servers and routers that comprise the internet.",
+        "Now, this explanation is really quite basic.",
         "For more information, check out web.stanford.edu/class/msande91si/www-spr04/readings/week1/InternetWhitepaper.htm."
       ],
       "challengeSeed": [
@@ -513,9 +513,9 @@
         "Websites contract and pay a CDN service, who in turn pays an internet provider to use their servers for their data.",
         "An example of CDNs are Google's Hosted Libraries. -- developers.google.com/speed/libraries/#jquery",
         "Google hosts these libraries so that your users can load them into your own site much more quickly than if you host them yourself.",
-        "There's a chance the user's browser is even storing a cached version from visiting a previous page, making the process even quicker. If you aren't familliar with the term 'cache', don't worry, we'll cover that in future videos.",
+        "There's a chance the user's browser is even storing a cached version from visiting a previous page, making the process even quicker. If you aren't familiar with the term 'cache', don't worry, we'll cover that in future videos.",
         "As a user, you probably use CDNs all the time without realizing it.",
-        "As a developer, you may want to use CDNs like google libraries to help your page load more quickly.",
+        "As a developer, you may want to use CDNs like Google libraries to help your page load more quickly.",
         "As a company, a CDN would be useful if you want your product or site to reach users more efficiently in the larger scheme of their network and the internet as a whole."
       ],
       "challengeSeed": [
@@ -589,7 +589,7 @@
         "That's really all it takes.",
         "Routers can be different sizes, different capacities, but what they do is know their own neighborhood, take the information, and pass it in the right direction.",
         "Another thing we'll get into a little later is that the routers don't even have to have the full package of information.",
-        "If one comptuer is trying to send information to another, the data might get split up between different routers and that's okay.",
+        "If one computer is trying to send information to another, the data might get split up between different routers and that's okay.",
         "The computers still know how to put the information back together correctly.",
         "The little pieces of information that are sent are called packets.",
         "Packets are actually little pieces of binary code (drawn on board).",
@@ -609,7 +609,7 @@
           "Routers just have to know the stops around them to send information in the right direction."
         ],
         [
-          "Packets are little peices of binary code.",
+          "Packets are little pieces of binary code.",
           true
         ],
         [
@@ -631,15 +631,15 @@
         "If you give that to somebody and have them look at that document on their computer, that's not going to help them view their email, it's not going to be a browser, it's just a text document.",
         "The computer has to have a way of interpreting that and making something really powerful run from it.",
         "There are two main ways this is done: either by an interpreter or a compiler.",
-        "Every browser has an interpreter, and that's how javascript is processed.",
+        "Every browser has an interpreter, and that's how JavaScript is processed.",
         "Other languages, like C++, are used with a compiler.",
         "Unlike an interpreter, the compiler does all of its work on the programmer's end.",
         "They send out their package, their product, and it's already been compiled, it can already run on a machine.",
-        "Javascript, however, and other interpreter languages, you just write the javascript and the browser on the user's end has the capability to interpret it so you don't need a compiler.",
+        "Javascript, however, and other interpreter languages, you just write the JavaScript and the browser on the user's end has the capability to interpret it so you don't need a compiler.",
         "Everyone has an opinion to which is better (interpreter or compiler), but really each has their pros and cons, and it goes on a case by case basis.",
         "They're better at different things.",
         "Now, let's focus on what open source means.",
-        "Free Code Camp is open source, meaning that all of the documentation and source code is open and accessable.",
+        "Free Code Camp is open source, meaning that all of the documentation and source code is open and accessible.",
         "You may be thinking, \"so what?\", but what's awesome is that if you want to change or improve Free Code Camp, you can write that improvement and maybe get it implemented.",
         "It's a great way for websites and software to grow in a strong and fast way because of the community working together to improve it.",
         "One unwritten rule of contributing to open source projects is that you should generally submit your improvements to also be open source, and by giving that improvement back to the public, you let others use your improvement as well."
@@ -700,12 +700,12 @@
       "description": [
         "Programmers (a.k.a. coders, developers, or software engineers) solve problems by turning big ideas into tiny steps that a computer can understand.",
         "In this video, we'll discuss what programmers do.",
-        "Programmers can also be called coders, developers, or software engineers, and what all of these peple do is take ideas and turn them into functional code.",
+        "Programmers can also be called coders, developers, or software engineers, and what all of these people do is take ideas and turn them into functional code.",
         "It's not just creating that code, but also maintaining it.",
-        "Let's look at how the computer looks at code, specifically javascript.",
+        "Let's look at how the computer looks at code, specifically JavaScript.",
         "The computer looks at code one line at a time, and as you're writing code, you will notice numbers on the left hand side.",
         "The computer literally goes down line by line, making sense of what each line has to say.",
-        "Everything is done sequentially, just straight down, so refrencing something that is below and hasn't happened yet will lead to a problem.",
+        "Everything is done sequentially, just straight down, so referencing something that is below and hasn't happened yet will lead to a problem.",
         "Computers just read straight down like you would read a book.",
         "Programmers are the ones responsible for breaking their ideas down into the little tiny steps and writing them in a way that computers can understand them."
       ],
@@ -736,9 +736,9 @@
       "description": [
         "We discuss what (and where) the console is, why it's useful, and show a little of how it works.",
         "The console: what it is, where you can find it, and what you use it for.",
-        "The console is very commonly used to display system adminstrative messages.",
+        "The console is very commonly used to display system administrative messages.",
         "Your browser and your computer both have their own consoles.",
-        "Once you become famlliar with it, you will find it to be a very useful and powerful tool.",
+        "Once you become familiar with it, you will find it to be a very useful and powerful tool.",
         "In Javascript, the console is used as a great tool for debugging and finding out where in your code there's a problem.",
         "One of the most important terms you'll need to remember is \"console.log()\".",
         "The process of doing this can be put anywhere in the lines of code to help find, identify, and ultimately fix specific issues.",
@@ -771,7 +771,7 @@
         "Let's cover computer security.",
         "The first thing we're going to talk about is something called a dictionary attack which has to do with your passwords.",
         "When creating your passwords, some sites require extremely specific and complicated passwords, which is actually a bit unnecessary.",
-        "The type of attacks they're trying to gaurd you from are dictionary attacks.",
+        "The type of attacks they're trying to guard you from are dictionary attacks.",
         "Dictionary attacks are programmed to try every word in the dictionary, or in its own database of common words and passwords, as the password for a large mass of usernames.",
         "If your password is Kangaroo, they're probably going to break into your account.",
         "Most passwords aren't this simple, but that doesn't matter.",
