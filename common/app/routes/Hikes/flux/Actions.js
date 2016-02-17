@@ -305,7 +305,7 @@ export default Actions({
           },
           toast: {
             title: 'Congratulations!',
-            message: 'Hike completed.' + (isSignedIn ? ' Saving...' : ''),
+            message: 'Challenge completed.' + (isSignedIn ? ' Saving...' : ''),
             id: state.toast && state.toast.id ?
               state.toast.id + 1 :
               1,
