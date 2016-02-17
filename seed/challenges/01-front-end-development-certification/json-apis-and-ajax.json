@@ -193,7 +193,7 @@
         "Vamos a obtener el JSON de la API de fotos de gato de Free Code Camp.",
         "Aquí está el código que puedes poner en tu evento de pulsación para lograrlo:",
         "<blockquote>$.getJSON(\"/json/cats.json\", function(json) {</code></br>  $(\".message\").html(JSON.stringify(json));</br>});</blockquote>",
-        "Una vez lo añadas, pulsa el botón \"Get Message\". Su función Ajax sustituirá el texto \"The message will go here\" con la salida JSON en bruto de la API de fotos de gato de Free Code Camp."
+        "Una vez lo añadas, pulsa el botón \"Get Message\". Tu función Ajax sustituirá el texto \"The message will go here\" con la salida JSON en bruto de la API de fotos de gato de Free Code Camp."
       ],
       "namePt": "Obter um JSON com o método getJSON do jQuery",
       "descriptionPt": [
@@ -346,8 +346,7 @@
       "challengeType": 0,
       "nameEs": "Presenta imágenes de fuentes de datos",
       "descriptionEs": [
-        "Tanto en el JSON que recibimos de la API de fotos de gato de Free Code Camp, como en ",
-        "lo que hemos visto en las dos últimas lecciones, cada objeto en nuestro vector JSON contiene una llave <code>imageLink</code> con un valor que corresponde a la url de la imagen de un gato.",
+        "Hemos visto en las dos últimas lecciones que cada objeto en nuestro vector JSON contiene una llave <code>imageLink</code> con un valor que corresponde a la url de la imagen de un gato.",
         "Cuando estamos recorriendo estos objetos, usemos esta propiedad <code>imageLink</code> para visualizar la imagen en un elemento <code>img</code>.",
         "Aquí está el código que hace esto:",
         "<code>html += \"&lt;img src = '\" + val.imageLink + \"'&gt;\";</code>"
