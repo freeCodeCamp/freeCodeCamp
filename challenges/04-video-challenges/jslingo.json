@@ -8,11 +8,11 @@
       "title": "JavaScript Lingo: MDN and Documentation",
       "description": [
         "This is a basic intro to MDN and the concept of documentation.",
-        "MDN, Mozilla Developer Network, is a fanastic open source collaboration that documents not only JavaScript, but many other langauges and topics. If you haven't heard of them, you should check them out now. I get lots of information from developer.mozilla.org/en-US/docs/Web/JavaScript",
+        "MDN, Mozilla Developer Network, is a fantastic open source collaboration that documents not only JavaScript, but many other languages and topics. If you haven't heard of them, you should check them out now. I get lots of information from developer.mozilla.org/en-US/docs/Web/JavaScript",
         "When I say documentation, I am talking about information that is provided about the product to its users. The documentation at MDN isn't necessarily written by the people behind JS. Brendan Eich created JS in 1995, but it's now a community driven project that continues to grow.",
-        "As you continue to learn javascript, jQuery, and pretty much any languages or services for development or programming, documentation is your friend. ",
-        "The faster you get comfortable reading and refrencing documentation, the faster you will grow as a developer.",
-        "These videos aren't going to teach you javascript - you will be introduced to terms and concepts that will be valuable as you continue to practice and learn."
+        "As you continue to learn JavaScript, jQuery, and pretty much any languages or services for development or programming, documentation is your friend. ",
+        "The faster you get comfortable reading and referencing documentation, the faster you will grow as a developer.",
+        "These videos aren't going to teach you JavaScript - you will be introduced to terms and concepts that will be valuable as you continue to practice and learn."
       ],
       "challengeSeed": [
         "137072373"
@@ -63,7 +63,7 @@
       "description": [
         "We are going to cover what constitutes a variable, and the reasoning behind camelCase.",
         "A variable, also referred to as 'var', is the name or placeholder for a boolean, string, number, or other piece of static information.",
-        "You can use google dev tools to inspect the Free Code Camp home page and look for some variables.",
+        "You can use Google Dev Tools to inspect the Free Code Camp home page and look for some variables.",
         "You 'declare' variables the first time with 'var' in front of it, but those can be referenced later in your script.",
         "camelCase is the way that JavaScript pushes words together and still keeps them legible. The first letter of the first word is lowercase, along with the remainder of the word, but the first letter of every consecutive word is capitalized. There are no spaces. Examples: brianaLovesHerPets, bestFoodIsCheese, and codeIsWorthLearning.",
         "When you name variables, utilize camelCase. Also try to keep the names descriptive and short so that others (and yourself!) can tell what that variable is referring to just by the name."
@@ -73,9 +73,9 @@
       ],
       "tests": [
         [
-          "camelCase is manditory in JavaScript.",
+          "camelCase is mandatory in JavaScript.",
           false,
-          "Though camelCase is widely used, it isn't manditory. It's not a bad idea to get used to using it sooner rather than later."
+          "Though camelCase is widely used, it isn't mandatory. It's not a bad idea to get used to using it sooner rather than later."
         ],
         [
           "Variables can only hold information that is a boolean, string, or number.",
@@ -145,12 +145,12 @@
       "title": "JavaScript Lingo: Manipulating Data",
       "description": [
         "Methods and functions are ways you can manipulate variables or other sets of information.",
-        "Methods are built in to JavaScript, and you will become more familliar with these as you write functions for the bonfires.",
-        "I'd suggest looking through the MDN (Mozilla Developer Network that we discussed in the first video) to familliarize yourself with the sheer amount and general potential for the methods that exist. developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Methods_Index",
+        "Methods are built in to JavaScript, and you will become more familiar with these as you write functions for the bonfires.",
+        "I'd suggest looking through the MDN (Mozilla Developer Network that we discussed in the first video) to familiarize yourself with the sheer amount and general potential for the methods that exist. developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Methods_Index",
         "Examples include '.split(' ')', which will turn a string into an array and can do so in many different ways. Methods are powerful - many times when you want your script to do something, there's a method for that.",
         "Functions, like variables, are something you define and create.",
         "During your algorithm practice at Free Code Camp, you will create functions that take a certain piece of information and manipulate it in whatever way you choose.",
-        "You'll become more familliar with syntax there, but for now, just remember that with methods and functions you can do almost anything with your code."
+        "You'll become more familiar with syntax there, but for now, just remember that with methods and functions you can do almost anything with your code."
       ],
       "challengeSeed": [
         "137081423"
