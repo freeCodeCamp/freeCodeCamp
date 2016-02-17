@@ -161,7 +161,7 @@
         "<code>&nbsp;&nbsp;engines: 1,</code>",
         "<code>&nbsp;&nbsp;seats: 1</code>",
         "<code>}</code>",
-        "Tenga en cuenta que es importante utilizar la palabra reservaa <code>new</code> cuando se llama a una constructora. Así es como Javascript sabe crear un objeto nuevo y hace que todas las referencias a <code>this</code> dentro del constructor se refieran al objeto nuevo ",
+        "Ten en cuenta que es importante utilizar la palabra reservada <code>new</code> cuando se llama a una constructora. Así es como Javascript sabe crear un objeto nuevo y hace que todas las referencias a <code>this</code> dentro del constructor se refieran al objeto nuevo ",
         "Ahora, una vez que la <code>instancia</code> <code>miCarro</code> se crea, puede ser utilizada como cualquier otro objeto y puedes acceder o modificar sus propiedades como lo harías normalmente. Por ejemplo:",
         "<code>miCarro.tipoTurbo = \"doble\"; </code>",
         "Nuestra variable <code>miCarro</code> tiene ahora una propiedad <code>tipoTurbo</code> con un valor de <code>\"doble\"</code>.",
@@ -372,7 +372,7 @@
       "descriptionEs": [
         "El método <code>reduce</code> de un vector, se utiliza para iterar a través del vector y condensarlo en un valor.",
         "Para usar <code>reduce</code> tu le pasas una función de devolución de llamada cuyos argumentos sean un acumulador (en este caso, <code>valorPrevio</code>) y el valor actual (<code>valorActual</code>). ",
-        "<code>reduce</code> tiene un argumento opcional que puede usarse para asignar un valor inicial al acumulador. Si no se especifica ningún valor inicial será el primer elemento del vector y <code>valorActual</code> comenzará en el segundo elemento del vector. ",
+        "<code>reduce</code> tiene un argumento opcional que puede usarse para asignar un valor inicial al acumulador. Si no se especifica ningún valor inicial, este será el primer elemento del vector y <code>valorActual</code> comenzará en el segundo elemento del vector. ",
         "He aquí un ejemplo de<code>reduce</code> cuando se utiliza para restar todos los valores de una matriz:",
         "<code>var singleVal = array.reduce(function(valorAnterior, valorActual) {</code>",
         "<code>&nbsp;&nbsp;return valorAnterior - valorActual;</code>",
@@ -413,14 +413,14 @@
       "nameEs": "Filtrar vectores con .filter",
       "descriptionEs": [
         "El método <code>filter</code> se utiliza para iterar a través de un vector y filtrar los elementos que hagan falsa un condición determinada.",
-        "<code>filter</code> recibe una función de devolución de llamada que a su vez recibe como argumento el valor actual (que hemos llamado que<code>val </code>).",
+        "<code>filter</code> recibe una función de devolución de llamada que a su vez recibe como argumento el valor actual (que hemos llamado <code>val</code>).",
         "Cualquier elemento del vector para el cual la función de devolución de llamada retorne <code>true</code> se mantendrá y los elementos que devuelven <code>false</code> serán filtrados.",
-        "El código siguiente es un ejemplo del uso del <code>filter</code> para eliminar los elementos de un vector que no sean números pares:",
+        "El código siguiente es un ejemplo del uso de <code>filter</code> para eliminar los elementos de un vector que son iguales a cinco:",
         "Nota: Omitimos el segundo y tercer argumentos ya que sólo necesitamos el valor",
         "<code>array = array.filter(function(val) {</code>",
-        "<code>&nbsp;&nbsp;return val % 2 === 0;</code>",
+        "<code>&nbsp;&nbsp;return val !== 5;</code>",
         "<code>});</code>",
-        "Usa <code>filter</code> para eliminar todos los elementos de <code>array</code>que sean mayores que 5."
+        "Usa <code>filter</code> para crear un nuevo vector con todos los valores de <code>oldArray</code> que son menores a 6. <br><code>oldArray</code> no debe cambiar."
       ]
     },
     {
@@ -496,6 +496,9 @@
       "descriptionEs": [
         "Puedes utilizar el método <code>reverse</code> para invertir los elementos en un vector.",
         "<code>reverse</code> es otro método de vector que altera el vector mismo, y también devuelve el vector invertido.",
+        "<code>var miVector = [1, 2, 3];</code>",
+        "<code>miVector.reverse();</code>",
+        "<em>devuelve [3, 2, 1]</em>",
         "Usa <code>reverse</code> para invertir la variable <code>array</code> y asignarla a <code>newArray</code>."
       ]
     },
@@ -535,7 +538,7 @@
         "<code>concat</code> recibe un vector como argumento y devuelve un nuevo vector con los elementos del vector que recibe concatenados al final.",
         "He aquí un ejemplo de <code>concat</code> cuando se usa para concatenar <code>otroVector</code> al final de <code>vectorAntiguo</code>:",
         "<code>vectorNuevo = vectorAntiguo.concat(otroVector);</code>",
-        "Usa <code>.concat ()</code> para concatenar <code>concatMe</code> al final de <code>oldArray</code>y asigna el vector resultante a <code>newArray</code>."
+        "Usa <code>.concat ()</code> para concatenar <code>concatMe</code> al final de <code>oldArray</code> y asigna el vector resultante a <code>newArray</code>."
       ]
     },
     {
@@ -602,7 +605,7 @@
       "challengeType": 1,
       "nameEs": "Une cadenas con .join",
       "descriptionEs": [
-        "Podemos usar el método <code>join</code> para unir los elementos de un vector en una cadena, separandolos con el delimitador que proporciones como argumento.",
+        "Podemos usar el método <code>join</code> para unir los elementos de un vector en una cadena, separándolos con el delimitador que proporciones como argumento.",
         "El siguiente es un ejemplo del uso de <code>join</code> para unir todos los elementos de un vector en una cadena con todos los elementos separados entre si por palabra` Na`: ",
         "<code>var uneme = [\"Na \", \"Na \", \"Na \", \"Na \", \"Batman!\"];</code>",
         "<code>var cadenaUnida = uneme.join(\"Na \");</code>",
