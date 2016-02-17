@@ -10,9 +10,9 @@
         "This is basic info and a mini-lesson on the Elements tab of Chrome Dev Tools. Check out more in-depth documentation here: developers.google.com/web/tools/iterate/inspect-styles/basics",
         "We will be using the webpage mckellen.com/ per suggestion of Free Code Camp user kmiasko.",
         "If you right click and select 'Inspect element', you can have access to the elements tab. You can change text, background color, text color, and any other CSS or HTML you'd like!",
-        "These changes don't set up automatically, so don't use this as an IDE or a place to create or edit anything you want to save. You can set up something called 'persistant authoring' to save.",
-        "Cascade, inherit, and other css rules still apply, so keep that in mind as you play around. Additionally, overridden styles will be shown as having a strike through them.",
-        "It should also be noted that all of the code you're seeing in this 'tree' is current HTML, not original onload. If you use javascript or jquery to change something, it will be updated on this tree.",
+        "These changes don't set up automatically, so don't use this as an IDE or a place to create or edit anything you want to save. You can set up something called 'persistent authoring' to save.",
+        "Cascade, inherit, and other CSS rules still apply, so keep that in mind as you play around. Additionally, overridden styles will be shown as having a strike through them.",
+        "It should also be noted that all of the code you're seeing in this 'tree' is current HTML, not the original when the page loaded. If you use JavaScript or jQuery to change something, it will be updated on this tree.",
         "Padding, border, and margins are easily inspected and edited using the colorful box on the right or bottom side.",
         "Please check out the Chrome Dev Tools documentation at developers.google.com/web/tools/chrome-devtools/"
       ],
@@ -71,7 +71,7 @@
         "When you set a breakpoint, the browser pauses everything when it interprets that line of code or event.",
         "By slowing everything down and giving yourself a chance to examine what's happening at every spot you've set, you can keep track of exactly what's happening in the page or app.",
         "Once all of the breakpoints are set, you can step through the code and examine the state of your page or app at every breakpoint.",
-        "Just like with elements, you can live-edit through dev tools, but remember to save those changes however you can so your progress isn't lost.",
+        "Just like with elements, you can live-edit through Dev Tools, but remember to save those changes however you can so your progress isn't lost.",
         "Check out more in-depth documentation here: developers.google.com/web/tools/javascript/breakpoints/"
       ],
       "challengeSeed": [
@@ -96,8 +96,8 @@
       "title": "Chrome Dev Tools: Timeline",
       "description": [
         "The Timeline panel lets you record and analyze all the activity in your application as it runs. It's the best place to start investigating perceived performance issues in your application.",
-        "Just like you use network to find out how long things take to communicate with the internet and you use sources to find out where something's broken, you can use timeline to figure out what's going on and how long it takes in even more detail.",
-        "With the timeline you record events using the small circle button. You can record (or capture) stacks, profile js, memory, and paint (css).",
+        "Just like you use network to find out how long things take to communicate with the internet and you use sources to find out where something is broken, you can use the timeline to figure out what's going on and how long it takes in even more detail.",
+        "With the timeline you record events using the small circle button. You can record (or capture) stacks, profile js, memory, and paint (CSS).",
         "When you record (capture) these, it sets them up in small, detailed logs that you can organize many ways to fit you.",
         "All of this will help you to better understand what's happening in the browser, particularly which events require more browser memory than others.",
         "When you're using timeline, remember to use this 'clear' button and to start recording before you load the page, depending on what you want to capture.",
@@ -201,7 +201,7 @@
       "id": "56b15f15632298c12f31517d",
       "title": "Chrome Dev Tools: Console",
       "description": [
-        "The Console panel provides two primary functions: logging diagnostic information in the development process and providing a shell prompt which can be used to interact with the document and DevTools.",
+        "The Console panel provides two primary functions: logging diagnostic information in the development process and providing a shell prompt which can be used to interact with the document and Dev Tools.",
         "When using the console, you can view raw or structured data by using standard JS statements and console-specific commands.",
         "An example of structured data would be the information returned from an API in JSON. I used this a lot when I was building my first front end development projects for Free Code Camp.",
         "You should know that messages stack up, and you can clear them by typing and entering 'clear()'. You can also save the log by selecting 'Preserve Log'.",
@@ -231,7 +231,7 @@
       "title": "Chrome Dev Tools: Summary",
       "description": [
         "1.) Chrome Dev Tools are awesome, and the more you can dive in and try to use them, the faster your skill level will grow.",
-        "2.) Use the documentation, even if you've never read documentation before. developers.google.com/web/tools/chrome-devtools/",
+        "2.) Use the documentation, even if you've never read documentation before: developers.google.com/web/tools/chrome-devtools/",
         "3.) Once you start to get comfortable in one tab, stretch yourself. Working effectively with all of the tabs will serve you exponentially more than sticking in your comfort zone."
       ],
       "challengeSeed": [
