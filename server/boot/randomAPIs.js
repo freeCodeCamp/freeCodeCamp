@@ -33,6 +33,8 @@ module.exports = function(app) {
   router.get('/labs', showLabs);
   router.get('/stories', showTestimonials);
   router.get('/shop', showShop);
+  router.get('/shop/cancel-stickers', cancelStickers);
+  router.get('/shop/confirm-stickers', confirmStickers);
   router.get('/all-stories', showAllTestimonials);
   router.get('/terms', terms);
   router.get('/privacy', privacy);
@@ -224,6 +226,17 @@ module.exports = function(app) {
     });
   }
 
+  function confirmStickers(req, res) {
+      req.flash('success', { msg: 'Thank you for supporting our community! You should receive your stickers in the ' +
+        'mail soon!'});
+      res.redirect('/shop');
+  }
+
+  function cancelStickers(req, res) {
+      req.flash('info', { msg: 'You\'ve cancelled your purchase of our stickers. You can '
+        + 'support our community any time by buying some.'});
+      res.redirect('/shop');
+  }
   function submitCatPhoto(req, res) {
     res.send('Submitted!');
   }
