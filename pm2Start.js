@@ -17,7 +17,7 @@ pm2.connect(function() {
       'pm2 started %s with %s instances at %s max memory',
       serverName,
       instances,
-      maxMemory
+      minMemory
     );
     pm2.disconnect();
   });
