@@ -132,7 +132,7 @@
     "webpack": "^1.9.12",
     "webpack-stream": "^3.1.0",
     "xss-filters": "^1.2.6",
-    "yargs": "^3.30.0"
+    "yargs": "^4.1.0"
   },
   "devDependencies": {
     "blessed": "~0.1.81",
