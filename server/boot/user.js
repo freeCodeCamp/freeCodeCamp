@@ -230,7 +230,7 @@ module.exports = function(app) {
 
   function returnUser(req, res, next) {
     const username = req.params.username.toLowerCase();
-    const { user, path } = req;
+    const { user } = req;
 
     // timezone of signed-in account
     // to show all date related components
@@ -248,10 +248,7 @@ module.exports = function(app) {
     return User.findOne$(query)
       .filter(userPortfolio => {
         if (!userPortfolio) {
-          req.flash('errors', {
-            msg: `We couldn't find a page for ${ path }`
-          });
-          res.redirect('/');
+          return next();
         }
         return !!userPortfolio;
       })
