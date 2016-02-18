@@ -18,7 +18,7 @@ block content
                             .col-xs-12
                                 .challenge-instructions
                                     for sentence in description
-                                        if (/blockquote|\<ol|h4|table/.test(sentence))
+                                        if (/blockquote|\<ol|h4|\<table/.test(sentence))
                                             !=sentence
                                         else
                                             p.wrappable!= sentence
