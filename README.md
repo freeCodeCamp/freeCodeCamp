@@ -40,7 +40,7 @@ Do not file an issue until you have followed these steps:
 Contributing
 ------------
 
-We welcome pull requests from Free Code Camp campers (our students) and seasoned JavaScript developers alike! Please, follow [these steps](.github/CONTRIBUTING.md) to contribute.
+We welcome pull requests from Free Code Camp campers (our students) and seasoned JavaScript developers alike! Please, follow [these steps](CONTRIBUTING.md) to contribute.
 
 License
 -------
