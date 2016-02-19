@@ -169,19 +169,19 @@
         [
           "http://i.imgur.com/EAR7Lvh.jpg",
           "A screenshot of our one of our Gitter chat rooms.",
-          "Now let's join Free Code Camp's chat rooms. You can come here any time of day to hang out, ask questions, or find another camper to pair program with. First you'll need a GitHub account.",
+          "Before we start coding, let's join Free Code Camp's chat rooms. You can come here any time of day to hang out, ask questions, or find another camper to pair program with. First you'll need a GitHub account.",
           ""
         ],
         [
-          "http://i.imgur.com/FEImaEN.gif",
-          "A gif showing you to click the link below to go to GitHub. Fill in the necessary fields and click submit.",
-          "Create an account with GitHub. Be sure to use your real email address - GitHub will keep this private.",
+          "http://i.imgur.com/n6GeSEm.gif",
+          "A gif showing you to click the link below to go to GitHub. Fill in the necessary fields and click submit. Then check your email inbox for an email from GitHub so you can verify your account.",
+          "Click the \"Open link in new tab\" button below to open up GitHub. Create a GitHub account by filling in the form. Be sure to use your real email address - GitHub will keep this private. Then check your email inbox for an email from GitHub. Open it and click the \"verify email address\" button inside it. <br><div class=\"small\">Note: If you already have a GitHub account, you can skip this step by clicking \"Open link in new tab\", closing the new tab that opens, then clicking \"go to my next step\". We removed our \"skip step\" button because many people would just click it repeatedly without doing these important steps.</div>",
           "https://github.com/join"
         ],
         [
-          "http://i.imgur.com/ALN6zPK.gif",
+          "http://i.imgur.com/hFqAEr8.gif",
           "A gif showing you how to click the profile image in the upper right hand corner of GitHub. Upload a photo of yourself or you will continue to use the automatically generated pixel art. Then fill in the remaining form fields and click submit.",
-          "Click the pixel art in the upper right hand corner of GitHub, then choose settings. Upload a picture of yourself. A picture of your face works best. This is how your fellow campers will see you in our chat rooms, so put your best foot forward. You can add your city and your name if you want.",
+          "Click the pixel art in the upper right hand corner of GitHub, then choose settings. Upload a picture of yourself. A picture of your face works best. This is how your fellow campers will see you in our chat rooms, so look your best. You can add your city and your name if you want.",
           "https://github.com/settings/profile"
         ],
         [
@@ -191,9 +191,9 @@
           "https://github.com/freecodecamp/freecodecamp"
         ],
         [
-          "http://i.imgur.com/zwYPeQT.gif",
+          "http://i.imgur.com/OmRmLB4.gif",
           "A gif showing you how to click the link below to go to our chat room and click the \"sign in with GitHub\" button. Then you can click into the text input field and type a message to your fellow campers.",
-          "Now that you have a GitHub account, you can join our main chat room by logging in with GitHub. Introduce yourself by saying \"Hello world!\". Tell your fellow campers how you found Free Code Camp. Also tell us why you want to learn to code.",
+          "Now that you have a GitHub account, you can join our main chat room by logging in with GitHub. Introduce yourself by saying \"Hello world!\" Tell your fellow campers how you found Free Code Camp. Also tell us why you want to learn to code.",
           "https://gitter.im/FreeCodeCamp/FreeCodeCamp"
         ],
         [
@@ -234,13 +234,13 @@
           ""
         ],
         [
-          "http://i.imgur.com/FEImaEN.gif",
+          "http://i.imgur.com/n6GeSEm.gif",
           "Una imagen mostrándote como pulsar en el enlace inferior para ir a GitHub, llenar los campos necesarios y enviarlos.",
           "Crea una cuenta en GitHub. Asegúrate de usar tu dirección de correo real - GitHub mantendrá esto en privado.",
           "https://github.com/join"
         ],
         [
-          "http://i.imgur.com/ALN6zPK.gif",
+          "http://i.imgur.com/hFqAEr8.gif",
           "Un gif mostrándote como pulsar en la imagen de perfil en la esquina superior derecha de GitHub. Sube una foto tuya o continuaras usando la imagen de píxeles generada automáticamente. Entonces llena los campos restantes y haz clic en enviar.",
           "En la esquina superior derecha pulsa sobre la imagen de píxeles, entonces selecciona configuraciones. Sube una imagen tuya. Una foto de tu cara es mejor. Así es como tus compañeros campistas te verán en nuestras salas de chat, así que toma tu mejor ángulo. Puedes añadir tu ciudad y tu nombre si lo deseas.",
           "https://github.com/settings/profile"
@@ -253,9 +253,9 @@
           "https://github.com/freecodecamp/freecodecamp"
         ],
         [
-          "http://i.imgur.com/zwYPeQT.gif",
+          "http://i.imgur.com/OmRmLB4.gif",
           "Un gif mostrándote como pulsar en el enlace inferior para ir a nuestra sala de chat y pulsar en el botón de \"iniciar sesión con GitHub\". Entonces puedes pulsar en el próximo campo de texto y escribir un mensaje a tus compañeros campistas.",
-          "Ahora que tienes una cuenta de GitHub, puedes unirte a nuestro chat principal al iniciar sesión con GitHub. Preséntate diciendo \"Hello world!\". Cuéntales a los tus compañeros campistas como encontraste Free Code Camp. Además cuéntanos porque deseas aprender a programar.",
+          "Ahora que tienes una cuenta de GitHub, puedes unirte a nuestro chat principal al iniciar sesión con GitHub. Preséntate diciendo \"Hello world!\" Cuéntales a los tus compañeros campistas como encontraste Free Code Camp. Además cuéntanos porque deseas aprender a programar.",
           "https://gitter.im/FreeCodeCamp/FreeCodeCamp"
         ],
         [

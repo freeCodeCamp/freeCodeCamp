@@ -23,14 +23,14 @@
         [
           "http://i.imgur.com/p2TpOQd.jpg",
           "A cute dog jumping over a hurdle and winking and pointing his paw at you.",
-          "When you get stuck, just use the Read-Search-Ask methodology.<br>Don't worry - you've got this.",
+          "When you get stuck, just use the Read-Search-Ask methodology. Don't worry - you've got this.",
           ""
         ],
         [
-          "http://i.imgur.com/6WLULsC.gif",
+          "http://i.imgur.com/G1saeDt.gif",
           "A gif showing how to create a Codepen account.",
-          "For our front end project challenges, we'll use a popular browser-based code editor called CodePen. Open CodePen and click \"Sign up\" in the upper right hand corner, then scroll down to the free plan and click \"Sign up\" again. Click the \"Use info from GitHub button\", then add your email address and create a password. Click the \"Sign up\" button. Then in the upper right hand corner, click \"New pen\".",
-          "http://codepen.io"
+          "For our front end project challenges, we'll use a popular browser-based code editor called CodePen. Click the \"Open link in new tab\" button below to open CodePen's signup page. Fill out the form and click \"Sign up\". <br><div class=\"small\">Note: If you already have a CodePen account, you can skip this step by clicking \"Open link in new tab\", closing the new tab that opens, then clicking \"go to my next step\". We removed our \"skip step\" button because many people would just click it repeatedly without doing these important steps.</div>",
+          "http://codepen.io/signup/free"
         ],
         [
           "http://i.imgur.com/U4y9RJ1.gif",
@@ -42,18 +42,6 @@
           "http://i.imgur.com/G9KFQDL.gif",
           "A gif showing the process of adding Bootstrap to your pen.",
           "Click the gear in the upper left hand corner of the CSS box, then scroll down to \"Quick add\" and choose Bootstrap. Now give your h1 element the class of \"text-primary\" to change its color and prove that Bootstrap is now available.",
-          ""
-        ],
-        [
-          "http://i.imgur.com/Gi3aig0.gif",
-          "A gif showing the process of adding Animate.css and jQuery to pen.",
-          "Click the gear in the upper left hand corner of the CSS box, then scroll down to \"Quick add\" and choose Animate.css. Click the gear in the upper left hand corner of the JS box, then scroll down to \"Quick add\" and choose jQuery. Let's prove that Animate.css and jQuery are loaded properly. In the JS box, add the following code to make your h1 element bounce: <code>$(document).ready(function(){ $(\"h1\").addClass(\"animated bounce\"); });</code>.",
-          ""
-        ],
-        [
-          "http://i.imgur.com/Wzt6Y9Y.gif",
-          "A gif showing the process of saving and forking a pen.",
-          "Save your pen with the \"Save\" button. Then click the \"Fork\" button. This will create a fork (copy) of your pen that you can experiment with.",
           ""
         ]
       ],
@@ -78,14 +66,14 @@
         [
           "http://i.imgur.com/p2TpOQd.jpg",
           "Un tierno perro que salta sobre un obstáculo, pica el ojo y te apunta con su pata.",
-          "Cuando te atasques, usa la metodología Leer-Buscar-Preguntar.<br>No te preocupes -  ya lo has entendido.",
+          "Cuando te atasques, usa la metodología Leer-Buscar-Preguntar. No te preocupes -  ya lo has entendido.",
           ""
         ],
         [
-          "http://i.imgur.com/6WLULsC.gif",
+          "http://i.imgur.com/G1saeDt.gif",
           "Un gif que muestra cómo crear una cuenta en Codepen.",
           "Para nuestros desafíos de interfaces, usaremos un editor muy famoso llamado Codepen, el cual es completamente basado en el navegador. Abre CodePen y pulsa en \"Sign up\" en la esquina superior derecha, luego ve hacia abajo donde se encuentra el plan gratuito (free plan) y pulsa en \"Sign up\". Da clic en el botón que dice \"Use info from GitHub\", luego agrega tu dirección de correo electrónico y crea una contraseña. Pulsa el botón que dice \"Sign up\". Luego, en la esquina superior derecha , da clic en \"New pen\".",
-          "http://codepen.io"
+          "http://codepen.io/signup/free"
         ],
         [
           "http://i.imgur.com/U4y9RJ1.gif",
@@ -98,18 +86,6 @@
           "Un gif que muestra el proceso de agregar Bootstrap a tu proyecto.",
           "Pulsa el engrane en la esquina superior izquierda de la ventana de CSS, luego ve hacia abajo hasta donde dice \"Quick add\" y elige Bootstrap. Ahora dale a tu elemento <code>h1</code> la clase \"text-primary\" para cambiar su color y verificar que Bootstrap está activado.",
           ""
-        ],
-        [
-          "http://i.imgur.com/Gi3aig0.gif",
-          "Un gif que muestra el proceso de agregar Animate.css y jQuery a tu proyecto.",
-          "Pulsa el engrane en la esquina superior izquierda de la ventana de CSS, luego ve hacia abajo hasta donde dice \"Quick add\" y elige Animate.css. Haz clic en el engrane en la esquina superior izquierda de la ventana de JS, luego ve hacia abajo hasta donde dice \"Quick add\" y elige jQuery. Comprobemos que Animate.css y jQuery se cargaron propiamente. En la ventana de JS, agrega el siguiente código para hacer rebotar tu elemento <code>h1</code>: <code>$(document).ready(function(){ $(\"h1\").addClass(\"animated bounce\"); });</code>.",
-          ""
-        ],
-        [
-          "http://i.imgur.com/Wzt6Y9Y.gif",
-          "Un gif que muestra el proceso de guardar y bifurcar un proyecto.",
-          "Guarda tu proyecto con el botón \"Save\". Luego pulsa el botón de \"Fork\". Esto crea una bifurcación (copia) de tu proyecto con la que puedes experimentar.",
-          ""
         ]
       ],
       "isRequired": false
@@ -117,6 +93,7 @@
     {
       "id": "bd7158d8c442eddfaeb5bd18",
       "title": "Build a Tribute Page",
+      "releasedOn": "January 1, 2016",
       "description": [
         "<strong>Objective:</strong> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='http://codepen.io/FreeCodeCamp/full/wMQrXV' target='_blank'>http://codepen.io/FreeCodeCamp/full/wMQrXV</a>.",
         "<strong>Rule #1:</strong> Don't look at the example project's code. Figure it out for yourself.",
