@@ -210,6 +210,14 @@ block content
                     | Let other people see all my solutions
                     br
                     | (this will enable your certificates)
+        if (!user.sendMonthlyEmail)
+            .col-xs-12
+                a.btn.btn-lg.btn-block.btn-primary.btn-link-social(href='/toggle-receives-emails')
+                    | I want to receive short weekly emails
+        else
+            .col-xs-12
+                a.btn.btn-lg.btn-block.btn-primary.btn-link-social(href='/toggle-receives-emails')
+                    | I don't want to receive short weekly emails
         .col-xs-12
             a.btn.btn-lg.btn-block.btn-primary.btn-link-social(href='/commit')
                 | Edit my pledge

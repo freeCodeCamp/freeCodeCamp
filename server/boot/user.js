@@ -153,6 +153,11 @@ module.exports = function(app) {
     sendNonUserToMap,
     toggleLockdownMode
   );
+  router.get(
+    '/toggle-receives-emails',
+    sendNonUserToMap,
+    toggleReceivesEmails
+  );
   router.post(
     '/account/delete',
     ifNoUser401,
@@ -417,6 +422,37 @@ module.exports = function(app) {
         msg: dedent`
           All your challenge solutions are now hidden from other people.
           You can change this back at any time in the "Manage My Account"
+          section at the bottom of this page.
+        `
+      });
+      res.redirect('/' + req.user.username);
+    });
+  }
+
+  function toggleReceivesEmails(req, res, next) {
+    if (req.user.sendMonthlyEmail === true) {
+      req.user.sendMonthlyEmail = false;
+      return req.user.save(function(err) {
+        if (err) { return next(err); }
+
+        req.flash('success', {
+          msg: dedent`
+            You will no longer receive our short weekly emails.
+            You can turn these back on any time in the "Manage My Account"
+            section at the bottom of this page.
+          `
+        });
+        res.redirect('/' + req.user.username);
+      });
+    }
+    req.user.sendMonthlyEmail = true;
+    return req.user.save(function(err) {
+      if (err) { return next(err); }
+
+      req.flash('success', {
+        msg: dedent`
+          You will now receive a short email from us each week.
+          You can turn these off at any time in the "Manage My Account"
           section at the bottom of this page.
         `
       });
