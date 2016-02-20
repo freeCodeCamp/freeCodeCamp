@@ -21,7 +21,7 @@ module.exports = function(app) {
   }
 
   function index(req, res, next) {
-    if (!req.lang) {
+    if (!req.params.lang) {
       return next();
     }
 
