@@ -1,4 +1,4 @@
-export default [
-  'en',
-  'es'
-].reduce((langs, lang) => (langs[lang] = true, langs), {});
+export default {
+  en: 'English',
+  es: 'Spanish'
+};

@@ -3,6 +3,7 @@ import moment from 'moment-timezone';
 import { Observable } from 'rx';
 import debugFactory from 'debug';
 
+import supportedLanguages from '../utils/supported-languages';
 import {
   frontEndChallengeId,
   dataVisChallengeId,
@@ -291,7 +292,8 @@ module.exports = function(app) {
             calender,
             github: userPortfolio.githubURL,
             moment,
-            encodeFcc
+            encodeFcc,
+            supportedLanguages
           }));
       })
       .doOnNext(data => {
