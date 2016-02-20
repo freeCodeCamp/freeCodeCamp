@@ -1,4 +1,5 @@
 import { defaultProfileImage } from '../../common/utils/constantStrings.json';
+import supportedLanguages from '../utils/supported-languages';
 
 const message =
   'Learn to Code and Help Nonprofits';
@@ -7,7 +8,14 @@ module.exports = function(app) {
   var router = app.loopback.Router();
   router.get('/', addDefaultImage, index);
 
-  app.use('/:lang', router);
+  app.use(
+    '/:lang',
+    (req, res, next) => {
+      req._urlLang = req.params.lang;
+      next();
+    },
+    router
+  );
 
   function addDefaultImage(req, res, next) {
     if (!req.user || req.user.picture) {
@@ -21,13 +29,12 @@ module.exports = function(app) {
   }
 
   function index(req, res, next) {
-    if (!req.params.lang) {
+    if (!supportedLanguages[req._urlLang]) {
       return next();
     }
 
     if (req.user) {
-      // TODO: make language aware
-      return res.redirect(`/${req.lang}/challenges/current-challenge`);
+      return res.redirect(`/challenges/current-challenge`);
     }
 
     res.render('home', { title: message });
