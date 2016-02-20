@@ -6,13 +6,11 @@ const toLowerCase = String.prototype.toLowerCase;
 // redirect(statusOrUrl: String|Number, url?: String) => Void
 function langRedirect(...args) {
   const url = args.length === 2 ? args[1] : args[0];
+  const { lang } = this.req;
   const maybeLang = toLowerCase.call(url.split('/')[1]);
-  const lang = this.req.lang;
 
   if (
-    // if a passthrough languages
     passthroughs[maybeLang] ||
-    // if maybe lang matches current language
     supportedLanguages[maybeLang]
   ) {
     return this._oldRedirect(...arguments);
@@ -29,12 +27,16 @@ function langRedirect(...args) {
 
 export default function addLang() {
   return function(req, res, next) {
-    const { url } = req;
+    const { url, user = {} } = req;
     const maybeLang = url.split('/')[1];
+    const userLang = user.languageTag;
+    const finalLang = userLang && supportedLanguages[userLang] ?
+      userLang :
+      maybeLang;
 
-    if (supportedLanguages[maybeLang]) {
-      req.lang = maybeLang;
-      res.locals.lang = maybeLang;
+    if (supportedLanguages[finalLang]) {
+      req.lang = finalLang;
+      res.locals.lang = finalLang;
     }
 
     res._oldRedirect = res.redirect;

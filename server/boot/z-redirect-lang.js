@@ -16,9 +16,9 @@ export default function redirectLang(app) {
       req.flash('errors', {
         msg: `404: We couldn't find path ${ path }`
       });
-      return res.redirect('/en/map');
+      return res.redirect(`/map`);
     }
 
-    return res.redirect(`/en${url}`);
+    return res.redirect(url);
   });
 }
