@@ -199,7 +199,7 @@
         "The Byte, which is very common, is 8 bits.",
         "A lot of things are expressed in binary Bytes.",
         "After we get past the tiny bit and the small Byte, we get bigger really fast.",
-        "The next step up is a Kilobyte, 1024 Bytes, or 1,048,576 bits.",
+        "The next step up is a Kilobyte, 1024 Bytes, or 8192 bits.",
         "After that there's Megabyte, or 1024 Bytes to the power of two.",
         "Then it's Gigabyte, 1024 Bytes to the power of three; Terabyte, 1024 Bytes to the power of 4, and Petabyte, 1024 to the power of 5.",
         "These get much bigger really quickly!"
