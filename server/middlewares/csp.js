@@ -24,6 +24,7 @@ export default function csp() {
         "'unsafe-eval'",
         "'unsafe-inline'",
         '*.google-analytics.com',
+        'maps.googleapis.com',
         '*.gstatic.com',
         'https://*.cloudflare.com',
         '*.cloudflare.com',

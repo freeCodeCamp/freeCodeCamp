@@ -43,6 +43,19 @@ export default stampit({
 
         return Disposable.create(() => observer.dispose());
       });
+    },
+    updateService$({ service: resource, params, body, config }) {
+      return Observable.create(observer => {
+        this.services.update(
+          resource,
+          params,
+          body,
+          config,
+          callbackObserver(observer)
+        );
+
+        return Disposable.create(() => observer.dispose());
+      });
     }
   }
 });

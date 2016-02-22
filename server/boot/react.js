@@ -12,6 +12,8 @@ const log = debug('fcc:react-server');
 // add routes here as they slowly get reactified
 // remove their individual controllers
 const routes = [
+  '/campsites',
+  '/campsites/*',
   '/challenges',
   '/challenges/*',
   '/map',

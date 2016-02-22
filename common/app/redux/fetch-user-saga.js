@@ -10,6 +10,7 @@ import {
 
 const { fetchUser } = types;
 
+
 export default function getUserSaga(action$, getState, { services }) {
   return action$
     .filter(action => action.type === fetchUser)

@@ -35,6 +35,10 @@
     "dataSource": "db",
     "public": true
   },
+  "campsite": {
+    "dataSource": "db",
+    "public": true
+  },
   "job": {
     "dataSource": "db",
     "public": true

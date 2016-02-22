@@ -1,4 +1,10 @@
+<<<<<<< 40b37dc8dfd925c4c92547367e717ab807e4b097
 import { modernChallenges, map, challenges } from './challenges';
+=======
+import Jobs from './Jobs';
+import Hikes from './Hikes';
+import Campsites from './Campsites';
+>>>>>>> add campsite database and map
 import NotFound from '../components/NotFound/index.jsx';
 import { addLang } from '../utils/lang';
 import settings from './settings';
@@ -13,6 +19,7 @@ export default {
     }
   },
   childRoutes: [
+    Campsites,
     challenges,
     modernChallenges,
     map,

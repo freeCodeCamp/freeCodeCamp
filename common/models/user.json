@@ -123,6 +123,11 @@
     "currentChallenge": {
       "type": {}
     },
+    "isCampsiteModerator": {
+      "type": "boolean",
+      "default": false,
+      "description": "Camper can approve new campsites"
+    },
     "isUniqMigrated": {
       "type": "boolean",
       "description": "Campers completedChallenges array is free of duplicates",
