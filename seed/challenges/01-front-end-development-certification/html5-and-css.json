@@ -1998,7 +1998,7 @@
         "Por exemplo:",
         "<code>&#60;form action=\"/url-para-onde-você-quer-enviar-os-dados-do-formulário\"&#62;&#60;/form&#62;</code>", 
         "Aninhe seu campo de texto em um elemento <code>form</code>. Adicione o atributo <code>action=\"/submit-cat-photo\"</code> para este elemento de formulário."
-      ],
+      ]
       "type": "waypoint"
     },
     {
@@ -2468,7 +2468,7 @@
         "Para isso, basta você acrescentar a palavra \"checked\" no interior de um elemento de entrada. Por exemplo:",
         "<code>&#60;input type=\"radio\" name=\"nome-de-teste\" checked&#62;</code>",
         "Estabeleça como marcados por padrão o primeiro dos seus <code>botões de seleção/rádio</code> e a primeira <code>caixa de seleção</code>."
-      ],
+      ]
       "type": "waypoint"
     },
     {
@@ -2662,7 +2662,7 @@
         "<code>&nbsp;&nbsp;background-color: green;</code>",
         "<code>}</code>",
         "Crie uma classe chamada <code>gray-background</code> com a propriedade <code>background-color</code> em cinza (<code>gray</code>). Depois, adicione essa classe ao seu elemento <code>div</code>."
-      ],
+      ]
     },
     {
       "id": "bad87eee1348bd9aede07836",
@@ -2759,7 +2759,7 @@
         "Veja aqui um exemplo de como dar a id <code>cat-photo-app</code> ao seu elemento code>h2</code>:",
         "<code>&#60;h2 id=\"cat-photo-app\"></code>",
         "Dê ao seu elemento <code>form</code> a id <code>cat-photo-form</code>."
-      ],
+      ]
     },
     {
       "id": "bad87dee1348bd9aede07836",
@@ -3088,7 +3088,7 @@
         "Se você estabelece a margem de um elemento com um valor negativo, o elemento ficará maior.",
         "Tente estabelecer a margem (<code>margin</code>) a um valor negativo como o da caixa vermelha.",
         "Mude a margem (<code>margin</code>) da caixa verde para <code>-15px</code>, de forma que ocupe toda a largura horizontal da caixa amarela que a rodeia."
-      ],
+      ]
       "type": "waypoint"
     },
     {
@@ -3515,7 +3515,7 @@
         "Vamos ver o que acontece quando criamos uma classe que faz com que o texto seja rosa e então o aplicamos a um elemento. Isso irá sobrepor (<code>override</code>) a propriedade CSS <code>color: green</code> do elemento <code>body</code> de nossa classe?",
         "Crie uma classe CSS chamada <code>pink-text</code>, que dê a cor rosa a um elemento.",
         "Depois, adicione a classe <code>pink-text</code> ao seu elemento <code>h1</code>."
-      ],
+      ]
     },
     {
       "id": "bad87fee1348bd9aedf04756",
@@ -3899,7 +3899,7 @@
         "Relembre que códigos hexadecimais seguem o formato vermelho-verde-azul (<em>red-green-blue</em>), ou formato <code>rgb</code>. Os dois primeiros dígitos do código hexadecimal representam a quantidade de vermelho na cor. O terceiro e o quarto representam a quantidade de verde. Já o quinto e o sexto representam a quantidade de azul.",
         "Sendo assim, para conseguir um verde brilhante, basta que você use <code>F</code> (o dígito mais alto possível) para o terceiro e o quarto dígito, e <code>0</code> (o dígito mais baixo possível) para todos os outros dígitos.",
         "Faça com que a cor de fundo (<code>background-color</code>) do elemento <code>body</code> seja verde ao dar o código hexadecimal <code>#00FF00</code>."
-      ],
+      ]
     },
     {
       "id": "bad87fee1348bd9aedf08722",
@@ -3967,7 +3967,7 @@
         "A partir dessas três cores puras (vermelho, verde e azul), podemos criar 16 milhões de cores.",
         "Por exemplo, o laranja é vermelho puro misturado com um pouco de verde, e sem nada de azul.",
         "Faça com que a cor de fundo do elemento <code>body</code> seja alaranjada, usando o código hexadecimal <code>#FFA500</code>."
-      ],
+      ]
     },
     {
       "id": "bad87fee1348bd9aede08720",
@@ -4251,7 +4251,7 @@
      "namePtBR": "Use Valores RBG para Dar a Cor Azul a Elementos",
      "descriptionPtBR": [
         "Agora, mude a cor de fundo do elemento <code>body</code> para azul usando seu valor RGB: <code>rgb(0, 0, 255)</code>."
-      ],
+      ]
     },
     {
       "id": "bad82fee1348bd9aedf08721",
