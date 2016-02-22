@@ -1830,7 +1830,7 @@
         "Let's give a unique id to each of our <code>div</code> elements of class <code>well</code>.",
         "Remember that you can give an element an id like this:",
         "<code>&#60;div class=\"well\" id=\"center-well\"&#62;</code>",
-        "Give the well on the left the id of <code>left-well</code>. Give the well on the right the <code>id</code> of <code>right-well</code>."
+        "Give the well on the left the id of <code>left-well</code>. Give the well on the right the id of <code>right-well</code>."
       ],
       "challengeSeed": [
         "<div class=\"container-fluid\">",
