@@ -56,7 +56,7 @@
         "Note que a única diferença entre as tags de abertura e fechamento é que as de fechamento possuem uma barra (/) depois do sinal de abertura (<).",
         "Cada desafio possui testes que você pode executar a qualquer momento ao clicar no botão \"Executar testes\". Quando você conseguir passar em todos os testes, poderá avançar para o próximo desafio.",
         "Para passar nos testes deste desafio, mude o texto do elemento <code>h1</code> para que diga \"Hello World\" no lugar de \"Hello\". Depois, clique no botão \"Executar testes\"."   
-      ]
+          ],
       "type": "waypoint"
     },
     {
@@ -104,7 +104,7 @@
          "Este elemento indica ao navegador a forma de mostrar o texto que contém.",
          "Os elementos <code>h2</code> são ligeiramente menores que os elementos <code>h1</code>. Há também os elementos <code>h3</code>, <code>h4</code>, <code>h5</code> e <code>h6</code>.",
          "Adicione uma tag <code>h2</code> que diga \"CatPhotoApp\" para criar um segundo <code>elemento</code> HTML abaixo de seu elemento <code>h1</code> chamado \"Hello World\"."
-      ]
+      ],
       "type": "waypoint"
     },
     {
@@ -144,7 +144,7 @@
         "Você pode criar um elemento <code>p</code> assim:",
         "<code>&#60;p&#62;Sou uma tag p!&#60;/p&#62;</code>",
         "Crie um elemento <code>p</code> abaixo de seu elemento <code>h2</code>, e dê a ele o texto \"Hello Paragraph\"."
-      ]
+      ],
       "type": "waypoint"
     },
     {
@@ -192,7 +192,7 @@
         "Comentar também é um jeito conveniente de deixar seu código inativo sem precisar apagá-lo por completo.",
         "Você pode iniciar um comentário com <code>&#60;!--</code> e terminar seu comentário com <code>--&#62;</code>.",
         "Remova o comentário dos elementos <code>h1</code>, <code>h2</code> e <code>p</code>."
-      ]
+      ],
       "type": "waypoint"
     },
     {
@@ -236,7 +236,7 @@
         "Lembre-se que para iniciar um comentário você precisa utilizar <code>&#60;!--</code>, e para terminar um comentário é necessário usar <code>--&#62;</code>.",
         "Aqui, você deverá terminar o comentário antes que seu elemento <code>h2</code> inicie.",
         "Comente o elemento <code>h1</code> e o elemento <code>p</code>, e deixe o elemento <code>h2</code> sem nenhum comentário."
-      ]
+      ],
       "type": "waypoint"
     },
     {
@@ -280,7 +280,7 @@
         "O texto Lorem Ipsum tem sido utilizado como texto de espaço reservado por compositores desde o século 16, e esta tradição continua na web.",
         "Bem, 5 séculos é um tempo longo o bastante. Já que estamos desenvolvendo um aplicativo sobre fotos de gatos (CatPhotoApp), vamos usar algo chamado <code>Kitty Ipsum</code>.",
         "Substitua o texto dentro do seu elemento <code>p</code> pelas primeiras palavras deste texto Kitty Ipsum: <code>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</code>"
-      ]
+      ],
       "type": "waypoint"
     },
     {
@@ -321,7 +321,7 @@
         "Nosso celular não possui muito espaço vertical.",
         "Vamos eliminar os elementos desnecessários para começar a construir nosso CatPhotoApp.",
         "Apague o elemento <code>h1</code> para simplificar o nosso espaço."
-      ]
+      ],
       "type": "waypoint"
     },
     {
@@ -367,7 +367,7 @@
         "Você pode mudar a cor do texto de seu elemento <code>h2</code> para azul assim:",
         "<code>&#60;h2 style=\"color: blue\"&#62;CatPhotoApp&#60;/h2&#62;</code>",
         "Mude o estilo do elemento <code>h2</code> para que seu texto fique com a cor vermelha."
-      ]
+      ],
       "type": "waypoint"
     },
     {
@@ -432,7 +432,7 @@
         "<code>&#60;/style&#62;</code>",
         "Observe que é importante utilizar as chaves de abertura e de fechamento (<code>{</code> e <code>}</code>) ao redor do estilo de cada elemento. Também é necessário que o estilo de seu elemento esteja entre as tags de abertura e fechamento. Por fim, não se esqueça de adicionar o ponto-e-vírgula no final de cada um dos estilos de seu elemento.",
         "Apague o atributo <code>style</code> de seu elemento <code>h2</code> e então crie um elemento <code>style</code> CSS. Adicione o CSS necessário para fazer com que todos os elementos <code>h2</code> tenham a cor azul."
-      ]
+      ],
       "type": "waypoint"
     },
     {
@@ -509,7 +509,7 @@
         "Note que em seu elemento <code>style</code> CSS, as classes devem começar com um ponto. Já nos elementos HTML, as declarações de classes não devem começar com o ponto.",
         "Ao invés de criar um novo elemento <code>style</code>, tente eliminar a declaração de estilo de <code>h2</code> dos elementos de estilo existentes, e troque ela pela declaração de classe <code>.red-text</code>.",
         "Crie uma classe CSS chamada <code>red-text</code> e então a aplique em seu elemento <code>h2</code>."
-      ]
+      ],
       "type": "waypoint"
     },
     {
@@ -568,7 +568,7 @@
         "Contudo, não se esqueça que as declarações de classes em elementos não utilizam ponto, assim:",
         "<code>&#60;h2 class=\"blue-text\"&#62;CatPhotoApp&#60;h2&#62;</code>",
         "Adicione a classe <code>red-text</code> aos seus elementos <code>h2</code> e <code>p</code>."
-      ]
+      ],
       "type": "waypoint"
     },
     {
@@ -579,7 +579,8 @@
         "<blockquote>h1 {<br>&nbsp;&nbsp;font-size: 30px;<br>}</blockquote>",
         "Create a second <code>p</code> element with the following kitty ipsum text: <code>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</code>",
         "Inside the same <code>&#60;style&#62;</code> tag that contains your <code>red-text</code> class, create an entry for <code>p</code> elements and set the <code>font-size</code> to 16 pixels (<code>16px</code>).",
-        "<strong>Note</strong><br>Due to browser implementation differences, you may need to be at 100% zoom to pass the tests on this challenge.<br>Also, please do not add any extra classes to your new element."
+        "<strong>Note</strong><br>Due to browser implementation differences, you may need to be at 100% zoom to pass the tests on this challenge.",
+        "Also, please do not add a class attribute to your new <code>p</code> element."
       ],
       "challengeSeed": [
         "<style>",
@@ -596,7 +597,8 @@
         "assert($(\"p\").length > 1, 'message: You need 2 <code>p</code> elements with Kitty Ipsum text.');",
         "assert(code.match(/<\\/p>/g) && code.match(/<\\/p>/g).length === code.match(/<p/g).length, 'message: Make sure each of your <code>p</code> elements has a closing tag.');",
         "assert.isTrue((/Purr\\s+jump\\s+eat/gi).test($(\"p\").text()), 'message: Your <code>p</code> element should contain the first few words of the provided additional <code>kitty ipsum text</code>.');",
-        "assert(parseInt($(\"p\").not(\".red-text\").css(\"font-size\"), 10) > 15, 'message: Give elements with the <code>p</code> tag a <code>font-size</code> of <code>16px</code>. Browser and Text zoom should be at 100%.');"
+        "assert($(\"p:not([class])\").length === 1, 'message: Do not add a class attribute to your new <code>p</code> element.');",
+        "assert(parseInt($(\"p:not([class])\").css(\"font-size\"), 10) > 15, 'message: Give elements with the <code>p</code> tag a <code>font-size</code> of <code>16px</code>. Browser and Text zoom should be at 100%.');"
       ],
       "challengeType": 0,
       "nameEs": "Cambia el tamaño de fuente de un elemento.",
@@ -623,7 +625,7 @@
         "<code>}</code>",
         "Crie um segundo elemento <code>p</code> que tenha o seguinte texto Kitty Ipsum: <code>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</code>",
         "Dentro da mesma tag <code>&#60;style&#62;</code> que criamos para sua classe <code>red-text</code>, modifique o <code>font-size</code> dos elementos <code>p</code> para que tenha um tamanho de 16 pixels (<code>16px</code>)."
-      ]
+      ],
       "type": "waypoint"
     },
     {
@@ -678,7 +680,7 @@
         "<code>&nbsp;&nbsp;font-family: Sans-serif;</code>",
         "<code>}</code>",
         "Faça com que todos os elementos <code>p</code> utilizem o estilo de fonte <code>Monospace</code>."
-      ]
+      ],
       "type": "waypoint"
     },
     {
@@ -739,7 +741,7 @@
         "Para fazer isso, copie o código abaixo e insira-o na parte superior de seu editor de texto:",
         "<code>&#60;link href=\"http://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\"&#62;</code>",
         "Agora, estableça <code>Lobster</code> como o valor para font-family em seu elemento <code>h2</code>."
-      ]
+      ],
       "type": "waypoint"
     },
     {
@@ -808,7 +810,7 @@
         "<code>&nbsp;&nbsp;font-family: Helvetica, Sans-Serif;</code>",
         "<code>}</code>",
         "Agora, comente o seu chamado para a fonte do Google, para que a fonte <code>Lobster</code> não esteja disponível. Note como a fonte degrada para <code>Monospace</code>."
-      ]
+      ],
       "type": "waypoint"
     },
     {
@@ -873,7 +875,7 @@
         "Observe que na maior parte dos casos, os elementos <code>img</code> são de fechamento automático.",
         "Agora, tente fazer isso com essa imagem:",
         "<code>https://bit.ly/fcc-relaxing-cat</code>" 
-      ]
+      ],
       "type": "waypoint"
     },
     {
@@ -942,7 +944,7 @@
         "<code>&nbsp;&nbsp;}</code>",
         "<code>&#60;/style&#62;</code>",
         "Crie uma classe chamada <code>smaller-image</code> e a utilize para mudar o tamanho da imagem para que ela tenha apenas 100 pixels de largura."
-      ]
+      ],
       "type": "waypoint"
     },
     {
@@ -1027,7 +1029,7 @@
         "Crie uma classe chamada <code>thick-green-border</code> que insira uma borda verde de 10 pixels de largura com um estilo <code>solid</code> ao redor de um elemento HTML, e então adicione essa classe em sua foto com o gato.",
         "Lembre que você pode aplicar diversas classes a um elemento separando cada uma das classes com um espaço, dentro do atributo <code>class</code>. Por exemplo:",
         "<code>&lt;img class=\"clase1 clase2\"&gt;</code>"  
-      ]
+      ],
       "type": "waypoint"
     },
     {
@@ -1103,7 +1105,7 @@
         "Sua foto com o gato possui cantos pontiagudos. Podemos arredondar os cantos com uma propriedade CSS chamado <code>border-radius</code>.",
         "Você pode especificar um <code>border-radius</code> com pixels. Adicione um <code>border-radius</code> de <code>10px</code> para a sua foto.",
         "Nota: Este desafio permite várias soluções possíveis. Por exemplo, você pode adicionar o <code>border-radius</code> tanto para a classe <code>.thick-green-border</code> como para a classe <code>.smaller-image</code>."
-      ]
+      ],
       "type": "waypoint"
     },
     {
@@ -1168,7 +1170,7 @@
      "descriptionPtBR": [
         "Assim como pixels, você também pode usar o <code>border-radius</code> com porcentagens.",
         "Dê para a sua foto de gato um <code>border-radius</code> de <code>50%</code>."
-      ]
+      ],
       "type": "waypoint"
     },
     {
@@ -1247,7 +1249,7 @@
         "Veja um exemplo:",
         "<code>&#60;p&#62;Aqui está um &#60;a href=\"http://freecodecamp.com\"&#62; link ligado ao Free Code Camp&#60;/a&#62; para que você o siga.&#60;/p&#62;</code>",
         "Crie um elemento <code>a</code> que esteja ligado ao site <code>http://freecatphotoapp.com</code> e tenha como <code>texto de âncora</code> \"fotos de gatos\"."
-      ]
+      ],
       "type": "waypoint"
     },
     {
@@ -1332,7 +1334,7 @@
         "<code>&#60;p&#62;Este é um &#60;a href=\"http://freecodecamp.com\"&#62; link ligado ao Free Code Camp&#60;/a&#62; para que você o siga.&#60;/p&#62;</code>",
         "<code>Aninhamento</code> significa ter um elemento no interior de outro elemento.",
         "Agora, aninhe o elemento <code>a</code> existente dentro de um novo elemento <code>p</code> de forma que o parágrafo diga \"View more cat photos\", mas onde apenas \"cat photos\" seja um link, e o resto seja texto comum."
-      ]
+      ],
       "type": "waypoint"
     },
     {
@@ -1402,7 +1404,7 @@
         "As vezes você pode querer adicionar elementos <code>a</code> em sua página web antes de saber o link que as ligará.",
         "Isso também é útil quando você desejar mudar o comportamento de um link utilizando <code>jQuery</code>, o que vamos aprender mais adiante.",
         "Substitua o atributo <code>href</code> de seu elemento <code>a</code> por um <code>#</code>, também conhecido como símbolo de <em>hash</em> ou hashtag. Isso o transformará em um link inativo."
-      ]
+      ],
       "type": "waypoint"
     },
     {
@@ -1480,7 +1482,7 @@
         "Aninhe sua imagem dentro de um elemento <code>a</code>. Temos aqui um exemplo.",
         "<code>&#60;a href=\"#\"&#62;&#60;img src=\"http://bit.ly/fcc-running-cats\"/&#62;&#60;/a&#62;</code>",
         "Lembre de usar <code>#</code> como atributo <code>href</code> de seu elemento <code>a</code> para tornar o link inativo."
-      ]
+      ],
       "type": "waypoint"
     },
     {
@@ -1557,7 +1559,7 @@
         "Você pode adicionar um atributo <code>alt</code> já no elemento <code>img</code> assim:",
         "<code>&#60img src=\"www.your-image-source.com/your-image.jpg\" alt=\"seu texto alternativo\"&#62</code>",
         "Adicione um atributo <code>alt</code> com o texto <code>A cute orange cat lying on its back</code> para a nossa foto com o gato."
-      ]
+      ],
       "type": "waypoint"
     },
     {
@@ -1645,7 +1647,7 @@
         "<code>&#60;/ul&#62;</code>",
         "Isso criará uma lista com marcadores que tem como elementos \"leite\" e \"queijo\".",
         "Apague os dois últimos elementos <code>p</code> e no final da página crie uma lista não ordenada com três coisas que os gatos adoram."
-      ]
+      ],
       "type": "waypoint"
     },
     {
@@ -1741,7 +1743,7 @@
         "<code>&#60;/ol&#62;</code>",
         "Isso criará uma lista numerada com \"Garfield\" e \"Sylvester\".",
         "Crie uma lista ordenada com as três coisas que os gatos mais odeiam."
-      ]
+      ],
       "type": "waypoint"
     },
     {
@@ -1829,7 +1831,7 @@
         "<code>&#60;input type=\"text\"&#62;</code>",
         "Note que os elementos <code>input</code> são de fechamento automático.",
         "Crie um elemento <code>input</code> de tipo <code>text</code> abaixo de suas listas."
-      ]
+      ],
       "type": "waypoint"
     },
     {
@@ -1913,7 +1915,7 @@
         "Você pode criar um texto indicativo assim:",
         "<code>&#60;input type=\"text\" placeholder=\"isso é um texto indicativo\"&#62;</code>",
         "Estabeleça o valor do <code>texto indicativo</code> do seu campo de texto como \"cat photo URL\"."
-      ]
+      ],
       "type": "waypoint"
     },
     {
@@ -1998,7 +2000,7 @@
         "Por exemplo:",
         "<code>&#60;form action=\"/url-para-onde-você-quer-enviar-os-dados-do-formulário\"&#62;&#60;/form&#62;</code>", 
         "Aninhe seu campo de texto em um elemento <code>form</code>. Adicione o atributo <code>action=\"/submit-cat-photo\"</code> para este elemento de formulário."
-      ]
+      ],
       "type": "waypoint"
     },
     {
@@ -2086,7 +2088,7 @@
         "Aqui está um exemplo de um botão de enviar:",
         "<code>&#60;button type=\" submit\"&#62;este botão enviará o formulário&#60;/button&#62;</code>",
         "Adicione um botão de enviar ao seu elemento <code>form</code> com o tipo <code>submit</code> e com o texto \"Submit\"."
-      ]
+      ],
       "type": "waypoint"
     },
     {
@@ -2173,7 +2175,7 @@
         "Por exemplo, se você quiser tornar obrigatório um campo de texto, basta adicionar a palavra <code>required</code> dentro de seu elemento <code>input</code> assim: <code>&#60;input type=\"text\" required&#62;</code>",
         "Faça com que seu campo de texto seja obrigatório, de forma que o usuário não possa enviar o formulário sem ter completado esse campo.",
         "Após isso, tente enviar o formulário sem digitar nenhum texto no campo. Percebe como seu formulário HTML5 mostra que o campo é obrigatório?"
-      ]
+      ],
       "type": "waypoint"
     },
     {
@@ -2276,7 +2278,7 @@
         "Temos aqui um exemplo de um botão de seleção/rádio:",
         "<code>&#60;label&#62;&#60;input type=\"radio\" name=\"indoor-outdoor\"&#62; Indoor&#60;/label&#62;</code>",
         "Adicione um par de botões de seleção ao seu formulário. Um deles deve ter a opção <code>indoor</code> enquanto o outro deve ter a opção <code>outdoor</code>."
-      ]
+      ],
       "type": "waypoint"
     },
     {
@@ -2376,7 +2378,7 @@
         "Veja aqui um exemplo de uma caixa de verificação:",
         "<code>&#60;label&#62;&#60;input type=\"checkbox\" name=\"personality\"&#62; Carinhoso&#60;/label&#62;</code>",
         "Adicione ao seu formulário um conjunto de três caixas de verificação. Cada uma delas deve estar aninhada dentro de seu próprio elemento <code>label</code>. As três devem compartilhar o atributo <code>name</code>."
-      ]
+      ],
       "type": "waypoint"
     },
     {
@@ -2468,7 +2470,7 @@
         "Para isso, basta você acrescentar a palavra \"checked\" no interior de um elemento de entrada. Por exemplo:",
         "<code>&#60;input type=\"radio\" name=\"nome-de-teste\" checked&#62;</code>",
         "Estabeleça como marcados por padrão o primeiro dos seus <code>botões de seleção/rádio</code> e a primeira <code>caixa de seleção</code>."
-      ]
+      ],
       "type": "waypoint"
     },
     {
@@ -2568,7 +2570,7 @@
         "Da mesma forma que qualquer outro elemento sem fechamento automático, você deve abrir uma tag <code>div</code> com <code>&#60;div&#62;</code> e fechá-la em outra linha com <code>&#60;/div&#62;</code>.",
         "Tente colocar sua tag de abertura <code>div</code> acima do elemento <code>p</code> \"Things cat love\", e sua tag de fechamento de <code>div</code> depois da tag de fechamento do <code>ol</code>, para que cada uma de suas listas esteja dentro de um <code>div</code>.",
         "Aninhe suas listas \"Things cats love\" e \"Things cats hate\" no interior de um único elemento <code>div</code>."
-      ]
+      ],
       "type": "waypoint"
     },
     {
@@ -2941,7 +2943,7 @@
         "Aqui, podemos ver que o quadro verde e o quadro vermelho se aninham dentro do quadro amarelo. Leve em conta que o quadro vermelho tem mais preenchimento (<code>padding</code>) que o quadro verde.",
         "Quando você aumenta o preenchimento da caixa verde, a distância entre o texto <code>padding</code> e a borda ao seu redor também será maior.",
         "Mude o preenchimento (<code>padding</code>) da caixa verde para que coincida com a de seu quadrado vermelho."
-      ]
+      ],
       "type": "waypoint"
     },
     {
@@ -3015,7 +3017,7 @@
         "Aqui, podemos ver que a caixa verde e a caixa vermelha se aninham dentro da caixa amarela. Note que a caixa vermelha possui a margem maior que a caixa verde, fazendo com que ela pareça menor.",
         "Quando você aumenta a margem (<code>margin</code>) da caixa verde, a distância entre a borda e os elementos ao seu redor também aumentará.",
         "Mude a margem (<code>margin</code>) da caixa verde para que coincida com a margem da caixa vermelha."
-      ]
+      ],
       "type": "waypoint"
     },
     {
@@ -3088,7 +3090,7 @@
         "Se você estabelece a margem de um elemento com um valor negativo, o elemento ficará maior.",
         "Tente estabelecer a margem (<code>margin</code>) a um valor negativo como o da caixa vermelha.",
         "Mude a margem (<code>margin</code>) da caixa verde para <code>-15px</code>, de forma que ocupe toda a largura horizontal da caixa amarela que a rodeia."
-      ]
+      ],
       "type": "waypoint"
     },
     {
@@ -3161,7 +3163,7 @@
         "As vezes pode ser que você queira personalizar um elemento para que tenha um preenchimento (<code>padding</code>) diferente em cada um de seus lados.",
         "O CSS permite controlar o preenchimento (<code>padding</code>) de um elemento em todos os quatro lados: superior, direito, inferior e esquerdo, com as propriedades <code>padding-top</code>, <code>padding-right</code>, <code>padding-bottom</code> e <code>padding-left</code>.",
         "Dê para a caixa verde um preenchimento (<code>padding</code>) de <code>40px</code> nas partes superior e esquerda, e de apenas <code>20px</code> em suas partes inferior e direita."
-      ]
+      ],
       "type": "waypoint"
     },
     {
@@ -3233,7 +3235,7 @@
         "Talvez você queira personalizar um elemento para que possua uma margem (<code>margin</code>) diferente em cada um de seus lados.",
         "O CSS permite controlar a margem de um elemento em todos os seus quatro lados: superior, direito, inferior e esquerdo, com as propriedades <code>margin-top</code>, <code>margin-right</code>, <code>margin-bottom</code> e <code>margin-left</code>.",
         "Dê para a caixa verde uma margem (<code>margin</code>) de <code>40px</code> nas partes superior e esquerda, e de apenas <code>20px</code> nas partes inferior e direita."
-      ]
+      ],
       "type": "waypoint"
     },
     {
@@ -3306,7 +3308,7 @@
         "<code>padding: 10px 20px 10px 20px;</code>",
         "Estes quatro valores funcionam como um relógio: cima, direita, baixo e esquerda, e produzirão o mesmo resultado das quatro instruções de preenchimento.",
         "Use a <code>notação em sentido horário</code> para dar para a classe \"<code>.green-box</code>\" um preenchimento de <code>40px</code> nas partes superior e esquerda, mas de apenas <code>20px</code> em sua parte inferior e ao lado direito."
-      ]
+      ],
       "type": "waypoint"
     },
     {
@@ -3382,7 +3384,7 @@
         "<code>margin: 10px 20px 10px 20px;</code>",
         "Estes quatro valores funcionam como um relógio: cima, direita, baixo e esquerda, e produzirão o mesmo resultado das quatro instruções de margem.",
         "Use a <code>notação em sentido horário</code> para dar para a classe \"<code>.green-box</code>\" uma margem de <code>40px</code> nas partes superior e esquerda, mas de apenas <code>20px</code> em sua parte inferior e ao lado direito."    
-      ]
+      ],
       "type": "waypoint"
     },
     {
@@ -4032,7 +4034,7 @@
      "descriptionPtBR": [
         "Também podemos criar tons de cinza diferentes ao misturar essas três cores. Podemos chegar muito perto de um fundo completamente preto.",
         "Faça com que a cor de fundo do elemento <code>body</code> seja cinza escuro através do código hexadecimal <code>#111111</code>."
-      ],
+      ]
     },
     {
       "id": "bad87fee1348bd9aedf08719",
