@@ -1,3 +1,4 @@
+import { Observable } from 'rx';
 import dedent from 'dedent';
 import moment from 'moment';
 
@@ -15,11 +16,29 @@ export default function about(app) {
   function showAbout(req, res, next) {
     const daysRunning = moment().diff(new Date('10/15/2014'), 'days');
 
-    userCount$()
-      .map(camperCount => numberWithCommas(camperCount))
-      .doOnNext(camperCount => {
+    Observable.combineLatest(
+      userCount$(),
+      userCount$({ isFrontEndCert: true }),
+      userCount$({ isDataVisCert: true }),
+      userCount$({ isBackEndCert: true }),
+      (
+        userCount,
+        frontEndCount = 0,
+        dataVisCount = 0,
+        backEndCount = 0
+      ) => ({
+        userCount: numberWithCommas(userCount),
+        frontEndCount,
+        dataVisCount,
+        backEndCount
+      })
+    )
+      .doOnNext(({ userCount, frontEndCount, dataVisCount, backEndCount }) => {
         res.render('resources/about', {
-          camperCount,
+          userCount,
+          frontEndCount,
+          dataVisCount,
+          backEndCount,
           daysRunning,
           title: dedent`
             About our Open Source Community, our social media presence,
