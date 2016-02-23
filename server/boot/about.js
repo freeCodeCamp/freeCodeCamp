@@ -28,13 +28,10 @@ export default function about(app) {
           globalCompletedCount: numberWithCommas(
             5612952 + (Math.floor((Date.now() - 1446268581061) / 1800))
           ),
-          globalPledgedAmount: numberWithCommas(
-            28000.00 +
-            (
-              Math.floor((Date.now() - 1456207176902) / (2629746 / 2000)) *
-              8.30
-            )
-          )
+          globalPledgedAmount: numberWithCommas(Math.floor(
+            28000 +
+            ((Date.now() - 1456207176902) / (2629746000 / 2000) * 8.30)
+          ))
         });
       })
       .subscribe(() => {}, next);
