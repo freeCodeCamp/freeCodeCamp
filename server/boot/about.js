@@ -23,16 +23,16 @@ export default function about(app) {
           daysRunning,
           title: dedent`
             About our Open Source Community, our social media presence,
-            and how to contact us`.split('\n').join(' '),
+            and how to contact us
+          `.split('\n').join(' '),
           globalCompletedCount: numberWithCommas(
-            5612952 + (Math.floor((Date.now() - 1446268581061) / 1800)
+            5612952 + (Math.floor((Date.now() - 1446268581061) / 1800))
           ),
           globalPledgedAmount: numberWithCommas(
             28000.00 +
-            (Math.floor(
-              (Date.now() - 1456207176902) / 
-              (2629746 / 2000)
-              ) * 8.30)
+            (
+              Math.floor((Date.now() - 1456207176902) / (2629746 / 2000)) *
+              8.30
             )
           )
         });
