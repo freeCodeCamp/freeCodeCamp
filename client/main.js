@@ -540,11 +540,8 @@ $(document).ready(function() {
       return;
     }
     e.preventDefault();
-    console.log('pressed');
-    const [ { value } = {} ] = $('form[name="langForm"]').serializeArray();
-    const data = {
-      languageTag: value
-    };
+    const languageTag = $('#lang-select').val();
+    const data = { languageTag };
     $.ajax({
       url: `/api/users/${main.userId}/update-language`,
       type: 'POST',
