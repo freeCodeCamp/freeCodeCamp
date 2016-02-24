@@ -369,6 +369,7 @@ function getNextChallenge$(challenge$, blocks$, challengeId) {
 
 module.exports = function(app) {
   const router = app.loopback.Router();
+  const api = app.loopback.Router();
 
   const challengesQuery = {
     order: [
@@ -429,12 +430,12 @@ module.exports = function(app) {
 
   const send200toNonUser = ifNoUserSend(true);
 
-  router.post(
+  api.post(
     '/completed-challenge/',
     send200toNonUser,
     completedChallenge
   );
-  router.post(
+  api.post(
     '/completed-zipline-or-basejump',
     send200toNonUser,
     completedZiplineOrBasejump
@@ -447,12 +448,13 @@ module.exports = function(app) {
     redirectToCurrentChallenge
   );
   router.get(
-    'en/challenges/next-challenge',
+    '/challenges/next-challenge',
     redirectToNextChallenge
   );
 
   router.get('/challenges/:challengeName', showChallenge);
 
+  app.use(api);
   app.use('/:lang', router);
 
   function redirectToCurrentChallenge(req, res, next) {
