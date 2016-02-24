@@ -533,7 +533,7 @@ $(document).ready(function() {
   // keyboard shortcuts: open map
   window.Mousetrap.bind('g m', toggleMap);
 
-  $('#lang-submit').one('click', languageUpdateHandler);
+  $('#lang-select').one('change', languageUpdateHandler);
 
   function languageUpdateHandler(e) {
     if (!main.userId) {
