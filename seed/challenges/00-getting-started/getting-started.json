@@ -295,6 +295,63 @@
           "https://gitter.im/apps"
         ]
       ],
+	  "nameFr": "Créer un compte GitHub et rejoindre nos Salons de chat",
+      "descriptionFr": [
+        [
+          "http://i.imgur.com/EAR7Lvh.jpg",
+          "Une capture d'écran de notre l'un de nos Gitter salles de chat.",
+          "Avant de commencer à coder, nous allons rejoindre les salles de chat de Camp Code Free . Vous pouvez venir ici tout moment de la journée pour se détendre , poser des questions , ou trouver un autre camping de jumeler programme avec. D'abord, vous aurez besoin d'un compte GitHub.",
+          ""
+        ],
+        [
+          "http://i.imgur.com/n6GeSEm.gif",
+          "Un gif vous montrant à cliquer sur le lien ci-dessous pour aller à GitHub . Remplissez les champs nécessaires et cliquez sur soumettre . Ensuite, vérifiez votre boîte de réception pour un courriel de GitHub sorte que vous pouvez vérifier votre compte.",
+          "Cliquez sur le \"lien Ouvrir dans une nouvelle touche de tabulation"\ ci-dessous pour ouvrir GitHub. Créer un compte GitHub en remplissant le formulaire . Assurez-vous d'utiliser votre adresse email réelle - GitHub gardera cette privé. Ensuite, vérifiez votre boîte de réception pour un courriel de GitHub. Ouvrez-le et cliquez sur \"l'adresse email sur vérifier"\ l'intérieur. <br><div class=\"small\">Remarque: Si vous avez déjà un compte GitHub , vous pouvez sauter cette étape en cliquant sur \"Ouvrir le lien dans un nouvel onglet\", fermeture le nouvel onglet qui ouvre, puis en cliquant \"aller à ma prochaine étape\". Nous avons retiré notre bouton de \"l'étape de saut\" , car beaucoup de gens il suffit de cliquer à plusieurs reprises sans faire ces étapes importantes.</div>",
+          "https://github.com/join"
+        ],
+        [
+          "http://i.imgur.com/hFqAEr8.gif",
+          "Un gif vous montrant comment cliquez sur l' image de profil dans le coin supérieur droit de GitHub. Télécharger une photo de vous-même ou vous allez continuer à utiliser l'art de pixel généré automatiquement . Ensuite, remplissez les champs du formulaire restants et cliquez sur soumettre.",
+          "Cliquez sur le pixel art dans le coin supérieur droit de GitHub , puis choisissez les paramètres . Télécharger une photo de vous-même. Une photo de votre visage qui fonctionne le mieux . Voici comment les autres campeurs vous voir dans nos salles de chat , donc regarder votre meilleur . Vous pouvez ajouter votre ville et votre nom si vous voulez.",
+          "https://github.com/settings/profile"
+        ],
+        [
+          "http://i.imgur.com/pYk0wOk.gif",
+          "Un gif montrant comment vous pouvez activer un repo GitHub.",
+          "Ouvrez open-source du dépôt central de Camp Code Free . Ceci est où notre équipe de bénévoles collabore à la construction de Camp Code Free. Vous pouvez \"star"\ notre référentiel. Mettant en \"vedette"\ est la GitHub équivalent de \"goût"\ quelque chose.",
+          "https://github.com/freecodecamp/freecodecamp"
+        ],
+        [
+          "http://i.imgur.com/OmRmLB4.gif",
+          "Un gif vous montrant comment Cliquez sur le lien ci-dessous pour accéder à notre salle de chat et cliquez sur \"Se connecter avec"\ bouton GitHub. Puis vous pouvez cliquer dans le champ de saisie de texte et saisissez un message à vos amis campeurs.",
+          "Maintenant que vous avez une GitHub compte, vous pouvez vous joindre à notre principale salle de chat en vous connectant à GitHub. Présentez-vous en disant \"Hello World!"\ ;avertissez votre amis campeurs comment vous avez trouvé Libre Code Camp. Aussi nous dire pourquoi vous voulez apprendre à code.",
+          "https://gitter.im/FreeCodeCamp/FreeCodeCamp"
+        ],
+        [
+          "http://i.imgur.com/Ecs5XAd.gif",
+          "Un gif vous montrant comment vous pouvez cliquez sur le bouton Réglages dans le coin supérieur droit et modifier vos paramètres de notification.",
+          "Nos salles de chat sont extrêmement actifs. Vous devez modifier vos paramètres pour vous're notifié que si quelqu'un vous mentionne.",
+          ""
+        ],
+        [
+          "http://i.imgur.com/T0bGJPe.gif",
+          "Un gif montrant comment vous pouvez cliquer sur une image de profil utilisateur pour lancer un message privé avec cet utilisateur.",
+          "Veuillez noter que tous nos salons de chat sont visibles pour le public. Si vous avez besoin de partager des informations sensibles, comme un numéro de téléphone ou l'adresse e-mail, faites-le dans un message privé.",
+          ""
+        ],
+        [
+          "http://i.imgur.com/vDTMJSh.gif",
+          "Un gif montrant que vous pouvez Tab et retour entre défis et nos salles de chat.",
+          "Garder notre salle de discussion ouverte pendant que vous travaillez à travers nos défis. De cette façon, vous pouvez demander de l'aide si vous êtes coincé. Vous pouvez également socialiser avec d'autres campeurs lorsque vous sentez comme prendre une pause.",
+          ""
+        ],
+        [
+          "http://i.imgur.com/WvQvNGN.gif",
+          "Un gif montrant comment vous pouvez cliquer sur le lien ci-dessous pour télécharger un natif salle de chat app pour votre ordinateur.",
+          "Vous pouvez également télécharger la salle de chat app pour votre ordinateur ou votre téléphone.",
+          "https://gitter.im/apps"
+        ]
+      ],
       "challengeSeed": [],
       "tests": [],
       "type": "Waypoint",
