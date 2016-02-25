@@ -61,15 +61,15 @@ const checkboxClass = dedent`
 `;
 
 function formatValue(value, validator, type = 'string') {
-  const formated = getDefaults(type);
-  if (validator && type === 'string') {
-    formated.valid = validator(value);
+  const formatted = getDefaults(type);
+  if (validator && type === 'string' && typeof value === 'string') {
+    formatted.valid = validator(value);
   }
   if (value) {
-    formated.value = value;
-    formated.bsStyle = formated.valid ? 'success' : 'error';
+    formatted.value = value;
+    formatted.bsStyle = formatted.valid ? 'success' : 'error';
   }
-  return formated;
+  return formatted;
 }
 
 const normalizeOptions = {
