@@ -306,7 +306,7 @@
         [
           "http://i.imgur.com/n6GeSEm.gif",
           "Un gif vous montrant à cliquer sur le lien ci-dessous pour aller à GitHub . Remplissez les champs nécessaires et cliquez sur soumettre . Ensuite, vérifiez votre boîte de réception pour un courriel de GitHub sorte que vous pouvez vérifier votre compte.",
-          "Cliquez sur le \"lien Ouvrir dans une nouvelle touche de tabulation"\ ci-dessous pour ouvrir GitHub. Créer un compte GitHub en remplissant le formulaire . Assurez-vous d'utiliser votre adresse email réelle - GitHub gardera cette privé. Ensuite, vérifiez votre boîte de réception pour un courriel de GitHub. Ouvrez-le et cliquez sur \"l'adresse email sur vérifier"\ l'intérieur. <br><div class=\"small\">Remarque: Si vous avez déjà un compte GitHub , vous pouvez sauter cette étape en cliquant sur \"Ouvrir le lien dans un nouvel onglet\", fermeture le nouvel onglet qui ouvre, puis en cliquant \"aller à ma prochaine étape\". Nous avons retiré notre bouton de \"l'étape de saut\" , car beaucoup de gens il suffit de cliquer à plusieurs reprises sans faire ces étapes importantes.</div>",
+          "Cliquez sur le \"lien Ouvrir dans une nouvelle touche de tabulation\" ci-dessous pour ouvrir GitHub. Créer un compte GitHub en remplissant le formulaire . Assurez-vous d'utiliser votre adresse email réelle - GitHub gardera cette privé. Ensuite, vérifiez votre boîte de réception pour un courriel de GitHub. Ouvrez-le et cliquez sur \"l'adresse email sur vérifier\" l'intérieur. <br><div class=\"small\">Remarque: Si vous avez déjà un compte GitHub , vous pouvez sauter cette étape en cliquant sur \"Ouvrir le lien dans un nouvel onglet\", fermeture le nouvel onglet qui ouvre, puis en cliquant \"aller à ma prochaine étape\". Nous avons retiré notre bouton de \"l'étape de saut\" , car beaucoup de gens il suffit de cliquer à plusieurs reprises sans faire ces étapes importantes.</div>",
           "https://github.com/join"
         ],
         [
@@ -318,13 +318,13 @@
         [
           "http://i.imgur.com/pYk0wOk.gif",
           "Un gif montrant comment vous pouvez activer un repo GitHub.",
-          "Ouvrez open-source du dépôt central de Camp Code Free . Ceci est où notre équipe de bénévoles collabore à la construction de Camp Code Free. Vous pouvez \"star"\ notre référentiel. Mettant en \"vedette"\ est la GitHub équivalent de \"goût"\ quelque chose.",
+          "Ouvrez open-source du dépôt central de Camp Code Free . Ceci est où notre équipe de bénévoles collabore à la construction de Camp Code Free. Vous pouvez \"star\" notre référentiel. Mettant en \"vedette\" est la GitHub équivalent de \"goût\" quelque chose.",
           "https://github.com/freecodecamp/freecodecamp"
         ],
         [
           "http://i.imgur.com/OmRmLB4.gif",
-          "Un gif vous montrant comment Cliquez sur le lien ci-dessous pour accéder à notre salle de chat et cliquez sur \"Se connecter avec"\ bouton GitHub. Puis vous pouvez cliquer dans le champ de saisie de texte et saisissez un message à vos amis campeurs.",
-          "Maintenant que vous avez une GitHub compte, vous pouvez vous joindre à notre principale salle de chat en vous connectant à GitHub. Présentez-vous en disant \"Hello World!"\ ;avertissez votre amis campeurs comment vous avez trouvé Libre Code Camp. Aussi nous dire pourquoi vous voulez apprendre à code.",
+          "Un gif vous montrant comment Cliquez sur le lien ci-dessous pour accéder à notre salle de chat et cliquez sur \"Se connecter avec\" bouton GitHub. Puis vous pouvez cliquer dans le champ de saisie de texte et saisissez un message à vos amis campeurs.",
+          "Maintenant que vous avez une GitHub compte, vous pouvez vous joindre à notre principale salle de chat en vous connectant à GitHub. Présentez-vous en disant \"Hello World!\" avertissez votre amis campeurs comment vous avez trouvé Libre Code Camp. Aussi nous dire pourquoi vous voulez apprendre à code.",
           "https://gitter.im/FreeCodeCamp/FreeCodeCamp"
         ],
         [
@@ -457,6 +457,21 @@
           "http://i.imgur.com/NAOFJWN.jpg",
           "A picture of some of our campers meeting in a local cafe. 3 men and 3 women are sitting around a table with laptops out, and are smiling and coding.",
           "Our Campsites help you code with campers in your city. You can coordinate study groups or attend local coding events together.",
+          ""
+        ],
+        [
+          "http://i.imgur.com/fTFMjwf.gif",
+          "A gif showing how you can click the link below, find your city on the list of Campsites, then click on the Facebook link for your city and join your city's Facebook group.",
+          "Find your city on this list and click it. This will take you to your city's Campsite's Facebook group. Click the \"Join group\" button to apply to join your city's Facebook group. Someone from the campsite should approve you shortly. If your city isn't on this list, scroll to the bottom of the wiki article for instructions for how you can create your city's Campsite.",
+          "https://github.com/FreeCodeCamp/freecodecamp/wiki/List-of-Free-Code-Camp-city-based-Campsites"
+        ]
+      ],
+	  "nameFr": "Rejoignez un camping dans votre ville",
+      "descriptionFr": [
+        [
+          "http://i.imgur.com/NAOFJWN.jpg",
+          "Une image de certains de nos campeurs réunion dans un café local. 3 hommes et 3 femmes sont assis autour d'une table avec des ordinateurs portables, et sont tout sourire et de codage.",
+          "Nos campings vous aider avec des campeurs de code dans votre ville. Vous pouvez coordonner les groupes d'étude ou d'assister aux événements de codage local ensemble.",
           ""
         ],
         [
