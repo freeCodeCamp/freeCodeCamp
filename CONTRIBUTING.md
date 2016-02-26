@@ -51,47 +51,21 @@ npm install -g bower
 
 # Install Bower dependencies
 bower install
-
-# Create a .env file and populate it with the necessary API keys and secrets:
-touch .env
+```
+*Private Environment Variables (API Keys)*
+```bash
+# Create a copy of the "sample.env" and name it as ".env".
+# Populate it with the necessary API keys and secrets:
+cp sample.env .env
 ```
 
-Edit your `.env` file with the following API keys accordingly. If you only use email login, only the `MONGOHQ_URL`, `SESSION_SECRET`, `MANDRILL_USER` and `MANDRILL_PASSWORD` fields are necessary. Keep in mind if you want to use more services you'll have to get your own API keys for those services. If you only use a subset or no OAuth2 authentication methods, you may want to remove them from ```server/passport-providers.js``` - otherwise the server will complain about missing clientIDs at launch.
+Edit your `.env` file and modify the API keys only for services that you will use.
 
-```
-MONGOHQ_URL='mongodb://localhost:27017/freecodecamp'
+Note : Not all keys are required, to run the app locally, however `MONGOHQ_URL` is the most important one.
 
-FACEBOOK_ID=stuff
-FACEBOOK_SECRET=stuff
+If you only use email login, in addition to `MONGOHQ_URL`, `SESSION_SECRET`, add the  `MANDRILL_USER` and `MANDRILL_PASSWORD` API Keys. Not setting these keys will throw an exception when you sign up which you can ignore, you will still be able to login, however you may get these keys [here](https://www.mandrill.com/signup/). Sign up and create a new pair of keys.
 
-GITHUB_ID=stuff
-GITHUB_SECRET=stuff
-
-GOOGLE_ID=stuff
-GOOGLE_SECRET=stuff
-
-LINKEDIN_ID=stuff
-LINKEDIN_SECRET=stuff
-
-MANDRILL_PASSWORD=stuff
-MANDRILL_USER=stuff
-
-TRELLO_KEY=stuff
-TRELLO_SECRET=stuff
-
-TWITTER_KEY=stuff
-TWITTER_SECRET=stuff
-TWITTER_TOKEN=stuff
-TWITTER_TOKEN_SECRET=stuff
-
-BLOGGER_KEY=stuff
-
-SESSION_SECRET=secretstuff
-COOKIE_SECRET='this is a secret'
-
-PEER=stuff
-DEBUG=true
-```
+You can leave the other keys as they are. Keep in mind if you want to use more services you'll have to get your own API keys for those services and edit those entries accordingly in the `.env` file.
 
 ```bash
 # Start the mongo server in a separate terminal
@@ -174,7 +148,7 @@ Read the [Wiki article](https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/How-To
 2. By default, all pull requests should be against the FCC main repo, `staging` branch.
 3. Submit a [pull request](https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/Pull-Request-Contribute) from your branch to Free Code Camp's `staging` branch.
 3. The title (also called the subject) of your PR should be descriptive of your changes and succinctly indicates what is being fixed.  
-   - **Do not add the issue number in the PR title**. 
+   - **Do not add the issue number in the PR title**.
    - Examples: `Add Test Cases to Bonfire Drop It` `Correct typo in Waypoint Size Your Images`
 4. In the body of your PR include a more detailed summary of the changes you made and why.
    - If the PR is meant to fix an existing bug/issue, then, at the end of your PR's commit message, append the keyword `closes` and #xxxx (where xxxx is the issue number). Example: `closes #1337`.  
