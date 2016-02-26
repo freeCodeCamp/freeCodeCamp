@@ -32,8 +32,8 @@
         "¡Bienvenido/a al primer desafío de programación de Free Code Camp!",
         "Puedes editar tu <code>código</code> en tu <code>editor de texto</code>, que hemos incrustado en esta página web.",
         "¿Ves el código en tu editor de texto que dice <code>&#60;h1&#62;Hello&#60;/h1&#62;</code>? Ese es un <code>elemento</code> HTML.",
-        "La mayoría de los elementos HTML tienen una <code>etiqueta de apertura</code> y una <code>etiqueta de cierre</code>.", 
-        "Las etiquetas de apertura se ven como:", 
+        "La mayoría de los elementos HTML tienen una <code>etiqueta de apertura</code> y una <code>etiqueta de cierre</code>.",
+        "Las etiquetas de apertura se ven como:",
         "<code>&#60;h1&#62;</code>",
         " Las etiquetas de cierre se ven como:",
         "<code>&#60;/h1&#62;</code>",
@@ -1765,7 +1765,7 @@
       "tests": [
         "assert($(\"form\").children(\"button\").length > 0, 'message: Your form should have a button inside it.');",
         "assert($(\"button\").attr(\"type\") === \"submit\", 'message: Your submit button should have the attribute <code>type</code> set to <code>submit</code>.');",
-        "assert($(\"button\").text().match(/submit/gi), 'message: Your submit button should have the text \"Submit\".');",
+        "assert($(\"button\").text().match(/^\\s*submit\\s*$/gi), 'message: Your submit button should only have the text \"Submit\".');",
         "assert(code.match(/<\\/button>/g) && code.match(/<button/g) && code.match(/<\\/button>/g).length === code.match(/<button/g).length, 'message: Make sure your <code>button</code> element has a closing tag.');"
       ],
       "challengeType": 0,
