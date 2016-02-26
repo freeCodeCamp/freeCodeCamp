@@ -21,5 +21,7 @@ const types = [
   'goToNextHike'
 ];
 
-export default types
-  .reduce((types, type) => ({ ...types, [type]: `videos.${type}` }), {});
+export default types.reduce((types, type) => {
+  types[type] = `videos.${type}`;
+  return types;
+}, {});

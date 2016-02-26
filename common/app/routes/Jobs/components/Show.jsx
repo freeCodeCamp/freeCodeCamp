@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react';
-import { connect, compose } from 'redux';
+import { compose } from 'redux';
+import { connect } from 'react-redux';
 import { push } from 'react-router-redux';
 import PureComponent from 'react-pure-render/component';
 import { createSelector } from 'reselect';

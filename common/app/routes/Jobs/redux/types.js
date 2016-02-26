@@ -3,16 +3,15 @@ const types = [
   'fetchJobsCompleted',
 
   'findJob',
-
   'saveJob',
-  'getJob',
-  'getJobs',
-  'openModal',
-  'closeModal',
-  'handleFormUpdate',
+
   'saveForm',
-  'clear'
+  'clearForm',
+  'loadSavedForm',
+  'loadSavedFormCompleted'
 ];
 
-export default types
-  .reduce((types, type) => ({ ...types, [type]: `jobs.${type}` }), {});
+export default types.reduce((types, type) => {
+  types[type] = `jobs.${type}`;
+  return types;
+}, {});

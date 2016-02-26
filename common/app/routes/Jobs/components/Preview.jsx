@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 import { Button, Row, Col } from 'react-bootstrap';
-import { connect } from 'redux';
+import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import PureComponent from 'react-pure-render/component';
 import { goBack, push } from 'react-router-redux';
@@ -11,8 +11,9 @@ import JobNotFound from './JobNotFound.jsx';
 import { clearSavedForm, saveJobToDb } from '../redux/actions';
 
 const mapStateToProps = createSelector(
-  state => state.jobsApp.form,
-  (job = {}) => ({ job })
+  state => state.jobsApp.previewJob,
+  state => state.jobsApp.jobs.entities
+  (job, jobsMap) => ({ job: jobsMap[job] || {} })
 );
 
 const bindableActions = {

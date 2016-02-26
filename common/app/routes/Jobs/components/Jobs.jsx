@@ -1,5 +1,6 @@
 import React, { cloneElement, PropTypes } from 'react';
-import { connect, compose } from 'redux';
+import { compose } from 'redux';
+import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { push } from 'react-router-redux';
 
