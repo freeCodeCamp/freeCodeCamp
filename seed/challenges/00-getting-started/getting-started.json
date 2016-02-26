@@ -160,23 +160,23 @@
           ""
         ]
       ],
-      "nameFr": "Apprenez comment Free Code fonctionne",
+      "nameFr": "Apprenez comment FreeCodeCamp fonctionne",
       "descriptionFr": [
         [
           "http://i.imgur.com/6ibIavQ.jpg",
           "Une idée des avantages de Free Code Camp: restez connecté , apprenez le JavaScript , construisez votre portfolio , Aidez les organismes sans but lucratif",
-          "Bienvenue sur Free Code Camp . Nous sommes une communauté opensource de gens passionnés qui apprend à coder et aide les organisations sans but lucratif.",
+          "Bienvenue sur Free Code Camp . Nous sommes une communauté opensource de gens passionnés qui apprend à coder et aide les organisations à but non lucratif.",
           ""
         ],
         [
           "http://i.imgur.com/Elb3dfj.jpg",
-          "Une capture d'écran de certains de nos codeurs réunis à Toronto.",
+          "Une capture d'écran de certains de nos développeurs réunis à Toronto.",
           "<bold>Apprendre à code est dur.</bold> Pour réussir, vous aurez besoin de beaucoup de pratique et de soutien. Voilà pourquoi nous avons créé un programme rigoureux et une communauté de soutien.",
           ""
         ],
         [
           "http://i.imgur.com/D7Y5luw.jpg",
-          "Un graphique de la vitesse de croissance de l'emploi face à la croissance du nombre de diplômés d'études d'informatique . Il y a 1,4 million d'emplois et seulement 400 000 personnes pour les occuper.",
+          "Un graphique de la vitesse de croissance de l'emploi face à la croissance du nombre de diplômés en études d'informatique . Il y a 1,4 million d'emplois et seulement 400 000 personnes pour les occuper.",
           "Il y a des milliers d'emplois de développeurs actuellement vacants, et la demande pour les développeurs augmente chaque année.",
           ""
         ],
@@ -194,20 +194,20 @@
         ],
         [
           "http://i.imgur.com/UVB9hxp.jpg",
-          "Une image d'un camping-car dans un bâtiment de café projets sur Camp Code Free.",
-          "Nous croyons que les êtres humains apprennent mieux par la pratique . De sorte que vous passerez la plupart de votre temps à construire effectivement projets. Nous allons vous donner une liste de spécifications ( des témoignages d'utilisateurs agiles ) , et vous allez comprendre comment construire des applications qui répondent à ces spécifications.",
+          "Une image d'un développeur dans un café projets sur Camp Code Free.",
+          "Nous croyons que les êtres humains apprennent mieux par la pratique . De sorte que vous passerez la plupart de votre temps à construire efficacement des projets. Nous allons vous donner une liste de spécifications ( des témoignages d'utilisateurs agiles ) , et vous allez comprendre comment construire des applications qui répondent à ces spécifications.",
           ""
         ],
         [
           "http://i.imgur.com/pbW7K5S.jpg",
-          "Une image de montrer notre extrémité avant , arrière , et les certifications de visualisation de données ( 400 heures chacun) , nos projets à but non lucratif (800 heures) , et l'interview de préparation ( 80 heures ) pour un total de 2080 heures d'expérience de codage.",
-          "Notre programme est divisé en 4 certifications . Ces certifications sont standardisés , et immédiatement vérifiable par vos clients indépendants et les futurs employeurs . Comme tout le reste au Code Camp gratuit, ces certifications sont gratuits. Nous vous recommandons de les faire dans l'ordre, mais vous êtes libre de sauter partout . Les trois premières certifications prennent 400 heures chacune , et la certification finale prend 800 heures , et implique la construction de projets concrets pour les organisations caritatives.",
+          "Une image pour montrer notre front-end, back end, et data visualisation certificat ( 400 heures chacun) , nos projets à but non lucratif (800 heures) , et l'interview de préparation ( 80 heures ) pour un total de 2080 heures d'expérience de codage.",
+          "Notre programme est divisé en 4 certifications . Ces certifications sont standardisés , et immédiatement vérifiable par vos clients indépendants et les futurs employeurs . Comme tout le reste au Code Camp gratuit, ces certifications sont gratuits. Nous vous recommandons de les faire dans l'ordre, mais vous êtes libre d'en sauter . Les trois premièrs certifications prennent 400 heures chacune , et la certification finale prend 800 heures , et implique la construction de projets concrets pour les organisations caritatives.",
           ""
         ],
         [
           "http://i.imgur.com/k8btNUB.jpg",
-          "Une capture d'écran de notre Fin certificat développement avant",
-          "Pour gagner notre vérifié certification avant le développement End , vous allez construire 10 projets utilisant HTML , CSS , jQuery et JavaScript.",
+          "Une capture d'écran de notre certificat développeur Front-End",
+          "Pour réussir notre certificat Front-End vérifié, vous allez construire 10 projets utilisant HTML , CSS , jQuery et JavaScript.",
           ""
         ],
         [
@@ -218,20 +218,20 @@
         ],
         [
           "http://i.imgur.com/8v3t84p.jpg",
-          "Une capture d'écran de notre Aval certificat développement",
-          "Pour gagner notre certification Aval développement , vous allez construire 10 projets utilisant Node.js , Express, et MongoDB . Vous allez utiliser Git et Heroku de les déployer dans le cloud.",
+          "Une capture d'écran de notre certificat Back-End",
+          "Pour gagner notre certification de développeur Back-End, vous allez construire 10 projets utilisant Node.js , Express, et MongoDB . Vous allez utiliser Git et Heroku de les déployer dans le cloud.",
           ""
         ],
         [
           "http://i.imgur.com/yXyxbDd.jpg",
           "Une capture d'écran de notre répertoire de projet à but non lucratif.",
-          "Après avoir effectué tous les trois de ces certificats , vous faites équipe avec un autre campeur et utilisez agiles méthodologies de développement de logiciel pour construire deux projets de la vie réelle pour les organismes sans but lucratif . Vous aurez également d'ajouter des fonctionnalités à deux projets à but non lucratif de code hérité. Au moment où vous avez terminé, vous aurez un portefeuille de véritables applications que les gens utilisent tous les jours.",
+          "Après avoir effectué tous les trois de ces certificats , vous faites équipe avec un autre développeur et utilisez agiles méthodologies de développement de logiciel pour construire deux projets de la vie réelle pour les organismes sans but lucratif . Vous aurez également d'ajouter des fonctionnalités à deux projets à but non lucratif de code hérité. Au moment où vous avez terminé, vous aurez un portefeuille de véritables applications que les gens utilisent tous les jours.",
           ""
         ],
         [
           "http://i.imgur.com/PDGQ9ZM.jpg",
           "Une image de campeurs construction des projets ensemble dans un café de Séoul ",
-          "Si vous remplissez toutes les 2.080 heures de dollars de défis et de projets , vous gagnerez notre certification complète Stack développement . Nous vous offrons gratuitement la pratique d'entrevue de codage . Nous offrons même un conseil d'emploi où les employeurs embauchent spécifiquement campeurs qui ont obtenu des certificats Camp Code Free.",
+          "Si vous finissez les 2.080 heures de défis et projets, vous gagnerez notre certification complète Stack développement . Nous vous offrons gratuitement la pratique d'entrevue de codage . Nous offrons même un accès à notre si d'emploi où les employeurs embauchent spécifiquement les développeurs qui ont obtenu des certificats de Free Code Camp.",
           ""
         ]
       ]
@@ -295,7 +295,7 @@
           "https://gitter.im/apps"
         ]
       ],
-	  "nameFr": "Créer un compte GitHub et rejoindre nos Salons de chat",
+	  "nameFr": "Créer un compte GitHub et rejoignez nos Salons de chat",
       "descriptionFr": [
         [
           "http://i.imgur.com/EAR7Lvh.jpg",
