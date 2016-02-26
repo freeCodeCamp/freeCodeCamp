@@ -609,6 +609,57 @@
           ""
         ]
       ]
+  	  "nameFr": "Apprenez quoi faire quand vous êtes bloqué ?",
+      "descriptionFr": [
+        [
+          "http://i.imgur.com/lzKvwU2.jpg",
+          "Le texte \"Coder est difficile.\"",
+          "Coder est difficile. Vous serez bloqué un jour ou l'autre. Même les développeurs expérimentés peuvent être bloqués. La solution est de savoir comment se débloquer.",
+          ""
+        ],
+        [
+          "http://i.imgur.com/sfsidp6.jpg",
+          "Le texte \"Etre un bon développeur prend du temps.\"",
+          "Etre un bon développeur prend du temps. Vous ne pouvez pas vous attendre à battre un maitre des echecs aprés 3 mois d'apprentissage. Ne vous attendez pas de construire le prochain Facebook aprés 3 mois de coding.",
+          ""
+        ],
+        [
+          "http://i.imgur.com/EoTfOyC.jpg",
+		  "Une image de quelques uns de nos développeurs codant ensemble à Montreal.", 
+		  "Continuez de développer tous les jours et fréquentez d'autres développeurs et vous deviendrez un développeur prêt à l'emploi.",
+          ""
+        ],
+        [
+          "http://i.imgur.com/EWWZBag.jpg",
+		  "Une image avec le texte \"1. Lisez l'erreur 2. Cherchez sur Google 3. Demandez de l'aide.",
+          "Chaque fois que vous êtes bloqué ou que vous ne savez pas quoi faire : Lisez-Cherchez-Demandez.",
+          ""
+        ],
+        [
+          "http://i.imgur.com/99BfAcK.jpg",
+          "Une image montrant la document jQuery",
+          "Lisez d'abord la documentation ou les messages d'erreurs. Le principal atout que les bon développeurs ont est la capacité d'interpréter et ensuite de suivre les instructions.",
+          ""
+        ],
+        [
+          "http://i.imgur.com/GxvrsFb.gif",
+          "Une image vous montrant comment fiare des recherches avancées sur Google. On commence par rentrer la requète \"jquery ne fonctionne pas lors du chargement de ma page\". Puis nous cliquons sur la barre de recherche et changeons la case à cocher \"Any time\" cochons la case \"au cours de l'année précédente\". Puis nous cliquons sur le résultat et lisons l'article et trouvons notre réponse.",
+          "Si cela ne vous aide pas, recherchez sur Google. De bonnes recherches sur Google demande pas mal de pratique. Quand vous recherchez sur Google, vous devez inclure le langage ou le framework que vous utilisez. Vous voulez aussi limiter vos résultats a une période récente.",
+          ""
+        ],
+        [
+          "http://i.imgur.com/LZYU7p2.gif",
+          "Une image vous montrant le lien ci-dessous pour rejoindre le char et demander \"jquery ne fonctionne pas lors du chargement de ma page\".",
+          "Si cela ne vous aide pas, demande à vos amis. Si vous avez des difficultés, vous pouvez demander aux autres développeurs sur le chat.",
+          "https://gitter.im/FreeCodeCamp/Help"
+        ],
+        [
+          "http://i.imgur.com/ZRgXraT.gif",
+          "Une image vous montrant le cursus de notre carte des défis.",
+          "Maintenant vous être prêt pour commencer à coder. Le boutton \"Map\" situé en haut à droite de votre écran vous montrera notre carte des défis. Nous vous recommandons de les completer du début jusqu'à la fin, régulièrement. Notre communauté open source continue de d'améliorer nos défis, ne soyez donc pas surpris si ils changent ou évoluent. Ce n'est pas la peine de revenir en arrière, continuez à progresser. Vous pouvez toujours accéder à nos derniers défis juste en cliquant sur le boutton \"Learn\".",
+          ""
+        ]
+      ],
     }
   ]
 }
