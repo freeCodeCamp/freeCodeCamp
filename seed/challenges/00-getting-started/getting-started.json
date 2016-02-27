@@ -160,6 +160,81 @@
           "Si completas todas las 2,080 horas de desafíos y proyectos, obtendrás un Certificado de Desarrollo de Pila Completa.  Te ofreceremos gratuitamente una práctica en entrevistas para desarrolladores. Incluso ofrecemos un directorio de trabajos donde los empleadores contratan específicamente campistas que han recibido certificaciones de Free Code Camp.",
           ""
         ]
+      ],
+      "nameFr": "Apprenez comment FreeCodeCamp fonctionne",
+      "descriptionFr": [
+        [
+          "http://i.imgur.com/6ibIavQ.jpg",
+          "Une idée des avantages de Free Code Camp: restez connecté , apprenez le JavaScript , construisez votre portfolio , Aidez les organismes sans but lucratif",
+          "Bienvenue sur Free Code Camp . Nous sommes une communauté opensource de gens passionnés qui apprend à coder et aide les organisations à but non lucratif.",
+          ""
+        ],
+        [
+          "http://i.imgur.com/Elb3dfj.jpg",
+          "Une capture d'écran de certains de nos développeurs réunis à Toronto.",
+          "<bold>Apprendre à code est dur.</bold> Pour réussir, vous aurez besoin de beaucoup de pratique et de soutien. Voilà pourquoi nous avons créé un programme rigoureux et une communauté de soutien.",
+          ""
+        ],
+        [
+          "http://i.imgur.com/D7Y5luw.jpg",
+          "Un graphique de la vitesse de croissance de l'emploi face à la croissance du nombre de diplômés en études d'informatique . Il y a 1,4 million d'emplois et seulement 400 000 personnes pour les occuper.",
+          "Il y a des milliers d'emplois de développeurs actuellement vacants, et la demande pour les développeurs augmente chaque année.",
+          ""
+        ],
+        [
+          "http://i.imgur.com/WD3STY6.jpg",
+          "Photos de trois développeurs qui ont obtenu un emploi après l'apprentissage de code au Free Code Camp.",
+          "Free Code Camp est une voie éprouvée pour obtenir votre premier job de développeur. En fait , personne n'a jamais accompli l'ensemble de notre programme , car nos développeurs ont trouvé un emploi avant qu'ils ne soient en mesure de le finir notre parcours.",
+          ""
+        ],
+        [
+          "http://i.imgur.com/vLNso6h.jpg",
+          "Une illustration montrant que vous allez apprendre HTML5 , CSS3 , JavaScript , bases de données , Git , Node.js , React et D3.",
+          "Nous avons des centaines de défis de codage optionnels qui vous apprendront les fondamentaux du développement web comme HTML5 , Node.js et les bases de données.",
+          ""
+        ],
+        [
+          "http://i.imgur.com/UVB9hxp.jpg",
+          "Une image d'un développeur dans un café projets sur Camp Code Free.",
+          "Nous croyons que les êtres humains apprennent mieux par la pratique . De sorte que vous passerez la plupart de votre temps à construire efficacement des projets. Nous allons vous donner une liste de spécifications ( des témoignages d'utilisateurs agiles ) , et vous allez comprendre comment construire des applications qui répondent à ces spécifications.",
+          ""
+        ],
+        [
+          "http://i.imgur.com/pbW7K5S.jpg",
+          "Une image pour montrer notre front-end, back end, et data visualisation certificat ( 400 heures chacun) , nos projets à but non lucratif (800 heures) , et l'interview de préparation ( 80 heures ) pour un total de 2080 heures d'expérience de codage.",
+          "Notre programme est divisé en 4 certifications . Ces certifications sont standardisés , et immédiatement vérifiable par vos clients indépendants et les futurs employeurs . Comme tout le reste au Code Camp gratuit, ces certifications sont gratuits. Nous vous recommandons de les faire dans l'ordre, mais vous êtes libre d'en sauter . Les trois premièrs certifications prennent 400 heures chacune , et la certification finale prend 800 heures , et implique la construction de projets concrets pour les organisations caritatives.",
+          ""
+        ],
+        [
+          "http://i.imgur.com/k8btNUB.jpg",
+          "Une capture d'écran de notre certificat développeur Front-End",
+          "Pour réussir notre certificat Front-End vérifié, vous allez construire 10 projets utilisant HTML , CSS , jQuery et JavaScript.",
+          ""
+        ],
+        [
+          "http://i.imgur.com/Et3iD74.jpg",
+          "Une capture d'écran de notre certificat de visualisation de données",
+          "Pour gagner notre certification de visualisation de données , vous allez construire 10 projets utilisant Réagir, Sass et D3.js.",
+          ""
+        ],
+        [
+          "http://i.imgur.com/8v3t84p.jpg",
+          "Une capture d'écran de notre certificat Back-End",
+          "Pour gagner notre certification de développeur Back-End, vous allez construire 10 projets utilisant Node.js , Express, et MongoDB . Vous allez utiliser Git et Heroku de les déployer dans le cloud.",
+          ""
+        ],
+        [
+          "http://i.imgur.com/yXyxbDd.jpg",
+          "Une capture d'écran de notre répertoire de projet à but non lucratif.",
+          "Après avoir effectué tous les trois de ces certificats , vous faites équipe avec un autre développeur et utilisez agiles méthodologies de développement de logiciel pour construire deux projets de la vie réelle pour les organismes sans but lucratif . Vous aurez également d'ajouter des fonctionnalités à deux projets à but non lucratif de code hérité. Au moment où vous avez terminé, vous aurez un portefeuille de véritables applications que les gens utilisent tous les jours.",
+          ""
+        ],
+        [
+          "http://i.imgur.com/PDGQ9ZM.jpg",
+          "Une image de campeurs construction des projets ensemble dans un café de Séoul ",
+          "Si vous finissez les 2.080 heures de défis et projets, vous gagnerez notre certification complète Stack développement . Nous vous offrons gratuitement la pratique d'entrevue de codage . Nous offrons même un accès à notre si d'emploi où les employeurs embauchent spécifiquement les développeurs qui ont obtenu des certificats de Free Code Camp.",
+          ""
+        ]
       ]
     },
     {
@@ -282,6 +357,63 @@
           "También puedes descargar la aplicación de chat para tu computadora o teléfono móvil.",
           "https://gitter.im/apps"
         ]
+      ],
+      "nameFr": "Créer un compte GitHub et rejoignez nos Salons de chat",
+      "descriptionFr": [
+        [
+          "http://i.imgur.com/EAR7Lvh.jpg",
+          "Une capture d'écran de notre l'un de nos Gitter salles de chat.",
+          "Avant de commencer à coder, nous allons rejoindre les salles de chat de Camp Code Free . Vous pouvez venir ici tout moment de la journée pour se détendre , poser des questions , ou trouver un autre camping de jumeler programme avec. D'abord, vous aurez besoin d'un compte GitHub.",
+          ""
+        ],
+        [
+          "http://i.imgur.com/n6GeSEm.gif",
+          "Un gif vous montrant à cliquer sur le lien ci-dessous pour aller à GitHub . Remplissez les champs nécessaires et cliquez sur soumettre . Ensuite, vérifiez votre boîte de réception pour un courriel de GitHub sorte que vous pouvez vérifier votre compte.",
+          "Cliquez sur le \"lien Ouvrir dans une nouvelle touche de tabulation\" ci-dessous pour ouvrir GitHub. Créer un compte GitHub en remplissant le formulaire . Assurez-vous d'utiliser votre adresse email réelle - GitHub gardera cette privé. Ensuite, vérifiez votre boîte de réception pour un courriel de GitHub. Ouvrez-le et cliquez sur \"l'adresse email sur vérifier\" l'intérieur. <br><div class=\"small\">Remarque: Si vous avez déjà un compte GitHub , vous pouvez sauter cette étape en cliquant sur \"Ouvrir le lien dans un nouvel onglet\", fermeture le nouvel onglet qui ouvre, puis en cliquant \"aller à ma prochaine étape\". Nous avons retiré notre bouton de \"l'étape de saut\" , car beaucoup de gens il suffit de cliquer à plusieurs reprises sans faire ces étapes importantes.</div>",
+          "https://github.com/join"
+        ],
+        [
+          "http://i.imgur.com/hFqAEr8.gif",
+          "Un gif vous montrant comment cliquez sur l' image de profil dans le coin supérieur droit de GitHub. Télécharger une photo de vous-même ou vous allez continuer à utiliser l'art de pixel généré automatiquement . Ensuite, remplissez les champs du formulaire restants et cliquez sur soumettre.",
+          "Cliquez sur le pixel art dans le coin supérieur droit de GitHub , puis choisissez les paramètres . Télécharger une photo de vous-même. Une photo de votre visage qui fonctionne le mieux . Voici comment les autres campeurs vous voir dans nos salles de chat , donc regarder votre meilleur . Vous pouvez ajouter votre ville et votre nom si vous voulez.",
+          "https://github.com/settings/profile"
+        ],
+        [
+          "http://i.imgur.com/pYk0wOk.gif",
+          "Un gif montrant comment vous pouvez activer un repo GitHub.",
+          "Ouvrez open-source du dépôt central de Camp Code Free . Ceci est où notre équipe de bénévoles collabore à la construction de Camp Code Free. Vous pouvez \"star\" notre référentiel. Mettant en \"vedette\" est la GitHub équivalent de \"goût\" quelque chose.",
+          "https://github.com/freecodecamp/freecodecamp"
+        ],
+        [
+          "http://i.imgur.com/OmRmLB4.gif",
+          "Un gif vous montrant comment Cliquez sur le lien ci-dessous pour accéder à notre salle de chat et cliquez sur \"Se connecter avec\" bouton GitHub. Puis vous pouvez cliquer dans le champ de saisie de texte et saisissez un message à vos amis campeurs.",
+          "Maintenant que vous avez une GitHub compte, vous pouvez vous joindre à notre principale salle de chat en vous connectant à GitHub. Présentez-vous en disant \"Hello World!\" avertissez votre amis campeurs comment vous avez trouvé Libre Code Camp. Aussi nous dire pourquoi vous voulez apprendre à code.",
+          "https://gitter.im/FreeCodeCamp/FreeCodeCamp"
+        ],
+        [
+          "http://i.imgur.com/Ecs5XAd.gif",
+          "Un gif vous montrant comment vous pouvez cliquez sur le bouton Réglages dans le coin supérieur droit et modifier vos paramètres de notification.",
+          "Nos salles de chat sont extrêmement actifs. Vous devez modifier vos paramètres pour vous're notifié que si quelqu'un vous mentionne.",
+          ""
+        ],
+        [
+          "http://i.imgur.com/T0bGJPe.gif",
+          "Un gif montrant comment vous pouvez cliquer sur une image de profil utilisateur pour lancer un message privé avec cet utilisateur.",
+          "Veuillez noter que tous nos salons de chat sont visibles pour le public. Si vous avez besoin de partager des informations sensibles, comme un numéro de téléphone ou l'adresse e-mail, faites-le dans un message privé.",
+          ""
+        ],
+        [
+          "http://i.imgur.com/vDTMJSh.gif",
+          "Un gif montrant que vous pouvez Tab et retour entre défis et nos salles de chat.",
+          "Garder notre salle de discussion ouverte pendant que vous travaillez à travers nos défis. De cette façon, vous pouvez demander de l'aide si vous êtes coincé. Vous pouvez également socialiser avec d'autres campeurs lorsque vous sentez comme prendre une pause.",
+          ""
+        ],
+        [
+          "http://i.imgur.com/WvQvNGN.gif",
+          "Un gif montrant comment vous pouvez cliquer sur le lien ci-dessous pour télécharger un natif salle de chat app pour votre ordinateur.",
+          "Vous pouvez également télécharger la salle de chat app pour votre ordinateur ou votre téléphone.",
+          "https://gitter.im/apps"
+        ]
       ]
     },
     {
@@ -343,6 +475,15 @@
           "Un gif mostrándote como puedes pulsar en el enlace inferior, encontrar tu ciudad en la lista de Campamentos, entonces haz clic en el enlace de Facebook para tu ciudad y unirte al grupo de Facebook de tu ciudad.",
           "Encuentra tu ciudad en esta lista y haz clic en esta. Esto te llevara al grupo de Facebook del Campamento de tu ciudad. Da clic en el botón de \"Unirse al grupo\" para unirte a el grupo. Alguien del mismo campamento debería aprobarte en breve. Si tu ciudad no esta en esta lista, ve al final del articulo de la wiki para ver instrucciones de como crear un campamento para tu ciudad.",
           "https://github.com/FreeCodeCamp/freecodecamp/wiki/List-of-Free-Code-Camp-city-based-Campsites"
+        ]
+      ],
+      "nameFr": "Configurer votre code portefeuille",
+      "descriptionFr": [
+        [
+          "http://i.imgur.com/tP2ccTE.gif",
+          "Un gif montrant comment vous pouvez cliquez sur l'image de votre profil dans votre coin supérieur droit à votre code portefeuille et connectez GitHub.",
+          "Vérifiez votre code portefeuille. Cliquez sur votre photo dans votre coin supérieur droit. Pour activer votre code portefeuille, vous'll nécessité de lier votre compte avec code sans GitHub Camp. Votre code portefeuille affiche votre progression et combien de bons points vous avez. Vous pouvez obtenir de bons points par remplir les défis et en aidant d'autres campeurs dans nos salles de chat. Si vous obtenez Brownie Points sur plusieurs jours d'affilée, vous'll obtenez une rayure.",
+          ""
         ]
       ]
     },
@@ -451,6 +592,57 @@
           "http://i.imgur.com/ZRgXraT.gif",
           "Un gif mostrándonos nuestro mapa de desafíos.",
           "Ahora estas listo para empezar a programar. El botón de  \"Mapa\" en tu esquina superior derecha te mostrará nuestro mapa de desafíos. Te recomendaos que completes los desafíos de arriba hacía abajo, a un ritmo sostenible. Nuestra comunidad de código abierto esta constantemente mejorando nuestros desafíos, así que no te sorprendas si cambian o se mueven alrededor. No te preocupes por volver hacia atrás - solo continúa avanzando. Siempre puedes ir a tu desafío más reciente pulsando el botón de \"Aprender\".",
+          ""
+        ]
+      ],
+      "nameFr": "Apprenez quoi faire quand vous êtes bloqué ?",
+      "descriptionFr": [
+        [
+          "http://i.imgur.com/lzKvwU2.jpg",
+          "Le texte \"Coder est difficile.\"",
+          "Coder est difficile. Vous serez bloqué un jour ou l'autre. Même les développeurs expérimentés peuvent être bloqués. La solution est de savoir comment se débloquer.",
+          ""
+        ],
+        [
+          "http://i.imgur.com/sfsidp6.jpg",
+          "Le texte \"Etre un bon développeur prend du temps.\"",
+          "Etre un bon développeur prend du temps. Vous ne pouvez pas vous attendre à battre un maitre des echecs aprés 3 mois d'apprentissage. Ne vous attendez pas de construire le prochain Facebook aprés 3 mois de coding.",
+          ""
+        ],
+        [
+          "http://i.imgur.com/EoTfOyC.jpg",
+          "Une image de quelques uns de nos développeurs codant ensemble à Montreal.",
+          "Continuez de développer tous les jours et fréquentez d'autres développeurs et vous deviendrez un développeur prêt à l'emploi.",
+          ""
+        ],
+        [
+          "http://i.imgur.com/EWWZBag.jpg",
+          "Une image avec le texte \"1. Lisez l'erreur 2. Cherchez sur Google 3. Demandez de l'aide.",
+          "Chaque fois que vous êtes bloqué ou que vous ne savez pas quoi faire : Lisez-Cherchez-Demandez.",
+          ""
+        ],
+        [
+          "http://i.imgur.com/99BfAcK.jpg",
+          "Une image montrant la document jQuery",
+          "Lisez d'abord la documentation ou les messages d'erreurs. Le principal atout que les bon développeurs ont est la capacité d'interpréter et ensuite de suivre les instructions.",
+          ""
+        ],
+        [
+          "http://i.imgur.com/GxvrsFb.gif",
+          "Une image vous montrant comment fiare des recherches avancées sur Google. On commence par rentrer la requète \"jquery ne fonctionne pas lors du chargement de ma page\". Puis nous cliquons sur la barre de recherche et changeons la case à cocher \"Any time\" cochons la case \"au cours de l'année précédente\". Puis nous cliquons sur le résultat et lisons l'article et trouvons notre réponse.",
+          "Si cela ne vous aide pas, recherchez sur Google. De bonnes recherches sur Google demande pas mal de pratique. Quand vous recherchez sur Google, vous devez inclure le langage ou le framework que vous utilisez. Vous voulez aussi limiter vos résultats a une période récente.",
+          ""
+        ],
+          [
+          "http://i.imgur.com/LZYU7p2.gif",
+          "Une image vous montrant le lien ci-dessous pour rejoindre le char et demander \"jquery ne fonctionne pas lors du chargement de ma page\".",
+          "Si cela ne vous aide pas, demande à vos amis. Si vous avez des difficultés, vous pouvez demander aux autres développeurs sur le chat.",
+          "https://gitter.im/FreeCodeCamp/Help"
+        ],
+        [
+          "http://i.imgur.com/ZRgXraT.gif",
+          "Une image vous montrant le cursus de notre carte des défis.",
+          "Maintenant vous être prêt pour commencer à coder. Le boutton \"Map\" situé en haut à droite de votre écran vous montrera notre carte des défis. Nous vous recommandons de les completer du début jusqu'à la fin, régulièrement. Notre communauté open source continue de d'améliorer nos défis, ne soyez donc pas surpris si ils changent ou évoluent. Ce n'est pas la peine de revenir en arrière, continuez à progresser. Vous pouvez toujours accéder à nos derniers défis juste en cliquant sur le boutton \"Learn\".",
           ""
         ]
       ]
