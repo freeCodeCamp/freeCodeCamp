@@ -295,7 +295,7 @@
           "https://gitter.im/apps"
         ]
       ],
-	  "nameFr": "Créer un compte GitHub et rejoignez nos Salons de chat",
+      "nameFr": "Créer un compte GitHub et rejoignez nos Salons de chat",
       "descriptionFr": [
         [
           "http://i.imgur.com/EAR7Lvh.jpg",
@@ -430,8 +430,8 @@
       "descriptionFr": [
         [
           "http://i.imgur.com/tP2ccTE.gif",
-          "Un gif montrant comment vous pouvez cliquez sur l'image de votre profil dans votre coin supérieur droit à votre code portefeuille et connectez GitHub.",
-          "Vérifiez votre code portefeuille. Cliquez sur votre photo dans votre coin supérieur droit. Pour activer votre code portefeuille, vous'll nécessité de lier votre compte avec code sans GitHub Camp. Votre code portefeuille affiche votre progression et combien de bons points vous avez. Vous pouvez obtenir de bons points par remplir les défis et en aidant d'autres campeurs dans nos salles de chat. Si vous obtenez Brownie Points sur plusieurs jours d'affilée, vous'll obtenez une rayure.",
+          "Un gif montrant comment vous pouvez cliquer sur l'image de votre profil dans le coin supérieur droit à votre portfolio et vous connectez GitHub.",
+          "Vérifiez le code de votre portfolio. Cliquez sur votre photo dans le coin supérieur droit. Pour activer votre portefeuille, vous aurez besoin de lier votre compte FreeCodeCamp à votre compte GitHub. Votre portfolio affiche votre progression et combien de de points vous avez. Vous pouvez obtenir des points en accomplissant les défis et en aidant les autres développeurs dans nos salles de chat. Si vous obtenez Brownie Points sur plusieurs jours d'affilée, vous obtiendrai une rayure.",
           ""
         ]
       ],
@@ -466,7 +466,7 @@
           "https://github.com/FreeCodeCamp/freecodecamp/wiki/List-of-Free-Code-Camp-city-based-Campsites"
         ]
       ],
-	  "nameFr": "Rejoignez un camping dans votre ville",
+      "nameFr": "Rejoignez un camping dans votre ville",
       "descriptionFr": [
         [
           "http://i.imgur.com/NAOFJWN.jpg",
@@ -625,13 +625,13 @@
         ],
         [
           "http://i.imgur.com/EoTfOyC.jpg",
-		  "Une image de quelques uns de nos développeurs codant ensemble à Montreal.", 
-		  "Continuez de développer tous les jours et fréquentez d'autres développeurs et vous deviendrez un développeur prêt à l'emploi.",
+    		  "Une image de quelques uns de nos développeurs codant ensemble à Montreal.", 
+    		  "Continuez de développer tous les jours et fréquentez d'autres développeurs et vous deviendrez un développeur prêt à l'emploi.",
           ""
         ],
         [
           "http://i.imgur.com/EWWZBag.jpg",
-		  "Une image avec le texte \"1. Lisez l'erreur 2. Cherchez sur Google 3. Demandez de l'aide.",
+		      "Une image avec le texte \"1. Lisez l'erreur 2. Cherchez sur Google 3. Demandez de l'aide.",
           "Chaque fois que vous êtes bloqué ou que vous ne savez pas quoi faire : Lisez-Cherchez-Demandez.",
           ""
         ],
