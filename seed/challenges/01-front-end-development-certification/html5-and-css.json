@@ -2452,8 +2452,9 @@
         "The <code>div</code> element, also known as a division element, is a general purpose container for other elements.",
         "The <code>div</code> element is probably the most commonly used HTML element of all. It's useful for passing the CSS of its own class declarations down to all the elements that it contains.",
         "Just like any other non-self-closing element, you can open a <code>div</code> element with <code>&#60;div&#62;</code> and close it on another line with <code>&#60;/div&#62;</code>.",
-        "Try putting your opening <code>div</code> tag above your \"Things cats love\" <code>p</code> element and your closing <code>div</code> tag after your closing <code>ol</code> tag so that both of your lists are within one <code>div</code>.",
-        "Nest your \"Things cats love\" and \"Things cats hate\" lists all within a single <code>div</code> element."
+        "Nest your \"Things cats love\" and \"Things cats hate\" lists all within a single  <code>div</code> element.",
+        "Try putting your opening <code>div</code> tag above your \"Things cats love\" <code>p</code> element and your closing <code>div</code> tag after your closing <code>ol</code> tag so that both of your lists are within one <code>div</code>."
+
       ],
       "challengeSeed": [
         "<link href=\"http://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
