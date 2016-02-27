@@ -44,13 +44,13 @@
       "releasedOn": "February 10, 2016",
       "type": "Waypoint",
       "challengeType": 7,
-      "nameEs": "Translate",
+      "nameEs": "Únete a nuestro Subreddit",
       "descriptionEs": [
         [
           "http://i.imgur.com/DYjJuCG.gif",
-          "",
-          "",
-          ""
+          "Un gif que muestra como crear una cuenta de Reddit y unirse a Free Code Camp subreddit",
+          "Nuestra comunidad tiene su propio subreddit en Reddit. Es una manera conveniente de hacer preguntas y compartir enlaces con nuestra entera comunidad. Si aún no dispones de una cuenta de Reddit, puedes crear una en pocos segundos - ni siquiera necesitas una dirección de correo electrónico. Entonces puedes hacer clic en el botón de \"subscribe\" para unirte a nuestro subreddit. También puede que te interesé suscribirte a otros subreddits listados en la columna lateral.",
+          "https://reddit.com/r/freecodecamp"
         ]
       ]
     },
@@ -76,19 +76,19 @@
       "type": "Waypoint",
       "challengeType": 7,
       "releasedOn": "February 10, 2016",      
-      "nameEs": "Translate",
+      "nameEs": "Lee noticias de Codificación en nuestro canal de publicaciones Medium",
       "descriptionEs": [
         [
           "http://i.imgur.com/FxSOL4a.gif",
-          "",
-          "",
-          ""
+          "Un gif mostrando como crear una cuenta en Medium.",
+          "Nuestra comunidad tiene un canal para publicaciones Medium, donde escribimos un montón de artículos sobre desarrollo de software. Si aún no tienes una cuenta Medium, puedes hacer clic en el enlace y registrarte con tu red social o ingresando tu dirección de correo electrónico (ellos enviarán un correo electrónico que debes hacer clic para crear tu cuenta.) Luego selecciona tus temas de interés y puedes continuar con los siguientes pasos.",
+          "https://www.medium.com"
         ],
         [
           "http://i.imgur.com/zhhywSX.gif",
-          "",
-          "",
-          ""
+          "Un gif mostrando como hacer clic en el botón \"follow\" para seguir las publicaciones de Free Code Camp.",
+          "Una vez que inicies sesión puedes ir al canal de publicaciones Medium de Free Code Camp y hacer clic en \"follow\". Nuestros campistas publican varios artículos cada semana.",
+          "https://medium.freecodecamp.com"
         ]
       ]
     },
@@ -108,12 +108,12 @@
       "type": "Waypoint",
       "challengeType": 7,
       "releasedOn": "February 10, 2016",      
-      "nameEs": "Translate",
+      "nameEs": "Miranos programar en vivo por Twitch.tv",
       "descriptionEs": [
         [
           "http://i.imgur.com/8rtyRY1.gif",
-          "",
-          "",
+          "Un gif mostrando como registrarse en Twitch.tv y seguir nuestro canal.",
+          "Nuestros campistas programan con frecuencia en vivo por Twitch.tv, un sitio web popular para streaming. Puedes crear una cuenta en menos de un minuto, luego sigue al canal de Free Code Camp. Cuando sigas al canal, verás la opción de noficación por correo electrónico cada vez que un campista esta en vivo. Puedes unirte a docenas de otros campistas y mirarlos programar, e interactuar en la sala de chat. Es divertido, una forma casual de aprender mientras miras gente construir proyectos.",
           "https://twitch.tv/freecodecamp"
         ]
       ]
