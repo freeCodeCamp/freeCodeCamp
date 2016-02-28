@@ -1,17 +1,14 @@
 import { helpers } from 'rx';
 import React, { PropTypes } from 'react';
 import { reduxForm } from 'redux-form';
-import { connector } from 'react-redux';
-import debug from 'debug';
+// import debug from 'debug';
 import dedent from 'dedent';
-import normalizeUrl from 'normalize-url';
-
-import { getDefaults } from '../utils';
 
 import {
-  inHTMLData,
-  uriInSingleQuotedAttr
-} from 'xss-filters';
+  isAscii,
+  isEmail,
+  isURL
+} from 'validator';
 
 import {
   Button,
@@ -20,29 +17,13 @@ import {
   Row
 } from 'react-bootstrap';
 
-import {
-  isAscii,
-  isEmail,
-  isURL
-} from 'validator';
+import { saveJob } from '../redux/actions';
 
-const log = debug('fcc:jobs:newForm');
+// const log = debug('fcc:jobs:newForm');
 
-const checkValidity = [
-  'position',
-  'locale',
-  'description',
-  'email',
-  'url',
-  'logo',
-  'company',
-  'isHighlighted',
-  'howToApply'
-];
 const hightlightCopy = `
 Highlight my post to make it stand out. (+$250)
 `;
-
 
 const isRemoteCopy = `
 This job can be performed remotely.
@@ -60,177 +41,106 @@ const checkboxClass = dedent`
   col-sm-6 col-md-offset-3
 `;
 
-function formatValue(value, validator, type = 'string') {
-  const formatted = getDefaults(type);
-  if (validator && type === 'string' && typeof value === 'string') {
-    formatted.valid = validator(value);
-  }
-  if (value) {
-    formatted.value = value;
-    formatted.bsStyle = formatted.valid ? 'success' : 'error';
-  }
-  return formatted;
-}
-
-const normalizeOptions = {
-  stripWWW: false
+const certTypes = {
+  isFrontEndCert: 'isFrontEndCert',
+  isBackEndCert: 'isBackEndCert'
 };
-
-function formatUrl(url, shouldKeepTrailingSlash = true) {
-  if (
-    typeof url === 'string' &&
-    url.length > 4 &&
-    url.indexOf('.') !== -1
-  ) {
-    // prevent trailing / from being stripped during typing
-    let lastChar = '';
-    if (shouldKeepTrailingSlash && url.substring(url.length - 1) === '/') {
-      lastChar = '/';
-    }
-    return normalizeUrl(url, normalizeOptions) + lastChar;
-  }
-  return url;
-}
 
 function isValidURL(data) {
   return isURL(data, { 'require_protocol': true });
 }
 
+const fields = [
+  'position',
+  'locale',
+  'description',
+  'email',
+  'url',
+  'logo',
+  'company',
+  'isHighlighted',
+  'isRemoteOk',
+  'isFrontEndCert',
+  'isBackEndCert',
+  'howToApply'
+];
+
+const fieldValidators = {
+  position: makeRequired(isAscii),
+  locale: makeRequired(isAscii),
+  description: makeRequired(helpers.identity),
+  email: makeRequired(isEmail),
+  url: isValidURL,
+  logo: isValidURL,
+  company: makeRequired(isAscii),
+  howToApply: makeRequired(isAscii)
+};
+
 function makeRequired(validator) {
   return (val) => !!val && validator(val);
 }
 
-const formOptions = {
-  fields: [
-    'position',
-    'locale',
-    'description',
-    'email',
-    'url',
-    'logo',
-    'company',
-    'isHighlighted',
-    'isRemoteOk',
-    'isFrontEndCert',
-    'isBackEndCert',
-    'howToApply'
-  ]
+function validateForm(values) {
+  return Object.keys(fieldValidators)
+    .map(field => {
+      if (fieldValidators[field](values[field])) {
+        return null;
+      }
+      return { [field]: fieldValidators[field](values[field]) };
+    })
+    .filter(Boolean)
+    .reduce((errors, error) => ({ ...errors, ...error }), {});
+}
+
+function getBsStyle(field) {
+  if (field.pristine) {
+    return null;
+  }
+
+  return field.error ?
+    'error' :
+    'success';
 }
 
 export class NewJob extends React.Component {
   static displayName = 'NewJob';
 
   static propTypes = {
-    jobActions: PropTypes.object,
     fields: PropTypes.object,
-    onSubmit: PropTypes.func
+    handleSubmit: PropTypes.func
   };
 
-  handleSubmit(e) {
-    e.preventDefault();
-    const pros = this.props;
-    let valid = true;
-    checkValidity.forEach((prop) => {
-      // if value exist, check if it is valid
-      if (pros[prop].value && pros[prop].type !== 'boolean') {
-        valid = valid && !!pros[prop].valid;
-      }
-    });
-
-    if (
-      !valid ||
-      !pros.isFrontEndCert &&
-    !pros.isBackEndCert
-    ) {
-      debug('form not valid');
-      return;
-    }
-
-    const {
-      jobActions,
-
-      // form values
-      position,
-      locale,
-      description,
-      email,
-      url,
-      logo,
-      company,
-      isFrontEndCert,
-      isBackEndCert,
-      isHighlighted,
-      isRemoteOk,
-      howToApply
-    } = this.props;
-
-    // sanitize user output
-    const jobValues = {
-      position: inHTMLData(position.value),
-      locale: inHTMLData(locale.value),
-      description: inHTMLData(description.value),
-      email: inHTMLData(email.value),
-      url: formatUrl(uriInSingleQuotedAttr(url.value), false),
-      logo: formatUrl(uriInSingleQuotedAttr(logo.value), false),
-      company: inHTMLData(company.value),
-      isHighlighted: !!isHighlighted.value,
-      isRemoteOk: !!isRemoteOk.value,
-      howToApply: inHTMLData(howToApply.value),
-      isFrontEndCert,
-      isBackEndCert
-    };
-
-    const job = Object.keys(jobValues).reduce((accu, prop) => {
-      if (jobValues[prop]) {
-        accu[prop] = jobValues[prop];
-      }
-      return accu;
-    }, {});
-
-    job.postedOn = new Date();
-    debug('job sanitized', job);
-    jobActions.saveForm(job);
-
-    this.history.pushState(null, '/jobs/new/preview');
-  },
-
   componentDidMount() {
-    const { jobActions } = this.props;
-    jobActions.getSavedForm();
-  },
-
-  handleChange(name, { target: { value } }) {
-    const { jobActions: { handleForm } } = this.props;
-    handleForm({ [name]: value });
-  },
+    // this.prop.getSavedForm();
+  }
 
   handleCertClick(name) {
-    const { jobActions: { handleForm } } = this.props;
-    const otherButton = name === 'isFrontEndCert' ?
-      'isBackEndCert' :
-      'isFrontEndCert';
-
-    handleForm({
-      [name]: true,
-      [otherButton]: false
+    const { fields } = this.props;
+    Object.keys(certTypes).forEach(certType => {
+      if (certType === name) {
+        return fields[certType].onChange(true);
+      }
+      fields[certType].onChange(false);
     });
-  },
+  }
 
   render() {
     const {
-      position,
-      locale,
-      description,
-      email,
-      url,
-      logo,
-      company,
-      isHighlighted,
-      isRemoteOk,
-      howToApply,
-      isFrontEndCert,
-      isBackEndCert,
-      jobActions: { handleForm }
+      fields: {
+        position,
+        locale,
+        description,
+        email,
+        url,
+        logo,
+        company,
+        isHighlighted,
+        isRemoteOk,
+        howToApply,
+        isFrontEndCert,
+        isBackEndCert
+      },
+      handleSubmit
     } = this.props;
 
     const { handleChange } = this;
@@ -246,7 +156,7 @@ export class NewJob extends React.Component {
             <div className='text-center'>
               <form
                 className='form-horizontal'
-                onSubmit={ this.handleSubmit }>
+                onSubmit={ handleSubmit(data => this.handleSubmit(data)) }>
 
                 <div className='spacer'>
                   <h2>First, select your ideal applicant: </h2>
@@ -259,10 +169,10 @@ export class NewJob extends React.Component {
                     <Row>
                       <Button
                         bsStyle='primary'
-                        className={ isFrontEndCert ? 'active' : '' }
+                        className={ isFrontEndCert.value ? 'active' : '' }
                         onClick={ () => {
-                          if (!isFrontEndCert) {
-                            this.handleCertClick('isFrontEndCert');
+                          if (!isFrontEndCert.value) {
+                            this.handleCertClick(certTypes.isFrontEndCert);
                           }
                         }}>
                         <h4>Front End Development Certified</h4>
@@ -278,10 +188,10 @@ export class NewJob extends React.Component {
                     <Row>
                       <Button
                         bsStyle='primary'
-                        className={ isBackEndCert ? 'active' : ''}
+                        className={ isBackEndCert.value ? 'active' : ''}
                         onClick={ () => {
-                          if (!isBackEndCert) {
-                            this.handleCertClick('isBackEndCert');
+                          if (!isBackEndCert.value) {
+                            this.handleCertClick(certTypes.isBackEndCert);
                           }
                         }}>
                         <h4>Back End Development Certified</h4>
@@ -300,47 +210,43 @@ export class NewJob extends React.Component {
                 </div>
                 <hr />
                 <Input
-                  bsStyle={ position.bsStyle }
+                  bsStyle={ getBsStyle(position) }
                   label='Job Title'
                   labelClassName={ labelClass }
-                  onChange={ (e) => handleChange('position', e) }
                   placeholder={
                     'e.g. Full Stack Developer, Front End Developer, etc.'
                   }
                   required={ true }
                   type='text'
-                  value={ position.value }
-                  wrapperClassName={ inputClass } />
+                  wrapperClassName={ inputClass }
+                  { ...position }
+                />
                 <Input
-                  bsStyle={ locale.bsStyle }
+                  bsStyle={ getBsStyle(locale) }
                   label='Location'
                   labelClassName={ labelClass }
-                  onChange={ (e) => handleChange('locale', e) }
                   placeholder='e.g. San Francisco, Remote, etc.'
                   required={ true }
                   type='text'
-                  value={ locale.value }
-                  wrapperClassName={ inputClass } />
+                  wrapperClassName={ inputClass }
+                  { ...locale }
+                />
                 <Input
-                  bsStyle={ description.bsStyle }
+                  bsStyle={ getBsStyle(description) }
                   label='Description'
                   labelClassName={ labelClass }
-                  onChange={ (e) => handleChange('description', e) }
                   required={ true }
                   rows='10'
                   type='textarea'
-                  value={ description.value }
-                  wrapperClassName={ inputClass } />
+                  wrapperClassName={ inputClass }
+                  { ...description }
+                />
                 <Input
-                  checked={ isRemoteOk.value }
                   label={ isRemoteCopy }
-                  onChange={
-                    ({ target: { checked } }) => handleForm({
-                      isRemoteOk: !!checked
-                    })
-                  }
                   type='checkbox'
-                  wrapperClassName={ checkboxClass } />
+                  wrapperClassName={ checkboxClass }
+                  { ...isRemoteOk }
+                />
                 <div className='spacer' />
 
                 <hr />
@@ -349,16 +255,16 @@ export class NewJob extends React.Component {
                     <h2>How should they apply?</h2>
                   </div>
                   <Input
-                    bsStyle={ howToApply.bsStyle }
+                    bsStyle={ getBsStyle(howToApply) }
                     label='   '
                     labelClassName={ labelClass }
-                    onChange={ (e) => handleChange('howToApply', e) }
                     placeholder={ howToApplyCopy }
                     required={ true }
                     rows='2'
                     type='textarea'
-                    value={ howToApply.value }
-                    wrapperClassName={ inputClass } />
+                    wrapperClassName={ inputClass }
+                    { ...howToApply }
+                  />
                 </Row>
 
                 <div className='spacer' />
@@ -367,41 +273,42 @@ export class NewJob extends React.Component {
                   <h2>Tell us about your organization</h2>
                 </div>
                 <Input
-                  bsStyle={ company.bsStyle }
+                  bsStyle={ getBsStyle(company) }
                   label='Company Name'
                   labelClassName={ labelClass }
                   onChange={ (e) => handleChange('company', e) }
                   type='text'
-                  value={ company.value }
-                  wrapperClassName={ inputClass } />
+                  wrapperClassName={ inputClass }
+                  { ...company }
+                />
                 <Input
-                  bsStyle={ email.bsStyle }
+                  bsStyle={ getBsStyle(email) }
                   label='Email'
                   labelClassName={ labelClass }
-                  onChange={ (e) => handleChange('email', e) }
                   placeholder='This is how we will contact you'
                   required={ true }
                   type='email'
-                  value={ email.value }
-                  wrapperClassName={ inputClass } />
+                  wrapperClassName={ inputClass }
+                  { ...email }
+                />
                 <Input
-                  bsStyle={ url.bsStyle }
+                  bsStyle={ getBsStyle(url) }
                   label='URL'
                   labelClassName={ labelClass }
-                  onChange={ (e) => handleChange('url', e) }
                   placeholder='http://yourcompany.com'
                   type='url'
-                  value={ url.value }
-                  wrapperClassName={ inputClass } />
+                  wrapperClassName={ inputClass }
+                  { ...url }
+                />
                 <Input
-                  bsStyle={ logo.bsStyle }
+                  bsStyle={ getBsStyle(logo) }
                   label='Logo'
                   labelClassName={ labelClass }
-                  onChange={ (e) => handleChange('logo', e) }
                   placeholder='http://yourcompany.com/logo.png'
                   type='url'
-                  value={ logo.value }
-                  wrapperClassName={ inputClass } />
+                  wrapperClassName={ inputClass }
+                  { ...logo }
+                />
 
                 <div className='spacer' />
                 <hr />
@@ -416,7 +323,7 @@ export class NewJob extends React.Component {
                       mdOffset={ 3 }>
                       Highlight this ad to give it extra attention.
                       <br />
-                      Featured listings receive more clicks and more applications.
+                    Featured listings receive more clicks and more applications.
                     </Col>
                   </Row>
                   <div className='spacer' />
@@ -424,17 +331,13 @@ export class NewJob extends React.Component {
                     <Input
                       bsSize='large'
                       bsStyle='success'
-                      checked={ isHighlighted.value }
                       label={ hightlightCopy }
-                      onChange={
-                        ({ target: { checked } }) => handleForm({
-                          isHighlighted: !!checked
-                        })
-                      }
                       type='checkbox'
                       wrapperClassName={
                         checkboxClass.replace('text-left', '')
-                      } />
+                      }
+                      { ...isHighlighted }
+                    />
                   </Row>
                 </div>
 
@@ -462,7 +365,13 @@ export class NewJob extends React.Component {
 }
 
 export default reduxForm(
-  formOptions,
-  mapStateToProps,
-  bindableActions
+  {
+    form: 'NewJob',
+    fields,
+    validate: validateForm
+  },
+  null,
+  {
+    onSubmit: saveJob
+  }
 )(NewJob);

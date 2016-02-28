@@ -15,12 +15,12 @@ import {
   fetchJobs
 } from '../redux/actions';
 
-const mapSateToProps = createSelector(
+const mapStateToProps = createSelector(
   state => state.jobsApp.jobs.entities,
   state => state.jobsApp.jobs.results,
   state => state.jobsApp,
   (jobsMap, jobsById) => {
-    return jobsById.map(id => jobsMap[id]);
+    return { jobs: jobsById.map(id => jobsMap[id]) };
   }
 );
 
@@ -152,6 +152,6 @@ export class Jobs extends PureComponent {
 }
 
 export default compose(
-  connect(mapSateToProps, bindableActions),
+  connect(mapStateToProps, bindableActions),
   contain(fetchOptions)
 )(Jobs);

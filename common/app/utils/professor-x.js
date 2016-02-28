@@ -66,8 +66,6 @@ export default function contain(options = {}, Component) {
     }
 
     static displayName = `Container(${Component.displayName})`;
-    static propTypes = Component.propTypes;
-
     static contextTypes = {
       ...Component.contextTypes,
       professor: PropTypes.object
