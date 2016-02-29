@@ -32,9 +32,14 @@
         "¡Bienvenido/a al primer desafío de programación de Free Code Camp!",
         "Puedes editar tu <code>código</code> en tu <code>editor de texto</code>, que hemos incrustado en esta página web.",
         "¿Ves el código en tu editor de texto que dice <code>&#60;h1&#62;Hello&#60;/h1&#62;</code>? Ese es un <code>elemento</code> HTML.",
-        "La mayoría de los elementos HTML tienen una <code>etiqueta de apertura</code> y una <code>etiqueta de cierre</code>. Las etiquetas de apertura se ven como: <code>&#60;h1&#62;</code>. Las etiquetas de cierre se ven como: <code>&#60;/h1&#62;</code>. Fíjate que la única diferencia entre las etiquetas de apertura y de cierre es que estas últimas tienen un / después de su signo de apertura (<).",
-        "Cada desafio tiene pruebas que puedes ejecutar en cualquier momento presionado el botón \"Ejecutar pruebas\". Una vez logres pasar todas las pruebas, podrás avanzar al siguiente desafio.",
-        "Para pasar la prueba en este desafio, cambia tu texto de la etiqueta <code>h1</code> para que diga \"Hello World\" en lugar de \"Hello\". Entonces presiona el botón \"Ejecutar pruebas\"."
+        "La mayoría de los elementos HTML tienen una <code>etiqueta de apertura</code> y una <code>etiqueta de cierre</code>.",
+        "Las etiquetas de apertura se ven como:",
+        "<code>&#60;h1&#62;</code>",
+        " Las etiquetas de cierre se ven como:",
+        "<code>&#60;/h1&#62;</code>",
+        "Fíjate que la única diferencia entre las etiquetas de apertura y de cierre es que estas últimas tienen un / después de su signo de apertura (<).",
+        "Cada desafío tiene pruebas que puedes ejecutar en cualquier momento presionado el botón \"Run tests\". Una vez logres pasar todas las pruebas, podrás avanzar al siguiente desafío.",
+        "Para pasar la prueba en este desafío, cambia tu texto de la etiqueta <code>h1</code> para que diga \"Hello World\" en lugar de \"Hello\". Entonces presiona el botón \"Ejecutar pruebas\"."
       ],
       "nameDe": "Waypoint: Begrüße die HTML Elemente",
       "descriptionDe": [
@@ -46,6 +51,17 @@
         "Sobald du eine Challenge abgeschlossen hast und alle Tests erfolgreich sind, wird der Button \"Go to my next challenge\" aktiv. Klicke auf diesen – oder drücke Steuerung (Control) und gleichzeitig Enter – um zur nächsten Challenge zu gehen.",
         "Um den Button \"Go to my next challenge\" dieser Lektion zu aktivieren, ändere den Inhalt des <code>h1</code> Tags von \"Hello\" zu \"Hello World\"."
       ],
+      "namePtBR": "Diga Olá aos Elementos HTML",
+      "descriptionPtBR": [
+        "Seja bem vindo ao primeiro desafio de programação do Free Code Camp!",
+        "Você pode editar o seu <code>código</code> em seu <code>editor de texto</code>, que embutimos aqui nesta página da web.",
+        "Consegue ver o código que diz <code>&#60;h1&#62;Hello&#60;/h1&#62;</code> no seu editor de texto? Esse é um elemento HTML.",
+        "A maioria dos elementos HTML tem uma <code>tag de abertura</code> e uma <code>tag de fechamento</code>.",
+        "As tags de abertura são assim: <code>&#60;h1&#62;</code>. E as tags de fechamento são assim: <code>&#60;/h1&#62;</code>.",
+        "Note que a única diferença entre as tags de abertura e fechamento é que as de fechamento possuem uma barra (/) depois do sinal de abertura (<).",
+        "Cada desafio possui testes que você pode executar a qualquer momento ao clicar no botão \"Executar testes\". Quando você conseguir passar em todos os testes, poderá avançar para o próximo desafio.",
+        "Para passar nos testes deste desafio, mude o texto do elemento <code>h1</code> para que diga \"Hello World\" no lugar de \"Hello\". Depois, clique no botão \"Executar testes\"."
+          ],
       "type": "waypoint"
     },
     {
@@ -71,7 +87,7 @@
       "challengeType": 0,
       "nameEs": "Encabezado con el elemento h2",
       "descriptionEs": [
-        "Durante los siguientes desafios, construiremos una aplicación HTML que lucirá como la siguiente:",
+        "Durante los siguientes desafíos, construiremos una aplicación HTML5 que lucirá como la siguiente:",
         "<a href=\"http://i.imgur.com/jOc1JF1.png\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" src=\"http://i.imgur.com/jOc1JF1.png\" title=\"Pulsa para agrandar\" alt=\"Pantallazo de la aplicación Cat Photo terminada\"></a>",
         "El elemento <code>h2</code> que ingreses creará un elemento <code>h2</code> en el sitio web.",
         "Este elemento le dice al navegador cómo mostrar el texto que contiene.",
@@ -84,6 +100,15 @@
         "Das eingetragene <code>h2</code> Element wird ein <code>h2</code> Element auf der Website erzeugen.",
         "Dieses Element sagt dem Browser, wie der darin enthaltene Text gerendert wird.",
         "<code>h2</code> Elemente sind ein wenig kleiner als <code>h2</code> Elemente. Es gibt auch <code>h3</code>, <code>h4</code>, <code>h5</code> und <code>h6</code> Elemente."
+      ],
+     "namePtBR": "Cabeçalho com o Elemento h2",
+     "descriptionPtBR": [
+        "Durante os próximos desafios, construiremos um aplicativo em HTML que se parecerá como este:",
+        "<a href=\"http://i.imgur.com/jOc1JF1.png\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" src=\"http://i.imgur.com/jOc1JF1.png\" title=\"Clique para aumentar\" alt=\"Imagem do aplicativo CatPhotoApp finalizado\"></a>",
+         "O elemento <code>h2</code> que você criar gerará um elemento <code>h2</code> na página da web.",
+         "Este elemento indica ao navegador a forma de mostrar o texto que contém.",
+         "Os elementos <code>h2</code> são ligeiramente menores que os elementos <code>h1</code>. Há também os elementos <code>h3</code>, <code>h4</code>, <code>h5</code> e <code>h6</code>.",
+         "Adicione uma tag <code>h2</code> que diga \"CatPhotoApp\" para criar um segundo <code>elemento</code> HTML abaixo de seu elemento <code>h1</code> chamado \"Hello World\"."
       ],
       "type": "waypoint"
     },
@@ -109,7 +134,8 @@
       "nameEs": "Informa con el Elemento Párrafo",
       "descriptionEs": [
         "Los elementos <code>p</code> son los elementos preferidos en los sitios web para los párrafos de texto en tamaño normal. La P es abreviatura de \"párrafo\".",
-        "Tú puedes crear un elemento párrafo como éste: <code>&#60;p&#62;¡Soy una etiqueta p!&#60;/p&#62;</code>",
+        "Tú puedes crear un elemento párrafo de esta forma:",
+        "<code>&#60;p&#62;¡Soy una etiqueta p!&#60;/p&#62;</code>",
         "Crea un elemento <code>p</code> debajo de tu elemento <code>h2</code>, y ponle el texto \"Hello Paragraph\"."
       ],
       "nameDe": "Waypoint: Informiere mit dem Paragraph Element",
@@ -117,6 +143,13 @@
         "Erstelle ein <code>p</code> Element unter deinem <code>h2</code> Element und füge den Text \"Hello Paragraph\" ein.",
         "<code>p</code> Elemente sind das bevorzugte Element für normalen Paragraphen-Text auf einer Website. P ist die Abkürzung für \"Paragraph\".",
         "Du kannst ein <code>p</code> Element so erzeugen: <code>&#60;p&#62;Ich bin ein p Element!&#60;/p&#62;</code>"
+      ],
+     "namePtBR": "Informe com o Elemento Parágrafo",
+     "descriptionPtBR": [
+        "Os elementos <code>p</code> são os preferenciais para criar parágrafos de texto com tamanho normal nas páginas da web. P significa a abreviatura de \"parágrafo\".",
+        "Você pode criar um elemento <code>p</code> assim:",
+        "<code>&#60;p&#62;Sou uma tag p!&#60;/p&#62;</code>",
+        "Crie um elemento <code>p</code> abaixo de seu elemento <code>h2</code>, e dê a ele o texto \"Hello Paragraph\"."
       ],
       "type": "waypoint"
     },
@@ -159,6 +192,13 @@
         "Dies ist auch ein guter Weg, um Code inaktiv zu machen ohne diesen komplett löschen zu müssen.",
         "Du kannst einen Kommentar mit <code>&#60;!--</code> starten und ihn mit <code>--&#62;</code> wieder beenden."
       ],
+     "namePtBR": "Descomente o HTML",
+     "descriptionPtBR": [
+        "\"Comentar\" é uma forma de deixar anotações em seu código sem afetá-lo.",
+        "Comentar também é um jeito conveniente de deixar seu código inativo sem precisar apagá-lo por completo.",
+        "Você pode iniciar um comentário com <code>&#60;!--</code> e terminar seu comentário com <code>--&#62;</code>.",
+        "Remova o comentário dos elementos <code>h1</code>, <code>h2</code> e <code>p</code>."
+      ],
       "type": "waypoint"
     },
     {
@@ -197,6 +237,12 @@
         "Denk daran, dass du einen Kommentar mit <code>&#60;!--</code> anfangen und mit <code>--&#62;</code> wieder beenden kannst.",
         "Hier wirst du deinen Kommentar vor dem <code>h2</code> Element beenden müssen."
       ],
+     "namePtBR": "Comente o HTML",
+     "descriptionPtBR": [
+        "Lembre-se que para iniciar um comentário você precisa utilizar <code>&#60;!--</code>, e para terminar um comentário é necessário usar <code>--&#62;</code>.",
+        "Aqui, você deverá terminar o comentário antes que seu elemento <code>h2</code> inicie.",
+        "Comente o elemento <code>h1</code> e o elemento <code>p</code>, e deixe o elemento <code>h2</code> sem nenhum comentário."
+      ],
       "type": "waypoint"
     },
     {
@@ -223,8 +269,8 @@
       "descriptionEs": [
         "Los desarrolladores web tradicionalmente usan <code>Lorem Ipsum</code> como texto de relleno. Se llama texto Lorem Ipsum porque esas son las primeras dos palabras de una cita famosa de Cicerón de la Roma Antigua.",
         "El texto Lorem Ipsum ha sido usado como texto de relleno en las imprentas desde el siglo 16, y esta tradición continúa en la web.",
-        "Bueno, 5 siglos es bastante. Ya que estamos construyendo una aplicación de fotos de gatos (CatPhotoApp), ¡usemos algo llamado <code>Kitty Ipsum</code>!",
-        "Remplaza el texto dentro de tu elemento <code>p</code> con las primeras palabras de este texto kitty ipsum: <code>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</code>"
+        "Bueno, 5 siglos es bastante. Ya que estamos construyendo una aplicación de fotos de gatos (CatPhotoApp), ¡usemos un texto llamado <code>Kitty Ipsum</code>!",
+        "Reemplaza el texto dentro de tu elemento <code>p</code> con las primeras palabras de este texto kitty ipsum: <code>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</code>"
       ],
       "nameDe": "Waypoint: Fülle die Lücken mit Platzhalter-Text",
       "descriptionDe": [
@@ -233,6 +279,13 @@
         "\"Lorem Ipsum\" Text wurde seit dem 16. Jahrhundert von Schriftsetzern als Platzhalter verwendet. Und diese Tradition setzt sich im Web fort.",
         "Nun gut, fünf Jahrhunderte sind lange genug. Da wir eine CatPhotoApp entwickeln, lass uns stattdessen lieber \"Kitty Ipsum\" nutzen!",
         "Hier sind die ersten paar Wörter von \"Kitty Ipsum\", die du kopieren und an die richtige Stelle einfügen kannst: <code>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</code>"
+      ],
+     "namePtBR": "Preencha Espaços com Texto de Espaço Reservado",
+     "descriptionPtBR": [
+        "Desenvolvedores web tradicionalmente usam <code>Lorem Ipsum</code> como texto de preenchimento. Lorem Ipsum é chamado assim pois essas são as duas primeiras palavras de uma passagem famosa de Cícero da Roma Antiga.",
+        "O texto Lorem Ipsum tem sido utilizado como texto de espaço reservado por compositores desde o século 16, e esta tradição continua na web.",
+        "Bem, 5 séculos é um tempo longo o bastante. Já que estamos desenvolvendo um aplicativo sobre fotos de gatos (CatPhotoApp), vamos usar algo chamado <code>Kitty Ipsum</code>.",
+        "Substitua o texto dentro do seu elemento <code>p</code> pelas primeiras palavras deste texto Kitty Ipsum: <code>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</code>"
       ],
       "type": "waypoint"
     },
@@ -268,6 +321,12 @@
         "Lösche die Elemente <code>h1</code>, damit wir etwas Ordnung schaffen.",
         "Unser Smartphone hat nicht sehr viel vertikalen Raum.",
         "Lass uns die unwichtigen Elemente entfernen, damit wir unsere CatPhotoApp bauen können."
+      ],
+     "namePtBR": "Apague Elementos HTML",
+     "descriptionPtBR": [
+        "Nosso celular não possui muito espaço vertical.",
+        "Vamos eliminar os elementos desnecessários para começar a construir nosso CatPhotoApp.",
+        "Apague o elemento <code>h1</code> para simplificar o nosso espaço."
       ],
       "type": "waypoint"
     },
@@ -306,6 +365,15 @@
         "Wir können das bewerkstelligen, indem wir den \"style\" des <code>h2</code> Elements ändern.",
         "So könntest du die Textfarbe des <code>h2</code> Elements in Blau ändern: <code>&#60;h2 style=\"color: blue\"&#62;CatPhotoApp&#60;/h2&#62;</code>"
       ],
+     "namePtBR": "Substitua a Cor do Texto",
+     "descriptionPtBR": [
+        "Agora vamos substituir a cor de parte do nosso texto.",
+        "Podemos fazer isso mudando o <code>style</code> do elemento <code>h2</code>.",
+        "A propriedade de estilo responsável pela cor do texto se chama \"color\".",
+        "Você pode mudar a cor do texto de seu elemento <code>h2</code> para azul assim:",
+        "<code>&#60;h2 style=\"color: blue\"&#62;CatPhotoApp&#60;/h2&#62;</code>",
+        "Mude o estilo do elemento <code>h2</code> para que seu texto fique com a cor vermelha."
+      ],
       "type": "waypoint"
     },
     {
@@ -340,13 +408,12 @@
         "Con CSS, hay cientos de <code>propiedades CSS</code> que puedes usar para cambiar como un elemento se ve en una página web.",
         "Cuando ingresaste <code>&#60;h2 style=\"color: red\"&#62;CatPhotoApp&#60;h2&#62;</code>, le estuviste dando al elemento <code>h2</code> un <code>estilo en línea</code>",
         "Esa es una forma de agregar estilo a un elemento, pero una manera mejor es usando <code>Hojas de Estilo en Cascada (Cascading Style Sheets, CSS)</code>.",
-        "Al principio de tu código, crea un elemento <code>style</code> como este: <code>&#60;style&#62;&#60;/style&#62;</code>",
+        "Al principio de tu código, crea un elemento <code>style</code> como este:",
+        "<blockquote>&#60;style&#62;<br>&#60;/style&#62;</blockquote>",
         "Dentro de ese elemento style, puedes crear un <code>selector CSS</code> para todos los elementos <code>h2</code>. Por ejemplo, si quisieras que todos los elementos <code>h2</code> fueran rojos, tu elemento style se vería así:",
-        "<code>&#60;style&#62;</code>",
-        "&nbsp;&nbsp;<code>h2 {color: red;}</code>",
-        "<code>&#60;/style&#62;</code>",
+        "<blockquote>&#60;style&#62;<br>&nbsp;&nbsp;h2 {color: red;}<br>&#60;/style&#62;</blockquote>",
         "Fíjate que es importante tener llaves de apertura y de cierre (<code>{</code> y <code>}</code>) alrededor del estilo para cada elemento. También necesitas asegurarte que el estilo para tu elemento esté entre las etiquetas style de apertura y cierre. Finalmente, asegúrate de agregar el punto y coma al final de cada uno de los estilos de tu elemento.",
-        "Borra el atributo <code>style</code> de tu elemento <code>h2</code> y a cambio escribe un elemento <code>style</code> CSS.  Agrea el CSS necesario para hacer todos los elementos <code>h2</code> de color azul."
+        "Borra el atributo <code>style</code> de tu elemento <code>h2</code> y a cambio escribe un elemento <code>style</code> CSS. Agrega el CSS necesario para hacer todos los elementos <code>h2</code> de color azul."
       ],
       "nameDe": "Waypoint: Nutze CSS Selektoren um Elemente zu gestalten",
       "descriptionDe": [
@@ -357,6 +424,19 @@
         "Erstelle über deinem Code ein <code>style</code> Element: <code>&#60;style&#62;&#60;/style&#62;</code>",
         "Innerhalb des Style Elements kannst du einen CSS Selektor oder \"selector\" für alle <code>h2</code> Elemente erstellen. Wenn du zum Beispiel alle <code>h2</code> Elemente Rot färben willst, schreibst du: <code>&#60;style&#62;h2 {color: red;}&#60;/style&#62;</code>",
         "Beachte, dass du öffnende und schließende geschwungene Klammern (<code>{</code> und <code>}</code>) um jeden Style setzen solltest. Außerdem sollten deine Styles innerhalb dieser Klammern stehen. Zum Schluss benötigst du am Ende jedes Styles ein Semikolon."
+      ],
+     "namePtBR": "Use Seletores CSS para Estilizar Elementos",
+     "descriptionPtBR": [
+        "Com o CSS, existem centenas de <code>propriedades</code> que você pode utilizar para modificar a forma de como um elemento pode ser visto em uma página da internet.",
+        "Quando você usou o <code>&#60;h2 style=\"color: red\"&#62;CatPhotoApp&#60;h2&#62;</code>, você deu ao elemento <code>h2</code> um <code>estilo inline</code>.",
+        "Essa é uma forma de adicionar estilos a um elemento, mas o jeito recomendado para isso é utilizar <code>Folhas de Estilo em Cascata (Cascading Style Sheets, CSS)</code>.",
+        "Acima de seu código, crie um elemento <code>style</code> como esse: <code>&#60;style&#62;&#60;/style&#62;</code>",
+        "Dentro do elemento style, é possível criar um <code>seletor CSS</code> para todos os elementos <code>h2</code>. Por exemplo, se você quiser que todos os elementos <code>h2</code> tenham a cor vermelha, seu elemento style será assim:",
+        "<code>&#60;style&#62;</code>",
+        "&nbsp;&nbsp;<code>h2 {color: red;}</code>",
+        "<code>&#60;/style&#62;</code>",
+        "Observe que é importante utilizar as chaves de abertura e de fechamento (<code>{</code> e <code>}</code>) ao redor do estilo de cada elemento. Também é necessário que o estilo de seu elemento esteja entre as tags de abertura e fechamento. Por fim, não se esqueça de adicionar o ponto-e-vírgula no final de cada um dos estilos de seu elemento.",
+        "Apague o atributo <code>style</code> de seu elemento <code>h2</code> e então crie um elemento <code>style</code> CSS. Adicione o CSS necessário para fazer com que todos os elementos <code>h2</code> tenham a cor azul."
       ],
       "type": "waypoint"
     },
@@ -396,17 +476,13 @@
       "descriptionEs": [
         "Las clases son estilos reutilizables que pueden añadirse a elementos HTML.",
         "Aquí esta un ejemplo de una declaración de una clase CSS:",
-        "<code>&#60;style&#62;</code>",
-        "<code>&nbsp;&nbsp;.blue-text {</code>",
-        "<code>&nbsp;&nbsp;&nbsp;&nbsp;color: blue;</code>",
-        "<code>&nbsp;&nbsp;}</code>",
-        "<code>&#60;/style&#62;</code>",
+        "<blockquote>&#60;style&#62;<br>&nbsp;&nbsp;.blue-text {<br>&nbsp;&nbsp;&nbsp;&nbsp;color: blue;<br>&nbsp;&nbsp;}<br>&#60;/style&#62;</blockquote>",
         "Puedes ver que hemos creado una clase CSS llamada \"blue-text\" dentro de la etiqueta <code>&#60;style&#62;</code>",
         "Puedes aplicar una clase a un elemento HTML de esta manera:",
         "<code>&#60;h2 class=\"blue-text\"&#62;CatPhotoApp&#60;/h2&#62;</code>",
         "Nota que en tu elemento <code>style</code> CSS,  las clases deben comenzar con un punto. En los elementos HTML, las declaraciones de clase, NO deben comenzar con punto. ",
-        "En vez de de crear un nuevo elemento <code>style</code>, intenta eliminar la declaración de estilo de <code>h2</code> de tus elementos de estilo existentes y reemplazala por la declaración de clase <code>.red-text</code>.",
-        "Crea una clase CSS llamada <code>red-text</code> y aplicala a tu elemento <code>h2</code>"
+        "Dentro de tu elemento <code>style</code>, cambia el selector <code>h2</code> por <code>.red-text</code> y cambia el valor del color de <code>blue</code> a <code>red</code>.",
+        "Dale a tu elemento <code>h2</code> el atributo <code>class</code> con el valor de <code>'red-text'</code>."
       ],
       "nameDe": "Waypoint: Nutze eine CSS Klasse um ein Element zu gestalten",
       "descriptionDe": [
@@ -418,6 +494,22 @@
         "Du kannst eine Klasse folgendermaßen einem HTML Element beifügen: <code>&#60;h2 class=\"blue-text\"&#62;CatPhotoApp&#60;/h2&#62;</code>",
         "Beachte, dass Klassen in deinem CSS <code>style</code> Element mit einem Punkt beginngen sollten. In deinen Klassen-Deklarationen von HTML Elementen sollten diese nicht mit einem Punkt beginnen.",
         "Anstatt ein neues <code>style</code> Element zu erstellen, versuche die <code>h2</code> Style-Deklaration von deinem bereits bestehenden Style Element zu entfernen und sie mit der Klassen-Deklaration \".red-text\" zu ersetzen."
+      ],
+     "namePtBR": "Use Classes CSS para Estilizar Elementos",
+     "descriptionPtBR": [
+        "As classes são estilos reutilizáveis que podem ser adicionadas a elementos HTML.",
+        "Aqui está um exemplo de como declarar uma classe com CSS:",
+        "<code>&#60;style&#62;</code>",
+        "<code>&nbsp;&nbsp;.blue-text {</code>",
+        "<code>&nbsp;&nbsp;&nbsp;&nbsp;color: blue;</code>",
+        "<code>&nbsp;&nbsp;}</code>",
+        "<code>&#60;/style&#62;</code>",
+        "Veja que criamos uma classe CSS chamada \"blue-text\" no interior da tag <code>&#60;style&#62;</code>.",
+        "Você pode aplicar uma classe a um elemento HTML assim:",
+        "<code>&#60;h2 class=\"blue-text\"&#62;CatPhotoApp&#60;/h2&#62;</code>",
+        "Note que em seu elemento <code>style</code> CSS, as classes devem começar com um ponto. Já nos elementos HTML, as declarações de classes não devem começar com o ponto.",
+        "Ao invés de criar um novo elemento <code>style</code>, tente eliminar a declaração de estilo de <code>h2</code> dos elementos de estilo existentes, e troque ela pela declaração de classe <code>.red-text</code>.",
+        "Crie uma classe CSS chamada <code>red-text</code> e então a aplique em seu elemento <code>h2</code>."
       ],
       "type": "waypoint"
     },
@@ -454,9 +546,7 @@
       "descriptionEs": [
         "Recuerda que puedes adjuntar clases a elementos HTML utilizando <code>class=\"tu-clase-aqui\"</code> dentro de la etiqueta de apertura del elemento mismo.",
         "Recuerda que los selectores de clase CSS requieren un punto al principio, así:",
-        "<code>.blue-text {</code>",
-        "<code>&nbsp;&nbsp;color: blue;</code>",
-        "<code>}</code>",
+        "<blockquote>.blue-text {<br>&nbsp;&nbsp;color: blue;<br>}</blockquote>",
         "Pero recuerda también que las declaraciones de clase en elementos NO llevan punto:",
         "<code>&#60;h2 class=\"blue-text\"&#62;CatPhotoApp&#60;h2&#62;</code>",
         "Aplica la clase <code>red-text</code> a tus elementos <code>h2</code> y <code>p</code>"
@@ -466,6 +556,17 @@
         "Füge den <code>h2</code> und <code>p</code> Elementen die Klasse \"red-text\" hinzu.",
         "Du kannst Klassen zu HTML Elementen hinzufügen, indem du zum Beispiel <code>class=\"deine-klasse\"</code> innerhalb des öffnenden Tags schreibst.",
         "Du weißt, es gehört ein Punkt vor CSS Klassen: <code>.red-text { color: blue; }</code>. Aber diese Klassen-Deklarationen brauchen keinen Punkt: <code>&#60;h2 class=\"blue-text\"&#62;CatPhotoApp&#60;h2&#62;</code>"
+      ],
+     "namePtBR": "Estilize Múltiplos Elementos com uma Classe CSS",
+     "descriptionPtBR": [
+        "Lembre-se que é possível adicionar classes a elementos HTML ao utilizar <code>class=\"sua-classe-aqui\"</code> dentro da tag de abertura do elemento.",
+        "Relembre também que os seletores de classes CSS exigem um ponto em seu início, assim:",
+        "<code>.blue-text {</code>",
+        "<code>&nbsp;&nbsp;color: blue;</code>",
+        "<code>}</code>",
+        "Contudo, não se esqueça que as declarações de classes em elementos não utilizam ponto, assim:",
+        "<code>&#60;h2 class=\"blue-text\"&#62;CatPhotoApp&#60;h2&#62;</code>",
+        "Adicione a classe <code>red-text</code> aos seus elementos <code>h2</code> e <code>p</code>."
       ],
       "type": "waypoint"
     },
@@ -495,18 +596,18 @@
         "assert($(\"p\").length > 1, 'message: You need 2 <code>p</code> elements with Kitty Ipsum text.');",
         "assert(code.match(/<\\/p>/g) && code.match(/<\\/p>/g).length === code.match(/<p/g).length, 'message: Make sure each of your <code>p</code> elements has a closing tag.');",
         "assert.isTrue((/Purr\\s+jump\\s+eat/gi).test($(\"p\").text()), 'message: Your <code>p</code> element should contain the first few words of the provided additional <code>kitty ipsum text</code>.');",
-        "assert($(\"p:not([class])\").length === 1, 'message: Do not add a class attribute to your new <code>p</code> element.');",
+        "assert($(\"p:not([class])\").length === 1, 'message: Do not add a class attribute to the second <code>p</code> element, without removing it from the first one.');",
         "assert(parseInt($(\"p:not([class])\").css(\"font-size\"), 10) > 15, 'message: Give elements with the <code>p</code> tag a <code>font-size</code> of <code>16px</code>. Browser and Text zoom should be at 100%.');"
       ],
       "challengeType": 0,
       "nameEs": "Cambia el tamaño de fuente de un elemento.",
       "descriptionEs": [
         "El tamaño de fuente es controlado por la propiedad CSS \"font-size\", como aquí:",
-        "<code>h1 {</code>",
-        "<code>&nbsp;&nbsp;font-size: 30px;</code>",
-        "<code>}</code>",
+        "<blockquote>h1 {<br>&nbsp;&nbsp;font-size: 30px;<br>}</blockquote>",
         "Crea un segundo elemento <code>p</code> con el siguiente texto kitty ipsum: <code>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</code>",
-        "Dentro de la misma etiqueta <code>&#60;style&#62;</code> que creamos para tu clase <code>red-text</code>, pon el <code>font-size</code> de los elementos <code>p</code> a 16 pixeles (<code>16px</code>)."
+        "Dentro de la misma etiqueta <code>&#60;style&#62;</code> que creamos para tu clase <code>red-text</code>, pon el <code>font-size</code> de los elementos <code>p</code> a 16 pixeles (<code>16px</code>).",
+        "<strong>Nota</strong><br>Debido a diferencias en los navegadores, es posible que tengas que establecer el zoom en 100% para pasar las pruebas en este desafío.",
+        "Además, no agregues ningún atributo de clase a tu elemento <code>p</code>."
       ],
       "nameDe": "Waypoint: Ändere die Schriftgröße eines Elements",
       "descriptionDe": [
@@ -514,6 +615,15 @@
         "Schriftgröße wird von dem CSS Attribut \"font-size\" kontrolliert: <code>h1 { font-size: 30px; }</code>",
         "Zuerst erstellst du ein zweites <code>p</code> Element mit dem folgenden Kitty Ipsum Text: <code>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</code>",
         "Versuche nun beiden <code>p</code> Elementen die Schriftgröße von 16 Pixeln (<code>16px</code>) zu geben. Du kannst das innerhalb des selben <code>&#60;style&#62;</code> Tags machen, welches wir für deine \"red-text\" Klasse erstellt haben."
+      ],
+     "namePtBR": "Mude o Tamanho da Fonte de um Elemento",
+     "descriptionPtBR": [
+        "O tamanho da fonte é controlado pela propriedade CSS \"font-size\", como aqui:",
+        "<code>h1 {</code>",
+        "<code>&nbsp;&nbsp;font-size: 30px;</code>",
+        "<code>}</code>",
+        "Crie um segundo elemento <code>p</code> que tenha o seguinte texto Kitty Ipsum: <code>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</code>",
+        "Dentro da mesma tag <code>&#60;style&#62;</code> que criamos para sua classe <code>red-text</code>, modifique o <code>font-size</code> dos elementos <code>p</code> para que tenha um tamanho de 16 pixels (<code>16px</code>)."
       ],
       "type": "waypoint"
     },
@@ -550,16 +660,23 @@
       "descriptionEs": [
         "Puedes establecer el tipo de letra de un elemento usando la propiedad <code>font-family</code>.",
         "Por ejemplo, si quieres establecer el tipo de letra de tu elemento <code>h2</code> como <code>Sans-serif</code>, usa el siguiente CSS:",
-        "<code>h2 {</code>",
-        "<code>&nbsp;&nbsp;font-family: Sans-serif;</code>",
-        "<code>}</code>",
-        "Haga que todos sus elementos <code>p</code> utilicen el tipo de letra <code>Monospace</code>."
+        "<blockquote>h2 {<br>&nbsp;&nbsp;font-family: Sans-serif;<br>}</blockquote>",
+        "Haz que todos tus elementos <code>p</code> utilicen el tipo de letra <code>Monospace</code>."
       ],
       "nameDe": "Waypoint: Definiere die Schriftart eines Elements",
       "descriptionDe": [
         "Definiere für alle <code>p</code> Elemente die Schriftart \"Monospace\".",
         "Du kannst einem Element mit \"font-family\" eine Schriftart zuweisen.",
         "Wenn du zum Beispiel deinem <code>h2</code> Element die Schriftart \"Sans-serif\" zuweisen willst, kannst du das mit dem folgenden CSS tun: <code>h2 { font-family: Sans-serif; }</code>"
+      ],
+     "namePtBR": "Defina a Fonte para um Elemento",
+     "descriptionPtBR": [
+        "Você pode estabelecer o estilo de fonte para um elemento ao utilizar a propriedade <code>font-family</code>.",
+        "Por exemplo, se você quiser estabelecer o estilo de fonte de seu elemento <code>h2</code> como <code>Sans-serif</code>, você poderá utilizar o seguinte código em CSS:",
+        "<code>h2 {</code>",
+        "<code>&nbsp;&nbsp;font-family: Sans-serif;</code>",
+        "<code>}</code>",
+        "Faça com que todos os elementos <code>p</code> utilizem o estilo de fonte <code>Monospace</code>."
       ],
       "type": "waypoint"
     },
@@ -599,12 +716,12 @@
       "challengeType": 0,
       "nameEs": "Importar un tipo de letra de Google",
       "descriptionEs": [
-        "Ahora, importemos y apliquemos un tipo de letra de Google (tenga en cuenta que si Google es bloqueado en su país, debera saltarse este desafio).",
-        "Primero, haga un <code>llamado</code> a Google para tomar el tipo de letra <code>Lobster</code> y para cargarlo en su HTML.",
-        "Copie la siguiente porción de código y péguela en la parte superior de su editor de texto:",
+        "Ahora, importemos y apliquemos un tipo de letra de Google (ten en cuenta que si Google está bloqueado en tu país, deberás saltarte este desafío).",
+        "Primero, haz un <code>llamado</code> a Google para obtener el tipo de letra <code>Lobster</code> y para cargarlo en tu HTML.",
+        "Copia la siguiente porción de código y pégala en la parte superior de tu editor de texto:",
         "<code>&#60;link href=\"http://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\"&#62;</code>",
-        "Ahora establezca <code>Lobster</code> como valor de font-family en su elemento <code>h2</code>.",
-        "Aplique la familia de fuente (<code>font-family</code>) <code>Lobster</code> a su elemento <code>h2</code>."
+        "Ahora puedes establecer <code>Lobster</code> como valor de font-family de tu elemento <code>h2</code>.",
+        "Aplica el tipo de letra (<code>font-family</code>) <code>Lobster</code> a tu elemento <code>h2</code>."
       ],
       "nameDe": "Waypoint: Importiere eine Google Font",
       "descriptionDe": [
@@ -613,6 +730,14 @@
         "Kopiere den folgenden Code und füge diesen in deinen Editor über dem <code>style</code> Element ein:",
         "<code>&#60;link href=\"http://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\"&#62;</code>",
         "Jetzt kannst du \"Lobster\" als font-family Attribut zu deinem <code>h2</code> Element hinzufügen."
+      ],
+     "namePtBR": "Importe uma Fonte a Partir do Google Fonts",
+     "descriptionPtBR": [
+        "Agora, vamos importar e aplicar um estilo de fonte por meio do Google Fonts.",
+        "Primeiro, faça um <code>chamado</code> ao Google Fonts para poder utilizar a fonte chamada <code>Lobster</code> e carregá-la em seu HTML.",
+        "Para fazer isso, copie o código abaixo e insira-o na parte superior de seu editor de texto:",
+        "<code>&#60;link href=\"http://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\"&#62;</code>",
+        "Agora, estableça <code>Lobster</code> como o valor para font-family em seu elemento <code>h2</code>."
       ],
       "type": "waypoint"
     },
@@ -655,15 +780,13 @@
         "assert(new RegExp(\"-->\", \"gi\").test(code), 'message: Be sure to close your comment by adding <code>--&#62;</code>.');"
       ],
       "challengeType": 0,
-      "nameEs": "Especifique como deben degradarse los tipos de letra",
+      "nameEs": "Especifica cómo deben degradarse los tipos de letra",
       "descriptionEs": [
-        "Hay diversos tipos de letra disponibles por omisión en todos los navegadores.  Estos incluyend <code>Monospace</code>, <code>Serif</code> y <code>Sans-Serif</code>",
+        "Hay diversos tipos de letra disponibles por omisión en todos los navegadores.  Estos incluyen <code>Monospace</code>, <code>Serif</code> y <code>Sans-Serif</code>",
         "Cuando un tipo de letra no está disponible, puedes decirle al navegador que \"degrade\" a otro tipo de letra.",
         "Por ejemplo, si quieres que un elemento use el tipo <code>Helvetica</code>, o que se degrade a <code>Sans-Serif</code> cuando <code>Helvetica</code> no esté disponible, puedes usar el siguiente estilo CSS:",
-        "<code>p {</code>",
-        "<code>&nbsp;&nbsp;font-family: Helvetica, Sans-Serif;</code>",
-        "<code>}</code>",
-        "Ahora ponga como comentarios sus llamadas a tipos de letra de Google, de forma que el tipo <code>Lobster</code> no esté disponible. Note como se degrada al tipo <code>Monospace</code>."
+        "<blockquote>p {<br>&nbsp;&nbsp;font-family: Helvetica, Sans-Serif;<br>}</blockquote>",
+        "Ahora pon en forma de comentario tu llamada a tipos de letra de Google, de forma que el tipo <code>Lobster</code> no esté disponible. Nota cómo se degrada al tipo <code>Monospace</code>."
       ],
       "nameDe": "Waypoint: Spezifiziere die Rangfolge von Schriftarten",
       "descriptionDe": [
@@ -672,6 +795,16 @@
         "Wenn du zum Beispiel einem Element die Schriftart \"Helvetica\" geben möchtest, aber gleichzeitig die alternative Schrift \"Sans-Serif\" laden willst, wenn \"Helvetica\" nicht verfügbar ist, kannst du diesen CSS Style verwenden: <code>p { font-family: Helvetica, Sans-Serif; }</code>",
         "Es gibt verschiedene Schriftarten, die jedem Browser standardmäßig zur Verfügung stehen. Das sind unter anderem \"Monospace\", \"Serif\" und \"Sans-Serif\". Probiere deinem <code>h2</code> Element gleichzeitig die Schriftart \"Lobster\" und als Alternative \"Monospace\" zu geben.",
         "Jetzt versuche den Aufruf von Google Fonts in deinem HTML auszukommentieren, sodass \"Lobster\" nicht zur Verfügung steht. Beachte, wie nun die Schriftart \"Monospace\" geladen wird."
+      ],
+     "namePtBR": "Especifique como as Fontes Devem se Degradar",
+     "descriptionPtBR": [
+        "Existem diversas fontes que estão disponíveis por padrão nos navegadores de internet, incluindo <code>Monospace</code>, <code>Serif</code> e <code>Sans-Serif</code>.",
+        "No entanto, quando uma fonte não está disponível, podemos dizer ao navegador que \"degrade\" a outro tipo de fonte.",
+        "Por exemplo, se você deseja que um elemento use a fonte <code>Helvetica</code>, e que degrade para a fonte <code>Sans-Serif</code> quando a <code>Helvetica</code> não estiver disponível, você pode utilizar o seguinte CSS:",
+        "<code>p {</code>",
+        "<code>&nbsp;&nbsp;font-family: Helvetica, Sans-Serif;</code>",
+        "<code>}</code>",
+        "Agora, comente o seu chamado para a fonte do Google, para que a fonte <code>Lobster</code> não esteja disponível. Note como a fonte degrada para <code>Monospace</code>."
       ],
       "type": "waypoint"
     },
@@ -717,7 +850,7 @@
       "descriptionEs": [
         "Puedes agregar imágenes a tu sitio web mediante el uso del elemento <code>img</code>, y apuntar a la URL específica de una imagen utilizando el atributo <code>src</code>.",
         "Un ejemplo de esto sería:",
-        "<code>&#60img src=\"http://www.your-image-source.com/your-image.jpg\"&#62</code>",
+        "<code>&#60img src=\"http://www.origen-de-tu-imagen.com/tu-imagen.jpg\"&#62</code>",
         "Ten en cuenta que en la mayoría de los casos, los elementos <code>img</code> son de cierre automático.",
         "Prueba con esta imagen:",
         "<code>https://bit.ly/fcc-relaxing-cat</code>"
@@ -728,6 +861,15 @@
         "Du kannst <code>img</code> Elemente verwenden, um Bilder in deine Website einzubauen. Um zur URL des Bildes zu verweisen, benutzt du das <code>src</code> Attribut.",
         "Ein Beispiel dafür wäre <code>&#60img src=\"www.bild-quelle.com/bild.jpg\"/&#62</code>. Beachte, dass <code>img</code> Elemente in den meisten Fällen selbstschließend sind.",
         "Versuche es mit diesem Bild: <code>https://bit.ly/fcc-relaxing-cat</code>"
+      ],
+     "namePtBR": "Adicione Imagens em sua Página Web",
+     "descriptionPtBR": [
+        "Você pode adicionar imagens à sua página da internet com o uso do elemento <code>img</code>, e apontar para a URL específica de uma imagem utilizando o atributo <code>src</code>.",
+        "Um exemplo para isso seria:",
+        "<code>&#60img src=\"http://www.your-image-source.com/your-image.jpg\"&#62</code>",
+        "Observe que na maior parte dos casos, os elementos <code>img</code> são de fechamento automático.",
+        "Agora, tente fazer isso com essa imagem:",
+        "<code>https://bit.ly/fcc-relaxing-cat</code>"
       ],
       "type": "waypoint"
     },
@@ -772,20 +914,28 @@
       "challengeType": 0,
       "nameEs": "Da tamaño a tus imágenes",
       "descriptionEs": [
-        "CSS tiene una propiedad llamada <code>width</code> que controla el ancho de un elemento. Al igual que con los tipos de letra, usaremos <code>px</code> (píxeles) para especificar el ancho de la imagen. ",
+        "CSS tiene una propiedad llamada <code>width</code> que controla el ancho de un elemento. Al igual que con las fuentes de letra, usaremos <code>px</code> (píxeles) para especificar el ancho de la imagen. ",
         "Por ejemplo, si queremos crear una clase CSS llamada <code>larger-image</code> que le de a los elementos HTML un ancho de 500 píxeles, usaríamos:",
-        "<code>&#60;estilo&#62;</code>",
-        "<code>&nbsp;&nbsp;.larger-image{</code>",
-        "<code>&nbsp;&nbsp;&nbsp;&nbsp;width: 500px;</code>",
-        "<code>&nbsp;&nbsp;}</code>",
-        "<code>&#60;/style&#62;</code>",
-        "Crea una clase llamada <code>smaller-image</code> y utilízala para cambiar el tamaño de la imagen de modo que sea de sólo 100 píxeles de ancho."
+        "<blockquote>&#60;style&#62;<br>&nbsp;&nbsp;.larger-image {<br>&nbsp;&nbsp;&nbsp;&nbsp;width: 500px;<br>&nbsp;&nbsp;}<br>&#60;/style&#62;</blockquote>",
+        "Crea una clase llamada <code>smaller-image</code> y utilízala para cambiar el tamaño de la imagen de modo que sea de sólo 100 píxeles de ancho.",
+        "<strong>Nota</strong><br>Debido a diferencias en los navegadores, es posible que tengas que establecer el zoom en 100% para pasar las pruebas en este desafío."
       ],
       "nameDe": "Waypoint: Skaliere deine Bilder",
       "descriptionDe": [
         "Erstelle eine Klasse mit dem Namen <code>smaller-image</code> und verwende sie, um dein Bild auf 100 Pixel zu skalieren.",
         "Die Breite eines Elements wird mit dem CSS Attribut <code>width</code> kontrolliert. Wie bei Schriftarten verwenden wir Pixel (px) um die Größe zu definieren.",
         "Wenn wir also die CSS Klasse \"larger-image\" erstellen wollen, um HTML Elementen eine Breite von 500 Pixeln zu verleihen, verwenden wir: <code>&#60;style&#62; .larger-image { width: 500px; } &#60;/style&#62;</code>"
+      ],
+     "namePtBR": "Dê um Tamanho para suas Imagens",
+     "descriptionPtBR": [
+        "O CSS possui uma propriedade chamada <code>width</code>, que controla a largura de um elemento. Da mesma forma que com as fontes, vamos utilizar <code>px</code> (pixels) como medida para especificar a largura de nossa imagem.",
+        "Por exemplo, se queremos criar uma classe CSS chamada <code>larger-image</code> que dê aos elementos HTML uma largura de 500px, vamos usar:",
+        "<code>&#60;estilo&#62;</code>",
+        "<code>&nbsp;&nbsp;.larger-image{</code>",
+        "<code>&nbsp;&nbsp;&nbsp;&nbsp;width: 500px;</code>",
+        "<code>&nbsp;&nbsp;}</code>",
+        "<code>&#60;/style&#62;</code>",
+        "Crie uma classe chamada <code>smaller-image</code> e a utilize para mudar o tamanho da imagem para que ela tenha apenas 100 pixels de largura."
       ],
       "type": "waypoint"
     },
@@ -839,16 +989,10 @@
       "nameEs": "Añade bordes alrededor de tus elementos",
       "descriptionEs": [
         "Los bordes CSS tienen propiedades como <code>style</code>, <code>color</code> y <code>width</code>",
-        "Por ejemplo, si queremos crear un borde de 5 píxeles rojo alrededor de un elemento HTML, podríamos utilizar esta clase:",
-        "<code>&#60;style&#62;</code>",
-        "<code>&nbsp;&nbsp;.thin-red-border {</code>",
-        "<code>&nbsp;&nbsp;&nbsp;&nbsp;border-color: red;</code>",
-        "<code>&nbsp;&nbsp;&nbsp;&nbsp;border-width: 5px;</code>",
-        "<code>&nbsp;&nbsp;&nbsp;&nbsp;border-style: solid;</code>",
-        "<code>&nbsp;&nbsp;}</code>",
-        "<code>&#60;/style&#62;</code>",
-        "Crea una clase llamada <code>thick-green-border</code> que ponga un borde verde de 10 píxeles de ancho con un estilo de <code>solid</code> en torno a un elemento HTML, y aplica esa clase a tu foto del gato. ",
-        "Recuerda que puedes aplicar múltiples clases a un elemento separando una clase de otra con un espacio. Haces esto dentro de tu atributo <code>class</code>. Por ejemplo:",
+        "Por ejemplo, si queremos crear un borde rojo de 5 píxeles alrededor de un elemento HTML, podríamos utilizar esta clase:",
+        "<blockquote>&#60;style&#62;<br>&nbsp;&nbsp;.thin-red-border {<br>&nbsp;&nbsp;&nbsp;&nbsp;border-color: red;<br>&nbsp;&nbsp;&nbsp;&nbsp;border-width: 5px;<br>&nbsp;&nbsp;&nbsp;&nbsp;border-style: solid;<br>&nbsp;&nbsp;}<br>&#60;/style&#62;</blockquote>",
+        "Crea una clase llamada <code>thick-green-border</code> que ponga un borde verde de 10 píxeles de ancho con un estilo <code>solid</code> en torno a un elemento HTML, y aplica esa clase a tu foto del gato. ",
+        "Recuerda que puedes aplicar clases múltiples a un elemento separando cada clase con un espacio dentro del atributo <code>class</code>. Por ejemplo:",
         "<code>&lt;img class=\"clase1 clase2\"&gt;</code>"
       ],
       "nameDe": "Waypoint: Füge Rahmen zu deinen Elementen hinzu",
@@ -856,6 +1000,21 @@
         "Erstelle die Klasse \"thick-green-border\", welche einen 10 Pixel dicken, grünen Rahmen mit dem Style \"solid\" um ein HTML Element setzt. Füge diese Klasse zu deinem Katzenfoto hinzu.",
         "CSS Rahmen haben Attribute wie Style, Color und Width.",
         "Wenn wir nun einen roten, 5 Pixel dicken Rahmen um ein HTML Element setzen wollen, würden wir so vorgehen: <code>&#60;style&#62; .thin-red-border { border-color: red; border-width: 5px; border-style: solid; } &#60;/style&#62;</code>"
+      ],
+     "namePtBR": "Adicione Bordas ao Redor de seus Elementos",
+     "descriptionPtBR": [
+        "As bordas em CSS possuem propriedades como <code>style</code>, <code>color</code> e <code>width</code>",
+        "Por exemplo, se queremos criar uma borda com tamanho de 5 pixels de cor vermelha ao redor de um elemento HTML, podemos utilizar esta classe:",
+        "<code>&#60;style&#62;</code>",
+        "<code>&nbsp;&nbsp;.thin-red-border {</code>",
+        "<code>&nbsp;&nbsp;&nbsp;&nbsp;border-color: red;</code>",
+        "<code>&nbsp;&nbsp;&nbsp;&nbsp;border-width: 5px;</code>",
+        "<code>&nbsp;&nbsp;&nbsp;&nbsp;border-style: solid;</code>",
+        "<code>&nbsp;&nbsp;}</code>",
+        "<code>&#60;/style&#62;</code>",
+        "Crie uma classe chamada <code>thick-green-border</code> que insira uma borda verde de 10 pixels de largura com um estilo <code>solid</code> ao redor de um elemento HTML, e então adicione essa classe em sua foto com o gato.",
+        "Lembre que você pode aplicar diversas classes a um elemento separando cada uma das classes com um espaço, dentro do atributo <code>class</code>. Por exemplo:",
+        "<code>&lt;img class=\"clase1 clase2\"&gt;</code>"
       ],
       "type": "waypoint"
     },
@@ -906,26 +1065,23 @@
         "assert(parseInt($(\"img\").css(\"border-top-left-radius\")) > 8, 'message: Your image should have a border radius of <code>10px</code>');"
       ],
       "challengeType": 0,
-      "nameEs": "Añade bordes alrededor de tus elementos",
+      "nameEs": "Agrega esquinas redondeadas usando Border Radius",
       "descriptionEs": [
-        "Los bordes CSS tienen propiedades como <code>style</code>, <code>color</code> y <code>width</code>",
-        "Por ejemplo, si queremos crear un borde de 5 píxeles rojo alrededor de un elemento HTML, podríamos utilizar esta clase:",
-        "<code>&#60;style&#62;</code>",
-        "<code>&nbsp;&nbsp;.thin-red-border {</code>",
-        "<code>&nbsp;&nbsp;&nbsp;&nbsp;border-color: red;</code>",
-        "<code>&nbsp;&nbsp;&nbsp;&nbsp;border-width: 5px;</code>",
-        "<code>&nbsp;&nbsp;&nbsp;&nbsp;border-style: solid;</code>",
-        "<code>&nbsp;&nbsp;}</code>",
-        "<code>&#60;/style&#62;</code>",
-        "Crea una clase llamada <code>thick-green-border</code> que ponga un borde verde de 10 píxeles de ancho con un estilo de <code>solid</code> en torno a un elemento HTML, y aplica esa clase a tu foto del gato. ",
-        "Recuerda que puedes aplicar múltiples clases a un elemento separando una clase de otra con un espacio. Haces esto dentro de tu atributo <code>class</code>. Por ejemplo:",
-        "<code>&lt;img class=\"class1 class2\"&gt;</code>"
+        "Tu foto del gato tiene actualmente esquinas angulares. Podemos redondear esas esquinas con una propiedad CSS llamada <code>border-radius</code>.",
+        "Puedes especificar <code>border-radius</code> usando pixeles. Dale a tu foto del gato un <code>border-radius</code> de <code>10px</code>.",
+        "Nota: este desafío acepta múltiples soluciones. Por ejemplo, puedes agregar <code>border-radius</code> ya sea a la clase <code>.thick-green-border</code> o a la clase <code>.smaller-image</code>."
       ],
       "nameDe": "Waypoint: Füge abgerundete Ecken mit Border Radius hinzu",
       "descriptionDe": [
         "Gib deinem Katzenbild einen <code>border-radius</code> von 10 Pixeln.",
         "Das Bild hat nun spitze Ecken. Wir können diese Ecken mit dem CSS Attribut <code>border-radius</code> abrunden.",
         "Du kannst einen <code>border-radius</code> mit Pixeln deklarieren. Das beeinflusst die Rundung der Ecken. Füge dieses Attribut zu deiner <code>thick-green-border</code> Klasse hinzu und setze es auf 10 Pixel."
+      ],
+     "namePtBR": "Insira Bordas Arredondadas com o Border Radius",
+     "descriptionPtBR": [
+        "Sua foto com o gato possui cantos pontiagudos. Podemos arredondar os cantos com uma propriedade CSS chamado <code>border-radius</code>.",
+        "Você pode especificar um <code>border-radius</code> com pixels. Adicione um <code>border-radius</code> de <code>10px</code> para a sua foto.",
+        "Nota: Este desafio permite várias soluções possíveis. Por exemplo, você pode adicionar o <code>border-radius</code> tanto para a classe <code>.thick-green-border</code> como para a classe <code>.smaller-image</code>."
       ],
       "type": "waypoint"
     },
@@ -976,16 +1132,20 @@
         "assert(code.match(/50%/g), 'message: Be sure to use a percentage instead of a pixel value.');"
       ],
       "challengeType": 0,
-      "nameEs": "Añade esquinas redondeadas con un radio de borde",
+      "nameEs": "Crea imágenes circulares usando Border Radius",
       "descriptionEs": [
-        "Tu foto del gato actualmente tiene esquinas cuadradas. Podemos redondear esas esquinas con una propiedad CSS llamada <code>border-radius</code>. ",
-        "Puedes especificar un <code>border-radius</code> en píxeles. Esto afectará lo redondeadas de las esquinas. Añade esta propiedad a tu clase <code>thick-green-border</code> y establecela a <code>10px</code>. ",
-        "Dale a tu foto del gato un <code>border-radius</code> de <code>10px</code>."
+        "Además de pixeles, puedes especificar un <code>border-radius</code> usando porcentajes.",
+        "Dale a tu foto del gato un <code>border-radius</code> de <code>50%</code>."
       ],
       "nameDe": "Waypoint: Erstelle runde Bilder mit einem Border Radius",
       "descriptionDe": [
         "Gib deinem Katzenfoto einen <code>border-radius</code> von 50 %.",
         "Du kannst einem <code>border-radius</code> neben Pixeln auch Prozentwerte zuweisen."
+      ],
+     "namePtBR": "Deixe as Imagens Circulares com o Border Radius",
+     "descriptionPtBR": [
+        "Assim como pixels, você também pode usar o <code>border-radius</code> com porcentagens.",
+        "Dê para a sua foto de gato um <code>border-radius</code> de <code>50%</code>."
       ],
       "type": "waypoint"
     },
@@ -1043,12 +1203,12 @@
       "challengeType": 0,
       "nameEs": "Enlaza páginas externas con elementos ancla",
       "descriptionEs": [
-        "Los elementos <code>a</code>, también conocido como elementos <code>ancla</code>, se utilizan para enlazar a contenido fuera de la página actual.",
+        "Los elementos <code>a</code>, también conocidos como elementos <code>ancla</code>, se utilizan para enlazar a contenido fuera de la página actual.",
         "Aquí está un diagrama de un elemento <code>a</code>. En este caso, el elemento <code>a</code> se utiliza en el medio de un elemento de párrafo, lo que significa que el enlace aparecerá en el medio de una frase. ",
-        "<a href=\"http://i.imgur.com/hviuZwe.png\" data-lightbox=\"img-enlarge\"> <img class=\"img-responsive\" title=\"Haga clic para ampliar\" alt=\"un diagrama de cómo las etiquetas de anclaje se componen con el mismo texto, como en la siguiente línea\" src=\"http://i.imgur.com/hviuZwe.png\"></a> ",
+        "<a href=\"http://i.imgur.com/hviuZwe.png\" data-lightbox=\"img-enlarge\"> <img class=\"img-responsive\" title=\"Haz clic para ampliar\" alt=\"un diagrama de cómo las etiquetas de ancla se componen con el mismo texto, como en la siguiente línea\" src=\"http://i.imgur.com/hviuZwe.png\"></a> ",
         "He aquí un ejemplo:",
-        "<code>&#60;p&#62;Aquí está un &#60;a href=\"http://freecodecamp.com\"&#62; enlace a Free Code Camp&#60;/a&#62; para que lo siga.&#60;/p&#62;</code>",
-        "Crea un elemento <code>a</code> que se vincule a <code>http://freecatphotoapp.com</code> y tenga como <code>texto de anclaje</code> \"fotos de gatos\"."
+        "<code>&#60;p&#62;Aquí está un &#60;a href=\"http://freecodecamp.com\"&#62; enlace a Free Code Camp&#60;/a&#62; para que lo sigas.&#60;/p&#62;</code>",
+        "Crea un elemento <code>a</code> que se vincule a <code>http://freecatphotoapp.com</code> y tenga como <code>texto de ancla</code> \"fotos de gatos\"."
       ],
       "nameDe": "Waypoint: Verlinke externe Seiten mit Anker Elementen",
       "descriptionDe": [
@@ -1056,6 +1216,15 @@
         "So sieht ein <code>a</code> Element aus. In diesem Fall wird es innerhalb eines Paragraphen Elements verwendet. Das bedeutet dein Link wird innerhalb des Satzes erscheinen.",
         "<img class=\"img-responsive\" alt=\"Ein Beispiel wie Anker Tags geschrieben werden.\" src=\"https://www.evernote.com/l/AHSaNaepx_lG9LhhPkVYmagcedpmAeITDsQB/image.png\">",
         "Hier ist ein Beispiel: <code>&#60;p&#62;Hier ist ein &#60;a href=\"http://freecodecamp.com\"&#62; Link zum Free Code Camp&#60;/a&#62; für dich zum Folgen.&#60;/p&#62;</code>"
+      ],
+     "namePtBR": "Ligue Páginas Externas com o Elemento Âncora",
+     "descriptionPtBR": [
+        "Os elementos <code>a</code>, também conhecidos como elementos <code>âncora</code>, são utilizados para ligar conteúdo fora da página atual.",
+        "Aqui está um diagrama de um elemento <code>a</code>. Neste caso, o elemento <code>a</code> é utilizado no meio de um elemento de parágrafo, o que significa que o link externo aparecerá no meio de uma frase.",
+        "<a href=\"http://i.imgur.com/hviuZwe.png\" data-lightbox=\"img-enlarge\"> <img class=\"img-responsive\" title=\"Clique para ampliar\" alt=\"diagrama de como as tags de âncora se compõem com o texto, como na próxima linha\" src=\"http://i.imgur.com/hviuZwe.png\"></a>",
+        "Veja um exemplo:",
+        "<code>&#60;p&#62;Aqui está um &#60;a href=\"http://freecodecamp.com\"&#62; link ligado ao Free Code Camp&#60;/a&#62; para que você o siga.&#60;/p&#62;</code>",
+        "Crie um elemento <code>a</code> que esteja ligado ao site <code>http://freecatphotoapp.com</code> e tenha como <code>texto de âncora</code> \"fotos de gatos\"."
       ],
       "type": "waypoint"
     },
@@ -1118,20 +1287,29 @@
         "assert(code.match(/<\\/a>/g) && code.match(/<a/g) && code.match(/<\\/a>/g).length === code.match(/<a/g).length, 'message: Make sure each of your <code>a</code> elements has a closing tag.');"
       ],
       "challengeType": 0,
-      "nameEs": "Anida un elemento de anclaje dentro de un párrafo",
+      "nameEs": "Anida un elemento de ancla dentro de un párrafo",
       "descriptionEs": [
         "Una vez más, aquí está un diagrama de un elemento <code>a</code> para tu referencia:",
         "<a href=\"http://i.imgur.com/hviuZwe.png\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" title=\"Pulse para ampliar\" alt=\"un diagrama de como se componen las etiquetas de anclaje con el texto como en la siguiente línea\" src=\"http://i.imgur.com/hviuZwe.png\"></a>",
         "He aquí un ejemplo:",
-        "<code>&#60;p&#62;Aquí un &#60;a href=\"http://freecodecamp.com\"&#62; enlace a Free Code Camp&#60;/a&#62; para que lo sigas.&#60;/p&#62;</code>",
-        "<code>anidamiento</code> significa poner un elemento dentro de otro elemento.",
-        "Ahora anida el elemento <code>a</code> existente dentro de un nuevo elemento <code>p</code> para que el párrafo que lo rodee diga \"View more cat photos\", pero donde sólo \"cat photos\" sea un enlace, y el resto sea texto plano ."
+        "<code>&#60;p&#62;Aquí hay un &#60;a href=\"http://freecodecamp.com\"&#62; enlace a Free Code Camp&#60;/a&#62; para que lo sigas.&#60;/p&#62;</code>",
+        "<code>Anidamiento</code> simplemente significa poner un elemento dentro de otro elemento.",
+        "Ahora anida el elemento <code>a</code> existente dentro de un nuevo elemento <code>p</code> (justo después del elemento <code>h2</code> que ya tienes) de tal forma que el párrafo que lo rodee diga \"View more cat photos\", pero que sólo \"cat photos\" sea un enlace, y el resto sea texto plano ."
       ],
       "nameDe": "Waypoint Umschließe ein Anker Element mit einem Paragraphen",
       "descriptionDe": [
         "Jetzt umschließe dein <code>a</code> Element mit einem <code>p</code> Element und dem Text \"click here for cat photos\". Nur \"cat photos\" soll ein Link ein – der Rest normaler Text.",
         "Hier ist nochmal ein Beispiel für ein <code>a</code> Element: <img class=\"img-responsive\" alt=\"Ein Beispiel wie Anker Tags geschrieben werden.\" src=\"https://www.evernote.com/l/AHSaNaepx_lG9LhhPkVYmagcedpmAeITDsQB/image.png\">",
         "So könnte es aussehen: <code>&#60;p&#62;Hier ist ein &#60;a href=\"http://freecodecamp.com\"&#62; Link zum Free Code Camp&#60;/a&#62; für dich zum Folgen.&#60;/p&#62;</code>"
+      ],
+     "namePtBR": "Aninhe o Elemento Âncora no Interior de um Parágrafo",
+     "descriptionPtBR": [
+        "Outra vez, aqui está um diagrama de um elemento <code>a</code> para você usar como referência.",
+        "<a href=\"http://i.imgur.com/hviuZwe.png\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" title=\"Clique para ampliar\" alt=\"diagrama de como são as tags de âncora com o texto como na linha seguinte\" src=\"http://i.imgur.com/hviuZwe.png\"></a>",
+        "Veja um exemplo:",
+        "<code>&#60;p&#62;Este é um &#60;a href=\"http://freecodecamp.com\"&#62; link ligado ao Free Code Camp&#60;/a&#62; para que você o siga.&#60;/p&#62;</code>",
+        "<code>Aninhamento</code> significa ter um elemento no interior de outro elemento.",
+        "Agora, aninhe o elemento <code>a</code> existente dentro de um novo elemento <code>p</code> de forma que o parágrafo diga \"View more cat photos\", mas onde apenas \"cat photos\" seja um link, e o resto seja texto comum."
       ],
       "type": "waypoint"
     },
@@ -1187,7 +1365,7 @@
       "nameEs": "Haz vínculos muertos utilizando el símbolo de numero",
       "descriptionEs": [
         "A veces quieres agregar elementos <code>a</code> a tu sitio web antes de saber qué enlazarán.",
-        "Esto también es útil cuando estás cambiando el comportamiento de un enlace usando <code>jQuery</code>, que aprenderemos más adelante.",
+        "Esto también es útil cuando estás cambiando el comportamiento de un enlace usando <code>jQuery</code>, lo cual aprenderemos más adelante.",
         "Reemplaza el atributo <code>href</code> de tu elemento <code>a</code> con un <code>#</code>, también conocido como un símbolo de número o de <em>hash</em>, para convertirlo en un vínculo muerto."
       ],
       "nameDe": "Waypoint: Erstelle tote Links mit dem Hash Symbol",
@@ -1196,6 +1374,12 @@
         "Manchmal wirst du <code>a</code> Elemente zu deiner Website hinzufügen möchten, ohne dass du das Ziel des Links kennst.",
         "Das ist auch nützlich, wenn du die Funktion eines Links mit <code>jQuery</code> verändern willst. Das werden wir noch behandeln.",
         "Ersetze den Inhalt des <code>href</code> Attributs deines <code>a</code> Elements mit einem Hash Symbol um einen toten Link zu erzeugen."
+      ],
+     "namePtBR": "Crie Links Inativos com o Símbolo Cerquilha",
+     "descriptionPtBR": [
+        "As vezes você pode querer adicionar elementos <code>a</code> em sua página web antes de saber o link que as ligará.",
+        "Isso também é útil quando você desejar mudar o comportamento de um link utilizando <code>jQuery</code>, o que vamos aprender mais adiante.",
+        "Substitua o atributo <code>href</code> de seu elemento <code>a</code> por um <code>#</code>, também conhecido como símbolo de <em>hash</em> ou hashtag. Isso o transformará em um link inativo."
       ],
       "type": "waypoint"
     },
@@ -1254,7 +1438,7 @@
       "challengeType": 0,
       "nameEs": "Convierte una imagen en un vínculo",
       "descriptionEs": [
-        "Puedes convertir elementos en enlaces al anidarlos con un elemento <code>a</code>.",
+        "Puedes convertir elementos en enlaces al anidarlos dentro de un elemento <code>a</code>.",
         "Anida tu imagen dentro de un elemento <code>a</code>. He aquí un ejemplo: ",
         "<code>&#60;a href=\"#\"&#62;&#60;img src=\"http://bit.ly/fcc-running-cats\"/&#62;&#60;/a&#62;</code>",
         "Recuerda usar <code>#</code> como atributo <code>href</code> de tu elemento <code>a</code> con el fin de convertirlo en un vínculo muerto.",
@@ -1267,6 +1451,13 @@
         "Umschließe nun dein Bild mit einem <code>a</code> Element. Hier ist ein Beispiel: <code>&#60;a href=\"#\"&#62;&#60;img src=\"http://bit.ly/fcc-running-cats\"/&#62;&#60;/a&#62;</code>",
         "Vergewissere dich, dass du ein Hash Symbol (#) innerhalb des <code>href</code> Attributs des <code>a</code> Elements nutzt, um daraus einen toten Link zu machen.",
         "Sobald du das gemacht hast, kannst du mit der Maus über dein Bild fahren. Der normale Mauszeiger sollte nun zu einer Hand für Links werden. Das Bild ist jetzt ein Link."
+      ],
+     "namePtBR": "Transforme uma Imagem em um Link",
+     "descriptionPtBR": [
+        "Você pode transformar elementos em links ao aninhá-los com um elemento <code>a</code>.",
+        "Aninhe sua imagem dentro de um elemento <code>a</code>. Temos aqui um exemplo.",
+        "<code>&#60;a href=\"#\"&#62;&#60;img src=\"http://bit.ly/fcc-running-cats\"/&#62;&#60;/a&#62;</code>",
+        "Lembre de usar <code>#</code> como atributo <code>href</code> de seu elemento <code>a</code> para tornar o link inativo."
       ],
       "type": "waypoint"
     },
@@ -1323,10 +1514,10 @@
       "challengeType": 0,
       "nameEs": "Agrega texto alternativo a una imagen para dar Accesibilidad",
       "descriptionEs": [
-        "Los atributos <code>alt</code> también conocidos como <code>texto alternativo</code>, son lo que se presentarán en caso que el navegador no puede mostrar la imagen. Los atributos <code>alt</code> también son importantes para los usuarios ciegos o con deficiencia visual para entender lo que una imagen retrata. Y los motores de búsqueda también examinan los atributos <code>alt</code>. ",
+        "Los atributos <code>alt</code> también conocidos como <code>texto alternativo</code>, son lo que se presentarán en caso que el navegador no pueda mostrar la imagen. Los atributos <code>alt</code> también son importantes para los usuarios ciegos o con deficiencia visual para entender lo que una imagen retrata. Los motores de búsqueda también examinan los atributos <code>alt</code>. ",
         "En resumen, ¡cada imagen debe tener un atributo <code>alt</code>!",
         "Puedes agregar un atributo <code>alt</code> justo en el elemento <code>img</code> así:",
-        "<code>&#60img src=\"www.your-image-source.com/your-image.jpg\" alt=\"tu texto alternativo\"&#62</code>",
+        "<code>&#60img src=\"www.fuente-de-tu-imagen.com/tu-imagen.jpg\" alt=\"tu texto alternativo\"&#62</code>",
         "Añade un atributo <code>alt</code> con el texto <code>A cute orange cat lying on its back</code> a nuestra foto del gato."
       ],
       "nameDe": "Waypoint: Füge Alt Text für mehr Barrierefreiheit hinzu",
@@ -1336,6 +1527,14 @@
         "Kurz gesagt: Jedes Bild sollte ein <code>alt</code> Attribut beinhalten!",
         "<code>alt</code> Attribute sind nützlich um Personen – und Web Crawlers wie Google – zu sagen was in einem Foto abgebildet wird. Das ist extrem wichtig, damit blinde oder visuell eingeschränkte Menschen den Inhalt der Website verstehen.",
         "Du kannst das <code>alt</code> Attribut direkt in das Img Element einfügen: <code>&#60img src=\"www.bild-quelle.com/bild.jpg\" alt=\"Dein Alt Text.\"/&#62</code>"
+      ],
+     "namePtBR": "Dê Acessibilidade a uma Imagem com Texto Alternativo",
+     "descriptionPtBR": [
+        "Os atributos <code>alt</code>, também conhecidos como <code>texto alternativo</code>, serão apresentados caso se por qualquer motivo o navegador não possa mostrar a imagem. Os atributos <code>alt</code> também são importantes para que usuários cegos ou com alguma deficiência visual possam entender o que uma imagem retrata. Além disso, os motores de busca também examinam os atributos <code>alt</code>.",
+        "Em resumo: Todas as imagem devem ter um atributo <code>alt</code>!",
+        "Você pode adicionar um atributo <code>alt</code> já no elemento <code>img</code> assim:",
+        "<code>&#60img src=\"www.your-image-source.com/your-image.jpg\" alt=\"seu texto alternativo\"&#62</code>",
+        "Adicione um atributo <code>alt</code> com o texto <code>A cute orange cat lying on its back</code> para a nossa foto com o gato."
       ],
       "type": "waypoint"
     },
@@ -1399,10 +1598,7 @@
         "HTML tiene un elemento especial para la creación de <code>listas no ordenadas</code>, o listas con estilo viñeta.",
         "Las listas no ordenadas comienzan con un elemento <code>&#60;ul&#62;</code>. A continuación contienen una cantidad de elementos <code>&#60;li&#62;.</code>",
         "Por ejemplo: ",
-        "<code>&#60;ul&#62;</code>",
-        "&nbsp;&nbsp;<code>&#60;li&#62;leche&#60;/li&#62;</code>",
-        "&nbsp;&nbsp;<code>&#60;li&#62;queso&#60;/li&#62;</code>",
-        "<code>&#60;/ul&#62;</code>",
+        "<blockquote>&#60;ul&#62;<br>&nbsp;&nbsp;&#60;li&#62;leche&#60;/li&#62;<br>&nbsp;&nbsp;&#60;li&#62;queso&#60;/li&#62;<br>&#60;/ul&#62;</blockquote>",
         "creará una lista con viñetas y con elementos \"leche\" y \"queso\".",
         "Elimina los dos últimos elementos <code>p</code> y en la parte inferior de la página crea una lista no ordenada de tres cosas que los gatos aman."
       ],
@@ -1412,6 +1608,18 @@
         "HTML hat ein spezielles Element zum Erstellen von ungeordneten Listen.",
         "ungeordnete Listen starten mit einem <code>&#60;ul&#62;</code> Element. Dann beinhalten sie eine gewisse Anzahl an <code>&#60;li&#62;</code> Elementen.",
         "Als Beispiel: <code>&#60;ul&#62;&#60;li&#62;Milch&#60;/li&#62;&#60;li&#62;Käse&#60;/li&#62;&#60;/ul&#62;</code> würde eine ungeordnete Liste für \"Milch\" und \"Käse\" erstellen."
+      ],
+     "namePtBR": "Crie uma Lista Não Ordenada com Marcadores",
+     "descriptionPtBR": [
+        "O HTML possui um elemento especial para a criação de <code>listas não ordenadas</code>, ou listas com marcadores.",
+        "As listas não ordenadas iniciam com um elemento <code>&#60;ul&#62;</code>. Logo após, possuem uma série de elementos <code>&#60;li&#62;.</code>",
+        "Por exemplo:",
+        "<code>&#60;ul&#62;</code>",
+        "&nbsp;&nbsp;<code>&#60;li&#62;leite&#60;/li&#62;</code>",
+        "&nbsp;&nbsp;<code>&#60;li&#62;queijo&#60;/li&#62;</code>",
+        "<code>&#60;/ul&#62;</code>",
+        "Isso criará uma lista com marcadores que tem como elementos \"leite\" e \"queijo\".",
+        "Apague os dois últimos elementos <code>p</code> e no final da página crie uma lista não ordenada com três coisas que os gatos adoram."
       ],
       "type": "waypoint"
     },
@@ -1483,10 +1691,7 @@
         "HTML tiene un elemento especial para la creación de <code>listas ordenadas</code>, o listas de estilo numerado.",
         "Las listas ordenadas comienzan con un elemento <code>&#60;ol&#62;</code>. Luego contienen un número de elementos <code>&#60;li&#62;.</code>",
         "Por ejemplo:",
-        "<code>&#60;ol&#62;</code>",
-        "&nbsp;&nbsp;<code>&#60;li&#62;Garfield&#60;/li&#62;</code>",
-        "&nbsp;&nbsp;<code>&#60;li&#62;Sylvester&#60;/li&#62;</code>",
-        "<code>&#60;/ol&#62;</code>",
+        "<blockquote>&#60;ol&#62;<br>&nbsp;&nbsp;&#60;li&#62;Garfield&#60;/li&#62;<br>&nbsp;&nbsp;&#60;li&#62;Sylvester&#60;/li&#62;<br>&#60;/ol&#62;</blockquote>",
         "creará una lista numerada con \"Garfield\" y \"Sylvester\".",
         "Crea una lista ordenada de los 3 cosas que más odian los gatos."
       ],
@@ -1496,6 +1701,18 @@
         "HTML beinhaltet ein spezielles Element für geordnete Listen.",
         "Geordnete Listen starten mit einem <code>&#60;ol&#62;</code> Element. Dann enthalten sie eine gewisse Anzahl an <code>&#60;li&#62;</code> Elementen.",
         "Als beispiel: <code>&#60;ol&#62;&#60;li&#62;hydrogen&#60;/li&#62;&#60;li&#62;Helium&#60;/li&#62;&#60;/ol&#62;</code> würde eine nummerierte Liste aus \"Hydrogen\" und \"Helium\" erstellen."
+      ],
+     "namePtBR": "Crie uma Lista Ordenada",
+     "descriptionPtBR": [
+        "O HTML possui um elemento especial para a criação de <code>listas ordenadas</code>, ou listas numeradas.",
+        "As listas ordenadas iniciam com um elemento <code>&#60;ol&#62;</code>. Logo após, contém uma série de elementos <code>&#60;li&#62;.</code>",
+        "Por exemplo:",
+        "<code>&#60;ol&#62;</code>",
+        "&nbsp;&nbsp;<code>&#60;li&#62;Garfield&#60;/li&#62;</code>",
+        "&nbsp;&nbsp;<code>&#60;li&#62;Sylvester&#60;/li&#62;</code>",
+        "<code>&#60;/ol&#62;</code>",
+        "Isso criará uma lista numerada com \"Garfield\" e \"Sylvester\".",
+        "Crie uma lista ordenada com as três coisas que os gatos mais odeiam."
       ],
       "type": "waypoint"
     },
@@ -1564,7 +1781,7 @@
       "nameEs": "Crea un campo de texto",
       "descriptionEs": [
         "Ahora vamos a crear un formulario web.",
-        "Los campos de texto son una manera conveniente de obtener retroalimentación de su usuario.",
+        "Los campos de texto son una manera conveniente de obtener retroalimentación de tu usuario.",
         "Puedes crear uno como este:",
         "<code>&#60;input type=\"text\"&#62;</code>",
         "Ten en cuenta que los elementos <code>input</code> son de cierre automático.",
@@ -1575,6 +1792,15 @@
         "Nun erstellen wir ein Web Formular. Erstelle ein Textfeld unter deinen Listen.",
         "Eingabefelder sind ein guter Weg, um Daten von Nutzern zu erhalten.",
         "So kannst du eines erstellen: <code>&#60;input type=\"text\"&#62;</code>. Beachte, dass <code>input</code> Elemente selbstschließend sind."
+      ],
+     "namePtBR": "Crie um Campo de Texto",
+     "descriptionPtBR": [
+        "Agora vamos criar um formulário web.",
+        "Os campos de texto são uma forma conveniente de obter uma resposta do usuário.",
+        "Você pode criar um assim:",
+        "<code>&#60;input type=\"text\"&#62;</code>",
+        "Note que os elementos <code>input</code> são de fechamento automático.",
+        "Crie um elemento <code>input</code> de tipo <code>text</code> abaixo de suas listas."
       ],
       "type": "waypoint"
     },
@@ -1637,7 +1863,8 @@
       ],
       "tests": [
         "assert($(\"input[placeholder]\").length > 0, 'message: Add a <code>placeholder</code> attribute text <code>input</code> element.');",
-        "assert($(\"input\") && $(\"input\").attr(\"placeholder\") && $(\"input\").attr(\"placeholder\").match(/cat\\s+photo\\s+URL/gi), 'message: Set the value of your placeholder attribute to \"cat photo URL\".');"
+        "assert($(\"input\") && $(\"input\").attr(\"placeholder\") && $(\"input\").attr(\"placeholder\").match(/cat\\s+photo\\s+URL/gi), 'message: Set the value of your placeholder attribute to \"cat photo URL\".');",
+        "assert($(\"input[type=text]\").length > 0 && code.match(/URL\\s*[\"\\']\\s*\\/?>/gi), 'message: The finished <code>input</code> element should have valid syntax.');"
       ],
       "challengeType": 0,
       "nameEs": "Agrega un texto de relleno a un campo de texto",
@@ -1652,6 +1879,13 @@
         "Setze bei deinem <code>input</code> Element den Wert für <code>placeholder</code> auf \"cat photo URL\".",
         "Platzhalter erscheinen in <code>input</code> Feldern, bevor der Nutzer etwas eingibt.",
         "Du kannst Platzhalter auf folgende Weise erstellen: <code>&#60;input type=\"text\" placeholder=\"Das ist ein Platzhalter.\"&#62;</code>"
+      ],
+     "namePtBR": "Adicione Texto Indicativo a um Campo de Texto",
+     "descriptionPtBR": [
+        "O texto indicativo é o que aparece em um campo de texto antes que um usuário tenha escrito algo.",
+        "Você pode criar um texto indicativo assim:",
+        "<code>&#60;input type=\"text\" placeholder=\"isso é um texto indicativo\"&#62;</code>",
+        "Estabeleça o valor do <code>texto indicativo</code> do seu campo de texto como \"cat photo URL\"."
       ],
       "type": "waypoint"
     },
@@ -1731,6 +1965,13 @@
         "Du kannst Web Formulare bauen, die Daten zu einem Server übertragen – und das nur mit HTML. Das wird möglich, indem du eine Aktion für dein <code>form</code> Element bestimmst.",
         "Zum Beispiel: <code>&#60;form action=\"/url-wohin-du-deine-formular-daten-senden-willst\"&#62;&#60;/form&#62;</code>"
       ],
+     "namePtBR": "Crie um Elemento de Formulário",
+     "descriptionPtBR": [
+        "É possível construir formulários web que realmente enviem dados a um servidor utilizando nada além de HTML puro. Você pode fazer isso especificando uma ação em seu elemento <code>form</code>.",
+        "Por exemplo:",
+        "<code>&#60;form action=\"/url-para-onde-você-quer-enviar-os-dados-do-formulário\"&#62;&#60;/form&#62;</code>",
+        "Aninhe seu campo de texto em um elemento <code>form</code>. Adicione o atributo <code>action=\"/submit-cat-photo\"</code> para este elemento de formulário."
+      ],
       "type": "waypoint"
     },
     {
@@ -1795,7 +2036,7 @@
       "tests": [
         "assert($(\"form\").children(\"button\").length > 0, 'message: Your form should have a button inside it.');",
         "assert($(\"button\").attr(\"type\") === \"submit\", 'message: Your submit button should have the attribute <code>type</code> set to <code>submit</code>.');",
-        "assert($(\"button\").text().match(/submit/gi), 'message: Your submit button should have the text \"Submit\".');",
+        "assert($(\"button\").text().match(/^\\s*submit\\s*$/gi), 'message: Your submit button should only have the text \"Submit\".');",
         "assert(code.match(/<\\/button>/g) && code.match(/<button/g) && code.match(/<\\/button>/g).length === code.match(/<button/g).length, 'message: Make sure your <code>button</code> element has a closing tag.');"
       ],
       "challengeType": 0,
@@ -1811,6 +2052,13 @@
         "Füge eine Schaltfläche zum Senden mit dem Typ \"submit\" und \"Submit\" als Text zu deinem <code>form</code> Element hinzu.",
         "Lass uns nun eine Schaltfläche zum Senden zu deinem Formlar hinzufügen. Durch einen Klick auf diese Schaltfläche werden die Daten des Formulars an die URL gesendet, welche du in dem <code>action</code> Attribut deines Formulars angegeben hast.",
         "Hier ist ein Beispiel einer solchen Schaltfläche: <code>&#60;button type=\"submit\"&#62;Diese Schaltfläche überträgt die Daten des Formulars.&#60;/button&#62;</code>"
+      ],
+     "namePtBR": "Inclua um Botão de Enviar a um Formulário",
+     "descriptionPtBR": [
+        "Vamos inserir um elemento <code>submit</code> ao seu formulário. Ao clicar neste botão, os dados inseridos serão enviados para a URL especificada no atributo <code>action</code> do formulário.",
+        "Aqui está um exemplo de um botão de enviar:",
+        "<code>&#60;button type=\" submit\"&#62;este botão enviará o formulário&#60;/button&#62;</code>",
+        "Adicione um botão de enviar ao seu elemento <code>form</code> com o tipo <code>submit</code> e com o texto \"Submit\"."
       ],
       "type": "waypoint"
     },
@@ -1884,13 +2132,21 @@
         "Puedes especificar un campo obligatorio en un formulario para que tu usuario no pueda enviar el formulario hasta que lo haya llenado.",
         "Por ejemplo, si quieres requerir obligatoriamente un campo de texto, puedes agregar la palabra <code>required</code> dentro de tu elemento <code>input</code>, usarías: <code>&#60;input type=\"text\" required&#62;</code> ",
         "Haz de tu campo de texto un campo obligatorio, de manera que tu usuario no pueda enviar el formulario sin completar este campo.",
-        "A continuación, intenta enviar el formulario sin ingresar texto alguno. ¿Ves cómo tu formulario HTML5 te notifica que el campo es obligatorio?"
+        "Luego, intenta enviar el formulario sin ingresar texto alguno. ¿Ves cómo tu formulario HTML5 te notifica que el campo es obligatorio?",
+        "Nota: Este campo no funciona en Safari."
       ],
       "nameDe": "Waypoint: Nutze HTML5 um ein Pflichtfeld zu erstellen",
       "descriptionDe": [
         "Mache aus deinem <code>input</code> Feld ein Pflichtfeld – \"required\" – damit deine Nutzer das Formular nicht abschicken können, ohne dieses Feld auszufüllen.",
         "Du kannst bestimmte Felder eines Formulars als Pflichtfelder deklarieren. Damit ist es deinen Nutzern nicht mehr möglich, das Formular abzuschicken, ohne die Pflichtfelder auszufüllen.",
         "Um zum Beispiel ein Textfeld als Pflichtfeld zu deklarieren, kannst du einfach ein \"required\" innerhalb deines <code>input</code> Elements hinzufügen: <code>&#60;input type=\"text\" required&#62;</code>"
+      ],
+     "namePtBR": "Use HTML5 para Especificar Campos Obrigatórios",
+     "descriptionPtBR": [
+        "Você pode especificar um campo como obrigatório para que seu usuário não consiga enviar o formulário até que o tenha completado.",
+        "Por exemplo, se você quiser tornar obrigatório um campo de texto, basta adicionar a palavra <code>required</code> dentro de seu elemento <code>input</code> assim: <code>&#60;input type=\"text\" required&#62;</code>",
+        "Faça com que seu campo de texto seja obrigatório, de forma que o usuário não possa enviar o formulário sem ter completado esse campo.",
+        "Após isso, tente enviar o formulário sem digitar nenhum texto no campo. Percebe como seu formulário HTML5 mostra que o campo é obrigatório?"
       ],
       "type": "waypoint"
     },
@@ -1968,12 +2224,12 @@
       "challengeType": 0,
       "nameEs": "Crea un Conjunto de botones de radio",
       "descriptionEs": [
-        "Puedes usar <code>botones de radio</code> para las preguntas en las que desea que el usuario sólo le de una de varias posibles respuestas.",
+        "Puedes usar <code>botones de radio</code> para las preguntas en las que deseas que el usuario sólo pueda dar una respuesta.",
         "Los botones de radio son un tipo del elemento <code>input</code>",
         "Cada uno de los botones de radio debe estar anidado dentro de su propio elemento <code>label</code>.",
         "Todos los botones de radio relacionados deben tener el mismo atributo <code>name</code>.",
         "He aquí un ejemplo de un botón de radio:",
-        "<code>&#60;label&#62;&#60;input type=\"radio\" name=\"indoor-outdoor\"&#62; Indoor&#60;/label&#62;</code>",
+        "<code>&#60;label&#62;&#60;input type=\"radio\" name=\"dentro-fuera\"&#62; Dentro&#60;/label&#62;</code>",
         "Agrega un par de botones de radio a tu formulario. Uno debe tener la opción de <code>indoor</code> y el otro debe tener la opción <code>outdoor</code>. "
       ],
       "nameDe": "Waypoint: Erstelle ein paar Optionsfelder",
@@ -1984,6 +2240,16 @@
         "Jedes deiner Optionsfelder sollte innerhalb des eigenen <code>label</code> Elements liegen.",
         "Alle Optionsfelder mit Bezug zueinander sollten das gleiche <code>name</code> Attribut teilen.",
         "Ein Beispiel eines Optionsfeldes: <code>&#60;label&#62;&#60;input type=\"radio\" name=\"indoor-outdoor\"&#62; Indoor&#60;/label&#62;</code>"
+      ],
+     "namePtBR": "Crie um Conjunto de Botões de Seleção",
+     "descriptionPtBR": [
+        "É possível utilizar botões de seleção (botões de rádio) para perguntas nas quais o usuário deverá selecionar apenas uma resposta, dentre várias possíveis.",
+        "Os botões de seleção são um tipo de elemento <code>input</code>",
+        "Cada um dos botões de seleção deve estar contido dentro de seu próprio elemento <code>label</code>.",
+        "Todos os botões de seleção relacionados devem ter o mesmo atributo <code>name</code>.",
+        "Temos aqui um exemplo de um botão de seleção/rádio:",
+        "<code>&#60;label&#62;&#60;input type=\"radio\" name=\"indoor-outdoor\"&#62; Indoor&#60;/label&#62;</code>",
+        "Adicione um par de botões de seleção ao seu formulário. Um deles deve ter a opção <code>indoor</code> enquanto o outro deve ter a opção <code>outdoor</code>."
       ],
       "type": "waypoint"
     },
@@ -2063,17 +2329,27 @@
       "descriptionEs": [
         "Los formularios suelen usar <code>casillas de verificación</code> para preguntas que pueden tener más de una respuesta.",
         "Las casillas de verificación son un tipo del elemento <code>input</code>",
-        "Cada una de tus casillas de verificación deben ser anidado dentro de su propio elemento <code>label</code>.",
+        "Cada una de tus casillas de verificación debe ser anidada dentro de su propio elemento <code>label</code>.",
         "Todas las entradas de casillas de verificación relacionadas deben tener el mismo atributo <code>name</code>.",
         "He aquí un ejemplo de una casilla de verificación:",
-        "<code>&#60;label&#62;&#60;input type=\"checkbox\" name=\"personality\"&#62; Cariñoso&#60;/label&#62;</code>",
-        "Añade a tu formulario un conjunto de tres casillas de verificación. Cada casilla de verificación debe estar anidada dentro de su propio elemento <code>label</code>. Las tres deben compartir el atributo <code>name</code>."
+        "<code>&#60;label&#62;&#60;input type=\"checkbox\" name=\"personalidad\"&#62; Cariñoso&#60;/label&#62;</code>",
+        "Añade a tu formulario un conjunto de tres casillas de verificación. Cada casilla de verificación debe estar anidada dentro de su propio elemento <code>label</code>. Las tres deben tener <code>personality</code> como su atributo <code>name</code>."
       ],
       "nameDe": "Waypoint: Erstelle ein paar Kontrollkästchen",
       "descriptionDe": [
         "Füge deinem Formular drei Kontrollkästchen hinzu. Jedes dieser Elemente sollte innerhalb seines eigenen <code>label</code> Elements stehen. Alle sollten das gleiche <code>name</code> Attribut \"personality\" teilen.",
         "Formulare nutzen Kontrollkästchen meistens für Fragen, die mehrerer Antworten bedürfen.",
         "Als Beispiel: <code>&#60;label&#62;&#60;input type=\"checkbox\" name=\"personality\"&#62; liebevoll&#60;/label&#62;</code>"
+      ],
+     "namePtBR": "Crie um Conjunto de Caixas de Seleção",
+     "descriptionPtBR": [
+        "Os formulários costumam utilizar caixas de seleção para perguntas que podem ter mais de uma resposta.",
+        "As caixas de seleção são um tipo de elemento <code>input</code>",
+        "Cada uma de suas caixas de seleção deve ser aninhada dentro do próprio elemento <code>label</code>.",
+        "Todas as caixas de seleção relacionadas devem ter o mesmo atributo <code>name</code>.",
+        "Veja aqui um exemplo de uma caixa de verificação:",
+        "<code>&#60;label&#62;&#60;input type=\"checkbox\" name=\"personality\"&#62; Carinhoso&#60;/label&#62;</code>",
+        "Adicione ao seu formulário um conjunto de três caixas de verificação. Cada uma delas deve estar aninhada dentro de seu próprio elemento <code>label</code>. As três devem compartilhar o atributo <code>name</code>."
       ],
       "type": "waypoint"
     },
@@ -2150,7 +2426,7 @@
       "nameEs": "Marca botones de radio y casillas de verificación por omisión",
       "descriptionEs": [
         "Puedes marcar por omisión una casilla de verificación o un botón de radio usando el atributo <code>checked</code>.",
-        "Para ello, sólo tienes que añadir la palabra \"checked\" en el interior de un elemento de entrada. Por ejemplo:",
+        "Para ello, sólo tienes que añadir la palabra \"checked\" en el interior de un elemento <code>input</code>. Por ejemplo:",
         "<code>&#60;input type=\"radio\" name=\"nombre-de-prueba\" checked&#62;</code>",
         "Establece como marcados por omisión el primero de tus <code>botones de radio</code> y la primera <code>casilla de verificación</code>."
       ],
@@ -2159,6 +2435,13 @@
         "Stelle sicher, dass jeweilse dein erstes Optionsfeld und Kontrollkästchen standardmäßig markiert sind.",
         "Das kannst du erreichen, indem beiden das Attribut <code>checked</code> beigefügt wird.",
         "Um das zu bewerkstelligen, füge einfach \"checked\" innerhalb eines Eingabefeldes hinzu. Als Beispiel: <code>&#60;input type=\"radio\" name=\"test-name\" checked&#62;</code>"
+      ],
+     "namePtBR": "Deixe Botões e Caixas de Seleção Ativados por Padrão",
+     "descriptionPtBR": [
+        "É possível deixar um botão ou caixa de seleção ativado por padrão ao utilizar o atributo <code>checked</code>.",
+        "Para isso, basta você acrescentar a palavra \"checked\" no interior de um elemento de entrada. Por exemplo:",
+        "<code>&#60;input type=\"radio\" name=\"nome-de-teste\" checked&#62;</code>",
+        "Estabeleça como marcados por padrão o primeiro dos seus <code>botões de seleção/rádio</code> e a primeira <code>caixa de seleção</code>."
       ],
       "type": "waypoint"
     },
@@ -2252,6 +2535,14 @@
         "Wie jedes andere Element – das sich nicht selbst schließt –  kannst du ein <code>div</code> Element mit <code>&#60;div&#62;</code> öffnen und mit <code>&#60;/div&#62;</code> wieder schließen.",
         "Versuche deine öffnende <code>div</code> Auszeichnung überhalb des <code>p</code> Elements von  \"Things cats love\" und das schließende <code>div</code> unterhalb der schließenden <code>ol</code> Auszeichnung zu platzieren. Damit befinden sich beide Listen innerhalb eines <code>div</code>"
       ],
+     "namePtBR": "Aninhe Muitos Elementos Dentro de um só Elemento Div",
+     "descriptionPtBR": [
+        "O elemento <code>div</code>, também conhecido como elemento de divisão, é um contentor de propósito geral para outros elementos.",
+        "O elemento <code>div</code> é provavelmente o elemento HTML mais utilizado. Ele é útil para adicionar o CSS de suas próprias declarações de classe para todos os elementos que o contém.",
+        "Da mesma forma que qualquer outro elemento sem fechamento automático, você deve abrir uma tag <code>div</code> com <code>&#60;div&#62;</code> e fechá-la em outra linha com <code>&#60;/div&#62;</code>.",
+        "Tente colocar sua tag de abertura <code>div</code> acima do elemento <code>p</code> \"Things cat love\", e sua tag de fechamento de <code>div</code> depois da tag de fechamento do <code>ol</code>, para que cada uma de suas listas esteja dentro de um <code>div</code>.",
+        "Aninhe suas listas \"Things cats love\" e \"Things cats hate\" no interior de um único elemento <code>div</code>."
+      ],
       "type": "waypoint"
     },
     {
@@ -2332,10 +2623,17 @@
       "descriptionEs": [
         "Puedes fijar el color de fondo de un elemento con la propiedad <code>background-color</code>.",
         "Por ejemplo, si quieres que el color de fondo de un elemento sea verde (<code>green</code>), dentro de tu elemento <code>style</code> pondrías:",
+        "<blockquote>.green-background {<br>&nbsp;&nbsp;background-color: green;<br>}</blockquote>",
+        "Crea una clase llamada <code>gray-background</code> con la propiedad <code>background-color</code> en gris (<code>gray</code>). Asigna esta clase a tu elemento <code>div</code> ."
+      ],
+     "namePtBR": "Dê uma Cor de Fundo a um Elemento Div",
+     "descriptionPtBR": [
+        "Você pode acrescentar uma cor de fundo de um elemento com a propriedade <code>background-color</code>.",
+        "Por exemplo, se você quiser que a cor de fundo de um elemento seja verde (<code>green</code>), dentro de seu elemento <code>style</code> seria assim:",
         "<code>.green-background {</code>",
         "<code>&nbsp;&nbsp;background-color: green;</code>",
         "<code>}</code>",
-        "Crea una clase llamada <code>gray-background</code> con la propiedad <code>background-color</code> en gris (<code>gray</code>). Asigna esta clase a tu elemento <code>div</code> ."
+        "Crie uma classe chamada <code>gray-background</code> com a propriedade <code>background-color</code> em cinza (<code>gray</code>). Depois, adicione essa classe ao seu elemento <code>div</code>."
       ]
     },
     {
@@ -2424,6 +2722,15 @@
         "He aquí un ejemplo de cómo le das la identificación <code>cat-photo-app</code> a tu elemento <code>h2</code>:",
         "<code>&#60;h2 id=\"cat-photo-app\"></code>",
         "Dale a tu elemento <code>form</code> la id <code>cat-photo-form</code>."
+      ],
+     "namePtBR": "Estabeleça a ID de um Elemento",
+     "descriptionPtBR": [
+        "Além das classes, cada elemento HTML também pode ter um atributo de identificação chamado <code>id</code>.",
+        "Existem várias vantagens ao utilizar atributos <code>id</code>, e você aprenderá mais sobre elas quando começar a utilizar jQuery.",
+        "Os atributos <code>id</code> devem ser únicos. Os navegadores não o obrigarão a isso, mas isso é amplamente reconhecido como uma boa prática. Assim, não dê um mesmo atributo <code>id</code> a mais de um elemento.",
+        "Veja aqui um exemplo de como dar a id <code>cat-photo-app</code> ao seu elemento code>h2</code>:",
+        "<code>&#60;h2 id=\"cat-photo-app\"></code>",
+        "Dê ao seu elemento <code>form</code> a id <code>cat-photo-form</code>."
       ]
     },
     {
@@ -2510,12 +2817,20 @@
       "nameEs": "Usa un atributo ID para dar estilo a un elemento",
       "descriptionEs": [
         "Una cosa buena sobre los atributos <code>id</code> es que, al igual que con clases, puedes darles estilo usando CSS.",
-        "He aquí un ejemplo de cómo puedes tomar tu elemento con atributo <code>id</code> en <code>cat-photo-element</code> y ponerle el color de fondo verde. En tu elemento <code>style</code>: ",
+        "He aquí un ejemplo de cómo puedes tomar tu elemento con atributo <code>id</code> de <code>cat-photo-element</code> y ponerle el color de fondo verde. En tu elemento <code>style</code>: ",
+        "<blockquote>#cat-photo-element {<br>&nbsp;&nbsp;background-color: green;<br>}</blockquote>",
+        "Ten en cuenta que dentro de tu elemento <code>style</code>, siempre referencias clases poniendo un <code>.</code> en frente de sus nombres. Y siempre referencias identificaciones poniendo un <code>#</code> frente a sus nombres. ",
+        "Trata de darle a tu formulario, que ahora tiene el atributo <code>id</code> en <code>cat-photo-form</code>, un fondo verde."
+      ],
+     "namePtBR": "Use um Atributo ID para Estilizar um Elemento",
+     "descriptionPtBR": [
+        "Algo interessante sobre os atributos <code>id</code> é que, da mesma forma que com as classes, é possível dar estilos a eles usando CSS.",
+        "Aqui está um exemplo de como você pode usar seu elemento com atributo <code>id</code> em <code>cat-photo-element</code> e dar a ele a cor de fundo verde.",
         "<code>#cat-photo-element {</code>",
         "<code>&nbsp;&nbsp;background-color: green;</code>",
         "<code>}</code>",
-        "Ten en cuenta que dentro de tu elemento <code>style</code>, siempre referencias clases poniendo un <code>.</code> en frente de sus nombres. Y siempre referencias identificaciones poniendo un <code>#</code> frente a sus nombres. ",
-        "Trata de darle a tu formulario, que ahora tiene el atributo <code>id</code> en <code>cat-photo-form</code>, un fondo verde."
+        "Note que dentro de seu elemento <code>style</code>, você deve sempre referenciar uma classe colocando um <code>.</code> logo antes de seu nome. Já com uma id, você deve referenciar colocando um <code>#</code> antes de seu nome.",
+        "Dê ao seu formulário, que agora possui o atributo code>id</code> em <code>cat-photo-form</code>, um fundo verde."
       ]
     },
     {
@@ -2572,13 +2887,13 @@
       "challengeType": 0,
       "nameEs": "Ajusta el relleno de un elemento",
       "descriptionEs": [
-        "Ahora vamos a dejar un poco de lado nuestra aplicación de fotos de gatos, y aprenderemos más sobre dar estilo a HTML",
+        "Ahora vamos a dejar de lado nuestra aplicación de fotos de gatos por un tiempo, y aprenderemos más sobre dar estilo a HTML",
         "Ya habrás notado esto, pero todos los elementos HTML son esencialmente pequeños rectángulos.",
         "Tres propiedades importantes controlan el espacio que rodea a cada elemento HTML: relleno (<code>padding</code>), margen (<code>margin</code>) y borde (<code>border</code>)",
         "El relleno (<code>padding</code>) de un elemento controla la cantidad de espacio entre el elemento y su borde (<code>border</code>).",
         "Aquí, podemos ver que el cuadro verde y el cuadro rojo se anidan dentro del cuadro amarillo. Ten en cuenta que el cuadro rojo tiene más relleno (<code>padding</code>) que el cuadro verde. ",
-        "Cuando aumentas el relleno de la caja verde, aumentará la distancia entre el texto <code>padding</code> y el borde alrededor de este.",
-        "Cambia el relleno (<code>padding</code>) de la caja verde para que coincida con la de tu cuadro rojo."
+        "Cuando aumentes el relleno de la caja verde, aumentará la distancia entre el texto <code>padding</code> y el borde alrededor de este.",
+        "Cambia el relleno (<code>padding</code>) de la caja verde para que coincida con el de tu cuadro rojo."
       ],
       "nameDe": "Wegpunkt: Justiere den Innenabstand eines Elements",
       "descriptionDe": [
@@ -2586,6 +2901,16 @@
         "<code>padding</code> kontrolliert den Raum oder Abstand zwischen dem Inhalt eines Elements und dessen Rahmen – <code>border</code>",
         "Wir sehen in diesem Beispiel, dass sich die grüne Box und die rote Box innerhalb der gelben Box befinden. Beachte, dass die rote Box mehr <code>padding</code> hat als die grüne Box.",
         "Wenn du den Innenabstand der grünen Box – also <code>padding</code> – erhöhst, wird sich die Entfernung zwischen dem Text \"padding\" und dem Rahmen darum erhöhen."
+      ],
+     "namePtBR": "Ajuste o Preenchimento de um Elemento",
+     "descriptionPtBR": [
+        "Agora vamos deixar nosso aplicativo de fotos de gatos um pouco de lado, e aprender mais sobre dar estilos em HTML.",
+        "Você provavelmente já deve ter notado, mas todos os elementos HTML são, essencialmente, pequenos retângulos.",
+        "Três propriedades importantes controlam o espaço ao redor de cada elemento HTML: preenchimento (<code>padding</code>), margem (<code>margin</code>) e borda (<code>border</code>).",
+        "O preenchimento (<code>padding</code>) de um elemento controla a quantidade de espaço entre o elemento e sua borda (<code>border</code>).",
+        "Aqui, podemos ver que o quadro verde e o quadro vermelho se aninham dentro do quadro amarelo. Leve em conta que o quadro vermelho tem mais preenchimento (<code>padding</code>) que o quadro verde.",
+        "Quando você aumenta o preenchimento da caixa verde, a distância entre o texto <code>padding</code> e a borda ao seu redor também será maior.",
+        "Mude o preenchimento (<code>padding</code>) da caixa verde para que coincida com a de seu quadrado vermelho."
       ],
       "type": "waypoint"
     },
@@ -2644,7 +2969,7 @@
       "descriptionEs": [
         "El margen (<code>margin</code>) de un elemento controla la cantidad de espacio entre el borde (<code>border</code>) y los elementos alrededor.",
         "Aquí, podemos ver que la caja verde y la caja roja se anidan dentro de la caja amarilla. Ten en cuenta que la caja roja tiene más margen (<code>margin</code>) que la caja verde, haciendo que parezca más pequeña. ",
-        "Cuando aumentas el margen (<code>margin</code>) de la caja verde, aumentará la distancia entre su borde y los elementos que la rodean.",
+        "Cuando aumentes el margen (<code>margin</code>) de la caja verde, aumentará la distancia entre su borde y los elementos que la rodean.",
         "Cambia el margen (<code>margin</code>) de la caja verde para que coincida con el de la caja roja."
       ],
       "nameDe": "Waypoint: Passe den Außenabstand eines Elements an",
@@ -2653,6 +2978,13 @@
         "<code>margin</code> kontrolliert den Abstand zwischen dem Rahmen eines Elements und den benachbarten Elementen.",
         "Die grüne und die rote Box befinden sich beide erneut innerhalb der gelben Box. Beachte, dass die rote Box mehr <code>margin</code> aufweist als ihr Erzfeind – die grüne Box.",
         "Wenn du den Außenabstand – <code>margin</code> – der grünen Box erhöhst, wird sich der Abstand zwischen ihrem Rahmen und den benachbarten Elementen vergrößern."
+      ],
+     "namePtBR": "Ajuste a Margem de um Elemento",
+     "descriptionPtBR": [
+        "A margem (<code>margin</code>) de um elemento controla a quantidade de espaço entre a borda (<code>border</code>) e os elementos ao seu redor.",
+        "Aqui, podemos ver que a caixa verde e a caixa vermelha se aninham dentro da caixa amarela. Note que a caixa vermelha possui a margem maior que a caixa verde, fazendo com que ela pareça menor.",
+        "Quando você aumenta a margem (<code>margin</code>) da caixa verde, a distância entre a borda e os elementos ao seu redor também aumentará.",
+        "Mude a margem (<code>margin</code>) da caixa verde para que coincida com a margem da caixa vermelha."
       ],
       "type": "waypoint"
     },
@@ -2720,6 +3052,13 @@
         "Wenn du dem Außenabstand eines Elements einen negativen Wert zuweist, wird das Element größer.",
         "Versuche den Außenabstand auf einen negativen Wert wie bei der roten Box zu setzen."
       ],
+     "namePtBR": "Adicione uma Margem Negativa a um Elemento",
+     "descriptionPtBR": [
+        "A margem de um elemento controla a quantidade de espaço entre a borda do elemento e os elementos ao seu redor.",
+        "Se você estabelece a margem de um elemento com um valor negativo, o elemento ficará maior.",
+        "Tente estabelecer a margem (<code>margin</code>) a um valor negativo como o da caixa vermelha.",
+        "Mude a margem (<code>margin</code>) da caixa verde para <code>-15px</code>, de forma que ocupe toda a largura horizontal da caixa amarela que a rodeia."
+      ],
       "type": "waypoint"
     },
     {
@@ -2777,7 +3116,7 @@
       "challengeType": 0,
       "nameEs": "Añade relleno diferente a cada lado de un elemento",
       "descriptionEs": [
-        "A veces quieres personalizar un elemento para que tenga diferente relleno (<code>padding</code>) en cada uno de sus lados.",
+        "A veces querrás personalizar un elemento para que tenga diferente relleno (<code>padding</code>) en cada uno de sus lados.",
         "CSS te permite controlar el relleno (<code>padding</code>) de un elemento en los cuatro lados superior, derecho, inferior e izquierdo con las propiedades <code>padding-top</code>, <code>padding-right</code>, <code>padding-bottom</code> y <code>padding-left</code>. ",
         "Da a la caja verde un relleno (<code>padding</code>) de <code>40px</code> en las partes superior e izquierda, pero sólo <code>20px</code> en sus partes inferior y derecha."
       ],
@@ -2786,6 +3125,12 @@
         "Verleihe der grünen Box einen Innenabstand – <code>padding</code> – von 40 Pixeln auf der oberen und linken Seite, aber nur 20 Pixel auf der unteren und rechten Seite.",
         "Manchmal wirst du einem Element unterschiedlichen Innenabstand – also <code>padding</code> – auf jeder Seite geben wollen.",
         "CSS erlaubt dir den Innenabstand eines Elements auf allen Seiten einzeln mit den Eigenschaften <code>padding-top</code>, <code>padding-right</code>, <code>padding-bottom</code> und <code>padding-left</code> zu steuern."
+      ],
+     "namePtBR": "Dê Valores Diferentes de Preenchimento a Cada Lado de um Elemento",
+     "descriptionPtBR": [
+        "As vezes pode ser que você queira personalizar um elemento para que tenha um preenchimento (<code>padding</code>) diferente em cada um de seus lados.",
+        "O CSS permite controlar o preenchimento (<code>padding</code>) de um elemento em todos os quatro lados: superior, direito, inferior e esquerdo, com as propriedades <code>padding-top</code>, <code>padding-right</code>, <code>padding-bottom</code> e <code>padding-left</code>.",
+        "Dê para a caixa verde um preenchimento (<code>padding</code>) de <code>40px</code> nas partes superior e esquerda, e de apenas <code>20px</code> em suas partes inferior e direita."
       ],
       "type": "waypoint"
     },
@@ -2844,7 +3189,7 @@
       "challengeType": 0,
       "nameEs": "Añade márgenes diferentes a cada lado de un elemento",
       "descriptionEs": [
-        "A veces quieres personalizar un elemento para que tenga un margen (<code>margin</code>) diferente en cada uno de sus lados.",
+        "A veces querrás personalizar un elemento para que tenga un margen (<code>margin</code>) diferente en cada uno de sus lados.",
         "CSS te permite controlar el margen de un elemento en los cuatro lados superior, derecho, inferior e izquierdo con las propiedades <code>margin-top</code>, <code>margin-right</code>, <code>margin-bottom</code> y <code>margin-left</code>. ",
         "Da a la caja verde un margen (<code>margin</code>) de <code>40px</code> en las partes superior e izquierda, pero sólo <code>20px</code> en su parte inferior y al lado derecho."
       ],
@@ -2852,6 +3197,12 @@
       "descriptionDe": [
         "Gib der grünen Box einen Außenabstand – also <code>margin</code> – von 40 Pixeln auf der oberen und linken Seite, aber nur 20 Pixel auf der unteren und rechten Seite.",
         "CSS erlaubt dir ebenfalls den Außenabstand auf jeder Seite einzeln mit den Eigenschaften <code>margin-top</code>, <code>margin-right</code>, <code>margin-bottom</code> und <code>margin-left</code> zu steuern."
+      ],
+     "namePtBR": "Dê Valores Diferentes de Margem a Cada Lado de um Elemento",
+     "descriptionPtBR": [
+        "Talvez você queira personalizar um elemento para que possua uma margem (<code>margin</code>) diferente em cada um de seus lados.",
+        "O CSS permite controlar a margem de um elemento em todos os seus quatro lados: superior, direito, inferior e esquerdo, com as propriedades <code>margin-top</code>, <code>margin-right</code>, <code>margin-bottom</code> e <code>margin-left</code>.",
+        "Dê para a caixa verde uma margem (<code>margin</code>) de <code>40px</code> nas partes superior e esquerda, e de apenas <code>20px</code> nas partes inferior e direita."
       ],
       "type": "waypoint"
     },
@@ -2908,7 +3259,7 @@
       "challengeType": 0,
       "nameEs": "Utiliza notación en sentido horario para especificar el relleno de un elemento",
       "descriptionEs": [
-        "En lugar de especificar las propiedades <code>padding-top</code>, <code>padding-right</code>, <code>padding-bottom</code> y <code>padding-left</code> de un elemento, puedes especificar todas en una sola línea, así: ",
+        "En lugar de especificar las propiedades <code>padding-top</code>, <code>padding-right</code>, <code>padding-bottom</code> y <code>padding-left</code> de un elemento, puedes especificar todas en una sóla línea, así: ",
         "<code>padding: 10px 20px 10px 20px;</code>",
         "Estos cuatro valores funcionan como un reloj: arriba, derecha, abajo, izquierda, y producirán exactamente el mismo resultado de las cuatro instrucciones de relleno.",
         "Usa la notación en sentido horario para dar a la clase \"<code>.green-box</code>\" un relleno de <code>40px</code> en las partes superior e izquierda, pero sólo <code>20px</code> en su parte inferior y al lado derecho ."
@@ -2918,6 +3269,13 @@
         "Gib der Klasse \".green-box\" mit einer Notation im Uhrzeigersinn einen Innenabstand – <code>padding</code> – von 40 Pixeln auf der oberen und linken Seite, aber nur 20 Pixel auf der unteren und rechten Seite.",
         "Anstatt die Eigenschaften <code>padding-top</code>, <code>padding-right</code>, <code>padding-bottom</code> und <code>padding-left</code> zu verwenden, kannst du sie alle in einer Zeile schreiben: <code>padding: 10px 20px 10px 20px;</code>",
         "Diese vier Werte funktionieren wie eine Uhr: oben, rechts, unten und links. Sie bedeuten exakt das selbe wie die seitenspezifischen Anweisungen."
+      ],
+     "namePtBR": "Use Notação em Sentido Horário para Especificar o Preenchimento de um Elemento",
+     "descriptionPtBR": [
+        "Ao invés de especificar as propriedades <code>padding-top</code>, <code>padding-right</code>, <code>padding-bottom</code> e <code>padding-left</code> de um elemento, você pode especificar todas elas em uma só linha, assim:",
+        "<code>padding: 10px 20px 10px 20px;</code>",
+        "Estes quatro valores funcionam como um relógio: cima, direita, baixo e esquerda, e produzirão o mesmo resultado das quatro instruções de preenchimento.",
+        "Use a <code>notação em sentido horário</code> para dar para a classe \"<code>.green-box</code>\" um preenchimento de <code>40px</code> nas partes superior e esquerda, mas de apenas <code>20px</code> em sua parte inferior e ao lado direito."
       ],
       "type": "waypoint"
     },
@@ -2987,6 +3345,14 @@
         "Anstatt die Eigenschaften <code>margin-top</code>, <code>margin-right</code>, <code>margin-bottom</code> und <code>margin-left</code> zu verwenden, kannst du alle in eine Zeile schreiben: <code>margin: 10px 20px 10px 20px;</code>",
         "Diese vier Werte funktionieren wieder wie eine Uhr: oben, rechts, unten und links. Sie meinen exakt das gleiche wie die seitenspezifischen Anweisungen."
       ],
+     "namePtBR": "Use Notação em Sentido Horário para Especificar a Margem de um Elemento",
+     "descriptionPtBR": [
+        "Vamos praticar isso outra vez, mas desta vez será com a margem (<code>margin</code>).",
+        "Ao invés de especificar as propriedades <code>margin-top</code>, <code>margin-right</code>, <code>margin-bottom</code>, e <code>margin-left</code> de um elemento, você pode especificar todas elas em apenas uma linha assim:",
+        "<code>margin: 10px 20px 10px 20px;</code>",
+        "Estes quatro valores funcionam como um relógio: cima, direita, baixo e esquerda, e produzirão o mesmo resultado das quatro instruções de margem.",
+        "Use a <code>notação em sentido horário</code> para dar para a classe \"<code>.green-box</code>\" uma margem de <code>40px</code> nas partes superior e esquerda, mas de apenas <code>20px</code> em sua parte inferior e ao lado direito."
+      ],
       "type": "waypoint"
     },
     {
@@ -3016,6 +3382,15 @@
         "Cada página HTML tiene un cuerpo (<code>body</code>).",
         "Podemos demostrar que el elemento (<code>body</code>) existe aquí, dandole un color de fondo (<code>background-color</code>) negro.",
         "Podemos hacer esto añadiendo lo siguiente a nuestro elemento <code>style</code>:",
+        "<blockquote>body {<br>&nbsp;&nbsp;background-color: black;<br>}</blockquote>"
+
+      ],
+     "namePtBR": "Dê Estilo ao Elemento Body em HTML",
+     "descriptionPtBR": [
+        "Agora vamos recomeçar e falar sobre herança em CSS.",
+        "Cada página HTML possui um corpo (<code>body</code>).",
+        "Podemos demonstrar que o elemento (<code>body</code>) existe aqui, ao dar a ele uma cor de fundo (<code>background-color</code>) preta.",
+        "Podemos fazer isso adicionando o seguinte ao nosso elemento <code>style</code>:",
         "<code>body {</code>",
         "<code>&nbsp;&nbsp;background-color: black;</code>",
         "<code>}</code>"
@@ -3053,10 +3428,18 @@
       "nameEs": "Hereda estilos del elemento cuerpo",
       "descriptionEs": [
         "Ya hemos demostrado que cada página HTML tiene un cuerpo (<code>body</code>), y que puede dársele estilo CSS.",
-        "Recuerda, que puedes dar estilo de tu elemento <code>body</code> como a cualquier otro elemento HTML, y que todos tus otros elementos heredarán sus estilos de tu elemento <code>body</code>.",
+        "Recuerda que puedes dar estilo de tu elemento <code>body</code> como a cualquier otro elemento HTML, y que todos tus otros elementos heredarán sus estilos de tu elemento <code>body</code>.",
         "En primer lugar, crea un elemento <code>h1</code> con el texto <code>Hello World</code>",
         "Después, vamos a darle a todos los elementos de tu página el color verde (<code>green</code>) añadiendo <code>color: green;</code> a la declaración de estilo de tu elemento <code>body</code>.",
         "Por último, da a tu elemento <code>body</code> el tipo de letra <code>Monospace</code> añadiendo <code>font-family: Monospace;</code> a la declaración del estilo de tu elemento <code>body</code>."
+      ],
+     "namePtBR": "Herde Estilos do Elemento Body",
+     "descriptionPtBR": [
+        "Já demonstramos que cada página HTML possui um corpo (<code>body</code>), e que podemos dar estilo a ele através do CSS.",
+        "Observe que você pode dar estilo ao seu elemento <code>body</code> como a qualquer outro elemento HTML, e que todos os outros elementos herdarão os estilos de seu elemento <code>body</code>.",
+        "Em primeiro lugar, crie um elemento <code>h1</code> com o texto <code>Hello World</code>",
+        "Depois, dê a todos os elementos de sua página uma cor verde (<code>green</code>) adicionando <code>color: green;</code> na declaração de estilo de seu elemento <code>body</code>.",
+        "Por último, dê ao seu elemento <code>body</code> o tipo de fonte <code>Monospace</code> adicionando <code>font-family: Monospace;</code> na declaração de estilo de seu elemento <code>body</code>."
       ]
     },
     {
@@ -3093,6 +3476,14 @@
         "Vamos a ver lo que sucede cuando creamos una clase que hace rosado el texto y luego lo aplicamos a un elemento. ¿Anulará (<code>override</code>) nuestra clase la propiedad CSS <code>color: green</code> del elemento <code>body</code>?",
         "Crea una clase CSS llamada <code>pink-text</code> que le da a un elemento el color rosado.",
         "Ponle a tu elemento <code>h1</code> la clase de <code>pink-text</code>."
+      ],
+     "namePtBR": "Priorize um Estilo Sobre o Outro",
+     "descriptionPtBR": [
+        "As vezes os elementos HTML recebem múltiplos estilos que entram em conflito entre si.",
+        "Por exemplo, o elemento <code>h1</code> não pode ser verde e rosa ao mesmo tempo.",
+        "Vamos ver o que acontece quando criamos uma classe que faz com que o texto seja rosa e então o aplicamos a um elemento. Isso irá sobrepor (<code>override</code>) a propriedade CSS <code>color: green</code> do elemento <code>body</code> de nossa classe?",
+        "Crie uma classe CSS chamada <code>pink-text</code>, que dê a cor rosa a um elemento.",
+        "Depois, adicione a classe <code>pink-text</code> ao seu elemento <code>h1</code>."
       ]
     },
     {
@@ -3134,10 +3525,22 @@
         "¡Nuestra clase \"pink-text\" anuló la declaración CSS de nuestro elemento <code>body</code>!",
         "Acabamos de demostrar que nuestras clases anularán el CSS del elemento <code>body</code>. Así que la siguiente pregunta lógica es: ¿qué podemos hacer para anular nuestra clase <code>pink-text</code>?",
         "Crea una clase CSS adicional llamada <code>texto-azul</code> que le de a un elemento el color azul. Asegúrate de que está debajo de tu declaración de la clase <code>pink-text</code>. ",
-        "Aplica la clase <code>blue-text</code> a tu elemento <code>h1</code> además de tu clase <code>pink-text</code> y veamos cual gana.",
+        "Aplica la clase <code>blue-text</code> a tu elemento <code>h1</code> además de tu clase <code>pink-text</code> y veamos cuál gana.",
         "La aplicación de múltiples atributos de clase a un elemento HTML se hace usando espacios entre ellos así:",
+        "<code>class=\"clase1 clase2\"</code>",
+        "Nota: No importa el orden en que las clases aparecen en el HTML.",
+        "Sin embargo, el orden de las declaraciones <code>class</code> en la sección <code>&#60;style&#62;</code> sí son importantes. La segunda declaración siempre precederá a la primera. Debido a que <code>.blue-text</code> es declarada después, esta anula los atributos de <code>.pink-text</code>"
+      ],
+     "namePtBR": "Sobreponha Estilos com CSS Posterior",
+     "descriptionPtBR": [
+        "Nossa classe \"pink-text\" anulou a declaração CSS de nosso elemento <code>body</code>!",
+        "Acabamos de demonstrar que nossas classes irão sobrepor o CSS do elemento <code>body</code>. Sendo assim, nossa seguinte pergunta lógica é: O que podemos fazer para sobrepor a nossa classe <code>pink-text</code>?",
+        "Crie uma classe tradicional com CSS chamada <code>texto-azul</code>, que possa dar a um elemento a cor azul. Tenha a certeza de deixá-la abaixo de sua declaração da classe <code>pink-text</code>.",
+        "Aplique a classe <code>blue-text</code> ao seu elemento <code>h1</code>, além da classe <code>pink-text</code>, e vamos ver qual delas ganhará.",
+        "Lembre que a adição de vários atributos de classe a um elemento HTML se faz utilizando espaços entre ambos, assim:",
         "<code>class=\"class1 class2\"</code>",
-        "Nota: No importa lo que ordenan las clases se enumeran en el."
+        "Nota: A ordem em que as classes são listadas em HTML não tem importância.",
+        "Contudo, a ordem de declarações de <code>classe</code> no <code>&#60;style&#62;</code> é importante. A segunda declaração sempre terá precedência pela primeira. Já que <code>.blue-text</code> é declarado depois, ele irá sobrepor os atributos de <code>.pink-text</code>."
       ]
     },
     {
@@ -3189,10 +3592,19 @@
         "<code>&#60;h1 id=\"orange-text\"&#62;</code>",
         "Deja las clases <code>blue-text</code> y <code>pink-text</code> de tu elemento <code>h1</code>.",
         "Crea una declaración CSS para tu identificación <code>orange-text</code> en tu elemento <code>style</code>. He aquí un ejemplo de como se ve esto: ",
+        "<blockquote>#brown-text {<br>&nbsp;&nbsp;color: brown;<br>}</blockquote>",
+        "Nota: No importa si usted declara este css encima o debajo de la clase de texto de color rosa, ya atributo id siempre tendrá prioridad."
+      ],
+     "namePtBR": "Sobreponha a Declaração de Classes Estilizando Atributos ID",
+     "descriptionPtBR": [
+        "Acabamos de demonstrar que os navegadores fazem a leitura do CSS de cima para baixo. Isso significa que, em caso de um conflito, o navegador utilizará a última declaração CSS.",
+        "Mas ainda não terminamos, pois existem outras formas para sobrepor CSS. Você se lembra dos atributos <code>id</code>?",
+        "Vamos sobrepor suas classes <code>pink-text</code> e <code>blue-text</code>, e fazer com que seu elemento <code>h1</code> seja laranja. Faremos isso aplicando uma <code>id</code> para o elemento <code>h1</code> e então estilizando essa <code>id</code>.",
+        "Dê ao seu elemento <code>h1</code> o atributo <code>id</code> de nome <code>orange-text</code>. Relembre que os atributos id são assim:",
         "<code>#brown-text {</code>",
         "<code>&nbsp;&nbsp;color: brown;</code>",
         "<code>}</code>",
-        "Nota: No importa si usted declara este css encima o debajo de la clase de texto de color rosa, ya atributo id siempre tendrá prioridad."
+        "Nota: Não importa se você declara este CSS acima ou abaixo da classe de texto cor de rosa, já que atributos id sempre terão prioridade."
       ]
     },
     {
@@ -3240,6 +3652,14 @@
         "Utiliza un <code>estilo en línea</code> para tratar de hacer blanco nuestro elemento <code>h1</code>. Recuerda, los estilos en línea se ven así: ",
         "<code>&#60;h1 style=\"color: green\"&#62;</code>",
         "Deja las clases <code>blue-text</code> y <code>pink-text</code> en tu elemento <code>h1</code>."
+      ],
+     "namePtBR": "Sobreponha a Declaração de Classes com Estilos Inline",
+     "descriptionPtBR": [
+        "Certo, nós demonstramos que declarações de id sobrepoem as declarações de classe, independente do lugar onde são declarados em seu elemento <code>style</code> no CSS.",
+        "Existem outras formas em que você pode sobrepor CSS. Você se lembra de estilos inline?",
+        "Use um estilo <code>inline</code> para tentar fazer com que nosso elemento <code>h1</code> tenha a cor branca. Relembre que estilos inline são assim:",
+        "<code>&#60;h1 style=\"color: green\"&#62;</code>",
+        "Deixe as classes <code>blue-text</code> e <code>pink-text</code> em seu elemento <code>h1</code>."
       ]
     },
     {
@@ -3292,6 +3712,16 @@
         "Vamos a añadir la palabra clave <code>!important</code> a tu declaración del color de <code>pink-text</code> para estar 100% seguros que tu elemento <code>h1</code> será rosado.",
         "Un ejemplo de cómo hacer esto es:",
         "<code>color: red !important;</code>"
+      ],
+     "namePtBR": "Sobreponha Todos os Outros Elementos Utilizando Important",
+     "descriptionPtBR": [
+        "Isso! Demonstramos que os estilos inline irão sobrepor todas as declarações CSS de seu elemento <code>style</code>.",
+        "Mas, espere! Há uma última forma de sobrepor com CSS. Este é o método mais poderoso de todos. Contudo, antes de colocá-lo em prática, vamos falar sobre os motivos que podem fazer você querer sobrepor CSS.",
+        "Em diversas situações, você usará bibliotecas CSS. Pode ser que essas bibliotecas sobreponham acidentalmente o seu próprio CSS. Por isso, quando você precisar estar seguro de que um elemento possui um CSS específico, você poderá utilizar <code>!important</code>.",
+        "Certo, vamos voltar para a nossa declaração de classe <code>pink-text</code>. Relembre que nossa classe <code>pink-text</code> foi sobreposta pelas declarações de classe posteriores, por declarações id e por estilos inline.",
+        "Vamos adicionar nossa palavra-clave <code>!important</code> para sua declaração de cor de <code>pink-text</code> para que possamos estar 100% seguros que seu elemento <code>h1</code> será sempre cor de rosa.",
+        "Um exemplo para fazer isso é:",
+        "<code>color: red !important;</code>"
       ]
     },
     {
@@ -3322,6 +3752,13 @@
         "El sistema <code>Decimal</code> se refiere al que nos permite representar cantidades empleando los dígitos del cero al nueve - los números que la gente usa en la vida cotidiana. El sistema <code>Hexadecimal</code> incluye estos 10 dígitos más las letras A, B, C, D, E y F. Esto significa que Hexadecimal tiene un total de 16 dígitos posibles, en lugar de las 10 posibles que nos da nuestro sistema numérico normal en base 10. ",
         "Con CSS, utilizamos 6 dígitos hexadecimales para representar los colores. Por ejemplo, <code>#000000</code> es el valor más bajo posible, y representa el color negro. ",
         "Reemplaza la palabra <code>black</code> en el color de fondo (<code>background-color</code>) de nuestro elemento <code>body</code> por su representación hexadecimal <code>#000000</code>"
+      ],
+     "namePtBR": "Use Código Hexadecimal para Especificar Cores",
+     "descriptionPtBR": [
+        "Você sabia que existem outras formas para representar as cores em CSS? Uma dessas formas é com o que chamamos de código hexadecimal, ou <code>código hex</code> para abreviar.",
+        "O sistema <code>Decimal</code> nos permite representar quantidades numéricas com os dígitos de zero a nove - assim como nós os utilizamos durante o nosso dia a dia. Já o sistema <code>Hexadecimal</code> inclui estes 10 dígitos e também as letras A, B, C, D, E e F. Isso significa que o Hexadecimal possui um total de 16 dígitos possíveis, ao invés dos 10 possíveis que podemos usar com nosso sistema numérico normal de base 10.",
+        "No CSS, utilizamos 6 dígitos hexadecimais para representar as cores. Por exemplo, <code>#000000</code> é o valor mais baixo possível, e representa a cor preta.",
+        "Substitua a palavra <code>black</code> na cor de fundo (<code>background-color</code>) de nosso elemento <code>body</code> pela sua representação hexadecimal <code>#000000</code>."
       ]
     },
     {
@@ -3350,6 +3787,12 @@
         "<code>0</code> es el dígito más bajo en código hexadecimal, y representa una completa ausencia de color.",
         "<code>F</code> es el dígito más alto en código hexadecimal, y representa el máximo brillo posible.",
         "Volvamos blanco el color de fondo (<code>background-color</code>) de nuestro elemento <code>body</code>, cambiando su código hexadecimal por <code>#FFFFFF</code>"
+      ],
+     "namePtBR": "Use Código Hexadecimal Para dar a Cor Branca a Elementos",
+     "descriptionPtBR": [
+        "<code>0</code> é o dígito mais baixo em código hexadecimal, e representa a completa ausência de cor.",
+        "<code>F</code> é o dígito mais alto em código hexadecimal, e representa o máximo de claridade possível.",
+        "Vamos fazer com que a cor de fundo (<code>background-color</code>) em nosso elemento <code>body</code> seja branca, mudando seu código hexadecimal para <code>#FFFFFF</code>."
       ]
     },
     {
@@ -3380,8 +3823,16 @@
         "Te puedes estar preguntando por qué usamos 6 dígitos para representar un color en lugar de sólo uno o dos. La respuesta es que el uso de 6 dígitos nos da una enorme variedad. ",
         "¿Cuántos colores son posibles? 16 valores y 6 posiciones significa que tenemos 16 a la sexta potencia, o más de 16 millones de colores posibles. ",
         "Los códigos hexadecimales siguen el formato rojo-verde-azul (<em>red-green-blue</em>) o formato <code>rgb</code>. Los dos primeros dígitos del código hexadecimal representan la cantidad de rojo en el color. El tercer y cuarto dígitos representan la cantidad de verde. El quinto y sexto representan la cantidad de azul .",
-        "Así que para conseguir el rojo absolutamente más brillante, basta que uses <code>F</code> para el primer y segundo dígitos (el dígito más alto posible) y <code>0</code> para el tercero, cuarto, quinto y sexto dígitos (el dígito más bajo posible).",
+        "Así que para conseguir el rojo absolutamente más brillante, basta que uses <code>F</code> para el primer y segundo dígitos (el valor más alto posible) y <code>0</code> para el tercero, cuarto, quinto y sexto dígitos (el valor más bajo posible).",
         "Haz que el color de fondo (<code>background-color</code>) del elemento <code>body</code> sea rojo dándole el código hexadecimal <code>#FF0000</code>"
+      ],
+     "namePtBR": "Use Código Hexadecimal Para dar a Cor Vermelha a Elementos",
+     "descriptionPtBR": [
+        "Talvez você esteja se perguntando o motivo para usar 6 dígitos para representar uma cor ao invés de apenas um ou dois. Este motivo é que ao usar 6 dígitos, temos acesso a uma enorme variedade de cores.",
+        "Para que você tenha uma ideia, ter 16 valores e 6 posições significa que temos 16 elevado a 6. Isso dá um total de mais de 16 milhões de cores possíveis.",
+        "Os códigos hexadecimais seguem o formato vermelho-verde-azul (<em>red-green-blue</em>), ou formato <code>rgb</code>. Os dois primeiros dígitos do código hexadecimal representam a quantidade de vermelho na cor. O terceiro e o quarto representam a quantidade de verde. Já o quinto e o sexto representam a quantidade de azul.",
+        "Sendo assim, para conseguir um vermelho brilhante, basta que você use <code>F</code> (o dígito mais alto possível) para o primeiro e o segundo dígitos, e <code>0</code> (o dígito mais baixo possível) para o terceiro, quarto, quinto e sexto dígito.",
+        "Faça com que a cor de fundo (<code>background-color</code>) do elemento <code>body</code> seja vermelho, ao dar o código hexadecimal <code>#FF0000</code>."
       ]
     },
     {
@@ -3407,9 +3858,15 @@
       "challengeType": 0,
       "nameEs": "Usa el código hexadecimal para colorear de verde los elementos",
       "descriptionEs": [
-        "Recuerda que el <code>código hexadecimal</code> sigue el formato rojo-verde-azul o <code>rgb</code>. Los dos primeros dígitos del código hexadecimal representan la cantidad de rojo en el color. El tercer y cuarto dígitos representan la cantidad de verde. El quinto y sexto representar la cantidad de azul.",
-        "Así que para conseguir el verde absoluto más brillante, sólo usas <code>F</code> en el tercer y cuarto dígitos (el dígito más alto posible) y <code>0</code> para todos los otros dígitos (el dígito más bajo posible). ",
+        "Recuerda que el <code>código hexadecimal</code> sigue el formato rojo-verde-azul o <code>rgb</code>. Los dos primeros dígitos del código hexadecimal representan la cantidad de rojo en el color. El tercer y cuarto dígitos representan la cantidad de verde. El quinto y sexto representan la cantidad de azul.",
+        "Así que para conseguir el verde absoluto más brillante, sólo debes usar <code>F</code> en el tercer y cuarto dígitos (el valor más alto posible) y <code>0</code> para todos los otros dígitos (el valor más bajo posible). ",
         "Haz que el color de fondo (<code>background-color</code>) del elemento <code>body</code> sea verde, dándole el código hexadecimal <code>#00FF00</code>"
+      ],
+     "namePtBR": "Use Código Hexadecimal para dar a Cor Verde a Elementos",
+     "descriptionPtBR": [
+        "Relembre que códigos hexadecimais seguem o formato vermelho-verde-azul (<em>red-green-blue</em>), ou formato <code>rgb</code>. Os dois primeiros dígitos do código hexadecimal representam a quantidade de vermelho na cor. O terceiro e o quarto representam a quantidade de verde. Já o quinto e o sexto representam a quantidade de azul.",
+        "Sendo assim, para conseguir um verde brilhante, basta que você use <code>F</code> (o dígito mais alto possível) para o terceiro e o quarto dígito, e <code>0</code> (o dígito mais baixo possível) para todos os outros dígitos.",
+        "Faça com que a cor de fundo (<code>background-color</code>) do elemento <code>body</code> seja verde ao dar o código hexadecimal <code>#00FF00</code>."
       ]
     },
     {
@@ -3435,9 +3892,15 @@
       "challengeType": 0,
       "nameEs": "Usa el código hexadecimal para colorear de azul los elementos",
       "descriptionEs": [
-        "Los códigos hexadecimales siguen el formato rojo-verde-azul o <code>rgb</code>. Los dos primeros dígitos del código hexadecimal representan la cantidad de rojo en el color. El tercer y cuarto dígitos representan la cantidad de verde. El quinto y sexto representar la cantidad de azul .",
-        "Así que para conseguir el azul absoluto más brillante, utilizamos <code>F</code> para la quinta y sexta cifras (el dígito más alto posible) y <code>0</code> para todos los otros dígitos (el dígito más bajo posible ). ",
+        "Los códigos hexadecimales siguen el formato rojo-verde-azul o <code>rgb</code>. Los dos primeros dígitos del código hexadecimal representan la cantidad de rojo en el color. El tercer y cuarto dígitos representan la cantidad de verde. El quinto y sexto representan la cantidad de azul .",
+        "Así que para conseguir el azul absoluto más brillante, utilizamos <code>F</code> para la quinta y sexta cifras (el valor más alto posible) y <code>0</code> para todos los otros dígitos (el valor más bajo posible ). ",
         "Haz que el color de fondo (<code>background-color</code>) del elemento <code>body</code> sea azul, dándole el código hexadecimal <code>#0000FF</code>"
+      ],
+     "namePtBR": "Use Código Hexadecimal para dar a Cor Azul a Elementos",
+     "descriptionPtBR": [
+        "Relembre que códigos hexadecimais seguem o formato vermelho-verde-azul (<em>red-green-blue</em>), ou formato <code>rgb</code>. Os dois primeiros dígitos do código hexadecimal representam a quantidade de vermelho na cor. O terceiro e o quarto representam a quantidade de verde. Já o quinto e o sexto representam a quantidade de azul.",
+        "Para conseguir o azul mais brilhante, utilizamos <code>F</code> (o dígito mais alto possível) no quinto e no sexto dígito, e <code>0</code> (o dígito mais baixo possível) para todos os outros dígitos.",
+        "Faça com que a cor de fundo (<code>background-color</code>) do elemento <code>body</code> seja azul usando o código hexadecimal <code>#0000FF</code>."
       ]
     },
     {
@@ -3466,6 +3929,12 @@
         "A partir de estos tres colores puros (rojo, verde y azul), podemos crear 16 millones de colores.",
         "Por ejemplo, el naranja es rojo puro, mezclado con un poco de verde, y sin azul.",
         "Haz que el color de fondo del elemento <code>body</code> sea anaranjado, dándole el código hexadecimal <code>#FFA500</code>"
+      ],
+     "namePtBR": "Use Código Hexadecimal para Misturar Cores",
+     "descriptionPtBR": [
+        "A partir dessas três cores puras (vermelho, verde e azul), podemos criar 16 milhões de cores.",
+        "Por exemplo, o laranja é vermelho puro misturado com um pouco de verde, e sem nada de azul.",
+        "Faça com que a cor de fundo do elemento <code>body</code> seja alaranjada, usando o código hexadecimal <code>#FFA500</code>."
       ]
     },
     {
@@ -3494,6 +3963,12 @@
         "A partir de estos tres colores puros (rojo, verde y azul), podemos crear 16 millones de colores.",
         "También podemos crear diferentes tonos de gris mezclando uniformemente los tres colores.",
         "Haz que el color de fondo del elemento <code>body</code> sea gris, dándole el código hexadecimal <code>#808080</code>"
+      ],
+     "namePtBR": "Use Código Hexadecimal dar a Cor Cinza a Elementos",
+     "descriptionPtBR": [
+        "A partir dessas três cores puras (vermelho, verde e azul), podemos criar 16 milhões de cores.",
+        "Também podemos criar tons de cinza diferentes ao misturar essas três cores.",
+        "Faça com que a cor de fundo do elemento <code>body</code> seja cinza, usando o código hexadecimal <code>#808080</code>."
       ]
     },
     {
@@ -3516,10 +3991,15 @@
       ],
       "type": "waypoint",
       "challengeType": 0,
-      "nameEs": "Usa el código hexadecimal para colorear con tonos grises",
+      "nameEs": "Usa el código hexadecimal para colorear con tonos de gris",
       "descriptionEs": [
         "También podemos crear otros tonos de gris mezclando uniformemente los tres colores. Podemos ir muy cerca del verdadero negro. ",
         "Haz que el color de fondo del elemento <code>body</code> sea gris oscuro dandole el código hexadecimal <code>#111111</code>"
+      ],
+     "namePtBR": "Use Código Hexadecimal dar Tons de Cinza a Elementos",
+     "descriptionPtBR": [
+        "Também podemos criar tons de cinza diferentes ao misturar essas três cores. Podemos chegar muito perto de um fundo completamente preto.",
+        "Faça com que a cor de fundo do elemento <code>body</code> seja cinza escuro através do código hexadecimal <code>#111111</code>."
       ]
     },
     {
@@ -3549,7 +4029,14 @@
         "Mucha gente se siente abrumada por las posibilidades de más de 16 millones de colores. Y es difícil recordar el código hexadecimal. Afortunadamente puedes acortarlo. ",
         "Por ejemplo, el rojo, que es <code>#FF0000</code> en código hexadecimal, se puede abreviar a <code>#F00</code>. Es decir, un dígito para el rojo, un dígito para el verde, un dígito para el azul. ",
         "Esto reduce el número total de posibles colores a alrededor de 4.000. Pero los navegadores interpretarán <code>#FF0000</code> y <code>#F00</code> como exactamente el mismo color. ",
-        "Adelante, intente usar <code>#F00</code> para volver rojo el color de fondo del elemento <code>body</code>."
+        "Adelante, intenta usar <code>#F00</code> para volver rojo el color de fondo del elemento <code>body</code>."
+      ],
+     "namePtBR": "Use Código Hexadecimal Abreviado",
+     "descriptionPtBR": [
+        "Muitas pessoas se sentem confusas com as possibilidades de mais de 16 milhões de cores. Além disso, é difícil lembrar de códigos hexadecimais. Por sorte, podemos abreviá-lo.",
+        "Por exemplo, o vermelho que é <code>#FF0000</code> em código hexadecimal pode ser abreviado a <code>#F00</code>. Isso quer dizer que podemos usar um dígito para vermelho, um dígito para verde e um dígito para azul.",
+        "Fazer isso reduz o número total de possíveis cores para ao redor de 4.000. Apesar disso, os navegadores interpretarão <code>#FF0000</code> e <code>#F00</code> exatamente como a mesma cor.",
+        "Continue, tente usar <code>#F00</code> para fazer com que a cor de fundo do elemento <code>body</code> seja vermelha."
       ]
     },
     {
@@ -3588,6 +4075,17 @@
         "En lugar de utilizar seis dígitos hexadecimales, con <code>rgb</code> especificas el brillo de cada color con un número entre 0 y 255.",
         "Si haces la matemática, 16 veces 16 es 256 valores totales.  Así que <code>rgb</code>, que comienza a contar desde cero, tiene exactamente el mismo número de valores posibles que el código hexadecimal.",
         "Remplacemos el código hexadecimal del color de fondo de nuestro elemento <code>body</code> por el valor RGB para el negro: <code>rgb(0, 0, 0)</code>"
+      ],
+     "namePtBR": "Use Valores RBG para Colorir Elementos",
+     "descriptionPtBR": [
+        "Outra forma em que você pode representar cores em CSS é utilizando valores <code>rgb</code>.",
+        "O valor RGB para preto é assim:",
+        "<code>rgb(0, 0, 0)</code>",
+        "O valor RGB para branco é assim:",
+        "<code>rgb(255, 255, 255)</code>",
+        "Ao invés de utilizar 6 dígitos hexadecimais, com <code>rgb</code> você especifica o brilho de cada cor com um número entre 0 e 255.",
+        "Se você fizer a matemática, 16 vezes 16 é igual a 256 valores totais. Sendo assim, o <code>rgb</code>, que começa a contar desde zero, tem exatamente o mesmo número de valores possíveis que o código hexadecimal.",
+        "Vamos substituir o código hexadecimal da cor de fundo do nosso elemento <code>body</code> pelo valor RGB para preto: <code>rgb(0, 0, 0)</code>."
       ]
     },
     {
@@ -3622,6 +4120,15 @@
         "<code>rgb(255, 255, 255)</code>",
         "En lugar de utilizar seis dígitos hexadecimales, con <code>rgb</code> especificas el brillo de cada color con un número entre 0 y 255.",
         "Cambia el color de fondo del elemento <code>body</code> del valor RGB para el negro al valor <code>rgb</code> para el blanco: <code>rgb(255, 255, 255)</code>"
+      ],
+     "namePtBR": "Use Valores RGB para Dar a Cor Branca a Elementos",
+     "descriptionPtBR": [
+        "O valor RGB para preto é assim:",
+        "<code>rgb(0, 0, 0)</code>",
+        "O valor RGB para branco é assim:",
+        "<code>rgb(255, 255, 255)</code>",
+        "Ao invés de utilizar 6 dígitos hexadecimais, com <code>rgb</code> você especifica o brilho de cada cor com um número entre 0 e 255.",
+        "Substitua o código hexadecimal da cor de fundo do nosso elemento <code>body</code> que possui o valor RGB para preto, pelo valor <code>rgb</code> para branco: <code>rgb(255, 255, 255)</code>."
       ]
     },
     {
@@ -3650,6 +4157,12 @@
         "Al igual que con el código hexadecimal, puedes representar diferentes colores en RGB mediante el uso de combinaciones de diferentes valores.",
         "Estos valores siguen el patrón de RGB: el primer número representa rojo, el segundo número representa el verde, y el tercer número representa azul.",
         "Cambia el color de fondo del elemento <code>body</code> al rojo usando su valor RGB: <code>rgb(255, 0, 0)</code>"
+      ],
+     "namePtBR": "Use Valores RBG para Dar a Cor Vermelha a Elementos",
+     "descriptionPtBR": [
+        "Da mesma forma que com códigos em hexadecimal, você pode representar cores diferentes em RGB através do uso de combinações com diferentes valores.",
+        "Esses valores seguem o padrão de RGB: O primeiro número representa vermelho, o segundo representa verde, e o terceiro representa azul.",
+        "Mude a cor de fundo do elemento <code>body</code> para vermelho usando seu valor RGB: <code>rgb(255, 0, 0)</code>."
       ]
     },
     {
@@ -3674,6 +4187,10 @@
       "nameEs": "Usa RGB para colorear de verde los elementos",
       "descriptionEs": [
         "Ahora cambia el color de fondo del elemento <code>body</code> a verde usando su valor RGB: <code>rgb (0, 255, 0)</code>"
+      ],
+     "namePtBR": "Use Valores RBG para Dar a Cor Verde a Elementos",
+     "descriptionPtBR": [
+        "Agora, mude a cor de fundo do elemento <code>body</code> para verde usando seu valor RGB: <code>rgb (0, 255, 0)</code>."
       ]
     },
     {
@@ -3698,6 +4215,10 @@
       "nameEs": "Usa RGB para colorear de azul los elementos",
       "descriptionEs": [
         "Cambia el color de fondo del elemento <code>body</code> a azul usando su valor RGB: <code>rgb(0, 0, 255)</code>"
+      ],
+     "namePtBR": "Use Valores RBG para Dar a Cor Azul a Elementos",
+     "descriptionPtBR": [
+        "Agora, mude a cor de fundo do elemento <code>body</code> para azul usando seu valor RGB: <code>rgb(0, 0, 255)</code>."
       ]
     },
     {
@@ -3724,6 +4245,11 @@
       "descriptionEs": [
         "Al igual que con el código hexadecimal, puedes mezclar los colores en RGB mediante el uso de combinaciones de diferentes valores.",
         "Cambia el color de fondo del elemento <code>body</code> a anaranjado usando su valor RGB: <code>rgb(255, 165, 0)</code>"
+      ],
+     "namePtBR": "Use Valores RBG para Misturar Cores",
+     "descriptionPtBR": [
+        "Assim como com código hexadecimal, você pode misturar as cores com RGB através do uso de combinações de valores diferentes.",
+        "Mude a cor de fundo do elemento <code>body</code> para alaranjado usando seu valor RGB: <code>rgb(255, 165, 0)</code>."
       ]
     }
   ]

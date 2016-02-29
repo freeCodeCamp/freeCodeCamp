@@ -30,9 +30,10 @@ window.common = (function(global) {
 
   codeOutput.setValue(`/**
   * Your output will go here.
-  * Console.log() -type statements
-  * will appear in your browser\'s
-  * DevTools JavaScript console.
+  * Any console.log() -type
+  * statements will appear in
+  * your browser\'s DevTools
+  * JavaScript console.
   */`);
 
   codeOutput.setSize('100%', '100%');
