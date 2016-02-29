@@ -158,7 +158,7 @@ export default function contain(options = {}, Component) {
       );
 
       const fetch$ = action.apply(null, actionArgs);
-      if (__DEV__ && Observable.isObservable(fetch$)) {
+      if (__DEV__ && !Observable.isObservable(fetch$)) {
         throw new Error(
           'fetch action should return observable'
         );
