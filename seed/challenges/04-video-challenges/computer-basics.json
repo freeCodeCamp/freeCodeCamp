@@ -1110,7 +1110,37 @@
         ]
       ],
       "type": "hike",
-      "challengeType": 6
+      "challengeType": 6, 
+      "nameEs": "Seguridad en los computadores",
+      "descriptionEs": [
+        "Lo fundamental de la seguridad en los computadores y cómo proteger su información.",
+        "Echemos una mirada a la seguridad en los computadores.",
+        "De lo primero que vamos a hablar es de algo conocido como ataque diccionario que se dirige a sus claves.",
+        "Cuando tu creas una clave, algunos lugares de internet te exigen claves muy específicas y complejas, las cuales con frecuencia no son tan necesarias.",
+        "El tipo de ataque que ellos quieren evitar son los llamados ataques diccionario.",
+        "Los ataques diccionario están programados para probar todas las palabras de un diccionario o todas las claves mas usuales, para una gran cantidad de nombres de usuario, registradas en sus propias bases de datos. ",
+        "Su tu clave es Canguro, probablemente podrá ser descubierta ya que es una palabra simple.",
+        "Aunque algunas claves no son tan sencillas como la anterior, esto tampoco importa.",
+        "Ellos atacan tal cantidad de cuentas que solo necesitan unas pocas claves que sean sencillas.",
+        "Cundo se crea una clave, tú usas letras mayúsculas, minúsculas, números y símbolos, pero una de las formas más eficientes es seleccionar números y letras al azar (ejemplo: canguroSyCA67).",
+        "Por lo tanto mantente lejos de los números seguidos.",
+        "Suplantación es otra forma de ataque del cual debes estar pendiente. Son correos o páginas web que simulan sitios seguros y engañan a las personas para obtener su información personlal. Son sitios que no están conectados a donde dicen que estan.",
+        "En general hay dos formas de resguardarse de estos ataques: verificar la dirección web de la página y abrir la dirección de la página web, en otro navegador para poder comprobar si corresponde con el sitio del que dicen que procede.",
+        "Ahora hablemos sobre cifrado y HTTPS",
+        "Si te encuentras comprando en una página de internet de una tienda muy prestigiosa y necesitas dar los datos de tu tarjeta de crédito es muy razonable que sospeches que alguien puede estar viendo y copiando esta información.",
+        "Es imprescindible que te fijes que la dirección de esta página web, en tu navegador, comienza con letras verdes y con HTTPS en vez de comenzar con solo HTTP.",
+        "Esto significa que el sitio por el que estás enviando esta información, la envía en forma codificada",
+        "En general, asegúrate que la página sea HTTPS si necesita escribir información privada o importante.",
+        "Otras recomendaciones importantes: no uses la misma clave para diferentes cuentas importantes",
+        "Si el sitio que usas ha sido vulnerado, tu clave puede estar comprometida independientemente de su fortaleza.",
+        "Tampoco descargues archivos desconocidos.",
+        "Se precavido si no reconoces archivos de tipo .pdf, .txt, .jpg.",
+        "Algunos de estos archivos pueden ser muy potentes e incluso correr dentro de tu computador.",
+        "Por último, mantén tu software actualizado, en especial el software que interactúa con internet.",
+        "Una de las formas en que se puede comprometer tu información es cuando los 'los chicos malos' encuentran huecos en las versiones viejas de los programas",
+        "Estos defectos se corrigen en las versiones nuevas, por lo que evitarás problemas si mantienes el software actualizado.",
+        "Estas son algunas cosas muy básicas que debes saber acerca de cómo proteger la información de tu computador."
+      ]
     }
   ]
 }
