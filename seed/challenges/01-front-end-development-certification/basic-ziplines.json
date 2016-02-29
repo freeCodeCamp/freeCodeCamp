@@ -173,7 +173,7 @@
         "<strong>Historia de usuario:</strong> Puedo acceder a todo el contenido de la página del portafolio con sólo desplazarme en la ventana.",
         "<strong>Historia de usuario:</strong> Puedo pulsar diferentes botones que me llevarán a las páginas de las diferentes cuentas de redes sociales del creador del portafolio.",
         "<strong>Historia de usuario:</strong> Puedo ver una imagen de los diferentes proyectos que el creador del portafolio ha construido (si no has construido ningún sitio web antes, usa marcadores de posición.)",
-        "<strong>Historia de usuario opcional:</strong> Puedo navegar a las diferentes secciones de la página web pulsando botones de navegación.",
+        "<strong>Historia de usuario:</strong> Puedo navegar a las diferentes secciones de la página web pulsando botones de navegación.",
         "No te preocupes si no tienes nada que mostrar en tu portafolio todavía - en los siguientes desafíos crearás varias apps en CodePen, así que puedes regresar luego para actualizar tu portafolio.",
         "Hay muchas plantillas increíbles en la web, pero para este desafío, tendrás que construir la página web de tu portafolio completamente por tu cuenta. Usar Bootstrap hará el trabajo mucho más fácil para ti.",
         "Ten en mente que CodePen.io ignora la función Window.open(), así que si quieres abrir alguna ventana usando jQuery, necesitarás utilizar como objetivo un elemento de ancla invisible, como el siguiente: <code>&lt;a target='_blank'&gt;</a></code>.",
