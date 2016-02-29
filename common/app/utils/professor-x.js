@@ -54,7 +54,7 @@ export default function contain(options = {}, Component) {
     options.getActionArgs :
     (() => []);
 
-  const isPrimed = typeof typeof options.isPrimed === 'function' ?
+  const isPrimed = typeof options.isPrimed === 'function' ?
     options.isPrimed :
     (() => false);
 

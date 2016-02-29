@@ -32,7 +32,7 @@ export default function getJobServices(app) {
         return Job.findById(id, cb);
       }
       Job.find(whereFilt, (err, jobs) => {
-        cb(err, jobs);
+        cb(err, jobs.map(job => job.toJSON()));
       });
     }
   };
