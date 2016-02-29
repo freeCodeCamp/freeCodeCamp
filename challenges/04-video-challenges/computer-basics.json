@@ -761,7 +761,20 @@
         ]
       ],
       "type": "hike",
-      "challengeType": 6
+      "challengeType": 6,
+      "nameEs": "Consola y Logging",
+      "descriptionEs": [
+       "Nosotros discutimos que es la consola (y donde está), porque es útil y mostrar un poco de como trabaja.",
+       	"La consola: que es, donde la puedes encontrar, y para que la usas.",
+       	"La consola es usada comunmente para mostrar los mensajes administrativos del sistema.",
+       	"Una vez te familiarices con esta, encontraras una útil y poderosa herramienta.",
+        "En Javascript, la consola es usada como una gran herramienta para depurar y encontrar donde hay un error en tu código ",
+      	"Uno de los términos mas importantes para recordar es \"console.log()\".",
+        "El proceso para usarla es, es ponerlo en cualquier parte entre las líneas del código para ayudar a encontrar, identificar, y en últimas solucionar problemas especificos",
+        "Usando el navegador Chrome y la consola de Chrome, si nosotros escribimos <code>console.log(\"Free Code Camp es muy bueno!\");</code>, la consola literalmente mostrará \"Free Code Camp es muy bueno!\".",
+        "Además esto funcionará con números y booleanos, cuyos valores posibles son verdadro/falso",
+        "Cuando se envian palabras a la consola, es importante ponerlas dentro de comillas para reconocer que es una cadena."
+      ]
     },
     {
       "id": "bd7129d89441eddfbeb5bddf",
