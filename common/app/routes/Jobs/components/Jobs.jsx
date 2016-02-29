@@ -2,7 +2,7 @@ import React, { cloneElement, PropTypes } from 'react';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
-import { push } from 'react-router-redux';
+import { LinkContainer } from 'react-router-bootstrap';
 
 import PureComponent from 'react-pure-render/component';
 import { Button, Row, Col } from 'react-bootstrap';
@@ -26,8 +26,7 @@ const mapStateToProps = createSelector(
 
 const bindableActions = {
   findJob,
-  fetchJobs,
-  push
+  fetchJobs
 };
 
 const fetchOptions = {
@@ -101,13 +100,11 @@ export class Jobs extends PureComponent {
               sm={ 8 }
               smOffset={ 2 }
               xs={ 12 }>
-              <Button
-                className='signup-btn btn-block btn-cta'
-                onClick={ ()=> {
-                  push('/jobs/new');
-                }}>
-                Post a job: $1,000
-              </Button>
+              <LinkContainer to='/jobs/new' >
+                <Button className='signup-btn btn-block btn-cta'>
+                  Post a job: $1,000
+                </Button>
+              </LinkContainer>
               <div className='spacer' />
             </Col>
           </Row>

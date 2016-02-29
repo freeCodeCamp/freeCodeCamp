@@ -34,7 +34,7 @@ export default ({ services }) => ({ dispatch }) => next => {
         return fetchJobsCompleted(
           result.jobs[0],
           {
-            entities: entities.jobs,
+            entities: entities.job,
             results: result.jobs
           }
         );

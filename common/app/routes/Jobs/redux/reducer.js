@@ -34,7 +34,7 @@ export default handleActions(
         newJob
       };
     },
-    [types.fetchJobCompleted]: (state, { payload: { jobs, currentJob } }) => ({
+    [types.fetchJobsCompleted]: (state, { payload: { jobs, currentJob } }) => ({
       ...state,
       currentJob,
       jobs
