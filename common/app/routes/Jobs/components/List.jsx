@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react';
 import classnames from 'classnames';
+import { LinkContainer } from 'react-router-bootstrap';
 import { ListGroup, ListGroupItem } from 'react-bootstrap';
 import PureComponent from 'react-pure-render/component';
 
@@ -41,26 +42,31 @@ export default class ListJobs extends PureComponent {
         'jobs-list-highlight': isHighlighted
       });
 
+      const to = `/jobs/${id}`;
+
       return (
-        <ListGroupItem
-          className={ className }
+        <LinkContainer
           key={ id }
-          onClick={ () => handleClick(id) }>
-          <div>
-            <h4 className='pull-left' style={{ display: 'inline-block' }}>
-              <bold>{ company }</bold>
-              {' '}
-              <span className='hidden-xs hidden-sm'>
-                - { position }
-              </span>
-            </h4>
-            <h4
-              className='pull-right'
-              style={{ display: 'inline-block' }}>
-              { this.addLocation(locale) }
-            </h4>
-          </div>
-        </ListGroupItem>
+          to={ to }>
+          <ListGroupItem
+            className={ className }
+            onClick={ () => handleClick(id) }>
+            <div>
+              <h4 className='pull-left' style={{ display: 'inline-block' }}>
+                <bold>{ company }</bold>
+                {' '}
+                <span className='hidden-xs hidden-sm'>
+                  - { position }
+                </span>
+              </h4>
+              <h4
+                className='pull-right'
+                style={{ display: 'inline-block' }}>
+                { this.addLocation(locale) }
+              </h4>
+            </div>
+          </ListGroupItem>
+        </LinkContainer>
       );
     });
   }

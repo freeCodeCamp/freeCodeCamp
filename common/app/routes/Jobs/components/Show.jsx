@@ -6,7 +6,7 @@ import PureComponent from 'react-pure-render/component';
 import { createSelector } from 'reselect';
 
 import contain from '../../../utils/professor-x';
-import { fetchJob } from '../redux/actions';
+import { fetchJobs } from '../redux/actions';
 
 import ShowJob from './ShowJob.jsx';
 import JobNotFound from './JobNotFound.jsx';
@@ -60,21 +60,22 @@ function generateMessage(
 const mapStateToProps = createSelector(
   state => state.app,
   state => state.jobsApp.currentJob,
-  ({ username, isFrontEndCert, isBackEndCert }, job = {}) => ({
+  state => state.jobsApp.jobs.entities,
+  ({ username, isFrontEndCert, isBackEndCert }, currentJob, jobs) => ({
     username,
     isFrontEndCert,
     isBackEndCert,
-    job
+    job: jobs[currentJob] || {}
   })
 );
 
 const bindableActions = {
   push,
-  fetchJob
+  fetchJobs
 };
 
 const fetchOptions = {
-  fetchAction: 'fetchJob',
+  fetchAction: 'fetchJobs',
   getActionArgs({ params: { id } }) {
     return [ id ];
   },

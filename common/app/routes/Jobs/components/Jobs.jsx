@@ -48,15 +48,11 @@ export class Jobs extends PureComponent {
     showModal: PropTypes.bool
   };
 
-  createJobClickHandler(id) {
-    const { findJob, push } = this.props;
-    if (!id) {
-      return null;
-    }
+  createJobClickHandler() {
+    const { findJob } = this.props;
 
-    return id => {
+    return (id) => {
       findJob(id);
-      push(`/jobs/${id}`);
     };
   }
 
