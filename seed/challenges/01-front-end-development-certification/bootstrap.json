@@ -943,7 +943,7 @@
         "Al usar el elemento <code>span</code>, puedes poner varios elementos juntos, e incluso darle diferentes estilos a partes diferentes del mismo elemento.",
         "Anida la palabra \"love\" en tu elemento \"Things cats love\" dentro de un elemento <code>span</code>. Luego, asigna a ese elemento <code>span</code> la clase <code>text-danger</code> para hacer que el texto sea rojo.",
         "Así es como lo harías con el elemento \"Top 3 things cats hate\":",
-        "<code>&#60;p&#62;Top 3 things cats &#60;span class = \"text-danger\"&#62;hate&#60;/span&#62;&#60;/p&#62;</code>"
+        "<code>&#60;p&#62;Top 3 things cats &#60;span class = \"text-danger\"&#62;hate:&#60;/span&#62;&#60;/p&#62;</code>"
       ]
     },
     {
@@ -1025,7 +1025,7 @@
       "challengeType": 0,
       "nameEs": "Crea un encabezado personalizado",
       "descriptionEs": [
-        "Crearemos un encabezado simple para nuestra aplicación de fotos de gatos poniéndolos en la misma línea.",
+        "Crearemos un encabezado simple para nuestra aplicación de fotos de gatos poniendo el título y la relajante imagen del gato en la misma línea.",
         "Recuerda, Bootstrap usa un sistema de cuadrícula adaptativo, el cual facilita poner elementos en filas y especificar el ancho relativo de cada elemento. La mayoría de las clases de Bootstrap pueden aplicarse a un elemento <code>div</code>.",
         "Aquí hay un diagrama del funcionamiento de la cuadrícula de 12 columnas Bootstrap:",
         "<a href=\"http://i.imgur.com/FaYuui8.png\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" src=\"http://i.imgur.com/FaYuui8.png\" title=\"Pulsa para agrandar\" alt=\"una imagen que muestra el sistema de cuadrícula de Bootstrap\"></a>",
@@ -1117,6 +1117,11 @@
       "nameEs": "Agrega iconos de Font Awesome a los botones",
       "descriptionEs": [
         "Font Awesome es una librería de iconos muy conveniente. Estos iconos son imágenes vectoriales, almacenadas en formato <code>.svg</code>, y son tratados como si fueran fuentes. Puedes especificar su tamaño usando pixeles, y tomarán el tamaño de fuente de su elemento HTML padre.",
+        "Puedes añadir Font Awesome a cualquier aplicación sólo incluyendo y agregando el siguiente código al comienzo de tu HTML:",
+        "<code>&#60;link rel=\"stylesheet\" href=\"//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css\"/&#62;</code>",
+        "En este caso, ya lo hemos agregado por tí a esta página tras bambalinas.",
+        "El elemento <code>i</code> originalmente era usado para hacer textos en itálicas, pero ahora comunmente se usa para iconos.  Le agregas clases de Font Awesome al elemento <code>i</code> para convertirlo en un ícono, por ejemplo:",
+        "<code>&lt;i class=\"fa fa-info-circle\"&gt;&lt;/i&gt;</code>",
         "Usa Font Awesome para agregar un icono de \"pulgar arriba\" <code>thumbs-up</code> a tu botón de like dándole un elemento <code>i</code> con las clases <code>fa</code> y <code>fa-thumbs-up</code>."
       ]
     },
@@ -1830,7 +1835,7 @@
         "Let's give a unique id to each of our <code>div</code> elements of class <code>well</code>.",
         "Remember that you can give an element an id like this:",
         "<code>&#60;div class=\"well\" id=\"center-well\"&#62;</code>",
-        "Give the well on the left the id of <code>left-well</code>. Give the well on the right the <code>id</code> of <code>right-well</code>."
+        "Give the well on the left the id of <code>left-well</code>. Give the well on the right the id of <code>right-well</code>."
       ],
       "challengeSeed": [
         "<div class=\"container-fluid\">",
@@ -1866,7 +1871,7 @@
         "Vamos a darle un id único a cada uno de nuestros elementos <code>div</code> que tienen la clase <code>well</code>.",
         "Recuerda que puedes darle a un elemento un id como el siguiente:",
         "<code>&#60;div class=\"well\" id=\"center-well\"&#62;</code>",
-        "Dale al pozo de la izquireda el id <code>left-well</code>. Al pozo de la derecha, dale un <code>id</code> de <code>right-well</code>."
+        "Dale al pozo de la izquireda el id <code>left-well</code>. Al pozo de la derecha, dale un id <code>right-well</code>."
       ]
     },
     {
@@ -1959,7 +1964,8 @@
       "nameEs": "Dale a cada elemento un ID único",
       "descriptionEs": [
         "También quisiéramos referirnos a cada botón por su id utilizando jQuery.",
-        "Dale a cada uno de tus botones un id único, comenzando con <code>target1</code> y terminando con <code>target6</code>."
+        "Dale a cada uno de tus botones un id único, comenzando con <code>target1</code> y terminando con <code>target6</code>.",
+        "Asegúrate que <code>target1</code> a <code>target3</code> queden en <code>#left-well</code>, mientras que <code>target4</code> a <code>target6</code> queden en <code>#right-well</code>."
       ]
     },
     {
