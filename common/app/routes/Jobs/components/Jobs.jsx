@@ -32,7 +32,7 @@ const bindableActions = {
 const fetchOptions = {
   fetchAction: 'fetchJobs',
   isPrimed({ jobs }) {
-    return !!jobs.length;
+    return jobs.length > 1;
   }
 };
 

@@ -23,17 +23,20 @@ export default function getJobServices(app) {
       });
 
       Job.create(job, (err, savedJob) => {
-        cb(err, savedJob);
+        cb(err, savedJob.toJSON());
       });
     },
     read(req, resource, params, config, cb) {
       const id = params ? params.id : null;
+      console.log('params', params);
       if (id) {
-        return Job.findById(id, cb);
+        return Job.findById(id)
+          .then(job => cb(null, job.toJSON()))
+          .catch(cb);
       }
-      Job.find(whereFilt, (err, jobs) => {
-        cb(err, jobs.map(job => job.toJSON()));
-      });
+      Job.find(whereFilt)
+        .then(jobs => cb(null, jobs.map(job => job.toJSON())))
+        .catch(cb);
     }
   };
 }

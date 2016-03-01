@@ -16,7 +16,7 @@ export default ({ services }) => ({ dispatch }) => next => {
     const { payload: id } = action;
     const data = { service: 'jobs' };
     if (id) {
-      data.id = id;
+      data.params = { id };
     }
 
     return services.readService$(data)
