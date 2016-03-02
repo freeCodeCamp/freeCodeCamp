@@ -239,7 +239,7 @@
       "challengeType": 4,
       "isRequired": true,
       "nameEs": "Microservicio para analizar el encabezado de una petición",
-      "description": [
+      "descriptionEs": [
         "<strong>Objetivo:</strong> Desarrolla una aplicación de Pila Completa en JavaScript que sea funcionalmente similar a esta: <a href='https://cryptic-ridge-9197.herokuapp.com/api/whoami/' target='_blank'>https://cryptic-ridge-9197.herokuapp.com/api/whoami/</a> y despliegala en Heroku.",
         "Ten en cuenta que para cada proyecto, deberías crear un nuevo repositorio en GitHub y un nuevo proyecto en Heroku. Si no recuerdas como hacer esto, vuelve a visitar <a href='/challenges/get-set-for-our-back-end-development-projects'>http://freecodecamp.com//challenges/get-set-for-our-back-end-development-projects</a>.",
         "Aquí están las historias de usuario específicas que debes implementar para este proyecto:",
