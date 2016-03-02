@@ -979,7 +979,7 @@
         "<h4>Instructiones</h4>",
         "Usa <dfn>barras invertidas</dfn>para asigar una cadena a la variable <code>myStr</code> de modo que <em>si</em> tu fueras a imprimirla en la consola, tu verías:",
         "<code>I am a \"double quoted\" string inside \"double quotes\"</code>"
-      ]    
+      ]
     },
     {
       "id": "56533eb9ac21ba0edf2244b4",
@@ -3084,7 +3084,7 @@
         "assert(myTest(50) === \"Yes\", 'message: <code>myTest(50)</code> should return \"Yes\"');",
         "assert(myTest(51) === \"No\", 'message: <code>myTest(51)</code> should return \"No\"');",
         "assert(myTest(75) === \"No\", 'message: <code>myTest(75)</code> should return \"No\"');",
-        "assert(myTest(51) === \"No\", 'message: <code>myTest(51)</code> should return \"No\"');"
+        "assert(myTest(80) === \"No\", 'message: <code>myTest(80)</code> should return \"No\"');"
       ],
       "type": "waypoint",
       "challengeType": 1,
