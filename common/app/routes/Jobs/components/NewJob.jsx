@@ -1,4 +1,4 @@
-import { helpers } from 'rx';
+import { CompositeDisposable, helpers } from 'rx';
 import React, { PropTypes } from 'react';
 import { reduxForm } from 'redux-form';
 // import debug from 'debug';
@@ -70,14 +70,17 @@ const fieldValidators = {
   locale: makeRequired(isAscii),
   description: makeRequired(helpers.identity),
   email: makeRequired(isEmail),
-  url: isValidURL,
-  logo: isValidURL,
+  url: makeRequired(isValidURL),
+  logo: makeOptional(isValidURL),
   company: makeRequired(isAscii),
   howToApply: makeRequired(isAscii)
 };
 
+function makeOptional(validator) {
+  return val => val ? validator(val) : true;
+}
 function makeRequired(validator) {
-  return (val) => !!val && validator(val);
+  return (val) => val ? validator(val) : false;
 }
 
 function validateForm(values) {
@@ -86,7 +89,7 @@ function validateForm(values) {
       if (fieldValidators[field](values[field])) {
         return null;
       }
-      return { [field]: fieldValidators[field](values[field]) };
+      return { [field]: !fieldValidators[field](values[field]) };
     })
     .filter(Boolean)
     .reduce((errors, error) => ({ ...errors, ...error }), {});
@@ -103,15 +106,30 @@ function getBsStyle(field) {
 }
 
 export class NewJob extends React.Component {
+  constructor(...args) {
+    super(...args);
+    this._subscriptions = new CompositeDisposable();
+  }
+
   static displayName = 'NewJob';
 
   static propTypes = {
     fields: PropTypes.object,
-    handleSubmit: PropTypes.func
+    handleSubmit: PropTypes.func,
+    saveJob: PropTypes.func
   };
 
   componentDidMount() {
     // this.prop.getSavedForm();
+  }
+
+  componentWillUnmount() {
+    this._subscriptions.dispose();
+  }
+
+  handleSubmit(job) {
+    const subscription = this.props.saveJob(job).subscribe();
+    this._subscriptions.add(subscription);
   }
 
   handleCertClick(name) {
@@ -372,6 +390,6 @@ export default reduxForm(
   },
   null,
   {
-    onSubmit: saveJob
+    saveJob
   }
 )(NewJob);

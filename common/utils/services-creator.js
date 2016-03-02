@@ -32,7 +32,7 @@ export default stampit({
       });
     },
     createService$({ service: resource, params, body, config }) {
-      return Observable.create(function(observer) {
+      return Observable.create(observer => {
         this.services.create(
           resource,
           params,

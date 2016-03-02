@@ -4,6 +4,7 @@ const types = [
 
   'findJob',
   'saveJob',
+  'saveJobCompleted',
 
   'saveForm',
   'clearForm',

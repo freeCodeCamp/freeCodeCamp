@@ -8,7 +8,11 @@ const normalizeOptions = {
   stripWWW: false
 };
 
-function formatUrl(url, shouldKeepTrailingSlash = true) {
+function ifDefinedNormalize(normalizer) {
+  return value => value ? normalizer(value) : value;
+}
+
+function formatUrl(url) {
   if (
     typeof url === 'string' &&
     url.length > 4 &&
@@ -16,7 +20,7 @@ function formatUrl(url, shouldKeepTrailingSlash = true) {
   ) {
     // prevent trailing / from being stripped during typing
     let lastChar = '';
-    if (shouldKeepTrailingSlash && url.substring(url.length - 1) === '/') {
+    if (url.substring(url.length - 1) === '/') {
       lastChar = '/';
     }
     return normalizeUrl(url, normalizeOptions) + lastChar;
@@ -26,13 +30,13 @@ function formatUrl(url, shouldKeepTrailingSlash = true) {
 
 export default {
   NewJob: {
-    position: inHTMLData,
-    locale: inHTMLData,
-    description: inHTMLData,
-    email: inHTMLData,
-    url: value => formatUrl(uriInSingleQuotedAttr(value)),
-    logo: value => formatUrl(uriInSingleQuotedAttr(value)),
-    company: inHTMLData,
-    howToApply: inHTMLData
+    position: ifDefinedNormalize(inHTMLData),
+    locale: ifDefinedNormalize(inHTMLData),
+    description: ifDefinedNormalize(inHTMLData),
+    email: ifDefinedNormalize(inHTMLData),
+    url: ifDefinedNormalize(value => formatUrl(uriInSingleQuotedAttr(value))),
+    logo: ifDefinedNormalize(value => formatUrl(uriInSingleQuotedAttr(value))),
+    company: ifDefinedNormalize(inHTMLData),
+    howToApply: ifDefinedNormalize(inHTMLData)
   }
 };
