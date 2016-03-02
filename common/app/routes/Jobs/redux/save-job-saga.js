@@ -1,4 +1,5 @@
 import { Observable } from 'rx';
+import { push } from 'react-router-redux';
 
 import { saveJobCompleted } from './actions';
 import { saveJob } from './types';
@@ -16,7 +17,11 @@ export default ({ services }) => ({ dispatch }) => next => {
       service: 'jobs',
       params: { job }
     })
-    .map(job => saveJobCompleted(job))
+    .retry(3)
+    .flatMap(job => Observable.of(
+      saveJobCompleted(job),
+      push('/jobs/new/preview')
+    ))
     .catch(error => Observable.just({
       type: handleError,
       error
