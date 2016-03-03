@@ -27,3 +27,6 @@ export const setUser = createAction(types.setUser);
 
 // updatePoints(points: Number) => Action
 export const updatePoints = createAction(types.updatePoints);
+
+// hardGoTo(path: String) => Action
+export const hardGoTo = createAction(types.hardGoTo);

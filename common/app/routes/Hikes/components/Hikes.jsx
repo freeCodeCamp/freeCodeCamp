@@ -29,7 +29,6 @@ const mapStateToProps = createSelector(
 
 const fetchOptions = {
   fetchAction: 'fetchHikes',
-
   isPrimed: ({ hikes }) => hikes && !!hikes.length,
   getActionArgs: ({ params: { dashedName } }) => [ dashedName ],
   shouldContainerFetch(props, nextProps) {

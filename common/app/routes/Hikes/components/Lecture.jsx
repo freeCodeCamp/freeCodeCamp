@@ -5,6 +5,7 @@ import Vimeo from 'react-vimeo';
 import { createSelector } from 'reselect';
 import debug from 'debug';
 
+import { hardGoTo } from '../../../redux/actions';
 import { toggleQuestionView } from '../redux/actions';
 import { getCurrentHike } from '../redux/selectors';
 
@@ -33,10 +34,17 @@ export class Lecture extends React.Component {
     // actions
     toggleQuestionView: PropTypes.func,
     // ui
-    id: PropTypes.string,
+    id: PropTypes.number,
     description: PropTypes.array,
-    dashedName: PropTypes.string
+    dashedName: PropTypes.string,
+    hardGoTo: PropTypes.func
   };
+
+  componentWillMount() {
+    if (!this.props.id) {
+      this.props.hardGoTo('/map');
+    }
+  }
 
   shouldComponentUpdate(nextProps) {
     const { props } = this;
@@ -70,7 +78,7 @@ export class Lecture extends React.Component {
           <Vimeo
             onError={ this.handleError }
             onFinish= { toggleQuestionView }
-            videoId={ id } />
+            videoId={ '' + id } />
         </Row>
         <Row>
           <article>
@@ -89,4 +97,7 @@ export class Lecture extends React.Component {
   }
 }
 
-export default connect(mapStateToProps, { toggleQuestionView })(Lecture);
+export default connect(
+  mapStateToProps,
+  { hardGoTo, toggleQuestionView }
+)(Lecture);

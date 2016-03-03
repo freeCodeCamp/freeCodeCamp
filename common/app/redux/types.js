@@ -6,7 +6,9 @@ const types = [
 
   'makeToast',
   'updatePoints',
-  'handleError'
+  'handleError',
+  // used to hit the server
+  'hardGoTo'
 ];
 
 export default types
