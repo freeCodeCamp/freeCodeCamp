@@ -10,13 +10,13 @@ export function saveInstance(instance) {
       observer.onNext();
       return observer.onCompleted();
     }
-    instance.save(function(err, savedInstance) {
+    return instance.save(function(err, savedInstance) {
       if (err) {
         return observer.onError(err);
       }
       debug('instance saved');
       observer.onNext(savedInstance);
-      observer.onCompleted();
+      return observer.onCompleted();
     });
   });
 }

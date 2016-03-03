@@ -120,6 +120,7 @@ function shouldShowNew(element, block) {
     }, 0);
     return newCount / block.length * 100 === 100;
   }
+  return null;
 }
 
 // meant to be used with a filter method
@@ -516,7 +517,7 @@ module.exports = function(app) {
           if (data.id) {
             res.cookie('currentChallengeId', data.id);
           }
-          res.render(view, data);
+          return res.render(view, data);
         },
         next,
         function() {}
@@ -585,7 +586,7 @@ module.exports = function(app) {
               alreadyCompleted
             });
           }
-          res.sendStatus(200);
+          return res.sendStatus(200);
         }
       );
   }
@@ -652,7 +653,7 @@ module.exports = function(app) {
               user.progressTimestamps.length + 1
           });
         }
-        res.status(200).send(true);
+        return res.status(200).send(true);
       })
       .subscribe(() => {}, next);
   }

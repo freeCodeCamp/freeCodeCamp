@@ -132,7 +132,7 @@ export class NewJob extends React.Component {
       if (certType === name) {
         return fields[certType].onChange(true);
       }
-      fields[certType].onChange(false);
+      return fields[certType].onChange(false);
     });
   }
 

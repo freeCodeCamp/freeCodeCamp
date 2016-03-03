@@ -195,7 +195,7 @@ module.exports = function(app) {
     if (req.user) {
       return res.redirect('/');
     }
-    res.render('account/signin', {
+    return res.render('account/signin', {
       title: 'Sign in to Free Code Camp using a Social Media Account'
     });
   }
@@ -209,7 +209,7 @@ module.exports = function(app) {
     if (req.user) {
       return res.redirect('/');
     }
-    res.render('account/email-signin', {
+    return res.render('account/email-signin', {
       title: 'Sign in to Free Code Camp using your Email Address'
     });
   }
@@ -218,7 +218,7 @@ module.exports = function(app) {
     if (req.user) {
       return res.redirect('/');
     }
-    res.render('account/email-signup', {
+    return res.render('account/email-signup', {
       title: 'Sign up for Free Code Camp using your Email Address'
     });
   }
@@ -387,7 +387,7 @@ module.exports = function(app) {
           req.flash('errors', {
             msg: `Looks like user ${username} is not ${certText[certType]}`
           });
-          res.redirect('back');
+          return res.redirect('back');
         },
         next
       );
@@ -406,7 +406,7 @@ module.exports = function(app) {
             section at the bottom of this page.
           `
         });
-        res.redirect('/' + req.user.username);
+        return res.redirect('/' + req.user.username);
       });
     }
     req.user.isLocked = true;
@@ -420,7 +420,7 @@ module.exports = function(app) {
           section at the bottom of this page.
         `
       });
-      res.redirect('/' + req.user.username);
+      return res.redirect('/' + req.user.username);
     });
   }
 
@@ -429,7 +429,7 @@ module.exports = function(app) {
       if (err) { return next(err); }
       req.logout();
       req.flash('info', { msg: 'Your account has been deleted.' });
-      res.redirect('/');
+      return res.redirect('/');
     });
   }
 
@@ -438,7 +438,7 @@ module.exports = function(app) {
       req.flash('errors', { msg: 'access token invalid' });
       return res.render('account/forgot');
     }
-    res.render('account/reset', {
+    return res.render('account/reset', {
       title: 'Reset your Password',
       accessToken: req.accessToken.id
     });
@@ -453,14 +453,14 @@ module.exports = function(app) {
       return res.redirect('back');
     }
 
-    User.findById(req.accessToken.userId, function(err, user) {
+    return User.findById(req.accessToken.userId, function(err, user) {
       if (err) { return next(err); }
-      user.updateAttribute('password', password, function(err) {
-      if (err) { return next(err); }
+      return user.updateAttribute('password', password, function(err) {
+        if (err) { return next(err); }
 
         debug('password reset processed successfully');
         req.flash('info', { msg: 'password reset processed successfully' });
-        res.redirect('/');
+        return res.redirect('/');
       });
     });
   }
@@ -469,7 +469,7 @@ module.exports = function(app) {
     if (req.isAuthenticated()) {
       return res.redirect('/');
     }
-    res.render('account/forgot', {
+    return res.render('account/forgot', {
       title: 'Forgot Password'
     });
   }
@@ -483,7 +483,7 @@ module.exports = function(app) {
       return res.redirect('/forgot');
     }
 
-    User.resetPassword({
+    return User.resetPassword({
       email: email
     }, function(err) {
       if (err) {
@@ -496,7 +496,7 @@ module.exports = function(app) {
         email +
         ' with further instructions.'
       });
-      res.render('account/forgot');
+      return res.render('account/forgot');
     });
   }
 
@@ -507,7 +507,7 @@ module.exports = function(app) {
         if (err) { return next(err); }
 
         req.flash('success', { msg: 'Thanks for voting!' });
-        res.redirect('/map');
+        return res.redirect('/map');
       });
     } else {
       req.flash('error', { msg: 'You must be signed in to vote.' });
@@ -522,7 +522,7 @@ module.exports = function(app) {
         if (err) { return next(err); }
 
         req.flash('success', { msg: 'Thanks for voting!' });
-        res.redirect('/map');
+        return res.redirect('/map');
       });
     } else {
       req.flash('error', {msg: 'You must be signed in to vote.'});

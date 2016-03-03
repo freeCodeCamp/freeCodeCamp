@@ -4,15 +4,16 @@
 //     errSaga(action: Action) => Object|Void
 export default () => ({ dispatch }) => next => {
   return function errorSaga(action) {
-    if (!action.error) { return next(action); }
+    const result = next(action);
+    if (!action.error) { return result; }
 
     console.error(action.error);
-    dispatch({
+    return dispatch({
       type: 'app.makeToast',
       payload: {
         type: 'error',
         title: 'Oops, something went wrong',
-        message: `Something went wrong, please try again later`
+        message: 'Something went wrong, please try again later'
       }
     });
   };

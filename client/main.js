@@ -93,6 +93,7 @@ main = (function(main, global) {
           '<span>Free Code Camp\'s Main Chat</span>' +
         '</div>'
       );
+      return null;
     });
 
 
@@ -233,7 +234,7 @@ $(document).ready(function() {
     };
 
     $('#story-submit').unbind('click');
-    $.post('/stories/', data)
+    return $.post('/stories/', data)
       .fail(function() {
         $('#story-submit').bind('click', storySubmitButtonHandler);
       })
@@ -243,6 +244,7 @@ $(document).ready(function() {
           return null;
         }
         window.location = '/stories/' + storyLink;
+        return null;
       });
   };
 

@@ -103,6 +103,7 @@ class Question extends React.Component {
       .subscribe();
 
     this._subscriptions.add(subscription);
+    return null;
   }
 
   handleMouseMove(isPressed, { delta, moveQuestion }) {

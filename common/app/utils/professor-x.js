@@ -105,7 +105,7 @@ export default function contain(options = {}, Component) {
         getChildContext(Component.contextTypes, this.context)
       );
 
-      professor.fetchContext.push({
+      return professor.fetchContext.push({
         name: options.fetchAction,
         action,
         actionArgs,
@@ -136,7 +136,7 @@ export default function contain(options = {}, Component) {
         () => {},
         options.handleError
       );
-      this.__subscriptions.add(subscription);
+      return this.__subscriptions.add(subscription);
     }
 
     componentWillReceiveProps(nextProps, nextContext) {

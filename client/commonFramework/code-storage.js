@@ -34,6 +34,7 @@ window.common = (function(global) {
           }
         }
       }
+      return null;
     },
 
     isAlive: function(key) {

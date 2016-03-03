@@ -22,7 +22,7 @@ export default function getJobServices(app) {
         isApproved: false
       });
 
-      Job.create(job, (err, savedJob) => {
+      return Job.create(job, (err, savedJob) => {
         cb(err, savedJob.toJSON());
       });
     },
@@ -33,7 +33,7 @@ export default function getJobServices(app) {
           .then(job => cb(null, job.toJSON()))
           .catch(cb);
       }
-      Job.find(whereFilt)
+      return Job.find(whereFilt)
         .then(jobs => cb(null, jobs.map(job => job.toJSON())))
         .catch(cb);
     }

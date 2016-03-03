@@ -1,4 +1,4 @@
-import{ Observable, Disposable } from 'rx';
+import { Observable, Disposable } from 'rx';
 import Fetchr from 'fetchr';
 import stampit from 'stampit';
 
@@ -9,7 +9,7 @@ function callbackObserver(observer) {
     }
 
     observer.onNext(res);
-    observer.onCompleted();
+    return observer.onCompleted();
   };
 }
 

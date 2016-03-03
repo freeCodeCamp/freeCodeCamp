@@ -17,7 +17,7 @@ export function fetch({ fetchContext = [] }) {
     .doOnNext(fetch$ => {
       if (!Observable.isObservable(fetch$)) {
         throw new Error(
-          `action creator should return an observable`
+          'action creator should return an observable'
         );
       }
     })

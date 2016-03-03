@@ -25,7 +25,7 @@ export default function hikesService(app) {
         if (err) {
           return cb(err);
         }
-        cb(null, hikes.map(hike => hike.toJSON()));
+        return cb(null, hikes.map(hike => hike.toJSON()));
       });
     }
   };

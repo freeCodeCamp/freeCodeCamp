@@ -217,7 +217,7 @@ export default function commit(app) {
       })
       .subscribe(
         pledge => {
-          let msg = `You have successfully stopped your pledge.`;
+          let msg = 'You have successfully stopped your pledge.';
           if (!pledge) {
             msg = `No pledge found for user ${user.username}.`;
           }

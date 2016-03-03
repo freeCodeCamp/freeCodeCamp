@@ -271,7 +271,7 @@ module.exports = function(User) {
         ));
       });
     }
-    User.findOne({ where: { username } }, (err, user) => {
+    return User.findOne({ where: { username } }, (err, user) => {
       if (err) {
         return cb(err);
       }
@@ -327,7 +327,7 @@ module.exports = function(User) {
         .valueOf();
       const user$ = findUser({ where: { username: receiver }});
 
-      user$
+      return user$
         .tapOnNext((user) => {
           if (!user) {
             throw new Error(`could not find receiver for ${ receiver }`);
