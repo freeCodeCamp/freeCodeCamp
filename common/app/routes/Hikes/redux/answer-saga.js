@@ -76,7 +76,7 @@ function handleAnswer(getState, dispatch, next, action) {
 
   let updateUser$;
   if (isSignedIn) {
-    const body = { id, name, challengeType };
+    const body = { id, name, challengeType: +challengeType };
     updateUser$ = postJSON$('/completed-challenge', body)
       // if post fails, will retry once
       .retry(3)
