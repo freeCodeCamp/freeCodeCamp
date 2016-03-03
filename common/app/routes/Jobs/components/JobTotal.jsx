@@ -76,7 +76,7 @@ export class JobTotal extends PureComponent {
     promoApplied: PropTypes.bool
   };
 
-  componentDidMount() {
+  componentWillMount() {
     if (!this.props.id) {
       this.props.push('/jobs');
     }

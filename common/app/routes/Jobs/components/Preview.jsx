@@ -34,7 +34,7 @@ export class JobPreview extends PureComponent {
     push: PropTypes.func
   };
 
-  componentDidMount() {
+  componentWillMount() {
     const { push, job } = this.props;
     // redirect user in client
     if (!job || !job.position || !job.description) {

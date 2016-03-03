@@ -28,7 +28,6 @@ export default function getJobServices(app) {
     },
     read(req, resource, params, config, cb) {
       const id = params ? params.id : null;
-      console.log('params', params);
       if (id) {
         return Job.findById(id)
           .then(job => cb(null, job.toJSON()))

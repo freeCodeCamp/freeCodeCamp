@@ -4,7 +4,7 @@ import React from 'react';
 import debug from 'debug';
 import { Router } from 'react-router';
 import { routeReducer as routing, syncHistory } from 'react-router-redux';
-import { createLocation, createHistory } from 'history';
+import { createHistory } from 'history';
 
 import app$ from '../common/app';
 import provideStore from '../common/app/provide-store';
@@ -23,7 +23,7 @@ const serviceOptions = { xhrPath: '/services' };
 
 Rx.config.longStackSupport = !!debug.enabled;
 const history = createHistory();
-const appLocation = createLocation(
+const appLocation = history.createLocation(
   location.pathname + location.search
 );
 const routingMiddleware = syncHistory(history);

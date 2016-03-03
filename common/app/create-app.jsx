@@ -21,7 +21,7 @@ const routes = { components: App, ...childRoutes };
 
 //
 // createApp(settings: {
-//   location?: Location,
+//   location?: Location|String,
 //   history?: History,
 //   initialState?: Object|Void,
 //   serviceOptions?: Object,
@@ -65,13 +65,13 @@ export default function createApp({
   const store = compose(...enhancers)(createStore)(reducer, initialState);
 
   // createRouteProps({
-  //   location: LocationDescriptor,
+  //   redirect: LocationDescriptor,
   //   history: History,
   //   routes: Object
   // }) => Observable
   return createRouteProps({ routes, location, history })
-    .map(([ nextLocation, props ]) => ({
-      nextLocation,
+    .map(([ redirect, props ]) => ({
+      redirect,
       props,
       reducer,
       store

@@ -1,6 +1,5 @@
 import React from 'react';
-import { RoutingContext } from 'react-router';
-import { createLocation } from 'history';
+import { RouterContext } from 'react-router';
 import debug from 'debug';
 
 import renderToString from '../../common/app/utils/render-to-string';
@@ -39,15 +38,15 @@ export default function reactSubRouter(app) {
 
   function serveReactApp(req, res, next) {
     const serviceOptions = { req };
-    const location = createLocation(req.path);
-
-    // returns a router wrapped app
     app$({
-      location,
+      location: req.path,
       serviceOptions
     })
       // if react-router does not find a route send down the chain
-      .filter(({ props }) => {
+      .filter(({ redirect, props }) => {
+        if (!props && redirect) {
+          res.redirect(redirect.pathname + redirect.search);
+        }
         if (!props) {
           log(`react tried to find ${location.pathname} but got 404`);
           return next();
@@ -58,7 +57,7 @@ export default function reactSubRouter(app) {
         log('render react markup and pre-fetch data');
 
         return renderToString(
-          provideStore(React.createElement(RoutingContext, props), store)
+          provideStore(React.createElement(RouterContext, props), store)
         )
           .map(({ markup }) => ({ markup, store }));
       })
