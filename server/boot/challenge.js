@@ -526,14 +526,12 @@ module.exports = function(app) {
 
   function completedChallenge(req, res, next) {
     req.checkBody('id', 'id must be a ObjectId').isMongoId();
-
     req.checkBody('name', 'name must be at least 3 characters')
       .isString()
       .isLength({ min: 3 });
-
     req.checkBody('challengeType', 'challengeType must be an integer')
-      .isNumber()
-      .isInt();
+      .isNumber();
+
     const type = accepts(req).type('html', 'json', 'text');
 
     const errors = req.validationErrors(true);
@@ -598,8 +596,7 @@ module.exports = function(app) {
       .isString()
       .isLength({ min: 3 });
     req.checkBody('challengeType', 'must be a number')
-      .isNumber()
-      .isInt();
+      .isNumber();
     req.checkBody('solution', 'solution must be a url').isURL();
 
     const errors = req.validationErrors(true);
