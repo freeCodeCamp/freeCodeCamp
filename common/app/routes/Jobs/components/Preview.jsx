@@ -1,3 +1,4 @@
+import { CompositeDisposable } from 'rx';
 import React, { PropTypes } from 'react';
 import { Button, Row, Col } from 'react-bootstrap';
 import { connect } from 'react-redux';
@@ -7,22 +8,30 @@ import { goBack, push } from 'react-router-redux';
 import ShowJob from './ShowJob.jsx';
 import JobNotFound from './JobNotFound.jsx';
 
-import { clearSavedForm, saveJobToDb } from '../redux/actions';
+import { clearForm, saveJob } from '../redux/actions';
 
 const mapStateToProps = state => ({ job: state.jobsApp.newJob });
 
 const bindableActions = {
   goBack,
   push,
-  clearSavedForm,
-  saveJobToDb
+  clearForm,
+  saveJob
 };
 
 export class JobPreview extends PureComponent {
+  constructor(...args) {
+    super(...args);
+    this._subscriptions = new CompositeDisposable();
+  }
+
   static displayName = 'Preview';
 
   static propTypes = {
-    job: PropTypes.object
+    job: PropTypes.object,
+    saveJob: PropTypes.func,
+    clearForm: PropTypes.func,
+    push: PropTypes.func
   };
 
   componentDidMount() {
@@ -33,8 +42,19 @@ export class JobPreview extends PureComponent {
     }
   }
 
+  componentWillUnmount() {
+    this._subscriptions.dispose();
+  }
+
+  handleJobSubmit() {
+    const { clearForm, saveJob, job } = this.props;
+    clearForm();
+    const subscription = saveJob(job).subscribe();
+    this._subscriptions.add(subscription);
+  }
+
   render() {
-    const { job, goBack, clearSavedForm, saveJobToDb } = this.props;
+    const { job, goBack } = this.props;
 
     if (!job || !job.position || !job.description) {
       return <JobNotFound />;
@@ -54,25 +74,19 @@ export class JobPreview extends PureComponent {
               <Button
                 block={ true }
                 className='signup-btn'
-                onClick={ () => {
-                  clearSavedForm();
-                  saveJobToDb({
-                    goTo: '/jobs/new/check-out',
-                    job
-                  });
-                }}>
+                onClick={ () => this.handleJobSubmit() }>
 
                 Looks great! Let's Check Out
-                </Button>
-                <Button
-                  block={ true }
-                  onClick={ goBack } >
-                  Head back and make edits
-                </Button>
-              </div>
-            </Col>
-          </Row>
-        </div>
+              </Button>
+              <Button
+                block={ true }
+                onClick={ goBack } >
+                Head back and make edits
+              </Button>
+            </div>
+          </Col>
+        </Row>
+      </div>
     );
   }
 }

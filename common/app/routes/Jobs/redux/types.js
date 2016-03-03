@@ -4,12 +4,19 @@ const types = [
 
   'findJob',
   'saveJob',
-  'saveJobCompleted',
-
   'saveForm',
+
+  'saveCompleted',
+
   'clearForm',
+
   'loadSavedForm',
-  'loadSavedFormCompleted'
+  'loadSavedFormCompleted',
+
+  'clearPromo',
+  'updatePromo',
+  'applyPromo',
+  'applyPromoCompleted'
 ];
 
 export default types.reduce((types, type) => {

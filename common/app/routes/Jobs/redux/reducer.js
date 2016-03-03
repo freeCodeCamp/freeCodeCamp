@@ -9,6 +9,8 @@ function replace(str) {
 }
 
 const initialState = {
+  // used by NewJob form
+  initialValues: {},
   currentJob: '',
   newJob: {},
   jobs: {
@@ -28,22 +30,26 @@ export default handleActions(
           state.currentJob
       };
     },
-    [types.saveJobCompleted]: (state, { payload: newJob }) => {
-      return {
-        ...state,
-        newJob
-      };
-    },
     [types.fetchJobsCompleted]: (state, { payload: { jobs, currentJob } }) => ({
       ...state,
       currentJob,
       jobs
     }),
-    [types.updatePromoCode]: (state, { payload }) => ({
+    [types.updatePromo]: (state, { payload }) => ({
       ...state,
       promoCode: replace(payload)
     }),
-    [types.applyPromo]: (state, { payload: promo }) => {
+    [types.saveCompleted]: (state, { payload: newJob }) => {
+      return {
+        ...state,
+        newJob
+      };
+    },
+    [types.loadSavedFormCompleted]: (state, { payload: initialValues }) => ({
+      ...state,
+      initialValues
+    }),
+    [types.applyPromoCompleted]: (state, { payload: promo }) => {
 
       const {
         fullPrice: price,

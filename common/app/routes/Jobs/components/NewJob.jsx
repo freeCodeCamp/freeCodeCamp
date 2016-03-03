@@ -1,5 +1,6 @@
-import { CompositeDisposable, helpers } from 'rx';
+import { helpers } from 'rx';
 import React, { PropTypes } from 'react';
+import { push } from 'react-router-redux';
 import { reduxForm } from 'redux-form';
 // import debug from 'debug';
 import dedent from 'dedent';
@@ -17,7 +18,7 @@ import {
   Row
 } from 'react-bootstrap';
 
-import { saveJob } from '../redux/actions';
+import { saveForm, loadSavedForm } from '../redux/actions';
 
 // const log = debug('fcc:jobs:newForm');
 
@@ -106,30 +107,23 @@ function getBsStyle(field) {
 }
 
 export class NewJob extends React.Component {
-  constructor(...args) {
-    super(...args);
-    this._subscriptions = new CompositeDisposable();
-  }
-
   static displayName = 'NewJob';
 
   static propTypes = {
     fields: PropTypes.object,
     handleSubmit: PropTypes.func,
-    saveJob: PropTypes.func
+    loadSavedForm: PropTypes.func,
+    push: PropTypes.func,
+    saveForm: PropTypes.func
   };
 
   componentDidMount() {
-    // this.prop.getSavedForm();
-  }
-
-  componentWillUnmount() {
-    this._subscriptions.dispose();
+    this.props.loadSavedForm();
   }
 
   handleSubmit(job) {
-    const subscription = this.props.saveJob(job).subscribe();
-    this._subscriptions.add(subscription);
+    this.props.saveForm(job);
+    this.props.push('/jobs/new/preview');
   }
 
   handleCertClick(name) {
@@ -388,8 +382,10 @@ export default reduxForm(
     fields,
     validate: validateForm
   },
-  null,
+  state => ({ initialValues: state.jobsApp.initialValues }),
   {
-    saveJob
+    loadSavedForm,
+    push,
+    saveForm
   }
 )(NewJob);

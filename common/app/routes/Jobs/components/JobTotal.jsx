@@ -1,8 +1,16 @@
+import { CompositeDisposable } from 'rx';
 import React, { PropTypes } from 'react';
 import { Button, Input, Col, Row, Well } from 'react-bootstrap';
 import { connect } from 'react-redux';
+import { push } from 'react-router-redux';
 import PureComponent from 'react-pure-render/component';
 import { createSelector } from 'reselect';
+
+import {
+  applyPromo,
+  clearPromo,
+  updatePromo
+} from '../redux/actions';
 
 // real paypal buttons
 // will take your money
@@ -12,10 +20,14 @@ const paypalIds = {
 };
 
 const bindableActions = {
+  applyPromo,
+  clearPromo,
+  push,
+  updatePromo
 };
 
 const mapStateToProps = createSelector(
-  state => state.jobsApp.currentJob,
+  state => state.jobsApp.newJob,
   state => state.jobsApp,
   (
     { id, isHighlighted } = {},
@@ -46,6 +58,11 @@ const mapStateToProps = createSelector(
 );
 
 export class JobTotal extends PureComponent {
+  constructor(...args) {
+    super(...args);
+    this._subscriptions = new CompositeDisposable();
+  }
+
   static displayName = 'JobTotal';
 
   static propTypes = {
@@ -60,13 +77,15 @@ export class JobTotal extends PureComponent {
   };
 
   componentDidMount() {
-    const { jobActions } = this.props;
-    jobActions.clearPromo();
+    if (!this.props.id) {
+      this.props.push('/jobs');
+    }
+
+    this.props.clearPromo();
   }
 
-  goToJobBoard() {
-    const { appActions } = this.props;
-    setTimeout(() => appActions.goTo('/jobs'), 0);
+  componentWillUnmount() {
+    this._subscriptions.dispose();
   }
 
   renderDiscount(discountAmount) {
@@ -114,7 +133,8 @@ export class JobTotal extends PureComponent {
       promoCode,
       promoName,
       isHighlighted,
-      jobActions
+      applyPromo,
+      updatePromo
     } = this.props;
 
     if (promoApplied) {
@@ -147,7 +167,7 @@ export class JobTotal extends PureComponent {
             md={ 3 }
             mdOffset={ 3 }>
             <Input
-              onChange={ jobActions.setPromoCode }
+              onChange={ updatePromo }
               type='text'
               value={ promoCode } />
           </Col>
@@ -156,11 +176,12 @@ export class JobTotal extends PureComponent {
             <Button
               block={ true }
               onClick={ () => {
-                jobActions.applyCode({
+                const subscription = applyPromo({
                   id,
                   code: promoCode,
                   type: isHighlighted ? 'isHighlighted' : null
-                });
+                }).subscribe();
+                this._subscriptions.add(subscription);
               }}>
               Apply Promo Code
             </Button>
@@ -176,7 +197,8 @@ export class JobTotal extends PureComponent {
       isHighlighted,
       buttonId,
       price,
-      discountAmount
+      discountAmount,
+      push
     } = this.props;
 
     return (
@@ -239,7 +261,7 @@ export class JobTotal extends PureComponent {
                   <form
                     action='https://www.paypal.com/cgi-bin/webscr'
                     method='post'
-                    onClick={ this.goToJobBoard }
+                    onClick={ () => setTimeout(push, 0, '/jobs') }
                     target='_blank'>
                     <input
                       name='cmd'

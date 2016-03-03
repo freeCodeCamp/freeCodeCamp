@@ -1,15 +1,16 @@
-import { Observable } from 'rx';
 import { push } from 'react-router-redux';
+import { Observable } from 'rx';
 
-import { saveJobCompleted } from './actions';
+import { saveCompleted } from './actions';
 import { saveJob } from './types';
 
 import { handleError } from '../../../redux/types';
 
 export default ({ services }) => ({ dispatch }) => next => {
   return function saveJobSaga(action) {
+    const result = next(action);
     if (action.type !== saveJob) {
-      return next(action);
+      return result;
     }
     const { payload: job } = action;
 
@@ -19,8 +20,8 @@ export default ({ services }) => ({ dispatch }) => next => {
     })
     .retry(3)
     .flatMap(job => Observable.of(
-      saveJobCompleted(job),
-      push('/jobs/new/preview')
+      saveCompleted(job),
+      push('/jobs/new/check-out')
     ))
     .catch(error => Observable.just({
       type: handleError,

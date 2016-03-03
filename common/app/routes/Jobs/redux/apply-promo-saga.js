@@ -1,12 +1,12 @@
 import { Observable } from 'rx';
 
-import { testPromo } from './types';
-import { applyPromo } from './actions';
+import { applyPromo } from './types';
+import { applyPromoCompleted } from './actions';
 import { postJSON$ } from '../../../../utils/ajax-stream';
 
 export default () => ({ dispatch }) => next => {
   return function applyPromoSaga(action) {
-    if (action.type !== testPromo) {
+    if (action.type !== applyPromo) {
       return next(action);
     }
 
@@ -28,7 +28,7 @@ export default () => ({ dispatch }) => next => {
           throw new Error('No promo returned by server');
         }
 
-        return applyPromo(promo);
+        return applyPromoCompleted(promo);
       })
       .catch(error => Observable.just({
         type: 'app.handleError',

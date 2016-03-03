@@ -2,11 +2,12 @@ import {
   saveForm,
   clearForm,
   loadSavedForm
-} from '../common/app/routes/Jobs/redux/types';
+} from '../../common/app/routes/Jobs/redux/types';
 
 import {
+  saveCompleted,
   loadSavedFormCompleted
-} from '../common/app/routes/Jobs/redux/actions';
+} from '../../common/app/routes/Jobs/redux/actions';
 
 const formKey = 'newJob';
 let enabled = false;
@@ -17,7 +18,7 @@ let store = typeof window !== 'undefined' ?
 try {
   const testKey = '__testKey__';
   store.setItem(testKey, testKey);
-  enabled = store.getItem(testKey) !== testKey;
+  enabled = store.getItem(testKey) === testKey;
   store.removeItem(testKey);
 } catch (e) {
   enabled = !e;
@@ -35,11 +36,12 @@ export default () => ({ dispatch }) => next => {
       const form = action.payload;
       try {
         store.setItem(formKey, JSON.stringify(form));
-        return null;
-      } catch (e) {
+        next(action);
+        return dispatch(saveCompleted(form));
+      } catch (error) {
         return dispatch({
           type: 'app.handleError',
-          error: new Error('could not parse form data')
+          error
         });
       }
     }
@@ -54,10 +56,10 @@ export default () => ({ dispatch }) => next => {
       try {
         const form = JSON.parse(formString);
         return dispatch(loadSavedFormCompleted(form));
-      } catch (err) {
+      } catch (error) {
         return dispatch({
           type: 'app.handleError',
-          error: new Error('could not parse form data')
+          error
         });
       }
     }

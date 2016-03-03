@@ -10,11 +10,25 @@ export const fetchJobsCompleted = createAction(
 
 export const findJob = createAction(types.findJob);
 
+// saves to database
 export const saveJob = createAction(types.saveJob);
-export const saveJobCompleted = createAction(types.saveJobCompleted);
-
+// saves to localStorage
 export const saveForm = createAction(types.saveForm);
-export const clearForm = createAction(types.clearSavedForm);
+
+export const saveCompleted = createAction(types.saveCompleted);
+
+export const clearForm = createAction(types.clearForm);
+
+export const loadSavedForm = createAction(types.loadSavedForm);
 export const loadSavedFormCompleted = createAction(
   types.loadSavedFormCompleted
 );
+
+export const clearPromo = createAction(types.clearPromo);
+export const updatePromo = createAction(
+  types.updatePromo,
+  ({ target: { value = '' } = {} } = {}) => value
+);
+
+export const applyPromo = createAction(types.applyPromo);
+export const applyPromoCompleted = createAction(types.applyPromoCompleted);
