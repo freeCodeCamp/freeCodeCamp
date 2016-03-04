@@ -84,7 +84,7 @@ module.exports = function(app) {
   router.post('/stories/upvote/', ifNoUser401, upvote);
   router.get('/stories/:storyName', redirectToNews);
 
-  app.use(router);
+  app.use('/:lang', router);
 
   function redirectToNews(req, res) {
     var url = req.originalUrl.replace(/^\/stories/, '/news');

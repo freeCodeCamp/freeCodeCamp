@@ -532,4 +532,28 @@ $(document).ready(function() {
 
   // keyboard shortcuts: open map
   window.Mousetrap.bind('g m', toggleMap);
+
+  $('#lang-select').one('change', languageUpdateHandler);
+
+  function languageUpdateHandler(e) {
+    if (!main.userId) {
+      return;
+    }
+    e.preventDefault();
+    const languageTag = $('#lang-select').val();
+    const data = { languageTag };
+    $.ajax({
+      url: `/api/users/${main.userId}/update-language`,
+      type: 'POST',
+      data: JSON.stringify(data),
+      contentType: 'application/json',
+      dataType: 'json'
+    })
+      .success(() => {
+        window.location.replace(window.location.href);
+      })
+      .fail(() => {
+        window.location.replace(window.location.href);
+      });
+  }
 });

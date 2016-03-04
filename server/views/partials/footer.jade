@@ -10,3 +10,6 @@ aside.wiki-aside.is-collapsed
       a.wiki-aside-action-item.wiki-aside-action-pop-out(href='/wiki' target='_blank' aria-label='open wiki in new tab')
       button.wiki-aside-action-item.wiki-aside-action-collapse(aria-label='close wiki aside')
   .iframeWrapper
+script.
+  window.main = window.main || {};
+  window.main.userId = !{JSON.stringify(user ? user.id : null)};

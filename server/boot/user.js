@@ -3,6 +3,7 @@ import moment from 'moment-timezone';
 import { Observable } from 'rx';
 import debugFactory from 'debug';
 
+import supportedLanguages from '../utils/supported-languages';
 import {
   frontEndChallengeId,
   dataVisChallengeId,
@@ -189,7 +190,7 @@ module.exports = function(app) {
 
   router.get('/:username', returnUser);
 
-  app.use(router);
+  app.use('/:lang', router);
 
   function getSignin(req, res) {
     if (req.user) {
@@ -230,7 +231,7 @@ module.exports = function(app) {
 
   function returnUser(req, res, next) {
     const username = req.params.username.toLowerCase();
-    const { user, path } = req;
+    const { user } = req;
 
     // timezone of signed-in account
     // to show all date related components
@@ -248,10 +249,7 @@ module.exports = function(app) {
     return User.findOne$(query)
       .filter(userPortfolio => {
         if (!userPortfolio) {
-          req.flash('errors', {
-            msg: `We couldn't find a page for ${ path }`
-          });
-          res.redirect('/');
+          return next();
         }
         return !!userPortfolio;
       })
@@ -294,7 +292,8 @@ module.exports = function(app) {
             calender,
             github: userPortfolio.githubURL,
             moment,
-            encodeFcc
+            encodeFcc,
+            supportedLanguages
           }));
       })
       .doOnNext(data => {

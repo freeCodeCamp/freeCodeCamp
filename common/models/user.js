@@ -2,12 +2,13 @@ import { Observable } from 'rx';
 import uuid from 'node-uuid';
 import moment from 'moment';
 import dedent from 'dedent';
-import debugFactory from 'debug';
+import debug from 'debug';
 
 import { saveUser, observeMethod } from '../../server/utils/rx';
+import supportedLanguages from '../../server/utils/supported-languages';
 import { blacklistedUsernames } from '../../server/utils/constants';
 
-const debug = debugFactory('freecc:user:remote');
+const log = debug('freecc:user:remote');
 const BROWNIEPOINTS_TIMEOUT = [1, 'hour'];
 
 function getAboutProfile({
@@ -76,7 +77,7 @@ module.exports = function(User) {
     next();
   });
 
-  debug('setting up user hooks');
+  log('setting up user hooks');
   User.afterRemote('confirm', function(ctx) {
     ctx.req.flash('success', {
       msg: [
@@ -128,9 +129,9 @@ module.exports = function(User) {
     }
 
     // the email of the requested user
-    debug(info.email);
+    log(info.email);
     // the temp access token to allow password reset
-    debug(info.accessToken.id);
+    log(info.accessToken.id);
     // requires AccessToken.belongsTo(User)
     var mailOptions = {
       to: info.email,
@@ -150,7 +151,7 @@ module.exports = function(User) {
 
     User.app.models.Email.send(mailOptions, function(err) {
       if (err) { console.error(err); }
-      debug('email reset sent');
+      log('email reset sent');
     });
   });
 
@@ -173,7 +174,7 @@ module.exports = function(User) {
     };
 
     if (accessToken && accessToken.id) {
-      debug('setting cookies');
+      log('setting cookies');
       res.cookie('access_token', accessToken.id, config);
       res.cookie('userId', accessToken.userId, config);
     }
@@ -181,7 +182,7 @@ module.exports = function(User) {
     return req.logIn({ id: accessToken.userId.toString() }, function(err) {
       if (err) { return next(err); }
 
-      debug('user logged in');
+      log('user logged in');
 
       if (req.session && req.session.returnTo) {
         var redirectTo = req.session.returnTo;
@@ -217,7 +218,7 @@ module.exports = function(User) {
     if (!username && !email) {
       return Promise.resolve(false);
     }
-    debug('checking existence');
+    log('checking existence');
 
     // check to see if username is on blacklist
     if (username && blacklistedUsernames.indexOf(username) !== -1) {
@@ -230,7 +231,7 @@ module.exports = function(User) {
     } else {
       where.email = email ? email.toLowerCase() : email;
     }
-    debug('where', where);
+    log('where', where);
     return User.count(where)
     .then(count => count > 0);
   };
@@ -377,7 +378,7 @@ module.exports = function(User) {
           },
           (e) => cb(e, null, dev ? { giver, receiver, data } : null),
           () => {
-            debug('brownie points assigned completed');
+            log('brownie points assigned completed');
           }
         );
     };
@@ -418,6 +419,48 @@ module.exports = function(User) {
       ],
       http: {
         path: '/give-brownie-points',
+        verb: 'POST'
+      }
+    }
+  );
+
+  User.prototype.updateLanguage = function updateLanguage(languageTag) {
+    if (!supportedLanguages[languageTag]) {
+      return Promise.reject('Language not yet supported');
+    }
+
+    const updateData = {
+      $set: {
+        languageTag: languageTag
+      }
+    };
+
+    return this.update$(updateData)
+      .doOnNext(({ count }) => log('%s document updated', count))
+      .map(() => 'Language updated')
+      .toPromise();
+  };
+
+  User.remoteMethod(
+    'updateLanguage',
+    {
+      description: 'Update users preferred language if supported',
+      isStatic: false,
+      accepts: [
+        {
+          arg: 'languageTag',
+          type: 'string',
+          required: true
+        }
+      ],
+      returns: [
+        {
+          arg: 'message',
+          type: 'string'
+        }
+      ],
+      http: {
+        path: '/update-language',
         verb: 'POST'
       }
     }

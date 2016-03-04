@@ -65,18 +65,18 @@
     },
     "head": {
       "type": "array",
-      "default": [],
-      "description": "appended to user code"
+      "description": "appended to user code",
+      "default": []
     },
     "tail": {
       "type": "array",
-      "default": [],
-      "description": "prepended to user code"
+      "description": "prepended to user code",
+      "default": []
     },
     "helpRoom": {
       "type": "string",
-      "default": "Help",
-      "description": "Gitter help chatroom this challenge belongs too. Must be PascalCase"
+      "description": "Gitter help chatroom this challenge belongs too. Must be PascalCase",
+      "default": "Help"
     },
     "fileName": {
       "type": "string",
@@ -145,5 +145,5 @@
       "permission": "ALLOW"
     }
   ],
-  "methods": []
+  "methods": {}
 }

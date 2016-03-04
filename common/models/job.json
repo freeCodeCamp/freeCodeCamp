@@ -71,23 +71,23 @@
     },
     "isFrontEndCert": {
       "type": "boolean",
-      "defaut": false,
-      "description": "Camper must be front end certified to apply"
+      "description": "Camper must be front end certified to apply",
+      "defaut": false
     },
     "isBackEndCert": {
       "type": "boolean",
-      "default": false,
-      "description": "Camper must be back end certified to apply"
+      "description": "Camper must be back end certified to apply",
+      "default": false
     },
     "isFullStackCert": {
       "type": "boolean",
-      "default": false,
-      "description": "Camper must be full stack certified to apply"
+      "description": "Camper must be full stack certified to apply",
+      "default": false
     },
     "isRemoteOk": {
       "type": "boolean",
-      "default": false,
-      "description": "Camper may work remotely"
+      "description": "Camper may work remotely",
+      "default": false
     },
     "howToApply": {
       "type": "string",
@@ -115,5 +115,5 @@
       "permission": "ALLOW"
     }
   ],
-  "methods": []
+  "methods": {}
 }

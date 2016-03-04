@@ -192,6 +192,13 @@ block content
     if (user && user.username === username)
         h1.text-center Manage your account
         hr
+        if supportedLanguages
+            .col-xs-12
+                select#lang-select.form-control.btn.btn-lg.btn-block.btn-primary.btn-link-social(name='langTag')
+                    option(disabled selected=languageTag ? false : true) Prefered Language
+                    for languageDisplay, lang in supportedLanguages
+                        option(value=lang selected=lang === languageTag ? 'selected' : false)= languageDisplay
+                    option(disabled) More to come...
         .col-xs-12
             a.btn.btn-lg.btn-block.btn-primary.btn-link-social(href='/logout')
                 | Sign me out of Free Code Camp

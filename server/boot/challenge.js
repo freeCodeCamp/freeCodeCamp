@@ -23,6 +23,7 @@ import {
 
 import getFromDisk$ from '../utils/getFromDisk$';
 import badIdMap from '../utils/bad-id-map';
+import supportedLanguages from '../utils/supported-languages';
 
 const isDev = process.env.NODE_ENV !== 'production';
 const isBeta = !!process.env.BETA;
@@ -132,6 +133,23 @@ function shouldNotFilterComingSoon({ isComingSoon, isBeta: challengeIsBeta }) {
     (isBeta && challengeIsBeta);
 }
 
+// findLangData(langCode: String, challenge: Object) => ({
+//   maybeTitle: String | Void,
+//   maybeDescription: String | Void
+// })
+function findLangData(langCode, challenge) {
+  const maybeTitle = challenge[`title${_.capitalize(langCode)}`] ||
+    challenge[`name${_.capitalize(langCode)}`];
+
+  const maybeDescription =
+    challenge[`description${_.capitalize(langCode)}`];
+
+  return {
+    maybeTitle,
+    maybeDescription
+  };
+}
+
 function getRenderData$(user, challenge$, origChallengeName, solution) {
   const challengeName = unDasherize(origChallengeName)
     .replace(challengesRegex, '');
@@ -209,7 +227,12 @@ function getRenderData$(user, challenge$, origChallengeName, solution) {
 }
 
 // create a stream of an array of all the challenge blocks
-function getSuperBlocks$(challenge$, challengeMap) {
+// getSuperBlocks$(
+//   langCode: String|Void,
+//   challenge$: Observable[Object],
+//   challengeMap: Object
+// ) => Observable[Object]
+function getSuperBlocks$(langCode, challenge$, challengeMap) {
   return challenge$
     // mark challenge completed
     .map(challengeModel => {
@@ -221,6 +244,16 @@ function getSuperBlocks$(challenge$, challengeMap) {
         challenge.url = '/videos/' + challenge.dashedName;
       } else {
         challenge.url = '/challenges/' + challenge.dashedName;
+      }
+
+      const { maybeTitle, maybeDescription } = findLangData(
+        langCode,
+        challenge
+      );
+
+      if (maybeTitle && maybeDescription) {
+        challenge.title = maybeTitle;
+        challenge.description = maybeDescription;
       }
 
       return challenge;
@@ -336,6 +369,7 @@ function getNextChallenge$(challenge$, blocks$, challengeId) {
 
 module.exports = function(app) {
   const router = app.loopback.Router();
+  const api = app.loopback.Router();
 
   const challengesQuery = {
     order: [
@@ -396,12 +430,12 @@ module.exports = function(app) {
 
   const send200toNonUser = ifNoUserSend(true);
 
-  router.post(
+  api.post(
     '/completed-challenge/',
     send200toNonUser,
     completedChallenge
   );
-  router.post(
+  api.post(
     '/completed-zipline-or-basejump',
     send200toNonUser,
     completedZiplineOrBasejump
@@ -420,7 +454,8 @@ module.exports = function(app) {
 
   router.get('/challenges/:challengeName', showChallenge);
 
-  app.use(router);
+  app.use(api);
+  app.use('/:lang', router);
 
   function redirectToCurrentChallenge(req, res, next) {
     let challengeId = req.query.id || req.cookies.currentChallengeId;
@@ -499,8 +534,43 @@ module.exports = function(app) {
   function showChallenge(req, res, next) {
     const solution = req.query.solution;
     const challengeName = req.params.challengeName.replace(challengesRegex, '');
+    const { lang } = req;
 
-    getRenderData$(req.user, challenge$, challengeName, solution)
+
+    getRenderData$(
+      req.user,
+      challenge$,
+      challengeName,
+      solution
+    )
+      .map(data => {
+
+        if (
+          !lang ||
+          !data.data ||
+          !supportedLanguages[lang]
+        ) {
+          return data;
+        }
+
+        // find language titles and descriptions
+        const oldLocals = data.data;
+        const { maybeTitle, maybeDescription } = findLangData(lang, oldLocals);
+
+        // both title and description must be avaiable
+        if (!maybeDescription || !maybeTitle) {
+          return data;
+        }
+
+        return {
+          ...data,
+          data: {
+            ...oldLocals,
+            name: maybeTitle,
+            description: maybeDescription
+          }
+        };
+      })
       .subscribe(
         ({ type, redirectUrl, message, data }) => {
           if (message) {
@@ -516,7 +586,7 @@ module.exports = function(app) {
           if (data.id) {
             res.cookie('currentChallengeId', data.id);
           }
-          res.render(view, data);
+          return res.render(view, data);
         },
         next,
         function() {}
@@ -657,10 +727,10 @@ module.exports = function(app) {
       .subscribe(() => {}, next);
   }
 
-  function showMap(showAside, { user = {} }, res, next) {
+  function showMap(showAside, { user = {}, lang }, res, next) {
     const { challengeMap = {} } = user;
 
-    return getSuperBlocks$(challenge$, challengeMap)
+    return getSuperBlocks$(lang, challenge$, challengeMap)
       .subscribe(
         superBlocks => {
           res.render('map/show', {

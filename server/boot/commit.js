@@ -80,7 +80,7 @@ export default function commit(app) {
     completeCommitment
   );
 
-  app.use(router);
+  app.use('/:lang', router);
 
   function commitToNonprofit(req, res, next) {
     const { user } = req;
