@@ -6,7 +6,6 @@
 #wikiFrame {
     width: 100%;
     height: 100%;
-    padding-top: 30px;
     top:0;
     bottom: 0;
     position: absolute;
@@ -53,18 +52,13 @@
       background-color: @body-bg;
     }
 
-    .iframeWrapper {
-      height:100%;
-      width:100%;
-      overflow-x: hidden;
-      overflow-y: scroll;
-      -webkit-overflow-scrolling: touch;
-      iframe {
-        flex: 1;
-        width: 100%;
-        height: 100%;
-        border: 0;
-      }
+    iframe {
+      width: 100%;
+      height: 100%;
+      top:0;
+      bottom:0;
+      position:absolute;
+      overflow: hidden;
     }
 }
 
@@ -83,14 +77,14 @@
 .wiki-aside-action-bar {
     position: absolute;
     top: 0;
-    right: 0;
+    right: 15px;
 
     display: -webkit-flex;
     display: flex;
     justify-content: flex-end;
 
     padding-bottom: 5px;
-    padding-right:10px;
+    padding-right:0px;
     padding-top:5px;
     z-index: 100;
 }
