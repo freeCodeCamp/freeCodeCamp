@@ -8,15 +8,10 @@
       "id": "aff0395860f5d3034dc0bfc9",
       "title": "Validate US Telephone Numbers",
       "description": [
-        "Return true if the passed string is a valid US phone number",
+        "Return <code>true</code> if the passed string is a valid US phone number.",
         "The user may fill out the form field any way they choose as long as it is a valid US number. The following are examples of valid formats for US numbers (refer to the tests below for other variants):",
-        "<code>555-555-5555</code>",
-        "<code>(555)555-5555</code>",
-        "<code>(555) 555-5555</code>",
-        "<code>555 555 5555</code>",
-        "<code>5555555555</code>",
-        "<code>1 555 555 5555</code>",
-        "For this challenge you will be presented with a string such as <code>800-692-7753</code> or <code>8oo-six427676;laskdjf</code>. Your job is to validate or reject the US phone number based on any combination of the formats provided above. The area code is required. If the country code is provided, you must confirm that the country code is <code>1</code>. Return true if the string is a valid US phone number; otherwise false.",
+        "<blockquote>555-555-5555\n(555)555-5555\n(555) 555-5555\n555 555 5555\n5555555555\n1 555 555 5555</blockquote>",
+        "For this challenge you will be presented with a string such as <code>800-692-7753</code> or <code>8oo-six427676;laskdjf</code>. Your job is to validate or reject the US phone number based on any combination of the formats provided above. The area code is required. If the country code is provided, you must confirm that the country code is <code>1</code>. Return <code>true</code> if the string is a valid US phone number; otherwise return <code>false</code>.",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "challengeSeed": [
@@ -67,12 +62,7 @@
       "descriptionEs": [
         "Haz que la función devuelva true (verdadero) si el texto introducido es un número válido en los EEUU.",
         "El usuario debe llenar el campo del formulario de la forma que desee siempre y cuando sea un número válido en los EEUU. Los números mostrados a continuación tienen formatos válidos en los EEUU:",
-        "<code>555-555-5555</code>",
-        "<code>(555)555-5555</code>",
-        "<code>(555) 555-5555</code>",
-        "<code>555 555 5555</code>",
-        "<code>5555555555</code>",
-        "<code>1 555 555 5555</code>",
+        "<blockquote>555-555-5555\n(555)555-5555\n(555) 555-5555\n555 555 5555\n5555555555\n1 555 555 5555</blockquote>",
         "Para esta prueba se te presentará una cadena de texto como por ejemplo: <code>800-692-7753</code> o <code>8oo-six427676;laskdjf</code>. Tu trabajo consiste en validar o rechazar el número telefónico tomando como base cualquier combinación de los formatos anteriormente presentados. El código de área es requrido. Si el código de país es provisto, debes confirmar que este es <code>1</code>. La función debe devolver true si la cadena de texto es un número telefónico válido en los EEUU; de lo contrario, debe devolver false.",
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
       ]
