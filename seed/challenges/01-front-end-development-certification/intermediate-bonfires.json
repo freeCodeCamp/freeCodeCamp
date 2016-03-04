@@ -667,7 +667,7 @@
       ],
       "type": "bonfire",
       "MDNlinks": [
-        "Array.filter()"
+        "Array.find()"
       ],
       "challengeType": 5,
       "nameEs": "Buscando la verdad",
@@ -677,7 +677,7 @@
       ],
       "isRequired": true,
       "solutions": [
-        "function find(arr, func) {\n  var num;\n  arr.some(function(e) {\n    if (func(e)) {\n      num = e;\n      return true;\n    }\n  });\n  return num;\n}"
+        "function find(arr, func) {\n   return arr.find(func);\n}"
       ]
     },
     {
