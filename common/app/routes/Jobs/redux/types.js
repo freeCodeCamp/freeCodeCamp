@@ -1,4 +1,6 @@
-const types = [
+import createTypes from '../../../utils/create-types';
+
+export default createTypes([
   'fetchJobs',
   'fetchJobsCompleted',
 
@@ -17,9 +19,4 @@ const types = [
   'updatePromo',
   'applyPromo',
   'applyPromoCompleted'
-];
-
-export default types.reduce((types, type) => {
-  types[type] = `jobs.${type}`;
-  return types;
-}, {});
+], 'jobs');

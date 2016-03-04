@@ -1,4 +1,6 @@
-const types = [
+import createTypes from '../../../utils/create-types';
+
+export default createTypes([
   'fetchHikes',
   'fetchHikesCompleted',
   'resetHike',
@@ -19,9 +21,4 @@ const types = [
 
   'hikeCompleted',
   'goToNextHike'
-];
-
-export default types.reduce((types, type) => {
-  types[type] = `videos.${type}`;
-  return types;
-}, {});
+], 'videos');
