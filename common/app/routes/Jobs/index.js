@@ -2,7 +2,7 @@ import Jobs from './components/Jobs.jsx';
 import NewJob from './components/NewJob.jsx';
 import Show from './components/Show.jsx';
 import Preview from './components/Preview.jsx';
-import GoToPayPal from './components/GoToPayPal.jsx';
+import JobTotal from './components/JobTotal.jsx';
 import NewJobCompleted from './components/NewJobCompleted.jsx';
 
 /*
@@ -23,7 +23,7 @@ export default {
     component: Preview
   }, {
     path: 'jobs/new/check-out',
-    component: GoToPayPal
+    component: JobTotal
   }, {
     path: 'jobs/new/completed',
     component: NewJobCompleted
