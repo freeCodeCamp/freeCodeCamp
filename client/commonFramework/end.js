@@ -51,10 +51,10 @@ $(document).ready(function() {
               <h1>${err}</h1>
             `).subscribe(() => {});
           }
+          return null;
         },
         err => console.error(err)
       );
-
   }
 
   common.resetBtn$
@@ -74,6 +74,7 @@ $(document).ready(function() {
         common.codeStorage.updateStorage(challengeName, originalCode);
         common.codeUri.querify(originalCode);
         common.updateOutputDisplay(output);
+        return null;
       },
       (err) => {
         if (err) {
@@ -112,6 +113,7 @@ $(document).ready(function() {
         if (solved) {
           common.showCompletion();
         }
+        return null;
       },
       ({ err }) => {
         console.error(err);
@@ -138,6 +140,7 @@ $(document).ready(function() {
             return common.updateOutputDisplay('' + err);
           }
           common.displayTestResults(tests);
+          return null;
         },
         ({ err }) => {
           console.error(err);
@@ -149,7 +152,7 @@ $(document).ready(function() {
     challengeType === challengeTypes.BONFIRE ||
     challengeType === challengeTypes.JS
   ) {
-    Observable.just({})
+    return Observable.just({})
       .delay(500)
       .flatMap(() => common.executeChallenge$())
       .catch(err => Observable.just({ err }))
@@ -161,6 +164,7 @@ $(document).ready(function() {
           }
           common.codeStorage.updateStorage(challengeName, originalCode);
           common.displayTestResults(tests);
+          return null;
         },
         (err) => {
           console.error(err);
@@ -168,4 +172,5 @@ $(document).ready(function() {
         }
       );
   }
+  return null;
 });

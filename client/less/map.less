@@ -40,18 +40,9 @@
 
       background-color: @body-bg;
     }
-    .iframeWrapper {
-      height:100%;
-      width:100%;
-      overflow-x: hidden;
-      overflow-y: scroll;
-      -webkit-overflow-scrolling: touch;
-      iframe {
-        flex: 1;
-        width: 100%;
-        height: 100%;
-        border: 0;
-      }
+    iframe {
+      width: 100%;
+      height: 100%;
     }
 }
 
@@ -139,10 +130,16 @@
   }
 }
 
+.mapWrapper {
+  position:absolute;
+  display: block;
+  height: 100%;
+  width: 100%; 
+}
+
 .map-accordion {
-  margin: 135px auto 0;
-  width:700px;
-  overflow-y: auto;
+  width:700px; 
+  margin:155px auto 0; 
   position:relative;
   #nested {
     margin:0 15px;
@@ -228,10 +225,19 @@
     left:0;
     right:0;
     width:100%;
-    margin-top:180px;
+    top:195px;
+    bottom:0;
+    margin:0;
+    position:absolute;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
     h2 {
       margin:15px 0;
       padding:0;
+      &:first-of-type {
+        margin-top:0;
+      }
       > a {
         padding:10px 0;
         padding-left:50px;
@@ -249,7 +255,7 @@
     }
   }
 }
-
+    
 .map-aside-action-item {
     display: -webkit-flex;
     display: flex;

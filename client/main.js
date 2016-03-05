@@ -93,6 +93,7 @@ main = (function(main, global) {
           '<span>Free Code Camp\'s Main Chat</span>' +
         '</div>'
       );
+      return null;
     });
 
 
@@ -233,7 +234,7 @@ $(document).ready(function() {
     };
 
     $('#story-submit').unbind('click');
-    $.post('/stories/', data)
+    return $.post('/stories/', data)
       .fail(function() {
         $('#story-submit').bind('click', storySubmitButtonHandler);
       })
@@ -243,6 +244,7 @@ $(document).ready(function() {
           return null;
         }
         window.location = '/stories/' + storyLink;
+        return null;
       });
   };
 
@@ -357,9 +359,9 @@ $(document).ready(function() {
       var mapAside = $('<iframe>');
       mapAside.attr({
         src: '/map-aside',
-        scrolling: 'yes'
+        frameBorder: '0'
       });
-      $('.map-aside .iframeWrapper').append(mapAside);
+      $('.map-aside').append(mapAside);
       main.isMapAsideLoad = true;
     }
     $('.map-aside').removeClass('is-collapsed');
@@ -391,9 +393,9 @@ $(document).ready(function() {
       var wikiAside = $('<iframe>');
       wikiAside.attr({
         src: wikiURL,
-        scrolling: 'yes'
+        frameBorder: '0'
       });
-      $('.wiki-aside .iframeWrapper').append(wikiAside);
+      $('.wiki-aside').append(wikiAside);
       main.isWikiAsideLoad = true;
     }
     $('.wiki-aside').removeClass('is-collapsed');

@@ -72,7 +72,7 @@
       "id": "56bbb991ad1ed5201cd392d5",
       "title": "Change Text with Click Events",
       "description": [
-        "When our click event happens, we can use Ajax to update an HTML element.",
+        "When our click event happens, we can use jQuery to update an HTML element.",
         "Let's make it so that when a user clicks the \"Get Message\" button, we change the text of the element with the class <code>message</code> to say \"Here is the message\".",
         "We can do this by adding the following code within our click event:",
         "<code>$(\".message\").html(\"Here is the message\");</code>"
@@ -114,14 +114,14 @@
       "challengeType": 0,
       "nameEs": "Cambia texto con eventos de pulsación",
       "descriptionEs": [
-        "Cuando nuestro evento de pulsación ocurre, podemos utilizar Ajax para actualizar un elemento HTML.",
+        "Cuando nuestro evento de pulsación ocurre, podemos utilizar jQuery para actualizar un elemento HTML.",
         "Hagamos que cuando un usuario pulse el botón \"Get Message\", el texto del elemento con la clase <code>message</code> cambie para decir \"Here is the message\".",
         "Podemos hacerlo añadiendo el siguiente código dentro de nuestro evento de pulsación:",
         "<code>$(\".message\").html(\"Here is the message\");</code>"
       ],
       "namePt": "Mundando texto com eventos de clique",
       "descriptionPt": [
-        "Quando nosso evento de clique ocorre, podemos utilizar o Ajax para atualixar um elemento HTML",
+        "Quando nosso evento de clique ocorre, podemos utilizar o jQuery para atualixar um elemento HTML",
         "Vamos fazer que quando um usuário clicar no botão \"Get Message\", o texto do elemento com a classe <code>message</code> passe a dizer \"Here is the message\".",
         "Podemos fazer isso adicionando o seguinte código dentro do nosso evento de clique:",
         "<code>$(\".message\").html(\"Here is the message\");</code>"

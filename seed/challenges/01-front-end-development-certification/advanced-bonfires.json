@@ -8,15 +8,10 @@
       "id": "aff0395860f5d3034dc0bfc9",
       "title": "Validate US Telephone Numbers",
       "description": [
-        "Return true if the passed string is a valid US phone number",
+        "Return <code>true</code> if the passed string is a valid US phone number.",
         "The user may fill out the form field any way they choose as long as it is a valid US number. The following are examples of valid formats for US numbers (refer to the tests below for other variants):",
-        "<code>555-555-5555</code>",
-        "<code>(555)555-5555</code>",
-        "<code>(555) 555-5555</code>",
-        "<code>555 555 5555</code>",
-        "<code>5555555555</code>",
-        "<code>1 555 555 5555</code>",
-        "For this challenge you will be presented with a string such as <code>800-692-7753</code> or <code>8oo-six427676;laskdjf</code>. Your job is to validate or reject the US phone number based on any combination of the formats provided above. The area code is required. If the country code is provided, you must confirm that the country code is <code>1</code>. Return true if the string is a valid US phone number; otherwise false.",
+        "<blockquote>555-555-5555\n(555)555-5555\n(555) 555-5555\n555 555 5555\n5555555555\n1 555 555 5555</blockquote>",
+        "For this challenge you will be presented with a string such as <code>800-692-7753</code> or <code>8oo-six427676;laskdjf</code>. Your job is to validate or reject the US phone number based on any combination of the formats provided above. The area code is required. If the country code is provided, you must confirm that the country code is <code>1</code>. Return <code>true</code> if the string is a valid US phone number; otherwise return <code>false</code>.",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "challengeSeed": [
@@ -67,12 +62,7 @@
       "descriptionEs": [
         "Haz que la función devuelva true (verdadero) si el texto introducido es un número válido en los EEUU.",
         "El usuario debe llenar el campo del formulario de la forma que desee siempre y cuando sea un número válido en los EEUU. Los números mostrados a continuación tienen formatos válidos en los EEUU:",
-        "<code>555-555-5555</code>",
-        "<code>(555)555-5555</code>",
-        "<code>(555) 555-5555</code>",
-        "<code>555 555 5555</code>",
-        "<code>5555555555</code>",
-        "<code>1 555 555 5555</code>",
+        "<blockquote>555-555-5555\n(555)555-5555\n(555) 555-5555\n555 555 5555\n5555555555\n1 555 555 5555</blockquote>",
         "Para esta prueba se te presentará una cadena de texto como por ejemplo: <code>800-692-7753</code> o <code>8oo-six427676;laskdjf</code>. Tu trabajo consiste en validar o rechazar el número telefónico tomando como base cualquier combinación de los formatos anteriormente presentados. El código de área es requrido. Si el código de país es provisto, debes confirmar que este es <code>1</code>. La función debe devolver true si la cadena de texto es un número telefónico válido en los EEUU; de lo contrario, debe devolver false.",
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
       ]
@@ -96,11 +86,16 @@
         "function sym(args) {\n  var index = -1;\n  var length = arguments.length;\n  var result;\n  while (++index < length) {\n    var array = arguments[index];\n    result = result ? diff(result, array).concat(diff(array, result)) : array;\n  }\n  return result ? uniq(result) : [];\n}\n\nfunction uniq(arr) {\n  var h = Object.create(null);\n  var u = [];\n  arr.forEach(function(v) {\n    if (v in h) return;\n    h[v] = true;\n    u.push(v);\n  });\n  return u;\n}\n\nfunction diff(a, b) {\n  var h = Object.create(null);\n  b.forEach(function(v) {\n    h[v] = true;  \n  });\n  return a.filter(function(v) { return !(v in h);});\n}\nsym([1, 2, 3], [5, 2, 1, 4]);\n"
       ],
       "tests": [
-        "assert.deepEqual(sym([1, 2, 3], [5, 2, 1, 4]).sort(), [3, 4, 5], 'message: <code>sym([1, 2, 3], [5, 2, 1, 4])</code> should return <code>[3, 5, 4]</code>.');",
-        "assert.deepEqual(sym([1, 2, 5], [2, 3, 5], [3, 4, 5]).sort(), [1, 4, 5], 'message: <code>sym([1, 2, 5], [2, 3, 5], [3, 4, 5])</code> should return <code>[1, 4, 5]</code>');",
-        "assert.deepEqual(sym([1, 1, 2, 5], [2, 2, 3, 5], [3, 4, 5, 5]).sort(), [1, 4, 5], 'message: <code>sym([1, 1, 2, 5], [2, 2, 3, 5], [3, 4, 5, 5])</code> should return <code>[1, 4, 5]</code>.');",
-        "assert.deepEqual(sym([3, 3, 3, 2, 5], [2, 1, 5, 7], [3, 4, 6, 6], [1, 2, 3]).sort(), [2, 3, 4, 6, 7], 'message: <code>sym([3, 3, 3, 2, 5], [2, 1, 5, 7], [3, 4, 6, 6], [1, 2, 3])</code> should return <code>[7, 4, 6, 2, 3]</code>.');",
-        "assert.deepEqual(sym([3, 3, 3, 2, 5], [2, 1, 5, 7], [3, 4, 6, 6], [1, 2, 3], [5, 3, 9, 8], [1]).sort(), [1, 2, 4, 5, 6, 7, 8, 9], 'message: <code>sym([3, 3, 3, 2, 5], [2, 1, 5, 7], [3, 4, 6, 6], [1, 2, 3], [5, 3, 9, 8], [1])</code> should return <code>[1, 2, 4, 5, 6, 7, 8, 9]</code>')"
+        "assert.sameMembers(sym([1, 2, 3], [5, 2, 1, 4]), [3, 4, 5], 'message: <code>sym([1, 2, 3], [5, 2, 1, 4])</code> should return <code>[3, 4, 5]</code>.');",
+        "assert.equal(sym([1, 2, 3], [5, 2, 1, 4]).length, 3, 'message: <code>sym([1, 2, 3], [5, 2, 1, 4])</code> should contain only three elements.');",
+        "assert.sameMembers(sym([1, 2, 5], [2, 3, 5], [3, 4, 5]), [1, 4, 5], 'message: <code>sym([1, 2, 5], [2, 3, 5], [3, 4, 5])</code> should return <code>[1, 4, 5]</code>');",
+        "assert.equal(sym([1, 2, 5], [2, 3, 5], [3, 4, 5]).length, 3, 'message: <code>sym([1, 2, 5], [2, 3, 5], [3, 4, 5])</code> should contain only three elements.');",
+        "assert.sameMembers(sym([1, 1, 2, 5], [2, 2, 3, 5], [3, 4, 5, 5]), [1, 4, 5], 'message: <code>sym([1, 1, 2, 5], [2, 2, 3, 5], [3, 4, 5, 5])</code> should return <code>[1, 4, 5]</code>.');",
+        "assert.equal(sym([1, 1, 2, 5], [2, 2, 3, 5], [3, 4, 5, 5]).length, 3, 'message: <code>sym([1, 1, 2, 5], [2, 2, 3, 5], [3, 4, 5, 5])</code> should contain only three elements.');",
+        "assert.sameMembers(sym([3, 3, 3, 2, 5], [2, 1, 5, 7], [3, 4, 6, 6], [1, 2, 3]), [2, 3, 4, 6, 7], 'message: <code>sym([3, 3, 3, 2, 5], [2, 1, 5, 7], [3, 4, 6, 6], [1, 2, 3])</code> should return <code>[2, 3, 4, 6, 7]</code>.');",
+        "assert.equal(sym([3, 3, 3, 2, 5], [2, 1, 5, 7], [3, 4, 6, 6], [1, 2, 3]).length, 5, 'message: <code>sym([3, 3, 3, 2, 5], [2, 1, 5, 7], [3, 4, 6, 6], [1, 2, 3])</code> should contain only five elements.');",
+        "assert.sameMembers(sym([3, 3, 3, 2, 5], [2, 1, 5, 7], [3, 4, 6, 6], [1, 2, 3], [5, 3, 9, 8], [1]), [1, 2, 4, 5, 6, 7, 8, 9], 'message: <code>sym([3, 3, 3, 2, 5], [2, 1, 5, 7], [3, 4, 6, 6], [1, 2, 3], [5, 3, 9, 8], [1])</code> should return <code>[1, 2, 4, 5, 6, 7, 8, 9]</code>.');",
+        "assert.equal(sym([3, 3, 3, 2, 5], [2, 1, 5, 7], [3, 4, 6, 6], [1, 2, 3], [5, 3, 9, 8], [1]).length, 8, 'message: <code>sym([3, 3, 3, 2, 5], [2, 1, 5, 7], [3, 4, 6, 6], [1, 2, 3], [5, 3, 9, 8], [1])</code> should contain only eight elements.');"
       ],
       "type": "bonfire",
       "MDNlinks": [
@@ -265,19 +260,13 @@
       "id": "a19f0fbe1872186acd434d5a",
       "title": "Friendly Date Ranges",
       "description": [
-        "Convert a date range consisting of two dates formatted as YYYY-MM-DD into a more readable format.",
-        "",
-        "The friendly display should use month names instead of numbers and ordinal dates instead of cardinal (\"1st\" instead of \"1\").",
-        "",
+        "Convert a date range consisting of two dates formatted as <code>YYYY-MM-DD</code> into a more readable format.",
+        "The friendly display should use month names instead of numbers and ordinal dates instead of cardinal (<code>1st</code> instead of <code>1</code>).",
         "Do not display information that is redundant or that can be inferred by the user: if the date range ends in less than a year from when it begins, do not display the ending year. If the range ends in the same month that it begins, do not display the ending year or month.",
-        "",
         "Additionally, if the date range begins in the current year and ends within one year, the year should not be displayed at the beginning of the friendly range.",
-        "",
-        "Examples: ",
+        "Examples:",
         "<code>friendly([\"2016-07-01\", \"2016-07-04\"])</code> should return <code>[\"July 1st\",\"4th\"]</code>",
-        "",
         "<code>friendly([\"2016-07-01\", \"2018-07-04\"])</code> should return <code>[\"July 1st, 2016\", \"July 4th, 2018\"]</code>.",
-        "",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "challengeSeed": [
@@ -412,7 +401,7 @@
       "title": "Pairwise",
       "description": [
         "Return the sum of all indices of elements of 'arr' that can be paired with one other element to form a sum that equals the value in the second argument 'arg'. If multiple sums are possible, return the smallest sum. Once an element has been used, it cannot be reused to pair with another.",
-        "For example, pairwise([1, 4, 2, 3, 0, 5], 7) should return 11 because 4, 2, 3 and 5 can be paired with each other to equal 7.",
+        "For example, pairwise([1, 4, 2, 3, 0, 5], 7) should return 11 because 4, 2, 3 and 5 can be paired with each other to equal 7 and their indices (1, 2, 3, and 5) sum to 11.",
         "pairwise([1, 3, 2, 4], 4) would only equal 1, because only the first two elements can be paired to equal 4, and the first element has an index of 0!",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
       ],

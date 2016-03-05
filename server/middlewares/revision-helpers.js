@@ -26,6 +26,6 @@ export default function({ globalPrepend = '' } = {}) {
     // in production we take use the initially loaded manifest
     // since this should not change in production
     res.locals.rev = boundRev;
-    next();
+    return next();
   };
 }

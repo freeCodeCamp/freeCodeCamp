@@ -2,8 +2,8 @@ import React from 'react';
 import { LinkContainer } from 'react-router-bootstrap';
 import { Button, Col, Row } from 'react-bootstrap';
 
-export default React.createClass({
-  displayName: 'NewJobCompleted',
+export default class extends React.createClass {
+  static displayName = 'NewJobCompleted';
 
   render() {
     return (
@@ -36,4 +36,4 @@ export default React.createClass({
       </div>
     );
   }
-});
+}

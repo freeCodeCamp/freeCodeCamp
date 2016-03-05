@@ -10,7 +10,7 @@ import {
 
 const { defaultProfileImage } = require('../utils/constantStrings.json');
 const githubRegex = (/github/i);
-const debug = debugFactory('freecc:models:userIdent');
+const debug = debugFactory('fcc:models:userIdent');
 
 function createAccessToken(user, ttl, cb) {
   if (arguments.length === 2 && typeof ttl === 'function') {
@@ -73,7 +73,7 @@ export default function(UserIdent) {
                 }
               );
             }
-            cb(err, user, identity);
+            return cb(err, user, identity);
           });
         });
       }
@@ -99,12 +99,12 @@ export default function(UserIdent) {
       } else {
         query = { username: userObj.username };
       }
-      userModel.findOrCreate({ where: query }, userObj, function(err, user) {
+      return userModel.findOrCreate({ where: query }, userObj, (err, user) => {
         if (err) {
           return cb(err);
         }
         var date = new Date();
-        userIdentityModel.create({
+        return userIdentityModel.create({
           provider: getSocialProvider(provider),
           externalId: profile.id,
           authScheme: authScheme,
@@ -122,7 +122,7 @@ export default function(UserIdent) {
               }
             );
           }
-          cb(err, user, identity);
+          return cb(err, user, identity);
         });
       });
     });
@@ -134,7 +134,7 @@ export default function(UserIdent) {
       debug('no user identity instance found');
       return next();
     }
-    userIdent.user(function(err, user) {
+    return userIdent.user(function(err, user) {
       let userChanged = false;
       if (err) { return next(err); }
       if (!user) {
@@ -175,11 +175,11 @@ export default function(UserIdent) {
       if (userChanged) {
         return user.save(function(err) {
           if (err) { return next(err); }
-          next();
+          return next();
         });
       }
       debug('exiting after user identity before save');
-      next();
+      return next();
   });
  });
 }

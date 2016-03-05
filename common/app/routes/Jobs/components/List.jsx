@@ -1,14 +1,16 @@
 import React, { PropTypes } from 'react';
 import classnames from 'classnames';
+import { LinkContainer } from 'react-router-bootstrap';
 import { ListGroup, ListGroupItem } from 'react-bootstrap';
+import PureComponent from 'react-pure-render/component';
 
-export default React.createClass({
-  displayName: 'ListJobs',
+export default class ListJobs extends PureComponent {
+  static displayName = 'ListJobs';
 
-  propTypes: {
+  static propTypes = {
     handleClick: PropTypes.func,
     jobs: PropTypes.array
-  },
+  };
 
   addLocation(locale) {
     if (!locale) {
@@ -19,31 +21,35 @@ export default React.createClass({
         { locale }
       </span>
     );
-  },
+  }
 
   renderJobs(handleClick, jobs = []) {
     return jobs
-      .filter(({ isPaid, isApproved, isFilled }) => {
-        return isPaid && isApproved && !isFilled;
-      })
-      .map(({
-        id,
-        company,
-        position,
-        isHighlighted,
-        locale
-      }) => {
+    .filter(({ isPaid, isApproved, isFilled }) => {
+      return isPaid && isApproved && !isFilled;
+    })
+    .map(({
+      id,
+      company,
+      position,
+      isHighlighted,
+      locale
+    }) => {
 
-        const className = classnames({
-          'jobs-list': true,
-          'col-xs-12': true,
-          'jobs-list-highlight': isHighlighted
-        });
+      const className = classnames({
+        'jobs-list': true,
+        'col-xs-12': true,
+        'jobs-list-highlight': isHighlighted
+      });
 
-        return (
+      const to = `/jobs/${id}`;
+
+      return (
+        <LinkContainer
+          key={ id }
+          to={ to }>
           <ListGroupItem
             className={ className }
-            key={ id }
             onClick={ () => handleClick(id) }>
             <div>
               <h4 className='pull-left' style={{ display: 'inline-block' }}>
@@ -60,9 +66,10 @@ export default React.createClass({
               </h4>
             </div>
           </ListGroupItem>
-        );
-      });
-  },
+        </LinkContainer>
+      );
+    });
+  }
 
   render() {
     const {
@@ -76,4 +83,4 @@ export default React.createClass({
       </ListGroup>
     );
   }
-});
+}

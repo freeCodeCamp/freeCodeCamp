@@ -58,7 +58,7 @@
         "Tu navegador ejecutará todo JavaScript dentro de un elemento <code>script</code>, incluyendo jQuery.",
         "Dentro de tu elemento <code>script</code>, agrega este código: <code>$(document).ready(function () {</code> A continuación, ciérralo en la línea siguiente (aún dentro de tu elemento <code>script</code>) con: <code>})</code>",
         "Más adelante aprenderemos más acerca de funciones. Lo importante es saber que el código que pongas dentro de esta función (<code>function</code>) se ejecutará tan pronto como tu navegador haya cargado la página.",
-        "Esto es importante porque sin su <code>función de documento listo</code>, su código puede ejecutarse antes de que se haya presentado el HTML, lo que podría causar errores."
+        "Esto es importante porque sin tu <code>función de documento listo</code>, tu código puede ejecutarse antes de que se haya presentado el HTML, lo que podría causar errores."
       ]
     },
     {
@@ -111,12 +111,12 @@
       "challengeType": 0,
       "nameEs": "Elige elementos HTML usando selectores y jQuery",
       "descriptionEs": [
-        "Ahora tenemos una <code>función de documento listo</code>.",
-        "Ahora vamos a escribir nuestra primera instrucción jQuery. Todas las funciones de jQuery comienzan con un <code>$</code>, al que suele referirse como <code>operador de signo de dólar</code>, o simplemente como <code>bling</code>. ",
-        "jQuery a menudo selecciona un elemento HTML con un <code>selector</code>, y luego hace algo a ese elemento.",
+        "Ya tenemos una <code>función de documento listo</code>.",
+        "Ahora vamos a escribir nuestra primera instrucción jQuery. Todas las funciones de jQuery comienzan con un <code>$</code>, al que suele referirse como <code>operador dólar</code>, o simplemente como <code>bling</code>. ",
+        "jQuery a menudo selecciona un elemento HTML con un <code>selector</code>, y luego le hace algo a ese elemento.",
         "Por ejemplo, hagamos que todos tus elementos <code>button</code> reboten. Sólo tienes que añadir este código dentro de la función de documento listo: ",
         "<code>$(\"button\").addClass(\"animated bounce\")</code>",
-        "Ten en cuenta que ya hemos incluido tanto la biblioteca jQuery como la biblioteca Animate.css en segundo plano para que pueda utilizarlos en el editor. Así que estás usando jQuery para aplicar la clase <code>bounce</code> de Animate.css a sus elementos <code>button</code>."
+        "Ten en cuenta que ya hemos incluido tanto la biblioteca jQuery como la biblioteca Animate.css en segundo plano para que pueda utilizarlos en el editor. Así que estás usando jQuery para aplicar la clase <code>bounce</code> de Animate.css a tus elementos <code>button</code>."
       ]
     },
     {
@@ -293,7 +293,7 @@
       "nameEs": "Elimina tus funciones jQuery",
       "descriptionEs": [
         "Estas animaciones eran divertidas al principio, pero ahora se están volviendo una distracción.",
-        "Elimina esas tres funciones de jQuery de tu <code>función de documento listo</code>, pero deja intacta la declaración de la <code>función de documento listo</code>."
+        "Elimina esas tres funciones jQuery de tu <code>función de documento listo</code>, pero deja intacta la declaración de la <code>función de documento listo</code>."
       ]
     },
     {
@@ -350,12 +350,12 @@
       "challengeType": 0,
       "nameEs": "Elige un mismo elemento con múltiples selectores jQuery",
       "descriptionEs": [
-        "Ahora ya sabes tres formas de seleccionar elementos: por tipo: <code>$(\"button\")</code>, por clase: <code>$(\".btn\")</code>, y por identificación <code>$(\"#target1\")</code>. ",
+        "Ahora ya sabes tres formas de seleccionar elementos: por tipo <code>$(\"button\")</code>, por clase <code>$(\".btn\")</code>, y por identificación <code>$(\"#target1\")</code>. ",
         "Aunque es posible agregar varias clases en una sola llamada a <code>.addClass()</code>, vamos a añadirlas al mismo elemento de tres maneras diferentes.",
-        "Usa cada uno de los selectores jQuery vistos y la función <code>addClass()</code>:",
-        "Agrega la clase <code>animated</code> a todos los elementos con tipo <code>button</code>.",
-        "Agrega la clase <code>shake</code> a todos los botones con clase <code>.btn</code>.",
-        "Agrega la clase <code>btn-primary</code> al botón con identificación <code>#target1</code>."
+        "Usa cada uno de los selectores jQuery vistos y la función <code>addClass()</code> para:",
+        "Agregar la clase <code>animated</code> a todos los elementos con tipo <code>button</code>.",
+        "Agregar la clase <code>shake</code> a todos los botones con clase <code>.btn</code>.",
+        "Agregar la clase <code>btn-primary</code> al botón con identificación <code>#target1</code>."
       ]
     },
     {
@@ -590,7 +590,16 @@
         "assert.isFalse((/<i>/gi).test($(\"h3\").html()), 'message: Do not alter any other text.');"
       ],
       "type": "waypoint",
-      "challengeType": 0
+      "challengeType": 0,
+      "nameEs": "Cambia el texto de un elemento usando jQuery",
+      "descriptionEs": [
+        "Con jQuery, puedes cambiar el texto que está entre las etiquetas de apertura y cierre de un elemento.  Incluso puedes cambiar marcado HTML.",
+        "jQuery tiene una función llamada <code>.html()</code> que te permite añadir etiquetas HTML y texto dentro de un elemento.  Cualquier contenido que estuviese previamente dentro del elemento será remplazado por completo con el contenido que proveas usando esta función.",
+        "He aquí como reescribes y pones en itálicas el texto de nuestro encabezado:",
+        "<code>$(\"h3\").html(\"&#60;i&#62;jQuery Playground&#60;/i&#62;\");</code>",
+        "jQuery también tiene una función similar llamada <code>.text()</code> que sólo altera el texto sin añadir etiquetas.",
+        "Cambia el botón con identificación <code>target4</code> de forma que su texto quede en itálicas."
+      ]
     },
     {
       "id": "bad87fee1348bd9aed708826",
@@ -643,7 +652,7 @@
       "descriptionEs": [
         "Ahora quitemos un elemento HTML de tu página usando jQuery.",
         "jQuery tiene una función llamada <code>.remove()</code> que eliminará un elemento HTML por completo",
-        "Elimina el elemento <code>target4</code> de la página utilizando la función <code>.remove()</code>."
+        "Elimina el elemento con identificación <code>target4</code> de la página utilizando la función <code>.remove()</code>."
       ]
     },
     {
@@ -700,7 +709,7 @@
       "nameEs": "Usa appendTo para mover elementos con jQuery",
       "descriptionEs": [
         "Ahora intentemos mover elementos de un <code>div</code> a otro.",
-        "jQuery tiene una función llamada <code>appendTo()</code> que le permite seleccionar elementos HTML y anexarlos a otro elemento.",
+        "jQuery tiene una función llamada <code>appendTo()</code> que te permite seleccionar elementos HTML y anexarlos a otro elemento.",
         "Por ejemplo, si quisiéramos mover <code>target4</code> de nuestro pozo (<em>well</em>) derecho a nuestro pozo izquierdo, usaríamos:",
         "<code>$(\"#target4\").appendTo(\"#left-well\");</code>",
         "Mueve tu elemento <code>target2</code> de tu <code>left-well</code> a tu <code>right-well</code>."
@@ -961,10 +970,10 @@
       "descriptionEs": [
         "Seguramente habrás entendido porque los atributos id son tan convenientes para elegir con selectores jQuery. Pero no siempre contarás con estos agradables identificadores para trabajar. ",
         "Afortunadamente, jQuery tiene algunos otros trucos para elegir los elementos adecuados.",
-        "jQuery usa selectores CSS para elegir elementos, El selector CSS <code>.clase:nth-child(i)</code> le permite seleccionar de los elementos con la clase dada, los que sean los i-ésimos hijos de su elemento padre. En lugar de una clase también puede usarse un elemento",
+        "jQuery usa selectores CSS para elegir elementos, El selector CSS <code>.clase:nth-child(i)</code> te permite seleccionar de los elementos con la clase dada, los que sean los i-ésimos hijos de su elemento padre. En lugar de una clase también puedes usar un elemento",
         "He aquí cómo le asignarás la clase <code>bounce</code> al tercer elemento de cada pozo:",
         "<code>$(\".target:nth-child(3)\").addClass(\"animated bounce\");</code>",
-        "Haz que rebote el segundo hijo de cada uno de los elementos de tus pozos. Debes elegir los hijos con la clase <code>target</code>."
+        "Haz que rebote el segundo hijo de cada uno de los elementos de tus pozos. Debes elegir los hijos de elementos con clase <code>target</code>."
       ]
     },
     {
