@@ -26,6 +26,20 @@
       "tests": [
         "assert.isTrue((/hello(\\s)+world/gi).test($('h1').text()), 'message: Your <code>h1</code> element should have the text \"Hello World\".');"
       ],
+      "nameFR": "Dites Bonjour aux éléments HTML",
+      "descriptionFR": [
+        "Bienvenue sur votre premier challenge de développeur sur Free Code Camp",
+		"Vous pouvez éditer le <code>code</code> dans votre </code>editeur de texte</code>, que nous avons intégré dans cette page web",
+		"Est-ce que vous voyez le code dans votre éditeur de texte disant<code>&#60;h1&#62;Bonjour&#60;/h1&#62;? Ceci est un <code>élément</code> HTML",
+		"La plupart des éléments HTML ont une <code>balise ouvrante</code> et une <code>balise fermante</code>",
+		"Les balises ouvrante ressemblent à ça:",
+        "<code>&#60;h1&#62;</code>",
+        "Les balises fermantes ressemblent à ça:",
+        "<code>&#60;/h1&#62;</code>",
+        "Notez que la seule différente entre les balises ouvrantes et fermantes est que les balises fermantes possèdent un slash aprés leur ouverture.",
+		"Chaque challenge possède des tests que vous pouvez lancer n'importe quand en cliquant sur le bouton \"Lancer les tests\". Une fois les tests passés vous pouvez passer au défi suivant.",
+		"Pour passer le test sur ce défi, vous devez changer le texte de la balise <code>h1</code> disant \"Hello World\" à la place de \"Hello\". Puis cliquer sur \"Lancer les tests\"."
+      ],
       "challengeType": 0,
       "nameEs": "Saluda a los Elementos HTML",
       "descriptionEs": [
