@@ -276,9 +276,7 @@ module.exports = function(app) {
   }
 
   function twitch(req, res) {
-    res.render('resources/twitch', {
-      title: 'Watch us code on Twitch.tv and LiveCoding.tv'
-    });
+    res.redirect('https://twitch.tv/freecodecamp');
   }
 
   function unsubscribe(req, res, next) {
