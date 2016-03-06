@@ -98,6 +98,15 @@
         "assert.isTrue((/cat(\\s)?photo(\\s)?app/gi).test($(\"h2\").text()), 'message: Your <code>h2</code> element should have the text \"CatPhotoApp\".');",
         "assert.isTrue((/hello(\\s)+world/gi).test($(\"h1\").text()), 'message: Your <code>h1</code> element should have the text \"Hello World\".');"
       ],
+      "nameFr": "Gros titre avec la balise h2",
+      "descriptionFr": [
+      	"Dans les prochains défis, nous développerons une application HTML5 qui ressemblera à quelque chose comme ça:",
+        "<a href=\"http://i.imgur.com/jOc1JF1.png\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" src=\"http://i.imgur.com/jOc1JF1.png\" title=\"Cliquer pour agrandir\" alt=\"Une image de notre application de photo de chat terminée.\"></a>",
+        "L'élément <code>h2</code> que vous coderez créera une balise <code>h2</code> sur le site web.",
+		"Cette balise dit au navigateur comment afficher le texte qu'il contient.",
+		"Les élements <code>h2</code> sont légèrement plus petite que les élements <code>h1</code>. Il y a aussi les éléments <code>h3</code>, <code>h4</code>, <code>h5</code> et <code>h6</code>.",
+		"Ajoutez une balise <code>h2</code> disant \"CatPhotoApp\" pour créer une seconde <code>balise</code> HTML en dessous de votre balise <code>h1</code> contenant \"Hello World\"."
+      ],
       "challengeType": 0,
       "nameEs": "Encabezado con el elemento h2",
       "descriptionEs": [
