@@ -13,7 +13,8 @@ const log = debug('fcc:react-server');
 // remove their individual controllers
 const routes = [
   '/videos',
-  '/videos/*'
+  '/videos/*',
+  '/challenges'
 ];
 
 const devRoutes = [];

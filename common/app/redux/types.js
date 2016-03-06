@@ -10,5 +10,8 @@ export default createTypes([
   'updatePoints',
   'handleError',
   // used to hit the server
-  'hardGoTo'
+  'hardGoTo',
+
+  'updateWindowHeight',
+  'updateNavHeight'
 ], 'app');

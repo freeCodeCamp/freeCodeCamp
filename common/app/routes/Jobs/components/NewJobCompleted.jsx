@@ -5,6 +5,10 @@ import { Button, Col, Row } from 'react-bootstrap';
 export default class extends React.createClass {
   static displayName = 'NewJobCompleted';
 
+  shouldComponentUpdate() {
+    return false;
+  }
+
   render() {
     return (
       <div className='text-center'>

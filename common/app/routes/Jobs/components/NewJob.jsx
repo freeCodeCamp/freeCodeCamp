@@ -1,5 +1,6 @@
 import { helpers } from 'rx';
 import React, { PropTypes } from 'react';
+import PureComponent from 'react-pure-render/component';
 import { push } from 'react-router-redux';
 import { reduxForm } from 'redux-form';
 // import debug from 'debug';
@@ -106,7 +107,7 @@ function getBsStyle(field) {
     'success';
 }
 
-export class NewJob extends React.Component {
+export class NewJob extends PureComponent {
   static displayName = 'NewJob';
 
   static propTypes = {
