@@ -298,12 +298,12 @@ $(document).ready(function() {
   }
 
   function expandBlock(item) {
-    $(item).addClass('in').css('height', '100%');
+    $(item).addClass('in');
     expandCaret(item);
   }
 
   function collapseBlock(item) {
-    $(item).removeClass('in').css('height', '100%');
+    $(item).removeClass('in');
     collapseCaret(item);
   }
 
