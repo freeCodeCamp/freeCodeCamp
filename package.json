@@ -109,6 +109,7 @@
     "react-bootstrap": "~0.29.4",
     "react-dom": "^15.0.2",
     "react-motion": "~0.4.2",
+    "react-no-ssr": "^1.0.1",
     "react-pure-render": "^1.0.2",
     "react-redux": "^4.0.6",
     "react-router": "^2.0.0",

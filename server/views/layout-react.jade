@@ -6,8 +6,8 @@ html(lang='en')
     else
       title Free Code Camp
     include partials/react-stylesheets
-  body.top-and-bottom-margins(style='overflow: hidden')
-    .container
-      #fcc!= markup
+  body.no-top-and-bottom-margins(style='overflow: hidden')
+    #fcc!= markup
     script!= state
+    script(src=rev('/js', 'vendor-challenges.js'))
     script(src=rev('/js', 'bundle.js'))

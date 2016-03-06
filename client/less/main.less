@@ -1,4 +1,4 @@
-@import "lib/bootstrap/bootstrap";
+            @import "lib/bootstrap/bootstrap";
 @import "lib/bootstrap-social/bootstrap-social";
 @import "lib/ionicons/ionicons";
 @import "lib/animate.min.less";
@@ -682,21 +682,11 @@ form.update-email .btn{
   padding-bottom: 117%;
 }
 
-#directions {
-  text-align: left;
-  font-size: 15px;
-}
-
 .graph-rect {
   fill: #ddd !important
 }
 
-
-/**
- * Challenge styling
- */
-
-form.code span {
+.CodeMirror span {
   font-size: 18px;
   font-family: "Ubuntu Mono";
   padding-bottom: 0px;
@@ -713,7 +703,7 @@ form.code span {
   font-family: "Ubuntu Mono";
 }
 
-#mainEditorPanel {
+.challenges-editor {
   height: 100%;
   width: 99%;
 }
@@ -721,10 +711,6 @@ form.code span {
 .scroll-locker {
   overflow-x: hidden;
   overflow-y: auto;
-}
-
-#mainEditorPanel .panel-body {
-  padding-bottom: 0px;
 }
 
 div.CodeMirror-scroll {
@@ -740,6 +726,11 @@ div.CodeMirror-scroll {
 }
 .courseware-height {
   min-height: 650px;
+}
+
+.challenge-log .CodeMirror {
+  height: 100%;
+  width: 100%;
 }
 
 .btn {

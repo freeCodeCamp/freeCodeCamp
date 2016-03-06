@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import ReactDOM from 'react-dom';
 import { LinkContainer } from 'react-router-bootstrap';
 import {
   Col,
@@ -35,8 +36,14 @@ export default class extends React.Component {
     points: PropTypes.number,
     picture: PropTypes.string,
     signedIn: PropTypes.bool,
-    username: PropTypes.string
+    username: PropTypes.string,
+    updateNavHeight: PropTypes.func
   };
+
+  componentDidMount() {
+    const navBar = ReactDOM.findDOMNode(this);
+    this.props.updateNavHeight(navBar.clientHeight);
+  }
 
   renderLinks() {
     return navLinks.map(({ content, link, react, target }, index) => {

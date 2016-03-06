@@ -5,8 +5,13 @@ import { compose } from 'redux';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 
-import { fetchUser } from './redux/actions';
+import {
+  fetchUser,
+  updateWindowHeight,
+  updateNavHeight
+} from './redux/actions';
 import contain from './utils/professor-x';
+import getWindowHeight from './utils/get-window-height';
 
 import Nav from './components/Nav';
 
@@ -43,7 +48,9 @@ export class FreeCodeCamp extends React.Component {
     username: PropTypes.string,
     points: PropTypes.number,
     picture: PropTypes.string,
-    toast: PropTypes.object
+    toast: PropTypes.object,
+    updateNavHeight: PropTypes.func,
+    updateWindowHeight: PropTypes.func
   };
 
   componentWillReceiveProps({ toast: nextToast = {} }) {
@@ -60,9 +67,13 @@ export class FreeCodeCamp extends React.Component {
     }
   }
 
+  componentDidMount() {
+    this.props.updateWindowHeight(getWindowHeight());
+  }
+
   render() {
-    const { username, points, picture } = this.props;
-    const navProps = { username, points, picture };
+    const { username, points, picture, updateNavHeight } = this.props;
+    const navProps = { username, points, picture, updateNavHeight };
 
     return (
       <div>
@@ -81,7 +92,7 @@ export class FreeCodeCamp extends React.Component {
 
 const wrapComponent = compose(
   // connect Component to Redux Store
-  connect(mapStateToProps, { fetchUser }),
+  connect(mapStateToProps, { updateWindowHeight, updateNavHeight, fetchUser }),
   // handles prefetching data
   contain(fetchContainerOptions)
 );

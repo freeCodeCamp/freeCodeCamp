@@ -30,3 +30,6 @@ export const updatePoints = createAction(types.updatePoints);
 
 // hardGoTo(path: String) => Action
 export const hardGoTo = createAction(types.hardGoTo);
+
+export const updateWindowHeight = createAction(types.updateWindowHeight);
+export const updateNavHeight = createAction(types.updateNavHeight);

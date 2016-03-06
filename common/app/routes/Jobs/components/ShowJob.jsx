@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react';
 import { Row, Col, Thumbnail } from 'react-bootstrap';
+import PureComponent from 'react-pure-render/component';
 import urlRegexFactory from 'url-regex';
 
 const urlRegex = urlRegexFactory();
@@ -18,15 +19,16 @@ function addATags(text) {
   });
 }
 
-export default React.createClass({
-  displayName: 'ShowJob',
-  propTypes: {
+export default class extends PureComponent {
+  static displayName = 'ShowJob';
+
+  static propTypes = {
     job: PropTypes.object,
     params: PropTypes.object,
     showApply: PropTypes.bool,
     preview: PropTypes.bool,
     message: PropTypes.string
-  },
+  };
 
   renderHeader({ company, position }) {
     return (
@@ -39,39 +41,39 @@ export default React.createClass({
         </h5>
       </div>
     );
-  },
+  }
 
   renderHowToApply(showApply, preview, message, howToApply) {
     if (!showApply) {
       return (
         <Row>
-            <Col
-              md={ 6 }
-              mdOffset={ 3 }>
-                <h4 className='bg-info text-center'>{ message }</h4>
-            </Col>
+          <Col
+            md={ 6 }
+            mdOffset={ 3 }>
+            <h4 className='bg-info text-center'>{ message }</h4>
+          </Col>
         </Row>
       );
     }
 
     return (
-        <Row>
-          <hr />
-          <Col
-            md={ 6 }
-            mdOffset={ 3 }>
-            <div>
-              <bold>{ preview ? 'How do I apply?' : message }</bold>
-              <br />
-              <br />
-              <span dangerouslySetInnerHTML={{
-                __html: addATags(howToApply)
-              }} />
-            </div>
-          </Col>
-        </Row>
+      <Row>
+        <hr />
+        <Col
+          md={ 6 }
+          mdOffset={ 3 }>
+          <div>
+            <bold>{ preview ? 'How do I apply?' : message }</bold>
+            <br />
+            <br />
+            <span dangerouslySetInnerHTML={{
+              __html: addATags(howToApply)
+            }} />
+        </div>
+      </Col>
+    </Row>
     );
-  },
+  }
 
   render() {
     const {
@@ -142,4 +144,4 @@ export default React.createClass({
       </div>
     );
   }
-});
+}
