@@ -3,7 +3,7 @@ import { Observable } from 'rx';
 import { Actions } from 'thundercats';
 import debugFactory from 'debug';
 
-const debug = debugFactory('freecc:hikes:actions');
+const debug = debugFactory('fcc:hikes:actions');
 const noOp = { transform: () => {} };
 
 function getCurrentHike(hikes = [{}], dashedName, currentHike) {

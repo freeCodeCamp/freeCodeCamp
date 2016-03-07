@@ -1,7 +1,7 @@
 import Rx from 'rx';
 import debugFactory from 'debug';
 
-const debug = debugFactory('freecc:rxUtils');
+const debug = debugFactory('fcc:rxUtils');
 
 export function saveInstance(instance) {
   return new Rx.Observable.create(function(observer) {
@@ -10,13 +10,13 @@ export function saveInstance(instance) {
       observer.onNext();
       return observer.onCompleted();
     }
-    instance.save(function(err, savedInstance) {
+    return instance.save(function(err, savedInstance) {
       if (err) {
         return observer.onError(err);
       }
       debug('instance saved');
       observer.onNext(savedInstance);
-      observer.onCompleted();
+      return observer.onCompleted();
     });
   });
 }

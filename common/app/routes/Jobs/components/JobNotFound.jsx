@@ -2,8 +2,12 @@ import React from 'react';
 import { LinkContainer } from 'react-router-bootstrap';
 import { Button, Row, Col } from 'react-bootstrap';
 
-export default React.createClass({
-  displayName: 'NoJobFound',
+export default class extends React.Component {
+  static displayName = 'NoJobFound';
+
+  shouldComponentUpdate() {
+    return false;
+  }
 
   render() {
     return (
@@ -28,4 +32,4 @@ export default React.createClass({
       </div>
     );
   }
-});
+}

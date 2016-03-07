@@ -2,7 +2,7 @@ var Rx = require('rx'),
     assign = require('object.assign'),
     sanitizeHtml = require('sanitize-html'),
     moment = require('moment'),
-    debug = require('debug')('freecc:cntr:story'),
+    debug = require('debug')('fcc:cntr:story'),
     utils = require('../utils'),
     observeMethod = require('../utils/rx').observeMethod,
     saveUser = require('../utils/rx').saveUser,
@@ -207,7 +207,7 @@ module.exports = function(app) {
           return upvote.upVotedByUsername === username;
         });
 
-        res.render('stories/index', {
+        return res.render('stories/index', {
           title: story.headline,
           link: story.link,
           originalStoryLink: dashedName,
@@ -357,7 +357,7 @@ module.exports = function(app) {
       url = 'http://' + url;
     }
 
-    findStory({ where: { link: url } })
+    return findStory({ where: { link: url } })
       .map(function(stories) {
         if (stories.length) {
           return {
