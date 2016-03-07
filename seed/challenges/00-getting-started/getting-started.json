@@ -135,7 +135,6 @@
           "Para obtener nuestra certificación verificada de Desarrollo de Interfaces, construirás 10 proyectos usando HTML, CSS, jQuery y JavaScript.",
           ""
         ],
- 
         [
           "http://i.imgur.com/Et3iD74.jpg",
           "Una imagen de nuestro Certificado de Visualización de Datos",
@@ -412,6 +411,63 @@
           "http://i.imgur.com/WvQvNGN.gif",
           "Un gif montrant comment vous pouvez cliquer sur le lien ci-dessous pour télécharger un natif salle de chat app pour votre ordinateur.",
           "Vous pouvez également télécharger la salle de chat app pour votre ordinateur ou votre téléphone.",
+          "https://gitter.im/apps"
+        ]
+      ],
+      "nameJa": "Githubアカウントを作成し、チャットに参加しましょう",
+      "descriptionJa": [
+        [
+          "http://i.imgur.com/EAR7Lvh.jpg",
+          "Gitterチャットルームの一場面です。",
+          "コーディングを始める前に、Free Code Camp のチャットルームに参加してください。いつでも、雑談や質問ができたりペアプログラミングをするための仲間を見つけ流ことができます。最初に Github アカウントが必要です。",
+          ""
+        ],
+        [
+          "http://i.imgur.com/n6GeSEm.gif",
+          "この gif は Github を開始するまでの流れを表しています。必要な欄に情報を入れて登録をしてください。そして Github からあなたのメールアドレス宛にメールが届きますのでアカウントを承認してください。",
+          "\"Open link in new tab\"をクリックして Github を開いてください。 必要な欄に情報を入力して GitHub アカウントを作ってください。実際に使われている email アドレスかを確認してください( GitHub にはこの情報が保存されます )。メールアドレス宛に GitHub からメールが来たことを確認してください。 メールにある\"verify email address\"をクリックして開いてください。<br><div class=\"small\">注意： もしすでに GitHub アカウントを持っていたら、あなたは \"Open link in new tab\" をクリックすることでこのステップを飛ばすことができます、新しく開かれたタブを閉じて \"go to my next step\" をクリックしてください。私たちはこの大事なステップが飛ばされてしまうのを防ぐために \"このステップを飛ばす\" ボタンは削除してあります。</div>",
+          "https://github.com/join"
+        ],
+        [
+          "http://i.imgur.com/hFqAEr8.gif",
+          "この gif は Github の右上にあるプロフィール画像をクリックする方法です。あなたの写真をアップロードするか、自動で生成されるピクセルアートを利用してください。そして、残りの欄に情報を入力し submit ボタンを押してください。",
+          "GitHub の右上に表示されているピクセルアートをクリックしてください、そして settings を選んでください。あなたの画像をアップロードしてください。画像はあなたの顔が写っていると良いです。他のキャンパーズの仲間たちがチャットルームであなたを見かけるようになります。住んでいる場所や名前を登録することもできます",
+          "https://github.com/settings/profile"
+        ],
+        [
+          "http://i.imgur.com/pYk0wOk.gif",
+          "この gif は GitHub のレポジトリへのスターをつける方法です。",
+          "オープンソースの Free Code Camp のレポジトリを開いてください。これは私たちボランティアチームの協力者が Free Code Camp で作っているものです。あなたは \"star\" を私たちのリポジトリに付けることができます。\"star を付けること\"は GitHub での \"いいね\" と一緒です。",
+          "https://github.com/freecodecamp/freecodecamp"
+        ],
+        [
+          "http://i.imgur.com/OmRmLB4.gif",
+          "この git は私たちのチャットルームへのリンクをクリックして、\"sign in with GitHub\" ボタンをクリックしています。そして、テキストを入力してキャンパーズの仲間へメッセージを送る方法を表しています。",
+          "あなたは Github のアカウントを持っているので、私たちのチャットルームへ GitHub を利用してログインできます。\"Hellow world!\" と言って自己紹介をし、あなたがどうやって Free Code Camp を見つけたかや何故プログラミングを学びたいのかを私たちに話してください。",
+          "https://gitter.im/FreeCodeCamp/FreeCodeCamp"
+        ],
+        [
+          "http://i.imgur.com/Ecs5XAd.gif",
+          "この gif は右上の settings ボタンを押すことで、通知の設定を変更する方法を表しています。",
+          "私たちのチャットルームはとても活発です。あなたは誰かがあなたに対してメンションを送った時にだけ通知してもらうように設定を変更した方が良いでしょう。",
+          ""
+        ],
+        [
+          "http://i.imgur.com/T0bGJPe.gif",
+          "この gif はどうやって該当するユーザに向けて個人的なメーッセージを送れるようにするかを表しています。",
+          "私たちのチャットルームは全て公開されているので、もしあなたが個人的な情報(メールアドレスや電話番号)を共有したい場合には、プライベートメッセージを利用してください。",
+          ""
+        ],
+        [
+          "http://i.imgur.com/vDTMJSh.gif",
+          "この gif はチャレンジとチャットルームへの行き来がタブを戻すことでできることを表しています。",
+          "私たちのチャレンジを通して作業をしている間はチャットルームを開いておくと良いでしょう。そうすることで、必要な時に助けを求めることができます。あなたは休憩をしているかのように他のキャンパーズと関わりを持てるでしょう。",
+          ""
+        ],
+        [
+          "http://i.imgur.com/WvQvNGN.gif",
+          "この gif は、チャットルームアプリをあなたのコンピュータに直接インストールするためにダウンロードする方法を表しています。",
+          "チャットルームのアプリをスマホや自分のパソコンにダウンロードして使うことができます。",
           "https://gitter.im/apps"
         ]
       ]
