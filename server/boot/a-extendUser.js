@@ -1,7 +1,7 @@
 import { Observable } from 'rx';
 import debugFactory from 'debug';
 
-const debug = debugFactory('freecc:user:remote');
+const debug = debugFactory('fcc:user:remote');
 
 function destroyAllRelated(id, Model) {
   return Observable.fromNodeCallback(
@@ -21,7 +21,7 @@ module.exports = function(app) {
     if (!id) {
       return next();
     }
-    Observable.combineLatest(
+    return Observable.combineLatest(
       destroyAllRelated(id, UserIdentity),
       destroyAllRelated(id, UserCredential),
       function(identData, credData) {
@@ -30,19 +30,20 @@ module.exports = function(app) {
           credData: credData
         };
       }
-    ).subscribe(
-      function(data) {
-        debug('deleted', data);
-      },
-      function(err) {
-        debug('error deleting user %s stuff', id, err);
-        next(err);
-      },
-      function() {
-        debug('user stuff deleted for user %s', id);
-        next();
-      }
-    );
+    )
+      .subscribe(
+        function(data) {
+          debug('deleted', data);
+        },
+        function(err) {
+          debug('error deleting user %s stuff', id, err);
+          next(err);
+        },
+        function() {
+          debug('user stuff deleted for user %s', id);
+          next();
+        }
+      );
   });
 
   // set email varified false on user email signup
@@ -82,15 +83,15 @@ module.exports = function(app) {
     };
 
     debug('sending welcome email');
-    Email.send(mailOptions, function(err) {
+    return Email.send(mailOptions, function(err) {
       if (err) { return next(err); }
-      req.logIn(user, function(err) {
+      return req.logIn(user, function(err) {
         if (err) { return next(err); }
 
         req.flash('success', {
           msg: [ "Welcome to Free Code Camp! We've created your account." ]
         });
-        res.redirect(redirect);
+        return res.redirect(redirect);
       });
     });
   });

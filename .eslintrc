@@ -1,6 +1,9 @@
 {
-  "ecmaFeatures": {
-    "jsx": true
+  "parserOption": {
+    "ecmaVersion": 6,
+    "ecmaFeatures": {
+        "jsx": true
+    }
   },
   "env": {
     "browser": true,
@@ -12,6 +15,7 @@
     "react"
   ],
   "globals": {
+    "Promise": true,
     "window": true,
     "$": true,
     "ga": true,
@@ -58,7 +62,6 @@
     "no-caller": 2,
     "no-div-regex": 2,
     "no-else-return": 0,
-    "no-empty-label": 2,
     "no-eq-null": 1,
     "no-eval": 2,
     "no-extend-native": 2,
@@ -182,10 +185,7 @@
       "always"
     ],
     "sort-vars": 0,
-    "space-after-keywords": [
-      2,
-      "always"
-    ],
+    "keyword-spacing": [ 2 ],
     "space-before-function-paren": [
       2,
       "never"
@@ -197,7 +197,6 @@
     "space-in-brackets": 0,
     "space-in-parens": 0,
     "space-infix-ops": 2,
-    "space-return-throw-case": 2,
     "space-unary-ops": [
       1,
       {
@@ -214,7 +213,7 @@
 
     "max-depth": 0,
     "max-len": [
-      1,
+      2,
       80,
       2
     ],
@@ -232,7 +231,7 @@
     "react/jsx-uses-vars": 1,
     "react/no-did-mount-set-state": 2,
     "react/no-did-update-set-state": 2,
-    "react/no-multi-comp": 2,
+    "react/no-multi-comp": [2, { "ignoreStateless": true } ],
     "react/prop-types": 2,
     "react/react-in-jsx-scope": 1,
     "react/self-closing-comp": 1,

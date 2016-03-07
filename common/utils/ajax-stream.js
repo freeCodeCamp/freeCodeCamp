@@ -19,7 +19,7 @@
 import debugFactory from 'debug';
 import { Observable, AnonymousObservable, helpers } from 'rx';
 
-const debug = debugFactory('freecc:ajax$');
+const debug = debugFactory('fcc:ajax$');
 const root = typeof window !== 'undefined' ? window : {};
 
 // Gets the proper XMLHttpRequest for support for older IE

@@ -23,20 +23,20 @@ const logoElement = (
 );
 
 const toggleButtonChild = (
-    <Col xs={ 12 }>
-      <span className='hamburger-text'>Menu</span>
-    </Col>
+  <Col xs={ 12 }>
+    <span className='hamburger-text'>Menu</span>
+  </Col>
 );
 
-export default React.createClass({
-  displayName: 'Nav',
+export default class extends React.Component {
+  static displayName = 'Nav';
 
-  propTypes: {
+  static propTypes = {
     points: PropTypes.number,
     picture: PropTypes.string,
     signedIn: PropTypes.bool,
     username: PropTypes.string
-  },
+  };
 
   renderLinks() {
     return navLinks.map(({ content, link, react, target }, index) => {
@@ -63,7 +63,7 @@ export default React.createClass({
         </NavItem>
       );
     });
-  },
+  }
 
   renderPoints(username, points) {
     if (!username) {
@@ -76,7 +76,7 @@ export default React.createClass({
         [ { points } ]
       </FCCNavItem>
     );
-  },
+  }
 
   renderSignin(username, picture) {
     if (username) {
@@ -100,7 +100,7 @@ export default React.createClass({
         </NavItem>
       );
     }
-  },
+  }
 
   render() {
     const { username, points, picture } = this.props;
@@ -124,4 +124,4 @@ export default React.createClass({
       </Navbar>
     );
   }
-});
+}

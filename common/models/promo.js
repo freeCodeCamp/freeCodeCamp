@@ -1,7 +1,7 @@
 import { isAlphanumeric, isHexadecimal } from 'validator';
 import debug from 'debug';
 
-const log = debug('freecc:models:promo');
+const log = debug('fcc:models:promo');
 
 export default function promo(Promo) {
   Promo.getButton = function getButton(id, code, type = 'isNot') {

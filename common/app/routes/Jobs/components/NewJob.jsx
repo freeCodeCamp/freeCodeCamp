@@ -1,17 +1,15 @@
 import { helpers } from 'rx';
 import React, { PropTypes } from 'react';
-import { History } from 'react-router';
-import { contain } from 'thundercats-react';
-import debugFactory from 'debug';
+import { push } from 'react-router-redux';
+import { reduxForm } from 'redux-form';
+// import debug from 'debug';
 import dedent from 'dedent';
-import normalizeUrl from 'normalize-url';
-
-import { getDefaults } from '../utils';
 
 import {
-  inHTMLData,
-  uriInSingleQuotedAttr
-} from 'xss-filters';
+  isAscii,
+  isEmail,
+  isURL
+} from 'validator';
 
 import {
   Button,
@@ -20,29 +18,13 @@ import {
   Row
 } from 'react-bootstrap';
 
-import {
-  isAscii,
-  isEmail,
-  isURL
-} from 'validator';
+import { saveForm, loadSavedForm } from '../redux/actions';
 
-const debug = debugFactory('freecc:jobs:newForm');
+// const log = debug('fcc:jobs:newForm');
 
-const checkValidity = [
-  'position',
-  'locale',
-  'description',
-  'email',
-  'url',
-  'logo',
-  'company',
-  'isHighlighted',
-  'howToApply'
-];
 const hightlightCopy = `
 Highlight my post to make it stand out. (+$250)
 `;
-
 
 const isRemoteCopy = `
 This job can be performed remotely.
@@ -60,196 +42,103 @@ const checkboxClass = dedent`
   col-sm-6 col-md-offset-3
 `;
 
-function formatValue(value, validator, type = 'string') {
-  const formatted = getDefaults(type);
-  if (validator && type === 'string' && typeof value === 'string') {
-    formatted.valid = validator(value);
-  }
-  if (value) {
-    formatted.value = value;
-    formatted.bsStyle = formatted.valid ? 'success' : 'error';
-  }
-  return formatted;
-}
-
-const normalizeOptions = {
-  stripWWW: false
+const certTypes = {
+  isFrontEndCert: 'isFrontEndCert',
+  isBackEndCert: 'isBackEndCert'
 };
-
-function formatUrl(url, shouldKeepTrailingSlash = true) {
-  if (
-    typeof url === 'string' &&
-    url.length > 4 &&
-    url.indexOf('.') !== -1
-  ) {
-    // prevent trailing / from being stripped during typing
-    let lastChar = '';
-    if (shouldKeepTrailingSlash && url.substring(url.length - 1) === '/') {
-      lastChar = '/';
-    }
-    return normalizeUrl(url, normalizeOptions) + lastChar;
-  }
-  return url;
-}
 
 function isValidURL(data) {
   return isURL(data, { 'require_protocol': true });
 }
 
+const fields = [
+  'position',
+  'locale',
+  'description',
+  'email',
+  'url',
+  'logo',
+  'company',
+  'isHighlighted',
+  'isRemoteOk',
+  'isFrontEndCert',
+  'isBackEndCert',
+  'howToApply'
+];
+
+const fieldValidators = {
+  position: makeRequired(isAscii),
+  locale: makeRequired(isAscii),
+  description: makeRequired(helpers.identity),
+  email: makeRequired(isEmail),
+  url: makeRequired(isValidURL),
+  logo: makeOptional(isValidURL),
+  company: makeRequired(isAscii),
+  howToApply: makeRequired(isAscii)
+};
+
+function makeOptional(validator) {
+  return val => val ? validator(val) : true;
+}
 function makeRequired(validator) {
-  return (val) => !!val && validator(val);
+  return (val) => val ? validator(val) : false;
 }
 
-export default contain({
-    store: 'appStore',
-    actions: 'jobActions',
-    map({ jobsApp: { form = {} } }) {
-      const {
-        position,
-        locale,
-        description,
-        email,
-        url,
-        logo,
-        company,
-        isFrontEndCert = true,
-        isBackEndCert,
-        isHighlighted,
-        isRemoteOk,
-        howToApply
-      } = form;
-      return {
-        position: formatValue(position, makeRequired(isAscii)),
-        locale: formatValue(locale, makeRequired(isAscii)),
-        description: formatValue(description, makeRequired(helpers.identity)),
-        email: formatValue(email, makeRequired(isEmail)),
-        url: formatValue(formatUrl(url), isValidURL),
-        logo: formatValue(formatUrl(logo), isValidURL),
-        company: formatValue(company, makeRequired(isAscii)),
-        isHighlighted: formatValue(isHighlighted, null, 'bool'),
-        isRemoteOk: formatValue(isRemoteOk, null, 'bool'),
-        howToApply: formatValue(howToApply, makeRequired(isAscii)),
-        isFrontEndCert,
-        isBackEndCert
-      };
-    },
-    subscribeOnWillMount() {
-      return typeof window !== 'undefined';
-    }
-  },
-  React.createClass({
-    displayName: 'NewJob',
-
-    propTypes: {
-      jobActions: PropTypes.object,
-      position: PropTypes.object,
-      locale: PropTypes.object,
-      description: PropTypes.object,
-      email: PropTypes.object,
-      url: PropTypes.object,
-      logo: PropTypes.object,
-      company: PropTypes.object,
-      isHighlighted: PropTypes.object,
-      isRemoteOk: PropTypes.object,
-      isFrontEndCert: PropTypes.bool,
-      isBackEndCert: PropTypes.bool,
-      howToApply: PropTypes.object
-    },
-
-    mixins: [History],
-
-    handleSubmit(e) {
-      e.preventDefault();
-      const pros = this.props;
-      let valid = true;
-      checkValidity.forEach((prop) => {
-        // if value exist, check if it is valid
-        if (pros[prop].value && pros[prop].type !== 'boolean') {
-          valid = valid && !!pros[prop].valid;
-        }
-      });
-
-      if (
-        !valid ||
-        !pros.isFrontEndCert &&
-        !pros.isBackEndCert
-      ) {
-        debug('form not valid');
-        return;
+function validateForm(values) {
+  return Object.keys(fieldValidators)
+    .map(field => {
+      if (fieldValidators[field](values[field])) {
+        return null;
       }
+      return { [field]: !fieldValidators[field](values[field]) };
+    })
+    .filter(Boolean)
+    .reduce((errors, error) => ({ ...errors, ...error }), {});
+}
 
-      const {
-        jobActions,
+function getBsStyle(field) {
+  if (field.pristine) {
+    return null;
+  }
 
-        // form values
-        position,
-        locale,
-        description,
-        email,
-        url,
-        logo,
-        company,
-        isFrontEndCert,
-        isBackEndCert,
-        isHighlighted,
-        isRemoteOk,
-        howToApply
-      } = this.props;
+  return field.error ?
+    'error' :
+    'success';
+}
 
-      // sanitize user output
-      const jobValues = {
-        position: inHTMLData(position.value),
-        locale: inHTMLData(locale.value),
-        description: inHTMLData(description.value),
-        email: inHTMLData(email.value),
-        url: formatUrl(uriInSingleQuotedAttr(url.value), false),
-        logo: formatUrl(uriInSingleQuotedAttr(logo.value), false),
-        company: inHTMLData(company.value),
-        isHighlighted: !!isHighlighted.value,
-        isRemoteOk: !!isRemoteOk.value,
-        howToApply: inHTMLData(howToApply.value),
-        isFrontEndCert,
-        isBackEndCert
-      };
+export class NewJob extends React.Component {
+  static displayName = 'NewJob';
 
-      const job = Object.keys(jobValues).reduce((accu, prop) => {
-        if (jobValues[prop]) {
-          accu[prop] = jobValues[prop];
-        }
-        return accu;
-      }, {});
+  static propTypes = {
+    fields: PropTypes.object,
+    handleSubmit: PropTypes.func,
+    loadSavedForm: PropTypes.func,
+    push: PropTypes.func,
+    saveForm: PropTypes.func
+  };
 
-      job.postedOn = new Date();
-      debug('job sanitized', job);
-      jobActions.saveForm(job);
+  componentDidMount() {
+    this.props.loadSavedForm();
+  }
 
-      this.history.pushState(null, '/jobs/new/preview');
-    },
+  handleSubmit(job) {
+    this.props.saveForm(job);
+    this.props.push('/jobs/new/preview');
+  }
 
-    componentDidMount() {
-      const { jobActions } = this.props;
-      jobActions.getSavedForm();
-    },
+  handleCertClick(name) {
+    const { fields } = this.props;
+    Object.keys(certTypes).forEach(certType => {
+      if (certType === name) {
+        return fields[certType].onChange(true);
+      }
+      return fields[certType].onChange(false);
+    });
+  }
 
-    handleChange(name, { target: { value } }) {
-      const { jobActions: { handleForm } } = this.props;
-      handleForm({ [name]: value });
-    },
-
-    handleCertClick(name) {
-      const { jobActions: { handleForm } } = this.props;
-      const otherButton = name === 'isFrontEndCert' ?
-        'isBackEndCert' :
-        'isFrontEndCert';
-
-      handleForm({
-        [name]: true,
-        [otherButton]: false
-      });
-    },
-
-    render() {
-      const {
+  render() {
+    const {
+      fields: {
         position,
         locale,
         description,
@@ -261,235 +150,242 @@ export default contain({
         isRemoteOk,
         howToApply,
         isFrontEndCert,
-        isBackEndCert,
-        jobActions: { handleForm }
-      } = this.props;
+        isBackEndCert
+      },
+      handleSubmit
+    } = this.props;
 
-      const { handleChange } = this;
-      const labelClass = 'col-sm-offset-1 col-sm-2';
-      const inputClass = 'col-sm-6';
+    const { handleChange } = this;
+    const labelClass = 'col-sm-offset-1 col-sm-2';
+    const inputClass = 'col-sm-6';
 
-      return (
-        <div>
-          <Row>
-            <Col
-              md={ 10 }
-              mdOffset={ 1 }>
-              <div className='text-center'>
-                <form
-                  className='form-horizontal'
-                  onSubmit={ this.handleSubmit }>
+    return (
+      <div>
+        <Row>
+          <Col
+            md={ 10 }
+            mdOffset={ 1 }>
+            <div className='text-center'>
+              <form
+                className='form-horizontal'
+                onSubmit={ handleSubmit(data => this.handleSubmit(data)) }>
 
-                  <div className='spacer'>
-                    <h2>First, select your ideal applicant: </h2>
+                <div className='spacer'>
+                  <h2>First, select your ideal applicant: </h2>
+                </div>
+
+                <Row>
+                  <Col
+                    xs={ 6 }
+                    xsOffset={ 3 }>
+                    <Row>
+                      <Button
+                        bsStyle='primary'
+                        className={ isFrontEndCert.value ? 'active' : '' }
+                        onClick={ () => {
+                          if (!isFrontEndCert.value) {
+                            this.handleCertClick(certTypes.isFrontEndCert);
+                          }
+                        }}>
+                        <h4>Front End Development Certified</h4>
+                        You can expect each applicant
+                        to have a code portfolio using the
+                        following technologies:
+                        HTML5, CSS, jQuery, API integrations
+                        <br />
+                        <br />
+                      </Button>
+                    </Row>
+                    <div className='button-spacer' />
+                    <Row>
+                      <Button
+                        bsStyle='primary'
+                        className={ isBackEndCert.value ? 'active' : ''}
+                        onClick={ () => {
+                          if (!isBackEndCert.value) {
+                            this.handleCertClick(certTypes.isBackEndCert);
+                          }
+                        }}>
+                        <h4>Back End Development Certified</h4>
+                        You can expect each applicant to have a code
+                        portfolio using the following technologies:
+                        HTML5, CSS, jQuery, API integrations, MVC Framework,
+                        JavaScript, Node.js, MongoDB, Express.js
+                        <br />
+                        <br />
+                      </Button>
+                    </Row>
+                  </Col>
+                </Row>
+                <div className='spacer'>
+                  <h2>Tell us about the position</h2>
+                </div>
+                <hr />
+                <Input
+                  bsStyle={ getBsStyle(position) }
+                  label='Job Title'
+                  labelClassName={ labelClass }
+                  placeholder={
+                    'e.g. Full Stack Developer, Front End Developer, etc.'
+                  }
+                  required={ true }
+                  type='text'
+                  wrapperClassName={ inputClass }
+                  { ...position }
+                />
+                <Input
+                  bsStyle={ getBsStyle(locale) }
+                  label='Location'
+                  labelClassName={ labelClass }
+                  placeholder='e.g. San Francisco, Remote, etc.'
+                  required={ true }
+                  type='text'
+                  wrapperClassName={ inputClass }
+                  { ...locale }
+                />
+                <Input
+                  bsStyle={ getBsStyle(description) }
+                  label='Description'
+                  labelClassName={ labelClass }
+                  required={ true }
+                  rows='10'
+                  type='textarea'
+                  wrapperClassName={ inputClass }
+                  { ...description }
+                />
+                <Input
+                  label={ isRemoteCopy }
+                  type='checkbox'
+                  wrapperClassName={ checkboxClass }
+                  { ...isRemoteOk }
+                />
+                <div className='spacer' />
+
+                <hr />
+                <Row>
+                  <div>
+                    <h2>How should they apply?</h2>
                   </div>
+                  <Input
+                    bsStyle={ getBsStyle(howToApply) }
+                    label='   '
+                    labelClassName={ labelClass }
+                    placeholder={ howToApplyCopy }
+                    required={ true }
+                    rows='2'
+                    type='textarea'
+                    wrapperClassName={ inputClass }
+                    { ...howToApply }
+                  />
+                </Row>
 
+                <div className='spacer' />
+                <hr />
+                <div>
+                  <h2>Tell us about your organization</h2>
+                </div>
+                <Input
+                  bsStyle={ getBsStyle(company) }
+                  label='Company Name'
+                  labelClassName={ labelClass }
+                  onChange={ (e) => handleChange('company', e) }
+                  type='text'
+                  wrapperClassName={ inputClass }
+                  { ...company }
+                />
+                <Input
+                  bsStyle={ getBsStyle(email) }
+                  label='Email'
+                  labelClassName={ labelClass }
+                  placeholder='This is how we will contact you'
+                  required={ true }
+                  type='email'
+                  wrapperClassName={ inputClass }
+                  { ...email }
+                />
+                <Input
+                  bsStyle={ getBsStyle(url) }
+                  label='URL'
+                  labelClassName={ labelClass }
+                  placeholder='http://yourcompany.com'
+                  type='url'
+                  wrapperClassName={ inputClass }
+                  { ...url }
+                />
+                <Input
+                  bsStyle={ getBsStyle(logo) }
+                  label='Logo'
+                  labelClassName={ labelClass }
+                  placeholder='http://yourcompany.com/logo.png'
+                  type='url'
+                  wrapperClassName={ inputClass }
+                  { ...logo }
+                />
+
+                <div className='spacer' />
+                <hr />
+                <div>
+                  <div>
+                    <h2>Make it stand out</h2>
+                  </div>
+                  <div className='spacer' />
                   <Row>
                     <Col
-                      xs={ 6 }
-                      xsOffset={ 3 }>
-                      <Row>
-                        <Button
-                          bsStyle='primary'
-                          className={ isFrontEndCert ? 'active' : '' }
-                          onClick={ () => {
-                            if (!isFrontEndCert) {
-                              this.handleCertClick('isFrontEndCert');
-                            }
-                          }}>
-                          <h4>Front End Development Certified</h4>
-                          You can expect each applicant
-                          to have a code portfolio using the
-                          following technologies:
-                          HTML5, CSS, jQuery, API integrations
-                          <br />
-                          <br />
-                        </Button>
-                      </Row>
-                      <div className='button-spacer' />
-                      <Row>
-                        <Button
-                          bsStyle='primary'
-                          className={ isBackEndCert ? 'active' : ''}
-                          onClick={ () => {
-                            if (!isBackEndCert) {
-                              this.handleCertClick('isBackEndCert');
-                            }
-                          }}>
-                          <h4>Back End Development Certified</h4>
-                          You can expect each applicant to have a code
-                          portfolio using the following technologies:
-                          HTML5, CSS, jQuery, API integrations, MVC Framework,
-                          JavaScript, Node.js, MongoDB, Express.js
-                          <br />
-                          <br />
-                        </Button>
-                      </Row>
-                    </Col>
-                  </Row>
-                  <div className='spacer'>
-                    <h2>Tell us about the position</h2>
-                  </div>
-                  <hr />
-                  <Input
-                    bsStyle={ position.bsStyle }
-                    label='Job Title'
-                    labelClassName={ labelClass }
-                    onChange={ (e) => handleChange('position', e) }
-                    placeholder={
-                      'e.g. Full Stack Developer, Front End Developer, etc.'
-                    }
-                    required={ true }
-                    type='text'
-                    value={ position.value }
-                    wrapperClassName={ inputClass } />
-                  <Input
-                    bsStyle={ locale.bsStyle }
-                    label='Location'
-                    labelClassName={ labelClass }
-                    onChange={ (e) => handleChange('locale', e) }
-                    placeholder='e.g. San Francisco, Remote, etc.'
-                    required={ true }
-                    type='text'
-                    value={ locale.value }
-                    wrapperClassName={ inputClass } />
-                  <Input
-                    bsStyle={ description.bsStyle }
-                    label='Description'
-                    labelClassName={ labelClass }
-                    onChange={ (e) => handleChange('description', e) }
-                    required={ true }
-                    rows='10'
-                    type='textarea'
-                    value={ description.value }
-                    wrapperClassName={ inputClass } />
-                  <Input
-                    checked={ isRemoteOk.value }
-                    label={ isRemoteCopy }
-                    onChange={
-                      ({ target: { checked } }) => handleForm({
-                        isRemoteOk: !!checked
-                      })
-                    }
-                    type='checkbox'
-                    wrapperClassName={ checkboxClass } />
-                  <div className='spacer' />
-
-                  <hr />
-                  <Row>
-                    <div>
-                      <h2>How should they apply?</h2>
-                    </div>
-                    <Input
-                      bsStyle={ howToApply.bsStyle }
-                      label='   '
-                      labelClassName={ labelClass }
-                      onChange={ (e) => handleChange('howToApply', e) }
-                      placeholder={ howToApplyCopy }
-                      required={ true }
-                      rows='2'
-                      type='textarea'
-                      value={ howToApply.value }
-                      wrapperClassName={ inputClass } />
-                  </Row>
-
-                  <div className='spacer' />
-                  <hr />
-                  <div>
-                    <h2>Tell us about your organization</h2>
-                  </div>
-                  <Input
-                    bsStyle={ company.bsStyle }
-                    label='Company Name'
-                    labelClassName={ labelClass }
-                    onChange={ (e) => handleChange('company', e) }
-                    type='text'
-                    value={ company.value }
-                    wrapperClassName={ inputClass } />
-                  <Input
-                    bsStyle={ email.bsStyle }
-                    label='Email'
-                    labelClassName={ labelClass }
-                    onChange={ (e) => handleChange('email', e) }
-                    placeholder='This is how we will contact you'
-                    required={ true }
-                    type='email'
-                    value={ email.value }
-                    wrapperClassName={ inputClass } />
-                  <Input
-                    bsStyle={ url.bsStyle }
-                    label='URL'
-                    labelClassName={ labelClass }
-                    onChange={ (e) => handleChange('url', e) }
-                    placeholder='http://yourcompany.com'
-                    type='url'
-                    value={ url.value }
-                    wrapperClassName={ inputClass } />
-                  <Input
-                    bsStyle={ logo.bsStyle }
-                    label='Logo'
-                    labelClassName={ labelClass }
-                    onChange={ (e) => handleChange('logo', e) }
-                    placeholder='http://yourcompany.com/logo.png'
-                    type='url'
-                    value={ logo.value }
-                    wrapperClassName={ inputClass } />
-
-                  <div className='spacer' />
-                  <hr />
-                  <div>
-                    <div>
-                      <h2>Make it stand out</h2>
-                    </div>
-                    <div className='spacer' />
-                    <Row>
-                      <Col
-                        md={ 6 }
-                        mdOffset={ 3 }>
+                      md={ 6 }
+                      mdOffset={ 3 }>
                       Highlight this ad to give it extra attention.
                       <br />
                     Featured listings receive more clicks and more applications.
-                      </Col>
-                    </Row>
-                    <div className='spacer' />
-                    <Row>
-                      <Input
-                        bsSize='large'
-                        bsStyle='success'
-                        checked={ isHighlighted.value }
-                        label={ hightlightCopy }
-                        onChange={
-                          ({ target: { checked } }) => handleForm({
-                            isHighlighted: !!checked
-                          })
-                        }
-                        type='checkbox'
-                        wrapperClassName={
-                          checkboxClass.replace('text-left', '')
-                        } />
-                    </Row>
-                  </div>
-
-                  <Row>
-                    <Col
-                      className='text-left'
-                      lg={ 6 }
-                      lgOffset={ 3 }>
-                      <Button
-                        block={ true }
-                        bsSize='large'
-                        bsStyle='primary'
-                        type='submit'>
-                        Preview My Ad
-                      </Button>
                     </Col>
                   </Row>
-                </form>
-              </div>
-            </Col>
-          </Row>
-        </div>
-      );
-    }
-  })
-);
+                  <div className='spacer' />
+                  <Row>
+                    <Input
+                      bsSize='large'
+                      bsStyle='success'
+                      label={ hightlightCopy }
+                      type='checkbox'
+                      wrapperClassName={
+                        checkboxClass.replace('text-left', '')
+                      }
+                      { ...isHighlighted }
+                    />
+                  </Row>
+                </div>
+
+                <Row>
+                  <Col
+                    className='text-left'
+                    lg={ 6 }
+                    lgOffset={ 3 }>
+                    <Button
+                      block={ true }
+                      bsSize='large'
+                      bsStyle='primary'
+                      type='submit'>
+                      Preview My Ad
+                    </Button>
+                  </Col>
+                </Row>
+              </form>
+            </div>
+          </Col>
+        </Row>
+      </div>
+    );
+  }
+}
+
+export default reduxForm(
+  {
+    form: 'NewJob',
+    fields,
+    validate: validateForm
+  },
+  state => ({ initialValues: state.jobsApp.initialValues }),
+  {
+    loadSavedForm,
+    push,
+    saveForm
+  }
+)(NewJob);

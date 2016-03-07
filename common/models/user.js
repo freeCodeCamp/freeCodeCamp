@@ -7,7 +7,7 @@ import debugFactory from 'debug';
 import { saveUser, observeMethod } from '../../server/utils/rx';
 import { blacklistedUsernames } from '../../server/utils/constants';
 
-const debug = debugFactory('freecc:user:remote');
+const debug = debugFactory('fcc:user:remote');
 const BROWNIEPOINTS_TIMEOUT = [1, 'hour'];
 
 function getAboutProfile({
@@ -271,7 +271,7 @@ module.exports = function(User) {
         ));
       });
     }
-    User.findOne({ where: { username } }, (err, user) => {
+    return User.findOne({ where: { username } }, (err, user) => {
       if (err) {
         return cb(err);
       }
@@ -327,7 +327,7 @@ module.exports = function(User) {
         .valueOf();
       const user$ = findUser({ where: { username: receiver }});
 
-      user$
+      return user$
         .tapOnNext((user) => {
           if (!user) {
             throw new Error(`could not find receiver for ${ receiver }`);

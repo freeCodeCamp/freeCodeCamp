@@ -75,7 +75,7 @@ module.exports = {
 
       result.image = urlImage;
       result.description = description;
-      callback(null, result);
+      return callback(null, result);
     });
   },
 

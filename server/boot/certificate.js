@@ -22,7 +22,7 @@ import {
 
 import certTypes from '../utils/certTypes.json';
 
-const log = debug('freecc:certification');
+const log = debug('fcc:certification');
 const sendMessageToNonUser = ifNoUserSend(
   'must be logged in to complete.'
 );
