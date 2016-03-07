@@ -13,7 +13,9 @@
       "tests": [],
       "type": "waypoint",
       "challengeType": 3,
-      "nameEs": "Crea una aplicación de votaciones"
+      "nameEs": "Desafios para aprender D3",
+      "descriptionEs": []
+
     }
   ]
 }

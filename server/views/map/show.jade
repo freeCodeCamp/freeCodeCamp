@@ -1,5 +1,6 @@
 extends ../layout-wide
 block content
+      .mapWrapper
         .text-center.map-fixed-header
             p Challenges required for certifications are marked with a *
             .row.map-buttons
@@ -10,6 +11,7 @@ block content
                     span.input-group-addon
                        i.fa.fa-search
             hr
+            include ../partials/flash
         #accordion.map-accordion
           #noneFound No results found. Happy Coding!
           for superBlock, index in superBlocks

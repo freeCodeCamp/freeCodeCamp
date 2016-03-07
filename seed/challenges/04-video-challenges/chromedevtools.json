@@ -10,9 +10,9 @@
         "This is basic info and a mini-lesson on the Elements tab of Chrome Dev Tools. Check out more in-depth documentation here: developers.google.com/web/tools/iterate/inspect-styles/basics",
         "We will be using the webpage mckellen.com/ per suggestion of Free Code Camp user kmiasko.",
         "If you right click and select 'Inspect element', you can have access to the elements tab. You can change text, background color, text color, and any other CSS or HTML you'd like!",
-        "These changes don't set up automatically, so don't use this as an IDE or a place to create or edit anything you want to save. You can set up something called 'persistant authoring' to save.",
-        "Cascade, inherit, and other css rules still apply, so keep that in mind as you play around. Additionally, overridden styles will be shown as having a strike through them.",
-        "It should also be noted that all of the code you're seeing in this 'tree' is current HTML, not original onload. If you use javascript or jquery to change something, it will be updated on this tree.",
+        "These changes don't set up automatically, so don't use this as an IDE or a place to create or edit anything you want to save. You can set up something called 'persistent authoring' to save.",
+        "Cascade, inherit, and other CSS rules still apply, so keep that in mind as you play around. Additionally, overridden styles will be shown as having a strike through them.",
+        "It should also be noted that all of the code you're seeing in this 'tree' is current HTML, not the original when the page loaded. If you use JavaScript or jQuery to change something, it will be updated on this tree.",
         "Padding, border, and margins are easily inspected and edited using the colorful box on the right or bottom side.",
         "Please check out the Chrome Dev Tools documentation at developers.google.com/web/tools/chrome-devtools/"
       ],
@@ -31,7 +31,18 @@
         ]
       ],
       "type": "hike",
-      "challengeType": 6
+      "challengeType": 6,
+      "nameEs": "Herramientas de desarrollo de Chrome: Elementos",
+      "descriptionEs": [
+        "Esta es información básica y una mini-lección sobre la pestaña Elements en las herramientas de desarrollo de Chrome. Echa un vistazo a la documentación más detallada aquí: developers.google.com/web/tools/iterate/inspect-styles/basics ",
+        "Vamos a utilizar la página web mckellen.com/ por sugerencia del usuario de FreeCodeCamp kmiasko.",
+        "Si pulsas con el botón derecho y seleccionas 'Inspeccionar elemento', tendrás acceso a la pestaña elements. ¡Puedes cambiar el texto, el color de fondo, el color de texto y cualquier otra propiedad CSS o elemento HTML que desees!",
+        "Estos cambios no se establecen de forma automática, por lo que no debes usar el inspector como un IDE o como un lugar para crear o editar cualquier cosa que desees guardar. Puedes configurar algo que se llama 'autoría persistente' para salvar.",
+        "Las reglas de CSS como cascada, herencia y otras se aplican, así que tenlo en cuenta a medida que juegas. Además, los estilos anulados se muestran con un tachado sobre ellos. ",
+        "También hay que señalar que todo el código que veas en ese 'árbol' es código HTML actual, no el original que había cuando se cargó la página. Si utilizas jQuery o JavaScript para cambiar algo, esté árbol se actualizará.",
+        "El relleno, los bordes y los márgenes se inspeccionan fácilmente y puedes editarlos usando la caja con colores que encontrarás al lado derecho o en la parte de abajo.",
+        "Por favor, echa un vistazo a la documentación de las herramientas de desarrollo de Chrome en developers.google.com/web/tools/chrome-devtools/"
+      ]
     },
     {
       "id": "56b15f15632298c12f315183",
@@ -59,7 +70,17 @@
         ]
       ],
       "type": "hike",
-      "challengeType": 6
+      "challengeType": 6,
+      "nameEs": "Herramientas de desarrollo de Chrome: red",
+      "descriptionEs": [
+        "La pestaña network (red) ayuda a responder preguntas como '¿Qué elemento o parte de la página fue el más demorado?' o '¿Qué inició una petición?'",
+        "El panel de red registra información detallada sobre cuánto tarda en cargar cada elemento de su página o aplicación.",
+        "Cada solicitud se registra en la bitácora, que se puede encontrar en la parte inferior del panel de red.",
+        "Si te fijas en la línea al lado derecho, te darás cuenta de un patrón de colores. Cada color representa un tipo diferente de contenido en la solicitud. ",
+        "Cuanto más larga sea la línea de un color determinado, tanto más tiempo tomó ese tipo de contenido en la solicitud. En últimas quieres líneas cortas, y si cualquier solicitud tiene largas líneas, sabes que puede estar ralentizando la página web.",
+        "Si pulsas sobre una solicitud en la bitácora, podrás obtener información más detallada.",
+        "Consulta más documentación detallada aquí: developers.google.com/web/tools/profile-performance/network-performance/resource-loading"
+      ]
     },
     {
       "id": "56b15f15632298c12f315182",
@@ -71,7 +92,7 @@
         "When you set a breakpoint, the browser pauses everything when it interprets that line of code or event.",
         "By slowing everything down and giving yourself a chance to examine what's happening at every spot you've set, you can keep track of exactly what's happening in the page or app.",
         "Once all of the breakpoints are set, you can step through the code and examine the state of your page or app at every breakpoint.",
-        "Just like with elements, you can live-edit through dev tools, but remember to save those changes however you can so your progress isn't lost.",
+        "Just like with elements, you can live-edit through Dev Tools, but remember to save those changes however you can so your progress isn't lost.",
         "Check out more in-depth documentation here: developers.google.com/web/tools/javascript/breakpoints/"
       ],
       "challengeSeed": [
@@ -89,15 +110,26 @@
         ]
       ],
       "type": "hike",
-      "challengeType": 6
+      "challengeType": 6,
+      "nameEs": "Herramientas de desarrollo de Chrome: Fuentes",
+      "descriptionEs": [
+        "La pestaña 'fuentes' es más útil para la depuración de JavaScript. Cuanto más grande sea tu proyecto, tanto más difícil resulta encontrar exactamente dónde se produce un problema. ",
+        "Puedes seleccionar diferentes partes del código para ser 'puntos de interrupción', puestos de control que detendrán la ejecución del código en ese preciso momento. ",
+        "Hay diferentes puntos de interrupción que puedes establecer, por ejemplo una línea de código específica, un evento del DOM, una petición del servidor llamada solicitud XMLHTTP, o un evento de JavaScript.",
+        "Cuando estableces un punto de interrupción, el navegador detiene todo cuando llega a interpretar esa línea de código o evento.",
+        "Al reducir la velocidad de todo y darte la oportunidad de examinar lo que está sucediendo en cada punto que hayas configurado, podrás controlar exactamente lo que está sucediendo en la página o aplicación.",
+        "Una vez has establecido todos los puntos de interrupción, puedes recorrer el código y examinar el estado de tu página o aplicación en cada punto de interrupción.",
+        "Al igual que con los elementos, puedes editar en vivo mediante las herramientas de desarrollo, pero recuerda que debes guardar esos cambios para que no pierdas tu progreso.",
+        "Revisa documentación más detallada aquí: developers.google.com/web/tools/javascript/breakpoints/"
+      ]
     },
     {
       "id": "56b15f15632298c12f315181",
       "title": "Chrome Dev Tools: Timeline",
       "description": [
         "The Timeline panel lets you record and analyze all the activity in your application as it runs. It's the best place to start investigating perceived performance issues in your application.",
-        "Just like you use network to find out how long things take to communicate with the internet and you use sources to find out where something's broken, you can use timeline to figure out what's going on and how long it takes in even more detail.",
-        "With the timeline you record events using the small circle button. You can record (or capture) stacks, profile js, memory, and paint (css).",
+        "Just like you use network to find out how long things take to communicate with the internet and you use sources to find out where something is broken, you can use the timeline to figure out what's going on and how long it takes in even more detail.",
+        "With the timeline you record events using the small circle button. You can record (or capture) stacks, profile js, memory, and paint (CSS).",
         "When you record (capture) these, it sets them up in small, detailed logs that you can organize many ways to fit you.",
         "All of this will help you to better understand what's happening in the browser, particularly which events require more browser memory than others.",
         "When you're using timeline, remember to use this 'clear' button and to start recording before you load the page, depending on what you want to capture.",
@@ -119,7 +151,20 @@
         ]
       ],
       "type": "hike",
-      "challengeType": 6
+      "challengeType": 6,
+      "nameEs": "Herramientas de desarrollo de Chrome: Línea de tiempo",
+      "descriptionEs": [
+        "El panel Línea de tiempo te permite grabar y analizar toda la actividad en tu aplicación mientras se ejecuta. Es el mejor lugar para comenzar a investigar los problemas de rendimiento que percibas en tu aplicación. ",
+        "Al igual que usas el panel de red para averiguar cuánto tiempo toman las partes de la página para comunicarse con el Internet y utilizas fuentes para averiguar dónde algo se daña, puedes utilizar la línea de tiempo para averiguar con más detalle lo que está pasando y el tiempo que tarda.",
+        "En el panel línea de tiempo grabas acontecimientos con el pequeño botón circular. Puedes grabar (o capturar) pilas, perfiles js, la memoria y la presentación (CSS). ",
+        "Al grabarlos (capturalos), quedan en pequeños y detallados registros que puedes organizar de muchas maneras para que se adapten a tus necesidades.",
+        "Todo esto te ayudará a entender mejor lo que está pasando en el navegador, en particular cuáles eventos requieren más memoria del navegador.",
+        "Cuando uses la línea de tiempo, recuerda que debes utilizar el botón 'limpiar' (clear) para iniciar la grabación y antes de cargar la página, dependiendo de lo que desees capturar.",
+        "Te darás cuenta de que cuando grabas eventos JS, al pulsar en el título o en una 'llamada a una función' al lado izquierdo, te llevará al documento y a la línea de esa función en el panel de recursos. ",
+        "Revisa documentación más detallada aquí: developers.google.com/web/tools/profile-performance/evaluate-performance/timeline-tool"
+      ]
+
+
     },
     {
       "id": "56b15f15632298c12f315180",
@@ -146,7 +191,15 @@
         ]
       ],
       "type": "hike",
-      "challengeType": 6
+      "challengeType": 6,
+      "nameEs": "Herramientas de desarrollo de Chrome: Perfiles",
+      "descriptionEs": [
+        "El panel Perfiles te permite perfilar el tiempo de ejecución y el uso de memoria de una aplicación web o de una página. Esto se aplica principalmente a la ejecución de JavaScript en su página o aplicación. ",
+        "Hay tres tipos de perfiles que se pueden recolectar: el perfil de la CPU, instantáneas de la memoria con estructura montón (Heap), y el perfil de la memoria con estructura montón. Los perfiles de memoria en estructura montón tienen más que ver con el uso de memoria, mientras que un perfil de la CPU tiene más que ver con el rendimiento de JavaScript. ",
+        "Un perfilador llamado V8 se usa mientras se ejecuta el código para identificar lo que en el JavaScript toma mucho tiempo, facilitándote de esta forma optimizar tu código.",
+        "Cada uno de estos perfiles se puede ver a la izquierda, y se puede tomar múltiples perfiles de cada uno. En general, la pestaña de perfiles es muy útil cuando deseas optimizar tu código. ",
+        "Revisa documentación más detallada aquí: developers.google.com/web/tools/profile-performance/rendering-tools/js-execution"
+      ]
     },
     {
       "id": "56b15f15632298c12f31517f",
@@ -167,7 +220,14 @@
         ]
       ],
       "type": "hike",
-      "challengeType": 6
+      "challengeType": 6,
+      "nameEs": "Herramientas de desarrollo de Chrome: Recursos",
+      "descriptionEs": [
+        "El panel de Recursos te permite inspeccionar los recursos que se cargan en la página, incluyendo IndexedDB o bases de datos SQL Web, almacenamiento local y de sesión, las galletas (cookies), memoria caché de aplicaciones, imágenes, fuentes y hojas de estilo.",
+        "Puedes ver y editar toda esta información dentro del navegador.",
+        "A medida que vayas construyendo aplicaciones web más avanzadas, juega con el panel de recursos y verás cómo te ayudará a entender los requisitos de tu aplicación y de tu página en tiempo real.",
+        "Revisa documentación más detallada aquí: developers.google.com/web/tools/iterate/manage-data/index"
+      ]
     },
     {
       "id": "56b15f15632298c12f31517e",
@@ -195,13 +255,22 @@
         ]
       ],
       "type": "hike",
-      "challengeType": 6
+      "challengeType": 6,
+      "nameEs": "Herramientas de desarrollo de Chrome: Las auditorías",
+      "descriptionEs": [
+        "La herramienta de auditoría te guía para mejorar tu página paso a paso.",
+        "En este vídeo, se utiliza esta herramienta con un generador de citas aleatorias desarrollado como uno de los proyectos de desarrollo de interfaces.",
+        "Las sugerencias que se ven, se generan automáticamente con la función de auditoría.",
+        "Es importante tenerlas en cuenta para contextualizarlos con el resto de conocimiento que tienes de tu sitio.",
+        "A veces, puede ser que sea lo acertado, pero en ocasiones, por tu situación las sugerencias que da son equivocadas.",
+        "Usa esta herramienta cuando desees mejorar tu sitio o aplicación, pero no sepas por dónde empezar."
+      ]
     },
     {
       "id": "56b15f15632298c12f31517d",
       "title": "Chrome Dev Tools: Console",
       "description": [
-        "The Console panel provides two primary functions: logging diagnostic information in the development process and providing a shell prompt which can be used to interact with the document and DevTools.",
+        "The Console panel provides two primary functions: logging diagnostic information in the development process and providing a shell prompt which can be used to interact with the document and Dev Tools.",
         "When using the console, you can view raw or structured data by using standard JS statements and console-specific commands.",
         "An example of structured data would be the information returned from an API in JSON. I used this a lot when I was building my first front end development projects for Free Code Camp.",
         "You should know that messages stack up, and you can clear them by typing and entering 'clear()'. You can also save the log by selecting 'Preserve Log'.",
@@ -224,14 +293,24 @@
         ]
       ],
       "type": "hike",
-      "challengeType": 6
+      "challengeType": 6,
+      "nameEs": "Herramientas de desarrollo de Chrome: Consola",
+      "descriptionEs": [
+        "El panel de la consola ofrece dos funciones principales: registro de datos de diagnóstico en el proceso de desarrollo y proporcionar un intérprete de órdenes que puedes utilizar para interactuar con el documento y las Herramientas de desarrollo",
+        "Al utilizar la consola, puedes ver los datos en bruto o estructurados mediante instrucciones estándar JS y órdenes específicas para la consola.",
+        "Un ejemplo de datos estructurados sería la información JSON que devuelva una API. Muy útil cuando se construyen las primeras aplicaciones de desarrollo de interfaces para FreeCodeCamp.",
+        "Debes saber que los mensajes se apilan y que puedes limpiarlos escribiendo <code>clear()</code>. También puedes guardar la bitácora seleccionando 'Preserve Log'. ",
+        "Hay diferentes órdenes que registrarán en bitácoras de manera diferente, como console.log() para registrar información básica, console.error() y console.warn() para registrar en bitácoras 'información llamativa'.",
+        "La consola puede realizar un seguimiento de excepciones, que básicamente registra cuando algo sale mal. Puede incluso hacer una pausa en el código durante esas excepciones, función que posiblemente recuerdes de la pestaña 'Fuente'. ",
+        "Revisa documentación más detallada aquí: developers.google.com/web/tools/javascript/console/"
+      ]
     },
     {
       "id": "56b15f15632298c12f31517c",
       "title": "Chrome Dev Tools: Summary",
       "description": [
         "1.) Chrome Dev Tools are awesome, and the more you can dive in and try to use them, the faster your skill level will grow.",
-        "2.) Use the documentation, even if you've never read documentation before. developers.google.com/web/tools/chrome-devtools/",
+        "2.) Use the documentation, even if you've never read documentation before: developers.google.com/web/tools/chrome-devtools/",
         "3.) Once you start to get comfortable in one tab, stretch yourself. Working effectively with all of the tabs will serve you exponentially more than sticking in your comfort zone."
       ],
       "challengeSeed": [
@@ -244,7 +323,14 @@
         ]
       ],
       "type": "hike",
-      "challengeType": 6
+      "challengeType": 6,
+      "nameEs": "Herramientas de desarrollo de Chrome: Resumen",
+      "descriptionEs": [
+        ", Las herramientas de desarrollo de Chrome son impresionantes, y cuanto más te puedas sumergir y tratar de utilizarlas, más rápido aumentará tu nivel. ",
+        ", Utiliza la documentación, incluso si nunca has leído documentación antes: developers.google.com/web/tools/chrome-devtools/ ",
+        ", Una vez que comiences a sentirte cómodo en una pestaña, rétate aprendiendo a usar una diferente. Trabajar eficazmente con todas las pestañas te servirá exponencialmente más que pegarte en tu zona de confort."
+      ]
     }
   ]
 }
+

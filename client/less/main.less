@@ -301,7 +301,7 @@ ul {
   border: none;
   line-height: 1;
   @media (min-width: 767px) {
-    padding-left: 30px;
+    padding-left: 15px;
     padding-right: 30px;
   }
 }
@@ -597,6 +597,19 @@ thead {
   }
   @media (min-width: 1200px) {
     height: 100px;
+  }
+}
+
+.nonprofit-testimonial-copy {
+  text-align: justify;
+  font-size: 18px !important;
+  margin-left: 20px;
+  margin-right: 20px;
+  @media (min-width: 991px) and (max-width: 1199px) {
+    height: 300px !important;
+  }
+  @media (min-width: 1200px) {
+    height: 200px !important;
   }
 }
 
@@ -974,8 +987,6 @@ code {
 
 @media only screen and (min-width: 993px) {
   .iframe-scroll {
-    position: fixed !important;
-    margin-top: 75px;
     z-index: 1;
   }
 }
@@ -1123,3 +1134,4 @@ code {
 @import "challenge.less";
 @import "toastr.less";
 @import "map.less";
+@import "wiki.less";

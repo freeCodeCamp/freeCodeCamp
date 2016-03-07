@@ -1,4 +1,4 @@
-import{ Observable } from 'rx';
+import { Observable } from 'rx';
 import debugFactory from 'debug';
 import dedent from 'dedent';
 

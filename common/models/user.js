@@ -7,7 +7,7 @@ import debugFactory from 'debug';
 import { saveUser, observeMethod } from '../../server/utils/rx';
 import { blacklistedUsernames } from '../../server/utils/constants';
 
-const debug = debugFactory('freecc:user:remote');
+const debug = debugFactory('fcc:user:remote');
 const BROWNIEPOINTS_TIMEOUT = [1, 'hour'];
 
 function getAboutProfile({
@@ -51,6 +51,12 @@ module.exports = function(User) {
   // username should be unique
   User.validatesUniquenessOf('username');
   User.settings.emailVerificationRequired = false;
+
+  User.on('dataSourceAttached', () => {
+    User.findOne$ = Observable.fromNodeCallback(User.findOne, User);
+    User.update$ = Observable.fromNodeCallback(User.updateAll, User);
+    User.count$ = Observable.fromNodeCallback(User.count, User);
+  });
 
   User.observe('before save', function({ instance: user }, next) {
     if (user) {
@@ -265,7 +271,7 @@ module.exports = function(User) {
         ));
       });
     }
-    User.findOne({ where: { username } }, (err, user) => {
+    return User.findOne({ where: { username } }, (err, user) => {
       if (err) {
         return cb(err);
       }
@@ -321,7 +327,7 @@ module.exports = function(User) {
         .valueOf();
       const user$ = findUser({ where: { username: receiver }});
 
-      user$
+      return user$
         .tapOnNext((user) => {
           if (!user) {
             throw new Error(`could not find receiver for ${ receiver }`);
@@ -416,4 +422,23 @@ module.exports = function(User) {
       }
     }
   );
+
+  // user.updateTo$(updateData: Object) => Observable[Number]
+  User.prototype.update$ = function update$(updateData) {
+    const id = this.getId();
+    const updateOptions = { allowExtendedOperators: true };
+    if (
+        !updateData ||
+        typeof updateData !== 'object' ||
+        !Object.keys(updateData).length
+    ) {
+      return Observable.throw(new Error(
+        dedent`
+          updateData must be an object with at least one key,
+          but got ${updateData} with ${Object.keys(updateData).length}
+        `.split('\n').join(' ')
+      ));
+    }
+    return this.constructor.update$({ id }, updateData, updateOptions);
+  };
 };

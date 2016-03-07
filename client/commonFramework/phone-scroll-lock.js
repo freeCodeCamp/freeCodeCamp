@@ -110,7 +110,7 @@ window.common = (function({ common = { init: [] }}) {
               return null;
             }
             execInProgress = true;
-            setTimeout(function() {
+            return setTimeout(function() {
               if (
                 $($('.scroll-locker').children()[0]).height() - 800 > e.detail
               ) {

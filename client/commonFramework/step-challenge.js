@@ -92,18 +92,16 @@ window.common = (function({ $, common = { init: [] }}) {
   }
 
   function handleActionClick(e) {
-    var props = common.challengeSeed[0] ||
-      { stepIndex: [] };
+    var props = common.challengeSeed[0] || { stepIndex: [] };
 
     var $el = $(this);
     var index = +$el.attr('id');
     var propIndex = props.stepIndex.indexOf(index);
 
     if (propIndex === -1) {
-      return $el
-      .parent()
-      .find('.disabled')
-      .removeClass('disabled');
+      return $el.parent()
+        .find('.disabled')
+        .removeClass('disabled');
     }
 
     // an API action
@@ -112,30 +110,26 @@ window.common = (function({ $, common = { init: [] }}) {
     var prop = props.properties[propIndex];
     var api = props.apis[propIndex];
     if (common[prop]) {
-      return $el
-      .parent()
-      .find('.disabled')
-      .removeClass('disabled');
-    }
-    $
-    .post(api)
-    .done(function(data) {
-      // assume a boolean indicates passing
-      if (typeof data === 'boolean') {
-        return $el
-        .parent()
+      return $el.parent()
         .find('.disabled')
         .removeClass('disabled');
-      }
-      // assume api returns string when fails
-      $el
-      .parent()
-      .find('.disabled')
-      .replaceWith('<p>' + data + '</p>');
-    })
-    .fail(function() {
-      console.log('failed');
-    });
+    }
+    return $.post(api)
+      .done(function(data) {
+        // assume a boolean indicates passing
+        if (typeof data === 'boolean') {
+          return $el.parent()
+            .find('.disabled')
+            .removeClass('disabled');
+        }
+        // assume api returns string when fails
+        return $el.parent()
+          .find('.disabled')
+          .replaceWith('<p>' + data + '</p>');
+      })
+      .fail(function() {
+        console.log('failed');
+      });
   }
 
   function handleFinishClick(e) {
@@ -149,38 +143,45 @@ window.common = (function({ $, common = { init: [] }}) {
     e.preventDefault();
 
     $('#submit-challenge')
-    .attr('disabled', 'true')
-    .removeClass('btn-primary')
-    .addClass('btn-warning disabled');
+      .attr('disabled', 'true')
+      .removeClass('btn-primary')
+      .addClass('btn-warning disabled');
 
     var $checkmarkContainer = $('#checkmark-container');
     $checkmarkContainer.css({ height: $checkmarkContainer.innerHeight() });
 
     $('#challenge-checkmark')
-    .addClass('zoomOutUp')
-    .delay(1000)
-    .queue(function(next) {
-      $(this).replaceWith(
-        '<div id="challenge-spinner" ' +
-          'class="animated zoomInUp inner-circles-loader">' +
-          'submitting...</div>'
-      );
-      next();
-    });
+      .addClass('zoomOutUp')
+      .delay(1000)
+      .queue(function(next) {
+        $(this).replaceWith(
+          '<div id="challenge-spinner" ' +
+            'class="animated zoomInUp inner-circles-loader">' +
+            'submitting...</div>'
+        );
+        next();
+      });
 
-    $.post(
-      '/completed-challenge/', {
+    $.ajax({
+      url: '/completed-challenge/',
+      type: 'POST',
+      data: JSON.stringify({
         id: common.challengeId,
         name: common.challengeName,
-        challengeType: common.challengeType
-      },
-      function(res) {
+        challengeType: +common.challengeType
+      }),
+      contentType: 'application/json',
+      dataType: 'json'
+    })
+      .success(function(res) {
         if (res) {
           window.location =
             '/challenges/next-challenge?id=' + common.challengeId;
         }
-      }
-    );
+      })
+      .fail(function() {
+        window.location.replace(window.location.href);
+      });
   }
 
   common.init.push(function($) {
@@ -192,6 +193,7 @@ window.common = (function({ $, common = { init: [] }}) {
     $(nextBtnClass).click(handleNextStepClick);
     $(actionBtnClass).click(handleActionClick);
     $(finishBtnClass).click(handleFinishClick);
+    return null;
   });
 
   return common;
