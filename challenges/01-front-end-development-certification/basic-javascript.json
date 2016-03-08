@@ -296,7 +296,7 @@
       ],
       "type": "waypoint",
       "challengeType": 1,
-      "nameEs": "Suma dos números con javascript",
+      "nameEs": "Suma dos números con JavaScript",
       "descriptionEs": [
         "Intentemos sumar dos números con JavaScript.",
         "JavaScript utiliza el símbolo <code>+</code> para la adición.",
@@ -334,7 +334,7 @@
       ],
       "type": "waypoint",
       "challengeType": 1,
-      "nameEs": "Resta un número de otro con javascript",
+      "nameEs": "Resta un número de otro con JavaScript",
       "descriptionEs": [
         "También podemos restar un número de otro.",
         "JavaScript utiliza el símbolo <code>-</code> de sustracción",
@@ -371,7 +371,7 @@
       ],
       "type": "waypoint",
       "challengeType": 1,
-      "nameEs": "Multiplica dos números con javascript",
+      "nameEs": "Multiplica dos números con JavaScript",
       "descriptionEs": [
         "También podemos multiplicar un número por otro.",
         "JavaScript utiliza el símbolo <code>*</code> de la multiplicación.",
@@ -408,7 +408,7 @@
       ],
       "type": "waypoint",
       "challengeType": 1,
-      "nameEs": "Divide un número por otro con javascript",
+      "nameEs": "Divide un número por otro con JavaScript",
       "descriptionEs": [
         "También podemos dividir un número por otro.",
         "JavaScript utiliza el símbolo <code>/</code> para dividir.",
@@ -448,7 +448,7 @@
       ],
       "type": "waypoint",
       "challengeType": 1,
-      "nameEs": "Incrementa un número con javascript",
+      "nameEs": "Incrementa un número con JavaScript",
       "descriptionEs": [
         "Tu puedes fácilmente <dfn>incrementar</dfn> o agregar uno a una variable con el operador <code>++</code>.",
         "<code>i++</code>",
@@ -492,7 +492,7 @@
       ],
       "type": "waypoint",
       "challengeType": 1,
-      "nameEs": "Decrementar un número con javascript",
+      "nameEs": "Decrementar un número con JavaScript",
       "descriptionEs": [
         "Fácilmente puedes <dfn>decrementar</dfn> o disminuir una variable por uno con el operador <code>--</code>.",
         "<code>i--;</code>",
@@ -531,7 +531,7 @@
       ],
       "type": "waypoint",
       "challengeType": 1,
-      "nameEs": "Crea números decimales con javascript",
+      "nameEs": "Crea números decimales con JavaScript",
       "descriptionEs": [
         "Podemos almacenar números decimales en variables también. Los números decimales a veces son referidos como números de <dfn>punto flotante</dfn> o <dfn>flotantes</dfn>.",
         "<strong>Nota</strong><br>No todos los números reales pueden ser exactamente representados en <dfn>punto flotante</dfn>. Esto puede conducir a errores de redondeo. <a href=\"https://en.wikipedia.org/wiki/Floating_point#Accuracy_problems\" target=\"_blank\">Detalles aquí</a>.",
@@ -565,7 +565,7 @@
       ],
       "type": "waypoint",
       "challengeType": 1,
-      "nameEs": "Multiplicar dos decimales con javascript",
+      "nameEs": "Multiplicar dos decimales con JavaScript",
       "descriptionEs": [
         "En JavaScript, también puedes realizar cálculos con números decimales, al igual que con números enteros.",
         "Vamos a multiplicar dos números decimales para obtener su producto.",
@@ -598,7 +598,7 @@
       ],
       "type": "waypoint",
       "challengeType": 1,
-      "nameEs": "Divide un número decimal por otro con javascript",
+      "nameEs": "Divide un número decimal por otro con JavaScript",
       "descriptionEs": [
         "Ahora vamos a dividir un decimal por otro.",
         "<h4>Instrucciones</h4>",
@@ -637,7 +637,7 @@
       ],
       "type": "waypoint",
       "challengeType": 1,
-      "nameEs": "Encontrar un cociente en javascript",
+      "nameEs": "Encontrar un cociente en JavaScript",
       "descriptionEs": [
         "El operador <dfn>residuo</dfn> <code>%</code> da el residuo de la división de dos números.",
         "<strong>Ejemplo</strong>",
@@ -971,11 +971,11 @@
       "challengeType": 1,
       "nameEs": "Escapar comillas en cadenas de texto",
       "descriptionEs": [
-        "Cuando estas definiendo una cadena debes iniciar y terminar con apostrofes o comillas. ¿Qué pasa cuando necesitas una comilla: <code>\"</code> o <code>'</code> dentro de tu cadena?",
+        "Cuando estás definiendo una cadena debes iniciar y terminar con apóstrofes o comillas. ¿Qué pasa cuando necesitas una comilla: <code>\"</code> o <code>'</code> dentro de tu cadena?",
         "En JavaScript, tu puedes <dfn>escapar</dfn> unas comillas para diferenciarlas de las comillas del final de la cadena colocando una <dfn>barra invertida</dfn> (<code>\\</code>) antes de la cita.",
-        "<code>var cadenaEjem = \"Alan dijo, \\\"Pedro esta aprendiendo JavaScript\\\".\";</code>",
+        "<code>var cadenaEjem = \"Alan dijo, \\\"Pedro está aprendiendo JavaScript\\\".\";</code>",
         "Esto le indica a JavaScript que la comilla siguiente no es el fin de la cadena, sino que debe aparecer dentro de la cadena. Así que si fueras a imprimir esto en la consola, tu obtendrías:",
-        "<code>Alan dijo, \"Pedro esta aprendiendo JavaScript\".<code>",
+        "<code>Alan dijo, \"Pedro está aprendiendo JavaScript\".<code>",
         "<h4>Instructiones</h4>",
         "Usa <dfn>barras invertidas</dfn>para asigar una cadena a la variable <code>myStr</code> de modo que <em>si</em> tu fueras a imprimirla en la consola, tu verías:",
         "<code>I am a \"double quoted\" string inside \"double quotes\"</code>"
@@ -1013,12 +1013,12 @@
       "challengeType": 1,
       "nameEs": "Citando cadenas con comillas simples",
       "descriptionEs": [
-        "Los valores de <dfn>Cadenas</dfn> en JavaScript pueden ser escritos con comillas o apostrofes, siempre y cuando inicien y terminen con el mismo tipo de cita. A diferencia de algunos lenguajes, apostrofes y comillas son funcionalmente identicas en Javascript.",
+        "Los valores de <dfn>Cadenas</dfn> en JavaScript pueden ser escritos con comillas o apóstrofes, siempre y cuando inicien y terminen con el mismo tipo de cita. A diferencia de algunos lenguajes, apóstrofes y comillas son funcionalmente identicas en Javascript.",
         "<code>\"Esta cadena tiene \\\"comillas\\\" en esta\"</code>",
-        "La ventaja de usar una o la otra tiene que ver con la necesidad de <code>escapar</code> comillas. Si tu tienes una cadena con algunas comillas, esta puede ser difícil de leer y escribir. En su lugar, usa apostrofes:",
+        "La ventaja de usar una o la otra tiene que ver con la necesidad de <code>escapar</code> comillas. Si tu tienes una cadena con algunas comillas, esta puede ser difícil de leer y escribir. En su lugar, usa apóstrofes:",
         "<code>'Esta cadena tiene \"comillas\" en esta. Y \"probablemente\" muchas de ellas.'</code>",
         "<h4>Instrucciones</h4>",
-        "Cambia la cadena dada de comillas a apostrofes y quita el escape."
+        "Cambia la cadena dada de comillas a apóstrofes y quita el escape."
       ]
     },
     {
@@ -1611,7 +1611,7 @@
       ],
       "type": "waypoint",
       "challengeType": 1,
-      "nameEs": "Almacena múltiples valores en una variable utilizando vectores en javascript",
+      "nameEs": "Almacena múltiples valores en una variable utilizando vectores en JavaScript",
       "descriptionEs": [
         "Con las variables tipo <code>vector</code> (o en inglés <code>array</code>) podemos almacenar diversos datos en un solo lugar.",
         "Empiezas la declaración de un vector con un corchete de apertura, y terminas con un corchete de cierre, y pones una coma entre cada entrada, así: <code>var sandwich = [\"mantequilla de maní\", \"jalea\" , \"pan\"]</code>. ",
@@ -2082,7 +2082,7 @@
       ],
       "type": "waypoint",
       "challengeType": 1,
-      "nameEs": "Escribe código javascript reutilizable con funciones",
+      "nameEs": "Escribe código JavaScript reutilizable con funciones",
       "descriptionEs": [
         "En JavaScript, podemos dividir nuestro código en partes reutilizables llamadas funciones.",
         "He aquí un ejemplo de una función:",
@@ -2320,7 +2320,7 @@
       "nameEs": "Alcance local y funciones",
       "descriptionEs": [
         "Las variables que son declaradas dentro de una función, así como los parámetros de la función tienen alcance <dfn>local</dfn>. Eso significa que solo son visibles dentro de esa función.",
-        "Aquí esta una función <code>myTest</code> con una variable local llamada <code>loc</code>.",
+        "Aquí está una función <code>myTest</code> con una variable local llamada <code>loc</code>.",
         "<blockquote>function myTest() {<br>  var loc = \"foo\";<br>  console.log(loc);<br>}<br>myTest(); // \"foo\"<br>console.log(loc); // \"undefined\"</blockquote>",
         "<code>loc</code> no está definida fuera de la función.",
         "<h4>Instrucciones</h4>",
@@ -2412,12 +2412,12 @@
       "challengeType": 1,
       "nameEs": "Retorna un valor desde una función con return",
       "descriptionEs": [
-        "Nosotros podemos pasar valores dentro de una función con <dfn>argumentos</dfn>. Tu puedes usar una sentencia <code>return</code> para enviar un valor de vuelta de una función.",
+        "Podemos pasar valores a una función mediante los <dfn>argumentos</dfn>. Puedes usar una sentencia <code>return</code> para enviar un valor de vuelta de una función.",
         "<strong>Ejemplo</strong>",
-        "<blockquote>function plusThree(num) {<br>  return num + 3;<br>}<br>var answer = plusThree(5); // 8</blockquote>",
-        "<code>plusThree</code> toma un <dfn>argumento</dfn> para <code>num</code> y retorna un valor igual a <code>num + 3</code>.",
+        "<blockquote>function masTres(num) {<br>  return num + 3;<br>}<br>var respuesta = masTres(5); // 8</blockquote>",
+        "<code>masTres</code> toma un <dfn>argumento</dfn> que es <code>num</code> y retorna un valor igual a <code>num + 3</code>.",
         "<h4>Instrucciones</h4>",
-        "Crea una función <code>timesFive</code> que acepte un argumento, lo multiplica por <code>5</code> y retorna el nuevo valor."
+        "Crea una función <code>timesFive</code> que acepte un argumento, lo multiplique por <code>5</code> y retorne el nuevo valor."
       ]
     },
     {
@@ -2468,11 +2468,11 @@
       "nameEs": "Asignación con un valor retornado",
       "descriptionEs": [
         "Si recuerdas de nuestra discusión de <a href=\"waypoint-storing-values-with-the-equal-operator\" target=\"_blank\">Almacenar Valores con el Operador Igual</a>, todo a la derecha del signo igual es resuelto antes que el valor sea asignado. Esto significa que nosotros podemos tomar el valor de retorno de una función y asignarlo a una variable.",
-        "Supongamos que tenemos una función pre-definida <code>sum</code> la cual agrega dos números, entonces: ",
-        "<code>ourSum = sum(5, 12);</code>",
-        "llamará la función <code>sum</code>, la cual retornará un valor de <code>17</code> y lo asignará a la variable <code>ourSum</code>.",
+        "Supongamos que tenemos una función pre-definida <code>suma</code> la cual suma dos números, entonces: ",
+        "<code>nuestraSuma = suma(5, 12);</code>",
+        "llamará la función <code>suma</code>, la cual retornará un valor de <code>17</code> y lo asignará a la variable <code>nuestraSuma</code>.",
         "<h4>Instrucciones</h4>",
-        "Llama la función <code>process</code> con un argumento de <code>7</code> y asigna su valor de retorno a la variable <code>processed</code>."
+        "Llama la función <code>process</code> con un argumento <code>7</code> y asigna su valor de retorno a la variable <code>processed</code>."
       ]
     },
     {
@@ -2688,7 +2688,7 @@
         "El operador más básico es el operador de igualdad <code>==</code>. El operador de igualdad compara dos valores y retorna <code>true</code> si son equivalentes o <code>false</code> si no lo son. Nota que la igualdad es diferente de la asignación (<code>=</code>), la cual asigna el valor a la derecha del operador a la variable en la izquierda.",
         "<blockquote>function pruebaIgualdad(miVal) {<br>  if (miVal == 10) {<br>     return \"Igual\";<br>  }<br>  return \"No Es Igual\";<br>}</blockquote>",
         "Si <code>miVal</code> es igual a <code>10</code>, el operador de igualdad retornará <code>true</code>(verdadero), así el código entre llaves será ejecutado y la función retornará <code>\"Equal\"</code>. De otra manera, la función retornará <code>\"Not Equal\"</code>.",
-        "Para que javascript pueda comparar dos <code>tipos de datos</code> diferentes (por ejemplo, <code>números</code> y <code>cadenas de texto</code>), debe convertir un tipo a otro. Una vez que lo hace, sin embargo, puede comparar términos de la siguiente manera:",
+        "Para que JavaScript pueda comparar dos <code>tipos de datos</code> diferentes (por ejemplo, <code>números</code> y <code>cadenas de texto</code>), debe convertir un tipo a otro. Una vez que lo hace, sin embargo, puede comparar términos de la siguiente manera:",
         "<blockquote>   1   ==  1    // true<br>   1   ==  2    // false<br>   1   == '1'   // true<br>  \"3\"  ==  3    // true</blockquote>",
         "<h4>Instrucciones</h4>",
         "Agrega el <code>operador de igualdad</code> a la línea indicada de manera que la función retornará \"Equal\" cuando <code>val</code> sea equivalente a <code>12</code>"
@@ -2932,7 +2932,7 @@
       "nameEs": "La comparación con el operador mayor o ogual",
       "descriptionEs": [
       	"El operador <code>mayor o igual </code> (<code>&gt;=</code>) compara los valores de dos números. Si el número de la izquierda es mayor o igual a el número de la derecha, este retorna <code>true</code>(verdadero). De otra manera, este retorna <code>false</code>(falso).",
-        "Como el operador de igualdad, el operador <code>mayor o igual</code> convertirá tipos de datos mientras esta comparando.",
+        "Como el operador de igualdad, el operador <code>mayor o igual</code> convertirá tipos de datos mientras está comparando.",
         "<strong>Ejemplos</strong>",
         "<blockquote> 6  >=  6  // true<br> 7  >= '3' // true<br> 2  >=  3  // false<br>'7' >=  9  // false</blockquote>",
         "<h4>Instrucciones</h4>",
@@ -3093,7 +3093,7 @@
       	"A veces necesitarás probar más de una cosa a la vez. El operador <dfn>lógico y</dfn> (<code>&&</code>) retorna <code>true</code>(verdadero) si y solo si los <dfn>operandos</dfn> a la izquierda y derecha de este son verdaderos.",
         "El mismo efecto podría lograrse anidando una sentencia if dentro de otro if:",
         "<blockquote>if (num > 5) {<br>  if (num < 10) {<br>    return \"Yes\";<br>  }<br>}<br>return \"No\";</blockquote>",
-        "solo retornará \"Yes\" si <code>num</code> esta entre <code>6</code> y <code>9</code> (6 y 9 incluidos). La misma lógica puede ser escrita como:",
+        "solo retornará \"Yes\" si <code>num</code> está entre <code>6</code> y <code>9</code> (6 y 9 incluidos). La misma lógica puede ser escrita como:",
         "<blockquote>if (num > 5 && num < 10) {<br>  return \"Yes\";<br>}<br>return \"No\";</blockquote>",
         "<h4>Instrucciones</h4>",
         "Combina las dos sentencias if dentro de una sentencia la cual retornará <code>\"Yes\"</code> si <code>val</code> es menor o igual a <code>50</code> y mayor o igual a <code>25</code>. De otra manera, retornará <code>\"No\"</code>."
@@ -3153,10 +3153,10 @@
       	"El operador <dfn>lógico o</dfn> (<code>||</code>) retorna <code>true</code>(verdadero) si cualquiera de los <dfn>operandos</dfn> es <code>true</code>(verdadero). De otra manera, este retorna <code>false</code>(falso).",
         "El patrón de abajo debería ser familiar de los puntos de referencia anteriores:",
         "<blockquote>if (num > 10) {<br>  return \"No\";<br>}<br>if (num < 5) {<br>  return \"No\";<br>}<br>return \"Yes\";</blockquote>",
-        "retornará \"Yes\" solo si <code>num</code> esta entre <code>5</code> y <code>10</code> (5 y 10 incluidos). La misma lógica puede ser escrita como:",
+        "retornará \"Yes\" solo si <code>num</code> está entre <code>5</code> y <code>10</code> (5 y 10 incluidos). La misma lógica puede ser escrita como:",
         "<blockquote>if (num > 10 || num < 5) {<br>  return \"No\";<br>}<br>return \"Yes\";</blockquote>",
         "<h4>Instrucciones</h4>",
-        "Combina las dos sentencias <code>if</code> dentro de una sentencia la cual retorne <code>\"Outside\"</code> si <code>val</code> no esta entre <code>10</code> y <code>20</code>, inclusive. De otra manera, retorna <code>\"Inside\"</code>."
+        "Combina las dos sentencias <code>if</code> dentro de una sentencia la cual retorne <code>\"Outside\"</code> si <code>val</code> no está entre <code>10</code> y <code>20</code>, inclusive. De otra manera, retorna <code>\"Inside\"</code>."
       ]
     },
     {
@@ -3304,14 +3304,14 @@
       "nameEs": "Orden lógico en sentencias else if",
       "descriptionEs": [
       	"El orden es importante en las sentencia <code>if</code> y <code>else if</code>.",
-        "El ciclo es ejecutado de arriba a abajo por lo que tendrás que ser cuidadoso de cual sentencia va primero.",
+        "El ciclo es ejecutado de arriba hacia abajo por lo que tendrás que ser cuidadoso de cual sentencia va primero.",
         "Toma estas dos funciones como ejemplo.",
         "Aquí está la primera:",
-        "<blockquote>function foo(x) {<br>  if (x < 1) {<br>    return \"Less than one\";<br>  } else if (x < 2) {<br>    return \"Less than two\";<br>  } else {<br>    return \"Greater than or equal to two\";<br>  }<br>}</blockquote>",
+        "<blockquote>function foo(x) {<br>  if (x < 1) {<br>    return \"Menor que uno\";<br>  } else if (x < 2) {<br>    return \"Menor que dos\";<br>  } else {<br>    return \"Mayor o igual a dos\";<br>  }<br>}</blockquote>",
         "Y el segundo solo cambia el orden de las sentencias:",
-        "<blockquote>function bar(x) {<br>  if (x < 2) {<br>    return \"Less than two\";<br>  } else if (x < 1) {<br>    return \"Less than one\";<br>  } else {<br>    return \"Greater than or equal to two\";<br>  }<br>}</blockquote>",
-        "Mientras esas dos funciones parecen casi idénticas, si nosotros pasamos un número a ambas nosotros obtendremos diferentes salidas.",
-        "<blockquote>foo(0) // \"Less than one\"<br>bar(0) // \"Less than two\"</blockquote>",
+        "<blockquote>function bar(x) {<br>  if (x < 2) {<br>    return \"Menor que dos\";<br>  } else if (x < 1) {<br>    return \"Menor que uno\";<br>  } else {<br>    return \"Mayor o igual a dos\";<br>  }<br>}</blockquote>",
+        "Mientras esas dos funciones parecen casi idénticas, si nosotros pasamos un número a ambas obtendremos diferentes salidas.",
+        "<blockquote>foo(0) // \"Menor que uno\"<br>bar(0) // \"Menor que dos\"</blockquote>",
         "<h4>Instrucciones</h4>",
         "Cambia el orden de la lógica en la función de manera que esta retorne las sentencias correctas en todos los casos."
       ]
@@ -3361,11 +3361,11 @@
       "challengeType": 1,
       "nameEs": "Encadenamiento de sentencias else if",
       "descriptionEs": [
-      	"Las sentencias <code>if/else</code>(si/además) pueden ser encadenadas juntas por una lógica compleja. Aquí esta el <dfn>pseudocódigo</dfn> de múltiples sentencias <code>if</code> / <code>else if</code> encadenadas:",
-        "<blockquote>if (<em>condition1</em>) {<br>  <em>statement1</em><br>} else if (<em>condition2</em>) {<br>  <em>statement2</em><br>} else if (<em>condition3</em>) {<br>  <em>statement3</em><br>. . .<br>} else {<br>  <em>statementN</em><br>}</blockquote>",
+      	"Las sentencias <code>if/else</code>(si/de lo contrario) pueden ser encadenadas juntas por una lógica compleja. Aquí está el <dfn>pseudocódigo</dfn> de múltiples sentencias <code>if</code> / <code>else if</code> encadenadas:",
+        "<blockquote>if (<em>condicion1</em>) {<br>  <em>sentencias1</em><br>} else if (<em>condicion2</em>) {<br>  <em>sentencias2</em><br>} else if (<em>condicion3</em>) {<br>  <em>sentencias3</em><br>. . .<br>} else {<br>  <em>sentenciasN</em><br>}</blockquote>",
         "<h4>Instrucciones</h4>",
         "Escribe sentencias <code>if</code>/<code>else if</code> encadenadas para cumplir las siguientes condiciones:",
-        "<code>num &lt;   5</code> - returna \"Tiny\"<br><code>num &lt;  10</code> - returna \"Small\"<br><code>num &lt; 15</code> - returna \"Medium\"<br><code>num &lt; 20</code> - returna \"Large\"<br><code>num >= 20</code>  - returna \"Huge\""
+        "<code>num &lt;   5</code> - retorna \"Tiny\"<br><code>num &lt;  10</code> - retorna \"Small\"<br><code>num &lt; 15</code> - retorna \"Medium\"<br><code>num &lt; 20</code> - retorna \"Large\"<br><code>num >= 20</code>  - retorna \"Huge\""
       ]
     },
     {
@@ -3410,10 +3410,10 @@
       "challengeType": 1,
       "nameEs": "Código de golf",
       "descriptionEs": [
-      	"En el juego de <a href='https://en.wikipedia.org/wiki/Golf' target='_blank'>golf</a> cada hoyo tiene un <dfn>par</dfn> promedio para el número de <dfn>golpes</dfn> necesarios para meter la pelota. Dependiendo de que tan lejos sobre o bajo <code>par</code> están tus <code>golpes</code>, hay un nickname diferente.",
-        "Tu función pasará un <code>par</code> y <code>golpes</code>. Retorna cadenas acuerdo a esta tabla (basada en el orden de prioridad - arriba (lo más alto) a abajo (lo más bajo)):",
+      	"En el juego de <a href='https://en.wikipedia.org/wiki/Golf' target='_blank'>golf</a> cada hoyo tiene un <dfn>par</dfn> promedio para el número de <dfn>golpes</dfn> necesarios para meter la pelota. Dependiendo de que tan lejos por encima o por debajo del <code>par</code> estén tus <code>golpes</code>, habrá un sobrenombre diferente.",
+        "Tu función pasará un <code>par</code> y el número de <code>golpes</code>, y retornará una cadena de acuerdo a esta tabla (basada en el orden de prioridad - arriba (lo más alto) hacia abajo (lo más bajo)):",
         "<table class=\"table table-striped\"><thead><tr><th>Golpes</th><th>Retorna</th></tr></thead><tbody><tr><td>1</td><td>\"Hole-in-one!\"</td></tr><tr><td>&lt;= par - 2</td><td>\"Eagle\"</td></tr><tr><td>par - 1</td><td>\"Birdie\"</td></tr><tr><td>par</td><td>\"Par\"</td></tr><tr><td>par + 1</td><td>\"Bogey\"</td></tr><tr><td>par + 2</td><td>\"Double Bogey\"</td></tr><tr><td>&gt;= par + 3</td><td>\"Go Home!\"</td></tr></tbody></table>",
-        "<code>par</code> y <code>golpes</code> siempre serán numéricos y positivos."
+        "Tanto <code>par</code> como <code>golpes</code> siempre serán numéricos y positivos."
       ]
     },
     {
@@ -3456,14 +3456,14 @@
       ],
       "type": "waypoint",
       "challengeType": 1,
-      "nameEs": "Seleccionar desde diferentes opciones con sentencias de cambio",
+      "nameEs": "Seleccionar desde diferentes opciones con la sentencia switch",
       "descriptionEs": [
-      	"Si tienes varias opciones para elegir, usa una sentencia <code>switch</code>. Una sentencia <code>switch</code> prueba un valor y puede tener varias sentencias <code>case</code> las cuales definen varios posibles valores. Las sentencias son ejecutadas desde el primer valor <code>case</code> igualado hasta que un <code>break</code> sea encontrado.",
+      	"Si tienes varias opciones para elegir, usa una sentencia <code>switch</code>. Una sentencia <code>switch</code> prueba un valor y puede tener varias sentencias <code>case</code> las cuales definen varios posibles valores. Las sentencias son ejecutadas desde el primer valor <code>case</code> igualado hasta que se encuentr un <code>break</code>.",
         "Aquí hay un <dfn>pseudocódigo</dfn> de ejemplo:",
         "<blockquote>switch (num) {<br>  case valor1:<br>    sentencia1;<br>    break;<br>  case valor2:<br>    sentencia2;<br>    break;<br>...<br>  case valorN:<br>    sentenciaN;<br>    break;<br>}</blockquote>",
-        "Los valores <code>case</code> son probados con estricta igualdad (<code>===</code>). El <code>break</code> le dice a JavaScript que pare la ejecución de sentencias. Si el <code>break</code> es omitido, la siguiente sentencia será ejecutada.",
+        "Los valores <code>case</code> son probados con estricta igualdad (<code>===</code>). El <code>break</code> le dice a JavaScript que pare la ejecución del bloque de sentencias en el que está. Si se omite <code>break</code>, se ejecutará la siguiente sentencia.",
         "<h4>Instrucciones</h4>",
-        "Escribe una sentencia switch la cual pruebe <code>val</code> y establezca <code>answer</code> para las siguientes condiciones:<br><code>1</code> - \"alpha\"<br><code>2</code> - \"beta\"<br><code>3</code> - \"gamma\"<br><code>4</code> - \"delta\""
+        "Escribe una sentencia <code>switch</code> que pruebe <code>val</code> y establezca <code>answer</code> para las siguientes condiciones:<br><code>1</code> - \"alpha\"<br><code>2</code> - \"beta\"<br><code>3</code> - \"gamma\"<br><code>4</code> - \"delta\""
       ]
     },
     {
@@ -3506,7 +3506,7 @@
       ],
       "type": "waypoint",
       "challengeType": 1,
-      "nameEs": "Agregar una opción por default en sentencias case",
+      "nameEs": "Agregar una opción por omisión (default) en una sentencia switch",
       "descriptionEs": [
       	"En una sentencia <code>switch</code> puede que no seas capaz de especificar todos los posibles valores en las sentencias <code>case</code>. En su lugar, puedes agregar la sentencia <code>default</code> la cual será ejecutada si no es encontrada ninguna coincidencia con alguna sentencia <code>case</code>. Piensa en esto como la última sentencia <code>else</code> en una cadena <code>if/else</code>.",
         "Una sentencia <code>default</code> debería ser el último caso.",
@@ -3560,13 +3560,13 @@
       ],
       "type": "waypoint",
       "challengeType": 1,
-      "nameEs": "Multiples opciones idénticas en sentencias de cambio",
+      "nameEs": "Múltiples opciones idénticas en una sentencias switch",
       "descriptionEs": [
       	"Si la sentencia <code>break</code> es omitida de una sentencia <code>case</code> de un <code>switch</code>, las siguientes sentencias <code>case</code> son ejecutadas hasta que sea encontrado un <code>break</code>. Si tienes multiples entradas con la misma salida, puede representarlas en una sentencia <code>switch</code> así:",
         "<blockquote>switch(val) {<br>  case 1:<br>  case 2:<br>  case 3:<br>    result = \"1, 2, or 3\";<br>    break;<br>  case 4:<br>    result = \"4 alone\";<br>}</blockquote>",
         "Los casos 1, 2, y 3 producirán el mismo resultado.",
         "<h4>Instrucciones</h4>",
-        "Escribe una sentencia switch para establecer <code>answer</code> para los siguientes rangos:<br><code>1-3</code> - \"Low\"<br><code>4-6</code> - \"Mid\"<br><code>7-9</code> - \"High\"",
+        "Escribe una sentencia <code>switch</code> para establecer <code>answer</code> para los siguientes rangos:<br><code>1-3</code> - \"Low\"<br><code>4-6</code> - \"Mid\"<br><code>7-9</code> - \"High\"",
         "<strong>Nota</strong><br>Necesitarás tener una sentencia <code>case</code> por cada número en el rango."
       ]
     },
@@ -3627,9 +3627,9 @@
       "nameEs": "Reemplazar cadenas if else con switch",
       "descriptionEs": [
       	"Si tienes varias opciones para elegir, una sentencia <code>switch</code> puede ser más fácil de escribir que varias sentencias <code>if</code>/<code>if else</code> anidadas. Lo siguiente:",
-        "<blockquote>if (val === 1) {<br>  answer = \"a\";<br>} else if (val === 2) {<br>  answer = \"b\";<br>} else {<br>  answer = \"c\";<br>}</blockquote>",
+        "<blockquote>if (val === 1) {<br>  respuesta = \"a\";<br>} else if (val === 2) {<br>  respuesta = \"b\";<br>} else {<br>  respuesta = \"c\";<br>}</blockquote>",
         "puede ser reemplazado con:",
-        "<blockquote>switch (val) {<br>  case 1:<br>    answer = \"a\";<br>    break;<br>  case 2:<br>    answer = \"b\";<br>    break;<br>  default:<br>    answer = \"c\";<br>}</blockquote>",
+        "<blockquote>switch (val) {<br>  case 1:<br>    respuesta = \"a\";<br>    break;<br>  case 2:<br>    respuesta = \"b\";<br>    break;<br>  default:<br>    respuesta = \"c\";<br>}</blockquote>",
         "<h4>Instrucciones</h4>",
         "Cambia las sentencias <code>if</code>/<code>if else</code> anidadas dentro de una sentencia <code>switch</code>."
       ]
@@ -3675,11 +3675,11 @@
       "challengeType": 1,
       "nameEs": "Retornar valores booleanos desde funciones",
       "descriptionEs": [
-      	"Tal vez recuerdes de <a href=\"waypoint-comparison-with-the-equality-operator\" target=\"_blank\">La Comparación con el Operador de Igualdad</a> que todos los operadores de comparación retornan un valor booleano <code>true</code>(verdadero) or <code>false</code>(falso).",
-        "Un <dfn>anti-patrón</dfn> común es usar una sentencia <code>if/else</code> para hacer una comparación y entonces <code>returnar</code> <code>true</code>/<code>false</code>:",
-        "<blockquote>function isEqual(a,b) {<br>  if (a === b) {<br>    return true;<br>  } else {<br>    return false;<br>  }<br>}</blockquote>",
-        "Ya que <code>===</code> returna <code>true</code>(verdadero) o <code>false</code>(falso), podemos simplemente retornar el resultado de la comparación:",
-        "<blockquote>function isEqual(a,b) {<br>  return a === b;<br>}</blockquote>",
+      	"Tal vez recuerdes de <a href=\"waypoint-comparison-with-the-equality-operator\" target=\"_blank\">La comparación con el operador de igualdad</a> que todos los operadores de comparación retornan un valor booleano <code>true</code> (verdadero) o <code>false</code> (falso).",
+        "Un <dfn>anti-patrón</dfn> común es usar una sentencia <code>if/else</code> para hacer una comparación y entonces retornar <code>true</code> o <code>false</code>:",
+        "<blockquote>function sonIguales(a,b) {<br>  if (a === b) {<br>    return true;<br>  } else {<br>    return false;<br>  }<br>}</blockquote>",
+        "Ya que <code>===</code> returna <code>true</code> (verdadero) o <code>false</code> (falso), podemos simplemente retornar el resultado de la comparación:",
+        "<blockquote>function sonIguales(a,b) {<br>  return a === b;<br>}</blockquote>",
         "<h4>Instrucciones</h4>",
         "Arregla la función <code>isLess</code> para remover las sentencias <code>if/else</code>."
       ]
@@ -3728,14 +3728,14 @@
       ],
       "type": "waypoint",
       "challengeType": 1,
-      "nameEs": "Retornar un patron temprano para funciones",
+      "nameEs": "Retornar un patrón temprano para funciones",
       "descriptionEs": [
-      	"Cuando una sentencia <code>return</code> es alcanzada, la ejecución de la presente función para y control la retorna a la ubicación de la llamada.",
+      	"Cuando se alcanza una sentencia <code>return</code>, la ejecución de la presente función se detiene y el control la retorna a la ubicación de la llamada.",
         "<strong>Ejemplo</strong>",
-        "<blockquote>function myFun() {<br>  console.log(\"Hello\");<br>  return \"World\";<br>  console.log(\"byebye\")<br>}<br>myFun();</blockquote>",
-        "La entrada a la consola de arriba \"Hello\", retorna \"World\", pero <code>\"byebye\"</code> nunca se emite, porque la función existe en la sentencia <code>return</code>.",
+        "<blockquote>function miFuncion() {<br>  console.log(\"Hola\");<br>  return \"Mundo\";<br>  console.log(\"chaochao\")<br>}<br>miFuncion();</blockquote>",
+        "Esta presenta en consola \"Hola\", retorna \"Mundo\", pero <code>\"chaochao\"</code> nunca se presenta, porque la función sale con la sentencia <code>return</code>.",
         "<h4>Instrucciones</h4>",
-        "Modifica la función <code>abTest</code> de manera que si <code>a</code> o <code>b</code> son menor que <code>0</code> la función saldrá inmediatamente con un valor de <code>undefined</code>.",
+        "Modifica la función <code>abTest</code> de manera que si <code>a</code> o <code>b</code> son menores que <code>0</code> la función saldrá inmediatamente con un valor <code>undefined</code>.",
         "<strong>Pista</strong><br>Recuerda que <a href='http://www.freecodecamp.com/challenges/understanding-uninitialized-variables' target='_blank'><code>undefined</code> es una palabra clave</a>, no una cadena."
       ]
     },
@@ -3782,9 +3782,9 @@
       "nameEs": "Contar cartas",
       "descriptionEs": [
       	"En el juego de casino Blackjack, un jugador puede conseguir ventaja sobre la casa manteniendo un registro del número relativo de cartas altas y bajas restantes en la baraja. Esto es llamado <a href='https://en.wikipedia.org/wiki/Card_counting' target='_blank'>Conteo de Cartas</a>.",
-        "Teniendo más cartas altas restantes en la baraja favorece al jugador. A cada carta es asignado un valor acuerdo a la tabla de abajo. Cuando el conteo es positivo, el jugador debe apostar alto. Cuando el conteo es cero o negativo, el jugador debe apostar bajo.",
+        "Tener más cartas altas restantes en la baraja favorece al jugador. A cada carta se le asigna un valor de acuerdo a la tabla de abajo. Cuando el conteo es positivo, el jugador debe apostar alto. Cuando el conteo es cero o negativo, el jugador debe apostar bajo.",
         "<table class=\"table table-striped\"><thead><tr><th>Valor</th><th>Cartas</th></tr></thead><tbody><tr><td>+1</td><td>2, 3, 4, 5, 6</td></tr><tr><td>0</td><td>7, 8, 9</td></tr><tr><td>-1</td><td>10, 'J', 'Q', 'K','A'</td></tr></tbody></table>",
-        "Vas a escribir una función de conteo de cartas. Esta recibirá un parametro <code>carta</code> e incrementa o decrementa la variable <code>count</code>(conteo) global de acuerdo al valor de la carta (ver tabla). La función retornará entonces una cadena con el presente conteo y la cadena <code>\"Bet\"</code> si el conteo es positivo o <code>\"Hold\"</code> si el conteo es cero o negativo. El presente conteo y la desición del jugador (<code>\"Bet\"</code> o <code>\"Hold\"</code>) debe ser separada por un espacio único.<br><br>",
+        "Vas a escribir una función de conteo de cartas. Esta recibirá un parametro <code>card</code> (carta) e incrementa o decrementa la variable <code>count</code> (conteo) global de acuerdo al valor de la carta (ver tabla). La función retornará entonces una cadena con el presente conteo y la cadena <code>\"Bet\"</code> si el conteo es positivo o <code>\"Hold\"</code> si el conteo es cero o negativo. El presente conteo y la desición del jugador (<code>\"Bet\"</code> o <code>\"Hold\"</code>) deben quedar separada por un único espacio.",
         "<strong>Ejemplo de Salida</strong><br><code>\"-3 Hold\"<br>\"5 Bet\"</code>"
       ]
     },
@@ -3834,7 +3834,7 @@
       ],
       "type": "waypoint",
       "challengeType": 1,
-      "nameEs": "Construye objetos en javascript",
+      "nameEs": "Construye objetos en JavaScript",
       "descriptionEs": [
         "Es posible que haya oído el término <code>objeto</code> antes.",
         "Los objetos son similares a los <code>vectores</code>, excepto que en lugar de utilizar los índices para acceder y modificar sus datos, pueden accederse mediante lo que se llama <code>propiedades</code>.",
@@ -3890,12 +3890,12 @@
       ],
       "type": "waypoint",
       "challengeType": 1,
-      "nameEs": "Accesar a propiedades de objetos con el operador punto",
+      "nameEs": "Acceder a propiedades de objetos con el operador punto",
       "descriptionEs": [
-      	"Hay dos maneras de acceder a las propiedades de un objeto: con el operador punto (<code>.</code>) y la notación corchete (<code>[]</code>), similar a un vector.",
-        "El operador punto es lo que usar cuando tu sabes el nombre de una propiedad que estas intentando acceder antes de tiempo.",
-        "Aquí esta un ejemplo del uso del operador punto (<code>.</code>) para leer una propiedad de objeto:",
-        "<blockquote>var myObj = {<br>  prop1: \"val1\",<br>  prop2: \"val2\"<br>};<br>var prop1val = myObj.prop1; // val1<br>var prop2val = myObj.prop2; // val2</blockquote>",
+      	"Hay dos maneras de acceder a las propiedades de un objeto: con el operador punto (<code>.</code>) y con la notación corchete (<code>[]</code>), similar al caso de un vector.",
+        "El operador punto es el que usas cuando de antemano sabes el nombre de la propiedad que estás intentando acceder.",
+        "Aquí está un ejemplo del uso del operador punto (<code>.</code>) para leer una propiedad de un objeto:",
+        "<blockquote>var miObj = {<br>  prop1: \"val1\",<br>  prop2: \"val2\"<br>};<br>var prop1val = miObj.prop1; // val1<br>var prop2val = miObj.prop2; // val2</blockquote>",
         "<h4>Instrucciones</h4>",
         "Lee los valores de propiedades de <code>testObj</code> usando notación punto. Asigna la variable <code>hatValue</code> igual a la propiedad objeto <code>hat</code> y asigna la variable <code>shirtValue</code> igual a la propiedad objeto <code>shirt</code>."
       ]
@@ -3942,10 +3942,10 @@
       "challengeType": 1,
       "nameEs": "Acceder a las propiedades de objetos con la notación corchete",
       "descriptionEs": [
-      	"La segunda manera de acceder a las propiedades de un objeto es con la notación corchete (<code>[]</code>). Si la propiedad del objeto que estas intentando acceder tiene un espacio en el, necesitarás usar la notación corchete.",
-        "Aquí esta un ejemplo del uso de la notación corchete para leer una propiedad de un objeto:",
-        "<blockquote>var myObj = {<br>  \"Space Name\": \"Kirk\",<br>  \"More Space\": \"Spock\"<br>};<br>myObj[\"Space Name\"]; // Kirk<br>myObj['More Space']; // Spock</blockquote>",
-        "Nota que los nombres de propiedades con espacios en ellos tiene que estar entre comillas (apostrofes o comillas).",
+      	"La segunda manera de acceder a las propiedades de un objeto es con la notación corchete (<code>[]</code>). Si el nombre de la propiedad del objeto que estás intentando acceder tiene un espacio, necesitarás usar la notación corchete.",
+        "Aquí está un ejemplo del uso de la notación corchete para leer una propiedad de un objeto:",
+        "<blockquote>var miObj = {<br>  \"Nombre con espacio\": \"Kirk\",<br>  \"Mas espacio\": \"Spock\"<br>};<br>miObj[\"Nombre con espacio\"]; // Kirk<br>miObj['Mas espacio']; // Spock</blockquote>",
+        "Nota que los nombres de propiedades con espacios tienen que estar entre comillas (apóstrofes o comillas).",
         "<h4>Instrucciones</h4>",
         "Lee los valores de las propiedades <code>\"an entree\"</code> y <code>\"the drink\"</code> de <code>testObj</code> usando la notación corchete."
       ]
@@ -3993,14 +3993,14 @@
       "challengeType": 1,
       "nameEs": "Acceder a propiedades de objetos con variables",
       "descriptionEs": [
-      	"Otro uso de la notación corchete sobre objetos es usar una variable para acceder a una propiedad. Esto puede ser muy útil para la iteración a través de las listas de propiedades de los objetos o para hacer operaciones de búsqueda.",
-        "Aquí esta un ejemplo del uso de una variable para acceder a una propiedad:",
-        "<blockquote>var someProp = \"propName\";<br>var myObj = {<br>  propName: \"Some Value\"<br >}<br>myObj[someProp]; // \"Some Value\"</blockquote>",
+      	"Otro uso de la notación corchete sobre objetos es usar una variable para acceder a una propiedad. Esto puede ser muy útil en iteraciones sobre la lista de propiedades de un objetos o para hacer operaciones de búsqueda.",
+        "Aquí está un ejemplo del uso de una variable para acceder a una propiedad:",
+        "<blockquote>var algunaProp = \"propNombre\";<br>var miObj = {<br>  propNombre: \"Algún valor\"<br >}<br>miObj[algunaProp]; // \"Algún valor\"</blockquote>",
         "Aquí hay uno más:",
-        "<blockquote>var myDog = \"Hunter\";<br>var dogs = {<br>  Fido: \"Mutt\",\n  Hunter: \"Doberman\",\n  Snoopie: \"Beagle\"<br >}<br>var breed = dogs[myDog]; // \"Hunter\"<br>console.log(breed)// \"Doberman\"</blockquote>",
-        "Nota que <em>no</em> usamos comillas alrededor del nombre de la variable cuando se usa esta para acceder a la propiedad porque nosotros estamos usando el <em>valor</em> de la variable, no el <em>nombre</em>",
+        "<blockquote>var miPerro = \"Cazador\";<br>var perros = {<br>  Fido: \"Mutt\",\n  Cazador: \"Doberman\",\n  Snoopie: \"Beagle\"<br >}<br>var raza = perros[miPerro]; // \"Cazador\"<br>console.log(raza)// \"Doberman\"</blockquote>",
+        "Nota que <em>no</em> usamos comillas alrededor del nombre de la variable (<code>miPerro</code>) cuando la usamos para acceder a la propiedad (<code>perros[miPerro]</code> porque estamos usando el <em>valor</em> de la variable y no su <em>nombre</em>",
         "<h4>Instrucciones</h4>",
-        "Usa la variable <code>playerNumber</code> para buscar player <code>16</code> en <code>testObj</code> usando notación corchete."
+        "Usa la variable <code>playerNumber</code> para buscar y asignar a <code>player</code> el jugador <code>16</code> de <code>testObj</code>, usa la notación corchete."
       ]
     },
     {
@@ -4052,7 +4052,7 @@
       ],
       "type": "waypoint",
       "challengeType": 1,
-      "nameEs": "Actualiza las propiedades de un objeto en javascript",
+      "nameEs": "Actualiza las propiedades de un objeto en JavaScript",
       "descriptionEs": [
         "Después de que hayas creado un objeto de JavaScript, puedes actualizar sus propiedades en cualquier momento, tal y como harías con cualquier otra variable.",
         "Por ejemplo, echemos un vistazo a <code>ourDog</code>:",
@@ -4116,7 +4116,7 @@
       ],
       "type": "waypoint",
       "challengeType": 1,
-      "nameEs": "Añade nuevas propiedades a un objeto javascript",
+      "nameEs": "Añade nuevas propiedades a un objeto JavaScript",
       "descriptionEs": [
         "Puedes añadir nuevas propiedades a objetos existente de la misma forma que usarías para modificarlos.",
         "Así es como añadimos una propiedad <code>\"bark\"</code> (ladra) a nuestro objeto <code>ourDog</code>:",
@@ -4172,7 +4172,7 @@
       ],
       "type": "waypoint",
       "challengeType": 1,
-      "nameEs": "Elimina propiedades de un objeto javascript",
+      "nameEs": "Elimina propiedades de un objeto JavaScript",
       "descriptionEs": [
         "También podemos eliminar propiedades de los objetos de esta manera:",
         "<code>delete ourDog.bark;</code>",
@@ -4241,9 +4241,9 @@
       "challengeType": 1,
       "nameEs": "Usar objetos para búsquedas",
       "descriptionEs": [
-      	"Los objetos pueden ser considerados como un almacenamiento de clave/valor, como un diccionario. Si tienes datos tabulados, tu puedes usar un objeto para \"buscar\" valores en lugar de una sentencia <code>switch</code> o una cadena <code>if/else</code>. Esto es más útil cuando sabes que tus datos de entrada son limitados a un cierto rango.",
-        "Aquí esta un ejemplo de una simple búsqueda inversa de alfabeto:",
-        "<blockquote>var alpha = {<br>  1:\"Z\",<br>  2:\"Y\",<br>  3:\"X\",<br>  4:\"W\",<br>  ...<br>  24:\"C\",<br>  25:\"B\",<br>  26:\"A\"<br>};<br>alpha[2]; // \"Y\"<br>alpha[24]; // \"C\"<br><br>var value = 2;<br>alpha[value]; // \"Y\"</blockquote>",
+      	"Los objetos pueden ser considerados como un almacenamiento llave/valor, como un diccionario. Si tienes datos tabulados, puedes almacenarlos en un objeto para después \"buscar\" valores, en lugar de emplear una sentencia <code>switch</code> o una secuencia de <code>if/else</code>. Esto es más útil cuando sabes que tus datos de entrada son limitados a un cierto rango.",
+        "Aquí está un ejemplo de una simple búsqueda inversa de alfabeto:",
+        "<blockquote>var alfa = {<br>  1:\"Z\",<br>  2:\"Y\",<br>  3:\"X\",<br>  4:\"W\",<br>  ...<br>  24:\"C\",<br>  25:\"B\",<br>  26:\"A\"<br>};<br>alfa[2]; // \"Y\"<br>alfa[24]; // \"C\"<br><br>var valor = 2;<br>alfa[valor]; // \"Y\"</blockquote>",
         "<h4>Instrucciones</h4>",
         "Convierte la sentencia switch en una tabla de búsqueda llamada <code>lookup</code>. Usala para buscar <code>val</code> y asigna la cadena asociada a la variable <code>result</code>."
       ]
@@ -4289,13 +4289,13 @@
       ],
       "type": "waypoint",
       "challengeType": 1,
-      "nameEs": "Probar objetos para propiedades",
+      "nameEs": "Probar si un objeto tiene cierta propiedad",
       "descriptionEs": [
-      	"A veces es útil revisar si la propiedad de un objeto dado existe o no. Podemos usar el método de objetos <code>.hasOwnProperty(propname)</code> para determinar si ese objeto tiene el nombre de propiedad dado. <code>.hasOwnProperty()</code> retorna <code>true</code> o <code>false</code> si la propiedad es encontrada o no.",
+      	"A veces es útil revisar si cierta propiedad existe o no en un objeto dado. Podemos usar el método de objetos <code>.hasOwnProperty(nomprop)</code> para determinar si un objeto tiene la propiedad <code>nomprop</code>. <code>.hasOwnProperty()</code> retorna <code>true</code> o <code>false</code> si la propiedad es encontrada o no.",
         "<strong>Ejemplo</strong>",
-        "<blockquote>var myObj = {<br>  top: \"hat\",<br>  bottom: \"pants\"<br>};<br>myObj.hasOwnProperty(\"top\");    // true<br>myObj.hasOwnProperty(\"middle\"); // false</blockquote>",
+        "<blockquote>var miObj = {<br>  arriba: \"sombrero\",<br>  abajo: \"pantalones\"<br>};<br>miObj.hasOwnProperty(\"arriba\");    // true<br>miObj.hasOwnProperty(\"medio\"); // false</blockquote>",
         "<h4>Instrucciones</h4>",
-        "Modifica la función <code>checkObj</code> para probar <code>myObj</code> para <code>checkProp</code>. Si la propiedad es encontrada, retorna ese valor de propiedad. Si no, retorna <code>\"Not Found\"</code>."
+        "Modifica la función <code>checkObj</code> que prueba si <code>myObj</code> tiene la propiedad <code>checkProp</code>. Si la propiedad es encontrada, retorna el valor de esa propiedad. Si no, retorna <code>\"Not Found\"</code>."
       ]
     },
     {
@@ -4346,15 +4346,15 @@
       ],
       "type": "waypoint",
       "challengeType": 1,
-      "nameEs": "Introducción a la notación objeto de javascript (JSON)",
+      "nameEs": "Introducción a la notación de objetos de JavaScript (JSON - JavaScript Object Notation)",
       "descriptionEs": [
-      	"Notación de Objetos de JavaScript o <code>JSON</code> usa el formato de Objetos de JavaScript para almacenar datos. JSON es flexible porque permite <dfn>Estructuras de Datos</dfn> con combinaciones arbitrarias de <dfn>cadenas</dfn>, <dfn>números</dfn>, <dfn>booleanos</dfn>, <dfn>vectores</dfn> y <dfn>objectos</dfn>.",
-        "Aquí esta un ejemplo de un objeto JSON:",
-        "<blockquote>var ourMusic = [<br>  {<br>    \"artist\": \"Daft Punk\",<br>    \"title\": \"Homework\",<br>    \"release_year\": 1997,<br>    \"formats\": [ <br>      \"CD\", <br>      \"Cassette\", <br>      \"LP\" ],<br>    \"gold\": true<br>  }<br>];</blockquote>",
-        "Este es un vector de objetos y el objeto tiene varias piezas de <dfn>metadata</dfn> acerca de un album. Este además tiene un vector <code>formats</code> anidado. Registros de albums adicionales podrán añadirse al nivel superior de la matriz.",
-        "<strong>Nota</strong><br>Necesitarás una coma entre objetos en Objetos JSON con mas de un objeto en el vector.",
+      	"La notación de objetos de JavaScript o <code>JSON</code> usa el formato de objetos de JavaScript para almacenar datos. JSON es flexible porque permite <dfn>Estructuras de Datos</dfn> con combinaciones arbitrarias de <dfn>cadenas</dfn>, <dfn>números</dfn>, <dfn>booleanos</dfn>, <dfn>vectores</dfn> y <dfn>objetos</dfn>.",
+        "Aquí está un ejemplo de un objeto JSON:",
+        "<blockquote>var nuestraMusica = [<br>  {<br>    \"artista\": \"Daft Punk\",<br>    \"titulo\": \"Homework\",<br>    \"año_publicacion\": 1997,<br>    \"formatos\": [ <br>      \"CD\", <br>      \"Cassette\", <br>      \"LP\" ],<br>    \"oro\": true<br>  }<br>];</blockquote>",
+        "Este es un vector de objetos con diversos <dfn>metadatos</dfn> acerca de un álbum musical. Además tiene anidado un vector <code>formatos</code>. En el vector de nivel superior, pueden añadirse otros registros del álbum.",
+        "<strong>Nota</strong><br>En objetos JSON que tengan más de un objeto en el vector, necesitarás separar un objeto de otro mediante comas.",
         "<h4>Instrucciones</h4>",
-        "Agrega un nuevo album al objeto JSON <code>myMusic</code>. Agrega las cadenas <code>artist</code> y <code>title</code>, el número <code>release_year</code> y un vector de cadenas <code>formats</code>."
+        "Agrega un nuevo álbum al objeto JSON <code>myMusic</code>. Agrega las cadenas <code>artist</code> y <code>title</code>, el número <code>release_year</code> y un vector de cadenas <code>formats</code>."
       ]
     },
     {
@@ -4406,11 +4406,11 @@
       "challengeType": 1,
       "nameEs": "Acceder a objetos anidados en JSON",
       "descriptionEs": [
-      	"Las propiedades y sub-propiedades de los objetos JSON pueden ser accesadas por el encadenamiento de la notación punto o corchete.",
-        "Aquí esta un objeto JSON anidado:",
-        "<blockquote>var ourStorage = {<br>  \"desk\": {<br>    \"drawer\": \"stapler\"<br>  },<br>  \"cabinet\": {<br>    \"top drawer\": { <br>      \"folder1\": \"a file\",<br>      \"folder2\": \"secrets\"<br>    },<br>    \"bottom drawer\": \"soda\"<br>  }<br>}<br>ourStorage.cabinet[\"top drawer\"].folder2;  // \"secrets\"<br>ourStorage.desk.drawer; // \"stapler\"</blockquote>",
+      	"Las propiedades y sub-propiedades de los objetos JSON pueden ser accesadas mediante encadenamiento de la notación punto o corchete.",
+        "Aquí está un objeto JSON anidado:",
+        "<blockquote>var nuestroAlmacen = {<br>  \"escritorio\": {<br>    \"cajon\": \"grapadora\"<br>  },<br>  \"armario\": {<br>    \"cajón superior\": { <br>      \"legajador1\": \"un archivo\",<br>      \"legajador2\": \"secretos\"<br>    },<br>    \"cajón inferior\": \"gaseosa\"<br>  }<br>}<br>nuestroAlmacen.armario[\"cajón superior\"].legajador2;  // \"secretos\"<br>nuestroAlmacen.escritorio.cajon; // \"grapadora\"</blockquote>",
         "<h4>Instrucciones</h4>",
-        "Accesa al objeto JSON <code>myStorage</code> para recuperar el contenido de <code>glove box</code>. Usa notación corchete para las propiedades con un espacio en su nombre."
+        "Accede al objeto JSON <code>myStorage</code> para recuperar el contenido de <code>glove box</code>. Usa notación corchete para las propiedades con un espacio en su nombre."
       ]
     },
     {
@@ -4467,13 +4467,13 @@
       ],
       "type": "waypoint",
       "challengeType": 1,
-      "nameEs": "Accesar a vectores anidados en JSON",
+      "nameEs": "Acceder a vectores anidados en JSON",
       "descriptionEs": [
-      	"Como hemos visto en ejemplos anteriores, los objetos JSON pueden contener objetos anidados y vectores anidados. Similar a acceder a objetos anidados, notación corchete en vectores puede ser encadenada para acceder a vectores anidados.",
-        "Aquí esta un ejemplo de como acceder a un vector anidado:",
-        "<blockquote>var ourPets = { <br>  \"cats\": [<br>    \"Meowzer\",<br>    \"Fluffy\",<br>    \"Kit-Cat\"<br>  ],<br>  \"dogs\": [<br>    \"Spot\",<br>    \"Bowser\",<br>    \"Frankie\"<br>  ]<br>};<br>ourPets.cats[1]; // \"Fluffy\"<br>ourPets.dogs[0]; // \"Spot\"</blockquote>",
+      	"Como hemos visto en ejemplos anteriores, los objetos JSON pueden contener objetos anidados y vectores anidados. De forma similar a acceder a objetos anidados, la notación corchete en vectores puede ser encadenada para acceder a vectores anidados.",
+        "Aquí está un ejemplo de como acceder a un vector anidado:",
+        "<blockquote>var nuestrasMascotas = { <br>  \"gatos\": [<br>    \"Maullador\",<br>    \"Blandito\",<br>    \"Kit-Cat\"<br>  ],<br>  \"perros\": [<br>    \"Mancha\",<br>    \"Bowser\",<br>    \"Frankie\"<br>  ]<br>};<br>nuestrasMascotas.cats[1]; // \"Blandito\"<br>nuestrasMascotas.dogs[0]; // \"Mancha\"</blockquote>",
         "<h4>Instrucciones</h4>",
-        "Recupera el segundo arbol de la variable <code>myPlants</code> usando notación objeto punto y notación vector corchete."
+        "Recupera el segundo arbol de la variable <code>myPlants</code> usando notación punto para objetos y notación corchete para vectores."
       ]
     },
     {
@@ -4547,13 +4547,13 @@
       "challengeType": 1,
       "nameEs": "Colección de registros",
       "descriptionEs": [
-      	"Se te da un objeto JSON que representa (una pequeña parte de) tu colección de grabaciones. Cada album es identificado por un número id único y tiene varias propiedades. No todos los albums tienen una la información completa.",
-        "Escribe una función la cual toma un <code>id</code>, una propiedad (<code>prop</code>) y un <code>value</code>.",
-        "Para el <code>id</code> dado, en <code>collection</code>:",
-        "Si <code>value</code> no esta en blanco (<code>value !== \"\"</code>) y <code>prop</code> no es <code>\"tracks\"</code> entonces actualiza o establece el <code>value</code> para el <code>prop</code>.",
-        "Si la <code>prop</code> es <code>\"tracks\"</code> y <code>value</code> no esta en blanco, empuja el <code>value</code> hasta el final del vector <code>tracks</code>.",
-        "Si <code>value</code> esta en blanco, elimina esa <code>prop</code>.",
-        "Siempre retorna el objeto collection enterio.",
+      	"Se te da un objeto JSON que representa (una pequeña parte de) tu colección de grabaciones. Cada álbum es identificado por un número id único y tiene varias propiedades. No todos los álbumes tienen la información completa.",
+        "Escribe una función que reciba un <code>id</code>, una propiedad (<code>prop</code>) y un valor (<code>value</code>).",
+        "Para el <code>id</code> dado, en la colección <code>collection</code>:",
+        "Si el valor <code>value</code> no está en blanco (<code>value !== \"\"</code>) y <code>prop</code> no es <code>\"tracks\"</code> entonces actualiza o establece el valor de la propiedad <code>prop</code>.",
+        "Si la propiedad <code>prop</code> es <code>\"tracks\"</code> y <code>value</code> no está en blanco, empuja (<em>push</em>) el valor <code>value</code> al final del vector <code>tracks</code>.",
+        "Si el valor <code>value</code> está en blanco, elimina esa <code>prop</code>.",
+        "Siempre retorna el objeto <code>collection</code> entero.",
         "<strong>Nota</strong><br>No olvides usar <code>notación corchete</code> cuando <a href=\"accessing-objects-properties-with-variables\" target=\"_blank\">accedes a propiedades de objetos con variables</a>."
       ]
     },
@@ -4601,7 +4601,7 @@
       ],
       "type": "waypoint",
       "challengeType": 1,
-      "nameEs": "Iterar con javascript en ciclos",
+      "nameEs": "Iterar en JavaScript con ciclos for",
       "descriptionEs": [
         "Puede ejecutar el mismo código varias veces mediante el uso de un ciclo.",
         "El tipo más común de bucle de JavaScript se llama \"ciclo for\"porque se ejecuta \"por\" (for) un número específico de veces.",
@@ -4770,11 +4770,11 @@
       "challengeType": 1,
       "nameEs": "Iterar a través de un vector con un ciclo for",
       "descriptionEs": [
-      	"Una tarea común en Javascript es iterar a traves del contenido de un vector. Una manera de hacer esto es con un ciclo <code>for</code>. Este código imprimirá cada elemento del vector <code>arr</code> en la consola:",
+      	"Una tarea común en JavaScript es iterar a traves del contenido de un vector. Una manera de hacerlo es con un ciclo <code>for</code>. Este código imprimirá cada elemento del vector <code>arr</code> en la consola:",
         "<blockquote>var arr = [10,9,8,7,6];<br>for (var i=0; i < arr.length; i++) {<br>   console.log(arr[i]);<br>}</blockquote>",
-        "Recuerda que los Vectores tienen numeración de base cero, la cual significa que el último índice del vector es de longitud - 1. Nuestra <dfn>condición</dfn> para este ciclo es <code>i < arr.length</code>, la cual para cuando <code>i</code> esta en longitud - 1.",
+        "Recuerda que los vectores tienen numeración que comienza en cero, la cual significa que el último índice del vector es su longitud - 1. Nuestra <dfn>condición</dfn> para este ciclo es <code>i < arr.length</code>, que lo detendrá cuando <code>i</code> sea la longitud - 1.",
         "<h4>Instrucciones</h4>",
-        "Declara e inicializa una variable <code>total</code> a <code>0</code>. Usa un ciclo <code>for</code> para añadir el valor de cada elemento del vector <code>myArr</code> a <code>total</code>."
+        "Declara e inicializa una variable <code>total</code> en <code>0</code>. Usa un ciclo <code>for</code> para añadir el valor de cada elemento del vector <code>myArr</code> a <code>total</code>."
       ]
     },
     {
@@ -4816,9 +4816,9 @@
       "challengeType": 1,
       "nameEs": "Anidar ciclos for",
       "descriptionEs": [
-      	"Si tu tienes una matriz multi-dimensional, puedes usar la misma lógica que el punto de referencia anterior para iterar a través de un vector y cualquier sub-vector. Aquí esta un ejemplo:",
+      	"Si tienes una matriz multi-dimensional, puedes usar la misma lógica del punto anterior para iterar a través de un vector y cualquier sub-vector. Aquí está un ejemplo:",
         "<blockquote>var arr = [<br>  [1,2], [3,4], [5,6]<br>];<br>for (var i=0; i &lt; arr.length; i++) {<br>  for (var j=0; j &lt; arr[i].length; j++) {<br>    console.log(arr[i][j]);<br>  }<br>}</blockquote>",
-        "Esto imprime cada sub-elemento en <code>arr</code> uno a la vez. Nota que para el ciclo interior, estamos comprobando la longitud <code>.length</code> de <code>arr[i]</code>, ya que <code>arr[i]</code> es por si mismo un vector.",
+        "Esto imprime cada sub-elemento en <code>arr</code> uno a la vez. Nota que en el ciclo interior, estamos comprobando la longitud <code>.length</code> de <code>arr[i]</code>, ya que <code>arr[i]</code> es por si mismo un vector.",
         "<h4>Instrucciones</h4>",
         "Modifica la función <code>multiplyAll</code> de manera que esta multiplique la variable <code>product</code> por cada número en los sub-vectores de <code>arr</code>"
       ]
@@ -4854,7 +4854,7 @@
       ],
       "type": "waypoint",
       "challengeType": 1,
-      "nameEs": "Iterar con javascript con ciclos while",
+      "nameEs": "Iterar con JavaScript con ciclos while",
       "descriptionEs": [
         "Puede ejecutar el mismo código varias veces mediante el uso de un ciclo.",
         "Otro tipo de ciclo de JavaScript se llama un ciclo \"while\", ya que se ejecuta, \"mientras que\" algo sea cierto y se detiene una vez que ya no sea así.",
@@ -4935,10 +4935,10 @@
       "challengeType": 1,
       "nameEs": "Búsqueda de perfiles",
       "descriptionEs": [
-      	"Tenemos un vector de objetos representando diferentes personas en nuestras listas de contactos.",
-        "Una función <code>lookUp</code> que toma <code>firstName</code> y una propiedad (<code>prop</code>) como argumentos ha sido pre-escrita para ti.",
-        "La función debe comprobar si <code>firstName</code> es un <code>firstName</code>(primerNombre) de contacto actual y la propiedad dada (<code>prop</code>) es una propiedad de ese contacto.",
-        "Si ambos son true(verdaderos), entonces retorna el \"value\" de esa propiedad.",
+      	"Tenemos un vector de objetos que representan diferentes personas en nuestra lista de contactos.",
+        "Una función <code>lookUp</code> que recibe el nombre (<code>firstName</code>) y una propiedad (<code>prop</code>) como argumentos ya ha sido escrita previamente para ti.",
+        "La función debe comprobar si <code>firstName</code> es un nombre (<code>firstName</code>) de algún contacto y si la propiedad dada (<code>prop</code>) es una propiedad de ese contacto.",
+        "Si ambos son verdaderos, entonces retorna el valor (<code>value</code>) de esa propiedad.",
         "Si <code>firstName</code> no corresponde a ningun contacto entonces retorna <code>\"No such contact\"</code>",
         "Si <code>prop</code> no corresponde a ninguna propiedad válida entonces retorna <code>\"No such property\"</code>",
         ""
@@ -4977,7 +4977,7 @@
       ],
       "type": "waypoint",
       "challengeType": 1,
-      "nameEs": "Generar fracciones al azar con javascript",
+      "nameEs": "Generar fracciones al azar con JavaScript",
       "descriptionEs": [
         "Los números aleatorios son útiles para crear un comportamiento aleatorio.",
         "JavaScript tiene una función <code>Math.random()</code> que genera un número decimal aleatorio.",
@@ -5023,7 +5023,7 @@
       ],
       "type": "waypoint",
       "challengeType": 1,
-      "nameEs": "Genera números aleatorios enteros con javascript",
+      "nameEs": "Genera números aleatorios enteros con JavaScript",
       "descriptionEs": [
         "Es muy bueno que podamos generar números decimales al azar, pero es aún más útil si lo utilizamos para generar números enteros aleatorios.",
         "En primer lugar, vamos a usar <code>Math.random()</code> para generar un decimal aleatorio.",
@@ -5360,7 +5360,7 @@
         "<div>",
         " <div class = \"container inset\">",
         "   <div class = \"header inset\">",
-        "     <img src=\"https://s3.amazonaws.com/freecodecamp/freecodecamp_logo.svg.gz\" alt=\"learn to code javascript at Free Code Camp logo\" class=\"img-responsive nav-logo\">",
+        "     <img src=\"https://s3.amazonaws.com/freecodecamp/freecodecamp_logo.svg.gz\" alt=\"learn to code JavaScript at Free Code Camp logo\" class=\"img-responsive nav-logo\">",
         "     <h2>FCC Slot Machine</h2>",
         "   </div>",
         "   <div class = \"slots inset\">",
@@ -5534,7 +5534,7 @@
         "<div>",
         " <div class = \"container inset\">",
         "   <div class = \"header inset\">",
-        "     <img src=\"https://s3.amazonaws.com/freecodecamp/freecodecamp_logo.svg.gz\" alt=\"learn to code javascript at Free Code Camp logo\" class=\"img-responsive nav-logo\">",
+        "     <img src=\"https://s3.amazonaws.com/freecodecamp/freecodecamp_logo.svg.gz\" alt=\"learn to code JavaScript at Free Code Camp logo\" class=\"img-responsive nav-logo\">",
         "     <h2>FCC Slot Machine</h2>",
         "   </div>",
         "   <div class = \"slots inset\">",
@@ -5643,7 +5643,7 @@
       "type": "waypoint",
       "challengeType": 0,
       "isBeta": true,
-      "nameEs": "Añade casillas a tu tragamonedas javascript",
+      "nameEs": "Añade casillas a tu tragamonedas JavaScript",
       "descriptionEs": [
         "Ahora que cada una de nuestras casillas genera números aleatorios, tenemos que comprobar si todos quedan con el mismo número.",
         "Si es así, debemos notificar a nuestros usuarios que han ganado y debemos retornar <code>null</code>.",
@@ -5712,7 +5712,7 @@
         "<div>",
         " <div class = \"container inset\">",
         "   <div class = \"header inset\">",
-        "     <img src=\"https://s3.amazonaws.com/freecodecamp/freecodecamp_logo.svg.gz\" alt=\"learn to code javascript at Free Code Camp logo\" class=\"img-responsive nav-logo\">",
+        "     <img src=\"https://s3.amazonaws.com/freecodecamp/freecodecamp_logo.svg.gz\" alt=\"learn to code JavaScript at Free Code Camp logo\" class=\"img-responsive nav-logo\">",
         "     <h2>FCC Slot Machine</h2>",
         "   </div>",
         "   <div class = \"slots inset\">",
@@ -5824,7 +5824,7 @@
       "type": "waypoint",
       "challengeType": 0,
       "isBeta": true,
-      "nameEs": "Da vida a tu máquina tragamonedas en javascript",
+      "nameEs": "Da vida a tu máquina tragamonedas en JavaScript",
       "descriptionEs": [
         "Ahora podemos detectar una victoria. Logremos que la máquina tragamonedas funcione. ",
         "Usemos un <code>selector</code> de jQuery <code>$(\".slot\")</code> para seleccionar todas las casillas.",
@@ -5888,7 +5888,7 @@
         "<div>",
         " <div class = 'container inset'>",
         "   <div class = 'header inset'>",
-        "     <img src='https://s3.amazonaws.com/freecodecamp/freecodecamp_logo.svg.gz' alt='learn to code javascript at Free Code Camp logo' class='img-responsive nav-logo'>",
+        "     <img src='https://s3.amazonaws.com/freecodecamp/freecodecamp_logo.svg.gz' alt='learn to code JavaScript at Free Code Camp logo' class='img-responsive nav-logo'>",
         "     <h2>FCC Slot Machine</h2>",
         "   </div>",
         "   <div class = 'slots inset'>",
@@ -6010,7 +6010,7 @@
       "type": "waypoint",
       "challengeType": 0,
       "isBeta": true,
-      "nameEs": "Dale a tu máquina tragamonedas javascript algunas imágenes con estilo",
+      "nameEs": "Dale a tu máquina tragamonedas JavaScript algunas imágenes con estilo",
       "descriptionEs": [
         "Ahora añadamos algunas imágenes en nuestras casillas.",
         "Ya hemos creado las imágenes por ti en una matriz llamada <code>images</code>. Podemos utilizar diferentes índices para tomara cada una de estas. ",
