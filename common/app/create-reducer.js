@@ -3,6 +3,7 @@ import { reducer as formReducer } from 'redux-form';
 
 import { reducer as app } from './redux';
 import { reducer as hikesApp } from './routes/Hikes/redux';
+import { reducer as challengesApp } from './routes/challenges/redux';
 import {
   reducer as jobsApp,
   formNormalizer as jobsNormalizer
@@ -14,6 +15,7 @@ export default function createReducer(sideReducers = {}) {
     app,
     hikesApp,
     jobsApp,
+    challengesApp,
     form: formReducer.normalize(jobsNormalizer)
   });
 }
