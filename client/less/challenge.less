@@ -6,6 +6,54 @@
   line-height: 44px;
 }
 
+.challenge-step-forward-leave {
+  transition: opacity .4s ease-in, transform .3s ease-in-out;
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+.challenge-step-forward-leave-active {
+  pointer-events: none;
+  opacity: 0;
+  transform: translate(-100%, 0);
+}
+
+.challenge-step-forward-enter {
+  transition: opacity .4s ease-in, transform .3s ease-in-out;
+  opacity: 0;
+  transform: translate(100%, 0);
+}
+
+.challenge-step-forward-enter-active {
+  pointer-events: none;
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+.challenge-step-backward-leave {
+  transition: opacity .4s ease-in, transform .3s ease-in-out;
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+.challenge-step-backward-leave-active {
+  pointer-events: none;
+  opacity: 0;
+  transform: translate(100%, 0);
+}
+
+.challenge-step-backward-enter {
+  transition: opacity .4s ease-in, transform .3s ease-in-out;
+  pointer-events: none;
+  opacity: 0;
+  transform: translate(-100%, 0);
+}
+
+.challenge-step-backward-enter-active {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
 .challenge-instructions-title {
   margin-top: 0;
   i {
@@ -118,7 +166,7 @@ iframe.iphone {
     border-color: #515151;
     color: #ABABAB
   }
-  div.CodeMirror {
+  .CodeMirror {
     background-color:#242424;
     color:#ABABAB;
     &-gutters {

@@ -108,6 +108,8 @@
     "react": "^15.0.2",
     "react-bootstrap": "~0.29.4",
     "react-dom": "^15.0.2",
+    "react-addons-css-transition-group": "^0.14.7",
+    "react-css-transition-replace": "^1.1.0",
     "react-motion": "~0.4.2",
     "react-no-ssr": "^1.0.1",
     "react-pure-render": "^1.0.2",
