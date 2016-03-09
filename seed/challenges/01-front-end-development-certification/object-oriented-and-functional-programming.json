@@ -429,7 +429,8 @@
       "description": [
         "You can use the method <code>sort</code> to easily sort the values in an array alphabetically or numerically.",
         "Unlike the previous array methods we have been looking at, <code>sort</code> actually alters the array in place. However, it also returns this sorted array.",
-        "<code>sort</code> can be passed a compare function as a callback. If no compare function is passed in it will convert the values to strings and sort alphabetically.",
+        "<code>sort</code> can be passed a compare function as a callback. The compare function should return a negative number if <code>a</code> should be before <code>b</code>, a positive number if <code>a</code> should be after <code>b</code>, or <code>0</code> if they are equal.",
+        "If no compare function is passed in it will convert the values to strings and sort alphabetically.",
         "Here is an example of using sort with a compare function that will sort the elements from smallest to largest number:",
         "<blockquote>var array = [1, 12, 21, 2];<br>array.sort(function(a, b) {<br>&nbsp;&nbsp;return a - b;<br>});</blockquote>",
         "Use <code>sort</code> to sort <code>array</code> from largest to smallest."
