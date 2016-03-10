@@ -417,7 +417,7 @@
     },
     {
       "id": "56533eb9ac21ba0edf2244ac",
-      "title": "Increment a Number with Javascript",
+      "title": "Increment a Number with JavaScript",
       "description": [
         "You can easily <dfn>increment</dfn> or add one to a variable with the <code>++</code> operator.",
         "<code>i++;</code>",
@@ -461,7 +461,7 @@
     },
     {
       "id": "56533eb9ac21ba0edf2244ad",
-      "title": "Decrement a Number with Javascript",
+      "title": "Decrement a Number with JavaScript",
       "description": [
         "You can easily <dfn>decrement</dfn> or decrease a variable by one with the <code>--</code> operator.",
         "<code>i--;</code>",
@@ -607,7 +607,7 @@
     },
     {
       "id": "56533eb9ac21ba0edf2244ae",
-      "title": "Finding a Remainder in Javascript",
+      "title": "Finding a Remainder in JavaScript",
       "description": [
         "The <dfn>remainder</dfn> operator <code>%</code> gives the remainder of the division of two numbers.",
         "<strong>Example</strong>",
@@ -985,7 +985,7 @@
       "id": "56533eb9ac21ba0edf2244b4",
       "title": "Quoting Strings with Single Quotes",
       "description": [
-        "<dfn>String</dfn> values in JavaScript may be written with single or double quotes, so long as you start and end with the same type of quote. Unlike some languages, single and double quotes are functionally identical in Javascript.",
+        "<dfn>String</dfn> values in JavaScript may be written with single or double quotes, so long as you start and end with the same type of quote. Unlike some languages, single and double quotes are functionally identical in JavaScript.",
         "<code>\"This string has \\\"double quotes\\\" in it\"</code>",
         "The value in using one or the other has to do with the need to <dfn>escape</dfn> quotes of the same type. If you have a string with many double quotes, this can be difficult to read and write. Instead, use single quotes:",
         "<code>'This string has \"double quotes\" in it. And \"probably\" lots of them.'</code>",
@@ -1013,7 +1013,7 @@
       "challengeType": 1,
       "nameEs": "Citando cadenas con comillas simples",
       "descriptionEs": [
-        "Los valores de <dfn>Cadenas</dfn> en JavaScript pueden ser escritos con comillas o apóstrofes, siempre y cuando inicien y terminen con el mismo tipo de cita. A diferencia de algunos lenguajes, apóstrofes y comillas son funcionalmente identicas en Javascript.",
+        "Los valores de <dfn>Cadenas</dfn> en JavaScript pueden ser escritos con comillas o apóstrofes, siempre y cuando inicien y terminen con el mismo tipo de cita. A diferencia de algunos lenguajes, apóstrofes y comillas son funcionalmente identicas en JavaScript.",
         "<code>\"Esta cadena tiene \\\"comillas\\\" en esta\"</code>",
         "La ventaja de usar una o la otra tiene que ver con la necesidad de <code>escapar</code> comillas. Si tu tienes una cadena con algunas comillas, esta puede ser difícil de leer y escribir. En su lugar, usa apóstrofes:",
         "<code>'Esta cadena tiene \"comillas\" en esta. Y \"probablemente\" muchas de ellas.'</code>",
@@ -1361,7 +1361,7 @@
       "id": "56533eb9ac21ba0edf2244ba",
       "title": "Understand String Immutability",
       "description": [
-        "In Javascript, <code>String</code> values are <dfn>immutable</dfn>, which means that they cannot be altered once created.",
+        "In JavaScript, <code>String</code> values are <dfn>immutable</dfn>, which means that they cannot be altered once created.",
         "For example, the following code:",
         "<blockquote>var myStr = \"Bob\";<br>myStr[0] = \"J\";</blockquote>",
         "cannot change the value of <code>myStr</code> to \"Job\", because the contents of <code>myStr</code> cannot be altered. Note that this does <em>not</em> mean that <code>myStr</code> cannot be changed, just that the individual characters of a <dfn>string literal</dfn> cannot be changed. The only way to change <code>myStr</code> would be to assign it with a new string, like this:",
