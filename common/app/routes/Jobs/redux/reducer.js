@@ -13,21 +13,15 @@ const initialState = {
   initialValues: {},
   currentJob: '',
   newJob: {},
-  jobs: {
-    entities: {},
-    results: []
-  }
+  jobs: []
 };
 
 export default handleActions(
   {
     [types.findJob]: (state, { payload: id }) => {
-      const currentJob = state.jobs.entities[id];
       return {
         ...state,
-        currentJob: currentJob && currentJob.id ?
-          currentJob.id :
-          state.currentJob
+        currentJob: id
       };
     },
     [types.fetchJobsCompleted]: (state, { payload: { jobs, currentJob } }) => ({

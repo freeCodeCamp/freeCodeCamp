@@ -60,12 +60,12 @@ function generateMessage(
 const mapStateToProps = createSelector(
   state => state.app,
   state => state.jobsApp.currentJob,
-  state => state.jobsApp.jobs.entities,
-  ({ username, isFrontEndCert, isBackEndCert }, currentJob, jobs) => ({
+  state => state.entities.job,
+  ({ username, isFrontEndCert, isBackEndCert }, currentJob, jobMap) => ({
     username,
     isFrontEndCert,
     isBackEndCert,
-    job: jobs[currentJob] || {}
+    job: jobMap[currentJob] || {}
   })
 );
 

@@ -13,5 +13,10 @@ export default createTypes([
   'hardGoTo',
 
   'updateWindowHeight',
-  'updateNavHeight'
+  'updateNavHeight',
+
+  // data handling
+  'updateChallengesData',
+  'updateJobsData',
+  'updateHikesData'
 ], 'app');

@@ -25,14 +25,9 @@ export default ({ services }) => ({ dispatch }) => next => {
           { hikes: arrayOf(hike) }
         );
 
-        hikes = {
-          entities: entities.hike,
-          results: result.hikes
-        };
+        const currentHike = findCurrentHike(result.hikes, dashedName);
 
-        const currentHike = findCurrentHike(hikes, dashedName);
-
-        return fetchHikesCompleted(hikes, currentHike);
+        return fetchHikesCompleted(entities, result.hikes, currentHike);
       })
       .catch(error => {
         return Observable.just({

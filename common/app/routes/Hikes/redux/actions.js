@@ -13,7 +13,8 @@ export const fetchHikes = createAction(types.fetchHikes);
 // called within fetchHikesSaga
 export const fetchHikesCompleted = createAction(
   types.fetchHikesCompleted,
-  (hikes, currentHike) => ({ hikes, currentHike })
+  (entities, hikes, currentHike) => ({ hikes, currentHike }),
+  entities => ({ entities })
 );
 
 export const resetHike = createAction(types.resetHike);

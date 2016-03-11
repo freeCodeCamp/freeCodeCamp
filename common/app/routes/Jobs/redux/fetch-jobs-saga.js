@@ -32,11 +32,9 @@ export default ({ services }) => ({ dispatch }) => next => {
 
 
         return fetchJobsCompleted(
+          entities,
           result.jobs[0],
-          {
-            entities: entities.job,
-            results: result.jobs
-          }
+          result.jobs
         );
       })
       .catch(error => {
