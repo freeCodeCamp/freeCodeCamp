@@ -5,7 +5,8 @@ import types from './types';
 export const fetchJobs = createAction(types.fetchJobs);
 export const fetchJobsCompleted = createAction(
   types.fetchJobsCompleted,
-  (currentJob, jobs) => ({ currentJob, jobs })
+  (_, currentJob, jobs) => ({ currentJob, jobs }),
+  entities => ({ entities })
 );
 
 export const findJob = createAction(types.findJob);

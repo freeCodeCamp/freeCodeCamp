@@ -4,7 +4,7 @@ import _ from 'lodash';
 const log = debug('fcc:hikes:utils');
 
 function getFirstHike(hikes) {
-  return hikes.results[0];
+  return hikes[0];
 }
 
 // interface Hikes {
@@ -26,7 +26,6 @@ export function findCurrentHike(hikes, dashedName) {
   const filterRegex = new RegExp(dashedName, 'i');
 
   return hikes
-    .results
     .filter(dashedName => {
       return filterRegex.test(dashedName);
     })
@@ -43,23 +42,23 @@ export function getCurrentHike(hikes = {}, dashedName) {
 }
 
 // findNextHikeName(
-//   hikes: { results: String[] },
+//   hikes: String[],
 //   dashedName: String
 // ) => String
-export function findNextHikeName({ results }, dashedName) {
+export function findNextHikeName(hikes, dashedName) {
   if (!dashedName) {
-    log('find next hike no id provided');
-    return results[0];
+    log('find next hike no dashedName provided');
+    return hikes[0];
   }
   const currentIndex = _.findIndex(
-    results,
+    hikes,
     _dashedName => _dashedName === dashedName
   );
 
-  if (currentIndex >= results.length) {
+  if (currentIndex >= hikes.length) {
     return '';
   }
-  return results[currentIndex + 1];
+  return hikes[currentIndex + 1];
 }
 
 

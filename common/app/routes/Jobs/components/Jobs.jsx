@@ -16,12 +16,11 @@ import {
 } from '../redux/actions';
 
 const mapStateToProps = createSelector(
-  state => state.jobsApp.jobs.entities,
-  state => state.jobsApp.jobs.results,
-  state => state.jobsApp,
-  (jobsMap, jobsById) => {
-    return { jobs: jobsById.map(id => jobsMap[id]) };
-  }
+  state => state.entities.job,
+  state => state.jobsApp.jobs,
+  (jobsMap, jobsById) => ({
+    jobs: jobsById.map(id => jobsMap[id])
+  })
 );
 
 const bindableActions = {

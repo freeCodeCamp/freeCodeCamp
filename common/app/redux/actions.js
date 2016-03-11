@@ -33,3 +33,9 @@ export const hardGoTo = createAction(types.hardGoTo);
 
 export const updateWindowHeight = createAction(types.updateWindowHeight);
 export const updateNavHeight = createAction(types.updateNavHeight);
+
+
+// data
+export const updateChallengesData = createAction(types.updateChallengesData);
+export const updateJobsData = createAction(types.updateJobsData);
+export const updateHikesData = createAction(types.updateHikesData);

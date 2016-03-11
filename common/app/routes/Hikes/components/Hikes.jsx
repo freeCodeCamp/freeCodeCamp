@@ -13,9 +13,9 @@ import contain from '../../../utils/professor-x';
 // const log = debug('fcc:hikes');
 
 const mapStateToProps = createSelector(
-  state => state.hikesApp.hikes.entities,
-  state => state.hikesApp.hikes.results,
-  (hikesMap, hikesByDashedName)=> {
+  state => state.entities.hike,
+  state => state.hikesApp.hikes,
+  (hikesMap, hikesByDashedName) => {
     if (!hikesMap || !hikesByDashedName) {
       return { hikes: [] };
     }

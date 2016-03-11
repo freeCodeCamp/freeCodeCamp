@@ -42,7 +42,7 @@ export class Lecture extends React.Component {
 
   componentWillMount() {
     if (!this.props.id) {
-      this.props.hardGoTo('/map');
+      // this.props.hardGoTo('/map');
     }
   }
 

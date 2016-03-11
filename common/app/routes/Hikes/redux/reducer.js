@@ -3,10 +3,7 @@ import types from './types';
 import { findNextHikeName } from './utils';
 
 const initialState = {
-  hikes: {
-    results: [],
-    entities: {}
-  },
+  hikes: [],
   // ui
   // hike dashedName
   currentHike: '',
@@ -91,7 +88,6 @@ export default handleActions(
 
     [types.fetchHikesCompleted]: (state, { payload }) => {
       const { hikes, currentHike } = payload;
-
       return {
         ...state,
         hikes,

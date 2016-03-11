@@ -2,6 +2,7 @@ import { combineReducers } from 'redux';
 import { reducer as formReducer } from 'redux-form';
 
 import { reducer as app } from './redux';
+import entitieReducer from './redux/entities-reducer';
 import { reducer as hikesApp } from './routes/Hikes/redux';
 import { reducer as challengesApp } from './routes/challenges/redux';
 import {
@@ -12,6 +13,7 @@ import {
 export default function createReducer(sideReducers = {}) {
   return combineReducers({
     ...sideReducers,
+    entities: entitieReducer,
     app,
     hikesApp,
     jobsApp,
