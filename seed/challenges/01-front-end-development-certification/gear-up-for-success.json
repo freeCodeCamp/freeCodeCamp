@@ -18,7 +18,7 @@
       "tests": [],
       "type": "Waypoint",
       "challengeType": 7,
-      "nameEs": "Únete a nuestra red de alumnos en LinkedIn",
+      "titleEs": "Únete a nuestra red de alumnos en LinkedIn",
       "descriptionEs": [
         [
           "http://i.imgur.com/vJyiXzU.gif",
@@ -39,12 +39,12 @@
           "https://reddit.com/r/freecodecamp"
         ]
       ],
+      "releasedOn": "February 10, 2016",
       "challengeSeed": [],
       "tests": [],
-      "releasedOn": "February 10, 2016",
       "type": "Waypoint",
       "challengeType": 7,
-      "nameEs": "Unete a nuestro Subreddit",
+      "titleEs": "Unete a nuestro Subreddit",
       "descriptionEs": [
         [
           "http://i.imgur.com/DYjJuCG.gif",
@@ -71,12 +71,12 @@
           "https://medium.freecodecamp.com"
         ]
       ],
+      "releasedOn": "February 10, 2016",
       "challengeSeed": [],
       "tests": [],
       "type": "Waypoint",
       "challengeType": 7,
-      "releasedOn": "February 10, 2016",      
-      "nameEs": "Lee noticias de codificación en nuestros canal de publicaciones Medium",
+      "titleEs": "Lee noticias de codificación en nuestros canal de publicaciones Medium",
       "descriptionEs": [
         [
           "http://i.imgur.com/FxSOL4a.gif",
@@ -103,12 +103,12 @@
           "https://twitch.tv/freecodecamp"
         ]
       ],
+      "releasedOn": "February 10, 2016",
       "challengeSeed": [],
       "tests": [],
       "type": "Waypoint",
       "challengeType": 7,
-      "releasedOn": "February 10, 2016",      
-      "nameEs": "Miranos programar en vivo por Twitch.tv",
+      "titleEs": "Miranos programar en vivo por Twitch.tv",
       "descriptionEs": [
         [
           "http://i.imgur.com/8rtyRY1.gif",
@@ -133,7 +133,7 @@
       "tests": [],
       "type": "Waypoint",
       "challengeType": 7,
-      "nameEs": "Comprométete con una meta y con una organización sin fines de lucro",
+      "titleEs": "Comprométete con una meta y con una organización sin fines de lucro",
       "descriptionEs": [
         [
           "http://i.imgur.com/Og1ifsn.gif",

@@ -37,8 +37,7 @@
       "tests": [],
       "type": "Waypoint",
       "challengeType": 7,
-      "nameEs": "Prepárate para nuestros Desafíos sobre Algoritmos",
-      "descriptionEs":  [
+      "descriptionEs": [
         [
           "http://i.imgur.com/sJkp30a.png",
           "Una imagen de un desafio sobre algoritmos que presenta instrucciones, pruebas y el editor de código.",
@@ -64,7 +63,8 @@
           ""
         ]
       ],
-      "isRequired": false
+      "isRequired": false,
+      "titleEs": "Prepárate para nuestros Desafíos sobre Algoritmos"
     },
     {
       "id": "a202eed8fc186c8434cb6d61",
@@ -82,10 +82,6 @@
         "",
         "reverseString(\"hello\");"
       ],
-      "isRequired": true,
-      "solutions": [
-        "function reverseString(str) {\n  return str.split('').reverse().join(\"\");\n}\n\nreverseString('hello');\n"
-      ],
       "tests": [
         "assert(typeof reverseString(\"hello\") === \"string\", 'message: <code>reverseString(\"hello\")</code> should return a string.');",
         "assert(reverseString(\"hello\") === \"olleh\", 'message: <code>reverseString(\"hello\")</code> should become <code>\"olleh\"</code>.');",
@@ -93,6 +89,10 @@
         "assert(reverseString(\"Greetings from Earth\") === \"htraE morf sgniteerG\", 'message: <code>reverseString(\"Greetings from Earth\")</code> should return <code>\"htraE morf sgniteerG\"</code>.');"
       ],
       "type": "bonfire",
+      "isRequired": true,
+      "solutions": [
+        "function reverseString(str) {\n  return str.split('').reverse().join(\"\");\n}\n\nreverseString('hello');\n"
+      ],
       "MDNlinks": [
         "Global String Object",
         "String.split()",
@@ -100,7 +100,7 @@
         "Array.join()"
       ],
       "challengeType": 5,
-      "nameEs": "Invierte el texto",
+      "titleEs": "Invierte el texto",
       "descriptionEs": [
         "Invierte la cadena de texto que se te provee",
         "Puede que necesites convertir la cadena de texto en un arreglo antes de que puedas invertirla",
@@ -125,10 +125,6 @@
         "",
         "factorialize(5);"
       ],
-      "isRequired": true,
-      "solutions": [
-        "function factorialize(num) {\n  return num < 1 ? 1 : num * factorialize(num-1);\n}\n\nfactorialize(5);\n"
-      ],
       "tests": [
         "assert(typeof factorialize(5) === 'number', 'message: <code>factorialize(5)</code> should return a number.');",
         "assert(factorialize(5) === 120, 'message: <code>factorialize(5)</code> should return 120.');",
@@ -137,11 +133,15 @@
         "assert(factorialize(0) === 1, 'message: <code>factorialize(0)</code> should return 1.');"
       ],
       "type": "bonfire",
+      "isRequired": true,
+      "solutions": [
+        "function factorialize(num) {\n  return num < 1 ? 1 : num * factorialize(num-1);\n}\n\nfactorialize(5);\n"
+      ],
       "MDNlinks": [
         "Arithmetic Operators"
       ],
       "challengeType": 5,
-      "nameEs": "Factoriza un número",
+      "titleEs": "Factoriza un número",
       "descriptionEs": [
         "Crea una función que devuelva el factorial del número entero que se te provee",
         "El factorial de un número entero positivo n es la multiplicación de todos los enteros positivos menores o iguales a n",
@@ -170,10 +170,6 @@
         "",
         "palindrome(\"eye\");"
       ],
-      "isRequired": true,
-      "solutions": [
-        "function palindrome(str) {\n  var string = str.toLowerCase().split(/[^A-Za-z0-9]/gi).join('');\n  var aux = string.split('');\n  if (aux.join('') === aux.reverse().join('')){\n    return true;\n  }\n\n  return false;\n}"
-      ],
       "tests": [
         "assert(typeof palindrome(\"eye\") === \"boolean\", 'message: <code>palindrome(\"eye\")</code> should return a boolean.');",
         "assert(palindrome(\"eye\") === true, 'message: <code>palindrome(\"eye\")</code> should return true.');",
@@ -188,12 +184,16 @@
         "assert(palindrome(\"0_0 (: /-\\ :) 0-0\") === true, 'message: <code>palindrome(\"0_0 (: /-\\ :) 0-0\")</code> should return true.');"
       ],
       "type": "bonfire",
+      "isRequired": true,
+      "solutions": [
+        "function palindrome(str) {\n  var string = str.toLowerCase().split(/[^A-Za-z0-9]/gi).join('');\n  var aux = string.split('');\n  if (aux.join('') === aux.reverse().join('')){\n    return true;\n  }\n\n  return false;\n}"
+      ],
       "MDNlinks": [
         "String.replace()",
         "String.toLowerCase()"
       ],
       "challengeType": 5,
-      "nameEs": "Verifica si es palíndromo",
+      "titleEs": "Verifica si es palíndromo",
       "descriptionEs": [
         "Crea una función que devuelva <code>true</code> si una cadena de texto dada es un palíndromo, y que devuelva <code>false</code> en caso contrario",
         "Un palíndromo es una palabra u oración que se escribe de la misma forma en ambos sentidos, sin tomar en cuenta signos de puntuación, espacios y sin distinguir entre mayúsculas y minúsculas.",
@@ -217,10 +217,6 @@
         "",
         "findLongestWord(\"The quick brown fox jumped over the lazy dog\");"
       ],
-      "isRequired": true,
-      "solutions": [
-        "function findLongestWord(str) {\n  return str.split(' ').sort(function(a, b) { return b.length - a.length;})[0].length;\n}\n\nfindLongestWord('The quick brown fox jumped over the lazy dog');\n"
-      ],
       "tests": [
         "assert(typeof findLongestWord(\"The quick brown fox jumped over the lazy dog\") === \"number\", 'message: <code>findLongestWord(\"The quick brown fox jumped over the lazy dog\")</code> should return a number.');",
         "assert(findLongestWord(\"The quick brown fox jumped over the lazy dog\") === 6, 'message: <code>findLongestWord(\"The quick brown fox jumped over the lazy dog\")</code> should return 6.');",
@@ -230,12 +226,16 @@
         "assert(findLongestWord(\"What if we try a super-long word such as otorhinolaryngology\") === 19, 'message: <code>findLongestWord(\"What if we try a super-long word such as otorhinolaryngology\")</code> should return 19.');"
       ],
       "type": "bonfire",
+      "isRequired": true,
+      "solutions": [
+        "function findLongestWord(str) {\n  return str.split(' ').sort(function(a, b) { return b.length - a.length;})[0].length;\n}\n\nfindLongestWord('The quick brown fox jumped over the lazy dog');\n"
+      ],
       "MDNlinks": [
         "String.split()",
         "String.length"
       ],
       "challengeType": 5,
-      "nameEs": "Encuentra la palabra más larga",
+      "titleEs": "Encuentra la palabra más larga",
       "descriptionEs": [
         "Crea una función que devuelva la longitud de la palabra más larga en una frase dada",
         "El resultado debe ser un número",
@@ -257,10 +257,6 @@
         "",
         "titleCase(\"I'm a little tea pot\");"
       ],
-      "isRequired": true,
-      "solutions": [
-        "function titleCase(str) {\n  return str.split(' ').map(function(word) {\n    return word.charAt(0).toUpperCase() + word.substring(1).toLowerCase();\n  }).join(' ');\n}\n\ntitleCase(\"I'm a little tea pot\");\n"
-      ],
       "tests": [
         "assert(typeof titleCase(\"I'm a little tea pot\") === \"string\", 'message: <code>titleCase(\"I&#39;m a little tea pot\")</code> should return a string.');",
         "assert(titleCase(\"I'm a little tea pot\") === \"I'm A Little Tea Pot\", 'message: <code>titleCase(\"I&#39;m a little tea pot\")</code> should return \"I&#39;m A Little Tea Pot\".');",
@@ -268,11 +264,15 @@
         "assert(titleCase(\"HERE IS MY HANDLE HERE IS MY SPOUT\") === \"Here Is My Handle Here Is My Spout\", 'message: <code>titleCase(\"HERE IS MY HANDLE HERE IS MY SPOUT\")</code> should return \"Here Is My Handle Here Is My Spout\".');"
       ],
       "type": "bonfire",
+      "isRequired": true,
+      "solutions": [
+        "function titleCase(str) {\n  return str.split(' ').map(function(word) {\n    return word.charAt(0).toUpperCase() + word.substring(1).toLowerCase();\n  }).join(' ');\n}\n\ntitleCase(\"I'm a little tea pot\");\n"
+      ],
       "MDNlinks": [
         "String.split()"
       ],
       "challengeType": 5,
-      "nameEs": "Aplica formato de título",
+      "titleEs": "Aplica formato de título",
       "descriptionEs": [
         "Crea una función que devuelva la cadena de texto que recibe con la primera letra de cada palabra en mayúscula. Asegúrate de que el resto de las letras sean minúsculas",
         "Para este ejercicio, también debes poner en mayúscula conectores como \"the\" y \"of\".",
@@ -295,21 +295,21 @@
         "",
         "largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]);"
       ],
-      "isRequired": true,
-      "solutions": [
-        "function largestOfFour(arr) {\n  return arr.map(function(subArr) {\n    return Math.max.apply(null, subArr);\n  });\n}\n\nlargestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]);\n"
-      ],
       "tests": [
         "assert(largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]).constructor === Array, 'message: <code>largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]])</code> should return an array.');",
         "assert.deepEqual(largestOfFour([[13, 27, 18, 26], [4, 5, 1, 3], [32, 35, 37, 39], [1000, 1001, 857, 1]]), [27,5,39,1001], 'message: <code>largestOfFour([[13, 27, 18, 26], [4, 5, 1, 3], [32, 35, 37, 39], [1000, 1001, 857, 1]])</code> should return <code>[27,5,39,1001]</code>.');",
         "assert.deepEqual(largestOfFour([[4, 9, 1, 3], [13, 35, 18, 26], [32, 35, 97, 39], [1000000, 1001, 857, 1]]), [9,35,97,1000000], 'message: <code>largestOfFour([[4, 9, 1, 3], [13, 35, 18, 26], [32, 35, 97, 39], [1000000, 1001, 857, 1]])</code> should return <code>[9, 35, 97, 1000000]</code>.');"
       ],
       "type": "bonfire",
+      "isRequired": true,
+      "solutions": [
+        "function largestOfFour(arr) {\n  return arr.map(function(subArr) {\n    return Math.max.apply(null, subArr);\n  });\n}\n\nlargestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]);\n"
+      ],
       "MDNlinks": [
         "Comparison Operators"
       ],
       "challengeType": 5,
-      "nameEs": "Devuelve el mayor entero de cada arreglo",
+      "titleEs": "Devuelve el mayor entero de cada arreglo",
       "descriptionEs": [
         "Crea una función que devuelva un arreglo que contenga el mayor de los números de cada sub-arreglo que recibe. Para simplificar las cosas, el arreglo que recibirá tendrá exactamente 4 sub-arreglos",
         "Recuerda que puedes iterar a través de un arreglo con un búcle simple, y acceder a cada miembro utilizando la sintaxis arr[i].",
@@ -333,10 +333,6 @@
         "",
         "end(\"Bastian\", \"n\");"
       ],
-      "isRequired": true,
-      "solutions": [
-        "function end(str, target) {\n  return str.substring(str.length-target.length) === target;\n};\n"
-      ],
       "tests": [
         "assert(end(\"Bastian\", \"n\") === true, 'message: <code>end(\"Bastian\", \"n\")</code> should return true.');",
         "assert(end(\"Connor\", \"n\") === false, 'message: <code>end(\"Connor\", \"n\")</code> should return false.');",
@@ -347,11 +343,15 @@
         "assert(end(\"If you want to save our world, you must hurry. We dont know how much longer we can withstand the nothing\", \"mountain\") === false, 'message: <code>end(\"If you want to save our world, you must hurry. We dont know how much longer we can withstand the nothing\", \"mountain\")</code> should return false.');"
       ],
       "type": "bonfire",
+      "isRequired": true,
+      "solutions": [
+        "function end(str, target) {\n  return str.substring(str.length-target.length) === target;\n};\n"
+      ],
       "MDNlinks": [
         "String.substr()"
       ],
       "challengeType": 5,
-      "nameEs": "Confirma la terminación",
+      "titleEs": "Confirma la terminación",
       "descriptionEs": [
         "Verifica si una cadena de texto (primer argumento) termina con otra cadena de texto (segundo argumento).",
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
@@ -372,10 +372,6 @@
         "",
         "repeat(\"abc\", 3);"
       ],
-      "isRequired": true,
-      "solutions": [
-        "function repeat(str, num) {\n  if (num < 0) return '';\n  return num === 1 ? str : str + repeat(str, num-1);\n}\n\nrepeat('abc', 3);\n"
-      ],
       "tests": [
         "assert(repeat(\"*\", 3) === \"***\", 'message: <code>repeat(\"*\", 3)</code> should return <code>\"***\"</code>.');",
         "assert(repeat(\"abc\", 3) === \"abcabcabc\", 'message: <code>repeat(\"abc\", 3)</code> should return <code>\"abcabcabc\"</code>.');",
@@ -385,11 +381,15 @@
         "assert(repeat(\"abc\", -2) === \"\", 'message: <code>repeat(\"abc\", -2)</code> should return <code>\"\"</code>.');"
       ],
       "type": "bonfire",
+      "isRequired": true,
+      "solutions": [
+        "function repeat(str, num) {\n  if (num < 0) return '';\n  return num === 1 ? str : str + repeat(str, num-1);\n}\n\nrepeat('abc', 3);\n"
+      ],
       "MDNlinks": [
         "Global String Object"
       ],
       "challengeType": 5,
-      "nameEs": "Repite el texto Repite el texto",
+      "titleEs": "Repite el texto Repite el texto",
       "descriptionEs": [
         "Repite una cadena de texto dada (primer argumento) <code>num</code> veces (segundo argumento). Retorna una cadena de texto vacía si <code>num</code> es un número negativo.",
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
@@ -412,10 +412,6 @@
         "",
         "truncate(\"A-tisket a-tasket A green and yellow basket\", 11);"
       ],
-      "isRequired": true,
-      "solutions": [
-        "function truncate(str, num) {\n  if(str.length > num ) {\n    if(num > 3) {\n      return str.slice(0, num - 3) + '...';\n    } else {\n      return str.slice(0,num) + '...';\n    }\n  } \n  return str;\n}"
-      ],
       "tests": [
         "assert(truncate(\"A-tisket a-tasket A green and yellow basket\", 11) === \"A-tisket...\", 'message: <code>truncate(\"A-tisket a-tasket A green and yellow basket\", 11)</code> should return \"A-tisket...\".');",
         "assert(truncate(\"Peter Piper picked a peck of pickled peppers\", 14) === \"Peter Piper...\", 'message: <code>truncate(\"Peter Piper picked a peck of pickled peppers\", 14)</code> should return \"Peter Piper...\".');",
@@ -425,11 +421,15 @@
         "assert(truncate(\"Absolutely Longer\", 2) === \"Ab...\", 'message: <code>truncate(\"Absolutely Longer\", 2)</code> should return \"Ab...\".');"
       ],
       "type": "bonfire",
+      "isRequired": true,
+      "solutions": [
+        "function truncate(str, num) {\n  if(str.length > num ) {\n    if(num > 3) {\n      return str.slice(0, num - 3) + '...';\n    } else {\n      return str.slice(0,num) + '...';\n    }\n  } \n  return str;\n}"
+      ],
       "MDNlinks": [
         "String.slice()"
       ],
       "challengeType": 5,
-      "nameEs": "Trunca una cadena de texto",
+      "titleEs": "Trunca una cadena de texto",
       "descriptionEs": [
         "Trunca una cadena de texto (primer argumento) si su longitud es mayor que un máximo de caracteres dado (segundo argumento). Devuelve la cadena de texto truncada con una terminación \"...\".",
         "Ten en cuenta que los tres puntos al final también se cuentan dentro de la longitud de la cadena de texto.",
@@ -452,10 +452,6 @@
         "",
         "chunk([\"a\", \"b\", \"c\", \"d\"], 2);"
       ],
-      "isRequired": true,
-      "solutions": [
-        "function chunk(arr, size) {\n  var out = [];\n  for (var i = 0; i < arr.length; i+=size) {\n    out.push(arr.slice(i,i+size));\n  }\n  return out;\n}\n\nchunk(['a', 'b', 'c', 'd'], 2);\n"
-      ],
       "tests": [
         "assert.deepEqual(chunk([\"a\", \"b\", \"c\", \"d\"], 2), [[\"a\", \"b\"], [\"c\", \"d\"]], 'message: <code>chunk([\"a\", \"b\", \"c\", \"d\"], 2)</code> should return <code>[[\"a\", \"b\"], [\"c\", \"d\"]]</code>.');",
         "assert.deepEqual(chunk([0, 1, 2, 3, 4, 5], 3), [[0, 1, 2], [3, 4, 5]], 'message: <code>chunk([0, 1, 2, 3, 4, 5], 3)</code> should return <code>[[0, 1, 2], [3, 4, 5]]</code>.');",
@@ -465,12 +461,16 @@
         "assert.deepEqual(chunk([0, 1, 2, 3, 4, 5, 6, 7, 8], 4), [[0, 1, 2, 3], [4, 5, 6, 7], [8]], 'message: <code>chunk([0, 1, 2, 3, 4, 5, 6, 7, 8], 4)</code> should return <code>[[0, 1, 2, 3], [4, 5, 6, 7], [8]]</code>.');"
       ],
       "type": "bonfire",
+      "isRequired": true,
+      "solutions": [
+        "function chunk(arr, size) {\n  var out = [];\n  for (var i = 0; i < arr.length; i+=size) {\n    out.push(arr.slice(i,i+size));\n  }\n  return out;\n}\n\nchunk(['a', 'b', 'c', 'd'], 2);\n"
+      ],
       "MDNlinks": [
         "Array.push()",
         "Array.slice()"
       ],
       "challengeType": 5,
-      "nameEs": "En mil pedazos",
+      "titleEs": "En mil pedazos",
       "descriptionEs": [
         "Escribe una función que parta un arreglo (primer argumento) en fragmentos de una longitud dada (segundo argumento) y los devuelva en forma de un arreglo bidimensional.",
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
@@ -492,10 +492,6 @@
         "",
         "slasher([1, 2, 3], 2);"
       ],
-      "isRequired": true,
-      "solutions": [
-        "function slasher(arr, howMany) {\n  // it doesn't always pay to be first\n  return arr.slice(howMany);\n}\n\nslasher([1, 2, 3], 2);\n"
-      ],
       "tests": [
         "assert.deepEqual(slasher([1, 2, 3], 2), [3], 'message: <code>slasher([1, 2, 3], 2)</code> should return <code>[3]</code>.');",
         "assert.deepEqual(slasher([1, 2, 3], 0), [1, 2, 3], 'message: <code>slasher([1, 2, 3], 0)</code> should return <code>[1, 2, 3]</code>.');",
@@ -505,12 +501,16 @@
         "assert.deepEqual(slasher([1, 2, 'chicken', 3, 'potatoes', 'cheese', 4], 5), ['cheese', 4], 'message: <code>slasher([1, 2, \"chicken\", 3, \"potatoes\", \"cheese\", 4], 5)</code> should return <code>[\"cheese\", 4]</code>.');"
       ],
       "type": "bonfire",
+      "isRequired": true,
+      "solutions": [
+        "function slasher(arr, howMany) {\n  // it doesn't always pay to be first\n  return arr.slice(howMany);\n}\n\nslasher([1, 2, 3], 2);\n"
+      ],
       "MDNlinks": [
         "Array.slice()",
         "Array.splice()"
       ],
       "challengeType": 5,
-      "nameEs": "Vuélale la cabeza",
+      "titleEs": "Vuélale la cabeza",
       "descriptionEs": [
         "Crea una función que devuelva los elementos restantes de un arreglo después de eliminar <code>n</code> elementos de la cabeza.",
         "Por cabeza nos referimos al inicio de un arreglo, comenzando por el índice 0.",
@@ -534,10 +534,6 @@
         "",
         "mutation([\"hello\", \"hey\"]);"
       ],
-      "isRequired": true,
-      "solutions": [
-        "function mutation(arr) {\n  var hash = Object.create(null);\n  arr[0].toLowerCase().split('').forEach(function(c) {\n    hash[c] = true;\n  });\n  return !arr[1].toLowerCase().split('').filter(function(c) {\n    return !hash[c];\n  }).length;\n}\n\nmutation(['hello', 'hey']);\n"
-      ],
       "tests": [
         "assert(mutation([\"hello\", \"hey\"]) === false, 'message: <code>mutation([\"hello\", \"hey\"])</code> should return false.');",
         "assert(mutation([\"hello\", \"Hello\"]) === true, 'message: <code>mutation([\"hello\", \"Hello\"])</code> should return true.');",
@@ -549,11 +545,15 @@
         "assert(mutation([\"hello\", \"neo\"]) === false, 'message: <code>mutation([\"hello\", \"neo\"])</code> should return false.');"
       ],
       "type": "bonfire",
+      "isRequired": true,
+      "solutions": [
+        "function mutation(arr) {\n  var hash = Object.create(null);\n  arr[0].toLowerCase().split('').forEach(function(c) {\n    hash[c] = true;\n  });\n  return !arr[1].toLowerCase().split('').filter(function(c) {\n    return !hash[c];\n  }).length;\n}\n\nmutation(['hello', 'hey']);\n"
+      ],
       "MDNlinks": [
         "String.indexOf()"
       ],
       "challengeType": 5,
-      "nameEs": "Mutaciones",
+      "titleEs": "Mutaciones",
       "descriptionEs": [
         "Crea una función que devuelva <code>true</code> si la cadena de texto del primer elemento de un arreglo contiene todas las letras de la cadena de texto del segundo elemento del arreglo.",
         "Por ejemplo, <code>[\"hello\", \"Hello\"]</code>, debe devolver <code>true</code> porque todas las letras en la segunda cadena de texto están presentes en la primera, sin distinguir entre mayúsculas y minúsculas.",
@@ -578,10 +578,6 @@
         "",
         "bouncer([7, \"ate\", \"\", false, 9]);"
       ],
-      "isRequired": true,
-      "solutions": [
-        "function bouncer(arr) {\n  // Don't show a false ID to this bouncer.\n  return arr.filter(function(e) {return e;});\n}\n\nbouncer([7, 'ate', '', false, 9]);\n"
-      ],
       "tests": [
         "assert.deepEqual(bouncer([7, \"ate\", \"\", false, 9]), [7, \"ate\", 9], 'message: <code>bouncer([7, \"ate\", \"\", false, 9])</code> should return <code>[7, \"ate\", 9]</code>.');",
         "assert.deepEqual(bouncer([\"a\", \"b\", \"c\"]), [\"a\", \"b\", \"c\"], 'message: <code>bouncer([\"a\", \"b\", \"c\"])</code> should return <code>[\"a\", \"b\", \"c\"]</code>.');",
@@ -589,12 +585,16 @@
         "assert.deepEqual(bouncer([1, null, NaN, 2, undefined]), [1, 2], 'message: <code>bouncer([1, null, NaN, 2, undefined])</code> should return <code>[1, 2]</code>.');"
       ],
       "type": "bonfire",
+      "isRequired": true,
+      "solutions": [
+        "function bouncer(arr) {\n  // Don't show a false ID to this bouncer.\n  return arr.filter(function(e) {return e;});\n}\n\nbouncer([7, 'ate', '', false, 9]);\n"
+      ],
       "MDNlinks": [
         "Boolean Objects",
         "Array.filter()"
       ],
       "challengeType": 5,
-      "nameEs": "Detector de mentiras",
+      "titleEs": "Detector de mentiras",
       "descriptionEs": [
         "Remueve todos los valores falsy de un arreglo dado",
         "En javascript, los valores falsy son los siguientes: <code>false</code>, <code>null</code>, <code>0</code>, <code>\"\"</code>, <code>undefined</code>, y <code>NaN</code>.",
@@ -616,10 +616,6 @@
         "",
         "destroyer([1, 2, 3, 1, 2, 3], 2, 3);"
       ],
-      "isRequired": true,
-      "solutions": [
-        "function destroyer(arr) {\n  var hash = Object.create(null);\n  [].slice.call(arguments, 1).forEach(function(e) {\n    hash[e] = true;\n  });\n  // Remove all the values\n  return arr.filter(function(e) { return !(e in hash);});\n}\n\ndestroyer([1, 2, 3, 1, 2, 3], 2, 3);\n"
-      ],
       "tests": [
         "assert.deepEqual(destroyer([1, 2, 3, 1, 2, 3], 2, 3), [1, 1], 'message: <code>destroyer([1, 2, 3, 1, 2, 3], 2, 3)</code> should return <code>[1, 1]</code>.');",
         "assert.deepEqual(destroyer([1, 2, 3, 5, 1, 2, 3], 2, 3), [1, 5, 1], 'message: <code>destroyer([1, 2, 3, 5, 1, 2, 3], 2, 3)</code> should return <code>[1, 5, 1]</code>.');",
@@ -628,12 +624,16 @@
         "assert.deepEqual(destroyer([\"tree\", \"hamburger\", 53], \"tree\", 53), [\"hamburger\"], 'message: <code>destroyer([\"tree\", \"hamburger\", 53], \"tree\", 53)</code> should return <code>[\"hamburger\"]</code>.');"
       ],
       "type": "bonfire",
+      "isRequired": true,
+      "solutions": [
+        "function destroyer(arr) {\n  var hash = Object.create(null);\n  [].slice.call(arguments, 1).forEach(function(e) {\n    hash[e] = true;\n  });\n  // Remove all the values\n  return arr.filter(function(e) { return !(e in hash);});\n}\n\ndestroyer([1, 2, 3, 1, 2, 3], 2, 3);\n"
+      ],
       "MDNlinks": [
         "Arguments object",
         "Array.filter()"
       ],
       "challengeType": 5,
-      "nameEs": "Buscar y destruir",
+      "titleEs": "Buscar y destruir",
       "descriptionEs": [
         "Se te proveerá un arreglo inicial (el primer argumento en la función <code>destroyer</code>), seguido por uno o más argumentos. Elimina todos los elementos del arreglo inicial que tengan el mismo valor que el resto de argumentos.",
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
@@ -656,10 +656,6 @@
         "",
         "where([40, 60], 50);"
       ],
-      "isRequired": true,
-      "solutions": [
-        "function where(arr, num) {\n  arr = arr.sort(function(a, b){return a-b;});\n  for (var i = 0; i < arr.length; i++) {\n    if (arr[i] >= num)\n      {\n        return i;\n      }\n  }\n  return arr.length;\n}"
-      ],
       "tests": [
         "assert(where([10, 20, 30, 40, 50], 35) === 3, 'message: <code>where([10, 20, 30, 40, 50], 35)</code> should return <code>3</code>.');",
         "assert(where([10, 20, 30, 40, 50], 30) === 2, 'message: <code>where([10, 20, 30, 40, 50], 30)</code> should return <code>2</code>.');",
@@ -670,11 +666,15 @@
         "assert(where([2, 5, 10], 15) === 3, 'message: <code>where([2, 5, 10], 15)</code> should return <code>3</code>.');"
       ],
       "type": "bonfire",
+      "isRequired": true,
+      "solutions": [
+        "function where(arr, num) {\n  arr = arr.sort(function(a, b){return a-b;});\n  for (var i = 0; i < arr.length; i++) {\n    if (arr[i] >= num)\n      {\n        return i;\n      }\n  }\n  return arr.length;\n}"
+      ],
       "MDNlinks": [
         "Array.sort()"
       ],
       "challengeType": 5,
-      "nameEs": "¿Cuál es mi asiento?",
+      "titleEs": "¿Cuál es mi asiento?",
       "descriptionEs": [
         "Devuelve el menor índice en el que un valor (segundo argumento) debe ser insertado en un arreglo (primer argumento) una vez ha sido ordenado.",
         "Por ejemplo, where([1,2,3,4], 1.5) debe devolver 1 porque el segundo argumento de la función (1.5) es mayor que 1 (con índice 0 en el arreglo), pero menor que 2 (con índice 1).",
@@ -692,8 +692,6 @@
         "All letters will be uppercase. Do not transform any non-alphabetic character (i.e. spaces, punctuation), but do pass them on.",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
       ],
-      "isRequired": true,
-      "releasedOn": "January 1, 2016",
       "challengeSeed": [
         "function rot13(str) { // LBH QVQ VG!",
         "  ",
@@ -721,14 +719,16 @@
         "String.fromCharCode()"
       ],
       "challengeType": 5,
-       "nameEs": "Cifrado César",
+      "titleEs": "Cifrado César",
       "descriptionEs": [
         "Uno de los <dfn>cifrados</dfn> más simples y ampliamente conocidos es el <code>cifrado César</code>, también llamado <code>cifrado por desplazamiento</code>. En un <code>cifrado por desplazamiento</code> los significados de las letras se desplazan por una cierta cantidad.",
         "Un uso moderno común es el cifrado <a href=\"https://en.wikipedia.org/wiki/ROT13\" target='_blank'>ROT13</a> , donde los valores de las letras se desplazan 13 espacios. De esta forma 'A' &harr; 'N', 'B' &harr;  'O' y así.",
         "Crea una función que tome una cadena de texto cifrada en <a href=\"https://en.wikipedia.org/wiki/ROT13\" target='_blank'>ROT13</a> como argumento y que devuelva la cadena de texto decodificada.",
         "Todas las letras que se te pasen van a estar en mayúsculas. No transformes ningún caracter no-alfabético (por ejemplo: espacios, puntuación). Simplemente pásalos intactos.",
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
-      ]
+      ],
+      "isRequired": true,
+      "releasedOn": "January 1, 2016"
     }
   ]
 }

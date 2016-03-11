@@ -13,8 +13,7 @@
       "tests": [],
       "type": "waypoint",
       "challengeType": 3,
-      "nameEs": "Desafios para aprender Sass",
-      "descriptionEs": []
+      "titleEs": "Desafios para aprender Sass"
     }
   ]
 }
