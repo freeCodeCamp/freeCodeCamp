@@ -92,7 +92,6 @@
       ],
       "type": "Waypoint",
       "challengeType": 7,
-      "nameEs": "Reclama tu certificado de Visualización de datos",
       "descriptionEs": [
         [
           "http://i.imgur.com/Et3iD74.jpg",
@@ -118,7 +117,8 @@
           "¡Felicitaciones! Hemos agregado tu certificado de Visualización de datos a tu portafolio. A menos que elijas no mostrar tus soluciones, este certificado será públicamente visible y verificable.",
           ""
         ]
-      ]
+      ],
+      "titleEs": "Reclama tu certificado de Visualización de datos"
     }
   ]
 }

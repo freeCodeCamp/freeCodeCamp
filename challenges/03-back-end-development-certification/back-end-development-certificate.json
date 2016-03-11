@@ -92,7 +92,6 @@
       ],
       "type": "Waypoint",
       "challengeType": 7,
-      "nameEs": "Reclama tu certificado de desarrollo del lado del servidor",
       "descriptionEs": [
         [
           "http://i.imgur.com/8v3t84p.jpg",
@@ -118,7 +117,8 @@
           "¡Felicitaciones! Hemos agregado tu certificado de desarrollo del lado del servidor. A menos que elijas no mostrar tus soluciones, este certificado será públicamente visible y verificable.",
           ""
         ]
-      ]
+      ],
+      "titleEs": "Reclama tu certificado de desarrollo del lado del servidor"
     }
   ]
 }

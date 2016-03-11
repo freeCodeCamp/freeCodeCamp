@@ -50,7 +50,7 @@
       ],
       "type": "waypoint",
       "challengeType": 0,
-      "nameEs": "Aprende cómo funcionan las etiquetas de programa y la función de documento listo.",
+      "titleEs": "Aprende cómo funcionan las etiquetas de programa y la función de documento listo.",
       "descriptionEs": [
         "Ahora estamos listos para aprender jQuery, la herramienta de JavaScript más popular de todos los tiempos. No te preocupes por JavaScript en si --lo cubriremos pronto.",
         "Antes de que podamos comenzar a usar jQuery, tenemos que añadir algunas cosas a nuestro HTML.",
@@ -109,7 +109,7 @@
       ],
       "type": "waypoint",
       "challengeType": 0,
-      "nameEs": "Elige elementos HTML usando selectores y jQuery",
+      "titleEs": "Elige elementos HTML usando selectores y jQuery",
       "descriptionEs": [
         "Ya tenemos una <code>función de documento listo</code>.",
         "Ahora vamos a escribir nuestra primera instrucción jQuery. Todas las funciones de jQuery comienzan con un <code>$</code>, al que suele referirse como <code>operador dólar</code>, o simplemente como <code>bling</code>. ",
@@ -168,7 +168,7 @@
       ],
       "type": "waypoint",
       "challengeType": 0,
-      "nameEs": "Elige elementos por su clase usando jQuery",
+      "titleEs": "Elige elementos por su clase usando jQuery",
       "descriptionEs": [
         "¿Viste como hicimos rebotar todos tus elementos <code>button</code>? Los seleccionamos con <code>$(\"button\")</code>, y luego les añadimos algunas clases CSS con <code>.addClass(\"animated bounce\");.</code> ",
         "Acabas de usar la función <code>addClass()</code> de jQuery, que te permite añadir clases a los elementos.",
@@ -230,7 +230,7 @@
       ],
       "type": "waypoint",
       "challengeType": 0,
-      "nameEs": "Elige elementos por ID usando jQuery",
+      "titleEs": "Elige elementos por ID usando jQuery",
       "descriptionEs": [
         "También puedes elegir un elemento por su atributo id.",
         "Primero selecciona tu elemento <code>button</code> con el id <code>target3</code> mediante el uso del selector <code>$(\"#target3\")</code>.",
@@ -290,7 +290,7 @@
       ],
       "type": "waypoint",
       "challengeType": 0,
-      "nameEs": "Elimina tus funciones jQuery",
+      "titleEs": "Elimina tus funciones jQuery",
       "descriptionEs": [
         "Estas animaciones eran divertidas al principio, pero ahora se están volviendo una distracción.",
         "Elimina esas tres funciones jQuery de tu <code>función de documento listo</code>, pero deja intacta la declaración de la <code>función de documento listo</code>."
@@ -348,7 +348,7 @@
       ],
       "type": "waypoint",
       "challengeType": 0,
-      "nameEs": "Elige un mismo elemento con múltiples selectores jQuery",
+      "titleEs": "Elige un mismo elemento con múltiples selectores jQuery",
       "descriptionEs": [
         "Ahora ya sabes tres formas de seleccionar elementos: por tipo <code>$(\"button\")</code>, por clase <code>$(\".btn\")</code>, y por identificación <code>$(\"#target1\")</code>. ",
         "Aunque es posible agregar varias clases en una sola llamada a <code>.addClass()</code>, vamos a añadirlas al mismo elemento de tres maneras diferentes.",
@@ -408,7 +408,7 @@
       ],
       "type": "waypoint",
       "challengeType": 0,
-      "nameEs": "Elimina clases de un elemento con jQuery",
+      "titleEs": "Elimina clases de un elemento con jQuery",
       "descriptionEs": [
         "De la misma manera que puedes agregar clases a un elemento con la función <code>addClass()</code> de jQuery, puedes eliminarlas con la función <code>removeClass()</code>.",
         "He aquí cómo puedes hacerlo para un botón específico:",
@@ -469,7 +469,7 @@
       ],
       "type": "waypoint",
       "challengeType": 0,
-      "nameEs": "Cambia el CSS de un elemento usando jQuery",
+      "titleEs": "Cambia el CSS de un elemento usando jQuery",
       "descriptionEs": [
         "También podemos cambiar el CSS de un elemento HTML directamente con jQuery.",
         "jQuery tiene una función llamada <code>.css()</code> que te permite cambiar el CSS de un elemento.",
@@ -530,7 +530,7 @@
       ],
       "type": "waypoint",
       "challengeType": 0,
-      "nameEs": "Desactiva un elemento usando jQuery",
+      "titleEs": "Desactiva un elemento usando jQuery",
       "descriptionEs": [
         "También puedes cambiar propiedades que no son CSS de los elementos HTML con jQuery. Por ejemplo, puedes desactivar los botones. ",
         "Al deshabilitar un botón, se volverá gris y no podrá pulsarse.",
@@ -591,7 +591,7 @@
       ],
       "type": "waypoint",
       "challengeType": 0,
-      "nameEs": "Cambia el texto de un elemento usando jQuery",
+      "titleEs": "Cambia el texto de un elemento usando jQuery",
       "descriptionEs": [
         "Con jQuery, puedes cambiar el texto que está entre las etiquetas de apertura y cierre de un elemento.  Incluso puedes cambiar marcado HTML.",
         "jQuery tiene una función llamada <code>.html()</code> que te permite añadir etiquetas HTML y texto dentro de un elemento.  Cualquier contenido que estuviese previamente dentro del elemento será remplazado por completo con el contenido que proveas usando esta función.",
@@ -648,7 +648,7 @@
       ],
       "type": "waypoint",
       "challengeType": 0,
-      "nameEs": "Elimina un elemento usando jQuery",
+      "titleEs": "Elimina un elemento usando jQuery",
       "descriptionEs": [
         "Ahora quitemos un elemento HTML de tu página usando jQuery.",
         "jQuery tiene una función llamada <code>.remove()</code> que eliminará un elemento HTML por completo",
@@ -706,7 +706,7 @@
       ],
       "type": "waypoint",
       "challengeType": 0,
-      "nameEs": "Usa appendTo para mover elementos con jQuery",
+      "titleEs": "Usa appendTo para mover elementos con jQuery",
       "descriptionEs": [
         "Ahora intentemos mover elementos de un <code>div</code> a otro.",
         "jQuery tiene una función llamada <code>appendTo()</code> que te permite seleccionar elementos HTML y anexarlos a otro elemento.",
@@ -768,7 +768,7 @@
       ],
       "type": "waypoint",
       "challengeType": 0,
-      "nameEs": "Clona un elemento usando jQuery",
+      "titleEs": "Clona un elemento usando jQuery",
       "descriptionEs": [
         "Además de mover elementos, puedes copiarlos de un sitio a otro.",
         "jQuery tiene una función llamada <code>clone()</code> que hace una copia de un elemento.",
@@ -835,7 +835,7 @@
       ],
       "type": "waypoint",
       "challengeType": 0,
-      "nameEs": "Elige el padre de un elemento usando jQuery",
+      "titleEs": "Elige el padre de un elemento usando jQuery",
       "descriptionEs": [
         "Cada elemento HTML tiene un elemento <code>padre</code> del cual <code>hereda</code> propiedades.",
         "Por ejemplo, tu elemento <code>h3</code> <code>jQuery Playground</code> tiene el elemento padre <code>&#60;div class=\"container-fluid\"&#62</code>, que a su vez tiene el padre <code>body</code>. ",
@@ -900,7 +900,7 @@
       ],
       "type": "waypoint",
       "challengeType": 0,
-      "nameEs": "Elige los hjos de un elemento usando jQuery",
+      "titleEs": "Elige los hjos de un elemento usando jQuery",
       "descriptionEs": [
         "Muchos elementos HTML tienen <code>hijos</code>, los cuales <code>heredan</code> sus propiedades de sus elementos padres",
         "Por ejemplo, cada elemento HTML es un hijo de tu elemento <code>body</code>, y tu elemento <code>h3</code> \"jQuery Playground\" es un hijo de tu elemento <code>&#60;div class=\"container-fluid\"&#62</code>.",
@@ -966,7 +966,7 @@
       ],
       "type": "waypoint",
       "challengeType": 0,
-      "nameEs": "Elige un hijo específico de un elemento usando jQuery",
+      "titleEs": "Elige un hijo específico de un elemento usando jQuery",
       "descriptionEs": [
         "Seguramente habrás entendido porque los atributos id son tan convenientes para elegir con selectores jQuery. Pero no siempre contarás con estos agradables identificadores para trabajar. ",
         "Afortunadamente, jQuery tiene algunos otros trucos para elegir los elementos adecuados.",
@@ -1033,7 +1033,7 @@
       ],
       "type": "waypoint",
       "challengeType": 0,
-      "nameEs": "Elige elementos con numeración par usando jQuery",
+      "titleEs": "Elige elementos con numeración par usando jQuery",
       "descriptionEs": [
         "También puedes elegir todos los elementos con numeración par.",
         "He aquí cómo elegirías todos los elementos impares con clase <code>target</code> y como les agregarías unas clases:",
@@ -1096,7 +1096,7 @@
       ],
       "type": "waypoint",
       "challengeType": 0,
-      "nameEs": "Usa jQuery para modificar la página entera",
+      "titleEs": "Usa jQuery para modificar la página entera",
       "descriptionEs": [
         "Hemos terminado de jugar en nuestro patio de recreo jQuery. ¡Vamos a derribarlo!",
         "jQuery también puede elegir el elemento <code>body</code>.",

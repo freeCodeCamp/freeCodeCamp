@@ -98,7 +98,7 @@
       "type": "Waypoint",
       "challengeType": 7,
       "isRequired": false,
-      "nameEs": "Prepárate para nuestros Proyectos de Desarrollo en el lado del servidor",
+      "titleEs": "Prepárate para nuestros Proyectos de Desarrollo en el lado del servidor",
       "descriptionEs": [
         [
           "http://i.imgur.com/4IZjWZ3.gif",
@@ -199,15 +199,15 @@
         "Once you've finished implementing these user stories, click the \"I've completed this challenge\" button and enter the URLs for both your GitHub repository and your live app running on Heroku.",
         "You can get feedback on your project from fellow campers by sharing it in our <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Code Review Chatroom</a>. You can also share it on Twitter and your city's Campsite (on Facebook)."
       ],
-      "releasedOn": "January 1, 2016",
       "challengeSeed": [
         "150324691"
       ],
       "tests": [],
+      "isRequired": true,
+      "releasedOn": "January 1, 2016",
       "type": "basejump",
       "challengeType": 4,
-      "isRequired": true,
-      "nameEs": "Microservicio de Marca Temporal",
+      "titleEs": "Microservicio de Marca Temporal",
       "descriptionEs": [
         "<strong>Objetivo:</strong> Desarolla una aplicación de Pila Completa en JavaScript que sea funcionalmente similar a esta: <a href='https://timestamp-ms.herokuapp.com/' target='_blank'>https://timestamp-ms.herokuapp.com/</a> y despliegala en Heroku.",
         "Ten en cuenta que para cada proyecto, deberías crear un nuevo repositorio en GitHub y un nuevo proyecto en Heroku. Si no recuerdas como hacer esto, vuelve a visitar <a href='/challenges/get-set-for-our-back-end-development-projects'>http://freecodecamp.com//challenges/get-set-for-our-back-end-development-projects</a>.",
@@ -230,15 +230,15 @@
         "Once you've finished implementing these user stories, click the \"I've completed this challenge\" button and enter the URLs for both your GitHub repository and your live app running on Heroku.",
         "You can get feedback on your project from fellow campers by sharing it in our <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Code Review Chatroom</a>. You can also share it on Twitter and your city's Campsite (on Facebook)."
       ],
-      "releasedOn": "January 1, 2016",
       "challengeSeed": [
         "150324460"
       ],
       "tests": [],
+      "isRequired": true,
+      "releasedOn": "January 1, 2016",
       "type": "basejump",
       "challengeType": 4,
-      "isRequired": true,
-      "nameEs": "Microservicio para analizar el encabezado de una petición",
+      "titleEs": "Microservicio para analizar el encabezado de una petición",
       "descriptionEs": [
         "<strong>Objetivo:</strong> Desarrolla una aplicación de Pila Completa en JavaScript que sea funcionalmente similar a esta: <a href='https://cryptic-ridge-9197.herokuapp.com/api/whoami/' target='_blank'>https://cryptic-ridge-9197.herokuapp.com/api/whoami/</a> y despliegala en Heroku.",
         "Ten en cuenta que para cada proyecto, deberías crear un nuevo repositorio en GitHub y un nuevo proyecto en Heroku. Si no recuerdas como hacer esto, vuelve a visitar <a href='/challenges/get-set-for-our-back-end-development-projects'>http://freecodecamp.com//challenges/get-set-for-our-back-end-development-projects</a>.",
@@ -261,15 +261,15 @@
         "Once you've finished implementing these user stories, click the \"I've completed this challenge\" button and enter the URLs for both your GitHub repository and your live app running on Heroku.",
         "You can get feedback on your project from fellow campers by sharing it in our <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Code Review Chatroom</a>. You can also share it on Twitter and your city's Campsite (on Facebook)."
       ],
-      "releasedOn": "January 1, 2016",
       "challengeSeed": [
         "150324692"
       ],
       "tests": [],
+      "isRequired": true,
+      "releasedOn": "January 1, 2016",
       "type": "basejump",
       "challengeType": 4,
-      "isRequired": true,
-      "nameEs": "Microservicio para acortar URLs",
+      "titleEs": "Microservicio para acortar URLs",
       "descriptionEs": [
         "<strong>Objetivo:</strong> Desarrolla una aplicación de Pila Completa en JavaScript que sea funcionalmente similar a esta: <a href='https://shurli.herokuapp.com/' target='_blank'>https://shurli.herokuapp.com/</a> y despliegala en Heroku.",
         "Ten en cuenta que para cada proyecto, deberías crear un nuevo repositorio en GitHub y un nuevo proyecto en Heroku. Si no recuerdas como hacer esto, vuelve a visitar <a href='/challenges/get-set-for-our-back-end-development-projects'>http://freecodecamp.com//challenges/get-set-for-our-back-end-development-projects</a>.",
@@ -280,7 +280,6 @@
         "Una vez que hayas terminado de implementar estas historias de usuarios, pulsa el botón \"I've completed this challenge\" e introduce los URLs de tu repositorio en GitHub y de tu aplicación en vivo en Heroku.",
         "Puedes obtener retroalimentación sobre tu proyecto por parte de otros campistas, compartiendolo en nuestra <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Sala de chat para revisión de código</a>. También puedes compartirlo en Twitter y en el campamento de tu ciudad (en Facebook)."
       ]
-
     },
     {
       "id": "bd7158d8c443edefaeb5bdee",
@@ -295,15 +294,15 @@
         "Once you've finished implementing these user stories, click the \"I've completed this challenge\" button and enter the URLs for both your GitHub repository and your live app running on Heroku.",
         "You can get feedback on your project from fellow campers by sharing it in our <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Code Review Chatroom</a>. You can also share it on Twitter and your city's Campsite (on Facebook)."
       ],
-      "releasedOn": "January 1, 2016",
       "challengeSeed": [
         "150324461"
       ],
       "tests": [],
+      "isRequired": true,
+      "releasedOn": "January 1, 2016",
       "type": "basejump",
       "challengeType": 4,
-      "isRequired": true,
-      "nameEs": "Capa de abstracción para buscar imágenes",
+      "titleEs": "Capa de abstracción para buscar imágenes",
       "descriptionEs": [
         "<strong>Objetivo:</strong> Desarolla una aplicación de Pila Completa en JavaScript que te permite buscar imágenes como esta: <a href='https://cryptic-ridge-9197.herokuapp.com/api/imagesearch/lolcats%20funny?offset=10' target='_blank'>https://cryptic-ridge-9197.herokuapp.com/api/imagesearch/lolcats%20funny?offset=10</a> y examinar las búsquedas recientes como esta: <a href='https://cryptic-ridge-9197.herokuapp.com/api/latest/imagesearch/' target='_blank'>https://cryptic-ridge-9197.herokuapp.com/api/latest/imagesearch/</a>. Después, despliegala en Heroku.",
         "Ten en cuenta que para cada proyecto, deberías crear un nuevo repositorio en GitHub y un nuevo proyecto en Heroku. Si no recuerdas como hacer esto, vuelve a visitar <a href='/challenges/get-set-for-our-back-end-development-projects'>http://freecodecamp.com//challenges/get-set-for-our-back-end-development-projects</a>.",
@@ -328,15 +327,15 @@
         "Once you've finished implementing these user stories, click the \"I've completed this challenge\" button and enter the URLs for both your GitHub repository and your live app running on Heroku.",
         "You can get feedback on your project from fellow campers by sharing it in our <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Code Review Chatroom</a>. You can also share it on Twitter and your city's Campsite (on Facebook)."
       ],
-      "releasedOn": "January 1, 2016",
       "challengeSeed": [
         "150324457"
       ],
       "tests": [],
+      "isRequired": true,
+      "releasedOn": "January 1, 2016",
       "type": "basejump",
       "challengeType": 4,
-      "isRequired": true,
-      "nameEs": "Microservicio de metadatos de archivos",
+      "titleEs": "Microservicio de metadatos de archivos",
       "descriptionEs": [
         "<strong>Objetivo:</strong> Desarrolla una aplicación de Pila Completa en JavaScript que sea funcionalmente similar a esta: <a href='https://cryptic-ridge-9197.herokuapp.com/' target='_blank'>https://cryptic-ridge-9197.herokuapp.com/</a>  y despliegala en Heroku.",
         "Ten en cuenta que para cada proyecto, deberías crear un nuevo repositorio en GitHub y un nuevo proyecto en Heroku. Si no recuerdas como hacer esto, vuelve a visitar <a href='/challenges/get-set-for-our-back-end-development-projects'>http://freecodecamp.com//challenges/get-set-for-our-back-end-development-projects</a>.",
