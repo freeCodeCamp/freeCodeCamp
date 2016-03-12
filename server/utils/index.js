@@ -12,7 +12,14 @@ module.exports = {
     return ('' + name)
       .toLowerCase()
       .replace(/\s/g, '-')
-      .replace(/[^a-z0-9\-\.]/gi, '');
+      .replace(/[^a-z0-9\-\.]/gi, '')
+      .replace(/\:/g, '');
+  },
+
+  nameify: function nameify(str) {
+    return ('' + str)
+      .replace(/[^a-zA-Z0-9\s]/g, '')
+      .replace(/\:/g, '');
   },
 
   unDasherize: function unDasherize(name) {
