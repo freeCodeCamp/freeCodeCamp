@@ -24,12 +24,12 @@
   "auth:before": {
     "./middlewares/add-return-to": {}
   },
-  "auth": {
-  },
   "parse": {
     "body-parser#json": {},
     "body-parser#urlencoded": {
-      "params": { "extended": true }
+      "params": {
+        "extended": true
+      }
     },
     "method-override": {},
     "./middlewares/cookie-parser": {}
@@ -51,12 +51,7 @@
     "./middlewares/revision-helpers": {},
     "./middlewares/migrate-completed-challenges": {}
   },
-  "routes": {
-  },
-  "files": {
-  },
-  "final": {
-  },
+  "files": {},
   "final:after": {
     "./middlewares/keymetrics": {},
     "./middlewares/error-handlers": {}
