@@ -1,25 +1,17 @@
 extends ../layout
 block content
-    .panel.panel-info
-        .panel-heading.text-center Projects Created by Free Code Camp Campers
-        .panel-body.text-left
-            .row
-                .col-xs-12.col-sm-10.col-sm-offset-1
-                    for project in projects
-                        .spacer
-                        .row
-                            .col-xs-12.col-sm-3
-                                img.img-responsive(src=project.image)
-                            .col-xs-12.col-sm-9.negative-15
-                                h3
-                                    a(href=project.url) #{project.name}
-                                h4 by&thinsp;
-                                    a(href='/' + project.camper) #{project.camper}
-                                p= project.description
-
-            if !user
-                .spacer
-                .row
-                    .col-xs-12.col-sm-8.col-sm-offset-2
-                        a.btn.btn-cta.signup-btn.btn-block(href="/signin") Learn to code today (it's free)
-                .spacer
+        h2.text-center Projects Created by Free Code Camp Campers
+        hr
+        .row
+            .col-xs-12.col-sm-10.col-sm-offset-1
+                for project in projects
+                    .spacer
+                    .row
+                        .col-xs-12.col-sm-3
+                            img.img-responsive(src=project.image)
+                        .col-xs-12.col-sm-9.negative-15
+                            h3
+                                a(href=project.url) #{project.name}
+                            h4 by&thinsp;
+                                a(href='/' + project.camper) #{project.camper}
+                            p= project.description
