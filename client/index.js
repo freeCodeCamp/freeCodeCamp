@@ -16,7 +16,7 @@ import sagas from './sagas';
 import render from '../common/app/utils/render';
 
 const log = debug('fcc:client');
-const DOMContianer = document.getElementById('fcc');
+const DOMContainer = document.getElementById('fcc');
 const initialState = window.__fcc__.data;
 
 const serviceOptions = { xhrPath: '/services' };
@@ -61,7 +61,7 @@ app$({
     log('rendering');
     return render(
       provideStore(React.createElement(Router, props), store),
-      DOMContianer
+      DOMContainer
     );
   })
   .subscribe(
