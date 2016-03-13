@@ -153,6 +153,21 @@ module.exports = function(app) {
     sendNonUserToMap,
     toggleLockdownMode
   );
+  router.get(
+    '/toggle-announcement-email-mode',
+    sendNonUserToMap,
+    toggleReceivesAnnouncementEmails
+  );
+  router.get(
+    '/toggle-notification-email-mode',
+    sendNonUserToMap,
+    toggleReceivesNotificationEmails
+  );
+  router.get(
+    '/toggle-quincy-email-mode',
+    sendNonUserToMap,
+    toggleReceivesQuincyEmails
+  );
   router.post(
     '/account/delete',
     ifNoUser401,
@@ -162,6 +177,11 @@ module.exports = function(app) {
     '/account',
     sendNonUserToMap,
     getAccount
+  );
+  router.get(
+    '/settings',
+    sendNonUserToMap,
+    getSettings
   );
   router.get('/vote1', vote1);
   router.get('/vote2', vote2);
@@ -226,6 +246,10 @@ module.exports = function(app) {
   function getAccount(req, res) {
     const { username } = req.user;
     return res.redirect('/' + username);
+  }
+
+  function getSettings(req, res, next) {
+    res.render('account/settings');
   }
 
   function returnUser(req, res, next) {
@@ -406,7 +430,7 @@ module.exports = function(app) {
             section at the bottom of this page.
           `
         });
-        return res.redirect('/' + req.user.username);
+        res.redirect('/settings');
       });
     }
     req.user.isLocked = true;
@@ -420,7 +444,40 @@ module.exports = function(app) {
           section at the bottom of this page.
         `
       });
-      return res.redirect('/' + req.user.username);
+      res.redirect('/settings');
+    });
+  }
+
+  function toggleReceivesAnnouncementEmails(req, res, next) {
+    return User.findById(req.accessToken.userId, function(err, user) {
+      if (err) { return next(err); }
+      user.updateAttribute('sendMonthlyEmail', typeof user.sendMonthlyEmail !== "undefined" ? !user.sendMonthlyEmail : true, function(err) {
+        if (err) { return next(err); }
+        req.flash('info', { msg: 'Email preferences updated successfully.' });
+        res.redirect('/settings');
+      });
+    });
+  }
+
+  function toggleReceivesQuincyEmails(req, res, next) {
+    return User.findById(req.accessToken.userId, function(err, user) {
+      if (err) { return next(err); }
+      user.updateAttribute('sendQuincyEmail', typeof user.sendQuincyEmail !== "undefined" ? !user.sendQuincyEmail : true, function(err) {
+        if (err) { return next(err); }
+        req.flash('info', { msg: 'Email preferences updated successfully.' });
+        res.redirect('/settings');
+      });
+    });
+  }
+
+  function toggleReceivesNotificationEmails(req, res, next) {
+    return User.findById(req.accessToken.userId, function(err, user) {
+      if (err) { return next(err); }
+      user.updateAttribute('sendNotificationEmail', typeof user.sendNotificationEmail !== "undefined" ? !user.sendNotificationEmail : true, function(err) {
+        if (err) { return next(err); }
+        req.flash('info', { msg: 'Email preferences updated successfully.' });
+        res.redirect('/settings');
+      });
     });
   }
 
