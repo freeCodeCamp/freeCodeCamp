@@ -418,33 +418,13 @@ module.exports = function(app) {
   }
 
   function toggleLockdownMode(req, res, next) {
-    if (req.user.isLocked === true) {
-      req.user.isLocked = false;
-      return req.user.save(function(err) {
+    return User.findById(req.accessToken.userId, function(err, user) {
+      if (err) { return next(err); }
+      user.updateAttribute('isLocked', typeof user.isLocked !== "undefined" ? !user.isLocked : true, function(err) {
         if (err) { return next(err); }
-
-        req.flash('success', {
-          msg: dedent`
-            Other people can now view all your challenge solutions.
-            You can change this back at any time in the "Manage My Account"
-            section at the bottom of this page.
-          `
-        });
+        req.flash('info', { msg: 'Privacy preferences updated successfully.' });
         res.redirect('/settings');
       });
-    }
-    req.user.isLocked = true;
-    return req.user.save(function(err) {
-      if (err) { return next(err); }
-
-      req.flash('success', {
-        msg: dedent`
-          All your challenge solutions are now hidden from other people.
-          You can change this back at any time in the "Manage My Account"
-          section at the bottom of this page.
-        `
-      });
-      res.redirect('/settings');
     });
   }
 
