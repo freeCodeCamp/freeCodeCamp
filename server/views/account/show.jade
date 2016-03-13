@@ -4,33 +4,14 @@ block content
     script.
         var challengeName = 'Profile View';
     if (user && user.username === username)
-        h1.text-center Update your code portfolio
-        .row
-            .col-xs-12
-                if (!user.isGithubCool)
-                    a.btn.btn-lg.btn-block.btn-github.btn-link-social(href='/link/github')
-                        i.fa.fa-github
-                        | Link my GitHub to unlock my portfolio
-                else
-                    a.btn.btn-lg.btn-block.btn-github.btn-link-social(href='/link/github')
-                        i.fa.fa-github
-                        | Update my portfolio from GitHub
-                    if (!user.twitter)
-                        a.btn.btn-lg.btn-block.btn-twitter.btn-link-social(href='/link/twitter')
-                            i.fa.fa-twitter
-                            | Add my Twitter to my portfolio
-                    if (!user.facebook)
-                        a.btn.btn-lg.btn-block.btn-facebook.btn-link-social(href='/link/facebook')
-                            i.fa.fa-facebook
-                            | Add my Facebook to my portfolio
-                    if (!user.linkedin)
-                        a.btn.btn-lg.btn-block.btn-linkedin.btn-link-social(href='/link/linkedin')
-                            i.fa.fa-linkedin
-                            | Add my LinkedIn to my portfolio
-                    if (!user.google)
-                        a.btn.btn-lg.btn-block.btn-google-plus.btn-link-social(href='/link/google')
-                            i.fa.fa-google-plus
-                            | Add my Google+ to my portfolio
+      .row
+        if (!user.isGithubCool)
+          a.btn.btn-lg.btn-block.btn-github.btn-link-social(href='/link/github')
+              i.fa.fa-github
+              | Link my GitHub to unlock my portfolio
+        .col-xs-12
+            a.btn.btn-lg.btn-block.btn-primary.btn-link-social(href='/settings')
+                | Update your settings
         .spacer
     h1.text-center #{username}'s code portfolio
     hr
