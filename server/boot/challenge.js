@@ -431,7 +431,7 @@ module.exports = function(app) {
       challengeId = badIdMap[challengeId];
     }
 
-    if (!isMongoId(challengeId)) {
+    if (!isMongoId('' + challengeId)) {
       challengeId = null;
     }
 
@@ -456,7 +456,7 @@ module.exports = function(app) {
       challengeId = badIdMap[challengeId];
     }
 
-    if (!isMongoId(challengeId)) {
+    if (!isMongoId('' + challengeId)) {
       challengeId = null;
     }
 
