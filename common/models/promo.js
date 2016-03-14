@@ -1,4 +1,4 @@
-import { isAlphanumeric, isHexadecimal } from 'validator';
+import { isAlphanumeric, isMongoId } from 'validator';
 import debug from 'debug';
 
 const log = debug('fcc:models:promo');
@@ -6,16 +6,16 @@ const log = debug('fcc:models:promo');
 export default function promo(Promo) {
   Promo.getButton = function getButton(id, code, type = 'isNot') {
     const Job = Promo.app.models.Job;
-    if (!id || !isHexadecimal(id)) {
+    if (!id || !isMongoId('' + id)) {
       return Promise.reject(new Error(
         'Must include job id'
       ));
     }
 
     if (
-      !isAlphanumeric(code) &&
+      !isAlphanumeric('' + code) &&
       type &&
-      !isAlphanumeric(type)
+      !isAlphanumeric('' + type)
     ) {
       return Promise.reject(new Error(
         'Code or Type should be an alphanumeric'

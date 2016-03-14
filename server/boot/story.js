@@ -343,7 +343,7 @@ module.exports = function(app) {
     }
     var url = req.body.data.url;
 
-    if (!validator.isURL(url)) {
+    if (!validator.isURL('' + url)) {
       req.flash('errors', {
         msg: "The URL you submitted doesn't appear valid"
       });
