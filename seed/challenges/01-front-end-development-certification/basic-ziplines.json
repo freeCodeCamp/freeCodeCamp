@@ -48,47 +48,9 @@
       "challengeSeed": [],
       "tests": [],
       "type": "Waypoint",
+      "isRequired": false,
       "challengeType": 7,
-      "nameEs": "Prepárate para los Proyectos de Desarrollo de Interfaces",
-      "descriptionEs": [
-        [
-          "http://i.imgur.com/OAD6SJz.png",
-          "Una imagen del juego Simón, uno de nuestros proyectos de interfaz.",
-          "Nuestros proyectos de desarrollo de interfaces te darán oportunidad de aplicar las habilidades con interfaces que has desarrollado hasta este momento.  Usaremos un editor de código basado en el navegador llamado CodePen.",
-          ""
-        ],
-        [
-          "http://i.imgur.com/WBetuBa.jpg",
-          "Un programador frustado golpeando la pantalla de su computador.",
-          "Nuestros desafíos sobre algoritmos son difíciles.  Algunos pueden requerir muchas horas para resolverse.  Podrás frustarte, pero no te rindas. Se vuelve fácil con práctica.",
-          ""
-        ],
-        [
-          "http://i.imgur.com/p2TpOQd.jpg",
-          "Un tierno perro que salta sobre un obstáculo, pica el ojo y te apunta con su pata.",
-          "Cuando te atasques, usa la metodología Leer-Buscar-Preguntar. No te preocupes -  lo tienes resuelto.",
-          ""
-        ],
-        [
-          "http://i.imgur.com/G1saeDt.gif",
-          "Un gif que muestra cómo crear una cuenta en Codepen.",
-          "Para nuestros desafíos de interfaces, usaremos un editor de código basado en el navegador que es muy famoso llamado Codepen. Pulsa en el botón de abajo \"Open link in new tab\" para abrir la página de registro de CodePen. Rellena el formulario y pulsa \"Sign up\". <br><div class=\"small\">Nota: Si ya tienes una cuenta de CodePen, puedes omitir este paso pulsando \"Open link in new tab\", cierra la nueva pestaña que se abre, entonces pulsa \"go to my next step\". Eliminamos nuestro botón \"skip step\" porque mucha gente solamente pulsa el botón sin realizar estos importantes pasos.</div>",
-          "http://codepen.io/signup/free"
-        ],
-        [
-          "http://i.imgur.com/U4y9RJ1.gif",
-          "Un gif que muestra que puedes escribir \"hello world\" en el editor, lo cual escribirá \"hello world\" en la ventana de vista previa. También puedes mover las ventanas para cambiar su tamaño, y cambiar su orientación.",
-          "En la ventana de HTML, crea un elemento h1 con el texto \"Hola mundo\". Puedes arrastrar los bordes de las ventanas para cambiar su tamaño. También puedes pulsar el botón de \"Change View\" para cambiar la orientación de las ventanas.",
-          ""
-        ],
-        [
-          "http://i.imgur.com/G9KFQDL.gif",
-          "Un gif que muestra el proceso de agregar Bootstrap a tu proyecto.",
-          "Pulsa el engrane en la esquina superior izquierda de la ventana de CSS, luego ve hacia abajo hasta donde dice \"Quick add\" y elige Bootstrap. Ahora dale a tu elemento h1 la clase \"text-primary\" para cambiar su color y verificar que Bootstrap está activado.",
-          ""
-        ]
-      ],
-      "nameRu": "Приготовьтесь к разработке фронтенд проектов",
+      "titleRu": "Приготовьтесь к разработке фронтенд проектов",
       "descriptionRu": [
         [
           "http://i.imgur.com/OAD6SJz.png",
@@ -127,12 +89,49 @@
           ""
         ]
       ],
-      "isRequired": false
+      "titleEs": "Prepárate para los Proyectos de Desarrollo de Interfaces",
+      "descriptionEs": [
+        [
+          "http://i.imgur.com/OAD6SJz.png",
+          "Una imagen del juego Simón, uno de nuestros proyectos de interfaz.",
+          "Nuestros proyectos de desarrollo de interfaces te darán oportunidad de aplicar las habilidades con interfaces que has desarrollado hasta este momento.  Usaremos un editor de código basado en el navegador llamado CodePen.",
+          ""
+        ],
+        [
+          "http://i.imgur.com/WBetuBa.jpg",
+          "Un programador frustado golpeando la pantalla de su computador.",
+          "Nuestros desafíos sobre algoritmos son difíciles.  Algunos pueden requerir muchas horas para resolverse.  Podrás frustarte, pero no te rindas. Se vuelve fácil con práctica.",
+          ""
+        ],
+        [
+          "http://i.imgur.com/p2TpOQd.jpg",
+          "Un tierno perro que salta sobre un obstáculo, pica el ojo y te apunta con su pata.",
+          "Cuando te atasques, usa la metodología Leer-Buscar-Preguntar. No te preocupes -  lo tienes resuelto.",
+          ""
+        ],
+        [
+          "http://i.imgur.com/G1saeDt.gif",
+          "Un gif que muestra cómo crear una cuenta en Codepen.",
+          "Para nuestros desafíos de interfaces, usaremos un editor de código basado en el navegador que es muy famoso llamado Codepen. Pulsa en el botón de abajo \"Open link in new tab\" para abrir la página de registro de CodePen. Rellena el formulario y pulsa \"Sign up\". <br><div class=\"small\">Nota: Si ya tienes una cuenta de CodePen, puedes omitir este paso pulsando \"Open link in new tab\", cierra la nueva pestaña que se abre, entonces pulsa \"go to my next step\". Eliminamos nuestro botón \"skip step\" porque mucha gente solamente pulsa el botón sin realizar estos importantes pasos.</div>",
+          "http://codepen.io/signup/free"
+        ],
+        [
+          "http://i.imgur.com/U4y9RJ1.gif",
+          "Un gif que muestra que puedes escribir \"hello world\" en el editor, lo cual escribirá \"hello world\" en la ventana de vista previa. También puedes mover las ventanas para cambiar su tamaño, y cambiar su orientación.",
+          "En la ventana de HTML, crea un elemento h1 con el texto \"Hola mundo\". Puedes arrastrar los bordes de las ventanas para cambiar su tamaño. También puedes pulsar el botón de \"Change View\" para cambiar la orientación de las ventanas.",
+          ""
+        ],
+        [
+          "http://i.imgur.com/G9KFQDL.gif",
+          "Un gif que muestra el proceso de agregar Bootstrap a tu proyecto.",
+          "Pulsa el engrane en la esquina superior izquierda de la ventana de CSS, luego ve hacia abajo hasta donde dice \"Quick add\" y elige Bootstrap. Ahora dale a tu elemento h1 la clase \"text-primary\" para cambiar su color y verificar que Bootstrap está activado.",
+          ""
+        ]
+      ]
     },
     {
       "id": "bd7158d8c442eddfaeb5bd18",
       "title": "Build a Tribute Page",
-      "releasedOn": "January 1, 2016",
       "description": [
         "<strong>Objective:</strong> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='http://codepen.io/FreeCodeCamp/full/wMQrXV' target='_blank'>http://codepen.io/FreeCodeCamp/full/wMQrXV</a>.",
         "<strong>Rule #1:</strong> Don't look at the example project's code. Figure it out for yourself.",
@@ -143,24 +142,15 @@
         "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen.",
         "You can get feedback on your project from fellow campers by sharing it in our <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Code Review Chatroom</a>. You can also share it on Twitter and your city's Campsite (on Facebook)."
       ],
+      "releasedOn": "January 1, 2016",
       "challengeSeed": [
         "154927651"
       ],
       "tests": [],
       "type": "zipline",
+      "isRequired": true,
       "challengeType": 3,
-      "nameEs": "Construye una página Tributo",
-      "descriptionEs": [
-        "<strong>Objetivo:</strong> Crea una aplicación con <a href='http://codepen.io' target='_blank'>CodePen.io</a> que funcionalmente sea similar a esta: <a href='http://codepen.io/FreeCodeCamp/full/wMQrXV' target='_blank'>http://codepen.io/FreeCodeCamp/full/wMQrXV</a>",
-        "<strong>Regla #1:</strong> No veas el código del proyecto de ejemplo. Encuentra la forma de hacerlo por tu cuenta.",
-        "<strong>Regla #2:</strong> Satisface las siguientes <a href='http://en.wikipedia.org/wiki/User_story' target='_blank'>historias de usuario</a>. Usa cualquier librería que necesites. Dale tu estilo personal.",
-        "<strong>Historia de usuario:</strong> Puedo ver una página tributo con una imagen y texto.",
-        "<strong>Historia de usuario:</strong> Puedo pulsar en un enlace que me llevará a un sitio web externo con mayor información sobre el tema.",
-        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado.",
-        "Cuando hayas terminado, pulsa el botón \"I've completed this challenge\" e incluye un link a tu CodePen. ",
-        "Puedes obtener retroalimentación sobre tu proyecto por parte de otros campistas, compartiéndolo en nuestra <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Sala de chat para revisión de código</a>. También puedes compartirlo en Twitter y en el campamento de tu ciudad (en Facebook)."
-      ],
-      "nameRu": "Создайте страницу посвященную тому что вас вдохновляет",
+      "titleRu": "Создайте страницу посвященную тому что вас вдохновляет",
       "descriptionRu": [
         "<strong>Задание:</strong> Создайте приложение <a href='http://codepen.io' target='_blank'>CodePen.io</a> которое функционально соответствует вот этому: <a href='http://codepen.io/FreeCodeCamp/full/wMQrXV' target='_blank'>http://codepen.io/FreeCodeCamp/full/wMQrXV</a>.",
         "<strong>Правило #1:</strong> Не подсматривайте код приведенного на CodePen примера. Напишите его самостоятельно.",
@@ -171,7 +161,17 @@
         "Когда выполните задание кликните кнопку \"I've completed this challenge\" и добавьте ссылку на ваш CodePen.",
         "Вы можете получить отзыв о вашем проекте от коллег, поделившись ссылкой на него в нашем <a href='//gitter.im/freecodecamp/codereview' target='_blank'>чате для рассмотрения кода</a>. Также вы можете поделиться ею через Twitter и на странице Free Code Camp вашего города на Facebook."
       ],
-      "isRequired": true
+      "titleEs": "Construye una página Tributo",
+      "descriptionEs": [
+        "<strong>Objetivo:</strong> Crea una aplicación con <a href='http://codepen.io' target='_blank'>CodePen.io</a> que funcionalmente sea similar a esta: <a href='http://codepen.io/FreeCodeCamp/full/wMQrXV' target='_blank'>http://codepen.io/FreeCodeCamp/full/wMQrXV</a>",
+        "<strong>Regla #1:</strong> No veas el código del proyecto de ejemplo. Encuentra la forma de hacerlo por tu cuenta.",
+        "<strong>Regla #2:</strong> Satisface las siguientes <a href='http://en.wikipedia.org/wiki/User_story' target='_blank'>historias de usuario</a>. Usa cualquier librería que necesites. Dale tu estilo personal.",
+        "<strong>Historia de usuario:</strong> Puedo ver una página tributo con una imagen y texto.",
+        "<strong>Historia de usuario:</strong> Puedo pulsar en un enlace que me llevará a un sitio web externo con mayor información sobre el tema.",
+        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado.",
+        "Cuando hayas terminado, pulsa el botón \"I've completed this challenge\" e incluye un link a tu CodePen. ",
+        "Puedes obtener retroalimentación sobre tu proyecto por parte de otros campistas, compartiéndolo en nuestra <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Sala de chat para revisión de código</a>. También puedes compartirlo en Twitter y en el campamento de tu ciudad (en Facebook)."
+      ]
     },
     {
       "id": "bd7158d8c242eddfaeb5bd13",
@@ -196,7 +196,9 @@
       ],
       "tests": [],
       "type": "zipline",
-      "nameRu": "Создайте сайт-портфолио",
+      "isRequired": true,
+      "challengeType": 3,
+      "titleRu": "Создайте сайт-портфолио",
       "descriptionRu": [
         "<strong>Задание:</strong> Создайте приложение <a href='http://codepen.io' target='_blank'>CodePen.io</a> которое функционально соответствует вот этому: <a href='http://codepen.io/FreeCodeCamp/full/VemmoX/' target='_blank'>http://codepen.io/FreeCodeCamp/full/VemmoX/</a>.",
         "<strong>Правило #1:</strong> Не подсматривайте код приведенного на CodePen примера. Напишите его самостоятельно.",
@@ -212,7 +214,7 @@
         "Когда выполните задание кликните кнопку \"I've completed this challenge\" и добавьте ссылку на ваш CodePen.",
         "Вы можете получить отзыв о вашем проекте от коллег, поделившись ссылкой на него в нашем <a href='//gitter.im/freecodecamp/codereview' target='_blank'>чате для рассмотрения кода</a>. Также вы можете поделиться ею через Twitter и на странице Free Code Camp вашего города на Facebook."
       ],
-      "nameEs": "Construye una página web para tu portafolio",
+      "titleEs": "Construye una página web para tu portafolio",
       "descriptionEs": [
         "<strong>Objetivo:</strong> Crea una aplicación con <a href='http://codepen.io' target='_blank'>CodePen.io</a> cuya funcionalidad sea similar a la de esta: <a href='http://codepen.io/FreeCodeCamp/full/VemmoX/' target='_blank'>http://codepen.io/FreeCodeCamp/full/VemmoX/</a>.",
         "<strong>Regla #1:</strong> No veas el código del proyecto de ejemplo. Encuentra la forma de hacerlo por tu cuenta.",
@@ -227,9 +229,7 @@
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado.",
         "Cuando hayas terminado, pulsa el botón \"I've completed this challenge\" e incluye un link a tu CodePen. ",
         "Puedes obtener retroalimentación sobre tu proyecto por parte de otros campistas, compartiéndolo en nuestra <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Sala de chat para revisión de código</a>. También puedes compartirlo en Twitter y en el campamento de tu ciudad (en Facebook)."
-      ],
-      "isRequired": true,
-      "challengeType": 3
+      ]
     }
   ]
 }

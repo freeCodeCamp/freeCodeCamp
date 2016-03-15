@@ -42,7 +42,6 @@
       ],
       "type": "hike",
       "challengeType": 6,
-      "nameEs": "Fundamentes básicos del computador: Las 4 partes básicas de un computador",
       "descriptionEs": [
         "Una máquina necesita por lo menos cuatro partes básicas para ser considerada un computador.",
         "Hoy vamos a hablar acerca de conceptos básicos de hardware.",
@@ -57,7 +56,8 @@
         "Ahora, la CPU tiene acceso exclusivo a esta memoria.",
         "No se puede llegar a la memoria desde la entrada o desde la salida sin el uso de la CPU.",
         "Por lo tanto, sólo para repasar, tenemos 4 partes básicas de la computadora: los dispositivos de entrada, los dispositivos de salida, la CPU y la memoria."
-      ]
+      ],
+      "titleEs": "Fundamentes básicos del computador: Las 4 partes básicas de un computador"
     },
     {
       "id": "bd7127d8c441eddfbeb5bddf",
@@ -97,7 +97,6 @@
       ],
       "type": "hike",
       "challengeType": 6,
-      "nameEs": "Fundamentos básicos del computador: Más Hardware",
       "descriptionEs": [
         "En este video cubrimos las funciones básicas de una placa base, tarjetas de expansión, y la fuente de poder.",
         "Vamos a revisar rápidamente - las 4 partes básicas de un computador son dispositivos de entrada, como el ratón o el teclado, dispositivos de salida, monitor o altavoces, la CPU, la unidad central de procesamiento, y la memoria.",
@@ -111,7 +110,8 @@
         "Por lo general es la parte que tiene un ventilador en él para evitar que se sobrecaliente.",
         "Así que vamos a hacer un repaso rápido.",
         "Además de las cuatro partes básicas dispositivos de entrada, dispositivos de salida, CPU, y la memoria, también por lo general tenemos una placa base, las tarjetas de expansión, y una fuente de poder."
-      ]
+      ],
+      "titleEs": "Fundamentos básicos del computador: Más Hardware"
     },
     {
       "id": "bd7129d8a441eddfbeb5bddf",
@@ -149,7 +149,6 @@
       ],
       "type": "hike",
       "challengeType": 6,
-      "nameEs": "Fundamentos básicos del computador: Chips y la Ley de Moore",
       "descriptionEs": [
         "Discutiremos lo que constituye un chip y por qué la tecnología se vuelve más barata cada año.",
         "En este video vamos a estar hablando sobre chips y algo que se llama la Ley de Moore.",
@@ -161,7 +160,8 @@
         "Lo que hace que estos chips sean más grandes o más rápidos es la cantidad de transistores en un solo chip.",
         "La Ley de Moore es la observación de que la cantidad de transistores que caben en un chip se ha duplicado cada dos años desde 1965.",
         "Esto es importante porque hace que la tecnología sea más económica y accesible."
-      ]
+      ],
+      "titleEs": "Fundamentos básicos del computador: Chips y la Ley de Moore"
     },
     {
       "id": "bd7126d8c441eddfbeb5bddf",
@@ -195,7 +195,6 @@
       ],
       "type": "hike",
       "challengeType": 6,
-      "nameEs": "Fundamentos básicos del computador: Introducción a código binario",
       "descriptionEs": [
         "Cómo se ve lo binario, y lo que puede significar.",
         "Los 0s y 1s pueden interpretarse como datos mucho más complejos.",
@@ -204,7 +203,8 @@
         "Aquellos 1s y 0s pueden ser casi cualquier cosa, pero por lo general son sólo números, letras y símbolos.",
         "Vamos a revisar cómo decodificar un número en binario, pero como podrás adivinar, la traducción binaria se puede hacer con una rápida búsqueda en Google.",
         "La parte más importante de esto es que entiendas el concepto de que incluso cosas simples como 1s y 0s se pueden traducir en algo muy complejo, que es la base para todos los lenguajes de programación existentes en la actualidad."
-      ]
+      ],
+      "titleEs": "Fundamentos básicos del computador: Introducción a código binario"
     },
     {
       "id": "bd7125d8c441eddfbeb5bddf",
@@ -240,7 +240,6 @@
       ],
       "type": "hike",
       "challengeType": 6,
-      "nameEs": "Fundamentos básicos del computador: decodificar un número binario",
       "descriptionEs": [
         "En este vídeo, decodificaremos un número escrito en notación binaria.",
         "Hablemos sobre el sistema de numeración binario, también conocido como un montón de 1s y 0s una y otra vez.",
@@ -251,7 +250,8 @@
         "Si hay un 1, dejamos el número (2 a la potencia de la posición) y lo agregamos a los números de otras posiciones que estén en  \"1\" o \"encendidas\".",
         "Si es un 0, hacemos caso omiso del número de esa posición.",
         "En este video, la suma de los números da 75."
-      ]
+      ],
+      "titleEs": "Fundamentos básicos del computador: decodificar un número binario"
     },
     {
       "id": "bd7124d8c441eddfbeb5bddf",
@@ -290,7 +290,6 @@
       ],
       "type": "hike",
       "challengeType": 6,
-      "nameEs": "Fundamentos básicos del computador: Cómo medir el tamaño de los datos",
       "descriptionEs": [
         "¿Cómo se mide el tamaño/cantidad de datos, a partir de un bit y continuando hasta un petabyte.",
         "Hoy vamos a estar hablando de tamaño de los datos.",
@@ -304,7 +303,8 @@
         "Después de eso no hay Megabyte, o 1024 bytes a la potencia de dos.",
         "Entonces es Gigabyte, 1024 Bytes a la tercera potencia; Terabyte, 1024 bytes a la cuarta potencia y petabyte que es 1024 a la quinta potencia.",
         "!Crecieron realmente rápidamente!"
-      ]
+      ],
+      "titleEs": "Fundamentos básicos del computador: Cómo medir el tamaño de los datos"
     },
     {
       "id": "bd7123d8c441eddfbeb5bddf",
@@ -338,7 +338,6 @@
       ],
       "type": "hike",
       "challengeType": 6,
-      "nameEs": "Fundamentos básicos del computador: medición de la velocidad de datos",
       "descriptionEs": [
         "La velocidad de datos y el tamaño de los datos se miden de manera diferente.",
         "En este video, cubrimos cómo se mide la velocidad de los datos.",
@@ -351,7 +350,8 @@
         "En la velocidad de red, hablamos de gigabits por segundo (¡mil millones de bits por segundo!).",
         "La conclusión principal es que la velocidad se mide generalmente en bits mientras que el tamaño se mide en bytes.",
         "Además, si tienes una velocidad de internet de cierta cantidad de bits por segundo, ten en cuenta que te están hablando de algo que es la octava parte de la cantidad en bytes, que es la manera típica como mides tamaños de datos."
-      ]
+      ],
+      "titleEs": "Fundamentos básicos del computador: medición de la velocidad de datos"
     },
     {
       "id": "bd7122d8c441eddfbeb5bddf",
@@ -385,7 +385,6 @@
       ],
       "type": "hike",
       "challengeType": 6,
-      "nameEs": "Fundamentos básicos del computador: Bytes en binario",
       "descriptionEs": [
         "En binario se puede hacer más que representar números - mediante bytes, puede simbolizar todos los símbolos alfanuméricos, los cuales pueden ser interpretados en códigos más complejos",
         "Vamos a hablar sobre el nivel más básico que un computador puede comprender otros lenguajes como JavaScript.",
@@ -394,7 +393,8 @@
         "Todos los números (255 y menos), las letras y símbolos se pueden traducir en bytes que el computador puede entender.",
         "Por lo tanto, todos los números, letras y símbolos en su código JavaScript se puede traducir.",
         "Hay una gran cantidad de lenguajes con los cuales los computadores pueden operar, y lo que quiero que te quede de este video es que todos los datos en tu computador se reducen a bytes binarios."
-      ]
+      ],
+      "titleEs": "Fundamentos básicos del computador: Bytes en binario"
     },
     {
       "id": "bd7121d8c441eddfbeb5bddf",
@@ -433,7 +433,6 @@
       ],
       "type": "hike",
       "challengeType": 6,
-      "nameEs": "Fundamentos básicos del computador: Tipos de Computadores",
       "descriptionEs": [
         "Este video cubre los conceptos básicos de los supercomputadores, servidores, estaciones de trabajo, PC y microcontroladores.",
         "Vamos a discutir los diferentes tipos de computadores.",
@@ -447,7 +446,8 @@
         "Tal vez has oído \"¡Soy un Mac!\" o \"¡Soy un PC!\", Algo que indica que son diferentes, pero en realidad mi propio MacBook personal sigue siendo un PC, un computador personal.",
         "Es a la vez un Mac y un PC.",
         "El último tipo de equipo del que hablaremos es un microcontrolador, el tipo de equipo que puedes tener en tu carro que es realmente bueno en una pequeña tarea especializada, pero no se utilizaría la misma forma que un PC."
-      ]
+      ],
+      "titleEs": "Fundamentos básicos del computador: Tipos de Computadores"
     },
     {
       "id": "bd7120d8c441eddfbeb5bddf",
@@ -488,7 +488,6 @@
       ],
       "type": "hike",
       "challengeType": 6,
-      "nameEs": "Fundamentos básicos del computador: Más sobre la placa base",
       "descriptionEs": [
         "Un poco más de detalle sobre lo que constituye una placa base y sus funciones estándar en un computador.",
         "Hoy vamos a hablar más sobre la placa base.",
@@ -504,7 +503,8 @@
         "Además de las ranuras de expansión, las placas base tienen puertos.",
         "En tu computador, probablemente sabes que hay un lugar para conectar USB, FireWire, tarjeta SD, Ethernet, e incluso un plug-in de audio para escuchar a través de auriculares.",
         "Todos estos son considerados puertos, un lugar en la placa base donde puedes conectar la CPU a algun dispositivo externo bien para obtener o para dar información."
-      ]
+      ],
+      "titleEs": "Fundamentos básicos del computador: Más sobre la placa base"
     },
     {
       "id": "bd712fd8c441eddfbeb5bddf",
@@ -545,7 +545,6 @@
       ],
       "type": "hike",
       "challengeType": 6,
-      "nameEs": "Fundamentos básicos del computador: Redes de datos",
       "descriptionEs": [
         "Este video cubre los conceptos básicos de redes de área local, redes de área amplia y redes privadas virtuales.",
         "En este vídeo se habla de redes de datos.",
@@ -560,7 +559,8 @@
         "Podrían utilizar una WAN.",
         "Podrías pensar que estas es posible conectarlas usando Internet, y en el caso de una VPN (red privada virtual, que conceptualmente es básicamente lo mismo que una una WAN), tendrías la razón.",
         "Sin embargo, por lo general una WAN alquila un cable de una empresa de Internet para crear la conexión."
-      ]
+      ],
+      "titleEs": "Fundamentos básicos del computador: Redes de datos"
     },
     {
       "id": "bd712ed8c441eddfbeb5bddf",
@@ -594,7 +594,6 @@
       ],
       "type": "hike",
       "challengeType": 6,
-      "nameEs": "Fundamentos básicos del computador: Direcciones IP",
       "descriptionEs": [
         "Cada dispositivo tiene una dirección IP.",
         "Las direcciones IP se asignan en función de la ubicación, y son vitales para que Internet funcione.",
@@ -608,7 +607,8 @@
         "Este número no es lo suficientemente específico como para que llames al 911, les des tu dirección IP, y así les permitas saber donde vives.",
         "Sin embargo, es lo suficientemente específico como para buscar en Google \"¿Dónde está el mejor helado cerca de mí\" y Google podría darte información cercana a tu ubicación.",
         "Esto se hace utilizando tu dirección IP."
-      ]
+      ],
+      "titleEs": "Fundamentos básicos del computador: Direcciones IP"
     },
     {
       "id": "bd712dd8c441eddfbeb5bddf",
@@ -644,7 +644,6 @@
       ],
       "type": "hike",
       "challengeType": 6,
-      "nameEs": "Fundamentos básicos del computador: ¿Cómo funciona Internet",
       "descriptionEs": [
         "Esta es una descripción breve y descripción de cómo funciona Internet.",
         "Para una explicación más en profundidad, dale un vistazo a web.stanford.edu/class/msande91si/www-spr04/readings/week1/InternetWhitepaper.htm",
@@ -659,7 +658,8 @@
         "Lo que quiero que te lleves de este video es que tu dispositivo, que tiene una dirección IP, puede enviar una petición de información, y que esa información regresará a tu dispositivo por medio de servidores y enrutadores que componen el Internet.",
         "Ahora bien, esta explicación es realmente básica.",
         "Para obtener más información, echa un vistazo a web.stanford.edu/class/msande91si/www-spr04/readings/week1/InternetWhitepaper.htm."
-      ]
+      ],
+      "titleEs": "Fundamentos básicos del computador: ¿Cómo funciona Internet"
     },
     {
       "id": "bd712cd8c441eddfbeb5bddf",
@@ -685,7 +685,6 @@
       ],
       "type": "hike",
       "challengeType": 6,
-      "nameEs": "Fundamentos básicos del computador: Software",
       "descriptionEs": [
         "Diferenciamos entre hardware y software, y también discutimos las diferencias entre el sistema operativo y el software de aplicación.",
         "En este video, vamos a discutir los fundamentos del software.",
@@ -695,7 +694,8 @@
         "Los dos tipos de software de los cuales vamos a hablar hoy son el sistema operativo y las aplicaciones.",
         "Hay tres sistemas operativos principales: Windows, Mac y Linux.",
         "Las aplicaciones comprenden el resto del software, como tu navegador web, juegos, cosas como Photoshop, con lo que ves tu correo, o con lo que editas documentos, etc."
-      ]
+      ],
+      "titleEs": "Fundamentos básicos del computador: Software"
     },
     {
       "id": "56b15f15632298c12f31510f",
@@ -729,7 +729,6 @@
       ],
       "type": "hike",
       "challengeType": 6,
-      "nameEs": "Fundamentos básicos del computador: Redes de distribución de contenido",
       "descriptionEs": [
         "Una red de distribución de contenido  (del inglés <em>Content Delivery Network</em>) es un sistema (red) de servidores distribuidos que sirven páginas web y otros contenidos web a los usuarios en función de su ubicación geográfica, el origen de la página web y un servidor de entrega de contenido.",
         "El objetivo de una RDC (CDN) es establecer conexiones de red de mayor calidad.",
@@ -742,7 +741,8 @@
         "Como usuario, es probable que utilices RDC  todo el tiempo sin darte cuenta.",
         "Como desarrollador, es posible que desees utilizar RDCs como las bibliotecas de Google para ayudar a que tu página cargue más rápido.",
         "Como empresa, una RDC sería útil si quieres que tu producto o sitio llegue a los usuarios de manera más eficiente en el esquema más grande de su red y en Internet en su conjunto."
-      ]
+      ],
+      "titleEs": "Fundamentos básicos del computador: Redes de distribución de contenido"
     },
     {
       "id": "bd7129d80441eddfbeb5bddf",
@@ -778,7 +778,6 @@
       ],
       "type": "hike",
       "challengeType": 6,
-      "nameEs": "Analógico vs digital y compresión de archivos",
       "descriptionEs": [
         "¿Cómo los computadores pueden volver sonido analógico en archivos digitales, y los pros y los contras de la compresión de datos?",
         "Vamos a discutir datos anàlogos frente a datos digitales en un nivel muy básico.",
@@ -793,7 +792,8 @@
         "Otra forma es tomando una medida desde un punto medio y no desde 0, de forma que los número registrados sean más pequeños.",
         "En imágenes, se hace midiendo grupos de a 16 píxeles en lugar de hacer mediciones individuales.",
         "Lo que te llevas de este video es que querrás utilizar archivos digitales pues son de mayor calidad, y cuando te fijes en compresión, tendrás que decidir qué tan lejos estás dispuesto a ir para garantizar que el usuario tenga la mejor experiencia posible."
-      ]
+      ],
+      "titleEs": "Analógico vs digital y compresión de archivos"
     },
     {
       "id": "bd7129d8b441eddfbeb5bddf",
@@ -845,7 +845,6 @@
       ],
       "type": "hike",
       "challengeType": 6,
-      "nameEs": "Enrutadores y paquetes",
       "descriptionEs": [
         "En este video, vamos a entrar en más detalle respecto a enrutadores y paquetes, conceptos importantes para entender cómo funciona Internet.",
         "Vamos a hablar más acerca de los enrutadores y cómo se relacionan con la creación de redes.",
@@ -871,7 +870,8 @@
         "Las tramas no tienen que recorrer la misma ruta hasta el destino final.",
         "Pueden tomar cualquier ruta abierta, la que sea más rápida, y dado que tienen la dirección IP final, todos los enrutadores saben dónde enviarlos.",
         "Una vez que llegan al destino final, ese computador sabe cómo poner junta toda la información."
-      ]
+      ],
+      "titleEs": "Enrutadores y paquetes"
     },
     {
       "id": "bd7029d8c441eddfbeb5bddf",
@@ -916,7 +916,6 @@
       ],
       "type": "hike",
       "challengeType": 6,
-      "nameEs": "Código Fuente",
       "descriptionEs": [
         "En este video se discute lo que es código fuente, intérpretes y compiladores, y lo que significa fuentes abiertas.",
         "Vamos a hablar sobre el código fuente: lo que el código fuente es, donde lo puedes ver, y cómo el computador lo entiende.",
@@ -936,7 +935,8 @@
         "Podrías preguntarte, \"¿y eso qué?\", pero lo que es increíble es que si deseas cambiar o mejorar FreeCodeCamp, puedes describir la mejora y tal vez implementarla.",
         "Es una gran manera para los sitios web y para el software de crecer de forma fuerte y rápida debido a la comunidad que trabaja en conjunto para mejorarlo.",
         "Una regla no escrita al contribuir a proyectos de fuentes abiertas es que en general deberías compartir tus mejoras para que también sean de fuentes abiertas, y al retornar esa mejora al público también les permites a otros utilizar tus mejoras."
-      ]
+      ],
+      "titleEs": "Código Fuente"
     },
     {
       "id": "bd7119d8c441eddfbeb5bddf",
@@ -966,7 +966,6 @@
       ],
       "type": "hike",
       "challengeType": 6,
-      "nameEs": "Las variables en el código",
       "descriptionEs": [
         "Las variables se utilizan con frecuencia en Javascript y  en muchos otros lenguajes de programación.",
         "En este video, vamos a hablar acerca de las variables en el código.",
@@ -975,7 +974,8 @@
         "Cuando se ejecute <code>console.log(x)</code> presentará \"Briana\".",
         "Pero ten cuidado - si pones <code>console.log(\"x\")</code>, con la <code>x</code> entre comillas, se presentará la \"x\".",
         "Lo que yo quiero que te lleves con este video es que existen las variables en el código, y que puedes almacenar todo, desde una simple cadena hasta una función, todo con un simple nombre."
-      ]
+      ],
+      "titleEs": "Las variables en el código"
     },
     {
       "id": "bd712bd8c441eddfbeb5bddf",
@@ -1012,7 +1012,6 @@
       ],
       "type": "hike",
       "challengeType": 6,
-      "nameEs": "¿Qué hacen los programadores?",
       "descriptionEs": [
         "Los programadores (también conocidos como codificadores, desarrolladores, o ingenieros de software) resuelven problemas convirtiendo grandes ideas en pequeños pasos que un computador puede entender.",
         "En este video, vamos a discutir lo que hacen  los programadores.",
@@ -1024,7 +1023,8 @@
         "Todo se hace secuencialmente, de manera directa, por lo que hacer referencia a algo que está por debajo y que todavía no ha sucedido dará lugar a un problema.",
         "Los computadores sólo leen de arriba hacía abajo, como tu leerías un libro.",
         "Los programadores son los responsables de dividir sus ideas en  pequeños pasos y escribirlos de una manera que las computadoras pueden entenderlos."
-      ]
+      ],
+      "titleEs": "¿Qué hacen los programadores?"
     },
     {
       "id": "bd712ad8c441eddfbeb5bddf",
@@ -1110,8 +1110,7 @@
         ]
       ],
       "type": "hike",
-      "challengeType": 6, 
-      "nameEs": "Seguridad en los computadores",
+      "challengeType": 6,
       "descriptionEs": [
         "Lo fundamental de la seguridad en los computadores y cómo proteger su información.",
         "Echemos una mirada a la seguridad en los computadores.",
@@ -1140,7 +1139,8 @@
         "Una de las formas en que se puede comprometer tu información es cuando los 'los chicos malos' encuentran huecos en las versiones viejas de los programas",
         "Estos defectos se corrigen en las versiones nuevas, por lo que evitarás problemas si mantienes el software actualizado.",
         "Estas son algunas cosas muy básicas que debes saber acerca de cómo proteger la información de tu computador."
-      ]
+      ],
+      "titleEs": "Seguridad en los computadores"
     }
   ]
 }

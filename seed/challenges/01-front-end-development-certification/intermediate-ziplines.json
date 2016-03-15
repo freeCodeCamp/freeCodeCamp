@@ -22,7 +22,6 @@
       ],
       "tests": [],
       "type": "zipline",
-      "nameRu": "Создайте генератор случайных цитат",
       "descriptionRu": [
         "<span class='text-info'>Задание:</span> Создайте <a href='http://codepen.io' target='_blank'>CodePen.io</a> который успешно копирует вот этот: <a href='http://codepen.io/FreeCodeCamp/full/bELoPJ' target='_blank'>http://codepen.io/FreeCodeCamp/full/bELoPJ</a>.",
         "<span class='text-info'>Правило #1:</span> Не подсматривайте код приведенного на CodePen примера. Напишите его самостоятельно.",
@@ -36,7 +35,6 @@
         "Когда выполните задание кликните кнопку \"I've completed this challenge\" и добавьте ссылку на ваш CodePen. Если вы программировали с кем-то в паре, также добавьте имя вашего напарника.",
         "Если вы хотите получить немедленную оценку вашего проекта, нажмите эту кнопку и добавьте ссылку на ваш CodePen. В противном случае мы проверим его перед тем как вы приступите к проектам для некоммерческих организаций.<br><br><a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Click here then add your link to your tweet's text</a>"
       ],
-      "nameEs": "Crea una máquina de frases aleatorias",
       "descriptionEs": [
         "<span class='text-info'>Objetivo:</span> Crea una aplicación con <a href='http://codepen.io' target='_blank'>CodePen.io</a> cuya funcionalidad sea similar a la de esta: <a href='http://codepen.io/FreeCodeCamp/full/bELoPJ' target='_blank'>http://codepen.io/FreeCodeCamp/full/bELoPJ</a>.",
         "<span class='text-info'>Regla #1:</span> No veas el código del proyecto de ejemplo en CodePen. Encuentra la forma de hacerlo por tu cuenta.",
@@ -48,7 +46,9 @@
         "Puedes obtener retroalimentación sobre tu proyecto por parte de otros campistas, compartiendolo en nuestra <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Sala de chat para revisión de código</a>. También puedes compartirlo en Twitter y en el campamento de tu ciudad (en Facebook)."
       ],
       "isRequired": true,
-      "challengeType": 3
+      "challengeType": 3,
+      "titleRu": "Создайте генератор случайных цитат",
+      "titleEs": "Crea una máquina de frases aleatorias"
     },
     {
       "id": "bd7158d8c442eddfaeb5bd10",
@@ -71,7 +71,6 @@
       "tests": [],
       "type": "zipline",
       "challengeType": 3,
-      "nameRu": "Покажите местную погоду",
       "descriptionRu": [
         "<span class='text-info'>Задание:</span> Создайте <a href='http://codepen.io' target='_blank'>CodePen.io</a> который успешно копирует вот этот: <a href='http://codepen.io/FreeCodeCamp/full/bELRjV' target='_blank'>http://codepen.io/FreeCodeCamp/full/bELRjV</a>.",
         "<span class='text-info'>Правило #1:</span> Не подсматривайте код приведенного на CodePen примера. Напишите его самостоятельно.",
@@ -86,7 +85,6 @@
         "Когда выполните задание кликните кнопку \"I've completed this challenge\" и добавьте ссылку на ваш CodePen. Если вы программировали с кем-то в паре, также добавьте имя вашего напарника.",
         "Если вы хотите получить немедленную оценку вашего проекта, нажмите эту кнопку и добавьте ссылку на ваш CodePen. В противном случае мы проверим его перед тем как вы приступите к проектам для некоммерческих организаций.<br><br><a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Click here then add your link to your tweet's text</a>"
       ],
-      "nameEs": "Muestra el clima local",
       "descriptionEs": [
         "<span class='text-info'>Objetivo:</span> Crea una aplicación con <a href='http://codepen.io' target='_blank'>CodePen.io</a> cuya funcionalidad sea similar a la de esta: <a href='http://codepen.io/FreeCodeCamp/full/bELRjV' target='_blank'>http://codepen.io/FreeCodeCamp/full/bELRjV</a>.",
         "<span class='text-info'>Regla #1:</span> No veas el código del proyecto de ejemplo en CodePen. Encuentra la forma de hacerlo por tu cuenta.",
@@ -94,12 +92,14 @@
         "<span class='text-info'>Historia de usuario:</span> Pedo obtener información acerca del clima en mi localización actual.",
         "<span class='text-info'>Historia de usuario:</span> Puedo ver un icono diferente o una imagen de fondo diferente (e.g. montaña con nieve, desierto caliente) dependiendo del clima.",
         "<span class='text-info'>Historia de usuario:</span> Puedo pulsar un botón para cambiar la unidad de temperatura de grados Fahrenheit a Celsius y viceversa.",
-       "Recomendamos utilizar <a href='http://openweathermap.org/current#geo' target='_blank'>Open Weather API</a>. Al utilizarlo tendrás que crear una llave API gratuita. Normalmente debes evitar exponer llaves de API en CodePen, pero por el momento no hemos encontrado un API de clima que no requiera llave.",
+        "Recomendamos utilizar <a href='http://openweathermap.org/current#geo' target='_blank'>Open Weather API</a>. Al utilizarlo tendrás que crear una llave API gratuita. Normalmente debes evitar exponer llaves de API en CodePen, pero por el momento no hemos encontrado un API de clima que no requiera llave.",
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado.",
         "Cuando hayas terminado, pulsa el botón de \"I've completed this challenge\" e incluye un enlace a tu CodePen.",
         "Puedes obtener retroalimentación sobre tu proyecto por parte de otros campistas, compartiendolo en nuestra <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Sala de chat para revisión de código</a>. También puedes compartirlo en Twitter y en el campamento de tu ciudad (en Facebook)."
       ],
-      "isRequired": true
+      "isRequired": true,
+      "titleRu": "Покажите местную погоду",
+      "titleEs": "Muestra el clima local"
     },
     {
       "id": "bd7158d8c442eddfaeb5bd19",
@@ -123,13 +123,11 @@
       "tests": [],
       "type": "zipline",
       "challengeType": 3,
-      "nameEs": "Crea un buscador de Wikipedia",
       "descriptionEs": [
         "<span class='text-info'>Objetivo:</span> Crea una aplicación con <a href='http://codepen.io' target='_blank'>CodePen.io</a> cuya funcionalidad sea similar a la de esta: <a href='http://codepen.io/FreeCodeCamp/full/pgNRvJ' target='_blank'>http://codepen.io/FreeCodeCamp/full/pgNRvJ</a>.",
         "<span class='text-info'>Regla #1:</span> No veas el código del proyecto de ejemplo en CodePen. Encuentra la forma de hacerlo por tu cuenta.",
         "<span class='text-info'>Regla #2:</span> Satisface las siguientes <a href='http://en.wikipedia.org/wiki/User_story' target='_blank'>historias de usuario</a>. Usa cualquier librería o APIs que necesites. Dale tu estilo personal.",
-
-          "<span class='text-info'>Historia de usuario:</span> Pedo obtener información acerca del clima en mi localización actual.",
+        "<span class='text-info'>Historia de usuario:</span> Pedo obtener información acerca del clima en mi localización actual.",
         "<span class='text-info'>Historia de usuario:</span> Puedo ver un icono diferente o una imagen de fondo diferente (e.g. montaña con nieve, desierto caliente) dependiendo del clima.",
         "<span class='text-info'>Historia de usuario:</span> Puedo pulsar un botón para cambiar la unidad de temperatura de grados Fahrenheit a Celsius y viceversa.",
         "<span class='text-info'>Historia de usuario:</span> Puedo buscar entradas en Wikipedia en un cuadro de búsqueda y ver las entradas de Wikipedia resultantes.",
@@ -141,7 +139,8 @@
         "Cuando hayas terminado, pulsa el botón de \"I've completed this challenge\" e incluye un enlace a tu CodePen.",
         "Puedes obtener retroalimentación sobre tu proyecto por parte de otros campistas, compartiendolo en nuestra <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Sala de chat para revisión de código</a>. También puedes compartirlo en Twitter y en el campamento de tu ciudad (en Facebook)."
       ],
-      "isRequired": true
+      "isRequired": true,
+      "titleEs": "Crea un buscador de Wikipedia"
     },
     {
       "id": "bd7158d8c442eddfaeb5bd1f",
@@ -167,7 +166,6 @@
       "tests": [],
       "type": "zipline",
       "challengeType": 3,
-      "nameRu": "Используйте Twitch.tv JSON API",
       "descriptionRu": [
         "<span class='text-info'>Задание:</span> Создайте <a href='http://codepen.io' target='_blank'>CodePen.io</a> который успешно копирует вот этот: <a href='http://codepen.io/FreeCodeCamp/full/adBpOw' target='_blank'>http://codepen.io/FreeCodeCamp/full/adBpOw</a>.",
         "<span class='text-info'>Правило #1:</span> Не подсматривайте код приведенного на CodePen примера. Напишите его самостоятельно.",
@@ -186,7 +184,6 @@
         "Когда выполните задание кликните кнопку \"I've completed this challenge\" и добавьте ссылку на ваш CodePen. Если вы программировали с кем-то в паре, также добавьте имя вашего напарника.",
         "Если вы хотите получить немедленную оценку вашего проекта, нажмите эту кнопку и добавьте ссылку на ваш CodePen. В противном случае мы проверим его перед тем как вы приступите к проектам для некоммерческих организаций.<br><br><a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Click here then add your link to your tweet's text</a>"
       ],
-      "nameEs": "Usa el API JSON de Twitch.tv",
       "descriptionEs": [
         "<span class='text-info'>Objetivo:</span> Crea una aplicación con <a href='http://codepen.io' target='_blank'>CodePen.io</a> cuya funcionalidad sea similar a la de esta: <a href='http://codepen.io/FreeCodeCamp/full/adBpOw' target='_blank'>http://codepen.io/FreeCodeCamp/full/adBpOw</a>.",
         "<span class='text-info'>Regla #1:</span> No veas el código del proyecto de ejemplo en CodePen. Encuentra la forma de hacerlo por tu cuenta.",
@@ -202,7 +199,9 @@
         "Cuando hayas terminado, pulsa el botón de \"I've completed this challenge\" e incluye un enlace a tu CodePen.",
         "Puedes obtener retroalimentación sobre tu proyecto por parte de otros campistas, compartiendolo en nuestra <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Sala de chat para revisión de código</a>. También puedes compartirlo en Twitter y en el campamento de tu ciudad (en Facebook)."
       ],
-      "isRequired": true
+      "isRequired": true,
+      "titleRu": "Используйте Twitch.tv JSON API",
+      "titleEs": "Usa el API JSON de Twitch.tv"
     }
   ]
 }

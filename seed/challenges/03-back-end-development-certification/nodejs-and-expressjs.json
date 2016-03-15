@@ -42,7 +42,7 @@
       "tests": [],
       "type": "waypoint",
       "challengeType": 2,
-      "nameEs": "Administrando paquetes con NPM",
+      "titleEs": "Administrando paquetes con NPM",
       "descriptionEs": [
         "Haremos este desafío en Cloud 9, un poderoso editor en línea con un ambiente de trabajo Ubuntu Linux completo, corriendo totalmente en la nube.",
         "Si todavía no tienes una cuenta en Cloud 9, crea una ahora en <a href='http://c9.io' target='_blank'>http://c9.io</a>.",
@@ -105,7 +105,7 @@
       "tests": [],
       "type": "waypoint",
       "challengeType": 2,
-      "nameEs": "Inicia un servidor en Node.js",
+      "titleEs": "Inicia un servidor en Node.js",
       "descriptionEs": [
         "Haremos este desafío en Cloud 9, un poderoso editor en línea con un ambiente de trabajo Ubuntu Linux completo, corriendo totalmente en la nube.",
         "Si todavía no tienes una cuenta en Cloud 9, crea una ahora en <a href='http://c9.io' target='_blank'>http://c9.io</a>.",
@@ -149,7 +149,7 @@
       "tests": [],
       "type": "waypoint",
       "challengeType": 2,
-      "nameEs": "Continuemos trabajando con servidores en Node.js",
+      "titleEs": "Continuemos trabajando con servidores en Node.js",
       "descriptionEs": [
         "Sigamos con el desafío de LearnYouNode de Node School. Para este Waypoint, trabajaremos con las lecciones 11 a 13.",
         "Asegúrate de que siempre te encuentres en el directorio \"workspace\" de tu proyecto. Puedes regresar a este directorio cuando quieras usando el comando: <code>cd ~/workspace</code>.",
@@ -180,7 +180,7 @@
       "tests": [],
       "type": "waypoint",
       "challengeType": 2,
-      "nameEs": "Terminemos de trabajar con servidores en Node.js",
+      "titleEs": "Terminemos de trabajar con servidores en Node.js",
       "descriptionEs": [
         "Sigamos con el desafío de LearnYouNode de Node School. Para este Waypoint, trabajaremos con las lecciones 11 a 13.",
         "Asegúrate de que siempre te encuentres en el directorio \"workspace\" de tu proyecto. Puedes regresar a este directorio cuando quieras usando el comando: <code>cd ~/workspace</code>.",
@@ -225,7 +225,7 @@
       "tests": [],
       "type": "waypoint",
       "challengeType": 2,
-      "nameEs": "Creando Web Apps con Express.js",
+      "titleEs": "Creando Web Apps con Express.js",
       "descriptionEs": [
         "Haremos este desafío en Cloud 9, un poderoso editor en línea con un ambiente de trabajo Ubuntu Linux completo, corriendo totalmente en la nube.",
         "Si todavía no tienes una cuenta en Cloud 9, crea una ahora en <a href='http://c9.io' target='_blank'>http://c9.io</a>.",

@@ -24,7 +24,6 @@
       "tests": [],
       "type": "zipline",
       "challengeType": 3,
-      "nameEs": "Crea una calculadora JavaScript",
       "descriptionEs": [
         "<span class='text-info'>Objetivo:</span> Crea una aplicación con <a href='http://codepen.io' target='_blank'>CodePen.io</a> cuya funcionalidad sea similar a esta: <a href='http://codepen.io/FreeCodeCamp/full/zrRzMR' target='_blank'>http://codepen.io/FreeCodeCamp/full/zrRzMR</a>.",
         "<span class='text-info'>Regla #1:</span> No veas el código del proyecto de ejemplo en CodePen. Encuentra la forma de hacerlo por tu cuenta.",
@@ -36,7 +35,8 @@
         "Cuando hayas terminado, pulsa el botón de \"I've completed this challenge\" e incluye un enlace a tu CodePen. ",
         "Puedes obtener retroalimentación sobre tu proyecto por parte de otros campistas, compartiéndolo en nuestra <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Sala de chat para revisión de código</a>. También puedes compartirlo en Twitter y en el campamento de tu ciudad (en Facebook)."
       ],
-      "isRequired": true
+      "isRequired": true,
+      "titleEs": "Crea una calculadora JavaScript"
     },
     {
       "id": "bd7158d8c442eddfaeb5bd0f",
@@ -57,7 +57,9 @@
       ],
       "tests": [],
       "type": "zipline",
-      "nameRu": "Создайте таймер Pomodoro",
+      "isRequired": true,
+      "challengeType": 3,
+      "titleRu": "Создайте таймер Pomodoro",
       "descriptionRu": [
         "<span class='text-info'>Задание:</span> Создайте <a href='http://codepen.io' target='_blank'>CodePen.io</a> который успешно копирует вот этот: <a href='http://codepen.io/FreeCodeCamp/full/VemPZX' target='_blank'>http://codepen.io/FreeCodeCamp/full/VemPZX</a>.",
         "<span class='text-info'>Правило #1:</span> Не подсматривайте код приведенного на CodePen примера. Напишите его самостоятельно.",
@@ -71,7 +73,7 @@
         "Когда выполните задание кликните кнопку \"I've completed this challenge\" и добавьте ссылку на ваш CodePen. Если вы программировали с кем-то в паре, также добавьте имя вашего напарника.",
         "Если вы хотите получить немедленную оценку вашего проекта, нажмите эту кнопку и добавьте ссылку на ваш CodePen. В противном случае мы проверим его перед тем как вы приступите к проектам для некоммерческих организаций.<br><br><a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Click here then add your link to your tweet's text</a>"
       ],
-      "nameEs": "Crea un reloj pomodoro",
+      "titleEs": "Crea un reloj pomodoro",
       "descriptionEs": [
         "<span class='text-info'>Objetivo:</span> Crea una aplicación con <a href='http://codepen.io' target='_blank'>CodePen.io</a> cuya funcionalidad sea similar a la de esta: <a href='http://codepen.io/FreeCodeCamp/full/VemPZX' target='_blank'>http://codepen.io/FreeCodeCamp/full/VemPZX</a>.",
         "<span class='text-info'>Regla #1:</span> No veas el código del proyecto de ejemplo en CodePen. Encuentra la forma de hacerlo por tu cuenta.",
@@ -82,9 +84,7 @@
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado.",
         "Cuando hayas terminado, pulsa el botón de \"I've completed this challenge\" e incluye un enlace a tu CodePen.",
         "Puedes obtener retroalimentación sobre tu proyecto por parte de otros campistas, compartiéndolo en nuestra <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Sala de chat para revisión de código</a>. También puedes compartirlo en Twitter y en el campamento de tu ciudad (en Facebook)."
-      ],
-      "isRequired": true,
-      "challengeType": 3
+      ]
     },
     {
       "id": "bd7158d8c442eedfaeb5bd1c",
@@ -106,7 +106,6 @@
       "tests": [],
       "type": "zipline",
       "challengeType": 3,
-      "nameEs": "Crea un juego de Tic Tac Toe",
       "descriptionEs": [
         "<span class='text-info'>Objetivo:</span> Construye una aplicación en <a href='http://codepen.io' target='_blank'>CodePen.io</a> cuya funcionalidad sea similar a la de esta: <a href='http://codepen.io/FreeCodeCamp/full/adBpvw' target='_blank'>http://codepen.io/FreeCodeCamp/full/adBpvw</a>.",
         "<span class='text-info'>Regla #1:</span> No veas el código del proyecto de ejemplo en CodePen. Encuentra la forma de hacerlo por tu cuenta.",
@@ -118,7 +117,8 @@
         "Cuando hayas terminado, pulsa el botón de \"I've completed this challenge\" e incluye un enlace a tu CodePen.",
         "Puedes obtener retroalimentación sobre tu proyecto por parte de otros campistas, compartiéndolo en nuestra <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Sala de chat para revisión de código</a>. También puedes compartirlo en Twitter y en el campamento de tu ciudad (en Facebook)."
       ],
-      "isRequired": true
+      "isRequired": true,
+      "titleEs": "Crea un juego de Tic Tac Toe"
     },
     {
       "id": "bd7158d8c442eddfaeb5bd1c",
@@ -146,7 +146,6 @@
       "tests": [],
       "type": "zipline",
       "challengeType": 3,
-      "nameEs": "Construye un juego de Simon",
       "descriptionEs": [
         "<span class='text-info'>Objetivo:</span> Construye una aplicación en <a href='http://codepen.io' target='_blank'>CodePen.io</a> cuya funcionalidad sea similar a la de esta: <a href='http://codepen.io/Em-Ant/full/QbRyqq/' target='_blank'>http://codepen.io/Em-Ant/full/QbRyqq/</a>.",
         "<span class='text-info'>Regla #1:</span> No veas el código del proyecto de ejemplo en CodePen. Encuentra la forma de hacerlo por tu cuenta.",
@@ -164,7 +163,8 @@
         "Cuando hayas terminado, pulsa el botón de \"I've completed this challenge\" e incluye un enlace a tu CodePen.",
         "Puedes obtener retroalimentación sobre tu proyecto por parte de otros campistas, compartiéndolo en nuestra <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Sala de chat para revisión de código</a>. También puedes compartirlo en Twitter y en el campamento de tu ciudad (en Facebook)."
       ],
-      "isRequired": true
+      "isRequired": true,
+      "titleEs": "Construye un juego de Simon"
     }
   ]
 }
