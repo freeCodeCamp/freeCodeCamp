@@ -248,7 +248,7 @@ module.exports = function(app) {
     return res.redirect('/' + username);
   }
 
-  function getSettings(req, res, next) {
+  function getSettings(req, res) {
     res.render('account/settings');
   }
 
@@ -420,10 +420,12 @@ module.exports = function(app) {
   function toggleLockdownMode(req, res, next) {
     return User.findById(req.accessToken.userId, function(err, user) {
       if (err) { return next(err); }
-      user.updateAttribute('isLocked', typeof user.isLocked !== "undefined" ? !user.isLocked : true, function(err) {
+      return user.updateAttribute('isLocked', !user.isLocked, function(err) {
         if (err) { return next(err); }
-        req.flash('info', { msg: 'We\'ve successfully updated your Privacy preferences.' });
-        res.redirect('/settings');
+        req.flash('info', {
+          msg: 'We\'ve successfully updated your Privacy preferences.'
+        });
+        return res.redirect('/settings');
       });
     });
   }
@@ -431,32 +433,46 @@ module.exports = function(app) {
   function toggleReceivesAnnouncementEmails(req, res, next) {
     return User.findById(req.accessToken.userId, function(err, user) {
       if (err) { return next(err); }
-      user.updateAttribute('sendMonthlyEmail', typeof user.sendMonthlyEmail !== "undefined" ? !user.sendMonthlyEmail : true, function(err) {
-        if (err) { return next(err); }
-        req.flash('info', { msg: 'We\'ve successfully updated your Email preferences.' });
-        res.redirect('/settings');
-      });
+      return user.updateAttribute(
+        'sendMonthlyEmail',
+        !user.sendMonthlyEmail,
+        (err) => {
+          if (err) { return next(err); }
+          req.flash('info', {
+            msg: 'We\'ve successfully updated your Email preferences.'
+          });
+          return res.redirect('/settings');
+        });
     });
   }
 
   function toggleReceivesQuincyEmails(req, res, next) {
     return User.findById(req.accessToken.userId, function(err, user) {
       if (err) { return next(err); }
-      user.updateAttribute('sendQuincyEmail', typeof user.sendQuincyEmail !== "undefined" ? !user.sendQuincyEmail : true, function(err) {
-        if (err) { return next(err); }
-        req.flash('info', { msg: 'We\'ve successfully updated your Email preferences.' });
-        res.redirect('/settings');
-      });
+      return user.updateAttribute('sendQuincyEmail', !user.sendQuincyEmail,
+        (err) => {
+          if (err) { return next(err); }
+          req.flash('info', {
+            msg: 'We\'ve successfully updated your Email preferences.'
+          });
+          return res.redirect('/settings');
+        }
+      );
     });
   }
 
   function toggleReceivesNotificationEmails(req, res, next) {
     return User.findById(req.accessToken.userId, function(err, user) {
       if (err) { return next(err); }
-      user.updateAttribute('sendNotificationEmail', typeof user.sendNotificationEmail !== "undefined" ? !user.sendNotificationEmail : true, function(err) {
-        if (err) { return next(err); }
-        req.flash('info', { msg: 'We\'ve successfully updated your Email preferences.' });
-        res.redirect('/settings');
+      return user.updateAttribute(
+        'sendNotificationEmail',
+        !user.sendNotificationEmail,
+        function(err) {
+          if (err) { return next(err); }
+          req.flash('info', {
+            msg: 'We\'ve successfully updated your Email preferences.'
+          });
+          return res.redirect('/settings');
       });
     });
   }

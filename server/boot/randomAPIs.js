@@ -282,31 +282,43 @@ module.exports = function(app) {
   }
 
   function unsubscribeMonthly(req, res, next) {
-    User.findOne({ where: { email: req.params.email } }, function(err, user) {
-      user.updateAttribute('sendMonthlyEmail', false, function(err) {
+    req.checkParams('email', 'Must send a valid email').isEmail();
+    return User.findOne({ where: { email: req.params.email } }, (err, user) => {
+      if (err) { return next(err); }
+      return user.updateAttribute('sendMonthlyEmail', false, (err) => {
         if (err) { return next(err); }
-        req.flash('info', { msg: 'We\'ve successfully updated your Email preferences.' });
-        res.redirect('/unsubscribed');
+        req.flash('info', {
+          msg: 'We\'ve successfully updated your Email preferences.'
+        });
+        return res.redirect('/unsubscribed');
       });
     });
   }
 
   function unsubscribeNotifications(req, res, next) {
-    User.findOne({ where: { email: req.params.email } }, function(err, user) {
-      user.updateAttribute('sendNotificationEmail', false, function(err) {
+    req.checkParams('email', 'Must send a valid email').isEmail();
+    return User.findOne({ where: { email: req.params.email } }, (err, user) => {
+      if (err) { return next(err); }
+      return user.updateAttribute('sendNotificationEmail', false, (err) => {
         if (err) { return next(err); }
-        req.flash('info', { msg: 'We\'ve successfully updated your Email preferences.' });
-        res.redirect('/unsubscribed');
+        req.flash('info', {
+          msg: 'We\'ve successfully updated your Email preferences.'
+        });
+        return res.redirect('/unsubscribed');
       });
     });
   }
 
   function unsubscribeQuincy(req, res, next) {
-    User.findOne({ where: { email: req.params.email } }, function(err, user) {
-      user.updateAttribute('sendQuincyEmail', false, function(err) {
+    req.checkParams('email', 'Must send a valid email').isEmail();
+    return User.findOne({ where: { email: req.params.email } }, (err, user) => {
+      if (err) { return next(err); }
+      return user.updateAttribute('sendQuincyEmail', false, (err) => {
         if (err) { return next(err); }
-        req.flash('info', { msg: 'We\'ve successfully updated your Email preferences.' });
-        res.redirect('/unsubscribed');
+        req.flash('info', {
+          msg: 'We\'ve successfully updated your Email preferences.'
+        });
+        return res.redirect('/unsubscribed');
       });
     });
   }
