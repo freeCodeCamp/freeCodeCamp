@@ -21,7 +21,9 @@ var Rx = require('rx'),
   sourcemaps = require('gulp-sourcemaps'),
 
   // react app
-  webpack = require('webpack-stream'),
+  webpack = require('webpack'),
+  webpackStream = require('webpack-stream'),
+  WebpackDevServer = require('webpack-dev-server'),
   webpackConfig = require('./webpack.config.js'),
   webpackConfigNode = require('./webpack.config.node.js'),
 
@@ -55,7 +57,6 @@ var paths = {
   serverIgnore: [
     'gulpfile.js',
     'public/',
-    '!public/js/bundle*',
     'node_modules/',
     'client/',
     'seed',
@@ -224,7 +225,6 @@ var syncDepenedents = [
   'js',
   'less',
   'dependents',
-  'pack-watch',
   'build-manifest'
 ];
 
@@ -268,7 +268,7 @@ gulp.task('pack-client', function() {
 
   return gulp.src(webpackConfig.entry)
     .pipe(plumber({ errorHandler: errorHandler }))
-    .pipe(webpack(Object.assign(
+    .pipe(webpackStream(Object.assign(
       {},
       webpackConfig,
       webpackOptions
@@ -288,51 +288,47 @@ gulp.task('pack-client', function() {
     .pipe(gulp.dest(paths.manifest));
 });
 
-var defaultStatsOptions = {
-  colors: gutil.colors.supportsColor,
-  hash: false,
-  timings: false,
-  chunks: false,
-  chunkModules: false,
-  modules: false,
-  children: true,
-  version: true,
-  cached: false,
-  cachedAssets: false,
-  reasons: false,
-  source: false,
-  errorDetails: false
-};
-
 var webpackCalled = false;
-gulp.task('pack-watch', function(cb) {
+gulp.task('webpack-dev-server', function(cb) {
   if (webpackCalled) {
-    console.log('webpack watching already runnning');
+    console.log('webpack dev server already runnning');
     return cb();
   }
-  gulp.src(webpackConfig.entry)
-    .pipe(plumber({ errorHandler: errorHandler }))
-    .pipe(webpack(Object.assign(
-      {},
-      webpackConfig,
-      webpackOptions,
-      { watch: true }
-    ), null, function(notUsed, stats) {
-      if (stats) {
-        gutil.log(stats.toString(defaultStatsOptions));
+  var devServerOptions = {
+    headers: {
+      'Access-Control-Allow-Credentials': 'true'
+    },
+    hot: true,
+    noInfo: true,
+    contentBase: false,
+    publicPath: '/js'
+  };
+  webpackConfig.entry = [
+    'webpack-dev-server/client?http://localhost:2999/',
+    'webpack/hot/dev-server'
+  ].concat(webpackConfig.entry);
+
+  var compiler = webpack(webpackConfig);
+  var devServer = new WebpackDevServer(compiler, devServerOptions);
+  devServer.use(function(req, res, next) {
+    res.setHeader('Access-Control-Allow-Origin', req.headers.origin || '*');
+    next();
+  });
+  return devServer.listen('2999', 'localhost', function(err) {
+      if (err) {
+        throw new gutil.PluginError('webpack-dev-server', err);
       }
 
       if (!webpackCalled) {
-        debug('webpack init completed');
+        gutil.log('[webpack-dev-server]', 'webpack init completed');
         webpackCalled = true;
         cb();
       }
 
-    }))
-    .pipe(gulp.dest(webpackConfig.output.path));
+    });
 });
 
-gulp.task('pack-watch-manifest', ['pack-watch'], function() {
+gulp.task('pack-watch-manifest', function() {
   var manifestName = 'react-manifest.json';
   var dest = webpackConfig.output.path;
   return gulp.src(dest + '/bundle.js')
@@ -519,8 +515,6 @@ var watchDependents = [
   'dependents',
   'serve',
   'sync',
-  'pack-watch',
-  'pack-watch-manifest',
   'build-manifest'
 ];
 
@@ -539,14 +533,12 @@ gulp.task('watch', watchDependents, function() {
     ['dependents']
   );
   gulp.watch(paths.manifest + '/*.json', ['build-manifest-watch']);
-  gulp.watch(webpackConfig.output.path + '/bundle.js', ['pack-watch-manifest']);
 });
 
 gulp.task('default', [
   'less',
   'serve',
-  'pack-watch',
-  'pack-watch-manifest',
+  'webpack-dev-server',
   'build-manifest-watch',
   'watch',
   'sync'

@@ -3,12 +3,14 @@ var pmx = require('pmx');
 pmx.init();
 
 var _ = require('lodash'),
+    Rx = require('rx'),
     loopback = require('loopback'),
     boot = require('loopback-boot'),
     expressState = require('express-state'),
     path = require('path'),
     setupPassport = require('./component-passport');
 
+Rx.config.longStackSupport = process.env.NODE_DEBUG !== 'production';
 var app = loopback();
 var isBeta = !!process.env.BETA;
 

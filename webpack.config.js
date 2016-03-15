@@ -1,15 +1,15 @@
 var webpack = require('webpack');
 var path = require('path');
-var webpack = require('webpack');
 
 var __DEV__ = process.env.NODE_ENV !== 'production';
 
 module.exports = {
   entry: './client',
+  devtool: 'inline-source-map',
   output: {
     filename: 'bundle.js',
     path: path.join(__dirname, '/public/js'),
-    publicPath: 'public/'
+    publicPath: __DEV__ ? 'http://localhost:2999/js' : '/js'
   },
   module: {
     loaders: [
@@ -42,6 +42,8 @@ module.exports = {
         'NODE_ENV': JSON.stringify(__DEV__ ? 'development' : 'production')
       },
       '__DEVTOOLS__': !__DEV__
-    })
+    }),
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoErrorsPlugin()
   ]
 };

@@ -133,6 +133,7 @@
     "url-regex": "^3.0.0",
     "validator": "^5.0.0",
     "webpack": "^1.9.12",
+    "webpack-dev-server": "^1.14.1",
     "webpack-stream": "^3.1.0",
     "xss-filters": "^1.2.6",
     "yargs": "^4.1.0"
