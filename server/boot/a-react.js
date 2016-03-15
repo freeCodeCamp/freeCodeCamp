@@ -5,7 +5,7 @@ import debug from 'debug';
 import renderToString from '../../common/app/utils/render-to-string';
 import provideStore from '../../common/app/provide-store';
 
-import app$ from '../../common/app';
+import createApp from '../../common/app';
 
 const log = debug('fcc:react-server');
 
@@ -14,7 +14,8 @@ const log = debug('fcc:react-server');
 const routes = [
   '/videos',
   '/videos/*',
-  '/challenges'
+  '/challenges',
+  '/map'
 ];
 
 const devRoutes = [];
@@ -37,9 +38,9 @@ export default function reactSubRouter(app) {
 
   function serveReactApp(req, res, next) {
     const serviceOptions = { req };
-    app$({
-      location: req.path,
-      serviceOptions
+    createApp({
+      serviceOptions,
+      location: req.path
     })
       // if react-router does not find a route send down the chain
       .filter(({ redirect, props }) => {
@@ -47,7 +48,7 @@ export default function reactSubRouter(app) {
           res.redirect(redirect.pathname + redirect.search);
         }
         if (!props) {
-          log(`react tried to find ${location.pathname} but got 404`);
+          log(`react tried to find ${req.path} but got 404`);
           return next();
         }
         return !!props;

@@ -5,7 +5,11 @@ let trusted = [
 ];
 
 if (process.env.NODE_ENV !== 'production') {
-  trusted.push('ws://localhost:3001');
+  trusted = trusted.concat([
+    'ws://localhost:3001',
+    'http://localhost:2999',
+    'ws://localhost:2999'
+  ]);
 }
 
 export default function csp() {
