@@ -350,7 +350,7 @@ module.exports = function(app) {
         user => {
           if (!user) {
             req.flash('errors', {
-              msg: `We couldn't find the user with the username ${username}`
+              msg: `We couldn't find a user with the username ${username}`
             });
             return res.redirect('/');
           }
@@ -422,7 +422,7 @@ module.exports = function(app) {
       if (err) { return next(err); }
       user.updateAttribute('isLocked', typeof user.isLocked !== "undefined" ? !user.isLocked : true, function(err) {
         if (err) { return next(err); }
-        req.flash('info', { msg: 'Privacy preferences updated successfully.' });
+        req.flash('info', { msg: 'We\'ve successfully updated your Privacy preferences.' });
         res.redirect('/settings');
       });
     });
@@ -433,7 +433,7 @@ module.exports = function(app) {
       if (err) { return next(err); }
       user.updateAttribute('sendMonthlyEmail', typeof user.sendMonthlyEmail !== "undefined" ? !user.sendMonthlyEmail : true, function(err) {
         if (err) { return next(err); }
-        req.flash('info', { msg: 'Email preferences updated successfully.' });
+        req.flash('info', { msg: 'We\'ve successfully updated your Email preferences.' });
         res.redirect('/settings');
       });
     });
@@ -444,7 +444,7 @@ module.exports = function(app) {
       if (err) { return next(err); }
       user.updateAttribute('sendQuincyEmail', typeof user.sendQuincyEmail !== "undefined" ? !user.sendQuincyEmail : true, function(err) {
         if (err) { return next(err); }
-        req.flash('info', { msg: 'Email preferences updated successfully.' });
+        req.flash('info', { msg: 'We\'ve successfully updated your Email preferences.' });
         res.redirect('/settings');
       });
     });
@@ -455,7 +455,7 @@ module.exports = function(app) {
       if (err) { return next(err); }
       user.updateAttribute('sendNotificationEmail', typeof user.sendNotificationEmail !== "undefined" ? !user.sendNotificationEmail : true, function(err) {
         if (err) { return next(err); }
-        req.flash('info', { msg: 'Email preferences updated successfully.' });
+        req.flash('info', { msg: 'We\'ve successfully updated your Email preferences.' });
         res.redirect('/settings');
       });
     });
@@ -465,7 +465,7 @@ module.exports = function(app) {
     User.destroyById(req.user.id, function(err) {
       if (err) { return next(err); }
       req.logout();
-      req.flash('info', { msg: 'Your account has been deleted.' });
+      req.flash('info', { msg: 'You\'ve successfully deleted your account.' });
       return res.redirect('/');
     });
   }
@@ -496,7 +496,7 @@ module.exports = function(app) {
         if (err) { return next(err); }
 
         debug('password reset processed successfully');
-        req.flash('info', { msg: 'password reset processed successfully' });
+        req.flash('info', { msg: 'You\'ve successfully reset your password.' });
         return res.redirect('/');
       });
     });
