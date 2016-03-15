@@ -80,7 +80,7 @@ export default handleActions(
     [types.goToNextHike]: state => ({
       ...state,
       currentHike: findNextHikeName(state.hikes, state.currentHike),
-      showQuestions: false,
+      shouldShowQuestions: false,
       currentQuestion: 1,
       mouse: [ 0, 0 ]
     }),
