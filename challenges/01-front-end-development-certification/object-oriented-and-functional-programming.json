@@ -46,7 +46,7 @@
       ],
       "type": "waypoint",
       "challengeType": 1,
-      "nameEs": "Declara objetos de JavaScript como variables",
+      "titleEs": "Declara objetos de JavaScript como variables",
       "descriptionEs": [
         "Antes de sumergirnos en Programación Orientada a Objetos, vamos a revisar los objetos de JavaScript.",
         "Dale a tu objeto <code>motorBike</code> un atributo <code>wheels</code>, otro llamado <code>motors</code> y otro <code>seats</code> y asignales números."
@@ -92,7 +92,7 @@
       ],
       "type": "waypoint",
       "challengeType": 1,
-      "nameEs": "Construye objetos de JavaScript con funciones",
+      "titleEs": "Construye objetos de JavaScript con funciones",
       "descriptionEs": [
         "También podemos crear objetos utilizando funciones <code>constructoras</code>.",
         "A cada función <code>constructora</code> se le da un nombre comenzando en mayúsculas para que quede claro que es una <code>constructora</code>.",
@@ -150,7 +150,7 @@
       ],
       "type": "waypoint",
       "challengeType": 1,
-      "nameEs": "Crea instancias de objetos con funciones constructoras",
+      "titleEs": "Crea instancias de objetos con funciones constructoras",
       "descriptionEs": [
         "¡Ahora usemos esa gran <code>constructora</code> que hicimos en la última lección!",
         "Para utilizar una función <code>constructora</code> la llamamos con la palabra reservada <code>new</code> al frente, como:",
@@ -208,7 +208,7 @@
       ],
       "type": "waypoint",
       "challengeType": 1,
-      "nameEs": "Crea objetos únicos pasando parámetros a la constructora",
+      "titleEs": "Crea objetos únicos pasando parámetros a la constructora",
       "descriptionEs": [
         "La <code>constructora</code> que tenemos es fabulosa, pero ¿qué hacer si no queremos crear siempre el mismo objeto?",
         "Para solucionar esto podemos añadir<code>parámetros</code>en nuestra <code>constructora</code>. Hacemos esto como en el siguiente ejemplo: ",
@@ -287,7 +287,7 @@
       ],
       "type": "waypoint",
       "challengeType": 1,
-      "nameEs": "Crea propiedades privadas de un objeto",
+      "titleEs": "Crea propiedades privadas de un objeto",
       "descriptionEs": [
         "Los objetos tienen sus propios atributos, llamados <code>propiedades</code>, y sus propias funciones, llamadas<code>métodos</code>.",
         "En los desafíos anteriores, se utilizó la palabra reservada <code>this</code> para referenciar <code>propiedades públicas</code>del objeto actual.",
@@ -328,7 +328,7 @@
       ],
       "type": "waypoint",
       "challengeType": 1,
-      "nameEs": "Iterar sobre vectores con .map",
+      "titleEs": "Iterar sobre vectores con .map",
       "descriptionEs": [
         "El método <code>map</code> es una manera conveniente de iterar sobre vectores. He aquí un ejemplo de uso: ",
         "<code>var porCuatro = vectorAntiguo.map(function(val){</code>",
@@ -368,7 +368,7 @@
       ],
       "type": "waypoint",
       "challengeType": 1,
-      "nameEs": "Condensa vectores con .reduce",
+      "titleEs": "Condensa vectores con .reduce",
       "descriptionEs": [
         "El método <code>reduce</code> de un vector, se utiliza para iterar a través del vector y condensarlo en un valor.",
         "Para usar <code>reduce</code> tu le pasas una función de devolución de llamada cuyos argumentos sean un acumulador (en este caso, <code>valorPrevio</code>) y el valor actual (<code>valorActual</code>). ",
@@ -410,7 +410,7 @@
       ],
       "type": "waypoint",
       "challengeType": 1,
-      "nameEs": "Filtrar vectores con .filter",
+      "titleEs": "Filtrar vectores con .filter",
       "descriptionEs": [
         "El método <code>filter</code> se utiliza para iterar a través de un vector y filtrar los elementos que hagan falsa un condición determinada.",
         "<code>filter</code> recibe una función de devolución de llamada que a su vez recibe como argumento el valor actual (que hemos llamado <code>val</code>).",
@@ -452,7 +452,7 @@
       ],
       "type": "waypoint",
       "challengeType": 1,
-      "nameEs": "Ordena vectores con .sort",
+      "titleEs": "Ordena vectores con .sort",
       "descriptionEs": [
         "Puedes utilizar el método <code>sort</code> para ordenar alfabética o numéricamente los valores de un vector.",
         "A diferencia de los métodos de vector que hemos visto,<code>sort</code>en realidad altera el vector en su lugar. Sin embargo, también devuelve este vector ordenado. ",
@@ -493,7 +493,7 @@
       ],
       "type": "waypoint",
       "challengeType": 1,
-      "nameEs": "Invierte vectores con .reverse",
+      "titleEs": "Invierte vectores con .reverse",
       "descriptionEs": [
         "Puedes utilizar el método <code>reverse</code> para invertir los elementos en un vector.",
         "<code>reverse</code> es otro método de vector que altera el vector mismo, y también devuelve el vector invertido.",
@@ -533,7 +533,7 @@
       ],
       "type": "waypoint",
       "challengeType": 1,
-      "nameEs": "Concatena vectores con .concat",
+      "titleEs": "Concatena vectores con .concat",
       "descriptionEs": [
         "<code>concat</code> se puede utilizar para combinar el contenido de dos vectores en uno solo.",
         "<code>concat</code> recibe un vector como argumento y devuelve un nuevo vector con los elementos del vector que recibe concatenados al final.",
@@ -569,7 +569,7 @@
       ],
       "type": "waypoint",
       "challengeType": 1,
-      "nameEs": "Divide cadenas con .split",
+      "titleEs": "Divide cadenas con .split",
       "descriptionEs": [
         "Puedes utilizar el método <code>split</code> para dividir una cadena en un vector.",
         "<code>split</code> utiliza el argumento que recibe como delimitador para determinar en qué puntos debe dividir la cadena.",
@@ -604,7 +604,7 @@
       ],
       "type": "waypoint",
       "challengeType": 1,
-      "nameEs": "Une cadenas con .join",
+      "titleEs": "Une cadenas con .join",
       "descriptionEs": [
         "Podemos usar el método <code>join</code> para unir los elementos de un vector en una cadena, separándolos con el delimitador que proporciones como argumento.",
         "El siguiente es un ejemplo del uso de <code>join</code> para unir todos los elementos de un vector en una cadena con todos los elementos separados entre si por palabra` Na`: ",

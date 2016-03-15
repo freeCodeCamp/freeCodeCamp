@@ -19,14 +19,15 @@
         "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen. ",
         "You can get feedback on your project from fellow campers by sharing it in our <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Code Review Chatroom</a>. You can also share it on Twitter and your city's Campsite (on Facebook)."
       ],
-      "releasedOn": "January 1, 2016",
       "challengeSeed": [
         "150324699"
       ],
       "tests": [],
+      "isRequired": true,
+      "releasedOn": "January 1, 2016",
       "type": "zipline",
       "challengeType": 3,
-      "nameEs": "Visualiza datos utilizando un gráfico de barras",
+      "titleEs": "Visualiza datos utilizando un gráfico de barras",
       "descriptionEs": [
         "<strong>Objetivo:</strong> Construye una aplicación en <a href='http://codepen.io' target='_blank'>CodePen.io</a> que funcione de forma similar al siguiente ejemplo: <a href='http://codepen.io/FreeCodeCamp/full/adBBWd' target='_blank'>http://codepen.io/FreeCodeCamp/full/adBBWd</a>.",
         "<strong>Regla #1:</strong> No veas el código del proyecto de ejemplo. Encuentra la forma de hacerlo por tu cuenta.",
@@ -38,8 +39,7 @@
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado.",
         "Cuando termines, haz clic en el botón de \"I've completed this challenge\" e incluye el vínculo de tu proyecto en CodePen. ",
         "Puedes obtener retroalimentación acerca de tu proyecto de parte de tus compañeros campistas compartiéndolo en nuestro <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Cuarto de revisión de código</a>. También puedes compartirlo en Twitter y en el campamento de tu ciudad (en Facebook)."
-      ],
-      "isRequired": true
+      ]
     },
     {
       "id": "bd7178d8c242eddfaeb5bd13",
@@ -56,14 +56,15 @@
         "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen. ",
         "You can get feedback on your project from fellow campers by sharing it in our <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Code Review Chatroom</a>. You can also share it on Twitter and your city's Campsite (on Facebook)."
       ],
-      "releasedOn": "January 1, 2016",
       "challengeSeed": [
         "150324700"
       ],
       "tests": [],
+      "isRequired": true,
+      "releasedOn": "January 1, 2016",
       "type": "zipline",
       "challengeType": 3,
-      "nameEs": "Visualiza datos utilizando un gráfico de dispersión",
+      "titleEs": "Visualiza datos utilizando un gráfico de dispersión",
       "descriptionEs": [
         "<strong>Objetivo:</strong> Construye una aplicación en <a href='http://codepen.io' target='_blank'>CodePen.io</a> que funcione de forma similar al siguiente ejemplo: <a href='http://codepen.io/FreeCodeCamp/full/GoNNEy' target='_blank'>http://codepen.io/FreeCodeCamp/full/GoNNEy</a>.",
         "<strong>Regla #1:</strong> No veas el código del proyecto de ejemplo. Encuentra la forma de hacerlo por tu cuenta.",
@@ -75,8 +76,7 @@
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado.",
         "Cuando termines, haz clic en el botón de \"I've completed this challenge\" e incluye el vínculo de tu proyecto en CodePen. ",
         "Puedes obtener retroalimentación acerca de tu proyecto de parte de tus compañeros campistas compartiéndolo en nuestro <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Cuarto de revisión de código</a>. También puedes compartirlo en Twitter y en el campamento de tu ciudad (en Facebook)."
-      ],
-      "isRequired": true
+      ]
     },
     {
       "id": "bd7188d8c242eddfaeb5bd13",
@@ -94,14 +94,15 @@
         "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen. ",
         "You can get feedback on your project from fellow campers by sharing it in our <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Code Review Chatroom</a>. You can also share it on Twitter and your city's Campsite (on Facebook)."
       ],
-      "releasedOn": "January 1, 2016",
       "challengeSeed": [
         "150324701"
       ],
       "tests": [],
+      "isRequired": true,
+      "releasedOn": "January 1, 2016",
       "type": "zipline",
       "challengeType": 3,
-      "nameEs": "Visualiza datos utilizando un mapa de calor",
+      "titleEs": "Visualiza datos utilizando un mapa de calor",
       "descriptionEs": [
         "<strong>Objetivo:</strong> Construye una aplicación en <a href='http://codepen.io' target='_blank'>CodePen.io</a> que funcione de forma similar al siguiente ejemplo: <a href='http://codepen.io/FreeCodeCamp/full/rxWWGa' target='_blank'>http://codepen.io/FreeCodeCamp/full/rxWWGa</a>.",
         "<strong>Regla #1:</strong> No veas el código del proyecto de ejemplo. Encuentra la forma de hacerlo por tu cuenta.",
@@ -114,8 +115,7 @@
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado.",
         "Cuando termines, haz clic en el botón de \"I've completed this challenge\" e incluye el vínculo de tu proyecto en CodePen. ",
         "Puedes obtener retroalimentación acerca de tu proyecto de parte de tus compañeros campistas compartiéndolo en nuestro <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Cuarto de revisión de código</a>. También puedes compartirlo en Twitter y en el campamento de tu ciudad (en Facebook)."
-      ],
-      "isRequired": true
+      ]
     },
     {
       "id": "bd7198d8c242eddfaeb5bd13",
@@ -135,14 +135,15 @@
         "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen. ",
         "You can get feedback on your project from fellow campers by sharing it in our <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Code Review Chatroom</a>. You can also share it on Twitter and your city's Campsite (on Facebook)."
       ],
-      "releasedOn": "January 1, 2016",
       "challengeSeed": [
         "150324458"
       ],
       "tests": [],
+      "isRequired": true,
+      "releasedOn": "January 1, 2016",
       "type": "zipline",
       "challengeType": 3,
-      "nameEs": "Muestra asociaciones utilizando un gráfico de fuerzas dirigidas",
+      "titleEs": "Muestra asociaciones utilizando un gráfico de fuerzas dirigidas",
       "descriptionEs": [
         "<strong>Objetivo:</strong> Construye una aplicación en <a href='http://codepen.io' target='_blank'>CodePen.io</a> que funcione de forma similar al siguiente ejemplo: <a href='http://codepen.io/FreeCodeCamp/full/KVNNXY' target='_blank'>http://codepen.io/FreeCodeCamp/full/KVNNXY</a>.",
         "<strong>Regla #1:</strong> No veas el código del proyecto de ejemplo. Encuentra la forma de hacerlo por tu cuenta.",
@@ -157,8 +158,7 @@
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado.",
         "Cuando termines, haz clic en el botón de \"I've completed this challenge\" e incluye el vínculo de tu proyecto en CodePen. ",
         "Puedes obtener retroalimentación acerca de tu proyecto de parte de tus compañeros campistas compartiéndolo en nuestro <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Cuarto de revisión de código</a>. También puedes compartirlo en Twitter y en el campamento de tu ciudad (en Facebook)."
-      ],
-      "isRequired": true
+      ]
     },
     {
       "id": "bd7108d8c242eddfaeb5bd13",
@@ -176,14 +176,15 @@
         "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen. ",
         "You can get feedback on your project from fellow campers by sharing it in our <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Code Review Chatroom</a>. You can also share it on Twitter and your city's Campsite (on Facebook)."
       ],
-      "releasedOn": "January 1, 2016",
       "challengeSeed": [
         "150324698"
       ],
       "tests": [],
+      "isRequired": true,
+      "releasedOn": "January 1, 2016",
       "type": "zipline",
       "challengeType": 3,
-      "nameEs": "Mapea datos a lo largo del Globo",
+      "titleEs": "Mapea datos a lo largo del Globo",
       "descriptionEs": [
         "<strong>Objetivo:</strong> Construye una aplicación en <a href='http://codepen.io' target='_blank'>CodePen.io</a> que funcione de forma similar al siguiente ejemplo: <a href='http://codepen.io/FreeCodeCamp/full/mVEJag' target='_blank'>http://codepen.io/FreeCodeCamp/full/mVEJag</a>.",
         "<strong>Regla #1:</strong> No veas el código del proyecto de ejemplo. Encuentra la forma de hacerlo por tu cuenta.",
@@ -196,8 +197,7 @@
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado.",
         "Cuando termines, haz clic en el botón de \"I've completed this challenge\" e incluye el vínculo de tu proyecto en CodePen. ",
         "Puedes obtener retroalimentación acerca de tu proyecto de parte de tus compañeros campistas compartiéndolo en nuestro <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Cuarto de revisión de código</a>. También puedes compartirlo en Twitter y en el campamento de tu ciudad (en Facebook)."
-      ],
-      "isRequired": true
+      ]
     }
   ]
 }

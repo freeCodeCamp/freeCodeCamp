@@ -49,7 +49,7 @@
       ],
       "type": "waypoint",
       "challengeType": 0,
-      "nameEs": "Activa eventos de pulsación con jQuery",
+      "titleEs": "Activa eventos de pulsación con jQuery",
       "descriptionEs": [
         "En esta sección, vamos a aprender cómo obtener datos de las APIs. Las APIs - o interfaces de programación de aplicaciones - son herramientas que utilizan los computadores para comunicarse entre sí.",
         "También aprenderemos cómo actualizar HTML con los datos que obtenemos de estas API usando una tecnología llamada Ajax.",
@@ -58,7 +58,7 @@
         "Antes de poder hacer esto, tenemos que implementar un <code>evento de pulsación</code> dentro de nuestra función <code>$(document).ready()</code>, añadiendo este código:",
         "<blockquote>$(\"#getMessage\").on(\"click\", function(){</br></br>});</blockquote>"
       ],
-      "namePt": "Ativando eventos de clique com jQuery",
+      "titlePt": "Ativando eventos de clique com jQuery",
       "descriptionPt": [
         "Nesta sessão, vamos aprender como obter dados de uma API. As APIS - Interface de Programação de Aplicativos - são ferramentas usadas pelos computadores  para se comunicarem entre si.",
         "Também aprenderemos como utilizar o HTML com os dados obtidos de uma API usando uma tecnologia chamada Ajax",
@@ -112,14 +112,14 @@
       ],
       "type": "waypoint",
       "challengeType": 0,
-      "nameEs": "Cambia texto con eventos de pulsación",
+      "titleEs": "Cambia texto con eventos de pulsación",
       "descriptionEs": [
         "Cuando nuestro evento de pulsación ocurre, podemos utilizar jQuery para actualizar un elemento HTML.",
         "Hagamos que cuando un usuario pulse el botón \"Get Message\", el texto del elemento con la clase <code>message</code> cambie para decir \"Here is the message\".",
         "Podemos hacerlo añadiendo el siguiente código dentro de nuestro evento de pulsación:",
         "<code>$(\".message\").html(\"Here is the message\");</code>"
       ],
-      "namePt": "Mundando texto com eventos de clique",
+      "titlePt": "Mundando texto com eventos de clique",
       "descriptionPt": [
         "Quando nosso evento de clique ocorre, podemos utilizar o jQuery para atualixar um elemento HTML",
         "Vamos fazer que quando um usuário clicar no botão \"Get Message\", o texto do elemento com a classe <code>message</code> passe a dizer \"Here is the message\".",
@@ -183,7 +183,7 @@
       ],
       "type": "waypoint",
       "challengeType": 0,
-      "nameEs": "Obtén JSON con el método getJSON de jQuery",
+      "titleEs": "Obtén JSON con el método getJSON de jQuery",
       "descriptionEs": [
         "También puedes solicitar los datos de una fuente externa. Aquí es donde entran en juego las API. ",
         "Recuerda que las API - o interfaces de programación de aplicaciones - son herramientas que utilizan los ordenadores para comunicarse entre sí.",
@@ -195,7 +195,7 @@
         "<blockquote>$.getJSON(\"/json/cats.json\", function(json) {</code></br>  $(\".message\").html(JSON.stringify(json));</br>});</blockquote>",
         "Una vez lo añadas, pulsa el botón \"Get Message\". Tu función Ajax sustituirá el texto \"The message will go here\" con la salida JSON en bruto de la API de fotos de gato de Free Code Camp."
       ],
-      "namePt": "Obter um JSON com o método getJSON do jQuery",
+      "titlePt": "Obter um JSON com o método getJSON do jQuery",
       "descriptionPt": [
         "Também é possivel solicitar os dados de uma fonte externa. É aqui onde as API's entram em jogo. ",
         "Lembre que as API's - Interface de Programação de Aplicativos - são ferramentas que os computadores usam para se comunicar entre si.",
@@ -263,7 +263,7 @@
       ],
       "type": "waypoint",
       "challengeType": 0,
-      "nameEs": "Convierte datos JSON a datos HTML",
+      "titleEs": "Convierte datos JSON a datos HTML",
       "descriptionEs": [
         "Ahora que estamos obteniendo datos de una API JSON, mostremóslos en nuestro HTML.",
         "Podemos usar el método <code>.forEach()</code> para recorrer nuestros datos y modificar nuestros elementos HTML.",
@@ -272,7 +272,7 @@
         "Aquí está el código que hace esto:",
         "<blockquote>json.forEach(function(val) {</br>  var keys = Object.keys(val);</br>  html += \"&lt;div class = 'cat'&gt;\";</br>  keys.forEach(function(key) {</br>    html += \"&lt;b&gt;\" + key + \"&lt;/b&gt;: \" + val[key] + \"&lt;br&gt;\";</br>  });</br>  html += \"&lt;/div&gt;&lt;br&gt;\";</br>});</blockquote>"
       ],
-      "namePt": "Converter dados JSON para HTML",
+      "titlePt": "Converter dados JSON para HTML",
       "descriptionPt": [
         "Agora que estamos obtendo os dados de uma API JSON, vamos mostra-los em nosso HTML",
         "Podemos usar o método <code>.forEach()</code> para percorrer os nossos dados e modificar o elementos HTML.",
@@ -344,14 +344,14 @@
       ],
       "type": "waypoint",
       "challengeType": 0,
-      "nameEs": "Presenta imágenes de fuentes de datos",
+      "titleEs": "Presenta imágenes de fuentes de datos",
       "descriptionEs": [
         "Hemos visto en las dos últimas lecciones que cada objeto en nuestro vector JSON contiene una llave <code>imageLink</code> con un valor que corresponde a la url de la imagen de un gato.",
         "Cuando estamos recorriendo estos objetos, usemos esta propiedad <code>imageLink</code> para visualizar la imagen en un elemento <code>img</code>.",
         "Aquí está el código que hace esto:",
         "<code>html += \"&lt;img src = '\" + val.imageLink + \"'&gt;\";</code>"
       ],
-      "namePt": "Apresentar as imagens da fonte de dados",
+      "titlePt": "Apresentar as imagens da fonte de dados",
       "descriptionPt": [
         "Como temos visto nas ultimas lições, cada objeto em nosso array JSON contém a chave <code>imageLink</code> com um valor que corresponde a url da imagem de um gato.",
         "Quando estamos percorrendo por estes objetos, usamos a propriedade <code>imageLink</code> para visualizar a imagem em um elemento <code>img</code>.",
@@ -423,14 +423,14 @@
       ],
       "type": "waypoint",
       "challengeType": 0,
-      "nameEs": "Pre-filtra JSON",
+      "titleEs": "Pre-filtra JSON",
       "descriptionEs": [
         "Si no queremos presentar cada foto de gato que obtengamos de la API JSON de fotos de gato de Free Code Camp, podemos pre-filtrar el json antes de iterar a través de este.",
         "Vamos a filtrar el gato cuya llave \"id\" tiene un valor de 1.",
         "Aquí está el código para hacer esto:",
         "<blockquote>json = json.filter(function(val) {</br>  return (val.id !== 1);</br>});</blockquote>"
       ],
-      "namePt": "Pré-filtro JSON",
+      "titlePt": "Pré-filtro JSON",
       "descriptionPt": [
         "Se não queremos apresentar cada foto de gato que obtemos da API JSON de fotos de gatos do Free Code Camp, podemos realizar um pré-filtro o JSON  antes de iterar através dele.",
         "Vamos filtrar o gato cuja a chave \"id\" tenha o valor 1.",
@@ -467,7 +467,7 @@
       ],
       "type": "waypoint",
       "challengeType": 0,
-      "nameEs": "Recibir datos de Geo-localización",
+      "titleEs": "Recibir datos de Geo-localización",
       "descriptionEs": [
         "Otra cosa interesante que podemos hacer es acceder a la ubicación actual de nuestros usuarios. Todos los navegadores han incorporado un geo-localizador que nos puede dar esta información. ",
         "El navegador puede obtener la longitud y latitud actual de nuestros usuarios.",
@@ -476,7 +476,7 @@
         "Aquí hay un código que hace esto:",
         "<blockquote>if (navigator.geolocation) {</br>  navigator.geolocation.getCurrentPosition(function(position) {</br>    $(\"#data\").html(\"latitude: \" + position.coords.latitude + \"&lt;br&gt;longitude: \" + position.coords.longitude);</br>  });</br>}</blockquote>"
       ],
-      "namePt": "Receber dados de Geo-localização",
+      "titlePt": "Receber dados de Geo-localização",
       "descriptionPt": [
         "Outra coisa interessante que podemos fazer é acessar a atual localização do nosso usuário. Todos os navegadores tem implementado um geo-localizador que pode nos fornecer essa informação.",
         "O navegador pode obter a longitude e latitude atual de nossos usuários",
