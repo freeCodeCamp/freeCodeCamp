@@ -265,28 +265,28 @@
         "Do not display information that is redundant or that can be inferred by the user: if the date range ends in less than a year from when it begins, do not display the ending year. If the range ends in the same month that it begins, do not display the ending year or month.",
         "Additionally, if the date range begins in the current year and ends within one year, the year should not be displayed at the beginning of the friendly range.",
         "Examples:",
-        "<code>friendly([\"2016-07-01\", \"2016-07-04\"])</code> should return <code>[\"July 1st\",\"4th\"]</code>",
-        "<code>friendly([\"2016-07-01\", \"2018-07-04\"])</code> should return <code>[\"July 1st, 2016\", \"July 4th, 2018\"]</code>.",
+        "<code>makeFriendlyDates([\"2016-07-01\", \"2016-07-04\"])</code> should return <code>[\"July 1st\",\"4th\"]</code>",
+        "<code>makeFriendlyDates([\"2016-07-01\", \"2018-07-04\"])</code> should return <code>[\"July 1st, 2016\", \"July 4th, 2018\"]</code>.",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "challengeSeed": [
-        "function friendly(arr) {",
+        "function makeFriendlyDates(arr) {",
         "  return arr;",
         "}",
         "",
-        "friendly(['2016-07-01', '2016-07-04']);"
+        "makeFriendlyDates(['2016-07-01', '2016-07-04']);"
       ],
       "solutions": [
-        "function friendly(str) {\n  var thisYear = new Date().getFullYear();\n  var dates = str.map(function(s) {return s.split('-').map(Number);});\n  var start = dates[0];\n  var end = dates[1];\n  if (str[0] === str[1]) {\n     return [readable(start)];\n  }\n  if (start[0] !== end[0]) {\n    if (start[0] + 1 === end[0]){\n      if (start[1] > end[1]){\n        end[0] = undefined;\n      }\n      if (start[1] === end[1] && start[2] > end[2]){\n        end[0] = undefined;\n      }\n      if (start[0] === thisYear){\n        start[0] = undefined;\n      }\n    }\n    return dates.map(readable);\n  }\n  end[0] = undefined;\n  if (start[0] === thisYear){\n    start[0] = undefined;\n  }\n  if (start[1] === end[1]) {\n    end[1] = undefined;\n  }\n  return dates.map(readable);\n}\n\nfunction readable(arr) {\n  var ordD = arr[2] + nth(arr[2]);\n  if (!arr[1]) {\n    return ordD;\n  }\n  return MONTH[arr[1]] + \" \" + ordD + (!arr[0] ? \"\" : \", \" + arr[0]);\n}\n\nvar MONTH = {1: \"January\",\n             2: \"February\",\n             3: \"March\",\n             4: \"April\",\n             5: \"May\",\n             6: \"June\",\n             7: \"July\",\n             8: \"August\",\n             9: \"September\",\n             10: \"October\",\n             11: \"November\",\n             12: \"December\"};\n\nfunction nth(d) {\n  if(d>3 && d<21) return 'th';\n  switch (d % 10) {\n    case 1: return \"st\";\n    case 2: return \"nd\";\n    case 3: return \"rd\";\n    default: return \"th\";\n  }\n}"
+        "function makeFriendlyDates(str) {\n  var thisYear = new Date().getFullYear();\n  var dates = str.map(function(s) {return s.split('-').map(Number);});\n  var start = dates[0];\n  var end = dates[1];\n  if (str[0] === str[1]) {\n     return [readable(start)];\n  }\n  if (start[0] !== end[0]) {\n    if (start[0] + 1 === end[0]){\n      if (start[1] > end[1]){\n        end[0] = undefined;\n      }\n      if (start[1] === end[1] && start[2] > end[2]){\n        end[0] = undefined;\n      }\n      if (start[0] === thisYear){\n        start[0] = undefined;\n      }\n    }\n    return dates.map(readable);\n  }\n  end[0] = undefined;\n  if (start[0] === thisYear){\n    start[0] = undefined;\n  }\n  if (start[1] === end[1]) {\n    end[1] = undefined;\n  }\n  return dates.map(readable);\n}\n\nfunction readable(arr) {\n  var ordD = arr[2] + nth(arr[2]);\n  if (!arr[1]) {\n    return ordD;\n  }\n  return MONTH[arr[1]] + \" \" + ordD + (!arr[0] ? \"\" : \", \" + arr[0]);\n}\n\nvar MONTH = {1: \"January\",\n             2: \"February\",\n             3: \"March\",\n             4: \"April\",\n             5: \"May\",\n             6: \"June\",\n             7: \"July\",\n             8: \"August\",\n             9: \"September\",\n             10: \"October\",\n             11: \"November\",\n             12: \"December\"};\n\nfunction nth(d) {\n  if(d>3 && d<21) return 'th';\n  switch (d % 10) {\n    case 1: return \"st\";\n    case 2: return \"nd\";\n    case 3: return \"rd\";\n    default: return \"th\";\n  }\n}"
       ],
       "tests": [
-        "assert.deepEqual(friendly(['2016-07-01', '2016-07-04']), ['July 1st','4th'], 'message: <code>friendly([\"2016-07-01\", \"2016-07-04\"])</code> should return <code>[\"July 1st\",\"4th\"]</code>.');",
-        "assert.deepEqual(friendly(['2016-12-01', '2017-02-03']), ['December 1st','February 3rd'], 'message: <code>friendly([\"2016-12-01\", \"2017-02-03\"])</code> should return <code>[\"December 1st\",\"February 3rd\"]</code>.');",
-        "assert.deepEqual(friendly(['2016-12-01', '2018-02-03']), ['December 1st, 2016','February 3rd, 2018'], 'message: <code>friendly([\"2016-12-01\", \"2018-02-03\"])</code> should return <code>[\"December 1st, 2016\",\"February 3rd, 2018\"]</code>.');",
-        "assert.deepEqual(friendly(['2017-03-01', '2017-05-05']), ['March 1st, 2017','May 5th'], 'message: <code>friendly([\"2017-03-01\", \"2017-05-05\"])</code> should return <code>[\"March 1st, 2017\",\"May 5th\"]</code>');",
-        "assert.deepEqual(friendly(['2018-01-13', '2018-01-13']), ['January 13th, 2018'], 'message: <code>friendly([\"2018-01-13\", \"2018-01-13\"])</code> should return <code>[\"January 13th, 2018\"]</code>.');",
-        "assert.deepEqual(friendly(['2022-09-05', '2023-09-04']), ['September 5th, 2022','September 4th'], 'message: <code>friendly([\"2022-09-05\", \"2023-09-04\"])</code> should return <code>[\"September 5th, 2022\",\"September 4th\"]</code>.');",
-        "assert.deepEqual(friendly(['2022-09-05', '2023-09-05']), ['September 5th, 2022','September 5th, 2023'], 'message: <code>friendly([\"2022-09-05\", \"2023-09-05\"])</code> should return <code>[\"September 5th, 2022\",\"September 5th, 2023\"]</code>.');"
+        "assert.deepEqual(makeFriendlyDates(['2016-07-01', '2016-07-04']), ['July 1st','4th'], 'message: <code>makeFriendlyDates([\"2016-07-01\", \"2016-07-04\"])</code> should return <code>[\"July 1st\",\"4th\"]</code>.');",
+        "assert.deepEqual(makeFriendlyDates(['2016-12-01', '2017-02-03']), ['December 1st','February 3rd'], 'message: <code>makeFriendlyDates([\"2016-12-01\", \"2017-02-03\"])</code> should return <code>[\"December 1st\",\"February 3rd\"]</code>.');",
+        "assert.deepEqual(makeFriendlyDates(['2016-12-01', '2018-02-03']), ['December 1st, 2016','February 3rd, 2018'], 'message: <code>makeFriendlyDates([\"2016-12-01\", \"2018-02-03\"])</code> should return <code>[\"December 1st, 2016\",\"February 3rd, 2018\"]</code>.');",
+        "assert.deepEqual(makeFriendlyDates(['2017-03-01', '2017-05-05']), ['March 1st, 2017','May 5th'], 'message: <code>makeFriendlyDates([\"2017-03-01\", \"2017-05-05\"])</code> should return <code>[\"March 1st, 2017\",\"May 5th\"]</code>');",
+        "assert.deepEqual(makeFriendlyDates(['2018-01-13', '2018-01-13']), ['January 13th, 2018'], 'message: <code>makeFriendlyDates([\"2018-01-13\", \"2018-01-13\"])</code> should return <code>[\"January 13th, 2018\"]</code>.');",
+        "assert.deepEqual(makeFriendlyDates(['2022-09-05', '2023-09-04']), ['September 5th, 2022','September 4th'], 'message: <code>makeFriendlyDates([\"2022-09-05\", \"2023-09-04\"])</code> should return <code>[\"September 5th, 2022\",\"September 4th\"]</code>.');",
+        "assert.deepEqual(makeFriendlyDates(['2022-09-05', '2023-09-05']), ['September 5th, 2022','September 5th, 2023'], 'message: <code>makeFriendlyDates([\"2022-09-05\", \"2023-09-05\"])</code> should return <code>[\"September 5th, 2022\",\"September 5th, 2023\"]</code>.');"
       ],
       "type": "bonfire",
       "MDNlinks": [
