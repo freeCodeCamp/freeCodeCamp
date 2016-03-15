@@ -28,7 +28,7 @@ module.exports = function(app) {
   router.get('/nonprofits-form', nonprofitsForm);
   router.get('/unsubscribe/:email', unsubscribeMonthly);
   router.get('/unsubscribe-notifications/:email', unsubscribeNotifications);
-  router.get('/unsubscribe-quincy/:email', unsubscribeQuincy);  
+  router.get('/unsubscribe-quincy/:email', unsubscribeQuincy);
   router.get('/unsubscribed', unsubscribed);
   router.get('/get-started', getStarted);
   router.get('/submit-cat-photo', submitCatPhoto);
