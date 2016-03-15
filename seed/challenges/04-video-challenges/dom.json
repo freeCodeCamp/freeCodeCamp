@@ -30,7 +30,6 @@
       ],
       "type": "hike",
       "challengeType": 6,
-      "nameEs": "El DOM: ¿Qué es el Modelo de objetos del documento?",
       "descriptionEs": [
         "El DOM es la representación interna y programática de una página web del navegador. Lenguajes como javascript te permiten modificar el DOM, y por lo tanto el sitio web, sin editar el código HTML de la página.",
         "Técnicamente, el DOM es un API (interfaz de programación de aplicaciones). Hay varios tipos de APIs, pero este API en particular interactúa con documentos XML y HTML. Está a cargo de cómo se accesan y se manipulan esos documentos.",
@@ -38,7 +37,8 @@
         "Puedes insertar nuevos elementos, o cambiar el estilo o contenido de los elementos previamente existentes.",
         "Esto se puede hacer con javascript puro, como: document.getElementById(id), element.getElementsByTagName(name), o document.createElement(name).",
         "También puedes usar librerías como jQuery para simplificar, estandarizar y automatizar la manipulación del DOM, como por ejemplo: $('#caja2').append('Esto se agregará a caja2!')"
-      ]
+      ],
+      "titleEs": "El DOM: ¿Qué es el Modelo de objetos del documento?"
     },
     {
       "id": "56b15f15632298c12f31518e",
@@ -48,7 +48,7 @@
         "If you've ever seen a webpage that loads the text first, then after a bit loads the formatting and style, you've seen a page that didn't have the links to style and script in the correct places.",
         "This all has to do with how the browser decides it's loaded enough information to display. There's an event called 'DOMContentLoaded', and once that event happens, whatever is loaded will be displayed.",
         "The DOM will tell the browser it's ready once the HTML is loaded, and sometimes the CSS and JS hasn't caught up. However, if you place the CSS in the header and the JS in the footer, you can ensure that all content will be loaded before the DOM triggers the 'DOMContentLoaded' event, the event that shows the user your content.",
-        "This is a simple explanation, as most of these videos are. For more information, I really liked this resource: ablogaboutcode.com/2011/06/14/how-javascript-loading-works-domcontentloaded-and-onload/"
+        "This is a simple explanation, as most of these videos are. For more information, I really liked this resource: <a href='http://ablogaboutcode.com/2011/06/14/how-javascript-loading-works-domcontentloaded-and-onload' target='_blank'>ablogaboutcode.com/2011/06/14/how-javascript-loading-works-domcontentloaded-and-onload</a>"
       ],
       "challengeSeed": [
         "139879984"
@@ -66,14 +66,14 @@
       ],
       "type": "hike",
       "challengeType": 6,
-      "nameEs": "El DOM: Estilo en el encabezado, código al pie de página",
       "descriptionEs": [
         "Creo que ya te habrán dicho que los enlaces a código de estilo (CSS) deben ser incluidos en el encabezado (<code>header</code>) y que los enlaces al código (JS) deben estar incluidos al pie de página (<code>footer</code>). ¿Alguna vez te preguntaste por qué?",
         "Si alguna vez has visto una página web que carga el texto primero, y después de un momento carga el formato y el estilo, entonces era una página que no tenía los enlaces hacia el estilo y el código en los lugares correctos.",
         "Esto tiene que ver con la forma en que el navegador decide si ha cargado suficiente información para mostrar. Hay un evento llamado 'DOMContentLoaded', y una vez que ese evento ocurre, lo que sea que se haya cargado hasta entonces será mostrado.",
         "El DOM le dirá al navegador que está listo una vez que el código HTML ha sido cargado, y a veces el CSS y JS no se han alcanzado a cargar. Si pones el CSS en el encabezado y el JS al pie de página, puedes estar seguro que todo el contenido será cargado antes que el DOM desencadene el evento 'DOMContentLoaded', el cual muestra tu contenido al usuario.",
-        "Esta es una explicación simplificada, al igual que la que encontrarás en el resto de estos videos. Si quieres más información, creo que el siguiente enlace es de bastante ayuda: ablogaboutcode.com/2011/06/14/how-javascript-loading-works-domcontentloaded-and-onload/"
-      ]
+        "Esta es una explicación simplificada, al igual que la que encontrarás en el resto de estos videos. Si quieres más información, creo que el siguiente enlace es de bastante ayuda: <a href='http://ablogaboutcode.com/2011/06/14/how-javascript-loading-works-domcontentloaded-and-onload' target='_blank'>ablogaboutcode.com/2011/06/14/how-javascript-loading-works-domcontentloaded-and-onload</a>"
+      ],
+      "titleEs": "El DOM: Estilo en el encabezado, código al pie de página"
     }
   ]
 }

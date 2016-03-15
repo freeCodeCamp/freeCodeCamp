@@ -240,7 +240,6 @@
       ],
       "type": "Waypoint",
       "challengeType": 7,
-      "nameEs": "Reclama tu certificado de Desarrollo de interfaces",
       "descriptionEs": [
         [
           "http://i.imgur.com/k8btNUB.jpg",
@@ -266,7 +265,8 @@
           "¡Felicitaciones! Hemos agregado tu certificado de Desarrollo de interfaces a tu portafolio. A menos que elijas no mostrar tus soluciones, este certificado será públicamente visible y verificable.",
           ""
         ]
-      ]
+      ],
+      "titleEs": "Reclama tu certificado de Desarrollo de interfaces"
     }
   ]
 }

@@ -8,7 +8,7 @@
       "title": "JavaScript Lingo: MDN and Documentation",
       "description": [
         "This is a basic intro to MDN and the concept of documentation.",
-        "MDN, Mozilla Developer Network, is a fantastic open source collaboration that documents not only JavaScript, but many other languages and topics. If you haven't heard of them, you should check them out now. I get lots of information from developer.mozilla.org/en-US/docs/Web/JavaScript",
+        "MDN, Mozilla Developer Network, is a fantastic open source collaboration that documents not only JavaScript, but many other languages and topics. If you haven't heard of them, you should check them out now. I get lots of information from <a href='http://developer.mozilla.org/en-US/docs/Web/JavaScript' target='_blank'>developer.mozilla.org/en-US/docs/Web/JavaScript</a>",
         "When I say documentation, I am talking about information that is provided about the product to its users. The documentation at MDN isn't necessarily written by the people behind JS. Brendan Eich created JS in 1995, but it's now a community driven project that continues to grow.",
         "As you continue to learn JavaScript, jQuery, and pretty much any languages or services for development or programming, documentation is your friend. ",
         "The faster you get comfortable reading and referencing documentation, the faster you will grow as a developer.",
@@ -30,15 +30,15 @@
       ],
       "type": "hike",
       "challengeType": 6,
-      "nameEs": "JavaScript Lingo: MDN y Documentación",
       "descriptionEs": [
         "Esta es una introducción básica a MDN y el concepto de la documentación.",
-        "MDN, Mozilla Developer Network, es una fantástica colaboración de fuentes abiertas que documenta no sólo JavaScript, sino muchos otros lenguajes y temas. Si no has oído hablar de ellos, deberías darles un vistazo ahora. Personalmente obtengo mucha información de developer.mozilla.org/en-US/docs/Web/JavaScript ",
+        "MDN, Mozilla Developer Network, es una fantástica colaboración de fuentes abiertas que documenta no sólo JavaScript, sino muchos otros lenguajes y temas. Si no has oído hablar de ellos, deberías darles un vistazo ahora. Personalmente obtengo mucha información de <a href='http://developer.mozilla.org/es/docs/Web/JavaScript' target='_blank'>developer.mozilla.org/es/docs/Web/JavaScript</a>",
         "Cuando digo documentación, estoy hablando acerca de la información que se proporciona sobre el producto a sus usuarios. La documentación de MDN no necesariamente está escrita por la gente detrás de JS. Brendan Eich creó JS en 1995, pero hoy en día el proyecto continúa creciendo gracias a un esfuerzo comunitario. ",
         "A medida que continúes aprendiendo JavaScript, jQuery, y prácticamente cualquier otro lenguaje o servicio para desarrollo o programación, la documentación será tu amiga.",
         "Cuanto más rápido te sientas cómodo leyendo y referenciando documentación, más rápido crecerás como desarrollador.",
         "Estos vídeos no van a enseñarte JavaScript - te presentan términos y conceptos que serán valiosos a medida que continúes practicando y aprendiendo."
-      ]
+      ],
+      "titleEs": "JavaScript Lingo: MDN y Documentación"
     },
     {
       "id": "56b15f15632298c12f31518d",
@@ -65,13 +65,13 @@
       ],
       "type": "hike",
       "challengeType": 6,
-      "nameEs": "JavaScript Lingo: Tipos de valores",
       "descriptionEs": [
         "Aprende sobre los tres tipos más básicos de valores: Booleanos, cadenas y números",
         "Un booleano es un valor <code>true</code> (verdadero) o <code>false</code> (falso). Estas palabras son especiales y reservadas. No puedes nombrar a una variable como \"true\", porque esa palabra es ya universal como un valor lógico (así como lo es \"false\"). ",
         "Una cadena es un conjunto de caracteres que se establecen entre apóstrofes (') o entre comillas (\"). Una cadena puede ser \"true\", siempre y cuando sea con comillas o con apóstrofes. ",
         "Los números se explican por sí mismos - un número es un valor que se compone sólo de dígitos, aunque también puede contener un decimal o un signo negativo."
-      ]
+      ],
+      "titleEs": "JavaScript Lingo: Tipos de valores"
     },
     {
       "id": "56b15f15632298c12f31518b",
@@ -101,7 +101,6 @@
       ],
       "type": "hike",
       "challengeType": 6,
-      "nameEs": "JavaScript Lingo: Variables y capitalizaciónCamello",
       "descriptionEs": [
         "Vamos a cubrir lo que constituye una variable, y el razonamiento detrás de la capitalizaciónCamello (<em>camelCase</em>).",
         "Una variable, también conocida como una 'var', es el nombre o el espacio para un booleano, una cadena, un número, u otra pieza de información estática.",
@@ -109,7 +108,8 @@
         "Tu 'declaras' variables por primera vez con <code>var</code> en frente de ella, pero después puedes referenciarla más adelante en tu programa.",
         "capitalizaciónCamello es una forma en la que juntas varias palabras y aún así las mantienes legibles. La primera letra de la primera palabra va en minúsculas al igual que el resto de la primera palabra, pero la primera letra de cada palabra que siga se escribe en mayúsculas. No hay espacios. Ejemplos: brianaAmaSusMascotas, laMejorComidaEsElQueso, y valeLaPenaAprenderProgramacion.",
         "Al asignar un nombre de variable, usa capitalizaciónCamello. Además, trata de mantener los nombres descriptivos y cortos para que los demás (¡e incluso tu!) puedan entender a lo que se refiere la variable simplemente por el nombre."
-      ]
+      ],
+      "titleEs": "JavaScript Lingo: Variables y capitalizaciónCamello"
     },
     {
       "id": "56b15f15632298c12f31518a",
@@ -138,7 +138,6 @@
       ],
       "type": "hike",
       "challengeType": 6,
-      "nameEs": "JavaScript Lingo: Vectores y objetos",
       "descriptionEs": [
         "Si desea almacenar más de una pieza de información en una variable, puedes hacerlo mediante la creación de un vector o de un objeto.",
         "** Exención de responsabilidad: Los objetos de JS no son exactamente lo mismo que los objetos en otros lenguajes. Vamos a discutir aquí objetos con respecto a JS. ",
@@ -146,7 +145,8 @@
         "Los objetos son un tipo de datos que pueden verse o comportarse como un vector, en la medida que se trata de más valores almacenados en una variable de una manera organizada. Oirás que un objeto se puede representar en JSON, y con frecuencia cuando haces llamadas a la API de algunos sitios (para obtener información que necesitas mostrar en tu propia página) está será devuelta en JSON. ",
         "Un ejemplo de la notación de objetos es:  <code>var obj = { 'nombre': 'Briana', 'comida': 'queso', 'perro': 'Maurice'};</code>",
         "Fíjate que un objeto se encierra entre llaves { ... }, que los diferentes atributos se separan por comas, que cada atributo consta de una palabra llave y de un valor. Por ejemplo son llaves 'nombre', 'comida' y 'perro' y sus respectivos valores son 'Briana', 'queso' y 'Maurice'. En este ejmplo todos los valores fueron cadenas, aunque también son válidos booleanos, números y otros tipos de datos."
-      ]
+      ],
+      "titleEs": "JavaScript Lingo: Vectores y objetos"
     },
     {
       "id": "56b15f15632298c12f315189",
@@ -173,12 +173,12 @@
       ],
       "type": "hike",
       "challengeType": 6,
-      "nameEs": "JavaScript Lingo: Encontrando e indexando valores en vectores",
       "descriptionEs": [
         "Hay muchas razones por las que puedes necesitar acceder a una determinada pieza de información al interior de un conjunto más amplio, lo cual haces referenciando su índice.",
         "No vamos a entrar en la sintaxis, pero debes saber que el primer elemento en un vector tiene en realidad el índice 0.",
         "Esto también aplica para cadenas y objetos. Todos estos índices comienzan en 0, por lo que si en tu programa usas <code>miVector[2]</code>, realmente vas a obtener la tercera pieza de información del vector <code>miVector</code>."
-      ]
+      ],
+      "titleEs": "JavaScript Lingo: Encontrando e indexando valores en vectores"
     },
     {
       "id": "56b15f15632298c12f315188",
@@ -186,7 +186,7 @@
       "description": [
         "Methods and functions are ways you can manipulate variables or other sets of information.",
         "Methods are built in to JavaScript, and you will become more familiar with these as you write functions for the bonfires.",
-        "I'd suggest looking through the MDN (Mozilla Developer Network that we discussed in the first video) to familiarize yourself with the sheer amount and general potential for the methods that exist. developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Methods_Index",
+        "I'd suggest looking through the MDN (Mozilla Developer Network that we discussed in the first video) to familiarize yourself with the sheer amount and general potential for the methods that exist. <a href='http://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Methods_Index' target='_blank'>developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Methods_Index</a>",
         "Examples include '.split(' ')', which will turn a string into an array and can do so in many different ways. Methods are powerful - many times when you want your script to do something, there's a method for that.",
         "Functions, like variables, are something you define and create.",
         "During your algorithm practice at Free Code Camp, you will create functions that take a certain piece of information and manipulate it in whatever way you choose.",
@@ -208,16 +208,16 @@
       ],
       "type": "hike",
       "challengeType": 6,
-      "nameEs": "JavaScript Lingo: Manipulación de los datos",
       "descriptionEs": [
         "Métodos y funciones son formas con las que puedes modificar variables u otros conjuntos de información.",
         "Los métodos están integrados en JavaScript, y te familiarizarás con estos cuando realices los desafíos sobre algoritmos.",
-        "Me gustaría sugerirte dar un vistazo a MDN (Mozilla Developer Network que discutimos en el primer video) para que te familiarices con la cantidad y el potencial general de los métodos que existen. developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Methods_Index",
+        "Me gustaría sugerirte dar un vistazo a MDN (Mozilla Developer Network que discutimos en el primer video) para que te familiarices con la cantidad y el potencial general de los métodos que existen. <a href='http://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Methods_Index' target='_blank'>developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Methods_Index</a>",
         "Los ejemplos incluyen <code>.split (' ')</code>, que convertirá una cadena en un vector y puede hacerlo de muchas maneras diferentes. Los métodos son de gran alcance - muchas veces cuando quieres que tu programa haga algo, ya habrá un método para eso.",
         "Las funciones, al igual que las variables, son algo que tu defines y creas.",
         "Durante tu práctica con algoritmos en FreeCodeCamp, vas a crear funciones que reciben una determinada pieza de información y la manipulan de la forma que elijas.",
         "Vas a estar más familiarizado con la sintaxis, pero por ahora, sólo recuerda que con los métodos y funciones puedes hacer casi cualquier cosa con tu código."
-      ]
+      ],
+      "titleEs": "JavaScript Lingo: Manipulación de los datos"
     },
     {
       "id": "56b15f15632298c12f315187",
@@ -247,7 +247,6 @@
       ],
       "type": "hike",
       "challengeType": 6,
-      "nameEs": "JavaScript Lingo: Matemáticas",
       "descriptionEs": [
         "Hay un objeto estático de nombre 'Math' en JS con muchos propiedades y métodos incluidos.",
         "Vas a querer investigar más de este cuando manipules números. Consulta la documentación de MDN antes de escribir tus propias funciones, pues ya podrían estar definidas allí. ",
@@ -256,7 +255,8 @@
         "Cuando trabajes con números, también debes estar consciente de que JS tiene un atributo interesante llamado 'formato de coma flotante'.",
         "Dependiendo de la cantidad de números, su tamaño y la cantidad de cálculos, JS puede devolver un número que es inexacto en 0,00004.",
         "Hay maneras de evitar esto, y en general no plantean problemas, pero es algo que debes tener en cuenta si te encuentras con algunos problemas que parecen no tienen sentido."
-      ]
+      ],
+      "titleEs": "JavaScript Lingo: Matemáticas"
     },
     {
       "id": "56b15f15632298c12f315186",
@@ -283,12 +283,12 @@
       ],
       "type": "hike",
       "challengeType": 6,
-      "nameEs": "JavaScript Lingo: Ciclos",
       "descriptionEs": [
         "Si hay un conjunto de valores (vamos a utilizar un vector en este ejemplo, pero no tiene que ser así) y deseas realizar la misma operación a cada valor del conjunto, puedes usar algo llamado ciclo. ",
         "Los ciclos tienen una sintaxis compleja a la que inicialmente es difícil acostumbrarse, pero una vez que la entiendas, son de gran utilidad. Yo usé ciclos en muchas de mis soluciones. ",
         "No es necesario que entiendas todo aquí - sólo que sepas que existen ciclos cuando necesitas recorrer un conjunto de datos y que pueden reducir la cantidad de código que debes escribir."
-      ]
+      ],
+      "titleEs": "JavaScript Lingo: Ciclos"
     },
     {
       "id": "56b15f15632298c12f315185",
@@ -318,8 +318,6 @@
       ],
       "type": "hike",
       "challengeType": 6,
-      "id": "56b15f15632298c12f315185",
-      "nameEs": "JavaScript Lingo: expresiones regulares (RegExp)",
       "descriptionEs": [
         "Las RegExp no siguen el formato del resto de JS, y pueden requerir una curva de aprendizaje.",
         "Las epresiones regulares (abreviado <em>RegExp</em>) también pueden ser una herramienta muy útil y eficiente.",
@@ -328,7 +326,8 @@
         "Si quisieras crear una página de registro que verifique las contraseñas para que contengan al menos un número y una letra mayúscula, puedes usar expresiones regulares.",
         "Si quieres asegurarte de que las fechas introducidas en una página sean todas fechas válidas en el futuro, puedes usar RegExp.",
         "Si bien hay infinitas maneras de utilizar RegExp, muchas de estas incluyen validaciones o ediciones automáticas de información."
-      ]
+      ],
+      "titleEs": "JavaScript Lingo: expresiones regulares (RegExp)"
     }
   ]
 }
