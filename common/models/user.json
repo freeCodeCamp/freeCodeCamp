@@ -110,6 +110,14 @@
       "type": "boolean",
       "default": true
     },
+    "sendNotificationEmail": {
+      "type": "boolean",
+      "default": true
+    },
+    "sendQuincyEmail": {
+      "type": "boolean",
+      "default": true
+    },
     "isLocked": {
       "type": "boolean",
       "default": false,

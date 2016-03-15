@@ -4,33 +4,14 @@ block content
     script.
         var challengeName = 'Profile View';
     if (user && user.username === username)
-        h1.text-center Update your code portfolio
-        .row
-            .col-xs-12
-                if (!user.isGithubCool)
-                    a.btn.btn-lg.btn-block.btn-github.btn-link-social(href='/link/github')
-                        i.fa.fa-github
-                        | Link my GitHub to unlock my portfolio
-                else
-                    a.btn.btn-lg.btn-block.btn-github.btn-link-social(href='/link/github')
-                        i.fa.fa-github
-                        | Update my portfolio from GitHub
-                    if (!user.twitter)
-                        a.btn.btn-lg.btn-block.btn-twitter.btn-link-social(href='/link/twitter')
-                            i.fa.fa-twitter
-                            | Add my Twitter to my portfolio
-                    if (!user.facebook)
-                        a.btn.btn-lg.btn-block.btn-facebook.btn-link-social(href='/link/facebook')
-                            i.fa.fa-facebook
-                            | Add my Facebook to my portfolio
-                    if (!user.linkedin)
-                        a.btn.btn-lg.btn-block.btn-linkedin.btn-link-social(href='/link/linkedin')
-                            i.fa.fa-linkedin
-                            | Add my LinkedIn to my portfolio
-                    if (!user.google)
-                        a.btn.btn-lg.btn-block.btn-google-plus.btn-link-social(href='/link/google')
-                            i.fa.fa-google-plus
-                            | Add my Google+ to my portfolio
+      .row
+        if (!user.isGithubCool)
+          a.btn.btn-lg.btn-block.btn-github.btn-link-social(href='/link/github')
+              i.fa.fa-github
+              | Link my GitHub to unlock my portfolio
+        .col-xs-12
+            a.btn.btn-lg.btn-block.btn-primary.btn-link-social(href='/settings')
+                | Update your settings
         .spacer
     h1.text-center #{username}'s code portfolio
     hr
@@ -188,55 +169,3 @@ block content
                                         a(href='/challenges/' + removeOldTerms(challenge.name) + '?solution=' + encodeURIComponent(encodeFcc(challenge.solution)), target='_blank')= removeOldTerms(challenge.name)
                                     else
                                         a(href='/challenges/' + removeOldTerms(challenge.name))= removeOldTerms(challenge.name)
-
-    if (user && user.username === username)
-        h1.text-center Manage your account
-        hr
-        .col-xs-12
-            a.btn.btn-lg.btn-block.btn-primary.btn-link-social(href='/logout')
-                | Sign me out of Free Code Camp
-        .col-xs-12
-            a.btn.btn-lg.btn-block.btn-primary.btn-link-social(href='mailto:team@freecodecamp.com')
-                | Email us at team@freecodecamp.com
-        if (!user.isLocked)
-            .col-xs-12
-                a.btn.btn-lg.btn-block.btn-primary.btn-link-social(href='/toggle-lockdown-mode')
-                    | Hide all my solutions from other people
-                    br
-                    | (this will disable your certificates)
-        else
-            .col-xs-12
-                a.btn.btn-lg.btn-block.btn-primary.btn-link-social(href='/toggle-lockdown-mode')
-                    | Let other people see all my solutions
-                    br
-                    | (this will enable your certificates)
-        .col-xs-12
-            a.btn.btn-lg.btn-block.btn-primary.btn-link-social(href='/commit')
-                | Edit my pledge
-        .col-xs-12
-            a.btn.btn-lg.btn-block.btn-danger.btn-link-social.confirm-deletion
-                | Delete my Free Code Camp account
-            script.
-                $('.confirm-deletion').on("click", function () {
-                    $('#modal-dialog').modal('show');
-                });
-        #modal-dialog.modal.animated.wobble
-            .modal-dialog
-                .modal-content
-                    .modal-header
-                        a.close(href='#', data-dismiss='modal', aria-hidden='true') ×
-                        h3 You don't really want to delete your account, do you?
-                    .modal-body
-                        p This will really delete all your data, including all your progress, news stories and brownie points.
-                        p We won't be able to recover any of it for you later, even if you change your mind.
-                        p If there's something we could do better, send us an email instead and we'll do our best: &thinsp;
-                            a(href="mailto:team@freecodecamp.com") team@freecodecamp.com
-                            | .
-                    .modal-footer
-                        a.btn.btn-success.btn-block(href='#', data-dismiss='modal', aria-hidden='true')
-                            | Nevermind, I don't want to delete all of my progress
-                        .spacer
-                        form(action='/account/delete', method='POST')
-                            input(type='hidden', name='_csrf', value=_csrf)
-                            button.btn.btn-danger.btn-block(type='submit')
-                                | I am 100% sure I want to delete my account and all of my progress
