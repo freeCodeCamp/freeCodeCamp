@@ -26,6 +26,20 @@
       "tests": [
         "assert.isTrue((/hello(\\s)+world/gi).test($('h1').text()), 'message: Your <code>h1</code> element should have the text \"Hello World\".');"
       ],
+      "nameFr": "Dites Bonjour aux éléments HTML",
+      "descriptionFr": [
+        "Bienvenue sur votre premier challenge de développeur sur Free Code Camp",
+		"Vous pouvez éditer le <code>code</code> dans votre </code>editeur de texte</code>, que nous avons intégré dans cette page web",
+		"Est-ce que vous voyez le code dans votre éditeur de texte disant<code>&#60;h1&#62;Bonjour&#60;/h1&#62;? Ceci est un <code>élément</code> HTML",
+		"La plupart des éléments HTML ont une <code>balise ouvrante</code> et une <code>balise fermante</code>",
+		"Les balises ouvrante ressemblent à ça:",
+        "<code>&#60;h1&#62;</code>",
+        "Les balises fermantes ressemblent à ça:",
+        "<code>&#60;/h1&#62;</code>",
+        "Notez que la seule différente entre les balises ouvrantes et fermantes est que les balises fermantes possèdent un slash aprés leur ouverture.",
+		"Chaque challenge possède des tests que vous pouvez lancer n'importe quand en cliquant sur le bouton \"Lancer les tests\". Une fois les tests passés vous pouvez passer au défi suivant.",
+		"Pour passer le test sur ce défi, vous devez changer le texte de la balise <code>h1</code> disant \"Hello World\" à la place de \"Hello\". Puis cliquer sur \"Lancer les tests\"."
+      ],
       "challengeType": 0,
       "nameEs": "Saluda a los Elementos HTML",
       "descriptionEs": [
@@ -83,6 +97,15 @@
         "assert(code.match(/<\\/h2>/g) && code.match(/<\\/h2>/g).length === code.match(/<h2>/g).length, 'message: Make sure your <code>h2</code> element has a closing tag.');",
         "assert.isTrue((/cat(\\s)?photo(\\s)?app/gi).test($(\"h2\").text()), 'message: Your <code>h2</code> element should have the text \"CatPhotoApp\".');",
         "assert.isTrue((/hello(\\s)+world/gi).test($(\"h1\").text()), 'message: Your <code>h1</code> element should have the text \"Hello World\".');"
+      ],
+      "nameFr": "Gros titre avec la balise h2",
+      "descriptionFr": [
+      	"Dans les prochains défis, nous développerons une application HTML5 qui ressemblera à quelque chose comme ça:",
+        "<a href=\"http://i.imgur.com/jOc1JF1.png\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" src=\"http://i.imgur.com/jOc1JF1.png\" title=\"Cliquer pour agrandir\" alt=\"Une image de notre application de photo de chat terminée.\"></a>",
+        "L'élément <code>h2</code> que vous coderez créera une balise <code>h2</code> sur le site web.",
+		"Cette balise dit au navigateur comment afficher le texte qu'il contient.",
+		"Les élements <code>h2</code> sont légèrement plus petite que les élements <code>h1</code>. Il y a aussi les éléments <code>h3</code>, <code>h4</code>, <code>h5</code> et <code>h6</code>.",
+		"Ajoutez une balise <code>h2</code> disant \"CatPhotoApp\" pour créer une seconde <code>balise</code> HTML en dessous de votre balise <code>h1</code> contenant \"Hello World\"."
       ],
       "challengeType": 0,
       "nameEs": "Encabezado con el elemento h2",
