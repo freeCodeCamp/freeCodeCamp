@@ -28,7 +28,6 @@
       "tests": [],
       "type": "basejump",
       "challengeType": 4,
-      "nameEs": "Crea una aplicación de votaciones",
       "descriptionEs": [
         "<strong>Objetivo:</strong> Construye una aplicación de pila completa (full stack) en JavaScript que funcione de forma similar al siguiente proyecto: <a href='https://fcc-voting-arthow4n.herokuapp.com/' target='_blank'>https://fcc-voting-arthow4n.herokuapp.com/</a> y despliégala en Heroku.",
         "Ten en cuenta que para cada proyecto, debes crear un nuevo repositorio en GitHub y un nuevo proyecto en Heroku. Si no recuerdas cómo hacerlo, visita de nuevo <a href='/challenges/get-set-for-our-back-end-development-projects'>http://freecodecamp.com/challenges/get-set-for-our-back-end-development-projects</a>.",
@@ -44,7 +43,8 @@
         "Una vez hayas terminado de implementar estas historias de usuario, pulsa el botón de \"I've completed this challenge\" e incluye las URLs de tu repositorio GitHub y de tu aplicación corriendo en Heroku.",
         "Puedes obtener retroalimentación acerca de tu proyecto de parte de tus compañeros campistas compartiéndolo en nuestro <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Cuarto de revisión de código</a>. También puedes compartirlo en Twitter y en el campamento de tu ciudad (en Facebook)."
       ],
-      "isRequired": true
+      "isRequired": true,
+      "titleEs": "Crea una aplicación de votaciones"
     },
     {
       "id": "bd7158d8c443eddfaeb5bdff",
@@ -67,7 +67,6 @@
       "tests": [],
       "type": "basejump",
       "challengeType": 4,
-      "nameEs": "Crea una aplicación de coordinación de vida nocturna",
       "descriptionEs": [
         "<strong>Objetivo:</strong> Construye una aplicación de pila completa (full stack) en JavaScript que funcione de forma similar al siguiente proyecto: <a href='http://whatsgoinontonight.herokuapp.com/' target='_blank'>http://whatsgoinontonight.herokuapp.com/</a> y despliégala en Heroku.",
         "Ten en cuenta que para cada proyecto, debes crear un nuevo repositorio en GitHub y un nuevo proyecto en Heroku. Si no recuerdas cómo hacerlo, visita de nuevo <a href='/challenges/get-set-for-our-back-end-development-projects'>http://freecodecamp.com/challenges/get-set-for-our-back-end-development-projects</a>.",
@@ -80,7 +79,8 @@
         "Una vez hayas terminado de implementar estas historias de usuario, pulsa el botón de \"I've completed this challenge\" e incluye las URLs de tu repositorio GitHub y de tu aplicación corriendo en Heroku.",
         "Puedes obtener retroalimentación acerca de tu proyecto de parte de tus compañeros campistas compartiéndolo en nuestro <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Cuarto de revisión de código</a>. También puedes compartirlo en Twitter y en el campamento de tu ciudad (en Facebook)."
       ],
-      "isRequired": true
+      "isRequired": true,
+      "titleEs": "Crea una aplicación de coordinación de vida nocturna"
     },
     {
       "id": "bd7158d8c443eddfaeb5bd0e",
@@ -102,7 +102,6 @@
       "tests": [],
       "type": "basejump",
       "challengeType": 4,
-      "nameEs": "Grafica el mercado de acciones",
       "descriptionEs": [
         "<strong>Objetivo:</strong> Construye una aplicación de pila completa (full stack) en JavaScript que funcione de forma similar al siguiente proyecto: <a href='http://watchstocks.herokuapp.com/' target='_blank'>http://watchstocks.herokuapp.com/</a> y despliégalo en Heroku.",
         "Ten en cuenta que para cada proyecto, debes crear un nuevo repositorio en GitHub y un nuevo proyecto en Heroku. Si no recuerdas cómo hacerlo, visita de nuevo <a href='/challenges/get-set-for-our-back-end-development-projects'>http://freecodecamp.com/challenges/get-set-for-our-back-end-development-projects</a>.",
@@ -114,7 +113,8 @@
         "Una vez hayas terminado de implementar estas historias de usuario, pulsa el botón de \"I've completed this challenge\" e incluye las URLs de tu repositorio GitHub y de tu aplicación corriendo en Heroku.",
         "Puedes obtener retroalimentación acerca de tu proyecto de parte de tus compañeros campistas compartiéndolo en nuestro <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Cuarto de revisión de código</a>. También puedes compartirlo en Twitter y en el campamento de tu ciudad (en Facebook)."
       ],
-      "isRequired": true
+      "isRequired": true,
+      "titleEs": "Grafica el mercado de acciones"
     },
     {
       "id": "bd7158d8c443eddfaeb5bd0f",
@@ -136,7 +136,6 @@
       "tests": [],
       "type": "basejump",
       "challengeType": 4,
-      "nameEs": "Administra un club de intercambio de libros",
       "descriptionEs": [
         "<strong>Objetivo:</strong> Construye una aplicación de pila completa (full stack) en JavaScript que funcione de forma similar al siguiente proyecto: <a href='http://bookjump.herokuapp.com/' target='_blank'>http://bookjump.herokuapp.com/</a> y despliégalo en Heroku.",
         "Ten en cuenta que para cada proyecto, debes crear un nuevo repositorio en GitHub y un nuevo proyecto en Heroku. Si no recuerdas cómo hacerlo, visita de nuevo <a href='/challenges/get-set-for-our-back-end-development-projects'>http://freecodecamp.com/challenges/get-set-for-our-back-end-development-projects</a>.",
@@ -148,7 +147,8 @@
         "Una vez hayas terminado de implementar estas historias de usuario, pulsa el botón de \"I've completed this challenge\" e incluye las URLs de tu repositorio GitHub y de tu aplicación corriendo en Heroku.",
         "Puedes obtener retroalimentación acerca de tu proyecto de parte de tus compañeros campistas compartiéndolo en nuestro <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Cuarto de revisión de código</a>. También puedes compartirlo en Twitter y en el campamento de tu ciudad (en Facebook)."
       ],
-      "isRequired": true
+      "isRequired": true,
+      "titleEs": "Administra un club de intercambio de libros"
     },
     {
       "id": "bd7158d8c443eddfaeb5bdee",
@@ -173,7 +173,6 @@
       "tests": [],
       "type": "basejump",
       "challengeType": 4,
-      "nameEs": "Crea un clon de Pinterest",
       "descriptionEs": [
         "<strong>Objetivo:</strong> Construye una aplicación de pila completa (full stack) en JavaScript que funcione de forma similar al siguiente proyecto: <a href='http://pintech.herokuapp.com/' target='_blank'>http://pintech.herokuapp.com/</a> y despliégalo en Heroku.",
         "Ten en cuenta que para cada proyecto, debes crear un nuevo repositorio en GitHub y un nuevo proyecto en Heroku. Si no recuerdas cómo hacerlo, visita de nuevo <a href='/challenges/get-set-for-our-back-end-development-projects'>http://freecodecamp.com/challenges/get-set-for-our-back-end-development-projects</a>.",
@@ -188,7 +187,8 @@
         "Una vez hayas terminado de implementar estas historias de usuario, pulsa el botón de \"I've completed this challenge\" e incluye las URLs de tu repositorio GitHub y de tu aplicación corriendo en Heroku.",
         "Puedes obtener retroalimentación acerca de tu proyecto de parte de tus compañeros campistas compartiéndolo en nuestro <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Cuarto de revisión de código</a>. También puedes compartirlo en Twitter y en el campamento de tu ciudad (en Facebook)."
       ],
-      "isRequired": true
+      "isRequired": true,
+      "titleEs": "Crea un clon de Pinterest"
     }
   ]
 }
