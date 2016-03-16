@@ -615,7 +615,7 @@
       "title": "Computer Basics: How the Internet Works",
       "description": [
         "This is a brief and basic overview of how the internet works.",
-        "For a more in-depth explanation, check out web.stanford.edu/class/msande91si/www-spr04/readings/week1/InternetWhitepaper.htm",
+        "For a more in-depth explanation, check out <a href='http://web.stanford.edu/class/msande91si/www-spr04/readings/week1/InternetWhitepaper.htm' target='_blank'>web.stanford.edu/class/msande91si/www-spr04/readings/week1/InternetWhitepaper.htm</a>.",
         "Let's talk a little more about how the internet works.",
         "We've already established that every device and router on the internet has its own IP address, which is assigned based on location.",
         "Using these IP addresses, your device can talk to your modem, then to a router, which is set up by a web service.",
@@ -626,7 +626,7 @@
         "It's really amazing.",
         "What I want you take away from this video is that your device, since it has an IP address, can send out a request for information, and that information will get back to your device via servers and routers that comprise the internet.",
         "Now, this explanation is really quite basic.",
-        "For more information, check out web.stanford.edu/class/msande91si/www-spr04/readings/week1/InternetWhitepaper.htm."
+        "For more information, check out <a href='http://web.stanford.edu/class/msande91si/www-spr04/readings/week1/InternetWhitepaper.htm' target='_blank'>web.stanford.edu/class/msande91si/www-spr04/readings/week1/InternetWhitepaper.htm</a>."
       ],
       "challengeSeed": [
         "132548579"
@@ -646,7 +646,7 @@
       "challengeType": 6,
       "descriptionEs": [
         "Esta es una descripción breve y descripción de cómo funciona Internet.",
-        "Para una explicación más en profundidad, dale un vistazo a web.stanford.edu/class/msande91si/www-spr04/readings/week1/InternetWhitepaper.htm",
+        "Para una explicación más en profundidad, dale un vistazo a <a href='http://web.stanford.edu/class/msande91si/www-spr04/readings/week1/InternetWhitepaper.htm' target='_blank'>web.stanford.edu/class/msande91si/www-spr04/readings/week1/InternetWhitepaper.htm</a>.",
         "Vamos a hablar un poco más acerca de cómo funciona el Internet.",
         "Ya hemos establecido que todos los dispositivos y enrutadores en Internet tienen su propia dirección IP, que se asigna en función de la ubicación.",
         "Usando estas direcciones IP, tu dispositivo puede hablar con tu módem, y después con un enrutador, el cual debió ser configurado por ejemplo con un servicio web con el que te intentas conectar.",
@@ -657,7 +657,7 @@
         "Es realmente increíble.",
         "Lo que quiero que te lleves de este video es que tu dispositivo, que tiene una dirección IP, puede enviar una petición de información, y que esa información regresará a tu dispositivo por medio de servidores y enrutadores que componen el Internet.",
         "Ahora bien, esta explicación es realmente básica.",
-        "Para obtener más información, echa un vistazo a web.stanford.edu/class/msande91si/www-spr04/readings/week1/InternetWhitepaper.htm."
+        "Para obtener más información, echa un vistazo a <a href='http://web.stanford.edu/class/msande91si/www-spr04/readings/week1/InternetWhitepaper.htm' target='_blank'>web.stanford.edu/class/msande91si/www-spr04/readings/week1/InternetWhitepaper.htm</a>."
       ],
       "titleEs": "Fundamentos básicos del computador: ¿Cómo funciona Internet"
     },
@@ -706,7 +706,7 @@
         "CDNs accomplish this by providing effective routes between their own servers that can fast-track users to their destination, or if its faster and/or cheaper, another copy of that website destination that is being hosted on another server.",
         "This concept and type of service is not new, but is becoming more popular as the internet grows.",
         "Websites contract and pay a CDN service, who in turn pays an internet provider to use their servers for their data.",
-        "An example of CDNs are Google's Hosted Libraries. -- developers.google.com/speed/libraries/#jquery",
+        "An example of CDNs are Google's Hosted Libraries. -- <a href='http://developers.google.com/speed/libraries/#jquery' target='_blank'>developers.google.com/speed/libraries/#jquery</a>",
         "Google hosts these libraries so that your users can load them into your own site much more quickly than if you host them yourself.",
         "There's a chance the user's browser is even storing a cached version from visiting a previous page, making the process even quicker. If you aren't familiar with the term 'cache', don't worry, we'll cover that in future videos.",
         "As a user, you probably use CDNs all the time without realizing it.",
@@ -735,7 +735,7 @@
         "Las RDC logran esto proporcionando rutas eficaces entre sus propios servidores que pueden encaminar rápidamente a los usuarios a sus destinos, o si resulta más rápido o económico, a otra copia del sitio web destino, la cual se aloja en otro servidor.",
         "Este concepto y tipo de servicio no es nuevo, pero es cada vez más popular a medida que crece Internet.",
         "Los sitios web contratan y pagan un servicio a las RDC, quienes a su vez le pagan a proveedores de Internet para utilizar sus servidores y almacenar en estos sus datos.",
-        "Un ejemplo de CDN son las Bibliotecas alojadas de Google - developers.google.com/speed/libraries/#jquery",
+        "Un ejemplo de CDN son las Bibliotecas alojadas de Google - <a href='http://developers.google.com/speed/libraries/#jquery' target='_blank'>developers.google.com/speed/libraries/#jquery</a>",
         "Google organiza estas bibliotecas para que tus usuarios puedan cargarlas en tus propios sitio web mucho más rápido que si las alojaras tu mismo.",
         "Hay incluso una posibilidad de que el navegador del usuario le presente  una copia en `caché' (almacenamiento local temporal) realizada durante una visita previa, haciendo que el proceso sea aún más rápido. Si no estás familiarizado con el término 'caché', no te preocupes, vamos a cubrirlo en videos futuros. ",
         "Como usuario, es probable que utilices RDC  todo el tiempo sin darte cuenta.",
