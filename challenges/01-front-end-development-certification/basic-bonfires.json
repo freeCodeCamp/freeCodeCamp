@@ -365,25 +365,25 @@
         "Remember to use <a href=\"//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck\" target=\"_blank\">Read-Search-Ask</a> if you get stuck. Write your own code."
       ],
       "challengeSeed": [
-        "function repeat(str, num) {",
+        "function repeatStringNumTimes(str, num) {",
         "  // repeat after me",
         "  return str;",
         "}",
         "",
-        "repeat(\"abc\", 3);"
+        "repeatStringNumTimes(\"abc\", 3);"
       ],
       "tests": [
-        "assert(repeat(\"*\", 3) === \"***\", 'message: <code>repeat(\"*\", 3)</code> should return <code>\"***\"</code>.');",
-        "assert(repeat(\"abc\", 3) === \"abcabcabc\", 'message: <code>repeat(\"abc\", 3)</code> should return <code>\"abcabcabc\"</code>.');",
-        "assert(repeat(\"abc\", 4) === \"abcabcabcabc\", 'message: <code>repeat(\"abc\", 4)</code> should return <code>\"abcabcabcabc\"</code>.');",
-        "assert(repeat(\"abc\", 1) === \"abc\", 'message: <code>repeat(\"abc\", 1)</code> should return <code>\"abc\"</code>.');",
-        "assert(repeat(\"*\", 8) === \"********\", 'message: <code>repeat(\"*\", 8)</code> should return <code>\"********\"</code>.');",
-        "assert(repeat(\"abc\", -2) === \"\", 'message: <code>repeat(\"abc\", -2)</code> should return <code>\"\"</code>.');"
+        "assert(repeatStringNumTimes(\"*\", 3) === \"***\", 'message: <code>repeatStringNumTimes(\"*\", 3)</code> should return <code>\"***\"</code>.');",
+        "assert(repeatStringNumTimes(\"abc\", 3) === \"abcabcabc\", 'message: <code>repeatStringNumTimes(\"abc\", 3)</code> should return <code>\"abcabcabc\"</code>.');",
+        "assert(repeatStringNumTimes(\"abc\", 4) === \"abcabcabcabc\", 'message: <code>repeatStringNumTimes(\"abc\", 4)</code> should return <code>\"abcabcabcabc\"</code>.');",
+        "assert(repeatStringNumTimes(\"abc\", 1) === \"abc\", 'message: <code>repeatStringNumTimes(\"abc\", 1)</code> should return <code>\"abc\"</code>.');",
+        "assert(repeatStringNumTimes(\"*\", 8) === \"********\", 'message: <code>repeatStringNumTimes(\"*\", 8)</code> should return <code>\"********\"</code>.');",
+        "assert(repeatStringNumTimes(\"abc\", -2) === \"\", 'message: <code>repeatStringNumTimes(\"abc\", -2)</code> should return <code>\"\"</code>.');"
       ],
       "type": "bonfire",
       "isRequired": true,
       "solutions": [
-        "function repeat(str, num) {\n  if (num < 0) return '';\n  return num === 1 ? str : str + repeat(str, num-1);\n}\n\nrepeat('abc', 3);\n"
+        "function repeatStringNumTimes(str, num) {\n  if (num < 0) return '';\n  return num === 1 ? str : str + repeatStringNumTimes(str, num-1);\n}\n\nrepeatStringNumTimes('abc', 3);\n"
       ],
       "MDNlinks": [
         "Global String Object"
