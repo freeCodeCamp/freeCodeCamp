@@ -63,9 +63,9 @@
         "If your algorithm slows down exponentially with the input, you're going to want to look for a more efficient way to solve that problem.",
         "Whenever you’re coding loops within loops, you want to be especially mindful of time complexity.",
         "Big O Cheat Sheet is the place to look once you can classify your algorithm, like as a 'merge-sort' or a 'quick-sort'.",
-        "bigocheatsheet.com/",
+        "<a href='http://bigocheatsheet.com/' target='_blank'>bigocheatsheet.com/</a>",
         "Princeton Coursera course is NOT for the faint of heart. With examples and practice in Java, this course will cover iterating over data specifically with Java, sorting, and searching algorithms.",
-        "coursera.org/course/algs4partI"
+        "<a href='http://coursera.org/course/algs4partI' target='_blank'>coursera.org/course/algs4partI</a>"
       ],
       "challengeSeed": [
         "139877627"
@@ -100,9 +100,9 @@
         "Si tu algoritmo se hace más lento de manera exponencial a medida que aumenta la entrada, querrás buscar una forma más eficiente de resolver el problema.",
         "Siempre que programes ciclos dentro de ciclos, querrás ser especialmente cuidadoso de la complejidad temporal.",
         "La hoja de copialina de la notación O mayúscula es el lugar donde mirar para clasificar tu algoritmo, como el de un 'ordenamiento por mezcla' o un 'ordenamiento rápido'.",
-        "bigocheatsheet.com/",
+        "<a href='http://bigocheatsheet.com/' target='_blank'>bigocheatsheet.com/</a>",
         "El curso de Coursera de Princeton no es para débiles de corazón. Con ejemplos y prácticas en Java, este curso cubre iteración sobre los datos especifcamente algoritmos de ordenamiento y búsqueda.",
-        "coursera.org/course/algs4partI"
+        "<a href='http://coursera.org/course/algs4partI' target='_blank'>coursera.org/course/algs4partI</a>"
       ],
       "titleEs": "Notación O mayúscula: Unos pocos ejemplos"
     }
