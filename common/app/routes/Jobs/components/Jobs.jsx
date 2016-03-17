@@ -115,7 +115,7 @@ export class Jobs extends PureComponent {
                   engineer through Free Code Camp
                   `}
                   className='img-responsive testimonial-image-jobs img-center'
-                  src='http://i.imgur.com/tGcAA8H.jpg' />
+                  src='//i.imgur.com/tGcAA8H.jpg' />
               </Col>
               <Col
                 md={ 10 }

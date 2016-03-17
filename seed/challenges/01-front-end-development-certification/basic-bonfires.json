@@ -9,25 +9,25 @@
       "title": "Get Set for our Algorithm Challenges",
       "description": [
         [
-          "http://i.imgur.com/sJkp30a.png",
+          "//i.imgur.com/sJkp30a.png",
           "An image of a algorithm challenge showing directions, tests, and the code editor.",
           "Our algorithm challenges will teach you how to think like a programmer.",
           ""
         ],
         [
-          "http://i.imgur.com/d8LuRNh.png",
+          "//i.imgur.com/d8LuRNh.png",
           "A mother bird kicks a baby bird out of her nest.",
           "Our previous challenges introduced you to programming concepts. But for these algorithm challenges, you'll now need to apply what you learned to solve open-ended problems.",
           ""
         ],
         [
-          "http://i.imgur.com/WBetuBa.jpg",
+          "//i.imgur.com/WBetuBa.jpg",
           "A programmer punching through his laptop screen in frustration.",
           "Our algorithm challenges are hard. Some of them may take you several hours to solve. You will get frustrated. But don't quit.",
           ""
         ],
         [
-          "http://i.imgur.com/p2TpOQd.jpg",
+          "//i.imgur.com/p2TpOQd.jpg",
           "A cute dog jumping over a hurdle and winking and pointing his paw at you.",
           "When you get stuck, just use the Read-Search-Ask methodology.<br>Don't worry - you've got this.",
           ""
@@ -39,25 +39,25 @@
       "challengeType": 7,
       "descriptionEs": [
         [
-          "http://i.imgur.com/sJkp30a.png",
+          "//i.imgur.com/sJkp30a.png",
           "Una imagen de un desafio sobre algoritmos que presenta instrucciones, pruebas y el editor de código.",
           "Nuestros desafios sobre algoritmos te enseñarán como pensar como un programador.",
           ""
         ],
         [
-          "http://i.imgur.com/d8LuRNh.png",
+          "//i.imgur.com/d8LuRNh.png",
           "Una mamá pájaro saca un bebé pájaro fuer de su nido.",
           "Nuestros desafios anteriores te introdujeron a los conceptos de programación. Pero para estos desafios sobre algoritmos, ahora necesitarás aplicar lo que has aprendido y resolver problemas de respuesta abierta",
           ""
         ],
         [
-          "http://i.imgur.com/WBetuBa.jpg",
+          "//i.imgur.com/WBetuBa.jpg",
           "Un programador frustado golpeando la pantalla de su computador.",
           "Nuestros desafíos sobre algortimos son difíciles.  Algunos pueden requerir muchas horas para resolverse.  Podrás frustarte, pero no te rindas.",
           ""
         ],
         [
-          "http://i.imgur.com/p2TpOQd.jpg",
+          "//i.imgur.com/p2TpOQd.jpg",
           "Un tierno perro que salta sobre un obstáculo, pica el ojo y te apunta con su pata.",
           "Cuando te atasques, usa la metodología Leer-Buscar-Preguntar.<br>No te preocupes -  ya lo has entendido.",
           ""
@@ -321,31 +321,31 @@
       "id": "acda2fb1324d9b0fa741e6b5",
       "title": "Confirm the Ending",
       "description": [
-        "Check if a string (first argument) ends with the given target string (second argument).",
+        "Check if a string (first argument, <code>str</code>) ends with the given target string (second argument, <code>target</code>).",
         "Remember to use <a href=\"//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck\" target=\"_blank\">Read-Search-Ask</a> if you get stuck. Write your own code."
       ],
       "challengeSeed": [
-        "function end(str, target) {",
+        "function confirmEnding(str, target) {",
         "  // \"Never give up and good luck will find you.\"",
         "  // -- Falcor",
         "  return str;",
         "}",
         "",
-        "end(\"Bastian\", \"n\");"
+        "confirmEnding(\"Bastian\", \"n\");"
       ],
       "tests": [
-        "assert(end(\"Bastian\", \"n\") === true, 'message: <code>end(\"Bastian\", \"n\")</code> should return true.');",
-        "assert(end(\"Connor\", \"n\") === false, 'message: <code>end(\"Connor\", \"n\")</code> should return false.');",
-        "assert(end(\"Walking on water and developing software from a specification are easy if both are frozen\", \"specification\") === false, 'message: <code>end(\"Walking on water and developing software from a specification are easy if both are frozen\"&#44; \"specification\"&#41;</code> should return false.');",
-        "assert(end(\"He has to give me a new name\", \"name\") === true, 'message: <code>end(\"He has to give me a new name\", \"name\")</code> should return true.');",
-        "assert(end(\"He has to give me a new name\", \"me\") === true, 'message: <code>end(\"He has to give me a new name\", \"me\")</code> should return true.');",
-        "assert(end(\"He has to give me a new name\", \"na\") === false, 'message: <code>end(\"He has to give me a new name\", \"na\")</code> should return false.');",
-        "assert(end(\"If you want to save our world, you must hurry. We dont know how much longer we can withstand the nothing\", \"mountain\") === false, 'message: <code>end(\"If you want to save our world, you must hurry. We dont know how much longer we can withstand the nothing\", \"mountain\")</code> should return false.');"
+        "assert(confirmEnding(\"Bastian\", \"n\") === true, 'message: <code>confirmEnding(\"Bastian\", \"n\")</code> should return true.');",
+        "assert(confirmEnding(\"Connor\", \"n\") === false, 'message: <code>confirmEnding(\"Connor\", \"n\")</code> should return false.');",
+        "assert(confirmEnding(\"Walking on water and developing software from a specification are easy if both are frozen\", \"specification\") === false, 'message: <code>confirmEnding(\"Walking on water and developing software from a specification are easy if both are frozen\"&#44; \"specification\"&#41;</code> should return false.');",
+        "assert(confirmEnding(\"He has to give me a new name\", \"name\") === true, 'message: <code>confirmEnding(\"He has to give me a new name\", \"name\")</code> should return true.');",
+        "assert(confirmEnding(\"He has to give me a new name\", \"me\") === true, 'message: <code>confirmEnding(\"He has to give me a new name\", \"me\")</code> should return true.');",
+        "assert(confirmEnding(\"He has to give me a new name\", \"na\") === false, 'message: <code>confirmEnding(\"He has to give me a new name\", \"na\")</code> should return false.');",
+        "assert(confirmEnding(\"If you want to save our world, you must hurry. We dont know how much longer we can withstand the nothing\", \"mountain\") === false, 'message: <code>confirmEnding(\"If you want to save our world, you must hurry. We dont know how much longer we can withstand the nothing\", \"mountain\")</code> should return false.');"
       ],
       "type": "bonfire",
       "isRequired": true,
       "solutions": [
-        "function end(str, target) {\n  return str.substring(str.length-target.length) === target;\n};\n"
+        "function confirmEnding(str, target) {\n  return str.substring(str.length-target.length) === target;\n};\n"
       ],
       "MDNlinks": [
         "String.substr()"
