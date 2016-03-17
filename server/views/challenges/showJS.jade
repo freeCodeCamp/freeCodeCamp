@@ -93,6 +93,7 @@ block content
       common.username = !{JSON.stringify(user && user.username || '')};
 
     include ../partials/challenge-footer
+    script(src = "/js/lib/loopLocker.js")
     script.
       common.init.push(function() {
         common.editor.setOption('mode', 'javascript');

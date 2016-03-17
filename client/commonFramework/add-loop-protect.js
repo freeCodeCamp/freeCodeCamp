@@ -14,7 +14,22 @@ window.common = (function(global) {
   };
 
   common.addLoopProtect = function addLoopProtect(code = '') {
-    return loopProtect(code);
+    // return loopProtect(code);
+    /* eslint-disable no-undef */
+    code =
+      'var lGPL00001 = 30000;'
+      + 'var lGPF00001 = function() {'
+        + 'var i = 0;'
+        + 'this.increase = function() {'
+          + 'i++;'
+          + 'if(i === lGPL00001){'
+            + 'throw(\"Too many loops!\");'
+          + '}'
+        + '}'
+      + '}; \n'+ code;
+    code = 'try { \n' + G00001(code) + '\n} catch(e) { console.error (e);} ';
+    //code = G00001(code);
+    return(code);
   };
 
   return common;
