@@ -389,7 +389,7 @@ $(document).ready(function() {
     if (!main.isWikiAsideLoad) {
       var lang = window.location.toString().match(/\/\w{2}\//);
       lang = (lang) ? lang[0] : '/en/';
-      var wikiURL = 'http://freecodecamp.github.io/wiki' + lang;
+      var wikiURL = '//freecodecamp.github.io/wiki' + lang;
       var wikiAside = $('<iframe>');
       wikiAside.attr({
         src: wikiURL,
