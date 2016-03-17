@@ -9,37 +9,37 @@
       "title": "Get Set for our Front End Development Projects",
       "description": [
         [
-          "http://i.imgur.com/OAD6SJz.png",
+          "//i.imgur.com/OAD6SJz.png",
           "An image of a Simon game, one our front end projects.",
           "Our front end development projects will give you a chance to apply the front end skills you've developed up to this point. We'll use a popular browser-based code editor called CodePen.",
           ""
         ],
         [
-          "http://i.imgur.com/WBetuBa.jpg",
+          "//i.imgur.com/WBetuBa.jpg",
           "A programmer punching through his laptop screen in frustration.",
           "These projects are hard. It takes most campers several days to build each project. You will get frustrated. But don't quit. This gets easier with practice.",
           ""
         ],
         [
-          "http://i.imgur.com/p2TpOQd.jpg",
+          "//i.imgur.com/p2TpOQd.jpg",
           "A cute dog jumping over a hurdle and winking and pointing his paw at you.",
           "When you get stuck, just use the Read-Search-Ask methodology. Don't worry - you've got this.",
           ""
         ],
         [
-          "http://i.imgur.com/G1saeDt.gif",
+          "//i.imgur.com/G1saeDt.gif",
           "A gif showing how to create a Codepen account.",
           "For our front end project challenges, we'll use a popular browser-based code editor called CodePen. Click the \"Open link in new tab\" button below to open CodePen's signup page. Fill out the form and click \"Sign up\". <br><div class=\"small\">Note: If you already have a CodePen account, you can skip this step by clicking \"Open link in new tab\", closing the new tab that opens, then clicking \"go to my next step\". We removed our \"skip step\" button because many people would just click it repeatedly without doing these important steps.</div>",
           "http://codepen.io/signup/free"
         ],
         [
-          "http://i.imgur.com/U4y9RJ1.gif",
+          "//i.imgur.com/U4y9RJ1.gif",
           "A gif showing that you can type \"hello world\" will output \"hello world\" in the preview window. You can also drag windows to resize them, and change their orientation.",
           "In the HTML box, create an h1 element with the text \"Hello World\". You can drag the frames around to resize them. You can also click the \"Change View\" button and change the orientation of the frames.",
           ""
         ],
         [
-          "http://i.imgur.com/G9KFQDL.gif",
+          "//i.imgur.com/G9KFQDL.gif",
           "A gif showing the process of adding Bootstrap to your pen.",
           "Click the gear in the upper left hand corner of the CSS box, then scroll down to \"Quick add\" and choose Bootstrap. Now give your h1 element the class of \"text-primary\" to change its color and prove that Bootstrap is now available.",
           ""
@@ -53,37 +53,37 @@
       "titleRu": "Приготовьтесь к разработке фронтенд проектов",
       "descriptionRu": [
         [
-          "http://i.imgur.com/OAD6SJz.png",
+          "//i.imgur.com/OAD6SJz.png",
           "Игра Саймона - один из фронтенд проектов.",
           "Наши фронтенд проекты дадут вам шанс применить полученные к этому моменту знания по фронтенд разработке. Мы будем использовать популярный браузерный редактор кода - CodePen.",
           ""
         ],
         [
-          "http://i.imgur.com/WBetuBa.jpg",
+          "//i.imgur.com/WBetuBa.jpg",
           "Программист от отчаяния кулаком пробивает экран своего ноутбука.",
           "Это трудные проекты. Разработка каждого занимает у большинства кэмперов несколько дней. У вас может возникнуть чувство отчаяния. Несмотря на это не сдавайтесь. С практикой этот процесс станет проще.",
           ""
         ],
         [
-          "http://i.imgur.com/p2TpOQd.jpg",
+          "//i.imgur.com/p2TpOQd.jpg",
           "Милый пес, прыгающий через препятствие, указывает на вас лапой и подмигивает.",
           "Если что-то не получается, воспользуйтесь Read-Search-Ask. Не волнуйтесь - вы сможете это сделать.",
           ""
         ],
         [
-          "http://i.imgur.com/G1saeDt.gif",
+          "//i.imgur.com/G1saeDt.gif",
           "Гифка показывающая как зарегистрироваться на CodePen.",
           "Для заданий по фронтенд разработке, мы будем использовать популярный браузерный редактор кода под названием CodePen. Откройте страницу регистрации на сайте CodePen, нажав на расположенную чуть ниже кнопку \"Open link in new tab\". Заполните форму и нажмите \"Sign up\". <br><div class=\"small\">Замечание: Если у вас уже есть аккаунт CodePen, то этот шаг можно пропустить: нажмите на кнопку \"Open link in new tab\", закройте появившуюся вкладку и затем кликните \"go to my next step\". Мы убрали кнопку \"skip step\", ввиду того что большинство людей просто нажимали бы ее несколько раз подряд и пропускали бы эти важные инструкции.</div>",
           "http://codepen.io/signup/free"
         ],
         [
-          "http://i.imgur.com/U4y9RJ1.gif",
+          "//i.imgur.com/U4y9RJ1.gif",
           "Гифка показывающая набор в редакторе заголовка с текстом \"hello world\", который затем отображается в окошке предпросмотра. А также указывающая как изменить размер окон редактора или поменять их расположение.",
           "В окошке HTML создайте элемент h1 с текстом \"Hello World\". Ухватив края окон можно изменить их размер. А нажав на кнопку \"Change View\" поменять их расположение.",
           ""
         ],
         [
-          "http://i.imgur.com/G9KFQDL.gif",
+          "//i.imgur.com/G9KFQDL.gif",
           "Гифка показывающая как в CodePen добавить к проекту Bootstrap.",
           "Нажмите на звездочку в левом верхнем углу окошка CSS, найдите внизу поле \"Quick add\" и выберите в нем Bootstrap. Добавьте к элементу h1 класс \"text-primary\", чтобы изменить его цвет и удостовериться, что Bootstrap подключен.",
           ""
@@ -92,37 +92,37 @@
       "titleEs": "Prepárate para los Proyectos de Desarrollo de Interfaces",
       "descriptionEs": [
         [
-          "http://i.imgur.com/OAD6SJz.png",
+          "//i.imgur.com/OAD6SJz.png",
           "Una imagen del juego Simón, uno de nuestros proyectos de interfaz.",
           "Nuestros proyectos de desarrollo de interfaces te darán oportunidad de aplicar las habilidades con interfaces que has desarrollado hasta este momento.  Usaremos un editor de código basado en el navegador llamado CodePen.",
           ""
         ],
         [
-          "http://i.imgur.com/WBetuBa.jpg",
+          "//i.imgur.com/WBetuBa.jpg",
           "Un programador frustado golpeando la pantalla de su computador.",
           "Nuestros desafíos sobre algoritmos son difíciles.  Algunos pueden requerir muchas horas para resolverse.  Podrás frustarte, pero no te rindas. Se vuelve fácil con práctica.",
           ""
         ],
         [
-          "http://i.imgur.com/p2TpOQd.jpg",
+          "//i.imgur.com/p2TpOQd.jpg",
           "Un tierno perro que salta sobre un obstáculo, pica el ojo y te apunta con su pata.",
           "Cuando te atasques, usa la metodología Leer-Buscar-Preguntar. No te preocupes -  lo tienes resuelto.",
           ""
         ],
         [
-          "http://i.imgur.com/G1saeDt.gif",
+          "//i.imgur.com/G1saeDt.gif",
           "Un gif que muestra cómo crear una cuenta en Codepen.",
           "Para nuestros desafíos de interfaces, usaremos un editor de código basado en el navegador que es muy famoso llamado Codepen. Pulsa en el botón de abajo \"Open link in new tab\" para abrir la página de registro de CodePen. Rellena el formulario y pulsa \"Sign up\". <br><div class=\"small\">Nota: Si ya tienes una cuenta de CodePen, puedes omitir este paso pulsando \"Open link in new tab\", cierra la nueva pestaña que se abre, entonces pulsa \"go to my next step\". Eliminamos nuestro botón \"skip step\" porque mucha gente solamente pulsa el botón sin realizar estos importantes pasos.</div>",
           "http://codepen.io/signup/free"
         ],
         [
-          "http://i.imgur.com/U4y9RJ1.gif",
+          "//i.imgur.com/U4y9RJ1.gif",
           "Un gif que muestra que puedes escribir \"hello world\" en el editor, lo cual escribirá \"hello world\" en la ventana de vista previa. También puedes mover las ventanas para cambiar su tamaño, y cambiar su orientación.",
           "En la ventana de HTML, crea un elemento h1 con el texto \"Hola mundo\". Puedes arrastrar los bordes de las ventanas para cambiar su tamaño. También puedes pulsar el botón de \"Change View\" para cambiar la orientación de las ventanas.",
           ""
         ],
         [
-          "http://i.imgur.com/G9KFQDL.gif",
+          "//i.imgur.com/G9KFQDL.gif",
           "Un gif que muestra el proceso de agregar Bootstrap a tu proyecto.",
           "Pulsa el engrane en la esquina superior izquierda de la ventana de CSS, luego ve hacia abajo hasta donde dice \"Quick add\" y elige Bootstrap. Ahora dale a tu elemento h1 la clase \"text-primary\" para cambiar su color y verificar que Bootstrap está activado.",
           ""

@@ -287,7 +287,7 @@ export class JobTotal extends PureComponent {
                     <img
                       alt='An array of credit cards'
                       border='0'
-                      src='http://i.imgur.com/Q2SdSZG.png'
+                      src='//i.imgur.com/Q2SdSZG.png'
                       style={{
                         width: '100%'
                       }} />

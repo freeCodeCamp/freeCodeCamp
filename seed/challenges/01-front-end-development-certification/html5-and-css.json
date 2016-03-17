@@ -68,7 +68,7 @@
       "id": "bad87fee1348bd9aedf0887a",
       "descriptionPtBR": [
         "Durante os próximos desafios, construiremos um aplicativo em HTML que se parecerá como este:",
-        "<a href=\"http://i.imgur.com/jOc1JF1.png\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" src=\"http://i.imgur.com/jOc1JF1.png\" title=\"Clique para aumentar\" alt=\"Imagem do aplicativo CatPhotoApp finalizado\"></a>",
+        "<a href=\"//i.imgur.com/jOc1JF1.png\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" src=\"//i.imgur.com/jOc1JF1.png\" title=\"Clique para aumentar\" alt=\"Imagem do aplicativo CatPhotoApp finalizado\"></a>",
         "O elemento <code>h2</code> que você criar gerará um elemento <code>h2</code> na página da web.",
         "Este elemento indica ao navegador a forma de mostrar o texto que contém.",
         "Os elementos <code>h2</code> são ligeiramente menores que os elementos <code>h1</code>. Há também os elementos <code>h3</code>, <code>h4</code>, <code>h5</code> e <code>h6</code>.",
@@ -84,7 +84,7 @@
       "title": "Headline with the h2 Element",
       "description": [
         "Over the next few challenges, we'll build an HTML5 app that will look something like this:",
-        "<a href=\"http://i.imgur.com/jOc1JF1.png\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" src=\"http://i.imgur.com/jOc1JF1.png\" title=\"Click to enlarge\" alt=\"A screen shot of our finished Cat Photo App\"></a>",
+        "<a href=\"//i.imgur.com/jOc1JF1.png\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" src=\"//i.imgur.com/jOc1JF1.png\" title=\"Click to enlarge\" alt=\"A screen shot of our finished Cat Photo App\"></a>",
         "The <code>h2</code> element you enter will create an <code>h2</code> element on the website.",
         "This element tells the browser how to render the text that it contains.",
         "<code>h2</code> elements are slightly smaller than <code>h1</code> elements. There are also <code>h3</code>, <code>h4</code>, <code>h5</code> and <code>h6</code> elements.",
@@ -103,7 +103,7 @@
       "titleEs": "Encabezado con el elemento h2",
       "descriptionEs": [
         "Durante los siguientes desafíos, construiremos una aplicación HTML5 que lucirá como la siguiente:",
-        "<a href=\"http://i.imgur.com/jOc1JF1.png\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" src=\"http://i.imgur.com/jOc1JF1.png\" title=\"Pulsa para agrandar\" alt=\"Pantallazo de la aplicación Cat Photo terminada\"></a>",
+        "<a href=\"//i.imgur.com/jOc1JF1.png\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" src=\"//i.imgur.com/jOc1JF1.png\" title=\"Pulsa para agrandar\" alt=\"Pantallazo de la aplicación Cat Photo terminada\"></a>",
         "El elemento <code>h2</code> que ingreses creará un elemento <code>h2</code> en el sitio web.",
         "Este elemento le dice al navegador cómo mostrar el texto que contiene.",
         "Los elementos <code>h2</code> son ligeramente más pequeños que los elementos <code>h1</code>. También hay elementos <code>h3</code>, <code>h4</code>, <code>h5</code> y <code>h6</code>",
@@ -1154,7 +1154,7 @@
       "descriptionPtBR": [
         "Os elementos <code>a</code>, também conhecidos como elementos <code>âncora</code>, são utilizados para ligar conteúdo fora da página atual.",
         "Aqui está um diagrama de um elemento <code>a</code>. Neste caso, o elemento <code>a</code> é utilizado no meio de um elemento de parágrafo, o que significa que o link externo aparecerá no meio de uma frase.",
-        "<a href=\"http://i.imgur.com/hviuZwe.png\" data-lightbox=\"img-enlarge\"> <img class=\"img-responsive\" title=\"Clique para ampliar\" alt=\"diagrama de como as tags de âncora se compõem com o texto, como na próxima linha\" src=\"http://i.imgur.com/hviuZwe.png\"></a>",
+        "<a href=\"//i.imgur.com/hviuZwe.png\" data-lightbox=\"img-enlarge\"> <img class=\"img-responsive\" title=\"Clique para ampliar\" alt=\"diagrama de como as tags de âncora se compõem com o texto, como na próxima linha\" src=\"//i.imgur.com/hviuZwe.png\"></a>",
         "Veja um exemplo:",
         "<code>&#60;p&#62;Aqui está um &#60;a href=\"http://freecodecamp.com\"&#62; link ligado ao Free Code Camp&#60;/a&#62; para que você o siga.&#60;/p&#62;</code>",
         "Crie um elemento <code>a</code> que esteja ligado ao site <code>http://freecatphotoapp.com</code> e tenha como <code>texto de âncora</code> \"fotos de gatos\"."
@@ -1170,7 +1170,7 @@
       "description": [
         "<code>a</code> elements, also known as <code>anchor</code> elements, are used to link to content outside of the current page.",
         "Here's a diagram of an <code>a</code> element. In this case, the <code>a</code> element is used in the middle of a paragraph element, which means the link will appear in the middle of a sentence.",
-        "<a href=\"http://i.imgur.com/hviuZwe.png\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" title=\"Click to enlarge\" alt=\"a diagram of how anchor tags are composed with the same text as on the following line\" src=\"http://i.imgur.com/hviuZwe.png\"></a>",
+        "<a href=\"//i.imgur.com/hviuZwe.png\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" title=\"Click to enlarge\" alt=\"a diagram of how anchor tags are composed with the same text as on the following line\" src=\"//i.imgur.com/hviuZwe.png\"></a>",
         "Here's an example:",
         "<code>&#60;p&#62;Here's a &#60;a href=\"http://freecodecamp.com\"&#62; link to Free Code Camp&#60;/a&#62; for you to follow.&#60;/p&#62;</code>",
         "Create an <code>a</code> element that links to <code>http://freecatphotoapp.com</code> and has \"cat photos\" as its <code>anchor text</code>."
@@ -1220,7 +1220,7 @@
       "descriptionEs": [
         "Los elementos <code>a</code>, también conocidos como elementos <code>ancla</code>, se utilizan para enlazar a contenido fuera de la página actual.",
         "Aquí está un diagrama de un elemento <code>a</code>. En este caso, el elemento <code>a</code> se utiliza en el medio de un elemento de párrafo, lo que significa que el enlace aparecerá en el medio de una frase. ",
-        "<a href=\"http://i.imgur.com/hviuZwe.png\" data-lightbox=\"img-enlarge\"> <img class=\"img-responsive\" title=\"Haz clic para ampliar\" alt=\"un diagrama de cómo las etiquetas de ancla se componen con el mismo texto, como en la siguiente línea\" src=\"http://i.imgur.com/hviuZwe.png\"></a> ",
+        "<a href=\"//i.imgur.com/hviuZwe.png\" data-lightbox=\"img-enlarge\"> <img class=\"img-responsive\" title=\"Haz clic para ampliar\" alt=\"un diagrama de cómo las etiquetas de ancla se componen con el mismo texto, como en la siguiente línea\" src=\"//i.imgur.com/hviuZwe.png\"></a> ",
         "He aquí un ejemplo:",
         "<code>&#60;p&#62;Aquí está un &#60;a href=\"http://freecodecamp.com\"&#62; enlace a Free Code Camp&#60;/a&#62; para que lo sigas.&#60;/p&#62;</code>",
         "Crea un elemento <code>a</code> que se vincule a <code>http://freecatphotoapp.com</code> y tenga como <code>texto de ancla</code> \"fotos de gatos\"."
@@ -1232,7 +1232,7 @@
       "id": "bad87fee1348bd9aede08817",
       "descriptionPtBR": [
         "Outra vez, aqui está um diagrama de um elemento <code>a</code> para você usar como referência.",
-        "<a href=\"http://i.imgur.com/hviuZwe.png\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" title=\"Clique para ampliar\" alt=\"diagrama de como são as tags de âncora com o texto como na linha seguinte\" src=\"http://i.imgur.com/hviuZwe.png\"></a>",
+        "<a href=\"//i.imgur.com/hviuZwe.png\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" title=\"Clique para ampliar\" alt=\"diagrama de como são as tags de âncora com o texto como na linha seguinte\" src=\"//i.imgur.com/hviuZwe.png\"></a>",
         "Veja um exemplo:",
         "<code>&#60;p&#62;Este é um &#60;a href=\"http://freecodecamp.com\"&#62; link ligado ao Free Code Camp&#60;/a&#62; para que você o siga.&#60;/p&#62;</code>",
         "<code>Aninhamento</code> significa ter um elemento no interior de outro elemento.",
@@ -1247,7 +1247,7 @@
       "title": "Nest an Anchor Element within a Paragraph",
       "description": [
         "Again, here's a diagram of an <code>a</code> element for your reference:",
-        "<a href=\"http://i.imgur.com/hviuZwe.png\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" title=\"Click to enlarge\" alt=\"a diagram of how anchor tags are composed with the same text as on the following line\" src=\"http://i.imgur.com/hviuZwe.png\"></a>",
+        "<a href=\"//i.imgur.com/hviuZwe.png\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" title=\"Click to enlarge\" alt=\"a diagram of how anchor tags are composed with the same text as on the following line\" src=\"//i.imgur.com/hviuZwe.png\"></a>",
         "Here's an example:",
         "<code>&#60;p&#62;Here's a &#60;a href=\"http://freecodecamp.com\"&#62; link to Free Code Camp&#60;/a&#62; for you to follow.&#60;/p&#62;</code>",
         "<code>Nesting</code> just means putting one element inside of another element.",
@@ -1304,7 +1304,7 @@
       "titleEs": "Anida un elemento de ancla dentro de un párrafo",
       "descriptionEs": [
         "Una vez más, aquí está un diagrama de un elemento <code>a</code> para tu referencia:",
-        "<a href=\"http://i.imgur.com/hviuZwe.png\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" title=\"Pulse para ampliar\" alt=\"un diagrama de como se componen las etiquetas de anclaje con el texto como en la siguiente línea\" src=\"http://i.imgur.com/hviuZwe.png\"></a>",
+        "<a href=\"//i.imgur.com/hviuZwe.png\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" title=\"Pulse para ampliar\" alt=\"un diagrama de como se componen las etiquetas de anclaje con el texto como en la siguiente línea\" src=\"//i.imgur.com/hviuZwe.png\"></a>",
         "He aquí un ejemplo:",
         "<code>&#60;p&#62;Aquí hay un &#60;a href=\"http://freecodecamp.com\"&#62; enlace a Free Code Camp&#60;/a&#62; para que lo sigas.&#60;/p&#62;</code>",
         "<code>Anidamiento</code> simplemente significa poner un elemento dentro de otro elemento.",
