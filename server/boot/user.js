@@ -249,7 +249,9 @@ module.exports = function(app) {
   }
 
   function getSettings(req, res) {
-    res.render('account/settings');
+    res.render('account/settings', {
+        title: 'Settings'
+    });
   }
 
   function returnUser(req, res, next) {
