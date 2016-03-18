@@ -17,17 +17,17 @@ window.common = (function(global) {
     // return loopProtect(code);
     /* eslint-disable no-undef */
     code =
-      'var lGPL00001 = 30000;'
-      + 'var lGPF00001 = function() {'
+      'var __loopLockerLimit = 30000;'
+      + 'var __loopLockerGuardPrefab = function() {'
         + 'var i = 0;'
         + 'this.increase = function() {'
           + 'i++;'
-          + 'if(i === lGPL00001){'
+          + 'if(i === __loopLockerLimit){'
             + 'throw(\"Too many loops!\");'
           + '}'
         + '}'
       + '}; \n'+ code;
-    code = 'try { \n' + G00001(code) + '\n} catch(e) { console.error (e);} ';
+    code = 'try { \n' + __initGuard(code) + '\n} catch(e) { console.error (e);} ';
     //code = G00001(code);
     return(code);
   };
