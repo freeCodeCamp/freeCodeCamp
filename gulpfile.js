@@ -369,16 +369,16 @@ gulp.task('less', function() {
     )
     .pipe(gulp.dest(dest))
     // add revision
-    .pipe(rev())
+    .pipe(__DEV__ ? gutil.noop() : rev())
     // copy files to public
-    .pipe(gulp.dest(dest))
+    .pipe(__DEV__ ? gutil.noop() : gulp.dest(dest))
     // create and merge manifest
-    .pipe(rev.manifest(manifestName))
-    .pipe(delRev(
+    .pipe(__DEV__ ? gutil.noop() : rev.manifest(manifestName))
+    .pipe(__DEV__ ? gutil.noop() : delRev(
       dest,
       manifestName
     ))
-    .pipe(gulp.dest(paths.manifest));
+    .pipe(__DEV__ ? gutil.noop() : gulp.dest(paths.manifest));
 });
 
 function getFilesGlob(files) {
@@ -427,17 +427,17 @@ gulp.task('js', function() {
   return jsFiles
     .pipe(gulp.dest(dest))
     // create registry file
-    .pipe(rev())
+    .pipe(__DEV__ ? gutil.noop() : rev())
     // copy revisioned assets to dest
-    .pipe(gulp.dest(dest))
+    .pipe(__DEV__ ? gutil.noop() : gulp.dest(dest))
     // create manifest file
-    .pipe(rev.manifest(manifestName))
-    .pipe(delRev(
+    .pipe(__DEV__ ? gutil.noop() : rev.manifest(manifestName))
+    .pipe(__DEV__ ? gutil.noop() : delRev(
       dest,
       manifestName
     ))
     // copy manifest file to dest
-    .pipe(gulp.dest(paths.manifest));
+    .pipe(__DEV__ ? gutil.noop() : gulp.dest(paths.manifest));
 });
 
 // commonFramework depend on iFrameScripts
@@ -461,16 +461,16 @@ gulp.task('dependents', ['js'], function() {
         gutil.noop()
     )
     .pipe(__DEV__ ? gutil.noop() : uglify())
-    .pipe(revReplace({ manifest: manifest }))
+    .pipe(__DEV__ ? gutil.noop() : revReplace({ manifest: manifest }))
     .pipe(gulp.dest(dest))
-    .pipe(rev())
-    .pipe(gulp.dest(dest))
-    .pipe(rev.manifest(manifestName))
-    .pipe(delRev(
+    .pipe(__DEV__ ? gutil.noop() : rev())
+    .pipe(__DEV__ ? gutil.noop() : gulp.dest(dest))
+    .pipe(__DEV__ ? gutil.noop() : rev.manifest(manifestName))
+    .pipe(__DEV__ ? gutil.noop() : delRev(
       dest,
       manifestName
     ))
-    .pipe(gulp.dest(paths.manifest));
+    .pipe(__DEV__ ? gutil.noop() : gulp.dest(paths.manifest));
 });
 
 function collector(file, memo) {
