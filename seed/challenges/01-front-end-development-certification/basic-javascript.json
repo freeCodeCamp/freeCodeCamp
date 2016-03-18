@@ -2532,7 +2532,7 @@
         "assert(queue([],1) === 1, 'message: <code>queue([], 1)</code> should return <code>1</code>');",
         "assert(queue([2],1) === 2, 'message: <code>queue([2], 1)</code> should return <code>2</code>');",
         "assert(queue([5,6,7,8,9],1) === 5, 'message: <code>queue([5,6,7,8,9], 1)</code> should return <code>5</code>');",
-        "queue(testArr, 10); assert(testArr[4] === 10, 'message: After <code>queue(testArr, 10)</code>, <code>myArr[4]</code> should be <code>10</code>');"
+        "queue(testArr, 10); assert(testArr[4] === 10, 'message: After <code>queue(testArr, 10)</code>, <code>testArr[4]</code> should be <code>10</code>');"
       ],
       "type": "checkpoint",
       "challengeType": 1,
