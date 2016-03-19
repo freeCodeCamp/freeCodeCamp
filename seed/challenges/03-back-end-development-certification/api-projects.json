@@ -252,7 +252,7 @@
       "id": "bd7158d8c443edefaeb5bd0e",
       "title": "URL Shortener Microservice",
       "description": [
-        "<strong>Objective:</strong> Build a full stack JavaScript app that is functionally similar to this: <a href='https://shurli.herokuapp.com/' target='_blank'>https://shurli.herokuapp.com/</a> and deploy it to Heroku.",
+        "<strong>Objective:</strong> Build a full stack JavaScript app that is functionally similar to this: <a href='https://little-url.herokuapp.com/' target='_blank'>https://little-url.herokuapp.com/</a> and deploy it to Heroku.",
         "Note that for each project, you should create a new GitHub repository and a new Heroku project. If you can't remember how to do this, revisit <a href='/challenges/get-set-for-our-back-end-development-projects'>http://freecodecamp.com/challenges/get-set-for-our-back-end-development-projects</a>.",
         "Here are the specific user stories you should implement for this project:",
         "<strong>User Story:</strong>  I can pass a URL as a parameter and I will receive a shortened URL in the JSON response.",
@@ -271,7 +271,7 @@
       "challengeType": 4,
       "titleEs": "Microservicio para acortar URLs",
       "descriptionEs": [
-        "<strong>Objetivo:</strong> Desarrolla una aplicación de Pila Completa en JavaScript que sea funcionalmente similar a esta: <a href='https://shurli.herokuapp.com/' target='_blank'>https://shurli.herokuapp.com/</a> y despliegala en Heroku.",
+        "<strong>Objetivo:</strong> Desarrolla una aplicación de Pila Completa en JavaScript que sea funcionalmente similar a esta: <a href='https://little-url.herokuapp.com/' target='_blank'>https://little-url.herokuapp.com/</a> y despliegala en Heroku.",
         "Ten en cuenta que para cada proyecto, deberías crear un nuevo repositorio en GitHub y un nuevo proyecto en Heroku. Si no recuerdas como hacer esto, vuelve a visitar <a href='/challenges/get-set-for-our-back-end-development-projects'>http://freecodecamp.com//challenges/get-set-for-our-back-end-development-projects</a>.",
         "Aquí están las historias de usuario específicas que debes implementar para este proyecto:",
         "<strong>Historia de Usuario:</strong> Puedo pasar una URL como parámetro y recibiré una URL acortada en la respuesta JSON.",
