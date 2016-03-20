@@ -87,9 +87,9 @@
     },
     {
       "id": "56533eb9ac21ba0edf2244a8",
-      "title": "Storing Values with the Equal Operator",
+      "title": "Storing Values with the Assignment Operator",
       "description": [
-        "In JavaScript, you can store a value in a variable with the <dfn>assignment</dfn> or <code>equal</code> (<code>=</code>)  operator.",
+        "In JavaScript, you can store a value in a variable with the <dfn>assignment</dfn> operator.",
         "<code>myVariable = 5;</code>",
         "Assigns the <code>Number</code> value <code>5</code> to <code>myVariable</code>.",
         "Assignment always goes from right to left. Everything to the right of the <code>=</code> operator is resolved before the value is assigned to the variable to the left of the operator.",
@@ -137,7 +137,7 @@
     },
     {
       "id": "56533eb9ac21ba0edf2244a9",
-      "title": "Initializing Variables with the Equal Operator",
+      "title": "Initializing Variables with the Assignment Operator",
       "description": [
         "It is common to <dfn>initialize</dfn> a variable to an initial value in the same line as it is declared.",
         "<code>var myVar = 0;</code>",
@@ -651,7 +651,7 @@
     },
     {
       "id": "56533eb9ac21ba0edf2244af",
-      "title": "Assignment with Plus Equals",
+      "title": "Compound Assignment With +=",
       "description": [
         "In programming, it is common to use assignments to modify the contents of a variable. Remember that everything to the right of the equals sign is evaluated first, so we can say:",
         "<code>myVar = myVar + 5;</code>",
@@ -702,7 +702,7 @@
     },
     {
       "id": "56533eb9ac21ba0edf2244b0",
-      "title": "Assignment with Minus Equals",
+      "title": "Compound Assignment With -=",
       "description": [
         "Like the <code>+=</code> operator, <code>-=</code> subtracts a number from a variable.",
         "<code>myVar = myVar - 5;</code>",
@@ -752,7 +752,7 @@
     },
     {
       "id": "56533eb9ac21ba0edf2244b1",
-      "title": "Assignment with Times Equals",
+      "title": "Compound Assignment With *=",
       "description": [
         "The <code>*=</code> operator multiplies a variable by a number.",
         "<code>myVar = myVar * 5;</code>",
@@ -802,7 +802,7 @@
     },
     {
       "id": "56533eb9ac21ba0edf2244b2",
-      "title": "Assignment with Divided by Equals",
+      "title": "Compound Assignment With /=",
       "description": [
         "The <code>/=</code> operator divides a variable by another number.",
         "<code>myVar = myVar / 5;</code>",
