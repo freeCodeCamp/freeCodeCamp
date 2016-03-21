@@ -292,6 +292,13 @@ module.exports = function(app) {
     req.checkParams('email', 'Must send a valid email').isEmail();
     return User.findOne({ where: { email: req.params.email } }, (err, user) => {
       if (err) { return next(err); }
+      if (!user) {
+        req.flash('info', {
+          msg: 'Email address not found. ' +
+          'Please update your Email preferences from your profile.'
+        });
+        return res.redirect('/map');
+      }
       return user.updateAttribute('sendMonthlyEmail', false, (err) => {
         if (err) { return next(err); }
         req.flash('info', {
@@ -306,6 +313,13 @@ module.exports = function(app) {
     req.checkParams('email', 'Must send a valid email').isEmail();
     return User.findOne({ where: { email: req.params.email } }, (err, user) => {
       if (err) { return next(err); }
+      if (!user) {
+        req.flash('info', {
+          msg: 'Email address not found. ' +
+          'Please update your Email preferences from your profile.'
+        });
+        return res.redirect('/map');
+      }
       return user.updateAttribute('sendNotificationEmail', false, (err) => {
         if (err) { return next(err); }
         req.flash('info', {
@@ -320,6 +334,13 @@ module.exports = function(app) {
     req.checkParams('email', 'Must send a valid email').isEmail();
     return User.findOne({ where: { email: req.params.email } }, (err, user) => {
       if (err) { return next(err); }
+      if (!user) {
+        req.flash('info', {
+          msg: 'Email address not found. ' +
+          'Please update your Email preferences from your profile.'
+        });
+        return res.redirect('/map');
+      }
       return user.updateAttribute('sendQuincyEmail', false, (err) => {
         if (err) { return next(err); }
         req.flash('info', {
