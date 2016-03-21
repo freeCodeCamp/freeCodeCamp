@@ -234,13 +234,14 @@
       "title": "Make Object Properties Private",
       "description": [
         "Objects have their own attributes, called <code>properties</code>, and their own functions, called <code>methods</code>.",
-        "In the previous challenges, we used the <code>this</code> keyword to reference <code>public properties</code> of the current object.",
+        "In the <a href='/challenges/make-instances-of-objects-with-a-constructor-function' target='_blank'>previous challenges</a>, we used the <code>this</code> keyword to reference <code>public properties</code> of the current object.",
         "We can also create <code>private properties</code> and <code>private methods</code>, which aren't accessible from outside the object.",
         "To do this, we create the variable inside the <code>constructor</code> using the <code>var</code> keyword we're familiar with, instead of creating it as a <code>property</code> of <code>this</code>.",
         "This is useful for when we need to store information about an object but we want to control how it is used by outside code.",
         "For example, what if we want to store the <code>speed</code> our car is traveling at but we only want outside code to be able to modify it by accelerating or decelerating, so the speed changes in a controlled way?",
         "In the editor you can see an example of a <code>Car</code> <code>constructor</code> that implements this pattern.",
-        "Now try it yourself! Modify the <code>Bike</code> <code>constructor</code> to have a <code>private property</code> called <code>gear</code> and two <code>public methods</code> called <code>getGear</code> and <code>setGear</code> to get and set that value."
+        "Now try it yourself! Modify the <code>Bike</code> <code>constructor</code> to have a <code>private property</code> called <code>gear</code> and two <code>public methods</code> called <code>getGear</code> and <code>setGear</code> to get and set that value.",
+        "<a href='https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/this' target='_blank'>Further explanation on <code>this</code> keyword</a>"
       ],
       "challengeSeed": [
         "var Car = function() {",
