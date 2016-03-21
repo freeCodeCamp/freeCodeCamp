@@ -8,25 +8,10 @@ export default ({ services }) => ({ dispatch }) => next => {
     }
 
     return services.readService$({ service: 'user' })
-      .map(({
-        username,
-        picture,
-        points,
-        isFrontEndCert,
-        isBackEndCert,
-        isFullStackCert
-      }) => {
+      .map((user) => {
         return {
           type: setUser,
-          payload: {
-            username,
-            picture,
-            points,
-            isFrontEndCert,
-            isBackEndCert,
-            isFullStackCert,
-            isSignedIn: true
-          }
+          payload: user
         };
       })
       .catch(error => Observable.just({

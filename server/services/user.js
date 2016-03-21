@@ -1,10 +1,8 @@
 import debugFactory from 'debug';
-import assign from 'object.assign';
 
 const censor = '**********************:P********';
 const debug = debugFactory('fcc:services:user');
 const protectedUserFields = {
-  id: censor,
   password: censor,
   profiles: censor
 };
@@ -18,7 +16,13 @@ export default function userServices() {
         debug('user is signed in');
         // Zalgo!!!
         return process.nextTick(() => {
-          cb(null, assign({}, user.toJSON(), protectedUserFields));
+          cb(
+            null,
+            {
+              ...user.toJSON(),
+              ...protectedUserFields
+            }
+          );
         });
       }
       debug('user is not signed in');

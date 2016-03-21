@@ -39,6 +39,7 @@ Observable.combineLatest(
     var isComingSoon = !!challengeSpec.isComingSoon;
     var fileName = challengeSpec.fileName;
     var helpRoom = challengeSpec.helpRoom || 'Help';
+    var time = challengeSpec.time || 'N/A';
 
     console.log('parsed %s successfully', blockName);
 
@@ -53,7 +54,8 @@ Observable.combineLatest(
       dashedName: dasherize(blockName),
       superOrder: superOrder,
       superBlock: superBlock,
-      order: order
+      order: order,
+      time: time
     };
 
     return createBlocks(block)
