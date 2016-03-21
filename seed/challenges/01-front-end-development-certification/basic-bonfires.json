@@ -365,25 +365,25 @@
         "Remember to use <a href=\"//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck\" target=\"_blank\">Read-Search-Ask</a> if you get stuck. Write your own code."
       ],
       "challengeSeed": [
-        "function repeat(str, num) {",
+        "function repeatStringNumTimes(str, num) {",
         "  // repeat after me",
         "  return str;",
         "}",
         "",
-        "repeat(\"abc\", 3);"
+        "repeatStringNumTimes(\"abc\", 3);"
       ],
       "tests": [
-        "assert(repeat(\"*\", 3) === \"***\", 'message: <code>repeat(\"*\", 3)</code> should return <code>\"***\"</code>.');",
-        "assert(repeat(\"abc\", 3) === \"abcabcabc\", 'message: <code>repeat(\"abc\", 3)</code> should return <code>\"abcabcabc\"</code>.');",
-        "assert(repeat(\"abc\", 4) === \"abcabcabcabc\", 'message: <code>repeat(\"abc\", 4)</code> should return <code>\"abcabcabcabc\"</code>.');",
-        "assert(repeat(\"abc\", 1) === \"abc\", 'message: <code>repeat(\"abc\", 1)</code> should return <code>\"abc\"</code>.');",
-        "assert(repeat(\"*\", 8) === \"********\", 'message: <code>repeat(\"*\", 8)</code> should return <code>\"********\"</code>.');",
-        "assert(repeat(\"abc\", -2) === \"\", 'message: <code>repeat(\"abc\", -2)</code> should return <code>\"\"</code>.');"
+        "assert(repeatStringNumTimes(\"*\", 3) === \"***\", 'message: <code>repeatStringNumTimes(\"*\", 3)</code> should return <code>\"***\"</code>.');",
+        "assert(repeatStringNumTimes(\"abc\", 3) === \"abcabcabc\", 'message: <code>repeatStringNumTimes(\"abc\", 3)</code> should return <code>\"abcabcabc\"</code>.');",
+        "assert(repeatStringNumTimes(\"abc\", 4) === \"abcabcabcabc\", 'message: <code>repeatStringNumTimes(\"abc\", 4)</code> should return <code>\"abcabcabcabc\"</code>.');",
+        "assert(repeatStringNumTimes(\"abc\", 1) === \"abc\", 'message: <code>repeatStringNumTimes(\"abc\", 1)</code> should return <code>\"abc\"</code>.');",
+        "assert(repeatStringNumTimes(\"*\", 8) === \"********\", 'message: <code>repeatStringNumTimes(\"*\", 8)</code> should return <code>\"********\"</code>.');",
+        "assert(repeatStringNumTimes(\"abc\", -2) === \"\", 'message: <code>repeatStringNumTimes(\"abc\", -2)</code> should return <code>\"\"</code>.');"
       ],
       "type": "bonfire",
       "isRequired": true,
       "solutions": [
-        "function repeat(str, num) {\n  if (num < 0) return '';\n  return num === 1 ? str : str + repeat(str, num-1);\n}\n\nrepeat('abc', 3);\n"
+        "function repeatStringNumTimes(str, num) {\n  if (num < 0) return '';\n  return num === 1 ? str : str + repeatStringNumTimes(str, num-1);\n}\n\nrepeatStringNumTimes('abc', 3);\n"
       ],
       "MDNlinks": [
         "Global String Object"
@@ -399,31 +399,31 @@
       "id": "ac6993d51946422351508a41",
       "title": "Truncate a string",
       "description": [
-        "Truncate a string (first argument) if it is longer than the given maximum string length (second argument). Return the truncated string with a \"...\" ending.",
-        "Note that the three dots at the end add to the string length.",
-        "If the <code>num</code> is less than or equal to 3, then the length of the three dots is not added to the string length.",
+        "Truncate a string (first argument) if it is longer than the given maximum string length (second argument). Return the truncated string with a <code>...</code> ending.",
+        "Note that inserting the three dots to the end will add to the string length.",
+        "However, if the given maximum string length <code>num</code> is less than or equal to 3, then the addition of the three dots does not add to the string length in determining the truncated string.",
         "Remember to use <a href=\"//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck\" target=\"_blank\">Read-Search-Ask</a> if you get stuck. Write your own code."
       ],
       "challengeSeed": [
-        "function truncate(str, num) {",
+        "function truncateString(str, num) {",
         "  // Clear out that junk in your trunk",
         "  return str;",
         "}",
         "",
-        "truncate(\"A-tisket a-tasket A green and yellow basket\", 11);"
+        "truncateString(\"A-tisket a-tasket A green and yellow basket\", 11);"
       ],
       "tests": [
-        "assert(truncate(\"A-tisket a-tasket A green and yellow basket\", 11) === \"A-tisket...\", 'message: <code>truncate(\"A-tisket a-tasket A green and yellow basket\", 11)</code> should return \"A-tisket...\".');",
-        "assert(truncate(\"Peter Piper picked a peck of pickled peppers\", 14) === \"Peter Piper...\", 'message: <code>truncate(\"Peter Piper picked a peck of pickled peppers\", 14)</code> should return \"Peter Piper...\".');",
-        "assert(truncate(\"A-tisket a-tasket A green and yellow basket\", \"A-tisket a-tasket A green and yellow basket\".length) === \"A-tisket a-tasket A green and yellow basket\", 'message: <code>truncate(\"A-tisket a-tasket A green and yellow basket\", \"A-tisket a-tasket A green and yellow basket\".length)</code> should return \"A-tisket a-tasket A green and yellow basket\".');",
-        "assert(truncate('A-tisket a-tasket A green and yellow basket', 'A-tisket a-tasket A green and yellow basket'.length + 2) === 'A-tisket a-tasket A green and yellow basket', 'message: <code>truncate(\"A-tisket a-tasket A green and yellow basket\", \"A-tisket a-tasket A green and yellow basket\".length + 2)</code> should return \"A-tisket a-tasket A green and yellow basket\".');",
-        "assert(truncate(\"A-\", 1) === \"A...\", 'message: <code>truncate(\"A-\", 1)</code> should return \"A...\".');",
-        "assert(truncate(\"Absolutely Longer\", 2) === \"Ab...\", 'message: <code>truncate(\"Absolutely Longer\", 2)</code> should return \"Ab...\".');"
+        "assert(truncateString(\"A-tisket a-tasket A green and yellow basket\", 11) === \"A-tisket...\", 'message: <code>truncateString(\"A-tisket a-tasket A green and yellow basket\", 11)</code> should return \"A-tisket...\".');",
+        "assert(truncateString(\"Peter Piper picked a peck of pickled peppers\", 14) === \"Peter Piper...\", 'message: <code>truncateString(\"Peter Piper picked a peck of pickled peppers\", 14)</code> should return \"Peter Piper...\".');",
+        "assert(truncateString(\"A-tisket a-tasket A green and yellow basket\", \"A-tisket a-tasket A green and yellow basket\".length) === \"A-tisket a-tasket A green and yellow basket\", 'message: <code>truncateString(\"A-tisket a-tasket A green and yellow basket\", \"A-tisket a-tasket A green and yellow basket\".length)</code> should return \"A-tisket a-tasket A green and yellow basket\".');",
+        "assert(truncateString('A-tisket a-tasket A green and yellow basket', 'A-tisket a-tasket A green and yellow basket'.length + 2) === 'A-tisket a-tasket A green and yellow basket', 'message: <code>truncateString(\"A-tisket a-tasket A green and yellow basket\", \"A-tisket a-tasket A green and yellow basket\".length + 2)</code> should return \"A-tisket a-tasket A green and yellow basket\".');",
+        "assert(truncateString(\"A-\", 1) === \"A...\", 'message: <code>truncateString(\"A-\", 1)</code> should return \"A...\".');",
+        "assert(truncateString(\"Absolutely Longer\", 2) === \"Ab...\", 'message: <code>truncateString(\"Absolutely Longer\", 2)</code> should return \"Ab...\".');"
       ],
       "type": "bonfire",
       "isRequired": true,
       "solutions": [
-        "function truncate(str, num) {\n  if(str.length > num ) {\n    if(num > 3) {\n      return str.slice(0, num - 3) + '...';\n    } else {\n      return str.slice(0,num) + '...';\n    }\n  } \n  return str;\n}"
+        "function truncateString(str, num) {\n  if(str.length > num ) {\n    if(num > 3) {\n      return str.slice(0, num - 3) + '...';\n    } else {\n      return str.slice(0,num) + '...';\n    }\n  } \n  return str;\n}"
       ],
       "MDNlinks": [
         "String.slice()"
@@ -445,25 +445,25 @@
         "Remember to use <a href=\"//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck\" target=\"_blank\">Read-Search-Ask</a> if you get stuck. Write your own code."
       ],
       "challengeSeed": [
-        "function chunk(arr, size) {",
+        "function chunkArrayInGroups(arr, size) {",
         "  // Break it up.",
         "  return arr;",
         "}",
         "",
-        "chunk([\"a\", \"b\", \"c\", \"d\"], 2);"
+        "chunkArrayInGroups([\"a\", \"b\", \"c\", \"d\"], 2);"
       ],
       "tests": [
-        "assert.deepEqual(chunk([\"a\", \"b\", \"c\", \"d\"], 2), [[\"a\", \"b\"], [\"c\", \"d\"]], 'message: <code>chunk([\"a\", \"b\", \"c\", \"d\"], 2)</code> should return <code>[[\"a\", \"b\"], [\"c\", \"d\"]]</code>.');",
-        "assert.deepEqual(chunk([0, 1, 2, 3, 4, 5], 3), [[0, 1, 2], [3, 4, 5]], 'message: <code>chunk([0, 1, 2, 3, 4, 5], 3)</code> should return <code>[[0, 1, 2], [3, 4, 5]]</code>.');",
-        "assert.deepEqual(chunk([0, 1, 2, 3, 4, 5], 2), [[0, 1], [2, 3], [4, 5]], 'message: <code>chunk([0, 1, 2, 3, 4, 5], 2)</code> should return <code>[[0, 1], [2, 3], [4, 5]]</code>.');",
-        "assert.deepEqual(chunk([0, 1, 2, 3, 4, 5], 4), [[0, 1, 2, 3], [4, 5]], 'message: <code>chunk([0, 1, 2, 3, 4, 5], 4)</code> should return <code>[[0, 1, 2, 3], [4, 5]]</code>.');",
-        "assert.deepEqual(chunk([0, 1, 2, 3, 4, 5, 6], 3), [[0, 1, 2], [3, 4, 5], [6]], 'message: <code>chunk([0, 1, 2, 3, 4, 5, 6], 3)</code> should return <code>[[0, 1, 2], [3, 4, 5], [6]]</code>.');",
-        "assert.deepEqual(chunk([0, 1, 2, 3, 4, 5, 6, 7, 8], 4), [[0, 1, 2, 3], [4, 5, 6, 7], [8]], 'message: <code>chunk([0, 1, 2, 3, 4, 5, 6, 7, 8], 4)</code> should return <code>[[0, 1, 2, 3], [4, 5, 6, 7], [8]]</code>.');"
+        "assert.deepEqual(chunkArrayInGroups([\"a\", \"b\", \"c\", \"d\"], 2), [[\"a\", \"b\"], [\"c\", \"d\"]], 'message: <code>chunkArrayInGroups([\"a\", \"b\", \"c\", \"d\"], 2)</code> should return <code>[[\"a\", \"b\"], [\"c\", \"d\"]]</code>.');",
+        "assert.deepEqual(chunkArrayInGroups([0, 1, 2, 3, 4, 5], 3), [[0, 1, 2], [3, 4, 5]], 'message: <code>chunkArrayInGroups([0, 1, 2, 3, 4, 5], 3)</code> should return <code>[[0, 1, 2], [3, 4, 5]]</code>.');",
+        "assert.deepEqual(chunkArrayInGroups([0, 1, 2, 3, 4, 5], 2), [[0, 1], [2, 3], [4, 5]], 'message: <code>chunkArrayInGroups([0, 1, 2, 3, 4, 5], 2)</code> should return <code>[[0, 1], [2, 3], [4, 5]]</code>.');",
+        "assert.deepEqual(chunkArrayInGroups([0, 1, 2, 3, 4, 5], 4), [[0, 1, 2, 3], [4, 5]], 'message: <code>chunkArrayInGroups([0, 1, 2, 3, 4, 5], 4)</code> should return <code>[[0, 1, 2, 3], [4, 5]]</code>.');",
+        "assert.deepEqual(chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6], 3), [[0, 1, 2], [3, 4, 5], [6]], 'message: <code>chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6], 3)</code> should return <code>[[0, 1, 2], [3, 4, 5], [6]]</code>.');",
+        "assert.deepEqual(chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 4), [[0, 1, 2, 3], [4, 5, 6, 7], [8]], 'message: <code>chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 4)</code> should return <code>[[0, 1, 2, 3], [4, 5, 6, 7], [8]]</code>.');"
       ],
       "type": "bonfire",
       "isRequired": true,
       "solutions": [
-        "function chunk(arr, size) {\n  var out = [];\n  for (var i = 0; i < arr.length; i+=size) {\n    out.push(arr.slice(i,i+size));\n  }\n  return out;\n}\n\nchunk(['a', 'b', 'c', 'd'], 2);\n"
+        "function chunkArrayInGroups(arr, size) {\n  var out = [];\n  for (var i = 0; i < arr.length; i+=size) {\n    out.push(arr.slice(i,i+size));\n  }\n  return out;\n}\n\nchunkArrayInGroups(['a', 'b', 'c', 'd'], 2);\n"
       ],
       "MDNlinks": [
         "Array.push()",
