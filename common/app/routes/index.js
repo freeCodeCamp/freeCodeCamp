@@ -1,6 +1,7 @@
 import Jobs from './Jobs';
 import Hikes from './Hikes';
-import Challenges from './challenges';
+import challenges from './challenges';
+import map from './map';
 import NotFound from '../components/NotFound/index.jsx';
 
 export default {
@@ -8,7 +9,8 @@ export default {
   childRoutes: [
     Jobs,
     Hikes,
-    Challenges,
+    challenges,
+    map,
     {
       path: '*',
       component: NotFound

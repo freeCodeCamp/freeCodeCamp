@@ -34,6 +34,10 @@
       "type": "string",
       "required": true,
       "description": "The title of this block, suitable for display"
+    },
+    "time": {
+      "type": "string",
+      "required": true
     }
   },
   "validations": [],
