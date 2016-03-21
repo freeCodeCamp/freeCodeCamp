@@ -1,11 +1,24 @@
-import Hikes from './components/Hikes.jsx';
-import Hike from './components/Hike.jsx';
-
 export default {
   path: 'videos',
-  component: Hikes,
-  childRoutes: [{
-    path: ':dashedName',
-    component: Hike
-  }]
+  getComponent(_, cb) {
+    require.ensure(
+      [ './components/Hikes.jsx' ],
+      require => {
+        cb(null, require('./components/Hikes.jsx').default);
+      },
+      'hikes'
+    );
+  },
+  getChildRoutes(_, cb) {
+    require.ensure(
+      [ './components/Hike.jsx' ],
+      require => {
+        cb(null, [{
+          path: ':dashedName',
+          component: require('./components/Hike.jsx').default
+        }]);
+      },
+      'hikes'
+    );
+  }
 };

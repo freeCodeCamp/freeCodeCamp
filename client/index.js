@@ -23,9 +23,9 @@ import {
 Rx.config.longStackSupport = !!debug.enabled;
 
 const log = debug('fcc:client');
-const DOMContainer = document.getElementById('fcc');
 const hotReloadTimeout = 5000;
 const csrfToken = window.__fcc__.csrf.token;
+const DOMContainer = document.getElementById('fcc');
 const initialState = isColdStored() ?
   getColdStorage() :
   window.__fcc__.data;
