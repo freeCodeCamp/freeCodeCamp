@@ -686,7 +686,7 @@
         "Agora, vamos importar e aplicar um estilo de fonte por meio do Google Fonts.",
         "Primeiro, faça um <code>chamado</code> ao Google Fonts para poder utilizar a fonte chamada <code>Lobster</code> e carregá-la em seu HTML.",
         "Para fazer isso, copie o código abaixo e insira-o na parte superior de seu editor de texto:",
-        "<code>&#60;link href=\"http://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\"&#62;</code>",
+        "<code>&#60;link href=\"https://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\"&#62;</code>",
         "Agora, estableça <code>Lobster</code> como o valor para font-family em seu elemento <code>h2</code>."
       ],
       "namePtBR": "Importe uma Fonte a Partir do Google Fonts",
@@ -694,7 +694,7 @@
         "Füge dem <code>h2</code> Element die Schriftart oder <code>font-family</code> \"Lobster\" hinzu.",
         "Zuerst musst du Google Fonts in dein HTML einbinden, um auf \"Lobster\" zugreifen zu können.",
         "Kopiere den folgenden Code und füge diesen in deinen Editor über dem <code>style</code> Element ein:",
-        "<code>&#60;link href=\"http://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\"&#62;</code>",
+        "<code>&#60;link href=\"https://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\"&#62;</code>",
         "Jetzt kannst du \"Lobster\" als font-family Attribut zu deinem <code>h2</code> Element hinzufügen."
       ],
       "title": "Import a Google Font",
@@ -702,7 +702,7 @@
         "Now, let's import and apply a Google font (note that if Google is blocked in your country, you will need to skip this challenge).",
         "First, you'll need to make a <code>call</code> to Google to grab the <code>Lobster</code> font and load it into your HTML.",
         "Copy the following code snippet and paste it into the top of your code editor:",
-        "<code>&#60;link href=\"http://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\"&#62;</code>",
+        "<code>&#60;link href=\"https://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\"&#62;</code>",
         "Now you can set <code>Lobster</code> as a font-family value on your <code>h2</code> element.",
         "Apply the <code>font-family</code> of <code>Lobster</code> to your <code>h2</code> element."
       ],
@@ -734,7 +734,7 @@
         "Ahora, importemos y apliquemos un tipo de letra de Google (ten en cuenta que si Google está bloqueado en tu país, deberás saltarte este desafío).",
         "Primero, haz un <code>llamado</code> a Google para obtener el tipo de letra <code>Lobster</code> y para cargarlo en tu HTML.",
         "Copia la siguiente porción de código y pégala en la parte superior de tu editor de texto:",
-        "<code>&#60;link href=\"http://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\"&#62;</code>",
+        "<code>&#60;link href=\"https://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\"&#62;</code>",
         "Ahora puedes establecer <code>Lobster</code> como valor de font-family de tu elemento <code>h2</code>.",
         "Aplica el tipo de letra (<code>font-family</code>) <code>Lobster</code> a tu elemento <code>h2</code>."
       ],
@@ -769,7 +769,7 @@
         "Now comment out your call to Google Fonts, so that the <code>Lobster</code> font isn't available. Notice how it degrades to the <code>Monospace</code> font."
       ],
       "challengeSeed": [
-        "<link href=\"http://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
+        "<link href=\"https://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
         "<style>",
         "  .red-text {",
         "    color: red;",
@@ -813,7 +813,7 @@
       "descriptionPtBR": [
         "Você pode adicionar imagens à sua página da internet com o uso do elemento <code>img</code>, e apontar para a URL específica de uma imagem utilizando o atributo <code>src</code>.",
         "Um exemplo para isso seria:",
-        "<code>&#60img src=\"http://www.your-image-source.com/your-image.jpg\"&#62</code>",
+        "<code>&#60img src=\"https://www.your-image-source.com/your-image.jpg\"&#62</code>",
         "Observe que na maior parte dos casos, os elementos <code>img</code> são de fechamento automático.",
         "Agora, tente fazer isso com essa imagem:",
         "<code>https://bit.ly/fcc-relaxing-cat</code>"
@@ -829,13 +829,13 @@
       "description": [
         "You can add images to your website by using the <code>img</code> element, and point to a specific image's URL using the <code>src</code> attribute.",
         "An example of this would be:",
-        "<code>&#60img src=\"http://www.your-image-source.com/your-image.jpg\"&#62</code>",
+        "<code>&#60img src=\"https://www.your-image-source.com/your-image.jpg\"&#62</code>",
         "Note that in most cases, <code>img</code> elements are self-closing.",
         "Try it with this image:",
         "<code>https://bit.ly/fcc-relaxing-cat</code>"
       ],
       "challengeSeed": [
-        "<link href=\"http://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
+        "<link href=\"https://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
         "<style>",
         "  .red-text {",
         "    color: red;",
@@ -865,7 +865,7 @@
       "descriptionEs": [
         "Puedes agregar imágenes a tu sitio web mediante el uso del elemento <code>img</code>, y apuntar a la URL específica de una imagen utilizando el atributo <code>src</code>.",
         "Un ejemplo de esto sería:",
-        "<code>&#60img src=\"http://www.origen-de-tu-imagen.com/tu-imagen.jpg\"&#62</code>",
+        "<code>&#60img src=\"https://www.origen-de-tu-imagen.com/tu-imagen.jpg\"&#62</code>",
         "Ten en cuenta que en la mayoría de los casos, los elementos <code>img</code> son de cierre automático.",
         "Prueba con esta imagen:",
         "<code>https://bit.ly/fcc-relaxing-cat</code>"
@@ -900,7 +900,7 @@
         "<strong>Note</strong><br>Due to browser implementation differences, you may need to be at 100% zoom to pass the tests on this challenge."
       ],
       "challengeSeed": [
-        "<link href=\"http://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
+        "<link href=\"https://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
         "<style>",
         "  .red-text {",
         "    color: red;",
@@ -971,7 +971,7 @@
         "<code>&lt;img class=\"class1 class2\"&gt;</code>"
       ],
       "challengeSeed": [
-        "<link href=\"http://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
+        "<link href=\"https://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
         "<style>",
         "  .red-text {",
         "    color: red;",
@@ -1038,7 +1038,7 @@
         "Note: this waypoint allows for multiple possible solutions. For example, you may add <code>border-radius</code> to either the <code>.thick-green-border</code> class or <code>.smaller-image</code> class."
       ],
       "challengeSeed": [
-        "<link href=\"http://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
+        "<link href=\"https://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
         "<style>",
         "  .red-text {",
         "    color: red;",
@@ -1102,7 +1102,7 @@
         "Give your cat photo a <code>border-radius</code> of <code>50%</code>."
       ],
       "challengeSeed": [
-        "<link href=\"http://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
+        "<link href=\"https://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
         "<style>",
         "  .red-text {",
         "    color: red;",
@@ -1156,7 +1156,7 @@
         "Aqui está um diagrama de um elemento <code>a</code>. Neste caso, o elemento <code>a</code> é utilizado no meio de um elemento de parágrafo, o que significa que o link externo aparecerá no meio de uma frase.",
         "<a href=\"//i.imgur.com/hviuZwe.png\" data-lightbox=\"img-enlarge\"> <img class=\"img-responsive\" title=\"Clique para ampliar\" alt=\"diagrama de como as tags de âncora se compõem com o texto, como na próxima linha\" src=\"//i.imgur.com/hviuZwe.png\"></a>",
         "Veja um exemplo:",
-        "<code>&#60;p&#62;Aqui está um &#60;a href=\"http://freecodecamp.com\"&#62; link ligado ao Free Code Camp&#60;/a&#62; para que você o siga.&#60;/p&#62;</code>",
+        "<code>&#60;p&#62;Aqui está um &#60;a href=\"https://freecodecamp.com\"&#62; link ligado ao Free Code Camp&#60;/a&#62; para que você o siga.&#60;/p&#62;</code>",
         "Crie um elemento <code>a</code> que esteja ligado ao site <code>http://freecatphotoapp.com</code> e tenha como <code>texto de âncora</code> \"fotos de gatos\"."
       ],
       "namePtBR": "Ligue Páginas Externas com o Elemento Âncora",
@@ -1164,7 +1164,7 @@
         "Erstelle ein <code>a</code> Element oder \"Anker Element\", das auf http://freecatphotoapp.com verlinkt und den Link-Text \"cat photos\" oder \"anchor text\" beinhaltet.",
         "So sieht ein <code>a</code> Element aus. In diesem Fall wird es innerhalb eines Paragraphen Elements verwendet. Das bedeutet dein Link wird innerhalb des Satzes erscheinen.",
         "<img class=\"img-responsive\" alt=\"Ein Beispiel wie Anker Tags geschrieben werden.\" src=\"https://www.evernote.com/l/AHSaNaepx_lG9LhhPkVYmagcedpmAeITDsQB/image.png\">",
-        "Hier ist ein Beispiel: <code>&#60;p&#62;Hier ist ein &#60;a href=\"http://freecodecamp.com\"&#62; Link zum Free Code Camp&#60;/a&#62; für dich zum Folgen.&#60;/p&#62;</code>"
+        "Hier ist ein Beispiel: <code>&#60;p&#62;Hier ist ein &#60;a href=\"https://freecodecamp.com\"&#62; Link zum Free Code Camp&#60;/a&#62; für dich zum Folgen.&#60;/p&#62;</code>"
       ],
       "title": "Link to External Pages with Anchor Elements",
       "description": [
@@ -1176,7 +1176,7 @@
         "Create an <code>a</code> element that links to <code>http://freecatphotoapp.com</code> and has \"cat photos\" as its <code>anchor text</code>."
       ],
       "challengeSeed": [
-        "<link href=\"http://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
+        "<link href=\"https://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
         "<style>",
         "  .red-text {",
         "    color: red;",
@@ -1222,7 +1222,7 @@
         "Aquí está un diagrama de un elemento <code>a</code>. En este caso, el elemento <code>a</code> se utiliza en el medio de un elemento de párrafo, lo que significa que el enlace aparecerá en el medio de una frase. ",
         "<a href=\"//i.imgur.com/hviuZwe.png\" data-lightbox=\"img-enlarge\"> <img class=\"img-responsive\" title=\"Haz clic para ampliar\" alt=\"un diagrama de cómo las etiquetas de ancla se componen con el mismo texto, como en la siguiente línea\" src=\"//i.imgur.com/hviuZwe.png\"></a> ",
         "He aquí un ejemplo:",
-        "<code>&#60;p&#62;Aquí está un &#60;a href=\"http://freecodecamp.com\"&#62; enlace a Free Code Camp&#60;/a&#62; para que lo sigas.&#60;/p&#62;</code>",
+        "<code>&#60;p&#62;Aquí está un &#60;a href=\"https://freecodecamp.com\"&#62; enlace a Free Code Camp&#60;/a&#62; para que lo sigas.&#60;/p&#62;</code>",
         "Crea un elemento <code>a</code> que se vincule a <code>http://freecatphotoapp.com</code> y tenga como <code>texto de ancla</code> \"fotos de gatos\"."
       ],
       "titleDe": "Waypoint: Verlinke externe Seiten mit Anker Elementen",
@@ -1234,7 +1234,7 @@
         "Outra vez, aqui está um diagrama de um elemento <code>a</code> para você usar como referência.",
         "<a href=\"//i.imgur.com/hviuZwe.png\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" title=\"Clique para ampliar\" alt=\"diagrama de como são as tags de âncora com o texto como na linha seguinte\" src=\"//i.imgur.com/hviuZwe.png\"></a>",
         "Veja um exemplo:",
-        "<code>&#60;p&#62;Este é um &#60;a href=\"http://freecodecamp.com\"&#62; link ligado ao Free Code Camp&#60;/a&#62; para que você o siga.&#60;/p&#62;</code>",
+        "<code>&#60;p&#62;Este é um &#60;a href=\"https://freecodecamp.com\"&#62; link ligado ao Free Code Camp&#60;/a&#62; para que você o siga.&#60;/p&#62;</code>",
         "<code>Aninhamento</code> significa ter um elemento no interior de outro elemento.",
         "Agora, aninhe o elemento <code>a</code> existente dentro de um novo elemento <code>p</code> de forma que o parágrafo diga \"View more cat photos\", mas onde apenas \"cat photos\" seja um link, e o resto seja texto comum."
       ],
@@ -1242,19 +1242,19 @@
       "descriptionDe": [
         "Jetzt umschließe dein <code>a</code> Element mit einem <code>p</code> Element und dem Text \"click here for cat photos\". Nur \"cat photos\" soll ein Link ein – der Rest normaler Text.",
         "Hier ist nochmal ein Beispiel für ein <code>a</code> Element: <img class=\"img-responsive\" alt=\"Ein Beispiel wie Anker Tags geschrieben werden.\" src=\"https://www.evernote.com/l/AHSaNaepx_lG9LhhPkVYmagcedpmAeITDsQB/image.png\">",
-        "So könnte es aussehen: <code>&#60;p&#62;Hier ist ein &#60;a href=\"http://freecodecamp.com\"&#62; Link zum Free Code Camp&#60;/a&#62; für dich zum Folgen.&#60;/p&#62;</code>"
+        "So könnte es aussehen: <code>&#60;p&#62;Hier ist ein &#60;a href=\"https://freecodecamp.com\"&#62; Link zum Free Code Camp&#60;/a&#62; für dich zum Folgen.&#60;/p&#62;</code>"
       ],
       "title": "Nest an Anchor Element within a Paragraph",
       "description": [
         "Again, here's a diagram of an <code>a</code> element for your reference:",
         "<a href=\"//i.imgur.com/hviuZwe.png\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" title=\"Click to enlarge\" alt=\"a diagram of how anchor tags are composed with the same text as on the following line\" src=\"//i.imgur.com/hviuZwe.png\"></a>",
         "Here's an example:",
-        "<code>&#60;p&#62;Here's a &#60;a href=\"http://freecodecamp.com\"&#62; link to Free Code Camp&#60;/a&#62; for you to follow.&#60;/p&#62;</code>",
+        "<code>&#60;p&#62;Here's a &#60;a href=\"https://freecodecamp.com\"&#62; link to Free Code Camp&#60;/a&#62; for you to follow.&#60;/p&#62;</code>",
         "<code>Nesting</code> just means putting one element inside of another element.",
         "Now nest your existing <code>a</code> element within a new <code>p</code> element (just after the existing <code>h2</code> element) so that the surrounding paragraph says \"View more cat photos\", but where only \"cat photos\" is a link, and the rest of the text is plain text."
       ],
       "challengeSeed": [
-        "<link href=\"http://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
+        "<link href=\"https://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
         "<style>",
         "  .red-text {",
         "    color: red;",
@@ -1306,7 +1306,7 @@
         "Una vez más, aquí está un diagrama de un elemento <code>a</code> para tu referencia:",
         "<a href=\"//i.imgur.com/hviuZwe.png\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" title=\"Pulse para ampliar\" alt=\"un diagrama de como se componen las etiquetas de anclaje con el texto como en la siguiente línea\" src=\"//i.imgur.com/hviuZwe.png\"></a>",
         "He aquí un ejemplo:",
-        "<code>&#60;p&#62;Aquí hay un &#60;a href=\"http://freecodecamp.com\"&#62; enlace a Free Code Camp&#60;/a&#62; para que lo sigas.&#60;/p&#62;</code>",
+        "<code>&#60;p&#62;Aquí hay un &#60;a href=\"https://freecodecamp.com\"&#62; enlace a Free Code Camp&#60;/a&#62; para que lo sigas.&#60;/p&#62;</code>",
         "<code>Anidamiento</code> simplemente significa poner un elemento dentro de otro elemento.",
         "Ahora anida el elemento <code>a</code> existente dentro de un nuevo elemento <code>p</code> (justo después del elemento <code>h2</code> que ya tienes) de tal forma que el párrafo que lo rodee diga \"View more cat photos\", pero que sólo \"cat photos\" sea un enlace, y el resto sea texto plano ."
       ],
@@ -1334,7 +1334,7 @@
         "Replace the value of your <code>a</code> element's <code>href</code> attribute with a <code>#</code>, also known as a hash symbol, to turn it into a dead link."
       ],
       "challengeSeed": [
-        "<link href=\"http://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
+        "<link href=\"https://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
         "<style>",
         "  .red-text {",
         "    color: red;",
@@ -1388,14 +1388,14 @@
       "descriptionPtBR": [
         "Você pode transformar elementos em links ao aninhá-los com um elemento <code>a</code>.",
         "Aninhe sua imagem dentro de um elemento <code>a</code>. Temos aqui um exemplo.",
-        "<code>&#60;a href=\"#\"&#62;&#60;img src=\"http://bit.ly/fcc-running-cats\"/&#62;&#60;/a&#62;</code>",
+        "<code>&#60;a href=\"#\"&#62;&#60;img src=\"https://bit.ly/fcc-running-cats\"/&#62;&#60;/a&#62;</code>",
         "Lembre de usar <code>#</code> como atributo <code>href</code> de seu elemento <code>a</code> para tornar o link inativo."
       ],
       "namePtBR": "Transforme uma Imagem em um Link",
       "descriptionDe": [
         "Umschließe dein <code>img</code> Element mit einem <code>a</code> Element als toten Link.",
         "Du kannst jedes Element in einen Link verwandeln, indem du es mit einem <code>a</code> Element umschließt.",
-        "Umschließe nun dein Bild mit einem <code>a</code> Element. Hier ist ein Beispiel: <code>&#60;a href=\"#\"&#62;&#60;img src=\"http://bit.ly/fcc-running-cats\"/&#62;&#60;/a&#62;</code>",
+        "Umschließe nun dein Bild mit einem <code>a</code> Element. Hier ist ein Beispiel: <code>&#60;a href=\"#\"&#62;&#60;img src=\"https://bit.ly/fcc-running-cats\"/&#62;&#60;/a&#62;</code>",
         "Vergewissere dich, dass du ein Hash Symbol (#) innerhalb des <code>href</code> Attributs des <code>a</code> Elements nutzt, um daraus einen toten Link zu machen.",
         "Sobald du das gemacht hast, kannst du mit der Maus über dein Bild fahren. Der normale Mauszeiger sollte nun zu einer Hand für Links werden. Das Bild ist jetzt ein Link."
       ],
@@ -1403,12 +1403,12 @@
       "description": [
         "You can make elements into links by nesting them within an <code>a</code> element.",
         "Nest your image within an <code>a</code> element. Here's an example:",
-        "<code>&#60;a href=\"#\"&#62;&#60;img src=\"http://bit.ly/fcc-running-cats\"&#62;&#60;/a&#62;</code>",
+        "<code>&#60;a href=\"#\"&#62;&#60;img src=\"https://bit.ly/fcc-running-cats\"&#62;&#60;/a&#62;</code>",
         "Remember to use <code>#</code> as your <code>a</code> element's <code>href</code> property in order to turn it into a dead link.",
         "Once you've done this, hover over your image with your cursor. Your cursor's normal pointer should become the link clicking pointer. The photo is now a link."
       ],
       "challengeSeed": [
-        "<link href=\"http://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
+        "<link href=\"https://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
         "<style>",
         "  .red-text {",
         "    color: red;",
@@ -1454,7 +1454,7 @@
       "descriptionEs": [
         "Puedes convertir elementos en enlaces al anidarlos dentro de un elemento <code>a</code>.",
         "Anida tu imagen dentro de un elemento <code>a</code>. He aquí un ejemplo: ",
-        "<code>&#60;a href=\"#\"&#62;&#60;img src=\"http://bit.ly/fcc-running-cats\"/&#62;&#60;/a&#62;</code>",
+        "<code>&#60;a href=\"#\"&#62;&#60;img src=\"https://bit.ly/fcc-running-cats\"/&#62;&#60;/a&#62;</code>",
         "Recuerda usar <code>#</code> como atributo <code>href</code> de tu elemento <code>a</code> con el fin de convertirlo en un vínculo muerto.",
         "Una vez hayas hecho esto, coloca el cursor sobre tu imagen. El puntero normal de tu cursor debería convertirse en el puntero de enlace. La foto es ahora un vínculo ."
       ],
@@ -1487,7 +1487,7 @@
         "Add an <code>alt</code> attribute with the text <code>A cute orange cat lying on its back</code> to our cat photo."
       ],
       "challengeSeed": [
-        "<link href=\"http://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
+        "<link href=\"https://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
         "<style>",
         "  .red-text {",
         "    color: red;",
@@ -1568,7 +1568,7 @@
         "Remove the last two <code>p</code> elements and create an unordered list of three things that cats love at the bottom of the page."
       ],
       "challengeSeed": [
-        "<link href=\"http://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
+        "<link href=\"https://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
         "<style>",
         "  .red-text {",
         "    color: red;",
@@ -1653,7 +1653,7 @@
         "Create an ordered list of the top 3 things cats hate the most."
       ],
       "challengeSeed": [
-        "<link href=\"http://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
+        "<link href=\"https://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
         "<style>",
         "  .red-text {",
         "    color: red;",
@@ -1742,7 +1742,7 @@
         "Create an <code>input</code> element of type <code>text</code> below your lists."
       ],
       "challengeSeed": [
-        "<link href=\"http://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
+        "<link href=\"https://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
         "<style>",
         "  .red-text {",
         "    color: red;",
@@ -1826,7 +1826,7 @@
         "Set the <code>placeholder</code> value of your text <code>input</code> to \"cat photo URL\"."
       ],
       "challengeSeed": [
-        "<link href=\"http://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
+        "<link href=\"https://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
         "<style>",
         "  .red-text {",
         "    color: red;",
@@ -1911,7 +1911,7 @@
         "Nest your text field in a <code>form</code> element. Add the <code>action=\"/submit-cat-photo\"</code> attribute to this form element."
       ],
       "challengeSeed": [
-        "<link href=\"http://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
+        "<link href=\"https://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
         "<style>",
         "  .red-text {",
         "    color: red;",
@@ -1996,7 +1996,7 @@
         "Add a submit button to your <code>form</code> element with type <code>submit</code> and \"Submit\" as its text."
       ],
       "challengeSeed": [
-        "<link href=\"http://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
+        "<link href=\"https://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
         "<style>",
         "  .red-text {",
         "    color: red;",
@@ -2085,7 +2085,7 @@
         "Note: This field does not work in Safari."
       ],
       "challengeSeed": [
-        "<link href=\"http://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
+        "<link href=\"https://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
         "<style>",
         "  .red-text {",
         "    color: red;",
@@ -2181,7 +2181,7 @@
         "Add a pair of radio buttons to your form. One should have the option of <code>indoor</code> and the other should have the option of <code>outdoor</code>."
       ],
       "challengeSeed": [
-        "<link href=\"http://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
+        "<link href=\"https://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
         "<style>",
         "  .red-text {",
         "    color: red;",
@@ -2281,7 +2281,7 @@
         "Add to your form a set of three checkboxes. Each checkbox should be nested within its own <code>label</code> element. All three should share the <code>name</code> attribute of <code>personality</code>."
       ],
       "challengeSeed": [
-        "<link href=\"http://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
+        "<link href=\"https://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
         "<style>",
         "  .red-text {",
         "    color: red;",
@@ -2375,7 +2375,7 @@
         "Set the first of your <code>radio buttons</code> and the first of your <code>checkboxes</code> to both be checked by default."
       ],
       "challengeSeed": [
-        "<link href=\"http://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
+        "<link href=\"https://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
         "<style>",
         "  .red-text {",
         "    color: red;",
@@ -2471,7 +2471,7 @@
         "Nest your \"Things cats love\" and \"Things cats hate\" lists all within a single <code>div</code> element."
       ],
       "challengeSeed": [
-        "<link href=\"http://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
+        "<link href=\"https://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
         "<style>",
         "  .red-text {",
         "    color: red;",
@@ -2555,7 +2555,7 @@
         "Create a class called <code>gray-background</code> with the <code>background-color</code> of gray. Assign this class to your <code>div</code> element."
       ],
       "challengeSeed": [
-        "<link href=\"http://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
+        "<link href=\"https://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
         "<style>",
         "  .red-text {",
         "    color: red;",
@@ -2648,7 +2648,7 @@
         "Give your <code>form</code> element the id <code>cat-photo-form</code>."
       ],
       "challengeSeed": [
-        "<link href=\"http://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
+        "<link href=\"https://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
         "<style>",
         "  .red-text {",
         "    color: red;",
@@ -2744,7 +2744,7 @@
         "Try giving your form, which now has the <code>id</code> attribute of <code>cat-photo-form</code>, a green background."
       ],
       "challengeSeed": [
-        "<link href=\"http://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
+        "<link href=\"https://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
         "<style>",
         "  .red-text {",
         "    color: red;",
