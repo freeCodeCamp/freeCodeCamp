@@ -121,7 +121,7 @@
       "id": "bd7198d8c242eddfaeb5bd13",
       "title": "Show Relationships with a Force Directed Graph",
       "description": [
-        "<strong>Objective:</strong> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='http://codepen.io/FreeCodeCamp/full/KVNNXY' target='_blank'>http://codepen.io/FreeCodeCamp/full/KVNNXY</a>.",
+        "<strong>Objective:</strong> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='http://codepen.io/kalunlee136/full/KzWYJr/' target='_blank'>http://codepen.io/kalunlee136/full/KzWYJr/</a>.",
         "<strong>Rule #1:</strong> Don't look at the example project's code. Figure it out for yourself.",
         "<strong>Rule #2:</strong> Fulfill the below <a href='http://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
         "<strong>Rule #3:</strong> You must use D3.js to build this project.",
@@ -130,7 +130,7 @@
         "<strong>User Story:</strong> I can see the relationship between the campers and the domains they're posting.",
         "<strong>User Story:</strong> I can tell approximately many times campers have linked to a specific domain from it's node size.",
         "<strong>User Story:</strong> I can tell approximately how many times a specific camper has posted a link from their node's size.",
-        "<strong>Hint:</strong> Here's the Camper News Hot Stories API endpoint: <code>http://www.freecodecamp.com/news/hot</code>.",
+        "<strong>Hint:</strong> Here's the Camper News Hot Stories API endpoint: <code>https://www.freecodecamp.com/news/hot</code>.",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck.",
         "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen. ",
         "You can get feedback on your project from fellow campers by sharing it in our <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Code Review Chatroom</a>. You can also share it on Twitter and your city's Campsite (on Facebook)."
