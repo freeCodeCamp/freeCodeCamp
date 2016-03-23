@@ -38,7 +38,7 @@ export default class ShowMap extends PureComponent {
               <Button
                 block={ true }
                 bsStyle='primary'
-                className='active center-block'>
+                className='center-block'>
                 Collapse all challenges
               </Button>
             </Row>
