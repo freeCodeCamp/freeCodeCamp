@@ -16,6 +16,10 @@ export default handleActions(
     [types.updateFilter]: (state, { payload = ''}) => ({
       ...state,
       filter: payload
+    }),
+    [types.clearFilter]: (state) => ({
+      ...state,
+      filter: ''
     })
   },
   initialState

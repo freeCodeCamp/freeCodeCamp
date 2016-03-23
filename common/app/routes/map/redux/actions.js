@@ -13,3 +13,5 @@ export const updateFilter = createAction(
   types.updateFilter,
   e => e.target.value
 );
+
+export const clearFilter = createAction(types.clearFilter);

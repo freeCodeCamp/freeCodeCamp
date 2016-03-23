@@ -6,9 +6,14 @@ import { createSelector } from 'reselect';
 
 import Map from './Map.jsx';
 import contain from '../../../utils/professor-x';
-import { fetchChallenges, updateFilter } from '../redux/actions';
+import {
+  clearFilter,
+  fetchChallenges,
+  updateFilter
+} from '../redux/actions';
 
 const bindableActions = {
+  clearFilter,
   fetchChallenges,
   updateFilter
 };
@@ -59,6 +64,7 @@ const fetchOptions = {
 export class ShowMap extends PureComponent {
   static displayName = 'ShowMap';
   static propTypes = {
+    clearFilter: PropTypes.func,
     filter: PropTypes.string,
     superBlocks: PropTypes.array,
     updateFilter: PropTypes.func

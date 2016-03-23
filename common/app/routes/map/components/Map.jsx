@@ -7,13 +7,14 @@ import SuperBlock from './Super-Block.jsx';
 import FullStack from './Full-Stack.jsx';
 import CodingPrep from './Coding-Prep.jsx';
 
-const clearIcon = (<i className='fa fa-times' />);
-const searchIcon = (<i className='fa fa-search' />);
+const clearIcon = <i className='fa fa-times' />;
+const searchIcon = <i className='fa fa-search' />;
 export default class ShowMap extends PureComponent {
   static displayName = 'Map';
   static propTypes = {
-    superBlocks: PropTypes.array,
+    clearFilter: PropTypes.func,
     filter: PropTypes.string,
+    superBlocks: PropTypes.array,
     updateFilter: PropTypes.func
   };
 
@@ -31,8 +32,10 @@ export default class ShowMap extends PureComponent {
   }
 
   render() {
-    const { superBlocks, updateFilter, filter } = this.props;
-    const inputIcon = filter ? clearIcon : searchIcon;
+    const { superBlocks, updateFilter, clearFilter, filter } = this.props;
+    const inputIcon = !filter ?
+      searchIcon :
+      <span onClick={ clearFilter }>{ clearIcon }</span>;
     const inputClass = classnames({
       'map-filter': true,
       filled: !!filter
