@@ -113,17 +113,11 @@
     border-color: darkgreen;
 }
 
-.input-group-addon {
-  width:40px;
+.map-filter + .input-group-addon {
+  width: 40px;
   color: darkgreen;
-  background: #fff;
+  background-color: #fff;
   border-color: darkgreen;
-  &.filled{
-    background: darkgreen;
-    border-color: #000d00;
-    color: #fff;
-    cursor: pointer;
-  }
   .fa {
     position:absolute;
     top:50%;
@@ -132,6 +126,14 @@
     right:10px;
   }
 }
+
+.map-filter.filled + span.input-group-addon {
+  background: darkgreen;
+  border-color: #000d00;
+  color: #fff;
+  cursor: pointer;
+}
+
 
 .map-wrapper {
   position: absolute;

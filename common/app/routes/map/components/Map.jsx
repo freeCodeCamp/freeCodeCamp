@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import classnames from 'classnames';
 import PureComponent from 'react-pure-render/component';
 import { Input, Button, Row } from 'react-bootstrap';
 
@@ -6,10 +7,14 @@ import SuperBlock from './Super-Block.jsx';
 import FullStack from './Full-Stack.jsx';
 import CodingPrep from './Coding-Prep.jsx';
 
+const clearIcon = (<i className='fa fa-times' />);
+const searchIcon = (<i className='fa fa-search' />);
 export default class ShowMap extends PureComponent {
   static displayName = 'Map';
   static propTypes = {
-    superBlocks: PropTypes.array
+    superBlocks: PropTypes.array,
+    filter: PropTypes.string,
+    updateFilter: PropTypes.func
   };
 
   renderSuperBlocks(superBlocks) {
@@ -26,7 +31,12 @@ export default class ShowMap extends PureComponent {
   }
 
   render() {
-    const { superBlocks } = this.props;
+    const { superBlocks, updateFilter, filter } = this.props;
+    const inputIcon = filter ? clearIcon : searchIcon;
+    const inputClass = classnames({
+      'map-filter': true,
+      filled: !!filter
+    });
     return (
       <div>
         <div className='map-wrapper'>
@@ -44,11 +54,13 @@ export default class ShowMap extends PureComponent {
             </Row>
             <Row className='map-buttons'>
               <Input
-                addonAfter={ <span><i className='fa fa-search' /></span> }
+                addonAfter={ inputIcon }
                 autocompleted='off'
-                className='map-filter'
+                className={ inputClass }
+                onChange={ updateFilter }
                 placeholder='Type a challenge name'
-                type='text' />
+                type='text'
+                value={ filter }/>
             </Row>
             <hr />
           </div>
