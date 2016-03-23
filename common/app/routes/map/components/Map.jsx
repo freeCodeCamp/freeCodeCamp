@@ -1,20 +1,10 @@
 import React, { PropTypes } from 'react';
-import FA from 'react-fontawesome';
 import PureComponent from 'react-pure-render/component';
-import {
-  Input,
-  Button,
-  Row,
-  Panel
-} from 'react-bootstrap';
+import { Input, Button, Row } from 'react-bootstrap';
 
-const challengeClassName = `
-  text-primary
-  padded-ionic-icon
-  negative-15
-  challenge-title
-  ion-checkmark-circled
-`.replace(/[\n]/g, '');
+import SuperBlock from './Super-Block.jsx';
+import FullStack from './Full-Stack.jsx';
+import CodingPrep from './Coding-Prep.jsx';
 
 export default class ShowMap extends PureComponent {
   static displayName = 'Map';
@@ -22,69 +12,15 @@ export default class ShowMap extends PureComponent {
     superBlocks: PropTypes.array
   };
 
-  renderChallenges(challenges) {
-    if (!Array.isArray(challenges) || !challenges.length) {
-      return <div>No Challenges Found</div>;
-    }
-    return challenges.map(challenge => {
-      const { title, dashedName } = challenge;
-      return (
-        <p
-          className={ challengeClassName }
-          key={ title }>
-          <a href={ `/challenges/${dashedName}` }>
-            { title }
-            <span className='sr-only'>complete</span>
-          </a>
-        </p>
-      );
-    });
-  }
-
-  renderBlocks(blocks) {
-    if (!Array.isArray(blocks) || !blocks.length) {
-      return <div>No Blocks Found</div>;
-    }
-    return blocks.map(block => {
-      const { title, time, challenges } = block;
-      return (
-        <Panel
-          bsClass='map-accordion-panel-nested'
-          collapsible={ true }
-          expanded={ true }
-          header={
-            <div>
-              <h3><FA name='caret-right' />{ title }</h3>
-              <span className='challenge-block-time'>({ time })</span>
-            </div>
-          }
-          id={ title }
-          key={ title }>
-          { this.renderChallenges(challenges) }
-        </Panel>
-      );
-    });
-  }
-
   renderSuperBlocks(superBlocks) {
     if (!Array.isArray(superBlocks) || !superBlocks.length) {
       return <div>No Super Blocks</div>;
     }
     return superBlocks.map((superBlock) => {
-      const { title, blocks } = superBlock;
       return (
-        <Panel
-          bsClass='map-accordion-panel'
-          collapsible={ true }
-          expanded={ true }
-          header={ <h2><FA name='caret-right' />{ title }</h2> }
-          id={ title }
-          key={ title }>
-          <div
-            className='map-accordion-block'>
-            { this.renderBlocks(blocks) }
-          </div>
-        </Panel>
+        <SuperBlock
+          key={ superBlock.title }
+          { ...superBlock }/>
       );
     });
   }
@@ -120,6 +56,8 @@ export default class ShowMap extends PureComponent {
         <div
           className='map-accordion'>
           { this.renderSuperBlocks(superBlocks) }
+          <FullStack />
+          <CodingPrep />
         </div>
       </div>
     );
