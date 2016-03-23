@@ -3,7 +3,8 @@ import { handleActions } from 'redux-actions';
 import types from './types';
 
 const initialState = {
-  superBlocks: []
+  superBlocks: [],
+  filter: ''
 };
 
 export default handleActions(
@@ -11,6 +12,10 @@ export default handleActions(
     [types.fetchChallengesCompleted]: (state, { payload = [] }) => ({
       ...state,
       superBlocks: payload
+    }),
+    [types.updateFilter]: (state, { payload = ''}) => ({
+      ...state,
+      filter: payload
     })
   },
   initialState

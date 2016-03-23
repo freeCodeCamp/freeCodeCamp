@@ -8,3 +8,8 @@ export const fetchChallengesCompleted = createAction(
   (_, superBlocks) => superBlocks,
   entities => ({ entities })
 );
+
+export const updateFilter = createAction(
+  types.updateFilter,
+  e => e.target.value
+);

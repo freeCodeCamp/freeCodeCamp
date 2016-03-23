@@ -6,10 +6,13 @@ import { createSelector } from 'reselect';
 
 import Map from './Map.jsx';
 import contain from '../../../utils/professor-x';
-import { fetchChallenges } from '../redux/actions';
+import { fetchChallenges, updateFilter } from '../redux/actions';
 
-const bindableActions = { fetchChallenges };
-const mapStateToProps = createSelector(
+const bindableActions = {
+  fetchChallenges,
+  updateFilter
+};
+const superBlocksSelector = createSelector(
   state => state.map.superBlocks,
   state => state.entities.superBlock,
   state => state.entities.block,
@@ -20,7 +23,7 @@ const mapStateToProps = createSelector(
         superBlocks: []
       };
     }
-    const finalBlocks = superBlocks
+    return superBlocks
       .map(superBlockName => superBlockMap[superBlockName])
       .map(superBlock => ({
         ...superBlock,
@@ -32,11 +35,20 @@ const mapStateToProps = createSelector(
               .map(dashedName => challengeMap[dashedName])
           }))
       }));
+  }
+);
+
+const mapStateToProps = createSelector(
+  superBlocksSelector,
+  state => state.map.filter,
+  (superBlocks, filter) => {
     return {
-      superBlocks: finalBlocks
+      superBlocks,
+      filter
     };
   }
 );
+
 const fetchOptions = {
   fetchAction: 'fetchChallenges',
   isPrimed({ superBlocks }) {
@@ -47,13 +59,14 @@ const fetchOptions = {
 export class ShowMap extends PureComponent {
   static displayName = 'ShowMap';
   static propTypes = {
-    superBlocks: PropTypes.array
+    filter: PropTypes.string,
+    superBlocks: PropTypes.array,
+    updateFilter: PropTypes.func
   };
 
   render() {
-    const { superBlocks } = this.props;
     return (
-      <Map superBlocks={ superBlocks } />
+      <Map { ...this.props } />
     );
   }
 }
