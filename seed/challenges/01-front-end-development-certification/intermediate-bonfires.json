@@ -684,7 +684,8 @@
       "id": "a5deed1811a43193f9f1c841",
       "title": "Drop it",
       "description": [
-        "Drop the elements of an array (first argument), starting from the front, until the predicate (second argument) returns true.",
+        "Drop the elements of an array (first argument), starting from the front, until the predicate (second argument) returns <code>true</code>.",
+        "The second argument, <code>func</code>, is a function you'll use to test the first elements of the array to decide if you should drop it or not.",
         "Return the rest of the array, otherwise return an empty array.",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
       ],
