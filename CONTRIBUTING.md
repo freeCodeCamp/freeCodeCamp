@@ -5,7 +5,7 @@ We welcome pull requests from Free Code Camp campers (our students) and seasoned
 
 
 1.  Find an issue that needs assistance by searching for the [Help Wanted](https://github.com/FreeCodeCamp/FreeCodeCamp/labels/help%20wanted) tag.
-2.  Let us know you are working on it, by posting a comment on the issue.
+2.  Let us know you are working on it by posting a comment on the issue.
 3.  Feel free to ask for help in our [Help Contributors](https://gitter.im/FreeCodeCamp/HelpContributors) Gitter room.
 
 If you've found a bug that is not on the board, [follow these steps](#found-a-bug).
