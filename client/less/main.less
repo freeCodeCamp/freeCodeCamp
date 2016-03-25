@@ -1133,6 +1133,27 @@ code {
   }
 }
 
+.night {
+  background-color: #747474;
+  color: #C9E091;
+  .navbar,
+  .navbar-right,
+  .navbar-nav > li > a,
+  .btn-group,
+  .text-success,
+  .challenge-list-header,
+  .fcc-footer {
+    background-color: rgb(51, 51, 51);
+  }
+  .fcc-footer {
+    a {
+      &hover {
+        background-color: rgb(51, 51, 51);
+      }
+    }
+  }
+}
+
 @import "chat.less";
 @import "jobs.less";
 @import "challenge.less";

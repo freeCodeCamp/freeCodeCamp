@@ -534,4 +534,26 @@ $(document).ready(function() {
 
   // keyboard shortcuts: open map
   window.Mousetrap.bind('g m', toggleMap);
+
+  (function() {
+    function toggleNightMode(nightModeEnabled) {
+      var body = $('body');
+      if (nightModeEnabled) {
+        body.addClass('night');
+      } else {
+        body.removeClass('night');
+      }
+    }
+    if (typeof localStorage.getItem('nightMode') !== 'undefined') {
+      toggleNightMode(JSON.parse(localStorage.getItem('nightMode')));
+      $('.nightMode-btn').on('click', function() {
+        var newValue = !JSON.parse(localStorage.getItem('nightMode'));
+        localStorage.setItem('nightMode', String(newValue));
+        toggleNightMode(newValue);
+      });
+    } else {
+      localStorage.setItem('nightMode', 'false');
+      toggleNightMode('false');
+    }
+  })();
 });
