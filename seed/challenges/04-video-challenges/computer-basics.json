@@ -698,6 +698,48 @@
       "titleEs": "Fundamentos básicos del computador: Software"
     },
     {
+      "id": "",
+      "title": "Computer Basics: What does 'Open Source' mean?",
+      "description": [
+        "Hello campers, I'm Anthony also known as dapperAuteur on Free Code Camp and GitHub.",
+        "Thank you for joining me on this short hike about Open Source code.",
+        "I'm going to explain open source code by comparing it to its opposite, closed source code.",
+        "There are a variety of models in between the two. Open source code is published, shared, public, and supported by the community. Closed source code is not published, not shared, not public, and it is not supported by a community.",
+        "What makes open source code so important to us is the fact that it is supported by the community. Anything that is created with open source code is done by those who use it.",
+        "An example of open source code would be Linux software. It's opposite would be Windows or Apple's OSX operating systems. Linux was created and is available for free and it is supported by the community.",
+        "However, all open source code isn't free. Some are, most are. But, the major difference between open source code and all other types of code is the fact that it's, the code is available for you to use and then improve upon.",
+        "An example would be a recipe. You can find recipes online. You buy the same products in stores and not have access to the recipes.",
+        "One example is Coca-Cola. You get Coca-Cola in a variety of flavors. If you want a new flavor of Coca-Cola, you must wait for the organization that owns the recipe to make that new flavor. You can ask for it, but there's no guarantee you'll get it.",
+        "With a recipe you can find for your own cola online, you can make changes to it. Make your own cola, your own cherry, your own vanilla, your own chocolate cola and then you can share that with the rest of the community and that will be an open source recipe, an open source product.",
+        "Again, open source public, published, shared. Open source software is supported by and improved upon by the community."
+      ],
+      "challengeSeed": [
+        "160533934"
+      ],
+      "tests": [
+        [
+          "Linux is open source code.",
+          true
+          ],
+        [
+          "Closed source code is the opposite of open source code.",
+          true
+        ],
+        [
+          "You must be an employee of the company that made the code to submit changes to open source code.",
+          false,
+          "Anyone can submit contributions for consideration to an open source project."
+        ],
+        [
+          "All products built with open source code are free.",
+          false,
+          "While most open source products are free to use, some still cost to use but are open to contributions."
+        ]
+      ],
+      "type": "hike",
+      "challengeType": 6,
+    },
+    {
       "id": "56b15f15632298c12f31510f",
       "title": "Computer Basics: Content Delivery Networks",
       "description": [
