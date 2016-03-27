@@ -17,7 +17,7 @@
         "To get started, we should nest all of our HTML in a <code>div</code> element with the class <code>container-fluid</code>."
       ],
       "challengeSeed": [
-        "<link href=\"http://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
+        "<link href=\"https://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
         "<style>",
         "  .red-text {",
         "    color: red;",
