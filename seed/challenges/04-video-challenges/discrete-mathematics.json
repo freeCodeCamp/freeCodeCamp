@@ -80,7 +80,7 @@
         "Note: This is sometimes still referred to as the natural numbers, but the convention is the natural numbers are all integers greater than or equal to zero.",
         "So now, whenever you want to refer to the integers, which will be frequent, you can simply write symbol instead of natural numbers.",
         "What can I say? Mathematicians are lazy. The convenience of this notation allows us to finally use set-builder notation. Keep in mind that the colon ':' in set-builder notation is read as 'such that' or 'where' or 'given' or 'given the fact that'.",
-        "Q = {a/b : a,b are elements of integers} : 'rational numbers',
+        "Q = {a/b : a,b are elements of integers} : 'rational numbers'",
         "This is read as, 'The rational numbers is the set of all numbers a divided b such that a and b are in the integers.' Or, for a more rigorous definition, 'The rational numbers is the set of all number that can be expressed as a ratio, or fraction, of integers.'",
         "R = {x : -infinity (less than) x (less than) infinity}: 'real numbers'"
       ],
