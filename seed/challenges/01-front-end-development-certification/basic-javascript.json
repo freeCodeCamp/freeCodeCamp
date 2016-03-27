@@ -651,7 +651,7 @@
     },
     {
       "id": "56533eb9ac21ba0edf2244af",
-      "title": "Compound Assignment With +=",
+      "title": "Compound Assignment With Augmented Addition",
       "description": [
         "In programming, it is common to use assignments to modify the contents of a variable. Remember that everything to the right of the equals sign is evaluated first, so we can say:",
         "<code>myVar = myVar + 5;</code>",
@@ -702,7 +702,7 @@
     },
     {
       "id": "56533eb9ac21ba0edf2244b0",
-      "title": "Compound Assignment With -=",
+      "title": "Compound Assignment With Augmented Subtraction",
       "description": [
         "Like the <code>+=</code> operator, <code>-=</code> subtracts a number from a variable.",
         "<code>myVar = myVar - 5;</code>",
@@ -752,7 +752,7 @@
     },
     {
       "id": "56533eb9ac21ba0edf2244b1",
-      "title": "Compound Assignment With *=",
+      "title": "Compound Assignment With Augmented Multiplication",
       "description": [
         "The <code>*=</code> operator multiplies a variable by a number.",
         "<code>myVar = myVar * 5;</code>",
@@ -802,7 +802,7 @@
     },
     {
       "id": "56533eb9ac21ba0edf2244b2",
-      "title": "Compound Assignment With /=",
+      "title": "Compound Assignment With Augmented Division",
       "description": [
         "The <code>/=</code> operator divides a variable by another number.",
         "<code>myVar = myVar / 5;</code>",
