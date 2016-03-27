@@ -3446,6 +3446,9 @@
       "solutions": [
         "function myTest(val) {\n  var answer = \"\";\n\n  switch (val) {\n    case 1:\n      answer = \"alpha\";\n      break;\n    case 2:\n      answer = \"beta\";\n      break;\n    case 3:\n      answer = \"gamma\";\n      break;\n    case 4:\n      answer = \"delta\";\n  }\n  return answer;  \n}"
       ],
+      "MDNlinks": [
+        "Switch Statement"
+      ],
       "tests": [
         "assert(myTest(1) === \"alpha\", 'message: <code>myTest(1) should have a value of \"alpha\"');",
         "assert(myTest(2) === \"beta\", 'message: <code>myTest(2) should have a value of \"beta\"');",

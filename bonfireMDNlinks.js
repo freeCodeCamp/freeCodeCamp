@@ -79,6 +79,9 @@ var links = {
   "Array.splice()": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice",
   "Array.toString()": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/toString",
 
+  // ======== STATEMENTS AND DECLARATIONS
+  "Switch Statement": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch",
+
   // ======== MATH METHODS
   "Math.max()": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/max",
   "Math.min()": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/min",
