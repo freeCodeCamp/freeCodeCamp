@@ -1,1 +1,216 @@
-
+{
+  "name": "Web Design",
+  "order": 17,
+  "time": "1 hour",
+  "challenges": [
+    {
+      "id": "56f836bfabe05f3de07f9910",
+      "title": "Discrete Mathematics: Tips for Learning",
+      "description": [
+        "Hello world! My name is Shawn Grooms, and this is the first video for the discrete mathematics series.",
+        "These are my three tips for learning with video challenges.",
+        "#1 - Stay calm! A lot of times people hear the word mathematics, and they stop listening! They panic or just assume they aren’t going to understand what is being talked about.",
+        "This isn’t true! Just relax. You aren’t being graded on the subject, so why are you stressing out? :)",
+        "#2 - A good reason not to stress out is that you can rewind the videos! Trust me, when I am sitting in my mathematics courses, I wish I could rewind. Unfortunately, I can’t do this when taking classes in person.",
+        "But, you can rewind at anytime, so you have an incredible advantage for learning the material! I strongly encourage rewinding the videos!!!",
+        "#3 - Once you think you understand the material in the video, I challenge you to teach someone else the material. You can choose to explain this to a friend, other students on FreeCodeCamp, or simply try to explain the material out loud.",
+        "In computer science this concept is called “rubber duck debugging” where you try to explain your code to a rubber duck line by line until find a bug. So, if you try explain the material sentence by sentence you will soon find your deficiencies!"
+      ],
+      "challengeSeed": [
+        "160522684"
+      ],
+      "tests": [
+        [
+          "I should rewind the video more than once if I need to.",
+          true
+          ],
+        [
+          "Some programmers actually explain their code to a rubber duck to find a bug.",
+          true
+        ]
+      ],
+      "type": "hike",
+      "challengeType": 6
+    },
+    {
+      "id": "56f836caabe05f3de07f9911",
+      "title": "Discrete Mathematics: What is Discrete Mathematics?",
+      "description": [
+        "Discrete mathematics is a type of mathematics that deals with discrete (finite) sets of elements rather than continuous sets.",
+        "This is why discrete mathematics is fundamental for the field of computer science.",
+        "Imagine trying to run a program that requires an infinite number of executions. It is obvious to say that the program would run forever, and that is precisely what happens when using continuous sets. In order to avoid this problem we approximate continuous sets with discrete sets.",
+        "For example, suppose we wish to draw the circumference of a perfect circle using a given program. Unfortunately, this is impossible!",
+        "The circumference of a circle is a set of points equidistant from a fixed point (the center). This set is infinite, and therefore it would take forever for the program to run.",
+        "Now everyone has observed circles on computers, so how are they produced? The simple answer is that they aren't perfect circles, but they are perfect enough.",
+        "Instead of trying to plot all points on the circumference of a circle let us choose 5 points to approximate a circle show pentagon within circle.",
+        "Now, this obviously doesn't look like a circle, but if we increase the number of side of our 5-sided polygon (pentagon), to six it becomes a little closer to a circle.",
+        "If we increase to seven it becomes a little more close. In fact, if we infinitely increase the number of sides of our regular polygon, the polygon becomes a circle.",
+        "But, we already established this was impossible to print. So, we will simply increase the number of sides of our polygon until the differences become indistinguishable to the naked eye."
+      ],
+      "challengeSeed": [
+        "160522862"
+      ],
+      "tests": [
+        [
+          "A computer can draw a circle.",
+          false,
+          "A computer can draw something that will look like a circle, but is really an approximate circle."
+          ],
+        [
+          "A computer can execute a truly continuous function.",
+          false,
+          "A computer would try to keep solving a continuous function forever, never able to complete it."
+        ],
+        [
+          "A computer can approximate a circle.",
+          true
+        ]
+      ],
+      "type": "hike",
+      "challengeType": 6
+    },
+    {
+      "id": "56f836caabe05f3de07f9912",
+      "title": "Discrete Mathematics: Introduction to Sets",
+      "description": [
+        "Hello World! Shawn Grooms again. In this video I wanted to start by introducing set-builder notation and roster notation.",
+        "e.g. A = {1,2,3,4,...}",
+        "Before you learn set-builder notation, I must first introduce a few special sets that are also called number systems.",
+        "N0 = {0,1,2,3,...} : 'whole numbers' i.e. the non-negative integers",
+        "Note: This is sometimes still referred to as the natural numbers, but the convention is the natural numbers are all integers greater than or equal to zero.",
+        "So now, whenever you want to refer to the integers, which will be frequent, you can simply write symbol instead of natural numbers.",
+        "What can I say? Mathematicians are lazy. The convenience of this notation allows us to finally use set-builder notation. Keep in mind that the colon ':' in set-builder notation is read as 'such that' or 'where' or 'given' or 'given the fact that'.",
+        "Q = {a/b : a,b are elements of integers} : 'rational numbers',
+        "This is read as, 'The rational numbers is the set of all numbers a divided b such that a and b are in the integers.' Or, for a more rigorous definition, 'The rational numbers is the set of all number that can be expressed as a ratio, or fraction, of integers.'",
+        "R = {x : -infinity (less than) x (less than) infinity}: 'real numbers'"
+      ],
+      "challengeSeed": [
+        "160523252"
+      ],
+      "tests": [
+        [
+          "A set can contain different types of objects.",
+          true
+          ],
+        [
+          "A set can contain no objects.",
+          true
+        ],
+        [
+          "{1/n : n in Z} is an example of a set.",
+          true
+        ]
+      ],
+      "type": "hike",
+      "challengeType": 6
+    },
+    {
+      "id": "56f836caabe05f3de07f9913",
+      "title": "Discrete Mathematics: Set Operators",
+      "description": [
+        "Hello World! It's Shawn Grooms again. In this video I introduce three set operators: union (U), intersection (∩), and set difference (\). Keep in mind that whenever a set operator is used between two sets, a new set is created.",
+        "Let A = {1,x}, B = {x,3, k}",
+        "AUB = {x : x∈A or x∈B}",
+        "i.e. A union B equals a set containing elements x, such that x is an element of A or x is an element of B.",
+        "e.g. AUB = {1,3,k,x}",
+        "A∩B = {x : x∈A and x∈B}",
+        "i.e. A intersection B equals a set containing elements x, such that x is an element of A and x is an element of B.",
+        "e.g. A∩B = {x}",
+        "A \ B = {x : x∈A and x∉B}",
+        "A set-minus B equals a set containing elements x, such that x is an element of A and x is not an element of B.",
+        "e.g. A \ B = {1}"
+      ],
+      "challengeSeed": [
+        ""
+      ],
+      "tests": [
+        [
+          "",
+          true
+          ],
+        [
+          "",
+          false,
+          ""
+        ],
+        [
+          "",
+          false,
+          ""
+        ]
+      ],
+      "type": "hike",
+      "challengeType": 6
+    },
+    {
+      "id": "",
+      "title": "Discrete Mathematics: Associative & Commutative Laws",
+      "description": [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "challengeSeed": [
+        ""
+      ],
+      "tests": [
+        [
+          "",
+          true
+          ],
+        [
+          "",
+          false,
+          ""
+        ],
+        [
+          "",
+          false,
+          ""
+        ]
+      ],
+      "type": "hike",
+      "challengeType": 6
+    },
+    {
+      "id": "Discrete Mathematics: Distributive Laws",
+      "title": "",
+      "description": [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "challengeSeed": [
+        ""
+      ],
+      "tests": [
+        [
+          "",
+          true
+          ],
+        [
+          "",
+          false,
+          ""
+        ],
+        [
+          "",
+          false,
+          ""
+        ]
+      ],
+      "type": "hike",
+      "challengeType": 6
+    }
+  ]
+}
