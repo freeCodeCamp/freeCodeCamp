@@ -94,7 +94,7 @@
       "title": "Roman Numeral Converter",
       "description": [
         "Convert the given number into a roman numeral.",
-        "All <a href=\"http://www.mathsisfun.com/roman-numerals.html\" target=\"_blank\">roman numerals</a> answers should be provided in upper-case.",
+        "All <a href=\"https://www.mathsisfun.com/roman-numerals.html\" target=\"_blank\">roman numerals</a> answers should be provided in upper-case.",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "challengeSeed": [
@@ -146,7 +146,7 @@
       "titleEs": "Convertior de números romanos",
       "descriptionEs": [
         "Convierte el número dado en numeral romano.",
-        "Todos los <a href=\"http://www.mathsisfun.com/roman-numerals.html\" target=\"_blank\">numerales romanos</a> en las respuestas deben estar en mayúsculas.",
+        "Todos los <a href=\"https://www.mathsisfun.com/roman-numerals.html\" target=\"_blank\">numerales romanos</a> en las respuestas deben estar en mayúsculas.",
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
       ]
     },
@@ -242,7 +242,7 @@
       "title": "Pig Latin",
       "description": [
         "Translate the provided string to pig latin.",
-        "<a href=\"http://en.wikipedia.org/wiki/Pig_Latin\" target=\"_blank\">Pig Latin</a> takes the first consonant (or consonant cluster) of an English word, moves it to the end of the word and suffixes an \"ay\".",
+        "<a href=\"https://en.wikipedia.org/wiki/Pig_Latin\" target=\"_blank\">Pig Latin</a> takes the first consonant (or consonant cluster) of an English word, moves it to the end of the word and suffixes an \"ay\".",
         "If a word begins with a vowel you just add \"way\" to the end.",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
       ],
@@ -276,7 +276,7 @@
       "titleEs": "Latín de los cerdos",
       "descriptionEs": [
         "Traduce la cadena de texto que se te provee al Latín de los cerdos (Pig Latin)",
-        "<a href=\"http://en.wikipedia.org/wiki/Pig_Latin\" target=\"_blank\">Pig Latin</a> toma la primera consonante (o grupo de consonantes) de una palabra en inglés, la mueve al final de la palabra y agrega un \"ay\".",
+        "<a href=\"https://en.wikipedia.org/wiki/Pig_Latin\" target=\"_blank\">Pig Latin</a> toma la primera consonante (o grupo de consonantes) de una palabra en inglés, la mueve al final de la palabra y agrega un \"ay\".",
         "Si la palabra comienza con una vocal, simplemente añade \"way\" al final.",
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
       ]
@@ -286,7 +286,7 @@
       "title": "DNA Pairing",
       "description": [
         "The DNA strand is missing the pairing element. Take each character, get its pair, and return the results as a 2d array.",
-        "<a href=\"http://en.wikipedia.org/wiki/Base_pair\" target=\"_blank\">Base pairs</a> are a pair of AT and CG. Match the missing element to the provided character.",
+        "<a href=\"https://en.wikipedia.org/wiki/Base_pair\" target=\"_blank\">Base pairs</a> are a pair of AT and CG. Match the missing element to the provided character.",
         "Return the provided character as the first element in each array.",
         "For example, for the input GCG, return [[\"G\", \"C\"], [\"C\",\"G\"],[\"G\", \"C\"]]",
         "The character and its pair are paired up in an array, and all the arrays are grouped into one encapsulating array.",
@@ -317,7 +317,7 @@
       "titleEs": "Emparejando bases de ADN",
       "descriptionEs": [
         "A la cadena de ADN que se te pasa le hace falta una hebra. Toma cada una de las letras, obtén su pareja correspondiente y devuelve los resultados en un segundo vector",
-        "<a href=\"http://es.wikipedia.org/wiki/Apareamiento_de_bases\" target=\"_blank\">Parejas de bases</a> son pares de AT y CG. Encuentra el elemento que hace falta para cada una de las letras que se te presentan.",
+        "<a href=\"https://es.wikipedia.org/wiki/Apareamiento_de_bases\" target=\"_blank\">Parejas de bases</a> son pares de AT y CG. Encuentra el elemento que hace falta para cada una de las letras que se te presentan.",
         "Devuelve la letra que se te provee como el primer elemento en cada vector",
         "Por ejemplo, si te pasáramos la cadena GCG, tu función debería devolver el vector: [[\"G\", \"C\"], [\"C\",\"G\"],[\"G\", \"C\"]]",
         "Cada letra que se te provee y su pareja deben estar contenidos en un vector, y cada uno de estos vectores debe estar contenidos en un vector.",
@@ -860,7 +860,7 @@
       "tests": [
         "assert.deepEqual(add(2, 3), 5, 'message: <code>add(2, 3)</code> should return 5.');",
         "assert.deepEqual(add(2)(3), 5, 'message: <code>add(2)(3)</code> should return 5.');",
-        "assert.isUndefined(add(\"http://bit.ly/IqT6zt\"), 'message: <code>add(\"http://bit.ly/IqT6zt\")</code> should return undefined.');",
+        "assert.isUndefined(add(\"https://bit.ly/IqT6zt\"), 'message: <code>add(\"https://bit.ly/IqT6zt\")</code> should return undefined.');",
         "assert.isUndefined(add(2, \"3\"), 'message: <code>add(2, \"3\")</code> should return undefined.');",
         "assert.isUndefined(add(2)([3]), 'message: <code>add(2)([3])</code> should return undefined.');"
       ],

@@ -9,8 +9,8 @@
       "title": "Manage Packages with NPM",
       "description": [
         "We'll build this Waypoint on Cloud 9, a powerful online code editor with a full Ubuntu Linux workspace, all running in the cloud.",
-        "If you don't already have Cloud 9 account, create one now at <a href='http://c9.io' target='_blank'>http://c9.io</a>.",
-        "Open up <a href='http://c9.io' target='_blank'>http://c9.io</a> and sign in to your account.",
+        "If you don't already have Cloud 9 account, create one now at <a href='https://c9.io' target='_blank'>https://c9.io</a>.",
+        "Open up <a href='https://c9.io' target='_blank'>https://c9.io</a> and sign in to your account.",
         "Click on Create New Workspace at the top right of the c9.io page, then click on the \"Create a new workspace\" popup that appears below it the button after you click on it.",
         "Give your workspace a name.",
         "Choose Node.js in the selection area below the name field.",
@@ -45,8 +45,8 @@
       "titleEs": "Administrando paquetes con NPM",
       "descriptionEs": [
         "Haremos este desafío en Cloud 9, un poderoso editor en línea con un ambiente de trabajo Ubuntu Linux completo, corriendo totalmente en la nube.",
-        "Si todavía no tienes una cuenta en Cloud 9, crea una ahora en <a href='http://c9.io' target='_blank'>http://c9.io</a>.",
-        "Abre <a href='http://c9.io' target='_blank'>http://c9.io</a> y accede a tu cuenta.",
+        "Si todavía no tienes una cuenta en Cloud 9, crea una ahora en <a href='https://c9.io' target='_blank'>https://c9.io</a>.",
+        "Abre <a href='https://c9.io' target='_blank'>https://c9.io</a> y accede a tu cuenta.",
         "Pulsa el icono \"+\" en la parte superior derecha de la página de c9.io para crear un nuevo espacio de trabajo.",
         "Dale un nombre a tu espacio de trabajo. Opcionalmente también puedes escribir una descripción.",
         "Elige Node.js entre las opciones en el área debajo del campo donde escribiste el nombre.",
@@ -78,8 +78,8 @@
       "title": "Start a Node.js Server",
       "description": [
         "We'll build this Waypoint on Cloud 9, a powerful online code editor with a full Ubuntu Linux workspace, all running in the cloud. We'll do the first 7 steps of Node School's LearnYouNode challenges.",
-        "If you don't already have Cloud 9 account, create one now at <a href='http://c9.io' target='_blank'>http://c9.io</a>.",
-        "Open up <a href='http://c9.io' target='_blank'>http://c9.io</a> and sign in to your account.",
+        "If you don't already have Cloud 9 account, create one now at <a href='https://c9.io' target='_blank'>https://c9.io</a>.",
+        "Open up <a href='https://c9.io' target='_blank'>https://c9.io</a> and sign in to your account.",
         "Click on the \"+\" icon at the top right of the c9.io page to create a new workspace.",
         "Give your workspace a name and an optional description.",
         "Choose Node.js in the selection area below the name field.",
@@ -96,7 +96,7 @@
         "Complete \"My First Async I/O\"",
         "Complete \"Filtered LS\"",
         "Complete \"Make it Modular\"",
-        "Complete \"HTTP Client\"",
+        "Complete \"https Client\"",
         "Once you've completed these first 7 steps, move on to our next challenge."
       ],
       "challengeSeed": [
@@ -108,8 +108,8 @@
       "titleEs": "Inicia un servidor en Node.js",
       "descriptionEs": [
         "Haremos este desafío en Cloud 9, un poderoso editor en línea con un ambiente de trabajo Ubuntu Linux completo, corriendo totalmente en la nube.",
-        "Si todavía no tienes una cuenta en Cloud 9, crea una ahora en <a href='http://c9.io' target='_blank'>http://c9.io</a>.",
-        "Abre <a href='http://c9.io' target='_blank'>http://c9.io</a> y accede a tu cuenta.",
+        "Si todavía no tienes una cuenta en Cloud 9, crea una ahora en <a href='https://c9.io' target='_blank'>https://c9.io</a>.",
+        "Abre <a href='https://c9.io' target='_blank'>https://c9.io</a> y accede a tu cuenta.",
         "Haz click en el icono \"+\" en la parte superior derecha de la página de c9.io para crear un nuevo espacio de trabajo.",
         "Dale un nombre a tu espacio de trabajo. Opcionalmente también puedes escribir una descripción.",
         "Elige Node.js entre las opciones en el área debajo del campo donde escribiste el nombre.",
@@ -126,7 +126,7 @@
         "Completa \"My First Async I/O\"",
         "Completa \"Filtered LS\"",
         "Completa \"Make it Modular\"",
-        "Completa \"HTTP Client\"",
+        "Completa \"https Client\"",
         "Una vez hayas completado estas primeras siete lecciones, continúa con el siguiente desafío."
       ]
     },
@@ -138,7 +138,7 @@
         "Make sure that you are always in your project's \"workspace\" directory. You can always navigate back to this directory by running this command: <code>cd ~/workspace</code>.",
         "Return to the c9.io workspace you created. Now start this tutorial by running <code>learnyounode</code>",
         "You can view this Node School module's source code on GitHub at <a href='https://github.com/workshopper/learnyounode'>https://github.com/workshopper/learnyounode</a>.",
-        "Complete \"HTTP Collect\"",
+        "Complete \"https Collect\"",
         "Complete \"Juggling Async\"",
         "Complete \"Time Server\"",
         "Once you've completed these 3 steps, move on to our next challenge."
@@ -155,7 +155,7 @@
         "Asegúrate de que siempre te encuentres en el directorio \"workspace\" de tu proyecto. Puedes regresar a este directorio cuando quieras usando el comando: <code>cd ~/workspace</code>.",
         "Regresa al espacio de trabajo que creaste en c9.io. Ahora inicia el tutorial ejecutando <code>learnyounode</code>",
         "Puedes ver el código fuente de este módulo de Node School en GitHub visitando <a href='https://github.com/workshopper/learnyounode'>https://github.com/workshopper/learnyounode</a>.",
-        "Completa \"HTTP Collect\"",
+        "Completa \"https Collect\"",
         "Completa \"Juggling Async\"",
         "Completa \"Time Server\"",
         "Una vez hayas completado estas tres lecciones, continúa con el siguiente desafío."
@@ -169,9 +169,9 @@
         "Make sure that you are always in your project's \"workspace\" directory. You can always navigate back to this directory by running this command: <code>cd ~/workspace</code>.",
         "Return to the c9.io workspace you created for the previous LearnYouNode challenges and start the tutorial by running <code>learnyounode</code>",
         "You can view this Node School module's source code on GitHub at <a href='https://github.com/workshopper/learnyounode'>https://github.com/workshopper/learnyounode</a>.",
-        "Complete \"HTTP File Server\"",
-        "Complete \"HTTP Uppercaserer\"",
-        "Complete \"HTTP JSON API Server\"",
+        "Complete \"https File Server\"",
+        "Complete \"https Uppercaserer\"",
+        "Complete \"https JSON API Server\"",
         "Once you've completed these final 3 steps, move on to our next challenge."
       ],
       "challengeSeed": [
@@ -186,9 +186,9 @@
         "Asegúrate de que siempre te encuentres en el directorio \"workspace\" de tu proyecto. Puedes regresar a este directorio cuando quieras usando el comando: <code>cd ~/workspace</code>.",
         "Regresa al espacio de trabajo que creaste en c9.io. Ahora inicia el tutorial ejecutando <code>learnyounode</code>",
         "Puedes ver el código fuente de este módulo de Node School en GitHub visitando <a href='https://github.com/workshopper/learnyounode'>https://github.com/workshopper/learnyounode</a>.",
-        "Completa \"HTTP File Server\"",
-        "Completa \"HTTP Uppercaserer\"",
-        "Completa \"HTTP JSON API Server\"",
+        "Completa \"https File Server\"",
+        "Completa \"https Uppercaserer\"",
+        "Completa \"https JSON API Server\"",
         "Una vez hayas completado estas tres lecciones, continúa con el último desafío."
       ]
     },
@@ -197,8 +197,8 @@
       "title": "Build Web Apps with Express.js",
       "description": [
         "We'll build this Waypoint on Cloud 9, a powerful online code editor with a full Ubuntu Linux workspace, all running in the cloud.",
-        "If you don't already have Cloud 9 account, create one now at <a href='http://c9.io' target='_blank'>http://c9.io</a>.",
-        "Open up <a href='http://c9.io' target='_blank'>http://c9.io</a> and sign in to your account.",
+        "If you don't already have Cloud 9 account, create one now at <a href='https://c9.io' target='_blank'>https://c9.io</a>.",
+        "Open up <a href='https://c9.io' target='_blank'>https://c9.io</a> and sign in to your account.",
         "Click on the \"+\" icon at the top right of the c9.io page to create a new workspace.",
         "Give your workspace a name and an optional description.",
         "Choose Node.js in the selection area below the name field.",
@@ -228,8 +228,8 @@
       "titleEs": "Creando Web Apps con Express.js",
       "descriptionEs": [
         "Haremos este desafío en Cloud 9, un poderoso editor en línea con un ambiente de trabajo Ubuntu Linux completo, corriendo totalmente en la nube.",
-        "Si todavía no tienes una cuenta en Cloud 9, crea una ahora en <a href='http://c9.io' target='_blank'>http://c9.io</a>.",
-        "Abre <a href='http://c9.io' target='_blank'>http://c9.io</a> y accede a tu cuenta.",
+        "Si todavía no tienes una cuenta en Cloud 9, crea una ahora en <a href='https://c9.io' target='_blank'>https://c9.io</a>.",
+        "Abre <a href='https://c9.io' target='_blank'>https://c9.io</a> y accede a tu cuenta.",
         "Haz click en el icono \"+\" en la parte superior derecha de la página de c9.io para crear un nuevo espacio de trabajo.",
         "Dale un nombre a tu espacio de trabajo. Opcionalmente también puedes escribir una descripción.",
         "Elige Node.js entre las opciones en el área debajo del campo donde escribiste el nombre.",
