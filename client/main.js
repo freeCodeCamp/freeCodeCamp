@@ -349,6 +349,8 @@ $(document).ready(function() {
   // map global selectors
   var mapFilter = $('#map-filter');
   var mapShowAll = $('#showAll');
+  var mapHideCompleted = $('#hideCompleted');
+  var mapShowOptional = $('#showOptional');
 
   $('#nav-map-btn').on('click', toggleMap);
 
@@ -414,6 +416,22 @@ $(document).ready(function() {
       collapseWiki();
     }
   }
+  function toggleMapCollapse() {
+    var mapNotExpanded = !mapShowAll.hasClass('active');
+    if (mapNotExpanded) {
+      $.each($('.map-collapse.in'), function(i, div) {
+        collapseBlock(div);
+      });
+      mapShowAll.text('Expand all challenges');
+      return mapShowAll.addClass('active');
+    }
+    $.each($('.map-collapse:not(".in")'),
+    function(i, div) {
+      expandBlock(div);
+    });
+    mapShowAll.text('Collapse all challenges');
+    return mapShowAll.removeClass('active');
+  }
 
   $('#accordion').on('show.bs.collapse', function(e) {
     expandCaret(e.target);
@@ -430,38 +448,72 @@ $(document).ready(function() {
   });
 
   mapShowAll.on('click', () => {
-    var mapExpanded = mapShowAll.hasClass('active');
-    if (!mapExpanded) {
-      $.each($('.map-collapse:not(".in")'),
-      function(i, div) {
-        expandBlock(div);
-      });
-      mapShowAll.text('Collapse all challenges');
-      return mapShowAll.addClass('active');
-    } else {
-      $.each($('.map-collapse.in'), function(i, div) {
-        collapseBlock(div);
-      });
-      mapShowAll.text('Expand all challenges');
-      return mapShowAll.removeClass('active');
-    }
+    toggleMapCollapse(true);
   });
+
+  mapHideCompleted.on('click', () => {
+    if (mapHideCompleted.hasClass('active')) {
+      mapHideCompleted.text('Hide completed challenges');
+    } else {
+      mapHideCompleted.text('Show completed challenges');
+    }
+    mapHideCompleted.toggleClass('active');
+    renderAllChallenges();
+  });
+
+  mapShowOptional.on('click', () => {
+    if (mapShowOptional.hasClass('active')) {
+      mapShowOptional.text('Hide optional challenges');
+    } else {
+      mapShowOptional.text('Show optional challenges');
+    }
+    mapShowOptional.toggleClass('active');
+    renderAllChallenges();
+  });
+
+  // return true if a title matches the filters showOptional and hideCompleted
+  function checkBoolFilters(title) {
+    // if only hiding optional (active state), check if required, otherwise true
+    console.log(title.data().isrequired);
+    var showReq = mapShowOptional.hasClass('active') ?
+      title.data().isrequired && title.data().isrequired !== 'undefined' : true;
+    // if showing completed (active state), ! of completed, otherwise show
+    var showCom = mapHideCompleted.hasClass('active') ?
+      !title.data().iscompleted : true;
+    // return true if passes both tests are true
+    return showReq && showCom;
+  }
+
+  function checkSearchFilter(title) {
+    var regex = new RegExp(mapFilter.val().replace(/ /g, '.'), 'i');
+    return regex.test(title.attr('name'));
+  }
+
+  // if title matches search and bool fitlers, show, otherwise hide
+  function renderChallenge(title) {
+    if (checkSearchFilter(title) && checkBoolFilters(title)) {
+      expandBlock(title.closest('.chapterBlock'));
+      expandBlock(title.closest('.certBlock'));
+      title.removeClass('hidden');
+    } else {
+      title.addClass('hidden');
+    }
+  }
+
+  function renderAllChallenges() {
+    $('.challenge-title').each((index, title) => {
+      renderChallenge($(title));
+    });
+    // reset collapse all button
+    mapShowAll.text('Collapse all challenges');
+    mapShowAll.removeClass('active');
+  }
 
   // Map live filter
   mapFilter.on('keyup', () => {
     if (mapFilter.val().length > 0) {
-      var regex = new RegExp(mapFilter.val().replace(/ /g, '.'), 'i');
-
-      // Hide/unhide challenges that match the regex
-      $('.challenge-title').each((index, title) => {
-        if (regex.test($(title).attr('name'))) {
-          expandBlock($(title).closest('.chapterBlock'));
-          expandBlock($(title).closest('.certBlock'));
-          $(title).removeClass('hidden');
-        } else {
-          $(title).addClass('hidden');
-        }
-      });
+      // Hide/unhide challenges that match the search and bool filters
+      renderAllChallenges();
 
       // Hide/unhide blocks with no matches
       $.each($('.chapterBlock'), function(i, div) {
@@ -518,7 +570,11 @@ $(document).ready(function() {
     mapFilter.val('');
     mapFilter.next().children().removeClass('fa-times').addClass('fa-search');
     mapFilter.next().removeClass('filled');
-    $('.map-accordion').find('.hidden').removeClass('hidden');
+    $('.map-accordion')
+      .find('.hidden')
+      // only remove hidden from search filter, not bool filter
+      .filter((i, el) => checkBoolFilters($(el)))
+      .removeClass('hidden');
     $('#noneFound').hide();
   }
 
