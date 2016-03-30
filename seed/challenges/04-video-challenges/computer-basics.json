@@ -225,7 +225,7 @@
       ],
       "tests": [
         [
-          "1 === on and 0 ===off",
+          "1 == on and 0 == off",
           true
         ],
         [
