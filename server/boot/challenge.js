@@ -526,7 +526,7 @@ module.exports = function(app) {
   }
 
   function completedChallenge(req, res, next) {
-    req.checkBody('id', 'id must be a ObjectId').isMongoId();
+    req.checkBody('id', 'id must be an ObjectId').isMongoId();
     req.checkBody('name', 'name must be at least 3 characters')
       .isString()
       .isLength({ min: 3 });
