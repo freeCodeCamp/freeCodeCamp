@@ -535,7 +535,7 @@ $(document).ready(function() {
   // keyboard shortcuts: open map
   window.Mousetrap.bind('g m', toggleMap);
 
-  //Night Mode
+  // Night Mode
   function changeMode() {
     var newValue = !JSON.parse(localStorage.getItem('nightMode'));
     localStorage.setItem('nightMode', String(newValue));
@@ -569,7 +569,7 @@ $(document).ready(function() {
   window.Mousetrap.bind('g t n', changeMode);
   window.Mousetrap.bind('g n n', () => {
     // Next Challenge
-    window.location = '/challenges/next-challenge'
+    window.location = '/challenges/next-challenge';
   });
   window.Mousetrap.bind('g n a', () => {
     // Account
@@ -578,10 +578,6 @@ $(document).ready(function() {
   window.Mousetrap.bind('g n m', () => {
     // Map
     window.location = '/map';
-  });
-  window.Mousetrap.bind('g n w', () => {
-    // Wiki
-    window.location = '/wiki';
   });
   window.Mousetrap.bind('g n w', () => {
     // Wiki
