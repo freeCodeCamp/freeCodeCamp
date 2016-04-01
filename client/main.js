@@ -356,7 +356,7 @@ $(document).ready(function() {
 
   function showMap() {
     if (!main.isMapAsideLoad) {
-      var mapAside = $('<iframe>');
+      var mapAside = $('<iframe id = "map-aside-frame" >');
       mapAside.attr({
         src: '/map-aside',
         frameBorder: '0'
@@ -537,12 +537,18 @@ $(document).ready(function() {
 
   (function() {
     function toggleNightMode(nightModeEnabled) {
+      var iframe = document.getElementById("map-aside-frame");
+      if (iframe) {
+        iframe.src = iframe.src;
+      }
       var body = $('body');
+      body.hide();
       if (nightModeEnabled) {
         body.addClass('night');
       } else {
         body.removeClass('night');
       }
+      body.fadeIn('100');
     }
     if (typeof localStorage.getItem('nightMode') !== 'undefined') {
       toggleNightMode(JSON.parse(localStorage.getItem('nightMode')));

@@ -342,7 +342,7 @@
         "assert(code.match(/\\$\\s*?\\(\\s*?(?:'|\")\\s*?button\\s*?(?:'|\")/gi), 'message: Use the <code>$&#40\"button\"&#41</code> selector.');",
         "assert(code.match(/\\$\\s*?\\(\\s*?(?:'|\")\\s*?\\.btn\\s*?(?:'|\")/gi), 'message: Use the <code>$&#40\".btn\"&#41</code> selector.');",
         "assert(code.match(/\\$\\s*?\\(\\s*?(?:'|\")\\s*?#target1\\s*?(?:'|\")/gi), 'message: Use the <code>$&#40\"#target1\"&#41</code> selector.');",
-        "assert(code.match(/addClass/g) && code.match(/addClass\\(\\s*?('|\")[\\w-]+\\1\\s*?\\)/g).length > 2, 'message: Only add one class with each of your three selectors.');",
+        "assert(code.match(/addClass/g) && code.match(/addClass\\(\\s*?('|\")\\s*?[\\w-]+\\s*?\\1\\s*?\\)/g).length > 2, 'message: Only add one class with each of your three selectors.');",
         "assert($(\"#target1\").hasClass(\"animated\") && $(\"#target1\").hasClass(\"shake\") && $(\"#target1\").hasClass(\"btn-primary\"), 'message: Your <code>#target1</code> element should have the classes <code>animated</code>&#130; <code>shake</code> and <code>btn-primary</code>.');",
         "assert(!code.match(/class.*animated/g), 'message: Only use jQuery to add these classes to the element.');"
       ],
@@ -547,7 +547,7 @@
         "Using jQuery, you can change the text between the start and end tags of an element. You can even change HTML markup.",
         "jQuery has a function called <code>.html()</code> that lets you add HTML tags and text within an element. Any content previously within the element will be completely replaced with the content you provide using this function.",
         "Here's how you would rewrite and italicize the text of our heading:",
-        "<code>$(\"h3\").html(\"&#60;i&#62;jQuery Playground&#60;/i&#62;\");</code>",
+        "<code>$(\"h3\").html(\"&#60;em&#62;jQuery Playground&#60;/em&#62;\");</code>",
         "jQuery also has a similar function called <code>.text()</code> that only alters text without adding tags.",
         "Change the button with id <code>target4</code> by italicizing its text."
       ],
@@ -556,7 +556,7 @@
         "fccss",
         "  $(document).ready(function() {",
         "    $(\"#target1\").css(\"color\", \"red\");",
-        "",
+        "    ",
         "  });",
         "fcces",
         "",
@@ -585,9 +585,9 @@
         "</div>"
       ],
       "tests": [
-        "assert.isTrue((/<i>#target4<\\/i>/gi).test($(\"#target4\").html()), 'message: Italicize the text in your <code>target4</code> button by adding HTML tags.');",
+        "assert.isTrue((/<em>#target4<\\/em>/gi).test($(\"#target4\").html()), 'message: Italicize the text in your <code>target4</code> button by adding HTML tags.');",
         "assert($(\"#target4\") && $(\"#target4\").text() === '#target4', 'message: Make sure the text is otherwise unchanged.');",
-        "assert.isFalse((/<i>/gi).test($(\"h3\").html()), 'message: Do not alter any other text.');"
+        "assert.isFalse((/<em>/gi).test($(\"h3\").html()), 'message: Do not alter any other text.');"
       ],
       "type": "waypoint",
       "challengeType": 0,

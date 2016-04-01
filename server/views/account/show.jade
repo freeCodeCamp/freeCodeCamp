@@ -12,6 +12,12 @@ block content
         .col-xs-12
             a.btn.btn-lg.btn-block.btn-primary.btn-link-social(href='/settings')
                 | Update your settings
+        .col-xs-12
+            a.btn.btn-lg.btn-block.btn-primary.btn-link-social(href='/logout')
+                | Sign me out of Free Code Camp
+        .col-xs-12
+            a.btn.btn-lg.btn-block.btn-primary.btn-link-social(href='mailto:team@freecodecamp.com')
+                | Email us at team@freecodecamp.com
         .spacer
     h1.text-center #{username}'s code portfolio
     hr
@@ -118,7 +124,7 @@ block content
                                   td.col-xs-2.hidden-xs= challenge.completedDate ? challenge.completedDate : 'Not Available'
                                   td.col-xs-2.hidden-xs= challenge.lastUpdated ? challenge.lastUpdated : ''
                                   td.col-xs-2.hidden-xs
-                                      a(href=challenge.solution, target='_blank') View my project
+                                      a(href=challenge.solution, target='_blank') View project
                                   td.col-xs-12.visible-xs
                                       a(href=challenge.solution, target='_blank')= removeOldTerms(challenge.name)
               if (algorithms.length > 0)

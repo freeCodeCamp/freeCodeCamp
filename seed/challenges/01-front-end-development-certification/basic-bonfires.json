@@ -644,31 +644,31 @@
       "title": "Where do I belong",
       "description": [
         "Return the lowest index at which a value (second argument) should be inserted into an array (first argument) once it has been sorted.",
-        "For example, <code>where([1,2,3,4], 1.5)</code> should return <code>1</code> because it is greater than <code>1</code> (index 0), but less than <code>2</code> (index 1).",
-        "Likewise, <code>where([20,3,5], 19)</code> should return <code>2</code> because once the array has been sorted it will look like <code>[3,5,20]</code> and <code>19</code> is less than <code>20</code> (index 2) and greater than <code>5</code> (index 1).",
+        "For example, <code>getIndexToIns([1,2,3,4], 1.5)</code> should return <code>1</code> because it is greater than <code>1</code> (index 0), but less than <code>2</code> (index 1).",
+        "Likewise, <code>getIndexToIns([20,3,5], 19)</code> should return <code>2</code> because once the array has been sorted it will look like <code>[3,5,20]</code> and <code>19</code> is less than <code>20</code> (index 2) and greater than <code>5</code> (index 1).",
         "Remember to use <a href=\"//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck\" target=\"_blank\">Read-Search-Ask</a> if you get stuck. Write your own code."
       ],
       "challengeSeed": [
-        "function where(arr, num) {",
+        "function getIndexToIns(arr, num) {",
         "  // Find my place in this sorted array.",
         "  return num;",
         "}",
         "",
-        "where([40, 60], 50);"
+        "getIndexToIns([40, 60], 50);"
       ],
       "tests": [
-        "assert(where([10, 20, 30, 40, 50], 35) === 3, 'message: <code>where([10, 20, 30, 40, 50], 35)</code> should return <code>3</code>.');",
-        "assert(where([10, 20, 30, 40, 50], 30) === 2, 'message: <code>where([10, 20, 30, 40, 50], 30)</code> should return <code>2</code>.');",
-        "assert(where([40, 60], 50) === 1, 'message: <code>where([40, 60], 50)</code> should return <code>1</code>.');",
-        "assert(where([3, 10, 5], 3) === 0, 'message: <code>where([3, 10, 5], 3)</code> should return <code>0</code>.');",
-        "assert(where([5, 3, 20, 3], 5) === 2, 'message: <code>where([5, 3, 20, 3], 5)</code> should return <code>2</code>.');",
-        "assert(where([2, 20, 10], 19) === 2, 'message: <code>where([2, 20, 10], 19)</code> should return <code>2</code>.');",
-        "assert(where([2, 5, 10], 15) === 3, 'message: <code>where([2, 5, 10], 15)</code> should return <code>3</code>.');"
+        "assert(getIndexToIns([10, 20, 30, 40, 50], 35) === 3, 'message: <code>getIndexToIns([10, 20, 30, 40, 50], 35)</code> should return <code>3</code>.');",
+        "assert(getIndexToIns([10, 20, 30, 40, 50], 30) === 2, 'message: <code>getIndexToIns([10, 20, 30, 40, 50], 30)</code> should return <code>2</code>.');",
+        "assert(getIndexToIns([40, 60], 50) === 1, 'message: <code>getIndexToIns([40, 60], 50)</code> should return <code>1</code>.');",
+        "assert(getIndexToIns([3, 10, 5], 3) === 0, 'message: <code>getIndexToIns([3, 10, 5], 3)</code> should return <code>0</code>.');",
+        "assert(getIndexToIns([5, 3, 20, 3], 5) === 2, 'message: <code>getIndexToIns([5, 3, 20, 3], 5)</code> should return <code>2</code>.');",
+        "assert(getIndexToIns([2, 20, 10], 19) === 2, 'message: <code>getIndexToIns([2, 20, 10], 19)</code> should return <code>2</code>.');",
+        "assert(getIndexToIns([2, 5, 10], 15) === 3, 'message: <code>getIndexToIns([2, 5, 10], 15)</code> should return <code>3</code>.');"
       ],
       "type": "bonfire",
       "isRequired": true,
       "solutions": [
-        "function where(arr, num) {\n  arr = arr.sort(function(a, b){return a-b;});\n  for (var i = 0; i < arr.length; i++) {\n    if (arr[i] >= num)\n      {\n        return i;\n      }\n  }\n  return arr.length;\n}"
+        "function getIndexToIns(arr, num) {\n  arr = arr.sort(function(a, b){return a-b;});\n  for (var i = 0; i < arr.length; i++) {\n    if (arr[i] >= num)\n      {\n        return i;\n      }\n  }\n  return arr.length;\n}"
       ],
       "MDNlinks": [
         "Array.sort()"
