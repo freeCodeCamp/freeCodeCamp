@@ -537,7 +537,7 @@ $(document).ready(function() {
 
   (function() {
     function toggleNightMode(nightModeEnabled) {
-      var iframe = document.getElementById("map-aside-frame");
+      var iframe = document.getElementById('map-aside-frame');
       if (iframe) {
         iframe.src = iframe.src;
       }
