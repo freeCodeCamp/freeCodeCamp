@@ -583,10 +583,6 @@ $(document).ready(function() {
     // Wiki
     window.location = '/wiki';
   });
-  window.Mousetrap.bind('g n w', () => {
-    // Wiki
-    window.location = '/wiki';
-  });
   window.Mousetrap.bind('g n a', () => {
     // About
     window.location = '/about';
