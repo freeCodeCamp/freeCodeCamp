@@ -317,24 +317,31 @@
 }
 
 .night {
+  .map-fixed-header {
+    background-color: #333;
+  }
+  .map-aside {
+    border-left-color:#222; 
+  }
   #map-filter, .input-group-addon {
-    border-color: rgb(51, 51, 51);
+    border-color: #222;
+    background-color: #666;
+    color:#ABABAB;
   }
-  .btn-primary {
-    background-color: rgb(51, 51, 51);
+  .map-accordion h2 > a {
+    background:#666;
   }
-  a, .input-group-addon, .map-accordion a:focus, #noneFound {
-    color: white;
+  .map-accordion a:focus, #noneFound {
+    color: #ABABAB;
   }
   .input-group-addon {
-    background: #fff;
     &.filled{
-      background: rgb(51, 51, 51);
+      background: #555;
       border-color: #000d00;
       color: white;
     }
   }
   .challenge-title {
-    color: white!important;
+    color: #999;
   }
 }
