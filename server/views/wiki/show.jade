@@ -2,10 +2,19 @@ extends ../layout-wide
 block content
   iframe#wikiFrame(frameborder='no')
   script.
+    var wikiUrl = '//freecodecamp.github.io/wiki';
+    var wikiOrigin = /https?:\/\/freecodecamp.github.io/;
     var requestedPath = !{JSON.stringify(path) || ''};
     var lang = window.location.toString().match(/\/\w{2}\//);
     lang = (lang) ? lang[0] : '/en/';
     $('#wikiFrame').attr(
       'src',
-      '//freecodecamp.github.io/wiki' + (requestedPath ? requestedPath : lang)
+      wikiUrl + (requestedPath ? requestedPath : lang)
     );
+    window.addEventListener('message', function(e) {
+      if (!wikiOrigin.test(e.origin)) {
+        return null;
+      }
+      history.replaceState(history.state, null, e.data);
+      return null;
+    });
