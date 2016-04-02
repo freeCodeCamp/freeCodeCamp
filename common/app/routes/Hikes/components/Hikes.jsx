@@ -1,7 +1,6 @@
 import React, { PropTypes } from 'react';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
-import { Row } from 'react-bootstrap';
 import PureComponent from 'react-pure-render/component';
 import { createSelector } from 'reselect';
 // import debug from 'debug';
@@ -59,17 +58,14 @@ export class Hikes extends PureComponent {
 
   render() {
     const { hikes } = this.props;
-    const preventOverflow = { overflow: 'hidden' };
     return (
       <div>
-        <Row style={ preventOverflow }>
-          {
-            // render sub-route
-            this.props.children ||
-            // if no sub-route render hikes map
-            this.renderMap(hikes)
-          }
-        </Row>
+        {
+          // render sub-route
+          this.props.children ||
+          // if no sub-route render hikes map
+          this.renderMap(hikes)
+        }
       </div>
     );
   }
