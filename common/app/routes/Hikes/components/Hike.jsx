@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
-import { Col, Row } from 'react-bootstrap';
+import { Col } from 'react-bootstrap';
 import { createSelector } from 'reselect';
 
 import Lecture from './Lecture.jsx';
@@ -55,18 +55,16 @@ export class Hike extends React.Component {
 
     return (
       <Col xs={ 12 }>
-        <Row>
-          <header className='text-center'>
-            <h4>{ title }</h4>
-          </header>
-          <hr />
-          <div className='spacer' />
-          <section
-            className={ 'text-center' }
-            title={ title }>
-            { this.renderBody(shouldShowQuestions) }
-          </section>
-        </Row>
+        <header className='text-center'>
+          <h4>{ title }</h4>
+        </header>
+        <hr />
+        <div className='spacer' />
+        <section
+          className={ 'text-center' }
+          title={ title }>
+          { this.renderBody(shouldShowQuestions) }
+        </section>
       </Col>
     );
   }
