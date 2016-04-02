@@ -54,6 +54,10 @@ html {
   border-color: @brand-primary;
 }
 
+body {
+  display: none;
+}
+
 body.full-screen-body-background {
   background-color: @body-bg;
 }
@@ -678,7 +682,7 @@ thead {
 
 
 /**
- * Bonfire styling
+ * Challenge styling
  */
 
 form.code span {
@@ -986,7 +990,7 @@ hr {
 }
 
 code {
-  padding: 0;
+  padding: 1px 5px;
 }
 
 @media only screen and (min-width: 993px) {
@@ -1130,6 +1134,49 @@ code {
     -ms-transform: rotate(0deg);
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
+  }
+}
+
+.night {
+  background-color: #333;
+  color: #999;
+  .btn-group,
+  .text-success,
+  .challenge-list-header,
+  .fcc-footer {
+    background-color: #333;
+  }
+  .navbar-default .navbar-nav > li > a {
+    color: #CCC;
+    &:hover {
+      background-color: #666;
+    }
+  }
+  a, .input-group-addon {
+    color: #CCC;
+  }
+  .black-text {
+    color:#111;
+  }
+  code {
+    background-color: #2A2A2A;
+    color: #006400;
+  }
+  .fcc-footer {
+    a {
+      &hover {
+        background-color: #333;
+      }
+    }
+  }
+  .btn-primary {
+    background-color: #006400;
+    color:#CCC;
+    transition: color 0.2s, background-color 0.2s;
+    &:hover {
+      background-color: #ABABAB!important;
+      color: #333!important;
+    }
   }
 }
 
