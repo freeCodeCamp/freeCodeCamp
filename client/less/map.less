@@ -2,6 +2,7 @@
  * based off of https://github.com/gitterHQ/sidecar
  * license: MIT
  */
+
 .map-aside {
     width:500px;
 
@@ -134,12 +135,12 @@
   position:absolute;
   display: block;
   height: 100%;
-  width: 100%;
+  width: 100%; 
 }
 
 .map-accordion {
-  width:700px;
-  margin:155px auto 0;
+  width:700px; 
+  margin:155px auto 0; 
   position:relative;
   #nested {
     margin:0 10px;
@@ -256,7 +257,7 @@
     }
   }
 }
-
+    
 .map-aside-action-item {
     display: -webkit-flex;
     display: flex;
@@ -317,20 +318,26 @@
 
 .night {
   #map-filter, .input-group-addon {
-    border-color: rgb(51, 51, 51);
+    border-color: #222;
+    background-color: #666;
+    color:#ABABAB;
   }
-  .btn-primary {
-    background-color: rgb(51, 51, 51);
+  .map-accordion h2 > a {
+    background:#666;
   }
   a, .input-group-addon, .map-accordion a:focus, #noneFound {
     color: rgb(51, 51, 51);
+  .map-accordion a:focus, #noneFound {
+    color: #ABABAB;
   }
   .input-group-addon {
-    background: #fff;
     &.filled{
-      background: rgb(51, 51, 51);
+      background: #555;
       border-color: #000d00;
       color: white;
     }
+  }
+  .challenge-title {
+    color: white!important;
   }
 }
