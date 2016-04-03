@@ -1694,10 +1694,10 @@
         "<p>Top 3 things cats hate:</p>"
       ],
       "tests": [
-        "assert($(\"ul\").length > 0, 'message: You should have an <code>ul</code> element on your page.');",
-        "assert($(\"ol\").length > 0, 'message: You should have an <code>ol</code> element on your page.');",
-        "assert($(\"ul li\").length > 2, 'message: You should have three <code>li</code> elements within your <code>ul</code> element.');",
-        "assert($(\"ol li\").length > 2, 'message: You should have three <code>li</code> elements within your <code>ol</code> element.');",
+        "assert.equal($(\"ol\").prev().text(), 'Top 3 things cats hate:', 'message: Your should have an ordered list for \"Top 3 things cats hate\"');",
+        "assert.equal($(\"ul\").prev().text(), \"Things cats love:\", 'message: You should have an unordered list for \"Things Cats Love\"');",
+        "assert.equal($(\"ul li\").length, 3, 'message: You should have three <code>li</code> elements within your <code>ul</code> element.');",
+        "assert.equal($(\"ol li\").length, 3, 'message: You should have three <code>li</code> elements within your <code>ol</code> element.');",
         "assert(code.match(/<\\/ul>/g) && code.match(/<\\/ul>/g).length === code.match(/<ul>/g).length, 'message: Make sure your <code>ul</code> element has a closing tag.');",
         "assert(code.match(/<\\/ol>/g) && code.match(/<\\/ol>/g).length === code.match(/<ol>/g).length, 'message: Make sure your <code>ol</code> element has a closing tag.');",
         "assert(code.match(/<\\/li>/g) && code.match(/<li>/g) && code.match(/<\\/li>/g).length === code.match(/<li>/g).length, 'message: Make sure your <code>li</code> element has a closing tag.');"
