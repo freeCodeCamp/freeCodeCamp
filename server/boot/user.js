@@ -312,6 +312,10 @@ module.exports = function(app) {
             return data;
           }, {});
 
+        if (user.isCheater) {
+          flashCheater(req);
+        }
+
         return buildDisplayChallenges(userPortfolio.challengeMap, timezone)
           .map(displayChallenges => ({
             ...userPortfolio,
@@ -367,13 +371,7 @@ module.exports = function(app) {
           }
 
           if (user.isCheater) {
-            req.flash('errors', {
-              msg: dedent`
-                Upon review, this account has been flagged for academic
-                dishonesty. If you’re the owner of this account contact
-                team@freecodecamp.com for details.
-              `
-            });
+            flashCheater(req);
             return res.redirect(`/${user.username}`);
           }
 
@@ -583,5 +581,15 @@ module.exports = function(app) {
       req.flash('error', {msg: 'You must be signed in to vote.'});
       res.redirect('/map');
     }
+  }
+
+  function flashCheater(req) {
+    req.flash('errors', {
+      msg: dedent`
+        Upon review, this account has been flagged for academic
+        dishonesty. If you’re the owner of this account contact
+        team@freecodecamp.com for details.
+      `
+    });
   }
 };
