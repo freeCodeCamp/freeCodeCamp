@@ -35,7 +35,7 @@ const certViews = {
 };
 
 const certText = {
-  [certTypes.fronEnd]: 'Front End certified',
+  [certTypes.frontEnd]: 'Front End certified',
   [certTypes.dataVis]: 'Data Vis Certified',
   [certTypes.backEnd]: 'Back End Certified',
   [certTypes.fullStack]: 'Full Stack Certified'
