@@ -1,7 +1,7 @@
 
 /**
  * Contains the code executed in the sandboxed frame under web-browser
- * 
+ *
  * Creates a Web-Worker inside the frame, sets up the communication
  * between the worker and the parent window
  */
