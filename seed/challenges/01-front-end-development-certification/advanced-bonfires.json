@@ -311,10 +311,11 @@
       "id": "a2f1d72d9b908d0bd72bb9f6",
       "title": "Make a Person",
       "description": [
-        "Fill in the object constructor with the methods specified in the tests.",
-        "Those methods are getFirstName(), getLastName(), getFullName(), setFirstName(first), setLastName(last), and setFullName(firstAndLast).",
-        "All functions that take an argument have an arity of 1, and the argument will be a string.",
-        "These methods must be the only available means for interacting with the object.",
+        "Fill in the object constructor with the following methods below:",
+        "<blockquote>getFirstName()\ngetLastName()\ngetFullName()\nsetFirstName(first)\nsetLastName(last)\nsetFullName(firstAndLast)</blockquote>",
+        "Run the tests to see the expected output for each method.",
+        "The methods that take an argument must accept only one argument and it has to be a string.",
+        "These methods must be the only available means of interacting with the object.",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "challengeSeed": [
@@ -350,11 +351,12 @@
       "challengeType": 5,
       "titleEs": "Crea una Persona",
       "descriptionEs": [
-        "Completa el constructor de objetos con los métodos especificados en las pruebas.",
-        "Los métodos son: getFirstName(), getLastName(), getFullName(), setFirstName(first), setLastName(last), y setFullName(firstAndLast). ",
-        "Todas las funciones que aceptan un argumento tienen una aridad de 1, y el argumento es una cadena de texto",
-        "Estos métodos deben ser el único medio para interactuar con el objeto",
-        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+        "Completa el constructor de objetos con los métodos especificados a continuación:",
+        "<blockquote>getFirstName()\ngetLastName()\ngetFullName()\nsetFirstName(first)\nsetLastName(last)\nsetFullName(firstAndLast)</blockquote>",
+        "Ejecuta las pruebas para ver el resultado esperado de cada método.",
+        "Las funciones que aceptan argumentos deben aceptar sólo uno, y este tiene que ser una cadena.",
+        "Estos métodos deben ser el único medio para interactuar con el objeto.",
+        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
       ]
     },
     {
