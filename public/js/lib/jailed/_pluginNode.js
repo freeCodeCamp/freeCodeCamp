@@ -1,7 +1,7 @@
 
 /**
  * Contains the routines loaded by the plugin process under Node.js
- * 
+ *
  * Initializes the Node.js environment version of the
  * platform-dependent connection object for the plugin site
  */
@@ -12,7 +12,7 @@ connection = {};
 
 /**
  * Prints error message and its stack
- * 
+ *
  * @param {Object} msg stack provided by error.stack or a message
  */
 var printError = function(msg) {
@@ -49,7 +49,7 @@ process.on('message', function(m) {
 
 /**
  * Checks if the given path is remote
- * 
+ *
  * @param {String} path to check
  * @returns {Boolean} true if path is remote
  */
@@ -76,7 +76,7 @@ var importScript = function(url) {
     var run = function(code) {
         executeNormal(code, url, sCb, fCb);
     }
-    
+
     if (isRemote(url)) {
         loadRemote(url, run, fCb);
     } else {
@@ -109,7 +109,7 @@ var importScriptJailed = function(url) {
     var run = function(code) {
         executeJailed(code, url, sCb, fCb);
     }
-    
+
     if (isRemote(url)) {
         loadRemote(url, run, fCb);
     } else {
@@ -128,7 +128,7 @@ var importScriptJailed = function(url) {
 /**
  * Executes the given code in the jailed environment, sends the
  * corresponding message to the application site when succeeded/failed
- * 
+ *
  * @param {String} code to execute
  */
 var execute = function(code) {
@@ -147,7 +147,7 @@ var execute = function(code) {
 /**
  * Executes the given code in the current environment / scope, runs
  * the corresponding callback when done
- * 
+ *
  * @param {String} code to execute
  * @param {String} url of the script (for displaying the stack)
  * @param {Function} sCb
@@ -168,7 +168,7 @@ var executeNormal = function(code, url, sCb, fCb) {
 /**
  * Executes the given code in a jailed environment, runs the
  * corresponding callback when done
- * 
+ *
  * @param {String} code to execute
  * @param {String} url of the script (for displaying the stack)
  * @param {Function} sCb
@@ -201,10 +201,10 @@ var executeJailed = function(code, url, sCb, fCb) {
 
 
 /**
- * Loads local file and 
- * 
+ * Loads local file and
+ *
  * @param {String} path of the file to read
- * 
+ *
  * @returns {String} file contents
  */
 var loadLocal = function(path) {
@@ -215,7 +215,7 @@ var loadLocal = function(path) {
 /**
  * Downloads the script by remote url and provides its content as a
  * string to the callback
- * 
+ *
  * @param {String} url of the remote module to load
  * @param {Function} sCb success callback
  * @param {Function} fCb failure callback
@@ -262,6 +262,6 @@ var conn = {
     _messageHandler: function(){},
     onDisconnect: function() {}
 };
- 
+
 connection = conn;
 

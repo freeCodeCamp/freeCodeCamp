@@ -1,10 +1,10 @@
 /**
  * @fileoverview Jailed - safe yet flexible sandbox
  * @version 0.2.0
- * 
+ *
  * @license MIT, see http://github.com/asvd/jailed
- * Copyright (c) 2014 asvd <heliosframework@gmail.com> 
- * 
+ * Copyright (c) 2014 asvd <heliosframework@gmail.com>
+ *
  * Main library script, the only one to be loaded by a developer into
  * the application. Other scrips shipped along will be loaded by the
  * library either here (application site), or into the plugin site
@@ -44,7 +44,7 @@ if (typeof window == 'undefined') {
     }
 }(this, function (exports) {
     var isNode = typeof window == 'undefined';
-      
+
 
     /**
      * A special kind of event:
@@ -52,7 +52,7 @@ if (typeof window == 'undefined') {
      *  - executes a set of subscribed handlers upon emission;
      *  - if a handler is subscribed after the event was emitted, it
      *    will be invoked immideately.
-     * 
+     *
      * Used for the events which only happen once (or do not happen at
      * all) during a single plugin lifecycle - connect, disconnect and
      * connection failure
@@ -79,14 +79,14 @@ if (typeof window == 'undefined') {
             }
         }
     }
-     
-     
+
+
     /**
      * Saves the provided function as a handler for the Whenable
      * event. This handler will then be called upon the event emission
      * (if it has not been emitted yet), or will be scheduled for
      * immediate issue (if the event has already been emmitted before)
-     * 
+     *
      * @param {Function} handler to subscribe for the event
      */
     Whenable.prototype.whenEmitted = function(handler){
@@ -98,15 +98,15 @@ if (typeof window == 'undefined') {
         }
     }
 
-     
+
     /**
      * Checks if the provided object is suitable for being subscribed
      * to the event (= is a function), throws an exception if not
-     * 
+     *
      * @param {Object} obj to check for being subscribable
-     * 
+     *
      * @throws {Exception} if object is not suitable for subscription
-     * 
+     *
      * @returns {Object} the provided object if yes
      */
     Whenable.prototype._checkHandler = function(handler){
@@ -121,9 +121,9 @@ if (typeof window == 'undefined') {
 
         return handler;
     }
-      
-      
-      
+
+
+
     /**
      * Initializes the library site for Node.js environment (loads
      * _JailedSite.js)
@@ -131,8 +131,8 @@ if (typeof window == 'undefined') {
     var initNode = function() {
         require('./_JailedSite.js');
     }
-      
-      
+
+
     /**
      * Initializes the library site for web environment (loads
      * _JailedSite.js)
@@ -182,7 +182,7 @@ if (typeof window == 'undefined') {
 
 
     var BasicConnection;
-      
+
     /**
      * Creates the platform-dependent BasicConnection object in the
      * Node.js environment
@@ -194,7 +194,7 @@ if (typeof window == 'undefined') {
          * Platform-dependent implementation of the BasicConnection
          * object, initializes the plugin site and provides the basic
          * messaging-based connection with it
-         * 
+         *
          * For Node.js the plugin is created as a forked process
          */
         BasicConnection = function() {
@@ -220,10 +220,10 @@ if (typeof window == 'undefined') {
         /**
          * Sets-up the handler to be called upon the BasicConnection
          * initialization is completed.
-         * 
+         *
          * For Node.js the connection is fully initialized within the
          * constructor, so simply calls the provided handler.
-         * 
+         *
          * @param {Function} handler to be called upon connection init
          */
         BasicConnection.prototype.whenInit = function(handler) {
@@ -233,7 +233,7 @@ if (typeof window == 'undefined') {
 
         /**
          * Sends a message to the plugin site
-         * 
+         *
          * @param {Object} data to send
          */
         BasicConnection.prototype.send = function(data) {
@@ -245,7 +245,7 @@ if (typeof window == 'undefined') {
 
         /**
          * Adds a handler for a message received from the plugin site
-         * 
+         *
          * @param {Function} handler to call upon a message
          */
         BasicConnection.prototype.onMessage = function(handler) {
@@ -264,7 +264,7 @@ if (typeof window == 'undefined') {
         /**
          * Adds a handler for the event of plugin disconnection
          * (= plugin process exit)
-         * 
+         *
          * @param {Function} handler to call upon a disconnect
          */
         BasicConnection.prototype.onDisconnect = function(handler) {
@@ -306,7 +306,7 @@ if (typeof window == 'undefined') {
          * Platform-dependent implementation of the BasicConnection
          * object, initializes the plugin site and provides the basic
          * messaging-based connection with it
-         * 
+         *
          * For the web-browser environment, the plugin is created as a
          * Worker in a sandbaxed frame
          */
@@ -333,17 +333,17 @@ if (typeof window == 'undefined') {
                 }
             });
         }
-        
-        
+
+
         /**
          * Sets-up the handler to be called upon the BasicConnection
          * initialization is completed.
-         * 
+         *
          * For the web-browser environment, the handler is issued when
          * the plugin worker successfully imported and executed the
          * _pluginWeb.js, and replied to the application site with the
          * initImprotSuccess message.
-         * 
+         *
          * @param {Function} handler to be called upon connection init
          */
         BasicConnection.prototype.whenInit = function(handler) {
@@ -353,7 +353,7 @@ if (typeof window == 'undefined') {
 
         /**
          * Sends a message to the plugin site
-         * 
+         *
          * @param {Object} data to send
          */
         BasicConnection.prototype.send = function(data) {
@@ -365,7 +365,7 @@ if (typeof window == 'undefined') {
 
         /**
          * Adds a handler for a message received from the plugin site
-         * 
+         *
          * @param {Function} handler to call upon a message
          */
         BasicConnection.prototype.onMessage = function(handler) {
@@ -376,7 +376,7 @@ if (typeof window == 'undefined') {
         /**
          * Adds a handler for the event of plugin disconnection
          * (not used in case of Worker)
-         * 
+         *
          * @param {Function} handler to call upon a disconnect
          */
         BasicConnection.prototype.onDisconnect = function(){};
@@ -406,7 +406,7 @@ if (typeof window == 'undefined') {
     }
 
 
-      
+
     /**
      * Application-site Connection object constructon, reuses the
      * platform-dependent BasicConnection declared above in order to
@@ -454,7 +454,7 @@ if (typeof window == 'undefined') {
      * Tells the plugin to load a script with the given path, and to
      * execute it. Callbacks executed upon the corresponding responce
      * message from the plugin site
-     * 
+     *
      * @param {String} path of a script to load
      * @param {Function} sCb to call upon success
      * @param {Function} fCb to call upon failure
@@ -464,13 +464,13 @@ if (typeof window == 'undefined') {
         this._importCallbacks[path] = {sCb: sCb||f, fCb: fCb||f};
         this._platformConnection.send({type: 'import', url: path});
     }
-      
+
 
     /**
      * Tells the plugin to load a script with the given path, and to
      * execute it in the JAILED environment. Callbacks executed upon
      * the corresponding responce message from the plugin site
-     * 
+     *
      * @param {String} path of a script to load
      * @param {Function} sCb to call upon success
      * @param {Function} fCb to call upon failure
@@ -487,7 +487,7 @@ if (typeof window == 'undefined') {
      * in the JAILED enviroment. Assuming the execution may only be
      * requested once by the Plugin object, which means a single set
      * of callbacks is enough (unlike importing additional scripts)
-     * 
+     *
      * @param {String} code code to execute
      * @param {Function} sCb to call upon success
      * @param {Function} fCb to call upon failure
@@ -501,18 +501,18 @@ if (typeof window == 'undefined') {
 
     /**
      * Adds a handler for a message received from the plugin site
-     * 
+     *
      * @param {Function} handler to call upon a message
      */
     Connection.prototype.onMessage = function(handler) {
         this._messageHandler = handler;
     }
-      
-      
+
+
     /**
      * Adds a handler for a disconnect message received from the
      * plugin site
-     * 
+     *
      * @param {Function} handler to call upon disconnect
      */
     Connection.prototype.onDisconnect = function(handler) {
@@ -522,7 +522,7 @@ if (typeof window == 'undefined') {
 
     /**
      * Sends a message to the plugin
-     * 
+     *
      * @param {Object} data of the message to send
      */
     Connection.prototype.send = function(data) {
@@ -535,7 +535,7 @@ if (typeof window == 'undefined') {
 
     /**
      * Handles import succeeded message from the plugin
-     * 
+     *
      * @param {String} url of a script loaded by the plugin
      */
     Connection.prototype._handleImportSuccess = function(url) {
@@ -548,7 +548,7 @@ if (typeof window == 'undefined') {
 
     /**
      * Handles import failure message from the plugin
-     * 
+     *
      * @param {String} url of a script loaded by the plugin
      */
     Connection.prototype._handleImportFailure = function(url) {
@@ -572,7 +572,7 @@ if (typeof window == 'undefined') {
     /**
      * Plugin constructor, represents a plugin initialized by a script
      * with the given path
-     * 
+     *
      * @param {String} url of a plugin source
      * @param {Object} _interface to provide for the plugin
      */
@@ -581,12 +581,12 @@ if (typeof window == 'undefined') {
         this._initialInterface = _interface||{};
         this._connect();
     }
-      
-      
+
+
     /**
      * DynamicPlugin constructor, represents a plugin initialized by a
      * string containing the code to be executed
-     * 
+     *
      * @param {String} code of the plugin
      * @param {Object} _interface to provide to the plugin
      */
@@ -595,8 +595,8 @@ if (typeof window == 'undefined') {
         this._initialInterface = _interface||{};
         this._connect();
     }
-      
-      
+
+
     /**
      * Creates the connection to the plugin site
      */
@@ -607,15 +607,15 @@ if (typeof window == 'undefined') {
         this._connect    = new Whenable;
         this._fail       = new Whenable;
         this._disconnect = new Whenable;
-               
+
         var me = this;
-               
+
         // binded failure callback
         this._fCb = function(){
             me._fail.emit();
             me.disconnect();
         }
-               
+
         this._connection = new Connection;
         this._connection.whenInit(function(){
             me._init();
@@ -630,7 +630,7 @@ if (typeof window == 'undefined') {
     DynamicPlugin.prototype._init =
            Plugin.prototype._init = function() {
         this._site = new JailedSite(this._connection);
-               
+
         var me = this;
         this._site.onDisconnect(function() {
             me._disconnect.emit();
@@ -660,8 +660,8 @@ if (typeof window == 'undefined') {
             __jailed__path__+'_pluginCore.js', sCb, this._fCb
         );
     }
-    
-    
+
+
     /**
      * Sends to the remote site a signature of the interface provided
      * upon the Plugin creation
@@ -677,8 +677,8 @@ if (typeof window == 'undefined') {
 
         this._site.setInterface(this._initialInterface);
     }
-    
-    
+
+
     /**
      * Loads the plugin body (loads the plugin url in case of the
      * Plugin)
@@ -691,8 +691,8 @@ if (typeof window == 'undefined') {
 
         this._connection.importJailedScript(this._path, sCb, this._fCb);
     }
-    
-    
+
+
     /**
      * Loads the plugin body (executes the code in case of the
      * DynamicPlugin)
@@ -705,8 +705,8 @@ if (typeof window == 'undefined') {
 
         this._connection.execute(this._code, sCb, this._fCb);
     }
-    
-    
+
+
     /**
      * Requests the remote interface from the plugin (which was
      * probably set by the plugin during its initialization), emits
@@ -714,7 +714,7 @@ if (typeof window == 'undefined') {
      * (meaning both the plugin and the application can use the
      * interfaces provided to each other)
      */
-    DynamicPlugin.prototype._requestRemote = 
+    DynamicPlugin.prototype._requestRemote =
            Plugin.prototype._requestRemote = function() {
         var me = this;
         this._site.onRemoteUpdate(function(){
@@ -725,24 +725,24 @@ if (typeof window == 'undefined') {
         this._site.requestRemote();
     }
 
-    
+
     /**
      * Disconnects the plugin immideately
      */
-    DynamicPlugin.prototype.disconnect = 
+    DynamicPlugin.prototype.disconnect =
            Plugin.prototype.disconnect = function() {
         this._connection.disconnect();
         this._disconnect.emit();
     }
-   
-    
+
+
     /**
      * Saves the provided function as a handler for the connection
      * failure Whenable event
-     * 
+     *
      * @param {Function} handler to be issued upon disconnect
      */
-    DynamicPlugin.prototype.whenFailed = 
+    DynamicPlugin.prototype.whenFailed =
            Plugin.prototype.whenFailed = function(handler) {
         this._fail.whenEmitted(handler);
     }
@@ -751,30 +751,30 @@ if (typeof window == 'undefined') {
     /**
      * Saves the provided function as a handler for the connection
      * success Whenable event
-     * 
+     *
      * @param {Function} handler to be issued upon connection
      */
-    DynamicPlugin.prototype.whenConnected = 
+    DynamicPlugin.prototype.whenConnected =
            Plugin.prototype.whenConnected = function(handler) {
         this._connect.whenEmitted(handler);
     }
-    
-    
+
+
     /**
      * Saves the provided function as a handler for the connection
      * failure Whenable event
-     * 
+     *
      * @param {Function} handler to be issued upon connection failure
      */
-    DynamicPlugin.prototype.whenDisconnected = 
+    DynamicPlugin.prototype.whenDisconnected =
            Plugin.prototype.whenDisconnected = function(handler) {
         this._disconnect.whenEmitted(handler);
     }
-    
-    
-    
+
+
+
     exports.Plugin = Plugin;
     exports.DynamicPlugin = DynamicPlugin;
-  
+
 }));
 
