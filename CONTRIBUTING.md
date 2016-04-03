@@ -107,15 +107,15 @@ Free Code Camp Issue Mods and staff are on hand to assist with Pull Request rela
 There are two methods of creating a Pull for Free Code Camp:
 
 - Editing files via the GitHub Interface
-- Editing files on a local clone  
+- Editing files on a local clone
 
-**Important: ALWAYS EDIT ON A BRANCH**  
+**Important: ALWAYS EDIT ON A BRANCH**
 Take away only one thing from this document, it should be this: Never, **EVER** make edits to the `staging` branch. ALWAYS make a new branch BEFORE you edit files. This is critical, because if your PR is not accepted, your copy of staging will be forever sullied and the only way to fix it is to delete your fork and re-fork.
 
-_**Method 1: Editing via your Local Fork (Recommended)**_  
+_**Method 1: Editing via your Local Fork (Recommended)**_
 This is the recommended method. Read about How to Setup and Maintain a Local Instance of Free Code Camp.
 
-1. Perform the maintenance step of rebasing `staging`.  
+1. Perform the maintenance step of rebasing `staging`.
 2. Ensure you are on the `staging` branch using `git status`:
 
 ```bash
@@ -127,7 +127,7 @@ nothing to commit, working directory clean
 ```
 
 3. If you are not on staging or your working directory is not clean, resolve any outstanding files/commits and checkout staging `git checkout staging`
-4. Create a branch off of `staging` with git: `git checkout -B branch/name-here`  
+4. Create a branch off of `staging` with git: `git checkout -B branch/name-here`
 **Note:** Branch naming is important. Use a name like `fix/short-fix-description` or `feature/short-feature-description`. Review the [Contribution Guidelines](#contribution-guidelines) for more detail.
 5. Edit your file(s) locally with the editor of your choice
 6. Check your `git status` to see unstaged files.
@@ -137,9 +137,9 @@ nothing to commit, working directory clean
 10. Push your commits to your GitHub Fork: `git push -u origin branch/name-here`
 11. Go to [Common Steps](#common-steps)
 
-_**Method 2: Editing via the GitHub Interface**_  
+_**Method 2: Editing via the GitHub Interface**_
 
-Note: Editing via the GitHub Interface is not recommended, since it is not possible to update your fork via GitHub's interface without deleting and recreating your fork.  
+Note: Editing via the GitHub Interface is not recommended, since it is not possible to update your fork via GitHub's interface without deleting and recreating your fork.
 
 Read the [Wiki article](https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/How-To-Create-A-Pull-Request-for-Free-Code-Camp#editing-via-the-github-interface) for further information
 
@@ -147,11 +147,11 @@ Read the [Wiki article](https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/How-To
 1. Once the edits have been committed, you will be prompted to create a pull request on your fork's Github Page.
 2. By default, all pull requests should be against the FCC main repo, `staging` branch.
 3. Submit a [pull request](https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/Pull-Request-Contribute) from your branch to Free Code Camp's `staging` branch.
-3. The title (also called the subject) of your PR should be descriptive of your changes and succinctly indicates what is being fixed.  
+3. The title (also called the subject) of your PR should be descriptive of your changes and succinctly indicates what is being fixed.
    - **Do not add the issue number in the PR title**.
    - Examples: `Add Test Cases to Bonfire Drop It` `Correct typo in Waypoint Size Your Images`
 4. In the body of your PR include a more detailed summary of the changes you made and why.
-   - If the PR is meant to fix an existing bug/issue, then, at the end of your PR's commit message, append the keyword `closes` and #xxxx (where xxxx is the issue number). Example: `closes #1337`.  
+   - If the PR is meant to fix an existing bug/issue, then, at the end of your PR's commit message, append the keyword `closes` and #xxxx (where xxxx is the issue number). Example: `closes #1337`.
    This tells GitHub to close the existing issue, if the PR is merged.
 5. Indicate if you have tested on a local copy of the site or not.
 
@@ -159,7 +159,7 @@ Read the [Wiki article](https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/How-To
 
 **If your PR is accepted**
 
-Once your PR is accepted, you may delete the branch you created to submit it. This keeps your working fork clean.  
+Once your PR is accepted, you may delete the branch you created to submit it. This keeps your working fork clean.
 
 You can do this with a press of a button on the GitHub PR interface. You can delete the local copy of the branch with: `git branch -D branch/to-delete-name`
 

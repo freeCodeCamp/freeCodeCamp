@@ -1,7 +1,7 @@
 
 /**
  * Contains the routines loaded by the plugin Worker under web-browser.
- * 
+ *
  * Initializes the web environment version of the platform-dependent
  * connection object for the plugin site
  */
@@ -11,7 +11,7 @@ self.connection = {};
 
 
 (function(){
-     
+
     /**
      * Event lisener for the plugin message
      */
@@ -59,7 +59,7 @@ self.connection = {};
      * Executes the given code in a jailed environment. For web
      * implementation, we're already jailed in the worker, so simply
      * eval()
-     * 
+     *
      * @param {String} code code to execute
      */
     var execute = function(code) {
@@ -73,7 +73,7 @@ self.connection = {};
         self.postMessage({type: 'executeSuccess'});
     }
 
-     
+
     /**
      * Connection object provided to the JailedSite constructor,
      * plugin site implementation for the web-based environment.
@@ -89,8 +89,8 @@ self.connection = {};
         _messageHandler: function(){},
         onDisconnect: function() {}
     };
-     
+
     connection = conn;
-     
+
 })();
 

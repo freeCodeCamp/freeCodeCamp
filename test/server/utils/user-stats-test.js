@@ -1,7 +1,7 @@
 import moment from 'moment-timezone';
 import sinon from 'sinon';
 
-import { 
+import {
   prepUniqueDays,
   calcCurrentStreak,
   calcLongestStreak
