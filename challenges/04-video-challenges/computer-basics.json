@@ -313,7 +313,7 @@
         "Data speed and data size are measured differently.",
         "In this video, we cover how data speed is measured.",
         "Let's talk about data speed.",
-        "Data speed, unlike data size, is usually measured in bits per second, whereas size is usually measured in bits.",
+        "Data speed, unlike data size, is usually measured in bits per second, whereas data size is usually measured in bytes.",
         "Once we start talking exponentially, that makes a really big difference.",
         "How we talk about speed really depends on what we're talking about.",
         "In audio download, we talk about kilobits per second.",
