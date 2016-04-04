@@ -109,7 +109,7 @@
         [
           "//i.imgur.com/F7i5Hhi.gif",
           "Una imagen gif que te muestra cómo llenar el formulario para crear un área de trabajo nueva",
-          "En vez de iniciar desde cero, recomendamos utilizar Clementine.js, un modelo (<em>bolierplate</em>) de JavaScript pila completa (full stack) que viene con código básico ya escrito para ti. Clementine.js tiene un tutorial detallado que puedes seguir para construirlo por ti mismo, pero por ahora simplemente vamos a clonarlo. En c9.io, dale un nombre a tu área de trabajo, luego deja \"Plantilla\" (\"Template\") como personalizado y crea tu espacio de trabajo usando el siguiente url de Github: <code>https://github.com/johnstonbl01/clementinejs-fcc.git</code>",
+          "En vez de iniciar desde cero, recomendamos utilizar Clementine.js, un modelo (<em>bolierplate</em>) de JavaScript pila completa (full stack) que viene con código básico ya escrito para ti. Clementine.js tiene un tutorial detallado que puedes seguir para construirlo por ti mismo, pero por ahora simplemente vamos a clonarlo. En c9.io, dale un nombre a tu área de trabajo, luego deja \"Plantilla\" (\"Template\") como personalizado y crea tu espacio de trabajo usando el siguiente url de GitHub: <code>https://github.com/johnstonbl01/clementinejs-fcc.git</code>",
           ""
         ],
         [
