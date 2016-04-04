@@ -144,7 +144,7 @@ Note: Editing via the GitHub Interface is not recommended, since it is not possi
 Read the [Wiki article](https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/How-To-Create-A-Pull-Request-for-Free-Code-Camp#editing-via-the-github-interface) for further information
 
 ## Common Steps
-1. Once the edits have been committed, you will be prompted to create a pull request on your fork's Github Page.
+1. Once the edits have been committed, you will be prompted to create a pull request on your fork's GitHub Page.
 2. By default, all pull requests should be against the FCC main repo, `staging` branch.
 3. Submit a [pull request](https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/Pull-Request-Contribute) from your branch to Free Code Camp's `staging` branch.
 3. The title (also called the subject) of your PR should be descriptive of your changes and succinctly indicates what is being fixed.
@@ -174,8 +174,8 @@ If you have a local copy of the repo, you can make the requested changes and ame
 Be sure to post in the PR conversation that you have made the requested changes.
 
 ##Other resources
-- [Searching for Your Issue on Github](https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/Searching-for-Your-Issue-on-Github)
-- [Creating a New Github Issue](https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/Creating-a-New-Github-Issue)
+- [Searching for Your Issue on GitHub](https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/Searching-for-Your-Issue-on-GitHub)
+- [Creating a New GitHub Issue](https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/Creating-a-New-GitHub-Issue)
 - [Select Issues for Contributing Using Labels](https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/Select-Issues-for-Contributing-Using-Labels)
 - [How to clone the FreeCodeCamp website on a Windows pc](https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/How-to-clone-the-FreeCodeCamp-website-on-a-Windows-pc)
 - [How to log in to your local FCC site - using GitHub](https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/How-To-Log-In-To-Your-Local-FCC-Site)

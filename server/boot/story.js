@@ -337,7 +337,7 @@ module.exports = function(app) {
   function newStory(req, res, next) {
     if (!req.user.isGithubCool) {
       req.flash('errors', {
-        msg: 'You must authenticate with Github to post to Camper News'
+        msg: 'You must authenticate with GitHub to post to Camper News'
       });
       return res.redirect('/news');
     }

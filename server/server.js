@@ -59,7 +59,7 @@ var passportOptions = {
       null;
 
     // create random username
-    // username will be assigned when camper signups for Github
+    // username will be assigned when camper signups for GitHub
     var username = 'fcc' + uuid.v4().slice(0, 8);
     var password = generateKey('password');
     var userObj = {

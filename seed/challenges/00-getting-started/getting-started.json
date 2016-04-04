@@ -317,18 +317,18 @@
         [
           "//i.imgur.com/EAR7Lvh.jpg",
           "Gitterチャットルームの一場面です。",
-          "コーディングを始める前に、Free Code Camp のチャットルームに参加してください。いつでも、雑談や質問ができたりペアプログラミングをするための仲間を見つけ流ことができます。最初に Github アカウントが必要です。",
+          "コーディングを始める前に、Free Code Camp のチャットルームに参加してください。いつでも、雑談や質問ができたりペアプログラミングをするための仲間を見つけ流ことができます。最初に GitHub アカウントが必要です。",
           ""
         ],
         [
           "//i.imgur.com/n6GeSEm.gif",
-          "この gif は Github を開始するまでの流れを表しています。必要な欄に情報を入れて登録をしてください。そして Github からあなたのメールアドレス宛にメールが届きますのでアカウントを承認してください。",
-          "\"Open link in new tab\"をクリックして Github を開いてください。 必要な欄に情報を入力して GitHub アカウントを作ってください。実際に使われている email アドレスかを確認してください( GitHub にはこの情報が保存されます )。メールアドレス宛に GitHub からメールが来たことを確認してください。 メールにある\"verify email address\"をクリックして開いてください。<br><div class=\"small\">注意： もしすでに GitHub アカウントを持っていたら、あなたは \"Open link in new tab\" をクリックすることでこのステップを飛ばすことができます、新しく開かれたタブを閉じて \"go to my next step\" をクリックしてください。私たちはこの大事なステップが飛ばされてしまうのを防ぐために \"このステップを飛ばす\" ボタンは削除してあります。</div>",
+          "この gif は GitHub を開始するまでの流れを表しています。必要な欄に情報を入れて登録をしてください。そして GitHub からあなたのメールアドレス宛にメールが届きますのでアカウントを承認してください。",
+          "\"Open link in new tab\"をクリックして GitHub を開いてください。 必要な欄に情報を入力して GitHub アカウントを作ってください。実際に使われている email アドレスかを確認してください( GitHub にはこの情報が保存されます )。メールアドレス宛に GitHub からメールが来たことを確認してください。 メールにある\"verify email address\"をクリックして開いてください。<br><div class=\"small\">注意： もしすでに GitHub アカウントを持っていたら、あなたは \"Open link in new tab\" をクリックすることでこのステップを飛ばすことができます、新しく開かれたタブを閉じて \"go to my next step\" をクリックしてください。私たちはこの大事なステップが飛ばされてしまうのを防ぐために \"このステップを飛ばす\" ボタンは削除してあります。</div>",
           "https://github.com/join"
         ],
         [
           "//i.imgur.com/hFqAEr8.gif",
-          "この gif は Github の右上にあるプロフィール画像をクリックする方法です。あなたの写真をアップロードするか、自動で生成されるピクセルアートを利用してください。そして、残りの欄に情報を入力し submit ボタンを押してください。",
+          "この gif は GitHub の右上にあるプロフィール画像をクリックする方法です。あなたの写真をアップロードするか、自動で生成されるピクセルアートを利用してください。そして、残りの欄に情報を入力し submit ボタンを押してください。",
           "GitHub の右上に表示されているピクセルアートをクリックしてください、そして settings を選んでください。あなたの画像をアップロードしてください。画像はあなたの顔が写っていると良いです。他のキャンパーズの仲間たちがチャットルームであなたを見かけるようになります。住んでいる場所や名前を登録することもできます",
           "https://github.com/settings/profile"
         ],
@@ -341,7 +341,7 @@
         [
           "//i.imgur.com/OmRmLB4.gif",
           "この git は私たちのチャットルームへのリンクをクリックして、\"sign in with GitHub\" ボタンをクリックしています。そして、テキストを入力してキャンパーズの仲間へメッセージを送る方法を表しています。",
-          "あなたは Github のアカウントを持っているので、私たちのチャットルームへ GitHub を利用してログインできます。\"Hellow world!\" と言って自己紹介をし、あなたがどうやって Free Code Camp を見つけたかや何故プログラミングを学びたいのかを私たちに話してください。",
+          "あなたは GitHub のアカウントを持っているので、私たちのチャットルームへ GitHub を利用してログインできます。\"Hellow world!\" と言って自己紹介をし、あなたがどうやって Free Code Camp を見つけたかや何故プログラミングを学びたいのかを私たちに話してください。",
           "https://gitter.im/FreeCodeCamp/FreeCodeCamp"
         ],
         [
@@ -556,7 +556,7 @@
         [
           "//i.imgur.com/n6GeSEm.gif",
           "Ein GIF das zeigt wie der unten stehenden Link angeklickt wird um auf GitHub zu kommen. Füll die notwendigen Felder aus und bestätige. Dann schau in deine Mails nach einer Nachricht von GitHub um deinen Account zu verifizieren.",
-          "Klicke unten auf den \"Link in neuem Tab öffnen\" Button um GitHub zu öffnen. Erstelle einen GitHub Account indem du die Felder in dem Formular ausfüllst. Überprüfe ob du deine echte Emailadresse verwendest - Github wird sie nicht weitergeben. Dann suche in deinem Posteingang nach einer Nachricht von Github. Öffne sie und klicke den darin befindenden \"Emailadresse bestätigen\" Button. <br><div class=\"small\">Hinweis: Wenn du bereits einen GitHub Account besitzt, kannst du diesen Schritt überspringen, indem du \"Link in neuem Tab öffnen\" drückst, den neuen Tab schließt und dann auf \"Gehe zu nächstem Schritt\" klickst. Wir haben den \"Schritt überspringen\" Button entfernt weil viele Leute sich einfach durchgeklickt haben ohne diese wichtigen Schritte zu tun</div>",
+          "Klicke unten auf den \"Link in neuem Tab öffnen\" Button um GitHub zu öffnen. Erstelle einen GitHub Account indem du die Felder in dem Formular ausfüllst. Überprüfe ob du deine echte Emailadresse verwendest - GitHub wird sie nicht weitergeben. Dann suche in deinem Posteingang nach einer Nachricht von GitHub. Öffne sie und klicke den darin befindenden \"Emailadresse bestätigen\" Button. <br><div class=\"small\">Hinweis: Wenn du bereits einen GitHub Account besitzt, kannst du diesen Schritt überspringen, indem du \"Link in neuem Tab öffnen\" drückst, den neuen Tab schließt und dann auf \"Gehe zu nächstem Schritt\" klickst. Wir haben den \"Schritt überspringen\" Button entfernt weil viele Leute sich einfach durchgeklickt haben ohne diese wichtigen Schritte zu tun</div>",
           "https://github.com/join"
         ],
         [
