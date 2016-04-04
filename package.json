@@ -57,7 +57,7 @@
     "express-state": "^1.2.0",
     "express-validator": "^2.18.0",
     "fetchr": "~0.5.12",
-    "frameguard": "~0.2.2",
+    "frameguard": "~1.1.0",
     "gulp": "^3.9.0",
     "gulp-babel": "^6.1.1",
     "gulp-concat": "^2.6.0",
