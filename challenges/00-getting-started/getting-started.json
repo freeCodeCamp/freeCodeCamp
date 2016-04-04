@@ -636,6 +636,15 @@
           "Schau dir dein Code Portfolio an. Klick auf dein Profilbild in der rechten oberen Ecke. Um dein Portfolio zu aktivieren musst du deinen GitHub Account mit Free Code Camp verbinden. Dein Code Portfolio zeigt deinen Fortschritt und wieviele Brownie Punkte du hast. Du bekommst Brownie Punkte wenn du Aufgaben löst oder anderen Campern im Chat hilfst. Wenn du an mehreren Tagen in Folge Brownie Punkte erhälst bekommst du einen \"streak\"",
           ""
         ]
+      ],
+      "titleFr": "Configurer votre code portefeuille",
+      "descriptionFr": [
+        [
+          "//i.imgur.com/tP2ccTE.gif",
+          "Un gif montrant comment vous pouvez cliquez sur l'image de votre profil dans votre coin supérieur droit à votre code portefeuille et connectez GitHub.",
+          "Vérifiez votre code portefeuille. Cliquez sur votre photo dans votre coin supérieur droit. Pour activer votre code portefeuille, vous'll nécessité de lier votre compte avec code sans GitHub Camp. Votre code portefeuille affiche votre progression et combien de bons points vous avez. Vous pouvez obtenir de bons points par remplir les défis et en aidant d'autres campeurs dans nos salles de chat. Si vous obtenez Brownie Points sur plusieurs jours d'affilée, vous'll obtenez une rayure.",
+          ""
+        ]
       ]
     },
     {
@@ -659,15 +668,6 @@
       "tests": [],
       "type": "Waypoint",
       "challengeType": 7,
-      "titleFr": "Configurer votre code portefeuille",
-      "descriptionFr": [
-        [
-          "//i.imgur.com/tP2ccTE.gif",
-          "Un gif montrant comment vous pouvez cliquez sur l'image de votre profil dans votre coin supérieur droit à votre code portefeuille et connectez GitHub.",
-          "Vérifiez votre code portefeuille. Cliquez sur votre photo dans votre coin supérieur droit. Pour activer votre code portefeuille, vous'll nécessité de lier votre compte avec code sans GitHub Camp. Votre code portefeuille affiche votre progression et combien de bons points vous avez. Vous pouvez obtenir de bons points par remplir les défis et en aidant d'autres campeurs dans nos salles de chat. Si vous obtenez Brownie Points sur plusieurs jours d'affilée, vous'll obtenez une rayure.",
-          ""
-        ]
-      ],
       "titleEs": "Únete a un Campamento en Tu Ciudad",
       "descriptionEs": [
         [
