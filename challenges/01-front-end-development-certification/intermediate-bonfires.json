@@ -58,26 +58,26 @@
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "challengeSeed": [
-        "function diff(arr1, arr2) {",
+        "function diffArray(arr1, arr2) {",
         "  var newArr = [];",
         "  // Same, same; but different.",
         "  return newArr;",
         "}",
         "",
-        "diff([1, 2, 3, 5], [1, 2, 3, 4, 5]);"
+        "diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]);"
       ],
       "solutions": [
-        "function diff(arr1, arr2) {\n  var newArr = [];\n  var h1 = Object.create(null);\n  arr1.forEach(function(e) {\n    h1[e] = e;\n  });\n  \n  var h2 = Object.create(null);\n  arr2.forEach(function(e) {\n    h2[e] = e;\n  });\n  \n  Object.keys(h1).forEach(function(e) {\n     if (!(e in h2)) newArr.push(h1[e]);\n  });\n  Object.keys(h2).forEach(function(e) {\n     if (!(e in h1)) newArr.push(h2[e]);\n  });\n  // Same, same; but different.\n  return newArr;\n}"
+        "function diffArray(arr1, arr2) {\n  var newArr = [];\n  var h1 = Object.create(null);\n  arr1.forEach(function(e) {\n    h1[e] = e;\n  });\n  \n  var h2 = Object.create(null);\n  arr2.forEach(function(e) {\n    h2[e] = e;\n  });\n  \n  Object.keys(h1).forEach(function(e) {\n     if (!(e in h2)) newArr.push(h1[e]);\n  });\n  Object.keys(h2).forEach(function(e) {\n     if (!(e in h1)) newArr.push(h2[e]);\n  });\n  // Same, same; but different.\n  return newArr;\n}"
       ],
       "tests": [
-        "assert(typeof diff([1, 2, 3, 5], [1, 2, 3, 4, 5]) === \"object\", 'message: <code>diff([1, 2, 3, 5], [1, 2, 3, 4, 5])</code> should return an array.');",
-        "assert.sameMembers(diff([\"diorite\", \"andesite\", \"grass\", \"dirt\", \"pink wool\", \"dead shrub\"], [\"diorite\", \"andesite\", \"grass\", \"dirt\", \"dead shrub\"]), [\"pink wool\"], 'message: <code>[\"diorite\", \"andesite\", \"grass\", \"dirt\", \"pink wool\", \"dead shrub\"], [\"diorite\", \"andesite\", \"grass\", \"dirt\", \"dead shrub\"]</code> should return <code>[\"pink wool\"]</code>.');",
-        "assert.sameMembers(diff([\"andesite\", \"grass\", \"dirt\", \"pink wool\", \"dead shrub\"], [\"diorite\", \"andesite\", \"grass\", \"dirt\", \"dead shrub\"]), [\"diorite\", \"pink wool\"], 'message: <code>[\"andesite\", \"grass\", \"dirt\", \"pink wool\", \"dead shrub\"], [\"diorite\", \"andesite\", \"grass\", \"dirt\", \"dead shrub\"]</code> should return <code>[\"diorite\", \"pink wool\"]</code>.');",
-        "assert.sameMembers(diff([\"andesite\", \"grass\", \"dirt\", \"dead shrub\"], [\"andesite\", \"grass\", \"dirt\", \"dead shrub\"]), [], 'message: <code>[\"andesite\", \"grass\", \"dirt\", \"dead shrub\"], [\"andesite\", \"grass\", \"dirt\", \"dead shrub\"]</code> should return <code>[]</code>.');",
-        "assert.sameMembers(diff([1, 2, 3, 5], [1, 2, 3, 4, 5]), [4], 'message: <code>[1, 2, 3, 5], [1, 2, 3, 4, 5]</code> should return <code>[4]</code>.');",
-        "assert.sameMembers(diff([1, \"calf\", 3, \"piglet\"], [1, \"calf\", 3, 4]), [\"piglet\", 4], 'message: <code>[1, \"calf\", 3, \"piglet\"], [1, \"calf\", 3, 4]</code> should return <code>[\"piglet\", 4]</code>.');",
-        "assert.sameMembers(diff([], [\"snuffleupagus\", \"cookie monster\", \"elmo\"]), [\"snuffleupagus\", \"cookie monster\", \"elmo\"], 'message: <code>[], [\"snuffleupagus\", \"cookie monster\", \"elmo\"]</code> should return <code>[\"snuffleupagus\", \"cookie monster\", \"elmo\"]</code>.');",
-        "assert.sameMembers(diff([1, \"calf\", 3, \"piglet\"], [7, \"filly\"]), [1, \"calf\", 3, \"piglet\", 7, \"filly\"], 'message: <code>[1, \"calf\", 3, \"piglet\"], [7, \"filly\"]</code> should return <code>[1, \"calf\", 3, \"piglet\", 7, \"filly\"]</code>.');"
+        "assert(typeof diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]) === \"object\", 'message: <code>diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5])</code> should return an array.');",
+        "assert.sameMembers(diffArray([\"diorite\", \"andesite\", \"grass\", \"dirt\", \"pink wool\", \"dead shrub\"], [\"diorite\", \"andesite\", \"grass\", \"dirt\", \"dead shrub\"]), [\"pink wool\"], 'message: <code>[\"diorite\", \"andesite\", \"grass\", \"dirt\", \"pink wool\", \"dead shrub\"], [\"diorite\", \"andesite\", \"grass\", \"dirt\", \"dead shrub\"]</code> should return <code>[\"pink wool\"]</code>.');",
+        "assert.sameMembers(diffArray([\"andesite\", \"grass\", \"dirt\", \"pink wool\", \"dead shrub\"], [\"diorite\", \"andesite\", \"grass\", \"dirt\", \"dead shrub\"]), [\"diorite\", \"pink wool\"], 'message: <code>[\"andesite\", \"grass\", \"dirt\", \"pink wool\", \"dead shrub\"], [\"diorite\", \"andesite\", \"grass\", \"dirt\", \"dead shrub\"]</code> should return <code>[\"diorite\", \"pink wool\"]</code>.');",
+        "assert.sameMembers(diffArray([\"andesite\", \"grass\", \"dirt\", \"dead shrub\"], [\"andesite\", \"grass\", \"dirt\", \"dead shrub\"]), [], 'message: <code>[\"andesite\", \"grass\", \"dirt\", \"dead shrub\"], [\"andesite\", \"grass\", \"dirt\", \"dead shrub\"]</code> should return <code>[]</code>.');",
+        "assert.sameMembers(diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]), [4], 'message: <code>[1, 2, 3, 5], [1, 2, 3, 4, 5]</code> should return <code>[4]</code>.');",
+        "assert.sameMembers(diffArray([1, \"calf\", 3, \"piglet\"], [1, \"calf\", 3, 4]), [\"piglet\", 4], 'message: <code>[1, \"calf\", 3, \"piglet\"], [1, \"calf\", 3, 4]</code> should return <code>[\"piglet\", 4]</code>.');",
+        "assert.sameMembers(diffArray([], [\"snuffleupagus\", \"cookie monster\", \"elmo\"]), [\"snuffleupagus\", \"cookie monster\", \"elmo\"], 'message: <code>[], [\"snuffleupagus\", \"cookie monster\", \"elmo\"]</code> should return <code>[\"snuffleupagus\", \"cookie monster\", \"elmo\"]</code>.');",
+        "assert.sameMembers(diffArray([1, \"calf\", 3, \"piglet\"], [7, \"filly\"]), [1, \"calf\", 3, \"piglet\", 7, \"filly\"], 'message: <code>[1, \"calf\", 3, \"piglet\"], [7, \"filly\"]</code> should return <code>[1, \"calf\", 3, \"piglet\", 7, \"filly\"]</code>.');"
       ],
       "type": "bonfire",
       "MDNlinks": [
@@ -109,41 +109,41 @@
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "challengeSeed": [
-        "function convert(num) {",
+        "function convertToRoman(num) {",
         " return num;",
         "}",
         "",
-        "convert(36);"
+        "convertToRoman(36);"
       ],
       "solutions": [
-        "function convert(num) {\n  var ref = [['M', 1000], ['CM', 900], ['D', 500], ['CD', 400], ['C', 100], ['XC', 90], ['L', 50], ['XL', 40], ['X', 10], ['IX', 9], ['V', 5], ['IV', 4], ['I', 1]];\n  var res = [];\n  ref.forEach(function(p) {\n    while (num >= p[1]) {\n      res.push(p[0]);\n      num -= p[1];\n    }\n  });\n  return res.join('');\n}"
+        "function convertToRoman(num) {\n  var ref = [['M', 1000], ['CM', 900], ['D', 500], ['CD', 400], ['C', 100], ['XC', 90], ['L', 50], ['XL', 40], ['X', 10], ['IX', 9], ['V', 5], ['IV', 4], ['I', 1]];\n  var res = [];\n  ref.forEach(function(p) {\n    while (num >= p[1]) {\n      res.push(p[0]);\n      num -= p[1];\n    }\n  });\n  return res.join('');\n}"
       ],
       "tests": [
-        "assert.deepEqual(convert(2), \"II\", 'message: <code>convert(2)</code> should return \"II\".');",
-        "assert.deepEqual(convert(3), \"III\", 'message: <code>convert(3)</code> should return \"III\".');",
-        "assert.deepEqual(convert(4), \"IV\", 'message: <code>convert(4)</code> should return \"IV\".');",
-        "assert.deepEqual(convert(5), \"V\", 'message: <code>convert(5)</code> should return \"V\".');",
-        "assert.deepEqual(convert(9), \"IX\", 'message: <code>convert(9)</code> should return \"IX\".');",
-        "assert.deepEqual(convert(12), \"XII\", 'message: <code>convert(12)</code> should return \"XII\".');",
-        "assert.deepEqual(convert(16), \"XVI\", 'message: <code>convert(16)</code> should return \"XVI\".');",
-        "assert.deepEqual(convert(29), \"XXIX\", 'message: <code>convert(29)</code> should return \"XXIX\".');",
-        "assert.deepEqual(convert(44), \"XLIV\", 'message: <code>convert(44)</code> should return \"XLIV\".');",
-        "assert.deepEqual(convert(45), \"XLV\", 'message: <code>convert(45)</code> should return \"XLV\"');",
-        "assert.deepEqual(convert(68), \"LXVIII\", 'message: <code>convert(68)</code> should return \"LXVIII\"');",
-        "assert.deepEqual(convert(83), \"LXXXIII\", 'message: <code>convert(83)</code> should return \"LXXXIII\"');",
-        "assert.deepEqual(convert(97), \"XCVII\", 'message: <code>convert(97)</code> should return \"XCVII\"');",
-        "assert.deepEqual(convert(99), \"XCIX\", 'message: <code>convert(99)</code> should return \"XCIX\"');",
-        "assert.deepEqual(convert(500), \"D\", 'message: <code>convert(500)</code> should return \"D\"');",
-        "assert.deepEqual(convert(501), \"DI\", 'message: <code>convert(501)</code> should return \"DI\"');",
-        "assert.deepEqual(convert(649), \"DCXLIX\", 'message: <code>convert(649)</code> should return \"DCXLIX\"');",
-        "assert.deepEqual(convert(798), \"DCCXCVIII\", 'message: <code>convert(798)</code> should return \"DCCXCVIII\"');",
-        "assert.deepEqual(convert(891), \"DCCCXCI\", 'message: <code>convert(891)</code> should return \"DCCCXCI\"');",
-        "assert.deepEqual(convert(1000), \"M\", 'message: <code>convert(1000)</code> should return \"M\"');",
-        "assert.deepEqual(convert(1004), \"MIV\", 'message: <code>convert(1004)</code> should return \"MIV\"');",
-        "assert.deepEqual(convert(1006), \"MVI\", 'message: <code>convert(1006)</code> should return \"MVI\"');",
-        "assert.deepEqual(convert(1023), \"MXXIII\", 'message: <code>convert(1023)</code> should return \"MXXIII\"');",
-        "assert.deepEqual(convert(2014), \"MMXIV\", 'message: <code>convert(2014)</code> should return \"MMXIV\"');",
-        "assert.deepEqual(convert(3999), \"MMMCMXCIX\", 'message: <code>convert(3999)</code> should return \"MMMCMXCIX\"');"
+        "assert.deepEqual(convertToRoman(2), \"II\", 'message: <code>convertToRoman(2)</code> should return \"II\".');",
+        "assert.deepEqual(convertToRoman(3), \"III\", 'message: <code>convertToRoman(3)</code> should return \"III\".');",
+        "assert.deepEqual(convertToRoman(4), \"IV\", 'message: <code>convertToRoman(4)</code> should return \"IV\".');",
+        "assert.deepEqual(convertToRoman(5), \"V\", 'message: <code>convertToRoman(5)</code> should return \"V\".');",
+        "assert.deepEqual(convertToRoman(9), \"IX\", 'message: <code>convertToRoman(9)</code> should return \"IX\".');",
+        "assert.deepEqual(convertToRoman(12), \"XII\", 'message: <code>convertToRoman(12)</code> should return \"XII\".');",
+        "assert.deepEqual(convertToRoman(16), \"XVI\", 'message: <code>convertToRoman(16)</code> should return \"XVI\".');",
+        "assert.deepEqual(convertToRoman(29), \"XXIX\", 'message: <code>convertToRoman(29)</code> should return \"XXIX\".');",
+        "assert.deepEqual(convertToRoman(44), \"XLIV\", 'message: <code>convertToRoman(44)</code> should return \"XLIV\".');",
+        "assert.deepEqual(convertToRoman(45), \"XLV\", 'message: <code>convertToRoman(45)</code> should return \"XLV\"');",
+        "assert.deepEqual(convertToRoman(68), \"LXVIII\", 'message: <code>convertToRoman(68)</code> should return \"LXVIII\"');",
+        "assert.deepEqual(convertToRoman(83), \"LXXXIII\", 'message: <code>convertToRoman(83)</code> should return \"LXXXIII\"');",
+        "assert.deepEqual(convertToRoman(97), \"XCVII\", 'message: <code>convertToRoman(97)</code> should return \"XCVII\"');",
+        "assert.deepEqual(convertToRoman(99), \"XCIX\", 'message: <code>convertToRoman(99)</code> should return \"XCIX\"');",
+        "assert.deepEqual(convertToRoman(500), \"D\", 'message: <code>convertToRoman(500)</code> should return \"D\"');",
+        "assert.deepEqual(convertToRoman(501), \"DI\", 'message: <code>convertToRoman(501)</code> should return \"DI\"');",
+        "assert.deepEqual(convertToRoman(649), \"DCXLIX\", 'message: <code>convertToRoman(649)</code> should return \"DCXLIX\"');",
+        "assert.deepEqual(convertToRoman(798), \"DCCXCVIII\", 'message: <code>convertToRoman(798)</code> should return \"DCCXCVIII\"');",
+        "assert.deepEqual(convertToRoman(891), \"DCCCXCI\", 'message: <code>convertToRoman(891)</code> should return \"DCCCXCI\"');",
+        "assert.deepEqual(convertToRoman(1000), \"M\", 'message: <code>convertToRoman(1000)</code> should return \"M\"');",
+        "assert.deepEqual(convertToRoman(1004), \"MIV\", 'message: <code>convertToRoman(1004)</code> should return \"MIV\"');",
+        "assert.deepEqual(convertToRoman(1006), \"MVI\", 'message: <code>convertToRoman(1006)</code> should return \"MVI\"');",
+        "assert.deepEqual(convertToRoman(1023), \"MXXIII\", 'message: <code>convertToRoman(1023)</code> should return \"MXXIII\"');",
+        "assert.deepEqual(convertToRoman(2014), \"MMXIV\", 'message: <code>convertToRoman(2014)</code> should return \"MMXIV\"');",
+        "assert.deepEqual(convertToRoman(3999), \"MMMCMXCIX\", 'message: <code>convertToRoman(3999)</code> should return \"MMMCMXCIX\"');"
       ],
       "type": "bonfire",
       "MDNlinks": [
@@ -176,22 +176,22 @@
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Write your own code."
       ],
       "challengeSeed": [
-        "function where(collection, source) {",
+        "function whereAreYou(collection, source) {",
         "  var arr = [];",
         "  // What's in a name?",
         "  return arr;",
         "}",
         "",
-        "where([{ first: \"Romeo\", last: \"Montague\" }, { first: \"Mercutio\", last: null }, { first: \"Tybalt\", last: \"Capulet\" }], { last: \"Capulet\" });"
+        "whereAreYou([{ first: \"Romeo\", last: \"Montague\" }, { first: \"Mercutio\", last: null }, { first: \"Tybalt\", last: \"Capulet\" }], { last: \"Capulet\" });"
       ],
       "solutions": [
-        "function where(collection, source) {\n  var arr = [];\n  var keys = Object.keys(source);\n  collection.forEach(function(e) {\n    if(keys.every(function(key) {return e[key] === source[key];})) {\n      arr.push(e);  \n    }\n  });\n  return arr;\n}"
+        "function whereAreYou(collection, source) {\n  var arr = [];\n  var keys = Object.keys(source);\n  collection.forEach(function(e) {\n    if(keys.every(function(key) {return e[key] === source[key];})) {\n      arr.push(e);  \n    }\n  });\n  return arr;\n}"
       ],
       "tests": [
-        "assert.deepEqual(where([{ first: \"Romeo\", last: \"Montague\" }, { first: \"Mercutio\", last: null }, { first: \"Tybalt\", last: \"Capulet\" }], { last: \"Capulet\" }), [{ first: \"Tybalt\", last: \"Capulet\" }], 'message: <code>where([{ first: \"Romeo\", last: \"Montague\" }, { first: \"Mercutio\", last: null }, { first: \"Tybalt\", last: \"Capulet\" }], { last: \"Capulet\" })</code> should return <code>[{ first: \"Tybalt\", last: \"Capulet\" }]</code>.');",
-        "assert.deepEqual(where([{ \"a\": 1 }, { \"a\": 1 }, { \"a\": 1, \"b\": 2 }], { \"a\": 1 }), [{ \"a\": 1 }, { \"a\": 1 }, { \"a\": 1, \"b\": 2 }], 'message: <code>where([{ \"a\": 1 }, { \"a\": 1 }, { \"a\": 1, \"b\": 2 }], { \"a\": 1 })</code> should return <code>[{ \"a\": 1 }, { \"a\": 1 }, { \"a\": 1, \"b\": 2 }]</code>.');",
-        "assert.deepEqual(where([{ \"a\": 1, \"b\": 2 }, { \"a\": 1 }, { \"a\": 1, \"b\": 2, \"c\": 2 }], { \"a\": 1, \"b\": 2 }), [{ \"a\": 1, \"b\": 2 }, { \"a\": 1, \"b\": 2, \"c\": 2 }], 'message: <code>where([{ \"a\": 1, \"b\": 2 }, { \"a\": 1 }, { \"a\": 1, \"b\": 2, \"c\": 2 }], { \"a\": 1, \"b\": 2 })</code> should return <code>[{ \"a\": 1, \"b\": 2 }, { \"a\": 1, \"b\": 2, \"c\": 2 }]</code>.');",
-        "assert.deepEqual(where([{ \"a\": 1, \"b\": 2 }, { \"a\": 1 }, { \"a\": 1, \"b\": 2, \"c\": 2 }], { \"a\": 1, \"c\": 2 }), [{ \"a\": 1, \"b\": 2, \"c\": 2 }], 'message: <code>where([{ \"a\": 1, \"b\": 2 }, { \"a\": 1 }, { \"a\": 1, \"b\": 2, \"c\": 2 }], { \"a\": 1, \"c\": 2 })</code> should return <code>[{ \"a\": 1, \"b\": 2, \"c\": 2 }]</code>.');"
+        "assert.deepEqual(whereAreYou([{ first: \"Romeo\", last: \"Montague\" }, { first: \"Mercutio\", last: null }, { first: \"Tybalt\", last: \"Capulet\" }], { last: \"Capulet\" }), [{ first: \"Tybalt\", last: \"Capulet\" }], 'message: <code>whereAreYou([{ first: \"Romeo\", last: \"Montague\" }, { first: \"Mercutio\", last: null }, { first: \"Tybalt\", last: \"Capulet\" }], { last: \"Capulet\" })</code> should return <code>[{ first: \"Tybalt\", last: \"Capulet\" }]</code>.');",
+        "assert.deepEqual(whereAreYou([{ \"a\": 1 }, { \"a\": 1 }, { \"a\": 1, \"b\": 2 }], { \"a\": 1 }), [{ \"a\": 1 }, { \"a\": 1 }, { \"a\": 1, \"b\": 2 }], 'message: <code>whereAreYou([{ \"a\": 1 }, { \"a\": 1 }, { \"a\": 1, \"b\": 2 }], { \"a\": 1 })</code> should return <code>[{ \"a\": 1 }, { \"a\": 1 }, { \"a\": 1, \"b\": 2 }]</code>.');",
+        "assert.deepEqual(whereAreYou([{ \"a\": 1, \"b\": 2 }, { \"a\": 1 }, { \"a\": 1, \"b\": 2, \"c\": 2 }], { \"a\": 1, \"b\": 2 }), [{ \"a\": 1, \"b\": 2 }, { \"a\": 1, \"b\": 2, \"c\": 2 }], 'message: <code>whereAreYou([{ \"a\": 1, \"b\": 2 }, { \"a\": 1 }, { \"a\": 1, \"b\": 2, \"c\": 2 }], { \"a\": 1, \"b\": 2 })</code> should return <code>[{ \"a\": 1, \"b\": 2 }, { \"a\": 1, \"b\": 2, \"c\": 2 }]</code>.');",
+        "assert.deepEqual(whereAreYou([{ \"a\": 1, \"b\": 2 }, { \"a\": 1 }, { \"a\": 1, \"b\": 2, \"c\": 2 }], { \"a\": 1, \"c\": 2 }), [{ \"a\": 1, \"b\": 2, \"c\": 2 }], 'message: <code>whereAreYou([{ \"a\": 1, \"b\": 2 }, { \"a\": 1 }, { \"a\": 1, \"b\": 2, \"c\": 2 }], { \"a\": 1, \"c\": 2 })</code> should return <code>[{ \"a\": 1, \"b\": 2, \"c\": 2 }]</code>.');"
       ],
       "type": "bonfire",
       "MDNlinks": [
@@ -279,21 +279,21 @@
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "challengeSeed": [
-        "function translate(str) {",
+        "function translatePigLatin(str) {",
         "  return str;",
         "}",
         "",
-        "translate(\"consonant\");"
+        "translatePigLatin(\"consonant\");"
       ],
       "solutions": [
-        "function translate(str) {\n  if (isVowel(str.charAt(0))) return str + \"way\";\n  var front = [];\n  str = str.split('');\n  while (str.length && !isVowel(str[0])) {\n    front.push(str.shift());\n  }\n  return [].concat(str, front).join('') + 'ay';\n}\n\nfunction isVowel(c) {\n  return ['a', 'e', 'i', 'o', 'u'].indexOf(c.toLowerCase()) !== -1;\n}"
+        "function translatePigLatin(str) {\n  if (isVowel(str.charAt(0))) return str + \"way\";\n  var front = [];\n  str = str.split('');\n  while (str.length && !isVowel(str[0])) {\n    front.push(str.shift());\n  }\n  return [].concat(str, front).join('') + 'ay';\n}\n\nfunction isVowel(c) {\n  return ['a', 'e', 'i', 'o', 'u'].indexOf(c.toLowerCase()) !== -1;\n}"
       ],
       "tests": [
-        "assert.deepEqual(translate(\"california\"), \"aliforniacay\", 'message: <code>translate(\"california\")</code> should return \"aliforniacay\".');",
-        "assert.deepEqual(translate(\"paragraphs\"), \"aragraphspay\", 'message: <code>translate(\"paragraphs\")</code> should return \"aragraphspay\".');",
-        "assert.deepEqual(translate(\"glove\"), \"oveglay\", 'message: <code>translate(\"glove\")</code> should return \"oveglay\".');",
-        "assert.deepEqual(translate(\"algorithm\"), \"algorithmway\", 'message: <code>translate(\"algorithm\")</code> should return \"algorithmway\".');",
-        "assert.deepEqual(translate(\"eight\"), \"eightway\", 'message: <code>translate(\"eight\")</code> should return \"eightway\".');"
+        "assert.deepEqual(translatePigLatin(\"california\"), \"aliforniacay\", 'message: <code>translatePigLatin(\"california\")</code> should return \"aliforniacay\".');",
+        "assert.deepEqual(translatePigLatin(\"paragraphs\"), \"aragraphspay\", 'message: <code>translatePigLatin(\"paragraphs\")</code> should return \"aragraphspay\".');",
+        "assert.deepEqual(translatePigLatin(\"glove\"), \"oveglay\", 'message: <code>translatePigLatin(\"glove\")</code> should return \"oveglay\".');",
+        "assert.deepEqual(translatePigLatin(\"algorithm\"), \"algorithmway\", 'message: <code>translatePigLatin(\"algorithm\")</code> should return \"algorithmway\".');",
+        "assert.deepEqual(translatePigLatin(\"eight\"), \"eightway\", 'message: <code>translatePigLatin(\"eight\")</code> should return \"eightway\".');"
       ],
       "type": "bonfire",
       "MDNlinks": [
@@ -332,19 +332,19 @@
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "challengeSeed": [
-        "function pair(str) {",
+        "function pairElement(str) {",
         "  return str;",
         "}",
         "",
-        "pair(\"GCG\");"
+        "pairElement(\"GCG\");"
       ],
       "solutions": [
-        "var lookup = Object.create(null);\nlookup.A = 'T';\nlookup.T = 'A';\nlookup.C = 'G';\nlookup.G = 'C';\n\nfunction pair(str) {\n return str.split('').map(function(p) {return [p, lookup[p]];});\n}"
+        "var lookup = Object.create(null);\nlookup.A = 'T';\nlookup.T = 'A';\nlookup.C = 'G';\nlookup.G = 'C';\n\nfunction pairElement(str) {\n return str.split('').map(function(p) {return [p, lookup[p]];});\n}"
       ],
       "tests": [
-        "assert.deepEqual(pair(\"ATCGA\"),[[\"A\",\"T\"],[\"T\",\"A\"],[\"C\",\"G\"],[\"G\",\"C\"],[\"A\",\"T\"]], 'message: <code>pair(\"ATCGA\")</code> should return <code>[[\"A\",\"T\"],[\"T\",\"A\"],[\"C\",\"G\"],[\"G\",\"C\"],[\"A\",\"T\"]]</code>.');",
-        "assert.deepEqual(pair(\"TTGAG\"),[[\"T\",\"A\"],[\"T\",\"A\"],[\"G\",\"C\"],[\"A\",\"T\"],[\"G\",\"C\"]], 'message: <code>pair(\"TTGAG\")</code> should return <code>[[\"T\",\"A\"],[\"T\",\"A\"],[\"G\",\"C\"],[\"A\",\"T\"],[\"G\",\"C\"]]</code>.');",
-        "assert.deepEqual(pair(\"CTCTA\"),[[\"C\",\"G\"],[\"T\",\"A\"],[\"C\",\"G\"],[\"T\",\"A\"],[\"A\",\"T\"]], 'message: <code>pair(\"CTCTA\")</code> should return <code>[[\"C\",\"G\"],[\"T\",\"A\"],[\"C\",\"G\"],[\"T\",\"A\"],[\"A\",\"T\"]]</code>.');"
+        "assert.deepEqual(pairElement(\"ATCGA\"),[[\"A\",\"T\"],[\"T\",\"A\"],[\"C\",\"G\"],[\"G\",\"C\"],[\"A\",\"T\"]], 'message: <code>pairElement(\"ATCGA\")</code> should return <code>[[\"A\",\"T\"],[\"T\",\"A\"],[\"C\",\"G\"],[\"G\",\"C\"],[\"A\",\"T\"]]</code>.');",
+        "assert.deepEqual(pairElement(\"TTGAG\"),[[\"T\",\"A\"],[\"T\",\"A\"],[\"G\",\"C\"],[\"A\",\"T\"],[\"G\",\"C\"]], 'message: <code>pairElement(\"TTGAG\")</code> should return <code>[[\"T\",\"A\"],[\"T\",\"A\"],[\"G\",\"C\"],[\"A\",\"T\"],[\"G\",\"C\"]]</code>.');",
+        "assert.deepEqual(pairElement(\"CTCTA\"),[[\"C\",\"G\"],[\"T\",\"A\"],[\"C\",\"G\"],[\"T\",\"A\"],[\"A\",\"T\"]], 'message: <code>pairElement(\"CTCTA\")</code> should return <code>[[\"C\",\"G\"],[\"T\",\"A\"],[\"C\",\"G\"],[\"T\",\"A\"],[\"A\",\"T\"]]</code>.');"
       ],
       "type": "bonfire",
       "MDNlinks": [
@@ -425,27 +425,27 @@
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "challengeSeed": [
-        "function boo(bool) {",
+        "function booWho(bool) {",
         "  // What is the new fad diet for ghost developers? The Boolean.",
         "  return bool;",
         "}",
         "",
-        "boo(null);"
+        "booWho(null);"
       ],
       "solutions": [
-        "function boo(bool) {\n  // What is the new fad diet for ghost developers? The Boolean.\n  return typeof bool === \"boolean\";\n}\n\nboo(null);"
+        "function booWho(bool) {\n  // What is the new fad diet for ghost developers? The Boolean.\n  return typeof bool === \"boolean\";\n}\n\nbooWho(null);"
       ],
       "tests": [
-        "assert.strictEqual(boo(true), true, 'message: <code>boo(true)</code> should return true.');",
-        "assert.strictEqual(boo(false), true, 'message: <code>boo(false)</code> should return true.');",
-        "assert.strictEqual(boo([1, 2, 3]), false, 'message: <code>boo([1, 2, 3])</code> should return false.');",
-        "assert.strictEqual(boo([].slice), false, 'message: <code>boo([].slice)</code> should return false.');",
-        "assert.strictEqual(boo({ \"a\": 1 }), false, 'message: <code>boo({ \"a\": 1 })</code> should return false.');",
-        "assert.strictEqual(boo(1), false, 'message: <code>boo(1)</code> should return false.');",
-        "assert.strictEqual(boo(NaN), false, 'message: <code>boo(NaN)</code> should return false.');",
-        "assert.strictEqual(boo(\"a\"), false, 'message: <code>boo(\"a\")</code> should return false.');",
-        "assert.strictEqual(boo(\"true\"), false, 'message: <code>boo(\"true\")</code> should return false.');",
-        "assert.strictEqual(boo(\"false\"), false, 'message: <code>boo(\"false\")</code> should return false.');"
+        "assert.strictEqual(booWho(true), true, 'message: <code>booWho(true)</code> should return true.');",
+        "assert.strictEqual(booWho(false), true, 'message: <code>booWho(false)</code> should return true.');",
+        "assert.strictEqual(booWho([1, 2, 3]), false, 'message: <code>booWho([1, 2, 3])</code> should return false.');",
+        "assert.strictEqual(booWho([].slice), false, 'message: <code>booWho([].slice)</code> should return false.');",
+        "assert.strictEqual(booWho({ \"a\": 1 }), false, 'message: <code>booWho({ \"a\": 1 })</code> should return false.');",
+        "assert.strictEqual(booWho(1), false, 'message: <code>booWho(1)</code> should return false.');",
+        "assert.strictEqual(booWho(NaN), false, 'message: <code>booWho(NaN)</code> should return false.');",
+        "assert.strictEqual(booWho(\"a\"), false, 'message: <code>booWho(\"a\")</code> should return false.');",
+        "assert.strictEqual(booWho(\"true\"), false, 'message: <code>booWho(\"true\")</code> should return false.');",
+        "assert.strictEqual(booWho(\"false\"), false, 'message: <code>booWho(\"false\")</code> should return false.');"
       ],
       "type": "bonfire",
       "MDNlinks": [
@@ -477,20 +477,20 @@
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "challengeSeed": [
-        "function unite(arr1, arr2, arr3) {",
+        "function uniteUnique(arr1, arr2, arr3) {",
         "  return arr1;",
         "}",
         "",
-        "unite([1, 3, 2], [5, 2, 1, 4], [2, 1]);"
+        "uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]);"
       ],
       "solutions": [
-        "function unite(arr1, arr2, arr3) {\n  return [].slice.call(arguments).reduce(function(a, b) {\n    return [].concat(a, b.filter(function(e) {return a.indexOf(e) === -1;}));\n  }, []);\n}"
+        "function uniteUnique(arr1, arr2, arr3) {\n  return [].slice.call(arguments).reduce(function(a, b) {\n    return [].concat(a, b.filter(function(e) {return a.indexOf(e) === -1;}));\n  }, []);\n}"
       ],
       "tests": [
-        "assert.deepEqual(unite([1, 3, 2], [5, 2, 1, 4], [2, 1]), [1, 3, 2, 5, 4], 'message: <code>unite([1, 3, 2], [5, 2, 1, 4], [2, 1])</code> should return <code>[1, 3, 2, 5, 4]</code>.');",
-        "assert.deepEqual(unite([1, 3, 2], [1, [5]], [2, [4]]), [1, 3, 2, [5], [4]], 'message: <code>unite([1, 3, 2], [1, [5]], [2, [4]])</code> should return <code>[1, 3, 2, [5], [4]]</code>.');",
-        "assert.deepEqual(unite([1, 2, 3], [5, 2, 1]), [1, 2, 3, 5], 'message: <code>unite([1, 2, 3], [5, 2, 1])</code> should return <code>[1, 2, 3, 5]</code>.');",
-        "assert.deepEqual(unite([1, 2, 3], [5, 2, 1, 4], [2, 1], [6, 7, 8]), [1, 2, 3, 5, 4, 6, 7, 8], 'message: <code>unite([1, 2, 3], [5, 2, 1, 4], [2, 1], [6, 7, 8])</code> should return <code>[1, 2, 3, 5, 4, 6, 7, 8]</code>.');"
+        "assert.deepEqual(uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]), [1, 3, 2, 5, 4], 'message: <code>uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1])</code> should return <code>[1, 3, 2, 5, 4]</code>.');",
+        "assert.deepEqual(uniteUnique([1, 3, 2], [1, [5]], [2, [4]]), [1, 3, 2, [5], [4]], 'message: <code>uniteUnique([1, 3, 2], [1, [5]], [2, [4]])</code> should return <code>[1, 3, 2, [5], [4]]</code>.');",
+        "assert.deepEqual(uniteUnique([1, 2, 3], [5, 2, 1]), [1, 2, 3, 5], 'message: <code>uniteUnique([1, 2, 3], [5, 2, 1])</code> should return <code>[1, 2, 3, 5]</code>.');",
+        "assert.deepEqual(uniteUnique([1, 2, 3], [5, 2, 1, 4], [2, 1], [6, 7, 8]), [1, 2, 3, 5, 4, 6, 7, 8], 'message: <code>uniteUnique([1, 2, 3], [5, 2, 1, 4], [2, 1], [6, 7, 8])</code> should return <code>[1, 2, 3, 5, 4, 6, 7, 8]</code>.');"
       ],
       "type": "bonfire",
       "MDNlinks": [
@@ -524,24 +524,24 @@
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "challengeSeed": [
-        "function convert(str) {",
+        "function convertHTML(str) {",
         "  // &colon;&rpar;",
         "  return str;",
         "}",
         "",
-        "convert(\"Dolce & Gabbana\");"
+        "convertHTML(\"Dolce & Gabbana\");"
       ],
       "solutions": [
-        "var MAP = { '&': '&amp;',\n            '<': '&lt;',\n            '>': '&gt;',\n            '\"': '&quot;',\n            \"'\": '&apos;'};\n\nfunction convert(str) {\n  return str.replace(/[&<>\"']/g, function(c) {\n    return MAP[c];\n  });\n}"
+        "var MAP = { '&': '&amp;',\n            '<': '&lt;',\n            '>': '&gt;',\n            '\"': '&quot;',\n            \"'\": '&apos;'};\n\nfunction convertHTML(str) {\n  return str.replace(/[&<>\"']/g, function(c) {\n    return MAP[c];\n  });\n}"
       ],
       "tests": [
-        "assert.match(convert(\"Dolce & Gabbana\"), /Dolce &amp; Gabbana/, 'message: <code>convert(\"Dolce & Gabbana\")</code> should return <code>Dolce &&#8203;amp; Gabbana</code>.');",
-        "assert.match(convert(\"Hamburgers < Pizza < Tacos\"), /Hamburgers &lt; Pizza &lt; Tacos/, 'message: <code>convert(\"Hamburgers < Pizza < Tacos\")</code> should return <code>Hamburgers &&#8203;lt; Pizza &&#8203;lt; Tacos</code>.');",
-        "assert.match(convert(\"Sixty > twelve\"), /Sixty &gt; twelve/, 'message: <code>convert(\"Sixty > twelve\")</code> should return <code>Sixty &&#8203;gt; twelve</code>.');",
-        "assert.match(convert('Stuff in \"quotation marks\"'), /Stuff in &quot;quotation marks&quot;/, 'message: <code>convert(&apos;Stuff in \"quotation marks\"&apos;)</code> should return <code>Stuff in &&#8203;quot;quotation marks&&#8203;quot;</code>.');",
-        "assert.match(convert(\"Shindler's List\"), /Shindler&apos;s List/, 'message: <code>convert(\"Shindler&apos;s List\")</code> should return <code>Shindler&&#8203;apos;s List</code>.');",
-        "assert.match(convert('<>'), /&lt;&gt;/, 'message: <code>convert(\"<>\")</code> should return <code>&&#8203;lt;&&#8203;gt;</code>.');",
-        "assert.strictEqual(convert('abc'), 'abc', 'message: <code>convert(\"abc\")</code> should return <code>abc</code>.');"
+        "assert.match(convertHTML(\"Dolce & Gabbana\"), /Dolce &amp; Gabbana/, 'message: <code>convertHTML(\"Dolce & Gabbana\")</code> should return <code>Dolce &&#8203;amp; Gabbana</code>.');",
+        "assert.match(convertHTML(\"Hamburgers < Pizza < Tacos\"), /Hamburgers &lt; Pizza &lt; Tacos/, 'message: <code>convertHTML(\"Hamburgers < Pizza < Tacos\")</code> should return <code>Hamburgers &&#8203;lt; Pizza &&#8203;lt; Tacos</code>.');",
+        "assert.match(convertHTML(\"Sixty > twelve\"), /Sixty &gt; twelve/, 'message: <code>convertHTML(\"Sixty > twelve\")</code> should return <code>Sixty &&#8203;gt; twelve</code>.');",
+        "assert.match(convertHTML('Stuff in \"quotation marks\"'), /Stuff in &quot;quotation marks&quot;/, 'message: <code>convertHTML(&apos;Stuff in \"quotation marks\"&apos;)</code> should return <code>Stuff in &&#8203;quot;quotation marks&&#8203;quot;</code>.');",
+        "assert.match(convertHTML(\"Shindler's List\"), /Shindler&apos;s List/, 'message: <code>convertHTML(\"Shindler&apos;s List\")</code> should return <code>Shindler&&#8203;apos;s List</code>.');",
+        "assert.match(convertHTML('<>'), /&lt;&gt;/, 'message: <code>convertHTML(\"<>\")</code> should return <code>&&#8203;lt;&&#8203;gt;</code>.');",
+        "assert.strictEqual(convertHTML('abc'), 'abc', 'message: <code>convertHTML(\"abc\")</code> should return <code>abc</code>.');"
       ],
       "type": "bonfire",
       "MDNlinks": [
@@ -754,19 +754,19 @@
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "challengeSeed": [
-        "function find(arr, func) {",
+        "function findElement(arr, func) {",
         "  var num = 0;",
         "  return num;",
         "}",
         "",
-        "find([1, 2, 3, 4], function(num){ return num % 2 === 0; });"
+        "findElement([1, 2, 3, 4], function(num){ return num % 2 === 0; });"
       ],
       "solutions": [
-        "function find(arr, func) {\n  var num;\n  arr.some(function(e) {\n    if (func(e)) {\n      num = e;\n      return true;\n    }\n  });\n  return num;\n}"
+        "function findElement(arr, func) {\n  var num;\n  arr.some(function(e) {\n    if (func(e)) {\n      num = e;\n      return true;\n    }\n  });\n  return num;\n}"
       ],
       "tests": [
-        "assert.strictEqual(find([1, 3, 5, 8, 9, 10], function(num) { return num % 2 === 0; }), 8, 'message: <code>find([1, 3, 5, 8, 9, 10], function(num) { return num % 2 === 0; })</code> should return 8.');",
-        "assert.strictEqual(find([1, 3, 5, 9], function(num) { return num % 2 === 0; }), undefined, 'message: <code>find([1, 3, 5, 9], function(num) { return num % 2 === 0; })</code> should return undefined.');"
+        "assert.strictEqual(findElement([1, 3, 5, 8, 9, 10], function(num) { return num % 2 === 0; }), 8, 'message: <code>findElement([1, 3, 5, 8, 9, 10], function(num) { return num % 2 === 0; })</code> should return 8.');",
+        "assert.strictEqual(findElement([1, 3, 5, 9], function(num) { return num % 2 === 0; }), undefined, 'message: <code>findElement([1, 3, 5, 9], function(num) { return num % 2 === 0; })</code> should return undefined.');"
       ],
       "type": "bonfire",
       "MDNlinks": [
@@ -795,23 +795,23 @@
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "challengeSeed": [
-        "function drop(arr, func) {",
+        "function dropElements(arr, func) {",
         "  // Drop them elements.",
         "  return arr;",
         "}",
         "",
-        "drop([1, 2, 3], function(n) {return n < 3; });"
+        "dropElements([1, 2, 3], function(n) {return n < 3; });"
       ],
       "solutions": [
-        "function drop(arr, func) {\n  // Drop them elements.\n  while (arr.length && !func(arr[0])) {\n    arr.shift();\n  }\n  return arr;\n}"
+        "function dropElements(arr, func) {\n  // Drop them elements.\n  while (arr.length && !func(arr[0])) {\n    arr.shift();\n  }\n  return arr;\n}"
       ],
       "tests": [
-        "assert.deepEqual(drop([1, 2, 3, 4], function(n) {return n >= 3;}), [3, 4], 'message: <code>drop([1, 2, 3, 4], function(n) {return n >= 3;})</code> should return <code>[3, 4]</code>.');",
-        "assert.deepEqual(drop([0, 1, 0, 1], function(n) {return n === 1;}), [1, 0, 1], 'message: <code>drop([0, 1, 0, 1], function(n) {return n === 1;})</code> should return <code>[1, 0, 1]</code>.');",
-        "assert.deepEqual(drop([1, 2, 3], function(n) {return n > 0;}), [1, 2, 3], 'message: <code>drop([1, 2, 3], function(n) {return n > 0;})</code> should return <code>[1, 2, 3]</code>.');",
-        "assert.deepEqual(drop([1, 2, 3, 4], function(n) {return n > 5;}), [], 'message: <code>drop([1, 2, 3, 4], function(n) {return n > 5;})</code> should return <code>[]</code>.');",
-        "assert.deepEqual(drop([1, 2, 3, 7, 4], function(n) {return n > 3;}), [7, 4], 'message: <code>drop([1, 2, 3, 7, 4], function(n) {return n > 3;})</code> should return <code>[7, 4]</code>.');",
-        "assert.deepEqual(drop([1, 2, 3, 9, 2], function(n) {return n > 2;}), [3, 9, 2], 'message: <code>drop([1, 2, 3, 9, 2], function(n) {return n > 2;})</code> should return <code>[3, 9, 2]</code>.');"
+        "assert.deepEqual(dropElements([1, 2, 3, 4], function(n) {return n >= 3;}), [3, 4], 'message: <code>dropElements([1, 2, 3, 4], function(n) {return n >= 3;})</code> should return <code>[3, 4]</code>.');",
+        "assert.deepEqual(dropElements([0, 1, 0, 1], function(n) {return n === 1;}), [1, 0, 1], 'message: <code>dropElements([0, 1, 0, 1], function(n) {return n === 1;})</code> should return <code>[1, 0, 1]</code>.');",
+        "assert.deepEqual(dropElements([1, 2, 3], function(n) {return n > 0;}), [1, 2, 3], 'message: <code>dropElements([1, 2, 3], function(n) {return n > 0;})</code> should return <code>[1, 2, 3]</code>.');",
+        "assert.deepEqual(dropElements([1, 2, 3, 4], function(n) {return n > 5;}), [], 'message: <code>dropElements([1, 2, 3, 4], function(n) {return n > 5;})</code> should return <code>[]</code>.');",
+        "assert.deepEqual(dropElements([1, 2, 3, 7, 4], function(n) {return n > 3;}), [7, 4], 'message: <code>dropElements([1, 2, 3, 7, 4], function(n) {return n > 3;})</code> should return <code>[7, 4]</code>.');",
+        "assert.deepEqual(dropElements([1, 2, 3, 9, 2], function(n) {return n > 2;}), [3, 9, 2], 'message: <code>dropElements([1, 2, 3, 9, 2], function(n) {return n > 2;})</code> should return <code>[3, 9, 2]</code>.');"
       ],
       "type": "bonfire",
       "MDNlinks": [
@@ -842,21 +842,21 @@
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "challengeSeed": [
-        "function steamroller(arr) {",
+        "function steamrollArray(arr) {",
         "  // I'm a steamroller, baby",
         "  return arr;",
         "}",
         "",
-        "steamroller([1, [2], [3, [[4]]]]);"
+        "steamrollArray([1, [2], [3, [[4]]]]);"
       ],
       "solutions": [
-        "function steamroller(arr) {\n  if (!Array.isArray(arr)) {\n    return [arr];\n  }\n  var out = [];\n  arr.forEach(function(e) {\n    steamroller(e).forEach(function(v) {\n      out.push(v);\n    });\n  });\n  return out;\n}"
+        "function steamrollArray(arr) {\n  if (!Array.isArray(arr)) {\n    return [arr];\n  }\n  var out = [];\n  arr.forEach(function(e) {\n    steamrollArray(e).forEach(function(v) {\n      out.push(v);\n    });\n  });\n  return out;\n}"
       ],
       "tests": [
-        "assert.deepEqual(steamroller([[[\"a\"]], [[\"b\"]]]), [\"a\", \"b\"], 'message: <code>steamroller([[[\"a\"]], [[\"b\"]]])</code> should return <code>[\"a\", \"b\"]</code>.');",
-        "assert.deepEqual(steamroller([1, [2], [3, [[4]]]]), [1, 2, 3, 4], 'message: <code>steamroller([1, [2], [3, [[4]]]])</code> should return <code>[1, 2, 3, 4]</code>.');",
-        "assert.deepEqual(steamroller([1, [], [3, [[4]]]]), [1, 3, 4], 'message: <code>steamroller([1, [], [3, [[4]]]])</code> should return <code>[1, 3, 4]</code>.');",
-        "assert.deepEqual(steamroller([1, {}, [3, [[4]]]]), [1, {}, 3, 4], 'message: <code>steamroller([1, {}, [3, [[4]]]])</code> should return <code>[1, {}, 3, 4]</code>.');"
+        "assert.deepEqual(steamrollArray([[[\"a\"]], [[\"b\"]]]), [\"a\", \"b\"], 'message: <code>steamrollArray([[[\"a\"]], [[\"b\"]]])</code> should return <code>[\"a\", \"b\"]</code>.');",
+        "assert.deepEqual(steamrollArray([1, [2], [3, [[4]]]]), [1, 2, 3, 4], 'message: <code>steamrollArray([1, [2], [3, [[4]]]])</code> should return <code>[1, 2, 3, 4]</code>.');",
+        "assert.deepEqual(steamrollArray([1, [], [3, [[4]]]]), [1, 3, 4], 'message: <code>steamrollArray([1, [], [3, [[4]]]])</code> should return <code>[1, 3, 4]</code>.');",
+        "assert.deepEqual(steamrollArray([1, {}, [3, [[4]]]]), [1, {}, 3, 4], 'message: <code>steamrollArray([1, {}, [3, [[4]]]])</code> should return <code>[1, {}, 3, 4]</code>.');"
       ],
       "type": "bonfire",
       "MDNlinks": [
@@ -926,26 +926,26 @@
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "challengeSeed": [
-        "function every(collection, pre) {",
+        "function truthCheck(collection, pre) {",
         "  // Is everyone being true?",
         "  return pre;",
         "}",
         "",
-        "every([{\"user\": \"Tinky-Winky\", \"sex\": \"male\"}, {\"user\": \"Dipsy\", \"sex\": \"male\"}, {\"user\": \"Laa-Laa\", \"sex\": \"female\"}, {\"user\": \"Po\", \"sex\": \"female\"}], \"sex\");"
+        "truthCheck([{\"user\": \"Tinky-Winky\", \"sex\": \"male\"}, {\"user\": \"Dipsy\", \"sex\": \"male\"}, {\"user\": \"Laa-Laa\", \"sex\": \"female\"}, {\"user\": \"Po\", \"sex\": \"female\"}], \"sex\");"
       ],
       "solutions": [
-        "function every(collection, pre) {\n  // Does everyone have one of these?\n  return collection.every(function(e) { return e[pre]; });\n}"
+        "function truthCheck(collection, pre) {\n  // Does everyone have one of these?\n  return collection.every(function(e) { return e[pre]; });\n}"
       ],
       "tests": [
-        "assert.strictEqual(every([{\"user\": \"Tinky-Winky\", \"sex\": \"male\"}, {\"user\": \"Dipsy\", \"sex\": \"male\"}, {\"user\": \"Laa-Laa\", \"sex\": \"female\"}, {\"user\": \"Po\", \"sex\": \"female\"}], \"sex\"), true, 'message: <code>every([{\"user\": \"Tinky-Winky\", \"sex\": \"male\"}, {\"user\": \"Dipsy\", \"sex\": \"male\"}, {\"user\": \"Laa-Laa\", \"sex\": \"female\"}, {\"user\": \"Po\", \"sex\": \"female\"}], \"sex\")</code> should return true.');",
-        "assert.strictEqual(every([{\"user\": \"Tinky-Winky\", \"sex\": \"male\"}, {\"user\": \"Dipsy\"}, {\"user\": \"Laa-Laa\", \"sex\": \"female\"}, {\"user\": \"Po\", \"sex\": \"female\"}], \"sex\"), false, 'message: <code>every([{\"user\": \"Tinky-Winky\", \"sex\": \"male\"}, {\"user\": \"Dipsy\"}, {\"user\": \"Laa-Laa\", \"sex\": \"female\"}, {\"user\": \"Po\", \"sex\": \"female\"}], \"sex\")</code> should return false.');",
-        "assert.strictEqual(every([{\"user\": \"Tinky-Winky\", \"sex\": \"male\", \"age\": 2}, {\"user\": \"Dipsy\", \"sex\": \"male\", \"age\": 0}, {\"user\": \"Laa-Laa\", \"sex\": \"female\", \"age\": 5}, {\"user\": \"Po\", \"sex\": \"female\", \"age\": 4}], \"age\"), false, 'message: <code>every([{\"user\": \"Tinky-Winky\", \"sex\": \"male\", \"age\": 0}, {\"user\": \"Dipsy\", \"sex\": \"male\", \"age\": 3}, {\"user\": \"Laa-Laa\", \"sex\": \"female\", \"age\": 5}, {\"user\": \"Po\", \"sex\": \"female\", \"age\": 4}], \"age\")</code> should return false.');",
-        "assert.strictEqual(every([{\"name\": \"Pete\", \"onBoat\": true}, {\"name\": \"Repeat\", \"onBoat\": true}, {\"name\": \"FastFoward\", \"onBoat\": null}], \"onBoat\"), false, 'message: <code>every([{\"name\": \"Pete\", \"onBoat\": true}, {\"name\": \"Repeat\", \"onBoat\": true}, {\"name\": \"FastFoward\", \"onBoat\": null}], \"onBoat\")</code> should return false');",
-        "assert.strictEqual(every([{\"name\": \"Pete\", \"onBoat\": true}, {\"name\": \"Repeat\", \"onBoat\": true, \"alias\": \"Repete\"}, {\"name\": \"FastFoward\", \"onBoat\": true}], \"onBoat\"), true, 'message: <code>every([{\"name\": \"Pete\", \"onBoat\": true}, {\"name\": \"Repeat\", \"onBoat\": true, \"alias\": \"Repete\"}, {\"name\": \"FastFoward\", \"onBoat\": true}], \"onBoat\")</code> should return true');",
-        "assert.strictEqual(every([{\"single\": \"yes\"}], \"single\"), true, 'message: <code>every([{\"single\": \"yes\"}], \"single\")</code> should return true');",
-        "assert.strictEqual(every([{\"single\": \"\"}, {\"single\": \"double\"}], \"single\"), false, 'message: <code>every([{\"single\": \"\"}, {\"single\": \"double\"}], \"single\")</code> should return false');",
-        "assert.strictEqual(every([{\"single\": \"double\"}, {\"single\": undefined}], \"single\"), false, 'message: <code>every([{\"single\": \"double\"}, {\"single\": undefined}], \"single\")</code> should return false');",
-        "assert.strictEqual(every([{\"single\": \"double\"}, {\"single\": NaN}], \"single\"), false, 'message: <code>every([{\"single\": \"double\"}, {\"single\": NaN}], \"single\")</code> should return false');"
+        "assert.strictEqual(truthCheck([{\"user\": \"Tinky-Winky\", \"sex\": \"male\"}, {\"user\": \"Dipsy\", \"sex\": \"male\"}, {\"user\": \"Laa-Laa\", \"sex\": \"female\"}, {\"user\": \"Po\", \"sex\": \"female\"}], \"sex\"), true, 'message: <code>truthCheck([{\"user\": \"Tinky-Winky\", \"sex\": \"male\"}, {\"user\": \"Dipsy\", \"sex\": \"male\"}, {\"user\": \"Laa-Laa\", \"sex\": \"female\"}, {\"user\": \"Po\", \"sex\": \"female\"}], \"sex\")</code> should return true.');",
+        "assert.strictEqual(truthCheck([{\"user\": \"Tinky-Winky\", \"sex\": \"male\"}, {\"user\": \"Dipsy\"}, {\"user\": \"Laa-Laa\", \"sex\": \"female\"}, {\"user\": \"Po\", \"sex\": \"female\"}], \"sex\"), false, 'message: <code>truthCheck([{\"user\": \"Tinky-Winky\", \"sex\": \"male\"}, {\"user\": \"Dipsy\"}, {\"user\": \"Laa-Laa\", \"sex\": \"female\"}, {\"user\": \"Po\", \"sex\": \"female\"}], \"sex\")</code> should return false.');",
+        "assert.strictEqual(truthCheck([{\"user\": \"Tinky-Winky\", \"sex\": \"male\", \"age\": 2}, {\"user\": \"Dipsy\", \"sex\": \"male\", \"age\": 0}, {\"user\": \"Laa-Laa\", \"sex\": \"female\", \"age\": 5}, {\"user\": \"Po\", \"sex\": \"female\", \"age\": 4}], \"age\"), false, 'message: <code>truthCheck([{\"user\": \"Tinky-Winky\", \"sex\": \"male\", \"age\": 0}, {\"user\": \"Dipsy\", \"sex\": \"male\", \"age\": 3}, {\"user\": \"Laa-Laa\", \"sex\": \"female\", \"age\": 5}, {\"user\": \"Po\", \"sex\": \"female\", \"age\": 4}], \"age\")</code> should return false.');",
+        "assert.strictEqual(truthCheck([{\"name\": \"Pete\", \"onBoat\": true}, {\"name\": \"Repeat\", \"onBoat\": true}, {\"name\": \"FastFoward\", \"onBoat\": null}], \"onBoat\"), false, 'message: <code>truthCheck([{\"name\": \"Pete\", \"onBoat\": true}, {\"name\": \"Repeat\", \"onBoat\": true}, {\"name\": \"FastFoward\", \"onBoat\": null}], \"onBoat\")</code> should return false');",
+        "assert.strictEqual(truthCheck([{\"name\": \"Pete\", \"onBoat\": true}, {\"name\": \"Repeat\", \"onBoat\": true, \"alias\": \"Repete\"}, {\"name\": \"FastFoward\", \"onBoat\": true}], \"onBoat\"), true, 'message: <code>truthCheck([{\"name\": \"Pete\", \"onBoat\": true}, {\"name\": \"Repeat\", \"onBoat\": true, \"alias\": \"Repete\"}, {\"name\": \"FastFoward\", \"onBoat\": true}], \"onBoat\")</code> should return true');",
+        "assert.strictEqual(truthCheck([{\"single\": \"yes\"}], \"single\"), true, 'message: <code>truthCheck([{\"single\": \"yes\"}], \"single\")</code> should return true');",
+        "assert.strictEqual(truthCheck([{\"single\": \"\"}, {\"single\": \"double\"}], \"single\"), false, 'message: <code>truthCheck([{\"single\": \"\"}, {\"single\": \"double\"}], \"single\")</code> should return false');",
+        "assert.strictEqual(truthCheck([{\"single\": \"double\"}, {\"single\": undefined}], \"single\"), false, 'message: <code>truthCheck([{\"single\": \"double\"}, {\"single\": undefined}], \"single\")</code> should return false');",
+        "assert.strictEqual(truthCheck([{\"single\": \"double\"}, {\"single\": NaN}], \"single\"), false, 'message: <code>truthCheck([{\"single\": \"double\"}, {\"single\": NaN}], \"single\")</code> should return false');"
       ],
       "isRequired": true,
       "type": "bonfire",
@@ -968,29 +968,29 @@
       "title": "Arguments Optional",
       "description": [
         "Create a function that sums two arguments together. If only one argument is provided, then return a function that expects one argument and returns the sum.",
-        "For example, <code>add(2, 3)</code> should return <code>5</code>, and <code>add(2)</code> should return a function.",
+        "For example, <code>addTogether(2, 3)</code> should return <code>5</code>, and <code>addTogether(2)</code> should return a function.",
         "Calling this returned function with a single argument will then return the sum:",
-        "<code>var sumTwoAnd = add(2);</code>",
+        "<code>var sumTwoAnd = addTogether(2);</code>",
         "<code>sumTwoAnd(3)</code> returns <code>5</code>.",
         "If either argument isn't a valid number, return undefined.",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "challengeSeed": [
-        "function add() {",
+        "function addTogether() {",
         "  return false;",
         "}",
         "",
-        "add(2,3);"
+        "addTogether(2,3);"
       ],
       "solutions": [
-        "function add() {\n  var a = arguments[0];\n  if (toString.call(a) !== '[object Number]') return;  \n  if (arguments.length === 1) {\n    return function(b) {\n      if (toString.call(b) !== '[object Number]') return;\n      return a + b;\n    };\n  }\n  var b = arguments[1];\n  if (toString.call(b) !== '[object Number]') return;  \n  return a + arguments[1];\n}"
+        "function addTogether() {\n  var a = arguments[0];\n  if (toString.call(a) !== '[object Number]') return;  \n  if (arguments.length === 1) {\n    return function(b) {\n      if (toString.call(b) !== '[object Number]') return;\n      return a + b;\n    };\n  }\n  var b = arguments[1];\n  if (toString.call(b) !== '[object Number]') return;  \n  return a + arguments[1];\n}"
       ],
       "tests": [
-        "assert.deepEqual(add(2, 3), 5, 'message: <code>add(2, 3)</code> should return 5.');",
-        "assert.deepEqual(add(2)(3), 5, 'message: <code>add(2)(3)</code> should return 5.');",
-        "assert.isUndefined(add(\"http://bit.ly/IqT6zt\"), 'message: <code>add(\"http://bit.ly/IqT6zt\")</code> should return undefined.');",
-        "assert.isUndefined(add(2, \"3\"), 'message: <code>add(2, \"3\")</code> should return undefined.');",
-        "assert.isUndefined(add(2)([3]), 'message: <code>add(2)([3])</code> should return undefined.');"
+        "assert.deepEqual(addTogether(2, 3), 5, 'message: <code>addTogether(2, 3)</code> should return 5.');",
+        "assert.deepEqual(addTogether(2)(3), 5, 'message: <code>addTogether(2)(3)</code> should return 5.');",
+        "assert.isUndefined(addTogether(\"http://bit.ly/IqT6zt\"), 'message: <code>addTogether(\"http://bit.ly/IqT6zt\")</code> should return undefined.');",
+        "assert.isUndefined(addTogether(2, \"3\"), 'message: <code>addTogether(2, \"3\")</code> should return undefined.');",
+        "assert.isUndefined(addTogether(2)([3]), 'message: <code>addTogether(2)([3])</code> should return undefined.');"
       ],
       "type": "bonfire",
       "MDNlinks": [
