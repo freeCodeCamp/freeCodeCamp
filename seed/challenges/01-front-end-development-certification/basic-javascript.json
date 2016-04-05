@@ -861,7 +861,7 @@
       ],
       "releasedOn": "January 1, 2016",
       "challengeSeed": [
-        "function convert(celsius) {",
+        "function convertToF(celsius) {",
         "  // Only change code below this line",
         "  ",
         "  ",
@@ -870,18 +870,18 @@
         "}",
         "",
         "// Change the inputs below to test your code",
-        "convert(30);"
+        "convertToF(30);"
       ],
       "solutions": [
-        "function convert(celsius) {\n  var fahrenheit = celsius * 9/5 + 32;\n  if ( typeof fahrenheit !== 'undefined' ) {\n  return fahrenheit;\n  } else {\n    return 'fahrenheit not defined';\n  }\n}"
+        "function convertToF(celsius) {\n  var fahrenheit = celsius * 9/5 + 32;\n  if ( typeof fahrenheit !== 'undefined' ) {\n  return fahrenheit;\n  } else {\n    return 'fahrenheit not defined';\n  }\n}"
       ],
       "tests": [
-        "assert(typeof convert(0) === 'number', 'message: <code>convert(0)</code> should return a number');",
-        "assert(convert(-30) === -22, 'message: <code>convert(-30)</code> should return a value of <code>-22</code>');",
-        "assert(convert(-10) === 14, 'message: <code>convert(-10)</code> should return a value of <code>14</code>');",
-        "assert(convert(0) === 32, 'message: <code>convert(0)</code> should return a value of <code>32</code>');",
-        "assert(convert(20) === 68, 'message: <code>convert(20)</code> should return a value of <code>68</code>');",
-        "assert(convert(30) === 86, 'message: <code>convert(30)</code> should return a value of <code>86</code>');"
+        "assert(typeof convertToF(0) === 'number', 'message: <code>convertToF(0)</code> should return a number');",
+        "assert(convertToF(-30) === -22, 'message: <code>convertToF(-30)</code> should return a value of <code>-22</code>');",
+        "assert(convertToF(-10) === 14, 'message: <code>convertToF(-10)</code> should return a value of <code>14</code>');",
+        "assert(convertToF(0) === 32, 'message: <code>convertToF(0)</code> should return a value of <code>32</code>');",
+        "assert(convertToF(20) === 68, 'message: <code>convertToF(20)</code> should return a value of <code>68</code>');",
+        "assert(convertToF(30) === 86, 'message: <code>convertToF(30)</code> should return a value of <code>86</code>');"
       ],
       "type": "checkpoint",
       "challengeType": 1,
@@ -2027,15 +2027,15 @@
         "<code>functionName();</code>",
         "Each time the function is called it will print out the message <code>\"Hello World\"</code> on the dev console. All of the code between the curly braces will be executed every time the function is called.",
         "<h4>Instructions</h4>",
-        "<ol><li>Create a function called <code>myFunction</code> which prints <code>\"Hi World\"</code> to the dev console.</li><li>Call the function.</li></ol>"
+        "<ol><li>Create a function called <code>reusableFunction</code> which prints <code>\"Hi World\"</code> to the dev console.</li><li>Call the function.</li></ol>"
       ],
       "challengeSeed": [
         "// Example",
-        "function ourFunction() {",
+        "function reusableFunction() {",
         "  console.log(\"Heyya, World\");",
         "}",
         "",
-        "ourFunction();",
+        "reusableFunction();",
         "",
         "// Only change code below this line",
         "",
@@ -2061,22 +2061,22 @@
         "  console.log = originalConsole.log;",
         "}",
         "",
-        "if (typeof myFunction !== \"function\") { ",
-        "  (function() { return \"myFunction is not defined\"; })();",
+        "if (typeof reusableFunction !== \"function\") { ",
+        "  (function() { return \"reusableFunction is not defined\"; })();",
         "} else {",
         "  capture();",
-        "  myFunction();  ",
+        "  reusableFunction();  ",
         "  uncapture();",
         "  (function() { return logOutput || \"console.log never called\"; })();",
         "}"
       ],
       "solutions": [
-        "function myFunction() {\n  console.log(\"Hi World\");\n}\nmyFunction();"
+        "function reusableFunction() {\n  console.log(\"Hi World\");\n}\nreusableFunction();"
       ],
       "tests": [
-        "assert(typeof myFunction === 'function', 'message: <code>myFunction</code> should be a function');",
-        "assert(\"Hi World\" === logOutput, 'message: <code>myFunction</code> should output \"Hi World\" to the dev console');",
-        "assert(/^\\s*myFunction\\(\\)\\s*;/m.test(code), 'message: Call <code>myFunction</code> after you define it');"
+        "assert(typeof reusableFunction === 'function', 'message: <code>reusableFunction</code> should be a function');",
+        "assert(\"Hi World\" === logOutput, 'message: <code>reusableFunction</code> should output \"Hi World\" to the dev console');",
+        "assert(/^\\s*reusableFunction\\(\\)\\s*;/m.test(code), 'message: Call <code>reusableFunction</code> after you define it');"
       ],
       "type": "waypoint",
       "challengeType": 1,
@@ -2104,7 +2104,7 @@
         "<code>testFun(\"Hello\", \"World\");</code>",
         "We have passed two arguments, <code>\"Hello\"</code> and <code>\"World\"</code>. Inside the function, <code>param1</code> will equal \"Hello\" and <code>param2</code> will equal \"World\". Note that you could call <code>testFun</code> again with different arguments and the parameters would take on the value of the new arguments.",
         "<h4>Instructions</h4>",
-        "<ol><li>Create a function called <code>myFunction</code> that accepts two arguments and outputs their sum to the dev console.</li><li>Call the function.</li></ol>"
+        "<ol><li>Create a function called <code>functionWithArgs</code> that accepts two arguments and outputs their sum to the dev console.</li><li>Call the function.</li></ol>"
       ],
       "releasedOn": "January 1, 2016",
       "head": [
@@ -2131,10 +2131,10 @@
       ],
       "challengeSeed": [
         "// Example",
-        "function ourFunction(a, b) {",
+        "function functionWithArgs(a, b) {",
         "  console.log(a - b);",
         "}",
-        "ourFunction(10, 5); // Outputs 5",
+        "functionWithArgs(10, 5); // Outputs 5",
         "",
         "// Only change code below this line.",
         "",
