@@ -75,7 +75,7 @@ PassportConfigurator.prototype.init = function passportInit(noSession) {
       if (err || !user) {
         return done(err, user);
       }
-      this.app.dataSources.db.connector
+      return this.app.dataSources.db.connector
         .collection('user')
         .aggregate([
           { $match: { _id: user.id } },
@@ -83,7 +83,7 @@ PassportConfigurator.prototype.init = function passportInit(noSession) {
         ], function(err, { points = 1 } = {}) {
           if (err) { return done(err); }
           user.points = points;
-          done(null, user);
+          return done(null, user);
         });
     });
   });
