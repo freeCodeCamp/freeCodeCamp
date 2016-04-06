@@ -39,9 +39,9 @@ export default function about(app) {
     )
       .doOnNext(({ frontEndCount, dataVisCount, backEndCount }) => {
         res.render('resources/about', {
-          frontEndCount,
-          dataVisCount,
-          backEndCount,
+          frontEndCount: numberWithCommas(frontEndCount),
+          dataVisCount: numberWithCommas(dataVisCount),
+          backEndCount: numberWithCommas(backEndCount),
           daysRunning,
           title: dedent`
             About our Open Source Community, our social media presence,
