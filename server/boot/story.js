@@ -126,13 +126,6 @@ module.exports = function(app) {
     );
   }
 
-  function hot(req, res) {
-    return res.render('stories/index', {
-      title: 'Top Stories on Camper News',
-      page: 'hot'
-    });
-  }
-
   function submitNew(req, res) {
     if (!req.user.isGithubCool) {
       req.flash('errors', {
