@@ -78,7 +78,6 @@ module.exports = function(app) {
   );
   router.post('/stories/preliminary', ifNoUser401, newStory);
   router.post('/stories/', ifNoUser401, storySubmission);
-  router.get('/news/', hot);
   router.post('/stories/search', getStories);
   router.get('/news/:storyName', returnIndividualStory);
   router.post('/stories/upvote/', ifNoUser401, upvote);
@@ -125,13 +124,6 @@ module.exports = function(app) {
       },
       next
     );
-  }
-
-  function hot(req, res) {
-    return res.render('stories/index', {
-      title: 'Top Stories on Camper News',
-      page: 'hot'
-    });
   }
 
   function submitNew(req, res) {
