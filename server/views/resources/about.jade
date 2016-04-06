@@ -9,18 +9,31 @@ block content
                     span.tag Established:&#9;
                     span.text-primary #{daysRunning}
                     | days ago
-                li
-                    span.tag Population:&#9;
-                    span.text-primary #{camperCount}
-                    | campers
-                li
-                    span.tag Completed:&#9;
-                    span.text-primary #{globalCompletedCount}
-                    | challenges
                 li.nowrap
                     span.tag Donated:&#9;
                     span.text-primary $850,000
                     | in pro-bono code
+                li.nowrap
+                    span.tag Pledged:&#9;
+                    span.text-primary $#{globalPledgedAmount}
+                    | to nonprofits
+    .row
+        .col-xs-12.col-sm-10.col-sm-offset-1.col-md-6.col-md-offset-3
+            h2.text-center Certifications
+            hr
+            ul.population-table
+                li.nowrap
+                    span.tag Front End:&#9;
+                    span.text-primary #{frontEndCount}
+                    | earned
+                li.nowrap
+                    span.tag Data Viz:&#9;
+                    span.text-primary #{dataVisCount}
+                    | earned
+                li.nowrap
+                    span.tag Back End:&#9;
+                    span.text-primary #{backEndCount}
+                    | earned
     .spacer
     .row
         .col-xs-12.col-sm-10.col-sm-offset-1.col-md-6.col-md-offset-3

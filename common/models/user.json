@@ -92,12 +92,6 @@
     "twitter": {
       "type": "string"
     },
-    "facebook": {
-      "type": "string"
-    },
-    "google": {
-      "type": "string"
-    },
     "currentStreak": {
       "type": "number",
       "default": 0
