@@ -669,10 +669,8 @@ module.exports = function(app) {
       if (user && typeof user.getChallengeMap$ === 'function') {
         return user.getChallengeMap$();
       }
-      console.log('foo');
       return Observable.just({});
     })
-      .doOnNext(challengeMap => console.log('challengeMap', challengeMap))
       .flatMap(challengeMap => getSuperBlocks$(challenge$, challengeMap))
       .subscribe(
         superBlocks => {
