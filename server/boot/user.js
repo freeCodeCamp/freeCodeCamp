@@ -420,63 +420,59 @@ module.exports = function(app) {
   }
 
   function toggleLockdownMode(req, res, next) {
-    return User.findById(req.accessToken.userId, function(err, user) {
-      if (err) { return next(err); }
-      return user.updateAttribute('isLocked', !user.isLocked, function(err) {
-        if (err) { return next(err); }
-        req.flash('info', {
-          msg: 'We\'ve successfully updated your Privacy preferences.'
-        });
-        return res.redirect('/settings');
-      });
-    });
+    const { user } = req;
+    user.update$({ isLocked: !user.isLocked })
+      .subscribe(
+        () => {
+          req.flash('info', {
+            msg: 'We\'ve successfully updated your Privacy preferences.'
+          });
+          return res.redirect('/settings');
+        },
+        next
+      );
   }
 
   function toggleReceivesAnnouncementEmails(req, res, next) {
-    return User.findById(req.accessToken.userId, function(err, user) {
-      if (err) { return next(err); }
-      return user.updateAttribute(
-        'sendMonthlyEmail',
-        !user.sendMonthlyEmail,
-        (err) => {
-          if (err) { return next(err); }
+    const { user } = req;
+    return user.update$({ sendMonthlyEmail: !user.sendMonthlyEmail })
+      .subscribe(
+        () => {
           req.flash('info', {
             msg: 'We\'ve successfully updated your Email preferences.'
           });
           return res.redirect('/settings');
-        });
-    });
+        },
+        next
+      );
   }
 
   function toggleReceivesQuincyEmails(req, res, next) {
-    return User.findById(req.accessToken.userId, function(err, user) {
-      if (err) { return next(err); }
-      return user.updateAttribute('sendQuincyEmail', !user.sendQuincyEmail,
-        (err) => {
-          if (err) { return next(err); }
+    const { user } = req;
+    return user.update$({ sendQuincyEmail: !user.sendQuincyEmail })
+      .subscribe(
+        () => {
           req.flash('info', {
             msg: 'We\'ve successfully updated your Email preferences.'
           });
           return res.redirect('/settings');
-        }
+        },
+        next
       );
-    });
   }
 
   function toggleReceivesNotificationEmails(req, res, next) {
-    return User.findById(req.accessToken.userId, function(err, user) {
-      if (err) { return next(err); }
-      return user.updateAttribute(
-        'sendNotificationEmail',
-        !user.sendNotificationEmail,
-        function(err) {
-          if (err) { return next(err); }
+    const { user } = req;
+    return user.update$({ sendNotificationEmail: !user.sendNotificationEmail })
+      .subscribe(
+        () => {
           req.flash('info', {
             msg: 'We\'ve successfully updated your Email preferences.'
           });
           return res.redirect('/settings');
-      });
-    });
+        },
+        next
+      );
   }
 
   function postDeleteAccount(req, res, next) {

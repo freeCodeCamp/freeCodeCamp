@@ -43,7 +43,6 @@ module.exports = function(app) {
   router.get('/how-nonprofit-projects-work', howNonprofitProjectsWork);
   router.get('/code-of-conduct', codeOfConduct);
   router.get('/academic-honesty', academicHonesty);
-  router.get('/news', news);
 
   router.get(
     '/the-fastest-web-page-on-the-internet',
@@ -282,12 +281,6 @@ module.exports = function(app) {
   function agileProjectManagersForm(req, res) {
     res.render('resources/pmi-acp-agile-project-managers-form', {
       title: 'Agile Project Management Program Application Form'
-    });
-  }
-
-  function news(req, res) {
-    res.render('resources/camper-news-deprecated', {
-      title: 'Camper News'
     });
   }
 

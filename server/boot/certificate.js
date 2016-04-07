@@ -84,7 +84,8 @@ export default function certificate(app) {
 
   function verifyCert(certType, req, res, next) {
     const { user } = req;
-    return certTypeIds[certType]
+    return user.getChallengeMap()
+      .flatMap(() => certTypeIds[certType])
       .flatMap(challenge => {
         const {
           id,
