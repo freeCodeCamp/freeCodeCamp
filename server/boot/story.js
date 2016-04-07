@@ -41,6 +41,7 @@ module.exports = function(app) {
 
   const redirectToNews = (req, res) => res.redirect('/news');
   const deprecated = (req, res) => res.sendStatus(410);
+  router.get('/news', showNews);
   router.post('/news/userstories', deprecated);
   router.get('/news/hot', hotJSON);
   router.get('/news/feed', RSSFeed);
@@ -55,6 +56,10 @@ module.exports = function(app) {
   router.get('/stories/:storyName', replaceStoryWithNews);
 
   app.use(router);
+
+  function showNews(req, res) {
+    res.render('news/deprecated', { title: 'Camper News' });
+  }
 
   function replaceStoryWithNews(req, res) {
     var url = req.originalUrl.replace(/^\/stories/, '/news');
@@ -72,7 +77,7 @@ module.exports = function(app) {
     storiesData$.subscribe(
       data => {
         res.set('Content-Type', 'text/xml');
-        res.render('feed', {
+        res.render('news/feed', {
           title: 'FreeCodeCamp Camper News RSS Feed',
           description: 'RSS Feed for FreeCodeCamp Top 100 Hot Camper News',
           url: 'http://www.freecodecamp.com/news',
@@ -105,25 +110,16 @@ module.exports = function(app) {
           return res.redirect('../stories/' + dashedNameFull);
         }
 
-        var username = req.user ? req.user.username : '';
-        // true if any of votes are made by user
-        var userVoted = story.upVotes.some(function(upvote) {
-          return upvote.upVotedByUsername === username;
-        });
-
-        return res.render('stories/index', {
-          title: story.headline,
+        return res.render('news/index', {
+          title: story.headline || 'news',
           link: story.link,
           originalStoryLink: dashedName,
           author: story.author,
           rank: story.upVotes.length,
-          upVotes: story.upVotes,
           id: story.id,
           timeAgo: moment(story.timePosted).fromNow(),
           image: story.image,
-          page: 'show',
-          storyMetaDescription: story.metaDescription,
-          hasUserVoted: userVoted
+          storyMetaDescription: story.metaDescription
         });
       },
       next
