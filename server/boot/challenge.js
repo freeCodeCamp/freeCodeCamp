@@ -142,7 +142,7 @@ function getRenderData$(user, challenge$, origChallengeName, solution) {
 
   return challenge$
     .map(challenge => challenge.toJSON())
-    .filter((challenge) => {
+    .filter(challenge => {
       return shouldNotFilterComingSoon(challenge) &&
         challenge.type !== 'hike' &&
         testChallengeName.test(challenge.name);
@@ -500,8 +500,17 @@ module.exports = function(app) {
   function showChallenge(req, res, next) {
     const solution = req.query.solution;
     const challengeName = req.params.challengeName.replace(challengesRegex, '');
+    const { user } = req;
 
-    getRenderData$(req.user, challenge$, challengeName, solution)
+    Observable.defer(() => {
+      if (user && user.getChallengeMap$) {
+        return user.getChallengeMap$().map(user);
+      }
+      return Observable.just(null);
+    })
+      .flatMap(user => {
+        return getRenderData$(user, challenge$, challengeName, solution);
+      })
       .subscribe(
         ({ type, redirectUrl, message, data }) => {
           if (message) {
@@ -546,48 +555,46 @@ module.exports = function(app) {
       return res.sendStatus(403);
     }
 
-    const completedDate = Date.now();
-    const {
-      id,
-      name,
-      challengeType,
-      solution,
-      timezone
-    } = req.body;
+    return req.user.getChallengeMap$()
+      .flatMap(() => {
+        const completedDate = Date.now();
+        const {
+          id,
+          name,
+          challengeType,
+          solution,
+          timezone
+        } = req.body;
 
-    const { alreadyCompleted, updateData } = buildUserUpdate(
-      req.user,
-      id,
-      {
-        id,
-        challengeType,
-        solution,
-        name,
-        completedDate
-      },
-      timezone
-    );
+        const { alreadyCompleted, updateData } = buildUserUpdate(
+          req.user,
+          id,
+          {
+            id,
+            challengeType,
+            solution,
+            name,
+            completedDate
+          },
+          timezone
+        );
 
-    const user = req.user;
-    const points = alreadyCompleted ?
-      user.progressTimestamps.length :
-      user.progressTimestamps.length + 1;
+        const user = req.user;
+        const points = alreadyCompleted ? user.points : user.points + 1;
 
-    return user.update$(updateData)
-      .doOnNext(({ count }) => log('%s documents updated', count))
-      .subscribe(
-        () => {},
-        next,
-        function() {
-          if (type === 'json') {
-            return res.json({
-              points,
-              alreadyCompleted
-            });
-          }
-          return res.sendStatus(200);
-        }
-      );
+        return user.update$(updateData)
+          .doOnNext(({ count }) => log('%s documents updated', count))
+          .map(() => {
+            if (type === 'json') {
+              return res.json({
+                points,
+                alreadyCompleted
+              });
+            }
+            return res.sendStatus(200);
+          });
+      })
+      .subscribe(() => {}, next);
   }
 
   function completedZiplineOrBasejump(req, res, next) {
@@ -635,31 +642,36 @@ module.exports = function(app) {
     }
 
 
-    const {
-      alreadyCompleted,
-      updateData
-    } = buildUserUpdate(req.user, completedChallenge.id, completedChallenge);
+    return user.getChallengeMap$()
+      .flatMap(() => {
+        const {
+          alreadyCompleted,
+          updateData
+        } = buildUserUpdate(user, completedChallenge.id, completedChallenge);
 
-    return user.update$(updateData)
-      .doOnNext(({ count }) => log('%s documents updated', count))
-      .doOnNext(() => {
-        if (type === 'json') {
-          return res.send({
-            alreadyCompleted,
-            points: alreadyCompleted ?
-              user.progressTimestamps.length :
-              user.progressTimestamps.length + 1
+        return user.update$(updateData)
+          .doOnNext(({ count }) => log('%s documents updated', count))
+          .doOnNext(() => {
+            if (type === 'json') {
+              return res.send({
+                alreadyCompleted,
+                points: alreadyCompleted ? user.points : user.points + 1
+              });
+            }
+            return res.status(200).send(true);
           });
-        }
-        return res.status(200).send(true);
       })
       .subscribe(() => {}, next);
   }
 
-  function showMap(showAside, { user = {} }, res, next) {
-    const { challengeMap = {} } = user;
-
-    return getSuperBlocks$(challenge$, challengeMap)
+  function showMap(showAside, { user }, res, next) {
+    return Observable.defer(() => {
+      if (user && typeof user.getChallengeMap$ === 'function') {
+        return user.getChallengeMap$();
+      }
+      return Observable.just({});
+    })
+      .flatMap(challengeMap => getSuperBlocks$(challenge$, challengeMap))
       .subscribe(
         superBlocks => {
           res.render('map/show', {
