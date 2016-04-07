@@ -100,6 +100,14 @@
         "Assign the contents of <code>a</code> to variable <code>b</code>."
       ],
       "releasedOn": "January 1, 2016",
+      "head": [
+        "if (typeof a != 'undefined') {",
+        "  a = undefined;",
+        "}",
+        "if (typeof b != 'undefined') {",
+        "  b = undefined;",
+        "}"
+      ],
       "challengeSeed": [
         "// Setup",
         "var a;",
