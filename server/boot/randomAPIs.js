@@ -1,24 +1,15 @@
-var Rx = require('rx'),
-    async = require('async'),
-    moment = require('moment'),
-    request = require('request'),
-    debug = require('debug')('fcc:cntr:resources'),
-    constantStrings = require('../utils/constantStrings.json'),
-    labs = require('../resources/labs.json'),
-    testimonials = require('../resources/testimonials.json'),
-    secrets = require('../../config/secrets');
+import request from 'request';
+import constantStrings from '../utils/constantStrings.json';
+import labs from '../resources/labs.json';
+import testimonials from '../resources/testimonials.json';
+import secrets from '../../config/secrets';
 
 module.exports = function(app) {
-  var router = app.loopback.Router();
-  var User = app.models.User;
-  var Challenge = app.models.Challenge;
-  var Story = app.models.Story;
-  var Nonprofit = app.models.Nonprofit;
-
+  const router = app.loopback.Router();
+  const User = app.models.User;
   router.get('/api/github', githubCalls);
   router.get('/api/blogger', bloggerCalls);
   router.get('/api/trello', trelloCalls);
-  router.get('/sitemap.xml', sitemap);
   router.get('/chat', chat);
   router.get('/coding-bootcamp-cost-calculator', bootcampCalculator);
   router.get('/twitch', twitch);
@@ -43,125 +34,12 @@ module.exports = function(app) {
   router.get('/how-nonprofit-projects-work', howNonprofitProjectsWork);
   router.get('/code-of-conduct', codeOfConduct);
   router.get('/academic-honesty', academicHonesty);
-
   router.get(
     '/the-fastest-web-page-on-the-internet',
     theFastestWebPageOnTheInternet
   );
 
   app.use(router);
-
-  function sitemap(req, res, next) {
-    var appUrl = 'http://www.freecodecamp.com';
-    var now = moment(new Date()).format('YYYY-MM-DD');
-
-    // TODO(berks): refactor async to rx
-    async.parallel({
-        users: function(callback) {
-          User.find(
-            {
-              where: { username: { nlike: '' } },
-              fields: { username: true }
-            },
-            function(err, users) {
-              if (err) {
-                debug('User err: ', err);
-                callback(err);
-              } else {
-                Rx.Observable.from(users, null, null, Rx.Scheduler.default)
-                  .map(function(user) {
-                    return user.username;
-                  })
-                  .toArray()
-                  .subscribe(
-                    function(usernames) {
-                      callback(null, usernames);
-                    },
-                    callback
-                  );
-              }
-            });
-        },
-
-        challenges: function(callback) {
-          Challenge.find(
-            { fields: { name: true } },
-            function(err, challenges) {
-              if (err) {
-                debug('Challenge err: ', err);
-                callback(err);
-              } else {
-                Rx.Observable.from(challenges, null, null, Rx.Scheduler.default)
-                  .map(function(challenge) {
-                    return challenge.name;
-                  })
-                  .toArray()
-                  .subscribe(
-                    callback.bind(callback, null),
-                    callback
-                  );
-              }
-            });
-        },
-        stories: function(callback) {
-          Story.find(
-            { field: { link: true } },
-            function(err, stories) {
-              if (err) {
-                debug('Story err: ', err);
-                callback(err);
-              } else {
-                Rx.Observable.from(stories, null, null, Rx.Scheduler.default)
-                  .map(function(story) {
-                    return story.link;
-                  })
-                  .toArray()
-                  .subscribe(
-                    callback.bind(callback, null),
-                    callback
-                  );
-              }
-            }
-          );
-        },
-        nonprofits: function(callback) {
-          Nonprofit.find(
-            { field: { name: true } },
-            function(err, nonprofits) {
-              if (err) {
-                debug('User err: ', err);
-                callback(err);
-              } else {
-                Rx.Observable.from(nonprofits, null, null, Rx.Scheduler.default)
-                  .map(function(nonprofit) {
-                    return nonprofit.name;
-                  })
-                  .toArray()
-                  .subscribe(
-                    callback.bind(callback, null),
-                    callback
-                  );
-              }
-            });
-        }
-      }, function(err, results) {
-        if (err) {
-          return next(err);
-        }
-        return process.nextTick(function() {
-          res.header('Content-Type', 'application/xml');
-          res.render('resources/sitemap', {
-            appUrl: appUrl,
-            now: now,
-            users: results.users,
-            challenges: results.challenges,
-            stories: results.stories,
-            nonprofits: results.nonprofits
-          });
-        });
-      }
-    );
-  }
 
   function chat(req, res) {
     res.redirect('https://gitter.im/FreeCodeCamp/FreeCodeCamp');
