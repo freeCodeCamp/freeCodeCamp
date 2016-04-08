@@ -537,7 +537,12 @@ $(document).ready(function() {
 
   // Night Mode
   function changeMode() {
-    var newValue = !JSON.parse(localStorage.getItem('nightMode'));
+    var newValue = false;
+    try {
+      newValue = !JSON.parse(localStorage.getItem('nightMode'));
+    } catch (e) {
+      console.error('Error parsing value form local storage:', 'nightMode', e);
+    }
     localStorage.setItem('nightMode', String(newValue));
     toggleNightMode(newValue);
   }
@@ -558,7 +563,13 @@ $(document).ready(function() {
   }
 
   if (typeof localStorage.getItem('nightMode') !== 'undefined') {
-    toggleNightMode(JSON.parse(localStorage.getItem('nightMode')));
+    var oldVal = false;
+    try {
+      oldVal = JSON.parse(localStorage.getItem('nightMode'));
+    } catch (e) {
+      console.error('Error parsing value form local storage:', 'nightMode', e);
+    }
+    toggleNightMode(oldVal);
     $('.nightMode-btn').on('click', function() {
       changeMode();
     });
