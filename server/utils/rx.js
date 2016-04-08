@@ -25,15 +25,20 @@ export function saveInstance(instance) {
 // alias saveInstance
 export const saveUser = saveInstance;
 
-export function observeQuery(Model, method, query) {
-  return Rx.Observable.fromNodeCallback(Model[method], Model)(query);
+// observeQuery(Model: Object, methodName: String, query: Any) => Observable
+export function observeQuery(Model, methodName, query) {
+  return Rx.Observable.fromNodeCallback(Model[methodName], Model)(query);
 }
 
+// observeMethod(
+//   context: Object, methodName: String
+// ) => (query: Any) => Observable
 export function observeMethod(context, methodName) {
   return Rx.Observable.fromNodeCallback(context[methodName], context);
 }
 
-// timeChache(amount: Number, unit: String) => Observable
+// must be bound to an observable instance
+// timeCache(amount: Number, unit: String) => Observable
 export function timeCache(time, unit) {
   const source = this;
   let cache;
