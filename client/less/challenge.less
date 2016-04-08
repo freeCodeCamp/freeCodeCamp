@@ -29,7 +29,7 @@
     white-space: pre;
     padding: 5px 10px;
     margin-bottom: 10px;
-    margin-top: -10px;
+    margin-top: -5px;
     overflow: auto;
   }
   dfn {
@@ -109,5 +109,30 @@ iframe.iphone {
   right: -195px;
   @media (min-width: 1200px) and (max-width: 1250px){
     right: -207px;
+  }
+}
+
+.night {
+  .challenge-instructions blockquote {
+    background-color: #242424;
+    border-color: #515151;
+    color: #ABABAB
+  }
+  div.CodeMirror {
+    background-color:#242424;
+    color:#ABABAB;
+    &-gutters {
+      background-color:#242424;
+      color:#ABABAB;
+    }
+    .cm-bracket, .cm-tag {
+      color:#5CAFD6;
+    }
+    .cm-property, .cm-string {
+      color:#B5753A;
+    }
+    .cm-keyword, .cm-attribute {
+      color:#9BBBDC;
+    }
   }
 }

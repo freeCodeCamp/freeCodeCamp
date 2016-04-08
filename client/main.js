@@ -356,7 +356,7 @@ $(document).ready(function() {
 
   function showMap() {
     if (!main.isMapAsideLoad) {
-      var mapAside = $('<iframe>');
+      var mapAside = $('<iframe id = "map-aside-frame" >');
       mapAside.attr({
         src: '/map-aside',
         frameBorder: '0'
@@ -534,4 +534,82 @@ $(document).ready(function() {
 
   // keyboard shortcuts: open map
   window.Mousetrap.bind('g m', toggleMap);
+
+  // Night Mode
+  function changeMode() {
+    var newValue = false;
+    try {
+      newValue = !JSON.parse(localStorage.getItem('nightMode'));
+    } catch (e) {
+      console.error('Error parsing value form local storage:', 'nightMode', e);
+    }
+    localStorage.setItem('nightMode', String(newValue));
+    toggleNightMode(newValue);
+  }
+
+  function toggleNightMode(nightModeEnabled) {
+    var iframe = document.getElementById('map-aside-frame');
+    if (iframe) {
+      iframe.src = iframe.src;
+    }
+    var body = $('body');
+    body.hide();
+    if (nightModeEnabled) {
+      body.addClass('night');
+    } else {
+      body.removeClass('night');
+    }
+    body.fadeIn('100');
+  }
+
+  if (typeof localStorage.getItem('nightMode') !== 'undefined') {
+    var oldVal = false;
+    try {
+      oldVal = JSON.parse(localStorage.getItem('nightMode'));
+    } catch (e) {
+      console.error('Error parsing value form local storage:', 'nightMode', e);
+    }
+    toggleNightMode(oldVal);
+    $('.nightMode-btn').on('click', function() {
+      changeMode();
+    });
+  } else {
+    localStorage.setItem('nightMode', 'false');
+    toggleNightMode('false');
+  }
+
+  // Hot Keys
+  window.Mousetrap.bind('g t n', changeMode);
+  window.Mousetrap.bind('g n n', () => {
+    // Next Challenge
+    window.location = '/challenges/next-challenge';
+  });
+  window.Mousetrap.bind('g n a', () => {
+    // Account
+    window.location = '/account';
+  });
+  window.Mousetrap.bind('g n m', () => {
+    // Map
+    window.location = '/map';
+  });
+  window.Mousetrap.bind('g n w', () => {
+    // Wiki
+    window.location = '/wiki';
+  });
+  window.Mousetrap.bind('g n a', () => {
+    // About
+    window.location = '/about';
+  });
+  window.Mousetrap.bind('g n s', () => {
+    // Shop
+    window.location = '/shop';
+  });
+  window.Mousetrap.bind('g n o', () => {
+    // Settings
+    window.location = '/settings';
+  });
+  window.Mousetrap.bind('g n r', () => {
+    // Repo
+    window.location = 'https://github.com/freecodecamp/freecodecamp/';
+  });
 });
