@@ -576,14 +576,12 @@ $(document).ready(function() {
     if (iframe) {
       iframe.src = iframe.src;
     }
-    var body = $('body');
-    body.hide();
+    var body = document.body;
     if (nightModeEnabled) {
-      body.addClass('night');
+      body.classList.add('night');
     } else {
-      body.removeClass('night');
+      body.classList.remove('night');
     }
-    body.fadeIn('100');
   }
 
   if (typeof localStorage.getItem('nightMode') !== 'undefined') {
@@ -594,9 +592,21 @@ $(document).ready(function() {
       console.error('Error parsing value form local storage:', 'nightMode', e);
     }
     toggleNightMode(oldVal);
-    $('.nightMode-btn').on('click', function() {
-      changeMode();
-    });
+    if (
+      document
+        .getElementsByClassName('nightMode-btn')
+      && document
+        .getElementsByClassName('nightMode-btn')
+        .length > 0
+    ) {
+      document
+        .getElementsByClassName('nightMode-btn')
+        .map((elem) => {
+          elem.addEventListener('click', function() {
+            changeMode();
+          });
+        });
+    }
   } else {
     localStorage.setItem('nightMode', 'false');
     toggleNightMode('false');
