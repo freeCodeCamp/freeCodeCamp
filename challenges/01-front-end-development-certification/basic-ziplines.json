@@ -180,6 +180,8 @@
         "<strong>Objective:</strong> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='http://codepen.io/hallaathrad/full/vNEPpL' target='_blank'>http://codepen.io/hallaathrad/full/vNEPpL</a>.",
         "<strong>Rule #1:</strong> Don't look at the example project's code. Figure it out for yourself.",
         "<strong>Rule #2:</strong> Fulfill the below <a href='http://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries you need. Give it your own personal style.",
+        "<strong>Rule #3:</strong> You may use your own CSS and frameworks other than Bootstrap.",
+        "<strong>Rule #4:</strong> Choose your own tribute subject.",
         "<strong>User Story:</strong> I can access all of the portfolio webpage's content just by scrolling.",
         "<strong>User Story:</strong> I can click different buttons that will take me to the portfolio creator's different social media pages.",
         "<strong>User Story:</strong> I can see thumbnail images of different projects the portfolio creator has built (if you haven't built any websites before, use placeholders.)",
