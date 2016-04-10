@@ -49,24 +49,23 @@ urlset(xmlns="http://www.sitemaps.org/schemas/sitemap/0.9")
     lastmod= now
     priority= 0.9
 
-  //- User
-  each user in users
-    url
-      loc #{appUrl}/#{user}
-      lastmod= now
-      changefreq weekly
-      priority= 0.5
-
   each challenge in challenges
     url
-      loc #{appUrl}/challenges/#{challenge.replace(/\s/g, '-')}
+      loc #{appUrl}/challenges/#{challenge}
       lastmod= now
       changefreq weekly
       priority= 0.9
 
   each story in stories
     url
-      loc #{appUrl}/news/#{story.replace(/\s/g, '-')}
+      loc #{appUrl}/news/#{story}
       lastmod= now
-      changefreq weekly
+      changefreq monthly
+      priority= 0.5
+
+  each job in jobs
+    url
+      loc #{appUrl}/jobs/#{job}
+      lastmod= now
+      changefreq monthly
       priority= 0.5

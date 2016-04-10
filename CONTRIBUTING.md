@@ -1,8 +1,20 @@
 # Contributor's Guide
 
-## I want to help!
-We welcome pull requests from Free Code Camp campers (our students) and seasoned JavaScript developers alike! Follow these steps to contribute:
+## Table of Contents
 
+- [I want to help!](#i-want-to-help)
+- [Contribution Guidelines](#contribution-guidelines)
+- [Prerequisites](#prerequisites)
+- [Getting Started](#getting-started)
+- [Linting Setup](#linting-setup)
+- [Found a bug?](#found-a-bug)
+- [Creating Pull Requests](#creating-pull-requests)
+- [Common Steps](#common-steps)
+- [Next Steps](#next-steps)
+
+## I want to help!
+
+We welcome pull requests from Free Code Camp campers (our students) and seasoned JavaScript developers alike! Follow these steps to contribute:
 
 1.  Find an issue that needs assistance by searching for the [Help Wanted](https://github.com/FreeCodeCamp/FreeCodeCamp/labels/help%20wanted) tag.
 2.  Let us know you are working on it by posting a comment on the issue.
@@ -20,15 +32,13 @@ If you've found a bug that is not on the board, [follow these steps](#found-a-bu
 5.  Squash your Commits. Ref: [rebasing](https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/git-rebase)
 6.  Submit a [pull request](https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/Pull-Request-Contribute) from your branch to Free Code Camp's `staging` branch.  [Travis CI](https://travis-ci.org/FreeCodeCamp/FreeCodeCamp) will then take your code and run `npm test`.  Make sure this passes, then we'll do a quick code review and give you feedback, then iterate from there.
 
-
-Prerequisites
--------------
+## Prerequisites
 
 - [MongoDB](http://www.mongodb.org/downloads)
 - [Node.js](http://nodejs.org)
 
-Getting Started
----------------
+## Getting Started
+
 Note: If this is your first time working with a node-gyp dependent module, please follow the [node-gyp installation guide](https://github.com/nodejs/node-gyp#installation) to ensure a working npm build.
 
 The easiest way to get started is to clone the repository:
@@ -83,6 +93,7 @@ Now navigate to your browser and open http://localhost:3001
 If the app loads, congratulations - you're all set. Otherwise, let us know by opening a GitHub issue and with your error.
 
 ## Linting Setup
+
 You should have [ESLint running in your editor](http://eslint.org/docs/user-guide/integrations.html), and it will highlight anything doesn't conform to [Free Code Camp's JavaScript Style Guide](https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/Free-Code-Camp-JavaScript-Style-Guide) (you can find a summary of those rules [here](https://github.com/FreeCodeCamp/FreeCodeCamp/blob/staging/.eslintrc). Please do not ignore any linting errors, as they are meant to **help** you and to ensure a clean and simple code base. Make sure none of your JavaScript is longer than 80 characters per line.  The reason we enforce this is because one of our dependent NPM modules, [jsonlint](https://github.com/zaach/jsonlint), does not fully support wildcard paths in Windows.
 
 ## Found a bug?
@@ -91,7 +102,6 @@ Do not file an issue until you have followed these steps:
 1. Read [Help I've Found a Bug](https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/Help-I've-Found-a-Bug) wiki page and follow the instructions there.
 2. Asked for confirmation in the appropriate [Help Room](https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/Help-Rooms)
 3. Please *do not* open an issue without a 3rd party confirmation of your problem.
-
 
 ## Creating Pull Requests
 **What is a Pull Request?**
@@ -173,7 +183,8 @@ If you have a local copy of the repo, you can make the requested changes and ame
 
 Be sure to post in the PR conversation that you have made the requested changes.
 
-##Other resources
+## Other resources
+
 - [Searching for Your Issue on GitHub](https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/Searching-for-Your-Issue-on-GitHub)
 - [Creating a New GitHub Issue](https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/Creating-a-New-GitHub-Issue)
 - [Select Issues for Contributing Using Labels](https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/Select-Issues-for-Contributing-Using-Labels)
