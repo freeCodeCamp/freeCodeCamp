@@ -321,7 +321,11 @@
     background-color: #333;
   }
   .map-aside {
-    border-left-color:#222; 
+    border-left-color:#222;
+    &-action-item {
+      filter: brightness(2) saturate(0);
+      -webkit-filter: brightness(2) saturate(0);
+    }
   }
   #map-filter, .input-group-addon {
     border-color: #222;
