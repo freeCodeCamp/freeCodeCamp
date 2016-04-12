@@ -1,27 +1,31 @@
-## FreeCodeCamp Pull Request template
-Please, go through these steps before you submit a PR.
+<!-- FreeCodeCamp Pull Request Template -->
 
-1. Make sure that your PR is not a duplicate.
-2. If not, then make sure that:
+<!-- IMPORTANT Please review https://github.com/FreeCodeCamp/FreeCodeCamp/blob/staging/CONTRIBUTING.md for detailed contributing guidelines -->
+<!-- Help with PRs can be found at https://gitter.im/FreeCodeCamp/HelpContributors -->
+<!-- Make sure that your PR is not a duplicate -->
 
-  2.1. You have done your changes in a separate branch. Branches MUST have descriptive names that start with either the `fix/` or `feature/` prefixes. Good examples are: `fix/signin-issue` or `feature/issue-templates`.
+#### Pre-Submission Checklist
+<!-- Go over all points below, and put an `x` in all the boxes that apply. -->
+<!-- All points should be checked, otherwise, read the CONTRIBUTING guidelines from above-->
+<!-- If you're unsure about any of these, don't hesitate to ask. We're here to help! -->
+- [ ] Your pull request targets the `staging` branch of FreeCodeCamp.
+- [ ] Branch starts with either `fix/`, `feature/`, or `translate/` (e.g. `fix/signin-issue`)
+- [ ] You have only one commit (if not, [squash](https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/git-rebase#squashing-multiple-commits-into-one) them into one commit).
+- [ ] All new and existing tests pass the command `npm run test-challenges`. Use `git commit --amend` to amend any fixes.
 
-  2.2. You have a descriptive commit message with a short title (first line).
+#### Type of Change
+<!-- What type of change does your code introduce? Put an `x` in the box that applies. -->
+- [ ] Bug fix (non-breaking change which fixes an issue)
+- [ ] New feature (non-breaking change which adds functionality)
+- [ ] Breaking change (fix or feature that would cause existing functionality to change)
+- [ ] Add new translation (feature adding new translations)
 
-  2.3. You have only one commit (if not, [squash](https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/git-rebase#squashing-multiple-commits-into-one) them into one commit).
+#### Checklist:
+<!-- Go over all points below, and put an `x` in all the boxes that apply. -->
+<!-- If you're unsure about any of these, don't hesitate to ask. We're here to help! -->
+- [ ] Tested changes locally.
+- [ ] Closes currently open issue (`Closes #XXXX`): Closes 
 
-  2.4. `npm test` doesn't throw any error. If it does, fix them first and amend your commit (`git commit --amend`).
+#### Description
+<!-- Describe your changes in detail -->
 
-3. **After** these steps, you're ready to open a pull request.
-
-  3.1. Your pull request MUST NOT target the `master` branch on FreeCodeCamp's repository. You probably want to target `staging` instead.
-
-  3.2. Give a descriptive title to your PR.
-
-  3.3. Provide a description of your changes.
-
-  3.4. Put `closes #XXXX` in your comment to auto-close the issue that your PR fixes (if such).
-
-IMPORTANT: Please review the [CONTRIBUTING.md](../CONTRIBUTING.md) file for detailed contributing guidelines.
-
-**PLEASE REMOVE THIS TEMPLATE BEFORE SUBMITTING**
