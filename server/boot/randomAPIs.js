@@ -7,6 +7,7 @@ import secrets from '../../config/secrets';
 module.exports = function(app) {
   const router = app.loopback.Router();
   const User = app.models.User;
+  const BillBoard = app.models.BillBoard;
   router.get('/api/github', githubCalls);
   router.get('/api/blogger', bloggerCalls);
   router.get('/api/trello', trelloCalls);
@@ -38,6 +39,7 @@ module.exports = function(app) {
     '/the-fastest-web-page-on-the-internet',
     theFastestWebPageOnTheInternet
   );
+  router.get('/billBoard', billBoard);
 
   app.use(router);
 
@@ -80,6 +82,25 @@ module.exports = function(app) {
       res.render('resources/academic-honesty', {
           title: 'Academic Honesty policy'
       });
+  }
+
+  function billBoard(req, res) {
+    if(req.user && typeof req.user.currentChallenge.challengeId !== "undefined"){
+      BillBoard.findOne({}, function(err, data){
+        if(err){
+          res.send({err: {type: "Error", message: "Database Error"}, data: null});
+        } else {
+          if (data.active) {
+            res.send({err: null, data: data.message});
+          } else {
+            res.send({err: {type: "warning", message: "Bill Board is not active"}, data: null});
+          }
+        }
+      });
+    }
+    else {
+      res.send({err: {type: "warning", message: "User Not Signed In"}, data: null});
+    }
   }
 
   function theFastestWebPageOnTheInternet(req, res) {

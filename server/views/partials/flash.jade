@@ -18,3 +18,9 @@
               span.ion-close-circled
             for success in messages.success
               div!= success.msg
+.row.flashMessage
+  .col-xs-12
+    .alert.alert-success.fade.in
+      button.close(type='button', data-dismiss='alert')
+        span.ion-close-circled#dismissBill
+      #billContent

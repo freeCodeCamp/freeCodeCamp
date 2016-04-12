@@ -66,5 +66,9 @@
   "userIdentity": {
     "dataSource": "db",
     "public": true
+  },
+  "BillBoard": {
+    "dataSource": "db",
+    "public": true
   }
 }

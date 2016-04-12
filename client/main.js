@@ -612,4 +612,38 @@ $(document).ready(function() {
     // Repo
     window.location = 'https://github.com/freecodecamp/freecodecamp/';
   });
+
+  function getCurrentBillBoard(cb) {
+    $.ajax({
+      url: '/billboard',
+      method: 'GET',
+      dataType: 'JSON'
+    }).done((resp) => {
+      cb(resp);
+    });
+  }
+
+  function handleNewBillBoard(message) {
+    const seen = typeof localStorage.getItem('billboardSeen') !== "undefined" ? localStorage.getItem('billboardSeen') : 'false';
+    let old = typeof localStorage.getItem('billboard') !== "undefined" ? localStorage.getItem('billboard') : 'false';
+    if(seen !== 'true') {
+      old = null;
+    }
+    if(message.data !== old) {
+      if(!message.err) {
+        $('#billContent').text(message.data);
+        localStorage.setItem('billboard', message.data)
+      } else {
+        console.error(message.err);
+      }
+    }
+  }
+
+  getCurrentBillBoard(handleNewBillBoard);
+
+  $('#dismissBill').on('click', () => {
+    console.log("test");
+    localStorage.setItem('billboardSeen', 'true');
+  });
+
 });

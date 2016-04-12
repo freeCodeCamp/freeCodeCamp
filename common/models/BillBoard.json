@@ -1,0 +1,34 @@
+{
+  "name": "BillBoard",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "trackChanges": false,
+  "properties": {
+    "message": {
+      "type": "string"
+    },
+    "active": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "validations": [],
+  "relations": {
+
+  },
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    },
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": []
+}
