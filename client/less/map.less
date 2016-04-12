@@ -318,7 +318,7 @@
 
 .night {
   .map-fixed-header {
-    background-color: #333;
+    background-color: @night-body-bg;
   }
   .map-aside {
     border-left-color:#222;
@@ -328,9 +328,12 @@
     }
   }
   #map-filter, .input-group-addon {
-    border-color: #222;
+    border-color: #292929;
     background-color: #666;
     color:#ABABAB;
+  }
+  .map-accordion span.no-link-underline {
+    color: @brand-primary;
   }
   .map-accordion h2 > a {
     background:#666;
@@ -340,12 +343,12 @@
   }
   .input-group-addon {
     &.filled{
-      background: #555;
-      border-color: #000d00;
+      background: @gray;
+      border-color: #292929;
       color: white;
     }
   }
   .challenge-title {
-    color: #999;
+    color: @night-text-color;
   }
 }
