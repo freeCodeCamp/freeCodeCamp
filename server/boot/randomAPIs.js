@@ -85,21 +85,44 @@ module.exports = function(app) {
   }
 
   function billBoard(req, res) {
-    if(req.user && typeof req.user.currentChallenge.challengeId !== "undefined"){
-      BillBoard.findOne({}, function(err, data){
-        if(err){
-          res.send({err: {type: "Error", message: "Database Error"}, data: null});
+    if (
+      req.user
+      && typeof req.user.currentChallenge.challengeId !== 'undefined'
+    ) {
+      BillBoard.findOne({}, function(err, data) {
+        if (err) {
+          res.send({
+            err: {
+              type: 'Error',
+              message: 'Database Error'
+            },
+            data: null
+          });
         } else {
           if (data.active) {
-            res.send({err: null, data: data.message});
+            res.send({
+              err: null,
+              data: data.message
+            });
           } else {
-            res.send({err: {type: "warning", message: "Bill Board is not active"}, data: null});
+            res.send({
+              err: {
+                type: 'warning',
+                message: 'Bill Board is not active'
+              },
+              data: null
+            });
           }
         }
       });
-    }
-    else {
-      res.send({err: {type: "warning", message: "User Not Signed In"}, data: null});
+    } else {
+      res.send({
+        err: {
+          type: 'warning',
+          message: 'User Not Signed In'
+        },
+        data: null
+      });
     }
   }
 

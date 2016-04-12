@@ -124,6 +124,28 @@ main = (function(main, global) {
     Mousetrap.bind('g c', toggleMainChat);
   });
 
+  function localStorageIO(item = '', input = null) {
+    if (input) {
+      try {
+        input = typeof input === 'string' ? input : JSON.stringify(input);
+      } catch (e) {
+        // Do Nothing
+      }
+      localStorage.setItem(item, input);
+      return input;
+    } else {
+      let data = localStorage.getItem(item);
+      try {
+        data = JSON.parse(data);
+      } catch (e) {
+        // Do Nothing
+      }
+      return data;
+    }
+  }
+
+  main.localStorageIO = localStorageIO;
+
   return main;
 }(main, window));
 
@@ -621,29 +643,26 @@ $(document).ready(function() {
     }).done((resp) => {
       cb(resp);
     });
+    $('#dismissBill').on('click', (e) => {
+      const elemData
+        = e.target.parentNode.parentNode.children;
+
+      const res
+        = elemData[Object.keys(elemData).filter((key)=> {
+        return elemData[key].id === 'billContent';
+
+      })[0]].innerHTML;
+
+      main.localStorageIO('lastBillBoardSeen', res);
+    });
   }
 
   function handleNewBillBoard(message) {
-    const seen = typeof localStorage.getItem('billboardSeen') !== "undefined" ? localStorage.getItem('billboardSeen') : 'false';
-    let old = typeof localStorage.getItem('billboard') !== "undefined" ? localStorage.getItem('billboard') : 'false';
-    if(seen !== 'true') {
-      old = null;
-    }
-    if(message.data !== old) {
-      if(!message.err) {
-        $('#billContent').text(message.data);
-        localStorage.setItem('billboard', message.data)
-      } else {
-        console.error(message.err);
-      }
+    if (main.localStorageIO('lastBillBoardSeen') !== message.data) {
+      $('#billContent').text(message.data);
+      $('#billBoard').fadeIn();
     }
   }
 
   getCurrentBillBoard(handleNewBillBoard);
-
-  $('#dismissBill').on('click', () => {
-    console.log("test");
-    localStorage.setItem('billboardSeen', 'true');
-  });
-
 });

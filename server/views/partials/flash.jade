@@ -20,7 +20,7 @@
               div!= success.msg
 .row.flashMessage
   .col-xs-12
-    .alert.alert-success.fade.in
+    #billBoard.alert.alert-success.fade.in(style="display: none;")
       button.close(type='button', data-dismiss='alert')
         span.ion-close-circled#dismissBill
       #billContent
