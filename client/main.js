@@ -134,7 +134,7 @@ main = (function(main, global) {
       localStorage.setItem(item, input);
       return input;
     } else {
-      let data = localStorage.getItem(item);
+      let data = typeof localStorage.getItem(item) !== 'undefined' && localStorage.getItem(item) !== null ? localStorage.getItem(item) : "";
       try {
         data = JSON.parse(data);
       } catch (e) {
@@ -637,9 +637,11 @@ $(document).ready(function() {
 
   function getCurrentBillBoard(cb) {
     $.ajax({
-      url: '/billboard',
+      url: '/api/Flyers/findOne?'
+      + 'filter=%7B%22order%22%3A%20%20%22id%20DESC%22%7D',
       method: 'GET',
-      dataType: 'JSON'
+      dataType: 'JSON',
+      data: {'order': 'id DESC'}
     }).done((resp) => {
       cb(resp);
     });
@@ -657,9 +659,14 @@ $(document).ready(function() {
     });
   }
 
-  function handleNewBillBoard(message) {
-    if (main.localStorageIO('lastBillBoardSeen') !== message.data) {
-      $('#billContent').text(message.data);
+  function handleNewBillBoard(resp) {
+    const data = typeof main.localStorageIO('lastBillBoardSeen') !== "undefined" && main.localStorageIO('lastBillBoardSeen') !== null ? main.localStorageIO('lastBillBoardSeen') : "";
+    if (
+      data.replace(/\s/gi, '')
+      !== resp.message.replace(/\s/gi, '')
+      && resp.active
+    ) {
+      $('#billContent').html(resp.message);
       $('#billBoard').fadeIn();
     }
   }

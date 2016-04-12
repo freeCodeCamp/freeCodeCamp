@@ -67,7 +67,7 @@
     "dataSource": "db",
     "public": true
   },
-  "BillBoard": {
+  "flyer": {
     "dataSource": "db",
     "public": true
   }
