@@ -202,7 +202,7 @@
       "challengeType": 3,
       "titleRu": "Создайте сайт-портфолио",
       "descriptionRu": [
-        "<strong>Задание:</strong> Создайте приложение <a href='https://codepen.io' target='_blank'>CodePen.io</a> которое функционально соответствует вот этому: <a href='https://codepen.io/FreeCodeCamp/full/VemmoX/' target='_blank'>https://codepen.io/FreeCodeCamp/full/VemmoX/</a>.",
+        "<strong>Задание:</strong> Создайте приложение <a href='https://codepen.io' target='_blank'>CodePen.io</a> которое функционально соответствует вот этому: <a href='https://codepen.io/FreeCodeCamp/full/QNmvEL/' target='_blank'>https://codepen.io/FreeCodeCamp/full/QNmvEL/</a>.",
         "<strong>Правило #1:</strong> Не подсматривайте код приведенного на CodePen примера. Напишите его самостоятельно.",
         "<strong>Правило #2:</strong> Реализуйте следующие <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>пользовательские истории</a>. Используйте любые библиотеки, которые потребуются. Оформите приложение в вашем собственном стиле.",
         "<strong>Пользовательская история:</strong> Я могу получить доступ ко всей информации на странице просто прокрутив ее сверху вниз.",
@@ -218,7 +218,7 @@
       ],
       "titleEs": "Construye una página web para tu portafolio",
       "descriptionEs": [
-        "<strong>Objetivo:</strong> Crea una aplicación con <a href='https://codepen.io' target='_blank'>CodePen.io</a> cuya funcionalidad sea similar a la de esta: <a href='https://codepen.io/FreeCodeCamp/full/VemmoX/' target='_blank'>https://codepen.io/FreeCodeCamp/full/VemmoX/</a>.",
+        "<strong>Objetivo:</strong> Crea una aplicación con <a href='https://codepen.io' target='_blank'>CodePen.io</a> cuya funcionalidad sea similar a la de esta: <a href='https://codepen.io/FreeCodeCamp/full/QNmvEL/' target='_blank'>https://codepen.io/FreeCodeCamp/full/QNmvEL/</a>.",
         "<strong>Regla #1:</strong> No veas el código del proyecto de ejemplo. Encuentra la forma de hacerlo por tu cuenta.",
         "<strong>Regla #2:</strong> Satisface las siguientes <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>historias de usuario</a>. Usa cualquier librería que necesites. Dale tu estilo personal.",
         "<strong>Historia de usuario:</strong> Puedo acceder a todo el contenido de la página del portafolio con sólo desplazarme en la ventana.",
