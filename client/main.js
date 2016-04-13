@@ -639,7 +639,7 @@ $(document).ready(function() {
 
   function getCurrentBillBoard(cb) {
     $.ajax({
-      url: '/api/Flyers/findOne?'
+      url: '/api/flyers/findOne?'
       + 'filter=%7B%22order%22%3A%20%20%22id%20DESC%22%7D',
       method: 'GET',
       dataType: 'JSON',
@@ -666,8 +666,13 @@ $(document).ready(function() {
       !== 'undefined' && main.localStorageIO('lastBillBoardSeen')
       !== null ? main.localStorageIO('lastBillBoardSeen') : '';
     if (
-      data.replace(/\s/gi, '')
-      !== resp.message.replace(/\s/gi, '')
+      data.replace(/\s*/gi, '')
+        .replace(/\&\w*\;/gi, '')
+        .replace(/(\<|\/|\>)/gi, '')
+      !== resp.message
+        .replace(/\s*/gi, '')
+        .replace(/\&\w*\;/gi, '')
+        .replace(/(\<|\/|\>)/gi, '')
       && resp.active
     ) {
       $('#billContent').html(resp.message);
