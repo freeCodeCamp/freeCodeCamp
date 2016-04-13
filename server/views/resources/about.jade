@@ -10,6 +10,10 @@ block content
                     span.text-primary #{daysRunning}
                     | days ago
                 li.nowrap
+                    span.tag Completed:&#9;
+                    span.text-primary #{globalCompletedCount}
+                    | challenges
+                li.nowrap
                     span.tag Donated:&#9;
                     span.text-primary $850,000
                     | in pro-bono code
@@ -100,6 +104,11 @@ block content
                         i.fa.fa-heart
                     td
                         a(href="/how-nonprofit-projects-work") How our nonprofit projects work
+                tr
+                    td.text-center
+                        i.fa.fa-video-camera
+                    td
+                        a(href="//www.youtube.com/watch?v=O993J5KCR_w&list=PLWKjhJtqVAblYWBF6r2jSzwSdn3NgprPl" target='_blank') Nonprofit project demo videos
                 tr
                     td.text-center
                         i.fa.fa-flask

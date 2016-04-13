@@ -1134,13 +1134,16 @@ code {
 }
 
 .night {
-  background-color: #333;
-  color: #999;
+  background-color: @night-body-bg;
+  color: @night-text-color;
   .btn-group,
   .text-success,
   .challenge-list-header,
   .fcc-footer {
-    background-color: #333;
+    background-color: @night-body-bg;
+  }
+  hr {
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0));
   }
   .navbar-default .navbar-nav > li > a {
     color: #CCC;
@@ -1148,31 +1151,52 @@ code {
       background-color: #666;
     }
   }
-  a, .input-group-addon {
+  a, .input-group-addon, .challenge-instructions a, .challenge-instructions #MDN-links a {
     color: #CCC;
+  }
+  .fa-github-square {
+    color: @brand-primary;
+    &:hover {
+      color: #CCC;
+    }
   }
   .black-text {
     color:#111;
   }
   code {
-    background-color: #2A2A2A;
-    color: #006400;
+    background-color: #999;
+    color: @brand-primary;
   }
   .fcc-footer {
     a {
       &hover {
-        background-color: #333;
+        background-color: @night-body-bg;
       }
     }
   }
   .btn-primary {
-    background-color: #006400;
+    background-color: @brand-primary;
+    border-color: #292929;
     color:#CCC;
     transition: color 0.2s, background-color 0.2s;
     &:hover {
       background-color: #ABABAB!important;
-      color: #333!important;
+      color: @night-body-bg!important;
     }
+  }
+  //** Profile's activity board
+  .cal-heatmap-container {
+    background-color: @night-body-bg;
+  }
+  .graph-rect {
+    fill: @night-text-color !important
+  }
+  //** Profile's odd rows
+  .table-striped > tbody > tr:nth-child(odd) {
+    background-color: @gray;
+  }
+  .table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
+    border-color: @night-text-color;
   }
 }
 
