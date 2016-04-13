@@ -1,5 +1,5 @@
 {
-  "name": "Flyer",
+  "name": "flyer",
   "base": "PersistedModel",
   "idInjection": true,
   "trackChanges": false,
