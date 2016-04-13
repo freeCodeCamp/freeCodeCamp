@@ -2592,7 +2592,7 @@
         "<blockquote>function test (myCondition) {<br>  if (myCondition) {<br>     return \"It was true\";<br>  }<br>  return \"It was false\";<br>}<br>test(true);  // returns \"It was true\"<br>test(false); // returns \"It was false\"</blockquote>",
         "When <code>test</code> is called with a value of <code>true</code>, the <code>if</code> statement evaluates <code>myCondition</code> to see if it is <code>true</code> or not. Since it is <code>true</code>, the function returns <code>\"It was true\"</code>. When we call <code>test</code> with a value of <code>false</code>, <code>myCondition</code> is <em>not</em> <code>true</code> and the statement in the curly braces is not executed and the function returns <code>\"It was false\"</code>.",
         "<h4>Instructions</h4>",
-        "Create an <code>if</code> statement inside the function to return <code>\"That was true\"</code> if the parameter <code>wasThatTrue</code> is <code>true</code> and return <code>\"That was false\"</code> otherwise."
+        "Create an <code>if</code> statement inside the function to return <code>\"Yes, that was true\"</code> if the parameter <code>wasThatTrue</code> is <code>true</code> and return <code>\"No, that was false\"</code> otherwise."
       ],
       "challengeSeed": [
         "// Example",
@@ -2618,14 +2618,14 @@
         "trueOrFalse(true);"
       ],
       "solutions": [
-        "function trueOrFalse(wasThatTrue) {\n  if (wasThatTrue) {\n    return \"That was true\";\n  }\n  return \"That was false\";\n}"
+        "function trueOrFalse(wasThatTrue) {\n  if (wasThatTrue) {\n    return \"Yes, that was true\";\n  }\n  return \"No, that was false\";\n}"
       ],
       "tests": [
         "assert(typeof trueOrFalse === \"function\", 'message: <code>trueOrFalse</code> should be a function');",
         "assert(typeof trueOrFalse(true) === \"string\", 'message: <code>trueOrFalse(true)</code> should return a string');",
         "assert(typeof trueOrFalse(false) === \"string\", 'message: <code>trueOrFalse(false)</code> should return a string');",
-        "assert(trueOrFalse(true) === \"That was true\", 'message: <code>trueOrFalse(true)</code> should return \"That was true\"');",
-        "assert(trueOrFalse(false) === \"That was false\", 'message: <code>trueOrFalse(false)</code> should return \"That was false\"');"
+        "assert(trueOrFalse(true) === \"Yes, that was true\", 'message: <code>trueOrFalse(true)</code> should return \"Yes, that was true\"');",
+        "assert(trueOrFalse(false) === \"No, that was false\", 'message: <code>trueOrFalse(false)</code> should return \"No, that was false\"');"
       ],
       "type": "waypoint",
       "challengeType": 1,
