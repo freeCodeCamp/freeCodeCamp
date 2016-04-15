@@ -1,26 +1,26 @@
-import { Disposable, Observable, Scheduler } from 'rx';
+import { Observable } from 'rx';
 import uuid from 'node-uuid';
 import moment from 'moment';
 import dedent from 'dedent';
-import debug from 'debug';
+import debugFactory from 'debug';
+
+import { saveUser, observeMethod } from '../../server/utils/rx';
 import { blacklistedUsernames } from '../../server/utils/constants';
 
-const log = debug('fcc:user:remote');
+const debug = debugFactory('fcc:user:remote');
 const BROWNIEPOINTS_TIMEOUT = [1, 'hour'];
 
-const aboutFilter = {
-  username: true,
-  bio: true
-};
 function getAboutProfile({
   username,
-  bio,
-  points
+  githubProfile: github,
+  progressTimestamps = [],
+  bio
 }) {
   return {
     username,
-    bio,
-    browniePoints: points
+    github,
+    browniePoints: progressTimestamps.length,
+    bio
   };
 }
 
@@ -54,31 +54,8 @@ module.exports = function(User) {
 
   User.on('dataSourceAttached', () => {
     User.findOne$ = Observable.fromNodeCallback(User.findOne, User);
-    User.findById$ = Observable.fromNodeCallback(User.findById, User);
     User.update$ = Observable.fromNodeCallback(User.updateAll, User);
     User.count$ = Observable.fromNodeCallback(User.count, User);
-    // getPointsById$(_id: String|ObjectId) => Observable[Number]
-    User.getPointsById$ = function getPointsById$(id) {
-      return Observable.create(observer => {
-        let isDisposed = false;
-        // safe ObjectID creation
-        // MongoID(id: ObjectID|String) => ObjectID
-        // MongoDB requires id's to be of type ObjectID
-        const _id = this.app.dataSources.db.connector.getDefaultIdType()(id);
-        this.app.dataSources.db.connector
-          .collection('user')
-          .aggregate([
-            { $match: { _id } },
-            { $project: { points: { $size: '$progressTimestamps' } } }
-          ], (err, [ { points = 1 } = {}]) => {
-            if (isDisposed) { return null; }
-            if (err) { return observer.onError(err); }
-            observer.onNext(points);
-            return observer.onCompleted();
-          });
-        return Disposable.create(() => { isDisposed = true; });
-      });
-    };
   });
 
   User.observe('before save', function({ instance: user }, next) {
@@ -99,7 +76,7 @@ module.exports = function(User) {
     next();
   });
 
-  log('setting up user hooks');
+  debug('setting up user hooks');
   User.afterRemote('confirm', function(ctx) {
     ctx.req.flash('success', {
       msg: [
@@ -151,9 +128,9 @@ module.exports = function(User) {
     }
 
     // the email of the requested user
-    log(info.email);
+    debug(info.email);
     // the temp access token to allow password reset
-    log(info.accessToken.id);
+    debug(info.accessToken.id);
     // requires AccessToken.belongsTo(User)
     var mailOptions = {
       to: info.email,
@@ -173,7 +150,7 @@ module.exports = function(User) {
 
     User.app.models.Email.send(mailOptions, function(err) {
       if (err) { console.error(err); }
-      log('email reset sent');
+      debug('email reset sent');
     });
   });
 
@@ -196,7 +173,7 @@ module.exports = function(User) {
     };
 
     if (accessToken && accessToken.id) {
-      log('setting cookies');
+      debug('setting cookies');
       res.cookie('access_token', accessToken.id, config);
       res.cookie('userId', accessToken.userId, config);
     }
@@ -204,7 +181,7 @@ module.exports = function(User) {
     return req.logIn({ id: accessToken.userId.toString() }, function(err) {
       if (err) { return next(err); }
 
-      log('user logged in');
+      debug('user logged in');
 
       if (req.session && req.session.returnTo) {
         var redirectTo = req.session.returnTo;
@@ -240,7 +217,7 @@ module.exports = function(User) {
     if (!username && !email) {
       return Promise.resolve(false);
     }
-    log('checking existence');
+    debug('checking existence');
 
     // check to see if username is on blacklist
     if (username && blacklistedUsernames.indexOf(username) !== -1) {
@@ -253,7 +230,7 @@ module.exports = function(User) {
     } else {
       where.email = email ? email.toLowerCase() : email;
     }
-    log('where', where);
+    debug('where', where);
     return User.count(where)
     .then(count => count > 0);
   };
@@ -294,23 +271,16 @@ module.exports = function(User) {
         ));
       });
     }
-    username = username.toLowerCase();
-    const filter = {
-      where: { username },
-      fields: { id: true, ...aboutFilter }
-    };
-    return User.findOne$(filter)
-      .doOnNext(user => {
-        if (!user || user.username !== username) {
-          throw new Error(`no user found for ${ username }`);
-        }
-      })
-      .flatMap(user => user.getPoints$().map(user))
-      .map(user => getAboutProfile(user))
-      .subscribe(
-        aboutUser => cb(null, aboutUser),
-        cb
-      );
+    return User.findOne({ where: { username } }, (err, user) => {
+      if (err) {
+        return cb(err);
+      }
+      if (!user || user.username !== username) {
+        return cb(new Error(`no user found for ${ username }`));
+      }
+      const aboutUser = getAboutProfile(user);
+      return cb(null, aboutUser);
+    });
   };
 
   User.remoteMethod(
@@ -338,8 +308,7 @@ module.exports = function(User) {
 
   User.giveBrowniePoints =
     function giveBrowniePoints(receiver, giver, data = {}, dev = false, cb) {
-      receiver = receiver.toLowerCase();
-      giver = giver.toLowerCase();
+      const findUser = observeMethod(User, 'findOne');
       if (!receiver) {
         return nextTick(() => {
           cb(
@@ -352,84 +321,63 @@ module.exports = function(User) {
           cb(new TypeError(`giver should be a string but got ${ giver }`));
         });
       }
-      if (giver === receiver) {
-        return nextTick(() => {
-          cb(new Error('giver and receiver must be different users'));
-        });
-      }
       let temp = moment();
       const browniePoints = temp
         .subtract.apply(temp, BROWNIEPOINTS_TIMEOUT)
         .valueOf();
-      const user$ = User.findOne$({
-        where: { username: receiver },
-        fields: {
-          ...aboutFilter,
-          progressTimestamps: true
-        }
-      });
-      const giver$ = User.count$({ username: giver });
-      return Observable.combineLatest(
-        user$,
-        giver$,
-        (user, giver) => ({ doesGiverExist: !!giver, user })
-      )
-        .tapOnNext(({ user, doesGiverExist }) => {
+      const user$ = findUser({ where: { username: receiver }});
+
+      return user$
+        .tapOnNext((user) => {
           if (!user) {
             throw new Error(`could not find receiver for ${ receiver }`);
           }
-          if (!doesGiverExist) {
-            throw new Error(`no user found for giver '${giver}'`);
-          }
         })
         .flatMap(({ progressTimestamps = [] }) => {
-          return Observable.from(
-            progressTimestamps,
-            null,
-            null,
-            Scheduler.default
-          );
+          return Observable.from(progressTimestamps);
         })
         // filter out non objects
         .filter((timestamp) => !!timestamp || typeof timestamp === 'object')
         // filterout timestamps older then an hour
-        .filter(({ timestamp = 0 }) => timestamp >= browniePoints)
+        .filter(({ timestamp = 0 }) => {
+          return timestamp >= browniePoints;
+        })
         // filter out brownie points given by giver
-        .filter(browniePoint => browniePoint.giver === giver)
+        .filter((browniePoint) => {
+          return browniePoint.giver === giver;
+        })
         // no results means this is the first brownie point given by giver
         // so return -1 to indicate receiver should receive point
         .first({ defaultValue: -1 })
-        .flatMap(browniePointsFromGiver => {
+        .flatMap((browniePointsFromGiver) => {
           if (browniePointsFromGiver === -1) {
-            const updateData = {
-              $push: {
-                progressTimestamps: {
-                  giver,
-                  timestamp: Date.now()
-                }
-              }
-            };
-            return user$
-              .flatMap(user => user.update$(updateData).map(user))
-              .doOnNext(user => {
-                user.points = user.progressTimestamps.length + 1;
+
+            return user$.flatMap((user) => {
+              user.progressTimestamps.push({
+                giver,
+                timestamp: Date.now(),
+                ...data
               });
+              return saveUser(user);
+            });
           }
           return Observable.throw(
             new Error(`${ giver } already gave ${ receiver } points`)
           );
         })
         .subscribe(
-          user => cb(
-            null,
-            getAboutProfile(user),
-            dev ?
-              { giver, receiver, data } :
-              null
-          ),
-          e => cb(e, null, dev ? { giver, receiver, data } : null),
+          (user) => {
+            return cb(
+              null,
+              getAboutProfile(user),
+              dev ?
+                { giver, receiver, data } :
+                null
+            );
+          },
+          (e) => cb(e, null, dev ? { giver, receiver, data } : null),
           () => {
-            log('brownie points assigned completed');
+            debug('brownie points assigned completed');
           }
         );
     };
@@ -475,7 +423,7 @@ module.exports = function(User) {
     }
   );
 
-  // user.update$(updateData: Object) => Observable[Number]
+  // user.updateTo$(updateData: Object) => Observable[Number]
   User.prototype.update$ = function update$(updateData) {
     const id = this.getId();
     const updateOptions = { allowExtendedOperators: true };
@@ -493,7 +441,7 @@ module.exports = function(User) {
     }
     return this.constructor.update$({ id }, updateData, updateOptions);
   };
-  User.prototype.getTimestamps = function getTimestamps() {
+  User.prototype.getPoints$ = function getPoints$() {
     const id = this.getId();
     const filter = {
       where: { id },
@@ -516,12 +464,5 @@ module.exports = function(User) {
         this.challengeMap = user.challengeMap;
         return user.challengeMap;
       });
-  };
-  // user.getPoints$() => Observable[Number]
-  User.prototype.getPoints$ = function getPoints$() {
-    const id = this.getId();
-    return this.constructor
-      .getPointsById$(id)
-      .doOnNext(points => { this.points = points; });
   };
 };
