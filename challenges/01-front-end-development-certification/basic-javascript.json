@@ -985,7 +985,8 @@
       "description": [
         "<dfn>String</dfn> values in JavaScript may be written with single or double quotes, so long as you start and end with the same type of quote. Unlike some languages, single and double quotes are functionally identical in JavaScript.",
         "<code>\"This string has \\\"double quotes\\\" in it\"</code>",
-        "The value in using one or the other has to do with the need to <dfn>escape</dfn> quotes of the same type. If you have a string with many double quotes, this can be difficult to read and write. Instead, use single quotes:",
+        "The value in using one or the other has to do with the need to <dfn>escape</dfn> quotes of the same type. Unless they are escaped, you cannot have more than one pair of whichever quote type begins a string.",
+        "If you have a string with many double quotes, this can be difficult to read and write. Instead, use single quotes:",
         "<code>'This string has \"double quotes\" in it. And \"probably\" lots of them.'</code>",
         "<h4>Instructions</h4>",
         "Change the provided string from double to single quotes and remove the escaping."
@@ -3445,9 +3446,6 @@
       "solutions": [
         "function caseInSwitch(val) {\n  var answer = \"\";\n\n  switch (val) {\n    case 1:\n      answer = \"alpha\";\n      break;\n    case 2:\n      answer = \"beta\";\n      break;\n    case 3:\n      answer = \"gamma\";\n      break;\n    case 4:\n      answer = \"delta\";\n  }\n  return answer;  \n}"
       ],
-      "MDNlinks": [
-        "Switch Statement"
-      ],
       "tests": [
         "assert(caseInSwitch(1) === \"alpha\", 'message: <code>caseInSwitch(1) should have a value of \"alpha\"');",
         "assert(caseInSwitch(2) === \"beta\", 'message: <code>caseInSwitch(2) should have a value of \"beta\"');",
@@ -3457,6 +3455,9 @@
         "assert(code.match(/break/g).length > 2, 'message: You should have at least 3 <code>break</code> statements');"
       ],
       "type": "waypoint",
+      "MDNlinks": [
+        "Switch Statement"
+      ],
       "challengeType": 1,
       "titleEs": "Seleccionar desde diferentes opciones con la sentencia switch",
       "descriptionEs": [
