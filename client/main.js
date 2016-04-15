@@ -612,4 +612,31 @@ $(document).ready(function() {
     // Repo
     window.location = 'https://github.com/freecodecamp/freecodecamp/';
   });
+
+  (function getFlyer() {
+    const flyerKey = '__flyerId__';
+    $.ajax({
+      url: '/api/flyers/findOne',
+      method: 'GET',
+      dataType: 'JSON',
+      data: { filter: { order: 'id DESC' } }
+    })
+    // log error
+    .fail(err => console.error(err))
+    .done(flyer => {
+      const lastFlyerId = localStorage.getItem(flyerKey);
+      if (
+        !flyer ||
+        !flyer.isActive ||
+        lastFlyerId === flyer.id
+      ) {
+        return;
+      }
+      $('#dismiss-bill').on('click', () => {
+        localStorage.setItem(flyerKey, flyer.id);
+      });
+      $('#bill-content').html(flyer.message);
+      $('#bill-board').fadeIn();
+    });
+  }());
 });
