@@ -94,27 +94,27 @@
     },
     {
       "id": "560ade65cb82ac38a17513c2",
-      "title": "Watch us Code Live on Twitch.tv",
+      "title": "Watch Coding Videos on our YouTube Channel",
       "description": [
         [
-          "//i.imgur.com/8rtyRY1.gif",
-          "A gif showing how you can sign up for Twitch.tv and follow our channel.",
-          "Our campers frequently code live on Twitch.tv, a popular streaming website. You can create an account in less than a minute, then follow Free Code Camp's channel. When you follow, you'll get the option of receiving an email notification each time one of our campers goes live. You can then join dozens of other campers and watch them code, and interact in a chat room. This is a fun, casual way to learn by watching people build projects.",
-          "https://twitch.tv/freecodecamp"
+          "//i.imgur.com/4jUhEsb.jpg",
+          "An image of Briana at the whiteboard teaching in a YouTube video.",
+          "Our community's YouTube channel features video tutorials and demos of projects that campers have built for nonprofits. We add new videos every week. The button below will take you to our YouTube channel, where you can subscribe for free.",
+          "https://www.youtube.com/channel/UC8butISFwT-Wl7EV0hUK0BQ?sub_confirmation=1"
         ]
       ],
-      "releasedOn": "February 10, 2016",
+      "releasedOn": "April 15, 2016",
       "challengeSeed": [],
       "tests": [],
       "type": "Waypoint",
       "challengeType": 7,
-      "titleEs": "Miranos programar en vivo por Twitch.tv",
+      "titleEs": "Miranos programar en vivo por YouTube",
       "descriptionEs": [
         [
-          "//i.imgur.com/8rtyRY1.gif",
-          "Un gif mostrando cómo resgistrarse en Twitch.tv y seguir nuestro canal.",
-          "Nuestros campistas programan en vivo con frecuencia en Twitch.tv, un sitio web popular de streaming. Puedes crear una cuenta en menos de un minuto, luego, sigue al canal de Free Code Camp. Cuando sigas al canal, verás la opción de recibir una notificación por correo electrónico cada vez que uno de nuestros campistas esté en vivo. Puedes unirte a docenas de otros campistas y verlos programar, e interactuar en una sala de chat. Esta es una manera divertida e informal de aprender observando a las personas a construir proyectos.",
-          "https://twitch.tv/freecodecamp"
+          "//i.imgur.com/4jUhEsb.jpg",
+          "An image of Briana at the whiteboard teaching in a YouTube video.",
+          "Our community's YouTube channel features video tutorials and demos of projects that campers have built for nonprofits. We add new videos every week. The button below will take you to our YouTube channel, where you can subscribe for free.",
+          "https://www.youtube.com/channel/UC8butISFwT-Wl7EV0hUK0BQ?sub_confirmation=1"
         ]
       ]
     },
