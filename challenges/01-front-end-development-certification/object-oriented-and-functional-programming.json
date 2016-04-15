@@ -321,6 +321,9 @@
       "tail": [
         "(function() {return newArray;})();"
       ],
+      "solutions": [
+        "var oldArray = [1,2,3,4,5];\nvar newArray = oldArray.map(function(val){\n  return val + 3;\n});"
+      ],
       "tests": [
         "assert.deepEqual(oldArray, [1,2,3,4,5], 'message: You should not change the original array.');",
         "assert.deepEqual(newArray, [4,5,6,7,8], 'message: You should add three to each value in the array.');",
@@ -363,6 +366,9 @@
       "tail": [
         "(function() {return singleVal;})();"
       ],
+      "solutions": [
+        "var array = [4,5,6,7,8];\nvar singleVal = 0;\nsingleVal = array.reduce(function(previousVal, currentVal) {\n  return previousVal + currentVal;\n}, 0);"
+      ],
       "tests": [
         "assert(singleVal == 30, 'message: <code>singleVal</code> should be equal to the sum of all items in the <code>array</code> variable.');",
         "assert(editor.getValue().match(/\\.reduce\\s*\\(/gi), 'message: You should have made use of the <code>reduce</code> method.');"
@@ -402,6 +408,9 @@
       ],
       "tail": [
         "(function() {return newArray;})();"
+      ],
+      "solutions": [
+        "var oldArray = [1,2,3,4,5,6,7,8,9,10];\nvar newArray = oldArray.filter(function(val) {\n  return val < 6;\n});"
       ],
       "tests": [
         "assert.deepEqual(oldArray, [1,2,3,4,5,6,7,8,9,10], 'message: You should not change the original array.');",
@@ -446,6 +455,9 @@
       "tail": [
         "(function() {return array;})();"
       ],
+      "solutions": [
+        "var array = [1, 12, 21, 2];\narray.sort(function(a, b) {\n  return b - a;\n});"
+      ],
       "tests": [
         "assert.deepEqual(array, [21, 12, 2, 1], 'message: You should have sorted the array from largest to smallest.');",
         "assert(editor.getValue().match(/\\[1,\\s*12,\\s*21,\\s*2\\];/gi), 'message: You should only be using <code>sort</code> to modify the array.');",
@@ -487,6 +499,9 @@
       "tail": [
         "(function() {return newArray;})();"
       ],
+      "solutions": [
+        "var array = [1,2,3,4,5,6,7];\nvar newArray = [];\nnewArray = array.reverse();"
+      ],
       "tests": [
         "assert.deepEqual(newArray, [7,6,5,4,3,2,1], 'message: You should reverse the array.');",
         "assert(editor.getValue().match(/\\.reverse\\s*\\(\\)/gi), 'message: You should use the <code>reverse</code> method.');",
@@ -527,6 +542,9 @@
       "tail": [
         "(function() {return newArray;})();"
       ],
+      "solutions": [
+        "var oldArray = [1,2,3];\nvar newArray = [];\nvar concatMe = [4,5,6];\nnewArray = oldArray.concat(concatMe);"
+      ],
       "tests": [
         "assert.deepEqual(newArray, [1,2,3,4,5,6], 'message: You should concatenate the two arrays together.');",
         "assert(editor.getValue().match(/\\.concat\\s*\\(/gi), 'message: You should be using the <code>concat</code> method to merge the two arrays.');",
@@ -564,6 +582,9 @@
       "tail": [
         "(function() {return array;})();"
       ],
+      "solutions": [
+        "var string = \"Split me into an array\";\nvar array = [];\narray = string.split(\" \");"
+      ],
       "tests": [
         "assert(/\\.split\\(/gi, 'message: You should use the <code>split</code> method on the string.');",
         "assert(typeof array === 'object' && array.length === 5, 'message: You should split the string by its spaces.');"
@@ -598,6 +619,9 @@
       ],
       "tail": [
         "(function() {return joinedString;})();"
+      ],
+      "solutions": [
+        "var joinMe = [\"Split\",\"me\",\"into\",\"an\",\"array\"];\nvar joinedString = '';\njoinedString = joinMe.join(\" \");"
       ],
       "tests": [
         "assert(typeof joinedString === 'string' && joinedString === \"Split me into an array\", 'message: You should join the elements of the array with spaces.');",
