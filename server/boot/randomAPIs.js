@@ -177,7 +177,11 @@ module.exports = function(app) {
         });
         return res.redirect('/map');
       }
-      return user.updateAttribute('sendMonthlyEmail', false, (err) => {
+      return user.updateAttributes({
+        'sendMonthlyEmail': false,
+        'sendQuincyEmail': false,
+        'sendNotificationEmail': false
+      }, (err) => {
         if (err) { return next(err); }
         req.flash('info', {
           msg: 'We\'ve successfully updated your Email preferences.'
@@ -219,7 +223,11 @@ module.exports = function(app) {
         });
         return res.redirect('/map');
       }
-      return user.updateAttribute('sendQuincyEmail', false, (err) => {
+      return user.updateAttributes({
+        'sendQuincyEmail': false,
+        'sendMonthlyEmail': false,
+        'sendNotificationEmail': false
+      }, (err) => {
         if (err) { return next(err); }
         req.flash('info', {
           msg: 'We\'ve successfully updated your Email preferences.'
