@@ -124,30 +124,6 @@ main = (function(main, global) {
     Mousetrap.bind('g c', toggleMainChat);
   });
 
-  function localStorageIO(item = '', input = null) {
-    if (input) {
-      try {
-        input = typeof input === 'string' ? input : JSON.stringify(input);
-      } catch (e) {
-        // Do Nothing
-      }
-      localStorage.setItem(item, input);
-      return input;
-    } else {
-      let data = typeof localStorage.getItem(item)
-        !== 'undefined' && localStorage.getItem(item)
-        !== null ? localStorage.getItem(item) : '';
-      try {
-        data = JSON.parse(data);
-      } catch (e) {
-        // Do Nothing
-      }
-      return data;
-    }
-  }
-
-  main.localStorageIO = localStorageIO;
-
   return main;
 }(main, window));
 
@@ -636,49 +612,4 @@ $(document).ready(function() {
     // Repo
     window.location = 'https://github.com/freecodecamp/freecodecamp/';
   });
-
-  function getCurrentBillBoard(cb) {
-    $.ajax({
-      url: '/api/flyers/findOne?'
-      + 'filter=%7B%22order%22%3A%20%20%22id%20DESC%22%7D',
-      method: 'GET',
-      dataType: 'JSON',
-      data: {'order': 'id DESC'}
-    }).done((resp) => {
-      cb(resp);
-    });
-    $('#dismissBill').on('click', (e) => {
-      const elemData
-        = e.target.parentNode.parentNode.children;
-
-      const res
-        = elemData[Object.keys(elemData).filter((key)=> {
-        return elemData[key].id === 'billContent';
-
-      })[0]].innerHTML;
-
-      main.localStorageIO('lastBillBoardSeen', res);
-    });
-  }
-
-  function handleNewBillBoard(resp) {
-    const data = typeof main.localStorageIO('lastBillBoardSeen')
-      !== 'undefined' && main.localStorageIO('lastBillBoardSeen')
-      !== null ? main.localStorageIO('lastBillBoardSeen') : '';
-    if (
-      data.replace(/\s*/gi, '')
-        .replace(/\&\w*\;/gi, '')
-        .replace(/(\<|\/|\>)/gi, '')
-      !== resp.message
-        .replace(/\s*/gi, '')
-        .replace(/\&\w*\;/gi, '')
-        .replace(/(\<|\/|\>)/gi, '')
-      && resp.active
-    ) {
-      $('#billContent').html(resp.message);
-      $('#billBoard').fadeIn();
-    }
-  }
-
-  getCurrentBillBoard(handleNewBillBoard);
 });
