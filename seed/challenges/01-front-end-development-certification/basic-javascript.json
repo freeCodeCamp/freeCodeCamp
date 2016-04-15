@@ -4168,7 +4168,7 @@
         "(function(z){return z;})(myDog);"
       ],
       "solutions": [
-        "var ourDog = {\n  \"name\": \"Camper\",\n  \"legs\": 4,\n  \"tails\": 1,\n  \"friends\": [\"everything!\"],\n  \"bark\": \"bow-wow\"\n};\n\nvar myDog = {\n  \"name\": \"Happy Coder\",\n  \"legs\": 4,\n  \"tails\": 1,\n  \"friends\": [\"Free Code Camp Campers\"],\n  \"bark\": \"woof\"\n};\n\ndelete myDog.tails;"
+        "var ourDog = {\n  \"name\": \"Camper\",\n  \"legs\": 4,\n  \"tails\": 1,\n  \"friends\": [\"everything!\"],\n  \"bark\": \"bow-wow\"\n};\nvar myDog = {\n  \"name\": \"Happy Coder\",\n  \"legs\": 4,\n  \"tails\": 1,\n  \"friends\": [\"Free Code Camp Campers\"],\n  \"bark\": \"woof\"\n};\ndelete myDog.tails;"
       ],
       "tests": [
         "assert(myDog.tails === undefined, 'message: Delete the property <code>\"tails\"</code> from <code>myDog</code>.');",
@@ -4572,8 +4572,8 @@
         "The <code>initialization</code> statement is executed one time only before the loop starts. It is typically used to define and setup your loop variable.",
         "The <code>condition</code> statement is evaluated at the beginning of every loop iteration and will continue as long as it evalutes to <code>true</code>. When <code>condition</code> is <code>false</code> at the start of the iteration, the loop will stop executing. This means if <code>condition</code> starts as <code>false</code>, your loop will never execute.",
         "The <code>final-expression</code> is executed at the end of each loop iteration, prior to the next <code>condition</code> check and is usually used to increment or decrement your loop counter.",
-        "In the following example we initialize with <code>i = 0</code> and iterate while our condition <code>i < 5</code> is true. We'll increment <code>i</code> by <code>1</code> in each loop iteration with <code>i++</code> as our <code>final-expression</code>.",
-        "<blockquote>var ourArray = [];<br>for (var i = 0; i < 5; i++) {<br>  ourArray.push(i);<br>}</blockquote>",
+        "In the following example we initialize with <code>i = 0</code> and iterate while our condition <code>i &#60; 5</code> is true. We'll increment <code>i</code> by <code>1</code> in each loop iteration with <code>i++</code> as our <code>final-expression</code>.",
+        "<blockquote>var ourArray = [];<br>for (var i = 0; i &#60; 5; i++) {<br>  ourArray.push(i);<br>}</blockquote>",
         "<code>ourArray</code> will now contain <code>[0,1,2,3,4]</code>.",
         "<h4>Instructions</h4>",
         "Use a <code>for</code> loop to work to push the values 1 through 5 onto <code>myArray</code>."
@@ -4629,8 +4629,8 @@
       "title": "Iterate Odd Numbers With a For Loop",
       "description": [
         "For loops don't have to iterate one at a time. By changing our <code>final-expression</code>, we can count by even numbers.",
-        "We'll start at <code>i = 0</code> and loop while <code>i < 10</code>. We'll increment <code>i</code> by 2 each loop with <code>i += 2</code>.",
-        "<blockquote>var ourArray = [];<br>for (var i = 0; i < 10; i += 2) {<br>  ourArray.push(i);<br>}</blockquote>",
+        "We'll start at <code>i = 0</code> and loop while <code>i &#60; 10</code>. We'll increment <code>i</code> by 2 each loop with <code>i += 2</code>.",
+        "<blockquote>var ourArray = [];<br>for (var i = 0; i &#60; 10; i += 2) {<br>  ourArray.push(i);<br>}</blockquote>",
         "<code>ourArray</code> will now contain <code>[0,2,4,6,8]</code>.",
         "Let's change our <code>initialization</code> so we can count by odd numbers.",
         "<h4>Instructions</h4>",
@@ -4683,8 +4683,8 @@
       "description": [
         "A for loop can also count backwards, so long as we can define the right conditions.",
         "In order to count backwards by twos, we'll need to change our <code>initialization</code>, <code>condition</code>, and <code>final-expression</code>.",
-        "We'll start at <code>i = 10</code> and loop while <code>i > 0</code>. We'll decrement <code>i</code> by 2 each loop with <code>i -= 2</code>.",
-        "<blockquote>var ourArray = [];<br>for (var i=10; i > 0; i-=2) {<br>  ourArray.push(i);<br>}</blockquote>",
+        "We'll start at <code>i = 10</code> and loop while <code>i &#62; 0</code>. We'll decrement <code>i</code> by 2 each loop with <code>i -= 2</code>.",
+        "<blockquote>var ourArray = [];<br>for (var i=10; i &#62; 0; i-=2) {<br>  ourArray.push(i);<br>}</blockquote>",
         "<code>ourArray</code> will now contain <code>[10,8,6,4,2]</code>.",
         "Let's change our <code>initialization</code> and <code>final-expression</code> so we can count backward by twos by odd numbers.",
         "<h4>Instructions</h4>",
@@ -4833,7 +4833,7 @@
       "description": [
         "You can run the same code multiple times by using a loop.",
         "Another type of JavaScript loop is called a \"<code>while loop</code>\", because it runs \"while\" a specified condition is true and stops once that condition is no longer true.",
-        "<blockquote>var ourArray = [];<br>var i = 0;<br>while(i < 5) {<br>  ourArray.push(i);<br>  i++;<br>}</blockquote>",
+        "<blockquote>var ourArray = [];<br>var i = 0;<br>while(i &#60; 5) {<br>  ourArray.push(i);<br>  i++;<br>}</blockquote>",
         "Let's try getting a while loop to work by pushing values to an array.",
         "<h4>Instructions</h4>",
         "Push the numbers 0 through 4 to <code>myArray</code> using a <code>while</code> loop."
@@ -5017,7 +5017,7 @@
         "(function(){return randomWholeNum();})();"
       ],
       "solutions": [
-        "var randomNumberBetween0and19 = Math.floor(Math.random() * 20);\n\nfunction randomWholeNum() {\n  return Math.floor(Math.random() * 10);\n}"
+        "var randomNumberBetween0and19 = Math.floor(Math.random() * 20);\nfunction randomWholeNum() {\n  return Math.floor(Math.random() * 10);\n}"
       ],
       "tests": [
         "assert(typeof randomWholeNum() === \"number\" && (function(){var r = randomWholeNum();return Math.floor(r) === r;})(), 'message: The result of <code>randomWholeNum</code> should be a whole number.');",
@@ -5153,7 +5153,7 @@
         "(function(){return andCount;})();"
       ],
       "solutions": [
-        "var testString = \"Ada Lovelace and Charles Babbage designed the first computer and the software that would have run on it.\";\nvar expression = /and/gi;  // Change this Line\nvar andCount = testString.match(expression).length;"
+        "var testString = \"Ada Lovelace and Charles Babbage designed the first computer and the software that would have run on it.\";\nvar expression = /and/gi;\nvar andCount = testString.match(expression).length;"
       ],
       "tests": [
         "assert(andCount==2, 'message: Your <code>regular expression</code> should find two occurrences of the word <code>and</code>.');",
@@ -5207,7 +5207,7 @@
         "(function(){return digitCount;})();"
       ],
       "solutions": [
-        "var testString = \"There are 3 cats but 4 dogs.\";\nvar expression = /\\d+/g;  // Change this line\nvar digitCount = testString.match(expression).length;"
+        "var testString = \"There are 3 cats but 4 dogs.\";\nvar expression = /\\d+/g;\nvar digitCount = testString.match(expression).length;"
       ],
       "tests": [
         "assert(digitCount === 2, 'message: Your regular expression should find two numbers in <code>testString</code>.');",
@@ -5256,7 +5256,7 @@
         "(function(){return spaceCount;})();"
       ],
       "solutions": [
-        "var testString = \"How many spaces are there in this sentence?\";\nvar expression = /\\s+/g;  // Change this line\nvar spaceCount = testString.match(expression).length;"
+        "var testString = \"How many spaces are there in this sentence?\";\nvar expression = /\\s+/g;\nvar spaceCount = testString.match(expression).length;"
       ],
       "tests": [
         "assert(spaceCount === 7, 'message: Your regular expression should find seven spaces in <code>testString</code>.');",
