@@ -8,7 +8,7 @@
       "id": "bd7168d8c242eddfaeb5bd13",
       "title": "Visualize Data with a Bar Chart",
       "description": [
-        "<strong>Objective:</strong> Build a <a href='https://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='https://codepen.io/FreeCodeCamp/full/adBBWd' target='_blank'>https://codepen.io/FreeCodeCamp/full/adBBWd</a>.",
+        "<strong>Objective:</strong> Build a <a href='https://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='https://codepen.io/FreeCodeCamp/full/vGjLVZ' target='_blank'>https://codepen.io/FreeCodeCamp/full/vGjLVZ</a>.",
         "<strong>Rule #1:</strong> Don't look at the example project's code. Figure it out for yourself.",
         "<strong>Rule #2:</strong> Fulfill the below <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
         "<strong>Rule #3:</strong> You must use D3.js to build this project.",
@@ -29,7 +29,7 @@
       "challengeType": 3,
       "titleEs": "Visualiza datos utilizando un gráfico de barras",
       "descriptionEs": [
-        "<strong>Objetivo:</strong> Construye una aplicación en <a href='https://codepen.io' target='_blank'>CodePen.io</a> que funcione de forma similar al siguiente ejemplo: <a href='https://codepen.io/FreeCodeCamp/full/adBBWd' target='_blank'>https://codepen.io/FreeCodeCamp/full/adBBWd</a>.",
+        "<strong>Objetivo:</strong> Construye una aplicación en <a href='https://codepen.io' target='_blank'>CodePen.io</a> que funcione de forma similar al siguiente ejemplo: <a href='https://codepen.io/FreeCodeCamp/full/vGjLVZ' target='_blank'>https://codepen.io/FreeCodeCamp/full/vGjLVZ</a>.",
         "<strong>Regla #1:</strong> No veas el código del proyecto de ejemplo. Encuentra la forma de hacerlo por tu cuenta.",
         "<strong>Regla #2:</strong> Satisface las siguientes <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>historias de usuario</a>. Usa cualquier librería o API que sea necesaria. ¡Ponle un toque personal!.",
         "<strong>Regla #3:</strong> Debes utilizar D3.js para construir este proyecto.",
