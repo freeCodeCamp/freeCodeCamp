@@ -26,6 +26,20 @@
         "Sobald du eine Challenge abgeschlossen hast und alle Tests erfolgreich sind, wird der Button \"Go to my next challenge\" aktiv. Klicke auf diesen – oder drücke Steuerung (Control) und gleichzeitig Enter – um zur nächsten Challenge zu gehen.",
         "Um den Button \"Go to my next challenge\" dieser Lektion zu aktivieren, ändere den Inhalt des <code>h1</code> Tags von \"Hello\" zu \"Hello World\"."
       ],
+      "titleRU": "Скажи привет HTML-элементам",
+      "descriptionRU": [
+        "Добро пожаловать на первое программное испытание Free Code Camp.",
+        "Вы можете редактировать <code>код</code> в вашем <code>текстовом редакторе</code>, который мы встроили в эту web-страницу.",
+        "Видите этот код в вашем текстовом редакторе: <code>&#60;h1&#62;Hello&#60;/h1&#62;</code>? Это HTML <code>элемент</code>.",
+        "Большинство HTML-элементов имеют <code>открывающую метку</code> <code>закрывающую метку</code>.",
+        "Открывающие метки выглядят так:",
+        "<code>&#60;h1&#62;</code>",
+        "Закрывающие метки выглядят следующим образом:",
+        "<code>&#60;/h1&#62;</code>",
+        "Обратите внимание, что единственная разница между открывающими и закрывающими метками заключается в наличии косой черты после открывающей треугольной скобки.",
+        "Каждое испытание имеет функцию проверки решения, которую вы можете запустить в любой момент нажатием на кнопку \"Run tests\". Как только ваше решение будет удовлетворять всем требованиям, вы сможете перейти к следующему испытанию.",
+        "Для прохождения этого испытания измените текст элемента <code>h1</code> с \"Hello\" на \"Hello World\". Затем нажмите кнопку \"Run tests\"."
+      ],
       "title": "Say Hello to HTML Elements",
       "description": [
         "Welcome to Free Code Camp's first coding challenge.",
@@ -81,6 +95,14 @@
         "Dieses Element sagt dem Browser, wie der darin enthaltene Text gerendert wird.",
         "<code>h2</code> Elemente sind ein wenig kleiner als <code>h2</code> Elemente. Es gibt auch <code>h3</code>, <code>h4</code>, <code>h5</code> und <code>h6</code> Elemente."
       ],
+      "titleRU": "Заголовок с применением элемента h2",
+      "descriptionRU": [
+        "В результате прохождения нескольких следующих испытаний, мы построим HTML5 приложение, которое будет похоже на это:",
+        "<a href=\"//i.imgur.com/jOc1JF1.png\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" src=\"//i.imgur.com/jOc1JF1.png\" title=\"Click to enlarge\" alt=\"A screen shot of our finished Cat Photo App\"></a>",
+        "Вводимый вами элемент <code>h2</code> создаст соответствующий элемент <code>h2</code> на web-странице.",
+        "Этот элемент сообщает браузеру о структуре вашего web-сайта. Элементы <code>h1</code> часто применяют в качестве главных заголовков, в то время как элементы <code>h2</code> обычно используют для обозначения позаголовков. Также существуют элементы <code>h3</code>, <code>h4</code>, <code>h5</code> и <code>h6</code> для обозначения отдельных секций.",
+        "Добавьте метку <code>h2</code> с текстом \"CatPhotoApp\" для создания второго HTML <code>элемента</code> под вашим элементом <code>h1</code> с текстом \"Hello World\"."
+      ],
       "title": "Headline with the h2 Element",
       "description": [
         "Over the next few challenges, we'll build an HTML5 app that will look something like this:",
@@ -125,6 +147,13 @@
         "<code>p</code> Elemente sind das bevorzugte Element für normalen Paragraphen-Text auf einer Website. P ist die Abkürzung für \"Paragraph\".",
         "Du kannst ein <code>p</code> Element so erzeugen: <code>&#60;p&#62;Ich bin ein p Element!&#60;/p&#62;</code>"
       ],
+      "titleRU": "Проинформируйте с применением элемента p",
+      "descriptionRU": [
+        "Элементы <code>p</code> предпочтительно использовать для обозначения параграфов с текстом нормального размера в web-сайтах. P - сокращение от \"paragraph\".",
+        "Вы можете создать элемент <code>p</code> следующим образом:",
+        "<code>&#60;p&#62;Я метка p!&#60;/p&#62;</code>",
+        "Создайте элемент <code>p</code> под вашим элементом <code>h2</code> и присвойте ему текст \"Hello Paragraph\"."
+      ],
       "title": "Inform with the Paragraph Element",
       "description": [
         "<code>p</code> elements are the preferred element for normal-sized paragraph text on websites. P is short for \"paragraph\".",
@@ -166,6 +195,13 @@
         "Kommentieren erlaubt dir Kommentare innerhalb des Codes zu hinterlassen, ohne diesen selbst zu beeinflussen.",
         "Dies ist auch ein guter Weg, um Code inaktiv zu machen ohne diesen komplett löschen zu müssen.",
         "Du kannst einen Kommentar mit <code>&#60;!--</code> starten und ihn mit <code>--&#62;</code> wieder beenden."
+      ],
+      "titleRU": "Раскомментируйте HTML",
+      "descriptionRU": [
+        "Комментирование - способ хранения заметок по коду без воздействия на сам код.",
+        "Также комментирование - неплохой метод отключения части кода без необходимости его удаления.",
+        "Вы можете начать комментарий с <code>&#60;!--</code> и закончить его <code>--&#62;</code>",
+        "Раскомментируйте свои элементы <code>h1</code>, <code>h2</code> и <code>p</code>."
       ],
       "title": "Uncomment HTML",
       "description": [
@@ -212,6 +248,12 @@
         "Kommentiere die Elemente <code>h1</code> und <code>p</code> aus, aber lasse dein <code>h2</code> Element unkommentiert.",
         "Denk daran, dass du einen Kommentar mit <code>&#60;!--</code> anfangen und mit <code>--&#62;</code> wieder beenden kannst.",
         "Hier wirst du deinen Kommentar vor dem <code>h2</code> Element beenden müssen."
+      ],
+      "titleRU": "Закомментируйте HTML",
+      "descriptionRU": [
+        "Помните, что для начала комментария вам необходимо использовать <code>&#60;!--</code>, а для завершения комментария - <code>--&#62;</code>",
+        "Тут вам необходимо завершить комментарий до начала вашего элемента <code>h2</code>.",
+        "Закомментируйте ваши элементы <code>h1</code> и <code>p</code>, но оставьте ваш элемент <code>h2</code> раскомментированным."
       ],
       "title": "Comment out HTML",
       "description": [
@@ -260,6 +302,13 @@
         "Nun gut, fünf Jahrhunderte sind lange genug. Da wir eine CatPhotoApp entwickeln, lass uns stattdessen lieber \"Kitty Ipsum\" nutzen!",
         "Hier sind die ersten paar Wörter von \"Kitty Ipsum\", die du kopieren und an die richtige Stelle einfügen kannst: <code>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</code>"
       ],
+      "titleRU": "Заполните пустоты замещающим текстом",
+      "descriptionRU": [
+        "Традиционно web-разработчики используют текст <code>lorem ipsum</code> в качестве замещающего текста. Он называется тектсом <code>lorem ipsum</code> по первым двум словам известного пассажа Цицерона из Древнего Рима.",
+        "Текст <code>lorem ipsum</code> применяется в качестве замещающего текста наборщиками с 16-го века, и эта традиция продолжается в сети.",
+        "5 веков довольно долгий период. Так как мы строим приложение CatPhotoApp, давайте используем нечто называемое текстом <code>kitty ipsum</code>.",
+        "Замените текст внутри вашего элемента <code>p</code> первыми двумя словами текста <code>kitty ipsum</code>: <code>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</code>"
+      ],
       "title": "Fill in the Blank with Placeholder Text",
       "description": [
         "Web developers traditionally use <code>lorem ipsum text</code> as placeholder text. It's called lorem ipsum text because those are the first two words of a famous passage by Cicero of Ancient Rome.",
@@ -300,6 +349,12 @@
         "Lösche die Elemente <code>h1</code>, damit wir etwas Ordnung schaffen.",
         "Unser Smartphone hat nicht sehr viel vertikalen Raum.",
         "Lass uns die unwichtigen Elemente entfernen, damit wir unsere CatPhotoApp bauen können."
+      ],
+      "titleRU": "Удалите HTML-элементы",
+      "descriptionRU": [
+        "Наш телефон не очень большой по-вертикали.",
+        "Давайте удалим некоторые ненужные элементы, чтобы мы могли приступить к созданию приложения CatPhotoApp.",
+        "Удалите ваш <code>h1</code> элемент, чтобы упростить общий вид."
       ],
       "title": "Delete HTML Elements",
       "description": [
@@ -344,6 +399,15 @@
         "Ändere den Style des <code>h2</code> Elements, damit die Textfarbe Rot ist.",
         "Wir können das bewerkstelligen, indem wir den \"style\" des <code>h2</code> Elements ändern.",
         "So könntest du die Textfarbe des <code>h2</code> Elements in Blau ändern: <code>&#60;h2 style=\"color: blue\"&#62;CatPhotoApp&#60;/h2&#62;</code>"
+      ],
+      "titleRU": "Измените цвет текста",
+      "descriptionRU": [
+        "Теперь давайте изменим цвет части нашего текста.",
+        "Мы можем сделать это изменив <code>style</code> нашего элемента <code>h2</code>.",
+        "Параметр стиля, отвечающий за цвет текста внутри элемента - \"color\".",
+        "Вот как вы могли бы установить цвет текста вашего элемента <code>h2</code> синим:",
+        "<code>&#60;h2 style=\"color: blue\"&#62;CatPhotoApp&#60;/h2&#62;</code>",
+        "Измените стиль вашего элемента <code>h2</code> таким образом, чтобы текст элемента стал красным."
       ],
       "title": "Change the Color of Text",
       "description": [
@@ -398,6 +462,18 @@
         "Erstelle über deinem Code ein <code>style</code> Element: <code>&#60;style&#62;&#60;/style&#62;</code>",
         "Innerhalb des Style Elements kannst du einen CSS Selektor oder \"selector\" für alle <code>h2</code> Elemente erstellen. Wenn du zum Beispiel alle <code>h2</code> Elemente Rot färben willst, schreibst du: <code>&#60;style&#62;h2 {color: red;}&#60;/style&#62;</code>",
         "Beachte, dass du öffnende und schließende geschwungene Klammern (<code>{</code> und <code>}</code>) um jeden Style setzen solltest. Außerdem sollten deine Styles innerhalb dieser Klammern stehen. Zum Schluss benötigst du am Ende jedes Styles ein Semikolon."
+      ],
+      "titleRU": "Используйте CSS-селекторы для стилизации элементов",
+      "descriptionRU": [
+        "В CSS существуют сотни CSS-<code>свойств</code>, которые вы можете использовать для изменения внешнего вида элементов вашей страницы.",
+        "Когда вы вводите <code>&#60;h2 style=\"color: red\"&#62;CatPhotoApp&#60;/h2&#62;</code>, вы присваиваете определённому <code>h2</code> элементу <code>встроенный стиль</code>.",
+        "Это один из способов добавления стиля к элементу, но лучший способ - использование <code>CSS</code>, который является сокращением от <code>Cascading Style Sheets (Каскадные таблицы стилей)</code>.",
+        "Вверху вашего кода создайте элемент <code>style</code> следующим образом:",
+        "<blockquote>&#60;style&#62;<br>&#60;/style&#62;</blockquote>",
+        "Внутри этого элемента <code>style</code> вы можете создать <code>CSS-селектор</code> для всех элементов <code>h2</code> в документе. Например, если бы вы хотели, чтобы все элементы <code>h2</code> были красными, ваш элемент <code>style</code> выглядел бы следующим образом:",
+        "<blockquote>&#60;style&#62;<br>&nbsp;&nbsp;h2 {color: red;}<br>&#60;/style&#62;</blockquote>",
+        "Обратите внимание, что важно наличие открывающих и закрывающих фигурных скобок (<code>{</code> и <code>}</code>) вокруг стиля каждого элемента. Также вам необходимо убедиться в том, что стиль элемента присвоен внутри элемента <code>style</code>. В завершении, убедитесь, что строка объявления каждого элемента стиля должна заканчиваться точкой с запятой.",
+        "Удалите атрибут стиль вашего элемента <code>h2</code> и взамен создайте CSS-элемент <code>style</code>. Добавьте необходимый CSS, чтобы все элементы <code>h2</code> стали синими."
       ],
       "title": "Use CSS Selectors to Style Elements",
       "description": [
@@ -467,6 +543,18 @@
         "Beachte, dass Klassen in deinem CSS <code>style</code> Element mit einem Punkt beginngen sollten. In deinen Klassen-Deklarationen von HTML Elementen sollten diese nicht mit einem Punkt beginnen.",
         "Anstatt ein neues <code>style</code> Element zu erstellen, versuche die <code>h2</code> Style-Deklaration von deinem bereits bestehenden Style Element zu entfernen und sie mit der Klassen-Deklaration \".red-text\" zu ersetzen."
       ],
+      "titleRU": "Используйте CSS-класс для стилизации элемента",
+      "descriptionRU": [
+        "Классы являются повторно применяемыми стилями, которые могут быть добавлены к HTML-элементам.",
+        "Вот пример объявления CSS-класса:",
+        "<blockquote>&#60;style&#62;<br>&nbsp;&nbsp;.blue-text {<br>&nbsp;&nbsp;&nbsp;&nbsp;color: blue;<br>&nbsp;&nbsp;}<br>&#60;/style&#62;</blockquote>",
+        "Вы можете увидеть, что мы создали CSS-класс названный <code>blue-text</code> внутри элемента <code>&#60;style&#62;</code>.",
+        "Вы можете применить класс к HTML-элементу следующим образом:",
+        "<code>&#60;h2 class=\"blue-text\"&#62;CatPhotoApp&#60;/h2&#62;</code>",
+        "Обратите внимание, что в вашем CSS-элементе <code>style</code> названию классов следует начинаться с точки. При присваивании классов HTML-элементам названия классов не должны начинаться с точки.",
+        "Внутри вашего элемента <code>style</code>, замените селектор <code>h2</code> на <code>.red-text</code> и измените значение цвета с <code>blue</code> на <code>red</code>.",
+        "Присвойте вашему элементу <code>h2</code> атрибут <code>class</code> со значением <code>'red-text'</code>."
+      ],
       "title": "Use a CSS Class to Style an Element",
       "description": [
         "Classes are reusable styles that can be added to HTML elements.",
@@ -530,6 +618,15 @@
         "Du kannst Klassen zu HTML Elementen hinzufügen, indem du zum Beispiel <code>class=\"deine-klasse\"</code> innerhalb des öffnenden Tags schreibst.",
         "Du weißt, es gehört ein Punkt vor CSS Klassen: <code>.red-text { color: blue; }</code>. Aber diese Klassen-Deklarationen brauchen keinen Punkt: <code>&#60;h2 class=\"blue-text\"&#62;CatPhotoApp&#60;h2&#62;</code>"
       ],
+      "titleRU": "Стилизуйте множество элементов с помощью CSS-класса",
+      "descriptionRU": [
+        "Помните, что вы можете присваивать классы HTML-элементам используя <code>class=\"ваш-класс-тут\"</code> внутри открывающей метки соответствующего элемента.",
+        "Помните, что селекторы CSS-классов должны начинаться с точки, например:",
+        "<blockquote>.blue-text {<br>&nbsp;&nbsp;color: blue;<br>}</blockquote>",
+        "Но также не забывайте, что присваивание классов не использует точку, например:",
+        "<code>&#60;h2 class=\"blue-text\"&#62;CatPhotoApp&#60;/h2&#62;</code>",
+        "Примените класс <code>red-text</code> к вашим элементам <code>h2</code> и <code>p</code>."
+      ],
       "title": "Style Multiple Elements with a CSS Class",
       "description": [
         "Remember that you can attach classes to HTML elements by using <code>class=\"your-class-here\"</code> within the relevant element's opening tag.",
@@ -585,6 +682,15 @@
         "Schriftgröße wird von dem CSS Attribut \"font-size\" kontrolliert: <code>h1 { font-size: 30px; }</code>",
         "Zuerst erstellst du ein zweites <code>p</code> Element mit dem folgenden Kitty Ipsum Text: <code>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</code>",
         "Versuche nun beiden <code>p</code> Elementen die Schriftgröße von 16 Pixeln (<code>16px</code>) zu geben. Du kannst das innerhalb des selben <code>&#60;style&#62;</code> Tags machen, welches wir für deine \"red-text\" Klasse erstellt haben."
+      ],
+      "titleRU": "Измените размер шрифта элемента",
+      "descriptionRU": [
+        "Размером шрифта управляют с помощтю CSS-своайства <code>font-size</code>, например:",
+        "<blockquote>h1 {<br>&nbsp;&nbsp;font-size: 30px;<br>}</blockquote>",
+        "Создайте второй элемент <code>p</code> со следующи текстом <code>kitty ipsum</code>: <code>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</code>",
+        "Внутри того же элемента <code>&#60;style&#62;</code>, который содержит ваш класс <code>red-text</code>, создайте вхождение для элементов <code>p</code> и установите свойство <code>font-size</code> равным 16 пикселей (<code>16px</code>).",
+        "<strong>Внимание</strong><br>По причине разницы в реализации браузеров, вам может понадобиться установить 100% масштаб окна браузера для прохождения этого испытания.",
+        "Также, пожалуйста, не добавляйте атрибут класс к вашему новому элементу <code>p</code>."
       ],
       "title": "Change the Font Size of an Element",
       "description": [
@@ -642,6 +748,13 @@
         "Du kannst einem Element mit \"font-family\" eine Schriftart zuweisen.",
         "Wenn du zum Beispiel deinem <code>h2</code> Element die Schriftart \"Sans-serif\" zuweisen willst, kannst du das mit dem folgenden CSS tun: <code>h2 { font-family: Sans-serif; }</code>"
       ],
+      "titleRU": "Установите семейство шрифтов для элемента",
+      "descriptionRU": [
+        "Вы можете установить семейство шрифтов для элемента используя свойство <code>font-family</code>.",
+        "Например, если бы вы хотели установить семейство шрифтов <code>Sans-serif</code> для вашего элемента <code>h2</code>, вы бы использовали следующий CSS:",
+        "<blockquote>h2 {<br>&nbsp;&nbsp;font-family: Sans-serif;<br>}</blockquote>",
+        "Присвойте шрифт <code>Monospace</code> всем вашим элементам <code>p</code>."
+      ],
       "title": "Set the Font Family of an Element",
       "description": [
         "You can set an element's font by using the <code>font-family</code> property.",
@@ -695,6 +808,15 @@
         "Kopiere den folgenden Code und füge diesen in deinen Editor über dem <code>style</code> Element ein:",
         "<code>&#60;link href=\"https://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\"&#62;</code>",
         "Jetzt kannst du \"Lobster\" als font-family Attribut zu deinem <code>h2</code> Element hinzufügen."
+      ],
+      "titleRU": "Импортируйте шрифт Google",
+      "descriptionRU": [
+        "Теперь давайте импортируем и применим шрифт Google (обратите внимание, что если Google заблокирован в ваней стране, вам нужно будет пропустить это испытание).",
+        "Сначала вам понадобится сделать <code>запрос</code> к Google для получения шрифта <code>Lobster</code> и загрузить его в ваш HTML.",
+        "Скопируйте следующй кусок кода и вставьте его в самый верх вашего редактора кода:",
+        "<code>&#60;link href=\"https://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\"&#62;</code>",
+        "Теперь вы можете установить шрифт <code>Lobster</code> в качестве значения семейства шрифтов для вашего <code>h2</code>.",
+        "Примените свойство <code>font-family</code> со значением <code>Lobster</code> к вашему элементу <code>h2</code>."
       ],
       "title": "Import a Google Font",
       "description": [
@@ -758,6 +880,14 @@
         "Wenn du zum Beispiel einem Element die Schriftart \"Helvetica\" geben möchtest, aber gleichzeitig die alternative Schrift \"Sans-Serif\" laden willst, wenn \"Helvetica\" nicht verfügbar ist, kannst du diesen CSS Style verwenden: <code>p { font-family: Helvetica, Sans-Serif; }</code>",
         "Es gibt verschiedene Schriftarten, die jedem Browser standardmäßig zur Verfügung stehen. Das sind unter anderem \"Monospace\", \"Serif\" und \"Sans-Serif\". Probiere deinem <code>h2</code> Element gleichzeitig die Schriftart \"Lobster\" und als Alternative \"Monospace\" zu geben.",
         "Jetzt versuche den Aufruf von Google Fonts in deinem HTML auszukommentieren, sodass \"Lobster\" nicht zur Verfügung steht. Beachte, wie nun die Schriftart \"Monospace\" geladen wird."
+      ],
+      "titleRU": "Укажите порядок деградации шрифтов",
+      "descriptionRU": [
+        "Существует несколько стандартных шрифтов, которые доступны во всех браузерах. Среди них <code>Monospace</code>, <code>Serif</code> и <code>Sans-Serif</code>",
+        "Когда один шрифт недоступен, вы можете сообщить браузеру \"деградировать\" до другого шрифта.",
+        "Например, если бы вы хотели, чтобы элемент использовал шрифт <code>Helvetica</code>, но также деградировал до шрифта <code>Sans-Serif</code>, когда <code>Helvetica</code> недоступен, вы могли бы использовать этот CSS-стиль:",
+        "<blockquote>p {<br>&nbsp;&nbsp;font-family: Helvetica, Sans-Serif;<br>}</blockquote>",
+        "Теперь закомментируйте ваш запрос к Google Fonts, таким образом шрифт <code>Lobster</code> становится недоступен. Обратите внимание как происходит деградация до шрифта <code>Monospace</code>."
       ],
       "title": "Specify How Fonts Should Degrade",
       "description": [
@@ -824,6 +954,15 @@
         "Ein Beispiel dafür wäre <code>&#60img src=\"www.bild-quelle.com/bild.jpg\"/&#62</code>. Beachte, dass <code>img</code> Elemente in den meisten Fällen selbstschließend sind.",
         "Versuche es mit diesem Bild: <code>https://bit.ly/fcc-relaxing-cat</code>"
       ],
+      "titleRU": "Добавьте изображения к вашему сайту",
+      "descriptionRU": [
+        "Вы можете добавлять изображения к вашему сайту с помощью элемента <code>img</code> и указывать ссылки определённых изображений с помощтю атрибута <code>src</code>.",
+        "Примером добавления мзображения может служить:",
+        "<code>&#60img src=\"https://www.your-image-source.com/your-image.jpg\"&#62</code>",
+        "Обратите внимание, что в большинстве случаев элементы <code>img</code> являются самозакрывающимися.",
+        "Попробуйте добавить изображение используя следующую ссылку:",
+        "<code>https://bit.ly/fcc-relaxing-cat</code>"
+      ],
       "title": "Add Images to your Website",
       "description": [
         "You can add images to your website by using the <code>img</code> element, and point to a specific image's URL using the <code>src</code> attribute.",
@@ -889,6 +1028,14 @@
         "Erstelle eine Klasse mit dem Namen <code>smaller-image</code> und verwende sie, um dein Bild auf 100 Pixel zu skalieren.",
         "Die Breite eines Elements wird mit dem CSS Attribut <code>width</code> kontrolliert. Wie bei Schriftarten verwenden wir Pixel (px) um die Größe zu definieren.",
         "Wenn wir also die CSS Klasse \"larger-image\" erstellen wollen, um HTML Elementen eine Breite von 500 Pixeln zu verleihen, verwenden wir: <code>&#60;style&#62; .larger-image { width: 500px; } &#60;/style&#62;</code>"
+      ],
+      "titleRU": "Установите размер ваших изображений",
+      "descriptionRU": [
+        "В CSS есть свойтсво, называемое <code>width</code>, которе управляет шириной элемента. По аналогии со шрифтами, мы используем <code>px</code> (пиксели) для указания ширины изображения.",
+        "Например, если бы мы хотели создать CSS-класс <code>larger-image</code>, который присваивал бы HTML-эементам ширину равную 500 пикселей, мы бы использовали:",
+        "<blockquote>&#60;style&#62;<br>&nbsp;&nbsp;.larger-image {<br>&nbsp;&nbsp;&nbsp;&nbsp;width: 500px;<br>&nbsp;&nbsp;}<br>&#60;/style&#62;</blockquote>",
+        "Создайте класс <code>smaller-image</code> и используйте его для изменения размера изображений до 100 пикселей в ширину.",
+        "<strong>Внимание</strong><br>По причине разницы в реализации браузеров, вам может понадобиться установить 100% масштаб окна браузера для прохождения этого испытания."
       ],
       "title": "Size your Images",
       "description": [
@@ -960,6 +1107,15 @@
         "CSS Rahmen haben Attribute wie Style, Color und Width.",
         "Wenn wir nun einen roten, 5 Pixel dicken Rahmen um ein HTML Element setzen wollen, würden wir so vorgehen: <code>&#60;style&#62; .thin-red-border { border-color: red; border-width: 5px; border-style: solid; } &#60;/style&#62;</code>"
       ],
+      "titleRU": "Дбавьте границы вокруг ваших элементов",
+      "descriptionRU": [
+        "CSS-границы имеют свойства: <code>style</code>, <code>color</code> и <code>width</code>",
+        "Например, если бы мы хотели создать красную границу шириной в 5 пикселей вокруг HTML-элемента, мы могли бы использовать этот класс:",
+        "<blockquote>&#60;style&#62;<br>&nbsp;&nbsp;.thin-red-border {<br>&nbsp;&nbsp;&nbsp;&nbsp;border-color: red;<br>&nbsp;&nbsp;&nbsp;&nbsp;border-width: 5px;<br>&nbsp;&nbsp;&nbsp;&nbsp;border-style: solid;<br>&nbsp;&nbsp;}<br>&#60;/style&#62;</blockquote>",
+        "Создайте класс <code>thick-green-border</code>, который добавляет зелёную границу шириной в 10 пикселей со стилем <code>solid</code> вокруг HTML-элемента и примените этот класс к вашему фото кота.",
+        "Помните, что вы можете может применить множество классов к одному элементу путём разделения их с помощью пробела внутри атрибута <code>class</code>. Например:",
+        "<code>&lt;img class=\"class1 class2\"&gt;</code>"
+      ],
       "title": "Add Borders Around your Elements",
       "description": [
         "CSS borders have properties like <code>style</code>, <code>color</code> and <code>width</code>",
@@ -1030,6 +1186,12 @@
         "Das Bild hat nun spitze Ecken. Wir können diese Ecken mit dem CSS Attribut <code>border-radius</code> abrunden.",
         "Du kannst einen <code>border-radius</code> mit Pixeln deklarieren. Das beeinflusst die Rundung der Ecken. Füge dieses Attribut zu deiner <code>thick-green-border</code> Klasse hinzu und setze es auf 10 Pixel."
       ],
+      "titleRU": "Добавьте скруглённые углы с помощью радиуса границы",
+      "descriptionRU": [
+        "У вашего фото кота сейчас острые углы. Мы можем скруглить углы используя CSS-свойство <code>border-radius</code>.",
+        "Вы можете указать значения <code>border-radius</code> в пикселях. Присвойте вашему фото кота свойство <code>border-radius</code> со значением <code>10px</code>.",
+        "Внимание: это задание подразумевает наличие нескольких возможных решений. Например, вы можете добавить <code>border-radius</code> как к классу <code>.thick-green-border</code>, так и к классу <code>.smaller-image</code>."
+      ],
       "title": "Add Rounded Corners with a Border Radius",
       "description": [
         "Your cat photo currently has sharp corners. We can round out those corners with a CSS property called <code>border-radius</code>.",
@@ -1094,6 +1256,11 @@
       "descriptionDe": [
         "Gib deinem Katzenfoto einen <code>border-radius</code> von 50 %.",
         "Du kannst einem <code>border-radius</code> neben Pixeln auch Prozentwerte zuweisen."
+      ],
+      "titleRU": "Сделайте круглые изображения с помощью радиуса границы",
+      "descriptionRU": [
+        "В дополнение к пикселям, вы также может использовать проценты для указания значения свойства <code>border-radius</code>.",
+        "Присвойте вашему фото кота свойство <code>border-radius</code> со значением <code>50%</code>."
       ],
       "title": "Make Circular Images with a Border Radius",
       "description": [
@@ -1164,6 +1331,15 @@
         "So sieht ein <code>a</code> Element aus. In diesem Fall wird es innerhalb eines Paragraphen Elements verwendet. Das bedeutet dein Link wird innerhalb des Satzes erscheinen.",
         "<img class=\"img-responsive\" alt=\"Ein Beispiel wie Anker Tags geschrieben werden.\" src=\"https://www.evernote.com/l/AHSaNaepx_lG9LhhPkVYmagcedpmAeITDsQB/image.png\">",
         "Hier ist ein Beispiel: <code>&#60;p&#62;Hier ist ein &#60;a href=\"https://freecodecamp.com\"&#62; Link zum Free Code Camp&#60;/a&#62; für dich zum Folgen.&#60;/p&#62;</code>"
+      ],
+      "titleRU": "Присоедините внешние страницы с помощью якорных элементов",
+      "descriptionRU": [
+        "Элементы <code>a</code>, также известные как <code>якорные</code> элементы, применяют для связи с содержимым вне текущей страницы.",
+        "Вот диаграмма элемента <code>a</code>. В этом случае, элемент <code>a</code> использован в середине элемента параграфа, что значит, что ссылка появится в середине предложения.",
+        "<a href=\"//i.imgur.com/hviuZwe.png\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" title=\"Click to enlarge\" alt=\"a diagram of how anchor tags are composed with the same text as on the following line\" src=\"//i.imgur.com/hviuZwe.png\"></a>",
+        "Вот пример:",
+        "<code>&#60;p&#62;Вот &#60;a href=\"http://freecodecamp.com\"&#62; ссылка на Free Code Camp&#60;/a&#62; для перехода на ресурс.&#60;/p&#62;</code>",
+        "Создайте элемент <code>a</code>, который присоединяет <code>http://freecatphotoapp.com</code> и имеет значение \"cat photos\" в качестве <code>текста якоря</code>."
       ],
       "title": "Link to External Pages with Anchor Elements",
       "description": [
@@ -1242,6 +1418,15 @@
         "Jetzt umschließe dein <code>a</code> Element mit einem <code>p</code> Element und dem Text \"click here for cat photos\". Nur \"cat photos\" soll ein Link ein – der Rest normaler Text.",
         "Hier ist nochmal ein Beispiel für ein <code>a</code> Element: <img class=\"img-responsive\" alt=\"Ein Beispiel wie Anker Tags geschrieben werden.\" src=\"https://www.evernote.com/l/AHSaNaepx_lG9LhhPkVYmagcedpmAeITDsQB/image.png\">",
         "So könnte es aussehen: <code>&#60;p&#62;Hier ist ein &#60;a href=\"https://freecodecamp.com\"&#62; Link zum Free Code Camp&#60;/a&#62; für dich zum Folgen.&#60;/p&#62;</code>"
+      ],
+      "titleRU": "Создайте вложенный якорный элемент внутри параграфа",
+      "descriptionRU": [
+        "Вот диаграмма элемента <code>a</code>:",
+        "<a href=\"//i.imgur.com/hviuZwe.png\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" title=\"Click to enlarge\" alt=\"a diagram of how anchor tags are composed with the same text as on the following line\" src=\"//i.imgur.com/hviuZwe.png\"></a>",
+        "Вот пример:",
+        "<code>&#60;p&#62;Вот &#60;a href=\"https://freecodecamp.com\"&#62; ссылка на Free Code Camp&#60;/a&#62; для перехода на ресурс.&#60;/p&#62;</code>",
+        "<code>Вложенность</code> значит установку одного элемента внутрь друго элемента.",
+        "Теперь вложите ваш существующий элемент <code>a</code> внутрь нового элемента <code>p</code> (сразу после существующего элемента <code>h2</code>) таким образом, что добавляемый параграф сообщает: \"View more cat photos\", но где только \"cat photos\" является ссылкой, а остальной текст обычный."
       ],
       "title": "Nest an Anchor Element within a Paragraph",
       "description": [
@@ -1326,6 +1511,12 @@
         "Das ist auch nützlich, wenn du die Funktion eines Links mit <code>jQuery</code> verändern willst. Das werden wir noch behandeln.",
         "Ersetze den Inhalt des <code>href</code> Attributs deines <code>a</code> Elements mit einem Hash Symbol um einen toten Link zu erzeugen."
       ],
+      "titleRU": "Создайте мёртвые ссылки используя хэш-символ",
+      "descriptionRU": [
+        "Иногда вам нужно добавить элементы <code>a</code> к вашему сайту до того, как вы знаете куда будут вести ссылки.",
+        "Также это может оказаться полезно, когда вы меняете поведение ссылки используя <code>jQuery</code>, что мы изучим позже.",
+        "Замените значение атрибута <code>href</code> вашего элемента <code>a</code> на <code>#</code>, известное как хэш-символ, для превращения элемента в мёртвую ссылку."
+      ],
       "title": "Make Dead Links using the Hash Symbol",
       "description": [
         "Sometimes you want to add <code>a</code> elements to your website before you know where they will link.",
@@ -1397,6 +1588,14 @@
         "Umschließe nun dein Bild mit einem <code>a</code> Element. Hier ist ein Beispiel: <code>&#60;a href=\"#\"&#62;&#60;img src=\"https://bit.ly/fcc-running-cats\"/&#62;&#60;/a&#62;</code>",
         "Vergewissere dich, dass du ein Hash Symbol (#) innerhalb des <code>href</code> Attributs des <code>a</code> Elements nutzt, um daraus einen toten Link zu machen.",
         "Sobald du das gemacht hast, kannst du mit der Maus über dein Bild fahren. Der normale Mauszeiger sollte nun zu einer Hand für Links werden. Das Bild ist jetzt ein Link."
+      ],
+      "titleRU": "Превратите изображение в ссылку",
+      "descriptionRU": [
+        "Вы можете превратить элементы в ссылки путём их вложения внутрь элементов <code>a</code>.",
+        "Вложите ваше изображение в элемент <code>a</code>. Вот пример:",
+        "<code>&#60;a href=\"#\"&#62;&#60;img src=\"https://bit.ly/fcc-running-cats\"&#62;&#60;/a&#62;</code>",
+        "Не забывайте использовать <code>#</code> в качестве значения атрибута <code>href</code> вашего элемента <code>a</code> для превращения ссылки в мёртвую.",
+        "Как только вы это сделаете, наведите курсор мыши на ваше изображение. При этом курсор должен изменить вид с обычного на используемый при наведении на ссылки. Ваше фото теперь является ссылкой."
       ],
       "title": "Turn an Image into a Link",
       "description": [
@@ -1477,6 +1676,14 @@
         "<code>alt</code> Attribute sind nützlich um Personen – und Web Crawlers wie Google – zu sagen was in einem Foto abgebildet wird. Das ist extrem wichtig, damit blinde oder visuell eingeschränkte Menschen den Inhalt der Website verstehen.",
         "Du kannst das <code>alt</code> Attribut direkt in das Img Element einfügen: <code>&#60img src=\"www.bild-quelle.com/bild.jpg\" alt=\"Dein Alt Text.\"/&#62</code>"
       ],
+      "titleRU": "Добавьте альтернативный текст к изображению для улучшения доступа",
+      "descriptionRU": [
+        "Атрибуты <code>alt</code>, также известные как <code>alt text</code>, являются тем, что браузеры отобразят, если изображение загрузить не получится. Атрибуты <code>alt</code> важны для незрячих или пользователей с ограниченными возможностями в области зрения для понимания того, что отображает изображение. Также поисковые системы используют атрибуты <code>alt</code>.",
+        "Вкратце, каждое изображение должно иметь атрибут <code>alt</code>!",
+        "Вы можете добавить атрибут <code>alt</code> прямо в элемент <conde>img</code> следующим образом:",
+        "<code>&#60img src=\"www.your-image-source.com/your-image.jpg\" alt=\"ваш альтернативный текст\"&#62</code>",
+        "Добавьте атрибут <code>alt</code> с текстом <code>A cute orange cat lying on its back</code> к нашему фото кота."
+      ],
       "title": "Add Alt Text to an Image for Accessibility",
       "description": [
         "<code>alt</code> attributes, also known as <code>alt text</code>, are what browsers will display if they fail to load the image. <code>alt</code> attributes are also important for blind or visually impaired users to understand what an image portrays. And search engines also look at <code>alt</code> attributes.",
@@ -1556,6 +1763,15 @@
         "HTML hat ein spezielles Element zum Erstellen von ungeordneten Listen.",
         "ungeordnete Listen starten mit einem <code>&#60;ul&#62;</code> Element. Dann beinhalten sie eine gewisse Anzahl an <code>&#60;li&#62;</code> Elementen.",
         "Als Beispiel: <code>&#60;ul&#62;&#60;li&#62;Milch&#60;/li&#62;&#60;li&#62;Käse&#60;/li&#62;&#60;/ul&#62;</code> würde eine ungeordnete Liste für \"Milch\" und \"Käse\" erstellen."
+      ],
+      "titleRU": "Создайте ненумерованный неупорядоченный список",
+      "descriptionRU": [
+        "В HTML есть специальный элемент для создания <code>неупорядоченного списка</code>, или списка с точками в виде меток элементов.",
+        "Неупорядоченные списки начинаются с элемента <code>&#60;ul&#62;</code>. Затем они содержат некоторе количество элементов <code>&#60;li&#62;</code>.",
+        "Например: ",
+        "<blockquote>&#60;ul&#62;<br>&nbsp;&nbsp;&#60;li&#62;milk&#60;/li&#62;<br>&nbsp;&nbsp;&#60;li&#62;cheese&#60;/li&#62;<br>&#60;/ul&#62;</blockquote>",
+        "создаст ненумерованный список из \"milk\" и \"cheese\".",
+        "Удалите последние два элемента <code>p</code> и создайте неупорядоченный список из трёх вещей, которые любят кошки."
       ],
       "title": "Create a Bulleted Unordered List",
       "description": [
@@ -1641,6 +1857,15 @@
         "HTML beinhaltet ein spezielles Element für geordnete Listen.",
         "Geordnete Listen starten mit einem <code>&#60;ol&#62;</code> Element. Dann enthalten sie eine gewisse Anzahl an <code>&#60;li&#62;</code> Elementen.",
         "Als beispiel: <code>&#60;ol&#62;&#60;li&#62;hydrogen&#60;/li&#62;&#60;li&#62;Helium&#60;/li&#62;&#60;/ol&#62;</code> würde eine nummerierte Liste aus \"Hydrogen\" und \"Helium\" erstellen."
+      ],
+      "titleRU": "Создайте упорядоченный список",
+      "descriptionRU": [
+        "В HTML есть специальный элемент для создания <code>упорядоченных списков</code>, или списков с номерами в качестве меток элементов.",
+        "Упорядоченные списки начинаются с элемента <code>&#60;ol&#62;</code>. Далее они содержат некоторое количество элементов <code>&#60;li&#62;</code>.",
+        "Например:",
+        "<blockquote>&#60;ol&#62;<br>&nbsp;&nbsp;&#60;li&#62;Garfield&#60;/li&#62;<br>&nbsp;&nbsp;&#60;li&#62;Sylvester&#60;/li&#62;<br>&#60;/ol&#62;</blockquote>",
+        "создаст нумерованный список из \"Garfield\" и \"Sylvester\".",
+        "Создайте нумерованный список из 3-х вещей, который кошки больше всего ненавидят."
       ],
       "title": "Create an Ordered List",
       "description": [
@@ -1731,6 +1956,15 @@
         "Eingabefelder sind ein guter Weg, um Daten von Nutzern zu erhalten.",
         "So kannst du eines erstellen: <code>&#60;input type=\"text\"&#62;</code>. Beachte, dass <code>input</code> Elemente selbstschließend sind."
       ],
+      "titleRU": "Создайте текстовое поле",
+      "descriptionRU": [
+        "Теперь давайте создадим web-форму.",
+        "Поля текстового ввода - удобный способ получения данных от пользователя.",
+        "Вы можете создать текстовое поле следующим образом:",
+        "<code>&#60;input type=\"text\"&#62;</code>",
+        "Обратите внимание, что элементы <code>input</code> самозакрывающиеся.",
+        "Создайте элемент <code>input</code> типа <code>text</code> под вашими списками."
+      ],
       "title": "Create a Text Field",
       "description": [
         "Now let's create a web form.",
@@ -1817,6 +2051,13 @@
         "Platzhalter erscheinen in <code>input</code> Feldern, bevor der Nutzer etwas eingibt.",
         "Du kannst Platzhalter auf folgende Weise erstellen: <code>&#60;input type=\"text\" placeholder=\"Das ist ein Platzhalter.\"&#62;</code>"
       ],
+      "titleRU": "Добавьте замещающий текст к текстовому полю",
+      "descriptionRU": [
+        "Ваш замещающий текст - это то, что отображается в виде текста внутри <code>input</code> пока пользователь не ввёл туда что-либо.",
+        "Вы можете создать замещающий текст следующим образом:",
+        "<code>&#60;input type=\"text\" placeholder=\"это замещающий текст\"&#62;</code>",
+        "Установите значение атрибута <code>placeholder</code> вашего текстового поля <code>input</code> равными \"cat photo URL\"."
+      ],
       "title": "Add Placeholder Text to a Text Field",
       "description": [
         "Your placeholder text is what appears in your text <code>input</code> before your user has input anything.",
@@ -1902,6 +2143,13 @@
         "Du kannst Web Formulare bauen, die Daten zu einem Server übertragen – und das nur mit HTML. Das wird möglich, indem du eine Aktion für dein <code>form</code> Element bestimmst.",
         "Zum Beispiel: <code>&#60;form action=\"/url-wohin-du-deine-formular-daten-senden-willst\"&#62;&#60;/form&#62;</code>"
       ],
+      "titleRU": "Создайте элемент типа форма",
+      "descriptionRU": [
+        "Вы можете строить web-формы, которые отправляют данные серверу, не ипользуя ничего кроме HTML. Вы можете достичь этого указанием действия в атрибутах элемента <code>form</code>.",
+        "Например:",
+        "<code>&#60;form action=\"/url-куда-вы-хотите-отправить-данные-формы\"&#62;&#60;/form&#62;</code>",
+        "Вложите ваше текстовое поле в элемент <code>form</code>. Добавьте атрибут <code>action=\"/submit-cat-photo\"</code> к этому элементу формы."
+      ],
       "title": "Create a Form Element",
       "description": [
         "You can build web forms that actually submit data to a server using nothing more than pure HTML. You can do this by specifying an action on your <code>form</code> element.",
@@ -1986,6 +2234,13 @@
         "Füge eine Schaltfläche zum Senden mit dem Typ \"submit\" und \"Submit\" als Text zu deinem <code>form</code> Element hinzu.",
         "Lass uns nun eine Schaltfläche zum Senden zu deinem Formlar hinzufügen. Durch einen Klick auf diese Schaltfläche werden die Daten des Formulars an die URL gesendet, welche du in dem <code>action</code> Attribut deines Formulars angegeben hast.",
         "Hier ist ein Beispiel einer solchen Schaltfläche: <code>&#60;button type=\"submit\"&#62;Diese Schaltfläche überträgt die Daten des Formulars.&#60;/button&#62;</code>"
+      ],
+      "titleRU": "Добавьте кнопку отправки к форме",
+      "descriptionRU": [
+        "Давайте добавим кнопку отправки <code>submit</code> к вашей форме. Нажатие на эту кнопку отправит данные из вашей формы по адресу, указанному в атрибуте <code>action</code> вашей формы.",
+        "Вот пример кнопки отправки:",
+        "<code>&#60;button type=\"submit\"&#62;эта кнопка отправляет данные формы&#60;/button&#62;</code>",
+        "Добавьте кнопку отправки к вашему элементу <code>form</code> с указанием типа <code>submit</code> и \"Submit\" в качестве отображаемого текста."
       ],
       "title": "Add a Submit Button to a Form",
       "description": [
@@ -2074,6 +2329,14 @@
         "Mache aus deinem <code>input</code> Feld ein Pflichtfeld – \"required\" – damit deine Nutzer das Formular nicht abschicken können, ohne dieses Feld auszufüllen.",
         "Du kannst bestimmte Felder eines Formulars als Pflichtfelder deklarieren. Damit ist es deinen Nutzern nicht mehr möglich, das Formular abzuschicken, ohne die Pflichtfelder auszufüllen.",
         "Um zum Beispiel ein Textfeld als Pflichtfeld zu deklarieren, kannst du einfach ein \"required\" innerhalb deines <code>input</code> Elements hinzufügen: <code>&#60;input type=\"text\" required&#62;</code>"
+      ],
+      "titleRU": "Используйте HTML5, чтобы сделать заполнение поля обязательным",
+      "descriptionRU": [
+        "Вы можете требовать заполнения определённых полей формы, таким образом пользователь не сможет отправить данные формы до их заполнения.",
+        "Например, если бы вы хотели сделать заполнение текстового поля обязательным, вы могли бы добавить слово <code>required</code> внутрь вашего элемента <code>input</code>: <code>&#60;input type=\"text\" required&#62;</code>",
+        "Сделайте ваше текстовое поле <code>input</code> обязательным <code>required</code> для заполнения, чтобы пользователь не мог отправить данные формы без заполнения этого поля.",
+        "Далее попробуйте отправить данные формы без ввода какого-либо текста. Видите как ваша HTML5-форма уведомляет вас о том, что поле обязательное для заполнения?",
+        "Внимание: это поле не работает в Safari."
       ],
       "title": "Use HTML5 to Require a Field",
       "description": [
@@ -2168,6 +2431,16 @@
         "Jedes deiner Optionsfelder sollte innerhalb des eigenen <code>label</code> Elements liegen.",
         "Alle Optionsfelder mit Bezug zueinander sollten das gleiche <code>name</code> Attribut teilen.",
         "Ein Beispiel eines Optionsfeldes: <code>&#60;label&#62;&#60;input type=\"radio\" name=\"indoor-outdoor\"&#62; Indoor&#60;/label&#62;</code>"
+      ],
+      "titleRU": "Создайте набор радио-кнопок",
+      "descriptionRU": [
+        "Вы можете использовать <code>радио кнопки</code> для вопросов, которые требуют выбора одного варианта ответа из множества.",
+        "Радио-кнопки относятся к типу <code>input</code>",
+        "Каждая из ваших радио-кнопок должна быть вложена внутрь своего собственного элемента <code>label</code>.",
+        "Все относящиеся друг к другу, формирующие группу, радио-кнопки должны иметь один и тот же атрибут <code>name</code>.",
+        "Вот пример радио-кнопки:",
+        "<code>&#60;label&#62;&#60;input type=\"radio\" name=\"indoor-outdoor\"&#62; Indoor&#60;/label&#62;</code>",
+        "Добавьте пару радио-кнопок к вашей форме. Одна должна соответствовать варианту <code>indoor</code>, а другая - <code>outdoor</code>."
       ],
       "title": "Create a Set of Radio Buttons",
       "description": [
@@ -2269,6 +2542,16 @@
         "Formulare nutzen Kontrollkästchen meistens für Fragen, die mehrerer Antworten bedürfen.",
         "Als Beispiel: <code>&#60;label&#62;&#60;input type=\"checkbox\" name=\"personality\"&#62; liebevoll&#60;/label&#62;</code>"
       ],
+      "titleRU": "Создайте набор флаговых кнопок",
+      "descriptionRU": [
+        "Обычно формы используют <code>флаги (флаговые кнопки)</code> для вопросов, к которым может относиться несколько вариантов ответов.",
+        "Флаги относятся к типу <code>input</code>",
+        "Каждый из ваших флагов должен быть вложен в собственный элемент <code>label</code>.",
+        "Все относящиеся друг к другу флаги должны иметь одинаковый атрибут <code>name</code>.",
+        "Вот пример флаговой кнопки:",
+        "<code>&#60;label&#62;&#60;input type=\"checkbox\" name=\"personality\"&#62; Loving&#60;/label&#62;</code>",
+        "Добавьте набор из трёх флаговых кнопок к вашей форме. Каждый флаг должен быть вложен внутрь собственного элемента <code>label</code>. Все три флага должны иметь одинаковый атрибут <code>name</code>, значение которго равно <code>personality</code>."
+      ],
       "title": "Create a Set of Checkboxes",
       "description": [
         "Forms commonly use <code>checkboxes</code> for questions that may have more than one answer.",
@@ -2366,6 +2649,13 @@
         "Das kannst du erreichen, indem beiden das Attribut <code>checked</code> beigefügt wird.",
         "Um das zu bewerkstelligen, füge einfach \"checked\" innerhalb eines Eingabefeldes hinzu. Als Beispiel: <code>&#60;input type=\"radio\" name=\"test-name\" checked&#62;</code>"
       ],
+      "titleRU": "Отметьте радио-кнопки и флаговые кнопки по-умолчанию",
+      "descriptionRU": [
+        "Вы можете установить флаг или радио-кнопку отмеченной по-умолчанию с помощью атрибута <code>checked</code>.",
+        "Для этого добавьте слово \"checked\" в качестве атрибута элемента input. Например:",
+        "<code>&#60;input type=\"radio\" name=\"test-name\" checked&#62;</code>",
+        "Установите первую <code>радио-кнопку</code> и первый <code>флаг</code> из наборов отмеченными по-умолчанию."
+      ],
       "title": "Check Radio Buttons and Checkboxes by Default",
       "description": [
         "You can set a checkbox or radio button to be checked by default using the <code>checked</code> attribute.",
@@ -2461,6 +2751,14 @@
         "Wie jedes andere Element – das sich nicht selbst schließt –  kannst du ein <code>div</code> Element mit <code>&#60;div&#62;</code> öffnen und mit <code>&#60;/div&#62;</code> wieder schließen.",
         "Versuche deine öffnende <code>div</code> Auszeichnung überhalb des <code>p</code> Elements von  \"Things cats love\" und das schließende <code>div</code> unterhalb der schließenden <code>ol</code> Auszeichnung zu platzieren. Damit befinden sich beide Listen innerhalb eines <code>div</code>"
       ],
+      "titleRU": "Вложите множество элементов внутрь одного элемента div",
+      "descriptionRU": [
+        "Элемент <code>div</code>, известный как элемент раздела, является контейнером общего назначения для других элементов.",
+        "Элемент <code>div</code> возможно наиболее широко используемый HTML элемент из всех возможных. Он полезен для передачи собственных CSS-свойств вниз по дереву элементов, которые он содержит.",
+        "Как и с любым другим несамозакрывающимся элементом, вы можете открыть элемент <code>div</code> меткой <code>&#60;div&#62;</code> и закрыть на следующей строке меткой <code>&#60;/div&#62;</code>.",
+        "Попробуйте разместить открывающую метку <code>div</code> над вашим элементом <code>p</code> с текстом \"Things cats love\", а закрывающую метку <code>div</code> после закрытия элемента <code>ol</code>, таким образом оба ваших списка оказываются внутри одного элемента <code>div</code>.",
+        "Вложите ваши списки \"Things cats love\" и \"Things cats hate\" внутрь одного элемента <code>div</code>."
+      ],
       "title": "Nest Many Elements within a Single Div Element",
       "description": [
         "The <code>div</code> element, also known as a division element, is a general purpose container for other elements.",
@@ -2552,6 +2850,13 @@
         "For example, if you wanted an element's background color to be <code>green</code>, you'd put this within your <code>style</code> element:",
         "<blockquote>.green-background {<br>&nbsp;&nbsp;background-color: green;<br>}</blockquote>",
         "Create a class called <code>gray-background</code> with the <code>background-color</code> of gray. Assign this class to your <code>div</code> element."
+      ],
+      "titleRU": "Присвойте цвет фона элементу div",
+      "descriptionRU": [
+        "Вы можете установить цвет фона элемента с помощью свойства <code>background-color</code>.",
+        "Например, если бы вы хотели установить цвет фона элемента <code>зелёным</code>, вы бы использовали следующий стиль внутри вашего элемента <code>style</code>:",
+        "<blockquote>.green-background {<br>&nbsp;&nbsp;background-color: green;<br>}</blockquote>",
+        "Создайте класс <code>gray-background</code> со значением свойства <code>background-color</code> равным <code>gray</code>. Назначьте этот класс вашему элементу <code>div</code>."
       ],
       "challengeSeed": [
         "<link href=\"https://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
@@ -2645,6 +2950,15 @@
         "Here's an example of how you give your <code>h2</code> element the id of <code>cat-photo-app</code>:",
         "<code>&#60;h2 id=\"cat-photo-app\"></code>",
         "Give your <code>form</code> element the id <code>cat-photo-form</code>."
+      ],
+      "titleRU": "Установите id элемента",
+      "descriptionRU": [
+        "В дополнение к классам, каждый HTML-элемент может также иметь атрибут <code>id</code>.",
+        "Есть некоторые преимущества использования атрибутов <code>id</code>, вы узнаете о них больше, когда начнёте использовать jQuery.",
+        "Атрибутам <code>id</code> следует быть уникальными. Браузеры не принуждают к этому, но широкой общественностью это признано лучшей практикой. Поэтому, пожалуйста, не присваивайте множеству элементов одинаковое значение атрибута <code>id</code>.",
+        "Вот пример того, как вы можете присвоить вашему элементу <code>h2</code> значение атрибута <code>id</code> равное <code>cat-photo-app</code>:",
+        "<code>&#60;h2 id=\"cat-photo-app\"></code>",
+        "Присвойте вашему элементу <code>form</code> атрибут <code>id</code> со значением <code>cat-photo-form</code>."
       ],
       "challengeSeed": [
         "<link href=\"https://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
@@ -2741,6 +3055,14 @@
         "<blockquote>#cat-photo-element {<br>&nbsp;&nbsp;background-color: green;<br>}</blockquote>",
         "Note that inside your <code>style</code> element, you always reference classes by putting a <code>.</code> in front of their names. You always reference ids by putting a <code>#</code> in front of their names.",
         "Try giving your form, which now has the <code>id</code> attribute of <code>cat-photo-form</code>, a green background."
+      ],
+      "titleRU": "Используйте атрибут id для стилизации элемента",
+      "descriptionRU": [
+        "Одной из замечательных вещей в отношении атрибута <code>id</code> является то, что, как и с классами, вы можете стилизовать их с помощью CSS.",
+        "Вот пример того как вы можете присвоить вашему элементу со значением атрибута <code>id</code> равным <code>cat-photo-element</code> зелёный цвет фона. В вашем элементе <code>style</code>:",
+        "<blockquote>#cat-photo-element {<br>&nbsp;&nbsp;background-color: green;<br>}</blockquote>",
+        "Обратите внимание, что внутри вашего элемента <code>style</code> вы ссылаетесь на классы используя <code>.</code> перед их именами. При этом вы всегда ссылаетесь на идентификаторы вставляя <code>#</code> перед их именами.",
+        "Попробуйте установить для своей формы, которая теперь имеет атрибут <code>id</code> равный <code>cat-photo-form</code>, зелёный в качестве цвета фона."
       ],
       "challengeSeed": [
         "<link href=\"https://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
@@ -2850,6 +3172,16 @@
         "Wir sehen in diesem Beispiel, dass sich die grüne Box und die rote Box innerhalb der gelben Box befinden. Beachte, dass die rote Box mehr <code>padding</code> hat als die grüne Box.",
         "Wenn du den Innenabstand der grünen Box – also <code>padding</code> – erhöhst, wird sich die Entfernung zwischen dem Text \"padding\" und dem Rahmen darum erhöhen."
       ],
+      "titleRU": "Настройка отступа содержимого для элемента",
+      "descriptionRU": [
+        "Теперь давайте отложим наше фото кота на некоторое время и изучим стилизацию HTML.",
+        "Вы могли уже заметить это, но все HTML-элеметы в приницпе являются небольшими прямоугольниками.",
+        "Пространство вокруг каждого HTML-элемента контролируют три важных свойства: <code>padding</code>, <code>margin</code>, <code>border</code>.",
+        "Свойство элемента <code>padding</code> управляет размером пространства между элементом и его границей <code>border</code>.",
+        "Тут мы можем видеть, что зелёный и красный прямоугольник вложены в жёлтый прямоугольник. Обратите внимание на то, что красный прямоугольник имеет больший отступ содержимого <code>padding</code>, чем зелёный прямоугольник.",
+        "Когда вы увеличиваете <code>padding</code> зелёного прямоугольника, увеличивается расстояние между границей содержимого и границей самого элемента <code>border</code>.",
+        "Измените значение свойства <code>padding</code> вашего зелёного прямоугольника, чтобы он был равен соответствующему значению красного прямоугольника."
+      ],
       "title": "Adjusting the Padding of an Element",
       "description": [
         "Now let's put our Cat Photo App away for a little while and learn more about styling HTML.",
@@ -2928,6 +3260,13 @@
         "Die grüne und die rote Box befinden sich beide erneut innerhalb der gelben Box. Beachte, dass die rote Box mehr <code>margin</code> aufweist als ihr Erzfeind – die grüne Box.",
         "Wenn du den Außenabstand – <code>margin</code> – der grünen Box erhöhst, wird sich der Abstand zwischen ihrem Rahmen und den benachbarten Elementen vergrößern."
       ],
+      "titleRU": "Настройка отступа элемента",
+      "descriptionRU": [
+        "Значение свойства <code>margin</code> контролирует размер отступа между границей <code>border</code> элемента и его окружением.",
+        "Тут мы можем видеть, что зелёный прямоугольник и красный прямоугольник вложены в жёлтый прямоугольник. Обратите внимание на то, что красный прямоугольник имеет больший отступ <code>margin</code>, чем зелёный прямоугольник, что делает его визуально меньше.",
+        "Когда вы увеличиваете отступ <code>margin</code> зелёного прямоугольника, увеличивается расстояние между его границей и окружающими элементами.",
+        "Измените значение отступа <code>margin</code> зелёного прямоугольника так, чтобы оно равнялось соответствующему значению красного прямоугольника."
+      ],
       "title": "Adjust the Margin of an Element",
       "description": [
         "An element's <code>margin</code> controls the amount of space between an element's <code>border</code> and surrounding elements.",
@@ -3002,6 +3341,13 @@
         "Wenn du dem Außenabstand eines Elements einen negativen Wert zuweist, wird das Element größer.",
         "Versuche den Außenabstand auf einen negativen Wert wie bei der roten Box zu setzen."
       ],
+      "titleRU": "Добавьте отрицательный отступ к элементу",
+      "descriptionRU": [
+        "Значение свойства <code>margin</code> контролирует размер отступа между границей <code>border</code> элемента и его окружением.",
+        "Если вы установите значение свойства <code>margin</code> элемента отрицательным, то элемент будет становиться больше.",
+        "Попробуйте установить значение свойства <code>margin</code> зелёного прямоугольника отрицательным, по аналогии с красным прямоугольником.",
+        "Измените значение свойства <code>margin</code> зелёного прямоугольника на <code>-15px</code>, таким образом он занимает всю ширину окружающего жёлтого прямоугольника."
+      ],
       "title": "Add a Negative Margin to an Element",
       "description": [
         "An element's <code>margin</code> controls the amount of space between an element's <code>border</code> and surrounding elements.",
@@ -3072,6 +3418,12 @@
         "Verleihe der grünen Box einen Innenabstand – <code>padding</code> – von 40 Pixeln auf der oberen und linken Seite, aber nur 20 Pixel auf der unteren und rechten Seite.",
         "Manchmal wirst du einem Element unterschiedlichen Innenabstand – also <code>padding</code> – auf jeder Seite geben wollen.",
         "CSS erlaubt dir den Innenabstand eines Elements auf allen Seiten einzeln mit den Eigenschaften <code>padding-top</code>, <code>padding-right</code>, <code>padding-bottom</code> und <code>padding-left</code> zu steuern."
+      ],
+      "titleRU": "Добавьте разный отступ содердимого с каждой стороны элемента",
+      "descriptionRU": [
+        "Иногда вам может потребоваться изменить элемент таким образом, чтобы отступ содержимого <code>padding</code> с каждой из сторон был разным.",
+        "CSS позволяет вам контролировать значение свойства <code>padding</code> элемента со всех сторон с помощью свойств: <code>padding-top</code>, <code>padding-right</code>, <code>padding-bottom</code>, <code>padding-left</code>.",
+        "Присвойте зелёному прямоугольнику <code>padding</code> равный <code>40px</code> сверху и слева, но только <code>20px</code> снизу и справа."
       ],
       "title": "Add Different Padding to Each Side of an Element",
       "description": [
@@ -3144,6 +3496,12 @@
       "descriptionDe": [
         "Gib der grünen Box einen Außenabstand – also <code>margin</code> – von 40 Pixeln auf der oberen und linken Seite, aber nur 20 Pixel auf der unteren und rechten Seite.",
         "CSS erlaubt dir ebenfalls den Außenabstand auf jeder Seite einzeln mit den Eigenschaften <code>margin-top</code>, <code>margin-right</code>, <code>margin-bottom</code> und <code>margin-left</code> zu steuern."
+      ],
+      "titleRU": "Добавьте разный отступ для элемента",
+      "descriptionRU": [
+        "Иногда вам может потребоваться изменить элемент, установив разный отступ <code>margin</code> с каждой из его сторон.",
+        "CSS позволяет вам контролировать отступ <code>margin</code> элемента с каждой из его сторон с помощью свойств: <code>margin-top</code>, <code>margin-right</code>, <code>margin-bottom</code>, <code>margin-left</code>.",
+        "Присвойте красному прямоугольнику значение <code>margin</code> равное <code>40px</code> сверху и слева, но только <code>20px</code> снизу и справа."
       ],
       "title": "Add Different Margins to Each Side of an Element",
       "description": [
@@ -3219,6 +3577,13 @@
         "Anstatt die Eigenschaften <code>padding-top</code>, <code>padding-right</code>, <code>padding-bottom</code> und <code>padding-left</code> zu verwenden, kannst du sie alle in einer Zeile schreiben: <code>padding: 10px 20px 10px 20px;</code>",
         "Diese vier Werte funktionieren wie eine Uhr: oben, rechts, unten und links. Sie bedeuten exakt das selbe wie die seitenspezifischen Anweisungen."
       ],
+      "titleRU": "Используйте систему ссылок по часовой стрелке для установки отступа содержмого элемента",
+      "descriptionRU": [
+        "Вместо указания свойств элемента: <code>padding-top</code>, <code>padding-right</code>, <code>padding-bottom</code>, <code>padding-left</code>, вы можете указать их в строку, например:",
+        "<code>padding: 10px 20px 10px 20px;</code>",
+        "Установка значений работает по часовой стрелке: сверху, справа, снизу, слева, и приводит к ровно такому же результату, как и использование других инструкций.",
+        "Используйте систему ссылок по часовой стрелке для установки для класса \".green-box\" значения отступа содержимого <code>padding</code> равное <code>40px</code> сверху и слева, но только <code>20px</code> снизу и справа."
+      ],
       "title": "Use Clockwise Notation to Specify the Padding of an Element",
       "description": [
         "Instead of specifying an element's <code>padding-top</code>, <code>padding-right</code>, <code>padding-bottom</code>, and <code>padding-left</code> properties, you can specify them all in one line, like this:",
@@ -3293,6 +3658,14 @@
         "Anstatt die Eigenschaften <code>margin-top</code>, <code>margin-right</code>, <code>margin-bottom</code> und <code>margin-left</code> zu verwenden, kannst du alle in eine Zeile schreiben: <code>margin: 10px 20px 10px 20px;</code>",
         "Diese vier Werte funktionieren wieder wie eine Uhr: oben, rechts, unten und links. Sie meinen exakt das gleiche wie die seitenspezifischen Anweisungen."
       ],
+      "titleRU": "Используйте систему ссылок по часовой стрелке для установки отступа элемента",
+      "descriptionRU": [
+        "Давайте попробуем то же самое, но со свойством <code>margin</code> на этот раз.",
+        "Вмето указания свойств элемента: <code>margin-top</code>, <code>margin-right</code>, <code>margin-bottom</code>, <code>margin-left</code>, вы можете указать их в строку, например:",
+        "<code>margin: 10px 20px 10px 20px;</code>",
+        "Установка значений работает по часовой стрелке: сверху, справа, снизу, слева, и приводит к ровно такому же результату, как и использование других инструкций.",
+        "Используйте систему ссылок по часовой стрелке для установки для класса <code>green-box</code> значения отступа <code>margin</code> равное <code>40px</code> сверху и слева, но только <code>20px</code> снизу и справа."
+      ],
       "title": "Use Clockwise Notation to Specify the Margin of an Element",
       "description": [
         "Let's try this again, but with <code>margin</code> this time.",
@@ -3364,6 +3737,14 @@
         "We can do this by adding the following to our <code>style</code> element:",
         "<blockquote>body {<br>&nbsp;&nbsp;background-color: black;<br>}</blockquote>"
       ],
+      "titleRU": "Стилизуйте HTML-элемент body",
+      "descriptionRU": [
+        "Теперь давайте начнём с нуля и поговорим о наследовании в CSS.",
+        "Каждая HTML-страница имеет элемент <code>body</code>.",
+        "Мы можем доказать существование элемента <code>body</code> тут, присвоив его свойству <code>background-color</code> значение <code>black</code>.",
+        "Мы можем это сделать добавлением следующего к нашему элементу <code>style</code>:",
+        "<blockquote>body {<br>&nbsp;&nbsp;background-color: black;<br>}</blockquote>"
+      ],
       "challengeSeed": [
         "<style>",
         "",
@@ -3403,6 +3784,14 @@
         "First, create a <code>h1</code> element with the text <code>Hello World</code>",
         "Then, let's give all elements on your page the color of <code>green</code> by adding <code>color: green;</code> to your <code>body</code> element's style declaration.",
         "Finally, give your <code>body</code> element the font-family of <code>Monospace</code> by adding <code>font-family: Monospace;</code> to your <code>body</code> element's style declaration."
+      ],
+      "titleRU": "Наследование стилей от элемента Body",
+      "descriptionRU": [
+        "Мы доказали наличие у каждой HTML-страницы элемента <code>body</code> и то, что этот элемент <code>body</code> можно стилизовать с помощью CSS.",
+        "Не забывайте, что вы можете стилизовать ваш элемент <code>body</code> так же как и любой другой HTML-элемент, а все остальные элементы унаследуют стили элемента <code>body</code>.",
+        "Для начала, создайте элемент <code>h1</code> с текстом <code>Hello World</code>",
+        "Затем присвойте всем элементам на вашей странице <code>зелёный</code> цвет путём добавления <code>color: green;</code> к свойствам, указанным в объявлении стилей для элемента <code>body</code>.",
+        "В завершении, присвойте вашему элементу <code>body</code> свойство семейства шрифтов равное <code>Monospace</code> путём добавления <code>font-family: Monospace;</code> к свойствам, указанным в объявлении стилей для элемента <code>body</code>."
       ],
       "challengeSeed": [
         "<style>",
@@ -3450,6 +3839,14 @@
         "Create a CSS class called <code>pink-text</code> that gives an element the color pink.",
         "Give your <code>h1</code> element the class of <code>pink-text</code>."
       ],
+      "titleRU": "Установите приоритет одного стиля над другим",
+      "descriptionRU": [
+        "Иногда вашим HTML-элементам будут присвоены множественные стили, конфликтующие друг с другом.",
+        "Например, ваш элемент <code>h1</code> не может быть одновременно зелёным и розовым.",
+        "Давайте посмотрим, что произойдёт, когда мы создадим класс, который делает текст розовым, затем присвоим его элементу. <code>Переопределит</code> ли наш класс значение CSS-свойства элемента <code>body</code> равное <code>color: green;</code>?",
+        "Создайте CSS-класс <code>pink-text</code>, который назначает элементу розовый в качестве цвета.",
+        "Назначьте вашему элементу <code>h1</code> класс <code>pink-text</code>."
+      ],
       "challengeSeed": [
         "<style>",
         "  body {",
@@ -3496,6 +3893,17 @@
         "<code>class=\"class1 class2\"</code>",
         "Note: It doesn't matter which order the classes are listed in the HTML element.",
         "However, the order of the <code>class</code> declarations in the <code>&#60;style&#62;</code> section are what is important. The second declaration will always take precedence over the first. Because <code>.blue-text</code> is declared second, it overrides the attributes of <code>.pink-text</code>"
+      ],
+      "titleRU": "Преопределите стили последующим CSS",
+      "descriptionRU": [
+        "Наш класс \"pink-text\" переопределил объявленное CSS-свойство элемента <code>body</code>!",
+        "Мы только что доказали, что наши классы переопределяют CSS-свойства, обявленные в элементе <code>body</code>. Следующим вопросом по логике дожно быть: можем ли мы переопределить наш класс <code>pink-text</code> class?",
+        "Создайте дополнительный CSS-класс <code>blue-text</code>, который присваивает элементу синий цвет. Убедитесь, что он расположен ниже объявления вашего класса <code>pink-text</code>.",
+        "Примените класс <code>blue-text</code> к вашему элементу <code>h1</code> в дополнение к вашему классу <code>pink-text</code>, и давайте посмотрим какой выиграет.",
+        "Применение множественных классов к атрибуту <code>class</code> HTML-элемента осуществляется через пробел:",
+        "<code>class=\"class1 class2\"</code>",
+        "Внимание: порядок, в котором указаны классы HTML-элемента неважен.",
+        "Однако, порядок, в котором <code>классы</code> указаны в элементе <code>&#60;style&#62;</code> важен. Последующее объявление будет всегда иметь приоритет над предшествующим. Поскольку <code>.blue-text</code> объявлен последним, он переопрпделяет значения заданные атрибутом <code>.pink-text</code>"
       ],
       "challengeSeed": [
         "<style>",
@@ -3554,6 +3962,18 @@
         "Create a CSS declaration for your <code>orange-text</code> id in your <code>style</code> element. Here's an example of what this looks like:",
         "<blockquote>#brown-text {<br>&nbsp;&nbsp;color: brown;<br>}</blockquote>",
         "Note: It doesn't matter whether you declare this css above or below pink-text class, since id attribute will always take precedence."
+      ],
+      "titleRU": "Переопределите значения свойств классов стилизацией атрибутов id",
+      "descriptionRU": [
+        "Мы только что доказали, что браузеры читают CSS сверху-вниз. Это значит, что в случае конфликта значений будет установлено то, которое было объявлено в последнюю очередь.",
+        "Но мы ещё не закончилил. Есть и другие способы переопределения CSS. Помните атрибуты id?",
+        "Давайте переопределим ваши классы <code>pink-text</code> и <code>blue-text</code>, и сделаем ваш элемент <code>h1</code> оранжевым, назначив элементу <code>h1</code> зна��ение атрибута <code>id</code> и его последующей стилизацией.",
+        "Назначьте вашему элементу <code>h1</code> значение атрибута <code>id</code> равное <code>orange-text</code>. Помните, что стилизация атрибута <code>id</code> выглядит так:",
+        "<code>&#60;h1 id=\"orange-text\"&#62;</code>",
+        "Оставьте классы <code>blue-text</code> и <code>pink-text</code> присвоенными вашему элементу <code>h1</code>.",
+        "Объявите свойства вашего атрибута <code>id</code> с названием <code>orange-text</code> в вашем элементе <code>style</code>. Вот пример того, как это выглядит:",
+        "<blockquote>#brown-text {<br>&nbsp;&nbsp;color: brown;<br>}</blockquote>",
+        "Внимание: Не имеет значения объявите ли вы стиль выше или ниже класса <code>pink-text</code>, так как атрибут <code>id</code> всегда имеет приоритет."
       ],
       "challengeSeed": [
         "<style>",
@@ -3615,6 +4035,14 @@
         "<code>&#60;h1 style=\"color: green\"&#62;</code>",
         "Leave the <code>blue-text</code> and <code>pink-text</code> classes on your <code>h1</code> element."
       ],
+      "titleRU": "Переопределите значения свойств классов встроенными стилями",
+      "descriptionRU": [
+        "Итак, мы доказали, что объявление атрибута <code>id</code> переопределяет значения свойств, определённые в значениях атрибута <code>class</code>, независимо от того, были ли они объявлены в вашем элементе <code>style</code>.",
+        "Есть и другие способы переопределения CSS. Помните встроенные стили?",
+        "Используйте <code>встроенный стиль</code>, чтобы попробовать сделать наш элемент <code>h1</code> белым. Помните, что встроенные стили выглядят следующим образом:",
+        "<code>&#60;h1 style=\"color: green\"&#62;</code>",
+        "Оставьте классы <code>blue-text</code> и <code>pink-text</code> назначенными вашему элементу <code>h1</code>."
+      ],
       "challengeSeed": [
         "<style>",
         "  body {",
@@ -3670,6 +4098,16 @@
         "Let's go all the way back to our <code>pink-text</code> class declaration. Remember that our <code>pink-text</code> class was overridden by subsequent class declarations, id declarations, and in-line styles.",
         "Let's add the keyword <code>!important</code> to your pink-text element's color declaration to make 100% sure that your <code>h1</code> element will be pink.",
         "An example of how to do this is:",
+        "<code>color: red !important;</code>"
+      ],
+      "titleRU": "Переопределите все другие стили применив important",
+      "descriptionRU": [
+        "Ура! Мы только что доказали, что встроенные стили переопределяют все другие объявления CSS-свойств в вашем элементе <code>style</code>.",
+        "Но подождите. Есть ещё один последний способ переопределения CSS. Это наиболее существенный способ из всех. Но перед тем, как мы его попробует, давайте поговорим о том, зачем вам может понадобиться переопрелить CSS.",
+        "Во множестве ситуаций вы будете использовать CSS-библиотеки. Это может переопределить ваш собственный CSS. Таким образом, когда вам требуется быть абсолютно уверенными в том, что элемент будет обладать определёнными CSS-свойствами, вы можете использовать <code>!important</code>",
+        "Давайте вернёмся к объявлению нашего класса <code>pink-text</code>. Помните, что наш класс <code>pink-text</code> был переопределён последующим классом, стилизацией атрибута <code>id</code>, встроенным стилем.",
+        "Давайте добавим ключевое слово <code>!important</code> к вашему объявлению текста розовым, чтобы убедиться на 100%, что ваш элемент <code>h1</code> будет розовый.",
+        "Пример того, как это можено сделать:",
         "<code>color: red !important;</code>"
       ],
       "challengeSeed": [
@@ -3731,6 +4169,13 @@
         "In CSS, we can use 6 hexadecimal digits to represent colors, two each for the red (R), green (G), and blue (B) components. For example, <code>#000000</code> is black and is also the lowest possible value. You can find more information about the <a target='_blank' href='https://en.wikipedia.org/wiki/RGB_color_model'>RGB color system here</a>.",
         "Replace the word <code>black</code> in our <code>body</code> element's background-color with its <code>hex code</code> representation, <code>#000000</code>."
       ],
+      "titleRU": "Используйте hex-цвета для выбора определённых цветов",
+      "descriptionRU": [
+        "Знали ли вы, что существуют другие способы представления цветов в CSS? Одним из этих способов является шестнадцатиричный код, <code>hex-код</code>, если короче.",
+        "Обычно мы используем <code>десятки</code>, или десятичную систему счисления, в основе которой лежит число 10, которая использует символы от 0 до 9 для каждого числа. В основе <code>Шестнадцатиричной</code> системы лежит число 16. Это значит, что она использует шестнадцать различных символов. Как в десятичной, символы 0-9 соответствуют значениям от нуля до девяти. Далее A,B,C,D,E,F соответствуют значениям от десяти до пятнадцати. Вместе, от 0 до F, с их помощью можно представить число в <code>шестнадцатиричной</code> системе счисления, что даёт нам в целом 16 возможных значений. Вы можете найти больше информации о <a target='_blank' href='https://ru.wikipedia.org/wiki/%D0%A8%D0%B5%D1%81%D1%82%D0%BD%D0%B0%D0%B4%D1%86%D0%B0%D1%82%D0%B5%D1%80%D0%B8%D1%87%D0%BD%D0%B0%D1%8F_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0_%D1%81%D1%87%D0%B8%D1%81%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F'>шестнадцатиричной системе счисления тут</a>.",
+        "В CSS, мы можем использовать 6 шестнадцатиричных чисел для представления цвета, по два на каждый компонент: красный (R), зелёный (G), синий (B). Например, <code>#000000</code> - черный цвет и минимальное значение. Вы можете найти больше информации о <a target='_blank' href='https://ru.wikipedia.org/wiki/RGB'>цветовой модели RGB</a>.",
+        "Замените слово <code>black</code> в свойстве <code>background-color</code> нашего элемента <code>body</code> на представление в виде <code>hex-кода</code>, <code>#000000</code>."
+      ],
       "challengeSeed": [
         "<style>",
         "  body {",
@@ -3767,6 +4212,12 @@
         "<code>F</code> is the highest number in hex code, and it represents the maximum possible brightness.",
         "Let's turn our <code>body</code> element's background-color white by changing its hex code to <code>#FFFFFF</code>"
       ],
+      "titleRU": "Используйте hex-код, чтобы сделать элементы белыми",
+      "descriptionRU": [
+        "<code>0</code> - минимальное значение в hex-коде, оно обозначает полное отсутствие цвета.",
+        "<code>F</code> - максимальное значение в hex-коде, оно обозначает максимальную возможную яркость.",
+        "Давайте переделаем свойство <code>background-color</code> нашего элемента <code>body</code>, чтобы фон стал белый, заменив его hex-код на <code>#FFFFFF</code>"
+      ],
       "challengeSeed": [
         "<style>",
         "  body {",
@@ -3802,6 +4253,14 @@
         "Hex code follows the red-green-blue, or <code>rgb</code> format. The first two digits of hex code represent the amount of red in the color. The third and fourth digit represent the amount of green. The fifth and sixth represent the amount of blue.",
         "So to get the absolute brightest red, you would just use <code>F</code> for the first and second digits (the highest possible value) and <code>0</code> for the third, fourth, fifth and sixth digits (the lowest possible value).",
         "Make the <code>body</code> element's background color red by giving it the hex code value of <code>#FF0000</code>"
+      ],
+      "titleRU": "Используйте hex-код, чтобы сделать элементы красными",
+      "descriptionRU": [
+        "Вы можете удивиться тому, что мы используем 6 цифр для представления цвета вместо одной или двух. Ответ заключается в том, что использование 6-ти цифр даёт нам большое разнообразие.",
+        "Сколько цветов возможно таким образом обозначить? 16 значений и 6 возможных положений значит, что у нас есть в распоряжении 16 в степени 6, или более 16-ти миллионов возможных цветов.",
+        "Hex-код соответствует модели красный-зелёный-синий, или <code>rgb</code> формату. Первые две цифры hex-кода обозначают количество красного в цвете. Третья и четвёртая - количество зелёного. Пятая и шестая - количество синего.",
+        "То есть для получения абсолютно яркого красного, вы бы использовали <code>F</code> в качестве первой и второй цифры (максимальное возможное значение) и <code>0</code> для третьей, четвёртой, пятой и шестой цифр (минимальное возможное значение).",
+        "Сделайте цвет фона элемента <code>body</code> красным, присвоив его соответствующему свойству значение hex-кода равное <code>#FF0000</code>"
       ],
       "challengeSeed": [
         "<style>",
@@ -3841,6 +4300,12 @@
         "So to get the absolute brightest green, you would just use <code>F</code> for the third and fourth digits (the highest possible value) and <code>0</code> for all the other digits (the lowest possible value).",
         "Make the <code>body</code> element's background color green by giving it the hex code value of <code>#00FF00</code>"
       ],
+      "titleRU": "Используйте hex-код, чтобы сделать элементы зелёными",
+      "descriptionRU": [
+        "Помните, что <code>hex-код</code> соответствует модели красный-зелёный-синий, или <code>rgb</code> формату. Первые две цифры hex-кода обозначают количество красного в цвете. Третья и четвёртая - количество зелёного. Пятая и шестая - количество синего.",
+        "То есть для получения абсолютно яркого зелёного, вы бы использовали <code>F</code> в качестве третьей и четвёртой цифры (максимальное возможное значение) и <code>0</code> для первой, второй, пятой и шестой цифр (минимальное возможное значение).",
+        "Сделайте цвет фона элемента <code>body</code> зелёным, присвоив его соответствующему свойству значение hex-кода равное <code>#00FF00</code>"
+      ],
       "challengeSeed": [
         "<style>",
         "  body {",
@@ -3874,6 +4339,12 @@
         "Hex code follows the red-green-blue, or <code>rgb</code> format. The first two digits of hex code represent the amount of red in the color. The third and fourth digit represent the amount of green. The fifth and sixth represent the amount of blue.",
         "So to get the absolute brightest blue, we use <code>F</code> for the fifth and sixth digits (the highest possible value) and <code>0</code> for all the other digits (the lowest possible value).",
         "Make the <code>body</code> element's background color blue by giving it the hex code value of <code>#0000FF</code>"
+      ],
+      "titleRU": "Используйте hex-код, чтобы сделать элементы синими",
+      "descriptionRU": [
+        "Помните, что <code>hex-код</code> соответствует модели красный-зелёный-синий, или <code>rgb</code> формату. Первые две цифры hex-кода обозначают количество красного в цвете. Третья и четвёртая - количество зелёного. Пятая и шестая - количество синего.",
+        "То есть для получения абсолютно яркого синего, вы бы использовали <code>F</code> в качестве пятой и шустой цифры (максимальное возможное значение) и <code>0</code> для первой, второй, третьей и четвёртой цифр (мин��мальное возможное значение).",
+        "Сделайте цвет фона элемента <code>body</code> синим, присвоив его соответствующему свойству значение hex-кода равное <code>#0000FF</code>"
       ],
       "challengeSeed": [
         "<style>",
@@ -3909,6 +4380,12 @@
         "For example, orange is pure red, mixed with some green, and no blue.",
         "Make the <code>body</code> element's background color orange by giving it the hex code value of <code>#FFA500</code>"
       ],
+      "titleRU": "Используйте hex-код, чтобы смешивать цвета",
+      "descriptionRU": [
+        "Из этих трёх чистых цветов (красного, зелёного и синего), мы можем создать 16 миллионов других цветов.",
+        "Например, оранжевый - смесь чистого красного с примесью зелёного, но без синего.",
+        "Сделайте цвет фона элемента <code>body</code> оранжевым, присвоив его соответствующему свойству значение hex-кода равное <code>#FFA500</code>"
+      ],
       "challengeSeed": [
         "<style>",
         "  body {",
@@ -3943,6 +4420,12 @@
         "We can also create different shades of gray by evenly mixing all three colors.",
         "Make the <code>body</code> element's background color gray by giving it the hex code value of <code>#808080</code>"
       ],
+      "titleRU": "Используйте hex-код, чтобы сделать элементы серыми",
+      "descriptionRU": [
+        "Из этих трёх чистых цветов (красного, зелёного и синего), мы можем создать 16 миллионов других цветов.",
+        "Также мы можем создавать различные оттенки серого смешивая равномерно все три цвета.",
+        "Сделайте цвет фона элемента <code>body</code> серым, присвоив его соответствующему свойству значение hex-кода равное <code>#808080</code>"
+      ],
       "challengeSeed": [
         "<style>",
         "  body {",
@@ -3976,6 +4459,11 @@
         "We can also create other shades of gray by evenly mixing all three colors. We can go very close to true black.",
         "Make the <code>body</code> element's background color a dark gray by giving it the hex code value of <code>#111111</code>"
       ],
+      "titleRU": "Используйте hex-код для получения определённого оттенка серого",
+      "descriptionRU": [
+        "Также мы можем создавать другие оттенки серого равномерным смешением всех трёх цветов. Так мы можем добраться почти до абсолютно чёрного.",
+        "Сделайте цвет фона элемента <code>body</code> тёмно-серым, присвоив его соответствующему свойству значение hex-кода равное <code>#111111</code>"
+      ],
       "challengeSeed": [
         "<style>",
         "  body {",
@@ -4008,6 +4496,13 @@
         "For example, red, which is <code>#FF0000</code> in hex code, can be shortened to <code>#F00</code>. That is, one digit for red, one digit for green, one digit for blue.",
         "This reduces the total number of possible colors to around 4,000. But browsers will interpret <code>#FF0000</code> and <code>#F00</code> as exactly the same color.",
         "Go ahead, try using <code>#F00</code> to turn the <code>body</code> element's background-color red."
+      ],
+      "titleRU": "Используйте аббревиатуры hex-кода",
+      "descriptionRU": [
+        "Множество людей обременяет возможность применения более 16-ти миллионов цветов. И hex-коды достаточно сложно запоминать. К счастью, вы можете использовать укороченные выражения.",
+        "Например, красный, который имеет значение <code>#FF0000</code> в виде hex-кода, может быть укорочен до <code>#F00</code>. В укороченном виде: одна цифра представляет красный, одна - зелёный, одна - синий.",
+        "Это уменьшает общее количество возможных цветов до порядка 4,000. Но браузеры будут интерпретировать <code>#FF0000</code> и <code>#F00</code> как один и тот же цвет.",
+        "Вперёд, попробуйте применить значение <code>#F00</code>, чтобы сделать цвет фона элемента <code>body</code> красным."
       ],
       "challengeSeed": [
         "<style>",
@@ -4049,6 +4544,17 @@
         "Instead of using six hexadecimal digits like you do with hex code, with <code>rgb</code> you specify the brightness of each color with a number between 0 and 255.",
         "If you do the math, 16 times 16 is 256 total values. So <code>rgb</code>, which starts counting from zero, has the exact same number of possible values as hex code.",
         "Let's replace the hex code in our <code>body</code> element's background color with the RGB value for black: <code>rgb(0, 0, 0)</code>"
+      ],
+      "titleRU": "Используйте формат RGB для придания цвета элементам",
+      "descriptionRU": [
+        "Другим способом представления цветов в CSS является применение значений <code>rgb</code>.",
+        "Значение RGB для чёрного цвета выглядит следующим образом:",
+        "<code>rgb(0, 0, 0)</code>",
+        "Значение RGB для белого выглядит так:",
+        "<code>rgb(255, 255, 255)</code>",
+        "Вместо использования шести шестнадцатиразрядных цифр, как вы делаете, когда применяете hex-код, применяя <code>rgb</code> вы указываете значение яркости каждого цвета в диапазоне от 0 до 255.",
+        "Если вы посчитаете, 16 раз по 16 - это 256 различных значений. Таким образом <code>rgb</code>, где счёт начинается с нуля, имеет ровно то же число возможных значений, что и hex-код.",
+        "Давайте заменим hex-код в цвете фона нашего элемента <code>body</code> на значение в формате RGB для получения чёрного: <code>rgb(0, 0, 0)</code>"
       ],
       "challengeSeed": [
         "<style>",
@@ -4097,6 +4603,15 @@
         "Instead of using six hexadecimal digits like you do with hex code, with <code>rgb</code> you specify the brightness of each color with a number between 0 and 255.",
         "Change the <code>body</code> element's background color from the RGB value for black to the <code>rgb</code> value for white: <code>rgb(255, 255, 255)</code>"
       ],
+      "titleRU": "Используйте формат RGB, чтобы сделать элементы белыми",
+      "descriptionRU": [
+        "Значение RGB для чёрного цвета выглядит следующим образом:",
+        "<code>rgb(0, 0, 0)</code>",
+        "Значение RGB для белого выглядит так:",
+        "<code>rgb(255, 255, 255)</code>",
+        "Вместо использования шести шестнадцатиразрядных цифр, как вы делаете, когда применяете hex-код, применяя <code>rgb</code> вы указываете значение яркости каждого цвета в диапазоне от 0 до 255.",
+        "Измените цвет фона элемента <code>body</code> со значения соответствующего чёрному в формате RGB на значение соответствующее белому: <code>rgb(255, 255, 255)</code>"
+      ],
       "challengeSeed": [
         "<style>",
         "  body {",
@@ -4137,6 +4652,12 @@
         "These values follow the pattern of RGB: the first number represents red, the second number represents green, and the third number represents blue.",
         "Change the <code>body</code> element's background color to the RGB value red: <code>rgb(255, 0, 0)</code>"
       ],
+      "titleRU": "Используйте формат RGB, чтобы сделать элементы красными",
+      "descriptionRU": [
+        "Также как и в hex-коде, вы можете представлять различные цвета в формате RGB с помощью комбинаций различных значений.",
+        "Эти значения соответствуют модели RGB: первое число - красный, второе - зелёный, третье - синий.",
+        "Измените цвет фона элемента <code>body</code> на значение в формате RGB соответствующее красному: <code>rgb(255, 0, 0)</code>"
+      ],
       "challengeSeed": [
         "<style>",
         "  body {",
@@ -4169,6 +4690,10 @@
       "description": [
         "Now change the <code>body</code> element's background color to the <code>rgb</code> value green: <code>rgb(0, 255, 0)</code>"
       ],
+      "titleRU": "Используйте формат RGB, чтобы сделать элементы зелёными",
+      "descriptionRU": [
+        "Теперь измените цвет фона элемента <code>body</code> на значение <code>rgb</code> соответствующее зелёному: <code>rgb(0, 255, 0)</code>"
+      ],
       "challengeSeed": [
         "<style>",
         "  body {",
@@ -4196,6 +4721,10 @@
       "title": "Use RGB to Color Elements Blue",
       "description": [
         "Change the <code>body</code> element's background color to the RGB value blue: <code>rgb(0, 0, 255)</code>"
+      ],
+      "titleRU": "Используйте формат RGB, чтобы сделать элементы синими",
+      "descriptionRU": [
+        "Измените цвет фона элемента <code>body</code> на значение в формате RGB соответствующее синему: <code>rgb(0, 0, 255)</code>"
       ],
       "challengeSeed": [
         "<style>",
@@ -4225,6 +4754,11 @@
       "description": [
         "Just like with hex code, you can mix colors in RGB by using combinations of different values.",
         "Change the <code>body</code> element's background color to the RGB value orange: <code>rgb(255, 165, 0)</code>"
+      ],
+      "titleRU": "Используйте формат RGB, чтобы смешивать цвета",
+      "descriptionRU": [
+        "Так же как и с hex-кодом, вы можете смешивать цвета в формате RGB, используя комбинации различных значений.",
+        "Измените цвет фона элемента <code>body</code> на значение в формате RGB соответствующее оранжевому: <code>rgb(255, 165, 0)</code>"
       ],
       "challengeSeed": [
         "<style>",
