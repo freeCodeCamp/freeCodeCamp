@@ -1,4 +1,3 @@
-import { Observable } from 'rx';
 import passport from 'passport';
 import { PassportConfigurator } from 'loopback-component-passport';
 import passportProviders from './passport-providers';
@@ -71,21 +70,22 @@ PassportConfigurator.prototype.init = function passportInit(noSession) {
   });
 
   passport.deserializeUser((id, done) => {
-    Observable.combineLatest(
-      this.userModel.findById$(id, { fields }),
-      this.userModel.getPointsById$(id),
-      (user, points) => {
-        if (user) { user.points = points; }
-        return user;
+
+    this.userModel.findById(id, { fields }, (err, user) => {
+      if (err || !user) {
+        return done(err, user);
       }
-    )
-      .doOnNext(user => {
-        if (!user) { throw new Error('deserialize found no user'); }
-      })
-      .subscribe(
-        user => done(null, user),
-        done
-      );
+      return this.app.dataSources.db.connector
+        .collection('user')
+        .aggregate([
+          { $match: { _id: user.id } },
+          { $project: { points: { $size: '$progressTimestamps' } } }
+        ], function(err, [{ points = 1 } = {}]) {
+          if (err) { return done(err); }
+          user.points = points;
+          return done(null, user);
+        });
+    });
   });
 };
 
