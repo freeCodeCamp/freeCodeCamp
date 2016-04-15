@@ -44,7 +44,7 @@ module.exports = function(User) {
 
   // username should not be in blacklist
   User.validatesExclusionOf('username', {
-    'in': blacklistedUsernames,
+    in: blacklistedUsernames,
     message: 'is taken'
   });
 
