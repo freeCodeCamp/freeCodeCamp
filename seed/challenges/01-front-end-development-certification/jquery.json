@@ -59,6 +59,16 @@
         "Dentro de tu elemento <code>script</code>, agrega este código: <code>$(document).ready(function () {</code> A continuación, ciérralo en la línea siguiente (aún dentro de tu elemento <code>script</code>) con: <code>})</code>",
         "Más adelante aprenderemos más acerca de funciones. Lo importante es saber que el código que pongas dentro de esta función (<code>function</code>) se ejecutará tan pronto como tu navegador haya cargado la página.",
         "Esto es importante porque sin tu <code>función de documento listo</code>, tu código puede ejecutarse antes de que se haya presentado el HTML, lo que podría causar errores."
+      ],
+      "titleDe": "Lerne, wie Script Tags und Document Ready funktionieren",
+      "descriptionDe": [
+        "Jetzt sind wir bereit jQuery zu lernen, das populärste JavaScript-Tool aller Zeiten. Mach dir über JavaScript keine Sorgen - über dieses werden wir bald sprechen.",
+        "Bevor wir jQuery nutzen können, müssen wir erst ein paar Dinge zu unserem HTML hinzufügen.",
+        "Füge als erstes ein <code>script</code> Element am Beginn deiner Seite ein. Vergewissere dich, dass du das Element in der nächsten Zeile geschlossen hast.",
+        "Dein Browser wird jegliches JavaScript, jQuery eingeschlossen, innerhalb eines <code>script</code> Elements ausführen.",
+        "Füge innerhalb deines <code>script</code> Elements folgenden Code hinzu: <code>$(document).ready(function() {</code>. Schließe ihn danach in der nächsten Zeile (noch immer innerhalb deines <code>script</code> Elements) mit: <code>});</code>",
+        "Wir werden später noch mehr über <code>Funktionen</code> lernen. Wichtig zu wissen ist, dass der Code innerhalb der <code>Funktion</code> ausgeführt wird, sobald der Browser die Seite geladen hat.",
+        "Das ist wichtig, denn ohne deine <code>Document Ready Funktion</code> könnte dein Code ausgeführt werden, bevor das HTML gerendert wurde - was zu Fehlern führen kann."
       ]
     },
     {
@@ -117,6 +127,15 @@
         "Por ejemplo, hagamos que todos tus elementos <code>button</code> reboten. Sólo tienes que añadir este código dentro de la función de documento listo: ",
         "<code>$(\"button\").addClass(\"animated bounce\")</code>",
         "Ten en cuenta que ya hemos incluido tanto la biblioteca jQuery como la biblioteca Animate.css en segundo plano para que pueda utilizarlos en el editor. Así que estás usando jQuery para aplicar la clase <code>bounce</code> de Animate.css a tus elementos <code>button</code>."
+      ],
+      "titleDe": "HTML-Elemente mit Selektoren durch jQuery auswählen",
+      "descriptionDe": [
+        "Jetzt haben wir eine <code>Document Ready Funktion</code>.",
+        "Lass uns unser erstes jQuery Statement schreiben. Alle jQuery Funktionen starten mit einem <code>$</code>, für gewöhnlich als <code>Dollar-Zeichen Operator</code> bezeichnet.",
+        "jQuery wählt oft HTML-Elemente mit einem <code>Selektor</code> aus, um dann mit diesen Elementen etwas zu machen.",
+        "Zum Beispiel, lasse alle deine <code>Button</code> Elemente hüpfen. Dazu musst du nur folgenden Code in deine <code>Document Ready Funktion</code> hinzufügen:",
+        "<code>$(\"button\").addClass(\"animated bounce\");</code>",
+        "Beachte, dass wir bereits jQuery und Animate.css im Hintergrund hinzugefügt haben, damit du diese im Editor nutzen kannst. Du nutzt also jQuery um die <code>bounce</code> Klasse von Animate.css zu deinen <code>Button</code> Elementen hinzuzufügen."
       ]
     },
     {
@@ -176,6 +195,16 @@
         "Ten en cuenta que, al igual que con las declaraciones CSS, escribes un <code>.</code> antes del nombre de la clase.",
         "A continuación, utiliza la función <code>.addClass()</code> de jQuery para agregar las clases <code>animated</code> y <code>shake</code>.",
         "Por ejemplo, podrías hacer que todos los elementos con la clase <code>text-primary</code> se sacudieran añadiendo lo siguiente a tu <code>función de documento listo</code>:",
+        "<code>$(\".text-primary\").addClass(\"animated shake\");</code>"
+      ],
+      "titleDe": "Elemente anhand von Klassen mit jQuery auswählen",
+      "descriptionDe": [
+        "Siehst du, wie wir alle deine <code>Button</code> Elemente hüpfen haben lassen? Wir haben sie mit <code>$(\"button\")</code> ausgewählt, dann CSS-Klassen mit <code>.addClass(\"animated bounce\");</code> hinzugefügt.",
+        "Du hast gerade jQuery's <code>.addClass()</code> Funktion genutzt, die dir erlaubt, Klassen zu Elemente hinzuzufügen.",        
+        "Wähle als erstes deine <code>div</code> Elemente mit der Klasse <code>well</code>, indem du den <code>$(\".well\")</code> Selektor nutzt.",
+        "Bedenke, dass du - genauso wie bei CSS-Deklarationen - einen <code>.</code> vor den Namen der Klasse setzen musst.",
+        "Dann nutze die jQuery Funktion <code>.addClass()</code> um die Klassen <code>animated</code> und <code>shake</code> hinzuzufügen.",       
+        "Zum Beispiel könntest du alle Elemente mit der Klasse <code>text-primary</code> schütteln lassen, indem du folgendes zu deiner <code>Document Ready Funktion</code> hinzufügst:",
         "<code>$(\".text-primary\").addClass(\"animated shake\");</code>"
       ]
     },
@@ -238,6 +267,15 @@
         "A continuación, utiliza la función <code>.addClass()</code> de jQuery para agregar las clases <code>animated</code> y <code>fadeOut</code>.",
         "He aquí cómo haces que desaparezca el elemento <code>button</code> con la identificación <code>target6</code>:",
         "<code>$(\"#target6\").addClass(\"animated fadeOut\")</code>."
+      ],
+      "titleDe": "Elemente anhand der ID mit jQuery auswählen",
+      "descriptionDe": [
+        "Du kannst Elemente auch anhand deren ID-Attributs auswählen.",
+        "Wähle als erstes dein <code>Button</code> Element mit der ID <code>target3</code>, indem du den <code>$(\"#target3\")</code> Selektor nutzt.",
+        "Bedenke, dass du - genauso wie bei CSS-Deklarationen - eine <code>#</code> vor den Namen der Klasse setzen musst.",
+        "Dann nutze die jQuery Funktion <code>.addClass()</code> um die Klassen <code>animated</code> und <code>fadeOut</code> hinzuzufügen.",
+        "So könntest du das <code>Button</code> Element mit der ID <code>target6</code> ausblenden lassen:",
+        "<code>$(\"#target6\").addClass(\"animated fadeOut\")</code>."
       ]
     },
     {
@@ -294,6 +332,11 @@
       "descriptionEs": [
         "Estas animaciones eran divertidas al principio, pero ahora se están volviendo una distracción.",
         "Elimina esas tres funciones jQuery de tu <code>función de documento listo</code>, pero deja intacta la declaración de la <code>función de documento listo</code>."
+      ],
+      "titleDe": "Lösche deine jQuery Funktionen",
+      "descriptionDe": [
+        "Anfangs waren diese Animationen noch cool, jetzt sind sie aber ein wenig störend.",
+        "Lösche alle drei jQuery Funktionen deiner <code>Document Ready Funktion</code>, aber lasse die <code>Document Ready Funktion</code> selbst intakt."
       ]
     },
     {
@@ -356,6 +399,15 @@
         "Agregar la clase <code>animated</code> a todos los elementos con tipo <code>button</code>.",
         "Agregar la clase <code>shake</code> a todos los botones con clase <code>.btn</code>.",
         "Agregar la clase <code>btn-primary</code> al botón con identificación <code>#target1</code>."
+      ],
+      "titleDe": "Wähle das gleiche Element mit mehreren jQuery Selektoren aus",
+      "descriptionDe": [
+        "Bis jetzt kennst du drei verschiedene Wege um Elemente auszuwählen: mit dem Element-Typ: <code>$(\"button\")</code>, mit der Element-Klasse: <code>$(\".btn\")</code>, und der Element-ID: <code>$(\"#target1\")</code>.",
+        "Auch wenn es möglich ist, mehrere Klassen in einem einzigen <code>.addClass()</code> Aufruf hinzuzufügen, lass uns jetzt die Klassen in drei verschiedenen Wegen dem Element hinzufügen.",
+        "Nutze jeden der oben erwähnten jQuery Selektoren und die <code>addClass()</code> Funktion:",
+        "Füge die Klasse <code>animated</code> zu allen Elementen des Typs <code>button</code> hinzu.",
+        "Füge die Klasse <code>shake</code> zu allen Buttons mit der Klasse <code>.btn</code> hinzu.",
+        "Füge die Klasse <code>btn-primary</code> zu dem Button mit der ID <code>#target1</code> hinzu."
       ]
     },
     {
@@ -414,6 +466,13 @@
         "He aquí cómo puedes hacerlo para un botón específico:",
         "<code>$(\"#target2\").removeClass(\"btn-default\");</code>",
         "Vamos a quitar la clase <code>btn-default</code> de todos nuestros elementos <code>button</code>."
+      ],
+      "titleDe": "Entferne Klassen von einem Element mit jQuery",
+      "descriptionDe": [  
+        "Genauso wie du Klassen mit der jQuery Funktion <code>addClass()</code> hinzufügen kannst, kannst du mit der jQuery Funktion <code>removeClass()</code> Klassen entfernen.",
+        "So könntest du das bei einem spezifischen Button machen:",
+        "<code>$(\"#target2\").removeClass(\"btn-default\");</code>",
+        "Lass uns alle <code>btn-default</code> Klassen von unseren <code>Button</code> Elementen entfernen."
       ]
     },
     {
@@ -478,6 +537,16 @@
         "Esto es un poco diferente a una declaración normal CSS, porque la propiedad CSS y su valor están entre comillas y separadas por una coma en lugar de dos puntos.",
         "Elimina tus selectores jQuery, dejando en blanco la <code>función de documento listo</code>.",
         "Selecciona <code>target1</code> y cambia su color a rojo."
+      ],
+      "titleDe": "Das CSS eines Elements mit jQuery ändern",
+      "descriptionDe": [
+        "Wir können auch das CSS eines HTML-Elements mit jQuery verändern.",
+        "jQuery hat die Funktion <code>.css()</code>, welche dir erlaubt, das CSS eines Elements zu ändern.",
+        "So können wir die Farbe einer ID zu Blau ändern:",
+        "<code>$(\"#target1\").css(\"color\", \"blue\");</code>",
+        "Das ist ein wenig anders als eine normale CSS-Deklaration, weil die CSS-Eigenschaft und deren Wert in Anführungszeichen sind und durch ein Komma anstatt eines Doppelpunkts getrennt werden.",
+        "Lösche deine jQuery Selektoren, damit eine leere <code>Document Ready Funktion</code> übrig bleibt.",
+        "Wähle <code>target1</code> und ändere dessen Farbe zu Rot."
       ]
     },
     {
@@ -538,6 +607,15 @@
         "He aquí cómo puedes desactivar todos los botones:",
         "<code>$(\"button\").prop(\"disabled\", true);</code>",
         "Desactiva sólo el botón <code>target1</code>."
+      ],
+      "titleDe": "Elemente mit jQuery deaktivieren",
+      "descriptionDe": [
+        "Du kannst auch die nicht-CSS Eigenschaften eines HTML-Elements mit jQuery ändern. Zum Beispiel kannst du <code>Buttons</code> deaktivieren.",
+        "Wenn du einen <code>Button</code> deaktivierst, wird er grau unterlegt und kann nicht mehr geklickt werden.",
+        "jQuery hat eine Funktion namens <code>.prop()</code>, die es dir erlaubt, die Eigenschaften von Elementen anzupassen.",
+        "So kannst du alle <code>Buttons</code> deaktivieren:",
+        "<code>$(\"button\").prop(\"disabled\", true);</code>",
+        "Deaktiviere nur den <code>target1</code> Button."
       ]
     },
     {
@@ -600,6 +678,15 @@
         "<code>$(\"h3\").html(\"&#60;i&#62;jQuery Playground&#60;/i&#62;\");</code>",
         "jQuery también tiene una función similar llamada <code>.text()</code> que sólo altera el texto sin añadir etiquetas.",
         "Cambia el botón con identificación <code>target4</code> de forma que su texto quede en itálicas."
+      ],
+      "titleDe": "Ändere den Text innerhalb eines Elements mit jQuery",
+      "descriptionDe": [
+        "Mit jQuery kannst du den Text zwischen dem Start- und dem End-Tag eines Elements ändern. Du kannst sogar das HTML-Markup ändern.",
+        "jQuery hat eine Funktion namens <code>.html()</code>, die dich HTML-Tags und Text innerhalb eines Elements hinzufügen lässt. Jeglicher Content der sich vorher innerhalb des Elements befand, wird mit jenem Content ersetzt, den du durch diese Funktion bereitstellst.",
+        "So kannst du den Text unserer Überschrift überschreiben und hervorheben:",
+        "<code>$(\"h3\").html(\"&#60;em&#62;jQuery Playground&#60;/em&#62;\");</code>",
+        "jQuery hat auch eine weitere ähnliche Funktion namens <code>.text()</code>, welche nur den Text ändert, ohne Tags hinzuzufügen. In anderen Worten: diese Funktion evaluiert keinerlei HTML-Tags, die an sie übergeben werden, sondern behandelt diese als Text, den du mit der Funktion ersetzen willst.",
+        "Ändere den Button mit der ID <code>target4</code> indem du seinen Text hervorhebst."
       ]
     },
     {
@@ -654,6 +741,12 @@
         "Ahora quitemos un elemento HTML de tu página usando jQuery.",
         "jQuery tiene una función llamada <code>.remove()</code> que eliminará un elemento HTML por completo",
         "Elimina el elemento con identificación <code>target4</code> de la página utilizando la función <code>.remove()</code>."
+      ],
+      "titleDe": "Entferne ein Element mit jQuery",
+      "descriptionDe": [
+        "Lass uns jetzt ein HTML-Element mit jQuery von deiner Seite entfernen.",
+        "jQuery hat eine Funktion namens <code>.remove()</code>, die ein HTML-Element komplett entfernt.",
+        "Entferne das Element <code>target4</code> von der Seite, indem du die <code>.remove()</code> Funktion nutzt."
       ]
     },
     {
@@ -714,6 +807,14 @@
         "Por ejemplo, si quisiéramos mover <code>target4</code> de nuestro pozo (<em>well</em>) derecho a nuestro pozo izquierdo, usaríamos:",
         "<code>$(\"#target4\").appendTo(\"#left-well\");</code>",
         "Mueve tu elemento <code>target2</code> de tu <code>left-well</code> a tu <code>right-well</code>."
+      ],
+      "titleDe": "Verwende appendTo um Elemente mit jQuery zu verschieben.",
+      "descriptionDe": [
+        "Lass uns jetzt versuchen, ein Element von einem <code>div</code> zum Nächsten zu verschieben.",
+        "jQuery hat eine Funktion namens <code>appendTo()</code>, die es dir erlaubt HTML-Elemente auszuwählen und diese zu einem anderen Element anzuhängen.",
+        "Wenn wir zum Beispiel <code>target4</code> von <code>right-well</code> zu <code>left-well</code> verschieben wollen, würden wir folgenden Code nutzen:",
+        "<code>$(\"#target4\").appendTo(\"#left-well\");</code>",
+        "Verschiebe dein <code>target2</code> Element von <code>left-well</code> zu <code>right-well</code>."
       ]
     },
     {
@@ -777,6 +878,15 @@
         "<code>$(\"#target2\").clone().appendTo(\"#right-well\");</code>",
         "¿Te diste cuenta que esto implica pegar dos funciones jQuery? Esto se conoce como <code>encadenamiento</code> y es una manera conveniente de hacer las cosas con jQuery. ",
         "Clona tu elemento <code>target5</code> y añadelo a tu <code>left-well</code>."
+      ],
+      "titleDe": "Ein Element kopieren mit jQuery",
+      "descriptionDe": [
+        "Neben der Möglichkeit Elemente zu verschieben, können diese auch von einem Platz zum nächsten kopiert werden.",
+        "jQuery hat eine Funktion namens <code>clone()</code>, die eine Kopie eines Elements anfertigt.",
+        "Wenn wir zum Beispiel <code>target2</code> von <code>left-well</code> zu <code>right-well</code> kopieren wollen, würden wir folgenden Code nutzen:",
+        "<code>$(\"#target2\").clone().appendTo(\"#right-well\");</code>",
+        "Ist dir aufgefallen, dass wir dazu zwei jQuery Funktionen miteinander verknüpfen? Das nennt sich <code>function chaining</code> und ist eine praktische Art um mit jQuery zu Lösungen zu kommen.",
+        "Kopiere dein <code>target5</code> Element und verschiebe es zu <code>left-well</code>."
       ]
     },
     {
@@ -844,6 +954,15 @@
         "He aquí un ejemplo de cómo se utiliza la función <code>parent()</code> si quisieras darle al elemento padre del elemento <code>left-well</code> un color de fondo azul:",
         "<code>$(\"#left-well\").parent().css(\"background-color\", \"blue\")</code>",
         "Dale al padre del elemento <code>#target1</code> un color de fondo (<code>background-color</code>) rojo."
+      ],
+      "titleDe": "Wähle das Eltern-Element mit jQuery aus",
+      "descriptionDe": [
+        "Jedes HTML-Element hat ein <code>Eltern-Element</code>, von dem es Eigenschaften <code>erbt</code>.",
+        "Dein <code>jQuery Playground</code> <code>h3</code> Element hat zum Beispiel das Eltern-Element <code>&#60;div class=\"container-fluid\"&#62</code>, welches das <code>body</code> Element als Eltern-Element hat.",
+        "jQuery hat eine Funktion namens <code>parent()</code>, die es dir erlaubt auf die Eltern-Elemente eines von dir ausgewählten Elements zuzugreifen.",
+        "Hier ist ein Beispiel, wie du die <code>parent()</code> Funktion nutzen kannst, wenn du dem Eltern-Element des <code>left-well</code> Elements eine blaue Hintergrundfarbe geben willst:",
+        "<code>$(\"#left-well\").parent().css(\"background-color\", \"blue\")</code>",
+        "Gib dem Eltern-Element des <code>#target1</code> Elements eine rote Hintergrundfarbe."
       ]
     },
     {
@@ -909,6 +1028,15 @@
         "He aquí un ejemplo de cómo se utiliza la función <code>children()</code> para darle a los hijos de tu elemento <code>left-well</code> el color azul:",
         "<code>$(\"#left-well\").children().css(\"color\", \"blue\")</code>",
         "Da a todos los hijos de tu elemento <code>right-well</code> el color naranja."
+      ],
+      "titleDe": "Wähle Kinder-Elemente mit jQuery aus",
+      "descriptionDe": [          
+        "Viele HTML-Elemente haben <code>Kinder-Elemente</code>, die ihre Eigenschaften von ihren Eltern-Elementen <code>erben</code>.",
+        "Zum Beispiel ist jedes HTML-Element ein Kind-Element des <code>body</code> Elements und dein <code>\"jQuery Playground\"</code> <code>h3</code> Element ist ein Kind-Element deines <code>&#60;div class=\"container-fluid\"&#62</code> Elements.",
+        "jQuery hat eine Funktion namens <code>children()</code>, die es dir erlaubt, auf die Kinder-Elemente des von dir ausgewählten Elements zuzugreifen.",
+        "Hier ist ein Beispiel, wie du die <code>children()</code> Funktion nutzen kannst, wenn du den Kinder-Elementen von <code>left-well</code> die Farbe Blau geben willst:",
+        "<code>$(\"#left-well\").children().css(\"color\", \"blue\")</code>",
+        "Gib allen Kinder-Elementen von <code>#right-well</code> die Farbe Orange."
       ]
     },
     {
@@ -975,6 +1103,15 @@
         "He aquí cómo le asignarás la clase <code>bounce</code> al tercer elemento de cada pozo:",
         "<code>$(\".target:nth-child(3)\").addClass(\"animated bounce\");</code>",
         "Haz que rebote el segundo hijo de cada uno de los elementos de tus pozos. Debes elegir los hijos de elementos con clase <code>target</code>."
+      ],
+      "titleDe": "Wähle ein spezifisches Kinder-Element mit jQuery aus",
+      "descriptionDe": [
+        "Du hast gesehen, warum ID-Attribute so praktisch sind, um Elemente mit jQuery Selektoren auszuwählen. Leider hast du aber nicht immer so praktische IDs, mit denen du arbeiten kannst.",
+        "Zum Glück hat jQuery einige Tricks auf Lager, um die richtigen Elemente auszuwählen.",
+        "jQuery nutzt CSS-Selektoren um Elemente auszuwählen. Der <code>target:nth-child(n)</code> CSS-Selektor erlaubt dir das n-te Element aus einer Zielklasse oder Element-Typ zu wählen.",
+        "Hier siehst du, wie du dem dritten Kind-Element einer jeden Vertiefung eine <code>bounce</code> Klasse hinzufügen kannst.",
+        "<code>$(\".target:nth-child(3)\").addClass(\"animated bounce\");</code>",
+        "Lasse das zweite Kind-Element jeder Vertiefung hüpfen. Dazu musst das Kind-Element mit der <code>target</code> Klasse auswählen."
       ]
     },
     {
@@ -1040,6 +1177,14 @@
         "He aquí cómo elegirías todos los elementos impares con clase <code>target</code> y como les agregarías unas clases:",
         "<code>$(\".target:odd\").addClass(\"animated shake\");</code>",
         "Intenta seleccionar todos los elementos de número par y agrégales las clases <code>animated</code> y <code>shake</code>."
+      ],
+      "titleDe": "Wähle gerade Zahlen mit jQuery aus",
+      "descriptionDe": [
+        "Du kannst auch alle geradzahligen Elemente auswählen.",
+        "Hier siehst du, wie du ungeradzahlige Elemente mit der Klasse <code>target</code> auswählen und ihnen folgende Klassen geben kannst:",
+        "<code>$(\".target:odd\").addClass(\"animated shake\");</code>",
+        "Bedenke, dass jQuery null-indexiert ist; das bedeutet, dass - kontraintuitiverweise - <code>:odd</code> das zweite Element, das vierte Element und so weiter auswählt.",
+        "Versuche alle geradzahligen Elemente auszuwählen und ihnen die Klassen <code>animated</code> und <code>shake</code> hinzuzufügen."
       ]
     },
     {
@@ -1103,6 +1248,13 @@
         "jQuery también puede elegir el elemento <code>body</code>.",
         "Así es como haríamos que el cuerpo entero desapareciera: <code>$(\"body\").addClass('animated fadeOut');</code>",
         "Pero vamos a hacer algo más dramático. Añade las clases <code>animated</code> y <code>hinge</code> a tu elemento <code>body</code>."
+      ],
+      "titleDe": "Mit jQuery die gesamte Seite modifizieren",
+      "descriptionDe": [   
+        "Genug mit unserem jQuery Spielplatz herumgespielt. Reißen wir ihn ein!", 
+        "jQuery kann auch das <code>body</code> Element auswählen.",
+        "Hier siehst du, wie wir den gesamten <code>body</code> Bereich ausblenden können: <code> $(\"body\").addClass(\"animated fadeOut\");</code>",
+        "Aber lass uns noch etwas Dramatischeres machen. Füge die Klassen <code>animated</code> und <code>hinge</code> zu deinem <code>body</code> Element hinzu."
       ]
     }
   ]
