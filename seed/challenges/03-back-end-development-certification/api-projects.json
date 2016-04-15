@@ -11,19 +11,19 @@
         [
           "//i.imgur.com/4IZjWZ3.gif",
           "A gif showing how to create a c9.io account.",
-          "We recommend building our full stack Basejump challenges on c9.io, a powerful browser-based development environment. This will save you hours of time that you would spend configuring your local computer to run Node.js and MongoDB - time you could instead spend coding. <br>Create a c9.io account by clicking the GitHub symbol in the upper right hand corner of the c9.io page. Click the big plus symbol to create a new workspace. Enter your email address when prompted.",
-          "http://c9.io"
+          "We recommend building our full stack Basejump challenges on c9.io, a powerful browser-based development environment. This will save you hours of time that you would spend configuring your local computer to run Node.js and MongoDB - time you could instead spend coding.<br><br>Create a c9.io account by clicking the GitHub symbol in the upper right hand corner of the c9.io page. Click the big plus symbol to create a new workspace. Enter your email address when prompted.",
+          "https://c9.io"
         ],
         [
           "//i.imgur.com/F7i5Hhi.gif",
           "A gif showing how to fill out the new workspace form",
-          "Instead of starting from scratch, we recommend using Clementine.js, a full stack JavaScript \"boilerplate\" that already has some basic code written for you. Clementine.js has a detailed tutorial you can go through to build it yourself, but for now let's just clone its code. On c9.io, give your workspace a name, then leave \"Template\" as custom and create your workspace from this GitHub url: <code>https://github.com/johnstonbl01/clementinejs-fcc.git</code>",
+          "Instead of starting from scratch, we recommend using <a href='http://www.clementinejs.com/' target='_blank'>Clementine.js</a>, a full stack JavaScript \"boilerplate\" that already has some basic code written for you. Clementine.js has a detailed tutorial you can go through to build it yourself, but for now let's just clone its code.<br><br>On c9.io, give your workspace a name, then leave \"Template\" as custom and create your workspace from this GitHub url: <code>https://github.com/johnstonbl01/clementinejs-fcc.git</code>",
           ""
         ],
         [
           "//i.imgur.com/42m1vyr.gif",
           "A gif showing you how to show hidden files.",
-          "Click the gear in the upper right corner of c9.io's file structure. Select \"show hidden files\".",
+          "Click the gear in the upper right corner of c9.io's file structure. Select \"Show Hidden Files\".",
           ""
         ],
         [
@@ -35,13 +35,13 @@
         [
           "//i.imgur.com/jkQX9SQ.gif",
           "A gif showing you how to prep your environmental variables in your .env file.",
-          "Open your .env file and paste this into it, then save it: <br><code>GITHUB_KEY=<br>GITHUB_SECRET=<br>MONGO_URI=mongodb://localhost:27017/clementinejs<br>PORT=8080<br>APP_URL=http://localhost:8080/</code>",
+          "Open your .env file and paste this into it, then save it:<br><br><code>GITHUB_KEY=<br>GITHUB_SECRET=<br>MONGO_URI=mongodb://localhost:27017/clementinejs<br>PORT=8080<br>APP_URL=http://localhost:8080/</code>",
           ""
         ],
         [
           "//i.imgur.com/f3DE7zB.gif",
           "A gif showing you how to open c9.io's preview window.",
-          "Open up your application in a preview tab by clicking window > share > application > open.",
+          "Open up your application in a preview tab by clicking Window > Share > Application > Open.",
           ""
         ],
         [
@@ -53,19 +53,19 @@
         [
           "//i.imgur.com/qCUVRFb.gif",
           "A gif showing you how to transfer GitHub's key and secret over to your .env file, as well as your c9.io URL.",
-          "GitHub will create an app and present you with a Client ID and a Client Secret. Set your .env file's GITHUB_KEY equal to the Client ID, and set your .env file's GITHUB_SECRET equal to the Client Secret. Copy the URL from your preview tab and paste it into your .env file as your APP_URL.",
+          "GitHub will create an app and present you with a Client ID and a Client Secret. Set your <code>.env</code> file's <code>GITHUB_KEY</code> equal to the Client ID, and set your <code>.env</code> file's <code>GITHUB_SECRET</code> equal to the Client Secret. Copy the URL from your preview tab and paste it into your <code>.env</code> file as your <code>APP_URL</code>.",
           ""
         ],
         [
           "//i.imgur.com/2a20Vah.gif",
           "A gif showing you how to start mongoDB in c9.io's terminal.",
-          "In your terminal, start MongoDB by entering <code>mongod --smallfiles</code>",
+          "In your terminal, start MongoDB by entering:<br><br><code>mongod --smallfiles</code>",
           ""
         ],
         [
           "//i.imgur.com/dC55pWk.gif",
           "A gif showing you how to open a new tab in c9.io's terminal.",
-          "Open a new terminal tab with the + button above your terminal, then run <code>npm install</code>",
+          "Open a new terminal tab with the <code>+</code> button above your terminal, then run <code>npm install</code>",
           ""
         ],
         [
@@ -77,13 +77,13 @@
         [
           "//i.imgur.com/2IJfyvN.gif",
           "A gif showing you how to click the button to trigger an AJAX action with Clementine.js and how to look at your user profile from the GitHub authentication data.",
-          "Click the \"click me\" button and you'll see that it increments the number clicks. Click the profile button and you'll see that it has your GitHub information.",
+          "Click the \"Click Me\" button and you'll see that it increments the number clicks. Click the profile button and you'll see that it has your GitHub information.",
           ""
         ],
         [
           "//i.imgur.com/bjO5pnq.gif",
           "A gif showing you how to create a new GitHub repository and push your code up to it.",
-          "Create a new GitHub repository. Then copy its .git URL. <br>Return to c9.io's terminal and set your GitHub remote URL: <code>git remote set-url origin</code> followed by the URL you copied from GitHub. <br>Run <code>git push origin master</code>. <br>Now tab back to GitHub and refresh, and you'll see that your code is now on GitHub.",
+          "Create a new GitHub repository. Then copy its .git URL.<br><br>Return to c9.io's terminal and set your GitHub remote URL: <code>git remote set-url origin</code> followed by the URL you copied from GitHub.<br><br>Run <code>git push origin master</code>.<br><br>Now tab back to GitHub and refresh, and you'll see that your code is now on GitHub.",
           "https://github.com/new"
         ],
         [
@@ -104,7 +104,7 @@
           "//i.imgur.com/4IZjWZ3.gif",
           "Una imagen gif que te muestra cómo crear una cuenta en c9.io.",
           "Te recomendamos resolver nuestros desafíos de pila completa (full stack) en c9.io, un poderoso ambiente de desarrollo basado en tu navegador. Esto te ahorrará muchas horas que utilizarías configurando tu computadora para correr Node.js y MongoDB - tiempo que podrías utilizar escribiendo código. <br>Crea una cuenta en c9.io pulsando el símbolo de GitHub en la esquina superior derecha de la página de c9.io. Pulsa el botón con el símbolo de suma para crear una área de trabajo nueva. Introduce tu dirección de correo electrónico cuando se te solicite.",
-          "http://c9.io"
+          "https://c9.io"
         ],
         [
           "//i.imgur.com/F7i5Hhi.gif",
@@ -191,7 +191,7 @@
       "title": "Timestamp Microservice",
       "description": [
         "<strong>Objective:</strong> Build a full stack JavaScript app that is functionally similar to this: <a href='https://timestamp-ms.herokuapp.com/' target='_blank'>https://timestamp-ms.herokuapp.com/</a> and deploy it to Heroku.",
-        "Note that for each project, you should create a new GitHub repository and a new Heroku project. If you can't remember how to do this, revisit <a href='/challenges/get-set-for-our-back-end-development-projects'>http://freecodecamp.com/challenges/get-set-for-our-back-end-development-projects</a>.",
+        "Note that for each project, you should create a new GitHub repository and a new Heroku project. If you can't remember how to do this, revisit <a href='/challenges/get-set-for-our-back-end-development-projects'>https://freecodecamp.com/challenges/get-set-for-our-back-end-development-projects</a>.",
         "Here are the specific user stories you should implement for this project:",
         "<strong>User Story:</strong> I can pass a string as a parameter, and it will check to see whether that string contains either a unix timestamp or a natural language date (example: January 1, 2016).",
         "<strong>User Story:</strong> If it does, it returns both the Unix timestamp and the natural language form of that date.",
@@ -210,7 +210,7 @@
       "titleEs": "Microservicio de Marca Temporal",
       "descriptionEs": [
         "<strong>Objetivo:</strong> Desarolla una aplicación de Pila Completa en JavaScript que sea funcionalmente similar a esta: <a href='https://timestamp-ms.herokuapp.com/' target='_blank'>https://timestamp-ms.herokuapp.com/</a> y despliegala en Heroku.",
-        "Ten en cuenta que para cada proyecto, deberías crear un nuevo repositorio en GitHub y un nuevo proyecto en Heroku. Si no recuerdas como hacer esto, vuelve a visitar <a href='/challenges/get-set-for-our-back-end-development-projects'>http://freecodecamp.com//challenges/get-set-for-our-back-end-development-projects</a>.",
+        "Ten en cuenta que para cada proyecto, deberías crear un nuevo repositorio en GitHub y un nuevo proyecto en Heroku. Si no recuerdas como hacer esto, vuelve a visitar <a href='/challenges/get-set-for-our-back-end-development-projects'>https://freecodecamp.com//challenges/get-set-for-our-back-end-development-projects</a>.",
         "Aquí están las historias de usuario específicas que debes implementar para este proyecto:",
         "<strong>Historia de Usuario:</strong> Puedo pasar una cadena como parámetro y comprobará si contiene o no una marca de tiempo para Unix o una fecha en lenguaje natural en inglés (Ejemplo: January 1, 2016).",
         "<strong>Historia de Usuario:</strong> Si tiene una marca de tiempo para Unix, devuelve tanto la marca de tiempo de Unix como la fecha en lenguaje natural.",
@@ -224,7 +224,7 @@
       "title": "Request Header Parser Microservice",
       "description": [
         "<strong>Objective:</strong> Build a full stack JavaScript app that is functionally similar to this: <a href='https://cryptic-ridge-9197.herokuapp.com/api/whoami/' target='_blank'>https://cryptic-ridge-9197.herokuapp.com/api/whoami/</a> and deploy it to Heroku.",
-        "Note that for each project, you should create a new GitHub repository and a new Heroku project. If you can't remember how to do this, revisit <a href='/challenges/get-set-for-our-back-end-development-projects'>http://freecodecamp.com/challenges/get-set-for-our-back-end-development-projects</a>.",
+        "Note that for each project, you should create a new GitHub repository and a new Heroku project. If you can't remember how to do this, revisit <a href='/challenges/get-set-for-our-back-end-development-projects'>https://freecodecamp.com/challenges/get-set-for-our-back-end-development-projects</a>.",
         "Here's the specific user story you should implement for this project:",
         "<strong>User Story:</strong> I can get the IP address, language and operating system for my browser.",
         "Once you've finished implementing these user stories, click the \"I've completed this challenge\" button and enter the URLs for both your GitHub repository and your live app running on Heroku.",
@@ -241,7 +241,7 @@
       "titleEs": "Microservicio para analizar el encabezado de una petición",
       "descriptionEs": [
         "<strong>Objetivo:</strong> Desarrolla una aplicación de Pila Completa en JavaScript que sea funcionalmente similar a esta: <a href='https://cryptic-ridge-9197.herokuapp.com/api/whoami/' target='_blank'>https://cryptic-ridge-9197.herokuapp.com/api/whoami/</a> y despliegala en Heroku.",
-        "Ten en cuenta que para cada proyecto, deberías crear un nuevo repositorio en GitHub y un nuevo proyecto en Heroku. Si no recuerdas como hacer esto, vuelve a visitar <a href='/challenges/get-set-for-our-back-end-development-projects'>http://freecodecamp.com//challenges/get-set-for-our-back-end-development-projects</a>.",
+        "Ten en cuenta que para cada proyecto, deberías crear un nuevo repositorio en GitHub y un nuevo proyecto en Heroku. Si no recuerdas como hacer esto, vuelve a visitar <a href='/challenges/get-set-for-our-back-end-development-projects'>https://freecodecamp.com//challenges/get-set-for-our-back-end-development-projects</a>.",
         "Aquí están las historias de usuario específicas que debes implementar para este proyecto:",
         "<strong>Historia de Usuario:</strong> Puedo obtener la dirección IP, idioma y sistema operativo de mi navegador.",
         "Una vez que hayas terminado de implementar estas historias de usuarios, pulsa el botón \"I've completed this challenge\" e introduce los URLs de tu repositorio en GitHub y de tu aplicación en vivo en Heroku.",
@@ -253,7 +253,7 @@
       "title": "URL Shortener Microservice",
       "description": [
         "<strong>Objective:</strong> Build a full stack JavaScript app that is functionally similar to this: <a href='https://little-url.herokuapp.com/' target='_blank'>https://little-url.herokuapp.com/</a> and deploy it to Heroku.",
-        "Note that for each project, you should create a new GitHub repository and a new Heroku project. If you can't remember how to do this, revisit <a href='/challenges/get-set-for-our-back-end-development-projects'>http://freecodecamp.com/challenges/get-set-for-our-back-end-development-projects</a>.",
+        "Note that for each project, you should create a new GitHub repository and a new Heroku project. If you can't remember how to do this, revisit <a href='/challenges/get-set-for-our-back-end-development-projects'>https://freecodecamp.com/challenges/get-set-for-our-back-end-development-projects</a>.",
         "Here are the specific user stories you should implement for this project:",
         "<strong>User Story:</strong>  I can pass a URL as a parameter and I will receive a shortened URL in the JSON response.",
         "<strong>User Story:</strong> If I pass an invalid URL that doesn't follow the valid http://www.example.com format, the JSON response will contain an error instead.",
@@ -272,7 +272,7 @@
       "titleEs": "Microservicio para acortar URLs",
       "descriptionEs": [
         "<strong>Objetivo:</strong> Desarrolla una aplicación de Pila Completa en JavaScript que sea funcionalmente similar a esta: <a href='https://little-url.herokuapp.com/' target='_blank'>https://little-url.herokuapp.com/</a> y despliegala en Heroku.",
-        "Ten en cuenta que para cada proyecto, deberías crear un nuevo repositorio en GitHub y un nuevo proyecto en Heroku. Si no recuerdas como hacer esto, vuelve a visitar <a href='/challenges/get-set-for-our-back-end-development-projects'>http://freecodecamp.com//challenges/get-set-for-our-back-end-development-projects</a>.",
+        "Ten en cuenta que para cada proyecto, deberías crear un nuevo repositorio en GitHub y un nuevo proyecto en Heroku. Si no recuerdas como hacer esto, vuelve a visitar <a href='/challenges/get-set-for-our-back-end-development-projects'>https://freecodecamp.com//challenges/get-set-for-our-back-end-development-projects</a>.",
         "Aquí están las historias de usuario específicas que debes implementar para este proyecto:",
         "<strong>Historia de Usuario:</strong> Puedo pasar una URL como parámetro y recibiré una URL acortada en la respuesta JSON.",
         "<strong>Historia de Usuario:</strong> Si paso una URL inválido que no siga el formato válido http://www.exmaple.com, en cambio la respuesta JSON contendrá un mensaje de error.",
@@ -286,7 +286,7 @@
       "title": "Image Search Abstraction Layer",
       "description": [
         "<strong>Objective:</strong> Build a full stack JavaScript app that allows you to search for images like this: <a href='https://cryptic-ridge-9197.herokuapp.com/api/imagesearch/lolcats%20funny?offset=10' target='_blank'>https://cryptic-ridge-9197.herokuapp.com/api/imagesearch/lolcats%20funny?offset=10</a> and browse recent search queries like this: <a href='https://cryptic-ridge-9197.herokuapp.com/api/latest/imagesearch/' target='_blank'>https://cryptic-ridge-9197.herokuapp.com/api/latest/imagesearch/</a>. Then deploy it to Heroku.",
-        "Note that for each project, you should create a new GitHub repository and a new Heroku project. If you can't remember how to do this, revisit <a href='/challenges/get-set-for-our-back-end-development-projects'>http://freecodecamp.com/challenges/get-set-for-our-back-end-development-projects</a>.",
+        "Note that for each project, you should create a new GitHub repository and a new Heroku project. If you can't remember how to do this, revisit <a href='/challenges/get-set-for-our-back-end-development-projects'>https://freecodecamp.com/challenges/get-set-for-our-back-end-development-projects</a>.",
         "Here are the specific user stories you should implement for this project:",
         "<strong>User Story:</strong> I can get the image URLs, alt text and page urls for a set of images relating to a given search string.",
         "<strong>User Story:</strong> I can paginate through the responses by adding a ?offset=2 parameter to the URL.",
@@ -305,7 +305,7 @@
       "titleEs": "Capa de abstracción para buscar imágenes",
       "descriptionEs": [
         "<strong>Objetivo:</strong> Desarolla una aplicación de Pila Completa en JavaScript que te permite buscar imágenes como esta: <a href='https://cryptic-ridge-9197.herokuapp.com/api/imagesearch/lolcats%20funny?offset=10' target='_blank'>https://cryptic-ridge-9197.herokuapp.com/api/imagesearch/lolcats%20funny?offset=10</a> y examinar las búsquedas recientes como esta: <a href='https://cryptic-ridge-9197.herokuapp.com/api/latest/imagesearch/' target='_blank'>https://cryptic-ridge-9197.herokuapp.com/api/latest/imagesearch/</a>. Después, despliegala en Heroku.",
-        "Ten en cuenta que para cada proyecto, deberías crear un nuevo repositorio en GitHub y un nuevo proyecto en Heroku. Si no recuerdas como hacer esto, vuelve a visitar <a href='/challenges/get-set-for-our-back-end-development-projects'>http://freecodecamp.com//challenges/get-set-for-our-back-end-development-projects</a>.",
+        "Ten en cuenta que para cada proyecto, deberías crear un nuevo repositorio en GitHub y un nuevo proyecto en Heroku. Si no recuerdas como hacer esto, vuelve a visitar <a href='/challenges/get-set-for-our-back-end-development-projects'>https://freecodecamp.com//challenges/get-set-for-our-back-end-development-projects</a>.",
         "Aquí están las historias de usuario específicas que debes implementar para este proyecto:",
         "<strong>Historia de Usuario:</strong> Puedo obtener la URL de una imagen, texto alternativo y URLs de las páginas de un conjunto de imágenes que se relacionen con una cadena de texto dada.",
         "<strong>Historia de Usuario:</strong> Puedo examinar página a página las respuestas añadiendo un parámetro del estilo <code>?offset=2</code> al URL.",
@@ -319,7 +319,7 @@
       "title": "File Metadata Microservice",
       "description": [
         "<strong>Objective:</strong> Build a full stack JavaScript app that is functionally similar to this: <a href='https://cryptic-ridge-9197.herokuapp.com/' target='_blank'>https://cryptic-ridge-9197.herokuapp.com/</a> and deploy it to Heroku.",
-        "Note that for each project, you should create a new GitHub repository and a new Heroku project. If you can't remember how to do this, revisit <a href='/challenges/get-set-for-our-back-end-development-projects'>http://freecodecamp.com/challenges/get-set-for-our-back-end-development-projects</a>.",
+        "Note that for each project, you should create a new GitHub repository and a new Heroku project. If you can't remember how to do this, revisit <a href='/challenges/get-set-for-our-back-end-development-projects'>https://freecodecamp.com/challenges/get-set-for-our-back-end-development-projects</a>.",
         "Here are the specific user stories you should implement for this project:",
         "<strong>User Story:</strong> I can submit a FormData object that includes a file upload.",
         "<strong>User Story:</strong> When I submit something, I will receive the file size in bytes within the JSON response",
@@ -338,7 +338,7 @@
       "titleEs": "Microservicio de metadatos de archivos",
       "descriptionEs": [
         "<strong>Objetivo:</strong> Desarrolla una aplicación de Pila Completa en JavaScript que sea funcionalmente similar a esta: <a href='https://cryptic-ridge-9197.herokuapp.com/' target='_blank'>https://cryptic-ridge-9197.herokuapp.com/</a>  y despliegala en Heroku.",
-        "Ten en cuenta que para cada proyecto, deberías crear un nuevo repositorio en GitHub y un nuevo proyecto en Heroku. Si no recuerdas como hacer esto, vuelve a visitar <a href='/challenges/get-set-for-our-back-end-development-projects'>http://freecodecamp.com//challenges/get-set-for-our-back-end-development-projects</a>.",
+        "Ten en cuenta que para cada proyecto, deberías crear un nuevo repositorio en GitHub y un nuevo proyecto en Heroku. Si no recuerdas como hacer esto, vuelve a visitar <a href='/challenges/get-set-for-our-back-end-development-projects'>https://freecodecamp.com//challenges/get-set-for-our-back-end-development-projects</a>.",
         "Aquí están las historias de usuario específicas que debes implementar para este proyecto:",
         "<strong>Historia de Usuario:</strong> Puedo enviar un objeto FormData que incluya una subida de un archivo.",
         "<strong>Historia de Usuario:</strong> Cuando envío algo, recibiré el tamao del archivo en bytes en la respuesta JSON.",
