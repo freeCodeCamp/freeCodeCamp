@@ -57,7 +57,7 @@ export default React.createClass({
     const linkClassName = classNames(className, {
       // 'active': active, we don't actually use the active class
       // but it is used for a11y below
-      'disabled': disabled
+      disabled: disabled
     });
 
     let linkProps = {

@@ -11,7 +11,7 @@ export default ({ services }) => ({ dispatch }) => next => {
       .map(({
         username,
         picture,
-        progressTimestamps = [],
+        points,
         isFrontEndCert,
         isBackEndCert,
         isFullStackCert
@@ -21,7 +21,7 @@ export default ({ services }) => ({ dispatch }) => next => {
           payload: {
             username,
             picture,
-            points: progressTimestamps.length,
+            points,
             isFrontEndCert,
             isBackEndCert,
             isFullStackCert,

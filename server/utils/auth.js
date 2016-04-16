@@ -24,9 +24,9 @@ export function setProfileFromGithub(
   },
   {
     id: githubId,
-    'avatar_url': picture,
+    avatar_url: picture,
     email: githubEmail,
-    'created_at': joinedGithubOn,
+    created_at: joinedGithubOn,
     blog: website,
     location,
     name

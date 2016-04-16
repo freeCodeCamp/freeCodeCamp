@@ -48,7 +48,7 @@ const certTypes = {
 };
 
 function isValidURL(data) {
-  return isURL(data, { 'require_protocol': true });
+  return isURL(data, { require_protocol: true });
 }
 
 const fields = [

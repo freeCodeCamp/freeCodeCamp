@@ -1,5 +1,5 @@
 const defaults = {
-  'string': {
+  string: {
     value: '',
     valid: false,
     pristine: true,
