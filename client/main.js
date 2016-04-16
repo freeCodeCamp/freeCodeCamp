@@ -97,7 +97,11 @@ main = (function(main, global) {
     });
 
 
-    $('#nav-chat-btn').on('click', toggleMainChat);
+    $('#nav-chat-btn').on('click', function(event) {
+      if (!(event.ctrlKey || event.metaKey)) {
+          toggleMainChat();
+      }
+  });
 
     function showMainChat() {
       if (!main.chat.isOpen) {
@@ -350,7 +354,11 @@ $(document).ready(function() {
   var mapFilter = $('#map-filter');
   var mapShowAll = $('#showAll');
 
-  $('#nav-map-btn').on('click', toggleMap);
+  $('#nav-map-btn').on('click', function(event) {
+      if (!(event.ctrlKey || event.metaKey)) {
+          toggleMap();
+      }
+  });
 
   $('.map-aside-action-collapse').on('click', collapseMap);
 
@@ -381,7 +389,11 @@ $(document).ready(function() {
     }
   }
 
-  $('#nav-wiki-btn').on('click', toggleWiki);
+  $('#nav-wiki-btn').on('click', function(event) {
+      if (!(event.ctrlKey || event.metaKey)) {
+          toggleWiki();
+      }
+  });
 
   $('.wiki-aside-action-collapse').on('click', collapseWiki);
 

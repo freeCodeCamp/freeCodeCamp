@@ -8,15 +8,15 @@ nav.navbar.navbar-default.navbar-fixed-top.nav-height
     .collapse.navbar-collapse
         ul.nav.navbar-nav.navbar-right.hamburger-dropdown
             li.hidden-xs
-                a#nav-map-btn(href='#' onclick='return false') Map
+                a#nav-map-btn(href='/map' onclick='if (!(event.ctrlKey || event.metaKey)) {return false;}') Map
             li.visible-xs
                 a(href='/map') Map
             li.hidden-xs
-                a#nav-chat-btn(href='#' onclick="return false") Chat
+                a#nav-chat-btn(href='//gitter.im/freecodecamp/freecodecamp' onclick="if (!(event.ctrlKey || event.metaKey)) {return false;}") Chat
             li.visible-xs
                 a(href="//gitter.im/freecodecamp/freecodecamp" target="_blank") Chat
             li.hidden-xs
-                a#nav-wiki-btn(href='#' onclick='return false') Wiki
+                a#nav-wiki-btn(href='/wiki' onclick='if (!(event.ctrlKey || event.metaKey)) {return false;}') Wiki
             li.visible-xs
                 a(href='/wiki', target='_blank') Wiki
             li
