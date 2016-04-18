@@ -462,7 +462,8 @@ $(document).ready(function() {
   // Map live filter
   mapFilter.on('keyup', () => {
     if (mapFilter.val().length > 0) {
-      var regex = new RegExp(mapFilter.val().replace(/ /g, '.'), 'i');
+      var regexString = mapFilter.val().replace(/ /g, '.');
+      var regex = new RegExp(regexString.split('').join('.*'), 'i');
 
       // Hide/unhide challenges that match the regex
       $('.challenge-title').each((index, title) => {
