@@ -447,7 +447,7 @@
         "You will see a prompt to allow or block this site from knowing your current location. The challenge can be completed either way, as long as the code is correct.",
         "By selecting allow you will see the text on the output phone change to your latitude and longitude",
         "Here's some code that does this:",
-        "<blockquote>if (navigator.geolocation) {</br>  navigator.geolocation.getCurrentPosition(function(position) {</br>    $(\"#data\").html(\"latitude: \" + position.coords.latitude + \"&lt;br&gt;longitude: \" + position.coords.longitude);</br>  });</br>}</blockquote>"
+        "<blockquote>if (navigator.geolocation) {<br>  navigator.geolocation.getCurrentPosition(function(position) {<br>    $(\"#data\").html(\"latitude: \" + position.coords.latitude + \"&lt;br&gt;longitude: \" + position.coords.longitude);<br>  });<br>}</blockquote>"
       ],
       "challengeSeed": [
         "fccss",
@@ -463,7 +463,10 @@
         "</div>"
       ],
       "tests": [
-        "assert(code.match(/navigator\\.geolocation\\.getCurrentPosition/gi), 'message: You should make use of the <code>navigator.geolocation</code> to access the users current location.');"
+        "assert(code.match(/navigator\\.geolocation\\.getCurrentPosition/gi), 'message: You should make use of <code>navigator.geolocation</code> to access the users current location.');",
+        "assert(code.match(/position\\.coords\\.latitude/gi), 'message: You should make use of <code>position.coords.latitude</code> to display the users&#39; latitudinal location.');",
+        "assert(code.match(/position\\.coords\\.longitude/gi), 'message: You should make use of <code>position.coords.longitude</code> to display the users&#39; longitudinal location.');",
+        "assert(code.match(/\\$\\(\\s*\"#data\"\\s*\\)\\s*\\.html\\([.\\w\\W]*?\\);/gi), 'message: You should display the users&#39; position within the <code>data</code> div element');"
       ],
       "type": "waypoint",
       "challengeType": 0,
