@@ -148,6 +148,7 @@ module.exports = function(app) {
   router.post('/reset-password', postReset);
   router.get('/email-signup', getEmailSignup);
   router.get('/email-signin', getEmailSignin);
+  router.get('/deprecated-signin', getDepSignin);
   router.get(
     '/toggle-lockdown-mode',
     sendNonUserToMap,
@@ -223,6 +224,15 @@ module.exports = function(app) {
   function signout(req, res) {
     req.logout();
     res.redirect('/');
+  }
+
+  function getDepSignin(req, res) {
+    if (req.user) {
+      return res.redirect('/');
+    }
+    return res.render('account/deprecated-signin', {
+      title: 'Sign in to Free Code Camp using a Deprecated Login'
+    });
   }
 
   function getEmailSignin(req, res) {
