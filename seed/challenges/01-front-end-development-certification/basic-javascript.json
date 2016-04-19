@@ -967,7 +967,7 @@
         "})();"
       ],
       "solutions": [
-        "var myStr = \"I am a \\\"double quoted\\\" string inside \\\"double quotes\\\"\";"
+        "var myStr = I am a \\\"double quoted\\\" string inside \\\"double quotes\\\";"
       ],
       "tests": [
         "assert(code.match(/\\\\\"/g).length === 4 && code.match(/[^\\\\]\"/g).length === 2, 'message: You should use two double quotes (<code>&quot;</code>) and four escaped double quotes (<code>&#92;&quot;</code>) ');",
