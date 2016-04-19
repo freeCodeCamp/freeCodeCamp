@@ -15,6 +15,7 @@ const routes = [
   '/videos',
   '/videos/*',
   '/challenges',
+  '/challenges/*',
   '/map'
 ];
 
@@ -45,7 +46,8 @@ export default function reactSubRouter(app) {
       // if react-router does not find a route send down the chain
       .filter(({ redirect, props }) => {
         if (!props && redirect) {
-          res.redirect(redirect.pathname + redirect.search);
+          log('react router found a redirect');
+          return res.redirect(redirect.pathname + redirect.search);
         }
         if (!props) {
           log(`react tried to find ${req.path} but got 404`);
