@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import { Link } from 'react-router';
 import FA from 'react-fontawesome';
 import PureComponent from 'react-pure-render/component';
 import { Panel } from 'react-bootstrap';
@@ -26,7 +27,7 @@ export default class Block extends PureComponent {
         'challenge-title': true,
         'ion-checkmark-circled': !isLocked,
         'ion-locked': isLocked,
-        'disabled': isLocked
+        disabled: isLocked
       });
       if (isLocked) {
         return (
@@ -46,7 +47,7 @@ export default class Block extends PureComponent {
         <p
           className={ challengeClassName }
           key={ title }>
-          <a href={ `/challenges/${dashedName}` }>
+          <Link to={ `/challenges/${dashedName}` }>
             { title }
             <span className='sr-only'>complete</span>
             {
@@ -54,7 +55,7 @@ export default class Block extends PureComponent {
                 <span className='text-primary'><strong>*</strong></span> :
                 ''
             }
-          </a>
+          </Link>
         </p>
       );
     });
