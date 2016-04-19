@@ -22,7 +22,7 @@
         "So, just to review, we've got 4 basic parts of the computer: the input, the output, CPU, and memory."
       ],
       "challengeSeed": [
-        "132542064"
+        "q7tlgZg4Q1o"
       ],
       "tests": [
         [
@@ -77,7 +77,7 @@
         "In addition to the four basic parts of input, output, CPU, and memory, we also usually have a motherboard, expansion cards, and a power supply."
       ],
       "challengeSeed": [
-        "132542458"
+        "xj9mFD71Vfc"
       ],
       "tests": [
         [
@@ -129,7 +129,7 @@
         "This is important because it's making technology more affordable and accessible."
       ],
       "challengeSeed": [
-        "133182057"
+        "IDsEEMkG9uY"
       ],
       "tests": [
         [
@@ -176,7 +176,7 @@
         "The most important part of this is you understand the concept that even simple things like 1's and 0's can translate into something really complex that is the basis for all of the computer languages that exist today."
       ],
       "challengeSeed": [
-        "132542757"
+        "veugT7A9psY"
       ],
       "tests": [
         [
@@ -221,7 +221,7 @@
         "In this video, our number adds up to 75."
       ],
       "challengeSeed": [
-        "132543332"
+        "xXLj5MbrI44"
       ],
       "tests": [
         [
@@ -271,7 +271,7 @@
         "These get much bigger really quickly!"
       ],
       "challengeSeed": [
-        "132543959"
+        "_uWzpyr_5qk"
       ],
       "tests": [
         [
@@ -323,7 +323,7 @@
         "Additionally, if you have an internet speed that says however many bits per second, keep in mind they are talking about something 8 times less than bytes, how you are thinking about data."
       ],
       "challengeSeed": [
-        "132545171"
+        "Ulln8JIYzqY"
       ],
       "tests": [
         [
@@ -366,7 +366,7 @@
         "There are a lot of languages that computers can work with, and what I want you to get away from this video is that all data in your computer boils down to binary bytes."
       ],
       "challengeSeed": [
-        "132545417"
+        "wr7H6oUwYUU"
       ],
       "tests": [
         [
@@ -414,7 +414,7 @@
         "The last type of computer we'll talk about is a microcontroller, the type of computer you might have in your car that is really good at a small specialized task, but wouldn't be used the same way a PC would be."
       ],
       "challengeSeed": [
-        "132546182"
+        "rZnaB8d_ZOw"
       ],
       "tests": [
         [
@@ -469,7 +469,7 @@
         "These are all considered ports, a place on the motherboard where you can connect the CPU to some outside source to either get or give information."
       ],
       "challengeSeed": [
-        "132547285"
+        "KUmi_KBLMQY"
       ],
       "tests": [
         [
@@ -525,7 +525,7 @@
         "However, a WAN usually rents a cable from an internet company to create the connection."
       ],
       "challengeSeed": [
-        "132547590"
+        "03L0c-YMIhE"
       ],
       "tests": [
         [
@@ -580,7 +580,7 @@
         "This is done using your IP address."
       ],
       "challengeSeed": [
-        "132548071"
+        "8hb9UIxqjRI"
       ],
       "tests": [
         [
@@ -629,7 +629,7 @@
         "For more information, check out <a href='http://web.stanford.edu/class/msande91si/www-spr04/readings/week1/InternetWhitepaper.htm' target='_blank'>web.stanford.edu/class/msande91si/www-spr04/readings/week1/InternetWhitepaper.htm</a>."
       ],
       "challengeSeed": [
-        "132548579"
+        "61dIuT4S8eg"
       ],
       "tests": [
         [
@@ -675,7 +675,7 @@
         "Applications comprise all other software, like your web browser, games, things like Photoshop, how you view your mail, editing documents, etc."
       ],
       "challengeSeed": [
-        "132548908"
+        "Rcntg9A3EGw"
       ],
       "tests": [
         [
@@ -714,7 +714,7 @@
         "As a company, a CDN would be useful if you want your product or site to reach users more efficiently in the larger scheme of their network and the internet as a whole."
       ],
       "challengeSeed": [
-        "139880437"
+        "hBxs3wEZyAs"
       ],
       "tests": [
         [
@@ -763,7 +763,7 @@
         "The takeaway from this video is that you'll want to use digital files as they're a higher quality, and when you're looking at compression, you want to decide how far you are willing to go to ensure the user still has the best possible experience."
       ],
       "challengeSeed": [
-        "133182587"
+        "B7seUQzZGx0"
       ],
       "tests": [
         [
@@ -825,7 +825,7 @@
         "Once they get to the end destination, that computer knows how to put all of the information back together."
       ],
       "challengeSeed": [
-        "133181251"
+        "f9M6P9IVn7k"
       ],
       "tests": [
         [
@@ -897,7 +897,7 @@
         "One unwritten rule of contributing to open source projects is that you should generally submit your improvements to also be open source, and by giving that improvement back to the public, you let others use your improvement as well."
       ],
       "challengeSeed": [
-        "133177129"
+        "QHOY7PyKDh0"
       ],
       "tests": [
         [
@@ -951,7 +951,7 @@
         "What I want you to take away from this video is that variables exist in code, and you can store everything from a simple string all the way up to a function, all within a simple name."
       ],
       "challengeSeed": [
-        "133172920"
+        "DF81DiQfAwY"
       ],
       "tests": [
         [
@@ -993,7 +993,7 @@
         "Programmers are the ones responsible for breaking their ideas down into the little tiny steps and writing them in a way that computers can understand them."
       ],
       "challengeSeed": [
-        "133166912"
+        "JQ_BCly-heU"
       ],
       "tests": [
         [
@@ -1043,7 +1043,7 @@
         "When consoling words, it's important to put it inside of quotations so it recognizes it's a string."
       ],
       "challengeSeed": [
-        "133170880"
+        "CdqT7_6v60E"
       ],
       "tests": [
         [
@@ -1060,12 +1060,12 @@
       "challengeType": 6,
       "nameEs": "Consola y Logging",
       "descriptionEs": [
-       "Nosotros discutimos que es la consola (y donde está), porque es útil y mostrar un poco de como trabaja.",
-       	"La consola: que es, donde la puedes encontrar, y para que la usas.",
-       	"La consola es usada comunmente para mostrar los mensajes administrativos del sistema.",
-       	"Una vez te familiarices con esta, encontraras una útil y poderosa herramienta.",
+        "Nosotros discutimos que es la consola (y donde está), porque es útil y mostrar un poco de como trabaja.",
+        "La consola: que es, donde la puedes encontrar, y para que la usas.",
+        "La consola es usada comunmente para mostrar los mensajes administrativos del sistema.",
+        "Una vez te familiarices con esta, encontraras una útil y poderosa herramienta.",
         "En Javascript, la consola es usada como una gran herramienta para depurar y encontrar donde hay un error en tu código ",
-      	"Uno de los términos mas importantes para recordar es \"console.log()\".",
+        "Uno de los términos mas importantes para recordar es \"console.log()\".",
         "El proceso para usarla es, es ponerlo en cualquier parte entre las líneas del código para ayudar a encontrar, identificar, y en últimas solucionar problemas especificos",
         "Usando el navegador Chrome y la consola de Chrome, si nosotros escribimos <code>console.log(\"Free Code Camp es muy bueno!\");</code>, la consola literalmente mostrará \"Free Code Camp es muy bueno!\".",
         "Además esto funcionará con números y booleanos, cuyos valores posibles son verdadro/falso",
@@ -1105,7 +1105,7 @@
         "These are all very basic things you should know about how to keep your information safe on your computer."
       ],
       "challengeSeed": [
-        "133186284"
+        "wNuRKyMJRQk"
       ],
       "tests": [
         [
