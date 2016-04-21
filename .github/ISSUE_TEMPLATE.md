@@ -1,21 +1,18 @@
-<!--
-FreeCodeCamp Issue Template
-NOTE: ISSUES ARE NOT FOR CODE HELP - Ask for Help at
-https://gitter.im/FreeCodeCamp/Help
--->
+<!-- FreeCodeCamp Issue Template -->
+
+<!-- NOTE: ISSUES ARE NOT FOR CODE HELP - Ask for Help at https://gitter.im/FreeCodeCamp/Help -->
+<!-- Please provide as much detail as possible for us to fix your issue -->
+<!-- Remove any heading sections you did not fill out -->
 
 #### Challenge Name
-
 <!-- Insert link to challenge below -->
 
 
 #### Issue Description
-
 <!-- Describe below when the issue happens and how to reproduce it -->
 
 
 #### Browser Information
-
 <!-- Describe your workspace in which you are having issues-->
 
 * Browser Name, Version: 
@@ -30,5 +27,6 @@ https://gitter.im/FreeCodeCamp/Help
 ```
 
 #### Screenshot
+<!-- Add a screenshot of your issue -->
 
 
