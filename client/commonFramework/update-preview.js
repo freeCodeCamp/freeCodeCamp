@@ -11,16 +11,6 @@ window.common = (function(global) {
 <script>
   window.loopProtect = parent.loopProtect;
   window.__err = null;
-  window.loopProtect.hit = function(line) {
-    window.__err = new Error(
-      'Potential infinite loop at line ' +
-      line +
-      '. To disable loop protection, write:' +
-      ' \\n\\/\\/ noprotect\\nas the first' +
-      ' line. Beware that if you do have an infinite loop in your code' +
-      ' this will crash your browser.'
-    );
-  };
 </script>
 <link
   rel='stylesheet'
