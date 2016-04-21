@@ -40,49 +40,45 @@ export default function(UserIdent) {
       cb = options;
       options = {};
     }
-    var autoLogin = options.autoLogin || !options.autoLogin;
-    var userIdentityModel = UserIdent;
+    const autoLogin = options.autoLogin || !options.autoLogin;
+    const userIdentityModel = UserIdent;
     profile.id = profile.id || profile.openid;
-    userIdentityModel.findOne({
+    return userIdentityModel.findOne({
       where: {
         provider: getSocialProvider(provider),
         externalId: profile.id
       }
-    }, function(err, identity) {
-      if (err) {
-        return cb(err);
-      }
+    })
+    .then(identity => {
       if (identity) {
         identity.credentials = credentials;
         return identity.updateAttributes({
           profile: profile,
           credentials: credentials,
           modified: new Date()
-        }, function(err) {
-          if (err) {
-            return cb(err);
-          }
-          // Find the user for the given identity
-          return identity.user(function(err, user) {
-            // Create access token if the autoLogin flag is set to true
-            if (!err && user && autoLogin) {
-              return (options.createAccessToken || createAccessToken)(
-                user,
-                function(err, token) {
-                  cb(err, user, identity, token);
-                }
-              );
-            }
-            return cb(err, user, identity);
-          });
+        })
+          .then(function() {
+            // Find the user for the given identity
+            return identity.user(function(err, user) {
+              // Create access token if the autoLogin flag is set to true
+              if (!err && user && autoLogin) {
+                return (options.createAccessToken || createAccessToken)(
+                  user,
+                  function(err, token) {
+                    cb(err, user, identity, token);
+                  }
+                );
+              }
+              return cb(err, user, identity);
+            });
         });
       }
       // Find the user model
-      var userModel = userIdentityModel.relations.user &&
+      const userModel = userIdentityModel.relations.user &&
         userIdentityModel.relations.user.modelTo ||
         loopback.getModelByType(loopback.User);
 
-      var userObj = options.profileToUser(provider, profile, options);
+      const userObj = options.profileToUser(provider, profile, options);
 
       if (!userObj.email && !options.emailOptional) {
         process.nextTick(function() {
@@ -90,7 +86,7 @@ export default function(UserIdent) {
         });
       }
 
-      var query;
+      const query;
       if (userObj.email) {
         query = { or: [
           { username: userObj.username },
@@ -103,7 +99,7 @@ export default function(UserIdent) {
         if (err) {
           return cb(err);
         }
-        var date = new Date();
+        const date = new Date();
         return userIdentityModel.create({
           provider: getSocialProvider(provider),
           externalId: profile.id,
@@ -129,7 +125,7 @@ export default function(UserIdent) {
   };
 
   UserIdent.observe('before save', function(ctx, next) {
-    var userIdent = ctx.currentInstance || ctx.instance;
+    const userIdent = ctx.currentInstance || ctx.instance;
     if (!userIdent) {
       debug('no user identity instance found');
       return next();
