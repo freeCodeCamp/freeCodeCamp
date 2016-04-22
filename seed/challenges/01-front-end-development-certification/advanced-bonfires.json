@@ -244,10 +244,20 @@
         "assert.strictEqual(permAlone('aabb'), 8, 'message: <code>permAlone(\"aabb\")</code> should return 8.');",
         "assert.strictEqual(permAlone('abcdefa'), 3600, 'message: <code>permAlone(\"abcdefa\")</code> should return 3600.');",
         "assert.strictEqual(permAlone('abfdefa'), 2640, 'message: <code>permAlone(\"abfdefa\")</code> should return 2640.');",
+<<<<<<< HEAD
+<<<<<<< f9c28381cc02b3be3aaf5df218e77c0bc6022a0c
+        "assert.strictEqual(permAlone('zzzzzzzz'), 0, 'message: <code>permAlone(\"zzzzzzzz\")</code> should return 0.');"
+=======
+=======
+>>>>>>> 3b2f771914fea9c3c1ff82541497d6719aeb3cfc
         "assert.strictEqual(permAlone('zzzzzzzz'), 0, 'message: <code>permAlone(\"zzzzzzzz\")</code> should return 0.');",
         "assert.strictEqual(permAlone('a'), 1, 'message: <code>permAlone(\"a\")</code> should return 1.');",
         "assert.strictEqual(permAlone('aaab'), 0, 'message: <code>permAlone(\"aaab\")</code> should return 0.');",
         "assert.strictEqual(permAlone('aaabb'), 12, 'message: <code>permAlone(\"aaabb\")</code> should return 12.');"
+<<<<<<< HEAD
+>>>>>>> Merge pull request #8219 from sharang-d/fix/add-tests-to-no-repeats-please-challenge
+=======
+>>>>>>> 3b2f771914fea9c3c1ff82541497d6719aeb3cfc
       ],
       "type": "bonfire",
       "MDNlinks": [

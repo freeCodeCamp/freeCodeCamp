@@ -20,6 +20,12 @@ window.common = (function(global) {
     }
   };
 
+  common.ctrlShiftEFocus = function ctrlShiftEFocus(e) {
+    Mousetrap.bind('command+shift+e', () => {
+        common.editor.focus();
+    });
+  }
+
   common.init.push(function($) {
 
     var $marginFix = $('.innerMarginFix');
@@ -41,6 +47,9 @@ window.common = (function(global) {
         common.ctrlEnterClickHandler
       );
     });
+
+    // bind keydown event when the page just opens
+    $('body').keydown(common.ctrlShiftEFocus);
 
     // video checklist binding
     $('.challenge-list-checkbox').on('change', function() {
