@@ -24,7 +24,7 @@ window.common = (function(global) {
     Mousetrap.bind('command+shift+e', () => {
         common.editor.focus();
     });
-  };
+  }
 
   common.init.push(function($) {
 

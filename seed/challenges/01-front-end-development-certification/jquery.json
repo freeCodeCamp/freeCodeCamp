@@ -59,8 +59,11 @@
         "Dentro de tu elemento <code>script</code>, agrega este código: <code>$(document).ready(function () {</code> A continuación, ciérralo en la línea siguiente (aún dentro de tu elemento <code>script</code>) con: <code>})</code>",
         "Más adelante aprenderemos más acerca de funciones. Lo importante es saber que el código que pongas dentro de esta función (<code>function</code>) se ejecutará tan pronto como tu navegador haya cargado la página.",
         "Esto es importante porque sin tu <code>función de documento listo</code>, tu código puede ejecutarse antes de que se haya presentado el HTML, lo que podría causar errores."
+<<<<<<< HEAD
 <<<<<<< f9c28381cc02b3be3aaf5df218e77c0bc6022a0c
 =======
+=======
+>>>>>>> 3b2f771914fea9c3c1ff82541497d6719aeb3cfc
       ],
       "titleDe": "Lerne, wie Script Tags und Document Ready funktionieren",
       "descriptionDe": [
@@ -71,7 +74,10 @@
         "Füge innerhalb deines <code>script</code> Elements folgenden Code hinzu: <code>$(document).ready(function() {</code>. Schließe ihn danach in der nächsten Zeile (noch immer innerhalb deines <code>script</code> Elements) mit: <code>});</code>",
         "Wir werden später noch mehr über <code>Funktionen</code> lernen. Wichtig zu wissen ist, dass der Code innerhalb der <code>Funktion</code> ausgeführt wird, sobald der Browser die Seite geladen hat.",
         "Das ist wichtig, denn ohne deine <code>Document Ready Funktion</code> könnte dein Code ausgeführt werden, bevor das HTML gerendert wurde - was zu Fehlern führen kann."
+<<<<<<< HEAD
 >>>>>>> Merge pull request #8219 from sharang-d/fix/add-tests-to-no-repeats-please-challenge
+=======
+>>>>>>> 3b2f771914fea9c3c1ff82541497d6719aeb3cfc
       ]
     },
     {
@@ -130,8 +136,11 @@
         "Por ejemplo, hagamos que todos tus elementos <code>button</code> reboten. Sólo tienes que añadir este código dentro de la función de documento listo: ",
         "<code>$(\"button\").addClass(\"animated bounce\")</code>",
         "Ten en cuenta que ya hemos incluido tanto la biblioteca jQuery como la biblioteca Animate.css en segundo plano para que pueda utilizarlos en el editor. Así que estás usando jQuery para aplicar la clase <code>bounce</code> de Animate.css a tus elementos <code>button</code>."
+<<<<<<< HEAD
 <<<<<<< f9c28381cc02b3be3aaf5df218e77c0bc6022a0c
 =======
+=======
+>>>>>>> 3b2f771914fea9c3c1ff82541497d6719aeb3cfc
       ],
       "titleDe": "HTML-Elemente mit Selektoren durch jQuery auswählen",
       "descriptionDe": [
@@ -141,7 +150,10 @@
         "Zum Beispiel, lasse alle deine <code>Button</code> Elemente hüpfen. Dazu musst du nur folgenden Code in deine <code>Document Ready Funktion</code> hinzufügen:",
         "<code>$(\"button\").addClass(\"animated bounce\");</code>",
         "Beachte, dass wir bereits jQuery und Animate.css im Hintergrund hinzugefügt haben, damit du diese im Editor nutzen kannst. Du nutzt also jQuery um die <code>bounce</code> Klasse von Animate.css zu deinen <code>Button</code> Elementen hinzuzufügen."
+<<<<<<< HEAD
 >>>>>>> Merge pull request #8219 from sharang-d/fix/add-tests-to-no-repeats-please-challenge
+=======
+>>>>>>> 3b2f771914fea9c3c1ff82541497d6719aeb3cfc
       ]
     },
     {
@@ -202,8 +214,11 @@
         "A continuación, utiliza la función <code>.addClass()</code> de jQuery para agregar las clases <code>animated</code> y <code>shake</code>.",
         "Por ejemplo, podrías hacer que todos los elementos con la clase <code>text-primary</code> se sacudieran añadiendo lo siguiente a tu <code>función de documento listo</code>:",
         "<code>$(\".text-primary\").addClass(\"animated shake\");</code>"
+<<<<<<< HEAD
 <<<<<<< f9c28381cc02b3be3aaf5df218e77c0bc6022a0c
 =======
+=======
+>>>>>>> 3b2f771914fea9c3c1ff82541497d6719aeb3cfc
       ],
       "titleDe": "Elemente anhand von Klassen mit jQuery auswählen",
       "descriptionDe": [
@@ -214,7 +229,10 @@
         "Dann nutze die jQuery Funktion <code>.addClass()</code> um die Klassen <code>animated</code> und <code>shake</code> hinzuzufügen.",       
         "Zum Beispiel könntest du alle Elemente mit der Klasse <code>text-primary</code> schütteln lassen, indem du folgendes zu deiner <code>Document Ready Funktion</code> hinzufügst:",
         "<code>$(\".text-primary\").addClass(\"animated shake\");</code>"
+<<<<<<< HEAD
 >>>>>>> Merge pull request #8219 from sharang-d/fix/add-tests-to-no-repeats-please-challenge
+=======
+>>>>>>> 3b2f771914fea9c3c1ff82541497d6719aeb3cfc
       ]
     },
     {
@@ -276,8 +294,11 @@
         "A continuación, utiliza la función <code>.addClass()</code> de jQuery para agregar las clases <code>animated</code> y <code>fadeOut</code>.",
         "He aquí cómo haces que desaparezca el elemento <code>button</code> con la identificación <code>target6</code>:",
         "<code>$(\"#target6\").addClass(\"animated fadeOut\")</code>."
+<<<<<<< HEAD
 <<<<<<< f9c28381cc02b3be3aaf5df218e77c0bc6022a0c
 =======
+=======
+>>>>>>> 3b2f771914fea9c3c1ff82541497d6719aeb3cfc
       ],
       "titleDe": "Elemente anhand der ID mit jQuery auswählen",
       "descriptionDe": [
@@ -287,7 +308,10 @@
         "Dann nutze die jQuery Funktion <code>.addClass()</code> um die Klassen <code>animated</code> und <code>fadeOut</code> hinzuzufügen.",
         "So könntest du das <code>Button</code> Element mit der ID <code>target6</code> ausblenden lassen:",
         "<code>$(\"#target6\").addClass(\"animated fadeOut\")</code>."
+<<<<<<< HEAD
 >>>>>>> Merge pull request #8219 from sharang-d/fix/add-tests-to-no-repeats-please-challenge
+=======
+>>>>>>> 3b2f771914fea9c3c1ff82541497d6719aeb3cfc
       ]
     },
     {
@@ -344,14 +368,20 @@
       "descriptionEs": [
         "Estas animaciones eran divertidas al principio, pero ahora se están volviendo una distracción.",
         "Elimina esas tres funciones jQuery de tu <code>función de documento listo</code>, pero deja intacta la declaración de la <code>función de documento listo</code>."
+<<<<<<< HEAD
 <<<<<<< f9c28381cc02b3be3aaf5df218e77c0bc6022a0c
 =======
+=======
+>>>>>>> 3b2f771914fea9c3c1ff82541497d6719aeb3cfc
       ],
       "titleDe": "Lösche deine jQuery Funktionen",
       "descriptionDe": [
         "Anfangs waren diese Animationen noch cool, jetzt sind sie aber ein wenig störend.",
         "Lösche alle drei jQuery Funktionen deiner <code>Document Ready Funktion</code>, aber lasse die <code>Document Ready Funktion</code> selbst intakt."
+<<<<<<< HEAD
 >>>>>>> Merge pull request #8219 from sharang-d/fix/add-tests-to-no-repeats-please-challenge
+=======
+>>>>>>> 3b2f771914fea9c3c1ff82541497d6719aeb3cfc
       ]
     },
     {
@@ -414,8 +444,11 @@
         "Agregar la clase <code>animated</code> a todos los elementos con tipo <code>button</code>.",
         "Agregar la clase <code>shake</code> a todos los botones con clase <code>.btn</code>.",
         "Agregar la clase <code>btn-primary</code> al botón con identificación <code>#target1</code>."
+<<<<<<< HEAD
 <<<<<<< f9c28381cc02b3be3aaf5df218e77c0bc6022a0c
 =======
+=======
+>>>>>>> 3b2f771914fea9c3c1ff82541497d6719aeb3cfc
       ],
       "titleDe": "Wähle das gleiche Element mit mehreren jQuery Selektoren aus",
       "descriptionDe": [
@@ -425,7 +458,10 @@
         "Füge die Klasse <code>animated</code> zu allen Elementen des Typs <code>button</code> hinzu.",
         "Füge die Klasse <code>shake</code> zu allen Buttons mit der Klasse <code>.btn</code> hinzu.",
         "Füge die Klasse <code>btn-primary</code> zu dem Button mit der ID <code>#target1</code> hinzu."
+<<<<<<< HEAD
 >>>>>>> Merge pull request #8219 from sharang-d/fix/add-tests-to-no-repeats-please-challenge
+=======
+>>>>>>> 3b2f771914fea9c3c1ff82541497d6719aeb3cfc
       ]
     },
     {
@@ -484,8 +520,11 @@
         "He aquí cómo puedes hacerlo para un botón específico:",
         "<code>$(\"#target2\").removeClass(\"btn-default\");</code>",
         "Vamos a quitar la clase <code>btn-default</code> de todos nuestros elementos <code>button</code>."
+<<<<<<< HEAD
 <<<<<<< f9c28381cc02b3be3aaf5df218e77c0bc6022a0c
 =======
+=======
+>>>>>>> 3b2f771914fea9c3c1ff82541497d6719aeb3cfc
       ],
       "titleDe": "Entferne Klassen von einem Element mit jQuery",
       "descriptionDe": [  
@@ -493,7 +532,10 @@
         "So könntest du das bei einem spezifischen Button machen:",
         "<code>$(\"#target2\").removeClass(\"btn-default\");</code>",
         "Lass uns alle <code>btn-default</code> Klassen von unseren <code>Button</code> Elementen entfernen."
+<<<<<<< HEAD
 >>>>>>> Merge pull request #8219 from sharang-d/fix/add-tests-to-no-repeats-please-challenge
+=======
+>>>>>>> 3b2f771914fea9c3c1ff82541497d6719aeb3cfc
       ]
     },
     {
@@ -558,8 +600,11 @@
         "Esto es un poco diferente a una declaración normal CSS, porque la propiedad CSS y su valor están entre comillas y separadas por una coma en lugar de dos puntos.",
         "Elimina tus selectores jQuery, dejando en blanco la <code>función de documento listo</code>.",
         "Selecciona <code>target1</code> y cambia su color a rojo."
+<<<<<<< HEAD
 <<<<<<< f9c28381cc02b3be3aaf5df218e77c0bc6022a0c
 =======
+=======
+>>>>>>> 3b2f771914fea9c3c1ff82541497d6719aeb3cfc
       ],
       "titleDe": "Das CSS eines Elements mit jQuery ändern",
       "descriptionDe": [
@@ -570,7 +615,10 @@
         "Das ist ein wenig anders als eine normale CSS-Deklaration, weil die CSS-Eigenschaft und deren Wert in Anführungszeichen sind und durch ein Komma anstatt eines Doppelpunkts getrennt werden.",
         "Lösche deine jQuery Selektoren, damit eine leere <code>Document Ready Funktion</code> übrig bleibt.",
         "Wähle <code>target1</code> und ändere dessen Farbe zu Rot."
+<<<<<<< HEAD
 >>>>>>> Merge pull request #8219 from sharang-d/fix/add-tests-to-no-repeats-please-challenge
+=======
+>>>>>>> 3b2f771914fea9c3c1ff82541497d6719aeb3cfc
       ]
     },
     {
@@ -631,8 +679,11 @@
         "He aquí cómo puedes desactivar todos los botones:",
         "<code>$(\"button\").prop(\"disabled\", true);</code>",
         "Desactiva sólo el botón <code>target1</code>."
+<<<<<<< HEAD
 <<<<<<< f9c28381cc02b3be3aaf5df218e77c0bc6022a0c
 =======
+=======
+>>>>>>> 3b2f771914fea9c3c1ff82541497d6719aeb3cfc
       ],
       "titleDe": "Elemente mit jQuery deaktivieren",
       "descriptionDe": [
@@ -642,7 +693,10 @@
         "So kannst du alle <code>Buttons</code> deaktivieren:",
         "<code>$(\"button\").prop(\"disabled\", true);</code>",
         "Deaktiviere nur den <code>target1</code> Button."
+<<<<<<< HEAD
 >>>>>>> Merge pull request #8219 from sharang-d/fix/add-tests-to-no-repeats-please-challenge
+=======
+>>>>>>> 3b2f771914fea9c3c1ff82541497d6719aeb3cfc
       ]
     },
     {
@@ -705,8 +759,11 @@
         "<code>$(\"h3\").html(\"&#60;i&#62;jQuery Playground&#60;/i&#62;\");</code>",
         "jQuery también tiene una función similar llamada <code>.text()</code> que sólo altera el texto sin añadir etiquetas.",
         "Cambia el botón con identificación <code>target4</code> de forma que su texto quede en itálicas."
+<<<<<<< HEAD
 <<<<<<< f9c28381cc02b3be3aaf5df218e77c0bc6022a0c
 =======
+=======
+>>>>>>> 3b2f771914fea9c3c1ff82541497d6719aeb3cfc
       ],
       "titleDe": "Ändere den Text innerhalb eines Elements mit jQuery",
       "descriptionDe": [
@@ -716,7 +773,10 @@
         "<code>$(\"h3\").html(\"&#60;em&#62;jQuery Playground&#60;/em&#62;\");</code>",
         "jQuery hat auch eine weitere ähnliche Funktion namens <code>.text()</code>, welche nur den Text ändert, ohne Tags hinzuzufügen. In anderen Worten: diese Funktion evaluiert keinerlei HTML-Tags, die an sie übergeben werden, sondern behandelt diese als Text, den du mit der Funktion ersetzen willst.",
         "Ändere den Button mit der ID <code>target4</code> indem du seinen Text hervorhebst."
+<<<<<<< HEAD
 >>>>>>> Merge pull request #8219 from sharang-d/fix/add-tests-to-no-repeats-please-challenge
+=======
+>>>>>>> 3b2f771914fea9c3c1ff82541497d6719aeb3cfc
       ]
     },
     {
@@ -771,15 +831,21 @@
         "Ahora quitemos un elemento HTML de tu página usando jQuery.",
         "jQuery tiene una función llamada <code>.remove()</code> que eliminará un elemento HTML por completo",
         "Elimina el elemento con identificación <code>target4</code> de la página utilizando la función <code>.remove()</code>."
+<<<<<<< HEAD
 <<<<<<< f9c28381cc02b3be3aaf5df218e77c0bc6022a0c
 =======
+=======
+>>>>>>> 3b2f771914fea9c3c1ff82541497d6719aeb3cfc
       ],
       "titleDe": "Entferne ein Element mit jQuery",
       "descriptionDe": [
         "Lass uns jetzt ein HTML-Element mit jQuery von deiner Seite entfernen.",
         "jQuery hat eine Funktion namens <code>.remove()</code>, die ein HTML-Element komplett entfernt.",
         "Entferne das Element <code>target4</code> von der Seite, indem du die <code>.remove()</code> Funktion nutzt."
+<<<<<<< HEAD
 >>>>>>> Merge pull request #8219 from sharang-d/fix/add-tests-to-no-repeats-please-challenge
+=======
+>>>>>>> 3b2f771914fea9c3c1ff82541497d6719aeb3cfc
       ]
     },
     {
@@ -840,8 +906,11 @@
         "Por ejemplo, si quisiéramos mover <code>target4</code> de nuestro pozo (<em>well</em>) derecho a nuestro pozo izquierdo, usaríamos:",
         "<code>$(\"#target4\").appendTo(\"#left-well\");</code>",
         "Mueve tu elemento <code>target2</code> de tu <code>left-well</code> a tu <code>right-well</code>."
+<<<<<<< HEAD
 <<<<<<< f9c28381cc02b3be3aaf5df218e77c0bc6022a0c
 =======
+=======
+>>>>>>> 3b2f771914fea9c3c1ff82541497d6719aeb3cfc
       ],
       "titleDe": "Verwende appendTo um Elemente mit jQuery zu verschieben.",
       "descriptionDe": [
@@ -850,7 +919,10 @@
         "Wenn wir zum Beispiel <code>target4</code> von <code>right-well</code> zu <code>left-well</code> verschieben wollen, würden wir folgenden Code nutzen:",
         "<code>$(\"#target4\").appendTo(\"#left-well\");</code>",
         "Verschiebe dein <code>target2</code> Element von <code>left-well</code> zu <code>right-well</code>."
+<<<<<<< HEAD
 >>>>>>> Merge pull request #8219 from sharang-d/fix/add-tests-to-no-repeats-please-challenge
+=======
+>>>>>>> 3b2f771914fea9c3c1ff82541497d6719aeb3cfc
       ]
     },
     {
@@ -914,8 +986,11 @@
         "<code>$(\"#target2\").clone().appendTo(\"#right-well\");</code>",
         "¿Te diste cuenta que esto implica pegar dos funciones jQuery? Esto se conoce como <code>encadenamiento</code> y es una manera conveniente de hacer las cosas con jQuery. ",
         "Clona tu elemento <code>target5</code> y añadelo a tu <code>left-well</code>."
+<<<<<<< HEAD
 <<<<<<< f9c28381cc02b3be3aaf5df218e77c0bc6022a0c
 =======
+=======
+>>>>>>> 3b2f771914fea9c3c1ff82541497d6719aeb3cfc
       ],
       "titleDe": "Ein Element kopieren mit jQuery",
       "descriptionDe": [
@@ -925,7 +1000,10 @@
         "<code>$(\"#target2\").clone().appendTo(\"#right-well\");</code>",
         "Ist dir aufgefallen, dass wir dazu zwei jQuery Funktionen miteinander verknüpfen? Das nennt sich <code>function chaining</code> und ist eine praktische Art um mit jQuery zu Lösungen zu kommen.",
         "Kopiere dein <code>target5</code> Element und verschiebe es zu <code>left-well</code>."
+<<<<<<< HEAD
 >>>>>>> Merge pull request #8219 from sharang-d/fix/add-tests-to-no-repeats-please-challenge
+=======
+>>>>>>> 3b2f771914fea9c3c1ff82541497d6719aeb3cfc
       ]
     },
     {
@@ -993,8 +1071,11 @@
         "He aquí un ejemplo de cómo se utiliza la función <code>parent()</code> si quisieras darle al elemento padre del elemento <code>left-well</code> un color de fondo azul:",
         "<code>$(\"#left-well\").parent().css(\"background-color\", \"blue\")</code>",
         "Dale al padre del elemento <code>#target1</code> un color de fondo (<code>background-color</code>) rojo."
+<<<<<<< HEAD
 <<<<<<< f9c28381cc02b3be3aaf5df218e77c0bc6022a0c
 =======
+=======
+>>>>>>> 3b2f771914fea9c3c1ff82541497d6719aeb3cfc
       ],
       "titleDe": "Wähle das Eltern-Element mit jQuery aus",
       "descriptionDe": [
@@ -1004,7 +1085,10 @@
         "Hier ist ein Beispiel, wie du die <code>parent()</code> Funktion nutzen kannst, wenn du dem Eltern-Element des <code>left-well</code> Elements eine blaue Hintergrundfarbe geben willst:",
         "<code>$(\"#left-well\").parent().css(\"background-color\", \"blue\")</code>",
         "Gib dem Eltern-Element des <code>#target1</code> Elements eine rote Hintergrundfarbe."
+<<<<<<< HEAD
 >>>>>>> Merge pull request #8219 from sharang-d/fix/add-tests-to-no-repeats-please-challenge
+=======
+>>>>>>> 3b2f771914fea9c3c1ff82541497d6719aeb3cfc
       ]
     },
     {
@@ -1070,8 +1154,11 @@
         "He aquí un ejemplo de cómo se utiliza la función <code>children()</code> para darle a los hijos de tu elemento <code>left-well</code> el color azul:",
         "<code>$(\"#left-well\").children().css(\"color\", \"blue\")</code>",
         "Da a todos los hijos de tu elemento <code>right-well</code> el color naranja."
+<<<<<<< HEAD
 <<<<<<< f9c28381cc02b3be3aaf5df218e77c0bc6022a0c
 =======
+=======
+>>>>>>> 3b2f771914fea9c3c1ff82541497d6719aeb3cfc
       ],
       "titleDe": "Wähle Kinder-Elemente mit jQuery aus",
       "descriptionDe": [          
@@ -1081,7 +1168,10 @@
         "Hier ist ein Beispiel, wie du die <code>children()</code> Funktion nutzen kannst, wenn du den Kinder-Elementen von <code>left-well</code> die Farbe Blau geben willst:",
         "<code>$(\"#left-well\").children().css(\"color\", \"blue\")</code>",
         "Gib allen Kinder-Elementen von <code>#right-well</code> die Farbe Orange."
+<<<<<<< HEAD
 >>>>>>> Merge pull request #8219 from sharang-d/fix/add-tests-to-no-repeats-please-challenge
+=======
+>>>>>>> 3b2f771914fea9c3c1ff82541497d6719aeb3cfc
       ]
     },
     {
@@ -1148,8 +1238,11 @@
         "He aquí cómo le asignarás la clase <code>bounce</code> al tercer elemento de cada pozo:",
         "<code>$(\".target:nth-child(3)\").addClass(\"animated bounce\");</code>",
         "Haz que rebote el segundo hijo de cada uno de los elementos de tus pozos. Debes elegir los hijos de elementos con clase <code>target</code>."
+<<<<<<< HEAD
 <<<<<<< f9c28381cc02b3be3aaf5df218e77c0bc6022a0c
 =======
+=======
+>>>>>>> 3b2f771914fea9c3c1ff82541497d6719aeb3cfc
       ],
       "titleDe": "Wähle ein spezifisches Kinder-Element mit jQuery aus",
       "descriptionDe": [
@@ -1159,7 +1252,10 @@
         "Hier siehst du, wie du dem dritten Kind-Element einer jeden Vertiefung eine <code>bounce</code> Klasse hinzufügen kannst.",
         "<code>$(\".target:nth-child(3)\").addClass(\"animated bounce\");</code>",
         "Lasse das zweite Kind-Element jeder Vertiefung hüpfen. Dazu musst das Kind-Element mit der <code>target</code> Klasse auswählen."
+<<<<<<< HEAD
 >>>>>>> Merge pull request #8219 from sharang-d/fix/add-tests-to-no-repeats-please-challenge
+=======
+>>>>>>> 3b2f771914fea9c3c1ff82541497d6719aeb3cfc
       ]
     },
     {
@@ -1225,8 +1321,11 @@
         "He aquí cómo elegirías todos los elementos impares con clase <code>target</code> y como les agregarías unas clases:",
         "<code>$(\".target:odd\").addClass(\"animated shake\");</code>",
         "Intenta seleccionar todos los elementos de número par y agrégales las clases <code>animated</code> y <code>shake</code>."
+<<<<<<< HEAD
 <<<<<<< f9c28381cc02b3be3aaf5df218e77c0bc6022a0c
 =======
+=======
+>>>>>>> 3b2f771914fea9c3c1ff82541497d6719aeb3cfc
       ],
       "titleDe": "Wähle gerade Zahlen mit jQuery aus",
       "descriptionDe": [
@@ -1235,7 +1334,10 @@
         "<code>$(\".target:odd\").addClass(\"animated shake\");</code>",
         "Bedenke, dass jQuery null-indexiert ist; das bedeutet, dass - kontraintuitiverweise - <code>:odd</code> das zweite Element, das vierte Element und so weiter auswählt.",
         "Versuche alle geradzahligen Elemente auszuwählen und ihnen die Klassen <code>animated</code> und <code>shake</code> hinzuzufügen."
+<<<<<<< HEAD
 >>>>>>> Merge pull request #8219 from sharang-d/fix/add-tests-to-no-repeats-please-challenge
+=======
+>>>>>>> 3b2f771914fea9c3c1ff82541497d6719aeb3cfc
       ]
     },
     {
@@ -1299,8 +1401,11 @@
         "jQuery también puede elegir el elemento <code>body</code>.",
         "Así es como haríamos que el cuerpo entero desapareciera: <code>$(\"body\").addClass('animated fadeOut');</code>",
         "Pero vamos a hacer algo más dramático. Añade las clases <code>animated</code> y <code>hinge</code> a tu elemento <code>body</code>."
+<<<<<<< HEAD
 <<<<<<< f9c28381cc02b3be3aaf5df218e77c0bc6022a0c
 =======
+=======
+>>>>>>> 3b2f771914fea9c3c1ff82541497d6719aeb3cfc
       ],
       "titleDe": "Mit jQuery die gesamte Seite modifizieren",
       "descriptionDe": [   
@@ -1308,7 +1413,10 @@
         "jQuery kann auch das <code>body</code> Element auswählen.",
         "Hier siehst du, wie wir den gesamten <code>body</code> Bereich ausblenden können: <code> $(\"body\").addClass(\"animated fadeOut\");</code>",
         "Aber lass uns noch etwas Dramatischeres machen. Füge die Klassen <code>animated</code> und <code>hinge</code> zu deinem <code>body</code> Element hinzu."
+<<<<<<< HEAD
 >>>>>>> Merge pull request #8219 from sharang-d/fix/add-tests-to-no-repeats-please-challenge
+=======
+>>>>>>> 3b2f771914fea9c3c1ff82541497d6719aeb3cfc
       ]
     }
   ]

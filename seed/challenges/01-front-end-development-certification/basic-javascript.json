@@ -433,12 +433,17 @@
         "<code>i = i + 1;</code>",
         "<strong>Note</strong><br>The entire line becomes <code>i++;</code>, eliminating the need for the equal sign.",
         "<h4>Instructions</h4>",
+<<<<<<< HEAD
 <<<<<<< f9c28381cc02b3be3aaf5df218e77c0bc6022a0c
         "Change the code to use the <code>++</code> operator on <code>myVar</code>."
 =======
         "Change the code to use the <code>++</code> operator on <code>myVar</code>.",
         "<strong>Hint</strong><br>Learn more about <a href=\"https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Increment_()\" target=\"_blank\">Arithmetic operators - Increment (++)</a>."
 >>>>>>> Merge pull request #8219 from sharang-d/fix/add-tests-to-no-repeats-please-challenge
+=======
+        "Change the code to use the <code>++</code> operator on <code>myVar</code>.",
+        "<strong>Hint</strong><br>Learn more about <a href=\"https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Increment_()\" target=\"_blank\">Arithmetic operators - Increment (++)</a>."
+>>>>>>> 3b2f771914fea9c3c1ff82541497d6719aeb3cfc
       ],
       "releasedOn": "January 1, 2016",
       "challengeSeed": [
@@ -3512,6 +3517,7 @@
         "function switchOfStuff(val) {\n  var answer = \"\";\n\n  switch(val) {\n    case \"a\":\n      answer = \"apple\";\n      break;\n    case \"b\":\n      answer = \"bird\";\n      break;\n    case \"c\":\n      answer = \"cat\";\n      break;\n    default:\n      answer = \"stuff\";\n  }\n  return answer;  \n}"
       ],
       "tests": [
+<<<<<<< HEAD
 <<<<<<< f9c28381cc02b3be3aaf5df218e77c0bc6022a0c
         "assert(switchOfStuff(\"a\") === \"apple\", 'message: <code>switchOfStuff(\"a\") should have a value of \"apple\"');",
         "assert(switchOfStuff(\"b\") === \"bird\", 'message: <code>switchOfStuff(\"b\") should have a value of \"bird\"');",
@@ -3519,12 +3525,17 @@
         "assert(switchOfStuff(\"d\") === \"stuff\", 'message: <code>switchOfStuff(\"d\") should have a value of \"stuff\"');",
         "assert(switchOfStuff(4) === \"stuff\", 'message: <code>switchOfStuff(4) should have a value of \"stuff\"');",
 =======
+=======
+>>>>>>> 3b2f771914fea9c3c1ff82541497d6719aeb3cfc
         "assert(switchOfStuff(\"a\") === \"apple\", 'message: <code>switchOfStuff(\"a\")</code> should have a value of \"apple\"');",
         "assert(switchOfStuff(\"b\") === \"bird\", 'message: <code>switchOfStuff(\"b\")</code> should have a value of \"bird\"');",
         "assert(switchOfStuff(\"c\") === \"cat\", 'message: <code>switchOfStuff(\"c\")</code> should have a value of \"cat\"');",
         "assert(switchOfStuff(\"d\") === \"stuff\", 'message: <code>switchOfStuff(\"d\")</code> should have a value of \"stuff\"');",
         "assert(switchOfStuff(4) === \"stuff\", 'message: <code>switchOfStuff(4)</code> should have a value of \"stuff\"');",
+<<<<<<< HEAD
 >>>>>>> Merge pull request #8219 from sharang-d/fix/add-tests-to-no-repeats-please-challenge
+=======
+>>>>>>> 3b2f771914fea9c3c1ff82541497d6719aeb3cfc
         "assert(!/else/g.test(code) || !/if/g.test(code), 'message: You should not use any <code>if</code> or <code>else</code> statements');",
         "assert(code.match(/break/g).length > 2, 'message: You should have at least 3 <code>break</code> statements');"
       ],
