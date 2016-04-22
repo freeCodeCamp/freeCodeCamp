@@ -371,7 +371,7 @@
         "The array will contain objects in the format <code>{name: 'name', avgAlt: avgAlt}</code>.",
         "You can read about orbital periods <a href=\"http://en.wikipedia.org/wiki/Orbital_period\" target='_blank'>on wikipedia</a>.",
         "The values should be rounded to the nearest whole number. The body being orbited is Earth.",
-        "The radius of the earth is 6367.4447 kilometers, and the GM value of earth is 398600.4418",
+        "The radius of the earth is 6367.4447 kilometers, and the GM value of earth is 398600.4418 km<sup>3</sup>s<sup>-2</sup>.",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "challengeSeed": [
@@ -401,7 +401,7 @@
         "El arreglo debe contener objetos en el formato <code>{name: 'name', avgAlt: avgAlt}</code>.",
         "Puedes leer acerca de períodos orbitales <a href=\"http://en.wikipedia.org/wiki/Orbital_period\" target='_blank'>en wikipedia</a>.",
         "Los valores deben estar redondeados al número entero más próximo. El cuerpo orbitado es la Tierra",
-        "El radio de la Tierra es 6367.4447 kilómetros, y el valor GM del planeta es de 398600.4418",
+        "El radio de la Tierra es 6367.4447 kilómetros, y el valor GM del planeta es de 398600.4418 km<sup>3</sup>s<sup>-2</sup>.",
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
       ]
     },
