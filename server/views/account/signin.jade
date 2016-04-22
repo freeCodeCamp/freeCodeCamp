@@ -1,7 +1,23 @@
 extends ../layout
 block content
     .text-center
-        h2 Sign in with one of these options:
+        h2 New to Free Code Camp? 
+          br
+          .button-spacer  
+          | Sign up now:
+        a.btn.btn-lg.btn-block.btn-social.btn-primary(href='/email-signup')
+            i.fa.fa-envelope
+            | Sign up with Email
+        a.btn.btn-lg.btn-block.btn-social.btn-github(href='/auth/github')
+            i.fa.fa-github
+            | Sign up with GitHub
+        .spacer
+        hr
+        .spacer          
+        h2 Are you a returning camper?
+          br
+          .button-spacer
+          | Sign in with one of these options:
         a.btn.btn-lg.btn-block.btn-social.btn-primary(href='/email-signin')
             i.fa.fa-envelope
             | Sign in with Email
@@ -10,15 +26,7 @@ block content
             | Sign in with GitHub
         br
         p
-            a(href="/deprecated-signin") Or click here to signin with one of the deprecated methods.
-
-        h2 New to Free Code Camp ? Sign up now:
-        a.btn.btn-lg.btn-block.btn-social.btn-primary(href='/email-signup')
-            i.fa.fa-envelope
-            | Sign up with Email
-        a.btn.btn-lg.btn-block.btn-social.btn-github(href='/auth/github')
-            i.fa.fa-github
-            | Sign up with GitHub
+            a(href="/deprecated-signin") Click here if you previously signed in using a different method.
 
     script.
       $(document).ready(function() {
