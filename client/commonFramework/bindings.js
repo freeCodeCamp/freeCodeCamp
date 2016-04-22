@@ -2,7 +2,8 @@ window.common = (function(global) {
   const {
     $,
     Rx: { Observable },
-    common = { init: [] }
+    common = { init: [] },
+    Mousetrap
   } = global;
 
   common.ctrlEnterClickHandler = function ctrlEnterClickHandler(e) {
@@ -40,6 +41,11 @@ window.common = (function(global) {
         'keydown',
         common.ctrlEnterClickHandler
       );
+    });
+
+    // set focus keybind
+    Mousetrap.bind(['command+shift+e', 'ctrl+shift+e'], () => {
+        common.editor.focus();
     });
 
     // video checklist binding
