@@ -20,6 +20,25 @@ window.common = (function(global) {
     }
   };
 
+  // keymap to hold multiple keys
+  common.keyMap = [];
+
+
+  common.ctrlShiftEFocus = function ctrlShiftEFocus(e) {
+      var map = common.keyMap;
+      map[e.keyCode] = e.type === 'keydown';
+      // ctrl + shift + e or cmd + shift + e
+      if (
+          map[16] &&
+              (e.metaKey || e.ctrlKey) &&
+              map[69]
+      ) {
+          $('body').off('keydown', ctrlShiftEFocus);
+          common.editor.focus();
+          map = [];
+      }
+  };
+
   common.init.push(function($) {
 
     var $marginFix = $('.innerMarginFix');
@@ -40,6 +59,22 @@ window.common = (function(global) {
         'keydown',
         common.ctrlEnterClickHandler
       );
+    });
+
+    // bind keydown event when the page just opens
+    $('body').keydown(common.ctrlShiftEFocus);
+
+    // bind to keyup event so map array returns to false
+    $('body').keyup(common.ctrlShiftEFocus);
+
+    // remove the keybindings when focused in the editor
+    $('div > textarea').focus(function() {
+        $('body').off('keydown', common.ctrlShiftEFocus);
+    });
+
+    // rebind when the focus is off of the editor
+    $('div > textarea').blur(function() {
+        $('body').keydown(common.ctrlShiftEFocus);
     });
 
     // video checklist binding
