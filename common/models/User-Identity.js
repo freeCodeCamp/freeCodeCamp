@@ -12,18 +12,6 @@ const { defaultProfileImage } = require('../utils/constantStrings.json');
 const githubRegex = (/github/i);
 const debug = debugFactory('fcc:models:userIdent');
 
-function createAccessToken(user, ttl, cb) {
-  if (arguments.length === 2 && typeof ttl === 'function') {
-    cb = ttl;
-    ttl = 0;
-  }
-  user.accessTokens.create({
-    created: new Date(),
-    ttl: Math.min(ttl || user.constructor.settings.ttl,
-      user.constructor.settings.maxTTL)
-  }, cb);
-}
-
 export default function(UserIdent) {
   // original source
   // github.com/strongloop/loopback-component-passport
@@ -40,88 +28,89 @@ export default function(UserIdent) {
       cb = options;
       options = {};
     }
-    const autoLogin = options.autoLogin || !options.autoLogin;
     const userIdentityModel = UserIdent;
     profile.id = profile.id || profile.openid;
-    return userIdentityModel.findOne({
+    const filter = {
       where: {
         provider: getSocialProvider(provider),
         externalId: profile.id
       }
-    })
-    .then(identity => {
-      if (identity) {
-        identity.credentials = credentials;
-        return identity.updateAttributes({
-          profile: profile,
-          credentials: credentials,
-          modified: new Date()
-        })
-          .then(function() {
-            // Find the user for the given identity
-            return identity.user(function(err, user) {
-              // Create access token if the autoLogin flag is set to true
-              if (!err && user && autoLogin) {
-                return (options.createAccessToken || createAccessToken)(
-                  user,
-                  function(err, token) {
-                    cb(err, user, identity, token);
-                  }
-                );
-              }
-              return cb(err, user, identity);
-            });
-        });
-      }
-      // Find the user model
-      const userModel = userIdentityModel.relations.user &&
-        userIdentityModel.relations.user.modelTo ||
-        loopback.getModelByType(loopback.User);
-
-      const userObj = options.profileToUser(provider, profile, options);
-
-      if (!userObj.email && !options.emailOptional) {
-        process.nextTick(function() {
-          return cb('email is missing from the user profile');
-        });
-      }
-
-      const query;
-      if (userObj.email) {
-        query = { or: [
-          { username: userObj.username },
-          { email: userObj.email }
-        ]};
-      } else {
-        query = { username: userObj.username };
-      }
-      return userModel.findOrCreate({ where: query }, userObj, (err, user) => {
-        if (err) {
-          return cb(err);
+    };
+    return userIdentityModel.findOne(filter)
+      .then(identity => {
+        // identity already exists
+        // find user and log them in
+        if (identity) {
+          identity.credentials = credentials;
+          const options = {
+            profile: profile,
+            credentials: credentials,
+            modified: new Date()
+          };
+          return identity.updateAttributes(options)
+            // grab user associated with identity
+            .then(() => identity.user())
+            .then(user => {
+              // Create access token for user
+              const options = {
+                created: new Date(),
+                ttl: user.constructor.settings.ttl
+              };
+              return user.accessTokens.create(options)
+                .then(token => ({ user, token }));
+            })
+            .then(({ token, user })=> {
+              cb(null, user, identity, token);
+            })
+            .catch(err => cb(err));
         }
-        const date = new Date();
-        return userIdentityModel.create({
-          provider: getSocialProvider(provider),
-          externalId: profile.id,
-          authScheme: authScheme,
-          profile: profile,
-          credentials: credentials,
-          userId: user.id,
-          created: date,
-          modified: date
-        }, function(err, identity) {
-          if (!err && user && autoLogin) {
-            return (options.createAccessToken || createAccessToken)(
-              user,
-              function(err, token) {
-                cb(err, user, identity, token);
-              }
-            );
-          }
-          return cb(err, user, identity);
-        });
+        // Find the user model
+        const userModel = userIdentityModel.relations.user &&
+          userIdentityModel.relations.user.modelTo ||
+          loopback.getModelByType(loopback.User);
+
+        const userObj = options.profileToUser(provider, profile, options);
+        if (getSocialProvider(provider) !== 'github') {
+          return process.nextTick(() => cb(
+            new Error(
+              'accounts can only be created using Github or though email'
+            )
+          ));
+        }
+
+        let query;
+        if (userObj.email) {
+          query = { or: [
+            { username: userObj.username },
+            { email: userObj.email }
+          ]};
+        } else {
+          query = { username: userObj.username };
+        }
+        return userModel.findOrCreate({ where: query }, userObj)
+          .then(([ user ]) => {
+            const promises = [
+              userIdentityModel.create({
+                provider: getSocialProvider(provider),
+                externalId: profile.id,
+                authScheme: authScheme,
+                profile: profile,
+                credentials: credentials,
+                userId: user.id,
+                created: new Date(),
+                modified: new Date()
+              }),
+              user.accessTokens.create({
+                created: new Date(),
+                ttl: user.constructor.settings.ttl
+              })
+            ];
+            return Promise.all(promises)
+              .then(([ identity, token ]) => ({ user, identity, token }));
+          })
+          .then(({ user, token, identity }) => cb(null, user, identity, token))
+          .catch(err => cb(err));
       });
-    });
   };
 
   UserIdent.observe('before save', function(ctx, next) {

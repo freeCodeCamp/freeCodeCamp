@@ -13,18 +13,18 @@ import {
 const passportOptions = {
   emailOptional: true,
   profileToUser(provider, profile) {
-    var emails = profile.emails;
+    const emails = profile.emails;
     // NOTE(berks): get email or set to null.
     // MongoDB indexs email but can be sparse(blank)
-    var email = emails && emails[0] && emails[0].value ?
+    const email = emails && emails[0] && emails[0].value ?
       emails[0].value :
       null;
 
     // create random username
     // username will be assigned when camper signups for Github
-    var username = 'fcc' + uuid.v4().slice(0, 8);
-    var password = generateKey('password');
-    var userObj = {
+    const username = 'fcc' + uuid.v4().slice(0, 8);
+    const password = generateKey('password');
+    let userObj = {
       username: username,
       password: password
     };
@@ -41,7 +41,7 @@ const passportOptions = {
     }
 
     if (/github/.test(provider)) {
-      setProfileFromGithub(userObj, profile, profile._json);
+      userObj = setProfileFromGithub(userObj, profile, profile._json);
     }
     return userObj;
   }
