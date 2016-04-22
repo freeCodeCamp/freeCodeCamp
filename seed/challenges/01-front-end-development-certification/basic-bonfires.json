@@ -715,7 +715,7 @@
       ],
       "type": "bonfire",
       "MDNlinks": [
-        "String.charCodeAt()",
+        "String.prototype.charCodeAt()",
         "String.fromCharCode()"
       ],
       "challengeType": 5,
