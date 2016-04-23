@@ -130,6 +130,7 @@ if (typeof DEBUG === 'undefined') { DEBUG = true; }
     var ignore = {};
     var pushonly = {};
     var labelPostion = null;
+    var labelIndex = -1;
 
     function insertReset(lineNum, line, matchPosition) {
       // recompile the line with the reset **just** before the actual loop
@@ -179,6 +180,7 @@ if (typeof DEBUG === 'undefined') { DEBUG = true; }
             if (directlyBeforeLoop(index, lineNum, lines)) {
               DEBUG && debug('- found a label: "' + labelMatch[0] + '"'); // jshint ignore:line
               labelPostion = lineNum;
+              labelIndex = index;
             } else {
               DEBUG && debug('- ignored "label", false positive'); // jshint ignore:line
             }
@@ -309,10 +311,11 @@ if (typeof DEBUG === 'undefined') { DEBUG = true; }
                 DEBUG && debug('- reset inserted above matched label on line ' + labelPostion); // jshint ignore:line
                 if (recompiled[labelPostion] === undefined) {
                   labelPostion--;
-                  matchPosition = 0;
+                  labelIndex = 0;
                 }
-                recompiled[labelPostion] = insertReset(printLineNumber, recompiled[labelPostion], matchPosition);
+                recompiled[labelPostion] = insertReset(printLineNumber, recompiled[labelPostion], labelIndex);
                 labelPostion = null;
+                labelIndex = -1;
               }
             }
 
