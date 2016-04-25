@@ -1,6 +1,6 @@
-import React, { PropTypes, createElement } from 'react';
-import { Observable, CompositeDisposable } from 'rx';
-import shouldComponentUpdate from 'react-pure-render/function';
+import { helpers } from 'rx';
+import { createElement } from 'react';
+import PureComponent from 'react-pure-render/component';
 import debug from 'debug';
 
 // interface contain {
@@ -28,17 +28,8 @@ import debug from 'debug';
 
 const log = debug('fcc:professerx');
 
-function getChildContext(childContextTypes, currentContext) {
-
-  const compContext = { ...currentContext };
-  // istanbul ignore else
-  if (!childContextTypes || !childContextTypes.professor) {
-    delete compContext.professor;
-  }
-  return compContext;
-}
-
 const __DEV__ = process.env.NODE_ENV !== 'production';
+const { isFunction } = helpers;
 
 export default function contain(options = {}, Component) {
   /* istanbul ignore else */
@@ -48,144 +39,78 @@ export default function contain(options = {}, Component) {
 
   let action;
   let isActionable = false;
-  let hasRefetcher = typeof options.shouldRefetch === 'function';
-
-  const getActionArgs = typeof options.getActionArgs === 'function' ?
+  let hasRefetcher = isFunction(options.shouldRefetch);
+  const getActionArgs = isFunction(options.getActionArgs) ?
     options.getActionArgs :
     (() => []);
 
-  const isPrimed = typeof options.isPrimed === 'function' ?
+  const isPrimed = isFunction(options.isPrimed) ?
     options.isPrimed :
     (() => false);
 
+  const name = Component.displayName || 'Anon Component';
 
-  return class Container extends React.Component {
-    constructor(props, context) {
-      super(props, context);
-      this.__subscriptions = new CompositeDisposable();
+  function runAction(props, context, action) {
+    const actionArgs = getActionArgs(props, context);
+    if (__DEV__ && !Array.isArray(actionArgs)) {
+      throw new TypeError(
+        `${name} getActionArgs should return an array but got ${actionArgs}`
+      );
     }
+    return action.apply(null, actionArgs);
+  }
 
-    static displayName = `Container(${Component.displayName})`;
-    static contextTypes = {
-      ...Component.contextTypes,
-      professor: PropTypes.object
-    };
+
+  return class Container extends PureComponent {
+    static displayName = `Container(${name})`;
 
     componentWillMount() {
-      const { professor } = this.context;
-      const { props } = this;
+      const { props, context } = this;
       if (!options.fetchAction) {
-        log(`${Component.displayName} has no fetch action defined`);
-        return null;
+        log(`${name} has no fetch action defined`);
+        return;
+      }
+      if (isPrimed(this.props, this.context)) {
+        log(`${name} container is primed`);
+        return;
       }
 
       action = props[options.fetchAction];
       isActionable = typeof action === 'function';
 
-      if (__DEV__ && typeof action !== 'function') {
+      if (__DEV__ && !isActionable) {
         throw new Error(
           `${options.fetchAction} should return a function but got ${action}.
-          Check the fetch options for ${Component.displayName}.`
+          Check the fetch options for ${name}.`
         );
       }
 
-      if (
-        !professor ||
-        !professor.fetchContext
-      ) {
-        log(
-          `${Component.displayName} did not have professor defined on context`
-        );
-        return null;
-      }
-
-
-      const actionArgs = getActionArgs(
+      runAction(
         props,
-        getChildContext(Component.contextTypes, this.context)
+        context,
+        action
       );
-
-      return professor.fetchContext.push({
-        name: options.fetchAction,
-        action,
-        actionArgs,
-        component: Component.displayName || 'Anon'
-      });
-    }
-
-    componentDidMount() {
-      if (isPrimed(this.props, this.context)) {
-        log('container is primed');
-        return null;
-      }
-      if (!isActionable) {
-        log(`${Component.displayName} container is not actionable`);
-        return null;
-      }
-      const actionArgs = getActionArgs(this.props, this.context);
-      const fetch$ = action.apply(null, actionArgs);
-      if (__DEV__ && !Observable.isObservable(fetch$)) {
-        console.log(fetch$);
-        throw new Error(
-          `Action creator should return an Observable but got ${fetch$}.
-          Check the action creator for fetch action ${options.fetchAction}`
-        );
-      }
-
-      const subscription = fetch$.subscribe(
-        () => {},
-        options.handleError
-      );
-      return this.__subscriptions.add(subscription);
     }
 
     componentWillReceiveProps(nextProps, nextContext) {
       if (
         !isActionable ||
         !hasRefetcher ||
-        !options.shouldRefetch(
-          this.props,
-          nextProps,
-          getChildContext(Component.contextTypes, this.context),
-          getChildContext(Component.contextTypes, nextContext)
-        )
+        !options.shouldRefetch(this.props, nextProps, this.context, nextContext)
       ) {
         return;
       }
-      const actionArgs = getActionArgs(
-        this.props,
-        getChildContext(Component.contextTypes, this.context)
+
+      runAction(
+        nextProps,
+        nextContext,
+        action
       );
-
-      const fetch$ = action.apply(null, actionArgs);
-      if (__DEV__ && !Observable.isObservable(fetch$)) {
-        throw new Error(
-          'fetch action should return observable'
-        );
-      }
-
-      const subscription = fetch$.subscribe(
-        () => {},
-        options.errorHandler
-      );
-
-      this.__subscriptions.add(subscription);
     }
-
-    componentWillUnmount() {
-      if (this.__subscriptions) {
-        this.__subscriptions.dispose();
-      }
-    }
-
-    shouldComponentUpdate = shouldComponentUpdate;
-
     render() {
-      const { props } = this;
-
       return createElement(
         Component,
-        props
+        this.props
       );
     }
   };

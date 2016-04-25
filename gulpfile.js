@@ -198,8 +198,8 @@ gulp.task('serve', function(cb) {
     ignore: paths.serverIgnore,
     exec: path.join(__dirname, 'node_modules/.bin/babel-node'),
     env: {
-      'NODE_ENV': process.env.NODE_ENV || 'development',
-      'DEBUG': process.env.DEBUG || 'fcc:*'
+      NODE_ENV: process.env.NODE_ENV || 'development',
+      DEBUG: process.env.DEBUG || 'fcc:*'
     }
   })
     .on('start', function() {

@@ -39,17 +39,20 @@ const routingMiddleware = syncHistory(history);
 const devTools = window.devToolsExtension ? window.devToolsExtension() : f => f;
 const shouldRouterListenForReplays = !!window.devToolsExtension;
 
-const clientSagaOptions = { doc: document };
+const sagaOptions = {
+  window,
+  document: window.document,
+  location: window.location
+};
 
 
 createApp({
     history,
     serviceOptions,
     initialState,
-    middlewares: [
-      routingMiddleware,
-      ...sagas.map(saga => saga(clientSagaOptions))
-    ],
+    middlewares: [ routingMiddleware ],
+    sagas,
+    sagaOptions,
     reducers: { routing },
     enhancers: [ devTools ]
   })

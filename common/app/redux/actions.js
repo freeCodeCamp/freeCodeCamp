@@ -1,3 +1,4 @@
+import { Observable } from 'rx';
 import { createAction } from 'redux-actions';
 import types from './types';
 
@@ -39,3 +40,8 @@ export const updateNavHeight = createAction(types.updateNavHeight);
 export const updateChallengesData = createAction(types.updateChallengesData);
 export const updateJobsData = createAction(types.updateJobsData);
 export const updateHikesData = createAction(types.updateHikesData);
+
+export const createErrorObserable = error => Observable.just({
+  type: types.handleError,
+  error
+});
