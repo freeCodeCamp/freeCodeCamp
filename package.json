@@ -112,7 +112,7 @@
     "react-redux": "^4.0.6",
     "react-router": "^2.0.0",
     "react-router-bootstrap": "~0.20.1",
-    "react-router-redux": "^2.1.0",
+    "react-router-redux": "^4.0.4",
     "react-toastr": "^2.4.0",
     "react-vimeo": "~0.1.0",
     "redux": "^3.0.5",
