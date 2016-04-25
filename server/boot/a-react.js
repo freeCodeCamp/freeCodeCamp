@@ -55,18 +55,20 @@ export default function reactSubRouter(app) {
         }
         return !!props;
       })
-      .flatMap(({ props, store }) => {
+      .flatMap(({ props, store, epic }) => {
         log('render react markup and pre-fetch data');
 
         return renderToString(
-          provideStore(React.createElement(RouterContext, props), store)
+          provideStore(React.createElement(RouterContext, props), store),
+          epic
         )
-          .map(({ markup }) => ({ markup, store }));
+          .map(({ markup }) => ({ markup, store, epic }));
       })
-      .flatMap(function({ markup, store }) {
+      .flatMap(function({ markup, store, epic }) {
         log('react markup rendered, data fetched');
         const state = store.getState();
         const { title } = state.app.title;
+        epic.dispose();
         res.expose(state, 'data');
         return res.render$(
           'layout-react',

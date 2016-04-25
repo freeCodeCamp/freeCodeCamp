@@ -1,52 +1,24 @@
-import { Observable, Scheduler } from 'rx';
+import { Observable } from 'rx';
 import ReactDOM from 'react-dom/server';
 import debug from 'debug';
 
-import ProfessorContext from './Professor-Context';
-
 const log = debug('fcc:professor');
 
-export function fetch({ fetchContext = [] }) {
-  if (fetchContext.length === 0) {
-    log('empty fetch context found');
-    return Observable.just(fetchContext);
-  }
-  return Observable.from(fetchContext, null, null, Scheduler.default)
-    .doOnNext(({ name }) => log(`calling ${name} action creator`))
-    .map(({ action, actionArgs }) => action.apply(null, actionArgs))
-    .doOnNext(fetch$ => {
-      if (!Observable.isObservable(fetch$)) {
-        throw new Error(
-          'action creator should return an observable'
-        );
-      }
-    })
-    .map(fetch$ => fetch$.doOnNext(action => log('action', action.type)))
-    .mergeAll()
-    .doOnCompleted(() => log('all fetch observables completed'));
-}
-
-
-export default function renderToString(Component) {
-  const fetchContext = [];
-  const professor = { fetchContext };
-  let ContextedComponent;
+export default function renderToString(Component, sagaMiddleware) {
   try {
-    ContextedComponent = ProfessorContext.wrap(Component, professor);
-    log('initiating fetcher registration');
-    ReactDOM.renderToStaticMarkup(ContextedComponent);
-    log('fetcher registration completed');
+    log('initial render');
+    ReactDOM.renderToStaticMarkup(Component);
+    log('initial render completed');
   } catch (e) {
     return Observable.throw(e);
   }
-  return fetch(professor)
-    .last()
+  sagaMiddleware.end();
+  return Observable.merge(sagaMiddleware)
+    .last({ defaultValue: null })
     .delay(0)
     .map(() => {
+      sagaMiddleware.restart();
       const markup = ReactDOM.renderToString(Component);
-      return {
-        markup,
-        fetchContext
-      };
+      return { markup };
     });
 }

@@ -8,6 +8,7 @@ import App from './App.jsx';
 import childRoutes from './routes';
 
 // redux
+import createEpic from './utils/redux-epic';
 import createReducer from './create-reducer';
 import middlewares from './middlewares';
 import sagas from './sagas';
@@ -40,17 +41,24 @@ export default function createApp({
   middlewares: sideMiddlewares = [],
   enhancers: sideEnhancers = [],
   reducers: sideReducers = {},
-  sagas: sideSagas = []
+  sagas: sideSagas = [],
+  sagaOptions: sideSagaOptions = {}
 }) {
   const sagaOptions = {
+    ...sideSagaOptions,
     services: servicesCreator(null, serviceOptions)
   };
 
+  const sagaMiddleware = createEpic(
+    sagaOptions,
+    ...sagas,
+    ...sideSagas
+  );
   const enhancers = [
     applyMiddleware(
       ...middlewares,
       ...sideMiddlewares,
-      ...[ ...sagas, ...sideSagas].map(saga => saga(sagaOptions)),
+      sagaMiddleware
     ),
     // enhancers must come after middlewares
     // on client side these are things like Redux DevTools
@@ -74,6 +82,7 @@ export default function createApp({
       redirect,
       props,
       reducer,
-      store
+      store,
+      epic: sagaMiddleware
     }));
 }

@@ -9,7 +9,7 @@ import { hikeCompleted, goToNextHike } from './actions';
 import { postJSON$ } from '../../../../utils/ajax-stream';
 import { getCurrentHike } from './selectors';
 
-function handleAnswer(getState, dispatch, next, action) {
+function handleAnswer(action, getState) {
   const {
     e,
     answer,
@@ -35,7 +35,7 @@ function handleAnswer(getState, dispatch, next, action) {
 
     // question released under threshold
     if (Math.abs(positionX) < threshold) {
-      return next(action);
+      return Observable.just(null);
     }
 
     if (positionX >= threshold) {
@@ -51,27 +51,26 @@ function handleAnswer(getState, dispatch, next, action) {
 
   // incorrect question
   if (answer !== finalAnswer) {
+    let infoAction;
     if (info) {
-      dispatch(makeToast({
+      infoAction = makeToast({
         title: 'Hint',
         message: info,
         type: 'info'
-      }));
+      });
     }
 
     return Observable
       .just({ type: types.endShake })
       .delay(500)
-      .startWith({ type: types.startShake })
-      .doOnNext(dispatch);
+      .startWith(infoAction, { type: types.startShake });
   }
 
   if (tests[currentQuestion]) {
     return Observable
       .just({ type: types.goToNextQuestion })
       .delay(300)
-      .startWith({ type: types.primeNextQuestion })
-      .doOnNext(dispatch);
+      .startWith({ type: types.primeNextQuestion });
   }
 
   let updateUser$;
@@ -119,28 +118,25 @@ function handleAnswer(getState, dispatch, next, action) {
       error
     }))
     // end with action so we know it is ok to transition
-    .doOnCompleted(() => dispatch({ type: types.transitionHike }))
-    .doOnNext(dispatch);
+    .concat(Observable.just({ type: types.transitionHike }));
 }
 
-export default () => ({ getState, dispatch }) => next => {
-  return function answerSaga(action) {
-    if (action.type === types.answerQuestion) {
-      return handleAnswer(getState, dispatch, next, action);
-    }
+export default function answerSaga(action$, getState) {
+  return action$
+    .filter(action => {
+      return action.type === types.answerQuestion ||
+        action.type === types.transitionHike;
+    })
+    .flatMap(action => {
+      if (action.type === types.answerQuestion) {
+        return handleAnswer(action, getState);
+      }
 
-    // let goToNextQuestion hit reducers first
-    const result = next(action);
-    if (action.type === types.transitionHike) {
       const { hikesApp: { currentHike } } = getState();
       // if no next hike currentHike will equal '' which is falsy
       if (currentHike) {
-        dispatch(push(`/videos/${currentHike}`));
-      } else {
-        dispatch(push('/map'));
+        return Observable.just(push(`/videos/${currentHike}`));
       }
-    }
-
-    return result;
-  };
-};
+      return Observable.just(push('/map'));
+    });
+}
