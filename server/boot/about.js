@@ -17,10 +17,10 @@ function getCertCount(userCount, cert) {
 }
 
 function getAllThreeCertsCount(userCount) {
-  return userCount({ 
-    isFrontEndCert: true, 
-    isDataVisCert: true, 
-    isBackEndCert: true 
+  return userCount({
+    isFrontEndCert: true,
+    isDataVisCert: true,
+    isBackEndCert: true
   })
     ::timeCache(2, 'hours');
 }
@@ -54,12 +54,12 @@ export default function about(app) {
         allThreeCount
       })
     )
-      .doOnNext(({ 
-        frontEndCount, 
-        dataVisCount, 
-        backEndCount, 
-        allThreeCount 
-      }) => { 
+      .doOnNext(({
+        frontEndCount,
+        dataVisCount,
+        backEndCount,
+        allThreeCount
+      }) => {
         res.render('resources/about', {
           frontEndCount: numberWithCommas(frontEndCount),
           dataVisCount: numberWithCommas(dataVisCount),
