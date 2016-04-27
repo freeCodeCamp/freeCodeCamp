@@ -4353,206 +4353,16 @@
       ]
     },
     {
-      "id": "bad87fee1348bd9aedf08725",
-      "title": "Use Hex Code to Color Elements White",
-      "description": [
-        "<code>0</code> is the lowest number in hex code, and represents a complete absence of color.",
-        "<code>F</code> is the highest number in hex code, and it represents the maximum possible brightness.",
-        "Let's turn our <code>body</code> element's background-color white by changing its hex code to <code>#FFFFFF</code>"
-      ],
-      "titleRU": "Используйте hex-код, чтобы сделать элементы белыми",
-      "descriptionRU": [
-        "<code>0</code> - минимальное значение в hex-коде, оно обозначает полное отсутствие цвета.",
-        "<code>F</code> - максимальное значение в hex-коде, оно обозначает максимальную возможную яркость.",
-        "Давайте переделаем свойство <code>background-color</code> нашего элемента <code>body</code>, чтобы фон стал белый, заменив его hex-код на <code>#FFFFFF</code>"
-      ],
-      "challengeSeed": [
-        "<style>",
-        "  body {",
-        "    background-color: #000000;",
-        "  }",
-        "</style>"
-      ],
-      "tests": [
-        "assert($(\"body\").css(\"background-color\") === \"rgb(255, 255, 255)\", 'message: Your <code>body</code> element should have the <code>background-color</code> of white.');",
-        "assert(code.match(/body\\s*{(([\\s\\S]*;\\s*?)|\\s*?)background.*\\s*:\\s*?#FFF(FFF)?((\\s*})|(;[\\s\\S]*?}))/gi), 'message: Use the <code>hex code</code> for the color white instead of the word <code>white</code>. For example <code>body { color&#58; #FFFFFF; }</code>');"
-      ],
-      "descriptionPtBR": [
-        "<code>0</code> é o dígito mais baixo em código hexadecimal, e representa a completa ausência de cor.",
-        "<code>F</code> é o dígito mais alto em código hexadecimal, e representa o máximo de claridade possível.",
-        "Vamos fazer com que a cor de fundo (<code>background-color</code>) em nosso elemento <code>body</code> seja branca, mudando seu código hexadecimal para <code>#FFFFFF</code>."
-      ],
-      "namePtBR": "Use Código Hexadecimal Para dar a Cor Branca a Elementos",
-      "type": "waypoint",
-      "challengeType": 0,
-      "titleEs": "Usa el código hexadecimal para colorear de blanco los elementos",
-      "descriptionEs": [
-        "<code>0</code> es el dígito más bajo en código hexadecimal, y representa una completa ausencia de color.",
-        "<code>F</code> es el dígito más alto en código hexadecimal, y representa el máximo brillo posible.",
-        "Volvamos blanco el color de fondo (<code>background-color</code>) de nuestro elemento <code>body</code>, cambiando su código hexadecimal por <code>#FFFFFF</code>"
-      ],
-      "titleDe": "Verwende Hexadezimal Code um Elemente Weiß zu färben",
-      "descriptionDe": [
-        "<code>0</code> ist die niedrigste Zahl in Hexadezimal Code und steht für die komplette Abwesenheit von Farbe.",
-        "<code>F</code> ist die höchste Zahl in Hexadezimal Code und steht für maximal mögliche Helligkeit.",
-        "Mach die Hintergrundfarbe deines <code>body</code> Element weiß indem du den Hexadezimal Code auf <code>#FFFFFF</code> änderst."
-      ]
-    },
-    {
-      "id": "bad87fee1348bd9aedf08724",
-      "title": "Use Hex Code to Color Elements Red",
-      "description": [
-        "You may be wondering why we use 6 digits to represent a color instead of just one or two. The answer is that using 6 digits gives us a huge variety.",
-        "How many colors are possible? 16 values and 6 positions means we have 16 to the 6th power, or more than 16 million possible colors.",
-        "Hex code follows the red-green-blue, or <code>rgb</code> format. The first two digits of hex code represent the amount of red in the color. The third and fourth digit represent the amount of green. The fifth and sixth represent the amount of blue.",
-        "So to get the absolute brightest red, you would just use <code>F</code> for the first and second digits (the highest possible value) and <code>0</code> for the third, fourth, fifth and sixth digits (the lowest possible value).",
-        "Make the <code>body</code> element's background color red by giving it the hex code value of <code>#FF0000</code>"
-      ],
-      "titleRU": "Используйте hex-код, чтобы сделать элементы красными",
-      "descriptionRU": [
-        "Вы можете удивиться тому, что мы используем 6 цифр для представления цвета вместо одной или двух. Ответ заключается в том, что использование 6-ти цифр даёт нам большое разнообразие.",
-        "Сколько цветов возможно таким образом обозначить? 16 значений и 6 возможных положений значит, что у нас есть в распоряжении 16 в степени 6, или более 16-ти миллионов возможных цветов.",
-        "Hex-код соответствует модели красный-зелёный-синий, или <code>rgb</code> формату. Первые две цифры hex-кода обозначают количество красного в цвете. Третья и четвёртая - количество зелёного. Пятая и шестая - количество синего.",
-        "То есть для получения абсолютно яркого красного, вы бы использовали <code>F</code> в качестве первой и второй цифры (максимальное возможное значение) и <code>0</code> для третьей, четвёртой, пятой и шестой цифр (минимальное возможное значение).",
-        "Сделайте цвет фона элемента <code>body</code> красным, присвоив его соответствующему свойству значение hex-кода равное <code>#FF0000</code>"
-      ],
-      "challengeSeed": [
-        "<style>",
-        "  body {",
-        "    background-color: #FFFFFF;",
-        "  }",
-        "</style>"
-      ],
-      "tests": [
-        "assert($(\"body\").css(\"background-color\") === \"rgb(255, 0, 0)\", 'message: Give your <code>body</code> element the <code>background-color</code> of red.');",
-        "assert(code.match(/body\\s*{(([\\s\\S]*;\\s*?)|\\s*?)background.*\\s*:\\s*?#((F00)|(FF0000))((\\s*})|(;[\\s\\S]*?}))/gi), 'message: Use the <code>hex code</code> for the color red instead of the word <code>red</code>. For example <code>body { color&#58; #FF0000; }</code>');"
-      ],
-      "descriptionPtBR": [
-        "Talvez você esteja se perguntando o motivo para usar 6 dígitos para representar uma cor ao invés de apenas um ou dois. Este motivo é que ao usar 6 dígitos, temos acesso a uma enorme variedade de cores.",
-        "Para que você tenha uma ideia, ter 16 valores e 6 posições significa que temos 16 elevado a 6. Isso dá um total de mais de 16 milhões de cores possíveis.",
-        "Os códigos hexadecimais seguem o formato vermelho-verde-azul (<em>red-green-blue</em>), ou formato <code>rgb</code>. Os dois primeiros dígitos do código hexadecimal representam a quantidade de vermelho na cor. O terceiro e o quarto representam a quantidade de verde. Já o quinto e o sexto representam a quantidade de azul.",
-        "Sendo assim, para conseguir um vermelho brilhante, basta que você use <code>F</code> (o dígito mais alto possível) para o primeiro e o segundo dígitos, e <code>0</code> (o dígito mais baixo possível) para o terceiro, quarto, quinto e sexto dígito.",
-        "Faça com que a cor de fundo (<code>background-color</code>) do elemento <code>body</code> seja vermelho, ao dar o código hexadecimal <code>#FF0000</code>."
-      ],
-      "namePtBR": "Use Código Hexadecimal Para dar a Cor Vermelha a Elementos",
-      "type": "waypoint",
-      "challengeType": 0,
-      "titleEs": "Usa el código hexadecimal para colorear de rojo los elementos",
-      "descriptionEs": [
-        "Te puedes estar preguntando por qué usamos 6 dígitos para representar un color en lugar de sólo uno o dos. La respuesta es que el uso de 6 dígitos nos da una enorme variedad. ",
-        "¿Cuántos colores son posibles? 16 valores y 6 posiciones significa que tenemos 16 a la sexta potencia, o más de 16 millones de colores posibles. ",
-        "Los códigos hexadecimales siguen el formato rojo-verde-azul (<em>red-green-blue</em>) o formato <code>rgb</code>. Los dos primeros dígitos del código hexadecimal representan la cantidad de rojo en el color. El tercer y cuarto dígitos representan la cantidad de verde. El quinto y sexto representan la cantidad de azul .",
-        "Así que para conseguir el rojo absolutamente más brillante, basta que uses <code>F</code> para el primer y segundo dígitos (el valor más alto posible) y <code>0</code> para el tercero, cuarto, quinto y sexto dígitos (el valor más bajo posible).",
-        "Haz que el color de fondo (<code>background-color</code>) del elemento <code>body</code> sea rojo dándole el código hexadecimal <code>#FF0000</code>"
-      ],
-      "titleDe": "Verwende Hexadezimal Code um Elemente rot zu färben",
-      "descriptionDe": [
-        "Du wunderst dich vielleicht warum wir 6 Ziffern verwenden um Farben darzustellen anstatt nur eine oder zwei. Die Antwort ist, dass uns 6 Ziffern eine enorme Vielfalt geben.",
-        "Wieviele Farben sind möglich? 16 Werte und 6 Positionen bedeuted dass wir 16 hoch 6, oder mehr als 16 Millionen mögliche Farben zur Verfügung haben.",
-        "Hexadezimal Code folgt der Rot-Grün-Blau, oder <code>rgb</code>, Schreibweise. Die ersten zwei Ziffern des Hexadezimal Code geben die Menge an Rot in der Farbe an. Die dritte und vierte Ziffer die Menge an Grün. Die fünfte und sechste die Menge an Blau.",
-        "Um also das absolut hellste Rot zu bekommen, würdest du <code>F</code> (der höchstmögliche Wert) für die erste und zweite  und <code>0</code> (der niedrigstmögliche Wert) für die dritte, vierte, fünfte und sechste Ziffer verwenden.",
-        "Ändere die Hintergrundfarbe des <code>body</code> Elements zu Rot indem du ihm den Hexadezimal Code <code>#FF0000</code> gibst."
-      ]
-    },
-    {
-      "id": "bad87fee1348bd9aedf08723",
-      "title": "Use Hex Code to Color Elements Green",
-      "description": [
-        "Remember that <code>hex code</code> follows the red-green-blue, or <code>rgb</code> format. The first two digits of hex code represent the amount of red in the color. The third and fourth digit represent the amount of green. The fifth and sixth represent the amount of blue.",
-        "So to get the absolute brightest green, you would just use <code>F</code> for the third and fourth digits (the highest possible value) and <code>0</code> for all the other digits (the lowest possible value).",
-        "Make the <code>body</code> element's background color green by giving it the hex code value of <code>#00FF00</code>"
-      ],
-      "titleRU": "Используйте hex-код, чтобы сделать элементы зелёными",
-      "descriptionRU": [
-        "Помните, что <code>hex-код</code> соответствует модели красный-зелёный-синий, или <code>rgb</code> формату. Первые две цифры hex-кода обозначают количество красного в цвете. Третья и четвёртая - количество зелёного. Пятая и шестая - количество синего.",
-        "То есть для получения абсолютно яркого зелёного, вы бы использовали <code>F</code> в качестве третьей и четвёртой цифры (максимальное возможное значение) и <code>0</code> для первой, второй, пятой и шестой цифр (минимальное возможное значение).",
-        "Сделайте цвет фона элемента <code>body</code> зелёным, присвоив его соответствующему свойству значение hex-кода равное <code>#00FF00</code>"
-      ],
-      "challengeSeed": [
-        "<style>",
-        "  body {",
-        "    background-color: #FF0000;",
-        "  }",
-        "</style>"
-      ],
-      "tests": [
-        "assert($(\"body\").css(\"background-color\") === \"rgb(0, 255, 0)\", 'message: Give your <code>body</code> element the <code>background-color</code> of <code>green</code>.');",
-        "assert(code.match(/body\\s*{(([\\s\\S]*;\\s*?)|\\s*?)background.*\\s*:\\s*?#((0F0)|(00FF00))((\\s*})|(;[\\s\\S]*?}))/gi), 'message: Use the <code>hex code</code> for the color green instead of the word <code>green</code>. For example <code>body { color&#58; #00FF00; }</code>');"
-      ],
-      "descriptionPtBR": [
-        "Relembre que códigos hexadecimais seguem o formato vermelho-verde-azul (<em>red-green-blue</em>), ou formato <code>rgb</code>. Os dois primeiros dígitos do código hexadecimal representam a quantidade de vermelho na cor. O terceiro e o quarto representam a quantidade de verde. Já o quinto e o sexto representam a quantidade de azul.",
-        "Sendo assim, para conseguir um verde brilhante, basta que você use <code>F</code> (o dígito mais alto possível) para o terceiro e o quarto dígito, e <code>0</code> (o dígito mais baixo possível) para todos os outros dígitos.",
-        "Faça com que a cor de fundo (<code>background-color</code>) do elemento <code>body</code> seja verde ao dar o código hexadecimal <code>#00FF00</code>."
-      ],
-      "namePtBR": "Use Código Hexadecimal para dar a Cor Verde a Elementos",
-      "type": "waypoint",
-      "challengeType": 0,
-      "titleEs": "Usa el código hexadecimal para colorear de verde los elementos",
-      "descriptionEs": [
-        "Recuerda que el <code>código hexadecimal</code> sigue el formato rojo-verde-azul o <code>rgb</code>. Los dos primeros dígitos del código hexadecimal representan la cantidad de rojo en el color. El tercer y cuarto dígitos representan la cantidad de verde. El quinto y sexto representan la cantidad de azul.",
-        "Así que para conseguir el verde absoluto más brillante, sólo debes usar <code>F</code> en el tercer y cuarto dígitos (el valor más alto posible) y <code>0</code> para todos los otros dígitos (el valor más bajo posible). ",
-        "Haz que el color de fondo (<code>background-color</code>) del elemento <code>body</code> sea verde, dándole el código hexadecimal <code>#00FF00</code>"
-      ],
-      "titleDe": "Verwende Hexadezimal Code um Elemente grün zu färben",
-      "descriptionDe": [
-        "Vergiss nicht, <code>hex code</code> folgt der Rot-Grün-Blau, oder <code>rgb</code>, Schreibweise. Die ersten zwei Ziffern des Hexadezimal Code stehen für die Menge an Rot in der Farbe. Die dritte und vierte Ziffer stehen für die Menge an Grün. Die fünfte und sechste für die Menge an Blau.",
-        "Um also das absolut hellste Grün zu bekommen, musst du <code>F</code> (der größtmögliche Wert) für die dritte und vierte und <code>0</code> (der niedrigste Wert) für alle anderen Ziffern verwenden.",
-        "Mach die Hintergrundfarbe des <code>body</code> Elements grün indem du ihm den Hexadezimal Code <code>#00FF00</code> gibst."
-      ]
-    },
-    {
-      "id": "bad87fee1348bd9aedf08722",
-      "title": "Use Hex Code to Color Elements Blue",
-      "description": [
-        "Hex code follows the red-green-blue, or <code>rgb</code> format. The first two digits of hex code represent the amount of red in the color. The third and fourth digit represent the amount of green. The fifth and sixth represent the amount of blue.",
-        "So to get the absolute brightest blue, we use <code>F</code> for the fifth and sixth digits (the highest possible value) and <code>0</code> for all the other digits (the lowest possible value).",
-        "Make the <code>body</code> element's background color blue by giving it the hex code value of <code>#0000FF</code>"
-      ],
-      "titleRU": "Используйте hex-код, чтобы сделать элементы синими",
-      "descriptionRU": [
-        "Помните, что <code>hex-код</code> соответствует модели красный-зелёный-синий, или <code>rgb</code> формату. Первые две цифры hex-кода обозначают количество красного в цвете. Третья и четвёртая - количество зелёного. Пятая и шестая - количество синего.",
-        "То есть для получения абсолютно яркого синего, вы бы использовали <code>F</code> в качестве пятой и шустой цифры (максимальное возможное значение) и <code>0</code> для первой, второй, третьей и четвёртой цифр (мин��мальное возможное значение).",
-        "Сделайте цвет фона элемента <code>body</code> синим, присвоив его соответствующему свойству значение hex-кода равное <code>#0000FF</code>"
-      ],
-      "challengeSeed": [
-        "<style>",
-        "  body {",
-        "    background-color: #00FF00;",
-        "  }",
-        "</style>"
-      ],
-      "tests": [
-        "assert($(\"body\").css(\"background-color\") === \"rgb(0, 0, 255)\", 'message: Give your <code>body</code> element the <code>background-color</code> of blue.');",
-        "assert(code.match(/body\\s*{(([\\s\\S]*;\\s*?)|\\s*?)background.*\\s*:\\s*?#((00F)|(0000FF))((\\s*})|(;[\\s\\S]*?}))/gi), 'message: Use the <code>hex code</code> for the color blue instead of the word <code>blue</code>. For example <code>body { color&#58; #0000FF; }</code>');"
-      ],
-      "descriptionPtBR": [
-        "Relembre que códigos hexadecimais seguem o formato vermelho-verde-azul (<em>red-green-blue</em>), ou formato <code>rgb</code>. Os dois primeiros dígitos do código hexadecimal representam a quantidade de vermelho na cor. O terceiro e o quarto representam a quantidade de verde. Já o quinto e o sexto representam a quantidade de azul.",
-        "Para conseguir o azul mais brilhante, utilizamos <code>F</code> (o dígito mais alto possível) no quinto e no sexto dígito, e <code>0</code> (o dígito mais baixo possível) para todos os outros dígitos.",
-        "Faça com que a cor de fundo (<code>background-color</code>) do elemento <code>body</code> seja azul usando o código hexadecimal <code>#0000FF</code>."
-      ],
-      "namePtBR": "Use Código Hexadecimal para dar a Cor Azul a Elementos",
-      "type": "waypoint",
-      "challengeType": 0,
-      "titleEs": "Usa el código hexadecimal para colorear de azul los elementos",
-      "descriptionEs": [
-        "Los códigos hexadecimales siguen el formato rojo-verde-azul o <code>rgb</code>. Los dos primeros dígitos del código hexadecimal representan la cantidad de rojo en el color. El tercer y cuarto dígitos representan la cantidad de verde. El quinto y sexto representan la cantidad de azul .",
-        "Así que para conseguir el azul absoluto más brillante, utilizamos <code>F</code> para la quinta y sexta cifras (el valor más alto posible) y <code>0</code> para todos los otros dígitos (el valor más bajo posible ). ",
-        "Haz que el color de fondo (<code>background-color</code>) del elemento <code>body</code> sea azul, dándole el código hexadecimal <code>#0000FF</code>"
-      ],
-      "titleDe": "Verwende Hexadezimal Code um Elemente blau zu färben",
-      "descriptionDe": [
-        "Hexadezimal Code folgt der Rot-Grün-Blau, oder <code>rgb</code>, Schreibweise. Die ersten zwei Ziffern stehen für die Menge an Rot in der Farbe. Die dritte und vierte Ziffer repräsentiert die Menge an Grün. Die fünfte und sechste steht für die Menge an Blau.",
-        "Um also das hellste Blau zu bekommen, verwenden wir <code>F</code> (größtmöglicher Wert) für die fünfte und sechste und <code>0</code> (der niedrigste Wert) für alle anderen Ziffern.",
-        "Mach die Hintergrundfarbe des <code>body</code> Elements blau indem du den Hexadezimal Code mit dem Wert <code>#0000FF</code> verwendest."
-      ]
-    },
-    {
       "id": "bad87fee1348bd9aedf08721",
       "title": "Use Hex Code to Mix Colors",
       "description": [
-        "From these three pure colors (red, green and blue), we can create 16 million other colors.",
-        "For example, orange is pure red, mixed with some green, and no blue.",
-        "Make the <code>body</code> element's background color orange by giving it the hex code value of <code>#FFA500</code>"
+        "To review, hex codes use 6 hexadecimal digits to represent colors, two each for red (R), green (G), and blue (B) components.",
+        "From these three pure colors (red, green, and blue), we can vary the amounts of each to create over 16 million other colors!",
+        "For example, orange is pure red, mixed with some green, and no blue. In hex code, this translates to being <code>#FFA500</code>.",
+        "The digit <code>0</code> is the lowest number in hex code, and represents a complete absence of color.",
+        "The digit <code>F</code> is the highest number in hex code, and represents the maximum possible brightness.",
+        "Replace the color words in our <code>style</code> element with their correct hex codes.",
+        "<table class='table table-striped'><tr><th>Color</th><th>Hex Code</th></tr><tr><td>Dodger Blue</td><td><code>#2998E4</code></td></tr><tr><td>Green</td><td><code>#00FF00</code></td></tr><tr><td>Orange</td><td><code>#FFA500</code></td></tr><tr><td>Red</td><td><code>#FF0000</code></td></tr></table>"
       ],
       "titleRU": "Используйте hex-код, чтобы смешивать цвета",
       "descriptionRU": [
@@ -4562,14 +4372,37 @@
       ],
       "challengeSeed": [
         "<style>",
-        "  body {",
-        "    background-color: #0000FF;",
+        "  .red-text {",
+        "    color: black;",
         "  }",
-        "</style>"
+        "  .green-text {",
+        "    color: black;",
+        "  }",
+        "  .dodger-blue-text {",
+        "    color: black;",
+        "  }",
+        "  .orange-text {",
+        "    color: black;",
+        "  }",
+        "</style>",
+        "",
+        "<h1 class=\"red-text\">I am red!</h1>",
+        "",
+        "<h1 class=\"green-text\">I am green!</h1>",
+        "",
+        "<h1 class=\"dodger-blue-text\">I am dodger blue!</h1>",
+        "",
+        "<h1 class=\"orange-text\">I am orange!</h1>"
       ],
       "tests": [
-        "assert($(\"body\").css(\"background-color\") === \"rgb(255, 165, 0)\", 'message: Give your <code>body</code> element the <code>background-color</code> of orange.');",
-        "assert(code.match(/body\\s*{(([\\s\\S]*;\\s*?)|\\s*?)background.*\\s*:\\s*?#FFA500((\\s*})|(;[\\s\\S]*?}))/gi), 'message: Use the <code>hex code</code> for the color orange instead of the word <code>orange</code>. For example <code>body { color&#58; #FFA500; }</code>');"
+        "assert($('.red-text').css('color') === 'rgb(255, 0, 0)', 'message: Give your <code>h1</code> element with the text <code>I am red!</code> the <code>color</code> red.');",
+        "assert(code.match(/\\.red-text\\s*?{\\s*?color:\\s*?#FF0000\\s*?;\\s*?}/gi), 'message: Use the <code>hex code</code> for the color red instead of the word <code>red</code>.');",
+        "assert($('.green-text').css('color') === 'rgb(0, 255, 0)', 'message: Give your <code>h1</code> element with the text <code>I am green!</code> the <code>color</code> green.');",
+        "assert(code.match(/\\.green-text\\s*?{\\s*?color:\\s*?#00FF00\\s*?;\\s*?}/gi), 'message: Use the <code>hex code</code> for the color green instead of the word <code>green</code>.');",
+        "assert($('.dodger-blue-text').css('color') === 'rgb(41, 152, 228)', 'message: Give your <code>h1</code> element with the text <code>I am dodger blue!</code> the <code>color</code> dodger blue.');",
+        "assert(code.match(/\\.dodger-blue-text\\s*?{\\s*?color:\\s*?#2998E4\\s*?;\\s*?}/gi), 'message: Use the <code>hex code</code> for the color dodger blue instead of the word <code>dodgerblue</code>.');",
+        "assert($('.orange-text').css('color') === 'rgb(255, 165, 0)', 'message: Give your <code>h1</code> element with the text <code>I am orange!</code> the <code>color</code> orange.');",
+        "assert(code.match(/\\.orange-text\\s*?{\\s*?color:\\s*?#FFA500\\s*?;\\s*?}/gi), 'message: Use the <code>hex code</code> for the color orange instead of the word <code>orange</code>.');"
       ],
       "descriptionPtBR": [
         "A partir dessas três cores puras (vermelho, verde e azul), podemos criar 16 milhões de cores.",
@@ -4593,100 +4426,14 @@
       ]
     },
     {
-      "id": "bad87fee1348bd9aede08720",
-      "title": "Use Hex Code to Color Elements Gray",
-      "description": [
-        "From these three pure colors (red, green and blue), we can create 16 million other colors.",
-        "We can also create different shades of gray by evenly mixing all three colors.",
-        "Make the <code>body</code> element's background color gray by giving it the hex code value of <code>#808080</code>"
-      ],
-      "titleRU": "Используйте hex-код, чтобы сделать элементы серыми",
-      "descriptionRU": [
-        "Из этих трёх чистых цветов (красного, зелёного и синего), мы можем создать 16 миллионов других цветов.",
-        "Также мы можем создавать различные оттенки серого смешивая равномерно все три цвета.",
-        "Сделайте цвет фона элемента <code>body</code> серым, присвоив его соответствующему свойству значение hex-кода равное <code>#808080</code>"
-      ],
-      "challengeSeed": [
-        "<style>",
-        "  body {",
-        "    background-color: #FFA500;",
-        "  }",
-        "</style>"
-      ],
-      "tests": [
-        "assert($(\"body\").css(\"background-color\") === \"rgb(128, 128, 128)\", 'message: Give your <code>body</code> element the <code>background-color</code> of gray.');",
-        "assert(code.match(/body\\s*{(([\\s\\S]*;\\s*?)|\\s*?)background.*\\s*:\\s*?#808080((\\s*})|(;[\\s\\S]*?}))/gi), 'message: Use the <code>hex code</code> the color gray instead of the word <code>gray</code>. For example <code>body { color&#58; #808080; }</code>');"
-      ],
-      "descriptionPtBR": [
-        "A partir dessas três cores puras (vermelho, verde e azul), podemos criar 16 milhões de cores.",
-        "Também podemos criar tons de cinza diferentes ao misturar essas três cores.",
-        "Faça com que a cor de fundo do elemento <code>body</code> seja cinza, usando o código hexadecimal <code>#808080</code>."
-      ],
-      "namePtBR": "Use Código Hexadecimal dar a Cor Cinza a Elementos",
-      "type": "waypoint",
-      "challengeType": 0,
-      "titleEs": "Usa el código hexadecimal para colorear de gris los elementos",
-      "descriptionEs": [
-        "A partir de estos tres colores puros (rojo, verde y azul), podemos crear 16 millones de colores.",
-        "También podemos crear diferentes tonos de gris mezclando uniformemente los tres colores.",
-        "Haz que el color de fondo del elemento <code>body</code> sea gris, dándole el código hexadecimal <code>#808080</code>"
-      ],
-      "titleDe": "Verwende Hexadezimal Code um Elemente grau zu färben",
-      "descriptionDe": [
-        "Mit diesen drei puren Farben (Rot, Grün und Blau) können wir 16 Millionen andere Farben erzeugen.",
-        "Wir können auch verschiedene Grautöne erzeugen indem wir alle drei Farben in gleichen Teilen mischen.",
-        "Gib dem <code>body</code> Element eine graue Hintergrundfarbe indem du den Hexadezimal Code <code>#808080</code> verwendest."
-      ]
-    },
-    {
-      "id": "bad87fee1348bd9aedf08720",
-      "title": "Use Hex Code for Specific Shades of Gray",
-      "description": [
-        "We can also create other shades of gray by evenly mixing all three colors. We can go very close to true black.",
-        "Make the <code>body</code> element's background color a dark gray by giving it the hex code value of <code>#111111</code>"
-      ],
-      "titleRU": "Используйте hex-код для получения определённого оттенка серого",
-      "descriptionRU": [
-        "Также мы можем создавать другие оттенки серого равномерным смешением всех трёх цветов. Так мы можем добраться почти до абсолютно чёрного.",
-        "Сделайте цвет фона элемента <code>body</code> тёмно-серым, присвоив его соответствующему свойству значение hex-кода равное <code>#111111</code>"
-      ],
-      "challengeSeed": [
-        "<style>",
-        "  body {",
-        "    background-color: #808080;",
-        "  }",
-        "</style>"
-      ],
-      "tests": [
-        "assert($(\"body\").css(\"background-color\") === \"rgb(17, 17, 17)\", 'message: Give your <code>body</code> element the <code>background-color</code> of a dark gray.');",
-        "assert(code.match(/body\\s*{(([\\s\\S]*;\\s*?)|\\s*?)background.*\\s*:\\s*?#111(111)?((\\s*})|(;[\\s\\S]*?}))/gi), 'message: Use <code>hex code</code> to make a dark gray. For example <code>body { color&#58; #111111; }</code>');"
-      ],
-      "descriptionPtBR": [
-        "Também podemos criar tons de cinza diferentes ao misturar essas três cores. Podemos chegar muito perto de um fundo completamente preto.",
-        "Faça com que a cor de fundo do elemento <code>body</code> seja cinza escuro através do código hexadecimal <code>#111111</code>."
-      ],
-      "namePtBR": "Use Código Hexadecimal dar Tons de Cinza a Elementos",
-      "type": "waypoint",
-      "challengeType": 0,
-      "titleEs": "Usa el código hexadecimal para colorear con tonos de gris",
-      "descriptionEs": [
-        "También podemos crear otros tonos de gris mezclando uniformemente los tres colores. Podemos ir muy cerca del verdadero negro. ",
-        "Haz que el color de fondo del elemento <code>body</code> sea gris oscuro dandole el código hexadecimal <code>#111111</code>"
-      ],
-      "titleDe": "Verwende Hexadezimal Code für spezifische Grautöne",
-      "descriptionDe": [
-        "Wir können auch andere Grautöne erzeugen indem wir alle drei Farben gleichmäßig mischen. Damit können wir uns an echtes Schwarz annähern.",
-        "Gib dem <code>body</code> Element eine dunkelgraue Hintergrundfarbe indem du den Hexadezimal Code <code>#111111</code> verwendest."
-      ]
-    },
-    {
       "id": "bad87fee1348bd9aedf08719",
       "title": "Use Abbreviated Hex Code",
       "description": [
         "Many people feel overwhelmed by the possibilities of more than 16 million colors. And it's difficult to remember hex code. Fortunately, you can shorten it.",
-        "For example, red, which is <code>#FF0000</code> in hex code, can be shortened to <code>#F00</code>. That is, one digit for red, one digit for green, one digit for blue.",
+        "For example, red's hex code <code>#FF0000</code> can be shortened to <code>#F00</code>. This shortened form gives one digit for red, one digit for green, and one digit for blue.",
         "This reduces the total number of possible colors to around 4,000. But browsers will interpret <code>#FF0000</code> and <code>#F00</code> as exactly the same color.",
-        "Go ahead, try using <code>#F00</code> to turn the <code>body</code> element's background-color red."
+        "Go ahead, try using the abbreviated hex codes to color the correct elements.",
+        "<table class='table table-striped'><tr><th>Color</th><th>Short Hex Code</th></tr><tr><td>Cyan</td><td><code>#0FF</code></td></tr><tr><td>Green</td><td><code>#0F0</code></td></tr><tr><td>Red</td><td><code>#F00</code></td></tr><tr><td>Fuchsia</td><td><code>#F0F</code></td></tr></table>"
       ],
       "titleRU": "Используйте аббревиатуры hex-кода",
       "descriptionRU": [
@@ -4697,14 +4444,37 @@
       ],
       "challengeSeed": [
         "<style>",
-        "  body {",
-        "    background-color: #111111;",
+        "  .red-text {",
+        "    color: #000000;",
         "  }",
-        "</style>"
+        "  .fuchsia-text {",
+        "    color: #000000;",
+        "  }",
+        "  .cyan-text {",
+        "    color: #000000;",
+        "  }",
+        "  .green-text {",
+        "    color: #000000;",
+        "  }",
+        "</style>",
+        "",
+        "<h1 class=\"red-text\">I am red!</h1>",
+        "",
+        "<h1 class=\"fuchsia-text\">I am fuchsia!</h1>",
+        "",
+        "<h1 class=\"cyan-text\">I am cyan!</h1>",
+        "",
+        "<h1 class=\"green-text\">I am green!</h1>"
       ],
       "tests": [
-        "assert($(\"body\").css(\"background-color\") === \"rgb(255, 0, 0)\", 'message: Give your <code>body</code> element the <code>background-color</code> of red.');",
-        "assert(code.match(/body\\s*{(([\\s\\S]*;\\s*?)|\\s*?)background.*\\s*:\\s*?#F00((\\s*})|(\\s*;[\\s\\S]*?}))/gi), 'message: Use <code>abbreviated hex code</code> instead of a six-character <code>hex code</code>. For example <code>body { color&#58; #F00; }</code>');"
+        "assert($('.red-text').css('color') === 'rgb(255, 0, 0)', 'message: Give your <code>h1</code> element with the text <code>I am red!</code> the <code>color</code> red.');",
+        "assert(code.match(/\\.red-text\\s*?{\\s*?color:\\s*?#F00\\s*?;\\s*?}/gi), 'message: Use the abbreviate <code>hex code</code> for the color red instead of the hex code <code>#FF0000</code>.');",
+        "assert($('.green-text').css('color') === 'rgb(0, 255, 0)', 'message: Give your <code>h1</code> element with the text <code>I am green!</code> the <code>color</code> green.');",
+        "assert(code.match(/\\.green-text\\s*?{\\s*?color:\\s*?#0F0\\s*?;\\s*?}/gi), 'message: Use the abbreviated <code>hex code</code> for the color green instead of the hex code <code>#00FF00</code>.');",
+        "assert($('.cyan-text').css('color') === 'rgb(0, 255, 255)', 'message: Give your <code>h1</code> element with the text <code>I am cyan!</code> the <code>color</code> cyan.');",
+        "assert(code.match(/\\.cyan-text\\s*?{\\s*?color:\\s*?#0FF\\s*?;\\s*?}/gi), 'message: Use the abbreviated <code>hex code</code> for the color cyan instead of the hex code <code>#00FFFF</code>.');",
+        "assert($('.fuchsia-text').css('color') === 'rgb(255, 0, 255)', 'message: Give your <code>h1</code> element with the text <code>I am fuchsia!</code> the <code>color</code> fuchsia.');",
+        "assert(code.match(/\\.fuchsia-text\\s*?{\\s*?color:\\s*?#F0F\\s*?;\\s*?}/gi), 'message: Use the abbreviated <code>hex code</code> for the color fuchsia instead of the hex code <code>#FF00FF</code>.');"
       ],
       "descriptionPtBR": [
         "Muitas pessoas se sentem confusas com as possibilidades de mais de 16 milhões de cores. Além disso, é difícil lembrar de códigos hexadecimais. Por sorte, podemos abreviá-lo.",
@@ -4734,13 +4504,13 @@
       "id": "bad87fee1348bd9aede08718",
       "title": "Use RGB values to Color Elements",
       "description": [
-        "Another way you can represent colors in CSS is by using <code>rgb</code> values.",
+        "Another way you can represent colors in CSS is by using <code>RGB</code> values.",
         "The RGB value for black looks like this:",
         "<code>rgb(0, 0, 0)</code>",
         "The RGB value for white looks like this:",
         "<code>rgb(255, 255, 255)</code>",
-        "Instead of using six hexadecimal digits like you do with hex code, with <code>rgb</code> you specify the brightness of each color with a number between 0 and 255.",
-        "If you do the math, 16 times 16 is 256 total values. So <code>rgb</code>, which starts counting from zero, has the exact same number of possible values as hex code.",
+        "Instead of using six hexadecimal digits like you do with hex code, with <code>RGB</code> you specify the brightness of each color with a number between 0 and 255.",
+        "If you do the math, the two digits for one color equal 16 times 16, which gives us 256 total values. So <code>RGB</code>, which starts counting from zero, has the exact same number of possible values as hex code.",
         "Let's replace the hex code in our <code>body</code> element's background color with the RGB value for black: <code>rgb(0, 0, 0)</code>"
       ],
       "titleRU": "Используйте формат RGB для придания цвета элементам",
@@ -4762,8 +4532,8 @@
         "</style>"
       ],
       "tests": [
-        "assert($(\"body\").css(\"background-color\") === \"rgb(0, 0, 0)\", 'message: Your <code>body</code> element should have a black background.');",
-        "assert(code.match(/rgb\\s*\\(\\s*0\\s*,\\s*0\\s*,\\s*0\\s*\\)/ig), 'message: Use <code>rgb</code> to give your <code>body</code> element the <code>background-color</code> of black. For example <code>body { background-color&#58; rgb&#40;0&#44; 0&#44; 0&#41;; }</code>');"
+        "assert($(\"body\").css(\"background-color\") === \"rgb(0, 0, 0)\", 'message: Your <code>body</code> element should have an black background.');",
+        "assert(code.match(/rgb\\s*\\(\\s*0\\s*,\\s*0\\s*,\\s*0\\s*\\)/ig), 'message: Use <code>rgb</code> to give your <code>body</code> element a color of black. For example <code>body { background-color&#58; rgb&#40;255&#44; 165&#44; 0&#41;; }</code>');"
       ],
       "descriptionPtBR": [
         "Outra forma em que você pode representar cores em CSS é utilizando valores <code>rgb</code>.",
@@ -4799,186 +4569,6 @@
         "Anstatt sechs Hexadezimalziffern zu verwenden, legst du mit <code>rgb</code> die Helligkeit jeder einzelner Farbe mit einer Zahl zwischen 0 und 255 fest.",
         "Wenn du nachrechnest, 16 mal 16 ist 256 Werte. Also hat <code>rgb</code>, das mit Null hochzuzählen beginnt, die gleiche Anzahl an möglichen Farben wie Hexadezimal Code.",
         "Ersetzte jetzt den Hexadezimal Code der Hintergrundfarbe deines <code>body</code> Elements mit dem RGB Wert für Schwarz: <code>rgb(0, 0, 0)</code>"
-
-      ]
-    },
-    {
-      "id": "bad88fee1348bd9aedf08726",
-      "title": "Use RGB to Color Elements White",
-      "description": [
-        "The RGB value for black looks like this:",
-        "<code>rgb(0, 0, 0)</code>",
-        "The RGB value for white looks like this:",
-        "<code>rgb(255, 255, 255)</code>",
-        "Instead of using six hexadecimal digits like you do with hex code, with <code>rgb</code> you specify the brightness of each color with a number between 0 and 255.",
-        "Change the <code>body</code> element's background color from the RGB value for black to the <code>rgb</code> value for white: <code>rgb(255, 255, 255)</code>"
-      ],
-      "titleRU": "Используйте формат RGB, чтобы сделать элементы белыми",
-      "descriptionRU": [
-        "Значение RGB для чёрного цвета выглядит следующим образом:",
-        "<code>rgb(0, 0, 0)</code>",
-        "Значение RGB для белого выглядит так:",
-        "<code>rgb(255, 255, 255)</code>",
-        "Вместо использования шести шестнадцатиразрядных цифр, как вы делаете, когда применяете hex-код, применяя <code>rgb</code> вы указываете значение яркости каждого цвета в диапазоне от 0 до 255.",
-        "Измените цвет фона элемента <code>body</code> со значения соответствующего чёрному в формате RGB на значение соответствующее белому: <code>rgb(255, 255, 255)</code>"
-      ],
-      "challengeSeed": [
-        "<style>",
-        "  body {",
-        "    background-color: rgb(0, 0, 0);",
-        "  }",
-        "</style>"
-      ],
-      "tests": [
-        "assert($(\"body\").css(\"background-color\") === \"rgb(255, 255, 255)\", 'message: Your <code>body</code> should have a white background.');",
-        "assert(code.match(/rgb\\s*\\(\\s*255\\s*,\\s*255\\s*,\\s*255\\s*\\)/ig), 'message: Use <code>rgb</code> to give your <code>body</code> element the <code>background-color</code> of white. For example <code>body { background-color&#58; rgb&#40;255&#44; 255 &#44; 255&#41;; }</code>');"
-      ],
-      "descriptionPtBR": [
-        "O valor RGB para preto é assim:",
-        "<code>rgb(0, 0, 0)</code>",
-        "O valor RGB para branco é assim:",
-        "<code>rgb(255, 255, 255)</code>",
-        "Ao invés de utilizar 6 dígitos hexadecimais, com <code>rgb</code> você especifica o brilho de cada cor com um número entre 0 e 255.",
-        "Substitua o código hexadecimal da cor de fundo do nosso elemento <code>body</code> que possui o valor RGB para preto, pelo valor <code>rgb</code> para branco: <code>rgb(255, 255, 255)</code>."
-      ],
-      "namePtBR": "Use Valores RGB para Dar a Cor Branca a Elementos",
-      "type": "waypoint",
-      "challengeType": 0,
-      "titleEs": "Usa RGB para colorear de blanco los elementos",
-      "descriptionEs": [
-        "El valor RGB para el negro, luce así:",
-        "<code>rgb(0, 0, 0)</code>",
-        "El valor RGB para el blanco, se ve así:",
-        "<code>rgb(255, 255, 255)</code>",
-        "En lugar de utilizar seis dígitos hexadecimales, con <code>rgb</code> especificas el brillo de cada color con un número entre 0 y 255.",
-        "Cambia el color de fondo del elemento <code>body</code> del valor RGB para el negro al valor <code>rgb</code> para el blanco: <code>rgb(255, 255, 255)</code>"
-      ],
-      "titleDe": "Verwende RGB Werte um Elemente weiß zu färben",
-      "descriptionDe": [
-        "Der RGB Wert für Schwarz sieht so aus:",
-        "<code>rgb(0, 0, 0)</code>",
-        "Der RGB Wert für Weiß sieht so aus:",
-        "<code>rgb(255, 255, 255)</code>",
-        "Anstatt sechs Hexadezimalziffern zu verwenden, legst du mit <code>rgb</code> die Helligkeit jeder einzelner Farbe mit einer Zahl zwischen 0 und 255 fest.",
-        "Ändere die Hintergrundfarbe des <code>body</code> Elements vom RGB Wert für Schwarz zum <code>rgb</code> Wert für Weiß: <code>rgb(255, 255, 255)</code>"
-      ]
-    },
-    {
-      "id": "bad89fee1348bd9aedf08724",
-      "title": "Use RGB to Color Elements Red",
-      "description": [
-        "Just like with hex code, you can represent different colors in RGB by using combinations of different values.",
-        "These values follow the pattern of RGB: the first number represents red, the second number represents green, and the third number represents blue.",
-        "Change the <code>body</code> element's background color to the RGB value red: <code>rgb(255, 0, 0)</code>"
-      ],
-      "titleRU": "Используйте формат RGB, чтобы сделать элементы красными",
-      "descriptionRU": [
-        "Также как и в hex-коде, вы можете представлять различные цвета в формате RGB с помощью комбинаций различных значений.",
-        "Эти значения соответствуют модели RGB: первое число - красный, второе - зелёный, третье - синий.",
-        "Измените цвет фона элемента <code>body</code> на значение в формате RGB соответствующее красному: <code>rgb(255, 0, 0)</code>"
-      ],
-      "challengeSeed": [
-        "<style>",
-        "  body {",
-        "    background-color: rgb(255, 255, 255);",
-        "  }",
-        "</style>"
-      ],
-      "tests": [
-        "assert($(\"body\").css(\"background-color\") === \"rgb(255, 0, 0)\", 'message: Your <code>body</code> should have a red background.');",
-        "assert(code.match(/rgb\\s*\\(\\s*255\\s*,\\s*0\\s*,\\s*0\\s*\\)/ig), 'message: Use <code>rgb</code> to give your <code>body</code> element the <code>background-color</code> of red. For example <code>body { background-color&#58; rgb&#40;255&#44; 0&#44; 0&#41;; }</code>');"
-      ],
-      "descriptionPtBR": [
-        "Da mesma forma que com códigos em hexadecimal, você pode representar cores diferentes em RGB através do uso de combinações com diferentes valores.",
-        "Esses valores seguem o padrão de RGB: O primeiro número representa vermelho, o segundo representa verde, e o terceiro representa azul.",
-        "Mude a cor de fundo do elemento <code>body</code> para vermelho usando seu valor RGB: <code>rgb(255, 0, 0)</code>."
-      ],
-      "namePtBR": "Use Valores RBG para Dar a Cor Vermelha a Elementos",
-      "type": "waypoint",
-      "challengeType": 0,
-      "titleEs": "Usa RGB para colorear de rojo los elementos",
-      "descriptionEs": [
-        "Al igual que con el código hexadecimal, puedes representar diferentes colores en RGB mediante el uso de combinaciones de diferentes valores.",
-        "Estos valores siguen el patrón de RGB: el primer número representa rojo, el segundo número representa el verde, y el tercer número representa azul.",
-        "Cambia el color de fondo del elemento <code>body</code> al rojo usando su valor RGB: <code>rgb(255, 0, 0)</code>"
-      ],
-      "titleDe": "Verwende RGB um Elemente rot zu färben",
-      "descriptionDe": [
-        "Wie auch beim Hexadezimal Code, kannst du verschiedene Farben in RGB durch die Kombination von verschiedenen Werten festlegen.",
-        "Diese Werte folgen dem Muster von RGB: die erste Zahl steht für Rot, die zweite für Grün und die dritte für Blau.",
-        "Ändere die Hintergrundfarbe des <code>body</code> ELements zum RGB Wert für Rot: <code>rgb(255, 0, 0)</code>"
-      ]
-    },
-    {
-      "id": "bad80fee1348bd9aedf08723",
-      "title": "Use RGB to Color Elements Green",
-      "description": [
-        "Now change the <code>body</code> element's background color to the <code>rgb</code> value green: <code>rgb(0, 255, 0)</code>"
-      ],
-      "titleRU": "Используйте формат RGB, чтобы сделать элементы зелёными",
-      "descriptionRU": [
-        "Теперь измените цвет фона элемента <code>body</code> на значение <code>rgb</code> соответствующее зелёному: <code>rgb(0, 255, 0)</code>"
-      ],
-      "challengeSeed": [
-        "<style>",
-        "  body {",
-        "    background-color: rgb(255, 0, 0);",
-        "  }",
-        "</style>"
-      ],
-      "tests": [
-        "assert($(\"body\").css(\"background-color\") === \"rgb(0, 255, 0)\", 'message: Your <code>body</code> element should have a green background.');",
-        "assert(code.match(/rgb\\s*\\(\\s*0\\s*,\\s*255\\s*,\\s*0\\s*\\)/ig), 'message: Use <code>rgb</code> to give your <code>body</code> element the <code>background-color</code> of green. For example <code>body { background-color&#58; rgb&#40;0&#44; 255&#44; 0&#41;; }</code>');"
-      ],
-      "descriptionPtBR": [
-        "Agora, mude a cor de fundo do elemento <code>body</code> para verde usando seu valor RGB: <code>rgb (0, 255, 0)</code>."
-      ],
-      "namePtBR": "Use Valores RBG para Dar a Cor Verde a Elementos",
-      "type": "waypoint",
-      "challengeType": 0,
-      "titleEs": "Usa RGB para colorear de verde los elementos",
-      "descriptionEs": [
-        "Ahora cambia el color de fondo del elemento <code>body</code> a verde usando su valor RGB: <code>rgb (0, 255, 0)</code>"
-      ],
-      "titleDe": "Verwende RGB um Elemente grün zu färben",
-      "descriptionDe": [
-        "Jetzt ändere die Hintergrundfarbe des <code>body</code> Elements zum <code>rgb</code> Wert von Grün: <code>rgb(0, 255, 0)</code>"
-      ]
-    },
-    {
-      "id": "bad81fee1348bd9aedf08722",
-      "title": "Use RGB to Color Elements Blue",
-      "description": [
-        "Change the <code>body</code> element's background color to the RGB value blue: <code>rgb(0, 0, 255)</code>"
-      ],
-      "titleRU": "Используйте формат RGB, чтобы сделать элементы синими",
-      "descriptionRU": [
-        "Измените цвет фона элемента <code>body</code> на значение в формате RGB соответствующее синему: <code>rgb(0, 0, 255)</code>"
-      ],
-      "challengeSeed": [
-        "<style>",
-        "  body {",
-        "    background-color: rgb(0, 255, 0);",
-        "  }",
-        "</style>"
-      ],
-      "tests": [
-        "assert($(\"body\").css(\"background-color\") === \"rgb(0, 0, 255)\", 'message: Your <code>body</code> element should have a blue background.');",
-        "assert(code.match(/rgb\\s*\\(\\s*0\\s*,\\s*0\\s*,\\s*255\\s*\\)/ig), 'message: Use <code>rgb</code> to give your <code>body</code> element the <code>background-color</code> of blue. For example <code>body { background-color&#58; rgb&#40;0&#44; 0&#44; 255&#41;; }</code>');"
-      ],
-      "descriptionPtBR": [
-        "Agora, mude a cor de fundo do elemento <code>body</code> para azul usando seu valor RGB: <code>rgb(0, 0, 255)</code>."
-      ],
-      "namePtBR": "Use Valores RBG para Dar a Cor Azul a Elementos",
-      "type": "waypoint",
-      "challengeType": 0,
-      "titleEs": "Usa RGB para colorear de azul los elementos",
-      "descriptionEs": [
-        "Cambia el color de fondo del elemento <code>body</code> a azul usando su valor RGB: <code>rgb(0, 0, 255)</code>"
-      ],
-      "titleDe": "Verwende RGB um Elemente Blau zu färben",
-      "descriptionDe": [
-        "Ändere die Hintergrundfarbe des <code>body</code> Elements zum RGB Wert von Blau: <code>rgb(0, 0, 255)</code>"
       ]
     },
     {
@@ -4986,7 +4576,8 @@
       "title": "Use RGB to Mix Colors",
       "description": [
         "Just like with hex code, you can mix colors in RGB by using combinations of different values.",
-        "Change the <code>body</code> element's background color to the RGB value orange: <code>rgb(255, 165, 0)</code>"
+        "Replace the color words in our <code>style</code> element with their correct RGB values.",
+        "<table class='table table-striped'><tr><th>Color</th><th>RGB</th></tr><tr><td>Blue</td><td><code>rgb(0, 0, 255)</code></td></tr><tr><td>Red</td><td><code>rgb(255, 0, 0)</code></td></tr><tr><td>Orchid</td><td><code>rgb(218, 112, 214)</code></td></tr><tr><td>Sienna</td><td><code>rgb(160, 82, 45)</code></td></tr></table>"
       ],
       "titleRU": "Используйте формат RGB, чтобы смешивать цвета",
       "descriptionRU": [
@@ -4995,14 +4586,37 @@
       ],
       "challengeSeed": [
         "<style>",
-        "  body {",
-        "    background-color: rgb(0, 0, 255);",
+        "  .red-text {",
+        "    color: #000000;",
         "  }",
-        "</style>"
+        "  .orchid-text {",
+        "    color: #000000;",
+        "  }",
+        "  .sienna-text {",
+        "    color: #000000;",
+        "  }",
+        "  .blue-text {",
+        "    color: #000000;",
+        "  }",
+        "</style>",
+        "",
+        "<h1 class=\"red-text\">I am red!</h1>",
+        "",
+        "<h1 class=\"orchid-text\">I am orchid!</h1>",
+        "",
+        "<h1 class=\"sienna-text\">I am sienna!</h1>",
+        "",
+        "<h1 class=\"blue-text\">I am blue!</h1>"
       ],
       "tests": [
-        "assert($(\"body\").css(\"background-color\") === \"rgb(255, 165, 0)\", 'message: Your <code>body</code> element should have an orange background.');",
-        "assert(code.match(/rgb\\s*\\(\\s*255\\s*,\\s*165\\s*,\\s*0\\s*\\)/ig), 'message: Use <code>rgb</code> to give your <code>body</code> element the <code>background-color</code> of orange. For example <code>body { background-color&#58; rgb&#40;255&#44; 165&#44; 0&#41;; }</code>');"
+        "assert($('.red-text').css('color') === 'rgb(255, 0, 0)', 'message: Give your <code>h1</code> element with the text <code>I am red!</code> the <code>color</code> red.');",
+        "assert(code.match(/\\.red-text\\s*?{\\s*?color:\\s*?rgb\\(\\s*?255\\s*?,\\s*?0\\s*?,\\s*?0\\s*?\\)\\s*?;\\s*?}/gi), 'message: Use <code>rgb</code> for the color red.');",
+        "assert($('.orchid-text').css('color') === 'rgb(218, 112, 214)', 'message: Give your <code>h1</code> element with the text <code>I am orchid!</code> the <code>color</code> orchid.');",
+        "assert(code.match(/\\.orchid-text\\s*?{\\s*?color:\\s*?rgb\\(\\s*?218\\s*?,\\s*?112\\s*?,\\s*?214\\s*?\\)\\s*?;\\s*?}/gi), 'message: Use <code>rgb</code> for the color orchid.');",
+        "assert($('.blue-text').css('color') === 'rgb(0, 0, 255)', 'message: Give your <code>h1</code> element with the text <code>I am blue!</code> the <code>color</code> blue.');",
+        "assert(code.match(/\\.blue-text\\s*?{\\s*?color:\\s*?rgb\\(\\s*?0\\s*?,\\s*?0\\s*?,\\s*?255\\s*?\\)\\s*?;\\s*?}/gi), 'message: Use <code>rgb</code> for the color blue.');",
+        "assert($('.sienna-text').css('color') === 'rgb(160, 82, 45)', 'message: Give your <code>h1</code> element with the text <code>I am sienna!</code> the <code>color</code> sienna.');",
+        "assert(code.match(/\\.sienna-text\\s*?{\\s*?color:\\s*?rgb\\(\\s*?160\\s*?,\\s*?82\\s*?,\\s*?45\\s*?\\)\\s*?;\\s*?}/gi), 'message: Use <code>rgb</code> for the color sienna.');"
       ],
       "descriptionPtBR": [
         "Assim como com código hexadecimal, você pode misturar as cores com RGB através do uso de combinações de valores diferentes.",
