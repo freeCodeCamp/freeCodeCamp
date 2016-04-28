@@ -174,7 +174,7 @@
     "one-var": 0,
     "operator-assignment": 0,
     "padded-blocks": 0,
-    "quote-props": 0,
+    "quote-props": [2, "as-needed"],
     "quotes": [
       2,
       "single",

@@ -85,7 +85,7 @@ function buildChallengeMap(userId, completedChallenges = [], User) {
     }, {})
     .flatMap(challengeMap => {
       const updateData = {
-        '$set': {
+        $set: {
           challengeMap,
           isChallengeMapMigrated: true
         }
@@ -104,11 +104,19 @@ export default function migrateCompletedChallenges() {
     if (!user || user.isChallengeMapMigrated) {
       return next();
     }
-    return buildChallengeMap(
-      user.id.toString(),
-      user.completedChallenges,
-      User
-    )
+    const id = user.id.toString();
+    return User.findOne$({
+      where: { id },
+      fields: { completedChallenges: true }
+    })
+      .map(({ completedChallenges = [] } = {}) => completedChallenges)
+      .flatMap(completedChallenges => {
+        return buildChallengeMap(
+          id,
+          completedChallenges,
+          User
+        );
+      })
       .subscribe(
         count => log('documents update', count),
         // errors go here

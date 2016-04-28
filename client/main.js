@@ -97,7 +97,11 @@ main = (function(main, global) {
     });
 
 
-    $('#nav-chat-btn').on('click', toggleMainChat);
+    $('#nav-chat-btn').on('click', function(event) {
+      if (!(event.ctrlKey || event.metaKey)) {
+          toggleMainChat();
+      }
+  });
 
     function showMainChat() {
       if (!main.chat.isOpen) {
@@ -350,13 +354,17 @@ $(document).ready(function() {
   var mapFilter = $('#map-filter');
   var mapShowAll = $('#showAll');
 
-  $('#nav-map-btn').on('click', toggleMap);
+  $('#nav-map-btn').on('click', function(event) {
+      if (!(event.ctrlKey || event.metaKey)) {
+          toggleMap();
+      }
+  });
 
   $('.map-aside-action-collapse').on('click', collapseMap);
 
   function showMap() {
     if (!main.isMapAsideLoad) {
-      var mapAside = $('<iframe>');
+      var mapAside = $('<iframe id = "map-aside-frame" >');
       mapAside.attr({
         src: '/map-aside',
         frameBorder: '0'
@@ -381,7 +389,11 @@ $(document).ready(function() {
     }
   }
 
-  $('#nav-wiki-btn').on('click', toggleWiki);
+  $('#nav-wiki-btn').on('click', function(event) {
+      if (!(event.ctrlKey || event.metaKey)) {
+          toggleWiki();
+      }
+  });
 
   $('.wiki-aside-action-collapse').on('click', collapseWiki);
 
@@ -450,7 +462,8 @@ $(document).ready(function() {
   // Map live filter
   mapFilter.on('keyup', () => {
     if (mapFilter.val().length > 0) {
-      var regex = new RegExp(mapFilter.val().replace(/ /g, '.'), 'i');
+      var regexString = mapFilter.val().replace(/ /g, '.');
+      var regex = new RegExp(regexString.split('').join('.*'), 'i');
 
       // Hide/unhide challenges that match the regex
       $('.challenge-title').each((index, title) => {
@@ -534,4 +547,109 @@ $(document).ready(function() {
 
   // keyboard shortcuts: open map
   window.Mousetrap.bind('g m', toggleMap);
+
+  // Night Mode
+  function changeMode() {
+    var newValue = false;
+    try {
+      newValue = !JSON.parse(localStorage.getItem('nightMode'));
+    } catch (e) {
+      console.error('Error parsing value form local storage:', 'nightMode', e);
+    }
+    localStorage.setItem('nightMode', String(newValue));
+    toggleNightMode(newValue);
+  }
+
+  function toggleNightMode(nightModeEnabled) {
+    var iframe = document.getElementById('map-aside-frame');
+    if (iframe) {
+      iframe.src = iframe.src;
+    }
+    var body = $('body');
+    body.hide();
+    if (nightModeEnabled) {
+      body.addClass('night');
+    } else {
+      body.removeClass('night');
+    }
+    body.fadeIn('100');
+  }
+
+  if (typeof localStorage.getItem('nightMode') !== 'undefined') {
+    var oldVal = false;
+    try {
+      oldVal = JSON.parse(localStorage.getItem('nightMode'));
+    } catch (e) {
+      console.error('Error parsing value form local storage:', 'nightMode', e);
+    }
+    toggleNightMode(oldVal);
+    $('.nightMode-btn').on('click', function() {
+      changeMode();
+    });
+  } else {
+    localStorage.setItem('nightMode', 'false');
+    toggleNightMode('false');
+  }
+
+  // Hot Keys
+  window.Mousetrap.bind('g t n', changeMode);
+  window.Mousetrap.bind('g n n', () => {
+    // Next Challenge
+    window.location = '/challenges/next-challenge';
+  });
+  window.Mousetrap.bind('g n a', () => {
+    // Account
+    window.location = '/account';
+  });
+  window.Mousetrap.bind('g n m', () => {
+    // Map
+    window.location = '/map';
+  });
+  window.Mousetrap.bind('g n w', () => {
+    // Wiki
+    window.location = '/wiki';
+  });
+  window.Mousetrap.bind('g n a', () => {
+    // About
+    window.location = '/about';
+  });
+  window.Mousetrap.bind('g n s', () => {
+    // Shop
+    window.location = '/shop';
+  });
+  window.Mousetrap.bind('g n o', () => {
+    // Settings
+    window.location = '/settings';
+  });
+  window.Mousetrap.bind('g n r', () => {
+    // Repo
+    window.location = 'https://github.com/freecodecamp/freecodecamp/';
+  });
+
+  (function getFlyer() {
+    const flyerKey = '__flyerId__';
+    $.ajax({
+      url: '/api/flyers/findOne',
+      method: 'GET',
+      dataType: 'JSON',
+      data: { filter: { order: 'id DESC' } }
+    })
+    // log error
+    .fail(err => console.error(err))
+    .done(flyer => {
+      const lastFlyerId = localStorage.getItem(flyerKey);
+      if (
+        !flyer ||
+        !flyer.isActive ||
+        lastFlyerId === flyer.id
+      ) {
+        return;
+      }
+      $('#dismiss-bill').on('click', () => {
+        localStorage.setItem(flyerKey, flyer.id);
+      });
+      $('#bill-content').html(flyer.message);
+      $('#bill-board').fadeIn();
+    });
+  }());
 });

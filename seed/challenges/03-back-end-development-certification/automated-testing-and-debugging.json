@@ -18,6 +18,9 @@
         "",
         ""
       ],
+      "solutions": [
+        "console.log('Hello world!');"
+      ],
       "tests": [
         "assert(editor.getValue().match(/console\\.log\\(/gi), 'message: You should use the console.log method to log \"Hello world!\" to your JavaScript console.');"
       ],
@@ -47,6 +50,9 @@
         "",
         "",
         ""
+      ],
+      "solutions": [
+        "console.log(typeof \"\");\nconsole.log(typeof 0);\nconsole.log(typeof []);\nconsole.log(typeof {});"
       ],
       "tests": [
         "assert(code.match(/console\\.log\\(typeof[\\( ][\"'].*[\"']\\)?\\);/), 'message: You should <code>console.log</code> the <code>typeof</code> a string.');",

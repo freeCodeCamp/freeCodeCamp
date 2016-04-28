@@ -44,7 +44,7 @@ module.exports = function(User) {
 
   // username should not be in blacklist
   User.validatesExclusionOf('username', {
-    'in': blacklistedUsernames,
+    in: blacklistedUsernames,
     message: 'is taken'
   });
 
@@ -440,5 +440,29 @@ module.exports = function(User) {
       ));
     }
     return this.constructor.update$({ id }, updateData, updateOptions);
+  };
+  User.prototype.getPoints$ = function getPoints$() {
+    const id = this.getId();
+    const filter = {
+      where: { id },
+      fields: { progressTimestamps: true }
+    };
+    return this.constructor.findOne$(filter)
+      .map(user => {
+        this.progressTimestamps = user.progressTimestamps;
+        return user.progressTimestamps;
+      });
+  };
+  User.prototype.getChallengeMap$ = function getChallengeMap$() {
+    const id = this.getId();
+    const filter = {
+      where: { id },
+      fields: { challengeMap: true }
+    };
+    return this.constructor.findOne$(filter)
+      .map(user => {
+        this.challengeMap = user.challengeMap;
+        return user.challengeMap;
+      });
   };
 };

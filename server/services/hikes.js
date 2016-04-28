@@ -10,7 +10,10 @@ export default function hikesService(app) {
     name: 'hikes',
     read: (req, resource, { dashedName } = {}, config, cb) => {
       const query = {
-        where: { challengeType: '6' },
+        where: {
+          challengeType: '6',
+          isComingSoon: false
+        },
         order: ['order ASC', 'suborder ASC' ]
       };
 

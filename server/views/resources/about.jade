@@ -10,6 +10,10 @@ block content
                     span.text-primary #{daysRunning}
                     | days ago
                 li.nowrap
+                    span.tag Completed:&#9;
+                    span.text-primary #{globalCompletedCount}
+                    | challenges
+                li.nowrap
                     span.tag Donated:&#9;
                     span.text-primary $850,000
                     | in pro-bono code
@@ -34,6 +38,10 @@ block content
                     span.tag Back End:&#9;
                     span.text-primary #{backEndCount}
                     | earned
+                li.nowrap
+                    span.tag All three:&#9;
+                    span.text-primary #{allThreeCount}
+                    | earned
     .spacer
     .row
         .col-xs-12.col-sm-10.col-sm-offset-1.col-md-6.col-md-offset-3
@@ -47,9 +55,9 @@ block content
                         a(href='//medium.freecodecamp.com', target='_blank') Our Medium publication
                 tr
                     td.text-center
-                        i.fa.fa-twitch
+                        i.fa.fa-youtube
                     td
-                        a(href="//twitch.tv/freecodecamp", target='_blank') Our Twitch.tv channel
+                        a(href="//youtube.com/freecodecamp", target='_blank') Our YouTube channel
                 tr
                     td.text-center
                         i.fa.fa-reddit
@@ -100,6 +108,11 @@ block content
                         i.fa.fa-heart
                     td
                         a(href="/how-nonprofit-projects-work") How our nonprofit projects work
+                tr
+                    td.text-center
+                        i.fa.fa-video-camera
+                    td
+                        a(href="//www.youtube.com/watch?v=O993J5KCR_w&list=PLWKjhJtqVAblYWBF6r2jSzwSdn3NgprPl" target='_blank') Nonprofit project demo videos
                 tr
                     td.text-center
                         i.fa.fa-flask
@@ -212,10 +225,6 @@ block content
                     td Video challenge curriculum
                     td
                         a(href='https://gitter.im/BrianaMarie' target='_blank') @BrianaMarie
-                tr
-                    td Twitch.tv channel
-                    td
-                        a(href='https://gitter.im/Septimus' target='_blank') @Septimus
                 tr
                     td Youtube channel
                     td

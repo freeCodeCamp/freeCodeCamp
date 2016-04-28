@@ -58,13 +58,13 @@ body.full-screen-body-background {
   background-color: @body-bg;
 }
 
-
 body.top-and-bottom-margins {
   padding-top: 80px;
   margin-bottom: 60px;
 }
 
 body.no-top-and-bottom-margins {
+  display: none;
   margin: 75px 20px 0px 20px;
 }
 
@@ -678,7 +678,7 @@ thead {
 
 
 /**
- * Bonfire styling
+ * Challenge styling
  */
 
 form.code span {
@@ -986,7 +986,7 @@ hr {
 }
 
 code {
-  padding: 0;
+  padding: 1px 5px;
 }
 
 @media only screen and (min-width: 993px) {
@@ -1130,6 +1130,73 @@ code {
     -ms-transform: rotate(0deg);
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
+  }
+}
+
+.night {
+  background-color: @night-body-bg;
+  color: @night-text-color;
+  .btn-group,
+  .text-success,
+  .challenge-list-header,
+  .fcc-footer {
+    background-color: @night-body-bg;
+  }
+  hr {
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0));
+  }
+  .navbar-default .navbar-nav > li > a {
+    color: #CCC;
+    &:hover {
+      background-color: #666;
+    }
+  }
+  a, .input-group-addon, .challenge-instructions a, .challenge-instructions #MDN-links a {
+    color: #CCC;
+  }
+  .fa-github-square {
+    color: @brand-primary;
+    &:hover {
+      color: #CCC;
+    }
+  }
+  .black-text {
+    color:#111;
+  }
+  code {
+    background-color: #999;
+    color: @brand-primary;
+  }
+  .fcc-footer {
+    a {
+      &hover {
+        background-color: @night-body-bg;
+      }
+    }
+  }
+  .btn-primary {
+    background-color: @brand-primary;
+    border-color: #292929;
+    color:#CCC;
+    transition: color 0.2s, background-color 0.2s;
+    &:hover {
+      background-color: #ABABAB!important;
+      color: @night-body-bg!important;
+    }
+  }
+  //** Profile's activity board
+  .cal-heatmap-container {
+    background-color: @night-body-bg;
+  }
+  .graph-rect {
+    fill: @night-text-color !important
+  }
+  //** Profile's odd rows
+  .table-striped > tbody > tr:nth-child(odd) {
+    background-color: @gray;
+  }
+  .table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
+    border-color: @night-text-color;
   }
 }
 
