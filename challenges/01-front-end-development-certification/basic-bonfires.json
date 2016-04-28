@@ -542,7 +542,8 @@
         "assert(mutation([\"Mary\", \"Aarmy\"]) === true, 'message: <code>mutation([\"Mary\", \"Aarmy\"])</code> should return true.');",
         "assert(mutation([\"Alien\", \"line\"]) === true, 'message: <code>mutation([\"Alien\", \"line\"])</code> should return true.');",
         "assert(mutation([\"floor\", \"for\"]) === true, 'message: <code>mutation([\"floor\", \"for\"])</code> should return true.');",
-        "assert(mutation([\"hello\", \"neo\"]) === false, 'message: <code>mutation([\"hello\", \"neo\"])</code> should return false.');"
+        "assert(mutation([\"hello\", \"neo\"]) === false, 'message: <code>mutation([\"hello\", \"neo\"])</code> should return false.');",
+        "assert(mutation([\"voodoo\", \"no\"]) === false, 'message: <code>mutation([\"voodoo\", \"no\"])</code> should return false.');"
       ],
       "type": "bonfire",
       "isRequired": true,
