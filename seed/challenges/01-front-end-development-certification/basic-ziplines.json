@@ -43,6 +43,12 @@
           "A gif showing the process of adding Bootstrap to your pen.",
           "Click the gear in the upper left hand corner of the CSS box, then scroll down to \"Quick add\" and choose Bootstrap. Now give your <code>h1</code> element the class of <code>text-primary</code> to change its color and prove that Bootstrap is now available.",
           ""
+        ],
+        [
+          "//i.imgur.com/m0pWik2.gif",
+          "A gif showing the process of turning off auto update preview",
+          "When using CodePen and Ajax, it is a good idea to turn off automatic preview updating so API calls are not made too often. Too many API calls can sometimes lead to temporary blockages, and may require waiting periods before they can be used again. <br> <div class=\"small\"> To disable automatic preview updating click the \"Settings\" button at the top of the page, then click the \"Behavior\" tab. At the bottom of the page, un-check \"AUTO UPDATE PREVIEW\". Now press \"Run\" at the top of the page to update the preview, and click \"Save\".</div>",
+          ""
         ]
       ],
       "challengeSeed": [],
