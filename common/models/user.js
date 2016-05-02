@@ -306,6 +306,50 @@ module.exports = function(User) {
     }
   );
 
+  User.prototype.updateEmail = function updateEmail(email) {
+    if (this.email && this.email === email) {
+      debug('same email as current User', email);
+      return Promise.reject(new Error(
+        `${email} is already associated with this account.`
+        ));
+    }
+    return User.doesExist(null, email)
+      .then(exists => {
+        if (!exists) {
+          return this.update$({ email }).toPromise();
+        }
+        debug('same email as another User', email);
+        return Promise.reject(new Error(
+          `${email} is already associated with an account.`
+          ));
+      });
+  };
+
+  User.remoteMethod(
+    'updateEmail',
+    {
+      isStatic: false,
+      description: 'updates the email of the user object',
+      accepts: [
+        {
+          arg: 'email',
+          type: 'string',
+          required: true
+        }
+      ],
+      returns: [
+        {
+          arg: 'status',
+          type: 'object'
+        }
+      ],
+      http: {
+        path: '/email-update',
+        verb: 'POST'
+      }
+    }
+  );
+
   User.giveBrowniePoints =
     function giveBrowniePoints(receiver, giver, data = {}, dev = false, cb) {
       const findUser = observeMethod(User, 'findOne');
