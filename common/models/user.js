@@ -308,20 +308,18 @@ module.exports = function(User) {
 
   User.prototype.updateEmail = function updateEmail(email) {
     if (this.email && this.email === email) {
-      debug('same email as current User', email);
       return Promise.reject(new Error(
         `${email} is already associated with this account.`
-        ));
+      ));
     }
     return User.doesExist(null, email)
       .then(exists => {
-        if (!exists) {
-          return this.update$({ email }).toPromise();
+        if (exists) {
+          return Promise.reject(
+            new Error(`${email} is already associated with another account.`)
+          );
         }
-        debug('same email as another User', email);
-        return Promise.reject(new Error(
-          `${email} is already associated with an account.`
-          ));
+        return this.update$({ email }).toPromise();
       });
   };
 
@@ -344,7 +342,7 @@ module.exports = function(User) {
         }
       ],
       http: {
-        path: '/email-update',
+        path: '/update-email',
         verb: 'POST'
       }
     }

@@ -149,7 +149,7 @@ module.exports = function(app) {
   router.get('/email-signup', getEmailSignup);
   router.get('/email-signin', getEmailSignin);
   router.get('/deprecated-signin', getDepSignin);
-  router.get('/email-update', getUpdateEmail);
+  router.get('/update-email', getUpdateEmail);
   router.get(
     '/toggle-lockdown-mode',
     sendNonUserToMap,
