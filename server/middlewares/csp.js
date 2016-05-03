@@ -9,7 +9,7 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 export default function csp() {
-  return helmet.csp({
+  return helmet.contentSecurityPolicy({
     directives: {
       defaultSrc: trusted,
       scriptSrc: [
