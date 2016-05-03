@@ -15,6 +15,8 @@ const debug = debugFactory('fcc:models:userIdent');
 export default function(UserIdent) {
   // original source
   // github.com/strongloop/loopback-component-passport
+  const createAccountMessage =
+    'Accounts can only be created using GitHub or though email';
   UserIdent.login = function(
     provider,
     authScheme,
@@ -71,11 +73,11 @@ export default function(UserIdent) {
 
         const userObj = options.profileToUser(provider, profile, options);
         if (getSocialProvider(provider) !== 'github') {
-          return process.nextTick(() => cb(
-            new Error(
-              'accounts can only be created using Github or though email'
-            )
-          ));
+          const err = new Error(createAccountMessage);
+          err.userMessage = createAccountMessage;
+          err.messageType = 'info';
+          err.redirectTo = '/signin';
+          return process.nextTick(() => cb(err));
         }
 
         let query;
