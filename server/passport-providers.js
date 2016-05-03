@@ -1,5 +1,5 @@
 var successRedirect = '/';
-var failureRedirect = '/login';
+var failureRedirect = '/signin';
 var linkFailureRedirect = '/account';
 module.exports = {
   local: {
