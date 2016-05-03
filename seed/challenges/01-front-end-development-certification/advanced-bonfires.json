@@ -148,7 +148,7 @@
         "assert.isString(checkCashRegister(19.50, 20.00, [[\"PENNY\", 0.01], [\"NICKEL\", 0], [\"DIME\", 0], [\"QUARTER\", 0], [\"ONE\", 0], [\"FIVE\", 0], [\"TEN\", 0], [\"TWENTY\", 0], [\"ONE HUNDRED\", 0]]), 'message: <code>checkCashRegister(19.50, 20.00, [[\"PENNY\", 0.01], [\"NICKEL\", 0], [\"DIME\", 0], [\"QUARTER\", 0], [\"ONE\", 0], [\"FIVE\", 0], [\"TEN\", 0], [\"TWENTY\", 0], [\"ONE HUNDRED\", 0]])</code> should return a string.');",
         "assert.isString(checkCashRegister(19.50, 20.00, [[\"PENNY\", 0.50], [\"NICKEL\", 0], [\"DIME\", 0], [\"QUARTER\", 0], [\"ONE\", 0], [\"FIVE\", 0], [\"TEN\", 0], [\"TWENTY\", 0], [\"ONE HUNDRED\", 0]]), 'message: <code>checkCashRegister(19.50, 20.00, [[\"PENNY\", 0.50], [\"NICKEL\", 0], [\"DIME\", 0], [\"QUARTER\", 0], [\"ONE\", 0], [\"FIVE\", 0], [\"TEN\", 0], [\"TWENTY\", 0], [\"ONE HUNDRED\", 0]])</code> should return a string.');",
         "assert.deepEqual(checkCashRegister(19.50, 20.00, [[\"PENNY\", 1.01], [\"NICKEL\", 2.05], [\"DIME\", 3.10], [\"QUARTER\", 4.25], [\"ONE\", 90.00], [\"FIVE\", 55.00], [\"TEN\", 20.00], [\"TWENTY\", 60.00], [\"ONE HUNDRED\", 100.00]]), [[\"QUARTER\", 0.50]], 'message: <code>checkCashRegister(19.50, 20.00, [[\"PENNY\", 1.01], [\"NICKEL\", 2.05], [\"DIME\", 3.10], [\"QUARTER\", 4.25], [\"ONE\", 90.00], [\"FIVE\", 55.00], [\"TEN\", 20.00], [\"TWENTY\", 60.00], [\"ONE HUNDRED\", 100.00]])</code> should return <code>[[\"QUARTER\", 0.50]]</code>.');",
-        "assert.deepEqual(checkCashRegister(3.26, 100.00, [[\"PENNY\", 1.01], [\"NICKEL\", 2.05], [\"DIME\", 3.10], [\"QUARTER\", 4.25], [\"ONE\", 90.00], [\"FIVE\", 55.00], [\"TEN\", 20.00], [\"TWENTY\", 60.00], [\"ONE HUNDRED\", 100.00]]), [[\"TWENTY\", 60.00], [\"TEN\", 20.00], [\"FIVE\", 15], [\"ONE\", 1], [\"QUARTER\", 0.50], [\"DIME\", 0.20], [\"PENNY\", 0.04]], 'message: <code>checkCashRegister(3.26, 100.00, [[\"PENNY\", 1.01], [\"NICKEL\", 2.05], [\"DIME\", 3.10], [\"QUARTER\", 4.25], [\"ONE\", 90.00], [\"FIVE\", 55.00], [\"TEN\", 20.00], [\"TWENTY\", 60.00], [\"ONE HUNDRED\", 100.00]])</code> should return <code>[[\"TWENTY\", 60.00], [\"TEN\", 20.00], [\"FIVE\", 15], [\"ONE\", 1], [\"QUARTER\", 0.50], [\"DIME\", 0.20], [\"PENNY\", 0.04]]</code>.');",
+        "assert.deepEqual(checkCashRegister(3.26, 100.00, [[\"PENNY\", 1.01], [\"NICKEL\", 2.05], [\"DIME\", 3.10], [\"QUARTER\", 4.25], [\"ONE\", 90.00], [\"FIVE\", 55.00], [\"TEN\", 20.00], [\"TWENTY\", 60.00], [\"ONE HUNDRED\", 100.00]]), [[\"TWENTY\", 60.00], [\"TEN\", 20.00], [\"FIVE\", 15.00], [\"ONE\", 1.00], [\"QUARTER\", 0.50], [\"DIME\", 0.20], [\"PENNY\", 0.04]], 'message: <code>checkCashRegister(3.26, 100.00, [[\"PENNY\", 1.01], [\"NICKEL\", 2.05], [\"DIME\", 3.10], [\"QUARTER\", 4.25], [\"ONE\", 90.00], [\"FIVE\", 55.00], [\"TEN\", 20.00], [\"TWENTY\", 60.00], [\"ONE HUNDRED\", 100.00]])</code> should return <code>[[\"TWENTY\", 60.00], [\"TEN\", 20.00], [\"FIVE\", 15.00], [\"ONE\", 1.00], [\"QUARTER\", 0.50], [\"DIME\", 0.20], [\"PENNY\", 0.04]]</code>.');",
         "assert.deepEqual(checkCashRegister(19.50, 20.00, [[\"PENNY\", 0.01], [\"NICKEL\", 0], [\"DIME\", 0], [\"QUARTER\", 0], [\"ONE\", 0], [\"FIVE\", 0], [\"TEN\", 0], [\"TWENTY\", 0], [\"ONE HUNDRED\", 0]]), \"Insufficient Funds\", 'message: <code>checkCashRegister(19.50, 20.00, [[\"PENNY\", 0.01], [\"NICKEL\", 0], [\"DIME\", 0], [\"QUARTER\", 0], [\"ONE\", 0], [\"FIVE\", 0], [\"TEN\", 0], [\"TWENTY\", 0], [\"ONE HUNDRED\", 0]])</code> should return \"Insufficient Funds\".');",
         "assert.deepEqual(checkCashRegister(19.50, 20.00, [[\"PENNY\", 0.01], [\"NICKEL\", 0], [\"DIME\", 0], [\"QUARTER\", 0], [\"ONE\", 1.00], [\"FIVE\", 0], [\"TEN\", 0], [\"TWENTY\", 0], [\"ONE HUNDRED\", 0]]), \"Insufficient Funds\", 'message: <code>checkCashRegister(19.50, 20.00, [[\"PENNY\", 0.01], [\"NICKEL\", 0], [\"DIME\", 0], [\"QUARTER\", 0], [\"ONE\", 1.00], [\"FIVE\", 0], [\"TEN\", 0], [\"TWENTY\", 0], [\"ONE HUNDRED\", 0]])</code> should return \"Insufficient Funds\".');",
         "assert.deepEqual(checkCashRegister(19.50, 20.00, [[\"PENNY\", 0.50], [\"NICKEL\", 0], [\"DIME\", 0], [\"QUARTER\", 0], [\"ONE\", 0], [\"FIVE\", 0], [\"TEN\", 0], [\"TWENTY\", 0], [\"ONE HUNDRED\", 0]]), \"Closed\", 'message: <code>checkCashRegister(19.50, 20.00, [[\"PENNY\", 0.50], [\"NICKEL\", 0], [\"DIME\", 0], [\"QUARTER\", 0], [\"ONE\", 0], [\"FIVE\", 0], [\"TEN\", 0], [\"TWENTY\", 0], [\"ONE HUNDRED\", 0]])</code> should return \"Closed\".');"
@@ -244,7 +244,10 @@
         "assert.strictEqual(permAlone('aabb'), 8, 'message: <code>permAlone(\"aabb\")</code> should return 8.');",
         "assert.strictEqual(permAlone('abcdefa'), 3600, 'message: <code>permAlone(\"abcdefa\")</code> should return 3600.');",
         "assert.strictEqual(permAlone('abfdefa'), 2640, 'message: <code>permAlone(\"abfdefa\")</code> should return 2640.');",
-        "assert.strictEqual(permAlone('zzzzzzzz'), 0, 'message: <code>permAlone(\"zzzzzzzz\")</code> should return 0.');"
+        "assert.strictEqual(permAlone('zzzzzzzz'), 0, 'message: <code>permAlone(\"zzzzzzzz\")</code> should return 0.');",
+        "assert.strictEqual(permAlone('a'), 1, 'message: <code>permAlone(\"a\")</code> should return 1.');",
+        "assert.strictEqual(permAlone('aaab'), 0, 'message: <code>permAlone(\"aaab\")</code> should return 0.');",
+        "assert.strictEqual(permAlone('aaabb'), 12, 'message: <code>permAlone(\"aaabb\")</code> should return 12.');"
       ],
       "type": "bonfire",
       "MDNlinks": [
@@ -368,7 +371,7 @@
         "The array will contain objects in the format <code>{name: 'name', avgAlt: avgAlt}</code>.",
         "You can read about orbital periods <a href=\"http://en.wikipedia.org/wiki/Orbital_period\" target='_blank'>on wikipedia</a>.",
         "The values should be rounded to the nearest whole number. The body being orbited is Earth.",
-        "The radius of the earth is 6367.4447 kilometers, and the GM value of earth is 398600.4418",
+        "The radius of the earth is 6367.4447 kilometers, and the GM value of earth is 398600.4418 km<sup>3</sup>s<sup>-2</sup>.",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "challengeSeed": [
@@ -398,7 +401,7 @@
         "El arreglo debe contener objetos en el formato <code>{name: 'name', avgAlt: avgAlt}</code>.",
         "Puedes leer acerca de períodos orbitales <a href=\"http://en.wikipedia.org/wiki/Orbital_period\" target='_blank'>en wikipedia</a>.",
         "Los valores deben estar redondeados al número entero más próximo. El cuerpo orbitado es la Tierra",
-        "El radio de la Tierra es 6367.4447 kilómetros, y el valor GM del planeta es de 398600.4418",
+        "El radio de la Tierra es 6367.4447 kilómetros, y el valor GM del planeta es de 398600.4418 km<sup>3</sup>s<sup>-2</sup>.",
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
       ]
     },

@@ -148,6 +148,8 @@ module.exports = function(app) {
   router.post('/reset-password', postReset);
   router.get('/email-signup', getEmailSignup);
   router.get('/email-signin', getEmailSignin);
+  router.get('/deprecated-signin', getDepSignin);
+  router.get('/update-email', getUpdateEmail);
   router.get(
     '/toggle-lockdown-mode',
     sendNonUserToMap,
@@ -223,6 +225,25 @@ module.exports = function(app) {
   function signout(req, res) {
     req.logout();
     res.redirect('/');
+  }
+
+
+  function getDepSignin(req, res) {
+    if (req.user) {
+      return res.redirect('/');
+    }
+    return res.render('account/deprecated-signin', {
+      title: 'Sign in to Free Code Camp using a Deprecated Login'
+    });
+  }
+
+  function getUpdateEmail(req, res) {
+    if (!req.user) {
+      return res.redirect('/');
+    }
+    return res.render('account/email-update', {
+      title: 'Update your Email'
+    });
   }
 
   function getEmailSignin(req, res) {
@@ -312,6 +333,16 @@ module.exports = function(app) {
             return data;
           }, {});
 
+        if (userPortfolio.isCheater) {
+          req.flash('errors', {
+            msg: dedent`
+              Upon review, this account has been flagged for academic
+              dishonesty. If you’re the owner of this account contact
+              team@freecodecamp.com for details.
+            `
+          });
+        }
+
         return buildDisplayChallenges(userPortfolio.challengeMap, timezone)
           .map(displayChallenges => ({
             ...userPortfolio,
@@ -367,13 +398,6 @@ module.exports = function(app) {
           }
 
           if (user.isCheater) {
-            req.flash('errors', {
-              msg: dedent`
-                Upon review, this account has been flagged for academic
-                dishonesty. If you’re the owner of this account contact
-                team@freecodecamp.com for details.
-              `
-            });
             return res.redirect(`/${user.username}`);
           }
 

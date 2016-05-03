@@ -235,6 +235,13 @@
       "principalId": "$everyone",
       "permission": "ALLOW",
       "property": "giveBrowniePoints"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$owner",
+      "permission": "ALLOW",
+      "property": "updateEmail"
     }
   ],
   "methods": []

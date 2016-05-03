@@ -317,7 +317,7 @@
       ],
       "title": "Fill in the Blank with Placeholder Text",
       "description": [
-        "Web developers traditionally use <code>lorem ipsum text</code> as placeholder text. It's called lorem ipsum text because those are the first two words of a famous passage by Cicero of Ancient Rome.",
+        "Web developers traditionally use <code>lorem ipsum text</code> as placeholder text. The 'lorem ipsum' text is randomly scraped from a famous passage by Cicero of Ancient Rome.",
         "Lorem ipsum text has been used as placeholder text by typesetters since the 16th century, and this tradition continues on the web.",
         "Well, 5 centuries is long enough. Since we're building a CatPhotoApp, let's use something called <code>kitty ipsum text</code>.",
         "Replace the text inside your <code>p</code> element with the first few words of this kitty ipsum text: <code>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</code>"
@@ -3830,7 +3830,8 @@
       ],
       "tests": [
         "assert($(\"body\").css(\"background-color\") === \"rgb(0, 0, 0)\", 'message: Give your <code>body</code> element the <code>background-color</code> of black.');",
-        "assert(code.match(/<style>\\s*body\\s*\\{\\s*background.*\\s*:\\s*.*;?\\s*\\}\\s*<\\/style>/i), 'message: Make sure your CSS rule is properly formatted with both opening and closing curly brackets.');"
+        "assert(code.match(/<style>\\s*body\\s*\\{\\s*background.*\\s*:\\s*.*;\\s*\\}\\s*<\\/style>/i), 'message: Make sure your CSS rule is properly formatted with both opening and closing curly brackets.');",
+        "assert(code.match(/<style>\\s*body\\s*\\{\\s*background.*\\s*:\\s*.*;\\s*\\}\\s*<\\/style>/i), 'message: Make sure your CSS rule ends with a semi-colon.');"
       ],
       "descriptionPtBR": [
         "Agora vamos recomeçar e falar sobre herança em CSS.",
