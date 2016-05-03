@@ -42,6 +42,7 @@
     "helmet#xssFilter": {},
     "helmet#noSniff": {},
     "helmet#frameguard": {},
+    "./middlewares/csurf": {},
     "./middlewares/constant-headers": {},
     "./middlewares/csp": {},
     "./middlewares/express-rx": {},
