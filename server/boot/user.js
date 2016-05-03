@@ -241,7 +241,7 @@ module.exports = function(app) {
     if (!req.user) {
       return res.redirect('/');
     }
-    return res.render('account/email-update', {
+    return res.render('account/update-email', {
       title: 'Update your Email'
     });
   }
