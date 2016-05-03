@@ -402,7 +402,7 @@
       ],
       "type": "bonfire",
       "MDNlinks": [
-        "String.charCodeAt()",
+        "String.prototype.charCodeAt()",
         "String.fromCharCode()"
       ],
       "isRequired": true,
@@ -903,7 +903,7 @@
       ],
       "type": "bonfire",
       "MDNlinks": [
-        "String.charCodeAt()",
+        "String.prototype.charCodeAt()",
         "String.fromCharCode()"
       ],
       "isRequired": true,
