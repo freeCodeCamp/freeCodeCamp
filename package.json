@@ -28,7 +28,7 @@
     "accepts": "^1.3.0",
     "adler32": "~0.1.7",
     "async": "^1.5.0",
-    "babel-cli": "^6.3.17",
+    "babel-cli": "^6.8.0",
     "babel-core": "^6.3.26",
     "babel-eslint": "^6.0.0",
     "babel-loader": "^6.2.1",
