@@ -105,7 +105,7 @@
     "passport-oauth": "^1.0.0",
     "passport-twitter": "^1.0.3",
     "pmx": "~0.5.5",
-    "react": "~0.14.3",
+    "react": "~15.0.2",
     "react-bootstrap": "~0.28.1",
     "react-dom": "~0.14.3",
     "react-motion": "~0.4.2",
