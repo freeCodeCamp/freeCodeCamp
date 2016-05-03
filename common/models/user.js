@@ -41,6 +41,8 @@ module.exports = function(User) {
     User.definition.properties.rand.default = function() {
       return Math.random();
     };
+  // increase user accessToken ttl to 900 days
+  User.settings.ttl = 900 * 24 * 60 * 60 * 1000;
 
   // username should not be in blacklist
   User.validatesExclusionOf('username', {
