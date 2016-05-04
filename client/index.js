@@ -4,6 +4,7 @@ import React from 'react';
 import debug from 'debug';
 import { Router } from 'react-router';
 import { routeReducer as routing, syncHistory } from 'react-router-redux';
+import { render } from 'redux-epic';
 import { createHistory } from 'history';
 
 import createApp from '../common/app';
@@ -12,8 +13,6 @@ import provideStore from '../common/app/provide-store';
 // client specific sagas
 import sagas from './sagas';
 
-// render to observable
-import render from '../common/app/utils/render';
 import {
   isColdStored,
   getColdStorage,

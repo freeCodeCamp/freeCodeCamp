@@ -3,6 +3,7 @@ import { Row } from 'react-bootstrap';
 import { ToastMessage, ToastContainer } from 'react-toastr';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
+import { contain } from 'redux-epic';
 import { createSelector } from 'reselect';
 
 import {
@@ -10,7 +11,6 @@ import {
   updateWindowHeight,
   updateNavHeight
 } from './redux/actions';
-import contain from './utils/professor-x';
 import getWindowHeight from './utils/get-window-height';
 
 import Nav from './components/Nav';

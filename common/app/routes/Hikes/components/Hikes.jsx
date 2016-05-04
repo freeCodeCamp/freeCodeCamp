@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react';
 import { compose } from 'redux';
+import { contain } from 'redux-epic';
 import { connect } from 'react-redux';
 import PureComponent from 'react-pure-render/component';
 import { createSelector } from 'reselect';
@@ -8,7 +9,6 @@ import { createSelector } from 'reselect';
 import HikesMap from './Map.jsx';
 import { fetchHikes } from '../redux/actions';
 
-import contain from '../../../utils/professor-x';
 
 // const log = debug('fcc:hikes');
 
