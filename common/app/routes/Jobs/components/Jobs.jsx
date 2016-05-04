@@ -1,5 +1,6 @@
 import React, { cloneElement, PropTypes } from 'react';
 import { compose } from 'redux';
+import { contain } from 'redux-epic';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { LinkContainer } from 'react-router-bootstrap';
@@ -7,7 +8,6 @@ import { LinkContainer } from 'react-router-bootstrap';
 import PureComponent from 'react-pure-render/component';
 import { Button, Row, Col } from 'react-bootstrap';
 
-import contain from '../../../utils/professor-x';
 import ListJobs from './List.jsx';
 
 import {

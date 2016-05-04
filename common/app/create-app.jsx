@@ -8,7 +8,7 @@ import App from './App.jsx';
 import childRoutes from './routes';
 
 // redux
-import createEpic from './utils/redux-epic';
+import { createEpic } from 'redux-epic';
 import createReducer from './create-reducer';
 import middlewares from './middlewares';
 import sagas from './sagas';

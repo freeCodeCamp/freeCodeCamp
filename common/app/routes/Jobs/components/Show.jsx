@@ -1,11 +1,11 @@
 import React, { PropTypes } from 'react';
 import { compose } from 'redux';
+import { contain } from 'redux-epic';
 import { connect } from 'react-redux';
 import { push } from 'react-router-redux';
 import PureComponent from 'react-pure-render/component';
 import { createSelector } from 'reselect';
 
-import contain from '../../../utils/professor-x';
 import { fetchJobs } from '../redux/actions';
 
 import ShowJob from './ShowJob.jsx';

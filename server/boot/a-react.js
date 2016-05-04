@@ -2,7 +2,7 @@ import React from 'react';
 import { RouterContext } from 'react-router';
 import debug from 'debug';
 
-import renderToString from '../../common/app/utils/render-to-string';
+import { renderToString } from 'redux-epic';
 import provideStore from '../../common/app/provide-store';
 
 import createApp from '../../common/app';
