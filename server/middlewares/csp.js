@@ -25,7 +25,9 @@ export default function csp() {
         'https://*.jsdelivr.com',
         '*.jsdelivr.com',
         '*.twimg.com',
-        'https://*.twimg.com'
+        'https://*.twimg.com',
+        '*.youtube.com',
+        '*.ytimg.com'
       ].concat(trusted),
       styleSrc: [
         "'unsafe-inline'",
