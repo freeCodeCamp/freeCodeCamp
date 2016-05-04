@@ -26,7 +26,8 @@ export default function csp() {
         '*.jsdelivr.com',
         '*.twimg.com',
         'https://*.twimg.com',
-        'vimeo.com'
+        'vimeo.com',
+        'https://api.github.com'
       ].concat(trusted),
       connectSrc: [
         'vimeo.com'
