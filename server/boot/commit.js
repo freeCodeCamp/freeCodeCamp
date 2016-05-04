@@ -23,7 +23,7 @@ import {
 } from '../utils/middleware';
 
 const sendNonUserToSignIn = ifNoUserRedirectTo(
-  '/login',
+  '/signin',
   'You must be signed in to commit to a nonprofit.',
   'info'
 );
