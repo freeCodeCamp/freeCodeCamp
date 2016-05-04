@@ -95,7 +95,7 @@ export default class extends React.Component {
       return (
         <NavItem
           eventKey={ 2 }
-          href='/login'>
+          href='/signin'>
           Sign In
         </NavItem>
       );

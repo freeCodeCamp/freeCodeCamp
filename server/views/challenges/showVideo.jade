@@ -17,7 +17,7 @@ block content
                             li.step-text.wrappable!= step
         .col-xs-12.col-sm-12.col-md-8
             .embed-responsive.embed-responsive-16by9
-                iframe.embed-responsive-item(src='//player.vimeo.com/video/#{video}')
+                iframe.embed-responsive-item(src='//www.youtube.com/embed/#{video}?rel=0&amp;showinfo=0')
             .spacer
             if (user)
                 a.btn.btn-primary.btn-big.btn-block#completed-courseware-editorless I've completed this challenge (ctrl + enter)
@@ -31,7 +31,7 @@ block content
                 .btn.btn-primary.btn-big#trigger-issue-modal Report a bug
             if (!user)
                 .button-spacer
-                a.btn.btn-big.signup-btn.btn-block(href='/login') Sign in so you can save your progress
+                a.btn.btn-big.signup-btn.btn-block(href='/signin') Sign in so you can save your progress
                     script.
                         var userLoggedIn = false;
                 br

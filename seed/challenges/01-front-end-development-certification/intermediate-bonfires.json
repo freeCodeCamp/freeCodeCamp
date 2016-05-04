@@ -1,6 +1,6 @@
 {
   "name": "Intermediate Algorithm Scripting",
-  "order": 12,
+  "order": 11.5,
   "time": "50 hours",
   "helpRoom": "HelpJavaScript",
   "challenges": [
@@ -402,7 +402,7 @@
       ],
       "type": "bonfire",
       "MDNlinks": [
-        "String.charCodeAt()",
+        "String.prototype.charCodeAt()",
         "String.fromCharCode()"
       ],
       "isRequired": true,
@@ -903,7 +903,7 @@
       ],
       "type": "bonfire",
       "MDNlinks": [
-        "String.charCodeAt()",
+        "String.prototype.charCodeAt()",
         "String.fromCharCode()"
       ],
       "isRequired": true,

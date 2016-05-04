@@ -20,7 +20,7 @@
         "You can get feedback on your project from fellow campers by sharing it in our <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Code Review Chatroom</a>. You can also share it on Twitter and your city's Campsite (on Facebook)."
       ],
       "challengeSeed": [
-        "150324699"
+        "nss_5sZpjIE"
       ],
       "tests": [],
       "isRequired": true,
@@ -57,7 +57,7 @@
         "You can get feedback on your project from fellow campers by sharing it in our <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Code Review Chatroom</a>. You can also share it on Twitter and your city's Campsite (on Facebook)."
       ],
       "challengeSeed": [
-        "150324700"
+        "barVgJDnTMk"
       ],
       "tests": [],
       "isRequired": true,
@@ -95,7 +95,7 @@
         "You can get feedback on your project from fellow campers by sharing it in our <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Code Review Chatroom</a>. You can also share it on Twitter and your city's Campsite (on Facebook)."
       ],
       "challengeSeed": [
-        "150324701"
+        "TVJr7ndWAYo"
       ],
       "tests": [],
       "isRequired": true,
@@ -128,7 +128,7 @@
         "<strong>User Story:</strong> I can see a Force-directed Graph that shows which campers are posting links on Camper News to which domains.",
         "<strong>User Story:</strong> I can see each camper's icon on their node.",
         "<strong>User Story:</strong> I can see the relationship between the campers and the domains they're posting.",
-        "<strong>User Story:</strong> I can tell approximately many times campers have linked to a specific domain from it's node size.",
+        "<strong>User Story:</strong> I can tell approximately how many times campers have linked to a specific domain from it's node size.",
         "<strong>User Story:</strong> I can tell approximately how many times a specific camper has posted a link from their node's size.",
         "<strong>Hint:</strong> Here's the Camper News Hot Stories API endpoint: <code>https://www.freecodecamp.com/news/hot</code>.",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck.",
@@ -136,7 +136,7 @@
         "You can get feedback on your project from fellow campers by sharing it in our <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Code Review Chatroom</a>. You can also share it on Twitter and your city's Campsite (on Facebook)."
       ],
       "challengeSeed": [
-        "150324458"
+        "etBaP3IdlIE"
       ],
       "tests": [],
       "isRequired": true,
@@ -177,7 +177,7 @@
         "You can get feedback on your project from fellow campers by sharing it in our <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Code Review Chatroom</a>. You can also share it on Twitter and your city's Campsite (on Facebook)."
       ],
       "challengeSeed": [
-        "150324698"
+        "kSAqct10gA0"
       ],
       "tests": [],
       "isRequired": true,
