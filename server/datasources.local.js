@@ -8,13 +8,10 @@ module.exports = {
   },
   mail: {
     connector: 'mail',
-    transports: [{
-      type: 'smtp',
-      service: 'Mandrill',
-      auth: {
-        user: secrets.mandrill.user,
-        pass: secrets.mandrill.password
-      }
-    }]
+    transport: {
+      type: 'ses',
+      accessKeyId: process.env.SES_ID,
+      secretAccessKey: process.env.SES_SECRET
+    }
   }
 };

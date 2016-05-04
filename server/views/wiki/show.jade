@@ -5,6 +5,9 @@ block content
     var wikiUrl = '//freecodecamp.github.io/wiki';
     var wikiOrigin = /https?:\/\/freecodecamp.github.io/;
     var requestedPath = !{JSON.stringify(path) || ''};
+    if (requestedPath !== '' && requestedPath.slice(-1) !== '/') {
+      requestedPath += '/';
+    }
     var lang = window.location.toString().match(/\/\w{2}\//);
     lang = (lang) ? lang[0] : '/en/';
     $('#wikiFrame').attr(

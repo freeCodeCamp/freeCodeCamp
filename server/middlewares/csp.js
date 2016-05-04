@@ -9,7 +9,7 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 export default function csp() {
-  return helmet.csp({
+  return helmet.contentSecurityPolicy({
     directives: {
       defaultSrc: trusted,
       scriptSrc: [
@@ -26,10 +26,8 @@ export default function csp() {
         '*.jsdelivr.com',
         '*.twimg.com',
         'https://*.twimg.com',
-        'vimeo.com'
-      ].concat(trusted),
-      connectSrc: [
-        'vimeo.com'
+        '*.youtube.com',
+        '*.ytimg.com'
       ].concat(trusted),
       styleSrc: [
         "'unsafe-inline'",
@@ -62,7 +60,7 @@ export default function csp() {
       frameSrc: [
         '*.gitter.im',
         '*.gitter.im https:',
-        '*.vimeo.com',
+        '*.youtube.com',
         '*.twitter.com',
         '*.ghbtns.com',
         '*.freecatphotoapp.com',

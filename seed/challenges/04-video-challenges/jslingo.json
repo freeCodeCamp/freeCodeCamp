@@ -15,7 +15,7 @@
         "These videos aren't going to teach you JavaScript - you will be introduced to terms and concepts that will be valuable as you continue to practice and learn."
       ],
       "challengeSeed": [
-        "137072373"
+        "NFaZKFTycmc"
       ],
       "tests": [
         [
@@ -50,7 +50,7 @@
         "Numbers are pretty self-explanatory - a number is a value that consists only of digits, though it can also contain a decimal or a negative sign."
       ],
       "challengeSeed": [
-        "137072769"
+        "fahY2YY5Atg"
       ],
       "tests": [
         [
@@ -85,7 +85,7 @@
         "When you name variables, utilize camelCase. Also try to keep the names descriptive and short so that others (and yourself!) can tell what that variable is referring to just by the name."
       ],
       "challengeSeed": [
-        "137078492"
+        "NJhXiR1z7Kg"
       ],
       "tests": [
         [
@@ -123,7 +123,7 @@
         "Notice the curly brackets, the 'keys' with values like name or food,, and the value called a 'property' that is tied to the 'key', like Briana or cheese. These are ALL stored as strings, although booleans, numbers, and other types of data are also valid."
       ],
       "challengeSeed": [
-        "137080554"
+        "yHLGUxt0EKc"
       ],
       "tests": [
         [
@@ -157,7 +157,7 @@
         "This goes for strings and objects, too. All of these indices start at 0, so if you're looking asking the code to find indexArr[2], you're really going to get the third piece of information in that array."
       ],
       "challengeSeed": [
-        "137081193"
+        "FACqPCLxPTY"
       ],
       "tests": [
         [
@@ -193,7 +193,7 @@
         "You'll become more familiar with syntax there, but for now, just remember that with methods and functions you can do almost anything with your code."
       ],
       "challengeSeed": [
-        "137081423"
+        "vZAm3Ve9CGM"
       ],
       "tests": [
         [
@@ -232,7 +232,7 @@
         "There are ways around this, and in general it doesn't pose issues, but it's something you should be aware of in the event you run into some problems that aren't making sense."
       ],
       "challengeSeed": [
-        "137081785"
+        "pyU5zV4tIL4"
       ],
       "tests": [
         [
@@ -267,7 +267,7 @@
         "You don't need to understand everything here - just know that loops exist when you need to traverse a set of data and they can cut down on the amount of code you need to write."
       ],
       "challengeSeed": [
-        "137082032"
+        "Hzzmqhc3U0o"
       ],
       "tests": [
         [
@@ -303,7 +303,7 @@
         "While there are limitless ways to use RegExp, many of them include validating or automatically editing information."
       ],
       "challengeSeed": [
-        "137082304"
+        "EgFjQ8ug3W8"
       ],
       "tests": [
         [

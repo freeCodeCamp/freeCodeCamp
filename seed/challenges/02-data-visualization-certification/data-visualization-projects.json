@@ -8,7 +8,7 @@
       "id": "bd7168d8c242eddfaeb5bd13",
       "title": "Visualize Data with a Bar Chart",
       "description": [
-        "<strong>Objective:</strong> Build a <a href='https://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='https://codepen.io/FreeCodeCamp/full/adBBWd' target='_blank'>https://codepen.io/FreeCodeCamp/full/adBBWd</a>.",
+        "<strong>Objective:</strong> Build a <a href='https://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='https://codepen.io/FreeCodeCamp/full/vGjLVZ' target='_blank'>https://codepen.io/FreeCodeCamp/full/vGjLVZ</a>.",
         "<strong>Rule #1:</strong> Don't look at the example project's code. Figure it out for yourself.",
         "<strong>Rule #2:</strong> Fulfill the below <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
         "<strong>Rule #3:</strong> You must use D3.js to build this project.",
@@ -20,7 +20,7 @@
         "You can get feedback on your project from fellow campers by sharing it in our <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Code Review Chatroom</a>. You can also share it on Twitter and your city's Campsite (on Facebook)."
       ],
       "challengeSeed": [
-        "150324699"
+        "nss_5sZpjIE"
       ],
       "tests": [],
       "isRequired": true,
@@ -29,7 +29,7 @@
       "challengeType": 3,
       "titleEs": "Visualiza datos utilizando un gráfico de barras",
       "descriptionEs": [
-        "<strong>Objetivo:</strong> Construye una aplicación en <a href='https://codepen.io' target='_blank'>CodePen.io</a> que funcione de forma similar al siguiente ejemplo: <a href='https://codepen.io/FreeCodeCamp/full/adBBWd' target='_blank'>https://codepen.io/FreeCodeCamp/full/adBBWd</a>.",
+        "<strong>Objetivo:</strong> Construye una aplicación en <a href='https://codepen.io' target='_blank'>CodePen.io</a> que funcione de forma similar al siguiente ejemplo: <a href='https://codepen.io/FreeCodeCamp/full/vGjLVZ' target='_blank'>https://codepen.io/FreeCodeCamp/full/vGjLVZ</a>.",
         "<strong>Regla #1:</strong> No veas el código del proyecto de ejemplo. Encuentra la forma de hacerlo por tu cuenta.",
         "<strong>Regla #2:</strong> Satisface las siguientes <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>historias de usuario</a>. Usa cualquier librería o API que sea necesaria. ¡Ponle un toque personal!.",
         "<strong>Regla #3:</strong> Debes utilizar D3.js para construir este proyecto.",
@@ -57,7 +57,7 @@
         "You can get feedback on your project from fellow campers by sharing it in our <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Code Review Chatroom</a>. You can also share it on Twitter and your city's Campsite (on Facebook)."
       ],
       "challengeSeed": [
-        "150324700"
+        "barVgJDnTMk"
       ],
       "tests": [],
       "isRequired": true,
@@ -95,7 +95,7 @@
         "You can get feedback on your project from fellow campers by sharing it in our <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Code Review Chatroom</a>. You can also share it on Twitter and your city's Campsite (on Facebook)."
       ],
       "challengeSeed": [
-        "150324701"
+        "TVJr7ndWAYo"
       ],
       "tests": [],
       "isRequired": true,
@@ -128,15 +128,15 @@
         "<strong>User Story:</strong> I can see a Force-directed Graph that shows which campers are posting links on Camper News to which domains.",
         "<strong>User Story:</strong> I can see each camper's icon on their node.",
         "<strong>User Story:</strong> I can see the relationship between the campers and the domains they're posting.",
-        "<strong>User Story:</strong> I can tell approximately many times campers have linked to a specific domain from it's node size.",
+        "<strong>User Story:</strong> I can tell approximately how many times campers have linked to a specific domain from it's node size.",
         "<strong>User Story:</strong> I can tell approximately how many times a specific camper has posted a link from their node's size.",
-        "<strong>Hint:</strong> Here's the Camper News Hot Stories API endpoint: <code>http://www.freecodecamp.com/news/hot</code>.",
+        "<strong>Hint:</strong> Here's the Camper News Hot Stories API endpoint: <code>https://www.freecodecamp.com/news/hot</code>.",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck.",
         "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen. ",
         "You can get feedback on your project from fellow campers by sharing it in our <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Code Review Chatroom</a>. You can also share it on Twitter and your city's Campsite (on Facebook)."
       ],
       "challengeSeed": [
-        "150324458"
+        "etBaP3IdlIE"
       ],
       "tests": [],
       "isRequired": true,
@@ -177,7 +177,7 @@
         "You can get feedback on your project from fellow campers by sharing it in our <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Code Review Chatroom</a>. You can also share it on Twitter and your city's Campsite (on Facebook)."
       ],
       "challengeSeed": [
-        "150324698"
+        "kSAqct10gA0"
       ],
       "tests": [],
       "isRequired": true,

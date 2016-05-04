@@ -46,7 +46,7 @@
       "id": "bd7123c9c443eddfaeb5bdef",
       "title": "Declare JavaScript Variables",
       "description": [
-        "In computer science, <dfn>data</dfn> is anything that is meaningful to the computer. JavaScript provides seven different <dfn>data types</dfn> which are <code>undefined</code>, <code>null</code>, <code>Boolean</code>, <code>string</code>, <code>symbol</code>, <code>number</code>, and <code>object</code>.",
+        "In computer science, <dfn>data</dfn> is anything that is meaningful to the computer. JavaScript provides seven different <dfn>data types</dfn> which are <code>undefined</code>, <code>null</code>, <code>boolean</code>, <code>string</code>, <code>symbol</code>, <code>number</code>, and <code>object</code>.",
         "For example, computers distinguish between numbers, such as the number <code>12</code>, and <code>strings</code>, such as <code>\"12\"</code>, <code>\"dog\"</code>, or <code>\"123 cats\"</code>, which are collections of characters. Computers can perform mathematical operations on a number, but not on a string.",
         "<dfn>Variables</dfn> allow computers to store and manipulate data in a dynamic fashion. They do this by using a \"label\" to point to the data rather than using the data itself. Any of the seven data types may be stored in a variable.",
         "<code>Variables</code> are similar to the x and y variables you use in mathematics, which means they're a simple name to represent the data we want to refer to. Computer <code>variables</code> differ from mathematical variables in that they can store different values at different times.",
@@ -100,6 +100,14 @@
         "Assign the contents of <code>a</code> to variable <code>b</code>."
       ],
       "releasedOn": "January 1, 2016",
+      "head": [
+        "if (typeof a != 'undefined') {",
+        "  a = undefined;",
+        "}",
+        "if (typeof b != 'undefined') {",
+        "  b = undefined;",
+        "}"
+      ],
       "challengeSeed": [
         "// Setup",
         "var a;",
@@ -425,7 +433,8 @@
         "<code>i = i + 1;</code>",
         "<strong>Note</strong><br>The entire line becomes <code>i++;</code>, eliminating the need for the equal sign.",
         "<h4>Instructions</h4>",
-        "Change the code to use the <code>++</code> operator on <code>myVar</code>."
+        "Change the code to use the <code>++</code> operator on <code>myVar</code>.",
+        "<strong>Hint</strong><br>Learn more about <a href=\"https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Increment_()\" target=\"_blank\">Arithmetic operators - Increment (++)</a>."
       ],
       "releasedOn": "January 1, 2016",
       "challengeSeed": [
@@ -963,7 +972,7 @@
       ],
       "tests": [
         "assert(code.match(/\\\\\"/g).length === 4 && code.match(/[^\\\\]\"/g).length === 2, 'message: You should use two double quotes (<code>&quot;</code>) and four escaped double quotes (<code>&#92;&quot;</code>) ');",
-        "assert(myStr === \"I am a \\\"double quoted\\\" string inside \\\"double quotes\\\"\", 'message: Variable myStr should equal to (<code>\"I am a \"double quoted\" string inside \"double quotes\"\"</code>).');"
+        "assert(myStr === \"I am a \\\"double quoted\\\" string inside \\\"double quotes\\\"\", 'message: Variable myStr should equal to (<code>I am a \"double quoted\" string inside \"double quotes\"</code>).');"
       ],
       "type": "waypoint",
       "challengeType": 1,
@@ -985,7 +994,8 @@
       "description": [
         "<dfn>String</dfn> values in JavaScript may be written with single or double quotes, so long as you start and end with the same type of quote. Unlike some languages, single and double quotes are functionally identical in JavaScript.",
         "<code>\"This string has \\\"double quotes\\\" in it\"</code>",
-        "The value in using one or the other has to do with the need to <dfn>escape</dfn> quotes of the same type. If you have a string with many double quotes, this can be difficult to read and write. Instead, use single quotes:",
+        "The value in using one or the other has to do with the need to <dfn>escape</dfn> quotes of the same type. Unless they are escaped, you cannot have more than one pair of whichever quote type begins a string.",
+        "If you have a string with many double quotes, this can be difficult to read and write. Instead, use single quotes:",
         "<code>'This string has \"double quotes\" in it. And \"probably\" lots of them.'</code>",
         "<h4>Instructions</h4>",
         "Change the provided string from double to single quotes and remove the escaping."
@@ -2724,7 +2734,7 @@
         "assert(testStrict(10) === \"Not Equal\", 'message: <code>testStrict(10)</code> should return \"Not Equal\"');",
         "assert(testStrict(7) === \"Equal\", 'message: <code>testStrict(7)</code> should return \"Equal\"');",
         "assert(testStrict(\"7\") === \"Not Equal\", 'message: <code>testStrict(\"7\")</code> should return \"Not Equal\"');",
-        "assert(code.match(/val\\s*===\\s*\\d+/g).length > 0, 'message: You should use the <code>===</code> operator');"
+        "assert(code.match(/(val\\s*===\\s*\\d+)|(\\d+\\s*===\\s*val)/g).length > 0, 'message: You should use the <code>===</code> operator');"
       ],
       "type": "waypoint",
       "challengeType": 1,
@@ -3445,9 +3455,6 @@
       "solutions": [
         "function caseInSwitch(val) {\n  var answer = \"\";\n\n  switch (val) {\n    case 1:\n      answer = \"alpha\";\n      break;\n    case 2:\n      answer = \"beta\";\n      break;\n    case 3:\n      answer = \"gamma\";\n      break;\n    case 4:\n      answer = \"delta\";\n  }\n  return answer;  \n}"
       ],
-      "MDNlinks": [
-        "Switch Statement"
-      ],
       "tests": [
         "assert(caseInSwitch(1) === \"alpha\", 'message: <code>caseInSwitch(1) should have a value of \"alpha\"');",
         "assert(caseInSwitch(2) === \"beta\", 'message: <code>caseInSwitch(2) should have a value of \"beta\"');",
@@ -3457,6 +3464,9 @@
         "assert(code.match(/break/g).length > 2, 'message: You should have at least 3 <code>break</code> statements');"
       ],
       "type": "waypoint",
+      "MDNlinks": [
+        "Switch Statement"
+      ],
       "challengeType": 1,
       "titleEs": "Seleccionar desde diferentes opciones con la sentencia switch",
       "descriptionEs": [
@@ -3498,11 +3508,11 @@
         "function switchOfStuff(val) {\n  var answer = \"\";\n\n  switch(val) {\n    case \"a\":\n      answer = \"apple\";\n      break;\n    case \"b\":\n      answer = \"bird\";\n      break;\n    case \"c\":\n      answer = \"cat\";\n      break;\n    default:\n      answer = \"stuff\";\n  }\n  return answer;  \n}"
       ],
       "tests": [
-        "assert(switchOfStuff(\"a\") === \"apple\", 'message: <code>switchOfStuff(\"a\") should have a value of \"apple\"');",
-        "assert(switchOfStuff(\"b\") === \"bird\", 'message: <code>switchOfStuff(\"b\") should have a value of \"bird\"');",
-        "assert(switchOfStuff(\"c\") === \"cat\", 'message: <code>switchOfStuff(\"c\") should have a value of \"cat\"');",
-        "assert(switchOfStuff(\"d\") === \"stuff\", 'message: <code>switchOfStuff(\"d\") should have a value of \"stuff\"');",
-        "assert(switchOfStuff(4) === \"stuff\", 'message: <code>switchOfStuff(4) should have a value of \"stuff\"');",
+        "assert(switchOfStuff(\"a\") === \"apple\", 'message: <code>switchOfStuff(\"a\")</code> should have a value of \"apple\"');",
+        "assert(switchOfStuff(\"b\") === \"bird\", 'message: <code>switchOfStuff(\"b\")</code> should have a value of \"bird\"');",
+        "assert(switchOfStuff(\"c\") === \"cat\", 'message: <code>switchOfStuff(\"c\")</code> should have a value of \"cat\"');",
+        "assert(switchOfStuff(\"d\") === \"stuff\", 'message: <code>switchOfStuff(\"d\")</code> should have a value of \"stuff\"');",
+        "assert(switchOfStuff(4) === \"stuff\", 'message: <code>switchOfStuff(4)</code> should have a value of \"stuff\"');",
         "assert(!/else/g.test(code) || !/if/g.test(code), 'message: You should not use any <code>if</code> or <code>else</code> statements');",
         "assert(code.match(/break/g).length > 2, 'message: You should have at least 3 <code>break</code> statements');"
       ],
@@ -3912,7 +3922,7 @@
         "<blockquote>var myObj = {<br>  \"Space Name\": \"Kirk\",<br>  \"More Space\": \"Spock\"<br>};<br>myObj[\"Space Name\"]; // Kirk<br>myObj['More Space']; // Spock</blockquote>",
         "Note that property names with spaces in them must be in quotes (single or double).",
         "<h4>Instructions</h4>",
-        "Read the values of the properties <code>\"an entree\"</code> and <code>\"the drink\"</code> of <code>testObj</code> using bracket notation."
+        "Read the values of the properties <code>\"an entree\"</code> and <code>\"the drink\"</code> of <code>testObj</code> using bracket notation and assign them to <code>entreeValue</code> and <code>drinkValue</code> respectively."
       ],
       "releasedOn": "January 1, 2016",
       "challengeSeed": [
@@ -4167,7 +4177,7 @@
         "(function(z){return z;})(myDog);"
       ],
       "solutions": [
-        "var ourDog = {\n  \"name\": \"Camper\",\n  \"legs\": 4,\n  \"tails\": 1,\n  \"friends\": [\"everything!\"],\n  \"bark\": \"bow-wow\"\n};\n\nvar myDog = {\n  \"name\": \"Happy Coder\",\n  \"legs\": 4,\n  \"tails\": 1,\n  \"friends\": [\"Free Code Camp Campers\"],\n  \"bark\": \"woof\"\n};\n\ndelete myDog.tails;"
+        "var ourDog = {\n  \"name\": \"Camper\",\n  \"legs\": 4,\n  \"tails\": 1,\n  \"friends\": [\"everything!\"],\n  \"bark\": \"bow-wow\"\n};\nvar myDog = {\n  \"name\": \"Happy Coder\",\n  \"legs\": 4,\n  \"tails\": 1,\n  \"friends\": [\"Free Code Camp Campers\"],\n  \"bark\": \"woof\"\n};\ndelete myDog.tails;"
       ],
       "tests": [
         "assert(myDog.tails === undefined, 'message: Delete the property <code>\"tails\"</code> from <code>myDog</code>.');",
@@ -4571,8 +4581,8 @@
         "The <code>initialization</code> statement is executed one time only before the loop starts. It is typically used to define and setup your loop variable.",
         "The <code>condition</code> statement is evaluated at the beginning of every loop iteration and will continue as long as it evalutes to <code>true</code>. When <code>condition</code> is <code>false</code> at the start of the iteration, the loop will stop executing. This means if <code>condition</code> starts as <code>false</code>, your loop will never execute.",
         "The <code>final-expression</code> is executed at the end of each loop iteration, prior to the next <code>condition</code> check and is usually used to increment or decrement your loop counter.",
-        "In the following example we initialize with <code>i = 0</code> and iterate while our condition <code>i < 5</code> is true. We'll increment <code>i</code> by <code>1</code> in each loop iteration with <code>i++</code> as our <code>final-expression</code>.",
-        "<blockquote>var ourArray = [];<br>for (var i = 0; i < 5; i++) {<br>  ourArray.push(i);<br>}</blockquote>",
+        "In the following example we initialize with <code>i = 0</code> and iterate while our condition <code>i &#60; 5</code> is true. We'll increment <code>i</code> by <code>1</code> in each loop iteration with <code>i++</code> as our <code>final-expression</code>.",
+        "<blockquote>var ourArray = [];<br>for (var i = 0; i &#60; 5; i++) {<br>  ourArray.push(i);<br>}</blockquote>",
         "<code>ourArray</code> will now contain <code>[0,1,2,3,4]</code>.",
         "<h4>Instructions</h4>",
         "Use a <code>for</code> loop to work to push the values 1 through 5 onto <code>myArray</code>."
@@ -4628,8 +4638,8 @@
       "title": "Iterate Odd Numbers With a For Loop",
       "description": [
         "For loops don't have to iterate one at a time. By changing our <code>final-expression</code>, we can count by even numbers.",
-        "We'll start at <code>i = 0</code> and loop while <code>i < 10</code>. We'll increment <code>i</code> by 2 each loop with <code>i += 2</code>.",
-        "<blockquote>var ourArray = [];<br>for (var i = 0; i < 10; i += 2) {<br>  ourArray.push(i);<br>}</blockquote>",
+        "We'll start at <code>i = 0</code> and loop while <code>i &#60; 10</code>. We'll increment <code>i</code> by 2 each loop with <code>i += 2</code>.",
+        "<blockquote>var ourArray = [];<br>for (var i = 0; i &#60; 10; i += 2) {<br>  ourArray.push(i);<br>}</blockquote>",
         "<code>ourArray</code> will now contain <code>[0,2,4,6,8]</code>.",
         "Let's change our <code>initialization</code> so we can count by odd numbers.",
         "<h4>Instructions</h4>",
@@ -4682,8 +4692,8 @@
       "description": [
         "A for loop can also count backwards, so long as we can define the right conditions.",
         "In order to count backwards by twos, we'll need to change our <code>initialization</code>, <code>condition</code>, and <code>final-expression</code>.",
-        "We'll start at <code>i = 10</code> and loop while <code>i > 0</code>. We'll decrement <code>i</code> by 2 each loop with <code>i -= 2</code>.",
-        "<blockquote>var ourArray = [];<br>for (var i=10; i > 0; i-=2) {<br>  ourArray.push(i);<br>}</blockquote>",
+        "We'll start at <code>i = 10</code> and loop while <code>i &#62; 0</code>. We'll decrement <code>i</code> by 2 each loop with <code>i -= 2</code>.",
+        "<blockquote>var ourArray = [];<br>for (var i=10; i &#62; 0; i-=2) {<br>  ourArray.push(i);<br>}</blockquote>",
         "<code>ourArray</code> will now contain <code>[10,8,6,4,2]</code>.",
         "Let's change our <code>initialization</code> and <code>final-expression</code> so we can count backward by twos by odd numbers.",
         "<h4>Instructions</h4>",
@@ -4832,7 +4842,7 @@
       "description": [
         "You can run the same code multiple times by using a loop.",
         "Another type of JavaScript loop is called a \"<code>while loop</code>\", because it runs \"while\" a specified condition is true and stops once that condition is no longer true.",
-        "<blockquote>var ourArray = [];<br>var i = 0;<br>while(i < 5) {<br>  ourArray.push(i);<br>  i++;<br>}</blockquote>",
+        "<blockquote>var ourArray = [];<br>var i = 0;<br>while(i &#60; 5) {<br>  ourArray.push(i);<br>  i++;<br>}</blockquote>",
         "Let's try getting a while loop to work by pushing values to an array.",
         "<h4>Instructions</h4>",
         "Push the numbers 0 through 4 to <code>myArray</code> using a <code>while</code> loop."
@@ -5016,7 +5026,7 @@
         "(function(){return randomWholeNum();})();"
       ],
       "solutions": [
-        "var randomNumberBetween0and19 = Math.floor(Math.random() * 20);\n\nfunction randomWholeNum() {\n  return Math.floor(Math.random() * 10);\n}"
+        "var randomNumberBetween0and19 = Math.floor(Math.random() * 20);\nfunction randomWholeNum() {\n  return Math.floor(Math.random() * 10);\n}"
       ],
       "tests": [
         "assert(typeof randomWholeNum() === \"number\" && (function(){var r = randomWholeNum();return Math.floor(r) === r;})(), 'message: The result of <code>randomWholeNum</code> should be a whole number.');",
@@ -5092,8 +5102,8 @@
         "function randomRange(myMin, myMax) {\n  return Math.floor(Math.random() * (myMax - myMin + 1)) + myMin;\n}"
       ],
       "tests": [
-        "assert(calcMin === 5, 'message: The random number generated by <code>randomRange</code> should be greater than or equal to your minimum number, <code>myMin</code>.');",
-        "assert(calcMax === 15, 'message: The random number generated by <code>randomRange</code> should be less than or equal to your maximum number, <code>myMax</code>.');",
+        "assert(calcMin === 5, 'message: The lowest random number that can be generated by <code>randomRange</code> should be equal to your minimum number, <code>myMin</code>.');",
+        "assert(calcMax === 15, 'message: The highest random number that can be generated by <code>randomRange</code> should be equal to your maximum number, <code>myMax</code>.');",
         "assert(randomRange(0,1) % 1 === 0 , 'message: The random number generated by <code>randomRange</code> should be an integer, not a decimal.');",
         "assert((function(){if(code.match(/myMax/g).length > 1 && code.match(/myMin/g).length > 2 && code.match(/Math.floor/g) && code.match(/Math.random/g)){return true;}else{return false;}})(), 'message: <code>randomRange</code> should use both <code>myMax</code> and <code>myMin</code>, and return a random number in your range.');"
       ],
@@ -5152,7 +5162,7 @@
         "(function(){return andCount;})();"
       ],
       "solutions": [
-        "var testString = \"Ada Lovelace and Charles Babbage designed the first computer and the software that would have run on it.\";\nvar expression = /and/gi;  // Change this Line\nvar andCount = testString.match(expression).length;"
+        "var testString = \"Ada Lovelace and Charles Babbage designed the first computer and the software that would have run on it.\";\nvar expression = /and/gi;\nvar andCount = testString.match(expression).length;"
       ],
       "tests": [
         "assert(andCount==2, 'message: Your <code>regular expression</code> should find two occurrences of the word <code>and</code>.');",
@@ -5206,7 +5216,7 @@
         "(function(){return digitCount;})();"
       ],
       "solutions": [
-        "var testString = \"There are 3 cats but 4 dogs.\";\nvar expression = /\\d+/g;  // Change this line\nvar digitCount = testString.match(expression).length;"
+        "var testString = \"There are 3 cats but 4 dogs.\";\nvar expression = /\\d+/g;\nvar digitCount = testString.match(expression).length;"
       ],
       "tests": [
         "assert(digitCount === 2, 'message: Your regular expression should find two numbers in <code>testString</code>.');",
@@ -5255,7 +5265,7 @@
         "(function(){return spaceCount;})();"
       ],
       "solutions": [
-        "var testString = \"How many spaces are there in this sentence?\";\nvar expression = /\\s+/g;  // Change this line\nvar spaceCount = testString.match(expression).length;"
+        "var testString = \"How many spaces are there in this sentence?\";\nvar expression = /\\s+/g;\nvar spaceCount = testString.match(expression).length;"
       ],
       "tests": [
         "assert(spaceCount === 7, 'message: Your regular expression should find seven spaces in <code>testString</code>.');",

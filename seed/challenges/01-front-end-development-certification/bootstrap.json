@@ -8,7 +8,7 @@
       "id": "bad87fee1348bd9acde08712",
       "title": "Use Responsive Design with Bootstrap Fluid Containers",
       "description": [
-        "Now let's go back to our Cat Photo App. This time, we'll style it using the popular Bootstrap responsive CSS framework.",
+        "In the HTML5 and CSS section of FreeCodeCamp we built a Cat Photo App. Now let's go back to it. This time, we'll style it using the popular Bootstrap responsive CSS framework.",
         "Bootstrap will figure out how wide your screen is and respond by resizing your HTML elements - hence the name <code>Responsive Design</code>.",
         "With responsive design, there is no need to design a mobile version of your website. It will look good on devices with screens of any width.",
         "You can add Bootstrap to any app just by including it by adding the following code to the top of your HTML:",
@@ -2248,7 +2248,7 @@
       ],
       "tests": [
         "assert(code.match(/^\\s*<!--/), 'message: Start a comment with <code>&#60;!--</code> at the top of your HTML.');",
-        "assert(code.match(/<!--(?!(>|->|.*-->.*this line)).*this line.*-->/gi), 'message: Your comment should have the text <code>Only change code above this line</code>.');",
+        "assert(code.match(/<!--(?!(>|->|.*-->.*this line))\\s*.*this line.*\\s*-->/gi), 'message: Your comment should have the text <code>Only change code above this line</code>.');",
         "assert(code.match(/-->.*\\n+.+/g), 'message: Be sure to close your comment with <code>--&#62;</code>.');",
         "assert(code.match(/<!--/g).length === code.match(/-->/g).length, 'message: You should have the same number of comment openers and closers.');"
       ],

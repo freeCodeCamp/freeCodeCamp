@@ -35,13 +35,13 @@
         [
           "//i.imgur.com/U4y9RJ1.gif",
           "A gif showing that you can type \"hello world\" will output \"hello world\" in the preview window. You can also drag windows to resize them, and change their orientation.",
-          "In the HTML box, create an h1 element with the text \"Hello World\". You can drag the frames around to resize them. You can also click the \"Change View\" button and change the orientation of the frames.",
+          "In the HTML box, create an <code>h1</code> element with the text \"Hello World\". You can drag the frames around to resize them. You can also click the \"Change View\" button and change the orientation of the frames.",
           ""
         ],
         [
           "//i.imgur.com/G9KFQDL.gif",
           "A gif showing the process of adding Bootstrap to your pen.",
-          "Click the gear in the upper left hand corner of the CSS box, then scroll down to \"Quick add\" and choose Bootstrap. Now give your h1 element the class of \"text-primary\" to change its color and prove that Bootstrap is now available.",
+          "Click the gear in the upper left hand corner of the CSS box, then scroll down to \"Quick add\" and choose Bootstrap. Now give your <code>h1</code> element the class of <code>text-primary</code> to change its color and prove that Bootstrap is now available.",
           ""
         ]
       ],
@@ -144,7 +144,7 @@
       ],
       "releasedOn": "January 1, 2016",
       "challengeSeed": [
-        "154927651"
+        "qqrnzmqCGDw"
       ],
       "tests": [],
       "type": "zipline",
@@ -177,11 +177,10 @@
       "id": "bd7158d8c242eddfaeb5bd13",
       "title": "Build a Personal Portfolio Webpage",
       "description": [
-        "<strong>Objective:</strong> Build a <a href='https://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='https://codepen.io/hallaathrad/full/vNEPpL' target='_blank'>https://codepen.io/hallaathrad/full/vNEPpL</a>.",
+        "<strong>Objective:</strong> Build a <a href='https://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='https://codepen.io/FreeCodeCamp/full/YqLyXB/' target='_blank'>https://codepen.io/FreeCodeCamp/full/YqLyXB/</a>.",
         "<strong>Rule #1:</strong> Don't look at the example project's code. Figure it out for yourself.",
         "<strong>Rule #2:</strong> Fulfill the below <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries you need. Give it your own personal style.",
-        "<strong>Rule #3:</strong> You may use your own CSS and frameworks other than Bootstrap.",
-        "<strong>Rule #4:</strong> Choose your own tribute subject.",
+        "<strong>Rule #3:</strong> You can use Bootstrap, or any other framework of your choice.",
         "<strong>User Story:</strong> I can access all of the portfolio webpage's content just by scrolling.",
         "<strong>User Story:</strong> I can click different buttons that will take me to the portfolio creator's different social media pages.",
         "<strong>User Story:</strong> I can see thumbnail images of different projects the portfolio creator has built (if you haven't built any websites before, use placeholders.)",
@@ -194,7 +193,7 @@
         "You can get feedback on your project from fellow campers by sharing it in our <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Code Review Chatroom</a>. You can also share it on Twitter and your city's Campsite (on Facebook)."
       ],
       "challengeSeed": [
-        "133315782"
+        "V72o34gY4Lw"
       ],
       "tests": [],
       "type": "zipline",

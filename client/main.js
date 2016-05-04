@@ -97,7 +97,11 @@ main = (function(main, global) {
     });
 
 
-    $('#nav-chat-btn').on('click', toggleMainChat);
+    $('#nav-chat-btn').on('click', function(event) {
+      if (!(event.ctrlKey || event.metaKey)) {
+          toggleMainChat();
+      }
+  });
 
     function showMainChat() {
       if (!main.chat.isOpen) {
@@ -123,30 +127,6 @@ main = (function(main, global) {
     // keyboard shortcuts: open main chat
     Mousetrap.bind('g c', toggleMainChat);
   });
-
-  function localStorageIO(item = '', input = null) {
-    if (input) {
-      try {
-        input = typeof input === 'string' ? input : JSON.stringify(input);
-      } catch (e) {
-        // Do Nothing
-      }
-      localStorage.setItem(item, input);
-      return input;
-    } else {
-      let data = typeof localStorage.getItem(item)
-        !== 'undefined' && localStorage.getItem(item)
-        !== null ? localStorage.getItem(item) : '';
-      try {
-        data = JSON.parse(data);
-      } catch (e) {
-        // Do Nothing
-      }
-      return data;
-    }
-  }
-
-  main.localStorageIO = localStorageIO;
 
   return main;
 }(main, window));
@@ -374,7 +354,11 @@ $(document).ready(function() {
   var mapFilter = $('#map-filter');
   var mapShowAll = $('#showAll');
 
-  $('#nav-map-btn').on('click', toggleMap);
+  $('#nav-map-btn').on('click', function(event) {
+      if (!(event.ctrlKey || event.metaKey)) {
+          toggleMap();
+      }
+  });
 
   $('.map-aside-action-collapse').on('click', collapseMap);
 
@@ -405,7 +389,11 @@ $(document).ready(function() {
     }
   }
 
-  $('#nav-wiki-btn').on('click', toggleWiki);
+  $('#nav-wiki-btn').on('click', function(event) {
+      if (!(event.ctrlKey || event.metaKey)) {
+          toggleWiki();
+      }
+  });
 
   $('.wiki-aside-action-collapse').on('click', collapseWiki);
 
@@ -474,7 +462,8 @@ $(document).ready(function() {
   // Map live filter
   mapFilter.on('keyup', () => {
     if (mapFilter.val().length > 0) {
-      var regex = new RegExp(mapFilter.val().replace(/ /g, '.'), 'i');
+      var regexString = mapFilter.val().replace(/ /g, '.');
+      var regex = new RegExp(regexString.split('').join('.*'), 'i');
 
       // Hide/unhide challenges that match the regex
       $('.challenge-title').each((index, title) => {
@@ -647,48 +636,30 @@ $(document).ready(function() {
     window.location = 'https://github.com/freecodecamp/freecodecamp/';
   });
 
-  function getCurrentBillBoard(cb) {
+  (function getFlyer() {
+    const flyerKey = '__flyerId__';
     $.ajax({
-      url: '/api/flyers/findOne?'
-      + 'filter=%7B%22order%22%3A%20%20%22id%20DESC%22%7D',
+      url: '/api/flyers/findOne',
       method: 'GET',
       dataType: 'JSON',
-      data: {'order': 'id DESC'}
-    }).done((resp) => {
-      cb(resp);
+      data: { filter: { order: 'id DESC' } }
+    })
+    // log error
+    .fail(err => console.error(err))
+    .done(flyer => {
+      const lastFlyerId = localStorage.getItem(flyerKey);
+      if (
+        !flyer ||
+        !flyer.isActive ||
+        lastFlyerId === flyer.id
+      ) {
+        return;
+      }
+      $('#dismiss-bill').on('click', () => {
+        localStorage.setItem(flyerKey, flyer.id);
+      });
+      $('#bill-content').html(flyer.message);
+      $('#bill-board').fadeIn();
     });
-    $('#dismissBill').on('click', (e) => {
-      const elemData
-        = e.target.parentNode.parentNode.children;
-
-      const res
-        = elemData[Object.keys(elemData).filter((key)=> {
-        return elemData[key].id === 'billContent';
-
-      })[0]].innerHTML;
-
-      main.localStorageIO('lastBillBoardSeen', res);
-    });
-  }
-
-  function handleNewBillBoard(resp) {
-    const data = typeof main.localStorageIO('lastBillBoardSeen')
-      !== 'undefined' && main.localStorageIO('lastBillBoardSeen')
-      !== null ? main.localStorageIO('lastBillBoardSeen') : '';
-    if (
-      data.replace(/\s*/gi, '')
-        .replace(/\&\w*\;/gi, '')
-        .replace(/(\<|\/|\>)/gi, '')
-      !== resp.message
-        .replace(/\s*/gi, '')
-        .replace(/\&\w*\;/gi, '')
-        .replace(/(\<|\/|\>)/gi, '')
-      && resp.active
-    ) {
-      $('#billContent').html(resp.message);
-      $('#billBoard').fadeIn();
-    }
-  }
-
-  getCurrentBillBoard(handleNewBillBoard);
+  }());
 });

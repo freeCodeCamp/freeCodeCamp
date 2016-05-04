@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { Button, Col, Row } from 'react-bootstrap';
-import Vimeo from 'react-vimeo';
+import Youtube from 'react-youtube';
 import { createSelector } from 'reselect';
 import debug from 'debug';
 
@@ -34,7 +34,7 @@ export class Lecture extends React.Component {
     // actions
     toggleQuestionView: PropTypes.func,
     // ui
-    id: PropTypes.number,
+    id: PropTypes.string,
     description: PropTypes.array,
     dashedName: PropTypes.string,
     hardGoTo: PropTypes.func
@@ -74,10 +74,11 @@ export class Lecture extends React.Component {
     return (
       <Col xs={ 12 }>
         <Row>
-          <Vimeo
+          <Youtube
+            id='player_1'
+            onEnd={ toggleQuestionView }
             onError={ this.handleError }
-            onFinish= { toggleQuestionView }
-            videoId={ '' + id } />
+            videoId={ id } />
         </Row>
         <Row>
           <article>

@@ -34,8 +34,13 @@ If you've found a bug that is not on the board, [follow these steps](#found-a-bu
 
 ## Prerequisites
 
-- [MongoDB](http://www.mongodb.org/downloads)
-- [Node.js](http://nodejs.org)
+| Prerequisite | Version |
+|--------------|---------|
+| [MongoDB](http://www.mongodb.org/downloads) | `~ ^3` |
+| [Node.js](http://nodejs.org) | `~ ^4` |
+| npm | `~ ^2` |
+
+> _Updating to the latest releases is recomended_.
 
 ## Getting Started
 

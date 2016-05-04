@@ -274,7 +274,7 @@ export function postJSON$(url, body) {
     responseType: 'json',
     headers: {
       'Content-Type': 'application/json',
-      'Accept': 'application/json'
+      Accept: 'application/json'
     }
   })
     .map(({ response }) => response);
@@ -303,7 +303,7 @@ export function getJSON$(url) {
     responseType: 'json',
     headers: {
       'Content-Type': 'application/json',
-      'Accept': 'application/json'
+      Accept: 'application/json'
     }
   }).map(({ response }) => response);
 }

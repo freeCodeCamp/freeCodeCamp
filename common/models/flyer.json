@@ -7,9 +7,9 @@
     "message": {
       "type": "string"
     },
-    "active": {
+    "isActive": {
       "type": "boolean",
-      "default": false
+      "default": true
     }
   },
   "validations": [],

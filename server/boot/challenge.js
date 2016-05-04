@@ -474,12 +474,7 @@ module.exports = function(app) {
           return Observable.just()
             .doOnCompleted(() => {
               req.flash('info', {
-                msg: dedent`
-                  Once you have completed all of our challenges, you should
-                  join our <a href="https://gitter.im/freecodecamp/HalfWayClub"
-                  target="_blank">Half Way Club</a> and start getting
-                  ready for our nonprofit projects.
-                `.split('\n').join(' ')
+                msg: 'You\'ve completed the last challenge!'
               });
               return res.redirect('/map');
             });

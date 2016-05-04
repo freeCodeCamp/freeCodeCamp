@@ -85,7 +85,7 @@ function buildChallengeMap(userId, completedChallenges = [], User) {
     }, {})
     .flatMap(challengeMap => {
       const updateData = {
-        '$set': {
+        $set: {
           challengeMap,
           isChallengeMapMigrated: true
         }
