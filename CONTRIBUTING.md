@@ -166,7 +166,7 @@ Read the [Wiki article](https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/How-To
    - **Do not add the issue number in the PR title**.
    - Examples: `Add Test Cases to Bonfire Drop It` `Correct typo in Waypoint Size Your Images`
 4. In the body of your PR include a more detailed summary of the changes you made and why.
-   - If the PR is meant to fix an existing bug/issue, then, at the end of your PR's commit message, append the keyword `closes` and #xxxx (where xxxx is the issue number). Example: `closes #1337`.
+   - If the PR is meant to fix an existing bug/issue, then, at the end of your PR's description, append the keyword `closes` and #xxxx (where xxxx is the issue number). Example: `closes #1337`.
    This tells GitHub to close the existing issue, if the PR is merged.
 5. Indicate if you have tested on a local copy of the site or not.
 
