@@ -132,6 +132,9 @@
   position:relative;
   #nested {
     margin:0 15px;
+    @media (max-width: 400px) {
+    margin:0;
+    }
   }
   a:focus {
       text-decoration: none;
@@ -170,7 +173,10 @@
     p {
       text-indent: -15px;
       margin-left: 60px;
-      padding-right: 20px
+      padding-right: 20px;
+      @media (max-width: 400px) {
+          margin-left:30px;
+      }
     }
   }  
 

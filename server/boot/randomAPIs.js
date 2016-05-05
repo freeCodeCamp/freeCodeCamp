@@ -32,6 +32,7 @@ module.exports = function(app) {
   router.get('/submit-cat-photo', submitCatPhoto);
   router.get('/labs', showLabs);
   router.get('/stories', showTestimonials);
+  router.get('/shop', showShop);
   router.get('/all-stories', showAllTestimonials);
   router.get('/terms', terms);
   router.get('/privacy', privacy);
@@ -205,6 +206,13 @@ module.exports = function(app) {
         'who got Software Engineer Jobs',
       stories: testimonials,
       moreStories: false
+    });
+  }
+
+  function showShop(req, res) {
+    res.render('resources/shop', {
+      title: 'Support Free Code Camp by Buying t-shirts, ' +
+        'stickers, and other goodies'
     });
   }
 

@@ -10,12 +10,12 @@ block content
                 .innerMarginFix(style = "width: 99%;")
                     .row
                         .col-xs-12
-                            h4.text-center= name
+                            h4.text-center.challenge-instructions-title= name
                                 if (isCompleted)
                                     | &nbsp;
                                     i.ion-checkmark-circled.text-primary(title="Completed")
                             hr
-                            .bonfire-instructions
+                            .challenge-instructions
                                 for sentence in description
                                     if (/blockquote|h4|table/.test(sentence))
                                         !=sentence
