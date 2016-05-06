@@ -27,7 +27,7 @@ block content
                                 #MDN-links
                                     p Here are some helpful links:
                                     for link, index in MDNlinks
-                                        ul: li: a(href=""+link, target="_blank") !{MDNkeys[index]}
+                                        ul: li: a(href=""+link, target="_blank", rel='noopener noreferrer') !{MDNkeys[index]}
                             .button-spacer
                 if (user)
                 label.btn.btn-primary.btn-block.btn-lg#submitButton
@@ -75,7 +75,7 @@ block content
                       .row
                       if (user)
                           #submit-challenge.animated.fadeIn.btn.btn-lg.btn-primary.btn-block Submit and go to my next challenge (ctrl + enter)
-                          a.btn.btn-lg.btn-block.btn-twitter(target="_blank", href="https://twitter.com/intent/tweet?text=I%20just%20#{verb}%20%40FreeCodeCamp%20#{name}&url=http%3A%2F%2Ffreecodecamp.com/challenges/#{dashedName}&hashtags=LearnToCode, JavaScript", onclick="ga('send', 'event', 'twitter', 'share', 'challenge completion share');")
+                          a.btn.btn-lg.btn-block.btn-twitter(rel='noopener noreferrer', target="_blank", href="https://twitter.com/intent/tweet?text=I%20just%20#{verb}%20%40FreeCodeCamp%20#{name}&url=http%3A%2F%2Ffreecodecamp.com/challenges/#{dashedName}&hashtags=LearnToCode, JavaScript", onclick="ga('send', 'event', 'twitter', 'share', 'challenge completion share');")
                               i.fa.fa-twitter &thinsp;
                                   = phrase
                       else
