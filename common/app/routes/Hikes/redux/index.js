@@ -1,6 +1,6 @@
-export actions from './actions';
-export reducer from './reducer';
-export types from './types';
+export * from './actions';
+export * from './reducer';
+export * from './types';
 
 import answerSaga from './answer-saga';
 import fetchHikesSaga from './fetch-hikes-saga';
