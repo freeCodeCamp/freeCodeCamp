@@ -39,16 +39,16 @@ module.exports = {
     ]
   },
   externals: {
-    'codemirror': 'CodeMirror'
+    codemirror: 'CodeMirror'
   },
   plugins: [
     new webpack.optimize.DedupePlugin(),
     new webpack.optimize.OccurenceOrderPlugin(true),
     new webpack.DefinePlugin({
       'process.env': {
-        'NODE_ENV': JSON.stringify(__DEV__ ? 'development' : 'production')
+        NODE_ENV: JSON.stringify(__DEV__ ? 'development' : 'production')
       },
-      '__DEVTOOLS__': !__DEV__
+      __DEVTOOLS__: !__DEV__
     })
   ]
 };
