@@ -1,8 +1,5 @@
-import { Observable } from 'rx';
 import { fetchChallenges } from './types';
-import { fetchChallengesCompleted } from './actions';
-
-import { handleError } from '../../../redux/types';
+import { createErrorObserable, fetchChallengesCompleted } from './actions';
 
 export default function fetchChallengesSaga(action$, getState, { services }) {
   return action$
@@ -12,6 +9,6 @@ export default function fetchChallengesSaga(action$, getState, { services }) {
         .map(({ entities, result } = {}) => {
           return fetchChallengesCompleted(entities, result);
         })
-        .catch(error => Observable.just({ type: handleError, error }));
+        .catch(createErrorObserable);
     });
 }
