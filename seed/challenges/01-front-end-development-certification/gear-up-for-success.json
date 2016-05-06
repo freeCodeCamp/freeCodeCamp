@@ -35,7 +35,16 @@
           "LinkedIn reconnait Free Code Camp comme une université. Tu peux avoir accès à notre large réseau de lauréats en ajoutant Free Code Camp à la section éducation de ton profil LinkedIn. L’année d’obtention du diplôme est la prochaine année. Pour le \"Degré\", c’est  \"Full Stack Web Development Certification\". Pour le \"Domaine d’études\", c’est \"Computer Software Engineering\". Puis sauvegardez les changements.",
           "https://www.linkedin.com/profile/edit-education?school=Free+Code+Camp"
         ]
-      ]
+      ],
+      "titleDe": "Tritt unserem LinkedIn Alumni Netzwerk bei",
+      "descriptionDe": [
+        [
+          "//i.imgur.com/vJyiXzU.gif",
+          "Ein GIF, das dir zeigt, wie du den unten stehenden Link anklicken kannst und welche Felder du ausfüllen musst, damit du Free Code Camp zu deinem LinkedIn Profil hinzufügst.",
+          "LinkedIn erkennt Free Code Camp als Universität an. Du bekommst auf unser großes Alumni Netzwerk zugriff, indem du Free Code Camp zum Ausbildungsbereich deines LinkedIn Profils hinzufügst. Setze deinen Abschlusszeitpunkt auf das nächste Jahr. In das Feld \"Abschluss\" schreibe \"Full Stack Web Development Certification\". In das Feld \"Studienfach\" schreibe \"Computer Software Engineering\". Dann klicke auf den \"Speichern\" Button.",
+          "https://www.linkedin.com/profile/edit-education?school=Free+Code+Camp"
+        ]
+      ]    
     },
     {
       "id": "560adc65cb82ac38a17513c2",
@@ -68,6 +77,15 @@
           "//i.imgur.com/DYjJuCG.gif",
           "Une gif montrant la procédure de création d’un compte sur Reddit et comment rejoindre le subreddit de Free Code Camp",
           "Notre communauté à son propre subreddit sur Reddit. C’est un espace où tu peux poser des questions ou partager des liens avec la communauté. Si tu n’as pas encore un compte sur Reddit, tu peux créer un dans quelque secondes – tu n’as pas besoin d’une adresse mail. Tu peux cliquer après sur  le bouton \"subscribe\" pour rejoindre notre subreddit. Tu peux rejoindre d’autre subreddits listés dans la sidebar.",
+          "https://reddit.com/r/freecodecamp"
+        ]
+      ],
+      "titleDe": "Tritt unserem Subreddit bei",
+      "descriptionDe": [
+        [
+          "//i.imgur.com/DYjJuCG.gif",
+          "Ein GIF, das dir zeigt, wie du einen Reddit Account anlegen und unserem Free Code Camp Subreddit beitreten kannst.",
+          "Unsere Community hat ihr eigenes Subreddit auf Reddit. Das ist eine sehr praktische Art und Weise, um Fragen zu stellen und Links mit unserer gesamten Community zu teilen. Wenn du noch keinen Reddit Account hast, kannst du einen in wenigen Sekunden erstellen - du brauchst nicht mal eine E-Mail Adresse. Dann kannst du den \"subscribe\" Button klicken, um unserem Subreddit beizutreten. Wenn du willst, kannst du auch jenen Subreddits folgen, die wir in unserer Sidebar gelistet haben.",          
           "https://reddit.com/r/freecodecamp"
         ]
       ]
@@ -123,6 +141,21 @@
           "Une fois identifié, tu peux visiter la publication de Free Code Camp sur Medium et cliquer sur \"follow\". Nos campers publient plusieurs articles chaque semaine.",
           "https://medium.freecodecamp.com"
         ]
+      ],
+      "titleDe": "Lese Programmier-Nachrichten auf unserer Medium Seite",
+      "descriptionDe": [
+        [
+          "//i.imgur.com/FxSOL4a.gif",
+          "Ein GIF, das dir zeigt, wie du einen Medium Account anlegen kannst.",
+          "Unsere Community hat eine Medium Seite, auf der wir viele Artikel über Software Entwicklung veröffentlichen. Wenn du noch keinen Medium Account hast, kannst du dem Link folgen und dich entweder mit einem Account aus einem Social Network oder einer E-Mail Adresse (sie senden dir eine E-Mail, die du durchklicken kannst, um dir einen Account anzulegen.). Wenn du ein Thema ausgewählt hast, das dich interessiert, kannst du den weiteren Schritten folgen.",
+          "https://www.medium.com"
+        ],
+        [
+          "//i.imgur.com/zhhywSX.gif",
+          "Ein GIF, das dir zeigt, wie du den \"follow\" Button klicken kannst, um der Free Code Camp Seite zu folgen.",
+          "Bist du erstmal eingeloggt, kannst du auf die Medium Seite von Free Code Camp gehen und den \"follow\" Button klicken. Unsere Camper veröffentlichen jede Woche mehrere Artikel.",
+          "https://medium.freecodecamp.com"
+        ]
       ]
     },
     {
@@ -156,6 +189,15 @@
           "//i.imgur.com/8rtyRY1.gif",
           "Une gif montrant comment tu peux créer un compte sur Twitch.tv et suivre notre chaîne.",
           "Nos campers codent fréquemment en direct sur Twitch.tv, un site de streaming populaire. Tu peux créer un compte en moins d’une minute, et suivre la chaîne de Free Code Camp. Une fois suivi, tu auras l’option de recevoir un email à chaque fois qu’un de nos campers est en direct. Et donc tu peux rejoindre plusieurs campers pour regarder et interagir sur le salon de chat. C’est une façon d’apprendre en regardant les autres coder.",
+          "https://twitch.tv/freecodecamp"
+        ]
+      ],
+      "titleDe": "Schaue uns auf Twitch.tv Live beim Programmieren zu",
+      "descriptionDe": [
+        [
+          "//i.imgur.com/8rtyRY1.gif",
+          "Ein GIF, das dir zeigt, wie du dich bei Twitch.tv anmelden und unserem Kanal folgen kannst.",
+          "Unsere Camper programmieren oft Live auf Twitch.tv, einer populären Streaming-Website. Du kannst in weniger als einer Minute einen Account anlegen und dann dem Kanal von Free Code Camp folgen. Wenn du dem Kanal folgst, hast du die Option E-Mail Benachrichtigungen zu bekommen, sobald einer unserer Camper live geht. Dann kannst du Dutzenden Campern folgen und ihnen beim Programmieren zusehen sowie in Chats interagieren. Das ist eine lustige und lockere Art und Weise, um von anderen Personen zu lernen, wie sie ihre Projekte umsetzen.",
           "https://twitch.tv/freecodecamp"
         ]
       ]
@@ -192,7 +234,16 @@
           "Tu peux définir un but et t’engager à verser une somme d’argent pour aider une organisation à but non lucratif chaque mois jusqu’à atteindre ton objectif. Cela va te donner une motivation externe dans ta journée d’apprentissage, mais aussi une opportunité pour aider ces organisations. Choisi un but, et un montant à verser. Quand tu vas cliquer sur \"commit\", la page des dons de l’organisation va s’ouvrir. Cette étape est optionnel, et tu peux annuler ou arrêter ton engagement à n’importe quel instant.",
           "/commit"
         ]
-      ]
+      ],
+      "titleDe": "Verpflichte dich zu einem Ziel und einer gemeinnützigen Organisation",
+      "descriptionDe": [
+        [
+          "//i.imgur.com/Og1ifsn.gif",
+          "Ein GIF, das dir zeigt, wie du dich einem Ziel auf Free Code Camp verpflichten kannst und versprichst, eine monatliche Spende an eine gemeinnützige Organisation zu entrichten, um externe Motivation zur Erreichung deines Ziels zu haben.",
+          "Du kannst dir ein Ziel setzen und versprechen, einer gemeinnützigen Organisation eine monatliche Spende zu entrichten, bis du dieses Ziel erreicht hast. Das gibt dir externe Motivation in deinem Bestreben programmieren zu lernen - und eröffnet von Anfang an die Gelegenheit gemeinnützigen Organisationen zu helfen. Wähle dein Ziel und dann eine monatliche Spende. Wenn du auf \"verpflichten\" klickst, öffnet sich die Spendenseite der gemeinnützigen Organisation in einem neuen Tab. Dieser Schritt ist optional, du kannst deine Verpflichtung jederzeit ändern oder stoppen.",
+          "/verpflichten"
+        ]
+      ]     
     }
   ]
 }
