@@ -8,9 +8,9 @@ import { createSelector } from 'reselect';
 import Map from './Map.jsx';
 import {
   clearFilter,
-  fetchChallenges,
   updateFilter
 } from '../redux/actions';
+import { fetchChallenges } from '../../../redux/actions';
 
 const bindableActions = {
   clearFilter,
@@ -18,7 +18,7 @@ const bindableActions = {
   updateFilter
 };
 const superBlocksSelector = createSelector(
-  state => state.map.superBlocks,
+  state => state.app.superBlocks,
   state => state.entities.superBlock,
   state => state.entities.block,
   state => state.entities.challenge,
@@ -28,25 +28,27 @@ const superBlocksSelector = createSelector(
         superBlocks: []
       };
     }
-    return superBlocks
-      .map(superBlockName => superBlockMap[superBlockName])
-      .map(superBlock => ({
-        ...superBlock,
-        blocks: superBlock.blocks
-          .map(blockName => blockMap[blockName])
-          .map(block => ({
-            ...block,
-            challenges: block.challenges
-              .map(dashedName => challengeMap[dashedName])
-          }))
-      }));
+    return {
+      superBlocks: superBlocks
+        .map(superBlockName => superBlockMap[superBlockName])
+        .map(superBlock => ({
+          ...superBlock,
+          blocks: superBlock.blocks
+            .map(blockName => blockMap[blockName])
+            .map(block => ({
+              ...block,
+              challenges: block.challenges
+                .map(dashedName => challengeMap[dashedName])
+            }))
+        }))
+    };
   }
 );
 
 const mapStateToProps = createSelector(
   superBlocksSelector,
   state => state.map.filter,
-  (superBlocks, filter) => {
+  ({ superBlocks }, filter) => {
     return {
       superBlocks,
       filter

@@ -3,4 +3,5 @@ export { default as actions } from './actions';
 export { default as types } from './types';
 
 import fetchUserSaga from './fetch-user-saga';
-export const sagas = [ fetchUserSaga ];
+import fetchChallengesSaga from './fetch-challenges-saga';
+export const sagas = [ fetchUserSaga, fetchChallengesSaga ];

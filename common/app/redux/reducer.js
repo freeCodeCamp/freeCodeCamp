@@ -30,6 +30,12 @@ export default handleActions(
     [types.updateNavHeight]: (state, { payload: navHeight }) => ({
       ...state,
       navHeight
+    }),
+
+    // challenges
+    [types.fetchChallengesCompleted]: (state, { payload = [] }) => ({
+      ...state,
+      superBlocks: payload
     })
   },
   {
@@ -40,6 +46,7 @@ export default handleActions(
     isSignedIn: false,
     csrfToken: '',
     windowHeight: 0,
-    navHeight: 0
+    navHeight: 0,
+    superBlocks: []
   }
 );
