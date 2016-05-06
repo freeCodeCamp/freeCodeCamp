@@ -1,9 +1,9 @@
 extends ../layout
 block content
     .text-center
-        h2 New to Free Code Camp? 
+        h2 New to Free Code Camp?
           br
-          .button-spacer  
+          .button-spacer
           | Sign up now:
         a.btn.btn-lg.btn-block.btn-social.btn-primary(href='/email-signup')
             i.fa.fa-envelope
@@ -13,7 +13,7 @@ block content
             | Sign up with GitHub
         .spacer
         hr
-        .spacer          
+        .spacer
         h2 Are you a returning camper?
           br
           .button-spacer
@@ -41,7 +41,7 @@ block content
           }
           $.each($(btnSelector), function(i, item) {
             if (
-              $(item).attr('href') === obj.methodLink &&
+              $(item).text() === obj.method &&
               $(item).hasClass(obj.methodClass)
             ) {
               $(item).addClass('active');
@@ -55,7 +55,11 @@ block content
           var obj = {};
           $(this).removeClass('active');
           obj.methodClass = $(this).attr('class').split(' ').pop();
-          obj.methodLink = $(this).attr('href');
-          localStorage.setItem('lastSigninMethod', JSON.stringify(obj));
+          obj.method = $(this).text();
+          if(obj.method === "Sign in with Email" || obj.method === "Sign in with GitHub") {
+            localStorage.setItem('lastSigninMethod', JSON.stringify(obj));
+          } else {
+            localStorage.removeItem('lastSigninMethod');
+          }
         });
       });
