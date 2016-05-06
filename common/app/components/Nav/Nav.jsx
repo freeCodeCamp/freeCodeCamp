@@ -47,7 +47,8 @@ export default class extends React.Component {
             key={ content }
             to={ link }>
             <NavItem
-              target={ target || null }>
+              target={ target || null }
+              rel="noopener noreferrer">
               { content }
             </NavItem>
           </LinkContainer>
@@ -58,7 +59,8 @@ export default class extends React.Component {
           eventKey={ index + 1 }
           href={ link }
           key={ content }
-          target={ target || null }>
+          target={ target || null }
+          rel="noopener noreferrer">
           { content }
         </NavItem>
       );

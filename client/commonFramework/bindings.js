@@ -177,11 +177,12 @@ window.common = (function(global) {
     });
 
     $('#help-ive-found-a-bug-wiki-article').on('click', function() {
-      window.open(
+      var newWindow = window.open(
         'https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/' +
           "Help-I've-Found-a-Bug",
         '_blank'
       );
+      newWindow.opener = null;
     });
 
     $('#search-issue').on('click', function() {
@@ -189,7 +190,7 @@ window.common = (function(global) {
         .toString()
         .split('?')[0]
         .replace(/(#*)$/, '');
-      window.open(
+      var newWindow = window.open(
         'https://github.com/FreeCodeCamp/FreeCodeCamp/issues?q=' +
         'is:issue is:all ' +
         (common.challengeName) +
@@ -197,6 +198,7 @@ window.common = (function(global) {
         queryIssue
           .substr(queryIssue.lastIndexOf('challenges/') + 11)
           .replace('/', ''), '_blank');
+      newWindow.opener = null;
     });
 
   });

@@ -139,14 +139,14 @@
       "id": "bd7158d8c442eddfaeb5bd18",
       "title": "Build a Tribute Page",
       "description": [
-        "<strong>Objective:</strong> Build a <a href='https://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='https://codepen.io/FreeCodeCamp/full/NNvBQW/' target='_blank'>https://codepen.io/FreeCodeCamp/full/NNvBQW/</a>.",
+        "<strong>Objective:</strong> Build a <a href='https://codepen.io' target='_blank' rel='noopener noreferrer'>CodePen.io</a> app that is functionally similar to this: <a href='https://codepen.io/FreeCodeCamp/full/NNvBQW/' target='_blank' rel='noopener noreferrer'>https://codepen.io/FreeCodeCamp/full/NNvBQW/</a>.",
         "<strong>Rule #1:</strong> Don't look at the example project's code. Figure it out for yourself.",
-        "<strong>Rule #2:</strong> Fulfill the below <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries you need. Give it your own personal style.",
+        "<strong>Rule #2:</strong> Fulfill the below <a href='https://en.wikipedia.org/wiki/User_story' target='_blank' rel='noopener noreferrer'>user stories</a>. Use whichever libraries you need. Give it your own personal style.",
         "<strong>User Story:</strong> I can view a tribute page with an image and text.",
         "<strong>User Story:</strong> I can click on a link that will take me to an external website with further information on the topic.",
-        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck.",
+        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank' rel='noopener noreferrer'>Read-Search-Ask</a> if you get stuck.",
         "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen.",
-        "You can get feedback on your project from fellow campers by sharing it in our <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Code Review Chatroom</a>. You can also share it on Twitter and your city's Campsite (on Facebook)."
+        "You can get feedback on your project from fellow campers by sharing it in our <a href='//gitter.im/freecodecamp/codereview' target='_blank' rel='noopener noreferrer'>Code Review Chatroom</a>. You can also share it on Twitter and your city's Campsite (on Facebook)."
       ],
       "releasedOn": "January 1, 2016",
       "challengeSeed": [
@@ -158,34 +158,34 @@
       "challengeType": 3,
       "titleRu": "Создайте страницу посвященную тому что вас вдохновляет",
       "descriptionRu": [
-        "<strong>Задание:</strong> Создайте приложение <a href='https://codepen.io' target='_blank'>CodePen.io</a> которое функционально соответствует вот этому: <a href='https://codepen.io/FreeCodeCamp/full/NNvBQW/' target='_blank'>https://codepen.io/FreeCodeCamp/full/NNvBQW/</a>.",
+        "<strong>Задание:</strong> Создайте приложение <a href='https://codepen.io' target='_blank' rel='noopener noreferrer'>CodePen.io</a> которое функционально соответствует вот этому: <a href='https://codepen.io/FreeCodeCamp/full/NNvBQW/' target='_blank' rel='noopener noreferrer'>https://codepen.io/FreeCodeCamp/full/NNvBQW/</a>.",
         "<strong>Правило #1:</strong> Не подсматривайте код приведенного на CodePen примера. Напишите его самостоятельно.",
-        "<strong>Правило #2:</strong> Реализуйте следующие <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>пользовательские истории</a>. Используйте любые библиотеки, которые потребуются. Оформите приложение в вашем собственном стиле.",
+        "<strong>Правило #2:</strong> Реализуйте следующие <a href='https://en.wikipedia.org/wiki/User_story' target='_blank' rel='noopener noreferrer'>пользовательские истории</a>. Используйте любые библиотеки, которые потребуются. Оформите приложение в вашем собственном стиле.",
         "<strong>Пользовательская история:</strong> Я могу видеть на странице изображение и текст.",
         "<strong>Пользовательская история:</strong> Я могу нажать на ссылку, которая ведет на внешнюю страницу с дополнительной информацией по теме.",
-        "Если что-то не получается, воспользуйтесь <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a>.",
+        "Если что-то не получается, воспользуйтесь <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank' rel='noopener noreferrer'>Read-Search-Ask</a>.",
         "Когда выполните задание кликните кнопку \"I've completed this challenge\" и добавьте ссылку на ваш CodePen.",
-        "Вы можете получить отзыв о вашем проекте от коллег, поделившись ссылкой на него в нашем <a href='//gitter.im/freecodecamp/codereview' target='_blank'>чате для рассмотрения кода</a>. Также вы можете поделиться ею через Twitter и на странице Free Code Camp вашего города на Facebook."
+        "Вы можете получить отзыв о вашем проекте от коллег, поделившись ссылкой на него в нашем <a href='//gitter.im/freecodecamp/codereview' target='_blank' rel='noopener noreferrer'>чате для рассмотрения кода</a>. Также вы можете поделиться ею через Twitter и на странице Free Code Camp вашего города на Facebook."
       ],
       "titleEs": "Construye una página Tributo",
       "descriptionEs": [
-        "<strong>Objetivo:</strong> Crea una aplicación con <a href='https://codepen.io' target='_blank'>CodePen.io</a> que funcionalmente sea similar a esta: <a href='https://codepen.io/FreeCodeCamp/full/NNvBQW/' target='_blank'>https://codepen.io/FreeCodeCamp/full/NNvBQW/</a>",
+        "<strong>Objetivo:</strong> Crea una aplicación con <a href='https://codepen.io' target='_blank' rel='noopener noreferrer'>CodePen.io</a> que funcionalmente sea similar a esta: <a href='https://codepen.io/FreeCodeCamp/full/NNvBQW/' target='_blank' rel='noopener noreferrer'>https://codepen.io/FreeCodeCamp/full/NNvBQW/</a>",
         "<strong>Regla #1:</strong> No veas el código del proyecto de ejemplo. Encuentra la forma de hacerlo por tu cuenta.",
-        "<strong>Regla #2:</strong> Satisface las siguientes <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>historias de usuario</a>. Usa cualquier librería que necesites. Dale tu estilo personal.",
+        "<strong>Regla #2:</strong> Satisface las siguientes <a href='https://en.wikipedia.org/wiki/User_story' target='_blank' rel='noopener noreferrer'>historias de usuario</a>. Usa cualquier librería que necesites. Dale tu estilo personal.",
         "<strong>Historia de usuario:</strong> Puedo ver una página tributo con una imagen y texto.",
         "<strong>Historia de usuario:</strong> Puedo pulsar en un enlace que me llevará a un sitio web externo con mayor información sobre el tema.",
-        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado.",
+        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank' rel='noopener noreferrer'>Leer-Buscar-Preguntar</a> si te sientes atascado.",
         "Cuando hayas terminado, pulsa el botón \"I've completed this challenge\" e incluye un link a tu CodePen. ",
-        "Puedes obtener retroalimentación sobre tu proyecto por parte de otros campistas, compartiéndolo en nuestra <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Sala de chat para revisión de código</a>. También puedes compartirlo en Twitter y en el campamento de tu ciudad (en Facebook)."
+        "Puedes obtener retroalimentación sobre tu proyecto por parte de otros campistas, compartiéndolo en nuestra <a href='//gitter.im/freecodecamp/codereview' target='_blank' rel='noopener noreferrer'>Sala de chat para revisión de código</a>. También puedes compartirlo en Twitter y en el campamento de tu ciudad (en Facebook)."
       ]
     },
     {
       "id": "bd7158d8c242eddfaeb5bd13",
       "title": "Build a Personal Portfolio Webpage",
       "description": [
-        "<strong>Objective:</strong> Build a <a href='https://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='https://codepen.io/FreeCodeCamp/full/YqLyXB/' target='_blank'>https://codepen.io/FreeCodeCamp/full/YqLyXB/</a>.",
+        "<strong>Objective:</strong> Build a <a href='https://codepen.io' target='_blank' rel='noopener noreferrer'>CodePen.io</a> app that is functionally similar to this: <a href='https://codepen.io/FreeCodeCamp/full/YqLyXB/' target='_blank' rel='noopener noreferrer'>https://codepen.io/FreeCodeCamp/full/YqLyXB/</a>.",
         "<strong>Rule #1:</strong> Don't look at the example project's code. Figure it out for yourself.",
-        "<strong>Rule #2:</strong> Fulfill the below <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries you need. Give it your own personal style.",
+        "<strong>Rule #2:</strong> Fulfill the below <a href='https://en.wikipedia.org/wiki/User_story' target='_blank' rel='noopener noreferrer'>user stories</a>. Use whichever libraries you need. Give it your own personal style.",
         "<strong>Rule #3:</strong> You can use Bootstrap, or any other framework of your choice.",
         "<strong>User Story:</strong> I can access all of the portfolio webpage's content just by scrolling.",
         "<strong>User Story:</strong> I can click different buttons that will take me to the portfolio creator's different social media pages.",
@@ -194,9 +194,9 @@
         "Don't worry if you don't have anything to showcase on your portfolio yet - you will build several apps on the next few CodePen challenges, and can come back and update your portfolio later.",
         "There are many great portfolio templates out there, but for this challenge, you'll need to build a portfolio page yourself. Using Bootstrap will make this much easier for you.",
         "Note that CodePen.io overrides the Window.open() function, so if you want to open windows using jQuery, you will need to target invisible anchor elements like this one: <code>&lt;a target='_blank'&gt;</a></code>.",
-        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck.",
+        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank' rel='noopener noreferrer'>Read-Search-Ask</a> if you get stuck.",
         "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen. ",
-        "You can get feedback on your project from fellow campers by sharing it in our <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Code Review Chatroom</a>. You can also share it on Twitter and your city's Campsite (on Facebook)."
+        "You can get feedback on your project from fellow campers by sharing it in our <a href='//gitter.im/freecodecamp/codereview' target='_blank' rel='noopener noreferrer'>Code Review Chatroom</a>. You can also share it on Twitter and your city's Campsite (on Facebook)."
       ],
       "challengeSeed": [
         "V72o34gY4Lw"
@@ -207,9 +207,9 @@
       "challengeType": 3,
       "titleRu": "Создайте сайт-портфолио",
       "descriptionRu": [
-        "<strong>Задание:</strong> Создайте приложение <a href='https://codepen.io' target='_blank'>CodePen.io</a> которое функционально соответствует вот этому: <a href='https://codepen.io/FreeCodeCamp/full/QNmvEL/' target='_blank'>https://codepen.io/FreeCodeCamp/full/QNmvEL/</a>.",
+        "<strong>Задание:</strong> Создайте приложение <a href='https://codepen.io' target='_blank' rel='noopener noreferrer'>CodePen.io</a> которое функционально соответствует вот этому: <a href='https://codepen.io/FreeCodeCamp/full/QNmvEL/' target='_blank' rel='noopener noreferrer'>https://codepen.io/FreeCodeCamp/full/QNmvEL/</a>.",
         "<strong>Правило #1:</strong> Не подсматривайте код приведенного на CodePen примера. Напишите его самостоятельно.",
-        "<strong>Правило #2:</strong> Реализуйте следующие <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>пользовательские истории</a>. Используйте любые библиотеки, которые потребуются. Оформите приложение в вашем собственном стиле.",
+        "<strong>Правило #2:</strong> Реализуйте следующие <a href='https://en.wikipedia.org/wiki/User_story' target='_blank' rel='noopener noreferrer'>пользовательские истории</a>. Используйте любые библиотеки, которые потребуются. Оформите приложение в вашем собственном стиле.",
         "<strong>Пользовательская история:</strong> Я могу получить доступ ко всей информации на странице просто прокрутив ее сверху вниз.",
         "<strong>Пользовательская история:</strong> Я могу нажать на различные кнопки и перейти к социальным страницам владельца портфолио.",
         "<strong>Пользовательская история:</strong> Я могу увидеть эскизы проектов созданных владельцем портфолио (используйте временную картинку если у вас пока нет собственных веб-страниц).",
@@ -217,15 +217,15 @@
         "Не переживайте если вам пока нечего показать в портфолио - вы создадите несколько веб приложений в следующих заданиях, а затем вернетесь и обновите портфолио.",
         "В сети существует много шаблонов для портфолио, но в этом задании вам необходимо создать собственную уникальную страницу. Используя Bootstrap, сделать это будет намного проще.",
         "Обратите внимание, что CodePen.io переопределяет функцию Window.open(), поэтому, если вы хотите открывать окна используя jQuery, необходимо будет адресовать невидимые якорные элементы, такие как этот: <code>&lt;a target='_blank'&rt;</a></code>.",
-        "Если что-то не получается, воспользуйтесь <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a>.",
+        "Если что-то не получается, воспользуйтесь <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank' rel='noopener noreferrer'>Read-Search-Ask</a>.",
         "Когда выполните задание кликните кнопку \"I've completed this challenge\" и добавьте ссылку на ваш CodePen.",
-        "Вы можете получить отзыв о вашем проекте от коллег, поделившись ссылкой на него в нашем <a href='//gitter.im/freecodecamp/codereview' target='_blank'>чате для рассмотрения кода</a>. Также вы можете поделиться ею через Twitter и на странице Free Code Camp вашего города на Facebook."
+        "Вы можете получить отзыв о вашем проекте от коллег, поделившись ссылкой на него в нашем <a href='//gitter.im/freecodecamp/codereview' target='_blank' rel='noopener noreferrer'>чате для рассмотрения кода</a>. Также вы можете поделиться ею через Twitter и на странице Free Code Camp вашего города на Facebook."
       ],
       "titleEs": "Construye una página web para tu portafolio",
       "descriptionEs": [
-        "<strong>Objetivo:</strong> Crea una aplicación con <a href='https://codepen.io' target='_blank'>CodePen.io</a> cuya funcionalidad sea similar a la de esta: <a href='https://codepen.io/FreeCodeCamp/full/QNmvEL/' target='_blank'>https://codepen.io/FreeCodeCamp/full/QNmvEL/</a>.",
+        "<strong>Objetivo:</strong> Crea una aplicación con <a href='https://codepen.io' target='_blank' rel='noopener noreferrer'>CodePen.io</a> cuya funcionalidad sea similar a la de esta: <a href='https://codepen.io/FreeCodeCamp/full/QNmvEL/' target='_blank' rel='noopener noreferrer'>https://codepen.io/FreeCodeCamp/full/QNmvEL/</a>.",
         "<strong>Regla #1:</strong> No veas el código del proyecto de ejemplo. Encuentra la forma de hacerlo por tu cuenta.",
-        "<strong>Regla #2:</strong> Satisface las siguientes <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>historias de usuario</a>. Usa cualquier librería que necesites. Dale tu estilo personal.",
+        "<strong>Regla #2:</strong> Satisface las siguientes <a href='https://en.wikipedia.org/wiki/User_story' target='_blank' rel='noopener noreferrer'>historias de usuario</a>. Usa cualquier librería que necesites. Dale tu estilo personal.",
         "<strong>Historia de usuario:</strong> Puedo acceder a todo el contenido de la página del portafolio con sólo desplazarme en la ventana.",
         "<strong>Historia de usuario:</strong> Puedo pulsar diferentes botones que me llevarán a las páginas de las diferentes cuentas de redes sociales del creador del portafolio.",
         "<strong>Historia de usuario:</strong> Puedo ver una imagenes en miniatura de los diferentes proyectos que el creador del portafolio ha construido (si no has construido ningún sitio web antes, usa marcadores de posición.)",
@@ -233,9 +233,9 @@
         "No te preocupes si no tienes nada que mostrar en tu portafolio todavía - en los siguientes desafíos crearás varias aplicaciones en CodePen, así que puedes regresar luego para actualizar tu portafolio.",
         "Hay varias plantillas buenas, pero para este desafío, tendrás que construir la página web de tu portafolio completamente por tu cuenta. Usar Bootstrap hará el trabajo mucho más fácil para ti.",
         "Ten en mente que CodePen.io ignora la función Window.open(), así que si quieres abrir alguna ventana usando jQuery, necesitarás utilizar como objetivo un elemento de ancla invisible como el siguiente: <code>&lt;a target='_blank'&gt;</a></code>.",
-        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado.",
+        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank' rel='noopener noreferrer'>Leer-Buscar-Preguntar</a> si te sientes atascado.",
         "Cuando hayas terminado, pulsa el botón \"I've completed this challenge\" e incluye un link a tu CodePen. ",
-        "Puedes obtener retroalimentación sobre tu proyecto por parte de otros campistas, compartiéndolo en nuestra <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Sala de chat para revisión de código</a>. También puedes compartirlo en Twitter y en el campamento de tu ciudad (en Facebook)."
+        "Puedes obtener retroalimentación sobre tu proyecto por parte de otros campistas, compartiéndolo en nuestra <a href='//gitter.im/freecodecamp/codereview' target='_blank' rel='noopener noreferrer'>Sala de chat para revisión de código</a>. También puedes compartirlo en Twitter y en el campamento de tu ciudad (en Facebook)."
       ]
     }
   ]

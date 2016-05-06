@@ -44,11 +44,12 @@ window.common = (function({ common = { init: [] } }) {
       textMessage = encodeURIComponent(textMessage);
 
       $('#issue-modal').modal('hide');
-      window.open(
+      var newWindow = window.open(
         'https://github.com/freecodecamp/freecodecamp/issues/new?&body=' +
           textMessage,
         '_blank'
       );
+      newWindow.opener = null;
     });
   });
 

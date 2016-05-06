@@ -28,7 +28,7 @@ block content
                                         #MDN-links
                                             p Here are some helpful links:
                                             for link, index in MDNlinks
-                                                ul: li: a(href="" + link, target="_blank") !{MDNkeys[index]}
+                                                ul: li: a(href="" + link, target="_blank", rel='noopener noreferrer') !{MDNkeys[index]}
                                     .button-spacer
                     if (user)
                         form.form-horizontal(novalidate='novalidate', name='completedWithForm')

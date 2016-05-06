@@ -30,11 +30,11 @@ block content
                 img.img-center.img-responsive.public-profile-img(src='https://s3.amazonaws.com/freecodecamp/camper-image-placeholder.png')
             h1.text-center.negative-5.profile-social-icons
                 if (twitter)
-                    a.fa.fa-twitter-square.text-primary(title="@#{username}'s Twitter Profile", href='https://twitter.com/' + twitter, target='_blank')
+                    a.fa.fa-twitter-square.text-primary(title="@#{username}'s Twitter Profile", href='https://twitter.com/' + twitter, target='_blank', rel='noopener noreferrer')
                 if (github)
-                    a.fa.fa-github-square.text-primary(title="@#{username}'s GitHub Profile", href=github, target='_blank')
+                    a.fa.fa-github-square.text-primary(title="@#{username}'s GitHub Profile", href=github, target='_blank', rel='noopener noreferrer')
                 if (linkedin)
-                    a.fa.fa-linkedin-square.text-primary(title="@#{username}'s LinkedIn Profile", href=linkedin, target='_blank')
+                    a.fa.fa-linkedin-square.text-primary(title="@#{username}'s LinkedIn Profile", href=linkedin, target='_blank', rel='noopener noreferrer')
             h1.flat-top.wrappable= name
             h1.flat-top.wrappable= location
             h1.flat-top.text-primary= "[ " + (progressTimestamps.length) + " ]"
@@ -42,7 +42,7 @@ block content
                 .spacer
                   h4
                     | This camper has committed to giving $#{pledge.amount} to
-                    a(href='#{pledge.donateUrl}?ref=freecodecamp.com' target='_blank')  #{pledge.displayName}
+                    a(href='#{pledge.donateUrl}?ref=freecodecamp.com' target='_blank' rel='noopener noreferrer')  #{pledge.displayName}
                     |  each month until they have completed their #{pledge.goal}.
                 .spacer
             .row
@@ -117,13 +117,13 @@ block content
                           for challenge in projects
                               tr
                                   td.col-xs-5.hidden-xs
-                                      a(href='/challenges/' + removeOldTerms(challenge.name), target='_blank')= removeOldTerms(challenge.name)
+                                      a(href='/challenges/' + removeOldTerms(challenge.name), target='_blank', rel='noopener noreferrer')= removeOldTerms(challenge.name)
                                   td.col-xs-2.hidden-xs= challenge.completedDate ? challenge.completedDate : 'Not Available'
                                   td.col-xs-2.hidden-xs= challenge.lastUpdated ? challenge.lastUpdated : ''
                                   td.col-xs-2.hidden-xs
-                                      a(href=challenge.solution, target='_blank') View project
+                                      a(href=challenge.solution, target='_blank', rel='noopener noreferrer') View project
                                   td.col-xs-12.visible-xs
-                                      a(href=challenge.solution, target='_blank')= removeOldTerms(challenge.name)
+                                      a(href=challenge.solution, target='_blank', rel='noopener noreferrer')= removeOldTerms(challenge.name)
               if (algorithms.length > 0)
                   .col-sm-12
                       table.table.table-striped
@@ -140,12 +140,12 @@ block content
                                   td.col-xs-2.hidden-xs= challenge.lastUpdated ? challenge.lastUpdated : ''
                                   td.col-xs-2.hidden-xs
                                     if (challenge.solution)
-                                        a(href='/challenges/' + removeOldTerms(challenge.name) + '?solution=' + encodeURIComponent(encodeFcc(challenge.solution)), target='_blank') View solution
+                                        a(href='/challenges/' + removeOldTerms(challenge.name) + '?solution=' + encodeURIComponent(encodeFcc(challenge.solution)), target='_blank', rel='noopener noreferrer') View solution
                                     else
                                         a(href='/challenges/' + removeOldTerms(challenge.name)) View this challenge
                                   td.col-xs-12.visible-xs
                                     if (challenge.solution)
-                                        a(href='/challenges/' + removeOldTerms(challenge.name) + '?solution=' + encodeURIComponent(encodeFcc(challenge.solution)), target='_blank')= removeOldTerms(challenge.name)
+                                        a(href='/challenges/' + removeOldTerms(challenge.name) + '?solution=' + encodeURIComponent(encodeFcc(challenge.solution)), target='_blank', rel='noopener noreferrer')= removeOldTerms(challenge.name)
                                     else
                                         a(href='/challenges/' + removeOldTerms(challenge.name))= removeOldTerms(challenge.name)
               if (challenges.length > 0)
@@ -164,11 +164,11 @@ block content
                                   td.col-xs-2.hidden-xs= challenge.lastUpdated ? challenge.lastUpdated : ''
                                   td.col-xs-2.hidden-xs
                                     if (challenge.solution)
-                                        a(href='/challenges/' + removeOldTerms(challenge.name) + '?solution=' + encodeURIComponent(encodeFcc(challenge.solution)), target='_blank') View solution
+                                        a(href='/challenges/' + removeOldTerms(challenge.name) + '?solution=' + encodeURIComponent(encodeFcc(challenge.solution)), target='_blank', rel='noopener noreferrer') View solution
                                     else
                                         a(href='/challenges/' + removeOldTerms(challenge.name)) View this challenge
                                   td.col-xs-12.visible-xs
                                     if (challenge.solution)
-                                        a(href='/challenges/' + removeOldTerms(challenge.name) + '?solution=' + encodeURIComponent(encodeFcc(challenge.solution)), target='_blank')= removeOldTerms(challenge.name)
+                                        a(href='/challenges/' + removeOldTerms(challenge.name) + '?solution=' + encodeURIComponent(encodeFcc(challenge.solution)), target='_blank', rel='noopener noreferrer')= removeOldTerms(challenge.name)
                                     else
                                         a(href='/challenges/' + removeOldTerms(challenge.name))= removeOldTerms(challenge.name)
