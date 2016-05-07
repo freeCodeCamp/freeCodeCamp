@@ -4,6 +4,7 @@ import moment from 'moment';
 import dedent from 'dedent';
 import debugFactory from 'debug';
 import { isEmail } from 'validator';
+import path from 'path';
 
 import { saveUser, observeMethod } from '../../server/utils/rx';
 import { blacklistedUsernames } from '../../server/utils/constants';
@@ -89,7 +90,7 @@ module.exports = function(User) {
         'You\'re email has been confirmed!'
       ]
     });
-    ctx.res.redirect('/email-signin');
+    ctx.res.redirect('/');
   });
 
   User.beforeRemote('create', function({ req, res }, _, next) {
@@ -340,7 +341,52 @@ module.exports = function(User) {
             new Error(`${email} is already associated with another account.`)
           );
         }
-        return this.update$({ email }).toPromise();
+
+        const emailVerified = false;
+        return this.update$({
+          email, emailVerified
+        })
+        .do(() => {
+          this.email = email;
+          this.emailVerified = emailVerified;
+        })
+        .flatMap(() => {
+          var mailOptions = {
+            type: 'email',
+            to: email,
+            from: 'Team@freecodecamp.com',
+            subject: 'Welcome to Free Code Camp!',
+            template: path.join(
+              __dirname,
+              '..',
+              '..',
+              'server',
+              'views',
+              'emails',
+              'user-email-verify.ejs'
+            )
+          };
+          return this.verify(mailOptions).then(
+            (data) => {
+              if (data) {
+                return Promise.resolve(
+                  dedent`
+                    Your email has been updated successfully, Please
+                     follow the link we sent you, to confirm.
+                `);
+              }
+              return Promise.reject(
+                'Oops, something went wrong, please try again later'
+              );
+            },
+            (error) => {
+              debug(error);
+              return Promise.reject(
+                'Oops, something went wrong, please try again later'
+              );
+            }
+          );
+        }).toPromise();
       });
   };
 
@@ -358,8 +404,8 @@ module.exports = function(User) {
       ],
       returns: [
         {
-          arg: 'status',
-          type: 'object'
+          arg: 'message',
+          type: 'string'
         }
       ],
       http: {
@@ -486,52 +532,11 @@ module.exports = function(User) {
     }
   );
 
-  User.prototype.updateEmail = function updateEmail(email) {
-    if (this.email && this.email === email) {
-      return Promise.reject(new Error(
-        `${email} is already associated with this account.`
-      ));
-    }
-    return User.doesExist(null, email)
-      .then(exists => {
-        if (exists) {
-          return Promise.reject(
-            new Error(`${email} is already associated with another account.`)
-          );
-        }
-        return this.update$({ email }).toPromise();
-      });
-  };
-
-  User.remoteMethod(
-    'updateEmail',
-    {
-      isStatic: false,
-      description: 'updates the email of the user object',
-      accepts: [
-        {
-          arg: 'email',
-          type: 'string',
-          required: true
-        }
-      ],
-      returns: [
-        {
-          arg: 'status',
-          type: 'object'
-        }
-      ],
-      http: {
-        path: '/update-email',
-        verb: 'POST'
-      }
-    }
-  );
-
   User.themes = {
     night: true,
     default: true
   };
+
   User.prototype.updateTheme = function updateTheme(theme) {
     if (!this.constructor.themes[theme]) {
       const err = new Error(

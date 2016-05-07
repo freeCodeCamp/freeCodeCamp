@@ -46,10 +46,10 @@ block content
               }
           })
           .done(data =>{
-            if(data.status && data.status.count){
-              $('#flash-content').html("Your email has been updated successfully!");
+            if(data && data.message){
+              $('#flash-content').html(data.message);
               $('#flash-board')
-                  .removeClass('alert-danger')
+                  .removeClass('alert-info')
                   .addClass('alert-success')
                   .fadeIn();
             }
