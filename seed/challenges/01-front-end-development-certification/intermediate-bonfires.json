@@ -550,7 +550,8 @@
       "type": "bonfire",
       "MDNlinks": [
         "RegExp",
-        "HTML Entities"
+        "HTML Entities",
+        "String.replace()"
       ],
       "isRequired": true,
       "challengeType": 5,
