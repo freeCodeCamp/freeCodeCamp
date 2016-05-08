@@ -15,16 +15,16 @@
 
 #### Type of Change
 <!-- What type of change does your code introduce? Put an `x` in the box that applies. -->
-- [ ] Bug fix (non-breaking change which fixes an issue)
-- [ ] New feature (non-breaking change which adds functionality)
-- [ ] Breaking change (fix or feature that would cause existing functionality to change)
+- [ ] Small bug fix (non-breaking change which fixes an issue)
+- [ ] New feature (non-breaking change which adds new functionality)
+- [ ] Breaking change (fix or feature that would change existing functionality)
 - [ ] Add new translation (feature adding new translations)
 
 #### Checklist:
 <!-- Go over all points below, and put an `x` in all the boxes that apply. -->
-<!-- If you're unsure about any of these, don't hesitate to ask. We're here to help! -->
+<!-- If you're unsure about any of these, don't hesitate to ask in the Help Contributors room linked above. We're here to help! -->
 - [ ] Tested changes locally.
-- [ ] Closes currently open issue (`Closes #XXXX`): Closes 
+- [ ] Closes currently open issue (e.g. `Closes #XXXX`): Closes 
 
 #### Description
 <!-- Describe your changes in detail -->
