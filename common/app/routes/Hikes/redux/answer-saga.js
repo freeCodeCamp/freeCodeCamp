@@ -21,7 +21,7 @@ function handleAnswer(getState, dispatch, next, action) {
   const state = getState();
   const { id, name, challengeType, tests } = getCurrentHike(state);
   const {
-    app: { isSignedIn },
+    app: { isSignedIn, csrfToken },
     hikesApp: {
       currentQuestion,
       delta = [ 0, 0 ]
@@ -76,7 +76,7 @@ function handleAnswer(getState, dispatch, next, action) {
 
   let updateUser$;
   if (isSignedIn) {
-    const body = { id, name, challengeType: +challengeType };
+    const body = { id, name, challengeType: +challengeType, _csrf: csrfToken };
     updateUser$ = postJSON$('/completed-challenge', body)
       // if post fails, will retry once
       .retry(3)

@@ -18,8 +18,10 @@ import render from '../common/app/utils/render';
 const log = debug('fcc:client');
 const DOMContainer = document.getElementById('fcc');
 const initialState = window.__fcc__.data;
+const csrfToken = window.__fcc__.csrf.token;
+initialState.app.csrfToken = csrfToken;
 
-const serviceOptions = { xhrPath: '/services' };
+const serviceOptions = { xhrPath: '/services', context: { _csrf: csrfToken } };
 
 Rx.config.longStackSupport = !!debug.enabled;
 const history = createHistory();
