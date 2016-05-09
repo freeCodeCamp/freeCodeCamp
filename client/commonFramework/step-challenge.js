@@ -125,7 +125,7 @@ window.common = (function({ $, common = { init: [] }}) {
         // assume api returns string when fails
         return $el.parent()
           .find('.disabled')
-          .replaceWith('<p>' + data + '</p>');
+          .replaceWith('<p class="col-sm-4 col-xs-12">' + data + '</p>');
       })
       .fail(function() {
         console.log('failed');
