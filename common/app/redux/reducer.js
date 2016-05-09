@@ -30,6 +30,7 @@ export default handleActions(
     username: null,
     picture: null,
     points: 0,
-    isSignedIn: false
+    isSignedIn: false,
+    csrfToken: ''
   }
 );
