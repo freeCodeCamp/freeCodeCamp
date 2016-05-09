@@ -10,13 +10,15 @@ import {
   clearFilter,
   updateFilter
 } from '../redux/actions';
-import { fetchChallenges } from '../../../redux/actions';
+import { setChallenge, fetchChallenges } from '../../../redux/actions';
 
 const bindableActions = {
   clearFilter,
   fetchChallenges,
-  updateFilter
+  updateFilter,
+  setChallenge
 };
+
 const superBlocksSelector = createSelector(
   state => state.app.superBlocks,
   state => state.entities.superBlock,
@@ -69,7 +71,8 @@ export class ShowMap extends PureComponent {
     clearFilter: PropTypes.func,
     filter: PropTypes.string,
     superBlocks: PropTypes.array,
-    updateFilter: PropTypes.func
+    updateFilter: PropTypes.func,
+    setChallenge: PropTypes.func
   };
 
   render() {

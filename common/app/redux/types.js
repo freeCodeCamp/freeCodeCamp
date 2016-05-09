@@ -19,9 +19,11 @@ export default createTypes([
   'updateChallengesData',
   'updateJobsData',
   'updateHikesData',
+
   // challenges
-
-
+  'fetchChallenge',
   'fetchChallenges',
-  'fetchChallengesCompleted'
+  'fetchChallengeCompleted',
+  'fetchChallengesCompleted',
+  'setChallenge'
 ], 'app');

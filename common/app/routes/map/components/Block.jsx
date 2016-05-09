@@ -11,10 +11,11 @@ export default class Block extends PureComponent {
   static propTypes = {
     title: PropTypes.string,
     time: PropTypes.string,
-    challenges: PropTypes.array
+    challenges: PropTypes.array,
+    setChallenge: PropTypes.func
   };
 
-  renderChallenges(challenges) {
+  renderChallenges(challenges, setChallenge) {
     if (!Array.isArray(challenges) || !challenges.length) {
       return <div>No Challenges Found</div>;
     }
@@ -48,13 +49,16 @@ export default class Block extends PureComponent {
           className={ challengeClassName }
           key={ title }>
           <Link to={ `/challenges/${dashedName}` }>
-            { title }
-            <span className='sr-only'>complete</span>
-            {
-              isRequired ?
-                <span className='text-primary'><strong>*</strong></span> :
-                ''
-            }
+            <span
+              onClick={ () => setChallenge(challenge) }>
+              { title }
+              <span className='sr-only'>complete</span>
+              {
+                isRequired ?
+                  <span className='text-primary'><strong>*</strong></span> :
+                  ''
+              }
+            </span>
           </Link>
         </p>
       );
@@ -62,7 +66,7 @@ export default class Block extends PureComponent {
   }
 
   render() {
-    const { title, time, challenges } = this.props;
+    const { title, time, challenges, setChallenge } = this.props;
     return (
       <Panel
         bsClass='map-accordion-panel-nested'
@@ -76,7 +80,7 @@ export default class Block extends PureComponent {
         }
         id={ title }
         key={ title }>
-        { this.renderChallenges(challenges) }
+        { this.renderChallenges(challenges, setChallenge) }
       </Panel>
     );
   }
