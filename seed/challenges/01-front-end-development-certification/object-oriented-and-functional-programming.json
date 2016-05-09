@@ -567,7 +567,7 @@
       "description": [
         "You can use the <code>split</code> method to split a string into an array.",
         "<code>split</code> uses the argument you pass in as a delimiter to determine which points the string should be split at.",
-        "Here is an example of <code>split</code> being used to split an array at every <code>s</code> character:",
+        "Here is an example of <code>split</code> being used to split a string at every <code>s</code> character:",
         "<code>var array = string.split('s');</code>",
         "Use <code>split</code> to create an array of words from <code>string</code> and assign it to <code>array</code>."
       ],
