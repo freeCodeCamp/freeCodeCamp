@@ -45,7 +45,7 @@
       ],
       "tests": [
         "assert(code.match(/<\\/script\\s*>/g) && code.match(/<script(\\sasync|\\sdefer)*(\\s(charset|src|type)\\s*=\\s*[\"\\']+[^\"\\']*[\"\\']+)*(\\sasync|\\sdefer)*\\s*>/g) && code.match(/<\\/script\\s*>/g).length === code.match(/<script(\\sasync|\\sdefer)*(\\s(charset|src|type)\\s*=\\s*[\"\\']+[^\"\\']*[\"\\']+)*(\\sasync|\\sdefer)*\\s*>/g).length, 'message: Create a <code>script</code> element making sure it is valid and has a closing tag.');",
-        "assert(code.match(/\\$\\s*?\\(\\s*?document\\)\\.ready\\s*?\\(\\s*?function\\s*?\\(\\s*?\\)\\s*?\\{/g), 'message: You should add <code>$&#40;document&#41;.ready&#40;function&#40;&#41; {</code> to the beginning of your <code>script</code> element.');",
+        "assert(code.match(/\\$\\s*?\\(\\s*?document\\s*?\\)\\.ready\\s*?\\(\\s*?function\\s*?\\(\\s*?\\)\\s*?\\{/g), 'message: You should add <code>$&#40;document&#41;.ready&#40;function&#40;&#41; {</code> to the beginning of your <code>script</code> element.');",
         "assert(code.match(/\\n*?\\s*?\\}\\s*?\\);/g), 'message: Close your <code>$&#40;document&#41;.ready&#40;function&#40;&#41; {</code> function with <code>}&#41;;</code>');"
       ],
       "type": "waypoint",
@@ -200,10 +200,10 @@
       "titleDe": "Elemente anhand von Klassen mit jQuery auswählen",
       "descriptionDe": [
         "Siehst du, wie wir alle deine <code>Button</code> Elemente hüpfen haben lassen? Wir haben sie mit <code>$(\"button\")</code> ausgewählt, dann CSS-Klassen mit <code>.addClass(\"animated bounce\");</code> hinzugefügt.",
-        "Du hast gerade jQuery's <code>.addClass()</code> Funktion genutzt, die dir erlaubt, Klassen zu Elemente hinzuzufügen.",        
+        "Du hast gerade jQuery's <code>.addClass()</code> Funktion genutzt, die dir erlaubt, Klassen zu Elemente hinzuzufügen.",
         "Wähle als erstes deine <code>div</code> Elemente mit der Klasse <code>well</code>, indem du den <code>$(\".well\")</code> Selektor nutzt.",
         "Bedenke, dass du - genauso wie bei CSS-Deklarationen - einen <code>.</code> vor den Namen der Klasse setzen musst.",
-        "Dann nutze die jQuery Funktion <code>.addClass()</code> um die Klassen <code>animated</code> und <code>shake</code> hinzuzufügen.",       
+        "Dann nutze die jQuery Funktion <code>.addClass()</code> um die Klassen <code>animated</code> und <code>shake</code> hinzuzufügen.",
         "Zum Beispiel könntest du alle Elemente mit der Klasse <code>text-primary</code> schütteln lassen, indem du folgendes zu deiner <code>Document Ready Funktion</code> hinzufügst:",
         "<code>$(\".text-primary\").addClass(\"animated shake\");</code>"
       ]
@@ -467,7 +467,7 @@
         "Vamos a quitar la clase <code>btn-default</code> de todos nuestros elementos <code>button</code>."
       ],
       "titleDe": "Entferne Klassen von einem Element mit jQuery",
-      "descriptionDe": [  
+      "descriptionDe": [
         "Genauso wie du Klassen mit der jQuery Funktion <code>addClass()</code> hinzufügen kannst, kannst du mit der jQuery Funktion <code>removeClass()</code> Klassen entfernen.",
         "So könntest du das bei einem spezifischen Button machen:",
         "<code>$(\"#target2\").removeClass(\"btn-default\");</code>",
@@ -1029,7 +1029,7 @@
         "Da a todos los hijos de tu elemento <code>right-well</code> el color naranja."
       ],
       "titleDe": "Wähle Kinder-Elemente mit jQuery aus",
-      "descriptionDe": [          
+      "descriptionDe": [
         "Viele HTML-Elemente haben <code>Kinder-Elemente</code>, die ihre Eigenschaften von ihren Eltern-Elementen <code>erben</code>.",
         "Zum Beispiel ist jedes HTML-Element ein Kind-Element des <code>body</code> Elements und dein <code>\"jQuery Playground\"</code> <code>h3</code> Element ist ein Kind-Element deines <code>&#60;div class=\"container-fluid\"&#62</code> Elements.",
         "jQuery hat eine Funktion namens <code>children()</code>, die es dir erlaubt, auf die Kinder-Elemente des von dir ausgewählten Elements zuzugreifen.",
@@ -1249,8 +1249,8 @@
         "Pero vamos a hacer algo más dramático. Añade las clases <code>animated</code> y <code>hinge</code> a tu elemento <code>body</code>."
       ],
       "titleDe": "Mit jQuery die gesamte Seite modifizieren",
-      "descriptionDe": [   
-        "Genug mit unserem jQuery Spielplatz herumgespielt. Reißen wir ihn ein!", 
+      "descriptionDe": [
+        "Genug mit unserem jQuery Spielplatz herumgespielt. Reißen wir ihn ein!",
         "jQuery kann auch das <code>body</code> Element auswählen.",
         "Hier siehst du, wie wir den gesamten <code>body</code> Bereich ausblenden können: <code> $(\"body\").addClass(\"animated fadeOut\");</code>",
         "Aber lass uns noch etwas Dramatischeres machen. Füge die Klassen <code>animated</code> und <code>hinge</code> zu deinem <code>body</code> Element hinzu."
