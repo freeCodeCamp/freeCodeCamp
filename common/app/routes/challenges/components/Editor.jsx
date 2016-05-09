@@ -28,11 +28,18 @@ const options = {
 export class Editor extends PureComponent {
   static displayName = 'Editor';
   static propTypes = {
-    height: PropTypes.number
+    height: PropTypes.number,
+    content: PropTypes.string,
+    mode: PropTypes.string
+  };
+
+  static defaultProps = {
+    content: '// Happy Coding!',
+    mode: 'javascript'
   };
 
   render() {
-    const { height } = this.props;
+    const { content, height, mode } = this.props;
     const style = {};
     if (height) {
       style.height = height + 'px';
@@ -43,8 +50,8 @@ export class Editor extends PureComponent {
         style={ style }>
         <NoSSR>
           <Codemirror
-            options={ options }
-            value='foo test' />
+            options={{ ...options, mode }}
+            value={ content } />
         </NoSSR>
       </div>
     );

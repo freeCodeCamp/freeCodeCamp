@@ -18,7 +18,7 @@ export default class ShowMap extends PureComponent {
     updateFilter: PropTypes.func
   };
 
-  renderSuperBlocks(superBlocks) {
+  renderSuperBlocks(superBlocks, setChallenge) {
     if (!Array.isArray(superBlocks) || !superBlocks.length) {
       return <div>No Super Blocks</div>;
     }
@@ -26,13 +26,20 @@ export default class ShowMap extends PureComponent {
       return (
         <SuperBlock
           key={ superBlock.title }
+          setChallenge={ setChallenge }
           { ...superBlock }/>
       );
     });
   }
 
   render() {
-    const { superBlocks, updateFilter, clearFilter, filter } = this.props;
+    const {
+      setChallenge,
+      superBlocks,
+      updateFilter,
+      clearFilter,
+      filter
+    } = this.props;
     const inputIcon = !filter ?
       searchIcon :
       <span onClick={ clearFilter }>{ clearIcon }</span>;
@@ -70,7 +77,7 @@ export default class ShowMap extends PureComponent {
         </div>
         <div
           className='map-accordion'>
-          { this.renderSuperBlocks(superBlocks) }
+          { this.renderSuperBlocks(superBlocks, setChallenge) }
           <FullStack />
           <CodingPrep />
         </div>
