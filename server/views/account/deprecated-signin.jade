@@ -15,17 +15,10 @@ block content
         a.btn.btn-lg.btn-block.btn-social.btn-twitter(href='/auth/twitter')
             i.fa.fa-twitter
             | Sign in with Twitter
-        br
-        p
-          strong IMPORTANT NOTICE 
-          br
-          em These options are under deprecation and will be removed soon. 
-          br
-          em After you are signed in, go to the settings page and add GitHub and/or Email as your sign in option
           
     script.
       $(document).ready(function() {
-        var method = localStorage.getItem('lastSigninMethod'),
+        var method = localStorage.getItem('lastSigninMethodDeprecated'),
           btnSelector = 'a.btn.btn-lg.btn-block.btn-social';
         if (method) {
           try {
@@ -51,6 +44,6 @@ block content
           $(this).removeClass('active');
           obj.methodClass = $(this).attr('class').split(' ').pop();
           obj.methodLink = $(this).attr('href');
-          localStorage.setItem('lastSigninMethod', JSON.stringify(obj));
+          localStorage.setItem('lastSigninMethodDeprecated', JSON.stringify(obj));
         });
       });
