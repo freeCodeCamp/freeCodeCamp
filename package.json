@@ -135,7 +135,7 @@
     "yargs": "^4.1.0"
   },
   "devDependencies": {
-    "browser-sync": "^2.9.12",
+    "browser-sync": "^2.12.7",
     "gulp-sourcemaps": "^1.6.0",
     "gulp-tape": "0.0.7",
     "jsonlint": "^1.6.2",
