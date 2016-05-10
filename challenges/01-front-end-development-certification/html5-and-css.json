@@ -1953,8 +1953,8 @@
         "<p>Top 3 things cats hate:</p>"
       ],
       "tests": [
-        "assert.equal($(\"ol\").prev().text(), 'Top 3 things cats hate:', 'message: Your should have an ordered list for \"Top 3 things cats hate\"');",
-        "assert.equal($(\"ul\").prev().text(), \"Things cats love:\", 'message: You should have an unordered list for \"Things Cats Love\"');",
+        "assert.equal($(\"ol\").prev().text(), 'Top 3 things cats hate:', 'message: You should have an ordered list for \"Top 3 things cats hate:\"');",
+        "assert.equal($(\"ul\").prev().text(), \"Things cats love:\", 'message: You should have an unordered list for \"Things cats love:\"');",
         "assert.equal($(\"ul li\").length, 3, 'message: You should have three <code>li</code> elements within your <code>ul</code> element.');",
         "assert.equal($(\"ol li\").length, 3, 'message: You should have three <code>li</code> elements within your <code>ol</code> element.');",
         "assert(code.match(/<\\/ul>/g) && code.match(/<\\/ul>/g).length === code.match(/<ul>/g).length, 'message: Make sure your <code>ul</code> element has a closing tag.');",
