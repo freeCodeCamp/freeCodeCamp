@@ -8,35 +8,16 @@ import PureComponent from 'react-pure-render/component';
 import Challenge from './Challenge.jsx';
 import Step from './step/Step.jsx';
 import { fetchChallenge } from '../../../redux/actions';
-import { STEP, HTML } from '../../../utils/challengeTypes';
+import { challengeSelector } from '../redux/selectors';
 
 const bindableActions = {
   fetchChallenge
 };
 
-const challengeSelector = createSelector(
-  state => state.challengesApp.challenge,
-  state => state.entities.challenge,
-  (challengeName, challengeMap) => {
-    const challenge = challengeMap[challengeName];
-    return {
-      challenge: challenge,
-      showPreview: !!challenge && challenge.challengeType === HTML,
-      isStep: !!challenge && challenge.challengeType === STEP,
-      mode: !!challenge && challenge.challengeType === HTML ?
-        'text/html' :
-        'javascript'
-    };
-  }
-);
-
 const mapStateToProps = createSelector(
   challengeSelector,
-  state => state.challengesApp.content,
-  (challengeProps, content) => ({
-    ...challengeProps,
-    content
-  })
+  state => state.challengesApp.challenge,
+  ({ isStep }, challenge) => ({ challenge, isStep })
 );
 
 const fetchOptions = {
@@ -45,24 +26,19 @@ const fetchOptions = {
     return [ dashedName ];
   },
   isPrimed({ challenge }) {
-    return challenge;
+    return !!challenge;
   }
 };
 
 export class Challenges extends PureComponent {
   static displayName = 'Challenges';
-  static propTypes = {
-    challenge: PropTypes.object,
-    showPreview: PropTypes.bool,
-    mode: PropTypes.string,
-    isStep: PropTypes.bool
-  };
+  static propTypes = { isStep: PropTypes.bool };
 
   render() {
     if (this.props.isStep) {
-      return <Step { ...this.props }/>;
+      return <Step />;
     }
-    return <Challenge { ...this.props }/>;
+    return <Challenge />;
   }
 }
 

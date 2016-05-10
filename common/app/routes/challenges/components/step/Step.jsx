@@ -2,17 +2,20 @@ import React, { PropTypes } from 'react';
 import classnames from 'classnames';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
-import { goToStep } from '../../redux/actions';
 import PureComponent from 'react-pure-render/component';
 import ReactTransitionReplace from 'react-css-transition-replace';
 
+import { goToStep } from '../../redux/actions';
+import { challengeSelector } from '../../redux/selectors';
 import { Button, Col, Image, Row } from 'react-bootstrap';
 
 const transitionTimeout = 1000;
 const mapStateToProps = createSelector(
+  challengeSelector,
   state => state.challengesApp.currentStep,
   state => state.challengesApp.previousStep,
-  (currentStep, previousStep) => ({
+  ({ challenge }, currentStep, previousStep) => ({
+    challenge,
     currentStep,
     previousStep,
     isGoingForward: currentStep > previousStep
