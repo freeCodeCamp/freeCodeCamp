@@ -1,13 +1,26 @@
 import React, { PropTypes } from 'react';
-
-import PureComponent from 'react-pure-render/component';
+import { connect } from 'react-redux';
 import { Col } from 'react-bootstrap';
+import { createSelector } from 'reselect';
+import PureComponent from 'react-pure-render/component';
 
 import Editor from './Editor.jsx';
 import SidePanel from './Side-Panel.jsx';
 import Preview from './Preview.jsx';
+import { challengeSelector } from '../redux/selectors';
 
-export default class extends PureComponent {
+const mapStateToProps = createSelector(
+  challengeSelector,
+  state => state.challengesApp.content,
+  ({ challenge, showPreview, mode }, content) => ({
+    content,
+    challenge,
+    showPreview,
+    mode
+  })
+);
+
+export class Challenge extends PureComponent {
   static displayName = 'Challenge';
 
   static propTypes = {
@@ -54,3 +67,5 @@ export default class extends PureComponent {
     );
   }
 }
+
+export default connect(mapStateToProps)(Challenge);
