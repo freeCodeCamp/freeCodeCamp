@@ -481,14 +481,14 @@
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "challengeSeed": [
-        "function uniteUnique(arr1, arr2, arr3) {",
-        "  return arr1;",
+        "function uniteUnique(arr) {",
+        "  return arr;",
         "}",
         "",
         "uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]);"
       ],
       "solutions": [
-        "function uniteUnique(arr1, arr2, arr3) {\n  return [].slice.call(arguments).reduce(function(a, b) {\n    return [].concat(a, b.filter(function(e) {return a.indexOf(e) === -1;}));\n  }, []);\n}"
+        "function uniteUnique(arr) {\n  return [].slice.call(arguments).reduce(function(a, b) {\n    return [].concat(a, b.filter(function(e) {return a.indexOf(e) === -1;}));\n  }, []);\n}"
       ],
       "tests": [
         "assert.deepEqual(uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]), [1, 3, 2, 5, 4], 'message: <code>uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1])</code> should return <code>[1, 3, 2, 5, 4]</code>.');",
