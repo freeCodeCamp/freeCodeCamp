@@ -1,7 +1,6 @@
 import { handleActions } from 'redux-actions';
 
 import types from './types';
-import { setChallenge, fetchChallengeCompleted } from '../../../redux/types';
 
 const initialState = {
   challenge: '',
@@ -23,11 +22,11 @@ function buildSeed({ challengeSeed = [] } = {}) {
 
 export default handleActions(
   {
-    [fetchChallengeCompleted]: (state, { payload = '' }) => ({
+    [types.fetchChallengeCompleted]: (state, { payload = '' }) => ({
       ...state,
       challenge: payload
     }),
-    [setChallenge]: (state, { payload: challenge }) => ({
+    [types.updateCurrentChallenge]: (state, { payload: challenge }) => ({
       ...state,
       challenge: challenge.dashedName,
       content: buildSeed(challenge)
