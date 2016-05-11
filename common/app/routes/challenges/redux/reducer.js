@@ -7,7 +7,9 @@ const initialState = {
   challenge: '',
   currentStep: 0,
   previousStep: -1,
-  content: null
+  filter: '',
+  content: null,
+  superBlocks: []
 };
 
 function arrayToNewLineString(seedData = []) {
@@ -21,12 +23,6 @@ function buildSeed({ challengeSeed = [] } = {}) {
 
 export default handleActions(
   {
-    [types.resetStep]: () => initialState,
-    [types.goToStep]: (state, { payload: step = 0 }) => ({
-      ...state,
-      currentStep: step,
-      previousStep: state.currentStep
-    }),
     [fetchChallengeCompleted]: (state, { payload = '' }) => ({
       ...state,
       challenge: payload
@@ -35,6 +31,28 @@ export default handleActions(
       ...state,
       challenge: challenge.dashedName,
       content: buildSeed(challenge)
+    }),
+
+    // map
+    [types.updateFilter]: (state, { payload = ''}) => ({
+      ...state,
+      filter: payload
+    }),
+    [types.clearFilter]: (state) => ({
+      ...state,
+      filter: ''
+    }),
+    [types.fetchChallengesCompleted]: (state, { payload = [] }) => ({
+      ...state,
+      superBlocks: payload
+    }),
+
+    // step
+    [types.resetStep]: () => initialState,
+    [types.goToStep]: (state, { payload: step = 0 }) => ({
+      ...state,
+      currentStep: step,
+      previousStep: state.currentStep
     })
   },
   initialState

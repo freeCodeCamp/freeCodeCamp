@@ -8,19 +8,20 @@ import { createSelector } from 'reselect';
 import Map from './Map.jsx';
 import {
   clearFilter,
-  updateFilter
-} from '../redux/actions';
-import { setChallenge, fetchChallenges } from '../../../redux/actions';
+  updateFilter,
+  updateCurrentChallenge,
+  fetchChallenges
+} from '../../redux/actions';
 
 const bindableActions = {
   clearFilter,
   fetchChallenges,
   updateFilter,
-  setChallenge
+  updateCurrentChallenge
 };
 
 const superBlocksSelector = createSelector(
-  state => state.app.superBlocks,
+  state => state.challengesApp.superBlocks,
   state => state.entities.superBlock,
   state => state.entities.block,
   state => state.entities.challenge,
@@ -49,7 +50,7 @@ const superBlocksSelector = createSelector(
 
 const mapStateToProps = createSelector(
   superBlocksSelector,
-  state => state.map.filter,
+  state => state.challengesApp.filter,
   ({ superBlocks }, filter) => {
     return {
       superBlocks,
@@ -61,7 +62,7 @@ const mapStateToProps = createSelector(
 const fetchOptions = {
   fetchAction: 'fetchChallenges',
   isPrimed({ superBlocks }) {
-    return Array.isArray(superBlocks) && superBlocks.length > 0;
+    return Array.isArray(superBlocks) && superBlocks.length > 1;
   }
 };
 
@@ -72,7 +73,7 @@ export class ShowMap extends PureComponent {
     filter: PropTypes.string,
     superBlocks: PropTypes.array,
     updateFilter: PropTypes.func,
-    setChallenge: PropTypes.func
+    updateCurrentChallenge: PropTypes.func
   };
 
   render() {

@@ -45,21 +45,3 @@ export const createErrorObserable = error => Observable.just({
   type: types.handleError,
   error
 });
-
-// challenges
-// these need to be used by more than one route so we put them here
-export const fetchChallenge = createAction(types.fetchChallenge);
-export const fetchChallengeCompleted = createAction(
-  types.fetchChallengeCompleted,
-  (_, challenge) => challenge,
-  entities => ({ entities })
-);
-
-export const fetchChallenges = createAction(types.fetchChallenges);
-export const fetchChallengesCompleted = createAction(
-  types.fetchChallengesCompleted,
-  (_, superBlocks) => superBlocks,
-  entities => ({ entities })
-);
-
-export const setChallenge = createAction(types.setChallenge);

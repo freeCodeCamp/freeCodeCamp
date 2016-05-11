@@ -9,7 +9,6 @@ import {
   reducer as jobsApp,
   formNormalizer as jobsNormalizer
 } from './routes/Jobs/redux';
-import { reducer as map } from './routes/map/redux';
 
 export default function createReducer(sideReducers = {}) {
   return combineReducers({
@@ -19,7 +18,6 @@ export default function createReducer(sideReducers = {}) {
     hikesApp,
     jobsApp,
     challengesApp,
-    map,
     form: formReducer.normalize(jobsNormalizer)
   });
 }

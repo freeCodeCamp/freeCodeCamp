@@ -10,7 +10,6 @@ import childRoutes from './routes';
 // redux
 import { createEpic } from 'redux-epic';
 import createReducer from './create-reducer';
-import middlewares from './middlewares';
 import sagas from './sagas';
 
 // general utils
@@ -56,7 +55,6 @@ export default function createApp({
   );
   const enhancers = [
     applyMiddleware(
-      ...middlewares,
       ...sideMiddlewares,
       sagaMiddleware
     ),
