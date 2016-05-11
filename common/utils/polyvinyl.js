@@ -1,98 +1,104 @@
 // originally base off of https://github.com/gulpjs/vinyl
 import path from 'path';
 import replaceExt from 'replace-ext';
+import invariant from 'invariant';
 
-export default class File {
-  constructor({
-    path,
-    history = [],
-    base,
-    contents = ''
-  } = {}) {
-    // Record path change
-    this.history = path ? [path] : history;
-    this.base = base;
-    this.contents = contents;
-    this._isPolyVinyl = true;
-    this.error = null;
-  }
+// interface PolyVinyl {
+//   contents: String,
+//   path: String,
+//   history: [...String],
+//   error: Null|Object
+// }
+//
+// createPoly({
+//   path: String,
+//   contents: String,
+//   history?: [...String],
+// }) => PolyVinyl, throws
+export function createPoly({ path, contents, history } = {}) {
+  invariant(
+    typeof path === 'string',
+    'path must be a string but got %s',
+    path
+  );
 
-  static isPolyVinyl = function(file) {
-    return file && file._isPolyVinyl === true || false;
+  invariant(
+    typeof contents === 'string',
+    'contents must be a string but got %s',
+    contents
+  );
+
+  return {
+    history: Array.isArray(history) ? history : [ path ],
+    path: path,
+    contents: contents,
+    error: null
   };
+}
 
-  isEmpty() {
-    return !this._contents;
-  }
+// isPoly(poly: Any) => Boolean
+export function isPoly(poly) {
+  return poly &&
+    typeof poly.contents === 'string' &&
+    typeof poly.path === 'string' &&
+    Array.isArray(poly.history);
+}
 
-  toJSON() {
-    return Object
-      .keys(this)
-      .reduce((obj, key) => (obj[key] = this[key], obj), {});
-  }
+// checkPoly(poly: Any) => Void, throws
+export function checkPoly(poly) {
+  invariant(
+    isPoly(poly),
+    'function should receive a PolyVinyl, but got %s',
+    poly
+  );
+}
 
-  get contents() {
-    return this._contents;
-  }
+// isEmpty(poly: PolyVinyl) => Boolean, throws
+export function isEmpty(poly) {
+  checkPoly(poly);
+  return !!poly.contents;
+}
 
-  set contents(val) {
-    if (typeof val !== 'string') {
-      throw new TypeError('File.contents can only a String');
-    }
-    this._contents = val;
-  }
+// updateContents(contents: String, poly: PolyVinyl) => PolyVinyl
+export function updateContents(contents, poly) {
+  checkPoly(poly);
+  return {
+    ...poly,
+    contents
+  };
+}
 
-  get basename() {
-    if (!this.path) {
-      throw new Error('No path specified! Can not get basename.');
-    }
-    return path.basename(this.path);
-  }
+export function getExt(poly) {
+  checkPoly(poly);
+  invariant(
+    !!poly.path,
+    'No path specified! Can not get extname'
+  );
+  return path.extname(poly.path);
+}
 
-  set basename(basename) {
-    if (!this.path) {
-      throw new Error('No path specified! Can not set basename.');
-    }
-    this.path = path.join(path.dirname(this.path), basename);
-  }
+export function setExt(extname, poly) {
+  invariant(
+    poly.path,
+    'No path specified! Can not set extname',
+  );
+  const newPoly = {
+    ...poly,
+    path: replaceExt(this.path, extname)
+  };
+  newPoly.history = [ ...poly.history, newPoly.path ];
+  return newPoly;
+}
 
-  get extname() {
-    if (!this.path) {
-      throw new Error('No path specified! Can not get extname.');
-    }
-    return path.extname(this.path);
-  }
-
-  set extname(extname) {
-    if (!this.path) {
-      throw new Error('No path specified! Can not set extname.');
-    }
-    this.path = replaceExt(this.path, extname);
-  }
-
-  get path() {
-    return this.history[this.history.length - 1];
-  }
-
-  set path(path) {
-    if (typeof path !== 'string') {
-      throw new TypeError('path should be string');
-    }
-
-    // Record history only when path changed
-    if (path && path !== this.path) {
-      this.history.push(path);
-    }
-  }
-
-  get error() {
-    return this._error;
-  }
-
-  set error(err) {
-    if (typeof err !== 'object') {
-      throw new TypeError('error must be an object or null');
-    }
-    this.error = err;
-  }
+export function setError(error, poly) {
+  invariant(
+    typeof error === 'object',
+    'error must be an object or null, but got %',
+    error
+  );
+  checkPoly(poly);
+  return {
+    ...poly,
+    error
+  };
 }
