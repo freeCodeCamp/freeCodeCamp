@@ -21,7 +21,8 @@
     "lint-json": "npm run lint-server && npm run lint-challenges && npm run lint-resources && npm run lint-utils",
     "test-challenges": "babel-node seed/test-challenges.js | tap-spec",
     "pretest": "npm run lint",
-    "test": "npm run test-challenges"
+    "test": "npm run test-challenges",
+    "dev": "bower install && gulp"
   },
   "license": "(BSD-3-Clause AND CC-BY-SA-4.0)",
   "dependencies": {
@@ -135,6 +136,7 @@
     "yargs": "^4.1.0"
   },
   "devDependencies": {
+    "bower": "^1.7.9",
     "browser-sync": "^2.9.12",
     "gulp-sourcemaps": "^1.6.0",
     "gulp-tape": "0.0.7",
