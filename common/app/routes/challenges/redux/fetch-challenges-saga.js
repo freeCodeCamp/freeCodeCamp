@@ -4,7 +4,7 @@ import {
   createErrorObserable,
   fetchChallengeCompleted,
   fetchChallengesCompleted,
-  setChallenge
+  updateCurrentChallenge
 } from './actions';
 
 export default function fetchChallengesSaga(action$, getState, { services }) {
@@ -22,7 +22,7 @@ export default function fetchChallengesSaga(action$, getState, { services }) {
           if (type === fetchChallenge) {
             return Observable.of(
               fetchChallengeCompleted(entities, result),
-              setChallenge(entities.challenge[result])
+              updateCurrentChallenge(entities.challenge[result])
             );
           }
           return Observable.just(fetchChallengesCompleted(entities, result));

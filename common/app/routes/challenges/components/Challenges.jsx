@@ -7,7 +7,7 @@ import PureComponent from 'react-pure-render/component';
 
 import Challenge from './Challenge.jsx';
 import Step from './step/Step.jsx';
-import { fetchChallenge } from '../../../redux/actions';
+import { fetchChallenge } from '../redux/actions';
 import { challengeSelector } from '../redux/selectors';
 
 const bindableActions = {

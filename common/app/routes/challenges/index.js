@@ -1,6 +1,7 @@
 import Challenges from './components/Challenges.jsx';
+import ShowMap from './components/map/Show.jsx';
 
-export default {
+export const challenges = {
   path: 'challenges(/:dashedName)',
   component: Challenges,
   onEnter(nextState, replace) {
@@ -9,4 +10,9 @@ export default {
       replace('/map');
     }
   }
+};
+
+export const map = {
+  path: 'map',
+  component: ShowMap
 };
