@@ -1,21 +1,24 @@
 import React, { PropTypes } from 'react';
 import { Link } from 'react-router';
+import { connect } from 'react-redux';
 import FA from 'react-fontawesome';
 import PureComponent from 'react-pure-render/component';
 import { Panel } from 'react-bootstrap';
 import classnames from 'classnames';
 
+import { updateCurrentChallenge } from '../../redux/actions';
 
-export default class Block extends PureComponent {
+const dispatchActions = { updateCurrentChallenge };
+export class Block extends PureComponent {
   static displayName = 'Block';
   static propTypes = {
     title: PropTypes.string,
     time: PropTypes.string,
     challenges: PropTypes.array,
-    setChallenge: PropTypes.func
+    updateCurrentChallenge: PropTypes.func
   };
 
-  renderChallenges(challenges, setChallenge) {
+  renderChallenges(challenges, updateCurrentChallenge) {
     if (!Array.isArray(challenges) || !challenges.length) {
       return <div>No Challenges Found</div>;
     }
@@ -50,7 +53,7 @@ export default class Block extends PureComponent {
           key={ title }>
           <Link to={ `/challenges/${dashedName}` }>
             <span
-              onClick={ () => setChallenge(challenge) }>
+              onClick={ () => updateCurrentChallenge(challenge) }>
               { title }
               <span className='sr-only'>complete</span>
               {
@@ -66,7 +69,7 @@ export default class Block extends PureComponent {
   }
 
   render() {
-    const { title, time, challenges, setChallenge } = this.props;
+    const { title, time, challenges, updateCurrentChallenge } = this.props;
     return (
       <Panel
         bsClass='map-accordion-panel-nested'
@@ -80,8 +83,10 @@ export default class Block extends PureComponent {
         }
         id={ title }
         key={ title }>
-        { this.renderChallenges(challenges, setChallenge) }
+        { this.renderChallenges(challenges, updateCurrentChallenge) }
       </Panel>
     );
   }
 }
+
+export default connect(null, dispatchActions)(Block);

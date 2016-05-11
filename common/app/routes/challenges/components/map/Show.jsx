@@ -9,15 +9,13 @@ import Map from './Map.jsx';
 import {
   clearFilter,
   updateFilter,
-  updateCurrentChallenge,
   fetchChallenges
 } from '../../redux/actions';
 
 const bindableActions = {
   clearFilter,
   fetchChallenges,
-  updateFilter,
-  updateCurrentChallenge
+  updateFilter
 };
 
 const superBlocksSelector = createSelector(
@@ -72,8 +70,7 @@ export class ShowMap extends PureComponent {
     clearFilter: PropTypes.func,
     filter: PropTypes.string,
     superBlocks: PropTypes.array,
-    updateFilter: PropTypes.func,
-    updateCurrentChallenge: PropTypes.func
+    updateFilter: PropTypes.func
   };
 
   render() {
