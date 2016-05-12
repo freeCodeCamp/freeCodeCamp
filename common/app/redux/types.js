@@ -12,6 +12,7 @@ export default createTypes([
   // used to hit the server
   'hardGoTo',
 
+  'initWindowHeight',
   'updateWindowHeight',
   'updateNavHeight',
 

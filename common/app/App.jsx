@@ -8,10 +8,9 @@ import { createSelector } from 'reselect';
 
 import {
   fetchUser,
-  updateWindowHeight,
+  initWindowHeight,
   updateNavHeight
 } from './redux/actions';
-import getWindowHeight from './utils/get-window-height';
 
 import Nav from './components/Nav';
 
@@ -50,7 +49,7 @@ export class FreeCodeCamp extends React.Component {
     picture: PropTypes.string,
     toast: PropTypes.object,
     updateNavHeight: PropTypes.func,
-    updateWindowHeight: PropTypes.func
+    initWindowHeight: PropTypes.func
   };
 
   componentWillReceiveProps({ toast: nextToast = {} }) {
@@ -68,7 +67,7 @@ export class FreeCodeCamp extends React.Component {
   }
 
   componentDidMount() {
-    this.props.updateWindowHeight(getWindowHeight());
+    this.props.initWindowHeight();
   }
 
   render() {
@@ -92,7 +91,7 @@ export class FreeCodeCamp extends React.Component {
 
 const wrapComponent = compose(
   // connect Component to Redux Store
-  connect(mapStateToProps, { updateWindowHeight, updateNavHeight, fetchUser }),
+  connect(mapStateToProps, { initWindowHeight, updateNavHeight, fetchUser }),
   // handles prefetching data
   contain(fetchContainerOptions)
 );
