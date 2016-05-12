@@ -11,9 +11,10 @@ import { challengeSelector } from '../redux/selectors';
 
 const mapStateToProps = createSelector(
   challengeSelector,
-  state => state.challengesApp.content,
-  ({ challenge, showPreview, mode }, content) => ({
-    content,
+  state => state.challengesApp.files,
+  state => state.challengesApp.path,
+  ({ challenge, showPreview, mode }, files, path) => ({
+    content: files[path] && files[path].contents,
     challenge,
     showPreview,
     mode

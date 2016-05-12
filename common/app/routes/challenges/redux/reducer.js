@@ -2,6 +2,7 @@ import { handleActions } from 'redux-actions';
 import { createPoly } from '../../../../utils/polyvinyl';
 
 import types from './types';
+import { HTML, JS } from '../../../utils/challengeTypes';
 
 const initialState = {
   challenge: '',
@@ -21,6 +22,15 @@ function buildSeed({ challengeSeed = [] } = {}) {
   return arrayToNewLineString(challengeSeed);
 }
 
+const pathsMap = {
+  [HTML]: 'main.html',
+  [JS]: 'main.js'
+};
+
+function getPath({ challengeType }) {
+  return pathsMap[challengeType] || 'main';
+}
+
 const mainReducer = handleActions(
   {
     [types.fetchChallengeCompleted]: (state, { payload = '' }) => ({
@@ -29,7 +39,8 @@ const mainReducer = handleActions(
     }),
     [types.updateCurrentChallenge]: (state, { payload: challenge }) => ({
       ...state,
-      challenge: challenge.dashedName
+      challenge: challenge.dashedName,
+      path: getPath(challenge)
     }),
 
     // map
@@ -71,10 +82,22 @@ const filesReducer = handleActions(
         }, { ...state });
     },
     [types.updateCurrentChallenge]: (state, { payload: challenge }) => {
-      const path = challenge.dashedName + challenge.type;
+      if (challenge.type === 'mod') {
+        return challenge.files;
+      }
+      if (
+        challenge.challengeType !== HTML &&
+        challenge.challengeType !== JS
+      ) {
+        return {};
+      }
+      const path = getPath(challenge);
       return {
         ...state,
-        [path]: createPoly({ path, contents: buildSeed(challenge) })
+        [path]: createPoly({
+          path,
+          contents: buildSeed(challenge)
+        })
       };
     }
   },
