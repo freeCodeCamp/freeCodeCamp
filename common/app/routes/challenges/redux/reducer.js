@@ -1,4 +1,5 @@
 import { handleActions } from 'redux-actions';
+import { createPoly } from '../../../../utils/polyvinyl';
 
 import types from './types';
 
@@ -7,20 +8,20 @@ const initialState = {
   currentStep: 0,
   previousStep: -1,
   filter: '',
-  content: null,
+  files: {},
   superBlocks: []
 };
 
 function arrayToNewLineString(seedData = []) {
   seedData = Array.isArray(seedData) ? seedData : [seedData];
-  return seedData.reduce((seed, line) => '' + seed + line + '\n', '\n');
+  return seedData.reduce((seed, line) => '' + seed + line + '\n', '');
 }
 
 function buildSeed({ challengeSeed = [] } = {}) {
   return arrayToNewLineString(challengeSeed);
 }
 
-export default handleActions(
+const mainReducer = handleActions(
   {
     [types.fetchChallengeCompleted]: (state, { payload = '' }) => ({
       ...state,
@@ -28,8 +29,7 @@ export default handleActions(
     }),
     [types.updateCurrentChallenge]: (state, { payload: challenge }) => ({
       ...state,
-      challenge: challenge.dashedName,
-      content: buildSeed(challenge)
+      challenge: challenge.dashedName
     }),
 
     // map
@@ -56,3 +56,33 @@ export default handleActions(
   },
   initialState
 );
+
+const filesReducer = handleActions(
+  {
+    [types.updateFile]: (state, { payload: file }) => ({
+      ...state,
+      [file.path]: file
+    }),
+    [types.updateFiles]: (state, { payload: files }) => {
+      return files
+        .reduce((files, file) => {
+          files[file.path] = file;
+          return files;
+        }, { ...state });
+    },
+    [types.updateCurrentChallenge]: (state, { payload: challenge }) => {
+      const path = challenge.dashedName + challenge.type;
+      return {
+        ...state,
+        [path]: createPoly({ path, contents: buildSeed(challenge) })
+      };
+    }
+  },
+  {}
+);
+
+export default function challengeReducers(state, action) {
+  const newState = mainReducer(state, action);
+  const files = filesReducer(state && state.files || {}, action);
+  return newState.files !== files ? { ...newState, files } : newState;
+}
