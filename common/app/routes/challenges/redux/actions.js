@@ -32,3 +32,7 @@ export const updateFilter = createAction(
 );
 
 export const clearFilter = createAction(types.clearFilter);
+
+// files
+export const updateFile = createAction(types.updateFile);
+export const updateFiles = createAction(types.updateFiles);

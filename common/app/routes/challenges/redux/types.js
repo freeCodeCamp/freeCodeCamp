@@ -13,5 +13,9 @@ export default createTypes([
 
   // map
   'updateFilter',
-  'clearFilter'
+  'clearFilter',
+
+  // files
+  'updateFile',
+  'updateFiles'
 ], 'challenges');
