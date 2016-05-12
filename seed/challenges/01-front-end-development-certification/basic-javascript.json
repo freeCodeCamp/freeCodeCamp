@@ -1759,7 +1759,7 @@
         "<strong>Example</strong>",
         "<blockquote>var arr = [<br>    [1,2,3],<br>    [4,5,6],<br>    [7,8,9],<br>    [[10,11,12], 13, 14]<br>];<br>arr[0]; // equals [1,2,3]<br>arr[1][2]; // equals 6<br>arr[3][0][1]; // equals 11</blockquote>",
         "<h4>Instructions</h4>",
-        "Read from <code>myArray</code> using bracket notation so that myData is equal to <code>8</code>"
+        "Using bracket notation select an element from <code>myArray</code> such that <code>myData</code> is equal to <code>8</code>."
       ],
       "releasedOn": "January 1, 2016",
       "challengeSeed": [
@@ -1778,7 +1778,8 @@
       ],
       "tests": [
         "assert(myData === 8, 'message: <code>myData</code> should be equal to <code>8</code>.');",
-        "assert(/myArray\\[2\\]\\[1\\]/g.test(code), 'message: You should be using bracket notation to read the value from <code>myArray</code>.');"
+        "assert(/myArray\\[\\d+\\]\\[\\d+\\]/g.test(code), 'message: You should be using bracket notation to read the value from <code>myArray</code>.');",
+        "assert(/myData\\s*?=\\s*?myArray\\[\\d+\\]\\[\\d+\\]\\s*?;/g.test(code), 'message: You should only be reading one value from <code>myArray</code>.');" 
       ],
       "type": "waypoint",
       "challengeType": 1,
