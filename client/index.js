@@ -19,7 +19,7 @@ import {
   saveToColdStorage
 } from './cold-reload';
 
-Rx.config.longStackSupport = !!debug.enabled;
+const isDev = Rx.config.longStackSupport = !!debug.enabled;
 
 const log = debug('fcc:client');
 const hotReloadTimeout = 5000;
@@ -39,6 +39,7 @@ const devTools = window.devToolsExtension ? window.devToolsExtension() : f => f;
 const shouldRouterListenForReplays = !!window.devToolsExtension;
 
 const sagaOptions = {
+  isDev,
   window,
   document: window.document,
   location: window.location

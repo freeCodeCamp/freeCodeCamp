@@ -12,7 +12,7 @@ import ToolPanel from './Tool-Panel.jsx';
 const mapStateToProps = createSelector(
   state => state.app.windowHeight,
   state => state.app.navHeight,
-  (windowHeight, navHeight) => ({ height: windowHeight - navHeight - 50 })
+  (windowHeight, navHeight) => ({ height: windowHeight - navHeight - 20 })
 );
 
 export class SidePanel extends PureComponent {
