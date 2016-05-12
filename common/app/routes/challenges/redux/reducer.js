@@ -3,6 +3,7 @@ import { createPoly } from '../../../../utils/polyvinyl';
 
 import types from './types';
 import { HTML, JS } from '../../../utils/challengeTypes';
+import { buildSeed, getPath } from '../utils';
 
 const initialState = {
   challenge: '',
@@ -12,24 +13,6 @@ const initialState = {
   files: {},
   superBlocks: []
 };
-
-function arrayToNewLineString(seedData = []) {
-  seedData = Array.isArray(seedData) ? seedData : [seedData];
-  return seedData.reduce((seed, line) => '' + seed + line + '\n', '');
-}
-
-function buildSeed({ challengeSeed = [] } = {}) {
-  return arrayToNewLineString(challengeSeed);
-}
-
-const pathsMap = {
-  [HTML]: 'main.html',
-  [JS]: 'main.js'
-};
-
-function getPath({ challengeType }) {
-  return pathsMap[challengeType] || 'main';
-}
 
 const mainReducer = handleActions(
   {
