@@ -307,49 +307,6 @@ module.exports = function(User) {
       }
     }
   );
-
-  User.prototype.updateEmail = function updateEmail(email) {
-    if (this.email && this.email === email) {
-      return Promise.reject(new Error(
-        `${email} is already associated with this account.`
-      ));
-    }
-    return User.doesExist(null, email)
-      .then(exists => {
-        if (exists) {
-          return Promise.reject(
-            new Error(`${email} is already associated with another account.`)
-          );
-        }
-        return this.update$({ email }).toPromise();
-      });
-  };
-
-  User.remoteMethod(
-    'updateEmail',
-    {
-      isStatic: false,
-      description: 'updates the email of the user object',
-      accepts: [
-        {
-          arg: 'email',
-          type: 'string',
-          required: true
-        }
-      ],
-      returns: [
-        {
-          arg: 'status',
-          type: 'object'
-        }
-      ],
-      http: {
-        path: '/update-email',
-        verb: 'POST'
-      }
-    }
-  );
-
   User.giveBrowniePoints =
     function giveBrowniePoints(receiver, giver, data = {}, dev = false, cb) {
       const findUser = observeMethod(User, 'findOne');
@@ -462,6 +419,91 @@ module.exports = function(User) {
       ],
       http: {
         path: '/give-brownie-points',
+        verb: 'POST'
+      }
+    }
+  );
+
+  User.prototype.updateEmail = function updateEmail(email) {
+    if (this.email && this.email === email) {
+      return Promise.reject(new Error(
+        `${email} is already associated with this account.`
+      ));
+    }
+    return User.doesExist(null, email)
+      .then(exists => {
+        if (exists) {
+          return Promise.reject(
+            new Error(`${email} is already associated with another account.`)
+          );
+        }
+        return this.update$({ email }).toPromise();
+      });
+  };
+
+  User.remoteMethod(
+    'updateEmail',
+    {
+      isStatic: false,
+      description: 'updates the email of the user object',
+      accepts: [
+        {
+          arg: 'email',
+          type: 'string',
+          required: true
+        }
+      ],
+      returns: [
+        {
+          arg: 'status',
+          type: 'object'
+        }
+      ],
+      http: {
+        path: '/update-email',
+        verb: 'POST'
+      }
+    }
+  );
+
+  User.themes = {
+    night: true,
+    default: true
+  };
+  User.prototype.updateTheme = function updateTheme(theme) {
+    if (!this.constructor.themes[theme]) {
+      const err = new Error(
+        'Theme is not valid.'
+      );
+      err.messageType = 'info';
+      err.userMessage = err.message;
+      return Promise.reject(err);
+    }
+    return this.update$({ theme })
+      .map({ updatedTo: theme })
+      .toPromise();
+  };
+
+  User.remoteMethod(
+    'updateTheme',
+    {
+      isStatic: false,
+      description: 'updates the users chosen theme',
+      accepts: [
+        {
+          arg: 'theme',
+          type: 'string',
+          required: true
+        }
+      ],
+      returns: [
+        {
+          arg: 'status',
+          type: 'object'
+        }
+      ],
+      http: {
+        path: '/update-theme',
         verb: 'POST'
       }
     }

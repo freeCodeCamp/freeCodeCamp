@@ -165,6 +165,7 @@ main.setMapShare = function setMapShare(id) {
 
 $(document).ready(function() {
 
+  const { Observable } = window.Rx;
   var CSRF_HEADER = 'X-CSRF-Token';
 
   var setCSRFToken = function(securityToken) {
@@ -548,51 +549,68 @@ $(document).ready(function() {
   // keyboard shortcuts: open map
   window.Mousetrap.bind('g m', toggleMap);
 
-  // Night Mode
-  function changeMode() {
-    var newValue = false;
-    try {
-      newValue = !JSON.parse(localStorage.getItem('nightMode'));
-    } catch (e) {
-      console.error('Error parsing value form local storage:', 'nightMode', e);
-    }
-    localStorage.setItem('nightMode', String(newValue));
-    toggleNightMode(newValue);
+  function addAlert(message = '', type = 'alert-info') {
+    return $('.flashMessage').append($(`
+      <div class='alert ${type}'>
+        <button class='close' type='button', data-dismiss='alert'>
+          <span class='ion-close-circled' />
+        </Button>
+        <div>${message}</div>
+      </div>
+    `));
   }
 
-  function toggleNightMode(nightModeEnabled) {
-    var iframe = document.getElementById('map-aside-frame');
-    if (iframe) {
-      iframe.src = iframe.src;
+  function toggleNightMode() {
+    if (!main.userId) {
+      return addAlert('Must be logged in to use themes');
     }
-    var body = $('body');
-    body.hide();
-    if (nightModeEnabled) {
-      body.addClass('night');
+    const iframe$ = document.getElementById('map-aside-frame');
+    const body$ = $('body');
+    if (iframe$) {
+      iframe$.src = iframe$.src;
+    }
+    body$.hide();
+    let updateThemeTo;
+    if (body$.hasClass('night')) {
+      body$.removeClass('night');
+      updateThemeTo = 'default';
     } else {
-      body.removeClass('night');
+      body$.addClass('night');
+      updateThemeTo = 'night';
     }
-    body.fadeIn('100');
+    body$.fadeIn('100');
+    const options = {
+      url: `/api/users/${main.userId}/update-theme`,
+      type: 'POST',
+      data: { theme: updateThemeTo },
+      dataType: 'json'
+    };
+    return $.ajax(options)
+      .success(() => console.log('theme updated successfully'))
+      .fail(err => {
+        let message;
+        try {
+          message = JSON.parse(err.responseText).error.message;
+        } catch (error) {
+          return null;
+        }
+        if (!message) {
+          return null;
+        }
+        return addAlert(message);
+      });
   }
 
-  if (typeof localStorage.getItem('nightMode') !== 'undefined') {
-    var oldVal = false;
-    try {
-      oldVal = JSON.parse(localStorage.getItem('nightMode'));
-    } catch (e) {
-      console.error('Error parsing value form local storage:', 'nightMode', e);
-    }
-    toggleNightMode(oldVal);
-    $('.nightMode-btn').on('click', function() {
-      changeMode();
-    });
-  } else {
-    localStorage.setItem('nightMode', 'false');
-    toggleNightMode('false');
-  }
+  Observable.merge(
+    Observable.fromEvent($('#night-mode'), 'click'),
+    Observable.create(observer => {
+      window.Mousetrap.bind('g t n', () => observer.onNext());
+    })
+  )
+    .debounce(500)
+    .subscribe(toggleNightMode, err => console.error(err));
 
   // Hot Keys
-  window.Mousetrap.bind('g t n', changeMode);
   window.Mousetrap.bind('g n n', () => {
     // Next Challenge
     window.location = '/challenges/next-challenge';
