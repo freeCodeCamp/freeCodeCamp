@@ -1,5 +1,6 @@
 import { Observable } from 'rx';
 import debugFactory from 'debug';
+import { isEmail } from 'validator';
 
 const debug = debugFactory('fcc:user:remote');
 
@@ -59,7 +60,7 @@ module.exports = function(app) {
   // send welcome email to new camper
   User.afterRemote('create', function({ req, res }, user, next) {
     debug('user created, sending email');
-    if (!user.email) { return next(); }
+    if (!user.email || !isEmail(user.email)) { return next(); }
     const redirect = req.session && req.session.returnTo ?
       req.session.returnTo :
       '/';

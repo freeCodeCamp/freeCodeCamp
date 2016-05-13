@@ -19,12 +19,12 @@ block content
                         if index === 0
                             .col-sm-4.hidden-xs &nbsp;
                         else
-                            .btn.btn-primary.btn-primary-ghost.col-sm-4.col-xs-12.challenge-step-btn-prev.btn-lg(id='#{index - 1}') Go to my previous step
+                            button.btn.btn-primary.btn-primary-ghost.col-sm-4.col-xs-12.challenge-step-btn-prev.btn-lg(id='#{index - 1}') Go to my previous step
                         .challenge-step-counter.large-p.col-sm-4.col-xs-12.text-center (#{index + 1} / #{description.length})
                         if index + 1 === description.length
-                            .btn.btn-primary.col-sm-4.col-xs-12.challenge-step-btn-finish.btn-lg(id='last' class=step[3] && !isCompleted ? 'disabled' : '') Finish challenge
+                            button.btn.btn-primary.col-sm-4.col-xs-12.challenge-step-btn-finish.btn-lg(id='last' class=step[3] && !isCompleted ? 'disabled' : '') Finish challenge
                         else
-                            .btn.btn-primary.col-sm-4.col-xs-12.challenge-step-btn-next.btn-lg(id='#{index}' class=step[3] && !isCompleted ? 'disabled' : '') Go to my next step
+                            button.btn.btn-primary.col-sm-4.col-xs-12.challenge-step-btn-next.btn-lg(id='#{index}' class=step[3] && !isCompleted ? 'disabled' : '') Go to my next step
                     .clearfix
     .spacer
     #challenge-step-modal.modal(tabindex='-1')

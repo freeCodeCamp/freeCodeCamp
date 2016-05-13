@@ -6,7 +6,7 @@ export function ifNoUserRedirectTo(url, message, type = 'errors') {
     }
 
     req.flash(type, {
-      msg: message || `You must be signed to go to ${path}`
+      msg: message || `You must be signed in to access ${path}`
     });
 
     return res.redirect(url);

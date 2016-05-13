@@ -3,6 +3,7 @@ import uuid from 'node-uuid';
 import moment from 'moment';
 import dedent from 'dedent';
 import debugFactory from 'debug';
+import { isEmail } from 'validator';
 
 import { saveUser, observeMethod } from '../../server/utils/rx';
 import { blacklistedUsernames } from '../../server/utils/constants';
@@ -62,6 +63,9 @@ module.exports = function(User) {
 
   User.observe('before save', function({ instance: user }, next) {
     if (user) {
+      if (user.email && !isEmail(user.email)) {
+        return next(new Error('Email format is not valid'));
+      }
       user.username = user.username.trim().toLowerCase();
       user.email = typeof user.email === 'string' ?
         user.email.trim().toLowerCase() :
@@ -75,7 +79,7 @@ module.exports = function(User) {
         user.progressTimestamps.push({ timestamp: Date.now() });
       }
     }
-    next();
+    return next();
   });
 
   debug('setting up user hooks');
@@ -92,6 +96,9 @@ module.exports = function(User) {
     req.body.username = 'fcc' + uuid.v4().slice(0, 8);
     if (!req.body.email) {
       return next();
+    }
+    if (!isEmail(req.body.email)) {
+      return next(new Error('Email format is not valid'));
     }
     return User.doesExist(null, req.body.email)
       .then(exists => {
@@ -118,6 +125,10 @@ module.exports = function(User) {
   });
 
   User.on('resetPasswordRequest', function(info) {
+    if (!isEmail(info.email)) {
+      console.error(new Error('Email format is not valid'));
+      return null;
+    }
     let url;
     const host = User.app.get('host');
     const { id: token } = info.accessToken;
@@ -150,7 +161,7 @@ module.exports = function(User) {
       `
     };
 
-    User.app.models.Email.send(mailOptions, function(err) {
+    return User.app.models.Email.send(mailOptions, function(err) {
       if (err) { console.error(err); }
       debug('email reset sent');
     });
@@ -159,9 +170,12 @@ module.exports = function(User) {
   User.beforeRemote('login', function(ctx, notUsed, next) {
     const { body } = ctx.req;
     if (body && typeof body.email === 'string') {
+      if (!isEmail(body.email)) {
+        return next(new Error('Email format is not valid'));
+      }
       body.email = body.email.toLowerCase();
     }
-    next();
+    return next();
   });
 
   User.afterRemote('login', function(ctx, accessToken, next) {
@@ -216,7 +230,7 @@ module.exports = function(User) {
   });
 
   User.doesExist = function doesExist(username, email) {
-    if (!username && !email) {
+    if (!username && (!email || !isEmail(email))) {
       return Promise.resolve(false);
     }
     debug('checking existence');
@@ -309,6 +323,11 @@ module.exports = function(User) {
   );
 
   User.prototype.updateEmail = function updateEmail(email) {
+    if (!isEmail(email)) {
+      return Promise.reject(
+        new Error('The submitted email not valid')
+      );
+    }
     if (this.email && this.email === email) {
       return Promise.reject(new Error(
         `${email} is already associated with this account.`
@@ -462,6 +481,91 @@ module.exports = function(User) {
       ],
       http: {
         path: '/give-brownie-points',
+        verb: 'POST'
+      }
+    }
+  );
+
+  User.prototype.updateEmail = function updateEmail(email) {
+    if (this.email && this.email === email) {
+      return Promise.reject(new Error(
+        `${email} is already associated with this account.`
+      ));
+    }
+    return User.doesExist(null, email)
+      .then(exists => {
+        if (exists) {
+          return Promise.reject(
+            new Error(`${email} is already associated with another account.`)
+          );
+        }
+        return this.update$({ email }).toPromise();
+      });
+  };
+
+  User.remoteMethod(
+    'updateEmail',
+    {
+      isStatic: false,
+      description: 'updates the email of the user object',
+      accepts: [
+        {
+          arg: 'email',
+          type: 'string',
+          required: true
+        }
+      ],
+      returns: [
+        {
+          arg: 'status',
+          type: 'object'
+        }
+      ],
+      http: {
+        path: '/update-email',
+        verb: 'POST'
+      }
+    }
+  );
+
+  User.themes = {
+    night: true,
+    default: true
+  };
+  User.prototype.updateTheme = function updateTheme(theme) {
+    if (!this.constructor.themes[theme]) {
+      const err = new Error(
+        'Theme is not valid.'
+      );
+      err.messageType = 'info';
+      err.userMessage = err.message;
+      return Promise.reject(err);
+    }
+    return this.update$({ theme })
+      .map({ updatedTo: theme })
+      .toPromise();
+  };
+
+  User.remoteMethod(
+    'updateTheme',
+    {
+      isStatic: false,
+      description: 'updates the users chosen theme',
+      accepts: [
+        {
+          arg: 'theme',
+          type: 'string',
+          required: true
+        }
+      ],
+      returns: [
+        {
+          arg: 'status',
+          type: 'object'
+        }
+      ],
+      http: {
+        path: '/update-theme',
         verb: 'POST'
       }
     }
