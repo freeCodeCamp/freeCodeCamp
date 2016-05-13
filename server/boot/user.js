@@ -550,6 +550,7 @@ module.exports = function(app) {
   }
 
   function postForgot(req, res) {
+    req.validate('email', 'Email format is not valid').isEmail();
     const errors = req.validationErrors();
     const email = req.body.email.toLowerCase();
 
