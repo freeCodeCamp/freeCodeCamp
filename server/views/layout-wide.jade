@@ -8,9 +8,9 @@ html(lang='en')
           include partials/scripts
           block content
   else
-      body.no-top-and-bottom-margins
-        include partials/scripts
-        include partials/navbar
-        include partials/flash
-        block content
-        include partials/footer
+      body.no-top-and-bottom-margins(class=theme !== 'default' ? theme : '')
+          include partials/scripts
+          include partials/navbar
+          include partials/flash
+          block content
+          include partials/footer

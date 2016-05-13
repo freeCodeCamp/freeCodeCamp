@@ -7,5 +7,11 @@ script.
     ga('require', 'displayfeatures');
     ga('send', 'pageview');
 // Leave the below lines alone!
+script.
+  (function(global) {
+    global.main = global.main || {};
+    global.main.isLoggedIn = !{JSON.stringify(!!user)};
+    global.main.userId = !{JSON.stringify(user && user.id || false)};
+  }(window))
 script(src=rev('/js', 'vendor-main.js'))
 script(src=rev('/js', 'main.js'))
