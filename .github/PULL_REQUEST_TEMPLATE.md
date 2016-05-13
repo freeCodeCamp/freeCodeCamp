@@ -24,7 +24,7 @@
 <!-- Go over all points below, and put an `x` in all the boxes that apply. -->
 <!-- If you're unsure about any of these, don't hesitate to ask in the Help Contributors room linked above. We're here to help! -->
 - [ ] Tested changes locally.
-- [ ] Closes currently open issue (e.g. `Closes #XXXX`): Closes 
+- [ ] Closes currently open issue (replace XXXX with an issue no): Closes #XXXX
 
 #### Description
 <!-- Describe your changes in detail -->
