@@ -1,3 +1,4 @@
+import { Subject } from 'rx';
 import React, { PropTypes } from 'react';
 import { createSelector } from 'reselect';
 import { connect } from 'react-redux';
@@ -11,6 +12,8 @@ const mapStateToProps = createSelector(
   state => state.app.navHeight,
   (windowHeight, navHeight) => ({ height: windowHeight - navHeight - 50 })
 );
+
+const editorDebounceTimeout = 750;
 
 const options = {
   lint: true,
@@ -26,6 +29,11 @@ const options = {
 };
 
 export class Editor extends PureComponent {
+  constructor(...args) {
+    super(...args);
+    this._editorContent$ = new Subject();
+    this.handleChange = this.handleChange.bind(this);
+  }
   static displayName = 'Editor';
   static propTypes = {
     height: PropTypes.number,
@@ -39,8 +47,32 @@ export class Editor extends PureComponent {
     mode: 'javascript'
   };
 
+  componentDidMount() {
+    const { updateFile = (() => {}) } = this.props;
+    this._subscription = this._editorContent$
+      .debounce(editorDebounceTimeout)
+      .distinctUntilChanged()
+      .subscribe(
+        updateFile,
+        err => { throw err; }
+      );
+  }
+
+  componentWillUnmount() {
+    if (this._subscription) {
+      this._subscription.dispose();
+      this._subscription = null;
+    }
+  }
+
+  handleChange(value) {
+    if (this._subscription) {
+      this._editorContent$.onNext(value);
+    }
+  }
+
   render() {
-    const { content, height, mode, updateFile } = this.props;
+    const { content, height, mode } = this.props;
     const style = {};
     if (height) {
       style.height = height + 'px';
@@ -51,7 +83,7 @@ export class Editor extends PureComponent {
         style={ style }>
         <NoSSR>
           <Codemirror
-            onChange={ updateFile }
+            onChange={ this.handleChange }
             options={{ ...options, mode }}
             value={ content } />
         </NoSSR>
