@@ -1,5 +1,5 @@
 import { compose } from 'redux';
-import { HTML, JS } from '../../utils/challengeTypes';
+import { BONFIRE, HTML, JS } from '../../utils/challengeTypes';
 
 export function encodeScriptTags(value) {
   return value
@@ -41,10 +41,17 @@ export function buildSeed({ challengeSeed = [] } = {}) {
 
 const pathsMap = {
   [HTML]: 'main.html',
-  [JS]: 'main.js'
+  [JS]: 'main.js',
+  [BONFIRE]: 'main.js'
 };
 
 export function getPath({ challengeType }) {
   return pathsMap[challengeType] || 'main';
 }
 
+export function createTests({ tests = [] }) {
+  return tests
+    .map(test => ({
+      text: test.split('message: ').pop().replace(/\'\);/g, '')
+    }));
+}

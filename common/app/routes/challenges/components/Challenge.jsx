@@ -11,13 +11,14 @@ import { challengeSelector } from '../redux/selectors';
 
 const mapStateToProps = createSelector(
   challengeSelector,
+  state => state.challengesApp.tests,
   state => state.challengesApp.files,
   state => state.challengesApp.path,
-  ({ challenge, showPreview, mode }, files, path) => ({
-    content: files[path] && files[path].contents,
-    challenge,
+  ({ challenge, showPreview, mode }, tests, files = {}, path = '') => ({
+    content: files[path] && files[path].contents || '',
     showPreview,
-    mode
+    mode,
+    tests
   })
 );
 
@@ -26,11 +27,8 @@ export class Challenge extends PureComponent {
 
   static propTypes = {
     showPreview: PropTypes.bool,
-    challenge: PropTypes.object
-  };
-
-  static defaultProps = {
-    challenge: {}
+    content: PropTypes.string,
+    mode: PropTypes.string
   };
 
   renderPreview(showPreview) {
@@ -47,13 +45,13 @@ export class Challenge extends PureComponent {
   }
 
   render() {
-    const { content, challenge, mode, showPreview } = this.props;
+    const { content, mode, showPreview } = this.props;
     return (
       <div>
         <Col
           lg={ 3 }
           md={ showPreview ? 3 : 4 }>
-          <SidePanel { ...challenge }/>
+          <SidePanel />
         </Col>
         <Col
           lg={ showPreview ? 6 : 9 }
