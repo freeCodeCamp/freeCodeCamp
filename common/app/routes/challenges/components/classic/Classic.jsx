@@ -7,8 +7,8 @@ import PureComponent from 'react-pure-render/component';
 import Editor from './Editor.jsx';
 import SidePanel from './Side-Panel.jsx';
 import Preview from './Preview.jsx';
-import { challengeSelector } from '../redux/selectors';
-import { updateFile } from '../redux/actions';
+import { challengeSelector } from '../../redux/selectors';
+import { updateFile } from '../../redux/actions';
 
 const mapStateToProps = createSelector(
   challengeSelector,

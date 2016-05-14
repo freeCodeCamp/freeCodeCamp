@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import PureComponent from 'react-pure-render/component';
 
-import Challenge from './Challenge.jsx';
+import Classic from './classic/Classic.jsx';
 import Step from './step/Step.jsx';
 import { fetchChallenge } from '../redux/actions';
 import { challengeSelector } from '../redux/selectors';
@@ -38,7 +38,7 @@ export class Challenges extends PureComponent {
     if (this.props.isStep) {
       return <Step />;
     }
-    return <Challenge />;
+    return <Classic />;
   }
 }
 

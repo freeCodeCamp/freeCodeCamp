@@ -8,7 +8,7 @@ import { Col, Row } from 'react-bootstrap';
 import TestSuite from './Test-Suite.jsx';
 import Output from './Output.jsx';
 import ToolPanel from './Tool-Panel.jsx';
-import { challengeSelector } from '../redux/selectors';
+import { challengeSelector } from '../../redux/selectors';
 
 const mapStateToProps = createSelector(
   challengeSelector,
