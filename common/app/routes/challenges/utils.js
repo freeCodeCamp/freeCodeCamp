@@ -27,7 +27,7 @@ export function decodeFccfaaAttr(value) {
   );
 }
 
-export function arrayToNewLineString(seedData = []) {
+export function arrayToString(seedData = ['']) {
   seedData = Array.isArray(seedData) ? seedData : [seedData];
   return seedData.reduce((seed, line) => '' + seed + line + '\n', '\n');
 }
@@ -35,7 +35,7 @@ export function arrayToNewLineString(seedData = []) {
 export function buildSeed({ challengeSeed = [] } = {}) {
   return compose(
     decodeSafeTags,
-    arrayToNewLineString
+    arrayToString
   )(challengeSeed);
 }
 

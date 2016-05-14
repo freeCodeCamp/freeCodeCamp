@@ -3,7 +3,7 @@ import { createPoly } from '../../../../utils/polyvinyl';
 
 import types from './types';
 import { BONFIRE, HTML, JS } from '../../../utils/challengeTypes';
-import { buildSeed, createTests, getPath } from '../utils';
+import { arrayToString, buildSeed, createTests, getPath } from '../utils';
 
 const initialState = {
   challenge: '',
@@ -82,7 +82,9 @@ const filesReducer = handleActions(
         ...state,
         [path]: createPoly({
           path,
-          contents: buildSeed(challenge)
+          contents: buildSeed(challenge),
+          head: arrayToString(challenge.head),
+          tail: arrayToString(challenge.tail)
         })
       };
     }
