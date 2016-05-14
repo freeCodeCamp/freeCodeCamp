@@ -30,7 +30,8 @@ export class Editor extends PureComponent {
   static propTypes = {
     height: PropTypes.number,
     content: PropTypes.string,
-    mode: PropTypes.string
+    mode: PropTypes.string,
+    updateFile: PropTypes.func
   };
 
   static defaultProps = {
@@ -39,7 +40,7 @@ export class Editor extends PureComponent {
   };
 
   render() {
-    const { content, height, mode } = this.props;
+    const { content, height, mode, updateFile } = this.props;
     const style = {};
     if (height) {
       style.height = height + 'px';
@@ -50,6 +51,7 @@ export class Editor extends PureComponent {
         style={ style }>
         <NoSSR>
           <Codemirror
+            onChange={ updateFile }
             options={{ ...options, mode }}
             value={ content } />
         </NoSSR>

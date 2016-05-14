@@ -8,6 +8,7 @@ import Editor from './Editor.jsx';
 import SidePanel from './Side-Panel.jsx';
 import Preview from './Preview.jsx';
 import { challengeSelector } from '../redux/selectors';
+import { updateFile } from '../redux/actions';
 
 const mapStateToProps = createSelector(
   challengeSelector,
@@ -16,11 +17,14 @@ const mapStateToProps = createSelector(
   state => state.challengesApp.path,
   ({ challenge, showPreview, mode }, tests, files = {}, path = '') => ({
     content: files[path] && files[path].contents || '',
+    file: files[path],
     showPreview,
     mode,
     tests
   })
 );
+
+const bindableActions = { updateFile };
 
 export class Challenge extends PureComponent {
   static displayName = 'Challenge';
@@ -45,7 +49,13 @@ export class Challenge extends PureComponent {
   }
 
   render() {
-    const { content, mode, showPreview } = this.props;
+    const {
+      content,
+      updateFile,
+      file,
+      mode,
+      showPreview
+    } = this.props;
     return (
       <div>
         <Col
@@ -59,6 +69,7 @@ export class Challenge extends PureComponent {
           <Editor
             content={ content }
             mode={ mode }
+            updateFile={ content => updateFile(content, file) }
           />
         </Col>
         { this.renderPreview(showPreview) }
@@ -67,4 +78,4 @@ export class Challenge extends PureComponent {
   }
 }
 
-export default connect(mapStateToProps)(Challenge);
+export default connect(mapStateToProps, bindableActions)(Challenge);
