@@ -3,7 +3,7 @@ import { createPoly } from '../../../../utils/polyvinyl';
 
 import types from './types';
 import { BONFIRE, HTML, JS } from '../../../utils/challengeTypes';
-import { buildSeed, getPath } from '../utils';
+import { buildSeed, createTests, getPath } from '../utils';
 
 const initialState = {
   challenge: '',
@@ -22,8 +22,10 @@ const mainReducer = handleActions(
     }),
     [types.updateCurrentChallenge]: (state, { payload: challenge }) => ({
       ...state,
+      refresh: true,
       challenge: challenge.dashedName,
-      path: getPath(challenge)
+      path: getPath(challenge),
+      tests: createTests(challenge)
     }),
 
     // map

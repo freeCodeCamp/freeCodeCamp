@@ -8,11 +8,27 @@ import { Col, Row } from 'react-bootstrap';
 import TestSuite from './Test-Suite.jsx';
 import Output from './Output.jsx';
 import ToolPanel from './Tool-Panel.jsx';
+import { challengeSelector } from '../redux/selectors';
 
 const mapStateToProps = createSelector(
+  challengeSelector,
   state => state.app.windowHeight,
   state => state.app.navHeight,
-  (windowHeight, navHeight) => ({ height: windowHeight - navHeight - 20 })
+  state => state.challengesApp.tests,
+  state => state.challengesApp.refresh,
+  (
+    { challenge: { title, description } = {} },
+    windowHeight,
+    navHeight,
+    tests,
+    refresh
+  ) => ({
+    title,
+    description,
+    height: windowHeight - navHeight - 20,
+    tests,
+    refresh
+  })
 );
 
 export class SidePanel extends PureComponent {
@@ -24,14 +40,13 @@ export class SidePanel extends PureComponent {
 
   static propTypes = {
     description: PropTypes.arrayOf(PropTypes.string),
-    height: PropTypes.number
+    height: PropTypes.number,
+    tests: PropTypes.arrayOf(PropTypes.object),
+    title: PropTypes.string,
+    refresh: PropTypes.bool
   };
 
-  static defaultProps = {
-    description: [ 'Happy Coding!' ]
-  };
-
-  renderDescription(description, descriptionRegex) {
+  renderDescription(description = [ 'Happy Coding!' ], descriptionRegex) {
     return description.map((line, index) => {
       if (descriptionRegex.test(line)) {
         return (
@@ -50,7 +65,7 @@ export class SidePanel extends PureComponent {
   }
 
   render() {
-    const { title, description, height } = this.props;
+    const { title, description, height, tests = [], refresh } = this.props;
     const style = {
       overflowX: 'hidden',
       overflowY: 'auto'
@@ -64,7 +79,7 @@ export class SidePanel extends PureComponent {
         style={ style }>
         <div>
           <h4 className='text-center challenge-instructions-title'>
-            { title }
+            { title || 'Happy Coding!' }
           </h4>
           <hr />
           <Row>
@@ -78,7 +93,9 @@ export class SidePanel extends PureComponent {
         <ToolPanel />
         <Output />
         <br />
-        <TestSuite />
+        <TestSuite
+          refresh={ refresh }
+          tests={ tests } />
       </div>
     );
   }
