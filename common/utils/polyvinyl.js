@@ -15,7 +15,7 @@ import invariant from 'invariant';
 //   contents: String,
 //   history?: [...String],
 // }) => PolyVinyl, throws
-export function createPoly({ path, contents, history } = {}) {
+export function createPoly({ path, contents, history, ...rest } = {}) {
   invariant(
     typeof path === 'string',
     'path must be a string but got %s',
@@ -29,6 +29,7 @@ export function createPoly({ path, contents, history } = {}) {
   );
 
   return {
+    ...rest,
     history: Array.isArray(history) ? history : [ path ],
     path: path,
     contents: contents,
