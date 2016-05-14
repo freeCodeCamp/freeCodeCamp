@@ -1,4 +1,5 @@
 import { createAction } from 'redux-actions';
+import { updateContents } from '../../../../utils/polyvinyl';
 
 import types from './types';
 
@@ -34,5 +35,8 @@ export const updateFilter = createAction(
 export const clearFilter = createAction(types.clearFilter);
 
 // files
-export const updateFile = createAction(types.updateFile);
+export const updateFile = createAction(
+  types.updateFile,
+  (content, file) => updateContents(content, file)
+);
 export const updateFiles = createAction(types.updateFiles);
