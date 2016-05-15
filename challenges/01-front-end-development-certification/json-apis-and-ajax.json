@@ -10,10 +10,10 @@
       "description": [
         "In this section, we'll learn how to get data from APIs. APIs - or Application Programming Interfaces - are tools that computers use to communicate with one another.",
         "We'll also learn how to update HTML with the data we get from these APIs using a technology called Ajax.",
-        "First, let's review what the <code>$(document).ready()</code> function does. This function makes it so all code inside of it only runs  once our page loads.",
-        "Let's make our \"Get Message\" button change the text of the element with the class <code>message</code>.",
-        "Before we can do this, we need to implement a <code>click event</code> inside of our <code>$(document).ready()</code> function by adding this code:",
-        "<blockquote>$(\"#getMessage\").on(\"click\", function(){</br></br>});</blockquote>"
+        "First, let's review what the <code>$(document).ready()</code> function does. This function runs such that all of the code inside of it executes only once our page has finished loading.",
+        "So Let's start by implementing a <code>click event handler</code> inside of our <code>$(document).ready()</code> function by adding this code:",
+        "<blockquote>$(\"#getMessage\").on(\"click\", function(){</br></br>});</blockquote>",
+        "After completing this, proceed to the next challenge where we will make our \"Get Message\" button change the text of the element with the class <code>message</code>."
       ],
       "challengeSeed": [
         "fccss",
