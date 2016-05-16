@@ -51,7 +51,7 @@
     "errorhandler": "^1.4.2",
     "es6-map": "~0.1.1",
     "eslint": "^2.2.0",
-    "eslint-plugin-react": "^4.1.0",
+    "eslint-plugin-react": "^5.1.1",
     "express": "^4.13.3",
     "express-flash": "~0.0.2",
     "express-session": "^1.12.1",
