@@ -60,9 +60,6 @@ block content
 
                     if (user)
                         a.btn.btn-lg.btn-primary.btn-block#next-courseware-button(name='_csrf', value=_csrf) Submit and go to my next challenge
-                        .button-spacer
-                        a.btn.btn-lg.btn-block.btn-twitter(target="_blank", href="https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20PASTE_YOUR_CODEPEN_URL_HERE_USING_FULL_INSTEAD_OF_PEN%20%0A%20%23LearnToCode%20%23JavaScript", onclick="ga('send', 'event', 'twitter', 'share', 'challenge completion share');")
-                          i.fa.fa-twitter &thinsp;Tweet this project
                     else
                         a.btn.btn-lg.btn-primary.btn-block(href='/challenges/next-challenge?id=' + id) Go to my next challenge
 
