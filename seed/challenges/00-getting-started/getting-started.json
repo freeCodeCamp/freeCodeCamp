@@ -312,6 +312,83 @@
       ]
     },
     {
+    "titleGeo": "გაიგე როგორ მუშაობს FreeCodeCamp",
+    "descriptionGeo": [
+      [
+        "//i.imgur.com/6ibIavQ.jpg",
+        "ფოტო FreeCodeCamp-ის 4-ი სარგებლის შესახებ: შეუერთდი, ისწავლე JavaScript-ი, შექმენი შენი პორტფოლიო, დაეხმარე კომპანიებს რომელთა მიზანსაც მოგების მიღება არ წარმოადგენს(Nonprofits)",
+        "მოგესალმებით FreeCodeCamp-ში. ჩვენ ვართ საზოგადოება რომელიც დაკავებულია პროგრამირების სწავლით და Nonprofit-ების(კომპანიები რომელთა მიზანსაც მოგების მიღება არ წარმოადგენს) დახმარებით.",
+        ""
+      ],
+      [
+        "//i.imgur.com/Elb3dfj.jpg",
+        "Ein Screenshot von einigen unserer Camper beim gemeinsamen Programmieren in Toronto.",
+        "<bold>Programmieren zu lernen ist hart.</bold> Um erfolgreich zu sein brauchst du viel Übung und Unterstützung. Deswegen haben wir ein umfangreiches Curriculum und eine unterstützende Gemeinschaft geschaffen.",
+        ""
+      ],
+      [
+        "//i.imgur.com/D7Y5luw.jpg",
+        "Ein Graph vom Verhältnis der Wachstumsrate von Jobs gegenüber der Abschlüsse von Informatik Studien. Es gibts 1,4 Millionen Jobs aber nur 400.000 Leute um diese zu füllen.",
+        "Es gibt tausende von unbesetzen Programmierjobs und die Nachfrage wächst jedes Jahr",
+        ""
+      ],
+      [
+        "//i.imgur.com/WD3STY6.jpg",
+        "Foto von drei Campern die einen Job bekommen haben nachdem sie bei Free Code Camp programmieren gelernt haben",
+        "Free Code Camp ist ein sicherer Weg zu deinem ersten Programmierjob. Tatsächlich hat noch niemand unser komplettes Programm beendet, weil Campers bereits davor Jobs finden.",
+        ""
+      ],
+      [
+        "//i.imgur.com/vLNso6h.jpg",
+        "Eine Illustration die zeigt dass du HTML5, CSS3, JavaScript, Datenbanken, Git, Node.js, React und D3 lernen wirst",
+        "Wir haben hunderte von optionalen Programmieraufgaben die dir die fundamentalen Webentwicklungstechnologien wie HTML5, Node.js und Datanbanken beibringen werden.",
+        ""
+      ],
+      [
+        "//i.imgur.com/UVB9hxp.jpg",
+        "Ein Foto von einem Camper in einem Cafe der an Free Code Camp Projekten arbeitet.",
+        "Wir glauben dass Menschen am Besten beim Tun lernen. Deswegen wirst du die meiste Zeit damit beschäftigt sein an tatsächlichen Projekten zu arbeiten. Wir werden dir eine Liste an Anforderungen (agile User Stories) geben und du wirst dich damit auseinander setzen diese zu erfüllen.",
+        ""
+      ],
+      [
+        "//i.imgur.com/pbW7K5S.jpg",
+        "Ein Bild auf dem man unsere Frontend-, Backend- und Daten Visualisierungzertifikate (je 400 Stunden), unsere Non-Profit-Projekte (800 Stunden) und Bewerbungsgesprächsvorbereitung (80 Stunden) sieht mit einer Summe von 2080 Stunden Programmiererfahrung.",
+        "Unser Curriculum ist in 4 Zertifikate aufgeteilt. Diese Zertifikate sind standardisiert und jederzeit von deinen Kunden oder zukünftigen Arbeitgeber überprüfbar. Wie alles andere auch bei Free Code Camp sind die Zertifikate gratis. Wir empfehlen sie in der vorgesehenen Reihenfolge zu machen, aber es steht dir offen frei zu wählen. Die ersten drei Zertifikate dauern jeweils 400 Stunden. Das letzte Zertifikat dauert 800 Stunden und beinhaltet die Umsetzung eines echten Projektes für eine Non-Profit-Organisation.",
+        ""
+      ],
+      [
+        "//i.imgur.com/k8btNUB.jpg",
+        "Ein Screenshot von unserem Frontendzertifikat",
+        "Um sich unser geprüftes Frontend-Entwicklungszertifikat zu verdienen, wirst du 10 Projekte mit HTML, CSS, jQuery und Javascript umsetzen.",
+        ""
+      ],
+      [
+        "//i.imgur.com/Et3iD74.jpg",
+        "Ein Screenshot von unserem Datenvisualisierungszertifikat",
+        "Für unser Datenvisualisierungszertifikat, wirst du 10 Projekte mit React, Sass und D3.js umsetzen.",
+        ""
+      ],
+      [
+        "//i.imgur.com/8v3t84p.jpg",
+        "Ein Screenshot von unserem Backend-Entwicklungszertifikat",
+        "Um unser Backend-Entwicklungszertifikat zu erhalten, wirst du 10 Projekte mit Node.js, Express und MongoDB umsetzen. Du wirst Git und Heroku verwenden um sie in der Cloud zu veröffentlichen.",
+        ""
+      ],
+      [
+        "//i.imgur.com/yXyxbDd.jpg",
+        "Ein Screenshot von unserem Non-Profit-Verzeichnis",
+        "Nachdem du alle drei von diesen Zertifikaten abgeschlossen hast, wirst du mit einem anderen Camper zusammen Methoden der agilen Softwareentwicklung verwenden und zwei echte Projekte für Non-Profit-Organisationen umsetzen. Außerdem wirst du zwei bereits existierende Non-Profit-Projekte um neue Funktionalität erweitern. Wenn du fertig bist, wirst du ein Portfolio mit zwei echten Apps besitzen, die täglich von Leuten genutzt werden.",
+        ""
+      ],
+      [
+        "//i.imgur.com/PDGQ9ZM.jpg",
+        "Ein Foto von Campern die zusammen in einem Cafe in Seoul an einem Projekt arbeiten.",
+        "Wenn du alle 2080 Stunden an Aufgaben und Projekten absolviert hast, hast du dir unser Full Stack Development Zertifikat verdient. Wir bieten dir dann ein gratis Bewerbungstraining an. Außerdem haben wir eine Jobbörse, wo Arbeitsgeber Camper einstellen die Free Code Camp Zertifikate erhalten haben. (ქართულის დახმარება)",
+        ""
+      ]
+    ]
+  },
+    {
       "id": "560add37cb82ac38a17513bf",
       "descriptionJa": [
         [
