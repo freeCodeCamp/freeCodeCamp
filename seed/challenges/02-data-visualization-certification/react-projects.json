@@ -18,7 +18,7 @@
         "<strong>Note:</strong> If you want to use the React JSX syntax, you need to enable 'Babel' as a preprocessor",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck.",
         "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen. ",
-        "You can get feedback on your project from fellow campers by sharing it in our <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Code Review Chatroom</a>. You can also share it on Twitter and your city's Campsite (on Facebook)."
+        "You can get feedback on your project by sharing it with your friends on Facebook."
       ],
       "releasedOn": "January 1, 2016",
       "challengeSeed": [
@@ -72,7 +72,7 @@
         "<strong>Hint:</strong> To get the top 100 campers of all time: <a href='https://fcctop100.herokuapp.com/api/fccusers/top/alltime' target='_blank'>https://fcctop100.herokuapp.com/api/fccusers/top/alltime</a>.",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck.",
         "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen. ",
-        "You can get feedback on your project from fellow campers by sharing it in our <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Code Review Chatroom</a>. You can also share it on Twitter and your city's Campsite (on Facebook)."
+        "You can get feedback on your project by sharing it with your friends on Facebook."
       ],
       "releasedOn": "January 1, 2016",
       "challengeSeed": [
@@ -130,7 +130,7 @@
         "<strong>Hint: </strong> You should prefix your local storage keys on CodePen, i.e. <code>_username_recipes</code>",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck.",
         "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen.",
-        "You can get feedback on your project from fellow campers by sharing it in our <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Code Review Chatroom</a>. You can also share it on Twitter and your city's Campsite (on Facebook)."
+        "You can get feedback on your project by sharing it with your friends on Facebook."
       ],
       "releasedOn": "January 1, 2016",
       "challengeSeed": [
@@ -191,7 +191,7 @@
         "<strong>Hint:</strong> Here's an overview of Conway's Game of Life with rules for your reference: <a href='https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life' target='_blank'>https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life</a>",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck.",
         "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen. ",
-        "You can get feedback on your project from fellow campers by sharing it in our <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Code Review Chatroom</a>. You can also share it on Twitter and your city's Campsite (on Facebook)."
+        "You can get feedback on your project by sharing it with your friends on Facebook."
       ],
       "releasedOn": "January 1, 2016",
       "challengeSeed": [
@@ -257,7 +257,7 @@
         "<strong>User Story:</strong> The game should be challenging, but theoretically winnable.",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck.",
         "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen. ",
-        "You can get feedback on your project from fellow campers by sharing it in our <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Code Review Chatroom</a>. You can also share it on Twitter and your city's Campsite (on Facebook)."
+        "You can get feedback on your project by sharing it with your friends on Facebook."
       ],
       "releasedOn": "January 1, 2016",
       "challengeSeed": [
