@@ -1352,7 +1352,7 @@
       ],
       "tests": [
         "assert(firstLetterOfLastName === 'L', 'message: The <code>firstLetterOfLastName</code> variable should have the value of <code>L</code>.');",
-        "assert(code.match(/firstLetterOfLastName\\s*=\\s*lastName\\s*\\[\\s*\\d+\\s*\\]/), 'message: You should use bracket notation.');"
+        "assert(code.match(/firstLetterOfLastName\\s*?=\\s*?lastName\\[.*?\\]/), 'message: You should use bracket notation.');"
       ],
       "type": "waypoint",
       "challengeType": 1,
@@ -1442,7 +1442,7 @@
       ],
       "tests": [
         "assert(thirdLetterOfLastName === 'v', 'message: The <code>thirdLetterOfLastName</code> variable should have the value of <code>v</code>.');",
-        "assert(code.match(/thirdLetterOfLastName\\s*=\\s*lastName\\s*\\[\\s*\\d+\\s*\\]/), 'message: You should use bracket notation.');"
+        "assert(code.match(/thirdLetterOfLastName\\s*?=\\s*?lastName\\[.*?\\]/), 'message: You should use bracket notation.');"
       ],
       "type": "waypoint",
       "challengeType": 1,
