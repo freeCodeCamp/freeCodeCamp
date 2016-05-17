@@ -56,13 +56,6 @@ urlset(xmlns="http://www.sitemaps.org/schemas/sitemap/0.9")
       changefreq weekly
       priority= 0.9
 
-  each story in stories
-    url
-      loc #{appUrl}/news/#{story}
-      lastmod= now
-      changefreq monthly
-      priority= 0.5
-
   each job in jobs
     url
       loc #{appUrl}/jobs/#{job}
