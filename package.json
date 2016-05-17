@@ -137,7 +137,7 @@
   "devDependencies": {
     "browser-sync": "^2.9.12",
     "gulp-sourcemaps": "^1.6.0",
-    "gulp-tape": "0.0.8",
+    "gulp-tape": "0.0.9",
     "jsonlint": "^1.6.2",
     "loopback-component-explorer": "^2.1.1",
     "loopback-testing": "^1.1.0",
