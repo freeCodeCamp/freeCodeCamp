@@ -104,7 +104,7 @@ You should have [ESLint running in your editor](http://eslint.org/docs/user-guid
 ## Found a bug?
 Do not file an issue until you have followed these steps:
 
-1. Read [Help I've Found a Bug](https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/Help-I've-Found-a-Bug) wiki page and follow the instructions there.
+1. Read [Help I've Found a Bug](https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/FreeCodeCamp-Report-Bugs) wiki page and follow the instructions there.
 2. Asked for confirmation in the appropriate [Help Room](https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/Help-Rooms)
 3. Please *do not* open an issue without a 3rd party confirmation of your problem.
 

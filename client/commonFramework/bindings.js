@@ -179,7 +179,7 @@ window.common = (function(global) {
     $('#help-ive-found-a-bug-wiki-article').on('click', function() {
       window.open(
         'https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/' +
-          "Help-I've-Found-a-Bug",
+          'FreeCodeCamp-Report-Bugs',
         '_blank'
       );
     });
