@@ -18,9 +18,9 @@ var onConnect = function() {
 
 var timeoutHandler = setTimeout(function() {
   var message =
-    'db did not after  ' +
+    'db did not connect after  ' +
     (Date.now() - startTime) +
-    ' ms connect crashing hard';
+    ' ms --- crashing hard';
 
   console.log(message);
   // purposely shutdown server

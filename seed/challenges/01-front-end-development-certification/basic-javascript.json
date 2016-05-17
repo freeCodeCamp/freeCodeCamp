@@ -1796,7 +1796,7 @@
       "title": "Manipulate Arrays With push()",
       "description": [
         "An easy way to append data to the end of an array is via the <code>push()</code> function.",
-        "<code>.push()</code> takes one or more <dfn>parameter</dfn> and \"pushes\" it onto the end of the array.",
+        "<code>.push()</code> takes one or more <dfn>parameters</dfn> and \"pushes\" them onto the end of the array.",
         "<blockquote>var arr = [1,2,3];<br>arr.push(4);<br>// arr is now [1,2,3,4]</blockquote>",
         "<h4>Instructions</h4>",
         "Push <code>[\"dog\", 3]</code> onto the end of the <code>myArray</code> variable."
@@ -3971,7 +3971,7 @@
         "Here is an example of using a variable to access a property:",
         "<blockquote>var someProp = \"propName\";<br>var myObj = {<br>  propName: \"Some Value\"<br >}<br>myObj[someProp]; // \"Some Value\"</blockquote>",
         "Here is one more:",
-        "<blockquote>var myDog = \"Hunter\";<br>var dogs = {<br>  Fido: \"Mutt\",\n  Hunter: \"Doberman\",\n  Snoopie: \"Beagle\"<br >}<br>var breed = dogs[myDog]; // \"Hunter\"<br>console.log(breed)// \"Doberman\"</blockquote>",
+        "<blockquote>var myDog = \"Hunter\";<br>var dogs = {<br>  Fido: \"Mutt\",\n  Hunter: \"Doberman\",\n  Snoopie: \"Beagle\"<br >}<br>var breed = dogs[myDog];<br>console.log(breed);// \"Doberman\"</blockquote>",
         "Note that we  do <em>not</em> use quotes around the variable name when using it to access the property because we are using the <em>value</em> of the variable, not the <em>name</em>",
         "<h4>Instructions</h4>",
         "Use the <code>playerNumber</code> variable to lookup player <code>16</code> in <code>testObj</code> using bracket notation."
@@ -4887,7 +4887,7 @@
       "title": "Profile Lookup",
       "description": [
         "We have an array of objects representing different people in our contacts lists.",
-        "A <code>lookUp</code> function that takes <code>firstName</code> and a property (<code>prop</code>) as arguments has been pre-written for you.",
+        "A <code>lookUpProfile</code> function that takes <code>firstName</code> and a property (<code>prop</code>) as arguments has been pre-written for you.",
         "The function should check if <code>firstName</code> is an actual contact's <code>firstName</code> and the given property (<code>prop</code>) is a property of that contact.",
         "If both are true, then return the \"value\" of that property.",
         "If <code>firstName</code> does not correspond to any contacts then return <code>\"No such contact\"</code>",
@@ -5031,7 +5031,7 @@
       "tests": [
         "assert(typeof randomWholeNum() === \"number\" && (function(){var r = randomWholeNum();return Math.floor(r) === r;})(), 'message: The result of <code>randomWholeNum</code> should be a whole number.');",
         "assert(code.match(/Math.random/g).length > 1, 'message: You should be using <code>Math.random</code> to generate a random number.');",
-        "assert(code.match(/\\(\\s*?Math.random\\s*?\\(\\s*?\\)\\s*?\\*\\s*?10\\s*?\\)/g) || code.match(/\\(\\s*?10\\s*?\\*\\s*?Math.random\\s*?\\(\\s*?\\)\\s*?\\)/g), 'message: You should have multiplied the result of <code>Math.random</code> by 10 to make it a number that is between zero and nine.');",
+        "assert(code.match(/\\s*?Math.random\\s*?\\(\\s*?\\)\\s*?\\*\\s*?10\\s*?/g) || code.match(/\\s*?10\\s*?\\*\\s*?Math.random\\s*?\\(\\s*?\\)\\s*?/g), 'message: You should have multiplied the result of <code>Math.random</code> by 10 to make it a number that is between zero and nine.');",
         "assert(code.match(/Math.floor/g).length > 1, 'message: You should use <code>Math.floor</code> to remove the decimal part of the number.');"
       ],
       "type": "waypoint",
