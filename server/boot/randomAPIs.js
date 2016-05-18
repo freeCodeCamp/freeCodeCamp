@@ -1,6 +1,5 @@
 import request from 'request';
 import constantStrings from '../utils/constantStrings.json';
-import labs from '../resources/labs.json';
 import testimonials from '../resources/testimonials.json';
 import secrets from '../../config/secrets';
 
@@ -8,8 +7,6 @@ module.exports = function(app) {
   const router = app.loopback.Router();
   const User = app.models.User;
   router.get('/api/github', githubCalls);
-  router.get('/api/blogger', bloggerCalls);
-  router.get('/api/trello', trelloCalls);
   router.get('/chat', chat);
   router.get('/coding-bootcamp-cost-calculator', bootcampCalculator);
   router.get('/twitch', twitch);
@@ -23,7 +20,6 @@ module.exports = function(app) {
   router.get('/unsubscribed', unsubscribed);
   router.get('/get-started', getStarted);
   router.get('/submit-cat-photo', submitCatPhoto);
-  router.get('/labs', showLabs);
   router.get('/stories', showTestimonials);
   router.get('/shop', showShop);
   router.get('/shop/cancel-stickers', cancelStickers);
@@ -43,13 +39,6 @@ module.exports = function(app) {
 
   function chat(req, res) {
     res.redirect('https://gitter.im/FreeCodeCamp/FreeCodeCamp');
-  }
-
-  function showLabs(req, res) {
-    res.render('resources/labs', {
-      title: 'Projects Built by Free Code Camp Software Engineers',
-      projects: labs
-    });
   }
 
   function terms(req, res) {
@@ -291,36 +280,6 @@ module.exports = function(app) {
             });
           }
         );
-      }
-    );
-  }
-
-  function trelloCalls(req, res, next) {
-    request(
-      'https://trello.com/1/boards/BA3xVpz9/cards?key=' +
-      secrets.trello.key,
-      function(err, status, trello) {
-        if (err) { return next(err); }
-        trello = (status && status.statusCode === 200) ?
-          (JSON.parse(trello)) :
-          'Can\'t connect to to Trello';
-
-        return res.end(JSON.stringify(trello));
-      });
-  }
-
-  function bloggerCalls(req, res, next) {
-    request(
-      'https://www.googleapis.com/blogger/v3/blogs/2421288658305323950/' +
-        'posts?key=' +
-      secrets.blogger.key,
-      function(err, status, blog) {
-        if (err) { return next(err); }
-
-        blog = (status && status.statusCode === 200) ?
-          JSON.parse(blog) :
-          'Can\'t connect to Blogger';
-        return res.end(JSON.stringify(blog));
       }
     );
   }
