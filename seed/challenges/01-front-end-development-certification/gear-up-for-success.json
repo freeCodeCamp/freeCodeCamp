@@ -44,49 +44,97 @@
           "LinkedIn erkennt Free Code Camp als Universität an. Du bekommst auf unser großes Alumni Netzwerk zugriff, indem du Free Code Camp zum Ausbildungsbereich deines LinkedIn Profils hinzufügst. Setze deinen Abschlusszeitpunkt auf das nächste Jahr. In das Feld \"Abschluss\" schreibe \"Full Stack Web Development Certification\". In das Feld \"Studienfach\" schreibe \"Computer Software Engineering\". Dann klicke auf den \"Speichern\" Button.",
           "https://www.linkedin.com/profile/edit-education?school=Free+Code+Camp"
         ]
-      ]    
+      ]
     },
     {
-      "id": "560adc65cb82ac38a17513c2",
-      "title": "Join our Subreddit",
+      "id": "560adc65db82ac38a17513c2",
+      "title": "Join our Forum",
       "description": [
         [
-          "//i.imgur.com/DYjJuCG.gif",
-          "A gif showing how you can create a Reddit account and join Free Code Camp's subreddit.",
-          "Our community has its own subreddit on Reddit. This is a convenient way to ask questions and share links with our entire community. If you don't already have a Reddit account, you can create one in a few seconds - you don't even need an email address. Then you can click the \"subscribe\" button to join our subreddit. You may also want to subscribe to some of the other subreddits listed in our sidebar.",
-          "https://reddit.com/r/freecodecamp"
+          "//i.imgur.com/y0XxmxQ.gif",
+          "A gif showing how you can join Free Code Camp's forum by clicking the \"sign up\" button, authenticating using GitHub, and verifying your email address.",
+          "Our forum is the best place for deep discussions about various programming resources: books, online courses, coding events, and more. You can also get help with these resources from your fellow campers. Click the button below to open up our forum, then click the \"Sign up\" button. Once you've created an account using GitHub, you'll need to confirm your email address. Now you're able to join discussions on our forum!",
+          "//forum.freecodecamp.com/"
+        ],
+        [
+          "//i.imgur.com/GxCpl7x.gif",
+          "A gif showing how you can upload your profile picture.",
+          "We recommend that you also add a custom profile picture of your face. You can do this in the settings section of the forum.",
+          ""
+        ],
+        [
+          "//i.imgur.com/Gop2PmJ.gif",
+          "A gif showing how you can introduce yourself on our self introduction forum thread.",
+          "You can make your first forum post right now by clicking the button below to go to the introduction thread. You can reply to the original post with: who you are, why you're learning to code, and how you've been learning to code so far. Then feel free to explore the various discussions and jump in with your own thoughts.",
+          "//forum.freecodecamp.com/t/welcome-please-introduce-yourself-here/1082"
         ]
       ],
-      "releasedOn": "February 10, 2016",
+      "releasedOn": "May 17, 2016",
       "challengeSeed": [],
       "tests": [],
       "type": "Waypoint",
       "challengeType": 7,
-      "titleEs": "Unete a nuestro Subreddit",
+      "titleEs": "Join our Forum",
       "descriptionEs": [
         [
-          "//i.imgur.com/DYjJuCG.gif",
-          "Un gif mostrando como puedes crear una cuenta de Reddit y unirte a Free Code Camp subreddit.",
-          "Nuestra comunidad tiene su propio subreddit en Reddit. Esta es una manera conveniente de hacer preguntas y compartir enlaces con toda nuestra comunidad. Si aún no dispones de una cuenta de Reddit, puedes crear una en unos segundos - ni siquiera necesitas una dirección de correo electrónico. A continuación, puedes pulsar el botón \"subscribe\" para unirte a nuestro subreddit. También puedes suscribirte a otros subreddits que estan listados en la barra lateral.",
-          "https://reddit.com/r/freecodecamp"
+          "//i.imgur.com/y0XxmxQ.gif",
+          "A gif showing how you can join Free Code Camp's forum by clicking the \"sign up\" button, authenticating using GitHub, and verifying your email address.",
+          "Our forum is the best place for deep discussions about various programming resources: books, online courses, coding events, and more. You can also get help with these resources from your fellow campers. Click the button below to open up our forum, then click the \"Sign up\" button. Once you've created an account using GitHub, you'll need to confirm your email address. Now you're able to join discussions on our forum!",
+          "//forum.freecodecamp.com/"
+        ],
+        [
+          "//i.imgur.com/GxCpl7x.gif",
+          "A gif showing how you can upload your profile picture.",
+          "We recommend that you also add a custom profile picture of your face. You can do this in the settings section of the forum.",
+          ""
+        ],
+        [
+          "//i.imgur.com/Gop2PmJ.gif",
+          "A gif showing how you can introduce yourself on our self introduction forum thread.",
+          "You can make your first forum post right now by clicking the button below to go to the introduction thread. You can reply to the original post with: who you are, why you're learning to code, and how you've been learning to code so far. Then feel free to explore the various discussions and jump in with your own thoughts.",
+          "//forum.freecodecamp.com/t/welcome-please-introduce-yourself-here/1082"
         ]
       ],
-      "titleFr": "Rejoignez notre Subreddit",
+      "titleFr": "Join our Forum",
       "descriptionFr": [
         [
-          "//i.imgur.com/DYjJuCG.gif",
-          "Une gif montrant la procédure de création d’un compte sur Reddit et comment rejoindre le subreddit de Free Code Camp",
-          "Notre communauté à son propre subreddit sur Reddit. C’est un espace où tu peux poser des questions ou partager des liens avec la communauté. Si tu n’as pas encore un compte sur Reddit, tu peux créer un dans quelque secondes – tu n’as pas besoin d’une adresse mail. Tu peux cliquer après sur  le bouton \"subscribe\" pour rejoindre notre subreddit. Tu peux rejoindre d’autre subreddits listés dans la sidebar.",
-          "https://reddit.com/r/freecodecamp"
+          "//i.imgur.com/y0XxmxQ.gif",
+          "A gif showing how you can join Free Code Camp's forum by clicking the \"sign up\" button, authenticating using GitHub, and verifying your email address.",
+          "Our forum is the best place for deep discussions about various programming resources: books, online courses, coding events, and more. You can also get help with these resources from your fellow campers. Click the button below to open up our forum, then click the \"Sign up\" button. Once you've created an account using GitHub, you'll need to confirm your email address. Now you're able to join discussions on our forum!",
+          "//forum.freecodecamp.com/"
+        ],
+        [
+          "//i.imgur.com/GxCpl7x.gif",
+          "A gif showing how you can upload your profile picture.",
+          "We recommend that you also add a custom profile picture of your face. You can do this in the settings section of the forum.",
+          ""
+        ],
+        [
+          "//i.imgur.com/Gop2PmJ.gif",
+          "A gif showing how you can introduce yourself on our self introduction forum thread.",
+          "You can make your first forum post right now by clicking the button below to go to the introduction thread. You can reply to the original post with: who you are, why you're learning to code, and how you've been learning to code so far. Then feel free to explore the various discussions and jump in with your own thoughts.",
+          "//forum.freecodecamp.com/t/welcome-please-introduce-yourself-here/1082"
         ]
       ],
-      "titleDe": "Tritt unserem Subreddit bei",
+      "titleDe": "Join our Forum",
       "descriptionDe": [
         [
-          "//i.imgur.com/DYjJuCG.gif",
-          "Ein GIF, das dir zeigt, wie du einen Reddit Account anlegen und unserem Free Code Camp Subreddit beitreten kannst.",
-          "Unsere Community hat ihr eigenes Subreddit auf Reddit. Das ist eine sehr praktische Art und Weise, um Fragen zu stellen und Links mit unserer gesamten Community zu teilen. Wenn du noch keinen Reddit Account hast, kannst du einen in wenigen Sekunden erstellen - du brauchst nicht mal eine E-Mail Adresse. Dann kannst du den \"subscribe\" Button klicken, um unserem Subreddit beizutreten. Wenn du willst, kannst du auch jenen Subreddits folgen, die wir in unserer Sidebar gelistet haben.",          
-          "https://reddit.com/r/freecodecamp"
+          "//i.imgur.com/y0XxmxQ.gif",
+          "A gif showing how you can join Free Code Camp's forum by clicking the \"sign up\" button, authenticating using GitHub, and verifying your email address.",
+          "Our forum is the best place for deep discussions about various programming resources: books, online courses, coding events, and more. You can also get help with these resources from your fellow campers. Click the button below to open up our forum, then click the \"Sign up\" button. Once you've created an account using GitHub, you'll need to confirm your email address. Now you're able to join discussions on our forum!",
+          "//forum.freecodecamp.com/"
+        ],
+        [
+          "//i.imgur.com/GxCpl7x.gif",
+          "A gif showing how you can upload your profile picture.",
+          "We recommend that you also add a custom profile picture of your face. You can do this in the settings section of the forum.",
+          ""
+        ],
+        [
+          "//i.imgur.com/Gop2PmJ.gif",
+          "A gif showing how you can introduce yourself on our self introduction forum thread.",
+          "You can make your first forum post right now by clicking the button below to go to the introduction thread. You can reply to the original post with: who you are, why you're learning to code, and how you've been learning to code so far. Then feel free to explore the various discussions and jump in with your own thoughts.",
+          "//forum.freecodecamp.com/t/welcome-please-introduce-yourself-here/1082"
         ]
       ]
     },
@@ -243,7 +291,7 @@
           "Du kannst dir ein Ziel setzen und versprechen, einer gemeinnützigen Organisation eine monatliche Spende zu entrichten, bis du dieses Ziel erreicht hast. Das gibt dir externe Motivation in deinem Bestreben programmieren zu lernen - und eröffnet von Anfang an die Gelegenheit gemeinnützigen Organisationen zu helfen. Wähle dein Ziel und dann eine monatliche Spende. Wenn du auf \"verpflichten\" klickst, öffnet sich die Spendenseite der gemeinnützigen Organisation in einem neuen Tab. Dieser Schritt ist optional, du kannst deine Verpflichtung jederzeit ändern oder stoppen.",
           "/verpflichten"
         ]
-      ]     
+      ]
     }
   ]
 }
