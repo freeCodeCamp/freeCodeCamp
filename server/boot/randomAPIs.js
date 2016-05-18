@@ -8,8 +8,6 @@ module.exports = function(app) {
   const router = app.loopback.Router();
   const User = app.models.User;
   router.get('/api/github', githubCalls);
-  router.get('/api/blogger', bloggerCalls);
-  router.get('/api/trello', trelloCalls);
   router.get('/chat', chat);
   router.get('/coding-bootcamp-cost-calculator', bootcampCalculator);
   router.get('/twitch', twitch);
@@ -291,36 +289,6 @@ module.exports = function(app) {
             });
           }
         );
-      }
-    );
-  }
-
-  function trelloCalls(req, res, next) {
-    request(
-      'https://trello.com/1/boards/BA3xVpz9/cards?key=' +
-      secrets.trello.key,
-      function(err, status, trello) {
-        if (err) { return next(err); }
-        trello = (status && status.statusCode === 200) ?
-          (JSON.parse(trello)) :
-          'Can\'t connect to to Trello';
-
-        return res.end(JSON.stringify(trello));
-      });
-  }
-
-  function bloggerCalls(req, res, next) {
-    request(
-      'https://www.googleapis.com/blogger/v3/blogs/2421288658305323950/' +
-        'posts?key=' +
-      secrets.blogger.key,
-      function(err, status, blog) {
-        if (err) { return next(err); }
-
-        blog = (status && status.statusCode === 200) ?
-          JSON.parse(blog) :
-          'Can\'t connect to Blogger';
-        return res.end(JSON.stringify(blog));
       }
     );
   }

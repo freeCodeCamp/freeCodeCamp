@@ -10,6 +10,10 @@
   "link": "/wiki",
   "target": "_blank"
 },{
+  "content": "Forum",
+  "link": "//forum.freecodecamp.com/",
+  "target": "_blank"
+},{
   "content": "About",
   "link": "/about"
 },{
