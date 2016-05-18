@@ -20,7 +20,7 @@
         "<strong>User Story:</strong> As an unauthenticated or authenticated user, I can see the results of polls in chart form. (This could be implemented using Chart.js or Google Charts.)",
         "<strong>User Story:</strong> As an authenticated user, if I don't like the options on a poll, I can create a new option.",
         "Once you've finished implementing these user stories, click the \"I've completed this challenge\" button and enter the URLs for both your GitHub repository and your live app running on Heroku.",
-        "You can get feedback on your project from fellow campers by sharing it in our <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Code Review Chatroom</a>. You can also share it on Twitter and your city's Campsite (on Facebook)."
+        "You can get feedback on your project by sharing it with your friends on Facebook."
       ],
       "challengeSeed": [
         "JBKnbY_fdg4"
@@ -59,7 +59,7 @@
         "<strong>User Story:</strong> As an unauthenticated user, when I login I should not have to search again.",
         "<strong>Hint:</strong> Try using the <a href='https://www.yelp.com/developers/documentation/v2/overview' target='_blank'>Yelp API</a> to find venues in the cities your users search for. If you use Yelp's API, be sure to mention so in your app.",
         "Once you've finished implementing these user stories, click the \"I've completed this challenge\" button and enter the URLs for both your GitHub repository and your live app running on Heroku.",
-        "You can get feedback on your project from fellow campers by sharing it in our <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Code Review Chatroom</a>. You can also share it on Twitter and your city's Campsite (on Facebook)."
+        "You can get feedback on your project by sharing it with your friends on Facebook."
       ],
       "challengeSeed": [
         "Gei7QfPmcMw"
@@ -94,7 +94,7 @@
         "<strong>User Story:</strong> I can remove stocks.",
         "<strong>User Story:</strong> I can see changes in real-time when any other user adds or removes a stock. For this you will need to use Web Sockets.",
         "Once you've finished implementing these user stories, click the \"I've completed this challenge\" button and enter the URLs for both your GitHub repository and your live app running on Heroku.",
-        "You can get feedback on your project from fellow campers by sharing it in our <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Code Review Chatroom</a>. You can also share it on Twitter and your city's Campsite (on Facebook)."
+        "You can get feedback on your project by sharing it with your friends on Facebook."
       ],
       "challengeSeed": [
         "CENs50cnRgM"
@@ -128,7 +128,7 @@
         "<strong>User Story:</strong> I can update my settings to store my full name, city, and state.",
         "<strong>User Story:</strong> I can propose a trade and wait for the other user to accept the trade.",
         "Once you've finished implementing these user stories, click the \"I've completed this challenge\" button and enter the URLs for both your GitHub repository and your live app running on Heroku.",
-        "You can get feedback on your project from fellow campers by sharing it in our <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Code Review Chatroom</a>. You can also share it on Twitter and your city's Campsite (on Facebook)."
+        "You can get feedback on your project by sharing it with your friends on Facebook."
       ],
       "challengeSeed": [
         "mzElFmbGqQI"
@@ -165,7 +165,7 @@
         "<strong>User Story:</strong> As an authenticated user, if I upload an image that is broken, it will be replaced by a placeholder image. (can use jQuery broken image detection)",
         "<strong>Hint:</strong> <a href='http://masonry.desandro.com/' target='_blank'>Masonry.js</a> is a library that allows for Pinterest-style image grids.",
         "Once you've finished implementing these user stories, click the \"I've completed this challenge\" button and enter the URLs for both your GitHub repository and your live app running on Heroku.",
-        "You can get feedback on your project from fellow campers by sharing it in our <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Code Review Chatroom</a>. You can also share it on Twitter and your city's Campsite (on Facebook)."
+        "You can get feedback on your project by sharing it with your friends on Facebook."
       ],
       "challengeSeed": [
         "adrOtJCVP04"

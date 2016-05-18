@@ -1,6 +1,5 @@
 import request from 'request';
 import constantStrings from '../utils/constantStrings.json';
-import labs from '../resources/labs.json';
 import testimonials from '../resources/testimonials.json';
 import secrets from '../../config/secrets';
 
@@ -21,7 +20,6 @@ module.exports = function(app) {
   router.get('/unsubscribed', unsubscribed);
   router.get('/get-started', getStarted);
   router.get('/submit-cat-photo', submitCatPhoto);
-  router.get('/labs', showLabs);
   router.get('/stories', showTestimonials);
   router.get('/shop', showShop);
   router.get('/shop/cancel-stickers', cancelStickers);
@@ -41,13 +39,6 @@ module.exports = function(app) {
 
   function chat(req, res) {
     res.redirect('https://gitter.im/FreeCodeCamp/FreeCodeCamp');
-  }
-
-  function showLabs(req, res) {
-    res.render('resources/labs', {
-      title: 'Projects Built by Free Code Camp Software Engineers',
-      projects: labs
-    });
   }
 
   function terms(req, res) {
