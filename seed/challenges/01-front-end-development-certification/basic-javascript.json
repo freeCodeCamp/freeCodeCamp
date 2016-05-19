@@ -865,12 +865,13 @@
       "description": [
         "To test your learning, you will create a solution \"from scratch\". Place your code between the indicated lines and it will be tested against multiple test cases.",
         "The algorithm to convert from Celsius to Fahrenheit is the temperature in Celsius times <code>9/5</code>, plus <code>32</code>.",
-        "You are given a variable <code>celsius</code> representing a temperature in Celsius. Create a variable <code>fahrenheit</code> and apply the algorithm to assign it the corresponding temperature in Fahrenheit.",
+        "You are given a variable <code>celsius</code> representing a temperature in Celsius. Use the variable <code>fahrenheit</code> already defined and apply the algorithm to assign it the corresponding temperature in Fahrenheit.",
         "<strong>Note</strong><br>Don't worry too much about the <code>function</code> and <code>return</code> statements as they will be covered in future challenges. For now, only use operators that you have already learned."
       ],
       "releasedOn": "January 1, 2016",
       "challengeSeed": [
         "function convertToF(celsius) {",
+        "  var fahrenheit;",
         "  // Only change code below this line",
         "  ",
         "  ",
