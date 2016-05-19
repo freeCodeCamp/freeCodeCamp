@@ -45,10 +45,21 @@
         "Cuando hayas terminado, pulsa el botón de \"I've completed this challenge\" e incluye un enlace a tu CodePen.",
         "Puedes obtener retroalimentación sobre tu proyecto por parte de otros campistas, compartiendolo en nuestra <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Sala de chat para revisión de código</a>. También puedes compartirlo en Twitter y en el campamento de tu ciudad (en Facebook)."
       ],
+      "descriptionFr": [
+        "<strong>Objectif:</strong> Créer une application sur <a href='http://codepen.io' target='_blank'>CodePen.io</a> qui a un fonctionnement similaire à: <a href='http://codepen.io/FreeCodeCamp/full/bELoPJ' target='_blank'>http://codepen.io/FreeCodeCamp/full/bELoPJ</a>.",
+        "<strong>Règle #1:</strong> Essayez de terminer le projet sans voir le code de l’exemple fourni.",
+        "<strong>Rule #2:</strong> Essayez de répondre aux <a href='https://fr.wikipedia.org/wiki/Récit_utilisateur' target='_blank'>récits d’utilisateurs</a> suivants. Utilisez n’importe quel librairie ou API en ajoutant votre style personnel.",
+        "<strong>Récit d’utilisateur:</strong> Je peux cliquer sur un bouton pour voir une nouvelle citation aléatoire.",
+        "<strong> Récit d’utilisateur:</strong> Je peux cliquer sur un bouton pour tweeter la citation.",
+        "N’oubliez pas d’utiliser la méthode  <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si vous êtes bloqué.",
+        "Une fois le projet finis, cliquez sur le bouton \"J’ai terminé le projet\" et introduisez le lien vers le projet sur CodePen. ",
+        "Vous pouvez avoir du feedback sur votre projet en parlant aux autres utilisateurs en partageant votre projet sur notre<a href='//gitter.im/freecodecamp/codereview' target='_blank'>Code Review Chatroom</a>. Vous pouvez aussi le partager sur Twitter et Facebook."
+      ],
       "isRequired": true,
       "challengeType": 3,
       "titleRu": "Создайте генератор случайных цитат",
-      "titleEs": "Crea una máquina de frases aleatorias"
+      "titleEs": "Crea una máquina de frases aleatorias",
+      "titleFr": "Créer une machine de citations aléatoires"
     },
     {
       "id": "bd7158d8c442eddfaeb5bd10",
@@ -97,9 +108,22 @@
         "Cuando hayas terminado, pulsa el botón de \"I've completed this challenge\" e incluye un enlace a tu CodePen.",
         "Puedes obtener retroalimentación sobre tu proyecto por parte de otros campistas, compartiendolo en nuestra <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Sala de chat para revisión de código</a>. También puedes compartirlo en Twitter y en el campamento de tu ciudad (en Facebook)."
       ],
+      "descriptionFr": [
+        "<strong>Objectif:</strong> Créer une application sur <a href='http://codepen.io' target='_blank'>CodePen.io</a> qui a un fonctionnement similaire à: <a href='http://codepen.io/FreeCodeCamp/full/bELRjV' target='_blank'>http://codepen.io/FreeCodeCamp/full/bELRjV</a>.",
+        "<strong>Règle #1:</strong> Essayez de terminer le projet sans voir le code de l’exemple fourni.",
+        "<strong>Rule #2:</strong> Essayez de répondre aux <a href='https://fr.wikipedia.org/wiki/Récit_utilisateur' target='_blank'>récits d’utilisateurs</a> suivants. Utilisez n’importe quel librairie ou API en ajoutant votre style personnel.",
+        "<strong>Récit d’utilisateur:</strong> Je peux voir la météo de ma région.",
+        "<strong>Récit d’utilisateur:</strong> Je peux voir une icône ou un arrière-plan qui dépendent de la météo (neige, déserts… par exemple).",
+        "<strong> Récit d’utilisateur:</strong> Je peux cliquer sur un bouton pour basculer entre le Celsius et le Fahrenheit.",
+        "On recommande l’utilisation de  <a href='http://openweathermap.org/current#geo' target='_blank'>Open Weather API</a>.  L’utilisation de ce service nécessite la création d’un compte gratuit pour avoir une clé d’utilisation de l’API. Normalement, il faut éviter d’inclure des clés d’API sur CodePen, mais on n’a pas pu trouver un API de météo qui ne nécessite pas une clé.",
+        "N’oubliez pas d’utiliser la méthode  <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si vous êtes bloqué.",
+        "Une fois le projet finis, cliquez sur le bouton \"J’ai terminé le projet\" et introduisez le lien vers le projet sur CodePen. ",
+        "Vous pouvez avoir du feedback sur votre projet en parlant aux autres utilisateurs en partageant votre projet sur notre<a href='//gitter.im/freecodecamp/codereview' target='_blank'>Code Review Chatroom</a>. Vous pouvez aussi le partager sur Twitter et Facebook."
+      ],
       "isRequired": true,
       "titleRu": "Покажите местную погоду",
-      "titleEs": "Muestra el clima local"
+      "titleEs": "Muestra el clima local",
+      "titleFr": "Afficher la météo locale"
     },
     {
       "id": "bd7158d8c442eddfaeb5bd19",
@@ -139,8 +163,22 @@
         "Cuando hayas terminado, pulsa el botón de \"I've completed this challenge\" e incluye un enlace a tu CodePen.",
         "Puedes obtener retroalimentación sobre tu proyecto por parte de otros campistas, compartiendolo en nuestra <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Sala de chat para revisión de código</a>. También puedes compartirlo en Twitter y en el campamento de tu ciudad (en Facebook)."
       ],
+      "descriptionFr": [
+        "<strong>Objectif:</strong> Créer une application sur <a href='http://codepen.io' target='_blank'>CodePen.io</a> qui a un fonctionnement similaire à: <a href='http://codepen.io/FreeCodeCamp/full/pgNRvJ' target='_blank'>http://codepen.io/FreeCodeCamp/full/pgNRvJ</a>.",
+        "<strong>Règle #1:</strong> Essayez de terminer le projet sans voir le code de l’exemple fourni.",
+        "<strong>Règle #2:</strong> Essayez de répondre aux <a href='https://fr.wikipedia.org/wiki/Récit_utilisateur' target='_blank'>récits d’utilisateurs</a> suivants. Utilisez n’importe quel librairie ou API en ajoutant votre style personnel.",
+        "<strong>Récit d’utilisateur:</strong> Je peux rechercher des articles de Wikipedia dans une barre de recherche et voir les résultats de ma recherche.",
+        "<strong>Récit d’utilisateur:</strong> Je peux cliquer sur un bouton pour voir un article aléatoire.",
+        "<span class='text-info'>Suggestion #1:</span> Vous pouvez utiliser ce lien pour avoir un article aléatoire: <code>http://en.wikipedia.org/wiki/Special:Random</code>.",
+        "<span class='text-info'>Suggestion #2:</span> Un article sur l’utilisation de l’API de Wikipedia: <code>http://www.mediawiki.org/wiki/API:Main_page</code>.",
+        "<span class='text-info'>Suggestion #3:</span> Vous pouvez utiliser ce <a href='https://en.wikipedia.org/wiki/Special:ApiSandbox#action=query&titles=Main%20Page&prop=revisions&rvprop=content&format=jsonfm' target='_blank'>lien</a> pour tester l’API de Wikipedia.", 
+        "N’oubliez pas d’utiliser la méthode  <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si vous êtes bloqué.",
+        "Une fois le projet finis, cliquez sur le bouton \"J’ai terminé le projet\" et introduisez le lien vers le projet sur CodePen. ",
+        "Vous pouvez avoir du feedback sur votre projet en parlant aux autres utilisateurs en partageant votre projet sur notre<a href='//gitter.im/freecodecamp/codereview' target='_blank'>Code Review Chatroom</a>. Vous pouvez aussi le partager sur Twitter et Facebook."
+      ],
       "isRequired": true,
-      "titleEs": "Crea un buscador de Wikipedia"
+      "titleEs": "Crea un buscador de Wikipedia",
+      "titleFr": "Créer une visionneuse de Wikipedia"
     },
     {
       "id": "bd7158d8c442eddfaeb5bd1f",
@@ -199,9 +237,25 @@
         "Cuando hayas terminado, pulsa el botón de \"I've completed this challenge\" e incluye un enlace a tu CodePen.",
         "Puedes obtener retroalimentación sobre tu proyecto por parte de otros campistas, compartiendolo en nuestra <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Sala de chat para revisión de código</a>. También puedes compartirlo en Twitter y en el campamento de tu ciudad (en Facebook)."
       ],
+      "descriptionFr": [
+        "<strong>Objectif:</strong> Créer une application sur <a href='http://codepen.io' target='_blank'>CodePen.io</a> qui a un fonctionnement similaire à: <a href='http://codepen.io/FreeCodeCamp/full/adBpOw' target='_blank'>http://codepen.io/FreeCodeCamp/full/adBpOw</a>.",
+        "<strong>Règle #1:</strong> Essayez de terminer le projet sans voir le code de l’exemple fourni.",
+        "<strong>Règle #2:</strong> Essayez de répondre aux <a href='https://fr.wikipedia.org/wiki/Récit_utilisateur' target='_blank'>récits d’utilisateurs</a> suivants. Utilisez n’importe quel librairie ou API en ajoutant votre style personnel.",
+        "<strong>Récit d’utilisateur:</strong> Je peux voir si Free Code Camp est en streaming sur Twitch.tv.",
+        "<strong>Récit d’utilisateur:</strong> Je peux cliquer sur le statut et aller vers la chaîne de Free Code Camp sur Twitch.tv.",
+        "<strong>Récit d’utilisateur:</strong> Si un utilisateur est en streaming, je peux voir plus de détails sur ce qu’il est entrain de diffuser.",
+        "<strong>Récit d’utilisateur:</strong> Je peux voir un placeholder de notification si le compte d’un streamer est innéxistant (ou compte fermé). Vous pouvez vérifier si cela marche en ajoutant brunofin et comster404 au tableau de streamers de Twitch.",
+        "<strong>Suggestion:</strong>Voir un exemple d’appel de l’API JSON de Twitch.tv sur <a href='https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/Front-End-Project-Use-the-Twitchtv-JSON-API' target='_blank'>https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/Front-End-Project-Use-the-Twitchtv-JSON-API</a>.",
+        "<strong> Suggestion:</strong> La documentation de l’exemple d’API est disponible sur: <a href='https://github.com/justintv/Twitch-API/blob/master/v3_resources/streams.md#get-streamschannel' target='_blank'>https://github.com/justintv/Twitch-API/blob/master/v3_resources/streams.md#get-streamschannel</a>.",
+        "<strong> Suggestion:</strong> Voici un tableau d’utilisateurs qui diffusent régulièrement en relation avec la programmation: <code>[\"freecodecamp\", \"storbeck\", \"terakilobyte\", \"habathcx\",\"RobotCaleb\",\"thomasballinger\",\"noobs2ninjas\",\"beohoff\"]</code>",
+        "N’oubliez pas d’utiliser la méthode  <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si vous êtes bloqué.",
+        "Une fois le projet finis, cliquez sur le bouton \"J’ai terminé le projet\" et introduisez le lien vers le projet sur CodePen. ",
+        "Vous pouvez avoir du feedback sur votre projet en parlant aux autres utilisateurs en partageant votre projet sur notre<a href='//gitter.im/freecodecamp/codereview' target='_blank'>Code Review Chatroom</a>. Vous pouvez aussi le partager sur Twitter et Facebook."
+      ],
       "isRequired": true,
       "titleRu": "Используйте Twitch.tv JSON API",
-      "titleEs": "Usa el API JSON de Twitch.tv"
+      "titleEs": "Usa el API JSON de Twitch.tv",
+      "titleFr": "Utiliser l'API JSON de Twitch.tv"
     }
   ]
 }
