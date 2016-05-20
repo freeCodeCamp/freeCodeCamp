@@ -51,7 +51,7 @@ createApp({
     serviceOptions,
     initialState,
     middlewares: [ routingMiddleware ],
-    sagas,
+    sagas: [...sagas ],
     sagaOptions,
     reducers: { routing },
     enhancers: [ devTools ]

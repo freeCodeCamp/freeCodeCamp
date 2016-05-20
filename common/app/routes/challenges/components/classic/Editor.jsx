@@ -36,6 +36,7 @@ export class Editor extends PureComponent {
   }
   static displayName = 'Editor';
   static propTypes = {
+    executeChallenge: PropTypes.func,
     height: PropTypes.number,
     content: PropTypes.string,
     mode: PropTypes.string,
@@ -46,6 +47,40 @@ export class Editor extends PureComponent {
     content: '// Happy Coding!',
     mode: 'javascript'
   };
+
+  createOptions = createSelector(
+    state => state.options,
+    state => state.executeChallenge,
+    state => state.mode,
+    (options, executeChallenge, mode) => ({
+      ...options,
+      mode,
+      extraKeys: {
+        Tab(cm) {
+          if (cm.somethingSelected()) {
+            return cm.indentSelection('add');
+          }
+          const spaces = Array(cm.getOption('indentUnit') + 1).join(' ');
+          return cm.replaceSelection(spaces);
+        },
+        'Shift-Tab': function(cm) {
+          if (cm.somethingSelected()) {
+            return cm.indentSelection('subtract');
+          }
+          const spaces = Array(cm.getOption('indentUnit') + 1).join(' ');
+          return cm.replaceSelection(spaces);
+        },
+        'Ctrl-Enter': function() {
+          executeChallenge();
+          return false;
+        },
+        'Cmd-Enter': function() {
+          executeChallenge();
+          return false;
+        }
+      }
+    })
+  );
 
   componentDidMount() {
     const { updateFile = (() => {}) } = this.props;
@@ -72,7 +107,7 @@ export class Editor extends PureComponent {
   }
 
   render() {
-    const { content, height, mode } = this.props;
+    const { executeChallenge, content, height, mode } = this.props;
     const style = {};
     if (height) {
       style.height = height + 'px';
@@ -84,7 +119,7 @@ export class Editor extends PureComponent {
         <NoSSR>
           <Codemirror
             onChange={ this.handleChange }
-            options={{ ...options, mode }}
+            options={ this.createOptions({ executeChallenge, mode, options }) }
             value={ content } />
         </NoSSR>
       </div>

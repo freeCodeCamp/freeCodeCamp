@@ -39,7 +39,8 @@ module.exports = {
     ]
   },
   externals: {
-    codemirror: 'CodeMirror'
+    codemirror: 'CodeMirror',
+    'loop-protect': 'loopProtect'
   },
   plugins: [
     new webpack.optimize.DedupePlugin(),

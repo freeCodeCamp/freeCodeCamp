@@ -113,6 +113,7 @@ var paths = {
   js: [
     'client/main.js',
     'client/iFrameScripts.js',
+    'client/frame-runner.js',
     'client/plugin.js'
   ],
 

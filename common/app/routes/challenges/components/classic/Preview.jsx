@@ -1,6 +1,7 @@
 import React from 'react';
 import PureComponent from 'react-pure-render/component';
 
+const mainId = 'fcc-main-frame';
 export default class extends PureComponent {
   static displayName = 'Preview';
 
@@ -14,7 +15,7 @@ export default class extends PureComponent {
         </div>
         <iframe
           className='iphone iframe-scroll'
-          id='preview' />
+          id={ mainId } />
         <div className='spacer' />
       </div>
     );
