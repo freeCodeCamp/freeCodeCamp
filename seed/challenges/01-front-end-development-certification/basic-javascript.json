@@ -1780,7 +1780,7 @@
       "tests": [
         "assert(myData === 8, 'message: <code>myData</code> should be equal to <code>8</code>.');",
         "assert(/myArray\\[\\d+\\]\\[\\d+\\]/g.test(code), 'message: You should be using bracket notation to read the value from <code>myArray</code>.');",
-        "assert(/myData\\s*?=\\s*?myArray\\[\\d+\\]\\[\\d+\\]\\s*?;/g.test(code), 'message: You should only be reading one value from <code>myArray</code>.');" 
+        "assert(/myData\\s*?=\\s*?myArray\\[\\d+\\]\\[\\d+\\]\\s*?;/g.test(code), 'message: You should only be reading one value from <code>myArray</code>.');"
       ],
       "type": "waypoint",
       "challengeType": 1,
@@ -3458,10 +3458,10 @@
         "function caseInSwitch(val) {\n  var answer = \"\";\n\n  switch (val) {\n    case 1:\n      answer = \"alpha\";\n      break;\n    case 2:\n      answer = \"beta\";\n      break;\n    case 3:\n      answer = \"gamma\";\n      break;\n    case 4:\n      answer = \"delta\";\n  }\n  return answer;  \n}"
       ],
       "tests": [
-        "assert(caseInSwitch(1) === \"alpha\", 'message: <code>caseInSwitch(1) should have a value of \"alpha\"');",
-        "assert(caseInSwitch(2) === \"beta\", 'message: <code>caseInSwitch(2) should have a value of \"beta\"');",
-        "assert(caseInSwitch(3) === \"gamma\", 'message: <code>caseInSwitch(3) should have a value of \"gamma\"');",
-        "assert(caseInSwitch(4) === \"delta\", 'message: <code>caseInSwitch(4) should have a value of \"delta\"');",
+        "assert(caseInSwitch(1) === \"alpha\", 'message: <code>caseInSwitch(1)</code> should have a value of \"alpha\"');",
+        "assert(caseInSwitch(2) === \"beta\", 'message: <code>caseInSwitch(2)</code> should have a value of \"beta\"');",
+        "assert(caseInSwitch(3) === \"gamma\", 'message: <code>caseInSwitch(3)</code> should have a value of \"gamma\"');",
+        "assert(caseInSwitch(4) === \"delta\", 'message: <code>caseInSwitch(4)</code> should have a value of \"delta\"');",
         "assert(!/else/g.test(code) || !/if/g.test(code), 'message: You should not use any <code>if</code> or <code>else</code> statements');",
         "assert(code.match(/break/g).length > 2, 'message: You should have at least 3 <code>break</code> statements');"
       ],
