@@ -35,12 +35,15 @@ block content
                             .form-group.text-center
                                 .col-xs-12
                                     // extra field to distract password tools like lastpass from injecting css into our username field
-                    label.btn.btn-primary.btn-big.btn-block#submitButton Run tests (ctrl + enter)
+                    button.btn.btn-primary.btn-big.btn-block#submitButton Run tests (ctrl + enter)
                     .button-spacer
                     .btn-group.input-group.btn-group-justified
-                        label.btn.btn-primary.btn-lg#trigger-reset-modal Reset
-                        label.btn.btn-primary.btn-lg#challenge-help-btn Help
-                        label.btn.btn-primary.btn-lg#trigger-issue-modal Bug
+                        .btn-group
+                            button.btn.btn-primary.btn-lg#trigger-reset-modal Reset
+                        .btn-group
+                            button.btn.btn-primary.btn-lg#challenge-help-btn Help
+                        .btn-group
+                            button.btn.btn-primary.btn-lg#trigger-issue-modal Bug
                     if (!user)
                         .button-spacer
                         a.btn.signup-btn.btn-block.btn-block(href='/signin') Sign in so you can save your progress
@@ -72,7 +75,7 @@ block content
                         .spacer
                         .row
                         if (user)
-                            #submit-challenge.animated.fadeIn.btn.btn-lg.btn-primary.btn-block Submit and go to my next challenge (ctrl + enter)
+                            button#submit-challenge.animated.fadeIn.btn.btn-lg.btn-primary.btn-block Submit and go to my next challenge (ctrl + enter)
                         else
                             a#next-challenge.animated.fadeIn.btn.btn-lg.btn-primary.btn-block(href="/challenges/next-challenge?id="+id) Go to my next challenge (ctrl + enter)
     include ../partials/challenge-modals

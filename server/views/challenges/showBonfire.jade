@@ -30,15 +30,18 @@ block content
                                         ul: li: a(href=""+link, target="_blank") !{MDNkeys[index]}
                             .button-spacer
                 if (user)
-                label.btn.btn-primary.btn-block.btn-lg#submitButton
+                button.btn.btn-primary.btn-block.btn-lg#submitButton
                         | Run tests (ctrl + enter)
                 .button-spacer
                 .btn-group.input-group.btn-group-justified
-                    label.btn.btn-primary.btn-primary-ghost.btn-lg#trigger-reset-modal
+                    .btn-group
+                        button.btn.btn-primary.btn-primary-ghost.btn-lg#trigger-reset-modal
                             | &nbsp; Reset
-                    label.btn.btn-primary.btn-primary-ghost.btn-lg#challenge-help-btn
+                    .btn-group
+                        button.btn.btn-primary.btn-primary-ghost.btn-lg#challenge-help-btn
                             | &nbsp; Help
-                    label.btn.btn-primary.btn-primary-ghost.btn-lg#trigger-issue-modal
+                    .btn-group
+                        button.btn.btn-primary.btn-primary-ghost.btn-lg#trigger-issue-modal
                             | &nbsp; Bug
                 if (!user)
                     .button-spacer

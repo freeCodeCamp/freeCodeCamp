@@ -24,15 +24,17 @@ block content
                                         p.wrappable!= sentence
                                 .negative-bottom-margin-30
                     .button-spacer
-                    .btn-big.btn.btn-primary.btn-block#submitButton
+                    button.btn-big.btn.btn-primary.btn-block#submitButton
                         | Run tests (ctrl + enter)
                     .button-spacer
-                    .btn-group.input-group.btn-group-justified
-                        label.btn.btn-primary.btn-primary-ghost.btn-lg#trigger-reset-modal Reset
-                        label.btn.btn-primary.btn-primary-ghost.hidden-sm.hidden-md.hidden-lg
-                            a(href='//gitter.im/freecodecamp/help') Help
-                        label.btn.btn-primary.btn-primary-ghost.hidden-xs.btn-lg#challenge-help-btn Help
-                        label.btn.btn-primary.btn-primary-ghost.btn-lg#trigger-issue-modal Bug
+                    .btn-group.btn-group-justified
+                        .btn-group
+                          button.btn.btn-primary.btn-primary-ghost.btn-lg#trigger-reset-modal Reset
+                        a.btn.btn-primary.btn-primary-ghost.hidden-sm.hidden-md.hidden-lg(href='//gitter.im/freecodecamp/help') Help
+                        .btn-group
+                          button.btn.btn-primary.btn-primary-ghost.hidden-xs.btn-lg#challenge-help-btn Help
+                        .btn-group
+                          button.btn.btn-primary.btn-primary-ghost.btn-lg#trigger-issue-modal Bug
                     script.
                         var userLoggedIn = true;
                     if (!user)
@@ -67,7 +69,7 @@ block content
                                     span.completion-icon.ion-checkmark-circled.text-primary
                             .spacer
                             if(user)
-                                #submit-challenge.animated.fadeIn.btn.btn-lg.btn-primary.btn-block Submit and go to my next challenge (ctrl + enter)
+                                button#submit-challenge.animated.fadeIn.btn.btn-lg.btn-primary.btn-block Submit and go to my next challenge (ctrl + enter)
                             else
                                 a#next-challenge.btn.btn-lg.btn-primary.btn-block(href="/challenges/next-challenge?id="+id) Go to my next challenge (ctrl + enter)
     include ../partials/challenge-modals
