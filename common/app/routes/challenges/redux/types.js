@@ -17,5 +17,11 @@ export default createTypes([
 
   // files
   'updateFile',
-  'updateFiles'
+  'updateFiles',
+
+  // rechallenge
+  'executeChallenge',
+  'frameMain',
+  'frameOutput',
+  'frameTests'
 ], 'challenges');

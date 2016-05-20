@@ -1,25 +1,41 @@
 // originally base off of https://github.com/gulpjs/vinyl
-import path from 'path';
-import replaceExt from 'replace-ext';
 import invariant from 'invariant';
 
 // interface PolyVinyl {
 //   contents: String,
+//   name: String,
+//   ext: String,
 //   path: String,
+//   key: String,
+//   head: String,
+//   tail: String,
 //   history: [...String],
 //   error: Null|Object
 // }
 //
 // createPoly({
-//   path: String,
+//   name: String,
+//   ext: String,
 //   contents: String,
 //   history?: [...String],
 // }) => PolyVinyl, throws
-export function createPoly({ path, contents, history, ...rest } = {}) {
+export function createPoly({
+  name,
+  ext,
+  contents,
+  history,
+  ...rest
+} = {}) {
   invariant(
-    typeof path === 'string',
-    'path must be a string but got %s',
-    path
+    typeof name === 'string',
+    'name must be a string but got %s',
+    name
+  );
+
+  invariant(
+    typeof ext === 'string',
+    'ext must be a string, but was %s',
+    ext
   );
 
   invariant(
@@ -30,9 +46,12 @@ export function createPoly({ path, contents, history, ...rest } = {}) {
 
   return {
     ...rest,
-    history: Array.isArray(history) ? history : [ path ],
-    path: path,
-    contents: contents,
+    history: Array.isArray(history) ? history : [ name + ext ],
+    name,
+    ext,
+    path: name + '.' + ext,
+    key: name + ext,
+    contents,
     error: null
   };
 }
@@ -41,7 +60,8 @@ export function createPoly({ path, contents, history, ...rest } = {}) {
 export function isPoly(poly) {
   return poly &&
     typeof poly.contents === 'string' &&
-    typeof poly.path === 'string' &&
+    typeof poly.name === 'string' &&
+    typeof poly.ext === 'string' &&
     Array.isArray(poly.history);
 }
 
@@ -69,23 +89,25 @@ export function updateContents(contents, poly) {
   };
 }
 
-export function getExt(poly) {
+export function setExt(ext, poly) {
   checkPoly(poly);
-  invariant(
-    !!poly.path,
-    'No path specified! Can not get extname'
-  );
-  return path.extname(poly.path);
-}
-
-export function setExt(extname, poly) {
-  invariant(
-    poly.path,
-    'No path specified! Can not set extname',
-  );
   const newPoly = {
     ...poly,
-    path: replaceExt(this.path, extname)
+    ext,
+    path: poly.name + '.' + ext,
+    key: poly.name + ext
+  };
+  newPoly.history = [ ...poly.history, newPoly.path ];
+  return newPoly;
+}
+
+export function setName(name, poly) {
+  checkPoly(poly);
+  const newPoly = {
+    ...poly,
+    name,
+    path: name + '.' + poly.ext,
+    key: name + poly.ext
   };
   newPoly.history = [ ...poly.history, newPoly.path ];
   return newPoly;

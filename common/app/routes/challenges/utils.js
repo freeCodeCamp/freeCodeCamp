@@ -40,13 +40,21 @@ export function buildSeed({ challengeSeed = [] } = {}) {
 }
 
 const pathsMap = {
-  [HTML]: 'main.html',
-  [JS]: 'main.js',
-  [BONFIRE]: 'main.js'
+  [HTML]: 'html',
+  [JS]: 'js',
+  [BONFIRE]: 'js'
 };
 
-export function getPath({ challengeType }) {
-  return pathsMap[challengeType] || 'main';
+export function getPreFile({ challengeType }) {
+  return {
+    name: 'index',
+    ext: pathsMap[challengeType] || 'html',
+    key: getFileKey({ challengeType })
+  };
+}
+
+export function getFileKey({ challengeType }) {
+  return 'index' + (pathsMap[challengeType] || 'html');
 }
 
 export function createTests({ tests = [] }) {

@@ -1,14 +1,14 @@
 import { helpers, Observable } from 'rx';
 
 const throwForJsHtml = {
-  extname: /js|html/,
+  ext: /js|html/,
   throwers: [
     {
       name: 'multiline-comment',
       description: 'Detect if a JS multi-line comment is left open',
-      thrower: function checkForComments({ content }) {
-        const openingComments = content.match(/\/\*/gi);
-        const closingComments = content.match(/\*\//gi);
+      thrower: function checkForComments({ contents }) {
+        const openingComments = contents.match(/\/\*/gi);
+        const closingComments = contents.match(/\*\//gi);
         if (
           openingComments &&
           (!closingComments || openingComments.length > closingComments.length)
@@ -20,8 +20,8 @@ const throwForJsHtml = {
       name: 'nested-jQuery',
       description: 'Nested dollar sign calls breaks browsers',
       detectUnsafeJQ: /\$\s*?\(\s*?\$\s*?\)/gi,
-      thrower: function checkForNestedJquery({ content }) {
-        if (content.match(this.detectUnsafeJQ)) {
+      thrower: function checkForNestedJquery({ contents }) {
+        if (contents.match(this.detectUnsafeJQ)) {
           throw new Error('Unsafe $($)');
         }
       }
@@ -29,10 +29,10 @@ const throwForJsHtml = {
       name: 'unfinished-function',
       description: 'lonely function keywords breaks browsers',
       detectFunctionCall: /function\s*?\(|function\s+\w+\s*?\(/gi,
-      thower: function checkForUnfinishedFunction({ content: code }) {
+      thrower: function checkForUnfinishedFunction({ contents }) {
         if (
-          code.match(/function/g) &&
-          !code.match(this.detectFunctionCall)
+          contents.match(/function/g) &&
+          !contents.match(this.detectFunctionCall)
         ) {
           throw new Error(
             'SyntaxError: Unsafe or unfinished function declaration'
@@ -43,8 +43,8 @@ const throwForJsHtml = {
       name: 'unsafe console call',
       description: 'console call stops tests scripts from running',
       detectUnsafeConsoleCall: /if\s\(null\)\sconsole\.log\(1\);/gi,
-      thrower: function checkForUnsafeConsole({ content }) {
-        if (content.match(this.detectUnsafeConsoleCall)) {
+      thrower: function checkForUnsafeConsole({ contents }) {
+        if (contents.match(this.detectUnsafeConsoleCall)) {
           throw new Error('Invalid if (null) console.log(1); detected');
         }
       }
@@ -52,17 +52,17 @@ const throwForJsHtml = {
   ]
 };
 
-export default function pretester() {
+export default function throwers() {
   const source = this;
   return source.map(file$ => file$.flatMap(file => {
-    if (!throwForJsHtml.extname.test(file.extname)) {
+    if (!throwForJsHtml.ext.test(file.ext)) {
       return Observable.just(file);
     }
     return Observable.from(throwForJsHtml.throwers)
-      .flatMap(({ thrower }) => {
+      .flatMap(context => {
         try {
           let finalObs;
-          const maybeObservableOrPromise = thrower(file);
+          const maybeObservableOrPromise = context.thrower(file);
           if (helpers.isPromise(maybeObservableOrPromise)) {
             finalObs = Observable.fromPromise(maybeObservableOrPromise);
           } else if (Observable.isObservable(maybeObservableOrPromise)) {

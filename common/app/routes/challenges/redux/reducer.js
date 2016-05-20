@@ -3,7 +3,13 @@ import { createPoly } from '../../../../utils/polyvinyl';
 
 import types from './types';
 import { BONFIRE, HTML, JS } from '../../../utils/challengeTypes';
-import { arrayToString, buildSeed, createTests, getPath } from '../utils';
+import {
+  arrayToString,
+  buildSeed,
+  createTests,
+  getPreFile,
+  getFileKey
+} from '../utils';
 
 const initialState = {
   challenge: '',
@@ -24,7 +30,7 @@ const mainReducer = handleActions(
       ...state,
       refresh: true,
       challenge: challenge.dashedName,
-      path: getPath(challenge),
+      key: getFileKey(challenge),
       tests: createTests(challenge)
     }),
 
@@ -57,12 +63,12 @@ const filesReducer = handleActions(
   {
     [types.updateFile]: (state, { payload: file }) => ({
       ...state,
-      [file.path]: file
+      [file.key]: file
     }),
     [types.updateFiles]: (state, { payload: files }) => {
       return files
         .reduce((files, file) => {
-          files[file.path] = file;
+          files[file.key] = file;
           return files;
         }, { ...state });
     },
@@ -77,11 +83,11 @@ const filesReducer = handleActions(
       ) {
         return {};
       }
-      const path = getPath(challenge);
+      const preFile = getPreFile(challenge);
       return {
         ...state,
-        [path]: createPoly({
-          path,
+        [preFile.key]: createPoly({
+          ...preFile,
           contents: buildSeed(challenge),
           head: arrayToString(challenge.head),
           tail: arrayToString(challenge.tail)

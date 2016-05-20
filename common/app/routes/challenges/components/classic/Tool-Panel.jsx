@@ -1,17 +1,28 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
+import { connect } from 'react-redux';
 import { Button, ButtonGroup } from 'react-bootstrap';
 import PureComponent from 'react-pure-render/component';
 
-export default class extends PureComponent {
+import { executeChallenge } from '../../redux/actions';
+
+const bindableActions = { executeChallenge };
+
+export class ToolPanel extends PureComponent {
   static displayName = 'ToolPanel';
 
+  static propTypes = {
+    executeChallenge: PropTypes.func
+  };
+
   render() {
+    const { executeChallenge } = this.props;
     return (
       <div>
         <Button
           block={ true }
           bsStyle='primary'
-          className='btn-big'>
+          className='btn-big'
+          onClick={ executeChallenge }>
           Run tests (ctrl + enter)
         </Button>
         <div className='button-spacer' />
@@ -42,3 +53,5 @@ export default class extends PureComponent {
     );
   }
 }
+
+export default connect(null, bindableActions)(ToolPanel);

@@ -43,6 +43,7 @@ public/js/main*
 public/js/commonFramework*
 public/js/sandbox*
 public/js/iFrameScripts*
+public/js/frame-runner*
 public/js/plugin*
 public/js/vendor*
 public/js/faux*
