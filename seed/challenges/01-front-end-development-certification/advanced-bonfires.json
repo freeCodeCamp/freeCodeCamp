@@ -12,7 +12,7 @@
         "The user may fill out the form field any way they choose as long as it is a valid US number. The following are examples of valid formats for US numbers (refer to the tests below for other variants):",
         "<blockquote>555-555-5555\n(555)555-5555\n(555) 555-5555\n555 555 5555\n5555555555\n1 555 555 5555</blockquote>",
         "For this challenge you will be presented with a string such as <code>800-692-7753</code> or <code>8oo-six427676;laskdjf</code>. Your job is to validate or reject the US phone number based on any combination of the formats provided above. The area code is required. If the country code is provided, you must confirm that the country code is <code>1</code>. Return <code>true</code> if the string is a valid US phone number; otherwise return <code>false</code>.",
-        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
+        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "challengeSeed": [
         "function telephoneCheck(str) {",
@@ -64,7 +64,7 @@
         "El usuario debe llenar el campo del formulario de la forma que desee siempre y cuando sea un número válido en los EEUU. Los números mostrados a continuación tienen formatos válidos en los EEUU:",
         "<blockquote>555-555-5555\n(555)555-5555\n(555) 555-5555\n555 555 5555\n5555555555\n1 555 555 5555</blockquote>",
         "Para esta prueba se te presentará una cadena de texto como por ejemplo: <code>800-692-7753</code> o <code>8oo-six427676;laskdjf</code>. Tu trabajo consiste en validar o rechazar el número telefónico tomando como base cualquier combinación de los formatos anteriormente presentados. El código de área es requrido. Si el código de país es provisto, debes confirmar que este es <code>1</code>. La función debe devolver true si la cadena de texto es un número telefónico válido en los EEUU; de lo contrario, debe devolver false.",
-        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
       ]
     },
     {
@@ -73,7 +73,7 @@
       "description": [
         "Create a function that takes two or more arrays and returns an array of the <dfn>symmetric difference</dfn> (<code>&xutri;</code> or <code>&oplus;</code>) of the provided arrays.",
         "Given two sets (for example set <code>A = {1, 2, 3}</code> and set <code>B = {2, 3, 4}</code>), the mathematical term \"symmetric difference\" of two sets is the set of elements which are in either of the two sets, but not in both (<code>A &xutri; B = C = {1, 4}</code>). For every additional symmetric difference you take (say on a set <code>D = {2, 3}</code>), you should get the set with elements which are in either of the two the sets but not both (<code>C &xutri; D = {1, 4} &xutri; {2, 3} = {1, 2, 3, 4}</code>).",
-        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
+        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "challengeSeed": [
         "function sym(args) {",
@@ -107,7 +107,7 @@
       "descriptionEs": [
         "Crea una función que acepte dos o más arreglos y que devuelva un arreglo conteniendo la diferenia simétrica entre ambos",
         "En Matemáticas, el término 'diferencia simétrica' se refiere a los elementos en dos conjuntos que están en el primer conjunto o en el segundo, pero no en ambos.",
-        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
       ]
     },
     {
@@ -118,7 +118,7 @@
         "<code>cid</code> is a 2D array listing available currency.",
         "Return the string <code>\"Insufficient Funds\"</code> if cash-in-drawer is less than the change due. Return the string <code>\"Closed\"</code> if cash-in-drawer is equal to the change due.",
         "Otherwise, return change in coin and bills, sorted in highest to lowest order.",
-        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
+        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "challengeSeed": [
         "function checkCashRegister(price, cash, cid) {",
@@ -164,7 +164,7 @@
         "cid es un arreglo bidimensional que lista la cantidad de dinero disponible",
         "La función debe devolver la cadena de texto \"Insufficient Funds\" si el cid es menor al cambio requerido. También debe devolver \"Closed\" si el cid es igual al cambio",
         "De no ser el caso, devuelve el cambio en monedas y billetes, ordenados de mayor a menor denominación.",
-        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
       ]
     },
     {
@@ -172,7 +172,7 @@
       "title": "Inventory Update",
       "description": [
         "Compare and update the inventory stored in a 2D array against a second 2D array of a fresh delivery. Update the current existing inventory item quantities (in <code>arr1</code>). If an item cannot be found, add the new item and quantity into the inventory array. The returned inventory array should be in alphabetical order by item.",
-        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
+        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "challengeSeed": [
         "function updateInventory(arr1, arr2) {",
@@ -216,7 +216,7 @@
       "titleEs": "Actualizando el inventario",
       "descriptionEs": [
         "Compara y actualiza el inventario actual, almacenado en un arreglo bidimensional, contra otro arreglo bidimensional de inventario nuevo. Actualiza las cantidades en el inventario actual y, en caso de recibir una nueva mercancía, añade su nombre y la cantidad recibida al arreglo del inventario en orden alfabético.",
-        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
       ]
     },
     {
@@ -225,7 +225,7 @@
       "description": [
         "Return the number of total permutations of the provided string that don't have repeated consecutive letters. Assume that all characters in the provided string are each unique.",
         "For example, <code>aab</code> should return 2 because it has 6 total permutations (<code>aab</code>, <code>aab</code>, <code>aba</code>, <code>aba</code>, <code>baa</code>, <code>baa</code>), but only 2 of them (<code>aba</code> and <code>aba</code>) don't have the same letter (in this case <code>a</code>) repeating.",
-        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
+        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "challengeSeed": [
         "function permAlone(str) {",
@@ -259,7 +259,7 @@
       "descriptionEs": [
         "Crea una función que devuelva el número total de permutaciones de las letras en la cadena de texto provista, en las cuales no haya letras consecutivas repetidas",
         "Por ejemplo, 'aab' debe retornar 2 porque, del total de 6 permutaciones posibles, solo 2 de ellas no tienen repetida la misma letra (en este caso 'a').",
-        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
       ]
     },
     {
@@ -274,7 +274,7 @@
         "Examples:",
         "<code>makeFriendlyDates([\"2016-07-01\", \"2016-07-04\"])</code> should return <code>[\"July 1st\",\"4th\"]</code>",
         "<code>makeFriendlyDates([\"2016-07-01\", \"2018-07-04\"])</code> should return <code>[\"July 1st, 2016\", \"July 4th, 2018\"]</code>.",
-        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
+        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "challengeSeed": [
         "function makeFriendlyDates(arr) {",
@@ -320,7 +320,7 @@
         "Run the tests to see the expected output for each method.",
         "The methods that take an argument must accept only one argument and it has to be a string.",
         "These methods must be the only available means of interacting with the object.",
-        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
+        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "challengeSeed": [
         "var Person = function(firstAndLast) {",
@@ -360,7 +360,7 @@
         "Ejecuta las pruebas para ver el resultado esperado de cada método.",
         "Las funciones que aceptan argumentos deben aceptar sólo uno, y este tiene que ser una cadena.",
         "Estos métodos deben ser el único medio para interactuar con el objeto.",
-        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
       ]
     },
     {
@@ -372,7 +372,7 @@
         "You can read about orbital periods <a href=\"http://en.wikipedia.org/wiki/Orbital_period\" target='_blank'>on wikipedia</a>.",
         "The values should be rounded to the nearest whole number. The body being orbited is Earth.",
         "The radius of the earth is 6367.4447 kilometers, and the GM value of earth is 398600.4418 km<sup>3</sup>s<sup>-2</sup>.",
-        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
+        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "challengeSeed": [
         "function orbitalPeriod(arr) {",
@@ -402,7 +402,7 @@
         "Puedes leer acerca de períodos orbitales <a href=\"http://en.wikipedia.org/wiki/Orbital_period\" target='_blank'>en wikipedia</a>.",
         "Los valores deben estar redondeados al número entero más próximo. El cuerpo orbitado es la Tierra",
         "El radio de la Tierra es 6367.4447 kilómetros, y el valor GM del planeta es de 398600.4418 km<sup>3</sup>s<sup>-2</sup>.",
-        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
       ]
     },
     {
@@ -415,7 +415,7 @@
         "<table class=\"table\"><tr><th><b>Index</b></th><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th></tr><tr><td>Value</td><td>7</td><td>9</td><td>11</td><td>13</td><td>15</td></tr></table>",
         "Below we'll take their corresponding indices and add them.",
         "7 + 13 = 20 &#8594; Indices 0 + 3 = 3<br>9 + 11 = 20 &#8594; Indices 1 + 2 = 3<br>3 + 3 = 6 &#8594 Return <code>6</code>",
-        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
+        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "challengeSeed": [
         "function pairwise(arr, arg) {",
@@ -444,7 +444,7 @@
         "Crea una función que devuelva la suma de todos los índices de los elementos de 'arr' que pueden ser emparejados con otro elemento de tal forma que la suma de ambos equivalga al valor del segundo argumento, 'arg'. Si varias combinaciones son posibles, devuelve la menor suma de índices. Una vez un elemento ha sido usado, no puede ser usado de nuevo para emparejarlo con otro elemento.",
         "Por ejemplo, pairwise([1, 4, 2, 3, 0, 5], 7) debe devolver 11 porque 4, 2, 3 y 5 pueden ser emparejados para obtener una suma de 7",
         "pairwise([1, 3, 2, 4], 4) devolvería el valor de 1, porque solo los primeros dos elementos pueden ser emparejados para sumar 4. ¡Recuerda que el primer elemento tiene un índice de 0!",
-        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
       ]
     }
   ]
