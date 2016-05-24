@@ -64,6 +64,12 @@ Contributing
 
 We welcome pull requests from Free Code Camp campers (our students) and seasoned JavaScript developers alike! Please follow [these steps](CONTRIBUTING.md) to contribute.
 
+FreeCodeCamp global site map
+-----------------------
+### [Official FCC](http://www.freecodecamp.com)
+### [Chinese  FCC -- 51FreeCode](http://www.51freecode.cn)
+
+
 License
 -------
 
