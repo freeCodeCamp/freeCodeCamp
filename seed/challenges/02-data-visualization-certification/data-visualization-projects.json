@@ -121,7 +121,7 @@
       "id": "bd7198d8c242eddfaeb5bd13",
       "title": "Show National Contiguity with a Force Directed Graph",
       "description": [
-        "<strong>Objective:</strong> Build a <a href='https://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='https://codepen.io/FreeCodeCamp/pen/xVopBo' target='_blank'>https://codepen.iohttps://codepen.io/FreeCodeCamp/pen/xVopBo</a>.",
+        "<strong>Objective:</strong> Build a <a href='https://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='https://codepen.io/FreeCodeCamp/full/xVopBo' target='_blank'>https://codepen.io/FreeCodeCamp/full/xVopBo</a>.",
         "<strong>Rule #1:</strong> Don't look at the example project's code. Figure it out for yourself.",
         "<strong>Rule #2:</strong> Fulfill the below <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
         "<strong>Rule #3:</strong> You must use D3.js to build this project.",
