@@ -11,7 +11,7 @@
         "Both Chrome and Firefox have excellent JavaScript consoles, also known as DevTools, for debugging your JavaScript.",
         "You can find <code>Developer tools</code> in your Chrome's menu or <code>Web Console</code> in FireFox's menu. If you're using a different browser, or a mobile phone, we strongly recommend switching to desktop Firefox or Chrome.",
         "Let's print to this console using the <code>console.log</code> method.",
-        "<code>console.log('Hello world!')</code>"
+        "<code>console.log('Hello world!');</code>"
       ],
       "challengeSeed": [
         "",
@@ -22,7 +22,7 @@
         "console.log('Hello world!');"
       ],
       "tests": [
-        "assert(editor.getValue().match(/console\\.log\\(/gi), 'message: You should use the console.log method to log \"Hello world!\" to your JavaScript console.');"
+        "assert(editor.getValue().match(/console\\.log\\(/gi), 'message: You should use the <code>console.log</code> method to log <code>\"Hello world!\"</code> to your JavaScript console.');"
       ],
       "type": "waypoint",
       "challengeType": 1,
