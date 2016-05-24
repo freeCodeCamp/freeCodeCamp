@@ -1,8 +1,8 @@
 import { Observable } from 'rx';
 
 import { ajax$ } from '../../common/utils/ajax-stream';
-import throwers from '../new-framework/throwers';
-import transformers from '../new-framework/transformers';
+import throwers from '../rechallenge/throwers';
+import transformers from '../rechallenge/transformers';
 import types from '../../common/app/routes/challenges/redux/types';
 import {
   frameMain
