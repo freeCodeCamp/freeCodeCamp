@@ -21,7 +21,11 @@ export default createTypes([
 
   // rechallenge
   'executeChallenge',
+  'updateMain',
+  'runTests',
   'frameMain',
   'frameOutput',
-  'frameTests'
+  'frameTests',
+  'updateOutput',
+  'updateTests'
 ], 'challenges');

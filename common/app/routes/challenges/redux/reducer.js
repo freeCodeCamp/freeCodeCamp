@@ -33,6 +33,12 @@ const mainReducer = handleActions(
       key: getFileKey(challenge),
       tests: createTests(challenge)
     }),
+    [types.updateTests]: (state, { payload: tests }) => ({
+      ...state,
+      refresh: false,
+      tests
+    }),
+    [types.executeChallenge]: state => ({ ...state, refresh: true }),
 
     // map
     [types.updateFilter]: (state, { payload = ''}) => ({

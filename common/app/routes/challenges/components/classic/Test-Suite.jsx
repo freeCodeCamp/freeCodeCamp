@@ -14,8 +14,8 @@ export default class extends PureComponent {
     return tests.map(({ err, text = '' }, index)=> {
       const iconClass = classnames({
         'big-icon': true,
-        'ion-close-circled error-icon': !refresh && !err,
-        'ion-checkmark-circled success-icon': !refresh && err,
+        'ion-close-circled error-icon': !refresh && err,
+        'ion-checkmark-circled success-icon': !refresh && !err,
         'ion-refresh refresh-icon': refresh
       });
       return (

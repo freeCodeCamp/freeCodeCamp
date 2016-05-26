@@ -60,6 +60,7 @@ export function getFileKey({ challengeType }) {
 export function createTests({ tests = [] }) {
   return tests
     .map(test => ({
-      text: test.split('message: ').pop().replace(/\'\);/g, '')
+      text: test.split('message: ').pop().replace(/\'\);/g, ''),
+      testString: test
     }));
 }

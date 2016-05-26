@@ -8,7 +8,7 @@ import Editor from './Editor.jsx';
 import SidePanel from './Side-Panel.jsx';
 import Preview from './Preview.jsx';
 import { challengeSelector } from '../../redux/selectors';
-import { executeChallenge, updateFile } from '../../redux/actions';
+import { executeChallenge, updateMain, updateFile } from '../../redux/actions';
 
 const mapStateToProps = createSelector(
   challengeSelector,
@@ -24,7 +24,7 @@ const mapStateToProps = createSelector(
   })
 );
 
-const bindableActions = { executeChallenge, updateFile };
+const bindableActions = { executeChallenge, updateFile, updateMain };
 
 export class Challenge extends PureComponent {
   static displayName = 'Challenge';
@@ -34,9 +34,13 @@ export class Challenge extends PureComponent {
     content: PropTypes.string,
     mode: PropTypes.string,
     updateFile: PropTypes.func,
-    executeChallenge: PropTypes.func
+    executeChallenge: PropTypes.func,
+    updateMain: PropTypes.func
   };
 
+  componentDidMount() {
+    this.props.updateMain();
+  }
   renderPreview(showPreview) {
     if (!showPreview) {
       return null;
