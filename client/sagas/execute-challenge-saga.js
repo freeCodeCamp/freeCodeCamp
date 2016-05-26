@@ -1,11 +1,13 @@
-import { Observable } from 'rx';
+import { Scheduler, Observable } from 'rx';
 
 import { ajax$ } from '../../common/utils/ajax-stream';
 import throwers from '../rechallenge/throwers';
 import transformers from '../rechallenge/transformers';
 import types from '../../common/app/routes/challenges/redux/types';
 import {
-  frameMain
+  frameMain,
+  frameTests,
+  frameOutput
 } from '../../common/app/routes/challenges/redux/actions';
 import { setExt, updateContents } from '../../common/utils/polyvinyl';
 
@@ -34,7 +36,6 @@ function cacheScript({ src } = {}) {
   }
   const script$ = ajax$(src)
     .doOnNext(res => {
-      console.log('status', res.status);
       if (res.status !== 200) {
         throw new Error('Request errror: ' + res.status);
       }
@@ -55,9 +56,12 @@ const jsCatch = '\n;/* */';
 
 export default function executeChallengeSaga(action$, getState) {
   return action$
-    .filter(({ type }) => type === types.executeChallenge)
+    .filter(({ type }) => (
+      type === types.executeChallenge ||
+      type === types.updateMain
+    ))
     .debounce(750)
-    .flatMapLatest(() => {
+    .flatMapLatest(({ type }) => {
       const { files, required = [ jQuery ] } = getState().challengesApp;
       return createFileStream(files)
         ::throwers()
@@ -81,18 +85,31 @@ export default function executeChallengeSaga(action$, getState) {
           return build + finalFile.contents + htmlCatch;
         }, ''))
         // add required scripts and links here
-        .flatMap(build => {
-          const header$ = Observable.from(required)
+        .flatMap(source => {
+          const head$ = Observable.from(required)
             .flatMap(required => {
               if (required.script) {
                 return cacheScript(required);
               }
               return Observable.just('');
             })
-            .reduce((header, required) => header + required, '');
-          return Observable.combineLatest(header$, frameRunner$)
-            .map(([ header, frameRunner ]) => header + build + frameRunner);
+            .reduce((head, required) => head + required, '')
+            .map(head => `<head>${head}</head>`);
+
+          return Observable.combineLatest(head$, frameRunner$)
+            .map(([ head, frameRunner ]) => {
+              return head + `<body>${source}</body>` + frameRunner;
+            })
+            .map(build => ({ source, build }));
         })
-        .map(build => frameMain(build));
+        .flatMap(payload => {
+          const actions = [];
+          actions.push(frameMain(payload));
+          if (type !== types.updateMain) {
+            actions.push(frameTests(payload));
+            actions.push(frameOutput(payload));
+          }
+          return Observable.from(actions, null, null, Scheduler.default);
+        });
     });
 }
