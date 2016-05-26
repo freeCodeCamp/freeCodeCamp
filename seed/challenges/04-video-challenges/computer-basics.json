@@ -26,7 +26,7 @@
       ],
       "tests": [
         [
-          "The computer has 3 basic parts.",
+          "The computer only has 3 basic parts.",
           false,
           "The computer has 4 basic parts: input, output, CPU, and memory"
         ],
