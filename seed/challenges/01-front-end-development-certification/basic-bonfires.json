@@ -181,7 +181,8 @@
         "assert(palindrome(\"almostomla\") === false, 'message: <code>palindrome(\"almostomla\")</code> should return false.');",
         "assert(palindrome(\"My age is 0, 0 si ega ym.\") === true, 'message: <code>palindrome(\"My age is 0, 0 si ega ym.\")</code> should return true.');",
         "assert(palindrome(\"1 eye for of 1 eye.\") === false, 'message: <code>palindrome(\"1 eye for of 1 eye.\")</code> should return false.');",
-        "assert(palindrome(\"0_0 (: /-\\ :) 0-0\") === true, 'message: <code>palindrome(\"0_0 (: /-\\ :) 0-0\")</code> should return true.');"
+        "assert(palindrome(\"0_0 (: /-\\ :) 0-0\") === true, 'message: <code>palindrome(\"0_0 (: /-\\ :) 0-0\")</code> should return true.');",
+        "assert(palindrome(\"five|\\_/|four\") === false, 'message: <code>palindrome(\"five|\\_/|four\")</code> should return false.');"
       ],
       "type": "bonfire",
       "isRequired": true,
