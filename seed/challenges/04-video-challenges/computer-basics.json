@@ -26,7 +26,7 @@
       ],
       "tests": [
         [
-          "The computer has 3 basic parts.",
+          "The computer only has 3 basic parts.",
           false,
           "The computer has 4 basic parts: input, output, CPU, and memory"
         ],
@@ -254,6 +254,49 @@
       "titleEs": "Fundamentos básicos del computador: decodificar un número binario"
     },
     {
+      "id": "bd7122d8c441eddfbeb5bddf",
+      "title": "Computer Basics: Binary Bytes",
+      "description": [
+        "Binary does more than express numbers - through bytes, it can symbolize all alphanumeric symbols, which can then be interpreted into more complex code.",
+        "Let's talk about the most basic level that a computer can understand other languages like JavaScript.",
+        "The most basic thing is a bit, up or down, 1 or 0.",
+        "After that there's a byte, 8 bits.",
+        "All numbers (255 and less), letters, and symbols can be translated into bytes that the computer can understand.",
+        "So, all of the numbers, letters, and symbols in your JavaScript can be translated.",
+        "There are a lot of languages that computers can work with, and what I want you to get away from this video is that all data in your computer boils down to binary bytes."
+      ],
+      "challengeSeed": [
+        "wr7H6oUwYUU"
+      ],
+      "tests": [
+        [
+          "All digits, letters, and symbols have a binary byte translation.",
+          true
+        ],
+        [
+          "It's good practice to memorize these.",
+          false,
+          "You can just look these up as needed."
+        ],
+        [
+          "Everything can be expressed in binary, even pictures, sound, and video",
+          true
+        ]
+      ],
+      "type": "hike",
+      "challengeType": 6,
+      "descriptionEs": [
+        "En binario se puede hacer más que representar números - mediante bytes, puede simbolizar todos los símbolos alfanuméricos, los cuales pueden ser interpretados en códigos más complejos",
+        "Vamos a hablar sobre el nivel más básico que un computador puede comprender otros lenguajes como JavaScript.",
+        "Lo más básico es un bit, arriba o abajo, 1 ó 0.",
+        "Después de eso hay un byte de 8 bits.",
+        "Todos los números (255 y menos), las letras y símbolos se pueden traducir en bytes que el computador puede entender.",
+        "Por lo tanto, todos los números, letras y símbolos en su código JavaScript se puede traducir.",
+        "Hay una gran cantidad de lenguajes con los cuales los computadores pueden operar, y lo que quiero que te quede de este video es que todos los datos en tu computador se reducen a bytes binarios."
+      ],
+      "titleEs": "Fundamentos básicos del computador: Bytes en binario"
+    },
+    {
       "id": "bd7124d8c441eddfbeb5bddf",
       "title": "Computer Basics: How To Measure Data Size",
       "description": [
@@ -352,49 +395,6 @@
         "Además, si tienes una velocidad de internet de cierta cantidad de bits por segundo, ten en cuenta que te están hablando de algo que es la octava parte de la cantidad en bytes, que es la manera típica como mides tamaños de datos."
       ],
       "titleEs": "Fundamentos básicos del computador: medición de la velocidad de datos"
-    },
-    {
-      "id": "bd7122d8c441eddfbeb5bddf",
-      "title": "Computer Basics: Binary Bytes",
-      "description": [
-        "Binary does more than express numbers - through bytes, it can symbolize all alphanumeric symbols, which can then be interpreted into more complex code.",
-        "Let's talk about the most basic level that a computer can understand other languages like JavaScript.",
-        "The most basic thing is a bit, up or down, 1 or 0.",
-        "After that there's a byte, 8 bits.",
-        "All numbers (255 and less), letters, and symbols can be translated into bytes that the computer can understand.",
-        "So, all of the numbers, letters, and symbols in your JavaScript can be translated.",
-        "There are a lot of languages that computers can work with, and what I want you to get away from this video is that all data in your computer boils down to binary bytes."
-      ],
-      "challengeSeed": [
-        "wr7H6oUwYUU"
-      ],
-      "tests": [
-        [
-          "All digits, letters, and symbols have a binary byte translation.",
-          true
-        ],
-        [
-          "It's good practice to memorize these.",
-          false,
-          "You can just look these up as needed."
-        ],
-        [
-          "Everything can be expressed in binary, even pictures, sound, and video",
-          true
-        ]
-      ],
-      "type": "hike",
-      "challengeType": 6,
-      "descriptionEs": [
-        "En binario se puede hacer más que representar números - mediante bytes, puede simbolizar todos los símbolos alfanuméricos, los cuales pueden ser interpretados en códigos más complejos",
-        "Vamos a hablar sobre el nivel más básico que un computador puede comprender otros lenguajes como JavaScript.",
-        "Lo más básico es un bit, arriba o abajo, 1 ó 0.",
-        "Después de eso hay un byte de 8 bits.",
-        "Todos los números (255 y menos), las letras y símbolos se pueden traducir en bytes que el computador puede entender.",
-        "Por lo tanto, todos los números, letras y símbolos en su código JavaScript se puede traducir.",
-        "Hay una gran cantidad de lenguajes con los cuales los computadores pueden operar, y lo que quiero que te quede de este video es que todos los datos en tu computador se reducen a bytes binarios."
-      ],
-      "titleEs": "Fundamentos básicos del computador: Bytes en binario"
     },
     {
       "id": "bd7121d8c441eddfbeb5bddf",
@@ -939,6 +939,52 @@
       "titleEs": "Código Fuente"
     },
     {
+      "id": "bd712ad8c441eddfbeb5bddf",
+      "title": "Console and Logging",
+      "description": [
+        "We discuss what (and where) the console is, why it's useful, and show a little of how it works.",
+        "The console: what it is, where you can find it, and what you use it for.",
+        "The console is very commonly used to display system administrative messages.",
+        "Your browser and your computer both have their own consoles.",
+        "Once you become familiar with it, you will find it to be a very useful and powerful tool.",
+        "In Javascript, the console is used as a great tool for debugging and finding out where in your code there's a problem.",
+        "One of the most important terms you'll need to remember is \"console.log()\".",
+        "The process of doing this can be put anywhere in the lines of code to help find, identify, and ultimately fix specific issues.",
+        "Using the Chrome browser and the Chrome console, if we type in \"console.log(\"Free Code Camp rocks!\");\", the console will literally display \"Free Code Camp rocks!\".",
+        "This will also work with numbers and booleans, which are true/false statements.",
+        "When consoling words, it's important to put it inside of quotations so it recognizes it's a string."
+      ],
+      "challengeSeed": [
+        "CdqT7_6v60E"
+      ],
+      "tests": [
+        [
+          "The console serves only small, unnecessary purposes.",
+          false,
+          "The console's main purpose is to debug, which is a vital step in creating code."
+        ],
+        [
+          "You can console strings (sets of words), numbers, and booleans (true/false statements)",
+          true
+        ]
+      ],
+      "type": "hike",
+      "challengeType": 6,
+      "nameEs": "Consola y Logging",
+      "descriptionEs": [
+        "Nosotros discutimos que es la consola (y donde está), porque es útil y mostrar un poco de como trabaja.",
+        "La consola: que es, donde la puedes encontrar, y para que la usas.",
+        "La consola es usada comunmente para mostrar los mensajes administrativos del sistema.",
+        "Una vez te familiarices con esta, encontraras una útil y poderosa herramienta.",
+        "En Javascript, la consola es usada como una gran herramienta para depurar y encontrar donde hay un error en tu código ",
+        "Uno de los términos mas importantes para recordar es \"console.log()\".",
+        "El proceso para usarla es, es ponerlo en cualquier parte entre las líneas del código para ayudar a encontrar, identificar, y en últimas solucionar problemas especificos",
+        "Usando el navegador Chrome y la consola de Chrome, si nosotros escribimos <code>console.log(\"Free Code Camp es muy bueno!\");</code>, la consola literalmente mostrará \"Free Code Camp es muy bueno!\".",
+        "Además esto funcionará con números y booleanos, cuyos valores posibles son verdadro/falso",
+        "Cuando se envian palabras a la consola, es importante ponerlas dentro de comillas para reconocer que es una cadena."
+      ]
+    },
+    {
       "id": "bd7119d8c441eddfbeb5bddf",
       "title": "Variables In Code",
       "description": [
@@ -1025,52 +1071,6 @@
         "Los programadores son los responsables de dividir sus ideas en  pequeños pasos y escribirlos de una manera que las computadoras pueden entenderlos."
       ],
       "titleEs": "¿Qué hacen los programadores?"
-    },
-    {
-      "id": "bd712ad8c441eddfbeb5bddf",
-      "title": "Console and Logging",
-      "description": [
-        "We discuss what (and where) the console is, why it's useful, and show a little of how it works.",
-        "The console: what it is, where you can find it, and what you use it for.",
-        "The console is very commonly used to display system administrative messages.",
-        "Your browser and your computer both have their own consoles.",
-        "Once you become familiar with it, you will find it to be a very useful and powerful tool.",
-        "In Javascript, the console is used as a great tool for debugging and finding out where in your code there's a problem.",
-        "One of the most important terms you'll need to remember is \"console.log()\".",
-        "The process of doing this can be put anywhere in the lines of code to help find, identify, and ultimately fix specific issues.",
-        "Using the Chrome browser and the Chrome console, if we type in \"console.log(\"Free Code Camp rocks!\");\", the console will literally display \"Free Code Camp rocks!\".",
-        "This will also work with numbers and booleans, which are true/false statements.",
-        "When consoling words, it's important to put it inside of quotations so it recognizes it's a string."
-      ],
-      "challengeSeed": [
-        "CdqT7_6v60E"
-      ],
-      "tests": [
-        [
-          "The console serves only small, unnecessary purposes.",
-          false,
-          "The console's main purpose is to debug, which is a vital step in creating code."
-        ],
-        [
-          "You can console strings (sets of words), numbers, and booleans (true/false statements)",
-          true
-        ]
-      ],
-      "type": "hike",
-      "challengeType": 6,
-      "nameEs": "Consola y Logging",
-      "descriptionEs": [
-        "Nosotros discutimos que es la consola (y donde está), porque es útil y mostrar un poco de como trabaja.",
-        "La consola: que es, donde la puedes encontrar, y para que la usas.",
-        "La consola es usada comunmente para mostrar los mensajes administrativos del sistema.",
-        "Una vez te familiarices con esta, encontraras una útil y poderosa herramienta.",
-        "En Javascript, la consola es usada como una gran herramienta para depurar y encontrar donde hay un error en tu código ",
-        "Uno de los términos mas importantes para recordar es \"console.log()\".",
-        "El proceso para usarla es, es ponerlo en cualquier parte entre las líneas del código para ayudar a encontrar, identificar, y en últimas solucionar problemas especificos",
-        "Usando el navegador Chrome y la consola de Chrome, si nosotros escribimos <code>console.log(\"Free Code Camp es muy bueno!\");</code>, la consola literalmente mostrará \"Free Code Camp es muy bueno!\".",
-        "Además esto funcionará con números y booleanos, cuyos valores posibles son verdadro/falso",
-        "Cuando se envian palabras a la consola, es importante ponerlas dentro de comillas para reconocer que es una cadena."
-      ]
     },
     {
       "id": "bd7129d89441eddfbeb5bddf",
