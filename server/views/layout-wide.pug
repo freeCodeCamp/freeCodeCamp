@@ -6,11 +6,12 @@ html(lang='en')
   if showAside
       body.map-aside-body
           include partials/scripts
-          block content
   else
       body.no-top-and-bottom-margins(class=theme !== 'default' ? theme : '')
           include partials/scripts
           include partials/navbar
           include partials/flash
-          block content
-          include partials/footer
+
+  block content
+  if !showAside
+      include partials/footer

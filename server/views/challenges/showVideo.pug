@@ -10,14 +10,14 @@ block content
             hr
             ol
                 for step, index in description
-                    .row.checklist-element(id="#{dashedName + index}")
+                    .row.checklist-element(id=dashedName + index)
                         .col-xs-2.col-sm-1.col-md-2.padded-ionic-icon.text-right
                             input(type='checkbox' class='challenge-list-checkbox')
                         .col-xs-10.col-sm-11.col-md-10
                             li.step-text.wrappable!= step
         .col-xs-12.col-sm-12.col-md-8
             .embed-responsive.embed-responsive-16by9
-                iframe.embed-responsive-item(src='//www.youtube.com/embed/#{video}?rel=0&amp;showinfo=0')
+                iframe.embed-responsive-item(src=`//www.youtube.com/embed/${video}?rel=0&amp;showinfo=0`)
             .spacer
             if (user)
                 a.btn.btn-primary.btn-big.btn-block#completed-courseware-editorless I've completed this challenge (ctrl + enter)

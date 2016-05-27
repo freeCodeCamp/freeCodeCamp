@@ -10,5 +10,5 @@ block content
                             h2= nonprofit.displayName
                             img.testimonial-image.img-responsive.img-center(src=nonprofit.imgUrl)
                             .button-spacer
-                            a.text-center(href='/commit?nonprofit=#{nonprofit.name}') Commit to #{nonprofit.displayName}
+                            a.text-center(href=`/commit?nonprofit=${nonprofit.name}`) Commit to #{nonprofit.displayName}
                             p= nonprofit.description

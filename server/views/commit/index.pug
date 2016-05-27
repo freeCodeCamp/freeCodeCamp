@@ -9,8 +9,8 @@ block content
         .col-xs-12.col-sm-6.col-sm-offset-3.text-center
           h3 Pledge to #{displayName}&thinsp;
           .button-spacer
-              a(href='#{imgUrl}' data-lightbox='img-enlarge' alt='#{imgAlt}')
-                  img.img-responsive(src='#{imgUrl}' alt='#{imgAlt}')
+              a(href=imgUrl data-lightbox='img-enlarge' alt=imgAlt)
+                  img.img-responsive(src=imgUrl alt=imgAlt)
               p.large-p
                 = description
               p
@@ -18,7 +18,7 @@ block content
     .spacer
     form.form(name='commit')
         .hidden
-            input(type='text' value='#{name}' name='nonprofit')
+            input(type='text' value=name name='nonprofit')
         .row
             .col-xs-12.col-sm-6.col-sm-offset-3
                 h3 Step 1: Which certification do you pledge to complete?
