@@ -48,7 +48,6 @@ export const executeChallenge = createAction(types.executeChallenge);
 
 export const updateMain = createAction(types.updateMain);
 export const frameMain = createAction(types.frameMain);
-export const frameOutput = createAction(types.frameOutput);
 export const frameTests = createAction(types.frameTests);
 
 export const runTests = createAction(types.runTests);
@@ -56,6 +55,8 @@ export const updateTests = createAction(types.updateTests);
 
 export const initOutput = createAction(types.initOutput, loggerToStr);
 export const updateOutput = createAction(types.updateOutput, loggerToStr);
+
+export const checkChallenge = createAction(types.checkChallenge);
 
 // code storage
 export const saveCode = createAction(types.saveCode);

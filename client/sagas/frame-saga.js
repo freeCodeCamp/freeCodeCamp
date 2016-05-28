@@ -2,9 +2,8 @@ import Rx, { Observable, Subject } from 'rx';
 import loopProtect from 'loop-protect';
 import types from '../../common/app/routes/challenges/redux/types';
 import {
-  updateOutput
-} from '../../common/app/routes/challenges/redux/actions';
-import {
+  updateOutput,
+  checkChallenge,
   updateTests
 } from '../../common/app/routes/challenges/redux/actions';
 
@@ -108,9 +107,13 @@ export default function frameSaga(actions$, getState, { window, document }) {
     runTests$.flatMap(() => {
       const { frame } = getFrameDocument(document, testId);
       const { tests } = getState().challengesApp;
+      const postTests = Observable.of(
+        updateOutput('// tests completed'),
+        checkChallenge()
+      ).delay(250);
       return frame.__runTests$(tests)
         .map(updateTests)
-        .concat(Observable.just(updateOutput('// tests completed')).delay(250));
+        .concat(postTests);
     }),
     result$
   );

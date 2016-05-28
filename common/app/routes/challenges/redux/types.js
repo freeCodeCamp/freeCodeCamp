@@ -24,11 +24,11 @@ export default createTypes([
   'updateMain',
   'runTests',
   'frameMain',
-  'frameOutput',
   'frameTests',
   'updateOutput',
   'initOutput',
   'updateTests',
+  'checkChallenge',
 
   // code storage
   'saveCode',

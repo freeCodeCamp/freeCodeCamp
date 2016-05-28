@@ -5,6 +5,7 @@ import hardGoToSaga from './hard-go-to-saga';
 import windowSaga from './window-saga';
 import executeChallengeSaga from './execute-challenge-saga';
 import frameSaga from './frame-saga';
+import completionSaga from './completion-saga';
 import codeStorageSaga from './code-storage-saga';
 
 export default [
@@ -15,5 +16,6 @@ export default [
   windowSaga,
   executeChallengeSaga,
   frameSaga,
+  completionSaga,
   codeStorageSaga
 ];
