@@ -12,7 +12,9 @@ import {
 } from '../utils';
 
 const initialState = {
+  id: '',
   challenge: '',
+  legacyKey: '',
   currentStep: 0,
   previousStep: -1,
   filter: '',
@@ -29,6 +31,9 @@ const mainReducer = handleActions(
     [types.updateCurrentChallenge]: (state, { payload: challenge }) => ({
       ...state,
       refresh: true,
+      id: challenge.id,
+      // used mainly to find code storage
+      legacyKey: challenge.name,
       challenge: challenge.dashedName,
       key: getFileKey(challenge),
       tests: createTests(challenge)
@@ -86,6 +91,9 @@ const filesReducer = handleActions(
           return files;
         }, { ...state });
     },
+    [types.savedCodeFound]: (state, { payload: files }) => ({
+      ...files
+    }),
     [types.updateCurrentChallenge]: (state, { payload: challenge }) => {
       if (challenge.type === 'mod') {
         return challenge.files;

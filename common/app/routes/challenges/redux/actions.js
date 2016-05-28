@@ -56,3 +56,8 @@ export const updateTests = createAction(types.updateTests);
 
 export const initOutput = createAction(types.initOutput, loggerToStr);
 export const updateOutput = createAction(types.updateOutput, loggerToStr);
+
+// code storage
+export const saveCode = createAction(types.saveCode);
+export const loadCode = createAction(types.loadCode);
+export const savedCodeFound = createAction(types.savedCodeFound);

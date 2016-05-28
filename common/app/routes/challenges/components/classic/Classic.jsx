@@ -8,14 +8,24 @@ import Editor from './Editor.jsx';
 import SidePanel from './Side-Panel.jsx';
 import Preview from './Preview.jsx';
 import { challengeSelector } from '../../redux/selectors';
-import { executeChallenge, updateMain, updateFile } from '../../redux/actions';
+import {
+  executeChallenge,
+  updateMain,
+  updateFile,
+  loadCode
+} from '../../redux/actions';
 
 const mapStateToProps = createSelector(
   challengeSelector,
   state => state.challengesApp.tests,
   state => state.challengesApp.files,
   state => state.challengesApp.key,
-  ({ challenge, showPreview, mode }, tests, files = {}, key = '') => ({
+  (
+    { showPreview, mode },
+    tests,
+    files = {},
+    key = ''
+  ) => ({
     content: files[key] && files[key].contents || '',
     file: files[key],
     showPreview,
@@ -24,7 +34,12 @@ const mapStateToProps = createSelector(
   })
 );
 
-const bindableActions = { executeChallenge, updateFile, updateMain };
+const bindableActions = {
+  executeChallenge,
+  updateFile,
+  updateMain,
+  loadCode
+};
 
 export class Challenge extends PureComponent {
   static displayName = 'Challenge';
@@ -35,12 +50,15 @@ export class Challenge extends PureComponent {
     mode: PropTypes.string,
     updateFile: PropTypes.func,
     executeChallenge: PropTypes.func,
-    updateMain: PropTypes.func
+    updateMain: PropTypes.func,
+    loadCode: PropTypes.func
   };
 
   componentDidMount() {
+    this.props.loadCode();
     this.props.updateMain();
   }
+
   renderPreview(showPreview) {
     if (!showPreview) {
       return null;
