@@ -951,7 +951,7 @@
         "<code>Alan said, \"Peter is learning JavaScript\".</code>",
         "<h4>Instructions</h4>",
         "Use <dfn>backslashes</dfn> to assign a string to the <code>myStr</code> variable so that <em>if</em> you were to print it to the console, you would see:",
-        "<code>I am a \"double quoted\" string inside \"double quotes\"</code>"
+        "<code>I am a \"double quoted\" string inside \"double quotes\".</code>"
       ],
       "releasedOn": "January 1, 2016",
       "challengeSeed": [
@@ -969,11 +969,11 @@
         "})();"
       ],
       "solutions": [
-        "var myStr = \"I am a \\\"double quoted\\\" string inside \\\"double quotes\\\"\";"
+        "var myStr = \"I am a \\\"double quoted\\\" string inside \\\"double quotes\\\".\";"
       ],
       "tests": [
-        "assert(code.match(/\\\\\"/g).length === 4 && code.match(/[^\\\\]\"/g).length === 2, 'message: You should use two double quotes (<code>&quot;</code>) and four escaped double quotes (<code>&#92;&quot;</code>) ');",
-        "assert(myStr === \"I am a \\\"double quoted\\\" string inside \\\"double quotes\\\"\", 'message: Variable myStr should equal to (<code>I am a \"double quoted\" string inside \"double quotes\"</code>).');"
+        "assert(code.match(/\\\\\"/g).length === 4 && code.match(/[^\\\\]\"/g).length === 2, 'message: You should use two double quotes (<code>&quot;</code>) and four escaped double quotes (<code>&#92;&quot;</code>).');",
+        "assert(myStr === \"I am a \\\"double quoted\\\" string inside \\\"double quotes\\\".\", 'message: Variable myStr should equal to (<code>I am a \"double quoted\" string inside \"double quotes\".</code>).');"
       ],
       "type": "waypoint",
       "challengeType": 1,
@@ -986,7 +986,7 @@
         "<code>Alan dijo, \"Pedro está aprendiendo JavaScript\".<code>",
         "<h4>Instructiones</h4>",
         "Usa <dfn>barras invertidas</dfn>para asigar una cadena a la variable <code>myStr</code> de modo que <em>si</em> tu fueras a imprimirla en la consola, tu verías:",
-        "<code>I am a \"double quoted\" string inside \"double quotes\"</code>"
+        "<code>I am a \"double quoted\" string inside \"double quotes\".</code>"
       ]
     },
     {
