@@ -71,6 +71,7 @@ block content
 
     if pledge
         form.row(name='stop-pledge' action='/commit/stop-commitment' method='post')
+            input(type='hidden', name='_csrf', value=_csrf)
             .col-xs-12.col-sm-6.col-sm-offset-3.text-center
                 .button-spacer
                 button.btn.btn-block.btn-lg.btn-default(name='submit' type='submit') Stop my current pledge
