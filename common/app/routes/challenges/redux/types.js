@@ -28,5 +28,10 @@ export default createTypes([
   'frameTests',
   'updateOutput',
   'initOutput',
-  'updateTests'
+  'updateTests',
+
+  // code storage
+  'saveCode',
+  'loadCode',
+  'savedCodeFound'
 ], 'challenges');

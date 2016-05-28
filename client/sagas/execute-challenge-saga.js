@@ -7,7 +7,8 @@ import types from '../../common/app/routes/challenges/redux/types';
 import {
   frameMain,
   frameTests,
-  initOutput
+  initOutput,
+  saveCode
 } from '../../common/app/routes/challenges/redux/actions';
 import { setExt, updateContents } from '../../common/utils/polyvinyl';
 
@@ -116,7 +117,7 @@ export default function executeChallengeSaga(action$, getState) {
             frameMain(payload)
           ];
           if (type === types.executeChallenge) {
-            actions.push(frameTests(payload));
+            actions.push(saveCode(), frameTests(payload));
           }
           return Observable.from(actions, null, null, Scheduler.default);
         })
