@@ -15,21 +15,18 @@ const mapStateToProps = createSelector(
   state => state.app.windowHeight,
   state => state.app.navHeight,
   state => state.challengesApp.tests,
-  state => state.challengesApp.refresh,
   state => state.challengesApp.output,
   (
     { challenge: { title, description } = {} },
     windowHeight,
     navHeight,
     tests,
-    refresh,
     output
   ) => ({
     title,
     description,
     height: windowHeight - navHeight - 20,
     tests,
-    refresh,
     output
   })
 );
@@ -46,7 +43,6 @@ export class SidePanel extends PureComponent {
     height: PropTypes.number,
     tests: PropTypes.arrayOf(PropTypes.object),
     title: PropTypes.string,
-    refresh: PropTypes.bool,
     output: PropTypes.string
   };
 
@@ -74,7 +70,6 @@ export class SidePanel extends PureComponent {
       description,
       height,
       tests = [],
-      refresh,
       output
     } = this.props;
     const style = {
@@ -104,9 +99,7 @@ export class SidePanel extends PureComponent {
         <ToolPanel />
         <Output output={ output }/>
         <br />
-        <TestSuite
-          refresh={ refresh }
-          tests={ tests } />
+        <TestSuite tests={ tests } />
       </div>
     );
   }
