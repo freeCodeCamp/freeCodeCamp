@@ -7,7 +7,7 @@ import types from '../../common/app/routes/challenges/redux/types';
 import {
   frameMain,
   frameTests,
-  frameOutput
+  initOutput
 } from '../../common/app/routes/challenges/redux/actions';
 import { setExt, updateContents } from '../../common/utils/polyvinyl';
 
@@ -98,18 +98,36 @@ export default function executeChallengeSaga(action$, getState) {
 
           return Observable.combineLatest(head$, frameRunner$)
             .map(([ head, frameRunner ]) => {
-              return head + `<body>${source}</body>` + frameRunner;
-            })
-            .map(build => ({ source, build }));
+              const body = `
+                <body>
+                  <!-- fcc-start-source -->
+                    ${source}
+                  <!-- fcc-end-source -->
+                </body>`;
+              return {
+                build: head + body + frameRunner,
+                source,
+                head
+              };
+            });
         })
         .flatMap(payload => {
-          const actions = [];
-          actions.push(frameMain(payload));
-          if (type !== types.updateMain) {
+          const actions = [
+            frameMain(payload)
+          ];
+          if (type === types.executeChallenge) {
             actions.push(frameTests(payload));
-            actions.push(frameOutput(payload));
           }
           return Observable.from(actions, null, null, Scheduler.default);
-        });
+        })
+        .startWith((
+          type === types.executeChallenge ?
+            initOutput('// running test') :
+            null
+        ))
+        .catch(error => Observable.just({
+          type: 'app.error',
+          error
+        }));
     });
 }

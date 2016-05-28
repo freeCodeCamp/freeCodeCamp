@@ -1,9 +1,9 @@
 import Rx, { Observable, Subject } from 'rx';
-import tape from 'tape';
+import loopProtect from 'loop-protect';
 import types from '../../common/app/routes/challenges/redux/types';
 import {
   updateOutput
-} from '../../common/app/routes/challenges/redux/types';
+} from '../../common/app/routes/challenges/redux/actions';
 import {
   updateTests
 } from '../../common/app/routes/challenges/redux/actions';
@@ -11,7 +11,6 @@ import {
 // we use three different frames to make them all essentially pure functions
 const mainId = 'fcc-main-frame';
 const testId = 'fcc-test-frame';
-const outputId = 'fcc-output-frame';
 
 const createHeader = (id = mainId) => `
   <script>
@@ -38,22 +37,45 @@ function getFrameDocument(document, id = mainId) {
   if (!frame) {
     frame = createFrame(document, id);
   }
-  return frame.contentDocument || frame.contentWindow.document;
+  frame.contentWindow.loopProtect = loopProtect;
+  return {
+    frame: frame.contentDocument || frame.contentWindow.document,
+    frameWindow: frame.contentWindow
+  };
 }
 
-function frameMain({ build } = {}, document) {
-  const main = getFrameDocument(document);
+const consoleReg = /(?:\b)console(\.log\S+)/g;
+const sourceReg =
+  /(<!-- fcc-start-source -->)([\s\S]*?)(?=<!-- fcc-end-source -->)/g;
+function proxyConsole(build, source) {
+  const newSource = source.replace(consoleReg, (match, methodCall) => {
+    return 'window.__console' + methodCall;
+  });
+  return build.replace(sourceReg, '\$1' + newSource);
+}
+
+function buildProxyConsole(window, proxyLogger$) {
+  const oldLog = window.console.log.bind(console);
+  window.__console = {};
+  window.__console.log = function proxyConsole(...args) {
+    proxyLogger$.onNext(args);
+    return oldLog(...args);
+  };
+}
+
+function frameMain({ build, source } = {}, document, proxyLogger$) {
+  const { frame: main, frameWindow } = getFrameDocument(document);
   refreshFrame(main);
+  buildProxyConsole(frameWindow, proxyLogger$);
   main.open();
-  main.write(createHeader() + build);
+  main.write(createHeader() + proxyConsole(build, source));
   main.close();
 }
 
 function frameTests({ build, source } = {}, document) {
-  const tests = getFrameDocument(document, testId);
+  const { frame: tests } = getFrameDocument(document, testId);
   refreshFrame(tests);
   tests.Rx = Rx;
-  tests.tape = tape;
   tests.__source = source;
   tests.open();
   tests.write(createHeader(testId) + build);
@@ -62,32 +84,33 @@ function frameTests({ build, source } = {}, document) {
 
 export default function frameSaga(actions$, getState, { window, document }) {
   window.__common = {};
+  window.__common.shouldRun = () => true;
+  const proxyLogger$ = new Subject();
   const runTests$ = window.__common[testId + 'Ready$'] =
     new Subject();
-  const updateOutput$ = window.__common[outputId + 'Ready$'] =
-    new Subject();
-  window.__common.shouldRun = () => true;
   const result$ = actions$
     .filter(({ type }) => (
       type === types.frameMain ||
-      type === types.frameTests
+      type === types.frameTests ||
+      type === types.frameOutput
     ))
     .map(action => {
       if (action.type === types.frameMain) {
-        return frameMain(action.payload, document);
+        return frameMain(action.payload, document, proxyLogger$);
       }
-      if (action.type === types.frameTests) {
-        return frameTests(action.payload, document);
-      }
-      return null;
+      return frameTests(action.payload, document);
     });
 
   return Observable.merge(
-    updateOutput$.map(updateOutput),
+    proxyLogger$.map(args => {
+      return updateOutput(args);
+    }),
     runTests$.flatMap(() => {
-      const frame = getFrameDocument(document, testId);
+      const { frame } = getFrameDocument(document, testId);
       const { tests } = getState().challengesApp;
-      return frame.__runTests$(tests).map(updateTests);
+      return frame.__runTests$(tests)
+        .map(updateTests)
+        .concat(Observable.just(updateOutput('// tests completed')).delay(250));
     }),
     result$
   );

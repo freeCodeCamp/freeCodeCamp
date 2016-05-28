@@ -1,5 +1,6 @@
 import { createAction } from 'redux-actions';
 import { updateContents } from '../../../../utils/polyvinyl';
+import { loggerToStr } from '../utils';
 
 import types from './types';
 
@@ -44,10 +45,14 @@ export const updateFiles = createAction(types.updateFiles);
 
 // rechallenge
 export const executeChallenge = createAction(types.executeChallenge);
+
 export const updateMain = createAction(types.updateMain);
 export const frameMain = createAction(types.frameMain);
 export const frameOutput = createAction(types.frameOutput);
 export const frameTests = createAction(types.frameTests);
+
 export const runTests = createAction(types.runTests);
-export const updateOutput = createAction(types.updateOutput);
 export const updateTests = createAction(types.updateTests);
+
+export const initOutput = createAction(types.initOutput, loggerToStr);
+export const updateOutput = createAction(types.updateOutput, loggerToStr);

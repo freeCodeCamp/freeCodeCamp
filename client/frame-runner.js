@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
       output = eval(source);
       /* eslint-enable no-eval */
     } catch (e) {
-      output = e.message;
+      output = e.message + '\n' + e.stack;
       window.__err = e;
     }
     return output;
@@ -68,17 +68,6 @@ document.addEventListener('DOMContentLoaded', function() {
       .toArray();
   };
 
-  // used when updating preview without running tests
-  document.__checkPreview$ = function checkPreview$(args) {
-    if (window.__err) {
-      return Rx.Observable.throw(window.__err);
-    }
-    return Rx.Observable.just(args);
-  };
-
-  // now that the runPreviewTest$ is defined
-  // we set the subject to true
-  // this will let the updatePreview
-  // script now that we are ready.
+  // notify that the window methods are ready to run
   frameReady.onNext(null);
 });

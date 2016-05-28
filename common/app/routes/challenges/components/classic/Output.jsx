@@ -1,5 +1,6 @@
 import React from 'react';
 import PureComponent from 'react-pure-render/component';
+import NoSSR from 'react-no-ssr';
 import Codemirror from 'react-codemirror';
 
 const defaultOutput = `/**
@@ -12,7 +13,7 @@ const defaultOutput = `/**
 
 const defaultOptions = {
   lineNumbers: false,
-  mode: 'text',
+  mode: 'javascript',
   theme: 'monokai',
   readOnly: 'nocursor',
   lineWrapping: true
@@ -29,9 +30,11 @@ export default class extends PureComponent {
     const { output } = this.props;
     return (
       <div className='challenge-log'>
-        <Codemirror
-          options={ defaultOptions }
-          value={ output } />
+        <NoSSR>
+          <Codemirror
+            options={ defaultOptions }
+            value={ output } />
+        </NoSSR>
       </div>
     );
   }

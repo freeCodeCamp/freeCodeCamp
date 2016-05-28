@@ -64,3 +64,16 @@ export function createTests({ tests = [] }) {
       testString: test
     }));
 }
+
+export function loggerToStr(args) {
+  args = Array.isArray(args) ? args : [args];
+  return args
+    .map(arg => typeof arg === 'undefined' ? 'undefined' : arg)
+    .map(arg => {
+      if (typeof arg !== 'string') {
+        return JSON.stringify(arg);
+      }
+      return arg;
+    })
+    .reduce((str, arg) => str + arg + '\n', '');
+}
