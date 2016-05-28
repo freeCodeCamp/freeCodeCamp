@@ -27,5 +27,6 @@ export default createTypes([
   'frameOutput',
   'frameTests',
   'updateOutput',
+  'initOutput',
   'updateTests'
 ], 'challenges');

@@ -1,6 +1,8 @@
 import { Observable } from 'rx';
 import loopProtect from 'loop-protect';
 
+import { updateContents } from '../../common/utils/polyvinyl';
+
 loopProtect.hit = function hit(line) {
   var err = 'Error: Exiting potential infinite loop at line ' +
     line +
@@ -16,8 +18,7 @@ const transformersForHtmlJS = {
     {
       name: 'add-loop-protect',
       transformer: function addLoopProtect(file) {
-        file.contents = loopProtect(file.contents);
-        return file;
+        return updateContents(loopProtect(file.contents), file);
       }
     }
   ]

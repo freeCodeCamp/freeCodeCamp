@@ -60,6 +60,14 @@ const mainReducer = handleActions(
       ...state,
       currentStep: step,
       previousStep: state.currentStep
+    }),
+    [types.initOutput]: (state, { payload: output }) => ({
+      ...state,
+      output
+    }),
+    [types.updateOutput]: (state, { payload: output }) => ({
+      ...state,
+      output: (state.output || '') + output
     })
   },
   initialState
