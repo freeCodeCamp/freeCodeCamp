@@ -6,17 +6,20 @@ import { Col, Row } from 'react-bootstrap';
 export default class extends PureComponent {
   static displayName = 'TestSuite';
   static proptTypes = {
-    tests: PropTypes.arrayOf(PropTypes.object),
-    refresh: PropTypes.bool
+    tests: PropTypes.arrayOf(PropTypes.object)
   };
 
-  renderTests(tests = [], refresh = false) {
-    return tests.map(({ err, text = '' }, index)=> {
+  renderTests(tests = []) {
+    // err && pass > invalid state
+    // err && !pass > failed tests
+    // !err && pass > passed tests
+    // !err && !pass > in-progress
+    return tests.map(({ err, pass = false, text = '' }, index)=> {
       const iconClass = classnames({
         'big-icon': true,
-        'ion-close-circled error-icon': !refresh && err,
-        'ion-checkmark-circled success-icon': !refresh && !err,
-        'ion-refresh refresh-icon': refresh
+        'ion-close-circled error-icon': err && !pass,
+        'ion-checkmark-circled success-icon': !err && pass,
+        'ion-refresh refresh-icon': !err && !pass
       });
       return (
         <Row key={ text.slice(-6) + index }>
@@ -35,12 +38,12 @@ export default class extends PureComponent {
   }
 
   render() {
-    const { tests, refresh } = this.props;
+    const { tests } = this.props;
     return (
       <div
         className='challenge-test-suite'
         style={{ marginTop: '10px' }}>
-        { this.renderTests(tests, refresh) }
+        { this.renderTests(tests) }
       </div>
     );
   }

@@ -30,7 +30,6 @@ const mainReducer = handleActions(
     }),
     [types.updateCurrentChallenge]: (state, { payload: challenge }) => ({
       ...state,
-      refresh: true,
       id: challenge.id,
       // used mainly to find code storage
       legacyKey: challenge.name,
@@ -40,10 +39,12 @@ const mainReducer = handleActions(
     }),
     [types.updateTests]: (state, { payload: tests }) => ({
       ...state,
-      refresh: false,
       tests
     }),
-    [types.executeChallenge]: state => ({ ...state, refresh: true }),
+    [types.executeChallenge]: state => ({
+      ...state,
+      tests: state.tests.map(test => ({ ...test, err: false, pass: false }))
+    }),
 
     // map
     [types.updateFilter]: (state, { payload = ''}) => ({
