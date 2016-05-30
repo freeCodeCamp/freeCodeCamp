@@ -32,13 +32,13 @@ block content
                           div.margin-left-10(id = "nested-collapse"+challengeBlock.name.replace(/\W/gi, '').split(' ').join('-') class = "collapse in map-collapse no-transition chapterBlock")
                               for challenge in challengeBlock.challenges
                                   if challenge.completed
-                                      p.challenge-title.faded.text-primary.ion-checkmark-circled.padded-ionic-icon.negative-15(name="#{challenge.dashedName}")
-                                          a(href="#{challenge.url}" target='_parent')
+                                      p.challenge-title.faded.text-primary.ion-checkmark-circled.padded-ionic-icon.negative-15(name=challenge.dashedName)
+                                          a(href=challenge.url target='_parent')
                                               = challenge.title
                                               span.sr-only= " Complete"
                                   else if challenge.isRequired
-                                      p.challenge-title.ion-ios-circle-outline.padded-ionic-icon.negative-15(name="#{challenge.dashedName}")
-                                          a(name="#{challenge.dashedName}" target='_parent' href="#{challenge.url}" class=challenge.isComingSoon ? 'disabled' : '')
+                                      p.challenge-title.ion-ios-circle-outline.padded-ionic-icon.negative-15(name=challenge.dashedName)
+                                          a(name=challenge.dashedName target='_parent' href=challenge.url class=challenge.isComingSoon ? 'disabled' : '')
                                               span= challenge.title
                                               span.sr-only= " Incomplete"
                                           if challenge.markNew
@@ -52,8 +52,8 @@ block content
                                           span.text-primary &thinsp; &thinsp;
                                               strong *
                                   else
-                                      p.challenge-title.ion-ios-circle-outline.padded-ionic-icon.negative-15(name="#{challenge.dashedName}")
-                                          a(name="#{challenge.dashedName}" target='_parent' href="#{challenge.url}" class=challenge.isComingSoon ? 'disabled' : '')
+                                      p.challenge-title.ion-ios-circle-outline.padded-ionic-icon.negative-15(name=challenge.dashedName)
+                                          a(name=challenge.dashedName target='_parent' href=challenge.url class=challenge.isComingSoon ? 'disabled' : '')
                                               span= challenge.title
                                               span.sr-only= " Incomplete"
                                           if challenge.markNew
@@ -106,17 +106,17 @@ block content
                     | Coding Interview Training
                   span.challengeBlockTime (70 hours)
                 div.margin-left-10(id = "nested-collapse-coding-interview-training" class = "collapse in map-collapse no-transition chapterBlock")
-                      .challengeBlockDescription To qualify for this coding interview training, you must first earn all four certifications: Front End, Data Visualization, Back End, and Full Stack
-                      p.challenge-title.disabled.text-primary.ion-locked.padded-ionic-icon.negative-15(name="Soft Skill Training") Soft Skill Training
-                      p.challenge-title.disabled.text-primary.ion-locked.padded-ionic-icon.negative-15(name="Critical Thinking Training") Critical Thinking Training
-                      p.challenge-title.disabled.text-primary.ion-locked.padded-ionic-icon.negative-15(name="Whiteboard Coding Training") Whiteboard Coding Training
-                  h3
+                    .challengeBlockDescription To qualify for this coding interview training, you must first earn all four certifications: Front End, Data Visualization, Back End, and Full Stack
+                    p.challenge-title.disabled.text-primary.ion-locked.padded-ionic-icon.negative-15(name="Soft Skill Training") Soft Skill Training
+                    p.challenge-title.disabled.text-primary.ion-locked.padded-ionic-icon.negative-15(name="Critical Thinking Training") Critical Thinking Training
+                    p.challenge-title.disabled.text-primary.ion-locked.padded-ionic-icon.negative-15(name="Whiteboard Coding Training") Whiteboard Coding Training
+                h3
                     a(data-toggle='collapse', data-parent='#nested', href='#nested-collapse-mock-interviews')
                       span.no-link-underline
                         i.fa.fa-caret-down &thinsp;
                       | Mock Interviews
                     span.challengeBlockTime (10 hours)
-                  div.margin-left-10(id = "nested-collapse-mock-interviews" class = "collapse in map-collapse no-transition chapterBlock")
+                div.margin-left-10(id = "nested-collapse-mock-interviews" class = "collapse in map-collapse no-transition chapterBlock")
                         .challengeBlockDescription To qualify for these mock interviews, you must first earn all four certifications: Front End, Data Visualization, Back End, and Full Stack
                         p.challenge-title.disabled.text-primary.ion-locked.padded-ionic-icon.negative-15(name="Mock Interview #1") Mock Interview #1
                         p.challenge-title.disabled.text-primary.ion-locked.padded-ionic-icon.negative-15(name="Mock Interview #2") Mock Interview #2

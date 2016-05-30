@@ -11,7 +11,7 @@ var port = 1337;
 // the view being send will have a short timeout and a redirect
 module.exports = function(loopbackApp) {
   var app = express();
-  app.set('view engine', 'jade');
+  app.set('view engine', 'pug');
   // views in ../views'
   app.set('views', path.join(__dirname, '..'));
 

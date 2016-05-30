@@ -28,10 +28,10 @@ const certIds = {
 };
 
 const certViews = {
-  [certTypes.frontEnd]: 'certificate/front-end.jade',
-  [certTypes.dataVis]: 'certificate/data-vis.jade',
-  [certTypes.backEnd]: 'certificate/back-end.jade',
-  [certTypes.fullStack]: 'certificate/full-stack.jade'
+  [certTypes.frontEnd]: 'certificate/front-end.pug',
+  [certTypes.dataVis]: 'certificate/data-vis.pug',
+  [certTypes.backEnd]: 'certificate/back-end.pug',
+  [certTypes.fullStack]: 'certificate/full-stack.pug'
 };
 
 const certText = {
