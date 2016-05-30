@@ -78,7 +78,7 @@
       "title": "JavaScript Lingo: Variables & camelCase",
       "description": [
         "We are going to cover what constitutes a variable, and the reasoning behind camelCase.",
-        "A variable, also referred to as 'var', is the name or placeholder for a boolean, string, number, or other piece of static information.",
+        "A variable also referred to as 'var', is the name or placeholder for a boolean, string, number, or another piece of static information.",
         "You can use Google Dev Tools to inspect the Free Code Camp home page and look for some variables.",
         "You 'declare' variables the first time with 'var' in front of it, but those can be referenced later in your script.",
         "camelCase is the way that JavaScript pushes words together and still keeps them legible. The first letter of the first word is lowercase, along with the remainder of the word, but the first letter of every consecutive word is capitalized. There are no spaces. Examples: brianaLovesHerPets, bestFoodIsCheese, and codeIsWorthLearning.",
@@ -152,7 +152,7 @@
       "id": "56b15f15632298c12f315189",
       "title": "JavaScript Lingo: Finding and Indexing Data in Arrays",
       "description": [
-        "There are many reasons you might need to access a certain piece of data from within a larger set, and you do that by referencing it's index.",
+        "There are many reasons you might need to access a certain piece of data from within a larger set, and you do that by referencing its index.",
         "We won't get into syntax now, but you should know that the first thing in an array is actually index 0.",
         "This goes for strings and objects, too. All of these indices start at 0, so if you're looking asking the code to find indexArr[2], you're really going to get the third piece of information in that array."
       ],
@@ -185,7 +185,7 @@
       "title": "JavaScript Lingo: Manipulating Data",
       "description": [
         "Methods and functions are ways you can manipulate variables or other sets of information.",
-        "Methods are built in to JavaScript, and you will become more familiar with these as you write functions for the bonfires.",
+        "Methods are built into JavaScript, and you will become more familiar with these as you write functions for the bonfires.",
         "I'd suggest looking through the MDN (Mozilla Developer Network that we discussed in the first video) to familiarize yourself with the sheer amount and general potential for the methods that exist. <a href='http://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Methods_Index' target='_blank'>developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Methods_Index</a>",
         "Examples include '.split(' ')', which will turn a string into an array and can do so in many different ways. Methods are powerful - many times when you want your script to do something, there's a method for that.",
         "Functions, like variables, are something you define and create.",
@@ -296,7 +296,7 @@
       "description": [
         "RegExp is not formatted like anything else in JS, and can have a steep learning curve.",
         "RegExp can also be an incredibly useful and efficient tool.",
-        "Using RegExp, you can match, replace, search, and split a string, one of the more difficult types of values to manipulate.",
+        "Using RegExp, you can match, replace, search, and split a string, one of the most difficult types of values to manipulate.",
         "Like with all of the other videos, we won't get into the nitty gritty, but I want to show you a few examples of where RegExp is useful.",
         "If you wanted to create a registration page that verified passwords contained at least a number and a capital letter, you could use RegExp.",
         "If you wanted to ensure that dates entered in a page were all valid dates in the future, you could use RegExp.",
