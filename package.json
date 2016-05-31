@@ -118,7 +118,7 @@
     "babel-preset-react": "^6.3.13",
     "babel-preset-stage-0": "^6.3.13",
     "browser-sync": "^2.9.12",
-    "chunk-manifest-webpack-plugin": "0.0.1",
+    "chunk-manifest-webpack-plugin": "0.1.0",
     "del": "^2.2.0",
     "eslint": "^2.2.0",
     "eslint-plugin-react": "^5.1.1",
