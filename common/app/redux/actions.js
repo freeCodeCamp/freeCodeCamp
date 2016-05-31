@@ -42,7 +42,7 @@ export const updateChallengesData = createAction(types.updateChallengesData);
 export const updateJobsData = createAction(types.updateJobsData);
 export const updateHikesData = createAction(types.updateHikesData);
 
-export const createErrorObserable = error => Observable.just({
+export const createErrorObservable = error => Observable.just({
   type: types.handleError,
   error
 });

@@ -101,9 +101,7 @@ export default function frameSaga(actions$, getState, { window, document }) {
     });
 
   return Observable.merge(
-    proxyLogger$.map(args => {
-      return updateOutput(args);
-    }),
+    proxyLogger$.map(updateOutput),
     runTests$.flatMap(() => {
       const { frame } = getFrameDocument(document, testId);
       const { tests } = getState().challengesApp;
