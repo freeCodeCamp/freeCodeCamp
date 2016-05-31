@@ -1,5 +1,5 @@
-import { Observable } from 'rx';
-import { handleError, setUser, fetchUser } from './types';
+import { setUser, fetchUser } from './types';
+import { createErrorObservable } from './actions';
 
 export default function getUserSaga(action$, getState, { services }) {
   return action$
@@ -12,9 +12,6 @@ export default function getUserSaga(action$, getState, { services }) {
             payload: user
           };
         })
-        .catch(error => Observable.just({
-          type: handleError,
-          error
-        }));
+        .catch(createErrorObservable);
     });
 }

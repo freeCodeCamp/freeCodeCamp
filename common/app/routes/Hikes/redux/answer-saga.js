@@ -4,7 +4,11 @@ import { push } from 'react-router-redux';
 import types from './types';
 import { getMouse } from './utils';
 
-import { makeToast, updatePoints } from '../../../redux/actions';
+import {
+  createErrorObservable,
+  makeToast,
+  updatePoints
+} from '../../../redux/actions';
 import { hikeCompleted, goToNextHike } from './actions';
 import { postJSON$ } from '../../../../utils/ajax-stream';
 import { getCurrentHike } from './selectors';
@@ -91,12 +95,7 @@ function handleAnswer(action, getState) {
           updatePoints(points),
         );
       })
-      .catch(error => {
-        return Observable.just({
-          type: 'app.error',
-          error
-        });
-      });
+      .catch(createErrorObservable);
   } else {
     updateUser$ = Observable.empty();
   }
@@ -113,10 +112,7 @@ function handleAnswer(action, getState) {
   return Observable.merge(challengeCompleted$, updateUser$)
     .delay(300)
     .startWith(hikeCompleted(finalAnswer))
-    .catch(error => Observable.just({
-      type: 'error',
-      error
-    }))
+    .catch(createErrorObservable)
     // end with action so we know it is ok to transition
     .concat(Observable.just({ type: types.transitionHike }));
 }

@@ -16,7 +16,7 @@ if (!requireProto.hasOwnProperty('ensure')) {
   Object.defineProperties(
     requireProto,
     {
-      'ensure': {
+      ensure: {
         value: function ensure(modules, callback) {
           callback(this);
         },

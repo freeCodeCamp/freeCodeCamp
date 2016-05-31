@@ -37,7 +37,6 @@ var Rx = require('rx'),
 
   // rev
   rev = require('gulp-rev'),
-  revReplace = require('gulp-rev-replace'),
   revDel = require('rev-del'),
 
   // lint
@@ -111,31 +110,8 @@ var paths = {
 
   js: [
     'client/main.js',
-    'client/iFrameScripts.js',
     'client/frame-runner.js',
     'client/plugin.js'
-  ],
-
-  commonFramework: [
-    'init',
-    'bindings',
-    'add-test-to-string',
-    'code-storage',
-    'code-uri',
-    'add-loop-protect',
-    'get-iframe',
-    'update-preview',
-    'create-editor',
-    'detect-unsafe-code-stream',
-    'display-test-results',
-    'execute-challenge-stream',
-    'output-display',
-    'phone-scroll-lock',
-    'report-issue',
-    'run-tests-stream',
-    'show-completion',
-    'step-challenge',
-    'end'
   ],
 
   less: './client/less/main.less',
@@ -160,12 +136,6 @@ var paths = {
 var webpackOptions = {
   devtool: 'inline-source-map'
 };
-
-function formatCommonFrameworkPaths() {
-  return this.map(function(script) {
-    return 'client/commonFramework/' + script + '.js';
-  });
-}
 
 function errorHandler() {
   var args = Array.prototype.slice.call(arguments);
@@ -430,38 +400,6 @@ gulp.task('js', function() {
     .pipe(__DEV__ ? gutil.noop() : gulp.dest(paths.manifest));
 });
 
-// commonFramework depend on iFrameScripts
-// and faux.js
-gulp.task('dependents', ['js'], function() {
-  var manifestName = 'dependents-manifest.json';
-  var dest = paths.publicJs;
-
-  var manifest = gulp.src(
-    path.join(__dirname, paths.manifest, 'js-manifest.json')
-  );
-
-  return gulp.src(formatCommonFrameworkPaths.call(paths.commonFramework))
-    .pipe(plumber({ errorHandler: errorHandler }))
-    .pipe(babel())
-    .pipe(__DEV__ ? sourcemaps.init() : gutil.noop())
-    .pipe(concat('commonFramework.js'))
-    .pipe(
-      __DEV__ ?
-        sourcemaps.write({ sourceRoot: '/commonFramework' }) :
-        gutil.noop()
-    )
-    .pipe(__DEV__ ? gutil.noop() : uglify())
-    .pipe(__DEV__ ? gutil.noop() : revReplace({ manifest: manifest }))
-    .pipe(gulp.dest(dest))
-    .pipe(__DEV__ ? gutil.noop() : rev())
-    .pipe(__DEV__ ? gutil.noop() : gulp.dest(dest))
-    .pipe(__DEV__ ? gutil.noop() : rev.manifest(manifestName))
-    .pipe(__DEV__ ? gutil.noop() : delRev(
-      dest,
-      manifestName
-    ))
-    .pipe(__DEV__ ? gutil.noop() : gulp.dest(paths.manifest));
-});
 
 function collector(file, memo) {
   return Object.assign({}, JSON.parse(file.contents), memo);
@@ -474,7 +412,6 @@ function done(manifest) {
 var buildDependents = [
   'less',
   'js',
-  'dependents',
   'pack-client',
   'move-webpack-manifest'
 ];
@@ -488,7 +425,6 @@ gulp.task('build-manifest', buildDependents, function() {
 gulp.task('build', [
   'less',
   'js',
-  'dependents',
   'pack-client',
   'move-webpack-manifest',
   'clean-webpack-manifest',
@@ -498,7 +434,6 @@ gulp.task('build', [
 var watchDependents = [
   'less',
   'js',
-  'dependents',
   'serve',
   'sync'
 ];
@@ -512,11 +447,7 @@ gulp.task('watch', watchDependents, function() {
   gulp.watch(paths.lessFiles, ['less']);
   gulp.watch(paths.js.concat(paths.vendorChallenges), ['js']);
   gulp.watch(paths.challenges, ['test-challenges', 'reload']);
-  gulp.watch(paths.js, ['js', 'dependents']);
-  gulp.watch(
-    formatCommonFrameworkPaths.call(paths.commonFramework),
-    ['dependents']
-  );
+  gulp.watch(paths.js, ['js']);
 });
 
 gulp.task('default', [

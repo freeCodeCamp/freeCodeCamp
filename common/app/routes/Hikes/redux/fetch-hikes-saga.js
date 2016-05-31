@@ -1,10 +1,8 @@
-import { Observable } from 'rx';
 import { normalize, Schema, arrayOf } from 'normalizr';
-// import debug from 'debug';
 
 import types from './types';
 import { fetchHikesCompleted } from './actions';
-import { handleError } from '../../../redux/types';
+import { createErrorObserable } from '../../../redux/actions';
 
 import { findCurrentHike } from './utils';
 
@@ -25,11 +23,6 @@ export default function fetchHikesSaga(action$, getState, { services }) {
           const currentHike = findCurrentHike(result.hikes, dashedName);
           return fetchHikesCompleted(entities, result.hikes, currentHike);
         })
-        .catch(error => {
-          return Observable.just({
-            type: handleError,
-            error
-          });
-        });
+        .catch(createErrorObserable);
     });
 }

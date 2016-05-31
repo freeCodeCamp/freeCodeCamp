@@ -4,6 +4,7 @@ import { ajax$ } from '../../common/utils/ajax-stream';
 import throwers from '../rechallenge/throwers';
 import transformers from '../rechallenge/transformers';
 import types from '../../common/app/routes/challenges/redux/types';
+import { createErrorObservable } from '../../common/app/redux/actions';
 import {
   frameMain,
   frameTests,
@@ -43,7 +44,7 @@ function cacheScript({ src } = {}) {
     })
     .map(({ response }) => response)
     .map(script => `<script>${script}</script>`)
-    .catch(e => (console.error(e), Observable.just('')))
+    .catch(createErrorObservable)
     .shareReplay();
 
   scriptCache.set(src, script$);
@@ -126,9 +127,6 @@ export default function executeChallengeSaga(action$, getState) {
             initOutput('// running test') :
             null
         ))
-        .catch(error => Observable.just({
-          type: 'app.error',
-          error
-        }));
+        .catch(createErrorObservable);
     });
 }
