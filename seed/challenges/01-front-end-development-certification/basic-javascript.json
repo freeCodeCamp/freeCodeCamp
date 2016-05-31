@@ -643,7 +643,7 @@
       ],
       "tests": [
         "assert(remainder === 2, 'message: The value of <code>remainder</code> should be <code>2</code>');",
-        "assert(/\\d+\\s*%\\s*\\d+/.test(code), 'message: You should use the <code>%</code> operator');"
+        "assert(/var\\s*?remainder\\s*?=\\s*?.*%.*;/.test(code), 'message: You should use the <code>%</code> operator');"
       ],
       "type": "waypoint",
       "challengeType": 1,
