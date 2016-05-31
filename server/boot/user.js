@@ -429,7 +429,7 @@ module.exports = function(app) {
               certViews[certType],
               {
                 username: user.username,
-                date: moment(new Date(completedDate)).format('MMMM, Do YYYY'),
+                date: moment(new Date(completedDate)).format('MMMM D, YYYY'),
                 name: user.name
               }
             );
