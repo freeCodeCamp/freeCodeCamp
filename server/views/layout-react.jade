@@ -9,5 +9,7 @@ html(lang='en')
   body.no-top-and-bottom-margins(style='overflow: hidden')
     #fcc!= markup
     script!= state
+    script.
+      window.webpackManifest = !{JSON.stringify(chunkManifest || {})};
     script(src=rev('/js', 'vendor-challenges.js'))
     script(src=getBundleLocation())
