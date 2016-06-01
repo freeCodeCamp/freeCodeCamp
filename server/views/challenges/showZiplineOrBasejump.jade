@@ -8,12 +8,15 @@ block content
                     | &nbsp;
                     i.ion-checkmark-circled.text-primary(title="Completed")
             hr
-            ol
+            ul
                 for step, index in description
                     .row.checklist-element(id="#{dashedName + index}")
-                        .col-xs-3.col-sm-1.col-md-2.padded-ionic-icon.text-center
-                            input(type='checkbox' class='challenge-list-checkbox')
-                        .col-xs-9.col-sm-11.col-md-10
+                        if step.match(/User Story:/)
+                            .col-xs-1.col-sm-1.col-md-1.padded-ionic-icon.text-center
+                                input(type='checkbox' class='challenge-list-checkbox')
+                        else
+                            .col-xs-1.col-sm-1.col-md-1.padded-ionic-icon.text-center
+                        .col-xs-11.col-sm-11.col-md-11
                             li.step-text.wrappable!= step
         .col-xs-12.col-sm-12.col-md-8
             .embed-responsive.embed-responsive-16by9
