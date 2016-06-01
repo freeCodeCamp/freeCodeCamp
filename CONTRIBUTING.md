@@ -197,4 +197,5 @@ Be sure to post in the PR conversation that you have made the requested changes.
 - [How to log in to your local FCC site - using GitHub](https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/How-To-Log-In-To-Your-Local-FCC-Site)
 - [Contributions Guide - With a demo on fixing a typo](https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/Contributions-Guide---with-Typo-Demo)
 - [Writing great git commit message](https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/Writing-great-git-commit-message)
+- [Challenge-o-Matic 1000](https://github.com/FreeCodeCamp/COM1000)
 - [Contributor Chat Support - For the FCC Repositories, and running a local instance] (https://gitter.im/FreeCodeCamp/HelpContributors)
