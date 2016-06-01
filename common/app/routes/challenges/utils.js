@@ -1,5 +1,6 @@
 import { compose } from 'redux';
 import { BONFIRE, HTML, JS } from '../../utils/challengeTypes';
+import { dashify } from '../../../utils';
 
 export function encodeScriptTags(value) {
   return value
@@ -76,4 +77,35 @@ export function loggerToStr(args) {
       return arg;
     })
     .reduce((str, arg) => str + arg + '\n', '');
+}
+
+export function getFirstChallenge(
+  { superBlock, block, challenge },
+  result
+) {
+  return challenge[
+    block[
+      superBlock[
+        result[0]
+      ].blocks[0]
+    ].challenges[0]
+  ];
+}
+
+export function getNextChallenge(
+  current,
+  entites,
+  superBlocks
+) {
+  const { challenge: challengeMap, block: blockMap } = entites;
+  // find current challenge
+  // find current block
+  // find next challenge in block
+  const currentChallenge = challengeMap[current];
+  if (currentChallenge) {
+    const block = blockMap[dashify(currentChallenge.block)];
+    const index = block.challenges.indexOf(currentChallenge.dashedName);
+    return challengeMap[block.challenges[index + 1]];
+  }
+  return getFirstChallenge(entites, superBlocks);
 }

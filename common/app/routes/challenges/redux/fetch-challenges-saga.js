@@ -9,9 +9,10 @@ import {
 
 export default function fetchChallengesSaga(action$, getState, { services }) {
   return action$
-    .filter(
-      ({ type }) => type === fetchChallenges || type === fetchChallenge
-    )
+    .filter(({ type }) => (
+      type === fetchChallenges ||
+      type === fetchChallenge
+    ))
     .flatMap(({ type, payload })=> {
       const options = { service: 'map' };
       if (type === fetchChallenge) {

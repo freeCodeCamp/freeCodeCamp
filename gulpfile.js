@@ -196,8 +196,7 @@ gulp.task('serve', function(cb) {
 var syncDepenedents = [
   'serve',
   'js',
-  'less',
-  'dependents'
+  'less'
 ];
 
 gulp.task('sync', syncDepenedents, function() {

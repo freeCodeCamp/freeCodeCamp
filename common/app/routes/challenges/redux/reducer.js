@@ -19,7 +19,8 @@ const initialState = {
   previousStep: -1,
   filter: '',
   files: {},
-  superBlocks: []
+  superBlocks: [],
+  toast: 0
 };
 
 const mainReducer = handleActions(
@@ -44,6 +45,10 @@ const mainReducer = handleActions(
     [types.executeChallenge]: state => ({
       ...state,
       tests: state.tests.map(test => ({ ...test, err: false, pass: false }))
+    }),
+    [types.showChallengeComplete]: (state, { payload: toast }) => ({
+      ...state,
+      toast
     }),
 
     // map

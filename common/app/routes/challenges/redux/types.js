@@ -29,6 +29,9 @@ export default createTypes([
   'initOutput',
   'updateTests',
   'checkChallenge',
+  'showChallengeComplete',
+  'submitChallenge',
+  'moveToNextChallenge',
 
   // code storage
   'saveCode',
