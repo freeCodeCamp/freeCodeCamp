@@ -325,6 +325,7 @@
       "title": "Confirm the Ending",
       "description": [
         "Check if a string (first argument, <code>str</code>) ends with the given target string (second argument, <code>target</code>).",
+        "This challenge <em>can</em> be solved with the <code>.endsWith()</code> method, which was introduced in ES2015. But for the purpose of this challenge, we would like you to use one of the JavaScript substring methods instead.",
         "Remember to use <a href=\"//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help\" target=\"_blank\">Read-Search-Ask</a> if you get stuck. Write your own code."
       ],
       "challengeSeed": [
@@ -343,7 +344,8 @@
         "assert(confirmEnding(\"He has to give me a new name\", \"name\") === true, 'message: <code>confirmEnding(\"He has to give me a new name\", \"name\")</code> should return true.');",
         "assert(confirmEnding(\"He has to give me a new name\", \"me\") === true, 'message: <code>confirmEnding(\"He has to give me a new name\", \"me\")</code> should return true.');",
         "assert(confirmEnding(\"He has to give me a new name\", \"na\") === false, 'message: <code>confirmEnding(\"He has to give me a new name\", \"na\")</code> should return false.');",
-        "assert(confirmEnding(\"If you want to save our world, you must hurry. We dont know how much longer we can withstand the nothing\", \"mountain\") === false, 'message: <code>confirmEnding(\"If you want to save our world, you must hurry. We dont know how much longer we can withstand the nothing\", \"mountain\")</code> should return false.');"
+        "assert(confirmEnding(\"If you want to save our world, you must hurry. We dont know how much longer we can withstand the nothing\", \"mountain\") === false, 'message: <code>confirmEnding(\"If you want to save our world, you must hurry. We dont know how much longer we can withstand the nothing\", \"mountain\")</code> should return false.');",
+        "assert(!/\\.endsWith\\(.*?\\)\\s*?;/.test(code), 'message: Do not use the built-in method <code>.endsWith()</code> to solve the challenge.');"
       ],
       "type": "bonfire",
       "isRequired": true,
@@ -351,7 +353,8 @@
         "function confirmEnding(str, target) {\n  return str.substring(str.length-target.length) === target;\n};\n"
       ],
       "MDNlinks": [
-        "String.prototype.substr()"
+        "String.prototype.substr()",
+        "String.prototype.substring()"
       ],
       "challengeType": 5,
       "titleEs": "Confirma la terminación",
