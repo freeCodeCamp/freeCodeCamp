@@ -1,4 +1,5 @@
-{
+
+65{
   "name": "Basic JavaScript",
   "time": "10 hours",
   "order": 6,
@@ -2736,7 +2737,7 @@
         "assert(testStrict(10) === \"Not Equal\", 'message: <code>testStrict(10)</code> should return \"Not Equal\"');",
         "assert(testStrict(7) === \"Equal\", 'message: <code>testStrict(7)</code> should return \"Equal\"');",
         "assert(testStrict(\"7\") === \"Not Equal\", 'message: <code>testStrict(\"7\")</code> should return \"Not Equal\"');",
-        "assert(code.match(/(val\\s*===\\s*\\d+)|(\\d+\\s*===\\s*val)/g).length > 0, 'message: You should use the <code>===</code> operator');"
+        "assert(code.match(/(?!!==)!=/, 'message: You should use the <code>===</code> operator');"
       ],
       "type": "waypoint",
       "challengeType": 1,
@@ -2782,7 +2783,7 @@
         "assert(testNotEqual(12) === \"Not Equal\", 'message: <code>testNotEqual(12)</code> should return \"Not Equal\"');",
         "assert(testNotEqual(\"12\") === \"Not Equal\", 'message: <code>testNotEqual(\"12\")</code> should return \"Not Equal\"');",
         "assert(testNotEqual(\"bob\") === \"Not Equal\", 'message: <code>testNotEqual(\"bob\")</code> should return \"Not Equal\"');",
-        "assert(code.match(/(?!!==)!=/), 'message: You should use the <code>!=</code> operator');"
+        "assert(code.match(/(?!!==)!=[\\W\\s]*?/), 'message: You should use the <code>!=</code> operator');"
       ],
       "type": "waypoint",
       "challengeType": 1,
