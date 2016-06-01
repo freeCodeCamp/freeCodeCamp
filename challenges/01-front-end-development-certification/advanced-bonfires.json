@@ -269,7 +269,7 @@
         "Convert a date range consisting of two dates formatted as <code>YYYY-MM-DD</code> into a more readable format.",
         "The friendly display should use month names instead of numbers and ordinal dates instead of cardinal (<code>1st</code> instead of <code>1</code>).",
         "Do not display information that is redundant or that can be inferred by the user: if the date range ends in <em>less than a year</em> from when it begins, do not display the <em>ending year</em>.",
-        "Additionally, if the date range begins in the <em>current year</em> and ends within one year, the year should not be displayed at the <em>beginning</em> of the friendly range.",
+        "Additionally, if the date range begins in the <em>current year</em> (i.e. it is currently the year 2016) and ends within one year, the year should not be displayed at the <em>beginning</em> of the friendly range.",
         "If the range ends in the <em>same month</em> that it begins, do not display the <em>ending year or month</em>.",
         "Examples:",
         "<code>makeFriendlyDates([\"2016-07-01\", \"2016-07-04\"])</code> should return <code>[\"July 1st\",\"4th\"]</code>",
