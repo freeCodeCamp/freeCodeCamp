@@ -72,11 +72,21 @@
   top: 0;
   @media (max-width: 720px) {
     padding-top:30px;
-  }
+  }  
   p {
-  margin: 5px 0 20px;
+    margin: 5px 0 20px;
     @media (max-width: 720px) {
       margin-bottom:10px;
+    }
+
+    @media only screen and (min-width: 480px) and (max-width: 640px) {
+      margin-top: 0;
+      margin-bottom: 15px;
+    }     
+
+    @media only screen and (min-width: 320px) and (max-width: 479px) {
+      margin-top: 0;
+      margin-bottom: 15px;
     }
   }
   hr {
@@ -93,6 +103,13 @@
     left: 0px;
     width: 100%;
   }
+  /* phone landscape and portrait */
+  @media only screen and (min-width: 480px) and (max-width: 640px) {
+    padding-top:10px;
+  }   
+  @media only screen and (min-width: 320px) and (max-width: 479px) {
+    padding-top:10px;   
+  }   
  }
 
 .map-buttons {
@@ -136,6 +153,7 @@
   display: block;
   height: 100%;
   width: 100%;
+  left:0;
 }
 
 .map-accordion {
@@ -145,7 +163,7 @@
   #nested {
     margin:0 10px;
     @media (max-width: 400px) {
-    margin:0;
+      margin:0;
     }
   }
   a:focus {
@@ -194,10 +212,10 @@
   }
 
   .challengeBlockDescription {
-      margin:0;
-      margin-top:-10px;
-      padding:0 15px 23px 30px;
-    }
+    margin:0;
+    margin-top:-10px;
+    padding:0 15px 23px 30px;
+  }
 
   span.no-link-underline {
     position:absolute;
@@ -207,8 +225,9 @@
 
   div > div:last-child {
     margin-bottom:30px
-  }
+  }    
 }
+
 .challengeBlockTime {
   font-size: 18px;
   color: #BBBBBB;
@@ -254,6 +273,25 @@
         clear:both;
         font-size:20px;
       }
+    }
+  }
+}
+
+/* phone landscape */
+@media only screen and (min-width: 480px) and (max-width: 640px) {
+  .map-accordion {
+    top:147px;
+    h2 {
+      margin: 7px 0;
+    }    
+  }
+}   
+/* phone portrait */
+@media only screen and (min-width: 320px) and (max-width: 479px) {
+  .map-accordion {
+    top:170px;
+    h2 {
+      margin: 7px 0;
     }
   }
 }
