@@ -57,15 +57,6 @@ cd freecodecamp
 
 # Install NPM dependencies
 npm install
-
-# Install Gulp globally
-npm install -g gulp
-
-# Install Bower globally
-npm install -g bower
-
-# Install Bower dependencies
-bower install
 ```
 *Private Environment Variables (API Keys)*
 ```bash
@@ -92,7 +83,7 @@ mongod
 npm run only-once
 
 # start the application
-gulp
+npm run dev
 ```
 Now navigate to your browser and open http://localhost:3001
 If the app loads, congratulations - you're all set. Otherwise, let us know by opening a GitHub issue and with your error.
