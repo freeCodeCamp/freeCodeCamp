@@ -328,6 +328,8 @@ $(document).ready(function() {
   });
 
   $('.wiki-aside-action-collapse').on('click', collapseWiki);
+  $('#wikiFrame').attr('src', 'http://freecodecamp.github.io' + window.location.pathname);
+
 
   function showWiki() {
     if (!main.isWikiAsideLoad) {
