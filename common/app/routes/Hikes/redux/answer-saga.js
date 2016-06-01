@@ -92,7 +92,7 @@ function handleAnswer(action, getState) {
               title: 'Saved',
               type: 'info'
           }),
-          updatePoints(points),
+          updatePoints(points)
         );
       })
       .catch(createErrorObservable);

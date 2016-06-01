@@ -7,11 +7,12 @@ import PureComponent from 'react-pure-render/component';
 
 import Classic from './classic/Classic.jsx';
 import Step from './step/Step.jsx';
-import { fetchChallenge } from '../redux/actions';
+import { fetchChallenge, fetchChallenges } from '../redux/actions';
 import { challengeSelector } from '../redux/selectors';
 
 const bindableActions = {
-  fetchChallenge
+  fetchChallenge,
+  fetchChallenges
 };
 
 const mapStateToProps = createSelector(
@@ -32,13 +33,29 @@ const fetchOptions = {
 
 export class Challenges extends PureComponent {
   static displayName = 'Challenges';
-  static propTypes = { isStep: PropTypes.bool };
+  static propTypes = {
+    isStep: PropTypes.bool,
+    fetchChallenges: PropTypes.func
+  };
 
-  render() {
-    if (this.props.isStep) {
+  componentDidMount() {
+    this.props.fetchChallenges();
+  }
+
+  renderView(isStep) {
+    if (isStep) {
       return <Step />;
     }
     return <Classic />;
+  }
+
+  render() {
+    const { isStep } = this.props;
+    return (
+      <div>
+        { this.renderView(isStep) }
+      </div>
+    );
   }
 }
 

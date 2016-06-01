@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import { Row } from 'react-bootstrap';
+import { Button, Row } from 'react-bootstrap';
 import { ToastMessage, ToastContainer } from 'react-toastr';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
@@ -12,24 +12,40 @@ import {
   updateNavHeight
 } from './redux/actions';
 
+import { submitChallenge } from './routes/challenges/redux/actions';
+
 import Nav from './components/Nav';
+import { randomCompliment } from './utils/get-words';
 
 const toastMessageFactory = React.createFactory(ToastMessage.animation);
 
 const mapStateToProps = createSelector(
-  state => state.app,
-  ({
+  state => state.app.username,
+  state => state.app.points,
+  state => state.app.picture,
+  state => state.app.toast,
+  state => state.challengesApp.toast,
+  (
     username,
     points,
     picture,
-    toast
-  }) => ({
+    toast,
+    showChallengeComplete
+  ) => ({
     username,
     points,
     picture,
-    toast
+    toast,
+    showChallengeComplete
   })
 );
+
+const bindableActions = {
+  initWindowHeight,
+  updateNavHeight,
+  fetchUser,
+  submitChallenge
+};
 
 const fetchContainerOptions = {
   fetchAction: 'fetchUser',
@@ -49,11 +65,19 @@ export class FreeCodeCamp extends React.Component {
     picture: PropTypes.string,
     toast: PropTypes.object,
     updateNavHeight: PropTypes.func,
-    initWindowHeight: PropTypes.func
+    initWindowHeight: PropTypes.func,
+    showChallengeComplete: PropTypes.number,
+    submitChallenge: PropTypes.func
   };
 
-  componentWillReceiveProps({ toast: nextToast = {} }) {
-    const { toast = {} } = this.props;
+  componentWillReceiveProps({
+    toast: nextToast = {},
+    showChallengeComplete: nextCC = 0
+  }) {
+    const {
+      toast = {},
+      showChallengeComplete
+    } = this.props;
     if (toast.id !== nextToast.id) {
       this.refs.toaster[nextToast.type || 'success'](
         nextToast.message,
@@ -64,10 +88,37 @@ export class FreeCodeCamp extends React.Component {
         }
       );
     }
+
+    if (nextCC !== showChallengeComplete) {
+      this.refs.toaster.success(
+        this.renderChallengeComplete(),
+        randomCompliment(),
+        {
+          closeButton: true,
+          timeOut: 0,
+          extendedTimeOut: 0
+        }
+      );
+    }
   }
 
   componentDidMount() {
     this.props.initWindowHeight();
+  }
+
+  renderChallengeComplete() {
+    const { submitChallenge } = this.props;
+    return (
+      <Button
+        block={ true }
+        bsSize='small'
+        bsStyle='primary'
+        className='animated fadeIn'
+        onClick={ submitChallenge }
+      >
+        Submit and go to my next challenge
+      </Button>
+    );
   }
 
   render() {
@@ -91,7 +142,7 @@ export class FreeCodeCamp extends React.Component {
 
 const wrapComponent = compose(
   // connect Component to Redux Store
-  connect(mapStateToProps, { initWindowHeight, updateNavHeight, fetchUser }),
+  connect(mapStateToProps, bindableActions),
   // handles prefetching data
   contain(fetchContainerOptions)
 );

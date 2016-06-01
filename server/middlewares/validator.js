@@ -1,4 +1,7 @@
 import validator from 'express-validator';
+import { isPoly } from '../../common/utils/polyvinyl';
+
+const isObject = val => !!val && typeof val === 'object';
 
 export default function() {
   return validator({
@@ -11,6 +14,17 @@ export default function() {
       },
       isNumber(value) {
         return typeof value === 'number';
+      },
+      isFiles(value) {
+        if (!isObject(value)) {
+          return false;
+        }
+        const keys = Object.keys(value);
+        return !!keys.length &&
+          // every key is a file
+          keys.every(key => isObject(value[key])) &&
+          // every file has contents
+          keys.map(key => value[key]).every(file => isPoly(file));
       }
     }
   });
