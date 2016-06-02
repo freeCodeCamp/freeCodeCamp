@@ -64,6 +64,28 @@ function cachedMap(Block) {
     }, {})
     .map(map => normalize(map, mapSchema))
     .map(map => {
+      // make sure challenges are in the right order
+      map.entities.block = Object.keys(map.entities.block)
+        // turn map into array
+        .map(key => map.entities.block[key])
+        // perform re-order
+        .map(block => {
+          block.challenges = block.challenges.reduce((accu, dashedName) => {
+            const index = map.entities.challenge[dashedName].suborder;
+            accu[index - 1] = dashedName;
+            return accu;
+          }, []);
+          return block;
+        })
+        // turn back into map
+        .reduce((blockMap, block) => {
+          blockMap[block.dashedName] = block;
+          return blockMap;
+        }, {});
+      return map;
+    })
+    .map(map => {
+      // re-order superBlocks result
       const result = Object.keys(map.result).reduce((result, supName) => {
         const index = map.entities.superBlock[supName].order;
         result[index] = supName;
