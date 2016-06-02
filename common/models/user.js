@@ -11,6 +11,7 @@ import { blacklistedUsernames } from '../../server/utils/constants';
 
 const debug = debugFactory('fcc:user:remote');
 const BROWNIEPOINTS_TIMEOUT = [1, 'hour'];
+const isDev = process.env.NODE_ENV !== 'production';
 
 function getAboutProfile({
   username,
@@ -356,6 +357,9 @@ module.exports = function(User) {
             to: email,
             from: 'Team@freecodecamp.com',
             subject: 'Welcome to Free Code Camp!',
+            protocol: isDev ? null : 'https',
+            host: isDev ? 'localhost' : 'freecodecamp.com',
+            port: isDev ? null : 443,
             template: path.join(
               __dirname,
               '..',
