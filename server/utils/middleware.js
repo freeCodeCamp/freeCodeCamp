@@ -1,5 +1,3 @@
-import dedent from 'dedent';
-
 export function ifNoUserRedirectTo(url, message, type = 'errors') {
   return function(req, res, next) {
     const { path } = req;
@@ -38,15 +36,10 @@ export function flashIfNotVerified(req, res, next) {
     }
     const email = req.user.email;
     const emailVerified = req.user.emailVerified;
-    if (!email) {
-      req.flash('info', { msg:
-         dedent `Please update your email address when you get a moment in
-                  your <a href="\settings"> Settings Page.</a>`
-      });
-    } else if (!emailVerified) {
-      req.flash('info', { msg:
-         dedent `We have your email address with us, but its not yet verified.
-                  Please follow the link we sent you, when you get a moment.`
+    if (!email || !emailVerified) {
+      req.flash('info', {
+        msg: 'Please verify your email address ' +
+        '<a href="/update-email">here.</a>'
       });
     }
     return next();

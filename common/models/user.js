@@ -366,27 +366,19 @@ module.exports = function(User) {
               'user-email-verify.ejs'
             )
           };
-          return this.verify(mailOptions).then(
-            (data) => {
-              if (data) {
-                return Promise.resolve(
-                  dedent`
-                    Your email has been updated successfully, Please
-                     follow the link we sent you, to confirm.
-                `);
-              }
-              return Promise.reject(
-                'Oops, something went wrong, please try again later'
-              );
-            },
-            (error) => {
-              debug(error);
-              return Promise.reject(
-                'Oops, something went wrong, please try again later'
-              );
-            }
+          return this.verify(mailOptions);
+        })
+        .map(() => dedent`
+          Please check your email.
+          We sent you a link that you can click to verify your email address.
+        `)
+        .catch(error => {
+          debug(error);
+          return Observable.throw(
+            'Oops, something went wrong, please try again later'
           );
-        }).toPromise();
+        })
+        .toPromise();
       });
   };
 
