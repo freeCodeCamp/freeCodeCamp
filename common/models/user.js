@@ -325,19 +325,42 @@ module.exports = function(User) {
   );
 
   User.prototype.updateEmail = function updateEmail(email) {
+    const fiveMinutesAgo = moment().subtract(5, 'minutes');
+    const lastEmailSentAt = moment(new Date(this.emailVerifyTTL || null));
+    const ownEmail = email === this.email;
+    const isWaitPeriodOver = this.emailVerifyTTL ?
+      lastEmailSentAt.isBefore(fiveMinutesAgo) :
+      true;
+
     if (!isEmail(email)) {
       return Promise.reject(
-        new Error('The submitted email not valid')
+        new Error('The submitted email not valid.')
       );
     }
-    if (this.email && this.email === email) {
+    // email is already associated and verified with this account
+    if (ownEmail && this.emailVerified) {
       return Promise.reject(new Error(
         `${email} is already associated with this account.`
       ));
     }
+
+    if (ownEmail && !isWaitPeriodOver) {
+      const minutesLeft = 5 -
+        (moment().minutes() - lastEmailSentAt.minutes());
+
+      const timeToWait = minutesLeft ?
+        `${minutesLeft} minute${minutesLeft > 1 ? 's' : ''}` :
+        'a few seconds';
+
+      return Promise.reject(new Error(
+        `Please wait ${timeToWait} to resend email verification.`
+      ));
+    }
+
     return User.doesExist(null, email)
       .then(exists => {
-        if (exists) {
+        // not associated with this account, but is associated with another
+        if (!ownEmail && exists) {
           return Promise.reject(
             new Error(`${email} is already associated with another account.`)
           );
@@ -345,11 +368,14 @@ module.exports = function(User) {
 
         const emailVerified = false;
         return this.update$({
-          email, emailVerified
+          email,
+          emailVerified,
+          emailVerifyTTL: new Date()
         })
         .do(() => {
           this.email = email;
           this.emailVerified = emailVerified;
+          this.emailVerifyTTL = new Date();
         })
         .flatMap(() => {
           var mailOptions = {
@@ -379,7 +405,7 @@ module.exports = function(User) {
         .catch(error => {
           debug(error);
           return Observable.throw(
-            'Oops, something went wrong, please try again later'
+            'Oops, something went wrong, please try again later.'
           );
         })
         .toPromise();

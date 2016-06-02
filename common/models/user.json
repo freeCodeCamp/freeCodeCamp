@@ -16,6 +16,9 @@
         }
       }
     },
+    "emailVerifyTTL": {
+      "type": "date"
+    },
     "password": {
       "type": "string"
     },
