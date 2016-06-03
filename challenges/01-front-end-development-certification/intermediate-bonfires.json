@@ -33,7 +33,7 @@
       "MDNlinks": [
         "Math.max()",
         "Math.min()",
-        "Array.reduce()"
+        "Array.prototype.reduce()"
       ],
       "isRequired": true,
       "challengeType": 5,
@@ -82,10 +82,10 @@
       "type": "bonfire",
       "MDNlinks": [
         "Comparison Operators",
-        "Array.slice()",
-        "Array.filter()",
-        "Array.indexOf()",
-        "Array.concat()"
+        "Array.prototype.slice()",
+        "Array.prototype.filter()",
+        "Array.prototype.indexOf()",
+        "Array.prototype.concat()"
       ],
       "isRequired": true,
       "challengeType": 5,
@@ -148,9 +148,9 @@
       "type": "bonfire",
       "MDNlinks": [
         "Roman Numerals",
-        "Array.splice()",
-        "Array.indexOf()",
-        "Array.join()"
+        "Array.prototype.splice()",
+        "Array.prototype.indexOf()",
+        "Array.prototype.join()"
       ],
       "isRequired": true,
       "challengeType": 5,
@@ -200,7 +200,7 @@
       "type": "bonfire",
       "MDNlinks": [
         "Global Object",
-        "Object.hasOwnProperty()",
+        "Object.prototype.hasOwnProperty()",
         "Object.keys()"
       ],
       "isRequired": true,
@@ -248,9 +248,9 @@
       ],
       "type": "bonfire",
       "MDNlinks": [
-        "Array.splice()",
-        "String.replace()",
-        "Array.join()"
+        "Array.prototype.splice()",
+        "String.prototype.replace()",
+        "Array.prototype.join()"
       ],
       "isRequired": true,
       "challengeType": 5,
@@ -301,11 +301,11 @@
       ],
       "type": "bonfire",
       "MDNlinks": [
-        "Array.indexOf()",
-        "Array.push()",
-        "Array.join()",
-        "String.substr()",
-        "String.split()"
+        "Array.prototype.indexOf()",
+        "Array.prototype.push()",
+        "Array.prototype.join()",
+        "String.prototype.substr()",
+        "String.prototype.split()"
       ],
       "isRequired": true,
       "challengeType": 5,
@@ -352,8 +352,8 @@
       ],
       "type": "bonfire",
       "MDNlinks": [
-        "Array.push()",
-        "String.split()"
+        "Array.prototype.push()",
+        "String.prototype.split()"
       ],
       "isRequired": true,
       "challengeType": 5,
@@ -499,7 +499,7 @@
       "type": "bonfire",
       "MDNlinks": [
         "Arguments object",
-        "Array.reduce()"
+        "Array.prototype.reduce()"
       ],
       "isRequired": true,
       "challengeType": 5,
@@ -551,7 +551,7 @@
       "MDNlinks": [
         "RegExp",
         "HTML Entities",
-        "String.replace()"
+        "String.prototype.replace()"
       ],
       "isRequired": true,
       "challengeType": 5,
@@ -595,7 +595,7 @@
       "type": "bonfire",
       "MDNlinks": [
         "RegExp",
-        "String.replace()"
+        "String.prototype.replace()"
       ],
       "isRequired": true,
       "challengeType": 5,
@@ -685,7 +685,7 @@
       "type": "bonfire",
       "MDNlinks": [
         "For Loops",
-        "Array.push()"
+        "Array.prototype.push()"
       ],
       "isRequired": true,
       "challengeType": 5,
@@ -775,7 +775,7 @@
       ],
       "type": "bonfire",
       "MDNlinks": [
-        "Array.filter()"
+        "Array.prototype.filter()"
       ],
       "isRequired": true,
       "challengeType": 5,
@@ -821,8 +821,8 @@
       "type": "bonfire",
       "MDNlinks": [
         "Arguments object",
-        "Array.shift()",
-        "Array.slice()"
+        "Array.prototype.shift()",
+        "Array.prototype.slice()"
       ],
       "isRequired": true,
       "challengeType": 5,
