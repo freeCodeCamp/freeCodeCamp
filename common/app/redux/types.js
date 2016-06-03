@@ -19,5 +19,8 @@ export default createTypes([
   // data handling
   'updateChallengesData',
   'updateJobsData',
-  'updateHikesData'
+  'updateHikesData',
+
+  // drawers
+  'toggleMapDrawer'
 ], 'app');

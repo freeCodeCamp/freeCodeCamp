@@ -1,7 +1,4 @@
 [{
-  "content": "Map",
-  "link": "/map"
-}, {
   "content": "Chat",
   "link": "//gitter.im/FreeCodeCamp/FreeCodeCamp",
   "target": "_blank"

@@ -1,6 +1,17 @@
 import { handleActions } from 'redux-actions';
 import types from './types';
 
+const initialState = {
+  title: 'Learn To Code | Free Code Camp',
+  username: null,
+  picture: null,
+  points: 0,
+  isSignedIn: false,
+  csrfToken: '',
+  windowHeight: 0,
+  navHeight: 0
+};
+
 export default handleActions(
   {
     [types.updateTitle]: (state, { payload = 'Learn To Code' }) => ({
@@ -30,16 +41,12 @@ export default handleActions(
     [types.updateNavHeight]: (state, { payload: navHeight }) => ({
       ...state,
       navHeight
+    }),
+    [types.toggleMapDrawer]: state => ({
+      ...state,
+      isMapAlreadyLoaded: true,
+      isMapDrawerOpen: !state.isMapDrawerOpen
     })
   },
-  {
-    title: 'Learn To Code | Free Code Camp',
-    username: null,
-    picture: null,
-    points: 0,
-    isSignedIn: false,
-    csrfToken: '',
-    windowHeight: 0,
-    navHeight: 0
-  }
+  initialState
 );

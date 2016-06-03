@@ -6,10 +6,12 @@ import { connect } from 'react-redux';
 import { contain } from 'redux-epic';
 import { createSelector } from 'reselect';
 
+import MapDrawer from './components/Map-Drawer.jsx';
 import {
   fetchUser,
   initWindowHeight,
-  updateNavHeight
+  updateNavHeight,
+  toggleMapDrawer
 } from './redux/actions';
 
 import { submitChallenge } from './routes/challenges/redux/actions';
@@ -24,18 +26,24 @@ const mapStateToProps = createSelector(
   state => state.app.points,
   state => state.app.picture,
   state => state.app.toast,
+  state => state.app.isMapDrawerOpen,
+  state => state.app.isMapAlreadyLoaded,
   state => state.challengesApp.toast,
   (
     username,
     points,
     picture,
     toast,
+    isMapDrawerOpen,
+    isMapAlreadyLoaded,
     showChallengeComplete
   ) => ({
     username,
     points,
     picture,
     toast,
+    isMapDrawerOpen,
+    isMapAlreadyLoaded,
     showChallengeComplete
   })
 );
@@ -44,7 +52,8 @@ const bindableActions = {
   initWindowHeight,
   updateNavHeight,
   fetchUser,
-  submitChallenge
+  submitChallenge,
+  toggleMapDrawer
 };
 
 const fetchContainerOptions = {
@@ -67,7 +76,10 @@ export class FreeCodeCamp extends React.Component {
     updateNavHeight: PropTypes.func,
     initWindowHeight: PropTypes.func,
     showChallengeComplete: PropTypes.number,
-    submitChallenge: PropTypes.func
+    submitChallenge: PropTypes.func,
+    isMapDrawerOpen: PropTypes.bool,
+    isMapAlreadyLoaded: PropTypes.bool,
+    toggleMapDrawer: PropTypes.func
   };
 
   componentWillReceiveProps({
@@ -122,8 +134,22 @@ export class FreeCodeCamp extends React.Component {
   }
 
   render() {
-    const { username, points, picture, updateNavHeight } = this.props;
-    const navProps = { username, points, picture, updateNavHeight };
+    const {
+      username,
+      points,
+      picture,
+      updateNavHeight,
+      isMapDrawerOpen,
+      isMapAlreadyLoaded,
+      toggleMapDrawer
+    } = this.props;
+    const navProps = {
+      username,
+      points,
+      picture,
+      updateNavHeight,
+      toggleMapDrawer
+    };
 
     return (
       <div>
@@ -131,6 +157,11 @@ export class FreeCodeCamp extends React.Component {
         <Row>
           { this.props.children }
         </Row>
+        <MapDrawer
+          isAlreadyLoaded={ isMapAlreadyLoaded }
+          isOpen={ isMapDrawerOpen }
+          toggleMapDrawer={ toggleMapDrawer }
+        />
         <ToastContainer
           className='toast-bottom-right'
           ref='toaster'
