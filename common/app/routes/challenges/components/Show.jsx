@@ -10,6 +10,11 @@ import Step from './step/Step.jsx';
 import { fetchChallenge, fetchChallenges } from '../redux/actions';
 import { challengeSelector } from '../redux/selectors';
 
+const views = {
+  step: Step,
+  classic: Classic
+};
+
 const bindableActions = {
   fetchChallenge,
   fetchChallenges
@@ -18,7 +23,10 @@ const bindableActions = {
 const mapStateToProps = createSelector(
   challengeSelector,
   state => state.challengesApp.challenge,
-  ({ isStep }, challenge) => ({ challenge, isStep })
+    ({ viewType }, challenge) => ({
+    challenge,
+    viewType
+  })
 );
 
 const fetchOptions = {
@@ -42,18 +50,16 @@ export class Challenges extends PureComponent {
     this.props.fetchChallenges();
   }
 
-  renderView(isStep) {
-    if (isStep) {
-      return <Step />;
-    }
-    return <Classic />;
+  renderView(viewType) {
+    const View = views[viewType] || Classic;
+    return <View />;
   }
 
   render() {
-    const { isStep } = this.props;
+    const { viewType } = this.props;
     return (
       <div>
-        { this.renderView(isStep) }
+        { this.renderView(viewType) }
       </div>
     );
   }
