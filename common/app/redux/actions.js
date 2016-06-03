@@ -46,3 +46,10 @@ export const createErrorObservable = error => Observable.just({
   type: types.handleError,
   error
 });
+
+
+// drawers
+export const toggleMapDrawer = createAction(
+  types.toggleMapDrawer,
+  e => e.preventDefault()
+);

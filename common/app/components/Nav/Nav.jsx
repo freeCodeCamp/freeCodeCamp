@@ -31,13 +31,16 @@ const toggleButtonChild = (
 
 export default class extends React.Component {
   static displayName = 'Nav';
-
+  static contextTypes = {
+    router: PropTypes.object
+  };
   static propTypes = {
     points: PropTypes.number,
     picture: PropTypes.string,
     signedIn: PropTypes.bool,
     username: PropTypes.string,
-    updateNavHeight: PropTypes.func
+    updateNavHeight: PropTypes.func,
+    toggleMapDrawer: PropTypes.func
   };
 
   componentDidMount() {
@@ -45,12 +48,39 @@ export default class extends React.Component {
     this.props.updateNavHeight(navBar.clientHeight);
   }
 
+  renderMapLink(isOnMap, toggleMapDrawer) {
+    if (isOnMap) {
+      return (
+        <li role='presentation'>
+          <a
+            href='#'
+            onClick={ e => e.preventDefault()}
+          >
+            Map
+          </a>
+        </li>
+      );
+    }
+    return (
+      <LinkContainer
+        eventKey={ 1 }
+        to='/map'>
+        <NavItem
+          onClick={ toggleMapDrawer }
+          target='/map'
+        >
+          Map
+        </NavItem>
+      </LinkContainer>
+    );
+  }
+
   renderLinks() {
     return navLinks.map(({ content, link, react, target }, index) => {
       if (react) {
         return (
           <LinkContainer
-            eventKey={ index + 1 }
+            eventKey={ index + 2 }
             key={ content }
             to={ link }>
             <NavItem
@@ -110,7 +140,14 @@ export default class extends React.Component {
   }
 
   render() {
-    const { username, points, picture } = this.props;
+    const {
+      username,
+      points,
+      picture,
+      toggleMapDrawer
+    } = this.props;
+    const { router } = this.context;
+    const isOnMap = router.isActive('/map');
 
     return (
       <Navbar
@@ -123,6 +160,7 @@ export default class extends React.Component {
             className='hamburger-dropdown'
             navbar={ true }
             pullRight={ true }>
+            { this.renderMapLink(isOnMap, toggleMapDrawer) }
             { this.renderLinks() }
             { this.renderPoints(username, points) }
             { this.renderSignin(username, picture) }
