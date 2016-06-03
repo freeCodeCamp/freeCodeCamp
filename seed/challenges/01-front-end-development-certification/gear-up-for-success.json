@@ -4,45 +4,70 @@
   "time": "20 minutes",
   "challenges": [
     {
-      "id": "570add8ccb82ac38a17513c3",
-      "title": "Join our LinkedIn Alumni Network",
+      "id": "560adf65cb82ac38a17513c2",
+      "title": "Read Coding News on our Medium Publication",
       "description": [
         [
-          "//i.imgur.com/vJyiXzU.gif",
-          "A gif showing how you can click the link below and fill in the necessary fields to add your Free Code Camp studies to your LinkedIn profile.",
-          "LinkedIn recognizes Free Code Camp as a university. You can gain access to our large alumni network by adding Free Code Camp to your LinkedIn profile's education section. Set your graduation date as next year. For \"Degree\", type \"Full Stack Web Development Certification\". For \"Field of study\", type \"Computer Software Engineering\". Then click \"Save Changes\".",
-          "https://www.linkedin.com/profile/edit-education?school=Free+Code+Camp"
+          "//i.imgur.com/FxSOL4a.gif",
+          "A gif showing how you can create a Medium account.",
+          "Our community has a Medium publication where we write lots of articles about software development. If you don't already have a Medium account, you can follow the link and either sign in using social network, or by entering an email (they'll send you an email that you can click-through to create your account.) Once you select a topic of interest, you can continue through the steps.",
+          "https://www.medium.com"
+        ],
+        [
+          "//i.imgur.com/zhhywSX.gif",
+          "A gif showing how you can click the \"follow\" button to follow Free Code Camp's publication.",
+          "Once you're logged in, you can go to Free Code Camp's Medium publication and click \"follow\". Our campers publish several articles each week.",
+          "https://medium.freecodecamp.com"
         ]
       ],
+      "releasedOn": "February 10, 2016",
       "challengeSeed": [],
       "tests": [],
       "type": "Waypoint",
       "challengeType": 7,
-      "titleEs": "Únete a nuestra red de alumnos en LinkedIn",
+      "titleEs": "Lee noticias de codificación en nuestros canal de publicaciones Medium",
       "descriptionEs": [
         [
-          "//i.imgur.com/vJyiXzU.gif",
-          "Un gif mostrando como puedes pulsar el enlace de abajo y llenar todos los campos necesarios para agregar los estudios de Free Code Camp a tu perfil de LinkedIn",
-          "LinkedIn reconoce a Free Code Camp como una universidad. Puedes obtener acceso a nuestra larga red de alumnos agregando Free Code Camp a la sección de educación de tu LinkedIn. Define tu fecha de graduación para el siguiente año. En el campo \"Grado\", escribe \"Certificación de Desarrollo Web Full Stack\". En \"Campo de estudio\", escribe \"Ingeniería de Software\". Después pulsa \"Guardar Cambios\".",
-          "https://www.linkedin.com/profile/edit-education?school=Free+Code+Camp"
+          "//i.imgur.com/FxSOL4a.gif",
+          "Un gif mostrando cómo crear una cuenta en Medium.",
+          "Nuestra comunidad tiene un canal de publicaciones Medium, donde escribimos un montón de artículos sobre desarrollo de software. Si aún no dispones de una cuenta Medium, puedes seguir el enlace y registrarte usando una red social o ingresando un correo electrónico (enviarán un correo electrónico que debes abrirlo para crear tu cuenta.) Selecciona un tema de interés, puedes continuar a través de los pasos.",
+          "https://www.medium.com"
+        ],
+        [
+          "//i.imgur.com/zhhywSX.gif",
+          "Un gif mostrando cómo puedes pulsar el botón \"follow\" para seguir las publicaciones de Free Code Camp.",
+          "Una vez que inicias sesión, puedes ir al canal de publicaciones de Free Code Camp Medium y pulsar \"follow\". Nuestros campistas publican varios artículos cada semana.",
+          "https://medium.freecodecamp.com"
         ]
       ],
-      "titleFr": "Rejoignez notre réseau de lauréats sur Linkedin",
+      "titleFr": "Lisez les nouvelles de la programmation sur notre Publication Medium",
       "descriptionFr": [
         [
-          "//i.imgur.com/vJyiXzU.gif",
-          "Une gif qui montre comment tu peux cliquer sur le lien ci-dessous et remplir les champs nécessaires pour ajouter le certificat de Free Code Camp à votre profil LinkedIn.",
-          "LinkedIn reconnait Free Code Camp comme une université. Tu peux avoir accès à notre large réseau de lauréats en ajoutant Free Code Camp à la section éducation de ton profil LinkedIn. L’année d’obtention du diplôme est la prochaine année. Pour le \"Degré\", c’est  \"Full Stack Web Development Certification\". Pour le \"Domaine d’études\", c’est \"Computer Software Engineering\". Puis sauvegardez les changements.",
-          "https://www.linkedin.com/profile/edit-education?school=Free+Code+Camp"
+          "//i.imgur.com/FxSOL4a.gif",
+          "Une gif montrant comment tu peux créer un compte sur Medium.",
+          "Notre communauté a une publication sur Medium où on écrit plusieurs articles sur la programmation. Si tu n’as pas encore un compte Medium, utilise le lien ci-dessous  pour s’inscrire en utilisant un compte sur les médias sociaux ou en utilisant ton email (un email de confirmation sera envoyé à votre email pour terminer l’inscription). Une fois un sujet qui t’intéresse est choisi, tu peux continuer les étapes.",
+          "https://www.medium.com"
+        ],
+        [
+          "//i.imgur.com/zhhywSX.gif",
+          "Une gif montrant comment tu peux cliquer sur le boutton \"follow\" pour suivre la publication de Free Code Camp.",
+          "Une fois identifié, tu peux visiter la publication de Free Code Camp sur Medium et cliquer sur \"follow\". Nos campers publient plusieurs articles chaque semaine.",
+          "https://medium.freecodecamp.com"
         ]
       ],
-      "titleDe": "Tritt unserem LinkedIn Alumni Netzwerk bei",
+      "titleDe": "Lese Programmier-Nachrichten auf unserer Medium Seite",
       "descriptionDe": [
         [
-          "//i.imgur.com/vJyiXzU.gif",
-          "Ein GIF, das dir zeigt, wie du den unten stehenden Link anklicken kannst und welche Felder du ausfüllen musst, damit du Free Code Camp zu deinem LinkedIn Profil hinzufügst.",
-          "LinkedIn erkennt Free Code Camp als Universität an. Du bekommst auf unser großes Alumni Netzwerk zugriff, indem du Free Code Camp zum Ausbildungsbereich deines LinkedIn Profils hinzufügst. Setze deinen Abschlusszeitpunkt auf das nächste Jahr. In das Feld \"Abschluss\" schreibe \"Full Stack Web Development Certification\". In das Feld \"Studienfach\" schreibe \"Computer Software Engineering\". Dann klicke auf den \"Speichern\" Button.",
-          "https://www.linkedin.com/profile/edit-education?school=Free+Code+Camp"
+          "//i.imgur.com/FxSOL4a.gif",
+          "Ein GIF, das dir zeigt, wie du einen Medium Account anlegen kannst.",
+          "Unsere Community hat eine Medium Seite, auf der wir viele Artikel über Software Entwicklung veröffentlichen. Wenn du noch keinen Medium Account hast, kannst du dem Link folgen und dich entweder mit einem Account aus einem Social Network oder einer E-Mail Adresse (sie senden dir eine E-Mail, die du durchklicken kannst, um dir einen Account anzulegen.). Wenn du ein Thema ausgewählt hast, das dich interessiert, kannst du den weiteren Schritten folgen.",
+          "https://www.medium.com"
+        ],
+        [
+          "//i.imgur.com/zhhywSX.gif",
+          "Ein GIF, das dir zeigt, wie du den \"follow\" Button klicken kannst, um der Free Code Camp Seite zu folgen.",
+          "Bist du erstmal eingeloggt, kannst du auf die Medium Seite von Free Code Camp gehen und den \"follow\" Button klicken. Unsere Camper veröffentlichen jede Woche mehrere Artikel.",
+          "https://medium.freecodecamp.com"
         ]
       ]
     },
@@ -139,74 +164,6 @@
       ]
     },
     {
-      "id": "560adf65cb82ac38a17513c2",
-      "title": "Read Coding News on our Medium Publication",
-      "description": [
-        [
-          "//i.imgur.com/FxSOL4a.gif",
-          "A gif showing how you can create a Medium account.",
-          "Our community has a Medium publication where we write lots of articles about software development. If you don't already have a Medium account, you can follow the link and either sign in using social network, or by entering an email (they'll send you an email that you can click-through to create your account.) Once you select a topic of interest, you can continue through the steps.",
-          "https://www.medium.com"
-        ],
-        [
-          "//i.imgur.com/zhhywSX.gif",
-          "A gif showing how you can click the \"follow\" button to follow Free Code Camp's publication.",
-          "Once you're logged in, you can go to Free Code Camp's Medium publication and click \"follow\". Our campers publish several articles each week.",
-          "https://medium.freecodecamp.com"
-        ]
-      ],
-      "releasedOn": "February 10, 2016",
-      "challengeSeed": [],
-      "tests": [],
-      "type": "Waypoint",
-      "challengeType": 7,
-      "titleEs": "Lee noticias de codificación en nuestros canal de publicaciones Medium",
-      "descriptionEs": [
-        [
-          "//i.imgur.com/FxSOL4a.gif",
-          "Un gif mostrando cómo crear una cuenta en Medium.",
-          "Nuestra comunidad tiene un canal de publicaciones Medium, donde escribimos un montón de artículos sobre desarrollo de software. Si aún no dispones de una cuenta Medium, puedes seguir el enlace y registrarte usando una red social o ingresando un correo electrónico (enviarán un correo electrónico que debes abrirlo para crear tu cuenta.) Selecciona un tema de interés, puedes continuar a través de los pasos.",
-          "https://www.medium.com"
-        ],
-        [
-          "//i.imgur.com/zhhywSX.gif",
-          "Un gif mostrando cómo puedes pulsar el botón \"follow\" para seguir las publicaciones de Free Code Camp.",
-          "Una vez que inicias sesión, puedes ir al canal de publicaciones de Free Code Camp Medium y pulsar \"follow\". Nuestros campistas publican varios artículos cada semana.",
-          "https://medium.freecodecamp.com"
-        ]
-      ],
-      "titleFr": "Lisez les nouvelles de la programmation sur notre Publication Medium",
-      "descriptionFr": [
-        [
-          "//i.imgur.com/FxSOL4a.gif",
-          "Une gif montrant comment tu peux créer un compte sur Medium.",
-          "Notre communauté a une publication sur Medium où on écrit plusieurs articles sur la programmation. Si tu n’as pas encore un compte Medium, utilise le lien ci-dessous  pour s’inscrire en utilisant un compte sur les médias sociaux ou en utilisant ton email (un email de confirmation sera envoyé à votre email pour terminer l’inscription). Une fois un sujet qui t’intéresse est choisi, tu peux continuer les étapes.",
-          "https://www.medium.com"
-        ],
-        [
-          "//i.imgur.com/zhhywSX.gif",
-          "Une gif montrant comment tu peux cliquer sur le boutton \"follow\" pour suivre la publication de Free Code Camp.",
-          "Une fois identifié, tu peux visiter la publication de Free Code Camp sur Medium et cliquer sur \"follow\". Nos campers publient plusieurs articles chaque semaine.",
-          "https://medium.freecodecamp.com"
-        ]
-      ],
-      "titleDe": "Lese Programmier-Nachrichten auf unserer Medium Seite",
-      "descriptionDe": [
-        [
-          "//i.imgur.com/FxSOL4a.gif",
-          "Ein GIF, das dir zeigt, wie du einen Medium Account anlegen kannst.",
-          "Unsere Community hat eine Medium Seite, auf der wir viele Artikel über Software Entwicklung veröffentlichen. Wenn du noch keinen Medium Account hast, kannst du dem Link folgen und dich entweder mit einem Account aus einem Social Network oder einer E-Mail Adresse (sie senden dir eine E-Mail, die du durchklicken kannst, um dir einen Account anzulegen.). Wenn du ein Thema ausgewählt hast, das dich interessiert, kannst du den weiteren Schritten folgen.",
-          "https://www.medium.com"
-        ],
-        [
-          "//i.imgur.com/zhhywSX.gif",
-          "Ein GIF, das dir zeigt, wie du den \"follow\" Button klicken kannst, um der Free Code Camp Seite zu folgen.",
-          "Bist du erstmal eingeloggt, kannst du auf die Medium Seite von Free Code Camp gehen und den \"follow\" Button klicken. Unsere Camper veröffentlichen jede Woche mehrere Artikel.",
-          "https://medium.freecodecamp.com"
-        ]
-      ]
-    },
-    {
       "id": "560ade65cb82ac38a17513c2",
       "title": "Watch Coding Videos on our YouTube Channel",
       "description": [
@@ -251,13 +208,56 @@
       ]
     },
     {
+      "id": "570add8ccb82ac38a17513c3",
+      "title": "Join our LinkedIn Alumni Network",
+      "description": [
+        [
+          "//i.imgur.com/vJyiXzU.gif",
+          "A gif showing how you can click the link below and fill in the necessary fields to add your Free Code Camp studies to your LinkedIn profile.",
+          "LinkedIn recognizes Free Code Camp as a university. You can gain access to our large alumni network by adding Free Code Camp to your LinkedIn profile's education section. Set your graduation date as next year. For \"Degree\", type \"Full Stack Web Development Certification\". For \"Field of study\", type \"Computer Software Engineering\". Then click \"Save Changes\".",
+          "https://www.linkedin.com/profile/edit-education?school=Free+Code+Camp"
+        ]
+      ],
+      "challengeSeed": [],
+      "tests": [],
+      "type": "Waypoint",
+      "challengeType": 7,
+      "titleEs": "Únete a nuestra red de alumnos en LinkedIn",
+      "descriptionEs": [
+        [
+          "//i.imgur.com/vJyiXzU.gif",
+          "Un gif mostrando como puedes pulsar el enlace de abajo y llenar todos los campos necesarios para agregar los estudios de Free Code Camp a tu perfil de LinkedIn",
+          "LinkedIn reconoce a Free Code Camp como una universidad. Puedes obtener acceso a nuestra larga red de alumnos agregando Free Code Camp a la sección de educación de tu LinkedIn. Define tu fecha de graduación para el siguiente año. En el campo \"Grado\", escribe \"Certificación de Desarrollo Web Full Stack\". En \"Campo de estudio\", escribe \"Ingeniería de Software\". Después pulsa \"Guardar Cambios\".",
+          "https://www.linkedin.com/profile/edit-education?school=Free+Code+Camp"
+        ]
+      ],
+      "titleFr": "Rejoignez notre réseau de lauréats sur Linkedin",
+      "descriptionFr": [
+        [
+          "//i.imgur.com/vJyiXzU.gif",
+          "Une gif qui montre comment tu peux cliquer sur le lien ci-dessous et remplir les champs nécessaires pour ajouter le certificat de Free Code Camp à votre profil LinkedIn.",
+          "LinkedIn reconnait Free Code Camp comme une université. Tu peux avoir accès à notre large réseau de lauréats en ajoutant Free Code Camp à la section éducation de ton profil LinkedIn. L’année d’obtention du diplôme est la prochaine année. Pour le \"Degré\", c’est  \"Full Stack Web Development Certification\". Pour le \"Domaine d’études\", c’est \"Computer Software Engineering\". Puis sauvegardez les changements.",
+          "https://www.linkedin.com/profile/edit-education?school=Free+Code+Camp"
+        ]
+      ],
+      "titleDe": "Tritt unserem LinkedIn Alumni Netzwerk bei",
+      "descriptionDe": [
+        [
+          "//i.imgur.com/vJyiXzU.gif",
+          "Ein GIF, das dir zeigt, wie du den unten stehenden Link anklicken kannst und welche Felder du ausfüllen musst, damit du Free Code Camp zu deinem LinkedIn Profil hinzufügst.",
+          "LinkedIn erkennt Free Code Camp als Universität an. Du bekommst auf unser großes Alumni Netzwerk zugriff, indem du Free Code Camp zum Ausbildungsbereich deines LinkedIn Profils hinzufügst. Setze deinen Abschlusszeitpunkt auf das nächste Jahr. In das Feld \"Abschluss\" schreibe \"Full Stack Web Development Certification\". In das Feld \"Studienfach\" schreibe \"Computer Software Engineering\". Dann klicke auf den \"Speichern\" Button.",
+          "https://www.linkedin.com/profile/edit-education?school=Free+Code+Camp"
+        ]
+      ]
+    },
+    {
       "id": "560add8ccb81ac38a17513c4",
       "title": "Commit to a Goal and a Nonprofit",
       "description": [
         [
           "//i.imgur.com/Og1ifsn.gif",
           "A gif showing how you can commit to a goal for your Free Code Camp studies and pledge a monthly donation to a nonprofit to give you external motivation to reach that goal.",
-          "You can set a goal and pledge to donate to a nonprofit each month until you achieve that goal. This will give you external motivation in your quest to learn to code, as well as an opportunity to help nonprofits right away. Choose your goal, then choose a monthly donation. When you click \"commit\", the nonprofit's donation page will open in a new tab. This is completely optional, and you can change your commitment or stop it at any time.",
+          "You can set a goal and pledge to donate to a nonprofit each month until you achieve that goal. This will give you external motivation in your quest to learn to code, as well as an opportunity to help nonprofits right away. Choose your goal, then choose a monthly donation. When you click \"commit\", the nonprofit's donation page will open in a new tab. This pledge is completely optional. It is entirely between you and the nonprofit, and no money goes to Free Code Camp. You can change your commitment or stop it at any time.",
           "/commit"
         ]
       ],
