@@ -1,8 +1,10 @@
 import { Observable } from 'rx';
 import debugFactory from 'debug';
 import { isEmail } from 'validator';
+import path from 'path';
 
 const debug = debugFactory('fcc:user:remote');
+const isDev = process.env.NODE_ENV !== 'production';
 
 function destroyAllRelated(id, Model) {
   return Observable.fromNodeCallback(
@@ -15,7 +17,6 @@ module.exports = function(app) {
   var User = app.models.User;
   var UserIdentity = app.models.UserIdentity;
   var UserCredential = app.models.UserCredential;
-  var Email = app.models.Email;
   User.observe('before delete', function(ctx, next) {
     debug('removing user', ctx.where);
     var id = ctx.where && ctx.where.id ? ctx.where.id : null;
@@ -70,21 +71,21 @@ module.exports = function(app) {
       to: user.email,
       from: 'Team@freecodecamp.com',
       subject: 'Welcome to Free Code Camp!',
-      redirect: '/',
-      text: [
-        'Greetings from San Francisco!\n\n',
-        'Thank you for joining our community.\n',
-        'Feel free to email us at this address if you have ',
-        'any questions about Free Code Camp.\n',
-        'And if you have a moment, check out our blog: ',
-        'medium.freecodecamp.com.\n\n',
-        'Good luck with the challenges!\n\n',
-        '- the Free Code Camp Team'
-      ].join('')
+      protocol: isDev ? null : 'https',
+      host: isDev ? 'localhost' : 'freecodecamp.com',
+      port: isDev ? null : 443,
+      template: path.join(
+        __dirname,
+        '..',
+        'views',
+        'emails',
+        'a-extend-user-welcome.ejs'
+      ),
+      redirect: '/'
     };
 
     debug('sending welcome email');
-    return Email.send(mailOptions, function(err) {
+    return user.verify(mailOptions, function(err) {
       if (err) { return next(err); }
       return req.logIn(user, function(err) {
         if (err) { return next(err); }

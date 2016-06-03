@@ -28,3 +28,19 @@ export function ifNoUser401(req, res, next) {
   }
   return res.status(401).end();
 }
+
+export function flashIfNotVerified(req, res, next) {
+    const user = req.user;
+    if (!user) {
+      return next();
+    }
+    const email = req.user.email;
+    const emailVerified = req.user.emailVerified;
+    if (!email || !emailVerified) {
+      req.flash('info', {
+        msg: 'Please verify your email address ' +
+        '<a href="/update-email">here.</a>'
+      });
+    }
+    return next();
+}

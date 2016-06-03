@@ -19,6 +19,8 @@ import {
   calcLongestStreak
 } from '../utils/user-stats';
 
+import { flashIfNotVerified } from '../utils/middleware';
+
 const debug = debugFactory('fcc:boot:user');
 const sendNonUserToMap = ifNoUserRedirectTo('/map');
 const certIds = {
@@ -183,6 +185,7 @@ module.exports = function(app) {
   router.get(
     '/settings',
     sendNonUserToMap,
+    flashIfNotVerified,
     getSettings
   );
   router.get('/vote1', vote1);

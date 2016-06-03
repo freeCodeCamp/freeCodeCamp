@@ -190,11 +190,10 @@ Be sure to post in the PR conversation that you have made the requested changes.
 
 ## Other resources
 
-- [Searching for Your Issue on GitHub](https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/Searching-for-Your-Issue-on-GitHub)
+- [Searching for Your Issue on GitHub](https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/Search-Existing-Issues)
 - [Creating a New GitHub Issue](https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/Creating-a-New-GitHub-Issue)
-- [Select Issues for Contributing Using Labels](https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/Select-Issues-for-Contributing-Using-Labels)
-- [How to clone the FreeCodeCamp website on a Windows pc](https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/How-to-clone-the-FreeCodeCamp-website-on-a-Windows-pc)
-- [How to log in to your local FCC site - using GitHub](https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/How-To-Log-In-To-Your-Local-FCC-Site)
-- [Contributions Guide - With a demo on fixing a typo](https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/Contributions-Guide---with-Typo-Demo)
-- [Writing great git commit message](https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/Writing-great-git-commit-message)
+- [Select Issues for Contributing Using Labels](https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/FreeCodeCamp-Issue-Labels)
+- [How to clone the FreeCodeCamp website on a Windows pc](https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/FreeCodeCamp-Fork-Windows)
+- [How to log in to your local FCC site - using GitHub](https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/FreeCodeCamp-Log-In-To-Local-Instance)
+- [Writing great git commit message](https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/Git-Commit-Message)
 - [Contributor Chat Support - For the FCC Repositories, and running a local instance] (https://gitter.im/FreeCodeCamp/HelpContributors)

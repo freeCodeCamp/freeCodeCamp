@@ -76,7 +76,6 @@ export class Lecture extends React.Component {
         <Row>
           <Youtube
             id='player_1'
-            onEnd={ toggleQuestionView }
             onError={ this.handleError }
             videoId={ id } />
         </Row>

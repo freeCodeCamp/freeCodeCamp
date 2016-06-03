@@ -15,8 +15,7 @@ block content
         .form-group
           input.input-lg.form-control(type='email', name='email', id='email', value=user.email || '', placeholder=user.email || 'Enter your new email', autofocus, required, autocomplete="off")
         .form-group
-          button.btn.btn-lg.btn-primary.btn-block(type='submit')
-            | Update my Email
+          button.btn.btn-lg.btn-primary.btn-block(type='submit')= !user.email || user.emailVerified ? 'Update my Email' : 'Verify Email'
           a.btn.btn-lg.btn-block.btn-primary.btn-link-social(href='/settings')
             | Go back to Settings
 
@@ -46,10 +45,10 @@ block content
               }
           })
           .done(data =>{
-            if(data.status && data.status.count){
-              $('#flash-content').html("Your email has been updated successfully!");
+            if(data && data.message){
+              $('#flash-content').html(data.message);
               $('#flash-board')
-                  .removeClass('alert-danger')
+                  .removeClass('alert-info')
                   .addClass('alert-success')
                   .fadeIn();
             }

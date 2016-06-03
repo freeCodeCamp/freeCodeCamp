@@ -18,7 +18,8 @@ import {
 import { observeMethod } from '../utils/rx';
 
 import {
-  ifNoUserSend
+  ifNoUserSend,
+  flashIfNotVerified
 } from '../utils/middleware';
 
 import getFromDisk$ from '../utils/getFromDisk$';
@@ -419,7 +420,10 @@ module.exports = function(app) {
     redirectToNextChallenge
   );
 
-  router.get('/challenges/:challengeName', showChallenge);
+  router.get('/challenges/:challengeName',
+    flashIfNotVerified,
+    showChallenge
+  );
 
   app.use(router);
 
