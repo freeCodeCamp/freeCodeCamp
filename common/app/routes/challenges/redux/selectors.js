@@ -1,5 +1,18 @@
-import { STEP, HTML } from '../../../utils/challengeTypes';
+import * as challengeTypes from '../../../utils/challengeTypes';
 import { createSelector } from 'reselect';
+
+const viewTypes = {
+  [ challengeTypes.HTML ]: 'classic',
+  [ challengeTypes.JS ]: 'classic',
+  [ challengeTypes.BONFIRE ]: 'classic',
+  [ challengeTypes.ZIPLINE ]: 'project',
+  [ challengeTypes.BASEJUMP ]: 'project',
+  // might not be used anymore
+  [ challengeTypes.OLDVIDEO ]: 'video',
+  // formally hikes
+  [ challengeTypes.VIDEO ]: 'video',
+  [ challengeTypes.STEP ]: 'step'
+};
 
 export const challengeSelector = createSelector(
   state => state.challengesApp.challenge,
@@ -11,9 +24,12 @@ export const challengeSelector = createSelector(
     const challenge = challengeMap[challengeName];
     return {
       challenge: challenge,
-      showPreview: !!challenge && challenge.challengeType === HTML,
-      isStep: !!challenge && challenge.challengeType === STEP,
-      mode: !!challenge && challenge.challengeType === HTML ?
+      viewType: viewTypes[challenge.challengeType] || 'classic',
+
+      showPreview: challenge &&
+        challenge.challengeType === challengeTypes.HTML,
+
+      mode: challenge && challenge.challengeType === challengeTypes.HTML ?
         'text/html' :
         'javascript'
     };
