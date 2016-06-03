@@ -39,7 +39,7 @@ export function flashIfNotVerified(req, res, next) {
     if (!email || !emailVerified) {
       req.flash('info', {
         msg: 'Please verify your email address ' +
-        '<a href="/update-email">here.</a>'
+        '<a href="/update-email">here</a>.'
       });
     }
     return next();
