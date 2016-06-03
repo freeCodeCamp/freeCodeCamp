@@ -6,7 +6,6 @@ import { createSelector } from 'reselect';
 // import debug from 'debug';
 
 import HikesMap from './Map.jsx';
-import { updateTitle } from '../../../redux/actions';
 import { fetchHikes } from '../redux/actions';
 
 import contain from '../../../utils/professor-x';
@@ -41,14 +40,8 @@ export class Hikes extends PureComponent {
   static propTypes = {
     children: PropTypes.element,
     hikes: PropTypes.array,
-    params: PropTypes.object,
-    updateTitle: PropTypes.func
+    params: PropTypes.object
   };
-
-  componentWillMount() {
-    const { updateTitle } = this.props;
-    updateTitle('Hikes');
-  }
 
   renderMap(hikes) {
     return (
@@ -73,6 +66,6 @@ export class Hikes extends PureComponent {
 
 // export redux and fetch aware component
 export default compose(
-  connect(mapStateToProps, { fetchHikes, updateTitle }),
+  connect(mapStateToProps, { fetchHikes }),
   contain(fetchOptions)
 )(Hikes);

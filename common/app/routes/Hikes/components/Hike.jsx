@@ -6,6 +6,7 @@ import { createSelector } from 'reselect';
 import Lecture from './Lecture.jsx';
 import Questions from './Questions.jsx';
 import { resetHike } from '../redux/actions';
+import { updateTitle } from '../../../redux/actions';
 import { getCurrentHike } from '../redux/selectors';
 
 const mapStateToProps = createSelector(
@@ -27,8 +28,14 @@ export class Hike extends React.Component {
     // ui
     title: PropTypes.string,
     params: PropTypes.object,
-    shouldShowQuestions: PropTypes.bool
+    shouldShowQuestions: PropTypes.bool,
+    updateTitle: PropTypes.func
   };
+
+  componentWillMount() {
+    const { updateTitle } = this.props;
+    updateTitle(this.props.title);
+  }
 
   componentWillUnmount() {
     this.props.resetHike();
@@ -71,4 +78,4 @@ export class Hike extends React.Component {
 }
 
 // export redux aware component
-export default connect(mapStateToProps, { resetHike })(Hike);
+export default connect(mapStateToProps, { resetHike, updateTitle })(Hike);
