@@ -75,7 +75,7 @@
     "gulp-util": "^3.0.6",
     "helmet": "^2.0.0",
     "helmet-csp": "^1.0.3",
-    "history": "^2.0.0",
+    "history": "^3.0.0",
     "jade": "^1.11.0",
     "json-loader": "~0.5.2",
     "less": "^2.5.1",
