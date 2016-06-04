@@ -40,7 +40,8 @@ export default class extends React.Component {
     signedIn: PropTypes.bool,
     username: PropTypes.string,
     updateNavHeight: PropTypes.func,
-    toggleMapDrawer: PropTypes.func
+    toggleMapDrawer: PropTypes.func,
+    toggleMainChat: PropTypes.func
   };
 
   componentDidMount() {
@@ -72,6 +73,19 @@ export default class extends React.Component {
           Map
         </NavItem>
       </LinkContainer>
+    );
+  }
+
+  renderChat(toggleMainChat) {
+    return (
+      <NavItem
+        eventKey={ 2 }
+        href='//gitter.im/freecodecamp/freecodecamp'
+        onClick={ toggleMainChat }
+        target='_blank'
+      >
+        Chat
+      </NavItem>
     );
   }
 
@@ -144,7 +158,8 @@ export default class extends React.Component {
       username,
       points,
       picture,
-      toggleMapDrawer
+      toggleMapDrawer,
+      toggleMainChat
     } = this.props;
     const { router } = this.context;
     const isOnMap = router.isActive('/map');
@@ -161,6 +176,7 @@ export default class extends React.Component {
             navbar={ true }
             pullRight={ true }>
             { this.renderMapLink(isOnMap, toggleMapDrawer) }
+            { this.renderChat(toggleMainChat) }
             { this.renderLinks() }
             { this.renderPoints(username, points) }
             { this.renderSignin(username, picture) }

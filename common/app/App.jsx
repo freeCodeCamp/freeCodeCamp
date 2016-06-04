@@ -11,7 +11,8 @@ import {
   fetchUser,
   initWindowHeight,
   updateNavHeight,
-  toggleMapDrawer
+  toggleMapDrawer,
+  toggleMainChat
 } from './redux/actions';
 
 import { submitChallenge } from './routes/challenges/redux/actions';
@@ -53,7 +54,8 @@ const bindableActions = {
   updateNavHeight,
   fetchUser,
   submitChallenge,
-  toggleMapDrawer
+  toggleMapDrawer,
+  toggleMainChat
 };
 
 const fetchContainerOptions = {
@@ -79,7 +81,8 @@ export class FreeCodeCamp extends React.Component {
     submitChallenge: PropTypes.func,
     isMapDrawerOpen: PropTypes.bool,
     isMapAlreadyLoaded: PropTypes.bool,
-    toggleMapDrawer: PropTypes.func
+    toggleMapDrawer: PropTypes.func,
+    toggleMainChat: PropTypes.func
   };
 
   componentWillReceiveProps({
@@ -141,14 +144,16 @@ export class FreeCodeCamp extends React.Component {
       updateNavHeight,
       isMapDrawerOpen,
       isMapAlreadyLoaded,
-      toggleMapDrawer
+      toggleMapDrawer,
+      toggleMainChat
     } = this.props;
     const navProps = {
       username,
       points,
       picture,
       updateNavHeight,
-      toggleMapDrawer
+      toggleMapDrawer,
+      toggleMainChat
     };
 
     return (

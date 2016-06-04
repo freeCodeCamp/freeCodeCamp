@@ -9,7 +9,8 @@ const initialState = {
   isSignedIn: false,
   csrfToken: '',
   windowHeight: 0,
-  navHeight: 0
+  navHeight: 0,
+  isMainChatOpen: false
 };
 
 export default handleActions(
@@ -46,6 +47,10 @@ export default handleActions(
       ...state,
       isMapAlreadyLoaded: true,
       isMapDrawerOpen: !state.isMapDrawerOpen
+    }),
+    [types.toggleMainChat]: state => ({
+      ...state,
+      isMainChatOpen: !state.isMainChatOpen
     })
   },
   initialState
