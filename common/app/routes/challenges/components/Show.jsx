@@ -7,12 +7,15 @@ import PureComponent from 'react-pure-render/component';
 
 import Classic from './classic/Classic.jsx';
 import Step from './step/Step.jsx';
+import Project from './project/Project.jsx';
+
 import { fetchChallenge, fetchChallenges } from '../redux/actions';
 import { challengeSelector } from '../redux/selectors';
 
 const views = {
   step: Step,
-  classic: Classic
+  classic: Classic,
+  project: Project
 };
 
 const bindableActions = {
