@@ -53,3 +53,14 @@ export const toggleMapDrawer = createAction(
   types.toggleMapDrawer,
   e => e.preventDefault()
 );
+export const toggleWikiDrawer = createAction(types.toggleWikiDrawer);
+
+// chat
+export const toggleMainChat = createAction(
+  types.toggleMainChat,
+  e => {
+    if (!(e.ctrlKey || e.metaKey)) {
+      e.preventDefault();
+    }
+  }
+);

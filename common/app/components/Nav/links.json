@@ -1,8 +1,4 @@
 [{
-  "content": "Chat",
-  "link": "//gitter.im/FreeCodeCamp/FreeCodeCamp",
-  "target": "_blank"
-},{
   "content": "Wiki",
   "link": "/wiki",
   "target": "_blank"

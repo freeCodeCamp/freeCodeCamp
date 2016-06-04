@@ -6,6 +6,7 @@ import windowSaga from './window-saga';
 import executeChallengeSaga from './execute-challenge-saga';
 import frameSaga from './frame-saga';
 import codeStorageSaga from './code-storage-saga';
+import gitterSaga from './gitter-saga';
 
 export default [
   errSaga,
@@ -15,5 +16,6 @@ export default [
   windowSaga,
   executeChallengeSaga,
   frameSaga,
-  codeStorageSaga
+  codeStorageSaga,
+  gitterSaga
 ];

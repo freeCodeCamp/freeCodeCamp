@@ -22,5 +22,11 @@ export default createTypes([
   'updateHikesData',
 
   // drawers
-  'toggleMapDrawer'
+  'toggleMapDrawer',
+  'toggleWikiDrawer',
+
+  // main chat
+  'openMainChat',
+  'closeMainChat',
+  'toggleMainChat'
 ], 'app');
