@@ -642,8 +642,9 @@
         "var remainder =  11 % 3;"
       ],
       "tests": [
+        "assert(/var\\s+?remainder/.test(code), 'message: The variable <code>remainder</code> should be initialized');",
         "assert(remainder === 2, 'message: The value of <code>remainder</code> should be <code>2</code>');",
-        "assert(/var\\s*?remainder\\s*?=\\s*?.*%.*;/.test(code), 'message: You should use the <code>%</code> operator');"
+        "assert(/\\s+?remainder\\s*?=\\s*?.*%.*;/.test(code), 'message: You should use the <code>%</code> operator');"
       ],
       "type": "waypoint",
       "challengeType": 1,
