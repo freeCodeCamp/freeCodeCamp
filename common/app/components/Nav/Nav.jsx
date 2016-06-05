@@ -67,7 +67,12 @@ export default class extends React.Component {
         eventKey={ 1 }
         to='/map'>
         <NavItem
-          onClick={ toggleMapDrawer }
+          onClick={ e => {
+            if (!(e.ctrlKey || e.metaKey)) {
+              e.preventDefault();
+              toggleMapDrawer();
+            }
+          }}
           target='/map'
         >
           Map
@@ -81,7 +86,12 @@ export default class extends React.Component {
       <NavItem
         eventKey={ 2 }
         href='//gitter.im/freecodecamp/freecodecamp'
-        onClick={ toggleMainChat }
+        onClick={ e => {
+          if (!(e.ctrlKey || e.metaKey)) {
+            e.preventDefault();
+            toggleMainChat();
+          }
+        }}
         target='_blank'
       >
         Chat

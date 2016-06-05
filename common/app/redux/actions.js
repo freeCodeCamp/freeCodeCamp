@@ -49,18 +49,8 @@ export const createErrorObservable = error => Observable.just({
 
 
 // drawers
-export const toggleMapDrawer = createAction(
-  types.toggleMapDrawer,
-  e => e.preventDefault()
-);
+export const toggleMapDrawer = createAction(types.toggleMapDrawer);
 export const toggleWikiDrawer = createAction(types.toggleWikiDrawer);
 
 // chat
-export const toggleMainChat = createAction(
-  types.toggleMainChat,
-  e => {
-    if (!(e.ctrlKey || e.metaKey)) {
-      e.preventDefault();
-    }
-  }
-);
+export const toggleMainChat = createAction(types.toggleMainChat);
