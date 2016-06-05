@@ -57,7 +57,7 @@ function completedChallenge(state) {
     moveToNextChallenge(),
     makeToast({
       title: 'Congratulations!',
-      message: isSignedIn ? ' Saving...' : 'Moving on to next challenge',
+      message: isSignedIn ? ' Saving...' : 'Moving on to next challenge.',
       type: 'success'
     })
   );
@@ -74,7 +74,7 @@ export default function completionSaga(actions$, getState) {
     .flatMap(({ type }) => {
       const state = getState();
       const { tests } = state.challengesApp;
-      if (tests.length > 1 && tests.every(test => test.pass && !test.err)) {
+      if (tests.length > 0 && tests.every(test => test.pass && !test.err)) {
         if (type === types.checkChallenge) {
           return Observable.of(
             showChallengeComplete()
@@ -98,8 +98,8 @@ export default function completionSaga(actions$, getState) {
         }
       }
       return Observable.just(makeToast({
-        message: 'Not all tests are passing',
-        title: 'Not quite there',
+        message: 'Not all tests are passing, yet.',
+        title: 'Almost There!',
         type: 'info'
       }));
     });
