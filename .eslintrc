@@ -236,6 +236,7 @@
     "react/prop-types": 2,
     "react/react-in-jsx-scope": 1,
     "react/self-closing-comp": 1,
-    "react/wrap-multilines": 1
+    "react/wrap-multilines": 1,
+    "react/jsx-closing-bracket-location": [ 1, { "selfClosing": "line-aligned", "nonEmpty": "props-aligned" } ]
   }
 }
