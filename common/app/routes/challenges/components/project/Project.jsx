@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 import Youtube from 'react-youtube';
 import PureComponent from 'react-pure-render/component';
-import { Button, ButtonGroup, Col, Row } from 'react-bootstrap';
+import { Button, ButtonGroup, Col } from 'react-bootstrap';
 
 import { challengeSelector } from '../../redux/selectors';
 
@@ -69,33 +69,11 @@ export class Project extends PureComponent {
   renderDescription(title = '', description = []) {
     return description
       .map((line, index) => (
-        <Row
-          className='checklist-element'
-          id={ title + index }
+        <li
+          className='step-text wrappable'
+          dangerouslySetInnerHTML={{ __html: line }}
           key={ title.slice(6) + index }
-        >
-          <Col
-            className='padded-ionic-icon text-center'
-            md={ 2 }
-            sm={ 1 }
-            xs={ 3 }
-          >
-            <input
-              className='challenge-list-checkbox'
-              type='checkbox'
-            />
-          </Col>
-          <Col
-            md={ 10 }
-            sm={ 11 }
-            xs={ 9 }
-          >
-            <li
-              className='step-text wrappable'
-              dangerouslySetInnerHTML={{ __html: line }}
-            />
-          </Col>
-        </Row>
+        />
       ));
   }
 
@@ -121,9 +99,9 @@ export class Project extends PureComponent {
             { this.renderIcon(isCompleted) }
           </h4>
           <hr />
-          <ol>
+          <ul>
             { this.renderDescription(title, description) }
-          </ol>
+          </ul>
         </Col>
         <Col
           md={ 8 }
