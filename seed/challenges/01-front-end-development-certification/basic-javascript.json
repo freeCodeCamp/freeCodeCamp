@@ -3206,7 +3206,7 @@
         "function testElse(val) {\n  var result = \"\";\n  if(val > 5) {\n    result = \"Bigger than 5\";\n  } else {\n    result = \"5 or Smaller\";\n  }\n  return result;\n}"
       ],
       "tests": [
-        "assert(code.match(/if/g).length === 1, 'message: You should only have one <code>if</code> statement');",
+        "assert(code.match(/if/g).length === 1, 'message: You should only have one <code>if</code> statement in the editor');",
         "assert(/else/g.test(code), 'message: You should use an <code>else</code> statement');",
         "assert(testElse(4) === \"5 or Smaller\", 'message: <code>testElse(4)</code> should return \"5 or Smaller\"');",
         "assert(testElse(5) === \"5 or Smaller\", 'message: <code>testElse(5)</code> should return \"5 or Smaller\"');",
