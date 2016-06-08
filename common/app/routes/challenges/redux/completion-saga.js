@@ -129,7 +129,7 @@ function submitProject(type, state, { solution, githubLink }) {
   return Observable.merge(saveChallenge$, challengeCompleted$);
 }
 
-function submitSimpleProject(type, state) {
+function submitSimpleChallenge(type, state) {
   const {
     challenge: { id }
   } = challengeSelector(state);
@@ -169,9 +169,10 @@ function submitSimpleProject(type, state) {
 
 const submitTypes = {
   tests: submitModern,
+  step: submitSimpleChallenge,
   'project.frontEnd': submitProject,
   'project.backEnd': submitProject,
-  'project.simple': submitSimpleProject
+  'project.simple': submitSimpleChallenge
 };
 
 export default function completionSaga(actions$, getState) {
