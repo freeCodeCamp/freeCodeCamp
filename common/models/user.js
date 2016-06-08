@@ -88,7 +88,7 @@ module.exports = function(User) {
   User.afterRemote('confirm', function(ctx) {
     ctx.req.flash('success', {
       msg: [
-        'You\'re email has been confirmed!'
+        'Your email has been confirmed!'
       ]
     });
     ctx.res.redirect('/');
@@ -209,7 +209,7 @@ module.exports = function(User) {
         return res.redirect(redirectTo);
       }
 
-      req.flash('success', { msg: 'Success! You are logged in.' });
+      req.flash('success', { msg: 'Success! You are now logged in.' });
       return res.redirect('/');
     });
   });
