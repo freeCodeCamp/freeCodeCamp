@@ -58,6 +58,7 @@ export const updateOutput = createAction(types.updateOutput, loggerToStr);
 
 export const checkChallenge = createAction(types.checkChallenge);
 
+export const showProjectSubmit = createAction(types.showProjectSubmit);
 let id = 0;
 export const showChallengeComplete = createAction(
   types.showChallengeComplete,

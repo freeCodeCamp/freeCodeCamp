@@ -30,6 +30,7 @@ export default createTypes([
   'updateTests',
   'checkChallenge',
   'showChallengeComplete',
+  'showProjectSubmit',
   'submitChallenge',
   'moveToNextChallenge',
 

@@ -5,12 +5,7 @@ import { push } from 'react-router-redux';
 import { reduxForm } from 'redux-form';
 // import debug from 'debug';
 import dedent from 'dedent';
-
-import {
-  isAscii,
-  isEmail,
-  isURL
-} from 'validator';
+import { isAscii, isEmail } from 'validator';
 
 import {
   Button,
@@ -19,6 +14,13 @@ import {
   Row
 } from 'react-bootstrap';
 
+import {
+  isValidURL,
+  makeOptional,
+  makeRequired,
+  createFormValidator,
+  getValidationState
+} from '../../../utils/form';
 import { saveForm, loadSavedForm } from '../redux/actions';
 
 // const log = debug('fcc:jobs:newForm');
@@ -48,10 +50,6 @@ const certTypes = {
   isBackEndCert: 'isBackEndCert'
 };
 
-function isValidURL(data) {
-  return isURL(data, { require_protocol: true });
-}
-
 const fields = [
   'position',
   'locale',
@@ -77,35 +75,6 @@ const fieldValidators = {
   company: makeRequired(isAscii),
   howToApply: makeRequired(isAscii)
 };
-
-function makeOptional(validator) {
-  return val => val ? validator(val) : true;
-}
-function makeRequired(validator) {
-  return (val) => val ? validator(val) : false;
-}
-
-function validateForm(values) {
-  return Object.keys(fieldValidators)
-    .map(field => {
-      if (fieldValidators[field](values[field])) {
-        return null;
-      }
-      return { [field]: !fieldValidators[field](values[field]) };
-    })
-    .filter(Boolean)
-    .reduce((errors, error) => ({ ...errors, ...error }), {});
-}
-
-function getBsStyle(field) {
-  if (field.pristine) {
-    return null;
-  }
-
-  return field.error ?
-    'error' :
-    'success';
-}
 
 export class NewJob extends PureComponent {
   static displayName = 'NewJob';
@@ -223,7 +192,7 @@ export class NewJob extends PureComponent {
                 </div>
                 <hr />
                 <Input
-                  bsStyle={ getBsStyle(position) }
+                  bsStyle={ getValidationState(position) }
                   label='Job Title'
                   labelClassName={ labelClass }
                   placeholder={
@@ -235,7 +204,7 @@ export class NewJob extends PureComponent {
                   { ...position }
                 />
                 <Input
-                  bsStyle={ getBsStyle(locale) }
+                  bsStyle={ getValidationState(locale) }
                   label='Location'
                   labelClassName={ labelClass }
                   placeholder='e.g. San Francisco, Remote, etc.'
@@ -245,7 +214,7 @@ export class NewJob extends PureComponent {
                   { ...locale }
                 />
                 <Input
-                  bsStyle={ getBsStyle(description) }
+                  bsStyle={ getValidationState(description) }
                   label='Description'
                   labelClassName={ labelClass }
                   required={ true }
@@ -268,7 +237,7 @@ export class NewJob extends PureComponent {
                     <h2>How should they apply?</h2>
                   </div>
                   <Input
-                    bsStyle={ getBsStyle(howToApply) }
+                    bsStyle={ getValidationState(howToApply) }
                     label='   '
                     labelClassName={ labelClass }
                     placeholder={ howToApplyCopy }
@@ -286,7 +255,7 @@ export class NewJob extends PureComponent {
                   <h2>Tell us about your organization</h2>
                 </div>
                 <Input
-                  bsStyle={ getBsStyle(company) }
+                  bsStyle={ getValidationState(company) }
                   label='Company Name'
                   labelClassName={ labelClass }
                   onChange={ (e) => handleChange('company', e) }
@@ -295,7 +264,7 @@ export class NewJob extends PureComponent {
                   { ...company }
                 />
                 <Input
-                  bsStyle={ getBsStyle(email) }
+                  bsStyle={ getValidationState(email) }
                   label='Email'
                   labelClassName={ labelClass }
                   placeholder='This is how we will contact you'
@@ -305,7 +274,7 @@ export class NewJob extends PureComponent {
                   { ...email }
                 />
                 <Input
-                  bsStyle={ getBsStyle(url) }
+                  bsStyle={ getValidationState(url) }
                   label='URL'
                   labelClassName={ labelClass }
                   placeholder='http://yourcompany.com'
@@ -314,7 +283,7 @@ export class NewJob extends PureComponent {
                   { ...url }
                 />
                 <Input
-                  bsStyle={ getBsStyle(logo) }
+                  bsStyle={ getValidationState(logo) }
                   label='Logo'
                   labelClassName={ labelClass }
                   placeholder='http://yourcompany.com/logo.png'
@@ -381,7 +350,7 @@ export default reduxForm(
   {
     form: 'NewJob',
     fields,
-    validate: validateForm
+    validate: createFormValidator(fieldValidators)
   },
   state => ({ initialValues: state.jobsApp.initialValues }),
   {
