@@ -39,7 +39,7 @@ const backEndFieldValidators = {
   githubLink: makeRequired(isValidURL)
 };
 
-export function SolutionInput({ solution }) {
+export function SolutionInput({ solution, placeholder }) {
   return (
     <FormGroup
       controlId='solution'
@@ -47,7 +47,7 @@ export function SolutionInput({ solution }) {
       >
       <FormControl
         name='solution'
-        placeholder='https://codepen.io/your-pen-here'
+        placeholder={ placeholder }
         type='url'
         { ...solution}
       />
@@ -55,7 +55,10 @@ export function SolutionInput({ solution }) {
   );
 }
 
-SolutionInput.propTypes = { solution: PropTypes.object };
+SolutionInput.propTypes = {
+  solution: PropTypes.object,
+  placeholder: PropTypes.string
+};
 
 export function _FrontEndForm({
   fields,
@@ -72,7 +75,14 @@ export function _FrontEndForm({
       name='NewFrontEndProject'
       onSubmit={ handleSubmit(submitChallenge)}
       >
-      { isSubmitting ? <SolutionInput { ...fields }/> : null }
+      {
+        isSubmitting ?
+          <SolutionInput
+            placeholder='https://codepen/your-project'
+            { ...fields }
+          /> :
+          null
+      }
       <Button
         block={ true }
         bsStyle='primary'
@@ -113,7 +123,14 @@ export function _BackEndForm({
       name='NewBackEndProject'
       onSubmit={ handleSubmit(submitChallenge)}
       >
-      { isSubmitting ? <SolutionInput solution={ solution }/> : null }
+      {
+        isSubmitting ?
+          <SolutionInput
+            placeholder='https://your-app.com'
+            solution={ solution }
+          /> :
+          null
+      }
       { isSubmitting ?
         <FormGroup
           controlId='githubLink'

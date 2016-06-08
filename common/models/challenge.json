@@ -86,7 +86,7 @@
       "type": "array"
     },
     "challengeType": {
-      "type": "string"
+      "type": "number"
     },
     "MDNlinks": {
       "type": "array"

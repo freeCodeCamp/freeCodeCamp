@@ -15,6 +15,8 @@ import {
 import { getNextChallenge } from '../utils';
 import { challengeSelector } from './selectors';
 
+import { backEndProject } from '../../../utils/challengeTypes';
+import { randomCompliment } from '../../../utils/get-words';
 import { postJSON$ } from '../../../../utils/ajax-stream';
 
 function completedChallenge(state) {
@@ -84,13 +86,53 @@ function submitModern(type, state) {
   }));
 }
 
-function submitFrontEnd() {
-  return Observable.just(null);
+function submitProject(type, state, { solution, githubLink }) {
+  const {
+    challenge: { id, challengeType }
+  } = challengeSelector(state);
+  const {
+    app: { isSignedIn, csrfToken }
+  } = state;
+  const body = {
+    id,
+    challengeType,
+    solution,
+    _csrf: csrfToken
+  };
+  if (challengeType === backEndProject) {
+    body.githubLink = githubLink;
+  }
+  const saveChallenge$ = postJSON$('/project-completed', body)
+    .retry(3)
+    .flatMap(({ alreadyCompleted, points }) => {
+      return Observable.of(
+        makeToast({
+          message:
+            'Challenge saved.' +
+            (alreadyCompleted ? '' : ' First time Completed!'),
+          title: 'Saved',
+          type: 'info'
+        }),
+        updatePoints(points)
+      );
+    })
+    .catch(createErrorObservable);
+
+  const challengeCompleted$ = Observable.of(
+    makeToast({
+      title: randomCompliment(),
+      message: isSignedIn ? ' Saving...' : 'Moving on to next challenge.',
+      type: 'success'
+    })
+    // moveToNextChallenge()
+  );
+  return Observable.merge(saveChallenge$, challengeCompleted$);
 }
 
 const submitTypes = {
   tests: submitModern,
-  'project.frontEnd': submitFrontEnd
+  'project.frontEnd': submitProject,
+  'project.backEnd': submitProject
 };
 
 export default function completionSaga(actions$, getState) {

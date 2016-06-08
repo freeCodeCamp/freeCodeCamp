@@ -69,15 +69,23 @@ module.exports = function(app) {
   );
 
   router.post(
-    '/completed-challenge/',
+    '/completed-challenge',
     send200toNonUser,
     completedChallenge
   );
 
+  // deprecate endpoint
+  // remove once new endpoint is live
   router.post(
     '/completed-zipline-or-basejump',
     send200toNonUser,
-    completedZiplineOrBasejump
+    projectCompleted
+  );
+
+  router.post(
+    '/project-completed',
+    send200toNonUser,
+    projectCompleted
   );
 
   app.use(router);
@@ -136,9 +144,6 @@ module.exports = function(app) {
 
   function completedChallenge(req, res, next) {
     req.checkBody('id', 'id must be an ObjectId').isMongoId();
-    req.checkBody('name', 'name must be at least 3 characters')
-      .isString()
-      .isLength({ min: 3 });
     req.checkBody('challengeType', 'challengeType must be an integer')
       .isNumber();
 
@@ -158,24 +163,12 @@ module.exports = function(app) {
     return req.user.getChallengeMap$()
       .flatMap(() => {
         const completedDate = Date.now();
-        const {
-          id,
-          name,
-          challengeType,
-          solution,
-          timezone
-        } = req.body;
+        const { id, solution, timezone } = req.body;
 
         const { alreadyCompleted, updateData } = buildUserUpdate(
           req.user,
           id,
-          {
-            id,
-            challengeType,
-            solution,
-            name,
-            completedDate
-          },
+          { id, solution, completedDate },
           timezone
         );
 
@@ -197,15 +190,11 @@ module.exports = function(app) {
       .subscribe(() => {}, next);
   }
 
-  function completedZiplineOrBasejump(req, res, next) {
+  function projectCompleted(req, res, next) {
     const type = accepts(req).type('html', 'json', 'text');
     req.checkBody('id', 'id must be an ObjectId').isMongoId();
-    req.checkBody('name', 'Name must be at least 3 characters')
-      .isString()
-      .isLength({ min: 3 });
-    req.checkBody('challengeType', 'must be a number')
-      .isNumber();
-    req.checkBody('solution', 'solution must be a url').isURL();
+    req.checkBody('challengeType', 'must be a number').isNumber();
+    req.checkBody('solution', 'solution must be a URL').isURL();
 
     const errors = req.validationErrors(true);
 
@@ -221,9 +210,8 @@ module.exports = function(app) {
 
     const completedChallenge = _.pick(
       body,
-      [ 'id', 'name', 'solution', 'githubLink', 'challengeType' ]
+      [ 'id', 'solution', 'githubLink', 'challengeType' ]
     );
-    completedChallenge.challengeType = +completedChallenge.challengeType;
     completedChallenge.completedDate = Date.now();
 
     if (
