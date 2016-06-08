@@ -68,8 +68,16 @@ module.exports = function(app) {
     modernChallengeCompleted
   );
 
+  // deprecate endpoint
+  // remove once new endpoint is live
   router.post(
     '/completed-challenge',
+    send200toNonUser,
+    completedChallenge
+  );
+
+  router.post(
+    '/challenge-completed',
     send200toNonUser,
     completedChallenge
   );
@@ -144,11 +152,7 @@ module.exports = function(app) {
 
   function completedChallenge(req, res, next) {
     req.checkBody('id', 'id must be an ObjectId').isMongoId();
-    req.checkBody('challengeType', 'challengeType must be an integer')
-      .isNumber();
-
     const type = accepts(req).type('html', 'json', 'text');
-
     const errors = req.validationErrors(true);
 
     if (errors) {
