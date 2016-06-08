@@ -322,18 +322,46 @@ $(document).ready(function() {
   }
 
   $('#nav-wiki-btn').on('click', function(event) {
-      if (!(event.ctrlKey || event.metaKey)) {
-          toggleWiki();
-      }
+    if (!(event.ctrlKey || event.metaKey)) {
+      toggleWiki();
+    }
   });
 
   $('.wiki-aside-action-collapse').on('click', collapseWiki);
 
+  function getWikiPath() {
+    if (!window.common) {
+      return false;
+    }
+    var challengeType = window.common.challengeType;
+    var dashedName = window.common.dashedName;
+    var prefix = '';
+    // Get wiki prefix depending on type of challenge
+    // Type 0, 1 typically have solutions on the wiki prefixed with 'challenge-'
+    // Type 5 typically has a solution on the wiki prefixed with algorithm-'
+    if (challengeType === '0' || challengeType === '1') {
+      prefix = 'challenge-';
+      return prefix + dashedName;
+    }
+    if (challengeType === '5') {
+      prefix = 'algorithm-';
+      return prefix + dashedName;
+    }
+    return false;
+  }
+
   function showWiki() {
     if (!main.isWikiAsideLoad) {
+      var wikiURL = '//freecodecamp.github.io/wiki/en/';
       var lang = window.location.toString().match(/\/\w{2}\//);
       lang = (lang) ? lang[0] : '/en/';
-      var wikiURL = '//freecodecamp.github.io/wiki' + lang;
+      var wikiPath = getWikiPath();
+      if (wikiPath) {
+        wikiURL = wikiURL + wikiPath + '/';
+      } else if (lang !== '/en/') {
+        // Strip default '/en/' language ending and add the user's language
+        wikiURL = wikiURL.substr(0, wikiURL.length - 4) + lang;
+      }
       var wikiAside = $('<iframe>');
       wikiAside.attr({
         src: wikiURL,
