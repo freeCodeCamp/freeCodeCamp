@@ -15,7 +15,8 @@ import { challengeSelector } from '../redux/selectors';
 const views = {
   step: Step,
   classic: Classic,
-  project: Project
+  project: Project,
+  simple: Project
 };
 
 const bindableActions = {

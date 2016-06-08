@@ -64,6 +64,35 @@ function completedChallenge(state) {
   return Observable.merge(saveChallenge$, challengeCompleted$);
 }
 
+function submitModern(type, state) {
+  const { tests } = state.challengesApp;
+  if (tests.length > 0 && tests.every(test => test.pass && !test.err)) {
+    if (type === types.checkChallenge) {
+      return Observable.of(
+        showChallengeComplete()
+      );
+    }
+
+    if (type === types.submitChallenge) {
+      return completedChallenge(state);
+    }
+  }
+  return Observable.just(makeToast({
+    message: 'Not all tests are passing, yet.',
+    title: 'Almost There!',
+    type: 'info'
+  }));
+}
+
+function submitFrontEnd() {
+  return Observable.just(null);
+}
+
+const submitTypes = {
+  tests: submitModern,
+  'project.frontEnd': submitFrontEnd
+};
+
 export default function completionSaga(actions$, getState) {
   return actions$
     .filter(({ type }) => (
@@ -71,36 +100,22 @@ export default function completionSaga(actions$, getState) {
       type === types.submitChallenge ||
       type === types.moveToNextChallenge
     ))
-    .flatMap(({ type }) => {
+    .flatMap(({ type, payload }) => {
       const state = getState();
-      const { tests } = state.challengesApp;
-      if (tests.length > 0 && tests.every(test => test.pass && !test.err)) {
-        if (type === types.checkChallenge) {
-          return Observable.of(
-            showChallengeComplete()
-          );
-        }
-
-        if (type === types.submitChallenge) {
-          return completedChallenge(state);
-        }
-
-        if (type === types.moveToNextChallenge) {
-          const nextChallenge = getNextChallenge(
-            state.challengesApp.challenge,
-            state.entities,
-            state.challengesApp.superBlocks
-          );
-          return Observable.of(
-            updateCurrentChallenge(nextChallenge),
-            push(`/challenges/${nextChallenge.dashedName}`)
-          );
-        }
+      const { submitType } = challengeSelector(state);
+      const submitter = submitTypes[submitType] ||
+        (() => Observable.just(null));
+      if (type === types.moveToNextChallenge) {
+        const nextChallenge = getNextChallenge(
+          state.challengesApp.challenge,
+          state.entities,
+          state.challengesApp.superBlocks
+        );
+        return Observable.of(
+          updateCurrentChallenge(nextChallenge),
+          push(`/challenges/${nextChallenge.dashedName}`)
+        );
       }
-      return Observable.just(makeToast({
-        message: 'Not all tests are passing, yet.',
-        title: 'Almost There!',
-        type: 'info'
-      }));
+      return submitter(type, state, payload);
     });
 }

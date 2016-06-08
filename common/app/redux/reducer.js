@@ -25,7 +25,11 @@ export default handleActions(
       toast
     }),
 
-    [types.setUser]: (state, { payload: user }) => ({ ...state, ...user }),
+    [types.setUser]: (state, { payload: user }) => ({
+      ...state,
+      ...user,
+      isSignedIn: true
+    }),
 
     [types.challengeSaved]: (state, { payload: { points = 0 } }) => ({
       ...state,

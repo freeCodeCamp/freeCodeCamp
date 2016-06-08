@@ -2,16 +2,34 @@ import * as challengeTypes from '../../../utils/challengeTypes';
 import { createSelector } from 'reselect';
 
 const viewTypes = {
-  [ challengeTypes.HTML ]: 'classic',
-  [ challengeTypes.JS ]: 'classic',
-  [ challengeTypes.BONFIRE ]: 'classic',
-  [ challengeTypes.ZIPLINE ]: 'project',
-  [ challengeTypes.BASEJUMP ]: 'project',
+  [ challengeTypes.html]: 'classic',
+  [ challengeTypes.js ]: 'classic',
+  [ challengeTypes.bonfire ]: 'classic',
+  [ challengeTypes.frontEndProject]: 'project',
+  [ challengeTypes.backEndProject]: 'project',
   // might not be used anymore
-  [ challengeTypes.OLDVIDEO ]: 'video',
+  [ challengeTypes.simpleProject]: 'project',
   // formally hikes
-  [ challengeTypes.VIDEO ]: 'video',
-  [ challengeTypes.STEP ]: 'step'
+  [ challengeTypes.video ]: 'video',
+  [ challengeTypes.step ]: 'step'
+};
+
+const submitTypes = {
+  [ challengeTypes.html ]: 'tests',
+  [ challengeTypes.js ]: 'tests',
+  [ challengeTypes.bonfire ]: 'tests',
+  // requires just a button press
+  [ challengeTypes.simpleProject ]: 'project.simple',
+  // requires just a single url
+  // like codepen.com/my-project
+  [ challengeTypes.frontEndProject ]: 'project.frontEnd',
+  // requires two urls
+  // a hosted URL where the app is running live
+  // project code url like GitHub
+  [ challengeTypes.backEndProject ]: 'project.backEnd',
+  // formally hikes
+  [ challengeTypes.video ]: 'video',
+  [ challengeTypes.step ]: 'step'
 };
 
 export const challengeSelector = createSelector(
@@ -22,14 +40,13 @@ export const challengeSelector = createSelector(
       return {};
     }
     const challenge = challengeMap[challengeName];
+    const challengeType = challenge && challenge.challengeType;
     return {
-      challenge: challenge,
-      viewType: viewTypes[challenge.challengeType] || 'classic',
-
-      showPreview: challenge &&
-        challenge.challengeType === challengeTypes.HTML,
-
-      mode: challenge && challenge.challengeType === challengeTypes.HTML ?
+      challenge,
+      viewType: viewTypes[challengeType] || 'classic',
+      submitType: submitTypes[challengeType] || 'tests',
+      showPreview: challengeType === challengeTypes.html,
+      mode: challenge && challengeType === challengeTypes.html ?
         'text/html' :
         'javascript'
     };

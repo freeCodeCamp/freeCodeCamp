@@ -1,5 +1,5 @@
 import { compose } from 'redux';
-import { BONFIRE, HTML, JS } from '../../utils/challengeTypes';
+import { bonfire, html, js } from '../../utils/challengeTypes';
 import { dashify } from '../../../utils';
 
 export function encodeScriptTags(value) {
@@ -41,9 +41,9 @@ export function buildSeed({ challengeSeed = [] } = {}) {
 }
 
 const pathsMap = {
-  [HTML]: 'html',
-  [JS]: 'js',
-  [BONFIRE]: 'js'
+  [html]: 'html',
+  [js]: 'js',
+  [bonfire]: 'js'
 };
 
 export function getPreFile({ challengeType }) {

@@ -2,7 +2,7 @@ import { handleActions } from 'redux-actions';
 import { createPoly } from '../../../../utils/polyvinyl';
 
 import types from './types';
-import { BONFIRE, HTML, JS } from '../../../utils/challengeTypes';
+import { bonfire, html, js } from '../../../utils/challengeTypes';
 import {
   arrayToString,
   buildSeed,
@@ -49,6 +49,10 @@ const mainReducer = handleActions(
     [types.showChallengeComplete]: (state, { payload: toast }) => ({
       ...state,
       toast
+    }),
+    [types.showProjectSubmit]: state => ({
+      ...state,
+      isSubmitting: true
     }),
 
     // map
@@ -105,9 +109,9 @@ const filesReducer = handleActions(
         return challenge.files;
       }
       if (
-        challenge.challengeType !== HTML &&
-        challenge.challengeType !== JS &&
-        challenge.challengeType !== BONFIRE
+        challenge.challengeType !== html &&
+        challenge.challengeType !== js &&
+        challenge.challengeType !== bonfire
       ) {
         return {};
       }
