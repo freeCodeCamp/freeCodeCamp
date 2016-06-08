@@ -5,7 +5,7 @@ import { createSelector } from 'reselect';
 import PureComponent from 'react-pure-render/component';
 import ReactTransitionReplace from 'react-css-transition-replace';
 
-import { goToStep } from '../../redux/actions';
+import { submitChallenge, goToStep } from '../../redux/actions';
 import { challengeSelector } from '../../redux/selectors';
 import { Button, Col, Image, Row } from 'react-bootstrap';
 
@@ -18,15 +18,25 @@ const mapStateToProps = createSelector(
     challenge,
     currentStep,
     previousStep,
+    numOfSteps:
+      Array.isArray(challenge.description) ?
+      challenge.description.length :
+      0,
     isGoingForward: currentStep > previousStep
   })
 );
 
 const dispatchActions = {
-  goToStep
+  goToStep,
+  submitChallenge
 };
 
 export class StepChallenge extends PureComponent {
+  constructor(...args) {
+    super(...args);
+    this.handleNextClick = this.handleNextClick.bind(this);
+    this.handleBackClick = this.handleBackClick.bind(this);
+  }
   static displayName = 'StepChallenge';
   static defaultProps = {
     currentStep: 0,
@@ -38,8 +48,24 @@ export class StepChallenge extends PureComponent {
     currentStep: PropTypes.number,
     previousStep: PropTypes.number,
     isGoingForward: PropTypes.bool,
-    goToStep: PropTypes.func
+    goToStep: PropTypes.func,
+    submitChallenge: PropTypes.func,
+    numOfSteps: PropTypes.number
   };
+
+  handleNextClick() {
+    const { numOfSteps, currentStep, submitChallenge, goToStep } = this.props;
+    const isLastStep = currentStep + 1 >= numOfSteps;
+    if (isLastStep) {
+      return submitChallenge();
+    }
+    return goToStep(currentStep + 1);
+  }
+
+  handleBackClick() {
+    const { currentStep, goToStep } = this.props;
+    goToStep(currentStep - 1);
+  }
 
   renderActionButton(action) {
     if (!action) {
@@ -52,7 +78,8 @@ export class StepChallenge extends PureComponent {
           bsSize='large'
           bsStyle='primary'
           href={ action }
-          target='_blank'>
+          target='_blank'
+          >
           Open link in new tab (this unlocks the next step)
         </Button>
         <div className='spacer' />
@@ -61,12 +88,12 @@ export class StepChallenge extends PureComponent {
   }
 
   renderBackButton(index) {
-    const { goToStep } = this.props;
     if (index === 0) {
       return (
         <Col
           className='hidden-xs'
-          md={ 4 }>
+          md={ 4 }
+          >
           { ' ' }
         </Col>
       );
@@ -76,14 +103,14 @@ export class StepChallenge extends PureComponent {
         bsSize='large'
         bsStyle='primary'
         className='col-sm-4 col-xs-12'
-        onClick={ () => goToStep(index - 1) }>
+        onClick={ this.handleBackClick }
+        >
         Go to my previous step
       </Button>
     );
   }
 
   renderNextButton(hasAction, index, numOfSteps, isCompleted) {
-    const { goToStep } = this.props;
     const isLastStep = index + 1 >= numOfSteps;
     const btnClass = classnames({
       'col-sm-4 col-xs-12': true,
@@ -94,7 +121,8 @@ export class StepChallenge extends PureComponent {
         bsSize='large'
         bsStyle='primary'
         className={ btnClass }
-        onClick={ () => !isLastStep ? goToStep(index + 1) : () => {} }>
+        onClick={ this.handleNextClick }
+        >
         { isLastStep ? 'Finish challenge' : 'Go to my next step'}
       </Button>
     );
@@ -108,12 +136,14 @@ export class StepChallenge extends PureComponent {
     return (
       <div
         className=''
-        key={ imgUrl }>
+        key={ imgUrl }
+        >
         <a href={ imgUrl }>
           <Image
             alt={ imgAlt }
             responsive={ true }
-            src={ imgUrl } />
+            src={ imgUrl }
+          />
         </a>
         <Row>
           <div className='spacer' />
@@ -122,10 +152,12 @@ export class StepChallenge extends PureComponent {
             mdOffset={ 2 }
             sm={ 10 }
             smOffset={ 1 }
-            xs={ 12 }>
+            xs={ 12 }
+            >
             <p
               className='challenge-step-description'
-              dangerouslySetInnerHTML={{ __html: info }} />
+              dangerouslySetInnerHTML={{ __html: info }}
+            />
           </Col>
         </Row>
         <div className='spacer' />
@@ -135,7 +167,8 @@ export class StepChallenge extends PureComponent {
           <Col
             className='challenge-step-counter large-p text-center'
             sm={ 4 }
-            xs={ 12 }>
+            xs={ 12 }
+            >
             ( { currentStep + 1 } / { numOfSteps })
           </Col>
           {
@@ -162,16 +195,19 @@ export class StepChallenge extends PureComponent {
         <Image
           alt={ imgAlt }
           responsive={ true }
-          src={ imgUrl } />
+          src={ imgUrl }
+        />
       </div>
     ));
   }
 
   render() {
-    const { challenge, currentStep, isGoingForward } = this.props;
-    const numOfSteps = Array.isArray(challenge.description) ?
-      challenge.description.length :
-      0;
+    const {
+      numOfSteps,
+      challenge,
+      currentStep,
+      isGoingForward
+    } = this.props;
     const step = challenge.description[currentStep];
     const transitionName = 'challenge-step-' +
       (isGoingForward ? 'forward' : 'backward');
@@ -179,11 +215,13 @@ export class StepChallenge extends PureComponent {
     return (
       <Col
         md={ 8 }
-        mdOffset={ 2 }>
+        mdOffset={ 2 }
+        >
         <ReactTransitionReplace
           transitionEnterTimeout={ transitionTimeout }
           transitionLeaveTimeout={ transitionTimeout }
-          transitionName={ transitionName }>
+          transitionName={ transitionName }
+          >
           { this.renderStep(step, currentStep, numOfSteps) }
         </ReactTransitionReplace>
         <div className='hidden'>
