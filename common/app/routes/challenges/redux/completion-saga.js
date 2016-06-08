@@ -129,10 +129,49 @@ function submitProject(type, state, { solution, githubLink }) {
   return Observable.merge(saveChallenge$, challengeCompleted$);
 }
 
+function submitSimpleProject(type, state) {
+  const {
+    challenge: { id }
+  } = challengeSelector(state);
+  const {
+    app: { isSignedIn, csrfToken }
+  } = state;
+  const body = {
+    id,
+    _csrf: csrfToken
+  };
+  const saveChallenge$ = postJSON$('/challenge-completed', body)
+    .retry(3)
+    .flatMap(({ alreadyCompleted, points }) => {
+      return Observable.of(
+        makeToast({
+          message:
+            'Challenge saved.' +
+            (alreadyCompleted ? '' : ' First time Completed!'),
+          title: 'Saved',
+          type: 'info'
+        }),
+        updatePoints(points)
+      );
+    })
+    .catch(createErrorObservable);
+
+  const challengeCompleted$ = Observable.of(
+    makeToast({
+      title: randomCompliment(),
+      message: isSignedIn ? ' Saving...' : 'Moving on to next challenge.',
+      type: 'success'
+    })
+    // moveToNextChallenge()
+  );
+  return Observable.merge(saveChallenge$, challengeCompleted$);
+}
+
 const submitTypes = {
   tests: submitModern,
   'project.frontEnd': submitProject,
-  'project.backEnd': submitProject
+  'project.backEnd': submitProject,
+  'project.simple': submitSimpleProject
 };
 
 export default function completionSaga(actions$, getState) {
