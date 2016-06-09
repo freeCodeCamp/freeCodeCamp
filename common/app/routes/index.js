@@ -1,6 +1,6 @@
 import Jobs from './Jobs';
 import Hikes from './Hikes';
-import { map, challenges } from './challenges';
+import { modernChallenges, map, challenges } from './challenges';
 import NotFound from '../components/NotFound/index.jsx';
 
 export default {
@@ -9,6 +9,7 @@ export default {
     Jobs,
     Hikes,
     challenges,
+    modernChallenges,
     map,
     {
       path: '*',

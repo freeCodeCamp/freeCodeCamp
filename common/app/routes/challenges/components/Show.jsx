@@ -35,8 +35,8 @@ const mapStateToProps = createSelector(
 
 const fetchOptions = {
   fetchAction: 'fetchChallenge',
-  getActionArgs({ params: { dashedName } }) {
-    return [ dashedName ];
+  getActionArgs({ params: { block, dashedName } }) {
+    return [ dashedName, block ];
   },
   isPrimed({ challenge }) {
     return !!challenge;

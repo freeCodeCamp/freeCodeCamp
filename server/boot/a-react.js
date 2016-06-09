@@ -64,10 +64,19 @@ export default function reactSubRouter(app) {
         )
           .map(({ markup }) => ({ markup, store, epic }));
       })
+      .filter(({ store, epic }) => {
+        const { delayedRedirect } = store.getState().app;
+        if (delayedRedirect) {
+          res.redirect(delayedRedirect);
+          epic.dispose();
+          return false;
+        }
+        return true;
+      })
       .flatMap(function({ markup, store, epic }) {
         log('react markup rendered, data fetched');
         const state = store.getState();
-        const { title } = state.app.title;
+        const { title } = state.app;
         epic.dispose();
         res.expose(state, 'data');
         return res.render$(

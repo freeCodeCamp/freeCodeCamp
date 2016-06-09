@@ -28,6 +28,8 @@ export const setUser = createAction(types.setUser);
 
 // updatePoints(points: Number) => Action
 export const updatePoints = createAction(types.updatePoints);
+// used when server needs client to redirect
+export const delayedRedirect = createAction(types.delayedRedirect);
 
 // hardGoTo(path: String) => Action
 export const hardGoTo = createAction(types.hardGoTo);
