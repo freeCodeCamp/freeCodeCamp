@@ -1693,7 +1693,7 @@
         "var myArray = [1,2,3];\nvar myData = myArray[0];"
       ],
       "tests": [
-        "assert((function(){if(typeof myArray != 'undefined' && typeof myData != 'undefined' && myArray[0] == myData){return true;}else{return false;}})(), 'message: The variable <code>myData</code> should equal the first value of <code>myArray</code>.');"
+        "assert((function(){if(typeof myArray != 'undefined' && typeof myData != 'undefined' && myArray[0] === myData){return true;}else{return false;}})(), 'message: The variable <code>myData</code> should equal the first value of <code>myArray</code>.');"
       ],
       "type": "waypoint",
       "challengeType": 1,
