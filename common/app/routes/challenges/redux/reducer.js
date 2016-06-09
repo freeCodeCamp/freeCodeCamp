@@ -15,11 +15,16 @@ const initialState = {
   id: '',
   challenge: '',
   legacyKey: '',
-  currentStep: 0,
-  previousStep: -1,
+  // step
+  currentIndex: 0,
+  previousIndex: -1,
+  isActionCompleted: false,
+  // map
   filter: '',
-  files: {},
   superBlocks: [],
+  // modern
+  files: {},
+  // misc
   toast: 0
 };
 
@@ -73,9 +78,17 @@ const mainReducer = handleActions(
     [types.resetStep]: () => initialState,
     [types.goToStep]: (state, { payload: step = 0 }) => ({
       ...state,
-      currentStep: step,
-      previousStep: state.currentStep
+      currentIndex: step,
+      previousIndex: state.currentIndex,
+      isActionCompleted: false
     }),
+
+    [types.completeAction]: state => ({
+      ...state,
+      isActionCompleted: true
+    }),
+
+    // classic/modern
     [types.initOutput]: (state, { payload: output }) => ({
       ...state,
       output

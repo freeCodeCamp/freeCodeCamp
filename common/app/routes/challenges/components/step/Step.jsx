@@ -5,29 +5,40 @@ import { createSelector } from 'reselect';
 import PureComponent from 'react-pure-render/component';
 import ReactTransitionReplace from 'react-css-transition-replace';
 
-import { submitChallenge, goToStep } from '../../redux/actions';
+import {
+  goToStep,
+  completeAction,
+  submitChallenge
+} from '../../redux/actions';
 import { challengeSelector } from '../../redux/selectors';
 import { Button, Col, Image, Row } from 'react-bootstrap';
 
 const transitionTimeout = 1000;
 const mapStateToProps = createSelector(
   challengeSelector,
-  state => state.challengesApp.currentStep,
-  state => state.challengesApp.previousStep,
-  ({ challenge }, currentStep, previousStep) => ({
-    challenge,
-    currentStep,
-    previousStep,
-    numOfSteps:
-      Array.isArray(challenge.description) ?
-      challenge.description.length :
-      0,
-    isGoingForward: currentStep > previousStep
+  state => state.challengesApp.currentIndex,
+  state => state.challengesApp.previousIndex,
+  state => state.challengesApp.isActionCompleted,
+  (
+    {
+      challenge: { description = [] }
+    },
+    currentIndex,
+    previousIndex,
+    isActionCompleted
+  ) => ({
+    currentIndex,
+    isActionCompleted,
+    step: description[currentIndex],
+    steps: description,
+    numOfSteps: description.length,
+    isGoingForward: currentIndex > previousIndex
   })
 );
 
 const dispatchActions = {
   goToStep,
+  completeAction,
   submitChallenge
 };
 
@@ -38,36 +49,37 @@ export class StepChallenge extends PureComponent {
     this.handleBackClick = this.handleBackClick.bind(this);
   }
   static displayName = 'StepChallenge';
-  static defaultProps = {
-    currentStep: 0,
-    previousStep: -1
-  };
-
   static propTypes = {
-    challenge: PropTypes.object,
-    currentStep: PropTypes.number,
-    previousStep: PropTypes.number,
+    currentIndex: PropTypes.number,
+    step: PropTypes.array,
+    steps: PropTypes.array,
+    isActionCompleted: PropTypes.bool,
     isGoingForward: PropTypes.bool,
+    numOfSteps: PropTypes.number,
     goToStep: PropTypes.func,
-    submitChallenge: PropTypes.func,
-    numOfSteps: PropTypes.number
+    completeAction: PropTypes.func,
+    submitChallenge: PropTypes.func
   };
 
   handleNextClick() {
-    const { numOfSteps, currentStep, submitChallenge, goToStep } = this.props;
-    const isLastStep = currentStep + 1 >= numOfSteps;
+    const { numOfSteps, currentIndex, submitChallenge, goToStep } = this.props;
+    const isLastStep = currentIndex + 1 >= numOfSteps;
     if (isLastStep) {
       return submitChallenge();
     }
-    return goToStep(currentStep + 1);
+    return goToStep(currentIndex + 1);
   }
 
   handleBackClick() {
-    const { currentStep, goToStep } = this.props;
-    goToStep(currentStep - 1);
+    const { currentIndex, goToStep } = this.props;
+    goToStep(currentIndex - 1);
   }
 
-  renderActionButton(action) {
+  renderActionButton(action, completeAction) {
+    const isApiAction = action === '#';
+    const buttonCopy = isApiAction ?
+      'Confirm' :
+      'Open link in new tab ';
     if (!action) {
       return null;
     }
@@ -78,9 +90,10 @@ export class StepChallenge extends PureComponent {
           bsSize='large'
           bsStyle='primary'
           href={ action }
+          onClick={ completeAction }
           target='_blank'
           >
-          Open link in new tab (this unlocks the next step)
+          { buttonCopy }  (this unlocks the next step)
         </Button>
         <div className='spacer' />
       </div>
@@ -121,6 +134,7 @@ export class StepChallenge extends PureComponent {
         bsSize='large'
         bsStyle='primary'
         className={ btnClass }
+        disabled={ hasAction && !isCompleted }
         onClick={ this.handleNextClick }
         >
         { isLastStep ? 'Finish challenge' : 'Go to my next step'}
@@ -128,7 +142,13 @@ export class StepChallenge extends PureComponent {
     );
   }
 
-  renderStep(step, currentStep, numOfSteps) {
+  renderStep({
+    step,
+    currentIndex,
+    numOfSteps,
+    isActionCompleted,
+    completeAction
+  }) {
     if (!Array.isArray(step)) {
       return null;
     }
@@ -162,21 +182,21 @@ export class StepChallenge extends PureComponent {
         </Row>
         <div className='spacer' />
         <div className='challenge-button-block'>
-          { this.renderActionButton(action) }
-          { this.renderBackButton(currentStep) }
+          { this.renderActionButton(action, completeAction) }
+          { this.renderBackButton(currentIndex) }
           <Col
             className='challenge-step-counter large-p text-center'
             sm={ 4 }
             xs={ 12 }
             >
-            ( { currentStep + 1 } / { numOfSteps })
+            ( { currentIndex + 1 } / { numOfSteps })
           </Col>
           {
             this.renderNextButton(
               !!action,
-              currentStep,
+              currentIndex,
               numOfSteps,
-              true
+              isActionCompleted
             )
           }
         </div>
@@ -202,16 +222,9 @@ export class StepChallenge extends PureComponent {
   }
 
   render() {
-    const {
-      numOfSteps,
-      challenge,
-      currentStep,
-      isGoingForward
-    } = this.props;
-    const step = challenge.description[currentStep];
+    const { steps, isGoingForward } = this.props;
     const transitionName = 'challenge-step-' +
       (isGoingForward ? 'forward' : 'backward');
-
     return (
       <Col
         md={ 8 }
@@ -222,10 +235,10 @@ export class StepChallenge extends PureComponent {
           transitionLeaveTimeout={ transitionTimeout }
           transitionName={ transitionName }
           >
-          { this.renderStep(step, currentStep, numOfSteps) }
+          { this.renderStep(this.props) }
         </ReactTransitionReplace>
         <div className='hidden'>
-          { this.renderImages(challenge.description) }
+          { this.renderImages(steps) }
         </div>
         <div className='spacer' />
       </Col>
