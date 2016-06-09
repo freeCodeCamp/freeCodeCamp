@@ -6,7 +6,7 @@ import types from './types';
 
 // step
 export const goToStep = createAction(types.goToStep);
-
+export const completeAction = createAction(types.completeAction);
 
 // challenges
 export const fetchChallenge = createAction(types.fetchChallenge);
