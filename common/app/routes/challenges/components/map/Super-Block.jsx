@@ -21,7 +21,8 @@ export default class SuperBlock extends PureComponent {
       return (
         <Block
           key={ block.title }
-          { ...block } />
+          { ...block }
+        />
       );
     });
   }
@@ -35,7 +36,8 @@ export default class SuperBlock extends PureComponent {
         expanded={ true }
         header={ <h2><FA name='caret-right' />{ title }</h2> }
         id={ title }
-        key={ title }>
+        key={ title }
+        >
         {
           message ?
             <div className='challenge-block-description'>
@@ -44,7 +46,8 @@ export default class SuperBlock extends PureComponent {
             ''
         }
         <div
-          className='map-accordion-block'>
+          className='map-accordion-block'
+          >
           { this.renderBlocks(blocks) }
         </div>
       </Panel>

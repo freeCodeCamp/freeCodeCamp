@@ -55,6 +55,10 @@ export default handleActions(
     [types.toggleMainChat]: state => ({
       ...state,
       isMainChatOpen: !state.isMainChatOpen
+    }),
+    [types.delayedRedirect]: (state, { payload }) => ({
+      ...state,
+      delayedRedirect: payload
     })
   },
   initialState

@@ -1,6 +1,7 @@
 import { Observable } from 'rx';
 import { Schema, valuesOf, arrayOf, normalize } from 'normalizr';
 import { nameify, dasherize, unDasherize } from '../utils';
+import { dashify } from '../../common/utils';
 import debug from 'debug';
 
 const isDev = process.env.NODE_ENV !== 'production';
@@ -118,6 +119,41 @@ function getFirstChallenge(challengeMap$) {
     });
 }
 
+// this is a hard search
+// falls back to soft search
+function getChallengeAndBlock(
+  challengeDashedName,
+  blockDashedName,
+  challengeMap$
+) {
+  return challengeMap$
+    .flatMap(({ entities }) => {
+      const block = entities.block[blockDashedName];
+      const challenge = entities.challenge[challengeDashedName];
+      if (
+        !block ||
+        !challenge ||
+        !shouldNotFilterComingSoon(challenge)
+      ) {
+        return getChallengeByDashedName(challengeDashedName, challengeMap$);
+      }
+      return Observable.just({
+        redirect: block.dashedName !== blockDashedName ?
+          `/challenges/${block.dashedName}/${challenge.dashedName}` :
+          false,
+        entities: {
+          challenge: {
+            [challenge.dashedName]: challenge
+          }
+        },
+        result: {
+          block: block.dashedName,
+          challenge: challenge.dashedName
+        }
+      });
+    });
+}
+
 function getChallengeByDashedName(dashedName, challengeMap$) {
   const challengeName = unDasherize(dashedName)
     .replace(challengesRegex, '');
@@ -142,8 +178,13 @@ function getChallengeByDashedName(dashedName, challengeMap$) {
       return getFirstChallenge(challengeMap$);
     })
     .map(challenge => ({
+      redirect:
+        `/challenges/${dashify(challenge.block)}/${challenge.dashedName}`,
       entities: { challenge: { [challenge.dashedName]: challenge } },
-      result: challenge.dashedName
+      result: {
+        challenge: challenge.dashedName,
+        block: dashify(challenge.block)
+      }
     }));
 }
 
@@ -152,7 +193,11 @@ export default function mapService(app) {
   const challengeMap$ = cachedMap(Block);
   return {
     name: 'map',
-    read: (req, resource, { dashedName } = {}, config, cb) => {
+    read: (req, resource, { block, dashedName } = {}, config, cb) => {
+      if (block && dashedName) {
+        return getChallengeAndBlock(dashedName, block, challengeMap$)
+          .subscribe(challenge => cb(null, challenge), cb);
+      }
       if (dashedName) {
         return getChallengeByDashedName(dashedName, challengeMap$)
           .subscribe(challenge => cb(null, challenge), cb);

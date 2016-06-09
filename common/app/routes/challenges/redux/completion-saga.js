@@ -1,20 +1,13 @@
 import { Observable } from 'rx';
-import { push } from 'react-router-redux';
 import types from './types';
-import {
-  showChallengeComplete,
-  moveToNextChallenge,
-  updateCurrentChallenge
-} from './actions';
+import { showChallengeComplete, moveToNextChallenge } from './actions';
 import {
   createErrorObservable,
   makeToast,
   updatePoints
 } from '../../../redux/actions';
 
-import { getNextChallenge } from '../utils';
 import { challengeSelector } from './selectors';
-
 import { backEndProject } from '../../../utils/challengeTypes';
 import { randomCompliment } from '../../../utils/get-words';
 import { postJSON$ } from '../../../../utils/ajax-stream';
@@ -179,25 +172,13 @@ export default function completionSaga(actions$, getState) {
   return actions$
     .filter(({ type }) => (
       type === types.checkChallenge ||
-      type === types.submitChallenge ||
-      type === types.moveToNextChallenge
+      type === types.submitChallenge
     ))
     .flatMap(({ type, payload }) => {
       const state = getState();
       const { submitType } = challengeSelector(state);
       const submitter = submitTypes[submitType] ||
         (() => Observable.just(null));
-      if (type === types.moveToNextChallenge) {
-        const nextChallenge = getNextChallenge(
-          state.challengesApp.challenge,
-          state.entities,
-          state.challengesApp.superBlocks
-        );
-        return Observable.of(
-          updateCurrentChallenge(nextChallenge),
-          push(`/challenges/${nextChallenge.dashedName}`)
-        );
-      }
       return submitter(type, state, payload);
     });
 }

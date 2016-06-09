@@ -1,7 +1,10 @@
 import { Observable } from 'rx';
 import { fetchChallenge, fetchChallenges } from './types';
 import {
-  createErrorObserable,
+  delayedRedirect,
+  createErrorObserable
+} from '../../../redux/actions';
+import {
   fetchChallengeCompleted,
   fetchChallengesCompleted,
   updateCurrentChallenge
@@ -13,17 +16,18 @@ export default function fetchChallengesSaga(action$, getState, { services }) {
       type === fetchChallenges ||
       type === fetchChallenge
     ))
-    .flatMap(({ type, payload })=> {
+    .flatMap(({ type, payload: { dashedName, block } = {} }) => {
       const options = { service: 'map' };
       if (type === fetchChallenge) {
-        options.params = { dashedName: payload };
+        options.params = { dashedName, block };
       }
       return services.readService$(options)
-        .flatMap(({ entities, result } = {}) => {
+        .flatMap(({ entities, result, redirect } = {}) => {
           if (type === fetchChallenge) {
             return Observable.of(
               fetchChallengeCompleted(entities, result),
-              updateCurrentChallenge(entities.challenge[result])
+              updateCurrentChallenge(entities.challenge[result.challenge]),
+              redirect ? delayedRedirect(redirect) : null
             );
           }
           return Observable.just(fetchChallengesCompleted(entities, result));

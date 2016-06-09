@@ -9,7 +9,10 @@ export const goToStep = createAction(types.goToStep);
 export const completeAction = createAction(types.completeAction);
 
 // challenges
-export const fetchChallenge = createAction(types.fetchChallenge);
+export const fetchChallenge = createAction(
+  types.fetchChallenge,
+  (dashedName, block) => ({ dashedName, block })
+);
 export const fetchChallengeCompleted = createAction(
   types.fetchChallengeCompleted,
   (_, challenge) => challenge,

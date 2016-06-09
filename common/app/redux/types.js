@@ -11,6 +11,7 @@ export default createTypes([
   'handleError',
   // used to hit the server
   'hardGoTo',
+  'delayedRedirect',
 
   'initWindowHeight',
   'updateWindowHeight',

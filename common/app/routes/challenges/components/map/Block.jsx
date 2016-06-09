@@ -13,12 +13,13 @@ export class Block extends PureComponent {
   static displayName = 'Block';
   static propTypes = {
     title: PropTypes.string,
+    dashedName: PropTypes.string,
     time: PropTypes.string,
     challenges: PropTypes.array,
     updateCurrentChallenge: PropTypes.func
   };
 
-  renderChallenges(challenges, updateCurrentChallenge) {
+  renderChallenges(blockName, challenges, updateCurrentChallenge) {
     if (!Array.isArray(challenges) || !challenges.length) {
       return <div>No Challenges Found</div>;
     }
@@ -37,7 +38,8 @@ export class Block extends PureComponent {
         return (
           <p
             className={ challengeClassName }
-            key={ title }>
+            key={ title }
+            >
             { title }
             {
               isRequired ?
@@ -50,10 +52,12 @@ export class Block extends PureComponent {
       return (
         <p
           className={ challengeClassName }
-          key={ title }>
-          <Link to={ `/challenges/${dashedName}` }>
+          key={ title }
+          >
+          <Link to={ `/challenges/${blockName}/${dashedName}` }>
             <span
-              onClick={ () => updateCurrentChallenge(challenge) }>
+              onClick={ () => updateCurrentChallenge(challenge) }
+              >
               { title }
               <span className='sr-only'>complete</span>
               {
@@ -69,7 +73,13 @@ export class Block extends PureComponent {
   }
 
   render() {
-    const { title, time, challenges, updateCurrentChallenge } = this.props;
+    const {
+      title,
+      time,
+      challenges,
+      updateCurrentChallenge,
+      dashedName
+    } = this.props;
     return (
       <Panel
         bsClass='map-accordion-panel-nested'
@@ -82,8 +92,11 @@ export class Block extends PureComponent {
           </div>
         }
         id={ title }
-        key={ title }>
-        { this.renderChallenges(challenges, updateCurrentChallenge) }
+        key={ title }
+        >
+        {
+          this.renderChallenges(dashedName, challenges, updateCurrentChallenge)
+        }
       </Panel>
     );
   }

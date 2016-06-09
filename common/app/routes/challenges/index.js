@@ -12,6 +12,11 @@ export const challenges = {
   }
 };
 
+export const modernChallenges = {
+  path: 'challenges/:block/:dashedName',
+  component: Show
+};
+
 export const map = {
   path: 'map',
   component: ShowMap
