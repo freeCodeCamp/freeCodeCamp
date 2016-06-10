@@ -53,8 +53,8 @@ function cacheScript({ src } = {}) {
 
 const frameRunner$ = cacheScript({ src: '/js/frame-runner.js' });
 
-const htmlCatch = '\n<!-- -->';
-const jsCatch = '\n;/* */';
+const htmlCatch = '\n<!--fcc-->';
+const jsCatch = '\n;/*fcc*/';
 
 export default function executeChallengeSaga(action$, getState) {
   return action$
