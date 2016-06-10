@@ -154,8 +154,8 @@ function submitSimpleChallenge(type, state) {
       title: randomCompliment(),
       message: isSignedIn ? ' Saving...' : 'Moving on to next challenge.',
       type: 'success'
-    })
-    // moveToNextChallenge()
+    }),
+    moveToNextChallenge()
   );
   return Observable.merge(saveChallenge$, challengeCompleted$);
 }

@@ -18,6 +18,7 @@ export const fetchChallengeCompleted = createAction(
   (_, challenge) => challenge,
   entities => ({ entities })
 );
+export const resetUi = createAction(types.resetUi);
 
 export const fetchChallenges = createAction(types.fetchChallenges);
 export const fetchChallengesCompleted = createAction(

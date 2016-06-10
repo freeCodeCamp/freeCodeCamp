@@ -1,6 +1,5 @@
 import { compose } from 'redux';
 import { bonfire, html, js } from '../../utils/challengeTypes';
-import { dashify } from '../../../utils';
 
 export function encodeScriptTags(value) {
   return value
@@ -103,7 +102,7 @@ export function getNextChallenge(
   // find next challenge in block
   const currentChallenge = challengeMap[current];
   if (currentChallenge) {
-    const block = blockMap[dashify(currentChallenge.block)];
+    const block = blockMap[currentChallenge.block];
     const index = block.challenges.indexOf(currentChallenge.dashedName);
     return challengeMap[block.challenges[index + 1]];
   }
