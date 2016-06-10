@@ -81,7 +81,7 @@ Observable.combineLatest(
             challenge.helpRoom = helpRoom;
             challenge.order = order;
             challenge.suborder = index + 1;
-            challenge.block = blockName;
+            challenge.block = dasherize(blockName);
             challenge.blockId = block.id;
             challenge.isBeta = challenge.isBeta || isBeta;
             challenge.isComingSoon = challenge.isComingSoon || isComingSoon;
