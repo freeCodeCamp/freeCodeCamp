@@ -6,6 +6,7 @@
     "url": "https://github.com/freecodecamp/freecodecamp.git"
   },
   "scripts": {
+    "postinstall": "./node_modules/bower/bin/bower install",
     "only-once": "npm run create-rev && echo '\n\nseeding database\n\n' && node seed && echo '\n\nSeeding Completed\n\n'",
     "create-rev": "node -e \"console.log('\\n\\ncreating manifest\\n\\n'); require('fs').writeFileSync('server/rev-manifest.json', '{}');\"",
     "build": "NODE_ENV=production gulp build -p",
@@ -38,6 +39,7 @@
     "babel-preset-stage-0": "^6.3.13",
     "babel-register": "^6.3.0",
     "body-parser": "^1.13.2",
+    "bower": "^1.7.9",
     "cheerio": "~0.20.0",
     "classnames": "^2.1.2",
     "compression": "^1.6.0",
