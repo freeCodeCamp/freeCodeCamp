@@ -1,7 +1,6 @@
 import { Observable } from 'rx';
 import { Schema, valuesOf, arrayOf, normalize } from 'normalizr';
 import { nameify, dasherize, unDasherize } from '../utils';
-import { dashify } from '../../common/utils';
 import debug from 'debug';
 
 const isDev = process.env.NODE_ENV !== 'production';
@@ -179,11 +178,11 @@ function getChallengeByDashedName(dashedName, challengeMap$) {
     })
     .map(challenge => ({
       redirect:
-        `/challenges/${dashify(challenge.block)}/${challenge.dashedName}`,
+        `/challenges/${challenge.block}/${challenge.dashedName}`,
       entities: { challenge: { [challenge.dashedName]: challenge } },
       result: {
         challenge: challenge.dashedName,
-        block: dashify(challenge.block)
+        block: challenge.block
       }
     }));
 }
