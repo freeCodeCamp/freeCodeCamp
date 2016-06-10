@@ -15,7 +15,12 @@ const initialUiState = {
   currentIndex: 0,
   previousIndex: -1,
   isActionCompleted: false,
-  isSubmitting: true
+  isSubmitting: true,
+  output: `/**
+  * Any console.log()
+  * statements will appear in
+  * here console.
+  */`
 };
 const initialState = {
   id: '',

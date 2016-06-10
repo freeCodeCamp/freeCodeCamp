@@ -22,29 +22,34 @@ export class ToolPanel extends PureComponent {
           block={ true }
           bsStyle='primary'
           className='btn-big'
-          onClick={ executeChallenge }>
+          onClick={ executeChallenge }
+          >
           Run tests (ctrl + enter)
         </Button>
         <div className='button-spacer' />
         <ButtonGroup
           className='input-group'
-          justified={ true }>
+          justified={ true }
+          >
           <Button
             bsSize='large'
             bsStyle='primary'
-            componentClass='label'>
+            componentClass='label'
+            >
             Reset
           </Button>
           <Button
             bsSize='large'
             bsStyle='primary'
-            componentClass='label'>
+            componentClass='label'
+            >
             Help
           </Button>
           <Button
             bsSize='large'
             bsStyle='primary'
-            componentClass='label'>
+            componentClass='label'
+            >
             Bug
           </Button>
         </ButtonGroup>

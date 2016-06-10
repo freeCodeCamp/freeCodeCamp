@@ -91,20 +91,80 @@ export function getFirstChallenge(
   ];
 }
 
-export function getNextChallenge(
-  current,
-  entites,
-  superBlocks
-) {
+export function getNextChallenge(current, entites) {
   const { challenge: challengeMap, block: blockMap } = entites;
   // find current challenge
   // find current block
   // find next challenge in block
   const currentChallenge = challengeMap[current];
-  if (currentChallenge) {
-    const block = blockMap[currentChallenge.block];
-    const index = block.challenges.indexOf(currentChallenge.dashedName);
-    return challengeMap[block.challenges[index + 1]];
+  if (!currentChallenge) {
+    return null;
   }
-  return getFirstChallenge(entites, superBlocks);
+  const block = blockMap[currentChallenge.block];
+  const index = block.challenges.indexOf(currentChallenge.dashedName);
+  return challengeMap[block.challenges[index + 1]];
+}
+
+export function getFirstChallengeOfNextBlock(current, entites) {
+  const {
+    challenge: challengeMap,
+    block: blockMap,
+    superBlock: SuperBlockMap
+  } = entites;
+  const currentChallenge = challengeMap[current];
+  if (!currentChallenge) {
+    return null;
+  }
+  const block = blockMap[currentChallenge.block];
+  if (!block) {
+    return null;
+  }
+  const superBlock = SuperBlockMap[block.superBlock];
+  const index = superBlock.blocks.indexOf(block.dashedName);
+  const newBlock = superBlock.blocks[ index + 1 ];
+  if (!newBlock) {
+    return null;
+  }
+  return challengeMap[newBlock.challenges[0]];
+}
+
+export function getFirstChallengeOfNextSuperBlock(
+  current,
+  entites,
+  superBlocks
+) {
+  const {
+    challenge: challengeMap,
+    block: blockMap,
+    superBlock: SuperBlockMap
+  } = entites;
+  const currentChallenge = challengeMap[current];
+  if (!currentChallenge) {
+    return null;
+  }
+  const block = blockMap[currentChallenge.block];
+  if (!block) {
+    return null;
+  }
+  const superBlock = SuperBlockMap[block.superBlock];
+  const index = superBlocks.indexOf(superBlock.dashedName);
+  const newSuperBlock = SuperBlockMap[superBlocks[ index + 1]];
+  if (!newSuperBlock) {
+    return null;
+  }
+  const newBlock = blockMap[newSuperBlock.blocks[0]];
+  return challengeMap[newBlock.challenges[0]];
+}
+
+export function getCurrentBlockName(current, entities) {
+  const { challenge: challengeMap } = entities;
+  const challenge = challengeMap[current];
+  return challenge.block;
+}
+
+export function getCurrentSuperBlockName(current, entities) {
+  const { challenge: challengeMap, block: blockMap } = entities;
+  const challenge = challengeMap[current];
+  const block = blockMap[challenge.block];
+  return block.superBlock;
 }
