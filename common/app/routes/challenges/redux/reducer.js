@@ -11,21 +11,24 @@ import {
   getFileKey
 } from '../utils';
 
-const initialState = {
-  id: '',
-  challenge: '',
-  legacyKey: '',
-  // step
+const initialUiState = {
   currentIndex: 0,
   previousIndex: -1,
   isActionCompleted: false,
+  isSubmitting: true
+};
+const initialState = {
+  id: '',
+  challenge: '',
+  // old code storage key
+  legacyKey: '',
+  files: {},
   // map
   filter: '',
   superBlocks: [],
-  // modern
-  files: {},
   // misc
-  toast: 0
+  toast: 0,
+  ...initialUiState
 };
 
 const mainReducer = handleActions(
@@ -59,6 +62,10 @@ const mainReducer = handleActions(
       ...state,
       isSubmitting: true
     }),
+    [types.resetUi]: (state) => ({
+      ...state,
+      ...initialUiState
+    }),
 
     // map
     [types.updateFilter]: (state, { payload = ''}) => ({
@@ -75,7 +82,6 @@ const mainReducer = handleActions(
     }),
 
     // step
-    [types.resetStep]: () => initialState,
     [types.goToStep]: (state, { payload: step = 0 }) => ({
       ...state,
       currentIndex: step,
@@ -128,6 +134,7 @@ const filesReducer = handleActions(
       ) {
         return {};
       }
+      // classic challenge to modern format
       const preFile = getPreFile(challenge);
       return {
         ...state,
