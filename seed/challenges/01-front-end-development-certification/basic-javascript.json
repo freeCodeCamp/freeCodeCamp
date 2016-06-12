@@ -3280,7 +3280,7 @@
         "Order is important in <code>if</code>, <code>else if</code> statements.",
         "The loop is executed from top to bottom so you will want to be careful of what statement comes first.",
         "Take these two functions as an example.",
-        "Heres the first:",
+        "Here's the first:",
         "<blockquote>function foo(x) {<br>  if (x < 1) {<br>    return \"Less than one\";<br>  } else if (x < 2) {<br>    return \"Less than two\";<br>  } else {<br>    return \"Greater than or equal to two\";<br>  }<br>}</blockquote>",
         "And the second just switches the order of the statements:",
         "<blockquote>function bar(x) {<br>  if (x < 2) {<br>    return \"Less than two\";<br>  } else if (x < 1) {<br>    return \"Less than one\";<br>  } else {<br>    return \"Greater than or equal to two\";<br>  }<br>}</blockquote>",
