@@ -168,3 +168,21 @@ export function getCurrentSuperBlockName(current, entities) {
   const block = blockMap[challenge.block];
   return block.superBlock;
 }
+
+// gets new mouse position
+// getMouse(
+//   e: MouseEvent|TouchEvent,
+//   [ dx: Number, dy: Number ]
+// ) => [ Number, Number ]
+export function getMouse(e, [dx, dy]) {
+  let { pageX, pageY, touches, changedTouches } = e;
+
+  // touches can be empty on touchend
+  if (touches || changedTouches) {
+    e.preventDefault();
+    // these re-assigns the values of pageX, pageY from touches
+    ({ pageX, pageY } = touches[0] || changedTouches[0]);
+  }
+
+  return [pageX - dx, pageY - dy];
+}

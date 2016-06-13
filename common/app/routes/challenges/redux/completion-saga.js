@@ -12,6 +12,9 @@ import { backEndProject } from '../../../utils/challengeTypes';
 import { randomCompliment } from '../../../utils/get-words';
 import { postJSON$ } from '../../../../utils/ajax-stream';
 
+// NOTE(@BerkeleyTrue): this file could benefit from some refactoring.
+// lots of repeat code
+
 function completedChallenge(state) {
   let body;
   let isSignedIn = false;
@@ -163,6 +166,7 @@ function submitSimpleChallenge(type, state) {
 const submitTypes = {
   tests: submitModern,
   step: submitSimpleChallenge,
+  video: submitSimpleChallenge,
   'project.frontEnd': submitProject,
   'project.backEnd': submitProject,
   'project.simple': submitSimpleChallenge

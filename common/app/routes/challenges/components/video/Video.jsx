@@ -5,26 +5,27 @@ import { createSelector } from 'reselect';
 
 import Lecture from './Lecture.jsx';
 import Questions from './Questions.jsx';
-import { resetHike } from '../redux/actions';
-import { updateTitle } from '../../../redux/actions';
-import { getCurrentHike } from '../redux/selectors';
+import { resetUi } from '../../redux/actions';
+import { updateTitle } from '../../../../redux/actions';
+import { challengeSelector } from '../../redux/selectors';
 
+const bindableActions = { resetUi, updateTitle };
 const mapStateToProps = createSelector(
-  getCurrentHike,
-  state => state.hikesApp.shouldShowQuestions,
-  (currentHike, shouldShowQuestions) => ({
-    title: currentHike ? currentHike.title : '',
+  challengeSelector,
+  state => state.challengesApp.shouldShowQuestions,
+  ({ challenge: { title } }, shouldShowQuestions) => ({
+    title,
     shouldShowQuestions
   })
 );
 
 // export plain component for testing
-export class Hike extends React.Component {
-  static displayName = 'Hike';
+export class Video extends React.Component {
+  static displayName = 'Video';
 
   static propTypes = {
     // actions
-    resetHike: PropTypes.func,
+    resetUi: PropTypes.func,
     // ui
     title: PropTypes.string,
     params: PropTypes.object,
@@ -38,12 +39,12 @@ export class Hike extends React.Component {
   }
 
   componentWillUnmount() {
-    this.props.resetHike();
+    this.props.resetUi();
   }
 
-  componentWillReceiveProps({ params: { dashedName } }) {
-    if (this.props.params.dashedName !== dashedName) {
-      this.props.resetHike();
+  componentWillReceiveProps({ title }) {
+    if (this.props.title !== title) {
+      this.props.resetUi();
     }
   }
 
@@ -69,7 +70,8 @@ export class Hike extends React.Component {
         <div className='spacer' />
         <section
           className={ 'text-center' }
-          title={ title }>
+          title={ title }
+          >
           { this.renderBody(shouldShowQuestions) }
         </section>
       </Col>
@@ -78,4 +80,7 @@ export class Hike extends React.Component {
 }
 
 // export redux aware component
-export default connect(mapStateToProps, { resetHike, updateTitle })(Hike);
+export default connect(
+  mapStateToProps,
+  bindableActions
+)(Video);
