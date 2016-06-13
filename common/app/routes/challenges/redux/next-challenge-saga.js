@@ -8,7 +8,7 @@ import {
   getFirstChallengeOfNextBlock,
   getFirstChallengeOfNextSuperBlock
 } from '../utils';
-import { getRandomVerb } from '../../../utils/get-words';
+import { randomVerb } from '../../../utils/get-words';
 
 export default function nextChallengeSaga(actions$, getState) {
   return actions$
@@ -48,7 +48,7 @@ export default function nextChallengeSaga(actions$, getState) {
         }
         message += ' Your next challenge has arrived.';
         const toast = {
-          // title: isNewSuperBlock || isNewBlock ? getRandomVerb() : null,
+          // title: isNewSuperBlock || isNewBlock ? randomVerb() : null,
           message
         };
         */
@@ -56,7 +56,7 @@ export default function nextChallengeSaga(actions$, getState) {
           updateCurrentChallenge(nextChallenge),
           resetUi(),
           makeToast({
-            title: getRandomVerb(),
+            title: randomVerb(),
             message: 'Your next challenge has arrived.'
           }),
           push(`/challenges/${nextChallenge.block}/${nextChallenge.dashedName}`)

@@ -9,8 +9,8 @@ import {
   moveQuestion,
   releaseQuestion,
   grabQuestion
-} from '../redux/actions';
-import { getCurrentHike } from '../redux/selectors';
+} from '../../redux/actions';
+import { challengeSelector } from '../../redux/selectors';
 
 const answerThreshold = 100;
 const springProperties = { stiffness: 120, damping: 10 };
@@ -22,34 +22,30 @@ const actionsToBind = {
 };
 
 const mapStateToProps = createSelector(
-  getCurrentHike,
-  state => state.hikesApp,
+  challengeSelector,
+  state => state.challengesApp,
   state => state.app.isSignedIn,
-  (currentHike, ui, isSignedIn) => {
-    const {
+  (
+    { challenge: { tests = [ ] }},
+    {
       currentQuestion = 1,
       mouse = [ 0, 0 ],
       delta = [ 0, 0 ],
       isCorrect = false,
       isPressed = false,
       shouldShakeQuestion = false
-    } = ui;
-
-    const {
-      tests = []
-    } = currentHike;
-
-    return {
-      tests,
-      currentQuestion,
-      isCorrect,
-      mouse,
-      delta,
-      isPressed,
-      shouldShakeQuestion,
-      isSignedIn
-    };
-  }
+    },
+    isSignedIn
+  ) => ({
+    tests,
+    currentQuestion,
+    isCorrect,
+    mouse,
+    delta,
+    isPressed,
+    shouldShakeQuestion,
+    isSignedIn
+  })
 );
 
 class Question extends React.Component {
@@ -133,7 +129,8 @@ class Question extends React.Component {
           onTouchEnd={ mouseUp }
           onTouchMove={ this.handleMouseMove(isPressed, this.props) }
           onTouchStart={ grabQuestion }
-          style={ style }>
+          style={ style }
+          >
           <h4>Question { number }</h4>
           <p>{ question }</p>
         </article>
@@ -162,7 +159,8 @@ class Question extends React.Component {
       <Col
         onMouseUp={ e => this.handleMouseUp(e, answer, info) }
         xs={ 8 }
-        xsOffset={ 2 }>
+        xsOffset={ 2 }
+        >
         <Row>
           <Motion style={{ x: spring(xPosition, springProperties) }}>
             { questionElement }
@@ -174,14 +172,16 @@ class Question extends React.Component {
               bsSize='large'
               bsStyle='primary'
               className='pull-left'
-              onClick={ this.onAnswer(answer, false, info) }>
+              onClick={ this.onAnswer(answer, false, info) }
+              >
               false
             </Button>
             <Button
               bsSize='large'
               bsStyle='primary'
               className='pull-right'
-              onClick={ this.onAnswer(answer, true, info) }>
+              onClick={ this.onAnswer(answer, true, info) }
+              >
               true
             </Button>
           </div>

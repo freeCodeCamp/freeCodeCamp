@@ -12,15 +12,30 @@ import {
 } from '../utils';
 
 const initialUiState = {
+  // step index tracing
   currentIndex: 0,
   previousIndex: -1,
+  // step action
   isActionCompleted: false,
-  isSubmitting: true,
+  // project is ready to submit
+  isSubmitting: false,
   output: `/**
   * Any console.log()
   * statements will appear in
   * here console.
-  */`
+  */`,
+  // video
+  // 1 indexed
+  currentQuestion: 1,
+  // [ xPosition, yPosition ]
+  mouse: [ 0, 0 ],
+  // change in mouse position since pressed
+  // [ xDelta, yDelta ]
+  delta: [ 0, 0 ],
+  isPressed: false,
+  isCorrect: false,
+  shouldShakeQuestion: false,
+  shouldShowQuestions: false
 };
 const initialState = {
   id: '',
@@ -107,6 +122,49 @@ const mainReducer = handleActions(
     [types.updateOutput]: (state, { payload: output }) => ({
       ...state,
       output: (state.output || '') + output
+    }),
+    // video
+    [types.toggleQuestionView]: state => ({
+      ...state,
+      shouldShowQuestions: !state.shouldShowQuestions,
+      currentQuestion: 1
+    }),
+
+    [types.grabQuestion]: (state, { payload: { delta, mouse } }) => ({
+      ...state,
+      isPressed: true,
+      delta,
+      mouse
+    }),
+
+    [types.releaseQuestion]: state => ({
+      ...state,
+      isPressed: false,
+      mouse: [ 0, 0 ]
+    }),
+
+    [types.moveQuestion]: (state, { payload: mouse }) => ({ ...state, mouse }),
+    [types.startShake]: state => ({ ...state, shouldShakeQuestion: true }),
+    [types.endShake]: state => ({ ...state, shouldShakeQuestion: false }),
+
+    [types.primeNextQuestion]: (state, { payload: userAnswer }) => ({
+      ...state,
+      currentQuestion: state.currentQuestion + 1,
+      mouse: [ userAnswer ? 1000 : -1000, 0],
+      isPressed: false
+    }),
+
+    [types.goToNextQuestion]: state => ({
+      ...state,
+      mouse: [ 0, 0 ]
+    }),
+
+    [types.videoCompleted]: (state, { payload: userAnswer } ) => ({
+      ...state,
+      isCorrect: true,
+      isPressed: false,
+      delta: [ 0, 0 ],
+      mouse: [ userAnswer ? 1000 : -1000, 0]
     })
   },
   initialState

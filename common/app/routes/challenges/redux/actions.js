@@ -1,6 +1,6 @@
 import { createAction } from 'redux-actions';
 import { updateContents } from '../../../../utils/polyvinyl';
-import { loggerToStr } from '../utils';
+import { getMouse, loggerToStr } from '../utils';
 
 import types from './types';
 
@@ -79,3 +79,40 @@ export const moveToNextChallenge = createAction(types.moveToNextChallenge);
 export const saveCode = createAction(types.saveCode);
 export const loadCode = createAction(types.loadCode);
 export const savedCodeFound = createAction(types.savedCodeFound);
+
+
+// video challenges
+export const toggleQuestionView = createAction(types.toggleQuestionView);
+export const grabQuestion = createAction(types.grabQuestion, e => {
+  let { pageX, pageY, touches } = e;
+  if (touches) {
+    e.preventDefault();
+    // these re-assigns the values of pageX, pageY from touches
+    ({ pageX, pageY } = touches[0]);
+  }
+  const delta = [pageX, pageY];
+  const mouse = [0, 0];
+
+  return { delta, mouse };
+});
+
+export const releaseQuestion = createAction(types.releaseQuestion);
+export const moveQuestion = createAction(
+  types.moveQuestion,
+  ({ e, delta }) => getMouse(e, delta)
+);
+
+// answer({
+//   e: Event,
+//   answer: Boolean,
+//   userAnswer: Boolean,
+//   info: String,
+//   threshold: Number
+// }) => Action
+export const answerQuestion = createAction(types.answerQuestion);
+
+export const startShake = createAction(types.startShake);
+export const endShake = createAction(types.primeNextQuestion);
+
+export const goToNextQuestion = createAction(types.goToNextQuestion);
+export const videoCompleted = createAction(types.videoCompleted);

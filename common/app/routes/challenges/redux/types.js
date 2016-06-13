@@ -39,5 +39,21 @@ export default createTypes([
   // code storage
   'saveCode',
   'loadCode',
-  'savedCodeFound'
+  'savedCodeFound',
+
+  // video challenges
+  'toggleQuestionView',
+  'grabQuestion',
+  'releaseQuestion',
+  'moveQuestion',
+
+  'answerQuestion',
+
+  'startShake',
+  'endShake',
+
+  'primeNextQuestion',
+  'goToNextQuestion',
+  'transitionVideo',
+  'videoCompleted'
 ], 'challenges');
