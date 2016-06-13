@@ -153,7 +153,7 @@ if (typeof DEBUG === 'undefined') { DEBUG = true; }
       }
 
       if (line.toLowerCase().indexOf('noprotect') !== -1) {
-        disableLoopProtection = true;
+        disableLoopProtection = false;
       }
 
       var index = -1;
@@ -423,7 +423,8 @@ if (typeof DEBUG === 'undefined') { DEBUG = true; }
   };
 
   loopProtect.hit = function hit(line) {
-    var msg = 'Exiting potential infinite loop at line ' + line + '. To disable loop protection: add "// noprotect" to your code';
+    var msg = 'Exiting potential infinite loop at line ' + line + '. Please review your code' +
+    'Beware that if you do have an infinite loop in your code, this will crash your browser';
     if (root.proxyConsole) {
       root.proxyConsole.error(msg);
     } else {
