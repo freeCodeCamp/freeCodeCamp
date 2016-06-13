@@ -95,9 +95,9 @@
       ],
       "MDNlinks": [
         "Global String Object",
-        "String.split()",
-        "Array.reverse()",
-        "Array.join()"
+        "String.prototype.split()",
+        "Array.prototype.reverse()",
+        "Array.prototype.join()"
       ],
       "challengeType": 5,
       "titleEs": "Invierte el texto",
@@ -190,8 +190,8 @@
         "function palindrome(str) {\n  var string = str.toLowerCase().split(/[^A-Za-z0-9]/gi).join('');\n  var aux = string.split('');\n  if (aux.join('') === aux.reverse().join('')){\n    return true;\n  }\n\n  return false;\n}"
       ],
       "MDNlinks": [
-        "String.replace()",
-        "String.toLowerCase()"
+        "String.prototype.replace()",
+        "String.prototype.toLowerCase()"
       ],
       "challengeType": 5,
       "titleEs": "Verifica si es palíndromo",
@@ -232,7 +232,7 @@
         "function findLongestWord(str) {\n  return str.split(' ').sort(function(a, b) { return b.length - a.length;})[0].length;\n}\n\nfindLongestWord('The quick brown fox jumped over the lazy dog');\n"
       ],
       "MDNlinks": [
-        "String.split()",
+        "String.prototype.split()",
         "String.length"
       ],
       "challengeType": 5,
@@ -270,7 +270,7 @@
         "function titleCase(str) {\n  return str.split(' ').map(function(word) {\n    return word.charAt(0).toUpperCase() + word.substring(1).toLowerCase();\n  }).join(' ');\n}\n\ntitleCase(\"I'm a little tea pot\");\n"
       ],
       "MDNlinks": [
-        "String.split()"
+        "String.prototype.split()"
       ],
       "challengeType": 5,
       "titleEs": "Aplica formato de título",
@@ -349,7 +349,7 @@
         "function confirmEnding(str, target) {\n  return str.substring(str.length-target.length) === target;\n};\n"
       ],
       "MDNlinks": [
-        "String.substr()"
+        "String.prototype.substr()"
       ],
       "challengeType": 5,
       "titleEs": "Confirma la terminación",
@@ -427,7 +427,7 @@
         "function truncateString(str, num) {\n  if(str.length > num ) {\n    if(num > 3) {\n      return str.slice(0, num - 3) + '...';\n    } else {\n      return str.slice(0,num) + '...';\n    }\n  } \n  return str;\n}"
       ],
       "MDNlinks": [
-        "String.slice()"
+        "String.prototype.slice()"
       ],
       "challengeType": 5,
       "titleEs": "Trunca una cadena de texto",
@@ -468,8 +468,8 @@
         "function chunkArrayInGroups(arr, size) {\n  var out = [];\n  for (var i = 0; i < arr.length; i+=size) {\n    out.push(arr.slice(i,i+size));\n  }\n  return out;\n}\n\nchunkArrayInGroups(['a', 'b', 'c', 'd'], 2);\n"
       ],
       "MDNlinks": [
-        "Array.push()",
-        "Array.slice()"
+        "Array.prototype.push()",
+        "Array.prototype.slice()"
       ],
       "challengeType": 5,
       "titleEs": "En mil pedazos",
@@ -508,8 +508,8 @@
         "function slasher(arr, howMany) {\n  // it doesn't always pay to be first\n  return arr.slice(howMany);\n}\n\nslasher([1, 2, 3], 2);\n"
       ],
       "MDNlinks": [
-        "Array.slice()",
-        "Array.splice()"
+        "Array.prototype.slice()",
+        "Array.prototype.splice()"
       ],
       "challengeType": 5,
       "titleEs": "Vuélale la cabeza",
@@ -553,7 +553,7 @@
         "function mutation(arr) {\n  var hash = Object.create(null);\n  arr[0].toLowerCase().split('').forEach(function(c) {\n    hash[c] = true;\n  });\n  return !arr[1].toLowerCase().split('').filter(function(c) {\n    return !hash[c];\n  }).length;\n}\n\nmutation(['hello', 'hey']);\n"
       ],
       "MDNlinks": [
-        "String.indexOf()"
+        "String.prototype.indexOf()"
       ],
       "challengeType": 5,
       "titleEs": "Mutaciones",
@@ -594,7 +594,7 @@
       ],
       "MDNlinks": [
         "Boolean Objects",
-        "Array.filter()"
+        "Array.prototype.filter()"
       ],
       "challengeType": 5,
       "titleEs": "Detector de mentiras",
@@ -633,7 +633,7 @@
       ],
       "MDNlinks": [
         "Arguments object",
-        "Array.filter()"
+        "Array.prototype.filter()"
       ],
       "challengeType": 5,
       "titleEs": "Buscar y destruir",
@@ -674,7 +674,7 @@
         "function getIndexToIns(arr, num) {\n  arr = arr.sort(function(a, b){return a-b;});\n  for (var i = 0; i < arr.length; i++) {\n    if (arr[i] >= num)\n      {\n        return i;\n      }\n  }\n  return arr.length;\n}"
       ],
       "MDNlinks": [
-        "Array.sort()"
+        "Array.prototype.sort()"
       ],
       "challengeType": 5,
       "titleEs": "¿Cuál es mi asiento?",

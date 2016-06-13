@@ -99,7 +99,7 @@
       ],
       "type": "bonfire",
       "MDNlinks": [
-        "Array.reduce()",
+        "Array.prototype.reduce()",
         "Symmetric Difference"
       ],
       "challengeType": 5,
@@ -297,8 +297,8 @@
       ],
       "type": "bonfire",
       "MDNlinks": [
-        "String.split()",
-        "String.substr()",
+        "String.prototype.split()",
+        "String.prototype.substr()",
         "parseInt()"
       ],
       "challengeType": 5,
@@ -436,7 +436,7 @@
       ],
       "type": "bonfire",
       "MDNlinks": [
-        "Array.reduce()"
+        "Array.prototype.reduce()"
       ],
       "challengeType": 5,
       "titleEs": "En parejas",
