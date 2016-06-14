@@ -1,5 +1,10 @@
 import { Observable } from 'rx';
-import { fetchChallenge, fetchChallenges } from './types';
+import { challengeSelector } from './selectors';
+import {
+  fetchChallenge,
+  fetchChallenges,
+  replaceChallenge
+} from './types';
 import {
   delayedRedirect,
   createErrorObserable
@@ -14,9 +19,24 @@ export default function fetchChallengesSaga(action$, getState, { services }) {
   return action$
     .filter(({ type }) => (
       type === fetchChallenges ||
-      type === fetchChallenge
+      type === fetchChallenge ||
+      type === replaceChallenge
     ))
     .flatMap(({ type, payload: { dashedName, block } = {} }) => {
+      const state = getState();
+      if (type === replaceChallenge) {
+        const { challenge: newChallenge } = challengeSelector({
+          ...state,
+          challengesApp: {
+            ...state.challengesApp,
+            challenge: dashedName
+          }
+        });
+        if (state.challengesApp.challenge !== newChallenge.dashedName) {
+          return Observable.just(updateCurrentChallenge(newChallenge));
+        }
+        return Observable.just(null);
+      }
       const options = { service: 'map' };
       if (type === fetchChallenge) {
         options.params = { dashedName, block };

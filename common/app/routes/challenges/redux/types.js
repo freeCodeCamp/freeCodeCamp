@@ -11,6 +11,7 @@ export default createTypes([
   'fetchChallengeCompleted',
   'fetchChallengesCompleted',
   'updateCurrentChallenge',
+  'replaceChallenge',
   'resetUi',
 
   // map
