@@ -97,10 +97,20 @@ window.common = (function(global) {
     let editorValue;
     if (common.codeUri.isAlive()) {
       editorValue = common.codeUri.parse();
+    } else if (common.codeStorage.isAlive(common.challengeName)) {
+      var name = common.challengeName;
+      editorValue =  common.codeStorage.getStoredValue(name);
+      $('.flashMessage').append($(`
+        <div class='alert alert-info'>
+          <button class='close' type='button', data-dismiss='alert'>
+            <span class='ion-close-circled' />
+          </Button>
+          <div>We have loaded your partial solution below.
+          Good luck finishing and submitting it.</div>
+        </div>
+      `));
     } else {
-      editorValue = common.codeStorage.isAlive(common.challengeName) ?
-        common.codeStorage.getStoredValue(common.challengeName) :
-        common.seed;
+      editorValue = common.seed;
     }
 
     editor.setValue(common.replaceSafeTags(editorValue));

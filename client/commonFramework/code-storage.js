@@ -37,6 +37,29 @@ window.common = (function(global) {
       return null;
     },
 
+    removeStoredValue(key) {
+      if (
+        !localStorage ||
+        typeof localStorage.getItem !== 'function' ||
+        !key ||
+        typeof key !== 'string'
+      ) {
+        console.log('unable to delete from storage');
+        return;
+      }
+      if (localStorage.getItem(key + 'Val')) {
+        localStorage.removeItem(key + 'Val');
+      } else {
+        for (var i = 0; i <= challengePrefix.length; i++) {
+          item = localStorage.getItem(challengePrefix[i] + key + 'Val');
+          if (item) {
+            localStorage.removeItem(challengePrefix[i] + key + 'Val');
+            return;
+          }
+        }
+      }
+    },
+
     isAlive: function(key) {
       var val = this.getStoredValue(key);
       return val !== 'null' &&

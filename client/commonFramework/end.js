@@ -112,6 +112,7 @@ $(document).ready(function() {
         common.displayTestResults(tests);
         if (solved) {
           common.showCompletion();
+          common.codeStorage.removeStoredValue(challengeName);
         }
         return null;
       },
