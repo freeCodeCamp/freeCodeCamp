@@ -1,0 +1,17 @@
+{
+  "ecmaVersion": 6,
+  "libs": [],
+  "loadEagerly": [
+    "common/app/**/*.js",
+    "common/app/**/*.jsx",
+    "server/**/*.js"
+  ],
+  "plugins": {
+    "commonjs": {},
+    "es_modules": {},
+    "node": {},
+    "node_resolve": {},
+    "complete_strings": {},
+    "node-express": {}
+  }
+}
