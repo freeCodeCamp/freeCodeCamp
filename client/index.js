@@ -3,7 +3,11 @@ import Rx from 'rx';
 import React from 'react';
 import debug from 'debug';
 import { Router } from 'react-router';
-import { routeReducer as routing, syncHistory } from 'react-router-redux';
+import {
+  routerMiddleware,
+  routerReducer as routing,
+  syncHistoryWithStore
+} from 'react-router-redux';
 import { render } from 'redux-epic';
 import { createHistory } from 'history';
 
@@ -33,10 +37,9 @@ initialState.app.csrfToken = csrfToken;
 const serviceOptions = { xhrPath: '/services', context: { _csrf: csrfToken } };
 
 const history = createHistory();
-const routingMiddleware = syncHistory(history);
 
 const devTools = window.devToolsExtension ? window.devToolsExtension() : f => f;
-const shouldRouterListenForReplays = !!window.devToolsExtension;
+const adjustUrlOnReplay = !!window.devToolsExtension;
 
 const sagaOptions = {
   isDev,
@@ -48,19 +51,17 @@ const sagaOptions = {
 
 createApp({
     history,
+    syncHistoryWithStore,
+    syncOptions: { adjustUrlOnReplay },
     serviceOptions,
     initialState,
-    middlewares: [ routingMiddleware ],
+    middlewares: [ routerMiddleware(history) ],
     sagas: [...sagas ],
     sagaOptions,
     reducers: { routing },
     enhancers: [ devTools ]
   })
   .doOnNext(({ store }) => {
-    if (shouldRouterListenForReplays && store) {
-      log('routing middleware listening for replays');
-      routingMiddleware.listenForReplays(store);
-    }
     if (module.hot && typeof module.hot.accept === 'function') {
       module.hot.accept('../common/app', function() {
         saveToColdStorage(store.getState());
