@@ -162,7 +162,9 @@ $(document).ready(function() {
             console.error(err);
             return common.updateOutputDisplay('' + err);
           }
-          common.codeStorage.updateStorage(challengeName, originalCode);
+          common.codeStorage.updateStorage(challengeName, originalCode
+            .replace(/\/\/noprotect/gi, '')
+          );
           common.displayTestResults(tests);
           return null;
         },
