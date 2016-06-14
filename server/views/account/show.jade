@@ -163,12 +163,16 @@ block content
                                   td.col-xs-2.hidden-xs= challenge.completedDate ? challenge.completedDate : 'Not Available'
                                   td.col-xs-2.hidden-xs= challenge.lastUpdated ? challenge.lastUpdated : ''
                                   td.col-xs-2.hidden-xs
-                                    if (challenge.solution)
+                                    if (challenge.solution && challenge.name)
                                         a(href='/challenges/' + removeOldTerms(challenge.name) + '?solution=' + encodeURIComponent(encodeFcc(challenge.solution)), target='_blank') View solution
-                                    else
+                                    else if (challenge.name)
                                         a(href='/challenges/' + removeOldTerms(challenge.name)) View this challenge
-                                  td.col-xs-12.visible-xs
-                                    if (challenge.solution)
-                                        a(href='/challenges/' + removeOldTerms(challenge.name) + '?solution=' + encodeURIComponent(encodeFcc(challenge.solution)), target='_blank')= removeOldTerms(challenge.name)
                                     else
+                                        span N/A
+                                  td.col-xs-12.visible-xs
+                                    if (challenge.solution && challenge.name)
+                                        a(href='/challenges/' + removeOldTerms(challenge.name) + '?solution=' + encodeURIComponent(encodeFcc(challenge.solution)), target='_blank')= removeOldTerms(challenge.name)
+                                    else if (challenge.name)
                                         a(href='/challenges/' + removeOldTerms(challenge.name))= removeOldTerms(challenge.name)
+                                    else
+                                        span N/A
