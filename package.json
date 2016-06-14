@@ -93,7 +93,7 @@
     "react-redux": "^4.0.6",
     "react-router": "^2.0.0",
     "react-router-bootstrap": "~0.23.1",
-    "react-router-redux": "^2.1.0",
+    "react-router-redux": "^4.0.5",
     "react-toastr": "^2.4.0",
     "react-youtube": "^6.1.0",
     "redux": "^3.0.5",
@@ -154,7 +154,7 @@
     "sinon": "^1.17.3",
     "sort-keys": "^1.1.1",
     "tap-spec": "^4.1.1",
-    "tape": "^4.2.2"
+    "tape": "^4.2.2",
     "webpack": "^1.9.12",
     "webpack-dev-server": "^1.14.0",
     "webpack-manifest-plugin": "^1.0.0",
