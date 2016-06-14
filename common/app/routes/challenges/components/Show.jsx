@@ -10,7 +10,11 @@ import Step from './step/Step.jsx';
 import Project from './project/Project.jsx';
 import Video from './video/Video.jsx';
 
-import { fetchChallenge, fetchChallenges } from '../redux/actions';
+import {
+  fetchChallenge,
+  fetchChallenges,
+  replaceChallenge
+} from '../redux/actions';
 import { challengeSelector } from '../redux/selectors';
 
 const views = {
@@ -23,7 +27,8 @@ const views = {
 
 const bindableActions = {
   fetchChallenge,
-  fetchChallenges
+  fetchChallenges,
+  replaceChallenge
 };
 
 const mapStateToProps = createSelector(
@@ -47,13 +52,25 @@ const fetchOptions = {
 
 export class Challenges extends PureComponent {
   static displayName = 'Challenges';
+
   static propTypes = {
     isStep: PropTypes.bool,
-    fetchChallenges: PropTypes.func
+    fetchChallenges: PropTypes.func,
+    replaceChallenge: PropTypes.func,
+    params: PropTypes.object
   };
 
   componentDidMount() {
     this.props.fetchChallenges();
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (this.props.params.dashedName !== nextProps.params.dashedName) {
+      this.props.replaceChallenge({
+        dashedName: nextProps.params.dashedName,
+        block: nextProps.params.block
+      });
+    }
   }
 
   renderView(viewType) {

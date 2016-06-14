@@ -30,6 +30,8 @@ export const fetchChallengesCompleted = createAction(
 export const updateCurrentChallenge = createAction(
   types.updateCurrentChallenge
 );
+// replaceChallenge(dashedname) => Action
+export const replaceChallenge = createAction(types.replaceChallenge);
 
 // map
 export const updateFilter = createAction(
