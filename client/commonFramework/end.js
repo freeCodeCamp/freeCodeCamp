@@ -89,6 +89,7 @@ $(document).ready(function() {
     common.submitBtn$
   )
     .flatMap(() => {
+      $('#testSuite').fadeOut('slow');
       common.appendToOutputDisplay('\n// testing challenge...');
       return common.executeChallenge$()
         .map(({ tests, ...rest }) => {
