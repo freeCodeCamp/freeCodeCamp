@@ -19,6 +19,11 @@
         "",
         "sumAll([1, 4]);"
       ],
+      "hints": [
+        "Use Math.max() to find the maximum value of two numbers.",
+        "Use Math.min() to find the minimum value of two numbers.",
+        "Remember to that you must add all the numbers in between so this would require a way to get those numbers."
+      ],
       "solutions": [
         "function sumAll(arr) {\n  var sum = 0;\n  arr.sort(function(a,b) {return a-b;});\n  for (var i = arr[0]; i <= arr[1]; i++) {\n    sum += i; \n  }\n  return sum;\n}"
       ],
