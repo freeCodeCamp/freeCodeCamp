@@ -419,8 +419,7 @@
         "</div>"
       ],
       "tests": [
-        "assert(code.match(/json.filter\\(\\s*?function\\(/), 'message: You should be making use of the <code>.filter</code> method. ');",
-        "assert(code.match(/return\\s*?\\(\\s*?\\w+\\.id\\s*?!==\\s*?1\\s*?\\);/), 'message: Your function should only return images with a value <code>not equal to 1</code>. ');"
+        "assert(code.match(/filter/gi), 'message: You should be making use of the .filter method.');"
       ],
       "type": "waypoint",
       "challengeType": 0,
