@@ -4317,15 +4317,15 @@
     },
     {
       "id": "56533eb9ac21ba0edf2244cb",
-      "title": "Introducing JavaScript Object Notation (JSON)",
+      "title": "Manipulating Complex Objects",
       "description": [
-        "JavaScript Object Notation or <code>JSON</code> uses the format of JavaScript Objects to store data. JSON is flexible because it allows for <dfn>Data Structures</dfn> with arbitrary combinations of <dfn>strings</dfn>, <dfn>numbers</dfn>, <dfn>booleans</dfn>, <dfn>arrays</dfn>, and <dfn>objects</dfn>.",
-        "Here is an example of a JSON object:",
+        "JavaScript objects are flexible because they allow for <dfn>Data Structures</dfn> with arbitrary combinations of <dfn>strings</dfn>, <dfn>numbers</dfn>, <dfn>booleans</dfn>, <dfn>arrays</dfn>, <dfn>functions</dfn>, and <dfn>objects</dfn>.",
+        "Here is an example of a complex data structure:",
         "<blockquote>var ourMusic = [<br>  {<br>    \"artist\": \"Daft Punk\",<br>    \"title\": \"Homework\",<br>    \"release_year\": 1997,<br>    \"formats\": [ <br>      \"CD\", <br>      \"Cassette\", <br>      \"LP\" ],<br>    \"gold\": true<br>  }<br>];</blockquote>",
         "This is an array of objects and the object has various pieces of <dfn>metadata</dfn> about an album. It also has a nested <code>formats</code> array. Additional album records could be added to the top level array.",
-        "<strong>Note</strong><br>You will need a comma in between objects in JSON objects with more than one object in the array.",
+        "<strong>Note</strong><br>You will need a comma in between objects with more than one object in the array.",
         "<h4>Instructions</h4>",
-        "Add a new album to the <code>myMusic</code> JSON object. Add <code>artist</code> and <code>title</code> strings, <code>release_year</code> number, and a <code>formats</code> array of strings."
+        "Add a new album to the <code>myMusic</code> object. Add <code>artist</code> and <code>title</code> strings, <code>release_year</code> number, and a <code>formats</code> array of strings."
       ],
       "releasedOn": "January 1, 2016",
       "challengeSeed": [
@@ -4363,26 +4363,26 @@
       ],
       "type": "waypoint",
       "challengeType": 1,
-      "titleEs": "Introducción a la notación de objetos de JavaScript (JSON - JavaScript Object Notation)",
+      "titleEs": "Manipula objetos complicados",
       "descriptionEs": [
-        "La notación de objetos de JavaScript o <code>JSON</code> usa el formato de objetos de JavaScript para almacenar datos. JSON es flexible porque permite <dfn>Estructuras de Datos</dfn> con combinaciones arbitrarias de <dfn>cadenas</dfn>, <dfn>números</dfn>, <dfn>booleanos</dfn>, <dfn>vectores</dfn> y <dfn>objetos</dfn>.",
-        "Aquí está un ejemplo de un objeto JSON:",
+        "Los objetos Javascript son flexibles porque permiten <dfn>Estructuras de Datos</dfn> con combinaciones arbitrarias de <dfn>cadenas</dfn>, <dfn>números</dfn>, <dfn>booleanos</dfn>, <dfn>vectores</dfn>, <dfn>funciones</dfn>, y <dfn>objetos</dfn>.",
+        "Aquí está un ejemplo de un objeto complicado:",
         "<blockquote>var nuestraMusica = [<br>  {<br>    \"artista\": \"Daft Punk\",<br>    \"titulo\": \"Homework\",<br>    \"año_publicacion\": 1997,<br>    \"formatos\": [ <br>      \"CD\", <br>      \"Cassette\", <br>      \"LP\" ],<br>    \"oro\": true<br>  }<br>];</blockquote>",
         "Este es un vector de objetos con diversos <dfn>metadatos</dfn> acerca de un álbum musical. Además tiene anidado un vector <code>formatos</code>. En el vector de nivel superior, pueden añadirse otros registros del álbum.",
-        "<strong>Nota</strong><br>En objetos JSON que tengan más de un objeto en el vector, necesitarás separar un objeto de otro mediante comas.",
+        "<strong>Nota</strong><br>En vectores que tengan más de un objeto, necesitarás separar un objeto de otro mediante comas.",
         "<h4>Instrucciones</h4>",
-        "Agrega un nuevo álbum al objeto JSON <code>myMusic</code>. Agrega las cadenas <code>artist</code> y <code>title</code>, el número <code>release_year</code> y un vector de cadenas <code>formats</code>."
+        "Agrega un nuevo álbum al objeto <code>myMusic</code>. Agrega las cadenas <code>artist</code> y <code>title</code>, el número <code>release_year</code> y un vector de cadenas <code>formats</code>."
       ]
     },
     {
       "id": "56533eb9ac21ba0edf2244cc",
-      "title": "Accessing Nested Objects in JSON",
+      "title": "Accessing Nested Objects",
       "description": [
-        "The properties and sub-properties of JSON objects can be accessed by chaining together the dot or bracket notation.",
-        "Here is a nested JSON Object:",
+        "The sub-properties of objects can be accessed by chaining together the dot or bracket notation.",
+        "Here is a nested object:",
         "<blockquote>var ourStorage = {<br>  \"desk\": {<br>    \"drawer\": \"stapler\"<br>  },<br>  \"cabinet\": {<br>    \"top drawer\": { <br>      \"folder1\": \"a file\",<br>      \"folder2\": \"secrets\"<br>    },<br>    \"bottom drawer\": \"soda\"<br>  }<br>}<br>ourStorage.cabinet[\"top drawer\"].folder2;  // \"secrets\"<br>ourStorage.desk.drawer; // \"stapler\"</blockquote>",
         "<h4>Instructions</h4>",
-        "Access the <code>myStorage</code> JSON object to retrieve the contents of the <code>glove box</code>. Use bracket notation for properties with a space in their name."
+        "Access the <code>myStorage</code> object to retrieve the contents of the <code>glove box</code>. Use bracket notation for properties with a space in their name."
       ],
       "releasedOn": "January 1, 2016",
       "challengeSeed": [
@@ -4421,20 +4421,20 @@
       ],
       "type": "waypoint",
       "challengeType": 1,
-      "titleEs": "Acceder a objetos anidados en JSON",
+      "titleEs": "Acceder a objetos anidados",
       "descriptionEs": [
-        "Las propiedades y sub-propiedades de los objetos JSON pueden ser accesadas mediante encadenamiento de la notación punto o corchete.",
-        "Aquí está un objeto JSON anidado:",
+        "Las sub-propiedades de los objetos pueden ser accesadas mediante encadenamiento de la notación punto o corchete.",
+        "Aquí está un objeto anidado:",
         "<blockquote>var nuestroAlmacen = {<br>  \"escritorio\": {<br>    \"cajon\": \"grapadora\"<br>  },<br>  \"armario\": {<br>    \"cajón superior\": { <br>      \"legajador1\": \"un archivo\",<br>      \"legajador2\": \"secretos\"<br>    },<br>    \"cajón inferior\": \"gaseosa\"<br>  }<br>}<br>nuestroAlmacen.armario[\"cajón superior\"].legajador2;  // \"secretos\"<br>nuestroAlmacen.escritorio.cajon; // \"grapadora\"</blockquote>",
         "<h4>Instrucciones</h4>",
-        "Accede al objeto JSON <code>myStorage</code> para recuperar el contenido de <code>glove box</code>. Usa notación corchete para las propiedades con un espacio en su nombre."
+        "Accede al objeto <code>myStorage</code> para recuperar el contenido de <code>glove box</code>. Usa notación corchete para las propiedades con un espacio en su nombre."
       ]
     },
     {
       "id": "56533eb9ac21ba0edf2244cd",
-      "title": "Accessing Nested Arrays in JSON",
+      "title": "Accessing Nested Arrays",
       "description": [
-        "As we have seen in earlier examples, JSON objects can contain both nested objects and nested arrays. Similar to accessing nested objects, Array bracket notation can be chained to access nested arrays.",
+        "As we have seen in earlier examples, objects can contain both nested objects and nested arrays. Similar to accessing nested objects, Array bracket notation can be chained to access nested arrays.",
         "Here is an example of how to access a nested array:",
         "<blockquote>var ourPets = [<br>  {<br>    animalType: \"cat\",<br>    names: [<br>      \"Meowzer\",<br>      \"Fluffy\",<br>      \"Kit-Cat\"<br>    ]<br>  },<br>  {<br>    animalType: \"dog\",<br>    names: [<br>      \"Spot\",<br>      \"Bowser\",<br>      \"Frankie\"<br>    ]<br>  }<br>];<br>ourPets[0].names[1]; // \"Fluffy\"<br>ourPets[1].names[0]; // \"Spot\"</blockquote>",
         "<h4>Instructions</h4>",
@@ -4484,9 +4484,9 @@
       ],
       "type": "waypoint",
       "challengeType": 1,
-      "titleEs": "Acceder a vectores anidados en JSON",
+      "titleEs": "Acceder a vectores anidados",
       "descriptionEs": [
-        "Como hemos visto en ejemplos anteriores, los objetos JSON pueden contener objetos anidados y vectores anidados. De forma similar a acceder a objetos anidados, la notación corchete en vectores puede ser encadenada para acceder a vectores anidados.",
+        "Como hemos visto en ejemplos anteriores, los objetos pueden contener objetos anidados y vectores anidados. De forma similar a acceder a objetos anidados, la notación corchete en vectores puede ser encadenada para acceder a vectores anidados.",
         "Aquí está un ejemplo de como acceder a un vector anidado:",
         "<blockquote>var nuestrasMascotas = { <br>  \"gatos\": [<br>    \"Maullador\",<br>    \"Blandito\",<br>    \"Kit-Cat\"<br>  ],<br>  \"perros\": [<br>    \"Mancha\",<br>    \"Bowser\",<br>    \"Frankie\"<br>  ]<br>};<br>nuestrasMascotas.cats[1]; // \"Blandito\"<br>nuestrasMascotas.dogs[0]; // \"Mancha\"</blockquote>",
         "<h4>Instrucciones</h4>",
@@ -4497,7 +4497,7 @@
       "id": "56533eb9ac21ba0edf2244cf",
       "title": "Record Collection",
       "description": [
-        "You are given a JSON object representing (a small part of) your record collection. Each album is identified by a unique id number and has several properties. Not all albums have complete information.",
+        "You are given an object representing (a small part of) your record collection. Each album is identified by a unique id number and has several properties. Not all albums have complete information.",
         "Write a function which takes an <code>id</code>, a property (<code>prop</code>), and a <code>value</code>.",
         "For the given <code>id</code> in <code>collection</code>:",
         "If <code>value</code> is non-blank (<code>value !== \"\"</code>) and <code>prop</code> is not <code>\"tracks\"</code> then update or set the <code>value</code> for the <code>prop</code>.",
@@ -4566,7 +4566,7 @@
       "challengeType": 1,
       "titleEs": "Colección de registros",
       "descriptionEs": [
-        "Se te da un objeto JSON que representa (una pequeña parte de) tu colección de grabaciones. Cada álbum es identificado por un número id único y tiene varias propiedades. No todos los álbumes tienen la información completa.",
+        "Se te da un objeto que representa (una pequeña parte de) tu colección de grabaciones. Cada álbum es identificado por un número id único y tiene varias propiedades. No todos los álbumes tienen la información completa.",
         "Escribe una función que reciba un <code>id</code>, una propiedad (<code>prop</code>) y un valor (<code>value</code>).",
         "Para el <code>id</code> dado, en la colección <code>collection</code>:",
         "Si el valor <code>value</code> no está en blanco (<code>value !== \"\"</code>) y <code>prop</code> no es <code>\"tracks\"</code> entonces actualiza o establece el valor de la propiedad <code>prop</code>.",
