@@ -9,25 +9,31 @@ import TestSuite from './Test-Suite.jsx';
 import Output from './Output.jsx';
 import ToolPanel from './Tool-Panel.jsx';
 import { challengeSelector } from '../../redux/selectors';
+import { updateHint, executeChallenge } from '../../redux/actions';
+import { makeToast } from '../../../../redux/actions';
 
+const bindableActions = { makeToast, executeChallenge, updateHint };
 const mapStateToProps = createSelector(
   challengeSelector,
   state => state.app.windowHeight,
   state => state.app.navHeight,
   state => state.challengesApp.tests,
   state => state.challengesApp.output,
+  state => state.challengesApp.hintIndex,
   (
-    { challenge: { title, description } = {} },
+    { challenge: { title, description, hints = [] } = {} },
     windowHeight,
     navHeight,
     tests,
-    output
+    output,
+    hintIndex
   ) => ({
     title,
     description,
     height: windowHeight - navHeight - 20,
     tests,
-    output
+    output,
+    hint: hints[hintIndex]
   })
 );
 
@@ -43,7 +49,10 @@ export class SidePanel extends PureComponent {
     height: PropTypes.number,
     tests: PropTypes.arrayOf(PropTypes.object),
     title: PropTypes.string,
-    output: PropTypes.string
+    output: PropTypes.string,
+    hints: PropTypes.string,
+    updateHint: PropTypes.func,
+    makeToast: PropTypes.func
   };
 
   renderDescription(description = [ 'Happy Coding!' ], descriptionRegex) {
@@ -52,14 +61,16 @@ export class SidePanel extends PureComponent {
         return (
           <div
             dangerouslySetInnerHTML={{ __html: line }}
-            key={ line.slice(-6) + index } />
+            key={ line.slice(-6) + index }
+          />
         );
       }
       return (
         <p
           className='wrappable'
           dangerouslySetInnerHTML= {{ __html: line }}
-          key={ line.slice(-6) + index }/>
+          key={ line.slice(-6) + index }
+        />
       );
     });
   }
@@ -70,7 +81,11 @@ export class SidePanel extends PureComponent {
       description,
       height,
       tests = [],
-      output
+      output,
+      hint,
+      executeChallenge,
+      updateHint,
+      makeToast
     } = this.props;
     const style = {
       overflowX: 'hidden',
@@ -82,7 +97,8 @@ export class SidePanel extends PureComponent {
     return (
       <div
         ref='panel'
-        style={ style }>
+        style={ style }
+        >
         <div>
           <h4 className='text-center challenge-instructions-title'>
             { title || 'Happy Coding!' }
@@ -91,12 +107,18 @@ export class SidePanel extends PureComponent {
           <Row>
             <Col
               className='challenge-instructions'
-              xs={ 12 }>
+              xs={ 12 }
+              >
               { this.renderDescription(description, this.descriptionRegex) }
             </Col>
           </Row>
         </div>
-        <ToolPanel />
+        <ToolPanel
+          executeChallenge={ executeChallenge }
+          hint={ hint }
+          makeToast={ makeToast }
+          updateHint={ updateHint }
+        />
         <Output output={ output }/>
         <br />
         <TestSuite tests={ tests } />
@@ -105,4 +127,7 @@ export class SidePanel extends PureComponent {
   }
 }
 
-export default connect(mapStateToProps)(SidePanel);
+export default connect(
+  mapStateToProps,
+  bindableActions
+)(SidePanel);

@@ -66,7 +66,8 @@ export class Challenge extends PureComponent {
     return (
       <Col
         lg={ 3 }
-        md={ 4 }>
+        md={ 4 }
+        >
         <Preview />
       </Col>
     );
@@ -85,12 +86,14 @@ export class Challenge extends PureComponent {
       <div>
         <Col
           lg={ 3 }
-          md={ showPreview ? 3 : 4 }>
+          md={ showPreview ? 3 : 4 }
+          >
           <SidePanel />
         </Col>
         <Col
           lg={ showPreview ? 6 : 9 }
-          md={ showPreview ? 5 : 8 }>
+          md={ showPreview ? 5 : 8 }
+          >
           <Editor
             content={ content }
             executeChallenge={ executeChallenge }

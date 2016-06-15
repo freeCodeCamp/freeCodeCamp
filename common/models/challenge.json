@@ -51,6 +51,11 @@
       "type": "number",
       "description": "Used to determine super block order, set by prepending two digit number to super block folder name"
     },
+    "hint": {
+      "type": "array",
+      "default": [],
+      "description": "hints must be a single line of plain text"
+    },
     "block": {
       "type": "string"
     },
