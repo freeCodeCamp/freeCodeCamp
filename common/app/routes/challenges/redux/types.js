@@ -13,6 +13,7 @@ export default createTypes([
   'updateCurrentChallenge',
   'replaceChallenge',
   'resetUi',
+  'updateHint',
 
   // map
   'updateFilter',

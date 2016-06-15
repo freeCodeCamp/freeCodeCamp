@@ -130,7 +130,7 @@ export class FreeCodeCamp extends React.Component {
         bsStyle='primary'
         className='animated fadeIn'
         onClick={ submitChallenge }
-      >
+        >
         Submit and go to my next challenge
       </Button>
     );
@@ -170,7 +170,8 @@ export class FreeCodeCamp extends React.Component {
         <ToastContainer
           className='toast-bottom-right'
           ref='toaster'
-          toastMessageFactory={ toastMessageFactory } />
+          toastMessageFactory={ toastMessageFactory }
+        />
       </div>
     );
   }

@@ -25,13 +25,15 @@ export default class extends PureComponent {
         <Row key={ text.slice(-6) + index }>
           <Col
             className='text-center'
-            xs={ 2 }>
+            xs={ 2 }
+            >
             <i className={ iconClass } />
           </Col>
           <Col
             className='test-output'
             dangerouslySetInnerHTML={{ __html: text }}
-            xs={ 10 } />
+            xs={ 10 }
+          />
         </Row>
       );
     });
@@ -42,7 +44,8 @@ export default class extends PureComponent {
     return (
       <div
         className='challenge-test-suite'
-        style={{ marginTop: '10px' }}>
+        style={{ marginTop: '10px' }}
+        >
         { this.renderTests(tests) }
       </div>
     );

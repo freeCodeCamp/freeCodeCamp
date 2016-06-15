@@ -19,6 +19,7 @@ export const fetchChallengeCompleted = createAction(
   entities => ({ entities })
 );
 export const resetUi = createAction(types.resetUi);
+export const updateHint = createAction(types.updateHint);
 
 export const fetchChallenges = createAction(types.fetchChallenges);
 export const fetchChallengesCompleted = createAction(

@@ -12,6 +12,7 @@ import {
 } from '../utils';
 
 const initialUiState = {
+  hintIndex: 0,
   // step index tracing
   currentIndex: 0,
   previousIndex: -1,
@@ -64,11 +65,18 @@ const mainReducer = handleActions(
       legacyKey: challenge.name,
       challenge: challenge.dashedName,
       key: getFileKey(challenge),
-      tests: createTests(challenge)
+      tests: createTests(challenge),
+      numOfHints: Array.isArray(challenge.hints) ? challenge.hints.length : 0
     }),
     [types.updateTests]: (state, { payload: tests }) => ({
       ...state,
       tests
+    }),
+    [types.updateHint]: state => ({
+      ...state,
+      hintIndex: state.hintIndex + 1 >= state.numOfHints ?
+        0 :
+        state.hintIndex + 1
     }),
     [types.executeChallenge]: state => ({
       ...state,
