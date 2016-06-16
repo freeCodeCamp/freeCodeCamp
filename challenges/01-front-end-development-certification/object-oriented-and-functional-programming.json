@@ -46,11 +46,15 @@
       ],
       "type": "waypoint",
       "challengeType": 1,
-      "titleEs": "Declara objetos de JavaScript como variables",
-      "descriptionEs": [
-        "Antes de sumergirnos en Programación Orientada a Objetos, vamos a revisar los objetos de JavaScript.",
-        "Dale a tu objeto <code>motorBike</code> un atributo <code>wheels</code>, otro llamado <code>motors</code> y otro <code>seats</code> y asignales números."
-      ]
+      "translations": {
+        "es": {
+          "title": "Declara objetos de JavaScript como variables",
+          "description": [
+            "Antes de sumergirnos en Programación Orientada a Objetos, vamos a revisar los objetos de JavaScript.",
+            "Dale a tu objeto <code>motorBike</code> un atributo <code>wheels</code>, otro llamado <code>motors</code> y otro <code>seats</code> y asignales números."
+          ]
+        }
+      }
     },
     {
       "id": "cf1111c1c15feddfaeb2bdef",
@@ -92,22 +96,26 @@
       ],
       "type": "waypoint",
       "challengeType": 1,
-      "titleEs": "Construye objetos de JavaScript con funciones",
-      "descriptionEs": [
-        "También podemos crear objetos utilizando funciones <code>constructoras</code>.",
-        "A cada función <code>constructora</code> se le da un nombre comenzando en mayúsculas para que quede claro que es una <code>constructora</code>.",
-        "He aquí un ejemplo de una función <code>constructora</code>:",
-        "<code>var Carro = function() {</code>",
-        "<code>& nbsp; & nbsp; this.llantas = 4; </code>",
-        "<code>& nbsp; & nbsp; this.motores = 1; </code>",
-        "<code>& nbsp; & nbsp; this.asientos = 5; </code>",
-        "<code>}; </code>",
-        "En una <code>constructora</code> la variable <code>this</code> hace referencia al nuevo objeto que está siendo creado por la constructora. Así que cuando escribimos ",
-        "<code>&nbsp;&nbsp;this.llantas = 4;</code>",
-        "dentro de la <code>constructora</code> le estamos dando el nuevo objeto que se crea una propiedad llamada <code>llantas</code> con un valor de <code>4</code>.",
-        "Puedes pensar en una <code>constructora</code> como una descripción del objeto que crea.",
-        "Haz que tu <code>constructora</code> <code>MotorBike</code> describa un objeto con las propiedades <code>wheels</code>,<code>engines</code> and <code>seats</code> y asignales números."
-      ]
+      "translations": {
+        "es": {
+          "title": "Construye objetos de JavaScript con funciones",
+          "description": [
+            "También podemos crear objetos utilizando funciones <code>constructoras</code>.",
+            "A cada función <code>constructora</code> se le da un nombre comenzando en mayúsculas para que quede claro que es una <code>constructora</code>.",
+            "He aquí un ejemplo de una función <code>constructora</code>:",
+            "<code>var Carro = function() {</code>",
+            "<code>& nbsp; & nbsp; this.llantas = 4; </code>",
+            "<code>& nbsp; & nbsp; this.motores = 1; </code>",
+            "<code>& nbsp; & nbsp; this.asientos = 5; </code>",
+            "<code>}; </code>",
+            "En una <code>constructora</code> la variable <code>this</code> hace referencia al nuevo objeto que está siendo creado por la constructora. Así que cuando escribimos ",
+            "<code>&nbsp;&nbsp;this.llantas = 4;</code>",
+            "dentro de la <code>constructora</code> le estamos dando el nuevo objeto que se crea una propiedad llamada <code>llantas</code> con un valor de <code>4</code>.",
+            "Puedes pensar en una <code>constructora</code> como una descripción del objeto que crea.",
+            "Haz que tu <code>constructora</code> <code>MotorBike</code> describa un objeto con las propiedades <code>wheels</code>,<code>engines</code> and <code>seats</code> y asignales números."
+          ]
+        }
+      }
     },
     {
       "id": "cf1111c1c15feddfaeb4bdef",
@@ -150,24 +158,28 @@
       ],
       "type": "waypoint",
       "challengeType": 1,
-      "titleEs": "Crea instancias de objetos con funciones constructoras",
-      "descriptionEs": [
-        "¡Ahora usemos esa gran <code>constructora</code> que hicimos en la última lección!",
-        "Para utilizar una función <code>constructora</code> la llamamos con la palabra reservada <code>new</code> al frente, como:",
-        "<code>var miCarro = new Carro();</code>",
-        "<code>miCarro</code>es ahora una <code>instancia</code> de la constructora <code>Carro</code> que se parece al objeto que describe:",
-        "<code>{</code>",
-        "<code>&nbsp;&nbsp;wheels: 4,</code>",
-        "<code>&nbsp;&nbsp;engines: 1,</code>",
-        "<code>&nbsp;&nbsp;seats: 5</code>",
-        "<code>}</code>",
-        "Ten en cuenta que es importante utilizar la palabra reservada <code>new</code> cuando se llama a una constructora. Así es como Javascript sabe crear un objeto nuevo y hace que todas las referencias a <code>this</code> dentro del constructor se refieran al objeto nuevo ",
-        "Ahora, una vez que la <code>instancia</code> <code>miCarro</code> se crea, puede ser utilizada como cualquier otro objeto y puedes acceder o modificar sus propiedades como lo harías normalmente. Por ejemplo:",
-        "<code>miCarro.tipoTurbo = \"doble\"; </code>",
-        "Nuestra variable <code>miCarro</code> tiene ahora una propiedad <code>tipoTurbo</code> con un valor de <code>\"doble\"</code>.",
-        "En el editor, utiliza la <code>constructora</code> <code>Car</code> para crear una nueva <code>instancia</code> y asignala a <code>myCar</code>.",
-        "A continuación, dale a <code>myCar</code> una propiedad <code>nickname</code> con un valor tipo cadena."
-      ]
+      "translations": {
+        "es": {
+          "title": "Crea instancias de objetos con funciones constructoras",
+          "description": [
+            "¡Ahora usemos esa gran <code>constructora</code> que hicimos en la última lección!",
+            "Para utilizar una función <code>constructora</code> la llamamos con la palabra reservada <code>new</code> al frente, como:",
+            "<code>var miCarro = new Carro();</code>",
+            "<code>miCarro</code>es ahora una <code>instancia</code> de la constructora <code>Carro</code> que se parece al objeto que describe:",
+            "<code>{</code>",
+            "<code>&nbsp;&nbsp;wheels: 4,</code>",
+            "<code>&nbsp;&nbsp;engines: 1,</code>",
+            "<code>&nbsp;&nbsp;seats: 5</code>",
+            "<code>}</code>",
+            "Ten en cuenta que es importante utilizar la palabra reservada <code>new</code> cuando se llama a una constructora. Así es como Javascript sabe crear un objeto nuevo y hace que todas las referencias a <code>this</code> dentro del constructor se refieran al objeto nuevo ",
+            "Ahora, una vez que la <code>instancia</code> <code>miCarro</code> se crea, puede ser utilizada como cualquier otro objeto y puedes acceder o modificar sus propiedades como lo harías normalmente. Por ejemplo:",
+            "<code>miCarro.tipoTurbo = \"doble\"; </code>",
+            "Nuestra variable <code>miCarro</code> tiene ahora una propiedad <code>tipoTurbo</code> con un valor de <code>\"doble\"</code>.",
+            "En el editor, utiliza la <code>constructora</code> <code>Car</code> para crear una nueva <code>instancia</code> y asignala a <code>myCar</code>.",
+            "A continuación, dale a <code>myCar</code> una propiedad <code>nickname</code> con un valor tipo cadena."
+          ]
+        }
+      }
     },
     {
       "id": "563cfb55594311ffcb333c70",
@@ -208,26 +220,30 @@
       ],
       "type": "waypoint",
       "challengeType": 1,
-      "titleEs": "Crea objetos únicos pasando parámetros a la constructora",
-      "descriptionEs": [
-        "La <code>constructora</code> que tenemos es fabulosa, pero ¿qué hacer si no queremos crear siempre el mismo objeto?",
-        "Para solucionar esto podemos añadir<code>parámetros</code>en nuestra <code>constructora</code>. Hacemos esto como en el siguiente ejemplo: ",
-        "<code>var Carro = function (ruedas, asientos, motores) {</code>",
-        "<code>&nbsp;&nbsp;this.ruedas = ruedas;</code>",
-        "<code>&nbsp;&nbsp;this.asientos = asientos;</code>",
-        "<code>&nbsp;&nbsp;this.motores = motores;</code>",
-        "<code>};</code>",
-        "Ahora podemos pasar <code>argumentos</code> cuando llamamos a nuestra <code>constructora</code>.",
-        "<code>var miCarro = nuevo Carro(6, 3, 1); </code>",
-        "Este código crea un objeto que utiliza los <code>argumentos</code> que pasamos en y se ve así:",
-        "<code>{</code>",
-        "<code>&nbsp;&nbsp;ruedas: 6,</code>",
-        "<code>&nbsp;&nbsp;asientos: 3,</code>",
-        "<code>&nbsp;&nbsp;motores: 1</code>",
-        "<code>}</code>",
-        "¡Ahora date una oportunidad a ti mismo! Modifica la <code>constructora</code> <code>Car</code> para que use <code>parámetros</code> que permitan asignar valores para las propiedades <code>wheels</code>, <code>seats</code>, y <code>engines</code>. ",
-        "Entonces llama a tu nueva <code>constructora</code> con tres <code>argumentos</code> numéricos y asígnala a <code>myCar</code>para verla en acción."
-      ]
+      "translations": {
+        "es": {
+          "title": "Crea objetos únicos pasando parámetros a la constructora",
+          "description": [
+            "La <code>constructora</code> que tenemos es fabulosa, pero ¿qué hacer si no queremos crear siempre el mismo objeto?",
+            "Para solucionar esto podemos añadir<code>parámetros</code>en nuestra <code>constructora</code>. Hacemos esto como en el siguiente ejemplo: ",
+            "<code>var Carro = function (ruedas, asientos, motores) {</code>",
+            "<code>&nbsp;&nbsp;this.ruedas = ruedas;</code>",
+            "<code>&nbsp;&nbsp;this.asientos = asientos;</code>",
+            "<code>&nbsp;&nbsp;this.motores = motores;</code>",
+            "<code>};</code>",
+            "Ahora podemos pasar <code>argumentos</code> cuando llamamos a nuestra <code>constructora</code>.",
+            "<code>var miCarro = nuevo Carro(6, 3, 1); </code>",
+            "Este código crea un objeto que utiliza los <code>argumentos</code> que pasamos en y se ve así:",
+            "<code>{</code>",
+            "<code>&nbsp;&nbsp;ruedas: 6,</code>",
+            "<code>&nbsp;&nbsp;asientos: 3,</code>",
+            "<code>&nbsp;&nbsp;motores: 1</code>",
+            "<code>}</code>",
+            "¡Ahora date una oportunidad a ti mismo! Modifica la <code>constructora</code> <code>Car</code> para que use <code>parámetros</code> que permitan asignar valores para las propiedades <code>wheels</code>, <code>seats</code>, y <code>engines</code>. ",
+            "Entonces llama a tu nueva <code>constructora</code> con tres <code>argumentos</code> numéricos y asígnala a <code>myCar</code>para verla en acción."
+          ]
+        }
+      }
     },
     {
       "id": "cf1111c1c15feddfaeb3bdef",
@@ -288,17 +304,21 @@
       ],
       "type": "waypoint",
       "challengeType": 1,
-      "titleEs": "Crea propiedades privadas de un objeto",
-      "descriptionEs": [
-        "Los objetos tienen sus propios atributos, llamados <code>propiedades</code>, y sus propias funciones, llamadas<code>métodos</code>.",
-        "En los desafíos anteriores, se utilizó la palabra reservada <code>this</code> para referenciar <code>propiedades públicas</code>del objeto actual.",
-        "También podemos crear <code>propiedades privadas</code> y <code>métodos privados</code>, que no son accesibles desde fuera del objeto.",
-        "Para ello, creamos la variable dentro de la <code>constructora</code> usando la palabra reservada <code>var</code>, con la cual ya estamos familiarizados, en lugar de crearla con <code>this</code>. ",
-        "Esto es útil cuando necesitamos almacenar información sobre un objeto, pero controlando como se usa en el código externo al objeto.",
-        "Por ejemplo, ¿qué pasa si queremos almacenar la <code>velocidad</code> con la cual se desplaza nuestro carro, pero queremos que el código externo pueda modificarla sólo acelerando o desacelerando, de forma que la velocidad cambie de una manera controlada?",
-        "En el editor se puede ver un ejemplo de una <code>constructora</code> de <code>Car</code> que implementa este patrón.",
-        "¡Ahora pruébalo tú mismo! Modifica la <code>constructora</code> <code>Bike</code> para tener una <code>propiedad privada</code> llamada <code>gear</code>y dos<code>métodos públicos</code> llamados <code>getGear</code>y<code>setGear</code> para obtener y establecer ese valor."
-      ]
+      "translations": {
+        "es": {
+          "title": "Crea propiedades privadas de un objeto",
+          "description": [
+            "Los objetos tienen sus propios atributos, llamados <code>propiedades</code>, y sus propias funciones, llamadas<code>métodos</code>.",
+            "En los desafíos anteriores, se utilizó la palabra reservada <code>this</code> para referenciar <code>propiedades públicas</code>del objeto actual.",
+            "También podemos crear <code>propiedades privadas</code> y <code>métodos privados</code>, que no son accesibles desde fuera del objeto.",
+            "Para ello, creamos la variable dentro de la <code>constructora</code> usando la palabra reservada <code>var</code>, con la cual ya estamos familiarizados, en lugar de crearla con <code>this</code>. ",
+            "Esto es útil cuando necesitamos almacenar información sobre un objeto, pero controlando como se usa en el código externo al objeto.",
+            "Por ejemplo, ¿qué pasa si queremos almacenar la <code>velocidad</code> con la cual se desplaza nuestro carro, pero queremos que el código externo pueda modificarla sólo acelerando o desacelerando, de forma que la velocidad cambie de una manera controlada?",
+            "En el editor se puede ver un ejemplo de una <code>constructora</code> de <code>Car</code> que implementa este patrón.",
+            "¡Ahora pruébalo tú mismo! Modifica la <code>constructora</code> <code>Bike</code> para tener una <code>propiedad privada</code> llamada <code>gear</code>y dos<code>métodos públicos</code> llamados <code>getGear</code>y<code>setGear</code> para obtener y establecer ese valor."
+          ]
+        }
+      }
     },
     {
       "id": "cf1111c1c15feddfaeb7bdef",
@@ -331,16 +351,20 @@
       ],
       "type": "waypoint",
       "challengeType": 1,
-      "titleEs": "Iterar sobre vectores con .map",
-      "descriptionEs": [
-        "El método <code>map</code> es una manera conveniente de iterar sobre vectores. He aquí un ejemplo de uso: ",
-        "<code>var porCuatro = vectorAntiguo.map(function(val){</code>",
-        "<code>&nbsp;&nbsp;return val * 4;</code>",
-        "<code>});</code>",
-        "El método <code>map</code> iterará sobre cada elemento del vector, creando un nuevo vector con los valores modificados por la función de devolución de llamada (<em>callback</em>) y retornará ese nuevo arreglo.",
-        "En nuestro ejemplo, la función de devolución de llamada sólo usa el valor del elemento del vector sobre el que está iterando (parámetro <code>val</code>), pero tu función de devolución de llamada también puede incluir parámetros para el <code>índice</code> y el <code>vector</code> completo. ",
-        "Usa la función <code>map</code> para añadir 3 a cada valor de la variable <code>oldArray</code>."
-      ]
+      "translations": {
+        "es": {
+          "title": "Iterar sobre vectores con .map",
+          "description": [
+            "El método <code>map</code> es una manera conveniente de iterar sobre vectores. He aquí un ejemplo de uso: ",
+            "<code>var porCuatro = vectorAntiguo.map(function(val){</code>",
+            "<code>&nbsp;&nbsp;return val * 4;</code>",
+            "<code>});</code>",
+            "El método <code>map</code> iterará sobre cada elemento del vector, creando un nuevo vector con los valores modificados por la función de devolución de llamada (<em>callback</em>) y retornará ese nuevo arreglo.",
+            "En nuestro ejemplo, la función de devolución de llamada sólo usa el valor del elemento del vector sobre el que está iterando (parámetro <code>val</code>), pero tu función de devolución de llamada también puede incluir parámetros para el <code>índice</code> y el <code>vector</code> completo. ",
+            "Usa la función <code>map</code> para añadir 3 a cada valor de la variable <code>oldArray</code>."
+          ]
+        }
+      }
     },
     {
       "id": "cf1111c1c15feddfaeb8bdef",
@@ -374,17 +398,21 @@
       ],
       "type": "waypoint",
       "challengeType": 1,
-      "titleEs": "Condensa vectores con .reduce",
-      "descriptionEs": [
-        "El método <code>reduce</code> de un vector, se utiliza para iterar a través del vector y condensarlo en un valor.",
-        "Para usar <code>reduce</code> tu le pasas una función de devolución de llamada cuyos argumentos sean un acumulador (en este caso, <code>valorPrevio</code>) y el valor actual (<code>valorActual</code>). ",
-        "<code>reduce</code> tiene un argumento opcional que puede usarse para asignar un valor inicial al acumulador. Si no se especifica ningún valor inicial, este será el primer elemento del vector y <code>valorActual</code> comenzará en el segundo elemento del vector. ",
-        "He aquí un ejemplo de<code>reduce</code> cuando se utiliza para restar todos los valores de una matriz:",
-        "<code>var singleVal = array.reduce(function(valorAnterior, valorActual) {</code>",
-        "<code>&nbsp;&nbsp;return valorAnterior - valorActual;</code>",
-        "<code>}, 0);</code>",
-        "Usa el método <code>reduce</code> para sumar todos los valores en <code>array</code> y asignarlo a <code>singleVal</code>."
-      ]
+      "translations": {
+        "es": {
+          "title": "Condensa vectores con .reduce",
+          "description": [
+            "El método <code>reduce</code> de un vector, se utiliza para iterar a través del vector y condensarlo en un valor.",
+            "Para usar <code>reduce</code> tu le pasas una función de devolución de llamada cuyos argumentos sean un acumulador (en este caso, <code>valorPrevio</code>) y el valor actual (<code>valorActual</code>). ",
+            "<code>reduce</code> tiene un argumento opcional que puede usarse para asignar un valor inicial al acumulador. Si no se especifica ningún valor inicial, este será el primer elemento del vector y <code>valorActual</code> comenzará en el segundo elemento del vector. ",
+            "He aquí un ejemplo de<code>reduce</code> cuando se utiliza para restar todos los valores de una matriz:",
+            "<code>var singleVal = array.reduce(function(valorAnterior, valorActual) {</code>",
+            "<code>&nbsp;&nbsp;return valorAnterior - valorActual;</code>",
+            "<code>}, 0);</code>",
+            "Usa el método <code>reduce</code> para sumar todos los valores en <code>array</code> y asignarlo a <code>singleVal</code>."
+          ]
+        }
+      }
     },
     {
       "id": "cf1111c1c15feddfaeb9bdef",
@@ -419,18 +447,22 @@
       ],
       "type": "waypoint",
       "challengeType": 1,
-      "titleEs": "Filtrar vectores con .filter",
-      "descriptionEs": [
-        "El método <code>filter</code> se utiliza para iterar a través de un vector y filtrar los elementos que hagan falsa un condición determinada.",
-        "<code>filter</code> recibe una función de devolución de llamada que a su vez recibe como argumento el valor actual (que hemos llamado <code>val</code>).",
-        "Cualquier elemento del vector para el cual la función de devolución de llamada retorne <code>true</code> se mantendrá y los elementos que devuelven <code>false</code> serán filtrados.",
-        "El código siguiente es un ejemplo del uso de <code>filter</code> para eliminar los elementos de un vector que son iguales a cinco:",
-        "Nota: Omitimos el segundo y tercer argumentos ya que sólo necesitamos el valor",
-        "<code>array = array.filter(function(val) {</code>",
-        "<code>&nbsp;&nbsp;return val !== 5;</code>",
-        "<code>});</code>",
-        "Usa <code>filter</code> para crear un nuevo vector con todos los valores de <code>oldArray</code> que son menores a 6. <br><code>oldArray</code> no debe cambiar."
-      ]
+      "translations": {
+        "es": {
+          "title": "Filtrar vectores con .filter",
+          "description": [
+            "El método <code>filter</code> se utiliza para iterar a través de un vector y filtrar los elementos que hagan falsa un condición determinada.",
+            "<code>filter</code> recibe una función de devolución de llamada que a su vez recibe como argumento el valor actual (que hemos llamado <code>val</code>).",
+            "Cualquier elemento del vector para el cual la función de devolución de llamada retorne <code>true</code> se mantendrá y los elementos que devuelven <code>false</code> serán filtrados.",
+            "El código siguiente es un ejemplo del uso de <code>filter</code> para eliminar los elementos de un vector que son iguales a cinco:",
+            "Nota: Omitimos el segundo y tercer argumentos ya que sólo necesitamos el valor",
+            "<code>array = array.filter(function(val) {</code>",
+            "<code>&nbsp;&nbsp;return val !== 5;</code>",
+            "<code>});</code>",
+            "Usa <code>filter</code> para crear un nuevo vector con todos los valores de <code>oldArray</code> que son menores a 6. <br><code>oldArray</code> no debe cambiar."
+          ]
+        }
+      }
     },
     {
       "id": "cf1111c1c16feddfaeb1bdef",
@@ -465,18 +497,22 @@
       ],
       "type": "waypoint",
       "challengeType": 1,
-      "titleEs": "Ordena vectores con .sort",
-      "descriptionEs": [
-        "Puedes utilizar el método <code>sort</code> para ordenar alfabética o numéricamente los valores de un vector.",
-        "A diferencia de los métodos de vector que hemos visto,<code>sort</code>en realidad altera el vector en su lugar. Sin embargo, también devuelve este vector ordenado. ",
-        "<code>sort</code> puede recibir como parámetro una función de devolución de llamada para comparar. Sin no se provee una función de comparación, convertirá los valores a cadenas y los ordenará alfabéticamente. ",
-        "He aquí un ejemplo del uso de <code>sort</code> con una función de comparación que ordena los elementos de menor a mayor:",
-        "<code>var array = [1, 12, 21, 2];</code>",
-        "<code>array.sort(function(a, b) {</code>",
-        "<code>&nbsp;&nbsp;return a - b;</code>",
-        "<code>});</code>",
-        "Usa <code>sort</code> para ordenar<code>array</code> de mayor a menor."
-      ]
+      "translations": {
+        "es": {
+          "title": "Ordena vectores con .sort",
+          "description": [
+            "Puedes utilizar el método <code>sort</code> para ordenar alfabética o numéricamente los valores de un vector.",
+            "A diferencia de los métodos de vector que hemos visto,<code>sort</code>en realidad altera el vector en su lugar. Sin embargo, también devuelve este vector ordenado. ",
+            "<code>sort</code> puede recibir como parámetro una función de devolución de llamada para comparar. Sin no se provee una función de comparación, convertirá los valores a cadenas y los ordenará alfabéticamente. ",
+            "He aquí un ejemplo del uso de <code>sort</code> con una función de comparación que ordena los elementos de menor a mayor:",
+            "<code>var array = [1, 12, 21, 2];</code>",
+            "<code>array.sort(function(a, b) {</code>",
+            "<code>&nbsp;&nbsp;return a - b;</code>",
+            "<code>});</code>",
+            "Usa <code>sort</code> para ordenar<code>array</code> de mayor a menor."
+          ]
+        }
+      }
     },
     {
       "id": "cf1111c1c16feddfaeb2bdef",
@@ -509,15 +545,19 @@
       ],
       "type": "waypoint",
       "challengeType": 1,
-      "titleEs": "Invierte vectores con .reverse",
-      "descriptionEs": [
-        "Puedes utilizar el método <code>reverse</code> para invertir los elementos en un vector.",
-        "<code>reverse</code> es otro método de vector que altera el vector mismo, y también devuelve el vector invertido.",
-        "<code>var miVector = [1, 2, 3];</code>",
-        "<code>miVector.reverse();</code>",
-        "<em>devuelve [3, 2, 1]</em>",
-        "Usa <code>reverse</code> para invertir la variable <code>array</code> y asignarla a <code>newArray</code>."
-      ]
+      "translations": {
+        "es": {
+          "title": "Invierte vectores con .reverse",
+          "description": [
+            "Puedes utilizar el método <code>reverse</code> para invertir los elementos en un vector.",
+            "<code>reverse</code> es otro método de vector que altera el vector mismo, y también devuelve el vector invertido.",
+            "<code>var miVector = [1, 2, 3];</code>",
+            "<code>miVector.reverse();</code>",
+            "<em>devuelve [3, 2, 1]</em>",
+            "Usa <code>reverse</code> para invertir la variable <code>array</code> y asignarla a <code>newArray</code>."
+          ]
+        }
+      }
     },
     {
       "id": "cf1111c1c16feddfaeb3bdef",
@@ -552,14 +592,18 @@
       ],
       "type": "waypoint",
       "challengeType": 1,
-      "titleEs": "Concatena vectores con .concat",
-      "descriptionEs": [
-        "<code>concat</code> se puede utilizar para combinar el contenido de dos vectores en uno solo.",
-        "<code>concat</code> recibe un vector como argumento y devuelve un nuevo vector con los elementos del vector que recibe concatenados al final.",
-        "He aquí un ejemplo de <code>concat</code> cuando se usa para concatenar <code>otroVector</code> al final de <code>vectorAntiguo</code>:",
-        "<code>vectorNuevo = vectorAntiguo.concat(otroVector);</code>",
-        "Usa <code>.concat ()</code> para concatenar <code>concatMe</code> al final de <code>oldArray</code> y asigna el vector resultante a <code>newArray</code>."
-      ]
+      "translations": {
+        "es": {
+          "title": "Concatena vectores con .concat",
+          "description": [
+            "<code>concat</code> se puede utilizar para combinar el contenido de dos vectores en uno solo.",
+            "<code>concat</code> recibe un vector como argumento y devuelve un nuevo vector con los elementos del vector que recibe concatenados al final.",
+            "He aquí un ejemplo de <code>concat</code> cuando se usa para concatenar <code>otroVector</code> al final de <code>vectorAntiguo</code>:",
+            "<code>vectorNuevo = vectorAntiguo.concat(otroVector);</code>",
+            "Usa <code>.concat ()</code> para concatenar <code>concatMe</code> al final de <code>oldArray</code> y asigna el vector resultante a <code>newArray</code>."
+          ]
+        }
+      }
     },
     {
       "id": "cf1111c1c16feddfaeb4bdef",
@@ -591,14 +635,18 @@
       ],
       "type": "waypoint",
       "challengeType": 1,
-      "titleEs": "Divide cadenas con .split",
-      "descriptionEs": [
-        "Puedes utilizar el método <code>split</code> para dividir una cadena en un vector.",
-        "<code>split</code> utiliza el argumento que recibe como delimitador para determinar en qué puntos debe dividir la cadena.",
-        "He aquí un ejemplo del uso de <code>split</code> para dividir una cadena en cada caracter <code>s</code>:",
-        "<code>var vector = string.split('s');</code>",
-        "Usa <code>split</code> para crear un vector con las palabras de una <code>cadena</code> y asígnalo a la variable <code>array</code>."
-      ]
+      "translations": {
+        "es": {
+          "title": "Divide cadenas con .split",
+          "description": [
+            "Puedes utilizar el método <code>split</code> para dividir una cadena en un vector.",
+            "<code>split</code> utiliza el argumento que recibe como delimitador para determinar en qué puntos debe dividir la cadena.",
+            "He aquí un ejemplo del uso de <code>split</code> para dividir una cadena en cada caracter <code>s</code>:",
+            "<code>var vector = string.split('s');</code>",
+            "Usa <code>split</code> para crear un vector con las palabras de una <code>cadena</code> y asígnalo a la variable <code>array</code>."
+          ]
+        }
+      }
     },
     {
       "id": "cf1111c1c16feddfaeb5bdef",
@@ -629,15 +677,19 @@
       ],
       "type": "waypoint",
       "challengeType": 1,
-      "titleEs": "Une cadenas con .join",
-      "descriptionEs": [
-        "Podemos usar el método <code>join</code> para unir los elementos de un vector en una cadena, separándolos con el delimitador que proporciones como argumento.",
-        "El siguiente es un ejemplo del uso de <code>join</code> para unir todos los elementos de un vector en una cadena con todos los elementos separados entre si por palabra` Na`: ",
-        "<code>var uneme = [\"Na \", \"Na \", \"Na \", \"Na \", \"Batman!\"];</code>",
-        "<code>var cadenaUnida = uneme.join(\"Na \");</code>",
-        "<code>console.log(cadenaUnida);</code>",
-        "Usa el método <code>join</code> para crear una cadena a partir <code>joinMe</code> con espacios entre cada par de elementos y asignarla a <code>joinedString </code>."
-      ]
+      "translations": {
+        "es": {
+          "title": "Une cadenas con .join",
+          "description": [
+            "Podemos usar el método <code>join</code> para unir los elementos de un vector en una cadena, separándolos con el delimitador que proporciones como argumento.",
+            "El siguiente es un ejemplo del uso de <code>join</code> para unir todos los elementos de un vector en una cadena con todos los elementos separados entre si por palabra` Na`: ",
+            "<code>var uneme = [\"Na \", \"Na \", \"Na \", \"Na \", \"Batman!\"];</code>",
+            "<code>var cadenaUnida = uneme.join(\"Na \");</code>",
+            "<code>console.log(cadenaUnida);</code>",
+            "Usa el método <code>join</code> para crear una cadena a partir <code>joinMe</code> con espacios entre cada par de elementos y asignarla a <code>joinedString </code>."
+          ]
+        }
+      }
     }
   ]
 }
