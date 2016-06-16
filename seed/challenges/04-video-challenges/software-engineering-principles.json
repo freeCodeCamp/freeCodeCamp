@@ -12,7 +12,11 @@
       "tests": [],
       "type": "hike",
       "challengeType": 6,
-      "nameEs": "Software Engineering Principles"
+      "translations": {
+        "es": {
+          "title": "Software Engineering Principles"
+        }
+      }
     }
   ]
-}    
+}

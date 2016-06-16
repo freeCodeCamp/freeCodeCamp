@@ -58,14 +58,18 @@
         "RegExp"
       ],
       "challengeType": 5,
-      "titleEs": "Valida Números Telefónicos de los EEUU",
-      "descriptionEs": [
-        "Haz que la función devuelva true (verdadero) si el texto introducido es un número válido en los EEUU.",
-        "El usuario debe llenar el campo del formulario de la forma que desee siempre y cuando sea un número válido en los EEUU. Los números mostrados a continuación tienen formatos válidos en los EEUU:",
-        "<blockquote>555-555-5555\n(555)555-5555\n(555) 555-5555\n555 555 5555\n5555555555\n1 555 555 5555</blockquote>",
-        "Para esta prueba se te presentará una cadena de texto como por ejemplo: <code>800-692-7753</code> o <code>8oo-six427676;laskdjf</code>. Tu trabajo consiste en validar o rechazar el número telefónico tomando como base cualquier combinación de los formatos anteriormente presentados. El código de área es requrido. Si el código de país es provisto, debes confirmar que este es <code>1</code>. La función debe devolver true si la cadena de texto es un número telefónico válido en los EEUU; de lo contrario, debe devolver false.",
-        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
-      ]
+      "translations": {
+        "es": {
+          "title": "Valida Números Telefónicos de los EEUU",
+          "description": [
+            "Haz que la función devuelva true (verdadero) si el texto introducido es un número válido en los EEUU.",
+            "El usuario debe llenar el campo del formulario de la forma que desee siempre y cuando sea un número válido en los EEUU. Los números mostrados a continuación tienen formatos válidos en los EEUU:",
+            "<blockquote>555-555-5555\n(555)555-5555\n(555) 555-5555\n555 555 5555\n5555555555\n1 555 555 5555</blockquote>",
+            "Para esta prueba se te presentará una cadena de texto como por ejemplo: <code>800-692-7753</code> o <code>8oo-six427676;laskdjf</code>. Tu trabajo consiste en validar o rechazar el número telefónico tomando como base cualquier combinación de los formatos anteriormente presentados. El código de área es requrido. Si el código de país es provisto, debes confirmar que este es <code>1</code>. La función debe devolver true si la cadena de texto es un número telefónico válido en los EEUU; de lo contrario, debe devolver false.",
+            "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+          ]
+        }
+      }
     },
     {
       "id": "a3f503de51cf954ede28891d",
@@ -103,12 +107,16 @@
         "Symmetric Difference"
       ],
       "challengeType": 5,
-      "titleEs": "Diferencia simétrica",
-      "descriptionEs": [
-        "Crea una función que acepte dos o más arreglos y que devuelva un arreglo conteniendo la diferenia simétrica entre ambos",
-        "En Matemáticas, el término 'diferencia simétrica' se refiere a los elementos en dos conjuntos que están en el primer conjunto o en el segundo, pero no en ambos.",
-        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
-      ]
+      "translations": {
+        "es": {
+          "title": "Diferencia simétrica",
+          "description": [
+            "Crea una función que acepte dos o más arreglos y que devuelva un arreglo conteniendo la diferenia simétrica entre ambos",
+            "En Matemáticas, el término 'diferencia simétrica' se refiere a los elementos en dos conjuntos que están en el primer conjunto o en el segundo, pero no en ambos.",
+            "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+          ]
+        }
+      }
     },
     {
       "id": "aa2e6f85cab2ab736c9a9b24",
@@ -158,14 +166,18 @@
         "Global Object"
       ],
       "challengeType": 5,
-      "titleEs": "Cambio exacto",
-      "descriptionEs": [
-        "Crea una función que simule una caja registradora que acepte el precio de compra como el primer argumento, la cantidad recibida como el segundo argumento, y la cantidad de dinero disponible en la registradora (cid) como tercer argumento",
-        "cid es un arreglo bidimensional que lista la cantidad de dinero disponible",
-        "La función debe devolver la cadena de texto \"Insufficient Funds\" si el cid es menor al cambio requerido. También debe devolver \"Closed\" si el cid es igual al cambio",
-        "De no ser el caso, devuelve el cambio en monedas y billetes, ordenados de mayor a menor denominación.",
-        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
-      ]
+      "translations": {
+        "es": {
+          "title": "Cambio exacto",
+          "description": [
+            "Crea una función que simule una caja registradora que acepte el precio de compra como el primer argumento, la cantidad recibida como el segundo argumento, y la cantidad de dinero disponible en la registradora (cid) como tercer argumento",
+            "cid es un arreglo bidimensional que lista la cantidad de dinero disponible",
+            "La función debe devolver la cadena de texto \"Insufficient Funds\" si el cid es menor al cambio requerido. También debe devolver \"Closed\" si el cid es igual al cambio",
+            "De no ser el caso, devuelve el cambio en monedas y billetes, ordenados de mayor a menor denominación.",
+            "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+          ]
+        }
+      }
     },
     {
       "id": "a56138aff60341a09ed6c480",
@@ -213,11 +225,15 @@
         "Global Array Object"
       ],
       "challengeType": 5,
-      "titleEs": "Actualizando el inventario",
-      "descriptionEs": [
-        "Compara y actualiza el inventario actual, almacenado en un arreglo bidimensional, contra otro arreglo bidimensional de inventario nuevo. Actualiza las cantidades en el inventario actual y, en caso de recibir una nueva mercancía, añade su nombre y la cantidad recibida al arreglo del inventario en orden alfabético.",
-        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
-      ]
+      "translations": {
+        "es": {
+          "title": "Actualizando el inventario",
+          "description": [
+            "Compara y actualiza el inventario actual, almacenado en un arreglo bidimensional, contra otro arreglo bidimensional de inventario nuevo. Actualiza las cantidades en el inventario actual y, en caso de recibir una nueva mercancía, añade su nombre y la cantidad recibida al arreglo del inventario en orden alfabético.",
+            "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+          ]
+        }
+      }
     },
     {
       "id": "a7bf700cd123b9a54eef01d5",
@@ -255,12 +271,16 @@
         "RegExp"
       ],
       "challengeType": 5,
-      "titleEs": "Sin repeticiones, por favor",
-      "descriptionEs": [
-        "Crea una función que devuelva el número total de permutaciones de las letras en la cadena de texto provista, en las cuales no haya letras consecutivas repetidas",
-        "Por ejemplo, 'aab' debe retornar 2 porque, del total de 6 permutaciones posibles, solo 2 de ellas no tienen repetida la misma letra (en este caso 'a').",
-        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
-      ]
+      "translations": {
+        "es": {
+          "title": "Sin repeticiones, por favor",
+          "description": [
+            "Crea una función que devuelva el número total de permutaciones de las letras en la cadena de texto provista, en las cuales no haya letras consecutivas repetidas",
+            "Por ejemplo, 'aab' debe retornar 2 porque, del total de 6 permutaciones posibles, solo 2 de ellas no tienen repetida la misma letra (en este caso 'a').",
+            "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+          ]
+        }
+      }
     },
     {
       "id": "a19f0fbe1872186acd434d5a",
@@ -302,14 +322,18 @@
         "parseInt()"
       ],
       "challengeType": 5,
-      "titleEs": "Rangos de fechas amigables",
-      "descriptionEs": [
-        "Convierte un rango de fecha que conste de dos fechas en formato AAAA-MM-DD a un formato más legible",
-        "",
-        "La presentación amigable debería usar nombres de meses en inglés en lugar de números y fechas ordinales en lugar de cardinales (\"1st\" en lugar de \"1\").",
-        "No presentes información redundante o que pueda ser inferida por el usuario: si el rango de fechas termina en menos de un año desde la fecha incial, no presentes el año final.  Si el rango termina en el mismo mes de la fecha inicial, no presentes ni el mes ni el año final.",
-        "Además, si el rango de fechas comienza en el año actual y termina en un año o menos, no debes presentar el año al comienzo del rango amigable."
-      ]
+      "translations": {
+        "es": {
+          "title": "Rangos de fechas amigables",
+          "description": [
+            "Convierte un rango de fecha que conste de dos fechas en formato AAAA-MM-DD a un formato más legible",
+            "",
+            "La presentación amigable debería usar nombres de meses en inglés en lugar de números y fechas ordinales en lugar de cardinales (\"1st\" en lugar de \"1\").",
+            "No presentes información redundante o que pueda ser inferida por el usuario: si el rango de fechas termina en menos de un año desde la fecha incial, no presentes el año final.  Si el rango termina en el mismo mes de la fecha inicial, no presentes ni el mes ni el año final.",
+            "Además, si el rango de fechas comienza en el año actual y termina en un año o menos, no debes presentar el año al comienzo del rango amigable."
+          ]
+        }
+      }
     },
     {
       "id": "a2f1d72d9b908d0bd72bb9f6",
@@ -353,15 +377,19 @@
         "Details of the Object Model"
       ],
       "challengeType": 5,
-      "titleEs": "Crea una Persona",
-      "descriptionEs": [
-        "Completa el constructor de objetos con los métodos especificados a continuación:",
-        "<blockquote>getFirstName()\ngetLastName()\ngetFullName()\nsetFirstName(first)\nsetLastName(last)\nsetFullName(firstAndLast)</blockquote>",
-        "Ejecuta las pruebas para ver el resultado esperado de cada método.",
-        "Las funciones que aceptan argumentos deben aceptar sólo uno, y este tiene que ser una cadena.",
-        "Estos métodos deben ser el único medio para interactuar con el objeto.",
-        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
-      ]
+      "translations": {
+        "es": {
+          "title": "Crea una Persona",
+          "description": [
+            "Completa el constructor de objetos con los métodos especificados a continuación:",
+            "<blockquote>getFirstName()\ngetLastName()\ngetFullName()\nsetFirstName(first)\nsetLastName(last)\nsetFullName(firstAndLast)</blockquote>",
+            "Ejecuta las pruebas para ver el resultado esperado de cada método.",
+            "Las funciones que aceptan argumentos deben aceptar sólo uno, y este tiene que ser una cadena.",
+            "Estos métodos deben ser el único medio para interactuar con el objeto.",
+            "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+          ]
+        }
+      }
     },
     {
       "id": "af4afb223120f7348cdfc9fd",
@@ -395,15 +423,19 @@
         "Math.pow()"
       ],
       "challengeType": 5,
-      "titleEs": "Ubica los escombros",
-      "descriptionEs": [
-        "Crea una función que devuelva un nuevo arreglo que transforme la altitud promedio del elemento en su período orbital.",
-        "El arreglo debe contener objetos en el formato <code>{name: 'name', avgAlt: avgAlt}</code>.",
-        "Puedes leer acerca de períodos orbitales <a href=\"http://en.wikipedia.org/wiki/Orbital_period\" target='_blank'>en wikipedia</a>.",
-        "Los valores deben estar redondeados al número entero más próximo. El cuerpo orbitado es la Tierra",
-        "El radio de la Tierra es 6367.4447 kilómetros, y el valor GM del planeta es de 398600.4418 km<sup>3</sup>s<sup>-2</sup>.",
-        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
-      ]
+      "translations": {
+        "es": {
+          "title": "Ubica los escombros",
+          "description": [
+            "Crea una función que devuelva un nuevo arreglo que transforme la altitud promedio del elemento en su período orbital.",
+            "El arreglo debe contener objetos en el formato <code>{name: 'name', avgAlt: avgAlt}</code>.",
+            "Puedes leer acerca de períodos orbitales <a href=\"http://en.wikipedia.org/wiki/Orbital_period\" target='_blank'>en wikipedia</a>.",
+            "Los valores deben estar redondeados al número entero más próximo. El cuerpo orbitado es la Tierra",
+            "El radio de la Tierra es 6367.4447 kilómetros, y el valor GM del planeta es de 398600.4418 km<sup>3</sup>s<sup>-2</sup>.",
+            "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+          ]
+        }
+      }
     },
     {
       "id": "a3f503de51cfab748ff001aa",
@@ -439,13 +471,17 @@
         "Array.prototype.reduce()"
       ],
       "challengeType": 5,
-      "titleEs": "En parejas",
-      "descriptionEs": [
-        "Crea una función que devuelva la suma de todos los índices de los elementos de 'arr' que pueden ser emparejados con otro elemento de tal forma que la suma de ambos equivalga al valor del segundo argumento, 'arg'. Si varias combinaciones son posibles, devuelve la menor suma de índices. Una vez un elemento ha sido usado, no puede ser usado de nuevo para emparejarlo con otro elemento.",
-        "Por ejemplo, pairwise([1, 4, 2, 3, 0, 5], 7) debe devolver 11 porque 4, 2, 3 y 5 pueden ser emparejados para obtener una suma de 7",
-        "pairwise([1, 3, 2, 4], 4) devolvería el valor de 1, porque solo los primeros dos elementos pueden ser emparejados para sumar 4. ¡Recuerda que el primer elemento tiene un índice de 0!",
-        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
-      ]
+      "translations": {
+        "es": {
+          "title": "En parejas",
+          "description": [
+            "Crea una función que devuelva la suma de todos los índices de los elementos de 'arr' que pueden ser emparejados con otro elemento de tal forma que la suma de ambos equivalga al valor del segundo argumento, 'arg'. Si varias combinaciones son posibles, devuelve la menor suma de índices. Una vez un elemento ha sido usado, no puede ser usado de nuevo para emparejarlo con otro elemento.",
+            "Por ejemplo, pairwise([1, 4, 2, 3, 0, 5], 7) debe devolver 11 porque 4, 2, 3 y 5 pueden ser emparejados para obtener una suma de 7",
+            "pairwise([1, 3, 2, 4], 4) devolvería el valor de 1, porque solo los primeros dos elementos pueden ser emparejados para sumar 4. ¡Recuerda que el primer elemento tiene un índice de 0!",
+            "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+          ]
+        }
+      }
     }
   ]
 }

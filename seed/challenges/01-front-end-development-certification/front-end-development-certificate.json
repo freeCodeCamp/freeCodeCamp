@@ -240,33 +240,37 @@
       ],
       "type": "Waypoint",
       "challengeType": 7,
-      "descriptionEs": [
-        [
-          "//i.imgur.com/k8btNUB.jpg",
-          "Una imagen que muestra nuestro certificado de Desarrollo de interfaces",
-          "Este desafío te otorga tu certificado autenticado de Desarrollo de interfaces. Antes de que podamos emitir tu certificado, debemos verificar que has completado todos los desafíos básicos e intermedios de diseño de algoritmos, y todos los proyectos básicos e intermedios de desarrollo de interfaces. También debes aceptar nuestro Juramento de honestidad académica. Pulsa el botón siguiente para iniciar este proceso.",
-          ""
-        ],
-        [
-          "//i.imgur.com/HArFfMN.jpg",
-          "Plagio (nombre): acción y efecto de plagiar. Plagiar (verbo) - copiar en lo sustancial obras ajenas, dándolas como propias.",
-          "Al pulsar el botón siguiente, juras que todo el código en tus soluciones a los desafíos A) es código que tú o tu compañero escribieron personalmente, o B) proviene de librerías de código abierto como jQuery, o C) ha sido claramente atribuido a sus autores originales. También nos otorgas el permiso para auditar tus soluciones a los desafíos y revocar tu certificado si encontramos evidencia de plagio.",
-          "#"
-        ],
-        [
-          "//i.imgur.com/14F2Van.jpg",
-          "Una imagen del texto \"Front End Development Certificate requirements\"",
-          "Confirmemos que has completado todos nuestros desafíos básicos e intermedios de diseño de algoritmos, y todos nuestros proyectos básicos e intermedios de desarrollo de interfaces. Pulsa el botón siguiente para hacer la verificación.",
-          "#"
-        ],
-        [
-          "//i.imgur.com/16SIhHO.jpg",
-          "Una imagen de la palabra \"Congratulations\"",
-          "¡Felicitaciones! Hemos agregado tu certificado de Desarrollo de interfaces a tu portafolio. A menos que elijas no mostrar tus soluciones, este certificado será públicamente visible y verificable.",
-          ""
-        ]
-      ],
-      "titleEs": "Reclama tu certificado de Desarrollo de interfaces"
+      "translations": {
+        "es": {
+          "title": "Reclama tu certificado de Desarrollo de interfaces",
+          "description": [
+            [
+              "//i.imgur.com/k8btNUB.jpg",
+              "Una imagen que muestra nuestro certificado de Desarrollo de interfaces",
+              "Este desafío te otorga tu certificado autenticado de Desarrollo de interfaces. Antes de que podamos emitir tu certificado, debemos verificar que has completado todos los desafíos básicos e intermedios de diseño de algoritmos, y todos los proyectos básicos e intermedios de desarrollo de interfaces. También debes aceptar nuestro Juramento de honestidad académica. Pulsa el botón siguiente para iniciar este proceso.",
+              ""
+            ],
+            [
+              "//i.imgur.com/HArFfMN.jpg",
+              "Plagio (nombre): acción y efecto de plagiar. Plagiar (verbo) - copiar en lo sustancial obras ajenas, dándolas como propias.",
+              "Al pulsar el botón siguiente, juras que todo el código en tus soluciones a los desafíos A) es código que tú o tu compañero escribieron personalmente, o B) proviene de librerías de código abierto como jQuery, o C) ha sido claramente atribuido a sus autores originales. También nos otorgas el permiso para auditar tus soluciones a los desafíos y revocar tu certificado si encontramos evidencia de plagio.",
+              "#"
+            ],
+            [
+              "//i.imgur.com/14F2Van.jpg",
+              "Una imagen del texto \"Front End Development Certificate requirements\"",
+              "Confirmemos que has completado todos nuestros desafíos básicos e intermedios de diseño de algoritmos, y todos nuestros proyectos básicos e intermedios de desarrollo de interfaces. Pulsa el botón siguiente para hacer la verificación.",
+              "#"
+            ],
+            [
+              "//i.imgur.com/16SIhHO.jpg",
+              "Una imagen de la palabra \"Congratulations\"",
+              "¡Felicitaciones! Hemos agregado tu certificado de Desarrollo de interfaces a tu portafolio. A menos que elijas no mostrar tus soluciones, este certificado será públicamente visible y verificable.",
+              ""
+            ]
+          ]
+        }
+      }
     }
   ]
 }

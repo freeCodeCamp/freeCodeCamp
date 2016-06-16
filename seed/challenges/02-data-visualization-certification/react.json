@@ -13,7 +13,11 @@
       "tests": [],
       "type": "waypoint",
       "challengeType": 3,
-      "titleEs": "Desafios para aprender React"
+      "translations": {
+        "es": {
+          "title": "Desafios para aprender React"
+        }
+      }
     }
   ]
 }
