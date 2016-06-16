@@ -1673,7 +1673,7 @@
         "<strong>Example</strong>",
         "<blockquote>var array = [1,2,3];<br>array[0]; // equals 1<br>var data = array[1];  // equals 2</blockquote>",
         "<h4>Instructions</h4>",
-        "Create a variable called <code>myData</code> and set it to equal the first value of <code>myArray</code>."
+        "Create a variable called <code>myData</code> and set it to equal the first value of <code>myArray</code> using bracket notation."
       ],
       "challengeSeed": [
         "// Example",
@@ -1693,7 +1693,8 @@
         "var myArray = [1,2,3];\nvar myData = myArray[0];"
       ],
       "tests": [
-        "assert((function(){if(typeof myArray != 'undefined' && typeof myData != 'undefined' && myArray[0] === myData){return true;}else{return false;}})(), 'message: The variable <code>myData</code> should equal the first value of <code>myArray</code>.');"
+        "assert((function(){if(typeof myArray !== 'undefined' && typeof myData !== 'undefined' && myArray[0] === myData){return true;}else{return false;}})(), 'message: The variable <code>myData</code> should equal the first value of <code>myArray</code>.');",
+        "assert((function(){if(code.match(/\\s*=\\s*myArray\\[0\\]/g)){return true;}else{return false;}})(), 'message: The data in variable <code>myArray</code> should be accessed using bracket notation.');"
       ],
       "type": "waypoint",
       "challengeType": 1,
