@@ -92,60 +92,66 @@
       ],
       "type": "Waypoint",
       "challengeType": 7,
-      "descriptionEs": [
-        [
-          "//i.imgur.com/Et3iD74.jpg",
-          "Una imagen que muestra nuestro certificado de Visualización de datos",
-          "Este desafío te otorga tu certificado autenticado de Visualización de datos. Antes de que podamos emitir tu certificado, debemos verificar que has completado todos los proyectos con React y D3.js. También debes aceptar nuestro Juramento de honestidad académica. Pulsa el botón siguiente para iniciar este proceso.",
-          ""
-        ],
-        [
-          "//i.imgur.com/swuEma9.png",
-          "Plagio (nombre): acción y efecto de plagiar. Plagiar (verbo) - copiar en lo sustancial obras ajenas, dándolas como propias.",
-          "Al pulsar el botón siguiente, juras que todo el código en tus soluciones a los desafíos A) es código que tú o tu compañero escribieron personalmente, o B) proviene de librerías de código abierto como jQuery, o C) ha sido claramente atribuido a sus autores originales. También nos otorgas el permiso para auditar tus soluciones a los desafíos y revocar tu certificado si encontramos evidencia de plagio.",
-          "#"
-        ],
-        [
-          "//i.imgur.com/6b50POD.png",
-          "Una imagen del texto \"Los requisitos de Certificación de Visualización de datos\"",
-          "Confirmemos que has completado todos nuestros proyectos en React y D3.js. Pulsa el botón siguiente para hacer la verificación.",
-          "#"
-        ],
-        [
-          "//i.imgur.com/PnFG11N.png",
-          "Una imagen de la palabra \"Felicitaciones!\"",
-          "¡Felicitaciones! Hemos agregado tu certificado de Visualización de datos a tu portafolio. A menos que elijas no mostrar tus soluciones, este certificado será públicamente visible y verificable.",
-          ""
-        ]
-      ],
-      "titleEs": "Reclama tu certificado de Visualización de datos",
-      "descriptionFr": [
-        [
-          "//i.imgur.com/Et3iD74.jpg",
-          "Une image de note Certificat de Visualisation de données",
-          "Ce défi vous permettra d’avoir votre Certificat de Visualisation de données vérifiée. Avant de vous donner votre certificat, il faut s’assurer que vous avez bien accomplie tous les projets de React et D3.js et il faut que vous acceptiez notre Academic Honesty Pledge. Cliquez sur le bouton si dessous pour démarrer le processus.",
-          ""
-        ],
-        [
-          "//i.imgur.com/iFL1xR1.png",
-          "Une définition du plagiat : Plagiat (nom) – copier le travail d’un autre et le présenter comme étant le tien, sans mention de l’auteur original",
-          "En cliquant si dessous, je garantie que tout le code que j’ai présenté A) est mon propre code ou celui de mon collaborateur, B) vient d’un projet open-source comme jQuery, ou C) contient les mentions nécessaires des auteurs. Vous nous donnez aussi la permission de vérifier vos solutions et de révoquer votre certificat en cas de détection de plagiat.",
-          "#"
-        ],
-        [
-          "//i.imgur.com/0GZ0KHa.png",
-          "Une image du texte \"Les exigences de certification de visualisation de données\"",
-          "On va confirmer maintenant que vous avez bien terminé nos projets de React et D3.js. Cliquez sur le bouton si dessous pour vérifier cela.",
-          "#"
-        ],
-        [
-          "//i.imgur.com/EJXMNIQ.png",
-          "Une image du mot \"Félicitations à vous!\"",
-          "Félicitations! On vient d’ajouter votre Certificat de Visualisation de données à votre profile. Cette certificat est public et vérifiable, mais vous pouvez le cacher si vous désirer.",
-          ""
-        ]
-      ],
-      "titleFr":"Réclamer votre Certificat de Visualisation de données"
+      "translations": {
+        "es": {
+          "title": "Reclama tu certificado de Visualización de datos",
+          "description": [
+            [
+              "//i.imgur.com/Et3iD74.jpg",
+              "Una imagen que muestra nuestro certificado de Visualización de datos",
+              "Este desafío te otorga tu certificado autenticado de Visualización de datos. Antes de que podamos emitir tu certificado, debemos verificar que has completado todos los proyectos con React y D3.js. También debes aceptar nuestro Juramento de honestidad académica. Pulsa el botón siguiente para iniciar este proceso.",
+              ""
+            ],
+            [
+              "//i.imgur.com/swuEma9.png",
+              "Plagio (nombre): acción y efecto de plagiar. Plagiar (verbo) - copiar en lo sustancial obras ajenas, dándolas como propias.",
+              "Al pulsar el botón siguiente, juras que todo el código en tus soluciones a los desafíos A) es código que tú o tu compañero escribieron personalmente, o B) proviene de librerías de código abierto como jQuery, o C) ha sido claramente atribuido a sus autores originales. También nos otorgas el permiso para auditar tus soluciones a los desafíos y revocar tu certificado si encontramos evidencia de plagio.",
+              "#"
+            ],
+            [
+              "//i.imgur.com/6b50POD.png",
+              "Una imagen del texto \"Los requisitos de Certificación de Visualización de datos\"",
+              "Confirmemos que has completado todos nuestros proyectos en React y D3.js. Pulsa el botón siguiente para hacer la verificación.",
+              "#"
+            ],
+            [
+              "//i.imgur.com/PnFG11N.png",
+              "Una imagen de la palabra \"Felicitaciones!\"",
+              "¡Felicitaciones! Hemos agregado tu certificado de Visualización de datos a tu portafolio. A menos que elijas no mostrar tus soluciones, este certificado será públicamente visible y verificable.",
+              ""
+            ]
+          ]
+        },
+        "fr": {
+          "title": "Réclamer votre Certificat de Visualisation de données",
+          "description": [
+            [
+              "//i.imgur.com/Et3iD74.jpg",
+              "Une image de note Certificat de Visualisation de données",
+              "Ce défi vous permettra d’avoir votre Certificat de Visualisation de données vérifiée. Avant de vous donner votre certificat, il faut s’assurer que vous avez bien accomplie tous les projets de React et D3.js et il faut que vous acceptiez notre Academic Honesty Pledge. Cliquez sur le bouton si dessous pour démarrer le processus.",
+              ""
+            ],
+            [
+              "//i.imgur.com/iFL1xR1.png",
+              "Une définition du plagiat : Plagiat (nom) – copier le travail d’un autre et le présenter comme étant le tien, sans mention de l’auteur original",
+              "En cliquant si dessous, je garantie que tout le code que j’ai présenté A) est mon propre code ou celui de mon collaborateur, B) vient d’un projet open-source comme jQuery, ou C) contient les mentions nécessaires des auteurs. Vous nous donnez aussi la permission de vérifier vos solutions et de révoquer votre certificat en cas de détection de plagiat.",
+              "#"
+            ],
+            [
+              "//i.imgur.com/0GZ0KHa.png",
+              "Une image du texte \"Les exigences de certification de visualisation de données\"",
+              "On va confirmer maintenant que vous avez bien terminé nos projets de React et D3.js. Cliquez sur le bouton si dessous pour vérifier cela.",
+              "#"
+            ],
+            [
+              "//i.imgur.com/EJXMNIQ.png",
+              "Une image du mot \"Félicitations à vous!\"",
+              "Félicitations! On vient d’ajouter votre Certificat de Visualisation de données à votre profile. Cette certificat est public et vérifiable, mais vous pouvez le cacher si vous désirer.",
+              ""
+            ]
+          ]
+        }
+      }
     }
   ]
 }

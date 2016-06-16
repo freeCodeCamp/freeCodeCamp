@@ -12,7 +12,11 @@
       "tests": [],
       "type": "hike",
       "challengeType": 6,
-      "nameEs": "User Experience Design"
+      "translations": {
+        "es": {
+          "title": "User Experience Design"
+        }
+      }
     }
   ]
-}    
+}

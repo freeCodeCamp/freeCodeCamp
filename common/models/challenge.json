@@ -53,8 +53,8 @@
     },
     "hint": {
       "type": "array",
-      "default": [],
-      "description": "hints must be a single line of plain text"
+      "description": "hints must be a single line of plain text",
+      "default": []
     },
     "block": {
       "type": "string"
@@ -96,42 +96,16 @@
     "MDNlinks": {
       "type": "array"
     },
-    "nameCn": {
-      "type": "string"
-    },
-    "descriptionCn": {
-      "type": "array"
-    },
-    "nameFr": {
-      "type": "string"
-    },
-    "descriptionFr": {
-      "type": "array"
-    },
-    "nameRu": {
-      "type": "string"
-    },
-    "descriptionRu": {
-      "type": "array"
-    },
-    "nameEs": {
-      "type": "string"
-    },
-    "descriptionEs": {
-      "type": "array"
-    },
-    "namePt": {
-      "type": "string"
-    },
-    "descriptionPt": {
-      "type": "array"
-    },
     "solutions": {
       "type": "array",
       "default": []
     },
     "releasedOn": {
       "type": "string"
+    },
+    "translations": {
+      "type": "object",
+      "default": "{}"
     }
   },
   "validations": [],

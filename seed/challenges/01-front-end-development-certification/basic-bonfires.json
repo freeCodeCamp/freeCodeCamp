@@ -37,34 +37,38 @@
       "tests": [],
       "type": "Waypoint",
       "challengeType": 7,
-      "descriptionEs": [
-        [
-          "//i.imgur.com/sJkp30a.png",
-          "Una imagen de un desafio sobre algoritmos que presenta instrucciones, pruebas y el editor de código.",
-          "Nuestros desafios sobre algoritmos te enseñarán como pensar como un programador.",
-          ""
-        ],
-        [
-          "//i.imgur.com/d8LuRNh.png",
-          "Una mamá pájaro saca un bebé pájaro fuer de su nido.",
-          "Nuestros desafios anteriores te introdujeron a los conceptos de programación. Pero para estos desafios sobre algoritmos, ahora necesitarás aplicar lo que has aprendido y resolver problemas de respuesta abierta",
-          ""
-        ],
-        [
-          "//i.imgur.com/WBetuBa.jpg",
-          "Un programador frustado golpeando la pantalla de su computador.",
-          "Nuestros desafíos sobre algortimos son difíciles.  Algunos pueden requerir muchas horas para resolverse.  Podrás frustarte, pero no te rindas.",
-          ""
-        ],
-        [
-          "//i.imgur.com/p2TpOQd.jpg",
-          "Un tierno perro que salta sobre un obstáculo, pica el ojo y te apunta con su pata.",
-          "Cuando te atasques, usa la metodología Leer-Buscar-Preguntar.<br>No te preocupes -  ya lo has entendido.",
-          ""
-        ]
-      ],
       "isRequired": false,
-      "titleEs": "Prepárate para nuestros Desafíos sobre Algoritmos"
+      "translations": {
+        "es": {
+          "title": "Prepárate para nuestros Desafíos sobre Algoritmos",
+          "description": [
+            [
+              "//i.imgur.com/sJkp30a.png",
+              "Una imagen de un desafio sobre algoritmos que presenta instrucciones, pruebas y el editor de código.",
+              "Nuestros desafios sobre algoritmos te enseñarán como pensar como un programador.",
+              ""
+            ],
+            [
+              "//i.imgur.com/d8LuRNh.png",
+              "Una mamá pájaro saca un bebé pájaro fuer de su nido.",
+              "Nuestros desafios anteriores te introdujeron a los conceptos de programación. Pero para estos desafios sobre algoritmos, ahora necesitarás aplicar lo que has aprendido y resolver problemas de respuesta abierta",
+              ""
+            ],
+            [
+              "//i.imgur.com/WBetuBa.jpg",
+              "Un programador frustado golpeando la pantalla de su computador.",
+              "Nuestros desafíos sobre algortimos son difíciles.  Algunos pueden requerir muchas horas para resolverse.  Podrás frustarte, pero no te rindas.",
+              ""
+            ],
+            [
+              "//i.imgur.com/p2TpOQd.jpg",
+              "Un tierno perro que salta sobre un obstáculo, pica el ojo y te apunta con su pata.",
+              "Cuando te atasques, usa la metodología Leer-Buscar-Preguntar.<br>No te preocupes -  ya lo has entendido.",
+              ""
+            ]
+          ]
+        }
+      }
     },
     {
       "id": "a202eed8fc186c8434cb6d61",
@@ -100,13 +104,17 @@
         "Array.prototype.join()"
       ],
       "challengeType": 5,
-      "titleEs": "Invierte el texto",
-      "descriptionEs": [
-        "Invierte la cadena de texto que se te provee",
-        "Puede que necesites convertir la cadena de texto en un arreglo antes de que puedas invertirla",
-        "El resultado debe ser una cadena de texto",
-        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
-      ]
+      "translations": {
+        "es": {
+          "title": "Invierte el texto",
+          "description": [
+            "Invierte la cadena de texto que se te provee",
+            "Puede que necesites convertir la cadena de texto en un arreglo antes de que puedas invertirla",
+            "El resultado debe ser una cadena de texto",
+            "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+          ]
+        }
+      }
     },
     {
       "id": "a302f7aae1aa3152a5b413bc",
@@ -141,14 +149,18 @@
         "Arithmetic Operators"
       ],
       "challengeType": 5,
-      "titleEs": "Factoriza un número",
-      "descriptionEs": [
-        "Crea una función que devuelva el factorial del número entero que se te provee",
-        "El factorial de un número entero positivo n es la multiplicación de todos los enteros positivos menores o iguales a n",
-        "Los factoriales son comúnmente representados con la notación <code>n!</code>",
-        "Por ejemplo: <code>5! = 1 * 2 * 3 * 4 * 5 = 120</code>",
-        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
-      ]
+      "translations": {
+        "es": {
+          "title": "Factoriza un número",
+          "description": [
+            "Crea una función que devuelva el factorial del número entero que se te provee",
+            "El factorial de un número entero positivo n es la multiplicación de todos los enteros positivos menores o iguales a n",
+            "Los factoriales son comúnmente representados con la notación <code>n!</code>",
+            "Por ejemplo: <code>5! = 1 * 2 * 3 * 4 * 5 = 120</code>",
+            "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+          ]
+        }
+      }
     },
     {
       "id": "aaa48de84e1ecc7c742e1124",
@@ -196,15 +208,19 @@
         "String.prototype.toLowerCase()"
       ],
       "challengeType": 5,
-      "titleEs": "Verifica si es palíndromo",
-      "descriptionEs": [
-        "Crea una función que devuelva <code>true</code> si una cadena de texto dada es un palíndromo, y que devuelva <code>false</code> en caso contrario",
-        "Un palíndromo es una palabra u oración que se escribe de la misma forma en ambos sentidos, sin tomar en cuenta signos de puntuación, espacios y sin distinguir entre mayúsculas y minúsculas.",
-        "Tendrás que quitar los caracteres no alfanuméricos (signos de puntuación, espacioes y símbolos) y transformar las letras a minúsculas para poder verificar si el texto es palíndromo.",
-        "Te proveeremos textos en varios formatos, como \"racecar\", \"RaceCar\", and \"race CAR\" entre otros.",
-        "También vamos a pasar cadenas con símbolos especiales, tales como <code>\"2A3*3a2\"</code>, <code>\"2A3 3a2\"</code>, y <code>\"2_A3*3#A2\"</code>.",
-        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
-      ]
+      "translations": {
+        "es": {
+          "title": "Verifica si es palíndromo",
+          "description": [
+            "Crea una función que devuelva <code>true</code> si una cadena de texto dada es un palíndromo, y que devuelva <code>false</code> en caso contrario",
+            "Un palíndromo es una palabra u oración que se escribe de la misma forma en ambos sentidos, sin tomar en cuenta signos de puntuación, espacios y sin distinguir entre mayúsculas y minúsculas.",
+            "Tendrás que quitar los caracteres no alfanuméricos (signos de puntuación, espacioes y símbolos) y transformar las letras a minúsculas para poder verificar si el texto es palíndromo.",
+            "Te proveeremos textos en varios formatos, como \"racecar\", \"RaceCar\", and \"race CAR\" entre otros.",
+            "También vamos a pasar cadenas con símbolos especiales, tales como <code>\"2A3*3a2\"</code>, <code>\"2A3 3a2\"</code>, y <code>\"2_A3*3#A2\"</code>.",
+            "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+          ]
+        }
+      }
     },
     {
       "id": "a26cbbe9ad8655a977e1ceb5",
@@ -239,12 +255,16 @@
         "String.length"
       ],
       "challengeType": 5,
-      "titleEs": "Encuentra la palabra más larga",
-      "descriptionEs": [
-        "Crea una función que devuelva la longitud de la palabra más larga en una frase dada",
-        "El resultado debe ser un número",
-        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
-      ]
+      "translations": {
+        "es": {
+          "title": "Encuentra la palabra más larga",
+          "description": [
+            "Crea una función que devuelva la longitud de la palabra más larga en una frase dada",
+            "El resultado debe ser un número",
+            "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+          ]
+        }
+      }
     },
     {
       "id": "ab6137d4e35944e21037b769",
@@ -276,12 +296,16 @@
         "String.prototype.split()"
       ],
       "challengeType": 5,
-      "titleEs": "Aplica formato de título",
-      "descriptionEs": [
-        "Crea una función que devuelva la cadena de texto que recibe con la primera letra de cada palabra en mayúscula. Asegúrate de que el resto de las letras sean minúsculas",
-        "Para este ejercicio, también debes poner en mayúscula conectores como \"the\" y \"of\".",
-        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
-      ]
+      "translations": {
+        "es": {
+          "title": "Aplica formato de título",
+          "description": [
+            "Crea una función que devuelva la cadena de texto que recibe con la primera letra de cada palabra en mayúscula. Asegúrate de que el resto de las letras sean minúsculas",
+            "Para este ejercicio, también debes poner en mayúscula conectores como \"the\" y \"of\".",
+            "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+          ]
+        }
+      }
     },
     {
       "id": "a789b3483989747d63b0e427",
@@ -313,13 +337,17 @@
         "Comparison Operators"
       ],
       "challengeType": 5,
-      "titleEs": "Devuelve el mayor entero de cada arreglo",
-      "descriptionEs": [
-        "Crea una función que devuelva un arreglo que contenga el mayor de los números de cada sub-arreglo que recibe. Para simplificar las cosas, el arreglo que recibirá tendrá exactamente 4 sub-arreglos",
-        "Recuerda que puedes iterar a través de un arreglo con un búcle simple, y acceder a cada miembro utilizando la sintaxis arr[i].",
-        "Si escribes tu propio test con Chai.js, asegúrate de utilizar un operador de igualdad estricto en lugar de un operador de igualdad cuando compares arreglos. ",
-        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
-      ]
+      "translations": {
+        "es": {
+          "title": "Devuelve el mayor entero de cada arreglo",
+          "description": [
+            "Crea una función que devuelva un arreglo que contenga el mayor de los números de cada sub-arreglo que recibe. Para simplificar las cosas, el arreglo que recibirá tendrá exactamente 4 sub-arreglos",
+            "Recuerda que puedes iterar a través de un arreglo con un búcle simple, y acceder a cada miembro utilizando la sintaxis arr[i].",
+            "Si escribes tu propio test con Chai.js, asegúrate de utilizar un operador de igualdad estricto en lugar de un operador de igualdad cuando compares arreglos. ",
+            "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+          ]
+        }
+      }
     },
     {
       "id": "acda2fb1324d9b0fa741e6b5",
@@ -358,11 +386,15 @@
         "String.prototype.substring()"
       ],
       "challengeType": 5,
-      "titleEs": "Confirma la terminación",
-      "descriptionEs": [
-        "Verifica si una cadena de texto (primer argumento) termina con otra cadena de texto (segundo argumento).",
-        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
-      ]
+      "translations": {
+        "es": {
+          "title": "Confirma la terminación",
+          "description": [
+            "Verifica si una cadena de texto (primer argumento) termina con otra cadena de texto (segundo argumento).",
+            "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+          ]
+        }
+      }
     },
     {
       "id": "afcc8d540bea9ea2669306b6",
@@ -396,11 +428,15 @@
         "Global String Object"
       ],
       "challengeType": 5,
-      "titleEs": "Repite el texto Repite el texto",
-      "descriptionEs": [
-        "Repite una cadena de texto dada (primer argumento) <code>num</code> veces (segundo argumento). Retorna una cadena de texto vacía si <code>num</code> es un número negativo.",
-        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
-      ]
+      "translations": {
+        "es": {
+          "title": "Repite el texto Repite el texto",
+          "description": [
+            "Repite una cadena de texto dada (primer argumento) <code>num</code> veces (segundo argumento). Retorna una cadena de texto vacía si <code>num</code> es un número negativo.",
+            "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+          ]
+        }
+      }
     },
     {
       "id": "ac6993d51946422351508a41",
@@ -436,13 +472,17 @@
         "String.prototype.slice()"
       ],
       "challengeType": 5,
-      "titleEs": "Trunca una cadena de texto",
-      "descriptionEs": [
-        "Trunca una cadena de texto (primer argumento) si su longitud es mayor que un máximo de caracteres dado (segundo argumento). Devuelve la cadena de texto truncada con una terminación \"...\".",
-        "Ten en cuenta que los tres puntos al final también se cuentan dentro de la longitud de la cadena de texto.",
-        "Si el <code>num</code es menor o igual a 3, entonces la longitud de los 3 puntos no se añade a la longitud de la cadena.",
-        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
-      ]
+      "translations": {
+        "es": {
+          "title": "Trunca una cadena de texto",
+          "description": [
+            "Trunca una cadena de texto (primer argumento) si su longitud es mayor que un máximo de caracteres dado (segundo argumento). Devuelve la cadena de texto truncada con una terminación \"...\".",
+            "Ten en cuenta que los tres puntos al final también se cuentan dentro de la longitud de la cadena de texto.",
+            "Si el <code>num</code es menor o igual a 3, entonces la longitud de los 3 puntos no se añade a la longitud de la cadena.",
+            "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+          ]
+        }
+      }
     },
     {
       "id": "a9bd25c716030ec90084d8a1",
@@ -478,11 +518,15 @@
         "Array.prototype.slice()"
       ],
       "challengeType": 5,
-      "titleEs": "En mil pedazos",
-      "descriptionEs": [
-        "Escribe una función que parta un arreglo (primer argumento) en fragmentos de una longitud dada (segundo argumento) y los devuelva en forma de un arreglo bidimensional.",
-        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
-      ]
+      "translations": {
+        "es": {
+          "title": "En mil pedazos",
+          "description": [
+            "Escribe una función que parta un arreglo (primer argumento) en fragmentos de una longitud dada (segundo argumento) y los devuelva en forma de un arreglo bidimensional.",
+            "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+          ]
+        }
+      }
     },
     {
       "id": "ab31c21b530c0dafa9e241ee",
@@ -518,12 +562,16 @@
         "Array.prototype.splice()"
       ],
       "challengeType": 5,
-      "titleEs": "Vuélale la cabeza",
-      "descriptionEs": [
-        "Crea una función que devuelva los elementos restantes de un arreglo después de eliminar <code>n</code> elementos de la cabeza.",
-        "Por cabeza nos referimos al inicio de un arreglo, comenzando por el índice 0.",
-        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
-      ]
+      "translations": {
+        "es": {
+          "title": "Vuélale la cabeza",
+          "description": [
+            "Crea una función que devuelva los elementos restantes de un arreglo después de eliminar <code>n</code> elementos de la cabeza.",
+            "Por cabeza nos referimos al inicio de un arreglo, comenzando por el índice 0.",
+            "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+          ]
+        }
+      }
     },
     {
       "id": "af2170cad53daa0770fabdea",
@@ -562,14 +610,18 @@
         "String.prototype.indexOf()"
       ],
       "challengeType": 5,
-      "titleEs": "Mutaciones",
-      "descriptionEs": [
-        "Crea una función que devuelva <code>true</code> si la cadena de texto del primer elemento de un arreglo contiene todas las letras de la cadena de texto del segundo elemento del arreglo.",
-        "Por ejemplo, <code>[\"hello\", \"Hello\"]</code>, debe devolver <code>true</code> porque todas las letras en la segunda cadena de texto están presentes en la primera, sin distinguir entre mayúsculas y minúsculas.",
-        "En el caso de <code>[\"hello\", \"hey\"]</code> la función debe devolver false porque la cadena de texto \"hello\" no contiene una \"y\".",
-        "Finalmente, <code>[\"Alien\", \"line\"]</code>, la función debe devolver <code>true</code> porque todas las letras en \"line\" están presentes en \"Alien\".",
-        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
-      ]
+      "translations": {
+        "es": {
+          "title": "Mutaciones",
+          "description": [
+            "Crea una función que devuelva <code>true</code> si la cadena de texto del primer elemento de un arreglo contiene todas las letras de la cadena de texto del segundo elemento del arreglo.",
+            "Por ejemplo, <code>[\"hello\", \"Hello\"]</code>, debe devolver <code>true</code> porque todas las letras en la segunda cadena de texto están presentes en la primera, sin distinguir entre mayúsculas y minúsculas.",
+            "En el caso de <code>[\"hello\", \"hey\"]</code> la función debe devolver false porque la cadena de texto \"hello\" no contiene una \"y\".",
+            "Finalmente, <code>[\"Alien\", \"line\"]</code>, la función debe devolver <code>true</code> porque todas las letras en \"line\" están presentes en \"Alien\".",
+            "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+          ]
+        }
+      }
     },
     {
       "id": "adf08ec01beb4f99fc7a68f2",
@@ -603,12 +655,16 @@
         "Array.prototype.filter()"
       ],
       "challengeType": 5,
-      "titleEs": "Detector de mentiras",
-      "descriptionEs": [
-        "Remueve todos los valores falsy de un arreglo dado",
-        "En javascript, los valores falsy son los siguientes: <code>false</code>, <code>null</code>, <code>0</code>, <code>\"\"</code>, <code>undefined</code>, y <code>NaN</code>.",
-        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
-      ]
+      "translations": {
+        "es": {
+          "title": "Detector de mentiras",
+          "description": [
+            "Remueve todos los valores falsy de un arreglo dado",
+            "En javascript, los valores falsy son los siguientes: <code>false</code>, <code>null</code>, <code>0</code>, <code>\"\"</code>, <code>undefined</code>, y <code>NaN</code>.",
+            "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+          ]
+        }
+      }
     },
     {
       "id": "a39963a4c10bc8b4d4f06d7e",
@@ -642,11 +698,15 @@
         "Array.prototype.filter()"
       ],
       "challengeType": 5,
-      "titleEs": "Buscar y destruir",
-      "descriptionEs": [
-        "Se te proveerá un arreglo inicial (el primer argumento en la función <code>destroyer</code>), seguido por uno o más argumentos. Elimina todos los elementos del arreglo inicial que tengan el mismo valor que el resto de argumentos.",
-        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
-      ]
+      "translations": {
+        "es": {
+          "title": "Buscar y destruir",
+          "description": [
+            "Se te proveerá un arreglo inicial (el primer argumento en la función <code>destroyer</code>), seguido por uno o más argumentos. Elimina todos los elementos del arreglo inicial que tengan el mismo valor que el resto de argumentos.",
+            "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+          ]
+        }
+      }
     },
     {
       "id": "a24c1a4622e3c05097f71d67",
@@ -683,13 +743,17 @@
         "Array.prototype.sort()"
       ],
       "challengeType": 5,
-      "titleEs": "¿Cuál es mi asiento?",
-      "descriptionEs": [
-        "Devuelve el menor índice en el que un valor (segundo argumento) debe ser insertado en un arreglo (primer argumento) una vez ha sido ordenado.",
-        "Por ejemplo, where([1,2,3,4], 1.5) debe devolver 1 porque el segundo argumento de la función (1.5) es mayor que 1 (con índice 0 en el arreglo), pero menor que 2 (con índice 1).",
-        "Mientras que <code>where([20,3,5], 19)</code> debe devolver <code>2</code> porque una vez ordenado el arreglo se verá com <code>[3,5,20]</code> y <code>19</code> es menor que <code>20</code> (índice 2) y mayor que <code>5</code> (índice 1).",
-        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
-      ]
+      "translations": {
+        "es": {
+          "title": "¿Cuál es mi asiento?",
+          "description": [
+            "Devuelve el menor índice en el que un valor (segundo argumento) debe ser insertado en un arreglo (primer argumento) una vez ha sido ordenado.",
+            "Por ejemplo, where([1,2,3,4], 1.5) debe devolver 1 porque el segundo argumento de la función (1.5) es mayor que 1 (con índice 0 en el arreglo), pero menor que 2 (con índice 1).",
+            "Mientras que <code>where([20,3,5], 19)</code> debe devolver <code>2</code> porque una vez ordenado el arreglo se verá com <code>[3,5,20]</code> y <code>19</code> es menor que <code>20</code> (índice 2) y mayor que <code>5</code> (índice 1).",
+            "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+          ]
+        }
+      }
     },
     {
       "id": "56533eb9ac21ba0edf2244e2",
@@ -728,16 +792,20 @@
         "String.fromCharCode()"
       ],
       "challengeType": 5,
-      "titleEs": "Cifrado César",
-      "descriptionEs": [
-        "Uno de los <dfn>cifrados</dfn> más simples y ampliamente conocidos es el <code>cifrado César</code>, también llamado <code>cifrado por desplazamiento</code>. En un <code>cifrado por desplazamiento</code> los significados de las letras se desplazan por una cierta cantidad.",
-        "Un uso moderno común es el cifrado <a href=\"https://en.wikipedia.org/wiki/ROT13\" target='_blank'>ROT13</a> , donde los valores de las letras se desplazan 13 espacios. De esta forma 'A' &harr; 'N', 'B' &harr;  'O' y así.",
-        "Crea una función que tome una cadena de texto cifrada en <a href=\"https://en.wikipedia.org/wiki/ROT13\" target='_blank'>ROT13</a> como argumento y que devuelva la cadena de texto decodificada.",
-        "Todas las letras que se te pasen van a estar en mayúsculas. No transformes ningún caracter no-alfabético (por ejemplo: espacios, puntuación). Simplemente pásalos intactos.",
-        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
-      ],
       "isRequired": true,
-      "releasedOn": "January 1, 2016"
+      "releasedOn": "January 1, 2016",
+      "translations": {
+        "es": {
+          "title": "Cifrado César",
+          "description": [
+            "Uno de los <dfn>cifrados</dfn> más simples y ampliamente conocidos es el <code>cifrado César</code>, también llamado <code>cifrado por desplazamiento</code>. En un <code>cifrado por desplazamiento</code> los significados de las letras se desplazan por una cierta cantidad.",
+            "Un uso moderno común es el cifrado <a href=\"https://en.wikipedia.org/wiki/ROT13\" target='_blank'>ROT13</a> , donde los valores de las letras se desplazan 13 espacios. De esta forma 'A' &harr; 'N', 'B' &harr;  'O' y así.",
+            "Crea una función que tome una cadena de texto cifrada en <a href=\"https://en.wikipedia.org/wiki/ROT13\" target='_blank'>ROT13</a> como argumento y que devuelva la cadena de texto decodificada.",
+            "Todas las letras que se te pasen van a estar en mayúsculas. No transformes ningún caracter no-alfabético (por ejemplo: espacios, puntuación). Simplemente pásalos intactos.",
+            "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+          ]
+        }
+      }
     }
   ]
 }
