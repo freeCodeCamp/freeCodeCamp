@@ -2043,19 +2043,7 @@
         "<h4>Instructions</h4>",
         "<ol><li>Create a function called <code>reusableFunction</code> which prints <code>\"Hi World\"</code> to the dev console.</li><li>Call the function.</li></ol>"
       ],
-      "challengeSeed": [
-        "// Example",
-        "function reusableFunction() {",
-        "  console.log(\"Heyya, World\");",
-        "}",
-        "",
-        "reusableFunction();",
-        "",
-        "// Only change code below this line",
-        "",
-        ""
-      ],
-      "tail": [
+	  "head": [
         "var logOutput = \"\";",
         "var originalConsole = console",
         "function capture() {",
@@ -2075,12 +2063,26 @@
         "  console.log = originalConsole.log;",
         "}",
         "",
+        "capture();"
+      ],
+      "challengeSeed": [
+        "// Example",
+        "function reusableFunction() {",
+        "  console.log(\"Heyya, World\");",
+        "}",
+        "",
+        "reusableFunction();",
+        "",
+        "// Only change code below this line",
+        "",
+        ""
+      ],
+      "tail": [
+        "uncapture();",
+        "",
         "if (typeof reusableFunction !== \"function\") { ",
         "  (function() { return \"reusableFunction is not defined\"; })();",
         "} else {",
-        "  capture();",
-        "  reusableFunction();  ",
-        "  uncapture();",
         "  (function() { return logOutput || \"console.log never called\"; })();",
         "}"
       ],
