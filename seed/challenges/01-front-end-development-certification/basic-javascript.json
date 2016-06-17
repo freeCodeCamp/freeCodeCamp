@@ -1595,9 +1595,10 @@
       "title": "Store Multiple Values in one Variable using JavaScript Arrays",
       "description": [
         "With JavaScript <code>array</code> variables, we can store several pieces of data in one place.",
-        "You start an array declaration with an opening square bracket, end it with a closing square bracket, and put a comma between each entry, like this:<br><code>var sandwich = [\"peanut butter\", \"jelly\", \"bread\"]</code>.",
+        "You start an array declaration with an opening square bracket, end it with a closing square bracket, and put a comma between each entry, like this: ",
+        "<code>var sandwich = [\"peanut butter\", \"jelly\", \"bread\"]</code>.",
         "<h4>Instructions</h4>",
-        "Create a new array called <code>myArray</code> that contains both a <code>string</code> and a <code>number</code> (in that order).",
+        "Modify the new array <code>myArray</code> so that it contains both a <code>string</code> and a <code>number</code> (in that order).",
         "<strong>Hint</strong><br>Refer to the example code in the text editor if you get stuck."
       ],
       "challengeSeed": [
