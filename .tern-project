@@ -3,6 +3,12 @@
         "ecma5",
         "ecma6"
     ],
+    "loadEagerly": [
+        "common/app/**/*.js ",
+        "common/app/**/*.jsx",
+        "server/**/*.js",
+        "client/**/*.js"
+    ],
     "plugins": {
         "commonjs": {},
         "es-modules": {},
