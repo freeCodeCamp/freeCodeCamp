@@ -104,14 +104,12 @@ function mapChallengeToLang({ translations = {}, ...challenge }, lang) {
   if (!supportedLanguages[lang]) {
     lang = 'en';
   }
+  const translation = translations[lang] || {};
   if (lang !== 'en') {
-    challenge.title =
-      translations[lang] && translations[lang].title ||
-      challenge.title;
-
-    challenge.description =
-      translations[lang] && translations[lang].description ||
-      challenge.description;
+    challenge = {
+      ...challenge,
+      ...translation
+    };
   }
   return challenge;
 }
@@ -120,8 +118,10 @@ function getMapForLang(lang) {
   return ({ entities: { challenge: challengeMap, ...entities }, result }) => {
     entities.challenge = Object.keys(challengeMap)
       .reduce((translatedChallengeMap, key) => {
-        translatedChallengeMap[key] =
-          mapChallengeToLang(challengeMap[key], lang);
+        translatedChallengeMap[key] = mapChallengeToLang(
+          challengeMap[key],
+          lang
+        );
         return translatedChallengeMap;
       }, {});
     return { result, entities };
