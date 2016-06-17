@@ -3,6 +3,7 @@ import moment from 'moment-timezone';
 import { Observable } from 'rx';
 import debugFactory from 'debug';
 
+import supportedLanguages from '../../common/utils/supported-languages';
 import {
   frontEndChallengeId,
   dataVisChallengeId,
@@ -123,8 +124,9 @@ function buildDisplayChallenges(challengeMap = {}, timezone) {
 }
 
 module.exports = function(app) {
-  var router = app.loopback.Router();
-  var User = app.models.User;
+  const router = app.loopback.Router();
+  const api = app.loopback.Router();
+  const User = app.models.User;
   function findUserByUsername$(username, fields) {
     return observeQuery(
       User,
@@ -145,39 +147,39 @@ module.exports = function(app) {
   router.get('/signin', getSignin);
   router.get('/signout', signout);
   router.get('/forgot', getForgot);
-  router.post('/forgot', postForgot);
+  api.post('/forgot', postForgot);
   router.get('/reset-password', getReset);
-  router.post('/reset-password', postReset);
+  api.post('/reset-password', postReset);
   router.get('/email-signup', getEmailSignup);
   router.get('/email-signin', getEmailSignin);
   router.get('/deprecated-signin', getDepSignin);
   router.get('/update-email', getUpdateEmail);
-  router.get(
+  api.get(
     '/toggle-lockdown-mode',
     sendNonUserToMap,
     toggleLockdownMode
   );
-  router.get(
+  api.get(
     '/toggle-announcement-email-mode',
     sendNonUserToMap,
     toggleReceivesAnnouncementEmails
   );
-  router.get(
+  api.get(
     '/toggle-notification-email-mode',
     sendNonUserToMap,
     toggleReceivesNotificationEmails
   );
-  router.get(
+  api.get(
     '/toggle-quincy-email-mode',
     sendNonUserToMap,
     toggleReceivesQuincyEmails
   );
-  router.post(
+  api.post(
     '/account/delete',
     ifNoUser401,
     postDeleteAccount
   );
-  router.get(
+  api.get(
     '/account',
     sendNonUserToMap,
     getAccount
@@ -188,32 +190,31 @@ module.exports = function(app) {
     flashIfNotVerified,
     getSettings
   );
-  // router.get('/vote1', vote1);
-  // router.get('/vote2', vote2);
 
   // Ensure these are the last routes!
-  router.get(
+  api.get(
     '/:username/front-end-certification',
     showCert.bind(null, certTypes.frontEnd)
   );
 
-  router.get(
+  api.get(
     '/:username/data-visualization-certification',
     showCert.bind(null, certTypes.dataVis)
   );
 
-  router.get(
+  api.get(
     '/:username/back-end-certification',
     showCert.bind(null, certTypes.backEnd)
   );
 
-  router.get(
+  api.get(
     '/:username/full-stack-certification',
     (req, res) => res.redirect(req.url.replace('full-stack', 'back-end'))
   );
 
   router.get('/:username', returnUser);
 
+  app.use('/:lang', router);
   app.use(router);
 
   function getSignin(req, res) {
@@ -280,7 +281,7 @@ module.exports = function(app) {
 
   function returnUser(req, res, next) {
     const username = req.params.username.toLowerCase();
-    const { user, path } = req;
+    const { user } = req;
 
     // timezone of signed-in account
     // to show all date related components
@@ -298,10 +299,7 @@ module.exports = function(app) {
     return User.findOne$(query)
       .filter(userPortfolio => {
         if (!userPortfolio) {
-          req.flash('errors', {
-            msg: `We couldn't find a page for ${ path }`
-          });
-          res.redirect('/');
+          next();
         }
         return !!userPortfolio;
       })
@@ -354,7 +352,8 @@ module.exports = function(app) {
             calender,
             github: userPortfolio.githubURL,
             moment,
-            encodeFcc
+            encodeFcc,
+            supportedLanguages
           }));
       })
       .doOnNext(data => {

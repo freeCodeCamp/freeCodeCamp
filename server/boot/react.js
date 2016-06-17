@@ -12,8 +12,6 @@ const log = debug('fcc:react-server');
 // add routes here as they slowly get reactified
 // remove their individual controllers
 const routes = [
-  '/videos',
-  '/videos/*',
   '/challenges',
   '/challenges/*',
   '/map'
@@ -23,6 +21,12 @@ const devRoutes = [];
 
 export default function reactSubRouter(app) {
   var router = app.loopback.Router();
+
+  router.get('/videos', (req, res) => res.redirect('/map'));
+  router.get(
+    '/videos/:dashedName',
+    (req, res) => res.redirect(`/challenges/${req.params.dashedName}`)
+  );
 
   // These routes are in production
   routes.forEach((route) => {
@@ -35,13 +39,15 @@ export default function reactSubRouter(app) {
     });
   }
 
-  app.use(router);
+  app.use('/:lang', router);
 
   function serveReactApp(req, res, next) {
+    const { lang } = req;
     const serviceOptions = { req };
     createApp({
       serviceOptions,
-      location: req.path
+      location: req.originalUrl,
+      initialState: { app: { languageTag: lang } }
     })
       // if react-router does not find a route send down the chain
       .filter(({ redirect, props }) => {

@@ -6,36 +6,41 @@ import secrets from '../../config/secrets';
 module.exports = function(app) {
   const router = app.loopback.Router();
   const User = app.models.User;
-  router.get('/api/github', githubCalls);
-  router.get('/chat', chat);
-  router.get('/coding-bootcamp-cost-calculator', bootcampCalculator);
-  router.get('/twitch', twitch);
-  router.get('/pmi-acp-agile-project-managers', agileProjectManagers);
-  router.get('/pmi-acp-agile-project-managers-form', agileProjectManagersForm);
+  const noLangRouter = app.loopback.Router();
+  noLangRouter.get('/api/github', githubCalls);
+  noLangRouter.get('/chat', chat);
+  noLangRouter.get('/twitch', twitch);
+  noLangRouter.get('/unsubscribe/:email', unsubscribeMonthly);
+  noLangRouter.get(
+    '/unsubscribe-notifications/:email',
+    unsubscribeNotifications
+  );
+  noLangRouter.get('/unsubscribe-quincy/:email', unsubscribeQuincy);
+  noLangRouter.get('/submit-cat-photo', submitCatPhoto);
+  noLangRouter.get(
+    '/the-fastest-web-page-on-the-internet',
+    theFastestWebPageOnTheInternet
+  );
+  noLangRouter.get('/shop/cancel-stickers', cancelStickers);
+  noLangRouter.get('/shop/confirm-stickers', confirmStickers);
+
+  router.get('/unsubscribed', unsubscribed);
   router.get('/nonprofits', nonprofits);
   router.get('/nonprofits-form', nonprofitsForm);
-  router.get('/unsubscribe/:email', unsubscribeMonthly);
-  router.get('/unsubscribe-notifications/:email', unsubscribeNotifications);
-  router.get('/unsubscribe-quincy/:email', unsubscribeQuincy);
-  router.get('/unsubscribed', unsubscribed);
-  router.get('/get-started', getStarted);
-  router.get('/submit-cat-photo', submitCatPhoto);
+  router.get('/pmi-acp-agile-project-managers', agileProjectManagers);
+  router.get('/pmi-acp-agile-project-managers-form', agileProjectManagersForm);
+  router.get('/coding-bootcamp-cost-calculator', bootcampCalculator);
   router.get('/stories', showTestimonials);
   router.get('/shop', showShop);
-  router.get('/shop/cancel-stickers', cancelStickers);
-  router.get('/shop/confirm-stickers', confirmStickers);
   router.get('/all-stories', showAllTestimonials);
   router.get('/terms', terms);
   router.get('/privacy', privacy);
   router.get('/how-nonprofit-projects-work', howNonprofitProjectsWork);
   router.get('/code-of-conduct', codeOfConduct);
   router.get('/academic-honesty', academicHonesty);
-  router.get(
-    '/the-fastest-web-page-on-the-internet',
-    theFastestWebPageOnTheInternet
-  );
 
-  app.use(router);
+  app.use(noLangRouter);
+  app.use('/:lang', router);
 
   function chat(req, res) {
     res.redirect('https://gitter.im/FreeCodeCamp/FreeCodeCamp');
@@ -229,12 +234,6 @@ module.exports = function(app) {
   function unsubscribed(req, res) {
     res.render('resources/unsubscribed', {
       title: 'You have been unsubscribed'
-    });
-  }
-
-  function getStarted(req, res) {
-    res.render('resources/get-started', {
-      title: 'How to get started with Free Code Camp'
     });
   }
 
