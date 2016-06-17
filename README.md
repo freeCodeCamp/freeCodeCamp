@@ -7,7 +7,7 @@
 Welcome to Free Code Camp's open source codebase and curriculum!
 =======================
 
-Free Code Camp is a friendly open-source community where you learn to code and help nonprofits.
+Free Code Camp is a friendly open source community where you learn to code and help nonprofits.
 
 **We help our campers build job-worthy portfolios of real apps used by real people, while helping nonprofits.**
 
