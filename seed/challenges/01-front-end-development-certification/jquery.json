@@ -254,7 +254,7 @@
       ],
       "tests": [
         "assert($(\"#target3\").hasClass(\"animated\"), 'message: Select the <code>button</code> element with the <code>id</code> of <code>target3</code> and use the jQuery <code>addClass&#40&#41</code> function to give it the class of <code>animated</code>.');",
-        "assert(($(\"#target3\").hasClass(\"fadeOut\") || $(\"#target3\").hasClass(\"fadeout\"))  && code.match(/\\$\\(.#target3.\\)/g), 'message: Target the element with the id <code>target3</code> and use the jQuery <code>addClass&#40&#41</code> function to give it the class <code>fadeOut</code>.');",
+        "assert(($(\"#target3\").hasClass(\"fadeOut\") || $(\"#target3\").hasClass(\"fadeout\"))  && code.match(/\\$\\(\\s*.#target3.\\s*\\)/g), 'message: Target the element with the id <code>target3</code> and use the jQuery <code>addClass&#40&#41</code> function to give it the class <code>fadeOut</code>.');",
         "assert(!code.match(/class.*animated/g), 'message: Only use jQuery to add these classes to the element.');"
       ],
       "type": "waypoint",
@@ -665,7 +665,8 @@
         "assert.isTrue((/<em>#target4<\\/em>/gi).test($(\"#target4\").html()), 'message: Emphasize the text in your <code>target4</code> button by adding HTML tags.');",
         "assert($(\"#target4\") && $(\"#target4\").text() === '#target4', 'message: Make sure the text is otherwise unchanged.');",
         "assert.isFalse((/<em>/gi).test($(\"h3\").html()), 'message: Do not alter any other text.');",
-        "assert(code.match(/\\.html\\(/g), 'message: Make sure you are using <code>.html()</code> and not <code>.text()</code>.');"
+        "assert(code.match(/\\.html\\(/g), 'message: Make sure you are using <code>.html()</code> and not <code>.text()</code>.');",
+        "assert(code.match(/\\$\\(\\s*?(\\\"|\\')#target4(\\\"|\\')\\s*?\\)\\.html\\(/), 'message: Make sure to select <code>button id=\"target4\"</code> with jQuery.');"
       ],
       "type": "waypoint",
       "challengeType": 0,

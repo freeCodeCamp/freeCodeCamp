@@ -642,8 +642,9 @@
         "var remainder =  11 % 3;"
       ],
       "tests": [
+        "assert(/var\\s+?remainder/.test(code), 'message: The variable <code>remainder</code> should be initialized');",
         "assert(remainder === 2, 'message: The value of <code>remainder</code> should be <code>2</code>');",
-        "assert(/var\\s*?remainder\\s*?=\\s*?.*%.*;/.test(code), 'message: You should use the <code>%</code> operator');"
+        "assert(/\\s+?remainder\\s*?=\\s*?.*%.*;/.test(code), 'message: You should use the <code>%</code> operator');"
       ],
       "type": "waypoint",
       "challengeType": 1,
@@ -973,7 +974,7 @@
       ],
       "tests": [
         "assert(code.match(/\\\\\"/g).length === 4 && code.match(/[^\\\\]\"/g).length === 2, 'message: You should use two double quotes (<code>&quot;</code>) and four escaped double quotes (<code>&#92;&quot;</code>).');",
-        "assert(myStr === \"I am a \\\"double quoted\\\" string inside \\\"double quotes\\\".\", 'message: Variable myStr should equal to (<code>I am a \"double quoted\" string inside \"double quotes\".</code>).');"
+        "assert(myStr === \"I am a \\\"double quoted\\\" string inside \\\"double quotes\\\".\", 'message: Variable myStr should contain the string: <code>I am a \"double quoted\" string inside \"double quotes\".</code>');"
       ],
       "type": "waypoint",
       "challengeType": 1,
@@ -1262,7 +1263,7 @@
       ],
       "tests": [
         "assert(typeof someAdjective !== 'undefined' && someAdjective.length > 2, 'message: <code>someAdjective</code> should be set to a string at least 3 characters long');",
-        "assert(code.match(/\\w\\s*\\+=\\s*someAdjective\\s*;/).length > 0, 'message: Append <code>someAdjective</code> to <code>myStr</code> using the <code>+=</code> operator');"
+        "assert(code.match(/myStr\\s*\\+=\\s*someAdjective\\s*/).length > 0, 'message: Append <code>someAdjective</code> to <code>myStr</code> using the <code>+=</code> operator');"
       ],
       "type": "waypoint",
       "challengeType": 1,
@@ -1672,7 +1673,7 @@
         "<strong>Example</strong>",
         "<blockquote>var array = [1,2,3];<br>array[0]; // equals 1<br>var data = array[1];  // equals 2</blockquote>",
         "<h4>Instructions</h4>",
-        "Create a variable called <code>myData</code> and set it to equal the first value of <code>myArray</code>."
+        "Create a variable called <code>myData</code> and set it to equal the first value of <code>myArray</code> using bracket notation."
       ],
       "challengeSeed": [
         "// Example",
@@ -1692,7 +1693,8 @@
         "var myArray = [1,2,3];\nvar myData = myArray[0];"
       ],
       "tests": [
-        "assert((function(){if(typeof myArray != 'undefined' && typeof myData != 'undefined' && myArray[0] == myData){return true;}else{return false;}})(), 'message: The variable <code>myData</code> should equal the first value of <code>myArray</code>.');"
+        "assert((function(){if(typeof myArray !== 'undefined' && typeof myData !== 'undefined' && myArray[0] === myData){return true;}else{return false;}})(), 'message: The variable <code>myData</code> should equal the first value of <code>myArray</code>.');",
+        "assert((function(){if(code.match(/\\s*=\\s*myArray\\[0\\]/g)){return true;}else{return false;}})(), 'message: The data in variable <code>myArray</code> should be accessed using bracket notation.');"
       ],
       "type": "waypoint",
       "challengeType": 1,
@@ -1738,7 +1740,7 @@
       ],
       "tests": [
         "assert((function(){if(typeof myArray != 'undefined' && myArray[0] == 3 && myArray[1] == 2 && myArray[2] == 3){return true;}else{return false;}})(), 'message: <code>myArray</code> should now be [3,2,3].');",
-        "assert((function(){if(code.match(/myArray\\[0\\]\\s?=\\s?/g)){return true;}else{return false;}})(), 'message: You should be using correct index to modify the value in <code>myArray</code>.');"
+        "assert((function(){if(code.match(/myArray\\[0\\]\\s*=\\s*/g)){return true;}else{return false;}})(), 'message: You should be using correct index to modify the value in <code>myArray</code>.');"
       ],
       "type": "waypoint",
       "challengeType": 1,
@@ -2690,7 +2692,7 @@
         "assert(testEqual(10) === \"Not Equal\", 'message: <code>testEqual(10)</code> should return \"Not Equal\"');",
         "assert(testEqual(12) === \"Equal\", 'message: <code>testEqual(12)</code> should return \"Equal\"');",
         "assert(testEqual(\"12\") === \"Equal\", 'message: <code>testEqual(\"12\")</code> should return \"Equal\"');",
-        "assert(code.match(/val\\s*==[\\s'\"\\d]+/g).length > 0, 'message: You should use the <code>==</code> operator');"
+        "assert(code.match(/==/g) && !code.match(/===/g), 'message: You should use the <code>==</code> operator');"
       ],
       "type": "waypoint",
       "challengeType": 1,
@@ -2783,7 +2785,7 @@
         "assert(testNotEqual(12) === \"Not Equal\", 'message: <code>testNotEqual(12)</code> should return \"Not Equal\"');",
         "assert(testNotEqual(\"12\") === \"Not Equal\", 'message: <code>testNotEqual(\"12\")</code> should return \"Not Equal\"');",
         "assert(testNotEqual(\"bob\") === \"Not Equal\", 'message: <code>testNotEqual(\"bob\")</code> should return \"Not Equal\"');",
-        "assert(code.match(/val\\s*!=\\s*\\d+/g).length > 0, 'message: You should use the <code>!=</code> operator');"
+        "assert(code.match(/(?!!==)!=/), 'message: You should use the <code>!=</code> operator');"
       ],
       "type": "waypoint",
       "challengeType": 1,
@@ -3206,7 +3208,7 @@
         "function testElse(val) {\n  var result = \"\";\n  if(val > 5) {\n    result = \"Bigger than 5\";\n  } else {\n    result = \"5 or Smaller\";\n  }\n  return result;\n}"
       ],
       "tests": [
-        "assert(code.match(/if/g).length === 1, 'message: You should only have one <code>if</code> statement');",
+        "assert(code.match(/if/g).length === 1, 'message: You should only have one <code>if</code> statement in the editor');",
         "assert(/else/g.test(code), 'message: You should use an <code>else</code> statement');",
         "assert(testElse(4) === \"5 or Smaller\", 'message: <code>testElse(4)</code> should return \"5 or Smaller\"');",
         "assert(testElse(5) === \"5 or Smaller\", 'message: <code>testElse(5)</code> should return \"5 or Smaller\"');",
@@ -3280,7 +3282,7 @@
         "Order is important in <code>if</code>, <code>else if</code> statements.",
         "The loop is executed from top to bottom so you will want to be careful of what statement comes first.",
         "Take these two functions as an example.",
-        "Heres the first:",
+        "Here's the first:",
         "<blockquote>function foo(x) {<br>  if (x < 1) {<br>    return \"Less than one\";<br>  } else if (x < 2) {<br>    return \"Less than two\";<br>  } else {<br>    return \"Greater than or equal to two\";<br>  }<br>}</blockquote>",
         "And the second just switches the order of the statements:",
         "<blockquote>function bar(x) {<br>  if (x < 2) {<br>    return \"Less than two\";<br>  } else if (x < 1) {<br>    return \"Less than one\";<br>  } else {<br>    return \"Greater than or equal to two\";<br>  }<br>}</blockquote>",
@@ -3384,7 +3386,7 @@
       "id": "5664820f61c48e80c9fa476c",
       "title": "Golf Code",
       "description": [
-        "In the game of <a href=\"https://en.wikipedia.org/wiki/Golf\" target=\"_blank\">golf</a> each hole has a <code>par</code> for the average number of <code>strokes</code> needed to sink the ball. Depending on how far above or below <code>par</code> your <code>strokes</code> are, there is a different nickname.",
+        "In the game of <a href=\"https://en.wikipedia.org/wiki/Golf\" target=\"_blank\">golf</a> each hole has a <code>par</code> meaning the average number of <code>strokes</code> a golfer is expected to make in order to sink the ball in a hole to complete the play. Depending on how far above or below <code>par</code> your <code>strokes</code> are, there is a different nickname.",
         "Your function will be passed <code>par</code> and <code>strokes</code> arguments. Return the correct string according to this table which lists the strokes in order of priority; top (highest) to bottom (lowest):",
         "<table class=\"table table-striped\"><thead><tr><th>Strokes</th><th>Return</th></tr></thead><tbody><tr><td>1</td><td>\"Hole-in-one!\"</td></tr><tr><td>&lt;= par - 2</td><td>\"Eagle\"</td></tr><tr><td>par - 1</td><td>\"Birdie\"</td></tr><tr><td>par</td><td>\"Par\"</td></tr><tr><td>par + 1</td><td>\"Bogey\"</td></tr><tr><td>par + 2</td><td>\"Double Bogey\"</td></tr><tr><td>&gt;= par + 3</td><td>\"Go Home!\"</td></tr></tbody></table>",
         "<code>par</code> and <code>strokes</code> will always be numeric and positive."
@@ -4502,6 +4504,7 @@
         "For the given <code>id</code> in <code>collection</code>:",
         "If <code>value</code> is non-blank (<code>value !== \"\"</code>) and <code>prop</code> is not <code>\"tracks\"</code> then update or set the <code>value</code> for the <code>prop</code>.",
         "If the <code>prop</code> is <code>\"tracks\"</code> and <code>value</code> is non-blank, push the <code>value</code> onto the end of the <code>tracks</code> array.",
+        "If <code>\"tracks\"</code> is non-existent before you update it, create an empty array before pushing a track to it.",
         "If <code>value</code> is blank, delete that <code>prop</code>.",
         "Always return the entire collection object.",
         "<strong>Note</strong><br>Don't forget to use <code>bracket notation</code> when <a href=\"accessing-objects-properties-with-variables\" target=\"_blank\">accessing object properties with variables</a>."
@@ -5484,7 +5487,7 @@
         "assert(typeof(runSlots($(\".slot\"))[0]) === \"number\" && runSlots($(\".slot\"))[0] > 0 && runSlots($(\".slot\"))[0] < 4, '<code>slotOne</code> should be a random number.')",
         "assert(typeof(runSlots($(\".slot\"))[1]) === \"number\" && runSlots($(\".slot\"))[1] > 0 && runSlots($(\".slot\"))[1] < 4, '<code>slotTwo</code> should be a random number.')",
         "assert(typeof(runSlots($(\".slot\"))[2]) === \"number\" && runSlots($(\".slot\"))[2] > 0 && runSlots($(\".slot\"))[2] < 4, '<code>slotThree</code> should be a random number.')",
-        "assert((function(){if(editor.match(/Math\\.floor\\(\\s?Math\\.random\\(\\)\\s?\\*\\s?\\(\\s?3\\s?\\-\\s?1\\s?\\+\\s?1\\s?\\)\\s?\\)\\s?\\+\\s?1/gi) !== null){return editor.match(/slot.*?=.*?\\(.*?\\).*?/gi).length >= 3;}else{return false;}})(), 'You should have used <code>Math.floor(Math.random() * (3 - 1 + 1)) + 1;</code> three times to generate your random numbers.')"
+        "assert((function(){if(editor.match(/Math\\.floor\\(\\s*Math\\.random\\(\\)\\s*\\*\\s*\\(\\s*3\\s*\\-\\s*1\\s*\\+\\s*1\\s*\\)\\s*\\)\\s*\\+\\s*1/gi) !== null){return editor.match(/slot.*?=.*?\\(.*?\\).*?/gi).length >= 3;}else{return false;}})(), 'You should have used <code>Math.floor(Math.random() * (3 - 1 + 1)) + 1;</code> three times to generate your random numbers.')"
       ],
       "type": "waypoint",
       "challengeType": 0,

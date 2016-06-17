@@ -713,7 +713,7 @@
       "description": [
         "Font size is controlled by the <code>font-size</code> CSS property, like this:",
         "<blockquote>h1 {<br>&nbsp;&nbsp;font-size: 30px;<br>}</blockquote>",
-        "Create a second <code>p</code> element with the following kitty ipsum text: <code>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</code>",
+        "Create a second <code>p</code> element after the existing <code>p</code> element with the following kitty ipsum text: <code>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</code>",
         "Inside the same <code>&#60;style&#62;</code> tag that contains your <code>red-text</code> class, create an entry for <code>p</code> elements and set the <code>font-size</code> to 16 pixels (<code>16px</code>).",
         "<strong>Note</strong><br>Due to browser implementation differences, you may need to be at 100% zoom to pass the tests on this challenge.",
         "Also, please do not add a class attribute to your new <code>p</code> element."
@@ -1415,7 +1415,7 @@
       ],
       "tests": [
         "assert((/cat photos/gi).test($(\"a\").text()), 'message: Your <code>a</code> element should have the <code>anchor text</code> of \"cat photos\".');",
-        "assert(/http:\\/\\/freecatphotoapp\\.com/gi.test($(\"a\").attr(\"href\")), 'message: You need an <code>a</code> element that links to <code>http&#58;//freecatphotoapp.com</code>');",
+        "assert(/http:\\/\\/freecatphotoapp\\.com/gi.test($(\"a\").attr(\"href\")), 'message: You need an <code>a</code> element that links to <code>http&#58;//freecatphotoapp<wbr>.com</code>');",
         "assert(code.match(/<\\/a>/g) && code.match(/<\\/a>/g).length === code.match(/<a/g).length, 'message: Make sure your <code>a</code> element has a closing tag.');"
       ],
       "type": "waypoint",
@@ -4532,7 +4532,7 @@
         "</style>"
       ],
       "tests": [
-        "assert($(\"body\").css(\"background-color\") === \"rgb(0, 0, 0)\", 'message: Your <code>body</code> element should have an black background.');",
+        "assert($(\"body\").css(\"background-color\") === \"rgb(0, 0, 0)\", 'message: Your <code>body</code> element should have a black background.');",
         "assert(code.match(/rgb\\s*\\(\\s*0\\s*,\\s*0\\s*,\\s*0\\s*\\)/ig), 'message: Use <code>rgb</code> to give your <code>body</code> element a color of black. For example <code>body { background-color&#58; rgb&#40;255&#44; 165&#44; 0&#41;; }</code>');"
       ],
       "descriptionPtBR": [

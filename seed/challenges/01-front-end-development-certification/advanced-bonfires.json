@@ -25,7 +25,7 @@
         "telephoneCheck(\"555-555-5555\");"
       ],
       "solutions": [
-        "var re = /^(?:(?:\\+?1\\s*(?:[.-]\\s*)?)?(?:\\(\\s*([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9])\\s*\\)|([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9]))\\s*(?:[.-]\\s*)?)?([2-9]1[02-9]|[2-9][02-9]1|[2-9][02-9]{2})\\s*(?:[.-]\\s*)?([0-9]{4})$/;\n\nfunction telephoneCheck(str) {\n  return !!str.match(re);\n}\n\ntelephoneCheck(\"555-555-5555\");"
+        "var re = /^([+]?1[\\s]?)?((?:[(](?:[2-9]1[02-9]|[2-9][02-8][0-9])[)][\\s]?)|(?:(?:[2-9]1[02-9]|[2-9][02-8][0-9])[\\s.-]?)){1}([2-9]1[02-9]|[2-9][02-9]1|[2-9][02-9]{2}[\\s.-]?){1}([0-9]{4}){1}$/;\n\nfunction telephoneCheck(str) {\n  return re.test(str);\n}\n\ntelephoneCheck(\"555-555-5555\");"
       ],
       "tests": [
         "assert(typeof telephoneCheck(\"555-555-5555\") === \"boolean\", 'message: <code>telephoneCheck(\"555-555-5555\")</code> should return a boolean.');",
@@ -35,6 +35,8 @@
         "assert(telephoneCheck(\"555-555-5555\") === true, 'message: <code>telephoneCheck(\"555-555-5555\")</code> should return true.');",
         "assert(telephoneCheck(\"(555)555-5555\") === true, 'message: <code>telephoneCheck(\"(555)555-5555\")</code> should return true.');",
         "assert(telephoneCheck(\"1(555)555-5555\") === true, 'message: <code>telephoneCheck(\"1(555)555-5555\")</code> should return true.');",
+        "assert(telephoneCheck(\"555-5555\") === false, 'message: <code>telephoneCheck(\"555-5555\")</code> should return false.');",
+        "assert(telephoneCheck(\"5555555\") === false, 'message: <code>telephoneCheck(\"5555555\")</code> should return false.');",
         "assert(telephoneCheck(\"1 555)555-5555\") === false, 'message: <code>telephoneCheck(\"1 555)555-5555\")</code> should return false.');",
         "assert(telephoneCheck(\"1 555 555 5555\") === true, 'message: <code>telephoneCheck(\"1 555 555 5555\")</code> should return true.');",
         "assert(telephoneCheck(\"1 456 789 4444\") === true, 'message: <code>telephoneCheck(\"1 456 789 4444\")</code> should return true.');",
@@ -51,7 +53,8 @@
         "assert(telephoneCheck(\"2(757)6227382\") === false, 'message: <code>telephoneCheck(\"2(757)6227382\")</code> should return false.');",
         "assert(telephoneCheck(\"2(757)622-7382\") === false, 'message: <code>telephoneCheck(\"2(757)622-7382\")</code> should return false.');",
         "assert(telephoneCheck(\"555)-555-5555\") === false, 'message: <code>telephoneCheck(\"555)-555-5555\")</code> should return false.');",
-        "assert(telephoneCheck(\"(555-555-5555\") === false, 'message: <code>telephoneCheck(\"(555-555-5555\")</code> should return false.');"
+        "assert(telephoneCheck(\"(555-555-5555\") === false, 'message: <code>telephoneCheck(\"(555-555-5555\")</code> should return false.');",
+        "assert(telephoneCheck(\"(555)5(55?)-5555\") === false, 'message: <code>telephoneCheck(\"(555)5(55?)-5555\")</code> should return false.');"
       ],
       "type": "bonfire",
       "MDNlinks": [
@@ -99,7 +102,7 @@
       ],
       "type": "bonfire",
       "MDNlinks": [
-        "Array.reduce()",
+        "Array.prototype.reduce()",
         "Symmetric Difference"
       ],
       "challengeType": 5,
@@ -201,7 +204,7 @@
         "function updateInventory(arr1, arr2) {\n  arr2.forEach(function(item) {\n    createOrUpdate(arr1, item);\n  });\n  // All inventory must be accounted for or you're fired!\n  return arr1;\n}\n\nfunction createOrUpdate(arr1, item) {\n  var index = -1;\n  while (++index < arr1.length) {\n    if (arr1[index][1] === item[1]) {\n      arr1[index][0] += item[0];\n      return;\n    }\n    if (arr1[index][1] > item[1]) {\n      break;\n    }\n  }\n  arr1.splice(index, 0, item);\n}\n\n// Example inventory lists\nvar curInv = [\n    [21, 'Bowling Ball'],\n    [2, 'Dirty Sock'],\n    [1, 'Hair Pin'],\n    [5, 'Microphone']\n];\n\nvar newInv = [\n    [2, 'Hair Pin'],\n    [3, 'Half-Eaten Apple'],\n    [67, 'Bowling Ball'],\n    [7, 'Toothpaste']\n];\n\nupdateInventory(curInv, newInv);\n"
       ],
       "tests": [
-        "assert.isArray(updateInventory([[21, \"Bowling Ball\"], [2, \"Dirty Sock\"], [1, \"Hair Pin\"], [5, \"Microphone\"]], [[2, \"Hair Pin\"], [3, \"Half-Eaten Apple\"], [67, \"Bowling Ball\"], [7, \"Toothpaste\"]]), 'message: <code>updateInventory()</code> should return an array.');",
+        "assert.isArray(updateInventory([[21, \"Bowling Ball\"], [2, \"Dirty Sock\"], [1, \"Hair Pin\"], [5, \"Microphone\"]], [[2, \"Hair Pin\"], [3, \"Half-Eaten Apple\"], [67, \"Bowling Ball\"], [7, \"Toothpaste\"]]), 'message: The function <code>updateInventory</code> should return an array.');",
         "assert.equal(updateInventory([[21, \"Bowling Ball\"], [2, \"Dirty Sock\"], [1, \"Hair Pin\"], [5, \"Microphone\"]], [[2, \"Hair Pin\"], [3, \"Half-Eaten Apple\"], [67, \"Bowling Ball\"], [7, \"Toothpaste\"]]).length, 6, 'message: <code>updateInventory([[21, \"Bowling Ball\"], [2, \"Dirty Sock\"], [1, \"Hair Pin\"], [5, \"Microphone\"]], [[2, \"Hair Pin\"], [3, \"Half-Eaten Apple\"], [67, \"Bowling Ball\"], [7, \"Toothpaste\"]]).length</code> should return an array with a length of 6.');",
         "assert.deepEqual(updateInventory([[21, \"Bowling Ball\"], [2, \"Dirty Sock\"], [1, \"Hair Pin\"], [5, \"Microphone\"]], [[2, \"Hair Pin\"], [3, \"Half-Eaten Apple\"], [67, \"Bowling Ball\"], [7, \"Toothpaste\"]]), [[88, \"Bowling Ball\"], [2, \"Dirty Sock\"], [3, \"Hair Pin\"], [3, \"Half-Eaten Apple\"], [5, \"Microphone\"], [7, \"Toothpaste\"]], 'message: <code>updateInventory([[21, \"Bowling Ball\"], [2, \"Dirty Sock\"], [1, \"Hair Pin\"], [5, \"Microphone\"]], [[2, \"Hair Pin\"], [3, \"Half-Eaten Apple\"], [67, \"Bowling Ball\"], [7, \"Toothpaste\"]])</code> should return <code>[[88, \"Bowling Ball\"], [2, \"Dirty Sock\"], [3, \"Hair Pin\"], [3, \"Half-Eaten Apple\"], [5, \"Microphone\"], [7, \"Toothpaste\"]]</code>.');",
         "assert.deepEqual(updateInventory([[21, \"Bowling Ball\"], [2, \"Dirty Sock\"], [1, \"Hair Pin\"], [5, \"Microphone\"]], []), [[21, \"Bowling Ball\"], [2, \"Dirty Sock\"], [1, \"Hair Pin\"], [5, \"Microphone\"]], 'message: <code>updateInventory([[21, \"Bowling Ball\"], [2, \"Dirty Sock\"], [1, \"Hair Pin\"], [5, \"Microphone\"]], [])</code> should return <code>[[21, \"Bowling Ball\"], [2, \"Dirty Sock\"], [1, \"Hair Pin\"], [5, \"Microphone\"]]</code>.');",
@@ -297,8 +300,8 @@
       ],
       "type": "bonfire",
       "MDNlinks": [
-        "String.split()",
-        "String.substr()",
+        "String.prototype.split()",
+        "String.prototype.substr()",
         "parseInt()"
       ],
       "challengeType": 5,
@@ -436,7 +439,7 @@
       ],
       "type": "bonfire",
       "MDNlinks": [
-        "Array.reduce()"
+        "Array.prototype.reduce()"
       ],
       "challengeType": 5,
       "titleEs": "En parejas",
