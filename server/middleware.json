@@ -50,6 +50,7 @@
     "./middlewares/global-locals": {},
     "./middlewares/revision-helpers": {},
     "./middlewares/migrate-completed-challenges": {},
+    "./middlewares/add-lang": {},
     "./middlewares/flash-cheaters": {}
   },
   "files": {},

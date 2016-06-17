@@ -195,6 +195,11 @@
     "theme": {
       "type": "string",
       "default": "default"
+    },
+    "languageTag": {
+      "type": "string",
+      "description": "A IETF language tag",
+      "default": "en"
     }
   },
   "validations": [],
@@ -256,6 +261,13 @@
       "principalId": "$owner",
       "permission": "ALLOW",
       "property": "updateTheme"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$owner",
+      "permission": "ALLOW",
+      "property": "updateLanguage"
     }
   ],
   "methods": {}

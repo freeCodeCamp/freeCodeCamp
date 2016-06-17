@@ -24,6 +24,7 @@ export default function fetchChallengesSaga(action$, getState, { services }) {
     ))
     .flatMap(({ type, payload: { dashedName, block } = {} }) => {
       const state = getState();
+      const lang = state.app.languageTag;
       if (type === replaceChallenge) {
         const { challenge: newChallenge } = challengeSelector({
           ...state,
@@ -38,8 +39,10 @@ export default function fetchChallengesSaga(action$, getState, { services }) {
         return Observable.just(null);
       }
       const options = { service: 'map' };
+      options.params = { lang };
       if (type === fetchChallenge) {
-        options.params = { dashedName, block };
+        options.params.dashedName = dashedName;
+        options.params.block = block;
       }
       return services.readService$(options)
         .flatMap(({ entities, result, redirect } = {}) => {

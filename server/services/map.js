@@ -1,12 +1,13 @@
 import { Observable } from 'rx';
 import { Schema, valuesOf, arrayOf, normalize } from 'normalizr';
-import { nameify, dasherize, unDasherize } from '../utils';
 import debug from 'debug';
+import { nameify, dasherize, unDasherize } from '../utils';
+import supportedLanguages from '../../common/utils/supported-languages';
 
 const isDev = process.env.NODE_ENV !== 'production';
 const isBeta = !!process.env.BETA;
 const challengesRegex = /^(bonfire|waypoint|zipline|basejump|checkpoint)/i;
-const log = debug('fcc:challenges');
+const log = debug('fcc:services:challenges');
 const challenge = new Schema('challenge', { idAttribute: 'dashedName' });
 const block = new Schema('block', { idAttribute: 'dashedName' });
 const superBlock = new Schema('superBlock', { idAttribute: 'dashedName' });
@@ -99,6 +100,34 @@ function cachedMap(Block) {
     .shareReplay();
 }
 
+function mapChallengeToLang({ translations = {}, ...challenge }, lang) {
+  if (!supportedLanguages[lang]) {
+    lang = 'en';
+  }
+  if (lang !== 'en') {
+    challenge.title =
+      translations[lang] && translations[lang].title ||
+      challenge.title;
+
+    challenge.description =
+      translations[lang] && translations[lang].description ||
+      challenge.description;
+  }
+  return challenge;
+}
+
+function getMapForLang(lang) {
+  return ({ entities: { challenge: challengeMap, ...entities }, result }) => {
+    entities.challenge = Object.keys(challengeMap)
+      .reduce((translatedChallengeMap, key) => {
+        translatedChallengeMap[key] =
+          mapChallengeToLang(challengeMap[key], lang);
+        return translatedChallengeMap;
+      }, {});
+    return { result, entities };
+  };
+}
+
 function shouldNotFilterComingSoon({ isComingSoon, isBeta: challengeIsBeta }) {
   return isDev ||
     !isComingSoon ||
@@ -123,7 +152,8 @@ function getFirstChallenge(challengeMap$) {
 function getChallengeAndBlock(
   challengeDashedName,
   blockDashedName,
-  challengeMap$
+  challengeMap$,
+  lang
 ) {
   return challengeMap$
     .flatMap(({ entities }) => {
@@ -134,7 +164,11 @@ function getChallengeAndBlock(
         !challenge ||
         !shouldNotFilterComingSoon(challenge)
       ) {
-        return getChallengeByDashedName(challengeDashedName, challengeMap$);
+        return getChallengeByDashedName(
+          challengeDashedName,
+          challengeMap$,
+          lang
+        );
       }
       return Observable.just({
         redirect: block.dashedName !== blockDashedName ?
@@ -142,7 +176,7 @@ function getChallengeAndBlock(
           false,
         entities: {
           challenge: {
-            [challenge.dashedName]: challenge
+            [challenge.dashedName]: mapChallengeToLang(challenge, lang)
           }
         },
         result: {
@@ -153,7 +187,7 @@ function getChallengeAndBlock(
     });
 }
 
-function getChallengeByDashedName(dashedName, challengeMap$) {
+function getChallengeByDashedName(dashedName, challengeMap$, lang) {
   const challengeName = unDasherize(dashedName)
     .replace(challengesRegex, '');
   const testChallengeName = new RegExp(challengeName, 'i');
@@ -179,7 +213,11 @@ function getChallengeByDashedName(dashedName, challengeMap$) {
     .map(challenge => ({
       redirect:
         `/challenges/${challenge.block}/${challenge.dashedName}`,
-      entities: { challenge: { [challenge.dashedName]: challenge } },
+      entities: {
+        challenge: {
+          [challenge.dashedName]: mapChallengeToLang(challenge, lang)
+        }
+      },
       result: {
         challenge: challenge.dashedName,
         block: challenge.block
@@ -192,16 +230,19 @@ export default function mapService(app) {
   const challengeMap$ = cachedMap(Block);
   return {
     name: 'map',
-    read: (req, resource, { block, dashedName } = {}, config, cb) => {
+    read: (req, resource, { lang, block, dashedName } = {}, config, cb) => {
+      log(`${lang} language requested`);
       if (block && dashedName) {
-        return getChallengeAndBlock(dashedName, block, challengeMap$)
+        return getChallengeAndBlock(dashedName, block, challengeMap$, lang)
           .subscribe(challenge => cb(null, challenge), cb);
       }
       if (dashedName) {
-        return getChallengeByDashedName(dashedName, challengeMap$)
+        return getChallengeByDashedName(dashedName, challengeMap$, lang)
           .subscribe(challenge => cb(null, challenge), cb);
       }
-      return challengeMap$.subscribe(map => cb(null, map), cb);
+      return challengeMap$
+        .map(getMapForLang(lang))
+        .subscribe(map => cb(null, map), cb);
     }
   };
 }

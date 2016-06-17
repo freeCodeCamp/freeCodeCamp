@@ -83,5 +83,5 @@ export default function about(app) {
   }
 
   router.get('/about', showAbout);
-  app.use(router);
+  app.use('/:lang', router);
 }
