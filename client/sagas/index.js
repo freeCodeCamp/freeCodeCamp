@@ -6,6 +6,7 @@ import executeChallengeSaga from './execute-challenge-saga';
 import frameSaga from './frame-saga';
 import codeStorageSaga from './code-storage-saga';
 import gitterSaga from './gitter-saga';
+import mouseTrapSaga from './mouse-trap-saga';
 
 export default [
   errSaga,
@@ -15,5 +16,6 @@ export default [
   executeChallengeSaga,
   frameSaga,
   codeStorageSaga,
-  gitterSaga
+  gitterSaga,
+  mouseTrapSaga
 ];

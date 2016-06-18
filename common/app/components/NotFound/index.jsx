@@ -1,26 +1,22 @@
 import React, { PropTypes } from 'react';
+import { connect } from 'react-redux';
+import { hardGoTo } from '../../redux/actions';
 
-const win = typeof window !== 'undefined' ? window : {};
-
-function goToServer(path) {
-  win.location = '/' + path;
-}
-
-export default class extends React.Component {
+export class NotFound extends React.Component {
   static displayName = 'NotFound';
 
   static propTypes = {
-    params: PropTypes.object
+    location: PropTypes.object,
+    hardGoTo: PropTypes.func
   };
 
   componentWillMount() {
-    goToServer(this.props.params.splat);
-  }
-
-  componentDidMount() {
+    this.props.hardGoTo(this.props.location.pathname);
   }
 
   render() {
     return <span></span>;
   }
 }
+
+export default connect(null, { hardGoTo })(NotFound);
