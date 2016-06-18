@@ -45,7 +45,8 @@ const sagaOptions = {
   isDev,
   window,
   document: window.document,
-  location: window.location
+  location: window.location,
+  history: window.history
 };
 
 

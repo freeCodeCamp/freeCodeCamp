@@ -9,6 +9,7 @@ export default createTypes([
   'makeToast',
   'updatePoints',
   'handleError',
+  'toggleNightMode',
   // used to hit the server
   'hardGoTo',
   'delayedRedirect',

@@ -56,3 +56,4 @@ export const toggleWikiDrawer = createAction(types.toggleWikiDrawer);
 
 // chat
 export const toggleMainChat = createAction(types.toggleMainChat);
+export const toggleNightMode = createAction(types.toggleNightMode);
