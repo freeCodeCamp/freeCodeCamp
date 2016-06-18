@@ -59,7 +59,7 @@
         [
           "//i.imgur.com/2a20Vah.gif",
           "A gif showing you how to start mongoDB in c9.io's terminal.",
-          "In your terminal, start MongoDB by entering:<br><br><code>mongod --smallfiles</code>",
+          "To install MongoDB in the c9 workspace, type: <code>sudo apt-get install mongodb-org</code>. Once that's finished, start MongoDB by entering <code>mongod --smallfiles</code> in the same terminal window",
           ""
         ],
         [
