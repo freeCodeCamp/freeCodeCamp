@@ -21,7 +21,7 @@ window.common = (function({ $, common = { init: [] }}) {
       `)
         .appendTo($('#testSuite'));
     });
-
+    $("#scroll-locker").animate({ scrollTop: $(document).height() }, "slow");
     return data;
   };
 
