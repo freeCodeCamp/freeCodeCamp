@@ -7,6 +7,8 @@ import types from './types';
 // step
 export const goToStep = createAction(types.goToStep);
 export const completeAction = createAction(types.completeAction);
+export const openLightBoxImage = createAction(types.openLightBoxImage);
+export const closeLightBoxImage = createAction(types.closeLightBoxImage);
 
 // challenges
 export const fetchChallenge = createAction(

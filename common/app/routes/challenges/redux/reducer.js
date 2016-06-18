@@ -18,6 +18,7 @@ const initialUiState = {
   previousIndex: -1,
   // step action
   isActionCompleted: false,
+  isLightBoxOpen: false,
   // project is ready to submit
   isSubmitting: false,
   output: `/**
@@ -120,6 +121,14 @@ const mainReducer = handleActions(
     [types.completeAction]: state => ({
       ...state,
       isActionCompleted: true
+    }),
+    [types.openLightBoxImage]: state => ({
+      ...state,
+      isLightBoxOpen: true
+    }),
+    [types.closeLightBoxImage]: state => ({
+      ...state,
+      isLightBoxOpen: false
     }),
 
     // classic/modern
