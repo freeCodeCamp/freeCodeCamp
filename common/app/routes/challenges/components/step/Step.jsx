@@ -4,11 +4,14 @@ import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import PureComponent from 'react-pure-render/component';
 import ReactTransitionReplace from 'react-css-transition-replace';
+import LightBox from 'react-images';
 
 import {
   goToStep,
   completeAction,
-  submitChallenge
+  submitChallenge,
+  openLightBoxImage,
+  closeLightBoxImage
 } from '../../redux/actions';
 import { challengeSelector } from '../../redux/selectors';
 import { Button, Col, Image, Row } from 'react-bootstrap';
@@ -19,16 +22,19 @@ const mapStateToProps = createSelector(
   state => state.challengesApp.currentIndex,
   state => state.challengesApp.previousIndex,
   state => state.challengesApp.isActionCompleted,
+  state => state.challengesApp.isLightBoxOpen,
   (
     {
       challenge: { description = [] }
     },
     currentIndex,
     previousIndex,
-    isActionCompleted
+    isActionCompleted,
+    isLightBoxOpen
   ) => ({
     currentIndex,
     isActionCompleted,
+    isLightBoxOpen,
     step: description[currentIndex],
     steps: description,
     numOfSteps: description.length,
@@ -39,7 +45,9 @@ const mapStateToProps = createSelector(
 const dispatchActions = {
   goToStep,
   completeAction,
-  submitChallenge
+  submitChallenge,
+  openLightBoxImage,
+  closeLightBoxImage
 };
 
 export class StepChallenge extends PureComponent {
@@ -47,6 +55,7 @@ export class StepChallenge extends PureComponent {
     super(...args);
     this.handleNextClick = this.handleNextClick.bind(this);
     this.handleBackClick = this.handleBackClick.bind(this);
+    this.handleLightBoxOpen = this.handleLightBoxOpen.bind(this);
   }
   static displayName = 'StepChallenge';
   static propTypes = {
@@ -58,7 +67,10 @@ export class StepChallenge extends PureComponent {
     numOfSteps: PropTypes.number,
     goToStep: PropTypes.func,
     completeAction: PropTypes.func,
-    submitChallenge: PropTypes.func
+    submitChallenge: PropTypes.func,
+    isLightBoxOpen: PropTypes.bool,
+    openlightBoxImage: PropTypes.func,
+    closeLightBoxImage: PropTypes.func
   };
 
   handleNextClick() {
@@ -73,6 +85,13 @@ export class StepChallenge extends PureComponent {
   handleBackClick() {
     const { currentIndex, goToStep } = this.props;
     goToStep(currentIndex - 1);
+  }
+
+  handleLightBoxOpen(e) {
+    if (!(e.ctrlKey || e.metaKey)) {
+      e.preventDefault();
+      this.props.openLightBoxImage();
+    }
   }
 
   renderActionButton(action, completeAction) {
@@ -158,7 +177,11 @@ export class StepChallenge extends PureComponent {
         className=''
         key={ imgUrl }
         >
-        <a href={ imgUrl }>
+        <a
+          href={ imgUrl }
+          onClick={ this.handleLightBoxOpen }
+          target='_blank'
+          >
           <Image
             alt={ imgAlt }
             responsive={ true }
@@ -222,7 +245,13 @@ export class StepChallenge extends PureComponent {
   }
 
   render() {
-    const { steps, isGoingForward } = this.props;
+    const {
+      step,
+      steps,
+      isLightBoxOpen,
+      isGoingForward,
+      closeLightBoxImage
+    } = this.props;
     const transitionName = 'challenge-step-' +
       (isGoingForward ? 'forward' : 'backward');
     return (
@@ -240,6 +269,13 @@ export class StepChallenge extends PureComponent {
         <div className='hidden'>
           { this.renderImages(steps) }
         </div>
+        <LightBox
+          backdropClosesModal={ true }
+          images={ [ { src: step[0] } ] }
+          isOpen={ isLightBoxOpen }
+          onClose={ closeLightBoxImage }
+          showImageCount={ false }
+        />
         <div className='spacer' />
       </Col>
     );

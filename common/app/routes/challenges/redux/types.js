@@ -4,6 +4,8 @@ export default createTypes([
   // step
   'goToStep',
   'completeAction',
+  'openLightBoxImage',
+  'closeLightBoxImage',
 
   // challenges
   'fetchChallenge',
