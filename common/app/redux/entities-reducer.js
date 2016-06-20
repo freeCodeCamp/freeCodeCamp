@@ -1,4 +1,7 @@
-import { updateUserPoints } from './types';
+import {
+  updateUserPoints,
+  updateCompletedChallenges
+} from './types';
 
 const initialState = {
   superBlock: {},
@@ -9,6 +12,22 @@ const initialState = {
 
 export default function entities(state = initialState, action) {
   const { type, payload: { username, points } = {} } = action;
+  if (type === updateCompletedChallenges) {
+    const username = action.payload;
+    const completedChallengeMap = state.user[username].challengeMap || {};
+    return {
+      ...state,
+      challenge: Object.keys(state.challenge)
+        .reduce((map, key) => {
+          const challenge = state.challenge[key];
+          map[key] = {
+            ...challenge,
+            isCompleted: !!completedChallengeMap[challenge.id]
+          };
+          return map;
+        }, {})
+    };
+  }
   if (type === updateUserPoints) {
     return {
       ...state,

@@ -3,6 +3,7 @@ import { fetchUser } from './types';
 import {
   addUser,
   updateThisUser,
+  updateCompletedChallenges,
   createErrorObservable,
   showSignIn
 } from './actions';
@@ -18,7 +19,8 @@ export default function getUserSaga(action$, getState, { services }) {
           }
           return Observable.of(
             addUser(entities),
-            updateThisUser(result)
+            updateThisUser(result),
+            updateCompletedChallenges(result)
           );
         })
         .catch(createErrorObservable);

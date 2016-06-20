@@ -38,6 +38,11 @@ export const updateUserPoints = createAction(
   types.updateUserPoints,
   (username, points) => ({ username, points })
 );
+// updateCompletedChallenges(username: String) => Action
+export const updateCompletedChallenges = createAction(
+  types.updateCompletedChallenges
+);
+
 // used when server needs client to redirect
 export const delayedRedirect = createAction(types.delayedRedirect);
 

@@ -24,13 +24,20 @@ export class Block extends PureComponent {
       return <div>No Challenges Found</div>;
     }
     return challenges.map(challenge => {
-      const { title, dashedName, isLocked, isRequired } = challenge;
+      const {
+        title,
+        dashedName,
+        isLocked,
+        isRequired,
+        isCompleted
+      } = challenge;
       const challengeClassName = classnames({
         'text-primary': true,
         'padded-ionic-icon': true,
         'negative-15': true,
         'challenge-title': true,
-        'ion-checkmark-circled': !isLocked,
+        'ion-checkmark-circled faded': !isLocked && isCompleted,
+        'ion-ios-circle-outline': !isLocked && !isCompleted,
         'ion-locked': isLocked,
         disabled: isLocked
       });
