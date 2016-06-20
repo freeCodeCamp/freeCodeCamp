@@ -29,6 +29,7 @@ main.css
 bundle.js
 coverage
 .remote-sync.json
+.tern-project
 
 server/*.bundle.js
 public/js/bundle*
