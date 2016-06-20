@@ -1,9 +1,7 @@
 import React, { PropTypes } from 'react';
 import { Button, Row } from 'react-bootstrap';
 import { ToastMessage, ToastContainer } from 'react-toastr';
-import { compose } from 'redux';
 import { connect } from 'react-redux';
-import { contain } from 'redux-epic';
 import { createSelector } from 'reselect';
 
 import MapDrawer from './components/Map-Drawer.jsx';
@@ -19,26 +17,27 @@ import { submitChallenge } from './routes/challenges/redux/actions';
 
 import Nav from './components/Nav';
 import { randomCompliment } from './utils/get-words';
+import { userSelector } from './redux/selectors';
 
 const toastMessageFactory = React.createFactory(ToastMessage.animation);
 
 const mapStateToProps = createSelector(
-  state => state.app.username,
-  state => state.app.points,
-  state => state.app.picture,
+  userSelector,
+  state => state.app.shouldShowSignIn,
   state => state.app.toast,
   state => state.app.isMapDrawerOpen,
   state => state.app.isMapAlreadyLoaded,
   state => state.challengesApp.toast,
   (
-    username,
-    points,
-    picture,
+    { user: { username, points, picture } },
+    shouldShowSignIn,
     toast,
     isMapDrawerOpen,
     isMapAlreadyLoaded,
     showChallengeComplete
   ) => ({
+    shouldShowSignIn,
+    isSignedIn: !!username,
     username,
     points,
     picture,
@@ -58,13 +57,6 @@ const bindableActions = {
   toggleMainChat
 };
 
-const fetchContainerOptions = {
-  fetchAction: 'fetchUser',
-  isPrimed({ username }) {
-    return !!username;
-  }
-};
-
 // export plain class for testing
 export class FreeCodeCamp extends React.Component {
   static displayName = 'FreeCodeCamp';
@@ -72,6 +64,7 @@ export class FreeCodeCamp extends React.Component {
   static propTypes = {
     children: PropTypes.node,
     username: PropTypes.string,
+    isSignedIn: PropTypes.bool,
     points: PropTypes.number,
     picture: PropTypes.string,
     toast: PropTypes.object,
@@ -82,7 +75,9 @@ export class FreeCodeCamp extends React.Component {
     isMapDrawerOpen: PropTypes.bool,
     isMapAlreadyLoaded: PropTypes.bool,
     toggleMapDrawer: PropTypes.func,
-    toggleMainChat: PropTypes.func
+    toggleMainChat: PropTypes.func,
+    fetchUser: PropTypes.func,
+    shouldShowSignIn: PropTypes.bool
   };
 
   componentWillReceiveProps({
@@ -119,6 +114,9 @@ export class FreeCodeCamp extends React.Component {
 
   componentDidMount() {
     this.props.initWindowHeight();
+    if (!this.props.isSignedIn) {
+      this.props.fetchUser();
+    }
   }
 
   renderChallengeComplete() {
@@ -145,7 +143,8 @@ export class FreeCodeCamp extends React.Component {
       isMapDrawerOpen,
       isMapAlreadyLoaded,
       toggleMapDrawer,
-      toggleMainChat
+      toggleMainChat,
+      shouldShowSignIn
     } = this.props;
     const navProps = {
       username,
@@ -153,7 +152,8 @@ export class FreeCodeCamp extends React.Component {
       picture,
       updateNavHeight,
       toggleMapDrawer,
-      toggleMainChat
+      toggleMainChat,
+      shouldShowSignIn
     };
 
     return (
@@ -177,11 +177,7 @@ export class FreeCodeCamp extends React.Component {
   }
 }
 
-const wrapComponent = compose(
-  // connect Component to Redux Store
-  connect(mapStateToProps, bindableActions),
-  // handles prefetching data
-  contain(fetchContainerOptions)
-);
-
-export default wrapComponent(FreeCodeCamp);
+export default connect(
+  mapStateToProps,
+  bindableActions
+)(FreeCodeCamp);

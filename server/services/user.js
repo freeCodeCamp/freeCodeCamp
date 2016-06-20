@@ -1,11 +1,29 @@
-import debugFactory from 'debug';
+import debug from 'debug';
+import _ from 'lodash';
 
-const censor = '**********************:P********';
-const debug = debugFactory('fcc:services:user');
-const protectedUserFields = {
-  password: censor,
-  profiles: censor
-};
+const publicUserProps = [
+  'id',
+  'name',
+  'username',
+  'bio',
+  'theme',
+  'picture',
+  'points',
+  'languageTag',
+
+  'isCheater',
+  'isGithubCool',
+
+  'isFrontEndCert',
+  'isBackEndCert',
+  'isDataVisCert',
+  'isFullStackCert',
+
+  'githubURL',
+  'currentChallenge',
+  'challengeMap'
+];
+const log = debug('fcc:services:user');
 
 export default function userServices() {
   return {
@@ -13,19 +31,26 @@ export default function userServices() {
     read: (req, resource, params, config, cb) => {
       let { user } = req;
       if (user) {
-        debug('user is signed in');
-        // Zalgo!!!
-        return process.nextTick(() => {
-          cb(
-            null,
-            {
-              ...user.toJSON(),
-              ...protectedUserFields
-            }
+        log('user is signed in');
+        return user.getChallengeMap$()
+          .map(challengeMap => ({ ...user.toJSON(), challengeMap }))
+          .subscribe(
+            user => cb(
+              null,
+              {
+                entities: {
+                  user: {
+                    [user.username]: _.pick(user, publicUserProps)
+                  }
+                },
+                result: user.username
+              }
+            ),
+            cb
           );
-        });
       }
       debug('user is not signed in');
+      // Zalgo!!!
       return process.nextTick(() => {
         cb(null, {});
       });

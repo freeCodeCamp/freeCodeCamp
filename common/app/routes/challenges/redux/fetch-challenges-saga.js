@@ -15,6 +15,18 @@ import {
   updateCurrentChallenge
 } from './actions';
 
+function createNameIdMap(entities) {
+  const { challenge } = entities;
+  return {
+    ...entities,
+    challengeIdToName: Object.keys(challenge)
+      .reduce((map, challengeName) => {
+        map[challenge[challengeName].id] = challenge[challengeName].dashedName;
+        return map;
+      }, {})
+  };
+}
+
 export default function fetchChallengesSaga(action$, getState, { services }) {
   return action$
     .filter(({ type }) => (
@@ -48,12 +60,20 @@ export default function fetchChallengesSaga(action$, getState, { services }) {
         .flatMap(({ entities, result, redirect } = {}) => {
           if (type === fetchChallenge) {
             return Observable.of(
-              fetchChallengeCompleted(entities, result),
+              fetchChallengeCompleted(
+                createNameIdMap(entities),
+                result
+              ),
               updateCurrentChallenge(entities.challenge[result.challenge]),
               redirect ? delayedRedirect(redirect) : null
             );
           }
-          return Observable.just(fetchChallengesCompleted(entities, result));
+          return Observable.just(
+            fetchChallengesCompleted(
+              createNameIdMap(entities),
+              result
+            )
+          );
         })
         .catch(createErrorObserable);
     });

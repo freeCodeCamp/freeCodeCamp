@@ -23,11 +23,21 @@ export const makeToast = createAction(
 // used in combination with fetch-user-saga
 export const fetchUser = createAction(types.fetchUser);
 
-// setUser(userInfo: Object) => Action
-export const setUser = createAction(types.setUser);
+// setUser(
+//   entities: { [userId]: User }
+// ) => Action
+export const addUser = createAction(
+  types.addUser,
+  () => {},
+  entities => ({ entities })
+);
+export const updateThisUser = createAction(types.updateThisUser);
 
-// updatePoints(points: Number) => Action
-export const updatePoints = createAction(types.updatePoints);
+// updateUserPoints(username: String, points: Number) => Action
+export const updateUserPoints = createAction(
+  types.updateUserPoints,
+  (username, points) => ({ username, points })
+);
 // used when server needs client to redirect
 export const delayedRedirect = createAction(types.delayedRedirect);
 
