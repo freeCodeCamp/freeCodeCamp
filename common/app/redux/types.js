@@ -7,6 +7,7 @@ export default createTypes([
   'addUser',
   'updateThisUser',
   'updateUserPoints',
+  'updateCompletedChallenges',
   'showSignIn',
 
   'makeToast',
