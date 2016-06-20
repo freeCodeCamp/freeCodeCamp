@@ -3,10 +3,8 @@ import types from './types';
 
 const initialState = {
   title: 'Learn To Code | Free Code Camp',
-  username: null,
-  picture: null,
-  points: 0,
-  isSignedIn: false,
+  shouldShowSignIn: false,
+  user: '',
   csrfToken: '',
   windowHeight: 0,
   navHeight: 0,
@@ -25,17 +23,17 @@ export default handleActions(
       toast
     }),
 
-    [types.setUser]: (state, { payload: user }) => ({
+    [types.updateThisUser]: (state, { payload: user }) => ({
       ...state,
-      ...user,
-      isSignedIn: true
+      user,
+      shouldShowSignIn: true
+    }),
+    [types.showSignIn]: state => ({
+      ...state,
+      shouldShowSignIn: true
     }),
 
     [types.challengeSaved]: (state, { payload: { points = 0 } }) => ({
-      ...state,
-      points
-    }),
-    [types.updatePoints]: (state, { payload: points }) => ({
       ...state,
       points
     }),

@@ -4,7 +4,7 @@ import { showChallengeComplete, moveToNextChallenge } from './actions';
 import {
   createErrorObservable,
   makeToast,
-  updatePoints
+  updateUserPoints
 } from '../../../redux/actions';
 
 import { challengeSelector } from './selectors';
@@ -16,25 +16,16 @@ import { postJSON$ } from '../../../../utils/ajax-stream';
 // lots of repeat code
 
 function completedChallenge(state) {
-  let body;
-  let isSignedIn = false;
-  try {
-    const {
-      challenge: { id }
-    } = challengeSelector(state);
-    const {
-      app: { isSignedIn: _isSignedId, csrfToken },
-      challengesApp: { files }
-    } = state;
-    isSignedIn = _isSignedId;
-    body = {
-      id,
-      _csrf: csrfToken,
-      files
-    };
-  } catch (err) {
-    return createErrorObservable(err);
-  }
+  const { challenge: { id } } = challengeSelector(state);
+  const {
+    app: { user, csrfToken },
+    challengesApp: { files }
+  } = state;
+  const body = {
+    id,
+    _csrf: csrfToken,
+    files
+  };
   const saveChallenge$ = postJSON$('/modern-challenge-completed', body)
     .retry(3)
     .flatMap(({ alreadyCompleted, points }) => {
@@ -46,7 +37,7 @@ function completedChallenge(state) {
             title: 'Saved',
             type: 'info'
         }),
-        updatePoints(points)
+        updateUserPoints(user, points)
       );
     })
     .catch(createErrorObservable);
@@ -55,7 +46,7 @@ function completedChallenge(state) {
     moveToNextChallenge(),
     makeToast({
       title: 'Congratulations!',
-      message: isSignedIn ? ' Saving...' : 'Moving on to next challenge.',
+      message: user ? ' Saving...' : 'Moving on to next challenge.',
       type: 'success'
     })
   );
@@ -87,7 +78,7 @@ function submitProject(type, state, { solution, githubLink }) {
     challenge: { id, challengeType }
   } = challengeSelector(state);
   const {
-    app: { isSignedIn, csrfToken }
+    app: { user, csrfToken }
   } = state;
   const body = {
     id,
@@ -109,7 +100,7 @@ function submitProject(type, state, { solution, githubLink }) {
           title: 'Saved',
           type: 'info'
         }),
-        updatePoints(points)
+        updateUserPoints(user, points)
       );
     })
     .catch(createErrorObservable);
@@ -117,7 +108,7 @@ function submitProject(type, state, { solution, githubLink }) {
   const challengeCompleted$ = Observable.of(
     makeToast({
       title: randomCompliment(),
-      message: isSignedIn ? ' Saving...' : 'Moving on to next challenge.',
+      message: user ? ' Saving...' : 'Moving on to next challenge.',
       type: 'success'
     })
     // moveToNextChallenge()
@@ -130,7 +121,7 @@ function submitSimpleChallenge(type, state) {
     challenge: { id }
   } = challengeSelector(state);
   const {
-    app: { isSignedIn, csrfToken }
+    app: { user, csrfToken }
   } = state;
   const body = {
     id,
@@ -147,7 +138,7 @@ function submitSimpleChallenge(type, state) {
           title: 'Saved',
           type: 'info'
         }),
-        updatePoints(points)
+        updateUserPoints(user, points)
       );
     })
     .catch(createErrorObservable);
@@ -155,7 +146,7 @@ function submitSimpleChallenge(type, state) {
   const challengeCompleted$ = Observable.of(
     makeToast({
       title: randomCompliment(),
-      message: isSignedIn ? ' Saving...' : 'Moving on to next challenge.',
+      message: user ? ' Saving...' : 'Moving on to next challenge.',
       type: 'success'
     }),
     moveToNextChallenge()

@@ -4,10 +4,12 @@ export default createTypes([
   'updateTitle',
 
   'fetchUser',
-  'setUser',
+  'addUser',
+  'updateThisUser',
+  'updateUserPoints',
+  'showSignIn',
 
   'makeToast',
-  'updatePoints',
   'handleError',
   'toggleNightMode',
   // used to hit the server
