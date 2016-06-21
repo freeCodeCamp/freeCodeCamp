@@ -25,26 +25,18 @@ block content
           event.preventDefault();
           $('#flash-board').hide();
           var $form = $(event.target);
-          $.ajax({
-              type        : 'POST',
-              url         : $form.attr('action'),
-              data        : $form.serialize(),
-              dataType    : 'json',
-              encode      : true,
-              xhrFields   : { withCredentials:  true }
-          })
-          .fail(error => {
-            if (error.responseText){
-                var data = JSON.parse(error.responseText);
-                if(data.error && data.error.message)
-                $('#flash-content').html(data.error.message);
-                $('#flash-board')
-                  .removeClass('alert-success')
-                  .addClass('alert-info')
-                  .fadeIn();
-              }
-          })
-          .done(data =>{
+
+          var request;
+          if (window.XMLHttpRequest) {
+              request = new XMLHttpRequest();
+              } else {
+              // Shim for older IE
+              request = new ActiveXObject("Microsoft.XMLHTTP");
+          }
+          request.open('POST', $form.attr('action'), true);
+          request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
+          request.onload = function() {
+            var data = JSON.parse(request.responseText);
             if(data && data.message){
               $('#flash-content').html(data.message);
               $('#flash-board')
@@ -52,6 +44,7 @@ block content
                   .addClass('alert-success')
                   .fadeIn();
             }
-          });
+          }
+          request.send($form.serialize());
         });
        });
