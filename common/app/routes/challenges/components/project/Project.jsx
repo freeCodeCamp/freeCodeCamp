@@ -39,7 +39,6 @@ export class Project extends PureComponent {
     isCompleted: PropTypes.bool
   };
 
-
   render() {
     const {
       id,
