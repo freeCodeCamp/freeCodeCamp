@@ -1,9 +1,11 @@
-import supportedLanguages from '../../common/utils/supported-languages';
+import
+  supportedLanguages,
+  { langTagRegex }
+from '../../common/utils/supported-languages';
 import passthroughs from '../utils/lang-passthrough-urls';
 import debug from 'debug';
 
 const log = debug('fcc:middlewares:lang');
-const langTagRegex = /^[a-z]{2}(?:-[a-zA-Z]{2,3})?$/;
 const toLowerCase = String.prototype.toLowerCase;
 
 // redirect(statusOrUrl: String|Number, url?: String) => Void

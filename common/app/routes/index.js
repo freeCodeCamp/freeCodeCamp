@@ -1,6 +1,6 @@
 import { modernChallenges, map, challenges } from './challenges';
 import NotFound from '../components/NotFound/index.jsx';
-import { addLang } from '../utils/add-lang';
+import { addLang } from '../utils/lang';
 
 export default {
   path: '/:lang',

@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import LangLink from '../../../../utils/Language-Link.jsx';
+import { Link } from 'react-router';
 import { connect } from 'react-redux';
 import FA from 'react-fontawesome';
 import PureComponent from 'react-pure-render/component';
@@ -61,7 +61,7 @@ export class Block extends PureComponent {
           className={ challengeClassName }
           key={ title }
           >
-          <LangLink to={ `/challenges/${blockName}/${dashedName}` }>
+          <Link to={ `/challenges/${blockName}/${dashedName}` }>
             <span
               onClick={ () => updateCurrentChallenge(challenge) }
               >
@@ -73,7 +73,7 @@ export class Block extends PureComponent {
                   ''
               }
             </span>
-          </LangLink>
+          </Link>
         </p>
       );
     });

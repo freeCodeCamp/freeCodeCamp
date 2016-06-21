@@ -5,6 +5,7 @@ const initialState = {
   title: 'Learn To Code | Free Code Camp',
   shouldShowSignIn: false,
   user: '',
+  lang: '',
   csrfToken: '',
   windowHeight: 0,
   navHeight: 0,
