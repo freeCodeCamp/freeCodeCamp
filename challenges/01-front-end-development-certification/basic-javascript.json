@@ -235,7 +235,7 @@
         "<strong>Examples:</strong>",
         "<blockquote>var someVariable;<br>var anotherVariableName;<br>var thisVariableNameIsTooLong;</blockquote>",
         "<h4>Instructions</h4>",
-        "Fix the variable declarations and assignments so their names use <dfn>camelCase</dfn>."
+        "Modify the existing declarations and assignments so their names use <dfn>camelCase</dfn>.<br>Do not create any new variables."
       ],
       "releasedOn": "January 1, 2016",
       "challengeSeed": [
