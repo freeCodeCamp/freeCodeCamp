@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import { reduxForm } from 'redux-form';
+import { resetForm, reduxForm } from 'redux-form';
 import {
   Button,
   FormGroup,
@@ -20,10 +20,15 @@ const propTypes = {
   showProjectSubmit: PropTypes.func,
   fields: PropTypes.object,
   handleSubmit: PropTypes.func,
-  submitChallenge: PropTypes.func
+  submitChallenge: PropTypes.func,
+  resetForm: PropTypes.func
 };
 
-const bindableActions = { submitChallenge, showProjectSubmit };
+const bindableActions = {
+  resetForm,
+  submitChallenge,
+  showProjectSubmit
+};
 const frontEndFields = [ 'solution' ];
 const backEndFields = [
   'solution',
@@ -64,6 +69,7 @@ export function _FrontEndForm({
   fields,
   handleSubmit,
   submitChallenge,
+  resetForm,
   isSubmitting,
   showProjectSubmit
 }) {
@@ -73,7 +79,12 @@ export function _FrontEndForm({
   return (
     <form
       name='NewFrontEndProject'
-      onSubmit={ handleSubmit(submitChallenge)}
+      onSubmit={
+        handleSubmit((value) => (
+          submitChallenge(value),
+          resetForm('NewFrontEndProject'))
+        )
+      }
       >
       {
         isSubmitting ?
@@ -112,6 +123,7 @@ export function _BackEndForm({
   fields: { solution, githubLink },
   handleSubmit,
   submitChallenge,
+  resetForm,
   isSubmitting,
   showProjectSubmit
 }) {
@@ -121,7 +133,12 @@ export function _BackEndForm({
   return (
     <form
       name='NewBackEndProject'
-      onSubmit={ handleSubmit(submitChallenge)}
+      onSubmit={
+        handleSubmit((values) => (
+          submitChallenge(values),
+          resetForm('NewBackEndProject')
+        ))
+      }
       >
       {
         isSubmitting ?

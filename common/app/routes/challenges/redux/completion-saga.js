@@ -12,9 +12,6 @@ import { backEndProject } from '../../../utils/challengeTypes';
 import { randomCompliment } from '../../../utils/get-words';
 import { postJSON$ } from '../../../../utils/ajax-stream';
 
-// NOTE(@BerkeleyTrue): this file could benefit from some refactoring.
-// lots of repeat code
-
 function postChallenge(url, body, username) {
   const saveChallenge$ = postJSON$(url, body)
     .retry(3)
