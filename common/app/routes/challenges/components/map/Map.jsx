@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 import classnames from 'classnames';
 import PureComponent from 'react-pure-render/component';
-import { Input, Button, Row } from 'react-bootstrap';
+import { InputGroup, FormControl, Button, Row } from 'react-bootstrap';
 
 import SuperBlock from './Super-Block.jsx';
 import FullStack from './Full-Stack.jsx';
@@ -9,7 +9,12 @@ import CodingPrep from './Coding-Prep.jsx';
 
 const clearIcon = <i className='fa fa-times' />;
 const searchIcon = <i className='fa fa-search' />;
+const ESC = 27;
 export default class ShowMap extends PureComponent {
+  constructor(...props) {
+    super(...props);
+    this.handleKeyDown = this.handleKeyDown.bind(this);
+  }
   static displayName = 'Map';
   static propTypes = {
     clearFilter: PropTypes.func,
@@ -17,6 +22,12 @@ export default class ShowMap extends PureComponent {
     superBlocks: PropTypes.array,
     updateFilter: PropTypes.func
   };
+
+  handleKeyDown(e) {
+    if (e.keyCode === ESC) {
+      this.props.clearFilter();
+    }
+  }
 
   renderSuperBlocks(superBlocks, updateCurrentChallenge) {
     if (!Array.isArray(superBlocks) || !superBlocks.length) {
@@ -33,6 +44,13 @@ export default class ShowMap extends PureComponent {
     });
   }
 
+  renderSearchAddon(filter, clearFilter) {
+    if (!filter) {
+      return searchIcon;
+    }
+    return <span onClick={ clearFilter }>{ clearIcon }</span>;
+  }
+
   render() {
     const {
       updateCurrentChallenge,
@@ -41,9 +59,6 @@ export default class ShowMap extends PureComponent {
       clearFilter,
       filter
     } = this.props;
-    const inputIcon = !filter ?
-      searchIcon :
-      <span onClick={ clearFilter }>{ clearIcon }</span>;
     const inputClass = classnames({
       'map-filter': true,
       filled: !!filter
@@ -66,15 +81,20 @@ export default class ShowMap extends PureComponent {
               </Button>
             </Row>
             <Row className='map-buttons'>
-              <Input
-                addonAfter={ inputIcon }
-                autocompleted='off'
-                className={ inputClass }
-                onChange={ updateFilter }
-                placeholder='Type a challenge name'
-                type='text'
-                value={ filter }
-              />
+              <InputGroup>
+                <FormControl
+                  autocompleted='off'
+                  className={ inputClass }
+                  onChange={ updateFilter }
+                  onKeyDown={ this.handleKeyDown }
+                  placeholder='Type a challenge name'
+                  type='text'
+                  value={ filter }
+                />
+                <InputGroup.Addon>
+                  { this.renderSearchAddon(filter, clearFilter) }
+                </InputGroup.Addon>
+              </InputGroup>
             </Row>
             <hr />
           </div>
