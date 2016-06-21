@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import PureComponent from 'react-pure-render/component';
 import dedent from 'dedent';
 import SuperBlock from './Super-Block.jsx';
@@ -44,19 +44,25 @@ const codingPrep = [{
     }
   ]
 }];
-
+const title = 'Coding Interview Prep';
+const dashedName = 'coding-prep';
 export default class CodingPrep extends PureComponent {
   static displayName = 'CodingPrep;'
-
+  static propTypes = {
+    mapUi: PropTypes.object,
+    toggleThisPanel: PropTypes.func
+  };
   render() {
+    const { mapUi, toggleThisPanel } = this.props;
     return (
-      <div>
-        <SuperBlock
-          blocks={ codingPrep }
-          message={ lockMessage }
-          title='Coding Interview Prep '
-        />
-      </div>
+      <SuperBlock
+        blocks={ codingPrep }
+        dashedName={ dashedName }
+        mapUi={ mapUi }
+        message={ lockMessage }
+        title={ title }
+        toggleThisPanel={ toggleThisPanel }
+      />
     );
   }
 }

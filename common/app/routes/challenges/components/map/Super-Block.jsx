@@ -6,12 +6,24 @@ import { Panel } from 'react-bootstrap';
 import Block from './Block.jsx';
 
 export default class SuperBlock extends PureComponent {
+   constructor(...props) {
+     super(...props);
+     this.handleSelect = this.handleSelect.bind(this);
+  }
   static displayName = 'SuperBlock';
   static propTypes = {
     title: PropTypes.string,
+    dashedName: PropTypes.string,
     message: PropTypes.string,
-    blocks: PropTypes.array
+    blocks: PropTypes.array,
+    mapUi: PropTypes.object,
+    toggleThisPanl: PropTypes.func
   };
+
+  handleSelect(eventKey, e) {
+    e.preventDefault();
+    this.props.toggleThisPanel(eventKey);
+  }
 
   renderBlocks(blocks) {
     if (!Array.isArray(blocks) || !blocks.length) {
@@ -28,15 +40,17 @@ export default class SuperBlock extends PureComponent {
   }
 
   render() {
-    const { title, blocks, message } = this.props;
+    const { title, dashedName, blocks, message, mapUi = {} } = this.props;
     return (
       <Panel
         bsClass='map-accordion-panel'
         collapsible={ true }
-        expanded={ true }
+        eventKey={ dashedName || title }
+        expanded={ dashedName ? mapUi[dashedName] : true }
         header={ <h2><FA name='caret-right' />{ title }</h2> }
         id={ title }
-        key={ title }
+        key={ dashedName || title }
+        onSelect={ this.handleSelect }
         >
         {
           message ?
