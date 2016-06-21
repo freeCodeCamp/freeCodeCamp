@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import PureComponent from 'react-pure-render/component';
 import dedent from 'dedent';
 import SuperBlock from './Super-Block.jsx';
@@ -40,15 +40,24 @@ const nonprofitProjects = {
   ]
 };
 
+const title = 'Full Stack Development Certification';
+const dashedName = 'full-stack';
 export default class FullStack extends PureComponent {
   static displayName = 'FullStack';
+  static propTypes = {
+    mapUi: PropTypes.object,
+    toggleThisPanel: PropTypes.func
+  };
   render() {
-    const title = 'Full Stack Development Certification';
+    const { mapUi, toggleThisPanel } = this.props;
     return (
       <SuperBlock
         blocks={ [ nonprofitProjects ] }
+        dashedName={ dashedName }
+        mapUi={ mapUi }
         message={ lockMessage }
         title={ title }
+        toggleThisPanel={ toggleThisPanel }
       />
     );
   }

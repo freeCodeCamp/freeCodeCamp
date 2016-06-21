@@ -6,14 +6,15 @@ import {
   replaceChallenge
 } from './types';
 import {
+  fetchChallengeCompleted,
+  fetchChallengesCompleted,
+  updateCurrentChallenge,
+  initMap
+} from './actions';
+import {
   delayedRedirect,
   createErrorObserable
 } from '../../../redux/actions';
-import {
-  fetchChallengeCompleted,
-  fetchChallengesCompleted,
-  updateCurrentChallenge
-} from './actions';
 
 function createNameIdMap(entities) {
   const { challenge } = entities;
@@ -68,11 +69,12 @@ export default function fetchChallengesSaga(action$, getState, { services }) {
               redirect ? delayedRedirect(redirect) : null
             );
           }
-          return Observable.just(
+          return Observable.of(
             fetchChallengesCompleted(
               createNameIdMap(entities),
               result
-            )
+            ),
+            initMap(entities, result),
           );
         })
         .catch(createErrorObserable);

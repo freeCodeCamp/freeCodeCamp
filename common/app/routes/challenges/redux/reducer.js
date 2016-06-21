@@ -46,6 +46,10 @@ const initialState = {
   legacyKey: '',
   files: {},
   // map
+  map: {
+    'full-stack': true,
+    'coding-prep': true
+  },
   filter: '',
   superBlocks: [],
   // misc
@@ -230,8 +234,36 @@ const filesReducer = handleActions(
   {}
 );
 
+// {
+//   // show
+//   [(super)BlockName]: { open: Boolean }
+//   // do not show
+//   [(super)BlockName]: null
+// }
+const mapReducer = handleActions(
+  {
+    [types.initMap]: (state, { payload }) => ({
+      ...state,
+      ...payload
+    }),
+    [types.toggleThisPanel]: (state, { payload }) => ({
+      ...state,
+      [payload]: !state[payload]
+    })
+  },
+  initialState.map
+);
+
 export default function challengeReducers(state, action) {
   const newState = mainReducer(state, action);
   const files = filesReducer(state && state.files || {}, action);
-  return newState.files !== files ? { ...newState, files } : newState;
+  if (newState.files !== files) {
+    return { ...newState, files };
+  }
+  // map actions only effect this reducer;
+  const map = mapReducer(state && state.map || {}, action);
+  if (newState.map !== map) {
+    return { ...newState, map };
+  }
+  return newState;
 }

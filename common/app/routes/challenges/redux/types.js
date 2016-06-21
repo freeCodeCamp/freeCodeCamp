@@ -20,6 +20,8 @@ export default createTypes([
   // map
   'updateFilter',
   'clearFilter',
+  'initMap',
+  'toggleThisPanel',
 
   // files
   'updateFile',

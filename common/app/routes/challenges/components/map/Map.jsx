@@ -11,13 +11,15 @@ import FullStack from './Full-Stack.jsx';
 import CodingPrep from './Coding-Prep.jsx';
 import {
   clearFilter,
-  updateFilter,
-  fetchChallenges
+  fetchChallenges,
+  toggleThisPanel,
+  updateFilter
 } from '../../redux/actions';
 
 const bindableActions = {
   clearFilter,
   fetchChallenges,
+  toggleThisPanel,
   updateFilter
 };
 const superBlocksSelector = createSelector(
@@ -51,10 +53,12 @@ const superBlocksSelector = createSelector(
 const mapStateToProps = createSelector(
   superBlocksSelector,
   state => state.challengesApp.filter,
-  ({ superBlocks }, filter) => {
+  state => state.challengesApp.map,
+  ({ superBlocks }, filter, mapUi) => {
     return {
       superBlocks,
-      filter
+      filter,
+      mapUi
     };
   }
 );
@@ -72,22 +76,31 @@ export class ShowMap extends PureComponent {
     clearFilter: PropTypes.func,
     filter: PropTypes.string,
     superBlocks: PropTypes.array,
-    updateFilter: PropTypes.func
+    updateFilter: PropTypes.func,
+    mapUi: PropTypes.object
   };
 
-  renderSuperBlocks(superBlocks, updateCurrentChallenge) {
+  renderSuperBlocks(
+    superBlocks,
+    updateCurrentChallenge,
+    mapUi,
+    toggleThisPanel
+  ) {
     if (!Array.isArray(superBlocks) || !superBlocks.length) {
       return <div>No Super Blocks</div>;
     }
-    return superBlocks.map((superBlock) => {
-      return (
-        <SuperBlock
-          key={ superBlock.title }
-          updateCurrentChallenge={ updateCurrentChallenge }
-          { ...superBlock }
-        />
-      );
-    });
+    return superBlocks
+      .map((superBlock) => {
+        return (
+          <SuperBlock
+            key={ superBlock.title }
+            mapUi={ mapUi }
+            toggleThisPanel={ toggleThisPanel }
+            updateCurrentChallenge={ updateCurrentChallenge }
+            { ...superBlock }
+          />
+        );
+      });
   }
 
   render() {
@@ -96,7 +109,9 @@ export class ShowMap extends PureComponent {
       superBlocks,
       updateFilter,
       clearFilter,
-      filter
+      filter,
+      mapUi,
+      toggleThisPanel
     } = this.props;
     return (
       <div>
@@ -105,12 +120,24 @@ export class ShowMap extends PureComponent {
           filter={ filter }
           updateFilter={ updateFilter }
         />
-        <div
-          className='map-accordion'
-          >
-          { this.renderSuperBlocks(superBlocks, updateCurrentChallenge) }
-          <FullStack />
-          <CodingPrep />
+        <div className='map-accordion'>
+          {
+            this.renderSuperBlocks(
+              superBlocks,
+              updateCurrentChallenge,
+              mapUi,
+              toggleThisPanel
+            )
+          }
+          <FullStack
+            mapUi={ mapUi }
+            toggleThisPanel={ toggleThisPanel }
+          />
+          <CodingPrep
+            mapUi={ mapUi }
+            toggleThisPanel={ toggleThisPanel }
+          />
+          <div className='spacer' />
         </div>
       </div>
     );

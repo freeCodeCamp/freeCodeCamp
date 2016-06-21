@@ -1,11 +1,12 @@
 import React, { PropTypes } from 'react';
+import PureComponent from 'react-pure-render/component';
 import { InputGroup, FormControl, Button, Row } from 'react-bootstrap';
 import classnames from 'classnames';
 
 const clearIcon = <i className='fa fa-times' />;
 const searchIcon = <i className='fa fa-search' />;
 const ESC = 27;
-export default class Header extends React.Component {
+export default class Header extends PureComponent {
   constructor(...props) {
     super(...props);
     this.handleKeyDown = this.handleKeyDown.bind(this);
