@@ -10,6 +10,7 @@ import {
 } from 'react-router-redux';
 import { render } from 'redux-epic';
 import { createHistory } from 'history';
+import useLangRoutes from './use-lang-routes.js';
 
 import createApp from '../common/app';
 import provideStore from '../common/app/provide-store';
@@ -36,7 +37,7 @@ initialState.app.csrfToken = csrfToken;
 
 const serviceOptions = { xhrPath: '/services', context: { _csrf: csrfToken } };
 
-const history = createHistory();
+const history = useLangRoutes(createHistory)();
 
 const devTools = window.devToolsExtension ? window.devToolsExtension() : f => f;
 const adjustUrlOnReplay = !!window.devToolsExtension;

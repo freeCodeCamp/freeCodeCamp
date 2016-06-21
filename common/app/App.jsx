@@ -36,15 +36,15 @@ const mapStateToProps = createSelector(
     isMapAlreadyLoaded,
     showChallengeComplete
   ) => ({
-    shouldShowSignIn,
-    isSignedIn: !!username,
     username,
     points,
     picture,
     toast,
+    shouldShowSignIn,
     isMapDrawerOpen,
     isMapAlreadyLoaded,
-    showChallengeComplete
+    showChallengeComplete,
+    isSignedIn: !!username
   })
 );
 
