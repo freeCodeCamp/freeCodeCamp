@@ -121,7 +121,7 @@ export function getFirstChallengeOfNextBlock(current, entites) {
   }
   const superBlock = SuperBlockMap[block.superBlock];
   const index = superBlock.blocks.indexOf(block.dashedName);
-  const newBlock = superBlock.blocks[ index + 1 ];
+  const newBlock = blockMap[superBlock.blocks[ index + 1 ]];
   if (!newBlock) {
     return null;
   }
