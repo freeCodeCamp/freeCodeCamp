@@ -48,7 +48,8 @@ export default class FullStack extends PureComponent {
       <SuperBlock
         blocks={ [ nonprofitProjects ] }
         message={ lockMessage }
-        title={ title } />
+        title={ title }
+      />
     );
   }
 }

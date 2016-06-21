@@ -27,7 +27,8 @@ export default class ShowMap extends PureComponent {
         <SuperBlock
           key={ superBlock.title }
           updateCurrentChallenge={ updateCurrentChallenge }
-          { ...superBlock }/>
+          { ...superBlock }
+        />
       );
     });
   }
@@ -52,13 +53,15 @@ export default class ShowMap extends PureComponent {
         <div className='map-wrapper'>
           <div
             className='text-center map-fixed-header'
-            style={{ top: '50px' }}>
+            style={{ top: '50px' }}
+            >
             <p>Challenges required for certifications are marked with a *</p>
             <Row className='map-buttons'>
               <Button
                 block={ true }
                 bsStyle='primary'
-                className='center-block'>
+                className='center-block'
+                >
                 Collapse all challenges
               </Button>
             </Row>
@@ -70,13 +73,15 @@ export default class ShowMap extends PureComponent {
                 onChange={ updateFilter }
                 placeholder='Type a challenge name'
                 type='text'
-                value={ filter }/>
+                value={ filter }
+              />
             </Row>
             <hr />
           </div>
         </div>
         <div
-          className='map-accordion'>
+          className='map-accordion'
+          >
           { this.renderSuperBlocks(superBlocks, updateCurrentChallenge) }
           <FullStack />
           <CodingPrep />
