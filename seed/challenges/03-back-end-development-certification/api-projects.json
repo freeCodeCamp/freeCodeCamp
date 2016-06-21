@@ -58,8 +58,8 @@
         ],
         [
           "//i.imgur.com/2a20Vah.gif",
-          "A gif showing you how to start mongoDB in c9.io's terminal.",
-          "In your terminal, start MongoDB by entering:<br><br><code>mongod --smallfiles</code>",
+          "A gif showing you how to install MongoDB and start it in c9.io's terminal.",
+          "In your terminal, install MongoDB by entering: <br><br><code>sudo apt-get install mongodb-org</code><br><br> then start MongoDB by entering:<br><br><code>mongod --smallfiles</code>",
           ""
         ],
         [
@@ -151,7 +151,7 @@
         [
           "//i.imgur.com/2a20Vah.gif",
           "Una imagen gif que te muestra cómo iniciar mongoDB en la terminal de c9.io.",
-          "En tu terminal, inicia MongoDB con el siguiente comando: <code>mongod --smallfiles</code>",
+          "En tu terminal, instala MongoDB usando el siguiente comando: <br><br><code>sudo apt-get install mongodb-org</code><br><br>. Inicia MongoDB con el siguiente comando: <code>mongod --smallfiles</code>",
           ""
         ],
         [
