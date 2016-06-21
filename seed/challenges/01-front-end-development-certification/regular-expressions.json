@@ -1,0 +1,491 @@
+{
+  "name": "Regular Expressions",
+  "time": "7 hours",
+  "order": 6.5,
+  "helpRoom": "Help",
+  "challenges": [
+    {
+      "id": "5768f0f91efb62ed9562e817",
+      "title": "Using .test",
+      "description": [
+        "Regular expressions are used in programming languages to match parts of strings. You create patterns to let you help you do that matching.",
+        "You will usually find regular expressions abbreviated as <code>regex</code> or <code>regexp</code>.",
+        "If we wanted to find the word <code>\"the\"</code> in the string <code>The dog chased the cat</code>, we could use the following regular expression: <code>/the/</code>",
+        "JavaScript has multiple ways to use regexes. One way to test a <code>regex</code> is using the <code>.test()</code> method. The <code>.test()</code> method tests the regex and will return <code>true</code> or <code>false</code> if your pattern finds something or not.",
+        "<blockquote>var testStr = \"FreeCodeCamp\";<br>var testRegex = /Code/;<br>testRegex.test(testStr);<br>// Returns true</blockquote>",
+        "<h4>Instructions</h4>",
+        "Apply the regex <code>myRegex</code> on the string <code>myString</code> using the <code>.test()</code> method."
+      ],
+      "challengeSeed": [
+        "var myString = \"Hello, World!\";",
+        "var myRegex = /Hello/;",
+        "var result = myRegex; // Change this line"
+      ],
+      "tail": [
+        "result"
+      ],
+      "solutions": [
+        "var myString = \"Hello, World!\";\nvar myRegex = /Hello/;\nvar result = myRegex.test(myString);"
+      ],
+      "tests": [
+        "assert(code.match(/myRegex.test\\(\\s*myString\\s*\\)/), 'message: You should use <code>.test()</code> to test the regex.');",
+        "assert(result === true, 'message: Your result should return <code>true</code>.');"
+      ],
+      "type": "waypoint",
+      "challengeType": 1
+    },
+    {
+      "id": "5768f0f81efb62ed9562e816",
+      "title": "Match Literal Strings",
+      "description": [
+        "In the last challenge, we searched for the word <code>\"the\"</code> using the regular expression <code>/the/</code>. This regex is searching for a literal match of the string <code>\"the\"</code>.",
+        "<blockquote>var testStr = \"Hello, my name is Kevin.\";<br>var testRegex = /Kevin/;<br>testRegex.test(testStr);<br>// Returns true</blockquote>",
+        "Any other forms of <code>\"the\"</code> will not match. For example, the regex <code>/the/</code> will not match <code>\"The\"</code> or <code>\"THE\"</code>. We will learn later how to match these as well.",
+        "<blockquote>var wrongRegex = /kevin/;<br>wrongRegex.test(testStr);<br>// Returns false</blockquote>",
+        "<h4>Instructions</h4>",
+        "Complete the regex <code>waldoRegex</code> to find <code>\"Waldo\"</code> in the string <code>waldoIsHiding</code> with a literal match."
+      ],
+      "challengeSeed": [
+        "var waldoIsHiding = \"Somewhere Waldo is hiding in this text.\";",
+        "var waldoRegex = /search/; // Change this line",
+        "var result = waldoRegex.test(waldoIsHiding);"
+      ],
+      "tail": [
+        "result"
+      ],
+      "solutions": [
+        "var waldoIsHiding = \"Somewhere Waldo is hiding in this text.\";\nvar waldoRegex = /Waldo/;\nvar result = waldoRegex.test(waldoIsHiding);"
+      ],
+      "tests": [
+        "assert(waldoRegex.test(waldoIsHiding), 'message: Your regex <code>waldoRegex</code> should find <code>\"Waldo\"</code>');",
+        "assert(!waldoRegex.test('Somewhere is hiding in this text.'), 'message: Your regex <code>waldoRegex</code> should not search for anything else.');",
+        "assert(!/\\/.*\\/i/.test(code), 'message: You should perform a literal string match with your regex.');"
+      ],
+      "type": "waypoint",
+      "challengeType": 1
+    },
+    {
+      "id": "5768f0f81efb62ed9562e815",
+      "title": "Match a Literal String with Different Possibilities",
+      "description": [
+        "Using regexes like <code>/coding/</code>, we can look for the pattern <code>\"coding\"</code> in another string.",
+        "This is powerful to search single strings, but it's limited to only one pattern. We can search many strings using the <code>alternation</code> or <code>OR</code> operator <code>|</code>.",
+        "This operator matches patterns before or after operator. For example, if you wanted to match <code>\"yes\"</code> or <code>\"no\"</code>, the regex you want is <code>/yes|no/</code>.",
+        "You can also search for more than just two patterns. You can do this by adding more patterns with more <code>OR</code> operators like <code>/yes|no|maybe/</code>.",
+        "<h4>Instructions</h4>",
+        "Complete the regex <code>petRegex</code> to match the pets <code>\"dog\"</code>, <code>\"cat\"</code>, <code>\"bird\"</code>, or <code>\"fish\"</code>."
+      ],
+      "challengeSeed": [
+        "var petString = \"James has a pet cat.\";",
+        "var petRegex = /change/; // Change this line",
+        "var result = petRegex.test(petString);"
+      ],
+      "tail": [
+        "result"
+      ],
+      "solutions": [
+        "var petString = \"James has a pet cat.\";\nvar petRegex = /dog|cat|bird|fish/;\nvar result = petRegex.test(petString);"
+      ],
+      "tests": [
+        "assert(petRegex.test('John has a pet dog.'), 'message: Your regex <code>petRegex</code> should return <code>true</code> for the string <code>\"John has a pet dog.\"</code>');",
+        "assert(!petRegex.test('Emma has a pet rock.'), 'message: Your regex <code>petRegex</code> should return <code>false</code> for the string <code>\"Emma has a pet rock.\"</code>');",
+        "assert(petRegex.test('Emma has a pet bird.'), 'message: Your regex <code>petRegex</code> should return <code>true</code> for the string <code>\"Emma has a pet bird.\"</code>');",
+        "assert(petRegex.test('Liz has a pet cat.'), 'message: Your regex <code>petRegex</code> should return <code>true</code> for the string <code>\"Liz has a pet cat.\"</code>');",
+        "assert(!petRegex.test('Kara has a pet dolphin.'), 'message: Your regex <code>petRegex</code> should return <code>false</code> for the string <code>\"Kara has a pet dolphin.\"</code>');",
+        "assert(petRegex.test('Alice has a pet fish.'), 'message: Your regex <code>petRegex</code> should return <code>true</code> for the string <code>\"Alice has a pet fish.\"</code>');",
+        "assert(!petRegex.test('Jimmy has a pet computer.'), 'message: Your regex <code>petRegex</code> should return <code>false</code> for the string <code>\"Jimmy has a pet computer.\"</code>');"
+      ],
+      "type": "waypoint",
+      "challengeType": 1
+    },
+    {
+      "id": "5768f0f71efb62ed9562e814",
+      "title": "Ignore Case While Matching",
+      "description": [
+        "Up until now, we've looked at regexes to do literal matches of strings. But sometimes, we might want to also match case differences.",
+        "<code>Case</code> (or sometimes letter case) is the difference between uppercase letters and lowercase letters. Examples of uppercase are <code>\"A\"</code>, <code>\"B\"</code>, and <code>\"C\"</code>. Examples of lowercase are <code>\"a\"</code>, <code>\"b\"</code>, and <code>\"c\"</code>.",
+        "We can match both cases using one kind of <code>flag</code>. There are other flags but here we will focus on the flag that ignores case.",
+        "The flag that ignores case is the <code>i</code> flag. We can use it by appending it to the regex. An example of using this flag is <code>/ignorecase/i</code>. This regex can match the strings <code>\"ignorecase\"</code>, <code>\"igNoreCase\"</code>, and <code>\"IgnoreCase\"</code>.",
+        "<h4>Instructions</h4>",
+        "Write a regex <code>fccRegex</code> to match <code>FreeCodeCamp</code>, no matter its case."
+      ],
+      "challengeSeed": [
+        "var myString = \"FreeCodeCamp\";",
+        "var fccRegex = /change/; // Change this line",
+        "var result = fccRegex.test(myString);"
+      ],
+      "tail": [
+        "result"
+      ],
+      "solutions": [
+        "var myString = \"FreeCodeCamp\";\nvar fccRegex = /freecodecamp/i;\nvar result = fccRegex.test(myString);"
+      ],
+      "tests": [
+        "assert(fccRegex.test('freecodecamp'), 'message: Your regex should match <code>freecodecamp</code>');",
+        "assert(fccRegex.test('FreeCodeCamp'), 'message: Your regex should match <code>FreeCodeCamp</code>');",
+        "assert(fccRegex.test('FreecodeCamp'), 'message: Your regex should match <code>FreecodeCamp</code>');",
+        "assert(fccRegex.test('FreeCodecamp'), 'message: Your regex should match <code>FreeCodecamp</code>');",
+        "assert(!fccRegex.test('Free Code Camp'), 'message: Your regex should not match <code>Free Code Camp</code>');",
+        "assert(fccRegex.test('FreeCOdeCamp'), 'message: Your regex should match <code>FreeCOdeCamp</code>');",
+        "assert(!fccRegex.test('FCC'), 'message: Your regex should not match <code>FCC</code>');",
+        "assert(fccRegex.test('FrEeCoDeCamp'), 'message: Your regex should match <code>FrEeCoDeCamp</code>');",
+        "assert(fccRegex.test('FrEeCodECamp'), 'message: Your regex should match <code>FrEeCodECamp</code>');",
+        "assert(fccRegex.test('FReeCodeCAmp'), 'message: Your regex should match <code>FReeCodeCAmp</code>');"
+      ],
+      "type": "waypoint",
+      "challengeType": 1
+    },
+    {
+      "id": "57762af3918f429e15cac4a3",
+      "title": "Extract Matches",
+      "description": [
+        "So far, we have only been checking if a pattern exists or not within a string. We can also extract the actual matches we found with the <code>.match()</code> method.",
+        "To use the <code>.match()</code> method, you will apply this method on a string and pass in the regex.",
+        "<blockquote>\"Hello, World!\".match(/Hello/);<br>// Returns [\"Hello\"]<br>var ourStr = \"Regular expressions\";<br>var ourRegex = /expressions/;<br>ourStr.match(ourRegex);<br>// Returns [\"expressions\"]</blockquote>",
+        "<h4>Instructions</h4>",
+        "Apply the <code>.match()</code> method to extract the word <code>coding</code>."
+      ],
+      "challengeSeed": [
+        "var extractStr = \"Extract the word 'coding' from this string.\";",
+        "var codingRegex = /change/; // Change this line",
+        "var result = extractStr; // Change this line"
+      ],
+      "tail": [
+        "result"
+      ],
+      "solutions": [
+        "var extractStr = \"Extract the word 'coding' from this string.\";\nvar codingRegex = /coding/;\nvar result = extractStr.match(codingRegex);"
+      ],
+      "tests": [
+        "assert(result.join() === \"coding\", 'message: The <code>result</code> should have the word <code>coding</code>');",
+        "assert(codingRegex.source === \"coding\", 'message: Your regex <code>codingRegex</code> should search for <code>coding</code>');",
+        "assert(code.match(/\\.match\\(.*\\)/), 'message: You should use the <code>.match()</code> method.');"
+      ],
+      "type": "waypoint",
+      "MDNlinks": [
+        "String.prototype.match()"
+      ],
+      "challengeType": 1
+    },
+    {
+      "id": "5768f0f61efb62ed9562e813",
+      "title": "Find More Than First Match",
+      "description": [
+        "So far, we have only been able to extract or search a pattern once.",
+        "<blockquote>var testStr = \"Repeat, Repeat, Repeat\";<br>var ourRegex = /Repeat/;<br>testStr.match(ourRegex);<br>// [\"Repeat\"]</blockquote>",
+        "To search or extract a pattern more than once, we can use the <code>g</code> flag.",
+        "<blockquote>var repeatRegex = /Repeat/g;<br>testStr.match(repeatRegex);<br>// [\"Repeat\", \"Repeat\", \"Repeat\"]</blockquote>",
+        "<h4>Instructions</h4>",
+        "Using the regex <code>starRegex</code>, find and extract both <code>\"Twinkle\"</code> words from the string <code>twinkleStar</code>",
+        "<strong>Note</strong><br>You can have multiple flags on your regex like <code>/search/gi</code>"
+      ],
+      "challengeSeed": [
+        "var twinkleStar = \"Twinkle, twinkle, little star\";",
+        "var starRegex = /change/; // Change this line",
+        "var result = twinkleStar; // Change this line"
+      ],
+      "tail": [
+        "result"
+      ],
+      "solutions": [
+        "var twinkleStar = \"Twinkle, twinkle, little star\";\nvar starRegex = /twinkle/gi;\nvar result = twinkleStar.match(starRegex);"
+      ],
+      "tests": [
+        "assert(starRegex.flags.match(/g/).length == 1, 'message: Your regex <code>starRegex</code> should use the global flag <code>g</code>');",
+        "assert(starRegex.flags.match(/i/).length == 1, 'message: You regex <code>starRegex</code> should use the case insensitive flag <code>i</code>');",
+        "assert(result.sort().join() == twinkleStar.match(/twinkle/gi).sort().join(), 'message: Your match should match both occurances of the word <code>\"Twinkle\"</code>');",
+        "assert(result.length == 2, 'message: Your match <code>result</code> should have two elements in it.');"
+      ],
+      "type": "waypoint",
+      "challengeType": 1
+    },
+    {
+      "id": "5768f0f61efb62ed9562e812",
+      "title": "Wildcard Period",
+      "description": [
+        "Sometimes you won't (or don't need to) know the exact characters in your patterns. Thinking of all words that match, say, a misspelling would take a long time. Luckily, we can save time using the wildcard character <code>.</code>",
+        "The wildcard character <code>.</code> will match any one character. The wildcard is also called <code>dot</code> and <code>period</code>. You can use the wildcard character just like any other character in the regex. For example, if we wanted to match <code>\"hug\"</code>, <code>\"huh\"</code>, <code>\"hut\"</code>, and <code>\"hum\"</code>, we can use the regex <code>/hu./</code> to match all four words.",
+        "<blockquote>var humStr = \"I'll hum a song\";<br>var hugStr = \"Bear hug\";<br>var huRegex = /hu./;<br>humStr.match(huRegex); // returns [\"hum\"]<br>hugStr.match(huRegex); // returns [\"hug\"]</blockquote>",
+        "<h4>Instructions<h4>",
+        "Complete the regex <code>unRegex</code> so that it'll match <code>\"run\"</code>, <code>\"sun\"</code>, <code>\"fun\"</code>, <code>\"pun\"</code>, <code>\"nun\"</code>, and <code>\"bun\"</code>. Your regex should be using the wildcard character for the first letter."
+      ],
+      "challengeSeed": [
+        "var exampleStr = \"Let's have fun with regular expressions!\";",
+        "var unRegex = /change/; // Change this line",
+        "var result = unRegex.test(exampleStr);"
+      ],
+      "tail": [
+        "result"
+      ],
+      "solutions": [
+        "var exampleStr = \"Let's have fun with regular expressions!\";\nvar unRegex = /.un/;\nvar result = unRegex.test(exampleStr);"
+      ],
+      "tests": [
+        "assert(code.match(/\\.test(.*)/), 'message: You should use the <code>.test()</code> method.');",
+        "assert(/\\./.test(unRegex.source), 'message: You should use the wildcard character in your regex <code>unRegex</code>');",
+        "assert(unRegex.test(\"Let us go on a run.\"), 'message: Your regex <code>unRegex</code> should match <code>\"run\"</code> in <code>\"Let us go on a run.\"</code>');",
+        "assert(unRegex.test(\"The sun is out today.\"), 'message: Your regex <code>unRegex</code> should match <code>\"sun\"</code> in <code>\"The sun is out today.\"</code>');",
+        "assert(unRegex.test(\"Coding is a lot of fun.\"), 'message: Your regex <code>unRegex</code> should match <code>\"fun\"</code> in <code>\"Coding is a lot of fun.\"</code>');",
+        "assert(unRegex.test(\"Seven days without a pun makes one weak.\"), 'message: Your regex <code>unRegex</code> should match <code>\"pun\"</code> in <code>\"Seven days without a pun makes one weak.\"</code>');",
+        "assert(unRegex.test(\"One takes a vow to be a nun.\"), 'message: Your regex <code>unRegex</code> should match <code>\"nun\"</code> in <code>\"One takes a vow to be a nun.\"</code>');",
+        "assert(unRegex.test(\"She got fired from the hot dog stand for putting her hair in a bun.\"), 'message: Your regex <code>unRegex</code> should match <code>\"bun\"</code> in <code>\"She got fired from the hot dog stand for putting her hair in a bun.\"</code>');",
+        "assert(!unRegex.test(\"There is a bug in my code.\"), 'message: Your regex <code>unRegex</code> should not match <code>\"There is a bug in my code.\"</code>');",
+        "assert(!unRegex.test(\"Can me if you can.\"), 'message: Your regex <code>unRegex</code> should not match <code>\"Catch me if you can.\"</code>');"
+      ],
+      "type": "waypoint",
+      "challengeType": 1
+    },
+    {
+      "id": "5768f0f51efb62ed9562e811",
+      "title": "Match Single Character with Multiple Possibilities",
+      "description": [
+        "Sets misspelled words similar to wild card."
+      ],
+      "challengeSeed": [],
+      "tests": [],
+      "type": "waypoint",
+      "challengeType": 1
+    },
+    {
+      "id": "5768f0f41efb62ed9562e810",
+      "title": "Match Letters of the Alphabet",
+      "description": [
+        "Another set"
+      ],
+      "challengeSeed": [],
+      "tests": [],
+      "type": "waypoint",
+      "challengeType": 1
+    },
+    {
+      "id": "5768f0f41efb62ed9562e80f",
+      "title": "Match Numbers and the Alphabet",
+      "description": [
+        "Alphanumerics"
+      ],
+      "challengeSeed": [],
+      "tests": [],
+      "type": "waypoint",
+      "challengeType": 1
+    },
+    {
+      "id": "5768efcd1efb62ed9562e7ef",
+      "title": "Match Single Character Not Specified",
+      "description": [
+        ""
+      ],
+      "challengeSeed": [],
+      "tests": [],
+      "type": "waypoint",
+      "challengeType": 1
+    },
+    {
+      "id": "5768f0f31efb62ed9562e80e",
+      "title": "Occurs One or More Times",
+      "description": [
+        "Using <code>+</code>"
+      ],
+      "challengeSeed": [],
+      "tests": [],
+      "type": "waypoint",
+      "challengeType": 1
+    },
+    {
+      "id": "5768efcd1efb62ed9562e7f0",
+      "title": "Occurs Zero or More Times",
+      "description": [
+        "Using <code>*</code>"
+      ],
+      "challengeSeed": [],
+      "tests": [],
+      "type": "waypoint",
+      "challengeType": 1
+    },
+    {
+      "id": "5768f0f21efb62ed9562e80d",
+      "title": "Checkpoint 1",
+      "description": [],
+      "challengeSeed": [],
+      "tests": [],
+      "type": "checkpoint",
+      "challengeType": 1
+    },
+    {
+      "id": "5768f0f11efb62ed9562e80c",
+      "title": "Match Strings Only at the Beginning",
+      "description": [
+        "Using <code>^</code>"
+      ],
+      "challengeSeed": [],
+      "tests": [],
+      "type": "waypoint",
+      "challengeType": 1
+    },
+    {
+      "id": "5768f0f11efb62ed9562e80b",
+      "title": "Match Strings Only at the End",
+      "description": [
+        "Using <code>$</code>"
+      ],
+      "challengeSeed": [],
+      "tests": [],
+      "type": "waypoint",
+      "challengeType": 1
+    },
+    {
+      "id": "5768f0f01efb62ed9562e80a",
+      "title": "Use Character Classes to Match Alphanumerics",
+      "description": [
+        "Alphanumeric"
+      ],
+      "challengeSeed": [],
+      "tests": [],
+      "type": "waypoing",
+      "challengeType": 1
+    },
+    {
+      "id": "5768f0ef1efb62ed9562e809",
+      "title": "Use Character Classes to Match Non-Alphanumerics",
+      "description": [
+        "Non-word characters"
+      ],
+      "challengeSeed": [],
+      "tests": [],
+      "type": "waypoint",
+      "challengeType": 1
+    },
+    {
+      "id": "5768f0ee1efb62ed9562e808",
+      "title": "Use Character Classes to Match Digits",
+      "description": [
+        "Digits"
+      ],
+      "challengeSeed": [],
+      "tests": [],
+      "type": "waypoint",
+      "challengeType": 1
+    },
+    {
+      "id": "5768f0ed1efb62ed9562e807",
+      "title": "Use Character Classes to Match Non-Digits",
+      "description": [
+        "Nondigits"
+      ],
+      "challengeSeed": [],
+      "tests": [],
+      "type": "waypoint",
+      "challengeType": 1
+    },
+    {
+      "id": "5768f0ec1efb62ed9562e806",
+      "title": "Use Character Classes to Match Whitespace",
+      "description": [
+        "Whitespace"
+      ],
+      "challengeSeed": [],
+      "tests": [],
+      "type": "waypoint",
+      "challengeType": 1
+    },
+    {
+      "id": "5768f0ec1efb62ed9562e805",
+      "title": "Use Character Classes to Match Non-Whitespace",
+      "description": [
+        "Non-whitespace"
+      ],
+      "challengeSeed": [],
+      "tests": [],
+      "type": "waypoint",
+      "challengeType": 1
+    },
+    {
+      "id": "5768f0eb1efb62ed9562e804",
+      "title": "Specify Upper and Lower Number of Matches",
+      "description": [
+        "<code>{x,y}</code>"
+      ],
+      "challengeSeed": [],
+      "tests": [],
+      "type": "waypoint",
+      "challengeType": 1
+    },
+    {
+      "id": "5768f0e61efb62ed9562e803",
+      "title": "Specify Only Lower Number of Matches",
+      "description": [
+        "<code>{x,}</code>"
+      ],
+      "challengeSeed": [],
+      "tests": [],
+      "type": "waypoint",
+      "challengeType": 1
+    },
+    {
+      "id": "5768f0e61efb62ed9562e802",
+      "title": "Specify Only Upper Number of Matches",
+      "description": [
+        "<code>{,y}</code>"
+      ],
+      "challengeSeed": [],
+      "tests": [],
+      "type": "waypoint",
+      "challengeType": 1
+    },
+    {
+      "id": "5768f0e61efb62ed9562e801",
+      "title": "Check For All or None",
+      "description": [
+        "Using <code>?</code>"
+      ],
+      "challengeSeed": [],
+      "tests": [],
+      "type": "waypoint",
+      "challengeType": 1
+    },
+    {
+      "id": "5768f0e61efb62ed9562e800",
+      "title": "Capture Groups of Patterns",
+      "description": [
+        "Parens"
+      ],
+      "challengeSeed": [],
+      "tests": [],
+      "type": "waypoint",
+      "challengeType": 1
+    },
+    {
+      "id": "5768f0e41efb62ed9562e7ff",
+      "title": "Capture Groups and Replace",
+      "description": [
+        "Use replace"
+      ],
+      "challengeSeed": [],
+      "tests": [],
+      "type": "waypoint",
+      "challengeType": 1
+    },
+    {
+      "id": "57679ecd1efb62ed9562e7ec",
+      "title": "Checkpoint 2",
+      "description": [
+        "Something here"
+      ],
+      "head": [
+        ""
+      ],
+      "challengeSeed": [
+        "var myString = \"Hello, World!\";",
+        "var myRegex = /Hello/;",
+        "myRegex; // Change this line"
+      ],
+      "solutions": [
+        "var myString = \"Hello, World!\";\nvar myRegex = /Hello/;\nmyRegex.test(myString);"
+      ],
+      "tests": [
+        "assert(code.match(/myRegex.test\\(myString\\)/), 'message: You should use <code>.test()</code> to test the regex.');"
+      ],
+      "type": "checkpoint",
+      "challengeType": 1
+    }
+  ]
+}
