@@ -1,5 +1,5 @@
 import Show from './components/Show.jsx';
-import ShowMap from './components/map/Show.jsx';
+import Map from './components/map/Map.jsx';
 
 export const challenges = {
   path: 'challenges(/:dashedName)',
@@ -19,5 +19,5 @@ export const modernChallenges = {
 
 export const map = {
   path: 'map',
-  component: ShowMap
+  component: Map
 };
