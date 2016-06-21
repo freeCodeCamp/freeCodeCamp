@@ -34,9 +34,11 @@ const bindableActions = {
 const mapStateToProps = createSelector(
   challengeSelector,
   state => state.challengesApp.challenge,
-    ({ viewType }, challenge) => ({
+  state => state.challengesApp.superBlocks,
+    ({ viewType }, challenge, superBlocks = []) => ({
     challenge,
-    viewType
+    viewType,
+    areChallengesLoaded: superBlocks.length > 0
   })
 );
 
@@ -57,11 +59,14 @@ export class Challenges extends PureComponent {
     isStep: PropTypes.bool,
     fetchChallenges: PropTypes.func,
     replaceChallenge: PropTypes.func,
-    params: PropTypes.object
+    params: PropTypes.object,
+    areChallengesLoaded: PropTypes.bool
   };
 
   componentDidMount() {
-    this.props.fetchChallenges();
+    if (!this.props.areChallengesLoaded) {
+      this.props.fetchChallenges();
+    }
   }
 
   componentWillReceiveProps(nextProps) {
