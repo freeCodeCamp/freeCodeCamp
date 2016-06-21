@@ -54,7 +54,8 @@ export default class CodingPrep extends PureComponent {
         <SuperBlock
           blocks={ codingPrep }
           message={ lockMessage }
-          title='Coding Interview Prep ' />
+          title='Coding Interview Prep '
+        />
       </div>
     );
   }

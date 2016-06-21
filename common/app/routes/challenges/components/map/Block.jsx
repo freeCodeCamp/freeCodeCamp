@@ -91,7 +91,7 @@ export class Block extends PureComponent {
       <Panel
         bsClass='map-accordion-panel-nested'
         collapsible={ true }
-        expanded={ true }
+        expanded={ false }
         header={
           <div>
             <h3><FA name='caret-right' />{ title }</h3>
