@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 import NoSSR from 'react-no-ssr';
 
 import Drawer from './Drawer.jsx';
-import ShowMap from '../routes/challenges/components/map/Show.jsx';
+import ShowMap from '../routes/challenges/components/map/Map.jsx';
 
 export default class MapDrawer extends React.Component {
   static displayName = 'MapDrawer';
@@ -18,7 +18,7 @@ export default class MapDrawer extends React.Component {
       <Drawer
         closeDrawer={ toggleMapDrawer }
         isOpen={ isOpen }
-      >
+        >
         <NoSSR>
           <div>
             { isAlreadyLoaded || isOpen ? <ShowMap /> : null }

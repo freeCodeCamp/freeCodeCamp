@@ -1,20 +1,72 @@
 import React, { PropTypes } from 'react';
-import classnames from 'classnames';
+import { compose } from 'redux';
+import { contain } from 'redux-epic';
+import { connect } from 'react-redux';
+import { createSelector } from 'reselect';
 import PureComponent from 'react-pure-render/component';
-import { InputGroup, FormControl, Button, Row } from 'react-bootstrap';
 
+import MapHeader from './Header.jsx';
 import SuperBlock from './Super-Block.jsx';
 import FullStack from './Full-Stack.jsx';
 import CodingPrep from './Coding-Prep.jsx';
+import {
+  clearFilter,
+  updateFilter,
+  fetchChallenges
+} from '../../redux/actions';
 
-const clearIcon = <i className='fa fa-times' />;
-const searchIcon = <i className='fa fa-search' />;
-const ESC = 27;
-export default class ShowMap extends PureComponent {
-  constructor(...props) {
-    super(...props);
-    this.handleKeyDown = this.handleKeyDown.bind(this);
+const bindableActions = {
+  clearFilter,
+  fetchChallenges,
+  updateFilter
+};
+const superBlocksSelector = createSelector(
+  state => state.challengesApp.superBlocks,
+  state => state.entities.superBlock,
+  state => state.entities.block,
+  state => state.entities.challenge,
+  (superBlocks, superBlockMap, blockMap, challengeMap) => {
+    if (!superBlockMap || !blockMap || !challengeMap) {
+      return {
+        superBlocks: []
+      };
+    }
+    return {
+      superBlocks: superBlocks
+        .map(superBlockName => superBlockMap[superBlockName])
+        .map(superBlock => ({
+          ...superBlock,
+          blocks: superBlock.blocks
+            .map(blockName => blockMap[blockName])
+            .map(block => ({
+              ...block,
+              challenges: block.challenges
+                .map(dashedName => challengeMap[dashedName])
+            }))
+        }))
+    };
   }
+);
+
+const mapStateToProps = createSelector(
+  superBlocksSelector,
+  state => state.challengesApp.filter,
+  ({ superBlocks }, filter) => {
+    return {
+      superBlocks,
+      filter
+    };
+  }
+);
+
+const fetchOptions = {
+  fetchAction: 'fetchChallenges',
+  isPrimed({ superBlocks }) {
+    return Array.isArray(superBlocks) && superBlocks.length > 1;
+  }
+};
+
+export class ShowMap extends PureComponent {
   static displayName = 'Map';
   static propTypes = {
     clearFilter: PropTypes.func,
@@ -22,12 +74,6 @@ export default class ShowMap extends PureComponent {
     superBlocks: PropTypes.array,
     updateFilter: PropTypes.func
   };
-
-  handleKeyDown(e) {
-    if (e.keyCode === ESC) {
-      this.props.clearFilter();
-    }
-  }
 
   renderSuperBlocks(superBlocks, updateCurrentChallenge) {
     if (!Array.isArray(superBlocks) || !superBlocks.length) {
@@ -44,13 +90,6 @@ export default class ShowMap extends PureComponent {
     });
   }
 
-  renderSearchAddon(filter, clearFilter) {
-    if (!filter) {
-      return searchIcon;
-    }
-    return <span onClick={ clearFilter }>{ clearIcon }</span>;
-  }
-
   render() {
     const {
       updateCurrentChallenge,
@@ -59,46 +98,13 @@ export default class ShowMap extends PureComponent {
       clearFilter,
       filter
     } = this.props;
-    const inputClass = classnames({
-      'map-filter': true,
-      filled: !!filter
-    });
     return (
       <div>
-        <div className='map-wrapper'>
-          <div
-            className='text-center map-fixed-header'
-            style={{ top: '50px' }}
-            >
-            <p>Challenges required for certifications are marked with a *</p>
-            <Row className='map-buttons'>
-              <Button
-                block={ true }
-                bsStyle='primary'
-                className='center-block'
-                >
-                Collapse all challenges
-              </Button>
-            </Row>
-            <Row className='map-buttons'>
-              <InputGroup>
-                <FormControl
-                  autocompleted='off'
-                  className={ inputClass }
-                  onChange={ updateFilter }
-                  onKeyDown={ this.handleKeyDown }
-                  placeholder='Type a challenge name'
-                  type='text'
-                  value={ filter }
-                />
-                <InputGroup.Addon>
-                  { this.renderSearchAddon(filter, clearFilter) }
-                </InputGroup.Addon>
-              </InputGroup>
-            </Row>
-            <hr />
-          </div>
-        </div>
+        <MapHeader
+          clearFilter={ clearFilter }
+          filter={ filter }
+          updateFilter={ updateFilter }
+        />
         <div
           className='map-accordion'
           >
@@ -110,3 +116,8 @@ export default class ShowMap extends PureComponent {
     );
   }
 }
+
+export default compose(
+  connect(mapStateToProps, bindableActions),
+  contain(fetchOptions)
+)(ShowMap);
