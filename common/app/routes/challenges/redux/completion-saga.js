@@ -15,40 +15,24 @@ import { postJSON$ } from '../../../../utils/ajax-stream';
 // NOTE(@BerkeleyTrue): this file could benefit from some refactoring.
 // lots of repeat code
 
-function completedChallenge(state) {
-  const { challenge: { id } } = challengeSelector(state);
-  const {
-    app: { user, csrfToken },
-    challengesApp: { files }
-  } = state;
-  const body = {
-    id,
-    _csrf: csrfToken,
-    files
-  };
-  const saveChallenge$ = postJSON$('/modern-challenge-completed', body)
+function postChallenge(url, body, username) {
+  const saveChallenge$ = postJSON$(url, body)
     .retry(3)
     .flatMap(({ alreadyCompleted, points }) => {
       return Observable.of(
         makeToast({
-            message:
-              'Challenge saved.' +
-              (alreadyCompleted ? '' : ' First time Completed!'),
-            title: 'Saved',
+            message: randomCompliment() +
+              (alreadyCompleted ? '!' : '! First time Completed!'),
             type: 'info'
         }),
-        updateUserPoints(user, points)
+        updateUserPoints(username, points)
       );
     })
     .catch(createErrorObservable);
 
   const challengeCompleted$ = Observable.of(
     moveToNextChallenge(),
-    makeToast({
-      title: 'Congratulations!',
-      message: user ? ' Saving...' : 'Moving on to next challenge.',
-      type: 'success'
-    })
+    username ? makeToast({ message: ' Saving...', type: 'info' }) : null
   );
   return Observable.merge(saveChallenge$, challengeCompleted$);
 }
@@ -63,7 +47,17 @@ function submitModern(type, state) {
     }
 
     if (type === types.submitChallenge) {
-      return completedChallenge(state);
+      const { challenge: { id } } = challengeSelector(state);
+      const {
+        app: { user, csrfToken },
+        challengesApp: { files }
+      } = state;
+      const body = {
+        id,
+        _csrf: csrfToken,
+        files
+      };
+      return postChallenge('/modern-challenge-completed', body, user);
     }
   }
   return Observable.just(makeToast({
@@ -89,31 +83,7 @@ function submitProject(type, state, { solution, githubLink }) {
   if (challengeType === backEndProject) {
     body.githubLink = githubLink;
   }
-  const saveChallenge$ = postJSON$('/project-completed', body)
-    .retry(3)
-    .flatMap(({ alreadyCompleted, points }) => {
-      return Observable.of(
-        makeToast({
-          message:
-            'Challenge saved.' +
-            (alreadyCompleted ? '' : ' First time Completed!'),
-          title: 'Saved',
-          type: 'info'
-        }),
-        updateUserPoints(user, points)
-      );
-    })
-    .catch(createErrorObservable);
-
-  const challengeCompleted$ = Observable.of(
-    makeToast({
-      title: randomCompliment(),
-      message: user ? ' Saving...' : 'Moving on to next challenge.',
-      type: 'success'
-    })
-    // moveToNextChallenge()
-  );
-  return Observable.merge(saveChallenge$, challengeCompleted$);
+  return postChallenge('/project-completed', body, user);
 }
 
 function submitSimpleChallenge(type, state) {
@@ -127,31 +97,7 @@ function submitSimpleChallenge(type, state) {
     id,
     _csrf: csrfToken
   };
-  const saveChallenge$ = postJSON$('/challenge-completed', body)
-    .retry(3)
-    .flatMap(({ alreadyCompleted, points }) => {
-      return Observable.of(
-        makeToast({
-          message:
-            'Challenge saved.' +
-            (alreadyCompleted ? '' : ' First time Completed!'),
-          title: 'Saved',
-          type: 'info'
-        }),
-        updateUserPoints(user, points)
-      );
-    })
-    .catch(createErrorObservable);
-
-  const challengeCompleted$ = Observable.of(
-    makeToast({
-      title: randomCompliment(),
-      message: user ? ' Saving...' : 'Moving on to next challenge.',
-      type: 'success'
-    }),
-    moveToNextChallenge()
-  );
-  return Observable.merge(saveChallenge$, challengeCompleted$);
+  return postChallenge('/challenge-completed', body, user);
 }
 
 const submitTypes = {
