@@ -110,7 +110,7 @@ $(document).ready(function() {
           return common.updateOutputDisplay('' + err);
         }
         common.updateOutputDisplay(output);
-        common.displayTestResults(tests);
+        common.displayTestResults(tests, true);
         if (solved) {
           common.showCompletion();
         }
@@ -140,7 +140,7 @@ $(document).ready(function() {
             }
             return common.updateOutputDisplay('' + err);
           }
-          common.displayTestResults(tests);
+          common.displayTestResults(tests, false);
           return null;
         },
         ({ err }) => {
@@ -164,7 +164,7 @@ $(document).ready(function() {
             return common.updateOutputDisplay('' + err);
           }
           common.codeStorage.updateStorage(challengeName, originalCode);
-          common.displayTestResults(tests);
+          common.displayTestResults(tests, false);
           return null;
         },
         (err) => {
