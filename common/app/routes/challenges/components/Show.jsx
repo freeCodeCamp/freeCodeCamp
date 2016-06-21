@@ -13,7 +13,8 @@ import Video from './video/Video.jsx';
 import {
   fetchChallenge,
   fetchChallenges,
-  replaceChallenge
+  replaceChallenge,
+  resetUi
 } from '../redux/actions';
 import { challengeSelector } from '../redux/selectors';
 
@@ -28,7 +29,8 @@ const views = {
 const bindableActions = {
   fetchChallenge,
   fetchChallenges,
-  replaceChallenge
+  replaceChallenge,
+  resetUi
 };
 
 const mapStateToProps = createSelector(
@@ -60,9 +62,13 @@ export class Challenges extends PureComponent {
     fetchChallenges: PropTypes.func,
     replaceChallenge: PropTypes.func,
     params: PropTypes.object,
-    areChallengesLoaded: PropTypes.bool
+    areChallengesLoaded: PropTypes.bool,
+    resetUi: PropTypes.func
   };
 
+  componentWillUnmount() {
+    this.props.resetUi();
+  }
   componentDidMount() {
     if (!this.props.areChallengesLoaded) {
       this.props.fetchChallenges();
@@ -71,6 +77,7 @@ export class Challenges extends PureComponent {
 
   componentWillReceiveProps(nextProps) {
     if (this.props.params.dashedName !== nextProps.params.dashedName) {
+      this.props.resetUi();
       this.props.replaceChallenge({
         dashedName: nextProps.params.dashedName,
         block: nextProps.params.block
