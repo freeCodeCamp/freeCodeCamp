@@ -163,16 +163,28 @@
   width: 100%;
 }
 
+
 .map-accordion {
   width: 700px;
   margin: 180px auto 0;
   position: relative;
+
+  .map-accordion-panel-collapse {
+    transition: height 0.001s;
+  }
 
   .map-accordion-panel-nested {
     margin: 0 20px;
     @media (max-width: 400px) {
       margin:0;
     }
+    .map-accordion-panel-nested-body {
+      padding-left: 36px;
+    }
+  }
+
+  .map-accordion-panel-nested-collapse {
+    transition: height 0.001s;
   }
 
   .map-accordion-panel-title {
