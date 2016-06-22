@@ -1,6 +1,6 @@
 window.common = (function({ $, common = { init: [] }}) {
 
-  common.displayTestResults = function displayTestResults(data = []) {
+  common.displayTestResults = function displayTestResults(data = [], down) {
     $('#testSuite').children().remove();
     $('#testSuite').fadeIn('slow');
     data.forEach(({ err = false, text = '' }) => {
@@ -21,7 +21,11 @@ window.common = (function({ $, common = { init: [] }}) {
       `)
         .appendTo($('#testSuite'));
     });
-    $('#scroll-locker').animate({ scrollTop: $(document).height() }, 'slow');
+    if (down) {
+        $('#scroll-locker').animate(
+            { scrollTop: $(document).height() }, 'slow'
+        );
+    }
     return data;
   };
 
