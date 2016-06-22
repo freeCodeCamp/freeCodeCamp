@@ -235,7 +235,7 @@
         "<strong>Examples:</strong>",
         "<blockquote>var someVariable;<br>var anotherVariableName;<br>var thisVariableNameIsTooLong;</blockquote>",
         "<h4>Instructions</h4>",
-        "Fix the variable declarations and assignments so their names use <dfn>camelCase</dfn>."
+        "Modify the existing declarations and assignments so their names use <dfn>camelCase</dfn>.<br>Do not create any new variables."
       ],
       "releasedOn": "January 1, 2016",
       "challengeSeed": [
@@ -4559,7 +4559,7 @@
         "    }",
         "};",
         "// Keep a copy of the collection for tests",
-        "var collectionCopy = JSON.parse(stringify(collection));",
+        "var collectionCopy = JSON.parse(JSON.stringify(collection));",
         "",
         "// Only change code below this line",
         "function updateRecords(id, prop, value) {",
