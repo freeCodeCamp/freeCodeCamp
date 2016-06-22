@@ -289,7 +289,7 @@
         "We've seen from the last two lessons that each object in our JSON array contains an <code>imageLink</code> key with a value that is the URL of a cat's image.",
         "When we're looping through these objects, let's use this <code>imageLink</code> property to display this image in an <code>img</code> element.",
         "Here's the code that does this:",
-        "<code>html += \"&lt;img src = '\" + val.imageLink + \"'&gt;\";</code>"
+        "<code>html += \"&lt;img src = '\" + val.imageLink + \"' \" + \"alt='\" + val.altText + \"'&gt;\";</code>"
       ],
       "challengeSeed": [
         "fccss",
@@ -349,14 +349,14 @@
         "Hemos visto en las dos últimas lecciones que cada objeto en nuestro vector JSON contiene una llave <code>imageLink</code> con un valor que corresponde a la URL de la imagen de un gato.",
         "Cuando estamos recorriendo estos objetos, usemos esta propiedad <code>imageLink</code> para visualizar la imagen en un elemento <code>img</code>.",
         "Aquí está el código que hace esto:",
-        "<code>html += \"&lt;img src = '\" + val.imageLink + \"'&gt;\";</code>"
+        "<code>html += \"&lt;img src = '\" + val.imageLink + \"' \" + \"alt='\" + val.altText + \"'&gt;\";</code>"
       ],
       "titlePt": "Apresentar as imagens da fonte de dados",
       "descriptionPt": [
         "Como temos visto nas ultimas lições, cada objeto em nosso array JSON contém a chave <code>imageLink</code> com um valor que corresponde a URL da imagem de um gato.",
         "Quando estamos percorrendo por estes objetos, usamos a propriedade <code>imageLink</code> para visualizar a imagem em um elemento <code>img</code>.",
         "Aqui está o código para fazer isso:",
-        "<code>html += \"&lt;img src = '\" + val.imageLink + \"'&gt;\";</code>"
+        "<code>html += \"&lt;img src = '\" + val.imageLink + \"' \" + \"alt='\" + val.altText + \"'&gt;\";</code>"
       ]
     },
     {
@@ -387,7 +387,7 @@
         "",
         "          html += \"<div class = 'cat'>\"",
         "",
-        "          html += \"<img src = '\" + val.imageLink + \"'>\"",
+        "          html += \"<img src = '\" + val.imageLink + \"' \" + \"alt='\" + val.altText + \"'>\"",
         "",
         "          html += \"</div>\"",
         "",
