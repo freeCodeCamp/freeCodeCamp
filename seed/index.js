@@ -40,6 +40,8 @@ Observable.combineLatest(
     var fileName = challengeSpec.fileName;
     var helpRoom = challengeSpec.helpRoom || 'Help';
     var time = challengeSpec.time || 'N/A';
+    var isLocked = !!challengeSpec.isLocked;
+    var message = challengeSpec.message;
 
     console.log('parsed %s successfully', blockName);
 
@@ -54,8 +56,10 @@ Observable.combineLatest(
       dashedName: dasherize(blockName),
       superOrder: superOrder,
       superBlock: superBlock,
+      superBlockMessage: message,
       order: order,
-      time: time
+      time: time,
+      isLocked: isLocked
     };
 
     return createBlocks(block)
@@ -85,6 +89,7 @@ Observable.combineLatest(
             challenge.blockId = block.id;
             challenge.isBeta = challenge.isBeta || isBeta;
             challenge.isComingSoon = challenge.isComingSoon || isComingSoon;
+            challenge.isLocked = challenge.isLocked || isLocked;
             challenge.time = challengeSpec.time;
             challenge.superOrder = superOrder;
             challenge.superBlock = superBlock
