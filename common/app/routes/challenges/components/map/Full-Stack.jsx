@@ -15,26 +15,31 @@ const nonprofitProjects = {
   challenges: [
     {
       title: 'Greenfield Nonprofit Project #1',
+      dashedName: 'greenfield-1',
       isLocked: true,
       isRequired: true
     },
     {
       title: 'Greenfield Nonprofit Project #2',
+      dashedName: 'greenfield-2',
       isLocked: true,
       isRequired: true
     },
     {
       title: 'Legacy Code Nonprofit Project #1',
+      dashedName: 'legacy-1',
       isLocked: true,
       isRequired: true
     },
     {
       title: 'Legacy Code Nonprofit Project #2',
+      dashedName: 'legacy-2',
       isLocked: true,
       isRequired: true
     },
     {
       title: 'Claim your Full Stack Development Certification',
+      dashedName: 'claim-full-stack',
       isLocked: true
     }
   ]

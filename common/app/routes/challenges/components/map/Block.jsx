@@ -1,97 +1,76 @@
 import React, { PropTypes } from 'react';
-import { Link } from 'react-router';
 import { connect } from 'react-redux';
+import { createSelector } from 'reselect';
 import FA from 'react-fontawesome';
 import PureComponent from 'react-pure-render/component';
 import { Panel } from 'react-bootstrap';
-import classnames from 'classnames';
 
-import { updateCurrentChallenge } from '../../redux/actions';
+import Challenge from './Challenge.jsx';
+import { toggleThisPanel } from '../../redux/actions';
 
-const dispatchActions = { updateCurrentChallenge };
+const dispatchActions = { toggleThisPanel };
+const mapStateToProps = createSelector(
+  (_, props) => props.dashedName,
+  state => state.entities.block,
+  state => state.entities.challenge,
+  (state, props) => state.challengesApp.mapUi[props.dashedName],
+  (dashedName, blockMap, challengeMap, isOpen) => {
+    const block = blockMap[dashedName];
+    return {
+      isOpen,
+      dashedName,
+      title: block.title,
+      time: block.time,
+      challenges: block.challenges
+    };
+  }
+);
 export class Block extends PureComponent {
+  constructor(...props) {
+    super(...props);
+    this.handleSelect = this.handleSelect.bind(this);
+  }
   static displayName = 'Block';
   static propTypes = {
     title: PropTypes.string,
     dashedName: PropTypes.string,
     time: PropTypes.string,
+    isOpen: PropTypes.bool,
     challenges: PropTypes.array,
-    updateCurrentChallenge: PropTypes.func
+    toggleThisPanel: PropTypes.func
   };
 
-  renderChallenges(blockName, challenges, updateCurrentChallenge) {
+  handleSelect(eventKey, e) {
+    e.preventDefault();
+    this.props.toggleThisPanel(eventKey);
+  }
+
+  renderChallenges(challenges) {
     if (!Array.isArray(challenges) || !challenges.length) {
       return <div>No Challenges Found</div>;
     }
-    return challenges.map(challenge => {
-      const {
-        title,
-        dashedName,
-        isLocked,
-        isRequired,
-        isCompleted
-      } = challenge;
-      const challengeClassName = classnames({
-        'text-primary': true,
-        'padded-ionic-icon': true,
-        'negative-15': true,
-        'challenge-title': true,
-        'ion-checkmark-circled faded': !isLocked && isCompleted,
-        'ion-ios-circle-outline': !isLocked && !isCompleted,
-        'ion-locked': isLocked,
-        disabled: isLocked
-      });
-      if (isLocked) {
-        return (
-          <p
-            className={ challengeClassName }
-            key={ title }
-            >
-            { title }
-            {
-              isRequired ?
-                <span className='text-primary'><strong>*</strong></span> :
-                ''
-            }
-          </p>
-        );
-      }
-      return (
-        <p
-          className={ challengeClassName }
-          key={ title }
-          >
-          <Link to={ `/challenges/${blockName}/${dashedName}` }>
-            <span
-              onClick={ () => updateCurrentChallenge(challenge) }
-              >
-              { title }
-              <span className='sr-only'>complete</span>
-              {
-                isRequired ?
-                  <span className='text-primary'><strong>*</strong></span> :
-                  ''
-              }
-            </span>
-          </Link>
-        </p>
-      );
-    });
+    return challenges.map(dashedName => (
+      <Challenge
+        dashedName={ dashedName }
+        key={ dashedName }
+      />
+    ));
   }
 
   render() {
     const {
       title,
       time,
-      challenges,
-      updateCurrentChallenge,
-      dashedName
+      dashedName,
+      isOpen,
+      challenges
     } = this.props;
     return (
       <Panel
         bsClass='map-accordion-panel-nested'
         collapsible={ true }
-        expanded={ false }
+        eventKey={ dashedName || title }
+        expanded={ isOpen }
         header={
           <div>
             <h3><FA name='caret-right' />{ title }</h3>
@@ -100,13 +79,12 @@ export class Block extends PureComponent {
         }
         id={ title }
         key={ title }
+        onSelect={ this.handleSelect }
         >
-        {
-          this.renderChallenges(dashedName, challenges, updateCurrentChallenge)
-        }
+        { this.renderChallenges(challenges) }
       </Panel>
     );
   }
 }
 
-export default connect(null, dispatchActions)(Block);
+export default connect(mapStateToProps, dispatchActions)(Block);

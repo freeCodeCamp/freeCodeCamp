@@ -46,10 +46,7 @@ const initialState = {
   legacyKey: '',
   files: {},
   // map
-  map: {
-    'full-stack': true,
-    'coding-prep': true
-  },
+  mapUi: {},
   filter: '',
   superBlocks: [],
   // misc
@@ -251,7 +248,7 @@ const mapReducer = handleActions(
       [payload]: !state[payload]
     })
   },
-  initialState.map
+  initialState.mapUi
 );
 
 export default function challengeReducers(state, action) {
@@ -261,9 +258,9 @@ export default function challengeReducers(state, action) {
     return { ...newState, files };
   }
   // map actions only effect this reducer;
-  const map = mapReducer(state && state.map || {}, action);
-  if (newState.map !== map) {
-    return { ...newState, map };
+  const mapUi = mapReducer(state && state.mapUi || {}, action);
+  if (newState.mapUi !== mapUi) {
+    return { ...newState, mapUi };
   }
   return newState;
 }
