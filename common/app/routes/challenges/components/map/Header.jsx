@@ -1,20 +1,24 @@
 import React, { PropTypes } from 'react';
+import { connect } from 'react-redux';
 import PureComponent from 'react-pure-render/component';
 import { InputGroup, FormControl, Button, Row } from 'react-bootstrap';
 import classnames from 'classnames';
+import { clearFilter, updateFilter } from '../../redux/actions';
 
+const ESC = 27;
 const clearIcon = <i className='fa fa-times' />;
 const searchIcon = <i className='fa fa-search' />;
-const ESC = 27;
-export default class Header extends PureComponent {
+const bindableActions = { clearFilter, updateFilter };
+const mapStateToProps = state => ({ filter: state.challengesApp.filter });
+export class Header extends PureComponent {
   constructor(...props) {
     super(...props);
     this.handleKeyDown = this.handleKeyDown.bind(this);
   }
   static displayName = 'MapHeader';
   static propTypes = {
-    filter: PropTypes.string,
     clearFilter: PropTypes.func,
+    filter: PropTypes.string,
     updateFilter: PropTypes.func
   };
 
@@ -79,3 +83,4 @@ export default class Header extends PureComponent {
     );
   }
 }
+export default connect(mapStateToProps, bindableActions)(Header);
