@@ -202,6 +202,7 @@
         "Un palíndromo es una palabra u oración que se escribe de la misma forma en ambos sentidos, sin tomar en cuenta signos de puntuación, espacios y sin distinguir entre mayúsculas y minúsculas.",
         "Tendrás que quitar los caracteres no alfanuméricos (signos de puntuación, espacioes y símbolos) y transformar las letras a minúsculas para poder verificar si el texto es palíndromo.",
         "Te proveeremos textos en varios formatos, como \"racecar\", \"RaceCar\", and \"race CAR\" entre otros.",
+        "También vamos a pasar cadenas con símbolos especiales, tales como <code>\"2A3*3a2\"</code>, <code>\"2A3 3a2\"</code>, y <code>\"2_A3*3#A2\"</code>.",
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
       ]
     },
