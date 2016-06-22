@@ -80,6 +80,11 @@ module.exports = function(User) {
       if (user.progressTimestamps.length === 0) {
         user.progressTimestamps.push({ timestamp: Date.now() });
       }
+      // this is workaround for preventing a server crash
+      // refer strongloop/loopback/#1364
+      if (user.password === '') {
+        user.password = null;
+      }
     }
     return next();
   });

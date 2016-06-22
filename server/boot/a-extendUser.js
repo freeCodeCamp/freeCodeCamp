@@ -53,6 +53,11 @@ module.exports = function(app) {
   User.beforeRemote('create', function(ctx, user, next) {
     var body = ctx.req.body;
     if (body) {
+      // this is workaround for preventing a server crash
+      // refer strongloop/loopback/#1364
+      if (body.password === '') {
+        body.password = null;
+      }
       body.emailVerified = false;
     }
     next();
