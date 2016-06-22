@@ -3,13 +3,26 @@ import { connect } from 'react-redux';
 import PureComponent from 'react-pure-render/component';
 import { InputGroup, FormControl, Button, Row } from 'react-bootstrap';
 import classnames from 'classnames';
-import { clearFilter, updateFilter } from '../../redux/actions';
+import {
+  clearFilter,
+  updateFilter,
+  collapseAll,
+  expandAll
+} from '../../redux/actions';
 
 const ESC = 27;
 const clearIcon = <i className='fa fa-times' />;
 const searchIcon = <i className='fa fa-search' />;
-const bindableActions = { clearFilter, updateFilter };
-const mapStateToProps = state => ({ filter: state.challengesApp.filter });
+const bindableActions = {
+  clearFilter,
+  updateFilter,
+  collapseAll,
+  expandAll
+};
+const mapStateToProps = state => ({
+  isAllCollapsed: state.challengesApp.mapUi.isAllCollapsed,
+  filter: state.challengesApp.filter
+});
 export class Header extends PureComponent {
   constructor(...props) {
     super(...props);
@@ -17,9 +30,12 @@ export class Header extends PureComponent {
   }
   static displayName = 'MapHeader';
   static propTypes = {
-    clearFilter: PropTypes.func,
+    isAllCollapsed: PropTypes.bool,
     filter: PropTypes.string,
-    updateFilter: PropTypes.func
+    clearFilter: PropTypes.func,
+    updateFilter: PropTypes.func,
+    collapseAll: PropTypes.func,
+    expandAll: PropTypes.func
   };
 
   handleKeyDown(e) {
@@ -37,14 +53,24 @@ export class Header extends PureComponent {
 
   render() {
     const {
+      filter,
       updateFilter,
       clearFilter,
-      filter
+      collapseAll,
+      expandAll,
+      isAllCollapsed
     } = this.props;
     const inputClass = classnames({
       'map-filter': true,
       filled: !!filter
     });
+    const buttonClass = classnames({
+      'center-block': true,
+      active: isAllCollapsed
+    });
+    const buttonCopy = isAllCollapsed ?
+      'Expand all challenges' :
+      'Collapse all challenges';
     return (
       <div className='map-wrapper'>
         <div
@@ -56,9 +82,10 @@ export class Header extends PureComponent {
             <Button
               block={ true }
               bsStyle='primary'
-              className='center-block'
+              className={ buttonClass }
+              onClick={ isAllCollapsed ? expandAll : collapseAll }
               >
-              Collapse all challenges
+                { buttonCopy }
             </Button>
           </Row>
           <Row className='map-buttons'>
