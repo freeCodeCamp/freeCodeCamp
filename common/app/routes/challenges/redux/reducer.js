@@ -46,7 +46,7 @@ const initialState = {
   legacyKey: '',
   files: {},
   // map
-  mapUi: {},
+  mapUi: { isAllCollapsed: false },
   filter: '',
   superBlocks: [],
   // misc
@@ -246,6 +246,20 @@ const mapReducer = handleActions(
     [types.toggleThisPanel]: (state, { payload }) => ({
       ...state,
       [payload]: !state[payload]
+    }),
+    [types.collapseAll]: state => ({
+      ...Object.keys(state).reduce((newState, key) => {
+        newState[key] = false;
+        return newState;
+      }, {}),
+      isAllCollapsed: true
+    }),
+    [types.expandAll]: state => ({
+      ...Object.keys(state).reduce((newState, key) => {
+        newState[key] = true;
+        return newState;
+      }, {}),
+      isAllCollapsed: false
     })
   },
   initialState.mapUi

@@ -64,6 +64,8 @@ export const initMap = createAction(
   }
 );
 export const toggleThisPanel = createAction(types.toggleThisPanel);
+export const collapseAll = createAction(types.collapseAll);
+export const expandAll = createAction(types.expandAll);
 
 export const clearFilter = createAction(types.clearFilter);
 

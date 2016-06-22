@@ -22,6 +22,8 @@ export default createTypes([
   'clearFilter',
   'initMap',
   'toggleThisPanel',
+  'collapseAll',
+  'expandAll',
 
   // files
   'updateFile',
