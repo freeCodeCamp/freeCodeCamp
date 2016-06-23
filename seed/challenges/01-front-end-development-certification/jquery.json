@@ -345,7 +345,7 @@
       "description": [
         "Now you know three ways of targeting elements: by type: <code>$(\"button\")</code>, by class: <code>$(\".btn\")</code>, and by id <code>$(\"#target1\")</code>.",
         "Although it is possible to add multiple classes in a single <code>.addClass()</code> call, let's add them to the same element in <em>three different ways</em>.",
-        "Using each of the above jQuery selectors and the <code>addClass()</code> function in three seperate lines of code:"
+        "Using each of the above jQuery selectors and the <code>addClass()</code> function in three seperate lines of code:",
         "Add the <code>animated</code> class to all elements with type <code>button</code>.",
         "Add the <code>shake</code> class to all the buttons with class <code>.btn</code>.",
         "Add the <code>btn-primary</code> class to the button with id <code>#target1</code>.",
