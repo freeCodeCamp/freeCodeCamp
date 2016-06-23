@@ -81,6 +81,7 @@
         "For example, let's make all of your <code>button</code> elements bounce. Just add this code inside your document ready function:",
         "<code>$(\"button\").addClass(\"animated bounce\");</code>",
         "Note that we've already included both the jQuery library and the Animate.css library in the background so that you can use them in the editor. So you are using jQuery to apply the Animate.css <code>bounce</code> class to your <code>button</code> elements."
+        "Additionally, make sure to use <code>$(\"button\").addClass(\"animated bounce\");</code> rather than <code>$(&#39;button&#39;).addClass(\"animated bounce\");</code> to be able to pass our tests."
       ],
       "challengeSeed": [
         "fccss",
