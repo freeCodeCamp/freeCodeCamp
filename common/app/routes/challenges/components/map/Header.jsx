@@ -72,7 +72,7 @@ export class Header extends PureComponent {
       'Expand all challenges' :
       'Collapse all challenges';
     return (
-      <div className='map-wrapper'>
+      <div>
         <div
           className='text-center map-fixed-header'
           style={{ top: '50px' }}

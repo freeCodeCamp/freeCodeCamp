@@ -2,16 +2,24 @@ import React, { PropTypes } from 'react';
 import { compose } from 'redux';
 import { contain } from 'redux-epic';
 import { connect } from 'react-redux';
+import { createSelector } from 'reselect';
 import PureComponent from 'react-pure-render/component';
+import { Col } from 'react-bootstrap';
 
 import MapHeader from './Header.jsx';
 import SuperBlock from './Super-Block.jsx';
 import { fetchChallenges } from '../../redux/actions';
 
 const bindableActions = { fetchChallenges };
-const mapStateToProps = state => ({
-  superBlocks: state.challengesApp.superBlocks
-});
+const mapStateToProps = createSelector(
+  state => state.app.windowHeight,
+  state => state.app.navHeight,
+  state => state.challengesApp.superBlocks,
+  (windowHeight, navHeight, superBlocks) => ({
+    superBlocks,
+    height: windowHeight - navHeight - 150
+  })
+);
 const fetchOptions = {
   fetchAction: 'fetchChallenges',
   isPrimed({ superBlocks }) {
@@ -20,7 +28,10 @@ const fetchOptions = {
 };
 export class ShowMap extends PureComponent {
   static displayName = 'Map';
-  static propTypes = { superBlocks: PropTypes.array };
+  static propTypes = {
+    superBlocks: PropTypes.array,
+    height: PropTypes.number
+  };
 
   renderSuperBlocks(superBlocks) {
     if (!Array.isArray(superBlocks) || !superBlocks.length) {
@@ -35,15 +46,18 @@ export class ShowMap extends PureComponent {
   }
 
   render() {
-    const { superBlocks } = this.props;
+    const { height, superBlocks } = this.props;
     return (
-      <div>
+      <Col xs={ 12 }>
         <MapHeader />
-        <div className='map-accordion'>
+        <div
+          className='map-accordion center-block'
+          style={{ height: height + 'px' }}
+          >
           { this.renderSuperBlocks(superBlocks) }
           <div className='spacer' />
         </div>
-      </div>
+      </Col>
     );
   }
 }
