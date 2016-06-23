@@ -59,7 +59,8 @@ function cachedMap(Block) {
           order: block.superOrder,
           name: nameify(_.startCase(block.superBlock)),
           dashedName: block.superBlock,
-          blocks: [block]
+          blocks: [block],
+          message: block.superBlockMessage
         };
       }
       return map;

@@ -11,12 +11,14 @@ import { toggleThisPanel } from '../../redux/actions';
 const dispatchActions = { toggleThisPanel };
 const mapStateToProps = createSelector(
   (_, props) => props.dashedName,
-  state => state.entities.superBlock,
+  (state, props) => state.entities.superBlock[props.dashedName],
   (state, props) => state.challengesApp.mapUi[props.dashedName],
-  (dashedName, superBlockMap, isOpen) => ({
+  (dashedName, superBlock, isOpen) => ({
     isOpen,
-    title: superBlockMap[dashedName].title,
-    blocks: superBlockMap[dashedName].blocks
+    dashedName,
+    title: superBlock.title,
+    blocks: superBlock.blocks,
+    message: superBlock.message
   })
 );
 export class SuperBlock extends PureComponent {

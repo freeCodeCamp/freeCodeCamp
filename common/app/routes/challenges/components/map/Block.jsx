@@ -11,11 +11,10 @@ import { toggleThisPanel } from '../../redux/actions';
 const dispatchActions = { toggleThisPanel };
 const mapStateToProps = createSelector(
   (_, props) => props.dashedName,
-  state => state.entities.block,
+  (state, props) => state.entities.block[props.dashedName],
   state => state.entities.challenge,
   (state, props) => state.challengesApp.mapUi[props.dashedName],
-  (dashedName, blockMap, challengeMap, isOpen) => {
-    const block = blockMap[dashedName];
+  (dashedName, block, challengeMap, isOpen) => {
     return {
       isOpen,
       dashedName,
