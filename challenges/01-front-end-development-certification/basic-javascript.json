@@ -4537,7 +4537,7 @@
         "    \"2548\": {",
         "      \"album\": \"Slippery When Wet\",",
         "      \"artist\": \"Bon Jovi\",",
-        "      tracks: [ ",
+        "      \"tracks\": [ ",
         "        \"Let It Rock\", ",
         "        \"You Give Love a Bad Name\" ",
         "      ]",
