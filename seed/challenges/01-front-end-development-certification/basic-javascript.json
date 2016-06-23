@@ -3639,8 +3639,8 @@
         "function chainToSwitch(val) {\n  var answer = \"\";\n\n  switch (val) {\n    case \"bob\":\n      answer = \"Marley\";\n      break;\n    case 42:\n      answer = \"The Answer\";\n      break;\n    case 1:\n      answer = \"There is no #1\";\n      break;\n    case 99:\n      answer = \"Missed me by this much!\";\n      break;\n    case 7:\n      answer = \"Ate Nine\";\n  }\n  return answer;  \n}"
       ],
       "tests": [
-        "assert(!/else/g.test(code), 'message: You should not use any <code>else</code> statements');",
-        "assert(!/if/g.test(code), 'message: You should not use any <code>if</code> statements');",
+        "assert(!/else/g.test(code), 'message: You should not use any <code>else</code> statements anywhere in the editor');",
+        "assert(!/if/g.test(code), 'message: You should not use any <code>if</code> statements anywhere in the editor');",
         "assert(code.match(/break/g).length >= 4, 'message: You should have at least four <code>break</code> statements');",
         "assert(chainToSwitch(\"bob\") === \"Marley\", 'message: <code>chainToSwitch(\"bob\")</code> should be \"Marley\"');",
         "assert(chainToSwitch(42) === \"The Answer\", 'message: <code>chainToSwitch(42)</code> should be \"The Answer\"');",
@@ -4517,7 +4517,6 @@
       "id": "56533eb9ac21ba0edf2244cf",
       "title": "Record Collection",
       "description": [
-        "You are given an object representing (a small part of) your record collection. Each album is identified by a unique id number and has several properties. Not all albums have complete information.",
         "You are given a JSON object representing (a small part of) your record collection. Each album is identified by a unique id number (its key) and has several properties. Not all albums have complete information.",
         "Write a function which takes an <code>id</code>, a property (<code>prop</code>), and a <code>value</code>.",
         "For the given <code>id</code> in <code>collection</code>:",
@@ -4537,7 +4536,7 @@
         "    \"2548\": {",
         "      \"album\": \"Slippery When Wet\",",
         "      \"artist\": \"Bon Jovi\",",
-        "      tracks: [ ",
+        "      \"tracks\": [ ",
         "        \"Let It Rock\", ",
         "        \"You Give Love a Bad Name\" ",
         "      ]",
