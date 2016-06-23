@@ -62,6 +62,18 @@ export class SuperBlock extends PureComponent {
     );
   }
 
+  renderHeader(isOpen, title, isCompleted) {
+    return (
+      <h2 className={ isCompleted ? 'faded' : '' }>
+        <FA
+          className='no-link-underline'
+          name={ isOpen ? 'caret-down' : 'caret-right' }
+        />
+        { title }
+      </h2>
+    );
+  }
+
   render() {
     const {
       title,
@@ -76,7 +88,7 @@ export class SuperBlock extends PureComponent {
         collapsible={ true }
         eventKey={ dashedName || title }
         expanded={ isOpen }
-        header={ <h2><FA name='caret-right' />{ title }</h2> }
+        header={ this.renderHeader(isOpen, title) }
         id={ title }
         key={ dashedName || title }
         onSelect={ this.handleSelect }
