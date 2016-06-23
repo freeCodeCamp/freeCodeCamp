@@ -349,9 +349,7 @@
         "Add the <code>animated</code> class to all elements with type <code>button</code>.",
         "Add the <code>shake</code> class to all the buttons with class <code>.btn</code>.",
         "Add the <code>btn-primary</code> class to the button with id <code>#target1</code>.",
-        "<strong>Note</strong><br>You should only be targeting one element and adding only one class at a time.
-        Your three individual selectors will collectively add the three classes: <code>shake</code>, <code>animated</code>,
-        and <code>btn-primary</code> to <code>#target1</code>"
+        "<strong>Note</strong><br>You should only be targeting one element and adding only one class at a time. Your three individual selectors will collectively add the three classes: <code>shake</code>, <code>animated</code>, and <code>btn-primary</code> to <code>#target1</code>"
       ],
       "challengeSeed": [
         "fccss",
