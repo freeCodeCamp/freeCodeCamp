@@ -3639,8 +3639,8 @@
         "function chainToSwitch(val) {\n  var answer = \"\";\n\n  switch (val) {\n    case \"bob\":\n      answer = \"Marley\";\n      break;\n    case 42:\n      answer = \"The Answer\";\n      break;\n    case 1:\n      answer = \"There is no #1\";\n      break;\n    case 99:\n      answer = \"Missed me by this much!\";\n      break;\n    case 7:\n      answer = \"Ate Nine\";\n  }\n  return answer;  \n}"
       ],
       "tests": [
-        "assert(!/else/g.test(code), 'message: You should not use any <code>else</code> statements');",
-        "assert(!/if/g.test(code), 'message: You should not use any <code>if</code> statements');",
+        "assert(!/else/g.test(code), 'message: You should not use any <code>else</code> statements anywhere in the editor');",
+        "assert(!/if/g.test(code), 'message: You should not use any <code>if</code> statements anywhere in the editor');",
         "assert(code.match(/break/g).length >= 4, 'message: You should have at least four <code>break</code> statements');",
         "assert(chainToSwitch(\"bob\") === \"Marley\", 'message: <code>chainToSwitch(\"bob\")</code> should be \"Marley\"');",
         "assert(chainToSwitch(42) === \"The Answer\", 'message: <code>chainToSwitch(42)</code> should be \"The Answer\"');",
