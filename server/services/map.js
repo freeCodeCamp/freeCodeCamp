@@ -1,7 +1,8 @@
+import _ from 'lodash';
 import { Observable } from 'rx';
 import { Schema, valuesOf, arrayOf, normalize } from 'normalizr';
 import debug from 'debug';
-import { nameify, dasherize, unDasherize } from '../utils';
+import { nameify, unDasherize } from '../utils';
 import supportedLanguages from '../../common/utils/supported-languages';
 
 const isDev = process.env.NODE_ENV !== 'production';
@@ -54,10 +55,10 @@ function cachedMap(Block) {
         map[block.superBlock].blocks.push(block);
       } else {
         map[block.superBlock] = {
-          title: block.superBlock,
+          title: _.startCase(block.superBlock),
           order: block.superOrder,
-          name: nameify(block.superBlock),
-          dashedName: dasherize(block.superBlock),
+          name: nameify(_.startCase(block.superBlock)),
+          dashedName: block.superBlock,
           blocks: [block]
         };
       }
