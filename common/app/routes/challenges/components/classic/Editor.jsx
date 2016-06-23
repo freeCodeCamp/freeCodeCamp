@@ -115,12 +115,14 @@ export class Editor extends PureComponent {
     return (
       <div
         className='challenges-editor'
-        style={ style }>
+        style={ style }
+        >
         <NoSSR>
           <Codemirror
             onChange={ this.handleChange }
             options={ this.createOptions({ executeChallenge, mode, options }) }
-            value={ content } />
+            value={ content }
+          />
         </NoSSR>
       </div>
     );

@@ -80,10 +80,10 @@ export function _FrontEndForm({
     <form
       name='NewFrontEndProject'
       onSubmit={
-        handleSubmit((value) => (
-          submitChallenge(value),
-          resetForm('NewFrontEndProject'))
-        )
+        handleSubmit((value) => {
+          submitChallenge(value);
+          resetForm('NewFrontEndProject');
+        })
       }
       >
       {
@@ -134,10 +134,10 @@ export function _BackEndForm({
     <form
       name='NewBackEndProject'
       onSubmit={
-        handleSubmit((values) => (
-          submitChallenge(values),
-          resetForm('NewBackEndProject')
-        ))
+        handleSubmit((values) => {
+          submitChallenge(values);
+          resetForm('NewBackEndProject');
+        })
       }
       >
       {

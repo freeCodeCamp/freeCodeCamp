@@ -77,12 +77,14 @@ export default React.createClass({
     return (
       <li
         {...props}
-        role='presentation'>
+        role='presentation'
+        >
         <a
           { ...linkProps }
           aria-controls={ ariaControls }
           aria-selected={ active }
-          className={ linkClassName }>
+          className={ linkClassName }
+          >
           { children }
         </a>
       </li>

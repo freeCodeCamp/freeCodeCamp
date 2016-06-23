@@ -16,7 +16,7 @@ var onConnect = function() {
   app.start();
 };
 
-var timeoutHandler = setTimeout(function() {
+timeoutHandler = setTimeout(function() {
   var message =
     'db did not connect after  ' +
     (Date.now() - startTime) +

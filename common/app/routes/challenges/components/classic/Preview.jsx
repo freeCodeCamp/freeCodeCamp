@@ -11,11 +11,13 @@ export default class extends PureComponent {
         <div className='hidden-xs hidden-md'>
           <img
             className='iphone-position iframe-scroll'
-            src='https://s3.amazonaws.com/freecodecamp/iphone6-frame.png' />
+            src='https://s3.amazonaws.com/freecodecamp/iphone6-frame.png'
+          />
         </div>
         <iframe
           className='iphone iframe-scroll'
-          id={ mainId } />
+          id={ mainId }
+        />
         <div className='spacer' />
       </div>
     );
