@@ -45,6 +45,23 @@ export class Block extends PureComponent {
     this.props.toggleThisPanel(eventKey);
   }
 
+  renderHeader(isOpen, title, time, isCompleted) {
+    return (
+      <div>
+        <h3 className={ isCompleted ? 'faded clear-fix' : 'clear-fix' }>
+          <FA
+            className='no-link-underline'
+            name={ isOpen ? 'caret-down' : 'caret-right' }
+          />
+          <span>
+            { title }
+          </span>
+          <span className='challenge-block-time'>({ time })</span>
+        </h3>
+      </div>
+    );
+  }
+
   renderChallenges(challenges) {
     if (!Array.isArray(challenges) || !challenges.length) {
       return <div>No Challenges Found</div>;
@@ -71,12 +88,7 @@ export class Block extends PureComponent {
         collapsible={ true }
         eventKey={ dashedName || title }
         expanded={ isOpen }
-        header={
-          <div>
-            <h3><FA name='caret-right' />{ title }</h3>
-            <span className='challenge-block-time'>({ time })</span>
-          </div>
-        }
+        header={ this.renderHeader(isOpen, title, time) }
         id={ title }
         key={ title }
         onSelect={ this.handleSelect }
