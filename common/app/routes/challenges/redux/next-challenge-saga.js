@@ -1,6 +1,6 @@
 import { Observable } from 'rx';
 import { push } from 'react-router-redux';
-import { moveToNextChallenge } from './types';
+import types from './types';
 import { resetUi, updateCurrentChallenge } from './actions';
 import { createErrorObservable, makeToast } from '../../../redux/actions';
 import {
@@ -9,6 +9,8 @@ import {
   getFirstChallengeOfNextSuperBlock
 } from '../utils';
 import { randomVerb } from '../../../utils/get-words';
+
+const { moveToNextChallenge } = types;
 
 export default function nextChallengeSaga(actions$, getState) {
   return actions$

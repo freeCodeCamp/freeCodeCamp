@@ -12,15 +12,17 @@ import {
 
 import certTypes from '../utils/certTypes.json';
 
-import { ifNoUser401, ifNoUserRedirectTo } from '../utils/middleware';
+import {
+  ifNoUser401,
+  ifNoUserRedirectTo,
+  flashIfNotVerified
+} from '../utils/middleware';
 import { observeQuery } from '../utils/rx';
 import {
   prepUniqueDays,
   calcCurrentStreak,
   calcLongestStreak
 } from '../utils/user-stats';
-
-import { flashIfNotVerified } from '../utils/middleware';
 
 const debug = debugFactory('fcc:boot:user');
 const sendNonUserToMap = ifNoUserRedirectTo('/map');

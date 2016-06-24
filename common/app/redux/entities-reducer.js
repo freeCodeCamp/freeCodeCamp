@@ -1,8 +1,6 @@
-import {
-  updateUserPoints,
-  updateCompletedChallenges
-} from './types';
+import types from './types';
 
+const { updateUserPoints, updateCompletedChallenges } = types;
 const initialState = {
   superBlock: {},
   block: {},

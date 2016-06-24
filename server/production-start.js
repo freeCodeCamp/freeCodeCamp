@@ -5,6 +5,7 @@ var startTime = Date.now();
 var timeoutHandler;
 // this is where server starts booting up
 var app = require('./server');
+
 console.log('waiting for db to connect');
 
 

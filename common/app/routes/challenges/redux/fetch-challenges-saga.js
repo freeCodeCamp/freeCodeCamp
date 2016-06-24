@@ -1,10 +1,6 @@
 import { Observable } from 'rx';
 import { challengeSelector } from './selectors';
-import {
-  fetchChallenge,
-  fetchChallenges,
-  replaceChallenge
-} from './types';
+import types from './types';
 import {
   fetchChallengeCompleted,
   fetchChallengesCompleted,
@@ -13,8 +9,10 @@ import {
 } from './actions';
 import {
   delayedRedirect,
-  createErrorObserable
+  createErrorObservable
 } from '../../../redux/actions';
+
+const { fetchChallenge, fetchChallenges, replaceChallenge } = types;
 
 function createNameIdMap(entities) {
   const { challenge } = entities;
@@ -77,6 +75,6 @@ export default function fetchChallengesSaga(action$, getState, { services }) {
             initMap(entities, result),
           );
         })
-        .catch(createErrorObserable);
+        .catch(createErrorObservable);
     });
 }
