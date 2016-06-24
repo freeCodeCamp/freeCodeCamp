@@ -4527,7 +4527,7 @@
         "Always return the entire collection object.",
         "<strong>Hints</strong><br>Use <code>bracket notation</code> when <a href=\"accessing-objects-properties-with-variables\" target=\"_blank\">accessing object properties with variables</a>.",
         "Push is an array method you can read about on <a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push\">Mozilla Developer Network</a>.",
-        "You may refer back to <a href=\"https://www.freecodecamp.com/challenges/introducing-javascript-object-notation-json\">Introducing JavaScript Object Notation (JSON)</a> for a refresher."
+        "You may refer back to <a href=\"manipulating-complex-objects\">Manipulating Complex Objects</a>Introducing JavaScript Object Notation (JSON)</a> for a refresher."
       ],
       "releasedOn": "January 1, 2016",
       "challengeSeed": [
