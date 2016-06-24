@@ -1,7 +1,8 @@
 import { Observable } from 'rx';
-import { initWindowHeight } from '../../common/app/redux/types';
+import types from '../../common/app/redux/types';
 import { updateWindowHeight } from '../../common/app/redux/actions';
 
+const { initWindowHeight } = types;
 function getWindowSize(document, window) {
   const body = document.getElementsByTagName('body')[0];
   return window.innerHeight ||

@@ -1,5 +1,5 @@
 import { Observable } from 'rx';
-import { fetchUser } from './types';
+import types from './types';
 import {
   addUser,
   updateThisUser,
@@ -7,6 +7,8 @@ import {
   createErrorObservable,
   showSignIn
 } from './actions';
+
+const { fetchUser } = types;
 
 export default function getUserSaga(action$, getState, { services }) {
   return action$

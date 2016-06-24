@@ -1,5 +1,7 @@
 import { Observable } from 'rx';
+/* eslint-disable import/no-unresolved */
 import loopProtect from 'loop-protect';
+/* eslint-enable import/no-unresolved */
 
 import { updateContents } from '../../common/utils/polyvinyl';
 

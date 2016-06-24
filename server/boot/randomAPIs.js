@@ -1,7 +1,9 @@
 import request from 'request';
 import constantStrings from '../utils/constantStrings.json';
 import testimonials from '../resources/testimonials.json';
-import secrets from '../../config/secrets';
+
+const githubClient = process.env.GITHUB_ID;
+const githubSecret = process.env.GITHUB_SECRET;
 
 module.exports = function(app) {
   const router = app.loopback.Router();
@@ -258,9 +260,9 @@ module.exports = function(app) {
       [
         'https://api.github.com/repos/freecodecamp/',
         'freecodecamp/pulls?client_id=',
-        secrets.github.clientID,
+        githubClient,
         '&client_secret=',
-        secrets.github.clientSecret
+        githubSecret
       ].join(''),
       githubHeaders,
       function(err, status1, pulls) {
@@ -273,9 +275,9 @@ module.exports = function(app) {
           [
             'https://api.github.com/repos/freecodecamp/',
             'freecodecamp/issues?client_id=',
-            secrets.github.clientID,
+            githubClient,
             '&client_secret=',
-            secrets.github.clientSecret
+            githubSecret
           ].join(''),
           githubHeaders,
           function(err, status2, issues) {

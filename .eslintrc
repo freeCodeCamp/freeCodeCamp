@@ -13,8 +13,19 @@
   },
   "parser": "babel-eslint",
   "plugins": [
-    "react"
+    "react",
+    "import"
   ],
+  "settings": {
+    "import/ignore": [
+      "node_modules",
+      "\\.json$"
+    ],
+    "import/extensions": [
+      ".js",
+      ".jsx"
+    ]
+  },
   "globals": {
     "Promise": true,
     "window": true,
@@ -223,9 +234,9 @@
     "no-bitwise": 2,
     "no-plusplus": 0,
 
+    "jsx-quotes": [2, "prefer-single"],
     "react/display-name": 2,
     "react/jsx-boolean-value": [2, "always"],
-    "jsx-quotes": [2, "prefer-single"],
     "react/jsx-no-undef": 2,
     "react/jsx-sort-props": [2, { "ignoreCase": true }],
     "react/jsx-uses-react": 2,
@@ -237,6 +248,15 @@
     "react/react-in-jsx-scope": 2,
     "react/self-closing-comp": 2,
     "react/wrap-multilines": 2,
-    "react/jsx-closing-bracket-location": [ 2, { "selfClosing": "line-aligned", "nonEmpty": "props-aligned" } ]
+    "react/jsx-closing-bracket-location": [ 2, { "selfClosing": "line-aligned", "nonEmpty": "props-aligned" } ],
+
+    "import/no-unresolved": 2,
+    "import/named": 2,
+    "import/namespace": 2,
+    "import/default": 2,
+    "import/export": 2,
+    "import/imports-first": 2,
+    "import/no-duplicates": 2,
+    "import/newline-after-import": 2
   }
 }

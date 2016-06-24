@@ -1,5 +1,7 @@
 import manifest from '../rev-manifest';
+/* eslint-disable import/default */
 import config from '../../webpack.config';
+/* eslint-enable import/default */
 
 let chunkManifest;
 try {

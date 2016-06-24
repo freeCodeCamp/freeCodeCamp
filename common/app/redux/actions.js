@@ -32,6 +32,7 @@ export const addUser = createAction(
   entities => ({ entities })
 );
 export const updateThisUser = createAction(types.updateThisUser);
+export const showSignIn = createAction(types.showSignIn);
 
 // updateUserPoints(username: String, points: Number) => Action
 export const updateUserPoints = createAction(

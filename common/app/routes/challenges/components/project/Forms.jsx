@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import { resetForm, reduxForm } from 'redux-form';
+import { reduxForm } from 'redux-form';
 import {
   Button,
   FormGroup,
@@ -25,7 +25,6 @@ const propTypes = {
 };
 
 const bindableActions = {
-  resetForm,
   submitChallenge,
   showProjectSubmit
 };
