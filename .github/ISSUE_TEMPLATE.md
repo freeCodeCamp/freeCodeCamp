@@ -22,7 +22,7 @@
 #### Your Code
 
 ```js
-// If relevant, paste all of your challenge code in here
+// If relevant, paste all of your challenge code after this line
 
 ```
 
