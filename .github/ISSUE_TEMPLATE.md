@@ -20,10 +20,9 @@
 * Mobile, Desktop, or Tablet: 
 
 #### Your Code
-
+<!-- If relevant, paste all of your challenge code in here -->
 ```js
-// If relevant, paste all of your challenge code in here
-
+ 
 ```
 
 #### Screenshot
