@@ -5,6 +5,7 @@ import dedent from 'dedent';
 import debugFactory from 'debug';
 import { isEmail } from 'validator';
 import path from 'path';
+import loopback from 'loopback';
 
 import { saveUser, observeMethod } from '../../server/utils/rx.js';
 import { blacklistedUsernames } from '../../server/utils/constants.js';
@@ -250,7 +251,7 @@ module.exports = function(User) {
         if (!user.verificationToken && !user.emailVerified) {
           ctx.req.flash('info', {
             msg: dedent`Looks like we have your email. But you haven't
-             verified it yet, please login and request a fresh verification
+             verified it yet, please sign in and request a fresh verification
              link.`
           });
           return ctx.res.redirect(redirect);
@@ -259,7 +260,7 @@ module.exports = function(User) {
         if (!user.verificationToken && user.emailVerified) {
           ctx.req.flash('info', {
             msg: dedent`Looks like you have already verified your email.
-             Please login to continue.`
+             Please sign in to continue.`
           });
           return ctx.res.redirect(redirect);
         }
@@ -267,7 +268,7 @@ module.exports = function(User) {
         if (user.verificationToken && user.verificationToken !== token) {
           ctx.req.flash('info', {
             msg: dedent`Looks like you have clicked an invalid link.
-             Please login and request a fresh one.`
+             Please sign in and request a fresh one.`
           });
           return ctx.res.redirect(redirect);
         }
@@ -483,6 +484,113 @@ module.exports = function(User) {
       http: {
         path: '/about',
         verb: 'get'
+      }
+    }
+  );
+
+  User.requestAuthLink = function requestAuthLink(email, emailTemplate) {
+    if (!isEmail(email)) {
+      return Promise.reject(
+        new Error('The submitted email not valid.')
+        );
+    }
+
+    const filter = {
+      where: { email },
+      // remove password from the query
+      fields: { password: null }
+    };
+    return User.findOne$(filter)
+      .map(user => {
+        if (!user) {
+          debug(`no user found with the email ${email}.`);
+          // do not let the user know if an email is not found
+          // this is to avoid sending spam requests to valid users
+          return dedent`
+           If you entered a valid email, a magic link is on its way.
+           Please click that link to sign in.`;
+        }
+
+        // Todo : Break this below chunk to a separate function
+        const fiveMinutesAgo = moment().subtract(5, 'minutes');
+        const lastEmailSentAt = moment(new Date(user.emailAuthLinkTTL || null));
+        const isWaitPeriodOver = user.emailAuthLinkTTL ?
+          lastEmailSentAt.isBefore(fiveMinutesAgo) : true;
+        if (!isWaitPeriodOver) {
+          const minutesLeft = 5 -
+            (moment().minutes() - lastEmailSentAt.minutes());
+          const timeToWait = minutesLeft ?
+            `${minutesLeft} minute${minutesLeft > 1 ? 's' : ''}` :
+            'a few seconds';
+          debug('request before wait time : ' + timeToWait);
+          return dedent`
+            Please wait ${timeToWait} to resend email verification.`;
+        }
+
+        // create a temporary access token with ttl for 1 hour
+        user.createAccessToken({ ttl: 60 * 60 * 1000 }, (err, token) => {
+          if (err) { throw err; }
+
+          const { id: loginToken } = token;
+          const loginEmail = user.email;
+          const renderAuthEmail = loopback.template(path.join(
+            __dirname,
+            '..',
+            '..',
+            'server',
+            'views',
+            'emails',
+            emailTemplate
+          ));
+          const mailOptions = {
+            type: 'email',
+            to: user.email,
+            from: 'Team@freecodecamp.com',
+            subject: 'Free Code Camp - Sign in Request!',
+            text: renderAuthEmail({
+              loginEmail,
+              loginToken
+            })
+          };
+          this.email.send(mailOptions, err =>{
+            if (err) { throw err; }
+          });
+          user.emailAuthLinkTTL = token.created;
+          user.save(err =>{ if (err) { throw err; }});
+        });
+
+        return dedent`
+           If you entered a valid email, a magic link is on its way.
+           Please follow that link to sign in.`;
+      })
+      .map((msg) => {
+        if (msg) { return msg; }
+        return dedent`
+         Oops, something is not right, please try again later.`;
+      })
+      .catch(error => {
+        debug(error);
+        return Observable.throw(
+          'Oops, something went wrong, please try again later.'
+        );
+      })
+      .toPromise();
+  };
+
+  User.remoteMethod(
+    'requestAuthLink',
+    {
+      description: 'request a link on email with temporary token to sign in',
+      accepts: [{
+        arg: 'email', type: 'string', required: true
+      }, {
+        arg: 'emailTemplate', type: 'string', required: true
+      }],
+      returns: [{
+        arg: 'message', type: 'string'
+      }],
+      http: {
+        path: '/request-auth-link', verb: 'POST'
       }
     }
   );

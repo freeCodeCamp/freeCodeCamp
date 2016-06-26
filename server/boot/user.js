@@ -3,6 +3,7 @@ import moment from 'moment-timezone';
 import { Observable } from 'rx';
 import debugFactory from 'debug';
 import emoji from 'node-emoji';
+import uuid from 'node-uuid';
 
 import {
   frontEndChallengeId,
@@ -168,6 +169,10 @@ module.exports = function(app) {
   router.get('/email-signin', getEmailSignin);
   router.get('/deprecated-signin', getDepSignin);
   router.get('/update-email', getUpdateEmail);
+  router.get('/passwordless-signin', getPasswordlessSignin);
+  router.get('/passwordless-signup', getPasswordlessSignup);
+  api.post('/passwordless-signin', postPasswordlessSignin);
+  api.post('/passwordless-signup', postPasswordlessSignup);
   router.get(
     '/delete-my-account',
     sendNonUserToMap,
@@ -245,6 +250,180 @@ module.exports = function(app) {
     return res.render('account/signin', {
       title: 'Sign in to freeCodeCamp'
     });
+  }
+
+  function postPasswordlessSignup(req, res) {
+    if (req.user) {
+      return res.redirect('/');
+    }
+
+    if (req.body && req.body.email) {
+      var userObj = {
+        username: 'fcc' + uuid.v4().slice(0, 8),
+        email: req.body.email,
+        emailVerified: false
+      };
+      var data = { or: [
+        { username: userObj.username },
+        { email: userObj.email },
+        { emailVerified: userObj.emailVerified }
+      ]};
+      return User.findOrCreate({where: data}, userObj, function(err, user) {
+        if (err) {
+          throw err;
+        }
+        User.requestAuthLink(user.email, 'user-request-sign-up.ejs');
+      });
+    } else {
+      return res.redirect('/');
+    }
+  }
+
+  function postPasswordlessSignin(req, res) {
+    if (req.user) {
+      return res.redirect('/');
+    }
+
+    if (req.body && req.body.email) {
+      var data = { or: [
+        { email: req.body.email },
+        { emailVerified: true }
+      ]};
+      return User.findOne$({ where: { data }})
+        .map(user => {
+        User.requestAuthLink(user.email, 'user-request-sign-in.ejs');
+      });
+    } else {
+      return res.redirect('/');
+    }
+  }
+
+  function getPasswordlessSignup(req, res, next) {
+    if (req.user) {
+      req.flash('info', {
+            msg: 'Hey, looks like you’re already signed in.'
+          });
+      return res.redirect('/');
+    }
+
+    const defaultErrorMsg = [
+     'Oops, something is not right, ',
+     'please request a fresh link to sign in.'].join('');
+
+    if (!req.query || !req.query.email || !req.query.token) {
+      req.flash('info', { msg: defaultErrorMsg });
+      return res.redirect('/email-signup');
+    }
+
+    const email = req.query.email;
+    /* const tokenId = req.query.token; */
+
+    return User.findOne$({ where: { email }})
+      .map(user => {
+        return user.createAccessToken(
+          { ttl: User.settings.ttl }, (err, accessToken) => {
+          if (err) { throw err; }
+
+          var config = {
+            signed: !!req.signedCookies,
+            maxAge: accessToken.ttl
+          };
+
+          if (accessToken && accessToken.id) {
+            debug('setting cookies');
+            res.cookie('access_token', accessToken.id, config);
+            res.cookie('userId', accessToken.userId, config);
+          }
+
+          return req.logIn({
+            id: accessToken.userId.toString() }, err => {
+            if (err) { return next(err); }
+
+            debug('user logged in');
+
+            if (req.session && req.session.returnTo) {
+              var redirectTo = req.session.returnTo;
+              if (redirectTo === '/map-aside') {
+                redirectTo = '/map';
+              }
+              return res.redirect(redirectTo);
+            }
+
+            req.flash('success', { msg:
+              'Success! You have signed in to your account. Happy Coding!'
+            });
+            return res.redirect('/');
+          });
+        });
+    })
+    .subscribe(
+      () => {},
+      next
+    );
+  }
+
+  function getPasswordlessSignin(req, res, next) {
+    if (req.user) {
+      req.flash('info', {
+            msg: 'Hey, looks like you’re already signed in.'
+          });
+      return res.redirect('/');
+    }
+
+    const defaultErrorMsg = [
+     'Oops, something is not right, ',
+     'please request a fresh link to sign in.'].join('');
+
+    if (!req.query || !req.query.email || !req.query.token) {
+      req.flash('info', { msg: defaultErrorMsg });
+      return res.redirect('/email-signin');
+    }
+
+    const email = req.query.email;
+    /* const tokenId = req.query.token; */
+
+    return User.findOne$({ where: { email }})
+      .map(user => {
+        return user.createAccessToken(
+          { ttl: User.settings.ttl }, (err, accessToken) => {
+          if (err) { throw err; }
+
+          var config = {
+            signed: !!req.signedCookies,
+            maxAge: accessToken.ttl
+          };
+
+          if (accessToken && accessToken.id) {
+            debug('setting cookies');
+            res.cookie('access_token', accessToken.id, config);
+            res.cookie('userId', accessToken.userId, config);
+          }
+
+          return req.logIn({
+            id: accessToken.userId.toString() }, err => {
+            if (err) { return next(err); }
+
+            debug('user logged in');
+
+            if (req.session && req.session.returnTo) {
+              var redirectTo = req.session.returnTo;
+              if (redirectTo === '/map-aside') {
+                redirectTo = '/map';
+              }
+              return res.redirect(redirectTo);
+            }
+
+            req.flash('success', { msg:
+              'Success! You have signed in to your account. Happy Coding!'
+            });
+            return res.redirect('/');
+          });
+        });
+    })
+    .subscribe(
+      () => {},
+      next
+    );
   }
 
   function signout(req, res) {
