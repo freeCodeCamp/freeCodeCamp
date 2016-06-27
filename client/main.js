@@ -101,6 +101,7 @@ main = (function(main, global) {
       if (!(event.ctrlKey || event.metaKey)) {
           toggleMainChat();
       }
+      window.ga('send', 'event', 'NAV', 'NAV-CHAT', 'Nav Chat Button Clicked');
   });
 
     function showMainChat() {
