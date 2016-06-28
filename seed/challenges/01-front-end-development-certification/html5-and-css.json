@@ -1634,6 +1634,7 @@
         "Nest your image within an <code>a</code> element. Here's an example:",
         "<code>&#60;a href=\"#\"&#62;&#60;img src=\"https://bit.ly/fcc-running-cats\"&#62;&#60;/a&#62;</code>",
         "Remember to use <code>#</code> as your <code>a</code> element's <code>href</code> property in order to turn it into a dead link.",
+        "Place the existing image element within an anchor element.",
         "Once you've done this, hover over your image with your cursor. Your cursor's normal pointer should become the link clicking pointer. The photo is now a link."
       ],
       "challengeSeed": [
