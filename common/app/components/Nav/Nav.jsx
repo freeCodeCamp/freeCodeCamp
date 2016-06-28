@@ -32,14 +32,12 @@ const toggleButtonChild = (
 
 export default class extends React.Component {
   static displayName = 'Nav';
-  static contextTypes = {
-    router: PropTypes.object
-  };
   static propTypes = {
     points: PropTypes.number,
     picture: PropTypes.string,
     signedIn: PropTypes.bool,
     username: PropTypes.string,
+    isOnMap: PropTypes.bool,
     updateNavHeight: PropTypes.func,
     toggleMapDrawer: PropTypes.func,
     toggleMainChat: PropTypes.func,
@@ -184,12 +182,11 @@ export default class extends React.Component {
       username,
       points,
       picture,
+      isOnMap,
       toggleMapDrawer,
       toggleMainChat,
       shouldShowSignIn
     } = this.props;
-    const { router } = this.context;
-    const isOnMap = router.isActive('/map');
 
     return (
       <Navbar
