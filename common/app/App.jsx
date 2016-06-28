@@ -60,7 +60,9 @@ const bindableActions = {
 // export plain class for testing
 export class FreeCodeCamp extends React.Component {
   static displayName = 'FreeCodeCamp';
-
+  static contextTypes = {
+    router: PropTypes.object
+  };
   static propTypes = {
     children: PropTypes.node,
     username: PropTypes.string,
@@ -77,7 +79,8 @@ export class FreeCodeCamp extends React.Component {
     toggleMapDrawer: PropTypes.func,
     toggleMainChat: PropTypes.func,
     fetchUser: PropTypes.func,
-    shouldShowSignIn: PropTypes.bool
+    shouldShowSignIn: PropTypes.bool,
+    params: PropTypes.object
   };
 
   componentWillReceiveProps({
@@ -135,6 +138,7 @@ export class FreeCodeCamp extends React.Component {
   }
 
   render() {
+    const { router } = this.context;
     const {
       username,
       points,
@@ -144,9 +148,11 @@ export class FreeCodeCamp extends React.Component {
       isMapAlreadyLoaded,
       toggleMapDrawer,
       toggleMainChat,
-      shouldShowSignIn
+      shouldShowSignIn,
+      params: { lang }
     } = this.props;
     const navProps = {
+      isOnMap: router.isActive(`/${lang}/map`),
       username,
       points,
       picture,
