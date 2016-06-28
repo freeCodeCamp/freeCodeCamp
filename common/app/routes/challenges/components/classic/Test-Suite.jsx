@@ -47,6 +47,7 @@ export default class extends PureComponent {
         style={{ marginTop: '10px' }}
         >
         { this.renderTests(tests) }
+        <div className='big-spacer' />
       </div>
     );
   }
