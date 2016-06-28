@@ -7,20 +7,14 @@ nav.navbar.navbar-default.navbar-fixed-top.nav-height
             img.img-responsive.nav-logo(src='https://s3.amazonaws.com/freecodecamp/freecodecamp_logo.svg', alt='learn to code javascript at Free Code Camp logo')
     .collapse.navbar-collapse
         ul.nav.navbar-nav.navbar-right.hamburger-dropdown
-            li.hidden-xs
-                a#nav-map-btn(href='/map' onclick='if (!(event.ctrlKey || event.metaKey)) {return false;}') Map
-            li.visible-xs
+            li
                 a(href='/map') Map
             li.hidden-xs
                 a#nav-chat-btn(href='//gitter.im/freecodecamp/freecodecamp' onclick="if (!(event.ctrlKey || event.metaKey)) {return false;}") Chat
             li.visible-xs
                 a(href="//gitter.im/freecodecamp/freecodecamp" target="_blank") Chat
-            li.hidden-xs
-                a#nav-wiki-btn(href='/wiki' onclick='if (!(event.ctrlKey || event.metaKey)) {return false;}') Wiki
-            li.visible-xs
-                a(href='/wiki', target='_blank') Wiki
             li
-                a(href='http://forum.freecodecamp.com', target='_blank') Forum                
+                a(href='http://forum.freecodecamp.com', target='_blank') Forum
             li
                 a(href='/about') About
             li
