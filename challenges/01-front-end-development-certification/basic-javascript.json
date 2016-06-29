@@ -4197,7 +4197,7 @@
         "var ourDog = {\n  \"name\": \"Camper\",\n  \"legs\": 4,\n  \"tails\": 1,\n  \"friends\": [\"everything!\"],\n  \"bark\": \"bow-wow\"\n};\nvar myDog = {\n  \"name\": \"Happy Coder\",\n  \"legs\": 4,\n  \"tails\": 1,\n  \"friends\": [\"Free Code Camp Campers\"],\n  \"bark\": \"woof\"\n};\ndelete myDog.tails;"
       ],
       "tests": [
-        "assert(myDog.tails === undefined, 'message: Delete the property <code>\"tails\"</code> from <code>myDog</code>.');",
+        "assert(typeof myDog === \"object\" && myDog.tails === undefined, 'message: Delete the property <code>\"tails\"</code> from <code>myDog</code>.');",
         "assert(code.match(/\"tails\": 1/g).length > 1, 'message: Do not modify the <code>myDog</code> setup');"
       ],
       "type": "waypoint",
