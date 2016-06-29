@@ -24,8 +24,7 @@ import {
   saveToColdStorage
 } from './cold-reload';
 
-const isDev = Rx.config.longStackSupport = !!debug.enabled;
-
+const isDev = Rx.config.longStackSupport = debug.enabled('fcc:*');
 const log = debug('fcc:client');
 const hotReloadTimeout = 5000;
 const csrfToken = window.__fcc__.csrf.token;
