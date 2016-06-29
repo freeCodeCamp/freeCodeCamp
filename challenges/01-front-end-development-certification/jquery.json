@@ -80,7 +80,8 @@
         "jQuery often selects an HTML element with a <code>selector</code>, then does something to that element.",
         "For example, let's make all of your <code>button</code> elements bounce. Just add this code inside your document ready function:",
         "<code>$(\"button\").addClass(\"animated bounce\");</code>",
-        "Note that we've already included both the jQuery library and the Animate.css library in the background so that you can use them in the editor. So you are using jQuery to apply the Animate.css <code>bounce</code> class to your <code>button</code> elements."
+        "Note that we've already included both the jQuery library and the Animate.css library in the background so that you can use them in the editor. So you are using jQuery to apply the Animate.css <code>bounce</code> class to your <code>button</code> elements.",
+        "Additionally make sure to use <code>$(\"button\").addClass(\"animated bounce\");</code> instead of <code>$('button').addClass(\"animated bounce\");</code> since single-quote selectors will not pass our tests."
       ],
       "challengeSeed": [
         "fccss",
