@@ -447,7 +447,8 @@
         "You will see a prompt to allow or block this site from knowing your current location. The challenge can be completed either way, as long as the code is correct.",
         "By selecting allow you will see the text on the output phone change to your latitude and longitude",
         "Here's some code that does this:",
-        "<blockquote>if (navigator.geolocation) {<br>  navigator.geolocation.getCurrentPosition(function(position) {<br>    $(\"#data\").html(\"latitude: \" + position.coords.latitude + \"&lt;br&gt;longitude: \" + position.coords.longitude);<br>  });<br>}</blockquote>"
+        "<blockquote>if (navigator.geolocation) {<br>  navigator.geolocation.getCurrentPosition(function(position) {<br>    $(\"#data\").html(\"latitude: \" + position.coords.latitude + \"&lt;br&gt;longitude: \" + position.coords.longitude);<br>  });<br>}</blockquote>",
+        "Don't forget to use double quotes around selectors as mentioned <a href='/challenges/target-html-elements-with-selectors-using-jquery'>here.</a>"
       ],
       "challengeSeed": [
         "fccss",
