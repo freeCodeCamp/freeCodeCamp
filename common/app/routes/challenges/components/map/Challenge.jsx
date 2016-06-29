@@ -4,6 +4,7 @@ import { createSelector } from 'reselect';
 import { Link } from 'react-router';
 import PureComponent from 'react-pure-render/component';
 import classnames from 'classnames';
+import debug from 'debug';
 
 import { updateCurrentChallenge } from '../../redux/actions';
 
@@ -20,7 +21,9 @@ const mapStateToProps = createSelector(
       block: challenge.block,
       isLocked: challenge.isLocked,
       isRequired: challenge.isRequired,
-      isCompleted: challenge.isCompleted
+      isCompleted: challenge.isCompleted,
+      isComingSoon: challenge.isComingSoon,
+      isDev: debug.enabled('fcc:*')
     };
   }
 );
@@ -54,7 +57,21 @@ export class Challenge extends PureComponent {
     return <span className='text-primary'><strong>*</strong></span>;
   }
 
-  renderLocked(title, isRequired, className) {
+  renderComingSoon(isComingSoon) {
+    if (!isComingSoon) {
+      return null;
+    }
+    return (
+      <span className='text-info small'>
+        &thinsp; &thinsp;
+        <strong>
+          <em>Coming Soon</em>
+        </strong>
+      </span>
+    );
+  }
+
+  renderLocked(title, isRequired, isComingSoon, className) {
     return (
       <p
         className={ className }
@@ -62,9 +79,11 @@ export class Challenge extends PureComponent {
         >
         { title }
         { this.renderRequired(isRequired) }
+        { this.renderComingSoon(isComingSoon) }
       </p>
     );
   }
+
 
   render() {
     const {
@@ -74,6 +93,8 @@ export class Challenge extends PureComponent {
       isLocked,
       isRequired,
       isCompleted,
+      isComingSoon,
+      isDev,
       challenge,
       updateCurrentChallenge
     } = this.props;
@@ -82,13 +103,18 @@ export class Challenge extends PureComponent {
       'padded-ionic-icon': true,
       'negative-15': true,
       'challenge-title': true,
-      'ion-checkmark-circled faded': !isLocked && isCompleted,
-      'ion-ios-circle-outline': !isLocked && !isCompleted,
-      'ion-locked': isLocked,
-      disabled: isLocked
+      'ion-checkmark-circled faded': !(isLocked || isComingSoon) && isCompleted,
+      'ion-ios-circle-outline': !(isLocked || isComingSoon) && !isCompleted,
+      'ion-locked': isLocked || isComingSoon,
+      disabled: isLocked || (!isDev && isComingSoon)
     });
-    if (isLocked) {
-      return this.renderLocked(title, isRequired, challengeClassName);
+    if (isLocked || (!isDev && isComingSoon)) {
+      return this.renderLocked(
+        title,
+        isRequired,
+        isComingSoon,
+        challengeClassName
+      );
     }
     return (
       <p
