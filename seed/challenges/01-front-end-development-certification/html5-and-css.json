@@ -1170,9 +1170,7 @@
         "<p class=\"red-text\">Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
       ],
       "tests": [
-        "assert($(\"img\").length === 1, 'message: Your code should only have 1 <code>img</code> tag.');",
-        "assert($(\"img\").attr(\"src\") && $(\"img\").attr(\"src\") === \"https://bit.ly/fcc-relaxing-cat\", 'message: Your <code>img</code> should have a <code>src</code> attribute with a value of <code>https://bit.ly/fcc-relaxing-cat</code>.');",
-        "assert($('img').attr(\"class\") && $(\"img\").attr(\"class\").match(/(^|\\s)smaller-image($|\\s)/), 'message: Your <code>img</code> element should have the class <code>smaller-image</code>.');",
+        "assert($(\"img[src='https://bit.ly/fcc-relaxing-cat']\").attr('class') === \"smaller-image\", 'message: Your <code>img</code> element should have the class <code>smaller-image</code>.');",
         "assert($(\"img\").width() === 100, 'message: Your image should be 100 pixels wide. Browser zoom should be at 100%.');"
       ],
       "type": "waypoint",
