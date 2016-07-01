@@ -87,7 +87,9 @@ main = (function(main, global) {
         return null;
       }
       mainChatTitleAdded = true;
-
+      if ($('body').hasClass('night')) {
+        $('#chat-embed-main').addClass('night');
+      }
       $('#chat-embed-main > .gitter-chat-embed-action-bar').prepend(
         '<div class="chat-embed-main-title">' +
           '<span>Free Code Camp\'s Main Chat</span>' +
@@ -303,6 +305,9 @@ $(document).ready(function() {
         frameBorder: '0'
       });
       $('.map-aside').append(mapAside);
+      if ($('body').hasClass('night')) {
+        mapAside.addClass('night');
+      }
       main.isMapAsideLoad = true;
     }
     $('.map-aside').removeClass('is-collapsed');
@@ -370,6 +375,9 @@ $(document).ready(function() {
       });
       $('.wiki-aside').append(wikiAside);
       main.isWikiAsideLoad = true;
+      if ($('body').hasClass('night')) {
+        wikiAside.addClass('night');
+      }
     }
     $('.wiki-aside').removeClass('is-collapsed');
   }

@@ -4,7 +4,7 @@ html(lang='en')
     include partials/meta
     include partials/stylesheets
   if showAside
-      body.map-aside-body
+      body.map-aside-body(class=theme !== 'default' ? theme : '')
           include partials/scripts
           block content
   else

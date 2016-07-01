@@ -1036,14 +1036,14 @@
       "title": "Escape Sequences in Strings",
       "description": [
         "Quotes are not the only characters that can be <dfn>escaped</dfn> inside a string. Here is a table of common escape sequences:",
-        "<table class=\"table table-striped\"><thead><tr><th>Code</th><th>Output</th></tr></thead><tbody><tr><td><code>\\'</code></td><td>single quote</td></tr><tr><td><code>\\\"</code></td><td>double quote</td></tr><tr><td><code>\\\\</code></td><td>backslash</td></tr><tr><td><code>\\n</code></td><td>new line</td></tr><tr><td><code>\\r</code></td><td>carriage return</td></tr><tr><td><code>\\t</code></td><td>tab</td></tr><tr><td><code>\\b</code></td><td>backspace</td></tr><tr><td><code>\\f</code></td><td>form feed</td></tr></tbody></table>",
+        "<table class=\"table table-striped\"><thead><tr><th>Code</th><th>Output</th></tr></thead><tbody><tr><td><code>\\'</code></td><td>single quote</td></tr><tr><td><code>\\\"</code></td><td>double quote</td></tr><tr><td><code>\\\\</code></td><td>backslash</td></tr><tr><td><code>\\n</code></td><td>newline</td></tr><tr><td><code>\\r</code></td><td>carriage return</td></tr><tr><td><code>\\t</code></td><td>tab</td></tr><tr><td><code>\\b</code></td><td>backspace</td></tr><tr><td><code>\\f</code></td><td>form feed</td></tr></tbody></table>",
         "<em>Note that the backslash itself must be escaped in order to display as a backslash.</em>",
         "<h4>Instructions</h4>",
-        "Assign the following two lines of text into the single variable <code>myStr</code> using escape sequences.",
-        "<blockquote>Here is a backslash: \\.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Here is a new line with two tabs.</blockquote>",
-        "You will need to use escape sequences to insert special characters correctly. You will also need to follow the spacing as it looks above with no additional spaces between each escape sequence.",
+        "Assign the following three lines of text into the single variable <code>myStr</code> using escape sequences.",
+        "<blockquote>FirstLine<br>\\SecondLine\\<br>ThirdLine</blockquote>",
+        "You will need to use escape sequences to insert special characters correctly. You will also need to follow the spacing as it looks above, with no spaces between escape sequences or words.",
         "Here is the text with the escape sequences written out.",
-        "<q>Here is a backslash: <code>backslash</code>.<code>newline</code> <code>tab</code> <code>tab</code> Here is a new line with two tabs.</q>"
+        "<q>FirstLine<code>newline</code><code>backslash</code>SecondLine<code>backslash</code><code>carriage-return</code>ThirdLine</q>"
       ],
       "releasedOn": "January 1, 2016",
       "challengeSeed": [
@@ -1058,14 +1058,13 @@
         "else{return null;}})();"
       ],
       "solutions": [
-        "var myStr = \"Here is a backslash: \\\\.\\n\\t\\tHere is a new line with two tabs.\";"
+        "var myStr = \"FirstLine\\n\\\\SecondLine\\\\\\rThirdLine\";"
       ],
       "tests": [
-        "assert(myStr === \"Here is a backslash: \\\\.\\n\\t\\tHere is a new line with two tabs.\", 'message: <code>myStr</code> should have encoded text with the proper escape sequences and spacing.');",
-        "assert(myStr.match(/\\t/g).length == 2, 'message: <code>myStr</code> should have two tab characters <code>\\t</code>');",
+        "assert(myStr === \"FirstLine\\n\\\\SecondLine\\\\\\rThirdLine\", 'message: <code>myStr</code> should have encoded text with the proper escape sequences and no spacing.');",
         "assert(myStr.match(/\\n/g).length == 1, 'message: <code>myStr</code> should have one newline character <code>\\n</code>');",
-        "assert(myStr.match(/\\\\/g).length == 1, 'message: <code>myStr</code> should have a correctly escaped backslash character <code>\\\\</code>');",
-        "assert(myStr === \"Here is a backslash: \\\\.\\n\\t\\tHere is a new line with two tabs.\", 'message: <code>myStr</code> should not have any spaces in between consecutive escape sequences.');"
+        "assert(myStr.match(/\\r/g).length == 1, 'message: <code>myStr</code> should have one carriage return character <code>\\r</code>');",
+        "assert(myStr.match(/\\\\/g).length == 2, 'message: <code>myStr</code> should have two correctly escaped backslash characters <code>\\\\</code>');"
       ],
       "type": "waypoint",
       "challengeType": 1,
@@ -2845,7 +2844,7 @@
         "assert(testStrictNotEqual(\"17\") === \"Not Equal\", 'message: <code>testStrictNotEqual(\"17\")</code> should return \"Not Equal\"');",
         "assert(testStrictNotEqual(12) === \"Not Equal\", 'message: <code>testStrictNotEqual(12)</code> should return \"Not Equal\"');",
         "assert(testStrictNotEqual(\"bob\") === \"Not Equal\", 'message: <code>testStrictNotEqual(\"bob\")</code> should return \"Not Equal\"');",
-        "assert(code.match(/val\\s*!==\\s*\\d+/g).length > 0, 'message: You should use the <code>!==</code> operator');"
+        "assert(code.match(/(val\\s*!==\\s*\\d+)|(\\d+\\s*!==\\s*val)/g).length > 0, 'message: You should use the <code>!==</code> operator');"
       ],
       "type": "waypoint",
       "challengeType": 1,
@@ -3669,7 +3668,7 @@
         "You may recall from <a href=\"waypoint-comparison-with-the-equality-operator\" target=\"_blank\">Comparison with the Equality Operator</a> that all comparison operators return a boolean <code>true</code> or <code>false</code> value.",
         "A common <dfn>anti-pattern</dfn> is to use an <code>if/else</code> statement to do a comparison and then <code>return</code> <code>true</code>/<code>false</code>:",
         "<blockquote>function isEqual(a,b) {<br>  if (a === b) {<br>    return true;<br>  } else {<br>    return false;<br>  }<br>}</blockquote>",
-        "Since <code>===</code> returns <code>true</code> or <code>false</code>, we can simply return the result of the comparison:",
+        "Since <code>===</code> returns <code>true</code> or <code>false</code>, we can return the result of the comparison:",
         "<blockquote>function isEqual(a,b) {<br>  return a === b;<br>}</blockquote>",
         "<h4>Instructions</h4>",
         "Fix the function <code>isLess</code> to remove the <code>if/else</code> statements."
@@ -4197,7 +4196,7 @@
         "var ourDog = {\n  \"name\": \"Camper\",\n  \"legs\": 4,\n  \"tails\": 1,\n  \"friends\": [\"everything!\"],\n  \"bark\": \"bow-wow\"\n};\nvar myDog = {\n  \"name\": \"Happy Coder\",\n  \"legs\": 4,\n  \"tails\": 1,\n  \"friends\": [\"Free Code Camp Campers\"],\n  \"bark\": \"woof\"\n};\ndelete myDog.tails;"
       ],
       "tests": [
-        "assert(myDog.tails === undefined, 'message: Delete the property <code>\"tails\"</code> from <code>myDog</code>.');",
+        "assert(typeof myDog === \"object\" && myDog.tails === undefined, 'message: Delete the property <code>\"tails\"</code> from <code>myDog</code>.');",
         "assert(code.match(/\"tails\": 1/g).length > 1, 'message: Do not modify the <code>myDog</code> setup');"
       ],
       "type": "waypoint",
@@ -4517,14 +4516,14 @@
       "id": "56533eb9ac21ba0edf2244cf",
       "title": "Record Collection",
       "description": [
-        "You are given a JSON object representing (a small part of) your record collection. Each album is identified by a unique id number (its key) and has several properties. Not all albums have complete information.",
-        "Write a function which takes an <code>id</code>, a property (<code>prop</code>), and a <code>value</code>.",
-        "For the given <code>id</code> in <code>collection</code>:",
-        "If <code>prop</code> does not contain the key <code>\"tracks\"</code>, then update or set the <code>value</code> for that incomplete <code>prop</code>.",
-        "If <code>prop</code> does not contain the key <code>\"tracks\"</code> before you update it, create an empty array before pushing a track to it.",
-        "If <code>prop</code> does contain the key <code>\"tracks\"</code> and its <code>value</code> is non-blank, then push the <code>value</code> onto the end of its existing <code>tracks</code> array.",
-        "If <code>value</code> is blank, delete that <code>prop</code>.",
-        "Always return the entire collection object.",
+        "You are given a JSON object representing a part of your musical album collection. Each album has several properties and a unique id number as its key. Not all albums have complete information.",
+        "Write a function which takes an album's <code>id</code> (like <code>2548</code>), a property <code>prop</code> (like <code>\"artist\"</code> or <code>\"tracks\"</code>), and a <code>value</code> (like <code>\"Addicted to Love\"</code>) to modify the data in this collection.",
+        "If <code>prop</code> isn't <code>\"tracks\"</code> and <code>value</code> isn't blank, update or set the <code>value</code> for that record album's property.",
+        "Your function must always return the entire collection object.",
+        "There are several rules for handling incomplete data:",
+        "If <code>prop</code> is <code>\"tracks\"</code> but the album doesn't have a <code>\"tracks\"</code> property, create an empty array before adding the new value to the album's corresponding property.",
+        "If <code>prop</code> is <code>\"tracks\"</code> and <code>value</code> isn't blank, push the <code>value</code> onto the end of the album's existing <code>tracks</code> array.",
+        "If <code>value</code> is blank, delete that property from the album.",
         "<strong>Hints</strong><br>Use <code>bracket notation</code> when <a href=\"accessing-objects-properties-with-variables\" target=\"_blank\">accessing object properties with variables</a>.",
         "Push is an array method you can read about on <a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push\">Mozilla Developer Network</a>.",
         "You may refer back to <a href=\"manipulating-complex-objects\">Manipulating Complex Objects</a>Introducing JavaScript Object Notation (JSON)</a> for a refresher."
@@ -4991,7 +4990,7 @@
       "description": [
         "Random numbers are useful for creating random behavior.",
         "JavaScript has a <code>Math.random()</code> function that generates a random decimal number between <code>0</code> (inclusive) and not quite up to <code>1</code> (exclusive). Thus <code>Math.random()</code> can return a <code>0</code> but never quite return a <code>1</code>",
-        "<strong>Note</strong><br>Like <a href='storing-values-with-the-assignment-operator' target='_blank'>Storing Values with the Equal Operator</a>, all function calls will be resolved before the <code>return</code> executes, so we can simply <code>return</code> the value of the <code>Math.random()</code> function.",
+        "<strong>Note</strong><br>Like <a href='storing-values-with-the-assignment-operator' target='_blank'>Storing Values with the Equal Operator</a>, all function calls will be resolved before the <code>return</code> executes, so we can <code>return</code> the value of the <code>Math.random()</code> function.",
         "<h4>Instructions</h4>",
         "Change <code>randomFraction</code> to return a random number instead of returning <code>0</code>."
       ],
