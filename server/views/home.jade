@@ -1,40 +1,38 @@
 extends layout
 block content
     .text-center
-        h1.landing-heading Learn to code and help nonprofits.
-        .spacer
         .row
+            h1.landing-heading Learn to code and help nonprofits
             .big-break
             .big-break
             .big-break
-            .col-xs-12.col-sm-12.col-md-3
+            .col-xs-12.col-sm-12.col-md-4
                 img.img-responsive.landing-icon.img-center(src= 'https://s3.amazonaws.com/freecodecamp/landingIcons_connect.svg', alt='Get great references and connections to start your software engineer career')
-                p.large-p Join a community of 400,000+ developers.
-            .col-xs-12.col-sm-12.col-md-3
-                img.img-responsive.landing-icon.img-center(src= 'https://s3.amazonaws.com/freecodecamp/landingIcons_learn.svg', alt='Learn to code and learn full stack JavaScript')
-                p.large-p Work on coding challenges together.
-            .col-xs-12.col-sm-12.col-md-3
-                img.img-responsive.landing-icon.img-center(src= 'https://s3.amazonaws.com/freecodecamp/landingIcons_portfolio.svg', alt='Build a portfolio of apps for nonprofits')
-                p.large-p Build a portfolio of apps that solve real problems.
-            .col-xs-12.col-sm-12.col-md-3
-                img.img-responsive.landing-icon.img-center(src= 'https://s3.amazonaws.com/freecodecamp/landingIcons_nonprofits.svg', alt='Empower nonprofits with code')
-                p.large-p Empower nonprofits with code.
-        .big-break
-        .big-break
+                p.large-p
+                    a(href='/map') 17,000,000+
+                    | &thinsp;coding challenges solved
+            .col-xs-12.col-sm-12.col-md-4
+                img.img-responsive.landing-icon.img-center(src= 'https://s3.amazonaws.com/freecodecamp/landingIcons_nonprofits.svg', alt='Help nonprofits with bro bono code projects')
+                p.large-p
+                    a(href='/nonprofits') $1,000,000+
+                    | &thinsp;in donated development work
+            .col-xs-12.col-sm-12.col-md-4
+                img.img-responsive.landing-icon.img-center(src= 'https://s3.amazonaws.com/freecodecamp/landingIcons_portfolio.svg', alt='Get hired as a developer and start your software engineer career')
+                p.large-p
+                    a(href='/stories') 2,000+
+                    | &thinsp;campers now have developer jobs
         .big-break
         .big-break
         .row
             .col-xs-12.col-sm-8.col-sm-offset-2
                 a.btn.btn-cta.signup-btn.btn-block(href="/signin") Start coding (it's free)
-                .button-spacer
-                a.btn.btn-lg.btn-primary.btn-primary-ghost.btn-block(href="/nonprofits") My nonprofit needs coding help
         .spacer
         h2 As featured in:
         img.img-center.img-responsive(src='https://s3.amazonaws.com/freecodecamp/as-seen-on.png')
         .spacer
         hr
         .spacer
-        h2 Launch your career as a software engineer:
+        h2 Launch your developer career
         .spacer
         .row
             .col-xs-12.col-sm-12.col-md-4
@@ -50,14 +48,9 @@ block content
                 p.testimonial-copy I started Free Code Camp with zero knowledge of web development. 6 months later, I landed my first job as a back end engineer.
                 h3 - Maxim Orlov
         .spacer
-        .row
-            .col-xs-12.col-sm-8.col-sm-offset-2
-                a.btn.btn-lg.btn-primary.btn-primary-ghost.btn-block(href='/stories') Hear from more of our campers
-        .spacer
-        .spacer
         hr
         .spacer
-        h2 Skills you'll learn:
+        h2 Learn powerful skills
         .spacer
         .row
             .text-center.negative-35
