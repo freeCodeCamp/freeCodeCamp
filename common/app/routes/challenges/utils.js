@@ -91,8 +91,8 @@ export function getFirstChallenge(
   ];
 }
 
-export function getNextChallenge(current, entites) {
-  const { challenge: challengeMap, block: blockMap } = entites;
+export function getNextChallenge(current, entities, skip = 0) {
+  const { challenge: challengeMap, block: blockMap } = entities;
   // find current challenge
   // find current block
   // find next challenge in block
@@ -102,15 +102,26 @@ export function getNextChallenge(current, entites) {
   }
   const block = blockMap[currentChallenge.block];
   const index = block.challenges.indexOf(currentChallenge.dashedName);
-  return challengeMap[block.challenges[index + 1]];
+  // use next challenge name to find challenge in challenge map
+  const nextChallenge = challengeMap[
+    // grab next challenge name in current block
+    // skip is used to skip isComingSoon challenges
+    block.challenges[ index + 1 + skip ]
+  ];
+  if (nextChallenge && nextChallenge.isComingSoon) {
+    // if we find a next challenge and it is a coming soon
+    // recur with plus one to skip this challenge
+    return getNextChallenge(current, entities, skip + 1);
+  }
+  return nextChallenge;
 }
 
-export function getFirstChallengeOfNextBlock(current, entites) {
+export function getFirstChallengeOfNextBlock(current, entities, skip = 0) {
   const {
     challenge: challengeMap,
     block: blockMap,
     superBlock: SuperBlockMap
-  } = entites;
+  } = entities;
   const currentChallenge = challengeMap[current];
   if (!currentChallenge) {
     return null;
@@ -120,24 +131,50 @@ export function getFirstChallengeOfNextBlock(current, entites) {
     return null;
   }
   const superBlock = SuperBlockMap[block.superBlock];
+  if (!superBlock) {
+    return null;
+  }
+  // find index of current block
   const index = superBlock.blocks.indexOf(block.dashedName);
-  const newBlock = blockMap[superBlock.blocks[ index + 1 ]];
+
+  // find next block name
+  // and pull block object from block map
+  const newBlock = blockMap[
+    superBlock.blocks[ index + 1 + skip ]
+  ];
   if (!newBlock) {
     return null;
   }
-  return challengeMap[newBlock.challenges[0]];
+  // grab first challenge from next block
+  const nextChallenge = challengeMap[newBlock.challenges[0]];
+  if (nextChallenge && nextChallenge.isComingSoon) {
+    // if first challenge is coming soon, find next challenge here
+    const nextChallenge2 = getNextChallenge(nextChallenge.dashedName, entities);
+    if (!nextChallenge2) {
+      // whole block is coming soon
+      // skip this block
+      return getFirstChallengeOfNextBlock(
+        current,
+        entities,
+        skip + 1
+      );
+    }
+    return nextChallenge2;
+  }
+  return nextChallenge;
 }
 
 export function getFirstChallengeOfNextSuperBlock(
   current,
-  entites,
-  superBlocks
+  entities,
+  superBlocks,
+  skip = 0
 ) {
   const {
     challenge: challengeMap,
     block: blockMap,
     superBlock: SuperBlockMap
-  } = entites;
+  } = entities;
   const currentChallenge = challengeMap[current];
   if (!currentChallenge) {
     return null;
@@ -147,13 +184,51 @@ export function getFirstChallengeOfNextSuperBlock(
     return null;
   }
   const superBlock = SuperBlockMap[block.superBlock];
+  if (!superBlock) {
+    return null;
+  }
   const index = superBlocks.indexOf(superBlock.dashedName);
-  const newSuperBlock = SuperBlockMap[superBlocks[ index + 1]];
+  const newSuperBlock = SuperBlockMap[superBlocks[ index + 1 + skip]];
   if (!newSuperBlock) {
     return null;
   }
-  const newBlock = blockMap[newSuperBlock.blocks[0]];
-  return challengeMap[newBlock.challenges[0]];
+  const newBlock = blockMap[
+    newSuperBlock.blocks[ 0 ]
+  ];
+  if (!newBlock) {
+    return null;
+  }
+  const nextChallenge = challengeMap[newBlock.challenges[0]];
+  if (!nextChallenge || !nextChallenge.isComingSoon) {
+    return nextChallenge;
+  }
+  // coming soon challenge, grab next
+  // non coming soon challenge in same block instead
+  const nextChallengeInBlock = getNextChallenge(
+    nextChallenge.dashedName,
+    entities
+  );
+  if (nextChallengeInBlock) {
+    return nextChallengeInBlock;
+  }
+  // whole block is coming soon
+  // grab first challenge in next block in newSuperBlock instead
+  const challengeInNextBlock = getFirstChallengeOfNextBlock(
+    nextChallenge.dashedName,
+    entities
+  );
+
+  if (challengeInNextBlock) {
+    return challengeInNextBlock;
+  }
+  // whole super block is coming soon
+  // skip this super block
+  return getFirstChallengeOfNextSuperBlock(
+    current,
+    entities,
+    superBlocks,
+    skip + 1
+  );
 }
 
 export function getCurrentBlockName(current, entities) {
