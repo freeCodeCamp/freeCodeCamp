@@ -10,7 +10,7 @@
 <!-- If you're unsure about any of these, don't hesitate to ask. We're here to help! -->
 - [ ] Your pull request targets the `staging` branch of FreeCodeCamp.
 - [ ] Branch starts with either `fix/`, `feature/`, or `translate/` (e.g. `fix/signin-issue`)
-- [ ] You have only one commit (if not, [squash](https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/git-rebase#squashing-multiple-commits-into-one) them into one commit).
+- [ ] You have only one commit (if not, [squash](https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/Git-Squash) them into one commit).
 - [ ] All new and existing tests pass the command `npm run test-challenges`. Use `git commit --amend` to amend any fixes.
 
 #### Type of Change
