@@ -221,15 +221,15 @@ export default function commit(app) {
       .subscribe(
         pledge => {
           let msg = dedent`
-                      You have successfully stopped your pledge. Please 
-                      rememberto cancel your recurring donation directly  
-                      with the nonprofit if you haven't already done so.
-                    `;
+            You have successfully stopped your pledge. Please 
+            rememberto cancel your recurring donation directly  
+            with the nonprofit if you haven't already done so.
+          `;
           if (!pledge) {
             msg = dedent`
-                      It doesn't look like you had an active pledge, so 
-                      there's no pledge to stop.
-                    `;
+              It doesn't look like you had an active pledge, so 
+              there's no pledge to stop.
+            `;
           }
           req.flash('info', { msg });
           return res.redirect(`/${user.username}`);
