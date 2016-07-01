@@ -920,7 +920,6 @@
         "",
         "// Only change code below this line",
         "",
-        "",
         ""
       ],
       "tail": [
@@ -1352,6 +1351,7 @@
         "",
         "// Only change code below this line",
         "firstLetterOfLastName = lastName;",
+        "",
         ""
       ],
       "tail": [
@@ -1611,7 +1611,7 @@
       ],
       "challengeSeed": [
         "// Example",
-        "var array = [\"John\", 23];",
+        "var ourArray = [\"John\", 23];",
         "",
         "// Only change code below this line.",
         "var myArray = [];",
@@ -2077,14 +2077,13 @@
       ],
       "challengeSeed": [
         "// Example",
-        "function reusableFunction() {",
+        "function ourReusableFunction() {",
         "  console.log(\"Heyya, World\");",
         "}",
         "",
-        "reusableFunction();",
+        "ourReusableFunction();",
         "",
         "// Only change code below this line",
-        "",
         ""
       ],
       "tail": [
@@ -2157,10 +2156,10 @@
       ],
       "challengeSeed": [
         "// Example",
-        "function functionWithArgs(a, b) {",
+        "function ourFunctionWithArgs(a, b) {",
         "  console.log(a - b);",
         "}",
-        "functionWithArgs(10, 5); // Outputs 5",
+        "ourFunctionWithArgs(10, 5); // Outputs 5",
         "",
         "// Only change code below this line.",
         "",
@@ -2622,7 +2621,7 @@
       ],
       "challengeSeed": [
         "// Example",
-        "function ourFunction(isItTrue) {",
+        "function ourTrueOrFalse(isItTrue) {",
         "  if (isItTrue) { ",
         "    return \"Yes, it's true\";",
         "  }",
@@ -4740,6 +4739,7 @@
         "var myArray = [];",
         "",
         "// Only change code below this line.",
+        "",
         ""
       ],
       "tail": [
@@ -5092,12 +5092,12 @@
       ],
       "challengeSeed": [
         "// Example",
-        "function ourFunction(ourMin, ourMax) {",
+        "function ourRandomRange(ourMin, ourMax) {",
         "",
         "  return Math.floor(Math.random() * (ourMax - ourMin + 1)) + ourMin;",
         "}",
         "",
-        "ourFunction(1, 9);",
+        "ourRandomRange(1, 9);",
         "",
         "// Only change code below this line.",
         "",
