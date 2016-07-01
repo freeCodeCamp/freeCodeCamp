@@ -377,7 +377,12 @@
       "descriptionDe": [
         "Anfangs waren diese Animationen noch cool, jetzt sind sie aber ein wenig störend.",
         "Lösche alle drei jQuery Funktionen deiner <code>Document Ready Funktion</code>, aber lasse die <code>Document Ready Funktion</code> selbst intakt."
-      ]
+      ],
+      "titleFr" : "Effacer vos fonctions jQuery",
+       "descriptionFr" : [
+         "Ces animations sont sympathiques à première vue, mais maintenant elles deviennent plutôt distrayantes.",
+         "Effacez les trois fonctions jQuery de votre <code>document ready function</code>, mais laissez votre <code>document ready function</code> lui-même intact."
+       ]
     },
     {
       "id": "bad87fee1348bd9aed908626",
@@ -447,7 +452,15 @@
         "Füge die Klasse <code>animated</code> zu allen Elementen des Typs <code>button</code> hinzu.",
         "Füge die Klasse <code>shake</code> zu allen Buttons mit der Klasse <code>.btn</code> hinzu.",
         "Füge die Klasse <code>btn-primary</code> zu dem Button mit der ID <code>#target1</code> hinzu."
-      ]
+      ],
+       "titleFr" : "Cibler le même élément avec plusieurs sélecteurs jQuery",
+       "descriptionFr" : [
+         "À présent, vous connaissez trois façons de cibler les éléments: par type: <code>$(\"button\")</code>, par classe: <code>$(\".btn\")</code>, et par id <code>$(\"#target1\")</code>.",
+         "En utilisant <code>.addClass()</code>, ajoutez uniquement une classe à la fois au même élément, de trois façons différentes:",
+         "Ajoutez la classe <code>animated</code> à tous les éléments de type <code>button</code>.",
+         "Ajoutez la classe <code>shake</code> à tous les boutons qui ont la classe <code>.btn</code>.",
+         "Ajoutez la classe <code>btn-primary</code> au bouton qui a l'id <code>#target1</code>."
+       ]
     },
     {
       "id": "bad87fee1348bd9aed918626",
@@ -512,7 +525,14 @@
         "So könntest du das bei einem spezifischen Button machen:",
         "<code>$(\"#target2\").removeClass(\"btn-default\");</code>",
         "Lass uns alle <code>btn-default</code> Klassen von unseren <code>Button</code> Elementen entfernen."
-      ]
+      ],
+      "titleFr" : "Supprimer des classes d'un élément avec jQuery",
+       "descriptionFr" : [
+         "De la même façon que vous pouvez ajouter des classes à un élément avec la fonction jQuery <code>addClass()</code>, vous pouvez les supprimer avec la fonction jQuery <code>removeClass()</code>.",
+         "Voici comment procéder pour un bouton spécifique:",
+         "<code>$(\"#target2\").removeClass(\"btn-default\");",
+         "Supprimons la classe <code>btn-default</code> de tous nos éléments <code>button</code>."
+       ]
     },
     {
       "id": "bad87fee1348bd9aed908826",
@@ -586,7 +606,17 @@
         "Das ist ein wenig anders als eine normale CSS-Deklaration, weil die CSS-Eigenschaft und deren Wert in Anführungszeichen sind und durch ein Komma anstatt eines Doppelpunkts getrennt werden.",
         "Lösche deine jQuery Selektoren, damit eine leere <code>Document Ready Funktion</code> übrig bleibt.",
         "Wähle <code>target1</code> und ändere dessen Farbe zu Rot."
-      ]
+      ],
+      "titleFr" : "Changer le CSS d'un élément en utilisant jQuery",
+       "descriptionFr" : [
+         "Nous pouvons aussi changer le CSS d'un élément HTML directement avec jQuery.",
+         "jQuery dispose d'une fonction appelée <code>.css()</code> qui vous permet de changer le CSS d'un élément.",
+         "Voici comment changer sa couleur en bleu:",
+         "<code>$(\"#target1\").css(\"color\", \"blue\");",
+         "Ceci est légèrement différent d'une expression CSS normale, car la propriété CSS et sa valeur sont entre guillemets, et separées par une virgule au lieu de deux points.",
+         "Effacez vos sélecteurs jQuery, laissant votre <code>document ready function</code> vide.",
+         "Sélectionnez <code>target1</code> et changez sa couleur en rouge."
+       ]
     },
     {
       "id": "bad87fee1348bd9aed808826",
@@ -655,7 +685,25 @@
         "So kannst du alle <code>Buttons</code> deaktivieren:",
         "<code>$(\"button\").prop(\"disabled\", true);</code>",
         "Deaktiviere nur den <code>target1</code> Button."
-      ]
+      ],
+      "titleFr" : "Désactivez un élément en utilisant jQuery",
+       "descriptionFr" : [
+         "Vous pouvez également changer les propriétés non-CSS des éléments HTML avec jQuery. Par exemple, vous pouvez désactiver les boutons.",
+         "Lorsque vous désactivez un bouton, il devient gris et on ne peut plus cliquer dessus.",
+         "jQuery dispose d'une fonction appelée <code>.prop()</code> qui vous permet de modifier les propriétés des éléments.",
+         "Voici comment vous pouvez désactiver tous les boutons:",
+         "<code>$(\"button\").prop(\"disabled\", true);</code>",
+         "Désactivez uniquement le bouton <code>target1</code>"
+       ],
+       "titleFr" : "Changer le texte à l'intérieur d'un élément en utilisant jQuery",
+       "descriptionFr" : [
+         "En utilisant jQuery, vous pouvez changer le texte entre les balises ouvrante et fermante d'un élément. Vous pouvez même changer les balises HTML.",
+         "jQuery dispose d'une fonction appelée <code>.html()</code> qui vous permet d'ajouter des balises HTML et du texte à l'intérieur d'un élément. Tout le contenu de l'élément sera alors remplacé par le contenu que vous indiquerez en utilisant la fonction.",
+         "Voici comment vous pourriez ré-écrire et mettre en italique le texte de notre titre:",
+         "<code>$(\"h3\").html(\"&#60em&#62jQuery Playground&#60/em&#62\");",
+         "jQuery dispose également d'une fonction similaire appelée <code>.text()</code> qui change uniquement le texte sans ajouter de balises. Autrement dit, cette fonction n'évaluera aucune balise HTML que vous lui donnez, mais les traitera comme du texte que vous désirez ajouter à votre élément.",
+         "Changez le bouton avec l'id <code>target4</code> en mettant en italique son texte."
+       ]
     },
     {
       "id": "564944c91be2204b269d51e3",
