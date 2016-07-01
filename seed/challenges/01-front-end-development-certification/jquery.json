@@ -455,7 +455,7 @@
       ],
        "titleFr" : "Cibler le même élément avec plusieurs sélecteurs jQuery",
        "descriptionFr" : [
-         "Á présent, vous connaissez trois façons de cibler les éléments: par type: <code>$(\"button\")</code>, par classe: <code>$(\".btn\")</code>, et par id <code>$(\"#target1\")</code>.",
+         "À présent, vous connaissez trois façons de cibler les éléments: par type: <code>$(\"button\")</code>, par classe: <code>$(\".btn\")</code>, et par id <code>$(\"#target1\")</code>.",
          "En utilisant <code>.addClass()</code>, ajoutez uniquement une classe à la fois au même élément, de trois façons différentes:",
          "Ajoutez la classe <code>animated</code> à tous les éléments de type <code>button</code>.",
          "Ajoutez la classe <code>shake</code> à tous les boutons qui ont la classe <code>.btn</code>.",
@@ -611,7 +611,7 @@
        "descriptionFr" : [
          "Nous pouvons aussi changer le CSS d'un élément HTML directement avec jQuery.",
          "jQuery dispose d'une fonction appelée <code>.css()</code> qui vous permet de changer le CSS d'un élément.",
-         "Voici comment on changerait sa couleur en bleu:",
+         "Voici comment changer sa couleur en bleu:",
          "<code>$(\"#target1\").css(\"color\", \"blue\");",
          "Ceci est légèrement différent d'une expression CSS normale, car la propriété CSS et sa valeur sont entre guillemets, et separées par une virgule au lieu de deux points.",
          "Effacez vos sélecteurs jQuery, laissant votre <code>document ready function</code> vide.",
@@ -690,8 +690,8 @@
        "descriptionFr" : [
          "Vous pouvez également changer les propriétés non-CSS des éléments HTML avec jQuery. Par exemple, vous pouvez désactiver les boutons.",
          "Lorsque vous désactivez un bouton, il devient gris et on ne peut plus cliquer dessus.",
-         "jQuery dispose d'un fonction appelée <code>.prop()</code> qui vous permet de modifier les propriétés des éléments.",
-         "Voici comment vous pourriez désactiver tous les boutons:",
+         "jQuery dispose d'une fonction appelée <code>.prop()</code> qui vous permet de modifier les propriétés des éléments.",
+         "Voici comment vous pouvez désactiver tous les boutons:",
          "<code>$(\"button\").prop(\"disabled\", true);</code>",
          "Désactivez uniquement le bouton <code>target1</code>"
        ],
