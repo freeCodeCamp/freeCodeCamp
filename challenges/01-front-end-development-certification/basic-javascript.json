@@ -1036,14 +1036,14 @@
       "title": "Escape Sequences in Strings",
       "description": [
         "Quotes are not the only characters that can be <dfn>escaped</dfn> inside a string. Here is a table of common escape sequences:",
-        "<table class=\"table table-striped\"><thead><tr><th>Code</th><th>Output</th></tr></thead><tbody><tr><td><code>\\'</code></td><td>single quote</td></tr><tr><td><code>\\\"</code></td><td>double quote</td></tr><tr><td><code>\\\\</code></td><td>backslash</td></tr><tr><td><code>\\n</code></td><td>new line</td></tr><tr><td><code>\\r</code></td><td>carriage return</td></tr><tr><td><code>\\t</code></td><td>tab</td></tr><tr><td><code>\\b</code></td><td>backspace</td></tr><tr><td><code>\\f</code></td><td>form feed</td></tr></tbody></table>",
+        "<table class=\"table table-striped\"><thead><tr><th>Code</th><th>Output</th></tr></thead><tbody><tr><td><code>\\'</code></td><td>single quote</td></tr><tr><td><code>\\\"</code></td><td>double quote</td></tr><tr><td><code>\\\\</code></td><td>backslash</td></tr><tr><td><code>\\n</code></td><td>newline</td></tr><tr><td><code>\\r</code></td><td>carriage return</td></tr><tr><td><code>\\t</code></td><td>tab</td></tr><tr><td><code>\\b</code></td><td>backspace</td></tr><tr><td><code>\\f</code></td><td>form feed</td></tr></tbody></table>",
         "<em>Note that the backslash itself must be escaped in order to display as a backslash.</em>",
         "<h4>Instructions</h4>",
-        "Assign the following two lines of text into the single variable <code>myStr</code> using escape sequences.",
-        "<blockquote>Here is a backslash: \\.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Here is a new line with two tabs.</blockquote>",
-        "You will need to use escape sequences to insert special characters correctly. You will also need to follow the spacing as it looks above with no additional spaces between each escape sequence.",
+        "Assign the following three lines of text into the single variable <code>myStr</code> using escape sequences.",
+        "<blockquote>FirstLine<br>\\SecondLine\\<br>ThirdLine</blockquote>",
+        "You will need to use escape sequences to insert special characters correctly. You will also need to follow the spacing as it looks above, with no spaces between escape sequences or words.",
         "Here is the text with the escape sequences written out.",
-        "<q>Here is a backslash: <code>backslash</code>.<code>newline</code> <code>tab</code> <code>tab</code> Here is a new line with two tabs.</q>"
+        "<q>FirstLine<code>newline</code><code>backslash</code>SecondLine<code>backslash</code><code>carriage-return</code>ThirdLine</q>"
       ],
       "releasedOn": "January 1, 2016",
       "challengeSeed": [
@@ -1058,14 +1058,13 @@
         "else{return null;}})();"
       ],
       "solutions": [
-        "var myStr = \"Here is a backslash: \\\\.\\n\\t\\tHere is a new line with two tabs.\";"
+        "var myStr = \"FirstLine\\n\\\\SecondLine\\\\\\rThirdLine\";"
       ],
       "tests": [
-        "assert(myStr === \"Here is a backslash: \\\\.\\n\\t\\tHere is a new line with two tabs.\", 'message: <code>myStr</code> should have encoded text with the proper escape sequences and spacing.');",
-        "assert(myStr.match(/\\t/g).length == 2, 'message: <code>myStr</code> should have two tab characters <code>\\t</code>');",
+        "assert(myStr === \"FirstLine\\n\\\\SecondLine\\\\\\rThirdLine\", 'message: <code>myStr</code> should have encoded text with the proper escape sequences and no spacing.');",
         "assert(myStr.match(/\\n/g).length == 1, 'message: <code>myStr</code> should have one newline character <code>\\n</code>');",
-        "assert(myStr.match(/\\\\/g).length == 1, 'message: <code>myStr</code> should have a correctly escaped backslash character <code>\\\\</code>');",
-        "assert(myStr === \"Here is a backslash: \\\\.\\n\\t\\tHere is a new line with two tabs.\", 'message: <code>myStr</code> should not have any spaces in between consecutive escape sequences.');"
+        "assert(myStr.match(/\\r/g).length == 1, 'message: <code>myStr</code> should have one carriage return character <code>\\r</code>');",
+        "assert(myStr.match(/\\\\/g).length == 2, 'message: <code>myStr</code> should have two correctly escaped backslash characters <code>\\\\</code>');"
       ],
       "type": "waypoint",
       "challengeType": 1,
