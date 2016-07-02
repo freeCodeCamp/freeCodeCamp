@@ -4401,7 +4401,7 @@
         "Here is a nested object:",
         "<blockquote>var ourStorage = {<br>  \"desk\": {<br>    \"drawer\": \"stapler\"<br>  },<br>  \"cabinet\": {<br>    \"top drawer\": { <br>      \"folder1\": \"a file\",<br>      \"folder2\": \"secrets\"<br>    },<br>    \"bottom drawer\": \"soda\"<br>  }<br>}<br>ourStorage.cabinet[\"top drawer\"].folder2;  // \"secrets\"<br>ourStorage.desk.drawer; // \"stapler\"</blockquote>",
         "<h4>Instructions</h4>",
-        "Access the <code>myStorage</code> object to retrieve the contents of the <code>glove box</code>. Use bracket notation for properties with a space in their name."
+        "Access the <code>myStorage</code> object and assign the contents of the <code>glove box</code> property to the <code>gloveBoxContents<code> variable. Use bracket notation for properties with a space in their name."
       ],
       "releasedOn": "January 1, 2016",
       "challengeSeed": [
