@@ -293,7 +293,7 @@
         ""
       ],
       "tail": [
-        "(function(z){return 'sum='+z;})(sum);"
+        "(function(z){return 'sum = '+z;})(sum);"
       ],
       "solutions": [
         "var sum = 10 + 10;"
@@ -330,7 +330,7 @@
         ""
       ],
       "tail": [
-        "(function(z){return 'difference='+z;})(difference);"
+        "(function(z){return 'difference = '+z;})(difference);"
       ],
       "solutions": [
         "var difference = 45 - 33;"
