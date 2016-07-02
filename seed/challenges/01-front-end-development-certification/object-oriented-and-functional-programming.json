@@ -444,7 +444,8 @@
         "If no compare (callback) function is passed in, it will convert the values to strings and sort alphabetically.",
         "Here is an example of using sort with a compare function that will sort the elements from smallest to largest number:",
         "<blockquote>var array = [1, 12, 21, 2];<br>array.sort(function(a, b) {<br>&nbsp;&nbsp;return a - b;<br>});</blockquote>",
-        "Use <code>sort</code> to sort <code>array</code> from largest to smallest."
+        "Use <code>sort</code> to sort <code>array</code> from largest to smallest.",
+        "Further explanation on the <code>.sort()</code> method can be found <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort' target='_blank'>here</a>."
       ],
       "challengeSeed": [
         "var array = [1, 12, 21, 2];",
