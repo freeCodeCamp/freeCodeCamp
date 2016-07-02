@@ -905,9 +905,9 @@
           true
         ],
         [
-          "Javascript is a compiler language.",
+          "JavaScript is a compiled language.",
           false,
-          "Javascript is an interpreter language"
+          "JavaScript is an interpreted language."
         ],
         [
           "Free Code Camp is open source.",
