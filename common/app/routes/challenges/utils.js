@@ -91,7 +91,14 @@ export function getFirstChallenge(
   ];
 }
 
-export function getNextChallenge(current, entities, skip = 0) {
+export function getNextChallenge(
+  current,
+  entities,
+  {
+    isDev = false,
+    skip = 0
+  } = {}
+) {
   const { challenge: challengeMap, block: blockMap } = entities;
   // find current challenge
   // find current block
@@ -108,15 +115,22 @@ export function getNextChallenge(current, entities, skip = 0) {
     // skip is used to skip isComingSoon challenges
     block.challenges[ index + 1 + skip ]
   ];
-  if (nextChallenge && nextChallenge.isComingSoon) {
+  if (!isDev && nextChallenge && nextChallenge.isComingSoon) {
     // if we find a next challenge and it is a coming soon
     // recur with plus one to skip this challenge
-    return getNextChallenge(current, entities, skip + 1);
+    return getNextChallenge(current, entities, { isDev, skip: skip + 1 });
   }
   return nextChallenge;
 }
 
-export function getFirstChallengeOfNextBlock(current, entities, skip = 0) {
+export function getFirstChallengeOfNextBlock(
+  current,
+  entities,
+  {
+    isDev = false,
+    skip = 0
+  } = {}
+) {
   const {
     challenge: challengeMap,
     block: blockMap,
@@ -147,28 +161,35 @@ export function getFirstChallengeOfNextBlock(current, entities, skip = 0) {
   }
   // grab first challenge from next block
   const nextChallenge = challengeMap[newBlock.challenges[0]];
-  if (nextChallenge && nextChallenge.isComingSoon) {
-    // if first challenge is coming soon, find next challenge here
-    const nextChallenge2 = getNextChallenge(nextChallenge.dashedName, entities);
-    if (!nextChallenge2) {
-      // whole block is coming soon
-      // skip this block
-      return getFirstChallengeOfNextBlock(
-        current,
-        entities,
-        skip + 1
-      );
-    }
+  if (isDev || !nextChallenge || !nextChallenge.isComingSoon) {
+    return nextChallenge;
+  }
+  // if first challenge is coming soon, find next challenge here
+  const nextChallenge2 = getNextChallenge(
+    nextChallenge.dashedName,
+    entities,
+    { isDev }
+  );
+  if (nextChallenge2) {
     return nextChallenge2;
   }
-  return nextChallenge;
+  // whole block is coming soon
+  // skip this block
+  return getFirstChallengeOfNextBlock(
+    current,
+    entities,
+    { isDev, skip: skip + 1 }
+  );
 }
 
 export function getFirstChallengeOfNextSuperBlock(
   current,
   entities,
   superBlocks,
-  skip = 0
+  {
+    isDev = false,
+    skip = 0
+  } = {}
 ) {
   const {
     challenge: challengeMap,
@@ -199,14 +220,15 @@ export function getFirstChallengeOfNextSuperBlock(
     return null;
   }
   const nextChallenge = challengeMap[newBlock.challenges[0]];
-  if (!nextChallenge || !nextChallenge.isComingSoon) {
+  if (isDev || !nextChallenge || !nextChallenge.isComingSoon) {
     return nextChallenge;
   }
   // coming soon challenge, grab next
   // non coming soon challenge in same block instead
   const nextChallengeInBlock = getNextChallenge(
     nextChallenge.dashedName,
-    entities
+    entities,
+    { isDev }
   );
   if (nextChallengeInBlock) {
     return nextChallengeInBlock;
@@ -215,7 +237,8 @@ export function getFirstChallengeOfNextSuperBlock(
   // grab first challenge in next block in newSuperBlock instead
   const challengeInNextBlock = getFirstChallengeOfNextBlock(
     nextChallenge.dashedName,
-    entities
+    entities,
+    { isDev }
   );
 
   if (challengeInNextBlock) {
@@ -227,7 +250,7 @@ export function getFirstChallengeOfNextSuperBlock(
     current,
     entities,
     superBlocks,
-    skip + 1
+    { isDev, skip: skip + 1 }
   );
 }
 

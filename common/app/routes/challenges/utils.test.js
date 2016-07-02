@@ -8,7 +8,7 @@ import {
 
 test('common/app/routes/challenges/utils', function(t) {
   t.test('getNextChallenge', t => {
-    t.plan(4);
+    t.plan(5);
     t.test('should return falsey when current challenge is not found', t => {
       t.plan(1);
       const entities = {
@@ -120,10 +120,46 @@ test('common/app/routes/challenges/utils', function(t) {
       );
       t.isEqual(shouldBeNext, nextChallenge);
     });
+    t.test('should not skip isComingSoon challenge in dev', t => {
+      t.plan(1);
+      const currentChallenge = {
+        dashedName: 'current-challenge',
+        block: 'current-block'
+      };
+      const comingSoon = {
+        dashedName: 'coming-soon',
+        isComingSoon: true,
+        block: 'current-block'
+      };
+      const nextChallenge = {
+        dashedName: 'next-challenge',
+        block: 'current-block'
+      };
+      const entities = {
+        challenge: {
+          'current-challenge': currentChallenge,
+          'next-challenge': nextChallenge,
+          'coming-soon': comingSoon
+        },
+        block: {
+          'current-block': {
+            challenges: [
+              'current-challenge',
+              'coming-soon',
+              'next-challenge'
+            ]
+          }
+        }
+      };
+      t.isEqual(
+        getNextChallenge('current-challenge', entities, { isDev: true }),
+        comingSoon
+      );
+    });
   });
 
   t.test('getFirstChallengeOfNextBlock', t => {
-    t.plan(7);
+    t.plan(8);
     t.test('should return falsey when current challenge is not found', t => {
       t.plan(1);
       const entities = {
@@ -302,6 +338,58 @@ test('common/app/routes/challenges/utils', function(t) {
         'getFirstChallengeOfNextBlock did not return the correct challenge'
       );
     });
+    t.test('should not skip coming soon in dev mode', t => {
+      t.plan(1);
+      const currentChallenge = {
+        dashedName: 'current-challenge',
+        block: 'current-block'
+      };
+      const firstChallenge = {
+        dashedName: 'first-challenge',
+        block: 'next-block'
+      };
+      const comingSoon = {
+        dashedName: 'coming-soon',
+        block: 'next-block',
+        isComingSoon: true
+      };
+      const entities = {
+        challenge: {
+          [currentChallenge.dashedName]: currentChallenge,
+          [firstChallenge.dashedName]: firstChallenge,
+          'coming-soon': comingSoon
+        },
+        block: {
+          'current-block': {
+            dashedName: 'current-block',
+            superBlock: 'current-super-block'
+          },
+          'next-block': {
+            dashedName: 'next-block',
+            superBlock: 'current-super-block',
+            challenges: [
+              'coming-soon',
+              'first-challenge'
+            ]
+          }
+        },
+        superBlock: {
+          'current-super-block': {
+            dashedName: 'current-super-block',
+            blocks: [ 'current-block', 'next-block' ]
+          }
+        }
+      };
+      t.equal(
+        getFirstChallengeOfNextBlock(
+          currentChallenge.dashedName,
+          entities,
+          { isDev: true }
+        ),
+        comingSoon,
+        'getFirstChallengeOfNextBlock returned isComingSoon challenge'
+      );
+    });
     t.test('should skip block if all challenges are coming soon', t => {
       t.plan(2);
       const currentChallenge = {
@@ -375,7 +463,7 @@ test('common/app/routes/challenges/utils', function(t) {
   });
 
   t.test('getFirstChallengeOfNextBlock', t => {
-    t.plan(9);
+    t.plan(10);
     t.test('should return falsey if current challenge not found', t => {
       t.plan(1);
       const entities = {
@@ -527,6 +615,53 @@ test('common/app/routes/challenges/utils', function(t) {
           superBlocks
         ),
         firstChallenge
+      );
+    });
+    t.test('should not skip coming soon in dev mode', t => {
+      t.plan(1);
+      const firstChallenge = {
+        dashedName: 'first-challenge',
+        block: 'next-block'
+      };
+      const comingSoon = {
+        dashedName: 'coming-soon',
+        block: 'next-block',
+        isComingSoon: true
+      };
+      const entities = {
+        challenge: {
+          'current-challenge': { block: 'current-block' },
+          [firstChallenge.dashedName]: firstChallenge,
+          'coming-soon': comingSoon
+        },
+        block: {
+          'current-block': { superBlock: 'current-super-block' },
+          'next-block': {
+            dashedName: 'next-block',
+            superBlock: 'next-super-block',
+            challenges: [ 'coming-soon', 'first-challenge' ]
+          }
+        },
+        superBlock: {
+          'current-super-block': { dashedName: 'current-super-block' },
+          'next-super-block': {
+            dashedName: 'next-super-block',
+            blocks: [ 'next-block' ]
+          }
+        }
+      };
+      const superBlocks = [
+        'current-super-block',
+        'next-super-block'
+      ];
+      t.isEqual(
+        getFirstChallengeOfNextSuperBlock(
+          'current-challenge',
+          entities,
+          superBlocks,
+          { isDev: true }
+        ),
+        comingSoon
       );
     });
     t.test('should skip coming soon block', t => {
