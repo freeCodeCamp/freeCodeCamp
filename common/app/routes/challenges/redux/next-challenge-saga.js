@@ -9,7 +9,9 @@ import {
   getFirstChallengeOfNextSuperBlock
 } from '../utils';
 import { randomVerb } from '../../../utils/get-words';
+import debug from 'debug';
 
+const isDev = debug.enabled('fcc:*');
 const { moveToNextChallenge } = types;
 
 export default function nextChallengeSaga(actions$, getState) {
@@ -24,11 +26,15 @@ export default function nextChallengeSaga(actions$, getState) {
         const state = getState();
         const { challenge, superBlocks } = state.challengesApp;
         const { entities } = state;
-        nextChallenge = getNextChallenge(challenge, entities);
+        nextChallenge = getNextChallenge(challenge, entities, { isDev });
         // block completed.
         if (!nextChallenge) {
           // isNewBlock = true;
-          nextChallenge = getFirstChallengeOfNextBlock(challenge, entities);
+          nextChallenge = getFirstChallengeOfNextBlock(
+            challenge,
+            entities,
+            { isDev }
+          );
         }
         // superBlock completed
         if (!nextChallenge) {
@@ -36,7 +42,8 @@ export default function nextChallengeSaga(actions$, getState) {
           nextChallenge = getFirstChallengeOfNextSuperBlock(
             challenge,
             entities,
-            superBlocks
+            superBlocks,
+            { isDev }
           );
         }
         /* this requires user data not available yet
