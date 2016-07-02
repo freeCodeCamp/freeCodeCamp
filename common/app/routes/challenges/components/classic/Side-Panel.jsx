@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import ReactDom from 'react-dom';
 import { createSelector } from 'reselect';
 import { connect } from 'react-redux';
 
@@ -73,6 +74,12 @@ export class SidePanel extends PureComponent {
         />
       );
     });
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (this.props.title !== nextProps.title) {
+      ReactDom.findDOMNode(this).scrollTop = 0;
+    }
   }
 
   render() {
