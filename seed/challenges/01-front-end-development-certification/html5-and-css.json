@@ -2975,14 +2975,14 @@
         "You can set an element's background color with the <code>background-color</code> property.",
         "For example, if you wanted an element's background color to be <code>green</code>, you'd put this within your <code>style</code> element:",
         "<blockquote>.green-background {<br>&nbsp;&nbsp;background-color: green;<br>}</blockquote>",
-        "Create a class called <code>gray-background</code> with the <code>background-color</code> of gray. Assign this class to your <code>div</code> element."
+        "Create a class called <code>silver-background</code> with the <code>background-color</code> of silver. Assign this class to your <code>div</code> element."
       ],
       "titleRU": "Присвойте цвет фона элементу div",
       "descriptionRU": [
         "Вы можете установить цвет фона элемента с помощью свойства <code>background-color</code>.",
         "Например, если бы вы хотели установить цвет фона элемента <code>зелёным</code>, вы бы использовали следующий стиль внутри вашего элемента <code>style</code>:",
         "<blockquote>.green-background {<br>&nbsp;&nbsp;background-color: green;<br>}</blockquote>",
-        "Создайте класс <code>gray-background</code> со значением свойства <code>background-color</code> равным <code>gray</code>. Назначьте этот класс вашему элементу <code>div</code>."
+        "Создайте класс <code>silver-background</code> со значением свойства <code>background-color</code> равным <code>silver</code>. Назначьте этот класс вашему элементу <code>div</code>."
       ],
       "challengeSeed": [
         "<link href=\"https://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
@@ -3044,8 +3044,8 @@
         "</form>"
       ],
       "tests": [
-        "assert($(\"div\").hasClass(\"gray-background\"), 'message: Give your <code>div</code> element the class <code>gray-background</code>.');",
-        "assert($(\".gray-background\").css(\"background-color\") === \"rgb(128, 128, 128)\", 'message: Your <code>div</code> element should have a gray background.');"
+        "assert($(\"div\").hasClass(\"silver-background\"), 'message: Give your <code>div</code> element the class <code>silver-background</code>.');",
+        "assert($(\".silver-background\").css(\"background-color\") === \"rgb(192, 192, 192)\", 'message: Your <code>div</code> element should have a silver background.');"
       ],
       "descriptionPtBR": [
         "Você pode acrescentar uma cor de fundo de um elemento com a propriedade <code>background-color</code>.",
@@ -3053,7 +3053,7 @@
         "<code>.green-background {</code>",
         "<code>&nbsp;&nbsp;background-color: green;</code>",
         "<code>}</code>",
-        "Crie uma classe chamada <code>gray-background</code> com a propriedade <code>background-color</code> em cinza (<code>gray</code>). Depois, adicione essa classe ao seu elemento <code>div</code>."
+        "Crie uma classe chamada <code>silver-background</code> com a propriedade <code>background-color</code> em cinza (<code>silver</code>). Depois, adicione essa classe ao seu elemento <code>div</code>."
       ],
       "namePtBR": "Dê uma Cor de Fundo a um Elemento Div",
       "type": "waypoint",
@@ -3063,14 +3063,14 @@
         "Puedes fijar el color de fondo de un elemento con la propiedad <code>background-color</code>.",
         "Por ejemplo, si quieres que el color de fondo de un elemento sea verde (<code>green</code>), dentro de tu elemento <code>style</code> pondrías:",
         "<blockquote>.green-background {<br>&nbsp;&nbsp;background-color: green;<br>}</blockquote>",
-        "Crea una clase llamada <code>gray-background</code> con la propiedad <code>background-color</code> en gris (<code>gray</code>). Asigna esta clase a tu elemento <code>div</code> ."
+        "Crea una clase llamada <code>silver-background</code> con la propiedad <code>background-color</code> en gris (<code>silver</code>). Asigna esta clase a tu elemento <code>div</code> ."
       ],
       "titleDe": "Gib einem Div Element eine Hintergrundfarbe",
       "descriptionDe": [
         "Du kannst die Hintergrundfarbe von einem Element mit dem <code>background-color</code> Attribut setzen",
         "Wenn du zum Beispiel die Hintergrundfarbe von einem Element <code>green</code> machen willst, schreibe dies in dein <code>style</code> Element:",
         "<blockquote>.green-background {<br>&nbsp;&nbsp;background-color: green;<br>}</blockquote>",
-        "Erstelle eine Klasse namens <code>gray-background</code> mit der <code>background-color</code> grau (gray). Füge diese Klasse deinem <code>div</code> Element hinzu"
+        "Erstelle eine Klasse namens <code>silver-background</code> mit der <code>background-color</code> grau (silver). Füge diese Klasse deinem <code>div</code> Element hinzu"
       ]
     },
     {
@@ -3119,8 +3119,8 @@
         "  .smaller-image {",
         "    width: 100px;",
         "  }",
-        "  .gray-background {",
-        "    background-color: gray;",
+        "  .silver-background {",
+        "    background-color: silver;",
         "  }",
         "</style>",
         "",
@@ -3130,7 +3130,7 @@
         "",
         "<a href=\"#\"><img class=\"smaller-image thick-green-border\" alt=\"A cute orange cat lying on its back\" src=\"https://bit.ly/fcc-relaxing-cat\"></a>",
         "",
-        "<div class=\"gray-background\">",
+        "<div class=\"silver-background\">",
         "  <p>Things cats love:</p>",
         "  <ul>",
         "    <li>cat nip</li>",
@@ -3233,8 +3233,8 @@
         "    width: 100px;",
         "  }",
         "",
-        "  .gray-background {",
-        "    background-color: gray;",
+        "  .silver-background {",
+        "    background-color: silver;",
         "  }",
         "</style>",
         "",
@@ -3244,7 +3244,7 @@
         "",
         "<a href=\"#\"><img class=\"smaller-image thick-green-border\" alt=\"A cute orange cat lying on its back\" src=\"https://bit.ly/fcc-relaxing-cat\"></a>",
         "",
-        "<div class=\"gray-background\">",
+        "<div class=\"silver-background\">",
         "  <p>Things cats love:</p>",
         "  <ul>",
         "    <li>cat nip</li>",
