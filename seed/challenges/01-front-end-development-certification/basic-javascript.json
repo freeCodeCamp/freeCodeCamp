@@ -293,7 +293,7 @@
         ""
       ],
       "tail": [
-        "(function(z){return 'sum='+z;})(sum);"
+        "(function(z){return 'sum = '+z;})(sum);"
       ],
       "solutions": [
         "var sum = 10 + 10;"
@@ -330,7 +330,7 @@
         ""
       ],
       "tail": [
-        "(function(z){return 'difference='+z;})(difference);"
+        "(function(z){return 'difference = '+z;})(difference);"
       ],
       "solutions": [
         "var difference = 45 - 33;"
@@ -920,7 +920,6 @@
         "",
         "// Only change code below this line",
         "",
-        "",
         ""
       ],
       "tail": [
@@ -1351,6 +1350,7 @@
         "",
         "// Only change code below this line",
         "firstLetterOfLastName = lastName;",
+        "",
         ""
       ],
       "tail": [
@@ -1610,7 +1610,7 @@
       ],
       "challengeSeed": [
         "// Example",
-        "var array = [\"John\", 23];",
+        "var ourArray = [\"John\", 23];",
         "",
         "// Only change code below this line.",
         "var myArray = [];",
@@ -2076,14 +2076,13 @@
       ],
       "challengeSeed": [
         "// Example",
-        "function reusableFunction() {",
+        "function ourReusableFunction() {",
         "  console.log(\"Heyya, World\");",
         "}",
         "",
-        "reusableFunction();",
+        "ourReusableFunction();",
         "",
         "// Only change code below this line",
-        "",
         ""
       ],
       "tail": [
@@ -2156,10 +2155,10 @@
       ],
       "challengeSeed": [
         "// Example",
-        "function functionWithArgs(a, b) {",
+        "function ourFunctionWithArgs(a, b) {",
         "  console.log(a - b);",
         "}",
-        "functionWithArgs(10, 5); // Outputs 5",
+        "ourFunctionWithArgs(10, 5); // Outputs 5",
         "",
         "// Only change code below this line.",
         "",
@@ -2621,7 +2620,7 @@
       ],
       "challengeSeed": [
         "// Example",
-        "function ourFunction(isItTrue) {",
+        "function ourTrueOrFalse(isItTrue) {",
         "  if (isItTrue) { ",
         "    return \"Yes, it's true\";",
         "  }",
@@ -4401,7 +4400,7 @@
         "Here is a nested object:",
         "<blockquote>var ourStorage = {<br>  \"desk\": {<br>    \"drawer\": \"stapler\"<br>  },<br>  \"cabinet\": {<br>    \"top drawer\": { <br>      \"folder1\": \"a file\",<br>      \"folder2\": \"secrets\"<br>    },<br>    \"bottom drawer\": \"soda\"<br>  }<br>}<br>ourStorage.cabinet[\"top drawer\"].folder2;  // \"secrets\"<br>ourStorage.desk.drawer; // \"stapler\"</blockquote>",
         "<h4>Instructions</h4>",
-        "Access the <code>myStorage</code> object to retrieve the contents of the <code>glove box</code>. Use bracket notation for properties with a space in their name."
+        "Access the <code>myStorage</code> object and assign the contents of the <code>glove box</code> property to the <code>gloveBoxContents<code> variable. Use bracket notation for properties with a space in their name."
       ],
       "releasedOn": "January 1, 2016",
       "challengeSeed": [
@@ -4739,6 +4738,7 @@
         "var myArray = [];",
         "",
         "// Only change code below this line.",
+        "",
         ""
       ],
       "tail": [
@@ -5091,12 +5091,12 @@
       ],
       "challengeSeed": [
         "// Example",
-        "function ourFunction(ourMin, ourMax) {",
+        "function ourRandomRange(ourMin, ourMax) {",
         "",
         "  return Math.floor(Math.random() * (ourMax - ourMin + 1)) + ourMin;",
         "}",
         "",
-        "ourFunction(1, 9);",
+        "ourRandomRange(1, 9);",
         "",
         "// Only change code below this line.",
         "",
