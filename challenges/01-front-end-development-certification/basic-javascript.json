@@ -4330,20 +4330,16 @@
       "id": "56533eb9ac21ba0edf2244cb",
       "title": "Manipulating Complex Objects",
       "description": [
-        "JavaScript objects are flexible because they allow for <dfn>Data Structures</dfn> with arbitrary combinations of <dfn>strings</dfn>, <dfn>numbers</dfn>, <dfn>booleans</dfn>, <dfn>arrays</dfn>, <dfn>functions</dfn>, and <dfn>objects</dfn>.",
-        "Here is an example of a complex data structure:",
+        "Sometimes you may want to store data in a flexible <dfn>Data Structure</dfn>. A JavaScript object is one way to handle flexible data. They allow for arbitrary combinations of <dfn>strings</dfn>, <dfn>numbers</dfn>, <dfn>booleans</dfn>, <dfn>arrays</dfn>, <dfn>functions</dfn>, and <dfn>objects</dfn>.",
+        "Here's an example of a complex data structure:",
         "<blockquote>var ourMusic = [<br>  {<br>    \"artist\": \"Daft Punk\",<br>    \"title\": \"Homework\",<br>    \"release_year\": 1997,<br>    \"formats\": [ <br>      \"CD\", <br>      \"Cassette\", <br>      \"LP\" ],<br>    \"gold\": true<br>  }<br>];</blockquote>",
-        "This is an array of objects and the object has various pieces of <dfn>metadata</dfn> about an album. It also has a nested <code>formats</code> array. Additional album records could be added to the top level array.",
-        "<strong>Note</strong><br>You will need a comma in between objects with more than one object in the array.",
-        "JavaScript Object Notation or <code>JSON</code> is a data interchange format used to store data (source: <a href=\"http://json.org/\">json.org</a>).",
-        "A property is the part of an object that associates a key (either a String value or a Symbol value) and a value (source: <a href=\"http://www.ecma-international.org/ecma-262/6.0/#sec-property\">ecma-international.org/ecma-262/6.0/#sec-property</a>). So, a property consists of a key - value pair. (source: <a href=\"http://spacetelescope.github.io/understanding-json-schema/reference/object.html#properties\">spacetelescope.github.io/understanding-json-schema/reference/object.html#properties</a>). Property keys (also known as names) should be in quotation marks.",
-        "Like JavaScript Objects, JSON is flexible because it is heterogeneous, meaning it permits <dfn>Data Structures</dfn> with arbitrary combinations of <dfn>strings</dfn>, <dfn>booleans</dfn>, <dfn>numbers</dfn>, <dfn>arrays</dfn>, and <dfn>objects</dfn>.",
-        "Here is an example of a JSON object:",
-        "<blockquote>var ourMusic = [<br>  {<br>    \"artist\": \"Daft Punk\",<br>    \"title\": \"Homework\",<br>    \"release_year\": 1997,<br>    \"formats\": [ <br>      \"CD\", <br>      \"Cassette\", <br>      \"LP\" ],<br>    \"gold\": true<br>  }<br>];</blockquote>",
-        "This is an array of objects and the object has various pieces of <dfn>metadata</dfn> about an album. It also has a nested <code>formats</code> array. Additional album records could be added to the top level array.",
-        "<strong>Note</strong><br>You will need to place a comma in between objects in JSON unless there is only one object in the array or containing object.",
+        "This is an array which contains one object inside. The object has various pieces of <dfn>metadata</dfn> about an album. It also has a nested <code>\"formats\"</code> array. If you want to add more album records, you can do this by adding records to the top level array.",
+        "Objects hold data in a property, which has a key-value format. In the example above, <code>\"artist\": \"Daft Punk\"</code> is a property that has a key of <code>\"artist\"</code> and a value of <code>\"Daft Punk\"</code>.",
+        "<a href='//json.org/' target=_blank>JavaScript Object Notation</a> or <code>JSON</code> is a related data interchange format used to store data.",
+        "<blockquote>{<br>  \"artist\": \"Daft Punk\",<br>  \"title\": \"Homework\",<br>  \"release_year\": 1997,<br>  \"formats\": [ <br>    \"CD\",<br>    \"Cassette\",<br>    \"LP\"<br>  ],<br>  \"gold\": true<br>}</blockquote>",
+        "<strong>Note</strong><br>You will need to place a comma in between every object in the array, unless it is the last object in the array.",
         "<h4>Instructions</h4>",
-        "Add a new album to the <code>myMusic</code> object. Add <code>artist</code> and <code>title</code> strings, <code>release_year</code> number, and a <code>formats</code> array of strings."
+        "Add a new album to the <code>myMusic</code> array. Add <code>artist</code> and <code>title</code> strings, <code>release_year</code> number, and a <code>formats</code> array of strings."
       ],
       "releasedOn": "January 1, 2016",
       "challengeSeed": [
