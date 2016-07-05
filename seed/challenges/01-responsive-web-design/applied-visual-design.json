@@ -1,0 +1,110 @@
+{
+  "name": "Applied Visual Design",
+  "order": 4,
+  "time": "5 hours",
+  "helpRoom": "Help",
+  "challenges": [
+    {
+      "id": "577af2a47f516b2611bb0674",
+      "title": "Create visual balance using the text-align property",
+      "description": [
+        "The <code>text-align</code> property in CSS is used to specify the alignment of text in an element. The most used values are <code>left</code>, <code>right</code>, <code>center</code> or <code>justify</code>.",
+        "Using <code>text-align</code>, align the following elements:",
+        "Center the <code>h3</code> tag.",
+        "Justify the <code>p</code> tag.",
+        "Align the <code>h5</code> element to the right."
+      ],
+      "challengeSeed": [
+        "<style>",
+        "",
+        "</style>",
+        "",
+        "<!-- Only change code above this line. -->",
+        "",
+        "<div class=\"thumbnail\">",
+        "",
+        "  <img src=\"https://bit.ly/smallgooglelogo\" alt=\"Google Logo\">",
+        "  <div class=\"caption\">",
+        "    <h3>Google</h3>",
+        "    <p>Google was founded by Larry Page and Sergey Brin while they were Ph.D. students at Stanford University.</p>",
+        "    <h5>Find out more <a href=\"https://en.wikipedia.org/wiki/Google\">here</a>.</h5>",
+        "  </div>",
+        "",
+        "</div>"
+      ],
+      "tests": [
+        "assert($(\"h3\").css('text-align') == 'center', 'message: Your <code>h3</code> tag should be centered.');",
+        "assert($(\"p\").css('text-align') == 'justify', 'message: Your <code>p</code> tag should be justified.');",
+        "assert($(\"h5\").css('text-align') == 'right', 'message: Your <code>h5</code> element should be aligned to the right.');"
+      ],
+      "type": "waypoint",
+      "challengeType": 0
+    },
+    {
+      "id": "577b06cf00cd357be21626f2",
+      "title": "Adjust the Width of an Element Using the Width Property",
+      "description": [
+        "The <code>width</code> property in CSS is used to specify the width of an element.",
+        "Here's an example of some code that sets the width of an image to <code>200px</code>:",
+        "<blockquote>img {<br>  width: 200px;<br>}</blockquote>",
+        "Change the width of Google's logo to <code>75px</code>."
+      ],
+      "challengeSeed": [
+        "<style>",
+        "",
+        "</style>",
+        "",
+        "<!-- Only change code above this line. -->",
+        "",
+        "<div class=\"thumbnail\">",
+        "",
+        "  <img src=\"https://bit.ly/smallgooglelogo\" alt=\"Google Logo\">",
+        "  <div class=\"caption\">",
+        "    <h3>Google</h3>",
+        "    <p>Google was founded by Larry Page and Sergey Brin while they were Ph.D. students at Stanford University.</p>",
+        "    <h5>Find out more <a href=\"https://en.wikipedia.org/wiki/Google\">here</a>.</h5>",
+        "  </div>",
+        "",
+        "</div>"
+      ],
+      "tests": [
+        "assert($(\"img\").width() == 75, 'message: Your image should be <code>75px</code> wide.');"
+      ],
+      "type": "waypoint",
+      "challengeType": 0
+    },
+    {
+      "id": "577b0f97b5cb49a1e3b0d0cc",
+      "title": "Adjust the Height of an Element Using the Height Property",
+      "description": [
+        "The <code>height</code> property in CSS is used to specify the height of an element.",
+        "Here's an example of some code that sets the height of an image to <code>20px</code>:",
+        "<blockquote>img {<br>  height: 20px;<br>}</blockquote>",
+        "Change the height of the <code>h3</code> tag to <code>40px</code>."
+      ],
+      "challengeSeed": [
+        "<style>",
+        "",
+        "</style>",
+        "",
+        "<!-- Only change code above this line. -->",
+        "",
+        "<div class=\"thumbnail\">",
+        "",
+        "  <img src=\"https://bit.ly/smallgooglelogo\" alt=\"Google Logo\">",
+        "  <div class=\"caption\">",
+        "    <h3>Google</h3>",
+        "    <p>Google was founded by Larry Page and Sergey Brin while they were Ph.D. students at Stanford University.</p>",
+        "    <h5>Find out more <a href=\"https://en.wikipedia.org/wiki/Google\">here</a>.</h5>",
+        "  </div>",
+        "",
+        "</div>"
+      ],
+      "tests": [
+        "assert($(\"h3\").height() == 40, 'message: Your <code>h3</code> should be <code>40px</code> heigh.');"
+      ],
+      "type": "waypoint",
+      "challengeType": 0
+    }
+  ]
+}
