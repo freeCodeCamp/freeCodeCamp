@@ -66,13 +66,14 @@ $(document).ready(function() {
         .catch(err => Observable.just({ err }));
     })
     .subscribe(
-      ({ err, output, originalCode }) => {
+      ({ err, output, originalCode, tests }) => {
         if (err) {
           console.error(err);
           return common.updateOutputDisplay('' + err);
         }
         common.codeStorage.updateStorage(challengeName, originalCode);
         common.codeUri.querify(originalCode);
+        common.displayTestResults(tests, true);
         common.updateOutputDisplay(output);
         return null;
       },
