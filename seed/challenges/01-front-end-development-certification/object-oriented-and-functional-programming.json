@@ -59,7 +59,7 @@
         "We are also able to create objects using <code>constructor</code> functions.",
         "A <code>constructor</code> function is given a capitalized name to make it clear that it is a <code>constructor</code>.",
         "Here's an example of a <code>constructor</code> function:",
-        "<blockquote>var Car = function() {<br>&nbsp;&nbsp;this.wheels = 4;<br>&nbsp;&nbsp;this.engines = 1;<br>&nbsp;&nbsp;this.seats = 1;<br>};</blockquote>",
+        "<blockquote>var Car = function() {<br>&nbsp;&nbsp;this.wheels = 4;<br>&nbsp;&nbsp;this.engines = 1;<br>&nbsp;&nbsp;this.seats = 5;<br>};</blockquote>",
         "In a <code>constructor</code> the <code>this</code> variable refers to the new object being created by the constructor. So when we write,",
         "<code>&nbsp;&nbsp;this.wheels = 4;</code>",
         "inside of the <code>constructor</code> we are giving the new object it creates a property called <code>wheels</code> with a value of <code>4</code>.",
@@ -70,7 +70,7 @@
         "var Car = function() {",
         "  this.wheels = 4;",
         "  this.engines = 1;",
-        "  this.seats = 1;",
+        "  this.seats = 5;",
         "};",
         "",
         "// Only change code below this line.",
@@ -83,7 +83,7 @@
         "(function() {return JSON.stringify(new MotorBike());})();"
       ],
       "solutions": [
-        "var Car = function() {\n  this.wheels = 4;\n  this.engines = 1;\n  this.seats = 1;\n};\n\nvar myCar = new Car();\n\nvar MotorBike = function() {\n  this.engines = 1;\n  this.seats = 1;\n  this.wheels = 4;\n};\n\nvar myMotorBike = new MotorBike();"
+        "var Car = function() {\n  this.wheels = 4;\n  this.engines = 1;\n  this.seats = 5;\n};\n\nvar myCar = new Car();\n\nvar MotorBike = function() {\n  this.engines = 1;\n  this.seats = 1;\n  this.wheels = 4;\n};\n\nvar myMotorBike = new MotorBike();"
       ],
       "tests": [
         "assert(typeof (new MotorBike()).engines === 'number', 'message: <code>MotorBike</code> should have a <code>engines</code> attribute set to a number.');",
