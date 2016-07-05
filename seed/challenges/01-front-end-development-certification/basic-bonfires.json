@@ -120,7 +120,12 @@
       ],
       "challengeSeed": [
         "function factorialize(num) {",
-        "  return num;",
+        "  var result;",
+        "",
+        "",
+        "",
+        "",
+        "  return result;",
         "}",
         "",
         "factorialize(5);"
