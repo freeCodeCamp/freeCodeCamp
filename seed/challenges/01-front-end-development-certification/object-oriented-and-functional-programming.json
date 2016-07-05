@@ -306,7 +306,6 @@
       "description": [
         "The <code>map</code> method is a convenient way to iterate through arrays. Here's an example usage:",
         "<blockquote>var oldArray = [1, 2, 3];<br>var timesFour = oldArray.map(function(val){<br>&nbsp;&nbsp;return val * 4;<br>});<br>console.log(timesFour); // returns [4, 8, 12]<br>console.log(oldArray);  // returns [1, 2, 3]</blockquote>",
-        "",
         "The <code>map</code> method will iterate through every element of the array, creating a new array with values that have been modified by the callback function, and return it.  Note that it does not modify the original array.",
         "In our example the callback only uses the value of the array element (the <code>val</code> argument) but your callback can also include arguments for the <code>index</code> and <code>array</code> being acted on.",
         "Use the map function to add 3 to every value in the variable <code>oldArray</code>, and save the results into variable <code>newArray</code>. oldArray should not change."
@@ -338,7 +337,6 @@
         "<code>var porCuatro = vectorAntiguo.map(function(val){</code>",
         "<code>&nbsp;&nbsp;return val * 4;</code>",
         "<code>});</code>",
-        "",
         "El método <code>map</code> iterará sobre cada elemento del vector, creando un nuevo vector con los valores modificados por la función de devolución de llamada (<em>callback</em>) y retornará ese nuevo arreglo.",
         "En nuestro ejemplo, la función de devolución de llamada sólo usa el valor del elemento del vector sobre el que está iterando (parámetro <code>val</code>), pero tu función de devolución de llamada también puede incluir parámetros para el <code>índice</code> y el <code>vector</code> completo. ",
         "Usa la función <code>map</code> para añadir 3 a cada valor de la variable <code>oldArray</code>."
