@@ -129,7 +129,7 @@
         "var Car = function() {",
         "  this.wheels = 4;",
         "  this.engines = 1;",
-        "  this.seats = 1;",
+        "  this.seats = 5;",
         "};",
         "",
         "// Only change code below this line.",
@@ -140,7 +140,7 @@
         "(function() {return JSON.stringify(myCar);})();"
       ],
       "solutions": [
-        "var Car = function() {\n  this.wheels = 4;\n  this.engines = 1;\n  this.seats = 1;\n};\n\nvar myCar = new Car();\n\nmyCar.nickname = \"Lucy\";"
+        "var Car = function() {\n  this.wheels = 4;\n  this.engines = 1;\n  this.seats = 5;\n};\n\nvar myCar = new Car();\n\nmyCar.nickname = \"Lucy\";"
       ],
       "tests": [
         "assert((new Car()).wheels === 4, 'message: The property <code>wheels</code> should still be <code>4</code> in the object <code>constructor</code>.');",
