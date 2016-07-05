@@ -305,7 +305,7 @@
       "title": "Iterate over Arrays with .map",
       "description": [
         "The <code>map</code> method is a convenient way to iterate through arrays. Here's an example usage:",
-        "<blockquote>var timesFour = oldArray.map(function(val){<br>&nbsp;&nbsp;return val * 4;<br>});</blockquote>",
+        "<blockquote>var oldArray = [1, 2, 3];<br>var timesFour = oldArray.map(function(val){<br>&nbsp;&nbsp;return val * 4;<br>});<br>console.log(timesFour); // returns [4, 8, 12]<br>console.log(oldArray);  // returns [1, 2, 3]</blockquote>",
         "",
         "The <code>map</code> method will iterate through every element of the array, creating a new array with values that have been modified by the callback function, and return it.  Note that it does not modify the original array.",
         "In our example the callback only uses the value of the array element (the <code>val</code> argument) but your callback can also include arguments for the <code>index</code> and <code>array</code> being acted on.",
