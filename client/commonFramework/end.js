@@ -124,7 +124,8 @@ $(document).ready(function() {
     );
 
   // initial challenge run to populate tests
-  if (challengeType === challengeTypes.HTML) {
+  if (challengeType === challengeTypes.HTML
+      || challengeType === challengeTypes.RESPONSIVE) {
     var $preview = $('#preview');
     return Observable.fromCallback($preview.ready, $preview)()
       .delay(500)

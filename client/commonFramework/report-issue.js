@@ -22,6 +22,7 @@ window.common = (function({ common = { init: [] } }) {
         var type;
         switch (common.challengeType) {
           case common.challengeTypes.HTML:
+          case common.challengeTypes.RESPONSIVE:
             type = 'html';
             break;
           case common.challengeTypes.JS:

@@ -20,7 +20,8 @@ window.common = (function(global) {
     BASEJUMP: '4',
     BONFIRE: '5',
     HIKES: '6',
-    STEP: '7'
+    STEP: '7',
+    RESPONSIVE: '8'
   };
 
 

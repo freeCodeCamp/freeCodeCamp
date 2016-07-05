@@ -36,7 +36,8 @@ const challengeView = {
   3: 'challenges/showZiplineOrBasejump',
   4: 'challenges/showZiplineOrBasejump',
   5: 'challenges/showBonfire',
-  7: 'challenges/showStep'
+  7: 'challenges/showStep',
+  8: 'challenges/showResponsive'
 };
 
 function isChallengeCompleted(user, challengeId) {
