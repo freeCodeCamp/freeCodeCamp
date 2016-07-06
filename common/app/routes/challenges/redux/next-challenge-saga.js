@@ -2,13 +2,13 @@ import { Observable } from 'rx';
 import { push } from 'react-router-redux';
 import types from './types';
 import { resetUi, updateCurrentChallenge } from './actions';
-import { createErrorObservable, makeToast } from '../../../redux/actions';
+import { createErrorObservable } from '../../../redux/actions';
+import { makeToast } from '../../../toasts/redux/actions';
 import {
   getNextChallenge,
   getFirstChallengeOfNextBlock,
   getFirstChallengeOfNextSuperBlock
 } from '../utils';
-import { randomVerb } from '../../../utils/get-words';
 import debug from 'debug';
 
 const isDev = debug.enabled('fcc:*');
@@ -64,10 +64,7 @@ export default function nextChallengeSaga(actions$, getState) {
         return Observable.of(
           updateCurrentChallenge(nextChallenge),
           resetUi(),
-          makeToast({
-            title: randomVerb(),
-            message: 'Your next challenge has arrived.'
-          }),
+          makeToast({ message: 'Your next challenge arrived.' }),
           push(`/challenges/${nextChallenge.block}/${nextChallenge.dashedName}`)
         );
       } catch (err) {

@@ -10,7 +10,6 @@ export default createTypes([
   'updateCompletedChallenges',
   'showSignIn',
 
-  'makeToast',
   'handleError',
   'toggleNightMode',
   // used to hit the server

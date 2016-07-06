@@ -94,6 +94,7 @@
     "react-images": "^0.4.6",
     "react-motion": "~0.4.2",
     "react-no-ssr": "^1.0.1",
+    "react-notification": "^5.0.7",
     "react-pure-render": "^1.0.2",
     "react-redux": "^4.0.6",
     "react-router": "^2.0.0",
