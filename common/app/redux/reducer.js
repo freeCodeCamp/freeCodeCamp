@@ -19,11 +19,6 @@ export default handleActions(
       title: payload + ' | Free Code Camp'
     }),
 
-    [types.makeToast]: (state, { payload: toast }) => ({
-      ...state,
-      toast
-    }),
-
     [types.updateThisUser]: (state, { payload: user }) => ({
       ...state,
       user,

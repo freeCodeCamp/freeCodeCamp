@@ -11,7 +11,7 @@ import Output from './Output.jsx';
 import ToolPanel from './Tool-Panel.jsx';
 import { challengeSelector } from '../../redux/selectors';
 import { updateHint, executeChallenge } from '../../redux/actions';
-import { makeToast } from '../../../../redux/actions';
+import { makeToast } from '../../../../toasts/redux/actions';
 
 const bindableActions = { makeToast, executeChallenge, updateHint };
 const mapStateToProps = createSelector(

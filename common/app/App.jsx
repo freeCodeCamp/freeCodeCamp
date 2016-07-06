@@ -1,6 +1,5 @@
 import React, { PropTypes } from 'react';
 import { Button, Row } from 'react-bootstrap';
-import { ToastMessage, ToastContainer } from 'react-toastr';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 
@@ -16,10 +15,8 @@ import {
 import { submitChallenge } from './routes/challenges/redux/actions';
 
 import Nav from './components/Nav';
-import { randomCompliment } from './utils/get-words';
+import Toasts from './toasts/Toasts.jsx';
 import { userSelector } from './redux/selectors';
-
-const toastMessageFactory = React.createFactory(ToastMessage.animation);
 
 const mapStateToProps = createSelector(
   userSelector,
@@ -34,7 +31,6 @@ const mapStateToProps = createSelector(
     toast,
     isMapDrawerOpen,
     isMapAlreadyLoaded,
-    showChallengeComplete
   ) => ({
     username,
     points,
@@ -43,7 +39,6 @@ const mapStateToProps = createSelector(
     shouldShowSignIn,
     isMapDrawerOpen,
     isMapAlreadyLoaded,
-    showChallengeComplete,
     isSignedIn: !!username
   })
 );
@@ -72,7 +67,6 @@ export class FreeCodeCamp extends React.Component {
     toast: PropTypes.object,
     updateNavHeight: PropTypes.func,
     initWindowHeight: PropTypes.func,
-    showChallengeComplete: PropTypes.number,
     submitChallenge: PropTypes.func,
     isMapDrawerOpen: PropTypes.bool,
     isMapAlreadyLoaded: PropTypes.bool,
@@ -82,38 +76,6 @@ export class FreeCodeCamp extends React.Component {
     shouldShowSignIn: PropTypes.bool,
     params: PropTypes.object
   };
-
-  componentWillReceiveProps({
-    toast: nextToast = {},
-    showChallengeComplete: nextCC = 0
-  }) {
-    const {
-      toast = {},
-      showChallengeComplete
-    } = this.props;
-    if (toast.id !== nextToast.id) {
-      this.refs.toaster[nextToast.type || 'success'](
-        nextToast.message,
-        nextToast.title,
-        {
-          closeButton: true,
-          timeOut: 10000
-        }
-      );
-    }
-
-    if (nextCC !== showChallengeComplete) {
-      this.refs.toaster.success(
-        this.renderChallengeComplete(),
-        randomCompliment(),
-        {
-          closeButton: true,
-          timeOut: 0,
-          extendedTimeOut: 0
-        }
-      );
-    }
-  }
 
   componentDidMount() {
     this.props.initWindowHeight();
@@ -173,11 +135,7 @@ export class FreeCodeCamp extends React.Component {
           isOpen={ isMapDrawerOpen }
           toggleMapDrawer={ toggleMapDrawer }
         />
-        <ToastContainer
-          className='toast-bottom-right'
-          ref='toaster'
-          toastMessageFactory={ toastMessageFactory }
-        />
+        <Toasts />
       </div>
     );
   }

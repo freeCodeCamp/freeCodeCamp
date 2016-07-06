@@ -3,7 +3,8 @@ import types from './types';
 import { getMouse } from '../utils';
 
 import { submitChallenge, videoCompleted } from './actions';
-import { createErrorObservable, makeToast } from '../../../redux/actions';
+import { createErrorObservable } from '../../../redux/actions';
+import { makeToast } from '../../../toasts/redux/actions';
 import { challengeSelector } from './selectors';
 
 export default function answerSaga(action$, getState) {
@@ -54,11 +55,7 @@ export default function answerSaga(action$, getState) {
       if (answer !== finalAnswer) {
         let infoAction;
         if (info) {
-          infoAction = makeToast({
-            title: 'Have a hint',
-            message: info,
-            type: 'info'
-          });
+          infoAction = makeToast({ message: info });
         }
 
         return Observable
