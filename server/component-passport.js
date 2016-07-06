@@ -38,9 +38,7 @@ const passportOptions = {
         getSocialProvider(provider),
         profile
       );
-    }
-
-    if (/github/.test(provider)) {
+    } else {
       userObj = setProfileFromGithub(userObj, profile, profile._json);
     }
     return userObj;
