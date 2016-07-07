@@ -59,7 +59,7 @@
         "We are also able to create objects using <code>constructor</code> functions.",
         "A <code>constructor</code> function is given a capitalized name to make it clear that it is a <code>constructor</code>.",
         "Here's an example of a <code>constructor</code> function:",
-        "<blockquote>var Car = function() {<br>&nbsp;&nbsp;this.wheels = 4;<br>&nbsp;&nbsp;this.engines = 1;<br>&nbsp;&nbsp;this.seats = 1;<br>};</blockquote>",
+        "<blockquote>var Car = function() {<br>&nbsp;&nbsp;this.wheels = 4;<br>&nbsp;&nbsp;this.engines = 1;<br>&nbsp;&nbsp;this.seats = 5;<br>};</blockquote>",
         "In a <code>constructor</code> the <code>this</code> variable refers to the new object being created by the constructor. So when we write,",
         "<code>&nbsp;&nbsp;this.wheels = 4;</code>",
         "inside of the <code>constructor</code> we are giving the new object it creates a property called <code>wheels</code> with a value of <code>4</code>.",
@@ -70,7 +70,7 @@
         "var Car = function() {",
         "  this.wheels = 4;",
         "  this.engines = 1;",
-        "  this.seats = 1;",
+        "  this.seats = 5;",
         "};",
         "",
         "// Only change code below this line.",
@@ -83,7 +83,7 @@
         "(function() {return JSON.stringify(new MotorBike());})();"
       ],
       "solutions": [
-        "var Car = function() {\n  this.wheels = 4;\n  this.engines = 1;\n  this.seats = 1;\n};\n\nvar myCar = new Car();\n\nvar MotorBike = function() {\n  this.engines = 1;\n  this.seats = 1;\n  this.wheels = 4;\n};\n\nvar myMotorBike = new MotorBike();"
+        "var Car = function() {\n  this.wheels = 4;\n  this.engines = 1;\n  this.seats = 5;\n};\n\nvar myCar = new Car();\n\nvar MotorBike = function() {\n  this.engines = 1;\n  this.seats = 1;\n  this.wheels = 4;\n};\n\nvar myMotorBike = new MotorBike();"
       ],
       "tests": [
         "assert(typeof (new MotorBike()).engines === 'number', 'message: <code>MotorBike</code> should have a <code>engines</code> attribute set to a number.');",
@@ -305,8 +305,7 @@
       "title": "Iterate over Arrays with .map",
       "description": [
         "The <code>map</code> method is a convenient way to iterate through arrays. Here's an example usage:",
-        "<blockquote>var timesFour = oldArray.map(function(val){<br>&nbsp;&nbsp;return val * 4;<br>});</blockquote>",
-        "",
+        "<blockquote>var oldArray = [1, 2, 3];<br>var timesFour = oldArray.map(function(val){<br>&nbsp;&nbsp;return val * 4;<br>});<br>console.log(timesFour); // returns [4, 8, 12]<br>console.log(oldArray);  // returns [1, 2, 3]</blockquote>",
         "The <code>map</code> method will iterate through every element of the array, creating a new array with values that have been modified by the callback function, and return it.  Note that it does not modify the original array.",
         "In our example the callback only uses the value of the array element (the <code>val</code> argument) but your callback can also include arguments for the <code>index</code> and <code>array</code> being acted on.",
         "Use the map function to add 3 to every value in the variable <code>oldArray</code>, and save the results into variable <code>newArray</code>. oldArray should not change."
@@ -338,7 +337,6 @@
         "<code>var porCuatro = vectorAntiguo.map(function(val){</code>",
         "<code>&nbsp;&nbsp;return val * 4;</code>",
         "<code>});</code>",
-        "",
         "El método <code>map</code> iterará sobre cada elemento del vector, creando un nuevo vector con los valores modificados por la función de devolución de llamada (<em>callback</em>) y retornará ese nuevo arreglo.",
         "En nuestro ejemplo, la función de devolución de llamada sólo usa el valor del elemento del vector sobre el que está iterando (parámetro <code>val</code>), pero tu función de devolución de llamada también puede incluir parámetros para el <code>índice</code> y el <code>vector</code> completo. ",
         "Usa la función <code>map</code> para añadir 3 a cada valor de la variable <code>oldArray</code>."
@@ -444,7 +442,8 @@
         "If no compare (callback) function is passed in, it will convert the values to strings and sort alphabetically.",
         "Here is an example of using sort with a compare function that will sort the elements from smallest to largest number:",
         "<blockquote>var array = [1, 12, 21, 2];<br>array.sort(function(a, b) {<br>&nbsp;&nbsp;return a - b;<br>});</blockquote>",
-        "Use <code>sort</code> to sort <code>array</code> from largest to smallest."
+        "Use <code>sort</code> to sort <code>array</code> from largest to smallest.",
+        "Further explanation on the <code>.sort()</code> method can be found <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort' target='_blank'>here</a>."
       ],
       "challengeSeed": [
         "var array = [1, 12, 21, 2];",
