@@ -2052,7 +2052,7 @@
         "<h4>Instructions</h4>",
         "<ol><li>Create a function called <code>reusableFunction</code> which prints <code>\"Hi World\"</code> to the dev console.</li><li>Call the function.</li></ol>"
       ],
-	  "head": [
+      "head": [
         "var logOutput = \"\";",
         "var originalConsole = console",
         "function capture() {",
@@ -4513,15 +4513,15 @@
       "description": [
         "You are given a JSON object representing a part of your musical album collection. Each album has several properties and a unique id number as its key. Not all albums have complete information.",
         "Write a function which takes an album's <code>id</code> (like <code>2548</code>), a property <code>prop</code> (like <code>\"artist\"</code> or <code>\"tracks\"</code>), and a <code>value</code> (like <code>\"Addicted to Love\"</code>) to modify the data in this collection.",
-        "If <code>prop</code> isn't <code>\"tracks\"</code> and <code>value</code> isn't blank, update or set the <code>value</code> for that record album's property.",
+        "If <code>prop</code> isn't <code>\"tracks\"</code> and <code>value</code> isn't empty (<code>\"\"</code>), update or set the <code>value</code> for that record album's property.",
         "Your function must always return the entire collection object.",
         "There are several rules for handling incomplete data:",
         "If <code>prop</code> is <code>\"tracks\"</code> but the album doesn't have a <code>\"tracks\"</code> property, create an empty array before adding the new value to the album's corresponding property.",
-        "If <code>prop</code> is <code>\"tracks\"</code> and <code>value</code> isn't blank, push the <code>value</code> onto the end of the album's existing <code>tracks</code> array.",
-        "If <code>value</code> is blank, delete that property from the album.",
+        "If <code>prop</code> is <code>\"tracks\"</code> and <code>value</code> isn't empty (<code>\"\"</code>), push the <code>value</code> onto the end of the album's existing <code>tracks</code> array.",
+        "If <code>value</code> is empty (<code>\"\"</code>), delete the given <code>prop</code> property from the album.",
         "<strong>Hints</strong><br>Use <code>bracket notation</code> when <a href=\"accessing-objects-properties-with-variables\" target=\"_blank\">accessing object properties with variables</a>.",
         "Push is an array method you can read about on <a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push\">Mozilla Developer Network</a>.",
-        "You may refer back to <a href=\"manipulating-complex-objects\">Manipulating Complex Objects</a>Introducing JavaScript Object Notation (JSON)</a> for a refresher."
+        "You may refer back to <a href=\"manipulating-complex-objects\">Manipulating Complex Objects</a> Introducing JavaScript Object Notation (JSON) for a refresher."
       ],
       "releasedOn": "January 1, 2016",
       "challengeSeed": [
@@ -4556,8 +4556,8 @@
         "",
         "// Only change code below this line",
         "function updateRecords(id, prop, value) {",
-        "",
-        "",
+        "  ",
+        "  ",
         "  return collection;",
         "}",
         "",
@@ -4566,10 +4566,10 @@
         ""
       ],
       "tail": [
-        "(function(x) { return \"collection = \\n\" + JSON.stringify(x, '\\n', 2); })(collection);"
+        ";(function(x) { return \"collection = \\n\" + JSON.stringify(x, '\\n', 2); })(collection);"
       ],
       "solutions": [
-        "var collection = {\n    2548: {\n      album: \"Slippery When Wet\",\n      artist: \"Bon Jovi\",\n      tracks: [ \n        \"Let It Rock\", \n        \"You Give Love a Bad Name\" \n      ]\n    },\n    2468: {\n      album: \"1999\",\n      artist: \"Prince\",\n      tracks: [ \n        \"1999\", \n        \"Little Red Corvette\" \n      ]\n    },\n    1245: {\n      artist: \"Robert Palmer\",\n      tracks: [ ]\n    },\n    5439: {\n      album: \"ABBA Gold\"\n    }\n};\n// Keep a copy of the collection for tests\nvar collectionCopy = JSON.parse(JSON.stringify(collection));\n\n// Only change code below this line\nfunction updateRecords(id, prop, value) {\n  if(value !== \"\") {\n    if(prop === \"tracks\") {\n      collection[id][prop]= collection[id][prop] || [];\n collection[id][prop].push(value);\n    } else {\n      collection[id][prop] = value;\n    }\n  } else {\n    delete collection[id][prop];\n  }\n\n  return collection;\n}"
+        "var collection = {\n    2548: {\n      album: \"Slippery When Wet\",\n      artist: \"Bon Jovi\",\n      tracks: [ \n        \"Let It Rock\", \n        \"You Give Love a Bad Name\" \n      ]\n    },\n    2468: {\n      album: \"1999\",\n      artist: \"Prince\",\n      tracks: [ \n        \"1999\", \n        \"Little Red Corvette\" \n      ]\n    },\n    1245: {\n      artist: \"Robert Palmer\",\n      tracks: [ ]\n    },\n    5439: {\n      album: \"ABBA Gold\"\n    }\n};\n// Keep a copy of the collection for tests\nvar collectionCopy = JSON.parse(JSON.stringify(collection));\n\n// Only change code below this line\nfunction updateRecords(id, prop, value) {\n  if(value === \"\") delete collection[id][prop];\n  else if(prop === \"tracks\") {\n    collection[id][prop] = collection[id][prop] || [];\n    collection[id][prop].push(value);\n  } else {\n    collection[id][prop] = value;\n  }\n  \n  return collection;\n}"
       ],
       "tests": [
         "collection = collectionCopy; assert(updateRecords(5439, \"artist\", \"ABBA\")[5439][\"artist\"] === \"ABBA\", 'message: After <code>updateRecords(5439, \"artist\", \"ABBA\")</code>, <code>artist</code> should be <code>\"ABBA\"</code>');",
