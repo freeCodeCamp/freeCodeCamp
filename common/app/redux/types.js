@@ -1,14 +1,52 @@
 import createTypes from '../utils/create-types';
 
 export default createTypes([
+  'analytics',
   'updateTitle',
+  'updateAppLang',
 
   'fetchUser',
-  'setUser',
+  'addUser',
+  'updateThisUser',
+  'updateUserPoints',
+  'updateUserFlag',
+  'updateUserEmail',
+  'updateUserLang',
+  'updateUserChallenge',
+  'showSignIn',
+  'loadCurrentChallenge',
+  'updateMyCurrentChallenge',
 
-  'makeToast',
-  'updatePoints',
   'handleError',
   // used to hit the server
-  'hardGoTo'
+  'hardGoTo',
+  'delayedRedirect',
+
+  'initWindowHeight',
+  'updateWindowHeight',
+  'updateNavHeight',
+
+  // data handling
+  'updateChallengesData',
+  'updateJobsData',
+  'updateHikesData',
+
+  // drawers
+  'toggleMapDrawer',
+  'closeMapDrawer',
+  'toggleWikiDrawer',
+
+  // chat
+  'openMainChat',
+  'closeMainChat',
+  'toggleMainChat',
+
+  'openHelpChat',
+  'closeHelpChat',
+  'toggleHelpChat',
+
+  // night mode
+  'toggleNightMode',
+  'updateTheme',
+  'addThemeToBody'
 ], 'app');

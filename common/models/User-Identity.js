@@ -7,8 +7,8 @@ import {
   getUsernameFromProvider,
   getSocialProvider
 } from '../../server/utils/auth';
+import { defaultProfileImage } from '../utils/constantStrings.json';
 
-const { defaultProfileImage } = require('../utils/constantStrings.json');
 const githubRegex = (/github/i);
 const debug = debugFactory('fcc:models:userIdent');
 

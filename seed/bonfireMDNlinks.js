@@ -15,6 +15,7 @@ var links = {
   "HTML Entities": "http://dev.w3.org/html5/html-author/charref",
   "Symmetric Difference": "https://www.youtube.com/watch?v=PxffSUQRkG4",
   "Roman Numerals": "http://www.mathsisfun.com/roman-numerals.html",
+  "Floating Point Guide": "http://floating-point-gui.de",
 
   // ========= GLOBAL OBJECTS
   "Global Array Object": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array",
@@ -92,7 +93,9 @@ var links = {
   "Arithmetic Operators": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators",
   "Comparison Operators": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators",
   "Details of the Object Model": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Details_of_the_Object_Model",
-  "For Loops": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for"
+  "For Loops": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for",
+  "Truthy": "https://developer.mozilla.org/en-US/docs/Glossary/Truthy",
+  "Falsy": "https://developer.mozilla.org/en-US/docs/Glossary/Falsy"
 };
 
 module.exports = links;

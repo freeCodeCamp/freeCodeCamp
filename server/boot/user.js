@@ -8,18 +8,20 @@ import {
   dataVisChallengeId,
   backEndChallengeId
 } from '../utils/constantStrings.json';
-
 import certTypes from '../utils/certTypes.json';
-
-import { ifNoUser401, ifNoUserRedirectTo } from '../utils/middleware';
+import {
+  ifNoUser401,
+  ifNoUserRedirectTo
+} from '../utils/middleware';
 import { observeQuery } from '../utils/rx';
 import {
   prepUniqueDays,
   calcCurrentStreak,
   calcLongestStreak
 } from '../utils/user-stats';
-
-import { flashIfNotVerified } from '../utils/middleware';
+import supportedLanguages from '../../common/utils/supported-languages';
+import createNameIdMap from '../../common/utils/create-name-id-map';
+import { cachedMap } from '../utils/map';
 
 const debug = debugFactory('fcc:boot:user');
 const sendNonUserToMap = ifNoUserRedirectTo('/map');
@@ -83,25 +85,35 @@ function getChallengeGroup(challenge) {
   return 'challenges';
 }
 
-// buildDisplayChallenges(challengeMap: Object, tz: String) => Observable[{
+// buildDisplayChallenges(
+//   entities: { challenge: Object, challengeIdToName: Object },
+//   challengeMap: Object,
+//   tz: String
+// ) => Observable[{
 //   algorithms: Array,
 //   projects: Array,
 //   challenges: Array
 // }]
-function buildDisplayChallenges(challengeMap = {}, timezone) {
-  return Observable.from(Object.keys(challengeMap))
-    .map(challengeId => challengeMap[challengeId])
-    .map(challenge => {
-      let finalChallenge = { ...challenge };
-      if (challenge.completedDate) {
+function buildDisplayChallenges(
+  { challenge: challengeMap = {}, challengeIdToName },
+  userChallengeMap = {},
+  timezone
+) {
+  return Observable.from(Object.keys(userChallengeMap))
+    .map(challengeId => userChallengeMap[challengeId])
+    .map(userChallenge => {
+      const challengeId = userChallenge.id;
+      const challenge = challengeMap[ challengeIdToName[challengeId] ];
+      let finalChallenge = { ...userChallenge, ...challenge };
+      if (userChallenge.completedDate) {
         finalChallenge.completedDate = moment
-          .tz(challenge.completedDate, timezone)
+          .tz(userChallenge.completedDate, timezone)
           .format(dateFormat);
       }
 
-      if (challenge.lastUpdated) {
+      if (userChallenge.lastUpdated) {
         finalChallenge.lastUpdated = moment
-          .tz(challenge.lastUpdated, timezone)
+          .tz(userChallenge.lastUpdated, timezone)
           .format(dateFormat);
       }
 
@@ -123,8 +135,11 @@ function buildDisplayChallenges(challengeMap = {}, timezone) {
 }
 
 module.exports = function(app) {
-  var router = app.loopback.Router();
-  var User = app.models.User;
+  const router = app.loopback.Router();
+  const api = app.loopback.Router();
+  const User = app.models.User;
+  const Block = app.models.Block;
+  const map$ = cachedMap(Block);
   function findUserByUsername$(username, fields) {
     return observeQuery(
       User,
@@ -142,86 +157,65 @@ module.exports = function(app) {
   router.get('/logout', function(req, res) {
     res.redirect(301, '/signout');
   });
+  router.get('/signup', getEmailSignup);
   router.get('/signin', getSignin);
   router.get('/signout', signout);
   router.get('/forgot', getForgot);
-  router.post('/forgot', postForgot);
+  api.post('/forgot', postForgot);
   router.get('/reset-password', getReset);
-  router.post('/reset-password', postReset);
+  api.post('/reset-password', postReset);
   router.get('/email-signup', getEmailSignup);
   router.get('/email-signin', getEmailSignin);
   router.get('/deprecated-signin', getDepSignin);
   router.get('/update-email', getUpdateEmail);
   router.get(
-    '/toggle-lockdown-mode',
+    '/delete-my-account',
     sendNonUserToMap,
-    toggleLockdownMode
+    showDelete
   );
-  router.get(
-    '/toggle-announcement-email-mode',
-    sendNonUserToMap,
-    toggleReceivesAnnouncementEmails
-  );
-  router.get(
-    '/toggle-notification-email-mode',
-    sendNonUserToMap,
-    toggleReceivesNotificationEmails
-  );
-  router.get(
-    '/toggle-quincy-email-mode',
-    sendNonUserToMap,
-    toggleReceivesQuincyEmails
-  );
-  router.post(
+  api.post(
     '/account/delete',
     ifNoUser401,
     postDeleteAccount
   );
-  router.get(
+  api.get(
     '/account',
     sendNonUserToMap,
     getAccount
   );
-  router.get(
-    '/settings',
-    sendNonUserToMap,
-    flashIfNotVerified,
-    getSettings
-  );
-  // router.get('/vote1', vote1);
-  // router.get('/vote2', vote2);
 
   // Ensure these are the last routes!
-  router.get(
+  api.get(
     '/:username/front-end-certification',
     showCert.bind(null, certTypes.frontEnd)
   );
 
-  router.get(
+  api.get(
     '/:username/data-visualization-certification',
     showCert.bind(null, certTypes.dataVis)
   );
 
-  router.get(
+  api.get(
     '/:username/back-end-certification',
     showCert.bind(null, certTypes.backEnd)
   );
 
-  router.get(
+  api.get(
     '/:username/full-stack-certification',
     (req, res) => res.redirect(req.url.replace('full-stack', 'back-end'))
   );
 
-  router.get('/:username', returnUser);
+  router.get('/:username', showUserProfile);
 
-  app.use(router);
+  app.use('/:lang', router);
+  app.use(api);
 
   function getSignin(req, res) {
     if (req.user) {
       return res.redirect('/');
     }
     return res.render('account/signin', {
-      title: 'Sign in to Free Code Camp using a Social Media Account'
+      title: 'Sign in to Free Code Camp'
     });
   }
 
@@ -272,15 +266,9 @@ module.exports = function(app) {
     return res.redirect('/' + username);
   }
 
-  function getSettings(req, res) {
-    res.render('account/settings', {
-        title: 'Settings'
-    });
-  }
-
-  function returnUser(req, res, next) {
+  function showUserProfile(req, res, next) {
     const username = req.params.username.toLowerCase();
-    const { user, path } = req;
+    const { user } = req;
 
     // timezone of signed-in account
     // to show all date related components
@@ -298,10 +286,7 @@ module.exports = function(app) {
     return User.findOne$(query)
       .filter(userPortfolio => {
         if (!userPortfolio) {
-          req.flash('errors', {
-            msg: `We couldn't find a page for ${ path }`
-          });
-          res.redirect('/');
+          next();
         }
         return !!userPortfolio;
       })
@@ -336,7 +321,7 @@ module.exports = function(app) {
             return data;
           }, {});
 
-        if (userPortfolio.isCheater) {
+        if (userPortfolio.isCheater && !user) {
           req.flash('errors', {
             msg: dedent`
               Upon review, this account has been flagged for academic
@@ -346,7 +331,12 @@ module.exports = function(app) {
           });
         }
 
-        return buildDisplayChallenges(userPortfolio.challengeMap, timezone)
+        return map$.map(({ entities }) => createNameIdMap(entities))
+          .flatMap(entities => buildDisplayChallenges(
+            entities,
+            userPortfolio.challengeMap,
+            timezone
+          ))
           .map(displayChallenges => ({
             ...userPortfolio,
             ...displayChallenges,
@@ -354,7 +344,8 @@ module.exports = function(app) {
             calender,
             github: userPortfolio.githubURL,
             moment,
-            encodeFcc
+            encodeFcc,
+            supportedLanguages
           }));
       })
       .doOnNext(data => {
@@ -446,60 +437,8 @@ module.exports = function(app) {
       );
   }
 
-  function toggleLockdownMode(req, res, next) {
-    const { user } = req;
-    user.update$({ isLocked: !user.isLocked })
-      .subscribe(
-        () => {
-          req.flash('info', {
-            msg: 'We\'ve successfully updated your Privacy preferences.'
-          });
-          return res.redirect('/settings');
-        },
-        next
-      );
-  }
-
-  function toggleReceivesAnnouncementEmails(req, res, next) {
-    const { user } = req;
-    return user.update$({ sendMonthlyEmail: !user.sendMonthlyEmail })
-      .subscribe(
-        () => {
-          req.flash('info', {
-            msg: 'We\'ve successfully updated your Email preferences.'
-          });
-          return res.redirect('/settings');
-        },
-        next
-      );
-  }
-
-  function toggleReceivesQuincyEmails(req, res, next) {
-    const { user } = req;
-    return user.update$({ sendQuincyEmail: !user.sendQuincyEmail })
-      .subscribe(
-        () => {
-          req.flash('info', {
-            msg: 'We\'ve successfully updated your Email preferences.'
-          });
-          return res.redirect('/settings');
-        },
-        next
-      );
-  }
-
-  function toggleReceivesNotificationEmails(req, res, next) {
-    const { user } = req;
-    return user.update$({ sendNotificationEmail: !user.sendNotificationEmail })
-      .subscribe(
-        () => {
-          req.flash('info', {
-            msg: 'We\'ve successfully updated your Email preferences.'
-          });
-          return res.redirect('/settings');
-        },
-        next
-      );
+  function showDelete(req, res) {
+    return res.render('account/delete', { title: 'Delete My Account!' });
   }
 
   function postDeleteAccount(req, res, next) {
@@ -578,34 +517,4 @@ module.exports = function(app) {
       return res.render('account/forgot');
     });
   }
-
-  // function vote1(req, res, next) {
-  //   if (req.user) {
-  //     req.user.tshirtVote = 1;
-  //     req.user.save(function(err) {
-  //       if (err) { return next(err); }
-  //
-  //       req.flash('success', { msg: 'Thanks for voting!' });
-  //       return res.redirect('/map');
-  //     });
-  //   } else {
-  //     req.flash('error', { msg: 'You must be signed in to vote.' });
-  //     res.redirect('/map');
-  //   }
-  // }
-  //
-  // function vote2(req, res, next) {
-  //   if (req.user) {
-  //     req.user.tshirtVote = 2;
-  //     req.user.save(function(err) {
-  //       if (err) { return next(err); }
-  //
-  //       req.flash('success', { msg: 'Thanks for voting!' });
-  //       return res.redirect('/map');
-  //     });
-  //   } else {
-  //     req.flash('error', {msg: 'You must be signed in to vote.'});
-  //     res.redirect('/map');
-  //   }
-  // }
 };

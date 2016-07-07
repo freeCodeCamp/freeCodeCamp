@@ -3,34 +3,28 @@ nav.navbar.navbar-default.navbar-fixed-top.nav-height
         button.hamburger.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
             .col-xs-12
                 span.hamburger-text Menu
-        a.navbar-brand(href='/challenges/next-challenge')
+        a.navbar-brand(href='/challenges/current-challenge')
             img.img-responsive.nav-logo(src='https://s3.amazonaws.com/freecodecamp/freecodecamp_logo.svg', alt='learn to code javascript at Free Code Camp logo')
     .collapse.navbar-collapse
         ul.nav.navbar-nav.navbar-right.hamburger-dropdown
-            li.hidden-xs
-                a#nav-map-btn(href='/map' onclick='if (!(event.ctrlKey || event.metaKey)) {return false;}') Map
-            li.visible-xs
+            li
                 a(href='/map') Map
             li.hidden-xs
                 a#nav-chat-btn(href='//gitter.im/freecodecamp/freecodecamp' onclick="if (!(event.ctrlKey || event.metaKey)) {return false;}") Chat
             li.visible-xs
                 a(href="//gitter.im/freecodecamp/freecodecamp" target="_blank") Chat
-            li.hidden-xs
-                a#nav-wiki-btn(href='/wiki' onclick='if (!(event.ctrlKey || event.metaKey)) {return false;}') Wiki
-            li.visible-xs
-                a(href='/wiki', target='_blank') Wiki
             li
-                a(href='http://forum.freecodecamp.com', target='_blank') Forum                
+                a(href='http://forum.freecodecamp.com', target='_blank') Forum
             li
                 a(href='/about') About
             li
-                a(href='/shop', target='_blank') Shop
+                a(href='/shop') Shop
             if !user
                 li
-                    a(href='/signin') Sign in
+                    a(href='/signup') Sign Up
             else
                 li.brownie-points-nav
-                  a(href='/' + user.username) [&thinsp;#{user.points}&thinsp;]
+                    a(href='/settings') [&thinsp;#{user.points}&thinsp;]
                 li.hidden-xs.hidden-sm.avatar
-                  a(href='/' + user.username)
+                    a(href='/settings')
                         img.profile-picture.float-right(src='#{user.picture}')

@@ -1,7 +1,8 @@
 var successRedirect = '/';
 var failureRedirect = '/signin';
 var linkFailureRedirect = '/account';
-module.exports = {
+
+export default {
   local: {
     provider: 'local',
     module: 'passport-local',

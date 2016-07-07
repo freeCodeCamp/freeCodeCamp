@@ -19,10 +19,10 @@ export default function prodErrorHandler() {
     }
 
     // parse res type
-    var accept = accepts(req);
-    var type = accept.type('html', 'json', 'text');
+    const accept = accepts(req);
+    const type = accept.type('html', 'json', 'text');
 
-    var message = 'Oops! Something went wrong. Please try again later';
+    const message = 'Oops! Something went wrong. Please try again later';
     if (type === 'html') {
       if (typeof req.flash === 'function') {
         req.flash(err.messageType || 'errors', {

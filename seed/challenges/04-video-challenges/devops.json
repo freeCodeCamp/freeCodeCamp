@@ -12,7 +12,11 @@
       "tests": [],
       "type": "hike",
       "challengeType": 6,
-      "nameEs": "DevOps"
+      "translations": {
+        "es": {
+          "title": "DevOps"
+        }
+      }
     }
   ]
-}    
+}

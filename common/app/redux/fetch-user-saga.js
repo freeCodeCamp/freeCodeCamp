@@ -1,39 +1,33 @@
 import { Observable } from 'rx';
-import { handleError, setUser, fetchUser } from './types';
+import types from './types';
+import {
+  addUser,
+  updateThisUser,
+  createErrorObservable,
+  showSignIn,
+  updateTheme,
+  addThemeToBody
+} from './actions';
 
-export default ({ services }) => ({ dispatch }) => next => {
-  return function getUserSaga(action) {
-    if (action.type !== fetchUser) {
-      return next(action);
-    }
-
-    return services.readService$({ service: 'user' })
-      .map(({
-        username,
-        picture,
-        points,
-        isFrontEndCert,
-        isBackEndCert,
-        isFullStackCert
-      }) => {
-        return {
-          type: setUser,
-          payload: {
-            username,
-            picture,
-            points,
-            isFrontEndCert,
-            isBackEndCert,
-            isFullStackCert,
-            isSignedIn: true
+const { fetchUser } = types;
+export default function getUserSaga(action$, getState, { services }) {
+  return action$
+    .filter(action => action.type === fetchUser)
+    .flatMap(() => {
+      return services.readService$({ service: 'user' })
+        .flatMap(({ entities, result })=> {
+          if (!entities || !result) {
+            return Observable.just(showSignIn());
           }
-        };
-      })
-      .catch(error => Observable.just({
-        type: handleError,
-        error
-      }))
-      .doOnNext(dispatch);
-  };
-};
-
+          const user = entities.user[result];
+          const isNightMode = user.theme === 'night';
+          return Observable.of(
+            addUser(entities),
+            updateThisUser(result),
+            isNightMode ? updateTheme(user.theme) : null,
+            isNightMode ? addThemeToBody(user.theme) : null
+          );
+        })
+        .catch(createErrorObservable);
+    });
+}

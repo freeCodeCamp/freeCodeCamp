@@ -45,18 +45,13 @@ This code is running live at [FreeCodeCamp.com](http://www.FreeCodeCamp.com). We
 
 ### [Join our community here](http://www.freecodecamp.com/signin).
 
-Wiki
-------------
-
-We would love your help expanding our [wiki](https://github.com/freecodecamp/freecodecamp/wiki). Our goal is to become a great resource for people learning to code, building local coding communities, and applying for coding jobs.
-
 Found a bug?
 ------------
 
 Do not file an issue until you have followed these steps:
 
-1. Read [Help I've Found a Bug](https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/FreeCodeCamp-Report-Bugs) wiki page and follow the instructions there.
-2. Ask for confirmation in the appropriate [Help Room](https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/Help-Rooms).
+1. Read the [Help I've Found a Bug](http://forum.freecodecamp.com/t/how-to-report-a-bug/19543) article and follow its instructions.
+2. Ask for confirmation in the appropriate [Help Room](http://forum.freecodecamp.com/t/free-code-camp-official-chat-rooms/19390/2).
 3. Please *do not* open an issue without a 3rd party confirmation of your problem.
 
 Contributing
