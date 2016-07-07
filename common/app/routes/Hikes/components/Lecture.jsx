@@ -88,7 +88,7 @@ export class Lecture extends React.Component {
             bsSize='large'
             bsStyle='primary'
             onClick={ toggleQuestionView }>
-            Take me to the Questions
+            Go to Quiz
           </Button>
         </Row>
       </Col>
