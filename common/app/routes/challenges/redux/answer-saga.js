@@ -55,7 +55,10 @@ export default function answerSaga(action$, getState) {
       if (answer !== finalAnswer) {
         let infoAction;
         if (info) {
-          infoAction = makeToast({ message: info });
+          infoAction = makeToast({
+            message: info,
+            timeout: 5000
+          });
         }
 
         return Observable

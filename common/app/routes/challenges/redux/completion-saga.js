@@ -9,28 +9,18 @@ import {
 import { makeToast } from '../../../toasts/redux/actions';
 
 import { challengeSelector } from './selectors';
-import { backEndProject } from '../../../utils/challengeTypes';
 import { randomCompliment } from '../../../utils/get-words';
+import { backEndProject } from '../../../utils/challengeTypes';
 import { postJSON$ } from '../../../../utils/ajax-stream';
 
 function postChallenge(url, body, username) {
   const saveChallenge$ = postJSON$(url, body)
     .retry(3)
-    .flatMap(({ alreadyCompleted, points }) => {
-      return Observable.of(
-        makeToast({
-          message: randomCompliment() +
-            (alreadyCompleted ? '!' : '! First time Completed!')
-        }),
-        updateUserPoints(username, points)
-      );
+    .map(({ points }) => {
+      return updateUserPoints(username, points);
     })
     .catch(createErrorObservable);
-
-  const challengeCompleted$ = Observable.of(
-    moveToNextChallenge(),
-    username ? makeToast({ message: ' Saving...' }) : null
-  );
+  const challengeCompleted$ = Observable.of(moveToNextChallenge());
   return Observable.merge(saveChallenge$, challengeCompleted$);
 }
 
@@ -40,9 +30,10 @@ function submitModern(type, state) {
     if (type === types.checkChallenge) {
       return Observable.of(
         makeToast({
-          message: 'Go to my next challenge.',
+          message: `${randomCompliment()} Go to next challenge.`,
           action: 'Submit',
-          actionCreator: 'submitChallenge'
+          actionCreator: 'submitChallenge',
+          timeout: 10000
         })
       );
     }
@@ -61,9 +52,7 @@ function submitModern(type, state) {
       return postChallenge('/modern-challenge-completed', body, user);
     }
   }
-  return Observable.just(makeToast({
-    message: 'Not all tests are passing, yet.'
-  }));
+  return Observable.just(makeToast({ message: 'Not quite there, yet.' }));
 }
 
 function submitProject(type, state, { solution, githubLink }) {
