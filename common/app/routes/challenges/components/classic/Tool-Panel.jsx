@@ -18,7 +18,8 @@ export default class ToolPanel extends PureComponent {
 
   makeHint() {
     this.props.makeToast({
-      message: this.props.hint
+      message: this.props.hint,
+      timeout: 4000
     });
     this.props.updateHint();
   }
@@ -27,7 +28,8 @@ export default class ToolPanel extends PureComponent {
     this.props.makeToast({
       message: 'This will restore your code editor to its original state.',
       action: 'clear my code',
-      actionCreator: 'resetChallenge'
+      actionCreator: 'resetChallenge',
+      timeout: 4000
     });
   }
 

@@ -9,7 +9,7 @@ export const makeToast = createAction(
     // assign current value of key to new toast
     // and then increment key value
     key: key++,
-    dismissAfter: timeout || 10000,
+    dismissAfter: timeout || 2000,
     position: rest.position === 'left' ? 'left' : 'right'
   })
 );
