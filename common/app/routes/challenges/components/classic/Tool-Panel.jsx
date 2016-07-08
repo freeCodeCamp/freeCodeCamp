@@ -6,6 +6,7 @@ export default class ToolPanel extends PureComponent {
   constructor(...props) {
     super(...props);
     this.makeHint = this.makeHint.bind(this);
+    this.makeReset = this.makeReset.bind(this);
   }
   static displayName = 'ToolPanel';
 
@@ -22,6 +23,14 @@ export default class ToolPanel extends PureComponent {
     this.props.updateHint();
   }
 
+  makeReset() {
+    this.props.makeToast({
+      message: 'This will restore your code editor to its original state.',
+      action: 'clear my code',
+      actionCreator: 'resetChallenge'
+    });
+  }
+
   renderHint(hint, makeHint) {
     if (!hint) {
       return null;
@@ -33,7 +42,7 @@ export default class ToolPanel extends PureComponent {
         className='btn-big'
         onClick={ makeHint }
         >
-          Hint
+        Hint
       </Button>
     );
   }
@@ -60,6 +69,7 @@ export default class ToolPanel extends PureComponent {
             bsSize='large'
             bsStyle='primary'
             componentClass='label'
+            onClick={ this.makeReset }
             >
             Reset
           </Button>

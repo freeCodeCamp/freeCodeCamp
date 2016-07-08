@@ -13,6 +13,7 @@ export default createTypes([
   'fetchChallengeCompleted',
   'fetchChallengesCompleted',
   'updateCurrentChallenge',
+  'resetChallenge',
   'replaceChallenge',
   'resetUi',
   'updateHint',

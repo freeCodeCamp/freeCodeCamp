@@ -33,6 +33,7 @@ export const fetchChallengesCompleted = createAction(
 export const updateCurrentChallenge = createAction(
   types.updateCurrentChallenge
 );
+export const resetChallenge = createAction(types.resetChallenge);
 // replaceChallenge(dashedname) => Action
 export const replaceChallenge = createAction(types.replaceChallenge);
 
