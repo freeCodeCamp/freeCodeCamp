@@ -1,17 +1,31 @@
 extends ../layout
 block content
-    h1.text-center Shop
+    h2.text-center Buy cool things and support our open source community
     hr
     .row
         .col-xs-12.col-sm-8.col-sm-offset-2.col-md-6.col-md-offset-3.text-center
-            img.img-responsive.img-center(src='//i.imgur.com/MH1CvwY.jpg')
-            h3 Free Code Camp laptop stickers are here!
-            h4 Get two for only $5, with free shipping anywhere!
+            img.img-responsive.img-center(src='//i.imgur.com/FNFqn9Tg.jpg')
+            h3 Free Code Camp laptop stickers
+            h4 Get 2 for only $5, with free shipping anywhere!
             p These durable 2" (5 cm) stickers sport a matte finish, and look great anywhere - especially on your laptop.
             html.
-                <form action="//www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                <form action="//www.paypal.com/cgi-bin/webscr" onSubmit="ga('send', 'event', 'SHOP', 'SHOP-STICKER', 'Sticker PayPal button clicked');" method="post" target="_blank">
                 <input type="hidden" name="cmd" value="_s-xclick">
                 <input type="hidden" name="hosted_button_id" value="R9AGYKJUCU37N">
                 <input type="image" src="//www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
                 <img alt="" border="0" src="//www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
                 </form>
+    hr
+    .row
+        .col-xs-12.col-sm-8.col-sm-offset-2.col-md-6.col-md-offset-3.text-center
+            img.img-responsive.img-center(src='//i.imgur.com/BTtb8P0g.jpg')
+            h3 Get a $10 credit your own Digital Ocean server.
+            p After you spend $25, our community gets a $25 credit.
+            a.btn.btn-cta.signup-btn.btn-block#digital-ocean-cta(href="//m.do.co/c/ba8a71773373" target='_blank' onClick="ga('send', 'event', 'SHOP', 'SHOP-DIGITAL-OCEAN', 'Digital Ocean affiliate button clicked');") Claim your $10 credit
+    hr
+    .row
+        .col-xs-12.col-sm-8.col-sm-offset-2.col-md-6.col-md-offset-3.text-center
+            img.img-responsive.img-center(src='http://i.imgur.com/YqZqTN6g.jpg')
+            h3 Buy some affordable domain names.
+            p Our community gets a 15% of your first purchase.
+            a.btn.btn-cta.signup-btn.btn-block#namecheap-cta(href="//www.namecheap.com/?aff=102130" onClick="ga('send', 'event', 'SHOP', 'SHOP-NAMECHEAP', 'Namecheap affiliate button clicked');") Claim your domain names
