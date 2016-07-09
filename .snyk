@@ -1,0 +1,20 @@
+version: v1.5.0
+ignore: {}
+patch:
+  'npm:marked:20150520':
+    - gulp-notify > node-notifier > cli-usage > marked:
+        patched: '2016-07-09T00:55:04.882Z'
+  'npm:minimatch:20160620':
+    - gulp > vinyl-fs > glob-stream > minimatch:
+        patched: '2016-07-09T00:55:04.882Z'
+    - gulp > vinyl-fs > glob-stream > glob > minimatch:
+        patched: '2016-07-09T00:55:04.882Z'
+    - rev-del > mocha > glob > minimatch:
+        patched: '2016-07-09T00:55:04.882Z'
+    - gulp > vinyl-fs > glob-watcher > gaze > globule > minimatch:
+        patched: '2016-07-09T00:55:04.882Z'
+    - gulp > vinyl-fs > glob-watcher > gaze > globule > glob > minimatch:
+        patched: '2016-07-09T00:55:04.882Z'
+  'npm:uglify-js:20151024':
+    - jade > transformers > uglify-js:
+        patched: '2016-07-09T00:55:04.882Z'
