@@ -1,0 +1,12 @@
+version: v1.5.0
+ignore: {}
+patch:
+  'npm:minimatch:20160620':
+    - gulp-nodemon > gulp > vinyl-fs > glob-stream > minimatch:
+        patched: '2016-07-08T12:37:53.375Z'
+    - gulp-nodemon > gulp > vinyl-fs > glob-stream > glob > minimatch:
+        patched: '2016-07-08T12:37:53.375Z'
+    - gulp-nodemon > gulp > vinyl-fs > glob-watcher > gaze > globule > minimatch:
+        patched: '2016-07-08T12:37:53.375Z'
+    - gulp-nodemon > gulp > vinyl-fs > glob-watcher > gaze > globule > glob > minimatch:
+        patched: '2016-07-08T12:37:53.375Z'
