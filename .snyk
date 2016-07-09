@@ -18,3 +18,6 @@ patch:
   'npm:uglify-js:20151024':
     - jade > transformers > uglify-js:
         patched: '2016-07-09T00:55:04.882Z'
+  'npm:uglify-js:20150824':
+    - jade > transformers > uglify-js:
+        patched: '2016-07-09T01:06:50.803Z'
