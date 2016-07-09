@@ -2417,10 +2417,10 @@
         "",
         "// Only change code below this line",
         "",
+        "",
+        "// Only change code above this line",
+        "timesFive(5);",
         ""
-      ],
-      "tail": [
-        "(function() { if(typeof timesFive === 'function'){ return \"timesfive(5) === \" + timesFive(5); } else { return \"timesFive is not a function\"} })();"
       ],
       "solutions": [
         "function timesFive(num) {\n  return num * 5;\n}"
