@@ -217,7 +217,7 @@
         "First, let's declare an html variable with <code>var html = \"\";</code>.",
         "Then, let's loop through our JSON, adding more HTML to that variable. When the loop is finished, we'll render it.",
         "Here's the code that does this:",
-        "<blockquote>json.forEach(function(val) {</br>  var keys = Object.keys(val);</br>  html += \"&lt;div class = 'cat'&gt;\";</br>  keys.forEach(function(key) {</br>    html += \"&lt;b&gt;\" + key + \"&lt;/b&gt;: \" + val[key] + \"&lt;br&gt;\";</br>  });</br>  html += \"&lt;/div&gt;&lt;br&gt;\";</br>});</blockquote>"
+        "<blockquote>json.forEach(function(val) {</br>  var keys = Object.keys(val);</br>  html += \"&lt;div class = 'cat'&gt;\";</br>  keys.forEach(function(key) {</br>    html += \"&lt;strong&gt;\" + key + \"&lt;/strong&gt;: \" + val[key] + \"&lt;br&gt;\";</br>  });</br>  html += \"&lt;/div&gt;&lt;br&gt;\";</br>});</blockquote>"
       ],
       "challengeSeed": [
         "fccss",
