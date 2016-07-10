@@ -4,6 +4,11 @@ main.mapShareKey = 'map-shares';
 
 main.ga = window.ga || function() {};
 
+if (localStorage.getItem('setRefresh')) {
+  localStorage.removeItem('setRefresh');
+  window.location.reload(true);
+}
+
 main = (function(main, global) {
   const { Mousetrap } = global;
 
