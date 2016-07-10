@@ -40,6 +40,10 @@
       "type": "boolean",
       "default": false
     },
+    "isGithubRepoCool": {
+      "type": "boolean",
+      "default": false
+    },
     "githubId": {
       "type": "string"
     },

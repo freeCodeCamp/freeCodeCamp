@@ -146,6 +146,7 @@ export default function(UserIdent) {
         userChanged = true;
       }
 
+      console.log('GIVEN PROVIDER: ' + provider);
       if (!githubRegex.test(provider) && profile) {
         user[provider] = getUsernameFromProvider(provider, profile);
         userChanged = true;
