@@ -362,7 +362,7 @@
         "In audio download, we talk about kilobits per second.",
         "In internet, we use megabits per second.",
         "In network speed, we talk about gigabits per second (one billion bits per second!).",
-        "The main takeaway here is that speed is usually measured in bits and size is measured in bytes.",
+        "The main takeaway here is that speed is usually measured in bits per second and size is measured in bytes.",
         "Additionally, if you have an internet speed that says however many bits per second, keep in mind they are talking about something 8 times less than bytes, how you are thinking about data."
       ],
       "challengeSeed": [
@@ -370,13 +370,13 @@
       ],
       "tests": [
         [
-          "Data speed is measured in bits.",
+          "Data speed is measured in bits per second.",
           true
         ],
         [
           "Data size is measured in bits.",
           false,
-          "Size is bytes and speed is bits."
+          "Size is bytes and speed is bits per second."
         ]
       ],
       "type": "hike",
@@ -391,7 +391,7 @@
         "En descarga de audio, hablamos de kilobits por segundo.",
         "En Internet, utilizamos megabits por segundo.",
         "En la velocidad de red, hablamos de gigabits por segundo (¡mil millones de bits por segundo!).",
-        "La conclusión principal es que la velocidad se mide generalmente en bits mientras que el tamaño se mide en bytes.",
+        "La conclusión principal es que la velocidad se mide generalmente en bits por segundo mientras que el tamaño se mide en bytes.",
         "Además, si tienes una velocidad de internet de cierta cantidad de bits por segundo, ten en cuenta que te están hablando de algo que es la octava parte de la cantidad en bytes, que es la manera típica como mides tamaños de datos."
       ],
       "titleEs": "Fundamentos básicos del computador: medición de la velocidad de datos"
