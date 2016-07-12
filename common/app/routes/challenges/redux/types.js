@@ -64,5 +64,11 @@ export default createTypes([
   'primeNextQuestion',
   'goToNextQuestion',
   'transitionVideo',
-  'videoCompleted'
+  'videoCompleted',
+
+  // bug
+  'openBugModal',
+  'closeBugModal',
+  'openIssueSearch',
+  'createIssue'
 ], 'challenges');

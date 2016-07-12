@@ -9,7 +9,11 @@ import TestSuite from './Test-Suite.jsx';
 import Output from './Output.jsx';
 import ToolPanel from './Tool-Panel.jsx';
 import { challengeSelector } from '../../redux/selectors';
-import { updateHint, executeChallenge } from '../../redux/actions';
+import {
+  openBugModal,
+  updateHint,
+  executeChallenge
+} from '../../redux/actions';
 import { makeToast } from '../../../../toasts/redux/actions';
 import { toggleHelpChat } from '../../../../redux/actions';
 
@@ -17,7 +21,8 @@ const bindableActions = {
   makeToast,
   executeChallenge,
   updateHint,
-  toggleHelpChat
+  toggleHelpChat,
+  openBugModal
 };
 const mapStateToProps = createSelector(
   challengeSelector,
@@ -59,7 +64,8 @@ export class SidePanel extends PureComponent {
     hints: PropTypes.string,
     updateHint: PropTypes.func,
     makeToast: PropTypes.func,
-    toggleHelpChat: PropTypes.func
+    toggleHelpChat: PropTypes.func,
+    openBugModal: PropTypes.func
   };
 
   renderDescription(description = [ 'Happy Coding!' ], descriptionRegex) {
@@ -99,7 +105,8 @@ export class SidePanel extends PureComponent {
       executeChallenge,
       updateHint,
       makeToast,
-      toggleHelpChat
+      toggleHelpChat,
+      openBugModal
     } = this.props;
     const style = {
       overflowX: 'hidden',
@@ -131,6 +138,7 @@ export class SidePanel extends PureComponent {
           executeChallenge={ executeChallenge }
           hint={ hint }
           makeToast={ makeToast }
+          openBugModal={ openBugModal }
           toggleHelpChat={ toggleHelpChat }
           updateHint={ updateHint }
         />

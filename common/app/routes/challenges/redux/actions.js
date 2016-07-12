@@ -139,3 +139,9 @@ export const endShake = createAction(types.primeNextQuestion);
 
 export const goToNextQuestion = createAction(types.goToNextQuestion);
 export const videoCompleted = createAction(types.videoCompleted);
+
+// bug
+export const openBugModal = createAction(types.openBugModal);
+export const closeBugModal = createAction(types.closeBugModal);
+export const openIssueSearch = createAction(types.openIssueSearch);
+export const createIssue = createAction(types.createIssue);

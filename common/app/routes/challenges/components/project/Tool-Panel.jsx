@@ -9,7 +9,7 @@ import {
   BackEndForm
 } from './Forms.jsx';
 
-import { submitChallenge } from '../../redux/actions';
+import { submitChallenge, openBugModal } from '../../redux/actions';
 import { challengeSelector } from '../../redux/selectors';
 import {
   simpleProject,
@@ -19,7 +19,8 @@ import { toggleHelpChat } from '../../../../redux/actions';
 
 const bindableActions = {
   submitChallenge,
-  toggleHelpChat
+  toggleHelpChat,
+  openBugModal
 };
 const mapStateToProps = createSelector(
   challengeSelector,
@@ -43,7 +44,8 @@ export class ToolPanel extends PureComponent {
     isSimple: PropTypes.bool,
     isFrontEnd: PropTypes.bool,
     isSubmitting: PropTypes.bool,
-    toggleHelpChat: PropTypes.func
+    toggleHelpChat: PropTypes.func,
+    openBugModal: PropTypes.func
   };
 
   renderSubmitButton(isSignedIn, submitChallenge) {
@@ -69,7 +71,8 @@ export class ToolPanel extends PureComponent {
       isSignedIn,
       isSubmitting,
       submitChallenge,
-      toggleHelpChat
+      toggleHelpChat,
+      openBugModal
     } = this.props;
 
     const FormElement = isFrontEnd ? FrontEndForm : BackEndForm;
@@ -94,6 +97,7 @@ export class ToolPanel extends PureComponent {
             bsStyle='primary'
             className='btn-primary-ghost btn-big'
             componentClass='div'
+            onClick={ openBugModal }
             >
             Bug
           </Button>

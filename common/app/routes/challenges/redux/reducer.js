@@ -43,6 +43,7 @@ const initialState = {
   id: '',
   challenge: '',
   helpChatRoom: 'Help',
+  isBugOpen: false,
   // old code storage key
   legacyKey: '',
   files: {},
@@ -185,7 +186,10 @@ const mainReducer = handleActions(
       isPressed: false,
       delta: [ 0, 0 ],
       mouse: [ userAnswer ? 1000 : -1000, 0]
-    })
+    }),
+
+    [types.openBugModal]: state => ({ ...state, isBugOpen: true }),
+    [types.closeBugModal]: state => ({ ...state, isBugOpen: false })
   },
   initialState
 );
