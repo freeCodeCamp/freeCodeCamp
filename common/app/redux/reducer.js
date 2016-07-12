@@ -9,7 +9,8 @@ const initialState = {
   csrfToken: '',
   windowHeight: 0,
   navHeight: 0,
-  isMainChatOpen: false
+  isMainChatOpen: false,
+  isHelpChatOpen: false
 };
 
 export default handleActions(
@@ -49,6 +50,18 @@ export default handleActions(
     [types.toggleMainChat]: state => ({
       ...state,
       isMainChatOpen: !state.isMainChatOpen
+    }),
+    [types.toggleHelpChat]: state => ({
+      ...state,
+      isHelpChatOpen: !state.isHelpChatOpen
+    }),
+    [types.openHelpChat]: state => ({
+      ...state,
+      isHelpChatOpen: true
+    }),
+    [types.closeHelpChat]: state => ({
+      ...state,
+      isHelpChatOpen: false
     }),
     [types.delayedRedirect]: (state, { payload }) => ({
       ...state,

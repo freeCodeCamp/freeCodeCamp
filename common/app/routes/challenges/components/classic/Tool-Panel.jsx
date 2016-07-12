@@ -13,7 +13,8 @@ export default class ToolPanel extends PureComponent {
   static propTypes = {
     executeChallenge: PropTypes.func,
     updateHint: PropTypes.func,
-    hint: PropTypes.string
+    hint: PropTypes.string,
+    toggleHelpChat: PropTypes.func
   };
 
   makeHint() {
@@ -50,7 +51,11 @@ export default class ToolPanel extends PureComponent {
   }
 
   render() {
-    const { hint, executeChallenge } = this.props;
+    const {
+      hint,
+      executeChallenge,
+      toggleHelpChat
+    } = this.props;
     return (
       <div>
         { this.renderHint(hint, this.makeHint) }
@@ -79,6 +84,7 @@ export default class ToolPanel extends PureComponent {
             bsSize='large'
             bsStyle='primary'
             componentClass='label'
+            onClick={ toggleHelpChat }
             >
             Help
           </Button>

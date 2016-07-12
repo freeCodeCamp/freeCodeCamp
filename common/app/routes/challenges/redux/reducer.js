@@ -42,6 +42,7 @@ const initialUiState = {
 const initialState = {
   id: '',
   challenge: '',
+  helpChatRoom: 'Help',
   // old code storage key
   legacyKey: '',
   files: {},
@@ -68,6 +69,7 @@ const mainReducer = handleActions(
       challenge: challenge.dashedName,
       key: getFileKey(challenge),
       tests: createTests(challenge),
+      helpChatRoom: challenge.helpRoom || 'Help',
       numOfHints: Array.isArray(challenge.hints) ? challenge.hints.length : 0
     }),
     [types.updateTests]: (state, { payload: tests }) => ({

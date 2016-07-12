@@ -54,8 +54,9 @@ export const createErrorObservable = error => Observable.just({
 
 // drawers
 export const toggleMapDrawer = createAction(types.toggleMapDrawer);
-export const toggleWikiDrawer = createAction(types.toggleWikiDrawer);
-
-// chat
 export const toggleMainChat = createAction(types.toggleMainChat);
+export const toggleHelpChat = createAction(types.toggleHelpChat);
+export const openHelpChat = createAction(types.openHelpChat);
+export const closeHelpChat = createAction(types.closeHelpChat);
+
 export const toggleNightMode = createAction(types.toggleNightMode);
