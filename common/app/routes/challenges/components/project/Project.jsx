@@ -7,6 +7,7 @@ import PureComponent from 'react-pure-render/component';
 import { Col } from 'react-bootstrap';
 import SidePanel from './Side-Panel.jsx';
 import ToolPanel from './Tool-Panel.jsx';
+import BugModal from '../Bug-Modal.jsx';
 
 import { challengeSelector } from '../../redux/selectors';
 
@@ -71,6 +72,7 @@ export class Project extends PureComponent {
           <br />
           <ToolPanel />
           <br />
+          <BugModal />
         </Col>
       </div>
     );

@@ -7,6 +7,7 @@ import PureComponent from 'react-pure-render/component';
 import Editor from './Editor.jsx';
 import SidePanel from './Side-Panel.jsx';
 import Preview from './Preview.jsx';
+import BugModal from '../Bug-Modal.jsx';
 import { challengeSelector } from '../../redux/selectors';
 import {
   executeChallenge,
@@ -102,6 +103,7 @@ export class Challenge extends PureComponent {
           />
         </Col>
         { this.renderPreview(showPreview) }
+        <BugModal />
       </div>
     );
   }
