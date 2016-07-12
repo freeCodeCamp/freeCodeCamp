@@ -29,8 +29,12 @@ export default createTypes([
   'toggleMapDrawer',
   'toggleWikiDrawer',
 
-  // main chat
+  // chat
   'openMainChat',
   'closeMainChat',
-  'toggleMainChat'
+  'toggleMainChat',
+
+  'openHelpChat',
+  'closeHelpChat',
+  'toggleHelpChat'
 ], 'app');

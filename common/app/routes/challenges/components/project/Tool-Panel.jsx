@@ -15,7 +15,12 @@ import {
   simpleProject,
   frontEndProject
 } from '../../../../utils/challengeTypes';
+import { toggleHelpChat } from '../../../../redux/actions';
 
+const bindableActions = {
+  submitChallenge,
+  toggleHelpChat
+};
 const mapStateToProps = createSelector(
   challengeSelector,
   state => state.app.isSignedIn,
@@ -37,7 +42,8 @@ export class ToolPanel extends PureComponent {
     isSignedIn: PropTypes.bool,
     isSimple: PropTypes.bool,
     isFrontEnd: PropTypes.bool,
-    isSubmitting: PropTypes.bool
+    isSubmitting: PropTypes.bool,
+    toggleHelpChat: PropTypes.func
   };
 
   renderSubmitButton(isSignedIn, submitChallenge) {
@@ -62,7 +68,8 @@ export class ToolPanel extends PureComponent {
       isSimple,
       isSignedIn,
       isSubmitting,
-      submitChallenge
+      submitChallenge,
+      toggleHelpChat
     } = this.props;
 
     const FormElement = isFrontEnd ? FrontEndForm : BackEndForm;
@@ -79,6 +86,7 @@ export class ToolPanel extends PureComponent {
             bsStyle='primary'
             className='btn-primary-ghost btn-big'
             componentClass='div'
+            onClick={ toggleHelpChat }
             >
             Help
           </Button>
@@ -97,5 +105,5 @@ export class ToolPanel extends PureComponent {
 
 export default connect(
   mapStateToProps,
-  { submitChallenge }
+  bindableActions
 )(ToolPanel);

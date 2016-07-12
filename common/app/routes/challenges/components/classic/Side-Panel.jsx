@@ -2,7 +2,6 @@ import React, { PropTypes } from 'react';
 import ReactDom from 'react-dom';
 import { createSelector } from 'reselect';
 import { connect } from 'react-redux';
-
 import PureComponent from 'react-pure-render/component';
 import { Col, Row } from 'react-bootstrap';
 
@@ -12,8 +11,14 @@ import ToolPanel from './Tool-Panel.jsx';
 import { challengeSelector } from '../../redux/selectors';
 import { updateHint, executeChallenge } from '../../redux/actions';
 import { makeToast } from '../../../../toasts/redux/actions';
+import { toggleHelpChat } from '../../../../redux/actions';
 
-const bindableActions = { makeToast, executeChallenge, updateHint };
+const bindableActions = {
+  makeToast,
+  executeChallenge,
+  updateHint,
+  toggleHelpChat
+};
 const mapStateToProps = createSelector(
   challengeSelector,
   state => state.app.windowHeight,
@@ -53,7 +58,8 @@ export class SidePanel extends PureComponent {
     output: PropTypes.string,
     hints: PropTypes.string,
     updateHint: PropTypes.func,
-    makeToast: PropTypes.func
+    makeToast: PropTypes.func,
+    toggleHelpChat: PropTypes.func
   };
 
   renderDescription(description = [ 'Happy Coding!' ], descriptionRegex) {
@@ -92,7 +98,8 @@ export class SidePanel extends PureComponent {
       hint,
       executeChallenge,
       updateHint,
-      makeToast
+      makeToast,
+      toggleHelpChat
     } = this.props;
     const style = {
       overflowX: 'hidden',
@@ -124,6 +131,7 @@ export class SidePanel extends PureComponent {
           executeChallenge={ executeChallenge }
           hint={ hint }
           makeToast={ makeToast }
+          toggleHelpChat={ toggleHelpChat }
           updateHint={ updateHint }
         />
         <Output output={ output }/>
