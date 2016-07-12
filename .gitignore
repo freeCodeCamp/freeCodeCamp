@@ -16,6 +16,7 @@ pids
 logs
 results
 tmp
+.ds_store
 
 npm-debug.log
 node_modules
