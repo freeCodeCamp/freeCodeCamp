@@ -191,7 +191,7 @@
       "title": "Build a Voting App",
       "description": [
         "<strong>Objective:</strong> Build a full stack JavaScript app that is functionally similar to this: <a href='https://fcc-voting-arthow4n.herokuapp.com/' target='_blank'>https://fcc-voting-arthow4n.herokuapp.com/</a> and deploy it to Heroku.",
-        "Note that for each project, you should create a new GitHub repository and a new Heroku project. If you can't remember how to do this, revisit <a href='/challenges/get-set-for-our-back-end-development-projects'>http://freecodecamp.com/challenges/get-set-for-our-back-end-development-projects</a>.",
+        "Note that for each project, you should create a new GitHub repository and a new Heroku project. If you can't remember how to do this, revisit <a href='/challenges/get-set-for-our-dynamic-web-application-projects'>https://freecodecamp.com/challenges/get-set-for-our-dynamic-web-application-projects</a>.",
         "Here are the specific user stories you should implement for this project:",
         "<strong>User Story:</strong> As an authenticated user, I can keep my polls and come back later to access them.",
         "<strong>User Story:</strong> As an authenticated user, I can share my polls with my friends.",
@@ -212,7 +212,7 @@
       "challengeType": 4,
       "descriptionEs": [
         "<strong>Objetivo:</strong> Construye una aplicación de pila completa (full stack) en JavaScript que funcione de forma similar al siguiente proyecto: <a href='https://fcc-voting-arthow4n.herokuapp.com/' target='_blank'>https://fcc-voting-arthow4n.herokuapp.com/</a> y despliégala en Heroku.",
-        "Ten en cuenta que para cada proyecto, debes crear un nuevo repositorio en GitHub y un nuevo proyecto en Heroku. Si no recuerdas cómo hacerlo, visita de nuevo <a href='/challenges/get-set-for-our-back-end-development-projects'>http://freecodecamp.com/challenges/get-set-for-our-back-end-development-projects</a>.",
+        "Ten en cuenta que para cada proyecto, debes crear un nuevo repositorio en GitHub y un nuevo proyecto en Heroku. Si no recuerdas cómo hacerlo, visita de nuevo <a href='/challenges/get-set-for-our-dynamic-web-application-projects'>https://freecodecamp.com/challenges/get-set-for-our-dynamic-web-application-projects</a>.",
         "Estas son las Historias de usuario que debes satisfacer para este proyecto:",
         "<strong>Historia de usuario:</strong> Como un usuario autenticado, puedo guardar mis votaciones y acceder a ellas posteriormente.",
         "<strong>Historia de usuario:</strong> Como un usuario autenticado, puedo compartir mis votaciones con mis amigos.",
@@ -233,7 +233,7 @@
       "title": "Build a Nightlife Coordination App",
       "description": [
         "<strong>Objective:</strong> Build a full stack JavaScript app that is functionally similar to this: <a href='http://whatsgoinontonight.herokuapp.com/' target='_blank'>http://whatsgoinontonight.herokuapp.com/</a> and deploy it to Heroku.",
-        "Note that for each project, you should create a new GitHub repository and a new Heroku project. If you can't remember how to do this, revisit <a href='/challenges/get-set-for-our-back-end-development-projects'>http://freecodecamp.com/challenges/get-set-for-our-back-end-development-projects</a>.",
+        "Note that for each project, you should create a new GitHub repository and a new Heroku project. If you can't remember how to do this, revisit <a href='/challenges/get-set-for-our-dynamic-web-application-projects'>https://freecodecamp.com/challenges/get-set-for-our-dynamic-web-application-projects</a>.",
         "Here are the specific user stories you should implement for this project:",
         "<strong>User Story:</strong> As an unauthenticated user, I can view all bars in my area.",
         "<strong>User Story:</strong> As an authenticated user, I can add myself to a bar to indicate I am going there tonight.",
@@ -251,7 +251,7 @@
       "challengeType": 4,
       "descriptionEs": [
         "<strong>Objetivo:</strong> Construye una aplicación de pila completa (full stack) en JavaScript que funcione de forma similar al siguiente proyecto: <a href='http://whatsgoinontonight.herokuapp.com/' target='_blank'>http://whatsgoinontonight.herokuapp.com/</a> y despliégala en Heroku.",
-        "Ten en cuenta que para cada proyecto, debes crear un nuevo repositorio en GitHub y un nuevo proyecto en Heroku. Si no recuerdas cómo hacerlo, visita de nuevo <a href='/challenges/get-set-for-our-back-end-development-projects'>http://freecodecamp.com/challenges/get-set-for-our-back-end-development-projects</a>.",
+        "Ten en cuenta que para cada proyecto, debes crear un nuevo repositorio en GitHub y un nuevo proyecto en Heroku. Si no recuerdas cómo hacerlo, visita de nuevo <a href='/challenges/get-set-for-our-dynamic-web-application-projects'>https://freecodecamp.com/challenges/get-set-for-our-dynamic-web-application-projects</a>.",
         "Estas son las Historias de usuario que debes satisfacer para este Basejump:",
         "<strong>Historia de usuario:</strong> Como un usuario no autenticado, puedo ver todos los bares en mi área.",
         "<strong>Historia de usuario:</strong> Como un usuario autenticado, puedo agregarme a mí mismo a un bar para indicar que voy a estar allí esta noche.",
@@ -269,7 +269,7 @@
       "title": "Chart the Stock Market",
       "description": [
         "<strong>Objective:</strong> Build a full stack JavaScript app that is functionally similar to this: <a href='http://watchstocks.herokuapp.com/' target='_blank'>http://watchstocks.herokuapp.com/</a> and deploy it to Heroku.",
-        "Note that for each project, you should create a new GitHub repository and a new Heroku project. If you can't remember how to do this, revisit <a href='/challenges/get-set-for-our-back-end-development-projects'>http://freecodecamp.com/challenges/get-set-for-our-back-end-development-projects</a>.",
+        "Note that for each project, you should create a new GitHub repository and a new Heroku project. If you can't remember how to do this, revisit <a href='/challenges/get-set-for-our-dynamic-web-application-projects'>https://freecodecamp.com/challenges/get-set-for-our-dynamic-web-application-projects</a>.",
         "Here are the specific user stories you should implement for this project:",
         "<strong>User Story:</strong> I can view a graph displaying the recent trend lines for each added stock.",
         "<strong>User Story:</strong> I can add new stocks by their symbol name.",
@@ -286,7 +286,7 @@
       "challengeType": 4,
       "descriptionEs": [
         "<strong>Objetivo:</strong> Construye una aplicación de pila completa (full stack) en JavaScript que funcione de forma similar al siguiente proyecto: <a href='http://watchstocks.herokuapp.com/' target='_blank'>http://watchstocks.herokuapp.com/</a> y despliégalo en Heroku.",
-        "Ten en cuenta que para cada proyecto, debes crear un nuevo repositorio en GitHub y un nuevo proyecto en Heroku. Si no recuerdas cómo hacerlo, visita de nuevo <a href='/challenges/get-set-for-our-back-end-development-projects'>http://freecodecamp.com/challenges/get-set-for-our-back-end-development-projects</a>.",
+        "Ten en cuenta que para cada proyecto, debes crear un nuevo repositorio en GitHub y un nuevo proyecto en Heroku. Si no recuerdas cómo hacerlo, visita de nuevo <a href='/challenges/get-set-for-our-dynamic-web-application-projects'>https://freecodecamp.com/challenges/get-set-for-our-dynamic-web-application-projects</a>.",
         "Estas son las Historias de usuario que debes satisfacer para este Basejump:",
         "<strong>Historia de usuario:</strong> Como usuario, puedo ver un gráfico que me muestre las líneas de tendencia recientes para cada acción agregada.",
         "<strong>Historia de usuario:</strong> Como usuario, puedo agregar nuevas acciones por su símbolo.",
@@ -303,7 +303,7 @@
       "title": "Manage a Book Trading Club",
       "description": [
         "<strong>Objective:</strong> Build a full stack JavaScript app that is functionally similar to this: <a href='http://bookjump.herokuapp.com/' target='_blank'>http://bookjump.herokuapp.com/</a> and deploy it to Heroku.",
-        "Note that for each project, you should create a new GitHub repository and a new Heroku project. If you can't remember how to do this, revisit <a href='/challenges/get-set-for-our-back-end-development-projects'>http://freecodecamp.com/challenges/get-set-for-our-back-end-development-projects</a>.",
+        "Note that for each project, you should create a new GitHub repository and a new Heroku project. If you can't remember how to do this, revisit <a href='/challenges/get-set-for-our-dynamic-web-application-projects'>https://freecodecamp.com/challenges/get-set-for-our-dynamic-web-application-projects</a>.",
         "Here are the specific user stories you should implement for this project:",
         "<strong>User Story:</strong> I can view all books posted by every user.",
         "<strong>User Story:</strong> I can add a new book.",
@@ -320,7 +320,7 @@
       "challengeType": 4,
       "descriptionEs": [
         "<strong>Objetivo:</strong> Construye una aplicación de pila completa (full stack) en JavaScript que funcione de forma similar al siguiente proyecto: <a href='http://bookjump.herokuapp.com/' target='_blank'>http://bookjump.herokuapp.com/</a> y despliégalo en Heroku.",
-        "Ten en cuenta que para cada proyecto, debes crear un nuevo repositorio en GitHub y un nuevo proyecto en Heroku. Si no recuerdas cómo hacerlo, visita de nuevo <a href='/challenges/get-set-for-our-back-end-development-projects'>http://freecodecamp.com/challenges/get-set-for-our-back-end-development-projects</a>.",
+        "Ten en cuenta que para cada proyecto, debes crear un nuevo repositorio en GitHub y un nuevo proyecto en Heroku. Si no recuerdas cómo hacerlo, visita de nuevo <a href='/challenges/get-set-for-our-dynamic-web-application-projects'>https://freecodecamp.com/challenges/get-set-for-our-dynamic-web-application-projects</a>.",
         "Estas son las Historias de usuario que debes satisfacer para este Basejump:",
         "<strong>Historia de usuario:</strong> Puedo ver todos los libros agregados por cada usuario.",
         "<strong>Historia de usuario:</strong> Puedo agregar un nuevo libro.",
@@ -337,7 +337,7 @@
       "title": "Build a Pinterest Clone",
       "description": [
         "<strong>Objective:</strong> Build a full stack JavaScript app that is functionally similar to this: <a href='http://pintech.herokuapp.com/' target='_blank'>http://pintech.herokuapp.com/</a> and deploy it to Heroku.",
-        "Note that for each project, you should create a new GitHub repository and a new Heroku project. If you can't remember how to do this, revisit <a href='/challenges/get-set-for-our-back-end-development-projects'>http://freecodecamp.com/challenges/get-set-for-our-back-end-development-projects</a>.",
+        "Note that for each project, you should create a new GitHub repository and a new Heroku project. If you can't remember how to do this, revisit <a href='/challenges/get-set-for-our-dynamic-web-application-projects'>https://freecodecamp.com/challenges/get-set-for-our-dynamic-web-application-projects</a>.",
         "Here are the specific user stories you should implement for this project:",
         "<strong>User Story:</strong> As an unauthenticated user, I can login with Twitter.",
         "<strong>User Story:</strong> As an authenticated user, I can link to images.",
@@ -357,7 +357,7 @@
       "challengeType": 4,
       "descriptionEs": [
         "<strong>Objetivo:</strong> Construye una aplicación de pila completa (full stack) en JavaScript que funcione de forma similar al siguiente proyecto: <a href='http://pintech.herokuapp.com/' target='_blank'>http://pintech.herokuapp.com/</a> y despliégalo en Heroku.",
-        "Ten en cuenta que para cada proyecto, debes crear un nuevo repositorio en GitHub y un nuevo proyecto en Heroku. Si no recuerdas cómo hacerlo, visita de nuevo <a href='/challenges/get-set-for-our-back-end-development-projects'>http://freecodecamp.com/challenges/get-set-for-our-back-end-development-projects</a>.",
+        "Ten en cuenta que para cada proyecto, debes crear un nuevo repositorio en GitHub y un nuevo proyecto en Heroku. Si no recuerdas cómo hacerlo, visita de nuevo <a href='/challenges/get-set-for-our-dynamic-web-application-projects'>https://freecodecamp.com/challenges/get-set-for-our-dynamic-web-application-projects</a>.",
         "Estas son las Historias de usuario que debes satisfacer para este Basejump:",
         "<strong>Historia de usuario:</strong> Como usuario autenticado, puedo acceder a mi cuenta con Twitter.",
         "<strong>Historia de usuario:</strong> Como usuario autenticado, puedo agregar enlaces a imágenes.",

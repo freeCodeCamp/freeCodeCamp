@@ -98,7 +98,7 @@
       "title": "Timestamp Microservice",
       "description": [
         "<strong>Objective:</strong> Build a full stack JavaScript app that is functionally similar to this: <a href='https://timestamp-ms.herokuapp.com/' target='_blank'>https://timestamp-ms.herokuapp.com/</a> and deploy it to Heroku.",
-        "Note that for each project, you should create a new GitHub repository and a new Heroku project. If you can't remember how to do this, revisit <a href='/challenges/get-set-for-our-back-end-development-projects'>https://freecodecamp.com/challenges/get-set-for-our-back-end-development-projects</a>.",
+        "Note that for each project, you should create a new GitHub repository and a new Heroku project. If you can't remember how to do this, revisit <a href='/challenges/get-set-for-our-api-development-projects'>https://freecodecamp.com/challenges/get-set-for-our-api-development-projects</a>.",
         "Here are the specific user stories you should implement for this project:",
         "<strong>User Story:</strong> I can pass a string as a parameter, and it will check to see whether that string contains either a unix timestamp or a natural language date (example: January 1, 2016).",
         "<strong>User Story:</strong> If it does, it returns both the Unix timestamp and the natural language form of that date.",
@@ -117,7 +117,7 @@
       "titleEs": "Microservicio de Marca Temporal",
       "descriptionEs": [
         "<strong>Objetivo:</strong> Desarolla una aplicación de Pila Completa en JavaScript que sea funcionalmente similar a esta: <a href='https://timestamp-ms.herokuapp.com/' target='_blank'>https://timestamp-ms.herokuapp.com/</a> y despliegala en Heroku.",
-        "Ten en cuenta que para cada proyecto, deberías crear un nuevo repositorio en GitHub y un nuevo proyecto en Heroku. Si no recuerdas como hacer esto, vuelve a visitar <a href='/challenges/get-set-for-our-back-end-development-projects'>https://freecodecamp.com//challenges/get-set-for-our-back-end-development-projects</a>.",
+        "Ten en cuenta que para cada proyecto, deberías crear un nuevo repositorio en GitHub y un nuevo proyecto en Heroku. Si no recuerdas como hacer esto, vuelve a visitar <a href='/challenges/get-set-for-our-api-development-projects'>https://freecodecamp.com//challenges/get-set-for-our-api-development-projects</a>.",
         "Aquí están las historias de usuario específicas que debes implementar para este proyecto:",
         "<strong>Historia de Usuario:</strong> Puedo pasar una cadena como parámetro y comprobará si contiene o no una marca de tiempo para Unix o una fecha en lenguaje natural en inglés (Ejemplo: January 1, 2016).",
         "<strong>Historia de Usuario:</strong> Si tiene una marca de tiempo para Unix, devuelve tanto la marca de tiempo de Unix como la fecha en lenguaje natural.",
@@ -131,7 +131,7 @@
       "title": "Request Header Parser Microservice",
       "description": [
         "<strong>Objective:</strong> Build a full stack JavaScript app that is functionally similar to this: <a href='https://cryptic-ridge-9197.herokuapp.com/api/whoami/' target='_blank'>https://cryptic-ridge-9197.herokuapp.com/api/whoami/</a> and deploy it to Heroku.",
-        "Note that for each project, you should create a new GitHub repository and a new Heroku project. If you can't remember how to do this, revisit <a href='/challenges/get-set-for-our-back-end-development-projects'>https://freecodecamp.com/challenges/get-set-for-our-back-end-development-projects</a>.",
+        "Note that for each project, you should create a new GitHub repository and a new Heroku project. If you can't remember how to do this, revisit <a href='/challenges/get-set-for-our-api-development-projects'>https://freecodecamp.com/challenges/get-set-for-our-api-development-projects</a>.",
         "Here's the specific user story you should implement for this project:",
         "<strong>User Story:</strong> I can get the IP address, language and operating system for my browser.",
         "Once you've finished implementing these user stories, click the \"I've completed this challenge\" button and enter the URLs for both your GitHub repository and your live app running on Heroku.",
@@ -148,7 +148,7 @@
       "titleEs": "Microservicio para analizar el encabezado de una petición",
       "descriptionEs": [
         "<strong>Objetivo:</strong> Desarrolla una aplicación de Pila Completa en JavaScript que sea funcionalmente similar a esta: <a href='https://cryptic-ridge-9197.herokuapp.com/api/whoami/' target='_blank'>https://cryptic-ridge-9197.herokuapp.com/api/whoami/</a> y despliegala en Heroku.",
-        "Ten en cuenta que para cada proyecto, deberías crear un nuevo repositorio en GitHub y un nuevo proyecto en Heroku. Si no recuerdas como hacer esto, vuelve a visitar <a href='/challenges/get-set-for-our-back-end-development-projects'>https://freecodecamp.com//challenges/get-set-for-our-back-end-development-projects</a>.",
+        "Ten en cuenta que para cada proyecto, deberías crear un nuevo repositorio en GitHub y un nuevo proyecto en Heroku. Si no recuerdas como hacer esto, vuelve a visitar <a href='/challenges/get-set-for-our-api-development-projects'>https://freecodecamp.com//challenges/get-set-for-our-api-development-projects</a>.",
         "Aquí están las historias de usuario específicas que debes implementar para este proyecto:",
         "<strong>Historia de Usuario:</strong> Puedo obtener la dirección IP, idioma y sistema operativo de mi navegador.",
         "Una vez que hayas terminado de implementar estas historias de usuarios, pulsa el botón \"I've completed this challenge\" e introduce los URLs de tu repositorio en GitHub y de tu aplicación en vivo en Heroku.",
@@ -160,7 +160,7 @@
       "title": "URL Shortener Microservice",
       "description": [
         "<strong>Objective:</strong> Build a full stack JavaScript app that is functionally similar to this: <a href='https://little-url.herokuapp.com/' target='_blank'>https://little-url.herokuapp.com/</a> and deploy it to Heroku.",
-        "Note that for each project, you should create a new GitHub repository and a new Heroku project. If you can't remember how to do this, revisit <a href='/challenges/get-set-for-our-back-end-development-projects'>https://freecodecamp.com/challenges/get-set-for-our-back-end-development-projects</a>.",
+        "Note that for each project, you should create a new GitHub repository and a new Heroku project. If you can't remember how to do this, revisit <a href='/challenges/get-set-for-our-api-development-projects'>https://freecodecamp.com/challenges/get-set-for-our-api-development-projects</a>.",
         "Here are the specific user stories you should implement for this project:",
         "<strong>User Story:</strong>  I can pass a URL as a parameter and I will receive a shortened URL in the JSON response.",
         "<strong>User Story:</strong> If I pass an invalid URL that doesn't follow the valid http://www.example.com format, the JSON response will contain an error instead.",
@@ -180,7 +180,7 @@
       "titleEs": "Microservicio para acortar URLs",
       "descriptionEs": [
         "<strong>Objetivo:</strong> Desarrolla una aplicación de Pila Completa en JavaScript que sea funcionalmente similar a esta: <a href='https://little-url.herokuapp.com/' target='_blank'>https://little-url.herokuapp.com/</a> y despliegala en Heroku.",
-        "Ten en cuenta que para cada proyecto, deberías crear un nuevo repositorio en GitHub y un nuevo proyecto en Heroku. Si no recuerdas como hacer esto, vuelve a visitar <a href='/challenges/get-set-for-our-back-end-development-projects'>https://freecodecamp.com//challenges/get-set-for-our-back-end-development-projects</a>.",
+        "Ten en cuenta que para cada proyecto, deberías crear un nuevo repositorio en GitHub y un nuevo proyecto en Heroku. Si no recuerdas como hacer esto, vuelve a visitar <a href='/challenges/get-set-for-our-api-development-projects'>https://freecodecamp.com//challenges/get-set-for-our-api-development-projects</a>.",
         "Aquí están las historias de usuario específicas que debes implementar para este proyecto:",
         "<strong>Historia de Usuario:</strong> Puedo pasar una URL como parámetro y recibiré una URL acortada en la respuesta JSON.",
         "<strong>Historia de Usuario:</strong> Si paso una URL inválido que no siga el formato válido http://www.exmaple.com, en cambio la respuesta JSON contendrá un mensaje de error.",
@@ -194,7 +194,7 @@
       "title": "Image Search Abstraction Layer",
       "description": [
         "<strong>Objective:</strong> Build a full stack JavaScript app that allows you to search for images like this: <a href='https://cryptic-ridge-9197.herokuapp.com/api/imagesearch/lolcats%20funny?offset=10' target='_blank'>https://cryptic-ridge-9197.herokuapp.com/api/imagesearch/lolcats%20funny?offset=10</a> and browse recent search queries like this: <a href='https://cryptic-ridge-9197.herokuapp.com/api/latest/imagesearch/' target='_blank'>https://cryptic-ridge-9197.herokuapp.com/api/latest/imagesearch/</a>. Then deploy it to Heroku.",
-        "Note that for each project, you should create a new GitHub repository and a new Heroku project. If you can't remember how to do this, revisit <a href='/challenges/get-set-for-our-back-end-development-projects'>https://freecodecamp.com/challenges/get-set-for-our-back-end-development-projects</a>.",
+        "Note that for each project, you should create a new GitHub repository and a new Heroku project. If you can't remember how to do this, revisit <a href='/challenges/get-set-for-our-api-development-projects'>https://freecodecamp.com/challenges/get-set-for-our-api-development-projects</a>.",
         "Here are the specific user stories you should implement for this project:",
         "<strong>User Story:</strong> I can get the image URLs, alt text and page urls for a set of images relating to a given search string.",
         "<strong>User Story:</strong> I can paginate through the responses by adding a ?offset=2 parameter to the URL.",
@@ -213,7 +213,7 @@
       "titleEs": "Capa de abstracción para buscar imágenes",
       "descriptionEs": [
         "<strong>Objetivo:</strong> Desarolla una aplicación de Pila Completa en JavaScript que te permite buscar imágenes como esta: <a href='https://cryptic-ridge-9197.herokuapp.com/api/imagesearch/lolcats%20funny?offset=10' target='_blank'>https://cryptic-ridge-9197.herokuapp.com/api/imagesearch/lolcats%20funny?offset=10</a> y examinar las búsquedas recientes como esta: <a href='https://cryptic-ridge-9197.herokuapp.com/api/latest/imagesearch/' target='_blank'>https://cryptic-ridge-9197.herokuapp.com/api/latest/imagesearch/</a>. Después, despliegala en Heroku.",
-        "Ten en cuenta que para cada proyecto, deberías crear un nuevo repositorio en GitHub y un nuevo proyecto en Heroku. Si no recuerdas como hacer esto, vuelve a visitar <a href='/challenges/get-set-for-our-back-end-development-projects'>https://freecodecamp.com//challenges/get-set-for-our-back-end-development-projects</a>.",
+        "Ten en cuenta que para cada proyecto, deberías crear un nuevo repositorio en GitHub y un nuevo proyecto en Heroku. Si no recuerdas como hacer esto, vuelve a visitar <a href='/challenges/get-set-for-our-api-development-projects'>https://freecodecamp.com//challenges/get-set-for-our-api-development-projects</a>.",
         "Aquí están las historias de usuario específicas que debes implementar para este proyecto:",
         "<strong>Historia de Usuario:</strong> Puedo obtener la URL de una imagen, texto alternativo y URLs de las páginas de un conjunto de imágenes que se relacionen con una cadena de texto dada.",
         "<strong>Historia de Usuario:</strong> Puedo examinar página a página las respuestas añadiendo un parámetro del estilo <code>?offset=2</code> al URL.",
@@ -227,7 +227,7 @@
       "title": "File Metadata Microservice",
       "description": [
         "<strong>Objective:</strong> Build a full stack JavaScript app that is functionally similar to this: <a href='https://aryanj-file-size.herokuapp.com/' target='_blank'>https://aryanj-file-size.herokuapp.com/</a> and deploy it to Heroku.",
-        "Note that for each project, you should create a new GitHub repository and a new Heroku project. If you can't remember how to do this, revisit <a href='/challenges/get-set-for-our-back-end-development-projects'>https://freecodecamp.com/challenges/get-set-for-our-back-end-development-projects</a>.",
+        "Note that for each project, you should create a new GitHub repository and a new Heroku project. If you can't remember how to do this, revisit <a href='/challenges/get-set-for-our-api-development-projects'>https://freecodecamp.com/challenges/get-set-for-our-api-development-projects</a>.",
         "Here are the specific user stories you should implement for this project:",
         "<strong>User Story:</strong> I can submit a FormData object that includes a file upload.",
         "<strong>User Story:</strong> When I submit something, I will receive the file size in bytes within the JSON response",
@@ -246,7 +246,7 @@
       "titleEs": "Microservicio de metadatos de archivos",
       "descriptionEs": [
         "<strong>Objetivo:</strong> Desarrolla una aplicación de Pila Completa en JavaScript que sea funcionalmente similar a esta: <a href='https://cryptic-ridge-9197.herokuapp.com/' target='_blank'>https://cryptic-ridge-9197.herokuapp.com/</a>  y despliegala en Heroku.",
-        "Ten en cuenta que para cada proyecto, deberías crear un nuevo repositorio en GitHub y un nuevo proyecto en Heroku. Si no recuerdas como hacer esto, vuelve a visitar <a href='/challenges/get-set-for-our-back-end-development-projects'>https://freecodecamp.com//challenges/get-set-for-our-back-end-development-projects</a>.",
+        "Ten en cuenta que para cada proyecto, deberías crear un nuevo repositorio en GitHub y un nuevo proyecto en Heroku. Si no recuerdas como hacer esto, vuelve a visitar <a href='/challenges/get-set-for-our-api-development-projects'>https://freecodecamp.com//challenges/get-set-for-our-api-development-projects</a>.",
         "Aquí están las historias de usuario específicas que debes implementar para este proyecto:",
         "<strong>Historia de Usuario:</strong> Puedo enviar un objeto FormData que incluya una subida de un archivo.",
         "<strong>Historia de Usuario:</strong> Cuando envío algo, recibiré el tamao del archivo en bytes en la respuesta JSON.",
