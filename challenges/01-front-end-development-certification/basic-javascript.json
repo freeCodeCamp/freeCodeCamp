@@ -4335,7 +4335,7 @@
         "<blockquote>var ourMusic = [<br>  {<br>    \"artist\": \"Daft Punk\",<br>    \"title\": \"Homework\",<br>    \"release_year\": 1997,<br>    \"formats\": [ <br>      \"CD\", <br>      \"Cassette\", <br>      \"LP\" ],<br>    \"gold\": true<br>  }<br>];</blockquote>",
         "This is an array which contains one object inside. The object has various pieces of <dfn>metadata</dfn> about an album. It also has a nested <code>\"formats\"</code> array. If you want to add more album records, you can do this by adding records to the top level array.",
         "Objects hold data in a property, which has a key-value format. In the example above, <code>\"artist\": \"Daft Punk\"</code> is a property that has a key of <code>\"artist\"</code> and a value of <code>\"Daft Punk\"</code>.",
-        "<a href='//json.org/' target=_blank>JavaScript Object Notation</a> or <code>JSON</code> is a related data interchange format used to store data.",
+        "<a href='http://www.json.org/' target=_blank>JavaScript Object Notation</a> or <code>JSON</code> is a related data interchange format used to store data.",
         "<blockquote>{<br>  \"artist\": \"Daft Punk\",<br>  \"title\": \"Homework\",<br>  \"release_year\": 1997,<br>  \"formats\": [ <br>    \"CD\",<br>    \"Cassette\",<br>    \"LP\"<br>  ],<br>  \"gold\": true<br>}</blockquote>",
         "<strong>Note</strong><br>You will need to place a comma in between every object in the array, unless it is the last object in the array.",
         "<h4>Instructions</h4>",
