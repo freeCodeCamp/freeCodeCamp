@@ -221,7 +221,7 @@ module.exports = function(app) {
       return res.redirect('/');
     }
     return res.render('account/signin', {
-      title: 'Sign in to Free Code Camp using a Social Media Account'
+      title: 'Sign in to Free Code Camp'
     });
   }
 
