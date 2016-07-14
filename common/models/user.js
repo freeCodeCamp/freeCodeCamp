@@ -519,7 +519,7 @@ module.exports = function(User) {
       return user$
         .tapOnNext((user) => {
           if (!user) {
-            throw new Error(`could not find receiver for ${ receiver }`);
+            throw new Error(`${ receiver }'s Github account not linked with Free Code Camp`);
           }
         })
         .flatMap(({ progressTimestamps = [] }) => {
