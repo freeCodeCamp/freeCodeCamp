@@ -7,6 +7,7 @@ import {
   updateCurrentChallenge,
   initMap
 } from './actions';
+import { createMapUi } from '../utils';
 import {
   delayedRedirect,
   createErrorObservable
@@ -72,7 +73,7 @@ export default function fetchChallengesSaga(action$, getState, { services }) {
               createNameIdMap(entities),
               result
             ),
-            initMap(entities, result),
+            initMap(createMapUi(entities, result)),
           );
         })
         .catch(createErrorObservable);

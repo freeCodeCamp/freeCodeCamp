@@ -7,20 +7,35 @@ import { Panel } from 'react-bootstrap';
 
 import Block from './Block.jsx';
 import { toggleThisPanel } from '../../redux/actions';
+import {
+  makePanelOpenSelector,
+  makePanelHiddenSelector
+} from '../../redux/selectors';
 
 const dispatchActions = { toggleThisPanel };
-const mapStateToProps = createSelector(
-  (_, props) => props.dashedName,
-  (state, props) => state.entities.superBlock[props.dashedName],
-  (state, props) => state.challengesApp.mapUi[props.dashedName],
-  (dashedName, superBlock, isOpen) => ({
-    isOpen,
-    dashedName,
-    title: superBlock.title,
-    blocks: superBlock.blocks,
-    message: superBlock.message
-  })
-);
+// make selectors unique to each component
+// see
+// reactjs/reselect
+// sharing-selectors-with-props-across-multiple-components
+const makeMapStateToProps = () => {
+  const panelOpenSelector = makePanelOpenSelector();
+  const panelHiddenSelector = makePanelHiddenSelector();
+  return createSelector(
+    (_, props) => props.dashedName,
+    (state, props) => state.entities.superBlock[props.dashedName],
+    panelOpenSelector,
+    panelHiddenSelector,
+    (dashedName, superBlock, isOpen, isHidden) => ({
+      isOpen,
+      isHidden,
+      dashedName,
+      title: superBlock.title,
+      blocks: superBlock.blocks,
+      message: superBlock.message
+    })
+  );
+};
+
 export class SuperBlock extends PureComponent {
   constructor(...props) {
     super(...props);
@@ -32,6 +47,7 @@ export class SuperBlock extends PureComponent {
     dashedName: PropTypes.string,
     blocks: PropTypes.array,
     isOpen: PropTypes.bool,
+    isHidden: PropTypes.bool,
     message: PropTypes.string,
     toggleThisPanl: PropTypes.func
   };
@@ -82,8 +98,12 @@ export class SuperBlock extends PureComponent {
       dashedName,
       blocks,
       message,
-      isOpen
+      isOpen,
+      isHidden
     } = this.props;
+    if (isHidden) {
+      return null;
+    }
     return (
       <Panel
         bsClass='map-accordion-panel'
@@ -107,6 +127,6 @@ export class SuperBlock extends PureComponent {
 }
 
 export default connect(
-  mapStateToProps,
+  makeMapStateToProps,
   dispatchActions
 )(SuperBlock);

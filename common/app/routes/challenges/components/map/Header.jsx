@@ -27,6 +27,7 @@ export class Header extends PureComponent {
   constructor(...props) {
     super(...props);
     this.handleKeyDown = this.handleKeyDown.bind(this);
+    this.handleClearButton = this.handleClearButton.bind(this);
   }
   static displayName = 'MapHeader';
   static propTypes = {
@@ -44,18 +45,22 @@ export class Header extends PureComponent {
     }
   }
 
-  renderSearchAddon(filter, clearFilter) {
+  handleClearButton(e) {
+    e.preventDefault();
+    this.props.clearFilter();
+  }
+
+  renderSearchAddon(filter) {
     if (!filter) {
       return searchIcon;
     }
-    return <span onClick={ clearFilter }>{ clearIcon }</span>;
+    return <span onClick={this.handleClearButton }>{ clearIcon }</span>;
   }
 
   render() {
     const {
       filter,
       updateFilter,
-      clearFilter,
       collapseAll,
       expandAll,
       isAllCollapsed
@@ -100,7 +105,7 @@ export class Header extends PureComponent {
                 value={ filter }
               />
               <InputGroup.Addon>
-                { this.renderSearchAddon(filter, clearFilter) }
+                { this.renderSearchAddon(filter) }
               </InputGroup.Addon>
             </InputGroup>
           </Row>
