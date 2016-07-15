@@ -14,8 +14,7 @@ import certTypes from '../utils/certTypes.json';
 
 import {
   ifNoUser401,
-  ifNoUserRedirectTo,
-  flashIfNotVerified
+  ifNoUserRedirectTo
 } from '../utils/middleware';
 import { observeQuery } from '../utils/rx';
 import {
@@ -186,12 +185,6 @@ module.exports = function(app) {
     sendNonUserToMap,
     getAccount
   );
-  router.get(
-    '/settings',
-    sendNonUserToMap,
-    flashIfNotVerified,
-    getSettings
-  );
 
   // Ensure these are the last routes!
   api.get(
@@ -217,7 +210,7 @@ module.exports = function(app) {
   router.get('/:username', returnUser);
 
   app.use('/:lang', router);
-  app.use(router);
+  app.use(api);
 
   function getSignin(req, res) {
     if (req.user) {
@@ -273,12 +266,6 @@ module.exports = function(app) {
   function getAccount(req, res) {
     const { username } = req.user;
     return res.redirect('/' + username);
-  }
-
-  function getSettings(req, res) {
-    res.render('account/settings', {
-        title: 'Settings'
-    });
   }
 
   function returnUser(req, res, next) {
@@ -579,34 +566,4 @@ module.exports = function(app) {
       return res.render('account/forgot');
     });
   }
-
-  // function vote1(req, res, next) {
-  //   if (req.user) {
-  //     req.user.tshirtVote = 1;
-  //     req.user.save(function(err) {
-  //       if (err) { return next(err); }
-  //
-  //       req.flash('success', { msg: 'Thanks for voting!' });
-  //       return res.redirect('/map');
-  //     });
-  //   } else {
-  //     req.flash('error', { msg: 'You must be signed in to vote.' });
-  //     res.redirect('/map');
-  //   }
-  // }
-  //
-  // function vote2(req, res, next) {
-  //   if (req.user) {
-  //     req.user.tshirtVote = 2;
-  //     req.user.save(function(err) {
-  //       if (err) { return next(err); }
-  //
-  //       req.flash('success', { msg: 'Thanks for voting!' });
-  //       return res.redirect('/map');
-  //     });
-  //   } else {
-  //     req.flash('error', {msg: 'You must be signed in to vote.'});
-  //     res.redirect('/map');
-  //   }
-  // }
 };
