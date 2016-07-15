@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react';
 import { Button, Row, Col } from 'react-bootstrap';
+import FA from 'react-fontawesome';
 
 import LockedSettings from './Locked-Settings.jsx';
 import SocialSettings from './Social-Settings.jsx';
@@ -10,6 +11,7 @@ import DeleteModal from './Delete-Modal.jsx';
 export default class Settings extends React.Component {
   static displayName = 'Settings';
   static propTypes = {
+    username: PropTypes.string,
     isLocked: PropTypes.bool,
     isGithubCool: PropTypes.bool,
     isTwitter: PropTypes.bool,
@@ -22,6 +24,7 @@ export default class Settings extends React.Component {
 
   render() {
     const {
+      username,
       isLocked,
       isGithubCool,
       isTwitter,
@@ -33,6 +36,38 @@ export default class Settings extends React.Component {
     } = this.props;
     return (
       <div>
+        <Row>
+          <Col xs={ 12 }>
+            <Button
+              block={ true }
+              bsSize='lg'
+              bsStyle='primary'
+              className='btn-link-social'
+              href={ `/${username}` }
+              >
+              <FA name='user' />
+              Show me my public profile
+            </Button>
+            <Button
+              block={ true }
+              bsSize='lg'
+              bsStyle='primary'
+              className='btn-link-social'
+              href={ '/signout' }
+              >
+              Sign me out of Free Code Camp
+            </Button>
+            <Button
+              block={ true }
+              bsSize='lg'
+              bsStyle='primary'
+              className='btn-link-social'
+              href={ 'mail:team@freecodecamp.com' }
+              >
+              Email us at team@freecodecamp.com
+            </Button>
+          </Col>
+        </Row>
         <h1 className='text-center'>Settings for your Account</h1>
         <h2 className='text-center'>Actions</h2>
         <Row>

@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react';
 import ReactDOM from 'react-dom';
+import { Link } from 'react-router';
 import { LinkContainer } from 'react-router-bootstrap';
 import {
   Col,
@@ -135,13 +136,15 @@ export default class extends React.Component {
       return null;
     }
     return (
-      <FCCNavItem
-        className='brownie-points-nav'
-        href={ '/' + username }
+      <LinkContainer
+        eventKey={ navLinks.length + 1 }
         key='points'
+        to='/settings'
         >
-        [ { points } ]
-      </FCCNavItem>
+        <FCCNavItem className='brownie-points-nav'>
+          [ { points } ]
+        </FCCNavItem>
+      </LinkContainer>
     );
   }
 
@@ -156,12 +159,12 @@ export default class extends React.Component {
           eventKey={ 2 }
           key='user'
           >
-          <a href={ '/' + username }>
+          <Link to='/settings'>
             <img
               className='profile-picture float-right'
               src={ picture }
             />
-          </a>
+          </Link>
         </li>
       );
     } else {
