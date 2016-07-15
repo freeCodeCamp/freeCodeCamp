@@ -14,7 +14,8 @@ const log = debug('fcc:react-server');
 const routes = [
   '/challenges',
   '/challenges/*',
-  '/map'
+  '/map',
+  '/settings'
 ];
 
 const devRoutes = [];
