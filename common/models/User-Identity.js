@@ -5,7 +5,9 @@ import {
   setProfileFromGithub,
   getFirstImageFromProfile,
   getUsernameFromProvider,
-  getSocialProvider
+  getSocialProvider,
+  setProfileFromRepoAccess,
+  checkRepoAccess
 } from '../../server/utils/auth';
 
 const { defaultProfileImage } = require('../utils/constantStrings.json');
@@ -145,8 +147,6 @@ export default function(UserIdent) {
         user.picture = picture;
         userChanged = true;
       }
-
-      console.log('GIVEN PROVIDER: ' + provider);
       if (!githubRegex.test(provider) && profile) {
         user[provider] = getUsernameFromProvider(provider, profile);
         userChanged = true;
@@ -154,20 +154,27 @@ export default function(UserIdent) {
 
       // if user signed in with github refresh their info
       if (githubRegex.test(provider) && profile && profile._json) {
-        debug("user isn't github cool or username from github is different");
-        setProfileFromGithub(user, profile, profile._json);
-        userChanged = true;
-      }
+        checkRepoAccess(userIdent.credentials.accessToken, function(bool) {
+          if (bool) {
+            debug('User isGithubRepoCool');
+            setProfileFromRepoAccess(user, profile, profile._json);
+            userChanged = true;
+          } else {
+            debug("user isn't github repo cool");
+            setProfileFromGithub(user, profile, profile._json);
+            userChanged = true;
+          }
 
-
-      if (userChanged) {
-        return user.save(function(err) {
-          if (err) { return next(err); }
+          if (userChanged) {
+            return user.save(function(err) {
+              if (err) { return next(err); }
+              return next();
+            });
+          }
+          debug('exiting after user identity before save');
           return next();
         });
       }
-      debug('exiting after user identity before save');
-      return next();
   });
  });
 }

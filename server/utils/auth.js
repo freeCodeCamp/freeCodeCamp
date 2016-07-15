@@ -7,6 +7,8 @@ const providerHash = {
   google: ({ id }) => id
 };
 
+import request from 'request';
+
 export function getUsernameFromProvider(provider, profile) {
   return typeof providerHash[provider] === 'function' ?
     providerHash[provider](profile) :
@@ -93,6 +95,28 @@ export function getFirstImageFromProfile(profile) {
   return profile && profile.photos && profile.photos[0] ?
     profile.photos[0].value :
     null;
+}
+
+export function checkRepoAccess(token, callback) {
+  const authToken = 'token ' + token;
+  request({
+      url: 'https://api.github.com/orgs/FreeCodeCamp',
+      method: 'GET',
+      headers: {
+          Authorization: authToken,
+          'user-agent': 'FreeCodeCamp-Export'
+      }
+  }, function(error, response) {
+      const access = response.headers['x-oauth-scopes'].split(',');
+      let returnBool = false;
+      for (let i = 0; i < access.length; i++) {
+        if (access[i] === 'repo') {
+          returnBool = true;
+        }
+      }
+
+      callback(returnBool);
+  });
 }
 
 export function getSocialProvider(provider) {
