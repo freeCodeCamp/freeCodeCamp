@@ -7,16 +7,19 @@ import classnames from 'classnames';
 import debug from 'debug';
 
 import { updateCurrentChallenge } from '../../redux/actions';
+import { makePanelHiddenSelector } from '../../redux/selectors';
 
 const bindableActions = { updateCurrentChallenge };
-const mapStateToProps = createSelector(
+const makeMapStateToProps = () => createSelector(
   (_, props) => props.dashedName,
   state => state.entities.challenge,
-  (dashedName, challengeMap) => {
+  makePanelHiddenSelector(),
+  (dashedName, challengeMap, isHidden) => {
     const challenge = challengeMap[dashedName] || {};
     return {
       dashedName,
       challenge,
+      isHidden,
       title: challenge.title,
       block: challenge.block,
       isLocked: challenge.isLocked,
@@ -27,6 +30,7 @@ const mapStateToProps = createSelector(
     };
   }
 );
+
 export class Challenge extends PureComponent {
   constructor(...args) {
     super(...args);
@@ -39,6 +43,7 @@ export class Challenge extends PureComponent {
     isLocked: PropTypes.bool,
     isRequired: PropTypes.bool,
     isCompleted: PropTypes.bool,
+    isHidden: PropTypes.bool,
     challenge: PropTypes.object,
     updateCurrentChallenge: PropTypes.func
   };
@@ -95,9 +100,13 @@ export class Challenge extends PureComponent {
       isCompleted,
       isComingSoon,
       isDev,
+      isHidden,
       challenge,
       updateCurrentChallenge
     } = this.props;
+    if (isHidden) {
+      return null;
+    }
     const challengeClassName = classnames({
       'text-primary': true,
       'padded-ionic-icon': true,
@@ -133,4 +142,4 @@ export class Challenge extends PureComponent {
   }
 }
 
-export default connect(mapStateToProps, bindableActions)(Challenge);
+export default connect(makeMapStateToProps, bindableActions)(Challenge);

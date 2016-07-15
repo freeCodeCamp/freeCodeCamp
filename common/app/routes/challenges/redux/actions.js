@@ -43,27 +43,7 @@ export const updateFilter = createAction(
   e => e.target.value
 );
 
-function createMapKey(map, key) {
-  map[key] = true;
-  return map;
-}
-export const initMap = createAction(
-  types.initMap,
-  (
-    { superBlock: superBlockMap },
-    superBlocks
-  ) => {
-    if (!superBlocks || !superBlockMap) {
-      return {};
-    }
-    const blocks = superBlocks
-      .map(superBlock => superBlockMap[superBlock].blocks)
-      .reduce((blocks, block) => blocks.concat(block));
-    return superBlocks
-      .concat(blocks)
-      .reduce(createMapKey, {});
-  }
-);
+export const initMap = createAction(types.initMap);
 export const toggleThisPanel = createAction(types.toggleThisPanel);
 export const collapseAll = createAction(types.collapseAll);
 export const expandAll = createAction(types.expandAll);

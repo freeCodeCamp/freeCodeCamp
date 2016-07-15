@@ -8,7 +8,10 @@ import {
   buildSeed,
   createTests,
   getPreFile,
-  getFileKey
+  getFileKey,
+  toggleThisPanel,
+  collapseAllPanels,
+  expandAllPanels
 } from '../utils';
 
 const initialUiState = {
@@ -180,7 +183,7 @@ const mainReducer = handleActions(
       mouse: [ 0, 0 ]
     }),
 
-    [types.videoCompleted]: (state, { payload: userAnswer } ) => ({
+    [types.videoCompleted]: (state, { payload: userAnswer }) => ({
       ...state,
       isCorrect: true,
       isPressed: false,
@@ -238,35 +241,37 @@ const filesReducer = handleActions(
 );
 
 // {
-//   // show
-//   [(super)BlockName]: { open: Boolean }
-//   // do not show
-//   [(super)BlockName]: null
+//   children: [...{
+//     name: (superBlock: String),
+//     isOpen: Boolean,
+//     isHidden: Boolean,
+//     children: [...{
+//       name: (blockName: String),
+//       isOpen: Boolean,
+//       isHidden: Boolean,
+//       children: [...{
+//         name: (challengeName: String),
+//         isHidden: Boolean
+//       }]
+//     }]
+//   }
 // }
 const mapReducer = handleActions(
   {
-    [types.initMap]: (state, { payload }) => ({
-      ...state,
-      ...payload
-    }),
-    [types.toggleThisPanel]: (state, { payload }) => ({
-      ...state,
-      [payload]: !state[payload]
-    }),
-    [types.collapseAll]: state => ({
-      ...Object.keys(state).reduce((newState, key) => {
-        newState[key] = false;
-        return newState;
-      }, {}),
-      isAllCollapsed: true
-    }),
-    [types.expandAll]: state => ({
-      ...Object.keys(state).reduce((newState, key) => {
-        newState[key] = true;
-        return newState;
-      }, {}),
-      isAllCollapsed: false
-    })
+    [types.initMap]: (state, { payload }) => payload,
+    [types.toggleThisPanel]: (state, { payload: name }) => {
+      return toggleThisPanel(state, name);
+    },
+    [types.collapseAll]: state => {
+      const newState = collapseAllPanels(state);
+      newState.isAllCollapsed = true;
+      return newState;
+    },
+    [types.expandAll]: state => {
+      const newState = expandAllPanels(state);
+      newState.isAllCollapsed = false;
+      return newState;
+    }
   },
   initialState.mapUi
 );

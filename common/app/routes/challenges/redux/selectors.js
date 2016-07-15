@@ -1,5 +1,6 @@
-import * as challengeTypes from '../../../utils/challengeTypes';
 import { createSelector } from 'reselect';
+import * as challengeTypes from '../../../utils/challengeTypes';
+import { getNode } from '../utils';
 
 const viewTypes = {
   [ challengeTypes.html]: 'classic',
@@ -50,5 +51,23 @@ export const challengeSelector = createSelector(
         'text/html' :
         'javascript'
     };
+  }
+);
+
+export const makePanelOpenSelector = () => createSelector(
+  state => state.challengesApp.mapUi,
+  (_, props) => props.dashedName,
+  (mapUi, name) => {
+    const node = getNode(mapUi, name);
+    return node ? node.isOpen : true;
+  }
+);
+
+export const makePanelHiddenSelector = () => createSelector(
+  state => state.challengesApp.mapUi,
+  (_, props) => props.dashedName,
+  (mapUi, name) => {
+    const node = getNode(mapUi, name);
+    return node ? node.isHidden : false;
   }
 );

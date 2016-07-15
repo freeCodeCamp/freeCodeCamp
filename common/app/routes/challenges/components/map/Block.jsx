@@ -7,16 +7,21 @@ import { Panel } from 'react-bootstrap';
 
 import Challenge from './Challenge.jsx';
 import { toggleThisPanel } from '../../redux/actions';
+import {
+  makePanelOpenSelector,
+  makePanelHiddenSelector
+} from '../../redux/selectors';
 
 const dispatchActions = { toggleThisPanel };
-const mapStateToProps = createSelector(
+const makeMapStateToProps = () => createSelector(
   (_, props) => props.dashedName,
   (state, props) => state.entities.block[props.dashedName],
-  state => state.entities.challenge,
-  (state, props) => state.challengesApp.mapUi[props.dashedName],
-  (dashedName, block, challengeMap, isOpen) => {
+  makePanelOpenSelector(),
+  makePanelHiddenSelector(),
+  (dashedName, block, isOpen, isHidden) => {
     return {
       isOpen,
+      isHidden,
       dashedName,
       title: block.title,
       time: block.time,
@@ -35,6 +40,7 @@ export class Block extends PureComponent {
     dashedName: PropTypes.string,
     time: PropTypes.string,
     isOpen: PropTypes.bool,
+    isHidden: PropTypes.bool,
     challenges: PropTypes.array,
     toggleThisPanel: PropTypes.func
   };
@@ -79,8 +85,12 @@ export class Block extends PureComponent {
       time,
       dashedName,
       isOpen,
+      isHidden,
       challenges
     } = this.props;
+    if (isHidden) {
+      return null;
+    }
     return (
       <Panel
         bsClass='map-accordion-panel-nested'
@@ -98,4 +108,4 @@ export class Block extends PureComponent {
   }
 }
 
-export default connect(mapStateToProps, dispatchActions)(Block);
+export default connect(makeMapStateToProps, dispatchActions)(Block);

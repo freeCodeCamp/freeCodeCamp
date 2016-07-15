@@ -4,6 +4,7 @@ import nextChallengeSaga from './next-challenge-saga';
 import answerSaga from './answer-saga';
 import resetChallengeSaga from './reset-challenge-saga';
 import bugSaga from './bug-saga';
+import mapUiSaga from './map-ui-saga';
 
 export * as actions from './actions';
 export reducer from './reducer';
@@ -17,5 +18,6 @@ export const sagas = [
   nextChallengeSaga,
   answerSaga,
   resetChallengeSaga,
-  bugSaga
+  bugSaga,
+  mapUiSaga
 ];
