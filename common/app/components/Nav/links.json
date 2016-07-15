@@ -1,8 +1,4 @@
 [{
-  "content": "Wiki",
-  "link": "/wiki",
-  "target": "_blank"
-},{
   "content": "Forum",
   "link": "http://forum.freecodecamp.com/",
   "target": "_blank"
