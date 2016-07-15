@@ -16,9 +16,9 @@ export default function redirectLang(app) {
 
     if (supportedLanguages[langCode]) {
       req.flash('errors', {
-        msg: `404: We couldn't find path ${ path }`
+        msg: `We couldn't find path ${ path }`
       });
-      return res.redirect('/map');
+      return res.render('404', { title: '404'});
     }
 
     // language aware redirect
