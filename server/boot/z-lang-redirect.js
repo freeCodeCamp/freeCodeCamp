@@ -1,5 +1,6 @@
 import supportedLanguages from '../../common/utils/supported-languages';
 import passThroughs from '../utils/lang-passthrough-urls';
+import accepts from 'accepts';
 // import debug from 'debug';
 
 // const log = debug('fcc:controller:lang-redirect');
@@ -7,6 +8,8 @@ const toLowerCase = String.prototype.toLowerCase;
 
 export default function redirectLang(app) {
   app.all('*', function(req, res, next) {
+    const accept = accepts(req);
+    const type = accept.type('html', 'json', 'text');
     const { url, path } = req;
     const langCode = toLowerCase.call(url.split('/')[1]);
 
@@ -14,14 +17,24 @@ export default function redirectLang(app) {
       return next();
     }
 
-    if (supportedLanguages[langCode]) {
+    if (!supportedLanguages[langCode]) {
+      // language aware redirect
+      console.log('foo', path, req.method);
+      return res.redirect(url);
+    }
+
+    if (type === 'html') {
       req.flash('errors', {
         msg: `We couldn't find path ${ path }`
       });
       return res.render('404', { title: '404'});
     }
 
-    // language aware redirect
-    return res.redirect(url);
+    if (type === 'json') {
+      return res.status('404').json({ error: 'path not found' });
+    }
+
+    res.setHeader('Content-Type', 'text/plain');
+    return res.send('404 path not found');
   });
 }
