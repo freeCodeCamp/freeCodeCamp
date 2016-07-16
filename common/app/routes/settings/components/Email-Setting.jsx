@@ -10,6 +10,7 @@ export function UpdateEmailButton() {
       bsSize='lg'
       bsStyle='primary'
       className='btn-link-social'
+      href='/update-email'
       >
       <FA name='envelope' />
       Update my Email
@@ -21,7 +22,10 @@ export default function EmailSettings({
   email,
   sendMonthlyEmail,
   sendNotificationEmail,
-  sendQuincyEmail
+  sendQuincyEmail,
+  toggleMonthlyEmail,
+  toggleNotificationEmail,
+  toggleQuincyEmail
 }) {
   if (!email) {
     return (
@@ -63,6 +67,7 @@ export default function EmailSettings({
             className={
               classnames('positive-20', { active: sendMonthlyEmail })
             }
+            onClick={ toggleMonthlyEmail }
             >
             { sendMonthlyEmail ? 'On' : 'Off' }
           </Button>
@@ -84,6 +89,7 @@ export default function EmailSettings({
             className={
               classnames('positive-20', { active: sendNotificationEmail })
             }
+            onClick={ toggleNotificationEmail }
             >
             { sendNotificationEmail ? 'On' : 'Off' }
           </Button>
@@ -105,6 +111,7 @@ export default function EmailSettings({
             className={
               classnames('positive-20', { active: sendQuincyEmail })
             }
+            onClick={ toggleQuincyEmail }
             >
             { sendQuincyEmail ? 'On' : 'Off' }
           </Button>
@@ -118,5 +125,8 @@ EmailSettings.propTypes = {
   email: PropTypes.string,
   sendMonthlyEmail: PropTypes.bool,
   sendNotificationEmail: PropTypes.bool,
-  sendQuincyEmail: PropTypes.bool
+  sendQuincyEmail: PropTypes.bool,
+  toggleMonthlyEmail: PropTypes.func.isRequired,
+  toggleNotificationEmail: PropTypes.func.isRequired,
+  toggleQuincyEmail: PropTypes.func.isRequired
 };

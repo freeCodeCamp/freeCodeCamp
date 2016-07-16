@@ -8,6 +8,7 @@ import {
   reducer as challengesApp,
   projectNormalizer
 } from './routes/challenges/redux';
+import { reducer as settingsApp } from './routes/settings/redux';
 
 export default function createReducer(sideReducers = {}) {
   return combineReducers({
@@ -16,6 +17,7 @@ export default function createReducer(sideReducers = {}) {
     app,
     toasts,
     challengesApp,
+    settingsApp,
     form: formReducer.normalize({ ...projectNormalizer })
   });
 }

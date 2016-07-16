@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import { connect } from 'react-redux';
 import { Button, Row, Col } from 'react-bootstrap';
 import FA from 'react-fontawesome';
 
@@ -8,10 +9,58 @@ import EmailSettings from './Email-Setting.jsx';
 import LangaugeSettings from './Language-Settings.jsx';
 import DeleteModal from './Delete-Modal.jsx';
 
-export default class Settings extends React.Component {
+import {
+  toggleUserFlag,
+  openDeleteModal,
+  hideDeleteModal
+} from '../redux/actions';
+import { toggleNightMode } from '../../../redux/actions';
+
+const actions = {
+  toggleNightMode,
+  openDeleteModal,
+  hideDeleteModal,
+  toggleIsLocked: () => toggleUserFlag('isLocked'),
+  toggleQuincyEmail: () => toggleUserFlag('sendQuincyEmail'),
+  toggleNotificationEmail: () => toggleUserFlag('sendNotificationEmail'),
+  toggleMonthlyEmail: () => toggleUserFlag('sendMonthlyEmail')
+};
+
+const mapStateToProps = state => {
+  const {
+    app: { user: username },
+    entities: { user: userMap },
+    settingsApp: { isDeleteOpen }
+  } = state;
+  const {
+    email,
+    isLocked,
+    isGithubCool,
+    isTwitter,
+    isLinkedIn,
+    sendMonthlyEmail,
+    sendNotificationEmail,
+    sendQuincyEmail
+  } = userMap[username] || {};
+  return {
+    username,
+    email,
+    isDeleteOpen,
+    isLocked,
+    isGithubCool,
+    isTwitter,
+    isLinkedIn,
+    sendMonthlyEmail,
+    sendNotificationEmail,
+    sendQuincyEmail
+  };
+};
+
+export class Settings extends React.Component {
   static displayName = 'Settings';
   static propTypes = {
     username: PropTypes.string,
+    isDeleteOpen: PropTypes.bool,
     isLocked: PropTypes.bool,
     isGithubCool: PropTypes.bool,
     isTwitter: PropTypes.bool,
@@ -19,12 +68,20 @@ export default class Settings extends React.Component {
     email: PropTypes.string,
     sendMonthlyEmail: PropTypes.bool,
     sendNotificationEmail: PropTypes.bool,
-    sendQuincyEmail: PropTypes.bool
+    sendQuincyEmail: PropTypes.bool,
+    toggleNightMode: PropTypes.func,
+    toggleIsLocked: PropTypes.func,
+    toggleQuincyEmail: PropTypes.func,
+    toggleMonthlyEmail: PropTypes.func,
+    toggleNotificationEmail: PropTypes.func,
+    openDeleteModal: PropTypes.func,
+    hideDeleteModal: PropTypes.func
   };
 
   render() {
     const {
       username,
+      isDeleteOpen,
       isLocked,
       isGithubCool,
       isTwitter,
@@ -32,7 +89,14 @@ export default class Settings extends React.Component {
       email,
       sendMonthlyEmail,
       sendNotificationEmail,
-      sendQuincyEmail
+      sendQuincyEmail,
+      toggleNightMode,
+      toggleIsLocked,
+      toggleQuincyEmail,
+      toggleMonthlyEmail,
+      toggleNotificationEmail,
+      openDeleteModal,
+      hideDeleteModal
     } = this.props;
     return (
       <div>
@@ -77,6 +141,7 @@ export default class Settings extends React.Component {
               bsSize='lg'
               bsStyle='primary'
               className='btn-link-social'
+              onClick={ toggleNightMode }
               >
               NightMode
             </Button>
@@ -116,7 +181,10 @@ export default class Settings extends React.Component {
             smOffset={ 2 }
             xs={ 12 }
             >
-            <LockedSettings isLocked={ isLocked } />
+            <LockedSettings
+              isLocked={ isLocked }
+              toggle={ toggleIsLocked }
+            />
           </Col>
         </Row>
         <div className='spacer' />
@@ -134,6 +202,9 @@ export default class Settings extends React.Component {
               sendMonthlyEmail={ sendMonthlyEmail }
               sendNotificationEmail={ sendNotificationEmail }
               sendQuincyEmail={ sendQuincyEmail }
+              toggleMonthlyEmail={ toggleMonthlyEmail }
+              toggleNotificationEmail={ toggleNotificationEmail }
+              toggleQuincyEmail={ toggleQuincyEmail }
             />
           </Col>
         </Row>
@@ -160,7 +231,11 @@ export default class Settings extends React.Component {
             smOffset={ 2 }
             xs={ 12 }
             >
-            <DeleteModal />
+            <DeleteModal
+              hide={ hideDeleteModal }
+              isOpen={ isDeleteOpen }
+              open={ openDeleteModal }
+            />
           </Col>
         </Row>
       </div>
@@ -168,3 +243,4 @@ export default class Settings extends React.Component {
   }
 }
 
+export default connect(mapStateToProps, actions)(Settings);

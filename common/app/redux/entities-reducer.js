@@ -9,7 +9,7 @@ const initialState = {
 };
 
 export default function entities(state = initialState, action) {
-  const { type, payload: { username, points } = {} } = action;
+  const { type, payload: { username, points, flag } = {} } = action;
   if (type === updateCompletedChallenges) {
     const username = action.payload;
     const completedChallengeMap = state.user[username].challengeMap || {};
@@ -42,6 +42,18 @@ export default function entities(state = initialState, action) {
     return {
       ...state,
       ...action.meta.entities
+    };
+  }
+  if (action.type === types.updateUserFlag) {
+    return {
+      ...state,
+      user: {
+        ...state.user,
+        [username]: {
+          ...state.user[username],
+          [flag]: !state.user[username][flag]
+        }
+      }
     };
   }
   return state;

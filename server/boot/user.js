@@ -155,26 +155,6 @@ module.exports = function(app) {
   router.get('/email-signin', getEmailSignin);
   router.get('/deprecated-signin', getDepSignin);
   router.get('/update-email', getUpdateEmail);
-  api.get(
-    '/toggle-lockdown-mode',
-    sendNonUserToMap,
-    toggleLockdownMode
-  );
-  api.get(
-    '/toggle-announcement-email-mode',
-    sendNonUserToMap,
-    toggleReceivesAnnouncementEmails
-  );
-  api.get(
-    '/toggle-notification-email-mode',
-    sendNonUserToMap,
-    toggleReceivesNotificationEmails
-  );
-  api.get(
-    '/toggle-quincy-email-mode',
-    sendNonUserToMap,
-    toggleReceivesQuincyEmails
-  );
   api.post(
     '/account/delete',
     ifNoUser401,
@@ -429,62 +409,6 @@ module.exports = function(app) {
             msg: `Looks like user ${username} is not ${certText[certType]}`
           });
           return res.redirect('back');
-        },
-        next
-      );
-  }
-
-  function toggleLockdownMode(req, res, next) {
-    const { user } = req;
-    user.update$({ isLocked: !user.isLocked })
-      .subscribe(
-        () => {
-          req.flash('info', {
-            msg: 'We\'ve successfully updated your Privacy preferences.'
-          });
-          return res.redirect('/settings');
-        },
-        next
-      );
-  }
-
-  function toggleReceivesAnnouncementEmails(req, res, next) {
-    const { user } = req;
-    return user.update$({ sendMonthlyEmail: !user.sendMonthlyEmail })
-      .subscribe(
-        () => {
-          req.flash('info', {
-            msg: 'We\'ve successfully updated your Email preferences.'
-          });
-          return res.redirect('/settings');
-        },
-        next
-      );
-  }
-
-  function toggleReceivesQuincyEmails(req, res, next) {
-    const { user } = req;
-    return user.update$({ sendQuincyEmail: !user.sendQuincyEmail })
-      .subscribe(
-        () => {
-          req.flash('info', {
-            msg: 'We\'ve successfully updated your Email preferences.'
-          });
-          return res.redirect('/settings');
-        },
-        next
-      );
-  }
-
-  function toggleReceivesNotificationEmails(req, res, next) {
-    const { user } = req;
-    return user.update$({ sendNotificationEmail: !user.sendNotificationEmail })
-      .subscribe(
-        () => {
-          req.flash('info', {
-            msg: 'We\'ve successfully updated your Email preferences.'
-          });
-          return res.redirect('/settings');
         },
         next
       );

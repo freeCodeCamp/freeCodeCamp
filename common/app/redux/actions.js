@@ -25,6 +25,11 @@ export const updateUserPoints = createAction(
   types.updateUserPoints,
   (username, points) => ({ username, points })
 );
+// updateUserPoints(username: String, flag: String) => Action
+export const updateUserFlag = createAction(
+  types.updateUserFlag,
+  (username, flag) => ({ username, flag })
+);
 // updateCompletedChallenges(username: String) => Action
 export const updateCompletedChallenges = createAction(
   types.updateCompletedChallenges

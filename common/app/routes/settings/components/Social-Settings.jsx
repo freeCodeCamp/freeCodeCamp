@@ -45,7 +45,7 @@ export default function SocialSettings({
         href='/link/linkedin'
         key='linkedin'
         >
-        <FA name='linked' />
+        <FA name='linkedin' />
         Add my LinkedIn to my portfolio
       </Button>
     ));
