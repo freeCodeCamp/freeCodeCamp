@@ -2,7 +2,15 @@ import React, { PropTypes } from 'react';
 import { FormControl } from 'react-bootstrap';
 import langs from '../../../../utils/supported-languages';
 
-const langOptions = [
+const options = [(
+    <option
+      disabled={ true }
+      key='default'
+      value='not-the-momma'
+      >
+      Prefered Langauge
+    </option>
+  ),
   ...Object.keys(langs).map(tag => {
     return (
       <option
@@ -23,21 +31,12 @@ const langOptions = [
 ];
 
 export default function LangaugeSettings({ userLang }) {
-  const options = [(
-    <option
-      disabled={ true }
-      key='default'
-      selected={ userLang ? false : true }
-      >
-      Prefered Langauge
-    </option>
-  ),
-    ...langOptions
-  ];
   return (
     <FormControl
       className='btn btn-block btn-primary btn-link-social'
       componentClass='select'
+      defaultValue='not-the-momma'
+      value={ userLang }
       >
       { options }
     </FormControl>

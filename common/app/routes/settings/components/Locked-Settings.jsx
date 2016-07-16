@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 import { Button, Row, Col } from 'react-bootstrap';
 import classnames from 'classnames';
 
-export default function LockSettings({ isLocked }) {
+export default function LockSettings({ isLocked, toggle }) {
   const className = classnames({
     'positive-20': true,
     active: isLocked
@@ -22,6 +22,7 @@ export default function LockSettings({ isLocked }) {
           bsSize='lg'
           bsStyle='primary'
           className={ className }
+          onClick={ toggle }
           >
           { isLocked ? 'On' : 'Off' }
         </Button>
@@ -31,5 +32,6 @@ export default function LockSettings({ isLocked }) {
 }
 
 LockSettings.propTypes = {
-  isLocked: PropTypes.bool
+  isLocked: PropTypes.bool,
+  toggle: PropTypes.func.isRequired
 };

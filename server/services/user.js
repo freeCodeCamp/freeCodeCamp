@@ -9,17 +9,23 @@ const publicUserProps = [
   'theme',
   'picture',
   'points',
+  'email',
   'languageTag',
 
   'isCheater',
   'isGithubCool',
 
+  'isLocked',
   'isFrontEndCert',
   'isBackEndCert',
   'isDataVisCert',
   'isFullStackCert',
 
   'githubURL',
+  'sendMonthlyEmail',
+  'sendNotificationEmail',
+  'sendQuincyEmail',
+
   'currentChallenge',
   'challengeMap'
 ];
@@ -40,7 +46,11 @@ export default function userServices() {
               {
                 entities: {
                   user: {
-                    [user.username]: _.pick(user, publicUserProps)
+                    [user.username]: {
+                      ..._.pick(user, publicUserProps),
+                      isTwitter: !!user.twitter,
+                      isLinkedIn: !!user.linkedIn
+                    }
                   }
                 },
                 result: user.username
