@@ -69,7 +69,7 @@
         "Para esta prueba se te presentará una cadena de texto como por ejemplo: <code>800-692-7753</code> o <code>8oo-six427676;laskdjf</code>. Tu trabajo consiste en validar o rechazar el número telefónico tomando como base cualquier combinación de los formatos anteriormente presentados. El código de área es requrido. Si el código de país es provisto, debes confirmar que este es <code>1</code>. La función debe devolver true si la cadena de texto es un número telefónico válido en los EEUU; de lo contrario, debe devolver false.",
         "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
       ],
-      "titleIt": "Verifica numeri telefonici degli Stati Uniti",
+      "titleIt": "Verifica i numeri telefonici degli Stati Uniti",
       "descriptionIt": [
         "Ritorna <code>true</code> se la stringa passata come argomento è un numero valido negli Stati Uniti.",
         "L'utente può digitare qualunque stringa nel campo di inserimento, purchè sia un numero di telefono valido negli Stati Uniti. Qui sotto alcuni esempi di numeri di telefono validi negli Stati Uniti (fai riferimento ai test per le altre varianti):",
