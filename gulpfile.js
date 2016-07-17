@@ -132,6 +132,7 @@ var paths = {
     'run-tests-stream',
     'show-completion',
     'step-challenge',
+    'definitions',
     'end'
   ],
 
