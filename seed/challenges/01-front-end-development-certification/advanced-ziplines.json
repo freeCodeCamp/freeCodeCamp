@@ -8,7 +8,7 @@
       "id": "bd7158d8c442eddfaeb5bd17",
       "title": "Build a JavaScript Calculator",
       "description": [
-        "<strong>Objective:</strong> Build a <a href='https://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='https://codepen.io/FreeCodeCamp/full/PNKdjo/' target='_blank'>https://codepen.io/FreeCodeCamp/full/PNKdjo/</a>.",
+        "<strong>Objective:</strong> Build a <a href='https://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='https://codepen.io/FreeCodeCamp/full/rLJZrA/' target='_blank'>https://codepen.io/FreeCodeCamp/full/rLJZrA/</a>.",
         "<strong>Rule #1:</strong> Don't look at the example project's code. Figure it out for yourself.",
         "<strong>Rule #2:</strong> Fulfill the below <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
         "<strong>User Story:</strong> I can add, subtract, multiply and divide two numbers.",
