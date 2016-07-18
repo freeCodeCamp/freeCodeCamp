@@ -64,7 +64,7 @@
     "gulp": "^3.9.0",
     "gulp-babel": "^6.1.1",
     "gulp-concat": "^2.6.0",
-    "gulp-eslint": "^2.0.0",
+    "gulp-eslint": "^3.0.1",
     "gulp-jsonlint": "^1.1.0",
     "gulp-less": "^3.0.3",
     "gulp-nodemon": "^2.0.3",
