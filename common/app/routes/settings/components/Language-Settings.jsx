@@ -1,7 +1,27 @@
 import React, { PropTypes } from 'react';
+import { createSelector } from 'reselect';
+import { reduxForm } from 'redux-form';
 import { FormControl } from 'react-bootstrap';
+
+import { updateMyLang } from '../redux/actions';
+import { userSelector } from '../../../redux/selectors';
 import langs from '../../../../utils/supported-languages';
 
+const mapStateToProps = createSelector(
+ userSelector,
+ ({ user: { languageTag } }) => ({
+   // send null to prevent redux-form from initialize empty
+   initialValues: languageTag ? { lang: languageTag } : null
+ })
+);
+const actions = { updateMyLang };
+const fields = [ 'lang' ];
+const validator = values => {
+  if (!langs[values.lang]) {
+    return { lang: `${values.lang} is unsupported` };
+  }
+  return {};
+};
 const options = [(
     <option
       disabled={ true }
@@ -30,19 +50,58 @@ const options = [(
   )
 ];
 
-export default function LangaugeSettings({ userLang }) {
-  return (
-    <FormControl
-      className='btn btn-block btn-primary btn-link-social'
-      componentClass='select'
-      defaultValue='not-the-momma'
-      value={ userLang }
-      >
-      { options }
-    </FormControl>
-  );
+export class LangaugeSettings extends React.Component {
+  static propTypes = {
+    fields: PropTypes.object,
+    handleSubmit: PropTypes.func.isRequired,
+    updateMyLang: PropTypes.func.isRequired
+  };
+  constructor(...props) {
+    super(...props);
+    this.handleChange = this.handleChange.bind(this);
+  }
+  componentWillUnmount() {
+    // make sure to clear timeout if it exist
+    if (this.timeout) {
+      clearTimeout(this.timeout);
+    }
+  }
+
+  handleChange(e) {
+    e.preventDefault();
+    this.props.fields.lang.onChange(e);
+    // give redux-form HOC state time to catch up before
+    // attempting to submit
+    this.timeout = setTimeout(
+      () => this.props.handleSubmit(this.props.updateMyLang)(),
+      0
+    );
+  }
+
+  render() {
+    const {
+      fields: { lang }
+    } = this.props;
+    return (
+      <FormControl
+        className='btn btn-block btn-primary btn-link-social'
+        componentClass='select'
+        { ...lang }
+        onChange={ this.handleChange }
+        >
+        { options }
+      </FormControl>
+    );
+  }
 }
 
-LangaugeSettings.propTypes = {
-  userLang: PropTypes.string
-};
+export default reduxForm(
+  {
+    form: 'lang',
+    fields,
+    validator,
+    overwriteOnInitialValuesChange: false
+  },
+  mapStateToProps,
+  actions
+)(LangaugeSettings);

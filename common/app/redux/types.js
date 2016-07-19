@@ -8,6 +8,8 @@ export default createTypes([
   'updateThisUser',
   'updateUserPoints',
   'updateUserFlag',
+  'updateUserEmail',
+  'updateUserLang',
   'updateCompletedChallenges',
   'showSignIn',
 

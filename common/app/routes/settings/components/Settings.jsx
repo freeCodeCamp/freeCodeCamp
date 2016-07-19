@@ -14,9 +14,13 @@ import {
   openDeleteModal,
   hideDeleteModal
 } from '../redux/actions';
-import { toggleNightMode } from '../../../redux/actions';
+import {
+  toggleNightMode,
+  updateTitle
+} from '../../../redux/actions';
 
 const actions = {
+  updateTitle,
   toggleNightMode,
   openDeleteModal,
   hideDeleteModal,
@@ -57,8 +61,13 @@ const mapStateToProps = state => {
 };
 
 export class Settings extends React.Component {
+  constructor(...props) {
+    super(...props);
+    this.updateMyLang = this.updateMyLang.bind(this);
+  }
   static displayName = 'Settings';
   static propTypes = {
+    children: PropTypes.element,
     username: PropTypes.string,
     isDeleteOpen: PropTypes.bool,
     isLocked: PropTypes.bool,
@@ -69,17 +78,32 @@ export class Settings extends React.Component {
     sendMonthlyEmail: PropTypes.bool,
     sendNotificationEmail: PropTypes.bool,
     sendQuincyEmail: PropTypes.bool,
-    toggleNightMode: PropTypes.func,
-    toggleIsLocked: PropTypes.func,
-    toggleQuincyEmail: PropTypes.func,
-    toggleMonthlyEmail: PropTypes.func,
-    toggleNotificationEmail: PropTypes.func,
-    openDeleteModal: PropTypes.func,
-    hideDeleteModal: PropTypes.func
+    updateTitle: PropTypes.func.isRequired,
+    toggleNightMode: PropTypes.func.isRequired,
+    toggleIsLocked: PropTypes.func.isRequired,
+    toggleQuincyEmail: PropTypes.func.isRequired,
+    toggleMonthlyEmail: PropTypes.func.isRequired,
+    toggleNotificationEmail: PropTypes.func.isRequired,
+    openDeleteModal: PropTypes.func.isRequired,
+    hideDeleteModal: PropTypes.func.isRequired,
+    lang: PropTypes.string,
+    initialLang: PropTypes.string,
+    updateMyLang: PropTypes.func
   };
+
+  updateMyLang(e) {
+    e.preventDefault();
+    const lang = e.target.value;
+    this.props.updateMyLang(lang);
+  }
+
+  componentWillMount() {
+    this.props.updateTitle('Settings');
+  }
 
   render() {
     const {
+      children,
       username,
       isDeleteOpen,
       isLocked,
@@ -98,6 +122,18 @@ export class Settings extends React.Component {
       openDeleteModal,
       hideDeleteModal
     } = this.props;
+    if (children) {
+      return (
+        <Row>
+          <Col
+            sm={ 4 }
+            smOffset={ 4 }
+            >
+            { children }
+          </Col>
+        </Row>
+      );
+    }
     return (
       <div>
         <Row>

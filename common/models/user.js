@@ -390,14 +390,14 @@ module.exports = function(User) {
       lastEmailSentAt.isBefore(fiveMinutesAgo) :
       true;
 
-    if (!isEmail(email)) {
-      return Promise.reject(
+    if (!isEmail('' + email)) {
+      return Observable.throw(
         new Error('The submitted email not valid.')
       );
     }
     // email is already associated and verified with this account
     if (ownEmail && this.emailVerified) {
-      return Promise.reject(new Error(
+      return Observable.throw(new Error(
         `${email} is already associated with this account.`
       ));
     }
@@ -410,13 +410,13 @@ module.exports = function(User) {
         `${minutesLeft} minute${minutesLeft > 1 ? 's' : ''}` :
         'a few seconds';
 
-      return Promise.reject(new Error(
+      return Observable.throw(new Error(
         `Please wait ${timeToWait} to resend email verification.`
       ));
     }
 
-    return User.doesExist(null, email)
-      .then(exists => {
+    return Observable.fromPromise(User.doesExist(null, email))
+      .flatMap(exists => {
         // not associated with this account, but is associated with another
         if (!ownEmail && exists) {
           return Promise.reject(
@@ -434,66 +434,34 @@ module.exports = function(User) {
           this.email = email;
           this.emailVerified = emailVerified;
           this.emailVerifyTTL = new Date();
-        })
-        .flatMap(() => {
-          var mailOptions = {
-            type: 'email',
-            to: email,
-            from: 'Team@freecodecamp.com',
-            subject: 'Welcome to Free Code Camp!',
-            protocol: isDev ? null : 'https',
-            host: isDev ? 'localhost' : 'freecodecamp.com',
-            port: isDev ? null : 443,
-            template: path.join(
-              __dirname,
-              '..',
-              '..',
-              'server',
-              'views',
-              'emails',
-              'user-email-verify.ejs'
-            )
-          };
-          return this.verify(mailOptions);
-        })
-        .map(() => dedent`
-          Please check your email.
-          We sent you a link that you can click to verify your email address.
-        `)
-        .catch(error => {
-          debug(error);
-          return Observable.throw(
-            'Oops, something went wrong, please try again later.'
-          );
-        })
-        .toPromise();
-      });
+        });
+      })
+      .flatMap(() => {
+        const mailOptions = {
+          type: 'email',
+          to: email,
+          from: 'Team@freecodecamp.com',
+          subject: 'Welcome to Free Code Camp!',
+          protocol: isDev ? null : 'https',
+          host: isDev ? 'localhost' : 'freecodecamp.com',
+          port: isDev ? null : 443,
+          template: path.join(
+            __dirname,
+            '..',
+            '..',
+            'server',
+            'views',
+            'emails',
+            'user-email-verify.ejs'
+          )
+        };
+        return this.verify(mailOptions);
+      })
+      .map(() => dedent`
+        Please check your email.
+        We sent you a link that you can click to verify your email address.
+      `);
   };
-
-  User.remoteMethod(
-    'updateEmail',
-    {
-      isStatic: false,
-      description: 'updates the email of the user object',
-      accepts: [
-        {
-          arg: 'email',
-          type: 'string',
-          required: true
-        }
-      ],
-      returns: [
-        {
-          arg: 'message',
-          type: 'string'
-        }
-      ],
-      http: {
-        path: '/update-email',
-        verb: 'POST'
-      }
-    }
-  );
 
   User.giveBrowniePoints =
     function giveBrowniePoints(receiver, giver, data = {}, dev = false, cb) {

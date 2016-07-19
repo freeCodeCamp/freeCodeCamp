@@ -1,20 +1,22 @@
 import React, { PropTypes } from 'react';
+import { Link } from 'react-router';
 import { Button, Row, Col } from 'react-bootstrap';
 import FA from 'react-fontawesome';
 import classnames from 'classnames';
 
 export function UpdateEmailButton() {
   return (
-    <Button
-      block={ true }
-      bsSize='lg'
-      bsStyle='primary'
-      className='btn-link-social'
-      href='/update-email'
-      >
-      <FA name='envelope' />
-      Update my Email
-    </Button>
+    <Link to='/settings/update-email'>
+      <Button
+        block={ true }
+        bsSize='lg'
+        bsStyle='primary'
+        className='btn-link-social'
+        >
+        <FA name='envelope' />
+        Update my Email
+      </Button>
+    </Link>
   );
 }
 

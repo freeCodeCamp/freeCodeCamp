@@ -9,7 +9,7 @@ export const updateTitle = createAction(types.updateTitle);
 // used in combination with fetch-user-saga
 export const fetchUser = createAction(types.fetchUser);
 
-// setUser(
+// addUser(
 //   entities: { [userId]: User }
 // ) => Action
 export const addUser = createAction(
@@ -25,10 +25,20 @@ export const updateUserPoints = createAction(
   types.updateUserPoints,
   (username, points) => ({ username, points })
 );
-// updateUserPoints(username: String, flag: String) => Action
+// updateUserFlag(username: String, flag: String) => Action
 export const updateUserFlag = createAction(
   types.updateUserFlag,
   (username, flag) => ({ username, flag })
+);
+// updateUserEmail(username: String, email: String) => Action
+export const updateUserEmail = createAction(
+  types.updateUserFlag,
+  (username, email) => ({ username, email })
+);
+// updateUserLang(username: String, lang: String) => Action
+export const updateUserLang = createAction(
+  types.updateUserLang,
+  (username, lang) => ({ username, lang })
 );
 // updateCompletedChallenges(username: String) => Action
 export const updateCompletedChallenges = createAction(
@@ -55,6 +65,16 @@ export const createErrorObservable = error => Observable.just({
   type: types.handleError,
   error
 });
+// doActionOnError(
+//   actionCreator: (() => Action|Null)
+// ) => (error: Error) => Observable[Action]
+export const doActionOnError = actionCreator => error => Observable.of(
+  {
+    type: types.handleError,
+    error
+  },
+  actionCreator()
+);
 
 
 // drawers

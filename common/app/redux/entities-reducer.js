@@ -8,8 +8,13 @@ const initialState = {
   user: {}
 };
 
+// future refactor(berks): Several of the actions here are just updating props
+// on the main user. These can be refactors into one response for all actions
 export default function entities(state = initialState, action) {
-  const { type, payload: { username, points, flag } = {} } = action;
+  const {
+    type,
+    payload: { email, username, points, flag, languageTag } = {}
+  } = action;
   if (type === updateCompletedChallenges) {
     const username = action.payload;
     const completedChallengeMap = state.user[username].challengeMap || {};
@@ -26,6 +31,12 @@ export default function entities(state = initialState, action) {
         }, {})
     };
   }
+  if (action.meta && action.meta.entities) {
+    return {
+      ...state,
+      ...action.meta.entities
+    };
+  }
   if (type === updateUserPoints) {
     return {
       ...state,
@@ -38,12 +49,6 @@ export default function entities(state = initialState, action) {
       }
     };
   }
-  if (action.meta && action.meta.entities) {
-    return {
-      ...state,
-      ...action.meta.entities
-    };
-  }
   if (action.type === types.updateUserFlag) {
     return {
       ...state,
@@ -52,6 +57,30 @@ export default function entities(state = initialState, action) {
         [username]: {
           ...state.user[username],
           [flag]: !state.user[username][flag]
+        }
+      }
+    };
+  }
+  if (action.type === types.updateUserEmail) {
+    return {
+      ...state,
+      user: {
+        ...state.user,
+        [username]: {
+          ...state.user[username],
+          email
+        }
+      }
+    };
+  }
+  if (action.type === types.updateUserLang) {
+    return {
+      ...state,
+      user: {
+        ...state.user,
+        [username]: {
+          ...state.user[username],
+          languageTag
         }
       }
     };
