@@ -8,12 +8,19 @@ const initialState = {
 export const types = createTypes([
   'toggleUserFlag',
   'openDeleteModal',
-  'hideDeleteModal'
+  'hideDeleteModal',
+  'updateMyEmail',
+  'updateMyLang'
 ], 'settings');
 
 export const toggleUserFlag = createAction(types.toggleUserFlag);
 export const openDeleteModal = createAction(types.openDeleteModal);
 export const hideDeleteModal = createAction(types.hideDeleteModal);
+export const updateMyEmail = createAction(types.updateMyEmail);
+export const updateMyLang = createAction(
+  types.updateMyLang,
+  (values) => values.lang
+);
 
 export default handleActions(
   {
