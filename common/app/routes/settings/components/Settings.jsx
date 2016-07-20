@@ -245,7 +245,7 @@ export class Settings extends React.Component {
           </Col>
         </Row>
         <div className='spacer' />
-        <h2 className='text-center'>Language Settigns</h2>
+        <h2 className='text-center'>Language Settings</h2>
         <Row>
           <Col
             md={ 6 }
