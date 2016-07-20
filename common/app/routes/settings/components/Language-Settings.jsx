@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 import { createSelector } from 'reselect';
 import { reduxForm } from 'redux-form';
-import { FormControl } from 'react-bootstrap';
+import { FormControl, FormGroup } from 'react-bootstrap';
 
 import { updateMyLang } from '../redux/actions';
 import { userSelector } from '../../../redux/selectors';
@@ -83,14 +83,17 @@ export class LangaugeSettings extends React.Component {
       fields: { lang }
     } = this.props;
     return (
-      <FormControl
-        className='btn btn-block btn-primary btn-link-social'
-        componentClass='select'
-        { ...lang }
-        onChange={ this.handleChange }
-        >
-        { options }
-      </FormControl>
+      <FormGroup>
+        <FormControl
+          className='btn btn-block btn-primary btn-link-social btn-lg'
+          componentClass='select'
+          { ...lang }
+          onChange={ this.handleChange }
+          style={{ height: '45px' }}
+          >
+          { options }
+        </FormControl>
+      </FormGroup>
     );
   }
 }
