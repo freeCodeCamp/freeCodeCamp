@@ -9,8 +9,9 @@ import { Col } from 'react-bootstrap';
 import MapHeader from './Header.jsx';
 import SuperBlock from './Super-Block.jsx';
 import { fetchChallenges } from '../../redux/actions';
+import { updateTitle } from '../../../../redux/actions';
 
-const bindableActions = { fetchChallenges };
+const bindableActions = { fetchChallenges, updateTitle };
 const mapStateToProps = createSelector(
   state => state.app.windowHeight,
   state => state.app.navHeight,
@@ -30,8 +31,16 @@ export class ShowMap extends PureComponent {
   static displayName = 'Map';
   static propTypes = {
     superBlocks: PropTypes.array,
-    height: PropTypes.number
+    height: PropTypes.number,
+    updateTitle: PropTypes.func.isRequired,
+    fetchChallenges: PropTypes.func.isRequired
   };
+
+  componentWillMount() {
+    this.props.updateTitle(
+      'A Map to Learn to Code and Become a Software Engineer'
+    );
+  }
 
   renderSuperBlocks(superBlocks) {
     if (!Array.isArray(superBlocks) || !superBlocks.length) {
