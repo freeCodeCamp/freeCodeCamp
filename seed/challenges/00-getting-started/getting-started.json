@@ -11,7 +11,7 @@
         [
           "//i.imgur.com/6ibIavQ.jpg",
           "A picture of Free Code Camp's 4 benefits: Get connected, Learn JavaScript, Build your Portfolio, Help nonprofits",
-          "Welcome to Free Code Camp. We're an open source community of busy people who learn to code and help nonprofits.",
+          "Welcome to Free Code Camp. We're an open source community that helps you learn to code, then practice by building projects for nonprofits.",
           ""
         ],
         [
@@ -21,15 +21,15 @@
           ""
         ],
         [
-          "//i.imgur.com/D7Y5luw.jpg",
-          "A graph of the rate of job growth against growth in computer science degree graduates. There are 1.4 million jobs and only 400 thousand people to fill them.",
-          "There are thousands of coding jobs currently going unfilled, and the demand for coders grows every year.",
+          "//i.imgur.com/WD3STY6.jpg",
+          "Photos of three campers who got jobs after learning to code at Free Code Camp.",
+          "Free Code Camp is a proven path to your first software developer job. Companies have hired thousands of people like you who have learned to code through Free Code Camp.",
           ""
         ],
         [
-          "//i.imgur.com/WD3STY6.jpg",
-          "Photos of three campers who've gotten jobs after learning to code at Free Code Camp.",
-          "Free Code Camp is a proven path to your first coding job. In fact, no one has actually completed our entire program, because campers get jobs before they're able to.",
+          "//i.imgur.com/D7Y5luw.jpg",
+          "A graph of the rate of job growth against growth in computer science degree graduates. There are 1.4 million jobs and only 400 thousand people to fill them.",
+          "There are thousands of software developer jobs currently going unfilled, and the demand for coders grows every year.",
           ""
         ],
         [
@@ -853,6 +853,50 @@
          "Trova la tua città in questa lista e cliccala. Verrai indirizzato alla sua pagina Facebook. Fai clic sul pulsante \" Entra nel gruppo \". Qualcuno del gruppo dovrebbe approvare a breve la tua richiesta. Se la tua città non è in questo elenco, scorri alla parte superiore di questo articolo wiki per le istruzioni su come iniziare un gruppo nella tua città. ",
          "https://www.freecodecamp.com/wiki/en/localgroups-list/"
        ]
+      ]
+    },
+    {
+      "id": "560adf65cb82ac38a17513c2",
+      "title": "Read Coding News on our Medium Publication",
+      "description": [
+        [
+          "//i.imgur.com/AZNLvEC.gif",
+          "A gif showing how you can click the \"follow\" button to follow Free Code Camp's publication.",
+          "Our community has a popular Medium publication where we write publish tons of helpful articles about coding and technology. Once you open the link, click the \"follow\" button in the upper right hand corner. If you don't have a Medium account, you can create one in seconds.",
+          "https://medium.freecodecamp.com"
+        ]
+      ],
+      "releasedOn": "February 10, 2016",
+      "challengeSeed": [],
+      "tests": [],
+      "type": "Waypoint",
+      "challengeType": 7,
+      "titleEs": "Lee noticias de codificación en nuestros canal de publicaciones Medium",
+      "descriptionEs": [
+        [
+          "//i.imgur.com/AZNLvEC.gif",
+          "Un gif mostrando cómo crear una cuenta en Medium.",
+          "Nuestra comunidad tiene un canal de publicaciones Medium, donde escribimos un montón de artículos sobre desarrollo de software. Ir al canal de publicaciones de Free Code Camp Medium y pulsar \"follow\". Nuestros campistas publican varios artículos cada semana. Si aún no dispones de una cuenta Medium, puedes seguir el enlace y registrarte usando una red social o ingresando un correo electrónico (enviarán un correo electrónico que debes abrirlo para crear tu cuenta.)",
+          "https://www.medium.com"
+        ]
+      ],
+      "titleFr": "Lisez les nouvelles de la programmation sur notre Publication Medium",
+      "descriptionFr": [
+        [
+          "//i.imgur.com/AZNLvEC.gif",
+          "Une gif montrant comment tu peux créer un compte sur Medium.",
+          "Notre communauté a une publication sur Medium où on écrit plusieurs articles sur la programmation. Tu peux visiter la publication de Free Code Camp sur Medium et cliquer sur \"follow\". Nos campers publient plusieurs articles chaque semaine. Si tu n’as pas encore un compte Medium, utilise le lien ci-dessous  pour s’inscrire en utilisant un compte sur les médias sociaux ou en utilisant ton email (un email de confirmation sera envoyé à votre email pour terminer l’inscription). Une fois un sujet qui t’intéresse est choisi, tu peux continuer les étapes.",
+          "https://www.medium.com"
+        ]
+      ],
+      "titleDe": "Lese Programmier-Nachrichten auf unserer Medium Seite",
+      "descriptionDe": [
+        [
+          "//i.imgur.com/AZNLvEC.gif",
+          "Ein GIF, das dir zeigt, wie du einen Medium Account anlegen kannst.",
+          "Unsere Community hat eine Medium Seite, auf der wir viele Artikel über Software Entwicklung veröffentlichen. Kannst du auf die Medium Seite von Free Code Camp gehen und den \"follow\" Button klicken. Unsere Camper veröffentlichen jede Woche mehrere Artikel. Wenn du noch keinen Medium Account hast, kannst du dem Link folgen und dich entweder mit einem Account aus einem Social Network oder einer E-Mail Adresse (sie senden dir eine E-Mail, die du durchklicken kannst, um dir einen Account anzulegen.). Wenn du ein Thema ausgewählt hast, das dich interessiert, kannst du den weiteren Schritten folgen.",
+          "https://www.medium.com"
+        ]
       ]
     },
     {
