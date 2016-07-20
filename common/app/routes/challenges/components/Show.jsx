@@ -17,6 +17,7 @@ import {
   resetUi
 } from '../redux/actions';
 import { challengeSelector } from '../redux/selectors';
+import { updateTitle } from '../../../redux/actions';
 
 const views = {
   step: Step,
@@ -30,7 +31,8 @@ const bindableActions = {
   fetchChallenge,
   fetchChallenges,
   replaceChallenge,
-  resetUi
+  resetUi,
+  updateTitle
 };
 
 const mapStateToProps = createSelector(
@@ -59,29 +61,35 @@ export class Challenges extends PureComponent {
 
   static propTypes = {
     isStep: PropTypes.bool,
-    fetchChallenges: PropTypes.func,
-    replaceChallenge: PropTypes.func,
-    params: PropTypes.object,
+    fetchChallenges: PropTypes.func.isRequired,
+    replaceChallenge: PropTypes.func.isRequired,
+    params: PropTypes.object.isRequired,
     areChallengesLoaded: PropTypes.bool,
-    resetUi: PropTypes.func
+    resetUi: PropTypes.func.isRequired,
+    updateTitle: PropTypes.func.isRequired
   };
 
-  componentWillUnmount() {
-    this.props.resetUi();
+  componentWillMount() {
+    this.props.updateTitle(this.props.params.dashedName);
   }
+
   componentDidMount() {
     if (!this.props.areChallengesLoaded) {
       this.props.fetchChallenges();
     }
   }
 
+  componentWillUnmount() {
+    this.props.resetUi();
+  }
+
   componentWillReceiveProps(nextProps) {
-    if (this.props.params.dashedName !== nextProps.params.dashedName) {
-      this.props.resetUi();
-      this.props.replaceChallenge({
-        dashedName: nextProps.params.dashedName,
-        block: nextProps.params.block
-      });
+    const { block, dashedName } = nextProps.params;
+    const { resetUi, updateTitle, replaceChallenge } = this.props;
+    if (this.props.params.dashedName !== dashedName) {
+      updateTitle(dashedName);
+      resetUi();
+      replaceChallenge({ dashedName, block });
     }
   }
 
