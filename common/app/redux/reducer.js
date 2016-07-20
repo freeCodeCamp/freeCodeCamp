@@ -25,6 +25,10 @@ export default handleActions(
       user,
       shouldShowSignIn: true
     }),
+    [types.updateAppLang]: (state, { payload = 'en' }) =>({
+      ...state,
+      lang: payload
+    }),
     [types.showSignIn]: state => ({
       ...state,
       shouldShowSignIn: true

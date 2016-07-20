@@ -2,6 +2,7 @@ import createTypes from '../utils/create-types';
 
 export default createTypes([
   'updateTitle',
+  'updateAppLang',
 
   'fetchUser',
   'addUser',
