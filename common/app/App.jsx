@@ -9,7 +9,8 @@ import {
   initWindowHeight,
   updateNavHeight,
   toggleMapDrawer,
-  toggleMainChat
+  toggleMainChat,
+  updateAppLang
 } from './redux/actions';
 
 import { submitChallenge } from './routes/challenges/redux/actions';
@@ -17,6 +18,16 @@ import { submitChallenge } from './routes/challenges/redux/actions';
 import Nav from './components/Nav';
 import Toasts from './toasts/Toasts.jsx';
 import { userSelector } from './redux/selectors';
+
+const bindableActions = {
+  initWindowHeight,
+  updateNavHeight,
+  fetchUser,
+  submitChallenge,
+  toggleMapDrawer,
+  toggleMainChat,
+  updateAppLang
+};
 
 const mapStateToProps = createSelector(
   userSelector,
@@ -43,15 +54,6 @@ const mapStateToProps = createSelector(
   })
 );
 
-const bindableActions = {
-  initWindowHeight,
-  updateNavHeight,
-  fetchUser,
-  submitChallenge,
-  toggleMapDrawer,
-  toggleMainChat
-};
-
 // export plain class for testing
 export class FreeCodeCamp extends React.Component {
   static displayName = 'FreeCodeCamp';
@@ -74,8 +76,15 @@ export class FreeCodeCamp extends React.Component {
     toggleMainChat: PropTypes.func,
     fetchUser: PropTypes.func,
     shouldShowSignIn: PropTypes.bool,
-    params: PropTypes.object
+    params: PropTypes.object,
+    updateAppLang: PropTypes.func.isRequired
   };
+
+  componentWillReceiveProps(nextProps) {
+    if (this.props.params.lang !== nextProps.params.lang) {
+      this.props.updateAppLang(nextProps.params.lang);
+    }
+  }
 
   componentDidMount() {
     this.props.initWindowHeight();

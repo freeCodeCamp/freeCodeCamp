@@ -40,6 +40,7 @@ export const updateUserLang = createAction(
   types.updateUserLang,
   (username, lang) => ({ username, lang })
 );
+export const updateAppLang = createAction(types.updateAppLang);
 // updateCompletedChallenges(username: String) => Action
 export const updateCompletedChallenges = createAction(
   types.updateCompletedChallenges

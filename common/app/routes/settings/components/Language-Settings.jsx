@@ -8,11 +8,11 @@ import { userSelector } from '../../../redux/selectors';
 import langs from '../../../../utils/supported-languages';
 
 const mapStateToProps = createSelector(
- userSelector,
- ({ user: { languageTag } }) => ({
-   // send null to prevent redux-form from initialize empty
-   initialValues: languageTag ? { lang: languageTag } : null
- })
+  userSelector,
+  ({ user: { languageTag } }) => ({
+    // send null to prevent redux-form from initialize empty
+    initialValues: languageTag ? { lang: languageTag } : null
+  })
 );
 const actions = { updateMyLang };
 const fields = [ 'lang' ];

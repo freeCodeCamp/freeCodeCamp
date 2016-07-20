@@ -1,14 +1,17 @@
 import { Observable } from 'rx';
+import { push } from 'react-router-redux';
 
 import { types } from './actions';
 import combineSagas from '../../../utils/combine-sagas';
 import { makeToast } from '../../../toasts/redux/actions';
+import { fetchChallenges } from '../../challenges/redux/actions';
 import {
   updateUserFlag,
   updateUserEmail,
   updateUserLang,
   doActionOnError
 } from '../../../redux/actions';
+import { userSelector } from '../../../redux/selectors';
 import { postJSON$ } from '../../../../utils/ajax-stream';
 import langs from '../../../../utils/supported-languages';
 
@@ -47,26 +50,33 @@ export function updateUserLangSaga(actions$, getState) {
     .filter(({ type, payload }) => (
       type === types.updateMyLang && !!langs[payload]
     ))
-    .map(({ payload }) => payload);
+    .map(({ payload }) => {
+      const state = getState();
+      const { user: { languageTag } } = userSelector(state);
+      return { lang: payload, oldLang: languageTag };
+    });
   const ajaxUpdate$ = updateLang$
-    .flatMap(lang => {
-      const {
-        app: { user: username, csrfToken: _csrf },
-        entities: { user: userMap }
-      } = getState();
-      const { languageTag: oldLang } = userMap[username] || {};
-      const body = {
-        _csrf,
-        lang
-      };
+    .debounce(250)
+    .flatMap(({ lang, oldLang }) => {
+      const { app: { user: username, csrfToken: _csrf } } = getState();
+      const body = { _csrf, lang };
       return postJSON$('/update-my-lang', body)
-        .map(({ message }) => makeToast({ message }))
+        .flatMap(({ message }) => {
+          return Observable.of(
+            // show user that we have updated their lang
+            makeToast({ message }),
+            // update url to reflect change
+            push(`/${lang}/settings`),
+            // refetch challenges in new language
+            fetchChallenges()
+          );
+        })
         .catch(doActionOnError(() => {
           return updateUserLang(username, oldLang);
         }));
     });
   const optimistic$ = updateLang$
-    .map(lang => {
+    .map(({ lang }) => {
       const { app: { user: username } } = getState();
       return updateUserLang(username, lang);
     });
