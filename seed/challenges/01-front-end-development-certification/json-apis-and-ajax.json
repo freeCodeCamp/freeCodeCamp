@@ -217,7 +217,7 @@
         "First, let's declare an html variable with <code>var html = \"\";</code>.",
         "Then, let's loop through our JSON, adding more HTML to that variable. When the loop is finished, we'll render it.",
         "Here's the code that does this:",
-        "<blockquote>json.forEach(function(val) {</br>  var keys = Object.keys(val);</br>  html += \"&lt;div class = 'cat'&gt;\";</br>  keys.forEach(function(key) {</br>    html += \"&lt;b&gt;\" + key + \"&lt;/b&gt;: \" + val[key] + \"&lt;br&gt;\";</br>  });</br>  html += \"&lt;/div&gt;&lt;br&gt;\";</br>});</blockquote>"
+        "<blockquote>json.forEach(function(val) {</br>  var keys = Object.keys(val);</br>  html += \"&lt;div class = 'cat'&gt;\";</br>  keys.forEach(function(key) {</br>    html += \"&lt;strong&gt;\" + key + \"&lt;/strong&gt;: \" + val[key] + \"&lt;br&gt;\";</br>  });</br>  html += \"&lt;/div&gt;&lt;br&gt;\";</br>});</blockquote>"
       ],
       "challengeSeed": [
         "fccss",
@@ -270,7 +270,7 @@
         "En primer lugar, vamos a declarar una variable llamada <code>html</code> con <code>var html = \"\";</code>.",
         "Después, iteremos a traveś de nuestro JSON, añadiendo más HTML a esa variable. Cuando se termina el ciclo, vamos a presentarla. ",
         "Aquí está el código que hace esto:",
-        "<blockquote>json.forEach(function(val) {</br>  var keys = Object.keys(val);</br>  html += \"&lt;div class = 'cat'&gt;\";</br>  keys.forEach(function(key) {</br>    html += \"&lt;b&gt;\" + key + \"&lt;/b&gt;: \" + val[key] + \"&lt;br&gt;\";</br>  });</br>  html += \"&lt;/div&gt;&lt;br&gt;\";</br>});</blockquote>"
+        "<blockquote>json.forEach(function(val) {</br>  var keys = Object.keys(val);</br>  html += \"&lt;div class = 'cat'&gt;\";</br>  keys.forEach(function(key) {</br>    html += \"&lt;strong&gt;\" + key + \"&lt;/strong&gt;: \" + val[key] + \"&lt;br&gt;\";</br>  });</br>  html += \"&lt;/div&gt;&lt;br&gt;\";</br>});</blockquote>"
       ],
       "titlePt": "Converter dados JSON para HTML",
       "descriptionPt": [
@@ -279,7 +279,7 @@
         "Em primeiro lugar, vamos declarar uma variável chamada <code>html</code> com <code>var html = \"\";</code>.",
         "Depois, vamos percorrer através do nosso JSON, adicionando mais HTML para a nossa variável. Quando essa iteração terminar, vamos apresentar o resultado.",
         "Aqui está o código que faz isso:",
-        "<blockquote>json.forEach(function(val) {</br>  var keys = Object.keys(val);</br>  html += \"&lt;div class = 'cat'&gt;\";</br>  keys.forEach(function(key) {</br>    html += \"&lt;b&gt;\" + key + \"&lt;/b&gt;: \" + val[key] + \"&lt;br&gt;\";</br>  });</br>  html += \"&lt;/div&gt;&lt;br&gt;\";</br>});</blockquote>"
+        "<blockquote>json.forEach(function(val) {</br>  var keys = Object.keys(val);</br>  html += \"&lt;div class = 'cat'&gt;\";</br>  keys.forEach(function(key) {</br>    html += \"&lt;strong&gt;\" + key + \"&lt;/strong&gt;: \" + val[key] + \"&lt;br&gt;\";</br>  });</br>  html += \"&lt;/div&gt;&lt;br&gt;\";</br>});</blockquote>"
       ]
     },
     {
