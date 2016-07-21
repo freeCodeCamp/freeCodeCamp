@@ -124,6 +124,7 @@ var paths = {
     'update-preview',
     'create-editor',
     'detect-unsafe-code-stream',
+    'definitions',
     'display-test-results',
     'execute-challenge-stream',
     'output-display',
