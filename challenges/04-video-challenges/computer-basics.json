@@ -212,7 +212,7 @@
       "description": [
         "In this video, we decode a number written in binary notation.",
         "Let's talk about the binary numeral system, also known as a bunch of 1's and 0's over and over again.",
-        "We're going to start by labeling, staring backwards, how many numbers there are.",
+        "We're going to start by labeling, starting backwards, how many numbers there are.",
         "(In this video there are 7, but we start at 0, so we only get up to 6.) Pretty straightforward.",
         "The next step is to take 2 to the power of whatever place it is, a 2 to the 0, 2 to the 1, all the way up to the largest placeholder.",
         "Then, all we have to do is fill in some mathematical blanks by completing the exponential 2 problems.",
