@@ -1,4 +1,4 @@
-import { addLang, getLangFromPath } from '../common/app/utils/lang.js';
+import { addLang, getLangFromPath } from '../../common/app/utils/lang.js';
 
 function addLangToLocation(location, lang) {
   if (!location) {

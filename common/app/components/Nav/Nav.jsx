@@ -31,7 +31,22 @@ const toggleButtonChild = (
   </Col>
 );
 
+function handleNavLinkEvent(content) {
+  this.props.trackEvent({
+    category: 'Nav',
+    action: 'clicked',
+    label: `${content} link`
+  });
+}
+
 export default class extends React.Component {
+  constructor(...props) {
+    super(...props);
+    this.handleMapClickOnMap = this.handleMapClickOnMap.bind(this);
+    navLinks.forEach(({ content }) => {
+      this[`handle${content}Click`] = handleNavLinkEvent.bind(this, content);
+    });
+  }
   static displayName = 'Nav';
   static propTypes = {
     points: PropTypes.number,
@@ -42,12 +57,30 @@ export default class extends React.Component {
     updateNavHeight: PropTypes.func,
     toggleMapDrawer: PropTypes.func,
     toggleMainChat: PropTypes.func,
-    shouldShowSignIn: PropTypes.bool
+    shouldShowSignIn: PropTypes.bool,
+    trackEvent: PropTypes.func.isRequired
   };
 
   componentDidMount() {
     const navBar = ReactDOM.findDOMNode(this);
     this.props.updateNavHeight(navBar.clientHeight);
+  }
+
+  handleMapClickOnMap(e) {
+    e.preventDefault();
+    this.props.trackEvent({
+      category: 'Nav',
+      action: 'clicked',
+      label: 'map clicked while on map'
+    });
+  }
+
+  handleNavClick() {
+    this.props.trackEvent({
+      category: 'Nav',
+      action: 'clicked',
+      label: 'map clicked while on map'
+    });
   }
 
   renderMapLink(isOnMap, toggleMapDrawer) {
@@ -56,7 +89,7 @@ export default class extends React.Component {
         <li role='presentation'>
           <a
             href='#'
-            onClick={ e => e.preventDefault()}
+            onClick={ this.handleMapClickOnMap }
             >
             Map
           </a>
@@ -108,6 +141,7 @@ export default class extends React.Component {
           <LinkContainer
             eventKey={ index + 2 }
             key={ content }
+            onClick={ this[`handle${content}Click`] }
             to={ link }
             >
             <NavItem
@@ -123,6 +157,7 @@ export default class extends React.Component {
           eventKey={ index + 1 }
           href={ link }
           key={ content }
+          onClick={ this[`handle${content}Click`] }
           target={ target || null }
           >
           { content }

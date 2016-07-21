@@ -2,6 +2,47 @@ import { Observable } from 'rx';
 import { createAction } from 'redux-actions';
 import types from './types';
 
+const throwIfUndefined = () => {
+  throw new TypeError('Argument must not be of  type `undefined`');
+};
+
+export const createEventMeta = ({
+  category = throwIfUndefined,
+  action = throwIfUndefined,
+  label,
+  value
+} = throwIfUndefined) => ({
+  analytics: {
+    type: 'event',
+    category,
+    action,
+    label,
+    value
+  }
+});
+
+export const trackEvent = createAction(
+  types.analytics,
+  null,
+  createEventMeta
+);
+
+export const trackSocial = createAction(
+  types.analytics,
+  null,
+  (
+    network = throwIfUndefined,
+    action = throwIfUndefined,
+    target = throwIfUndefined
+  ) => ({
+    analytics: {
+      type: 'event',
+      network,
+      action,
+      target
+    }
+  })
+);
 // updateTitle(title: String) => Action
 export const updateTitle = createAction(types.updateTitle);
 
@@ -79,10 +120,50 @@ export const doActionOnError = actionCreator => error => Observable.of(
 
 
 // drawers
-export const toggleMapDrawer = createAction(types.toggleMapDrawer);
-export const toggleMainChat = createAction(types.toggleMainChat);
-export const toggleHelpChat = createAction(types.toggleHelpChat);
-export const openHelpChat = createAction(types.openHelpChat);
-export const closeHelpChat = createAction(types.closeHelpChat);
+export const toggleMapDrawer = createAction(
+  types.toggleMapDrawer,
+  null,
+  () => createEventMeta({
+    category: 'Nav',
+    action: 'toggled',
+    label: 'Map drawer toggled'
+  })
+);
+export const toggleMainChat = createAction(
+  types.toggleMainChat,
+  null,
+  () => createEventMeta({
+    category: 'Nav',
+    action: 'toggled',
+    label: 'Main chat toggled'
+  })
+);
+export const toggleHelpChat = createAction(
+  types.toggleHelpChat,
+  null,
+  () => createEventMeta({
+    category: 'Challenge',
+    action: 'toggled',
+    label: 'help chat toggled'
+  })
+);
+export const openHelpChat = createAction(
+  types.openHelpChat,
+  null,
+  () => createEventMeta({
+    category: 'Challenge',
+    action: 'opened',
+    label: 'help chat opened'
+  })
+);
+export const closeHelpChat = createAction(
+  types.closeHelpChat,
+  null,
+  () => createEventMeta({
+    category: 'Challenge',
+    action: 'closed',
+    label: 'help chat closed'
+  })
+);
 
 export const toggleNightMode = createAction(types.toggleNightMode);
