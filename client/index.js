@@ -10,7 +10,8 @@ import {
 } from 'react-router-redux';
 import { render } from 'redux-epic';
 import { createHistory } from 'history';
-import useLangRoutes from './use-lang-routes.js';
+import useLangRoutes from './utils/use-lang-routes';
+import sendPageAnalytics from './utils/send-page-analytics.js';
 
 import createApp from '../common/app';
 import provideStore from '../common/app/provide-store';
@@ -37,6 +38,7 @@ initialState.app.csrfToken = csrfToken;
 const serviceOptions = { xhrPath: '/services', context: { _csrf: csrfToken } };
 
 const history = useLangRoutes(createHistory)();
+sendPageAnalytics(history, window.ga);
 
 const devTools = window.devToolsExtension ? window.devToolsExtension() : f => f;
 const adjustUrlOnReplay = !!window.devToolsExtension;
@@ -48,7 +50,6 @@ const sagaOptions = {
   location: window.location,
   history: window.history
 };
-
 
 createApp({
     history,

@@ -7,6 +7,7 @@ import frameSaga from './frame-saga';
 import codeStorageSaga from './code-storage-saga';
 import gitterSaga from './gitter-saga';
 import mouseTrapSaga from './mouse-trap-saga';
+import analyticsSaga from './analytics-saga';
 
 export default [
   errSaga,
@@ -17,5 +18,6 @@ export default [
   frameSaga,
   codeStorageSaga,
   gitterSaga,
-  mouseTrapSaga
+  mouseTrapSaga,
+  analyticsSaga
 ];

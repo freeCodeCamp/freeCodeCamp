@@ -1,6 +1,7 @@
 import createTypes from '../utils/create-types';
 
 export default createTypes([
+  'analytics',
   'updateTitle',
   'updateAppLang',
 

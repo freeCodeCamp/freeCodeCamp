@@ -4,7 +4,8 @@
   "target": "_blank"
 },{
   "content": "About",
-  "link": "/about"
+  "link": "/about",
+  "target": "_blank"
 },{
   "content": "Shop",
   "link": "/shop"
