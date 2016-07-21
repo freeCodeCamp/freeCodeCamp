@@ -57,7 +57,7 @@
         "Notez que la seule différence entre une balise ouvrante et fermante est que la balise fermante a une barre oblique après son chevron ouvrant.",
         "Chaque défi contient des tests que vous pouvez éxécuter en cliquant sur le bouton \"Run tests\". Lorsque tous les tests sont réussis, vous pouvez poursuivre avec le défi suivant.",
         "Pour réussir le test de ce défi, changez le texte de l'élément <code>h1</code> pour \"Hello World\" plutôt que \"Hello\". Cliquez ensuite sur le bouton \"Run tests\"."
-      ],      
+      ],
       "title": "Say Hello to HTML Elements",
       "description": [
         "Welcome to Free Code Camp's first coding challenge.",
@@ -129,7 +129,7 @@
         "L'élément <code>h2</code> que vous entrerez créera un élément <code>h2</code> sur le site.",
         "Cet élément renseigne votre navigateur sur la structure de votre site. Les éléments <code>h1</code> sont souvent utilisés comme titre, tandis que les éléments <code>h2</code> sont généralement utilisés comme sous-titres. Il existe également les éléments <code>h3</code>, <code>h4</code>, <code>h5</code> et <code>h6</code> qui indiquent une nouvelle et différente section.",
         "Ajoutez une balise <code>h2</code> contenant \"CatPhotoApp\" pour créer un second <code>élément</code> HTML sous l'élément <code>h1</code> contenant \"Hello World\"."
-      ],      
+      ],
       "title": "Headline with the h2 Element",
       "description": [
         "Over the next few challenges, we'll build an HTML5 app that will look something like this:",
@@ -188,7 +188,7 @@
         "Vous pouvez créer un élément <code>p</code> comme ceci :",
         "<code>&#60;p&#62;Je suis une balise p!&#60;/p&#62;</code>",
         "Créez un élément <code>p</code> sous votre élément <code>h2</code> et inscrivez-y le texte \"Hello Paragraph\"."
-      ],    
+      ],
       "title": "Inform with the Paragraph Element",
       "description": [
         "<code>p</code> elements are the preferred element for normal-sized paragraph text on websites. P is short for \"paragraph\".",
@@ -244,7 +244,7 @@
         "Commenter est aussi un moyen pratique de rendre du code inactif sans devoir le supprimer entièrement.",
         "Vous pouvez débuter un commentaire avec <code>&#60;!--</code> et le terminer avec <code>--&#62;</code>.",
         "Décommenter vos éléments <code>h1</code>, <code>h2</code> et <code>p</code>."
-      ],      
+      ],
       "title": "Uncomment HTML",
       "description": [
         "Commenting is a way that you can leave comments within your code without affecting the code itself.",
@@ -302,7 +302,7 @@
         "Souvenez-vous que pour débuter un commentaire, vous devez utiliser <code>&#60;!--</code> et que pour le terminer, vous devez utiliser <code>--&#62;</code>.",
         "Ici vous devrez terminer le commentaire juste avant que l'élément <code>h2</code> commence.",
         "Commentez les éléments <code>h1</code> et <code>p</code>, mais laissez l'élément <code>h2</code> tel quel."
-      ],      
+      ],
       "title": "Comment out HTML",
       "description": [
         "Remember that in order to start a comment, you need to use <code>&#60;!--</code> and to end a comment, you need to use <code>--&#62;</code>",
@@ -356,14 +356,14 @@
         "Текст <code>lorem ipsum</code> применяется в качестве замещающего текста наборщиками с 16-го века, и эта традиция продолжается в сети.",
         "5 веков довольно долгий период. Так как мы строим приложение CatPhotoApp, давайте используем нечто называемое текстом <code>kitty ipsum</code>.",
         "Замените текст внутри вашего элемента <code>p</code> первыми двумя словами текста <code>kitty ipsum</code>: <code>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</code>"
-      ],  
+      ],
       "titleFR": "Remplissez les blancs avec du faux-texte",
       "descriptionFR": [
         "Les développeurs Web utilisent traditionnellement du <code>lorem ipsum</code> comme texte de substitution. Le texte lorem ipsum provient d'un extrait de Cicero, de la Rome antique.",
         "Le texte lorem ipsum a été utilisé comme faux-texte par des typographes depuis le 16<sup>ème</sup> siècle et cette tradition se poursuit sur le Web.",
         "Enfin, 5 siècles est suffisament long. Étant donné que nous fabriquons une application de photos de chats, utilisons plutôt du texte <code>Kitty ipsum</code>.",
         "Remplacez le texte à l'intérieur des éléments <code>p</code> avec ces quelques mots du texte Kitty ipsum : <code>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</code>"
-      ],      
+      ],
       "title": "Fill in the Blank with Placeholder Text",
       "description": [
         "Web developers traditionally use <code>lorem ipsum text</code> as placeholder text. The 'lorem ipsum' text is randomly scraped from a famous passage by Cicero of Ancient Rome.",
@@ -416,7 +416,7 @@
         "Notre téléphone n'a pas beaucoup d'espace vertical.",
         "Enlevons les éléments superflus pour débuter la construction de notre application de photos de chats.",
         "Supprimez l'élément <code>h1</code> afin de simplifier l'affichage."
-      ],      
+      ],
       "title": "Delete HTML Elements",
       "description": [
         "Our phone doesn't have much vertical space.",
@@ -481,7 +481,7 @@
         "Voici comment changer en bleu la couleur du texte de votre élément <code>h2</code> :",
         "<code>&#60;h2 style=\"color: blue\"&#62;CatPhotoApp&#60;/h2&#62;</code>",
         "Changez le style de votre élément <code>h2</code> pour que son texte soit de couleur rouge."
-      ],      
+      ],
       "title": "Change the Color of Text",
       "description": [
         "Now let's change the color of some of our text.",
@@ -554,14 +554,14 @@
       "descriptionFR": [
         "Avec CSS, il y a des centaines de <code>propriétés</code> que vous pouvez utliser pour changer l'apparence d'un élément dans votre page.",
         "Quand vous avez entré <code>&#60;h2 style=\"color: red\"&#62;CatPhotoApp&#60;/h2&#62;</code>, vous donniez à cet élément <code>h2</code> uniquement, un style <code>inline</code>.",
-        "C'est une des façons d'ajouter un style à un élément, mais une meilleure approche est d'utiliser <code>CSS</code>, acronyme de <code>Cascading Style Sheets</code>.",        
+        "C'est une des façons d'ajouter un style à un élément, mais une meilleure approche est d'utiliser <code>CSS</code>, acronyme de <code>Cascading Style Sheets</code>.",
         "Au sommet de votre code, créez un élément <code>style</code> comme ceci :",
-        "<blockquote>&#60;style&#62;<br>&#60;/style&#62;</blockquote>",                
-        "À l'intérieur de cet élément style, vous pouvez créer des <code>sélecteurs CSS</code> pour tous les éléments <code>h2</code>. Par exemple, si vous voulez que tous les éléments <code>h2</code> soient en rouge, votre élément style ressemblerait à ceci :", 
+        "<blockquote>&#60;style&#62;<br>&#60;/style&#62;</blockquote>",
+        "À l'intérieur de cet élément style, vous pouvez créer des <code>sélecteurs CSS</code> pour tous les éléments <code>h2</code>. Par exemple, si vous voulez que tous les éléments <code>h2</code> soient en rouge, votre élément style ressemblerait à ceci :",
         "<blockquote>&#60;style&#62;<br>&nbsp;&nbsp;h2 {color: red;}<br>&#60;/style&#62;</blockquote>",
         "Prenez note qu'il est important d'avoir les accolades ouvrantes et fermantes (<code>{</code> and <code>}</code>) autour de chaque élément de style. Vous devez aussi vous assurer que vos styles se retrouvent entre une balise style ouvrante et fermante. Finalement, assurez-vous d'ajouter un point-virgule â la fin de chacun des styles d'éléments.",
         "Supprimez les attributs de styles de votre élément <code>h2</code> et créez plutôt un élément de <code>style</code> CSS. Ajoutez le CSS nécessaire pour rendre tous vos éléments <code>h2</code> de couleur bleu."
-      ],      
+      ],
       "title": "Use CSS Selectors to Style Elements",
       "description": [
         "With CSS, there are hundreds of CSS <code>properties</code> that you can use to change the way an element looks on your page.",
@@ -2031,8 +2031,8 @@
         "<p>Top 3 things cats hate:</p>"
       ],
       "tests": [
-        "assert.equal($(\"ol\").prev().text(), 'Top 3 things cats hate:', 'message: You should have an ordered list for \"Top 3 things cats hate:\"');",
-        "assert.equal($(\"ul\").prev().text(), \"Things cats love:\", 'message: You should have an unordered list for \"Things cats love:\"');",
+        "assert((/Top 3 things cats hate:/i).test($(\"ol\").prev().text()), 'message: You should have an ordered list for \"Top 3 things cats hate:\"');",
+        "assert((/Things cats love:/i).test($(\"ul\").prev().text()), 'message: You should have an unordered list for \"Things cats love:\"');",
         "assert.equal($(\"ul li\").length, 3, 'message: You should have three <code>li</code> elements within your <code>ul</code> element.');",
         "assert.equal($(\"ol li\").length, 3, 'message: You should have three <code>li</code> elements within your <code>ol</code> element.');",
         "assert(code.match(/<\\/ul>/g) && code.match(/<\\/ul>/g).length === code.match(/<ul>/g).length, 'message: Make sure your <code>ul</code> element has a closing tag.');",
