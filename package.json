@@ -135,7 +135,7 @@
     "webpack-stream": "^3.1.0",
     "xss-filters": "^1.2.6",
     "yargs": "^4.1.0",
-    "snyk": "^1.17.0"
+    "snyk": "^1.17.1"
   },
   "devDependencies": {
     "browser-sync": "^2.9.12",
