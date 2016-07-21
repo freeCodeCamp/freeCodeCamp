@@ -151,7 +151,7 @@ window.common = (function(global) {
     }
 
     $('.modal').on('show.bs.modal', function() {
-      $('.gitter-chat-embed, .wiki-aside, .map-aside')
+      $('.gitter-chat-embed, .map-aside')
         .addClass('is-collapsed');
     });
 
@@ -187,7 +187,7 @@ window.common = (function(global) {
     });
 
     $('#challenge-help-btn').on('click', function() {
-      $('.wiki-aside, .map-aside, #chat-embed-main').addClass('is-collapsed');
+      $('.map-aside, #chat-embed-main').addClass('is-collapsed');
     });
 
     $('#help-ive-found-a-bug-wiki-article').on('click', function() {
