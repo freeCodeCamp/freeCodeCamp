@@ -81,6 +81,7 @@ var paths = {
     'public/bower_components/jshint/dist/jshint.js',
     'public/bower_components/chai/chai.js',
     'public/bower_components/CodeMirror/lib/codemirror.js',
+    'public/bower_components/CodeMirror/addon/comment/comment.js',
     'public/bower_components/CodeMirror/addon/edit/closebrackets.js',
     'public/bower_components/CodeMirror/addon/edit/matchbrackets.js',
     'public/bower_components/CodeMirror/addon/lint/lint.js',
