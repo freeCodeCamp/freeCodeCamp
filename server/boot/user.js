@@ -368,6 +368,22 @@ module.exports = function(app) {
             return res.redirect('back');
           }
 
+          if (user.name === '') {
+            req.flash('errors', {
+              msg: dedent`
+                We need your name so we can put it on your
+                certificate. <a href="https://github.com/settings/profile">
+                Add your name
+                to your GitHub account</a>, then
+                go to your <a href="https://www.freecodecamp.com/settings">
+                settings</a> page and click the
+                "Update my portfolio from GitHub" button.
+                Then we can issue your certificate.
+              `
+            });
+            return res.redirect('back');
+          }
+
           if (user.isCheater) {
             return res.redirect(`/${user.username}`);
           }
