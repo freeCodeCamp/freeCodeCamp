@@ -36,6 +36,8 @@ block content
                                           a(href="#{challenge.url}" target='_parent')
                                               = challenge.title
                                               span.sr-only= " Complete"
+                                              span.text-primary &thinsp; &thinsp;
+                                                  strong *
                                   else if challenge.isRequired
                                       p.challenge-title.ion-ios-circle-outline.padded-ionic-icon.negative-15(name="#{challenge.dashedName}")
                                           a(name="#{challenge.dashedName}" target='_parent' href="#{challenge.url}" class=challenge.isComingSoon ? 'disabled' : '')
