@@ -12,12 +12,13 @@ window.common = (function(global) {
     replaceScriptTags,
     replaceSafeTags,
     replaceFormActionAttr,
-    replaceFccfaaAttr
+    replaceFccfaaAttr,
+    replaceNoprotect
   } = common;
 
   const queryRegex = /^(\?|#\?)/;
   function encodeFcc(val) {
-    return replaceScriptTags(replaceFormActionAttr(val));
+    return replaceScriptTags(replaceFormActionAttr(replaceNoprotect(val)));
   }
 
   function decodeFcc(val) {

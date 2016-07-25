@@ -1766,7 +1766,7 @@
       "id": "56592a60ddddeae28f7aa8e1",
       "title": "Access Multi-Dimensional Arrays With Indexes",
       "description": [
-        "One way to think of a <dfn>multi-dimensional</dfn> array, is as an <em>array of arrays</em>. When you use brackets to access your array, the first set of bracket refers to the entries in the outer-most (the first level) array, and each additional pair of brackets refers to the next level of entries inside.",
+        "One way to think of a <dfn>multi-dimensional</dfn> array, is as an <em>array of arrays</em>. When you use brackets to access your array, the first set of brackets refers to the entries in the outer-most (the first level) array, and each additional pair of brackets refers to the next level of entries inside.",
         "<strong>Example</strong>",
         "<blockquote>var arr = [<br>    [1,2,3],<br>    [4,5,6],<br>    [7,8,9],<br>    [[10,11,12], 13, 14]<br>];<br>arr[3]; // equals [[10,11,12], 13, 14]<br>arr[3][0]; // equals [10,11,12]<br>arr[3][0][1]; // equals 11</blockquote>",
         "<h4>Instructions</h4>",
@@ -2052,7 +2052,7 @@
         "<h4>Instructions</h4>",
         "<ol><li>Create a function called <code>reusableFunction</code> which prints <code>\"Hi World\"</code> to the dev console.</li><li>Call the function.</li></ol>"
       ],
-	  "head": [
+      "head": [
         "var logOutput = \"\";",
         "var originalConsole = console",
         "function capture() {",
@@ -2203,7 +2203,7 @@
         "In JavaScript, <dfn>scope</dfn> refers to the visibility of variables. Variables which are defined outside of a function block have <dfn>Global</dfn> scope. This means, they can be seen everywhere in your JavaScript code.",
         "Variables which are used without the <code>var</code> keyword are automatically created in the <code>global</code> scope. This can create unintended consequences elsewhere in your code or when running a function again. You should always declare your variables with <code>var</code>.",
         "<h4>Instructions</h4>",
-        "Declare a <code>global</code> variable <code>myGlobal</code> outside of any function. Initialize it to have a value of <code>10</code> ",
+        "Using <code>var</code>, declare a <code>global</code> variable <code>myGlobal</code> outside of any function. Initialize it with a value of <code>10</code>.",
         "Inside function <code>fun1</code>, assign <code>5</code> to <code>oopsGlobal</code> <strong><em>without</em></strong> using the <code>var</code> keyword."
       ],
       "releasedOn": "January 1, 2016",
@@ -2503,7 +2503,7 @@
       "title": "Stand in Line",
       "description": [
         "In Computer Science a <dfn>queue</dfn> is an abstract <dfn>Data Structure</dfn> where items are kept in order. New items can be added at the back of the <code>queue</code> and old items are taken off from the front of the <code>queue</code>.",
-        "Write a function <code>nextInLine</code> which takes an array (<code>arr</code>) and a number (<code>item</code>) as arguments. Add the number to the end of the array, then remove the first element of array. The nextInLine function should then return the element that was removed."
+        "Write a function <code>nextInLine</code> which takes an array (<code>arr</code>) and a number (<code>item</code>) as arguments. Add the number to the end of the array, then remove the first element of array. The <code>nextInLine</code> function should then return the element that was removed."
       ],
       "releasedOn": "January 1, 2016",
       "head": [
@@ -4335,7 +4335,7 @@
         "<blockquote>var ourMusic = [<br>  {<br>    \"artist\": \"Daft Punk\",<br>    \"title\": \"Homework\",<br>    \"release_year\": 1997,<br>    \"formats\": [ <br>      \"CD\", <br>      \"Cassette\", <br>      \"LP\" ],<br>    \"gold\": true<br>  }<br>];</blockquote>",
         "This is an array which contains one object inside. The object has various pieces of <dfn>metadata</dfn> about an album. It also has a nested <code>\"formats\"</code> array. If you want to add more album records, you can do this by adding records to the top level array.",
         "Objects hold data in a property, which has a key-value format. In the example above, <code>\"artist\": \"Daft Punk\"</code> is a property that has a key of <code>\"artist\"</code> and a value of <code>\"Daft Punk\"</code>.",
-        "<a href='//json.org/' target=_blank>JavaScript Object Notation</a> or <code>JSON</code> is a related data interchange format used to store data.",
+        "<a href='http://www.json.org/' target=_blank>JavaScript Object Notation</a> or <code>JSON</code> is a related data interchange format used to store data.",
         "<blockquote>{<br>  \"artist\": \"Daft Punk\",<br>  \"title\": \"Homework\",<br>  \"release_year\": 1997,<br>  \"formats\": [ <br>    \"CD\",<br>    \"Cassette\",<br>    \"LP\"<br>  ],<br>  \"gold\": true<br>}</blockquote>",
         "<strong>Note</strong><br>You will need to place a comma in between every object in the array, unless it is the last object in the array.",
         "<h4>Instructions</h4>",
@@ -4394,9 +4394,9 @@
       "description": [
         "The sub-properties of objects can be accessed by chaining together the dot or bracket notation.",
         "Here is a nested object:",
-        "<blockquote>var ourStorage = {<br>  \"desk\": {<br>    \"drawer\": \"stapler\"<br>  },<br>  \"cabinet\": {<br>    \"top drawer\": { <br>      \"folder1\": \"a file\",<br>      \"folder2\": \"secrets\"<br>    },<br>    \"bottom drawer\": \"soda\"<br>  }<br>}<br>ourStorage.cabinet[\"top drawer\"].folder2;  // \"secrets\"<br>ourStorage.desk.drawer; // \"stapler\"</blockquote>",
+        "<blockquote>var ourStorage = {<br>  \"desk\": {<br>    \"drawer\": \"stapler\"<br>  },<br>  \"cabinet\": {<br>    \"top drawer\": { <br>      \"folder1\": \"a file\",<br>      \"folder2\": \"secrets\"<br>    },<br>    \"bottom drawer\": \"soda\"<br>  }<br>};<br>ourStorage.cabinet[\"top drawer\"].folder2;  // \"secrets\"<br>ourStorage.desk.drawer; // \"stapler\"</blockquote>",
         "<h4>Instructions</h4>",
-        "Access the <code>myStorage</code> object and assign the contents of the <code>glove box</code> property to the <code>gloveBoxContents<code> variable. Use bracket notation for properties with a space in their name."
+        "Access the <code>myStorage</code> object and assign the contents of the <code>glove box</code> property to the <code>gloveBoxContents</code> variable. Use bracket notation for properties with a space in their name."
       ],
       "releasedOn": "January 1, 2016",
       "challengeSeed": [
@@ -4513,15 +4513,15 @@
       "description": [
         "You are given a JSON object representing a part of your musical album collection. Each album has several properties and a unique id number as its key. Not all albums have complete information.",
         "Write a function which takes an album's <code>id</code> (like <code>2548</code>), a property <code>prop</code> (like <code>\"artist\"</code> or <code>\"tracks\"</code>), and a <code>value</code> (like <code>\"Addicted to Love\"</code>) to modify the data in this collection.",
-        "If <code>prop</code> isn't <code>\"tracks\"</code> and <code>value</code> isn't blank, update or set the <code>value</code> for that record album's property.",
+        "If <code>prop</code> isn't <code>\"tracks\"</code> and <code>value</code> isn't empty (<code>\"\"</code>), update or set the <code>value</code> for that record album's property.",
         "Your function must always return the entire collection object.",
         "There are several rules for handling incomplete data:",
         "If <code>prop</code> is <code>\"tracks\"</code> but the album doesn't have a <code>\"tracks\"</code> property, create an empty array before adding the new value to the album's corresponding property.",
-        "If <code>prop</code> is <code>\"tracks\"</code> and <code>value</code> isn't blank, push the <code>value</code> onto the end of the album's existing <code>tracks</code> array.",
-        "If <code>value</code> is blank, delete that property from the album.",
+        "If <code>prop</code> is <code>\"tracks\"</code> and <code>value</code> isn't empty (<code>\"\"</code>), push the <code>value</code> onto the end of the album's existing <code>tracks</code> array.",
+        "If <code>value</code> is empty (<code>\"\"</code>), delete the given <code>prop</code> property from the album.",
         "<strong>Hints</strong><br>Use <code>bracket notation</code> when <a href=\"accessing-objects-properties-with-variables\" target=\"_blank\">accessing object properties with variables</a>.",
         "Push is an array method you can read about on <a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push\">Mozilla Developer Network</a>.",
-        "You may refer back to <a href=\"manipulating-complex-objects\">Manipulating Complex Objects</a>Introducing JavaScript Object Notation (JSON)</a> for a refresher."
+        "You may refer back to <a href=\"manipulating-complex-objects\">Manipulating Complex Objects</a> Introducing JavaScript Object Notation (JSON) for a refresher."
       ],
       "releasedOn": "January 1, 2016",
       "challengeSeed": [
@@ -4556,8 +4556,8 @@
         "",
         "// Only change code below this line",
         "function updateRecords(id, prop, value) {",
-        "",
-        "",
+        "  ",
+        "  ",
         "  return collection;",
         "}",
         "",
@@ -4566,10 +4566,10 @@
         ""
       ],
       "tail": [
-        "(function(x) { return \"collection = \\n\" + JSON.stringify(x, '\\n', 2); })(collection);"
+        ";(function(x) { return \"collection = \\n\" + JSON.stringify(x, '\\n', 2); })(collection);"
       ],
       "solutions": [
-        "var collection = {\n    2548: {\n      album: \"Slippery When Wet\",\n      artist: \"Bon Jovi\",\n      tracks: [ \n        \"Let It Rock\", \n        \"You Give Love a Bad Name\" \n      ]\n    },\n    2468: {\n      album: \"1999\",\n      artist: \"Prince\",\n      tracks: [ \n        \"1999\", \n        \"Little Red Corvette\" \n      ]\n    },\n    1245: {\n      artist: \"Robert Palmer\",\n      tracks: [ ]\n    },\n    5439: {\n      album: \"ABBA Gold\"\n    }\n};\n// Keep a copy of the collection for tests\nvar collectionCopy = JSON.parse(JSON.stringify(collection));\n\n// Only change code below this line\nfunction updateRecords(id, prop, value) {\n  if(value !== \"\") {\n    if(prop === \"tracks\") {\n      collection[id][prop]= collection[id][prop] || [];\n collection[id][prop].push(value);\n    } else {\n      collection[id][prop] = value;\n    }\n  } else {\n    delete collection[id][prop];\n  }\n\n  return collection;\n}"
+        "var collection = {\n    2548: {\n      album: \"Slippery When Wet\",\n      artist: \"Bon Jovi\",\n      tracks: [ \n        \"Let It Rock\", \n        \"You Give Love a Bad Name\" \n      ]\n    },\n    2468: {\n      album: \"1999\",\n      artist: \"Prince\",\n      tracks: [ \n        \"1999\", \n        \"Little Red Corvette\" \n      ]\n    },\n    1245: {\n      artist: \"Robert Palmer\",\n      tracks: [ ]\n    },\n    5439: {\n      album: \"ABBA Gold\"\n    }\n};\n// Keep a copy of the collection for tests\nvar collectionCopy = JSON.parse(JSON.stringify(collection));\n\n// Only change code below this line\nfunction updateRecords(id, prop, value) {\n  if(value === \"\") delete collection[id][prop];\n  else if(prop === \"tracks\") {\n    collection[id][prop] = collection[id][prop] || [];\n    collection[id][prop].push(value);\n  } else {\n    collection[id][prop] = value;\n  }\n  \n  return collection;\n}"
       ],
       "tests": [
         "collection = collectionCopy; assert(updateRecords(5439, \"artist\", \"ABBA\")[5439][\"artist\"] === \"ABBA\", 'message: After <code>updateRecords(5439, \"artist\", \"ABBA\")</code>, <code>artist</code> should be <code>\"ABBA\"</code>');",

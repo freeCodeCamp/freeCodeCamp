@@ -280,6 +280,7 @@
         "Translate the provided string to pig latin.",
         "<a href=\"http://en.wikipedia.org/wiki/Pig_Latin\" target=\"_blank\">Pig Latin</a> takes the first consonant (or consonant cluster) of an English word, moves it to the end of the word and suffixes an \"ay\".",
         "If a word begins with a vowel you just add \"way\" to the end.",
+        "Input strings are guaranteed to be English words in all lowercase.",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "challengeSeed": [
@@ -663,7 +664,7 @@
       "title": "Sum All Primes",
       "description": [
         "Sum all the prime numbers up to and including the provided number.",
-        "A prime number is defined as having only two divisors, 1 and itself. For example, 2 is a prime number because it's only divisible by 1 and 2. 1 isn't a prime number, because it's only divisible by itself.",
+        "A prime number is defined as a number greater than one and having only two divisors, one and itself. For example, 2 is a prime number because it's only divisible by one and two.",
         "The provided number may not be a prime.",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
       ],
@@ -728,7 +729,8 @@
         "assert.deepEqual(typeof smallestCommons([1, 5]), 'number', 'message: <code>smallestCommons([1, 5])</code> should return a number.');",
         "assert.deepEqual(smallestCommons([1, 5]), 60, 'message: <code>smallestCommons([1, 5])</code> should return 60.');",
         "assert.deepEqual(smallestCommons([5, 1]), 60, 'message: <code>smallestCommons([5, 1])</code> should return 60.');",
-        "assert.deepEqual(smallestCommons([1, 13]), 360360, 'message: <code>smallestCommons([1, 13])</code> should return 360360.');"
+        "assert.deepEqual(smallestCommons([1, 13]), 360360, 'message: <code>smallestCommons([1, 13])</code> should return 360360.');",
+        "assert.deepEqual(smallestCommons([23, 18]), 6056820, 'message: <code>smallestCommons([23, 18])</code> should return 6056820.');"
       ],
       "type": "bonfire",
       "MDNlinks": [

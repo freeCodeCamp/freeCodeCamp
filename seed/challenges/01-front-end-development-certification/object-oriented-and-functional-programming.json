@@ -100,7 +100,7 @@
         "<code>var Carro = function() {</code>",
         "<code>& nbsp; & nbsp; this.llantas = 4; </code>",
         "<code>& nbsp; & nbsp; this.motores = 1; </code>",
-        "<code>& nbsp; & nbsp; this.asientos = 1; </code>",
+        "<code>& nbsp; & nbsp; this.asientos = 5; </code>",
         "<code>}; </code>",
         "En una <code>constructora</code> la variable <code>this</code> hace referencia al nuevo objeto que está siendo creado por la constructora. Así que cuando escribimos ",
         "<code>&nbsp;&nbsp;this.llantas = 4;</code>",
@@ -117,7 +117,7 @@
         "To use a <code>constructor</code> function we call it with the <code>new</code> keyword in front of it like:",
         "<code>var myCar = new Car();</code>",
         "<code>myCar</code> is now an <code>instance</code> of the <code>Car</code> constructor that looks like the object it described:",
-        "<blockquote>{<br>&nbsp;&nbsp;wheels: 4,<br>&nbsp;&nbsp;engines: 1,<br>&nbsp;&nbsp;seats: 1<br>}</blockquote>",
+        "<blockquote>{<br>&nbsp;&nbsp;wheels: 4,<br>&nbsp;&nbsp;engines: 1,<br>&nbsp;&nbsp;seats: 5<br>}</blockquote>",
         "Note that it is important to use the <code>new</code> keyword when calling a constructor. This is how Javascript knows to create a new object and that all the references to <code>this</code> inside the constructor should be referring to this new object.",
         "Now, once the <code>myCar</code> <code>instance</code> is created it can be used like any other object and can have its properties accessed and modified the same way you would usually. For example:",
         "<code>myCar.turboType = \"twin\";</code>",
@@ -129,7 +129,7 @@
         "var Car = function() {",
         "  this.wheels = 4;",
         "  this.engines = 1;",
-        "  this.seats = 1;",
+        "  this.seats = 5;",
         "};",
         "",
         "// Only change code below this line.",
@@ -140,7 +140,7 @@
         "(function() {return JSON.stringify(myCar);})();"
       ],
       "solutions": [
-        "var Car = function() {\n  this.wheels = 4;\n  this.engines = 1;\n  this.seats = 1;\n};\n\nvar myCar = new Car();\n\nmyCar.nickname = \"Lucy\";"
+        "var Car = function() {\n  this.wheels = 4;\n  this.engines = 1;\n  this.seats = 5;\n};\n\nvar myCar = new Car();\n\nmyCar.nickname = \"Lucy\";"
       ],
       "tests": [
         "assert((new Car()).wheels === 4, 'message: The property <code>wheels</code> should still be <code>4</code> in the object <code>constructor</code>.');",
@@ -159,7 +159,7 @@
         "<code>{</code>",
         "<code>&nbsp;&nbsp;wheels: 4,</code>",
         "<code>&nbsp;&nbsp;engines: 1,</code>",
-        "<code>&nbsp;&nbsp;seats: 1</code>",
+        "<code>&nbsp;&nbsp;seats: 5</code>",
         "<code>}</code>",
         "Ten en cuenta que es importante utilizar la palabra reservada <code>new</code> cuando se llama a una constructora. Así es como Javascript sabe crear un objeto nuevo y hace que todas las referencias a <code>this</code> dentro del constructor se refieran al objeto nuevo ",
         "Ahora, una vez que la <code>instancia</code> <code>miCarro</code> se crea, puede ser utilizada como cualquier otro objeto y puedes acceder o modificar sus propiedades como lo harías normalmente. Por ejemplo:",
@@ -187,7 +187,7 @@
         "var Car = function() {",
         "  //Change this constructor",
         "  this.wheels = 4;",
-        "  this.seats = 1;",
+        "  this.seats = 5;",
         "  this.engines = 1;",
         "};",
         "",

@@ -2,7 +2,6 @@ window.common = (function({ $, common = { init: [] }}) {
 
   common.displayTestResults = function displayTestResults(data = [], down) {
     $('#testSuite').children().remove();
-    $('#testSuite').fadeIn('slow');
     data.forEach(({ err = false, text = '' }) => {
       var iconClass = err ?
         '"ion-close-circled big-error-icon"' :
