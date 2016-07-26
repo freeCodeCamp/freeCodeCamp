@@ -32,7 +32,7 @@ export default function SocialSettings({
         key='twitter'
         >
         <FA name='twitter' />
-        Add my LinkedIn to my portfolio
+        Add my Twitter to my portfolio
       </Button>
     ));
   }
