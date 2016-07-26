@@ -643,6 +643,18 @@
         "Внутри вашего элемента <code>style</code>, замените селектор <code>h2</code> на <code>.red-text</code> и измените значение цвета с <code>blue</code> на <code>red</code>.",
         "Присвойте вашему элементу <code>h2</code> атрибут <code>class</code> со значением <code>'red-text'</code>."
       ],
+      "titleFR": "Utiliser les classes CSS pour styler un élément",
+      "descriptionFR": [
+        "Les classes sont des styles réutilisables qui peuvent être ajoutées à des éléments HTML.",
+        "Voici un exemple de déclaration de classe CSS :",
+        "<blockquote>&#60;style&#62;<br>&nbsp;&nbsp;.blue-text {<br>&nbsp;&nbsp;&nbsp;&nbsp;color: blue;<br>&nbsp;&nbsp;}<br>&#60;/style&#62;</blockquote>",
+        "Remarquez que nous avons créer une classe CSS nommée <code>blue-text</code> à l'intérieur de notre balise <code>&#60;style&#62;</code>.",
+        "Vous pouvez appliquer une classe à un élément HTML comme ceci :",
+        "<code>&#60;h2 class=\"blue-text\"&#62;CatPhotoApp&#60;/h2&#62;</code>",
+        "Prenez note que que dans votre élément CSS <code>style</code>, les classes doivent débuter par un point. Dans les déclarations de classes à l'intérieur des éléments HTML, on doit omettre le point du début.",        
+        "À l'intérieur de votre élément <code>style</code>, changez le sélecteur du <code>h2</code> pour <code>.red-text</code> et changez la couleur, passant de <code>blue</code> à <code>red</code>.",
+        "Donnez à votre élément <code>h2</code> l'attribut de classe la valeur de <code>red-text</code>."
+      ],
       "title": "Use a CSS Class to Style an Element",
       "description": [
         "Classes are reusable styles that can be added to HTML elements.",
@@ -718,6 +730,15 @@
         "<code>&#60;h2 class=\"blue-text\"&#62;CatPhotoApp&#60;/h2&#62;</code>",
         "Примените класс <code>red-text</code> к вашим элементам <code>h2</code> и <code>p</code>."
       ],
+      "titleFR": "Stylez plusieurs éléments avec une classe CSS",
+      "descriptionFR": [        
+        "Souvenez-vous que vous pouvez ajouter des classes aux éléments HTML en utilisant <code>class=\"votre-classe-ici\"</code> à l'intérieur de la balise ouvrante correspondante.",        
+        "Souvenez-vous que les sélecteurs CSS nécessitent un point au début comme ceci :",
+        "<blockquote>.blue-text {<br>&nbsp;&nbsp;color: blue;<br>}</blockquote>",        
+        "Rappelez-vous également que les déclarations de classes n'ont pas de point, comme ceci :",
+        "<code>&#60;h2 class=\"blue-text\"&#62;CatPhotoApp&#60;/h2&#62;</code>",        
+        "Appliquez la classe <code>red-text</code> à vos éléments <code>h2</code> et <code>p</code>."
+      ],      
       "title": "Style Multiple Elements with a CSS Class",
       "description": [
         "Remember that you can attach classes to HTML elements by using <code>class=\"your-class-here\"</code> within the relevant element's opening tag.",
@@ -785,6 +806,15 @@
         "<strong>Внимание</strong><br>По причине разницы в реализации браузеров, вам может понадобиться установить 100% масштаб окна браузера для прохождения этого испытания.",
         "Также, пожалуйста, не добавляйте атрибут класс к вашему новому элементу <code>p</code>."
       ],
+      "titleFR": "Changez la taille de police d'un élément",
+      "descriptionFR": [        
+        "La taille de police est contrôlée par la propriété CSS <code>font-size</code>, comme ceci :",
+        "<blockquote>h1 {<br>&nbsp;&nbsp;font-size: 30px;<br>}</blockquote>",        
+        "Créez un second élément <code>p</code> après l'élément <code>p</code> existant avec le texte kitty ipsum suivant : <code>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</code>",        
+        "À l'intérieur de la même balise <code>&#60;style&#62;</code> qui contiens votre classe <code>.red-text</code>, créez une nouvelle entrée pour les éléments <code>p</code> et paramétrer le <code>font-size</code> à 16 pixels (<code>16px</code>).",        
+        "<strong>Prenez note</strong><br>Dû aux différences entre les navigateurs Web, votre niveau de zoom devrait être à 100% pour passer les tests de ce défi.",        
+        "Également, veuillez ne pas ajouter d'attributs de classe à votre nouvel élément <code>p</code>."
+      ],      
       "title": "Change the Font Size of an Element",
       "description": [
         "Font size is controlled by the <code>font-size</code> CSS property, like this:",
@@ -850,6 +880,13 @@
         "<blockquote>h2 {<br>&nbsp;&nbsp;font-family: Sans-serif;<br>}</blockquote>",
         "Присвойте шрифт <code>Monospace</code> всем вашим элементам <code>p</code>."
       ],
+      "titleFR": "Paramétrer la famille de police d'un élément",
+      "descriptionFR": [        
+        "Vous pouvez paramétrer la police d'un élément en utilisant la propriété <code>font-family</code>.",        
+        "Par exemple, si vous voulez paramétrer la police de votre élément <code>h2</code> à <code>Sans-serif</code>, vous devez utiliser le CSS suivant :",
+        "<blockquote>h2 {<br>&nbsp;&nbsp;font-family: Sans-serif;<br>}</blockquote>",                
+        "Faites en sorte que tous vos éléments <code>p</code> aient la police <code>Monospace</code>."
+      ],      
       "title": "Set the Font Family of an Element",
       "description": [
         "You can set an element's font by using the <code>font-family</code> property.",
@@ -914,6 +951,14 @@
         "Теперь вы можете установить шрифт <code>Lobster</code> в качестве значения семейства шрифтов для вашего <code>h2</code>.",
         "Примените свойство <code>font-family</code> со значением <code>Lobster</code> к вашему элементу <code>h2</code>."
       ],
+      "titleFR": "Importer une police de Google",
+      "descriptionFR": [        
+        "Maintenant, importons et appliquons une police de Google (prenez note que si Google est interdit d'accès dans votre pays, vous devrez omettre ce défi).",        
+        "Premièrement, vous devrez faire un <code>appel</code> vers Google pour prendre la police <code>Lobster</code> et la charger dans votre HTML.",        
+        "Copier l'extrait de code suivant et coller le dans le haut de votre éditeur de code :",                
+        "Maintenant vous pouvez paramétrer <code>Lobster</code> comme valeur de police de votre élément <code>h2</code>.",        
+        "Appliquer la valeur <code>Lobster</code> à la <code>font-family</code> de votre élément <code>h2</code>."
+      ],      
       "title": "Import a Google Font",
       "description": [
         "Now, let's import and apply a Google font (note that if Google is blocked in your country, you will need to skip this challenge).",
@@ -985,6 +1030,14 @@
         "<blockquote>p {<br>&nbsp;&nbsp;font-family: Helvetica, Sans-Serif;<br>}</blockquote>",
         "Теперь закомментируйте ваш запрос к Google Fonts, таким образом шрифт <code>Lobster</code> становится недоступен. Обратите внимание как происходит деградация до шрифта <code>Monospace</code>."
       ],
+      "titleFR": "Spécifier comment vos polices devraient dégrader",
+      "descriptionFR": [        
+        "Il y a plusieurs polices par défaut qui sont disponible dans tous les navigateurs Web. Ceci comprend <code>Monospace</code>, <code>Serif</code> et <code>Sans-Serif</code>.",        
+        "Quand une police n'est pas disponible, vous pouvez demander au navigateur de \"dégrader\" vers une autre police.",        
+        "Par exemple, si vous voulez qu'un élément utilise la police <code>Helvetica</code>, mais également dégrader vers <code>Sans-Serif</code> lorsque la police <code>Helvetica</code> n'est pas disponible, vous pouvez utiliser le style CSS suivant :",
+        "<blockquote>p {<br>&nbsp;&nbsp;font-family: Helvetica, Sans-Serif;<br>}</blockquote>",        
+        "Maintenant, commenter votre appel vers les polices de Google, pour que la police <code>Lobster</code> ne soit pas disponible. Regardez comment la police se dégrade vers <code>Monospace</code>."
+      ],      
       "title": "Specify How Fonts Should Degrade",
       "description": [
         "There are several default fonts that are available in all browsers. These include <code>Monospace</code>, <code>Serif</code> and <code>Sans-Serif</code>",
@@ -1061,6 +1114,16 @@
         "Попробуйте добавить изображение используя следующую ссылку:",
         "<code>https://bit.ly/fcc-relaxing-cat</code>"
       ],
+      "titleFR": "Ajouter des images à votre site Web",
+      "descriptionFR": [        
+        "Vous pouvez ajouter des images à votre site Web en utilisant l'élément <code>img</code> et pointer vers une URL d'image spécifique en utilisant l'attribut <code>src</code>.",        
+        "Un exemple de cette procédure serait :",
+        "<code>&#60img src=\"https://www.your-image-source.com/your-image.jpg\"&#62</code>",
+        "Note that in most cases, <code>img</code> elements are self-closing.",
+        "Prenez note que dans la plupart des cas, les éléments <code>img</code> sont auto-fermants.",
+        "Essayez avec cette image :",
+        "<code>https://bit.ly/fcc-relaxing-cat</code>"
+      ],      
       "title": "Add Images to your Website",
       "description": [
         "You can add images to your website by using the <code>img</code> element, and point to a specific image's URL using the <code>src</code> attribute.",
@@ -1141,6 +1204,14 @@
         "Создайте класс <code>smaller-image</code> и используйте его для изменения размера изображений до 100 пикселей в ширину.",
         "<strong>Внимание</strong><br>По причине разницы в реализации браузеров, вам может понадобиться установить 100% масштаб окна браузера для прохождения этого испытания."
       ],
+      "titleFR": "Redimensionner vos images",
+      "descriptionFR": [        
+        "Le CSS a une propriété nommé <code>width</code> qui contrôle la largeur d'un élément. Comme pour les polices, nous utiliserons <code>px</code> (pixels) pour déterminer la largeur d'une image.",        
+        "Par exemple, si nous voulons créer une classe CSS nommée <code>larger-image</code> qui donnne aux éléments une largeur de 500 pixels, nous utilisons :",
+        "<blockquote>&#60;style&#62;<br>&nbsp;&nbsp;.larger-image {<br>&nbsp;&nbsp;&nbsp;&nbsp;width: 500px;<br>&nbsp;&nbsp;}<br>&#60;/style&#62;</blockquote>",        
+        "Créez une classe nommée <code>smaller-image</code> et utilisez la pour redimensionner l'image pour qu'elle ai 100 pixels de large.",
+        "<strong>Prenez note</strong><br>Dû aux différences entre les navigateurs Web, votre niveau de zoom devrait être à 100% pour passer les tests de ce défi."          
+      ],      
       "title": "Size your Images",
       "description": [
         "CSS has a property called <code>width</code> that controls an element's width. Just like with fonts, we'll use <code>px</code> (pixels) to specify the image's width.",
@@ -1223,6 +1294,15 @@
         "Помните, что вы можете может применить множество классов к одному элементу путём разделения их с помощью пробела внутри атрибута <code>class</code>. Например:",
         "<code>&lt;img class=\"class1 class2\"&gt;</code>"
       ],
+      "titleFR": "Ajouter des bordures autour de vos éléments",
+      "descriptionFR": [        
+        "Les bordures CSS ont des propriétés comme <code>style</code>, <code>color</code> et <code>width</code>",        
+        "Par exemple, si nous voulons créer une bordure de 5 pixel rouge autour d'un élément HTML, nous pouvons utiliser cette classe :",
+        "<blockquote>&#60;style&#62;<br>&nbsp;&nbsp;.thin-red-border {<br>&nbsp;&nbsp;&nbsp;&nbsp;border-color: red;<br>&nbsp;&nbsp;&nbsp;&nbsp;border-width: 5px;<br>&nbsp;&nbsp;&nbsp;&nbsp;border-style: solid;<br>&nbsp;&nbsp;}<br>&#60;/style&#62;</blockquote>",        
+        "Créer une classe nommée <code>thick-green-border</code> qui ajoute une bordure verte de 10 pixel avec un style <code>solid</code> autour d'un élément HTML. Appliquez ensuite cette classe sur votre photo de chat.",        
+        "Souvenez-vous que vous pouvez appliquer plus d'une classe sur un élément en les séparant par un espace, le tout dans l'attribut <code>class</code> de l'élément. Par exemple :",
+        "<code>&lt;img class=\"class1 class2\"&gt;</code>"
+      ],      
       "title": "Add Borders Around your Elements",
       "description": [
         "CSS borders have properties like <code>style</code>, <code>color</code> and <code>width</code>",
