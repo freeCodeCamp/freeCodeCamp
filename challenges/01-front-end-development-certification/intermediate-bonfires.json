@@ -322,6 +322,7 @@
         "Traduis la phrase donnée en pig latin (verlan anglais)",
         "Le <a href=\"http://fr.wikipedia.org/wiki/Pig_Latin\" target=\"_blank\">Pig Latin</a> prend la ou les première(s) consonne(s) d'un mot en anglais et les mets à la fin du mot accompagné par le suffixe \"ay\".",
         "Si un mot commence par une voyelle ajoute \"way\" à la fin du mot.",
+        "Les chaînes de caractères entrées sont garanties d'être des mots anglais, en lettres minuscules.",
         "N'oublie pas d'utiliser <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Lire-Chercher-Demander</a> si tu es bloqué. Essaye de trouver un partenaire. Écris ton propre code."
       ]
     },
