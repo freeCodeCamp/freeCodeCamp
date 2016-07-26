@@ -40,7 +40,20 @@
         "El comentario de barra-estrella-estrella-barra, comentará todo lo que haya entre los caracteres <code>/*</code> y <code>*/</code>:",
         "<code>/* Este es también un comentario */</code>",
         "Trata de crear uno de cada uno."
-      ]
+      ],
+      "titleFr" : "Commentez votre code JavaScript",
+      "descriptionFr" : [
+        "Les commentaires sont des lignes de code que Javascript va intentionnellement ignorer. Les commentaires sont un bon moyen de laisser des notes à votre intention ou pour d'autres personnes qui devront comprendre ce que fait votre code.",
+        "Il y a deux façons d'écrire des commentaires en JavaScript.",
+        "Utiliser <code>//</code> indiquera à JavaScript d'ignorer le reste du texte sur cette même ligne:",
+        "<code>// Voici un commentaire sur une ligne.</code>",
+        "Vous pouvez commenter plusieurs lignes en commençant par <code>/*</code> et en finissant par <code>*/</code>:",
+        "<code>/*Voici un commentaire <br>   sur plusieurs lignes */</code>",
+        "<strong>Conseils</strong>",
+        "Lorsque vous écrivez votre code, vous devriez ajouter régulièrement des commentaires pour clarifier l'objectif de certaines parties de votre code. De bons commentaires peuvent aider les autres <em>et</em> vous-même à mieux comprendre votre code.",
+        "<h4>Instructions</h4>",
+        "Essayez de créer un commentaire de chaque type."
+      ]      
     },
     {
       "id": "bd7123c9c443eddfaeb5bdef",
@@ -83,7 +96,21 @@
         "Te darás cuenta que en <code>myName</code>, no usamos un espacio, y que la \" N\"se escribe con mayúscula. Las variables en JavaScript se escriben con <code>capitalización camello (camel case)</code>. Un ejemplo de capitalización camello: capitalizacionCamello.",
         "Ahora, utiliza la palabra clave <code>var</code> para crear una variable llamada <code>myName</code>. Establecele como valor tu nombre, entre comillas dobles. ",
         "Mira el ejemplo con <code>ourName</code> si te quedas atascado."
-      ]
+      ],
+      "titleFr" : "Déclarer des variables en JavaScript",
+      "descriptionFr" : [
+        "En informatique, une <dfn>donnée</dfn> comporte tout ce qui peut avoir du sens pour l'ordinateur. Javascript dispose de sept <code>types de données</code> différents qui sont <code>undefined</code>, <code>null</code>, <code>boolean</code>, <code>string</code>, <code>symbol</code>, <code>number</code> et <code>object</code>.",
+        "Par exemple, les ordinateurs font la différence entre les nombres tel que <code>12</code> et les <code>strings</code>, tels que <code>\"12\"</code>, <code>\"dog\"</code>, ou <code>\"123 cats\"</code>, qui sont des collections de caractères. Les ordinateurs peuvent faire des opérations mathématiques sur un nombre, mais pas sur une chaîne de caractères.",
+        "Les <dfn>variables</dfn> permettent aux ordinateurs de stocker et manipuler les données de façon dynamique. Ils font cela en utilisant un <blockquote>label</blockquote> qui réfère à la donnée plutôt que d'utiliser la donnée elle-même. Les sept types de données peuvent être stockés dans une variable.",
+        "Les <code>variables</code> sont similaires aux x et y que vous utilisez en mathématiques, ce qui veut dire que ce sont des noms simples qui représentent les données que l'on veut utiliser. Les <code>variables</code> de l'ordinateur diffèrent de celles des mathématiques car elles peuvent stocker différentes valeurs à différents moments.",
+        "On peut dire à JavaScript de créer ou <code>déclarer</code> une variable en la précédant du mot-clé <code>var</code>, comme ceci:",
+        "<code>var notreNom</code>;",
+        "crée une <code>variable</code> appelée <code>notreNom</code>.On termine nos expressions avec un point virgule en JavaScript.",
+        "Le nom d'une <code>variable</code> peut être composé de nombres, lettres et <code>$</code> ou <code>_</code>, mais ne peut contenir d'espaces ou commencer par un nombre.",
+        "<h4>Instructions</h4>",
+        "Utilisez le mot-clé <code>var</code> pour créer une variable appelée <code>monNom</code>",
+        "<strong>Conseil</strong><br>Regardez à l'exemple de <code>notreNom</code> si vous vous êtes bloqué."
+      ]      
     },
     {
       "id": "56533eb9ac21ba0edf2244a8",
