@@ -33,7 +33,7 @@ window.common = (function(global) {
   * Any console.log() -type
   * statements will appear in
   * your browser\'s DevTools
-  * JavaScript console.
+  * JavaScript console as well.
   */`);
 
   codeOutput.setSize('100%', '100%');
