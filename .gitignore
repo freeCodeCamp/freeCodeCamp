@@ -47,6 +47,7 @@ public/js/iFrameScripts*
 public/js/plugin*
 public/js/vendor*
 public/js/faux*
+public/js/frame-runner*
 public/css/main*
 
 server/rev-manifest.json

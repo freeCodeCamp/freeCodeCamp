@@ -31,6 +31,14 @@ patch:
         patched: '2016-07-20T15:33:26.680Z'
     - gulp-nodemon > gulp > vinyl-fs > glob-watcher > gaze > globule > glob > minimatch:
         patched: '2016-07-20T15:33:26.680Z'
+    - gulp-nodemon > gulp > vinyl-fs > glob-stream > minimatch:
+        patched: '2016-07-24T17:05:18.332Z'
+    - gulp-nodemon > gulp > vinyl-fs > glob-stream > glob > minimatch:
+        patched: '2016-07-24T17:05:18.332Z'
+    - gulp-nodemon > gulp > vinyl-fs > glob-watcher > gaze > globule > minimatch:
+        patched: '2016-07-24T17:05:18.332Z'
+    - gulp-nodemon > gulp > vinyl-fs > glob-watcher > gaze > globule > glob > minimatch:
+        patched: '2016-07-24T17:05:18.332Z'
   'npm:uglify-js:20151024':
     - jade > transformers > uglify-js:
         patched: '2016-07-09T00:55:04.882Z'
