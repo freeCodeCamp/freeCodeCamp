@@ -53,7 +53,7 @@
         "Lorsque vous écrivez votre code, vous devriez ajouter régulièrement des commentaires pour clarifier l'objectif de certaines parties de votre code. De bons commentaires peuvent aider les autres <em>et</em> vous-même à mieux comprendre votre code.",
         "<h4>Instructions</h4>",
         "Essayez de créer un commentaire de chaque type."
-      ]      
+      ]
     },
     {
       "id": "bd7123c9c443eddfaeb5bdef",
@@ -110,7 +110,7 @@
         "<h4>Instructions</h4>",
         "Utilisez le mot-clé <code>var</code> pour créer une variable appelée <code>monNom</code>",
         "<strong>Conseil</strong><br>Regardez à l'exemple de <code>notreNom</code> si vous vous êtes bloqué."
-      ]      
+      ]
     },
     {
       "id": "56533eb9ac21ba0edf2244a8",
@@ -4364,7 +4364,7 @@
         "Objects hold data in a property, which has a key-value format. In the example above, <code>\"artist\": \"Daft Punk\"</code> is a property that has a key of <code>\"artist\"</code> and a value of <code>\"Daft Punk\"</code>.",
         "<a href='http://www.json.org/' target=_blank>JavaScript Object Notation</a> or <code>JSON</code> is a related data interchange format used to store data.",
         "<blockquote>{<br>  \"artist\": \"Daft Punk\",<br>  \"title\": \"Homework\",<br>  \"release_year\": 1997,<br>  \"formats\": [ <br>    \"CD\",<br>    \"Cassette\",<br>    \"LP\"<br>  ],<br>  \"gold\": true<br>}</blockquote>",
-        "<strong>Note</strong><br>You will need to place a comma in between every object in the array, unless it is the last object in the array.",
+        "<strong>Note</strong><br>You will need to place a comma after every object in the array, unless it is the last object in the array.",
         "<h4>Instructions</h4>",
         "Add a new album to the <code>myMusic</code> array. Add <code>artist</code> and <code>title</code> strings, <code>release_year</code> number, and a <code>formats</code> array of strings."
       ],
