@@ -89,7 +89,7 @@ function handleAnswer(getState, dispatch, next, action) {
               title: 'Saved',
               type: 'info'
           }),
-          updatePoints(points),
+          updatePoints(points)
         );
       })
       .catch(error => {
