@@ -106,7 +106,7 @@ function handleAnswer(getState, dispatch, next, action) {
     goToNextHike(),
     makeToast({
       title: 'Congratulations!',
-      message: 'Hike completed.' + (isSignedIn ? ' Saving...' : ''),
+      message: 'Quiz completed.' + (isSignedIn ? ' Saving...' : ''),
       type: 'success'
     })
   );
