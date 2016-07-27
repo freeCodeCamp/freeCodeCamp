@@ -336,7 +336,7 @@ module.exports = function(app) {
             return data;
           }, {});
 
-        if (userPortfolio.isCheater) {
+        if (userPortfolio.isCheater && !user) {
           req.flash('errors', {
             msg: dedent`
               Upon review, this account has been flagged for academic
