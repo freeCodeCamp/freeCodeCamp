@@ -6,8 +6,8 @@ import classnames from 'classnames';
 
 export function UpdateEmailButton() {
   return (
-    <Link to='/settings/update-email'>
       <Button
+        href='/settings/update-email'
         block={ true }
         bsSize='lg'
         bsStyle='primary'
@@ -16,7 +16,6 @@ export function UpdateEmailButton() {
         <FA name='envelope' />
         Update my Email
       </Button>
-    </Link>
   );
 }
 
