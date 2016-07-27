@@ -60,7 +60,7 @@
         "<strong>User Story:</strong> I can see the weather in my current location.",
         "<strong>User Story:</strong> I can see a different icon or background image (e.g. snowy mountain, hot desert) depending on the weather.",
         "<strong>User Story:</strong> I can push a button to toggle between Fahrenheit and Celsius.",
-        "We recommend using the <a href='https://openweathermap.org/current#geo' target='_blank'>Open Weather API</a>. This will require creating a free API key. Normally you want to avoid exposing API keys on CodePen, but we haven't been able to find a keyless API for weather.",
+        "We recommend using the <a href='https://openweathermap.org/current#geo' target='_blank'>Open Weather API</a>. This will require creating a free API key. Normally you want to avoid exposing API keys on CodePen, but we haven't been able to find a keyless API for weather. As a side note you may run into issues using http for geolocation as it has been depreciated by Google only allowing access using https. Seeing how The Open Weather API only allows access to https for paying customers, I would recommend using an alternative like the <a href='http://ip-api.com/json' target='_blank'>IP-API</a> to get the geolocation.",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Read-Search-Ask</a> if you get stuck.",
         "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen.",
         "You can get feedback on your project by sharing it with your friends on Facebook."
