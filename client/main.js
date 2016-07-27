@@ -103,7 +103,7 @@ main = (function(main, global) {
       if (!(event.ctrlKey || event.metaKey)) {
           toggleMainChat();
       }
-      window.ga('send', 'event', 'NAV', 'NAV-CHAT', 'Nav Chat Button Clicked');
+      window.ga('send', 'event', 'Nav', 'clicked', 'Nav chat opened');
   });
 
     function showMainChat() {
@@ -220,7 +220,7 @@ $(document).ready(function() {
       '&redirect_uri=http%3A%2F%2Ffreecodecamp%2Ecom%2Fmap';
 
     main.setMapShare(challengeBlockName);
-    window.ga('send', 'event', 'FB_LINK', 'SHARE', 'Facebook map share');
+    window.ga('send', 'event', 'Facebook', 'clicked', 'Shared on Facebook');
     window.location.href = link;
   });
 
