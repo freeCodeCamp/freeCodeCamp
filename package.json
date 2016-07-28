@@ -43,7 +43,7 @@
     "cheerio": "~0.20.0",
     "classnames": "^2.1.2",
     "compression": "^1.6.0",
-    "connect-mongo": "~1.3.2",
+    "connect-mongo": "^1.3.2",
     "cookie-parser": "^1.4.0",
     "csurf": "^1.8.3",
     "debug": "^2.2.0",
