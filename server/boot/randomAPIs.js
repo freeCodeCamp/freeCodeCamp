@@ -28,6 +28,10 @@ module.exports = function(app) {
   router.get('/terms', terms);
   router.get('/privacy', privacy);
   router.get('/how-nonprofit-projects-work', howNonprofitProjectsWork);
+  router.get(
+      '/software-resources-for-nonprofits',
+      softwareResourcesForNonprofits
+  );
   router.get('/code-of-conduct', codeOfConduct);
   router.get('/academic-honesty', academicHonesty);
   router.get(
@@ -57,6 +61,12 @@ module.exports = function(app) {
       res.render('resources/how-nonprofit-projects-work', {
           title: 'How our nonprofit projects work'
       });
+  }
+
+  function softwareResourcesForNonprofits(req, res) {
+    res.render('resources/software-resources-for-nonprofits', {
+      title: 'Software Resources for Nonprofits'
+    });
   }
 
   function codeOfConduct(req, res) {
