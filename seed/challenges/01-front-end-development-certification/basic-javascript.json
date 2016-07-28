@@ -40,19 +40,6 @@
         "El comentario de barra-estrella-estrella-barra, comentará todo lo que haya entre los caracteres <code>/*</code> y <code>*/</code>:",
         "<code>/* Este es también un comentario */</code>",
         "Trata de crear uno de cada uno."
-      ],
-      "titleFr" : "Commentez votre code JavaScript",
-      "descriptionFr" : [
-        "Les commentaires sont des lignes de code que Javascript va intentionnellement ignorer. Les commentaires sont un bon moyen de laisser des notes à votre intention ou pour d'autres personnes qui devront comprendre ce que fait votre code.",
-        "Il y a deux façons d'écrire des commentaires en JavaScript.",
-        "Utiliser <code>//</code> indiquera à JavaScript d'ignorer le reste du texte sur cette même ligne:",
-        "<code>// Voici un commentaire sur une ligne.</code>",
-        "Vous pouvez commenter plusieurs lignes en commençant par <code>/*</code> et en finissant par <code>*/</code>:",
-        "<code>/*Voici un commentaire <br>   sur plusieurs lignes */</code>",
-        "<strong>Conseils</strong>",
-        "Lorsque vous écrivez votre code, vous devriez ajouter régulièrement des commentaires pour clarifier l'objectif de certaines parties de votre code. De bons commentaires peuvent aider les autres <em>et</em> vous-même à mieux comprendre votre code.",
-        "<h4>Instructions</h4>",
-        "Essayez de créer un commentaire de chaque type."
       ]
     },
     {
@@ -96,20 +83,6 @@
         "Te darás cuenta que en <code>myName</code>, no usamos un espacio, y que la \" N\"se escribe con mayúscula. Las variables en JavaScript se escriben con <code>capitalización camello (camel case)</code>. Un ejemplo de capitalización camello: capitalizacionCamello.",
         "Ahora, utiliza la palabra clave <code>var</code> para crear una variable llamada <code>myName</code>. Establecele como valor tu nombre, entre comillas dobles. ",
         "Mira el ejemplo con <code>ourName</code> si te quedas atascado."
-      ],
-      "titleFr" : "Déclarer des variables en JavaScript",
-      "descriptionFr" : [
-        "En informatique, une <dfn>donnée</dfn> comporte tout ce qui peut avoir du sens pour l'ordinateur. Javascript dispose de sept <code>types de données</code> différents qui sont <code>undefined</code>, <code>null</code>, <code>boolean</code>, <code>string</code>, <code>symbol</code>, <code>number</code> et <code>object</code>.",
-        "Par exemple, les ordinateurs font la différence entre les nombres tel que <code>12</code> et les <code>strings</code>, tels que <code>\"12\"</code>, <code>\"dog\"</code>, ou <code>\"123 cats\"</code>, qui sont des collections de caractères. Les ordinateurs peuvent faire des opérations mathématiques sur un nombre, mais pas sur une chaîne de caractères.",
-        "Les <dfn>variables</dfn> permettent aux ordinateurs de stocker et manipuler les données de façon dynamique. Ils font cela en utilisant un <blockquote>label</blockquote> qui réfère à la donnée plutôt que d'utiliser la donnée elle-même. Les sept types de données peuvent être stockés dans une variable.",
-        "Les <code>variables</code> sont similaires aux x et y que vous utilisez en mathématiques, ce qui veut dire que ce sont des noms simples qui représentent les données que l'on veut utiliser. Les <code>variables</code> de l'ordinateur diffèrent de celles des mathématiques car elles peuvent stocker différentes valeurs à différents moments.",
-        "On peut dire à JavaScript de créer ou <code>déclarer</code> une variable en la précédant du mot-clé <code>var</code>, comme ceci:",
-        "<code>var notreNom</code>;",
-        "crée une <code>variable</code> appelée <code>notreNom</code>.On termine nos expressions avec un point virgule en JavaScript.",
-        "Le nom d'une <code>variable</code> peut être composé de nombres, lettres et <code>$</code> ou <code>_</code>, mais ne peut contenir d'espaces ou commencer par un nombre.",
-        "<h4>Instructions</h4>",
-        "Utilisez le mot-clé <code>var</code> pour créer une variable appelée <code>monNom</code>",
-        "<strong>Conseil</strong><br>Regardez à l'exemple de <code>notreNom</code> si vous vous êtes bloqué."
       ]
     },
     {
@@ -237,8 +210,8 @@
         "var a = 5;\nvar b = 10;\nvar c = \"I am a\";\na = a + 1;\nb = b + 5;\nc = c + \" String!\";"
       ],
       "tests": [
-        "assert(typeof a === 'number' && a === 6, 'message: <code>a</code> should be defined and have a value of <code>6</code>');",
-        "assert(typeof b === 'number' && b === 15, 'message: <code>b</code> should be defined and have a value of <code>15</code>');",
+        "assert(typeof a === 'number' && a === 5, 'message: <code>a</code> should be defined and have a value of <code>5</code>');",
+        "assert(typeof b === 'number' && b === 10, 'message: <code>b</code> should be defined and have a value of <code>10</code>');",
         "assert(!/undefined/.test(c) && c === \"I am a String!\", 'message: <code>c</code> should not contain <code>undefined</code> and should have a value of \"I am a String!\"');",
         "assert(/a = a \\+ 1;/.test(code) && /b = b \\+ 5;/.test(code) && /c = c \\+ \" String!\";/.test(code), 'message: Do not change code below the line');"
       ],
@@ -1860,7 +1833,7 @@
         "var myArray = [[\"John\", 23], [\"cat\", 2]];\nmyArray.push([\"dog\",3]);"
       ],
       "tests": [
-        "assert((function(d){if(d[2] != undefined && d[0][0] == 'John' && d[0][1] === 23 && d[2][0] == 'dog' && d[2][1] === 3 && d[2].length == 2){return true;}else{return false;}})(myArray), 'message: <code>myArray</code> should now equal <code>[[\"John\", 23], [\"cat\", 2], [\"dog\", 3]]</code>.');"
+        "assert((function(d){if(d[2] != undefined && d[0][0] == 'John' && d[0][1] == 23 && d[2][0] == 'dog' && d[2][1] == 3 && d[2].length == 2){return true;}else{return false;}})(myArray), 'message: <code>myArray</code> should now equal <code>[[\"John\", 23], [\"cat\", 2], [\"dog\", 3]]</code>.');"
       ],
       "type": "waypoint",
       "challengeType": 1,
@@ -1903,9 +1876,9 @@
         "var myArray = [[\"John\", 23], [\"cat\", 2]];\nvar removedFromMyArray = myArray.pop();"
       ],
       "tests": [
-        "assert((function(d){if(d[0][0] == 'John' && d[0][1] === 23 && d[1] == undefined){return true;}else{return false;}})(myArray), 'message: <code>myArray</code> should only contain <code>[[\"John\", 23]]</code>.');",
+        "assert((function(d){if(d[0][0] == 'John' && d[0][1] == 23 && d[1] == undefined){return true;}else{return false;}})(myArray), 'message: <code>myArray</code> should only contain <code>[[\"John\", 23]]</code>.');",
         "assert(/removedFromMyArray\\s*=\\s*myArray\\s*.\\s*pop\\s*(\\s*)/.test(code), 'message: Use <code>pop()</code> on <code>myArray</code>');",
-        "assert((function(d){if(d[0] == 'cat' && d[1] === 2 && d[2] == undefined){return true;}else{return false;}})(removedFromMyArray), 'message: <code>removedFromMyArray</code> should only contain <code>[\"cat\", 2]</code>.');"
+        "assert((function(d){if(d[0] == 'cat' && d[1] == 2 && d[2] == undefined){return true;}else{return false;}})(removedFromMyArray), 'message: <code>removedFromMyArray</code> should only contain <code>[\"cat\", 2]</code>.');"
       ],
       "type": "waypoint",
       "challengeType": 1,
@@ -1948,8 +1921,8 @@
         "var myArray = [[\"John\", 23], [\"dog\", 3]];\n\n// Only change code below this line.\nvar removedFromMyArray = myArray.shift();"
       ],
       "tests": [
-        "assert((function(d){if(d[0][0] == 'dog' && d[0][1] === 3 && d[1] == undefined){return true;}else{return false;}})(myArray), 'message: <code>myArray</code> should now equal <code>[[\"dog\", 3]]</code>.');",
-        "assert((function(d){if(d[0] == 'John' && d[1] === 23 && typeof removedFromMyArray === 'object'){return true;}else{return false;}})(removedFromMyArray), 'message: <code>removedFromMyArray</code> should contain <code>[\"John\", 23]</code>.');"
+        "assert((function(d){if(d[0][0] == 'dog' && d[0][1] == 3 && d[1] == undefined){return true;}else{return false;}})(myArray), 'message: <code>myArray</code> should now equal <code>[[\"dog\", 3]]</code>.');",
+        "assert((function(d){if(d[0] === 'John' && d[1] === 23 && typeof removedFromMyArray === 'object'){return true;}else{return false;}})(removedFromMyArray), 'message: <code>removedFromMyArray</code> should contain <code>[\"John\", 23]</code>.');"
       ],
       "type": "waypoint",
       "challengeType": 1,
@@ -1992,7 +1965,7 @@
         "var myArray = [[\"John\", 23], [\"dog\", 3]];\nmyArray.shift();\nmyArray.unshift([\"Paul\", 35]);"
       ],
       "tests": [
-        "assert((function(d){if(typeof d[0] === \"object\" && d[0][0] == 'Paul' && d[0][1] === 35 && d[1][0] != undefined && d[1][0] == 'dog' && d[1][1] != undefined && d[1][1] == 3){return true;}else{return false;}})(myArray), 'message: <code>myArray</code> should now have [[\"Paul\", 35], [\"dog\", 3]].');"
+        "assert((function(d){if(typeof d[0] === \"object\" && d[0][0].toLowerCase() == 'paul' && d[0][1] == 35 && d[1][0] != undefined && d[1][0] == 'dog' && d[1][1] != undefined && d[1][1] == 3){return true;}else{return false;}})(myArray), 'message: <code>myArray</code> should now have [[\"Paul\", 35], [\"dog\", 3]].');"
       ],
       "type": "waypoint",
       "challengeType": 1,
@@ -2230,7 +2203,7 @@
         "In JavaScript, <dfn>scope</dfn> refers to the visibility of variables. Variables which are defined outside of a function block have <dfn>Global</dfn> scope. This means, they can be seen everywhere in your JavaScript code.",
         "Variables which are used without the <code>var</code> keyword are automatically created in the <code>global</code> scope. This can create unintended consequences elsewhere in your code or when running a function again. You should always declare your variables with <code>var</code>.",
         "<h4>Instructions</h4>",
-        "Using <code>var</code>, declare a <code>global</code> variable <code>myGlobal</code> outside of any function. Initialize it with a value of <code>10</code>.",
+        "Declare a <code>global</code> variable <code>myGlobal</code> outside of any function. Initialize it to have a value of <code>10</code> ",
         "Inside function <code>fun1</code>, assign <code>5</code> to <code>oopsGlobal</code> <strong><em>without</em></strong> using the <code>var</code> keyword."
       ],
       "releasedOn": "January 1, 2016",
@@ -2530,7 +2503,7 @@
       "title": "Stand in Line",
       "description": [
         "In Computer Science a <dfn>queue</dfn> is an abstract <dfn>Data Structure</dfn> where items are kept in order. New items can be added at the back of the <code>queue</code> and old items are taken off from the front of the <code>queue</code>.",
-        "Write a function <code>nextInLine</code> which takes an array (<code>arr</code>) and a number (<code>item</code>) as arguments. Add the number to the end of the array, then remove the first element of array. The <code>nextInLine</code> function should then return the element that was removed."
+        "Write a function <code>nextInLine</code> which takes an array (<code>arr</code>) and a number (<code>item</code>) as arguments. Add the number to the end of the array, then remove the first element of array. The nextInLine function should then return the element that was removed."
       ],
       "releasedOn": "January 1, 2016",
       "head": [
@@ -4364,7 +4337,7 @@
         "Objects hold data in a property, which has a key-value format. In the example above, <code>\"artist\": \"Daft Punk\"</code> is a property that has a key of <code>\"artist\"</code> and a value of <code>\"Daft Punk\"</code>.",
         "<a href='http://www.json.org/' target=_blank>JavaScript Object Notation</a> or <code>JSON</code> is a related data interchange format used to store data.",
         "<blockquote>{<br>  \"artist\": \"Daft Punk\",<br>  \"title\": \"Homework\",<br>  \"release_year\": 1997,<br>  \"formats\": [ <br>    \"CD\",<br>    \"Cassette\",<br>    \"LP\"<br>  ],<br>  \"gold\": true<br>}</blockquote>",
-        "<strong>Note</strong><br>You will need to place a comma after every object in the array, unless it is the last object in the array.",
+        "<strong>Note</strong><br>You will need to place a comma in between every object in the array, unless it is the last object in the array.",
         "<h4>Instructions</h4>",
         "Add a new album to the <code>myMusic</code> array. Add <code>artist</code> and <code>title</code> strings, <code>release_year</code> number, and a <code>formats</code> array of strings."
       ],
@@ -4421,9 +4394,9 @@
       "description": [
         "The sub-properties of objects can be accessed by chaining together the dot or bracket notation.",
         "Here is a nested object:",
-        "<blockquote>var ourStorage = {<br>  \"desk\": {<br>    \"drawer\": \"stapler\"<br>  },<br>  \"cabinet\": {<br>    \"top drawer\": { <br>      \"folder1\": \"a file\",<br>      \"folder2\": \"secrets\"<br>    },<br>    \"bottom drawer\": \"soda\"<br>  }<br>};<br>ourStorage.cabinet[\"top drawer\"].folder2;  // \"secrets\"<br>ourStorage.desk.drawer; // \"stapler\"</blockquote>",
+        "<blockquote>var ourStorage = {<br>  \"desk\": {<br>    \"drawer\": \"stapler\"<br>  },<br>  \"cabinet\": {<br>    \"top drawer\": { <br>      \"folder1\": \"a file\",<br>      \"folder2\": \"secrets\"<br>    },<br>    \"bottom drawer\": \"soda\"<br>  }<br>}<br>ourStorage.cabinet[\"top drawer\"].folder2;  // \"secrets\"<br>ourStorage.desk.drawer; // \"stapler\"</blockquote>",
         "<h4>Instructions</h4>",
-        "Access the <code>myStorage</code> object and assign the contents of the <code>glove box</code> property to the <code>gloveBoxContents</code> variable. Use bracket notation for properties with a space in their name."
+        "Access the <code>myStorage</code> object and assign the contents of the <code>glove box</code> property to the <code>gloveBoxContents<code> variable. Use bracket notation for properties with a space in their name."
       ],
       "releasedOn": "January 1, 2016",
       "challengeSeed": [
