@@ -85,6 +85,81 @@
       "tests": [],
       "type": "Waypoint",
       "challengeType": 7,
+      "titleId": "Mengetahui Bagaimana Free Code Camp bekerja",
+      "descriptionId": [
+	[
+	  "//i.imgur.com/6ibIavQ.jpg",
+	  "Gambaran 4 kelebihan Free Code Camp: Terhubung, Belajar JavaScript, Membangun Portofolio, Membantu organisasi nirlaba",
+	  "Selamat datang di Free Code Camp. Kami komunitas open source yang membantu kamu belajar code, kemudian berlatih membangun project untuk organisasi nirlaba.",
+	  ""
+	],
+	[
+	  "//i.imgur.com/Elb3dfj.jpg",
+	  "Screenshot beberapa campers coding bersama di Toronto.",
+	  "<bold>Belajar code sulit.</bold> Agar berhasil, kamu butuh banyak latihan dan dukungan. Itulah mengapa kami membangun kurikulum yang tepat dan dukungan komunitas.",
+	  ""
+	],
+	[
+	  "//i.imgur.com/WD3STY6.jpg",
+	  "Foto 3 campers yang mendapatkan pekerjaan setelah belajar code di Free Code Camp.",
+	  "Free Code Camp adalah jalan ampuh menjadi developer software. Banyak perusahaan mempekerjakan ribuan orang seperti kamu yang belajar code melalui Free Code Camp.",
+	  ""
+	],
+	[
+	  "//i.imgur.com/D7Y5luw.jpg",
+	  "Grafik rata rata pertumbuhan pekerjaan dibandingkan pertumbuhan lulusan ilmu komputer. Tersedia 1,4 juta pekerjaan dan hanya 400 ribu orang yang mengisi tempatnya.",
+	  "Ada ribuan pekerjaan developer software yang belum terisi, dan kebutuhan akan coders bertambah setiap tahun.",
+	  ""
+	],
+	[
+	  "//i.imgur.com/vLNso6h.jpg",
+	  "Ilustrasi yang menunjukkan bahwa kamu akan belajar HTML5, CSS3, JavaScript, Databases, Git, Node.js, React and D3.",
+	  "Kami memiliki ribuan pilihan tantangan coding yang akan memberitahumu dasar teknologi membangun web seperti HTML5, Node.js, dan basis data.",
+	  ""
+	],
+	[
+	  "//i.imgur.com/UVB9hxp.jpg",
+	  "Gambar camper di kafe sedang membangun project di Free Code Camp.",
+	  "Kami yakin cara terbaik belajar adalah dengan melakukan. Jadi kamu akan menghabiskan banyak waktu untuk membangun project. Kami akan berikan daftar spesifikasi (alur cerita agile), dan kamu harus mencari cara membangun aplikasi yang memenuhi spesifikasi tersebut.",
+	  ""
+	],
+	[
+	  "//i.imgur.com/pbW7K5S.jpg",
+	  "Gambar yang menunjukkan sertifikasi <i>front end, back end,</i> dan visualisasi data kami (400 jam masing-masingnya), project organisasi nirlaba kami (800 jam), dan persiapan wawancara (80 jam) yang mencapai total 2.080 jam pengalaman coding.",
+	  "Kurikulum kami terbagi menjadi 4 sertifikasi. Sertifikasi ini terstandard, dan secara sederhana terverifikasi oleh klien pekerja lepas dan karyawan masa depan. Seperti yang ada pada Free Code Camp, sertifikasi ini gratis. Kami menyarankan melakukan secara berurut, tapi kamu bebas untuk memilihnya. Tiga sertifikasi awal membutuhkan masing-masing 400 jam, dan sertifikasi akhir membutuhkan 800 jam, dan bergabung membangun project nyata untuk organisasi nirlaba.",
+	  ""
+	],
+	[
+	  "//i.imgur.com/akGfLoa.jpg",
+	  "Contoh Sertifikat <i>Front End Development</i> kami",
+	  "Untuk mendapatkan sertifikat <i>Front End Development</i> kami, kamu akan membangun 10 project menggunakan HTML, CSS, jQuery, dan JavaScript.",
+	  ""
+	],
+	[
+	  "//i.imgur.com/ocEL0D3.jpg",
+	  "Contoh Sertifikat Visualisasi Data kami",
+	  "Untuk mendapatkan sertifikat Visualisasi Data kami, kamu akan membangun 10 project menggunakan React, Sass, dan D3.js.",
+	  ""
+	],
+	[
+	  "//i.imgur.com/8HCk10d.jpg",
+	  "Contoh Sertifikat <i>Back End Development</i> kami",
+	  "Untuk mendapatkan sertifikat <i>Back End Development</i> kami, kamu akan membangun 10 project menggunakan Node.js, Express, dan MongoDB. Kamu akan menggunakan Git dan Heroku untuk memasangnya di <i>cloud</i>.",
+	  ""
+	],
+	[
+	  "//i.imgur.com/yXyxbDd.jpg",
+	  "Screenshot direktori project organisasi nirlaba kami.",
+	  "Setelah kamu menyelesaikan ketiga sertifikasi, kamu akan membentuk tim dengan camper lain dan menggunakan metodologi <i>agile software development</i> untuk membangun dua project nyata untuk organisasi nirlaba. Kamu juga akan menambahkan fungsionalitas dari kedua project organisasi nirlaba tersebut. Setelah selesai, kamu akan mendapatkan portofolio dari aplikasi nyata yang digunakan orang setiap hari.",
+	  ""
+	],
+	[
+	  "//i.imgur.com/PDGQ9ZM.jpg",
+	  "Gambar camper membangun project bersama di cafe di Seoul.",
+	  "Kalau kamu menyelesaikan penuh semua 2.080 jam tantangan dan project, kamu akan mendapatkan Sertifikat <i>Full Stack Development</i>. Kami akan berikan latihan wawancara coding gratis. Kami bahkan berikan papan pekerjaan dimana pengusaha yang secara spesifik mempekerjakan camper yang mendapatkan sertifikasi Free Code Camp.",
+	  ""
+	]
+      ],
       "titleFr": "Apprenez comment FreeCodeCamp fonctionne",
       "descriptionFr": [
         [
