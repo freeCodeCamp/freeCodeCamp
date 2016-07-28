@@ -147,7 +147,7 @@ window.common = (function(global) {
     });
 
     if (common.challengeName) {
-      window.ga('send', 'event', 'Challenge', 'load', common.gaName);
+      window.ga('send', 'event', 'Challenge', 'loaded', common.gaName);
     }
 
     $('.modal').on('show.bs.modal', function() {
