@@ -159,5 +159,20 @@ module.exports = {
     scope: ['email'],
     link: true,
     failureFlash: true
+  },
+  'github-repo': {
+    provider: 'github-repo',
+    authScheme: 'oauth2',
+    module: 'passport-github',
+    authPath: '/link/github/repos',
+    callbackURL: '/auth/github/callback/repos',
+    callbackPath: '/auth/github/callback/repos',
+    successRedirect: successRedirect,
+    failureRedirect: successRedirect,
+    clientID: process.env.GITHUB_ID,
+    clientSecret: process.env.GITHUB_SECRET,
+    scope: ['email', 'repo'],
+    link: true,
+    failureFlash: true
   }
 };

@@ -5,6 +5,7 @@ import { Observable, Scheduler } from 'rx';
 import debug from 'debug';
 import accepts from 'accepts';
 import { isMongoId } from 'validator';
+import request from 'request';
 
 import {
   dasherize,
@@ -339,6 +340,9 @@ function getNextChallenge$(challenge$, blocks$, challengeId) {
 module.exports = function(app) {
   const router = app.loopback.Router();
 
+  // userIdentity model
+  const userIdentity = app.models.UserIdentity;
+
   const challengesQuery = {
     order: [
       'superOrder ASC',
@@ -402,6 +406,11 @@ module.exports = function(app) {
     '/completed-challenge/',
     send200toNonUser,
     completedChallenge
+  );
+  router.post(
+    '/github-export/',
+    send200toNonUser,
+    githubExport
   );
   router.post(
     '/completed-zipline-or-basejump',
@@ -595,6 +604,107 @@ module.exports = function(app) {
       })
       .subscribe(() => {}, next);
   }
+
+  function githubExport(req, res, next) {
+    const {
+        name,
+        solution
+    } = req.body;
+
+    function createRepo(token, repoName, description, callback) {
+        var authToken = 'token ' + token;
+
+        // NOTE ESLint gives a warning at the json 'auto_init' for not having
+        // CamelCase, but that is the format github wants it in
+        request({
+            url: 'https://api.github.com/user/repos',
+            method: 'POST',
+            json: {
+                name: repoName,
+                description: description,
+                auto_init: true
+            },
+            headers: {
+                Authorization: authToken,
+                'user-agent': 'FreeCodeCamp-Export'
+            }
+        }, function(error, response, body) {
+            callback(error, response, body);
+        });
+    }
+
+    function commitFile(token,
+        repoName,
+        solution,
+        challengeName,
+        dateComplete,
+        userName,
+        callback) {
+        // Setup Variables
+        var authToken = 'token ' + token;
+        var solutionEncoded = new Buffer('```\n' + solution + '\n```')
+            .toString('base64');
+        var fileName = challengeName + ' ' + dateComplete + '.md';
+        var commitMessage = 'Add Solution For ' + challengeName;
+
+        var json = {
+            message: commitMessage,
+            content: solutionEncoded
+        };
+        var url = 'https://api.github.com/repos/' + userName + '/' +
+            repoName + '/contents/' + fileName;
+
+        console.log(json + ' ' + url);
+
+        request({
+            url: url,
+            method: 'PUT',
+            json: json,
+            headers: {
+                Authorization: authToken,
+                'user-agent': 'FreeCodeCamp-Export'
+            }
+        }, function(error, response, body) {
+            callback(error, response, body);
+        });
+      completedChallenge(req, res, next);
+    }
+    const query = {
+      where: {
+        userId: req.user.id,
+        provider: 'github'
+      }
+    };
+
+    userIdentity.findOne(query, (err, userInfo) => {
+      if (err) {
+        console.error(err);
+      }
+      // You can create the repo, even if it already exists, and it will
+      // still write the file after
+      createRepo(userInfo.credentials.accessToken,
+          'Free-Code-Camp-Solutions',
+          'My Solutions to the FreeCodeCamp Bootcamp',
+          function(err) {
+              if (err) {
+                  console.error(err);
+              }
+              if (!err) {
+                  commitFile(userInfo.credentials.accessToken,
+                      'Free-Code-Camp-Solutions',
+                      solution,
+                      name,
+                      (new Date()).toISOString().substring(0, 10),
+                      userInfo.profile.username,
+                      function(err) {
+                          if (err) {
+                              console.log(err);
+                          }
+                      });
+              }
+          });
+    });
+}
 
   function completedZiplineOrBasejump(req, res, next) {
     const type = accepts(req).type('html', 'json', 'text');
