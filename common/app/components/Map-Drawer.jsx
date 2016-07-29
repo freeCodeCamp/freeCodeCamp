@@ -16,8 +16,11 @@ export default class MapDrawer extends React.Component {
     const { isOpen, isAlreadyLoaded, toggleMapDrawer } = this.props;
     return (
       <Drawer
+        closeAria='close map aside'
         closeDrawer={ toggleMapDrawer }
         isOpen={ isOpen }
+        newTabAria='open map in new tab'
+        newTabLink='/map'
         >
         <NoSSR>
           <div>

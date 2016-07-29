@@ -6,11 +6,21 @@ export default class Drawer extends React.Component {
   static propTypes = {
     children: PropTypes.node,
     isOpen: PropTypes.bool,
-    closeDrawer: PropTypes.func
+    closeDrawer: PropTypes.func,
+    closeAria: PropTypes.string,
+    newTabLink: PropTypes.string,
+    newTabAria: PropTypes.string
   };
 
   render() {
-    const { isOpen, closeDrawer, children } = this.props;
+    const {
+      isOpen,
+      closeDrawer,
+      closeAria,
+      children,
+      newTabAria,
+      newTabLink
+    } = this.props;
     const drawerClass = classnames({
       drawer: true,
       'is-collapsed': !isOpen
@@ -19,11 +29,13 @@ export default class Drawer extends React.Component {
       <aside className={ drawerClass }>
         <div className='drawer-action-bar'>
           <a
-            aria-label='open map in new tab'
+            aria-label={ newTabAria }
             className='drawer-action-item drawer-action-pop-out'
+            href={ newTabLink }
+            target='_blank'
           />
           <button
-            aria-label='close map aside'
+            aria-label={ closeAria }
             className='drawer-action-item drawer-action-collapse'
             onClick={ closeDrawer }
           />
