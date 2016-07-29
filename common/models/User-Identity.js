@@ -5,7 +5,9 @@ import {
   setProfileFromGithub,
   getFirstImageFromProfile,
   getUsernameFromProvider,
-  getSocialProvider
+  getSocialProvider,
+  setProfileFromRepoAccess,
+  checkRepoAccess
 } from '../../server/utils/auth';
 
 const { defaultProfileImage } = require('../utils/constantStrings.json');
@@ -122,7 +124,6 @@ export default function(UserIdent) {
       return next();
     }
     return userIdent.user(function(err, user) {
-      let userChanged = false;
       if (err) { return next(err); }
       if (!user) {
         debug('no user attached to identity!');
@@ -143,30 +144,32 @@ export default function(UserIdent) {
       ) {
         debug('setting user picture');
         user.picture = picture;
-        userChanged = true;
       }
-
       if (!githubRegex.test(provider) && profile) {
         user[provider] = getUsernameFromProvider(provider, profile);
-        userChanged = true;
-      }
-
-      // if user signed in with github refresh their info
-      if (githubRegex.test(provider) && profile && profile._json) {
-        debug("user isn't github cool or username from github is different");
-        setProfileFromGithub(user, profile, profile._json);
-        userChanged = true;
-      }
-
-
-      if (userChanged) {
         return user.save(function(err) {
           if (err) { return next(err); }
           return next();
         });
       }
-      debug('exiting after user identity before save');
+
+      // if user signed in with github refresh their info
+      if (githubRegex.test(provider) && profile && profile._json) {
+        checkRepoAccess(userIdent.credentials.accessToken, function(bool) {
+          if (bool) {
+            debug('User isGithubRepoCool');
+            setProfileFromRepoAccess(user, profile, profile._json);
+          } else {
+            debug("user isn't github repo cool");
+            setProfileFromGithub(user, profile, profile._json);
+          }
+          return user.save(function(err) {
+            if (err) { return next(err); }
+            return next();
+          });
+        });
+      }
       return next();
+    });
   });
- });
 }
