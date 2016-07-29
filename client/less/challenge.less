@@ -1,6 +1,10 @@
-.challenges-editor {
-  height: 100%;
-  width: 99%;
+.challenges-instructions-panel {
+  clear: both;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin-bottom: 10px;
 }
 
 .challenge-step-description {
@@ -135,38 +139,6 @@
   color: @alert-info-bg;
 }
 
-iframe.iphone {
-  border: none;
-  @media(min-width: 992px) {
-    width: 280px;
-    height: 500px;
-    position: absolute;
-    top: 70px;
-    right: 35px;
-    overflow-y: scroll;
-  }
-  @media(max-width: 991px) {
-    width: 100%;
-    border-radius: 5px;
-    overflow-y: visible;
-    height: 500px;
-  }
-  @media (min-width: 1200px) and (max-width: 1250px){
-    right: 22px;
-  }
-}
-
-// To adjust right margin, negative values bring the image closer to the edge of the screen
-.iphone-position {
-  position: absolute;
-  top: -45px;
-  z-index: -1;
-  right: -195px;
-  @media (min-width: 1200px) and (max-width: 1250px){
-    right: -207px;
-  }
-}
-
 .night {
   .challenge-instructions blockquote {
     background-color: #242424;
@@ -189,5 +161,60 @@ iframe.iphone {
     .cm-keyword, .cm-attribute {
       color:#9BBBDC;
     }
+  }
+}
+
+.challenges-editor {
+  height: auto;
+  width: 100%;
+  overflow-y: auto;
+}
+
+.challenges-preview {
+  clear: both;
+  overflow: hidden;
+}
+
+@media only screen and (min-width: 993px) {
+  .iframe-scroll {
+    z-index: 1;
+  }
+}
+@media only screen and (max-width: 992px) {
+  .iframe-scroll {
+    height: auto;
+    overflow: auto;
+  }
+}
+
+iframe.iphone {
+  border: none;
+  @media(min-width: 992px) {
+    width: 280px;
+    height: 497px;
+    position: absolute;
+    top: 75px;
+    right: 35px;
+    overflow-y: scroll;
+  }
+  @media(max-width: 991px) {
+    width: 100%;
+    border-radius: 5px;
+    overflow-y: visible;
+    height: 500px;
+  }
+  @media (min-width: 1200px) and (max-width: 1250px){
+    right: 22px;
+  }
+}
+
+// To adjust right margin, negative values bring the image closer to the edge of the screen
+.iphone-position {
+  position: absolute;
+  top: -45px;
+  z-index: -1;
+  right: -195px;
+  @media (min-width: 1200px) and (max-width: 1250px){
+    right: -207px;
   }
 }

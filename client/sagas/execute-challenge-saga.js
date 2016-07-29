@@ -136,7 +136,7 @@ export default function executeChallengeSaga(action$, getState) {
           return Observable.combineLatest(head$, frameRunner$)
             .map(([ head, frameRunner ]) => {
               const body = `
-                <body>
+                <body style='margin:8px;'>
                   <!-- fcc-start-source -->
                     ${source}
                   <!-- fcc-end-source -->
