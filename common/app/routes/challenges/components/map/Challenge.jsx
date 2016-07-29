@@ -8,8 +8,9 @@ import debug from 'debug';
 
 import { updateCurrentChallenge } from '../../redux/actions';
 import { makePanelHiddenSelector } from '../../redux/selectors';
+import { closeMapDrawer } from '../../../../redux/actions';
 
-const bindableActions = { updateCurrentChallenge };
+const bindableActions = { closeMapDrawer, updateCurrentChallenge };
 const makeMapStateToProps = () => createSelector(
   (_, props) => props.dashedName,
   state => state.entities.challenge,
@@ -34,6 +35,7 @@ const makeMapStateToProps = () => createSelector(
 export class Challenge extends PureComponent {
   constructor(...args) {
     super(...args);
+    this.handleChallengeClick = this.handleChallengeClick.bind(this);
   }
   static displayName = 'Challenge';
   static propTypes = {
@@ -45,8 +47,14 @@ export class Challenge extends PureComponent {
     isCompleted: PropTypes.bool,
     isHidden: PropTypes.bool,
     challenge: PropTypes.object,
-    updateCurrentChallenge: PropTypes.func
+    updateCurrentChallenge: PropTypes.func.isRequired,
+    closeMapDrawer: PropTypes.func.isRequired
   };
+
+  handleChallengeClick() {
+    this.props.closeMapDrawer();
+    this.props.updateCurrentChallenge(this.props.challenge);
+  }
 
   renderCompleted(isCompleted, isLocked) {
     if (isLocked || !isCompleted) {
@@ -100,9 +108,7 @@ export class Challenge extends PureComponent {
       isCompleted,
       isComingSoon,
       isDev,
-      isHidden,
-      challenge,
-      updateCurrentChallenge
+      isHidden
     } = this.props;
     if (isHidden) {
       return null;
@@ -131,7 +137,7 @@ export class Challenge extends PureComponent {
         key={ title }
         >
         <Link to={ `/challenges/${block}/${dashedName}` }>
-          <span onClick={ () => updateCurrentChallenge(challenge) }>
+          <span onClick={ this.handleChallengeClick }>
             { title }
             { this.renderCompleted(isCompleted, isLocked) }
             { this.renderRequired(isRequired) }
