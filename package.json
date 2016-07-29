@@ -119,7 +119,7 @@
     "react-toastr": "^2.4.0",
     "react-youtube": "^6.1.0",
     "redux": "^3.0.5",
-    "redux-actions": "^0.9.1",
+    "redux-actions": "^0.10.0",
     "redux-form": "^5.2.3",
     "request": "^2.65.0",
     "reselect": "^2.0.2",
