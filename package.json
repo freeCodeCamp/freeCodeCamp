@@ -109,7 +109,7 @@
     "pmx": "~0.6.2",
     "react": "^15.0.2",
     "react-bootstrap": "~0.29.4",
-    "react-dom": "^15.0.2",
+    "react-dom": "^15.1.0",
     "react-motion": "~0.4.2",
     "react-pure-render": "^1.0.2",
     "react-redux": "^4.0.6",
