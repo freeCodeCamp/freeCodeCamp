@@ -114,7 +114,7 @@
     "react-pure-render": "^1.0.2",
     "react-redux": "^4.0.6",
     "react-router": "^2.0.0",
-    "react-router-bootstrap": "~0.20.1",
+    "react-router-bootstrap": "~0.23.1",
     "react-router-redux": "^2.1.0",
     "react-toastr": "^2.4.0",
     "react-youtube": "^6.1.0",
