@@ -1,5 +1,8 @@
 import { Scheduler, Observable } from 'rx';
 
+import {
+  challengeSelector
+} from '../../common/app/routes/challenges/redux/selectors';
 import { ajax$ } from '../../common/utils/ajax-stream';
 import throwers from '../rechallenge/throwers';
 import transformers from '../rechallenge/transformers';
@@ -25,10 +28,7 @@ const globalRequires = [{
   link: 'https://cdnjs.cloudflare.com/' +
     'ajax/libs/normalize/4.2.0/normalize.min.css'
 }, {
-  src: '/bower_components/jquery/dist/jquery.js',
-  script: true,
-  type: 'global',
-  crossDomain: false
+  src: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.js'
 }];
 
 const scriptCache = new Map();
@@ -36,7 +36,7 @@ const linkCache = new Map();
 
 function cacheScript({ src } = {}, crossDomain = true) {
   if (!src) {
-    return Observable.throw(new Error('No source provided for script'));
+    throw new Error('No source provided for script');
   }
   if (scriptCache.has(src)) {
     return scriptCache.get(src);
@@ -49,7 +49,6 @@ function cacheScript({ src } = {}, crossDomain = true) {
     })
     .map(({ response }) => response)
     .map(script => `<script>${script}</script>`)
-    .catch(createErrorObservable)
     .shareReplay();
 
   scriptCache.set(src, script$);
@@ -71,7 +70,7 @@ function cacheLink({ link } = {}, crossDomain = true) {
     })
     .map(({ response }) => response)
     .map(script => `<style>${script}</style>`)
-    .catch(createErrorObservable)
+    .catch(() => Observable.just(''))
     .shareReplay();
 
   linkCache.set(link, link$);
@@ -94,8 +93,10 @@ export default function executeChallengeSaga(action$, getState) {
     ))
     .debounce(750)
     .flatMapLatest(({ type }) => {
-      const { files, required = [] } = getState().challengesApp;
-      const finalRequires = [...required, ...globalRequires ];
+      const state = getState();
+      const { files } = state.challengesApp;
+      const { challenge: { required = [] } } = challengeSelector(state);
+      const finalRequires = [...globalRequires, ...required ];
       return createFileStream(files)
         ::throwers()
         ::transformers()
@@ -121,7 +122,7 @@ export default function executeChallengeSaga(action$, getState) {
         .flatMap(source => {
           const head$ = Observable.from(finalRequires)
             .flatMap(required => {
-              if (required.script) {
+              if (required.src) {
                 return cacheScript(required, required.crossDomain);
               }
               if (required.link) {
