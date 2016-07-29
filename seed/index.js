@@ -42,6 +42,7 @@ Observable.combineLatest(
     var time = challengeSpec.time || 'N/A';
     var isLocked = !!challengeSpec.isLocked;
     var message = challengeSpec.message;
+    var required = challengeSpec.required || [];
 
     console.log('parsed %s successfully', blockName);
 
@@ -98,6 +99,7 @@ Observable.combineLatest(
                 return _.capitalize(word);
               })
               .join(' ');
+            challenge.required = (challenge.required || []).concat(required);
 
             return challenge;
           });
