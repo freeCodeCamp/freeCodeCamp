@@ -20,7 +20,7 @@
     "prelint-js": "npm run create-rev",
     "lint-js": "eslint --ext=.js,.jsx server/ common/ config/ client/",
     "lint-json": "npm run lint-server && npm run lint-challenges && npm run lint-resources && npm run lint-utils",
-    "pretest": "npm run lint",
+    "pretest": "npm run create-rev && npm run lint",
     "snyk-protect": "snyk protect",
     "prepublish": "npm run snyk-protect",
     "test-challenges": "babel-node seed/test-challenges.js | tap-spec",
