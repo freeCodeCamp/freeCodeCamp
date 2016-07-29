@@ -5,13 +5,21 @@ let trusted = [
 ];
 
 if (process.env.NODE_ENV !== 'production') {
-  trusted.push('ws://localhost:3001');
+  trusted = trusted.concat([
+    'ws://localhost:3001',
+    'http://localhost:2999',
+    'ws://localhost:2999'
+  ]);
 }
 
 export default function csp() {
   return helmet.contentSecurityPolicy({
     directives: {
-      defaultSrc: trusted.concat('*.optimizely.com'),
+      defaultSrc: trusted.concat([
+        '*.optimizely.com',
+        'https://*.cloudflare.com',
+        '*.cloudflare.com'
+      ]),
       scriptSrc: [
         "'unsafe-eval'",
         "'unsafe-inline'",

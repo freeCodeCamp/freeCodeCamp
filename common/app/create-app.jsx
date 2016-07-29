@@ -8,8 +8,8 @@ import App from './App.jsx';
 import childRoutes from './routes';
 
 // redux
+import { createEpic } from 'redux-epic';
 import createReducer from './create-reducer';
-import middlewares from './middlewares';
 import sagas from './sagas';
 
 // general utils
@@ -23,6 +23,7 @@ const routes = { components: App, ...childRoutes };
 // createApp(settings: {
 //   location?: Location|String,
 //   history?: History,
+//   syncHistoryWithStore?: ((history, store) => history) = (x) => x,
 //   initialState?: Object|Void,
 //   serviceOptions?: Object,
 //   middlewares?: Function[],
@@ -35,22 +36,30 @@ const routes = { components: App, ...childRoutes };
 export default function createApp({
   location,
   history,
+  syncHistoryWithStore = (x) => x,
+  syncOptions = {},
   initialState,
   serviceOptions = {},
   middlewares: sideMiddlewares = [],
   enhancers: sideEnhancers = [],
   reducers: sideReducers = {},
-  sagas: sideSagas = []
+  sagas: sideSagas = [],
+  sagaOptions: sideSagaOptions = {}
 }) {
   const sagaOptions = {
+    ...sideSagaOptions,
     services: servicesCreator(null, serviceOptions)
   };
 
+  const sagaMiddleware = createEpic(
+    sagaOptions,
+    ...sagas,
+    ...sideSagas
+  );
   const enhancers = [
     applyMiddleware(
-      ...middlewares,
       ...sideMiddlewares,
-      ...[ ...sagas, ...sideSagas].map(saga => saga(sagaOptions)),
+      sagaMiddleware
     ),
     // enhancers must come after middlewares
     // on client side these are things like Redux DevTools
@@ -63,6 +72,9 @@ export default function createApp({
   // call enhanced createStore function with reducer and initialState
   // to create store
   const store = compose(...enhancers)(createStore)(reducer, initialState);
+  // sync history client side with store.
+  // server side this is an identity function and history is undefined
+  history = syncHistoryWithStore(history, store, syncOptions);
 
   // createRouteProps({
   //   redirect: LocationDescriptor,
@@ -74,6 +86,7 @@ export default function createApp({
       redirect,
       props,
       reducer,
-      store
+      store,
+      epic: sagaMiddleware
     }));
 }

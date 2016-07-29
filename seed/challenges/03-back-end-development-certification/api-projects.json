@@ -91,7 +91,8 @@
       "tests": [],
       "type": "Waypoint",
       "challengeType": 7,
-      "isRequired": false
+      "isRequired": false,
+      "translations": {}
     },
     {
       "id": "bd7158d8c443edefaeb5bdef",
@@ -114,17 +115,21 @@
       "releasedOn": "January 1, 2016",
       "type": "basejump",
       "challengeType": 4,
-      "titleEs": "Microservicio de Marca Temporal",
-      "descriptionEs": [
-        "<strong>Objetivo:</strong> Desarolla una aplicación de Pila Completa en JavaScript que sea funcionalmente similar a esta: <a href='https://timestamp-ms.herokuapp.com/' target='_blank'>https://timestamp-ms.herokuapp.com/</a> y despliegala en Heroku.",
-        "Ten en cuenta que para cada proyecto, deberías crear un nuevo repositorio en GitHub y un nuevo proyecto en Heroku. Si no recuerdas como hacer esto, vuelve a visitar <a href='/challenges/get-set-for-our-api-development-projects'>https://freecodecamp.com//challenges/get-set-for-our-api-development-projects</a>.",
-        "Aquí están las historias de usuario específicas que debes implementar para este proyecto:",
-        "<strong>Historia de Usuario:</strong> Puedo pasar una cadena como parámetro y comprobará si contiene o no una marca de tiempo para Unix o una fecha en lenguaje natural en inglés (Ejemplo: January 1, 2016).",
-        "<strong>Historia de Usuario:</strong> Si tiene una marca de tiempo para Unix, devuelve tanto la marca de tiempo de Unix como la fecha en lenguaje natural.",
-        "<strong>Historia de Usuario:</strong> Si no contiene una fecha ni una marca de tiempo para Unix, devolverá esas propiedades en <code>null</code>.",
-        "Una vez que hayas terminado de implementar estas historias de usuarios, pulsa el botón \"I've completed this challenge\" e introduce los URLs de tu repositorio en GitHub y de tu aplicación en vivo en Heroku.",
-        "Puedes obtener retroalimentación sobre tu proyecto por parte de otros campistas, compartiendolo en nuestra <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Sala de chat para revisión de código</a>. También puedes compartirlo en Twitter y en el campamento de tu ciudad (en Facebook)."
-      ]
+      "translations": {
+        "es": {
+          "title": "Microservicio de Marca Temporal",
+          "description": [
+            "<strong>Objetivo:</strong> Desarolla una aplicación de Pila Completa en JavaScript que sea funcionalmente similar a esta: <a href='https://timestamp-ms.herokuapp.com/' target='_blank'>https://timestamp-ms.herokuapp.com/</a> y despliegala en Heroku.",
+            "Ten en cuenta que para cada proyecto, deberías crear un nuevo repositorio en GitHub y un nuevo proyecto en Heroku. Si no recuerdas como hacer esto, vuelve a visitar <a href='/challenges/get-set-for-our-api-development-projects'>https://freecodecamp.com//challenges/get-set-for-our-api-development-projects</a>.",
+            "Aquí están las historias de usuario específicas que debes implementar para este proyecto:",
+            "<strong>Historia de Usuario:</strong> Puedo pasar una cadena como parámetro y comprobará si contiene o no una marca de tiempo para Unix o una fecha en lenguaje natural en inglés (Ejemplo: January 1, 2016).",
+            "<strong>Historia de Usuario:</strong> Si tiene una marca de tiempo para Unix, devuelve tanto la marca de tiempo de Unix como la fecha en lenguaje natural.",
+            "<strong>Historia de Usuario:</strong> Si no contiene una fecha ni una marca de tiempo para Unix, devolverá esas propiedades en <code>null</code>.",
+            "Una vez que hayas terminado de implementar estas historias de usuarios, pulsa el botón \"I've completed this challenge\" e introduce los URLs de tu repositorio en GitHub y de tu aplicación en vivo en Heroku.",
+            "Puedes obtener retroalimentación sobre tu proyecto por parte de otros campistas, compartiendolo en nuestra <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Sala de chat para revisión de código</a>. También puedes compartirlo en Twitter y en el campamento de tu ciudad (en Facebook)."
+          ]
+        }
+      }
     },
     {
       "id": "bd7158d8c443edefaeb5bdff",
@@ -145,15 +150,19 @@
       "releasedOn": "January 1, 2016",
       "type": "basejump",
       "challengeType": 4,
-      "titleEs": "Microservicio para analizar el encabezado de una petición",
-      "descriptionEs": [
-        "<strong>Objetivo:</strong> Desarrolla una aplicación de Pila Completa en JavaScript que sea funcionalmente similar a esta: <a href='https://cryptic-ridge-9197.herokuapp.com/api/whoami/' target='_blank'>https://cryptic-ridge-9197.herokuapp.com/api/whoami/</a> y despliegala en Heroku.",
-        "Ten en cuenta que para cada proyecto, deberías crear un nuevo repositorio en GitHub y un nuevo proyecto en Heroku. Si no recuerdas como hacer esto, vuelve a visitar <a href='/challenges/get-set-for-our-api-development-projects'>https://freecodecamp.com//challenges/get-set-for-our-api-development-projects</a>.",
-        "Aquí están las historias de usuario específicas que debes implementar para este proyecto:",
-        "<strong>Historia de Usuario:</strong> Puedo obtener la dirección IP, idioma y sistema operativo de mi navegador.",
-        "Una vez que hayas terminado de implementar estas historias de usuarios, pulsa el botón \"I've completed this challenge\" e introduce los URLs de tu repositorio en GitHub y de tu aplicación en vivo en Heroku.",
-        "Puedes obtener retroalimentación sobre tu proyecto por parte de otros campistas, compartiendolo en nuestra <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Sala de chat para revisión de código</a>. También puedes compartirlo en Twitter y en el campamento de tu ciudad (en Facebook)."
-      ]
+      "translations": {
+        "es": {
+          "title": "Microservicio para analizar el encabezado de una petición",
+          "description": [
+            "<strong>Objetivo:</strong> Desarrolla una aplicación de Pila Completa en JavaScript que sea funcionalmente similar a esta: <a href='https://cryptic-ridge-9197.herokuapp.com/api/whoami/' target='_blank'>https://cryptic-ridge-9197.herokuapp.com/api/whoami/</a> y despliegala en Heroku.",
+            "Ten en cuenta que para cada proyecto, deberías crear un nuevo repositorio en GitHub y un nuevo proyecto en Heroku. Si no recuerdas como hacer esto, vuelve a visitar <a href='/challenges/get-set-for-our-api-development-projects'>https://freecodecamp.com//challenges/get-set-for-our-api-development-projects</a>.",
+            "Aquí están las historias de usuario específicas que debes implementar para este proyecto:",
+            "<strong>Historia de Usuario:</strong> Puedo obtener la dirección IP, idioma y sistema operativo de mi navegador.",
+            "Una vez que hayas terminado de implementar estas historias de usuarios, pulsa el botón \"I've completed this challenge\" e introduce los URLs de tu repositorio en GitHub y de tu aplicación en vivo en Heroku.",
+            "Puedes obtener retroalimentación sobre tu proyecto por parte de otros campistas, compartiendolo en nuestra <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Sala de chat para revisión de código</a>. También puedes compartirlo en Twitter y en el campamento de tu ciudad (en Facebook)."
+          ]
+        }
+      }
     },
     {
       "id": "bd7158d8c443edefaeb5bd0e",
@@ -177,17 +186,21 @@
       "releasedOn": "January 1, 2016",
       "type": "basejump",
       "challengeType": 4,
-      "titleEs": "Microservicio para acortar URLs",
-      "descriptionEs": [
-        "<strong>Objetivo:</strong> Desarrolla una aplicación de Pila Completa en JavaScript que sea funcionalmente similar a esta: <a href='https://little-url.herokuapp.com/' target='_blank'>https://little-url.herokuapp.com/</a> y despliegala en Heroku.",
-        "Ten en cuenta que para cada proyecto, deberías crear un nuevo repositorio en GitHub y un nuevo proyecto en Heroku. Si no recuerdas como hacer esto, vuelve a visitar <a href='/challenges/get-set-for-our-api-development-projects'>https://freecodecamp.com//challenges/get-set-for-our-api-development-projects</a>.",
-        "Aquí están las historias de usuario específicas que debes implementar para este proyecto:",
-        "<strong>Historia de Usuario:</strong> Puedo pasar una URL como parámetro y recibiré una URL acortada en la respuesta JSON.",
-        "<strong>Historia de Usuario:</strong> Si paso una URL inválido que no siga el formato válido http://www.exmaple.com, en cambio la respuesta JSON contendrá un mensaje de error.",
-        "<strong>Historia de Usuario:</strong> Cuando visite el URL acortado, me redirigirá a mi enlace original.",
-        "Una vez que hayas terminado de implementar estas historias de usuarios, pulsa el botón \"I've completed this challenge\" e introduce los URLs de tu repositorio en GitHub y de tu aplicación en vivo en Heroku.",
-        "Puedes obtener retroalimentación sobre tu proyecto por parte de otros campistas, compartiendolo en nuestra <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Sala de chat para revisión de código</a>. También puedes compartirlo en Twitter y en el campamento de tu ciudad (en Facebook)."
-      ]
+      "translations": {
+        "es": {
+          "title": "Microservicio para acortar URLs",
+          "description": [
+            "<strong>Objetivo:</strong> Desarrolla una aplicación de Pila Completa en JavaScript que sea funcionalmente similar a esta: <a href='https://little-url.herokuapp.com/' target='_blank'>https://little-url.herokuapp.com/</a> y despliegala en Heroku.",
+            "Ten en cuenta que para cada proyecto, deberías crear un nuevo repositorio en GitHub y un nuevo proyecto en Heroku. Si no recuerdas como hacer esto, vuelve a visitar <a href='/challenges/get-set-for-our-api-development-projects'>https://freecodecamp.com//challenges/get-set-for-our-api-development-projects</a>.",
+            "Aquí están las historias de usuario específicas que debes implementar para este proyecto:",
+            "<strong>Historia de Usuario:</strong> Puedo pasar una URL como parámetro y recibiré una URL acortada en la respuesta JSON.",
+            "<strong>Historia de Usuario:</strong> Si paso una URL inválido que no siga el formato válido http://www.exmaple.com, en cambio la respuesta JSON contendrá un mensaje de error.",
+            "<strong>Historia de Usuario:</strong> Cuando visite el URL acortado, me redirigirá a mi enlace original.",
+            "Una vez que hayas terminado de implementar estas historias de usuarios, pulsa el botón \"I've completed this challenge\" e introduce los URLs de tu repositorio en GitHub y de tu aplicación en vivo en Heroku.",
+            "Puedes obtener retroalimentación sobre tu proyecto por parte de otros campistas, compartiendolo en nuestra <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Sala de chat para revisión de código</a>. También puedes compartirlo en Twitter y en el campamento de tu ciudad (en Facebook)."
+          ]
+        }
+      }
     },
     {
       "id": "bd7158d8c443edefaeb5bdee",
@@ -210,17 +223,21 @@
       "releasedOn": "January 1, 2016",
       "type": "basejump",
       "challengeType": 4,
-      "titleEs": "Capa de abstracción para buscar imágenes",
-      "descriptionEs": [
-        "<strong>Objetivo:</strong> Desarolla una aplicación de Pila Completa en JavaScript que te permite buscar imágenes como esta: <a href='https://cryptic-ridge-9197.herokuapp.com/api/imagesearch/lolcats%20funny?offset=10' target='_blank'>https://cryptic-ridge-9197.herokuapp.com/api/imagesearch/lolcats%20funny?offset=10</a> y examinar las búsquedas recientes como esta: <a href='https://cryptic-ridge-9197.herokuapp.com/api/latest/imagesearch/' target='_blank'>https://cryptic-ridge-9197.herokuapp.com/api/latest/imagesearch/</a>. Después, despliegala en Heroku.",
-        "Ten en cuenta que para cada proyecto, deberías crear un nuevo repositorio en GitHub y un nuevo proyecto en Heroku. Si no recuerdas como hacer esto, vuelve a visitar <a href='/challenges/get-set-for-our-api-development-projects'>https://freecodecamp.com//challenges/get-set-for-our-api-development-projects</a>.",
-        "Aquí están las historias de usuario específicas que debes implementar para este proyecto:",
-        "<strong>Historia de Usuario:</strong> Puedo obtener la URL de una imagen, texto alternativo y URLs de las páginas de un conjunto de imágenes que se relacionen con una cadena de texto dada.",
-        "<strong>Historia de Usuario:</strong> Puedo examinar página a página las respuestas añadiendo un parámetro del estilo <code>?offset=2</code> al URL.",
-        "<strong>Historia de Usuario:</strong> Puedo obtener una lista de las cadenas búscadas que se enviaron más recientemente.",
-        "Una vez que hayas terminado de implementar estas historias de usuarios, pulsa el botón \"I've completed this challenge\" e introduce los URLs de tu repositorio en GitHub y de tu aplicación en vivo en Heroku.",
-        "Puedes obtener retroalimentación sobre tu proyecto por parte de otros campistas, compartiendolo en nuestra <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Sala de chat para revisión de código</a>. También puedes compartirlo en Twitter y en el campamento de tu ciudad (en Facebook)."
-      ]
+      "translations": {
+        "es": {
+          "title": "Capa de abstracción para buscar imágenes",
+          "description": [
+            "<strong>Objetivo:</strong> Desarolla una aplicación de Pila Completa en JavaScript que te permite buscar imágenes como esta: <a href='https://cryptic-ridge-9197.herokuapp.com/api/imagesearch/lolcats%20funny?offset=10' target='_blank'>https://cryptic-ridge-9197.herokuapp.com/api/imagesearch/lolcats%20funny?offset=10</a> y examinar las búsquedas recientes como esta: <a href='https://cryptic-ridge-9197.herokuapp.com/api/latest/imagesearch/' target='_blank'>https://cryptic-ridge-9197.herokuapp.com/api/latest/imagesearch/</a>. Después, despliegala en Heroku.",
+            "Ten en cuenta que para cada proyecto, deberías crear un nuevo repositorio en GitHub y un nuevo proyecto en Heroku. Si no recuerdas como hacer esto, vuelve a visitar <a href='/challenges/get-set-for-our-api-development-projects'>https://freecodecamp.com//challenges/get-set-for-our-api-development-projects</a>.",
+            "Aquí están las historias de usuario específicas que debes implementar para este proyecto:",
+            "<strong>Historia de Usuario:</strong> Puedo obtener la URL de una imagen, texto alternativo y URLs de las páginas de un conjunto de imágenes que se relacionen con una cadena de texto dada.",
+            "<strong>Historia de Usuario:</strong> Puedo examinar página a página las respuestas añadiendo un parámetro del estilo <code>?offset=2</code> al URL.",
+            "<strong>Historia de Usuario:</strong> Puedo obtener una lista de las cadenas búscadas que se enviaron más recientemente.",
+            "Una vez que hayas terminado de implementar estas historias de usuarios, pulsa el botón \"I've completed this challenge\" e introduce los URLs de tu repositorio en GitHub y de tu aplicación en vivo en Heroku.",
+            "Puedes obtener retroalimentación sobre tu proyecto por parte de otros campistas, compartiendolo en nuestra <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Sala de chat para revisión de código</a>. También puedes compartirlo en Twitter y en el campamento de tu ciudad (en Facebook)."
+          ]
+        }
+      }
     },
     {
       "id": "bd7158d8c443edefaeb5bd0f",
@@ -243,17 +260,21 @@
       "releasedOn": "January 1, 2016",
       "type": "basejump",
       "challengeType": 4,
-      "titleEs": "Microservicio de metadatos de archivos",
-      "descriptionEs": [
-        "<strong>Objetivo:</strong> Desarrolla una aplicación de Pila Completa en JavaScript que sea funcionalmente similar a esta: <a href='https://cryptic-ridge-9197.herokuapp.com/' target='_blank'>https://cryptic-ridge-9197.herokuapp.com/</a>  y despliegala en Heroku.",
-        "Ten en cuenta que para cada proyecto, deberías crear un nuevo repositorio en GitHub y un nuevo proyecto en Heroku. Si no recuerdas como hacer esto, vuelve a visitar <a href='/challenges/get-set-for-our-api-development-projects'>https://freecodecamp.com//challenges/get-set-for-our-api-development-projects</a>.",
-        "Aquí están las historias de usuario específicas que debes implementar para este proyecto:",
-        "<strong>Historia de Usuario:</strong> Puedo enviar un objeto FormData que incluya una subida de un archivo.",
-        "<strong>Historia de Usuario:</strong> Cuando envío algo, recibiré el tamao del archivo en bytes en la respuesta JSON.",
-        "<strong>Pista:</strong> Puede servirte este paquete: <a href='https://www.npmjs.com/package/multer' target='_blank'>https://www.npmjs.com/package/multer</a>",
-        "Una vez que hayas terminado de implementar estas historias de usuarios, pulsa el botón \"I've completed this challenge\" e introduce los URLs de tu repositorio en GitHub y de tu aplicación en vivo en Heroku.",
-        "Puedes obtener retroalimentación sobre tu proyecto por parte de otros campistas, compartiendolo en nuestra <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Sala de chat para revisión de código</a>. También puedes compartirlo en Twitter y en el campamento de tu ciudad (en Facebook)."
-      ]
+      "translations": {
+        "es": {
+          "title": "Microservicio de metadatos de archivos",
+          "description": [
+            "<strong>Objetivo:</strong> Desarrolla una aplicación de Pila Completa en JavaScript que sea funcionalmente similar a esta: <a href='https://cryptic-ridge-9197.herokuapp.com/' target='_blank'>https://cryptic-ridge-9197.herokuapp.com/</a>  y despliegala en Heroku.",
+            "Ten en cuenta que para cada proyecto, deberías crear un nuevo repositorio en GitHub y un nuevo proyecto en Heroku. Si no recuerdas como hacer esto, vuelve a visitar <a href='/challenges/get-set-for-our-api-development-projects'>https://freecodecamp.com//challenges/get-set-for-our-api-development-projects</a>.",
+            "Aquí están las historias de usuario específicas que debes implementar para este proyecto:",
+            "<strong>Historia de Usuario:</strong> Puedo enviar un objeto FormData que incluya una subida de un archivo.",
+            "<strong>Historia de Usuario:</strong> Cuando envío algo, recibiré el tamao del archivo en bytes en la respuesta JSON.",
+            "<strong>Pista:</strong> Puede servirte este paquete: <a href='https://www.npmjs.com/package/multer' target='_blank'>https://www.npmjs.com/package/multer</a>",
+            "Una vez que hayas terminado de implementar estas historias de usuarios, pulsa el botón \"I've completed this challenge\" e introduce los URLs de tu repositorio en GitHub y de tu aplicación en vivo en Heroku.",
+            "Puedes obtener retroalimentación sobre tu proyecto por parte de otros campistas, compartiendolo en nuestra <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Sala de chat para revisión de código</a>. También puedes compartirlo en Twitter y en el campamento de tu ciudad (en Facebook)."
+          ]
+        }
+      }
     }
   ]
 }

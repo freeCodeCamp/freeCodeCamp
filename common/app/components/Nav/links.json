@@ -1,17 +1,11 @@
 [{
-  "content": "Map",
-  "link": "/map"
-}, {
-  "content": "Chat",
-  "link": "//gitter.im/FreeCodeCamp/FreeCodeCamp",
-  "target": "_blank"
-},{
   "content": "Forum",
   "link": "http://forum.freecodecamp.com/",
   "target": "_blank"
 },{
   "content": "About",
-  "link": "/about"
+  "link": "/about",
+  "target": "_blank"
 },{
   "content": "Shop",
   "link": "/shop"

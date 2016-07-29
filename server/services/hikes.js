@@ -1,5 +1,4 @@
 import debugFactory from 'debug';
-import assign from 'object.assign';
 
 const debug = debugFactory('fcc:services:hikes');
 
@@ -19,9 +18,7 @@ export default function hikesService(app) {
 
       debug('dashedName', dashedName);
       if (dashedName) {
-        assign(query.where, {
-          dashedName: { like: dashedName, options: 'i' }
-        });
+        query.where.dashedName = { like: dashedName, options: 'i' };
       }
       debug('query', query);
       Challenge.find(query, (err, hikes) => {

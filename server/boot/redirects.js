@@ -29,9 +29,5 @@ module.exports = function(app) {
     res.redirect(302, '/wiki');
   });
 
-  router.get('/about', function(req, res) {
-    res.redirect(301, '/map');
-  });
-
   app.use(router);
 };

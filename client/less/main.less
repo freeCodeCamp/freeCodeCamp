@@ -1,7 +1,7 @@
 @import "lib/bootstrap/bootstrap";
 @import "lib/bootstrap-social/bootstrap-social";
 @import "lib/ionicons/ionicons";
-@import "lib/animate.min.less";
+@import "lib/animate";
 @import "lib/bootstrap/variables";
 
 html,body,div,span,a,li,td,th {
@@ -65,6 +65,11 @@ body.top-and-bottom-margins {
 
 body.no-top-and-bottom-margins {
   margin: 75px 20px 0px 20px;
+}
+
+body.react-layout {
+  margin-top: 75px;
+  margin-bottom: 0px;
 }
 
 h1, h2 {
@@ -682,40 +687,8 @@ form.update-email .btn{
   padding-bottom: 117%;
 }
 
-#directions {
-  text-align: left;
-  font-size: 15px;
-}
-
 .graph-rect {
   fill: #ddd !important
-}
-
-
-/**
- * Challenge styling
- */
-
-form.code span {
-  font-size: 18px;
-  font-family: "Ubuntu Mono";
-  padding-bottom: 0px;
-  margin-bottom: 0px;
-  height: 100%;
-}
-
-.CodeMirror {
-  line-height: 1 !important;
-}
-
-.CodeMirror-linenumber {
-  font-size: 18px;
-  font-family: "Ubuntu Mono";
-}
-
-#mainEditorPanel {
-  height: 100%;
-  width: 99%;
 }
 
 .scroll-locker {
@@ -723,21 +696,10 @@ form.code span {
   overflow-y: auto;
 }
 
-#mainEditorPanel .panel-body {
-  padding-bottom: 0px;
-}
-
-div.CodeMirror-scroll {
-  padding-bottom: 30px;
-}
-
 .test-vertical-center {
   margin-top: 8px;
 }
 
-.cm-s-monokai.CodeMirror {
-  border-radius: 5px;
-}
 .courseware-height {
   min-height: 650px;
 }
@@ -1177,10 +1139,8 @@ and (max-width : 400px)  {
 
 @import "chat.less";
 @import "jobs.less";
+@import 'code-mirror.less';
 @import "challenge.less";
 @import "toastr.less";
 @import "map.less";
-
-ul > li {
-  list-style-type: disc;
-}
+@import "drawers.less";

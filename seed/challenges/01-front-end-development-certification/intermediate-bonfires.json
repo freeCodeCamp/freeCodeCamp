@@ -19,6 +19,11 @@
         "",
         "sumAll([1, 4]);"
       ],
+      "hints": [
+        "Use Math.max() to find the maximum value of two numbers.",
+        "Use Math.min() to find the minimum value of two numbers.",
+        "Remember to that you must add all the numbers in between so this would require a way to get those numbers."
+      ],
       "solutions": [
         "function sumAll(arr) {\n  var sum = 0;\n  arr.sort(function(a,b) {return a-b;});\n  for (var i = arr[0]; i <= arr[1]; i++) {\n    sum += i; \n  }\n  return sum;\n}"
       ],
@@ -37,18 +42,24 @@
       ],
       "isRequired": true,
       "challengeType": 5,
-      "titleEs": "Suma todos los números en un rango",
-      "descriptionEs": [
-        "Te pasaremos un vector que contiene dos números. Crea una función que devuelva la suma de esos dos números y todos los números entre ellos.",
-        "El número menor no siempre será el primer elemento en el vector.",
-        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
-      ],
-      "titleFr": "Additionner tous les nombres d'une série",
-      "descriptionFr": [
-        "Nous te passons un tableau de deux nombres. Crée une fonction qui renvoie la somme de ces 2 nombres ainsi que tous les nombres entre ceux-ci.",
-        "Le plus petit nombre ne viendra pas forcément en premier.",
-        "N'oublie pas d'utiliser <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Lire-Chercher-Demander</a> si tu es bloqué. Essaye de trouver un partenaire. Écris ton propre code."
-      ]
+      "translations": {
+        "es": {
+          "title": "Suma todos los números en un rango",
+          "description": [
+            "Te pasaremos un vector que contiene dos números. Crea una función que devuelva la suma de esos dos números y todos los números entre ellos.",
+            "El número menor no siempre será el primer elemento en el vector.",
+            "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+          ]
+        },
+        "fr": {
+          "title": "Additionner tous les nombres d'une série",
+          "description": [
+            "Nous te passons un tableau de deux nombres. Crée une fonction qui renvoie la somme de ces 2 nombres ainsi que tous les nombres entre ceux-ci.",
+            "Le plus petit nombre ne viendra pas forcément en premier.",
+            "N'oublie pas d'utiliser <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Lire-Chercher-Demander</a> si tu es bloqué. Essaye de trouver un partenaire. Écris ton propre code."
+          ]
+        }
+      }
     },
     {
       "id": "a5de63ebea8dbee56860f4f2",
@@ -89,16 +100,22 @@
       ],
       "isRequired": true,
       "challengeType": 5,
-      "titleEs": "Obtén la diferencia entre dos vectores",
-      "descriptionEs": [
-        "Crea una función que compare dos vectores y que devuelva un nuevo vector que contenga los elementos que sólo se encuentre en uno de los vectores dados, pero no en ambos En otras palabras, devuelve la diferencia simétrica entre los dos vectores.",
-        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
-      ],
-      "titleFr": "Comparer 2 arrays",
-      "descriptionFr": [
-        "Compare les 2 tableaux donnés et renvoie un nouvel tableau avec les éléments trouvé dans un seul des deux tableaux, pas dans les deux. En d'autres termes, renvoie la différence symétrique des deux tableaux.",
-        "N'oublie pas d'utiliser <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Lire-Chercher-Demander</a> si tu es bloqué. Essaye de trouver un partenaire. Écris ton propre code."
-      ]
+      "translations": {
+        "es": {
+          "title": "Obtén la diferencia entre dos vectores",
+          "description": [
+            "Crea una función que compare dos vectores y que devuelva un nuevo vector que contenga los elementos que sólo se encuentre en uno de los vectores dados, pero no en ambos En otras palabras, devuelve la diferencia simétrica entre los dos vectores.",
+            "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+          ]
+        },
+        "fr": {
+          "title": "Comparer 2 arrays",
+          "description": [
+            "Compare les 2 tableaux donnés et renvoie un nouvel tableau avec les éléments trouvé dans un seul des deux tableaux, pas dans les deux. En d'autres termes, renvoie la différence symétrique des deux tableaux.",
+            "N'oublie pas d'utiliser <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Lire-Chercher-Demander</a> si tu es bloqué. Essaye de trouver un partenaire. Écris ton propre code."
+          ]
+        }
+      }
     },
     {
       "id": "a7f4d8f2483413a6ce226cac",
@@ -154,18 +171,24 @@
       ],
       "isRequired": true,
       "challengeType": 5,
-      "titleEs": "Convertior de números romanos",
-      "descriptionEs": [
-        "Convierte el número dado en numeral romano.",
-        "Todos los <a href=\"http://www.mathsisfun.com/roman-numerals.html\" target=\"_blank\">numerales romanos</a> en las respuestas deben estar en mayúsculas.",
-        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
-      ],
-      "titleFr": "Convertir en chiffres romains",
-      "descriptionFr": [
-        "Convertis le nombre donné en chiffres romains.",
-        "Tous les <a href=\"http://www.mathsisfun.com/roman-numerals.html\" target=\"_blank\">chiffres romains</a> doivent être en lettres capitales.",
-        "N'oublie pas d'utiliser <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Lire-Chercher-Demander</a> si tu es bloqué. Essaye de trouver un partenaire. Écris ton propre code."
-      ]
+      "translations": {
+        "es": {
+          "title": "Convertior de números romanos",
+          "description": [
+            "Convierte el número dado en numeral romano.",
+            "Todos los <a href=\"http://www.mathsisfun.com/roman-numerals.html\" target=\"_blank\">numerales romanos</a> en las respuestas deben estar en mayúsculas.",
+            "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+          ]
+        },
+        "fr": {
+          "title": "Convertir en chiffres romains",
+          "description": [
+            "Convertis le nombre donné en chiffres romains.",
+            "Tous les <a href=\"http://www.mathsisfun.com/roman-numerals.html\" target=\"_blank\">chiffres romains</a> doivent être en lettres capitales.",
+            "N'oublie pas d'utiliser <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Lire-Chercher-Demander</a> si tu es bloqué. Essaye de trouver un partenaire. Écris ton propre code."
+          ]
+        }
+      }
     },
     {
       "id": "a8e512fbe388ac2f9198f0fa",
@@ -205,18 +228,24 @@
       ],
       "isRequired": true,
       "challengeType": 5,
-      "titleEs": "¿Dónde estás que no te veo?",
-      "descriptionEs": [
-        "Crea una función que busque en un vector de objetos (primer argumento) y devuelva un vector con todos los objetos que compartan el valor indicado para una propiedad dada (segundo argumento). Cada pareja de propiedad y valor debe estar presente en el objeto de la colección para ser incluido en el vector devuelto por la función",
-        "Por ejemplo, si el primer argumento es <code>[{ first: \"Romeo\", last: \"Montague\" }, { first: \"Mercutio\", last: null }, { first: \"Tybalt\", last: \"Capulet\" }]</code>, y el segundo argumento es <code>{ last: \"Capulet\" }</code>, entonces tu función debe devolver el tercer objeto del vector en el primer argumento, ya que contiene la propiedad y el valor indicados en el segundo argumento.",
-        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
-      ],
-      "titleFr": "O Roméo! Roméo!",
-      "descriptionFr": [
-        "Écris une fonction qui parcourt un array d'objets (premier argument) et renvoie un array de tous les objects ayant les paires de nom/valeur correspondantes à l'objet donné (second argument). Chaque paire de nom et de valeur de l'objet source doit être présente dans les objects renvoyés.",
-        "Par exemple, si le premier argument est <code>[{ first: \"Romeo\", last: \"Montague\" }, { first: \"Mercutio\", last: null }, { first: \"Tybalt\", last: \"Capulet\" }]</code>, et le second argument est <code>{ last: \"Capulet\" }</code>, tu dois renvoyer le troisième objet de l'array (premier argument), parce qu'il contient le nom et sa valeur, donnés en deuxième argument.",
-        "N'oublie pas d'utiliser <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Lire-Chercher-Demander</a> si tu es bloqué. Essaye de trouver un partenaire. Écris ton propre code."
-      ]
+      "translations": {
+        "es": {
+          "title": "¿Dónde estás que no te veo?",
+          "description": [
+            "Crea una función que busque en un vector de objetos (primer argumento) y devuelva un vector con todos los objetos que compartan el valor indicado para una propiedad dada (segundo argumento). Cada pareja de propiedad y valor debe estar presente en el objeto de la colección para ser incluido en el vector devuelto por la función",
+            "Por ejemplo, si el primer argumento es <code>[{ first: \"Romeo\", last: \"Montague\" }, { first: \"Mercutio\", last: null }, { first: \"Tybalt\", last: \"Capulet\" }]</code>, y el segundo argumento es <code>{ last: \"Capulet\" }</code>, entonces tu función debe devolver el tercer objeto del vector en el primer argumento, ya que contiene la propiedad y el valor indicados en el segundo argumento.",
+            "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+          ]
+        },
+        "fr": {
+          "title": "O Roméo! Roméo!",
+          "description": [
+            "Écris une fonction qui parcourt un array d'objets (premier argument) et renvoie un array de tous les objects ayant les paires de nom/valeur correspondantes à l'objet donné (second argument). Chaque paire de nom et de valeur de l'objet source doit être présente dans les objects renvoyés.",
+            "Par exemple, si le premier argument est <code>[{ first: \"Romeo\", last: \"Montague\" }, { first: \"Mercutio\", last: null }, { first: \"Tybalt\", last: \"Capulet\" }]</code>, et le second argument est <code>{ last: \"Capulet\" }</code>, tu dois renvoyer le troisième objet de l'array (premier argument), parce qu'il contient le nom et sa valeur, donnés en deuxième argument.",
+            "N'oublie pas d'utiliser <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Lire-Chercher-Demander</a> si tu es bloqué. Essaye de trouver un partenaire. Écris ton propre code."
+          ]
+        }
+      }
     },
     {
       "id": "a0b5010f579e69b815e7c5d6",
@@ -254,24 +283,30 @@
       ],
       "isRequired": true,
       "challengeType": 5,
-      "titleEs": "Buscar y reemplazar",
-      "descriptionEs": [
-        "Crea una función que busque un fragmento en una frase dada y lo reemplace por otro fragmento, devolviendo la nueva frase.",
-        "El primer argumento es la frase en la que se ejecutará la búsqueda y el reemplazo",
-        "El segundo argumento es la palabra que se va a reemplazar",
-        "El tercer argumento es lo que reemplazará a la palabra indicada en el segundo argumento",
-        "NOTA: Debes respetar mayúsculas y minúsculas de la palabra original cuando ejecutes el reemplazo. Por ejemplo, si quisieras reemplazar la palabra \"Libro\" con la palabra \"perro\", deberías insertar en vez la palabra \"Perro\"",
-        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
-      ],
-      "titleFr": "Cherche et remplace",
-      "descriptionFr": [
-        "Crée une fonction qui cherche et remplace une partie de la phrase en utilisant les arguments et renvoie la nouvelle phrase.",
-        "Le premier argument est la phrase à modifier.",
-        "Le deuxième argument est le mot à remplacer (avant).",
-        "Le troisième argument est le mot qui doit remplacer le deuxième argument (après).",
-        "NB: Tu dois respecter les majuscules ou miniscules du mot originel que tu remplaces. Par exemple, si tu veux remplacer le mot \"Livre\" par \"chien\", tu devras le remplacer par \"Chien\"",
-        "N'oublie pas d'utiliser <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Lire-Chercher-Demander</a> si tu es bloqué. Essaye de trouver un partenaire. Écris ton propre code."
-      ]
+      "translations": {
+        "es": {
+          "title": "Buscar y reemplazar",
+          "description": [
+            "Crea una función que busque un fragmento en una frase dada y lo reemplace por otro fragmento, devolviendo la nueva frase.",
+            "El primer argumento es la frase en la que se ejecutará la búsqueda y el reemplazo",
+            "El segundo argumento es la palabra que se va a reemplazar",
+            "El tercer argumento es lo que reemplazará a la palabra indicada en el segundo argumento",
+            "NOTA: Debes respetar mayúsculas y minúsculas de la palabra original cuando ejecutes el reemplazo. Por ejemplo, si quisieras reemplazar la palabra \"Libro\" con la palabra \"perro\", deberías insertar en vez la palabra \"Perro\"",
+            "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+          ]
+        },
+        "fr": {
+          "title": "Cherche et remplace",
+          "description": [
+            "Crée une fonction qui cherche et remplace une partie de la phrase en utilisant les arguments et renvoie la nouvelle phrase.",
+            "Le premier argument est la phrase à modifier.",
+            "Le deuxième argument est le mot à remplacer (avant).",
+            "Le troisième argument est le mot qui doit remplacer le deuxième argument (après).",
+            "NB: Tu dois respecter les majuscules ou miniscules du mot originel que tu remplaces. Par exemple, si tu veux remplacer le mot \"Livre\" par \"chien\", tu devras le remplacer par \"Chien\"",
+            "N'oublie pas d'utiliser <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Lire-Chercher-Demander</a> si tu es bloqué. Essaye de trouver un partenaire. Écris ton propre code."
+          ]
+        }
+      }
     },
     {
       "id": "aa7697ea2477d1316795783b",
@@ -310,21 +345,27 @@
       ],
       "isRequired": true,
       "challengeType": 5,
-      "titleEs": "Latín de los cerdos",
-      "descriptionEs": [
-        "Traduce la cadena de texto que se te provee al Latín de los cerdos (Pig Latin)",
-        "<a href=\"http://en.wikipedia.org/wiki/Pig_Latin\" target=\"_blank\">Pig Latin</a> toma la primera consonante (o grupo de consonantes) de una palabra en inglés, la mueve al final de la palabra y agrega un \"ay\".",
-        "Si la palabra comienza con una vocal, simplemente añade \"way\" al final.",
-        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
-      ],
-      "titleFr": "Pig latin",
-      "descriptionFr": [
-        "Traduis la phrase donnée en pig latin (verlan anglais)",
-        "Le <a href=\"http://fr.wikipedia.org/wiki/Pig_Latin\" target=\"_blank\">Pig Latin</a> prend la ou les première(s) consonne(s) d'un mot en anglais et les mets à la fin du mot accompagné par le suffixe \"ay\".",
-        "Si un mot commence par une voyelle ajoute \"way\" à la fin du mot.",
-        "Les chaînes de caractères entrées sont garanties d'être des mots anglais, en lettres minuscules.",
-        "N'oublie pas d'utiliser <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Lire-Chercher-Demander</a> si tu es bloqué. Essaye de trouver un partenaire. Écris ton propre code."
-      ]
+      "translations": {
+        "es": {
+          "title": "Latín de los cerdos",
+          "description": [
+            "Traduce la cadena de texto que se te provee al Latín de los cerdos (Pig Latin)",
+            "<a href=\"http://en.wikipedia.org/wiki/Pig_Latin\" target=\"_blank\">Pig Latin</a> toma la primera consonante (o grupo de consonantes) de una palabra en inglés, la mueve al final de la palabra y agrega un \"ay\".",
+            "Si la palabra comienza con una vocal, simplemente añade \"way\" al final.",
+            "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+          ]
+        },
+        "fr": {
+          "title": "Pig latin",
+          "description": [
+            "Traduis la phrase donnée en pig latin (verlan anglais)",
+            "Le <a href=\"http://fr.wikipedia.org/wiki/Pig_Latin\" target=\"_blank\">Pig Latin</a> prend la ou les première(s) consonne(s) d'un mot en anglais et les mets à la fin du mot accompagné par le suffixe \"ay\".",
+            "Si un mot commence par une voyelle ajoute \"way\" à la fin du mot.",
+            "Les chaînes de caractères entrées sont garanties d'être des mots anglais, en lettres minuscules.",
+            "N'oublie pas d'utiliser <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Lire-Chercher-Demander</a> si tu es bloqué. Essaye de trouver un partenaire. Écris ton propre code."
+          ]
+        }
+      }
     },
     {
       "id": "afd15382cdfb22c9efe8b7de",
@@ -359,24 +400,30 @@
       ],
       "isRequired": true,
       "challengeType": 5,
-      "titleEs": "Emparejando bases de ADN",
-      "descriptionEs": [
-        "A la cadena de ADN que se te pasa le hace falta una hebra. Toma cada una de las letras, obtén su pareja correspondiente y devuelve los resultados en un segundo vector",
-        "<a href=\"http://es.wikipedia.org/wiki/Apareamiento_de_bases\" target=\"_blank\">Parejas de bases</a> son pares de AT y CG. Encuentra el elemento que hace falta para cada una de las letras que se te presentan.",
-        "Devuelve la letra que se te provee como el primer elemento en cada vector",
-        "Por ejemplo, si te pasáramos la cadena GCG, tu función debería devolver el vector: [[\"G\", \"C\"], [\"C\",\"G\"],[\"G\", \"C\"]]",
-        "Cada letra que se te provee y su pareja deben estar contenidos en un vector, y cada uno de estos vectores debe estar contenidos en un vector.",
-        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
-      ],
-      "titleFr": "Coupler les bases d'ADN",
-      "descriptionFr": [
-        "Une base d'ADN a perdu sa paire. Assemble chaque paire de caractères et renvoie les résultats dans un second tableau.",
-        "Les <a href=\"https://fr.wikipedia.org/wiki/Paire_de_bases\" target=\"_blank\">paires de bases</a> sont des paires d'AT et CG. Associe l'élement manquant au caractère donné.",
-        "Renvoie le caractère donné comme premier élément de chaque tableau.",
-        "Par exemple, pour GCG, il faut renvoyer [[\"G\", \"C\"], [\"C\",\"G\"],[\"G\", \"C\"]]",
-        "Chaque caractère et sa paire sont couplées dans un tableau, et tous les tableaux sont groupés dans un tableau.",
-        "N'oublie pas d'utiliser <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Lire-Chercher-Demander</a> si tu es bloqué. Essaye de trouver un partenaire. Écris ton propre code."
-      ]
+      "translations": {
+        "es": {
+          "title": "Emparejando bases de ADN",
+          "description": [
+            "A la cadena de ADN que se te pasa le hace falta una hebra. Toma cada una de las letras, obtén su pareja correspondiente y devuelve los resultados en un segundo vector",
+            "<a href=\"http://es.wikipedia.org/wiki/Apareamiento_de_bases\" target=\"_blank\">Parejas de bases</a> son pares de AT y CG. Encuentra el elemento que hace falta para cada una de las letras que se te presentan.",
+            "Devuelve la letra que se te provee como el primer elemento en cada vector",
+            "Por ejemplo, si te pasáramos la cadena GCG, tu función debería devolver el vector: [[\"G\", \"C\"], [\"C\",\"G\"],[\"G\", \"C\"]]",
+            "Cada letra que se te provee y su pareja deben estar contenidos en un vector, y cada uno de estos vectores debe estar contenidos en un vector.",
+            "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+          ]
+        },
+        "fr": {
+          "title": "Coupler les bases d'ADN",
+          "description": [
+            "Une base d'ADN a perdu sa paire. Assemble chaque paire de caractères et renvoie les résultats dans un second tableau.",
+            "Les <a href=\"https://fr.wikipedia.org/wiki/Paire_de_bases\" target=\"_blank\">paires de bases</a> sont des paires d'AT et CG. Associe l'élement manquant au caractère donné.",
+            "Renvoie le caractère donné comme premier élément de chaque tableau.",
+            "Par exemple, pour GCG, il faut renvoyer [[\"G\", \"C\"], [\"C\",\"G\"],[\"G\", \"C\"]]",
+            "Chaque caractère et sa paire sont couplées dans un tableau, et tous les tableaux sont groupés dans un tableau.",
+            "N'oublie pas d'utiliser <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Lire-Chercher-Demander</a> si tu es bloqué. Essaye de trouver un partenaire. Écris ton propre code."
+          ]
+        }
+      }
     },
     {
       "id": "af7588ade1100bde429baf20",
@@ -409,18 +456,24 @@
       ],
       "isRequired": true,
       "challengeType": 5,
-      "titleEs": "Letras perdidas",
-      "descriptionEs": [
-        "Crea una función que devuelva la letra que falta en el rango de letras que se le pasa",
-        "Si todas las letras en el rango están presentes, la función debe devolver undefined.",
-        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
-      ],
-      "titleFr": "Lettres perdues",
-      "descriptionFr": [
-        "Crée une fonction qui renvoie la lettre manquante dans la série.",
-        "Si aucune lettre n'est manquante, renvoie undefined.",
-        "N'oublie pas d'utiliser <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Lire-Chercher-Demander</a> si tu es bloqué. Essaye de trouver un partenaire. Écris ton propre code."
-      ]
+      "translations": {
+        "es": {
+          "title": "Letras perdidas",
+          "description": [
+            "Crea una función que devuelva la letra que falta en el rango de letras que se le pasa",
+            "Si todas las letras en el rango están presentes, la función debe devolver undefined.",
+            "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+          ]
+        },
+        "fr": {
+          "title": "Lettres perdues",
+          "description": [
+            "Crée une fonction qui renvoie la lettre manquante dans la série.",
+            "Si aucune lettre n'est manquante, renvoie undefined.",
+            "N'oublie pas d'utiliser <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Lire-Chercher-Demander</a> si tu es bloqué. Essaye de trouver un partenaire. Écris ton propre code."
+          ]
+        }
+      }
     },
     {
       "id": "a77dbc43c33f39daa4429b4f",
@@ -459,18 +512,24 @@
       ],
       "isRequired": true,
       "challengeType": 5,
-      "titleEs": "¡Bu!",
-      "descriptionEs": [
-        "Crea una función que verifique si el valor que se le pasa es de tipo booleano. Haz que la función devuelva true o false según corresponda.",
-        "Los primitivos booleanos primitivos son: true y false",
-        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
-      ],
-      "titleFr": "Boo !",
-      "descriptionFr": [
-        "Crée une fonction qui vérifie qu'une valeur est de type booléen. Renvoie true ou false.",
-        "Les primitives booléennes sont true ou false.",
-        "N'oublie pas d'utiliser <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Lire-Chercher-Demander</a> si tu es bloqué. Essaye de trouver un partenaire. Écris ton propre code."
-      ]
+      "translations": {
+        "es": {
+          "title": "¡Bu!",
+          "description": [
+            "Crea una función que verifique si el valor que se le pasa es de tipo booleano. Haz que la función devuelva true o false según corresponda.",
+            "Los primitivos booleanos primitivos son: true y false",
+            "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+          ]
+        },
+        "fr": {
+          "title": "Boo !",
+          "description": [
+            "Crée une fonction qui vérifie qu'une valeur est de type booléen. Renvoie true ou false.",
+            "Les primitives booléennes sont true ou false.",
+            "N'oublie pas d'utiliser <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Lire-Chercher-Demander</a> si tu es bloqué. Essaye de trouver un partenaire. Écris ton propre code."
+          ]
+        }
+      }
     },
     {
       "id": "a105e963526e7de52b219be9",
@@ -505,22 +564,28 @@
       ],
       "isRequired": true,
       "challengeType": 5,
-      "titleEs": "Intersección ordenada",
-      "descriptionEs": [
-        "Escribe una función que tome dos o más vectores y que devuelva un nuevo vector con los valores únicos en el orden de aparición de los vectores que se te pasaron",
-        "En otra palabras, todos los valores presentes en todos los vectores deben aparecer en el vector final en su orden original, pero sin duplicados.",
-        "Los valores únicos deben aparecer en el orden original, pero el vector final no necesariamente debe mostrar los elementos en orden numérico.",
-        "Puedes usar de referencia las pruebas de verificación si necesitas ejemplos.",
-        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
-      ],
-      "titleFr": "Union arrangée",
-      "descriptionFr": [
-        "Crée une fonction qui accepte deux tableaux ou plus et renvoie un nouvel array de valeurs uniques dans l'ordre des tableaux donnés.",
-        "En d'autres termes, toutes les valeurs des tableaux doivent être incluses dans l'ordre originel, sans doublon dans le tableau final.",
-        "Les valeurs uniques doivent être classées dans l'ordre originel, mais le tableau final ne doit pas être classé par ordre croissant.",
-        "Réfère toi aux test pour plus d'examples.",
-        "N'oublie pas d'utiliser <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Lire-Chercher-Demander</a> si tu es bloqué. Essaye de trouver un partenaire. Écris ton propre code."
-      ]
+      "translations": {
+        "es": {
+          "title": "Intersección ordenada",
+          "description": [
+            "Escribe una función que tome dos o más vectores y que devuelva un nuevo vector con los valores únicos en el orden de aparición de los vectores que se te pasaron",
+            "En otra palabras, todos los valores presentes en todos los vectores deben aparecer en el vector final en su orden original, pero sin duplicados.",
+            "Los valores únicos deben aparecer en el orden original, pero el vector final no necesariamente debe mostrar los elementos en orden numérico.",
+            "Puedes usar de referencia las pruebas de verificación si necesitas ejemplos.",
+            "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+          ]
+        },
+        "fr": {
+          "title": "Union arrangée",
+          "description": [
+            "Crée une fonction qui accepte deux tableaux ou plus et renvoie un nouvel array de valeurs uniques dans l'ordre des tableaux donnés.",
+            "En d'autres termes, toutes les valeurs des tableaux doivent être incluses dans l'ordre originel, sans doublon dans le tableau final.",
+            "Les valeurs uniques doivent être classées dans l'ordre originel, mais le tableau final ne doit pas être classé par ordre croissant.",
+            "Réfère toi aux test pour plus d'examples.",
+            "N'oublie pas d'utiliser <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Lire-Chercher-Demander</a> si tu es bloqué. Essaye de trouver un partenaire. Écris ton propre code."
+          ]
+        }
+      }
     },
     {
       "id": "a6b0bb188d873cb2c8729495",
@@ -557,16 +622,22 @@
       ],
       "isRequired": true,
       "challengeType": 5,
-      "titleEs": "Convierte entidades HTML",
-      "descriptionEs": [
-        "Convierte los caracteres <code>&</code>, <code>&lt;<code>, <code>&gt;<code>, <code>\"<code>' (comilla), y <code>'<code> (apóstrofe), contenidos en la cadena de texto que se te pasa, en sus entidades HTML correspondientes",
-        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
-      ],
-      "titleFr": "Convertir les entités HTML",
-      "descriptionFr": [
-        "Convertis les caractères <code>&</code>, <code>&lt;<code>, <code>&gt;<code>, <code>\"<code>' (guillemet), y <code>'<code> (apostrophe), contenus dans la chaîne de caractères en entités HTML.",
-        "N'oublie pas d'utiliser <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Lire-Chercher-Demander</a> si tu es bloqué. Essaye de trouver un partenaire. Écris ton propre code."
-      ]
+      "translations": {
+        "es": {
+          "title": "Convierte entidades HTML",
+          "description": [
+            "Convierte los caracteres <code>&</code>, <code>&lt;<code>, <code>&gt;<code>, <code>\"<code>' (comilla), y <code>'<code> (apóstrofe), contenidos en la cadena de texto que se te pasa, en sus entidades HTML correspondientes",
+            "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+          ]
+        },
+        "fr": {
+          "title": "Convertir les entités HTML",
+          "description": [
+            "Convertis les caractères <code>&</code>, <code>&lt;<code>, <code>&gt;<code>, <code>\"<code>' (guillemet), y <code>'<code> (apostrophe), contenus dans la chaîne de caractères en entités HTML.",
+            "N'oublie pas d'utiliser <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Lire-Chercher-Demander</a> si tu es bloqué. Essaye de trouver un partenaire. Écris ton propre code."
+          ]
+        }
+      }
     },
     {
       "id": "a103376db3ba46b2d50db289",
@@ -601,16 +672,22 @@
       ],
       "isRequired": true,
       "challengeType": 5,
-      "titleEs": "separado-por-guiones",
-      "descriptionEs": [
-        "Convierte la cadena de texto que se te pasa al formato spinal case. Spinal case es cuando escribes todas las palabras en-minúsculas-unidas-por-guiones.",
-        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
-      ],
-      "titleFr": "Trait d'union",
-      "descriptionFr": [
-        "Convertis la chaîne de caractères en spinal case. Spinal case correspond au bas-de-casse-séparé-par-des-tirets.",
-        "N'oublie pas d'utiliser <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Lire-Chercher-Demander</a> si tu es bloqué. Essaye de trouver un partenaire. Écris ton propre code."
-      ]
+      "translations": {
+        "es": {
+          "title": "separado-por-guiones",
+          "description": [
+            "Convierte la cadena de texto que se te pasa al formato spinal case. Spinal case es cuando escribes todas las palabras en-minúsculas-unidas-por-guiones.",
+            "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+          ]
+        },
+        "fr": {
+          "title": "Trait d'union",
+          "description": [
+            "Convertis la chaîne de caractères en spinal case. Spinal case correspond au bas-de-casse-séparé-par-des-tirets.",
+            "N'oublie pas d'utiliser <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Lire-Chercher-Demander</a> si tu es bloqué. Essaye de trouver un partenaire. Écris ton propre code."
+          ]
+        }
+      }
     },
     {
       "id": "a5229172f011153519423690",
@@ -645,20 +722,26 @@
       ],
       "isRequired": true,
       "challengeType": 5,
-      "titleEs": "Suma todos los números de Fibonacci que son impares",
-      "descriptionEs": [
-        "Crea una función que devuelva la suma de todos los números impares en la secuencia de Fibonacci hasta el número que se le pasa como argumento, incluyéndolo en caso de ser un número de la secuencia.",
-        "Los primeros números de la secuencia son 1, 1, 2, 3, 5 y 8, y cada número siguiente es la suma de los dos números anteriores.",
-        "Por ejemplo, si se te pasa el número 4, la función deberá devolver 5, ya que los números impares menores que 4 son 1, 1 y 3.",
-        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
-      ],
-      "titleFr": "Additionner tous les nombre de Fibonacci impairs",
-      "descriptionFr": [
-        "Crée une fonction qui additionne tous les nombre de Fibonacci jusqu'au nombre donné (inclus si c'est un nombre de Fibonacci).",
-        "Les premiers chiffres de la séquence sont 1, 1, 2, 3, 5 y 8, et chaque nombre correspond à la somme des deux nombres précédents.",
-        "Par example, pour le chiffre 4, la fonction doit retourner 5, puisque les chiffres précédent 4 sont 1, 1 et 3.",
-        "N'oublie pas d'utiliser <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Lire-Chercher-Demander</a> si tu es bloqué. Essaye de trouver un partenaire. Écris ton propre code."
-      ]
+      "translations": {
+        "es": {
+          "title": "Suma todos los números de Fibonacci que son impares",
+          "description": [
+            "Crea una función que devuelva la suma de todos los números impares en la secuencia de Fibonacci hasta el número que se le pasa como argumento, incluyéndolo en caso de ser un número de la secuencia.",
+            "Los primeros números de la secuencia son 1, 1, 2, 3, 5 y 8, y cada número siguiente es la suma de los dos números anteriores.",
+            "Por ejemplo, si se te pasa el número 4, la función deberá devolver 5, ya que los números impares menores que 4 son 1, 1 y 3.",
+            "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+          ]
+        },
+        "fr": {
+          "title": "Additionner tous les nombre de Fibonacci impairs",
+          "description": [
+            "Crée une fonction qui additionne tous les nombre de Fibonacci jusqu'au nombre donné (inclus si c'est un nombre de Fibonacci).",
+            "Les premiers chiffres de la séquence sont 1, 1, 2, 3, 5 y 8, et chaque nombre correspond à la somme des deux nombres précédents.",
+            "Par example, pour le chiffre 4, la fonction doit retourner 5, puisque les chiffres précédent 4 sont 1, 1 et 3.",
+            "N'oublie pas d'utiliser <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Lire-Chercher-Demander</a> si tu es bloqué. Essaye de trouver un partenaire. Écris ton propre code."
+          ]
+        }
+      }
     },
     {
       "id": "a3bfc1673c0526e06d3ac698",
@@ -691,20 +774,26 @@
       ],
       "isRequired": true,
       "challengeType": 5,
-      "titleEs": "Suma todos los números primos",
-      "descriptionEs": [
-        "Suma todos los números primos hasta, e incluyendo, el número que se te pasa",
-        "Números primos son todos aquellos que sólo son divisibles entre 1 y entre sí mismos. Por ejemplo, el número 2 es primo porque solo es divisible por 1 y por 2. Por el contrario, el número 1 no es primo, ya que sólo puede dividirse por sí mismo",
-        "El número que se le provee a la función no puede ser primo",
-        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
-      ],
-      "titleFr": "Additionner tous les nombres primaires",
-      "descriptionFr": [
-        "Additionne tous les nombres primaires jusqu'au nombre donné (inclus).",
-        "Un nombre primaire est un nombre divisible que par 1 ou par lui-même (plus grand que 1). Par exemple, 2 est un nombre primaire puisqu'il n'est divisible que par 1 et 2. 1 n'est pas primaire puiqu'il n'est divisible que par lui-même.",
-        "Le nombre donné en argument n'est pas forcément un nombre primaire.",
-        "N'oublie pas d'utiliser <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Lire-Chercher-Demander</a> si tu es bloqué. Essaye de trouver un partenaire. Écris ton propre code."
-      ]
+      "translations": {
+        "es": {
+          "title": "Suma todos los números primos",
+          "description": [
+            "Suma todos los números primos hasta, e incluyendo, el número que se te pasa",
+            "Números primos son todos aquellos que sólo son divisibles entre 1 y entre sí mismos. Por ejemplo, el número 2 es primo porque solo es divisible por 1 y por 2. Por el contrario, el número 1 no es primo, ya que sólo puede dividirse por sí mismo",
+            "El número que se le provee a la función no puede ser primo",
+            "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+          ]
+        },
+        "fr": {
+          "title": "Additionner tous les nombres primaires",
+          "description": [
+            "Additionne tous les nombres primaires jusqu'au nombre donné (inclus).",
+            "Un nombre primaire est un nombre divisible que par 1 ou par lui-même (plus grand que 1). Par exemple, 2 est un nombre primaire puisqu'il n'est divisible que par 1 et 2. 1 n'est pas primaire puiqu'il n'est divisible que par lui-même.",
+            "Le nombre donné en argument n'est pas forcément un nombre primaire.",
+            "N'oublie pas d'utiliser <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Lire-Chercher-Demander</a> si tu es bloqué. Essaye de trouver un partenaire. Écris ton propre code."
+          ]
+        }
+      }
     },
     {
       "id": "ae9defd7acaf69703ab432ea",
@@ -739,20 +828,26 @@
       ],
       "isRequired": true,
       "challengeType": 5,
-      "titleEs": "Mínimo común múltiplo",
-      "descriptionEs": [
-        "En el ejercicio se te provee un vector con dos números. Crea una función que encuentre el número más pequeño que sea divisible entre ambos números, así como entre todos los números enteros entre ellos.",
-        "Tu función debe aceptar como argumento un vector con dos números, los cuales no necesariamente estarán en orden.",
-        "Por ejemplo, si se te pasan los números 1 y 3, deberás encontrar el mínimo común múltiplo de 1 y 3 que es divisible por todos los números <em>entre</em> 1 y 3.",
-        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
-      ],
-      "titleFr": "Plus petit commun multiple",
-      "descriptionFr": [
-        "Cherche le plus petit commun multiple qui soit divisible par les deux nombres donnés et par les nombres de la série entre ces deux nombres.",
-        "La série est un tableau de deux nombres qui ne seront pas nécessairement dans l'ordre croissant.",
-        "Par exemple, pour 1 et 3, il faut trouver le plus petit commun multiple de 1 et 3 mais aussi des nombres <em>entre</em> 1 et 3/",
-        "N'oublie pas d'utiliser <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Lire-Chercher-Demander</a> si tu es bloqué. Essaye de trouver un partenaire. Écris ton propre code."
-      ]
+      "translations": {
+        "es": {
+          "title": "Mínimo común múltiplo",
+          "description": [
+            "En el ejercicio se te provee un vector con dos números. Crea una función que encuentre el número más pequeño que sea divisible entre ambos números, así como entre todos los números enteros entre ellos.",
+            "Tu función debe aceptar como argumento un vector con dos números, los cuales no necesariamente estarán en orden.",
+            "Por ejemplo, si se te pasan los números 1 y 3, deberás encontrar el mínimo común múltiplo de 1 y 3 que es divisible por todos los números <em>entre</em> 1 y 3.",
+            "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+          ]
+        },
+        "fr": {
+          "title": "Plus petit commun multiple",
+          "description": [
+            "Cherche le plus petit commun multiple qui soit divisible par les deux nombres donnés et par les nombres de la série entre ces deux nombres.",
+            "La série est un tableau de deux nombres qui ne seront pas nécessairement dans l'ordre croissant.",
+            "Par exemple, pour 1 et 3, il faut trouver le plus petit commun multiple de 1 et 3 mais aussi des nombres <em>entre</em> 1 et 3/",
+            "N'oublie pas d'utiliser <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Lire-Chercher-Demander</a> si tu es bloqué. Essaye de trouver un partenaire. Écris ton propre code."
+          ]
+        }
+      }
     },
     {
       "id": "a6e40f1041b06c996f7b2406",
@@ -782,16 +877,22 @@
       ],
       "isRequired": true,
       "challengeType": 5,
-      "titleEs": "Buscando la verdad",
-      "descriptionEs": [
-        "Crea una función que busque dentro de un vector (primer argumento) y que devuelva el primer elemento que pase una prueba de verdad (segundo argumento).",
-        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
-      ],
-      "titleFr": "Détecteur de mensonges",
-      "descriptionFr": [
-        "Crée une fonction qui parcourt un tableau (premier argument) et renvoie le premier élément du tableau qui passe le test (second argument).",
-        "N'oublie pas d'utiliser <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Lire-Chercher-Demander</a> si tu es bloqué. Essaye de trouver un partenaire. Écris ton propre code."
-      ]
+      "translations": {
+        "es": {
+          "title": "Buscando la verdad",
+          "description": [
+            "Crea una función que busque dentro de un vector (primer argumento) y que devuelva el primer elemento que pase una prueba de verdad (segundo argumento).",
+            "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+          ]
+        },
+        "fr": {
+          "title": "Détecteur de mensonges",
+          "description": [
+            "Crée une fonction qui parcourt un tableau (premier argument) et renvoie le premier élément du tableau qui passe le test (second argument).",
+            "N'oublie pas d'utiliser <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Lire-Chercher-Demander</a> si tu es bloqué. Essaye de trouver un partenaire. Écris ton propre code."
+          ]
+        }
+      }
     },
     {
       "id": "a5deed1811a43193f9f1c841",
@@ -829,18 +930,24 @@
       ],
       "isRequired": true,
       "challengeType": 5,
-      "titleEs": "¡Fuera de aquí!",
-      "descriptionEs": [
-        "Toma los elementos contenidos en el vector que se te provee en el primer argumento de la función y elimínalos uno por uno, hasta que la función provista en el segundo argumento devuelva true.",
-        "Retorna el resto del vector, de lo contrario retorna un vector vacío.",
-        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
-      ],
-      "titleFr": "Laisse tomber",
-      "descriptionFr": [
-        "Écarte les éléments du tableau (premier argument), en commençant par la gauche, jusqu'à ce la fonction (second argument) renvoie true.",
-        "Renvoie le reste du tableau, ou dans le cas contraire un tableau vide",
-        "N'oublie pas d'utiliser <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Lire-Chercher-Demander</a> si tu es bloqué. Essaye de trouver un partenaire. Écris ton propre code."
-      ]
+      "translations": {
+        "es": {
+          "title": "¡Fuera de aquí!",
+          "description": [
+            "Toma los elementos contenidos en el vector que se te provee en el primer argumento de la función y elimínalos uno por uno, hasta que la función provista en el segundo argumento devuelva true.",
+            "Retorna el resto del vector, de lo contrario retorna un vector vacío.",
+            "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+          ]
+        },
+        "fr": {
+          "title": "Laisse tomber",
+          "description": [
+            "Écarte les éléments du tableau (premier argument), en commençant par la gauche, jusqu'à ce la fonction (second argument) renvoie true.",
+            "Renvoie le reste du tableau, ou dans le cas contraire un tableau vide",
+            "N'oublie pas d'utiliser <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Lire-Chercher-Demander</a> si tu es bloqué. Essaye de trouver un partenaire. Écris ton propre code."
+          ]
+        }
+      }
     },
     {
       "id": "ab306dbdcc907c7ddfc30830",
@@ -872,16 +979,22 @@
       ],
       "isRequired": true,
       "challengeType": 5,
-      "titleEs": "Aplanadora",
-      "descriptionEs": [
-        "Aplana el vector anidado que se te provee. Tu función debe poder aplanar vectores de cualquier forma.",
-        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
-      ],
-      "titleFr": "Rouleau compresseur",
-      "descriptionFr": [
-        "Aplatis le tableau donné. Ta fonction doit pour gérer différentes formes de tableaux.",
-        "N'oublie pas d'utiliser <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Lire-Chercher-Demander</a> si tu es bloqué. Essaye de trouver un partenaire. Écris ton propre code."
-      ]
+      "translations": {
+        "es": {
+          "title": "Aplanadora",
+          "description": [
+            "Aplana el vector anidado que se te provee. Tu función debe poder aplanar vectores de cualquier forma.",
+            "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+          ]
+        },
+        "fr": {
+          "title": "Rouleau compresseur",
+          "description": [
+            "Aplatis le tableau donné. Ta fonction doit pour gérer différentes formes de tableaux.",
+            "N'oublie pas d'utiliser <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Lire-Chercher-Demander</a> si tu es bloqué. Essaye de trouver un partenaire. Écris ton propre code."
+          ]
+        }
+      }
     },
     {
       "id": "a8d97bd4c764e91f9d2bda01",
@@ -912,18 +1025,24 @@
       ],
       "isRequired": true,
       "challengeType": 5,
-      "titleEs": "Mensaje secreto",
-      "descriptionEs": [
-        "Haz que la función devuelva el mensaje en inglés escondido en el código binario de la cadena de texto que se le pasa.",
-        "La cadena de texto binaria estará separada por espacios.",
-        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
-      ],
-      "titleFr": "Agent binaire",
-      "descriptionFr": [
-        "Traduis la chaîne binaire donnée en anglais.",
-        "La chaîne binaire comporte des espaces.",
-        "N'oublie pas d'utiliser <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Lire-Chercher-Demander</a> si tu es bloqué. Essaye de trouver un partenaire. Écris ton propre code."
-      ]
+      "translations": {
+        "es": {
+          "title": "Mensaje secreto",
+          "description": [
+            "Haz que la función devuelva el mensaje en inglés escondido en el código binario de la cadena de texto que se le pasa.",
+            "La cadena de texto binaria estará separada por espacios.",
+            "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+          ]
+        },
+        "fr": {
+          "title": "Agent binaire",
+          "description": [
+            "Traduis la chaîne binaire donnée en anglais.",
+            "La chaîne binaire comporte des espaces.",
+            "N'oublie pas d'utiliser <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Lire-Chercher-Demander</a> si tu es bloqué. Essaye de trouver un partenaire. Écris ton propre code."
+          ]
+        }
+      }
     },
     {
       "id": "a10d2431ad0c6a099a4b8b52",
@@ -958,18 +1077,24 @@
       "isRequired": true,
       "type": "bonfire",
       "challengeType": 5,
-      "titleEs": "Que todo sea verdadero",
-      "descriptionEs": [
-        "Verifica si la función en el segundo argumento devuelve true para todos los elementos de la colección en el primer argumento.",
-        "Recuerda que puedes accesar a las propiedades de un objeto, ya sea a través de la notación por punto o de la notación por corchete usando [].",
-        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
-      ],
-      "titleFr": "Tout doit être vrai",
-      "descriptionFr": [
-        "Vérifie que la fonction donnée (second argument) est vraie sur tous les éléments de la collection (premier argument).",
-        "Tu peux utiliser un point ou des [] pour accéder aux propritétés de l'objet.",
-        "N'oublie pas d'utiliser <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Lire-Chercher-Demander</a> si tu es bloqué. Essaye de trouver un partenaire. Écris ton propre code."
-      ]
+      "translations": {
+        "es": {
+          "title": "Que todo sea verdadero",
+          "description": [
+            "Verifica si la función en el segundo argumento devuelve true para todos los elementos de la colección en el primer argumento.",
+            "Recuerda que puedes accesar a las propiedades de un objeto, ya sea a través de la notación por punto o de la notación por corchete usando [].",
+            "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+          ]
+        },
+        "fr": {
+          "title": "Tout doit être vrai",
+          "description": [
+            "Vérifie que la fonction donnée (second argument) est vraie sur tous les éléments de la collection (premier argument).",
+            "Tu peux utiliser un point ou des [] pour accéder aux propritétés de l'objet.",
+            "N'oublie pas d'utiliser <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Lire-Chercher-Demander</a> si tu es bloqué. Essaye de trouver un partenaire. Écris ton propre code."
+          ]
+        }
+      }
     },
     {
       "id": "a97fd23d9b809dac9921074f",
@@ -1007,26 +1132,32 @@
       ],
       "isRequired": true,
       "challengeType": 5,
-      "titleEs": "Argumentos opcionales",
-      "descriptionEs": [
-        "Crea una función que sume dos argumentos. Si sólo se le pasa un argumento a la función, haz que devuelva otra función que acepte un argumento y que devuelva la suma correspondiente.",
-        "Por ejemplo, <code>add(2, 3)</code> debe devolver <code>5</code>, y <code>add(2)</code> debe devolver una función.",
-        "Al llamar esta función con un único argumento devolverá la suma:",
-        "<code>var sumTwoAnd = add(2);</code>",
-        "<code>sumTwoAnd(3)</code> devuelve <code>5</code>.",
-        "Si alguno de los argumentos no es un número válido, haz que devuelva undefined.",
-        "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
-      ],
-      "titleFr": "Arguments optionnels",
-      "descriptionFr": [
-        "Crée une fonction qui additionne deux arguments. Si un seul argument est donné, renvoie une fonction qui attend un argument et renvoie la somme.",
-        "Par exemple, <code>add(2, 3)</code>, doit renvoyer <code>5</code>, et <code>add(2)</code> doit renvoyer une fonction.",
-        "Appeler cette fonction avec un seul argument renvoie la somme:",
-        "<code>var sumTwoAnd = add(2);</code>",
-        "<code>sumTwoAnd(3)</code> renvoie <code>5</code>.",
-        "Si aucun argument n'est un nombre, renvoie undefined.",
-        "N'oublie pas d'utiliser <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Lire-Chercher-Demander</a> si tu es bloqué. Essaye de trouver un partenaire. Écris ton propre code."
-      ]
+      "translations": {
+        "es": {
+          "title": "Argumentos opcionales",
+          "description": [
+            "Crea una función que sume dos argumentos. Si sólo se le pasa un argumento a la función, haz que devuelva otra función que acepte un argumento y que devuelva la suma correspondiente.",
+            "Por ejemplo, <code>add(2, 3)</code> debe devolver <code>5</code>, y <code>add(2)</code> debe devolver una función.",
+            "Al llamar esta función con un único argumento devolverá la suma:",
+            "<code>var sumTwoAnd = add(2);</code>",
+            "<code>sumTwoAnd(3)</code> devuelve <code>5</code>.",
+            "Si alguno de los argumentos no es un número válido, haz que devuelva undefined.",
+            "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+          ]
+        },
+        "fr": {
+          "title": "Arguments optionnels",
+          "description": [
+            "Crée une fonction qui additionne deux arguments. Si un seul argument est donné, renvoie une fonction qui attend un argument et renvoie la somme.",
+            "Par exemple, <code>add(2, 3)</code>, doit renvoyer <code>5</code>, et <code>add(2)</code> doit renvoyer une fonction.",
+            "Appeler cette fonction avec un seul argument renvoie la somme:",
+            "<code>var sumTwoAnd = add(2);</code>",
+            "<code>sumTwoAnd(3)</code> renvoie <code>5</code>.",
+            "Si aucun argument n'est un nombre, renvoie undefined.",
+            "N'oublie pas d'utiliser <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Lire-Chercher-Demander</a> si tu es bloqué. Essaye de trouver un partenaire. Écris ton propre code."
+          ]
+        }
+      }
     }
   ]
 }

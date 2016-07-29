@@ -42,22 +42,26 @@
       ],
       "type": "hike",
       "challengeType": 6,
-      "descriptionEs": [
-        "Una máquina necesita por lo menos cuatro partes básicas para ser considerada un computador.",
-        "Hoy vamos a hablar acerca de conceptos básicos de hardware.",
-        "Los computadores se componen de 4 partes básicas: Los dispositivos de entrada, los dispositivos de salida, la CPU y la memoria.",
-        "Los dispositivos de entrada te permiten ingresar información al computador.",
-        "Piensa en el ratón, teclado, micrófono, con todos estos estás ingresando información al computador.",
-        "Son ejemplos de dispositivos de salida tu monitor donde ves esto, o los altavoces que producen los sonidos que escuchas.",
-        "La información que entra y sale por esos dispositivos puede estar en diversos formatos como texto, números, vídeos, imágenes, lo que tengas.",
-        "CPU significa unidad central de procesamiento, y es en lo que todos pensamos cuando pensamos en un computador.",
-        "Es lo que lo hace funcionar, es lo que ejecuta el software, es lo que manipula los datos.",
-        "La memoria es donde almacenamos los datos y la información.",
-        "Ahora, la CPU tiene acceso exclusivo a esta memoria.",
-        "No se puede llegar a la memoria desde la entrada o desde la salida sin el uso de la CPU.",
-        "Por lo tanto, sólo para repasar, tenemos 4 partes básicas de la computadora: los dispositivos de entrada, los dispositivos de salida, la CPU y la memoria."
-      ],
-      "titleEs": "Fundamentes básicos del computador: Las 4 partes básicas de un computador"
+      "translations": {
+        "es": {
+          "title": "Fundamentes básicos del computador: Las 4 partes básicas de un computador",
+          "description": [
+            "Una máquina necesita por lo menos cuatro partes básicas para ser considerada un computador.",
+            "Hoy vamos a hablar acerca de conceptos básicos de hardware.",
+            "Los computadores se componen de 4 partes básicas: Los dispositivos de entrada, los dispositivos de salida, la CPU y la memoria.",
+            "Los dispositivos de entrada te permiten ingresar información al computador.",
+            "Piensa en el ratón, teclado, micrófono, con todos estos estás ingresando información al computador.",
+            "Son ejemplos de dispositivos de salida tu monitor donde ves esto, o los altavoces que producen los sonidos que escuchas.",
+            "La información que entra y sale por esos dispositivos puede estar en diversos formatos como texto, números, vídeos, imágenes, lo que tengas.",
+            "CPU significa unidad central de procesamiento, y es en lo que todos pensamos cuando pensamos en un computador.",
+            "Es lo que lo hace funcionar, es lo que ejecuta el software, es lo que manipula los datos.",
+            "La memoria es donde almacenamos los datos y la información.",
+            "Ahora, la CPU tiene acceso exclusivo a esta memoria.",
+            "No se puede llegar a la memoria desde la entrada o desde la salida sin el uso de la CPU.",
+            "Por lo tanto, sólo para repasar, tenemos 4 partes básicas de la computadora: los dispositivos de entrada, los dispositivos de salida, la CPU y la memoria."
+          ]
+        }
+      }
     },
     {
       "id": "bd7127d8c441eddfbeb5bddf",
@@ -97,21 +101,25 @@
       ],
       "type": "hike",
       "challengeType": 6,
-      "descriptionEs": [
-        "En este video cubrimos las funciones básicas de una placa base, tarjetas de expansión, y la fuente de poder.",
-        "Vamos a revisar rápidamente - las 4 partes básicas de un computador son dispositivos de entrada, como el ratón o el teclado, dispositivos de salida, monitor o altavoces, la CPU, la unidad central de procesamiento, y la memoria.",
-        "Ahora la memoria puede ser memoria a corto plazo, llamada memoria RAM, o memoria de largo plazo.",
-        "Eso es por lo general un disco duro, pero también puede ser un CD-ROM o una unidad flash, o algo por el estilo.",
-        "Además de esas cuatro partes básicas, trataremos tres partes más hoy: La placa base, las tarjetas de expansión, y la fuente de poder",
-        "La placa base es lo que conecta todo.",
-        "Si bien los datos vuelan de un lado a otro tratando de averiguar a dónde ir, la placa base que ayuda a establecer rutas para que lleguen al lugar correcto.",
-        "Las tarjetas de expansión son las tarjetas de sonido, las tarjetas de vídeo, ese tipo de cosas que pueden mejorar tu experiencia como usuario.",
-        "La fuente de poder es, como suena, lo que le da energía a la computadora.",
-        "Por lo general es la parte que tiene un ventilador en él para evitar que se sobrecaliente.",
-        "Así que vamos a hacer un repaso rápido.",
-        "Además de las cuatro partes básicas dispositivos de entrada, dispositivos de salida, CPU, y la memoria, también por lo general tenemos una placa base, las tarjetas de expansión, y una fuente de poder."
-      ],
-      "titleEs": "Fundamentos básicos del computador: Más Hardware"
+      "translations": {
+        "es": {
+          "title": "Fundamentos básicos del computador: Más Hardware",
+          "description": [
+            "En este video cubrimos las funciones básicas de una placa base, tarjetas de expansión, y la fuente de poder.",
+            "Vamos a revisar rápidamente - las 4 partes básicas de un computador son dispositivos de entrada, como el ratón o el teclado, dispositivos de salida, monitor o altavoces, la CPU, la unidad central de procesamiento, y la memoria.",
+            "Ahora la memoria puede ser memoria a corto plazo, llamada memoria RAM, o memoria de largo plazo.",
+            "Eso es por lo general un disco duro, pero también puede ser un CD-ROM o una unidad flash, o algo por el estilo.",
+            "Además de esas cuatro partes básicas, trataremos tres partes más hoy: La placa base, las tarjetas de expansión, y la fuente de poder",
+            "La placa base es lo que conecta todo.",
+            "Si bien los datos vuelan de un lado a otro tratando de averiguar a dónde ir, la placa base que ayuda a establecer rutas para que lleguen al lugar correcto.",
+            "Las tarjetas de expansión son las tarjetas de sonido, las tarjetas de vídeo, ese tipo de cosas que pueden mejorar tu experiencia como usuario.",
+            "La fuente de poder es, como suena, lo que le da energía a la computadora.",
+            "Por lo general es la parte que tiene un ventilador en él para evitar que se sobrecaliente.",
+            "Así que vamos a hacer un repaso rápido.",
+            "Además de las cuatro partes básicas dispositivos de entrada, dispositivos de salida, CPU, y la memoria, también por lo general tenemos una placa base, las tarjetas de expansión, y una fuente de poder."
+          ]
+        }
+      }
     },
     {
       "id": "bd7129d8a441eddfbeb5bddf",
@@ -149,19 +157,23 @@
       ],
       "type": "hike",
       "challengeType": 6,
-      "descriptionEs": [
-        "Discutiremos lo que constituye un chip y por qué la tecnología se vuelve más barata cada año.",
-        "En este video vamos a estar hablando sobre chips y algo que se llama la Ley de Moore.",
-        "Probablemente has notado en los últimos 10 años más o menos, que si vas a ir a comprar un reproductor de MP3, podrás obtener cada vez más espacio de almacenamiento por un precio cada vez más bajo.",
-        "Es probable que incluso hayas estado en la tienda y hayas pensado, \"Bueno, puedo conseguir uno ahora, o podría esperar 6 meses y ver hasta qué punto el precio ha bajado\", lo que podría sonar ridículo pero esto es en realidad una tendencia que ha estado ocurriendo durante mucho tiempo. ",
-        "Vamos a hablar de como está hecho un chip.",
-        "Un chip está lleno de estas pequeñas cosas llamadas transistores, que son interruptores que pueden ser un 1 o un 0 (¿ves un tema aquí?).",
-        "Todos estos transistores caben en un chip, y es así como se almacena la información.",
-        "Lo que hace que estos chips sean más grandes o más rápidos es la cantidad de transistores en un solo chip.",
-        "La Ley de Moore es la observación de que la cantidad de transistores que caben en un chip se ha duplicado cada dos años desde 1965.",
-        "Esto es importante porque hace que la tecnología sea más económica y accesible."
-      ],
-      "titleEs": "Fundamentos básicos del computador: Chips y la Ley de Moore"
+      "translations": {
+        "es": {
+          "title": "Fundamentos básicos del computador: Chips y la Ley de Moore",
+          "description": [
+            "Discutiremos lo que constituye un chip y por qué la tecnología se vuelve más barata cada año.",
+            "En este video vamos a estar hablando sobre chips y algo que se llama la Ley de Moore.",
+            "Probablemente has notado en los últimos 10 años más o menos, que si vas a ir a comprar un reproductor de MP3, podrás obtener cada vez más espacio de almacenamiento por un precio cada vez más bajo.",
+            "Es probable que incluso hayas estado en la tienda y hayas pensado, \"Bueno, puedo conseguir uno ahora, o podría esperar 6 meses y ver hasta qué punto el precio ha bajado\", lo que podría sonar ridículo pero esto es en realidad una tendencia que ha estado ocurriendo durante mucho tiempo. ",
+            "Vamos a hablar de como está hecho un chip.",
+            "Un chip está lleno de estas pequeñas cosas llamadas transistores, que son interruptores que pueden ser un 1 o un 0 (¿ves un tema aquí?).",
+            "Todos estos transistores caben en un chip, y es así como se almacena la información.",
+            "Lo que hace que estos chips sean más grandes o más rápidos es la cantidad de transistores en un solo chip.",
+            "La Ley de Moore es la observación de que la cantidad de transistores que caben en un chip se ha duplicado cada dos años desde 1965.",
+            "Esto es importante porque hace que la tecnología sea más económica y accesible."
+          ]
+        }
+      }
     },
     {
       "id": "bd7126d8c441eddfbeb5bddf",
@@ -195,16 +207,20 @@
       ],
       "type": "hike",
       "challengeType": 6,
-      "descriptionEs": [
-        "Cómo se ve lo binario, y lo que puede significar.",
-        "Los 0s y 1s pueden interpretarse como datos mucho más complejos.",
-        "Hoy vamos a hablar un poco sobre el código binario.",
-        "El código binario es un lenguaje para el computador muy simple, donde sólo hay secuencias de 1s y 0s, que representan estado encendido o estado apagado, siendo 1 encendido y el 0 apagado.",
-        "Aquellos 1s y 0s pueden ser casi cualquier cosa, pero por lo general son sólo números, letras y símbolos.",
-        "Vamos a revisar cómo decodificar un número en binario, pero como podrás adivinar, la traducción binaria se puede hacer con una rápida búsqueda en Google.",
-        "La parte más importante de esto es que entiendas el concepto de que incluso cosas simples como 1s y 0s se pueden traducir en algo muy complejo, que es la base para todos los lenguajes de programación existentes en la actualidad."
-      ],
-      "titleEs": "Fundamentos básicos del computador: Introducción a código binario"
+      "translations": {
+        "es": {
+          "title": "Fundamentos básicos del computador: Introducción a código binario",
+          "description": [
+            "Cómo se ve lo binario, y lo que puede significar.",
+            "Los 0s y 1s pueden interpretarse como datos mucho más complejos.",
+            "Hoy vamos a hablar un poco sobre el código binario.",
+            "El código binario es un lenguaje para el computador muy simple, donde sólo hay secuencias de 1s y 0s, que representan estado encendido o estado apagado, siendo 1 encendido y el 0 apagado.",
+            "Aquellos 1s y 0s pueden ser casi cualquier cosa, pero por lo general son sólo números, letras y símbolos.",
+            "Vamos a revisar cómo decodificar un número en binario, pero como podrás adivinar, la traducción binaria se puede hacer con una rápida búsqueda en Google.",
+            "La parte más importante de esto es que entiendas el concepto de que incluso cosas simples como 1s y 0s se pueden traducir en algo muy complejo, que es la base para todos los lenguajes de programación existentes en la actualidad."
+          ]
+        }
+      }
     },
     {
       "id": "bd7125d8c441eddfbeb5bddf",
@@ -240,18 +256,22 @@
       ],
       "type": "hike",
       "challengeType": 6,
-      "descriptionEs": [
-        "En este vídeo, decodificaremos un número escrito en notación binaria.",
-        "Hablemos sobre el sistema de numeración binario, también conocido como un montón de 1s y 0s una y otra vez.",
-        "Vamos a empezar por la numeración de las posiciones, observando de atrás hacia adelante, comenzando en 0 hasta llegar a la cantidad de dígitos del número menos uno.",
-        "(En este video hay 7, pero como comenzamos a numerar en 0, llegamos hasta 6.) Muy claro.",
-        "El siguiente paso es tomar 2 a la potencia de la posición, un 2 a la 0, 2 a la 1, y así sucesivamente hasta la posición de mayor numeración.",
-        "Entonces, todo lo que tenemos que hacer es llenar algunos espacios en blanco completando las potencias de 2.",
-        "Si hay un 1, dejamos el número (2 a la potencia de la posición) y lo agregamos a los números de otras posiciones que estén en  \"1\" o \"encendidas\".",
-        "Si es un 0, hacemos caso omiso del número de esa posición.",
-        "En este video, la suma de los números da 75."
-      ],
-      "titleEs": "Fundamentos básicos del computador: decodificar un número binario"
+      "translations": {
+        "es": {
+          "title": "Fundamentos básicos del computador: decodificar un número binario",
+          "description": [
+            "En este vídeo, decodificaremos un número escrito en notación binaria.",
+            "Hablemos sobre el sistema de numeración binario, también conocido como un montón de 1s y 0s una y otra vez.",
+            "Vamos a empezar por la numeración de las posiciones, observando de atrás hacia adelante, comenzando en 0 hasta llegar a la cantidad de dígitos del número menos uno.",
+            "(En este video hay 7, pero como comenzamos a numerar en 0, llegamos hasta 6.) Muy claro.",
+            "El siguiente paso es tomar 2 a la potencia de la posición, un 2 a la 0, 2 a la 1, y así sucesivamente hasta la posición de mayor numeración.",
+            "Entonces, todo lo que tenemos que hacer es llenar algunos espacios en blanco completando las potencias de 2.",
+            "Si hay un 1, dejamos el número (2 a la potencia de la posición) y lo agregamos a los números de otras posiciones que estén en  \"1\" o \"encendidas\".",
+            "Si es un 0, hacemos caso omiso del número de esa posición.",
+            "En este video, la suma de los números da 75."
+          ]
+        }
+      }
     },
     {
       "id": "bd7122d8c441eddfbeb5bddf",
@@ -285,16 +305,20 @@
       ],
       "type": "hike",
       "challengeType": 6,
-      "descriptionEs": [
-        "En binario se puede hacer más que representar números - mediante bytes, puede simbolizar todos los símbolos alfanuméricos, los cuales pueden ser interpretados en códigos más complejos",
-        "Vamos a hablar sobre el nivel más básico que un computador puede comprender otros lenguajes como JavaScript.",
-        "Lo más básico es un bit, arriba o abajo, 1 ó 0.",
-        "Después de eso hay un byte de 8 bits.",
-        "Todos los números (255 y menos), las letras y símbolos se pueden traducir en bytes que el computador puede entender.",
-        "Por lo tanto, todos los números, letras y símbolos en su código JavaScript se puede traducir.",
-        "Hay una gran cantidad de lenguajes con los cuales los computadores pueden operar, y lo que quiero que te quede de este video es que todos los datos en tu computador se reducen a bytes binarios."
-      ],
-      "titleEs": "Fundamentos básicos del computador: Bytes en binario"
+      "translations": {
+        "es": {
+          "title": "Fundamentos básicos del computador: Bytes en binario",
+          "description": [
+            "En binario se puede hacer más que representar números - mediante bytes, puede simbolizar todos los símbolos alfanuméricos, los cuales pueden ser interpretados en códigos más complejos",
+            "Vamos a hablar sobre el nivel más básico que un computador puede comprender otros lenguajes como JavaScript.",
+            "Lo más básico es un bit, arriba o abajo, 1 ó 0.",
+            "Después de eso hay un byte de 8 bits.",
+            "Todos los números (255 y menos), las letras y símbolos se pueden traducir en bytes que el computador puede entender.",
+            "Por lo tanto, todos los números, letras y símbolos en su código JavaScript se puede traducir.",
+            "Hay una gran cantidad de lenguajes con los cuales los computadores pueden operar, y lo que quiero que te quede de este video es que todos los datos en tu computador se reducen a bytes binarios."
+          ]
+        }
+      }
     },
     {
       "id": "bd7124d8c441eddfbeb5bddf",
@@ -333,21 +357,25 @@
       ],
       "type": "hike",
       "challengeType": 6,
-      "descriptionEs": [
-        "¿Cómo se mide el tamaño/cantidad de datos, a partir de un bit y continuando hasta un petabyte.",
-        "Hoy vamos a estar hablando de tamaño de los datos.",
-        "El tamaño más pequeño que podemos tener se llama un <em>bit</em>.",
-        "Ese bit sólo puede ser un 1 o un 0, y se refiere a la codificación binaria de la que hemos estado hablando.",
-        "Después de eso, tenemos un <em>nibble</em>, que consta de 4 bits, que no es común, pero es adorable.",
-        "El <em>byte</em>, que es muy común, se trata de 8 bits.",
-        "Una gran cantidad de cosas se expresan en bytes binarios.",
-        "Después de pasar por el bit y el byte, empezamos a crecer en tamaño realmente rápido.",
-        "El siguiente paso es un kilobyte, 1024 bytes, o 8192 bits.",
-        "Después de eso no hay Megabyte, o 1024 bytes a la potencia de dos.",
-        "Entonces es Gigabyte, 1024 Bytes a la tercera potencia; Terabyte, 1024 bytes a la cuarta potencia y petabyte que es 1024 a la quinta potencia.",
-        "!Crecieron realmente rápidamente!"
-      ],
-      "titleEs": "Fundamentos básicos del computador: Cómo medir el tamaño de los datos"
+      "translations": {
+        "es": {
+          "title": "Fundamentos básicos del computador: Cómo medir el tamaño de los datos",
+          "description": [
+            "¿Cómo se mide el tamaño/cantidad de datos, a partir de un bit y continuando hasta un petabyte.",
+            "Hoy vamos a estar hablando de tamaño de los datos.",
+            "El tamaño más pequeño que podemos tener se llama un <em>bit</em>.",
+            "Ese bit sólo puede ser un 1 o un 0, y se refiere a la codificación binaria de la que hemos estado hablando.",
+            "Después de eso, tenemos un <em>nibble</em>, que consta de 4 bits, que no es común, pero es adorable.",
+            "El <em>byte</em>, que es muy común, se trata de 8 bits.",
+            "Una gran cantidad de cosas se expresan en bytes binarios.",
+            "Después de pasar por el bit y el byte, empezamos a crecer en tamaño realmente rápido.",
+            "El siguiente paso es un kilobyte, 1024 bytes, o 8192 bits.",
+            "Después de eso no hay Megabyte, o 1024 bytes a la potencia de dos.",
+            "Entonces es Gigabyte, 1024 Bytes a la tercera potencia; Terabyte, 1024 bytes a la cuarta potencia y petabyte que es 1024 a la quinta potencia.",
+            "!Crecieron realmente rápidamente!"
+          ]
+        }
+      }
     },
     {
       "id": "bd7123d8c441eddfbeb5bddf",
@@ -381,20 +409,24 @@
       ],
       "type": "hike",
       "challengeType": 6,
-      "descriptionEs": [
-        "La velocidad de datos y el tamaño de los datos se miden de manera diferente.",
-        "En este video, cubrimos cómo se mide la velocidad de los datos.",
-        "Hablemos sobre la velocidad de datos.",
-        "La velocidad de datos, a diferencia de tamaño de los datos, por lo general se mide en bits por segundo, mientras que el tamaño se mide en bits.",
-        "Una vez que empecemos a hablar de forma exponencial, esto hará una gran diferencia.",
-        "Cuando hablemos de velocidad dependerá del contexto al que nos refiramos.",
-        "En descarga de audio, hablamos de kilobits por segundo.",
-        "En Internet, utilizamos megabits por segundo.",
-        "En la velocidad de red, hablamos de gigabits por segundo (¡mil millones de bits por segundo!).",
-        "La conclusión principal es que la velocidad se mide generalmente en bits por segundo mientras que el tamaño se mide en bytes.",
-        "Además, si tienes una velocidad de internet de cierta cantidad de bits por segundo, ten en cuenta que te están hablando de algo que es la octava parte de la cantidad en bytes, que es la manera típica como mides tamaños de datos."
-      ],
-      "titleEs": "Fundamentos básicos del computador: medición de la velocidad de datos"
+      "translations": {
+        "es": {
+          "title": "Fundamentos básicos del computador: medición de la velocidad de datos",
+          "description": [
+            "La velocidad de datos y el tamaño de los datos se miden de manera diferente.",
+            "En este video, cubrimos cómo se mide la velocidad de los datos.",
+            "Hablemos sobre la velocidad de datos.",
+            "La velocidad de datos, a diferencia de tamaño de los datos, por lo general se mide en bits por segundo, mientras que el tamaño se mide en bits.",
+            "Una vez que empecemos a hablar de forma exponencial, esto hará una gran diferencia.",
+            "Cuando hablemos de velocidad dependerá del contexto al que nos refiramos.",
+            "En descarga de audio, hablamos de kilobits por segundo.",
+            "En Internet, utilizamos megabits por segundo.",
+            "En la velocidad de red, hablamos de gigabits por segundo (¡mil millones de bits por segundo!).",
+            "La conclusión principal es que la velocidad se mide generalmente en bits por segundo mientras que el tamaño se mide en bytes.",
+            "Además, si tienes una velocidad de internet de cierta cantidad de bits por segundo, ten en cuenta que te están hablando de algo que es la octava parte de la cantidad en bytes, que es la manera típica como mides tamaños de datos."
+          ]
+        }
+      }
     },
     {
       "id": "bd7121d8c441eddfbeb5bddf",
@@ -433,21 +465,25 @@
       ],
       "type": "hike",
       "challengeType": 6,
-      "descriptionEs": [
-        "Este video cubre los conceptos básicos de los supercomputadores, servidores, estaciones de trabajo, PC y microcontroladores.",
-        "Vamos a discutir los diferentes tipos de computadores.",
-        "El tipo más grande se llama un super computador, un computador con muchas CPUs que trabajan en el mismo problema, al mismo tiempo usando una técnica llamada de procesamiento en paralelo.",
-        "El siguiente tipo se llama un servidor.",
-        "Un servidor guarda y accede a una gran cantidad de datos o programas.",
-        "FreeCodeCamp se encuentra alojado en un servidor que almacena toda esa información.",
-        "Vamos a hablar ahora acerca de una estación de trabajo - un equipo que puede ser similar a un computador personal, pero mucho más potente y costoso.",
-        "Toy Story fue construido en estaciones de trabajo.",
-        "Ahora, los computadores personales son, por mucho, los más comunes.",
-        "Tal vez has oído \"¡Soy un Mac!\" o \"¡Soy un PC!\", Algo que indica que son diferentes, pero en realidad mi propio MacBook personal sigue siendo un PC, un computador personal.",
-        "Es a la vez un Mac y un PC.",
-        "El último tipo de equipo del que hablaremos es un microcontrolador, el tipo de equipo que puedes tener en tu carro que es realmente bueno en una pequeña tarea especializada, pero no se utilizaría la misma forma que un PC."
-      ],
-      "titleEs": "Fundamentos básicos del computador: Tipos de Computadores"
+      "translations": {
+        "es": {
+          "title": "Fundamentos básicos del computador: Tipos de Computadores",
+          "description": [
+            "Este video cubre los conceptos básicos de los supercomputadores, servidores, estaciones de trabajo, PC y microcontroladores.",
+            "Vamos a discutir los diferentes tipos de computadores.",
+            "El tipo más grande se llama un super computador, un computador con muchas CPUs que trabajan en el mismo problema, al mismo tiempo usando una técnica llamada de procesamiento en paralelo.",
+            "El siguiente tipo se llama un servidor.",
+            "Un servidor guarda y accede a una gran cantidad de datos o programas.",
+            "FreeCodeCamp se encuentra alojado en un servidor que almacena toda esa información.",
+            "Vamos a hablar ahora acerca de una estación de trabajo - un equipo que puede ser similar a un computador personal, pero mucho más potente y costoso.",
+            "Toy Story fue construido en estaciones de trabajo.",
+            "Ahora, los computadores personales son, por mucho, los más comunes.",
+            "Tal vez has oído \"¡Soy un Mac!\" o \"¡Soy un PC!\", Algo que indica que son diferentes, pero en realidad mi propio MacBook personal sigue siendo un PC, un computador personal.",
+            "Es a la vez un Mac y un PC.",
+            "El último tipo de equipo del que hablaremos es un microcontrolador, el tipo de equipo que puedes tener en tu carro que es realmente bueno en una pequeña tarea especializada, pero no se utilizaría la misma forma que un PC."
+          ]
+        }
+      }
     },
     {
       "id": "bd7120d8c441eddfbeb5bddf",
@@ -488,23 +524,27 @@
       ],
       "type": "hike",
       "challengeType": 6,
-      "descriptionEs": [
-        "Un poco más de detalle sobre lo que constituye una placa base y sus funciones estándar en un computador.",
-        "Hoy vamos a hablar más sobre la placa base.",
-        "La hemos mencionado brevemente en videos anteriores, pero vamos a dar algunos detalles más hoy.",
-        "Lo que hace una placa base es la conexión entre la CPU y la memoria - si no lo hace, no es una placa base.",
-        "Sin embargo, la mayoría de placas base hacen mucho más que eso.",
-        "En primer lugar, tienen ranuras de expansión y puertos.",
-        "Las ranuras de expansión es donde pones tarjetas de expansión que aumentan el rendimiento o la funcionalidad de un equipo sin poner más carga en la CPU.",
-        "Por ejemplo, una tarjeta graficadora o una tarjeta de sonido mejora la experiencia del usuario con más calidad de vídeo o de sonido o vídeo, pero sin hacer más lento el computador.",
-        "Una tarjeta de red también puede ir en una ranura de expansión.",
-        "Esto ayudaría a tu computador a conectarse a las redes de alrededor, algo de lo que hablaremos más en los próximos vídeos.",
-        "Las tarjetas ExpressCard se encuentran principalmente en computadores portátiles, y están prevalenciendo debido a su tamaño más pequeño.",
-        "Además de las ranuras de expansión, las placas base tienen puertos.",
-        "En tu computador, probablemente sabes que hay un lugar para conectar USB, FireWire, tarjeta SD, Ethernet, e incluso un plug-in de audio para escuchar a través de auriculares.",
-        "Todos estos son considerados puertos, un lugar en la placa base donde puedes conectar la CPU a algun dispositivo externo bien para obtener o para dar información."
-      ],
-      "titleEs": "Fundamentos básicos del computador: Más sobre la placa base"
+      "translations": {
+        "es": {
+          "title": "Fundamentos básicos del computador: Más sobre la placa base",
+          "description": [
+            "Un poco más de detalle sobre lo que constituye una placa base y sus funciones estándar en un computador.",
+            "Hoy vamos a hablar más sobre la placa base.",
+            "La hemos mencionado brevemente en videos anteriores, pero vamos a dar algunos detalles más hoy.",
+            "Lo que hace una placa base es la conexión entre la CPU y la memoria - si no lo hace, no es una placa base.",
+            "Sin embargo, la mayoría de placas base hacen mucho más que eso.",
+            "En primer lugar, tienen ranuras de expansión y puertos.",
+            "Las ranuras de expansión es donde pones tarjetas de expansión que aumentan el rendimiento o la funcionalidad de un equipo sin poner más carga en la CPU.",
+            "Por ejemplo, una tarjeta graficadora o una tarjeta de sonido mejora la experiencia del usuario con más calidad de vídeo o de sonido o vídeo, pero sin hacer más lento el computador.",
+            "Una tarjeta de red también puede ir en una ranura de expansión.",
+            "Esto ayudaría a tu computador a conectarse a las redes de alrededor, algo de lo que hablaremos más en los próximos vídeos.",
+            "Las tarjetas ExpressCard se encuentran principalmente en computadores portátiles, y están prevalenciendo debido a su tamaño más pequeño.",
+            "Además de las ranuras de expansión, las placas base tienen puertos.",
+            "En tu computador, probablemente sabes que hay un lugar para conectar USB, FireWire, tarjeta SD, Ethernet, e incluso un plug-in de audio para escuchar a través de auriculares.",
+            "Todos estos son considerados puertos, un lugar en la placa base donde puedes conectar la CPU a algun dispositivo externo bien para obtener o para dar información."
+          ]
+        }
+      }
     },
     {
       "id": "bd712fd8c441eddfbeb5bddf",
@@ -545,22 +585,26 @@
       ],
       "type": "hike",
       "challengeType": 6,
-      "descriptionEs": [
-        "Este video cubre los conceptos básicos de redes de área local, redes de área amplia y redes privadas virtuales.",
-        "En este vídeo se habla de redes de datos.",
-        "Usted ha oído hablar de las redes, como una red de agua, red de carreteras, red de telefonía celular, o red de televisión.",
-        "Hoy hablaremos de redes de datos, que son las redes que utilizan los computadores.",
-        "Los tres tipos que vamos a cubrir son la red de área local (LAN), la red de área extensa (WAN), y la red privada virtual (VPN).",
-        "Una LAN es sólo un pequeño grupo de computadores que están conectados entre sí.",
-        "Lo más importante acerca de una LAN es que esos equipos están cercmuy juntas.",
-        "Por lo tanto, si estás usando WiFi en Starbucks o en su escuela, es probable que estés utilizando una LAN a la que sólo puedes conectarte si estás físicamente cerca.",
-        "Una WAN (Wide Area Network) es dos o más LANs que están conectados a través de grandes distancias.",
-        "Por ejemplo, tal vez una escuela en Colorado quiere conectarse a una escuela en Missouri.",
-        "Podrían utilizar una WAN.",
-        "Podrías pensar que estas es posible conectarlas usando Internet, y en el caso de una VPN (red privada virtual, que conceptualmente es básicamente lo mismo que una una WAN), tendrías la razón.",
-        "Sin embargo, por lo general una WAN alquila un cable de una empresa de Internet para crear la conexión."
-      ],
-      "titleEs": "Fundamentos básicos del computador: Redes de datos"
+      "translations": {
+        "es": {
+          "title": "Fundamentos básicos del computador: Redes de datos",
+          "description": [
+            "Este video cubre los conceptos básicos de redes de área local, redes de área amplia y redes privadas virtuales.",
+            "En este vídeo se habla de redes de datos.",
+            "Usted ha oído hablar de las redes, como una red de agua, red de carreteras, red de telefonía celular, o red de televisión.",
+            "Hoy hablaremos de redes de datos, que son las redes que utilizan los computadores.",
+            "Los tres tipos que vamos a cubrir son la red de área local (LAN), la red de área extensa (WAN), y la red privada virtual (VPN).",
+            "Una LAN es sólo un pequeño grupo de computadores que están conectados entre sí.",
+            "Lo más importante acerca de una LAN es que esos equipos están cercmuy juntas.",
+            "Por lo tanto, si estás usando WiFi en Starbucks o en su escuela, es probable que estés utilizando una LAN a la que sólo puedes conectarte si estás físicamente cerca.",
+            "Una WAN (Wide Area Network) es dos o más LANs que están conectados a través de grandes distancias.",
+            "Por ejemplo, tal vez una escuela en Colorado quiere conectarse a una escuela en Missouri.",
+            "Podrían utilizar una WAN.",
+            "Podrías pensar que estas es posible conectarlas usando Internet, y en el caso de una VPN (red privada virtual, que conceptualmente es básicamente lo mismo que una una WAN), tendrías la razón.",
+            "Sin embargo, por lo general una WAN alquila un cable de una empresa de Internet para crear la conexión."
+          ]
+        }
+      }
     },
     {
       "id": "bd712ed8c441eddfbeb5bddf",
@@ -594,21 +638,25 @@
       ],
       "type": "hike",
       "challengeType": 6,
-      "descriptionEs": [
-        "Cada dispositivo tiene una dirección IP.",
-        "Las direcciones IP se asignan en función de la ubicación, y son vitales para que Internet funcione.",
-        "Vamos a hablar sobre Internet: Parte 1, Cómo funciona Internet.",
-        "Para saber cómo funciona Internet, vamos a hablar primero de direcciones IP.",
-        "Puedes estar familiarizado con el hecho de que cada uno de los dispositivos tiene su propia dirección IP, como una casa o un apartamento tienen su propia dirección.",
-        "En Internet no es posible enviar datos a un dispositivo a menos que este tenga una dirección IP.",
-        "No sólo el dispositivo debe tener una IP, sino también el módem, el enrutador, y cada dispositivo intermedio en el camino entre el emisor y el receptor, como veremos más adelante.",
-        "Las direcciones IP se determinan en función de la ubicación, comenzando con 5 regiones internacionales grandes.",
-        "De izquierda a derecha, los números significan algo específico acerca de su ubicación.",
-        "Este número no es lo suficientemente específico como para que llames al 911, les des tu dirección IP, y así les permitas saber donde vives.",
-        "Sin embargo, es lo suficientemente específico como para buscar en Google \"¿Dónde está el mejor helado cerca de mí\" y Google podría darte información cercana a tu ubicación.",
-        "Esto se hace utilizando tu dirección IP."
-      ],
-      "titleEs": "Fundamentos básicos del computador: Direcciones IP"
+      "translations": {
+        "es": {
+          "title": "Fundamentos básicos del computador: Direcciones IP",
+          "description": [
+            "Cada dispositivo tiene una dirección IP.",
+            "Las direcciones IP se asignan en función de la ubicación, y son vitales para que Internet funcione.",
+            "Vamos a hablar sobre Internet: Parte 1, Cómo funciona Internet.",
+            "Para saber cómo funciona Internet, vamos a hablar primero de direcciones IP.",
+            "Puedes estar familiarizado con el hecho de que cada uno de los dispositivos tiene su propia dirección IP, como una casa o un apartamento tienen su propia dirección.",
+            "En Internet no es posible enviar datos a un dispositivo a menos que este tenga una dirección IP.",
+            "No sólo el dispositivo debe tener una IP, sino también el módem, el enrutador, y cada dispositivo intermedio en el camino entre el emisor y el receptor, como veremos más adelante.",
+            "Las direcciones IP se determinan en función de la ubicación, comenzando con 5 regiones internacionales grandes.",
+            "De izquierda a derecha, los números significan algo específico acerca de su ubicación.",
+            "Este número no es lo suficientemente específico como para que llames al 911, les des tu dirección IP, y así les permitas saber donde vives.",
+            "Sin embargo, es lo suficientemente específico como para buscar en Google \"¿Dónde está el mejor helado cerca de mí\" y Google podría darte información cercana a tu ubicación.",
+            "Esto se hace utilizando tu dirección IP."
+          ]
+        }
+      }
     },
     {
       "id": "bd712dd8c441eddfbeb5bddf",
@@ -644,22 +692,26 @@
       ],
       "type": "hike",
       "challengeType": 6,
-      "descriptionEs": [
-        "Esta es una descripción breve y descripción de cómo funciona Internet.",
-        "Para una explicación más en profundidad, dale un vistazo a <a href='http://web.stanford.edu/class/msande91si/www-spr04/readings/week1/InternetWhitepaper.htm' target='_blank'>web.stanford.edu/class/msande91si/www-spr04/readings/week1/InternetWhitepaper.htm</a>.",
-        "Vamos a hablar un poco más acerca de cómo funciona el Internet.",
-        "Ya hemos establecido que todos los dispositivos y enrutadores en Internet tienen su propia dirección IP, que se asigna en función de la ubicación.",
-        "Usando estas direcciones IP, tu dispositivo puede hablar con tu módem, y después con un enrutador, el cual debió ser configurado por ejemplo con un servicio web con el que te intentas conectar.",
-        "El enrutador acudiría al servidor de nombres de dominio, enviando una petición.",
-        "Ese servidor retornaría la información solicitada, que a su vez regresaría a tu dispositivo.",
-        "Podrías pensar que algo así es falible; si un paso falla, el proceso entero falla.",
-        "Pero en realidad, hay tantos enrutadores y tantas rutas que si incluso una gran parte se apaga, esta en realidad no afectará la funcionalidad.",
-        "Es realmente increíble.",
-        "Lo que quiero que te lleves de este video es que tu dispositivo, que tiene una dirección IP, puede enviar una petición de información, y que esa información regresará a tu dispositivo por medio de servidores y enrutadores que componen el Internet.",
-        "Ahora bien, esta explicación es realmente básica.",
-        "Para obtener más información, echa un vistazo a <a href='http://web.stanford.edu/class/msande91si/www-spr04/readings/week1/InternetWhitepaper.htm' target='_blank'>web.stanford.edu/class/msande91si/www-spr04/readings/week1/InternetWhitepaper.htm</a>."
-      ],
-      "titleEs": "Fundamentos básicos del computador: ¿Cómo funciona Internet"
+      "translations": {
+        "es": {
+          "title": "Fundamentos básicos del computador: ¿Cómo funciona Internet",
+          "description": [
+            "Esta es una descripción breve y descripción de cómo funciona Internet.",
+            "Para una explicación más en profundidad, dale un vistazo a <a href='http://web.stanford.edu/class/msande91si/www-spr04/readings/week1/InternetWhitepaper.htm' target='_blank'>web.stanford.edu/class/msande91si/www-spr04/readings/week1/InternetWhitepaper.htm</a>.",
+            "Vamos a hablar un poco más acerca de cómo funciona el Internet.",
+            "Ya hemos establecido que todos los dispositivos y enrutadores en Internet tienen su propia dirección IP, que se asigna en función de la ubicación.",
+            "Usando estas direcciones IP, tu dispositivo puede hablar con tu módem, y después con un enrutador, el cual debió ser configurado por ejemplo con un servicio web con el que te intentas conectar.",
+            "El enrutador acudiría al servidor de nombres de dominio, enviando una petición.",
+            "Ese servidor retornaría la información solicitada, que a su vez regresaría a tu dispositivo.",
+            "Podrías pensar que algo así es falible; si un paso falla, el proceso entero falla.",
+            "Pero en realidad, hay tantos enrutadores y tantas rutas que si incluso una gran parte se apaga, esta en realidad no afectará la funcionalidad.",
+            "Es realmente increíble.",
+            "Lo que quiero que te lleves de este video es que tu dispositivo, que tiene una dirección IP, puede enviar una petición de información, y que esa información regresará a tu dispositivo por medio de servidores y enrutadores que componen el Internet.",
+            "Ahora bien, esta explicación es realmente básica.",
+            "Para obtener más información, echa un vistazo a <a href='http://web.stanford.edu/class/msande91si/www-spr04/readings/week1/InternetWhitepaper.htm' target='_blank'>web.stanford.edu/class/msande91si/www-spr04/readings/week1/InternetWhitepaper.htm</a>."
+          ]
+        }
+      }
     },
     {
       "id": "bd712cd8c441eddfbeb5bddf",
@@ -685,17 +737,21 @@
       ],
       "type": "hike",
       "challengeType": 6,
-      "descriptionEs": [
-        "Diferenciamos entre hardware y software, y también discutimos las diferencias entre el sistema operativo y el software de aplicación.",
-        "En este video, vamos a discutir los fundamentos del software.",
-        "Ya hemos cubierto hardware, que son las partes del computador que puedes ver y sentir con tus manos.",
-        "El software es el programa o los programas que se ejecutan en el hardware.",
-        "El software es el código que queda escrito y se ejecuta en el hardware.",
-        "Los dos tipos de software de los cuales vamos a hablar hoy son el sistema operativo y las aplicaciones.",
-        "Hay tres sistemas operativos principales: Windows, Mac y Linux.",
-        "Las aplicaciones comprenden el resto del software, como tu navegador web, juegos, cosas como Photoshop, con lo que ves tu correo, o con lo que editas documentos, etc."
-      ],
-      "titleEs": "Fundamentos básicos del computador: Software"
+      "translations": {
+        "es": {
+          "title": "Fundamentos básicos del computador: Software",
+          "description": [
+            "Diferenciamos entre hardware y software, y también discutimos las diferencias entre el sistema operativo y el software de aplicación.",
+            "En este video, vamos a discutir los fundamentos del software.",
+            "Ya hemos cubierto hardware, que son las partes del computador que puedes ver y sentir con tus manos.",
+            "El software es el programa o los programas que se ejecutan en el hardware.",
+            "El software es el código que queda escrito y se ejecuta en el hardware.",
+            "Los dos tipos de software de los cuales vamos a hablar hoy son el sistema operativo y las aplicaciones.",
+            "Hay tres sistemas operativos principales: Windows, Mac y Linux.",
+            "Las aplicaciones comprenden el resto del software, como tu navegador web, juegos, cosas como Photoshop, con lo que ves tu correo, o con lo que editas documentos, etc."
+          ]
+        }
+      }
     },
     {
       "id": "56b15f15632298c12f31510f",
@@ -729,20 +785,24 @@
       ],
       "type": "hike",
       "challengeType": 6,
-      "descriptionEs": [
-        "Una red de distribución de contenido  (del inglés <em>Content Delivery Network</em>) es un sistema (red) de servidores distribuidos que sirven páginas web y otros contenidos web a los usuarios en función de su ubicación geográfica, el origen de la página web y un servidor de entrega de contenido.",
-        "El objetivo de una RDC (CDN) es establecer conexiones de red de mayor calidad.",
-        "Las RDC logran esto proporcionando rutas eficaces entre sus propios servidores que pueden encaminar rápidamente a los usuarios a sus destinos, o si resulta más rápido o económico, a otra copia del sitio web destino, la cual se aloja en otro servidor.",
-        "Este concepto y tipo de servicio no es nuevo, pero es cada vez más popular a medida que crece Internet.",
-        "Los sitios web contratan y pagan un servicio a las RDC, quienes a su vez le pagan a proveedores de Internet para utilizar sus servidores y almacenar en estos sus datos.",
-        "Un ejemplo de CDN son las Bibliotecas alojadas de Google - <a href='http://developers.google.com/speed/libraries/#jquery' target='_blank'>developers.google.com/speed/libraries/#jquery</a>",
-        "Google organiza estas bibliotecas para que tus usuarios puedan cargarlas en tus propios sitio web mucho más rápido que si las alojaras tu mismo.",
-        "Hay incluso una posibilidad de que el navegador del usuario le presente  una copia en `caché' (almacenamiento local temporal) realizada durante una visita previa, haciendo que el proceso sea aún más rápido. Si no estás familiarizado con el término 'caché', no te preocupes, vamos a cubrirlo en videos futuros. ",
-        "Como usuario, es probable que utilices RDC  todo el tiempo sin darte cuenta.",
-        "Como desarrollador, es posible que desees utilizar RDCs como las bibliotecas de Google para ayudar a que tu página cargue más rápido.",
-        "Como empresa, una RDC sería útil si quieres que tu producto o sitio llegue a los usuarios de manera más eficiente en el esquema más grande de su red y en Internet en su conjunto."
-      ],
-      "titleEs": "Fundamentos básicos del computador: Redes de distribución de contenido"
+      "translations": {
+        "es": {
+          "title": "Fundamentos básicos del computador: Redes de distribución de contenido",
+          "description": [
+            "Una red de distribución de contenido  (del inglés <em>Content Delivery Network</em>) es un sistema (red) de servidores distribuidos que sirven páginas web y otros contenidos web a los usuarios en función de su ubicación geográfica, el origen de la página web y un servidor de entrega de contenido.",
+            "El objetivo de una RDC (CDN) es establecer conexiones de red de mayor calidad.",
+            "Las RDC logran esto proporcionando rutas eficaces entre sus propios servidores que pueden encaminar rápidamente a los usuarios a sus destinos, o si resulta más rápido o económico, a otra copia del sitio web destino, la cual se aloja en otro servidor.",
+            "Este concepto y tipo de servicio no es nuevo, pero es cada vez más popular a medida que crece Internet.",
+            "Los sitios web contratan y pagan un servicio a las RDC, quienes a su vez le pagan a proveedores de Internet para utilizar sus servidores y almacenar en estos sus datos.",
+            "Un ejemplo de CDN son las Bibliotecas alojadas de Google - <a href='http://developers.google.com/speed/libraries/#jquery' target='_blank'>developers.google.com/speed/libraries/#jquery</a>",
+            "Google organiza estas bibliotecas para que tus usuarios puedan cargarlas en tus propios sitio web mucho más rápido que si las alojaras tu mismo.",
+            "Hay incluso una posibilidad de que el navegador del usuario le presente  una copia en `caché' (almacenamiento local temporal) realizada durante una visita previa, haciendo que el proceso sea aún más rápido. Si no estás familiarizado con el término 'caché', no te preocupes, vamos a cubrirlo en videos futuros. ",
+            "Como usuario, es probable que utilices RDC  todo el tiempo sin darte cuenta.",
+            "Como desarrollador, es posible que desees utilizar RDCs como las bibliotecas de Google para ayudar a que tu página cargue más rápido.",
+            "Como empresa, una RDC sería útil si quieres que tu producto o sitio llegue a los usuarios de manera más eficiente en el esquema más grande de su red y en Internet en su conjunto."
+          ]
+        }
+      }
     },
     {
       "id": "bd7129d80441eddfbeb5bddf",
@@ -778,22 +838,26 @@
       ],
       "type": "hike",
       "challengeType": 6,
-      "descriptionEs": [
-        "¿Cómo los computadores pueden volver sonido analógico en archivos digitales, y los pros y los contras de la compresión de datos?",
-        "Vamos a discutir datos anàlogos frente a datos digitales en un nivel muy básico.",
-        "Más especificamente, hablaremos de cómo los computadores interpretan el sonido analógico y lo convierten en un archivo digital.",
-        "Una onda de sonido analógico podría parecerse a cualquier cosa, pero para este ejemplo es una línea ondulada.",
-        "El equipo lo toma y realiza mediciones en muchos puntos diferentes, convirtiéndo las mediciones en números.",
-        "Esto se denomina muestreo.",
-        "Posteriormente, el equipo puede tomar esos números y convertirlos en un sonido de nuevo.",
-        "Vamos a discutir también la compresión de datos.",
-        "El beneficio de la compresión es que resulta en un archivo más pequeño: es más fácil de almacenar, es más fácil de enviar a otra persona, y sencillamente ocupa menos espacio.",
-        "Una de las maneras de lograrlo con sonidos es haciendo un muestreo con menor frecuencia (por ejemplo cada 5 milisegundos en lugar de cada milisegundo).",
-        "Otra forma es tomando una medida desde un punto medio y no desde 0, de forma que los número registrados sean más pequeños.",
-        "En imágenes, se hace midiendo grupos de a 16 píxeles en lugar de hacer mediciones individuales.",
-        "Lo que te llevas de este video es que querrás utilizar archivos digitales pues son de mayor calidad, y cuando te fijes en compresión, tendrás que decidir qué tan lejos estás dispuesto a ir para garantizar que el usuario tenga la mejor experiencia posible."
-      ],
-      "titleEs": "Analógico vs digital y compresión de archivos"
+      "translations": {
+        "es": {
+          "title": "Analógico vs digital y compresión de archivos",
+          "description": [
+            "¿Cómo los computadores pueden volver sonido analógico en archivos digitales, y los pros y los contras de la compresión de datos?",
+            "Vamos a discutir datos anàlogos frente a datos digitales en un nivel muy básico.",
+            "Más especificamente, hablaremos de cómo los computadores interpretan el sonido analógico y lo convierten en un archivo digital.",
+            "Una onda de sonido analógico podría parecerse a cualquier cosa, pero para este ejemplo es una línea ondulada.",
+            "El equipo lo toma y realiza mediciones en muchos puntos diferentes, convirtiéndo las mediciones en números.",
+            "Esto se denomina muestreo.",
+            "Posteriormente, el equipo puede tomar esos números y convertirlos en un sonido de nuevo.",
+            "Vamos a discutir también la compresión de datos.",
+            "El beneficio de la compresión es que resulta en un archivo más pequeño: es más fácil de almacenar, es más fácil de enviar a otra persona, y sencillamente ocupa menos espacio.",
+            "Una de las maneras de lograrlo con sonidos es haciendo un muestreo con menor frecuencia (por ejemplo cada 5 milisegundos en lugar de cada milisegundo).",
+            "Otra forma es tomando una medida desde un punto medio y no desde 0, de forma que los número registrados sean más pequeños.",
+            "En imágenes, se hace midiendo grupos de a 16 píxeles en lugar de hacer mediciones individuales.",
+            "Lo que te llevas de este video es que querrás utilizar archivos digitales pues son de mayor calidad, y cuando te fijes en compresión, tendrás que decidir qué tan lejos estás dispuesto a ir para garantizar que el usuario tenga la mejor experiencia posible."
+          ]
+        }
+      }
     },
     {
       "id": "bd7129d8b441eddfbeb5bddf",
@@ -845,33 +909,37 @@
       ],
       "type": "hike",
       "challengeType": 6,
-      "descriptionEs": [
-        "En este video, vamos a entrar en más detalle respecto a enrutadores y paquetes, conceptos importantes para entender cómo funciona Internet.",
-        "Vamos a hablar más acerca de los enrutadores y cómo se relacionan con la creación de redes.",
-        "Los enrutadores son los dispositivos que conectan diferentes pequeñas redes.",
-        "Quiero dar una metáfora para esto: Soy maestra y trabajo en una escuela.",
-        "Digamos que tengo un paquete que necesito hacer llegar a alguien que trabaja en las oficinas de distrito.",
-        "No sé dónde está, no sé donde se encuentra su oficina, pero conozco su nombre.",
-        "Voy a mi secretaria, como mi primer enrutador, y digo \"Hey, tengo que hacer llegar que esto a tal persona en la oficina del distrito, ¿podrías ayudarme por favor?\", y ella va a decir \"Claro, no sé exactamente dónde está su oficina tampoco, pero sé que hacer a continuación, hacerlo llegar al distrito\".",
-        "Así que ella continua y lo envía a la secretaria en la oficina del distrito, el siguiente enrutador.",
-        "Eso secretaria no tiene idea de quién soy ni dónde estoy, pero ve el nombre del paquete y conoce la ubicación final.",
-        "Lo que estoy tratando de explicar aquí es que cada enrutador sólo tiene que conocer su propia pequeña red, las paradas justo al lado de él.",
-        "No tiene por qué conocer toda la Internet, sino sólo sus propias conexiones.",
-        "Puede tomar información y decir, bien, no sé exactamente donde eso va, pero voy a dirigirlo a la dirección correcta.",
-        "Eso es realmente todo lo que necesita.",
-        "Los enrutador pueden ser de diferentes tamaños, diferentes capacidades, pero lo que hacen es conocer su propio vecindario, tomar la información, y pasarla en la dirección correcta.",
-        "Otra cosa que introduciremos un poco más adelante es que los enrutadores ni siquiera necesitan tener el paquete completo de información.",
-        "Si un equipo trata de enviar información a otro, los datos podrían dividirse entre enrutadores diferentes y también estaría bien.",
-        "Los computadores aún saben cómo reagrupar la información correctamente.",
-        "Las pequeñas piezas de información que se envían se llaman paquetes.",
-        "Los paquetes son realmente pequeñas piezas de código binario (que describimos antes).",
-        "Este es un ejemplo de como lucen los paquetes, una representación visual de la corriente eléctrica que el computador puede traducirse en 1s y 0s, que ya todos sabemos es binario que puede representar literalmente cualquier información digital.",
-        "Estos pequeños paquetes se envían a través de enrutadores, y si un archivo es demasiado grande para un paquete, se pueden dividir en tramas más pequeñas (pequeños paquetes).",
-        "Las tramas no tienen que recorrer la misma ruta hasta el destino final.",
-        "Pueden tomar cualquier ruta abierta, la que sea más rápida, y dado que tienen la dirección IP final, todos los enrutadores saben dónde enviarlos.",
-        "Una vez que llegan al destino final, ese computador sabe cómo poner junta toda la información."
-      ],
-      "titleEs": "Enrutadores y paquetes"
+      "translations": {
+        "es": {
+          "title": "Enrutadores y paquetes",
+          "description": [
+            "En este video, vamos a entrar en más detalle respecto a enrutadores y paquetes, conceptos importantes para entender cómo funciona Internet.",
+            "Vamos a hablar más acerca de los enrutadores y cómo se relacionan con la creación de redes.",
+            "Los enrutadores son los dispositivos que conectan diferentes pequeñas redes.",
+            "Quiero dar una metáfora para esto: Soy maestra y trabajo en una escuela.",
+            "Digamos que tengo un paquete que necesito hacer llegar a alguien que trabaja en las oficinas de distrito.",
+            "No sé dónde está, no sé donde se encuentra su oficina, pero conozco su nombre.",
+            "Voy a mi secretaria, como mi primer enrutador, y digo \"Hey, tengo que hacer llegar que esto a tal persona en la oficina del distrito, ¿podrías ayudarme por favor?\", y ella va a decir \"Claro, no sé exactamente dónde está su oficina tampoco, pero sé que hacer a continuación, hacerlo llegar al distrito\".",
+            "Así que ella continua y lo envía a la secretaria en la oficina del distrito, el siguiente enrutador.",
+            "Eso secretaria no tiene idea de quién soy ni dónde estoy, pero ve el nombre del paquete y conoce la ubicación final.",
+            "Lo que estoy tratando de explicar aquí es que cada enrutador sólo tiene que conocer su propia pequeña red, las paradas justo al lado de él.",
+            "No tiene por qué conocer toda la Internet, sino sólo sus propias conexiones.",
+            "Puede tomar información y decir, bien, no sé exactamente donde eso va, pero voy a dirigirlo a la dirección correcta.",
+            "Eso es realmente todo lo que necesita.",
+            "Los enrutador pueden ser de diferentes tamaños, diferentes capacidades, pero lo que hacen es conocer su propio vecindario, tomar la información, y pasarla en la dirección correcta.",
+            "Otra cosa que introduciremos un poco más adelante es que los enrutadores ni siquiera necesitan tener el paquete completo de información.",
+            "Si un equipo trata de enviar información a otro, los datos podrían dividirse entre enrutadores diferentes y también estaría bien.",
+            "Los computadores aún saben cómo reagrupar la información correctamente.",
+            "Las pequeñas piezas de información que se envían se llaman paquetes.",
+            "Los paquetes son realmente pequeñas piezas de código binario (que describimos antes).",
+            "Este es un ejemplo de como lucen los paquetes, una representación visual de la corriente eléctrica que el computador puede traducirse en 1s y 0s, que ya todos sabemos es binario que puede representar literalmente cualquier información digital.",
+            "Estos pequeños paquetes se envían a través de enrutadores, y si un archivo es demasiado grande para un paquete, se pueden dividir en tramas más pequeñas (pequeños paquetes).",
+            "Las tramas no tienen que recorrer la misma ruta hasta el destino final.",
+            "Pueden tomar cualquier ruta abierta, la que sea más rápida, y dado que tienen la dirección IP final, todos los enrutadores saben dónde enviarlos.",
+            "Una vez que llegan al destino final, ese computador sabe cómo poner junta toda la información."
+          ]
+        }
+      }
     },
     {
       "id": "bd7029d8c441eddfbeb5bddf",
@@ -916,27 +984,31 @@
       ],
       "type": "hike",
       "challengeType": 6,
-      "descriptionEs": [
-        "En este video se discute lo que es código fuente, intérpretes y compiladores, y lo que significa fuentes abiertas.",
-        "Vamos a hablar sobre el código fuente: lo que el código fuente es, donde lo puedes ver, y cómo el computador lo entiende.",
-        "El código fuente en sí es el documento de texto que el programador crea: ellos lo teclean, sus letras, números y símbolos",
-        "Si le das ese documento a alguien y le pides verlo en su computador arle eso a alguien y hacer que miren en ese documento en su computador, eso no les permitirá leer su correo, ni es un navegador, es sólo un documento de texto.",
-        "El computador tiene que tener una forma de interpretarlo y hacer que algo realmente potente se ejecute a partir de este.",
-        "Hay dos maneras principales von las que se hace: bien por un intérprete o bien con un compilador",
-        "Cada navegador tiene un intérprete, y así es como se procesa JavaScript.",
-        "Otros lenguajes, como C ++, se utilizan con un compilador.",
-        "A diferencia de un intérprete, el compilador hace todo su trabajo al lado del programador.",
-        "Ellos publican sus paquetes, sus productos, que ya han sido compilados,  y que esán listos para ser ejecutados en un computador.",
-        "En el caso de Javascript, por otra parte, y de otros lenguajes interpretados, tu sólo escribes el JavaScript y el navegador al lado del usuario tiene la capacidad de interpretarlo de manera que no neceistas un compilador.",
-        "Todo el mundo tiene su opinión de que es mejor (intérprete o compilador), pero en realidad cada uno tiene sus ventajas y desventajas, y depende del caso a caso.",
-        "Son mejores en diferentes cosas.",
-        "Ahora, vamos a centrarnos en lo que significa fuentes abiertas.",
-        "FreeCodeCamp es de fuentes abiertas, que significa que toda la documentación y el código fuente son abiertas y accesibles.",
-        "Podrías preguntarte, \"¿y eso qué?\", pero lo que es increíble es que si deseas cambiar o mejorar FreeCodeCamp, puedes describir la mejora y tal vez implementarla.",
-        "Es una gran manera para los sitios web y para el software de crecer de forma fuerte y rápida debido a la comunidad que trabaja en conjunto para mejorarlo.",
-        "Una regla no escrita al contribuir a proyectos de fuentes abiertas es que en general deberías compartir tus mejoras para que también sean de fuentes abiertas, y al retornar esa mejora al público también les permites a otros utilizar tus mejoras."
-      ],
-      "titleEs": "Código Fuente"
+      "translations": {
+        "es": {
+          "title": "Código Fuente",
+          "description": [
+            "En este video se discute lo que es código fuente, intérpretes y compiladores, y lo que significa fuentes abiertas.",
+            "Vamos a hablar sobre el código fuente: lo que el código fuente es, donde lo puedes ver, y cómo el computador lo entiende.",
+            "El código fuente en sí es el documento de texto que el programador crea: ellos lo teclean, sus letras, números y símbolos",
+            "Si le das ese documento a alguien y le pides verlo en su computador arle eso a alguien y hacer que miren en ese documento en su computador, eso no les permitirá leer su correo, ni es un navegador, es sólo un documento de texto.",
+            "El computador tiene que tener una forma de interpretarlo y hacer que algo realmente potente se ejecute a partir de este.",
+            "Hay dos maneras principales von las que se hace: bien por un intérprete o bien con un compilador",
+            "Cada navegador tiene un intérprete, y así es como se procesa JavaScript.",
+            "Otros lenguajes, como C ++, se utilizan con un compilador.",
+            "A diferencia de un intérprete, el compilador hace todo su trabajo al lado del programador.",
+            "Ellos publican sus paquetes, sus productos, que ya han sido compilados,  y que esán listos para ser ejecutados en un computador.",
+            "En el caso de Javascript, por otra parte, y de otros lenguajes interpretados, tu sólo escribes el JavaScript y el navegador al lado del usuario tiene la capacidad de interpretarlo de manera que no neceistas un compilador.",
+            "Todo el mundo tiene su opinión de que es mejor (intérprete o compilador), pero en realidad cada uno tiene sus ventajas y desventajas, y depende del caso a caso.",
+            "Son mejores en diferentes cosas.",
+            "Ahora, vamos a centrarnos en lo que significa fuentes abiertas.",
+            "FreeCodeCamp es de fuentes abiertas, que significa que toda la documentación y el código fuente son abiertas y accesibles.",
+            "Podrías preguntarte, \"¿y eso qué?\", pero lo que es increíble es que si deseas cambiar o mejorar FreeCodeCamp, puedes describir la mejora y tal vez implementarla.",
+            "Es una gran manera para los sitios web y para el software de crecer de forma fuerte y rápida debido a la comunidad que trabaja en conjunto para mejorarlo.",
+            "Una regla no escrita al contribuir a proyectos de fuentes abiertas es que en general deberías compartir tus mejoras para que también sean de fuentes abiertas, y al retornar esa mejora al público también les permites a otros utilizar tus mejoras."
+          ]
+        }
+      }
     },
     {
       "id": "bd712ad8c441eddfbeb5bddf",
@@ -970,19 +1042,23 @@
       ],
       "type": "hike",
       "challengeType": 6,
-      "nameEs": "Consola y Logging",
-      "descriptionEs": [
-        "Nosotros discutimos que es la consola (y donde está), porque es útil y mostrar un poco de como trabaja.",
-        "La consola: que es, donde la puedes encontrar, y para que la usas.",
-        "La consola es usada comunmente para mostrar los mensajes administrativos del sistema.",
-        "Una vez te familiarices con esta, encontraras una útil y poderosa herramienta.",
-        "En Javascript, la consola es usada como una gran herramienta para depurar y encontrar donde hay un error en tu código ",
-        "Uno de los términos mas importantes para recordar es \"console.log()\".",
-        "El proceso para usarla es, es ponerlo en cualquier parte entre las líneas del código para ayudar a encontrar, identificar, y en últimas solucionar problemas especificos",
-        "Usando el navegador Chrome y la consola de Chrome, si nosotros escribimos <code>console.log(\"Free Code Camp es muy bueno!\");</code>, la consola literalmente mostrará \"Free Code Camp es muy bueno!\".",
-        "Además esto funcionará con números y booleanos, cuyos valores posibles son verdadro/falso",
-        "Cuando se envian palabras a la consola, es importante ponerlas dentro de comillas para reconocer que es una cadena."
-      ]
+      "translations": {
+        "es": {
+          "title": "Consola y Logging",
+          "description": [
+            "Nosotros discutimos que es la consola (y donde está), porque es útil y mostrar un poco de como trabaja.",
+            "La consola: que es, donde la puedes encontrar, y para que la usas.",
+            "La consola es usada comunmente para mostrar los mensajes administrativos del sistema.",
+            "Una vez te familiarices con esta, encontraras una útil y poderosa herramienta.",
+            "En Javascript, la consola es usada como una gran herramienta para depurar y encontrar donde hay un error en tu código ",
+            "Uno de los términos mas importantes para recordar es \"console.log()\".",
+            "El proceso para usarla es, es ponerlo en cualquier parte entre las líneas del código para ayudar a encontrar, identificar, y en últimas solucionar problemas especificos",
+            "Usando el navegador Chrome y la consola de Chrome, si nosotros escribimos <code>console.log(\"Free Code Camp es muy bueno!\");</code>, la consola literalmente mostrará \"Free Code Camp es muy bueno!\".",
+            "Además esto funcionará con números y booleanos, cuyos valores posibles son verdadro/falso",
+            "Cuando se envian palabras a la consola, es importante ponerlas dentro de comillas para reconocer que es una cadena."
+          ]
+        }
+      }
     },
     {
       "id": "bd7119d8c441eddfbeb5bddf",
@@ -1012,16 +1088,20 @@
       ],
       "type": "hike",
       "challengeType": 6,
-      "descriptionEs": [
-        "Las variables se utilizan con frecuencia en Javascript y  en muchos otros lenguajes de programación.",
-        "En este video, vamos a hablar acerca de las variables en el código.",
-        "Las variables, al igual que en álgebra, son letras o palabras que representan algo más.",
-        "Aquí estamos haciendo <code>var x = \"Briana\"</code>. Cuando hagamos referencia a <code>x</code> más adelante, se sabrá que es  \"Briana\". ",
-        "Cuando se ejecute <code>console.log(x)</code> presentará \"Briana\".",
-        "Pero ten cuidado - si pones <code>console.log(\"x\")</code>, con la <code>x</code> entre comillas, se presentará la \"x\".",
-        "Lo que yo quiero que te lleves con este video es que existen las variables en el código, y que puedes almacenar todo, desde una simple cadena hasta una función, todo con un simple nombre."
-      ],
-      "titleEs": "Las variables en el código"
+      "translations": {
+        "es": {
+          "title": "Las variables en el código",
+          "description": [
+            "Las variables se utilizan con frecuencia en Javascript y  en muchos otros lenguajes de programación.",
+            "En este video, vamos a hablar acerca de las variables en el código.",
+            "Las variables, al igual que en álgebra, son letras o palabras que representan algo más.",
+            "Aquí estamos haciendo <code>var x = \"Briana\"</code>. Cuando hagamos referencia a <code>x</code> más adelante, se sabrá que es  \"Briana\". ",
+            "Cuando se ejecute <code>console.log(x)</code> presentará \"Briana\".",
+            "Pero ten cuidado - si pones <code>console.log(\"x\")</code>, con la <code>x</code> entre comillas, se presentará la \"x\".",
+            "Lo que yo quiero que te lleves con este video es que existen las variables en el código, y que puedes almacenar todo, desde una simple cadena hasta una función, todo con un simple nombre."
+          ]
+        }
+      }
     },
     {
       "id": "bd712bd8c441eddfbeb5bddf",
@@ -1058,19 +1138,23 @@
       ],
       "type": "hike",
       "challengeType": 6,
-      "descriptionEs": [
-        "Los programadores (también conocidos como codificadores, desarrolladores, o ingenieros de software) resuelven problemas convirtiendo grandes ideas en pequeños pasos que un computador puede entender.",
-        "En este video, vamos a discutir lo que hacen  los programadores.",
-        "Los programadores también pueden llamarse codificadores, desarrolladores o  ingenieros de software, y lo que todas estas personas hacen es tomar ideas y convertirlas en código que funciona.",
-        "No es sólo crear el código, sino también mantenerlo.",
-        "Vamos a ver cómo el computador ve el código, específicamente JavaScript.",
-        "El computador ve el código de una línea a la vez, y mientras programas, seguramente verás números de línea al lado izquierdo.",
-        "El computador, literalmente, va de arriba hacía abjo, línea por línea, dando sentido a lo que cada línea dice.",
-        "Todo se hace secuencialmente, de manera directa, por lo que hacer referencia a algo que está por debajo y que todavía no ha sucedido dará lugar a un problema.",
-        "Los computadores sólo leen de arriba hacía abajo, como tu leerías un libro.",
-        "Los programadores son los responsables de dividir sus ideas en  pequeños pasos y escribirlos de una manera que las computadoras pueden entenderlos."
-      ],
-      "titleEs": "¿Qué hacen los programadores?"
+      "translations": {
+        "es": {
+          "title": "¿Qué hacen los programadores?",
+          "description": [
+            "Los programadores (también conocidos como codificadores, desarrolladores, o ingenieros de software) resuelven problemas convirtiendo grandes ideas en pequeños pasos que un computador puede entender.",
+            "En este video, vamos a discutir lo que hacen  los programadores.",
+            "Los programadores también pueden llamarse codificadores, desarrolladores o  ingenieros de software, y lo que todas estas personas hacen es tomar ideas y convertirlas en código que funciona.",
+            "No es sólo crear el código, sino también mantenerlo.",
+            "Vamos a ver cómo el computador ve el código, específicamente JavaScript.",
+            "El computador ve el código de una línea a la vez, y mientras programas, seguramente verás números de línea al lado izquierdo.",
+            "El computador, literalmente, va de arriba hacía abjo, línea por línea, dando sentido a lo que cada línea dice.",
+            "Todo se hace secuencialmente, de manera directa, por lo que hacer referencia a algo que está por debajo y que todavía no ha sucedido dará lugar a un problema.",
+            "Los computadores sólo leen de arriba hacía abajo, como tu leerías un libro.",
+            "Los programadores son los responsables de dividir sus ideas en  pequeños pasos y escribirlos de una manera que las computadoras pueden entenderlos."
+          ]
+        }
+      }
     },
     {
       "id": "bd7129d89441eddfbeb5bddf",
@@ -1124,36 +1208,40 @@
       ],
       "type": "hike",
       "challengeType": 6,
-      "descriptionEs": [
-        "Lo fundamental de la seguridad en los computadores y cómo proteger su información.",
-        "Echemos una mirada a la seguridad en los computadores.",
-        "De lo primero que vamos a hablar es de algo conocido como ataque diccionario que se dirige a sus claves.",
-        "Cuando tu creas una clave, algunos lugares de internet te exigen claves muy específicas y complejas, las cuales con frecuencia no son tan necesarias.",
-        "El tipo de ataque que ellos quieren evitar son los llamados ataques diccionario.",
-        "Los ataques diccionario están programados para probar todas las palabras de un diccionario o todas las claves mas usuales, para una gran cantidad de nombres de usuario, registradas en sus propias bases de datos. ",
-        "Su tu clave es Canguro, probablemente podrá ser descubierta ya que es una palabra simple.",
-        "Aunque algunas claves no son tan sencillas como la anterior, esto tampoco importa.",
-        "Ellos atacan tal cantidad de cuentas que solo necesitan unas pocas claves que sean sencillas.",
-        "Cundo se crea una clave, tú usas letras mayúsculas, minúsculas, números y símbolos, pero una de las formas más eficientes es seleccionar números y letras al azar (ejemplo: canguroSyCA67).",
-        "Por lo tanto mantente lejos de los números seguidos.",
-        "Suplantación es otra forma de ataque del cual debes estar pendiente. Son correos o páginas web que simulan sitios seguros y engañan a las personas para obtener su información personlal. Son sitios que no están conectados a donde dicen que estan.",
-        "En general hay dos formas de resguardarse de estos ataques: verificar la dirección web de la página y abrir la dirección de la página web, en otro navegador para poder comprobar si corresponde con el sitio del que dicen que procede.",
-        "Ahora hablemos sobre cifrado y HTTPS",
-        "Si te encuentras comprando en una página de internet de una tienda muy prestigiosa y necesitas dar los datos de tu tarjeta de crédito es muy razonable que sospeches que alguien puede estar viendo y copiando esta información.",
-        "Es imprescindible que te fijes que la dirección de esta página web, en tu navegador, comienza con letras verdes y con HTTPS en vez de comenzar con solo HTTP.",
-        "Esto significa que el sitio por el que estás enviando esta información, la envía en forma codificada",
-        "En general, asegúrate que la página sea HTTPS si necesita escribir información privada o importante.",
-        "Otras recomendaciones importantes: no uses la misma clave para diferentes cuentas importantes",
-        "Si el sitio que usas ha sido vulnerado, tu clave puede estar comprometida independientemente de su fortaleza.",
-        "Tampoco descargues archivos desconocidos.",
-        "Se precavido si no reconoces archivos de tipo .pdf, .txt, .jpg.",
-        "Algunos de estos archivos pueden ser muy potentes e incluso correr dentro de tu computador.",
-        "Por último, mantén tu software actualizado, en especial el software que interactúa con internet.",
-        "Una de las formas en que se puede comprometer tu información es cuando los 'los chicos malos' encuentran huecos en las versiones viejas de los programas",
-        "Estos defectos se corrigen en las versiones nuevas, por lo que evitarás problemas si mantienes el software actualizado.",
-        "Estas son algunas cosas muy básicas que debes saber acerca de cómo proteger la información de tu computador."
-      ],
-      "titleEs": "Seguridad en los computadores"
+      "translations": {
+        "es": {
+          "title": "Seguridad en los computadores",
+          "description": [
+            "Lo fundamental de la seguridad en los computadores y cómo proteger su información.",
+            "Echemos una mirada a la seguridad en los computadores.",
+            "De lo primero que vamos a hablar es de algo conocido como ataque diccionario que se dirige a sus claves.",
+            "Cuando tu creas una clave, algunos lugares de internet te exigen claves muy específicas y complejas, las cuales con frecuencia no son tan necesarias.",
+            "El tipo de ataque que ellos quieren evitar son los llamados ataques diccionario.",
+            "Los ataques diccionario están programados para probar todas las palabras de un diccionario o todas las claves mas usuales, para una gran cantidad de nombres de usuario, registradas en sus propias bases de datos. ",
+            "Su tu clave es Canguro, probablemente podrá ser descubierta ya que es una palabra simple.",
+            "Aunque algunas claves no son tan sencillas como la anterior, esto tampoco importa.",
+            "Ellos atacan tal cantidad de cuentas que solo necesitan unas pocas claves que sean sencillas.",
+            "Cundo se crea una clave, tú usas letras mayúsculas, minúsculas, números y símbolos, pero una de las formas más eficientes es seleccionar números y letras al azar (ejemplo: canguroSyCA67).",
+            "Por lo tanto mantente lejos de los números seguidos.",
+            "Suplantación es otra forma de ataque del cual debes estar pendiente. Son correos o páginas web que simulan sitios seguros y engañan a las personas para obtener su información personlal. Son sitios que no están conectados a donde dicen que estan.",
+            "En general hay dos formas de resguardarse de estos ataques: verificar la dirección web de la página y abrir la dirección de la página web, en otro navegador para poder comprobar si corresponde con el sitio del que dicen que procede.",
+            "Ahora hablemos sobre cifrado y HTTPS",
+            "Si te encuentras comprando en una página de internet de una tienda muy prestigiosa y necesitas dar los datos de tu tarjeta de crédito es muy razonable que sospeches que alguien puede estar viendo y copiando esta información.",
+            "Es imprescindible que te fijes que la dirección de esta página web, en tu navegador, comienza con letras verdes y con HTTPS en vez de comenzar con solo HTTP.",
+            "Esto significa que el sitio por el que estás enviando esta información, la envía en forma codificada",
+            "En general, asegúrate que la página sea HTTPS si necesita escribir información privada o importante.",
+            "Otras recomendaciones importantes: no uses la misma clave para diferentes cuentas importantes",
+            "Si el sitio que usas ha sido vulnerado, tu clave puede estar comprometida independientemente de su fortaleza.",
+            "Tampoco descargues archivos desconocidos.",
+            "Se precavido si no reconoces archivos de tipo .pdf, .txt, .jpg.",
+            "Algunos de estos archivos pueden ser muy potentes e incluso correr dentro de tu computador.",
+            "Por último, mantén tu software actualizado, en especial el software que interactúa con internet.",
+            "Una de las formas en que se puede comprometer tu información es cuando los 'los chicos malos' encuentran huecos en las versiones viejas de los programas",
+            "Estos defectos se corrigen en las versiones nuevas, por lo que evitarás problemas si mantienes el software actualizado.",
+            "Estas son algunas cosas muy básicas que debes saber acerca de cómo proteger la información de tu computador."
+          ]
+        }
+      }
     }
   ]
 }

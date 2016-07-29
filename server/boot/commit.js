@@ -50,6 +50,7 @@ function findNonprofit(name) {
 
 export default function commit(app) {
   const router = app.loopback.Router();
+  const api = app.loopback.Router();
   const { Pledge } = app.models;
 
   router.get(
@@ -68,19 +69,20 @@ export default function commit(app) {
     renderDirectory
   );
 
-  router.post(
+  api.post(
     '/commit/stop-commitment',
     sendNonUserToCommit,
     stopCommit
   );
 
-  router.post(
+  api.post(
     '/commit/complete-goal',
     sendNonUserToCommit,
     completeCommitment
   );
 
-  app.use(router);
+  app.use(api);
+  app.use('/:lang', router);
 
   function commitToNonprofit(req, res, next) {
     const { user } = req;

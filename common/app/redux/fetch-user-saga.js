@@ -1,39 +1,30 @@
 import { Observable } from 'rx';
-import { handleError, setUser, fetchUser } from './types';
+import types from './types';
+import {
+  addUser,
+  updateThisUser,
+  updateCompletedChallenges,
+  createErrorObservable,
+  showSignIn
+} from './actions';
 
-export default ({ services }) => ({ dispatch }) => next => {
-  return function getUserSaga(action) {
-    if (action.type !== fetchUser) {
-      return next(action);
-    }
+const { fetchUser } = types;
 
-    return services.readService$({ service: 'user' })
-      .map(({
-        username,
-        picture,
-        points,
-        isFrontEndCert,
-        isBackEndCert,
-        isFullStackCert
-      }) => {
-        return {
-          type: setUser,
-          payload: {
-            username,
-            picture,
-            points,
-            isFrontEndCert,
-            isBackEndCert,
-            isFullStackCert,
-            isSignedIn: true
+export default function getUserSaga(action$, getState, { services }) {
+  return action$
+    .filter(action => action.type === fetchUser)
+    .flatMap(() => {
+      return services.readService$({ service: 'user' })
+        .flatMap(({ entities, result })=> {
+          if (!entities || !result) {
+            return Observable.just(showSignIn());
           }
-        };
-      })
-      .catch(error => Observable.just({
-        type: handleError,
-        error
-      }))
-      .doOnNext(dispatch);
-  };
-};
-
+          return Observable.of(
+            addUser(entities),
+            updateThisUser(result),
+            updateCompletedChallenges(result)
+          );
+        })
+        .catch(createErrorObservable);
+    });
+}

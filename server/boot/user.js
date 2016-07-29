@@ -3,6 +3,7 @@ import moment from 'moment-timezone';
 import { Observable } from 'rx';
 import debugFactory from 'debug';
 
+import supportedLanguages from '../../common/utils/supported-languages';
 import {
   frontEndChallengeId,
   dataVisChallengeId,
@@ -11,15 +12,16 @@ import {
 
 import certTypes from '../utils/certTypes.json';
 
-import { ifNoUser401, ifNoUserRedirectTo } from '../utils/middleware';
+import {
+  ifNoUser401,
+  ifNoUserRedirectTo
+} from '../utils/middleware';
 import { observeQuery } from '../utils/rx';
 import {
   prepUniqueDays,
   calcCurrentStreak,
   calcLongestStreak
 } from '../utils/user-stats';
-
-import { flashIfNotVerified } from '../utils/middleware';
 
 const debug = debugFactory('fcc:boot:user');
 const sendNonUserToMap = ifNoUserRedirectTo('/map');
@@ -123,8 +125,9 @@ function buildDisplayChallenges(challengeMap = {}, timezone) {
 }
 
 module.exports = function(app) {
-  var router = app.loopback.Router();
-  var User = app.models.User;
+  const router = app.loopback.Router();
+  const api = app.loopback.Router();
+  const User = app.models.User;
   function findUserByUsername$(username, fields) {
     return observeQuery(
       User,
@@ -145,76 +148,49 @@ module.exports = function(app) {
   router.get('/signin', getSignin);
   router.get('/signout', signout);
   router.get('/forgot', getForgot);
-  router.post('/forgot', postForgot);
+  api.post('/forgot', postForgot);
   router.get('/reset-password', getReset);
-  router.post('/reset-password', postReset);
+  api.post('/reset-password', postReset);
   router.get('/email-signup', getEmailSignup);
   router.get('/email-signin', getEmailSignin);
   router.get('/deprecated-signin', getDepSignin);
   router.get('/update-email', getUpdateEmail);
-  router.get(
-    '/toggle-lockdown-mode',
-    sendNonUserToMap,
-    toggleLockdownMode
-  );
-  router.get(
-    '/toggle-announcement-email-mode',
-    sendNonUserToMap,
-    toggleReceivesAnnouncementEmails
-  );
-  router.get(
-    '/toggle-notification-email-mode',
-    sendNonUserToMap,
-    toggleReceivesNotificationEmails
-  );
-  router.get(
-    '/toggle-quincy-email-mode',
-    sendNonUserToMap,
-    toggleReceivesQuincyEmails
-  );
-  router.post(
+  api.post(
     '/account/delete',
     ifNoUser401,
     postDeleteAccount
   );
-  router.get(
+  api.get(
     '/account',
     sendNonUserToMap,
     getAccount
   );
-  router.get(
-    '/settings',
-    sendNonUserToMap,
-    flashIfNotVerified,
-    getSettings
-  );
-  // router.get('/vote1', vote1);
-  // router.get('/vote2', vote2);
 
   // Ensure these are the last routes!
-  router.get(
+  api.get(
     '/:username/front-end-certification',
     showCert.bind(null, certTypes.frontEnd)
   );
 
-  router.get(
+  api.get(
     '/:username/data-visualization-certification',
     showCert.bind(null, certTypes.dataVis)
   );
 
-  router.get(
+  api.get(
     '/:username/back-end-certification',
     showCert.bind(null, certTypes.backEnd)
   );
 
-  router.get(
+  api.get(
     '/:username/full-stack-certification',
     (req, res) => res.redirect(req.url.replace('full-stack', 'back-end'))
   );
 
   router.get('/:username', returnUser);
 
-  app.use(router);
+  app.use('/:lang', router);
+  app.use(api);
 
   function getSignin(req, res) {
     if (req.user) {
@@ -272,15 +248,9 @@ module.exports = function(app) {
     return res.redirect('/' + username);
   }
 
-  function getSettings(req, res) {
-    res.render('account/settings', {
-        title: 'Settings'
-    });
-  }
-
   function returnUser(req, res, next) {
     const username = req.params.username.toLowerCase();
-    const { user, path } = req;
+    const { user } = req;
 
     // timezone of signed-in account
     // to show all date related components
@@ -298,10 +268,7 @@ module.exports = function(app) {
     return User.findOne$(query)
       .filter(userPortfolio => {
         if (!userPortfolio) {
-          req.flash('errors', {
-            msg: `We couldn't find a page for ${ path }`
-          });
-          res.redirect('/');
+          next();
         }
         return !!userPortfolio;
       })
@@ -354,7 +321,8 @@ module.exports = function(app) {
             calender,
             github: userPortfolio.githubURL,
             moment,
-            encodeFcc
+            encodeFcc,
+            supportedLanguages
           }));
       })
       .doOnNext(data => {
@@ -446,62 +414,6 @@ module.exports = function(app) {
       );
   }
 
-  function toggleLockdownMode(req, res, next) {
-    const { user } = req;
-    user.update$({ isLocked: !user.isLocked })
-      .subscribe(
-        () => {
-          req.flash('info', {
-            msg: 'We\'ve successfully updated your Privacy preferences.'
-          });
-          return res.redirect('/settings');
-        },
-        next
-      );
-  }
-
-  function toggleReceivesAnnouncementEmails(req, res, next) {
-    const { user } = req;
-    return user.update$({ sendMonthlyEmail: !user.sendMonthlyEmail })
-      .subscribe(
-        () => {
-          req.flash('info', {
-            msg: 'We\'ve successfully updated your Email preferences.'
-          });
-          return res.redirect('/settings');
-        },
-        next
-      );
-  }
-
-  function toggleReceivesQuincyEmails(req, res, next) {
-    const { user } = req;
-    return user.update$({ sendQuincyEmail: !user.sendQuincyEmail })
-      .subscribe(
-        () => {
-          req.flash('info', {
-            msg: 'We\'ve successfully updated your Email preferences.'
-          });
-          return res.redirect('/settings');
-        },
-        next
-      );
-  }
-
-  function toggleReceivesNotificationEmails(req, res, next) {
-    const { user } = req;
-    return user.update$({ sendNotificationEmail: !user.sendNotificationEmail })
-      .subscribe(
-        () => {
-          req.flash('info', {
-            msg: 'We\'ve successfully updated your Email preferences.'
-          });
-          return res.redirect('/settings');
-        },
-        next
-      );
-  }
-
   function postDeleteAccount(req, res, next) {
     User.destroyById(req.user.id, function(err) {
       if (err) { return next(err); }
@@ -578,34 +490,4 @@ module.exports = function(app) {
       return res.render('account/forgot');
     });
   }
-
-  // function vote1(req, res, next) {
-  //   if (req.user) {
-  //     req.user.tshirtVote = 1;
-  //     req.user.save(function(err) {
-  //       if (err) { return next(err); }
-  //
-  //       req.flash('success', { msg: 'Thanks for voting!' });
-  //       return res.redirect('/map');
-  //     });
-  //   } else {
-  //     req.flash('error', { msg: 'You must be signed in to vote.' });
-  //     res.redirect('/map');
-  //   }
-  // }
-  //
-  // function vote2(req, res, next) {
-  //   if (req.user) {
-  //     req.user.tshirtVote = 2;
-  //     req.user.save(function(err) {
-  //       if (err) { return next(err); }
-  //
-  //       req.flash('success', { msg: 'Thanks for voting!' });
-  //       return res.redirect('/map');
-  //     });
-  //   } else {
-  //     req.flash('error', {msg: 'You must be signed in to vote.'});
-  //     res.redirect('/map');
-  //   }
-  // }
 };

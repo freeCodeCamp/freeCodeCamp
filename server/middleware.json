@@ -24,12 +24,12 @@
   "auth:before": {
     "./middlewares/add-return-to": {}
   },
-  "auth": {
-  },
   "parse": {
     "body-parser#json": {},
     "body-parser#urlencoded": {
-      "params": { "extended": true }
+      "params": {
+        "extended": true
+      }
     },
     "method-override": {},
     "./middlewares/cookie-parser": {}
@@ -47,17 +47,11 @@
     "./middlewares/csp": {},
     "./middlewares/express-rx": {},
     "./middlewares/jade-helpers": {},
-    "./middlewares/global-locals": {},
-    "./middlewares/revision-helpers": {},
     "./middlewares/migrate-completed-challenges": {},
+    "./middlewares/add-lang": {},
     "./middlewares/flash-cheaters": {}
   },
-  "routes": {
-  },
-  "files": {
-  },
-  "final": {
-  },
+  "files": {},
   "final:after": {
     "./middlewares/keymetrics": {},
     "./middlewares/error-handlers": {}

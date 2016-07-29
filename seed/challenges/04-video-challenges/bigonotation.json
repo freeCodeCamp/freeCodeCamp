@@ -32,17 +32,21 @@
       ],
       "type": "hike",
       "challengeType": 6,
-      "descriptionEs": [
-        "La complejidad temporal es una forma de discutir cunto tiempo toma un algoritmo específico.  Esto es útil al ajustar software para que opere tan rápido como sea posible.",
-        "Cuando escribes código, debes tener en cuenta cuanto se va a demorar su ejecución. Nadie quiere crear un producto que fruste a los usuarios por su lentitud.",
-        "Se habla de complejidad temporal en relación con un algoritmo, una colección de una o más funciones.",
-        "La notación O mayúscula ayuda a identificar de manera específica cuando un algoritmo no 'escalaría' bien, o no funcionaría bien con una cantidad que varia de usuarios, de información o de algún otro recurso.",
-        "Esto no tiene correspondencia con la ley de Moore - no importa cuando grande y rápido sea tu computador, si un algoritmo es exponencialmente ineficiente, en realidad no es utilizable.",
-        "Además, pueden haber preguntas en entrevistas sobre la notación O mayúscula y de complejidad temporal.",
-        "Tu empleador podrá querer saber que el código que escribes no tardará demasiado en cargar en la página de los usuarios, y el conocimiento de la notación O mayúscula muestra que reconoces esto mientras escribies tu código.",
-        "Lo que esperamos que te quede de este video es que la notación O mayúscula te ayuda a identificar cuando podría haber problemas (en ocasiones problemas MAYÚSCULOS) en velocidad y memoria cuando tu sitio o aplicación crezcan."
-      ],
-      "titleEs": "Notación O mayúscula: ¿Qué es y porque te debe interesar?"
+      "translations": {
+        "es": {
+          "title": "Notación O mayúscula: ¿Qué es y porque te debe interesar?",
+          "description": [
+            "La complejidad temporal es una forma de discutir cunto tiempo toma un algoritmo específico.  Esto es útil al ajustar software para que opere tan rápido como sea posible.",
+            "Cuando escribes código, debes tener en cuenta cuanto se va a demorar su ejecución. Nadie quiere crear un producto que fruste a los usuarios por su lentitud.",
+            "Se habla de complejidad temporal en relación con un algoritmo, una colección de una o más funciones.",
+            "La notación O mayúscula ayuda a identificar de manera específica cuando un algoritmo no 'escalaría' bien, o no funcionaría bien con una cantidad que varia de usuarios, de información o de algún otro recurso.",
+            "Esto no tiene correspondencia con la ley de Moore - no importa cuando grande y rápido sea tu computador, si un algoritmo es exponencialmente ineficiente, en realidad no es utilizable.",
+            "Además, pueden haber preguntas en entrevistas sobre la notación O mayúscula y de complejidad temporal.",
+            "Tu empleador podrá querer saber que el código que escribes no tardará demasiado en cargar en la página de los usuarios, y el conocimiento de la notación O mayúscula muestra que reconoces esto mientras escribies tu código.",
+            "Lo que esperamos que te quede de este video es que la notación O mayúscula te ayuda a identificar cuando podría haber problemas (en ocasiones problemas MAYÚSCULOS) en velocidad y memoria cuando tu sitio o aplicación crezcan."
+          ]
+        }
+      }
     },
     {
       "id": "56b15f15632298c12f31517a",
@@ -84,27 +88,31 @@
       ],
       "type": "hike",
       "challengeType": 6,
-      "descriptionEs": [
-        "La complejidad en tiempo comunmente se estima contando la cantidad de operaciones elementales que un algoritmo efectua (una operación elemental es una cuya ejecución requiere una cantidad de tiempo fijo).",
-        "La complejidad temporal se clasifica por la naturaleza de la función T(n) donde T representa una función matemática para el tiempo que tarda el algoritmo y n representa la cantidad de elementos sobre los que actua el algoritmo.",
-        "La complejidad en el peor caso, es la que más se demoraría con una entrada válida, es la forma más comun de expresar la complejidad.",
-        "Cuando discutes la notación O mayúscula, esta se refiere al peor caso.",
-        "Por ejemplo, si debemos buscar elementos comunes en dos listas, haremos el cálculo suponiendo que los elementos comunes estuvieran justamente al final de cada una de las lista, para no subestimar cuando nos tomaría encontrarlos.",
-        "O(1) - por ejemplo determinar si un número es par o impar, tarda lo mismo sin importar cuanta información haya o cuantos usuarios haya.",
-        "O(log N) - encontrar una palabra en un diccionario (utilizando búsqueda binaria). La búsqueda binaria es un ejemplo de un tipo de algoritmo 'divide y vencerás'.",
-        "O(N) - leer un libro",
-        "O(N log N) - ordenar una plia de cartas (usando ordenamiento por mezcla)",
-        "O(N^2) - revisar que todo lo de una lista de compras está en el carrito de compras",
-        "O(infinito) - lanzar una moneda hasta que caiga cara",
-        "Como regla, todo lo que sea N^2 o cualquier exponente mayor no es un buen algoritmo para un sitio con muchos usuarios.",
-        "Si tu algoritmo se hace más lento de manera exponencial a medida que aumenta la entrada, querrás buscar una forma más eficiente de resolver el problema.",
-        "Siempre que programes ciclos dentro de ciclos, querrás ser especialmente cuidadoso de la complejidad temporal.",
-        "La hoja de copialina de la notación O mayúscula es el lugar donde mirar para clasificar tu algoritmo, como el de un 'ordenamiento por mezcla' o un 'ordenamiento rápido'.",
-        "<a href='http://bigocheatsheet.com/' target='_blank'>bigocheatsheet.com/</a>",
-        "El curso de Coursera de Princeton no es para débiles de corazón. Con ejemplos y prácticas en Java, este curso cubre iteración sobre los datos especifcamente algoritmos de ordenamiento y búsqueda.",
-        "<a href='http://coursera.org/course/algs4partI' target='_blank'>coursera.org/course/algs4partI</a>"
-      ],
-      "titleEs": "Notación O mayúscula: Unos pocos ejemplos"
+      "translations": {
+        "es": {
+          "title": "Notación O mayúscula: Unos pocos ejemplos",
+          "description": [
+            "La complejidad en tiempo comunmente se estima contando la cantidad de operaciones elementales que un algoritmo efectua (una operación elemental es una cuya ejecución requiere una cantidad de tiempo fijo).",
+            "La complejidad temporal se clasifica por la naturaleza de la función T(n) donde T representa una función matemática para el tiempo que tarda el algoritmo y n representa la cantidad de elementos sobre los que actua el algoritmo.",
+            "La complejidad en el peor caso, es la que más se demoraría con una entrada válida, es la forma más comun de expresar la complejidad.",
+            "Cuando discutes la notación O mayúscula, esta se refiere al peor caso.",
+            "Por ejemplo, si debemos buscar elementos comunes en dos listas, haremos el cálculo suponiendo que los elementos comunes estuvieran justamente al final de cada una de las lista, para no subestimar cuando nos tomaría encontrarlos.",
+            "O(1) - por ejemplo determinar si un número es par o impar, tarda lo mismo sin importar cuanta información haya o cuantos usuarios haya.",
+            "O(log N) - encontrar una palabra en un diccionario (utilizando búsqueda binaria). La búsqueda binaria es un ejemplo de un tipo de algoritmo 'divide y vencerás'.",
+            "O(N) - leer un libro",
+            "O(N log N) - ordenar una plia de cartas (usando ordenamiento por mezcla)",
+            "O(N^2) - revisar que todo lo de una lista de compras está en el carrito de compras",
+            "O(infinito) - lanzar una moneda hasta que caiga cara",
+            "Como regla, todo lo que sea N^2 o cualquier exponente mayor no es un buen algoritmo para un sitio con muchos usuarios.",
+            "Si tu algoritmo se hace más lento de manera exponencial a medida que aumenta la entrada, querrás buscar una forma más eficiente de resolver el problema.",
+            "Siempre que programes ciclos dentro de ciclos, querrás ser especialmente cuidadoso de la complejidad temporal.",
+            "La hoja de copialina de la notación O mayúscula es el lugar donde mirar para clasificar tu algoritmo, como el de un 'ordenamiento por mezcla' o un 'ordenamiento rápido'.",
+            "<a href='http://bigocheatsheet.com/' target='_blank'>bigocheatsheet.com/</a>",
+            "El curso de Coursera de Princeton no es para débiles de corazón. Con ejemplos y prácticas en Java, este curso cubre iteración sobre los datos especifcamente algoritmos de ordenamiento y búsqueda.",
+            "<a href='http://coursera.org/course/algs4partI' target='_blank'>coursera.org/course/algs4partI</a>"
+          ]
+        }
+      }
     }
   ]
 }
