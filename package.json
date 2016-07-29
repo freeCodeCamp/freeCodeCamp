@@ -86,7 +86,7 @@
     "passport-twitter": "^1.0.3",
     "pmx": "~0.6.2",
     "react": "^15.0.2",
-    "react-bootstrap": "~0.29.4",
+    "react-bootstrap": "^0.30.0",
     "react-codemirror": "^0.2.6",
     "react-css-transition-replace": "^1.2.0-beta",
     "react-dom": "^15.0.2",
@@ -110,12 +110,12 @@
     "reselect": "^2.0.2",
     "rx": "^4.0.0",
     "sanitize-html": "^1.11.1",
+    "snyk": "^1.17.1",
     "stampit": "^2.1.1",
     "store": "https://github.com/berkeleytrue/store.js.git#feature/noop-server",
     "url-regex": "^3.0.0",
     "validator": "^5.0.0",
-    "xss-filters": "^1.2.6",
-    "snyk": "^1.17.1"
+    "xss-filters": "^1.2.6"
   },
   "devDependencies": {
     "adler32": "~0.1.7",

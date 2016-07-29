@@ -1,6 +1,5 @@
 import React, { PropTypes } from 'react';
 import ReactDOM from 'react-dom';
-import { Link } from 'react-router';
 import { LinkContainer } from 'react-router-bootstrap';
 import {
   Col,
@@ -12,6 +11,7 @@ import {
 
 import navLinks from './links.json';
 import FCCNavItem from './NavItem.jsx';
+import AvatarNavItem from './Avatar-Nav-Item.jsx';
 
 const fCClogo = 'https://s3.amazonaws.com/freecodecamp/freecodecamp_logo.svg';
 
@@ -188,20 +188,7 @@ export default class extends React.Component {
       return null;
     }
     if (username) {
-      return (
-        <li
-          className='hidden-xs hidden-sm avatar'
-          eventKey={ 2 }
-          key='user'
-          >
-          <Link to='/settings'>
-            <img
-              className='profile-picture float-right'
-              src={ picture }
-            />
-          </Link>
-        </li>
-      );
+      return <AvatarNavItem picture={ picture } />;
     } else {
       return (
         <NavItem
@@ -233,7 +220,7 @@ export default class extends React.Component {
         >
         <NavbarBrand>{ logoElement }</NavbarBrand>
         <Navbar.Toggle children={ toggleButtonChild } />
-        <Navbar.Collapse eventKey={ 0 }>
+        <Navbar.Collapse>
           <Nav
             className='hamburger-dropdown'
             navbar={ true }
