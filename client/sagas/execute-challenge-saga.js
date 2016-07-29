@@ -21,22 +21,27 @@ function createFileStream(files = {}) {
   );
 }
 
-const jQuery = {
+const globalRequires = [{
+  link: 'https://cdnjs.cloudflare.com/' +
+    'ajax/libs/normalize/4.2.0/normalize.min.css'
+}, {
   src: '/bower_components/jquery/dist/jquery.js',
   script: true,
-  type: 'global'
-};
+  type: 'global',
+  crossDomain: false
+}];
 
 const scriptCache = new Map();
+const linkCache = new Map();
 
-function cacheScript({ src } = {}) {
+function cacheScript({ src } = {}, crossDomain = true) {
   if (!src) {
     return Observable.throw(new Error('No source provided for script'));
   }
   if (scriptCache.has(src)) {
     return scriptCache.get(src);
   }
-  const script$ = ajax$(src)
+  const script$ = ajax$({ url: src, crossDomain })
     .doOnNext(res => {
       if (res.status !== 200) {
         throw new Error('Request errror: ' + res.status);
@@ -51,12 +56,37 @@ function cacheScript({ src } = {}) {
   return script$;
 }
 
-const frameRunner$ = cacheScript({ src: '/js/frame-runner.js' });
+function cacheLink({ link } = {}, crossDomain = true) {
+  if (!link) {
+    return Observable.throw(new Error('No source provided for link'));
+  }
+  if (linkCache.has(link)) {
+    return linkCache.get(link);
+  }
+  const link$ = ajax$({ url: link, crossDomain })
+    .doOnNext(res => {
+      if (res.status !== 200) {
+        throw new Error('Request errror: ' + res.status);
+      }
+    })
+    .map(({ response }) => response)
+    .map(script => `<style>${script}</style>`)
+    .catch(createErrorObservable)
+    .shareReplay();
+
+  linkCache.set(link, link$);
+  return link$;
+}
+
 
 const htmlCatch = '\n<!--fcc-->';
 const jsCatch = '\n;/*fcc*/';
 
 export default function executeChallengeSaga(action$, getState) {
+  const frameRunner$ = cacheScript(
+    { src: '/js/frame-runner.js' },
+    false
+  );
   return action$
     .filter(({ type }) => (
       type === types.executeChallenge ||
@@ -64,7 +94,8 @@ export default function executeChallengeSaga(action$, getState) {
     ))
     .debounce(750)
     .flatMapLatest(({ type }) => {
-      const { files, required = [ jQuery ] } = getState().challengesApp;
+      const { files, required = [] } = getState().challengesApp;
+      const finalRequires = [...required, ...globalRequires ];
       return createFileStream(files)
         ::throwers()
         ::transformers()
@@ -88,10 +119,13 @@ export default function executeChallengeSaga(action$, getState) {
         }, ''))
         // add required scripts and links here
         .flatMap(source => {
-          const head$ = Observable.from(required)
+          const head$ = Observable.from(finalRequires)
             .flatMap(required => {
               if (required.script) {
-                return cacheScript(required);
+                return cacheScript(required, required.crossDomain);
+              }
+              if (required.link) {
+                return cacheLink(required, required.crossDomain);
               }
               return Observable.just('');
             })

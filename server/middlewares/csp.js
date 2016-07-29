@@ -15,7 +15,11 @@ if (process.env.NODE_ENV !== 'production') {
 export default function csp() {
   return helmet.contentSecurityPolicy({
     directives: {
-      defaultSrc: trusted.concat('*.optimizely.com'),
+      defaultSrc: trusted.concat([
+        '*.optimizely.com',
+        'https://*.cloudflare.com',
+        '*.cloudflare.com'
+      ]),
       scriptSrc: [
         "'unsafe-eval'",
         "'unsafe-inline'",
