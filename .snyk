@@ -1,9 +1,11 @@
-version: v1.5.0
+version: v1.5.2
 ignore: {}
 patch:
   'npm:marked:20150520':
     - gulp-notify > node-notifier > cli-usage > marked:
         patched: '2016-07-09T00:55:04.882Z'
+      gitter-sidecar > marked:
+        patched: '2016-07-29T23:00:15.905Z'
   'npm:minimatch:20160620':
     - gulp > vinyl-fs > glob-stream > minimatch:
         patched: '2016-07-09T00:55:04.882Z'
@@ -41,7 +43,7 @@ patch:
         patched: '2016-07-24T17:05:18.332Z'
   'npm:uglify-js:20151024':
     - jade > transformers > uglify-js:
-        patched: '2016-07-09T00:55:04.882Z'
+        patched: '2016-07-29T23:00:15.905Z'
   'npm:uglify-js:20150824':
     - jade > transformers > uglify-js:
-        patched: '2016-07-09T01:06:50.803Z'
+        patched: '2016-07-29T23:00:15.905Z'
