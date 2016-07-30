@@ -25,9 +25,11 @@ const initialUiState = {
   // project is ready to submit
   isSubmitting: false,
   output: `/**
-  * Any console.log()
+  * Your output will go here.
+  * Any console.log() - type
   * statements will appear in
-  * here console.
+  * your browser\'s DevTools
+  * JavaScript console as well.
   */`,
   // video
   // 1 indexed
