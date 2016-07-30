@@ -129,6 +129,15 @@ export const toggleMapDrawer = createAction(
     label: 'Map drawer toggled'
   })
 );
+export const closeMapDrawer = createAction(
+  types.closeMapDrawer,
+  null,
+  () => createEventMeta({
+    category: 'Nav',
+    action: 'clicked',
+    label: 'Map drawer closed'
+  })
+);
 export const toggleMainChat = createAction(
   types.toggleMainChat,
   null,

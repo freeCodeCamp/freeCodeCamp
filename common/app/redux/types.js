@@ -32,6 +32,7 @@ export default createTypes([
 
   // drawers
   'toggleMapDrawer',
+  'closeMapDrawer',
   'toggleWikiDrawer',
 
   // chat

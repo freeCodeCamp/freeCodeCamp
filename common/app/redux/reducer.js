@@ -51,6 +51,10 @@ export default handleActions(
       isMapAlreadyLoaded: true,
       isMapDrawerOpen: !state.isMapDrawerOpen
     }),
+    [types.closeMapDrawer]: state => ({
+      ...state,
+      isMapDrawerOpen: false
+    }),
     [types.toggleMainChat]: state => ({
       ...state,
       isMainChatOpen: !state.isMainChatOpen
