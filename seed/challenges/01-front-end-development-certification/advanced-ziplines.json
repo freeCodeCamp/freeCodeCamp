@@ -14,7 +14,7 @@
         "<strong>User Story:</strong> I can add, subtract, multiply and divide two numbers.",
         "<strong>User Story:</strong> I can clear the input field with a clear button.",
         "<strong>User Story:</strong> I can keep chaining mathematical operations together until I hit the equal button, and the calculator will tell me the correct output.",
-        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Read-Search-Ask</a> if you get stuck.",
+        "Remember to use <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> if you get stuck.",
         "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen. ",
         "You can get feedback on your project by sharing it with your friends on Facebook."
       ],
@@ -35,7 +35,7 @@
             "<span class='text-info'>Historia de usuario:</span> Puedo sumar, restar, multiplicar y dividir dos números.",
             "<span class='text-info'>Historia de usuario opcional:</span> Puedo limpiar la pantalla con un botón de borrar.",
             "<span class='text-info'>Historia de usuario opcional:</span> Puedo concatenar continuamente varias operaciones hasta que pulse el botón de igual, y la calculadora me mostrará la respuesta correcta.",
-            "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado.",
+            "Recuerda utilizar <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado.",
             "Cuando hayas terminado, pulsa el botón de \"I've completed this challenge\" e incluye un enlace a tu CodePen. ",
             "Puedes obtener retroalimentación sobre tu proyecto por parte de otros campistas, compartiéndolo en nuestra <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Sala de chat para revisión de código</a>. También puedes compartirlo en Twitter y en el campamento de tu ciudad (en Facebook)."
           ]
@@ -52,7 +52,7 @@
         "<strong>User Story:</strong> I can start a 25 minute pomodoro, and the timer will go off once 25 minutes has elapsed.",
         "<strong>User Story:</strong> I can reset the clock for my next pomodoro.",
         "<strong>User Story:</strong> I can customize the length of each pomodoro.",
-        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Read-Search-Ask</a> if you get stuck.",
+        "Remember to use <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> if you get stuck.",
         "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen. ",
         "You can get feedback on your project by sharing it with your friends on Facebook."
       ],
@@ -73,7 +73,7 @@
             "<span class='text-info'>Historia de usuario:</span> Puedo iniciar un pomodoro de 25 minutos, y el cronómetro terminará cuando pasen 25 minutos.",
             "<span class='text-info'>Historia de usuario:</span> Como usuario, puedo reiniciar el reloj para comenzar mi siguiente pomodoro.",
             "<span class='text-info'>Historia de usuario:</span> Como usuario, puedo personalizar la longitud de cada pomodoro.",
-            "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado.",
+            "Recuerda utilizar <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado.",
             "Cuando hayas terminado, pulsa el botón de \"I've completed this challenge\" e incluye un enlace a tu CodePen.",
             "Puedes obtener retroalimentación sobre tu proyecto por parte de otros campistas, compartiéndolo en nuestra <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Sala de chat para revisión de código</a>. También puedes compartirlo en Twitter y en el campamento de tu ciudad (en Facebook)."
           ]
@@ -89,7 +89,7 @@
             "<span class='text-info'>Пользовательская история:</span> В качестве пользователя, я могу запустить 25 минутную 'помидорку', по истечении которой таймер выключится.",
             "<span class='text-info'>Бонусная пользовательская история:</span> В качестве пользователя, я могу сбросить таймер для установки следующей 'помидорки'.",
             "<span class='text-info'>Бонусная пользовательская история:</span> В качестве пользователя, я могу выбирать длительность 'помидорки'.",
-            "Если что-то не получается, воспользуйтесь <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Read-Search-Ask</a>.",
+            "Если что-то не получается, воспользуйтесь <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a>.",
             "Когда выполните задание кликните кнопку \"I've completed this challenge\" и добавьте ссылку на ваш CodePen. Если вы программировали с кем-то в паре, также добавьте имя вашего напарника.",
             "Если вы хотите получить немедленную оценку вашего проекта, нажмите эту кнопку и добавьте ссылку на ваш CodePen. В противном случае мы проверим его перед тем как вы приступите к проектам для некоммерческих организаций.<br><br><a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Click here then add your link to your tweet's text</a>"
           ]
@@ -106,7 +106,7 @@
         "<strong>User Story:</strong> I can play a game of Tic Tac Toe with the computer.",
         "<strong>User Story:</strong> My game will reset as soon as it's over so I can play again.",
         "<strong>User Story:</strong> I can choose whether I want to play as X or O.",
-        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Read-Search-Ask</a> if you get stuck.",
+        "Remember to use <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> if you get stuck.",
         "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen.",
         "You can get feedback on your project by sharing it with your friends on Facebook."
       ],
@@ -127,7 +127,7 @@
             "<span class='text-info'>Historia de usuario:</span> Puedo jugar un juego de Tic Tac Toe contra el computador.",
             "<span class='text-info'>Historia de usuario:</span> Mi juego se reiniciará tan pronto como termine para poder jugar de nuevo.",
             "<span class='text-info'>Historia de usuario:</span> Puedo elegir si quiero jugar como X o como O.",
-            "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado.",
+            "Recuerda utilizar <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado.",
             "Cuando hayas terminado, pulsa el botón de \"I've completed this challenge\" e incluye un enlace a tu CodePen.",
             "Puedes obtener retroalimentación sobre tu proyecto por parte de otros campistas, compartiéndolo en nuestra <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Sala de chat para revisión de código</a>. También puedes compartirlo en Twitter y en el campamento de tu ciudad (en Facebook)."
           ]
@@ -150,7 +150,7 @@
         "<strong>User Story:</strong> I can play in strict mode where if I get a button press wrong, it notifies me that I have done so, and the game restarts at a new random series of button presses.",
         "<strong>User Story:</strong> I can win the game by getting a series of 20 steps correct. I am notified of my victory, then the game starts over.",
         "<strong>Hint:</strong> Here are mp3s you can use for each button: <code>https://s3.amazonaws.com/freecodecamp/simonSound1.mp3</code>, <code>https://s3.amazonaws.com/freecodecamp/simonSound2.mp3</code>, <code>https://s3.amazonaws.com/freecodecamp/simonSound3.mp3</code>, <code>https://s3.amazonaws.com/freecodecamp/simonSound4.mp3</code>.",
-        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Read-Search-Ask</a> if you get stuck.",
+        "Remember to use <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> if you get stuck.",
         "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen.",
         "You can get feedback on your project by sharing it with your friends on Facebook."
       ],
@@ -177,7 +177,7 @@
             "<span class='text-info'>Historia de usuario:</span> Puedo jugar en modo estricto donde si presiono el botón equivocado, se me notifica de mi error, y el juego vuelve a comenzar con una nueva serie aleatoria de colores.",
             "<span class='text-info'>Historia de usuario:</span> Puedo ganar el juego si completo 20 pasos correctos. Se me notifica sobre mi victoria, tras lo cual el juego se reinicia.",
             "<span class='text-info'>Pista:</span> Aquí hay algunos mp3s que puedes utilizar para tus botones: <code>https://s3.amazonaws.com/freecodecamp/simonSound1.mp3</code>, <code>https://s3.amazonaws.com/freecodecamp/simonSound2.mp3</code>, <code>https://s3.amazonaws.com/freecodecamp/simonSound3.mp3</code>, <code>https://s3.amazonaws.com/freecodecamp/simonSound4.mp3</code>.",
-            "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado.",
+            "Recuerda utilizar <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado.",
             "Cuando hayas terminado, pulsa el botón de \"I've completed this challenge\" e incluye un enlace a tu CodePen.",
             "Puedes obtener retroalimentación sobre tu proyecto por parte de otros campistas, compartiéndolo en nuestra <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Sala de chat para revisión de código</a>. También puedes compartirlo en Twitter y en el campamento de tu ciudad (en Facebook)."
           ]
