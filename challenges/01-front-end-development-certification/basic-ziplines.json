@@ -150,7 +150,7 @@
         "<strong>Rule #2:</strong> Fulfill the below <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries you need. Give it your own personal style.",
         "<strong>User Story:</strong> I can view a tribute page with an image and text.",
         "<strong>User Story:</strong> I can click on a link that will take me to an external website with further information on the topic.",
-        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Read-Search-Ask</a> if you get stuck.",
+        "Remember to use <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> if you get stuck.",
         "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen.",
         "You can get feedback on your project by sharing it with your friends on Facebook."
       ],
@@ -171,7 +171,7 @@
             "<strong>Regla #2:</strong> Satisface las siguientes <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>historias de usuario</a>. Usa cualquier librería que necesites. Dale tu estilo personal.",
             "<strong>Historia de usuario:</strong> Puedo ver una página tributo con una imagen y texto.",
             "<strong>Historia de usuario:</strong> Puedo pulsar en un enlace que me llevará a un sitio web externo con mayor información sobre el tema.",
-            "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado.",
+            "Recuerda utilizar <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado.",
             "Cuando hayas terminado, pulsa el botón \"I've completed this challenge\" e incluye un link a tu CodePen. ",
             "Puedes obtener retroalimentación sobre tu proyecto por parte de otros campistas, compartiéndolo en nuestra <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Sala de chat para revisión de código</a>. También puedes compartirlo en Twitter y en el campamento de tu ciudad (en Facebook)."
           ]
@@ -184,7 +184,7 @@
             "<strong>Правило #2:</strong> Реализуйте следующие <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>пользовательские истории</a>. Используйте любые библиотеки, которые потребуются. Оформите приложение в вашем собственном стиле.",
             "<strong>Пользовательская история:</strong> Я могу видеть на странице изображение и текст.",
             "<strong>Пользовательская история:</strong> Я могу нажать на ссылку, которая ведет на внешнюю страницу с дополнительной информацией по теме.",
-            "Если что-то не получается, воспользуйтесь <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Read-Search-Ask</a>.",
+            "Если что-то не получается, воспользуйтесь <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a>.",
             "Когда выполните задание кликните кнопку \"I've completed this challenge\" и добавьте ссылку на ваш CodePen.",
             "Вы можете получить отзыв о вашем проекте от коллег, поделившись ссылкой на него в нашем <a href='//gitter.im/freecodecamp/codereview' target='_blank'>чате для рассмотрения кода</a>. Также вы можете поделиться ею через Twitter и на странице Free Code Camp вашего города на Facebook."
           ]
@@ -206,7 +206,7 @@
         "Don't worry if you don't have anything to showcase on your portfolio yet - you will build several apps on the next few CodePen challenges, and can come back and update your portfolio later.",
         "There are many great portfolio templates out there already. However, you should consider building your portfolio page as much as you can from the ground up. Using Bootstrap can help make this process much easier for you.",
         "Note that CodePen.io overrides the Window.open() function, so if you want to open windows using jQuery, you will need to target invisible anchor elements like this one: <code>&lt;a target='_blank'&gt;</a></code>.",
-        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Read-Search-Ask</a> if you get stuck.",
+        "Remember to use <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> if you get stuck.",
         "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen. ",
         "You can get feedback on your project by sharing it with your friends on Facebook."
       ],
@@ -231,7 +231,7 @@
             "No te preocupes si no tienes nada que mostrar en tu portafolio todavía - en los siguientes desafíos crearás varias aplicaciones en CodePen, así que puedes regresar luego para actualizar tu portafolio.",
             "Hay varias plantillas buenas, pero para este desafío, tendrás que construir la página web de tu portafolio completamente por tu cuenta. Usar Bootstrap hará el trabajo mucho más fácil para ti.",
             "Ten en mente que CodePen.io ignora la función Window.open(), así que si quieres abrir alguna ventana usando jQuery, necesitarás utilizar como objetivo un elemento de ancla invisible como el siguiente: <code>&lt;a target='_blank'&gt;</a></code>.",
-            "Recuerda utilizar <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado.",
+            "Recuerda utilizar <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado.",
             "Cuando hayas terminado, pulsa el botón \"I've completed this challenge\" e incluye un link a tu CodePen. ",
             "Puedes obtener retroalimentación sobre tu proyecto por parte de otros campistas, compartiéndolo en nuestra <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Sala de chat para revisión de código</a>. También puedes compartirlo en Twitter y en el campamento de tu ciudad (en Facebook)."
           ]
@@ -249,7 +249,7 @@
             "Не переживайте если вам пока нечего показать в портфолио - вы создадите несколько веб приложений в следующих заданиях, а затем вернетесь и обновите портфолио.",
             "В сети существует много шаблонов для портфолио, но в этом задании вам необходимо создать собственную уникальную страницу. Используя Bootstrap, сделать это будет намного проще.",
             "Обратите внимание, что CodePen.io переопределяет функцию Window.open(), поэтому, если вы хотите открывать окна используя jQuery, необходимо будет адресовать невидимые якорные элементы, такие как этот: <code>&lt;a target='_blank'&rt;</a></code>.",
-            "Если что-то не получается, воспользуйтесь <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Read-Search-Ask</a>.",
+            "Если что-то не получается, воспользуйтесь <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a>.",
             "Когда выполните задание кликните кнопку \"I've completed this challenge\" и добавьте ссылку на ваш CodePen.",
             "Вы можете получить отзыв о вашем проекте от коллег, поделившись ссылкой на него в нашем <a href='//gitter.im/freecodecamp/codereview' target='_blank'>чате для рассмотрения кода</a>. Также вы можете поделиться ею через Twitter и на странице Free Code Camp вашего города на Facebook."
           ]
