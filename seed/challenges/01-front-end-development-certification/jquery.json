@@ -1317,7 +1317,7 @@
         "Here's how you would target all the odd-numbered elements with class <code>target</code> and give them classes:",
         "<code>$(\".target:odd\").addClass(\"animated shake\");</code>",
         "Note that jQuery is zero-indexed, meaning that, counter-intuitively, <code>:odd</code> selects the second element, fourth element, and so on.",
-        "Try selecting all the even-numbered elements and giving them the classes of <code>animated</code> and <code>shake</code>."
+        "Try selecting all the even-numbered <code>target</code> elements and giving them the classes of <code>animated</code> and <code>shake</code>."
       ],
       "challengeSeed": [
         "fccss",
@@ -1374,7 +1374,7 @@
             "Hier siehst du, wie du ungeradzahlige Elemente mit der Klasse <code>target</code> auswählen und ihnen folgende Klassen geben kannst:",
             "<code>$(\".target:odd\").addClass(\"animated shake\");</code>",
             "Bedenke, dass jQuery null-indexiert ist; das bedeutet, dass - kontraintuitiverweise - <code>:odd</code> das zweite Element, das vierte Element und so weiter auswählt.",
-            "Versuche alle geradzahligen Elemente auszuwählen und ihnen die Klassen <code>animated</code> und <code>shake</code> hinzuzufügen."
+            "Versuche alle geradzahligen <code>target</code> Elemente auszuwählen und ihnen die Klassen <code>animated</code> und <code>shake</code> hinzuzufügen."
           ]
         },
         "es": {
@@ -1383,7 +1383,7 @@
             "También puedes elegir todos los elementos con numeración par.",
             "He aquí cómo elegirías todos los elementos impares con clase <code>target</code> y como les agregarías unas clases:",
             "<code>$(\".target:odd\").addClass(\"animated shake\");</code>",
-            "Intenta seleccionar todos los elementos de número par y agrégales las clases <code>animated</code> y <code>shake</code>."
+            "Intenta seleccionar todos los <code>target</code> elementos de número par y agrégales las clases <code>animated</code> y <code>shake</code>."
           ]
         }
       }
