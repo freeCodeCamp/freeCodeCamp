@@ -579,6 +579,63 @@
       "challengeSeed": [],
       "tests": [],
       "type": "Waypoint",
+      "titleId": "Buat Akun Github dan Bergabung dengan ruang Chat kami",
+      "descriptionId": [
+        [
+          "//i.imgur.com/EAR7Lvh.jpg",
+          "Screenshot dari salah satu ruang chat Gitter kami.",
+          "Sebelum kita memulai coding, ayo gabung ke ruang chat Free Code Camp. Kamu dapat berkunjung kesini kapan pun untuk berkumpul, bertanya, atau mencari camper lain untuk menggabungkan program. Pertama kamu butuh akun Github.",
+          ""
+        ],
+        [
+          "//i.imgur.com/n6GeSEm.gif",
+          "Gambar gif memberitahumu bahwa klik link dibawah untuk menuju GithHub. Isikan beberapa keterangan dan klik <i>submit</i>. Kemudian cek kotak masuk email kamu dari GitHub sehingga kamu bisa melakukan verifikasi akun.",
+          "Klik tombol \"Open link in new tab\" untuk membuka GitHub. Buat akun GitHub dengan mengisikan formulir. Pastikan menggunakan email asli - GitHub akan menjaganya tetap rahasia. Kemudian cek kotak masuk email dari GitHub. Buka dan klik tombol \"verify email address\" di dalamnya.<br><div class=\"small\">Catatan: Jika kamu sudah punya akun GitHub, kamu dapat melewati langkah ini dengan klik \"Open link in new tab\", tutup tab baru yang terbuka, kemudian klik \"go to my next step\". Kami menghapus tombol \"skip step\" karena kebanyak orang hanya akan klik itu berulang tanpa melakukan langkah penting ini.</div>",
+          "https://github.com/join"
+        ],
+        [
+          "//i.imgur.com/hFqAEr8.gif",
+          "Gambar gif menunjukkan bagaimana caranya klik gambar profil di ujung kanan atas GitHub. Unggah foto dirimu atau lanjutkan dengan menggunakan gambar yang dihasilkan otomatis. Kemudian mengisikan isian formulir yang tersedia dan klik submit.",
+          "Klik gambar pixel di ujung kanan atas GitHub, kemudian pilih Settings. Unggah fotomu. Sebaiknya gambar wajahmu. Inilah caranya agar sesama camper melihatmu di ruang chat, jadi tampilkan yang terbaik. Kamu bisa isikan Kota dan namamu jika mau.",
+          "https://github.com/settings/profile"
+        ],
+        [
+          "//i.imgur.com/pYk0wOk.gif",
+          "Gambar gif yang menunjukan repo GitHub Free Code Camp."
+          "Buka repository open-source Free Code Camp. Disini dimana tim pekerja sukarela kami berkolaborasi membangun Free Code Camp.",
+          "https://github.com/freecodecamp/freecodecamp"
+        ],
+        [
+          "//i.imgur.com/OmRmLB4.gif",
+          "Gambar gif yang menunjukkan bagaimana cara klik link dibawah untuk pergi ke ruang chat kami dan klik tombol \"sign in with GitHub\". Kemudian kamu dapat klik ke isian text dan mengetik pesan ke sesama camper.",
+          "Sekarang kamu punya akun GitHub, kamu dapat bergabung ke ruang chat utama kami dengan masuk menggunakan GitHub. Perkenalkan dirimu dengan mengatakan \"Hello world!\" Ceritakan ke sesama camper bagaimana kamu menemukan Free Code Camp. Juga ceritakan kepada kami mengapa kamu ingin belajar code.",
+          "https://gitter.im/FreeCodeCamp/FreeCodeCamp"
+        ],
+        [
+          "//i.imgur.com/Ecs5XAd.gif",
+          "Gambar gif yang menunjukkan caranya klik tombol pengaturan di ujung atas kanan dan mengubah pengaturan notifikasimu.",
+          "Ruang chat kami sangat aktif. Kamu harus mengubah pengaturanmu sehingga nantinya kamu hanya mendapatkan notifikasi jika seseorang menyebutmu."
+          ""
+        ],
+        [
+          "//i.imgur.com/T0bGJPe.gif",
+          "Gambar gif yang menunjukkan bagaimaan caranya klik pada gambar profil pengguna untuk memulai pesan pribadi dengan pengguna tersebut.",
+          "Silahkan catat bahwa semua ruang chat kami dapat dilihat oleh umum. Jika kamu ingin membagi informasi sensitif, seperti alamat email atau nomor telefon, lakukan di pesan pribadi.",
+          ""
+        ],
+        [
+          "//i.imgur.com/vDTMJSh.gif",
+          "Gambar gif yang menunjukkan bahwa kamu dapat memilih kebelakang atau kedepan diantara tantangan dan ruang chat kami."
+          "Biarkan ruang chat kita terbuka ketika kamu sedang mengerjakan tantangan kami. Dengan begitu, kamu dapat bertanya ketika menemui kebuntuan. Kamu juga bisa bersosialisasi dengan camper lain ketika kamu sedang beristirahat.",
+          ""
+        ],
+        [
+          "//i.imgur.com/WvQvNGN.gif",
+          "Gambar gif yang menunjukkan bagaimana klik link dibawah untuk mengunduh aplikasi ruang chat native dari komputer.",
+          "Kamu juga bisa mengunduh aplikasi ruang chat ke komputer atau HP.",
+          "https://gitter.im/apps"
+        ]
+      ],
       "titleFr": "Créer un compte GitHub et rejoignez nos Salons de chat",
       "descriptionFr": [
         [
@@ -826,6 +883,15 @@
       "tests": [],
       "type": "Waypoint",
       "challengeType": 7,
+      "titleId": "Konfigurasi portofolio code-mu",
+      "desriptionId": [
+        [
+          "//i.imgur.com/tP2ccTE.gif",
+          "Gambar gif yang menunjukan bahwa kamu dapat klik gambar profil di sebelah ujung kanan atas ke portofolio code-mu dan terhubung GitHub.",
+          "Cek portofolio code-mu. Klik gambarmu di ujung kanan atas. Untuk aktifkan portofolio code-mu, kamu perlu link ke akun GitHub-mu dengan Free Code Camp. Portofolio code-mu menunjukan capaianmu dan berapa banyak poin Brownie yang kamu punya. Kamu bisa mendapatkan poin Brownie dengan menyelesaikan tantangan dan membantu camper lain di ruang chat kami. Jika kamu dapat poin Brownie di beberapa hari secara berurut, kamu akan dapatkan streak.",
+          ""
+        ]
+      ],
       "titleEs": "Configura tu portafolio de código",
       "descriptionEs": [
         [
@@ -884,6 +950,21 @@
       "tests": [],
       "type": "Waypoint",
       "challengeType": 7,
+      "titleId": "Gabung ke grup Free Code Camp di kotamu",
+      "descriptionId": [
+        [
+          "//i.imgur.com/XugIMb4.jpg",
+          "Gambar beberapa camper bertemu disebuah cafe lokal.",
+          "Kamu bisa code bersama dengan camper lain di kotamu dengan bergabung ke grup lokal Free Code Camp.",
+          ""
+        ],
+        [
+          "//i.imgur.com/fTFMjwf.gif",
+          "Gambar gif yang menunjukkan bagaimana kamu bisa klik link dibawah, mencari kotamu dalam daftar grup lokal.",
+          "Temukan kotamu dalam daftar ini dan klik. Ini akan membawamu ke halaman Facebook. Klik tombol \"Join group\". Seseorang dari grup akan menyetujuinya segera. Jika kotamu tidak ada dalam daftar, scroll ke atas dari artikel wiki untuk mencari petunjuk bagaimana kamu memulai membentuk sebuah grup di kotamu.",
+          "https://www.freecodecamp.com/wiki/en/localgroups-list/"
+        ]
+      ],
       "titleEs": "Únete a un Campamento en Tu Ciudad",
       "descriptionEs": [
         [
@@ -946,6 +1027,15 @@
       "tests": [],
       "type": "Waypoint",
       "challengeType": 7,
+      "titleId": "Baca berita Coding di publikasi Medium",
+      "descriptionId": [
+        [
+          "//i.imgur.com/AZNLvEC.gif",
+          "Gambar gif yang menunjukkan bahwa kamu dapat klik tombol \"follow\" untuk mengikuti publikasi Free Code Camp.",
+          "Komunitas kami memiliki publikasi Medium yang terkenal dimana kita menulis banyak sekali artikel yang membantu mengenai coding dan teknologi. Setelah membuka link, klik tombol \"follow\" di ujung kanan atas. Jika kamu belum punya akun Medium, kamu dapat membuatnya dengan sangat cepat.",
+          "https://medium.freecodecamp.com"
+        ]
+      ],
       "titleEs": "Lee noticias de codificación en nuestros canal de publicaciones Medium",
       "descriptionEs": [
         [
