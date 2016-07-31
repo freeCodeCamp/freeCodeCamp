@@ -20,7 +20,6 @@ const softRedirects = {
   'g n n': '/challenges/next-challenge',
   'g n a': '/about',
   'g n m': '/map',
-  'g n w': '/wiki',
   'g n s': '/shop',
   'g n o': '/settings'
 };
@@ -32,6 +31,10 @@ export default function mouseTrapSaga(actions$) {
     bindKey$(
       'g n r',
       () => hardGoTo('https://github.com/freecodecamp/freecodecamp')
+    ),
+    bindKey$(
+      'g n w',
+      () => hardGoTo('http://forum.freecodecamp.com')
     ),
     bindKey$('g m', toggleMapDrawer),
     bindKey$('g t n', toggleNightMode),
