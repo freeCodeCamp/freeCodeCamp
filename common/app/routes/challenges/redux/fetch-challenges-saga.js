@@ -12,20 +12,9 @@ import {
   delayedRedirect,
   createErrorObservable
 } from '../../../redux/actions';
+import createNameIdMap from '../../../../utils/create-name-id-map';
 
 const { fetchChallenge, fetchChallenges, replaceChallenge } = types;
-
-function createNameIdMap(entities) {
-  const { challenge } = entities;
-  return {
-    ...entities,
-    challengeIdToName: Object.keys(challenge)
-      .reduce((map, challengeName) => {
-        map[challenge[challengeName].id] = challenge[challengeName].dashedName;
-        return map;
-      }, {})
-  };
-}
 
 export default function fetchChallengesSaga(action$, getState, { services }) {
   return action$
