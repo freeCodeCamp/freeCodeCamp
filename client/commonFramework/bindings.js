@@ -191,8 +191,7 @@ window.common = (function(global) {
 
     $('#help-ive-found-a-bug-wiki-article').on('click', function() {
       window.open(
-        'https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/' +
-          'FreeCodeCamp-Report-Bugs',
+        'http://forum.freecodecamp.com/t/how-to-report-a-bug/19543',
         '_blank'
       );
     });

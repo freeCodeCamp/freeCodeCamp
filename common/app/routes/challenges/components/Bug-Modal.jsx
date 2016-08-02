@@ -6,8 +6,7 @@ import { createIssue, openIssueSearch, closeBugModal } from '../redux/actions';
 
 const mapStateToProps = state => ({ isOpen: state.challengesApp.isBugOpen });
 const actions = { createIssue, openIssueSearch, closeBugModal };
-const bugLink = 'https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/' +
-  'FreeCodeCamp-Report-Bugs';
+const bugLink = 'http://forum.freecodecamp.com/t/how-to-report-a-bug/19543';
 
 export class BugModal extends PureComponent {
   static propTypes = {
