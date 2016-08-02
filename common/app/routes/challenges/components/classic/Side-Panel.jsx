@@ -108,15 +108,13 @@ export class SidePanel extends PureComponent {
       toggleHelpChat,
       openBugModal
     } = this.props;
-    const style = {
-      overflowX: 'hidden',
-      overflowY: 'auto'
-    };
+    const style = {};
     if (height) {
       style.height = height + 'px';
     }
     return (
       <div
+        className='challenges-instructions-panel'
         ref='panel'
         style={ style }
         >

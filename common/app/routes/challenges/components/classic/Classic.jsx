@@ -86,13 +86,13 @@ export class Challenge extends PureComponent {
     return (
       <div>
         <Col
-          lg={ 3 }
+          lg={ showPreview ? 3 : 4 }
           md={ showPreview ? 3 : 4 }
           >
           <SidePanel />
         </Col>
         <Col
-          lg={ showPreview ? 6 : 9 }
+          lg={ showPreview ? 6 : 8 }
           md={ showPreview ? 5 : 8 }
           >
           <Editor
