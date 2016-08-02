@@ -5334,7 +5334,7 @@
         "The function should check if <code>firstName</code> is an actual contact's <code>firstName</code> and the given property (<code>prop</code>) is a property of that contact.",
         "If both are true, then return the \"value\" of that property.",
         "If <code>firstName</code> does not correspond to any contacts then return <code>\"No such contact\"</code>",
-        "If <code>prop</code> does not correspond to any valid properties then return <code>\"No such property\"</code>"
+        "If <code>prop</code> does not correspond to any valid properties of a contact found to match <code>firstName</code> then return <code>\"No such property\"</code>"
       ],
       "releasedOn": "January 8, 2016",
       "challengeSeed": [
