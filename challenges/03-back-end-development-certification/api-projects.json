@@ -174,7 +174,7 @@
         "<strong>User Story:</strong>  I can pass a URL as a parameter and I will receive a shortened URL in the JSON response.",
         "<strong>User Story:</strong> If I pass an invalid URL that doesn't follow the valid http://www.example.com format, the JSON response will contain an error instead.",
         "<strong>User Story:</strong> When I visit that shortened URL, it will redirect me to my original link.",
-        "<strong>Pro Tip:</strong> Checkout this <a href='https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/Using-MongoDB-And-Deploying-To-Heroku/' target='_blank'>wiki article</a> for tips on integrating MongoDB on Heroku.",
+        "<strong>Pro Tip:</strong> Checkout this <a href='http://forum.freecodecamp.com/t/guide-for-using-mongodb-and-deploying-to-heroku/19347' target='_blank'>wiki article</a> for tips on integrating MongoDB on Heroku.",
         "Once you've finished implementing these user stories, click the \"I've completed this challenge\" button and enter the URLs for both your GitHub repository and your live app running on Heroku.",
         "You can get feedback on your project by sharing it with your friends on Facebook."
       ],
