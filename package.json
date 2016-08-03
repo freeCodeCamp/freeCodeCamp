@@ -158,7 +158,6 @@
     "jsonlint": "^1.6.2",
     "less": "^2.5.1",
     "loopback-component-explorer": "^2.1.1",
-    "loopback-testing": "^1.1.0",
     "merge-stream": "^1.0.0",
     "rev-del": "^1.0.5",
     "sinon": "^1.17.3",
