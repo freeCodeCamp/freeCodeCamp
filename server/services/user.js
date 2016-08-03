@@ -26,7 +26,7 @@ const publicUserProps = [
   'sendNotificationEmail',
   'sendQuincyEmail',
 
-  'currentChallenge',
+  'currentChallengeId',
   'challengeMap'
 ];
 const log = debug('fcc:services:user');

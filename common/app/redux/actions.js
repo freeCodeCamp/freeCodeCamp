@@ -61,6 +61,10 @@ export const addUser = createAction(
 export const updateThisUser = createAction(types.updateThisUser);
 export const showSignIn = createAction(types.showSignIn);
 export const loadCurrentChallenge = createAction(types.loadCurrentChallenge);
+export const updateMyCurrentChallenge = createAction(
+  types.updateMyCurrentChallenge,
+  (username, currentChallengeId) => ({ username, currentChallengeId })
+);
 
 // updateUserPoints(username: String, points: Number) => Action
 export const updateUserPoints = createAction(

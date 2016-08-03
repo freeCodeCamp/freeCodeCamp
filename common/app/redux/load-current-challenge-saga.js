@@ -1,15 +1,51 @@
 import { Observable } from 'rx';
+import debug from 'debug';
 import { push } from 'react-router-redux';
 
 import types from './types';
 import {
+  updateMyCurrentChallenge,
+  createErrorObservable
+} from './actions';
+import {
   userSelector,
   firstChallengeSelector
 } from './selectors';
-import getActionsOfType from '../../utils/get-actions-of-type';
 import { updateCurrentChallenge } from '../routes/challenges/redux/actions';
+import getActionsOfType from '../../utils/get-actions-of-type';
+import combineSagas from '../utils/combine-sagas';
+import { postJSON$ } from '../../utils/ajax-stream';
 
-export default function loadCurrentChallengeSaga(actions, getState) {
+const log = debug('fcc:app/redux/load-current-challenge-saga');
+export function updateMyCurrentChallengeSaga(actions, getState) {
+  const updateChallenge$ = getActionsOfType(
+    actions,
+    updateCurrentChallenge.toString()
+  )
+    .map(({ payload: { id } }) => id)
+    .filter(() => {
+      const { app: { user: username } } = getState();
+      return !!username;
+    });
+  const optimistic = updateChallenge$.map(id => {
+    const { app: { user: username } } = getState();
+    return updateMyCurrentChallenge(username, id);
+  });
+  const ajaxUpdate = updateChallenge$
+    .debounce(250)
+    .flatMapLatest(currentChallengeId => {
+      const { app: { csrfToken: _csrf } } = getState();
+      return postJSON$(
+        '/update-my-current-challenge',
+        { _csrf, currentChallengeId }
+      )
+        .map(({ message }) => log(message))
+        .catch(createErrorObservable);
+    });
+  return Observable.merge(optimistic, ajaxUpdate);
+}
+
+export function loadCurrentChallengeSaga(actions, getState) {
   return getActionsOfType(actions, types.loadCurrentChallenge)
     .flatMap(() => {
       let finalChallenge;
@@ -40,3 +76,8 @@ export default function loadCurrentChallengeSaga(actions, getState) {
       );
     });
 }
+
+export default combineSagas(
+  updateMyCurrentChallengeSaga,
+  loadCurrentChallengeSaga
+);

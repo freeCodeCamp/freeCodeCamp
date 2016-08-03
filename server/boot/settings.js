@@ -1,4 +1,5 @@
 import { ifNoUser401 } from '../utils/middleware';
+import { isMongoId } from 'validator';
 import supportedLanguages from '../../common/utils/supported-languages.js';
 
 export default function settingsController(app) {
@@ -49,6 +50,20 @@ export default function settingsController(app) {
       );
   }
 
+  function updateMyCurrentChallenge(req, res, next) {
+    const { user, body: { currentChallengeId } } = req;
+    if (!isMongoId('' + currentChallengeId)) {
+      return next(new Error(`${currentChallengeId} is not a valid ObjectId`));
+    }
+    return user.update$({ currentChallengeId }).subscribe(
+      () => res.json({
+        message:
+          `your current challenge has been updated to ${currentChallengeId}`
+      }),
+      next
+    );
+  }
+
   api.post(
     '/toggle-lockdown',
     toggleUserFlag('isLocked')
@@ -77,6 +92,12 @@ export default function settingsController(app) {
     '/update-my-lang',
     ifNoUser401,
     updateMyLang
+  );
+
+  api.post(
+    '/update-my-current-challenge',
+    ifNoUser401,
+    updateMyCurrentChallenge
   );
   app.use(api);
 }
