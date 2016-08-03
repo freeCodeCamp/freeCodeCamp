@@ -7,3 +7,27 @@ export const userSelector = createSelector(
     user: userMap[username] || {}
   })
 );
+
+export const firstChallengeSelector = createSelector(
+  state => state.entities.challenge,
+  state => state.entities.block,
+  state => state.entities.superBlock,
+  state => state.challengesApp.superBlocks,
+  (challengeMap, blockMap, superBlockMap, superBlocks) => {
+    if (
+      !challengeMap ||
+      !blockMap ||
+      !superBlockMap ||
+      !superBlocks
+    ) {
+      return {};
+    }
+    return challengeMap[
+      blockMap[
+        superBlockMap[
+          superBlocks[0]
+        ].blocks[0]
+      ].challenges[0]
+    ];
+  }
+);
