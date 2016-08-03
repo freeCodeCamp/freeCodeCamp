@@ -60,7 +60,15 @@ export const addUser = createAction(
 );
 export const updateThisUser = createAction(types.updateThisUser);
 export const showSignIn = createAction(types.showSignIn);
-export const loadCurrentChallenge = createAction(types.loadCurrentChallenge);
+export const loadCurrentChallenge = createAction(
+  types.loadCurrentChallenge,
+  null,
+  () => createEventMeta({
+    category: 'Nav',
+    action: 'clicked',
+    label: 'fcc logo clicked'
+  })
+);
 export const updateMyCurrentChallenge = createAction(
   types.updateMyCurrentChallenge,
   (username, currentChallengeId) => ({ username, currentChallengeId })
