@@ -101,7 +101,6 @@
     "react-router": "^2.0.0",
     "react-router-bootstrap": "~0.23.1",
     "react-router-redux": "^4.0.5",
-    "react-toastr": "^2.4.0",
     "react-youtube": "^7.0.0",
     "redux": "^3.0.5",
     "redux-actions": "^0.10.0",
