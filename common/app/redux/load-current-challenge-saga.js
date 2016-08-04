@@ -26,7 +26,8 @@ export function updateMyCurrentChallengeSaga(actions, getState) {
     .filter(() => {
       const { app: { user: username } } = getState();
       return !!username;
-    });
+    })
+    .distinctUntilChanged();
   const optimistic = updateChallenge$.map(id => {
     const { app: { user: username } } = getState();
     return updateMyCurrentChallenge(username, id);
