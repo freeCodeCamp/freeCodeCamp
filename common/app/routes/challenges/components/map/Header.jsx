@@ -75,7 +75,7 @@ export class Header extends PureComponent {
     });
     const buttonCopy = isAllCollapsed ?
       'Expand all challenges' :
-      'Collapse all challenges';
+      'Hide all challenges';
     return (
       <div>
         <div
