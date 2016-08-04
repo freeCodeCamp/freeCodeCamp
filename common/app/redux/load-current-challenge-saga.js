@@ -63,6 +63,10 @@ export function loadCurrentChallengeSaga(actions, getState) {
           challengeIdToName[ currentChallengeId ]
         ];
       }
+      // challenge data may not be set yet.
+      if (!finalChallenge.id) {
+        return Observable.empty();
+      }
       if (finalChallenge.id === currentlyLoadedChallengeId) {
         // don't reload if the challenge is already loaded.
         // This may change to toast to avoid user confusion

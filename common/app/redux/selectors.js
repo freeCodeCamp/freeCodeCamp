@@ -22,12 +22,17 @@ export const firstChallengeSelector = createSelector(
     ) {
       return {};
     }
-    return challengeMap[
-      blockMap[
-        superBlockMap[
-          superBlocks[0]
-        ].blocks[0]
-      ].challenges[0]
-    ];
+    try {
+      return challengeMap[
+        blockMap[
+          superBlockMap[
+            superBlocks[0]
+          ].blocks[0]
+        ].challenges[0]
+      ];
+    } catch (err) {
+      console.error(err);
+      return {};
+    }
   }
 );
