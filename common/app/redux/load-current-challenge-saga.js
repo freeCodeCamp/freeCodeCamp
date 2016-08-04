@@ -52,10 +52,13 @@ export function loadCurrentChallengeSaga(actions, getState) {
       const state = getState();
       const {
         entities: { challenge: challengeMap, challengeIdToName },
-        challengesApp: { id: currentlyLoadedChallengeId }
+        challengesApp: { id: currentlyLoadedChallengeId },
+        locationBeforeTransition: { pathname } = {}
       } = state;
       const firstChallenge = firstChallengeSelector(state);
       const { user: { currentChallengeId } } = userSelector(state);
+      const isOnAChallenge = (/^\/[^\/]{2,6}\/challenges/).test(pathname);
+
       if (!currentChallengeId) {
         finalChallenge = firstChallenge;
       } else {
@@ -63,11 +66,12 @@ export function loadCurrentChallengeSaga(actions, getState) {
           challengeIdToName[ currentChallengeId ]
         ];
       }
-      // challenge data may not be set yet.
-      if (!finalChallenge.id) {
-        return Observable.empty();
-      }
-      if (finalChallenge.id === currentlyLoadedChallengeId) {
+      if (
+        // data might not be there yet, ignore for now
+        !finalChallenge ||
+        // are we already on that challenge?
+        (isOnAChallenge && finalChallenge.id === currentlyLoadedChallengeId)
+      ) {
         // don't reload if the challenge is already loaded.
         // This may change to toast to avoid user confusion
         return Observable.empty();
