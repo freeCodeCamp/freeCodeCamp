@@ -217,7 +217,7 @@ export default class extends React.Component {
         >
         <NavbarBrand>
           <a
-            href='/'
+            href='/challenges/current-challenge'
             onClick={ this.handleLogoClick }
             >
             <img
