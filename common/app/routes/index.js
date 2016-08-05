@@ -1,4 +1,5 @@
 import { modernChallenges, map, challenges } from './challenges';
+import Campsites from './Campsites';
 import NotFound from '../components/NotFound/index.jsx';
 import { addLang } from '../utils/lang';
 import settings from './settings';
@@ -13,6 +14,7 @@ export default {
     }
   },
   childRoutes: [
+    Campsites,
     challenges,
     modernChallenges,
     map,

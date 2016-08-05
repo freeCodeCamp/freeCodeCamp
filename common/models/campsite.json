@@ -1,0 +1,74 @@
+{
+  "name": "campsite",
+  "settings": {
+    "mongodb": {
+      "allowExtendedOperators": true
+    }
+  },
+  "base": "PersistedModel",
+  "idInjection": true,
+  "trackChanges": false,
+  "properties": {
+    "id": {
+      "type": "string",
+      "id": true
+    },
+    "url": {
+      "type": "string",
+      "required": true
+    },
+    "createdByUsername": {
+      "type": "string"
+    },
+    "createdAt": {
+      "type": "Date"
+    },
+    "lastUpdatedAt": {
+      "type": "Date"
+    },
+    "isApproved": {
+      "type": "Boolean",
+      "default": false
+    },
+    "isDeleted": {
+      "type": "Boolean",
+      "default": false
+    },
+    "city": {
+      "type": "string"
+    },
+    "subdivision": {
+      "type": "string"
+    },
+    "country": {
+      "type": "string"
+    },
+    "location": {
+      "type": "string",
+      "description": "location string: \"lat,long\". "
+    },
+    "mapURL": {
+      "type": "string"
+    },
+    "googleId": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": []
+}

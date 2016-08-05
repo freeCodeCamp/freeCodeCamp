@@ -4,6 +4,7 @@ import { reducer as formReducer } from 'redux-form';
 import { reducer as app } from './redux';
 import { reducer as toasts } from './toasts/redux';
 import entitiesReducer from './redux/entities-reducer';
+import { reducer as campsitesApp } from './routes/Campsites/redux';
 import {
   reducer as challengesApp,
   projectNormalizer
@@ -16,6 +17,7 @@ export default function createReducer(sideReducers = {}) {
     entities: entitiesReducer,
     app,
     toasts,
+    campsitesApp,
     challengesApp,
     settingsApp,
     form: formReducer.normalize({ ...projectNormalizer })
