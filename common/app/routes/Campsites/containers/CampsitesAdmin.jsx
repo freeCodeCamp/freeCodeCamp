@@ -10,7 +10,6 @@ import CampsiteNavButtons from '../components/CampsiteNavButtons.jsx';
 
 import { fetchCampsites } from '../redux/actions';
 import { updateTitle } from '../../../redux/actions';
-import contain from '../../../utils/professor-x';
 
 import { scrollToTopOfWindow } from '../utils';
 
@@ -25,10 +24,6 @@ const mapStateToProps = createSelector(
     pendingCampsites
   })
 );
-
-const fetchOptions = {
-  fetchAction: 'fetchCampsites'
-};
 
 export class CampsitesAdmin extends PureComponent {
 
@@ -75,11 +70,10 @@ export class CampsitesAdmin extends PureComponent {
   }
 }
 
-// export redux and fetch aware component
+// export redux aware component
 export default compose(
   connect(mapStateToProps, {
     fetchCampsites,
     updateTitle
-  }),
-  contain(fetchOptions)
+  })
 )(CampsitesAdmin);

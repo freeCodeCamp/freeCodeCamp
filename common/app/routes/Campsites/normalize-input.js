@@ -1,8 +1,32 @@
-// NOTE: this functionality is largely borrowed from the jobs app,
-// and could live somewhere shared
+// NOTE: this functionality is largely borrowed from the jobs app that used
+// to exist. Not sure if this should live somewhere else to consolidate 
+// validation/normalization.
+
 import { isURL } from 'validator';
 import normalizeUrl from 'normalize-url';
-import { getDefaults } from '../Jobs/utils';
+
+const defaults = {
+  string: {
+    value: '',
+    valid: false,
+    pristine: true,
+    type: 'string'
+  },
+  bool: {
+    value: false,
+    type: 'boolean'
+  }
+};
+
+function getDefaults(type, value) {
+  if (!type) {
+    return defaults['string'];
+  }
+  if (value) {
+    return Object.assign({}, defaults[type], { value });
+  }
+  return Object.assign({}, defaults[type]);
+}
 
 function formatValue(value, validator, type = 'string') {
   const formated = getDefaults(type);

@@ -16,8 +16,6 @@ import {
 
 import { updateTitle } from '../../../redux/actions';
 
-import contain from '../../../utils/professor-x';
-
 import { isTouchDevice, scrollToTopOfWindow } from '../utils';
 
 const mapStateToProps = createSelector(
@@ -31,10 +29,6 @@ const mapStateToProps = createSelector(
     pendingCampsites
   })
 );
-
-const fetchOptions = {
-  fetchAction: 'fetchCampsites'
-};
 
 export class Campsites extends PureComponent {
   constructor(...args) {
@@ -88,11 +82,10 @@ export class Campsites extends PureComponent {
   }
 }
 
-// export redux and fetch aware component
+// export redux aware component
 export default compose(
   connect(mapStateToProps, {
     fetchCampsites,
     updateTitle
-  }),
-  contain(fetchOptions)
+  })
 )(Campsites);
