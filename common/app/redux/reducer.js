@@ -10,7 +10,8 @@ const initialState = {
   windowHeight: 0,
   navHeight: 0,
   isMainChatOpen: false,
-  isHelpChatOpen: false
+  isHelpChatOpen: false,
+  theme: 'default'
 };
 
 export default handleActions(
@@ -28,6 +29,10 @@ export default handleActions(
     [types.updateAppLang]: (state, { payload = 'en' }) =>({
       ...state,
       lang: payload
+    }),
+    [types.updateTheme]: (state, { payload = 'default' }) => ({
+      ...state,
+      theme: payload
     }),
     [types.showSignIn]: state => ({
       ...state,
