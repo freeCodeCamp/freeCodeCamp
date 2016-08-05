@@ -1,11 +1,15 @@
 import _ from 'lodash';
-// import { Observable, Scheduler } from 'rx';
 import debug from 'debug';
 import accepts from 'accepts';
+import dedent from 'dedent';
 
 import { ifNoUserSend } from '../utils/middleware';
 import { cachedMap } from '../utils/map';
 import createNameIdMap from '../../common/utils/create-name-id-map';
+import {
+  checkMapData,
+  getFirstChallenge
+} from '../../common/utils/get-first-challenge';
 
 const log = debug('fcc:boot:challenges');
 
@@ -274,40 +278,34 @@ export default function(app) {
         result,
         entities: createNameIdMap(entities)
       }))
-      .map(({
-        result,
-        entities: {
-          challenge: challengeMap,
-          block: blockMap,
-          superBlock: superBlockMap,
-          challengeIdToName
-        }
-      }) => {
+      .map(map => {
+        checkMapData(map);
+        const {
+          entities: { challenge: challengeMap, challengeIdToName }
+        } = map;
         let finalChallenge;
         const dashedName = challengeIdToName[user && user.currentChallengeId];
         finalChallenge = challengeMap[dashedName];
-        if (
-          !challengeMap ||
-          !blockMap ||
-          !superBlockMap ||
-          !result ||
-          !result.length
-        ) {
-          throw new Error(
-            'entities not found, db may not be properly seeded. Crashing hard'
-          );
-        }
         // redirect to first challenge
         if (!finalChallenge) {
-          finalChallenge = challengeMap[
-            block[
-              superBlockMap[
-                result[0]
-              ].blocks[0]
-            ].challenges[0]
-          ];
+          finalChallenge = getFirstChallenge(map);
         }
         const { block, dashedName: finalDashedName } = finalChallenge || {};
+        if (!finalDashedName || !block) {
+          // this should normally not be hit if database is properly seeded
+          console.error(new Error(dedent`
+            Attemped to find '${dashedName}'
+            from '${user && user.currentChallengeId || 'no challenge id found'}'
+            but came up empty.
+            db may not be properly seeded.
+          `));
+          if (dashedName) {
+            // attempt to find according to dashedName
+            return `/challenges/${dashedName}`;
+          } else {
+            return null;
+          }
+        }
         return `/challenges/${block}/${finalDashedName}`;
       })
       .subscribe(

@@ -1,5 +1,6 @@
 import { compose } from 'redux';
 import { bonfire, html, js } from '../../utils/challengeTypes';
+import protect from '../../utils/empty-protector';
 
 export function encodeScriptTags(value) {
   return value
@@ -76,19 +77,6 @@ export function loggerToStr(args) {
       return arg;
     })
     .reduce((str, arg) => str + arg + '\n', '');
-}
-
-export function getFirstChallenge(
-  { superBlock, block, challenge },
-  result
-) {
-  return challenge[
-    block[
-      superBlock[
-        result[0]
-      ].blocks[0]
-    ].challenges[0]
-  ];
 }
 
 export function getNextChallenge(
@@ -283,20 +271,6 @@ export function getMouse(e, [dx, dy]) {
   }
 
   return [pageX - dx, pageY - dy];
-}
-
-const emptyProtector = {
-  blocks: [],
-  challenges: []
-};
-// protect against malformed data
-function protect(block) {
-  // if no block or block has no challenges or blocks
-  // use protector
-  if (!block || !(block.challenges || block.blocks)) {
-    return emptyProtector;
-  }
-  return block;
 }
 
 // interface Node {
