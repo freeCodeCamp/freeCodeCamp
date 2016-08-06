@@ -15,16 +15,6 @@ import AvatarNavItem from './Avatar-Nav-Item.jsx';
 
 const fCClogo = 'https://s3.amazonaws.com/freecodecamp/freecodecamp_logo.svg';
 
-const logoElement = (
-  <a href='/'>
-    <img
-      alt='learn to code javascript at Free Code Camp logo'
-      className='img-responsive nav-logo'
-      src={ fCClogo }
-    />
-  </a>
-);
-
 const toggleButtonChild = (
   <Col xs={ 12 }>
     <span className='hamburger-text'>Menu</span>
@@ -43,6 +33,7 @@ export default class extends React.Component {
   constructor(...props) {
     super(...props);
     this.handleMapClickOnMap = this.handleMapClickOnMap.bind(this);
+    this.handleLogoClick = this.handleLogoClick.bind(this);
     navLinks.forEach(({ content }) => {
       this[`handle${content}Click`] = handleNavLinkEvent.bind(this, content);
     });
@@ -58,7 +49,8 @@ export default class extends React.Component {
     toggleMapDrawer: PropTypes.func,
     toggleMainChat: PropTypes.func,
     shouldShowSignIn: PropTypes.bool,
-    trackEvent: PropTypes.func.isRequired
+    trackEvent: PropTypes.func.isRequired,
+    loadCurrentChallenge: PropTypes.func.isRequired
   };
 
   componentDidMount() {
@@ -81,6 +73,11 @@ export default class extends React.Component {
       action: 'clicked',
       label: 'map clicked while on map'
     });
+  }
+
+  handleLogoClick(e) {
+    e.preventDefault();
+    this.props.loadCurrentChallenge();
   }
 
   renderMapLink(isOnMap, toggleMapDrawer) {
@@ -218,7 +215,18 @@ export default class extends React.Component {
         className='nav-height'
         fixedTop={ true }
         >
-        <NavbarBrand>{ logoElement }</NavbarBrand>
+        <NavbarBrand>
+          <a
+            href='/challenges/current-challenge'
+            onClick={ this.handleLogoClick }
+            >
+            <img
+              alt='learn to code javascript at Free Code Camp logo'
+              className='img-responsive nav-logo'
+              src={ fCClogo }
+            />
+          </a>
+        </NavbarBrand>
         <Navbar.Toggle children={ toggleButtonChild } />
         <Navbar.Collapse>
           <Nav

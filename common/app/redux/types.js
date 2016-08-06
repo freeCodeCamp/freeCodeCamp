@@ -14,6 +14,8 @@ export default createTypes([
   'updateUserLang',
   'updateCompletedChallenges',
   'showSignIn',
+  'loadCurrentChallenge',
+  'updateMyCurrentChallenge',
 
   'handleError',
   'toggleNightMode',
