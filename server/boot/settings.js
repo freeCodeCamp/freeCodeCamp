@@ -64,8 +64,26 @@ export default function settingsController(app) {
     );
   }
 
+  function updateMyTheme(req, res, next) {
+    req.checkBody('theme', 'Theme is invalid.').isLength({ min: 4 });
+    const { body: { theme } } = req;
+    const errors = req.validationErrors(true);
+    if (errors) {
+      return res.status(403).json({ errors });
+    }
+    if (req.user.theme === theme) {
+      return res.json({ msg: 'Theme already set' });
+    }
+    return req.user.updateTheme('' + theme)
+      .then(
+        data => res.json(data),
+        next
+      );
+  }
+
   api.post(
     '/toggle-lockdown',
+    ifNoUser401,
     toggleUserFlag('isLocked')
   );
   api.post(
@@ -99,5 +117,12 @@ export default function settingsController(app) {
     ifNoUser401,
     updateMyCurrentChallenge
   );
+
+  api.post(
+    '/update-my-theme',
+    ifNoUser401,
+    updateMyTheme
+  );
+
   app.use(api);
 }

@@ -188,4 +188,13 @@ export const closeHelpChat = createAction(
   })
 );
 
-export const toggleNightMode = createAction(types.toggleNightMode);
+export const toggleNightMode = createAction(
+  types.toggleNightMode,
+  // we use this function to avoid hanging onto the eventObject
+  // so that react can recycle it
+  () => null
+);
+// updateTheme(theme: /night|default/) => Action
+export const updateTheme = createAction(types.updateTheme);
+// addThemeToBody(theme: /night|default/) => Action
+export const addThemeToBody = createAction(types.addThemeToBody);

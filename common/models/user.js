@@ -599,6 +599,7 @@ module.exports = function(User) {
       .toPromise();
   };
 
+  // deprecated. remove once live
   User.remoteMethod(
     'updateTheme',
     {

@@ -5,11 +5,12 @@ import {
   updateThisUser,
   updateCompletedChallenges,
   createErrorObservable,
-  showSignIn
+  showSignIn,
+  updateTheme,
+  addThemeToBody
 } from './actions';
 
 const { fetchUser } = types;
-
 export default function getUserSaga(action$, getState, { services }) {
   return action$
     .filter(action => action.type === fetchUser)
@@ -19,10 +20,14 @@ export default function getUserSaga(action$, getState, { services }) {
           if (!entities || !result) {
             return Observable.just(showSignIn());
           }
+          const user = entities.user[result];
+          const isNightMode = user.theme === 'night';
           return Observable.of(
             addUser(entities),
+            updateCompletedChallenges(result),
             updateThisUser(result),
-            updateCompletedChallenges(result)
+            isNightMode ? updateTheme(user.theme) : null,
+            isNightMode ? addThemeToBody(user.theme) : null
           );
         })
         .catch(createErrorObservable);
