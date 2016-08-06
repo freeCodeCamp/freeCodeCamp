@@ -24,7 +24,7 @@ nav.navbar.navbar-default.navbar-fixed-top.nav-height
                     a(href='/signin') Sign in
             else
                 li.brownie-points-nav
-                  a(href='/' + user.username) [&thinsp;#{user.points}&thinsp;]
+                    a(href='/settings') [&thinsp;#{user.points}&thinsp;]
                 li.hidden-xs.hidden-sm.avatar
-                  a(href='/' + user.username)
+                    a(href='/settings')
                         img.profile-picture.float-right(src='#{user.picture}')
