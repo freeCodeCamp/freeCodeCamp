@@ -125,6 +125,13 @@ export default function executeChallengeSaga(action$, getState) {
               if (required.src) {
                 return cacheScript(required, required.crossDomain);
               }
+              // css files with `url(...` may not work in style tags
+              // so we put them in raw links
+              if (required.link && required.raw) {
+                return Observable.just(
+                  `<link href=${required.link} rel='stylesheet' />`
+                );
+              }
               if (required.link) {
                 return cacheLink(required, required.crossDomain);
               }
