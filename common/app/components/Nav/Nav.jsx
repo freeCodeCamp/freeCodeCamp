@@ -10,7 +10,7 @@ import {
 } from 'react-bootstrap';
 
 import navLinks from './links.json';
-import FCCNavItem from './NavItem.jsx';
+import PointsNavItem from './Points-Nav-Item.jsx';
 import AvatarNavItem from './Avatar-Nav-Item.jsx';
 
 const fCClogo = 'https://s3.amazonaws.com/freecodecamp/freecodecamp_logo.svg';
@@ -173,9 +173,10 @@ export default class extends React.Component {
         key='points'
         to='/settings'
         >
-        <FCCNavItem className='brownie-points-nav'>
-          [ { points } ]
-        </FCCNavItem>
+        <PointsNavItem
+          className='brownie-points-nav'
+          points={ points }
+        />
       </LinkContainer>
     );
   }
