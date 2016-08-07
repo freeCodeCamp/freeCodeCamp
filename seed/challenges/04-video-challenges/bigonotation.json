@@ -53,7 +53,7 @@
       "title": "Big O Notation: A Few Examples",
       "description": [
         "Time complexity is commonly estimated by counting the number of elementary operations (elementary operation = an operation that takes a fixed amount of time to preform) performed in the algorithm.",
-        "Time complexity is classified by the nature of the function T(n). O represents the function, and (n) represents the number of elements to be acted on.",
+        "Time complexity is classified by the nature of the function O(n). O represents the function, and (n) represents the number of elements to be acted on.",
         "Worst-case time complexity, the longest it could possibly take with any valid input, is the most common way to express time complexity.",
         "When you discuss Big-O notation, that is generally referring to the worst case scenario.",
         "For example, if we have to search two lists for common entries, we will calculate as if both entries would be at the very end of each list, just to be safe that we don't underestimate how long it could take.",
@@ -93,7 +93,7 @@
           "title": "Notación O mayúscula: Unos pocos ejemplos",
           "description": [
             "La complejidad en tiempo comunmente se estima contando la cantidad de operaciones elementales que un algoritmo efectua (una operación elemental es una cuya ejecución requiere una cantidad de tiempo fijo).",
-            "La complejidad temporal se clasifica por la naturaleza de la función T(n) donde T representa una función matemática para el tiempo que tarda el algoritmo y n representa la cantidad de elementos sobre los que actua el algoritmo.",
+            "La complejidad temporal se clasifica por la naturaleza de la función O(n) donde O representa una función matemática para el tiempo que tarda el algoritmo y n representa la cantidad de elementos sobre los que actua el algoritmo.",
             "La complejidad en el peor caso, es la que más se demoraría con una entrada válida, es la forma más comun de expresar la complejidad.",
             "Cuando discutes la notación O mayúscula, esta se refiere al peor caso.",
             "Por ejemplo, si debemos buscar elementos comunes en dos listas, haremos el cálculo suponiendo que los elementos comunes estuvieran justamente al final de cada una de las lista, para no subestimar cuando nos tomaría encontrarlos.",
