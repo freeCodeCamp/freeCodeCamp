@@ -1222,6 +1222,12 @@
     {
       "id": "bad87fee1348bd9aedd08845",
       "title": "Add Font Awesome Icons to our Buttons",
+      "required": [
+        {
+          "link": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.css",
+          "raw": true
+        }
+      ],
       "description": [
         "Font Awesome is a convenient library of icons. These icons are vector graphics, stored in the <code>.svg</code> file format. These icons are treated just like fonts. You can specify their size using pixels, and they will assume the font size of their parent HTML elements.",
         "You can add Font Awesome to any app just by including it by adding the following code to the top of your HTML:",
@@ -1328,6 +1334,12 @@
     {
       "id": "bad87fee1348bd9aedc08845",
       "title": "Add Font Awesome Icons to all of our Buttons",
+      "required": [
+        {
+          "link": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.css",
+          "raw": true
+        }
+      ],
       "description": [
         "Font Awesome is a convenient library of icons. These icons are vector graphics, stored in the <code>.svg</code> file format. These icons are treated just like fonts. You can specify their size using pixels, and they will assume the font size of their parent HTML elements.",
         "Use Font Awesome to add an <code>info-circle</code> icon to your info button and a <code>trash</code> icon to your delete button."
@@ -1418,6 +1430,12 @@
     {
       "id": "bad87fee1348bd9aedb08845",
       "title": "Responsively Style Radio Buttons",
+      "required": [
+        {
+          "link": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.css",
+          "raw": true
+        }
+      ],
       "description": [
         "You can use Bootstrap's <code>col-xs-*</code> classes on <code>form</code> elements, too! This way, our radio buttons will be evenly spread out across the page, regardless of how wide the screen resolution is.",
         "Nest all of your radio buttons within a <code>&#60;div class=\"row\"&#62;</code> element. Then nest each of them within a <code>&#60;div class=\"col-xs-6\"&#62;</code> element."
@@ -1508,6 +1526,12 @@
     {
       "id": "bad87fee1348bd9aeda08845",
       "title": "Responsively Style Checkboxes",
+      "required": [
+        {
+          "link": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.css",
+          "raw": true
+        }
+      ],
       "description": [
         "You can use Bootstrap's <code>col-xs-*</code> classes on <code>form</code> elements, too! This way, our checkboxes will be evenly spread out across the page, regardless of how wide the screen resolution is.",
         "Nest all your checkboxes in a <code>&#60;div class=\"row\"&#62;</code> element. Then nest each of them in a <code>&#60;div class=\"col-xs-4\"&#62;</code> element."
@@ -1606,6 +1630,12 @@
     {
       "id": "bad87fee1348bd9aed908845",
       "title": "Style Text Inputs as Form Controls",
+      "required": [
+        {
+          "link": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.css",
+          "raw": true
+        }
+      ],
       "description": [
         "You can add the <code>fa-paper-plane</code> Font Awesome icon by adding <code>&#60;i class=\"fa fa-paper-plane\"&#62;&#60;/i&#62;</code> within your submit <code>button</code> element.",
         "Give your form's text input field a class of <code>form-control</code>. Give your form's submit button the classes <code>btn btn-primary</code>. Also give this button the Font Awesome icon of <code>fa-paper-plane</code>."
@@ -1712,6 +1742,12 @@
     {
       "id": "bad87fee1348bd9aec908845",
       "title": "Line up Form Elements Responsively with Bootstrap",
+      "required": [
+        {
+          "link": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.css",
+          "raw": true
+        }
+      ],
       "description": [
         "Now let's get your form <code>input</code> and your submission <code>button</code> on the same line. We'll do this the same way we have previously: by using a <code>div</code> element with the class <code>row</code>, and other <code>div</code> elements within it using the <code>col-xs-*</code> class.",
         "Nest both your form's text <code>input</code> and submit <code>button</code> within a <code>div</code> with the class <code>row</code>. Nest your form's text <code>input</code> within a div with the class of <code>col-xs-7</code>. Nest your form's submit <code>button</code> in a <code>div</code> with the class <code>col-xs-5</code>.",
