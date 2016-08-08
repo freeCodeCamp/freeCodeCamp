@@ -95,10 +95,6 @@ export const updateUserLang = createAction(
   (username, lang) => ({ username, lang })
 );
 export const updateAppLang = createAction(types.updateAppLang);
-// updateCompletedChallenges(username: String) => Action
-export const updateCompletedChallenges = createAction(
-  types.updateCompletedChallenges
-);
 
 // used when server needs client to redirect
 export const delayedRedirect = createAction(types.delayedRedirect);
