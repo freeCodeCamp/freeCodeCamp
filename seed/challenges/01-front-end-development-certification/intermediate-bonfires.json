@@ -352,6 +352,7 @@
             "Traduce la cadena de texto que se te provee al Latín de los cerdos (Pig Latin)",
             "<a href=\"http://en.wikipedia.org/wiki/Pig_Latin\" target=\"_blank\">Pig Latin</a> toma la primera consonante (o grupo de consonantes) de una palabra en inglés, la mueve al final de la palabra y agrega un \"ay\".",
             "Si la palabra comienza con una vocal, simplemente añade \"way\" al final.",
+            "Cadenas de entrada están garantizadas de ser palabras en Inglés en minúscula.",
             "Recuerda utilizar <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
           ]
         },
