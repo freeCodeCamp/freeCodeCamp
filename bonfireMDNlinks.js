@@ -15,6 +15,7 @@ var links = {
   "HTML Entities": "http://dev.w3.org/html5/html-author/charref",
   "Symmetric Difference": "https://www.youtube.com/watch?v=PxffSUQRkG4",
   "Roman Numerals": "http://www.mathsisfun.com/roman-numerals.html",
+  "Floating Point Guide": "http://floating-point-gui.de",
 
   // ========= GLOBAL OBJECTS
   "Global Array Object": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array",
