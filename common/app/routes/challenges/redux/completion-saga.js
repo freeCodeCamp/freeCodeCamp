@@ -2,22 +2,30 @@ import { Observable } from 'rx';
 
 import types from './types';
 import { moveToNextChallenge } from './actions';
-import {
-  createErrorObservable,
-  updateUserPoints
-} from '../../../redux/actions';
-import { makeToast } from '../../../toasts/redux/actions';
 
 import { challengeSelector } from './selectors';
 import { randomCompliment } from '../../../utils/get-words';
+import {
+  createErrorObservable,
+  updateUserPoints,
+  updateUserChallenge
+} from '../../../redux/actions';
 import { backEndProject } from '../../../utils/challengeTypes';
+import { makeToast } from '../../../toasts/redux/actions';
 import { postJSON$ } from '../../../../utils/ajax-stream';
 
-function postChallenge(url, body, username) {
+function postChallenge(url, username, _csrf, challengeInfo) {
+  const body = { ...challengeInfo, _csrf };
   const saveChallenge$ = postJSON$(url, body)
     .retry(3)
-    .map(({ points }) => {
-      return updateUserPoints(username, points);
+    .flatMap(({ points, lastUpdated, completedDate }) => {
+      return Observable.of(
+        updateUserPoints(username, points),
+        updateUserChallenge(
+          username,
+          { ...challengeInfo, lastUpdated, completedDate }
+        )
+      );
     })
     .catch(createErrorObservable);
   const challengeCompleted$ = Observable.of(moveToNextChallenge());
@@ -44,12 +52,13 @@ function submitModern(type, state) {
         app: { user, csrfToken },
         challengesApp: { files }
       } = state;
-      const body = {
-        id,
-        _csrf: csrfToken,
-        files
-      };
-      return postChallenge('/modern-challenge-completed', body, user);
+      const challengeInfo = { id, files };
+      return postChallenge(
+        '/modern-challenge-completed',
+        user,
+        csrfToken,
+        challengeInfo
+      );
     }
   }
   return Observable.just(makeToast({ message: 'Not quite there, yet.' }));
@@ -62,16 +71,16 @@ function submitProject(type, state, { solution, githubLink }) {
   const {
     app: { user, csrfToken }
   } = state;
-  const body = {
-    id,
-    challengeType,
-    solution,
-    _csrf: csrfToken
-  };
+  const challengeInfo = { id, challengeType, solution };
   if (challengeType === backEndProject) {
-    body.githubLink = githubLink;
+    challengeInfo.githubLink = githubLink;
   }
-  return postChallenge('/project-completed', body, user);
+  return postChallenge(
+    '/project-completed',
+    user,
+    csrfToken,
+    challengeInfo
+  );
 }
 
 function submitSimpleChallenge(type, state) {
@@ -81,11 +90,13 @@ function submitSimpleChallenge(type, state) {
   const {
     app: { user, csrfToken }
   } = state;
-  const body = {
-    id,
-    _csrf: csrfToken
-  };
-  return postChallenge('/challenge-completed', body, user);
+  const challengeInfo = { id };
+  return postChallenge(
+    '/challenge-completed',
+    user,
+    csrfToken,
+    challengeInfo
+  );
 }
 
 const submitTypes = {

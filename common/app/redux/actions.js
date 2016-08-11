@@ -94,6 +94,16 @@ export const updateUserLang = createAction(
   types.updateUserLang,
   (username, lang) => ({ username, lang })
 );
+
+// updateUserChallenge(
+//   username: String,
+//   challengeInfo: Object
+// ) => Action
+export const updateUserChallenge = createAction(
+  types.updateUserChallenge,
+  (username, challengeInfo) => ({ username, challengeInfo })
+);
+
 export const updateAppLang = createAction(types.updateAppLang);
 
 // used when server needs client to redirect

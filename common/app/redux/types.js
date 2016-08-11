@@ -12,6 +12,7 @@ export default createTypes([
   'updateUserFlag',
   'updateUserEmail',
   'updateUserLang',
+  'updateUserChallenge',
   'showSignIn',
   'loadCurrentChallenge',
   'updateMyCurrentChallenge',

@@ -82,5 +82,22 @@ export default function entities(state = initialState, action) {
       }
     };
   }
+
+  if (action.type === types.updateUserChallenge) {
+    const { challengeInfo } = action.payload;
+    return {
+      ...state,
+      user: {
+        ...state.user,
+        [username]: {
+          ...state.user[username],
+          challengeMap: {
+            ...state.user[username].challengeMap,
+            [challengeInfo.id]: challengeInfo
+          }
+        }
+      }
+    };
+  }
   return state;
 }
