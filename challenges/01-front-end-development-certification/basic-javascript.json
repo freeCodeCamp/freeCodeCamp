@@ -1727,10 +1727,11 @@
       "id": "56533eb9ac21ba0edf2244bb",
       "title": "Word Blanks",
       "description": [
-        "We will now use our knowledge of strings to build a \"<a href='https://en.wikipedia.org/wiki/Mad_Libs' target='_blank'>Mad Libs</a>\" style word game we're calling \"Word Blanks\". You will create an (optionally humorous) \"Fill in the Blanks\" style sentence.",
-        "You will need to use string operators to build a new string, <code>result</code>, using the provided variables: <code>myNoun</code>, <code>myAdjective</code>, <code>myVerb</code>, and <code>myAdverb</code>.",
-        "You will also need to use additional strings, which will not change, and must be in between all of the provided words. The output should be a complete sentence.",
-        "We have provided a framework for testing your results with different words. The tests will run your function with several different inputs to make sure all of the provided words appear in the output, as well as your extra strings."
+        "We will now use our knowledge of strings to build a \"<a href='https://en.wikipedia.org/wiki/Mad_Libs' target='_blank'>Mad Libs</a>\" style word game we're calling \"Word Blanks\". You will create an (optionally humorous) \"Fill in the Blanks\" style sentence. Here's an example incomplete sentence.",
+        "<code>\"The ______ ______ looked around ______ then ______ into the house\"</code>",
+        "These four blanks would be filled in this order: (adjective) (noun) (adverb) (verb)",
+        "You will need to use string concatenation to build a new string, <code>result</code>, using the variables <code>myNoun</code>, <code>myAdjective</code>, <code>myVerb</code>, and <code>myAdverb</code>. These variables are passed to the function as parameters. Don't change these parameter names in the function.",
+        "Include additional strings and spaces (which will not change) in between the provided variables to make a complete sentence."
       ],
       "releasedOn": "January 1, 2016",
       "challengeSeed": [
