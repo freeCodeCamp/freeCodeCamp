@@ -79,7 +79,7 @@ function cacheLink({ link } = {}, crossDomain = true) {
 
 
 const htmlCatch = '\n<!--fcc-->';
-const jsCatch = '\n;/*fcc*/';
+const jsCatch = '\n;/*fcc*/\n';
 
 export default function executeChallengeSaga(action$, getState) {
   const frameRunner$ = cacheScript(
@@ -103,14 +103,19 @@ export default function executeChallengeSaga(action$, getState) {
         // createbuild
         .flatMap(file$ => file$.reduce((build, file) => {
           let finalFile;
+          const finalContents = [
+            file.head,
+            file.contents,
+            file.tail
+          ];
           if (file.ext === 'js') {
             finalFile = setExt('html', updateContents(
-              `<script>${file.contents}${jsCatch}</script>`,
+              `<script>${finalContents.join(jsCatch)}${jsCatch}</script>`,
               file
             ));
           } else if (file.ext === 'css') {
             finalFile = setExt('html', updateContents(
-              `<style>${file.contents}</style>`,
+              `<style>${finalContents.join(htmlCatch)}</style>`,
               file
             ));
           } else {
