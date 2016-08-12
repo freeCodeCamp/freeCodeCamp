@@ -3,7 +3,6 @@ import types from './types';
 import {
   addUser,
   updateThisUser,
-  updateCompletedChallenges,
   createErrorObservable,
   showSignIn,
   updateTheme,
@@ -24,7 +23,6 @@ export default function getUserSaga(action$, getState, { services }) {
           const isNightMode = user.theme === 'night';
           return Observable.of(
             addUser(entities),
-            updateCompletedChallenges(result),
             updateThisUser(result),
             isNightMode ? updateTheme(user.theme) : null,
             isNightMode ? addThemeToBody(user.theme) : null

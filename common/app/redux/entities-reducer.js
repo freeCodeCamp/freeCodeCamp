@@ -1,6 +1,6 @@
 import types from './types';
 
-const { updateUserPoints, updateCompletedChallenges } = types;
+const { updateUserPoints } = types;
 const initialState = {
   superBlock: {},
   block: {},
@@ -15,22 +15,6 @@ export default function entities(state = initialState, action) {
     type,
     payload: { email, username, points, flag, languageTag } = {}
   } = action;
-  if (type === updateCompletedChallenges) {
-    const username = action.payload;
-    const completedChallengeMap = state.user[username].challengeMap || {};
-    return {
-      ...state,
-      challenge: Object.keys(state.challenge)
-        .reduce((map, key) => {
-          const challenge = state.challenge[key];
-          map[key] = {
-            ...challenge,
-            isCompleted: !!completedChallengeMap[challenge.id]
-          };
-          return map;
-        }, {})
-    };
-  }
   if (action.meta && action.meta.entities) {
     return {
       ...state,
@@ -94,6 +78,23 @@ export default function entities(state = initialState, action) {
         [username]: {
           ...state.user[username],
           currentChallengeId: action.payload.currentChallengeId
+        }
+      }
+    };
+  }
+
+  if (action.type === types.updateUserChallenge) {
+    const { challengeInfo } = action.payload;
+    return {
+      ...state,
+      user: {
+        ...state.user,
+        [username]: {
+          ...state.user[username],
+          challengeMap: {
+            ...state.user[username].challengeMap,
+            [challengeInfo.id]: challengeInfo
+          }
         }
       }
     };

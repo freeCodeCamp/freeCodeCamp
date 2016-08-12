@@ -61,7 +61,12 @@ function buildUserUpdate(
 
   log('user update data', updateData);
 
-  return { alreadyCompleted, updateData };
+  return {
+    alreadyCompleted,
+    updateData,
+    completedDate: finalChallenge.completedDate,
+    lastUpdated: finalChallenge.lastUpdated
+  };
 }
 
 export default function(app) {
@@ -138,14 +143,14 @@ export default function(app) {
           files
         } = req.body;
 
-        const { alreadyCompleted, updateData } = buildUserUpdate(
+        const {
+          alreadyCompleted,
+          updateData,
+          lastUpdated
+        } = buildUserUpdate(
           user,
           id,
-          {
-            id,
-            files,
-            completedDate
-          }
+          { id, files, completedDate }
         );
 
         const points = alreadyCompleted ? user.points : user.points + 1;
@@ -156,7 +161,9 @@ export default function(app) {
             if (type === 'json') {
               return res.json({
                 points,
-                alreadyCompleted
+                alreadyCompleted,
+                completedDate,
+                lastUpdated
               });
             }
             return res.sendStatus(200);
@@ -184,7 +191,11 @@ export default function(app) {
         const completedDate = Date.now();
         const { id, solution, timezone } = req.body;
 
-        const { alreadyCompleted, updateData } = buildUserUpdate(
+        const {
+          alreadyCompleted,
+          updateData,
+          lastUpdated
+        } = buildUserUpdate(
           req.user,
           id,
           { id, solution, completedDate },
@@ -200,7 +211,9 @@ export default function(app) {
             if (type === 'json') {
               return res.json({
                 points,
-                alreadyCompleted
+                alreadyCompleted,
+                completedDate,
+                lastUpdated
               });
             }
             return res.sendStatus(200);
@@ -253,7 +266,8 @@ export default function(app) {
       .flatMap(() => {
         const {
           alreadyCompleted,
-          updateData
+          updateData,
+          lastUpdated
         } = buildUserUpdate(user, completedChallenge.id, completedChallenge);
 
         return user.update$(updateData)
@@ -262,7 +276,9 @@ export default function(app) {
             if (type === 'json') {
               return res.send({
                 alreadyCompleted,
-                points: alreadyCompleted ? user.points : user.points + 1
+                points: alreadyCompleted ? user.points : user.points + 1,
+                completedDate: completedChallenge.completedDate,
+                lastUpdated
               });
             }
             return res.status(200).send(true);
