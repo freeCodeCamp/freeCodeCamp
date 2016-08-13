@@ -529,49 +529,45 @@
       }
     },
     {
-      "id": "ab31c21b530c0dafa9e241ee",
-      "title": "Slasher Flick",
+      "id": "579e2a2c335b9d72dd32e05c",
+      "title": "Slice and Splice",
       "description": [
-        "Return the remaining elements of an array after chopping off <code>n</code> elements from the head.",
-        "The head means the beginning of the array, or the zeroth index.",
-        "Remember to use <a href=\"http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Read-Search-Ask</a> if you get stuck. Write your own code."
+        "You are given two arrays and an index.",
+        "Use the array methods <code>slice</code> and <code>splice</code> to copy each element of the first array into the second array, in order.",
+        "Begin inserting elements at index <code>n</code> of the second array.",
+        "Return the resulting array. The input arrays should remain the same after the function runs.",
+        "Remember to use <a href=\"//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help\" target=\"_blank\">Read-Search-Ask</a> if you get stuck. Write your own code."
       ],
       "challengeSeed": [
-        "function slasher(arr, howMany) {",
-        "  // it doesn't always pay to be first",
-        "  return arr;",
+        "function frankenSplice(arr1, arr2, n) {",
+        "  // It's alive. It's alive!",
+        "  return arr2;",
         "}",
         "",
-        "slasher([1, 2, 3], 2);"
+        "frankenSplice([1, 2, 3], [4, 5, 6], 1);"
+      ],
+      "tail": [
+        "var testArr1 = [1, 2];",
+        "var testArr2 = ['a', 'b'];"
       ],
       "tests": [
-        "assert.deepEqual(slasher([1, 2, 3], 2), [3], 'message: <code>slasher([1, 2, 3], 2)</code> should return <code>[3]</code>.');",
-        "assert.deepEqual(slasher([1, 2, 3], 0), [1, 2, 3], 'message: <code>slasher([1, 2, 3], 0)</code> should return <code>[1, 2, 3]</code>.');",
-        "assert.deepEqual(slasher([1, 2, 3], 9), [], 'message: <code>slasher([1, 2, 3], 9)</code> should return <code>[]</code>.');",
-        "assert.deepEqual(slasher([1, 2, 3], 4), [], 'message: <code>slasher([1, 2, 3], 4)</code> should return <code>[]</code>.');",
-        "assert.deepEqual(slasher(['burgers', 'fries', 'shake'], 1), ['fries', 'shake'], 'message: <code>slasher([\"burgers\", \"fries\", \"shake\"], 1)</code> should return <code>[\"fries\", \"shake\"]</code>.');",
-        "assert.deepEqual(slasher([1, 2, 'chicken', 3, 'potatoes', 'cheese', 4], 5), ['cheese', 4], 'message: <code>slasher([1, 2, \"chicken\", 3, \"potatoes\", \"cheese\", 4], 5)</code> should return <code>[\"cheese\", 4]</code>.');"
+        "assert.deepEqual(frankenSplice([1, 2, 3], [4, 5], 1), [4, 1, 2, 3, 5], 'message: <code>frankenSplice([1, 2, 3], [4, 5], 1)</code> should return <code>[4, 1, 2, 3, 5]</code>.');",
+        "assert.deepEqual(frankenSplice(testArr1, testArr2, 1), ['a', 1, 2, 'b'], 'message: <code>frankenSplice([1, 2], [\"a\", \"b\"], 1)</code> should return <code>[\"a\", 1, 2, \"b\"]</code>.');",
+        "assert.deepEqual(frankenSplice(['claw', 'tentacle'], ['head', 'shoulders', 'knees', 'toes'], 2), ['head', 'shoulders', 'claw', 'tentacle', 'knees', 'toes'], 'message: <code>frankenSplice([\"claw\", \"tentacle\"], [\"head\", \"shoulders\", \"knees\", \"toes\"], 2)</code> should return <code>[\"head\", \"shoulders\", \"claw\", \"tentacle\", \"knees\", \"toes\"]</code>.');",
+        "assert.deepEqual(frankenSplice([1, 2, 3, 4], [], 0), [1, 2, 3, 4], 'message: All elements from the first array should be added to the second array in their original order.');",
+        "assert(testArr1[0] === 1 && testArr1[1] === 2, 'message: The first array should remain the same after the function runs.');",
+        "assert(testArr2[0] === 'a' && testArr2[1] === 'b', 'message: The second array should remain the same after the function runs.');"
       ],
       "type": "bonfire",
       "isRequired": true,
       "solutions": [
-        "function slasher(arr, howMany) {\n  // it doesn't always pay to be first\n  return arr.slice(howMany);\n}\n\nslasher([1, 2, 3], 2);\n"
+        "function frankenSplice(arr1, arr2, n) {\n  // It's alive. It's alive!\n  var result = arr2.slice();\n  for(var i = 0; i < arr1.length; i++) {\n    result.splice(n+i, 0, arr1[i]);\n  }\n  return result;\n}\n\nfrankenSplice([1, 2, 3], [4, 5], 1);\n"
       ],
       "MDNlinks": [
         "Array.prototype.slice()",
         "Array.prototype.splice()"
       ],
-      "challengeType": 5,
-      "translations": {
-        "es": {
-          "title": "Vuélale la cabeza",
-          "description": [
-            "Crea una función que devuelva los elementos restantes de un arreglo después de eliminar <code>n</code> elementos de la cabeza.",
-            "Por cabeza nos referimos al inicio de un arreglo, comenzando por el índice 0.",
-            "Recuerda utilizar <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
-          ]
-        }
-      }
+      "challengeType": 5
     },
     {
       "id": "af2170cad53daa0770fabdea",
