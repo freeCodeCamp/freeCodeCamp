@@ -1233,8 +1233,9 @@
         "You can add Font Awesome to any app just by including it by adding the following code to the top of your HTML:",
         "<code>&#60;link rel=\"stylesheet\" href=\"//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css\"/&#62;</code>",
         "In this case, we've already added it for you to this page behind the scenes.",
-        "The <code>i</code> element was originally used to make other elements italic, but is now commonly used for icons. You add the Font Awesome classes to the <code>i</code> element to turn it into an icon, for example:",
+        "The <code>i</code> element was originally used to make other elements italic, but is now commonly used for icons. You can add the Font Awesome classes to the <code>i</code> element to turn it into an icon, for example:",
         "<code>&lt;i class=\"fa fa-info-circle\"&gt;&lt;/i&gt;</code>",
+        "Note that the <code>span</code> element is also acceptable for use with icons.",
         "Use Font Awesome to add a <code>thumbs-up</code> icon to your like button by giving it an <code>i</code> element with the classes <code>fa</code> and <code>fa-thumbs-up</code>."
       ],
       "challengeSeed": [
@@ -1297,10 +1298,10 @@
         "</div>"
       ],
       "tests": [
-        "assert($(\"i\").is(\".fa.fa-thumbs-up\"), 'message: Add an <code>i</code> element with the classes <code>fa</code> and <code>fa-thumbs-up</code>.');",
-        "assert($(\"i.fa-thumbs-up\").parent().text().match(/Like/gi) && $(\".btn-primary > i\").is(\".fa.fa-thumbs-up\"), 'message: Your <code>fa-thumbs-up</code> icon should be located within the Like button.');",
-        "assert($(\"button\").children(\"i\").length > 0, 'message: Nest your <code>i</code> element within your <code>button</code> element.');",
-        "assert(code.match(/<\\/i>/g), 'message: Make sure your <code>i</code> element has a closing tag.');"
+        "assert($(\"i\").is(\".fa.fa-thumbs-up\") || $(\"span\").is(\".fa.fa-thumbs-up\"), 'message: Add an <code>i</code> element with the classes <code>fa</code> and <code>fa-thumbs-up</code>.');",
+        "assert(($(\"i.fa-thumbs-up\").parent().text().match(/Like/gi) && $(\".btn-primary > i\").is(\".fa.fa-thumbs-up\")) || ($(\"span.fa-thumbs-up\").parent().text().match(/Like/gi) && $(\".btn-primary > span\").is(\".fa.fa-thumbs-up\")), 'message: Your <code>fa-thumbs-up</code> icon should be located within the Like button.');",
+        "assert($(\"button\").children(\"i\").length > 0 || $(\"button\").children(\"span\").length > 0, 'message: Nest your <code>i</code> element within your <code>button</code> element.');",
+        "assert(code.match(/<\\/i>|<\\/span>/g), 'message: Make sure your icon element has a closing tag.');"
       ],
       "type": "waypoint",
       "challengeType": 0,
@@ -1342,7 +1343,8 @@
       ],
       "description": [
         "Font Awesome is a convenient library of icons. These icons are vector graphics, stored in the <code>.svg</code> file format. These icons are treated just like fonts. You can specify their size using pixels, and they will assume the font size of their parent HTML elements.",
-        "Use Font Awesome to add an <code>info-circle</code> icon to your info button and a <code>trash</code> icon to your delete button."
+        "Use Font Awesome to add an <code>info-circle</code> icon to your info button and a <code>trash</code> icon to your delete button.",
+        "Note: The <code>span</code> element is an acceptable alternative to the <code>i</code> element for the directions below."
       ],
       "challengeSeed": [
         "<link href=\"https://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
@@ -1404,9 +1406,9 @@
         "</div>"
       ],
       "tests": [
-        "assert($(\".btn-danger > i\").is(\".fa.fa-trash\"), 'message: You should add a <code>&#60;i class=\"fa fa-trash\"&#62;&#60;/i&#62;</code> within your delete button element.');",
-        "assert($(\".btn-info > i\").is(\".fa.fa-info-circle\"), 'message: You should add a <code>&#60;i class=\"fa fa-info-circle\"&#62;&#60;/i&#62;</code> within your info button element.');",
-        "assert(code.match(/<\\/i>/g) && code.match(/<\\/i>/g).length > 2 && $(\".btn-primary > i\").is(\".fa.fa-thumbs-up\"), 'message: Make sure each of your <code>i</code> elements has a closing tag and <code>&#60;i class=\"fa fa-thumbs-up\"&#62;&#60;/i&#62;</code> is in your like button element.');"
+        "assert($(\".btn-info > i\").is(\".fa.fa-info-circle\") || $(\".btn-info > span\").is(\".fa.fa-info-circle\"), 'message: You should add a <code>&#60;i class=\"fa fa-info-circle\"&#62;&#60;/i&#62;</code> within your info button element.');",
+        "assert($(\".btn-danger > i\").is(\".fa.fa-trash\") || $(\".btn-danger > span\").is(\".fa.fa-trash\"), 'message: You should add a <code>&#60;i class=\"fa fa-trash\"&#62;&#60;/i&#62;</code> within your delete button element.');",
+        "assert(code.match(/<\\/i>|<\\/span/g) && code.match(/<\\/i|<\\/span>/g).length > 2 && ($(\".btn-primary > i\").is(\".fa.fa-thumbs-up\") || $(\".btn-primary > span\").is(\".fa.fa-thumbs-up\")), 'message: Make sure each of your <code>i</code> elements has a closing tag and <code>&#60;i class=\"fa fa-thumbs-up\"&#62;&#60;/i&#62;</code> is in your like button element.');"
       ],
       "type": "waypoint",
       "challengeType": 0,
