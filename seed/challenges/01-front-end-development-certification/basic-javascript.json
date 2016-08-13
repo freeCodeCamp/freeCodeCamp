@@ -5176,7 +5176,7 @@
       "title": "Iterate Through an Array with a For Loop",
       "description": [
         "A common task in JavaScript is to iterate through the contents of an array. One way to do that is with a <code>for</code> loop. This code will output each element of the array <code>arr</code> to the console:",
-        "<blockquote>var arr = [10,9,8,7,6];<br>for (var i=0; i < arr.length; i++) {<br>   console.log(arr[i]);<br>}</blockquote>",
+        "<blockquote>var arr = [10,9,8,7,6];<br>for (var i = 0; i < arr.length; i++) {<br>   console.log(arr[i]);<br>}</blockquote>",
         "Remember that Arrays have zero-based numbering, which means the last index of the array is length - 1. Our <dfn>condition</dfn> for this loop is <code>i < arr.length</code>, which stops when <code>i</code> is at length - 1.",
         "<h4>Instructions</h4>",
         "Declare and initialize a variable <code>total</code> to <code>0</code>. Use a <code>for</code> loop to add the value of each element of the <code>myArr</code> array to <code>total</code>."
@@ -5205,10 +5205,10 @@
         "var ourArr = [ 9, 10, 11, 12];\nvar ourTotal = 0;\n\nfor (var i = 0; i < ourArr.length; i++) {\n  ourTotal += ourArr[i];\n}\n\nvar myArr = [ 2, 3, 4, 5, 6];\nvar total = 0;\n\nfor (var i = 0; i < myArr.length; i++) {\n  total += myArr[i];\n}"
       ],
       "tests": [
-        "assert(code.match(/var\\s*total\\s*=\\s*0\\s*;/), 'message: <code>total</code> should be declared and initialized to 0');",
+        "assert(code.match(/var.*?total\\s*=\\s*0.*?;/), 'message: <code>total</code> should be declared and initialized to 0');",
         "assert(total === 20, 'message: <code>total</code> should equal 20');",
         "assert(code.match(/for\\s*\\(/g).length > 1 && code.match(/myArr\\s*\\[/), 'message: You should use a <code>for</code> loop to iterate through <code>myArr</code>');",
-        "assert(!code.match(/total[\\s\\+\\-]*=\\s*(\\d(?!\\s*;)|[1-9])/g), 'message: Do not set <code>total</code> to 20 directly');"
+        "assert(!code.match(/total[\\s\\+\\-]*=\\s*(\\d(?!\\s*[;,])|[1-9])/g), 'message: Do not set <code>total</code> to 20 directly');"
       ],
       "type": "waypoint",
       "challengeType": 1,
