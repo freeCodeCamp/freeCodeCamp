@@ -1098,7 +1098,7 @@
         "An example of this would be:",
         "<code>&#60img src=\"https://www.your-image-source.com/your-image.jpg\"&#62</code>",
         "All <code>img</code> elements <strong>must</strong> have an <code>alt</code> attribute. The text inside an <code>alt</code> attribute is used for screen readers to improve accessibility and is displayed if the image fails to load.",
-        "Lets add an <code>alt</code> attribute to our <code>img</code> example above:",
+        "Let's add an <code>alt</code> attribute to our <code>img</code> example above:",
         "<code>&#60img src=\"https://www.your-image-source.com/your-image.jpg\" alt=\"Author standing on a beach with two thumbs up. \"&#62</code>",
         "Note that in most cases, <code>img</code> elements are self-closing.",
         "Try it with this image:",
