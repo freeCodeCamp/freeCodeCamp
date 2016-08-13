@@ -18,15 +18,18 @@ import {
 
 const mapStateToProps = createSelector(
   challengeSelector,
+  state => state.challengesApp.id,
   state => state.challengesApp.tests,
   state => state.challengesApp.files,
   state => state.challengesApp.key,
   (
     { showPreview, mode },
+    id,
     tests,
     files = {},
     key = ''
   ) => ({
+    id,
     content: files[key] && files[key].contents || '',
     file: files[key],
     showPreview,
@@ -46,6 +49,7 @@ export class Challenge extends PureComponent {
   static displayName = 'Challenge';
 
   static propTypes = {
+    id: PropTypes.string,
     showPreview: PropTypes.bool,
     content: PropTypes.string,
     mode: PropTypes.string,
@@ -58,6 +62,12 @@ export class Challenge extends PureComponent {
   componentDidMount() {
     this.props.loadCode();
     this.props.updateMain();
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (this.props.id !== nextProps.id) {
+      this.props.loadCode();
+    }
   }
 
   renderPreview(showPreview) {
