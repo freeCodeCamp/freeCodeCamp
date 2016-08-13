@@ -5,7 +5,7 @@ import { compose, createStore, applyMiddleware } from 'redux';
 // main app
 import App from './App.jsx';
 // app routes
-import childRoutes from './routes';
+import createChildRoute from './routes';
 
 // redux
 import { createEpic } from 'redux-epic';
@@ -16,8 +16,6 @@ import sagas from './sagas';
 import servicesCreator from '../utils/services-creator';
 
 const createRouteProps = Observable.fromNodeCallback(match);
-
-const routes = { components: App, ...childRoutes };
 
 //
 // createApp(settings: {
@@ -75,7 +73,12 @@ export default function createApp({
   // sync history client side with store.
   // server side this is an identity function and history is undefined
   history = syncHistoryWithStore(history, store, syncOptions);
-
+  const routes = {
+    components: App,
+    ...createChildRoute({
+      getState() { return store.getState(); }
+    })
+  };
   // createRouteProps({
   //   redirect: LocationDescriptor,
   //   history: History,
