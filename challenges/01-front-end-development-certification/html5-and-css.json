@@ -1740,7 +1740,7 @@
       "description": [
         "Sometimes you want to add <code>a</code> elements to your website before you know where they will link.",
         "This is also handy when you're changing the behavior of a link using <code>jQuery</code>, which we'll learn about later.",
-        "Replace the value of your <code>a</code> element's <code>href</code> attribute with a <code>#</code>, also known as a hash symbol, to turn it into a dead link."
+        "The <code>href</code> attribute is the quoted URL link within the <code>a</code> element. Replace the link value of your <code>a</code> element's <code>href</code> attribute with a <code>#</code>, also known as a hash symbol, to turn it into a dead link."
       ],
       "challengeSeed": [
         "<link href=\"https://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
@@ -1780,7 +1780,7 @@
         "<p class=\"red-text\">Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
       ],
       "tests": [
-        "assert($(\"a\").attr(\"href\") === \"#\", 'message: Your <code>a</code> element should be a dead link with a <code>href</code> attribute set to \"#\".');"
+        "assert($(\"a\").attr(\"href\") === \"#\", 'message: Your <code>a</code> element should be a dead link with the value of <code>href</code> attribute set to \"#\".');"
       ],
       "type": "waypoint",
       "challengeType": 0,
