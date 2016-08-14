@@ -15,7 +15,7 @@ export class NotFound extends React.Component {
   }
 
   render() {
-    return <span></span>;
+    return <span />;
   }
 }
 

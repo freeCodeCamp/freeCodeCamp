@@ -60,6 +60,19 @@ export const addUser = createAction(
 );
 export const updateThisUser = createAction(types.updateThisUser);
 export const showSignIn = createAction(types.showSignIn);
+export const loadCurrentChallenge = createAction(
+  types.loadCurrentChallenge,
+  null,
+  () => createEventMeta({
+    category: 'Nav',
+    action: 'clicked',
+    label: 'fcc logo clicked'
+  })
+);
+export const updateMyCurrentChallenge = createAction(
+  types.updateMyCurrentChallenge,
+  (username, currentChallengeId) => ({ username, currentChallengeId })
+);
 
 // updateUserPoints(username: String, points: Number) => Action
 export const updateUserPoints = createAction(
@@ -81,11 +94,17 @@ export const updateUserLang = createAction(
   types.updateUserLang,
   (username, lang) => ({ username, lang })
 );
-export const updateAppLang = createAction(types.updateAppLang);
-// updateCompletedChallenges(username: String) => Action
-export const updateCompletedChallenges = createAction(
-  types.updateCompletedChallenges
+
+// updateUserChallenge(
+//   username: String,
+//   challengeInfo: Object
+// ) => Action
+export const updateUserChallenge = createAction(
+  types.updateUserChallenge,
+  (username, challengeInfo) => ({ username, challengeInfo })
 );
+
+export const updateAppLang = createAction(types.updateAppLang);
 
 // used when server needs client to redirect
 export const delayedRedirect = createAction(types.delayedRedirect);
@@ -175,4 +194,13 @@ export const closeHelpChat = createAction(
   })
 );
 
-export const toggleNightMode = createAction(types.toggleNightMode);
+export const toggleNightMode = createAction(
+  types.toggleNightMode,
+  // we use this function to avoid hanging onto the eventObject
+  // so that react can recycle it
+  () => null
+);
+// updateTheme(theme: /night|default/) => Action
+export const updateTheme = createAction(types.updateTheme);
+// addThemeToBody(theme: /night|default/) => Action
+export const addThemeToBody = createAction(types.addThemeToBody);

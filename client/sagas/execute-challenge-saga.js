@@ -79,7 +79,7 @@ function cacheLink({ link } = {}, crossDomain = true) {
 
 
 const htmlCatch = '\n<!--fcc-->';
-const jsCatch = '\n;/*fcc*/';
+const jsCatch = '\n;/*fcc*/\n';
 
 export default function executeChallengeSaga(action$, getState) {
   const frameRunner$ = cacheScript(
@@ -103,14 +103,19 @@ export default function executeChallengeSaga(action$, getState) {
         // createbuild
         .flatMap(file$ => file$.reduce((build, file) => {
           let finalFile;
+          const finalContents = [
+            file.head,
+            file.contents,
+            file.tail
+          ];
           if (file.ext === 'js') {
             finalFile = setExt('html', updateContents(
-              `<script>${file.contents}${jsCatch}</script>`,
+              `<script>${finalContents.join(jsCatch)}${jsCatch}</script>`,
               file
             ));
           } else if (file.ext === 'css') {
             finalFile = setExt('html', updateContents(
-              `<style>${file.contents}</style>`,
+              `<style>${finalContents.join(htmlCatch)}</style>`,
               file
             ));
           } else {
@@ -125,6 +130,13 @@ export default function executeChallengeSaga(action$, getState) {
               if (required.src) {
                 return cacheScript(required, required.crossDomain);
               }
+              // css files with `url(...` may not work in style tags
+              // so we put them in raw links
+              if (required.link && required.raw) {
+                return Observable.just(
+                  `<link href=${required.link} rel='stylesheet' />`
+                );
+              }
               if (required.link) {
                 return cacheLink(required, required.crossDomain);
               }
@@ -136,7 +148,7 @@ export default function executeChallengeSaga(action$, getState) {
           return Observable.combineLatest(head$, frameRunner$)
             .map(([ head, frameRunner ]) => {
               const body = `
-                <body>
+                <body style='margin:8px;'>
                   <!-- fcc-start-source -->
                     ${source}
                   <!-- fcc-end-source -->

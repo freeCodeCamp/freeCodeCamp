@@ -49,7 +49,7 @@ export default function reactSubRouter(app) {
     createApp({
       serviceOptions,
       location: req.originalUrl,
-      initialState: { app: { languageTag: lang } }
+      initialState: { app: { lang } }
     })
       // if react-router does not find a route send down the chain
       .filter(({ redirect, props }) => {

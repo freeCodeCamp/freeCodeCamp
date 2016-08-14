@@ -59,7 +59,10 @@ export const updateFile = createAction(
 export const updateFiles = createAction(types.updateFiles);
 
 // rechallenge
-export const executeChallenge = createAction(types.executeChallenge);
+export const executeChallenge = createAction(
+  types.executeChallenge,
+  () => null
+);
 
 export const updateMain = createAction(types.updateMain);
 export const frameMain = createAction(types.frameMain);

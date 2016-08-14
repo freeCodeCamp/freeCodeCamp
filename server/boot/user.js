@@ -3,15 +3,12 @@ import moment from 'moment-timezone';
 import { Observable } from 'rx';
 import debugFactory from 'debug';
 
-import supportedLanguages from '../../common/utils/supported-languages';
 import {
   frontEndChallengeId,
   dataVisChallengeId,
   backEndChallengeId
 } from '../utils/constantStrings.json';
-
 import certTypes from '../utils/certTypes.json';
-
 import {
   ifNoUser401,
   ifNoUserRedirectTo
@@ -22,6 +19,9 @@ import {
   calcCurrentStreak,
   calcLongestStreak
 } from '../utils/user-stats';
+import supportedLanguages from '../../common/utils/supported-languages';
+import createNameIdMap from '../../common/utils/create-name-id-map';
+import { cachedMap } from '../utils/map';
 
 const debug = debugFactory('fcc:boot:user');
 const sendNonUserToMap = ifNoUserRedirectTo('/map');
@@ -85,25 +85,35 @@ function getChallengeGroup(challenge) {
   return 'challenges';
 }
 
-// buildDisplayChallenges(challengeMap: Object, tz: String) => Observable[{
+// buildDisplayChallenges(
+//   entities: { challenge: Object, challengeIdToName: Object },
+//   challengeMap: Object,
+//   tz: String
+// ) => Observable[{
 //   algorithms: Array,
 //   projects: Array,
 //   challenges: Array
 // }]
-function buildDisplayChallenges(challengeMap = {}, timezone) {
-  return Observable.from(Object.keys(challengeMap))
-    .map(challengeId => challengeMap[challengeId])
-    .map(challenge => {
-      let finalChallenge = { ...challenge };
-      if (challenge.completedDate) {
+function buildDisplayChallenges(
+  { challenge: challengeMap = {}, challengeIdToName },
+  userChallengeMap = {},
+  timezone
+) {
+  return Observable.from(Object.keys(userChallengeMap))
+    .map(challengeId => userChallengeMap[challengeId])
+    .map(userChallenge => {
+      const challengeId = userChallenge.id;
+      const challenge = challengeMap[ challengeIdToName[challengeId] ];
+      let finalChallenge = { ...userChallenge, ...challenge };
+      if (userChallenge.completedDate) {
         finalChallenge.completedDate = moment
-          .tz(challenge.completedDate, timezone)
+          .tz(userChallenge.completedDate, timezone)
           .format(dateFormat);
       }
 
-      if (challenge.lastUpdated) {
+      if (userChallenge.lastUpdated) {
         finalChallenge.lastUpdated = moment
-          .tz(challenge.lastUpdated, timezone)
+          .tz(userChallenge.lastUpdated, timezone)
           .format(dateFormat);
       }
 
@@ -128,6 +138,8 @@ module.exports = function(app) {
   const router = app.loopback.Router();
   const api = app.loopback.Router();
   const User = app.models.User;
+  const Block = app.models.Block;
+  const map$ = cachedMap(Block);
   function findUserByUsername$(username, fields) {
     return observeQuery(
       User,
@@ -187,7 +199,7 @@ module.exports = function(app) {
     (req, res) => res.redirect(req.url.replace('full-stack', 'back-end'))
   );
 
-  router.get('/:username', returnUser);
+  router.get('/:username', showUserProfile);
 
   app.use('/:lang', router);
   app.use(api);
@@ -248,7 +260,7 @@ module.exports = function(app) {
     return res.redirect('/' + username);
   }
 
-  function returnUser(req, res, next) {
+  function showUserProfile(req, res, next) {
     const username = req.params.username.toLowerCase();
     const { user } = req;
 
@@ -313,7 +325,12 @@ module.exports = function(app) {
           });
         }
 
-        return buildDisplayChallenges(userPortfolio.challengeMap, timezone)
+        return map$.map(({ entities }) => createNameIdMap(entities))
+          .flatMap(entities => buildDisplayChallenges(
+            entities,
+            userPortfolio.challengeMap,
+            timezone
+          ))
           .map(displayChallenges => ({
             ...userPortfolio,
             ...displayChallenges,

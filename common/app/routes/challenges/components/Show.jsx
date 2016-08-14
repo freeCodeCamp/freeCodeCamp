@@ -39,7 +39,8 @@ const mapStateToProps = createSelector(
   challengeSelector,
   state => state.challengesApp.challenge,
   state => state.challengesApp.superBlocks,
-    ({ viewType }, challenge, superBlocks = []) => ({
+  ({ challenge: { title } = {}, viewType }, challenge, superBlocks = []) => ({
+    title,
     challenge,
     viewType,
     areChallengesLoaded: superBlocks.length > 0
@@ -60,6 +61,7 @@ export class Challenges extends PureComponent {
   static displayName = 'Challenges';
 
   static propTypes = {
+    title: PropTypes.string,
     isStep: PropTypes.bool,
     fetchChallenges: PropTypes.func.isRequired,
     replaceChallenge: PropTypes.func.isRequired,
@@ -70,7 +72,7 @@ export class Challenges extends PureComponent {
   };
 
   componentWillMount() {
-    this.props.updateTitle(this.props.params.dashedName);
+    this.props.updateTitle(this.props.title);
   }
 
   componentDidMount() {
@@ -87,7 +89,7 @@ export class Challenges extends PureComponent {
     const { block, dashedName } = nextProps.params;
     const { resetUi, updateTitle, replaceChallenge } = this.props;
     if (this.props.params.dashedName !== dashedName) {
-      updateTitle(dashedName);
+      updateTitle(nextProps.title);
       resetUi();
       replaceChallenge({ dashedName, block });
     }

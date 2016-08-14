@@ -37,6 +37,11 @@ export class ShowMap extends PureComponent {
   };
 
   componentWillMount() {
+    // if no params then map is open in drawer
+    // do not update title
+    if (!this.props.params) {
+      return;
+    }
     this.props.updateTitle(
       'A Map to Learn to Code and Become a Software Engineer'
     );

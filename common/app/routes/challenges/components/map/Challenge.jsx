@@ -8,24 +8,35 @@ import debug from 'debug';
 
 import { updateCurrentChallenge } from '../../redux/actions';
 import { makePanelHiddenSelector } from '../../redux/selectors';
+import { userSelector } from '../../../../redux/selectors';
 import { closeMapDrawer } from '../../../../redux/actions';
 
 const bindableActions = { closeMapDrawer, updateCurrentChallenge };
 const makeMapStateToProps = () => createSelector(
+  userSelector,
   (_, props) => props.dashedName,
   state => state.entities.challenge,
   makePanelHiddenSelector(),
-  (dashedName, challengeMap, isHidden) => {
+  (
+    { user: { challengeMap: userChallengeMap } },
+    dashedName,
+    challengeMap,
+    isHidden
+  ) => {
     const challenge = challengeMap[dashedName] || {};
+    let isCompleted = false;
+    if (userChallengeMap) {
+      isCompleted = !!userChallengeMap[challenge.id];
+    }
     return {
       dashedName,
       challenge,
       isHidden,
+      isCompleted,
       title: challenge.title,
       block: challenge.block,
       isLocked: challenge.isLocked,
       isRequired: challenge.isRequired,
-      isCompleted: challenge.isCompleted,
       isComingSoon: challenge.isComingSoon,
       isDev: debug.enabled('fcc:*')
     };

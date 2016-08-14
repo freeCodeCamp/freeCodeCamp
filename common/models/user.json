@@ -120,8 +120,14 @@
       "description": "Campers profile does not show challenges/certificates to the public",
       "default": false
     },
+    "currentChallengeId": {
+      "type": "string",
+      "default": "",
+      "description": "the challenge last visited by the user"
+    },
     "currentChallenge": {
-      "type": {}
+      "type": {},
+      "description": "deprecated"
     },
     "isUniqMigrated": {
       "type": "boolean",

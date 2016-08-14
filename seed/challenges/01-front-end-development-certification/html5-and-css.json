@@ -1098,7 +1098,7 @@
         "An example of this would be:",
         "<code>&#60img src=\"https://www.your-image-source.com/your-image.jpg\"&#62</code>",
         "All <code>img</code> elements <strong>must</strong> have an <code>alt</code> attribute. The text inside an <code>alt</code> attribute is used for screen readers to improve accessibility and is displayed if the image fails to load.",
-        "Lets add an <code>alt</code> attribute to our <code>img</code> example above:",
+        "Let's add an <code>alt</code> attribute to our <code>img</code> example above:",
         "<code>&#60img src=\"https://www.your-image-source.com/your-image.jpg\" alt=\"Author standing on a beach with two thumbs up. \"&#62</code>",
         "Note that in most cases, <code>img</code> elements are self-closing.",
         "Try it with this image:",
@@ -1129,7 +1129,7 @@
       "tests": [
         "assert($(\"img\").length > 0, 'message: Your page should have an image element.');",
         "assert(new RegExp(\"\\/\\/bit.ly\\/fcc-relaxing-cat\", \"gi\").test($(\"img\").attr(\"src\")), 'message: Your image should have a <code>src</code> attribute that points to the kitten image.');",
-        "assert(code.match(/alt\\s*?=\\s*?(\\\"|\\')[\\s\\w\\.\\,\\!]+?(\\\"|\\')/), 'message: Your image element <strong>must</strong> have an <code>alt</code> attribute.');"
+        "assert(code.match(/alt\\s*?=\\s*?(\\\"|\\').*(\\\"|\\')/), 'message: Your image element <strong>must</strong> have an <code>alt</code> attribute.');"
       ],
       "type": "waypoint",
       "challengeType": 0,
@@ -1740,7 +1740,7 @@
       "description": [
         "Sometimes you want to add <code>a</code> elements to your website before you know where they will link.",
         "This is also handy when you're changing the behavior of a link using <code>jQuery</code>, which we'll learn about later.",
-        "Replace the value of your <code>a</code> element's <code>href</code> attribute with a <code>#</code>, also known as a hash symbol, to turn it into a dead link."
+        "The <code>href</code> attribute is the quoted URL link within the <code>a</code> element. Replace the link value of your <code>a</code> element's <code>href</code> attribute with a <code>#</code>, also known as a hash symbol, to turn it into a dead link."
       ],
       "challengeSeed": [
         "<link href=\"https://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
@@ -1780,7 +1780,7 @@
         "<p class=\"red-text\">Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
       ],
       "tests": [
-        "assert($(\"a\").attr(\"href\") === \"#\", 'message: Your <code>a</code> element should be a dead link with a <code>href</code> attribute set to \"#\".');"
+        "assert($(\"a\").attr(\"href\") === \"#\", 'message: Your <code>a</code> element should be a dead link with the value of the <code>href</code> attribute set to \"#\".');"
       ],
       "type": "waypoint",
       "challengeType": 0,
@@ -2304,7 +2304,7 @@
         "<input type=\"text\">"
       ],
       "tests": [
-        "assert($(\"input[placeholder]\").length > 0, 'message: Add a <code>placeholder</code> attribute text <code>input</code> element.');",
+        "assert($(\"input[placeholder]\").length > 0, 'message: Add a <code>placeholder</code> attribute to the existing text <code>input</code> element.');",
         "assert($(\"input\") && $(\"input\").attr(\"placeholder\") && $(\"input\").attr(\"placeholder\").match(/cat\\s+photo\\s+URL/gi), 'message: Set the value of your placeholder attribute to \"cat photo URL\".');",
         "assert($(\"input[type=text]\").length > 0 && code.match(/<input((\\s+\\w+(\\s*=\\s*(?:\".*?\"|'.*?'|[\\^'\">\\s]+))?)+\\s*|\\s*)\\/?>/gi), 'message: The finished <code>input</code> element should have valid syntax.');"
       ],
@@ -4318,7 +4318,7 @@
       ],
       "tests": [
         "assert($(\"h1\").hasClass(\"pink-text\"), 'message: Your <code>h1</code> element should have the class <code>pink-text</code>.');",
-        "assert(code.match(/\\.pink-text\\s*\\{\\s*color\\s*:\\s*pink\\s*;\\s*\\}/g), 'message: Your <code>&#60;style&#62;</code> should have a <code>pink-text</code> CSS class with its color set to pink.');",
+        "assert(code.match(/\\.pink-text\\s*\\{\\s*color\\s*:\\s*.+\\s*;\\s*\\}/g), 'message: Your <code>&#60;style&#62;</code> should have a <code>pink-text</code> CSS class that changes the <code>color</code>.');",
         "assert($(\"h1\").css(\"color\") === \"rgb(255, 192, 203)\", 'message: Your <code>h1</code> element should be pink.');"
       ],
       "type": "waypoint",

@@ -1,11 +1,17 @@
 import _ from 'lodash';
-// import { Observable, Scheduler } from 'rx';
 import debug from 'debug';
 import accepts from 'accepts';
+import dedent from 'dedent';
 
 import { ifNoUserSend } from '../utils/middleware';
+import { cachedMap } from '../utils/map';
+import createNameIdMap from '../../common/utils/create-name-id-map';
+import {
+  checkMapData,
+  getFirstChallenge
+} from '../../common/utils/get-first-challenge';
 
-const log = debug('fcc:challenges');
+const log = debug('fcc:boot:challenges');
 
 function buildUserUpdate(
   user,
@@ -55,14 +61,22 @@ function buildUserUpdate(
 
   log('user update data', updateData);
 
-  return { alreadyCompleted, updateData };
+  return {
+    alreadyCompleted,
+    updateData,
+    completedDate: finalChallenge.completedDate,
+    lastUpdated: finalChallenge.lastUpdated
+  };
 }
 
-module.exports = function(app) {
-  const router = app.loopback.Router();
+export default function(app) {
   const send200toNonUser = ifNoUserSend(true);
+  const api = app.loopback.Router();
+  const router = app.loopback.Router();
+  const Block = app.models.Block;
+  const map$ = cachedMap(Block);
 
-  router.post(
+  api.post(
     '/modern-challenge-completed',
     send200toNonUser,
     modernChallengeCompleted
@@ -70,13 +84,13 @@ module.exports = function(app) {
 
   // deprecate endpoint
   // remove once new endpoint is live
-  router.post(
+  api.post(
     '/completed-challenge',
     send200toNonUser,
     completedChallenge
   );
 
-  router.post(
+  api.post(
     '/challenge-completed',
     send200toNonUser,
     completedChallenge
@@ -84,19 +98,25 @@ module.exports = function(app) {
 
   // deprecate endpoint
   // remove once new endpoint is live
-  router.post(
+  api.post(
     '/completed-zipline-or-basejump',
     send200toNonUser,
     projectCompleted
   );
 
-  router.post(
+  api.post(
     '/project-completed',
     send200toNonUser,
     projectCompleted
   );
 
-  app.use(router);
+  router.get(
+    '/challenges/current-challenge',
+    redirectToCurrentChallenge
+  );
+
+  app.use(api);
+  app.use('/:lang', router);
 
   function modernChallengeCompleted(req, res, next) {
     const type = accepts(req).type('html', 'json', 'text');
@@ -123,14 +143,14 @@ module.exports = function(app) {
           files
         } = req.body;
 
-        const { alreadyCompleted, updateData } = buildUserUpdate(
+        const {
+          alreadyCompleted,
+          updateData,
+          lastUpdated
+        } = buildUserUpdate(
           user,
           id,
-          {
-            id,
-            files,
-            completedDate
-          }
+          { id, files, completedDate }
         );
 
         const points = alreadyCompleted ? user.points : user.points + 1;
@@ -141,7 +161,9 @@ module.exports = function(app) {
             if (type === 'json') {
               return res.json({
                 points,
-                alreadyCompleted
+                alreadyCompleted,
+                completedDate,
+                lastUpdated
               });
             }
             return res.sendStatus(200);
@@ -169,7 +191,11 @@ module.exports = function(app) {
         const completedDate = Date.now();
         const { id, solution, timezone } = req.body;
 
-        const { alreadyCompleted, updateData } = buildUserUpdate(
+        const {
+          alreadyCompleted,
+          updateData,
+          lastUpdated
+        } = buildUserUpdate(
           req.user,
           id,
           { id, solution, completedDate },
@@ -185,7 +211,9 @@ module.exports = function(app) {
             if (type === 'json') {
               return res.json({
                 points,
-                alreadyCompleted
+                alreadyCompleted,
+                completedDate,
+                lastUpdated
               });
             }
             return res.sendStatus(200);
@@ -238,7 +266,8 @@ module.exports = function(app) {
       .flatMap(() => {
         const {
           alreadyCompleted,
-          updateData
+          updateData,
+          lastUpdated
         } = buildUserUpdate(user, completedChallenge.id, completedChallenge);
 
         return user.update$(updateData)
@@ -247,7 +276,9 @@ module.exports = function(app) {
             if (type === 'json') {
               return res.send({
                 alreadyCompleted,
-                points: alreadyCompleted ? user.points : user.points + 1
+                points: alreadyCompleted ? user.points : user.points + 1,
+                completedDate: completedChallenge.completedDate,
+                lastUpdated
               });
             }
             return res.status(200).send(true);
@@ -255,4 +286,47 @@ module.exports = function(app) {
       })
       .subscribe(() => {}, next);
   }
-};
+
+  function redirectToCurrentChallenge(req, res, next) {
+    const { user } = req;
+    return map$
+      .map(({ entities, result }) => ({
+        result,
+        entities: createNameIdMap(entities)
+      }))
+      .map(map => {
+        checkMapData(map);
+        const {
+          entities: { challenge: challengeMap, challengeIdToName }
+        } = map;
+        let finalChallenge;
+        const dashedName = challengeIdToName[user && user.currentChallengeId];
+        finalChallenge = challengeMap[dashedName];
+        // redirect to first challenge
+        if (!finalChallenge) {
+          finalChallenge = getFirstChallenge(map);
+        }
+        const { block, dashedName: finalDashedName } = finalChallenge || {};
+        if (!finalDashedName || !block) {
+          // this should normally not be hit if database is properly seeded
+          console.error(new Error(dedent`
+            Attemped to find '${dashedName}'
+            from '${user && user.currentChallengeId || 'no challenge id found'}'
+            but came up empty.
+            db may not be properly seeded.
+          `));
+          if (dashedName) {
+            // attempt to find according to dashedName
+            return `/challenges/${dashedName}`;
+          } else {
+            return null;
+          }
+        }
+        return `/challenges/${block}/${finalDashedName}`;
+      })
+      .subscribe(
+        redirect => res.redirect(redirect || '/map'),
+        next
+      );
+  }
+}

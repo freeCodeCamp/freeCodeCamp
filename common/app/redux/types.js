@@ -12,11 +12,12 @@ export default createTypes([
   'updateUserFlag',
   'updateUserEmail',
   'updateUserLang',
-  'updateCompletedChallenges',
+  'updateUserChallenge',
   'showSignIn',
+  'loadCurrentChallenge',
+  'updateMyCurrentChallenge',
 
   'handleError',
-  'toggleNightMode',
   // used to hit the server
   'hardGoTo',
   'delayedRedirect',
@@ -42,5 +43,10 @@ export default createTypes([
 
   'openHelpChat',
   'closeHelpChat',
-  'toggleHelpChat'
+  'toggleHelpChat',
+
+  // night mode
+  'toggleNightMode',
+  'updateTheme',
+  'addThemeToBody'
 ], 'app');

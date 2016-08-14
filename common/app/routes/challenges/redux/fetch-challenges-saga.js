@@ -12,20 +12,9 @@ import {
   delayedRedirect,
   createErrorObservable
 } from '../../../redux/actions';
+import createNameIdMap from '../../../../utils/create-name-id-map';
 
 const { fetchChallenge, fetchChallenges, replaceChallenge } = types;
-
-function createNameIdMap(entities) {
-  const { challenge } = entities;
-  return {
-    ...entities,
-    challengeIdToName: Object.keys(challenge)
-      .reduce((map, challengeName) => {
-        map[challenge[challengeName].id] = challenge[challengeName].dashedName;
-        return map;
-      }, {})
-  };
-}
 
 export default function fetchChallengesSaga(action$, getState, { services }) {
   return action$
@@ -36,7 +25,7 @@ export default function fetchChallengesSaga(action$, getState, { services }) {
     ))
     .flatMap(({ type, payload: { dashedName, block } = {} }) => {
       const state = getState();
-      const lang = state.app.languageTag;
+      const lang = state.app.lang;
       if (type === replaceChallenge) {
         const { challenge: newChallenge } = challengeSelector({
           ...state,
@@ -57,6 +46,7 @@ export default function fetchChallengesSaga(action$, getState, { services }) {
         options.params.block = block;
       }
       return services.readService$(options)
+        .retry(3)
         .flatMap(({ entities, result, redirect } = {}) => {
           if (type === fetchChallenge) {
             return Observable.of(

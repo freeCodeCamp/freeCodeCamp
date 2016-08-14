@@ -11,7 +11,8 @@ import {
   toggleMapDrawer,
   toggleMainChat,
   updateAppLang,
-  trackEvent
+  trackEvent,
+  loadCurrentChallenge
 } from './redux/actions';
 
 import { submitChallenge } from './routes/challenges/redux/actions';
@@ -28,7 +29,8 @@ const bindableActions = {
   toggleMapDrawer,
   toggleMainChat,
   updateAppLang,
-  trackEvent
+  trackEvent,
+  loadCurrentChallenge
 };
 
 const mapStateToProps = createSelector(
@@ -80,7 +82,8 @@ export class FreeCodeCamp extends React.Component {
     shouldShowSignIn: PropTypes.bool,
     params: PropTypes.object,
     updateAppLang: PropTypes.func.isRequired,
-    trackEvent: PropTypes.func.isRequired
+    trackEvent: PropTypes.func.isRequired,
+    loadCurrentChallenge: PropTypes.func.isRequired
   };
 
   componentWillReceiveProps(nextProps) {
@@ -124,7 +127,8 @@ export class FreeCodeCamp extends React.Component {
       toggleMainChat,
       shouldShowSignIn,
       params: { lang },
-      trackEvent
+      trackEvent,
+      loadCurrentChallenge
     } = this.props;
     const navProps = {
       isOnMap: router.isActive(`/${lang}/map`),
@@ -135,7 +139,8 @@ export class FreeCodeCamp extends React.Component {
       toggleMapDrawer,
       toggleMainChat,
       shouldShowSignIn,
-      trackEvent
+      trackEvent,
+      loadCurrentChallenge
     };
 
     return (

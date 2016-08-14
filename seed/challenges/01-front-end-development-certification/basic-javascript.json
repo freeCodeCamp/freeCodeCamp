@@ -1727,10 +1727,11 @@
       "id": "56533eb9ac21ba0edf2244bb",
       "title": "Word Blanks",
       "description": [
-        "We will now use our knowledge of strings to build a \"<a href='https://en.wikipedia.org/wiki/Mad_Libs' target='_blank'>Mad Libs</a>\" style word game we're calling \"Word Blanks\". You will create an (optionally humorous) \"Fill in the Blanks\" style sentence.",
-        "You will need to use string operators to build a new string, <code>result</code>, using the provided variables: <code>myNoun</code>, <code>myAdjective</code>, <code>myVerb</code>, and <code>myAdverb</code>.",
-        "You will also need to use additional strings, which will not change, and must be in between all of the provided words. The output should be a complete sentence.",
-        "We have provided a framework for testing your results with different words. The tests will run your function with several different inputs to make sure all of the provided words appear in the output, as well as your extra strings."
+        "We will now use our knowledge of strings to build a \"<a href='https://en.wikipedia.org/wiki/Mad_Libs' target='_blank'>Mad Libs</a>\" style word game we're calling \"Word Blanks\". You will create an (optionally humorous) \"Fill in the Blanks\" style sentence. Here's an example of an incomplete sentence.",
+        "<code>\"The ______ ______ looked around ______ then ______ into the house\"</code>",
+        "These four blanks would be filled in this order: (adjective) (noun) (adverb) (verb)",
+        "You will need to use string concatenation to build a new string, <code>result</code>, using the variables <code>myNoun</code>, <code>myAdjective</code>, <code>myVerb</code>, and <code>myAdverb</code>. These variables are passed to the function as parameters. Don't change these parameter names in the function.",
+        "Include additional strings and spaces (which will not change) in between the provided variables to make a complete sentence."
       ],
       "releasedOn": "January 1, 2016",
       "challengeSeed": [
@@ -3358,7 +3359,7 @@
         "Sometimes you will need to test more than one thing at a time. The <dfn>logical and</dfn> operator (<code>&&</code>) returns <code>true</code> if and only if the <dfn>operands</dfn> to the left and right of it are true.",
         "The same effect could be achieved by nesting an if statement inside another if:",
         "<blockquote>if (num > 5) {<br>  if (num < 10) {<br>    return \"Yes\";<br>  }<br>}<br>return \"No\";</blockquote>",
-        "will only return \"Yes\" if <code>num</code> is between <code>6</code> and <code>9</code> (6 and 9 included). The same logic can be written as:",
+        "will only return \"Yes\" if <code>num</code> is greater than <code>5</code> and less than <code>10</code>. The same logic can be written as:",
         "<blockquote>if (num > 5 && num < 10) {<br>  return \"Yes\";<br>}<br>return \"No\";</blockquote>",
         "<h4>Instructions</h4>",
         "Combine the two if statements into one statement which will return <code>\"Yes\"</code> if <code>val</code> is less than or equal to <code>50</code> and greater than or equal to <code>25</code>. Otherwise, will return <code>\"No\"</code>."
@@ -5176,7 +5177,7 @@
       "title": "Iterate Through an Array with a For Loop",
       "description": [
         "A common task in JavaScript is to iterate through the contents of an array. One way to do that is with a <code>for</code> loop. This code will output each element of the array <code>arr</code> to the console:",
-        "<blockquote>var arr = [10,9,8,7,6];<br>for (var i=0; i < arr.length; i++) {<br>   console.log(arr[i]);<br>}</blockquote>",
+        "<blockquote>var arr = [10,9,8,7,6];<br>for (var i = 0; i < arr.length; i++) {<br>   console.log(arr[i]);<br>}</blockquote>",
         "Remember that Arrays have zero-based numbering, which means the last index of the array is length - 1. Our <dfn>condition</dfn> for this loop is <code>i < arr.length</code>, which stops when <code>i</code> is at length - 1.",
         "<h4>Instructions</h4>",
         "Declare and initialize a variable <code>total</code> to <code>0</code>. Use a <code>for</code> loop to add the value of each element of the <code>myArr</code> array to <code>total</code>."
@@ -5205,10 +5206,10 @@
         "var ourArr = [ 9, 10, 11, 12];\nvar ourTotal = 0;\n\nfor (var i = 0; i < ourArr.length; i++) {\n  ourTotal += ourArr[i];\n}\n\nvar myArr = [ 2, 3, 4, 5, 6];\nvar total = 0;\n\nfor (var i = 0; i < myArr.length; i++) {\n  total += myArr[i];\n}"
       ],
       "tests": [
-        "assert(code.match(/var\\s*total\\s*=\\s*0\\s*;/), 'message: <code>total</code> should be declared and initialized to 0');",
+        "assert(code.match(/var.*?total\\s*=\\s*0.*?;/), 'message: <code>total</code> should be declared and initialized to 0');",
         "assert(total === 20, 'message: <code>total</code> should equal 20');",
         "assert(code.match(/for\\s*\\(/g).length > 1 && code.match(/myArr\\s*\\[/), 'message: You should use a <code>for</code> loop to iterate through <code>myArr</code>');",
-        "assert(!code.match(/total[\\s\\+\\-]*=\\s*(\\d(?!\\s*;)|[1-9])/g), 'message: Do not set <code>total</code> to 20 directly');"
+        "assert(!code.match(/total[\\s\\+\\-]*=\\s*(\\d(?!\\s*[;,])|[1-9])/g), 'message: Do not set <code>total</code> to 20 directly');"
       ],
       "type": "waypoint",
       "challengeType": 1,
@@ -5334,7 +5335,7 @@
         "The function should check if <code>firstName</code> is an actual contact's <code>firstName</code> and the given property (<code>prop</code>) is a property of that contact.",
         "If both are true, then return the \"value\" of that property.",
         "If <code>firstName</code> does not correspond to any contacts then return <code>\"No such contact\"</code>",
-        "If <code>prop</code> does not correspond to any valid properties then return <code>\"No such property\"</code>"
+        "If <code>prop</code> does not correspond to any valid properties of a contact found to match <code>firstName</code> then return <code>\"No such property\"</code>"
       ],
       "releasedOn": "January 8, 2016",
       "challengeSeed": [
@@ -5809,7 +5810,7 @@
         "We are now going to try and combine some of the stuff we've just learned and create the logic for a slot machine game.",
         "For this we will need to generate three random numbers between <code>1</code> and <code>3</code> to represent the possible values of each individual slot.",
         "Store the three random numbers in <code>slotOne</code>, <code>slotTwo</code> and <code>slotThree</code>.",
-        "Generate the random numbers by using the system we used earlier (an explanation of the formula can be found <a href='https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/Waypoint-Generate-Random-Whole-Numbers-within-a-Range#explanation' target='_blank'>here</a>):",
+        "Generate the random numbers by using the system we used earlier (an explanation of the formula can be found <a href='http://forum.freecodecamp.com/t/challenge-generate-random-whole-numbers-within-a-range/18187' target='_blank'>here</a>):",
         "<code>Math.floor(Math.random() * (3 - 1 + 1)) + 1;</code>"
       ],
       "challengeSeed": [
@@ -5966,7 +5967,7 @@
             "Ahora vamos a tratar de combinar algunas de las cosas que hemos aprendido para crear la lógica de una máquina tragamonedas.",
             "Para esto tendremos que generar tres números aleatorios entre <code>1</code> y <code>3</code> que representen los valores posibles de cada casilla.",
             "Guarda los tres números aleatorios en <code>slotOne</code>, <code>slotTwo</code> y <code>slotThree</code>.",
-            "Genera los números aleatorios utilizando el sistema que usamos anteriormente (puedes encontrar una explicación de la fórmula <a href=\"https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/Waypoint-Generate-Random-Whole-Numbers-within-a-Range#explanation\">aquí</a>):",
+            "Genera los números aleatorios utilizando el sistema que usamos anteriormente (puedes encontrar una explicación de la fórmula <a href=\"http://forum.freecodecamp.com/t/challenge-generate-random-whole-numbers-within-a-range/18187\">aquí</a>):",
             "<code>Math.floor(Math.random() * (3 - 1 + 1)) + 1;</code>"
           ]
         }

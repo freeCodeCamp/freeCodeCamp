@@ -7,7 +7,9 @@ export default class extends PureComponent {
 
   render() {
     return (
-      <div>
+      <div
+       className='challenges-preview'
+       >
         <div className='hidden-xs hidden-md'>
           <img
             className='iphone-position iframe-scroll'
