@@ -1,15 +1,16 @@
 import { Observable } from 'rx';
 import store from 'store';
 
+import { ofType } from '../../common/utils/get-actions-of-type';
+import { updateContents } from '../../common/utils/polyvinyl';
+import combineSagas from '../../common/utils/combine-sagas';
+
 import { makeToast } from '../../common/app/toasts/redux/actions';
 import types from '../../common/app/routes/challenges/redux/types';
 import {
   savedCodeFound,
   updateMain
 } from '../../common/app/routes/challenges/redux/actions';
-import {
-  updateContents
-} from '../../common/utils/polyvinyl';
 
 const legacyPrefixes = [
   'Bonfire: ',
@@ -47,13 +48,20 @@ function legacyToFile(code, files, key) {
   return { [key]: updateContents(code, files[key]) };
 }
 
-export default function codeStorageSaga(actions$, getState) {
+export function saveCodeSaga(actions, getState) {
+  return actions
+    ::ofType(types.saveCode)
+    .map(() => {
+      const { challengesApp: { id = '', files = {} } } = getState();
+      store.set(id, files);
+      return null;
+    });
+}
+
+export function loadCodeSaga(actions$, getState) {
   return actions$
-    .filter(({ type }) => (
-      type === types.saveCode ||
-      type === types.loadCode
-    ))
-    .flatMap(({ type }) => {
+    ::ofType(types.loadCode)
+    .flatMap(() => {
       let finalFiles;
       const {
         challengesApp: {
@@ -63,10 +71,6 @@ export default function codeStorageSaga(actions$, getState) {
           key
         }
       } = getState();
-      if (type === types.saveCode) {
-        store.set(id, files);
-        return null;
-      }
 
       const codeFound = getCode(id);
       if (codeFound) {
@@ -90,3 +94,5 @@ export default function codeStorageSaga(actions$, getState) {
       return Observable.empty();
     });
 }
+
+export default combineSagas(saveCodeSaga, loadCodeSaga);
