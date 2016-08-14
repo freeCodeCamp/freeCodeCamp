@@ -1,8 +1,11 @@
+import { Observable } from 'rx';
 import store from 'store';
 
+import { makeToast } from '../../common/app/toasts/redux/actions';
 import types from '../../common/app/routes/challenges/redux/types';
 import {
-  savedCodeFound
+  savedCodeFound,
+  updateMain
 } from '../../common/app/routes/challenges/redux/actions';
 import {
   updateContents
@@ -50,7 +53,8 @@ export default function codeStorageSaga(actions$, getState) {
       type === types.saveCode ||
       type === types.loadCode
     ))
-    .map(({ type }) => {
+    .flatMap(({ type }) => {
+      let finalFiles;
       const {
         challengesApp: {
           id = '',
@@ -63,14 +67,26 @@ export default function codeStorageSaga(actions$, getState) {
         store.set(id, files);
         return null;
       }
+
       const codeFound = getCode(id);
       if (codeFound) {
-        return savedCodeFound(codeFound);
+        finalFiles = codeFound;
+      } else {
+        const legacyCode = getLegacyCode(legacyKey);
+        if (legacyCode) {
+          finalFiles = legacyToFile(legacyCode, files, key);
+        }
       }
-      const legacyCode = getLegacyCode(legacyKey);
-      if (legacyCode) {
-        return savedCodeFound(legacyToFile(legacyCode, files, key));
+
+      if (finalFiles) {
+        return Observable.of(
+          makeToast({
+            message: 'I found some saved work. Loading now'
+          }),
+          savedCodeFound(finalFiles),
+          updateMain()
+        );
       }
-      return null;
+      return Observable.empty();
     });
 }

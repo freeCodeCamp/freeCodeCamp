@@ -11,7 +11,6 @@ import BugModal from '../Bug-Modal.jsx';
 import { challengeSelector } from '../../redux/selectors';
 import {
   executeChallenge,
-  updateMain,
   updateFile,
   loadCode
 } from '../../redux/actions';
@@ -41,7 +40,6 @@ const mapStateToProps = createSelector(
 const bindableActions = {
   executeChallenge,
   updateFile,
-  updateMain,
   loadCode
 };
 
@@ -55,13 +53,11 @@ export class Challenge extends PureComponent {
     mode: PropTypes.string,
     updateFile: PropTypes.func,
     executeChallenge: PropTypes.func,
-    updateMain: PropTypes.func,
     loadCode: PropTypes.func
   };
 
   componentDidMount() {
     this.props.loadCode();
-    this.props.updateMain();
   }
 
   componentWillReceiveProps(nextProps) {
