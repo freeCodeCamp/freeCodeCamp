@@ -1,32 +1,7 @@
-import { compose } from 'redux';
+import flow from 'lodash/flow';
 import { bonfire, html, js } from '../../utils/challengeTypes';
+import { decodeScriptTags } from '../../../utils/encode-decode';
 import protect from '../../utils/empty-protector';
-
-export function encodeScriptTags(value) {
-  return value
-    .replace(/<script>/gi, 'fccss')
-    .replace(/<\/script>/gi, 'fcces');
-}
-
-export function decodeSafeTags(value) {
-  return value
-    .replace(/fccss/gi, '<script>')
-    .replace(/fcces/gi, '</script>');
-}
-
-export function encodeFormAction(value) {
-  return value.replace(
-    /<form[^>]*>/,
-    val => val.replace(/action(\s*?)=/, 'fccfaa$1=')
-  );
-}
-
-export function decodeFccfaaAttr(value) {
-  return value.replace(
-    /<form[^>]*>/,
-    val => val.replace(/fccfaa(\s*?)=/, 'action$1=')
-  );
-}
 
 export function arrayToString(seedData = ['']) {
   seedData = Array.isArray(seedData) ? seedData : [seedData];
@@ -34,9 +9,9 @@ export function arrayToString(seedData = ['']) {
 }
 
 export function buildSeed({ challengeSeed = [] } = {}) {
-  return compose(
-    decodeSafeTags,
-    arrayToString
+  return flow(
+    arrayToString,
+    decodeScriptTags
   )(challengeSeed);
 }
 
