@@ -17,6 +17,7 @@ export default createTypes([
   'replaceChallenge',
   'resetUi',
   'updateHint',
+  'lockUntrustedCode',
 
   // map
   'updateFilter',

@@ -49,7 +49,7 @@ export function getLegacySolutionFromQuery(query = '', decode) {
   )(query, 'solution');
 }
 
-export function getCodeUri({ location, decodeURIComponent }) {
+export function getCodeUri(location, decodeURIComponent) {
   let query;
   if (
     location.search &&
@@ -61,4 +61,19 @@ export function getCodeUri({ location, decodeURIComponent }) {
   }
 
   return getLegacySolutionFromQuery(query, decodeURIComponent);
+}
+
+export function removeCodeUri(location, history) {
+  if (
+    typeof location.search.split !== 'function' ||
+    typeof history.replaceState !== 'function'
+  ) {
+    return false;
+  }
+  history.replaceState(
+    history.state,
+    null,
+    location.search.split('?')[0]
+  );
+  return true;
 }

@@ -22,6 +22,7 @@ export const fetchChallengeCompleted = createAction(
 );
 export const resetUi = createAction(types.resetUi);
 export const updateHint = createAction(types.updateHint);
+export const lockUntrustedCode = createAction(types.lockUntrustedCode);
 
 export const fetchChallenges = createAction(types.fetchChallenges);
 export const fetchChallengesCompleted = createAction(

@@ -1,6 +1,7 @@
 import { Observable } from 'rx';
 import store from 'store';
 
+import { removeCodeUri, getCodeUri } from '../utils/code-uri';
 import { ofType } from '../../common/utils/get-actions-of-type';
 import { updateContents } from '../../common/utils/polyvinyl';
 import combineSagas from '../../common/utils/combine-sagas';
@@ -9,7 +10,8 @@ import { makeToast } from '../../common/app/toasts/redux/actions';
 import types from '../../common/app/routes/challenges/redux/types';
 import {
   savedCodeFound,
-  updateMain
+  updateMain,
+  lockUntrustedCode
 } from '../../common/app/routes/challenges/redux/actions';
 
 const legacyPrefixes = [
@@ -58,7 +60,7 @@ export function saveCodeSaga(actions, getState) {
     });
 }
 
-export function loadCodeSaga(actions$, getState) {
+export function loadCodeSaga(actions$, getState, { window, location }) {
   return actions$
     ::ofType(types.loadCode)
     .flatMap(() => {
@@ -71,6 +73,21 @@ export function loadCodeSaga(actions$, getState) {
           key
         }
       } = getState();
+      const codeUriFound = getCodeUri(
+        location,
+        window.decodeURIComponent
+      );
+      if (codeUriFound) {
+        finalFiles = legacyToFile(codeUriFound, files, key);
+        removeCodeUri(location, window.history);
+        return Observable.of(
+          lockUntrustedCode(),
+          makeToast({
+            message: 'I found code in the URI. Loading now'
+          }),
+          savedCodeFound(finalFiles)
+        );
+      }
 
       const codeFound = getCode(id);
       if (codeFound) {
