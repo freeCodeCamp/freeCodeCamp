@@ -65,7 +65,7 @@ export function getCodeUri(location, decodeURIComponent) {
 
 export function removeCodeUri(location, history) {
   if (
-    typeof location.search.split !== 'function' ||
+    typeof location.href.split !== 'function' ||
     typeof history.replaceState !== 'function'
   ) {
     return false;
@@ -73,7 +73,7 @@ export function removeCodeUri(location, history) {
   history.replaceState(
     history.state,
     null,
-    location.search.split('?')[0]
+    location.href.split('?')[0]
   );
   return true;
 }
