@@ -87,12 +87,6 @@ npm install
 
 # Install Gulp globally
 npm install -g gulp
-
-# Install Bower globally
-npm install -g bower
-
-# Install Bower dependencies
-bower install
 ```
 
 _Private Environment Variables (API Keys)_
