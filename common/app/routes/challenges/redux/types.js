@@ -18,6 +18,7 @@ export default createTypes([
   'resetUi',
   'updateHint',
   'lockUntrustedCode',
+  'unlockUntrustedCode',
 
   // map
   'updateFilter',

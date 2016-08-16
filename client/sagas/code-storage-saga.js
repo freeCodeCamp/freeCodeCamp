@@ -53,6 +53,8 @@ function legacyToFile(code, files, key) {
 export function saveCodeSaga(actions, getState) {
   return actions
     ::ofType(types.saveCode)
+    // do not save challenge if code is locked
+    .filter(() => !getState().challengesApp.isCodeLocked)
     .map(() => {
       const { challengesApp: { id = '', files = {} } } = getState();
       store.set(id, files);

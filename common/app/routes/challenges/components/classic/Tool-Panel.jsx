@@ -14,8 +14,10 @@ export default class ToolPanel extends PureComponent {
     executeChallenge: PropTypes.func,
     updateHint: PropTypes.func,
     hint: PropTypes.string,
+    isCodeLocked: PropTypes.bool,
     toggleHelpChat: PropTypes.func,
-    openBugModal: PropTypes.func
+    openBugModal: PropTypes.func,
+    unlockUntrustedCode: PropTypes.func.isRequired
   };
 
   makeHint() {
@@ -51,24 +53,50 @@ export default class ToolPanel extends PureComponent {
     );
   }
 
-  render() {
-    const {
-      hint,
-      executeChallenge,
-      toggleHelpChat,
-      openBugModal
-    } = this.props;
-    return (
-      <div>
-        { this.renderHint(hint, this.makeHint) }
+  renderExecute(isCodeLocked, executeChallenge, unlockUntrustedCode) {
+    if (isCodeLocked) {
+      return (
         <Button
           block={ true }
           bsStyle='primary'
           className='btn-big'
-          onClick={ executeChallenge }
+          onClick={ unlockUntrustedCode }
           >
-          Run tests (ctrl + enter)
+          Code Locked. Unlock?
         </Button>
+      );
+    }
+    return (
+      <Button
+        block={ true }
+        bsStyle='primary'
+        className='btn-big'
+        onClick={ executeChallenge }
+        >
+        Run tests (ctrl + enter)
+      </Button>
+    );
+  }
+
+  render() {
+    const {
+      hint,
+      isCodeLocked,
+      executeChallenge,
+      toggleHelpChat,
+      openBugModal,
+      unlockUntrustedCode
+    } = this.props;
+    return (
+      <div>
+        { this.renderHint(hint, this.makeHint) }
+        {
+          this.renderExecute(
+            isCodeLocked,
+            executeChallenge,
+            unlockUntrustedCode
+          )
+        }
         <div className='button-spacer' />
         <ButtonGroup
           className='input-group'

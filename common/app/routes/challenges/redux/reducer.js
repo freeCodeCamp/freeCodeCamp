@@ -93,7 +93,7 @@ const mainReducer = handleActions(
       ...state,
       isCodeLocked: true
     }),
-    [types.unlockCode]: state => ({
+    [types.unlockUntrustedCode]: state => ({
       ...state,
       isCodeLocked: false
     }),
