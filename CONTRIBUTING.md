@@ -107,13 +107,8 @@ Edit your `.env` file and modify the API keys only for services that you will
 use.
 
 Note : Not all keys are required, to run the app locally, however `MONGOHQ_URL`
-is the most important one.
-
-If you only use email login, in addition to `MONGOHQ_URL`, `SESSION_SECRET`, add
-the  `MANDRILL_USER` and `MANDRILL_PASSWORD` API Keys. Not setting these keys
-will throw an exception when you sign up which you can ignore, you will still be
-able to login, however you may get these keys
-[here](https://www.mandrill.com/signup/). Sign up and create a new pair of keys.
+is the most important one. Unless you have MongoDB running in a setup different
+than the defaults, the URL in the `sample.env` should work fine.
 
 You can leave the other keys as they are. Keep in mind if you want to use more
 services you'll have to get your own API keys for those services and edit those
@@ -178,12 +173,14 @@ accepted by Free Code Camp proper.
 Free Code Camp Issue Mods and staff are on hand to assist with Pull Request
 related issues on our Help Contributors Chat Room
 
-#### Methods
+#### How to find the code in the Free Code Camp codebase to fix/edit?
 
-There are two methods of creating a Pull for Free Code Camp:
-
--   Editing files via the GitHub Interface
--   Editing files on a local clone
+The best way to find out any code you wish to change/add or remove is using
+the GitHub search bar at the top of the repository page. For example, you could 
+search for a challenge name and the results will display all the files along 
+with line numbers. Then you can proceed to the files and verify this is the area
+that you were looking forward to edit. Always feel free to reach out to the chat
+room when you are not certain of any thing specific in the code.
 
 #### Important: ALWAYS EDIT ON A BRANCH
 
@@ -192,6 +189,13 @@ make edits to the `staging` branch. ALWAYS make a new branch BEFORE you edit
 files. This is critical, because if your PR is not accepted, your copy of
 staging will be forever sullied and the only way to fix it is to delete your
 fork and re-fork.
+
+#### Methods
+
+There are two methods of creating a pull request for Free Code Camp:
+
+-   Editing files via the GitHub Interface
+-   Editing files on a local clone
 
 ##### Method 1: Editing via your Local Fork _(Recommended)_
 
