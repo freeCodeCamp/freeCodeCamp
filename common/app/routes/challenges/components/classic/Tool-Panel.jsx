@@ -1,7 +1,14 @@
 import React, { PropTypes } from 'react';
-import { Button, ButtonGroup } from 'react-bootstrap';
+import { Button, ButtonGroup, Tooltip, OverlayTrigger } from 'react-bootstrap';
 import PureComponent from 'react-pure-render/component';
 
+const unlockWarning = (
+  <Tooltip id='tooltip'>
+    <h4>
+      <strong>Careful!</strong> Only run code you trust
+    </h4>
+  </Tooltip>
+);
 export default class ToolPanel extends PureComponent {
   constructor(...props) {
     super(...props);
@@ -56,14 +63,19 @@ export default class ToolPanel extends PureComponent {
   renderExecute(isCodeLocked, executeChallenge, unlockUntrustedCode) {
     if (isCodeLocked) {
       return (
-        <Button
-          block={ true }
-          bsStyle='primary'
-          className='btn-big'
-          onClick={ unlockUntrustedCode }
+        <OverlayTrigger
+          overlay={ unlockWarning }
+          placement='right'
           >
-          Code Locked. Unlock?
-        </Button>
+          <Button
+            block={ true }
+            bsStyle='primary'
+            className='btn-big'
+            onClick={ unlockUntrustedCode }
+            >
+            Code Locked. Unlock?
+          </Button>
+        </OverlayTrigger>
       );
     }
     return (
