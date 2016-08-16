@@ -95,6 +95,11 @@
     {
       "id": "bad87fee1348bd9bedc08826",
       "title": "Target HTML Elements with Selectors Using jQuery",
+      "required": [
+        {
+          "link": "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css"
+        }
+      ],
       "description": [
         "Now we have a <code>document ready function</code>.",
         "Now let's write our first jQuery statement. All jQuery functions start with a <code>$</code>, usually referred to as a <code>dollar sign operator</code>, or as <code>bling</code>.",
@@ -181,6 +186,11 @@
     {
       "id": "bad87fee1348bd9aedc08826",
       "title": "Target Elements by Class Using jQuery",
+      "required": [
+        {
+          "link": "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css"
+        }
+      ],
       "description": [
         "You see how we made all of your <code>button</code> elements bounce? We selected them with <code>$(\"button\")</code>, then we added some CSS classes to them with <code>.addClass(\"animated bounce\");</code>.",
         "You just used jQuery's <code>.addClass()</code> function, which allows you to add classes to elements.",
@@ -269,6 +279,11 @@
     {
       "id": "bad87fee1348bd9aeda08826",
       "title": "Target Elements by ID Using jQuery",
+      "required": [
+        {
+          "link": "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css"
+        }
+      ],
       "description": [
         "You can also target elements by their id attributes.",
         "First target your <code>button</code> element with the id <code>target3</code> by using the <code>$(\"#target3\")</code> selector.",
@@ -356,6 +371,11 @@
     {
       "id": "bad87fee1348bd9aeda08726",
       "title": "Delete your jQuery Functions",
+      "required": [
+        {
+          "link": "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css"
+        }
+      ],
       "description": [
         "These animations were cool at first, but now they're getting kind of distracting.",
         "Delete all three of these jQuery functions from your <code>document ready function</code>, but leave your <code>document ready function</code> itself intact."
@@ -430,6 +450,11 @@
     {
       "id": "bad87fee1348bd9aed908626",
       "title": "Target the same element with multiple jQuery Selectors",
+      "required": [
+        {
+          "link": "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css"
+        }
+      ],
       "description": [
         "Now you know three ways of targeting elements: by type: <code>$(\"button\")</code>, by class: <code>$(\".btn\")</code>, and by id <code>$(\"#target1\")</code>.",
         "Although it is possible to add multiple classes in a single <code>.addClass()</code> call, let's add them to the same element in <em>three separate ways</em>.",
@@ -518,6 +543,11 @@
     {
       "id": "bad87fee1348bd9aed918626",
       "title": "Remove Classes from an element with jQuery",
+      "required": [
+        {
+          "link": "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css"
+        }
+      ],
       "description": [
         "In the same way you can add classes to an element with jQuery's <code>addClass()</code> function, you can remove them with jQuery's <code>removeClass()</code> function.",
         "Here's how you would do this for a specific button:",
@@ -598,6 +628,11 @@
     {
       "id": "bad87fee1348bd9aed908826",
       "title": "Change the CSS of an Element Using jQuery",
+      "required": [
+        {
+          "link": "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css"
+        }
+      ],
       "description": [
         "We can also change the CSS of an HTML element directly with jQuery.",
         "jQuery has a function called <code>.css()</code> that allows you to change the CSS of an element.",
@@ -1235,6 +1270,11 @@
     {
       "id": "bad87fee1348bd9aed108826",
       "title": "Target a Specific Child of an Element Using jQuery",
+      "required": [
+        {
+          "link": "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css"
+        }
+      ],
       "description": [
         "You've seen why id attributes are so convenient for targeting with jQuery selectors. But you won't always have such neat ids to work with.",
         "Fortunately, jQuery has some other tricks for targeting the right elements.",
@@ -1316,6 +1356,11 @@
     {
       "id": "bad87fee1348bd9aed008826",
       "title": "Target Even Numbered Elements Using jQuery",
+      "required": [
+        {
+          "link": "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css"
+        }
+      ],
       "description": [
         "You can also target all the even-numbered elements.",
         "Here's how you would target all the odd-numbered elements with class <code>target</code> and give them classes:",
@@ -1395,6 +1440,11 @@
     {
       "id": "bad87fee1348bd9aecb08826",
       "title": "Use jQuery to Modify the Entire Page",
+      "required": [
+        {
+          "link": "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css"
+        }
+      ],
       "description": [
         "We're done playing with our jQuery playground. Let's tear it down!",
         "jQuery can target the <code>body</code> element as well.",
