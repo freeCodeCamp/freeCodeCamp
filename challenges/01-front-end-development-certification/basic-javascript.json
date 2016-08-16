@@ -4112,9 +4112,9 @@
         "In the casino game Blackjack, a player can gain an advantage over the house by keeping track of the relative number of high and low cards remaining in the deck. This is called <a href='https://en.wikipedia.org/wiki/Card_counting' target='_blank'>Card Counting</a>.",
         "Having more high cards remaining in the deck favors the player. Each card is assigned a value according to the table below. When the count is positive, the player should bet high. When the count is zero or negative, the player should bet low.",
         "<table class=\"table table-striped\"><thead><tr><th>Count Change</th><th>Cards</th></tr></thead><tbody><tr><td>+1</td><td>2, 3, 4, 5, 6</td></tr><tr><td>0</td><td>7, 8, 9</td></tr><tr><td>-1</td><td>10, 'J', 'Q', 'K', 'A'</td></tr></tbody></table>",
-        "You will write a card counting function. It will receive a <code>card</code> parameter and increment or decrement the global <code>count</code> variable according to the card's value (see table). The function will then return a string with the current count and the string <code>\"Bet\"</code> if the count is positive, or <code>\"Hold\"</code> if the count is zero or negative. The current count and the player's decision (<code>\"Bet\"</code> or <code>\"Hold\"</code>) should be separated by a single space.",
-        "<strong>Example Output</strong><br><code>\"-3 Hold\"<br>\"5 Bet\"</code>",
-        "<strong>Hint</strong><br>Do NOT reset <code>count</code> to 0 when value is 7, 8, or 9."
+        "You will write a card counting function. It will receive a <code>card</code> parameter and increment or decrement the global <code>count</code> variable according to the card's value (see table). The function will then return a string with the current count and the string <code>Bet</code> if the count is positive, or <code>Hold</code> if the count is zero or negative. The current count and the player's decision (<code>Bet</code> or <code>Hold</code>) should be separated by a single space.",
+        "<strong>Example Output</strong><br><code>-3 Hold</code><br><code>5 Bet</code>",
+        "<strong>Hint</strong><br>Do NOT reset <code>count</code> to 0 when value is 7, 8, or 9.<br>Do NOT return an array.<br>Do NOT include quotes (single or double) in the output."
       ],
       "releasedOn": "January 1, 2016",
       "challengeSeed": [
@@ -4136,13 +4136,13 @@
         "var count = 0;\nfunction cc(card) {\n  switch(card) {\n    case 2:\n    case 3:\n    case 4:\n    case 5:\n    case 6:\n      count++;\n      break;\n    case 10:\n    case 'J':\n    case 'Q':\n    case 'K':\n    case 'A':\n      count--;\n  }\n  if(count > 0) {\n    return count + \" Bet\";\n  } else {\n    return count + \" Hold\";\n  }\n}"
       ],
       "tests": [
-        "assert((function(){ count = 0; cc(2);cc(3);cc(4);cc(5);var out = cc(6); if(out === \"5 Bet\") {return true;} return false; })(), 'message: Cards Sequence 2, 3, 4, 5, 6 should return <code>\"5 Bet\"</code>');",
-        "assert((function(){ count = 0; cc(7);cc(8);var out = cc(9); if(out === \"0 Hold\") {return true;} return false; })(), 'message: Cards Sequence 7, 8, 9 should return <code>\"0 Hold\"</code>');",
-        "assert((function(){ count = 0; cc(10);cc('J');cc('Q');cc('K');var out = cc('A'); if(out === \"-5 Hold\") {return true;} return false; })(), 'message: Cards Sequence 10, J, Q, K, A should return <code>\"-5 Hold\"</code>');",
-        "assert((function(){ count = 0; cc(3);cc(7);cc('Q');cc(8);var out = cc('A'); if(out === \"-1 Hold\") {return true;} return false; })(), 'message: Cards Sequence 3, 7, Q, 8, A should return <code>\"-1 Hold\"</code>');",
-        "assert((function(){ count = 0; cc(2);cc('J');cc(9);cc(2);var out = cc(7); if(out === \"1 Bet\") {return true;} return false; })(), 'message: Cards Sequence 2, J, 9, 2, 7 should return <code>\"1 Bet\"</code>');",
-        "assert((function(){ count = 0; cc(2);cc(2);var out = cc(10); if(out === \"1 Bet\") {return true;} return false; })(), 'message: Cards Sequence 2, 2, 10 should return <code>\"1 Bet\"</code>');",
-        "assert((function(){ count = 0; cc(3);cc(2);cc('A');cc(10);var out = cc('K'); if(out === \"-1 Hold\") {return true;} return false; })(), 'message: Cards Sequence 3, 2, A, 10, K should return <code>\"-1 Hold\"</code>');"
+        "assert((function(){ count = 0; cc(2);cc(3);cc(4);cc(5);var out = cc(6); if(out === \"5 Bet\") {return true;} return false; })(), 'message: Cards Sequence 2, 3, 4, 5, 6 should return <code>5 Bet</code>');",
+        "assert((function(){ count = 0; cc(7);cc(8);var out = cc(9); if(out === \"0 Hold\") {return true;} return false; })(), 'message: Cards Sequence 7, 8, 9 should return <code>0 Hold</code>');",
+        "assert((function(){ count = 0; cc(10);cc('J');cc('Q');cc('K');var out = cc('A'); if(out === \"-5 Hold\") {return true;} return false; })(), 'message: Cards Sequence 10, J, Q, K, A should return <code>-5 Hold</code>');",
+        "assert((function(){ count = 0; cc(3);cc(7);cc('Q');cc(8);var out = cc('A'); if(out === \"-1 Hold\") {return true;} return false; })(), 'message: Cards Sequence 3, 7, Q, 8, A should return <code>-1 Hold</code>');",
+        "assert((function(){ count = 0; cc(2);cc('J');cc(9);cc(2);var out = cc(7); if(out === \"1 Bet\") {return true;} return false; })(), 'message: Cards Sequence 2, J, 9, 2, 7 should return <code>1 Bet</code>');",
+        "assert((function(){ count = 0; cc(2);cc(2);var out = cc(10); if(out === \"1 Bet\") {return true;} return false; })(), 'message: Cards Sequence 2, 2, 10 should return <code>1 Bet</code>');",
+        "assert((function(){ count = 0; cc(3);cc(2);cc('A');cc(10);var out = cc('K'); if(out === \"-1 Hold\") {return true;} return false; })(), 'message: Cards Sequence 3, 2, A, 10, K should return <code>-1 Hold</code>');"
       ],
       "type": "checkpoint",
       "challengeType": 1,
@@ -4153,8 +4153,8 @@
             "En el juego de casino Blackjack, un jugador puede conseguir ventaja sobre la casa manteniendo un registro del número relativo de cartas altas y bajas restantes en la baraja. Esto es llamado <a href='https://en.wikipedia.org/wiki/Card_counting' target='_blank'>Conteo de Cartas</a>.",
             "Tener más cartas altas restantes en la baraja favorece al jugador. A cada carta se le asigna un valor de acuerdo a la tabla de abajo. Cuando el conteo es positivo, el jugador debe apostar alto. Cuando el conteo es cero o negativo, el jugador debe apostar bajo.",
             "<table class=\"table table-striped\"><thead><tr><th>Valor</th><th>Cartas</th></tr></thead><tbody><tr><td>+1</td><td>2, 3, 4, 5, 6</td></tr><tr><td>0</td><td>7, 8, 9</td></tr><tr><td>-1</td><td>10, 'J', 'Q', 'K','A'</td></tr></tbody></table>",
-            "Vas a escribir una función de conteo de cartas. Esta recibirá un parametro <code>card</code> (carta) e incrementa o decrementa la variable <code>count</code> (conteo) global de acuerdo al valor de la carta (ver tabla). La función retornará entonces una cadena con el presente conteo y la cadena <code>\"Bet\"</code> si el conteo es positivo o <code>\"Hold\"</code> si el conteo es cero o negativo. El presente conteo y la desición del jugador (<code>\"Bet\"</code> o <code>\"Hold\"</code>) deben quedar separada por un único espacio.",
-            "<strong>Ejemplo de Salida</strong><br><code>\"-3 Hold\"<br>\"5 Bet\"</code>"
+            "Vas a escribir una función de conteo de cartas. Esta recibirá un parametro <code>card</code> (carta) e incrementa o decrementa la variable <code>count</code> (conteo) global de acuerdo al valor de la carta (ver tabla). La función retornará entonces una cadena con el presente conteo y la cadena <code>Bet</code> si el conteo es positivo o <code>Hold</code> si el conteo es cero o negativo. El presente conteo y la desición del jugador (<code>Bet</code> o <code>Hold</code>) deben quedar separada por un único espacio.",
+            "<strong>Ejemplo de Salida</strong><br><code>-3 Hold<br>5 Bet</code>"
           ]
         }
       }
