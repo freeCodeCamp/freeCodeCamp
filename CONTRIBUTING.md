@@ -294,8 +294,7 @@ why it was rejected and what changes are needed.
 
 Many Pull Requests, especially first Pull Requests, require correction or
 updating. If you have used the GitHub interface to create your PR, you will need
-to close your PR, create a new branch, and re-submit. This is because you cannot
-squash your commits via the GitHub interface.
+to close your PR, create a new branch, and re-submit.
 
 If you have a local copy of the repo, you can make the requested changes and
 amend your commit with: `git commit --amend` This will update your existing
