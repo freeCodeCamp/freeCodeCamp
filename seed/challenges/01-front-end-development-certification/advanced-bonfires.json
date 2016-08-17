@@ -145,7 +145,7 @@
       "description": [
         "Design a cash register drawer function <code>checkCashRegister()</code> that accepts purchase price as the first argument (<code>price</code>), payment as the second argument (<code>cash</code>), and cash-in-drawer (<code>cid</code>) as the third argument.",
         "<code>cid</code> is a 2D array listing available currency.",
-        "Return the string <code>\"Insufficient Funds\"</code> if cash-in-drawer is less than the change due. Return the string <code>\"Closed\"</code> if cash-in-drawer is equal to the change due.",
+        "Return the string <code>\"Insufficient Funds\"</code> if cash-in-drawer is less than the change due or if you cannot return the exact change. Return the string <code>\"Closed\"</code> if cash-in-drawer is equal to the change due.",
         "Otherwise, return change in coin and bills, sorted in highest to lowest order.",
         "Remember to use <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
       ],
