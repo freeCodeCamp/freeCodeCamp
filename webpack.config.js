@@ -10,6 +10,13 @@ module.exports = {
     bundle: './client'
   },
   devtool: __DEV__ ? 'inline-source-map' : null,
+  node: {
+    // Mock Node.js modules that Babel require()s but that we don't
+    // particularly care about.
+    fs: 'empty',
+    module: 'empty',
+    net: 'empty'
+  },
   output: {
     filename: __DEV__ ? 'bundle.js' : 'bundle-[hash].js',
     chunkFilename: __DEV__ ?
@@ -43,14 +50,19 @@ module.exports = {
     'loop-protect': 'loopProtect'
   },
   plugins: [
-    new webpack.optimize.DedupePlugin(),
-    new webpack.optimize.OccurenceOrderPlugin(true),
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify(__DEV__ ? 'development' : 'production')
       },
       __DEVTOOLS__: !__DEV__
-    })
+    }),
+    // Use browser version of visionmedia-debug
+    new webpack.NormalModuleReplacementPlugin(
+      /debug\/node/,
+      'debug/browser'
+    ),
+    new webpack.optimize.DedupePlugin(),
+    new webpack.optimize.OccurenceOrderPlugin(true)
   ]
 };
 
