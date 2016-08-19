@@ -51,6 +51,7 @@ export default createTypes([
   'saveCode',
   'loadCode',
   'savedCodeFound',
+  'clearSavedCode',
 
   // video challenges
   'toggleQuestionView',

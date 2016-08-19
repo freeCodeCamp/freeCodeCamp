@@ -50,6 +50,15 @@ function legacyToFile(code, files, key) {
   return { [key]: updateContents(code, files[key]) };
 }
 
+export function clearCodeSaga(actions, getState) {
+  return actions
+    ::ofType(types.clearSavedCode)
+    .map(() => {
+      const { challengesApp: { id = '' } } = getState();
+      store.clear(id);
+      return null;
+    });
+}
 export function saveCodeSaga(actions, getState) {
   return actions
     ::ofType(types.saveCode)
@@ -114,4 +123,4 @@ export function loadCodeSaga(actions$, getState, { window, location }) {
     });
 }
 
-export default combineSagas(saveCodeSaga, loadCodeSaga);
+export default combineSagas(saveCodeSaga, loadCodeSaga, clearCodeSaga);

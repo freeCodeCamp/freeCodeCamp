@@ -90,6 +90,7 @@ export const moveToNextChallenge = createAction(types.moveToNextChallenge);
 export const saveCode = createAction(types.saveCode);
 export const loadCode = createAction(types.loadCode);
 export const savedCodeFound = createAction(types.savedCodeFound);
+export const clearSavedCode = createAction(types.clearSavedCode);
 
 
 // video challenges
