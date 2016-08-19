@@ -6,6 +6,7 @@ import { ofType } from '../../common/utils/get-actions-of-type';
 import { updateContents } from '../../common/utils/polyvinyl';
 import combineSagas from '../../common/utils/combine-sagas';
 
+import { userSelector } from '../../common/app/redux/selectors';
 import { makeToast } from '../../common/app/toasts/redux/actions';
 import types from '../../common/app/routes/challenges/redux/types';
 import {
@@ -76,6 +77,8 @@ export function loadCodeSaga(actions$, getState, { window, location }) {
     ::ofType(types.loadCode)
     .flatMap(() => {
       let finalFiles;
+      const state = getState();
+      const { user } = userSelector(state);
       const {
         challengesApp: {
           id = '',
@@ -83,7 +86,7 @@ export function loadCodeSaga(actions$, getState, { window, location }) {
           legacyKey = '',
           key
         }
-      } = getState();
+      } = state;
       const codeUriFound = getCodeUri(
         location,
         window.decodeURIComponent
@@ -94,7 +97,7 @@ export function loadCodeSaga(actions$, getState, { window, location }) {
         return Observable.of(
           lockUntrustedCode(),
           makeToast({
-            message: 'I found code in the URI. Loading now'
+            message: 'I found code in the URI. Loading now.'
           }),
           savedCodeFound(finalFiles)
         );
@@ -113,12 +116,31 @@ export function loadCodeSaga(actions$, getState, { window, location }) {
       if (finalFiles) {
         return Observable.of(
           makeToast({
-            message: 'I found some saved work. Loading now'
+            message: 'I found some saved work. Loading now.'
           }),
           savedCodeFound(finalFiles),
           updateMain()
         );
       }
+
+      if (user.challengeMap && user.challengeMap[id]) {
+        const userChallenge = user.challengeMap[id];
+        if (userChallenge.files) {
+          finalFiles = userChallenge.files;
+        } else if (userChallenge.solution) {
+          finalFiles = legacyToFile(userChallenge.solution, files, key);
+        }
+        if (finalFiles) {
+          return Observable.of(
+            makeToast({
+              message: 'I found a previous solved solution. Loading now.'
+            }),
+            savedCodeFound(finalFiles),
+            updateMain()
+          );
+        }
+      }
+
       return Observable.empty();
     });
 }
