@@ -147,7 +147,8 @@
         "<code>cid</code> is a 2D array listing available currency.",
         "Return the string <code>\"Insufficient Funds\"</code> if cash-in-drawer is less than the change due or if you cannot return the exact change. Return the string <code>\"Closed\"</code> if cash-in-drawer is equal to the change due.",
         "Otherwise, return change in coin and bills, sorted in highest to lowest order.",
-        "Remember to use <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
+        "Remember to use <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code.",
+        "<table class='table table-striped'><tr><th>Currency Unit</th><th>Amount</th></tr><tr><td>Penny</td><td>$0.01 (PENNY)</td></tr><tr><td>Nickel</td><td>$0.05 (NICKEL)</td></tr><tr><td>Dime</td><td>$0.10 (DIME)</td></tr><tr><td>Quarter</td><td>$0.25 (QUARTER)</td></tr><tr><td>Dollar</td><td>$1.00 (DOLLAR)</td></tr><tr><td>Five Dollars</td><td>$5.00 (FIVE)</td></tr><tr><td>Ten Dollars</td><td>$10.00 (TEN)</td></tr><tr><td>Twenty Dollars</td><td>$20.00 (TWENTY)</td></tr><tr><td>One-hundred Dollars</td><td>$100.00 (ONE HUNDRED)</td></tr></table>"
       ],
       "challengeSeed": [
         "function checkCashRegister(price, cash, cid) {",
