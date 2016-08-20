@@ -374,7 +374,7 @@
         "assert(confirmEnding(\"Open sesame\", \"same\") === true, 'message: <code>confirmEnding(\"Open sesame\", \"same\")</code> should return true.');",
         "assert(confirmEnding(\"Open sesame\", \"pen\") === false, 'message: <code>confirmEnding(\"Open sesame\", \"pen\")</code> should return false.');",
         "assert(confirmEnding(\"If you want to save our world, you must hurry. We dont know how much longer we can withstand the nothing\", \"mountain\") === false, 'message: <code>confirmEnding(\"If you want to save our world, you must hurry. We dont know how much longer we can withstand the nothing\", \"mountain\")</code> should return false.');",
-        "assert(!/\\.endsWith\\(.*?\\)\\s*?;/.test(code), 'message: Do not use the built-in method <code>.endsWith()</code> to solve the challenge.');"
+        "assert(!/\\.endsWith\\(.*?\\)\\s*?;?/.test(code), 'message: Do not use the built-in method <code>.endsWith()</code> to solve the challenge.');"
       ],
       "type": "bonfire",
       "isRequired": true,
