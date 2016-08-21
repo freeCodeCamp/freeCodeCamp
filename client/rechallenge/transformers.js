@@ -1,3 +1,6 @@
+import * as babel from 'babel-core';
+import presetEs2015 from 'babel-preset-es2015';
+import presetReact from 'babel-preset-react';
 import { Observable } from 'rx';
 /* eslint-disable import/no-unresolved */
 import loopProtect from 'loop-protect';
@@ -5,6 +8,7 @@ import loopProtect from 'loop-protect';
 
 import { updateContents } from '../../common/utils/polyvinyl';
 
+const babelOptions = { presets: [ presetEs2015, presetReact ] };
 loopProtect.hit = function hit(line) {
   var err = 'Error: Exiting potential infinite loop at line ' +
     line +
@@ -26,6 +30,21 @@ const transformersForHtmlJS = {
   ]
 };
 
+const transformersForJs = {
+  ext: /js/,
+  transformers: [
+    {
+      name: 'babel-transformer',
+      transformer: function babelTransformer(file) {
+        const result = babel.transform(file.contents, babelOptions);
+        return updateContents(
+          result.code,
+          file
+        );
+      }
+    }
+  ]
+};
 
 // Observable[Observable[File]]::addLoopProtect() => Observable[String]
 export default function transformers() {
@@ -33,6 +52,16 @@ export default function transformers() {
   return source.map(files$ => files$.flatMap(file => {
     if (!transformersForHtmlJS.ext.test(file.ext)) {
       return Observable.just(file);
+    }
+    if (
+      transformersForJs.ext.test(file.ext) &&
+      transformersForHtmlJS.ext.test(file.ext)
+    ) {
+      return Observable.of(
+        ...transformersForHtmlJS.transformers,
+        ...transformersForJs.transformers
+      )
+        .reduce((file, context) => context.transformer(file), file);
     }
     return Observable.from(transformersForHtmlJS.transformers)
       .reduce((file, context) => context.transformer(file), file);
