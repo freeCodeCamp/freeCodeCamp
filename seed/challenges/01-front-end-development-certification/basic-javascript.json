@@ -1180,8 +1180,7 @@
       "tail": [
         "(function(){",
         "if (myStr !== undefined){",
-        "return 'myStr = '+ JSON.stringify(myStr);}",
-        "else{return null;}})();"
+        "console.log('myStr: '+ myStr);}})();"
       ],
       "solutions": [
         "var myStr = \"FirstLine\\n\\\\SecondLine\\\\\\rThirdLine\";"
