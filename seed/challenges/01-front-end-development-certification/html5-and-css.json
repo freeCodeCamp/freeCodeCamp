@@ -1128,7 +1128,7 @@
       ],
       "tests": [
         "assert($(\"img\").length > 0, 'message: Your page should have an image element.');",
-        "assert(new RegExp(\"\\/\\/bit.ly\\/fcc-relaxing-cat\", \"gi\").test($(\"img\").attr(\"src\")), 'message: Your image should have a <code>src</code> attribute that points to the kitten image.');",
+        "assert(new RegExp(\"\\/\\/bit.ly\\/fcc-relaxing-cat|\\/\\/s3.amazonaws.com\\/freecodecamp\\/relaxing-cat.jpg\", \"gi\").test($(\"img\").attr(\"src\")), 'message: Your image should have a <code>src</code> attribute that points to the kitten image.');",
         "assert(code.match(/alt\\s*?=\\s*?(\\\"|\\').*(\\\"|\\')/), 'message: Your image element <strong>must</strong> have an <code>alt</code> attribute.');"
       ],
       "type": "waypoint",
