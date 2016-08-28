@@ -1640,7 +1640,8 @@
       ],
       "description": [
         "You can add the <code>fa-paper-plane</code> Font Awesome icon by adding <code>&#60;i class=\"fa fa-paper-plane\"&#62;&#60;/i&#62;</code> within your submit <code>button</code> element.",
-        "Give your form's text input field a class of <code>form-control</code>. Give your form's submit button the classes <code>btn btn-primary</code>. Also give this button the Font Awesome icon of <code>fa-paper-plane</code>."
+        "Give your form's text input field a class of <code>form-control</code>. Give your form's submit button the classes <code>btn btn-primary</code>. Also give this button the Font Awesome icon of <code>fa-paper-plane</code>.",
+        "All textual <code>&lt;input&gt;</code>, <code>&lt;textarea&gt;</code>, and <code>&lt;select&gt;</code> elements with the class <code>.form-control</code> have a width of 100%."
       ],
       "challengeSeed": [
         "<link href=\"https://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
