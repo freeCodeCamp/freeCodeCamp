@@ -1,4 +1,4 @@
-version: v1.5.0
+version: v1.5.2
 ignore: {}
 patch:
   'npm:marked:20150520':
@@ -9,10 +9,16 @@ patch:
   'npm:minimatch:20160620':
     - gulp > vinyl-fs > glob-stream > minimatch:
         patched: '2016-07-09T00:55:04.882Z'
+      loopback > loopback-connector-remote > strong-remoting > strong-globalize > fs-sync > glob > minimatch:
+        patched: '2016-08-25T13:00:35.730Z'
     - gulp > vinyl-fs > glob-stream > glob > minimatch:
         patched: '2016-07-09T00:55:04.882Z'
+      loopback > strong-remoting > strong-globalize > fs-sync > glob > minimatch:
+        patched: '2016-08-25T13:00:35.730Z'
     - rev-del > mocha > glob > minimatch:
         patched: '2016-07-09T00:55:04.882Z'
+      loopback-datasource-juggler > strong-globalize > fs-sync > glob > minimatch:
+        patched: '2016-08-25T13:00:35.730Z'
     - gulp > vinyl-fs > glob-watcher > gaze > globule > minimatch:
         patched: '2016-07-09T00:55:04.882Z'
     - gulp > vinyl-fs > glob-watcher > gaze > globule > glob > minimatch:
