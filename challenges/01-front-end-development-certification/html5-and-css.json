@@ -4794,7 +4794,7 @@
         "The digit <code>0</code> is the lowest number in hex code, and represents a complete absence of color.",
         "The digit <code>F</code> is the highest number in hex code, and represents the maximum possible brightness.",
         "Replace the color words in our <code>style</code> element with their correct hex codes.",
-        "<table class='table table-striped'><tr><th>Color</th><th>Hex Code</th></tr><tr><td>Dodger Blue</td><td><code>#2998E4</code></td></tr><tr><td>Green</td><td><code>#00FF00</code></td></tr><tr><td>Orange</td><td><code>#FFA500</code></td></tr><tr><td>Red</td><td><code>#FF0000</code></td></tr></table>"
+        "<table class='table table-striped'><tr><th>Color</th><th>Hex Code</th></tr><tr><td>Dodger Blue</td><td><code>#1E90FF</code></td></tr><tr><td>Green</td><td><code>#00FF00</code></td></tr><tr><td>Orange</td><td><code>#FFA500</code></td></tr><tr><td>Red</td><td><code>#FF0000</code></td></tr></table>"
       ],
       "challengeSeed": [
         "<style>",
@@ -4825,8 +4825,8 @@
         "assert(code.match(/\\.red-text\\s*?{\\s*?color:\\s*?#FF0000\\s*?;\\s*?}/gi), 'message: Use the <code>hex code</code> for the color red instead of the word <code>red</code>.');",
         "assert($('.green-text').css('color') === 'rgb(0, 255, 0)', 'message: Give your <code>h1</code> element with the text <code>I am green!</code> the <code>color</code> green.');",
         "assert(code.match(/\\.green-text\\s*?{\\s*?color:\\s*?#00FF00\\s*?;\\s*?}/gi), 'message: Use the <code>hex code</code> for the color green instead of the word <code>green</code>.');",
-        "assert($('.dodger-blue-text').css('color') === 'rgb(41, 152, 228)', 'message: Give your <code>h1</code> element with the text <code>I am dodger blue!</code> the <code>color</code> dodger blue.');",
-        "assert(code.match(/\\.dodger-blue-text\\s*?{\\s*?color:\\s*?#2998E4\\s*?;\\s*?}/gi), 'message: Use the <code>hex code</code> for the color dodger blue instead of the word <code>dodgerblue</code>.');",
+        "assert($('.dodger-blue-text').css('color') === '#1E90FF', 'message: Give your <code>h1</code> element with the text <code>I am dodger blue!</code> the <code>color</code> dodger blue.');",
+        "assert(code.match(/\\.dodger-blue-text\\s*?{\\s*?color:\\s*?#1E90FF\\s*?;\\s*?}/gi), 'message: Use the <code>hex code</code> for the color dodger blue instead of the word <code>dodgerblue</code>.');",
         "assert($('.orange-text').css('color') === 'rgb(255, 165, 0)', 'message: Give your <code>h1</code> element with the text <code>I am orange!</code> the <code>color</code> orange.');",
         "assert(code.match(/\\.orange-text\\s*?{\\s*?color:\\s*?#FFA500\\s*?;\\s*?}/gi), 'message: Use the <code>hex code</code> for the color orange instead of the word <code>orange</code>.');"
       ],
