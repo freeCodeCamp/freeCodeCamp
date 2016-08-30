@@ -151,7 +151,6 @@
     "gulp-tape": "0.0.9",
     "gulp-uglify": "^2.0.0",
     "gulp-util": "^3.0.6",
-    "happy": "0.0.1",
     "istanbul-coveralls": "^1.0.3",
     "json-loader": "~0.5.2",
     "jsonlint": "^1.6.2",
