@@ -5,8 +5,132 @@
   "helpRoom": "Help",
   "challenges": [
     {
-      "id": "cd7123c8c441eddfaeb5bdef",
-      "title": "",
+      "id": "bc7123c8c441eddfaeb5bdef",
+      "title": "Create a Media Query",
+      "description": [
+        "Media Queries are a new technique introduced in CSS3 that let the presentation of content be changed for a specific viewport only.",
+        "They consist of a media type and if that media type matches the type of device the document is being displayed on, the styles will be applied. You can have as many selectors and styles inside your media query as you want.",
+        "Here is an example of a media query that returns the content when the device's width is under 100px:",
+        "<code>@media (max-width: 100px) {}</code>",
+        "Remember The css inside the media query will only be displayed if the media type matches the one of the device being used.",
+        "Add a media query, so that the p tag will have the font size of 10px when the device's height is smaller than 800px."
+      ],
+      "challengeSeed": [
+        "<style>",
+        "",
+        "</style>",
+        "",
+        "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis tempus massa. Aenean erat nisl, gravida vel vestibulum cursus, interdum sit amet lectus. Sed sit amet quam nibh. Suspendisse quis tincidunt nulla. In hac habitasse platea dictumst. Ut sit amet pretium nisl. Vivamus vel mi sem. Aenean sit amet consectetur sem. Suspendisse pretium, purus et gravida consequat, nunc ligula ultricies diam, at aliquet velit libero a dui.</p>"
+      ],
+      "tests": [
+        "assert($('img').css('font-size') == '10px', 'message: Your <code>p</code> tag should have the font size of <code>10px</code> when the device's height is smaller than <code>800px</code>.')"
+      ],
+      "type": "waypoint",
+      "solution": "<style>\n\n  @media (max-height: 800px) {\n    p {\n      font-size: 10px;\n    }\n  }\n\n</style>\n\n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis tempus massa. Aenean erat nisl, gravida vel vestibulum cursus, interdum sit amet lectus. Sed sit amet quam nibh. Suspendisse quis tincidunt nulla. In hac habitasse platea dictumst. Ut sit amet pretium nisl. Vivamus vel mi sem. Aenean sit amet consectetur sem. Suspendisse pretium, purus et gravida consequat, nunc ligula ultricies diam, at aliquet velit libero a dui.</p>",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "bd7123c8c441eddfaeb5bdeb",
+      "title": "Create a Compound Media Query",
+      "description": [],
+      "challengeSeed": [],
+      "tests": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "bd7123c8c441eddfaeb5bdec",
+      "title": "Make an Image Responsive",
+      "description": [],
+      "challengeSeed": [],
+      "tests": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "bd7123c8c441eddfaeb5bded",
+      "title": "Use a Retina Image for Higher Resolution Displays",
+      "description": [],
+      "challengeSeed": [],
+      "tests": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "bd7123c8c441eddfaeb5bdee",
+      "title": "Make Typography Responsive",
       "description": [],
       "challengeSeed": [],
       "tests": [],
