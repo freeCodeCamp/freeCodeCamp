@@ -32,13 +32,11 @@
   "license": "(BSD-3-Clause AND CC-BY-SA-4.0)",
   "dependencies": {
     "accepts": "^1.3.0",
-    "async": "^1.5.0",
     "babel-core": "^6.3.26",
     "babel-preset-es2015": "^6.3.13",
     "babel-preset-react": "^6.3.13",
     "babel-register": "^6.3.0",
     "body-parser": "^1.13.2",
-    "cheerio": "~0.20.0",
     "classnames": "^2.1.2",
     "compression": "^1.6.0",
     "connect-mongo": "^1.3.2",
@@ -116,9 +114,7 @@
     "snyk": "^1.18.0",
     "stampit": "^2.1.1",
     "store": "https://github.com/berkeleytrue/store.js.git#feature/noop-server",
-    "url-regex": "^3.0.0",
-    "validator": "^5.0.0",
-    "xss-filters": "^1.2.6"
+    "validator": "^5.0.0"
   },
   "devDependencies": {
     "adler32": "~0.1.7",
@@ -137,7 +133,6 @@
     "gulp": "^3.9.0",
     "gulp-babel": "^6.1.1",
     "gulp-concat": "^2.6.0",
-    "gulp-dest": "^0.2.3",
     "gulp-eslint": "^3.0.1",
     "gulp-if": "^2.0.0",
     "gulp-jsonlint": "^1.1.0",
