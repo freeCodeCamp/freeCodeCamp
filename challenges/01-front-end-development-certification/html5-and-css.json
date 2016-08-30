@@ -935,8 +935,9 @@
         "First, you'll need to make a <code>call</code> to Google to grab the <code>Lobster</code> font and load it into your HTML.",
         "Copy the following code snippet and paste it into the top of your code editor:",
         "<code>&#60;link href=\"https://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\"&#62;</code>",
-        "Now you can set <code>Lobster</code> as a font-family value on your <code>h2</code> element.",
-        "Apply the <code>font-family</code> of <code>Lobster</code> to your <code>h2</code> element."
+        "Remember, before you can apply styles, like a new font, to an element, you'll need to create a CSS rule.",
+        "<blockquote>h2 {<br>  font-family: Sans-serif;<br>}</blockquote>",
+        "Create a CSS rule for the <code>font-family</code> of <code>Lobster</code> and apply this new font to your <code>h2</code> element."
       ],
       "challengeSeed": [
         "<style>",
