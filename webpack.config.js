@@ -23,7 +23,7 @@ module.exports = {
       'bundle-[name].js' :
       'bundle-[name]-[chunkhash].js',
     path: path.join(__dirname, '/public/js'),
-    publicPath: __DEV__ ? 'http://localhost:2999/js' : '/js'
+    publicPath: __DEV__ ? `http://localhost:${process.env.PORT || 3000}/js` : '/js'
   },
   module: {
     loaders: [
