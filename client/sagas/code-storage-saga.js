@@ -56,7 +56,7 @@ export function clearCodeSaga(actions, getState) {
     ::ofType(types.clearSavedCode)
     .map(() => {
       const { challengesApp: { id = '' } } = getState();
-      store.clear(id);
+      store.remove(id);
       return null;
     });
 }
