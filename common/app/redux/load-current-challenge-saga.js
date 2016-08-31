@@ -13,7 +13,7 @@ import {
 } from './selectors';
 import { updateCurrentChallenge } from '../routes/challenges/redux/actions';
 import getActionsOfType from '../../utils/get-actions-of-type';
-import combineSagas from '../utils/combine-sagas';
+import combineSagas from '../../utils/combine-sagas';
 import { postJSON$ } from '../../utils/ajax-stream';
 
 const log = debug('fcc:app/redux/load-current-challenge-saga');

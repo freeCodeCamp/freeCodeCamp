@@ -1,7 +1,10 @@
 import { Observable } from 'rx';
 
 import types from './types';
-import { moveToNextChallenge } from './actions';
+import {
+  moveToNextChallenge,
+  clearSavedCode
+} from './actions';
 
 import { challengeSelector } from './selectors';
 import { randomCompliment } from '../../../utils/get-words';
@@ -24,7 +27,8 @@ function postChallenge(url, username, _csrf, challengeInfo) {
         updateUserChallenge(
           username,
           { ...challengeInfo, lastUpdated, completedDate }
-        )
+        ),
+        clearSavedCode()
       );
     })
     .catch(createErrorObservable);

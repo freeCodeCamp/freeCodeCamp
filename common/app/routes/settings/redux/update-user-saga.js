@@ -2,7 +2,6 @@ import { Observable } from 'rx';
 import { push } from 'react-router-redux';
 
 import { types } from './actions';
-import combineSagas from '../../../utils/combine-sagas';
 import { makeToast } from '../../../toasts/redux/actions';
 import { fetchChallenges } from '../../challenges/redux/actions';
 import {
@@ -14,6 +13,7 @@ import {
 import { userSelector } from '../../../redux/selectors';
 import { postJSON$ } from '../../../../utils/ajax-stream';
 import langs from '../../../../utils/supported-languages';
+import combineSagas from '../../../../utils/combine-sagas';
 
 const urlMap = {
   isLocked: 'lockdown',

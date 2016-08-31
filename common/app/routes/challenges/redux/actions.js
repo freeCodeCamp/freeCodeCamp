@@ -22,6 +22,11 @@ export const fetchChallengeCompleted = createAction(
 );
 export const resetUi = createAction(types.resetUi);
 export const updateHint = createAction(types.updateHint);
+export const lockUntrustedCode = createAction(types.lockUntrustedCode);
+export const unlockUntrustedCode = createAction(
+  types.unlockUntrustedCode,
+  () => null
+);
 
 export const fetchChallenges = createAction(types.fetchChallenges);
 export const fetchChallengesCompleted = createAction(
@@ -85,6 +90,7 @@ export const moveToNextChallenge = createAction(types.moveToNextChallenge);
 export const saveCode = createAction(types.saveCode);
 export const loadCode = createAction(types.loadCode);
 export const savedCodeFound = createAction(types.savedCodeFound);
+export const clearSavedCode = createAction(types.clearSavedCode);
 
 
 // video challenges

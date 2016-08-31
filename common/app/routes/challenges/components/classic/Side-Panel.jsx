@@ -12,7 +12,8 @@ import { challengeSelector } from '../../redux/selectors';
 import {
   openBugModal,
   updateHint,
-  executeChallenge
+  executeChallenge,
+  unlockUntrustedCode
 } from '../../redux/actions';
 import { makeToast } from '../../../../toasts/redux/actions';
 import { toggleHelpChat } from '../../../../redux/actions';
@@ -22,7 +23,8 @@ const bindableActions = {
   executeChallenge,
   updateHint,
   toggleHelpChat,
-  openBugModal
+  openBugModal,
+  unlockUntrustedCode
 };
 const mapStateToProps = createSelector(
   challengeSelector,
@@ -31,20 +33,23 @@ const mapStateToProps = createSelector(
   state => state.challengesApp.tests,
   state => state.challengesApp.output,
   state => state.challengesApp.hintIndex,
+  state => state.challengesApp.isCodeLocked,
   (
     { challenge: { title, description, hints = [] } = {} },
     windowHeight,
     navHeight,
     tests,
     output,
-    hintIndex
+    hintIndex,
+    isCodeLocked
   ) => ({
     title,
     description,
     height: windowHeight - navHeight - 20,
     tests,
     output,
-    hint: hints[hintIndex]
+    hint: hints[hintIndex],
+    isCodeLocked
   })
 );
 
@@ -65,7 +70,8 @@ export class SidePanel extends PureComponent {
     updateHint: PropTypes.func,
     makeToast: PropTypes.func,
     toggleHelpChat: PropTypes.func,
-    openBugModal: PropTypes.func
+    openBugModal: PropTypes.func,
+    unlockUntrustedCode: PropTypes.func
   };
 
   renderDescription(description = [ 'Happy Coding!' ], descriptionRegex) {
@@ -106,7 +112,9 @@ export class SidePanel extends PureComponent {
       updateHint,
       makeToast,
       toggleHelpChat,
-      openBugModal
+      openBugModal,
+      isCodeLocked,
+      unlockUntrustedCode
     } = this.props;
     const style = {};
     if (height) {
@@ -135,9 +143,11 @@ export class SidePanel extends PureComponent {
         <ToolPanel
           executeChallenge={ executeChallenge }
           hint={ hint }
+          isCodeLocked={ isCodeLocked }
           makeToast={ makeToast }
           openBugModal={ openBugModal }
           toggleHelpChat={ toggleHelpChat }
+          unlockUntrustedCode={ unlockUntrustedCode }
           updateHint={ updateHint }
         />
         <Output output={ output }/>

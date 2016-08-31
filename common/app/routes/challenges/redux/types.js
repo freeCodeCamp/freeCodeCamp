@@ -17,6 +17,8 @@ export default createTypes([
   'replaceChallenge',
   'resetUi',
   'updateHint',
+  'lockUntrustedCode',
+  'unlockUntrustedCode',
 
   // map
   'updateFilter',
@@ -49,6 +51,7 @@ export default createTypes([
   'saveCode',
   'loadCode',
   'savedCodeFound',
+  'clearSavedCode',
 
   // video challenges
   'toggleQuestionView',

@@ -7,8 +7,8 @@ export default React.createClass({
     'aria-controls': React.PropTypes.string,
     className: React.PropTypes.string,
     href: React.PropTypes.string,
-    onClick: React.PropTypes.func.isRequired,
-    points: React.PropTypes.func,
+    onClick: React.PropTypes.func,
+    points: React.PropTypes.number,
     title: React.PropTypes.node
   },
 

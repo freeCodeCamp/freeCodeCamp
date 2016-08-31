@@ -45,6 +45,7 @@ const initialUiState = {
   shouldShowQuestions: false
 };
 const initialState = {
+  isCodeLocked: false,
   id: '',
   challenge: '',
   helpChatRoom: 'Help',
@@ -87,6 +88,14 @@ const mainReducer = handleActions(
       hintIndex: state.hintIndex + 1 >= state.numOfHints ?
         0 :
         state.hintIndex + 1
+    }),
+    [types.lockUntrustedCode]: state => ({
+      ...state,
+      isCodeLocked: true
+    }),
+    [types.unlockUntrustedCode]: state => ({
+      ...state,
+      isCodeLocked: false
     }),
     [types.executeChallenge]: state => ({
       ...state,
