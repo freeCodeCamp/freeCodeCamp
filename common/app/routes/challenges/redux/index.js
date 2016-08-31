@@ -5,6 +5,7 @@ import answerSaga from './answer-saga';
 import resetChallengeSaga from './reset-challenge-saga';
 import bugSaga from './bug-saga';
 import mapUiSaga from './map-ui-saga';
+import stepChallengeEpic from './step-challenge-epic';
 
 export * as actions from './actions';
 export reducer from './reducer';
@@ -19,5 +20,6 @@ export const sagas = [
   answerSaga,
   resetChallengeSaga,
   bugSaga,
-  mapUiSaga
+  mapUiSaga,
+  stepChallengeEpic
 ];

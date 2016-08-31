@@ -5,6 +5,8 @@ import { getMouse, loggerToStr } from '../utils';
 import types from './types';
 
 // step
+export const stepForward = createAction(types.stepForward);
+export const stepBackward = createAction(types.stepBackward);
 export const goToStep = createAction(types.goToStep);
 export const completeAction = createAction(types.completeAction);
 export const openLightBoxImage = createAction(types.openLightBoxImage);

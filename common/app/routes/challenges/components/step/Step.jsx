@@ -7,7 +7,8 @@ import ReactTransitionReplace from 'react-css-transition-replace';
 import LightBox from 'react-images';
 
 import {
-  goToStep,
+  stepForward,
+  stepBackward,
   completeAction,
   submitChallenge,
   openLightBoxImage,
@@ -38,12 +39,14 @@ const mapStateToProps = createSelector(
     step: description[currentIndex],
     steps: description,
     numOfSteps: description.length,
+    isLastStep: currentIndex + 1 >= description.length,
     isGoingForward: currentIndex > previousIndex
   })
 );
 
 const dispatchActions = {
-  goToStep,
+  stepForward,
+  stepBackward,
   completeAction,
   submitChallenge,
   openLightBoxImage,
@@ -53,8 +56,6 @@ const dispatchActions = {
 export class StepChallenge extends PureComponent {
   constructor(...args) {
     super(...args);
-    this.handleNextClick = this.handleNextClick.bind(this);
-    this.handleBackClick = this.handleBackClick.bind(this);
     this.handleLightBoxOpen = this.handleLightBoxOpen.bind(this);
   }
   static displayName = 'StepChallenge';
@@ -64,28 +65,16 @@ export class StepChallenge extends PureComponent {
     steps: PropTypes.array,
     isActionCompleted: PropTypes.bool,
     isGoingForward: PropTypes.bool,
+    isLastStep: PropTypes.bool,
     numOfSteps: PropTypes.number,
-    goToStep: PropTypes.func,
+    stepForward: PropTypes.func,
+    stepBackward: PropTypes.func,
     completeAction: PropTypes.func,
     submitChallenge: PropTypes.func,
     isLightBoxOpen: PropTypes.bool,
     openlightBoxImage: PropTypes.func,
     closeLightBoxImage: PropTypes.func
   };
-
-  handleNextClick() {
-    const { numOfSteps, currentIndex, submitChallenge, goToStep } = this.props;
-    const isLastStep = currentIndex + 1 >= numOfSteps;
-    if (isLastStep) {
-      return submitChallenge();
-    }
-    return goToStep(currentIndex + 1);
-  }
-
-  handleBackClick() {
-    const { currentIndex, goToStep } = this.props;
-    goToStep(currentIndex - 1);
-  }
 
   handleLightBoxOpen(e) {
     if (!(e.ctrlKey || e.metaKey)) {
@@ -119,7 +108,7 @@ export class StepChallenge extends PureComponent {
     );
   }
 
-  renderBackButton(index) {
+  renderBackButton(index, stepBackward) {
     if (index === 0) {
       return (
         <Col
@@ -135,15 +124,14 @@ export class StepChallenge extends PureComponent {
         bsSize='large'
         bsStyle='primary'
         className='col-sm-4 col-xs-12'
-        onClick={ this.handleBackClick }
+        onClick={ stepBackward }
         >
         Go to my previous step
       </Button>
     );
   }
 
-  renderNextButton(hasAction, index, numOfSteps, isCompleted) {
-    const isLastStep = index + 1 >= numOfSteps;
+  renderNextButton(hasAction, isLastStep, isCompleted, stepForward) {
     const btnClass = classnames({
       'col-sm-4 col-xs-12': true,
       disabled: hasAction && !isCompleted
@@ -154,7 +142,7 @@ export class StepChallenge extends PureComponent {
         bsStyle='primary'
         className={ btnClass }
         disabled={ hasAction && !isCompleted }
-        onClick={ this.handleNextClick }
+        onClick={ stepForward }
         >
         { isLastStep ? 'Finish challenge' : 'Go to my next step'}
       </Button>
@@ -166,7 +154,10 @@ export class StepChallenge extends PureComponent {
     currentIndex,
     numOfSteps,
     isActionCompleted,
-    completeAction
+    completeAction,
+    isLastStep,
+    stepForward,
+    stepBackward
   }) {
     if (!Array.isArray(step)) {
       return null;
@@ -206,7 +197,7 @@ export class StepChallenge extends PureComponent {
         <div className='spacer' />
         <div className='challenge-button-block'>
           { this.renderActionButton(action, completeAction) }
-          { this.renderBackButton(currentIndex) }
+          { this.renderBackButton(currentIndex, stepBackward) }
           <Col
             className='challenge-step-counter large-p text-center'
             sm={ 4 }
@@ -217,9 +208,9 @@ export class StepChallenge extends PureComponent {
           {
             this.renderNextButton(
               !!action,
-              currentIndex,
-              numOfSteps,
-              isActionCompleted
+              isLastStep,
+              isActionCompleted,
+              stepForward
             )
           }
         </div>
