@@ -167,6 +167,7 @@ module.exports = function(app) {
   router.get('/email-signin', getEmailSignin);
   router.get('/deprecated-signin', getDepSignin);
   router.get('/update-email', getUpdateEmail);
+  router.get('/delete-my-account', showDelete);
   api.post(
     '/account/delete',
     ifNoUser401,
@@ -429,6 +430,10 @@ module.exports = function(app) {
         },
         next
       );
+  }
+
+  function showDelete(req, res) {
+    return res.render('account/delete', { title: 'Delete My Account!' });
   }
 
   function postDeleteAccount(req, res, next) {
