@@ -6,10 +6,1499 @@
   "challenges": [
     {
       "id": "ad7123c8c441eddfaeb5bdef",
-      "title": "",
-      "description": [],
+      "title": "Introduction to the Applied Accessibility Challenges",
+      "description": [
+        "Welcome to the Applied Accessibility Challenges!",
+        "\"Accessibility\" generally means packaging your web content and creating a user interface that can be understood, navigated, and interacted with by the broadest audience possible. This includes people with visual, auditory, mobility, or cognitive disabilities. Websites should be open and accessible to everyone, regardless of a user's abilities or resources. Some users may rely on assistive technology such as a screen reader or voice recognition software, and others may only be able to navigate through a site using a keyboard. Keeping the needs of various users in mind when developing your project can go a long way towards achieving the goal of an open web.",
+        "Here are three general concepts we'll explore more throughout the following challenges:",
+        "<ol>",
+        "<li>have well-organized code that uses appropriate markup</li>",
+        "<li>ensure text alternatives exist for non-text and visual content</li>",
+        "<li>create an easily-navigated page that's keyboard-friendly</li>",
+        "</ol>",
+        "Having accessible web content in an ongoing challenge. A great resource for your projects going forward is the W3 Consortium's Web Content Accessibility Guidelines (WCAG). They set the international standard for accessibility and provide a number of criteria you can use to check your work against."
+      ],
       "challengeSeed": [],
-      "tests": [],
+      "tests": [
+        "assert(true, 'message: Carry on')"
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "ad7123c8c441eddfaeb5bdef",
+      "title": "Add Alt Text to Images for Visually Impaired Accessibility",
+      "description": [
+        "It's likely you've seen an alt attribute on an img tag in other challenges. Alt text describes the content of the image and provides a text-alternative in case the image fails to load or can't be seen by a user. It's also used by search engines to understand what an image contains to include it in search results. Here's an example:",
+        "<img src=\"importantLogo.jpeg\" alt=\"Company logo\">",
+        "People with visual impairments rely on screen readers to convert web content to an audio interface, and won't get information if it's only presented visually. For images, screen readers can access the alt attribute and read its contents to deliver key information.",
+        "Good alt text is concise but descriptive, and meant to briefly convey the relevant meaning of the image. When should you include an alt attribute on your image? Always! Per HTML5 specification, this is now considered mandatory.",
+        "Instructions",
+        "CamperCat happens to be both a coding ninja and an actual ninja, and is building a website to share his knowledge. The profile picture he wants to use showcases his skills, and should be appreciated by all site visitors. Add an alt attribute in the img tag, that explains CamperCat is doing karate."
+      ],
+      "challengeSeed": [
+        "<img src=\"doingKarateWow.jpeg\">"
+      ],
+      "tests": [
+        "assert($('img').attr('alt'), 'message: Give the <code>img</code> tag an <code>alt</code> attribute, and make sure it is not empty.');"
+      ],
+      "solutions": [
+        "<img src=\"doingKarateWow.jpeg\" alt=\"CamperCat doing karate\">"
+      ],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "ad7123c8c441eddfaeb5bdef",
+      "title": "Know when alt text should be left blank",
+      "description": [
+        "In the last challenge, you learned that including an alt attribute on img tags is mandatory. However, sometimes images are grouped with a caption already describing them, or are used for decoration only, and alt text may seem redundant or unnecessary. In situations when an image is already explained with text content, or does not add meaning to a page, the img still needs an alt attribute, but it can be set to an empty string. Here's an example:",
+        "<img src=\"visualDecoration.jpeg\" alt=\"\">",
+        "Background images usually fall under the 'decorative' label as well, but they are typically applied with CSS rules, and are therefore not part of the markup that screen readers process.",
+        "Instructions",
+        "CamperCat has coded a skeleton page for the blog part of his website below. He's planning to add a visual break between his two articles with a decorative image of a samurai sword. Add an alt attribute to the img tag in the code below and set it to an empty string."
+      ],
+      "challengeSeed": [
+        "<header>",
+        "  <h1>Deep Thoughts with Master CamperCat</h1>",
+        "</header>",
+        "<article>",
+        "  <h2>Defeating your Foe: the Red Dot is Ours!</h2>",
+        "  <p>To Come...</p>",
+        "</article>",
+        "",
+        "<img src=\"samuraiSwords.jpeg\">",
+        "",
+        "<article>",
+        "  <h2>Is Chuck Norris a Cat Person?</h2>",
+        "  <p>To Come...</p>",
+        "</article>",
+        "<footer></footer>"
+      ],
+      "tests": [
+        "assert(!($('img').attr('alt') == undefined), 'message: Make sure to add an <code>alt</code> attribute to the <code>img</code> tag.');",
+        "assert($('img').attr('alt') == '', 'message: The <code>alt</code> attribute should be set to an empty string.');"
+      ],
+      "solutions": [
+        "<header>\n  <h1>Deep Thoughts with Master CamperCat</h1>\n</header>\n<article>\n  <h2>Defeating your Foe: the Red Dot is Ours!</h2>\n  <p>To Come...</p>\n</article>\n\n<img src=\"samuraiSwords.jpeg\" alt=\"\">\n\n<article>\n  <h2>Is Chuck Norris a Cat Person?</h2>\n  <p>To Come...</p>\n</article>\n<footer></footer>"
+      ],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "ad7123c8c441eddfaeb5bdef",
+      "title": "Use Headings to Show Hierarchical Relationships of Content",
+      "description": [
+        "Headings (h1 through h6 elements) are workhorse tags that help provide structure and labeling to your content. Given these characteristics, screen readers can be set to read only the headings on a page so the user gets a summary. This means it is important for the heading tags in your markup to have semantic meaning and relate to each other, not be picked merely for their size values. If you were writing a paper with an introduction, a body, and a conclusion, you wouldn't put the conclusion as a subsection of the body in your outline, right? Similarly, the heading tags in a webpage need to go in order and indicate the hierarchical relationships of your content - ones with equal (or higher) rank start new implied sections, headings with lower rank start subsections of the previous one.",
+        "As an example, a page with an h2 element followed by several subsections labeled with h4 tags would confuse a screen reader user. With six choices, it's tempting to use a tag because it looks better in a browser, but you can use CSS to edit the relative sizing.",
+        "One final point, your page should always have one h1 element, which is the main subject of your content.",
+        "Instructions",
+        "CamperCat wants a page dedicated to becoming a ninja and has some ideas in place. Help him fix the headings so his markup gives semantic meaning to the content, and shows the proper parent-child relationships of his sections. Change all the h5 tags to the proper heading level to indicate they are subsections of the h2 ones."
+      ],
+      "challengeSeed": [
+        "<header>",
+        "  <h1>How to Become a Ninja</h1>",
+        "</header>",
+        "<main>",
+        "  <h2>Learn the Art of Moving Stealthily</h2>",
+        "  <h5>How to Hide in Plain Sight</h5>",
+        "  <h5>How to Climb a Wall</h5>",
+        "",
+        "  <h2>Learn the Art of Battle</h2>",
+        "  <h5>How to Strengthen your Body</h5>",
+        "  <h5>How to Fight like a Ninja</h5>",
+        "",
+        "  <h2>Learn the Art of Living with Honor</h2>",
+        "  <h5>How to Breathe Properly</h5>",
+        "  <h5>How to Simplify your Life</h5> ",
+        "</main>",
+        "<footer></footer>"
+      ],
+      "tests": [
+        "assert($('h3').length === 6, 'message: Make sure to replace the <code>h5</code> tags with <code>h3</code> tags');",
+        "assert($('h5').length === 0, 'message: Make sure to replace all the <code>h5</code> tags on the page.')"
+      ],
+      "solutions": [
+        "<header>\n  <h1>How to Become a Ninja</h1>\n</header>\n<main>\n  <h2>Learn the Art of Moving Stealthily</h2>\n  <h3>How to Hide in Plain Sight</h3>\n  <h3>How to Climb a Wall</h3>\n\n  <h2>Learn the Art of Battle</h2>\n  <h3>How to Strengthen your Body</h3>\n  <h3>How to Fight like a Ninja</h3>\n\n  <h2>Learn the Art of Living with Honor</h2>\n  <h3>How to Breathe Properly</h3>\n  <h3>How to Simplify your Life</h3>  \n</main>\n<footer></footer>"
+      ],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "ad7123c8c441eddfaeb5bdef",
+      "title": "Jump Straight to the Content Using the Main Element",
+      "description": [
+        "HTML5 introduced a number of new elements that give developers more options while also incorporating accessibility features. These tags include main, header, footer, nav, article, and section, among others. By default, a browser renders these elements similarly to the humble div, but using them where appropriate layers additional meaning in your markup. The tag name alone can indicate the type of information it contains, which adds what is called semantic meaning to that content. Assistive technologies can access this information to provide better page summary or navigation options to their users.",
+        "The main element is used to wrap (you guessed it) the main content, and there should be only one per page. It's meant to surround only the information that's related to the central topic of your page, and not include items that repeat across pages, like navigation links or banners. This tag also has an embedded landmark feature that can be used by assistive technology to quickly navigate to the good stuff. If you've ever seen a \"Jump to Main Content\" link at the top of a page, using a main tag automatically gives assistive devices that functionality now.",
+        "Instructions",
+        "CamperCat has some big ideas for his ninja weapons page. Help him set up his markup by adding opening and closing main tags between the header and footer in the code below. Keep the main tags empty for now."
+      ],
+      "challengeSeed": [
+        "<header>",
+        "  <h1>Weapons of the Ninja</h1>",
+        "</header>",
+        "",
+        "<footer></footer>"
+      ],
+      "tests": [
+        "assert($('main').length == 1, 'message: Add one <code>main</code> element to the page.');",
+        "assert(code.match(/</header>\\s*?<main>\\s*?</main>/gi), 'message: Place the <code>main</code> element between the <code>header</code> and <code>footer</code>.');"
+      ],
+      "solutions": [
+        "<header>\n  <h1>Weapons of the Ninja</h1>\n</header>\n<main></main>\n<footer></footer>"
+      ],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "ad7123c8c441eddfaeb5bdef",
+      "title": "Wrap Content in the Article Element",
+      "description": [
+        "We mentioned article as one of the new HTML5 elements that adds semantic meaning to your markup in the last challenge. Articles are sectioning elements, and are used to wrap independent, self-contained content. The tag works well with blog entries, forum posts, or news articles. Determining whether content can stand alone is usually a judgement call, but there are a couple simple tests you can use. Ask yourself if you removed all surrounding context, would that content still make sense, or similarly for text, would the content hold up if it were in an RSS feed?",
+        "Remember that folks using assistive technologies rely on organized, semantically meaningful markup to better appreciate your work.",
+        "A note about section and div:",
+        "The section element was also added with HTML5, and has a slightly different semantic meaning than article. Where article is for standalone content, section is for grouping thematically related content. They can be used within each other, as needed. For example, if a book is the article, then the chapters are the sections. When there's no relationship between groups of content, then use a div.",
+        "<code>div</code> - blocks content",
+        "<code>section</code> - blocks related content",
+        "<code>article</code> - blocks independent, self-contained content",
+        "Instructions",
+        "Astute campers may have noticed that CamperCat used article tags to wrap the posts on his blog page, but he forgot to use them around the top one. Change the div tag to use an article tag instead."
+      ],
+      "challengeSeed": [
+        "<header>",
+        "  <h1>Deep Thoughts with Master CamperCat</h1>",
+        "</header>",
+        "<div>",
+        "  <h2>The Garfield Files: Lasagna as Training Fuel?</h2>",
+        "  <p>The internet is littered with varying opinions on nutritional paradigms, from catnip paleo to hairball cleanses. But let's turn our attention to an often overlooked fitness fuel, and examine the protein-carb-NOM trifecta that is lasagna...</p>",
+        "</div>",
+        "",
+        "<img src=\"samuraiSwords.jpeg\" alt=\"\">",
+        "",
+        "<article>",
+        "  <h2>Defeating your Foe: the Red Dot is Ours!</h2>",
+        "  <p>Felines the world over have been waging war on the most persistent of foes. This red nemesis combines both cunning stealth and lightening speed. But chin up, fellow fighters, our time for victory may soon be near...</p>",
+        "</article>",
+        "",
+        "<img src=\"samuraiSwords.jpeg\" alt=\"\">",
+        "",
+        "<article>",
+        "  <h2>Is Chuck Norris a Cat Person?</h2>",
+        "  <p>Chuck Norris is widely regarded as the premier martial artist on the planet, and it's a complete coincidence anyone who disagrees with this fact mysteriously disappears soon after. But the real question is, is he a cat person?...</p>",
+        "</article>",
+        "<footer></footer>"
+      ],
+      "tests": [
+        "assert($('article').length == 3, 'message: There should be three separate <code>article</code> elements in the markup.');",
+        "assert($('div').length == 0, 'message: Change the <code>div</code> tag to an <code>article</code> tag.');"
+      ],
+      "solutions": [
+        "<header>\n  <h1>Deep Thoughts with Master CamperCat</h1>\n</header>\n<article>\n  <h2>The Garfield Files: Lasagna as Training Fuel?</h2>\n  <p>The internet is littered with varying opinions on nutritional paradigms, from catnip paleo to hairball cleanses. But let's turn our attention to an often overlooked fitness fuel, and examine the protein-carb-NOM trifecta that is lasagna...</p>\n</article>\n\n<img src=\"samuraiSwords.jpeg\" alt=\"\">\n\n<article>\n  <h2>Defeating your Foe: the Red Dot is Ours!</h2>\n  <p>Felines the world over have been waging war on the most persistent of foes. This red nemesis combines both cunning stealth and lightening speed. But chin up, fellow fighters, our time for victory may soon be near...</p>\n</article>\n\n<img src=\"samuraiSwords.jpeg\" alt=\"\">\n\n<article>\n  <h2>Is Chuck Norris a Cat Person?</h2>\n  <p>Chuck Norris is widely regarded as the premier martial artist on the planet, and it's a complete coincidence anyone who disagrees with this fact mysteriously disappears soon after. But the real question is, is he a cat person?...</p>\n</article>\n<footer></footer>"
+      ],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "ad7123c8c441eddfaeb5bdef",
+      "title": "Make Screen Reader Navigation easier with the Header Landmark",
+      "description": [
+        "The next HTML5 element that adds semantic meaning and improves accessibility is the header tag. It's used to wrap introductory information or navigation links for its parent tag, and works well around content that's repeated at the top on multiple pages. Header shares the embedded landmark feature we saw with main, allowing assistive technologies to quickly navigate to that content.",
+        "Note: Header is meant for use in the body tag of your HTML document. This is different than the head element, which contains the page's title, meta information, etc.",
+        "Instructions",
+        "CamperCat is writing some great articles about ninja training, and wants to add a page for them to his site. Help him fix the top div that currently contains the h1 to a header tag instead."
+      ],
+      "challengeSeed": [
+        "<body>",
+        "  <div>",
+        "    <h1>Training with CamperCat</h1>",
+        "  </div>",
+        "  <section id=\"stealth\">",
+        "    <h2>Stealth &amp; Agility Training</h2>",
+        "    <article><h3>Quickly climb foliage using a minimum spanning tree approach</h3></article>",
+        "    <article><h3>No training is NP-complete without parkour</h3></article>",
+        "  </section>",
+        "  <section id=\"combat\">",
+        "    <h2>Combat Training</h2>",
+        "    <article><h3>Dispatch multiple enemies with multithreaded tactics</h3></article>",
+        "    <article><h3>Goodbye world: 5 proven ways to knock out an opponent</h3></article>",
+        "  </section>",
+        "  <section id=\"weapons\">",
+        "    <h2>Weapons Training</h2>",
+        "    <article><h3>Swords: the best tool to literally divide and conquer</h3></article>",
+        "    <article><h3>Breadth-first or depth-first in multi-weapon training?</h3></article>",
+        "  </section>",
+        "</body>"
+      ],
+      "tests": [
+        "assert($('header').length == 1, 'message: Make sure to use a <code>header</code> tag instead of the <code>div</code> tag around the <code>h1</code>.');",
+        "assert($('div').length == 0, 'message: Change the <code>div</code> tag to a <code>header</code> tag.');"
+      ],
+      "solutions": [
+        "<body>\n  <header>\n    <h1>Training with CamperCat</h1>\n  </header>\n  <section id=\"stealth\">\n    <h2>Stealth &amp; Agility Training</h2>\n    <article><h3>Quickly climb foliage using a minimum spanning tree approach</h3></article>\n    <article><h3>No training is NP-complete without parkour</h3></article>\n  </section>\n  <section id=\"combat\">\n    <h2>Combat Training</h2>\n    <article><h3>Dispatch multiple enemies with multithreaded tactics</h3></article>\n    <article><h3>Goodbye world: 5 proven ways to knock out an opponent</h3></article>\n  </section>\n  <section id=\"weapons\">\n    <h2>Weapons Training</h2>\n    <article><h3>Swords: the best tool to literally divide and conquer</h3></article>\n    <article><h3>Breadth-first or depth-first in multi-weapon training?</h3></article>\n  </section>\n</body>"
+      ],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "ad7123c8c441eddfaeb5bdef",
+      "title": "Make Screen Reader Navigation easier to access with the Nav Landmark",
+      "description": [
+        "The <code>nav</code> element is another item in the HTML5 suite with the embedded landmark feature for easy screen reader navigation. This tag is meant to wrap around the main navigation links in your page. If there are repeated site links at the bottom of the page, it isn't necessary to markup those with a nav tag as well, using a footer (covered in the next challenge) is sufficient.",
+        "Instructions",
+        "CamperCat included navigation links at the top of his training page, but wrapped them in a div. Change the div to a nav tag to improve the accessibility on his page."
+      ],
+      "challengeSeed": [
+        "<body>",
+        "  <header>",
+        "    <h1>Training with CamperCat</h1>",
+        "    <div>",
+        "      <ul>",
+        "        <li><a href=\"#stealth\">Stealth &amp; Agility</a></li>",
+        "        <li><a href=\"#combat\">Combat</a></li>",
+        "        <li><a href=\"#weapons\">Weapons</a></li>",
+        "      </ul>",
+        "    </div>",
+        "  </header>",
+        "  <section id=\"stealth\">",
+        "    <h2>Stealth &amp; Agility Training</h2>",
+        "    <article><h3>Quickly climb foliage using a minimum spanning tree approach</h3></article>",
+        "    <article><h3>No training is NP-complete without parkour</h3></article>",
+        "  </section>",
+        "  <section id=\"combat\">",
+        "    <h2>Combat Training</h2>",
+        "    <article><h3>Dispatch multiple enemies with multithreaded tactics</h3></article>",
+        "    <article><h3>Goodbye world: 5 proven ways to knock out an opponent</h3></article>",
+        "  </section>",
+        "  <section id=\"weapons\">",
+        "    <h2>Weapons Training</h2>",
+        "    <article><h3>Swords: the best tool to literally divide and conquer</h3></article>",
+        "    <article><h3>Breadth-first or depth-first in multi-weapon training?</h3></article>",
+        "  </section>",
+        "</body>"
+      ],
+      "tests": [
+        "assert($('nav').length == 1, 'message: Make sure to use a <code>nav</code> tag instead of the <code>div</code> tag around the navigation links.');",
+        "assert($('div').length == 0, 'message: Change the <code>div</code> tag to a <code>nav</code> tag.');"
+      ],
+      "solutions": [
+        "<body>\n  <header>\n    <h1>Training with CamperCat</h1>\n    <nav>\n      <ul>\n        <li><a href=\"#stealth\">Stealth &amp; Agility</a></li>\n        <li><a href=\"#combat\">Combat</a></li>\n        <li><a href=\"#weapons\">Weapons</a></li>\n      </ul>\n    </nav>\n  </header>\n  <section id=\"stealth\">\n    <h2>Stealth &amp; Agility Training</h2>\n    <article><h3>Quickly climb foliage using a minimum spanning tree approach</h3></article>\n    <article><h3>No training is NP-complete without parkour</h3></article>\n  </section>\n  <section id=\"combat\">\n    <h2>Combat Training</h2>\n    <article><h3>Dispatch multiple enemies with multithreaded tactics</h3></article>\n    <article><h3>Goodbye world: 5 proven ways to knock out an opponent</h3></article>\n  </section>\n  <section id=\"weapons\">\n    <h2>Weapons Training</h2>\n    <article><h3>Swords: the best tool to literally divide and conquer</h3></article>\n    <article><h3>Breadth-first or depth-first in multi-weapon training?</h3></article>\n  </section>\n</body>"
+      ],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "ad7123c8c441eddfaeb5bdef",
+      "title": "Make Screen Reader Navigation Easier with the Footer Landmark",
+      "description": [
+        "Similar to header and nav, the footer element has a built-in landmark feature that allows assistive devices to quickly navigate to it. It's primarily used to contain copyright information or links to related documents that usually sit at the bottom of a page.",
+        "Instructions",
+        "CamperCat's training page is making good progress. Change the div he used to wrap his copyright information at the bottom of the page to a footer element."
+      ],
+      "challengeSeed": [
+        "<body>",
+        "  <header>",
+        "    <h1>Training</h1>",
+        "    <nav>",
+        "      <ul>",
+        "        <li><a href=\"#stealth\">Stealth &amp; Agility</a></li>",
+        "        <li><a href=\"#combat\">Combat</a></li>",
+        "        <li><a href=\"#weapons\">Weapons</a></li>",
+        "      </ul>",
+        "    </nav>",
+        "  </header>",
+        "  <section id=\"stealth\">",
+        "    <h2>Stealth &amp; Agility Training</h2>",
+        "    <article><h3>Quickly climb foliage using a minimum spanning tree approach</h3></article>",
+        "    <article><h3>No training is NP-complete without parkour</h3></article>",
+        "  </section>",
+        "  <section id=\"combat\">",
+        "    <h2>Combat Training</h2>",
+        "    <article><h3>Dispatch multiple enemies with multithreaded tactics</h3></article>",
+        "    <article><h3>Goodbye world: 5 proven ways to knock out an opponent</h3></article>",
+        "  </section>",
+        "  <section id=\"weapons\">",
+        "    <h2>Weapons Training</h2>",
+        "    <article><h3>Swords: the best tool to literally divide and conquer</h3></article>",
+        "    <article><h3>Breadth-first or depth-first in multi-weapon training?</h3></article>",
+        "  </section>",
+        "  <div>&copy; 2016 CamperCat</div>",
+        "</body>"
+      ],
+      "tests": [
+        "assert($('footer').length == 1, 'message: Make sure to use a <code>footer</code> tag instead of the <code>div</code> tag around the copyright information.');",
+        "assert($('div').length == 0, 'message: Change the <code>div</code> tag to a <code>footer</code> tag.');"
+      ],
+      "solutions": [
+        "<body>\n  <header>\n    <h1>Training</h1>\n    <nav>\n      <ul>\n        <li><a href=\"#stealth\">Stealth &amp; Agility</a></li>\n        <li><a href=\"#combat\">Combat</a></li>\n        <li><a href=\"#weapons\">Weapons</a></li>\n      </ul>\n    </nav>\n  </header>\n  <section id=\"stealth\">\n    <h2>Stealth &amp; Agility Training</h2>\n    <article><h3>Quickly climb foliage using a minimum spanning tree approach</h3></article>\n    <article><h3>No training is NP-complete without parkour</h3></article>\n  </section>\n  <section id=\"combat\">\n    <h2>Combat Training</h2>\n    <article><h3>Dispatch multiple enemies with multithreaded tactics</h3></article>\n    <article><h3>Goodbye world: 5 proven ways to knock out an opponent</h3></article>\n  </section>\n  <section id=\"weapons\">\n    <h2>Weapons Training</h2>\n    <article><h3>Swords: the best tool to literally divide and conquer</h3></article>\n    <article><h3>Breadth-first or depth-first in multi-weapon training?</h3></article>\n  </section>\n  <footer>&copy; 2016 CamperCat</footer>\n</body>"
+      ],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "ad7123c8c441eddfaeb5bdef",
+      "title": "Improve Chart Accessibility with the Figure Element",
+      "description": [
+        "HTML5 introduced the figure element, along with its buddy figcaption. Used together, these items wrap a visual representation (like an image, diagram, chart, etc.) along with its caption. This gives a two-fold accessibility boost by both semantically grouping related content, and providing a text alternative that explains the figure. For data visualizations like charts, the caption can be used to briefly note the trends or conclusions for users with visual impairments, but we'll cover how to move a table version of the chart's data off-screen (using CSS) for screen reader users in another challenge.",
+        "Here's an example - note that the figcaption goes inside the figure tags and can be combined with other elements:",
+        "<code><figure></code>",
+        "<code>  <img src=\"roundhouseDestruction.jpeg\" alt=\"Photo of CamperCat executing a roundhouse kick\"></code>",
+        "<code>  <br /></code>",
+        "<code>  <figcaption></code>",
+        "<code>    Master CamperCat demonstrates proper form of a roundhouse kick.</code>",
+        "<code>  </figcaption></code>",
+        "<code></figure></code>",
+        "Instructions",
+        "CamperCat is hard at work creating a stacked bar chart showing the amount of time per week to spend training in stealth, combat, and weapons. Help him structure his page better by changing the div tag he used to a figure tag, and the p tag that surrounds the caption to a figcaption tag."
+      ],
+      "challengeSeed": [
+        "<body>",
+        "  <header>",
+        "    <h1>Training</h1>",
+        "    <nav>",
+        "      <ul>",
+        "        <li><a href=\"#stealth\">Stealth &amp; Agility</a></li>",
+        "        <li><a href=\"#combat\">Combat</a></li>",
+        "        <li><a href=\"#weapons\">Weapons</a></li>",
+        "      </ul>",
+        "    </nav>",
+        "  </header>",
+        "  <section>",
+        "    <!-- Only change code below this line -->",
+        "    <div>",
+        "      <!-- Stacked bar chart will go here -->",
+        "      <br />",
+        "      <p>Breakdown per week of time to spend training in stealth, combat, and weapons.</p>",
+        "    </div>",
+        "    <!-- Only change code above this line -->",
+        "  </section>",
+        "  <section id=\"stealth\">",
+        "    <h2>Stealth &amp; Agility Training</h2>",
+        "    <article><h3>Quickly climb foliage using a minimum spanning tree approach</h3></article>",
+        "    <article><h3>No training is NP-complete without parkour</h3></article>",
+        "  </section>",
+        "  <section id=\"combat\">",
+        "    <h2>Combat Training</h2>",
+        "    <article><h3>Dispatch multiple enemies with multithreaded tactics</h3></article>",
+        "    <article><h3>Goodbye world: 5 proven ways to knock out an opponent</h3></article>",
+        "  </section>",
+        "  <section id=\"weapons\">",
+        "    <h2>Weapons Training</h2>",
+        "    <article><h3>Swords: the best tool to literally divide and conquer</h3></article>",
+        "    <article><h3>Breadth-first or depth-first in multi-weapon training?</h3></article>",
+        "  </section>",
+        "  <div>&copy; 2016 CamperCat</div>",
+        "</body>"
+      ],
+      "tests": [
+        "assert($('figure').length == 1, 'message: Make sure to use a <code>figure</code> tag instead of the <code>div</code> tag around the chart and caption.');",
+        "assert($('figcaption').length == 1, 'message: Make sure to use a <code>figcaption</code> tag instead of the <code>p</code> tag around the caption.');",
+        "assert($('div').length == 0, 'message: Change the <code>div</code> tag to a <code>figure</code> tag.');",
+        "assert($('p').length == 0, 'message: Change the <code>p</code> tag to a <code>figcaption</code> tag.');",
+        "assert($('figure').children('figcaption').length == 1, 'message: Make sure the <code>figcaption</code> is a child of the <code>figure</code> tag.')"
+      ],
+      "solutions": [
+        "<body>\n  <header>\n    <h1>Training</h1>\n    <nav>\n      <ul>\n        <li><a href=\"#stealth\">Stealth &amp; Agility</a></li>\n        <li><a href=\"#combat\">Combat</a></li>\n        <li><a href=\"#weapons\">Weapons</a></li>\n      </ul>\n    </nav>\n  </header>\n  <section>\n    <!-- Only change code below this line -->\n    <figure>\n      <!-- Stacked bar chart will go here -->\n      <br />\n      <figcaption>Breakdown per week of time to spend training in stealth, combat, and weapons.</figcaption>\n    </figure>\n    <!-- Only change code above this line -->\n  </section>\n  <section id=\"stealth\">\n    <h2>Stealth &amp; Agility Training</h2>\n    <article><h3>Quickly climb foliage using a minimum spanning tree approach</h3></article>\n    <article><h3>No training is NP-complete without parkour</h3></article>\n  </section>\n  <section id=\"combat\">\n    <h2>Combat Training</h2>\n    <article><h3>Dispatch multiple enemies with multithreaded tactics</h3></article>\n    <article><h3>Goodbye world: 5 proven ways to knock out an opponent</h3></article>\n  </section>\n  <section id=\"weapons\">\n    <h2>Weapons Training</h2>\n    <article><h3>Swords: the best tool to literally divide and conquer</h3></article>\n    <article><h3>Breadth-first or depth-first in multi-weapon training?</h3></article>\n  </section>\n  <div>&copy; 2016 CamperCat</div>\n</body>"
+      ],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "ad7123c8c441eddfaeb5bdef",
+      "title": "Improve Form Field Accessibility with the Label Element",
+      "description": [
+        "Improving accessibility using semantic HTML markup applies to using both appropriate tag names and attributes. We'll cover several important scenarios using attributes in forms in the next few challenges. You may have seen a label tag wrapping the text for a specific form control item, which ties meaning to it and makes it more readable. The for attribute on a label tag explicitly associates that label with the form control and is used by screen readers. The value of the for attribute must be the same as the value of the id attribute of the form control.",
+        "Here's an example:",
+        "<code><form></code>",
+        "<code>  <label for=\"name\">Name:</label></code>",
+        "<code>  <input type=\"text\" id=\"name\" name=\"name\"></code>",
+        "<code></form></code>",
+        "Instructions",
+        "CamperCat expects a lot of interest in his thought-provoking blog posts, and wants to include an email sign up form. Add a for attribute on the email label that matches the id on its input field."
+      ],
+      "challengeSeed": [
+        "<body>",
+        "  <header>",
+        "    <h1>Deep Thoughts with Master CamperCat</h1>",
+        "  </header>",
+        "  <section>",
+        "    <form>",
+        "      <p>Sign up to receive CamperCat's blog posts by email here!</p>",
+        "      <label>Email:</label>",
+        "      <input type=\"text\" id=\"email\" name=\"email\">",
+        "      <input type=\"submit\" name=\"submit\" value=\"Submit\">",
+        "    </form>",
+        "  </section>",
+        "  <article>",
+        "    <h2>The Garfield Files: Lasagna as Training Fuel?</h2>",
+        "    <p>The internet is littered with varying opinions on nutritional paradigms, from catnip paleo to hairball cleanses. But let's turn our attention to an often overlooked fitness fuel, and examine the protein-carb-yummy trifecta that is lasagna...</p>",
+        "  </article>",
+        "  <img src=\"samuraiSwords.jpeg\" alt=\"\">",
+        "  <article>",
+        "    <h2>Defeating your Foe: the Red Dot is Ours!</h2>",
+        "    <p>Felines the world over have been waging war on the most persistent of foes. This red nemesis combines both cunning stealth and lightening speed. But chin up, fellow fighters, our time for victory may soon be near...</p>",
+        "  </article>",
+        "  <img src=\"samuraiSwords.jpeg\" alt=\"\">",
+        "  <article>",
+        "    <h2>Is Chuck Norris a Cat Person?</h2>",
+        "    <p>Chuck Norris is widely regarded as the premier martial artist on the planet, and it's a complete coincidence anyone who disagrees with this fact mysteriously disappears soon after. But the real question is, is he a cat person?...</p>",
+        "  </article>",
+        "  <footer>&copy; 2016 CamperCat</footer>",
+        "</body>"
+      ],
+      "tests": [
+        "assert($('label').attr('for'), 'message: Give the <code>label</code> tag a <code>for</code> attribute, and make sure it is not empty.');",
+        "assert($('label').attr('for') == 'email', 'message: Make sure the <code>for</code> attribute matches the value of the email <code>input id</code>attribute, which is case sensitive.');"
+      ],
+      "solutions": [
+        "<body>\n  <header>\n    <h1>Deep Thoughts with Master CamperCat</h1>\n  </header>\n  <section>\n    <form>\n      <p>Sign up to receive CamperCat's blog posts by email here!</p>\n      <label for=\"email\">Email:</label>\n      <input type=\"text\" id=\"email\" name=\"email\">\n      <input type=\"submit\" name=\"submit\" value=\"Submit\">\n    </form>\n  </section>\n  <article>\n    <h2>The Garfield Files: Lasagna as Training Fuel?</h2>\n    <p>The internet is littered with varying opinions on nutritional paradigms, from catnip paleo to hairball cleanses. But let's turn our attention to an often overlooked fitness fuel, and examine the protein-carb-yummy trifecta that is lasagna...</p>\n  </article>\n  <img src=\"samuraiSwords.jpeg\" alt=\"\">\n  <article>\n    <h2>Defeating your Foe: the Red Dot is Ours!</h2>\n    <p>Felines the world over have been waging war on the most persistent of foes. This red nemesis combines both cunning stealth and lightening speed. But chin up, fellow fighters, our time for victory may soon be near...</p>\n  </article>\n  <img src=\"samuraiSwords.jpeg\" alt=\"\">\n  <article>\n    <h2>Is Chuck Norris a Cat Person?</h2>\n    <p>Chuck Norris is widely regarded as the premier martial artist on the planet, and it's a complete coincidence anyone who disagrees with this fact mysteriously disappears soon after. But the real question is, is he a cat person?...</p>\n  </article>\n  <footer>&copy; 2016 CamperCat</footer>\n</body>"
+      ],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "ad7123c8c441eddfaeb5bdef",
+      "title": "Wrap Radio Buttons in a Fieldset Element for Better Accessibility",
+      "description": [
+        "Our next form topic will cover accessibility of radio buttons. Each choice is given a label with a for attribute tying to the id of the corresponding item as we covered in the last challenge. Since radio buttons often come in a group where the user must choose one, there's a way to semantically show the choices are part of a set. The fieldset tag surrounds the entire grouping of radio buttons to achieve this. It often uses a legend tag to provide a description for the grouping, which is read by screen readers for each choice in the fieldset element.",
+        "The fieldset wrapper and legend tag are not necessary when the choices are self-explanatory, like a gender selection. Using a label with the for attribute for each radio button is sufficient.",
+        "Here's an example:",
+        "<code><form></code>",
+        "<code>  <fieldset></code>",
+        "<code>    <legend>Choose one of these three items:</legend></code>",
+        "<code>    <input id=\"one\" type=\"radio\" name=\"items\" value=\"one\"></code>",
+        "<code>    <label for=\"one\">Choice One</label><br></code>",
+        "<code>    <input id=\"two\" type=\"radio\" name=\"items\" value=\"two\"></code>",
+        "<code>    <label for=\"two\">Choice Two</label><br></code>",
+        "<code>    <input id=\"three\" type=\"radio\" name=\"items\" value=\"three\"></code>",
+        "<code>    <label for=\"ground\">Choice Three</label></code>",
+        "<code>  </fieldset></code>",
+        "<code></form></code>",
+        "Instructions",
+        "CamperCat wants information about the ninja level of his users when they sign up for his email list. He's added a set of radio buttons, and learned from our last lesson to use label tags with for attributes for each choice. Go CamperCat! However, his code still needs some help. Change the div tag surrounding the radio buttons to a fieldset tag, and change the p tag inside it to a legend."
+      ],
+      "challengeSeed": [
+        "<body>",
+        "  <header>",
+        "    <h1>Deep Thoughts with Master CamperCat</h1>",
+        "  </header>",
+        "  <section>",
+        "    <form>",
+        "      <p>Sign up to receive CamperCat's blog posts by email here!</p>",
+        "      <label for=\"email\">Email:</label>",
+        "      <input type=\"text\" id=\"email\" name=\"email\">",
+        "      <!-- Only make changes below this line -->",
+        "      <div>",
+        "        <p>What level ninja are you?</p>",
+        "        <input id=\"newbie\" type=\"radio\" name=\"levels\" value=\"newbie\">",
+        "        <label for=\"newbie\">Newbie Kitten</label><br>",
+        "        <input id=\"intermediate\" type=\"radio\" name=\"levels\" value=\"intermediate\">",
+        "        <label for=\"intermediate\">Developing Student</label><br>",
+        "        <input id=\"master\" type=\"radio\" name=\"levels\" value=\"master\">",
+        "        <label for=\"master\">Master</label>",
+        "      </div>",
+        "      <!-- Only make changes above this line -->",
+        "      <input type=\"submit\" name=\"submit\" value=\"Submit\">",
+        "    </form>",
+        "  </section>",
+        "  <article>",
+        "    <h2>The Garfield Files: Lasagna as Training Fuel?</h2>",
+        "    <p>The internet is littered with varying opinions on nutritional paradigms, from catnip paleo to hairball cleanses. But let's turn our attention to an often overlooked fitness fuel, and examine the protein-carb-yummy trifecta that is lasagna...</p>",
+        "  </article>",
+        "  <img src=\"samuraiSwords.jpeg\" alt=\"\">",
+        "  <article>",
+        "    <h2>Defeating your Foe: the Red Dot is Ours!</h2>",
+        "    <p>Felines the world over have been waging war on the most persistent of foes. This red nemesis combines both cunning stealth and lightening speed. But chin up, fellow fighters, our time for victory may soon be near...</p>",
+        "  </article>",
+        "  <img src=\"samuraiSwords.jpeg\" alt=\"\">",
+        "  <article>",
+        "    <h2>Is Chuck Norris a Cat Person?</h2>",
+        "    <p>Chuck Norris is widely regarded as the premier martial artist on the planet, and it's a complete coincidence anyone who disagrees with this fact mysteriously disappears soon after. But the real question is, is he a cat person?...</p>",
+        "  </article>",
+        "  <footer>&copy; 2016 CamperCat</footer>",
+        "</body>"
+      ],
+      "tests": [
+        "assert($('fieldset').length == 1, 'message: Make sure to use a <code>fieldset</code> tag instead of a <code>div</code> around the radio button set.');",
+        "assert($('legend').length == 1, 'message: Make sure to use a <code>legend</code> tag instead of the <code>p</code> tag around the text asking what level ninja a user is.');",
+        "assert($('div').length == 0, 'message: Change the <code>div</code> tag to a <code>fieldset</code> tag.');",
+        "assert($('p').length == 4, 'message: Change the <code>p</code> tag to a <code>legend</code> tag.');"
+      ],
+      "solutions": [
+        "<body>\n  <header>\n    <h1>Deep Thoughts with Master CamperCat</h1>\n  </header>\n  <section>\n    <form>\n      <p>Sign up to receive CamperCat's blog posts by email here!</p>\n      <label for=\"email\">Email:</label>\n      <input type=\"text\" id=\"email\" name=\"email\">\n      <!-- Only make changes below this line -->\n      <fieldset>\n        <legend>What level ninja are you?</legend>\n        <input id=\"newbie\" type=\"radio\" name=\"levels\" value=\"newbie\">\n        <label for=\"newbie\">Newbie Kitten</label><br>\n        <input id=\"intermediate\" type=\"radio\" name=\"levels\" value=\"intermediate\">\n        <label for=\"intermediate\">Developing Student</label><br>\n        <input id=\"master\" type=\"radio\" name=\"levels\" value=\"master\">\n        <label for=\"master\">Master</label>\n      </fieldset>\n      <!-- Only make changes above this line -->\n      <input type=\"submit\" name=\"submit\" value=\"Submit\">\n    </form>\n  </section>\n  <article>\n    <h2>The Garfield Files: Lasagna as Training Fuel?</h2>\n    <p>The internet is littered with varying opinions on nutritional paradigms, from catnip paleo to hairball cleanses. But let's turn our attention to an often overlooked fitness fuel, and examine the protein-carb-yummy trifecta that is lasagna...</p>\n  </article>\n  <img src=\"samuraiSwords.jpeg\" alt=\"\">\n  <article>\n    <h2>Defeating your Foe: the Red Dot is Ours!</h2>\n    <p>Felines the world over have been waging war on the most persistent of foes. This red nemesis combines both cunning stealth and lightening speed. But chin up, fellow fighters, our time for victory may soon be near...</p>\n  </article>\n  <img src=\"samuraiSwords.jpeg\" alt=\"\">\n  <article>\n    <h2>Is Chuck Norris a Cat Person?</h2>\n    <p>Chuck Norris is widely regarded as the premier martial artist on the planet, and it's a complete coincidence anyone who disagrees with this fact mysteriously disappears soon after. But the real question is, is he a cat person?...</p>\n  </article>\n  <footer>&copy; 2016 CamperCat</footer>\n</body>"
+      ],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "ad7123c8c441eddfaeb5bdef",
+      "title": "Add an Accessible Date Picker",
+      "description": [
+        "Forms often include the input field, which can be used to create several different form controls. The type attribute on this element indicates what kind of input will be created. You may have noticed the text and submit input types in prior challenges, and HTML5 introduced an option to specify a date field. Depending on browser support, a date picker shows up in the input field when it's in focus, which makes filling in a form easier for all users. For older browsers, the type will default to text, so it helps to show users the expected date format just in case.",
+        "Here's an example:",
+        "<code><label for=\"input1\">Enter a date (MM-DD-YYYY):</label></code>",
+        "<code><input type=\"date\" id=\"input1\" name=\"input1\"></code>",
+        "Instructions",
+        "CamperCat is setting up a mortal combat tournament and wants to survey his likely competitors to see what date works best. Add an input tag under the label, which has a type attribute of 'date', an id attribute of 'pickdate', and a name attribute of 'date'."
+      ],
+      "challengeSeed": [
+        "<body>",
+        "  <header>",
+        "    <h1>Tournaments</h1>",
+        "  </header>",
+        "  <section>",
+        "    <h2>Mortal Combat Tournament Survey</h2>",
+        "    <form>",
+        "      <p>Tell us the best date for the competition</p>",
+        "      <label for=\"pickdate\">Preferred Date (MM-DD-YYYY):</label>",
+        "      <!-- Add your code below this line -->",
+        "",
+        "      <!-- Add your code above this line -->",
+        "      <input type=\"submit\" name=\"submit\" value=\"Submit\">",
+        "    </form>",
+        "  </section>",
+        "  <br>",
+        "  <footer>&copy; 2016 CamperCat</footer>",
+        "</body>"
+      ],
+      "tests": [
+        "assert($('input').length == 2, 'message: Make sure to add one <code>input</code> tag for the date selector field above the <code>input</code> tag for submit.');",
+        "assert($('input').attr('type') == 'date', 'message: Make sure to have a <code>type</code> attribute of \"date\" on your <code>input</code> tag.');",
+        "assert($('input').attr('id') == 'pickdate', 'message: Make sure to have an <code>id</code> attribute of \"pickdate\" on your <code>input</code> tag.');",
+        "assert($('input').attr('name') == 'date', 'message: Make sure to have a <code>name</code> attribute of \"date\" on your <code>input</code> tag.');"
+      ],
+      "solutions": [
+        "<body>\n  <header>\n    <h1>Tournaments</h1>\n  </header>\n  <section>\n    <h2>Mortal Combat Tournament Survey</h2>\n    <form>\n      <p>Tell us the best date for the competition</p>\n      <label for=\"pickdate\">Preferred Date:</label>\n      <!-- Add your code below this line -->\n      <input type=\"date\" id=\"pickdate\" name=\"date\">\n      <!-- Add your code above this line -->\n      <input type=\"submit\" name=\"submit\" value=\"Submit\">\n    </form>\n  </section>\n  <br>\n  <footer>&copy; 2016 CamperCat</footer>\n</body>"
+      ],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "ad7123c8c441eddfaeb5bdef",
+      "title": "Make Elements only Visible to a Screen Reader by Using Custom CSS",
+      "description": [
+        "Have you noticed that all of the applied accessibility challenges so far haven't used any CSS? This is to illustrate the importance of creating a logical document outline, and using semantically meaningful tags around your content before introducing the visual design aspect. However, CSS's magic can also improve accessibility on your page when you want to visually hide content meant only for screen readers. This happens when information is clearly conveyed in a visual format (like a chart), but screen reader users need an alternative presentation (like a table) to access the data. CSS is used to position the screen reader-only elements off the visual area of the browser window.",
+        "Here's an example of the CSS rules that accomplish this:",
+        "<code>.sr-only {</code>",
+        "<code>  position: absolute;</code>",
+        "<code>  left: -10000px;</code>",
+        "<code>  width: 1px;</code>",
+        "<code>  height: 1px;</code>",
+        "<code>  top: auto;</code>",
+        "<code>  overflow: hidden;</code>",
+        "<code>}</code>",
+        "Note - the following CSS approaches will NOT do the same thing:",
+        "<ol>",
+        "<li>display: none; or visibility: hidden; hides content for everyone, including screen reader users</li>",
+        "<li>Zero values for pixel sizes, such as width: 0px; height: 0px; removes that element from the flow of your document, meaning screen readers will ignore it</li>",
+        "</ol>",
+        "Instructions",
+        "CamperCat created a really cool stacked bar chart for his training page, and put the data into a table for his visually impaired users. The table already has an sr-only class, but the CSS rules aren't filled in yet. Give the position an absolute value, the left a -10000px value, and the width and height both 1px values."
+      ],
+      "challengeSeed": [
+        "<head>",
+        "  <style>",
+        "  .sr-only {",
+        "    position: ;",
+        "    left: ;",
+        "    width: ;",
+        "    height: ;",
+        "    top: auto;",
+        "    overflow: hidden;",
+        "  }",
+        "  </style>",
+        "</head>",
+        "<body>",
+        "  <header>",
+        "    <h1>Training</h1>",
+        "    <nav>",
+        "      <ul>",
+        "        <li><a href=\"#stealth\">Stealth &amp; Agility</a></li>",
+        "        <li><a href=\"#combat\">Combat</a></li>",
+        "        <li><a href=\"#weapons\">Weapons</a></li>",
+        "      </ul>",
+        "    </nav>",
+        "  </header>",
+        "  <section>",
+        "    <h2>Master CamperCat's Beginner Three Week Training Program</h2>",
+        "    <figure>",
+        "      <!-- Stacked bar chart of weekly training-->",
+        "      <p>[Stacked bar chart]</p>",
+        "      <br />",
+        "      <figcaption>Breakdown per week of time to spend training in stealth, combat, and weapons.</figcaption>",
+        "    </figure>",
+        "    <table class=\"sr-only\">",
+        "      <caption>Hours of Weekly Training in Stealth, Combat, and Weapons</caption>",
+        "      <thead>",
+        "        <tr>",
+        "          <th></th>",
+        "          <th scope=\"col\">Stealth &amp; Agility</th>",
+        "          <th scope=\"col\">Combat</th>",
+        "          <th scope=\"col\">Weapons</th>",
+        "          <th scope=\"col\">Total</th>                                        ",
+        "        </tr>",
+        "      </thead>",
+        "      <tbody>",
+        "        <tr>",
+        "          <th scope=\"row\">Week One</th>",
+        "          <td>3</td>",
+        "          <td>5</td>",
+        "          <td>2</td>",
+        "          <td>10</td>",
+        "        </tr>",
+        "        <tr>",
+        "          <th scope=\"row\">Week Two</th>",
+        "          <td>4</td>",
+        "          <td>5</td>",
+        "          <td>3</td>",
+        "          <td>12</td>",
+        "        </tr>",
+        "        <tr>",
+        "          <th scope=\"row\">Week Three</th>",
+        "          <td>4</td>",
+        "          <td>6</td>",
+        "          <td>3</td>",
+        "          <td>13</td>",
+        "        </tr>",
+        "      </tbody>",
+        "    </table>",
+        "  </section>",
+        "  <section id=\"stealth\">",
+        "    <h2>Stealth &amp; Agility Training</h2>",
+        "    <article><h3>Quickly climb foliage using a minimum spanning tree approach</h3></article>",
+        "    <article><h3>No training is NP-complete without parkour</h3></article>",
+        "  </section>",
+        "  <section id=\"combat\">",
+        "    <h2>Combat Training</h2>",
+        "    <article><h3>Dispatch multiple enemies with multithreaded tactics</h3></article>",
+        "    <article><h3>Goodbye, world: 5 proven ways to knock out an opponent</h3></article>",
+        "  </section>",
+        "  <section id=\"weapons\">",
+        "    <h2>Weapons Training</h2>",
+        "    <article><h3>Swords: the best tool to literally divide and conquer</h3></article>",
+        "    <article><h3>Breadth-first or depth-first in multi-weapon training?</h3></article>",
+        "  </section>",
+        "  <footer>&copy; 2016 CamperCat</footer>",
+        "</body>"
+      ],
+      "tests": [
+        "assert($('.sr-only').css('position') === 'absolute', 'message: Change the <code>position</code> of the <code>sr-only</code> class to <code>absolute</code>.');",
+        "assert($('.sr-only').css('left') === '-10000px', 'message: Change <code>left</code> of the <code>sr-only</code> class to <code>-10000px</code>.');",
+        "assert(code.test(/width:\\s*?1px/gi), 'message: Change the <code>width</code> of the <code>sr-only</code> class to <code>1px</code>.');",
+        "assert(code.test(/height:\\s*?1px/gi), 'message: Change the <code>height</code> of the <code>sr-only</code> class to <code>1px</code>.');"
+      ],
+      "solutions": [
+        "<head>\n  <style>\n  .sr-only {\n    position: absolute;\n    left: -10000px;\n    width: 1px;\n    height: 1px;\n    top: auto;\n    overflow: hidden;\n  }\n  </style>\n</head>\n<body>\n  <header>\n    <h1>Training</h1>\n    <nav>\n      <ul>\n        <li><a href=\"#stealth\">Stealth &amp; Agility</a></li>\n        <li><a href=\"#combat\">Combat</a></li>\n        <li><a href=\"#weapons\">Weapons</a></li>\n      </ul>\n    </nav>\n  </header>\n  <section>\n    <h2>Master CamperCat's Beginner Three Week Training Program</h2>\n    <figure>\n      <!-- Stacked bar chart of weekly training-->\n      <p>[Stacked bar chart]</p>\n      <br />\n      <figcaption>Breakdown per week of time to spend training in stealth, combat, and weapons.</figcaption>\n    </figure>\n    <table class=\"sr-only\">\n      <caption>Hours of Weekly Training in Stealth, Combat, and Weapons</caption>\n      <thead>\n        <tr>\n          <th></th>\n          <th scope=\"col\">Stealth &amp; Agility</th>\n          <th scope=\"col\">Combat</th>\n          <th scope=\"col\">Weapons</th>\n          <th scope=\"col\">Total</th>                                        \n        </tr>\n      </thead>\n      <tbody>\n        <tr>\n          <th scope=\"row\">Week One</th>\n          <td>3</td>\n          <td>5</td>\n          <td>2</td>\n          <td>10</td>\n        </tr>\n        <tr>\n          <th scope=\"row\">Week Two</th>\n          <td>4</td>\n          <td>5</td>\n          <td>3</td>\n          <td>12</td>\n        </tr>\n        <tr>\n          <th scope=\"row\">Week Three</th>\n          <td>4</td>\n          <td>6</td>\n          <td>3</td>\n          <td>13</td>\n        </tr>\n      </tbody>\n    </table>\n  </section>\n  <section id=\"stealth\">\n    <h2>Stealth &amp; Agility Training</h2>\n    <article><h3>Quickly climb foliage using a minimum spanning tree approach</h3></article>\n    <article><h3>No training is NP-complete without parkour</h3></article>\n  </section>\n  <section id=\"combat\">\n    <h2>Combat Training</h2>\n    <article><h3>Dispatch multiple enemies with multithreaded tactics</h3></article>\n    <article><h3>Goodbye, world: 5 proven ways to knock out an opponent</h3></article>\n  </section>\n  <section id=\"weapons\">\n    <h2>Weapons Training</h2>\n    <article><h3>Swords: the best tool to literally divide and conquer</h3></article>\n    <article><h3>Breadth-first or depth-first in multi-weapon training?</h3></article>\n  </section>\n  <footer>&copy; 2016 CamperCat</footer>\n</body>"
+      ],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "ad7123c8c441eddfaeb5bdef",
+      "title": "Standardize Times with the Datetime HTML5 Property",
+      "description": [
+        "Continuing with the date theme, HTML5 also introduced the time element along with a datetime attribute to standardize times. This is an inline element that can wrap a date or time on a page, then a valid format of that date is held by the datetime attribute, which is the value accessed by assistive devices. It helps avoid confusion by stating a standardized version of a time, even if it's written in an informal or colloquial manner.",
+        "Here's an example:",
+        "<code><p>Master CamperCat officiated the cage match between Goro and Scorpion <time datetime=\"2013-02-13\">last Wednesday</time>, which ended in a draw.</p></code>",
+        "Instructions",
+        "CamperCat's mortal combat survey results are in! Wrap a time tag around the text \"Thursday, September 15th\" and add a datetime attribute to it set to \"2016-09-15\"."
+      ],
+      "challengeSeed": [
+        "<body>",
+        "  <header>",
+        "    <h1>Tournaments</h1>",
+        "  </header>",
+        "  <article>",
+        "    <h2>Mortal Combat Tournament Survey Results</h2>",
+        "    <p>Thank you to everyone for responding to Master CamperCat's survey. The best day to host the vaunted Mortal Combat tournament is Thursday, September 15<sup>th</sup>. May the best ninja win!</p>",
+        "    <section>",
+        "      <h3>Comments:</h3>",
+        "      <article>",
+        "        <p>Posted by: Sub-Zero on <time datetime=\"2016-08-13T20:01Z\">August 13<sup>th</sup></time></p>",
+        "        <p>Johnny Cage better be there, I'll finish him!</p>",
+        "      </article>",
+        "      <article>",
+        "        <p>Posted by: Doge on <time datetime=\"2016-08-15T08:12Z\">August 15<sup>th</sup></time></p>",
+        "        <p>Wow, much combat, so mortal.</p>",
+        "      </article>",
+        "      <article>",
+        "        <p>Posted by: The Grim Reaper on <time datetime=\"2016-08-16T00:00Z\">August 16<sup>th</sup></time></p>",
+        "        <p>Looks like I'll be busy that day.</p>",
+        "      </article>",
+        "    </section>",
+        "  </article>",
+        "  <br>",
+        "  <footer>&copy; 2016 CamperCat</footer>",
+        "</body>"
+      ],
+      "tests": [
+        "assert(code.test(/<time \\s*?datetime=(\"|')2016-09-15(\"|')\\s*?>\\s*?Thursday, September 15<sup>th</sup>\\s*?\\.?\\s*?</time>/gi), 'message: Make sure to place an opening and closing <code>time</code> tag around \"Thursday, September 15<sup>th</sup>\" and include a <code>datetime</code> attribute set to \"2016-09-15\".');",
+        "assert($('time').attr('datetime'), 'message: Make sure to add a <code>datetime</code> attribute on your <code>time</code> element.');",
+        "assert($('time').attr('datetime') === \"2016-09-15\", 'message: Make sure the <code>datetime</code> attribute is set to \"2016-09-15\".');"
+      ],
+      "solutions": [
+        "<body>\n  <header>\n    <h1>Tournaments</h1>\n  </header>\n  <article>\n    <h2>Mortal Combat Tournament Survey Results</h2>\n    <p>Thank you to everyone for responding to Master CamperCat's survey. The best day to host the vaunted Mortal Combat tournament is <time datetime=\"2016-09-15\">Thursday, September 15<sup>th</sup></time>. May the best ninja win!</p>\n    <section>\n      <h3>Comments:</h3>\n      <article>\n        <p>Posted by: Sub-Zero on <time datetime=\"2016-08-13T20:01Z\">August 13<sup>th</sup></time></p>\n        <p>Johnny Cage better be there, I'll finish him!</p>\n      </article>\n      <article>\n        <p>Posted by: Doge on <time datetime=\"2016-08-15T08:12Z\">August 15<sup>th</sup></time></p>\n        <p>Wow, much combat, so mortal.</p>\n      </article>\n      <article>\n        <p>Posted by: The Grim Reaper on <time datetime=\"2016-08-16T00:00Z\">August 16<sup>th</sup></time></p>\n        <p>Looks like I'll be busy that day.</p>\n      </article>\n    </section>\n  </article>\n  <br>\n  <footer>&copy; 2016 CamperCat</footer>\n</body>"
+      ],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "ad7123c8c441eddfaeb5bdef",
+      "title": "Improve readability with high contrast text",
+      "description": [
+        "Low contrast between the foreground and background colors can make text difficult to read. Sufficient contrast improves the readability of your content, but what exactly does \"sufficient\" mean? The Web Content Accessibility Guidelines (WCAG) recommend at least a 4.5 to 1 contrast ratio for normal text. The ratio is calculated by comparing the relative luminance values of two colors, and ranges from 1:1 for the same color, or no contrast, to 21:1 for white against black, the strongest contrast. There are many contrast checking tools available online that calculate this ratio for you.",
+        "Instructions",
+        "CamperCat's choice of light gray text on a white background for his recent blog post has a 1.5:1 contrast ratio, making it hard to read. Change the current gray (#D3D3D3) color of the text to a darker gray (#636363) to improve the contrast ratio to 6:1."
+      ],
+      "challengeSeed": [
+        "<head>",
+        "  <style>",
+        "  body {",
+        "    color: #D3D3D3;",
+        "    background-color: #FFF;",
+        "  }",
+        "  </style>",
+        "</head>",
+        "<body>",
+        "  <header>",
+        "    <h1>Deep Thoughts with Master CamperCat</h1>",
+        "  </header>",
+        "  <article>",
+        "    <h2>A Word on the Recent Catnip Doping Scandal</h2>",
+        "    <p>The influence that catnip has on feline behavior is well-documented, and its use as an herbal supplement in competitive ninja circles remains controversial. Once again, the debate to ban the substance is brought to the public's attention after the high-profile win of Kittytron, a long-time proponent and user of the green stuff, at the Claw of Fury tournament.</p>",
+        "    <p>As I've stated in the past, I firmly believe a true ninja's skills must come from within, with no external influences. My own catnip use shall continue as purely recreational.</p>",
+        "  </article>",
+        "</body>"
+      ],
+      "tests": [
+        "assert($('body').css('color') === \"rgb(99, 99, 99)\", 'message: Change the text <code>color</code> for the <code>body</code> to the darker gray, using its <code>hex code</code>.');",
+        "assert($('body').css('background-color') === \"rgb(255, 255, 255)\", 'message: Keep the <code>background-color</code> for the <code>body</code> white.');"
+      ],
+      "solutions": [
+        "<head>\n  <style>\n  body {\n    color: #636363;\n    background-color: #FFF;\n  }\n  </style>\n</head>\n<body>\n  <header>\n    <h1>Deep Thoughts with Master CamperCat</h1>\n  </header>\n  <article>\n    <h2>A Word on the Recent Catnip Doping Scandal</h2>\n    <p>The influence that catnip has on feline behavior is well-documented, and its use as an herbal supplement in competitive ninja circles remains controversial. Once again, the debate to ban the substance is brought to the public's attention after the high-profile win of Kittytron, a long-time proponent and user of the green stuff, at the Claw of Fury tournament.</p>\n    <p>As I've stated in the past, I firmly believe a true ninja's skills must come from within, with no external influences. My own catnip use shall continue as purely recreational.</p>\n  </article>\n</body>"
+      ],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "ad7123c8c441eddfaeb5bdef",
+      "title": "Avoid Colorblindness Colors by using Sufficient Contrast",
+      "description": [
+        "Color is an integral part of visual design, but its use introduces two accessibility issues. First, color alone should not be used as the only way to convey important information because screen reader users won't see it. Second, foreground and background colors need sufficient contrast so colorblind users can distinguish them. We've covered having text alternatives to address the first issue, and the last challenge introduced contrast checking tools to help with the second. The WCAG recommended contrast ratio of 4.5:1 applies for color use as well as gray-scale combinations.",
+        "Colorblind users have trouble distinguishing some colors from others - usually in hue but sometimes lightness as well. You may recall the contrast ratio is calculated using the relative luminance (or lightness) values of the foreground and background colors. In practice, the 4.5:1 ratio can be targeted by darkening the darker color and lightening the lighter one with the aid of a color contrast checker. Darker colors on the color wheel are considered to be blues, violets, magentas, and reds, whereas lighter colors are oranges, yellows, greens, and blue-greens.",
+        "Instructions",
+        "CamperCat is experimenting with using color for his blog text and background, but his current combination of a greenish background-color with maroon text color has a 2.5:1 contrast ratio. We can easily adjust the lightness of the colors since he declared them using the CSS hsl() property (which stands for hue, saturation, lightness) by changing the third argument. Increase the background-color lightness value from 35% to 55%, and decrease the color lightness value from 20% to 15%. This improves the contrast to 5.9:1."
+      ],
+      "challengeSeed": [
+        "<head>",
+        "  <style>",
+        "  body {",
+        "    color: hsl(0, 55%, 20%);",
+        "    background-color: hsl(120, 25%, 35%);",
+        "  }",
+        "  </style>",
+        "</head>",
+        "<body>",
+        "  <header>",
+        "    <h1>Deep Thoughts with Master CamperCat</h1>",
+        "  </header>",
+        "  <article>",
+        "    <h2>A Word on the Recent Catnip Doping Scandal</h2>",
+        "    <p>The influence that catnip has on feline behavior is well-documented, and its use as an herbal supplement in competitive ninja circles remains controversial. Once again, the debate to ban the substance is brought to the public's attention after the high-profile win of Kittytron, a long-time proponent and user of the green stuff, at the Claw of Fury tournament.</p>",
+        "    <p>As I've stated in the past, I firmly believe a true ninja's skills must come from within, with no external influences. My own catnip use shall continue as purely recreational.</p>",
+        "  </article>",
+        "</body>"
+      ],
+      "tests": [
+        "assert($('body').css('color') === \"rgb(59, 17, 17)\", 'message: Change only the lightness value for the text <code>color</code> to 15%.');",
+        "assert($('body').css('background-color') === \"rgb(111, 168, 111)\", 'message: Change only the lightness value for the <code>background-color</code> to 55%.');"
+      ],
+      "solutions": [
+        "<head>\n  <style>\n  body {\n    color: hsl(0, 55%, 15%);\n    background-color: hsl(120, 25%, 55%);\n  }\n  </style>\n</head>\n<body>\n  <header>\n    <h1>Deep Thoughts with Master CamperCat</h1>\n  </header>\n  <article>\n    <h2>A Word on the Recent Catnip Doping Scandal</h2>\n    <p>The influence that catnip has on feline behavior is well-documented, and its use as an herbal supplement in competitive ninja circles remains controversial. Once again, the debate to ban the substance is brought to the public's attention after the high-profile win of Kittytron, a long-time proponent and user of the green stuff, at the Claw of Fury tournament.</p>\n    <p>As I've stated in the past, I firmly believe a true ninja's skills must come from within, with no external influences. My own catnip use shall continue as purely recreational.</p>\n  </article>\n</body>"
+      ],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "ad7123c8c441eddfaeb5bdef",
+      "title": "Avoid Colorblindness Issues by Carefully Choosing Colors that Convey Information",
+      "description": [
+        "There are various forms of colorblindness, ranging from a reduced sensitivity to a certain wavelength of light to the inability to perceive color at all. The most common form is a reduced sensitivity to detect greens. If two colors with similar hues (close to the wavelength in question) are the foreground and background color of your content, a colorblind user may not be able to distinguish them. Close colors can be thought of as neighbors on the color wheel, and those combinations should be avoided when conveying important information.",
+        "Note:",
+        "Some online color picking tools include visual simulations of how colors appear for different types of colorblindness. These are great resources in addition to online contrast checking calculators.",
+        "Instructions",
+        "CamperCat is testing different styles for an important button, but the yellow (#FFFF33) background-color and the green (#33FF33) text color are neighboring hues on the color wheel and virtually indistinguishable for some colorblind users. (Their similar lightness also fails the contrast ratio check). Change the text color to a dark blue (#003366) to solve both problems."
+      ],
+      "challengeSeed": [
+        "<head>",
+        "  <style>",
+        "  button {",
+        "    color: #33FF33;",
+        "    background-color: #FFFF33;",
+        "    font-size: 14px;",
+        "    padding: 10px;",
+        "  }",
+        "  </style>",
+        "</head>",
+        "<body>",
+        "  <header>",
+        "    <h1>Danger!</h1>",
+        "  </header>",
+        "  <button>Delete Internet</button>",
+        "</body>"
+      ],
+      "tests": [
+        "assert($('button').css('color') === \"rgb(0, 51, 102)\", 'message: Change the text <code>color</code> for the <code>button</code> to dark blue.');",
+        "assert($('button').css('background-color') === \"rgb(255, 255, 51)\", 'message: Don't change the <code>background-color</code> of the <code>button</code>.');"
+      ],
+      "solutions": [
+        "<head>\n  <style>\n  button {\n    color: #003366;\n    background-color: #FFFF33;\n    font-size: 14px;\n    padding: 10px;\n  }\n  </style>\n</head>\n<body>\n  <header>\n    <h1>Danger!</h1>\n  </header>\n  <button>Delete Internet</button>\n</body>"
+      ],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "ad7123c8c441eddfaeb5bdef",
+      "title": "Give Links Meaning by using Descriptive Link Text",
+      "description": [
+        "As we've seen in prior challenges, screen reader users have different options for what type of content their device reads, including skipping to (or over) landmark elements, jumping to the main content, or getting a page summary from the headings. Another option is to only hear the links available on a page. Screen readers do this by reading the link text, or what's between the anchor (a) tags. Having a list of \"click here\" or \"read more\" links isn't helpful, instead, use brief but descriptive text within the a tags to provide more meaning for these users.",
+        "Instructions",
+        "The link text that CamperCat is using is not very descriptive without the surrounding context. Move the anchor (a) tags so they wrap around the text \"information about batteries\" instead of \"Click here\"."
+      ],
+      "challengeSeed": [
+        "<body>",
+        "  <header>",
+        "    <h1>Deep Thoughts with Master CamperCat</h1>",
+        "  </header>",
+        "  <article>",
+        "    <h2>Defeating your Foe: the Red Dot is Ours!</h2>",
+        "    <p>Felines the world over have been waging war on the most persistent of foes. This red nemesis combines both cunning stealth and lightening speed. But chin up, fellow fighters, our time for victory may soon be near. <a href=\"\">Click here</a> for information about batteries</p>",
+        "  </article>",
+        "</body>"
+      ],
+      "tests": [
+        "assert(code.test(/<a href=\"\">\\s*?information about batteries\\s*?</a>/gi), 'message: Move the anchor <code>a</code> tags from around the words \"Click here\" to wrap the words \"information about batteries\". Do not remove the <code>href=\"\"</code> attribute');"
+      ],
+      "solutions": [
+        "<body>\n  <header>\n    <h1>Deep Thoughts with Master CamperCat</h1>\n  </header>\n  <article>\n    <h2>Defeating your Foe: the Red Dot is Ours!</h2>\n    <p>Felines the world over have been waging war on the most persistent of foes. This red nemesis combines both cunning stealth and lightening speed. But chin up, fellow fighters, our time for victory may soon be near. Click here for <a href=\"\">information about batteries</a></p>\n  </article>\n</body>"
+      ],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "ad7123c8c441eddfaeb5bdef",
+      "title": "Make Links Navigatable with HTML Access Keys",
+      "description": [
+        "HTML offers the accesskey attribute to specify a shortcut key to activate or bring focus to an element. This can make navigation more efficient for keyboard-only users. HTML5 allows this attribute to be used on any element, but it's of particular use when paired with interactive ones, such as links, buttons, and form controls.",
+        "Here's an example:",
+        "<code><button accesskey=\"b\">Important Button</button></code>",
+        "Instructions",
+        "CamperCat wants the links around the two blog article titles to have keyboard shortcuts so his site's users can quickly navigate to the full story. Add an accesskey attribute to both links and set the first one to \"g\" (for Garfield) and the second one to \"c\" (for Chuck Norris)."
+      ],
+      "challengeSeed": [
+        "<body>",
+        "  <header>",
+        "    <h1>Deep Thoughts with Master CamperCat</h1>",
+        "  </header>",
+        "  <article>",
+        "    <h2><a id=\"first\" href=\"\">The Garfield Files: Lasagna as Training Fuel?</a></h2>",
+        "    <p>The internet is littered with varying opinions on nutritional paradigms, from catnip paleo to hairball cleanses. But let's turn our attention to an often overlooked fitness fuel, and examine the protein-carb-yummy trifecta that is lasagna...</p>",
+        "  </article>",
+        "  <article>",
+        "    <h2><a id=\"second\" href=\"\">Is Chuck Norris a Cat Person?</a></h2>",
+        "    <p>Chuck Norris is widely regarded as the premier martial artist on the planet, and it's a complete coincidence anyone who disagrees with this fact mysteriously disappears soon after. But the real question is, is he a cat person?...</p>",
+        "  </article>",
+        "  <footer>&copy; 2016 CamperCat</footer>",
+        "</body>"
+      ],
+      "tests": [
+        "assert($('#first').attr('accesskey')), 'message: Make sure to add an <code>accesskey</code> attribute to the <code>a</code> tag with the <code>id</code> of \"first\".');",
+        "assert($('#second').attr('accesskey')), 'message: Make sure to add an <code>accesskey</code> attribute to the <code>a</code> tag with the <code>id</code> of \"second\".');",
+        "assert($('#first').attr('accesskey') === 'g'), 'message: Make sure to set the <code>accesskey</code> attribute on the <code>a</code> tag with the <code>id</code> of \"first\" to \"g\". Note that case matters.');",
+        "assert($('#second').attr('accesskey') === 'c'), 'message: Make sure to set the <code>accesskey</code> attribute on the <code>a</code> tag with the <code>id</code> of \"second\" to \"c\". Note that case matters.');"
+      ],
+      "solutions": [
+        "<body>\n  <header>\n    <h1>Deep Thoughts with Master CamperCat</h1>\n  </header>\n  <article>\n    <h2><a accesskey=\"g\" id=\"first\" href=\"\">The Garfield Files: Lasagna as Training Fuel?</a></h2>\n    <p>The internet is littered with varying opinions on nutritional paradigms, from catnip paleo to hairball cleanses. But let's turn our attention to an often overlooked fitness fuel, and examine the protein-carb-yummy trifecta that is lasagna...</p>\n  </article>\n  <article>\n    <h2><a accesskey=\"c\" id=\"second\" href=\"\">Is Chuck Norris a Cat Person?</a></h2>\n    <p>Chuck Norris is widely regarded as the premier martial artist on the planet, and it's a complete coincidence anyone who disagrees with this fact mysteriously disappears soon after. But the real question is, is he a cat person?...</p>\n  </article>\n  <footer>&copy; 2016 CamperCat</footer>\n</body>"
+      ],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "ad7123c8c441eddfaeb5bdef",
+      "title": "Use tabindex to add keyboard focus to an element",
+      "description": [
+        "The HTML tabindex attribute has three distinct functions relating to an element's keyboard focus. Its presence on a tag indicates that element can be focused on, and the value (an integer that's positive, negative, or zero) determines the behavior. We'll start with the special values of zero and -1.",
+        "Certain elements, such as links and form controls, automatically receive keyboard focus when a user tabs through a page, in the same order as they come in the HTML source markup. This same functionality can be given to other elements, such as div, span, and p, by placing a tabindex=\"0\" attribute on them.",
+        "Here's an example:",
+        "<code><div tabindex=\"0\">I need keyboard focus!</div></code>",
+        "Note:",
+        "A negative tabindex value (typically -1) indicates that an element is focusable, but is not reachable by the keyboard. This method is generally used to bring focus to content programmatically (like when a pop-up window is activated), and is beyond the scope of these challenges.",
+        "Instructions",
+        "CamperCat created a new survey to collect information about his users. He knows input fields automatically get keyboard focus, but he wants to make sure his keyboard users pause at the instructions while tabbing through the items. Add a tabindex attribute to the p tag and set its value to \"0\". Bonus - notice how using tabindex also enables the CSS pseudo-class :focus to work on the p tag?"
+      ],
+      "challengeSeed": [
+        "<head>",
+        "  <style>",
+        "  p:focus {",
+        "    background-color: yellow;",
+        "  }",
+        "  </style>",
+        "</head>",
+        "<body>",
+        "  <header>",
+        "    <h1>Ninja Survey</h1>",
+        "  </header>",
+        "  <section>",
+        "    <form>",
+        "      <p>Instructions: Fill in ALL your information then click <b>Submit</b></p>",
+        "      <label for=\"username\">Username:</label>",
+        "      <input type=\"text\" id=\"username\" name=\"username\"><br>",
+        "      <fieldset>",
+        "        <legend>What level ninja are you?</legend>",
+        "        <input id=\"newbie\" type=\"radio\" name=\"levels\" value=\"newbie\">",
+        "        <label for=\"newbie\">Newbie Kitten</label><br>",
+        "        <input id=\"intermediate\" type=\"radio\" name=\"levels\" value=\"intermediate\">",
+        "        <label for=\"intermediate\">Developing Student</label><br>",
+        "        <input id=\"master\" type=\"radio\" name=\"levels\" value=\"master\">",
+        "        <label for=\"master\">9th Life Master</label>",
+        "      </fieldset>",
+        "      <br>",
+        "      <fieldset>",
+        "      <legend>Select your favorite weapons:</legend>",
+        "      <input id=\"stars\" type=\"checkbox\" name=\"weapons\" value=\"stars\">",
+        "      <label for=\"stars\">Throwing Stars</label><br>",
+        "      <input id=\"nunchucks\" type=\"checkbox\" name=\"weapons\" value=\"nunchucks\">",
+        "      <label for=\"nunchucks\">Nunchucks</label><br>",
+        "      <input id=\"sai\" type=\"checkbox\" name=\"weapons\" value=\"sai\">",
+        "      <label for=\"sai\">Sai Set</label><br>",
+        "      <input id=\"sword\" type=\"checkbox\" name=\"weapons\" value=\"sword\">",
+        "      <label for=\"sword\">Sword</label>",
+        "      </fieldset>",
+        "      <br>",
+        "      <input type=\"submit\" name=\"submit\" value=\"Submit\">",
+        "    </form><br>",
+        "  </section>",
+        "  <footer>&copy; 2016 CamperCat</footer>",
+        "</body>"
+      ],
+      "tests": [
+        "assert($('p').attr('tabindex')), 'message: Make sure to add a <code>tabindex</code> attribute to the <code>p</code> tag with the form instructions.');",
+        "assert($('p').attr('tabindex') === '0'), 'message: Make sure to set the <code>tabindex</code> attribute on the <code>p</code> tag to \"0\".');"
+      ],
+      "solutions": [
+        "<head>\n  <style>\n  p:focus {\n    background-color: yellow;\n  }\n  </style>\n</head>\n<body>\n  <header>\n    <h1>Ninja Survey</h1>\n  </header>\n  <section>\n    <form>\n      <p tabindex=\"0\">Instructions: Fill in ALL your information then click <b>Submit</b></p>\n      <label for=\"username\">Username:</label>\n      <input type=\"text\" id=\"username\" name=\"username\"><br>\n      <fieldset>\n        <legend>What level ninja are you?</legend>\n        <input id=\"newbie\" type=\"radio\" name=\"levels\" value=\"newbie\">\n        <label for=\"newbie\">Newbie Kitten</label><br>\n        <input id=\"intermediate\" type=\"radio\" name=\"levels\" value=\"intermediate\">\n        <label for=\"intermediate\">Developing Student</label><br>\n        <input id=\"master\" type=\"radio\" name=\"levels\" value=\"master\">\n        <label for=\"master\">9th Life Master</label>\n      </fieldset>\n      <br>\n      <fieldset>\n      <legend>Select your favorite weapons:</legend>\n      <input id=\"stars\" type=\"checkbox\" name=\"weapons\" value=\"stars\">\n      <label for=\"stars\">Throwing Stars</label><br>\n      <input id=\"nunchucks\" type=\"checkbox\" name=\"weapons\" value=\"nunchucks\">\n      <label for=\"nunchucks\">Nunchucks</label><br>\n      <input id=\"sai\" type=\"checkbox\" name=\"weapons\" value=\"sai\">\n      <label for=\"sai\">Sai Set</label><br>\n      <input id=\"sword\" type=\"checkbox\" name=\"weapons\" value=\"sword\">\n      <label for=\"sword\">Sword</label>\n      </fieldset>\n      <br>\n      <input type=\"submit\" name=\"submit\" value=\"Submit\">\n    </form><br>\n  </section>\n  <footer>&copy; 2016 CamperCat</footer>\n</body>"
+      ],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "ad7123c8c441eddfaeb5bdef",
+      "title": "Use tabindex to specify the order of keyboard focus for several elements",
+      "description": [
+        "The next function that the tabindex attribute offers is to specify the exact tab order of elements. This is achieved when the value of the attribute is set to a positive number of 1 or higher. Setting a tabindex=\"1\" will bring keyboard focus to that element first, then cycle through the sequence of specified tabindex values (2, 3, etc.), before moving to default and tabindex=\"0\" items. It's important to note that when the tab order is set this way, it overrides the default order (which uses the HTML source), and may confuse users who are expecting to start navigation from the top of the page. This technique may be necessary in some circumstances, but in terms of accessibility, take care before applying it.",
+        "Here's an example:",
+        "<code><div tabindex=\"1\">I get keyboard focus, and I get it first!</div></code>",
+        "<code><div tabindex=\"2\">I get keyboard focus, and I get it second!</div></code>",
+        "Instructions",
+        "CamperCat has a search field on his Inspirational Quotes page that he plans to position in the upper right corner with CSS. He wants the search input and submit input form controls to be the first two items in the tab order. Add a tabindex attribute set to \"1\" to the search input, and a tabindex attribute set to \"2\" to the submit input."
+      ],
+      "challengeSeed": [
+        "<body>",
+        "  <header>",
+        "    <h1>Even Deeper Thoughts with Master CamperCat</h1>",
+        "    <nav>",
+        "      <ul>",
+        "        <li><a href=\"\">Home</a></li>",
+        "        <li><a href=\"\">Blog</a></li>",
+        "        <li><a href=\"\">Training</a></li>",
+        "      </ul>",
+        "    </nav>",
+        "  </header>",
+        "  <form>",
+        "    <label for=\"search\">Search:</label>",
+        "    <input type=\"search\" name=\"search\" id=\"search\">",
+        "    <input type=\"submit\" name=\"submit\" value=\"Submit\" id=\"submit\">",
+        "  </form>",
+        "  <h2>Inspirational Quotes</h2>",
+        "  <blockquote>",
+        "    <p>&ldquo;There's no Theory of Evolution, just a list of creatures I've allowed to live.&rdquo;<br>",
+        "    - Chuck Norris</p>",
+        "  </blockquote>",
+        "  <blockquote>",
+        "    <p>&ldquo;Wise men say forgiveness is divine, but never pay full price for late pizza.&rdquo;<br>",
+        "    - TMNT</p>",
+        "  </blockquote>",
+        "  <footer>&copy; 2016 CamperCat</footer>",
+        "</body>"
+      ],
+      "tests": [
+        "assert($('#search').attr('tabindex')), 'message: Make sure to add a <code>tabindex</code> attribute to the search <code>input</code> tag.');",
+        "assert($('#submit').attr('tabindex')), 'message: Make sure to add a <code>tabindex</code> attribute to the submit <code>input</code> tag.');",
+        "assert($('search').attr('tabindex') === '1'), 'message: Make sure to set the <code>tabindex</code> attribute on the search <code>input</code> tag to \"1\".');",
+        "assert($('submit').attr('tabindex') === '2'), 'message: Make sure to set the <code>tabindex</code> attribute on the submit <code>input</code> tag to \"2\".');"
+      ],
+      "solutions": [
+        "<body>\n  <header>\n    <h1>Even Deeper Thoughts with Master CamperCat</h1>\n    <nav>\n      <ul>\n        <li><a href=\"\">Home</a></li>\n        <li><a href=\"\">Blog</a></li>\n        <li><a href=\"\">Training</a></li>\n      </ul>\n    </nav>\n  </header>\n  <form>\n    <label for=\"search\">Search:</label>\n    <input type=\"search\" name=\"search\" id=\"search\" tabindex=\"1\">\n    <input type=\"submit\" name=\"submit\" value=\"Submit\" id=\"submit\" tabindex=\"2\">\n  </form>\n  <h2>Inspirational Quotes</h2>\n  <blockquote>\n    <p>&ldquo;There's no Theory of Evolution, just a list of creatures I've allowed to live.&rdquo;<br>\n    - Chuck Norris</p>\n  </blockquote>\n  <blockquote>\n    <p>&ldquo;Wise men say forgiveness is divine, but never pay full price for late pizza.&rdquo;<br>\n    - TMNT</p>\n  </blockquote>\n  <footer>&copy; 2016 CamperCat</footer>\n</body>"
+      ],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "ad7123c8c441eddfaeb5bdef",
+      "title": "Improve Accessibility of Audio Content with the Audio Element",
+      "description": [
+        "HTML5's audio element gives semantic meaning when it wraps sound or audio stream content in your markup. Audio content also needs a text alternative to be accessible to the deaf or hard of hearing. This can be done with nearby text on the page or a link to a transcript.",
+        "The audio tag supports the controls attribute, which shows the browser default play, pause, etc. controls, and supports keyboard functionality. This is a boolean attribute, meaning it doesn't need a value, it's presence on the tag turns the setting on.",
+        "Here's an example:",
+        "<code><audio id=\"meowClip\" controls></code>",
+        "<code>    <source src=\"audio/meow.mp3\" type=\"audio/mpeg\" /></code>",
+        "<code>    <source src=\"audio/meow.ogg\" type=\"audio/ogg\" /></code>",
+        "<code></audio></code>",
+        "Note:",
+        "Multimedia content, which usually has both visual and auditory components, needs synchronized captions and a transcript so users with visual and/or auditory impairments can access it. Generally, a web developer is not responsible for creating the captions or transcript, but needs to know to include them.",
+        "Instructions",
+        "Let's break from our normally scheduled programming and meet one of our fellow campers, Zersiax (@zersiax), a champion of accessibility and a screen reader user. To hear a clip of his screen reader in action, add an audio element (after the p) with the controls attribute. Then place a source tag inside the audio tags with the src attribute set to \"https://s3.amazonaws.com/freecodecamp/screen-reader.mp3\" and type attribute set to \"audio/mpeg\"."
+      ],
+      "challengeSeed": [
+        "        <body>",
+        "",
+        "  <header>",
+        "    <h1>Real Coding Ninjas</h1>",
+        "  </header>",
+        "  <p>A sound clip of Zersiax's screen reader in action.</p>",
+        "",
+        "</body>"
+      ],
+      "tests": [
+        "assert($('audio').length === 1), 'message: Make sure to add an <code>audio</code> element after the <code>p</code> tag.');",
+        "assert($('audio').attr('controls')), 'message: Make sure the <code>audio</code> tag includes the <code>controls</code> attribute.');",
+        "assert($('source').length === 1, 'message: Make sure to add a <code>source</code> element inside the <code>audio</code> tags. Use the example code as a model.');",
+        "assert($('audio').children('source').length === 1, 'message: Make sure the <code>source</code> element is a child of the <code>audio</code> element.');",
+        "assert($('source').attr('src') === 'https://s3.amazonaws.com/freecodecamp/screen-reader.mp3', 'message: Make sure to include the <code>src</code> attribute on the <code>source</code> tag exactly as it is in the instructions.');",
+        "assert($('source').attr('type') === 'audio/mpeg', 'message: Make sure to include the <code>type</code> attribute on the <code>source</code> tag exactly as it is in the instructions.');"
+      ],
+      "solutions": [
+        "<body>\n  <header>\n    <h1>Real Coding Ninjas</h1>\n  </header>\n  <p>A sound clip of Zersiax's screen reader in action.</p>\n  <audio controls>\n    <source src=\"https://s3.amazonaws.com/freecodecamp/screen-reader.mp3\" type=\"audio/mpeg\" />\n  </audio>\n</body>"
+      ],
+      "hints": [],
       "type": "waypoint",
       "challengeType": 0,
       "translations": {

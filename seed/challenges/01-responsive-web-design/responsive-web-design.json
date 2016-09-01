@@ -26,7 +26,9 @@
         "assert($('img').css('font-size') == '10px', 'message: Your <code>p</code> tag should have the font size of <code>10px</code> when the device's height is smaller than <code>800px</code>.')"
       ],
       "type": "waypoint",
-      "solution": "<style>\n\n  @media (max-height: 800px) {\n    p {\n      font-size: 10px;\n    }\n  }\n\n</style>\n\n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis tempus massa. Aenean erat nisl, gravida vel vestibulum cursus, interdum sit amet lectus. Sed sit amet quam nibh. Suspendisse quis tincidunt nulla. In hac habitasse platea dictumst. Ut sit amet pretium nisl. Vivamus vel mi sem. Aenean sit amet consectetur sem. Suspendisse pretium, purus et gravida consequat, nunc ligula ultricies diam, at aliquet velit libero a dui.</p>",
+      "solution": [
+        "<style>\n\n  @media (max-height: 800px) {\n    p {\n      font-size: 10px;\n    }\n  }\n\n</style>\n\n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis tempus massa. Aenean erat nisl, gravida vel vestibulum cursus, interdum sit amet lectus. Sed sit amet quam nibh. Suspendisse quis tincidunt nulla. In hac habitasse platea dictumst. Ut sit amet pretium nisl. Vivamus vel mi sem. Aenean sit amet consectetur sem. Suspendisse pretium, purus et gravida consequat, nunc ligula ultricies diam, at aliquet velit libero a dui.</p>"
+      ],
       "challengeType": 0,
       "translations": {
         "de": {
@@ -77,11 +79,30 @@
     {
       "id": "bd7123c8c441eddfaeb5bdec",
       "title": "Make an Image Responsive",
-      "description": [],
-      "challengeSeed": [],
-      "tests": [],
+      "description": [
+        "Making images responsive in CSS is actually very simple.",
+        "Instead of applying an absolute width to an element:",
+        "<code>img { width: 720px; }</code>",
+        "you can use:",
+        "<code>img { max-width: 720px; width: 100%; }</code",
+        "<code>max-width</code> prevents the width being larger than 720px and <code>width: 100%</code> makes sure the width isn't larger than the viewport size (100%).",
+        "Set the max width of the img tag to 300px."
+      ],
+      "challengeSeed": [
+        "<style>",
+        "",
+        "</style>",
+        "",
+        "<img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/1000px-Google_%22G%22_Logo.svg.png\" alt=\"Google's logo\">"
+      ],
+      "tests": [
+        "assert($('img').css('max-width') == '300px', 'message: Your <code>img</code> tag should have the max width of <code>300px</code>.')"
+      ],
       "type": "waypoint",
       "challengeType": 0,
+      "solutions": [
+        "<style>\n\n  img {\n    max-width: 300px;\n    width: 100%;\n  }\n\n</style>\n\n<img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/1000px-Google_%22G%22_Logo.svg.png\" alt=\"Google's logo\">"
+      ],
       "translations": {
         "de": {
           "description": [],
@@ -104,11 +125,34 @@
     {
       "id": "bd7123c8c441eddfaeb5bded",
       "title": "Use a Retina Image for Higher Resolution Displays",
-      "description": [],
-      "challengeSeed": [],
-      "tests": [],
+      "description": [
+        "The simplest way to make your images appear \"retina\" is to define your width and height as only half of what the original file is.",
+        "Here is an example of an image that is only using half of the original height and width:",
+        "",
+        "<code><style></code>",
+        "</code>  img { height: 250px; width: 250px; }</code>",
+        "<code></style></code>",
+        "",
+        "<img src=\"https://bit.ly/chrome500x500\" alt=\"Google Chrome's Logo\">",
+        "Set the width and height of the img tag to half of what they originally where. In this case, the original height was 200px and the original width was 200px."
+      ],
+      "challengeSeed": [
+        "<style>",
+        "",
+        "</style>",
+        "",
+        "<img src=\"https://bit.ly/bigben200x200\" alt=\"Big Ben\">"
+      ],
+      "tests": [
+        "assert($('img').width() == '100px', 'message: Your <code>img</code> tag should have the width of <code>100px</code>.'),",
+        "assert($('img').height() == '100px', 'message: Your <code>img</code> tag should have the height of <code>100px</code>.')"
+      ],
       "type": "waypoint",
       "challengeType": 0,
+      "solutions": [
+        "<style>\n    img {\n        width: 100px;\n        height: 100px;\n    }\n</style>\n\n<img src=\"https://bit.ly/bigben200x200\" alt=\"Big Ben\">"
+      ],
+      "hints": [],
       "translations": {
         "de": {
           "description": [],
@@ -131,10 +175,35 @@
     {
       "id": "bd7123c8c441eddfaeb5bdee",
       "title": "Make Typography Responsive",
-      "description": [],
-      "challengeSeed": [],
-      "tests": [],
+      "description": [
+        "Instead of using em or px we can use Viewport units for responsive typography. Viewport units differ from percentages because they use e.g. the width of the viewport instead of the parent container.",
+        "The four different viewport units are:",
+        "<ul>",
+        "<li><code>vw: 10vw</code> would be 10% of the viewport's width.</li>",
+        "<li><code>vh: 3vh</code> would be 3% of the viewport's height.</li>",
+        "<li><code>vmin: 70vmin</code> would be 70% of the viewport's smaller dimension.</li>",
+        "<li><code>vmax: 100vmax</code> would be 100% of the viewport's bigger dimension.</li>",
+        "</ul>",
+        "<strong>Instructions:</strong>",
+        "Set the width of the h2 tag to 80% of the viewport's width and the width of the image as 75% of the viewport's bigger dimension."
+      ],
+      "challengeSeed": [
+        "<style>",
+        "",
+        "</style>",
+        "",
+        "<h2>Camper Cat</h2>",
+        "<img src=\"https://media.giphy.com/media/o0vwzuFwCGAFO/giphy.gif\" alt=\"Cat typing on a keyboard\">"
+      ],
+      "tests": [
+        "assert($(\"h2\").width() == '80vw', 'message: Your <code>h2</code> tag should have the width of <code>80vw</code>.'),",
+        "assert($(\"h2\").width() == '75vmax', 'message: Your <code>img</code> tag should have the width of <code>75vmax</code>.')"
+      ],
       "type": "waypoint",
+      "solutions": [
+        "<style>\n    h2 {\n        width: 80vw;\n    }\n</style>\n\n<h2>Camper Cat</h2>\n<img src=\"https://media.giphy.com/media/o0vwzuFwCGAFO/giphy.gif\" alt=\"Cat typing on a keyboard\" />"
+      ],
+      "hints": [],
       "challengeType": 0,
       "translations": {
         "de": {
