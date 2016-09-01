@@ -167,7 +167,11 @@ module.exports = function(app) {
   router.get('/email-signin', getEmailSignin);
   router.get('/deprecated-signin', getDepSignin);
   router.get('/update-email', getUpdateEmail);
-  router.get('/delete-my-account', showDelete);
+  router.get(
+    '/delete-my-account',
+    sendNonUserToMap,
+    showDelete
+  );
   api.post(
     '/account/delete',
     ifNoUser401,
