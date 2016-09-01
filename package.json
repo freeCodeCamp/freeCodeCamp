@@ -152,6 +152,7 @@
     "less": "^2.5.1",
     "loopback-component-explorer": "^2.1.1",
     "merge-stream": "^1.0.0",
+    "proxyquire": "^1.7.10",
     "rev-del": "^1.0.5",
     "sinon": "^1.17.3",
     "sort-keys": "^1.1.1",

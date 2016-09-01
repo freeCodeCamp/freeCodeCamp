@@ -2,6 +2,8 @@ import createTypes from '../../../utils/create-types';
 
 export default createTypes([
   // step
+  'stepForward',
+  'stepBackward',
   'goToStep',
   'completeAction',
   'openLightBoxImage',
