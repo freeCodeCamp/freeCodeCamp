@@ -4,22 +4,24 @@ block content
     hr
     .row
         .col-xs-12.col-sm-10.col-sm-offset-1.col-md-8.col-md-offset-2.text-center
-            img.img-responsive.img-center(src='//i.imgur.com/FNFqn9Tg.jpg')
-            h3 Free Code Camp laptop stickers
-            h4 Get 2 for only $5, with free shipping anywhere!
-            p These durable 2" (5 cm) stickers sport a matte finish, and look great anywhere - especially on your laptop.
-            html.
-                <form action="//www.paypal.com/cgi-bin/webscr" onSubmit="ga('send', 'event', 'Shop', 'clicked', 'Freecodecamp sticker');" method="post" target="_blank">
-                <input type="hidden" name="cmd" value="_s-xclick">
-                <input type="hidden" name="hosted_button_id" value="R9AGYKJUCU37N">
-                <input type="submit" class="btn btn-cta signup-btn btn-block" name="submit" value='Get these with PayPal or a Credit Card'>
-                <img alt="" border="0" src="//www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-                </form>
+          form(action="//www.paypal.com/cgi-bin/webscr" onSubmit="ga('send', 'event', 'Shop', 'clicked', 'Freecodecamp sticker');" method="post" target="_blank")
+            input(type="hidden" name="cmd" value="_s-xclick")
+            input(type="hidden" name="hosted_button_id" value="R9AGYKJUCU37N")
+            input(type="image" src='//i.imgur.com/FNFqn9Tg.png' class="img-responsive img-center" name="submit" alt="Freecodecamp sticker")
+          h3 Free Code Camp laptop stickers
+          h4 Get 2 for only $5, with free shipping anywhere!
+          p These durable 2" (5 cm) stickers sport a matte finish, and look great anywhere - especially on your laptop.
+          form(action="//www.paypal.com/cgi-bin/webscr" onSubmit="ga('send', 'event', 'Shop', 'clicked', 'Freecodecamp sticker');" method="post" target="_blank")
+            input(type="hidden" name="cmd" value="_s-xclick")
+            input(type="hidden" name="hosted_button_id" value="R9AGYKJUCU37N")
+            input(type="submit" class="btn btn-cta signup-btn btn-block" name="submit" value='Get these with PayPal or a Credit Card')
+            img(alt="" border="0" src="//www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1")
 
     hr
     .row
         .col-xs-12.col-sm-10.col-sm-offset-1.col-md-8.col-md-offset-2.text-center
-            img.img-responsive.img-center(src='http://i.imgur.com/ATDiWMl.png')
+            a(href="//www.amazon.com/gp/product/B00NB86OYE/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00NB86OYE&linkCode=as2&tag=out0b4b-20&linkId=dfacf0a194dcd3d1c9376f64ed690214" onClick="ga('send', 'event', 'Shop', 'clicked', '2 free audio books');")
+              img.img-responsive.img-center(src='http://i.imgur.com/ATDiWMl.png')
             h3 Get 2 free audiobooks through Audible
             p Audible gives our community $5 when you you sign up for a free trial.
             p You get two free audiobooks immediately. You can cancel any time and still keep your audiobooks.
@@ -29,7 +31,8 @@ block content
     hr
     .row
         .col-xs-12.col-sm-10.col-sm-offset-1.col-md-8.col-md-offset-2.text-center
-            img.img-responsive.img-center(src='//i.imgur.com/BTtb8P0g.jpg')
+            a(href="//m.do.co/c/ba8a71773373" target='_blank' onClick="ga('send', 'event', 'Shop', 'clicked', '$10 Digital Ocean credit');")
+              img.img-responsive.img-center(src='//i.imgur.com/BTtb8P0g.jpg')
             h3 Get $10 in credit for your own Digital Ocean server
             p Digital Ocean gives our community $25 in credit after you spend $25.
             a.btn.btn-cta.signup-btn.btn-block(href="//m.do.co/c/ba8a71773373" target='_blank' onClick="ga('send', 'event', 'Shop', 'clicked', '$10 Digital Ocean credit');") Claim your $10 credit
@@ -37,7 +40,8 @@ block content
     hr
     .row
         .col-xs-12.col-sm-10.col-sm-offset-1.col-md-8.col-md-offset-2.text-center
-            img.img-responsive.img-center(src='http://i.imgur.com/YqZqTN6g.jpg')
+            a(href="//www.namecheap.com/?aff=102130" onClick="ga('send', 'event', 'Shop', 'clicked', 'Namecheap domain');")
+              img.img-responsive.img-center(src='http://i.imgur.com/YqZqTN6g.jpg')
             h3 Buy some affordable domain names
             p Namecheap gives our community a 15% commission on your first purchase.
             a.btn.btn-cta.signup-btn.btn-block(href="//www.namecheap.com/?aff=102130" onClick="ga('send', 'event', 'Shop', 'clicked', 'Namecheap domain');") Get your domain name
@@ -48,36 +52,42 @@ block content
             h2 Books our community recommends
             p Amazon gives our community a commission if you make a purchase right after clicking one of these buttons.
             .spacer
-            img.img-responsive.img-center(src='//i.imgur.com/hV9F2bo.jpg' alt='Cracking the Coding Interivew book cover')
+            a(href="//www.amazon.com/gp/product/0984782850/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=0984782850&linkCode=as2&tag=out0b4b-20&linkId=41b9f338b2a1a8ba00d67f944f68a982" onClick="ga('send', 'event', 'Shop', 'clicked', 'Cracking the Coding Interview');" target='_blank')
+              img.img-responsive.img-center(src='//i.imgur.com/hV9F2bo.jpg' alt='Cracking the Coding Interivew book cover')
             .button-spacer
             a.btn.signup-btn.btn-cta(href="//www.amazon.com/gp/product/0984782850/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=0984782850&linkCode=as2&tag=out0b4b-20&linkId=41b9f338b2a1a8ba00d67f944f68a982" onClick="ga('send', 'event', 'Shop', 'clicked', 'Cracking the Coding Interview');" target='_blank') Get it on Amazon
             .spacer
             hr
             .spacer
-            img.img-responsive.img-center(src='//i.imgur.com/rLN9oKk.jpg' alt='JavaScript: The Definitive Guide book cover')
+            a(href="//www.amazon.com/gp/product/0596805527/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=0596805527&linkCode=as2&tag=out0b4b-20&linkId=f490d30d420bf57fc1efe2de57eece65" onClick="ga('send', 'event', 'Shop', 'clicked', 'JavaScript The Definitive Guide');" target='_blank')
+              img.img-responsive.img-center(src='//i.imgur.com/rLN9oKk.jpg' alt='JavaScript: The Definitive Guide book cover')
             .button-spacer
             a.btn.signup-btn.btn-cta(href="//www.amazon.com/gp/product/0596805527/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=0596805527&linkCode=as2&tag=out0b4b-20&linkId=f490d30d420bf57fc1efe2de57eece65" onClick="ga('send', 'event', 'Shop', 'clicked', 'JavaScript The Definitive Guide');" target='_blank') Get it on Amazon
             .spacer
             hr
             .spacer
-            img.img-responsive.img-center(src='//i.imgur.com/KU60I7r.jpg' alt='How Linux Works: What Every Superuser Should Know book cover')
+            a(href="//www.amazon.com/gp/product/1593275676/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=1593275676&linkCode=as2&tag=out0b4b-20&linkId=a6a83ec9ed8d137f3ff56fbcfc6c05ce" onClick="ga('send', 'event', 'Shop', 'clicked', 'How Linux Works');" target='_blank')
+              img.img-responsive.img-center(src='//i.imgur.com/KU60I7r.jpg' alt='How Linux Works: What Every Superuser Should Know book cover')
             .button-spacer
             a.btn.signup-btn.btn-cta(href="//www.amazon.com/gp/product/1593275676/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=1593275676&linkCode=as2&tag=out0b4b-20&linkId=a6a83ec9ed8d137f3ff56fbcfc6c05ce" onClick="ga('send', 'event', 'Shop', 'clicked', 'How Linux Works');" target='_blank') Get it on Amazon
             .spacer
             hr
             .spacer
-            img.img-responsive.img-center(src='//i.imgur.com/nR4VIU4.jpg' alt='JavaScript: The Good Parts book cover')
+            a(href="//www.amazon.com/gp/product/0596517742/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=0596517742&linkCode=as2&tag=out0b4b-20&linkId=644f8ba9661c9db7dd4bb3ff6216a8d1" onClick="ga('send', 'event', 'Shop', 'clicked', 'JavaScript the Good Parts');" target='_blank')
+              img.img-responsive.img-center(src='//i.imgur.com/nR4VIU4.jpg' alt='JavaScript: The Good Parts book cover')
             .button-spacer
             a.btn.signup-btn.btn-cta(href="//www.amazon.com/gp/product/0596517742/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=0596517742&linkCode=as2&tag=out0b4b-20&linkId=644f8ba9661c9db7dd4bb3ff6216a8d1" onClick="ga('send', 'event', 'Shop', 'clicked', 'JavaScript the Good Parts');" target='_blank') Get it on Amazon
             .spacer
             hr
             .spacer
-            img.img-responsive.img-center(src='//i.imgur.com/CR2dSql.jpg' alt='Eloquent JavaScript: A Modern Introduction to Programming book cover')
+            a(href="//www.amazon.com/gp/product/1593275846/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=1593275846&linkCode=as2&tag=out0b4b-20&linkId=6870174eac22afca8e1c1ef5204f16ee" onClick="ga('send', 'event', 'Shop', 'clicked', 'Eloquent JavaScript');" target='_blank')
+              img.img-responsive.img-center(src='//i.imgur.com/CR2dSql.jpg' alt='Eloquent JavaScript: A Modern Introduction to Programming book cover')
             .button-spacer
             a.btn.signup-btn.btn-cta(href="//www.amazon.com/gp/product/1593275846/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=1593275846&linkCode=as2&tag=out0b4b-20&linkId=6870174eac22afca8e1c1ef5204f16ee" onClick="ga('send', 'event', 'Shop', 'clicked', 'Eloquent JavaScript');" target='_blank') Get it on Amazon
             .spacer
             hr
             .spacer
-            img.img-responsive.img-center(src='//i.imgur.com/IplEMb4.jpg' alt='JavaScript and jQuery: Interactive Front End Development')
+            a(href="//www.amazon.com/gp/product/1118531647/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=1118531647&linkCode=as2&tag=out0b4b-20&linkId=fdce3ef75bf3cd1cb220020a595decba" onClick="ga('send', 'event', 'Shop', 'clicked', 'JavaScript and jQuery');" target='_blank')
+              img.img-responsive.img-center(src='//i.imgur.com/IplEMb4.jpg' alt='JavaScript and jQuery: Interactive Front End Development')
             .button-spacer
             a.btn.signup-btn.btn-cta(href="//www.amazon.com/gp/product/1118531647/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=1118531647&linkCode=as2&tag=out0b4b-20&linkId=fdce3ef75bf3cd1cb220020a595decba" onClick="ga('send', 'event', 'Shop', 'clicked', 'JavaScript and jQuery');" target='_blank') Get it on Amazon
