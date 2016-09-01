@@ -63,7 +63,8 @@ export default function bugSaga(actions$, getState, { window }) {
         textMessage = textMessage + body;
       }
       window.open(
-        'https://github.com/freecodecamp/freecodecamp/issues/new?labels=beta&body=' +
+        'https://github.com/freecodecamp/freecodecamp/issues/new' +
+        '?labels=beta&body=' +
         window.encodeURIComponent(textMessage),
         '_blank'
       );
