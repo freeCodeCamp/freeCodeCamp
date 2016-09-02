@@ -1069,7 +1069,7 @@
         "This signals to JavaScript that the following quote is not the end of the string, but should instead appear inside the string. So if you were to print this to the console, you would get:",
         "<code>Alan said, \"Peter is learning JavaScript\".</code>",
         "<h4>Instructions</h4>",
-        "Use <dfn>backslashes</dfn> to assign a string to the <code>myStr</code> variable so that <em>if</em> you were to print it to the console, you would see:",
+        "Use <dfn>backslashes</dfn> to assign a string to the <code>myStr</code> variable so that if you were to print it to the console, you would see:",
         "<code>I am a \"double quoted\" string inside \"double quotes\".</code>"
       ],
       "releasedOn": "January 1, 2016",
