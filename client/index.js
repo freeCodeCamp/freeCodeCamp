@@ -15,6 +15,7 @@ import sendPageAnalytics from './utils/send-page-analytics.js';
 
 import createApp from '../common/app';
 import provideStore from '../common/app/provide-store';
+import { makeToast } from '../common/app/toasts/redux/actions';
 
 // client specific sagas
 import sagas from './sagas';
@@ -34,6 +35,21 @@ const initialState = isColdStored() ?
   getColdStorage() :
   window.__fcc__.data;
 initialState.app.csrfToken = csrfToken;
+
+const toasts = Object.keys(window.__fcc__.flash)
+  .map(key => {
+    const messages = window.__fcc__.flash[key];
+    return messages.map(message => ({
+      message: message.msg,
+      type: key,
+      timeout: 5000
+    }));
+  })
+  .reduce((toasts, messages) => toasts.concat(messages), [])
+  .map(makeToast)
+  .map(({ payload }) => payload);
+
+delete window.__fcc__;
 
 const serviceOptions = { xhrPath: '/services', context: { _csrf: csrfToken } };
 
@@ -56,7 +72,7 @@ createApp({
     syncHistoryWithStore,
     syncOptions: { adjustUrlOnReplay },
     serviceOptions,
-    initialState,
+    initialState: { ...initialState, toasts },
     middlewares: [ routerMiddleware(history) ],
     sagas: [...sagas ],
     sagaOptions,
@@ -72,10 +88,13 @@ createApp({
     }
   })
   .doOnNext(() => log('rendering'))
-  .flatMap(({ props, store }) => render(
-    provideStore(React.createElement(Router, props), store),
-    DOMContainer
-  ))
+  .flatMap(
+    ({ props, store }) => render(
+      provideStore(React.createElement(Router, props), store),
+      DOMContainer
+    ),
+    ({ store }) => store
+  )
   .subscribe(
     () => debug('react rendered'),
     err => { throw err; },
