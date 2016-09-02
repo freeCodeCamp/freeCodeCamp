@@ -19,7 +19,6 @@ export default function redirectLang(app) {
 
     if (!supportedLanguages[langCode]) {
       // language aware redirect
-      console.log('foo', path, req.method);
       return res.redirect(url);
     }
 
