@@ -11,11 +11,11 @@ import {
 import { render } from 'redux-epic';
 import { createHistory } from 'history';
 import useLangRoutes from './utils/use-lang-routes';
-import sendPageAnalytics from './utils/send-page-analytics.js';
+import sendPageAnalytics from './utils/send-page-analytics';
+import flashToToast from './utils/flash-to-toast';
 
 import createApp from '../common/app';
 import provideStore from '../common/app/provide-store';
-import { makeToast } from '../common/app/toasts/redux/actions';
 
 // client specific sagas
 import sagas from './sagas';
@@ -35,19 +35,7 @@ const initialState = isColdStored() ?
   getColdStorage() :
   window.__fcc__.data;
 initialState.app.csrfToken = csrfToken;
-
-const toasts = Object.keys(window.__fcc__.flash)
-  .map(key => {
-    const messages = window.__fcc__.flash[key];
-    return messages.map(message => ({
-      message: message.msg,
-      type: key,
-      timeout: 5000
-    }));
-  })
-  .reduce((toasts, messages) => toasts.concat(messages), [])
-  .map(makeToast)
-  .map(({ payload }) => payload);
+initialState.toasts = flashToToast(window.__fcc__.flash);
 
 delete window.__fcc__;
 
@@ -72,7 +60,7 @@ createApp({
     syncHistoryWithStore,
     syncOptions: { adjustUrlOnReplay },
     serviceOptions,
-    initialState: { ...initialState, toasts },
+    initialState,
     middlewares: [ routerMiddleware(history) ],
     sagas: [...sagas ],
     sagaOptions,
