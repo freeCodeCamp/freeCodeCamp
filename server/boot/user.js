@@ -157,6 +157,7 @@ module.exports = function(app) {
   router.get('/logout', function(req, res) {
     res.redirect(301, '/signout');
   });
+  router.get('/signup', getEmailSignup);
   router.get('/signin', getSignin);
   router.get('/signout', signout);
   router.get('/forgot', getForgot);
