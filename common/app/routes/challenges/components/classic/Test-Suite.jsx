@@ -5,7 +5,7 @@ import { Col, Row } from 'react-bootstrap';
 
 export default class extends PureComponent {
   static displayName = 'TestSuite';
-  static proptTypes = {
+  static propTypes = {
     tests: PropTypes.arrayOf(PropTypes.object)
   };
 

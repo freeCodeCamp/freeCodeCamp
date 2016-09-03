@@ -69,11 +69,11 @@ export class StepChallenge extends PureComponent {
     numOfSteps: PropTypes.number,
     stepForward: PropTypes.func,
     stepBackward: PropTypes.func,
-    completeAction: PropTypes.func,
-    submitChallenge: PropTypes.func,
+    completeAction: PropTypes.func.isRequired,
+    submitChallenge: PropTypes.func.isRequired,
     isLightBoxOpen: PropTypes.bool,
-    openlightBoxImage: PropTypes.func,
-    closeLightBoxImage: PropTypes.func
+    openLightBoxImage: PropTypes.func.isRequired,
+    closeLightBoxImage: PropTypes.func.isRequired
   };
 
   handleLightBoxOpen(e) {

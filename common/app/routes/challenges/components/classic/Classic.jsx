@@ -51,6 +51,7 @@ export class Challenge extends PureComponent {
     showPreview: PropTypes.bool,
     content: PropTypes.string,
     mode: PropTypes.string,
+    file: PropTypes.object,
     updateFile: PropTypes.func,
     executeChallenge: PropTypes.func,
     loadCode: PropTypes.func

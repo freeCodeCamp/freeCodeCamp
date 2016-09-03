@@ -44,8 +44,9 @@ export class ToolPanel extends PureComponent {
     isSimple: PropTypes.bool,
     isFrontEnd: PropTypes.bool,
     isSubmitting: PropTypes.bool,
-    toggleHelpChat: PropTypes.func,
-    openBugModal: PropTypes.func
+    toggleHelpChat: PropTypes.func.isRequired,
+    openBugModal: PropTypes.func.isRequired,
+    submitChallenge: PropTypes.func.isRequired
   };
 
   renderSubmitButton(isSignedIn, submitChallenge) {
