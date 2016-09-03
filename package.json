@@ -162,7 +162,7 @@
     "webpack-dev-server": "^1.14.0",
     "webpack-manifest-plugin": "^1.0.0",
     "webpack-stream": "^3.1.0",
-    "yargs": "^4.1.0"
+    "yargs": "^5.0.0"
   },
   "snyk": true
 }
