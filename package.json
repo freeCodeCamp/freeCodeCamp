@@ -111,7 +111,7 @@
     "reselect": "^2.0.2",
     "rx": "^4.0.0",
     "sanitize-html": "^1.11.1",
-    "snyk": "^1.18.0",
+    "snyk": "^1.19.1",
     "stampit": "^2.1.1",
     "store": "https://github.com/berkeleytrue/store.js.git#feature/noop-server",
     "validator": "^5.0.0"
