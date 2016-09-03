@@ -58,7 +58,7 @@
     "gitter-sidecar": "^1.2.3",
     "helmet": "^2.0.0",
     "helmet-csp": "^1.0.3",
-    "history": "^2.0.0",
+    "history": "^3.2.0",
     "invariant": "^2.2.1",
     "jade": "^1.11.0",
     "lodash": "^4.1.0",
