@@ -62,6 +62,7 @@ export class Challenges extends PureComponent {
 
   static propTypes = {
     title: PropTypes.string,
+    viewType: PropTypes.string,
     isStep: PropTypes.bool,
     fetchChallenges: PropTypes.func.isRequired,
     replaceChallenge: PropTypes.func.isRequired,

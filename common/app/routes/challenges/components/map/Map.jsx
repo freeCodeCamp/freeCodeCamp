@@ -33,6 +33,7 @@ export class ShowMap extends PureComponent {
     superBlocks: PropTypes.array,
     height: PropTypes.number,
     updateTitle: PropTypes.func.isRequired,
+    params: PropTypes.object,
     fetchChallenges: PropTypes.func.isRequired
   };
 

@@ -18,13 +18,14 @@ export default class ToolPanel extends PureComponent {
   static displayName = 'ToolPanel';
 
   static propTypes = {
-    executeChallenge: PropTypes.func,
-    updateHint: PropTypes.func,
+    executeChallenge: PropTypes.func.isRequired,
+    updateHint: PropTypes.func.isRequired,
     hint: PropTypes.string,
     isCodeLocked: PropTypes.bool,
-    toggleHelpChat: PropTypes.func,
-    openBugModal: PropTypes.func,
-    unlockUntrustedCode: PropTypes.func.isRequired
+    unlockUntrustedCode: PropTypes.func.isRequired,
+    toggleHelpChat: PropTypes.func.isRequired,
+    openBugModal: PropTypes.func.isRequired,
+    makeToast: PropTypes.func.isRequired
   };
 
   makeHint() {

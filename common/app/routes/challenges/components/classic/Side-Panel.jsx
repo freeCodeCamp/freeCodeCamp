@@ -66,12 +66,14 @@ export class SidePanel extends PureComponent {
     tests: PropTypes.arrayOf(PropTypes.object),
     title: PropTypes.string,
     output: PropTypes.string,
-    hints: PropTypes.string,
+    hint: PropTypes.string,
     updateHint: PropTypes.func,
     makeToast: PropTypes.func,
     toggleHelpChat: PropTypes.func,
     openBugModal: PropTypes.func,
-    unlockUntrustedCode: PropTypes.func
+    unlockUntrustedCode: PropTypes.func,
+    isCodeLocked: PropTypes.bool,
+    executeChallenge: PropTypes.func
   };
 
   renderDescription(description = [ 'Happy Coding!' ], descriptionRegex) {
