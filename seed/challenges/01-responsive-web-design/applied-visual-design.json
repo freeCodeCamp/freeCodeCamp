@@ -1,4 +1,4 @@
-{
+  {
   "name": "Applied Visual Design",
   "order": 2,
   "time": "5 hours",
@@ -119,41 +119,38 @@
       "id": "cd7123c8c441eddfaeb5bdec",
       "title": "Create a Visual Balance with the Height of an Element",
       "description": [
-In this challenge we have replaced the two anchor tags with a list group.
-
-To keep everything balanced, we should make sure every element's width and height makes sense in that context.
-Instructions
-
-Change the height of the h4 tag to 25px to make the card more compact and a little cleaner.
+"In this challenge we have replaced the two anchor tags with a list group.",
+"To keep everything balanced, we should make sure every element's width and height makes sense in that context.",
+"Change the height of the h4 tag to 25px to make the card more compact and a little cleaner."
       ],
       "challengeSeed": [
-<style>
-    h4 {
-        text-align: center;
-        height: 40px;
-    }
-    p {
-        text-align: justify;
-    }
-    .card-img-top {
-        width: 75px;
-    }
-</style>
-<div class="row">
-  <div class="col-xs-12 col-sm-6">
-    <div class="card">
-      <img class="card-img-top" src="https://bit.ly/smallgooglelogo" alt="Google's Logo">
-      <div class="card-block">
-        <h4 class="card-title">Google</h4>
-        <p class="card-text">Google was founded by Larry Page and Sergey Brin while they were Ph.D. students at Stanford University.</p>
-      </div>
-      <div class="list-group">
-        <a href="https://en.wikipedia.org/wiki/Larry_Page" class="list-group-item list-group-item-action">Larry Page</a>
-        <a href="https://en.wikipedia.org/wiki/Sergey_Brin" class="list-group-item list-group-item-action">Sergey Brin</a>
-      </div>
-    </div>
-  </div>
-</div>
+"<style>",
+"    h4 {",
+"        text-align: center;",
+"        height: 40px;",
+"    }",
+"    p {",
+"        text-align: justify;",
+"    }",
+"    .card-img-top {",
+"        width: 75px;",
+"    }",
+"</style>",
+"<div class="row">",
+"  <div class="col-xs-12 col-sm-6">",
+"    <div class="card">",
+"      <img class="card-img-top" src="https://bit.ly/smallgooglelogo" alt="Google's Logo">",
+"      <div class="card-block">",
+"        <h4 class="card-title">Google</h4>",
+"        <p class="card-text">Google was founded by Larry Page and Sergey Brin while they were Ph.D. students at Stanford University.</p>",
+"      </div>",
+"      <div class="list-group">",
+"        <a href="https://en.wikipedia.org/wiki/Larry_Page" class="list-group-item list-group-item-action">Larry Page</a>",
+"        <a href="https://en.wikipedia.org/wiki/Sergey_Brin" class="list-group-item list-group-item-action">Sergey Brin</a>",
+"      </div>",
+"    </div>",
+"  </div>",
+"</div>"
       ],
       "tests": [
 
@@ -187,45 +184,43 @@ Change the height of the h4 tag to 25px to make the card more compact and a litt
       "id": "cd7123c8c441eddfaeb5bdeb",
       "title": "Adjust the Height of an Element Using the Height Property",
       "description": [
-Similar to using width, you can specify the height of an element using the height property in CSS. Here's an example that changes the width of an image to 20px:
-
-  img {
-      width: 20px;
-  }
-Instructions
-
-Change the height of the h4 tag to 40px.
+"Similar to using width, you can specify the height of an element using the height property in CSS. Here's an example that changes the width of an image to 20px:",
+"<code>  img {</code>",
+"<code>      width: 20px;</code>",
+"<code>  }</code>",
+"Instructions",
+"Change the height of the h4 tag to 40px."
       ],
       "challengeSeed": [
-<style>
-    h4 {
-        text-align: center;
-    }
-    p {
-        text-align: justify;
-    }
-    a {
-        text-align: left;
-    }
-    .card-img-top {
-        width: 75px;
-    }
-</style>
-<div class="row">
-  <div class="col-xs-12 col-sm-6">
-    <div class="card">
-      <img class="card-img-top" src="https://bit.ly/smallgooglelogo" alt="Google's Logo">
-      <div class="card-block">
-        <h4 class="card-title">Google</h4>
-        <p class="card-text">Google was founded by Larry Page and Sergey Brin while they were Ph.D. students at Stanford University.</p>
-      </div>
-      <div class="card-block">
-        <a href="https://en.wikipedia.org/wiki/Larry_Page" class="card-link">Larry Page</a>
-        <a href="https://en.wikipedia.org/wiki/Sergey_Brin" class="card-link">Sergey Brin</a>
-      </div>
-    </div>
-  </div>
-</div>
+"<style>",
+"    h4 {",
+"        text-align: center;",
+"    }",
+"    p {",
+"        text-align: justify;",
+"    }",
+"    a {",
+"        text-align: left;",
+"    }",
+"    .card-img-top {",
+"        width: 75px;",
+"    }",
+"</style>",
+"<div class="row">",
+"  <div class="col-xs-12 col-sm-6">",
+"    <div class="card">",
+"      <img class="card-img-top" src="https://bit.ly/smallgooglelogo" alt="Google's Logo">",
+"      <div class="card-block">",
+"        <h4 class="card-title">Google</h4>",
+"        <p class="card-text">Google was founded by Larry Page and Sergey Brin while they were Ph.D. students at Stanford University.</p>",
+"      </div>",
+"      <div class="card-block">",
+"        <a href="https://en.wikipedia.org/wiki/Larry_Page" class="card-link">Larry Page</a>",
+"        <a href="https://en.wikipedia.org/wiki/Sergey_Brin" class="card-link">Sergey Brin</a>",
+"      </div>",
+"    </div>",
+"  </div>",
+"</div>"
       ],
       "tests": [
 
@@ -259,43 +254,41 @@ Change the height of the h4 tag to 40px.
       "id": "cd7123c8c7f1eddfaeb5bdeb",
       "title": "Adjust the Width of an Element Using the Width Property",
       "description": [
-You can specify the width of an element using the width property in CSS. Here's an example that changes the width of an image to 220px:
-
-  img {
-      width: 229px;
-  }
-Instructions
-
-Change the width of Google's Logo to 75px. 
-You can select the element using the class of .card-img-top.
+"You can specify the width of an element using the width property in CSS. Here's an example that changes the width of an image to 220px:",
+"<code>  img {</code>",
+"<code>      width: 229px;</code>",
+"<code>  }</code>",
+"Instructions",
+"Change the width of Google's Logo to 75px. ",
+"You can select the element using the class of .card-img-top."
       ],
       "challengeSeed": [
-<style>
-    h4 {
-        text-align: center;
-    }
-    p {
-        text-align: justify;
-    }
-    a {
-        text-align: left;
-    }
-</style>
-<div class="row">
-  <div class="col-xs-12 col-sm-6">
-    <div class="card">
-      <img class="card-img-top" src="https://bit.ly/smallgooglelogo" alt="Google's Logo">
-      <div class="card-block">
-        <h4 class="card-title">Google</h4>
-        <p class="card-text">Google was founded by Larry Page and Sergey Brin while they were Ph.D. students at Stanford University.</p>
-      </div>
-      <div class="card-block">
-        <a href="https://en.wikipedia.org/wiki/Larry_Page" class="card-link">Larry Page</a>
-        <a href="https://en.wikipedia.org/wiki/Sergey_Brin" class="card-link">Sergey Brin</a>
-      </div>
-    </div>
-  </div>
-</div>
+"<style>",
+"    h4 {",
+"        text-align: center;",
+"    }",
+"    p {",
+"        text-align: justify;",
+"    }",
+"    a {",
+"        text-align: left;",
+"    }",
+"</style>",
+"<div class="row">",
+"  <div class="col-xs-12 col-sm-6">",
+"    <div class="card">",
+"      <img class="card-img-top" src="https://bit.ly/smallgooglelogo" alt="Google's Logo">",
+"      <div class="card-block">",
+"        <h4 class="card-title">Google</h4>",
+"        <p class="card-text">Google was founded by Larry Page and Sergey Brin while they were Ph.D. students at Stanford University.</p>",
+"      </div>",
+"      <div class="card-block">",
+"        <a href="https://en.wikipedia.org/wiki/Larry_Page" class="card-link">Larry Page</a>",
+"        <a href="https://en.wikipedia.org/wiki/Sergey_Brin" class="card-link">Sergey Brin</a>",
+"      </div>",
+"    </div>",
+"  </div>",
+"</div>"
       ],
       "tests": [
 
@@ -833,7 +826,7 @@ Make sure to update your styling selector too!
 The box-shadow property applies one or more shadows to an element. This technique can be used on any state, but we are going to apply it on hover.
 We can add box-shadow to make the card stand out. The simplest way to do this is to use the following css:
 
-box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+<code>box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);</code>
 Instructions
 
 Add a box-shadow to #thumbnail on hover.
@@ -981,18 +974,18 @@ animation-duration sets the length of the animation
 
 @keyframes rule on the other hand is really straight forward. You just need to specify what happens to the animated element between 0% and 100% of the duration of the animation. To illustrate the usage of @keyframes rule and animate properties, let’s look at a simple animated element together.
 
-#anim {
-  animation-name: colorful;
-  animation-duration: 3s;
-}
-@keyframes colorful {
-  0% {
-   background-color: blue;
-  }
-  100% {
-    background-color: yellow;
-  }
-}
+<code>#anim {</code>
+<code>  animation-name: colorful;</code>
+<code>  animation-duration: 3s;</code>
+<code>}</code>
+<code>@keyframes colorful {</code>
+<code>  0% {</code>
+<code>   background-color: blue;</code>
+<code>  }</code>
+<code>  100% {</code>
+<code>    background-color: yellow;</code>
+<code>  }</code>
+<code>}</code>
 For the element with the id anim, the code snippet above sets the animation name to colorful and sets the animation duration to 3 seconds. Accordingly for the animation with the name colorful, @keyframes  sets the color to blue at the beginning of the animation (0% ) which will transition to yellow at the end of the animation (100%).
 
 Instructions
@@ -1055,20 +1048,20 @@ By using a verity of CSS properties such as right, left, top, down on elements t
 
 As shown in the code snippet below, we could achieve a downward movement followed by an upward movement by setting the top property of the 50% keyframe to 50px and setting the top property of the the first keyframe (0%) and the last keyframe (100%) to 0px;
 
-@keyframes rainbow {
-  0% {
-   background-color: blue;
-   top: 0px;
-  }
-   50% {
-   background-color: green;
-   top: 50px;
-  }
-  100% {
-    background-color: yellow;
-    top: 0px;
-  }
-}
+<code>@keyframes rainbow {</code>
+<code>  0% {</code>
+<code>   background-color: blue;</code>
+<code>   top: 0px;</code>
+<code>  }</code>
+<code>   50% {</code>
+<code>   background-color: green;</code>
+<code>   top: 50px;</code>
+<code>  }</code>
+<code>  100% {</code>
+<code>    background-color: yellow;</code>
+<code>    top: 0px;</code>
+<code>  }</code>
+<code>}</code>
 let's see if we can move our element in the horizontal dimension.
 
 Instructions
@@ -1146,9 +1139,9 @@ Using the left property, move the element with rect id 0 px to the right at 0% k
       "description": [
         To change the scale of an element, css has a handy called tool called transform property and its scale() function. For instance, if you would like to increase the size your paragraph elements you should write the following:
 
-p {
-    transform:scale(2);
-}
+<code>p {</code>
+<code>    transform:scale(2);</code>
+<code>}</code>
 Now let's change the size of one of the elements displayed in the right;
 
 Instructions
@@ -1223,7 +1216,7 @@ To learn about bezier curves in animations, we need to learn about animation-tim
 
 In CSS animations, bezier curves are used with the cubic-bezier-curve function which is a curve that lives on a 1 by 1 coordinate system. The x axis of this coordinate system is the duration of the animation and the y axis is the change in the animation. cubic-bezier-curve function consists of four main points. p0 and p3 are the beginning and end points which are always located respectively at (0, 0) and (1,1); therefore, to control the shape of the Bezier curve, CSS only allows you to change the x and y values of p1 and p2 two anchor points (x1, y1, x2, y2) . As a result of the shape of the curve, you can control the change of an element in the duration of the animation. Let’s see how cubic bezier curves look in code.
 
- animation-timing-function: cubic-bezier(0.25, 0.25, 0.75, 0.75);
+<code> animation-timing-function: cubic-bezier(0.25, 0.25, 0.75, 0.75);</code>
 In the example above, the y and x values are equivalent for each point which results in a linear change of an element during the length of an animation.
 
 For the ease of use, predefined keywords could be used instead of popular cubic-bezier-curve functions. For example, the keyword "linear" is equivalent to a cubic bezier curve that progresses with a constant change of the element during the animation length. Another useful keyword is "ease-out" that describes an animation change that speeds up first and then slows down at the end of the animation. The difference between these two are demonstrated in the screen to the right.
@@ -1316,7 +1309,7 @@ On the website, by changing the p1 and p2 anchor points you can achieve differen
 
 For our purpose, move the anchor points of the on the graph shown on the website until the configuration is similar to the following:
 
-animation-timing-function: cubic-bezier(0, 0, .58, 1);
+<code>animation-timing-function: cubic-bezier(0, 0, .58, 1);</code>
 In the above cubic-bezier configuration which is also refereed to as "ease-out", the curve moves faster through the y axis than it moves through the x axis at the beginning. As a result, the change in the animated element progresses faster than the time of the animation. At the end of the curve, the relationship between the x and y values of the curve reverses and the animation progresses slower near end of the animation duration.
 
 To see effect of this bezier curve in action, Let’s adjust the animation-timing-function of the red element to the above-mentioned cubic bezier function configuration so both of the elements progress through the animation with the same rate.
@@ -1404,7 +1397,7 @@ Note that the animation-timing-function automatically reapplies at every key-fra
 
 To simulate a juggling movement, we will be using a cubic bezier curve configuration similar to the following:
 
-cubic-bezier(0.3, 0.4, 0.5, 1.6); 
+<code>cubic-bezier(0.3, 0.4, 0.5, 1.6); </code>
 Notice that the value of y2 is larger than 1. Although the cubic bezier curve is mapped on an 1X1 coordinate system, and it can only accept x values from 0 to 1, the y value can be set to larger than one which results in a bouncing movement that is ideal for simulating the juggling ball.
 
 Apply the above mentioned cubice bezier curve to the green element to see it in effect.
@@ -1488,20 +1481,20 @@ assert($('#green').css('animation-timing-function') === 'cubic-bezier(0.311, 0.4
 We can use CSS keyframes to change the color of a button on hover.
 
 Here's an example of changing the height of an image on hover:
-<style>
-  img:hover {
-    animation-name: width;
-    animation-duration: 4s;
-  }
+<code><style></code>
+<code>  img:hover {</code>
+<code>    animation-name: width;</code>
+<code>    animation-duration: 4s;</code>
+<code>  }</code>
+<code></code>
+<code>  @keyframes width {</code>
+<code>    100% {</code>
+<code>      width: 40px;</code>
+<code>    }</code>
+<code>  }</code>
+<code></style></code>
 
-  @keyframes width {
-    100% {
-      width: 40px;
-    }
-  }
-</style>
-
-<img src="https://bit.ly/smallgooglelogo" alt="Google's Logo" />
+<code><img src="https://bit.ly/smallgooglelogo" alt="Google's Logo" /></code>
 Instructions
 
 Change the background-color of our button element on hover to #4791d0 using CSS Keyframes and selecting .btn-primary.
@@ -1586,10 +1579,10 @@ CSS treats each HTML element as its own box, which is usually referred to as the
 
 When the position of an element is set to relative, it allows you to specify how CSS should move it relative to its current position in the normal flow of the page. It pairs with the CSS offset properties of left or right, and top or bottom, which say how many pixels, percentages, or ems to move the item away from where it is normally positioned. The following example moves the paragraph 10 pixels away from the bottom:
 
-p {
-  position: relative;
-  bottom: 10px;
-}
+<code>p {</code>
+<code>  position: relative;</code>
+<code>  bottom: 10px;</code>
+<code>}</code>
 Changing an element's position to relative does not remove it from the normal flow - other elements around it still behave as if that item were there.
 
 Instructions
@@ -2117,7 +2110,7 @@ background: linear-gradient(gradient direction, color 1, color 2, color 3, ...);
 The fist argument specifies the direction from which color transition starts and the following arguments specify the order of colors used in the gradient.
 
 Example:
-background: linear-gradient(90deg, red, yellow, rgb(204, 204, 255));
+<code>background: linear-gradient(90deg, red, yellow, rgb(204, 204, 255));</code>
 
 Instructions
 
@@ -2180,7 +2173,7 @@ repeating-linear-gradient is very similar to linear-gradient with one major diff
 In the example demonstrated in the code editor on the right, the gradient starts with the color yellow at 0 pixels and it fades into the second color which is blue at 40 pixels away from the start. Then again at 40 pixels the gradient picks the third color and fades it into the forth color value (red ) which is 80 pixels away from the beginning of the gradient.
 For this example It helps to think about the color stops as pairs where every two colors blend together.
 
-0px [yellow -- blend -- blue] 40px [green -- blend -- red] 80px
+<code>0px [yellow -- blend -- blue] 40px [green -- blend -- red] 80px</code>
 
 So if every two color stop values are similar we end up with stripes that have plane colors because the blend of two similar colors result to the same color.
 
@@ -2247,7 +2240,7 @@ The transform property has a verity of functions that lets you scale, move, rota
 
 For instance, If you want to scale the paragraph element to 2.1 times of its original size, you can use the transform property in the following manner:
 
-p:hover {transform: scale(2.1);}
+<code>p:hover {transform: scale(2.1);}</code>
 
 Instructions
 
@@ -2312,7 +2305,7 @@ Now that we have learned about the scale() function of the transform property, i
 
 The following code skews the paragraph element by -32 degrees along the X axis.
 
-p {transform: skewX(-32deg);}
+<code>p {transform: skewX(-32deg);}</code>
 
 Instructions
 
@@ -2882,16 +2875,16 @@ p{
       "description": [
 One of the most popular shapes in the world is the heart shape and we are going to make it in raw css in this challenge. But we need to familiarize ourselves with :before and :after selectors first. These selectors are used to to add something to before/after a selected element. In the following example a :before selector is used to add a rectangle to an element with the class heart:
 
-.heart:before {
-  content: "";
-  background-color: yellow;
-  border-radius: 25%;
- position: absolute;
-  height: 50px;
-  width: 70px;
-  top: -50px;
-  left: 5px;
-}
+<code>.heart:before {</code>
+<code>  content: "";</code>
+<code>  background-color: yellow;</code>
+<code>  border-radius: 25%;</code>
+<code> position: absolute;</code>
+<code>  height: 50px;</code>
+<code>  width: 70px;</code>
+<code>  top: -50px;</code>
+<code>  left: 5px;</code>
+<code>}</code>
 Note that for the before and after selectors to function properly, they must have a defined content property to contain contents such as photos and strings; however, since we will only use the before and after selectors to add shapes, we will set the content property to an empty string.
 
 In the above example, the element with the id heart has a :before selector that produces a yellow rectangle with height and width of 50px and 70px. This rectangle has round corners due to its 25% border radius and is positioned absolutely at 5px from the left and 50px above the with element with the heart class.
@@ -3094,7 +3087,7 @@ To make our background cleaner and stand out more, we can add a subtle pattern. 
 
 Instructions
 
-Using the url of https://i.imgur.com/MJAkxbh.png, set the background of the whole page using the body selector.
+Using the url of <code>https://i.imgur.com/MJAkxbh.png\</code>, set the background of the whole page using the body selector.
       ],
       "challengeSeed": [
 <style>
@@ -3180,10 +3173,11 @@ There are various methods of selecting different colors that result in a harmoni
 
 Here are three colors using the split-complement scheme:
 
-cyan (#00FFFF)
-orange (#FF7D00)
-raspberry (FF007D)
-
+<ul>
+<li>cyan (#00FFFF)</li>
+<li>orange (#FF7D00)</li>
+<li>raspberry (FF007D)</li>
+</ul>
 Instructions
 
 Change the background-color property of the orange, cyan, and raspberry classes to their respective colors. Make sure to use the hex codes because the orange and raspberry in the example above are not browser-recognized color names.
@@ -3254,10 +3248,11 @@ The color wheel is a useful tool to visualize how colors relate to each other - 
 
 Some examples of complementary colors with their hex codes are:
 
-red (#FF0000) and cyan (#00FFFF)
-green (#00FF00) and magenta (#FF00FF)
-blue (#0000FF) and yellow (#FFFF00)
-
+<ul>
+<li>red (#FF0000) and cyan (#00FFFF)</li>
+<li>green (#00FF00) and magenta (#FF00FF)</li>
+<li>blue (#0000FF) and yellow (#FFFF00)</li>
+</ul>
 There are many color picking tools available online that have an option to find the complement of a color.
 
 Note for all color challenges:
@@ -3437,14 +3432,14 @@ Saturation is the amount of gray in a color. A fully saturated color has no gray
 Lightness is the amount of white or black in a color. A percentage is given ranging from 0% (black) to 100% (white), where 50% is the normal color.
 
 Here are a few examples of using hsl() with fully-saturated, normal lightness colors:
-
-Red: hsl(0, 100%, 50%) (Red can also have a hue of 360)
-Yellow: hsl(60, 100%, 50%)
-Green: hsl(120, 100%, 50%)
-Cyan: hsl(180, 100%, 50%)
-Blue: hsl(240, 100%, 50%)
-Magenta: hsl(300, 100%, 50%)
-
+<ul>
+<li>Red: hsl(0, 100%, 50%) (Red can also have a hue of 360)</li>
+<li>Yellow: hsl(60, 100%, 50%)</li>
+<li>Green: hsl(120, 100%, 50%)</li>
+<li>Cyan: hsl(180, 100%, 50%)</li>
+<li>Blue: hsl(240, 100%, 50%)</li>
+<li>Magenta: hsl(300, 100%, 50%)</li>
+</ul>
 Instructions
 
 Change the background-color of each div element based on the class names (green, cyan, or blue) using hsl(). All three should have full saturation and normal lightness.
@@ -3750,14 +3745,14 @@ assert(code.match(/nav\s*?{\s*?background-color:\s*?hsl/gi), 'message: Use <code
 In this challenge, we are going to set the values of h1 - h6.
 This will keep the consistency between each heading tag.
 Instructions
-
-Set the font-size of the h1 tag to 68px.
-Set the font-size of the h2 tag to 52px.
-Set the font-size of the h3 tag to 40px.
-Set the font-size of the h4 tag to 32px.
-Set the font-size of the h5 tag to 21px.
-Set the font-size of the h6 tag to 14px.
-
+<ul>
+<li>Set the font-size of the h1 tag to 68px.</li>
+<li>Set the font-size of the h2 tag to 52px.</li>
+<li>Set the font-size of the h3 tag to 40px.</li>
+<li>Set the font-size of the h4 tag to 32px.</li>
+<li>Set the font-size of the h5 tag to 21px.</li>
+<li>Set the font-size of the h6 tag to 14px.</li>
+</ul>
       ],
       "challengeSeed": [
 <style>
@@ -3998,13 +3993,14 @@ After setting the correct font-size of each heading tag, we are now going to set
 
 font-weight sets how thick or thin characters are in a section of text.
 Instructions
-
-Set the font-weight of the h1 tag to 700.
-Set the font-weight of the h2 tag to 600.
-Set the font-weight of the h3 tag to 500.
-Set the font-weight of the h4 tag to 400.
-Set the font-weight of the h5 tag to 300.
-Set the font-weight of the h6 tag to 200.
+<ul>
+<li>Set the font-weight of the h1 tag to 700.</li>
+<li>Set the font-weight of the h2 tag to 600.</li>
+<li>Set the font-weight of the h3 tag to 500.</li>
+<li>Set the font-weight of the h4 tag to 400.</li>
+<li>Set the font-weight of the h5 tag to 300.</li>
+<li>Set the font-weight of the h6 tag to 200.</li>
+</ul>
       ],
       "challengeSeed": [
 <style>
@@ -4080,16 +4076,26 @@ Set the font-weight of the h6 tag to 200.
       "id": "cd7123c8c441eddfaeb0bdef",
       "title": "Adjust the Line-Height of Paragraphs",
       "description": [
+In CSS, we can use line-height to change the height of each line in a paragraph.
 
+Instructions
+
+Set the line-height of our p tag to 25px.
       ],
       "challengeSeed": [
+<style>
+</style>
 
+<p>
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+</p>
       ],
       "tests": [
+assert($('p').css('display') == 'flex', 'message: Your <code>p</code> tag should have the <code>line-height</code> of <code>25px</code>.')
 
       ],
       "solutions": [
-
+"<style>\n  p {\n    line-height: 25px;\n  }\n</style>\n\n<p>\n  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\n</p>"
       ],
       "hints": [],
       "type": "waypoint",
@@ -4199,7 +4205,7 @@ Google Fonts is a great way to find free fonts to use in your projects!
 Once you have selected the font you want, insert the link tag given into the head. 
 In this case, we have already gone ahead and added Open Sans behind the scenes. The code to include this font is the following:
 
-<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+<code><link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"></code>
 
 Now we can include the font in our css by using font-family: 'FONT', FAMILY_NAME.
 In our case, "FONT" would be 'Open Sans' and "FAMILY_NAME" would be sans-serif.
