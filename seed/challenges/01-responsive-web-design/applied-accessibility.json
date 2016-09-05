@@ -5,7 +5,7 @@
   "helpRoom": "Help",
   "challenges": [
     {
-      "id": "ad7123c8c441eddfaeb5bdef",
+      "id": "ad7123c8c441ea0faeb5bdef",
       "title": "Introduction to the Applied Accessibility Challenges",
       "description": [
         "Welcome to the Applied Accessibility Challenges!",
@@ -46,7 +46,7 @@
       }
     },
     {
-      "id": "ad7123c8c441eddfaeb5bdef",
+      "id": "ad7123c8c441ea1faeb5bdef",
       "title": "Add Alt Text to Images for Visually Impaired Accessibility",
       "description": [
         "It's likely you've seen an alt attribute on an img tag in other challenges. Alt text describes the content of the image and provides a text-alternative in case the image fails to load or can't be seen by a user. It's also used by search engines to understand what an image contains to include it in search results. Here's an example:",
@@ -88,7 +88,7 @@
       }
     },
     {
-      "id": "ad7123c8c441eddfaeb5bdef",
+      "id": "ad7123c8c441ea2faeb5bdef",
       "title": "Know when alt text should be left blank",
       "description": [
         "In the last challenge, you learned that including an alt attribute on img tags is mandatory. However, sometimes images are grouped with a caption already describing them, or are used for decoration only, and alt text may seem redundant or unnecessary. In situations when an image is already explained with text content, or does not add meaning to a page, the img still needs an alt attribute, but it can be set to an empty string. Here's an example:",
@@ -144,7 +144,7 @@
       }
     },
     {
-      "id": "ad7123c8c441eddfaeb5bdef",
+      "id": "ad7123c8c441ea3faeb5bdef",
       "title": "Use Headings to Show Hierarchical Relationships of Content",
       "description": [
         "Headings (h1 through h6 elements) are workhorse tags that help provide structure and labeling to your content. Given these characteristics, screen readers can be set to read only the headings on a page so the user gets a summary. This means it is important for the heading tags in your markup to have semantic meaning and relate to each other, not be picked merely for their size values. If you were writing a paper with an introduction, a body, and a conclusion, you wouldn't put the conclusion as a subsection of the body in your outline, right? Similarly, the heading tags in a webpage need to go in order and indicate the hierarchical relationships of your content - ones with equal (or higher) rank start new implied sections, headings with lower rank start subsections of the previous one.",
@@ -202,7 +202,7 @@
       }
     },
     {
-      "id": "ad7123c8c441eddfaeb5bdef",
+      "id": "ad7123c8c441ea4faeb5bdef",
       "title": "Jump Straight to the Content Using the Main Element",
       "description": [
         "HTML5 introduced a number of new elements that give developers more options while also incorporating accessibility features. These tags include main, header, footer, nav, article, and section, among others. By default, a browser renders these elements similarly to the humble div, but using them where appropriate layers additional meaning in your markup. The tag name alone can indicate the type of information it contains, which adds what is called semantic meaning to that content. Assistive technologies can access this information to provide better page summary or navigation options to their users.",
@@ -247,7 +247,7 @@
       }
     },
     {
-      "id": "ad7123c8c441eddfaeb5bdef",
+      "id": "ad7123c8c441ea5faeb5bdef",
       "title": "Wrap Content in the Article Element",
       "description": [
         "We mentioned article as one of the new HTML5 elements that adds semantic meaning to your markup in the last challenge. Articles are sectioning elements, and are used to wrap independent, self-contained content. The tag works well with blog entries, forum posts, or news articles. Determining whether content can stand alone is usually a judgement call, but there are a couple simple tests you can use. Ask yourself if you removed all surrounding context, would that content still make sense, or similarly for text, would the content hold up if it were in an RSS feed?",
@@ -314,7 +314,7 @@
       }
     },
     {
-      "id": "ad7123c8c441eddfaeb5bdef",
+      "id": "ad7123c8c441ea6faeb5bdef",
       "title": "Make Screen Reader Navigation easier with the Header Landmark",
       "description": [
         "The next HTML5 element that adds semantic meaning and improves accessibility is the header tag. It's used to wrap introductory information or navigation links for its parent tag, and works well around content that's repeated at the top on multiple pages. Header shares the embedded landmark feature we saw with main, allowing assistive technologies to quickly navigate to that content.",
@@ -374,7 +374,7 @@
       }
     },
     {
-      "id": "ad7123c8c441eddfaeb5bdef",
+      "id": "ad7123c8c441ea7faeb5bdef",
       "title": "Make Screen Reader Navigation easier to access with the Nav Landmark",
       "description": [
         "The <code>nav</code> element is another item in the HTML5 suite with the embedded landmark feature for easy screen reader navigation. This tag is meant to wrap around the main navigation links in your page. If there are repeated site links at the bottom of the page, it isn't necessary to markup those with a nav tag as well, using a footer (covered in the next challenge) is sufficient.",
@@ -440,7 +440,7 @@
       }
     },
     {
-      "id": "ad7123c8c441eddfaeb5bdef",
+      "id": "ad7123c8c441ea8faeb5bdef",
       "title": "Make Screen Reader Navigation Easier with the Footer Landmark",
       "description": [
         "Similar to header and nav, the footer element has a built-in landmark feature that allows assistive devices to quickly navigate to it. It's primarily used to contain copyright information or links to related documents that usually sit at the bottom of a page.",
@@ -507,7 +507,7 @@
       }
     },
     {
-      "id": "ad7123c8c441eddfaeb5bdef",
+      "id": "ad7123c8c441ea9faeb5bdef",
       "title": "Improve Chart Accessibility with the Figure Element",
       "description": [
         "HTML5 introduced the figure element, along with its buddy figcaption. Used together, these items wrap a visual representation (like an image, diagram, chart, etc.) along with its caption. This gives a two-fold accessibility boost by both semantically grouping related content, and providing a text alternative that explains the figure. For data visualizations like charts, the caption can be used to briefly note the trends or conclusions for users with visual impairments, but we'll cover how to move a table version of the chart's data off-screen (using CSS) for screen reader users in another challenge.",
@@ -594,7 +594,7 @@
       }
     },
     {
-      "id": "ad7123c8c441eddfaeb5bdef",
+      "id": "ad7123c8c441e99faeb5bdef",
       "title": "Improve Form Field Accessibility with the Label Element",
       "description": [
         "Improving accessibility using semantic HTML markup applies to using both appropriate tag names and attributes. We'll cover several important scenarios using attributes in forms in the next few challenges. You may have seen a label tag wrapping the text for a specific form control item, which ties meaning to it and makes it more readable. The for attribute on a label tag explicitly associates that label with the form control and is used by screen readers. The value of the for attribute must be the same as the value of the id attribute of the form control.",
@@ -666,7 +666,7 @@
       }
     },
     {
-      "id": "ad7123c8c441eddfaeb5bdef",
+      "id": "ad7123c8c441e98faeb5bdef",
       "title": "Wrap Radio Buttons in a Fieldset Element for Better Accessibility",
       "description": [
         "Our next form topic will cover accessibility of radio buttons. Each choice is given a label with a for attribute tying to the id of the corresponding item as we covered in the last challenge. Since radio buttons often come in a group where the user must choose one, there's a way to semantically show the choices are part of a set. The fieldset tag surrounds the entire grouping of radio buttons to achieve this. It often uses a legend tag to provide a description for the grouping, which is read by screen readers for each choice in the fieldset element.",
@@ -759,7 +759,7 @@
       }
     },
     {
-      "id": "ad7123c8c441eddfaeb5bdef",
+      "id": "ad7123c8c441e96faeb5bdef",
       "title": "Add an Accessible Date Picker",
       "description": [
         "Forms often include the input field, which can be used to create several different form controls. The type attribute on this element indicates what kind of input will be created. You may have noticed the text and submit input types in prior challenges, and HTML5 introduced an option to specify a date field. Depending on browser support, a date picker shows up in the input field when it's in focus, which makes filling in a form easier for all users. For older browsers, the type will default to text, so it helps to show users the expected date format just in case.",
@@ -821,7 +821,7 @@
       }
     },
     {
-      "id": "ad7123c8c441eddfaeb5bdef",
+      "id": "ad7123c8c441e95faeb5bdef",
       "title": "Make Elements only Visible to a Screen Reader by Using Custom CSS",
       "description": [
         "Have you noticed that all of the applied accessibility challenges so far haven't used any CSS? This is to illustrate the importance of creating a logical document outline, and using semantically meaningful tags around your content before introducing the visual design aspect. However, CSS's magic can also improve accessibility on your page when you want to visually hide content meant only for screen readers. This happens when information is clearly conveyed in a visual format (like a chart), but screen reader users need an alternative presentation (like a table) to access the data. CSS is used to position the screen reader-only elements off the visual area of the browser window.",
@@ -960,7 +960,7 @@
       }
     },
     {
-      "id": "ad7123c8c441eddfaeb5bdef",
+      "id": "ad7123c8c441e94faeb5bdef",
       "title": "Standardize Times with the Datetime HTML5 Property",
       "description": [
         "Continuing with the date theme, HTML5 also introduced the time element along with a datetime attribute to standardize times. This is an inline element that can wrap a date or time on a page, then a valid format of that date is held by the datetime attribute, which is the value accessed by assistive devices. It helps avoid confusion by stating a standardized version of a time, even if it's written in an informal or colloquial manner.",
@@ -1028,7 +1028,7 @@
       }
     },
     {
-      "id": "ad7123c8c441eddfaeb5bdef",
+      "id": "ad7123c8c441e93faeb5bdef",
       "title": "Improve readability with high contrast text",
       "description": [
         "Low contrast between the foreground and background colors can make text difficult to read. Sufficient contrast improves the readability of your content, but what exactly does \"sufficient\" mean? The Web Content Accessibility Guidelines (WCAG) recommend at least a 4.5 to 1 contrast ratio for normal text. The ratio is calculated by comparing the relative luminance values of two colors, and ranges from 1:1 for the same color, or no contrast, to 21:1 for white against black, the strongest contrast. There are many contrast checking tools available online that calculate this ratio for you.",
@@ -1085,7 +1085,7 @@
       }
     },
     {
-      "id": "ad7123c8c441eddfaeb5bdef",
+      "id": "ad7123c8c441e92faeb5bdef",
       "title": "Avoid Colorblindness Colors by using Sufficient Contrast",
       "description": [
         "Color is an integral part of visual design, but its use introduces two accessibility issues. First, color alone should not be used as the only way to convey important information because screen reader users won't see it. Second, foreground and background colors need sufficient contrast so colorblind users can distinguish them. We've covered having text alternatives to address the first issue, and the last challenge introduced contrast checking tools to help with the second. The WCAG recommended contrast ratio of 4.5:1 applies for color use as well as gray-scale combinations.",
@@ -1143,7 +1143,7 @@
       }
     },
     {
-      "id": "ad7123c8c441eddfaeb5bdef",
+      "id": "ad7123c8c441e91faeb5bdef",
       "title": "Avoid Colorblindness Issues by Carefully Choosing Colors that Convey Information",
       "description": [
         "There are various forms of colorblindness, ranging from a reduced sensitivity to a certain wavelength of light to the inability to perceive color at all. The most common form is a reduced sensitivity to detect greens. If two colors with similar hues (close to the wavelength in question) are the foreground and background color of your content, a colorblind user may not be able to distinguish them. Close colors can be thought of as neighbors on the color wheel, and those combinations should be avoided when conveying important information.",
@@ -1200,7 +1200,7 @@
       }
     },
     {
-      "id": "ad7123c8c441eddfaeb5bdef",
+      "id": "ad7123c8c441e90faeb5bdef",
       "title": "Give Links Meaning by using Descriptive Link Text",
       "description": [
         "As we've seen in prior challenges, screen reader users have different options for what type of content their device reads, including skipping to (or over) landmark elements, jumping to the main content, or getting a page summary from the headings. Another option is to only hear the links available on a page. Screen readers do this by reading the link text, or what's between the anchor (a) tags. Having a list of \"click here\" or \"read more\" links isn't helpful, instead, use brief but descriptive text within the a tags to provide more meaning for these users.",
@@ -1247,7 +1247,7 @@
       }
     },
     {
-      "id": "ad7123c8c441eddfaeb5bdef",
+      "id": "ad7123c8c441e89faeb5bdef",
       "title": "Make Links Navigatable with HTML Access Keys",
       "description": [
         "HTML offers the accesskey attribute to specify a shortcut key to activate or bring focus to an element. This can make navigation more efficient for keyboard-only users. HTML5 allows this attribute to be used on any element, but it's of particular use when paired with interactive ones, such as links, buttons, and form controls.",
@@ -1304,7 +1304,7 @@
       }
     },
     {
-      "id": "ad7123c8c441eddfaeb5bdef",
+      "id": "ad7123c8c441e88faeb5bdef",
       "title": "Use tabindex to add keyboard focus to an element",
       "description": [
         "The HTML tabindex attribute has three distinct functions relating to an element's keyboard focus. Its presence on a tag indicates that element can be focused on, and the value (an integer that's positive, negative, or zero) determines the behavior. We'll start with the special values of zero and -1.",
@@ -1391,7 +1391,7 @@
       }
     },
     {
-      "id": "ad7123c8c441eddfaeb5bdef",
+      "id": "ad7123c8c441e87faeb5bdef",
       "title": "Use tabindex to specify the order of keyboard focus for several elements",
       "description": [
         "The next function that the tabindex attribute offers is to specify the exact tab order of elements. This is achieved when the value of the attribute is set to a positive number of 1 or higher. Setting a tabindex=\"1\" will bring keyboard focus to that element first, then cycle through the sequence of specified tabindex values (2, 3, etc.), before moving to default and tabindex=\"0\" items. It's important to note that when the tab order is set this way, it overrides the default order (which uses the HTML source), and may confuse users who are expecting to start navigation from the top of the page. This technique may be necessary in some circumstances, but in terms of accessibility, take care before applying it.",
@@ -1462,7 +1462,7 @@
       }
     },
     {
-      "id": "ad7123c8c441eddfaeb5bdef",
+      "id": "ad7123c8c441e86faeb5bdef",
       "title": "Improve Accessibility of Audio Content with the Audio Element",
       "description": [
         "HTML5's audio element gives semantic meaning when it wraps sound or audio stream content in your markup. Audio content also needs a text alternative to be accessible to the deaf or hard of hearing. This can be done with nearby text on the page or a link to a transcript.",
