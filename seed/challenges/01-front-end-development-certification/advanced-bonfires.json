@@ -100,7 +100,7 @@
         "sym([1, 2, 3], [5, 2, 1, 4]);"
       ],
       "solutions": [
-        "function sym(args) {\n  var index = -1;\n  var length = arguments.length;\n  var result;\n  while (++index < length) {\n    var array = arguments[index];\n    result = result ? diff(result, array).concat(diff(array, result)) : array;\n  }\n  return result ? uniq(result) : [];\n}\n\nfunction uniq(arr) {\n  var h = Object.create(null);\n  var u = [];\n  arr.forEach(function(v) {\n    if (v in h) return;\n    h[v] = true;\n    u.push(v);\n  });\n  return u;\n}\n\nfunction diff(a, b) {\n  var h = Object.create(null);\n  b.forEach(function(v) {\n    h[v] = true;  \n  });\n  return a.filter(function(v) { return !(v in h);});\n}\nsym([1, 2, 3], [5, 2, 1, 4]);\n"
+        "function sym() {\n  var arrays = [].slice.call(arguments);\n  return arrays.reduce(function (symDiff, arr) {\n    return symDiff.concat(arr).filter(function (val, idx, theArr) {\n      return theArr.indexOf(val) === idx \n        && (symDiff.indexOf(val) === -1 || arr.indexOf(val) === -1);\n    });\n  });\n}\nsym([1, 2, 3], [5, 2, 1, 4]);\n"
       ],
       "tests": [
         "assert.sameMembers(sym([1, 2, 3], [5, 2, 1, 4]), [3, 4, 5], 'message: <code>sym([1, 2, 3], [5, 2, 1, 4])</code> should return <code>[3, 4, 5]</code>.');",
