@@ -3745,7 +3745,7 @@
         "es": {
           "title": "Código de golf",
           "description": [
-            "En el juego de <a href='https://en.wikipedia.org/wiki/Golf' target='_blank'>golf</a> cada hoyo tiene un <dfn>par</dfn> promedio para el número de <dfn>golpes</dfn> necesarios para meter la pelota. Dependiendo de que tan lejos por encima o por debajo del <code>par</code> estén tus <code>golpes</code>, habrá un sobrenombre diferente.",
+            "En el juego de <a href='https://es.wikipedia.org/wiki/Golf' target='_blank'>golf</a> cada hoyo tiene un <dfn>par</dfn> promedio para el número de <dfn>golpes</dfn> necesarios para meter la pelota. Dependiendo de que tan lejos por encima o por debajo del <code>par</code> estén tus <code>golpes</code>, habrá un sobrenombre diferente.",
             "Tu función pasará un <code>par</code> y el número de <code>golpes</code>, y retornará una cadena de acuerdo a esta tabla (basada en el orden de prioridad - arriba (lo más alto) hacia abajo (lo más bajo)):",
             "<table class=\"table table-striped\"><thead><tr><th>Golpes</th><th>Retorna</th></tr></thead><tbody><tr><td>1</td><td>\"Hole-in-one!\"</td></tr><tr><td>&lt;= par - 2</td><td>\"Eagle\"</td></tr><tr><td>par - 1</td><td>\"Birdie\"</td></tr><tr><td>par</td><td>\"Par\"</td></tr><tr><td>par + 1</td><td>\"Bogey\"</td></tr><tr><td>par + 2</td><td>\"Double Bogey\"</td></tr><tr><td>&gt;= par + 3</td><td>\"Go Home!\"</td></tr></tbody></table>",
             "Tanto <code>par</code> como <code>golpes</code> siempre serán numéricos y positivos."
