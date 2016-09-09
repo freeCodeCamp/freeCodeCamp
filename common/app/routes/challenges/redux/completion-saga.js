@@ -65,7 +65,9 @@ function submitModern(type, state) {
       );
     }
   }
-  return Observable.just(makeToast({ message: 'Not quite there, yet.' }));
+  return Observable.just(
+    makeToast({ message: 'Keep trying.' })
+  );
 }
 
 function submitProject(type, state, { solution, githubLink }) {
