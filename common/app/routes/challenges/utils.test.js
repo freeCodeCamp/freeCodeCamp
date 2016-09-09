@@ -18,7 +18,7 @@ import {
 
 test('common/app/routes/challenges/utils', function(t) {
   t.test('getNextChallenge', t => {
-    t.plan(5);
+    t.plan(7);
     t.test('should return falsey when current challenge is not found', t => {
       t.plan(1);
       const entities = {
@@ -164,6 +164,80 @@ test('common/app/routes/challenges/utils', function(t) {
       t.isEqual(
         getNextChallenge('current-challenge', entities, { isDev: true }),
         comingSoon
+      );
+    });
+    t.test('should skip isBeta challenge', t => {
+      t.plan(1);
+      const currentChallenge = {
+        dashedName: 'current-challenge',
+        block: 'current-block'
+      };
+      const beta = {
+        dashedName: 'beta-challenge',
+        isBeta: true,
+        block: 'current-block'
+      };
+      const nextChallenge = {
+        dashedName: 'next-challenge',
+        block: 'current-block'
+      };
+      const shouldBeNext = getNextChallenge(
+        'current-challenge',
+        {
+          challenge: {
+            'current-challenge': currentChallenge,
+            'next-challenge': nextChallenge,
+            'beta-challenge': beta,
+            'beta-challenge2': beta
+          },
+          block: {
+            'current-block': {
+              challenges: [
+                'current-challenge',
+                'beta-challenge',
+                'beta-challenge2',
+                'next-challenge'
+              ]
+            }
+          }
+        }
+      );
+      t.isEqual(shouldBeNext, nextChallenge);
+    });
+    t.test('should not skip isBeta challenge if in dev', t => {
+      t.plan(1);
+      const currentChallenge = {
+        dashedName: 'current-challenge',
+        block: 'current-block'
+      };
+      const beta = {
+        dashedName: 'beta-challenge',
+        isBeta: true,
+        block: 'current-block'
+      };
+      const nextChallenge = {
+        dashedName: 'next-challenge',
+        block: 'current-block'
+      };
+      const entities = {
+        challenge: {
+          'current-challenge': currentChallenge,
+          'next-challenge': nextChallenge,
+          'beta-challenge': beta
+        },
+        block: {
+          'current-block': {
+            challenges: [
+              'current-challenge',
+              'beta-challenge',
+              'next-challenge'
+            ]
+          }
+        }
+      };
+      t.isEqual(
+        getNextChallenge('current-challenge', entities, { isDev: true }),
+        beta
       );
     });
   });

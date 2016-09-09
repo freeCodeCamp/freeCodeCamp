@@ -78,7 +78,11 @@ export function getNextChallenge(
     // skip is used to skip isComingSoon challenges
     block.challenges[ index + 1 + skip ]
   ];
-  if (!isDev && nextChallenge && nextChallenge.isComingSoon) {
+  if (
+    !isDev &&
+    nextChallenge &&
+    (nextChallenge.isComingSoon || nextChallenge.isBeta)
+  ) {
     // if we find a next challenge and it is a coming soon
     // recur with plus one to skip this challenge
     return getNextChallenge(current, entities, { isDev, skip: skip + 1 });
