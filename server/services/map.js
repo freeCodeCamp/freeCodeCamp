@@ -8,10 +8,15 @@ const isBeta = !!process.env.BETA;
 const challengesRegex = /^(bonfire|waypoint|zipline|basejump|checkpoint)/i;
 const log = debug('fcc:services:map');
 
-function shouldNotFilterComingSoon({ isComingSoon, isBeta: challengeIsBeta }) {
-  return isDev ||
-    !isComingSoon ||
-    (isBeta && challengeIsBeta);
+// if challenge is not isComingSoon or isBeta => load
+// if challenge is commingSoon we are in beta||dev => load
+// if challenge is beta and we are in beta||dev => load
+// else hide
+function loadComingSoonOrBetaChallenge({
+  isComingSoon,
+  isBeta: challengeIsBeta
+}) {
+  return !(isComingSoon || challengeIsBeta) || isDev || isBeta;
 }
 
 function getFirstChallenge(challengeMap$) {
@@ -42,7 +47,7 @@ function getChallengeAndBlock(
       if (
         !block ||
         !challenge ||
-        !shouldNotFilterComingSoon(challenge)
+        !loadComingSoonOrBetaChallenge(challenge)
       ) {
         return getChallengeByDashedName(
           challengeDashedName,
@@ -80,7 +85,7 @@ function getChallengeByDashedName(dashedName, challengeMap$, lang) {
         .map(key => challengeMap[key]);
     })
     .filter(challenge => {
-      return shouldNotFilterComingSoon(challenge) &&
+      return loadComingSoonOrBetaChallenge(challenge) &&
         testChallengeName.test(challenge.name);
     })
     .last({ defaultValue: null })
