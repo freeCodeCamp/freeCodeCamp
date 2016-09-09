@@ -1074,24 +1074,22 @@
       ],
       "releasedOn": "January 1, 2016",
       "challengeSeed": [
-        "var myStr; // Change this line",
+        "var myStr = \"\"; // Change this line",
         "",
         ""
       ],
       "tail": [
         "(function(){",
         "  if(typeof myStr === 'string') {",
-        "    return \"myStr = \" + myStr;",
+        "    console.log(\"myStr = \\\"\" + myStr + \"\\\"\");",
         "  } else {",
-        "    return \"myStr is undefined\";",
+        "    console.log(\"myStr is undefined\");",
         "  }",
         "})();"
       ],
-      "solutions": [
-        "var myStr = \"I am a \\\"double quoted\\\" string inside \\\"double quotes\\\".\";"
-      ],
+      "solutions": [],
       "tests": [
-        "assert(code.match(/\\\\\"/g).length === 4 && code.match(/[^\\\\]\"/g).length === 2, 'message: You should use two double quotes (<code>&quot;</code>) and four escaped double quotes (<code>&#92;&quot;</code>).');",
+        "assert(code.match(/\\\\\"/g).length === 6 && code.match(/[^\\\\]\"/g).length === 10, 'message: You should use two double quotes (<code>&quot;</code>) and four escaped double quotes (<code>&#92;&quot;</code>).');",
         "assert(myStr === \"I am a \\\"double quoted\\\" string inside \\\"double quotes\\\".\", 'message: Variable myStr should contain the string: <code>I am a \"double quoted\" string inside \"double quotes\".</code>');"
       ],
       "type": "waypoint",
