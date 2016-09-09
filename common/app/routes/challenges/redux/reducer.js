@@ -224,7 +224,7 @@ const filesReducer = handleActions(
     [types.savedCodeFound]: (state, { payload: files }) => ({
       ...files
     }),
-    [types.updateCurrentChallenge]: (state, { payload: challenge }) => {
+    [types.updateCurrentChallenge]: (state, { payload: challenge = {} }) => {
       if (challenge.type === 'mod') {
         return challenge.files;
       }
