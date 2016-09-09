@@ -68,7 +68,7 @@ const mainReducer = handleActions(
       ...state,
       challenge: payload
     }),
-    [types.updateCurrentChallenge]: (state, { payload: challenge }) => ({
+    [types.updateCurrentChallenge]: (state, { payload: challenge = {} }) => ({
       ...state,
       id: challenge.id,
       // used mainly to find code storage
