@@ -168,7 +168,6 @@
         "assert(/b\\s*=\\s*a\\s*;/g.test(code), 'message: <code>a</code> should be assigned to <code>b</code> with <code>=</code>');"
       ],
       "type": "waypoint",
-      "challengeType": 1,
       "translations": {
         "es": {
           "title": "Almacenar valores con el operador igual",
@@ -184,7 +183,8 @@
             "Asigna el contenido de <code>a</code> a la variable <code>b</code>."
           ]
         }
-      }
+      },
+      "challengeType": 1
     },
     {
       "id": "56533eb9ac21ba0edf2244a9",
@@ -213,7 +213,6 @@
       "tests": [
         "assert(/var\\s+a\\s*=\\s*9\\s*/.test(code), 'message: Initialize <code>a</code> to a value of <code>9</code>');"
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -226,7 +225,8 @@
             "Define una variable <code>a</code> con <code>var</code> e inicializala a un valor de <code>9</code>."
           ]
         }
-      }
+      },
+      "type": "waypoint"
     },
     {
       "id": "56533eb9ac21ba0edf2244aa",
@@ -262,7 +262,6 @@
         "assert(!/undefined/.test(c) && c === \"I am a String!\", 'message: <code>c</code> should not contain <code>undefined</code> and should have a value of \"I am a String!\"');",
         "assert(/a = a \\+ 1;/.test(code) && /b = b \\+ 5;/.test(code) && /c = c \\+ \" String!\";/.test(code), 'message: Do not change code below the line');"
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -273,7 +272,8 @@
             "Inicializa las tres variables <code>a</code>, <code>b</code>, y <code>c</code> con <code>5</code>, <code>10</code>, y <code>\"I am a\"</code> respectivamente de manera que no sean <code>undefined</code>."
           ]
         }
-      }
+      },
+      "type": "waypoint"
     },
     {
       "id": "56533eb9ac21ba0edf2244ab",
@@ -527,7 +527,6 @@
         "assert(/[+]{2}\\s*myVar|myVar\\s*[+]{2}/.test(code), 'message: Use the <code>++</code> operator');",
         "assert(/var myVar = 87;/.test(code), 'message: Do not change code above the line');"
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -542,7 +541,8 @@
             "Cambia el código para usar el operador <code>++</code> sobre <code>myVar</code>."
           ]
         }
-      }
+      },
+      "type": "waypoint"
     },
     {
       "id": "56533eb9ac21ba0edf2244ad",
@@ -575,7 +575,6 @@
         "assert(/[-]{2}\\s*myVar|myVar\\s*[-]{2}/.test(code), 'message: Use the <code>--</code> operator on <code>myVar</code>');",
         "assert(/var myVar = 11;/.test(code), 'message: Do not change code above the line');"
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -590,7 +589,8 @@
             "Cambia el código para usar el operador <code>--</code> en <code>myVar</code>."
           ]
         }
-      }
+      },
+      "type": "waypoint"
     },
     {
       "id": "cf1391c1c11feddfaeb4bdef",
@@ -737,7 +737,6 @@
         "assert(remainder === 2, 'message: The value of <code>remainder</code> should be <code>2</code>');",
         "assert(/\\s+?remainder\\s*?=\\s*?.*%.*;/.test(code), 'message: You should use the <code>%</code> operator');"
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -753,7 +752,8 @@
             "Asigna <code>remainder</code> igual al residuo de <code>11</code> dividido por <code>3</code> usando el operador <dfn>residuo</dfn> (<code>%</code>)."
           ]
         }
-      }
+      },
+      "type": "waypoint"
     },
     {
       "id": "56533eb9ac21ba0edf2244af",
@@ -793,7 +793,6 @@
         "assert(code.match(/\\+=/g).length === 3, 'message: You should use the <code>+=</code> operator for each variable');",
         "assert(/var a = 3;/.test(code) && /var b = 17;/.test(code) && /var c = 12;/.test(code), 'message: Do not modify the code above the line');"
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -808,7 +807,8 @@
             "Convierte las asignaciones para <code>a</code>, <code>b</code> y <code>c</code> usando el operador <code>+=</code>."
           ]
         }
-      }
+      },
+      "type": "waypoint"
     },
     {
       "id": "56533eb9ac21ba0edf2244b0",
@@ -848,7 +848,6 @@
         "assert(code.match(/-=/g).length === 3, 'message: You should use the <code>-=</code> operator for each variable');",
         "assert(/var a = 11;/.test(code) && /var b = 9;/.test(code) && /var c = 3;/.test(code), 'message: Do not modify the code above the line');"
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -862,7 +861,8 @@
             "Convierte las asignaciones para <code>a</code>, <code>b</code>, y <code>c</code> para usar el operador <code>-=</code>."
           ]
         }
-      }
+      },
+      "type": "waypoint"
     },
     {
       "id": "56533eb9ac21ba0edf2244b1",
@@ -902,7 +902,6 @@
         "assert(code.match(/\\*=/g).length === 3, 'message: You should use the <code>*=</code> operator for each variable');",
         "assert(/var a = 5;/.test(code) && /var b = 12;/.test(code) && /var c = 4\\.6;/.test(code), 'message: Do not modify the code above the line');"
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -916,7 +915,8 @@
             "Convierte las asignaciones para <code>a</code>, <code>b</code> y <code>c</code> usando el operador <code>*=</code>."
           ]
         }
-      }
+      },
+      "type": "waypoint"
     },
     {
       "id": "56533eb9ac21ba0edf2244b2",
@@ -955,7 +955,6 @@
         "assert(code.match(/\\/=/g).length === 3, 'message: You should use the <code>/=</code> operator for each variable');",
         "assert(/var a = 48;/.test(code) && /var b = 108;/.test(code) && /var c = 33;/.test(code), 'message: Do not modify the code above the line');"
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -969,7 +968,8 @@
             "Convierte las asignaciones para <code>a</code>, <code>b</code> y <code>c</code> para usar el operador <code>/=</code>."
           ]
         }
-      }
+      },
+      "type": "waypoint"
     },
     {
       "id": "56533eb9ac21ba0edf2244b3",
@@ -1087,7 +1087,6 @@
         "  }",
         "})();"
       ],
-      "solutions": [],
       "tests": [
         "assert(code.match(/\\\\\"/g).length === 6 && code.match(/[^\\\\]\"/g).length === 10, 'message: You should use two double quotes (<code>&quot;</code>) and four escaped double quotes (<code>&#92;&quot;</code>).');",
         "assert(myStr === \"I am a \\\"double quoted\\\" string inside \\\"double quotes\\\".\", 'message: Variable myStr should contain the string: <code>I am a \"double quoted\" string inside \"double quotes\".</code>');"
@@ -1139,7 +1138,6 @@
         "assert(code.match(/\"/g).length === 4 && code.match(/'/g).length === 2, 'message: You should have two single quotes <code>&#39;</code> and four double quotes <code>&quot;</code>');",
         "assert(myStr === '<a href=\"http://www.example.com\" target=\"_blank\">Link</a>', 'message: Only remove the backslashes <code>\\</code> used to escape quotes.');"
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -1153,7 +1151,8 @@
             "Cambia la cadena dada de comillas a apóstrofes y quita el escape."
           ]
         }
-      }
+      },
+      "type": "waypoint"
     },
     {
       "id": "56533eb9ac21ba0edf2244b6",
@@ -1189,7 +1188,6 @@
         "assert(myStr.match(/\\r/g).length == 1, 'message: <code>myStr</code> should have one carriage return character <code>\\r</code>');",
         "assert(myStr.match(/\\\\/g).length == 2, 'message: <code>myStr</code> should have two correctly escaped backslash characters <code>\\\\</code>');"
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -1202,7 +1200,8 @@
             "Codifica la siguiente secuencia, separada por espacios:<br><code>barra invertida tabulación tabulación retorno de carro nueva línea</code> y asignala a <code>myStr</code>"
           ]
         }
-      }
+      },
+      "type": "waypoint"
     },
     {
       "id": "56533eb9ac21ba0edf2244b7",
@@ -1244,7 +1243,6 @@
         "assert(/var\\s+myStr/.test(code), 'message: <code>myStr</code> should be created using the <code>var</code> keyword.');",
         "assert(/myStr\\s*=/.test(code), 'message: Make sure to assign the result to the <code>myStr</code> variable.');"
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -1258,7 +1256,8 @@
             "Construye <code>myStr</code> con las cadenas <code>\"This is the start. \"</code> y <code>\"This is the end.\"</code> usando el operador<code>+</code>."
           ]
         }
-      }
+      },
+      "type": "waypoint"
     },
     {
       "id": "56533eb9ac21ba0edf2244b8",
@@ -1297,7 +1296,6 @@
         "assert(myStr === \"This is the first sentence. This is the second sentence.\", 'message: <code>myStr</code> should have a value of <code>This is the first sentence. This is the second sentence.</code>');",
         "assert(code.match(/\\w\\s*\\+=\\s*[\"']/g).length > 1 && code.match(/\\w\\s*\\=\\s*[\"']/g).length > 1, 'message: Use the <code>+=</code> operator to build <code>myStr</code>');"
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -1309,7 +1307,8 @@
             "Construye <code>myStr</code> sobre varias líneas concatenando estas dos cadenas:<br><code>\"This is the first sentence. \"</code> y <code>\"This is the second sentence.\"</code> usando el operador <code>+=</code>."
           ]
         }
-      }
+      },
+      "type": "waypoint"
     },
     {
       "id": "56533eb9ac21ba0edf2244b9",
@@ -1354,7 +1353,6 @@
         "assert(typeof myName !== 'undefined' && myName.length > 2, 'message: <code>myName</code> should be set to a string at least 3 characters long');",
         "assert(code.match(/[\"']\\s*\\+\\s*myName\\s*\\+\\s*[\"']/g).length > 0, 'message: Use two <code>+</code> operators to build <code>myStr</code> with <code>myName</code> inside it');"
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -1365,7 +1363,8 @@
             "Asigna <code>myName</code> a una cadena igual a tu nombre y construye <code>myStr</code> con <code>myName</code> entre las cadenas <code>\"My name is \"</code> and <code>\" and I am swell!\"</code>"
           ]
         }
-      }
+      },
+      "type": "waypoint"
     },
     {
       "id": "56533eb9ac21ba0edf2244ed",
@@ -1411,7 +1410,6 @@
         "assert(typeof someAdjective !== 'undefined' && someAdjective.length > 2, 'message: <code>someAdjective</code> should be set to a string at least 3 characters long');",
         "assert(code.match(/myStr\\s*\\+=\\s*someAdjective\\s*/).length > 0, 'message: Append <code>someAdjective</code> to <code>myStr</code> using the <code>+=</code> operator');"
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -1422,7 +1420,8 @@
             "Asigna <code>someAdjective</code> y anexalo a <code>myStr</code> usando el operador <code>+=</code>."
           ]
         }
-      }
+      },
+      "type": "waypoint"
     },
     {
       "id": "bd7123c9c448eddfaeb5bdef",
@@ -1559,7 +1558,6 @@
         "assert(myStr === \"Hello World\", 'message: <code>myStr</code> should have a value of <code>Hello World</code>');",
         "assert(/myStr = \"Jello World\"/.test(code), 'message: Do not change the code above the line');"
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -1574,7 +1572,8 @@
             "Corrige la asignación de <code>myStr</code> para lograr el efecto deseado."
           ]
         }
-      }
+      },
+      "type": "waypoint"
     },
     {
       "id": "bd7123c9c450eddfaeb5bdef",
@@ -1756,7 +1755,6 @@
         "assert(/\\bdog\\b/.test(test1) && /\\bbig\\b/.test(test1) && /\\bran\\b/.test(test1) && /\\bquickly\\b/.test(test1),'message: <code>wordBlanks(\"dog\", \"big\", \"ran\", \"quickly\")</code> should contain all of the passed in words separated by non-word characters (and any additional words in your madlib).');",
         "assert(/\\bcat\\b/.test(test2) && /\\blittle\\b/.test(test2) && /\\bhit\\b/.test(test2) && /\\bslowly\\b/.test(test2),'message: <code>wordBlanks(\"cat\", \"little\", \"hit\", \"slowly\")</code> should contain all of the passed in words separated by non-word characters (and any additional words in your madlib).');"
       ],
-      "type": "checkpoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -1768,7 +1766,8 @@
             "Nosotros hemos proporcionado un marco de referencia para probar tus resultados con diferentes palabras. La prueba correrá tu función con varias palabras diferentes para asegurarse  que todas las palabras proporcionadas aparezcan en la salida, así como en tus cadenas adicionales."
           ]
         }
-      }
+      },
+      "type": "checkpoint"
     },
     {
       "id": "bd7993c9c69feddfaeb8bdef",
@@ -1980,7 +1979,6 @@
         "assert(myData === 8, 'message: <code>myData</code> should be equal to <code>8</code>.');",
         "assert(/myArray\\[2\\]\\[1\\]/g.test(code) && !/myData\\s*=\\s*(?:.*[-+*/%]|\\d)/g.test(code), 'message: You should be using bracket notation to read the correct value from <code>myArray</code>.');"
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -1993,7 +1991,8 @@
             "Lee de <code>myArray</code> usando la notación corchete de modo que myData sea igual a <code>8</code>"
           ]
         }
-      }
+      },
+      "type": "waypoint"
     },
     {
       "id": "56bbb991ad1ed5201cd392cb",
@@ -2237,7 +2236,6 @@
         "assert(hasNumber, 'message: The second elements in each of your sub-arrays must all be numbers');",
         "assert(count > 4, 'message: You must have at least 5 items in your list');"
       ],
-      "type": "checkpoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -2249,7 +2247,8 @@
             "Tiene que haber por lo menos 5 sub-vectores en la lista."
           ]
         }
-      }
+      },
+      "type": "checkpoint"
     },
     {
       "id": "56bbb991ad1ed5201cd392cf",
@@ -2314,7 +2313,6 @@
         "assert(\"Hi World\" === logOutput, 'message: <code>reusableFunction</code> should output \"Hi World\" to the dev console');",
         "assert(/^\\s*reusableFunction\\(\\)\\s*;/m.test(code), 'message: Call <code>reusableFunction</code> after you define it');"
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -2331,7 +2329,8 @@
             "Crea y llama una función de nombre <code>myFunction</code> que devuelva la suma de <code>a</code> y <code>b</code>."
           ]
         }
-      }
+      },
+      "type": "waypoint"
     },
     {
       "id": "56533eb9ac21ba0edf2244bd",
@@ -2399,7 +2398,6 @@
         "assert(/^\\s*functionWithArgs\\s*\\([\\w\\W]+\\)\\s*;/m.test(code), 'message: Call <code>functionWithArgs</code> after you define it.');"
       ],
       "type": "waypoint",
-      "challengeType": 1,
       "translations": {
         "es": {
           "title": "Pasando valores a funciones con argumentos",
@@ -2414,7 +2412,8 @@
             "<ol><li>Crea una función llamada <code>functionWithArgs</code> que acepte dos argumentos y da salida a su suma en la consola.</li><li>Llama la función.</li></ol>"
           ]
         }
-      }
+      },
+      "challengeType": 1
     },
     {
       "id": "56533eb9ac21ba0edf2244be",
@@ -2487,7 +2486,6 @@
         "assert(!/var\\s+oopsGlobal/.test(code), 'message: Do not declare <code>oopsGlobal</code> using the <code>var</code> keyword');"
       ],
       "type": "waypoint",
-      "challengeType": 1,
       "translations": {
         "es": {
           "title": "Alcance global y funciones",
@@ -2499,7 +2497,8 @@
             "Dentro de la función <code>fun1</code>, asigna <code>5</code> a <code>oopsGlobal</code> <strong><em>sin</em></strong> usar la palabra clave <code>var</code>."
           ]
         }
-      }
+      },
+      "challengeType": 1
     },
     {
       "id": "56533eb9ac21ba0edf2244bf",
@@ -2563,7 +2562,6 @@
         "assert(/var\\s+myVar/.test(code), 'message: Add a local <code>myVar</code> variable');"
       ],
       "type": "waypoint",
-      "challengeType": 1,
       "translations": {
         "es": {
           "title": "Alcance local y funciones",
@@ -2576,7 +2574,8 @@
             "Declara una variable local <code>myVar</code> dentro de <code>myLocalScope</code>"
           ]
         }
-      }
+      },
+      "challengeType": 1
     },
     {
       "id": "56533eb9ac21ba0edf2244c0",
@@ -2663,7 +2662,6 @@
         "assert(timesFive(2) === 10, 'message: <code>timesFive(2)</code> should return <code>10</code>');",
         "assert(timesFive(0) === 0, 'message: <code>timesFive(0)</code> should return <code>0</code>');"
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -2677,7 +2675,8 @@
             "Crea una función <code>timesFive</code> que acepte un argumento, lo multiplique por <code>5</code> y retorne el nuevo valor."
           ]
         }
-      }
+      },
+      "type": "waypoint"
     },
     {
       "id": "56533eb9ac21ba0edf2244c3",
@@ -2722,7 +2721,6 @@
         "assert(processed === 2, 'message: <code>processed</code> should have a value of <code>2</code>');",
         "assert(/processed\\s*=\\s*processArg\\(\\s*7\\s*\\)\\s*;/.test(code), 'message: You should assign <code>processArg</code> to <code>processed</code>');"
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -2736,7 +2734,8 @@
             "Llama la función <code>processArg</code> con un argumento <code>7</code> y asigna su valor de retorno a la variable <code>processed</code>."
           ]
         }
-      }
+      },
+      "type": "waypoint"
     },
     {
       "id": "56533eb9ac21ba0edf2244c6",
@@ -2798,7 +2797,6 @@
         "nextInLine(testArr, 10); assert(testArr[4] === 10, 'message: After <code>nextInLine(testArr, 10)</code>, <code>testArr[4]</code> should be <code>10</code>');"
       ],
       "type": "checkpoint",
-      "challengeType": 1,
       "translations": {
         "es": {
           "title": "Hacer cola",
@@ -2807,7 +2805,8 @@
             "Escribe una función <code>nextInLine</code> la cual toma un vector (<code>arr</code>) y un número (<code>item</code>) como argumentos. Agrega el número al final del vector, entonces retira el primer elemento del vector. La función nextInLine debe entonces devolver el elemento que se ha eliminado."
           ]
         }
-      }
+      },
+      "challengeType": 1
     },
     {
       "id": "bd7123c9c441eddfaeb5bdef",
@@ -3789,7 +3788,6 @@
         "assert(!/else/g.test(code) || !/if/g.test(code), 'message: You should not use any <code>if</code> or <code>else</code> statements');",
         "assert(code.match(/break/g).length > 2, 'message: You should have at least 3 <code>break</code> statements');"
       ],
-      "type": "waypoint",
       "MDNlinks": [
         "Switch Statement"
       ],
@@ -3806,7 +3804,8 @@
             "Escribe una sentencia <code>switch</code> que pruebe <code>val</code> y establezca <code>answer</code> para las siguientes condiciones:<br><code>1</code> - \"alpha\"<br><code>2</code> - \"beta\"<br><code>3</code> - \"gamma\"<br><code>4</code> - \"delta\""
           ]
         }
-      }
+      },
+      "type": "waypoint"
     },
     {
       "id": "56533eb9ac21ba0edf2244de",
@@ -4025,7 +4024,6 @@
         "assert(isLess(15, 10) === false, 'message: <code>isLess(15,10)</code> should return <code>false</code>');",
         "assert(!/if|else/g.test(code), 'message: You should not use any <code>if</code> or <code>else</code> statements');"
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -4040,7 +4038,8 @@
             "Arregla la función <code>isLess</code> para remover las sentencias <code>if/else</code>."
           ]
         }
-      }
+      },
+      "type": "waypoint"
     },
     {
       "id": "56533eb9ac21ba0edf2244c4",
@@ -4084,7 +4083,6 @@
         "assert(abTest(2,8) === 18 , 'message: <code>abTest(2,8)</code> should return <code>18</code>');",
         "assert(abTest(3,3) === 12 , 'message: <code>abTest(3,3)</code> should return <code>12</code>');"
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -4099,7 +4097,8 @@
             "<strong>Pista</strong><br>Recuerda que <a href='http://www.freecodecamp.com/challenges/understanding-uninitialized-variables' target='_blank'><code>undefined</code> es una palabra clave</a>, no una cadena."
           ]
         }
-      }
+      },
+      "type": "waypoint"
     },
     {
       "id": "565bbe00e9cc8ac0725390f4",
@@ -4259,7 +4258,6 @@
         "assert(shirtValue === 'jersey' , 'message: The value of <code>shirtValue</code> should be <code>\"jersey\"</code>');",
         "assert(code.match(/testObj\\.\\w+/g).length > 1, 'message: You should use dot notation twice');"
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -4273,7 +4271,8 @@
             "Lee los valores de propiedades de <code>testObj</code> usando notación punto. Asigna la variable <code>hatValue</code> igual a la propiedad objeto <code>hat</code> y asigna la variable <code>shirtValue</code> igual a la propiedad objeto <code>shirt</code>."
           ]
         }
-      }
+      },
+      "type": "waypoint"
     },
     {
       "id": "56533eb9ac21ba0edf2244c8",
@@ -4313,7 +4312,6 @@
         "assert(drinkValue === 'water' , 'message: The value of <code>drinkValue</code> should be <code>\"water\"</code>');",
         "assert(code.match(/testObj\\s*?\\[('|\")[^'\"]+\\1\\]/g).length > 1, 'message: You should use bracket notation twice');"
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -4327,7 +4325,8 @@
             "Lee los valores de las propiedades <code>\"an entree\"</code> y <code>\"the drink\"</code> de <code>testObj</code> usando la notación corchete."
           ]
         }
-      }
+      },
+      "type": "waypoint"
     },
     {
       "id": "56533eb9ac21ba0edf2244c9",
@@ -4369,7 +4368,6 @@
         "assert(/testObj\\s*?\\[.*?\\]/.test(code),'message: You should use bracket notation to access <code>testObj</code>');",
         "assert(/testObj\\s*?\\[\\s*playerNumber\\s*\\]/.test(code),'message: You should be using the variable <code>playerNumber</code> in your bracket notation');"
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -4385,7 +4383,8 @@
             "Usa la variable <code>playerNumber</code> para buscar y asignar a <code>player</code> el jugador <code>16</code> de <code>testObj</code>, usa la notación corchete."
           ]
         }
-      }
+      },
+      "type": "waypoint"
     },
     {
       "id": "56bbb991ad1ed5201cd392d1",
@@ -4687,7 +4686,6 @@
         "assert(checkObj(\"pet\") === \"kitten\", 'message: <code>checkObj(\"pet\")</code> should return  <code>\"kitten\"</code>.');",
         "assert(checkObj(\"house\") === \"Not Found\", 'message: <code>checkObj(\"house\")</code> should return  <code>\"Not Found\"</code>.');"
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -4700,7 +4698,8 @@
             "Modifica la función <code>checkObj</code> que prueba si <code>myObj</code> tiene la propiedad <code>checkProp</code>. Si la propiedad es encontrada, retorna el valor de esa propiedad. Si no, retorna <code>\"Not Found\"</code>."
           ]
         }
-      }
+      },
+      "type": "waypoint"
     },
     {
       "id": "56533eb9ac21ba0edf2244cb",
@@ -4751,7 +4750,6 @@
         "assert(myMusic[1].hasOwnProperty('formats') && Array.isArray(myMusic[1].formats), 'message: <code>myMusic[1]</code> should contain a <code>formats</code> property which is an array');",
         "assert(myMusic[1].formats.every(function(item) { return (typeof item === \"string\")}) && myMusic[1].formats.length > 1, 'message: <code>formats</code> should be an array of strings with at least two elements');"
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -4766,7 +4764,8 @@
             "Agrega un nuevo álbum al objeto <code>myMusic</code>. Agrega las cadenas <code>artist</code> y <code>title</code>, el número <code>release_year</code> y un vector de cadenas <code>formats</code>."
           ]
         }
-      }
+      },
+      "type": "waypoint"
     },
     {
       "id": "56533eb9ac21ba0edf2244cc",
@@ -4813,7 +4812,6 @@
         "assert(gloveBoxContents === \"maps\", 'message: <code>gloveBoxContents</code> should equal \"maps\"');",
         "assert(/=\\s*myStorage\\.car\\.inside\\[\\s*(\"|')glove box\\1\\s*\\]/g.test(code), 'message: Use dot and bracket notation to access <code>myStorage</code>');"
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -4826,7 +4824,8 @@
             "Accede al objeto <code>myStorage</code> para recuperar el contenido de <code>glove box</code>. Usa notación corchete para las propiedades con un espacio en su nombre."
           ]
         }
-      }
+      },
+      "type": "waypoint"
     },
     {
       "id": "56533eb9ac21ba0edf2244cd",
@@ -4880,7 +4879,6 @@
         "assert(secondTree === \"pine\", 'message: <code>secondTree</code> should equal \"pine\"');",
         "assert(/=\\s*myPlants\\[1\\].list\\[1\\]/.test(code), 'message: Use dot and bracket notation to access <code>myPlants</code>');"
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -4893,7 +4891,8 @@
             "Recupera el segundo arbol de la variable <code>myPlants</code> usando notación punto para objetos y notación corchete para vectores."
           ]
         }
-      }
+      },
+      "type": "waypoint"
     },
     {
       "id": "56533eb9ac21ba0edf2244cf",
@@ -4967,7 +4966,6 @@
         "assert(updateRecords(2468, \"tracks\", \"Free\")[2468][\"tracks\"][0] === \"1999\", 'message: After <code>updateRecords(2468, \"tracks\", \"Free\")</code>, <code>tracks</code> should have <code>\"1999\"</code> as the first element.');",
         "updateRecords(2548, \"tracks\", \"\"); assert(!collection[2548].hasOwnProperty(\"tracks\"), 'message: After <code>updateRecords(2548, \"tracks\", \"\")</code>, <code>tracks</code> should not be set');"
       ],
-      "type": "checkpoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -4983,7 +4981,8 @@
             "<strong>Nota</strong><br>No olvides usar <code>notación corchete</code> cuando <a href=\"accessing-objects-properties-with-variables\" target=\"_blank\">accedes a propiedades de objetos con variables</a>."
           ]
         }
-      }
+      },
+      "type": "checkpoint"
     },
     {
       "id": "cf1111c1c11feddfaeb5bdef",
@@ -5207,7 +5206,6 @@
         "assert(code.match(/for\\s*\\(/g).length > 1 && code.match(/myArr\\s*\\[/), 'message: You should use a <code>for</code> loop to iterate through <code>myArr</code>');",
         "assert(!code.match(/total[\\s\\+\\-]*=\\s*(\\d(?!\\s*[;,])|[1-9])/g), 'message: Do not set <code>total</code> to 20 directly');"
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -5220,7 +5218,8 @@
             "Declara e inicializa una variable <code>total</code> en <code>0</code>. Usa un ciclo <code>for</code> para añadir el valor de cada elemento del vector <code>myArr</code> a <code>total</code>."
           ]
         }
-      }
+      },
+      "type": "waypoint"
     },
     {
       "id": "56533eb9ac21ba0edf2244e1",
@@ -5257,7 +5256,6 @@
         "assert(multiplyAll([[1,2],[3,4],[5,6,7]]) === 5040, 'message: <code>multiplyAll([[1,2],[3,4],[5,6,7]])</code> should return <code>5040</code>');",
         "assert(multiplyAll([[5,1],[0.2, 4, 0.5],[3, 9]]) === 54, 'message: <code>multiplyAll([[5,1],[0.2, 4, 0.5],[3, 9]]);)</code> should return <code>54</code>');"
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -5270,7 +5268,8 @@
             "Modifica la función <code>multiplyAll</code> de manera que esta multiplique la variable <code>product</code> por cada número en los sub-vectores de <code>arr</code>"
           ]
         }
-      }
+      },
+      "type": "waypoint"
     },
     {
       "id": "cf1111c1c11feddfaeb1bdef",
@@ -5623,7 +5622,6 @@
         "assert(andCount==2, 'message: Your <code>regular expression</code> should find two occurrences of the word <code>and</code>.');",
         "assert(code.match(/\\/and\\/gi/), 'message: Use <code>regular expressions</code> to find the word <code>and</code> in <code>testString</code>.');"
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -5641,7 +5639,8 @@
             "Podemos hacer esto sustituyendo la parte <code>.</code> de nuestra expresión regular por la palabra <code>and</code>."
           ]
         }
-      }
+      },
+      "type": "waypoint"
     },
     {
       "id": "cf1111c1c12feddfaeb7bdef",
@@ -5681,7 +5680,6 @@
         "assert(digitCount === 2, 'message: Your regular expression should find two numbers in <code>testString</code>.');",
         "assert(code.match(/\\/\\\\d\\+\\//g), 'message: Use the <code>/\\d+/g</code> regular expression to find the numbers in <code>testString</code>.');"
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -5695,7 +5693,8 @@
             "Usa el selector <code>\\d</code> para hacer coincidir todos los números de la cadena, permitiendo la posibilidad de hacer coincidir números de varios dígitos."
           ]
         }
-      }
+      },
+      "type": "waypoint"
     },
     {
       "id": "cf1111c1c12feddfaeb8bdef",
@@ -5734,7 +5733,6 @@
         "assert(spaceCount === 7, 'message: Your regular expression should find seven spaces in <code>testString</code>.');",
         "assert(code.match(/\\/\\\\s\\+\\//g), 'message: Use the <code>/\\s+/g</code> regular expression to find the spaces in <code>testString</code>.');"
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -5748,7 +5746,8 @@
             "Se usa para hacer coincidir todos los espacios en blanco en una cadena."
           ]
         }
-      }
+      },
+      "type": "waypoint"
     },
     {
       "id": "cf1111c1c13feddfaeb3bdef",
@@ -5785,7 +5784,6 @@
         "assert(nonSpaceCount === 49, 'message: Your regular expression should find forty nine non-space characters in the <code>testString</code>.');",
         "assert(code.match(/\\/\\\\S\\/g/g), 'message: Use the <code>/\\S/g</code> regular expression to find non-space characters in <code>testString</code>.');"
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -5797,7 +5795,8 @@
             "Usa <code>/\\S/g</code> para contar el número de caracteres que no están en blanco en <code>testString</code>."
           ]
         }
-      }
+      },
+      "type": "waypoint"
     },
     {
       "id": "cf1111c1c12feddfaeb9bdef",
@@ -5948,9 +5947,9 @@
         ""
       ],
       "tests": [
-        "assert(typeof(runSlots($(\".slot\"))[0]) === \"number\" && runSlots($(\".slot\"))[0] > 0 && runSlots($(\".slot\"))[0] < 4, '<code>slotOne</code> should be a random number.')",
-        "assert(typeof(runSlots($(\".slot\"))[1]) === \"number\" && runSlots($(\".slot\"))[1] > 0 && runSlots($(\".slot\"))[1] < 4, '<code>slotTwo</code> should be a random number.')",
-        "assert(typeof(runSlots($(\".slot\"))[2]) === \"number\" && runSlots($(\".slot\"))[2] > 0 && runSlots($(\".slot\"))[2] < 4, '<code>slotThree</code> should be a random number.')",
+        "assert(typeof(runSlots($(\".slot\"))[0]) === \"number\" && runSlots($(\".slot\"))[0] > 0 && runSlots($(\".slot\"))[0] < 4, '<code>slotOne</code> should be a random number.');",
+        "assert(typeof(runSlots($(\".slot\"))[1]) === \"number\" && runSlots($(\".slot\"))[1] > 0 && runSlots($(\".slot\"))[1] < 4, '<code>slotTwo</code> should be a random number.');",
+        "assert(typeof(runSlots($(\".slot\"))[2]) === \"number\" && runSlots($(\".slot\"))[2] > 0 && runSlots($(\".slot\"))[2] < 4, '<code>slotThree</code> should be a random number.');",
         "assert((function(){if(editor.match(/Math\\.floor\\(\\s*Math\\.random\\(\\)\\s*\\*\\s*\\(\\s*3\\s*\\-\\s*1\\s*\\+\\s*1\\s*\\)\\s*\\)\\s*\\+\\s*1/gi) !== null){return editor.match(/slot.*?=.*?\\(.*?\\).*?/gi).length >= 3;}else{return false;}})(), 'You should have used <code>Math.floor(Math.random() * (3 - 1 + 1)) + 1;</code> three times to generate your random numbers.')"
       ],
       "type": "waypoint",
