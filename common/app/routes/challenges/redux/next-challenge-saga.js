@@ -64,7 +64,7 @@ export default function nextChallengeSaga(actions$, getState) {
         return Observable.of(
           updateCurrentChallenge(nextChallenge),
           resetUi(),
-          makeToast({ message: 'Your next challenge arrived.' }),
+          makeToast({ message: 'Your next challenge has arrived.' }),
           push(`/challenges/${nextChallenge.block}/${nextChallenge.dashedName}`)
         );
       } catch (err) {

@@ -42,7 +42,7 @@ function submitModern(type, state) {
     if (type === types.checkChallenge) {
       return Observable.of(
         makeToast({
-          message: `${randomCompliment()} Go to next challenge.`,
+          message: `${randomCompliment()} Go to your next challenge.`,
           action: 'Submit',
           actionCreator: 'submitChallenge',
           timeout: 10000
