@@ -42,7 +42,7 @@ function submitModern(type, state) {
     if (type === types.checkChallenge) {
       return Observable.of(
         makeToast({
-          message: `${randomCompliment()} Go to next challenge.`,
+          message: `${randomCompliment()} Go to your next challenge.`,
           action: 'Submit',
           actionCreator: 'submitChallenge',
           timeout: 10000
@@ -65,7 +65,9 @@ function submitModern(type, state) {
       );
     }
   }
-  return Observable.just(makeToast({ message: 'Not quite there, yet.' }));
+  return Observable.just(
+    makeToast({ message: 'Keep trying.' })
+  );
 }
 
 function submitProject(type, state, { solution, githubLink }) {
