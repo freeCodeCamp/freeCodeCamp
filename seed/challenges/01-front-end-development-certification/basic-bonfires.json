@@ -529,47 +529,6 @@
       }
     },
     {
-      "id": "579e2a2c335b9d72dd32e05c",
-      "title": "Slice and Splice",
-      "description": [
-        "You are given two arrays and an index.",
-        "Use the array methods <code>slice</code> and <code>splice</code> to copy each element of the first array into the second array, in order.",
-        "Begin inserting elements at index <code>n</code> of the second array.",
-        "Return the resulting array. The input arrays should remain the same after the function runs.",
-        "Remember to use <a href=\"http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Read-Search-Ask</a> if you get stuck. Write your own code."
-      ],
-      "challengeSeed": [
-        "function frankenSplice(arr1, arr2, n) {",
-        "  // It's alive. It's alive!",
-        "  return arr2;",
-        "}",
-        "",
-        "frankenSplice([1, 2, 3], [4, 5, 6], 1);"
-      ],
-      "tail": [
-        "var testArr1 = [1, 2];",
-        "var testArr2 = ['a', 'b'];"
-      ],
-      "tests": [
-        "assert.deepEqual(frankenSplice([1, 2, 3], [4, 5], 1), [4, 1, 2, 3, 5], 'message: <code>frankenSplice([1, 2, 3], [4, 5], 1)</code> should return <code>[4, 1, 2, 3, 5]</code>.');",
-        "assert.deepEqual(frankenSplice(testArr1, testArr2, 1), ['a', 1, 2, 'b'], 'message: <code>frankenSplice([1, 2], [\"a\", \"b\"], 1)</code> should return <code>[\"a\", 1, 2, \"b\"]</code>.');",
-        "assert.deepEqual(frankenSplice(['claw', 'tentacle'], ['head', 'shoulders', 'knees', 'toes'], 2), ['head', 'shoulders', 'claw', 'tentacle', 'knees', 'toes'], 'message: <code>frankenSplice([\"claw\", \"tentacle\"], [\"head\", \"shoulders\", \"knees\", \"toes\"], 2)</code> should return <code>[\"head\", \"shoulders\", \"claw\", \"tentacle\", \"knees\", \"toes\"]</code>.');",
-        "assert.deepEqual(frankenSplice([1, 2, 3, 4], [], 0), [1, 2, 3, 4], 'message: All elements from the first array should be added to the second array in their original order.');",
-        "assert(testArr1[0] === 1 && testArr1[1] === 2, 'message: The first array should remain the same after the function runs.');",
-        "assert(testArr2[0] === 'a' && testArr2[1] === 'b', 'message: The second array should remain the same after the function runs.');"
-      ],
-      "type": "bonfire",
-      "isRequired": true,
-      "solutions": [
-        "function frankenSplice(arr1, arr2, n) {\n  // It's alive. It's alive!\n  var result = arr2.slice();\n  for(var i = 0; i < arr1.length; i++) {\n    result.splice(n+i, 0, arr1[i]);\n  }\n  return result;\n}\n\nfrankenSplice([1, 2, 3], [4, 5], 1);\n"
-      ],
-      "MDNlinks": [
-        "Array.prototype.slice()",
-        "Array.prototype.splice()"
-      ],
-      "challengeType": 5
-    },
-    {
       "id": "af2170cad53daa0770fabdea",
       "title": "Mutations",
       "description": [
