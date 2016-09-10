@@ -4,6 +4,8 @@ import {
   getNextChallenge,
   getFirstChallengeOfNextBlock,
   getFirstChallengeOfNextSuperBlock,
+  filterCommingSoonBetaChallenge,
+  filterComingSoonBetaFromEntities,
   createMapUi,
   traverseMapUi,
   getNode,
@@ -18,7 +20,7 @@ import {
 
 test('common/app/routes/challenges/utils', function(t) {
   t.test('getNextChallenge', t => {
-    t.plan(5);
+    t.plan(7);
     t.test('should return falsey when current challenge is not found', t => {
       t.plan(1);
       const entities = {
@@ -164,6 +166,80 @@ test('common/app/routes/challenges/utils', function(t) {
       t.isEqual(
         getNextChallenge('current-challenge', entities, { isDev: true }),
         comingSoon
+      );
+    });
+    t.test('should skip isBeta challenge', t => {
+      t.plan(1);
+      const currentChallenge = {
+        dashedName: 'current-challenge',
+        block: 'current-block'
+      };
+      const beta = {
+        dashedName: 'beta-challenge',
+        isBeta: true,
+        block: 'current-block'
+      };
+      const nextChallenge = {
+        dashedName: 'next-challenge',
+        block: 'current-block'
+      };
+      const shouldBeNext = getNextChallenge(
+        'current-challenge',
+        {
+          challenge: {
+            'current-challenge': currentChallenge,
+            'next-challenge': nextChallenge,
+            'beta-challenge': beta,
+            'beta-challenge2': beta
+          },
+          block: {
+            'current-block': {
+              challenges: [
+                'current-challenge',
+                'beta-challenge',
+                'beta-challenge2',
+                'next-challenge'
+              ]
+            }
+          }
+        }
+      );
+      t.isEqual(shouldBeNext, nextChallenge);
+    });
+    t.test('should not skip isBeta challenge if in dev', t => {
+      t.plan(1);
+      const currentChallenge = {
+        dashedName: 'current-challenge',
+        block: 'current-block'
+      };
+      const beta = {
+        dashedName: 'beta-challenge',
+        isBeta: true,
+        block: 'current-block'
+      };
+      const nextChallenge = {
+        dashedName: 'next-challenge',
+        block: 'current-block'
+      };
+      const entities = {
+        challenge: {
+          'current-challenge': currentChallenge,
+          'next-challenge': nextChallenge,
+          'beta-challenge': beta
+        },
+        block: {
+          'current-block': {
+            challenges: [
+              'current-challenge',
+              'beta-challenge',
+              'next-challenge'
+            ]
+          }
+        }
+      };
+      t.isEqual(
+        getNextChallenge('current-challenge', entities, { isDev: true }),
+        beta
       );
     });
   });
@@ -781,6 +857,91 @@ test('common/app/routes/challenges/utils', function(t) {
           superBlocks
         ),
         firstChallenge
+      );
+    });
+  });
+  t.test('filterCommingSoonBetaChallenge', t => {
+    t.plan(4);
+    t.test('should return true when not coming-soon/beta', t => {
+      let isDev;
+      t.ok(filterCommingSoonBetaChallenge(isDev, {}));
+      t.ok(filterCommingSoonBetaChallenge(true, {}));
+      t.end();
+    });
+    t.test('should return false when isComingSoon', t => {
+      let isDev;
+      t.notOk(filterCommingSoonBetaChallenge(isDev, { isComingSoon: true }));
+      t.end();
+    });
+    t.test('should return false when isBeta', t => {
+      let isDev;
+      t.notOk(filterCommingSoonBetaChallenge(isDev, { isBeta: true }));
+      t.end();
+    });
+    t.test('should always return true when in dev', t => {
+      let isDev = true;
+      t.ok(filterCommingSoonBetaChallenge(isDev, { isBeta: true }));
+      t.ok(filterCommingSoonBetaChallenge(isDev, { isComingSoon: true }));
+      t.ok(filterCommingSoonBetaChallenge(
+        isDev,
+        { isBeta: true, isCompleted: true }
+      ));
+      t.end();
+    });
+  });
+  t.test('filterComingSoonBetaFromEntities', t => {
+    t.plan(2);
+    t.test('should filter isBeta|coming-soon by default', t => {
+      t.plan(2);
+      const normalChallenge = { dashedName: 'normal-challenge' };
+      const entities = {
+        challenge: {
+          'coming-soon': {
+            isComingSoon: true
+          },
+          'is-beta': {
+            isBeta: true
+          },
+          [normalChallenge.dashedName]: normalChallenge
+        }
+      };
+      const actual = filterComingSoonBetaFromEntities(entities);
+      t.isEqual(
+        Object.keys(actual.challenge).length,
+        1,
+        'did not filter the correct amount of challenges'
+      );
+      t.isEqual(
+        actual.challenge[normalChallenge.dashedName],
+        normalChallenge,
+        'did not return the correct challenge'
+      );
+    });
+    t.test('should not filter isBeta|coming-soon when isDev', t => {
+      t.plan(1);
+      const normalChallenge = { dashedName: 'normal-challenge' };
+      const entities = {
+        challenge: {
+          'coming-soon': {
+            dashedName: 'coming-soon',
+            isComingSoon: true
+          },
+          'is-beta': {
+            dashedName: 'is-beta',
+            isBeta: true
+          },
+          'is-both': {
+            dashedName: 'is-both',
+            isBeta: true
+          },
+          [normalChallenge.dashedName]: normalChallenge
+        }
+      };
+      const actual = filterComingSoonBetaFromEntities(entities, true);
+      t.isEqual(
+        Object.keys(actual.challenge).length,
+        4,
+        'filtered challenges'
       );
     });
   });

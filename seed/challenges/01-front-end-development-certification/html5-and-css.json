@@ -4827,7 +4827,7 @@
         "assert(code.match(/\\.red-text\\s*?{\\s*?color:\\s*?#FF0000\\s*?;\\s*?}/gi), 'message: Use the <code>hex code</code> for the color red instead of the word <code>red</code>.');",
         "assert($('.green-text').css('color') === 'rgb(0, 255, 0)', 'message: Give your <code>h1</code> element with the text <code>I am green!</code> the <code>color</code> green.');",
         "assert(code.match(/\\.green-text\\s*?{\\s*?color:\\s*?#00FF00\\s*?;\\s*?}/gi), 'message: Use the <code>hex code</code> for the color green instead of the word <code>green</code>.');",
-        "assert($('.dodger-blue-text').css('color') === '#1E90FF', 'message: Give your <code>h1</code> element with the text <code>I am dodger blue!</code> the <code>color</code> dodger blue.');",
+        "assert($('.dodger-blue-text').css('color') === 'rgb(30, 144, 255)', 'message: Give your <code>h1</code> element with the text <code>I am dodger blue!</code> the <code>color</code> dodger blue.');",
         "assert(code.match(/\\.dodger-blue-text\\s*?{\\s*?color:\\s*?#1E90FF\\s*?;\\s*?}/gi), 'message: Use the <code>hex code</code> for the color dodger blue instead of the word <code>dodgerblue</code>.');",
         "assert($('.orange-text').css('color') === 'rgb(255, 165, 0)', 'message: Give your <code>h1</code> element with the text <code>I am orange!</code> the <code>color</code> orange.');",
         "assert(code.match(/\\.orange-text\\s*?{\\s*?color:\\s*?#FFA500\\s*?;\\s*?}/gi), 'message: Use the <code>hex code</code> for the color orange instead of the word <code>orange</code>.');"
