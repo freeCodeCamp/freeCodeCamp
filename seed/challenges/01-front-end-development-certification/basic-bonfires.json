@@ -560,6 +560,7 @@
       ],
       "type": "bonfire",
       "isRequired": true,
+      "isBeta": true,
       "solutions": [
         "function frankenSplice(arr1, arr2, n) {\n  // It's alive. It's alive!\n  var result = arr2.slice();\n  for(var i = 0; i < arr1.length; i++) {\n    result.splice(n+i, 0, arr1[i]);\n  }\n  return result;\n}\n\nfrankenSplice([1, 2, 3], [4, 5], 1);\n"
       ],
