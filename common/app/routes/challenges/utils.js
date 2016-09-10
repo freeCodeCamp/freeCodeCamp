@@ -78,7 +78,11 @@ export function getNextChallenge(
     // skip is used to skip isComingSoon challenges
     block.challenges[ index + 1 + skip ]
   ];
-  if (!isDev && nextChallenge && nextChallenge.isComingSoon) {
+  if (
+    !isDev &&
+    nextChallenge &&
+    (nextChallenge.isComingSoon || nextChallenge.isBeta)
+  ) {
     // if we find a next challenge and it is a coming soon
     // recur with plus one to skip this challenge
     return getNextChallenge(current, entities, { isDev, skip: skip + 1 });
@@ -246,6 +250,31 @@ export function getMouse(e, [dx, dy]) {
   }
 
   return [pageX - dx, pageY - dy];
+}
+
+export function filterCommingSoonBetaChallenge(
+  isDev = false,
+  { isComingSoon, isBeta }
+) {
+  return !(isComingSoon || isBeta) ||
+    isDev;
+}
+
+export function filterComingSoonBetaFromEntities(
+  { challenge: challengeMap, ...rest },
+  isDev = false
+) {
+  const filter = filterCommingSoonBetaChallenge.bind(null, isDev);
+  return {
+    ...rest,
+    challenge: Object.keys(challengeMap)
+      .map(dashedName => challengeMap[dashedName])
+      .filter(filter)
+      .reduce((challengeMap, challenge) => {
+        challengeMap[challenge.dashedName] = challenge;
+        return challengeMap;
+      }, {})
+  };
 }
 
 // interface Node {

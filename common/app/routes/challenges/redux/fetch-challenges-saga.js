@@ -1,4 +1,5 @@
 import { Observable } from 'rx';
+import debug from 'debug';
 import { challengeSelector } from './selectors';
 import types from './types';
 import {
@@ -7,12 +8,17 @@ import {
   updateCurrentChallenge,
   initMap
 } from './actions';
-import { createMapUi } from '../utils';
+import {
+  createMapUi,
+  filterComingSoonBetaFromEntities
+} from '../utils';
 import {
   delayedRedirect,
   createErrorObservable
 } from '../../../redux/actions';
 import createNameIdMap from '../../../../utils/create-name-id-map';
+
+const isDev = debug.enabled('fcc:*');
 
 const { fetchChallenge, fetchChallenges, replaceChallenge } = types;
 
@@ -58,12 +64,16 @@ export default function fetchChallengesSaga(action$, getState, { services }) {
               redirect ? delayedRedirect(redirect) : null
             );
           }
+          const filteredEntities = filterComingSoonBetaFromEntities(
+            entities,
+            isDev
+          );
           return Observable.of(
             fetchChallengesCompleted(
-              createNameIdMap(entities),
+              createNameIdMap(filteredEntities),
               result
             ),
-            initMap(createMapUi(entities, result)),
+            initMap(createMapUi(filteredEntities, result)),
           );
         })
         .catch(createErrorObservable);
