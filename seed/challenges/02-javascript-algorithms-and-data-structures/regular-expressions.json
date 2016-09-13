@@ -6,12 +6,34 @@
   "challenges": [
     {
       "id": "5d7123c8c441eddfaeb5bdef",
-      "title": "",
-      "description": [],
-      "challengeSeed": [],
-      "tests": [],
+      "title": "Using .test",
+      "description": [
+"Regular expressions are used in programming languages to match parts of strings. You create patterns to let you help you do that matching.",
+"You will usually find regular expressions abbreviated as regex or regexp.",
+"If we wanted to find the word \"the\" in the string The dog chased the cat, we could use the following regular expression: /the/",
+"JavaScript has multiple ways to use regexes. One way to test a regex is using the .test() method. The .test() method tests the regex and will return true or false if your pattern finds something or not.",
+"var testStr = \"FreeCodeCamp\";",
+"var testRegex = /Code/;",
+"testRegex.test(testStr);",
+"// Returns true",
+"Instructions",
+"Apply the regex myRegex on the string myString using the .test() method."
+      ],
+      "challengeSeed": [
+"var myString = \"Hello, World!\";",
+"var myRegex = /Hello/;",
+"var result = myRegex; // Change this line"
+      ],
+      "tests": [
+"assert(code.match(/myRegex.test\\(\\s*myString\\s*\\)/), 'message: You should use <code>.test()</code> to test the regex.');",
+"assert(result === true, 'message: Your result should return <code>true</code>.');"
+      ],
+      "solutions": [
+
+      ],
+      "hints": [],
       "type": "waypoint",
-      "challengeType": 0,
+      "challengeType": 1,
       "translations": {
         "de": {
           "description": [],
@@ -28,8 +50,3551 @@
         "ru": {
           "description": [],
           "title": ""
+        },
+        "es": {
+          "description": [],
+          "title": ""
+        },
+        "cn": {
+          "description": [],
+          "title": ""
         }
       }
-    }
+    },
+        {
+      "id": "5d7123c8c441eddfaeb5bdef",
+      "title": "Match Literal Strings",
+      "description": [
+In the last challenge, we searched for the word "the" using the regular expression /the/. This regex is searching for a literal match of the string "the".
+
+var testStr = "Hello, my name is Kevin.";
+var testRegex = /Kevin/;
+testRegex.test(testStr);
+// Returns true
+Any other forms of "the" will not match. For example, the regex /the/ will not match "The" or "THE". We will learn later how to match these as well.
+
+var wrongRegex = /kevin/;
+wrongRegex.test(testStr);
+// Returns false
+Instructions
+
+Complete the regex waldoRegex to find "Waldo" in the string waldoIsHiding with a literal match.
+      ],
+      "challengeSeed": [
+var waldoIsHiding = "Somewhere Waldo is hiding in this text.";
+var waldoRegex = /search/; // Change this line
+var result = waldoRegex.test(waldoIsHiding);
+      ],
+      "tests": [
+assert(waldoRegex.test(waldoIsHiding), 'message: Your regex <code>waldoRegex</code> should find <code>\"Waldo\"</code>');
+assert(!waldoRegex.test('Somewhere is hiding in this text.'), 'message: Your regex <code>waldoRegex</code> should not search for anything else.');
+assert(!/\/.*\/i/.test(code), 'message: You should perform a literal string match with your regex.');
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 1,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        },
+        "es": {
+          "description": [],
+          "title": ""
+        },
+        "cn": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+        {
+      "id": "5d7123c8c441eddfaeb5bdef",
+      "title": "Match a Literal String with Different Possibilities",
+      "description": [
+Using regexes like /coding/, we can look for the pattern "coding" in another string.
+
+This is powerful to search single strings, but it's limited to only one pattern. We can search many strings using the alternation or OR operator |.
+
+This operator matches patterns before or after operator. For example, if you wanted to match "yes" or "no", the regex you want is /yes|no/.
+
+You can also search for more than just two patterns. You can do this by adding more patterns with more OR operators like /yes|no|maybe/.
+
+Instructions
+
+Complete the regex petRegex to match the pets "dog", "cat", "bird", or "fish".
+
+      ],
+      "challengeSeed": [
+var petString = "James has a pet cat.";
+var petRegex = /change/; // Change this line
+var result = petRegex.test(petString);
+      ],
+      "tests": [
+assert(petRegex.test('John has a pet dog.'), 'message: Your regex <code>petRegex</code> should return <code>true</code> for the string <code>\"John has a pet dog.\"</code>');
+assert(!petRegex.test('Emma has a pet rock.'), 'message: Your regex <code>petRegex</code> should return <code>false</code> for the string <code>\"Emma has a pet rock.\"</code>');
+assert(petRegex.test('Emma has a pet bird.'), 'message: Your regex <code>petRegex</code> should return <code>true</code> for the string <code>\"Emma has a pet bird.\"</code>');
+assert(petRegex.test('Liz has a pet cat.'), 'message: Your regex <code>petRegex</code> should return <code>true</code> for the string <code>\"Liz has a pet cat.\"</code>');
+assert(!petRegex.test('Kara has a pet dolphin.'), 'message: Your regex <code>petRegex</code> should return <code>false</code> for the string <code>\"Kara has a pet dolphin.\"</code>');
+assert(petRegex.test('Alice has a pet fish.'), 'message: Your regex <code>petRegex</code> should return <code>true</code> for the string <code>\"Alice has a pet fish.\"</code>');
+assert(!petRegex.test('Jimmy has a pet computer.'), 'message: Your regex <code>petRegex</code> should return <code>false</code> for the string <code>\"Jimmy has a pet computer.\"</code>');
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 1,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        },
+        "es": {
+          "description": [],
+          "title": ""
+        },
+        "cn": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+            {
+      "id": "5d7123c8c441eddfaeb5bdef",
+      "title": "Ignore Case While Matching",
+      "description": [
+Up until now, we've looked at regexes to do literal matches of strings. But sometimes, we might want to also match case differences.
+
+Case (or sometimes letter case) is the difference between uppercase letters and lowercase letters. Examples of uppercase are "A", "B", and "C". Examples of lowercase are "a", "b", and "c".
+
+We can match both cases using one kind of flag. There are other flags but here we will focus on the flag that ignores case.
+
+The flag that ignores case is the i flag. We can use it by appending it to the regex. An example of using this flag is /ignorecase/i. This regex can match the strings "ignorecase", "igNoreCase", and "IgnoreCase".
+
+Instructions
+
+Write a regex fccRegex to match FreeCodeCamp, no matter its case. Your regex should not match any abbreviations or variations with spaces.
+      ],
+      "challengeSeed": [
+var myString = "FreeCodeCamp";
+var fccRegex = /change/; // Change this line
+var result = fccRegex.test(myString);
+      ],
+      "tests": [
+assert(fccRegex.test('freecodecamp'), 'message: Your regex should match <code>freecodecamp</code>');
+assert(fccRegex.test('FreeCodeCamp'), 'message: Your regex should match <code>FreeCodeCamp</code>');
+assert(fccRegex.test('FreecodeCamp'), 'message: Your regex should match <code>FreecodeCamp</code>');
+assert(fccRegex.test('FreeCodecamp'), 'message: Your regex should match <code>FreeCodecamp</code>');
+assert(!fccRegex.test('Free Code Camp'), 'message: Your regex should not match <code>Free Code Camp</code>');
+assert(fccRegex.test('FreeCOdeCamp'), 'message: Your regex should match <code>FreeCOdeCamp</code>');
+assert(!fccRegex.test('FCC'), 'message: Your regex should not match <code>FCC</code>');
+assert(fccRegex.test('FrEeCoDeCamp'), 'message: Your regex should match <code>FrEeCoDeCamp</code>');
+assert(fccRegex.test('FrEeCodECamp'), 'message: Your regex should match <code>FrEeCodECamp</code>');
+assert(fccRegex.test('FReeCodeCAmp'), 'message: Your regex should match <code>FReeCodeCAmp</code>');
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 1,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        },
+        "es": {
+          "description": [],
+          "title": ""
+        },
+        "cn": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+        {
+      "id": "5d7123c8c441eddfaeb5bdef",
+      "title": "Extract Matches",
+      "description": [
+So far, we have only been checking if a pattern exists or not within a string. We can also extract the actual matches we found with the .match() method.
+
+To use the .match() method, you will apply this method on a string and pass in the regex.
+
+"Hello, World!".match(/Hello/);
+// Returns ["Hello"]
+var ourStr = "Regular expressions";
+var ourRegex = /expressions/;
+ourStr.match(ourRegex);
+// Returns ["expressions"]
+Instructions
+
+Apply the .match() method to extract the word coding
+      ],
+      "challengeSeed": [
+var extractStr = "Extract the word 'coding' from this string.";
+var codingRegex = /change/; // Change this line
+var result = extractStr; // Change this line
+      ],
+      "tests": [
+assert(result.join() === "coding", 'message: The <code>result</code> should have the word <code>coding</code>');
+assert(codingRegex.source === "coding", 'message: Your regex <code>codingRegex</code> should search for <code>coding</code>');
+assert(code.match(/\.match\(.*\)/), 'message: You should use the <code>.match()</code> method.');
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 1,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        },
+        "es": {
+          "description": [],
+          "title": ""
+        },
+        "cn": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+        {
+      "id": "5d7123c8c441eddfaeb5bdef",
+      "title": "Find More Than First Match",
+      "description": [
+So far, we have only been able to extract or search a pattern once.
+
+var testStr = "Repeat, Repeat, Repeat";
+var ourRegex = /Repeat/;
+testStr.match(ourRegex);
+// Returns ["Repeat"]
+To search or extract a pattern more than once, we can use the g flag.
+
+var repeatRegex = /Repeat/g;
+testStr.match(repeatRegex);
+// Returns ["Repeat", "Repeat", "Repeat"]
+Instructions
+
+Using the regex starRegex, find and extract both "Twinkle" words from the string twinkleStar
+
+Note
+You can have multiple flags on your regex like /search/gi
+      ],
+      "challengeSeed": [
+var twinkleStar = "Twinkle, twinkle, little star";
+var starRegex = /change/; // Change this line
+var result = twinkleStar; // Change this line
+      ],
+      "tests": [
+assert(starRegex.flags.match(/g/).length == 1, 'message: Your regex <code>starRegex</code> should use the global flag <code>g</code>');
+assert(starRegex.flags.match(/i/).length == 1, 'message: You regex <code>starRegex</code> should use the case insensitive flag <code>i</code>');
+assert(result.sort().join() == twinkleStar.match(/twinkle/gi).sort().join(), 'message: Your match should match both occurances of the word <code>\"Twinkle\"</code>');
+assert(result.length == 2, 'message: Your match <code>result</code> should have two elements in it.');
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 1,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        },
+        "es": {
+          "description": [],
+          "title": ""
+        },
+        "cn": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+        {
+      "id": "5d7123c8c441eddfaeb5bdef",
+      "title": "Match Anything with Wildcard Period",
+      "description": [
+Sometimes you won't (or don't need to) know the exact characters in your patterns. Thinking of all words that match, say, a misspelling would take a long time. Luckily, we can save time using the wildcard character .
+
+The wildcard character . will match any one character. The wildcard is also called dot and period. You can use the wildcard character just like any other character in the regex. For example, if we wanted to match "hug", "huh", "hut", and "hum", we can use the regex /hu./ to match all four words.
+
+var humStr = "I'll hum a song";
+var hugStr = "Bear hug";
+var huRegex = /hu./;
+humStr.match(huRegex); // Returns ["hum"]
+hugStr.match(huRegex); // Returns ["hug"]
+Instructions
+
+Complete the regex unRegex so that it'll match the strings "run", "sun", "fun", "pun", "nun", and "bun". Your regex should be using the wildcard character for the first letter.
+      ],
+      "challengeSeed": [
+var exampleStr = "Let's have fun with regular expressions!";
+var unRegex = /change/; // Change this line
+var result = unRegex.test(exampleStr);
+      ],
+      "tests": [
+assert(code.match(/\.test(.*)/), 'message: You should use the <code>.test()</code> method.');
+assert(/\./.test(unRegex.source), 'message: You should use the wildcard character in your regex <code>unRegex</code>');
+assert(unRegex.test("Let us go on a run."), 'message: Your regex <code>unRegex</code> should match <code>"run"</code> in <code>"Let us go on a run."</code>');
+assert(unRegex.test("The sun is out today."), 'message: Your regex <code>unRegex</code> should match <code>"sun"</code> in <code>"The sun is out today."</code>');
+assert(unRegex.test("Coding is a lot of fun."), 'message: Your regex <code>unRegex</code> should match <code>"fun"</code> in <code>"Coding is a lot of fun."</code>');
+assert(unRegex.test("Seven days without a pun makes one weak."), 'message: Your regex <code>unRegex</code> should match <code>"pun"</code> in <code>"Seven days without a pun makes one weak."</code>');
+assert(unRegex.test("One takes a vow to be a nun."), 'message: Your regex <code>unRegex</code> should match <code>"nun"</code> in <code>"One takes a vow to be a nun."</code>');
+assert(unRegex.test("She got fired from the hot dog stand for putting her hair in a bun."), 'message: Your regex <code>unRegex</code> should match <code>"bun"</code> in <code>"She got fired from the hot dog stand for putting her hair in a bun."</code>');
+assert(!unRegex.test("There is a bug in my code."), 'message: Your regex <code>unRegex</code> should not match <code>"There is a bug in my code."</code>');
+assert(!unRegex.test("Can me if you can."), 'message: Your regex <code>unRegex</code> should not match <code>"Catch me if you can."</code>');
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 1,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        },
+        "es": {
+          "description": [],
+          "title": ""
+        },
+        "cn": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+        {
+      "id": "5d7123c8c441eddfaeb5bdef",
+      "title": "Match Single Character with Multiple Possibilities",
+      "description": [
+We learned how to match literal patterns (/literal/) and wildcard character (/./). Those are the extremes of regular expressions. We can also search for a nice medium between them.
+
+We can also search for a literal pattern with some flexibility with character classes. Character classes allow you to define a group of characters you wish to match.
+
+For example, lets match "bag", "big", and "bug" but not "bog". We can create the regex /b[aiu]g/ to do this for us. The [aiu] is the character class that will only match the characters "a", "i", or "u".
+
+var bigStr = "big"; 
+var bagStr = "bag";
+var bugStr = "bug";
+var bogStr = "bog";
+var bgRegex = /b[aiu]g/;
+bigStr.match(bgRegex); // Returns ["big"]
+bagStr.match(bgRegex); // Returns ["bag"]
+bugStr.match(bgRegex); // Returns ["bug"]
+bogStr.match(bgRegex); // Returns ["bog"]
+Instructions
+
+Use a character class with vowels (a, e, i, o, u) in your regex vowelRegex to count the number of vowels in the string quoteSample.
+
+Note
+Be sure to count upper- and lowercase vowels.
+      ],
+      "challengeSeed": [
+var quoteSample = "Beware of bugs in the above code; I have only proved it correct, not tried it.";
+var vowelRegex = /change/; // Change this line
+var result = vowelRegex; // Change this line
+      ],
+      "tests": [
+The number of vowels you counted is 24
+Your regex vowelRegex should have a character class with the vowels
+Your regex vowelRegex should use the global and case insensitive flags
+Your regex should not match any consonants (use in assert [b-df-hj-np-tv-z])
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 1,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        },
+        "es": {
+          "description": [],
+          "title": ""
+        },
+        "cn": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+        {
+      "id": "5d7123c8c441eddfaeb5bdef",
+      "title": "Match Letters of the Alphabet",
+      "description": [
+We saw how we can use character sets to specify a group of characters to match, but what happens when we want to match a large range of characters (e.g every letter in the alphabet)? We could type out all letters into our character set, but that would be tedious. Lucky for us, there is a built-in feature that we can use.
+
+Inside a character set, you can define a range of characters to match using a hyphen character (-).
+
+For example, if we want to match lowercase letters a through e we would use [a-e].
+
+var catStr = "cat"; 
+var batStr = "bat";
+var matStr = "mat";
+var bgRegex = /[a-e]at/;
+catStr.match(bgRegex); // Returns true
+batStr.match(bgRegex); // Returns true
+matStr.match(bgRegex); // Returns false
+Instructions
+
+Match all the letters in the string quoteSample and return the length.
+
+Note
+
+You should match both upper and lowercase letters.
+      ],
+      "challengeSeed": [
+var quoteSample = "The quick brown fox jumps over the lazy dog.";
+var alphabetRegex = /change/; // Change this line
+var result = alphabetRegex; // Change this line
+      ],
+      "tests": [
+assert(result === 35, 'message: Your regex <code>unRegex</code> should match match all letters in <code>quoteSample</code> and return the length.');
+
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 1,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        },
+        "es": {
+          "description": [],
+          "title": ""
+        },
+        "cn": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+        {
+      "id": "5d7123c8c441eddfaeb5bdef",
+      "title": "Match Numbers and the Alphabet",
+      "description": [
+Range matching is not only limited to letters. It is also possible to match a range of numbers.
+
+For example, [0-5] matches any number between 0 and 5. And yes, they match 0 and 5 too!
+
+We can take it a step further and combine a range of letters and numbers in a single character set.
+
+var jennyStr = "Jenny8675309";
+var myRegex = /[a-z0-9]/ig;
+jennyStr.match(myRegex); // matches all letters and numbers in jennyStr
+Instructions
+
+Create a single regex that matches a range of letters between h and s, and a range of numbers between 2 and 6.
+
+      ],
+      "challengeSeed": [
+var quoteSample = "Blueberry 3.141592653s are delicious.";
+var myRegex = /change/; // Change this line
+var result = myRegex; // Change this line
+      ],
+      "tests": [
+assert(result.length === 17, 'message:  <code>result</code> should return an array with 17 elements.');
+
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 1,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        },
+        "es": {
+          "description": [],
+          "title": ""
+        },
+        "cn": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+        {
+      "id": "5d7123c8c441eddfaeb5bdef",
+      "title": "Match Single Characters Not Specified",
+      "description": [
+So far, we've been creating characters set of characters we want to match, but we could also create character set of characters we do not want to match. These types of character sets are called negated character sets.
+
+To create a negated character set, you place a caret character (^) after the opening bracket and before the characters you do not want to match.
+
+For example, /[^aeiou]/gi matches all characters that are not a vowel. Characters like .,!,[,@,/ and even white spaces are matched with our negated vowel character set.
+
+Instructions
+
+Create a single regex that matches all characters that are not a number or a vowel.
+      ],
+      "challengeSeed": [
+var quoteSample = "3 blind mice.";
+var myRegex = /change/; // Change this line
+var result = myRegex; // Change this line
+      ],
+      "tests": [
+assert(result.length === 9, 'message:  <code>result</code> should return an array with 9 elements.');
+
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 1,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        },
+        "es": {
+          "description": [],
+          "title": ""
+        },
+        "cn": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+        {
+      "id": "5d7123c8c441eddfaeb5bdef",
+      "title": "Match Characters that Occur One or More Times",
+      "description": [
+Sometimes, you need to find if a character or set of characters (a grouped pattern) occurs at least once. Yes, it can occur more than once! But has to be in the string at least once.
+
+We can use + sign to check if that is the case. Remember, the character or pattern has to be present consecutively. That is, the character or character set has to repeat.
+
+For example, /a+/g would match 'abc' once, would also match 'aabc' once and return ['aa'], but would return ['a', 'a'] when matched against 'abab'. Since there is no 'a' in 'bcd', it won't match this string.
+
+Instructions
+
+We want to find number of times s occurs more than once in Mississippi. Use + sign properly in your RegEx to return proper result
+      ],
+      "challengeSeed": [
+var difficultSpelling = "Mississippi";
+var myRegex = /change/; // Change this line
+var result = difficultSpelling.match(myRegEx)
+      ],
+      "tests": [
+assert(result.length === 2, 'message:  <code>result</code> should return an array with 2 elements.');
+assert(result === ['ss', 'ss'], 'message: <code>result</code> should pick the right occurances of multiple `s`');
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 1,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        },
+        "es": {
+          "description": [],
+          "title": ""
+        },
+        "cn": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+        {
+      "id": "5d7123c8c441eddfaeb5bdef",
+      "title": "Match Characters that Occur Zero or More Times",
+      "description": [
+We can use the plus character + to look for characters that occur one or more times. We can also look for characters that occur zero or more times.
+
+The asterisk or star character * can be used to search for characters that occur zero or more times.
+
+var sWord1 = "seed";
+var sWord2 = "saw";
+var kWord = "kite";
+var sRegex = /s.*/; # Search words starting with `s`
+sRegex.test(sWord1); // Returns true
+sRegex.test(sWord2); // Returns true
+sRegex.test(kWord); // Returns false
+Instructions
+
+Create a regex starWarsRegex that'll match the saga Star Wars movie titles that start with Star Wars.
+
+      ],
+      "challengeSeed": [
+var starWars = "Star Wars";
+var starWarsRegex = /change/; // Change this line
+var result = starWars.match(starWarsRegex);
+      ],
+      "tests": [
+assert(starWarsRegex.test("Star Wars: The Phantom Menace"), 'message: Your regex should match `Star Wars: The Phatom Menace`.');
+assert(starWarsRegex.test("Star Wars: Attack of the Clones"), 'message: Your regex should match `Star Wars: Attack of the Clones`.');
+assert(starWarsRegex.test("Star Wars: Revenge of the Sith"), 'message: Your regex should match `Star Wars: Revenge of the Sith`.');
+assert(starWarsRegex.test("Star Wars: A New Hope"), 'message: Your regex should match `Star Wars: A New Hope`.');
+assert(starWarsRegex.test("Star Wars: The Empire Strikes Back"), 'message: Your regex should match `Star Wars: The Empire Strikes Back`.');
+assert(starWarsRegex.test("Star Wars: Return of the Jedi"), 'message: Your regex should match `Star Wars: Return of the Jedi`.');
+assert(starWarsRegex.test("Star Wars: The Force Awakens"), 'message: Your regex should match `Star Wars: The Force Awakens`.');
+assert(!starWarsRegex.test("The Clone Wars"), 'message: Your regex shouldn\'t match `The Clone Wars`');
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 1,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        },
+        "es": {
+          "description": [],
+          "title": ""
+        },
+        "cn": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+        {
+      "id": "5d7123c8c441eddfaeb5bdef",
+      "title": "Find Characters with Lazy Matching",
+      "description": [
+In RegEx, greedy matching means taking as bigger chunk of a string as possible and returning as match. But sometimes we might want to get the lazy match - smallest possible chunk of String that satisfies the given RegEx.
+
+Matching 'titanic' against /t[a-z]*i/, essentially a pattern that starts with 't', and ends with 'i'; with some letters in between.
+
+The match would return ['titani'], because it's a greedy match by default; and finds the largest sub-string possible to fit this pattern.
+
+We can make it be lazy, if we use ?. 'titanic' matched against /t[a-z]*?i/ returns ['ti']
+
+Instructions
+
+Fix the RegEx /<.*>/ to return the HTML tag '<h1>' and not the text '<h1>Winter is coming</h1>'. '.' in regular expression means any character.
+      ],
+      "challengeSeed": [
+var text = '<h1>Winter is coming</h1>'
+var myRegEx = /<.*>/; // Change this line
+var result = text.match(myRegEx);
+      ],
+      "tests": [
+assert(result === ['<h1>'], 'message:  <code>result</code> should return an array with <h1> in it');
+
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 1,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        },
+        "es": {
+          "description": [],
+          "title": ""
+        },
+        "cn": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+        {
+      "id": "5d7123c8c441eddfaeb5bdef",
+      "title": "One or more criminal hunt",
+      "description": [
+There was a breakout and a group of criminals ran away. We don't have the number count. But we know that they're paranoid and stay close to each other around crowd gatherings.
+You're a detective and must get to all of them at once.
+
+✨ one or more quantifier (+) matches one or more characters placed adjacently in a string.
+
+Example
+
+The regex /z+/ matches a series of one or more letter z continuously placed, in a string.
+i.e. it matches the following strings
+
+'z'
+'zzzzzz'
+'ABCzzzz'
+'zzzzABC'
+'abczzzzzzzzzzzzzzzzzzzzzabc'
+But it doesn't match the following strings as there are no letter z character.
+
+''
+'ABC'
+'abcabc'
+Instruction
+
+Use the greedy one or more quantifier to search for the criminal group.
+A criminal is denoted by the letter C (capital C).
+      ],
+      "challengeSeed": [
+// example crowd gathering
+const crowd = 'P1P2P3P4P5P6CCCP7P8P9'
+
+// edit the following regex
+const reCriminals = /./
+
+const matchedCriminals = crowd.match(reCriminals)
+console.log(matchedCriminals)
+      ],
+      "tests": [
+assert('C'.match(reCriminals) && 'C'.match(reCriminals)[0] == 'C', 'message: RegEx must match <em>one</em> criminal ("<code>C</code>") in <code>\'C\'</code>')
+
+assert('CC'.match(reCriminals) && 'CC'.match(reCriminals)[0] == 'CC', 'message: RegEx must match <em>two</em> criminals ("<code>CC</code>") in <code>\'CC\'</code>')
+
+assert('P1P5P4CCCP2P6P3'.match(reCriminals) && 'P1P5P4CCCP2P6P3'.match(reCriminals)[0] == 'CCC', 'message: RegEx must match <em>three</em> criminals ("<code>CCC</code>") in <code>\'P1P5P4CCCP2P6P3\'</code>')
+
+assert('P6P2P7P4P5CCCCCP3P1'.match(reCriminals) && 'P6P2P7P4P5CCCCCP3P1'.match(reCriminals)[0] == 'CCCCC', 'message: RegEx must match <em>five</em> criminals ("<code>CCCCC</code>") in <code>\'P6P2P7P4P5CCCCCP3P1\'</code>')
+
+assert(!reCriminals.test(''), 'message: RegEx must not match any criminal ("<code>C</code>") in <code>\'\'</code>')
+
+assert(!reCriminals.test('P1P2P3'), 'message: RegEx must not match any criminal ("<code>C</code>") in <code>\'P1P2P3\'</code>')
+
+assert('P2P1P5P4CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCP3'.match(reCriminals) && 'P2P1P5P4CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCP3'.match(reCriminals)[0] == 'CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC', 'message: RegEx must match <em>fifty</em> criminals ("<code>CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC</code>") in <code>\'P2P1P5P4CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCP3\'</code>')
+
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 1,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        },
+        "es": {
+          "description": [],
+          "title": ""
+        },
+        "cn": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+        {
+      "id": "5d7123c8c441eddfaeb5bdef",
+      "title": "Match Beginning String Patterns",
+      "description": [
+Regular expressions can not only are used to look for quantity of patterns. They can also be used to search specific positions in strings.
+
+Using the caret character (^), you can search for patterns at the beginning of strings.
+
+var firstString = "Ricky is first and can be found.";
+var firstRegex = /^Ricky/;
+firstRegex.test(firstString);
+// Returns true
+var notFirst = "You can't find Ricky now.";
+firstRegex.test(notFirst);
+// Returns false
+Instructions
+
+Use the caret character in a regex to find "Cal" only in the beginning of the string rickyAndCal.
+✨ Match Strings Only at the Beginning (Anchors 1 - ^)
+      ],
+      "challengeSeed": [
+var rickyAndCal = "Cal and Ricky both like racing."
+var calRegex = /change/; // Change this line
+var result = rickyAndCal.test(calRegex);
+      ],
+      "tests": [
+assert(calRegex.source == "Cal", 'message: You must search for `"Cal"` with a capital letter.');
+assert(calRegex.flags == "", 'message: You should not use any flags.');
+assert(calRegex.test("Cal and Ricky both like racing."), 'message: You must match `"Cal"` at the beginning of the string.');
+assert(!calRegex.test("Ricky and Cal both like racing."), 'message: You must not match `"Cal"` in the middle of a string.');
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 1,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        },
+        "es": {
+          "description": [],
+          "title": ""
+        },
+        "cn": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+        {
+      "id": "5d7123c8c441eddfaeb5bdef",
+      "title": "",
+      "description": [
+Before, we learned to use the caret character to search for patterns at the beginning of strings. There is also a way to search for patterns at the end of strings.
+
+We can search the end of strings using the dollar sign character $ at the end of the regex.
+
+var theEnding = "This is a never ending story";
+var storyRegex = /story$/;
+storyRegex.test(theEnding);
+// Returns true
+var noEnding = "Sometimes a story will have to end";
+storyRegex.test(noEnding);
+// Returns false
+Instructions
+
+Use the anchor character dollar sign ($) to match the string "caboose" at the end of the string caboose.
+✨ Match Strings Only at the End (Anchors 2 - $)
+      ],
+      "challengeSeed": [
+var caboose = "The last car on a train is the caboose";
+var lastRegex = /change/; // Change this line
+var result = lastRegex.test(caboose);
+      ],
+      "tests": [
+assert(lastRegex.source == "caboose$", 'message: You must search for `"caboose"` with the dollar sign anchor in your regex.');
+assert(lastRegex.flags == "", 'message: You should not use any flags.');
+assert(lastRegex.test("The last car on a train is the caboose"), 'message: You should match `"caboose"` at the end of the string `"The last car on a train is the caboose"`');
+
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 1,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        },
+        "es": {
+          "description": [],
+          "title": ""
+        },
+        "cn": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+        {
+      "id": "5d7123c8c441eddfaeb5bdef",
+      "title": "Match All Letters and Numbers",
+      "description": [
+Using character classes, we were able to search for all letter of the alphabet with [a-z]. This kind of character class is common enough that there is a shortcut for it, plus some extra characters as well.
+
+The closest character class in JavaScript to match the alphabet is \w. This shortcut is equal to [A-Za-z0-9_]. This character class matches upper and lowercase letters plus numbers. Note, this character class also includes the underscore character (_).
+
+var longHand = /[A-Za-z0-9_]+/;
+var shortHand = /\w+/;
+var numbers = "42";
+var varNames = "important_var";
+longHand.test(numbers); // Returns true
+shortHand.test(numbers); // Returns true
+longHand.test(varNames); // Returns true
+shortHand.test(varNames); // Returns true
+These shortcut character classes are also known as shorthand character classes.
+
+Instructions
+
+Use the shorthand character class \w to count the number of alphanumeric characters in various quotes and strings.
+✨ Use Character Classes to Match Alphanumerics (Pre-Defined Character Class 1 - \w)
+      ],
+      "challengeSeed": [
+var quoteSample = "The five boxing wizards jump quickly.";
+var alphabetRegexV2 = /change/; // Change this line
+var result = quoteSample.match(alphabetRegexV2).length;
+      ],
+      "tests": [
+assert(alphabetRegexV2.global, 'message: Your regex should use the global flag.');
+assert(/i/.test(alphabetRegexV2.flags), 'message: Your regex should use the case insensitive flag.');
+assert("The five boxing wizards jump quickly.".match(alphabetRegexV2).length === 31, 'message: Your regex should find 31 alphanumeric characters in `"The five boxing wizards jump quickly."`');
+assert("Pack my box with five dozen liquor jugs.".match(alphabetRegexV2).length === 32, 'message: Your regex should find 32 alphanumeric characters in `"Pack my box with five dozen liquor jugs."`');
+assert("How vexingly quick daft zebras jump!".match(alphabetRegexV2).length === 30, 'message: Your regex should find 30 alphanumeric characters in `"How vexingly quick daft zebras jump!"`');
+assert("123 456 7890 ABC def GHI jkl MNO pqr STU vwx YZ.".match(alphabetRegexV2).length === 36, 'message: Your regex should find 36 alphanumeric characters in `"123 456 7890 ABC def GHI jkl MNO pqr STU vwx YZ."`');
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 1,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        },
+        "es": {
+          "description": [],
+          "title": ""
+        },
+        "cn": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+        {
+      "id": "5d7123c8c441eddfaeb5bdef",
+      "title": "Match Everything But Letters and Numbers",
+      "description": [
+We've learned that you can use a shortcut to match alphanumerics [A-Za-z0-9_] using \w. A natural pattern we might want to search for is the opposite of alphanumerics.
+
+We can search for the opposite of the \w with \W. Note, this opposite pattern uses a capital letter. This shortcut is the same as [^A-Za-z0-9_].
+
+var shortHand = /\W/;
+var numbers = "42%";
+var sentence = "Coding!";
+shortHand.test(numbers); // Returns "%"
+shortHand.test(sentence); // Returns "!"
+Instructions
+
+Use the shorthand character class \W to count the number of non-alphanumeric characters in various quotes and strings.
+✨ Use Character Classes to Match Non-Alphanumerics (Pre-Defined Character Class 2 - \W)
+      ],
+      "challengeSeed": [
+var quoteSample = "The five boxing wizards jump quickly.";
+var nonAlphabetRegex = /change/; // Change this line
+var result = nonAlphabetRegex.match(quoteSample).length();
+      ],
+      "tests": [
+Count number of non-alphanumeric characters in "The five boxing wizards jump quickly." (6 characters)
+Count number of non-alphanumeric characters in "Pack my box with five dozen liquor jugs." (8 characters)
+Count number of non-alphanumeric characters in "How vexingly quick daft zebras jump!" (6 characters)
+Count number of non-alphanumeric characters in "123 456 7890 ABC def GHI jkl MNO pqr STU vwx YZ." (12 characters)
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 1,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        },
+        "es": {
+          "description": [],
+          "title": ""
+        },
+        "cn": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+        {
+      "id": "5d7123c8c441eddfaeb5bdef",
+      "title": "Match All Numbers",
+      "description": [
+We've learned shortcuts for common string patterns like alphanumerics. Another common pattern is looking for just digits or numbers.
+
+The shortcut to look for digit characters is \d, with a lowercase d. This is equal to the character class [0-9], which looks for a single character of any number between zero and nine.
+
+Instructions
+
+Use the shortcut character class \d to count how many digits are in movie titles. Written out numbers do not count.
+✨ Use Character Classes to Match Digits (Pre-Defined Character Class 1 - \d)
+
+
+      ],
+      "challengeSeed": [
+var numString = "Your sandwich will be $5.00";
+var numRegex = /change/; // Change this line
+var result = numRegex.match(numString).length();
+      ],
+      "tests": [
+Test use of the \d shortcut.
+Test use of the global flag g
+"9" (1 digit)
+"Catch 22" (2 digits)
+"101 Dalmatians" (3 digits)
+"One, Two, Three" (0 digits)
+"21 Jump Street" (2 digits)
+"2001: A Space Odyssey" (4 digits)
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 1,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        },
+        "es": {
+          "description": [],
+          "title": ""
+        },
+        "cn": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+        {
+      "id": "5d7123c8c441eddfaeb5bdef",
+      "title": "Match All Non-Numbers",
+      "description": [
+Previously, we're learned to search for digits using the shortcut \d using a lowercase d. We can also search for non-digits using a similar shortcut but using an uppercase D instead.
+
+The shortcut to look for non-digit characters is \D, with an uppercase D. This is equal to the character class [^0-9], which looks for a single character that isn't a number between zero and nine.
+
+Instructions
+
+Use the shortcut character class for non-digits \D to count how many non-digits are in movie titles.
+✨ Use Character Classes to Match Non-Digits (Pre-Defined Character Class 1 - \D)
+      ],
+      "challengeSeed": [
+var numString = "Your sandwich will be $5.00";
+var noNumRegex = /change/; // Change this line
+var result = numRegex.match(numString).length();
+      ],
+      "tests": [
+Test use of the \D shortcut.
+Test use of the global flag g
+"9" (0 non-digits)
+"Catch 22" (6 non-digits)
+"101 Dalmatians" (11 non-digits)
+"One, Two, Three" (15 non-digits)
+"21 Jump Street" (12 non-digits)
+"2001: A Space Odyssey" (17 non-digits)
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 1,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        },
+        "es": {
+          "description": [],
+          "title": ""
+        },
+        "cn": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+        {
+      "id": "5d7123c8c441eddfaeb5bdef",
+      "title": "Restrict Possible Usernames",
+      "description": [
+Usernames are used everywhere on the internet. They are what give us a unique identity to use.
+
+Let's assume that you need to check all the usernames in a database. Here are some simple constraints on how are usernames can be.
+
+The only digit numbers in our usernames have to be at the end. There can be zero or more of them at the end.
+
+Our username letters can be lowercase and uppercase.
+
+Our usernames have to be at least two characters long. A two letter username has to be alphabet letter characters.
+
+Instructions
+
+Change the regex userCheck to fit the constraints listed above.
+✨ Checkpoint 1 Needs new name (Checkpoint 1 - Match simple literal patterns with optional followers (character class))
+      ],
+      "challengeSeed": [
+var username = "JackOfAllTrades";
+var userCheck = /change/; // Change this line
+var result = userCheck.test(username);
+      ],
+      "tests": [
+assert(userCheck.test("JACK"), 'message: Your regex should match `JACK`');
+assert(!userCheck.test("J"), 'message: Your regex shouldn\'t match `J`');
+assert(userCheck.test("Oceans11"), 'message: Your regex should match `Oceans11`');
+assert(userCheck.test("RegexGuru"), 'message: Your regex should match `RegexGuru`');
+assert(!userCheck.test("007"), 'message: Your regex shouldn\'t match `007`');
+assert(!userCheck.test("9"), 'message: Your regex shouldn\'t match `9`');
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 1,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        },
+        "es": {
+          "description": [],
+          "title": ""
+        },
+        "cn": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+        {
+      "id": "5d7123c8c441eddfaeb5bdef",
+      "title": "Match Whitespace",
+      "description": [
+We have so far been match letters of the alphabet and numbers. We can also match the whitespace or spaces that occur between letters too.
+
+We can search for whitespace using \s, which is a lowercase s. This pattern not only matches whitespace, but also carriage return, tab, form feed, and new line characters. You can think of it being similar to the character class [ \f\n\r\t\v].
+
+var whiteSpace = "Whitespace. Whitespace everywhere!"
+var spaceRegex = /\s/g;
+whiteSpace.match(spaceRegex);
+// Returns [" ", " "]
+Instructions
+
+Change the regex countWhiteSpace to look for multiple whitespace characters in a string.
+✨ Use Character Classes to Match Whitespace (Pre-Defined Character Class 1 - \s)
+      ],
+      "challengeSeed": [
+var sample = "Whitespace is important in separating words";
+var countWhiteSpace = /change/; // Change this line
+var result = sample.match(countWhiteSpace);
+      ],
+      "tests": [
+assert(countWhiteSpace.global,  'message: Your regex should use the global flag.');
+assert("Men are from Mars and women are from Venus.".match(countWhiteSpace).length === 8, 'message: Your regex should find eight spaces in `"Men are from Mars and women are from Venus."`');
+assert("Space: the final frontier.".match(countWhiteSpace).length === 3, 'message: Your regex should find three spaces in `"Space: the final frontier."`');
+assert("MindYourPersonalSpace".match(countWhiteSpace) === null, 'message: Your regex should find no spaces in `"MindYourPersonalSpace"`');
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 1,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        },
+        "es": {
+          "description": [],
+          "title": ""
+        },
+        "cn": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+        {
+      "id": "5d7123c8c441eddfaeb5bdef",
+      "title": "Match Non-Whitespace Characters",
+      "description": [
+We learned about searching for whitespace using \s, with a lowercase s. We can also search for everything but whitespace.
+
+We can search for non-whitespace using \S, which is an uppercase s. This pattern will not match whitespace, carriage return, tab, form feed, and new line characters. You can think of it being similar to the character class [^ \f\n\r\t\v].
+
+var whiteSpace = "Whitespace. Whitespace everywhere!"
+var nonSpaceRegex = /\S/g;
+whiteSpace.match(nonSpaceRegex).length; // Returns 32
+Instructions
+
+Change the regex countNonWhiteSpace to look for multiple non-whitespace characters in a string.
+✨Use Character Classes to Match Non-Whitespace (Pre-Defined Character Class 1 - \S)
+      ],
+      "challengeSeed": [
+var sample = "Whitespace is important in separating words";
+var countNonWhiteSpace = /change/; // Change this line
+var result = sample.match(countNonWhiteSpace);
+
+      ],
+      "tests": [
+assert(countNonWhiteSpace.global,  'message: Your regex should use the global flag.');
+assert("Men are from Mars and women are from Venus.".match(countNonWhiteSpace).length === 35, 'message: Your regex should find 35 non-spaces in `"Men are from Mars and women are from Venus."`');
+assert("Space: the final frontier.".match(countNonWhiteSpace).length === 23, 'message: Your regex should find 23 non-spaces in `"Space: the final frontier."`');
+assert("MindYourPersonalSpace".match(countNonWhiteSpace) === 21, 'message: Your regex should find 21 non-spaces in `"MindYourPersonalSpace"`');
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 1,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        },
+        "es": {
+          "description": [],
+          "title": ""
+        },
+        "cn": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+        {
+      "id": "5d7123c8c441eddfaeb5bdef",
+      "title": "Specify Upper and Lower Number of Matches",
+      "description": [
+We can use the plus sign + to look for one or more characters and we can use asterisk * to look for zero or more characters. These are convenient but sometimes we want to only match a certain range of patterns.
+
+We can specify the lower and upper number of patterns with quantity specifiers. Quantity specifiers are used with curly brackets ({ and }). You will put two numbers between the curly brackets for the lower and upper number of patterns.
+
+For example, to match only the letter a appearing between 3 and 5 times in the string "ah", your regex would be /a{3,5}h/.
+
+var A4 = "aaaah";
+var A2 = "aah";
+var multipleA = /a{3,5}h/;
+multipleA.test(A4); // Returns true
+multipleA.test(A2); // Returns false
+Instructions
+
+Edit the regex to match only 3 to 6 letter h's in the word "Oh no".
+✨ Specify Upper and Lower Number of Matches (Quantity Specifiers 3 - {x,y})
+
+
+      ],
+      "challengeSeed": [
+var ohStr = "Ohhh no";
+var ohRegex = /change/; // Change this line
+var result = ohRegex.test(ohStr);
+      ],
+      "tests": [
+assert(ohRegex.source.match(/{.*?}/).length > 0, 'message: Your regex should use curly brackets.');
+assert(!ohRegex.test("Ohh no"), 'message: Your regex should not match `"Ohh no"`');
+assert(ohRegex.test("Ohhh no"), 'message: Your regex should match `"Ohhh no"`');
+assert(ohRegex.test("Ohhhh no"), 'message: Your regex should match `"Ohhhh no"`');
+assert(ohRegex.test("Ohhhhh no"), 'message: Your regex should match `"Ohhhhh no"`');
+assert(ohRegex.test("Ohhhhhh no"), 'message: Your regex should match `"Ohhhhhh no"`');
+assert(!ohRegex.test("Ohhhhhhh no"), 'message: Your regex should not match `"Ohhhhhh no"`');
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 1,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        },
+        "es": {
+          "description": [],
+          "title": ""
+        },
+        "cn": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+        {
+      "id": "5d7123c8c441eddfaeb5bdef",
+      "title": "Specify Only Lower Number of Matches",
+      "description": [
+We can specify the lower and upper number of patterns with quantity specifiers using curly brackets. Sometimes we only want to specify the lower number of patterns with no upper limit.
+
+To only specify the lower number of patterns, just keep the first number and a comma afterwards.
+
+For example, to match only the string "hah" with the letter a appearing at least 3 times, your regex would be /ha{3,}h/.
+
+var A4 = "haaaah";
+var A2 = "haah";
+var A100 = "h" + "a".repeat(100) + "h";
+var multipleA = /ha{3,}h/;
+multipleA.test(A4); // Returns true
+multipleA.test(A2); // Returns false
+multipleA.test(A100); // Returns true
+Instructions
+
+Edit the regex to match the word "Hazzah" only when it has four or more letter z's.
+✨ Specify Only Lower Number of Matches (Quantity Specifiers 4 - {x,})
+
+
+      ],
+      "challengeSeed": [
+var haStr = "Hazzzzah";
+var haRegex = /change/; // Change this line
+var result = haRegex.test(haStr);
+      ],
+      "tests": [
+assert(haRegex.source.match(/{.*?}/).length > 0, 'message: Your regex should use curly brackets.');
+assert(!haRegex.test("Hazzah"), 'message: Your regex should not match `"Hazzah"`');
+assert(!haRegex.test("Hazzzah"), 'message: Your regex should not match `"Hazzzah"`');
+assert(haRegex.test("Hazzzzah"), 'message: Your regex should match `"Hazzzzah"`');
+assert(haRegex.test("Hazzzzzah"), 'message: Your regex should match `"Ohhhhh"`');
+assert(haRegex.test("Hazzzzzzah"), 'message: Your regex should match `"Hazzzzzzah"`');
+assert(haRegex.test("Ha" + "z".repeat(30) + "ah"), 'message: Your regex should match `"Hazzah"` with 30 `z`\'s in it.');
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 1,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        },
+        "es": {
+          "description": [],
+          "title": ""
+        },
+        "cn": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+        {
+      "id": "5d7123c8c441eddfaeb5bdef",
+      "title": "Specify Upper Number of Matches",
+      "description": [
+We can specify the lower and upper number of patterns with quantity specifiers using curly brackets. Sometimes we only want a specific number of matches.
+
+To specify a certain number of patterns, just have that one number between the curly brackets.
+
+For example, to match only the word "hah" with the letter a 3 times, your regex would be /ha{3}h/.
+
+var A4 = "haaaah";
+var A3 = "haaah";
+var multipleHA = /a{3}h/;
+multipleHA.test(A4); // Returns false
+multipleHA.test(A3); // Returns true
+multipleHA.test(A100); // Returns false
+Instructions
+
+Edit the regex to match the word "Timber" only when it has four letter m's.
+✨ Specify Certain Number of Matches (Quantity Specifiers 5 - {y})
+      ],
+      "challengeSeed": [
+var timStr = "Timmmmber";
+var timRegex = /change/; // Change this line
+var result = timRegex.test(timStr);
+      ],
+      "tests": [
+assert(!timRegex.source.match(/{.*?}/) === null, 'message: Your regex should use curly brackets.');
+assert(!timRegex.test("Timber"), 'message: Your regex should not match `"Timber"`');
+assert(!timRegex.test("Timmber"), 'message: Your regex should not match `"Timmber"`');
+assert(!timRegex.test("Timmmber"), 'message: Your regex should not match `"Timmmber"`');
+assert(timRegex.test("Timmmmber"), 'message: Your regex should match `"Timmmmber"`');
+assert(!timRegex.test("Ti" + "m".repeat(30) + "ber"), 'message: Your regex should match `"Timber"` with 30 `m`\'s in it.');
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 1,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        },
+        "es": {
+          "description": [],
+          "title": ""
+        },
+        "cn": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+        {
+      "id": "5d7123c8c441eddfaeb5bdef",
+      "title": "Check for All or None",
+      "description": [
+Sometimes the patterns we want to search for may have parts of it that may or may not exist. However, it may be important to check for them nonetheless.
+
+We can specify the possible existance of an element with a question mark, ?. This checks for zero or one of the preceeding element. You can think of this symbol as saying the previous element is optional.
+
+For example, there are slight differences in American and British English and we can use the question mark to match both spellings.
+
+var american = "color";
+var british = "colour";
+var rainbowRegex= /colou?r/;
+rainbowRegex.test(american); // Returns true
+rainbowRegex.test(british); // Returns true
+Instructions
+
+Change the regex favRegex to match both the American English (favorite) and the British English (favourite) version of the word.
+✨ Check For All or None (Optionality - ?)
+      ],
+      "challengeSeed": [
+var favWord = "favorite";
+var favRegex = /change/; // Change this line
+var result = favRegex.test(favWord);
+      ],
+      "tests": [
+assert(!favRegex.source.match(/\?/) === null, 'message: Your regex should use the optional symbol, `?`.');
+assert(favRegex.test("favorite"), 'message: Your regex should match `"favorite"`');
+assert(favRegex.test("favourite"), 'message: Your regex should match `"favourite"`');
+assert(!favRegex.test("fav"), 'message: Your regex should not match `"fav"`');
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 1,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        },
+        "es": {
+          "description": [],
+          "title": ""
+        },
+        "cn": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+        {
+      "id": "5d7123c8c441eddfaeb5bdef",
+      "title": "Positive and Negative Lookahead",
+      "description": [
+Lookaheads are patterns which look-ahead in your string and check for patterns without "moving." This can be useful when you want to search for multiple patterns over the same string.
+
+There are two kinds of lookaheads: positive lookahead and negative lookahead.
+
+Positive lookahead will look to make sure the element in the search pattern is there but won't actually match it. A positive lookahead is used as (?=...) where the ... is the required but not matched.
+
+On the other hand, negative lookahead will not match the search pattern if a certain pattern exists. A negative lookahead is used as (?!...) where the ... is the pattern you don't want to match. The rest of the pattern will be returned if the rest of the pattern matches.
+
+Lookarounds are a bit confusing but some examples will help.
+
+var quit = "qu";
+var noquit = "qt";
+var quRegex= /q(?=u)/;
+var qRegex = /q(?!u)/;
+quit.match(quRegex); // Returns ["q"]
+noquit.match(qRegex); // Returns ["q"]
+A more practical use of lookarounds is to check two or more patterns in one string. Here is a (naively) simple password checker that'll look for between 3 and 6 characters and at least one number.
+
+var password = "abc123";
+var checkPass = /(?=\w{3,6})(?=\D*\d)/;
+checkPass.test(password); // Returns true
+Instructions
+
+Use lookarounds to match passwords that are greater than 5 characters long and have two consecutive digits.
+✨ Positive and Negative Lookahead
+      ],
+      "challengeSeed": [
+var sampleWord = "astronaut";
+var pwRegex = /change/; // Change this line
+var result = pwRegex.test(sampleWord);
+      ],
+      "tests": [
+assert(wordRegex.source.match(/\(\?=.*?\)\(\?=.*?\)/) !== null, 'message: Your regex should use two positive lookarounds.');
+assert(!wordRegex.test("astronaut"), 'message: Your regex should not match `"astronaut"`');
+assert(!wordRegex.test("airplanes"), 'message: Your regex should not match `"airplanes"`');
+assert(wordRegex.test("bana12"), 'message: Your regex should match `"bana12"`');
+assert(wordRegex.test("abc123"), 'message: Your regex should match `"abc123"`');
+assert(!wordRegex.test("123"), 'message: Your regex should not match `"123"`');
+assert(!wordRegex.test("1234"), 'message: Your regex should not match `"1234"`');
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 1,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        },
+        "es": {
+          "description": [],
+          "title": ""
+        },
+        "cn": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+        {
+      "id": "5d7123c8c441eddfaeb5bdef",
+      "title": "",
+      "description": [
+
+      ],
+      "challengeSeed": [
+
+      ],
+      "tests": [
+
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 1,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        },
+        "es": {
+          "description": [],
+          "title": ""
+        },
+        "cn": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+        {
+      "id": "5d7123c8c441eddfaeb5bdef",
+      "title": "",
+      "description": [
+
+      ],
+      "challengeSeed": [
+
+      ],
+      "tests": [
+
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 1,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        },
+        "es": {
+          "description": [],
+          "title": ""
+        },
+        "cn": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+        {
+      "id": "5d7123c8c441eddfaeb5bdef",
+      "title": "",
+      "description": [
+
+      ],
+      "challengeSeed": [
+
+      ],
+      "tests": [
+
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 1,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        },
+        "es": {
+          "description": [],
+          "title": ""
+        },
+        "cn": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+        {
+      "id": "5d7123c8c441eddfaeb5bdef",
+      "title": "",
+      "description": [
+
+      ],
+      "challengeSeed": [
+
+      ],
+      "tests": [
+
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 1,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        },
+        "es": {
+          "description": [],
+          "title": ""
+        },
+        "cn": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+        {
+      "id": "5d7123c8c441eddfaeb5bdef",
+      "title": "",
+      "description": [
+
+      ],
+      "challengeSeed": [
+
+      ],
+      "tests": [
+
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 1,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        },
+        "es": {
+          "description": [],
+          "title": ""
+        },
+        "cn": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+        {
+      "id": "5d7123c8c441eddfaeb5bdef",
+      "title": "",
+      "description": [
+
+      ],
+      "challengeSeed": [
+
+      ],
+      "tests": [
+
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 1,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        },
+        "es": {
+          "description": [],
+          "title": ""
+        },
+        "cn": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+        {
+      "id": "5d7123c8c441eddfaeb5bdef",
+      "title": "",
+      "description": [
+
+      ],
+      "challengeSeed": [
+
+      ],
+      "tests": [
+
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 1,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        },
+        "es": {
+          "description": [],
+          "title": ""
+        },
+        "cn": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+        {
+      "id": "5d7123c8c441eddfaeb5bdef",
+      "title": "",
+      "description": [
+
+      ],
+      "challengeSeed": [
+
+      ],
+      "tests": [
+
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 1,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        },
+        "es": {
+          "description": [],
+          "title": ""
+        },
+        "cn": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+        {
+      "id": "5d7123c8c441eddfaeb5bdef",
+      "title": "",
+      "description": [
+
+      ],
+      "challengeSeed": [
+
+      ],
+      "tests": [
+
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 1,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        },
+        "es": {
+          "description": [],
+          "title": ""
+        },
+        "cn": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+        {
+      "id": "5d7123c8c441eddfaeb5bdef",
+      "title": "",
+      "description": [
+
+      ],
+      "challengeSeed": [
+
+      ],
+      "tests": [
+
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 1,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        },
+        "es": {
+          "description": [],
+          "title": ""
+        },
+        "cn": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+        {
+      "id": "5d7123c8c441eddfaeb5bdef",
+      "title": "",
+      "description": [
+
+      ],
+      "challengeSeed": [
+
+      ],
+      "tests": [
+
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 1,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        },
+        "es": {
+          "description": [],
+          "title": ""
+        },
+        "cn": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+        {
+      "id": "5d7123c8c441eddfaeb5bdef",
+      "title": "",
+      "description": [
+
+      ],
+      "challengeSeed": [
+
+      ],
+      "tests": [
+
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 1,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        },
+        "es": {
+          "description": [],
+          "title": ""
+        },
+        "cn": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+        {
+      "id": "5d7123c8c441eddfaeb5bdef",
+      "title": "",
+      "description": [
+
+      ],
+      "challengeSeed": [
+
+      ],
+      "tests": [
+
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 1,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        },
+        "es": {
+          "description": [],
+          "title": ""
+        },
+        "cn": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+        {
+      "id": "5d7123c8c441eddfaeb5bdef",
+      "title": "",
+      "description": [
+
+      ],
+      "challengeSeed": [
+
+      ],
+      "tests": [
+
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 1,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        },
+        "es": {
+          "description": [],
+          "title": ""
+        },
+        "cn": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+        {
+      "id": "5d7123c8c441eddfaeb5bdef",
+      "title": "",
+      "description": [
+
+      ],
+      "challengeSeed": [
+
+      ],
+      "tests": [
+
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 1,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        },
+        "es": {
+          "description": [],
+          "title": ""
+        },
+        "cn": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+        {
+      "id": "5d7123c8c441eddfaeb5bdef",
+      "title": "",
+      "description": [
+
+      ],
+      "challengeSeed": [
+
+      ],
+      "tests": [
+
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 1,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        },
+        "es": {
+          "description": [],
+          "title": ""
+        },
+        "cn": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+        {
+      "id": "5d7123c8c441eddfaeb5bdef",
+      "title": "",
+      "description": [
+
+      ],
+      "challengeSeed": [
+
+      ],
+      "tests": [
+
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 1,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        },
+        "es": {
+          "description": [],
+          "title": ""
+        },
+        "cn": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+        {
+      "id": "5d7123c8c441eddfaeb5bdef",
+      "title": "",
+      "description": [
+
+      ],
+      "challengeSeed": [
+
+      ],
+      "tests": [
+
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 1,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        },
+        "es": {
+          "description": [],
+          "title": ""
+        },
+        "cn": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+        {
+      "id": "5d7123c8c441eddfaeb5bdef",
+      "title": "",
+      "description": [
+
+      ],
+      "challengeSeed": [
+
+      ],
+      "tests": [
+
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 1,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        },
+        "es": {
+          "description": [],
+          "title": ""
+        },
+        "cn": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+        {
+      "id": "5d7123c8c441eddfaeb5bdef",
+      "title": "",
+      "description": [
+
+      ],
+      "challengeSeed": [
+
+      ],
+      "tests": [
+
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 1,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        },
+        "es": {
+          "description": [],
+          "title": ""
+        },
+        "cn": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+        {
+      "id": "5d7123c8c441eddfaeb5bdef",
+      "title": "",
+      "description": [
+
+      ],
+      "challengeSeed": [
+
+      ],
+      "tests": [
+
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 1,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        },
+        "es": {
+          "description": [],
+          "title": ""
+        },
+        "cn": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+        {
+      "id": "5d7123c8c441eddfaeb5bdef",
+      "title": "",
+      "description": [
+
+      ],
+      "challengeSeed": [
+
+      ],
+      "tests": [
+
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 1,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        },
+        "es": {
+          "description": [],
+          "title": ""
+        },
+        "cn": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+        {
+      "id": "5d7123c8c441eddfaeb5bdef",
+      "title": "",
+      "description": [
+
+      ],
+      "challengeSeed": [
+
+      ],
+      "tests": [
+
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 1,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        },
+        "es": {
+          "description": [],
+          "title": ""
+        },
+        "cn": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+        {
+      "id": "5d7123c8c441eddfaeb5bdef",
+      "title": "",
+      "description": [
+
+      ],
+      "challengeSeed": [
+
+      ],
+      "tests": [
+
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 1,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        },
+        "es": {
+          "description": [],
+          "title": ""
+        },
+        "cn": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+        {
+      "id": "5d7123c8c441eddfaeb5bdef",
+      "title": "",
+      "description": [
+
+      ],
+      "challengeSeed": [
+
+      ],
+      "tests": [
+
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 1,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        },
+        "es": {
+          "description": [],
+          "title": ""
+        },
+        "cn": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+        {
+      "id": "5d7123c8c441eddfaeb5bdef",
+      "title": "",
+      "description": [
+
+      ],
+      "challengeSeed": [
+
+      ],
+      "tests": [
+
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 1,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        },
+        "es": {
+          "description": [],
+          "title": ""
+        },
+        "cn": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+        {
+      "id": "5d7123c8c441eddfaeb5bdef",
+      "title": "",
+      "description": [
+
+      ],
+      "challengeSeed": [
+
+      ],
+      "tests": [
+
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 1,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        },
+        "es": {
+          "description": [],
+          "title": ""
+        },
+        "cn": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+        {
+      "id": "5d7123c8c441eddfaeb5bdef",
+      "title": "",
+      "description": [
+
+      ],
+      "challengeSeed": [
+
+      ],
+      "tests": [
+
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 1,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        },
+        "es": {
+          "description": [],
+          "title": ""
+        },
+        "cn": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+        {
+      "id": "5d7123c8c441eddfaeb5bdef",
+      "title": "",
+      "description": [
+
+      ],
+      "challengeSeed": [
+
+      ],
+      "tests": [
+
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 1,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        },
+        "es": {
+          "description": [],
+          "title": ""
+        },
+        "cn": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+        {
+      "id": "5d7123c8c441eddfaeb5bdef",
+      "title": "",
+      "description": [
+
+      ],
+      "challengeSeed": [
+
+      ],
+      "tests": [
+
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 1,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        },
+        "es": {
+          "description": [],
+          "title": ""
+        },
+        "cn": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+        {
+      "id": "5d7123c8c441eddfaeb5bdef",
+      "title": "",
+      "description": [
+
+      ],
+      "challengeSeed": [
+
+      ],
+      "tests": [
+
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 1,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        },
+        "es": {
+          "description": [],
+          "title": ""
+        },
+        "cn": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+        {
+      "id": "5d7123c8c441eddfaeb5bdef",
+      "title": "",
+      "description": [
+
+      ],
+      "challengeSeed": [
+
+      ],
+      "tests": [
+
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 1,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        },
+        "es": {
+          "description": [],
+          "title": ""
+        },
+        "cn": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+        {
+      "id": "5d7123c8c441eddfaeb5bdef",
+      "title": "",
+      "description": [
+
+      ],
+      "challengeSeed": [
+
+      ],
+      "tests": [
+
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 1,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        },
+        "es": {
+          "description": [],
+          "title": ""
+        },
+        "cn": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+        {
+      "id": "5d7123c8c441eddfaeb5bdef",
+      "title": "",
+      "description": [
+
+      ],
+      "challengeSeed": [
+
+      ],
+      "tests": [
+
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 1,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        },
+        "es": {
+          "description": [],
+          "title": ""
+        },
+        "cn": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+        {
+      "id": "5d7123c8c441eddfaeb5bdef",
+      "title": "",
+      "description": [
+
+      ],
+      "challengeSeed": [
+
+      ],
+      "tests": [
+
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 1,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        },
+        "es": {
+          "description": [],
+          "title": ""
+        },
+        "cn": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+        {
+      "id": "5d7123c8c441eddfaeb5bdef",
+      "title": "",
+      "description": [
+
+      ],
+      "challengeSeed": [
+
+      ],
+      "tests": [
+
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 1,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        },
+        "es": {
+          "description": [],
+          "title": ""
+        },
+        "cn": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+        {
+      "id": "5d7123c8c441eddfaeb5bdef",
+      "title": "",
+      "description": [
+
+      ],
+      "challengeSeed": [
+
+      ],
+      "tests": [
+
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 1,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        },
+        "es": {
+          "description": [],
+          "title": ""
+        },
+        "cn": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+        {
+      "id": "5d7123c8c441eddfaeb5bdef",
+      "title": "",
+      "description": [
+
+      ],
+      "challengeSeed": [
+
+      ],
+      "tests": [
+
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 1,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        },
+        "es": {
+          "description": [],
+          "title": ""
+        },
+        "cn": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+        {
+      "id": "5d7123c8c441eddfaeb5bdef",
+      "title": "",
+      "description": [
+
+      ],
+      "challengeSeed": [
+
+      ],
+      "tests": [
+
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 1,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        },
+        "es": {
+          "description": [],
+          "title": ""
+        },
+        "cn": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+        {
+      "id": "5d7123c8c441eddfaeb5bdef",
+      "title": "",
+      "description": [
+
+      ],
+      "challengeSeed": [
+
+      ],
+      "tests": [
+
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 1,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        },
+        "es": {
+          "description": [],
+          "title": ""
+        },
+        "cn": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+        {
+      "id": "5d7123c8c441eddfaeb5bdef",
+      "title": "",
+      "description": [
+
+      ],
+      "challengeSeed": [
+
+      ],
+      "tests": [
+
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 1,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        },
+        "es": {
+          "description": [],
+          "title": ""
+        },
+        "cn": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+
   ]
 }

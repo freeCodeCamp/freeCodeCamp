@@ -1,26 +1,152 @@
 {
-  "name": "Sass",
-  "order": 4,
+  "name": "CSS Flexbox",
+  "order": 5,
   "time": "5 hours",
   "helpRoom": "Help",
   "challenges": [
         {
       "id": "5d7123c8c441eddfaeb5bdef",
-"title": "CSS with Superpowers",
+      "title": "Flexbox is about positioning",
       "description": [
-        "Q: How can we write better CSS?",
-        "A: Use a preprocessor.",
-        "",
-        "What is a CSS preprocessor?",
-        "CSS preprocessors take code written in the preprocessed language and then convert that code into CSS. Pretty basic, right?",
-        "",
-        "So what's the point of using one?",
-        "CSS preprocessors such as <code>Sass</code> or <code>Less</code> allow you to do nifty things that regular CSS can't do. They allow you to create <code>variables</code>, write more compact code with <code>nesting</code>, <code>import</code> other CSS files and much more.",
-        "",
-        "In this series of Waypoints, we will be teaching you the basics of <code>Sass</code>"
+Any UI is made up of two things
 
+Right colors, fonts, images etc. visual elements
+Right placement or positioning of the elements
+In this section, we would focus on placing the elements the right way, that is, browser and screen width independent.
+
+We will use flexbox to achieve this. Flexbox is a relatively new construct, supported by all modern major browsers, and it gives a nice way to control placing your elements in the webpage.
+
+No more CSS float or inline-block.
+
+Over the course of this section on flexbox, we would be building a simple tweet component, as shown on the right.
+
+Instruction
+Oh you don't need to do anything other than stare at the sample tweet component and thing of how > you would implement it.
+
+Note
+We would use SCSS over here, and not vanilla CSS. So, you might want to cover our SCSS section first
+
+      ],
       "challengeSeed": [
+<header>
+  <img src="https://pbs.twimg.com/profile_images/378800000147359764/54dc9a5c34e912f34db8662d53d16a39_400x400.png" alt="Quincy Larson's profile picture" class="profile-thumbnail">
+  <div class="profile-name">
+    <h3>Quincy Larson</h3>
+    <h4>@ossia</h4>
+  </div>
+  <div class="follow-btn">
+    <button>
+      <i class="fa fa-twitter"></i>&nbsp;Follow
+    </button>
+  </div>
+</header>
+<div id="inner">
+  <p>How would you describe to a layperson the relationship between Node, Express, and npm in a single tweet? An analogy would be helpful.</p>
+  <span class="date">7:24 PM - 17 Aug 2016</span>
+  <hr>
+</div>
+<footer>
+  <div class="stats">
+    <div class="retweets">
+      <strong>5</strong> RETWEETS
+    </div>
+    <div class="likes">
+      <strong>28</strong> LIKES
+    </div>
+  </div>
+  <div class="cta">
+    <button class="share-btn">
+      <i class="fa fa-share"></i>
+    </button>
+    <button class="retweet-btn">
+      <i class="fa fa-retweet"></i>
+    </button>
+    <button class="like-btn">
+      <i class="fa fa-heart"></i>
+    </button>
+  </div>
+</footer>
+body {
+  font-family: Arial, sans-serif;
+}
 
+header, footer {
+  display: flex;
+  flex-direction: row;
+}
+
+header {
+  .profile-thumbnail {
+    width: 50px;
+    height: 50px;
+    border-radius: 4px;
+  }
+
+  .profile-name {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 10px;
+  }
+
+  .follow-btn {
+    display: flex;
+    align-items: center;
+    margin: 0 0 0 auto;
+
+    button {
+      border: 0;
+      border-radius: 3px;
+      padding: 5px;
+    }
+
+    i {
+      color: #4099FF;
+    }
+  }
+
+  h3, h4 {
+    margin: 0;
+    display: flex;
+    align-items: center;
+  }
+}
+
+#inner {
+  p {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  hr {
+    margin: 20px 0;
+    opacity: 0.1;
+    border-style: solid;
+  }
+}
+
+footer {  
+  .stats {
+    display: flex;
+    flex-direction: row;
+    font-size: 15px;
+
+    strong {
+      font-size: 18px;
+    }
+
+    .likes {
+      margin-left: 10px;
+    }
+  }
+  .cta {
+    margin-left: auto;
+
+    button {
+      border: 0;
+      background: transparent;
+    }
+  }
+}
       ],
       "tests": [
 
@@ -58,48 +184,34 @@
     },
         {
       "id": "5d7123c8c441eddfaeb5bdef",
-      "title": "Storing Data with Sass Variables",
+      "title": "Using display: flex with our two boxes",
       "description": [
-        "Just like in Javascript, you can declare variables to store data in. ",
-        "In Javascript, you would use the <code>var</code> keyword to define a variable. When decaring variables in <code>Sass</code>, you start by using a <code>$</code> followed by a string.",
-        "Here is an example: <code>$color = green;</code>",
-        "Making variables become exteremly useful when we want similar elemnts to have the same color, for example. If wanted to change the color to maybe a slightly different shade, all we would have to do is change the variables value.",
-        "<h4>Instructions</h4>",
-        "Create a variable <code>$text-color</code> and set it equal to <code>red</code>",
-        "Then change the value of all <code>color</code> properties by using <code>color: $text-color</code>.",
-        "Finally, change the value of <code>$text-color</code> to another color and see how all respective elements change color!"
+In these challenges, we will often have a theory based challenge and then a practical challenge where you apply what you have learned to flexify your tweet embed!
+
+Adding display: flex allows us to use other flex properties like justify-content and flex-basis which we will learn about later on in the challenges.
+Instructions
+
+Using CSS, add display: flex to both boxes using #box-1 and #box-2.
       ],
       "challengeSeed": [
-        "<style>",
-        "  /*Only change code below this line.*/",
-        "  ",
-        "  /*Only change code below this line.*/",
-        "  .header{",
-        "    text-align: center;",
-        "  }",
-        "  .blog-post h3{",
-        "  /*Only change code below this line.*/",
-        "    color: red;",
-        "  /*Only change code below this line.*/",
-        "  }",
-        "</style>",
-        "",
-        "<h1 class=\"header\">Lern Sass</h1>",
-        "<div class=\"blog-post\">",
-        "  <h3>Some random title</h3>",
-        "  <p>This is a pargraph with some very random text in it</p>",
-        "</div>",
-        "<div class=\"blog-post\">",
-        "  <h3>Header #2</h3>",
-        "  <p>Here is some more random text.</p>",
-        "</div>",
-        "<div class=\"blog-post\">",
-        "  <h3>Here is another header</h3>",
-        "  <p>Even more random text within a paragraph</p>",
-        "</div>"
+<div id="box-1"></div>
+<div id="box-2"></div>
+#box-1 {
+    background-color: dodgerblue;
+    width: 500px;
+    height: 500px;
+}
+
+#box-2 {
+    background-color: orangered;
+    width: 500px;
+    height: 500px;
+}
+
       ],
       "tests": [
-
+assert($('#box-1').css('display') == 'flex', 'message: <code>#box-1</code> should be using <code>display: flex</code>.'),
+assert($('#box-2').css('display') == 'flex', 'message: <code>#box-2</code> should be using <code>display: flex</code>.')
       ],
       "solutions": [],
       "hints": [],
@@ -134,30 +246,136 @@
     },
         {
       "id": "5d7123c8c441eddfaeb5bdef",
-      "title": "Nesting your CSS",
+      "title": "Adding Flex superpowers to our tweet embed",
       "description": [
-        "<code>Nesting</code> is a really useful way of organising your CSS.",
-        "Normally, you would target each element on a different line to style it, like so:",
-        "<blockquote>nav{<br>&nbsp;&nbsp;background-color: red;<br>}<br><br>nav ul{<br>&nbsp;&nbsp;list-style: none;<br>}<br><br>li{<br>&nbsp;&nbsp;display: inline-block;<br>}</blockquote>",
-        "As you can imagine, in larger projects, your CSS file will get pretty messy. Here is where <code>nesting</code> comes in - it allows you to organise your different styles by nesting them within their respective parent elements:",
-        "<blockquote>nav{<br>&nbsp;&nbsp;background-color: red;<br><br>&nbsp;&nbsp;ul{<br>&nbsp;&nbsp;&nbsp;&nbsp;list-style: none;<br><br>&nbsp;&nbsp;&nbsp;&nbsp;li{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;display: inline-block;<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;}<br>}<br></blockquote>",
-        "<h4>Instructions</h4>",
-        "Use the <code>nesting</code> technique shown above to style both children of <code>.blog-post</code>. The <code>h1</code> should be centered and be blue. The <code>p</code> should have a font size of 20px."
+Now that we know how about display: flex, we can add it to our tweet embed.
+Instructions
+
+Add display: flex to the following items:
+
+header
+footer
+h3
+h4
+.profile-name
+.follow-btn
+.stats
       ],
       "challengeSeed": [
-        "<style>",
-        "/*Only change code below this line.*/",
-        "  ",
-        "/*Only change code above this line.*/",
-        "</style>",
-        "",
-        "<div class=\"blog-post\">",
-        "  <h1>Blog Title</h1>",
-        "  <p>This is a paragraph</p>",
-        "</div>"
+<header>
+  <img src="https://pbs.twimg.com/profile_images/378800000147359764/54dc9a5c34e912f34db8662d53d16a39_400x400.png" alt="Quincy Larson's profile picture" class="profile-thumbnail">
+  <div class="profile-name">
+    <h3>Quincy Larson</h3>
+    <h4>@ossia</h4>
+  </div>
+  <div class="follow-btn">
+    <button>
+      <i class="fa fa-twitter"></i>&nbsp;Follow
+    </button>
+  </div>
+</header>
+<div id="inner">
+  <p>How would you describe to a layperson the relationship between Node, Express, and npm in a single tweet? An analogy would be helpful.</p>
+  <span class="date">7:24 PM - 17 Aug 2016</span>
+  <hr>
+</div>
+<footer>
+  <div class="stats">
+    <div class="retweets">
+      <strong>5</strong> RETWEETS
+    </div>
+    <div class="likes">
+      <strong>28</strong> LIKES
+    </div>
+  </div>
+  <div class="cta">
+    <button class="share-btn">
+      <i class="fa fa-share"></i>
+    </button>
+    <button class="retweet-btn">
+      <i class="fa fa-retweet"></i>
+    </button>
+    <button class="like-btn">
+      <i class="fa fa-heart"></i>
+    </button>
+  </div>
+</footer>
+body {
+  font-family: Arial, sans-serif;
+}
+
+header {
+  .profile-thumbnail {
+    width: 50px;
+    height: 50px;
+    border-radius: 4px;
+  }
+
+  .profile-name {
+    margin-left: 10px;
+  }
+
+  .follow-btn {
+    margin: 0 0 0 auto;
+
+    button {
+      border: 0;
+      border-radius: 3px;
+      padding: 5px;
+    }
+
+    i {
+      color: #4099FF;
+    }
+  }
+
+  h3, h4 {
+    margin: 0;
+  }
+}
+
+#inner {
+  p {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  hr {
+    margin: 20px 0;
+    opacity: 0.1;
+    border-style: solid;
+  }
+}
+
+footer {  
+  .stats {
+    font-size: 15px;
+
+    strong {
+      font-size: 18px;
+    }
+
+    .likes {
+      margin-left: 10px;
+    }
+  }
+  .cta {
+    margin-left: auto;
+
+    button {
+      border: 0;
+      background: transparent;
+    }
+  }
+}
       ],
       "tests": [
-
+assert($('header').css('display') == 'flex', 'message: Your <code>header</code> tag should be using <code>display: flex</code>.'),
+assert($('footer').css('display') == 'flex', 'message: Your <code>footer</code> tag should be using <code>display: flex</code>.'),
+assert($('h3').css('display') == 'flex', 'message: Your <code>h3</code> tag should be using <code>display: flex</code>.'),
+assert($('h4').css('display') == 'flex', 'message: Your <code>h4</code> tag should be using <code>display: flex</code>.'),
+assert($('.profile-name').css('display') == 'flex', 'message: Your <code>.profile-name</code> element should be using <code>display: flex</code>.'),
+assert($('.follow-btn').css('display') == 'flex', 'message: Your <code>.follow-btn</code> element should be using <code>display: flex</code>.'),
+assert($('.stats').css('display') == 'flex', 'message: Your <code>.stats</code> element should be using <code>display: flex</code>.')
       ],
       "solutions": [],
       "hints": [],
@@ -192,306 +410,7 @@
     },
         {
       "id": "5d7123c8c441eddfaeb5bdef",
-      "title": "Mixing the Cake",
-      "description": [
-        "A <code>mixin</code> lets you make groups of CSS declarations that you want to reuse throughout your site. Consider \"box-shadow\":",
-        "<blockquote>div{<br>&nbsp;&nbsp;-webkit-box-shadow: 0px 0px 4px #fff<br>&nbsp;&nbsp;-moz-box-shadow: 0px 0px 4px #fff<br>&nbsp;&nbsp;-ms-box-shadow: 0px 0px 4px #fff<br>&nbsp;&nbsp;box-shadow: 0px 0px 4px #fff<br>}</blockquote>",
-        "It would be really annyoing to re-write this over and over again for each element that we want to use <code>box-shadow</code> on, or having to change each value becuase we're testing different effects.",
-        "Thankfully, <code>Sass</code> has <code>mixins</code> - these are like functions for CSS. Here is how to write one:",
-        "<blockquote>@mixin box-shadow($x, $y, $blur, $c){<br>&nbsp;&nbsp;-webkit-box-shadow: $x, $y, $blur, $c<br>&nbsp;&nbsp;-moz-box-shadow: $x, $y, $blur, $c<br>&nbsp;&nbsp;-ms-box-shadow: $x, $y, $blur, $c<br>&nbsp;&nbsp;box-shadow: $x, $y, $blur, $c<br>}</blockquote>",
-        "You start by using the directive <code>@mixin</code> followed by a custom name. You can also include arguments as we have.",
-        "This way, we can use a single line: <code>box-shadow</code> and pass parameters without having to re-write all the vendor prefixes. Let's see how to use this:",
-        "<blockquote>div{<br>&nbsp;&nbsp;@include box-shadow(0px, 0px, 4px, #fff)<br>}</blockquote>",
-        "<h4>Instructions</h4>",
-        "Write your own <code>mixin</code> for <code>border-radius</code> and give it a <code>$radius</code> parameter. ",
-        "Then use <code>border-radius</code> to give <code>#awesome</code> a border radius of 10px."
-      ],
-      "challengeSeed": [
-        "<style>",
-        "  /*Add your mixin below this line.*/",
-        "  ",
-        "  /*Add your mixin above this line.*/",
-        "  #awesome{",
-        "    width: 150px;",
-        "    height: 150px;",
-        "    background-color: green;",
-        "    /*Only change code below this line.*/",
-        "",
-        "    /*Only change code above this line.*/",
-        "  }",
-        "</style>",
-        "",
-        "<div id=\"awesome\"></div>",
-        "  "
-
-      ],
-      "tests": [
-
-      ],
-      "solutions": [],
-      "hints": [],
-      "type": "waypoint",
-      "challengeType": 0,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        },
-        "es": {
-          "description": [],
-          "title": ""
-        },
-        "cn": {
-          "description": [],
-          "title": ""
-        }
-      }
-    },
-        {
-      "id": "5d7123c8c441eddfaeb5bdef",
-      "title": "Using @if and @else.",
-      "description": [
-        "The @if directive is usefull if you want to test for a specifc case - it works just like the <code>if</code> statement in Javascript</code>",
-        "<blockquote>@mixin make-bold($bool){<br>&nbsp;&nbsp;@if $bool == bold { font-weight: bold }<br>}</blockquote>",
-        "And just like in Javascript, we can also add <code>@else if</code> and <code>@else</code> to test for more conditions.",
-        "<blockquote>@mixin text-effect($val){<br>&nbsp;&nbsp;@if $val == danger {color: red}<br>&nbsp;&nbsp;@else if $val == alert {color: yellow}<br>&nbsp;&nbsp;@else if $val == success {color: green}<br>&nbsp;&nbsp;@else {color: black}<br>}</blockquote>",
-        "<h4>Instructions</h4>",
-        "Make a <code>mixin</code> called <code>border-stroke</code> that take an argument <code>$val</code>. The mixin should check for the following conditions using <code>@else if</code> and <code>@else</code>:",
-        "<blockquote>light - 1px solid black<br>medium - 3px solid black<br>heavy - 6px solid black<br>none - no border</blockquote>"
-      ],
-      "challengeSeed": [
-        "<style>",
-        "  /*Only change code below this line.*/",
-        "  ",
-        "  /*Only change code above this line.*/",
-        "  #box{",
-        "    width: 150px;",
-        "    height: 150px;",
-        "    background-color: red;",
-        "    @include border-stroke(medium);",
-        "  }  ",
-        "</style>",
-        "",
-        "<div id=\"box\"></div>"
-      ],
-      "tests": [
-
-      ],
-      "solutions": [],
-      "hints": [],
-      "type": "waypoint",
-      "challengeType": 0,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        },
-        "es": {
-          "description": [],
-          "title": ""
-        },
-        "cn": {
-          "description": [],
-          "title": ""
-        }
-      }
-    },
-        {
-      "id": "5d7123c8c441eddfaeb5bdef",
-      "title": "Continuing with @for",
-      "description": [
-        "The <code>@for</code> directive allows you to add styles in a loop - just like a <code>for</code> loop in JS. ",
-        "We can use <code>@for</code> in 2 different ways: \"start through end\" or \"start to end\". The main difference is that \"start to end\" will exclude the ending number while \"start through end\" will include the ending number. ",
-        "Let's take a look at a start <b>through</b> end example:",
-        "<blockquote>@for $i from 1 through 12 {<br>&nbsp;&nbsp;.col-#{$i} { width: 100/12 * $i; }<br>}</blockquote>",
-        "This will produce the following:",
-        "<blockquote>.col-1 {<br>&nbsp;&nbsp;width: 8.33333;<br>}<br><br>.col-2 {<br>&nbsp;&nbsp;width: 16.66667;<br>}</blockquote>",
-        "And so on till <code>.col-12</code>. This is a really powerful way of getting a grid layout.",
-        "<h4>Instructions</h4>",
-        "Make a <code>@for</code> directive that takes a variable <code>$j</code> that goes from 1 <b>to</b> 6.",
-        "This should create 5 classes called <code>.text-1</code> through <code>.text-5</code> that makes the font-size: 10 * the number."
-      ],
-      "challengeSeed": [
-        "<style>",
-        "  /*Only change code below this line.*/",
-        "  ",
-        "  /*Only change code above this line.*/",
-        "</style>"
-      ],
-      "tests": [
-
-      ],
-      "solutions": [],
-      "hints": [],
-      "type": "waypoint",
-      "challengeType": 0,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        },
-        "es": {
-          "description": [],
-          "title": ""
-        },
-        "cn": {
-          "description": [],
-          "title": ""
-        }
-      }
-    },
-        {
-      "id": "5d7123c8c441eddfaeb5bdef",
-      "title": "Expanding with @each",
-      "description": [
-        "The <code>@each</code> directive uses a list or map instead of starting and ending values like the <code>@for</code> directive. ",
-        "On each iteration, the variable gets assigned to a value from the list or map.",
-        "<blockquote>@each $color in blue, red, green {<br>&nbsp;&nbsp;.#{$color}-text {color: $color}<br>}</blockquote>",
-        "We can also use a map instead of a list:",
-        "<code>$colors: (color1: blue, color2: red, color3: green);</code>",
-        "<blockquote>@each $key, $color in $colors {<br>&nbsp;&nbsp;.#{$color}-text {color: $color}<br>}</blockquote>",
-        "We need to add a <code>$key</code> variable to referance the keys in the map. Else, our complied CSS would have <code>color1</code>, <code>color2</code>.... in it.",
-        "Both of the above code will output:",
-        "<blockquote>.blue-text {<br>&nbsp;&nbsp;color: blue;<br>}<br><br>.red-text {<br>&nbsp;&nbsp;color: red;<br>}</blockquote>",
-        "<h4>Instructions</h4>",
-        "Make an <code>@each</code> directive that goes through a list: <code>blue, black, red</code> and assigns each variable to a <code>.\"color\"-bg</code> class.",
-        "Each class should make the <code>background-color</code> the respective color."
-      ],
-      "challengeSeed": [
-        "<style>",
-        "  /*Only change code below this line.*/",
-        "  ",
-        "  /*Only change code above this line.*/",
-        "</style>"
-      ],
-      "tests": [
-
-      ],
-      "solutions": [],
-      "hints": [],
-      "type": "waypoint",
-      "challengeType": 0,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        },
-        "es": {
-          "description": [],
-          "title": ""
-        },
-        "cn": {
-          "description": [],
-          "title": ""
-        }
-      }
-    },
-        {
-      "id": "5d7123c8c441eddfaeb5bdef",
-      "title": "Wrapping up with @while",
-      "description": [
-        "The last directive we will talk about is the <code>@while</code> directive.",
-        "Remember how we made a simple grid system using <code>@for</code>? Well, here is the same thing with <code>@while</code>.",
-        "<blockquote>$x: 1;<br>@while $x < 13 {<br> &npsp;&nbsp;.col-#{$x} { width: 100/12 * $x;}<br>&nbsp;&nbsp;$x: $x + 1;<br>};</blockquote>",
-        "We first define a variable <code>$x</code> and set it to 1. We then use the <code>@while</code> directive to create the grid system <i>while<i> <code>$x</code> is less than 13.",
-        "After genreating the CSS, we increment <code>$x</code> by 1 as to avoid an infinite loop!",
-        "This is another way of creating a gid system in <code>Sass</code>.",
-        "<h4>Instructions</h4>",
-        "Use <code>@while</code> to genetrate classes that will be used to manipulate <code>font-size</code>.",
-        "Their should be 10 different classes named <code>text-\"number here\"</code> that set <code>font-size</code> to the repective number in <code>px</code>."
-      ],
-      "challengeSeed": [
-        "<style>",
-        "  /*Only change code below this line.*/",
-        "  ",
-        "  /*Only change code above this line.*/",
-        "</style>"
-      ],
-      "tests": [
-
-      ],
-      "solutions": [],
-      "hints": [],
-      "type": "waypoint",
-      "challengeType": 0,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        },
-        "es": {
-          "description": [],
-          "title": ""
-        },
-        "cn": {
-          "description": [],
-          "title": ""
-        }
-      }
-    },
-        {
-      "id": "5d7123c8c441eddfaeb5bdef",
-      "title": "Partials",
+      "title": "",
       "description": [
 
       ],
@@ -534,42 +453,528 @@
     },
         {
       "id": "5d7123c8c441eddfaeb5bdef",
-      "title": "Extend your CSS styles",
+      "title": "",
       "description": [
-        "Imagine you have a piece of CSS that styles a <code>.panel</code> class. It might have a <code>background-color</code>, <code>height</code> and <code>border</code> for example. ",
-        "Now lets say we want to have another panel called <code>.big-panel</code> but have the same base properties as <code>.panel</code>, but also have a <code>width</code> and <code>font-size</code>.",
-        "We could copy/paste the initial code from <code>.panel</code> but if we also wanted another type of panel, things would get repetitive very quickly.",
-        "This is where <code>extend</code> jumps in. In the case of <code>.panel</code>:",
-        "<blockquote>.panel{<br>&nbsp;&nbsp;background-color: red;<br>&nbsp;&nbsp;height: 70px;<br>&nbsp;&nbsp;border: 2px solid green;<br>}</blockquote>",
-        "We can now <code>extend</code> <code>.panel</code> instead of copy/pasting the code:",
-        "<blockquote>.big-panel{<br>&nbsp;&nbsp;@extend .panel<br>&nbsp;&nbsp;width: 150px;<br>&nbsp;&nbsp;font-size: 2em;<br>}</blockquote>",
-        "And <code>.big-panel</code> will have the same properties as <code>.panel</code> including its own styles.",
-        "<h4>Instructions</h4>",
-        "Make a class <code>.info-important</code> that extends <code>.info</code> and also has a <code>background-color</code>.",
-        ""
+
       ],
       "challengeSeed": [
-        "<style>",
-        "  h3{",
-        "    text-align: center;",
-        "  }",
-        "  .info{",
-        "    width: 200px;",
-        "    border: 1px solid black;",
-        "    margin: 0 auto;",
-        "  }",
-        "  /*Only change code below this line.*/",
-        "  ",
-        "  /*Only change code above this line.*/",
-        "</style>",
-        "<h3>Posts</h3>",
-        "<div class=\"info-important\">",
-        "  <p>This is an important post. It should have extend the class \".info\" and have its own additional classes.</p>",
-        "</div>",
-        "",
-        "<div class=\"info\">",
-        "  <p>This is a simple post. It has basic styling and can be extended for other uses.</p>",
-        "</div>"
+
+      ],
+      "tests": [
+
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        },
+        "es": {
+          "description": [],
+          "title": ""
+        },
+        "cn": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+        {
+      "id": "5d7123c8c441eddfaeb5bdef",
+      "title": "",
+      "description": [
+
+      ],
+      "challengeSeed": [
+
+      ],
+      "tests": [
+
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        },
+        "es": {
+          "description": [],
+          "title": ""
+        },
+        "cn": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+        {
+      "id": "5d7123c8c441eddfaeb5bdef",
+      "title": "",
+      "description": [
+
+      ],
+      "challengeSeed": [
+
+      ],
+      "tests": [
+
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        },
+        "es": {
+          "description": [],
+          "title": ""
+        },
+        "cn": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+        {
+      "id": "5d7123c8c441eddfaeb5bdef",
+      "title": "",
+      "description": [
+
+      ],
+      "challengeSeed": [
+
+      ],
+      "tests": [
+
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        },
+        "es": {
+          "description": [],
+          "title": ""
+        },
+        "cn": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+        {
+      "id": "5d7123c8c441eddfaeb5bdef",
+      "title": "",
+      "description": [
+
+      ],
+      "challengeSeed": [
+
+      ],
+      "tests": [
+
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        },
+        "es": {
+          "description": [],
+          "title": ""
+        },
+        "cn": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+        {
+      "id": "5d7123c8c441eddfaeb5bdef",
+      "title": "",
+      "description": [
+
+      ],
+      "challengeSeed": [
+
+      ],
+      "tests": [
+
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        },
+        "es": {
+          "description": [],
+          "title": ""
+        },
+        "cn": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+        {
+      "id": "5d7123c8c441eddfaeb5bdef",
+      "title": "",
+      "description": [
+
+      ],
+      "challengeSeed": [
+
+      ],
+      "tests": [
+
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        },
+        "es": {
+          "description": [],
+          "title": ""
+        },
+        "cn": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+        {
+      "id": "5d7123c8c441eddfaeb5bdef",
+      "title": "",
+      "description": [
+
+      ],
+      "challengeSeed": [
+
+      ],
+      "tests": [
+
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        },
+        "es": {
+          "description": [],
+          "title": ""
+        },
+        "cn": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+        {
+      "id": "5d7123c8c441eddfaeb5bdef",
+      "title": "",
+      "description": [
+
+      ],
+      "challengeSeed": [
+
+      ],
+      "tests": [
+
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        },
+        "es": {
+          "description": [],
+          "title": ""
+        },
+        "cn": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+        {
+      "id": "5d7123c8c441eddfaeb5bdef",
+      "title": "",
+      "description": [
+
+      ],
+      "challengeSeed": [
+
+      ],
+      "tests": [
+
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        },
+        "es": {
+          "description": [],
+          "title": ""
+        },
+        "cn": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+        {
+      "id": "5d7123c8c441eddfaeb5bdef",
+      "title": "",
+      "description": [
+
+      ],
+      "challengeSeed": [
+
+      ],
+      "tests": [
+
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        },
+        "es": {
+          "description": [],
+          "title": ""
+        },
+        "cn": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+        {
+      "id": "5d7123c8c441eddfaeb5bdef",
+      "title": "",
+      "description": [
+
+      ],
+      "challengeSeed": [
+
+      ],
+      "tests": [
+
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        },
+        "es": {
+          "description": [],
+          "title": ""
+        },
+        "cn": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+        {
+      "id": "5d7123c8c441eddfaeb5bdef",
+      "title": "",
+      "description": [
+
+      ],
+      "challengeSeed": [
+
       ],
       "tests": [
 
