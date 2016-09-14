@@ -418,7 +418,7 @@
       "id": "cf1111c1c15feddfaeb9bdef",
       "title": "Filter Arrays with .filter",
       "description": [
-        "The <code>filter</code> method is used to iterate through an array and filter out elements where a given condition is not true.",
+        "The <code>filter</code> method creates a new array from an existing one by iterating over it and returning only the elements where a given condition returns true.",
         "<code>filter</code> is passed a callback function which takes the current value (we've called that <code>val</code>) as an argument.",
         "Any array element for which the callback returns true will be kept and elements that return false will be filtered out.",
         "The following code is an example of using <code>filter</code> to remove array elements that are equal to five:",
